@@ -1,8 +1,8 @@
-# $OpenBSD: patch-aa,v 1.2 2000/01/26 12:38:52 form Exp $
+# $OpenBSD: patch-aa,v 1.3 2000/03/03 18:08:32 form Exp $
 
---- Xrus.ad.orig	Wed Jan 26 18:27:59 2000
-+++ Xrus.ad	Wed Jan 26 18:29:22 2000
-@@ -26,13 +26,13 @@
+--- Xrus.ad.orig	Fri Mar  3 23:58:45 2000
++++ Xrus.ad	Sat Mar  4 00:00:28 2000
+@@ -26,20 +26,20 @@
  !*modeButton0.labelPixmap:	/usr/share/xruskb/usa.xpm
  !*modeButton1.labelPixmap:	/usr/share/xruskb/rus.xpm
  
@@ -14,11 +14,20 @@
 +*modeButton1.labelString:   Ru
 +*modeButton0.label:   En
 +*modeButton1.label:   Ru
- ! title0/title1 are shown on icon/window title, handy for icewm.
+ ! title0/title1 are shown on icon/window title of xrus, handy for icewm.
 -*title0: xrus:LAT
 -*title1: xrus:RUS
 +*title0: xrus:En
 +*title1: xrus:Ru
  
- ! whether make the two buttons equal in size
+ ! this option turns on saving keyboard state for each top level
+ ! window and changing it on focus change.
+ !*perWindow: true
+ ! titlePerWindow0/titlePerWindow1 are shown on window title in perWindow mode
+-*titlePerWindow0: (LAT)
+-*titlePerWindow1: (RUS)
++*titlePerWindow0: (En)
++*titlePerWindow1: (Ru)
+ 
+ ! whether to make the two buttons equal in size
  *adjustModeButtons: True
