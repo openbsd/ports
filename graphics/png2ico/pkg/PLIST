@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/12 07:38:08 wcobb Exp $
+bin/png2ico
+man/man1/png2ico.1

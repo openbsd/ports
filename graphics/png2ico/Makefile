@@ -1,0 +1,36 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2003/05/12 07:38:08 wcobb Exp $
+
+COMMENT=	"Convert PNG images to Windows .ico files"
+
+VERSION=	2002-12-08
+PKGNAME=	png2ico-${VERSION:S/-//g}
+DISTNAME=	png2ico-src-${VERSION}
+CATEGORIES=	graphics www
+HOMEPAGE=	http://www.winterdrache.de/freeware/png2ico/data/
+MASTER_SITES=	${HOMEPAGE}
+
+MAINTAINER=	Wilbern Cobb <wcobb@openbsd.org>
+
+# GPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+LIB_DEPENDS=	png.3::graphics/png
+USE_GMAKE=	Yes
+NO_REGRESS=	Yes
+WRKSRC=		${WRKDIR}/png2ico
+
+post-patch:
+	cd ${WRKSRC} && \
+	    perl -pi -e \
+	        's|-W -Wall -O2|${CXXFLAGS} -I${LOCALBASE}/include/libpng|' \
+	        ${WRKSRC}/Makefile && \
+	    perl -pi -e 's|-lpng|-L${LOCALBASE}/lib -lpng|' ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/png2ico ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/png2ico.1 ${PREFIX}/man/man1
+
+.include <bsd.port.mk>
