@@ -1,66 +1,7 @@
 SoX (also known as Sound eXchange) translates sound samples between
 different file formats, and optionally applies various sound effects.
-
-This release understands:
-
-  o Raw files in various binary formats
-  o Raw textual data
-  o Amiga 8svx files
-  o Apple/SGI AIFF files
-  o SUN .au style files
-  o AVR files
-  o CD-R (music CD format)
-  o CVS and VMS files (continous variable slope)
-  o Macintosh HCOM files
-  o Amiga MAUD files
-  o IRCAM SoundFile files
-  o NIST SPHERE files
-  o Turtle beach SampleVision files.
-  o Soundtool (DOS) files
-  o Yamaha TX-16W sampler files.
-  o Sound Blaster .VOC files
-  o Microsoft .WAV files
-  o Psion (palmtop) A-law WVE files
-  o Pseudo-file fomats that allow direct playing/recording from audio devices
-  o Pseudo-nul file that reads and writes from/to nowhere
-
-The sound effects include:
-
-  o Channel Averaging
-  o Band-pass filters
-  o Band-reject filter
-  o Chorus effect
-  o DCShift audio
-  o Move sound stage of CD audio to in front of you (for headphone use)
-  o Add an echo 
-  o Add a sequence of echos
-  o Fade in and out
-  o Apply a flanger effect
-  o Apply a high-pass filter
-  o Apply a low-pass filter
-  o Pan sound between channels
-  o Change the pitch of a sound file
-  o Display a list of loops in a file
-  o Add masking noise to a signal
-  o Apply a phaser effect
-  o Convert from stereo to mono
-  o Change sampling rates using several different algorithms.
-  o Apply a reverb effect
-  o Reverse the sound samples
-  o Trim off silence from the beginning of end of a file.
-  o Change the speed of samples being played
-  o Convert from mono to stereo
-  o Display general stats on a sound sample
-  o Stretch/shorten the duration of a sound file.
-  o Swap stereo channels
-  o Create sounds with a simple synthesizer.
-  o Trim audio data from beginning and end of file.
-  o Add the world-famous Fender Vibro-Champ effect
-  o Adjust volume of samples
-
-Available flavors that add support for additional file formats:
-
-  o gsm     GSM lossy speech compression
-  o vorbis  Ogg Vorbis compressed audio
+SoX is intended as the Swiss Army knife of sound processing tools.
+It doesn't do anything very well, but sooner or later it comes in
+very handy.
 
 WWW: ${HOMEPAGE}

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2001/12/31 09:45:55 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2002/01/17 00:25:51 naddy Exp $
 
 COMMENT=	"SOund eXchange - universal sound sample translator"
 
-DISTNAME=	sox-12.17.2
+DISTNAME=	sox-12.17.3
 CATEGORIES=	audio
 NEED_VERSION=	1.504
 HOMEPAGE=	http://sox.sourceforge.net/
@@ -19,23 +19,14 @@ MASTER_SITE_SUBDIR=	sox
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
-AUTOCONF_NEW=Yes
-CONFIGURE_ARGS=	--enable-fast-alaw --enable-fast-ulaw \
-		--without-sun_audio
+AUTOCONF_NEW=	Yes
+CONFIGURE_ARGS=	--without-sun_audio
 
-FLAVORS=	gsm vorbis
+FLAVORS=	vorbis
 FLAVOR?=
 
-.if ${FLAVOR:L:Mgsm}
-LIB_DEPENDS+=	gsm.1::audio/gsm
-CONFIGURE_ARGS+= --with-gsminc="${LOCALBASE}/include" \
-		 --with-gsmlib="${LOCALBASE}/lib"
-.else
-CONFIGURE_ARGS+= --with-gsminc=no
-.endif
-
 .if ${FLAVOR:L:Mvorbis}
-LIB_DEPENDS+=	vorbis.0,vorbisenc.0,vorbisfile.1::audio/libvorbis
+LIB_DEPENDS+=	vorbis.1,vorbisenc.1,vorbisfile.2::audio/libvorbis
 CONFIGURE_ARGS+= --with-ogg-vorbisinc="${LOCALBASE}/include" \
 		 --with-ogg-vorbislib="${LOCALBASE}/lib"
 .else
