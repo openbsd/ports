@@ -1,0 +1,11 @@
+--- ltconfig.orig	Tue Jun 15 09:29:16 1999
++++ ltconfig	Tue Jun 15 09:29:52 1999
+@@ -1378,7 +1378,7 @@
+ aix*)
+   symcode='[BCDTU]'
+   ;;
+-sunos* | cygwin32* | mingw32*)
++sunos* | cygwin32* | mingw32* | openbsd*)
+   sympat='_\([_A-Za-z][_A-Za-z0-9]*\)'
+   symxfrm='_\1 \1'
+   ;;
