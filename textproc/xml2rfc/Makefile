@@ -1,12 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2001/03/08 19:32:22 jakob Exp $
-#
+# $OpenBSD: Makefile,v 1.14 2001/03/30 14:49:37 jakob Exp $
+
+COMMENT=	convert memos written in XML to the RFC format
 
 VERSION=	1.2
 DISTNAME=	xml2rfc.${VERSION}
 PKGNAME=	xml2rfc-${VERSION}
 CATEGORIES=	textproc
-NEED_VERSION=	1.230
+NEED_VERSION=	1.363
+
 MASTER_SITES=	http://xml.resource.org/authoring/
+
+HOMEPAGE=	http://xml.resource.org/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
