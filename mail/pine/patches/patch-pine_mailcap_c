@@ -1,7 +1,7 @@
-$OpenBSD: patch-pine_mailcap_c,v 1.1 2002/12/01 20:57:10 jakob Exp $
---- pine/mailcap.c.orig	Mon Nov 18 22:47:22 2002
-+++ pine/mailcap.c	Sun Dec  1 15:17:46 2002
-@@ -921,14 +921,18 @@ mc_cmd_bldr(controlstring, type, subtype
+$OpenBSD: patch-pine_mailcap_c,v 1.2 2003/05/30 20:44:34 brad Exp $
+--- pine/mailcap.c.orig	Mon Apr 28 21:10:42 2003
++++ pine/mailcap.c	Fri May 30 16:41:24 2003
+@@ -919,14 +919,18 @@ mc_cmd_bldr(controlstring, type, subtype
  		     * have to put those outside of the single quotes.
  		     * (The parm+1000 nonsense is to protect against
  		     * malicious mail trying to overlow our buffer.)
