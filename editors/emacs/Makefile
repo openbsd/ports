@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2003/07/06 17:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2003/07/18 13:58:09 brad Exp $
 
 COMMENT=	"GNU editor"
 COMMENT-el=	"elisp sources for those who want to read/modify them"
@@ -30,7 +30,7 @@ FLAVOR?=
 
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ARGS=	${GCCARCH} --with-pop
-CONFIGURE_ENV=	LDFLAGS="${ELF_TOOLCHAIN:S/yes/-Z/:S/no//}"
+CONFIGURE_ENV=	LDFLAGS="${ELF_TOOLCHAIN:L:S/yes/-Z/:S/no//}"
 
 GCCARCH=	${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/07/06 15:35:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2003/07/18 13:58:09 brad Exp $
 
 COMMENT=		"GNU editor: extensible, customizable, self documenting"
 COMMENT-el=		"elisp sources for those who want to read/modify them"
@@ -36,7 +36,7 @@ CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS=		${GCCARCH} --with-pop
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 				  -I${LOCALBASE}/include/libpng" \
-			LDFLAGS="${ELF_TOOLCHAIN:S/yes/-Z/:S/no//} \
+			LDFLAGS="${ELF_TOOLCHAIN:L:S/yes/-Z/:S/no//} \
 				 -L${LOCALBASE}/lib"
 
 SUBST_VARS=		GCCARCH VERSION
