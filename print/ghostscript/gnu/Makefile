@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2002/03/21 21:25:50 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2002/03/24 01:08:25 brad Exp $
 
 COMMENT="GNU PostScript interpreter"
 
@@ -9,12 +9,13 @@ NEED_VERSION=	1.515
 
 DIR=		gnu/gs${VERSION:S/.//}
 MASTER_SITES=	${GS_SITES} ${MASTER_SITE_GNU}
-MASTER_SITES1= ${PDF_SITES}
+MASTER_SITES1=	${MASTER_SITE_GNU}
+MASTER_SITES2=	${PDF_SITES}
 
 HOMEPAGE=	http://www.cs.wisc.edu/~ghost/
 
 MASTER_SITE_SUBDIR=     ghostscript
-DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} pdf_sec.ps:1
+DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD}:1 pdf_sec.ps:2
 
 SUBST_VARS=		OSREV	VERSION
 DIST_SUBDIR=	gs
@@ -50,7 +51,7 @@ BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 		GLGENDIR=./objects \
 		PSOBJDIR=./objects \
 		PSGENDIR=./objects \
-		STDLIBS='-lc_r -lm' 
+		STDLIBS='-pthread -lm' 
 
 PDFDIR=share/ghostscript/${VERSION}/lib
 
@@ -107,7 +108,7 @@ GS_SOURCES=	ghostscript-${VERSION}.tar.gz
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
 #  unless the files really change.
-GS_FONTS_STD=	ghostscript-fonts-std-6.0.tar.gz
+GS_FONTS_STD=	gnu-gs-fonts-std-6.0.tar.gz
 
 # Additional driver HP 850, see http://www.erdw.ethz.ch/~bonk/hp850/hp850.html
 HP850_DRV=	hp8xxs13.zip
@@ -115,8 +116,8 @@ HP850_DRV=	hp8xxs13.zip
 # The pdf_sec.ps non-stub version has been moved to a separate package
 
 FLAVORS=A4
-
 FLAVOR?=
+
 .if ${FLAVOR:U} == "A4"
 CFLAGS+=	-DA4
 .endif
@@ -136,14 +137,14 @@ pre-build:
 	mkdir -p ${WRKBUILD}/bin
 
 pre-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/ghostscript 
-	@${INSTALL_PROGRAM_DIR} ${PREFIX}/bin 
-	@${INSTALL_MAN_DIR} ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/ghostscript 
+	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin 
+	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 	cd ${PREFIX}/share/ghostscript  && \
 			tar xzf ${FULLDISTDIR}/${GS_FONTS_STD}
 
 post-install:
-	strip ${PREFIX}/bin/gs
+	@strip ${PREFIX}/bin/gs
 	${INSTALL_DATA} ${FULLDISTDIR}/pdf_sec.ps ${PREFIX}/${PDFDIR}
 
 .include <bsd.port.mk>

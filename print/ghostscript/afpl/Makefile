@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/03/21 21:25:50 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/24 01:08:24 brad Exp $
 
 COMMENT="AFPL PostScript interpreter"
 
@@ -53,7 +53,7 @@ BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 		GLGENDIR=./objects \
 		PSOBJDIR=./objects \
 		PSGENDIR=./objects \
-		STDLIBS='-lc_r -lm' 
+		STDLIBS='-pthread -lm' 
 
 PDFDIR=share/ghostscript/${VERSION}/lib
 
