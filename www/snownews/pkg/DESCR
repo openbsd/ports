@@ -1,4 +1,6 @@
-Snownews is a text mode RSS newsreader.
+Snownews is a text mode RSS newsreader.  It supports RSS 1.0 feeds that
+comply with the W3C RDF specification and also supports Radio Userland's
+RSS 0.91 and 2.0 versions.
 
 Here are some feeds to get you started:
 
