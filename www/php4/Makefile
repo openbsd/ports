@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/15 14:50:16 jakob Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/17 20:33:39 jakob Exp $
 
 DISTNAME=	php-4.0.3pl1
 PKGNAME=	php4-4.0.3pl1
@@ -84,7 +84,7 @@ CONFIGURE_ARGS+=	--without-ldap
 
 .if ${FLAVOR:L:Mmhash}
 CONFIGURE_ARGS+=	--with-mhash
-BUILD_DEPENDS+=		${PREFIX}/lib/libmhash.a::devel/mhash
+BUILD_DEPENDS+=		${PREFIX}/lib/libmhash.a::security/mhash
 .else
 CONFIGURE_ARGS+=	--without-mhash
 .endif
