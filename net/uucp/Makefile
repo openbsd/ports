@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2003/12/14 01:39:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2004/12/13 22:33:07 alek Exp $
 
 COMMENT=	"UUCP suite"
 
 DISTNAME=	uucp-1.07
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net mail
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c 
 
 MASTER_SITES=	${MASTER_SITE_GNU:=uucp/}
 
@@ -22,6 +24,16 @@ post-extract:
 	@rm ${WRKSRC}/uucp.info*
 
 SAMPLES=	call config dial dialcode passwd port sys1 sys2
+
+pre-build:
+	@perl -pi -e "s,/usr/local/conf/uucp,${SYSCONFDIR}/uucp,g" \
+		${WRKSRC}/sample/* ${WRKSRC}/uucp.texi
+	@perl -pi -e "s,/usr/spool/uucp,/var/spool/uucp,g" \
+		${WRKSRC}/sample/* ${WRKSRC}/uucp.texi
+	@perl -pi -e "s,/usr/spool/anonymous,/var/spool/anonymous,g" \
+		${WRKSRC}/sample/config ${WRKSRC}/uucp.texi
+	@perl -pi -e "s,/usr/lib/uucp/uucico,${PREFIX}/libexec/uucp/uucico,g" \
+		${WRKSRC}/uucp.texi
 
 post-install:
 	@mv ${PREFIX}/libexec/uucp/uusched ${PREFIX}/bin
