@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/02/18 15:53:18 couderc Exp $
+# $OpenBSD: Makefile,v 1.12 2003/02/19 14:41:01 couderc Exp $
 
 COMMENT=		"Fast and light gtk-based web browser"
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=    jpeg.62::graphics/jpeg \
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--enable-cookies
+CONFIGURE_ARGS=		--enable-cookies --enable-ipv6
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

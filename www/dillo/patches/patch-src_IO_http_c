@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_IO_http_c,v 1.4 2003/02/18 15:53:18 couderc Exp $
---- src/IO/http.c.orig	Tue Feb 18 17:30:49 2003
-+++ src/IO/http.c	Tue Feb 18 17:31:23 2003
+$OpenBSD: patch-src_IO_http_c,v 1.5 2003/02/19 14:41:02 couderc Exp $
+--- src/IO/http.c.orig	Sun Jan 12 01:30:30 2003
++++ src/IO/http.c	Wed Feb 19 16:24:51 2003
 @@ -43,7 +43,6 @@
     (a_Web_valid(web) && (!(root) || (web)->flags & WEB_RootUrl)) ? \
     a_Interface_msg((web)->bw, fmt) : (root)
@@ -9,3 +9,38 @@ $OpenBSD: patch-src_IO_http_c,v 1.4 2003/02/18 15:53:18 couderc Exp $
  #include "../debug.h"
  
  
+@@ -246,7 +245,7 @@ static int Http_connect_socket(ChainLink
+ {
+    gint status;
+ #ifdef ENABLE_IPV6
+-   struct sockaddr_storage name;
++   struct sockaddr_in6 name;
+ #else
+    struct sockaddr_in name;
+ #endif
+@@ -274,6 +273,7 @@ static int Http_connect_socket(ChainLink
+    {
+       struct sockaddr_in *sin = (struct sockaddr_in *)&name;
+       sin->sin_family = dh->af;
++      sin->sin_len = sizeof(struct sockaddr_in);
+       sin->sin_port = S->port ? htons(S->port) : htons(DILLO_URL_HTTP_PORT);
+       memcpy(&sin->sin_addr, dh->data, dh->alen);
+       if (a_Web_valid(S->web) && (S->web->flags & WEB_RootUrl))
+@@ -286,6 +286,7 @@ static int Http_connect_socket(ChainLink
+       char buf[128];
+       struct sockaddr_in6 *sin6 = (struct sockaddr_in6 *)&name;
+       sin6->sin6_family = dh->af;
++      sin6->sin6_len = sizeof(struct sockaddr_in6);
+       sin6->sin6_port = S->port ? htons(S->port) : htons(DILLO_URL_HTTP_PORT);
+       memcpy(&sin6->sin6_addr, dh->data, dh->alen);
+       inet_ntop(dh->af, dh->data, buf, sizeof(buf));
+@@ -300,7 +301,8 @@ static int Http_connect_socket(ChainLink
+       S->GioCh = g_io_channel_unix_new(S->SockFD);
+    g_io_add_watch(S->GioCh, G_IO_ERR | G_IO_HUP | G_IO_OUT,
+                   Http_use_socket, Info->LocalKey);
+-   status = connect(S->SockFD, (struct sockaddr *)&name, sizeof(name));
++   status = connect(S->SockFD, (struct sockaddr *)&name,
++                  ((struct sockaddr *)&name)->sa_len);
+    if ( status == -1 && errno != EINPROGRESS ) {
+       S->Err = errno;
+       return -1;
