@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/11/15 15:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2004/11/12 23:59:54 alek Exp $
 
 COMMENT=	"graphical front end to Unix diff"
 
@@ -18,6 +18,8 @@ USE_MOTIF=	any
 CONFIGURE_STYLE= imake
 
 NO_REGRESS=	Yes
+
+SUBST_VARS=	X11BASE
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/mgdiff
