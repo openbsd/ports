@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/12/23 00:37:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2005/01/02 01:07:49 alek Exp $
 
 COMMENT=	"server: allow users to change password from within Eudora"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
+WANTLIB=		c
 
 EXTRACT_CASES= pwserve-4) ${_PERL_FIX_SHAR} ${FULLDISTDIR}/$$archive | /bin/sh;;
 

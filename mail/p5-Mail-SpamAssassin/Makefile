@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/12/28 21:03:51 sturm Exp $
+# $OpenBSD: Makefile,v 1.33 2005/01/02 01:07:48 alek Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=		${MASTER_SITE_APACHE:=spamassassin/}
 
