@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/22 15:43:19 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 03:22:31 lebel Exp $
+
+COMMENT=	"qt home accounting program"
 
 DISTNAME=	qhacc-0.6.1a
 CATEGORIES=	productivity x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 HOMEPAGE=	http://www.ostrich-emulators.cx/~ryan/qhacc/
 MASTER_SITES=	${HOMEPAGE} \
 		ftp://ftp.ostrich-emulators.cx/qhacc/
