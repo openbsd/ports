@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 1999/04/07 18:53:21 rohee Exp $
+# $OpenBSD: Makefile,v 1.7 1999/04/20 17:58:39 rohee Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
-DISTNAME=       procmail-3.12
+DISTNAME=       procmail-3.13.1
 CATEGORIES=	mail
 #NO_CDROM=	"NOFEE:	Can not sell" # is GPLed as of version 3.12
 
@@ -16,18 +16,5 @@ MAINTAINER=     rohee@OpenBSD.ORG
 .if !defined(PACKAGE_BUILDING) # handled in patch-aa
 IS_INTERACTIVE=	yes
 .endif
-
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "Some security vulnerabilities has been discovered in this"
-	@${ECHO} "package during the making of the OpenBSD 2.5 CDROMs."
-	@${ECHO} ""
-	@${ECHO} "You can update this port using CVS to a version with the"
-	@${ECHO} "vulnerabilities fixed."
-	@${ECHO} "To learn how to use CVS to update your port tree check"
-	@${ECHO} "    http://www.OpenBSD.ORG/anoncvs.html"
-	@${ECHO} "and then do : cd /usr ; cvs get ports/mail/procmail"
-	@${ECHO} ""
-	@${FALSE} 
 
 .include <bsd.port.mk>
