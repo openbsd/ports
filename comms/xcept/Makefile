@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2000/06/14 22:22:28 angelos Exp $
+# $OpenBSD: Makefile,v 1.12 2000/09/03 04:10:43 turan Exp $
+
+BROKEN=		does not fake and install correctly
 
 DISTNAME=       xcept-2.1.2
 CATEGORIES=	comms
