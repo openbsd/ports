@@ -1,11 +1,11 @@
---- packet.c.orig	Wed May 19 19:05:21 1999
-+++ packet.c	Tue May 25 14:53:13 1999
-@@ -625,7 +625,7 @@
- 		case DLT_PPP :
- 			dissect_ppp(pd, fd, tree);
- 			break;
--		case DLT_RAW :
-+		case DLT_LOOP :
- 			dissect_raw(pd, fd, tree);
- 			break;
- 	}
+--- capture.c.orig	Thu Aug  5 12:15:47 1999
++++ capture.c	Thu Aug  5 19:40:35 1999
+@@ -671,6 +671,8 @@
+     case DLT_PPP :
+       capture_ppp(pd, phdr->caplen, &ld->counts);
+       break;
++    case DLT_ENC :
++    case DLT_LOOP :
+     case DLT_RAW :
+       capture_raw(pd, phdr->caplen, &ld->counts);
+       break;
