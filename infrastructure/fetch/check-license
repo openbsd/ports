@@ -1,8 +1,8 @@
 #! /bin/sh
 #
-# $OpenBSD: check-license,v 1.4 2003/06/12 22:13:41 marc Exp $
+# $OpenBSD: check-license,v 1.5 2003/06/12 22:30:28 marc Exp $
 #
-# PUBLIC DOMAIN -- Marco S Hyman -- <marc@snadfu.org>
+# PUBLIC DOMAIN -- Marco S Hyman -- <marc@snafu.org>
 #
 # This script verifies that all files in a given directory are
 # mentioned in the ports LICENSE file as Distribution allowed.
