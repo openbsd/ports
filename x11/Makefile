@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1998/03/18 22:46:25 marc Exp $
+# $OpenBSD: Makefile,v 1.12 1998/04/13 02:20:09 marc Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -27,7 +27,7 @@
 #    SUBDIR += fbsd-icons
 #    SUBDIR += filerunner
      SUBDIR += freefonts
-     SUBDIR += fvwm
+#    SUBDIR += fvwm
      SUBDIR += fvwm2
 #    SUBDIR += fvwm2-english
 #    SUBDIR += fvwm95
