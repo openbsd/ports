@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2003/12/15 15:49:08 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/04/22 02:56:10 naddy Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/tar.info
 bin/gtar
 info/tar.info
@@ -8,57 +8,45 @@ share/locale/da/LC_MESSAGES/tar.mo
 share/locale/de/LC_MESSAGES/tar.mo
 share/locale/es/LC_MESSAGES/tar.mo
 share/locale/et/LC_MESSAGES/tar.mo
+share/locale/fi/LC_MESSAGES/tar.mo
 share/locale/fr/LC_MESSAGES/tar.mo
+share/locale/gl/LC_MESSAGES/tar.mo
+share/locale/hr/LC_MESSAGES/tar.mo
+share/locale/hu/LC_MESSAGES/tar.mo
 share/locale/id/LC_MESSAGES/tar.mo
 share/locale/it/LC_MESSAGES/tar.mo
 share/locale/ja/LC_MESSAGES/tar.mo
 share/locale/ko/LC_MESSAGES/tar.mo
+share/locale/ms/LC_MESSAGES/tar.mo
+share/locale/nb/LC_MESSAGES/tar.mo
 share/locale/nl/LC_MESSAGES/tar.mo
-share/locale/no/LC_MESSAGES/tar.mo
 share/locale/pl/LC_MESSAGES/tar.mo
 share/locale/pt/LC_MESSAGES/tar.mo
 share/locale/pt_BR/LC_MESSAGES/tar.mo
+share/locale/ro/LC_MESSAGES/tar.mo
 share/locale/ru/LC_MESSAGES/tar.mo
+share/locale/sk/LC_MESSAGES/tar.mo
 share/locale/sl/LC_MESSAGES/tar.mo
 share/locale/sv/LC_MESSAGES/tar.mo
 share/locale/tr/LC_MESSAGES/tar.mo
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/id/LC_MESSAGES
-@dirrm share/locale/id
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/et/LC_MESSAGES
-@dirrm share/locale/et
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale
+share/locale/zh_CN/LC_MESSAGES/tar.mo
+share/locale/zh_TW/LC_MESSAGES/tar.mo
+@dirrm share/locale/zh_TW/LC_MESSAGES
+@dirrm share/locale/zh_TW
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/zh_CN
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/locale/nb/LC_MESSAGES
+@dirrm share/locale/nb
+@dirrm share/locale/ms/LC_MESSAGES
+@dirrm share/locale/ms
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/hr/LC_MESSAGES
+@dirrm share/locale/hr
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
 @exec install-info --info-dir=%D/info %D/info/tar.info

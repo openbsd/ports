@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2003/05/24 01:38:08 jolan Exp $
+# $OpenBSD: Makefile,v 1.28 2004/04/22 02:56:10 naddy Exp $
 
 COMMENT=	"GNU version of the traditional tar archiver"
 
-DISTNAME=	tar-1.13.25
-PKGNAME=	g${DISTNAME}p1
+DISTNAME=	tar-1.13.94
+PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/tar/ \
-		ftp://ftp.sunsite.org.uk/Mirrors/alpha.gnu.org/gnu/tar/ \
 		ftp://ftp.funet.fi/pub/mirrors/alpha.gnu.org/gnu/tar/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -17,17 +16,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+EXTRACT_SUFX=	.tar.bz2
+
 MODULES=	gettext
-RUN_DEPENDS+=	:bzip2-*:archivers/bzip2
+RUN_DEPENDS=	:bzip2-*:archivers/bzip2
 
-SEPARATE_BUILD=	flavored
-
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${LDSTATIC}" \
-		DEFAULT_ARCHIVE="/dev/rst0" \
-		MAKEINFO="makeinfo --no-split"
+		DEFAULT_ARCHIVE="/dev/rst0"
 
 FLAVORS=	static
 FLAVOR?=
