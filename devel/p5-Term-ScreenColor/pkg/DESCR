@@ -1,0 +1,5 @@
+Term::ScreenColor adds ANSI coloring support, along with
+a few other useful methods, to the objects provided in
+Term::Screen.
+
+WWW: ${HOMEPAGE}
