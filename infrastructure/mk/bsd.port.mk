@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.597 2004/01/06 16:27:11 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.598 2004/01/11 00:49:01 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -515,6 +515,10 @@ _MODULES_DONE=
 .  include "${PORTSDIR}/infrastructure/mk/modules.port.mk"
 .endif
 
+###
+### Variable setup that can happen after modules
+###
+
 REGRESS_TARGET ?= regress
 REGRESS_FLAGS ?= ${MAKE_FLAGS}
 
@@ -525,32 +529,10 @@ _PACKAGE_COOKIE_DEPS=${_INSTALL_COOKIE}
 .endif
 
 _PACKAGE_COOKIES= ${_PACKAGE_COOKIE}
-.if ${BIN_PACKAGES:L} == "yes"
-${_PACKAGE_COOKIE}:
-	@cd ${.CURDIR} && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS}
-.else
-${_PACKAGE_COOKIE}: ${_PACKAGE_COOKIE_DEPS}
-.endif
-	@cd ${.CURDIR} && SUBPACKAGE='' FLAVOR='${FLAVOR}' PACKAGING='' exec ${MAKE} _package
-.if !defined(PACKAGE_NOINSTALL)
-	@${_MAKE_COOKIE} $@
-.endif
-
 .for _s in ${MULTI_PACKAGES}
 _PACKAGE_COOKIE${_s} = ${PKGFILE${_s}}
 _PACKAGE_COOKIES += ${_PACKAGE_COOKIE${_s}}
-.  if ${BIN_PACKAGES:L} == "yes"
-${_PACKAGE_COOKIE${_s}}:
-	@cd ${.CURDIR} && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS}
-.  else
-${_PACKAGE_COOKIE${_s}}: ${_PACKAGE_COOKIE_DEPS}
-.  endif
-	@cd ${.CURDIR} && SUBPACKAGE='${_s}' FLAVOR='${FLAVOR}' PACKAGING='${_s}' exec ${MAKE} _package
 .endfor
-
-.PRECIOUS: ${_PACKAGE_COOKIES} ${_INSTALL_COOKIE}
-
-.include "${PORTSDIR}/infrastructure/mk/pkgpath.mk"
 
 .if empty(SUBPACKAGE)
 FULLPKGPATH=${PKGPATH}${_FLAVOR_EXT2:S/-/,/g}
@@ -588,7 +570,7 @@ _INSTALL_MACROS=	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 MAKE_ENV+=	${_INSTALL_MACROS}
 SCRIPTS_ENV+=	${_INSTALL_MACROS}
 
-# setup systrace
+# setup systrace variables
 NO_SYSTRACE?=	No
 .if ${USE_SYSTRACE:L} == "yes" && ${NO_SYSTRACE:L} == "no"
 _SYSTRACE_CMD?=	/bin/systrace -i -a -f ${_SYSTRACE_COOKIE}
@@ -601,13 +583,6 @@ _SYSTRACE_POLICIES+=	/bin/sh /usr/bin/env /usr/bin/make \
 SYSTRACE_SUBST_VARS+=	WRKDIR PORTSDIR DISTDIR
 .for _v in ${SYSTRACE_SUBST_VARS}
 _SYSTRACE_SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
-.endfor
-
-${_SYSTRACE_COOKIE}:
-	@rm -f $@
-.for _i in ${_SYSTRACE_POLICIES}
-	@echo "Policy: ${_i}, Emulation: native" >> $@
-	@sed ${_SYSTRACE_SED_SUBST} ${SYSTRACE_FILTER} >> $@
 .endfor
 
 # Create the generic variable substitution list, from subst vars
@@ -653,65 +628,14 @@ _COMMENT=${COMMENT${SUBPACKAGE}${FLAVOR_EXT}}
 _COMMENT=${COMMENT${SUBPACKAGE}}
 .endif
 
-${WRKPKG}/COMMENT${SUBPACKAGE}:
-.if defined(_COMMENT)
-	@echo ${_COMMENT} >$@
-.else
-ERRORS+="Fatal: Missing comment."
-.endif
-
 .if exists(${PKGDIR}/MESSAGE${SUBPACKAGE})
 MESSAGE?= ${PKGDIR}/MESSAGE${SUBPACKAGE}
 .endif
 
 DESCR?=		${PKGDIR}/DESCR${SUBPACKAGE}
 
-# And create the actual files from sources
-${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST} ${WRKPKG}/depends${SUBPACKAGE}
-	@echo "@comment subdir=${FULLPKGPATH} cdrom=${PERMIT_PACKAGE_CDROM:L} ftp=${PERMIT_PACKAGE_FTP:L}" >$@.tmp
-	@sort -u <${WRKPKG}/depends${SUBPACKAGE}>>$@.tmp
-.if defined(NO_SHARED_LIBS)
-	@sed -e '/^!%%SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
-		-e '/^%%!SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
-		-e '//d' -e '/^%%SHARED%%$$/d' <${PLIST} \
-		${SED_PLIST} >>$@.tmp && mv -f $@.tmp $@
-.else
-	@if [ -x /sbin/ldconfig ]; then \
-		sed -e '/^!%%SHARED%%$$/d' \
-			-e '/^%%!SHARED%%$$/d' \
-			-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' \
-			-e '//d' <${PLIST} ${SED_PLIST} \
-			| sed -f ${LDCONFIG_SED_SCRIPT} >>$@.tmp && mv -f $@.tmp $@; \
-	else \
-		sed -e '/^!%%SHARED%%$$/d' \
-			-e '/^%%!SHARED%%$$/d' \
-			-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' \
-			-e '//d' <${PLIST} \
-			${SED_PLIST} >>$@.tmp && mv -f $@.tmp $@; \
-	fi
-.endif
-
-${WRKPKG}/depends${SUBPACKAGE}:
-	@mkdir -p ${WRKPKG}
-	@>$@
-.if (defined(RUN_DEPENDS) && !empty(RUN_DEPENDS)) || (!defined(NO_SHARED_LIBS) && defined(LIB_DEPENDS) && !empty(LIB_DEPENDS))
-	@${_depfile_fragment}; \
-	echo "|${FULLPKGNAME${SUBPACKAGE}}|" >>$${_DEPENDS_FILE}; \
-	self=${FULLPKGNAME${SUBPACKAGE}} _depends_result=$@ ${MAKE} _solve-package-depends
-.endif
-
 MTREE_FILE?=
 MTREE_FILE+=${PORTSDIR}/infrastructure/db/fake.mtree
-
-${WRKPKG}/DESCR${SUBPACKAGE}: ${DESCR}
-	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
-	@echo "\nMaintainer: ${MAINTAINER}" >>$@
-.if defined(HOMEPAGE)
-	@fgrep -q '$${HOMEPAGE}' $? || echo "\nWWW: ${HOMEPAGE}" >>$@
-.endif
-
-${WRKPKG}/mtree.spec: ${MTREE_FILE}
-	@${_SED_SUBST} ${MTREE_FILE}>$@.tmp && mv -f $@.tmp $@
 
 # Fill out package command, and package dependencies
 _PKG_PREREQ= ${WRKPKG}/PLIST${SUBPACKAGE} ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}/COMMENT${SUBPACKAGE}
@@ -722,30 +646,25 @@ PKG_ARGS+=-f ${WRKPKG}/PLIST${SUBPACKAGE} -p ${PREFIX}
 .  if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
 PKG_ARGS+=		-i ${WRKPKG}/INSTALL${SUBPACKAGE}
 _PKG_PREREQ+=${WRKPKG}/INSTALL${SUBPACKAGE}
-${WRKPKG}/INSTALL${SUBPACKAGE}: ${PKGDIR}/INSTALL${SUBPACKAGE}
-	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
 .  endif
 .  if exists(${PKGDIR}/DEINSTALL${SUBPACKAGE})
 PKG_ARGS+=		-k ${WRKPKG}/DEINSTALL${SUBPACKAGE}
 _PKG_PREREQ+=${WRKPKG}/DEINSTALL${SUBPACKAGE}
-${WRKPKG}/DEINSTALL${SUBPACKAGE}: ${PKGDIR}/DEINSTALL${SUBPACKAGE}
-	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
 .  endif
 .  if exists(${PKGDIR}/REQ${SUBPACKAGE})
 PKG_ARGS+=		-r ${WRKPKG}/REQ${SUBPACKAGE}
 _PKG_PREREQ+=${WRKPKG}/REQ${SUBPACKAGE}
-${WRKPKG}/REQ${SUBPACKAGE}: ${PKGDIR}/REQ${SUBPACKAGE}
-	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
 .  endif
 .  if defined(MESSAGE)
 PKG_ARGS+=		-D ${WRKPKG}/MESSAGE${SUBPACKAGE}
 _PKG_PREREQ+=${WRKPKG}/MESSAGE${SUBPACKAGE}
-${WRKPKG}/MESSAGE${SUBPACKAGE}: ${MESSAGE}
-	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
 .  endif
 .endif
 .if ${FAKE:L} == "yes"
 PKG_ARGS+=		-S ${WRKINST}
+.endif
+.if !defined(_COMMENT)
+ERRORS+="Fatal: Missing comment."
 .endif
 
 CHMOD?=		/bin/chmod
@@ -1038,43 +957,9 @@ DEPENDS_TARGET=	install
 .  endif
 .endif
 
-makesum: fetch-all
-.if !defined(NO_CHECKSUM)
-	@rm -f ${CHECKSUM_FILE}
-	@cd ${DISTDIR} && \
-		for cipher in ${_CIPHERS}; do \
-			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
-	 done
-	@for file in ${_IGNOREFILES}; do \
-		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
-	done
-	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
-.endif
-
-
-addsum: fetch-all
-.if !defined(NO_CHECKSUM)
-	@touch ${CHECKSUM_FILE}
-	@cd ${DISTDIR} && \
-	 	for cipher in ${_CIPHERS}; do \
-			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
-	 done
-	@for file in ${_IGNOREFILES}; do \
-		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
-	done
-	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
-	@if [ `sed -e 's/\=.*$$//' ${CHECKSUM_FILE} | uniq -d | wc -l` -ne 0 ]; then \
-		echo "Inconsistent checksum in ${CHECKSUM_FILE}"; \
-		exit 1; \
-	else \
-		${ECHO_MSG} "${CHECKSUM_FILE} updated okay, don't forget to remove cruft"; \
-	fi
-.endif
-
 ################################################################
 # Dependency checking
 ################################################################
-
 
 # Various dependency styles
 
@@ -1113,12 +998,239 @@ _lib_depends_fragment = \
 		esac; \
 	done; $$bad || found=true
 
+_FULL_PACKAGE_NAME?=No
+
+.for _DEP in build run lib regress
+_DEP${_DEP}_COOKIES=
+.  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
+.    for _i in ${${_DEP:U}_DEPENDS}
+_DEP${_DEP}_COOKIES+=${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}
+.    endfor
+.  endif
+.endfor
+
+# Normal user-mode targets are PHONY targets, e.g., don't create the
+# corresponding file. However, there is nothing phony about the cookie.
+
+_INSTALL_DEPS=${_INSTALL_COOKIE}
+_PACKAGE_DEPS=${_PACKAGE_COOKIES}
+.if defined(ALWAYS_PACKAGE)
+_INSTALL_DEPS+=${_PACKAGE_COOKIES}
+.endif
+.if ${BULK:L} == "yes"
+_INSTALL_DEPS+=${_BULK_COOKIE}
+_PACKAGE_DEPS+=${_BULK_COOKIE}
+.endif
+
+BULK_TARGETS?=
+
+MODSIMPLE_configure= \
+	cd ${WRKBUILD} && ${_SYSTRACE_CMD} ${SETENV} \
+		CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
+		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
+		ac_given_INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_MAN="${INSTALL_MAN}" \
+		INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}" \
+		YACC="${YACC}" \
+		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+
+VMEM_WARNING?=	No
+
+_FAKE_SETUP=TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} ${DESTDIRNAME}=${WRKINST}
+
+_CLEANDEPENDS?=Yes
+
+_tmpvars:=
+.  for _v in ${SUBST_VARS}
+_tmpvars += ${_v}='${${_v}}'
+.  endfor
+
+# mirroring utilities
+.if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
+_ALLFILES=${ALLFILES:S/^/${DIST_SUBDIR}\//}
+.else
+_ALLFILES=${ALLFILES}
+.endif
+
+_FMN=${PKGPATH}/${FULLPKGNAME}
+.if defined(MULTI_PACKAGES)
+.  for _S in ${MULTI_PACKAGES}
+_FMN+= ${PKGPATH}/${FULLPKGNAME${_S}}
+.  endfor
+.endif
+
+# Internal variables, used by dependencies targets
+# Only keep pkg:dir spec
+.if defined(LIB_DEPENDS)
+_ALWAYS_DEP2 = ${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_ALWAYS_DEP= ${_ALWAYS_DEP2:C/[^:]*://}
+.else
+_ALWAYS_DEP2=
+_ALWAYS_DEP=
+.endif
+
+.if defined(RUN_DEPENDS)
+_RUN_DEP2 = ${RUN_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_RUN_DEP = ${_RUN_DEP2:C/[^:]*://}
+.else
+_RUN_DEP2=
+_RUN_DEP=
+.endif
+
+
+.if defined(BUILD_DEPENDS)
+_BUILD_DEP2 = ${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_BUILD_DEP = ${_BUILD_DEP2:C/[^:]*://}
+.else
+_BUILD_DEP2=
+_BUILD_DEP=
+.endif
+
+_LIB_DEP2= ${LIB_DEPENDS}
+
+README_NAME?=	${TEMPLATES}/README.port
+
+.include "${PORTSDIR}/infrastructure/mk/pkgpath.mk"
+
+###
+### end of variable setup. Only targets now
+###
+
+.if ${BIN_PACKAGES:L} == "yes"
+${_PACKAGE_COOKIE}:
+	@cd ${.CURDIR} && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS}
+.else
+${_PACKAGE_COOKIE}: ${_PACKAGE_COOKIE_DEPS}
+.endif
+	@cd ${.CURDIR} && SUBPACKAGE='' FLAVOR='${FLAVOR}' PACKAGING='' exec ${MAKE} _package
+.if !defined(PACKAGE_NOINSTALL)
+	@${_MAKE_COOKIE} $@
+.endif
+
+.for _s in ${MULTI_PACKAGES}
+.  if ${BIN_PACKAGES:L} == "yes"
+${_PACKAGE_COOKIE${_s}}:
+	@cd ${.CURDIR} && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS}
+.  else
+${_PACKAGE_COOKIE${_s}}: ${_PACKAGE_COOKIE_DEPS}
+.  endif
+	@cd ${.CURDIR} && SUBPACKAGE='${_s}' FLAVOR='${FLAVOR}' PACKAGING='${_s}' exec ${MAKE} _package
+.endfor
+
+.PRECIOUS: ${_PACKAGE_COOKIES} ${_INSTALL_COOKIE}
+
+${_SYSTRACE_COOKIE}:
+	@rm -f $@
+.for _i in ${_SYSTRACE_POLICIES}
+	@echo "Policy: ${_i}, Emulation: native" >> $@
+	@sed ${_SYSTRACE_SED_SUBST} ${SYSTRACE_FILTER} >> $@
+.endfor
+
+
+# create the packing stuff from source
+${WRKPKG}/COMMENT${SUBPACKAGE}:
+	@echo ${_COMMENT} >$@
+
+${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST} ${WRKPKG}/depends${SUBPACKAGE}
+	@echo "@comment subdir=${FULLPKGPATH} cdrom=${PERMIT_PACKAGE_CDROM:L} ftp=${PERMIT_PACKAGE_FTP:L}" >$@.tmp
+	@sort -u <${WRKPKG}/depends${SUBPACKAGE}>>$@.tmp
+.if defined(NO_SHARED_LIBS)
+	@sed -e '/^!%%SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
+		-e '/^%%!SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
+		-e '//d' -e '/^%%SHARED%%$$/d' <${PLIST} \
+		${SED_PLIST} >>$@.tmp && mv -f $@.tmp $@
+.else
+	@if [ -x /sbin/ldconfig ]; then \
+		sed -e '/^!%%SHARED%%$$/d' \
+			-e '/^%%!SHARED%%$$/d' \
+			-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' \
+			-e '//d' <${PLIST} ${SED_PLIST} \
+			| sed -f ${LDCONFIG_SED_SCRIPT} >>$@.tmp && mv -f $@.tmp $@; \
+	else \
+		sed -e '/^!%%SHARED%%$$/d' \
+			-e '/^%%!SHARED%%$$/d' \
+			-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' \
+			-e '//d' <${PLIST} \
+			${SED_PLIST} >>$@.tmp && mv -f $@.tmp $@; \
+	fi
+.endif
+
+${WRKPKG}/depends${SUBPACKAGE}:
+	@mkdir -p ${WRKPKG}
+	@>$@
+.if (defined(RUN_DEPENDS) && !empty(RUN_DEPENDS)) || (!defined(NO_SHARED_LIBS) && defined(LIB_DEPENDS) && !empty(LIB_DEPENDS))
+	@${_depfile_fragment}; \
+	echo "|${FULLPKGNAME${SUBPACKAGE}}|" >>$${_DEPENDS_FILE}; \
+	self=${FULLPKGNAME${SUBPACKAGE}} _depends_result=$@ ${MAKE} _solve-package-depends
+.endif
+
+${WRKPKG}/DESCR${SUBPACKAGE}: ${DESCR}
+	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
+	@echo "\nMaintainer: ${MAINTAINER}" >>$@
+.if defined(HOMEPAGE)
+	@fgrep -q '$${HOMEPAGE}' $? || echo "\nWWW: ${HOMEPAGE}" >>$@
+.endif
+
+${WRKPKG}/mtree.spec: ${MTREE_FILE}
+	@${_SED_SUBST} ${MTREE_FILE}>$@.tmp && mv -f $@.tmp $@
+
+# substitute 
+.for _subst_file in INSTALL DEINSTALL REQ
+.  if exists(${PKGDIR}/${_subst_file}${SUBPACKAGE})
+${WRKPKG}/${_subst_file}${SUBPACKAGE}: ${PKGDIR}/${_subst_file}${SUBPACKAGE}
+	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
+.  endif
+.endfor
+
+.if defined(MESSAGE)
+${WRKPKG}/MESSAGE${SUBPACKAGE}: ${MESSAGE}
+	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
+.endif
+
+makesum: fetch-all
+.if !defined(NO_CHECKSUM)
+	@rm -f ${CHECKSUM_FILE}
+	@cd ${DISTDIR} && \
+		for cipher in ${_CIPHERS}; do \
+			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
+	    done
+	@for file in ${_IGNOREFILES}; do \
+		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
+	done
+	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
+.endif
+
+
+addsum: fetch-all
+.if !defined(NO_CHECKSUM)
+	@touch ${CHECKSUM_FILE}
+	@cd ${DISTDIR} && \
+	 	for cipher in ${_CIPHERS}; do \
+			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
+	    done
+	@for file in ${_IGNOREFILES}; do \
+		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
+	done
+	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
+	@if [ `sed -e 's/\=.*$$//' ${CHECKSUM_FILE} | uniq -d | wc -l` -ne 0 ]; then \
+		echo "Inconsistent checksum in ${CHECKSUM_FILE}"; \
+		exit 1; \
+	else \
+		${ECHO_MSG} "${CHECKSUM_FILE} updated okay, don't forget to remove cruft"; \
+	fi
+.endif
+
+################################################################
+# Dependency checking
+################################################################
+
+
 
 depends: lib-depends build-depends run-depends regress-depends
 
 # and the rules for the actual dependencies
 
-_FULL_PACKAGE_NAME?=No
 _print-packagename:
 .if ${_FULL_PACKAGE_NAME:L} == "yes"
 	@echo '${PKGPATH}/${FULLPKGNAME${SUBPACKAGE}}'
@@ -1127,7 +1239,6 @@ _print-packagename:
 .endif
 
 .for _DEP in build run lib regress
-_DEP${_DEP}_COOKIES=
 .  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
 .    for _i in ${${_DEP:U}_DEPENDS}
 ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
@@ -1177,7 +1288,6 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 		done; \
 	}
 	@${_MAKE_COOKIE} $@
-_DEP${_DEP}_COOKIES+=${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}
 .    endfor
 .  endif
 ${_DEP}-depends: ${_DEP${_DEP}_COOKIES}
@@ -1346,19 +1456,6 @@ _refetch:
 	cd ${.CURDIR} && exec ${MAKE} checksum REFETCH=false
 
 
-# Normal user-mode targets are PHONY targets, e.g., don't create the
-# corresponding file. However, there is nothing phony about the cookie.
-
-_INSTALL_DEPS=${_INSTALL_COOKIE}
-_PACKAGE_DEPS=${_PACKAGE_COOKIES}
-.  if defined(ALWAYS_PACKAGE)
-_INSTALL_DEPS+=${_PACKAGE_COOKIES}
-.  endif
-.  if ${BULK:L} == "yes"
-_INSTALL_DEPS+=${_BULK_COOKIE}
-_PACKAGE_DEPS+=${_BULK_COOKIE}
-.  endif
-
 # The cookie's recipe hold the real rule for each of those targets.
 
 extract: ${_EXTRACT_COOKIE}
@@ -1385,8 +1482,6 @@ regress: ${_DEPregress_COOKIES} ${_REGRESS_COOKIE}
 .  endif
 
 .endif # IGNORECMD
-
-BULK_TARGETS?=
 
 ${_BULK_COOKIE}: ${_PACKAGE_COOKIES}
 	@mkdir -p ${BULK_COOKIES_DIR}
@@ -1531,17 +1626,6 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .endif
 
 
-MODSIMPLE_configure= \
-	cd ${WRKBUILD} && ${_SYSTRACE_CMD} ${SETENV} \
-		CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
-		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
-		ac_given_INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_MAN="${INSTALL_MAN}" \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}" \
-		YACC="${YACC}" \
-		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
-
 # The real configure
 
 ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
@@ -1569,8 +1653,6 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} post-configure
 .endif
 	@${_MAKE_COOKIE} $@
-
-VMEM_WARNING?=	No
 
 # The real build
 
@@ -1626,8 +1708,6 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 	@echo 1>&2 "No regression check for ${FULLPKGNAME}"
 .endif
 	@${_MAKE_COOKIE} $@
-
-_FAKE_SETUP=TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} ${DESTDIRNAME}=${WRKINST}
 
 .if ${FAKE:L} == "yes"
 ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
@@ -1775,8 +1855,6 @@ _delete-package-links:
 
 # Cleaning up
 
-_CLEANDEPENDS?=Yes
-
 clean:
 .if ${_clean:L:Mdepends} && ${_CLEANDEPENDS:L} == "yes"
 	@${MAKE} all-dir-depends|tsort -r|while read dir; do \
@@ -1849,10 +1927,6 @@ clean:
 # when port is installed or package created.
 #
 .if ${FAKE:L} == "yes"
-_tmp:=
-.  for _v in ${SUBST_VARS}
-_tmp += ${_v}='${${_v}}'
-.  endfor
 plist update-plist: fake ${_DEPrun_COOKIES}
 	@mkdir -p ${PKGDIR}
 	@DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} LDCONFIG="${LDCONFIG}" \
@@ -1864,7 +1938,7 @@ plist update-plist: fake ${_DEPrun_COOKIES}
 	PFRAG=${PKGDIR}/PFRAG \
 	FLAVORS='${FLAVORS}' MULTI_PACKAGES='${MULTI_PACKAGES}' \
 	OKAY_FILES='${_FAKE_COOKIE} ${_INSTALL_PRE_COOKIE}' \
-	perl ${PORTSDIR}/infrastructure/install/make-plist ${PKGDIR} ${_tmp}
+	perl ${PORTSDIR}/infrastructure/install/make-plist ${PKGDIR} ${_tmpvars}
 .endif
 
 update-patches:
@@ -1877,25 +1951,8 @@ update-patches:
 	cd ${PATCHDIR} && $${VISUAL:-$${EDITOR:-/usr/bin/vi}} $$toedit;; esac
 
 
-################################################################
-# The special package-building targets
-# You probably won't need to touch these
-################################################################
 
 # mirroring utilities
-.if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
-_ALLFILES=${ALLFILES:S/^/${DIST_SUBDIR}\//}
-.else
-_ALLFILES=${ALLFILES}
-.endif
-
-_FMN=${PKGPATH}/${FULLPKGNAME}
-.if defined(MULTI_PACKAGES)
-.  for _S in ${MULTI_PACKAGES}
-_FMN+= ${PKGPATH}/${FULLPKGNAME${_S}}
-.  endfor
-.endif
-
 fetch-makefile:
 .if !defined(COMES_WITH)
 	@echo -n "all"
@@ -1969,35 +2026,6 @@ _fetch-onefile:
 .endfor
 
 
-# Internal variables, used by dependencies targets
-# Only keep pkg:dir spec
-.if defined(LIB_DEPENDS)
-_ALWAYS_DEP2 = ${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_ALWAYS_DEP= ${_ALWAYS_DEP2:C/[^:]*://}
-.else
-_ALWAYS_DEP2=
-_ALWAYS_DEP=
-.endif
-
-.if defined(RUN_DEPENDS)
-_RUN_DEP2 = ${RUN_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_RUN_DEP = ${_RUN_DEP2:C/[^:]*://}
-.else
-_RUN_DEP2=
-_RUN_DEP=
-.endif
-
-
-.if defined(BUILD_DEPENDS)
-_BUILD_DEP2 = ${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_BUILD_DEP = ${_BUILD_DEP2:C/[^:]*://}
-.else
-_BUILD_DEP2=
-_BUILD_DEP=
-.endif
-
-_LIB_DEP2= ${LIB_DEPENDS}
-
 # This target generates an index entry suitable for aggregation into
 # a large index.  Format is:
 #
@@ -2066,8 +2094,6 @@ describe:
 .    endif
 .  endif
 .endif
-
-README_NAME?=	${TEMPLATES}/README.port
 
 readmes:
 .if defined(MULTI_PACKAGES) && !defined(PACKAGING)
