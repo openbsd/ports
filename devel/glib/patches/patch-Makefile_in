@@ -1,8 +1,11 @@
 --- Makefile.in.orig	Fri Mar  2 12:37:20 2001
-+++ Makefile.in	Wed Mar  7 08:45:42 2001
-@@ -98,7 +98,7 @@
++++ Makefile.in	Sun Mar 11 22:53:13 2001
+@@ -96,9 +96,9 @@
  
- SUBDIRS = . gmodule gthread docs tests
+ AUTOMAKE_OPTIONS = 1.4
+ 
+-SUBDIRS = . gmodule gthread docs tests
++SUBDIRS = . gmodule gthread docs
  
 -configincludedir = $(pkglibdir)/include
 +configincludedir = $(includedir)/glib-1.2
