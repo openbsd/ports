@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2003/12/15 17:16:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2003/12/30 23:24:32 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Java Development Kit for Java 2 Standard Edition 1.3"
-VERSION=	1.3.1_09
+VERSION=	1.3.1_10
 
 DISTNAME=	jdk${VERSION}
 PKGNAME=	jdk-linux-${VERSION}
@@ -27,6 +27,8 @@ PERMIT_DISTFILES_FTP=	"Redistribution not permitted"
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+# does not identify archive as linux binary, what breaks extraction
+NO_SYSTRACE=	Yes
 
 FETCH_MANUALLY = " You must fetch the distfile for this port manually"
 FETCH_MANUALLY+= " after agreeing to the license agreement at"
