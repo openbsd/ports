@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/18 20:28:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/19 11:43:53 naddy Exp $
 
 COMMENT=		"GNOME control center"
 V=			1.4.0.1
@@ -15,7 +15,7 @@ LIB_DEPENDS=		gnomecanvaspixbuf.::graphics/gdk-pixbuf,gnome \
 			gnome.36::x11/gnome/libs \
 			gnomevfs.::x11/gnome/vfs
 BUILD_DEPENDS=		scrollkeeper-config::textproc/scrollkeeper
-RUN_DEPENDS=		${BUILD_DEPENDS}
+RUN_DEPENDS=		scrollkeeper-config::textproc/scrollkeeper
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
