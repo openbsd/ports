@@ -1,0 +1,6 @@
+# $OpenBSD: OpenBSD,v 1.1.1.1 2000/08/18 01:15:04 danh Exp $
+#
+CC=		gcc
+COPT= 		-O2
+CPPFLAGS=	-DNOSHADOW -DNDBM
+LIBS=

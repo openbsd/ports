@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_conf_h,v 1.1.1.1 2000/08/18 01:15:04 danh Exp $
+--- src/conf.h.orig	Wed Aug 16 13:16:10 2000
++++ src/conf.h	Wed Aug 16 13:16:39 2000
+@@ -69,7 +69,7 @@ typedef unsigned long	UINT4;
+ #include        <machine/inline.h>
+ #endif	/* bsdi */
+ 
+-#if defined(bsdi) || defined(__FreeBSD__)
++#if defined(bsdi) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include        <machine/endian.h>
+ #else /* bsdi */
+ #include        <malloc.h>

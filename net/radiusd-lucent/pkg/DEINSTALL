@@ -1,0 +1,23 @@
+#!/bin/sh
+
+do-deinstall () 
+{
+	if [ -d /etc/raddb -o -d /var/log/radacct ]; then
+		echo "+------------"
+		echo "| If you are removing this package and not planning"
+		echo "| to re-install it at a future time, it is safe to"
+		echo "| remove the following:"
+		echo "|"
+		if [ -d /etc/raddb ]; then
+			echo "|		/etc/raddb"
+		fi
+		if [ -d /var/log/radacct ]; then
+			echo "|		/var/log/radacct"
+		fi
+		echo "|"
+		echo "+------------"
+	fi
+}
+
+do-deinstall
+exit 0

@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/08/18 01:15:04 danh Exp $
+bin/builddbm
+bin/dbmkeys
+bin/dbmrec
+bin/md5test
+bin/radtest
+bin/testuser
+sbin/radiusd
+share/doc/radiusd-lucent/LICENSE
+share/doc/radiusd-lucent/README
+share/examples/radiusd-lucent/clients
+share/examples/radiusd-lucent/config.aeg.example
+share/examples/radiusd-lucent/dictionary
+share/examples/radiusd-lucent/menus/menu1
+share/examples/radiusd-lucent/menus/menu2
+share/examples/radiusd-lucent/proxy
+share/examples/radiusd-lucent/users
+@dirrm share/examples/radiusd-lucent/menus
+@dirrm share/examples/radiusd-lucent
+@dirrm share/doc/radiusd-lucent

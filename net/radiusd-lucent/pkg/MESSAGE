@@ -1,0 +1,20 @@
++---------------
+| The RADIUS configuration files belong in /etc/raddb.  Examples
+| and extra documentation can be found in the following locations:
+|
+|     ${PREFIX}/share/examples/radiusd-lucent
+|     ${PREFIX}/share/doc/radiusd-lucent
+|
+| You will need to edit /etc/rc.local as appropriate and add a
+| section similiar to the following:
+|
+|     if [ -x ${PREFIX}/sbin/radiusd ]; then
+|             ${PREFIX}/sbin/radiusd && echo -n ' radiusd'
+|     fi
+|
+| RADIUS accounting information is created in /var/log/radacct. This 
+| directory must be created before it can be used.
+|
+|     install -d -m 700 -o root -g wheel /var/log/radacct
+|
++---------------

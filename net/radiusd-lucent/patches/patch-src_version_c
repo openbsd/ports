@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_version_c,v 1.1.1.1 2000/08/18 01:15:04 danh Exp $
+--- src/version.c.orig	Wed Aug 16 13:16:44 2000
++++ src/version.c	Wed Aug 16 13:17:39 2000
+@@ -136,6 +136,9 @@ char * bp;
+ #if defined(__FreeBSD__)
+ 	strcat(bp," __FreeBSD__");
+ #endif
++#if defined(__OpenBSD__)
++	strcat(bp," openbsd");
++#endif
+ #if defined(__osf__)
+ 	strcat(bp," __osf__");
+ #endif
