@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/10/22 14:03:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/01/29 21:31:30 rohee Exp $
 # Original from: Bruno Rohée <rohee@OpenBSD.ORG>
 
 TIDYDATE=	4aug00
@@ -11,7 +11,7 @@ NEED_VERSION=	1.195
 MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 
 MASTER_SITES=	http://www.w3.org/People/Raggett/
-HOMEPAGE=	${MASTER_SITES}tidy/
+HOMEPAGE=	http://www.w3.org/People/Raggett/tidy/
 EXTRACT_SUFX=	.tgz
 
 PERMIT_PACKAGE_CDROM=	Yes
