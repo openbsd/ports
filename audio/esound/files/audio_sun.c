@@ -1,4 +1,4 @@
-/*	$OpenBSD: audio_sun.c,v 1.2 2002/05/25 22:04:39 wcobb Exp $	*/
+/*	$OpenBSD: audio_sun.c,v 1.3 2004/01/25 22:07:28 fgsch Exp $	*/
 
 /*
  * Copyright (c) 2002 CubeSoft Communications, Inc.
@@ -55,20 +55,12 @@ int esd_audio_open()
 
     AUDIO_INITINFO(&info);
 
-    /* number of channels */
-    channels = (((esd_audio_format & ESD_MASK_CHAN) == ESD_STEREO)
-        ? /* stereo */	2
-	: /* mono */	1);
-
     /* set the appropriate mode */
     if((esd_audio_format & ESD_MASK_FUNC) == ESD_RECORD) {
         mode = O_RDWR;
 	info.mode = AUMODE_PLAY | AUMODE_RECORD;
-	info.play.channels = channels;
-	info.record.channels = channels;
     } else {
 	info.mode = AUMODE_PLAY;
-	info.play.channels = channels;
     }
 
     mode |= O_NONBLOCK;
@@ -115,6 +107,16 @@ int esd_audio_open()
 	enc.index++;
     }
     
+    /* number of channels */
+    channels = (((esd_audio_format & ESD_MASK_CHAN) == ESD_STEREO)
+        ? /* stereo */	2
+	: /* mono */	1);
+
+    info.play.channels = channels;
+    if((esd_audio_format & ESD_MASK_FUNC) == ESD_RECORD) {
+	info.record.channels = channels;
+    }
+
     info.play.encoding = fmt;
     info.play.precision = enc.precision;
 
