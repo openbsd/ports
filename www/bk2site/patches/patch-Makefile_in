@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/03/16 10:25:57 wilfried Exp $
+--- Makefile.in.orig	Thu Jun  1 20:28:27 2000
++++ Makefile.in	Thu Mar 15 22:41:06 2001
+@@ -72,7 +72,7 @@ pkgdata_DATA = dot.bk2siterc
+ INCLUDES = -DCONFIGFILE=/etc/bk2site/dot.bk2siterc
+ EXTRA_DIST = indexbase.html otherbase.html searchbase.html newbase.html new.gif dot.bk2siterc 	search.pl redirect.pl closeup.gif check-meta.pl bk2site.1 bk2site.html 	cool.gif cool2.gif disk.gif earth.gif ltbulb.gif mailto.gif mana_red.gif 	news.gif note.gif question.gif smiley.gif thumbs_down.gif
+ 
+-CXXFLAGS = -O2
++CXXFLAGS = @CXXFLAGS@
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h
