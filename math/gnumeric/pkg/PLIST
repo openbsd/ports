@@ -1,152 +1,166 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/04/12 01:30:26 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/07/25 00:17:40 marcm Exp $
 bin/gnumeric
 bin/ssconvert
 lib/bonobo/servers/GNOME_Gnumeric.server
+lib/gnumeric/
+lib/gnumeric/${VERSION}-bonobo/
+lib/gnumeric/${VERSION}-bonobo/plugins/
+lib/gnumeric/${VERSION}-bonobo/plugins/applix/
 lib/gnumeric/${VERSION}-bonobo/plugins/applix/applix.la
-lib/gnumeric/${VERSION}-bonobo/plugins/applix/applix.so
 lib/gnumeric/${VERSION}-bonobo/plugins/applix/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/corba/
 lib/gnumeric/${VERSION}-bonobo/plugins/corba/corba.la
-lib/gnumeric/${VERSION}-bonobo/plugins/corba/corba.so
 lib/gnumeric/${VERSION}-bonobo/plugins/corba/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/derivatives/
 lib/gnumeric/${VERSION}-bonobo/plugins/derivatives/derivatives.la
-lib/gnumeric/${VERSION}-bonobo/plugins/derivatives/derivatives.so
 lib/gnumeric/${VERSION}-bonobo/plugins/derivatives/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/dif/
 lib/gnumeric/${VERSION}-bonobo/plugins/dif/dif.la
-lib/gnumeric/${VERSION}-bonobo/plugins/dif/dif.so
 lib/gnumeric/${VERSION}-bonobo/plugins/dif/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/excel/
 lib/gnumeric/${VERSION}-bonobo/plugins/excel/excel.la
-lib/gnumeric/${VERSION}-bonobo/plugins/excel/excel.so
 lib/gnumeric/${VERSION}-bonobo/plugins/excel/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-complex/
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-complex/plugin.la
-lib/gnumeric/${VERSION}-bonobo/plugins/fn-complex/plugin.so
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-complex/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-database/
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-database/plugin.la
-lib/gnumeric/${VERSION}-bonobo/plugins/fn-database/plugin.so
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-database/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-date/
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-date/plugin.la
-lib/gnumeric/${VERSION}-bonobo/plugins/fn-date/plugin.so
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-date/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-eng/
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-eng/plugin.la
-lib/gnumeric/${VERSION}-bonobo/plugins/fn-eng/plugin.so
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-eng/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-financial/
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-financial/plugin.la
-lib/gnumeric/${VERSION}-bonobo/plugins/fn-financial/plugin.so
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-financial/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-info/
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-info/plugin.la
-lib/gnumeric/${VERSION}-bonobo/plugins/fn-info/plugin.so
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-info/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-logical/
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-logical/plugin.la
-lib/gnumeric/${VERSION}-bonobo/plugins/fn-logical/plugin.so
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-logical/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-lookup/
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-lookup/plugin.la
-lib/gnumeric/${VERSION}-bonobo/plugins/fn-lookup/plugin.so
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-lookup/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-math/
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-math/plugin.la
-lib/gnumeric/${VERSION}-bonobo/plugins/fn-math/plugin.so
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-math/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-random/
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-random/plugin.la
-lib/gnumeric/${VERSION}-bonobo/plugins/fn-random/plugin.so
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-random/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-stat/
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-stat/plugin.la
-lib/gnumeric/${VERSION}-bonobo/plugins/fn-stat/plugin.so
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-stat/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-string/
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-string/plugin.la
-lib/gnumeric/${VERSION}-bonobo/plugins/fn-string/plugin.so
 lib/gnumeric/${VERSION}-bonobo/plugins/fn-string/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/html/
 lib/gnumeric/${VERSION}-bonobo/plugins/html/html.la
-lib/gnumeric/${VERSION}-bonobo/plugins/html/html.so
 lib/gnumeric/${VERSION}-bonobo/plugins/html/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/lotus/
 lib/gnumeric/${VERSION}-bonobo/plugins/lotus/lotus.la
-lib/gnumeric/${VERSION}-bonobo/plugins/lotus/lotus.so
 lib/gnumeric/${VERSION}-bonobo/plugins/lotus/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/mps/
 lib/gnumeric/${VERSION}-bonobo/plugins/mps/mps.la
-lib/gnumeric/${VERSION}-bonobo/plugins/mps/mps.so
 lib/gnumeric/${VERSION}-bonobo/plugins/mps/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/numtheory/
 lib/gnumeric/${VERSION}-bonobo/plugins/numtheory/numtheory.la
-lib/gnumeric/${VERSION}-bonobo/plugins/numtheory/numtheory.so
 lib/gnumeric/${VERSION}-bonobo/plugins/numtheory/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/oleo/
 lib/gnumeric/${VERSION}-bonobo/plugins/oleo/oleo.la
-lib/gnumeric/${VERSION}-bonobo/plugins/oleo/oleo.so
 lib/gnumeric/${VERSION}-bonobo/plugins/oleo/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/openoffice/
 lib/gnumeric/${VERSION}-bonobo/plugins/openoffice/openoffice.la
-lib/gnumeric/${VERSION}-bonobo/plugins/openoffice/openoffice.so
 lib/gnumeric/${VERSION}-bonobo/plugins/openoffice/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/plan_perfect/
 lib/gnumeric/${VERSION}-bonobo/plugins/plan_perfect/plan_perfect.la
-lib/gnumeric/${VERSION}-bonobo/plugins/plan_perfect/plan_perfect.so
 lib/gnumeric/${VERSION}-bonobo/plugins/plan_perfect/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_barcol/
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_barcol/barcol.la
-lib/gnumeric/${VERSION}-bonobo/plugins/plot_barcol/barcol.so
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_barcol/gog-barcol-prefs.glade
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_barcol/plot-types.xml
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_barcol/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie/
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie/gog-pie-prefs.glade
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie/gog-ring-prefs.glade
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie/pie.la
-lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie/pie.so
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie/plot-types.xml
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_xy/
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_xy/gog-bubble-prefs.glade
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_xy/plot-types.xml
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_xy/plugin.xml
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_xy/xy.la
-lib/gnumeric/${VERSION}-bonobo/plugins/plot_xy/xy.so
+lib/gnumeric/${VERSION}-bonobo/plugins/qpro/
 lib/gnumeric/${VERSION}-bonobo/plugins/qpro/plugin.xml
 lib/gnumeric/${VERSION}-bonobo/plugins/qpro/qpro.la
-lib/gnumeric/${VERSION}-bonobo/plugins/qpro/qpro.so
+lib/gnumeric/${VERSION}-bonobo/plugins/sample_datasource/
 lib/gnumeric/${VERSION}-bonobo/plugins/sample_datasource/plugin.xml
 lib/gnumeric/${VERSION}-bonobo/plugins/sample_datasource/sample_datasource.la
-lib/gnumeric/${VERSION}-bonobo/plugins/sample_datasource/sample_datasource.so
+lib/gnumeric/${VERSION}-bonobo/plugins/sc/
 lib/gnumeric/${VERSION}-bonobo/plugins/sc/plugin.xml
 lib/gnumeric/${VERSION}-bonobo/plugins/sc/sc.la
-lib/gnumeric/${VERSION}-bonobo/plugins/sc/sc.so
+lib/gnumeric/${VERSION}-bonobo/plugins/sylk/
 lib/gnumeric/${VERSION}-bonobo/plugins/sylk/plugin.xml
 lib/gnumeric/${VERSION}-bonobo/plugins/sylk/sylk.la
-lib/gnumeric/${VERSION}-bonobo/plugins/sylk/sylk.so
+lib/gnumeric/${VERSION}-bonobo/plugins/uihello/
 lib/gnumeric/${VERSION}-bonobo/plugins/uihello/hello.xml
 lib/gnumeric/${VERSION}-bonobo/plugins/uihello/plugin.la
-lib/gnumeric/${VERSION}-bonobo/plugins/uihello/plugin.so
 lib/gnumeric/${VERSION}-bonobo/plugins/uihello/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/xbase/
 lib/gnumeric/${VERSION}-bonobo/plugins/xbase/plugin.xml
 lib/gnumeric/${VERSION}-bonobo/plugins/xbase/xbase.la
-lib/gnumeric/${VERSION}-bonobo/plugins/xbase/xbase.so
+lib/gnumeric/${VERSION}-bonobo/plugins/xml_sax/
 lib/gnumeric/${VERSION}-bonobo/plugins/xml_sax/plugin.xml
 lib/gnumeric/${VERSION}-bonobo/plugins/xml_sax/xml_sax.la
-lib/gnumeric/${VERSION}-bonobo/plugins/xml_sax/xml_sax.so
 libexec/gnumeric-component
 man/man1/gnumeric.1
 man/man1/ssconvert.1
+share/applications/
 share/applications/gnumeric.desktop
 share/gnome-2.0/ui/GNOME_Gnumeric.xml
 share/gnome-2.0/ui/GNOME_Gnumeric_Component.xml
+share/gnumeric/
+share/gnumeric/${VERSION}-bonobo/
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/3D/
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/3D/.category
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/3D/autoformat.3D.button.xml
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/3D/autoformat.3D.list.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Classical/
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/Classical/.category
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/Classical/autoformat.Classical.cool.xml
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/Classical/autoformat.Classical.simple.xml
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/Classical/autoformat.Classical.trendy.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Colourful/
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/Colourful/.category
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/Colourful/autoformat.Colourful.banana.xml
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/Colourful/autoformat.Colourful.black.xml
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/Colourful/autoformat.Colourful.blue.xml
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/Colourful/autoformat.Colourful.orange.xml
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/Colourful/autoformat.Colourful.vanilla.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Financial/
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/Financial/.category
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/Financial/autoformat.Financial.basic.xml
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/Financial/autoformat.Financial.desert.xml
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/Financial/autoformat.Financial.ice.xml
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/Financial/autoformat.Financial.modern.xml
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/Financial/autoformat.Financial.purple.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/General/
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/General/.category
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/General/autoformat.General.advanced.xml
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/General/autoformat.General.basic.xml
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/General/autoformat.General.empty.xml
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/General/autoformat.General.table.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/List/
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/List/.category
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/List/autoformat.List.basic.xml
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/List/autoformat.List.green.xml
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/List/autoformat.List.lila.xml
 share/gnumeric/${VERSION}-bonobo/autoformat-templates/List/autoformat.List.simple.xml
+share/gnumeric/${VERSION}-bonobo/glade/
 share/gnumeric/${VERSION}-bonobo/glade/advanced-filter.glade
 share/gnumeric/${VERSION}-bonobo/glade/anova-one.glade
 share/gnumeric/${VERSION}-bonobo/glade/anova-two.glade
@@ -215,7 +229,14 @@ share/gnumeric/${VERSION}-bonobo/glade/tabulate.glade
 share/gnumeric/${VERSION}-bonobo/glade/variance-tests.glade
 share/gnumeric/${VERSION}-bonobo/glade/view.glade
 share/gnumeric/${VERSION}-bonobo/glade/workbook-attr.glade
+share/gnumeric/${VERSION}-bonobo/gnome
+share/gnumeric/${VERSION}-bonobo/idl/
 share/gnumeric/${VERSION}-bonobo/idl/GNOME_Gnumeric.idl
+share/gnumeric/${VERSION}-bonobo/share/
+share/gnumeric/${VERSION}-bonobo/share/gnome/
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/about-authors.xml
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/about-compiling.xml
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/about-get-involved.xml
@@ -253,6 +274,7 @@ share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/extending-functions
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/extending-overview.xml
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/extending-plugins.xml
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/extending-python.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/advanced-filter-1.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/advanced-filter-2.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysis-tools.png
@@ -554,6 +576,7 @@ share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/quick-start.xml
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/welcome.xml
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/workbooks.xml
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/worksheets.xml
+share/gnumeric/${VERSION}-bonobo/templates/
 share/gnumeric/${VERSION}-bonobo/templates/invoice.gnumeric
 share/gnumeric/${VERSION}-bonobo/templates/loan.gnumeric
 share/gnumeric/${VERSION}-bonobo/templates/mileage.gnumeric
@@ -600,9 +623,12 @@ share/locale/uk/LC_MESSAGES/gnumeric.mo
 share/locale/vi/LC_MESSAGES/gnumeric.mo
 share/locale/zh_CN/LC_MESSAGES/gnumeric.mo
 share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
+share/mc/
+share/mc/templates/
 share/mc/templates/gnumeric.desktop
 share/mime-info/gnumeric.keys
 share/mime-info/gnumeric.mime
+share/omf/gnumeric/
 share/omf/gnumeric/gnumeric-C.omf
 share/pixmaps/gnome-application-vnd.lotus-1-2-3.png
 share/pixmaps/gnome-application-x-applix-spreadsheet.png
@@ -610,6 +636,7 @@ share/pixmaps/gnome-application-x-generic-spreadsheet.png
 share/pixmaps/gnome-application-x-gnumeric.png
 share/pixmaps/gnome-application-x-xls.png
 share/pixmaps/gnome-gnumeric.png
+share/pixmaps/gnumeric/
 share/pixmaps/gnumeric/area.xpm
 share/pixmaps/gnumeric/bar.xpm
 share/pixmaps/gnumeric/bubble.xpm
@@ -694,70 +721,11 @@ share/pixmaps/gnumeric/scatter.xpm
 share/pixmaps/gnumeric/stf-druid.png
 share/pixmaps/gnumeric/stock.xpm
 share/pixmaps/gnumeric/surface.xpm
+share/schemas/gnumeric/
 share/schemas/gnumeric/gnumeric-dialogs.schemas
 share/schemas/gnumeric/gnumeric-general.schemas
 share/schemas/gnumeric/gnumeric-plugins.schemas
-@dirrm share/schemas/gnumeric
-@dirrm share/pixmaps/gnumeric
-@dirrm share/omf/gnumeric
-@dirrm share/mc/templates
-@dirrm share/mc
-@dirrm share/gnumeric/${VERSION}-bonobo/templates
-@dirrm share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures
-@dirrm share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C
-@dirrm share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric
-@dirrm share/gnumeric/${VERSION}-bonobo/share/gnome/help
-@dirrm share/gnumeric/${VERSION}-bonobo/share/gnome
-@dirrm share/gnumeric/${VERSION}-bonobo/share
-@dirrm share/gnumeric/${VERSION}-bonobo/idl
-@dirrm share/gnumeric/${VERSION}-bonobo/glade
-@dirrm share/gnumeric/${VERSION}-bonobo/autoformat-templates/List
-@dirrm share/gnumeric/${VERSION}-bonobo/autoformat-templates/General
-@dirrm share/gnumeric/${VERSION}-bonobo/autoformat-templates/Financial
-@dirrm share/gnumeric/${VERSION}-bonobo/autoformat-templates/Colourful
-@dirrm share/gnumeric/${VERSION}-bonobo/autoformat-templates/Classical
-@dirrm share/gnumeric/${VERSION}-bonobo/autoformat-templates/3D
-@dirrm share/gnumeric/${VERSION}-bonobo/autoformat-templates
-@dirrm share/gnumeric/${VERSION}-bonobo
-@dirrm share/gnumeric
-@dirrm share/applications
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/xml_sax
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/xbase
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/uihello
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/sylk
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/sc
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/sample_datasource
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/qpro
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/plot_xy
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/plot_barcol
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/plan_perfect
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/openoffice
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/oleo
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/numtheory
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/mps
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/lotus
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/html
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-string
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-stat
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-random
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-math
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-lookup
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-logical
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-info
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-financial
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-eng
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-date
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-database
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-complex
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/excel
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/dif
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/derivatives
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/corba
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/applix
-@dirrm lib/gnumeric/${VERSION}-bonobo/plugins
-@dirrm lib/gnumeric/${VERSION}-bonobo
-@dirrm lib/gnumeric
+%%SHARED%%
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnumeric/*.schemas > /dev/null

@@ -1,45 +1,33 @@
-$OpenBSD: patch-ltmain_sh,v 1.3 2004/04/12 01:30:26 marcm Exp $
---- ltmain.sh.orig	2004-04-03 12:58:01.000000000 -0800
-+++ ltmain.sh	2004-04-11 09:40:58.000000000 -0700
-@@ -1371,6 +1371,17 @@ EOF
- 	continue
- 	;;
- 
-+      -pthread)
-+        case $host in
-+        *-*-openbsd*)
-+          deplibs="$deplibs $arg"
-+          ;;
-+        *)
-+          continue
-+          ;;
-+        esac
-+        ;;
-+
-       -module)
- 	module=yes
- 	continue
-@@ -2024,6 +2035,19 @@ EOF
+$OpenBSD: patch-ltmain_sh,v 1.4 2004/07/25 00:17:39 marcm Exp $
+--- ltmain.sh.orig	Mon Apr 12 10:33:23 2004
++++ ltmain.sh	Fri Jul 23 07:57:26 2004
+@@ -1857,9 +1857,12 @@ EOF
+ 	  if test "$linkmode,$pass" = "prog,link"; then
+ 	    compile_deplibs="$deplib $compile_deplibs"
+ 	    finalize_deplibs="$deplib $finalize_deplibs"
+-	  else
+-	    deplibs="$deplib $deplibs"
++	    continue
  	  fi
++	  if test "$linkmode" = "lib"; then
++	    newdependency_libs="$deplib $newdependency_libs"
++	  fi
++	  deplibs="$deplib $deplibs"
  	  continue
  	  ;;
-+	-pthread)
-+	  case $linkmode in
-+	  lib)
-+	    deplibs="$deplib $deplibs"
-+	    newdependency_libs="$deplib $newdependency_libs"
-+	    ;;
-+	  prog)
-+	    compile_deplibs="$deplib $compile_deplibs"
-+	    finalize_deplibs="$deplib $finalize_deplibs"
-+	    ;;
-+	  esac
-+	  continue
-+	  ;;
- 	%DEPLIBS%)
- 	  alldeplibs=yes
- 	  continue
-@@ -5827,40 +5851,6 @@ relink_command=\"$relink_command\""
+ 	-l*)
+@@ -2274,10 +2277,6 @@ EOF
+ 	link_static=no # Whether the deplib will be linked statically
+ 	if test -n "$library_names" &&
+ 	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
+-	  if test "$installed" = no; then
+-	    notinst_deplibs="$notinst_deplibs $lib"
+-	    need_relink=yes
+-	  fi
+ 	  # This is a shared library
+ 
+ 	  # Warn about portability, can't link against -module's on
+@@ -5827,40 +5826,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  
