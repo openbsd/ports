@@ -1,0 +1,12 @@
+$OpenBSD: patch-sql_sql_base_cc,v 1.1 2004/10/20 07:36:04 brad Exp $
+--- sql/sql_base.cc.orig	Thu May 13 20:53:18 2004
++++ sql/sql_base.cc	Wed Oct 20 00:50:19 2004
+@@ -149,7 +149,7 @@ OPEN_TABLE_LIST *list_open_tables(THD *t
+     if (wild)
+     {
+       strxmov(name,entry->table_cache_key,".",entry->real_name,NullS);
+-      if (wild_compare(name,wild))
++      if (wild_compare(name,wild,0))
+ 	continue;
+     }
+ 

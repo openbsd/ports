@@ -1,0 +1,12 @@
+$OpenBSD: patch-sql_sql_db_cc,v 1.1 2004/10/20 07:36:04 brad Exp $
+--- sql/sql_db.cc.orig	Thu May 13 20:53:31 2004
++++ sql/sql_db.cc	Wed Oct 20 00:50:19 2004
+@@ -408,7 +408,7 @@ bool mysql_change_db(THD *thd,const char
+     db_access=DB_ACLS;
+   else
+     db_access= (acl_get(thd->host,thd->ip,(char*) &thd->remote.sin_addr,
+-			thd->priv_user,dbname) |
++			thd->priv_user,dbname,0) |
+ 		thd->master_access);
+   if (!(db_access & DB_ACLS) && (!grant_option || check_grant_db(thd,dbname)))
+   {

@@ -1,6 +1,24 @@
-$OpenBSD: patch-sql_sql_parse_cc,v 1.1 2004/10/20 04:47:29 brad Exp $
+$OpenBSD: patch-sql_sql_parse_cc,v 1.2 2004/10/20 07:36:04 brad Exp $
 --- sql/sql_parse.cc.orig	Thu May 13 20:53:18 2004
-+++ sql/sql_parse.cc	Tue Oct 19 22:22:11 2004
++++ sql/sql_parse.cc	Wed Oct 20 00:50:19 2004
+@@ -2670,7 +2670,7 @@ check_access(THD *thd, ulong want_access
+     if (!(thd->master_access & SELECT_ACL) &&
+ 	(db && (!thd->db || strcmp(db,thd->db))))
+       db_access=acl_get(thd->host, thd->ip, (char*) &thd->remote.sin_addr,
+-			thd->priv_user, db); /* purecov: inspected */
++			thd->priv_user, db, 0); /* purecov: inspected */
+     *save_priv=thd->master_access | db_access;
+     DBUG_RETURN(FALSE);
+   }
+@@ -2690,7 +2690,7 @@ check_access(THD *thd, ulong want_access
+ 
+   if (db && (!thd->db || strcmp(db,thd->db)))
+     db_access=acl_get(thd->host, thd->ip, (char*) &thd->remote.sin_addr,
+-		      thd->priv_user, db); /* purecov: inspected */
++		      thd->priv_user, db, 0); /* purecov: inspected */
+   else
+     db_access=thd->db_access;
+   // Remove SHOW attribute and access rights we already have
 @@ -3155,7 +3155,10 @@ bool add_field_to_list(char *field_name,
      break;
    case FIELD_TYPE_DECIMAL:
