@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:55 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/10/02 19:19:00 brad Exp $
 
-DISTNAME=		netris-0.4
-CATEGORIES=		games
+DISTNAME=	netris-0.5
+CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.netris.org/pub/netris/
 
-MAINTAINER=		angelos@openbsd.org
+MAINTAINER=	angelos@openbsd.org
 
-MASTER_SITES=		ftp://ftp.netris.org/pub/netris/
-
-HAS_CONFIGURE=		yes
-CONFIGURE_SCRIPT=	Configure
+HAS_CONFIGURE=	yes
+CONFIGURE_SCRIPT= Configure
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/netris.1 ${PREFIX}/man/man1
