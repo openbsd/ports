@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/08/02 16:08:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2004/08/09 14:08:49 xsa Exp $
 
 COMMENT=		"POP3-server virtual domain support"
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=		ftp://www.toontown.org/pub/teapop/		
+MASTER_SITES=		ftp://ftp.toontown.org/pub/teapop/		
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-flock
