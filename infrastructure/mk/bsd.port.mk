@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.306 2000/06/18 23:27:03 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.307 2000/06/18 23:35:02 turan Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1853,7 +1853,7 @@ mirror-distfiles:
 	@cd ${.CURDIR} && exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes fetch
 .endif
 
-all-package: ${PKGFILE}
+all-packages: ${PKGFILE}
 .if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
 .  for _sub in ${MULTI_PACKAGES}
 	@cd ${.CURDIR} && exec ${MAKE} ${.TARGET} SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
