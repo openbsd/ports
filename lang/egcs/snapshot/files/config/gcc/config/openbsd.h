@@ -1,4 +1,4 @@
-/* $OpenBSD: openbsd.h,v 1.11 1999/02/08 17:51:03 espie Exp $	*/
+/* $OpenBSD: openbsd.h,v 1.12 1999/02/12 12:58:28 espie Exp $	*/
 
 /* common OpenBSD configuration. 
    All OpenBSD architectures include this file, which is intended as
@@ -54,7 +54,7 @@
 
 
 /* Controlling the compilation driver 
- * ---------------------------------- */
+   ---------------------------------- */
 #ifndef OBSD_HAS_CORRECT_SPECS
 
 #ifndef OBSD_NO_DYNAMIC_LIBRARIES
@@ -105,24 +105,24 @@
 
 
 /* Runtime target specification 
- * ---------------------------- */
+   ---------------------------- */
 /* You must redefine CPP_PREDEFINES in any arch specific file. */
 #undef CPP_PREDEFINES
 
 /* Implicit calls to library routines
- * ---------------------------------- */
+   ---------------------------------- */
 /* Use memcpy and memset instead of bcopy and bzero. */
 #define TARGET_MEM_FUNCTIONS
 
 /* Miscellaneous parameters
- * ------------------------ */
+   ------------------------ */
 /* tell libgcc2.c that OpenBSD targets support atexit. */
 #define HAVE_ATEXIT
 
 /* Controlling debugging info: dbx options 
- * --------------------------------------- */
+   --------------------------------------- */
 /* Don't use the `xsTAG;' construct in DBX output; OpenBSD systems that
- * use DBX don't support it. */
+   use DBX don't support it. */
 #define DBX_NO_XREFS
 
 
@@ -134,7 +134,7 @@
      This is more readable for a human being and confuses c++filt less.  */
 
 /* Assembler format: output and generation of labels
- * ------------------------------------------------- */
+   ------------------------------------------------- */
 /* Define the strings used for the .type and .size directives.
    These strings generally do not vary from one system running OpenBSD
    to another, but if a given system needs to use different pseudo-op
@@ -266,10 +266,12 @@ do {									 \
 
 
 /* Storage layout 
- * -------------- */
-/* Use VTABLE_THUNKS always: we don't have to worry about binary
-   compatibility with older C++ code. */
-#define DEFAULT_VTABLE_THUNKS 1
+   -------------- */
+/* We don't have to worry about binary compatibility with older C++ code,
+   but there is a big known bug with vtable thunks which has not been
+	fixed yet, so DON'T activate it by default.
+ */
+/* #define DEFAULT_VTABLE_THUNKS 1 */
 
 
 /* Otherwise, since we support weak, gthr.h erroneously tries to use
