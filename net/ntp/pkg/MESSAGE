@@ -1,13 +1,9 @@
 
 +---------------
-| Several example configuration files can be found in 
-| ${PREFIX}/share/examples/ntp.
+| The package installation has been completed.
 |
-| 1) create/update the file ${SYSCONFDIR}/ntp.conf
-| 2) restart your system
-|
-| The system restart is necessary as tickadj is run from
-| /etc/rc.securelevel before the system securelevel is
-| changed.
+| Several steps need to be taken to properly configure the NTP daemon.
+| Please refer to ${PREFIX}/share/examples/ntp/README.OpenBSD for more
+| information.
 +---------------
 

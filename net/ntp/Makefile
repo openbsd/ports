@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/06/05 04:54:53 danh Exp $
+# $OpenBSD: Makefile,v 1.27 2004/07/27 14:39:31 danh Exp $
 
 COMMENT=	"network time protocol implementation"
 COMMENT-doc=	"network time protocol documentation"
@@ -46,5 +46,10 @@ post-install:
 	@cd ${WRKSRC}/html && pax -rw * ${PREFIX}/share/doc/ntp
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ntp
 	@cd ${WRKSRC}/conf && pax -rw * ${PREFIX}/share/examples/ntp
+	@sed -e s#!!PREFIX!!#${TRUEPREFIX}#g \
+	    -e s#!!SYSCONFDIR!!#${SYSCONFDIR}#g \
+	    ${FILESDIR}/README.OpenBSD > ${WRKBUILD}/README.OpenBSD
+	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
+	    ${PREFIX}/share/examples/ntp/
 
 .include <bsd.port.mk>

@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST-doc,v 1.6 2004/06/05 04:54:53 danh Exp $
+@comment $OpenBSD: PLIST-doc,v 1.7 2004/07/27 14:39:31 danh Exp $
+share/doc/ntp/
 share/doc/ntp/accopt.html
 share/doc/ntp/assoc.html
 share/doc/ntp/audio.html
 share/doc/ntp/authopt.html
+share/doc/ntp/build/
 share/doc/ntp/build/build.html
 share/doc/ntp/build/config.html
+share/doc/ntp/build/hints/
 share/doc/ntp/build/hints.html
 share/doc/ntp/build/hints/a-ux
 share/doc/ntp/build/hints/aix
@@ -38,6 +41,7 @@ share/doc/ntp/build/hints/winnt.html
 share/doc/ntp/build/patches.html
 share/doc/ntp/build/porting.html
 share/doc/ntp/build/quick.html
+share/doc/ntp/build/scripts/
 share/doc/ntp/build/scripts/footer.txt
 share/doc/ntp/build/scripts/links10.txt
 share/doc/ntp/build/scripts/links11.txt
@@ -50,6 +54,7 @@ share/doc/ntp/clockopt.html
 share/doc/ntp/confopt.html
 share/doc/ntp/copyright.html
 share/doc/ntp/debug.html
+share/doc/ntp/drivers/
 share/doc/ntp/drivers/driver1.html
 share/doc/ntp/drivers/driver10.html
 share/doc/ntp/drivers/driver11.html
@@ -87,13 +92,16 @@ share/doc/ntp/drivers/driver6.html
 share/doc/ntp/drivers/driver7.html
 share/doc/ntp/drivers/driver8.html
 share/doc/ntp/drivers/driver9.html
+share/doc/ntp/drivers/icons/
 share/doc/ntp/drivers/icons/home.gif
 share/doc/ntp/drivers/icons/mail2.gif
 share/doc/ntp/drivers/oncore-shmem.html
+share/doc/ntp/drivers/scripts/
 share/doc/ntp/drivers/scripts/footer.txt
 share/doc/ntp/drivers/scripts/style.css
 share/doc/ntp/extern.html
 share/doc/ntp/howto.html
+share/doc/ntp/icons/
 share/doc/ntp/icons/home.gif
 share/doc/ntp/icons/mail2.gif
 share/doc/ntp/index.html
@@ -116,6 +124,7 @@ share/doc/ntp/ntptime.html
 share/doc/ntp/ntptrace.html
 share/doc/ntp/parsedata.html
 share/doc/ntp/parsenew.html
+share/doc/ntp/pic/
 share/doc/ntp/pic/9400n.jpg
 share/doc/ntp/pic/alice11.gif
 share/doc/ntp/pic/alice13.gif
@@ -171,6 +180,7 @@ share/doc/ntp/prefer.html
 share/doc/ntp/rdebug.html
 share/doc/ntp/refclock.html
 share/doc/ntp/release.html
+share/doc/ntp/scripts/
 share/doc/ntp/scripts/footer.txt
 share/doc/ntp/scripts/links10.txt
 share/doc/ntp/scripts/links11.txt
@@ -181,13 +191,3 @@ share/doc/ntp/scripts/links9.txt
 share/doc/ntp/scripts/style.css
 share/doc/ntp/sntp.html
 share/doc/ntp/tickadj.html
-@dirrm share/doc/ntp/scripts
-@dirrm share/doc/ntp/pic
-@dirrm share/doc/ntp/icons
-@dirrm share/doc/ntp/drivers/scripts
-@dirrm share/doc/ntp/drivers/icons
-@dirrm share/doc/ntp/drivers
-@dirrm share/doc/ntp/build/scripts
-@dirrm share/doc/ntp/build/hints
-@dirrm share/doc/ntp/build
-@dirrm share/doc/ntp
