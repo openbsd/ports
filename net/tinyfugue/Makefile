@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/28 01:38:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/12/22 20:14:58 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.16 1999/02/16 03:06:21 jseger Exp $
 
 COMMENT=	"programmable MUD client, with macro support and more"
@@ -37,12 +37,12 @@ SYMLINKS=	kb-bash.tf,bind-bash.tf kb-emacs.tf,bind-emacs.tf \
 		world-q.tf,worldqueue.tf
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/tinyfugue
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tinyfugue
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/tf ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/src/tf.1.nroffman ${PREFIX}/man/man1/tf.1
-	${INSTALL_DATA} ${WRKSRC}/tf-lib/* ${PREFIX}/share/tinyfugue
+	${INSTALL_DATA} ${WRKSRC}/tf-lib/* ${PREFIX}/share/examples/tinyfugue
 .for i in ${SYMLINKS}
-	ln -s ${i:C/,.*//} ${PREFIX}/share/tinyfugue/${i:C/.*,//}
+	ln -s ${i:C/,.*//} ${PREFIX}/share/examples/tinyfugue/${i:C/.*,//}
 .endfor
 
 .include <bsd.port.mk>
