@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/02/15 19:53:43 matt Exp $
+# $OpenBSD: Makefile,v 1.7 2002/04/07 22:30:23 matt Exp $
 
 COMMENT=	"mailing list manager with web interface"
 
@@ -20,7 +20,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mailman
 EXTRACT_SUFX=		.tgz
 
-BUILD_DEPENDS=		:python-2.1*:lang/python/2.1
+PYTHON_VER=		2.1
+BUILD_DEPENDS=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
 NO_REGRESS=		Yes
@@ -38,7 +39,8 @@ FAKE_FLAGS=		prefix="${WRKINST}${MMHOME}" \
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--with-var-prefix="${MMSPOOL}" \
-			--prefix="${MMHOME}"
+			--prefix="${MMHOME}" \
+			--with-python=${LOCALBASE}/bin/python${PYTHON_VER}
 
 FLAVORS=postfix
 FLAVOR?=

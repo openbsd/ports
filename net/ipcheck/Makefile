@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/03/21 21:09:19 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/04/07 22:30:23 matt Exp $
 
 COMMENT=		"fully compliant DynDNS.org client"
 
@@ -22,7 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://ipcheck.sourceforge.net/releases/
 
-RUN_DEPENDS+=   	:python-2.1*:lang/python/2.1
+PYTHON_VER=		2.1
+RUN_DEPENDS+=   	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 BUILD_DEPENDS=  	${RUN_DEPENDS}
 
 NO_REGRESS=		Yes
@@ -30,7 +31,7 @@ NO_BUILD=		Yes
 WRKDIST=		${WRKDIR}
 
 do-patch:
-	@sed -e "s!/usr/bin/python!${LOCALBASE}/bin/python!" \
+	@sed -e "s!/usr/bin/python!${LOCALBASE}/bin/python${PYTHON_VER}!" \
 	     -e "s!ppp0!tun0!" \
 	      ${DISTDIR}/${DISTNAME} > ${WRKDIR}/${DISTNAME}
 

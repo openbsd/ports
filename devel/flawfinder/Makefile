@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/02/15 19:53:43 matt Exp $
+# $OpenBSD: Makefile,v 1.13 2002/04/07 22:30:23 matt Exp $
 
 COMMENT=		"c/c++ source code auditing tool"
 
@@ -19,7 +19,8 @@ MASTER_SITES=		http://www.dwheeler.com/flawfinder/ \
 			${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	UNIX/misc
 
-RUN_DEPENDS=		:python-2.1*:lang/python/2.1
+PYTHON_VER=		2.1
+RUN_DEPENDS=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 
 NO_BUILD=		Yes
 
@@ -32,6 +33,11 @@ DOC_DIR=		${PREFIX}/share/doc/flawfinder
 DOC_FILES=		ChangeLog README flawfinder.pdf \
 			flawfinder.ps index.html test.c \
 			announcement
+
+post-patch:
+	perl -pi -e \
+		"s|/usr/bin/env python|${LOCALBASE}/bin/python${PYTHON_VER}|" \
+		${WRKSRC}/flawfinder
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}

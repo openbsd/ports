@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/03/08 02:01:28 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2002/04/07 22:30:23 matt Exp $
 
 COMMENT=		"reduce the amount of SPAM/UCE (junk-mail)"
 
@@ -28,7 +28,8 @@ PYTHON_LIBDIR=	lib/python${PYTHON_VER}
 SUBST_VARS=	PYTHON_VER
 
 do-build:
-	@cd ${WRKSRC}; ./compileall
+	@cd ${WRKSRC} && ${LOCALBASE}/bin/python${PYTHON_VER} -c \
+		'import compileall; compileall.compile_dir(".", force=1)'
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${PYTHON_LIBDIR}/TMDA

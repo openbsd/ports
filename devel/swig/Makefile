@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2002/03/25 03:26:01 kevlo Exp $
+# $OpenBSD: Makefile,v 1.24 2002/04/07 22:30:23 matt Exp $
 
 COMMENT=		"simplified wrapper and interface generator"
 COMMENT-examples=	"examples for swig"
@@ -21,7 +21,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	:python-2.2*:lang/python/2.2 \
+PYTHON_VER=	2.2
+BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
 		::lang/tcl/8.3 \
 		::lang/guile \
 		::lang/ruby
@@ -33,7 +34,8 @@ WRKDIST=	${WRKDIR}/SWIG-${VERSION}
 CONFIGURE_STYLE= gnu 
 CONFIGURE_ARGS+= --with-tclincl=${LOCALBASE}/include/tcl8.3 \
 		 --with-tcllib==${LOCALBASE}/lib/tcl8.3 \
-		 --with-guilelib=${LOCALBASE}/lib
+		 --with-guilelib=${LOCALBASE}/lib \
+		 --with-python=${LOCALBASE}/bin/python${PYTHON_VER}
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/Tools
 
 ALL_TARGET=	swig runtime
