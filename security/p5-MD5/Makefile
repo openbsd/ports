@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD: Makefile,v 1.2 2001/01/04 11:36:04 avsm Exp $
 
 DISTNAME=	MD5-1.7
 PKGNAME=	p5-${DISTNAME}
