@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.326 2000/09/07 04:20:54 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.327 2000/09/11 18:06:24 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -258,6 +258,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #				  made first.  Use this for things that don't fall into
 #				  the above two categories.
 #
+# Those variables are deprecated, use EXTRACT_CASES instead.
 # EXTRACT_CMD	- Command for extracting archives (default: "gzip",
 #				  "bzip2" if USE_BZIP2, "unzip" if USE_ZIP).
 # EXTRACT_SUFX	- Suffix for archive files (default: ".tar.gz",
@@ -268,6 +269,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # EXTRACT_AFTER_ARGS 
 #				- Arguments to ${EXTRACT_CMD} following filename
 #				  (default: "| ${TAR} -xf -", or "-d ${WKRDIR}" if USE_ZIP).
+#
 #
 # FETCH_CMD		  - Full path to ftp/http fetch command if not in $PORTPATH
 #				  (default: /usr/bin/ftp).
@@ -652,28 +654,6 @@ TAR?=	/usr/bin/tar
 UNZIP?=	unzip
 BZIP2?=	bzip2
 
-.if defined(USE_ZIP)
-BUILD_DEPENDS+=		${UNZIP}::archivers/unzip
-EXTRACT_CMD?=		${UNZIP}
-EXTRACT_SUFX?=		.zip
-EXTRACT_BEFORE_ARGS?=  -q
-EXTRACT_AFTER_ARGS?=   -d ${WRKDIR}
-.else
-# common tar case
-
-EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
-EXTRACT_BEFORE_ARGS?=	-dc
-
-.  if defined(USE_BZIP2)
-BUILD_DEPENDS+=		${BZIP2}::archivers/bzip2
-EXTRACT_CMD?=		${BZIP2}
-EXTRACT_SUFX?=		.tar.bz2
-.  else
-EXTRACT_CMD?=		${GZIP_CMD}
-EXTRACT_SUFX?=		.tar.gz
-.  endif
-
-.endif
 
 MAKE_ENV+=	EXTRA_SYS_MK_INCLUDES="<bsd.own.mk>"
 
@@ -991,6 +971,16 @@ _CDROM_OVERRIDE=if cp -f ${CDROM_SITE}/$$f .; then exit 0; fi
 _CDROM_OVERRIDE=:
 .endif
 
+# Compatibility game: if USE_ZIP or USE_BZIP2 is already defined, set
+# EXTRACT_SUFX
+.if defined(USE_ZIP)
+EXTRACT_SUFX?=.zip
+.elif defined(USE_BZIP2)
+EXTRACT_SUFX?=.tar.bz2
+.endif
+
+EXTRACT_SUFX?=		.tar.gz
+
 # Derive names so that they're easily overridable.
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
 PKGNAME?=		${DISTNAME}${SUBPACKAGE}
@@ -1040,6 +1030,56 @@ _IGNOREFILES=	${IGNOREFILES}
 # This is what is actually going to be extracted, and is overridable
 #  by user.
 EXTRACT_ONLY?=	${_DISTFILES}
+
+# okay, time for some guess work
+.  if !empty(EXTRACT_ONLY:M*.zip)
+USE_ZIP?=	Yes
+.  endif
+.  if !empty(EXTRACT_ONLY:M*.tar.bz2)
+USE_BZIP2?=	Yes
+.  endif
+USE_ZIP?= No
+USE_BZIP2?= No
+
+# Compatibility game: if anything is defined, we define the rest
+# and invoke the old extract target
+.if defined(EXTRACT_CMD) || defined(EXTRACT_BEFORE_ARGS) || \
+	defined(EXTRACT_AFTER_ARGS)
+.  if ${USE_ZIP:L} != "no"
+BUILD_DEPENDS+=		${UNZIP}::archivers/unzip
+EXTRACT_CMD?=		${UNZIP}
+EXTRACT_BEFORE_ARGS?=  -q
+EXTRACT_AFTER_ARGS?=   -d ${WRKDIR}
+.  else
+# common tar case
+
+EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
+EXTRACT_BEFORE_ARGS?=	-dc
+
+.    if ${USE_BZIP2:L} != "no"
+BUILD_DEPENDS+=		${BZIP2}::archivers/bzip2
+EXTRACT_CMD?=		${BZIP2}
+.    else
+EXTRACT_CMD?=		${GZIP_CMD}
+.    endif
+.  endif
+EXTRACT_CASES= *) ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${FULLDISTDIR}/$$archive ${EXTRACT_AFTER_ARGS};;
+.else
+
+EXTRACT_CASES?= 
+
+# XXX note that we DON'T set EXTRACT_SUFX.
+.  if ${USE_ZIP:L} != "no"
+BUILD_DEPENDS+=		${UNZIP}::archivers/unzip
+EXTRACT_CASES+= *.zip) ${UNZIP} -q ${FULLDISTDIR}/$$archive -d ${WRKDIR};;
+.  endif
+.  if ${USE_BZIP2:L} != "no"
+BUILD_DEPENDS+=		${BZIP2}::archivers/bzip2
+EXTRACT_CASES+= *.tar.bz2) ${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
+.  endif
+EXTRACT_CASES+= *.tar) ${TAR} xf ${FULLDISTDIR}/$$archive;;
+EXTRACT_CASES+= *) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
+.endif
 
 # Documentation
 MAINTAINER?=	ports@openbsd.org
@@ -1405,12 +1445,11 @@ ${_EXTRACT_COOKIE}:
 	@rm -rf ${WRKDIR}
 	@mkdir -p ${WRKDIR}
 .  endif
-	@PATH=${PORTPATH}; \
-	for file in ${EXTRACT_ONLY}; do \
-		if cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${FULLDISTDIR}/$$file ${EXTRACT_AFTER_ARGS}; then : ; \
-		else\
-			exit 1; \
-		fi \
+	@PATH=${PORTPATH}; set -e; cd ${WRKDIR}; \
+	for archive in ${EXTRACT_ONLY}; do \
+		case $$archive in \
+		${EXTRACT_CASES} \
+		esac; \
 	done
 # End of EXTRACT
 .endif
@@ -2692,6 +2731,30 @@ depend:
 # Same goes for tags
 .if !target(tags)
 tags:
+.endif
+
+# Compatibility game: we have to define the old variables now for legacy
+# Makefiles
+.if !defined(EXTRACT_CMD)
+.  if defined(USE_ZIP)
+EXTRACT_CMD?=		${UNZIP}
+EXTRACT_SUFX?=		.zip
+EXTRACT_BEFORE_ARGS?=  -q
+EXTRACT_AFTER_ARGS?=   -d ${WRKDIR}
+.  else
+# common tar case
+
+EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
+EXTRACT_BEFORE_ARGS?=	-dc
+
+.    if defined(USE_BZIP2)
+EXTRACT_CMD?=		${BZIP2}
+EXTRACT_SUFX?=		.tar.bz2
+.    else
+EXTRACT_CMD?=		${GZIP_CMD}
+EXTRACT_SUFX?=		.tar.gz
+.    endif
+.  endif
 .endif
 
 .PHONY: \
