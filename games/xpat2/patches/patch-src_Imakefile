@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Imakefile,v 1.1 2002/09/18 19:21:31 pvalchev Exp $
+$OpenBSD: patch-src_Imakefile,v 1.2 2002/09/19 07:00:42 pvalchev Exp $
 --- src/Imakefile.orig	Sat Nov 25 10:55:35 1995
-+++ src/Imakefile	Wed Sep 18 13:16:09 2002
++++ src/Imakefile	Thu Sep 19 00:46:46 2002
 @@ -22,8 +22,8 @@
  # 4.) specify, if you want sound (must copy the appropriate sound module)
  #     SOUNDOBJ should be one module of X-sound_*.o if USE_SOUND is on, else empty
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_Imakefile,v 1.1 2002/09/18 19:21:31 pvalchev Exp $
  
  # 5.) specify, if you want the antialiased card construction set (SLOW!)
  #define USE_CARD_CONSTRUCTION
-@@ -37,13 +37,13 @@ SOUNDOBJ = X-sound_SUN.o
+@@ -37,9 +37,9 @@ SOUNDOBJ = X-sound_SUN.o
  # BINDIR and LIBDIR should be predefined by the templates
  # BINDIR = /usr/bin/X11
  # LIBDIR = /usr/lib/X11
@@ -24,11 +24,6 @@ $OpenBSD: patch-src_Imakefile,v 1.1 2002/09/18 19:21:31 pvalchev Exp $
  
  # This is the name of the log-file, where solved games are stored:
  # an alternative path would be $(XPATLIBDIR)/xpat.log
--SCOREFILE = /var/games/xpat.log
-+SCOREFILE = $(XPATLIBDIR)/xpat.log
- 
- 
- # paths for installation in user's home-directory.
 @@ -52,9 +52,10 @@ LXPATMANDIR = $(HOME)/xpat
  LAPPDEFSDIR = $(HOME)
  
