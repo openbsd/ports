@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/07 03:12:57 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/10/24 13:48:11 lebel Exp $
 bin/apply-gtk-theme
 bin/astheme
 bin/bbtheme
