@@ -1,0 +1,12 @@
+$OpenBSD: patch-scribus_plugins_fileloader_oodraw_sxwunzip_cpp,v 1.1.1.1 2005/03/07 14:05:59 espie Exp $
+--- scribus/plugins/fileloader/oodraw/sxwunzip.cpp.orig	Mon Mar  7 13:26:09 2005
++++ scribus/plugins/fileloader/oodraw/sxwunzip.cpp	Mon Mar  7 13:26:41 2005
+@@ -27,6 +27,8 @@
+ 
+ # include <unistd.h>
+ # include <utime.h>
++# include <sys/types.h>
++# include <sys/stat.h>
+ 
+ #include <iostream>
+ #include "unzip.h"

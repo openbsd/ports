@@ -1,0 +1,23 @@
+$OpenBSD: patch-scribus_plugins_scriptplugin_scriptplugin_cpp,v 1.1.1.1 2005/03/07 14:05:59 espie Exp $
+--- scribus/plugins/scriptplugin/scriptplugin.cpp.orig	Mon Mar  7 13:37:20 2005
++++ scribus/plugins/scriptplugin/scriptplugin.cpp	Mon Mar  7 13:39:17 2005
+@@ -499,8 +499,8 @@ void constantAlias(PyObject* scribusdict
+ {
+ 	/* Work around the braindead Python/C API not using 'const' for
+ 	 * strings it won't change. */
+-	char* newNameTemp = strndup(newName, strlen(newName));
+-	char* oldNameTemp = strndup(oldName, strlen(oldName));
++	char* newNameTemp = strdup(newName);
++	char* oldNameTemp = strdup(oldName);
+ 	assert(newNameTemp != NULL);
+ 	assert(oldNameTemp != NULL);
+ 	/* We use PyMapping_GetItemString because unlike PyDict_GetItemString it
+@@ -563,7 +563,7 @@ char* tr(const char* docstringConstant)
+ 	 */
+ 	QCString utfTranslated = translated.utf8();
+ 	const char* trch = utfTranslated.data();
+-	return strndup(trch, strlen(trch));
++	return strdup(trch);
+ }
+ 
+ /* Now we're using the more pythonic convention for names:
