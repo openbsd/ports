@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/11/23 14:10:21 wilfried Exp $
+# $OpenBSD: Makefile,v 1.15 2002/11/27 06:49:42 pvalchev Exp $
 
 COMMENT=		'module to interface the DNS resolver'
 
@@ -18,8 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Net/} \
 			${HOMEPAGE}/download/
 
-BUILD_DEPENDS=		:p5-MIME-Base64->=2.11:converters/p5-MIME-Base64  \
-			:p5-Digest-HMAC->=1.00:security/p5-Digest-HMAC
+BUILD_DEPENDS=		:p5-Digest-HMAC->=1.00:security/p5-Digest-HMAC
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
 CONFIGURE_STYLE=	perl
