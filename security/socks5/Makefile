@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.26 2001/07/29 01:06:02 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.27 2001/08/24 22:21:02 brad Exp $
 
 COMMENT=	"SOCKS v5 application layer gateway and clients"
 
 DISTNAME=	socks5-v1.0r11
 PKGNAME=	socks5-1.0.11
 CATEGORIES=	security net
-NEED_VERSION=	1.402
+NEED_VERSION=	1.435
 
-HOMEPAGE=	http://www.socks.nec.com/
+HOMEPAGE=	http://www.socks.nec.com/reference/socks5.html
 
 MAINTAINER=	ports@openbsd.org
 
