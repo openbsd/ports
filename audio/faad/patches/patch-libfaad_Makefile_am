@@ -1,0 +1,9 @@
+$OpenBSD: patch-libfaad_Makefile_am,v 1.1 2002/12/20 23:40:13 naddy Exp $
+--- libfaad/Makefile.am.orig	Sat Dec 21 00:06:40 2002
++++ libfaad/Makefile.am	Sat Dec 21 00:06:45 2002
+@@ -14,5 +14,3 @@ libfaad_la_INCLUDES = analysis.h bits.h 
+ filtbank.h huffman.h ic_predict.h is.h kbd_win.h lt_predict.h mdct.h mp4.h \
+ ms.h output.h pns.h pulse.h rvlc_scale_factors.h \
+ specrec.h syntax.h tns.h codebook/hcb.h
+-
+-CFLAGS = -O2

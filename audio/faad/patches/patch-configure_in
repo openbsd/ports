@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2002/12/20 23:40:13 naddy Exp $
+--- configure.in.orig	Fri Dec 20 23:32:01 2002
++++ configure.in	Fri Dec 20 23:32:24 2002
+@@ -29,7 +29,7 @@ AC_MSG_ERROR([
+   ])
+ fi
+ 
+-AC_OUTPUT_COMMANDS(,[cd common/mp4v2; aclocal -I .; autoheader; libtoolize --automake; automake --add-missing; autoconf; cd -])
++AC_OUTPUT_COMMANDS(,[cd common/mp4v2; aclocal -I .; autoheader; libtoolize --automake; automake --add-missing --include-deps; autoconf; cd -])
+ 
+ AC_CONFIG_SUBDIRS(common/mp4v2)
+ 
