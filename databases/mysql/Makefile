@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2001/03/16 21:14:42 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2001/03/17 18:26:39 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 VERSION=	3.23.35
@@ -8,7 +8,8 @@ NEED_VERSION=	1.336
 MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
 		http://www.mysql.net/Downloads/%SUBDIR%/ \
 		http://mysql.he.net/Downloads/%SUBDIR%/ \
-		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/%SUBDIR%/
+		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/%SUBDIR%/ \
+		ftp://ftp.shellhung.org/pub/Mirror/mysql/Downloads/%SUBDIR%
 MASTER_SITE_SUBDIR= MySQL-3.23
 
 HOMEPAGE=	http://www.mysql.com/
