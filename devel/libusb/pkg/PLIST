@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/20 06:23:00 pvalchev Exp $
+bin/libusb-config
+include/usb.h
+lib/libusb.a
+lib/libusb.la
+%%SHARED%%

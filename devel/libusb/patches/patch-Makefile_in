@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/08/20 06:23:00 pvalchev Exp $
+--- Makefile.in.orig	Sat Jan 13 13:18:06 2001
++++ Makefile.in	Sun Aug 19 23:46:10 2001
+@@ -108,7 +108,7 @@ libusb_la_SOURCES = usb.c usbi.h error.c
+ 
+ include_HEADERS = usb.h
+ 
+-libusb_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE) 	-export-dynamic
++libusb_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-export-dynamic
+ 
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

@@ -1,0 +1,4 @@
+libusb provides a library for application access to
+USB devices.
+
+WWW: ${HOMEPAGE}
