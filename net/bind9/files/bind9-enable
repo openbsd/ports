@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$OpenBSD: bind9-enable,v 1.6 2001/08/21 18:00:25 jakob Exp $
+#	$OpenBSD: bind9-enable,v 1.7 2001/09/20 21:47:24 jakob Exp $
 #
 #	this script replaces OpenBSD named files with the corresponding
 #	files from BIND v9.
@@ -91,17 +91,18 @@ if [ ! -d ${CHROOT} ]; then
     install -d -o root -g wheel -m 755 ${CHROOT}/var
 fi
 
+echo " ${CHROOT}/dev"
 if [ ! -d ${CHROOT}/dev ]; then
-    echo " ${CHROOT}/dev"
     install -d -o root -g wheel -m 755 ${CHROOT}/dev
 fi
-
-test -e ${CHROOT}/dev/null    || mknod ${CHROOT}/dev/null c 2 2
-test -e ${CHROOT}/dev/random  || mknod ${CHROOT}/dev/random  c 45 0
-test -e ${CHROOT}/dev/srandom || mknod ${CHROOT}/dev/srandom c 45 1
-test -e ${CHROOT}/dev/urandom || mknod ${CHROOT}/dev/urandom c 45 2
-test -e ${CHROOT}/dev/prandom || mknod ${CHROOT}/dev/prandom c 45 3
-test -e ${CHROOT}/dev/arandom || mknod ${CHROOT}/dev/arandom c 45 4
+pax -r -w -pe \
+    /dev/null \
+    /dev/random \
+    /dev/srandom \
+    /dev/urandom \
+    /dev/prandom \
+    /dev/arandom \
+    ${CHROOT}
 
 if [ ! -d ${CHROOT}/var ]; then
     echo " ${CHROOT}/var"
