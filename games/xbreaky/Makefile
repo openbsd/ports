@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/22 14:03:15 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/24 12:56:51 kevlo Exp $
 
 DISTNAME=	xbreaky-0.0.4
 CATEGORIES=	games
-NEED_VERSION=	1.313
-MASTER_SITES=	http://xbreaky.sourceforge.net/
+NEED_VERSION=	1.340
+MASTER_SITES=	${HOMEPAGE}
+
+HOMEPAGE=	http://xbreaky.sourceforge.net/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
-
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

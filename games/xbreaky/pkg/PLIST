@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/10 01:56:24 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/10/24 12:56:54 kevlo Exp $
 bin/xbreaky
 bin/xbreaky.snd
 man/man6/xbreaky.6
@@ -18,6 +18,6 @@ share/xbreaky/doc/AUTHORS
 share/xbreaky/doc/COPYING
 share/xbreaky/doc/README
 share/xbreaky/pixmaps/xbreaky.xpm
-@dirrm share/xbreaky/doc
 @dirrm share/xbreaky/pixmaps
+@dirrm share/xbreaky/doc
 @dirrm share/xbreaky

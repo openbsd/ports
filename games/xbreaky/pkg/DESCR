@@ -10,4 +10,4 @@ the ball will bounce back to hit other bricks, sidewalls or the highest
 wall. If it falls down not hitting the paddle, you lose one life and have
 to start over.
 
-WWW:	http://xbreaky.sourceforge.net
+WWW: ${HOMEPAGE}
