@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2000/09/27 16:16:37 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/09/27 16:53:18 danh Exp $
 
 DISTNAME=	gnuplot-3.7.1
 CATEGORIES=	math graphics
-NEED_VERSION=	1.334
+NEED_VERSION=	1.337
 MASTER_SITES=	ftp://ftp.gnuplot.vt.edu/pub/gnuplot/ \
 		ftp://ftp.irisa.fr/pub/gnuplot/ \
 		ftp://ftp.cc.monash.edu.au/pub/gnuplot/ \
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 FLAVORS=	no_x11
 FLAVOR?=
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--without-linux-vga --without-gd \
 		--with-png --with-gnu-readline --with-lasergnu
 
