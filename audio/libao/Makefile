@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/07/25 18:39:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2001/07/26 12:31:32 espie Exp $
 
 COMMENT=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
@@ -6,8 +6,9 @@ COMMENT-esd=	"ESounD module for portable audio output library"
 
 VERSION=	0.7.0
 DISTNAME=	libao-${VERSION}
-PKGNAME-arts=	libao-arts-${VERSION}
-PKGNAME-esd=	libao-esd-${VERSION}
+FULLPKGNAME=		libao-${VERSION}
+FULLPKGNAME-arts=	libao-arts-${VERSION}
+FULLPKGNAME-esd=	libao-esd-${VERSION}
 CATEGORIES=    	audio
 NEED_VERSION=	1.422
 HOMEPAGE=	http://www.vorbis.com/
@@ -22,17 +23,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}files/rc1/unix/
 
 FLAVORS=	no_arts no_esd
-FLAVOR?=
+FLAVOR?=	no_arts
 
 MULTI_PACKAGES=
-.if ${FLAVOR:L:Mno_arts}
-FLAVOR:=	${FLAVOR:L:Nno_arts}
-.else
+.if !${FLAVOR:L:Mno_arts}
 MULTI_PACKAGES+= -arts
 .endif
-.if ${FLAVOR:L:Mno_esd}
-FLAVOR:=	${FLAVOR:L:Nno_esd}
-.else
+.if !${FLAVOR:L:Mno_esd}
 MULTI_PACKAGES+= -esd
 .endif
 
