@@ -41,7 +41,7 @@ To automatically shutdown the database as part of the system shutdown,
 add the following lines to /etc/rc.shutdown:
 
 if [ -f /var/postgresql/data/postmaster.pid ]; then
-	su -l postgresql -c "!!PREFIX!!/bin/pg_ctl stop \
+	su -l postgresql -c "!!PREFIX!!/bin/pg_ctl stop -m fast \
 		-D /var/postgresql/data"
 	rm -f /var/portgresql/data/postmaster.pid
 fi
