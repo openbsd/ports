@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_sysdep_h,v 1.1 2000/07/13 00:25:52 danh Exp $
+--- src/sysdep.h.orig	Wed Mar 29 09:47:14 2000
++++ src/sysdep.h	Wed Jul 12 01:34:55 2000
+@@ -20,7 +20,7 @@ typedef unsigned long	UINT4;
+ #include        <string.h>
+ #endif
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ # include        <stdlib.h>
+ #else
+ # include        <malloc.h>
+@@ -64,5 +64,13 @@ typedef unsigned long	UINT4;
+ #  endif
+ #  define ut_user ut_name
+ #endif
++#if defined(__OpenBSD__)
++#  include <utmp.h>
++#  ifndef UTMP_FILE
++#    define UTMP_FILE _PATH_UTMP
++#  endif
++#  define ut_user ut_name
++#endif
++
+ 
+ #endif /* SYSDEP_H_INCLUDED */
