@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2003/02/11 19:47:34 couderc Exp $
+# $OpenBSD: Makefile,v 1.28 2003/02/20 05:50:34 marcm Exp $
 
 COMMENT=	"open-source, cross-platform WYSIWYG word processor"
 
@@ -55,7 +55,7 @@ LIB_DEPENDS+=		xml2::textproc/libxml
 .if ${FLAVOR:L:Mgnome}
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/gnome/apps/Applications
-	${INSTALL_DATA} ${WRKDIST}/src/pkg/linux/rpm/data/abiword.desktop ${PREFIX}/share/gnome/apps/Applications
+	${INSTALL_DATA} ${WRKSRC}/src/pkg/linux/rpm/data/abiword.desktop ${PREFIX}/share/gnome/apps/Applications
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${PREFIX}/share/AbiSuite/icons/abiword_48.png ${PREFIX}/share/pixmaps
 .endif
