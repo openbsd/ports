@@ -3,7 +3,7 @@
 # Date created:		31 Jan 2000
 # Who:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.2 2000/01/30 22:35:13 d Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/09 05:38:34 d Exp $
 
 DISTNAME=	w3m-0.1.6
 
@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.firedrake.org/w3m/ \
 		ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
-		http://www.instinct.org/~pgl/w3m/
+		http://www.instinct.org/w3m/
 
 MAINTAINER=	dugsong@monkey.org
 
