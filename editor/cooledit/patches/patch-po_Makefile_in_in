@@ -1,0 +1,14 @@
+$OpenBSD: patch-po_Makefile_in_in,v 1.1.1.1 2001/01/08 22:37:00 espie Exp $
+--- po/Makefile.in.in.orig	Sun Dec 24 16:32:33 2000
++++ po/Makefile.in.in	Sun Dec 24 16:33:14 2000
+@@ -118,8 +118,8 @@ install-data-yes: all
+ 	for cat in $$catalogs; do \
+ 	  cat=`basename $$cat`; \
+ 	  case "$$cat" in \
+-	    *.gmo) destdir=$(gnulocaledir);; \
+-	    *)     destdir=$(localedir);; \
++	    *.gmo) destdir=$(DESTDIR)$(gnulocaledir);; \
++	    *)     destdir=$(DESTDIR)$(localedir);; \
+ 	  esac; \
+ 	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
+ 	  dir=$$destdir/$$lang/LC_MESSAGES; \

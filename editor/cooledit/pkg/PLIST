@@ -1,0 +1,125 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/08 22:37:01 espie Exp $
+bin/coolbrowse
+bin/cooledit
+bin/cooledit-gdb
+bin/coolicon
+bin/coolinput
+bin/coollistbox
+bin/coolman
+bin/coolmessage
+bin/coolproject
+bin/coolquery
+bin/obsidiansplash
+bin/smalledit
+lib/cooledit/Xmlrpclib.py
+lib/cooledit/c_utils.py
+lib/cooledit/global.py
+lib/cooledit/sh_utils.py
+lib/cooledit/syntax/ada95.syntax
+lib/cooledit/syntax/bapc.syntax
+lib/cooledit/syntax/c.syntax
+lib/cooledit/syntax/changelog.syntax
+lib/cooledit/syntax/diff.syntax
+lib/cooledit/syntax/fortran.syntax
+lib/cooledit/syntax/html.syntax
+lib/cooledit/syntax/jasm.syntax
+lib/cooledit/syntax/java.syntax
+lib/cooledit/syntax/latex.syntax
+lib/cooledit/syntax/lsm.syntax
+lib/cooledit/syntax/lua.syntax
+lib/cooledit/syntax/mail.syntax
+lib/cooledit/syntax/makefile.syntax
+lib/cooledit/syntax/mhtml.syntax
+lib/cooledit/syntax/ml.syntax
+lib/cooledit/syntax/mudela.syntax
+lib/cooledit/syntax/nroff.syntax
+lib/cooledit/syntax/pascal.syntax
+lib/cooledit/syntax/perl.syntax
+lib/cooledit/syntax/php.syntax
+lib/cooledit/syntax/python.syntax
+lib/cooledit/syntax/sh.syntax
+lib/cooledit/syntax/smalltalk.syntax
+lib/cooledit/syntax/swig.syntax
+lib/cooledit/syntax/texinfo.syntax
+lib/cooledit/syntax/unknown.syntax
+lib/cooledit/zope_utils.py
+lib/coolicon/browse.xpm
+lib/coolicon/cdrom_eject.xpm
+lib/coolicon/cdrom_view.xpm
+lib/coolicon/cooledit.xpm
+lib/coolicon/coolicon.config
+lib/coolicon/dynamite.xpm
+lib/coolicon/e.data
+lib/coolicon/gmc.xpm
+lib/coolicon/launch.xpm
+lib/coolicon/lyx.xpm
+lib/coolicon/manual.xpm
+lib/coolicon/mc.xpm
+lib/coolicon/modify-xinitrc
+lib/coolicon/netscape.xpm
+lib/coolicon/nscape.xpm
+lib/coolicon/phonedown.xpm
+lib/coolicon/phoneup.xpm
+lib/coolicon/printer.xpm
+lib/coolicon/spanner.xpm
+lib/coolicon/xterm.xpm
+lib/coolicon/xv.xpm
+lib/libCw.a
+lib/libCw.la
+man/man1/cooledit.1
+man/man1/coolicon.1
+man/man1/coolman.1
+man/man1/smalledit.1
+share/locale/cs/LC_MESSAGES/cooledit.mo
+share/locale/da/LC_MESSAGES/cooledit.mo
+share/locale/de/LC_MESSAGES/cooledit.mo
+share/locale/es/LC_MESSAGES/cooledit.mo
+share/locale/fi/LC_MESSAGES/cooledit.mo
+share/locale/fr/LC_MESSAGES/cooledit.mo
+share/locale/it/LC_MESSAGES/cooledit.mo
+share/locale/ja/LC_MESSAGES/cooledit.mo
+share/locale/ko/LC_MESSAGES/cooledit.mo
+share/locale/nl/LC_MESSAGES/cooledit.mo
+share/locale/no/LC_MESSAGES/cooledit.mo
+share/locale/pl/LC_MESSAGES/cooledit.mo
+share/locale/pt/LC_MESSAGES/cooledit.mo
+share/locale/ru/LC_MESSAGES/cooledit.mo
+share/locale/sl/LC_MESSAGES/cooledit.mo
+share/locale/sv/LC_MESSAGES/cooledit.mo
+%%SHARED%%
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/sl/LC_MESSAGES
+@dirrm share/locale/sl
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/ko/LC_MESSAGES
+@dirrm share/locale/ko
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/da
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/locale
+@dirrm lib/coolicon
+@dirrm lib/cooledit/syntax
+@dirrm lib/cooledit

@@ -1,0 +1,14 @@
+$OpenBSD: patch-rxvt__rxvtlib_h,v 1.1.1.1 2001/01/08 22:37:00 espie Exp $
+--- rxvt/_rxvtlib.h.orig	Sun Dec 24 16:19:42 2000
++++ rxvt/_rxvtlib.h	Sun Dec 24 16:20:32 2000
+@@ -168,7 +168,10 @@
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <net/if.h>
++/* on both these OSes, including net/if.h triggers inclusion of if_arp.h */
++#if !defined(__NetBSD__) && !defined(__OpenBSD__)
+ #include <net/if_arp.h>
++#endif
+ #include "X11/keysymdef.h"
+ #include <X11/cursorfont.h>
+ #include <X11/Xatom.h>

@@ -1,0 +1,52 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2001/01/08 22:37:01 espie Exp $
+--- configure.orig	Tue Aug 29 15:00:53 2000
++++ configure	Sun Dec 24 16:40:28 2000
+@@ -1968,15 +1968,17 @@ cat >> confdefs.h <<EOF
+ EOF
+ 
+ 
+-echo $ac_n "checking for rxvt... "
+-if rxvt -help 2>&1 | grep geom >/dev/null ; then
+-	XTERM_CMD="rxvt -fn %F -bg Navy -fg White " ;
+-	echo "yes" ;
+-else
+-	XTERM_CMD="xterm" ;
+-	echo "no" ;
++if [ -z "$XTERM_CMD" ]; then
++    echo $ac_n "checking for rxvt... "
++    if rxvt -help 2>&1 | grep geom >/dev/null ; then
++	    XTERM_CMD="rxvt -fn %F -bg Navy -fg White " ;
++	    echo "yes" ;
++    else
++	    XTERM_CMD="xterm" ;
++	    echo "no" ;
++    fi
++    rm -f conftestrxvt
+ fi
+-rm -f conftestrxvt
+ cat >> confdefs.h <<EOF
+ #define XTERM_CMD "${XTERM_CMD}"
+ EOF
+@@ -2839,13 +2841,13 @@ CFLAGS="$CFLAGS $X_CFLAGS"
+ LDFLAGS="$LDFLAGS $X_LIBS"
+ 
+ 
+-
+ PYLIB=python1.5
+ LIBPY=python1.5
+ 
+ have_python_config=no
+ have_python_include=no
+ 
++if [ -z "$NOPYTHON" ]; then
+ echo $ac_n "checking for python version 1.5""... $ac_c" 1>&6
+ echo "configure:2851: checking for python version 1.5" >&5
+ EPATH=`echo $PATH | sed -e 's+/bin:+ +g' -e 's+:+ +g'`
+@@ -2867,6 +2869,7 @@ for i in / /opt /usr /usr/local /usr/ccs
+ 	done
+     done
+ done
++fi
+ 
+ if test x$have_python_config = xyes && test x$have_python_include = xyes ; then
+     have_python=yes
