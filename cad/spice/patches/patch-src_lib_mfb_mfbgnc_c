@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_lib_mfb_mfbgnc_c,v 1.1 2001/08/02 23:54:56 pvalchev Exp $
+--- src/lib/mfb/mfbgnc.c.orig	Tue Apr  9 20:08:26 1991
++++ src/lib/mfb/mfbgnc.c	Thu Aug  2 17:06:58 2001
+@@ -25,7 +25,9 @@ Author: -C- 1982 Giles C. Billingsley
+ 
+ /* Library routines */
+ #ifdef HAS_FTIME
++#ifndef __OpenBSD__
+ extern void ftime();
++#endif /*__OpenBSD__*/
+ #endif
+ 
+ /*

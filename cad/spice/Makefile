@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/08/02 22:53:18 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2001/08/02 23:54:56 pvalchev Exp $
 
 COMMENT=	"Simulation Program for Integrated Circuit Electronics"
 
@@ -30,11 +30,13 @@ pre-patch:
 	  ${PATCH} -d ${WRKSRC}/src/lib/fte -E -p1 < grid.patch; \
 	  ${PATCH} -d ${WRKSRC}/src/lib/fte -E -p1 < newcoms.patch; \
 	  ${PATCH} -d ${WRKSRC}/src/lib/sparse -E -p1 < spsmp.patch
+	@find ${WRKSRC}/ -name \*.orig -exec rm -f {} \;
 .else
 	@cd ${WRKDIR}/3f4patches; \
 	  ${PATCH} -d ${WRKSRC}/src/lib/fte -N -s -E -p1 < grid.patch; \
 	  ${PATCH} -d ${WRKSRC}/src/lib/fte -N -s -E -p1 < newcoms.patch; \
 	  ${PATCH} -d ${WRKSRC}/src/lib/sparse -N -s -E -p1 < spsmp.patch
+	@find ${WRKSRC}/ -name \*.orig -exec rm -f {} \;
 .endif
 
 do-configure:
