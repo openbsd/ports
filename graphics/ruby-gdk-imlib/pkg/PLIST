@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/02/24 14:08:29 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:50:10 espie Exp $
 lib/ruby/site_ruby/${REV}/gdk_imlib.rb
 lib/ruby/site_ruby/${REV}/${SUB}/gdk_imlib.so
+share/examples/ruby/ruby-gdk-imlib/
 share/examples/ruby/ruby-gdk-imlib/sample1.rb
 share/examples/ruby/ruby-gdk-imlib/sample2.rb
 share/examples/ruby/ruby-gdk-imlib/sample3.rb
 share/examples/ruby/ruby-gdk-imlib/sample4.rb
 share/examples/ruby/ruby-gdk-imlib/sample5.rb
-@dirrm share/examples/ruby/ruby-gdk-imlib

@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/15 17:11:44 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:46:08 espie Exp $
 bin/eboard
 bin/eboard-addtheme
 bin/eboard-config
-man/man1/eboard-addtheme.1
-man/man1/eboard-config.1
-man/man6/eboard.6
+@man man/man1/eboard-addtheme.1
+@man man/man1/eboard-config.1
+@man man/man6/eboard.6
+share/doc/eboard/
 share/doc/eboard/Crafty.txt
 share/doc/eboard/FICS-Timeseal.txt
 share/doc/eboard/GNUChess4.txt
@@ -12,6 +13,7 @@ share/doc/eboard/GNUChess5.txt
 share/doc/eboard/Scripts.txt
 share/doc/eboard/Sjeng.txt
 share/doc/eboard/Themes.txt
+share/eboard/
 share/eboard/NAG.en.txt
 share/eboard/basic_g.png
 share/eboard/basic_w.png
@@ -22,20 +24,7 @@ share/locale/cs/LC_MESSAGES/eboard.mo
 share/locale/de/LC_MESSAGES/eboard.mo
 share/locale/es/LC_MESSAGES/eboard.mo
 share/locale/it/LC_MESSAGES/eboard.mo
+@comment share/locale/it_IT/
+@comment share/locale/it_IT/LC_MESSAGES/
 @comment share/locale/it_IT/LC_MESSAGES/eboard.mo
 share/locale/pt_BR/LC_MESSAGES/eboard.mo
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@comment @dirrm share/locale/it_IT/LC_MESSAGES
-@comment @dirrm share/locale/it_IT
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale
-@dirrm share/eboard
-@dirrm share/doc/eboard

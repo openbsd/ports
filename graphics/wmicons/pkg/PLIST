@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/13 18:51:18 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:11 espie Exp $
 share/WindowMaker/Pixmaps/3D-Gun.xpm
 share/WindowMaker/Pixmaps/3D.png
 share/WindowMaker/Pixmaps/3D.tif
@@ -323,10 +323,10 @@ share/WindowMaker/Pixmaps/xapp.tif
 share/WindowMaker/Pixmaps/xcdroast.tif
 share/WindowMaker/Pixmaps/xpdf.tif
 share/WindowMaker/Pixmaps/xterm.tif
+share/doc/wmicons/
 share/doc/wmicons/README.IconFest
 share/doc/wmicons/README.NeXT.XEmacs
 share/doc/wmicons/README.vf_png
 share/doc/wmicons/README.vf_tif
 share/doc/wmicons/dwiconpack1.README
 share/doc/wmicons/dwiconpack2.README
-@dirrm share/doc/wmicons

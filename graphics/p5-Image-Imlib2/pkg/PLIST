@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/07 09:41:24 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:10 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Image/
 ${P5ARCH}/Image/Imlib2.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Image/
+${P5ARCH}/auto/Image/Imlib2/
 ${P5ARCH}/auto/Image/Imlib2/Imlib2.bs
-man/man3p/Image::Imlib2.3p
+@man man/man3p/Image::Imlib2.3p
 %%SHARED%%
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Image/Imlib2
-@dirrm ${P5ARCH}/auto/Image
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Image
-@dirrm ${P5ARCH}

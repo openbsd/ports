@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2004/04/18 00:36:22 jolan Exp $
-lib/libavcodec.so.4.8
-lib/libavformat.so.4.8
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.8 2004/09/15 00:50:08 espie Exp $
+@lib lib/libavcodec.so.4.8
+@lib lib/libavformat.so.4.8

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2004/08/03 12:42:27 todd Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2004/09/15 00:50:08 espie Exp $
 lib/ggi/default/color.so
 lib/ggi/default/ilbm.so
 lib/ggi/default/iplanar_2p.so
@@ -34,8 +34,4 @@ lib/ggi/helper/helper_x_dga.so
 lib/ggi/helper/helper_x_evi.so
 lib/ggi/helper/helper_x_shm.so
 lib/ggi/helper/helper_x_vidmode.so
-lib/libggi.so.2.4
-DYNLIBDIR(%D/lib)
-@comment NEWDYNLIBDIR(%D/lib/ggi/default)
-@comment NEWDYNLIBDIR(%D/lib/ggi/display)
-@comment NEWDYNLIBDIR(%D/lib/ggi/helper)
+@lib lib/libggi.so.2.4

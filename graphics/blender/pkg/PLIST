@@ -1,13 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/12/13 09:39:35 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:50:08 espie Exp $
 bin/blender
+share/examples/blender/
 share/examples/blender/README
 share/examples/blender/copyright.txt
+share/examples/blender/plugins/
 share/examples/blender/plugins/Makefile
 share/examples/blender/plugins/bmake
+share/examples/blender/plugins/include/
 share/examples/blender/plugins/include/floatpatch.h
 share/examples/blender/plugins/include/iff.h
 share/examples/blender/plugins/include/plugin.h
 share/examples/blender/plugins/include/util.h
+share/examples/blender/plugins/sequence/
 share/examples/blender/plugins/sequence/Makefile
 share/examples/blender/plugins/sequence/blur.c
 share/examples/blender/plugins/sequence/blur.so
@@ -15,13 +19,9 @@ share/examples/blender/plugins/sequence/scatter.c
 share/examples/blender/plugins/sequence/scatter.so
 share/examples/blender/plugins/sequence/showzbuf.c
 share/examples/blender/plugins/sequence/showzbuf.so
+share/examples/blender/plugins/texture/
 share/examples/blender/plugins/texture/Makefile
 share/examples/blender/plugins/texture/clouds2.c
 share/examples/blender/plugins/texture/clouds2.so
 share/examples/blender/plugins/texture/tiles.c
 share/examples/blender/plugins/texture/tiles.so
-@dirrm share/examples/blender/plugins/texture
-@dirrm share/examples/blender/plugins/sequence
-@dirrm share/examples/blender/plugins/include
-@dirrm share/examples/blender/plugins
-@dirrm share/examples/blender

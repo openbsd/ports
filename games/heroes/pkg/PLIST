@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/15 17:11:44 naddy Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/heroes.info
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:46:09 espie Exp $
 bin/heroes
 bin/heroeslvl
-info/heroes.info
-info/heroes.info-1
-info/heroes.info-2
-man/man6/heroes.6
-man/man6/heroeslvl.6
+@info info/heroes.info
+@man man/man6/heroes.6
+@man man/man6/heroeslvl.6
+share/heroes/
+share/heroes/etc/
 share/heroes/etc/heroesrc
+share/heroes/levels/
 @comment share/heroes/levels/Makefile.inc
 share/heroes/levels/level.lst
 share/heroes/levels/niv010.lvl
@@ -104,6 +104,7 @@ share/heroes/levels/niv105.lvl
 share/heroes/levels/niv106.lvl
 share/heroes/levels/niv107.lvl
 share/heroes/levels/niv108.lvl
+share/heroes/mod/
 share/heroes/mod/endscroll.xm
 share/heroes/mod/heroes01.xm
 share/heroes/mod/heroes02.xm
@@ -118,6 +119,7 @@ share/heroes/mod/heroes10.xm
 share/heroes/mod/intro.xm
 share/heroes/mod/menu.xm
 share/heroes/mod/sound.conf
+share/heroes/pics/
 @comment share/heroes/pics/Makefile.inc
 share/heroes/pics/arrow.fig
 share/heroes/pics/arrow.pcx
@@ -150,6 +152,7 @@ share/heroes/pics/olympus.pcx
 share/heroes/pics/trail.pcx
 share/heroes/pics/typonus.pcx
 share/heroes/pics/vehic.pcx
+share/heroes/sfx/
 share/heroes/sfx/alien.wav
 share/heroes/sfx/argent01.wav
 share/heroes/sfx/bonus.wav
@@ -184,6 +187,7 @@ share/heroes/sfx/sleep.wav
 share/heroes/sfx/speedown.wav
 share/heroes/sfx/speedup.wav
 share/heroes/sfx/stop.wav
+share/heroes/tilesets/
 @comment share/heroes/tilesets/Makefile.inc
 share/heroes/tilesets/level01.glz
 share/heroes/tilesets/level01.pcx
@@ -220,22 +224,3 @@ share/locale/fr/LC_MESSAGES/heroes.mo
 share/locale/it/LC_MESSAGES/heroes.mo
 share/locale/nl/LC_MESSAGES/heroes.mo
 share/locale/pt_BR/LC_MESSAGES/heroes.mo
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale
-@dirrm share/heroes/tilesets
-@dirrm share/heroes/sfx
-@dirrm share/heroes/pics
-@dirrm share/heroes/mod
-@dirrm share/heroes/levels
-@dirrm share/heroes/etc
-@dirrm share/heroes
-@exec install-info --info-dir=%D/info %D/info/heroes.info

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/08/03 13:22:01 todd Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/09/15 00:50:09 espie Exp $
 bin/mhub
 bin/xsendbut
 include/ggi/
@@ -100,11 +100,9 @@ lib/libgii.la
 @man man/man7/libgii.7
 share/doc/gii/
 share/doc/gii/README
-@cwd ${SYSCONFDIR}
-ggi/
-ggi/filter/
-@cwd ${PREFIX}
 share/examples/gii/
+@sample ${CONFDIR}/
+@sample ${CONFDIR}/filter/
 share/examples/gii/filter_keytrans.example
 @sample ${CONFDIR}/filter/keytrans
 share/examples/gii/filter_mouse.example

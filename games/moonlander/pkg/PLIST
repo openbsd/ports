@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/15 16:01:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:09 espie Exp $
 bin/moonlander
+share/moonlander/
+share/moonlander/fonts/
 share/moonlander/fonts/ConsoleFont.bmp
 share/moonlander/fonts/LargeFont.bmp
+share/moonlander/images/
+share/moonlander/images/backgrounds/
 share/moonlander/images/backgrounds/blue_nebula.jpg
 share/moonlander/images/backgrounds/earth_moon.jpg
 share/moonlander/images/backgrounds/fingers.jpg
@@ -11,6 +15,7 @@ share/moonlander/images/backgrounds/orange_gas.jpg
 share/moonlander/images/backgrounds/red_plain.jpg
 share/moonlander/images/backgrounds/saturn.jpg
 share/moonlander/images/blank_terrain.gif
+share/moonlander/images/kablam/
 share/moonlander/images/kablam/exp01.png
 share/moonlander/images/kablam/exp02.png
 share/moonlander/images/kablam/exp03.png
@@ -47,8 +52,3 @@ share/moonlander/images/thrust_left.bmp
 share/moonlander/images/thrust_right.bmp
 share/moonlander/images/win_icon.bmp
 !%%no_sound%%
-@dirrm share/moonlander/images/kablam
-@dirrm share/moonlander/images/backgrounds
-@dirrm share/moonlander/images
-@dirrm share/moonlander/fonts
-@dirrm share/moonlander

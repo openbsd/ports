@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:49 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:46:09 espie Exp $
 bin/frotz
-man/man6/frotz.6
+@man man/man6/frotz.6

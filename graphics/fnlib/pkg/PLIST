@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/10/18 00:37:18 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:50:08 espie Exp $
 include/Fnlib.h
 include/Fnlib_types.h
 lib/libFnlib.a
 lib/libFnlib.la
-%%SHARED%%
+share/examples/fnlib/
 share/examples/fnlib/fnrc
+@sample ${SYSCONFDIR}/fnrc
+share/fnlib_fonts/
+share/fnlib_fonts/e/
+share/fnlib_fonts/e/17/
 share/fnlib_fonts/e/17/032.png
 share/fnlib_fonts/e/17/033.png
 share/fnlib_fonts/e/17/034.png
@@ -101,6 +105,8 @@ share/fnlib_fonts/e/17/124.png
 share/fnlib_fonts/e/17/125.png
 share/fnlib_fonts/e/17/126.png
 share/fnlib_fonts/e/fontinfo
+share/fnlib_fonts/rock/
+share/fnlib_fonts/rock/90/
 share/fnlib_fonts/rock/90/0_rock.png
 share/fnlib_fonts/rock/90/1_rock.png
 share/fnlib_fonts/rock/90/2_rock.png
@@ -153,6 +159,8 @@ share/fnlib_fonts/rock/90/x_rock.png
 share/fnlib_fonts/rock/90/y_rock.png
 share/fnlib_fonts/rock/90/z_rock.png
 share/fnlib_fonts/rock/fontinfo
+share/fnlib_fonts/shinymetal/
+share/fnlib_fonts/shinymetal/45/
 share/fnlib_fonts/shinymetal/45/0.tif
 share/fnlib_fonts/shinymetal/45/033.tif
 share/fnlib_fonts/shinymetal/45/034.tif
@@ -246,13 +254,4 @@ share/fnlib_fonts/shinymetal/45/x.tif
 share/fnlib_fonts/shinymetal/45/y.tif
 share/fnlib_fonts/shinymetal/45/z.tif
 share/fnlib_fonts/shinymetal/fontinfo
-@dirrm share/examples/fnlib
-@dirrm share/fnlib_fonts/e/17
-@dirrm share/fnlib_fonts/e
-@dirrm share/fnlib_fonts/rock/90
-@dirrm share/fnlib_fonts/rock
-@dirrm share/fnlib_fonts/shinymetal/45
-@dirrm share/fnlib_fonts/shinymetal
-@dirrm share/fnlib_fonts
-@cwd ${SYSCONFDIR}
-@extra fnrc
+%%SHARED%%

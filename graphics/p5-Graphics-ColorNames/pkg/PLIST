@@ -1,19 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/31 19:57:42 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:50:10 espie Exp $
+${P5SITE}/Graphics/
+${P5SITE}/Graphics/ColorNames/
 ${P5SITE}/Graphics/ColorNames.pm
 ${P5SITE}/Graphics/ColorNames/HTML.pm
 ${P5SITE}/Graphics/ColorNames/Netscape.pm
 ${P5SITE}/Graphics/ColorNames/Windows.pm
 ${P5SITE}/Graphics/ColorNames/X.pm
-@comment ${P5ARCH}/auto/Graphics/ColorNames/.packlist
-man/man3p/Graphics::ColorNames.3p
-man/man3p/Graphics::HTML.3p
-man/man3p/Graphics::Netscape.3p
-man/man3p/Graphics::Windows.3p
-man/man3p/Graphics::X.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Graphics/ColorNames
-@comment @dirrm ${P5ARCH}/auto/Graphics
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Graphics/ColorNames
-@dirrm ${P5SITE}/Graphics
+@man man/man3p/Graphics::ColorNames.3p
+@man man/man3p/Graphics::HTML.3p
+@man man/man3p/Graphics::Netscape.3p
+@man man/man3p/Graphics::Windows.3p
+@man man/man3p/Graphics::X.3p

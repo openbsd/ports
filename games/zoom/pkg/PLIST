@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/10/28 02:24:23 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:13 espie Exp $
 bin/zoom
+share/doc/zoom/
 share/doc/zoom/README
+share/examples/zoom/
 share/examples/zoom/dot.zoomrc
-@dirrm share/examples/zoom
-@dirrm share/doc/zoom
+share/zoom/
+share/zoom/zoomrc

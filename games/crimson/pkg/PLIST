@@ -1,26 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/01/12 06:38:55 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:46:08 espie Exp $
 bin/bi2cf
 bin/cfed
 bin/comet
 bin/crimson
-man/man6/bi2cf.6
-man/man6/cfed.6
-man/man6/comet.6
-man/man6/crimson.6
+@man man/man6/bi2cf.6
+@man man/man6/cfed.6
+@man man/man6/comet.6
+@man man/man6/crimson.6
+share/crimson/
+share/crimson/Bepa-Roman.ttf
 share/crimson/cf.dat
 share/crimson/default.tiles
 share/crimson/default.units
+share/crimson/levels/
 share/crimson/levels/Anthill.lev
 share/crimson/levels/ArmsRace.lev
 share/crimson/levels/BeachRaid.lev
 share/crimson/levels/Foxhole.lev
 share/crimson/levels/GreatBattle.lev
+share/crimson/levels/HeavyMetal.lev
 share/crimson/levels/IslandHoppers.lev
 share/crimson/levels/LankhValley.lev
 share/crimson/levels/LostFactories.lev
 share/crimson/levels/MountainDefense.lev
+share/crimson/levels/OmyarGorge.lev
 share/crimson/levels/Revelation.lev
 share/crimson/levels/Uprising.lev
+share/crimson/locale/
+share/crimson/locale/de.dat
+share/crimson/locale/en.dat
+share/crimson/locale/pl.dat
+share/crimson/music/
+share/crimson/music/default.mid
+share/crimson/sound/
 share/crimson/sound/ask.wav
 share/crimson/sound/clicked.wav
 share/crimson/sound/error.wav
@@ -28,8 +40,5 @@ share/crimson/sound/menu.wav
 share/crimson/sound/repair.wav
 share/crimson/sound/select.wav
 share/crimson/title.bmp
+share/pixmaps/
 share/pixmaps/crimson.png
-@dirrm share/pixmaps
-@dirrm share/crimson/sound
-@dirrm share/crimson/levels
-@dirrm share/crimson

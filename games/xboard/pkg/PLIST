@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/03 21:23:59 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 00:46:11 espie Exp $
 @pkgcfl cmail-*
-@unexec install-info --delete --info-dir=%D/info %D/info/xboard.info
 bin/cmail
 bin/pxboard
 bin/xboard
 bin/zic2xpm
-info/xboard.info
-man/man6/xboard.6
-man/man6/zic2xpm.6
-@exec install-info --info-dir=%D/info %D/info/xboard.info
+@info info/xboard.info
+@man man/man6/xboard.6
+@man man/man6/zic2xpm.6

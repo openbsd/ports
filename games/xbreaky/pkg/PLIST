@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/15 17:11:44 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:46:11 espie Exp $
 bin/xbreaky
 bin/xbreaky.snd
-man/man6/xbreaky.6
+@man man/man6/xbreaky.6
+share/pixmaps/
 share/pixmaps/xbreaky.xpm
+share/xbreaky/
 share/xbreaky/catch.raw
 share/xbreaky/fire.raw
 share/xbreaky/level0.dat
@@ -15,5 +17,3 @@ share/xbreaky/level6.dat
 share/xbreaky/level7.dat
 share/xbreaky/level8.dat
 share/xbreaky/level9.dat
-@dirrm share/xbreaky
-@dirrm share/pixmaps

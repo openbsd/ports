@@ -1,7 +1,7 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.1 2004/07/18 06:46:29 brad Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2004/09/15 00:50:07 espie Exp $
 bin/animate
 bin/display
 bin/import
-man/man1/animate.1
-man/man1/display.1
-man/man1/import.1
+@man man/man1/animate.1
+@man man/man1/display.1
+@man man/man1/import.1

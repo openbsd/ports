@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/11/30 04:41:59 dugsong Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:50:09 espie Exp $
 bin/dc21x_cam
 bin/gphoto
 bin/gphoto-exifdump
@@ -39,10 +39,17 @@ lib/libgphoto_sony_dscf1.a
 lib/libgphoto_sony_dscf1.la
 lib/libgphoto_sony_dscf55.a
 lib/libgphoto_sony_dscf55.la
-man/man1/gphoto.1
+@man man/man1/gphoto.1
+share/doc/gphoto/
 share/doc/gphoto/AUTHORS
 share/doc/gphoto/MANUAL
+share/gnome/
+share/gnome/apps/
+share/gnome/apps/Graphics/
 share/gnome/apps/Graphics/gphoto.desktop
+share/gphoto/
+share/gphoto/gallery/
+share/gphoto/gallery/CSStheme/
 share/gphoto/gallery/CSStheme/gphotobutton.png
 share/gphoto/gallery/CSStheme/index_bottom.html
 share/gphoto/gallery/CSStheme/index_top.html
@@ -51,6 +58,7 @@ share/gphoto/gallery/CSStheme/picture.html
 share/gphoto/gallery/CSStheme/styles.css
 share/gphoto/gallery/CSStheme/thumbnail.html
 share/gphoto/gallery/CSStheme/vh40.png
+share/gphoto/gallery/Default/
 share/gphoto/gallery/Default/banner.gif
 share/gphoto/gallery/Default/index.gif
 share/gphoto/gallery/Default/index_bottom.html
@@ -59,6 +67,7 @@ share/gphoto/gallery/Default/next.gif
 share/gphoto/gallery/Default/picture.html
 share/gphoto/gallery/Default/previous.gif
 share/gphoto/gallery/Default/thumbnail.html
+share/gphoto/gallery/RedNGray/
 share/gphoto/gallery/RedNGray/backgrnd.gif
 share/gphoto/gallery/RedNGray/banner.gif
 share/gphoto/gallery/RedNGray/index.gif
@@ -69,12 +78,3 @@ share/gphoto/gallery/RedNGray/picture.html
 share/gphoto/gallery/RedNGray/previous.gif
 share/gphoto/gallery/RedNGray/thumbnail.html
 %%SHARED%%
-@dirrm share/gphoto/gallery/RedNGray
-@dirrm share/gphoto/gallery/Default
-@dirrm share/gphoto/gallery/CSStheme
-@dirrm share/gphoto/gallery
-@dirrm share/gphoto
-@dirrm share/gnome/apps/Graphics
-@dirrm share/gnome/apps
-@dirrm share/gnome
-@dirrm share/doc/gphoto

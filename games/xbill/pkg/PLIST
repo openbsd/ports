@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/09/28 00:35:11 naddy Exp $
-@group games
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 00:46:11 espie Exp $
 @mode 2555
+@group games
 bin/xbill
 @mode
 @group
-man/cat1/xbill.0
+@man man/cat1/xbill.0
+share/xbill/
 share/xbill/README
+share/xbill/bitmaps/
 share/xbill/bitmaps/apple.xbm
 share/xbill/bitmaps/bsd.xbm
 share/xbill/bitmaps/bucket.xbm
@@ -20,6 +22,7 @@ share/xbill/bitmaps/os2.xbm
 share/xbill/bitmaps/redhat.xbm
 share/xbill/bitmaps/sgi.xbm
 share/xbill/bitmaps/sun.xbm
+share/xbill/pixmaps/
 share/xbill/pixmaps/about.xpm
 share/xbill/pixmaps/apple.xpm
 share/xbill/pixmaps/billA_0.xpm
@@ -67,8 +70,5 @@ share/xbill/pixmaps/sun.xpm
 share/xbill/pixmaps/suncpu.xpm
 share/xbill/pixmaps/toaster.xpm
 share/xbill/pixmaps/wingdows.xpm
-@dirrm share/xbill/pixmaps
-@dirrm share/xbill/bitmaps
-@dirrm share/xbill
 @cwd /var/games
 @extra xbill.scores

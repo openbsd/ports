@@ -1,20 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/10 10:04:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:46:08 espie Exp $
 @group games
 bin/falconseye
 bin/frecover
 @mode 0775
 ${GAMEDIR}/
-@mode 0664
-@comment no checksum
-${GAMEDIR}/logfile
-@comment no checksum
-${GAMEDIR}/perm
-@comment no checksum
-${GAMEDIR}/record
-@mode 2555
-${GAMEDIR}/falconseye
-@mode 0575
-${GAMEDIR}/save/
 @mode
 ${GAMEDIR}/Arc-fila.lev
 ${GAMEDIR}/Arc-filb.lev
@@ -104,6 +93,9 @@ ${GAMEDIR}/dungeon
 ${GAMEDIR}/earth.lev
 ${GAMEDIR}/fakewiz1.lev
 ${GAMEDIR}/fakewiz2.lev
+@mode 2555
+${GAMEDIR}/falconseye
+@mode
 ${GAMEDIR}/fire.lev
 ${GAMEDIR}/graphics/
 ${GAMEDIR}/graphics/backpac5.pcx
@@ -151,6 +143,10 @@ ${GAMEDIR}/history
 ${GAMEDIR}/juiblex.lev
 ${GAMEDIR}/knox.lev
 ${GAMEDIR}/license
+@mode 0664
+@comment no checksum
+${GAMEDIR}/logfile
+@mode
 ${GAMEDIR}/manual/
 ${GAMEDIR}/manual/arrows1.jpg
 ${GAMEDIR}/manual/arrows2.jpg
@@ -221,9 +217,20 @@ ${GAMEDIR}/options
 ${GAMEDIR}/oracle.lev
 ${GAMEDIR}/oracles
 ${GAMEDIR}/orcus.lev
+@mode 0664
+@comment no checksum
+${GAMEDIR}/perm
+@mode
 ${GAMEDIR}/quest.dat
+@mode 0664
+@comment no checksum
+${GAMEDIR}/record
+@mode
 ${GAMEDIR}/rumors
 ${GAMEDIR}/sanctum.lev
+@mode 0575
+${GAMEDIR}/save/
+@mode
 ${GAMEDIR}/soko1-1.lev
 ${GAMEDIR}/soko1-2.lev
 ${GAMEDIR}/soko2-1.lev

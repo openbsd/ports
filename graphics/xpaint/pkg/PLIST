@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/09/07 07:09:13 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:50:12 espie Exp $
 bin/xpaint
 lib/X11/app-defaults/XPaint
-man/cat1/xpaint.0
+@man man/cat1/xpaint.0

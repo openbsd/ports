@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/16 13:03:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:12 espie Exp $
 bin/scavenger
-man/cat1/scavenger.0
+@man man/cat1/scavenger.0
+share/doc/scavenger/
+share/doc/scavenger/DOC
+share/scavenger/
 share/scavenger/badguy.lbm
 share/scavenger/brownblue.lbm
 share/scavenger/death.raw
@@ -14,4 +17,3 @@ share/scavenger/reddevil.lbm
 share/scavenger/regularguy.lbm
 share/scavenger/spiralthing.lbm
 share/scavenger/victory.raw
-@dirrm share/scavenger

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/01/06 06:40:14 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:50:09 espie Exp $
+include/dvbpsi/
 include/dvbpsi/demux.h
 include/dvbpsi/descriptor.h
 include/dvbpsi/dr.h
@@ -28,4 +29,3 @@ include/dvbpsi/sdt.h
 lib/libdvbpsi.a
 lib/libdvbpsi.la
 %%SHARED%%
-@dirrm include/dvbpsi

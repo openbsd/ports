@@ -1,14 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:10 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Image/
 ${P5ARCH}/Image/EXIF.pm
 @comment ${P5ARCH}/Image/create_web_gallery.pl
-@comment ${P5ARCH}/auto/Image/EXIF/.packlist
+${P5ARCH}/auto/
+${P5ARCH}/auto/Image/
+${P5ARCH}/auto/Image/EXIF/
 ${P5ARCH}/auto/Image/EXIF/EXIF.bs
 ${P5ARCH}/auto/Image/EXIF/EXIF.so
 ${P5ARCH}/auto/Image/EXIF/autosplit.ix
-man/man3p/Image::EXIF.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Image/EXIF
-@dirrm ${P5ARCH}/auto/Image
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Image
-@dirrm ${P5ARCH}
+@man man/man3p/Image::EXIF.3p

@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/09/28 00:35:11 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 00:46:11 espie Exp $
 bin/xjewel
-@group games
 @mode 2555
+@group games
 bin/xjewel_
 @mode
 @group
-lib/xjewel.font/fonts.dir
+@fontdir lib/xjewel.font/
+@comment lib/xjewel.font/fonts.dir
 lib/xjewel.font/seven_seg.pcf.gz
-man/cat6/xjewel.0
-@dirrm lib/xjewel.font
-@cwd /var/games
-@extra xjewel.scores
+@man man/cat6/xjewel.0
+@extra /var/games/xjewel.scores

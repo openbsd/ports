@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/07 00:59:06 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:08 espie Exp $
+share/doc/fotaq/
 share/doc/fotaq/readme.txt
+share/fotaq/
 share/fotaq/queen.1c
-@dirrm share/fotaq
-@dirrm share/doc/fotaq

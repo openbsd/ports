@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/08 22:19:48 markus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:11 espie Exp $
 bin/s10sh
-share/doc/s10sh/README
+share/doc/s10sh/
 share/doc/s10sh/Protocol
-@dirrm share/doc/s10sh
+share/doc/s10sh/README

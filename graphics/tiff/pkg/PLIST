@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/08/07 08:03:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/09/15 00:50:11 espie Exp $
 bin/fax2ps
 bin/fax2tiff
 bin/gif2tiff
@@ -48,101 +48,101 @@ lib/libtiff.a
 @man man/man1/tiffmedian.1
 @man man/man1/tiffsplit.1
 @man man/man1/tiffsv.1
-man/man3/TIFFCheckTile.3t
-man/man3/TIFFClientOpen.3t
-man/man3/TIFFClose.3t
-man/man3/TIFFComputeStrip.3t
-man/man3/TIFFComputeTile.3t
-man/man3/TIFFCurrentDirectory.3t
-man/man3/TIFFCurrentRow.3t
-man/man3/TIFFCurrentStrip.3t
-man/man3/TIFFCurrentTile.3t
-man/man3/TIFFDataWidth.3t
-man/man3/TIFFDefaultStripSize.3t
-man/man3/TIFFDefaultTileSize.3t
-man/man3/TIFFError.3t
-man/man3/TIFFFdOpen.3t
-man/man3/TIFFFileName.3t
-man/man3/TIFFFileno.3t
-man/man3/TIFFFindCODEC.3t
-man/man3/TIFFFlush.3t
-man/man3/TIFFFlushData.3t
-man/man3/TIFFGetField.3t
-man/man3/TIFFGetFieldDefaulted.3t
-man/man3/TIFFGetMode.3t
-man/man3/TIFFIsByteSwapped.3t
-man/man3/TIFFIsMSB2LSB.3t
-man/man3/TIFFIsTiled.3t
-man/man3/TIFFIsUpSampled.3t
-man/man3/TIFFLastDirectory.3t
-man/man3/TIFFNumberOfStrips.3t
-man/man3/TIFFNumberOfTiles.3t
-man/man3/TIFFOpen.3t
-man/man3/TIFFPrintDirectory.3t
-man/man3/TIFFRGBAImage.3t
-man/man3/TIFFRGBAImageBegin.3t
-man/man3/TIFFRGBAImageEnd.3t
-man/man3/TIFFRGBAImageGet.3t
-man/man3/TIFFRGBAImageOK.3t
-man/man3/TIFFReadBufferSetup.3t
-man/man3/TIFFReadDirectory.3t
-man/man3/TIFFReadEncodedStrip.3t
-man/man3/TIFFReadEncodedTile.3t
-man/man3/TIFFReadRGBAImage.3t
-man/man3/TIFFReadRGBAImageOriented.3t
-man/man3/TIFFReadRGBAStrip.3t
-man/man3/TIFFReadRGBATile.3t
-man/man3/TIFFReadRawStrip.3t
-man/man3/TIFFReadRawTile.3t
-man/man3/TIFFReadScanline.3t
-man/man3/TIFFReadTile.3t
-man/man3/TIFFRegisterCODEC.3t
-man/man3/TIFFReverseBits.3t
-man/man3/TIFFRewriteDirectory.3t
-man/man3/TIFFScanlineSize.3t
-man/man3/TIFFSetDirectory.3t
-man/man3/TIFFSetErrorHandler.3t
-man/man3/TIFFSetField.3t
-man/man3/TIFFSetSubDirectory.3t
-man/man3/TIFFSetWarningHandler.3t
-man/man3/TIFFStripSize.3t
-man/man3/TIFFSwabArrayOfLong.3t
-man/man3/TIFFSwabArrayOfShort.3t
-man/man3/TIFFSwabLong.3t
-man/man3/TIFFSwabShort.3t
-man/man3/TIFFTileRowSize.3t
-man/man3/TIFFTileSize.3t
-man/man3/TIFFUnRegisterCODEC.3t
-man/man3/TIFFVGetField.3t
-man/man3/TIFFVGetFieldDefaulted.3t
-man/man3/TIFFVSetField.3t
-man/man3/TIFFVStripSize.3t
-man/man3/TIFFVTileSize.3t
-man/man3/TIFFWarning.3t
-man/man3/TIFFWriteBufferSetup.3t
-man/man3/TIFFWriteDirectory.3t
-man/man3/TIFFWriteEncodedStrip.3t
-man/man3/TIFFWriteEncodedTile.3t
-man/man3/TIFFWriteRawStrip.3t
-man/man3/TIFFWriteRawTile.3t
-man/man3/TIFFWriteScanline.3t
-man/man3/TIFFWriteTile.3t
-man/man3/TIFFbuffer.3t
-man/man3/TIFFcodec.3t
-man/man3/TIFFcolor.3t
-man/man3/TIFFfree.3t
-man/man3/TIFFmalloc.3t
-man/man3/TIFFmemcmp.3t
-man/man3/TIFFmemcpy.3t
-man/man3/TIFFmemory.3t
-man/man3/TIFFmemset.3t
-man/man3/TIFFquery.3t
-man/man3/TIFFrealloc.3t
-man/man3/TIFFsize.3t
-man/man3/TIFFstrip.3t
-man/man3/TIFFswab.3t
-man/man3/TIFFtile.3t
-man/man3/libtiff.3t
+@man man/man3/TIFFCheckTile.3t
+@man man/man3/TIFFClientOpen.3t
+@man man/man3/TIFFClose.3t
+@man man/man3/TIFFComputeStrip.3t
+@man man/man3/TIFFComputeTile.3t
+@man man/man3/TIFFCurrentDirectory.3t
+@man man/man3/TIFFCurrentRow.3t
+@man man/man3/TIFFCurrentStrip.3t
+@man man/man3/TIFFCurrentTile.3t
+@man man/man3/TIFFDataWidth.3t
+@man man/man3/TIFFDefaultStripSize.3t
+@man man/man3/TIFFDefaultTileSize.3t
+@man man/man3/TIFFError.3t
+@man man/man3/TIFFFdOpen.3t
+@man man/man3/TIFFFileName.3t
+@man man/man3/TIFFFileno.3t
+@man man/man3/TIFFFindCODEC.3t
+@man man/man3/TIFFFlush.3t
+@man man/man3/TIFFFlushData.3t
+@man man/man3/TIFFGetField.3t
+@man man/man3/TIFFGetFieldDefaulted.3t
+@man man/man3/TIFFGetMode.3t
+@man man/man3/TIFFIsByteSwapped.3t
+@man man/man3/TIFFIsMSB2LSB.3t
+@man man/man3/TIFFIsTiled.3t
+@man man/man3/TIFFIsUpSampled.3t
+@man man/man3/TIFFLastDirectory.3t
+@man man/man3/TIFFNumberOfStrips.3t
+@man man/man3/TIFFNumberOfTiles.3t
+@man man/man3/TIFFOpen.3t
+@man man/man3/TIFFPrintDirectory.3t
+@man man/man3/TIFFRGBAImage.3t
+@man man/man3/TIFFRGBAImageBegin.3t
+@man man/man3/TIFFRGBAImageEnd.3t
+@man man/man3/TIFFRGBAImageGet.3t
+@man man/man3/TIFFRGBAImageOK.3t
+@man man/man3/TIFFReadBufferSetup.3t
+@man man/man3/TIFFReadDirectory.3t
+@man man/man3/TIFFReadEncodedStrip.3t
+@man man/man3/TIFFReadEncodedTile.3t
+@man man/man3/TIFFReadRGBAImage.3t
+@man man/man3/TIFFReadRGBAImageOriented.3t
+@man man/man3/TIFFReadRGBAStrip.3t
+@man man/man3/TIFFReadRGBATile.3t
+@man man/man3/TIFFReadRawStrip.3t
+@man man/man3/TIFFReadRawTile.3t
+@man man/man3/TIFFReadScanline.3t
+@man man/man3/TIFFReadTile.3t
+@man man/man3/TIFFRegisterCODEC.3t
+@man man/man3/TIFFReverseBits.3t
+@man man/man3/TIFFRewriteDirectory.3t
+@man man/man3/TIFFScanlineSize.3t
+@man man/man3/TIFFSetDirectory.3t
+@man man/man3/TIFFSetErrorHandler.3t
+@man man/man3/TIFFSetField.3t
+@man man/man3/TIFFSetSubDirectory.3t
+@man man/man3/TIFFSetWarningHandler.3t
+@man man/man3/TIFFStripSize.3t
+@man man/man3/TIFFSwabArrayOfLong.3t
+@man man/man3/TIFFSwabArrayOfShort.3t
+@man man/man3/TIFFSwabLong.3t
+@man man/man3/TIFFSwabShort.3t
+@man man/man3/TIFFTileRowSize.3t
+@man man/man3/TIFFTileSize.3t
+@man man/man3/TIFFUnRegisterCODEC.3t
+@man man/man3/TIFFVGetField.3t
+@man man/man3/TIFFVGetFieldDefaulted.3t
+@man man/man3/TIFFVSetField.3t
+@man man/man3/TIFFVStripSize.3t
+@man man/man3/TIFFVTileSize.3t
+@man man/man3/TIFFWarning.3t
+@man man/man3/TIFFWriteBufferSetup.3t
+@man man/man3/TIFFWriteDirectory.3t
+@man man/man3/TIFFWriteEncodedStrip.3t
+@man man/man3/TIFFWriteEncodedTile.3t
+@man man/man3/TIFFWriteRawStrip.3t
+@man man/man3/TIFFWriteRawTile.3t
+@man man/man3/TIFFWriteScanline.3t
+@man man/man3/TIFFWriteTile.3t
+@man man/man3/TIFFbuffer.3t
+@man man/man3/TIFFcodec.3t
+@man man/man3/TIFFcolor.3t
+@man man/man3/TIFFfree.3t
+@man man/man3/TIFFmalloc.3t
+@man man/man3/TIFFmemcmp.3t
+@man man/man3/TIFFmemcpy.3t
+@man man/man3/TIFFmemory.3t
+@man man/man3/TIFFmemset.3t
+@man man/man3/TIFFquery.3t
+@man man/man3/TIFFrealloc.3t
+@man man/man3/TIFFsize.3t
+@man man/man3/TIFFstrip.3t
+@man man/man3/TIFFswab.3t
+@man man/man3/TIFFtile.3t
+@man man/man3/libtiff.3t
 share/doc/tiff/
 share/doc/tiff/bugs.html
 share/doc/tiff/build.html

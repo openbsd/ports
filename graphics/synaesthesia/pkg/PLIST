@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/26 01:46:02 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:11 espie Exp $
 bin/synaesthesia
+share/doc/synaesthesia/
 share/doc/synaesthesia/README
-@dirrm share/doc/synaesthesia

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/08/19 17:23:34 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:46:12 espie Exp $
 bin/xp-mapedit
 bin/xp-replay
 bin/xpilot
@@ -7,7 +7,9 @@ man/man6/xp-mapedit.0
 man/man6/xp-replay.0
 man/man6/xpilot.0
 man/man6/xpilots.0
+share/xpilot/
 share/xpilot/defaults
+share/xpilot/maps/
 share/xpilot/maps/CAMD.xp
 share/xpilot/maps/blood-music2.xp
 share/xpilot/maps/cloudscape.xp
@@ -30,6 +32,7 @@ share/xpilot/maps/war.xp
 share/xpilot/password
 share/xpilot/robots
 share/xpilot/sounds
+share/xpilot/textures/
 share/xpilot/textures/allitems.ppm
 share/xpilot/textures/asteroidconcentrator.ppm
 share/xpilot/textures/ball.ppm
@@ -86,6 +89,3 @@ share/xpilot/textures/wall_ull.ppm
 share/xpilot/textures/wall_ur.ppm
 share/xpilot/textures/wall_url.ppm
 share/xpilot/textures/wormhole.ppm
-@dirrm share/xpilot/textures
-@dirrm share/xpilot/maps
-@dirrm share/xpilot

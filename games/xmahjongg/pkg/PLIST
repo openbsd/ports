@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/09/17 19:01:33 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:46:12 espie Exp $
 bin/xmahjongg
-man/man6/xmahjongg.6
+@man man/man6/xmahjongg.6
+share/xmahjongg/
+share/xmahjongg/backgrounds/
 share/xmahjongg/backgrounds/default.gif
 share/xmahjongg/backgrounds/green.gif
+share/xmahjongg/layouts/
 share/xmahjongg/layouts/arena
 share/xmahjongg/layouts/arrow
 share/xmahjongg/layouts/boar
@@ -26,6 +29,7 @@ share/xmahjongg/layouts/snake
 share/xmahjongg/layouts/theater
 share/xmahjongg/layouts/tiger
 share/xmahjongg/layouts/wedges
+share/xmahjongg/tiles/
 share/xmahjongg/tiles/dorothys.gif
 share/xmahjongg/tiles/dorwhite.gif
 share/xmahjongg/tiles/gnome.gif
@@ -34,7 +38,3 @@ share/xmahjongg/tiles/real.gif
 share/xmahjongg/tiles/small.gif
 share/xmahjongg/tiles/thick.gif
 share/xmahjongg/tiles/thin.gif
-@dirrm share/xmahjongg/tiles
-@dirrm share/xmahjongg/layouts
-@dirrm share/xmahjongg/backgrounds
-@dirrm share/xmahjongg

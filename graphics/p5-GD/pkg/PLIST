@@ -1,13 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/12/31 15:02:48 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/15 00:50:10 espie Exp $
+${P5ARCH}/
 ${P5ARCH}/GD.pm
-@comment ${P5ARCH}/auto/GD/.packlist
+${P5ARCH}/auto/
+${P5ARCH}/auto/GD/
 ${P5ARCH}/auto/GD/GD.bs
 ${P5ARCH}/auto/GD/GD.so
 ${P5ARCH}/auto/GD/autosplit.ix
 @comment ${P5ARCH}/patch_gd.pl
 ${P5ARCH}/qd.pl
-man/man3p/GD.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/GD
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}
+@man man/man3p/GD.3p

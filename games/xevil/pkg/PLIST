@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/07 01:54:49 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:46:11 espie Exp $
 bin/xevil
 lib/X11/app-defaults/XEvil.iris
 lib/X11/app-defaults/XEvil.mac
 lib/X11/app-defaults/XEvil.sun3
 lib/X11/app-defaults/XEvil.sun4_sparc
-man/man6/xevil.6
+@man man/man6/xevil.6

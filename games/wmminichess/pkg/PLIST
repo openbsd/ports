@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/09 12:58:09 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:11 espie Exp $
 bin/minichess
+share/doc/wmminichess/
 share/doc/wmminichess/README
-@dirrm share/doc/wmminichess

@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/02/01 06:18:24 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:10 espie Exp $
 bin/descumm
 bin/descumm6
 bin/extract
 bin/rescumm
 bin/simon1decr
 bin/simon2mp3
+share/doc/scummvm-tools/
 share/doc/scummvm-tools/README
-@dirrm share/doc/scummvm-tools

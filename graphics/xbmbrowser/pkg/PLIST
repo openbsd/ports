@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:50 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:50:11 espie Exp $
 bin/xbmbrowser
 lib/X11/app-defaults/XbmBrowser
 lib/X11/app-defaults/XbmBrowser-color
+lib/X11/xbmbrowser/
 lib/X11/xbmbrowser/xbmbrowser.menu
 lib/X11/xbmbrowser/xbmbrowser.menu.tut
-man/cat1/xbmbrowser.0
+@man man/cat1/xbmbrowser.0

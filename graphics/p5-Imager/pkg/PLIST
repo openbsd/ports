@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/31 19:57:42 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:50:10 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Imager/
 ${P5ARCH}/Imager.pm
+@comment ${P5ARCH}/Imager/Color/
 ${P5ARCH}/Imager/Color.pm
 @comment ${P5ARCH}/Imager/Color/Float.pm
+${P5ARCH}/Imager/Expr/
 ${P5ARCH}/Imager/Expr.pm
 ${P5ARCH}/Imager/Expr/Assem.pm
 @comment ${P5ARCH}/Imager/Fill.pm
+@comment ${P5ARCH}/Imager/Font/
 ${P5ARCH}/Imager/Font.pm
 @comment ${P5ARCH}/Imager/Font/FreeType2.pm
 @comment ${P5ARCH}/Imager/Font/Truetype.pm
@@ -16,31 +21,24 @@ ${P5ARCH}/Imager/Regops.pm
 ${P5ARCH}/Imager/Transform.pm
 ${P5ARCH}/Imager/interface.pod
 ${P5ARCH}/Imager/regmach.pod
-@comment ${P5ARCH}/auto/Imager/.packlist
+${P5ARCH}/auto/
+${P5ARCH}/auto/Imager/
 ${P5ARCH}/auto/Imager/Imager.bs
 ${P5ARCH}/auto/Imager/Imager.so
-man/man3p/Imager.3p
-man/man3p/Imager::Color.3p
-@comment man/man3p/Imager::Color::Float.3p
-man/man3p/Imager::Expr.3p
-man/man3p/Imager::Expr::Assem.3p
-@comment man/man3p/Imager::Fill.3p
-man/man3p/Imager::Font.3p
-@comment man/man3p/Imager::Font::FreeType2.3p
-@comment man/man3p/Imager::Font::Truetype.3p
-@comment man/man3p/Imager::Font::Type1.3p
-@comment man/man3p/Imager::Font::Win32.3p
-@comment man/man3p/Imager::Fountain.3p
-@comment man/man3p/Imager::Matrix2d.3p
-man/man3p/Imager::Regops.3p
-man/man3p/Imager::Transform.3p
-@comment man/man3p/Imager::interface.3p
-man/man3p/Imager::regmach.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Imager
-@dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}/Imager/Font
-@dirrm ${P5ARCH}/Imager/Expr
-@comment @dirrm ${P5ARCH}/Imager/Color
-@dirrm ${P5ARCH}/Imager
-@dirrm ${P5ARCH}
+@man man/man3p/Imager.3p
+@man man/man3p/Imager::Color.3p
+@man man/man3p/Imager::Color::Float.3p
+@man man/man3p/Imager::Expr.3p
+@man man/man3p/Imager::Expr::Assem.3p
+@man man/man3p/Imager::Fill.3p
+@man man/man3p/Imager::Font.3p
+@man man/man3p/Imager::Font::FreeType2.3p
+@man man/man3p/Imager::Font::Truetype.3p
+@man man/man3p/Imager::Font::Type1.3p
+@man man/man3p/Imager::Font::Win32.3p
+@man man/man3p/Imager::Fountain.3p
+@man man/man3p/Imager::Matrix2d.3p
+@man man/man3p/Imager::Regops.3p
+@man man/man3p/Imager::Transform.3p
+@man man/man3p/Imager::interface.3p
+@man man/man3p/Imager::regmach.3p

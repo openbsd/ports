@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:49 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:46:12 espie Exp $
+bin/xmred
 bin/xmris
 bin/xmsit
-bin/xmred
-man/cat6/xmris.0
-man/cat6/xmsit.0
-man/cat6/xmred.0
-@exec mkdir -p %D/lib/xmris
-@exec chmod 775 %D/lib/xmris
-@unexec rm -rf %D/lib/xmris
 lib/X11/app-defaults/Xmris
+lib/X11/app-defaults/xmris/
 lib/X11/app-defaults/xmris/alphabet.gdn
 lib/X11/app-defaults/xmris/digits.gdn
 lib/X11/app-defaults/xmris/puzzle.gdn
 lib/X11/app-defaults/xmris/xmred.gdn
-@dirrm lib/X11/app-defaults/xmris
+lib/X11/xmris/
+@man man/cat6/xmred.0
+@man man/cat6/xmris.0
+@man man/cat6/xmsit.0
+@mode 775
+lib/xmris/

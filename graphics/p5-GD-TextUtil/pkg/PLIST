@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/31 15:02:48 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 00:50:10 espie Exp $
+${P5SITE}/GD/
+${P5SITE}/GD/Text/
 ${P5SITE}/GD/Text.pm
 ${P5SITE}/GD/Text/Align.pm
 ${P5SITE}/GD/Text/Wrap.pm
-@comment ${P5ARCH}/auto/GD/Text/.packlist
-man/man3p/GD::Text.3p
-man/man3p/GD::Text::Align.3p
-man/man3p/GD::Text::Wrap.3p
-@comment @dirrm ${P5ARCH}/auto/GD/Text
-@dirrm ${P5SITE}/GD/Text
-@dirrm ${P5SITE}/GD
+@man man/man3p/GD::Text.3p
+@man man/man3p/GD::Text::Align.3p
+@man man/man3p/GD::Text::Wrap.3p

@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/04/13 10:20:00 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:46:12 espie Exp $
 bin/zangband
+share/zangband/
+share/zangband/apex/
 share/zangband/apex/readme.txt
 share/zangband/apex/z_scores.raw
+share/zangband/bone/
+share/zangband/data/
+share/zangband/edit/
 share/zangband/edit/a_info.txt
 share/zangband/edit/e_info.txt
 share/zangband/edit/f_info.txt
@@ -19,6 +24,7 @@ share/zangband/edit/town1.map
 share/zangband/edit/v_info.txt
 share/zangband/edit/w_info.txt
 share/zangband/edit/wild.map
+share/zangband/file/
 share/zangband/file/a_cursed.txt
 share/zangband/file/a_high.txt
 share/zangband/file/a_low.txt
@@ -44,6 +50,7 @@ share/zangband/file/w_cursed.txt
 share/zangband/file/w_high.txt
 share/zangband/file/w_low.txt
 share/zangband/file/w_med.txt
+share/zangband/help/
 share/zangband/help/attack.hlp
 share/zangband/help/attack.txt
 share/zangband/help/birth.hlp
@@ -80,6 +87,8 @@ share/zangband/help/town.hlp
 share/zangband/help/town.txt
 share/zangband/help/version.txt
 share/zangband/help/wizard.txt
+share/zangband/info/
+share/zangband/pref/
 share/zangband/pref/colors.prf
 share/zangband/pref/font-ami.prf
 share/zangband/pref/font-dos.prf
@@ -119,8 +128,13 @@ share/zangband/pref/user.prf
 share/zangband/pref/xtra-gcu.prf
 share/zangband/pref/xtra-new.prf
 share/zangband/pref/xtra-xxx.prf
+share/zangband/save/
+share/zangband/user/
+share/zangband/xtra/
+share/zangband/xtra/font/
 share/zangband/xtra/font/10X20.FON
 share/zangband/xtra/font/12X24.FON
+share/zangband/xtra/font/16x16.txt
 share/zangband/xtra/font/5X8.FON
 share/zangband/xtra/font/6X10.FON
 share/zangband/xtra/font/6X12.FON
@@ -133,28 +147,15 @@ share/zangband/xtra/font/8X13.FON
 share/zangband/xtra/font/8X13B.FON
 share/zangband/xtra/font/9X15.FON
 share/zangband/xtra/font/9X15B.FON
-share/zangband/xtra/font/16x16.txt
 share/zangband/xtra/font/xm8x16b.fnt
+share/zangband/xtra/graf/
 share/zangband/xtra/graf/16x16.bmp
 share/zangband/xtra/graf/8x13.bmp
 share/zangband/xtra/graf/8x8.bmp
 share/zangband/xtra/graf/mask.bmp
 share/zangband/xtra/graf/readme.txt
+share/zangband/xtra/help/
+share/zangband/xtra/music/
+share/zangband/xtra/sound/
 share/zangband/xtra/sound/sound.cfg
-@exec mkdir -p %D/share/zangband/xtra/music
-@exec mkdir -p %D/share/zangband/xtra/help
-@exec mkdir -p %D/share/zangband/info
-@dirrm share/zangband/xtra/sound
-@dirrm share/zangband/xtra/music
-@dirrm share/zangband/xtra/help
-@dirrm share/zangband/xtra/graf
-@dirrm share/zangband/xtra/font
-@dirrm share/zangband/xtra
-@dirrm share/zangband/pref
-@dirrm share/zangband/info
-@dirrm share/zangband/help
-@dirrm share/zangband/file
-@dirrm share/zangband/edit
-@dirrm share/zangband/apex
-@dirrm share/zangband
 @extraunexec rm -rf /var/games/zangband

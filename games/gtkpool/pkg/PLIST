@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/10/25 11:59:07 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:46:09 espie Exp $
 bin/gtkpool
+share/gtkpool/
 share/gtkpool/ball_10_lg.xpm
 share/gtkpool/ball_10_sm.xpm
 share/gtkpool/ball_11_lg.xpm
@@ -42,6 +43,5 @@ share/gtkpool/pool_table_black-laquer.xpm
 share/gtkpool/pool_table_black-pearl.xpm
 share/gtkpool/pool_table_mahogany.xpm
 share/gtkpool/pool_table_maple-burl.xpm
+@comment share/icons/
 @comment share/icons/gtkpool.png
-@comment @dirrm share/icons
-@dirrm share/gtkpool

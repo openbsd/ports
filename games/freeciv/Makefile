@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2004/08/10 10:36:36 xsa Exp $
+# $OpenBSD: Makefile,v 1.39 2004/09/15 00:46:08 espie Exp $
 
 COMMENT=	"Civilization clone for X11; multiplayer; game server"
 COMMENT-client=	"Freeciv client"
@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=--disable-esd
 
 .    if ${FLAVOR:L:Mgtk2}
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS+=	gtk-x11-2.0.0.5,gdk-x11-2.0.0.5::x11/gtk+2
+LIB_DEPENDS+=	gtk-x11-2.0.0.5,gdk-x11-2.0.0.5,gdk_pixbuf-2.0.0.5::x11/gtk+2
 CONFIGURE_ARGS+=--enable-client=gtk2
 .    else
 CONFIGURE_ARGS+=--enable-client=xaw

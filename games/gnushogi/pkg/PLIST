@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/08/02 20:27:18 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:46:09 espie Exp $
 bin/gnushogi
 bin/gnushogir
 libexec/gnushogix
-man/man6/gnushogi.6
+@man man/man6/gnushogi.6
+share/doc/gnushogi/
 share/doc/gnushogi/shogi.rules
 share/doc/gnushogi/tutorial1.gam
 share/doc/gnushogi/tutorial2.gam
+share/gnushogi/
 share/gnushogi/gnushogi.bbk

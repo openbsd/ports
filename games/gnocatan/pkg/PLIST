@@ -1,14 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/15 17:11:44 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:46:09 espie Exp $
 bin/gnocatan
 bin/gnocatan-meta-server
 bin/gnocatan-server-console
 bin/gnocatan-server-gtk
+share/gnocatan/
 share/gnocatan/5-6-player.game
 share/gnocatan/default.game
 share/gnocatan/four-islands.game
 share/gnocatan/seafarers.game
 share/gnocatan/small.game
+share/gnome/
+share/gnome/apps/
+share/gnome/apps/Games/
 share/gnome/apps/Games/gnocatan.desktop
+share/gnome/help/
+share/gnome/help/gnocatan/
+share/gnome/help/gnocatan/C/
 share/gnome/help/gnocatan/C/actions.html
 share/gnome/help/gnocatan/C/authors.html
 share/gnome/help/gnocatan/C/book1.html
@@ -19,6 +26,7 @@ share/gnome/help/gnocatan/C/chat.html
 share/gnome/help/gnocatan/C/develop-cards.html
 share/gnome/help/gnocatan/C/development.html
 share/gnome/help/gnocatan/C/docbook.css
+share/gnome/help/gnocatan/C/images/
 share/gnome/help/gnocatan/C/images/actions.gif
 share/gnome/help/gnocatan/C/images/chat.gif
 share/gnome/help/gnocatan/C/images/client.gif
@@ -62,6 +70,8 @@ share/gnome/help/gnocatan/C/topic.dat
 share/gnome/help/gnocatan/C/turn.html
 share/gnome/help/gnocatan/C/x303.html
 share/gnome/help/gnocatan/C/x464.html
+share/pixmaps/
+share/pixmaps/gnocatan/
 share/pixmaps/gnocatan/board.png
 share/pixmaps/gnocatan/bridge.png
 share/pixmaps/gnocatan/city.png
@@ -83,13 +93,3 @@ share/pixmaps/gnocatan/ship.png
 share/pixmaps/gnocatan/tick.png
 share/pixmaps/gnocatan/trade.png
 share/pixmaps/gnome-gnocatan.png
-@dirrm share/pixmaps/gnocatan
-@dirrm share/pixmaps
-@dirrm share/gnome/help/gnocatan/C/images
-@dirrm share/gnome/help/gnocatan/C
-@dirrm share/gnome/help/gnocatan
-@dirrm share/gnome/help
-@dirrm share/gnome/apps/Games
-@dirrm share/gnome/apps
-@dirrm share/gnome
-@dirrm share/gnocatan

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/06/19 20:51:30 jakob Exp $
-!%%no_x11%%
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:50:08 espie Exp $
 bin/gifdiff
 bin/gifsicle
-man/man1/gifdiff.1
-man/man1/gifsicle.1
+@man man/man1/gifdiff.1
+@man man/man1/gifsicle.1
+!%%no_x11%%

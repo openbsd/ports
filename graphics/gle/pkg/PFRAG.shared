@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/06/20 18:57:28 lebel Exp $
-lib/libgle.so.3.4
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 00:50:09 espie Exp $
+@lib lib/libgle.so.3.4

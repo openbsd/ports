@@ -1,5 +1,5 @@
 %%i386%%
-@comment $OpenBSD: PLIST,v 1.2 2004/06/24 19:27:00 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:50:11 espie Exp $
 bin/avifix
 bin/aviindex
 bin/avimerge
@@ -18,6 +18,7 @@ bin/tcscan
 bin/tcxmlcheck
 bin/tcxpm2rgb
 bin/transcode
+lib/transcode/
 @comment lib/transcode/a52_decore.la
 lib/transcode/a52_decore.so
 @comment lib/transcode/af6_decore.la
@@ -229,21 +230,22 @@ lib/transcode/parse_csv.awk
 @comment lib/transcode/xvid2.cfg
 @comment lib/transcode/xvid3.cfg
 @comment lib/transcode/xvid4.cfg
-man/man1/avifix.1
-man/man1/aviindex.1
-man/man1/avimerge.1
-man/man1/avisplit.1
-man/man1/avisync.1
-man/man1/tccat.1
-man/man1/tcdecode.1
-man/man1/tcdemux.1
-man/man1/tcextract.1
-man/man1/tcmodinfo.1
-man/man1/tcprobe.1
-man/man1/tcpvmexportd.1
-man/man1/tcscan.1
-man/man1/tcxmlcheck.1
-man/man1/transcode.1
+@man man/man1/avifix.1
+@man man/man1/aviindex.1
+@man man/man1/avimerge.1
+@man man/man1/avisplit.1
+@man man/man1/avisync.1
+@man man/man1/tccat.1
+@man man/man1/tcdecode.1
+@man man/man1/tcdemux.1
+@man man/man1/tcextract.1
+@man man/man1/tcmodinfo.1
+@man man/man1/tcprobe.1
+@man man/man1/tcpvmexportd.1
+@man man/man1/tcscan.1
+@man man/man1/tcxmlcheck.1
+@man man/man1/transcode.1
+share/doc/transcode/
 share/doc/transcode/ChangeLog
 share/doc/transcode/OPTIMIZERS
 share/doc/transcode/README.Inverse.Telecine.txt
@@ -268,6 +270,7 @@ share/doc/transcode/filter_logoaway.txt
 share/doc/transcode/filter_text.txt
 share/doc/transcode/filter_yuvdenoise.txt
 share/doc/transcode/framerate.txt
+share/doc/transcode/html/
 share/doc/transcode/html/about.html
 share/doc/transcode/html/anim.html
 share/doc/transcode/html/cluster_guide.txt
@@ -330,6 +333,3 @@ share/doc/transcode/import-xml.txt
 @comment share/doc/transcode/import_v4l2.txt
 @comment share/doc/transcode/pvm.cfg
 share/doc/transcode/template.cfg.txt
-@dirrm share/doc/transcode/html
-@dirrm share/doc/transcode
-@dirrm lib/transcode

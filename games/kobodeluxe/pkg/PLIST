@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/04/13 10:19:59 xsa Exp $
-@group games
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:46:09 espie Exp $
 @mode 2555
+@group games
 bin/kobodl
-@group
 @mode
+@group
+share/kobodeluxe/
+share/kobodeluxe/gfx/
 share/kobodeluxe/gfx/bigship.pcx
 share/kobodeluxe/gfx/brushes.png
 share/kobodeluxe/gfx/bullets.pcx
@@ -18,6 +20,7 @@ share/kobodeluxe/gfx/sprites.pcx
 share/kobodeluxe/gfx/tiles.pcx
 share/kobodeluxe/gfx/tube1.png
 share/kobodeluxe/gfx/tube2.png
+share/kobodeluxe/sfx/
 share/kobodeluxe/sfx/aguitar1.agw
 share/kobodeluxe/sfx/aguitar2.agw
 share/kobodeluxe/sfx/ballad1.agw
@@ -120,7 +123,4 @@ share/kobodeluxe/sfx/tububells2.agw
 share/kobodeluxe/sfx/warmpad1.agw
 share/kobodeluxe/sfx/xylophone1.agw
 share/kobodeluxe/sfx/xylophone2.agw
-@dirrm share/kobodeluxe/sfx
-@dirrm share/kobodeluxe/gfx
-@dirrm share/kobodeluxe
 @extraunexec rm -rf /var/games/kobodeluxe

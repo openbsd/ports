@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/12/08 15:13:26 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:46:11 espie Exp $
 bin/xbat
+lib/X11/Xbat/
+lib/X11/Xbat/Domo/
 lib/X11/Xbat/Domo/domoX0201.dat
 lib/X11/Xbat/Domo/domoX0202.dat
 lib/X11/Xbat/Domo/domoX0203.dat
@@ -187,6 +189,7 @@ lib/X11/Xbat/Domo/domoY1612.dat
 lib/X11/Xbat/Domo/domoY1613.dat
 lib/X11/Xbat/Domo/domoY1614.dat
 lib/X11/Xbat/Domo/t2b.c
+lib/X11/Xbat/Image/
 lib/X11/Xbat/Image/a11.img
 lib/X11/Xbat/Image/a12.img
 lib/X11/Xbat/Image/a13.img
@@ -643,6 +646,7 @@ lib/X11/Xbat/Image/zorbak.img
 lib/X11/Xbat/Image/zosy1.img
 lib/X11/Xbat/Image/zosy2.img
 lib/X11/Xbat/Image/zosy3.img
+lib/X11/Xbat/Map/
 lib/X11/Xbat/Map/bmap1.dat
 lib/X11/Xbat/Map/bmap10.dat
 lib/X11/Xbat/Map/bmap11.dat
@@ -691,13 +695,9 @@ lib/X11/Xbat/Map/kuuchuu_map6.dat
 lib/X11/Xbat/Map/kuuchuu_map7.dat
 lib/X11/Xbat/Map/kuuchuu_map8.dat
 lib/X11/Xbat/Map/kuuchuu_map9.dat
+lib/X11/Xbat/Score/
 lib/X11/Xbat/Score/top10-0.txt
 lib/X11/Xbat/Score/top10-1.txt
 lib/X11/Xbat/Score/top10-2.txt
 lib/X11/Xbat/Score/top10-3.txt
 lib/X11/Xbat/Score/top10-4.txt
-@dirrm lib/X11/Xbat/Domo
-@dirrm lib/X11/Xbat/Image
-@dirrm lib/X11/Xbat/Map
-@dirrm lib/X11/Xbat/Score
-@dirrm lib/X11/Xbat

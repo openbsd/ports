@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2004/07/18 06:46:29 brad Exp $
-!%%no_x11%%
+@comment $OpenBSD: PLIST,v 1.27 2004/09/15 00:50:07 espie Exp $
 bin/Magick++-config
 bin/Magick-config
 bin/Wand-config
@@ -10,7 +9,7 @@ bin/convert
 bin/identify
 bin/mogrify
 bin/montage
-@dir include/Magick++
+include/Magick++/
 include/Magick++.h
 include/Magick++/Blob.h
 include/Magick++/CoderInfo.h
@@ -24,7 +23,7 @@ include/Magick++/Montage.h
 include/Magick++/Pixels.h
 include/Magick++/STL.h
 include/Magick++/TypeMetric.h
-@dir include/magick
+include/magick/
 include/magick/ImageMagick.h
 include/magick/PreRvIcccm.h
 include/magick/annotate.h
@@ -90,13 +89,13 @@ include/magick/type.h
 include/magick/utility.h
 include/magick/version.h
 include/magick/xwindow.h
-@dir include/wand
+include/wand/
 include/wand/drawing_wand.h
 include/wand/magick_wand.h
 include/wand/pixel_iterator.h
 include/wand/pixel_wand.h
-@dir lib/ImageMagick-${VER}
-@dir lib/ImageMagick-${VER}/config
+lib/ImageMagick-${VER}/
+lib/ImageMagick-${VER}/config/
 lib/ImageMagick-${VER}/config/colors.mgk
 lib/ImageMagick-${VER}/config/configure.mgk
 lib/ImageMagick-${VER}/config/delegates.mgk
@@ -106,42 +105,43 @@ lib/ImageMagick-${VER}/config/type-ghostscript.mgk
 lib/ImageMagick-${VER}/config/type-solaris.mgk
 lib/ImageMagick-${VER}/config/type-windows.mgk
 lib/ImageMagick-${VER}/config/type.mgk
-@comment @dir lib/ImageMagick-${VER}/modules-Q16
-@comment @dir lib/ImageMagick-${VER}/modules-Q16/coders
-@comment @dir lib/ImageMagick-${VER}/modules-Q16/filters
+@comment lib/ImageMagick-${VER}/modules-Q16/
+@comment lib/ImageMagick-${VER}/modules-Q16/coders/
+@comment lib/ImageMagick-${VER}/modules-Q16/filters/
 lib/libMagick++.a
 lib/libMagick++.la
 lib/libMagick.a
 lib/libMagick.la
 lib/libWand.a
 lib/libWand.la
+lib/pkgconfig/
 lib/pkgconfig/ImageMagick++.pc
 lib/pkgconfig/ImageMagick.pc
 lib/pkgconfig/Wand.pc
-man/man1/ImageMagick.1
-@comment man/man1/Magick++-config.1
-@comment man/man1/Magick-config.1
-@comment man/man1/Wand-config.1
-man/man1/compare.1
-man/man1/composite.1
-man/man1/conjure.1
-man/man1/convert.1
-man/man1/identify.1
-man/man1/mogrify.1
-man/man1/montage.1
-man/man4/miff.4
-man/man5/quantize.5
-@comment @dir share/ImageMagick
-@dir share/ImageMagick-${VER}
+@man man/man1/ImageMagick.1
+@man man/man1/Magick++-config.1
+@man man/man1/Magick-config.1
+@man man/man1/Wand-config.1
+@man man/man1/compare.1
+@man man/man1/composite.1
+@man man/man1/conjure.1
+@man man/man1/convert.1
+@man man/man1/identify.1
+@man man/man1/mogrify.1
+@man man/man1/montage.1
+@man man/man4/miff.4
+@man man/man5/quantize.5
+@comment share/ImageMagick/
+share/ImageMagick-${VER}/
 share/ImageMagick-${VER}/LICENSE
 share/ImageMagick-${VER}/Magick.pdf
 share/ImageMagick-${VER}/NOTICE
 share/ImageMagick-${VER}/QuickStart.txt
-@dir share/ImageMagick-${VER}/config
+share/ImageMagick-${VER}/config/
 share/ImageMagick-${VER}/config/coder.mgk
 share/ImageMagick-${VER}/config/log.mgk
 share/ImageMagick-${VER}/config/magic.mgk
-@dir share/ImageMagick-${VER}/images
+share/ImageMagick-${VER}/images/
 share/ImageMagick-${VER}/images/background.gif
 share/ImageMagick-${VER}/images/dogwaffle.png
 share/ImageMagick-${VER}/images/examples.jpg
@@ -151,7 +151,7 @@ share/ImageMagick-${VER}/images/magick-icon.png
 share/ImageMagick-${VER}/images/magick.png
 share/ImageMagick-${VER}/images/networkeleven.png
 share/ImageMagick-${VER}/images/pair.png
-@dir share/ImageMagick-${VER}/images/patterns
+share/ImageMagick-${VER}/images/patterns/
 share/ImageMagick-${VER}/images/patterns/bricks.png
 share/ImageMagick-${VER}/images/patterns/checkerboard.png
 share/ImageMagick-${VER}/images/patterns/circles.png
@@ -213,7 +213,7 @@ share/ImageMagick-${VER}/images/star.gif
 share/ImageMagick-${VER}/images/top.gif
 share/ImageMagick-${VER}/images/twi.png
 share/ImageMagick-${VER}/index.html
-@dir share/ImageMagick-${VER}/www
+share/ImageMagick-${VER}/www/
 share/ImageMagick-${VER}/www/Authors.html
 share/ImageMagick-${VER}/www/Changelog.html
 share/ImageMagick-${VER}/www/Copyright.html
@@ -224,7 +224,7 @@ share/ImageMagick-${VER}/www/Install-mac.html
 share/ImageMagick-${VER}/www/Install-unix.html
 share/ImageMagick-${VER}/www/Install-vms.html
 share/ImageMagick-${VER}/www/Install-windows.html
-@dir share/ImageMagick-${VER}/www/Magick++
+share/ImageMagick-${VER}/www/Magick++/
 share/ImageMagick-${VER}/www/Magick++/Blob.html
 share/ImageMagick-${VER}/www/Magick++/Cache.fig
 share/ImageMagick-${VER}/www/Magick++/Cache.png
@@ -267,7 +267,7 @@ share/ImageMagick-${VER}/www/News.html
 share/ImageMagick-${VER}/www/QuickStart.html
 share/ImageMagick-${VER}/www/README.html
 share/ImageMagick-${VER}/www/animate.html
-@dir share/ImageMagick-${VER}/www/api
+share/ImageMagick-${VER}/www/api/
 share/ImageMagick-${VER}/www/api.html
 share/ImageMagick-${VER}/www/api/animate.html
 share/ImageMagick-${VER}/www/api/annotate.html
@@ -340,4 +340,5 @@ share/ImageMagick-${VER}/www/sponsor.html
 share/ImageMagick-${VER}/www/tools.html
 share/ImageMagick-${VER}/www/topics.html
 share/ImageMagick-${VER}/www/windows.html
+!%%no_x11%%
 %%SHARED%%

@@ -1,21 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/08/10 09:48:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 00:46:10 espie Exp $
 @group games
 bin/slash
 bin/srecover
-!%%no_x11%%
 @mode 0775
 ${GAMEDIR}/
-@mode 0664
-@comment no checksum
-${GAMEDIR}/logfile
-@comment no checksum
-${GAMEDIR}/perm
-@comment no checksum
-${GAMEDIR}/record
-@mode 2555
-${GAMEDIR}/slash
-@mode 0575
-${GAMEDIR}/save/
 @mode
 ${GAMEDIR}/A-filla.lev
 ${GAMEDIR}/A-fillb.lev
@@ -157,6 +145,10 @@ ${GAMEDIR}/kobold-1.lev
 ${GAMEDIR}/kobold-2.lev
 ${GAMEDIR}/license
 ${GAMEDIR}/lich.lev
+@mode 0664
+@comment no checksum
+${GAMEDIR}/logfile
+@mode
 ${GAMEDIR}/mall-1.lev
 ${GAMEDIR}/mall-2.lev
 ${GAMEDIR}/mall.lev
@@ -173,11 +165,25 @@ ${GAMEDIR}/options
 ${GAMEDIR}/oracle.lev
 ${GAMEDIR}/oracles
 ${GAMEDIR}/orcus.lev
+@mode 0664
+@comment no checksum
+${GAMEDIR}/perm
+@mode
 ${GAMEDIR}/quest.dat
 ${GAMEDIR}/rats.lev
+@mode 0664
+@comment no checksum
+${GAMEDIR}/record
+@mode
 ${GAMEDIR}/rumors
 ${GAMEDIR}/sanctum.lev
+@mode 0575
+${GAMEDIR}/save/
+@mode
 ${GAMEDIR}/sea.lev
+@mode 2555
+${GAMEDIR}/slash
+@mode
 ${GAMEDIR}/spiders.lev
 ${GAMEDIR}/stor-1.lev
 ${GAMEDIR}/stor-2.lev
@@ -193,6 +199,7 @@ ${GAMEDIR}/wizard2.lev
 ${GAMEDIR}/wizard3.lev
 ${GAMEDIR}/wizhelp
 ${GAMEDIR}/yeenoghu.lev
-@man man/man6/srecover.6
 @man man/man6/slash.6
 @unexec rm -rf %B/save
+@man man/man6/srecover.6
+!%%no_x11%%

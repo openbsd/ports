@@ -1,11 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/10/14 10:02:52 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:46:11 espie Exp $
 bin/vectoroids
+share/doc/vectoroids/
 share/doc/vectoroids/README
+share/vectoroids/
+share/vectoroids/images/
 share/vectoroids/images/icon.png
 share/vectoroids/images/redspot-e.bmp
 share/vectoroids/images/redspot.jpg
+share/vectoroids/music/
 share/vectoroids/music/decision.s3m
 share/vectoroids/music/decision.txt
+share/vectoroids/sounds/
 share/vectoroids/sounds/ast1.wav
 share/vectoroids/sounds/ast2.wav
 share/vectoroids/sounds/ast3.wav
@@ -15,8 +20,3 @@ share/vectoroids/sounds/explode.wav
 share/vectoroids/sounds/extralife.wav
 share/vectoroids/sounds/gameover.wav
 share/vectoroids/sounds/thrust.wav
-@dirrm share/vectoroids/sounds
-@dirrm share/vectoroids/music
-@dirrm share/vectoroids/images
-@dirrm share/vectoroids
-@dirrm share/doc/vectoroids

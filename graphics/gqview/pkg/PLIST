@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/02/20 05:21:05 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.17 2004/09/15 00:50:09 espie Exp $
 bin/gqview
-man/man1/gqview.1
+@man man/man1/gqview.1
+share/doc/gqview/
 share/doc/gqview/README
+share/gnome/
+share/gnome/apps/
+share/gnome/apps/Graphics/
 share/gnome/apps/Graphics/gqview.desktop
 share/locale/bg/LC_MESSAGES/gqview.mo
 share/locale/cs/LC_MESSAGES/gqview.mo
@@ -24,19 +28,17 @@ share/locale/ru/LC_MESSAGES/gqview.mo
 share/locale/sk/LC_MESSAGES/gqview.mo
 share/locale/sl/LC_MESSAGES/gqview.mo
 share/locale/sv/LC_MESSAGES/gqview.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gqview.mo
 share/locale/tr/LC_MESSAGES/gqview.mo
 share/locale/uk/LC_MESSAGES/gqview.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/gqview.mo
+share/locale/zh_CN.GB2312/
+share/locale/zh_CN.GB2312/LC_MESSAGES/
 share/locale/zh_CN.GB2312/LC_MESSAGES/gqview.mo
 share/locale/zh_TW/LC_MESSAGES/gqview.mo
+share/pixmaps/
 share/pixmaps/gqview.png
-@dirrm share/pixmaps
-@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
-@dirrm share/locale/zh_CN.GB2312
-@dirrm share/locale/th/LC_MESSAGES
-@dirrm share/locale/th
-@dirrm share/gnome/apps/Graphics
-@dirrm share/gnome/apps
-@dirrm share/gnome
-@dirrm share/doc/gqview

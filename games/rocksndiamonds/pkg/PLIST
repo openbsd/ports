@@ -1,13 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/04/13 10:19:59 xsa Exp $
-@group games
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:46:10 espie Exp $
 @mode 2555
+@group games
 bin/rocksndiamonds
 @mode
 @group
+share/rocksndiamonds/
+share/rocksndiamonds/graphics/
+share/rocksndiamonds/graphics/gfx_animal_kingdom/
 share/rocksndiamonds/graphics/gfx_animal_kingdom/RocksElements.pcx
 share/rocksndiamonds/graphics/gfx_animal_kingdom/RocksHeroes.pcx
 share/rocksndiamonds/graphics/gfx_animal_kingdom/graphicsinfo.conf
 share/rocksndiamonds/graphics/gfx_animal_kingdom/pearl.pcx
+share/rocksndiamonds/graphics/gfx_classic/
 share/rocksndiamonds/graphics/gfx_classic/RocksDC.pcx
 share/rocksndiamonds/graphics/gfx_classic/RocksDoor.pcx
 share/rocksndiamonds/graphics/gfx_classic/RocksElements.pcx
@@ -24,6 +28,9 @@ share/rocksndiamonds/graphics/gfx_classic/graphicsinfo.conf
 share/rocksndiamonds/graphics/gfx_classic/mouse.pcx
 share/rocksndiamonds/graphics/gfx_classic/rocks_icon.xbm
 share/rocksndiamonds/graphics/gfx_classic/rocks_iconmask.xbm
+share/rocksndiamonds/levels/
+share/rocksndiamonds/levels/Boulderdash/
+share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_16/
 share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_16/000.level
 share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_16/001.level
 share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_16/002.level
@@ -225,6 +232,7 @@ share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_16/197.level
 share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_16/198.level
 share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_16/199.level
 share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_16/levelinfo.conf
+share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_2/
 share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_2/000.level
 share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_2/001.level
 share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_2/002.level
@@ -306,6 +314,7 @@ share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_2/077.level
 share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_2/078.level
 share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_2/079.level
 share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_2/levelinfo.conf
+share/rocksndiamonds/levels/Boulderdash/bd_xbd/
 share/rocksndiamonds/levels/Boulderdash/bd_xbd/001.level
 share/rocksndiamonds/levels/Boulderdash/bd_xbd/002.level
 share/rocksndiamonds/levels/Boulderdash/bd_xbd/003.level
@@ -347,6 +356,8 @@ share/rocksndiamonds/levels/Boulderdash/bd_xbd/038.level
 share/rocksndiamonds/levels/Boulderdash/bd_xbd/039.level
 share/rocksndiamonds/levels/Boulderdash/bd_xbd/levelinfo.conf
 share/rocksndiamonds/levels/Boulderdash/levelinfo.conf
+share/rocksndiamonds/levels/Classic_Games/
+share/rocksndiamonds/levels/Classic_Games/classic_boulderdash/
 share/rocksndiamonds/levels/Classic_Games/classic_boulderdash/000.level
 share/rocksndiamonds/levels/Classic_Games/classic_boulderdash/001.level
 share/rocksndiamonds/levels/Classic_Games/classic_boulderdash/002.level
@@ -448,6 +459,7 @@ share/rocksndiamonds/levels/Classic_Games/classic_boulderdash/097.level
 share/rocksndiamonds/levels/Classic_Games/classic_boulderdash/098.level
 share/rocksndiamonds/levels/Classic_Games/classic_boulderdash/099.level
 share/rocksndiamonds/levels/Classic_Games/classic_boulderdash/levelinfo.conf
+share/rocksndiamonds/levels/Classic_Games/classic_emerald_mine/
 share/rocksndiamonds/levels/Classic_Games/classic_emerald_mine/000.level
 share/rocksndiamonds/levels/Classic_Games/classic_emerald_mine/001.level
 share/rocksndiamonds/levels/Classic_Games/classic_emerald_mine/002.level
@@ -551,6 +563,7 @@ share/rocksndiamonds/levels/Classic_Games/classic_emerald_mine/099.level
 share/rocksndiamonds/levels/Classic_Games/classic_emerald_mine/100.level
 share/rocksndiamonds/levels/Classic_Games/classic_emerald_mine/101.level
 share/rocksndiamonds/levels/Classic_Games/classic_emerald_mine/levelinfo.conf
+share/rocksndiamonds/levels/Classic_Games/classic_sokoban/
 share/rocksndiamonds/levels/Classic_Games/classic_sokoban/001.level
 share/rocksndiamonds/levels/Classic_Games/classic_sokoban/002.level
 share/rocksndiamonds/levels/Classic_Games/classic_sokoban/003.level
@@ -602,6 +615,7 @@ share/rocksndiamonds/levels/Classic_Games/classic_sokoban/048.level
 share/rocksndiamonds/levels/Classic_Games/classic_sokoban/049.level
 share/rocksndiamonds/levels/Classic_Games/classic_sokoban/050.level
 share/rocksndiamonds/levels/Classic_Games/classic_sokoban/levelinfo.conf
+share/rocksndiamonds/levels/Classic_Games/classic_sokoban/tapes/
 share/rocksndiamonds/levels/Classic_Games/classic_sokoban/tapes/001.tape
 share/rocksndiamonds/levels/Classic_Games/classic_sokoban/tapes/002.tape
 share/rocksndiamonds/levels/Classic_Games/classic_sokoban/tapes/003.tape
@@ -652,6 +666,7 @@ share/rocksndiamonds/levels/Classic_Games/classic_sokoban/tapes/047.tape
 share/rocksndiamonds/levels/Classic_Games/classic_sokoban/tapes/048.tape
 share/rocksndiamonds/levels/Classic_Games/classic_sokoban/tapes/049.tape
 share/rocksndiamonds/levels/Classic_Games/classic_sokoban/tapes/050.tape
+share/rocksndiamonds/levels/Classic_Games/classic_supaplex/
 share/rocksndiamonds/levels/Classic_Games/classic_supaplex/001.level
 share/rocksndiamonds/levels/Classic_Games/classic_supaplex/002.level
 share/rocksndiamonds/levels/Classic_Games/classic_supaplex/003.level
@@ -764,10 +779,13 @@ share/rocksndiamonds/levels/Classic_Games/classic_supaplex/109.level
 share/rocksndiamonds/levels/Classic_Games/classic_supaplex/110.level
 share/rocksndiamonds/levels/Classic_Games/classic_supaplex/111.level
 share/rocksndiamonds/levels/Classic_Games/classic_supaplex/levelinfo.conf
+share/rocksndiamonds/levels/Classic_Games/classic_supaplex/music/
 share/rocksndiamonds/levels/Classic_Games/classic_supaplex/music/musicinfo.conf
 share/rocksndiamonds/levels/Classic_Games/classic_supaplex/music/supaplex.s3m
 share/rocksndiamonds/levels/Classic_Games/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_1995-2000/
 share/rocksndiamonds/levels/Contributions_1995-2000/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_1995-2000/rnd_ben_braithwaite/
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_ben_braithwaite/000.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_ben_braithwaite/001.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_ben_braithwaite/002.level
@@ -869,11 +887,13 @@ share/rocksndiamonds/levels/Contributions_1995-2000/rnd_ben_braithwaite/097.leve
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_ben_braithwaite/098.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_ben_braithwaite/099.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_ben_braithwaite/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_1995-2000/rnd_charles_briscoe-smith/
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_charles_briscoe-smith/000.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_charles_briscoe-smith/001.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_charles_briscoe-smith/002.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_charles_briscoe-smith/003.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_charles_briscoe-smith/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_1995-2000/rnd_gerhard_haeusler/
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_gerhard_haeusler/000.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_gerhard_haeusler/001.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_gerhard_haeusler/002.level
@@ -926,6 +946,7 @@ share/rocksndiamonds/levels/Contributions_1995-2000/rnd_gerhard_haeusler/048.lev
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_gerhard_haeusler/049.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_gerhard_haeusler/050.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_gerhard_haeusler/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_1995-2000/rnd_holger_schemel/
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_holger_schemel/000.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_holger_schemel/001.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_holger_schemel/002.level
@@ -1027,6 +1048,7 @@ share/rocksndiamonds/levels/Contributions_1995-2000/rnd_holger_schemel/097.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_holger_schemel/098.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_holger_schemel/099.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_holger_schemel/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_1995-2000/rnd_jan_hubicka/
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_jan_hubicka/000.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_jan_hubicka/001.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_jan_hubicka/002.level
@@ -1047,6 +1069,7 @@ share/rocksndiamonds/levels/Contributions_1995-2000/rnd_jan_hubicka/016.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_jan_hubicka/017.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_jan_hubicka/018.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_jan_hubicka/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kimball_robinson/
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kimball_robinson/000.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kimball_robinson/001.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kimball_robinson/002.level
@@ -1074,6 +1097,7 @@ share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kimball_robinson/023.lev
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kimball_robinson/024.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kimball_robinson/025.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kimball_robinson/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kjell_kristiansson/
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kjell_kristiansson/000.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kjell_kristiansson/001.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kjell_kristiansson/002.level
@@ -1092,6 +1116,7 @@ share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kjell_kristiansson/014.l
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kjell_kristiansson/015.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kjell_kristiansson/016.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kjell_kristiansson/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_1995-2000/rnd_martin_herrmann/
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_martin_herrmann/000.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_martin_herrmann/001.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_martin_herrmann/002.level
@@ -1105,6 +1130,7 @@ share/rocksndiamonds/levels/Contributions_1995-2000/rnd_martin_herrmann/009.leve
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_martin_herrmann/010.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_martin_herrmann/011.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_martin_herrmann/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_1995-2000/rnd_pavel_machek/
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_pavel_machek/000.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_pavel_machek/001.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_pavel_machek/002.level
@@ -1115,6 +1141,7 @@ share/rocksndiamonds/levels/Contributions_1995-2000/rnd_pavel_machek/006.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_pavel_machek/007.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_pavel_machek/008.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_pavel_machek/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_1995-2000/rnd_stephan_beyer/
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_stephan_beyer/001.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_stephan_beyer/002.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_stephan_beyer/003.level
@@ -1126,6 +1153,7 @@ share/rocksndiamonds/levels/Contributions_1995-2000/rnd_stephan_beyer/008.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_stephan_beyer/009.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_stephan_beyer/010.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_stephan_beyer/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_1995-2000/rnd_tobias_authmann/
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_tobias_authmann/000.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_tobias_authmann/001.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_tobias_authmann/002.level
@@ -1140,6 +1168,7 @@ share/rocksndiamonds/levels/Contributions_1995-2000/rnd_tobias_authmann/010.leve
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_tobias_authmann/011.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_tobias_authmann/012.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_tobias_authmann/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_1995-2000/rnd_visa_hastrup/
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_visa_hastrup/000.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_visa_hastrup/001.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_visa_hastrup/002.level
@@ -1157,11 +1186,14 @@ share/rocksndiamonds/levels/Contributions_1995-2000/rnd_visa_hastrup/013.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_visa_hastrup/014.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_visa_hastrup/015.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_visa_hastrup/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_1995-2000/rnd_warwick_allison/
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_warwick_allison/000.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_warwick_allison/001.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_warwick_allison/002.level
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_warwick_allison/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2001/
 share/rocksndiamonds/levels/Contributions_2001/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2001/rnd_arno_luppold/
 share/rocksndiamonds/levels/Contributions_2001/rnd_arno_luppold/001.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_arno_luppold/002.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_arno_luppold/003.level
@@ -1242,11 +1274,13 @@ share/rocksndiamonds/levels/Contributions_2001/rnd_arno_luppold/077.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_arno_luppold/078.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_arno_luppold/079.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_arno_luppold/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2001/rnd_barak_shacked/
 share/rocksndiamonds/levels/Contributions_2001/rnd_barak_shacked/001.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_barak_shacked/002.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_barak_shacked/003.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_barak_shacked/004.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_barak_shacked/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_2/
 share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_2/000.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_2/001.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_2/002.level
@@ -1448,6 +1482,7 @@ share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_2/197.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_2/198.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_2/199.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_2/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_3/
 share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_3/000.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_3/001.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_3/002.level
@@ -1459,6 +1494,7 @@ share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_3/007.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_3/008.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_3/009.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_3/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2001/rnd_dominik_seichter/
 share/rocksndiamonds/levels/Contributions_2001/rnd_dominik_seichter/001.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_dominik_seichter/002.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_dominik_seichter/003.level
@@ -1472,6 +1508,7 @@ share/rocksndiamonds/levels/Contributions_2001/rnd_dominik_seichter/010.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_dominik_seichter/011.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_dominik_seichter/012.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_dominik_seichter/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2001/rnd_emilio_hemken/
 share/rocksndiamonds/levels/Contributions_2001/rnd_emilio_hemken/001.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_emilio_hemken/002.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_emilio_hemken/003.level
@@ -1486,6 +1523,7 @@ share/rocksndiamonds/levels/Contributions_2001/rnd_emilio_hemken/011.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_emilio_hemken/012.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_emilio_hemken/013.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_emilio_hemken/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2001/rnd_glenn_alexander/
 share/rocksndiamonds/levels/Contributions_2001/rnd_glenn_alexander/001.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_glenn_alexander/002.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_glenn_alexander/003.level
@@ -1507,12 +1545,16 @@ share/rocksndiamonds/levels/Contributions_2001/rnd_glenn_alexander/018.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_glenn_alexander/019.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_glenn_alexander/020.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_glenn_alexander/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2001/rnd_helge_hafting/
 share/rocksndiamonds/levels/Contributions_2001/rnd_helge_hafting/001.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_helge_hafting/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2001/rnd_paul_sutton/
 share/rocksndiamonds/levels/Contributions_2001/rnd_paul_sutton/001.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_paul_sutton/002.level
 share/rocksndiamonds/levels/Contributions_2001/rnd_paul_sutton/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2002/
 share/rocksndiamonds/levels/Contributions_2002/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king/
 share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king/001.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king/002.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king/003.level
@@ -1528,6 +1570,7 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king/012.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king/013.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king/014.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king/tapes/
 share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king/tapes/001.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king/tapes/004.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king/tapes/007.tape
@@ -1538,6 +1581,7 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king/tapes/011.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king/tapes/012.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king/tapes/013.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king/tapes/014.tape
+share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/
 share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/001.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/002.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/003.level
@@ -1568,10 +1612,12 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/027.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/028.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/029.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/030.level
+share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/graphics/
 share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/graphics/Boulderdash.pcx
 share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/graphics/RocksHeroesBD.pcx
 share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/graphics/graphicsinfo.conf
 share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/tapes/
 share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/tapes/001.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/tapes/002.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/tapes/003.tape
@@ -1602,6 +1648,7 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/tapes/027.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/tapes/028.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/tapes/029.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/tapes/030.tape
+share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone/
 share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone/001.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone/002.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone/003.level
@@ -1618,6 +1665,7 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone/013.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone/014.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone/015.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone/tapes/
 share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone/tapes/001.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone/tapes/002.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone/tapes/003.tape
@@ -1633,6 +1681,7 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone/tapes/012.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone/tapes/013.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone/tapes/014.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone/tapes/015.tape
+share/rocksndiamonds/levels/Contributions_2002/rnd_david_hutchinson/
 share/rocksndiamonds/levels/Contributions_2002/rnd_david_hutchinson/001.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_david_hutchinson/002.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_david_hutchinson/003.level
@@ -1658,11 +1707,13 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_david_hutchinson/022.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_david_hutchinson/023.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_david_hutchinson/024.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_david_hutchinson/025.level
+share/rocksndiamonds/levels/Contributions_2002/rnd_david_hutchinson/graphics/
 share/rocksndiamonds/levels/Contributions_2002/rnd_david_hutchinson/graphics/RocksScreen.pcx
 share/rocksndiamonds/levels/Contributions_2002/rnd_david_hutchinson/graphics/animals.pcx
 share/rocksndiamonds/levels/Contributions_2002/rnd_david_hutchinson/graphics/animals_unused.pcx
 share/rocksndiamonds/levels/Contributions_2002/rnd_david_hutchinson/graphics/graphicsinfo.conf
 share/rocksndiamonds/levels/Contributions_2002/rnd_david_hutchinson/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/001.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/002.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/003.level
@@ -1714,6 +1765,8 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/048.lev
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/049.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/050.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/levelinfo.conf
+@comment share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/levelinfo.conf.orig
+share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/tapes/
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/tapes/001.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/tapes/002.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/tapes/003.tape
@@ -1725,6 +1778,7 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/tapes/0
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/tapes/009.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/tapes/010.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/tapes/011.tape
+@comment share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/tapes/011.tape.orig
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/tapes/012.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/tapes/013.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/tapes/014.tape
@@ -1764,6 +1818,7 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/tapes/0
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/tapes/048.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/tapes/049.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/tapes/050.tape
+share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/001.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/002.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/003.level
@@ -1866,6 +1921,8 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/099.
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/100.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/README.txt
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/levelinfo.conf
+@comment share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/levelinfo.conf.orig
+share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/tapes/
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/tapes/001.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/tapes/002.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/tapes/003.tape
@@ -1911,6 +1968,7 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/tapes/043.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/tapes/044.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/tapes/045.tape
+@comment share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/tapes/045.tape.orig
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/tapes/046.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/tapes/047.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/tapes/048.tape
@@ -1966,6 +2024,7 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/tapes/098.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/tapes/099.tape
 share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/tapes/100.tape
+share/rocksndiamonds/levels/Contributions_2002/rnd_gerrit_holl/
 share/rocksndiamonds/levels/Contributions_2002/rnd_gerrit_holl/001.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_gerrit_holl/002.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_gerrit_holl/003.level
@@ -2011,6 +2070,7 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_gerrit_holl/042.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_gerrit_holl/043.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_gerrit_holl/README.txt
 share/rocksndiamonds/levels/Contributions_2002/rnd_gerrit_holl/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2002/rnd_jerome_kunegis/
 share/rocksndiamonds/levels/Contributions_2002/rnd_jerome_kunegis/001.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_jerome_kunegis/002.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_jerome_kunegis/003.level
@@ -2112,6 +2172,7 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_jerome_kunegis/098.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_jerome_kunegis/099.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_jerome_kunegis/100.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_jerome_kunegis/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2002/rnd_ruediger_schaefer/
 share/rocksndiamonds/levels/Contributions_2002/rnd_ruediger_schaefer/001.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_ruediger_schaefer/002.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_ruediger_schaefer/003.level
@@ -2213,6 +2274,7 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_ruediger_schaefer/098.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_ruediger_schaefer/099.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_ruediger_schaefer/100.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_ruediger_schaefer/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2002/rnd_sylvan_hancock/
 share/rocksndiamonds/levels/Contributions_2002/rnd_sylvan_hancock/001.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_sylvan_hancock/002.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_sylvan_hancock/003.level
@@ -2253,6 +2315,7 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_sylvan_hancock/037.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_sylvan_hancock/038.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_sylvan_hancock/039.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_sylvan_hancock/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace/
 share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace/001.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace/002.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace/003.level
@@ -2316,6 +2379,7 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace/060.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace/061.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace/062.level
 share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace/063.level
+share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace/graphics/
 share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace/graphics/RocksScreen.pcx
 share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace/graphics/chars.pcx
 share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace/graphics/dc_other.pcx
@@ -2324,7 +2388,9 @@ share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace/graphics/gates.
 share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace/graphics/graphicsinfo.conf
 share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace/graphics/sniksnak.pcx
 share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2003/
 share/rocksndiamonds/levels/Contributions_2003/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/001.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/002.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/003.level
@@ -2410,6 +2476,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/082.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/083.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/084.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/085.level
+share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/graphics/
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/graphics/ABToons.pcx
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/graphics/Back.gif
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/graphics/Back.pcx
@@ -2440,9 +2507,11 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/graphics/Ro
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/graphics/Smily.pcx
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/graphics/graphicsinfo.conf
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/sounds/
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/sounds/halloffame.wav
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/sounds/readme.txt
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/sounds/soundsinfo.conf
+share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/tapes/
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/tapes/001.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/tapes/002.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/tapes/003.tape
@@ -2528,12 +2597,14 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/tapes/082.t
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/tapes/083.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/tapes/084.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/tapes/085.tape
+share/rocksndiamonds/levels/Contributions_2003/rnd_audrius_saikunas/
 share/rocksndiamonds/levels/Contributions_2003/rnd_audrius_saikunas/001.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_audrius_saikunas/002.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_audrius_saikunas/003.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_audrius_saikunas/004.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_audrius_saikunas/levelinfo.conf
 share/rocksndiamonds/levels/Contributions_2003/rnd_audrius_saikunas/template.level
+share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/001.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/002.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/003.level
@@ -2545,6 +2616,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/008.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/009.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/010.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/README.txt
+share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/graphics/
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/graphics/doors.pcx
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/graphics/dynamite.pcx
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/graphics/exit.pcx
@@ -2559,9 +2631,11 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/graphics/shield_a
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/graphics/sp_port.pcx
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/graphics/time_orb.pcx
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/music/
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/music/edwards_digging.mod
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/music/shock_therapy.mod
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/music/twentyfour_and_up.mod
+share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/sounds/
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/sounds/base.wav
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/sounds/booom.wav
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/sounds/bug.wav
@@ -2575,6 +2649,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/sounds/pling.wav
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/sounds/pong.wav
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/sounds/pusch.wav
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/sounds/roaaar.wav
+share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/tapes/
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/tapes/001.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/tapes/002.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/tapes/003.tape
@@ -2585,6 +2660,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/tapes/007.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/tapes/008.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/tapes/009.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/tapes/010.tape
+share/rocksndiamonds/levels/Contributions_2003/rnd_efraim_yawitz/
 share/rocksndiamonds/levels/Contributions_2003/rnd_efraim_yawitz/001.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_efraim_yawitz/002.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_efraim_yawitz/003.level
@@ -2606,6 +2682,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_efraim_yawitz/018.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_efraim_yawitz/019.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_efraim_yawitz/020.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_efraim_yawitz/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/001.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/002.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/003.level
@@ -2628,6 +2705,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/019.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/020.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/021.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/022.level
+share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/graphics/
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/graphics/RocksDC.pcx
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/graphics/RocksDoor.pcx
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/graphics/RocksElements.pcx
@@ -2636,6 +2714,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/graphics/Rock
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/graphics/RocksScreen.pcx
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/graphics/graphicsinfo.conf
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/sounds/
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/sounds/amoebe.wav
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/sounds/autsch.wav
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/sounds/base.wav
@@ -2672,6 +2751,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/sounds/sounds
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/sounds/zisch.wav
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/sounds/zonkdown.wav
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/sounds/zonkpush.wav
+share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/001.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/002.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/003.tape
@@ -2685,15 +2765,18 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/010.tap
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/011.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/012.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/013.tape
+@comment share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/013.tape.orig
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/014.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/015.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/016.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/017.tape
+@comment share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/017.tape.orig
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/018.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/019.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/020.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/021.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes/022.tape
+share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson/
 share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson/001.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson/002.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson/003.level
@@ -2742,6 +2825,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson/045.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson/046.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson/047.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson/tapes/
 share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson/tapes/001.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson/tapes/002.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson/tapes/003.tape
@@ -2787,6 +2871,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson/tapes/042.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson/tapes/043.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson/tapes/044.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson/tapes/046.tape
+share/rocksndiamonds/levels/Contributions_2003/rnd_jorge_jordan/
 share/rocksndiamonds/levels/Contributions_2003/rnd_jorge_jordan/001.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_jorge_jordan/002.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_jorge_jordan/003.level
@@ -2805,6 +2890,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_jorge_jordan/015.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_jorge_jordan/016.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_jorge_jordan/017.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_jorge_jordan/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz/
 share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz/001.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz/002.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz/003.level
@@ -2907,6 +2993,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz/099.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz/100.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz/levelinfo.conf
 share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz/readme.txt
+share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz/tapes/
 share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz/tapes/001.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz/tapes/002.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz/tapes/003.tape
@@ -3007,6 +3094,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz/tapes/097
 share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz/tapes/098.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz/tapes/099.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz/tapes/100.tape
+share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/001.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/002.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/003.level
@@ -3067,12 +3155,14 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/057.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/058.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/059.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/060.level
+@comment share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/060.level.orig
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/061.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/062.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/063.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/064.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/levelinfo.conf
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/levels.txt
+share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/tapes/
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/tapes/001.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/tapes/002.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/tapes/003.tape
@@ -3137,6 +3227,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/tapes/061.
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/tapes/062.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/tapes/063.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/tapes/064.tape
+share/rocksndiamonds/levels/Contributions_2003/rnd_rafael_gatti/
 share/rocksndiamonds/levels/Contributions_2003/rnd_rafael_gatti/001.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_rafael_gatti/002.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_rafael_gatti/003.level
@@ -3155,6 +3246,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_rafael_gatti/015.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_rafael_gatti/016.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_rafael_gatti/017.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_rafael_gatti/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen/
 share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen/001.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen/002.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen/003.level
@@ -3173,6 +3265,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen/015.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen/016.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen/017.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen/tapes/
 share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen/tapes/001.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen/tapes/002.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen/tapes/003.tape
@@ -3189,10 +3282,12 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen/tapes/013.t
 share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen/tapes/014.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen/tapes/015.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen/tapes/016.tape
+share/rocksndiamonds/levels/Contributions_2003/rnd_richard_valvona/
 share/rocksndiamonds/levels/Contributions_2003/rnd_richard_valvona/001.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_richard_valvona/002.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_richard_valvona/003.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_richard_valvona/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman/
 share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman/001.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman/002.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman/003.level
@@ -3229,6 +3324,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman/033.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman/034.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman/035.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman/tapes/
 share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman/tapes/001.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman/tapes/002.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman/tapes/003.tape
@@ -3264,6 +3360,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman/tapes/032.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman/tapes/033.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman/tapes/034.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman/tapes/035.tape
+share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon/
 share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon/001.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon/002.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon/003.level
@@ -3277,6 +3374,7 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon/010.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon/011.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon/012.level
 share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon/levelinfo.conf
+share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon/tapes/
 share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon/tapes/001.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon/tapes/002.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon/tapes/003.tape
@@ -3289,7 +3387,10 @@ share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon/tapes/009.tap
 share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon/tapes/010.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon/tapes/011.tape
 share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon/tapes/012.tape
+share/rocksndiamonds/levels/Examples/
+share/rocksndiamonds/levels/Examples/example_andreas_buschbeck/
 share/rocksndiamonds/levels/Examples/example_andreas_buschbeck/001.level
+share/rocksndiamonds/levels/Examples/example_andreas_buschbeck/graphics/
 share/rocksndiamonds/levels/Examples/example_andreas_buschbeck/graphics/Butterfly1.pcx
 share/rocksndiamonds/levels/Examples/example_andreas_buschbeck/graphics/Butterfly2.pcx
 share/rocksndiamonds/levels/Examples/example_andreas_buschbeck/graphics/bild1.pcx
@@ -3303,7 +3404,9 @@ share/rocksndiamonds/levels/Examples/example_andreas_buschbeck/graphics/bild8.pc
 share/rocksndiamonds/levels/Examples/example_andreas_buschbeck/graphics/bild9.pcx
 share/rocksndiamonds/levels/Examples/example_andreas_buschbeck/graphics/graphicsinfo.conf
 share/rocksndiamonds/levels/Examples/example_andreas_buschbeck/levelinfo.conf
+share/rocksndiamonds/levels/Examples/example_artwork/
 share/rocksndiamonds/levels/Examples/example_artwork/000.level
+share/rocksndiamonds/levels/Examples/example_artwork/graphics/
 share/rocksndiamonds/levels/Examples/example_artwork/graphics/background_black_marble.pcx
 share/rocksndiamonds/levels/Examples/example_artwork/graphics/background_circuit.pcx
 share/rocksndiamonds/levels/Examples/example_artwork/graphics/background_liquid_helium.pcx
@@ -3315,12 +3418,19 @@ share/rocksndiamonds/levels/Examples/example_artwork/graphics/background_water.p
 share/rocksndiamonds/levels/Examples/example_artwork/graphics/background_wood.pcx
 share/rocksndiamonds/levels/Examples/example_artwork/graphics/blood.pcx
 share/rocksndiamonds/levels/Examples/example_artwork/graphics/graphicsinfo.conf
+@comment share/rocksndiamonds/levels/Examples/example_artwork/graphics/graphicsinfo.conf.orig
 share/rocksndiamonds/levels/Examples/example_artwork/levelinfo.conf
+share/rocksndiamonds/levels/Examples/example_artwork/music/
 share/rocksndiamonds/levels/Examples/example_artwork/music/musicinfo.conf
+@comment share/rocksndiamonds/levels/Examples/example_artwork/music/musicinfo.conf.orig
+share/rocksndiamonds/levels/Examples/example_artwork/sounds/
 share/rocksndiamonds/levels/Examples/example_artwork/sounds/oeffnen.wav
 share/rocksndiamonds/levels/Examples/example_artwork/sounds/soundsinfo.conf
+@comment share/rocksndiamonds/levels/Examples/example_artwork/sounds/soundsinfo.conf.orig
 share/rocksndiamonds/levels/Examples/levelinfo.conf
+share/rocksndiamonds/levels/Tutorials/
 share/rocksndiamonds/levels/Tutorials/levelinfo.conf
+share/rocksndiamonds/levels/Tutorials/rnd_tutorial/
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial/000.level
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial/001.level
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial/002.level
@@ -3332,6 +3442,8 @@ share/rocksndiamonds/levels/Tutorials/rnd_tutorial/007.level
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial/008.level
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial/024.level
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial/levelinfo.conf
+share/rocksndiamonds/music/
+share/rocksndiamonds/music/mus_classic/
 share/rocksndiamonds/music/mus_classic/alchemy.txt
 share/rocksndiamonds/music/mus_classic/alchemy.wav
 share/rocksndiamonds/music/mus_classic/chase.txt
@@ -3351,6 +3463,8 @@ share/rocksndiamonds/music/mus_classic/tyger.txt
 share/rocksndiamonds/music/mus_classic/tyger.wav
 share/rocksndiamonds/music/mus_classic/voyager.txt
 share/rocksndiamonds/music/mus_classic/voyager.wav
+share/rocksndiamonds/sounds/
+share/rocksndiamonds/sounds/snd_classic/
 share/rocksndiamonds/sounds/snd_classic/amoebe.wav
 share/rocksndiamonds/sounds/snd_classic/autsch.wav
 share/rocksndiamonds/sounds/snd_classic/base.wav
@@ -3387,108 +3501,4 @@ share/rocksndiamonds/sounds/snd_classic/soundsinfo.conf
 share/rocksndiamonds/sounds/snd_classic/zisch.wav
 share/rocksndiamonds/sounds/snd_classic/zonkdown.wav
 share/rocksndiamonds/sounds/snd_classic/zonkpush.wav
-@dirrm share/rocksndiamonds/sounds/snd_classic
-@dirrm share/rocksndiamonds/sounds
-@dirrm share/rocksndiamonds/music/mus_classic
-@dirrm share/rocksndiamonds/music
-@dirrm share/rocksndiamonds/levels/Tutorials/rnd_tutorial
-@dirrm share/rocksndiamonds/levels/Tutorials
-@dirrm share/rocksndiamonds/levels/Examples/example_artwork/sounds
-@dirrm share/rocksndiamonds/levels/Examples/example_artwork/music
-@dirrm share/rocksndiamonds/levels/Examples/example_artwork/graphics
-@dirrm share/rocksndiamonds/levels/Examples/example_artwork
-@dirrm share/rocksndiamonds/levels/Examples/example_andreas_buschbeck/graphics
-@dirrm share/rocksndiamonds/levels/Examples/example_andreas_buschbeck
-@dirrm share/rocksndiamonds/levels/Examples
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon/tapes
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_sebastian_simon
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman/tapes
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_sam_bateman
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_richard_valvona
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen/tapes
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_randy_johannessen
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_rafael_gatti
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii/tapes
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_paul_e_collins_iii
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz/tapes
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_krystian_abramowicz
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_jorge_jordan
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson/tapes
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_gavin_davidson
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/tapes
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/sounds
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg/graphics
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_emanuel_schmieg
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_efraim_yawitz
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/tapes
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/sounds
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/music
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf/graphics
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_edward_leuf
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_audrius_saikunas
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/tapes
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/sounds
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck/graphics
-@dirrm share/rocksndiamonds/levels/Contributions_2003/rnd_andreas_buschbeck
-@dirrm share/rocksndiamonds/levels/Contributions_2003
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace/graphics
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_yamyam_palace
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_sylvan_hancock
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_ruediger_schaefer
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_jerome_kunegis
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_gerrit_holl
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii/tapes
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride_ii
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride/tapes
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_equinox_tetrachloride
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_david_hutchinson/graphics
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_david_hutchinson
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone/tapes
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_conor_mancone
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/tapes
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond/graphics
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_alan_bond
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king/tapes
-@dirrm share/rocksndiamonds/levels/Contributions_2002/rnd_abby_king
-@dirrm share/rocksndiamonds/levels/Contributions_2002
-@dirrm share/rocksndiamonds/levels/Contributions_2001/rnd_paul_sutton
-@dirrm share/rocksndiamonds/levels/Contributions_2001/rnd_helge_hafting
-@dirrm share/rocksndiamonds/levels/Contributions_2001/rnd_glenn_alexander
-@dirrm share/rocksndiamonds/levels/Contributions_2001/rnd_emilio_hemken
-@dirrm share/rocksndiamonds/levels/Contributions_2001/rnd_dominik_seichter
-@dirrm share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_3
-@dirrm share/rocksndiamonds/levels/Contributions_2001/rnd_ben_braithwaite_2
-@dirrm share/rocksndiamonds/levels/Contributions_2001/rnd_barak_shacked
-@dirrm share/rocksndiamonds/levels/Contributions_2001/rnd_arno_luppold
-@dirrm share/rocksndiamonds/levels/Contributions_2001
-@dirrm share/rocksndiamonds/levels/Contributions_1995-2000/rnd_warwick_allison
-@dirrm share/rocksndiamonds/levels/Contributions_1995-2000/rnd_visa_hastrup
-@dirrm share/rocksndiamonds/levels/Contributions_1995-2000/rnd_tobias_authmann
-@dirrm share/rocksndiamonds/levels/Contributions_1995-2000/rnd_stephan_beyer
-@dirrm share/rocksndiamonds/levels/Contributions_1995-2000/rnd_pavel_machek
-@dirrm share/rocksndiamonds/levels/Contributions_1995-2000/rnd_martin_herrmann
-@dirrm share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kjell_kristiansson
-@dirrm share/rocksndiamonds/levels/Contributions_1995-2000/rnd_kimball_robinson
-@dirrm share/rocksndiamonds/levels/Contributions_1995-2000/rnd_jan_hubicka
-@dirrm share/rocksndiamonds/levels/Contributions_1995-2000/rnd_holger_schemel
-@dirrm share/rocksndiamonds/levels/Contributions_1995-2000/rnd_gerhard_haeusler
-@dirrm share/rocksndiamonds/levels/Contributions_1995-2000/rnd_charles_briscoe-smith
-@dirrm share/rocksndiamonds/levels/Contributions_1995-2000/rnd_ben_braithwaite
-@dirrm share/rocksndiamonds/levels/Contributions_1995-2000
-@dirrm share/rocksndiamonds/levels/Classic_Games/classic_supaplex/music
-@dirrm share/rocksndiamonds/levels/Classic_Games/classic_supaplex
-@dirrm share/rocksndiamonds/levels/Classic_Games/classic_sokoban/tapes
-@dirrm share/rocksndiamonds/levels/Classic_Games/classic_sokoban
-@dirrm share/rocksndiamonds/levels/Classic_Games/classic_emerald_mine
-@dirrm share/rocksndiamonds/levels/Classic_Games/classic_boulderdash
-@dirrm share/rocksndiamonds/levels/Classic_Games
-@dirrm share/rocksndiamonds/levels/Boulderdash/bd_xbd
-@dirrm share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_2
-@dirrm share/rocksndiamonds/levels/Boulderdash/bd_boulderdash_16
-@dirrm share/rocksndiamonds/levels/Boulderdash
-@dirrm share/rocksndiamonds/levels
-@dirrm share/rocksndiamonds/graphics/gfx_classic
-@dirrm share/rocksndiamonds/graphics/gfx_animal_kingdom
-@dirrm share/rocksndiamonds/graphics
-@dirrm share/rocksndiamonds
 @extraunexec rm -rf /var/games/rocksndiamonds

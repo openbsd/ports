@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/20 08:25:57 mark Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:08 espie Exp $
 bin/castle-combat
 bin/castle-combat-server
+share/castle-combat/
+share/castle-combat/gfx/
 share/castle-combat/gfx/Font.png
 share/castle-combat/gfx/back.png
 share/castle-combat/gfx/bigcannon0001.png
@@ -94,10 +96,8 @@ share/castle-combat/gfx/tank4.png
 share/castle-combat/gfx/waitblock.png
 share/castle-combat/gfx/wall.png
 share/castle-combat/gfx/water.png
+share/castle-combat/sound/
 share/castle-combat/sound/FARMOR8.XM
 share/castle-combat/sound/FDREAM.XM
 share/castle-combat/sound/cannon.wav
 share/castle-combat/sound/drop.wav
-@dirrm share/castle-combat/sound
-@dirrm share/castle-combat/gfx
-@dirrm share/castle-combat

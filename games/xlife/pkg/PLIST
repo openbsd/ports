@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/12/16 15:39:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:46:12 espie Exp $
 bin/lifeconv
 bin/lifesrc
 bin/lifesrcdumb
 bin/xlife
-man/cat6/lifeconv.0
-man/cat6/xlife.0
+@man man/cat6/lifeconv.0
+@man man/cat6/xlife.0
+share/xlife/
+share/xlife/patterns/
+share/xlife/patterns/codd/
 share/xlife/patterns/codd/codd.r
 share/xlife/patterns/codd/echodisc.l
 share/xlife/patterns/codd/emitter.l
@@ -18,6 +21,7 @@ share/xlife/patterns/codd/trans7.l
 share/xlife/patterns/codd/turnoff.l
 share/xlife/patterns/codd/twolock.l
 share/xlife/patterns/codd/unicross.l
+share/xlife/patterns/life/
 share/xlife/patterns/life/12gliders.l
 share/xlife/patterns/life/2_ak47.l
 share/xlife/patterns/life/MWSSpuffer.l
@@ -166,6 +170,7 @@ share/xlife/patterns/life/makehustler.l
 share/xlife/patterns/life/makeoscs.l
 share/xlife/patterns/life/makepole.l
 share/xlife/patterns/life/match.l
+share/xlife/patterns/life/match.l~
 share/xlife/patterns/life/max.l
 share/xlife/patterns/life/mediumfish.l
 share/xlife/patterns/life/mediumfishgun.l
@@ -175,6 +180,7 @@ share/xlife/patterns/life/mwssgun.l
 share/xlife/patterns/life/mwssrak2.l
 share/xlife/patterns/life/mwssrake.l
 share/xlife/patterns/life/named-patterns
+share/xlife/patterns/life/named-patterns~
 share/xlife/patterns/life/oscillator7.l
 share/xlife/patterns/life/oscillators.l
 share/xlife/patterns/life/oscsp2.l
@@ -203,6 +209,7 @@ share/xlife/patterns/life/p32gun.l
 share/xlife/patterns/life/p3sampler.l
 share/xlife/patterns/life/p47.l
 share/xlife/patterns/life/p4sampler.l
+share/xlife/patterns/life/p4sampler.l~
 share/xlife/patterns/life/p54.l
 share/xlife/patterns/life/p54shuttle.l
 share/xlife/patterns/life/p55.l
@@ -341,18 +348,16 @@ share/xlife/patterns/life/washerwoman.l
 share/xlife/patterns/life/wave1.l
 share/xlife/patterns/life/wideship.l
 share/xlife/patterns/life/wing.l
+share/xlife/patterns/life/xlife-5.0.tar.gz
 share/xlife/patterns/life/zip2.l
 share/xlife/patterns/life/zips.l
+share/xlife/patterns/misc/
 share/xlife/patterns/misc/highlife.l
+share/xlife/patterns/misc/highlife.l~
 share/xlife/patterns/misc/lloyd.l
+share/xlife/patterns/wireworld/
 share/xlife/patterns/wireworld/diode.l
 share/xlife/patterns/wireworld/flipflop.l
 share/xlife/patterns/wireworld/or.l
 share/xlife/patterns/wireworld/test.l
 share/xlife/patterns/wireworld/wireworld.r
-@dirrm share/xlife/patterns/wireworld
-@dirrm share/xlife/patterns/misc
-@dirrm share/xlife/patterns/life
-@dirrm share/xlife/patterns/codd
-@dirrm share/xlife/patterns
-@dirrm share/xlife

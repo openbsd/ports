@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/15 17:11:44 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:46:10 espie Exp $
 bin/pathological
 bin/write-highscores
-man/man6/pathological.6
+@man man/man6/pathological.6
+share/doc/pathological/
+share/doc/pathological/html/
 share/doc/pathological/html/buffer.png
 share/doc/pathological/html/buffer2.png
 share/doc/pathological/html/director.png
@@ -17,7 +19,10 @@ share/doc/pathological/html/teleporter.png
 share/doc/pathological/html/trigger.png
 share/doc/pathological/html/trigger2.png
 share/doc/pathological/html/wheel.png
+share/pathological/
+share/pathological/circuits/
 share/pathological/circuits/all-boards
+share/pathological/graphics/
 share/pathological/graphics/backdrop.jpg
 share/pathological/graphics/blank-bg-tile.png
 share/pathological/graphics/blank-wheel-dark.png
@@ -140,9 +145,11 @@ share/pathological/graphics/tunnel-8.png
 share/pathological/graphics/tunnel-9.png
 share/pathological/graphics/wheel-dark.png
 share/pathological/graphics/wheel.png
+share/pathological/music/
 share/pathological/music/background.xm
 share/pathological/music/intro.xm
 share/pathological/pathological.py
+share/pathological/sounds/
 share/pathological/sounds/change_color.wav
 share/pathological/sounds/die.wav
 share/pathological/sounds/direct_marble.wav
@@ -160,14 +167,6 @@ share/pathological/sounds/teleport.wav
 share/pathological/sounds/trigger_setup.wav
 share/pathological/sounds/wheel_completed.wav
 share/pathological/sounds/wheel_turn.wav
+share/pixmaps/
 share/pixmaps/pathological.xpm
-@dirrm share/pixmaps
-@dirrm share/pathological/sounds
-@dirrm share/pathological/music
-@dirrm share/pathological/graphics
-@dirrm share/pathological/circuits
-@dirrm share/pathological
-@dirrm share/doc/pathological/html
-@dirrm share/doc/pathological
-@cwd /var/games
-@extra pathological_scores
+@extra /var/games/pathological_scores

@@ -1,11 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/02/26 09:14:55 brad Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/09/15 00:50:09 espie Exp $
 bin/gwenview
-man/man1/gwenview.1
+@man man/man1/gwenview.1
+share/applications/
+share/applications/kde/
 share/applications/kde/gwenview.desktop
+share/apps/
+share/apps/gwenview/
+share/apps/gwenview/cursors/
 share/apps/gwenview/cursors/drag.png
 share/apps/gwenview/cursors/dragging.png
 share/apps/gwenview/cursors/zoom.png
 share/apps/gwenview/gwenviewui.rc
+share/apps/gwenview/icons/
+share/apps/gwenview/icons/hicolor/
+share/apps/gwenview/icons/hicolor/16x16/
+share/apps/gwenview/icons/hicolor/16x16/actions/
 share/apps/gwenview/icons/hicolor/16x16/actions/dnd1.png
 share/apps/gwenview/icons/hicolor/16x16/actions/dnd2.png
 share/apps/gwenview/icons/hicolor/16x16/actions/dnd3.png
@@ -19,6 +28,8 @@ share/apps/gwenview/icons/hicolor/16x16/actions/mirror.png
 share/apps/gwenview/icons/hicolor/16x16/actions/rotate_left.png
 share/apps/gwenview/icons/hicolor/16x16/actions/rotate_right.png
 share/apps/gwenview/icons/hicolor/16x16/actions/slideshow.png
+share/apps/gwenview/icons/hicolor/22x22/
+share/apps/gwenview/icons/hicolor/22x22/actions/
 share/apps/gwenview/icons/hicolor/22x22/actions/flip.png
 share/apps/gwenview/icons/hicolor/22x22/actions/gvfirst.png
 share/apps/gwenview/icons/hicolor/22x22/actions/gvlast.png
@@ -31,6 +42,8 @@ share/apps/gwenview/icons/hicolor/22x22/actions/rotate_left.png
 share/apps/gwenview/icons/hicolor/22x22/actions/rotate_right.png
 share/apps/gwenview/icons/hicolor/22x22/actions/slideshow.png
 share/apps/gwenview/icons/hicolor/22x22/actions/smallthumbnails.png
+share/apps/gwenview/icons/hicolor/32x32/
+share/apps/gwenview/icons/hicolor/32x32/actions/
 share/apps/gwenview/icons/hicolor/32x32/actions/flip.png
 share/apps/gwenview/icons/hicolor/32x32/actions/gvfirst.png
 share/apps/gwenview/icons/hicolor/32x32/actions/gvlast.png
@@ -43,147 +56,138 @@ share/apps/gwenview/icons/hicolor/32x32/actions/rotate_left.png
 share/apps/gwenview/icons/hicolor/32x32/actions/rotate_right.png
 share/apps/gwenview/icons/hicolor/32x32/actions/slideshow.png
 share/apps/gwenview/icons/hicolor/32x32/actions/smallthumbnails.png
+share/apps/gwenview/icons/hicolor/48x48/
+share/apps/gwenview/icons/hicolor/48x48/actions/
 share/apps/gwenview/icons/hicolor/48x48/actions/flip.png
 share/apps/gwenview/icons/hicolor/48x48/actions/mirror.png
 share/apps/gwenview/icons/hicolor/48x48/actions/rotate_left.png
 share/apps/gwenview/icons/hicolor/48x48/actions/rotate_right.png
 share/apps/gwenview/icons/hicolor/48x48/actions/slideshow.png
+share/apps/gwenview/thumbnail/
 share/apps/gwenview/thumbnail/wait.png
+share/apps/gwenview/tools/
 share/apps/gwenview/tools/gimp.desktop
 share/apps/gwenview/tools/konqueror.desktop
 share/apps/gwenview/tools/tiledwallpaper.desktop
 share/apps/gwenview/tools/wallpaper.desktop
+share/apps/konqueror/
+share/apps/konqueror/servicemenus/
 share/apps/konqueror/servicemenus/konqgwenview.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gwenview.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/gwenview.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gwenview.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/gwenview.png
+share/icons/hicolor/64x64/
+share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/gwenview.png
+share/icons/locolor/
+share/icons/locolor/16x16/
+share/icons/locolor/16x16/apps/
 share/icons/locolor/16x16/apps/gwenview.png
+share/icons/locolor/32x32/
+share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/gwenview.png
+share/locale/
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gwenview.mo
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/gwenview.mo
+share/locale/da/
+share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/gwenview.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/gwenview.mo
+share/locale/el/
+share/locale/el/LC_MESSAGES/
 share/locale/el/LC_MESSAGES/gwenview.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gwenview.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/gwenview.mo
+share/locale/et/
+share/locale/et/LC_MESSAGES/
 share/locale/et/LC_MESSAGES/gwenview.mo
+share/locale/fo/
+share/locale/fo/LC_MESSAGES/
 share/locale/fo/LC_MESSAGES/gwenview.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/gwenview.mo
+share/locale/he/
+share/locale/he/LC_MESSAGES/
 share/locale/he/LC_MESSAGES/gwenview.mo
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/gwenview.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/gwenview.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/gwenview.mo
+share/locale/ko/
+share/locale/ko/LC_MESSAGES/
 share/locale/ko/LC_MESSAGES/gwenview.mo
+share/locale/nb/
+share/locale/nb/LC_MESSAGES/
 share/locale/nb/LC_MESSAGES/gwenview.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/gwenview.mo
+share/locale/nso/
+share/locale/nso/LC_MESSAGES/
 share/locale/nso/LC_MESSAGES/gwenview.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/gwenview.mo
+share/locale/pt/
+share/locale/pt/LC_MESSAGES/
 share/locale/pt/LC_MESSAGES/gwenview.mo
+share/locale/pt_BR/
+share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/gwenview.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/gwenview.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/gwenview.mo
+share/locale/tr/
+share/locale/tr/LC_MESSAGES/
 share/locale/tr/LC_MESSAGES/gwenview.mo
+share/locale/uk/
+share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/gwenview.mo
+share/locale/ven/
+share/locale/ven/LC_MESSAGES/
 share/locale/ven/LC_MESSAGES/gwenview.mo
+share/locale/xh/
+share/locale/xh/LC_MESSAGES/
 share/locale/xh/LC_MESSAGES/gwenview.mo
+share/locale/xx/
+share/locale/xx/LC_MESSAGES/
 share/locale/xx/LC_MESSAGES/gwenview.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/gwenview.mo
+share/locale/zh_TW/
+share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/gwenview.mo
+share/locale/zu/
+share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/gwenview.mo
-@dirrm share/locale/zu/LC_MESSAGES
-@dirrm share/locale/zu
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/xx/LC_MESSAGES
-@dirrm share/locale/xx
-@dirrm share/locale/xh/LC_MESSAGES
-@dirrm share/locale/xh
-@dirrm share/locale/ven/LC_MESSAGES
-@dirrm share/locale/ven
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/nso/LC_MESSAGES
-@dirrm share/locale/nso
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/nb/LC_MESSAGES
-@dirrm share/locale/nb
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/he/LC_MESSAGES
-@dirrm share/locale/he
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fo/LC_MESSAGES
-@dirrm share/locale/fo
-@dirrm share/locale/et/LC_MESSAGES
-@dirrm share/locale/et
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/en_GB/LC_MESSAGES
-@dirrm share/locale/en_GB
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ar/LC_MESSAGES
-@dirrm share/locale/ar
-@dirrm share/locale
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/64x64/apps
-@dirrm share/icons/hicolor/64x64
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/apps/konqueror/servicemenus
-@dirrm share/apps/konqueror
-@dirrm share/apps/gwenview/tools
-@dirrm share/apps/gwenview/thumbnail
-@dirrm share/apps/gwenview/icons/hicolor/48x48/actions
-@dirrm share/apps/gwenview/icons/hicolor/48x48
-@dirrm share/apps/gwenview/icons/hicolor/32x32/actions
-@dirrm share/apps/gwenview/icons/hicolor/32x32
-@dirrm share/apps/gwenview/icons/hicolor/22x22/actions
-@dirrm share/apps/gwenview/icons/hicolor/22x22
-@dirrm share/apps/gwenview/icons/hicolor/16x16/actions
-@dirrm share/apps/gwenview/icons/hicolor/16x16
-@dirrm share/apps/gwenview/icons/hicolor
-@dirrm share/apps/gwenview/icons
-@dirrm share/apps/gwenview/cursors
-@dirrm share/apps/gwenview
-@dirrm share/apps

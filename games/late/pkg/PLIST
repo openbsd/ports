@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/08/09 14:10:37 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:09 espie Exp $
 bin/late
+share/late/
+share/late/data/
 share/late/data/level.txt
+share/late/graphics/
 share/late/graphics/Blob10.bmp
 share/late/graphics/Blob11.bmp
 share/late/graphics/Blob12.bmp
@@ -60,6 +63,3 @@ share/late/graphics/splitball1.bmp
 share/late/graphics/splitball2.bmp
 share/late/graphics/splitball3.bmp
 share/late/graphics/splitball4.bmp
-@dirrm share/late/graphics
-@dirrm share/late/data
-@dirrm share/late

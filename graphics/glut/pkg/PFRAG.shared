@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/06/20 18:55:24 lebel Exp $
-lib/libglsmap.so.3.7
-lib/libglut.so.3.7
-lib/libmui.so.3.7
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 00:50:09 espie Exp $
+@lib lib/libglsmap.so.3.7
+@lib lib/libglut.so.3.7
+@lib lib/libmui.so.3.7

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/31 15:02:48 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:50:10 espie Exp $
 ${P5SITE}/GD/Graph/axestype3d.pm
 ${P5SITE}/GD/Graph/bars3d.pm
 ${P5SITE}/GD/Graph/cylinder.pm
@@ -7,6 +7,4 @@ ${P5SITE}/GD/Graph/lines3d.pm
 ${P5SITE}/GD/Graph/pie3d.pm
 ${P5SITE}/GD/Graph3d.pm
 @comment ${P5SITE}/GD/Graph3d.pm.orig
-@comment ${P5ARCH}/auto/GD/Graph3d/.packlist
-man/man3p/GD::Graph3d.3p
-@comment @dirrm ${P5ARCH}/auto/GD/Graph3d
+@man man/man3p/GD::Graph3d.3p

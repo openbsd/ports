@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/09/24 08:30:09 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:46:10 espie Exp $
 bin/prboom
 bin/prboom-game-server
-man/man5/boom.cfg.5
-man/man6/prboom-game-server.6
-man/man6/prboom.6
+@man man/man5/boom.cfg.5
+@man man/man6/prboom-game-server.6
+@man man/man6/prboom.6
+share/doc/prboom/
 @comment share/doc/prboom/AUTHORS
 @comment share/doc/prboom/COPYING
 share/doc/prboom/MBF.txt
@@ -13,6 +14,5 @@ share/doc/prboom/README
 share/doc/prboom/README.compat
 share/doc/prboom/README.demos
 share/doc/prboom/boom.txt
+share/prboom/
 share/prboom/prboom.wad
-@dirrm share/prboom
-@dirrm share/doc/prboom

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/07/18 15:03:53 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:46:11 espie Exp $
 bin/xbl
 lib/X11/app-defaults/Xbl
+lib/xbl/
 lib/xbl/COPYING
 lib/xbl/Xbl
 lib/xbl/xbl-game.gif
@@ -9,5 +10,4 @@ lib/xbl/xbl-menu.gif
 lib/xbl/xbl-score.gif
 lib/xbl/xbl-zoo.gif
 lib/xbl/xbl.html
-man/man1/xbl.1
-@dirrm lib/xbl
+@man man/man1/xbl.1

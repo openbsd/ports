@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/06/24 10:59:40 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:46:11 espie Exp $
 bin/taxipilot
+share/applnk/
+share/applnk/Games/
 share/applnk/Games/taxipilot.desktop
+share/apps/
+share/apps/taxipilot/
+share/apps/taxipilot/game_data/
 share/apps/taxipilot/game_data/game_data_tag
+share/apps/taxipilot/game_data/images/
 share/apps/taxipilot/game_data/images/blind.png
 share/apps/taxipilot/game_data/images/circles_level.png
 share/apps/taxipilot/game_data/images/default_start_screen.jpg
@@ -11,6 +17,7 @@ share/apps/taxipilot/game_data/images/images_tag
 share/apps/taxipilot/game_data/images/mission1_start_screen.jpg
 share/apps/taxipilot/game_data/images/mission2_start_screen.jpg
 share/apps/taxipilot/game_data/images/mission3_start_screen.jpg
+share/apps/taxipilot/game_data/images/objects/
 share/apps/taxipilot/game_data/images/objects/black_hole0000.png
 share/apps/taxipilot/game_data/images/objects/black_hole0001.png
 share/apps/taxipilot/game_data/images/objects/black_hole0002.png
@@ -80,6 +87,7 @@ share/apps/taxipilot/game_data/images/passenger1_walking_left0010.png
 share/apps/taxipilot/game_data/images/passenger1_walking_left0011.png
 share/apps/taxipilot/game_data/images/passenger1_walking_left0012.png
 share/apps/taxipilot/game_data/images/passenger1_walking_left0013.png
+share/apps/taxipilot/game_data/images/passenger2/
 share/apps/taxipilot/game_data/images/passenger2/idle1_0000.png
 share/apps/taxipilot/game_data/images/passenger2/idle1_0001.png
 share/apps/taxipilot/game_data/images/passenger2/idle1_0002.png
@@ -120,6 +128,7 @@ share/apps/taxipilot/game_data/images/pyramids_back.jpg
 share/apps/taxipilot/game_data/images/pyramids_fore.png
 share/apps/taxipilot/game_data/images/shiny_level.png
 share/apps/taxipilot/game_data/images/shiny_level_bg.jpg
+share/apps/taxipilot/game_data/images/taxi1/
 share/apps/taxipilot/game_data/images/taxi1/flying_down0000.png
 share/apps/taxipilot/game_data/images/taxi1/flying_down0001.png
 share/apps/taxipilot/game_data/images/taxi1/flying_left0000.png
@@ -145,6 +154,7 @@ share/apps/taxipilot/game_data/images/taxi1/teleporting0006.png
 share/apps/taxipilot/game_data/images/taxi1/teleporting0007.png
 share/apps/taxipilot/game_data/images/taxi1/teleporting0008.png
 share/apps/taxipilot/game_data/images/taxi1/teleporting0009.png
+share/apps/taxipilot/game_data/images/taxi2/
 share/apps/taxipilot/game_data/images/taxi2/flaps0000.png
 share/apps/taxipilot/game_data/images/taxi2/flaps0001.png
 share/apps/taxipilot/game_data/images/taxi2/flaps0002.png
@@ -162,6 +172,7 @@ share/apps/taxipilot/game_data/images/taxi2/teleporting0006.png
 share/apps/taxipilot/game_data/images/taxi2/teleporting0007.png
 share/apps/taxipilot/game_data/images/taxi2/teleporting0008.png
 share/apps/taxipilot/game_data/images/taxi2/teleporting0009.png
+share/apps/taxipilot/game_data/images/taxi3/
 share/apps/taxipilot/game_data/images/taxi3/flaps_left0000.png
 share/apps/taxipilot/game_data/images/taxi3/flaps_left0001.png
 share/apps/taxipilot/game_data/images/taxi3/flaps_left0002.png
@@ -255,20 +266,27 @@ share/apps/taxipilot/game_data/taxi2.taxi
 share/apps/taxipilot/game_data/taxi3.taxi
 share/apps/taxipilot/game_data/wonderland.level
 share/apps/taxipilot/taxipilotui.rc
+share/doc/HTML/
+share/doc/HTML/en/
+share/doc/HTML/en/taxipilot/
 share/doc/HTML/en/taxipilot/common
 share/doc/HTML/en/taxipilot/index.cache.bz2
 share/doc/HTML/en/taxipilot/index.docbook
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/taxipilot.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/taxipilot.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/taxipilot.png
+share/icons/locolor/
+share/icons/locolor/16x16/
+share/icons/locolor/16x16/apps/
 share/icons/locolor/16x16/apps/taxipilot.png
+share/icons/locolor/32x32/
+share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/taxipilot.png
-@dirrm share/doc/HTML/en/taxipilot
-@dirrm share/apps/taxipilot/game_data/images/taxi3
-@dirrm share/apps/taxipilot/game_data/images/taxi2
-@dirrm share/apps/taxipilot/game_data/images/taxi1
-@dirrm share/apps/taxipilot/game_data/images/passenger2
-@dirrm share/apps/taxipilot/game_data/images/objects
-@dirrm share/apps/taxipilot/game_data/images
-@dirrm share/apps/taxipilot/game_data
-@dirrm share/apps/taxipilot

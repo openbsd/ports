@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/04/13 10:20:00 xsa Exp $
-@group games
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:46:11 espie Exp $
 @mode 2555
+@group games
 bin/wanderer
-@group
 @mode
-man/man6/wanderer.6
+@group
+@man man/man6/wanderer.6
+share/wanderer/
+share/wanderer/screens/
 share/wanderer/screens/credits
 share/wanderer/screens/screen.1
 share/wanderer/screens/screen.10
@@ -64,7 +66,5 @@ share/wanderer/screens/screen.59
 share/wanderer/screens/screen.6
 share/wanderer/screens/screen.60
 share/wanderer/screens/screen.61
-@dirrm share/wanderer/screens
-@dirrm share/wanderer
 @cwd /var/games
 @extra wandererscores

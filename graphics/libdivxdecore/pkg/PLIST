@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/11/26 16:58:17 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:09 espie Exp $
+include/divx/
 include/divx/decore.h
 lib/libdivxdecore.a
 lib/libdivxdecore.la
 %%SHARED%%
-@dirrm include/divx

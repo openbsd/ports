@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/18 15:25:07 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:10 espie Exp $
 bin/sdlroids
-man/man6/sdlroids.6
+@man man/man6/sdlroids.6
+share/sdlroids/
+share/sdlroids/bmp/
 share/sdlroids/bmp/blank.bmp
 share/sdlroids/bmp/bomb.bmp
 share/sdlroids/bmp/icon.bmp
@@ -19,6 +21,7 @@ share/sdlroids/bmp/num9.bmp
 share/sdlroids/bmp/plus.bmp
 share/sdlroids/bmp/score.bmp
 share/sdlroids/bmp/shield.bmp
+share/sdlroids/sounds/
 share/sdlroids/sounds/bonusgot.wav
 share/sdlroids/sounds/bshot.wav
 share/sdlroids/sounds/bwound.wav
@@ -31,6 +34,3 @@ share/sdlroids/sounds/pshot.wav
 share/sdlroids/sounds/swarmsplit.wav
 share/sdlroids/sounds/thrust.wav
 share/sdlroids/sounds/title.wav
-@dirrm share/sdlroids/sounds
-@dirrm share/sdlroids/bmp
-@dirrm share/sdlroids

@@ -1,15 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/12 14:13:51 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:08 espie Exp $
 bin/cam
 bin/feh
 bin/gen_cam_menu.sh
-man/man1/feh.1
+@man man/man1/feh.1
+share/doc/feh/
 share/doc/feh/AUTHORS
 share/doc/feh/ChangeLog
 share/doc/feh/README
 share/doc/feh/TODO
+share/feh/
+share/feh/fonts/
 share/feh/fonts/black.style
 share/feh/fonts/menu.style
 share/feh/fonts/yudit.ttf
+share/feh/images/
 share/feh/images/about.png
 share/feh/images/menubg_aluminium.png
 share/feh/images/menubg_aqua.png
@@ -21,7 +25,3 @@ share/feh/images/menubg_default.png
 share/feh/images/menubg_pastel.png
 share/feh/images/menubg_sky.png
 share/feh/images/menubg_wood.png
-@dirrm share/feh/images
-@dirrm share/feh/fonts
-@dirrm share/feh
-@dirrm share/doc/feh

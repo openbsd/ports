@@ -1,9 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/11 00:58:26 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:09 espie Exp $
 bin/lgeneral
+share/doc/lgeneral/
 share/doc/lgeneral/README
+share/lgeneral/
+share/lgeneral/campaigns/
 share/lgeneral/campaigns/test.cmp
+share/lgeneral/gfx/
+share/lgeneral/gfx/flags/
 share/lgeneral/gfx/flags/test.bmp
 share/lgeneral/gfx/logo.bmp
+share/lgeneral/gfx/maps/
+share/lgeneral/gfx/maps/test/
 share/lgeneral/gfx/maps/test/airport.bmp
 share/lgeneral/gfx/maps/test/beach.bmp
 share/lgeneral/gfx/maps/test/crosshair.bmp
@@ -21,6 +28,8 @@ share/lgeneral/gfx/maps/test/road.bmp
 share/lgeneral/gfx/maps/test/sel_frame.bmp
 share/lgeneral/gfx/maps/test/town.bmp
 share/lgeneral/gfx/maps/test/water.bmp
+share/lgeneral/gfx/themes/
+share/lgeneral/gfx/themes/standard/
 share/lgeneral/gfx/themes/standard/accept_button.bmp
 share/lgeneral/gfx/themes/standard/air_mode_button.bmp
 share/lgeneral/gfx/themes/standard/cancel_button.bmp
@@ -59,41 +68,33 @@ share/lgeneral/gfx/themes/standard/up_arrow.bmp
 share/lgeneral/gfx/themes/standard/upper_bar.bmp
 share/lgeneral/gfx/themes/standard/weather_button.bmp
 share/lgeneral/gfx/themes/standard/window_button.bmp
+share/lgeneral/gfx/units/
 share/lgeneral/gfx/units/test_allies.bmp
 share/lgeneral/gfx/units/test_axis.bmp
 share/lgeneral/gfx/units/test_blue.bmp
 share/lgeneral/gfx/units/test_red.bmp
+share/lgeneral/maps/
 share/lgeneral/maps/test.mtd
 share/lgeneral/maps/test1.map
 share/lgeneral/maps/test2.map
+share/lgeneral/music/
+share/lgeneral/nations/
 share/lgeneral/nations/test.nations
+share/lgeneral/packages/
 share/lgeneral/packages/test.inf
+share/lgeneral/scenarios/
 share/lgeneral/scenarios/test1.scn
 share/lgeneral/scenarios/test2.1.scn
 share/lgeneral/scenarios/test2.2.scn
+share/lgeneral/sounds/
+share/lgeneral/sounds/test/
 share/lgeneral/sounds/test/explosion.wav
 share/lgeneral/sounds/test/select.wav
+share/lgeneral/sounds/themes/
+share/lgeneral/sounds/themes/standard/
 share/lgeneral/sounds/themes/standard/click.wav
 share/lgeneral/sounds/themes/standard/edit.wav
+share/lgeneral/units/
 share/lgeneral/units/test.ucd
 share/lgeneral/units/test_blue.units
 share/lgeneral/units/test_red.units
-@dirrm share/lgeneral/units
-@dirrm share/lgeneral/sounds/themes/standard
-@dirrm share/lgeneral/sounds/themes
-@dirrm share/lgeneral/sounds/test
-@dirrm share/lgeneral/sounds
-@dirrm share/lgeneral/scenarios
-@dirrm share/lgeneral/packages
-@dirrm share/lgeneral/nations
-@dirrm share/lgeneral/maps
-@dirrm share/lgeneral/gfx/units
-@dirrm share/lgeneral/gfx/themes/standard
-@dirrm share/lgeneral/gfx/themes
-@dirrm share/lgeneral/gfx/maps/test
-@dirrm share/lgeneral/gfx/maps
-@dirrm share/lgeneral/gfx/flags
-@dirrm share/lgeneral/gfx
-@dirrm share/lgeneral/campaigns
-@dirrm share/lgeneral
-@dirrm share/doc/lgeneral

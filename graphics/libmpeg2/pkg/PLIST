@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/04/18 00:41:03 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:50:09 espie Exp $
+include/mpeg2dec/
 include/mpeg2dec/mpeg2.h
 include/mpeg2dec/mpeg2convert.h
 lib/libmpeg2.a
 lib/libmpeg2.la
 lib/libmpeg2convert.a
 lib/libmpeg2convert.la
+lib/pkgconfig/
 lib/pkgconfig/libmpeg2.pc
 lib/pkgconfig/libmpeg2convert.pc
 %%SHARED%%
-@dirrm lib/pkgconfig
-@dirrm include/mpeg2dec

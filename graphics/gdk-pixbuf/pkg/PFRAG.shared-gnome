@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared-gnome,v 1.1 2002/03/23 06:22:17 brad Exp $
-lib/libgnomecanvaspixbuf.so.1.0
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared-gnome,v 1.2 2004/09/15 00:50:08 espie Exp $
+@lib lib/libgnomecanvaspixbuf.so.1.0

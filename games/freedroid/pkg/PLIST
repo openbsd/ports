@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/01 10:36:38 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:09 espie Exp $
 bin/freedroid
-man/man6/freedroid.6
+@man man/man6/freedroid.6
+share/freedroid/
+share/freedroid/graphics/
 share/freedroid/graphics/001.jpg
 share/freedroid/graphics/001.png
 share/freedroid/graphics/123.jpg
@@ -33,6 +35,7 @@ share/freedroid/graphics/arrow_left.png
 share/freedroid/graphics/arrow_right.png
 share/freedroid/graphics/arrow_up.png
 share/freedroid/graphics/banner.png
+share/freedroid/graphics/classic_theme/
 share/freedroid/graphics/classic_theme/blast.png
 share/freedroid/graphics/classic_theme/bullet.png
 share/freedroid/graphics/classic_theme/config.theme
@@ -47,6 +50,7 @@ share/freedroid/graphics/console_bg2.jpg
 share/freedroid/graphics/console_fg.png
 share/freedroid/graphics/credits.jpg
 share/freedroid/graphics/font05.png
+share/freedroid/graphics/lanzz_theme/
 share/freedroid/graphics/lanzz_theme/blast.png
 share/freedroid/graphics/lanzz_theme/bullet.png
 share/freedroid/graphics/lanzz_theme/config.theme
@@ -61,11 +65,13 @@ share/freedroid/graphics/paraicon.bmp
 share/freedroid/graphics/takeover_bg.jpg
 share/freedroid/graphics/title.jpg
 share/freedroid/graphics/transfer.jpg
+share/freedroid/map/
 share/freedroid/map/Paradroid.droids
 share/freedroid/map/Paradroid.elevators
 share/freedroid/map/Paradroid.maps
 share/freedroid/map/Paradroid.mission
 share/freedroid/map/freedroid.ruleset
+share/freedroid/sound/
 share/freedroid/sound/Alert.wav
 share/freedroid/sound/AnarchyMenu1.mod
 share/freedroid/sound/Blast_Sound_0.wav
@@ -104,9 +110,3 @@ share/freedroid/sound/dreamfish-sanxion.mod
 share/freedroid/sound/dreamfish-uridium2_loader.mod
 share/freedroid/sound/kollaps-tron.mod
 share/freedroid/sound/starpaws.mod
-@dirrm share/freedroid/sound
-@dirrm share/freedroid/map
-@dirrm share/freedroid/graphics/lanzz_theme
-@dirrm share/freedroid/graphics/classic_theme
-@dirrm share/freedroid/graphics
-@dirrm share/freedroid

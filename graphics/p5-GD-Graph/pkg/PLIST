@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/31 15:02:48 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:50:10 espie Exp $
+${P5SITE}/GD/Graph/
 ${P5SITE}/GD/Graph.pm
 ${P5SITE}/GD/Graph/Data.pm
 ${P5SITE}/GD/Graph/Error.pm
@@ -14,13 +15,9 @@ ${P5SITE}/GD/Graph/mixed.pm
 ${P5SITE}/GD/Graph/pie.pm
 ${P5SITE}/GD/Graph/points.pm
 ${P5SITE}/GD/Graph/utils.pm
-@comment ${P5ARCH}/auto/GD/Graph/.packlist
-man/man3p/GD::Graph.3p
-man/man3p/GD::Graph::Data.3p
-man/man3p/GD::Graph::Error.3p
-man/man3p/GD::Graph::FAQ.3p
-man/man3p/GD::Graph::colour.3p
-man/man3p/GD::Graph::hbars.3p
-@comment @dirrm ${P5ARCH}/auto/GD/Graph
-@dirrm ${P5SITE}/GD/Graph
-@dirrm ${P5SITE}/GD
+@man man/man3p/GD::Graph.3p
+@man man/man3p/GD::Graph::Data.3p
+@man man/man3p/GD::Graph::Error.3p
+@man man/man3p/GD::Graph::FAQ.3p
+@man man/man3p/GD::Graph::colour.3p
+@man man/man3p/GD::Graph::hbars.3p

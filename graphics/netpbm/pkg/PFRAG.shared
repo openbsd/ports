@@ -1,6 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2001/10/03 03:09:31 brad Exp $
-lib/libpbm.so.1.0
-lib/libpgm.so.1.0
-lib/libpnm.so.1.0
-lib/libppm.so.1.0
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 00:50:10 espie Exp $
+@lib lib/libpbm.so.1.0
+@lib lib/libpgm.so.1.0
+@lib lib/libpnm.so.1.0
+@lib lib/libppm.so.1.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/06/24 19:27:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/09/15 00:50:11 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -25,9 +25,9 @@ PATCH_LIST=	patch-* gcc-*
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS=	::devel/nasm
-SED_PLIST+=	|sed -e '/^%%i386%%/r${PKGDIR}/PFRAG.i386' -e '//d'
+PKG_CMD+=-Di386=1
 .else
-SED_PLIST+=	|sed -e '/^%%i386%%/d'
+PKG_CMD+=-Di386=0
 .endif
 
 LIB_DEPENDS=	SDL.2::devel/sdl \

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/18 13:53:41 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:11 espie Exp $
 bin/wtf
-man/man6/wtf.6
+@man man/man6/wtf.6
 share/misc/acronyms
 share/misc/acronyms.comp

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/09/08 11:55:35 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:50:09 espie Exp $
 bin/libwmf-config
 bin/libwmf-fontmap
 bin/wmf2eps
@@ -6,6 +6,7 @@ bin/wmf2fig
 bin/wmf2gd
 bin/wmf2svg
 bin/wmf2x
+include/libwmf/
 include/libwmf/api.h
 include/libwmf/color.h
 include/libwmf/defs.h
@@ -14,6 +15,7 @@ include/libwmf/fig.h
 include/libwmf/font.h
 include/libwmf/foreign.h
 include/libwmf/fund.h
+include/libwmf/gd/
 include/libwmf/gd.h
 include/libwmf/gd/gd.h
 include/libwmf/gd/gd_clip.h
@@ -33,6 +35,8 @@ lib/libwmf.a
 lib/libwmf.la
 lib/libwmflite.a
 lib/libwmflite.la
+share/doc/libwmf/
+share/doc/libwmf/caolan/
 share/doc/libwmf/caolan/2.html
 share/doc/libwmf/caolan/Arc.html
 share/doc/libwmf/caolan/BitBlt.html
@@ -102,6 +106,7 @@ share/doc/libwmf/caolan/msmeta03.gif
 share/doc/libwmf/caolan/msmeta04.gif
 share/doc/libwmf/caolan/ora-clp.html
 share/doc/libwmf/caolan/ora-wmf.html
+share/doc/libwmf/caolan/pics/
 share/doc/libwmf/caolan/pics/weave.jpg
 share/doc/libwmf/caolan/rop.html
 share/doc/libwmf/caolan/support.html
@@ -110,6 +115,7 @@ share/doc/libwmf/caolan/template.html
 share/doc/libwmf/caolan/unknown.html
 share/doc/libwmf/dlayer.html
 share/doc/libwmf/gd.html
+share/doc/libwmf/html/
 share/doc/libwmf/html/annotated.html
 share/doc/libwmf/html/api_8c.html
 share/doc/libwmf/html/api_8h.html
@@ -263,6 +269,8 @@ share/doc/libwmf/smlogo2.gif
 share/doc/libwmf/tutapi.html
 share/doc/libwmf/tutipa.html
 share/doc/libwmf/wmfpic.png
+share/libwmf/
+share/libwmf/fonts/
 share/libwmf/fonts/fontmap
 share/libwmf/fonts/n019003l.afm
 share/libwmf/fonts/n019003l.pfb
@@ -291,11 +299,3 @@ share/libwmf/fonts/n022024l.pfb
 share/libwmf/fonts/s050000l.afm
 share/libwmf/fonts/s050000l.pfb
 %%SHARED%%
-@dirrm share/libwmf/fonts
-@dirrm share/libwmf
-@dirrm share/doc/libwmf/html
-@dirrm share/doc/libwmf/caolan/pics
-@dirrm share/doc/libwmf/caolan
-@dirrm share/doc/libwmf
-@dirrm include/libwmf/gd
-@dirrm include/libwmf

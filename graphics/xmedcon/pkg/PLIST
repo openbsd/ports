@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/01/18 22:33:54 brad Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:50:12 espie Exp $
 bin/medcon
 bin/xmedcon
 include/depend.h
@@ -30,13 +30,13 @@ include/m-xtract.h
 include/medcon.h
 lib/libmdc.a
 lib/libmdc.la
+@man man/man1/medcon.1
+@man man/man1/xmedcon.1
+@man man/man3/medcon.3
+@man man/man4/m-acr.4
+@man man/man4/m-anlz.4
+@man man/man4/m-ecat.4
+@man man/man4/m-gif.4
+@man man/man4/m-intf.4
+@man man/man4/m-inw.4
 %%SHARED%%
-man/man1/medcon.1
-man/man1/xmedcon.1
-man/man3/medcon.3
-man/man4/m-acr.4
-man/man4/m-anlz.4
-man/man4/m-ecat.4
-man/man4/m-gif.4
-man/man4/m-intf.4
-man/man4/m-inw.4

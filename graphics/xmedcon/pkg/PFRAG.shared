@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2003/01/18 22:33:54 brad Exp $
-lib/libmdc.so.0.0
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 00:50:12 espie Exp $
+@lib lib/libmdc.so.0.0

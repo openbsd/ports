@@ -1,9 +1,44 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/02/12 16:09:18 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:46:09 espie Exp $
 @mode g+s
 @group games
 bin/lbreakout2
 @mode
 @group
+share/doc/lbreakout2/
+share/doc/lbreakout2/b0.jpg
+share/doc/lbreakout2/b1.jpg
+share/doc/lbreakout2/b2.jpg
+share/doc/lbreakout2/b3.jpg
+share/doc/lbreakout2/b4.jpg
+share/doc/lbreakout2/b5.jpg
+share/doc/lbreakout2/b6.jpg
+share/doc/lbreakout2/index.html
+share/doc/lbreakout2/x0.jpg
+share/doc/lbreakout2/x1.jpg
+share/doc/lbreakout2/x10.jpg
+share/doc/lbreakout2/x11.jpg
+share/doc/lbreakout2/x12.jpg
+share/doc/lbreakout2/x13.jpg
+share/doc/lbreakout2/x14.jpg
+share/doc/lbreakout2/x15.jpg
+share/doc/lbreakout2/x16.jpg
+share/doc/lbreakout2/x17.jpg
+share/doc/lbreakout2/x18.jpg
+share/doc/lbreakout2/x19.jpg
+share/doc/lbreakout2/x2.jpg
+share/doc/lbreakout2/x20.jpg
+share/doc/lbreakout2/x21.jpg
+share/doc/lbreakout2/x22.jpg
+share/doc/lbreakout2/x23.jpg
+share/doc/lbreakout2/x3.jpg
+share/doc/lbreakout2/x4.jpg
+share/doc/lbreakout2/x5.jpg
+share/doc/lbreakout2/x6.jpg
+share/doc/lbreakout2/x7.jpg
+share/doc/lbreakout2/x8.jpg
+share/doc/lbreakout2/x9.jpg
+share/lbreakout2/
+share/lbreakout2/gfx/
 share/lbreakout2/gfx/back0.png
 share/lbreakout2/gfx/back1.png
 share/lbreakout2/gfx/back2.png
@@ -36,9 +71,11 @@ share/lbreakout2/gfx/shine.png
 share/lbreakout2/gfx/shot.png
 share/lbreakout2/gfx/weapon.png
 share/lbreakout2/lbreakout2.hscr
+share/lbreakout2/levels/
 share/lbreakout2/levels/AddOn-1
 share/lbreakout2/levels/AddOn-2
 share/lbreakout2/levels/Original
+share/lbreakout2/sounds/
 share/lbreakout2/sounds/attach.wav
 share/lbreakout2/sounds/bonus_magnet.wav
 share/lbreakout2/sounds/chaos.wav
@@ -74,9 +111,5 @@ share/lbreakout2/sounds/verygood.wav
 share/lbreakout2/sounds/wall.wav
 share/lbreakout2/sounds/weak_ball.wav
 share/lbreakout2/sounds/wontgiveup.wav
-@dirrm share/lbreakout2/sounds
-@dirrm share/lbreakout2/levels
-@dirrm share/lbreakout2/gfx
-@dirrm share/lbreakout2
 @cwd /var/games
 @extra lbreakout2.hscr

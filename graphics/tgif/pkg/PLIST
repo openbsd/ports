@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/04/09 09:47:10 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:50:11 espie Exp $
 bin/tgif
+lib/X11/tgif/
 @comment lib/X11/tgif/Copyright
 @comment lib/X11/tgif/LICENSE.QPL
 lib/X11/tgif/eq4-2x.sym
@@ -15,7 +16,8 @@ lib/X11/tgif/tgificon.eps
 lib/X11/tgif/tgificon.obj
 lib/X11/tgif/tgificon.xbm
 lib/X11/tgif/tgificon.xpm
-man/cat1/tgif.0
+@man man/cat1/tgif.0
+share/doc/tgif/
 share/doc/tgif/Copyright
 share/doc/tgif/HISTORY
 share/doc/tgif/License
@@ -27,5 +29,3 @@ share/doc/tgif/keys.obj
 share/doc/tgif/launch-demo-1.obj
 share/doc/tgif/launch-demo.obj
 share/doc/tgif/slide-demo.obj
-@dirrm share/doc/tgif
-@dirrm lib/X11/tgif

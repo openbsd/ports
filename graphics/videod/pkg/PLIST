@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/19 00:58:49 wcobb Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:11 espie Exp $
 bin/videod
-man/man8/videod.8
+@man man/man8/videod.8

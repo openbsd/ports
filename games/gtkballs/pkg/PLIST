@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/04/13 10:19:59 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:46:09 espie Exp $
 bin/gtkballs
-man/man6/gtkballs.6x
+@man man/man6/gtkballs.6x
+share/gtkballs/
 share/gtkballs/COPYING
 share/gtkballs/gtkballs-logo.xpm
 share/gtkballs/gtkballs_16x16.xpm
+share/gtkballs/themes/
+share/gtkballs/themes/Default/
 share/gtkballs/themes/Default/blue_ball.xpm
 share/gtkballs/themes/Default/blue_ball_destroy1.xpm
 share/gtkballs/themes/Default/blue_ball_destroy10.xpm
@@ -203,6 +206,7 @@ share/gtkballs/themes/Default/yellow_ball_jump6.xpm
 share/gtkballs/themes/Default/yellow_ball_jump7.xpm
 share/gtkballs/themes/Default/yellow_ball_jump8.xpm
 share/gtkballs/themes/Default/yellow_ball_jump9.xpm
+share/gtkballs/themes/klines/
 share/gtkballs/themes/klines/blue.xpm
 share/gtkballs/themes/klines/blue_destroy1.xpm
 share/gtkballs/themes/klines/blue_destroy2.xpm
@@ -316,13 +320,17 @@ share/gtkballs/themes/klines/yellow_jump6.xpm
 share/gtkballs/themes/klines/yellow_jump7.xpm
 share/gtkballs/themes/klines/yellow_jump8.xpm
 share/gtkballs/themes/klines/yellow_small.xpm
+share/locale/
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/gtkballs.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/gtkballs.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/gtkballs.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/gtkballs.mo
-@dirrm share/gtkballs/themes/klines
-@dirrm share/gtkballs/themes/Default
-@dirrm share/gtkballs/themes
-@dirrm share/gtkballs
-@cwd /var/games
-@extra gtkballs-scores
+@extra /var/games/gtkballs-scores

@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/15 17:11:44 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:46:08 espie Exp $
 bin/enigma
-man/man6/enigma.6
+@man man/man6/enigma.6
+share/applications/
 share/applications/enigma.desktop
+share/doc/enigma/
 share/doc/enigma/CHANGES
 share/doc/enigma/COPYING
 share/doc/enigma/NEWS
@@ -14,6 +16,7 @@ share/doc/enigma/enigma_4.html
 share/doc/enigma/enigma_5.html
 share/doc/enigma/enigma_abt.html
 share/doc/enigma/enigma_ovr.html
+share/doc/enigma/images/
 share/doc/enigma/images/intro-inventory.png
 share/doc/enigma/images/intro-meditation.png
 share/doc/enigma/images/intro-oxyd.png
@@ -32,12 +35,15 @@ share/doc/enigma/images/st-oxyds.png
 share/doc/enigma/images/st-shogun.png
 share/doc/enigma/images/st-swap.png
 share/doc/enigma/index.html
+share/doc/enigma/reference/
 share/doc/enigma/reference/CREATING-LEVELS
 share/doc/enigma/reference/ant_lua.txt
 share/doc/enigma/reference/enigma-ref.html
 share/doc/enigma/reference/functions.css
 share/doc/enigma/reference/functions.html
+share/enigma/
 share/enigma/enigma_conf.lua
+share/enigma/fonts/
 share/enigma/fonts/dreamorp.txt
 share/enigma/fonts/dreamorp24.bmf
 share/enigma/fonts/dreamorp24.png
@@ -53,6 +59,7 @@ share/enigma/fonts/smallfont.bmf
 share/enigma/fonts/smallfont.png
 share/enigma/fonts/timefont.bmf
 share/enigma/fonts/timefont.png
+share/enigma/gfx/
 share/enigma/gfx/ac-blackball-fall.png
 share/enigma/gfx/ac-blackball-jump.png
 share/enigma/gfx/ac-blackball-shatter.png
@@ -429,6 +436,7 @@ share/enigma/gfx/stones.png
 share/enigma/gfx/unavailable.png
 share/enigma/gfx/unknown.png
 share/enigma/init.lua
+share/enigma/levels/
 share/enigma/levels/RayWick001.lua
 share/enigma/levels/RayWick001.png
 share/enigma/levels/RayWick002.lua
@@ -437,6 +445,7 @@ share/enigma/levels/RayWick003.lua
 share/enigma/levels/RayWick003.png
 share/enigma/levels/RayWick004.lua
 share/enigma/levels/RayWick004.png
+share/enigma/levels/Sokoban/
 share/enigma/levels/Sokoban/mic_100.lua
 share/enigma/levels/Sokoban/mic_100.png
 share/enigma/levels/Sokoban/mic_101.lua
@@ -1638,6 +1647,7 @@ share/enigma/models-2d.lua
 share/enigma/models-editor.lua
 share/enigma/models-oxyd.lua
 share/enigma/models.lua
+share/enigma/sound/
 share/enigma/sound/ballcollision.wav
 share/enigma/sound/boing.wav
 share/enigma/sound/boink.wav
@@ -1669,20 +1679,10 @@ share/enigma/sound/st-switch.wav
 share/enigma/sound/st-thud.wav
 share/enigma/sound/switch.wav
 share/enigma/startup.lua
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/enigma.png
+share/pixmaps/
 share/pixmaps/enigma.png
-@dirrm share/pixmaps
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor
-@dirrm share/icons
-@dirrm share/enigma/sound
-@dirrm share/enigma/levels/Sokoban
-@dirrm share/enigma/levels
-@dirrm share/enigma/gfx
-@dirrm share/enigma/fonts
-@dirrm share/enigma
-@dirrm share/doc/enigma/reference
-@dirrm share/doc/enigma/images
-@dirrm share/doc/enigma
-@dirrm share/applications

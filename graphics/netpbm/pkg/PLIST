@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/10/14 21:37:11 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 00:50:10 espie Exp $
 bin/411toppm
 bin/anytopnm
 bin/asciitopgm
@@ -247,246 +247,246 @@ lib/libpbm.a
 lib/libpgm.a
 lib/libpnm.a
 lib/libppm.a
-%%SHARED%%
-man/man1/411toppm.1
-man/man1/anytopnm.1
-man/man1/asciitopgm.1
-man/man1/atktopbm.1
-man/man1/bioradtopgm.1
-man/man1/bmptoppm.1
-man/man1/brushtopbm.1
-man/man1/cmuwmtopbm.1
-man/man1/eyuvtoppm.1
-man/man1/fitstopnm.1
-man/man1/fstopgm.1
-man/man1/g3topbm.1
-man/man1/giftopnm.1
-man/man1/gouldtoppm.1
-man/man1/hipstopgm.1
-man/man1/icontopbm.1
-man/man1/ilbmtoppm.1
-man/man1/imgtoppm.1
-man/man1/jbigtopnm.1
-man/man1/jpegtopnm.1
-man/man1/leaftoppm.1
-man/man1/lispmtopgm.1
-man/man1/macptopbm.1
-man/man1/mdatopbm.1
-man/man1/mgrtopbm.1
-man/man1/mtvtoppm.1
-man/man1/neotoppm.1
-man/man1/netpbm.1
-man/man1/palmtopnm.1
-man/man1/pamchannel.1
-man/man1/pamcut.1
-man/man1/pamdeinterlace.1
-man/man1/pamfile.1
-man/man1/pamoil.1
-man/man1/pamstretch-gen.1
-man/man1/pamstretch.1
-man/man1/pamtopnm.1
-man/man1/pbmclean.1
-man/man1/pbmlife.1
-man/man1/pbmmake.1
-man/man1/pbmmask.1
-man/man1/pbmpage.1
-man/man1/pbmpscale.1
-man/man1/pbmreduce.1
-man/man1/pbmtext.1
-man/man1/pbmto10x.1
-man/man1/pbmto4425.1
-man/man1/pbmtoascii.1
-man/man1/pbmtoatk.1
-man/man1/pbmtobbnbg.1
-man/man1/pbmtocmuwm.1
-man/man1/pbmtoepsi.1
-man/man1/pbmtoepson.1
-man/man1/pbmtog3.1
-man/man1/pbmtogem.1
-man/man1/pbmtogo.1
-man/man1/pbmtoicon.1
-man/man1/pbmtolj.1
-man/man1/pbmtoln03.1
-man/man1/pbmtolps.1
-man/man1/pbmtomacp.1
-man/man1/pbmtomda.1
-man/man1/pbmtomgr.1
-man/man1/pbmtonokia.1
-man/man1/pbmtopgm.1
-man/man1/pbmtopi3.1
-man/man1/pbmtopk.1
-man/man1/pbmtoplot.1
-man/man1/pbmtopsg3.1
-man/man1/pbmtoptx.1
-man/man1/pbmtowbmp.1
-man/man1/pbmtox10bm.1
-man/man1/pbmtoxbm.1
-man/man1/pbmtoybm.1
-man/man1/pbmtozinc.1
-man/man1/pbmupc.1
-man/man1/pcdindex.1
-man/man1/pcxtoppm.1
-man/man1/pgmbentley.1
-man/man1/pgmcrater.1
-man/man1/pgmedge.1
-man/man1/pgmenhance.1
-man/man1/pgmhist.1
-man/man1/pgmkernel.1
-man/man1/pgmnoise.1
-man/man1/pgmnorm.1
-man/man1/pgmramp.1
-man/man1/pgmslice.1
-man/man1/pgmtexture.1
-man/man1/pgmtofs.1
-man/man1/pgmtolispm.1
-man/man1/pgmtopbm.1
-man/man1/pgmtoppm.1
-man/man1/pi1toppm.1
-man/man1/pi3topbm.1
-man/man1/picttoppm.1
-man/man1/pjtoppm.1
-man/man1/pktopbm.1
-man/man1/pngtopnm.1
-man/man1/pnmalias.1
-man/man1/pnmarith.1
-man/man1/pnmcat.1
-man/man1/pnmcolormap.1
-man/man1/pnmcomp.1
-man/man1/pnmconvol.1
-man/man1/pnmcrop.1
-man/man1/pnmcut.1
-man/man1/pnmdepth.1
-man/man1/pnmenlarge.1
-man/man1/pnmfile.1
-man/man1/pnmflip.1
-man/man1/pnmgamma.1
-man/man1/pnmhisteq.1
-man/man1/pnmhistmap.1
-man/man1/pnmindex.1
-man/man1/pnminvert.1
-man/man1/pnmmargin.1
-man/man1/pnmmontage.1
-man/man1/pnmnlfilt.1
-man/man1/pnmpad.1
-man/man1/pnmpaste.1
-man/man1/pnmpsnr.1
-man/man1/pnmquant.1
-man/man1/pnmremap.1
-man/man1/pnmrotate.1
-man/man1/pnmscale.1
-man/man1/pnmscalefixed.1
-man/man1/pnmshear.1
-man/man1/pnmsmooth.1
-man/man1/pnmsplit.1
-man/man1/pnmtile.1
-man/man1/pnmtoddif.1
-man/man1/pnmtofits.1
-man/man1/pnmtojbig.1
-man/man1/pnmtojpeg.1
-man/man1/pnmtopalm.1
-man/man1/pnmtoplainpnm.1
-man/man1/pnmtopng.1
-man/man1/pnmtops.1
-man/man1/pnmtorast.1
-man/man1/pnmtosgi.1
-man/man1/pnmtosir.1
-man/man1/pnmtotiff.1
-man/man1/pnmtotiffcmyk.1
-man/man1/pnmtoxwd.1
-man/man1/ppm3d.1
-man/man1/ppmbrighten.1
-man/man1/ppmchange.1
-man/man1/ppmcie.1
-man/man1/ppmcolormask.1
-man/man1/ppmcolors.1
-man/man1/ppmdim.1
-man/man1/ppmdist.1
-man/man1/ppmdither.1
-man/man1/ppmfade.1
-man/man1/ppmflash.1
-man/man1/ppmforge.1
-man/man1/ppmhist.1
-man/man1/ppmlabel.1
-man/man1/ppmmake.1
-man/man1/ppmmix.1
-man/man1/ppmnorm.1
-man/man1/ppmntsc.1
-man/man1/ppmpat.1
-man/man1/ppmquant.1
-man/man1/ppmquantall.1
-man/man1/ppmqvga.1
-man/man1/ppmrainbow.1
-man/man1/ppmrelief.1
-man/man1/ppmshadow.1
-man/man1/ppmshift.1
-man/man1/ppmspread.1
-man/man1/ppmtoacad.1
-man/man1/ppmtobmp.1
-man/man1/ppmtoeyuv.1
-man/man1/ppmtogif.1
-man/man1/ppmtoicr.1
-man/man1/ppmtoilbm.1
-man/man1/ppmtoleaf.1
-man/man1/ppmtolj.1
-man/man1/ppmtomap.1
-man/man1/ppmtomitsu.1
-man/man1/ppmtompeg.1
-man/man1/ppmtoneo.1
-man/man1/ppmtopcx.1
-man/man1/ppmtopgm.1
-man/man1/ppmtopi1.1
-man/man1/ppmtopict.1
-man/man1/ppmtopj.1
-man/man1/ppmtopjxl.1
-man/man1/ppmtopuzz.1
-man/man1/ppmtorgb3.1
-man/man1/ppmtosixel.1
-man/man1/ppmtotga.1
-man/man1/ppmtouil.1
-man/man1/ppmtowinicon.1
-man/man1/ppmtoxpm.1
-man/man1/ppmtoyuv.1
-man/man1/ppmtoyuvsplit.1
-man/man1/ppmtv.1
-man/man1/psidtopgm.1
-man/man1/pstopnm.1
-man/man1/qrttoppm.1
-man/man1/rasttopnm.1
-man/man1/rawtopgm.1
-man/man1/rawtoppm.1
-man/man1/rgb3toppm.1
-man/man1/sbigtopgm.1
-man/man1/sgitopnm.1
-man/man1/sirtopnm.1
-man/man1/sldtoppm.1
-man/man1/spctoppm.1
-man/man1/spottopgm.1
-man/man1/sputoppm.1
-man/man1/tgatoppm.1
-man/man1/thinkjettopbm.1
-man/man1/tifftopnm.1
-man/man1/wbmptopbm.1
-man/man1/winicontoppm.1
-man/man1/xbmtopbm.1
-man/man1/ximtoppm.1
-man/man1/xpmtoppm.1
-man/man1/xvminitoppm.1
-man/man1/xwdtopnm.1
-man/man1/ybmtopbm.1
-man/man1/yuvsplittoppm.1
-man/man1/yuvtoppm.1
-man/man1/zeisstopnm.1
-man/man3/libpbm.3
-man/man3/libpgm.3
-man/man3/libpnm.3
-man/man3/libppm.3
-man/man5/pam.5
-man/man5/pbm.5
-man/man5/pgm.5
-man/man5/pnm.5
-man/man5/ppm.5
+@man man/man1/411toppm.1
+@man man/man1/anytopnm.1
+@man man/man1/asciitopgm.1
+@man man/man1/atktopbm.1
+@man man/man1/bioradtopgm.1
+@man man/man1/bmptoppm.1
+@man man/man1/brushtopbm.1
+@man man/man1/cmuwmtopbm.1
+@man man/man1/eyuvtoppm.1
+@man man/man1/fitstopnm.1
+@man man/man1/fstopgm.1
+@man man/man1/g3topbm.1
+@man man/man1/giftopnm.1
+@man man/man1/gouldtoppm.1
+@man man/man1/hipstopgm.1
+@man man/man1/icontopbm.1
+@man man/man1/ilbmtoppm.1
+@man man/man1/imgtoppm.1
+@man man/man1/jbigtopnm.1
+@man man/man1/jpegtopnm.1
+@man man/man1/leaftoppm.1
+@man man/man1/lispmtopgm.1
+@man man/man1/macptopbm.1
+@man man/man1/mdatopbm.1
+@man man/man1/mgrtopbm.1
+@man man/man1/mtvtoppm.1
+@man man/man1/neotoppm.1
+@man man/man1/netpbm.1
+@man man/man1/palmtopnm.1
+@man man/man1/pamchannel.1
+@man man/man1/pamcut.1
+@man man/man1/pamdeinterlace.1
+@man man/man1/pamfile.1
+@man man/man1/pamoil.1
+@man man/man1/pamstretch-gen.1
+@man man/man1/pamstretch.1
+@man man/man1/pamtopnm.1
+@man man/man1/pbmclean.1
+@man man/man1/pbmlife.1
+@man man/man1/pbmmake.1
+@man man/man1/pbmmask.1
+@man man/man1/pbmpage.1
+@man man/man1/pbmpscale.1
+@man man/man1/pbmreduce.1
+@man man/man1/pbmtext.1
+@man man/man1/pbmto10x.1
+@man man/man1/pbmto4425.1
+@man man/man1/pbmtoascii.1
+@man man/man1/pbmtoatk.1
+@man man/man1/pbmtobbnbg.1
+@man man/man1/pbmtocmuwm.1
+@man man/man1/pbmtoepsi.1
+@man man/man1/pbmtoepson.1
+@man man/man1/pbmtog3.1
+@man man/man1/pbmtogem.1
+@man man/man1/pbmtogo.1
+@man man/man1/pbmtoicon.1
+@man man/man1/pbmtolj.1
+@man man/man1/pbmtoln03.1
+@man man/man1/pbmtolps.1
+@man man/man1/pbmtomacp.1
+@man man/man1/pbmtomda.1
+@man man/man1/pbmtomgr.1
+@man man/man1/pbmtonokia.1
+@man man/man1/pbmtopgm.1
+@man man/man1/pbmtopi3.1
+@man man/man1/pbmtopk.1
+@man man/man1/pbmtoplot.1
+@man man/man1/pbmtopsg3.1
+@man man/man1/pbmtoptx.1
+@man man/man1/pbmtowbmp.1
+@man man/man1/pbmtox10bm.1
+@man man/man1/pbmtoxbm.1
+@man man/man1/pbmtoybm.1
+@man man/man1/pbmtozinc.1
+@man man/man1/pbmupc.1
+@man man/man1/pcdindex.1
+@man man/man1/pcxtoppm.1
+@man man/man1/pgmbentley.1
+@man man/man1/pgmcrater.1
+@man man/man1/pgmedge.1
+@man man/man1/pgmenhance.1
+@man man/man1/pgmhist.1
+@man man/man1/pgmkernel.1
+@man man/man1/pgmnoise.1
+@man man/man1/pgmnorm.1
+@man man/man1/pgmramp.1
+@man man/man1/pgmslice.1
+@man man/man1/pgmtexture.1
+@man man/man1/pgmtofs.1
+@man man/man1/pgmtolispm.1
+@man man/man1/pgmtopbm.1
+@man man/man1/pgmtoppm.1
+@man man/man1/pi1toppm.1
+@man man/man1/pi3topbm.1
+@man man/man1/picttoppm.1
+@man man/man1/pjtoppm.1
+@man man/man1/pktopbm.1
+@man man/man1/pngtopnm.1
+@man man/man1/pnmalias.1
+@man man/man1/pnmarith.1
+@man man/man1/pnmcat.1
+@man man/man1/pnmcolormap.1
+@man man/man1/pnmcomp.1
+@man man/man1/pnmconvol.1
+@man man/man1/pnmcrop.1
+@man man/man1/pnmcut.1
+@man man/man1/pnmdepth.1
+@man man/man1/pnmenlarge.1
+@man man/man1/pnmfile.1
+@man man/man1/pnmflip.1
+@man man/man1/pnmgamma.1
+@man man/man1/pnmhisteq.1
+@man man/man1/pnmhistmap.1
+@man man/man1/pnmindex.1
+@man man/man1/pnminvert.1
+@man man/man1/pnmmargin.1
+@man man/man1/pnmmontage.1
+@man man/man1/pnmnlfilt.1
+@man man/man1/pnmpad.1
+@man man/man1/pnmpaste.1
+@man man/man1/pnmpsnr.1
+@man man/man1/pnmquant.1
+@man man/man1/pnmremap.1
+@man man/man1/pnmrotate.1
+@man man/man1/pnmscale.1
+@man man/man1/pnmscalefixed.1
+@man man/man1/pnmshear.1
+@man man/man1/pnmsmooth.1
+@man man/man1/pnmsplit.1
+@man man/man1/pnmtile.1
+@man man/man1/pnmtoddif.1
+@man man/man1/pnmtofits.1
+@man man/man1/pnmtojbig.1
+@man man/man1/pnmtojpeg.1
+@man man/man1/pnmtopalm.1
+@man man/man1/pnmtoplainpnm.1
+@man man/man1/pnmtopng.1
+@man man/man1/pnmtops.1
+@man man/man1/pnmtorast.1
+@man man/man1/pnmtosgi.1
+@man man/man1/pnmtosir.1
+@man man/man1/pnmtotiff.1
+@man man/man1/pnmtotiffcmyk.1
+@man man/man1/pnmtoxwd.1
+@man man/man1/ppm3d.1
+@man man/man1/ppmbrighten.1
+@man man/man1/ppmchange.1
+@man man/man1/ppmcie.1
+@man man/man1/ppmcolormask.1
+@man man/man1/ppmcolors.1
+@man man/man1/ppmdim.1
+@man man/man1/ppmdist.1
+@man man/man1/ppmdither.1
+@man man/man1/ppmfade.1
+@man man/man1/ppmflash.1
+@man man/man1/ppmforge.1
+@man man/man1/ppmhist.1
+@man man/man1/ppmlabel.1
+@man man/man1/ppmmake.1
+@man man/man1/ppmmix.1
+@man man/man1/ppmnorm.1
+@man man/man1/ppmntsc.1
+@man man/man1/ppmpat.1
+@man man/man1/ppmquant.1
+@man man/man1/ppmquantall.1
+@man man/man1/ppmqvga.1
+@man man/man1/ppmrainbow.1
+@man man/man1/ppmrelief.1
+@man man/man1/ppmshadow.1
+@man man/man1/ppmshift.1
+@man man/man1/ppmspread.1
+@man man/man1/ppmtoacad.1
+@man man/man1/ppmtobmp.1
+@man man/man1/ppmtoeyuv.1
+@man man/man1/ppmtogif.1
+@man man/man1/ppmtoicr.1
+@man man/man1/ppmtoilbm.1
+@man man/man1/ppmtoleaf.1
+@man man/man1/ppmtolj.1
+@man man/man1/ppmtomap.1
+@man man/man1/ppmtomitsu.1
+@man man/man1/ppmtompeg.1
+@man man/man1/ppmtoneo.1
+@man man/man1/ppmtopcx.1
+@man man/man1/ppmtopgm.1
+@man man/man1/ppmtopi1.1
+@man man/man1/ppmtopict.1
+@man man/man1/ppmtopj.1
+@man man/man1/ppmtopjxl.1
+@man man/man1/ppmtopuzz.1
+@man man/man1/ppmtorgb3.1
+@man man/man1/ppmtosixel.1
+@man man/man1/ppmtotga.1
+@man man/man1/ppmtouil.1
+@man man/man1/ppmtowinicon.1
+@man man/man1/ppmtoxpm.1
+@man man/man1/ppmtoyuv.1
+@man man/man1/ppmtoyuvsplit.1
+@man man/man1/ppmtv.1
+@man man/man1/psidtopgm.1
+@man man/man1/pstopnm.1
+@man man/man1/qrttoppm.1
+@man man/man1/rasttopnm.1
+@man man/man1/rawtopgm.1
+@man man/man1/rawtoppm.1
+@man man/man1/rgb3toppm.1
+@man man/man1/sbigtopgm.1
+@man man/man1/sgitopnm.1
+@man man/man1/sirtopnm.1
+@man man/man1/sldtoppm.1
+@man man/man1/spctoppm.1
+@man man/man1/spottopgm.1
+@man man/man1/sputoppm.1
+@man man/man1/tgatoppm.1
+@man man/man1/thinkjettopbm.1
+@man man/man1/tifftopnm.1
+@man man/man1/wbmptopbm.1
+@man man/man1/winicontoppm.1
+@man man/man1/xbmtopbm.1
+@man man/man1/ximtoppm.1
+@man man/man1/xpmtoppm.1
+@man man/man1/xvminitoppm.1
+@man man/man1/xwdtopnm.1
+@man man/man1/ybmtopbm.1
+@man man/man1/yuvsplittoppm.1
+@man man/man1/yuvtoppm.1
+@man man/man1/zeisstopnm.1
+@man man/man3/libpbm.3
+@man man/man3/libpgm.3
+@man man/man3/libpnm.3
+@man man/man3/libppm.3
+@man man/man5/pam.5
+@man man/man5/pbm.5
+@man man/man5/pgm.5
+@man man/man5/pnm.5
+@man man/man5/ppm.5
+share/netpbm/
 share/netpbm/palmcolor8.map
 share/netpbm/palmgray1.map
 share/netpbm/palmgray2.map
 share/netpbm/palmgray4.map
-@dirrm share/netpbm
+%%SHARED%%

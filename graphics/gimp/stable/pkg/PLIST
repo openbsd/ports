@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/27 00:26:17 brad Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:50:09 espie Exp $
 bin/gimp
 bin/gimp-1.2
 bin/gimp-config
@@ -6,7 +6,10 @@ bin/gimp-remote
 bin/gimp-remote-1.2
 bin/gimptool
 bin/gimptool-1.2
+include/gimp-1.2/
+include/gimp-1.2/gck/
 include/gimp-1.2/gck/gck.h
+include/gimp-1.2/libgimp/
 include/gimp-1.2/libgimp/gimp.h
 include/gimp-1.2/libgimp/gimp_pdb.h
 include/gimp-1.2/libgimp/gimpbrushes_pdb.h
@@ -83,12 +86,16 @@ include/gimp-1.2/libgimp/gimpunitmenu.h
 include/gimp-1.2/libgimp/gimputils.h
 include/gimp-1.2/libgimp/gimpvector.h
 include/gimp-1.2/libgimp/gimpwidgets.h
+lib/gimp/
+lib/gimp/1.2/
+lib/gimp/1.2/modules/
 lib/gimp/1.2/modules/libcolorsel_gtk.a
 lib/gimp/1.2/modules/libcolorsel_gtk.la
 lib/gimp/1.2/modules/libcolorsel_triangle.a
 lib/gimp/1.2/modules/libcolorsel_triangle.la
 lib/gimp/1.2/modules/libcolorsel_water.a
 lib/gimp/1.2/modules/libcolorsel_water.la
+lib/gimp/1.2/plug-ins/
 lib/gimp/1.2/plug-ins/AlienMap
 lib/gimp/1.2/plug-ins/AlienMap2
 lib/gimp/1.2/plug-ins/CEL
@@ -165,7 +172,6 @@ lib/gimp/1.2/plug-ins/gtm
 lib/gimp/1.2/plug-ins/guillotine
 lib/gimp/1.2/plug-ins/gz
 lib/gimp/1.2/plug-ins/header
-@comment lib/gimp/1.2/plug-ins/helpbrowser
 lib/gimp/1.2/plug-ins/hot
 lib/gimp/1.2/plug-ins/hrz
 lib/gimp/1.2/plug-ins/ifscompose
@@ -254,22 +260,26 @@ lib/libgimp.a
 lib/libgimp.la
 lib/libgimpui.a
 lib/libgimpui.la
-%%SHARED%%
-man/man1/gimp-1.2.1
-man/man1/gimp-remote-1.2.1
-man/man1/gimp-remote.1
-man/man1/gimp.1
-man/man1/gimptool-1.2.1
-man/man1/gimptool.1
-man/man5/gimprc-1.2.5
-man/man5/gimprc.5
+@man man/man1/gimp-1.2.1
+@man man/man1/gimp-remote-1.2.1
+@man man/man1/gimp-remote.1
+@man man/man1/gimp.1
+@man man/man1/gimptool-1.2.1
+@man man/man1/gimptool.1
+@man man/man5/gimprc-1.2.5
+@man man/man5/gimprc.5
 share/aclocal/gimp.m4
+share/examples/gimp/
+share/examples/gimp/1.2/
 share/examples/gimp/1.2/gimprc
 share/examples/gimp/1.2/gimprc_user
 share/examples/gimp/1.2/gtkrc
 share/examples/gimp/1.2/gtkrc_user
 share/examples/gimp/1.2/ps-menurc
 share/examples/gimp/1.2/unitrc
+share/gimp/
+share/gimp/1.2/
+share/gimp/1.2/brushes/
 share/gimp/1.2/brushes/10x10square.gbr
 share/gimp/1.2/brushes/10x10squareBlur.gbr
 share/gimp/1.2/brushes/11circle.gbr
@@ -318,6 +328,9 @@ share/gimp/1.2/brushes/pixel.gbr
 share/gimp/1.2/brushes/thegimp.gbr
 share/gimp/1.2/brushes/vine.gih
 share/gimp/1.2/brushes/xcf.gbr
+share/gimp/1.2/devel-docs/
+share/gimp/1.2/devel-docs/html/
+share/gimp/1.2/devel-docs/html/libgimp/
 share/gimp/1.2/devel-docs/html/libgimp/gimpchainbutton.html
 share/gimp/1.2/devel-docs/html/libgimp/gimpcolorbutton.html
 share/gimp/1.2/devel-docs/html/libgimp/gimpdefinitions.html
@@ -386,6 +399,7 @@ share/gimp/1.2/devel-docs/html/libgimp/libgimp-gimpwidgets.html
 share/gimp/1.2/devel-docs/html/libgimp/libgimp-gimpwire.html
 share/gimp/1.2/devel-docs/html/libgimp/libgimp.html
 share/gimp/1.2/devel-docs/html/libgimp/libgimpui.html
+share/gimp/1.2/fractalexplorer/
 share/gimp/1.2/fractalexplorer/Asteroid_Field
 share/gimp/1.2/fractalexplorer/Bar_Code_Label
 share/gimp/1.2/fractalexplorer/Beauty_of_Nature
@@ -419,6 +433,7 @@ share/gimp/1.2/fractalexplorer/The_Green_Place
 share/gimp/1.2/fractalexplorer/Wave
 share/gimp/1.2/fractalexplorer/Wood
 share/gimp/1.2/fractalexplorer/Zooming_Circle
+share/gimp/1.2/gfig/
 share/gimp/1.2/gfig/A_star
 share/gimp/1.2/gfig/curves
 share/gimp/1.2/gfig/polys
@@ -429,6 +444,7 @@ share/gimp/1.2/gfig/spirals_and_stars
 share/gimp/1.2/gfig/sprial
 share/gimp/1.2/gfig/star2
 share/gimp/1.2/gfig/stars
+share/gimp/1.2/gflare/
 share/gimp/1.2/gflare/Bright_Star
 share/gimp/1.2/gflare/Classic
 share/gimp/1.2/gflare/Default
@@ -438,6 +454,8 @@ share/gimp/1.2/gflare/GFlare_102
 share/gimp/1.2/gflare/Hidden_Planet
 share/gimp/1.2/gimp_logo.ppm
 share/gimp/1.2/gimp_splash.ppm
+share/gimp/1.2/gimpressionist/
+share/gimp/1.2/gimpressionist/Brushes/
 share/gimp/1.2/gimpressionist/Brushes/arrow01.pgm
 share/gimp/1.2/gimpressionist/Brushes/ball.ppm
 share/gimp/1.2/gimpressionist/Brushes/blob.ppm
@@ -498,6 +516,7 @@ share/gimp/1.2/gimpressionist/Brushes/torus.ppm
 share/gimp/1.2/gimpressionist/Brushes/wavy.pgm
 share/gimp/1.2/gimpressionist/Brushes/weave.pgm
 share/gimp/1.2/gimpressionist/Brushes/worm.pgm
+share/gimp/1.2/gimpressionist/Paper/
 share/gimp/1.2/gimpressionist/Paper/bricks.pgm
 share/gimp/1.2/gimpressionist/Paper/bricks2.pgm
 share/gimp/1.2/gimpressionist/Paper/burlap.pgm
@@ -507,6 +526,7 @@ share/gimp/1.2/gimpressionist/Paper/marble.pgm
 share/gimp/1.2/gimpressionist/Paper/marble2.pgm
 share/gimp/1.2/gimpressionist/Paper/stone.pgm
 share/gimp/1.2/gimpressionist/Paper/struc.pgm
+share/gimp/1.2/gimpressionist/Presets/
 share/gimp/1.2/gimpressionist/Presets/ApplyCanvas
 share/gimp/1.2/gimpressionist/Presets/Ballpark
 share/gimp/1.2/gimpressionist/Presets/Canvas
@@ -532,6 +552,7 @@ share/gimp/1.2/gimpressionist/Presets/Smash
 share/gimp/1.2/gimpressionist/Presets/Straws
 share/gimp/1.2/gimpressionist/Presets/Weave
 share/gimp/1.2/gimpressionist/Presets/Wormcan
+share/gimp/1.2/gradients/
 share/gimp/1.2/gradients/Abstract_1
 share/gimp/1.2/gradients/Abstract_2
 share/gimp/1.2/gradients/Abstract_3
@@ -611,7 +632,10 @@ share/gimp/1.2/gradients/Wood_1
 share/gimp/1.2/gradients/Wood_2
 share/gimp/1.2/gradients/Yellow_Contrast
 share/gimp/1.2/gradients/Yellow_Orange
+share/gimp/1.2/help/
+share/gimp/1.2/help/C/
 share/gimp/1.2/help/C/bug_submission.html
+share/gimp/1.2/help/C/channels/
 share/gimp/1.2/help/C/channels/channel_to_selection.html
 share/gimp/1.2/help/C/channels/delete_channel.html
 share/gimp/1.2/help/C/channels/dialogs
@@ -621,13 +645,16 @@ share/gimp/1.2/help/C/channels/lower_channel.html
 share/gimp/1.2/help/C/channels/raise_channel.html
 share/gimp/1.2/help/C/command_line.html
 share/gimp/1.2/help/C/contents.html
+share/gimp/1.2/help/C/dialogs/
 share/gimp/1.2/help/C/dialogs/about.html
 share/gimp/1.2/help/C/dialogs/border_selection.html
 share/gimp/1.2/help/C/dialogs/brush_editor.html
 share/gimp/1.2/help/C/dialogs/brush_selection.html
+share/gimp/1.2/help/C/dialogs/channels/
 share/gimp/1.2/help/C/dialogs/channels/channels.html
 share/gimp/1.2/help/C/dialogs/channels/edit_channel_attributes.html
 share/gimp/1.2/help/C/dialogs/channels/new_channel.html
+share/gimp/1.2/help/C/dialogs/color_selectors/
 share/gimp/1.2/help/C/dialogs/color_selectors/built_in.html
 share/gimp/1.2/help/C/dialogs/color_selectors/gtk.html
 share/gimp/1.2/help/C/dialogs/color_selectors/triangle.html
@@ -645,6 +672,7 @@ share/gimp/1.2/help/C/dialogs/feather_selection.html
 share/gimp/1.2/help/C/dialogs/file_new.html
 share/gimp/1.2/help/C/dialogs/file_open.html
 share/gimp/1.2/help/C/dialogs/file_save.html
+share/gimp/1.2/help/C/dialogs/gradient_editor/
 share/gimp/1.2/help/C/dialogs/gradient_editor/copy_gradient.html
 share/gimp/1.2/help/C/dialogs/gradient_editor/delete_gradient.html
 share/gimp/1.2/help/C/dialogs/gradient_editor/gradient_editor.html
@@ -660,6 +688,7 @@ share/gimp/1.2/help/C/dialogs/index.html
 share/gimp/1.2/help/C/dialogs/indexed_palette.html
 share/gimp/1.2/help/C/dialogs/info_window.html
 share/gimp/1.2/help/C/dialogs/input_devices.html
+share/gimp/1.2/help/C/dialogs/layers/
 share/gimp/1.2/help/C/dialogs/layers/add_layer_mask.html
 share/gimp/1.2/help/C/dialogs/layers/edit_layer_attributes.html
 share/gimp/1.2/help/C/dialogs/layers/layer_boundary_size.html
@@ -671,6 +700,7 @@ share/gimp/1.2/help/C/dialogs/layers_and_channels.html
 share/gimp/1.2/help/C/dialogs/module_browser.html
 share/gimp/1.2/help/C/dialogs/navigation_window.html
 share/gimp/1.2/help/C/dialogs/offset.html
+share/gimp/1.2/help/C/dialogs/palette_editor/
 share/gimp/1.2/help/C/dialogs/palette_editor/delete_palette.html
 share/gimp/1.2/help/C/dialogs/palette_editor/import_palette.html
 share/gimp/1.2/help/C/dialogs/palette_editor/merge_palette.html
@@ -678,11 +708,13 @@ share/gimp/1.2/help/C/dialogs/palette_editor/new_palette.html
 share/gimp/1.2/help/C/dialogs/palette_editor/palette_editor.html
 share/gimp/1.2/help/C/dialogs/palette_selection.html
 share/gimp/1.2/help/C/dialogs/paste_named.html
+share/gimp/1.2/help/C/dialogs/paths/
 share/gimp/1.2/help/C/dialogs/paths/edit_path_attributes.html
 share/gimp/1.2/help/C/dialogs/paths/export_path.html
 share/gimp/1.2/help/C/dialogs/paths/import_path.html
 share/gimp/1.2/help/C/dialogs/paths/paths.html
 share/gimp/1.2/help/C/dialogs/pattern_selection.html
+share/gimp/1.2/help/C/dialogs/preferences/
 share/gimp/1.2/help/C/dialogs/preferences/directories.html
 share/gimp/1.2/help/C/dialogs/preferences/display.html
 share/gimp/1.2/help/C/dialogs/preferences/environment.html
@@ -700,6 +732,7 @@ share/gimp/1.2/help/C/dialogs/shrink_selection.html
 share/gimp/1.2/help/C/dialogs/tip_of_the_day.html
 share/gimp/1.2/help/C/dialogs/tool_options.html
 share/gimp/1.2/help/C/dialogs/undo_history.html
+share/gimp/1.2/help/C/file/
 share/gimp/1.2/help/C/file/close.html
 share/gimp/1.2/help/C/file/dialogs
 share/gimp/1.2/help/C/file/filters
@@ -710,6 +743,7 @@ share/gimp/1.2/help/C/file/quit.html
 share/gimp/1.2/help/C/file/revert.html
 share/gimp/1.2/help/C/file/save
 share/gimp/1.2/help/C/file_formats.html
+share/gimp/1.2/help/C/filters/
 share/gimp/1.2/help/C/filters/alienmap.html
 share/gimp/1.2/help/C/filters/alienmap2.html
 share/gimp/1.2/help/C/filters/align_layers.html
@@ -894,7 +928,9 @@ share/gimp/1.2/help/C/gimp_license.html
 share/gimp/1.2/help/C/gimp_remote.html
 share/gimp/1.2/help/C/gimptool.html
 share/gimp/1.2/help/C/glossary.html
+share/gimp/1.2/help/C/image/
 share/gimp/1.2/help/C/image/dialogs
+share/gimp/1.2/help/C/image/edit/
 share/gimp/1.2/help/C/image/edit/clear.html
 share/gimp/1.2/help/C/image/edit/copy.html
 share/gimp/1.2/help/C/image/edit/cut.html
@@ -908,18 +944,24 @@ share/gimp/1.2/help/C/image/edit/stroke.html
 share/gimp/1.2/help/C/image/edit/undo.html
 share/gimp/1.2/help/C/image/file
 share/gimp/1.2/help/C/image/filters
+share/gimp/1.2/help/C/image/image/
+share/gimp/1.2/help/C/image/image/colors/
+share/gimp/1.2/help/C/image/image/colors/auto/
 share/gimp/1.2/help/C/image/image/colors/auto/equalize.html
 share/gimp/1.2/help/C/image/image/colors/desaturate.html
 share/gimp/1.2/help/C/image/image/colors/invert.html
 share/gimp/1.2/help/C/image/image/dialogs
 share/gimp/1.2/help/C/image/image/duplicate.html
+share/gimp/1.2/help/C/image/image/mode/
 share/gimp/1.2/help/C/image/image/mode/convert_to_grayscale.html
 share/gimp/1.2/help/C/image/image/mode/convert_to_rgb.html
 share/gimp/1.2/help/C/image/image/mode/dialogs
+share/gimp/1.2/help/C/image/image/transforms/
 share/gimp/1.2/help/C/image/image/transforms/dialogs
 share/gimp/1.2/help/C/image/image_window.html
 share/gimp/1.2/help/C/image/index.html
 share/gimp/1.2/help/C/image/layers
+share/gimp/1.2/help/C/image/select/
 share/gimp/1.2/help/C/image/select/all.html
 share/gimp/1.2/help/C/image/select/dialogs
 share/gimp/1.2/help/C/image/select/float.html
@@ -929,6 +971,7 @@ share/gimp/1.2/help/C/image/select/save_to_channel.html
 share/gimp/1.2/help/C/image/select/sharpen.html
 share/gimp/1.2/help/C/image/toolbox
 share/gimp/1.2/help/C/image/tools
+share/gimp/1.2/help/C/image/view/
 share/gimp/1.2/help/C/image/view/dialogs
 share/gimp/1.2/help/C/image/view/dot_for_dot.html
 share/gimp/1.2/help/C/image/view/new_view.html
@@ -939,6 +982,7 @@ share/gimp/1.2/help/C/image/view/toggle_rulers.html
 share/gimp/1.2/help/C/image/view/toggle_selection.html
 share/gimp/1.2/help/C/image/view/toggle_statusbar.html
 share/gimp/1.2/help/C/image/view/zoom.html
+share/gimp/1.2/help/C/images/
 share/gimp/1.2/help/C/images/add_point.png
 share/gimp/1.2/help/C/images/anchor_layer.png
 share/gimp/1.2/help/C/images/channel_to_selection.png
@@ -951,10 +995,12 @@ share/gimp/1.2/help/C/images/duplicate_channel.png
 share/gimp/1.2/help/C/images/duplicate_layer.png
 share/gimp/1.2/help/C/images/duplicate_path.png
 share/gimp/1.2/help/C/images/edit_point.png
+share/gimp/1.2/help/C/images/examples/
 share/gimp/1.2/help/C/images/examples/border-selection-01.png
 share/gimp/1.2/help/C/images/examples/border-selection-02.png
 share/gimp/1.2/help/C/images/eye.png
 share/gimp/1.2/help/C/images/geezoom.png
+share/gimp/1.2/help/C/images/glossary/
 share/gimp/1.2/help/C/images/glossary/modes-addition.png
 share/gimp/1.2/help/C/images/glossary/modes-color.png
 share/gimp/1.2/help/C/images/glossary/modes-darken.png
@@ -998,6 +1044,7 @@ share/gimp/1.2/help/C/images/selection_to_path.png
 share/gimp/1.2/help/C/images/stroke_path.png
 share/gimp/1.2/help/C/images/tool_options.png
 share/gimp/1.2/help/C/images/toolbox.png
+share/gimp/1.2/help/C/images/tools/
 share/gimp/1.2/help/C/images/tools/tool-opt-increment.png
 share/gimp/1.2/help/C/images/tools/tool-opt-nonincrement.png
 share/gimp/1.2/help/C/images/tools/tool_airbrush.png
@@ -1033,6 +1080,7 @@ share/gimp/1.2/help/C/images/wilber.png
 share/gimp/1.2/help/C/index.html
 share/gimp/1.2/help/C/introduction.html
 share/gimp/1.2/help/C/keyboard_shortcuts.html
+share/gimp/1.2/help/C/layers/
 share/gimp/1.2/help/C/layers/add_alpha_channel.html
 share/gimp/1.2/help/C/layers/alpha_to_selection.html
 share/gimp/1.2/help/C/layers/anchor_layer.html
@@ -1046,14 +1094,17 @@ share/gimp/1.2/help/C/layers/index.html
 share/gimp/1.2/help/C/layers/layer_to_image_size.html
 share/gimp/1.2/help/C/layers/mask_to_selection.html
 share/gimp/1.2/help/C/layers/merge_down.html
+share/gimp/1.2/help/C/layers/stack/
 share/gimp/1.2/help/C/layers/stack/stack.html
 share/gimp/1.2/help/C/layers/using_layers.html
 share/gimp/1.2/help/C/ln7.html
 share/gimp/1.2/help/C/main_interface.html
+share/gimp/1.2/help/C/open/
 share/gimp/1.2/help/C/open/dialogs
 share/gimp/1.2/help/C/open/filters
 share/gimp/1.2/help/C/open/index.html
 share/gimp/1.2/help/C/open/open_by_extension.html
+share/gimp/1.2/help/C/paths/
 share/gimp/1.2/help/C/paths/copy_path.html
 share/gimp/1.2/help/C/paths/delete_path.html
 share/gimp/1.2/help/C/paths/dialogs
@@ -1064,21 +1115,26 @@ share/gimp/1.2/help/C/paths/new_path.html
 share/gimp/1.2/help/C/paths/paste_path.html
 share/gimp/1.2/help/C/paths/path_to_selection.html
 share/gimp/1.2/help/C/paths/stroke_path.html
+share/gimp/1.2/help/C/save/
 share/gimp/1.2/help/C/save/dialogs
 share/gimp/1.2/help/C/save/filters
 share/gimp/1.2/help/C/save/index.html
 share/gimp/1.2/help/C/save/save_by_extension.html
+share/gimp/1.2/help/C/stylesheet-images/
 share/gimp/1.2/help/C/stylesheet-images/note.gif
 share/gimp/1.2/help/C/stylesheet-images/tip.gif
 share/gimp/1.2/help/C/stylesheet-images/warning.gif
+share/gimp/1.2/help/C/toolbox/
 share/gimp/1.2/help/C/toolbox/dialogs
 share/gimp/1.2/help/C/toolbox/file
 share/gimp/1.2/help/C/toolbox/filters
+share/gimp/1.2/help/C/toolbox/help/
 share/gimp/1.2/help/C/toolbox/help/context_help.html
 share/gimp/1.2/help/C/toolbox/help/dialogs
 share/gimp/1.2/help/C/toolbox/help/filters
 share/gimp/1.2/help/C/toolbox/index.html
 share/gimp/1.2/help/C/toolbox/toolbox.html
+share/gimp/1.2/help/C/tools/
 share/gimp/1.2/help/C/tools/airbrush.html
 share/gimp/1.2/help/C/tools/bezier_select.html
 share/gimp/1.2/help/C/tools/blend.html
@@ -1116,6 +1172,7 @@ share/gimp/1.2/help/C/tools/threshold.html
 share/gimp/1.2/help/C/tools/transform.html
 share/gimp/1.2/help/C/using_gimp.html
 share/gimp/1.2/help/C/why_gimp.html
+share/gimp/1.2/palettes/
 share/gimp/1.2/palettes/Bears
 share/gimp/1.2/palettes/Bgold
 share/gimp/1.2/palettes/Blues
@@ -1155,6 +1212,7 @@ share/gimp/1.2/palettes/Visibone2
 share/gimp/1.2/palettes/Volcano
 share/gimp/1.2/palettes/Warm_Colors
 share/gimp/1.2/palettes/Web
+share/gimp/1.2/patterns/
 share/gimp/1.2/patterns/3dgreen.pat
 share/gimp/1.2/patterns/Craters.pat
 share/gimp/1.2/patterns/Moonfoot.pat
@@ -1211,6 +1269,7 @@ share/gimp/1.2/patterns/wood2.pat
 share/gimp/1.2/patterns/wood3.pat
 share/gimp/1.2/patterns/wood4.pat
 share/gimp/1.2/patterns/wood5.pat
+share/gimp/1.2/scripts/
 share/gimp/1.2/scripts/3d-outline.scm
 share/gimp/1.2/scripts/3dTruchet.scm
 share/gimp/1.2/scripts/add-bevel.scm
@@ -1309,6 +1368,7 @@ share/gimp/1.2/scripts/waves-anim.scm
 share/gimp/1.2/scripts/weave.scm
 share/gimp/1.2/scripts/web-browser.scm
 share/gimp/1.2/scripts/xach-effect.scm
+share/gimp/1.2/tips/
 share/gimp/1.2/tips/gimp_conseils.fr.txt
 share/gimp/1.2/tips/gimp_tips.cs.txt
 share/gimp/1.2/tips/gimp_tips.da.txt
@@ -1349,6 +1409,8 @@ share/locale/el/LC_MESSAGES/gimp-libgimp.mo
 share/locale/el/LC_MESSAGES/gimp-script-fu.mo
 share/locale/el/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/el/LC_MESSAGES/gimp.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gimp-libgimp.mo
 share/locale/en_GB/LC_MESSAGES/gimp-script-fu.mo
 share/locale/en_GB/LC_MESSAGES/gimp-std-plugins.mo
@@ -1365,6 +1427,8 @@ share/locale/fr/LC_MESSAGES/gimp-libgimp.mo
 share/locale/fr/LC_MESSAGES/gimp-script-fu.mo
 share/locale/fr/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/fr/LC_MESSAGES/gimp.mo
+share/locale/ga/
+share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/gimp-libgimp.mo
 share/locale/ga/LC_MESSAGES/gimp-script-fu.mo
 share/locale/ga/LC_MESSAGES/gimp-std-plugins.mo
@@ -1393,6 +1457,8 @@ share/locale/ko/LC_MESSAGES/gimp-libgimp.mo
 share/locale/ko/LC_MESSAGES/gimp-script-fu.mo
 share/locale/ko/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/ko/LC_MESSAGES/gimp.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gimp-libgimp.mo
 share/locale/lt/LC_MESSAGES/gimp-script-fu.mo
 share/locale/lt/LC_MESSAGES/gimp-std-plugins.mo
@@ -1457,132 +1523,5 @@ share/locale/zh_TW/LC_MESSAGES/gimp-libgimp.mo
 share/locale/zh_TW/LC_MESSAGES/gimp-script-fu.mo
 share/locale/zh_TW/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/gimp.mo
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nn/LC_MESSAGES
-@dirrm share/locale/nn
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/lt/LC_MESSAGES
-@dirrm share/locale/lt
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hr/LC_MESSAGES
-@dirrm share/locale/hr
-@dirrm share/locale/gl/LC_MESSAGES
-@dirrm share/locale/gl
-@dirrm share/locale/ga/LC_MESSAGES
-@dirrm share/locale/ga
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/en_GB/LC_MESSAGES
-@dirrm share/locale/en_GB
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale
-@dirrm share/gimp/1.2/tips
-@dirrm share/gimp/1.2/scripts
-@dirrm share/gimp/1.2/patterns
-@dirrm share/gimp/1.2/palettes
-@dirrm share/gimp/1.2/help/C/tools
-@dirrm share/gimp/1.2/help/C/toolbox/help
-@dirrm share/gimp/1.2/help/C/toolbox
-@dirrm share/gimp/1.2/help/C/stylesheet-images
-@dirrm share/gimp/1.2/help/C/save
-@dirrm share/gimp/1.2/help/C/paths
-@dirrm share/gimp/1.2/help/C/open
-@dirrm share/gimp/1.2/help/C/layers/stack
-@dirrm share/gimp/1.2/help/C/layers
-@dirrm share/gimp/1.2/help/C/images/tools
-@dirrm share/gimp/1.2/help/C/images/glossary
-@dirrm share/gimp/1.2/help/C/images/examples
-@dirrm share/gimp/1.2/help/C/images
-@dirrm share/gimp/1.2/help/C/image/view
-@dirrm share/gimp/1.2/help/C/image/select
-@dirrm share/gimp/1.2/help/C/image/image/transforms
-@dirrm share/gimp/1.2/help/C/image/image/mode
-@dirrm share/gimp/1.2/help/C/image/image/colors/auto
-@dirrm share/gimp/1.2/help/C/image/image/colors
-@dirrm share/gimp/1.2/help/C/image/image
-@dirrm share/gimp/1.2/help/C/image/edit
-@dirrm share/gimp/1.2/help/C/image
-@dirrm share/gimp/1.2/help/C/filters
-@dirrm share/gimp/1.2/help/C/file
-@dirrm share/gimp/1.2/help/C/dialogs/preferences
-@dirrm share/gimp/1.2/help/C/dialogs/paths
-@dirrm share/gimp/1.2/help/C/dialogs/palette_editor
-@dirrm share/gimp/1.2/help/C/dialogs/layers
-@dirrm share/gimp/1.2/help/C/dialogs/gradient_editor
-@dirrm share/gimp/1.2/help/C/dialogs/color_selectors
-@dirrm share/gimp/1.2/help/C/dialogs/channels
-@dirrm share/gimp/1.2/help/C/dialogs
-@dirrm share/gimp/1.2/help/C/channels
-@dirrm share/gimp/1.2/help/C
-@dirrm share/gimp/1.2/help
-@dirrm share/gimp/1.2/gradients
-@dirrm share/gimp/1.2/gimpressionist/Presets
-@dirrm share/gimp/1.2/gimpressionist/Paper
-@dirrm share/gimp/1.2/gimpressionist/Brushes
-@dirrm share/gimp/1.2/gimpressionist
-@dirrm share/gimp/1.2/gflare
-@dirrm share/gimp/1.2/gfig
-@dirrm share/gimp/1.2/fractalexplorer
-@dirrm share/gimp/1.2/devel-docs/html/libgimp
-@dirrm share/gimp/1.2/devel-docs/html
-@dirrm share/gimp/1.2/devel-docs
-@dirrm share/gimp/1.2/brushes
-@dirrm share/gimp/1.2
-@dirrm share/gimp
-@dirrm share/examples/gimp/1.2
-@dirrm share/examples/gimp
-@dirrm share/aclocal
-@dirrm lib/gimp/1.2/plug-ins
-@dirrm lib/gimp/1.2/modules
-@dirrm lib/gimp/1.2
-@dirrm lib/gimp
-@dirrm include/gimp-1.2/libgimp
-@dirrm include/gimp-1.2/gck
-@dirrm include/gimp-1.2
+%%SHARED%%
 @extraunexec rm -rf ${CONFDIR}

@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/29 00:07:36 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:09 espie Exp $
 bin/xlincity
-man/man6/lincity.6
-man/man6/xlincity.6
+@man man/man6/lincity.6
+@man man/man6/xlincity.6
+share/lincity/
 share/lincity/colour.pal
+share/lincity/help/
 share/lincity/help/ask-dir.hlp
 share/lincity/help/blacksmith.hlp
 share/lincity/help/bulldoze.hlp
@@ -93,6 +95,7 @@ share/lincity/help/transport3.hlp
 share/lincity/help/transport4.hlp
 share/lincity/help/university.hlp
 share/lincity/help/windmill.hlp
+share/lincity/icons/
 share/lincity/icons/blacksmith-button.csi
 share/lincity/icons/blacksmith0.csi
 share/lincity/icons/blacksmith1.csi
@@ -462,6 +465,7 @@ share/lincity/icons/windmill3g.csi
 share/lincity/icons/windmill3r.csi
 share/lincity/icons/windmill3rg.csi
 share/lincity/icons/windmill3w.csi
+share/lincity/messages/
 share/lincity/messages/blacksmithup.mes
 share/lincity/messages/coalmineup.mes
 share/lincity/messages/coalpowerup.mes
@@ -505,6 +509,7 @@ share/lincity/messages/too-old.mes
 share/lincity/messages/universityup.mes
 share/lincity/messages/windmillup.mes
 share/lincity/messages/wrong-mpsize.mes
+share/lincity/opening/
 share/lincity/opening/8x8thin
 share/lincity/opening/alt-8x8
 share/lincity/opening/bad_times.scn
@@ -519,8 +524,3 @@ share/lincity/opening/text2
 share/lincity/opening/text3
 share/lincity/opening/winfont_16x16.fnt
 share/lincity/opening/winfont_8x8.fnt
-@dirrm share/lincity/opening
-@dirrm share/lincity/messages
-@dirrm share/lincity/icons
-@dirrm share/lincity/help
-@dirrm share/lincity

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/10/10 16:10:13 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:08 espie Exp $
 bin/4stattack
+share/forcedattack/
 share/forcedattack/4stattack.py
 share/forcedattack/4stattack.pyc
 share/forcedattack/animator.py
@@ -10,7 +11,12 @@ share/forcedattack/chat.py
 share/forcedattack/chat.pyc
 share/forcedattack/creditsscreen.py
 share/forcedattack/creditsscreen.pyc
+share/forcedattack/data/
+share/forcedattack/data/music/
 share/forcedattack/data/music/4stattack.ogg
+share/forcedattack/data/themes/
+share/forcedattack/data/themes/clean/
+share/forcedattack/data/themes/clean/1024x768/
 share/forcedattack/data/themes/clean/1024x768/awaitingconnection.png
 share/forcedattack/data/themes/clean/1024x768/back.png
 share/forcedattack/data/themes/clean/1024x768/background.png
@@ -75,6 +81,7 @@ share/forcedattack/gamelog.py
 share/forcedattack/gamelog.pyc
 share/forcedattack/gamescreen.py
 share/forcedattack/gamescreen.pyc
+share/forcedattack/gui/
 share/forcedattack/gui/__init__.py
 share/forcedattack/gui/__init__.pyc
 share/forcedattack/gui/button.py
@@ -85,6 +92,7 @@ share/forcedattack/gui/checkbox.py
 share/forcedattack/gui/checkbox.pyc
 share/forcedattack/gui/dialog.py
 share/forcedattack/gui/dialog.pyc
+share/forcedattack/gui/dialogs/
 share/forcedattack/gui/dialogs/dialog
 share/forcedattack/gui/dialogs/end_game.py
 share/forcedattack/gui/dialogs/end_game.pyc
@@ -128,14 +136,23 @@ share/forcedattack/gui/widget_manager.py
 share/forcedattack/gui/widget_manager.pyc
 share/forcedattack/inisettings.py
 share/forcedattack/inisettings.pyc
+share/forcedattack/kde/
+share/forcedattack/kde/icons/
+share/forcedattack/kde/icons/16x16/
 share/forcedattack/kde/icons/16x16/forcedattack2.png
+share/forcedattack/kde/icons/22x22/
 share/forcedattack/kde/icons/22x22/forcedattack2.png
+share/forcedattack/kde/icons/32x32/
 share/forcedattack/kde/icons/32x32/forcedattack2.png
+share/forcedattack/kde/icons/48x48/
 share/forcedattack/kde/icons/48x48/forcedattack2.png
+share/forcedattack/kde/icons/64x64/
 share/forcedattack/kde/icons/64x64/forcedattack2.png
+share/forcedattack/kde/menu-items/
 share/forcedattack/kde/menu-items/forcedattack2.desktop
 share/forcedattack/multiplayerscreen.py
 share/forcedattack/multiplayerscreen.pyc
+share/forcedattack/players/
 share/forcedattack/players/__init__.py
 share/forcedattack/players/__init__.pyc
 share/forcedattack/players/agressive.py
@@ -185,20 +202,3 @@ share/forcedattack/testini.py
 share/forcedattack/testini.pyc
 share/forcedattack/themeresizer.py
 share/forcedattack/themeresizer.pyc
-@dirrm share/forcedattack/players
-@dirrm share/forcedattack/kde/menu-items
-@dirrm share/forcedattack/kde/icons/64x64
-@dirrm share/forcedattack/kde/icons/48x48
-@dirrm share/forcedattack/kde/icons/32x32
-@dirrm share/forcedattack/kde/icons/22x22
-@dirrm share/forcedattack/kde/icons/16x16
-@dirrm share/forcedattack/kde/icons
-@dirrm share/forcedattack/kde
-@dirrm share/forcedattack/gui/dialogs
-@dirrm share/forcedattack/gui
-@dirrm share/forcedattack/data/themes/clean/1024x768
-@dirrm share/forcedattack/data/themes/clean
-@dirrm share/forcedattack/data/themes
-@dirrm share/forcedattack/data/music
-@dirrm share/forcedattack/data
-@dirrm share/forcedattack

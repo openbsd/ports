@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/06 15:56:22 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:10 espie Exp $
 bin/newvox
+share/doc/newvox/
 share/doc/newvox/README
-@dirrm share/doc/newvox

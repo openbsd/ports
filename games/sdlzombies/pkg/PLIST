@@ -1,6 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/07/29 01:43:43 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:46:10 espie Exp $
 bin/sdlzombies
+share/doc/sdlzombies/
 share/doc/sdlzombies/README
+share/sdlzombies/
+share/sdlzombies/data/
+share/sdlzombies/data/background/
 share/sdlzombies/data/background/back_1.png
 share/sdlzombies/data/background/back_10.png
 share/sdlzombies/data/background/back_2.png
@@ -12,12 +16,14 @@ share/sdlzombies/data/background/back_7.png
 share/sdlzombies/data/background/back_8.png
 share/sdlzombies/data/background/back_9.png
 share/sdlzombies/data/background/carre.png
+share/sdlzombies/data/environ/
 share/sdlzombies/data/environ/hole.png
 share/sdlzombies/data/environ/hole_small.png
 share/sdlzombies/data/environ/map.png
 share/sdlzombies/data/environ/map_2.png
 share/sdlzombies/data/environ/penguin_small.png
 share/sdlzombies/data/environ/zombies_small.png
+share/sdlzombies/data/menu/
 share/sdlzombies/data/menu/back.png
 share/sdlzombies/data/menu/option.png
 share/sdlzombies/data/menu/option_s.png
@@ -26,6 +32,7 @@ share/sdlzombies/data/menu/play_s.png
 share/sdlzombies/data/menu/quit.png
 share/sdlzombies/data/menu/quit_s.png
 share/sdlzombies/data/menu/title.png
+share/sdlzombies/data/menu_opt/
 share/sdlzombies/data/menu_opt/fullscreen.png
 share/sdlzombies/data/menu_opt/fullscreen_s.png
 share/sdlzombies/data/menu_opt/hig_sound.png
@@ -50,10 +57,12 @@ share/sdlzombies/data/menu_opt/quit.png
 share/sdlzombies/data/menu_opt/quit_s.png
 share/sdlzombies/data/menu_opt/window.png
 share/sdlzombies/data/menu_opt/window_s.png
+share/sdlzombies/data/penguin/
 share/sdlzombies/data/penguin/penguin.png
 share/sdlzombies/data/penguin/penguin_45.png
 share/sdlzombies/data/penguin/penguin_45_stop.png
 share/sdlzombies/data/penguin/penguin_stop.png
+share/sdlzombies/data/sounds/
 share/sdlzombies/data/sounds/arise.wav
 share/sdlzombies/data/sounds/eat.wav
 share/sdlzombies/data/sounds/evil.wav
@@ -62,6 +71,7 @@ share/sdlzombies/data/sounds/final.wav
 share/sdlzombies/data/sounds/intro.wav
 share/sdlzombies/data/sounds/menu.wav
 share/sdlzombies/data/sounds/menu_val.wav
+share/sdlzombies/data/status/
 share/sdlzombies/data/status/letters.png
 share/sdlzombies/data/status/letters_small.png
 share/sdlzombies/data/status/letters_small_2.png
@@ -69,19 +79,9 @@ share/sdlzombies/data/status/numbers-0.png
 share/sdlzombies/data/status/numbers-1.png
 share/sdlzombies/data/status/numbers_small.png
 share/sdlzombies/data/status/numbers_small_2.png
+share/sdlzombies/data/zombies/
 share/sdlzombies/data/zombies/zombies.png
 share/sdlzombies/data/zombies/zombies_45.png
 share/sdlzombies/data/zombies/zombies_45_stop.png
 share/sdlzombies/data/zombies/zombies_start.png
 share/sdlzombies/data/zombies/zombies_stop.png
-@dirrm share/sdlzombies/data/zombies
-@dirrm share/sdlzombies/data/status
-@dirrm share/sdlzombies/data/sounds
-@dirrm share/sdlzombies/data/penguin
-@dirrm share/sdlzombies/data/menu_opt
-@dirrm share/sdlzombies/data/menu
-@dirrm share/sdlzombies/data/environ
-@dirrm share/sdlzombies/data/background
-@dirrm share/sdlzombies/data
-@dirrm share/sdlzombies
-@dirrm share/doc/sdlzombies

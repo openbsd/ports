@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/08/02 11:38:29 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:08 espie Exp $
+share/bass/
 share/bass/sky.dnr
 share/bass/sky.dsk
+share/doc/bass/
 share/doc/bass/readme.txt
-@dirrm share/doc/bass
-@dirrm share/bass

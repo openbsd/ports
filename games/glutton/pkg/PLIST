@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/11 20:28:33 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:09 espie Exp $
 bin/glutton
+share/glutton/
 share/glutton/bell.wav
 share/glutton/chime.wav
 share/glutton/choir.wav
+share/glutton/data/
 share/glutton/data/0.bmp
 share/glutton/data/1.bmp
 share/glutton/data/2.bmp
@@ -197,10 +199,8 @@ share/glutton/data/start.bmp
 share/glutton/data/x.bmp
 share/glutton/data/yes.bmp
 share/glutton/glutton.it
+share/glutton/levels/
 share/glutton/levels/1.map
 share/glutton/levels/2.map
 share/glutton/levels/3.map
 share/glutton/scream.wav
-@dirrm share/glutton/levels
-@dirrm share/glutton/data
-@dirrm share/glutton

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/07/14 15:42:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:46:08 espie Exp $
 bin/angband
-@dir share/angband
-@comment @dir share/angband/apex
-@comment @dir share/angband/bone
-@comment @dir share/angband/data
-@dir share/angband/edit
+share/angband/
+@comment share/angband/apex/
+@comment share/angband/bone/
+@comment share/angband/data/
+share/angband/edit/
 share/angband/edit/artifact.txt
 share/angband/edit/cost_adj.txt
 share/angband/edit/ego_item.txt
@@ -17,10 +17,10 @@ share/angband/edit/p_race.txt
 share/angband/edit/shop_own.txt
 share/angband/edit/terrain.txt
 share/angband/edit/vault.txt
-@dir share/angband/file
+share/angband/file/
 share/angband/file/dead.txt
 share/angband/file/news.txt
-@dir share/angband/help
+share/angband/help/
 share/angband/help/attack.txt
 share/angband/help/birth.txt
 share/angband/help/command.txt
@@ -30,8 +30,8 @@ share/angband/help/help.hlp
 share/angband/help/option.txt
 share/angband/help/playing.txt
 share/angband/help/version.txt
-@dir share/angband/info
-@dir share/angband/pref
+share/angband/info/
+share/angband/pref/
 share/angband/pref/font-ami.prf
 share/angband/pref/font-dos.prf
 share/angband/pref/font-ibm.prf
@@ -63,7 +63,7 @@ share/angband/pref/user-mac.prf
 share/angband/pref/user.prf
 share/angband/pref/xtra-new.prf
 share/angband/pref/xtra-xxx.prf
-@comment @dir share/angband/save
-@comment @dir share/angband/user
-@dir share/angband/xtra
+@comment share/angband/save/
+@comment share/angband/user/
+share/angband/xtra/
 @extraunexec rm -rf /var/games/angband

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/05 21:48:52 avsm Exp $
-%%native%%
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:08 espie Exp $
+lib/ocaml/camlimages/
 lib/ocaml/camlimages/Makefile.config
 lib/ocaml/camlimages/bitmap.cmi
 lib/ocaml/camlimages/bitmap.mli
@@ -103,28 +103,36 @@ lib/ocaml/camlimages/xpm.cmi
 lib/ocaml/camlimages/xpm.mli
 lib/ocaml/camlimages/xvthumb.cmi
 lib/ocaml/camlimages/xvthumb.mli
+share/examples/camlimages/
 share/examples/camlimages/Makefile
+share/examples/camlimages/animator/
+share/examples/camlimages/converter/
 share/examples/camlimages/converter/.depend
 share/examples/camlimages/converter/Makefile
 share/examples/camlimages/converter/converter.ml
+share/examples/camlimages/crop/
 share/examples/camlimages/crop/.depend
 share/examples/camlimages/crop/Makefile
 share/examples/camlimages/crop/README
 share/examples/camlimages/crop/crop.ml
+share/examples/camlimages/edgedetect/
 share/examples/camlimages/edgedetect/.depend
 share/examples/camlimages/edgedetect/Makefile
 share/examples/camlimages/edgedetect/README
 share/examples/camlimages/edgedetect/edge.ml
+share/examples/camlimages/gifanim/
 share/examples/camlimages/gifanim/.depend
 share/examples/camlimages/gifanim/Makefile
 share/examples/camlimages/gifanim/README
 share/examples/camlimages/gifanim/gifanim.ml
 share/examples/camlimages/gifanim/guienv.ml
 share/examples/camlimages/gifanim/usleep.ml
+share/examples/camlimages/imgstat/
 share/examples/camlimages/imgstat/.depend
 share/examples/camlimages/imgstat/Makefile
 share/examples/camlimages/imgstat/README
 share/examples/camlimages/imgstat/imgstat.ml
+share/examples/camlimages/liv/
 share/examples/camlimages/liv/.depend
 share/examples/camlimages/liv/BulletHole.xpm
 share/examples/camlimages/liv/File.xpm
@@ -162,37 +170,27 @@ share/examples/camlimages/liv/seq.ml
 share/examples/camlimages/liv/sound.xpm
 share/examples/camlimages/liv/tout.ml
 share/examples/camlimages/liv/viewer.ml
+share/examples/camlimages/monochrome/
 share/examples/camlimages/monochrome/.depend
 share/examples/camlimages/monochrome/Makefile
 share/examples/camlimages/monochrome/monochrome.ml
+share/examples/camlimages/normalize/
 share/examples/camlimages/normalize/.depend
 share/examples/camlimages/normalize/Makefile
 share/examples/camlimages/normalize/normalize.ml
+share/examples/camlimages/resize/
 share/examples/camlimages/resize/.depend
 share/examples/camlimages/resize/Makefile
 share/examples/camlimages/resize/README
 share/examples/camlimages/resize/resize.ml
+share/examples/camlimages/slideanim/
+share/examples/camlimages/tiffps/
 share/examples/camlimages/tiffps/.depend
 share/examples/camlimages/tiffps/Makefile
 share/examples/camlimages/tiffps/README
 share/examples/camlimages/tiffps/tiffps.ml
+share/examples/camlimages/ttfimg/
 share/examples/camlimages/ttfimg/.depend
 share/examples/camlimages/ttfimg/Makefile
 share/examples/camlimages/ttfimg/ttfimg.ml
-@dirrm share/examples/camlimages/ttfimg
-@dirrm share/examples/camlimages/tiffps
-@exec mkdir -p %D/share/examples/camlimages/slideanim
-@dirrm share/examples/camlimages/slideanim
-@dirrm share/examples/camlimages/resize
-@dirrm share/examples/camlimages/normalize
-@dirrm share/examples/camlimages/monochrome
-@dirrm share/examples/camlimages/liv
-@dirrm share/examples/camlimages/imgstat
-@dirrm share/examples/camlimages/gifanim
-@dirrm share/examples/camlimages/edgedetect
-@dirrm share/examples/camlimages/crop
-@dirrm share/examples/camlimages/converter
-@exec mkdir -p %D/share/examples/camlimages/animator
-@dirrm share/examples/camlimages/animator
-@dirrm share/examples/camlimages
-@dirrm lib/ocaml/camlimages
+%%native%%

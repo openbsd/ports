@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/10/30 03:05:09 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:09 espie Exp $
 bin/kslide
+share/applnk/
+share/applnk/Games/
 share/applnk/Games/kslide.desktop
+share/apps/
+share/apps/kslide/
 share/apps/kslide/kslideui.rc
+share/apps/kslide/pics/
 share/apps/kslide/pics/frame0.png
 share/apps/kslide/pics/frame0m.png
 share/apps/kslide/pics/puzzle0.jpg
@@ -14,22 +19,36 @@ share/apps/kslide/pics/puzzle6.jpg
 share/apps/kslide/pics/puzzle7.jpg
 share/apps/kslide/pics/tiles0.png
 share/apps/kslide/pics/tiles0m.png
+share/apps/kslide/sounds/
 share/apps/kslide/sounds/sound0.wav
 share/apps/kslide/sounds/sound1.wav
 share/apps/kslide/sounds/sound2.wav
+share/doc/HTML/
+share/doc/HTML/de/
+share/doc/HTML/de/kslide/
 share/doc/HTML/de/kslide/index.html
 share/doc/HTML/de/kslide/kde_logo.gif
+share/doc/HTML/en/
+share/doc/HTML/en/kslide/
 share/doc/HTML/en/kslide/index.html
 share/doc/HTML/en/kslide/kde_logo.gif
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/actions/
 share/icons/hicolor/16x16/actions/solve.png
+share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kslide.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kslide.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kslide.png
+share/icons/locolor/
+share/icons/locolor/16x16/
+share/icons/locolor/16x16/apps/
 share/icons/locolor/16x16/apps/kslide.png
+share/icons/locolor/32x32/
+share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/kslide.png
-@dirrm share/doc/HTML/en/kslide
-@dirrm share/doc/HTML/de/kslide
-@dirrm share/doc/HTML/de
-@dirrm share/apps/kslide/sounds
-@dirrm share/apps/kslide/pics
-@dirrm share/apps/kslide

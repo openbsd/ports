@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/19 00:58:49 wcobb Exp $
+# $OpenBSD: Makefile,v 1.2 2004/09/15 00:50:11 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc
 
@@ -19,5 +19,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/videod ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/videod.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>

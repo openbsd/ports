@@ -1,22 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/10 10:04:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:46:10 espie Exp $
 @group games
-bin/strecover
 bin/slashem
-!%%no_x11%%
-@comment %%qt%%
+bin/strecover
 @mode 0775
 ${GAMEDIR}/
-@mode 0664
-@comment no checksum
-${GAMEDIR}/logfile
-@comment no checksum
-${GAMEDIR}/perm
-@comment no checksum
-${GAMEDIR}/record
-@mode 2555
-${GAMEDIR}/slashem
-@mode 0575
-${GAMEDIR}/save/
 @mode
 ${GAMEDIR}/Arc-fila.lev
 ${GAMEDIR}/Arc-filb.lev
@@ -146,6 +133,10 @@ ${GAMEDIR}/kobold-1.lev
 ${GAMEDIR}/kobold-2.lev
 ${GAMEDIR}/license
 ${GAMEDIR}/lich.lev
+@mode 0664
+@comment no checksum
+${GAMEDIR}/logfile
+@mode
 ${GAMEDIR}/mall-1.lev
 ${GAMEDIR}/mall-2.lev
 ${GAMEDIR}/mall.lev
@@ -165,11 +156,25 @@ ${GAMEDIR}/options
 ${GAMEDIR}/oracle.lev
 ${GAMEDIR}/oracles
 ${GAMEDIR}/orcus.lev
+@mode 0664
+@comment no checksum
+${GAMEDIR}/perm
+@mode
 ${GAMEDIR}/quest.dat
 ${GAMEDIR}/rats.lev
+@mode 0664
+@comment no checksum
+${GAMEDIR}/record
+@mode
 ${GAMEDIR}/rumors
 ${GAMEDIR}/sanctum.lev
+@mode 0575
+${GAMEDIR}/save/
+@mode
 ${GAMEDIR}/sea.lev
+@mode 2555
+${GAMEDIR}/slashem
+@mode
 ${GAMEDIR}/soko1-1.lev
 ${GAMEDIR}/soko1-2.lev
 ${GAMEDIR}/soko2-1.lev
@@ -196,3 +201,4 @@ ${GAMEDIR}/yeenoghu.lev
 @man man/man6/slashem.6
 @man man/man6/strecover.6
 @unexec rm -rf %B/save/
+!%%no_x11%%

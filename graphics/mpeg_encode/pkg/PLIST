@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/19 03:22:34 angelos Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:10 espie Exp $
 bin/mpeg_encode
-man/man1/mpeg_encode.1
+@man man/man1/mpeg_encode.1
+share/doc/mpeg_encode/
 share/doc/mpeg_encode/template.param
 share/doc/mpeg_encode/users-guide.ps
-@dirrm share/doc/mpeg_encode
