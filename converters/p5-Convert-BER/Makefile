@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2002/12/29 19:37:52 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2003/01/08 05:14:49 kevlo Exp $
 
 COMMENT=	"module to encode and decode objects"
 
-DISTNAME=	Convert-BER-1.31
+DISTNAME=	Convert-BER-1.3101
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
 
