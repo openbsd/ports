@@ -1,0 +1,12 @@
+$OpenBSD: patch-Dino_c,v 1.1 2002/02/20 22:53:01 pvalchev Exp $
+--- Dino.c.orig	Thu Jul 29 12:58:51 1999
++++ Dino.c	Wed Feb 20 15:47:53 2002
+@@ -483,7 +483,7 @@ void
+ GetDino(DinoWidget w, XEvent * event, char **args, int nArgs)
+ {
+ 	FILE       *fp;
+-	char        c;
++	int         c;
+ 	int         mode, orient, practice, moves;
+ 	dinoCallbackStruct cb;
+ 

@@ -1,0 +1,21 @@
+$OpenBSD: patch-DinoU_c,v 1.1 2002/02/20 22:53:01 pvalchev Exp $
+--- DinoU.c.orig	Thu Jul 29 12:58:51 1999
++++ DinoU.c	Wed Feb 20 15:48:10 2002
+@@ -199,7 +199,7 @@ void
+ ScanMoves(FILE * fp, DinoWidget w, int moves)
+ {
+ 	int         face, position, direction, style, control, k;
+-	char        c;
++	int         c;
+ 
+ 	for (k = 0; k < moves; k++) {
+ 		while ((c = getc(fp)) != EOF && c != SYMBOL);
+@@ -228,7 +228,7 @@ void
+ ScanStartPosition(FILE * fp, DinoWidget w)
+ {
+ 	int         face, position, num;
+-	char        c;
++	int         c;
+ 
+ 	while ((c = getc(fp)) != EOF && c != SYMBOL);
+ 	for (face = 0; face < MAXFACES; face++)
