@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/12 11:40:23 naddy Exp $
+bin/xworld
