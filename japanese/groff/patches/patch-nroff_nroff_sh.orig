@@ -1,9 +1,0 @@
-$OpenBSD: patch-nroff_nroff_sh.orig,v 1.1 2000/04/20 22:40:42 espie Exp $
---- nroff/nroff.sh.orig	Wed Apr 12 14:51:21 2000
-+++ nroff/nroff.sh	Wed Apr 12 14:51:29 2000
-@@ -58,4 +58,4 @@ done
- 
- # This shell script is intended for use with man, so warnings are
- # probably not wanted.  Also load nroff-style character definitions.
--exec groff -Wall -mtty-char $T $opts ${1+"$@"}
-+exec jgroff -Wall -mtty-char $T $opts ${1+"$@"}
