@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/09 05:19:10 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/09 14:01:42 pvalchev Exp $
 
 # XXX might not be hard to add more (macppc at least)
 ONLY_FOR_ARCHS=		i386
@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 		--disable-alsa \
 		--disable-vorbis \
 		--disable-aa \
-		--disable-select \
+		--enable-select \
 		--enable-gl \
 		--enable-gui \
 		--with-extraincdir=${LOCALBASE}/include \
