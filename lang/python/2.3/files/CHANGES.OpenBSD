@@ -10,15 +10,15 @@ of changes made to this version of Python for the OpenBSD package.
 
 3.  OpenBSD threads are used for threading support.
 
-4.  The interpreter is called "python2.1" in order to support multiple
+4.  The interpreter is called "python2.3" in order to support multiple
     versions of Python coexisting on the same system.  If no "python"
-    binary exists, a symlink to "python2.1" is created when package
+    binary exists, a symlink to "python2.3" is created when package
     is installed.
     Same process applies to IDLE binary (idle) and pydoc.
 
-5.  Regression test has been taught about OpenBSD.
+5.  Regression tests have been taught about OpenBSD.
 
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python.
 
-$Id: CHANGES.OpenBSD,v 1.1.1.1 2003/12/31 17:38:33 sturm Exp $
+$Id: CHANGES.OpenBSD,v 1.2 2004/01/03 17:32:57 sturm Exp $
