@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/09 17:36:28 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/05/17 01:21:21 espie Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
 DISTNAME=	adom-g15
@@ -26,6 +26,8 @@ ADOM_DOC=	${PREFIX}/share/doc/adom
 # cage adom into its specific group if you don't trust the binary
 ADOMOWN?=	games
 
+FAKE=		Yes
+
 # can't be changed except by patching the binary
 HISCORE_DIR=	/var/lib/adom
 
@@ -37,6 +39,6 @@ do-install:
 	@cd ${WRKSRC} && ${INSTALL_DATA} adomfaq.txt manual.doc readme.1st ${ADOM_DOC}
 	@cd ${WRKSRC} && ${INSTALL} ${INSTALL_COPY} \
 		-o ${BINOWN} -g ${ADOMOWN} -m 2555 adom ${PREFIX}/bin
-	@${INSTALL} -d -o ${SHAREOWN} -g ${ADOMOWN} -m 775 ${HISCORE_DIR}
+	@${INSTALL} -d -o ${SHAREOWN} -g ${ADOMOWN} -m 775 ${WRKINST}${HISCORE_DIR}
 
 .include <bsd.port.mk>
