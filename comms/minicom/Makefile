@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2000/06/09 16:14:40 form Exp $
+# $OpenBSD: Makefile,v 1.27 2000/06/14 16:45:01 form Exp $
 
 PKGNAME=	minicom-1.83.1
 DISTNAME=	${PKGNAME}.src
 CATEGORIES=	comms
 NEED_VERSION=	1.230
-FAKE=		Yes
 
 MAINTAINER=     form@openbsd.org
 

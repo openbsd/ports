@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/06/09 20:10:30 form Exp $
+# $OpenBSD: Makefile,v 1.14 2000/06/14 16:49:08 form Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 DISTNAME=	nedit-5.1.1
@@ -24,7 +24,6 @@ MASTER_SITES0=	ftp://ftp.nedit.org/pub/contrib/misc/
 LIB_DEPENDS=	Xm.1.::x11/lesstif
 
 USE_X11=	Yes
-FAKE=		Yes
 
 ALL_TARGET=	openbsd
 
