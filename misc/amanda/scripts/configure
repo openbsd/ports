@@ -1,0 +1,8 @@
+#!/bin/sh
+
+CFLAGS=`cat /tmp/build-ports-misc-amanda-cflags`
+rm /tmp/build-ports-misc-amanda-cflags
+echo $CFLAGS
+
+mv $WRKSRC/config/config.h-freebsd2 $WRKSRC/config/config.h
+sed "s/#define MK_CCOPTS -g/#define MK_CCOPTS $CFLAGS/" < $WRKSRC/config/options.h-vanilla > $WRKSRC/config/options.h
