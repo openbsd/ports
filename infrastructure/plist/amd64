@@ -1,0 +1,56 @@
+# $OpenBSD: amd64,v 1.1 2004/03/14 22:42:57 pvalchev Exp $
+# This is the master list of subdirs used to choose i386 packages.
+# Use with ${PORTSDIR}/infrastructure/package/check-plist
+# to create actual SUBDIRLIST to pass to ports main Makefile.
+net/rsync
+sysutils/mergemaster
+editors/vim/stable,no_x11
+editors/emacs21
+archivers/unzip
+archivers/bzip2
+print/teTeX/base
+net/nmap,no_x11
+sysutils/cdrtools
+mail/procmail
+mail/fetchmail
+misc/screen
+shells/zsh/stable,static
+shells/bash2,static
+shells/tcsh,static
+devel/autoconf/2.57
+devel/automake
+#books/autobook
+#devel/bison
+mail/mutt/stable
+audio/libao,-esd
+audio/vorbis-tools
+audio/mpg321
+net/curl
+print/ghostscript/gnu
+print/gv
+x11/openmotif
+www/mozilla-firefox
+x11/qt3,-base
+x11/kde/base3
+#x11/kde/office3
+#x11/kde/network3
+#x11/kde/edu3
+#x11/windowmaker
+#x11/windowmaker-extra
+x11/rxvt
+x11/xpostit
+x11/xdaliclock
+x11/xkeycaps
+#textproc/antiword
+textproc/xpdf
+#lang/python/2.3 XXX
+#lang/python/2.3,-tools XXX
+graphics/gqview
+print/ghostview
+sysutils/pftop
+#net/snort
+#net/ethereal
+#security/stunnel
+#net/gaim
+#devel/gmake
+#net/ntop
