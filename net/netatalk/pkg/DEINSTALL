@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.2 2000/07/19 09:31:21 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2000/08/10 17:53:34 brad Exp $
 #
 # netatalk de-installation
 
@@ -8,7 +8,7 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=/etc/netatalk
 
-if [ -d ${CONFIG_DIR} ]; then
+if [ -d $CONFIG_DIR ]; then
     echo
     echo "+---------------"
     echo "| To completely deinstall the $1 package you need to perform"

@@ -1,0 +1,11 @@
+--- bin/Makefile.orig	Wed Aug  9 08:17:06 2000
++++ bin/Makefile	Wed Aug  9 08:17:44 2000
+@@ -20,7 +20,7 @@
+ 	done
+ 
+ install:
+-	-mkdir ${BINDIR}
++	-mkdir ${DESTDIR}${BINDIR}
+ 	for i in ${ALL}; \
+ 	    do (cd $$i; ${MAKE} ${MFLAGS} CC="${CC}" \
+ 		ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" OPTOPTS="${OPTOPTS}" \

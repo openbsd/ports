@@ -1,5 +1,5 @@
---- etc/afpd/Makefile.orig	Fri Jun 26 00:07:32 1998
-+++ etc/afpd/Makefile	Fri Nov 19 18:24:09 1999
+--- etc/afpd/Makefile.orig	Thu Jun 25 10:07:32 1998
++++ etc/afpd/Makefile	Wed Aug  9 08:33:25 2000
 @@ -21,7 +21,7 @@
  	if [ x"${KRBDIR}" != x ]; then \
  	    KRBLIBS="-lkrb -ldes"; \
@@ -9,14 +9,12 @@
  	    KRBDEFS="-DKRB"; \
  	fi; \
  	if [ x"${AFSDIR}" != x ]; then \
-@@ -46,8 +46,8 @@
- 
- main.o : main.c
- 	${CC} ${CFLAGS} \
--	    -D_PATH_AFPDDEFVOL=\"${ETCDIR}/AppleVolumes.default\" \
--	    -D_PATH_AFPDSYSVOL=\"${ETCDIR}/AppleVolumes.system\" \
-+	    -D_PATH_AFPDDEFVOL=\"/etc/netatalk/AppleVolumes.default\" \
-+	    -D_PATH_AFPDSYSVOL=\"/etc/netatalk/AppleVolumes.system\" \
- 	    -DVERSION=\"`cat ../../VERSION`\" \
+@@ -52,7 +52,7 @@
  	    ${CPPFLAGS} -c main.c
  
+ install : all
+-	${INSTALL} -c afpd ${SBINDIR}
++	${INSTALL} -c afpd ${DESTDIR}${SBINDIR}
+ 
+ clean :
+ 	rm -f a.out core* *.o *.bak *[Ee]rrs tags

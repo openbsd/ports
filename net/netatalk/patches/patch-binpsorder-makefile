@@ -1,0 +1,11 @@
+--- bin/psorder/Makefile.orig	Wed Aug  9 08:24:45 2000
++++ bin/psorder/Makefile	Wed Aug  9 08:25:22 2000
+@@ -15,7 +15,7 @@
+ 	${CC} ${CFLAGS} -o psorder ${OBJ} ${LIBDIRS} ${LIBS}
+ 
+ install : all
+-	${INSTALL} -c psorder ${BINDIR}
++	${INSTALL} -c psorder ${DESTDIR}${BINDIR}
+ 
+ lint :
+ 	lint ${DEFS} ${INCPATH} ${SRC}

@@ -1,5 +1,5 @@
---- etc/papd/Makefile.orig	Wed Oct 23 07:22:20 1996
-+++ etc/papd/Makefile	Fri Nov 19 18:13:17 1999
+--- etc/papd/Makefile.orig	Tue Oct 22 17:22:20 1996
++++ etc/papd/Makefile	Wed Aug  9 08:36:59 2000
 @@ -15,7 +15,7 @@
  	if [ x"${KRBDIR}" != x ]; then \
  	    KRBLIBS="-lkrb -ldes"; \
@@ -9,12 +9,12 @@
  	    KRBDEFS="-DKRB"; \
  	fi; \
          ${MAKE} ${MFLAGS} CC="${CC}" ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" \
-@@ -51,7 +51,7 @@
- 	${CC} ${CFLAGS} ${LDFLAGS} -o papd ${OBJ} ${LIBDIRS} ${LIBS}
- 
- main.o : main.c
--	${CC} ${CFLAGS} -D_PATH_PAPDCONF=\"${ETCDIR}/papd.conf\" \
-+	${CC} ${CFLAGS} -D_PATH_PAPDCONF=\"/etc/netatalk/papd.conf\" \
- 	    -DVERSION=\"`cat ../../VERSION`\" \
+@@ -56,7 +56,7 @@
  	    ${CPPFLAGS} -c main.c
  
+ install : all
+-	${INSTALL} -c papd ${SBINDIR}
++	${INSTALL} -c papd ${DESTDIR}${SBINDIR}
+ 
+ clean :
+ 	rm -f a.out core* *.o *.bak *[Ee]rrs tags

@@ -1,34 +1,33 @@
---- sys/openbsd/Makefile.orig	Sat Oct 17 23:54:53 1998
-+++ sys/openbsd/Makefile	Thu Nov 25 11:30:46 1999
-@@ -1,6 +1,6 @@
- # OpenBSD specific defines, passed to subdirectories.
- DEFS=	-DBSD4_4
--OPTOPTS=	-O2
-+OPTOPTS=	-O2 -Wall
- CC=	gcc
- INSTALL=	install
- ADDLIBS=
-@@ -21,7 +21,8 @@
+--- sys/openbsd/Makefile.orig	Sat Oct 17 09:54:53 1998
++++ sys/openbsd/Makefile	Wed Aug  9 09:12:15 2000
+@@ -21,7 +21,9 @@
  FRC:
  
  install :
 -	-mkdir ${DESTDIR} ${SBINDIR} ${BINDIR} ${ETCDIR} ${LIBDIR}
-+	-mkdir ${DESTDIR} ${SBINDIR} ${BINDIR} ${ETCDIR} ${LIBDIR} \
-+		/usr/local/lib/netatalk
++	-mkdir ${DESTDIR}${PREFIX} ${DESTDIR}${SBINDIR} \
++	${DESTDIR}${BINDIR} ${DESTDIR}${ETCDIR} ${DESTDIR}${LIBDIR} 
++	-mkdir ${DESTDIR}${PREFIX}/share/examples/netatalk
  	for i in ${ALL}; \
  	    do (cd $$i; ${MAKE} ${MFLAGS} CC="${CC}" \
  		ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" OPTOPTS="${OPTOPTS}" \
-@@ -30,12 +31,11 @@
+@@ -30,17 +32,12 @@
  		AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" \
  		INSTALL="${INSTALL}" $@); \
  	done
 -	rm -f ${ETCDIR}/rc.atalk
++	rm -f ${DESTDIR}${PREFIX}/share/examples/netatalk/rc.atalk
  	sed -e s@:DESTDIR:@${DESTDIR}@ -e s@:SBINDIR:@${SBINDIR}@ \
  		-e s@:BINDIR:@${BINDIR}@ -e s@:RESDIR:@${RESDIR}@ \
  		-e s@:ETCDIR:@${ETCDIR}@ -e s@:LIBDIR:@${LIBDIR}@ \
  		-e s@:INCDIR:@${INCDIR}@ \
 -	    < ../../rc.atalk.bsd > ${ETCDIR}/rc.atalk
-+	    < ../../rc.atalk.bsd > /usr/local/lib/netatalk/rc.atalk
- 	@echo
- 	@echo "Install is done.  Don't forget to add lines from"
- 	@echo "services.atalk to /etc/services and to call rc.atalk"
+-	@echo
+-	@echo "Install is done.  Don't forget to add lines from"
+-	@echo "services.atalk to /etc/services and to call rc.atalk"
+-	@echo "in /etc/rc.  See README and README.OPENBSD for more"
+-	@echo "information."
++	    < ../../rc.atalk.bsd > ${DESTDIR}${PREFIX}/share/examples/netatalk/rc.atalk
+ 
+ clean :
+ 	for i in ${ALL}; \

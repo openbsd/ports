@@ -1,0 +1,20 @@
+--- man/man8/Makefile.orig	Tue Feb 20 12:16:10 1996
++++ man/man8/Makefile	Wed Aug  9 08:31:14 2000
+@@ -11,14 +11,14 @@
+ all :
+ 
+ install : all
+-	-mkdir ${MANDIR}/man8
++	-mkdir ${DESTDIR}${MANDIR}/man8
+ 	for i in ${SRC} ; do \
+-	    rm -f ${MANDIR}/man8/$$i; \
++	    rm -f ${DESTDIR}${MANDIR}/man8/$$i; \
+ 	    sed -e s@:DESTDIR:@${DESTDIR}@ -e s@:SBINDIR:@${SBINDIR}@ \
+ 		-e s@:BINDIR:@${BINDIR}@ -e s@:RESDIR:@${RESDIR}@ \
+ 		-e s@:ETCDIR:@${ETCDIR}@ -e s@:LIBDIR:@${LIBDIR}@ \
+ 		-e s@:INCDIR:@${INCDIR}@ \
+-		< $$i > ${MANDIR}/man8/$$i; \
++		< $$i > ${DESTDIR}${MANDIR}/man8/$$i; \
+ 	done
+ 
+ clean :

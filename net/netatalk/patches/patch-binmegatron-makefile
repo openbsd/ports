@@ -1,0 +1,16 @@
+--- bin/megatron/Makefile.orig	Wed Aug  9 08:20:05 2000
++++ bin/megatron/Makefile	Wed Aug  9 08:21:26 2000
+@@ -18,10 +18,10 @@
+ 	${CC} ${CFLAGS} -o ${TARGET} ${OBJ} ${LIBDIRS} ${LIBS}
+ 
+ install : all
+-	${INSTALL} -c ${TARGET} ${BINDIR}
++	${INSTALL} -c ${TARGET} ${DESTDIR}${BINDIR}
+ 	for i in ${LINKS} ; do \
+-	    rm -f ${BINDIR}/$$i; \
+-	    ln -s ${TARGET} ${BINDIR}/$$i; \
++	    rm -f ${DESTDIR}${BINDIR}/$$i; \
++	    cd ${DESTDIR}${BINDIR} && ln -sf ${TARGET} $$i; \
+ 	done
+ 
+ clean :

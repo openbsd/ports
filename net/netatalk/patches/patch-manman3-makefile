@@ -1,0 +1,20 @@
+--- man/man3/Makefile.orig	Tue Feb 20 12:16:49 1996
++++ man/man3/Makefile	Wed Aug  9 08:28:58 2000
+@@ -11,14 +11,14 @@
+ all :
+ 
+ install : all
+-	-mkdir ${MANDIR}/man3
++	-mkdir ${DESTDIR}${MANDIR}/man3
+ 	for i in ${SRC} ; do \
+-	    rm -f ${MANDIR}/man3/$$i; \
++	    rm -f ${DESTDIR}${MANDIR}/man3/$$i; \
+ 	    sed -e s@:DESTDIR:@${DESTDIR}@ -e s@:SBINDIR:@${SBINDIR}@ \
+ 		-e s@:BINDIR:@${BINDIR}@ -e s@:RESDIR:@${RESDIR}@ \
+ 		-e s@:ETCDIR:@${ETCDIR}@ -e s@:LIBDIR:@${LIBDIR}@ \
+ 		-e s@:INCDIR:@${INCDIR}@ \
+-		< $$i > ${MANDIR}/man3/$$i; \
++		< $$i > ${DESTDIR}${MANDIR}/man3/$$i; \
+ 	done
+ 
+ clean :

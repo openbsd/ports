@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/08/10 17:53:35 brad Exp $
 bin/aecho
 bin/getzones
 bin/hqx2bin
@@ -25,19 +26,8 @@ include/atalk/pap.h
 include/atalk/paths.h
 include/atalk/rtmp.h
 include/atalk/zip.h
-include/netatalk/aarp.h
-include/netatalk/at.h
-include/netatalk/at_extern.h
-include/netatalk/at_var.h
-include/netatalk/ddp.h
-include/netatalk/ddp_var.h
-include/netatalk/endian.h
-include/netatalk/phase2.h
 lib/libatalk.a
 lib/libatalk_p.a
-lib/netatalk/AppleVolumes.system
-lib/netatalk/AppleVolumes.default
-lib/netatalk/rc.atalk
 libexec/afpd
 libexec/atalkd
 libexec/etc2ps
@@ -66,28 +56,34 @@ man/man8/afpd.8
 man/man8/atalkd.8
 man/man8/papd.8
 man/man8/psf.8
-share/filters/ifmpap
-share/filters/ifmpaprev
-share/filters/ifpap
-share/filters/ifpaprev
-share/filters/ifwmpap
-share/filters/ifwmpaprev
-share/filters/ifwpap
-share/filters/ifwpaprev
-share/filters/ofmpap
-share/filters/ofpap
-share/filters/ofwmpap
-share/filters/ofwpap
-share/filters/tfmpap
-share/filters/tfmpaprev
-share/filters/tfpap
-share/filters/tfpaprev
-share/filters/tfwmpap
-share/filters/tfwmpaprev
-share/filters/tfwpap
-share/filters/tfwpaprev
-share/pagecount.ps
+share/doc/netatalk/README
+share/doc/netatalk/README.OPENBSD
+share/examples/netatalk/AppleVolumes.system
+share/examples/netatalk/AppleVolumes.default
+share/examples/netatalk/rc.atalk
+share/netatalk/pagecount.ps
+share/netatalk/filters/ofpap
+share/netatalk/filters/ifpap
+share/netatalk/filters/tfpap
+share/netatalk/filters/ifpaprev
+share/netatalk/filters/tfpaprev
+share/netatalk/filters/ofwpap
+share/netatalk/filters/ifwpap
+share/netatalk/filters/tfwpap
+share/netatalk/filters/ifwpaprev
+share/netatalk/filters/tfwpaprev
+share/netatalk/filters/ofmpap
+share/netatalk/filters/ifmpap
+share/netatalk/filters/tfmpap
+share/netatalk/filters/ifmpaprev
+share/netatalk/filters/tfmpaprev
+share/netatalk/filters/ofwmpap
+share/netatalk/filters/ifwmpap
+share/netatalk/filters/tfwmpap
+share/netatalk/filters/ifwmpaprev
+share/netatalk/filters/tfwmpaprev
 @dirrm include/atalk
-@dirrm include/netatalk
-@dirrm lib/netatalk
-@dirrm share/filters
+@dirrm share/doc/netatalk
+@dirrm share/examples/netatalk
+@dirrm share/netatalk/filters
+@dirrm share/netatalk
