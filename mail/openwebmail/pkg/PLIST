@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/03/04 06:34:14 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/03/30 08:53:49 kevlo Exp $
 cgi-bin/openwebmail/auth/README
 cgi-bin/openwebmail/auth/auth_ldap.pl
 cgi-bin/openwebmail/auth/auth_mysql.pl
@@ -7037,7 +7037,6 @@ htdocs/openwebmail/sounds/silymail.wav
 @dirrm conf/openwebmail/sessions
 @dirrm conf/openwebmail/lang
 @dirrm conf/openwebmail/holidays
-@dirrm conf/openwebmail
 @dirrm cgi-bin/openwebmail/uty
 @dirrm cgi-bin/openwebmail/shares
 @dirrm cgi-bin/openwebmail/quota
