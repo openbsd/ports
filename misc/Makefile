@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1998/04/29 05:39:39 angelos Exp $
+# $OpenBSD: Makefile,v 1.7 1998/05/20 07:03:57 angelos Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -49,11 +49,11 @@
 #    SUBDIR += xcalendar
 #    SUBDIR += xgas
 #    SUBDIR += xinvest
-#    SUBDIR += xless
+     SUBDIR += xless
 #    SUBDIR += xmaddressbook
 #    SUBDIR += xopps
 #    SUBDIR += xpns
-#    SUBDIR += xtar
+     SUBDIR += xtar
 #    SUBDIR += xtimer
 #    SUBDIR += zorro
 
