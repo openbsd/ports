@@ -1,18 +1,19 @@
 +----------------------
 | 
 | XEmacs is pretty useless as-is.  It is just an engine.
-| You need to install (XE)packages to provide your users full functionality.
+| You need to install modules to provide your users full functionnality.
 | There is two methods to achieve this :
-| 1 - install the xemacs21-sumo (O)package.  It contains all the 
-|     (XE)packages currently supported by the XEmacs team.
+| 1 - install the xemacs21-sumo package.  It contains all the 
+|     modules currently supported by the XEmacs team.
 |     It's fast, easy and your users won't ever bother you again about this.
-|     On the other hand the (O)package is quite huge.
-| 2 - you have to install by hand every XEmacs' (XE)packages as described
+|     On the other hand the package is quite huge.
+| 2 - you have to install by hand every XEmacs' modules as described
 |     in the XEmacs documentation. (Search for "packages" in the info tree.)
-|     There are a lot of interdependencies between XEmacs' (XE)packages
+|     There are a lot of interdependencies between XEmacs' modules
 |     and you may end up with everything installed just as method 1 would
 |     have (without the hassle).
 |
-| Note: XEmacs (XE)packages are orthogonal to OpenBSD (O)packages.
-|       (Yes, it's confusing.  XE are XEmacs' and (O) are OpenBSD ones)
+| Note: XEmacs modules are named "packages" by the XEmacs team, the term
+|	"module" is used here just to limit possible confusion with
+|	OpenBSD packages.
 +----------------------

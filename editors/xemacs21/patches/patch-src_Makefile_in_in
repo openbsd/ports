@@ -1,12 +1,23 @@
-$OpenBSD: patch-src_Makefile_in_in,v 1.1 2001/03/01 21:20:17 naddy Exp $
---- src/Makefile.in.in.orig	Sun Nov 19 23:08:18 2000
-+++ src/Makefile.in.in	Mon Feb  5 14:58:19 2001
-@@ -304,7 +304,7 @@ mo_file = ${mo_dir}emacs.mo
- #endif
+$OpenBSD: patch-src_Makefile_in_in,v 1.2 2003/04/24 18:15:39 lebel Exp $
+--- src/Makefile.in.in.orig	Wed Jan 15 13:18:00 2003
++++ src/Makefile.in.in	Mon Feb 24 10:39:21 2003
+@@ -28,8 +28,10 @@ PROGNAME=@PROGNAME@
+ #define NOT_C_CODE
+ #include "config.h"
  
- LOADPATH =  EMACSBOOTSTRAPLOADPATH="${lispdir}:${blddir}"
--DUMPENV = $(LOADPATH)
-+DUMPENV = $(LOADPATH) EMACSPACKAGEPATH="${lispdir}:${blddir}"
- 
- release: temacs ${libsrc}DOC $(mo_file) ${other_files}
- #ifdef CANNOT_DUMP
++version=@version@
++
+ #ifdef PDUMP
+-DUMP_TARGET = ${PROGNAME}.dmp
++DUMP_TARGET = ${PROGNAME}-${version}.dmp
+ EXE_TARGET  = ${PROGNAME}
+ DUMP_ID     = dump-id.o
+ #else
+@@ -64,7 +66,6 @@ etcdir = ../etc/
+ prefix=@prefix@
+ srcdir=@srcdir@
+ blddir=@blddir@
+-version=@version@
+ CC=@XEMACS_CC@
+ CPP=@CPP@
+ CFLAGS=@CFLAGS@

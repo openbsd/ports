@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2003/03/01 03:19:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2003/04/24 18:15:39 lebel Exp $
 
 COMMENT=		"heavily customizable and extensible editor"
 
-VERSION=		21.1.14
+VERSION=		21.4.12
 DISTNAME=		xemacs-${VERSION}
 CATEGORIES=     	editors
 
@@ -17,14 +17,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 # where the source files and patches can be fetched
-MASTER_SITES= 	ftp://ftp.xemacs.org/pub/xemacs/xemacs-21.1/ \
-		ftp://ftp.oleane.net/pub/xemacs/xemacs-21.1/ \
-		ftp://ftp.pasteur.fr/pub/computing/xemacs/xemacs-21.1/ \
-		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/xemacs-21.1/ \
-		ftp://ftp.usyd.edu.au/pub/Xemacs/xemacs-21.1/ \
-		ftp://ftp.lab.kdd.co.jp/xemacs/xemacs-21.1/ \
-		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/xemacs-21.1/ \
-      		ftp://ftp.funet.fi/pub/mirrors/ftp.xemacs.org/pub/tux/xemacs/xemacs-21.1/
+MASTER_SITES= 	ftp://ftp.xemacs.org/pub/xemacs/xemacs-21.4/ \
+		ftp://ftp.oleane.net/pub/xemacs/xemacs-21.4/ \
+		ftp://ftp.pasteur.fr/pub/computing/xemacs/xemacs-21.4/ \
+		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/xemacs-21.4/ \
+		ftp://ftp.usyd.edu.au/pub/Xemacs/xemacs-21.4/ \
+		ftp://ftp.lab.kdd.co.jp/xemacs/xemacs-21.4/ \
+		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/xemacs-21.4/ \
+      		ftp://ftp.funet.fi/pub/mirrors/ftp.xemacs.org/pub/tux/xemacs/xemacs-21.4/
 
 # Dependencies are very flavors-specific, you have
 # to select a flavor set to know them
@@ -47,34 +47,35 @@ MODULES=	gettext
 # Therefore, this is commented out for now:
 # SEPARATE_BUILD=		simple
 
-USE_GMAKE=		Yes
-
-.include <bsd.own.mk>
+#USE_GMAKE=		Yes
 
 # 'configure.in' modified to generate a 'configure'
 # that knows about curses really being ncurses
 
-CONFIGURE_STYLE=	autoconf old dest
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng"
-.if (${ELF_TOOLCHAIN} == "yes")
-CONFIGURE_ENV+=		LDFLAGS="-Z"
-.endif
-CONFIGURE_ARGS+=	--with-gnu-make \
-			--gung-ho \
-			--infodir='$${DESTDIR}${PREFIX}/info/${DISTNAME}' \
+CONFIGURE_STYLE=	gnu old dest
+CONFIGURE_ARGS+=	--infodir='$${DESTDIR}${PREFIX}/info/${DISTNAME}' \
 			--infopath='${LOCALBASE}/info/${DISTNAME}:${LOCALBASE}/info:usr/share/info' \
 			--site-prefixes='${LOCALBASE}:/usr' \
 			--without-ldap \
+			--without-postgresql \
 			--without-cde \
 			--without-offix \
 			--without-dragndrop \
 			--without-gpm \
+			--with-msw=no \
 			--without-tooltalk \
 			--with-sound=no \
-			--without-wnn6
+			--without-wnn6 \
+			--without-gtk \
+			--without-gnome \
+			--with-database=berkdb \
+			--with-file-coding=yes \
+			--with-system-malloc \
+			--pdump
 			
 # there is not (yet) bsd sound support in XEmacs
-# XEmacs does not work with OpenLDAP 2.0.7 (linking problem)
+# XEmacs does not work with OpenLDAP (linking problem, 
+# will try to fix if somebody asks)
 
 FAKE_FLAGS=	prefix='$${WRKINST}$${DESTDIR}${PREFIX}' \
 		infodir='$${WRKINST}$${DESTDIR}${PREFIX}/info/${DISTNAME}'
@@ -92,10 +93,10 @@ SUBST_VARS=	GCCARCH
 #### Flavors
 
 # generic flavors
-FLAVORS=	mule clashdetect gdbm canna wnn
+FLAVORS=	mule canna wnn
 
 # X11 Related
-FLAVORS+=	no_x11 tiff no_png jpeg motif compface
+FLAVORS+=	no_x11 compface
 
 FLAVOR?=
 
@@ -107,11 +108,7 @@ FLAVOR?=
 
 CONFIGURE_ARGS+=--without-x11
 
-. if ${FLAVOR:L:Mno_png} || \
-    ${FLAVOR:L:Mjpeg} || \
-    ${FLAVOR:L:Mmotif} || \
-    ${FLAVOR:L:Mtiff} || \
-    ${FLAVOR:L:Mcompface}
+. if ${FLAVOR:L:Mcompface}
 ERRORS+= "Fatal: You cannot use X11-related flavors with a non-X11 flavor"
 . endif
 
@@ -122,42 +119,25 @@ USE_X11=	Yes
 
 CONFIGURE_ARGS+=	--with-menubars=lucid
 
-. if ${FLAVOR:L:Mmotif}
-USE_MOTIF=	any
-CONFIGURE_ARGS+=--with-scrollbars=motif \
-		--with-dialogs=motif
-. else
 CONFIGURE_ARGS+=--with-scrollbars=lucid \
-		--with-dialogs=athena3d
-. endif
+		--with-dialogs=athena \
+		--with-widgets=athena
 
-. if ${FLAVOR:L:Mjpeg}
 LIB_DEPENDS+=	jpeg.62::graphics/jpeg
 CONFIGURE_ARGS+=--with-jpeg
-. else
-CONFIGURE_ARGS+=--without-jpeg
-. endif
-
-. if !${FLAVOR:L:Mno_png}
 LIB_DEPENDS+=	png.2.::graphics/png
-CONFIGURE_ARGS+=--with-png
-. else
-CONFIGURE_ARGS+=--without-png
-. endif
+CONFIGURE_ARGS+=--with-png \
+		--site-includes="${LOCALBASE}/include/libpng"
 
-. if ${FLAVOR:L:Mtiff}
 LIB_DEPENDS+=	tiff.35::graphics/tiff
 CONFIGURE_ARGS+=--with-tiff
-. else
-CONFIGURE_ARGS+=--without-tiff
-. endif
 
 . if ${FLAVOR:L:Mcompface}
 
 # compface statically linked -> license issues
 PERMIT_PACKAGE_CDROM=   "No Fee"
 PERMIT_DISTFILES_CDROM=	"No Fee"
-BUILD_DEPENDS+=  ${LOCALBASE}/lib/libcompface.a::graphics/compface
+BUILD_DEPENDS+=  ::graphics/compface
 CONFIGURE_ARGS+=--with-xface
 . else
 CONFIGURE_ARGS+=--with-xface=no
@@ -169,17 +149,6 @@ CONFIGURE_ARGS+=	--with-xim=xlib
 . endif
 
 ### end of X11 dependant flavors
-.endif
-
-#
-# GENERAL FLAVORS
-#
-
-.if ${FLAVOR:L:Mgdbm}
-LIB_DEPENDS+=	gdbm.2::databases/gdbm
-CONFIGURE_ARGS+=--with-database=berkdb,gnudbm
-.else
-CONFIGURE_ARGS+=--with-database=berkdb
 .endif
 
 #
@@ -198,7 +167,7 @@ CONFIGURE_ARGS+=--with-canna=no
 . endif
 
 . if ${FLAVOR:L:Mwnn}
-BUILD_DEPENDS+= ${LOCALBASE}/lib/libwnn.a::japanese/Wnn
+BUILD_DEPENDS+= ::japanese/Wnn
 CONFIGURE_ARGS+=--with-wnn
 . else
 CONFIGURE_ARGS+=--with-wnn=no
@@ -215,22 +184,6 @@ CONFIGURE_ARGS+=--with-mule=no \
 		--with-wnn=no
 .endif
 
-# Clash-detection flavor needs LOCKDIR to be set to the path
-# of the directory where clash detection lockfiles will be put.
-# Some people dislikes this feature because anybody able to read
-# this directory can see what other people are working on.
-# W/o this feature, clash-detection still occur using lockfiles present 
-# in the same directory as the file being edited (.#files#) but, in
-# this case, clash detection won't work well with symlinked files.
-
-.if ${FLAVOR:L:Mclashdetect} 
-. if defined(LOCKDIR)
-CONFIGURE_ARGS+=--with-clash-detection --lockdir='$${LOCKDIR}'
-. else
-ERRORS+= "Fatal: You need to set LOCKDIR to use clashdetect"
-. endif
-.endif
-
 #
 # license-related
 #
@@ -244,12 +197,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 .endif
 
 #######
-.if (${MACHINE_ARCH} != "alpha")
-STRIP_PROGS+=   ${DISTNAME}
-.endif
 STRIP_EXECS=    cvtmail digest-doc fakemail gnuserv hexl make-docfile \
-		make-path mmencode movemail profile sorted-doc wakeup yow
-STRIP_PROGS=	gnuclient xemacs-b2m xemacs-ctags xemacs-etags ootags
+		mmencode movemail profile sorted-doc wakeup yow
+STRIP_PROGS=	${DISTNAME} gnuclient xemacs-b2m xemacs-ctags \
+		xemacs-etags ootags
 
 post-install:
 # Stripping

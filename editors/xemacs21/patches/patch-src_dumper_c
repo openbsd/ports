@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_dumper_c,v 1.1 2003/04/24 18:15:39 lebel Exp $
+--- src/dumper.c.orig	Fri Jan  3 10:59:44 2003
++++ src/dumper.c	Mon Feb 24 10:52:09 2003
+@@ -1050,7 +1050,7 @@ pdump (void)
+   pdump_buf = xmalloc (max_size);
+   /* Avoid use of the `open' macro.  We want the real function. */
+ #undef open
+-  pdump_fd = open (EMACS_PROGNAME ".dmp",
++  pdump_fd = open (EMACS_PROGNAME "-" EMACS_VERSION ".dmp",
+ 		   O_WRONLY | O_CREAT | O_TRUNC | OPEN_BINARY, 0666);
+   pdump_out = fdopen (pdump_fd, "w");
+ 
+@@ -1330,23 +1330,7 @@ pdump_file_try (char *exe_path)
+ 
+   do
+     {
+-      sprintf (w, "-%s-%08x.dmp", EMACS_VERSION, dump_id);
+-      if (pdump_file_get (exe_path))
+-	{
+-	  if (pdump_load_check ())
+-	    return 1;
+-	  pdump_free ();
+-	}
+-
+-      sprintf (w, "-%08x.dmp", dump_id);
+-      if (pdump_file_get (exe_path))
+-	{
+-	  if (pdump_load_check ())
+-	    return 1;
+-	  pdump_free ();
+-	}
+-
+-      sprintf (w, ".dmp");
++      sprintf (w, "-%s.dmp", EMACS_VERSION);
+       if (pdump_file_get (exe_path))
+ 	{
+ 	  if (pdump_load_check ())

@@ -1,6 +1,6 @@
-$OpenBSD: patch-lisp_find-paths_el,v 1.1 2001/03/01 21:20:16 naddy Exp $
---- lisp/find-paths.el.orig	Fri Nov 17 04:21:24 2000
-+++ lisp/find-paths.el	Tue Feb  6 17:03:08 2001
+$OpenBSD: patch-lisp_find-paths_el,v 1.2 2003/04/24 18:15:39 lebel Exp $
+--- lisp/find-paths.el.orig	Wed Jul 25 09:44:25 2001
++++ lisp/find-paths.el	Mon Mar 25 22:29:54 2002
 @@ -105,6 +105,12 @@ from the search."
     (paths-file-readable-directory-p (paths-construct-path (list directory
  								"lib"
@@ -12,5 +12,5 @@ $OpenBSD: patch-lisp_find-paths_el,v 1.1 2001/03/01 21:20:16 naddy Exp $
 +			(concat
 +				emacs-program-name "-" emacs-program-version))))
     ;; in-place or windows-nt
-    (and 
+    (and
      (paths-file-readable-directory-p (paths-construct-path (list directory "lisp")))

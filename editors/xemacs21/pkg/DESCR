@@ -10,27 +10,17 @@ The XEmacs web page can be browsed, using any WWW browser at
 
 NOTE:
 	This package contains the XEmacs engine.
-	Every major functionality of XEmacs is a separate module.
+	Every major functionnality of XEmacs is a separate module.
 	A complete set of theses modules is bundled in the
 	"xemacs21-sumo" package.
 
 Flavors:
 	mule 		- MUlti-Lingual Emacs
-	wnn 		- input method (needs mule) [4]
-	canna 		- another input method (needs mule) [4]
-	compface	- support for XFaces (needs X11)
-	jpeg		- support for JPEGs (needs X11)
-	no_png		- disable support for PNGs [1] (needs X11)
-	tiff		- support for TIFFs (needs X11)
-	motif		- make use of Motif [2] (needs X11)
+	wnn 		- input method (needs mule) [1]
+	canna 		- another input method (needs mule) [1]
+	compface	- support for XFaces (needs X11),
+			  useful only for Gnus users.
 	no_x11		- disable X11 support
-	clashdetect	- prevents multiple editing of the same file [3]
-	gdbm		- support for GNU dbm
 
-[1] NOT RECOMMENDED - XEmacs makes use of PNG files quite a lot.
-[2] Works with LessTif and OpenMotif.
-[3] Even if you don't use this flavor, XEmacs' uses a lesser efficient way
-    to prevent this.  The method this flavor implements involves a world-
-    writeable directory.
-[4] XEmacs coredumps if the {canna,wnn} server is killed before it closes
+[1] XEmacs coredumps if the {canna,wnn} server is killed before it closes
     connection.
