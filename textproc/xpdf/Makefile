@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/08/31 09:31:45 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2001/03/03 19:19:12 danh Exp $
 
 DISTNAME=	xpdf-0.91
 CATEGORIES=	textproc x11
@@ -11,7 +11,7 @@ LIB_DEPENDS=	t1x.1::devel/t1lib
 
 HOMEPAGE=	http://www.foolabs.com/xpdf/
 
-MAINTAINER=	eep@inconnect.com
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
