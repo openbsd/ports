@@ -16,7 +16,7 @@
   SHELL = /bin/sh
 ! HZ = 128
   CFLAGS = -DTIME
-! OPTON = -s -static -O -m486 -finline-functions -funroll-loops -fomit-frame-pointer
+! OPTON = -s -static -O6 -finline-functions -funroll-loops -fomit-frame-pointer
 !                           #optimization on (give it your best shot) 
 !                           #            -- check your compiler man
 ! OPTOFF = -O0 -static      #optimization off -- check your compiler man
