@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 1998/07/12 04:42:12 angelos Exp $
+# $OpenBSD: Makefile,v 1.16 1998/09/25 01:05:32 marc Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -29,7 +29,7 @@
 #    SUBDIR += kdegames
 #    SUBDIR += klondike
 #    SUBDIR += lincity
-#    SUBDIR += nethack
+     SUBDIR += nethack
 #    SUBDIR += nethack-qt
      SUBDIR += netris
 #    SUBDIR += oneko
