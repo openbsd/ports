@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2003/05/12 22:19:11 sturm Exp $
+# $OpenBSD: Makefile,v 1.28 2004/11/27 10:39:14 espie Exp $
 
 COMMENT=	"MS-Windows 3.1/95/NT emulator for Unix (Alpha release)"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=	ICE SM X11 Xext Xpm Xxf86dga Xxf86vm c m ncurses ossaudio
 
 MASTER_SITES=	ftp://ftp.chg.ru/pub/gnu/ALPHA/wine/development/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/12/23 00:03:57 grange Exp $
+# $OpenBSD: Makefile,v 1.8 2004/11/27 10:39:13 espie Exp $
 # $RuOBSD: Makefile,v 1.4 2002/04/29 11:07:18 grange Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2001/12/29 00:22:02 abs Exp $
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xext Xi Xxf86dga Xxf86vm audiofile c \
+			glib gmodule iconv intl m pthread stdc++
 
 MASTER_SITES=		http://iphcip1.physik.uni-mainz.de/~cbauer/
 

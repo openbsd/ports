@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/10/01 06:18:14 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2004/11/27 10:39:14 espie Exp $
 
 COMMENT=	"MIPS R2000/R3000 simulator"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=   "may not sell"
 PERMIT_PACKAGE_FTP=     "may not bundle with commercial product"
 PERMIT_DISTFILES_CDROM= "may not sell"
 PERMIT_DISTFILES_FTP=   "may not bundle with commercial product"
+WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c m
 
 MASTER_SITES=	http://www.cs.wisc.edu/~larus/SPIM/
 

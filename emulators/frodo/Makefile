@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/12/27 23:41:01 jose Exp $
+# $OpenBSD: Makefile,v 1.14 2004/11/27 10:39:14 espie Exp $
 
 COMMENT=	"Commodore 64 emulator"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
+WANTLIB=		X11 Xext c m pthread stdc++ usbhid
 
 CONFIGURE_STYLE=	gnu
 USE_X11=		Yes

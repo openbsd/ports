@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2004/08/11 04:46:49 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2004/11/27 10:39:13 espie Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 COMMENT=	"x86 machine simulator"
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 c m stdc++ termlib z
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-cdrom \
@@ -33,6 +34,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+= --enable-debugger --enable-disasm --enable-x86-debugger
 CONFIGURE_ARGS+= --enable-readline
+WANTLIB+=		curses readline
 .endif
 
 .if !${FLAVOR:L:Mno_x11}

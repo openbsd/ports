@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/29 15:06:49 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2004/11/27 10:39:14 espie Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		GL X11 Xext c m pthread usbhid z
 
 BUILD_DEPENDS=		nasm::devel/nasm
 LIB_DEPENDS=		SDL.:sdl-*-!no_x11:devel/sdl \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/11/20 20:41:00 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2004/11/27 10:39:14 espie Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -31,6 +31,7 @@ PERMIT_PACKAGE_CDROM=	"may not sell"
 PERMIT_PACKAGE_FTP=	"may not sell"
 PERMIT_DISTFILES_CDROM=	"may not sell"
 PERMIT_DISTFILES_FTP=	"may not sell"
+WANTLIB=		X11 Xext Xxf86dga Xxf86vm c m usbhid z
 
 EXTRACT_SUFX=	.tar.bz2
 

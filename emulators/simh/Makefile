@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2004/10/26 19:52:32 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.47 2004/11/27 10:39:14 espie Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 COMMENT=		"PDP, IBM 1401, Nova and other CPUs simulator"
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m pcap
 
 WRKDIST=		${WRKDIR}
 
