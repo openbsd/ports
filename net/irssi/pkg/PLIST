@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/02/23 12:25:04 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/03/11 21:52:12 lebel Exp $
 bin/botti
 bin/irssi
 lib/irssi/modules/libirc_bot.a
@@ -17,7 +17,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/perllocal.pod
 share/doc/irssi/botnet.txt
 share/doc/irssi/design.txt
 share/doc/irssi/faq.txt
