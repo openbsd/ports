@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/07/18 10:59:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2001/08/11 23:11:14 heko Exp $
 
 # 
 # Description
@@ -125,7 +125,7 @@ USE_X11=	Yes
 CONFIGURE_ARGS+=	--with-menubars=lucid
 
 . if ${FLAVOR:L:Mmotif}
-NEED_MOTIF=	Yes
+USE_MOTIF=	any
 CONFIGURE_ARGS+=--with-scrollbars=motif \
 		--with-dialogs=motif
 . else
@@ -191,6 +191,9 @@ CONFIGURE_ARGS+=--with-database=berkdb
 
 .if ${FLAVOR:L:Mmule}
 CONFIGURE_ARGS+=--with-mule
+
+# this one is not "toggle-able" in the configure script
+LIB_DEPENDS+=	intl.1::devel/gettext
 
 . if ${FLAVOR:L:Mcanna}
 LIB_DEPENDS+=	canna16::japanese/canna
