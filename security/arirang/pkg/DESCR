@@ -4,6 +4,7 @@ Powerful webserver security scanner
 + many options for host/script scanning
 + cgi rulebase for easy additions
 + vhost settings
++ wide ip range rule scan
++ fast scan
 
 WWW: ${HOMEPAGE}
-

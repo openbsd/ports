@@ -1,15 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/08/16 04:47:43 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/07/29 08:26:32 jsyn Exp $
 bin/arirang
 share/arirang/against-snort.uxe
 share/arirang/all.uxe
+share/arirang/apache.uxe
 share/arirang/bof_dos.uxe
 share/arirang/cfusion.uxe
 share/arirang/codered.uxe
+share/arirang/frontpage2k.uxe
 share/arirang/idstest.uxe
 share/arirang/iis.uxe
 share/arirang/iiscgi.uxe
 share/arirang/inject.uxe
+share/arirang/ncbook.uxe
 share/arirang/nes.uxe
+share/arirang/network.uxe
+share/arirang/nimda.uxe
 share/arirang/nt.uxe
 share/arirang/nt_head.uxe
 share/arirang/rule.uxe
