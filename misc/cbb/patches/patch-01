@@ -1,6 +1,6 @@
 --- Makefile.orig	Thu Jun 12 14:57:50 1997
 +++ Makefile	Fri Oct 10 20:52:22 1997
-@@ -26,14 +26,15 @@
+@@ -26,14 +26,16 @@
  
  CBB_ROOT = cbb-0.73
  TAR = tar
@@ -14,7 +14,8 @@
  install:
 -	$(PERL) install.pl
 +	$(PERL) install.pl --prefix ${PREFIX} --libdir ${PREFIX}/share/cbb  \
-+		--perlpath /usr/bin/perl --wishpath ${PREFIX}/bin/wish8.0
++		--destdir ${PREFIX} --perlpath /usr/bin/perl \
++		--wishpath ${PREFIX}/bin/wish8.0
  
  docs/cbb-man.dvi: docs/cbb-man.tex
  	(cd docs; \

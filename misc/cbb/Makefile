@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/07/09 23:41:53 turan Exp $
-
-BROKEN=		problems while building a package
+# $OpenBSD: Makefile,v 1.12 2000/07/09 23:51:43 angelos Exp $
 
 DISTNAME=	cbb-0.73
 CATEGORIES=	misc tk80
