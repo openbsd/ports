@@ -1,5 +1,5 @@
-.\" $OpenBSD: pptp_8,v 1.1.1.1 2000/12/21 14:02:52 reinhard Exp $
-.\" Manual page for pptp-1.0.2
+.\" $OpenBSD: pptp_8,v 1.2 2003/01/24 13:12:38 reinhard Exp $
+.\" Manual page for pptp-1.1.0
 .\" Information gleaned from USING file in the distribution
 .\" SH section heading
 .\" SS subsection heading
@@ -14,6 +14,10 @@
 .Sh SYNOPSIS
 .Nm
 .Ar hostname
+[
+.Op Ar --phone <phone number>
+.Op Ar --quirks ISP_NAME
+-- ]
 .Op Ar pppd options
 .Sh DESCRIPTION
 .Nm
@@ -33,6 +37,10 @@ the
 .Xr gre 4
 pseudo-device
 configured.
+.Pp
+Build a kernel without "GRE encapsulation interface" support.
+(NB: look in /usr/src/sys/conf/GENERIC for "pseudo-device   gre     1".)
+.Pp
 The
 .Ar hostname
 parameter specifies which host should be contacted as the PPTP server.
@@ -51,10 +59,13 @@ must be run as root.
 .Pa /var/run/pptp/<ip-address>
 is created as a socket.  It is used for communicating with an existing
 PPTP call manager for a given remote server host.
+.Pp
+.Pa PREFIX/sbin/pptp-reconnect
+can be used to (re)establish a pptp connection.
 .Sh SEE ALSO
 .Xr pppd 8 ,
 .Xr gre 4 ,
-.Pa PREFIX/share/doc/pptp/USING
+.Pa PREFIX/share/doc/pptp/USING .
 .Sh BUGS
 .Nm
 does not work with a GENERIC kernel, because

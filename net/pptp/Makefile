@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/01/24 11:49:21 reinhard Exp $
+# $OpenBSD: Makefile,v 1.8 2003/01/24 13:12:38 reinhard Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/04/10 01:14:01 jtk Exp $
 
 COMMENT=	'PPTP client package for Microsoft VPN servers'
@@ -40,7 +40,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/USING ${PREFIX}/share/doc/pptp/
 	@cd ${WRKSRC} && \
 	    tar cf - ${DIRS} | (cd ${PREFIX}/share/doc/pptp && tar -xf -)
-
-NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
