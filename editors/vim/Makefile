@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/02/01 21:43:50 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2000/02/10 15:39:13 jasoni Exp $
 
 DISTNAME=	vim-5.6
 DIST_SUBDIR=	vim
@@ -15,7 +15,7 @@ EXTRACT_ONLY=	${DISTNAME}-src.tar.gz ${DISTNAME}-rt.tar.gz
 
 NEED_VERSION=	1.175
 
-.for p in 01 02 03 05 06 10 11
+.for p in 01 02 03 05 06 10 11 12
 DISTFILES+=	5.6.0${p}:0
 PATCHFILES+=	5.6.0${p}
 .endfor
@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=--enable-gui="gtk"
 .endif
 .endif
 
-WRKSRC=	${WRKDIR}/${DISTNAME}/src
+WRKDIST=	${WRKDIR}/${DISTNAME}/src
 
 pre-fetch:
 .if !defined(NO_WARNINGS)
