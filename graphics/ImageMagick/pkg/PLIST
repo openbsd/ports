@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2000/06/20 23:32:47 brad Exp $
+@comment $OpenBSD: PLIST,v 1.18 2000/07/25 07:17:00 brad Exp $
 bin/Magick-config
 bin/animate
 bin/combine
@@ -24,9 +24,11 @@ include/magick/image.h
 include/magick/magick.h
 include/magick/monitor.h
 include/magick/quantize.h
+include/magick/semaphore.h
 include/magick/timer.h
 include/magick/utility.h
 include/magick/version.h
+include/magick/widget.h
 include/magick/xwindows.h
 lib/libMagick.a
 lib/libMagick.la
@@ -43,5 +45,6 @@ man/man1/montage.1
 man/man4/miff.4
 man/man5/quantize.5
 share/ImageMagick/delegates.mgk
+share/ImageMagick/magic.mgk
 @dirrm include/magick
 @dirrm share/ImageMagick
