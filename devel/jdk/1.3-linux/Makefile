@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/16 17:02:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/17 14:17:16 kevlo Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Java Development Kit for Java 2 Standard Edition 1.3"
 
-DISTNAME=	jdk1.3.1
+DISTNAME=	jdk1.3.1_01
 PKGNAME=	jdk-linux-1.3.1
 CATEGORIES=	devel java
-NEED_VERSION=	1.407
+NEED_VERSION=	1.457
 
 HOMEPAGE=	http://java.sun.com/j2se/
 MAINTAINER=	Christian Gruber <christian.edward.gruber@gmx.net>
 
 BUILD_DEPENDS=	/emul/linux/usr/X11R6/lib/libXp.so.6:redhat_base->=6.2:emulators/redhat/base
 RUN_DEPENDS=	${BUILD_DEPENDS}
-DISTFILES=	j2sdk-1_3_1-linux-i386.bin
+DISTFILES=	j2sdk-1_3_1_01-linux-i386.bin
 EXTRACT_CASES+=	*.bin) \
-		    tail +253 ${DISTDIR}/$$archive > ${WRKDIR}/$$archive && \
+		    tail +248 ${DISTDIR}/$$archive > ${WRKDIR}/$$archive && \
 		    chmod u+x ${WRKDIR}/$$archive && \
 		    ${WRKDIR}/$$archive -q ;; \
 
