@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2002/05/31 11:52:40 nino Exp $
+# $OpenBSD: Makefile,v 1.90 2002/06/08 05:59:15 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -69,6 +69,7 @@
      SUBDIR += solid-pop3d
      SUBDIR += solid-pop3d,apop
      SUBDIR += sylpheed
+     SUBDIR += teapop
      SUBDIR += tkrat
      SUBDIR += tmda
      SUBDIR += tnef
