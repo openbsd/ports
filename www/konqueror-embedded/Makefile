@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/08/16 19:49:27 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2002/09/14 02:14:36 naddy Exp $
 
 COMMENT='stand-alone web browser'
 CATEGORIES=www x11
@@ -25,7 +25,6 @@ CONFIGURE_ARGS+=	--disable-debug
 #CONFIGURE_ARGS+=	--enable-debug=full
 #CONFIGURE_ARGS+=	--enable-final
 #CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
-PATCH_LIST=	${PORTSDIR}/x11/kde/libs2/patches/p-* patch-*
 
 USE_GMAKE=Yes
 

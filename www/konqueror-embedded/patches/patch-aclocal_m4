@@ -1,0 +1,36 @@
+$OpenBSD: patch-aclocal_m4,v 1.1 2002/09/14 02:14:36 naddy Exp $
+--- aclocal.m4.orig	Mon Mar 11 20:35:35 2002
++++ aclocal.m4	Sat Sep 14 03:42:47 2002
+@@ -3455,6 +3455,11 @@ LIBDL="-ldl"
+ ac_cv_have_dlfcn=yes
+ ])
+ 
++AC_CHECK_LIB(c, dlopen, [
++LIBDL=
++ac_cv_have_dlfcn=yes
++])
++
+ AC_CHECK_LIB(dld, shl_unload, [
+ LIBDL="-ldld"
+ ac_cv_have_shload=yes
+@@ -5347,19 +5352,7 @@ netbsd*)
+   ;;
+ 
+ openbsd* )
+-  if echo __ELF__ | $CC -E - | grep __ELF__ > /dev/null; then
+-    case "$host_cpu" in
+-    i*86 )
+-      changequote(,)dnl
+-      lt_cv_deplibs_check_method='file_magic OpenBSD/i[3-9]86 demand paged shared library'
+-      changequote([, ])dnl
+-      lt_cv_file_magic_cmd=/usr/bin/file
+-      lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
+-      ;;
+-    esac
+-  else
+-    lt_cv_deplibs_check_method=pass_all
+-  fi
++  lt_cv_deplibs_check_method=pass_all
+   ;;
+ 
+ newsos6)

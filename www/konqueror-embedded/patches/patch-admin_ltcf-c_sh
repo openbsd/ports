@@ -1,0 +1,20 @@
+$OpenBSD: patch-admin_ltcf-c_sh,v 1.1 2002/09/14 02:14:36 naddy Exp $
+--- admin/ltcf-c.sh.orig	Fri Dec  7 11:06:18 2001
++++ admin/ltcf-c.sh	Sat Sep 14 03:42:47 2002
+@@ -457,10 +457,14 @@ else
+     ;;
+ 
+   openbsd*)
+-    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+-    hardcode_libdir_flag_spec='-R$libdir'
++    archive_cmds='$CC $pic_flag -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
++    archive_expsym_cmds='$CC $pic_flag -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
++    old_archive_cmds="$old_archive_cmds~"'$RANLIB $oldlib'
++    hardcode_libdir_flag_spec='${wl}-R$libdir'
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
++    remove_lgcc=yes
++    output_verbose_link_cmds='$CC $ac_cv_prog_cc_pic -shared $CFLAGS -v conftest.$objext 2>&1 | egrep "\-L"'
+     ;;
+ 
+   os2*)
