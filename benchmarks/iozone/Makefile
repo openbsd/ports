@@ -3,13 +3,13 @@
 # Date created:         26 November 1997
 # Whom:                 niklas
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/27 00:03:07 niklas Exp $
+# $OpenBSD: Makefile,v 1.2 1997/12/29 21:17:43 joey Exp $
 #
 
 DISTNAME=       iozone
 PKGNAME=	iozone-2.01
 CATEGORIES=	benchmarks
-MASTER_SITES=   ftp://ftp.cs.uni-sb.de/pub/others/
+MASTER_SITES=   ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
 DISTFILES=      iozone-2.01.shar.gz
 
 MAINTAINER=	niklas@openbsd.org
