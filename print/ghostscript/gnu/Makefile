@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2002/12/03 13:30:39 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2002/12/26 18:41:14 sturm Exp $
 
 COMMENT="GNU PostScript interpreter"
 
@@ -107,7 +107,7 @@ GS_SOURCES=	ghostscript-${VERSION}.tar.gz
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
 #  unless the files really change.
-GS_FONTS_STD=	ghostscript-fonts-std-6.0.tar.gz
+GS_FONTS_STD=	gnu-gs-fonts-std-6.0.tar.gz
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install
