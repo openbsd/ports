@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/02/04 07:39:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2004/03/30 15:48:29 sturm Exp $
 
 NOT_FOR_ARCHS=			${NO_SHARED_ARCHS}
 
@@ -50,7 +50,5 @@ CONFIGURE_ARGS+= 		--disable-gtk-doc
 CONFIGURE_ENV=			CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 				LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=			OBSD_LIB_VERSION="${OBSD_LIB_VERSION}"
-
-NO_SYSTRACE=			"normalize_filename: filename too long"
 
 .include <bsd.port.mk>
