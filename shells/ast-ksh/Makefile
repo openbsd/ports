@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2003/06/24 16:03:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2003/07/07 23:40:25 naddy Exp $
 
 COMMENT=	"official AT&T release of KornShell 93"
 
 PKGNAME=	ast-ksh-${VERSION:S/-//g}
-VERSION=	2003-04-22
+VERSION=	2003-06-21
 CATEGORIES=	shells
 HOMEPAGE=	http://www.kornshell.com/
 
@@ -21,7 +21,7 @@ FLAVORS=	static
 FLAVOR?=
 
 MAKE_ENV=	CC="${CC}" CCFLAGS="${CFLAGS}" SHELL="/bin/sh"
-.if ${FLAVOR:L} == "static"
+.if ${FLAVOR:L:Mstatic}
 MAKE_ENV+=	LDFLAGS=-static
 .endif
 
