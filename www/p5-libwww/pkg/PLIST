@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/29 10:55:30 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/11/21 17:57:08 avsm Exp $
 bin/GET
 bin/HEAD
 bin/POST
@@ -74,7 +74,7 @@ man/man3/LWP::UserAgent.3p
 man/man3/WWW::RobotRules.3p
 man/man3/WWW::RobotRules::AnyDBM_File.3p
 man/man3/lwpcook.3p
-@dirrm libdata/perl5/site_perl/i386-openbsd/auto/libwww-perl
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/libwww-perl
 @dirrm libdata/perl5/site_perl/WWW/RobotRules
 @dirrm libdata/perl5/site_perl/LWP/Protocol
 @dirrm libdata/perl5/site_perl/LWP/Authen
