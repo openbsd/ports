@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 1999/09/10 22:20:21 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/09/10 22:26:14 brad Exp $
 
 DISTNAME=       zsh-3.1.6
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
-		ftp://ftp.math.gatech.edu/pub/zsh/ \
 		ftp://ftp.sterling.com/zsh/ \
 		ftp://ftp.rge.com/pub/zsh/ \
 		ftp://ftp.cenatls.cena.dgac.fr/pub/shells/zsh/ \
