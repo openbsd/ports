@@ -1,4 +1,4 @@
-/* $OpenBSD: grab_bsdbktr.c,v 1.1 2004/04/18 00:36:22 jolan Exp $
+/* $OpenBSD: grab_bsdbktr.c,v 1.2 2004/07/11 00:48:57 jolan Exp $
  *
  * FreeBSD video grab interface
  * Copyright (c) 2002 Steve O'Hara-Smith
@@ -91,7 +91,7 @@ static int bktr_init (const char *video_device, int width, int height,
 		if (arg)
 			idev = atoi (arg);
 		if (idev < 0 || idev > 4)
-			idev = 0;
+			idev = 1;
 	}
 
 	if (format < 1 || format > 6)
