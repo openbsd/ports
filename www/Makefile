@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2001/04/19 15:47:30 lebel Exp $
+# $OpenBSD: Makefile,v 1.53 2001/05/16 14:45:30 naddy Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -38,6 +38,7 @@
      SUBDIR += mozilla
      SUBDIR += netscape
      SUBDIR += nscache
+     SUBDIR += opera
      SUBDIR += p5-Apache-DBI
      SUBDIR += p5-Blatte-HTML
      SUBDIR += p5-CGI
