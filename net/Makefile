@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2000/12/19 15:30:47 espie Exp $
+# $OpenBSD: Makefile,v 1.101 2000/12/21 14:10:49 reinhard Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -66,6 +66,7 @@
      SUBDIR += popa3d:
      SUBDIR += popa3d:apop
      SUBDIR += proxy-suite
+     SUBDIR += pptp
      SUBDIR += publicfile
      SUBDIR += publicfile:compat
      SUBDIR += queso
