@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2004/12/08 06:09:36 msf Exp $
+--- Makefile.PL.orig	Thu Sep 16 13:12:43 2004
++++ Makefile.PL	Thu Sep 16 13:12:52 2004
+@@ -15,7 +15,7 @@ WriteMakefile(
+ 			#		   ) : (),
+ 	             },
+    'dist'        => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
+-   ($] < 5.008) ? () : ( INSTALLDIRS => 'perl' ),
++   ($] < 5.008) ? () : ( INSTALLDIRS => 'site' ),
+      # If under a version with Maketext in core, overwrite that core file.
+ );
+ 
