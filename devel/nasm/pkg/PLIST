@@ -1,0 +1,5 @@
+bin/nasm
+bin/ndisasm
+man/man1/nasm.1
+man/man1/ndisasm.1
+share/nasm/internal.doc
