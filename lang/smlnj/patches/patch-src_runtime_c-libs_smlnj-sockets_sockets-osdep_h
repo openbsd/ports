@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_runtime_c-libs_smlnj-sockets_sockets-osdep_h,v 1.1.1.1 2002/06/29 13:25:10 espie Exp $
+--- src/runtime/c-libs/smlnj-sockets/sockets-osdep.h.orig	Fri Dec  3 20:59:29 1999
++++ src/runtime/c-libs/smlnj-sockets/sockets-osdep.h	Sat Jun 29 15:11:35 2002
+@@ -33,7 +33,7 @@ typedef void *sockoptval_t;	/* The point
+ #    define SOCKADDR_HAS_LEN	/* socket address has a length field */
+ #  endif
+ 
+-#  if (defined(OPSYS_FREEBSD) || defined (OPSYS_NETBSD))
++#  if (defined(OPSYS_FREEBSD) || defined (OPSYS_NETBSD) || defined (OPSYS_OPENBSD))
+ #    define i386		1	/* to avoid a bug in system header files */
+ #    define INCLUDE_RPCENT_H	<rpc/rpc.h>
+ #  endif

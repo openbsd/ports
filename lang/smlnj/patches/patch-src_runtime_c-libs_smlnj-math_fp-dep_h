@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_runtime_c-libs_smlnj-math_fp-dep_h,v 1.1.1.1 2002/06/29 13:25:10 espie Exp $
+--- src/runtime/c-libs/smlnj-math/fp-dep.h.orig	Fri Dec  3 20:59:26 1999
++++ src/runtime/c-libs/smlnj-math/fp-dep.h	Sat Jun 29 15:11:35 2002
+@@ -64,7 +64,7 @@ typedef int fe_rnd_mode_t;
+ #  define fegetround()		read_rnd()
+ #  define fesetround(RM)	write_rnd(RM)
+ 
+-#elif defined(OPSYS_FREEBSD)
++#elif defined(OPSYS_FREEBSD) 
+ #  include <floatingpoint.h>
+ #  define FE_TONEAREST		FP_RN
+ #  define FE_TOWARDZERO		FP_RZ
+@@ -85,7 +85,7 @@ typedef int fe_rnd_mode_t;
+ #  define fegetround()		fpgetround()
+ #  define fesetround(RM)	fpsetround(RM)
+ 
+-#elif (defined(OPSYS_IRIX) || defined(OPSYS_IRIX5) || defined(OPSYS_NETBSD))
++#elif (defined(OPSYS_IRIX) || defined(OPSYS_IRIX5) || defined(OPSYS_NETBSD) || defined(OPSYS_OPENBSD))
+ #  include <ieeefp.h>
+ #  define FE_TONEAREST		FP_RN
+ #  define FE_TOWARDZERO		FP_RZ

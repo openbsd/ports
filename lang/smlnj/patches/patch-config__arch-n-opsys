@@ -1,0 +1,21 @@
+$OpenBSD: patch-config__arch-n-opsys,v 1.1.1.1 2002/06/29 13:25:10 espie Exp $
+--- config/_arch-n-opsys.orig	Fri Oct 20 18:02:25 2000
++++ config/_arch-n-opsys	Sat Jun 29 15:11:35 2002
+@@ -103,6 +103,17 @@ case `uname -s` in
+       *) exit 1;;
+     esac
+     ;;
++  OpenBSD)
++    OPSYS=openbsd
++    HEAP_OPSYS=bsd
++    case `uname -m` in
++      i386) ARCH=x86;;
++      i486) ARCH=x86;;
++      i586) ARCH=x86;;
++      i686) ARCH=x86;;
++      *) exit 1;;
++    esac
++    ;;
+   Windows_NT)
+     OPSYS=win32
+     case `uname -m` in

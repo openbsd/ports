@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_runtime_objs_mk_x86-openbsd,v 1.1.1.1 2002/06/29 13:25:10 espie Exp $
+--- src/runtime/objs/mk.x86-openbsd.orig	Sat Jun 29 15:10:01 2002
++++ src/runtime/objs/mk.x86-openbsd	Sat Jun 29 15:09:53 2002
+@@ -0,0 +1,27 @@
++# mk.x86-openbsd
++#
++# makefile for "Net BSD", which is a BSD 4.4 clone.
++#
++
++SHELL =		/bin/sh
++
++MAKE =		gmake
++
++ARFLAGS =	rcv
++CC =		gcc -ansi
++CFLAGS =	-O2
++CPP =		gcc -x c -E -P -ansi
++#CPP =		/usr/bin/cpp -P
++XOBJS =
++XLIBS =	
++LD_LIBS =
++BASE_DEFS =	
++DEFS		= $(BASE_DEFS) -DHOST_X86 -DTARGET_X86 -DOPSYS_UNIX -DOPSYS_OPENBSD -DVREGS -DCALLEESAVE=3
++TARGET =	X86
++VERSION =	v-x86-openbsd
++RUNTIME =	run.x86-openbsd
++
++all:
++	($(MAKE) RUNTIME="$(RUNTIME)" VERSION="$(VERSION)" MAKE="$(MAKE)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" $(RUNTIME)) 
++
++

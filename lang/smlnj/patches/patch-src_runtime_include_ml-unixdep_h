@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_runtime_include_ml-unixdep_h,v 1.1.1.1 2002/06/29 13:25:10 espie Exp $
+--- src/runtime/include/ml-unixdep.h.orig	Fri Dec  3 20:59:32 1999
++++ src/runtime/include/ml-unixdep.h	Sat Jun 29 15:11:35 2002
+@@ -95,7 +95,7 @@
+ #define INCLUDE_FCNTL_H		<sys/fcntl.h>
+ #endif
+ 
+-#if defined(OPSYS_OSF1) || defined(OPSYS_DUNIX) || defined(OPSYS_AIX) || defined(OPSYS_LINUX) || defined(OPSYS_MKLINUX) || defined(OPSYS_FREEBSD) || defined(OPSYS_NETBSD)
++#if defined(OPSYS_OSF1) || defined(OPSYS_DUNIX) || defined(OPSYS_AIX) || defined(OPSYS_LINUX) || defined(OPSYS_MKLINUX) || defined(OPSYS_FREEBSD) || defined(OPSYS_NETBSD) || defined(OPSYS_OPENBSD)
+ #  define INCLUDE_DIRENT_H	<dirent.h>
+ #elif defined(OPSYS_MACH)
+ #  define INCLUDE_DIRENT_H	<sys/dir.h>
+@@ -281,6 +281,19 @@ extern char     *sys_errlist[];
+ #  define MAP_ANONYMOUS MAP_ANON
+ 
+ #elif defined(OPSYS_NETBSD)
++#  define OS_NAME	"BSD"
++#  define HAS_POSIX_LIBRARIES
++#  define HAS_BSD_SIGS
++#  define HAS_GETRUSAGE
++#  define HAS_SETITIMER
++#  define HAS_MMAP
++#  define HAS_SELECT
++#  define HAS_SCALBN
++#  define HAS_ILOGB
++#  define HAS_SIGCONTEXT
++#  define HAS_STRERROR
++
++#elif defined(OPSYS_OPENBSD)
+ #  define OS_NAME	"BSD"
+ #  define HAS_POSIX_LIBRARIES
+ #  define HAS_BSD_SIGS

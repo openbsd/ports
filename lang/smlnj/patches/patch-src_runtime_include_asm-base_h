@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_runtime_include_asm-base_h,v 1.1.1.1 2002/06/29 13:25:10 espie Exp $
+--- src/runtime/include/asm-base.h.orig	Fri Dec  3 20:59:31 1999
++++ src/runtime/include/asm-base.h	Sat Jun 29 15:11:35 2002
+@@ -16,7 +16,7 @@
+ #define FALSE	0
+ #define TRUE	1
+ 
+-#if (!defined(GLOBALS_HAVE_UNDERSCORE)) && (defined(OPSYS_SUNOS) || defined(OPSYS_NEXTSTEP) || defined(OPSYS_WIN32))
++#if (!defined(GLOBALS_HAVE_UNDERSCORE)) && (defined(OPSYS_SUNOS) || defined(OPSYS_NEXTSTEP) || defined(OPSYS_WIN32)) || defined(OPSYS_OPENBSD)
+ #  define GLOBALS_HAVE_UNDERSCORE
+ #endif
+ 

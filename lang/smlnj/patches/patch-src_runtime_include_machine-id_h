@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_runtime_include_machine-id_h,v 1.1.1.1 2002/06/29 13:25:10 espie Exp $
+--- src/runtime/include/machine-id.h.orig	Fri Dec  3 20:59:31 1999
++++ src/runtime/include/machine-id.h	Sat Jun 29 15:11:35 2002
+@@ -42,7 +42,7 @@
+ #    define OPSYS_ID	"aix"
+ #  elif (defined(OPSYS_DUNIX))
+ #    define OPSYS_ID	"dunix"
+-#  elif (defined(OPSYS_FREEBSD) || defined(OPSYS_NETBSD))
++#  elif (defined(OPSYS_FREEBSD) || defined(OPSYS_NETBSD) || defined(OPSYS_OPENBSD))
+ #    define OPSYS_ID	"bsd"
+ #  elif (defined(OPSYS_HPUX9))
+ #    define OPSYS_ID	"hpux9"

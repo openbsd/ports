@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_runtime_include_ml-osdep_h,v 1.1.1.1 2002/06/29 13:25:10 espie Exp $
+--- src/runtime/include/ml-osdep.h.orig	Fri Dec  3 20:59:32 1999
++++ src/runtime/include/ml-osdep.h	Sat Jun 29 15:11:35 2002
+@@ -17,7 +17,7 @@
+ #define _ML_OSDEP_
+ 
+ #if defined(OPSYS_UNIX)
+-#  if (defined(OPSYS_SUNOS) || defined(OPSYS_IRIX4) || defined(OPSYS_LINUX) || defined(OPSYS_AIX) || defined(OPSYS_FREEBSD) || defined(OPSYS_NETBSD))
++#  if (defined(OPSYS_SUNOS) || defined(OPSYS_IRIX4) || defined(OPSYS_LINUX) || defined(OPSYS_AIX) || defined(OPSYS_FREEBSD) || defined(OPSYS_NETBSD) || defined(OPSYS_OPENBSD))
+ #     define GETPAGESIZE()	(getpagesize())
+ #  else
+    /* POSIX 1003.1b interface */

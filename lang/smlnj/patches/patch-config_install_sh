@@ -1,0 +1,163 @@
+$OpenBSD: patch-config_install_sh,v 1.1.1.1 2002/06/29 13:25:10 espie Exp $
+--- config/install.sh.orig	Fri Oct 20 18:02:25 2000
++++ config/install.sh	Sat Jun 29 15:11:35 2002
+@@ -151,7 +151,7 @@ BIN_FILES=bin.$ARCH-unix
+ #
+ # build the run-time system
+ #
+-$CONFIGDIR/unpack.sh "run-time" $SRCDIR runtime $ROOT/runtime.tar
++# $CONFIGDIR/unpack.sh "run-time" $SRCDIR runtime $ROOT/runtime.tar
+ if [ "$?" != "0" ]; then
+   exit $?
+ fi
+@@ -175,24 +175,24 @@ cd $SRCDIR
+ if [ -r $HEAPDIR/sml.$HEAP_SUFFIX ]; then
+   echo "$HEAPDIR/sml.$HEAP_SUFFIX already exists"
+ else
+-  if [ ! -d $ROOT/$BIN_FILES ]; then
+-    if [ -r $ROOT/$BIN_FILES.tar.Z ]; then
+-      cd $ROOT
+-      echo "unpacking bin files"
+-      zcat $BIN_FILES.tar.Z | tar -xf -
+-    elif [ -r $ROOT/$BIN_FILES.tar ]; then
+-      cd $ROOT
+-      echo "unpacking bin files"
+-      tar -xf $BIN_FILES.tar
+-    else
+-      echo "!!! the bin files are missing"
+-      exit 1
+-    fi
+-    if [ ! -d $ROOT/$BIN_FILES ]; then
+-      echo "!!! unable to unpack bin files"
+-      exit 1
+-    fi
+-  fi
++#  if [ ! -d $ROOT/$BIN_FILES ]; then
++#    if [ -r $ROOT/$BIN_FILES.tar.Z ]; then
++#      cd $ROOT
++#      echo "unpacking bin files"
++#      zcat $BIN_FILES.tar.Z | tar -xf -
++#    elif [ -r $ROOT/$BIN_FILES.tar ]; then
++#      cd $ROOT
++#      echo "unpacking bin files"
++#      tar -xf $BIN_FILES.tar
++#    else
++#      echo "!!! the bin files are missing"
++#      exit 1
++#    fi
++#    if [ ! -d $ROOT/$BIN_FILES ]; then
++#      echo "!!! unable to unpack bin files"
++#      exit 1
++#    fi
++#  fi
+   cd $ROOT
+   $RUNDIR/run.$ARCH-$OPSYS @SMLboot=$ROOT/$BIN_FILES @SMLalloc=$ALLOC <<XXXX
+     $SET_FLAGS
+@@ -230,7 +230,7 @@ do
+     echo "  building $TARGET"
+     case $i in
+       src-smlnj)
+-	$CONFIGDIR/unpack.sh src-smlnj $ROOT/src sml-nj $ROOT/sml-nj.tar
++#	$CONFIGDIR/unpack.sh src-smlnj $ROOT/src sml-nj $ROOT/sml-nj.tar
+       ;;
+       sml-full)
+ 	if [ ! -d $ROOT/$BIN_FILES ]; then
+@@ -256,7 +256,7 @@ XXXX
+ 	fi
+       ;;
+       sml-cm)
+-	$CONFIGDIR/unpack.sh CM $SRCDIR cm $ROOT/cm.tar
++#	$CONFIGDIR/unpack.sh CM $SRCDIR cm $ROOT/cm.tar
+         if [ "$?" != "0" ]; then
+ 	  exit $?
+         fi
+@@ -279,7 +279,7 @@ XXXX
+ 	fi
+       ;;
+       sml-full-cm)
+-	$CONFIGDIR/unpack.sh CM $SRCDIR cm $ROOT/cm.tar
++#	$CONFIGDIR/unpack.sh CM $SRCDIR cm $ROOT/cm.tar
+         if [ "$?" != "0" ]; then
+ 	  exit $?
+         fi
+@@ -297,7 +297,7 @@ XXXX
+         fi
+       ;;
+       ml-yacc)
+-        $CONFIGDIR/unpack.sh ML-Yacc $SRCDIR ml-yacc $ROOT/ml-yacc.tar
++#        $CONFIGDIR/unpack.sh ML-Yacc $SRCDIR ml-yacc $ROOT/ml-yacc.tar
+         if [ "$?" != "0" ]; then
+ 	  exit $?
+         fi
+@@ -315,7 +315,7 @@ XXXX
+         fi
+       ;;
+       ml-lex)
+-        $CONFIGDIR/unpack.sh ML-Lex $SRCDIR ml-lex $ROOT/ml-lex.tar
++#        $CONFIGDIR/unpack.sh ML-Lex $SRCDIR ml-lex $ROOT/ml-lex.tar
+         if [ "$?" != "0" ]; then
+ 	  exit $?
+         fi
+@@ -333,7 +333,7 @@ XXXX
+         fi
+       ;;
+       ml-burg)
+-        $CONFIGDIR/unpack.sh ML-Burg $SRCDIR ml-burg $ROOT/ml-burg.tar
++#        $CONFIGDIR/unpack.sh ML-Burg $SRCDIR ml-burg $ROOT/ml-burg.tar
+         if [ "$?" != "0" ]; then
+ 	  exit $?
+         fi
+@@ -351,7 +351,7 @@ XXXX
+         fi
+       ;;
+       smlnj-lib)
+-        $CONFIGDIR/unpack.sh "SML/NJ Library" $SRCDIR smlnj-lib $ROOT/smlnj-lib.tar
++#        $CONFIGDIR/unpack.sh "SML/NJ Library" $SRCDIR smlnj-lib $ROOT/smlnj-lib.tar
+         if [ "$?" != "0" ]; then
+ 	  exit $?
+         fi
+@@ -406,7 +406,7 @@ XXXX
+ 	fi
+       ;;
+       ml-yacc-lib)
+-        $CONFIGDIR/unpack.sh ML-Yacc $SRCDIR ml-yacc $ROOT/ml-yacc.tar
++#        $CONFIGDIR/unpack.sh ML-Yacc $SRCDIR ml-yacc $ROOT/ml-yacc.tar
+         if [ "$?" != "0" ]; then
+ 	  exit $?
+         fi
+@@ -418,7 +418,7 @@ XXXX
+ 	fi
+       ;;
+       cml)
+-        $CONFIGDIR/unpack.sh CML $SRCDIR cml $ROOT/cml.tar
++#        $CONFIGDIR/unpack.sh CML $SRCDIR cml $ROOT/cml.tar
+         if [ "$?" != "0" ]; then
+ 	  exit $?
+         fi
+@@ -430,7 +430,7 @@ XXXX
+ 	fi
+       ;;
+       cml-lib)
+-        $CONFIGDIR/unpack.sh CML $SRCDIR cml $ROOT/cml.tar
++#        $CONFIGDIR/unpack.sh CML $SRCDIR cml $ROOT/cml.tar
+         if [ "$?" != "0" ]; then
+ 	  exit $?
+         fi
+@@ -470,7 +470,7 @@ XXXX
+ 	fi
+       ;;
+       eXene)
+-        $CONFIGDIR/unpack.sh EXene $SRCDIR eXene $ROOT/eXene.tar
++#        $CONFIGDIR/unpack.sh EXene $SRCDIR eXene $ROOT/eXene.tar
+         if [ "$?" != "0" ]; then
+ 	  exit $?
+         fi
+@@ -482,7 +482,7 @@ XXXX
+ 	fi
+       ;;
+       doc)
+-	$CONFIGDIR/unpack.sh Doc $ROOT doc $ROOT/doc.tar
++#	$CONFIGDIR/unpack.sh Doc $ROOT doc $ROOT/doc.tar
+         if [ "$?" != "0" ]; then
+ 	  exit $?
+         fi
