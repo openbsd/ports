@@ -23,7 +23,8 @@ CPPLIB=	-lg++
 # you must use -fno-implicit-templates
 # and -O (or any optimization level >= 1).
 # c++ is a front-end for gcc which takes care of linking with -lstdc++
-CXX=c++ -fno-implicit-templates -O2 
+# the -idirafter option is to work around the bsd.sys.mk lossage with C++
+CXX=c++ -fno-implicit-templates -O2 -idirafter=${DESTDIR}/usr/include/g++
 #WARN=-Wall -Wno-reorder -Wwrite-strings -Wpointer-arith -Wnested-externs -Woverloaded-virtual -Wbad-function-cast -Wno-unused
 # Executables will be *very* large if you use -g.
 DEBUG=
