@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/01/02 05:11:08 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2004/01/06 11:16:53 wilfried Exp $
 
 COMMENT=		"C++ API for MySQL"
 COMMENT-docs=		"C++ API for MySQL documentation"
@@ -35,6 +35,7 @@ LIB_DEPENDS=		lib/mysql/mysqlclient.10::databases/mysql
 NO_REGRESS=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--includedir=${LOCALBASE}/include/mysql++
 
 post-extract:
 	@rm -rf ${WRKSRC}/sqlplusint/.deps
