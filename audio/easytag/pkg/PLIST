@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/08/05 03:28:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/08/05 16:14:48 espie Exp $
 bin/easytag
 @man man/man1/easytag.1
 share/doc/easytag/
@@ -12,15 +12,11 @@ share/locale/cs/LC_MESSAGES/easytag.mo
 share/locale/de/LC_MESSAGES/easytag.mo
 share/locale/es/LC_MESSAGES/easytag.mo
 share/locale/fr/LC_MESSAGES/easytag.mo
-share/locale/hu/
-share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/easytag.mo
 share/locale/it/LC_MESSAGES/easytag.mo
 share/locale/ja/LC_MESSAGES/easytag.mo
 share/locale/nl/LC_MESSAGES/easytag.mo
 share/locale/pl/LC_MESSAGES/easytag.mo
-share/locale/ro/
-share/locale/ro/LC_MESSAGES/
 share/locale/ro/LC_MESSAGES/easytag.mo
 share/locale/ru/LC_MESSAGES/easytag.mo
 share/locale/sv/LC_MESSAGES/easytag.mo

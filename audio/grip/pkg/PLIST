@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/05 03:21:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/05 16:14:48 espie Exp $
 bin/grip
 share/gnome/
 share/gnome/apps/
@@ -79,8 +79,6 @@ share/gnome/help/grip/C/x131.html
 share/locale/de/LC_MESSAGES/grip.mo
 share/locale/fr/LC_MESSAGES/grip.mo
 share/locale/ja/LC_MESSAGES/grip.mo
-share/locale/zh_CN/
-share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/grip.mo
 share/pixmaps/
 share/pixmaps/gripicon.png

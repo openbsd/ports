@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2004/08/03 10:09:02 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2004/08/05 16:14:48 espie Exp $
 
 COMMENT=	"GNU gettext"
 
@@ -25,7 +25,7 @@ CONFIGURE_ARGS+= --with-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${WRKBUILD}/intl/.libs -L${LOCALBASE}/lib"
 
-EXTRA_LOCALES=bg en eo fi he hr lv nb sk uk
+EXTRA_LOCALES=bg en eo fi he hu hr lv nb ro sk uk zh_CN zh_TW
 post-extract:
 	@rm -f ${WRKSRC}/doc/gettext.info*
 

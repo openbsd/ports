@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/08/05 03:28:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/08/05 16:14:48 espie Exp $
 bin/gqmpeg
 bin/gqmpeg-shoutcast-plugin.sh
 @man man/man1/gqmpeg.1
@@ -87,8 +87,6 @@ share/locale/fi/LC_MESSAGES/gqmpeg.mo
 share/locale/fr/LC_MESSAGES/gqmpeg.mo
 share/locale/ja/LC_MESSAGES/gqmpeg.mo
 share/locale/pt_BR/LC_MESSAGES/gqmpeg.mo
-share/locale/zh_TW/
-share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/gqmpeg.mo
 share/pixmaps/
 share/pixmaps/gqmpeg.png

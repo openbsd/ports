@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/08/03 10:09:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2004/08/05 16:14:48 espie Exp $
 bin/gettext
 bin/gettextize
 bin/msgcmp
@@ -134,6 +134,8 @@ share/locale/he/
 share/locale/he/LC_MESSAGES/
 share/locale/hr/
 share/locale/hr/LC_MESSAGES/
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
 share/locale/id/
 share/locale/id/LC_MESSAGES/
 share/locale/id/LC_MESSAGES/gettext.mo
@@ -169,6 +171,8 @@ share/locale/pt/LC_MESSAGES/gettext.mo
 share/locale/pt_BR/
 share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/gettext.mo
+share/locale/ro/
+share/locale/ro/LC_MESSAGES/
 share/locale/ru/
 share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/gettext.mo
@@ -188,4 +192,8 @@ share/locale/uk/LC_MESSAGES/
 share/locale/zh/
 share/locale/zh/LC_MESSAGES/
 share/locale/zh/LC_MESSAGES/gettext.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
+share/locale/zh_TW/
+share/locale/zh_TW/LC_MESSAGES/
 %%SHARED%%
