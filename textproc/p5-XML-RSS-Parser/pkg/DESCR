@@ -1,0 +1,5 @@
+XML::RSS::Parser is a lightweight liberal parser of RSS
+feeds. This parser is "liberal" in that it does not
+demand compliance of a specific RSS version and will
+attempt to gracefully handle tags it does not expect or
+understand. 
