@@ -1,0 +1,155 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/03 00:10:54 espie Exp $
+bin/ace.pl
+${P5ARCH}/
+${P5ACE}/Ace/
+${P5ACE}/Ace.pm
+${P5ACE}/Ace/Browser/
+${P5ACE}/Ace/Browser/AceSubs.pm
+${P5ACE}/Ace/Browser/GeneSubs.pm
+${P5ACE}/Ace/Browser/SearchSubs.pm
+${P5ACE}/Ace/Browser/SiteDefs.pm
+${P5ACE}/Ace/Browser/TreeSubs.pm
+${P5ACE}/Ace/Graphics/
+${P5ACE}/Ace/Graphics/Fk.pm
+${P5ACE}/Ace/Graphics/Glyph/
+${P5ACE}/Ace/Graphics/Glyph.pm
+${P5ACE}/Ace/Graphics/Glyph/anchored_arrow.pm
+${P5ACE}/Ace/Graphics/Glyph/arrow.pm
+${P5ACE}/Ace/Graphics/Glyph/box.pm
+${P5ACE}/Ace/Graphics/Glyph/crossbox.pm
+${P5ACE}/Ace/Graphics/Glyph/dot.pm
+${P5ACE}/Ace/Graphics/Glyph/ex.pm
+${P5ACE}/Ace/Graphics/Glyph/graded_segments.pm
+${P5ACE}/Ace/Graphics/Glyph/group.pm
+${P5ACE}/Ace/Graphics/Glyph/line.pm
+${P5ACE}/Ace/Graphics/Glyph/primers.pm
+${P5ACE}/Ace/Graphics/Glyph/segments.pm
+${P5ACE}/Ace/Graphics/Glyph/span.pm
+${P5ACE}/Ace/Graphics/Glyph/toomany.pm
+${P5ACE}/Ace/Graphics/Glyph/transcript.pm
+${P5ACE}/Ace/Graphics/Glyph/triangle.pm
+${P5ACE}/Ace/Graphics/GlyphFactory.pm
+${P5ACE}/Ace/Graphics/Panel.pm
+${P5ACE}/Ace/Graphics/Track.pm
+${P5ACE}/Ace/Iterator.pm
+${P5ACE}/Ace/Local.pm
+${P5ACE}/Ace/Model.pm
+${P5ACE}/Ace/Object/
+${P5ACE}/Ace/Object.pm
+${P5ACE}/Ace/Object/Wormbase.pm
+${P5ACE}/Ace/Sequence/
+${P5ACE}/Ace/Sequence.pm
+${P5ACE}/Ace/Sequence/Feature.pm
+${P5ACE}/Ace/Sequence/FeatureList.pm
+${P5ACE}/Ace/Sequence/GappedAlignment.pm
+${P5ACE}/Ace/Sequence/Gene.pm
+${P5ACE}/Ace/Sequence/Homol.pm
+${P5ACE}/Ace/Sequence/Multi.pm
+${P5ACE}/Ace/Sequence/Transcript.pm
+${P5ACE}/Ace/SocketServer.pm
+${P5ACE}/GFF/
+${P5ACE}/GFF/Filehandle.pm
+${P5ACE}/auto/
+${P5ACE}/auto/Ace/
+${P5ACE}/auto/Ace/Object/
+${P5ACE}/auto/Ace/Object/_asAce.al
+${P5ACE}/auto/Ace/Object/_asHTML.al
+${P5ACE}/auto/Ace/Object/_asTable.al
+${P5ACE}/auto/Ace/Object/_asXML.al
+${P5ACE}/auto/Ace/Object/_default_makeHTML.al
+${P5ACE}/auto/Ace/Object/_insert.al
+${P5ACE}/auto/Ace/Object/_special_dump.al
+${P5ACE}/auto/Ace/Object/_to_ace_date.al
+${P5ACE}/auto/Ace/Object/add_row.al
+${P5ACE}/auto/Ace/Object/add_tree.al
+${P5ACE}/auto/Ace/Object/asAce.al
+${P5ACE}/auto/Ace/Object/asDNA.al
+${P5ACE}/auto/Ace/Object/asGif.al
+${P5ACE}/auto/Ace/Object/asHTML.al
+${P5ACE}/auto/Ace/Object/asPeptide.al
+${P5ACE}/auto/Ace/Object/asString.al
+${P5ACE}/auto/Ace/Object/asTable.al
+${P5ACE}/auto/Ace/Object/asXML.al
+${P5ACE}/auto/Ace/Object/autosplit.ix
+${P5ACE}/auto/Ace/Object/comment.al
+${P5ACE}/auto/Ace/Object/commit.al
+${P5ACE}/auto/Ace/Object/date_style.al
+${P5ACE}/auto/Ace/Object/debug.al
+${P5ACE}/auto/Ace/Object/delete.al
+${P5ACE}/auto/Ace/Object/escapeXML.al
+${P5ACE}/auto/Ace/Object/isComment.al
+${P5ACE}/auto/Ace/Object/kill.al
+${P5ACE}/auto/Ace/Object/replace.al
+${P5ACE}/auto/Ace/Object/rollback.al
+${P5ACE}/auto/Ace/Object/tags.al
+${P5ACE}/auto/Ace/Object/timestamp.al
+${P5ACE}/auto/Ace/Sequence/
+${P5ACE}/auto/Ace/Sequence/Feature/
+${P5ACE}/auto/Ace/Sequence/Feature/autosplit.ix
+${P5ACE}/auto/Ace/Sequence/autosplit.ix
+${P5ACE}/auto/Ace/_register_iterator.al
+${P5ACE}/auto/Ace/_restore_iterator.al
+${P5ACE}/auto/Ace/_save_iterator.al
+${P5ACE}/auto/Ace/_unregister_iterator.al
+${P5ACE}/auto/Ace/auto_save.al
+${P5ACE}/auto/Ace/autosplit.ix
+${P5ACE}/auto/Ace/class_count.al
+${P5ACE}/auto/Ace/classes.al
+${P5ACE}/auto/Ace/count.al
+${P5ACE}/auto/Ace/date.al
+${P5ACE}/auto/Ace/date_style.al
+${P5ACE}/auto/Ace/datetime.al
+${P5ACE}/auto/Ace/fetch_many.al
+${P5ACE}/auto/Ace/find.al
+${P5ACE}/auto/Ace/freeprotect.al
+${P5ACE}/auto/Ace/grep.al
+${P5ACE}/auto/Ace/layout.al
+${P5ACE}/auto/Ace/new.al
+${P5ACE}/auto/Ace/parse.al
+${P5ACE}/auto/Ace/parse_file.al
+${P5ACE}/auto/Ace/parse_longtext.al
+${P5ACE}/auto/Ace/pick.al
+${P5ACE}/auto/Ace/ping.al
+${P5ACE}/auto/Ace/put.al
+${P5ACE}/auto/Ace/split.al
+${P5ACE}/auto/Ace/status.al
+${P5ACE}/auto/Ace/timestamps.al
+${P5ACE}/auto/Ace/title.al
+${P5ACE}/auto/Ace/version.al
+%%opt%%
+@man man/man1/ace.pl.1
+@man man/man3p/Ace.3p
+@man man/man3p/Ace::Browser::AceSubs.3p
+@man man/man3p/Ace::Browser::SearchSubs.3p
+@man man/man3p/Ace::Browser::SiteDefs.3p
+@man man/man3p/Ace::Graphics::Fk.3p
+@man man/man3p/Ace::Graphics::Glyph.3p
+@man man/man3p/Ace::Graphics::Glyph::anchored_arrow.3p
+@man man/man3p/Ace::Graphics::Glyph::arrow.3p
+@man man/man3p/Ace::Graphics::Glyph::box.3p
+@man man/man3p/Ace::Graphics::Glyph::dot.3p
+@man man/man3p/Ace::Graphics::Glyph::ex.3p
+@man man/man3p/Ace::Graphics::Glyph::graded_segments.3p
+@man man/man3p/Ace::Graphics::Glyph::group.3p
+@man man/man3p/Ace::Graphics::Glyph::line.3p
+@man man/man3p/Ace::Graphics::Glyph::primers.3p
+@man man/man3p/Ace::Graphics::Glyph::segments.3p
+@man man/man3p/Ace::Graphics::Glyph::span.3p
+@man man/man3p/Ace::Graphics::Glyph::toomany.3p
+@man man/man3p/Ace::Graphics::Glyph::transcript.3p
+@man man/man3p/Ace::Graphics::Glyph::triangle.3p
+@man man/man3p/Ace::Graphics::GlyphFactory.3p
+@man man/man3p/Ace::Graphics::Panel.3p
+@man man/man3p/Ace::Graphics::Track.3p
+@man man/man3p/Ace::Iterator.3p
+@man man/man3p/Ace::Local.3p
+@man man/man3p/Ace::Model.3p
+@man man/man3p/Ace::Object.3p
+@man man/man3p/Ace::Sequence.3p
+@man man/man3p/Ace::Sequence::Feature.3p
+@man man/man3p/Ace::Sequence::FeatureList.3p
+@man man/man3p/Ace::Sequence::GappedAlignment.3p
+@man man/man3p/Ace::Sequence::Gene.3p
+@man man/man3p/Ace::Sequence::Homol.3p
+@man man/man3p/Ace::Sequence::Multi.3p
+@man man/man3p/Ace::Sequence::Transcript.3p

@@ -1,0 +1,13 @@
+AcePerl is a Perl interface for the ACEDB object-oriented database.  
+
+Designed specifically for use in genome sequencing projects, 
+ACEDB provides powerful modeling and management services for 
+biological and laboratory data.  
+
+For others, it is a good open source introduction to the world of 
+object-oriented databases
+
+Flavors:
+	opt (shared architectures only): package with optimized compiled
+	access.
+
