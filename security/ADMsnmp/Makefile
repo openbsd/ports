@@ -1,38 +1,39 @@
-# Makefile for:		ADMsnmp
-# Version required:	0.1
-# Date created:		14 Mar 1999
-# Whom:			dugsong@monkey.org
-#
-# $OpenBSD: Makefile,v 1.14 2002/03/21 21:25:51 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/03/24 07:55:54 jsyn Exp $
 
-COMMENT=	"SNMP audit scanner"
+COMMENT=		"SNMP audit scanner"
 
-PKGNAME=	ADMsnmp-0.1
-DISTNAME=	ADMsnmp.0.1
+DISTNAME=       	ADMsnmp.0.1
+PKGNAME=        	ADMsnmp-0.1
+CATEGORIES=		security
+NEED_VERSION=		1.515
+EXTRACT_SUFX=		.tgz
 
-CATEGORIES=	security
-NEED_VERSION=	1.515
+MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
-MASTER_SITES=	http://el8.org/~antilove/ \
-		ftp://ADM.isp.at/ADM/ \
-		http://ADM.isp.at/ADM/
+PERMIT_PACKAGE_CDROM=   "no license"
+PERMIT_PACKAGE_FTP=     "no license"
+PERMIT_DISTFILES_CDROM= "no license"
+PERMIT_DISTFILES_FTP=   "no license"
 
-MAINTAINER=	Dug Song <dugsong@monkey.org>
+MASTER_SITES=		ftp://adm.freelsd.net/pub/ADM/ \
+			http://adm.freelsd.net/ADM/ \
+			${MASTER_SITE_PACKETSTORM}
+MASTER_SITE_SUBDIR=	groups/ADM
 
-# License: NONE
-PERMIT_PACKAGE_CDROM=	"no license"
-PERMIT_PACKAGE_FTP=	"no license"
-PERMIT_DISTFILES_CDROM=	"no license"
-PERMIT_DISTFILES_FTP=	"no license"
+WRKDIST=		${WRKDIR}/ADMsnmp
 
-WRKDIST=	${WRKDIR}/ADMsnmp
+NO_REGRESS=		Yes
 
 do-build:
-		cd ${WRKSRC} ; ${CC} ${CFLAGS} -o ADMsnmp snmp.c
+	cd ${WRKSRC} ; ${CC} ${CFLAGS} \
+		-DPORTSHAREDIR="${TRUEPREFIX}/share/ADMsnmp" \
+		-o ADMsnmp snmp.c
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/ADMsnmp ${PREFIX}/bin
-		${INSTALL_DATA_DIR} ${PREFIX}/lib/ADMsnmp
-		${INSTALL_DATA} ${WRKSRC}/snmp.passwd ${PREFIX}/lib/ADMsnmp
+	${INSTALL_PROGRAM} ${WRKSRC}/ADMsnmp ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/ADMsnmp
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ADMsnmp
+	${INSTALL_DATA} ${WRKSRC}/snmp.passwd ${PREFIX}/share/ADMsnmp
+	${INSTALL_DATA} ${WRKSRC}/ADMsnmp.README ${PREFIX}/share/doc/ADMsnmp
 
 .include <bsd.port.mk>
