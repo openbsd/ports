@@ -1,4 +1,4 @@
-V?=		4.0.5
+V?=		4.0.6
 
 CATEGORIES?=	x11 x11/xfce4 x11/xfce4/desktop
 

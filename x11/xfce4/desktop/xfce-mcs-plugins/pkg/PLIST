@@ -1,13 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/04/18 00:28:57 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/07/11 23:33:38 jolan Exp $
 lib/xfce4/mcs-plugins/keyboard_plugin.a
 lib/xfce4/mcs-plugins/keyboard_plugin.la
-lib/xfce4/mcs-plugins/keyboard_plugin.so
 lib/xfce4/mcs-plugins/mouse_plugin.a
 lib/xfce4/mcs-plugins/mouse_plugin.la
-lib/xfce4/mcs-plugins/mouse_plugin.so
 lib/xfce4/mcs-plugins/ui_plugin.a
 lib/xfce4/mcs-plugins/ui_plugin.la
-lib/xfce4/mcs-plugins/ui_plugin.so
 share/locale/ar/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/az/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/bg/LC_MESSAGES/xfce-mcs-plugins.mo
@@ -16,6 +13,8 @@ share/locale/cs/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/de/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/es/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/es_MX/LC_MESSAGES/xfce-mcs-plugins.mo
+share/locale/et/LC_MESSAGES/xfce-mcs-plugins.mo
+share/locale/eu/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/fa_IR/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/fi/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/fr/LC_MESSAGES/xfce-mcs-plugins.mo
@@ -49,5 +48,6 @@ share/xfce4/doc/fr/images/keyboard_settings.png
 share/xfce4/doc/fr/images/mouse_settings.png
 share/xfce4/doc/fr/images/user_interface_settings.png
 share/xfce4/doc/fr/xfce-mcs-plugins.html
+%%SHARED%%
 @dirrm lib/xfce4/mcs-plugins
 @dirrm lib/xfce4

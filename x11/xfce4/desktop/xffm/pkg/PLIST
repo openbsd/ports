@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/04/18 00:28:58 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/07/11 23:33:39 jolan Exp $
 bin/fgr
 bin/scramble
 bin/xfapps
@@ -13,18 +13,27 @@ bin/xfglob4
 bin/xfsamba4
 bin/xftrash4
 bin/xftree4
+lib/libxffm.a
 lib/libxffm.la
+lib/libxffm_actions.a
 lib/libxffm_actions.la
+lib/libxffm_apps.a
 lib/libxffm_apps.la
+lib/libxffm_book.a
 lib/libxffm_book.la
+lib/libxffm_calls.a
 lib/libxffm_calls.la
+lib/libxffm_fgr.a
 lib/libxffm_fgr.la
+lib/libxffm_fstab.a
 lib/libxffm_fstab.la
+lib/libxffm_tubo.a
 lib/libxffm_tubo.la
+lib/libxffmsmb.a
 lib/libxffmsmb.la
 lib/pkgconfig/xffm-1.0.pc
+lib/xfce4/mcs-plugins/libxffmsettings.a
 lib/xfce4/mcs-plugins/libxffmsettings.la
-lib/xfce4/mcs-plugins/libxffmsettings.so
 man/man1/fgr.1
 share/locale/ar/LC_MESSAGES/xffm.mo
 share/locale/az/LC_MESSAGES/xffm.mo
@@ -34,6 +43,8 @@ share/locale/cs/LC_MESSAGES/xffm.mo
 share/locale/de/LC_MESSAGES/xffm.mo
 share/locale/es/LC_MESSAGES/xffm.mo
 share/locale/es_MX/LC_MESSAGES/xffm.mo
+share/locale/et/LC_MESSAGES/xffm.mo
+share/locale/eu/LC_MESSAGES/xffm.mo
 share/locale/fa_IR/LC_MESSAGES/xffm.mo
 share/locale/fr/LC_MESSAGES/xffm.mo
 share/locale/hi/LC_MESSAGES/xffm.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/04/18 00:28:57 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/07/11 23:33:38 jolan Exp $
 bin/xfce4-panel
 include/xfce4/panel/controls.h
 include/xfce4/panel/global.h
@@ -11,24 +11,25 @@ include/xfce4/panel/plugins.h
 include/xfce4/panel/xfce.h
 include/xfce4/panel/xfce_support.h
 lib/pkgconfig/xfce4-panel-1.0.pc
+lib/xfce4/mcs-plugins/libxfce4settings.a
 lib/xfce4/mcs-plugins/libxfce4settings.la
-lib/xfce4/mcs-plugins/libxfce4settings.so
+lib/xfce4/panel-plugins/libclock.a
 lib/xfce4/panel-plugins/libclock.la
-lib/xfce4/panel-plugins/libclock.so
+lib/xfce4/panel-plugins/libmailcheck.a
 lib/xfce4/panel-plugins/libmailcheck.la
-lib/xfce4/panel-plugins/libmailcheck.so
+lib/xfce4/panel-plugins/libpager.a
 lib/xfce4/panel-plugins/libpager.la
-lib/xfce4/panel-plugins/libpager.so
+lib/xfce4/panel-plugins/libseparator.a
 lib/xfce4/panel-plugins/libseparator.la
-lib/xfce4/panel-plugins/libseparator.so
+lib/xfce4/panel-plugins/libswitcher.a
 lib/xfce4/panel-plugins/libswitcher.la
-lib/xfce4/panel-plugins/libswitcher.so
+lib/xfce4/panel-plugins/libsystembuttons.a
 lib/xfce4/panel-plugins/libsystembuttons.la
-lib/xfce4/panel-plugins/libsystembuttons.so
 share/examples/xfce4-panel/xfce4rc
 share/examples/xfce4-panel/xfce4rc.ar
 share/examples/xfce4-panel/xfce4rc.az
 share/examples/xfce4-panel/xfce4rc.ca
+share/examples/xfce4-panel/xfce4rc.fr
 share/examples/xfce4-panel/xfce4rc.hu
 share/examples/xfce4-panel/xfce4rc.it
 share/examples/xfce4-panel/xfce4rc.nl
@@ -41,6 +42,8 @@ share/locale/cs/LC_MESSAGES/xfce4-panel.mo
 share/locale/de/LC_MESSAGES/xfce4-panel.mo
 share/locale/es/LC_MESSAGES/xfce4-panel.mo
 share/locale/es_MX/LC_MESSAGES/xfce4-panel.mo
+share/locale/et/LC_MESSAGES/xfce4-panel.mo
+share/locale/eu/LC_MESSAGES/xfce4-panel.mo
 share/locale/fa_IR/LC_MESSAGES/xfce4-panel.mo
 share/locale/fi/LC_MESSAGES/xfce4-panel.mo
 share/locale/fr/LC_MESSAGES/xfce4-panel.mo
@@ -217,6 +220,7 @@ share/xfce4/themes/XFce/terminal.xpm
 share/xfce4/themes/XFce/trash_empty.xpm
 share/xfce4/themes/XFce/trash_full.xpm
 share/xfce4/themes/XFce/unknown.xpm
+%%SHARED%%
 @dirrm share/xfce4/themes/XFce
 @dirrm share/xfce4/themes/Noia
 @dirrm share/xfce4/themes/Gnome

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/02/28 01:23:01 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2004/07/11 23:33:39 jolan Exp $
 
 COMMENT=	"xfce4 file manager"
 DISTNAME=	xffm-${V}
@@ -18,5 +18,7 @@ LIB_DEPENDS=	${GTK2} \
 RUN_DEPENDS=	${MCSMANG}
 BUILD_DEPENDS=	${PKG} \
 		${RUN_DEPENDS}
+
+USE_LIBTOOL=	yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/01/09 01:27:42 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2004/07/11 23:33:38 jolan Exp $
 
 COMMENT=	"xfce4 panel"
 DISTNAME=	xfce4-panel-${V}
@@ -12,5 +12,7 @@ LIB_DEPENDS=	${GTK2} \
 RUN_DEPENDS=	${MCSMANG}
 BUILD_DEPENDS=	${PKG} \
 		${RUN_DEPENDS}
+
+USE_LIBTOOL=	yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/22 21:48:00 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/07/11 23:33:39 jolan Exp $
 include/xfce4/libxfcegui4/dialogs.h
 include/xfce4/libxfcegui4/gtk_style.h
 include/xfce4/libxfcegui4/gtktoxevent.h
@@ -26,6 +26,7 @@ include/xfce4/libxfcegui4/xfce_iconbutton.h
 include/xfce4/libxfcegui4/xfce_marshal.h
 include/xfce4/libxfcegui4/xfce_menubutton.h
 include/xfce4/libxfcegui4/xfce_movehandler.h
+include/xfce4/libxfcegui4/xfce_scaled_image.h
 include/xfce4/libxfcegui4/xfce_systemtray.h
 include/xfce4/libxfcegui4/xfce_togglebutton.h
 include/xfce4/libxfcegui4/xinerama.h
