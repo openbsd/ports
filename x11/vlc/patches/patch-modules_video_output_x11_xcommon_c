@@ -1,4 +1,4 @@
-$OpenBSD: patch-modules_video_output_x11_xcommon_c,v 1.1 2003/08/22 20:51:49 espie Exp $
+$OpenBSD: patch-modules_video_output_x11_xcommon_c,v 1.2 2003/08/22 21:32:46 espie Exp $
 --- modules/video_output/x11/xcommon.c.orig	2003-08-13 20:39:52.000000000 +0200
 +++ modules/video_output/x11/xcommon.c	2003-08-22 22:38:41.000000000 +0200
 @@ -75,8 +75,13 @@
@@ -27,18 +27,6 @@ $OpenBSD: patch-modules_video_output_x11_xcommon_c,v 1.1 2003/08/22 20:51:49 esp
  {
      vout_thread_t *p_vout = (vout_thread_t *)p_this;
      char *       psz_display;
-@@ -136,6 +145,11 @@ int E_(Activate) ( vlc_object_t *p_this 
-     vlc_bool_t   b_chroma = 0;
- #endif
- 
-+#ifdef MODULE_NAME_IS_xvideo
-+    printf("I am xvideo\n");
-+#endif
-+	
-+    printf("Very early message\n");
-     p_vout->pf_init = InitVideo;
-     p_vout->pf_end = EndVideo;
-     p_vout->pf_manage = ManageVideo;
 @@ -281,7 +295,11 @@ int E_(Activate) ( vlc_object_t *p_this 
   *****************************************************************************
   * Terminate an output method created by Open
