@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2002/03/23 22:05:48 lebel Exp $
+# $OpenBSD: Makefile,v 1.30 2002/05/02 06:41:38 jakob Exp $
 
 COMMENT=	Berkeley Internet Name Daemon
 
-VERSION=	9.2.0
+VERSION=	9.2.1
 DISTNAME=	bind-${VERSION}
 CATEGORIES=	net
 NEED_VERSION=	1.499
@@ -36,6 +36,8 @@ CONFIGURE_ARGS+=	--with-libtool ${CONFIGURE_SHARED} \
 			--with-openssl="/usr"
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}
+
+REGRESS_TARGE=	test
 
 FLAVORS=		debug static threads
 FLAVOR?=

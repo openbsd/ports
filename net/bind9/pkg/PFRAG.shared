@@ -1,8 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2001/11/26 23:25:18 jakob Exp $
-lib/libbind.so.0.0
-lib/libdns.so.5.0
-lib/libisc.so.4.0
-lib/libisccc.so.0.0
-lib/libisccfg.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.8 2002/05/02 06:41:38 jakob Exp $
+lib/libbind.so.0.1
+lib/libdns.so.8.0
+lib/libisc.so.5.0
+lib/libisccc.so.0.1
+lib/libisccfg.so.0.3
 lib/liblwres.so.2.0
 DYNLIBDIR(%D/lib)
