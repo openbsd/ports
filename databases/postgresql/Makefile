@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2001/08/07 13:25:50 brad Exp $
+# $OpenBSD: Makefile,v 1.51 2001/08/23 16:29:55 peter Exp $
 
 COMMENT=	"PostgreSQL RDBMS"
 COMMENT-clients="PostgreSQL RDBMS client libraries and utilities"
@@ -29,7 +29,7 @@ MASTER_SITES=	\
 		ftp://www.ndesign.com.ua/pub/psql/v${VERSION}/ \
 		ftp://looking-glass.usask.ca/pub/postgresql/v${VERSION}/ \
 		ftp://ftp.iodynamics.com/pub/mirror/postgresql/v${VERSION}/ \
-		ftp://postgresql.rmplc.co.uk/pub/postgresqlv${VERSION}/ \
+		ftp://postgresql.rmplc.co.uk/pub/postgresql/v${VERSION}/ \
 		ftp://ftp.fhl.net/pub/postgresql/v${VERSION}/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/v${VERSION}/ \
 		ftp://postgresql.godzone.net.nz/postgresql/v${VERSION}/ \
