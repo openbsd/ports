@@ -1,6 +1,7 @@
---- socketp.c.orig	Sat Aug  8 21:41:42 1992
-+++ socketp.c	Fri Mar 31 17:08:21 2000
-@@ -11,10 +11,16 @@
+$OpenBSD: patch-socketp.c,v 1.2 2002/04/17 21:38:11 naddy Exp $
+--- socketp.c.orig	Sun Aug  9 03:41:42 1992
++++ socketp.c	Wed Apr 17 23:20:31 2002
+@@ -11,10 +11,16 @@ Please read the file COPYRIGHT for furth
  #include <sys/socket.h>
  #include <sys/errno.h>
  #include <netinet/in.h>
@@ -17,7 +18,7 @@
  /*
   * create a server socket on PORT accepting QUEUE_LENGTH connections
   */
-@@ -52,7 +58,7 @@
+@@ -52,7 +58,7 @@ int port ;
  {
      struct sockaddr_in sa ;
      struct hostent *hp ;
@@ -26,7 +27,7 @@
      long addr ;
  
  
-@@ -76,7 +82,7 @@
+@@ -76,7 +82,7 @@ int port ;
      if ((s = socket(sa.sin_family, SOCK_STREAM, 0)) < 0) { /* get socket */
  	return -1 ;
      }

@@ -1,6 +1,7 @@
---- socket.c.orig	Wed Sep  9 10:14:34 1992
-+++ socket.c	Fri Mar 31 17:08:21 2000
-@@ -18,6 +18,8 @@
+$OpenBSD: patch-socket.c,v 1.2 2002/04/17 21:38:11 naddy Exp $
+--- socket.c.orig	Wed Sep  9 16:14:34 1992
++++ socket.c	Wed Apr 17 23:20:31 2002
+@@ -18,6 +18,8 @@ Please read the file COPYRIGHT for furth
  #else
  #include <string.h>
  #endif
@@ -9,7 +10,7 @@
  #include "globals.h"
  
  /* global variables */
-@@ -37,6 +39,8 @@
+@@ -37,6 +39,8 @@ char *pipe_program = NULL ;	/* program t
  void server A((int port, char *service_name)) ;
  void handle_server_connection A((void)) ;
  void client A((char *host, int port, char *service_name)) ;
@@ -18,7 +19,7 @@
  
  int main(argc, argv)
  int argc ;
-@@ -46,7 +50,7 @@
+@@ -46,7 +50,7 @@ char **argv ;
      int opt ;			/* option character */
      int error = 0 ;		/* usage error occurred */
      extern int optind ;		/* from getopt() */
@@ -27,7 +28,7 @@
      int port ;			/* port number for socket */
      char *service_name ;	/* name of service for port */
  
-@@ -58,7 +62,7 @@
+@@ -58,7 +62,7 @@ char **argv ;
  
      /* set up progname for later use */
      progname = argv[0] ;
@@ -36,7 +37,7 @@
  
      /* parse options */
      while ((opt = getopt(argc, argv, "bcflp:qrsvw?")) != -1) {
-@@ -185,15 +189,15 @@
+@@ -185,15 +189,15 @@ char *service_name ;
  		long norder ;
  		char dotted[20] ;
  
