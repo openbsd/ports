@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpeglib_example_yaf_yafvorbis_Makefile_in,v 1.8 2004/02/01 23:59:17 espie Exp $
+--- mpeglib/example/yaf/yafvorbis/Makefile.in.orig	2004-01-31 23:25:12.000000000 +0100
++++ mpeglib/example/yaf/yafvorbis/Makefile.in	2004-01-31 23:25:42.000000000 +0100
+@@ -387,7 +387,7 @@ yaf_vorbis_SOURCES = vorbis_control.cpp
+ 
+ noinst_HEADERS = 
+ 
+-yaf_vorbis_LDFLAGS = $(all_libraries) 
++yaf_vorbis_LDFLAGS = $(all_libraries) -pthread
+ 
+ yaf_vorbis_LDADD = \
+ 				../yafcore/libyafcore.la \

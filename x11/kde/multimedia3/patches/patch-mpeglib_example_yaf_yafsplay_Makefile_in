@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpeglib_example_yaf_yafsplay_Makefile_in,v 1.8 2004/02/01 23:59:17 espie Exp $
+--- mpeglib/example/yaf/yafsplay/Makefile.in.orig	2004-01-31 23:25:12.000000000 +0100
++++ mpeglib/example/yaf/yafsplay/Makefile.in	2004-01-31 23:25:31.000000000 +0100
+@@ -387,7 +387,7 @@ yaf_splay_SOURCES = splay_control.cpp
+ 
+ noinst_HEADERS = 
+ 
+-yaf_splay_LDFLAGS = $(all_libraries)
++yaf_splay_LDFLAGS = $(all_libraries) -pthread
+ 
+ yaf_splay_LDADD = ../yafxplayer/libyafxplayer.la \
+ 				../yafcore/libyafcore.la \

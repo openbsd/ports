@@ -1,0 +1,25 @@
+$OpenBSD: patch-kscd_libwm_plat_openbsd_c,v 1.3 2004/02/01 23:59:17 espie Exp $
+--- kscd/libwm/plat_openbsd.c.orig	2004-02-01 00:05:09.000000000 +0100
++++ kscd/libwm/plat_openbsd.c	2004-02-01 00:08:59.000000000 +0100
+@@ -129,10 +129,9 @@ wmcd_open(struct wm_drive *d)
+   
+   find_drive_struct(vendor, model, rev);
+   
+-  (d->init)(d);
+-  
+   d->fd = fd;
+-  
++  if (d->proto->gen_init)
++  	return (d->proto->gen_init)(d);
+   return (0);
+ } /* wmcd_open() */
+ 
+@@ -316,7 +315,7 @@ gen_get_cdlen(struct wm_drive *d, int *f
+  * Play the CD from one position to another (both in frames.)
+  */
+ int
+-gen_play(struct wm_drive *d, int start, int end)
++gen_play(struct wm_drive *d, int start, int end, int realstart)
+ {
+   struct ioc_play_msf	msf;
+   

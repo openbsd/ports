@@ -1,0 +1,19 @@
+$OpenBSD: patch-mpeglib_example_splay_Makefile_in,v 1.8 2004/02/01 23:59:17 espie Exp $
+--- mpeglib/example/splay/Makefile.in.orig	2004-01-31 23:13:08.000000000 +0100
++++ mpeglib/example/splay/Makefile.in	2004-01-31 23:14:47.000000000 +0100
+@@ -389,13 +389,13 @@ mp3framing_SOURCES = mp3framing.cpp
+ 
+ noinst_HEADERS = 
+ 
+-splay_LDFLAGS = $(all_libraries) 
++splay_LDFLAGS = $(all_libraries) -pthread
+ 
+ splay_LDADD = ../../lib/libmpeg.la \
+ 				$(THIS_LIB_LIBS)
+ 
+ 
+-mp3framing_LDFLAGS = $(all_libraries)
++mp3framing_LDFLAGS = $(all_libraries) -pthread
+ mp3framing_LDADD = ../../lib/libmpeg.la \
+ 				$(THIS_LIB_LIBS)
+ 

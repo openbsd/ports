@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpeglib_example_cddaplay_Makefile_in,v 1.8 2004/02/01 23:59:17 espie Exp $
+--- mpeglib/example/cddaplay/Makefile.in.orig	2004-01-31 23:19:37.000000000 +0100
++++ mpeglib/example/cddaplay/Makefile.in	2004-01-31 23:19:45.000000000 +0100
+@@ -387,7 +387,7 @@ cddaplay_SOURCES = cddaplay.cpp
+ 
+ noinst_HEADERS = 
+ 
+-cddaplay_LDFLAGS = $(all_libraries) 
++cddaplay_LDFLAGS = $(all_libraries) -pthread
+ 
+ cddaplay_LDADD = ../../lib/libmpeg.la \
+ 				$(THIS_LIB_LIBS)

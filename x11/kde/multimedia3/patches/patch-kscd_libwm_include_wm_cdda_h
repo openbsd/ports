@@ -1,0 +1,11 @@
+$OpenBSD: patch-kscd_libwm_include_wm_cdda_h,v 1.1 2004/02/01 23:59:17 espie Exp $
+--- kscd/libwm/include/wm_cdda.h.orig	2004-02-01 00:03:07.000000000 +0100
++++ kscd/libwm/include/wm_cdda.h	2004-02-01 00:03:20.000000000 +0100
+@@ -80,6 +80,7 @@ struct cdda_device {
+  */
+ 
+ #ifdef HAVE_MACHINE_ENDIAN_H
++	#include <sys/types.h>
+ 	#include <machine/endian.h>
+ 	#if BYTE_ORDER == LITTLE_ENDIAN
+ 		#define WM_LITTLE_ENDIAN 1

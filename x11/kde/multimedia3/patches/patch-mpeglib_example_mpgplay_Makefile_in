@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpeglib_example_mpgplay_Makefile_in,v 1.8 2004/02/01 23:59:17 espie Exp $
+--- mpeglib/example/mpgplay/Makefile.in.orig	2004-01-31 23:12:46.000000000 +0100
++++ mpeglib/example/mpgplay/Makefile.in	2004-01-31 23:13:03.000000000 +0100
+@@ -387,7 +387,7 @@ mpgplay_SOURCES = mpgplay.cpp
+ 
+ noinst_HEADERS = 
+ 
+-mpgplay_LDFLAGS = $(all_libraries) 
++mpgplay_LDFLAGS = $(all_libraries) -pthread
+ 
+ mpgplay_LDADD = ../../lib/libmpeg.la \
+ 				$(THIS_LIB_LIBS)

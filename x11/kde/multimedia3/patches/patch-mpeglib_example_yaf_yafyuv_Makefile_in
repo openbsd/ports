@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpeglib_example_yaf_yafyuv_Makefile_in,v 1.8 2004/02/01 23:59:17 espie Exp $
+--- mpeglib/example/yaf/yafyuv/Makefile.in.orig	2004-01-31 23:25:12.000000000 +0100
++++ mpeglib/example/yaf/yafyuv/Makefile.in	2004-01-31 23:25:49.000000000 +0100
+@@ -387,7 +387,7 @@ yaf_yuv_SOURCES = yuv_control.cpp
+ 
+ noinst_HEADERS = 
+ 
+-yaf_yuv_LDFLAGS = $(all_libraries)
++yaf_yuv_LDFLAGS = $(all_libraries) -pthread
+ 
+ yaf_yuv_LDADD = ../yafxplayer/libyafxplayer.la \
+ 				../yafcore/libyafcore.la \
