@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2005/01/13 15:57:26 wilfried Exp $
+# $OpenBSD: Makefile,v 1.20 2005/03/02 19:30:18 naddy Exp $
 
-ONLY_FOR_ARCHS=	alpha i386 sparc sparc64 amd64 powerpc
+ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	"redesign of Mozilla's browser component"
 
-VER=		1.0
+VER=		1.0.1
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}p1
+PKGNAME=	mozilla-firefox-${VER}
 
 CATEGORIES=	www
 
@@ -18,13 +18,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xft Xi Xp Xrender Xt c fontconfig freetype \
-			iconv intl m pthread stdc++ z
+			m pthread stdc++ z
 
 MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/${VER}/source/ \
 		http://ftp.mozilla.org/pub/firefox/releases/${VER}/source/
 DISTFILES=	firefox-${VER}-source.tar.bz2
 
-MODULES=	gcc3
+MODULES=	gcc3 devel/gettext
 MODGCC3_ARCHES=	alpha
 MODGCC3_LANGS=	C++
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
@@ -33,8 +33,8 @@ LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
 		glib.1,gmodule.1::devel/glib \
 		IDL.4::devel/ORBit \
 		jpeg.62::graphics/jpeg \
-		png.3::graphics/png \
-		esd.2::audio/esound
+		png.3::graphics/png
+RUN_DEPENDS=	:esound-0.2.*:audio/esound
 
 VMEM_WARNING=	Yes
 
