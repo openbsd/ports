@@ -1,17 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2002/01/28 01:41:52 jsyn Exp $
---- Makefile.in.orig	Tue Mar 13 22:12:22 2001
-+++ Makefile.in	Fri Jun 22 22:56:48 2001
-@@ -10,7 +10,7 @@
- INSTALLLIB = @prefix@/lib
- INSTALLMAN = @prefix@/man
- INSTALL = /usr/bin/install
--TOT_CONFIG_FILE=@prefix@/etc/totd.conf
-+TOT_CONFIG_FILE=${SYSCONFDIR}/totd.conf
- CFLAGS  = @CFLAGS@ @DEFS@  -DTOT_CONFIG_FILE=\"$(TOT_CONFIG_FILE)\" @OPTFLAGS@ $(INCLUDEPATH)
- .if defined(DBMALLOC)
- LIBDEBUG = -L/usr/local/lib -ldbmalloc
-@@ -40,8 +40,8 @@
- 	        ${CC} ${LDFLAGS} -o ${.TARGET} ${OBJS} ${LDADD}
+--- Makefile.in.orig	Thu Feb 28 20:59:47 2002
++++ Makefile.in	Fri Mar 15 13:14:18 2002
+@@ -58,8 +58,8 @@
+ 	        ${CC} ${LDFLAGS} -o ${PROG} ${OBJS} ${LDADD}
  
  install: $(PROG)
 -	$(INSTALL) -c -s -m 0555 -o bin -g bin $(PROG) $(INSTALLDIR)
@@ -19,5 +9,5 @@ $OpenBSD: patch-Makefile_in,v 1.1 2002/01/28 01:41:52 jsyn Exp $
 +	$(INSTALL) -c -s -m 0555 -o bin -g bin $(PROG) $(DESTDIR)$(INSTALLDIR)
 +	$(INSTALL) -c -m 0444 -o root -g wheel $(MAN) $(DESTDIR)$(INSTALLMAN)/man8
  
- depend:
- 	mkdep ${CFLAGS} ${SRCS}
+ lint:
+ 	lint ${SRCS}

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2002/01/28 01:41:52 jsyn Exp $
+# $OpenBSD: Makefile,v 1.16 2002/03/15 03:35:45 itojun Exp $
 # $NetBSD: Makefile,v 1.3 2000/01/21 10:01:23 itojun Exp $
 
 COMMENT=	"DNS proxy that supports IPv6 <==> IPv4 record translation"
 
-DISTNAME=	totd-1.2
+DISTNAME=	totd-1.3
 CATEGORIES=	net
 NEED_VERSION=	1.504
 MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
