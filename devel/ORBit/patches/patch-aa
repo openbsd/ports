@@ -1,5 +1,5 @@
---- src/IIOP/Makefile.in.orig	Mon Aug 30 18:01:50 1999
-+++ src/IIOP/Makefile.in	Thu Sep  9 17:54:46 1999
+--- src/IIOP/Makefile.in.orig	Mon Sep 27 16:38:32 1999
++++ src/IIOP/Makefile.in	Fri Oct  1 19:50:43 1999
 @@ -92,9 +92,7 @@
  VERSION = @VERSION@
  YACC = @YACC@
@@ -19,8 +19,8 @@
 +libIIOP_la_LDFLAGS = -version-info 0:4:0
  
  EXTRA_DIST = IIOP-design.txt
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -125,10 +123,7 @@
+ 
+@@ -127,10 +125,7 @@
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
  LIBS = @LIBS@

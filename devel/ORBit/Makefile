@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 1999/09/22 11:16:56 espie Exp $
+# $OpenBSD: Makefile,v 1.8 1999/10/02 17:54:40 brad Exp $
 
-DISTNAME=	ORBit-0.4.94
+DISTNAME=	ORBit-0.4.96
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= ORBit
 
 NEED_VERSION=	1.73
 
-MAINTAINER=	rohee@openbsd.org
+LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
+		glib.1.2:${PORTSDIR}/devel/glib
 
-LIB_DEPENDS+=	glib.1.2:${PORTSDIR}/devel/glib
+MAINTAINER=	rohee@openbsd.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
