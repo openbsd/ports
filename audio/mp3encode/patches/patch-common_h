@@ -1,11 +1,12 @@
---- common.h.orig	Wed Jan 22 04:43:13 1997
-+++ common.h	Thu Jan 27 00:46:53 2000
+$OpenBSD: patch-common_h,v 1.1 2003/04/14 09:39:18 avsm Exp $
+--- common.h.orig	Wed Jan 22 09:43:13 1997
++++ common.h	Mon Apr 14 10:24:38 2003
 @@ -93,7 +93,7 @@
  #endif
  
  #ifdef  UNIX
 -#define         TABLES_PATH     "tables"  /* to find data files */
-+#define         TABLES_PATH     "ZAP"  /* to find data files */
++#define         TABLES_PATH     "/usr/local/lib/mp3encode"  /* to find data files */
  /* name of environment variable holding path of table files */
  #define         MPEGTABENV      "MPEGTABLES"
  #define         PATH_SEPARATOR  "/"        /* how to build paths */

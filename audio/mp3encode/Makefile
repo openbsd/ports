@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/23 00:37:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2003/04/14 09:39:18 avsm Exp $
 
 COMMENT=	"MPEG layer I, II and III audio file encoder"
 DISTNAME=	dist10
-PKGNAME=	mp3encode-1.10
+PKGNAME=	mp3encode-1.10p1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.sunet.se/pub/multimedia/Berkeley/mpeg2/conformance-bitstreams/audio/mpeg2/software/technical_report/
 
