@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2002/05/16 13:57:49 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/05/16 14:00:23 art Exp $
 
 # May not be hard to add more.
-ONLY_FOR_ARCHS=		i386 macppc
+ONLY_FOR_ARCHS=		i386 macppc sparc64
 
 COMMENT=		"Movie player"
 DISTNAME=		MPlayer-0.90pre4
@@ -24,7 +24,9 @@ MASTER_SITES0=		http://www.sightly.net/mplayer/
 SKIN=		default
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKIN}${EXTRACT_SUFX}:0
 
+.if ${MACHINE_ARCH:Mi386}
 BUILD_DEPENDS=	::devel/binutils/stable
+.endif
 LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
 		gtk,gdk::x11/gtk+ \
@@ -32,7 +34,9 @@ LIB_DEPENDS=	png::graphics/png \
 		mp3lame::audio/lame \
 		ungif::graphics/libungif
 
+.if ${MACHINE_ARCH:Mi386}
 MAKE_ENV=	AR=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/ar
+.endif
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -113,8 +117,10 @@ CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32
 CONFIGURE_ARGS+=--disable-win32
 .endif
 
+.if ${MACHINE_ARCH:Mi386}
 post-patch:
 	@ln -s ${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/as ${WRKDIR}/bin/as
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mplayer/Skin/${SKIN}
