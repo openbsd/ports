@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2001/03/22 00:42:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2001/04/06 10:12:59 wilfried Exp $
 bin/findtr
 bin/moc2
 bin/qt20fix
@@ -953,6 +953,7 @@ share/doc/qt2/changes-2.3.0
 %%SHARED%%
 @dirrm share/doc/qt2
 @dirrm lib/qt2/man/man3
+@dirrm lib/qt2/man/man1
 @dirrm lib/qt2/man
 @dirrm lib/qt2/bin
 @dirrm lib/qt2
