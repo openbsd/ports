@@ -1,7 +1,7 @@
-$OpenBSD: patch-m3config_src_COMMON,v 1.1.1.1 2002/02/23 12:30:15 naddy Exp $
---- m3config/src/COMMON.orig	Wed May  2 18:03:57 2001
-+++ m3config/src/COMMON	Wed May  2 18:23:51 2001
-@@ -312,9 +312,9 @@ proc import_DECPEX() is
+$OpenBSD: patch-m3config_src_COMMON,v 1.2 2003/05/08 01:34:43 naddy Exp $
+--- m3config/src/COMMON.orig	Mon Dec 31 01:00:37 2001
++++ m3config/src/COMMON	Sun May  4 01:48:54 2003
+@@ -316,9 +316,9 @@ proc import_DECPEX() is
  end
  
  proc import_OpenGL() is
@@ -14,7 +14,7 @@ $OpenBSD: patch-m3config_src_COMMON,v 1.1.1.1 2002/02/23 12:30:15 naddy Exp $
  end
  
  proc import_TCP() is
-@@ -602,7 +602,7 @@ readonly Platforms = {
+@@ -606,7 +606,7 @@ readonly Platforms = {
    "NT386"     : [ "WIN32", "32BITS", "i486--nt", ""           ],
    "NT386GNU"  : [ "WIN32", "32BITS", "i486--cygwin32", "T"    ],
    "OKI"       : [ "POSIX", "32BITS", "i860--sysv4.0", ""      ],

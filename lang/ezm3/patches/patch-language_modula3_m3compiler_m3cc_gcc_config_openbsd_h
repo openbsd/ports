@@ -1,10 +1,13 @@
-$OpenBSD: patch-language_modula3_m3compiler_m3cc_gcc_config_openbsd_h,v 1.1.1.1 2002/02/23 12:30:18 naddy Exp $
---- language/modula3/m3compiler/m3cc/gcc/config/openbsd.h.orig	Wed May  2 16:11:00 2001
-+++ language/modula3/m3compiler/m3cc/gcc/config/openbsd.h	Wed May  2 16:11:00 2001
-@@ -0,0 +1,228 @@
+$OpenBSD: patch-language_modula3_m3compiler_m3cc_gcc_config_openbsd_h,v 1.2 2003/05/08 01:34:43 naddy Exp $
+--- language/modula3/m3compiler/m3cc/gcc/config/openbsd.h.orig	Sun May  4 01:48:54 2003
++++ language/modula3/m3compiler/m3cc/gcc/config/openbsd.h	Sun May  4 16:47:56 2003
+@@ -0,0 +1,231 @@
 +#define STANDARD_STARTFILE_PREFIX	"/usr/lib"
 +#define OBSD_CPP_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
-+#define OBSD_LIB_SPEC "%{!shared:-lc%{pthread:_r}%{p:_p}%{!p:%{pg:_p}}}"
++
++/* LIB_SPEC appropriate for OpenBSD.  Include -lpthread if -pthread is
++   specified on the command line. */
++#define OBSD_LIB_SPEC "%{!shared:%{pthread:-lpthread%{p:_p}%{!p:%{pg:_p}}}} %{!shared:-lc%{p:_p}%{!p:%{pg:_p}}}"
 +
 +#ifndef OBSD_HAS_CORRECT_SPECS
 +

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/09/07 14:02:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2003/05/08 01:34:43 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -23,8 +23,9 @@ MASTER_SITES= 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ \
 		ftp://ftp.nectec.or.th/pub/FreeBSD/ \
 		ftp://ftp.dnsbalance.ring.gr.jp/pub/FreeBSD/
 MASTER_SITES:=	${MASTER_SITES:=development/CVSup/ezm3/}
+MASTER_SITES0=	http://grappa.unix-ag.uni-kl.de/~naddy/
 
-DISTFILES=	${DISTNAME}-${M3ARCH}-boot.tar.bz2 \
+DISTFILES=	${DISTNAME}a-${M3ARCH}-boot.tar.bz2:0 \
 		${DISTNAME}-src.tar.bz2
 
 # Ezm3 provides full X11 GUI support even when compiled on systems
