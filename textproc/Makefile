@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.83 2002/08/21 15:44:24 espie Exp $
+# $OpenBSD: Makefile,v 1.84 2002/11/28 12:44:45 naddy Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
      SUBDIR += agrep
      SUBDIR += antiword
      SUBDIR += aspell
+     SUBDIR += boust
      SUBDIR += c2html
      SUBDIR += catdoc
      SUBDIR += catdoc,tk
