@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2001/10/04 13:57:29 espie Exp $
 
 COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
 
+BROKEN=		"does not build in any reproducible way"
 DISTNAME=	lyx-1.1.6fix3
 CATEGORIES=	print
 NEED_VERSION=	1.364
