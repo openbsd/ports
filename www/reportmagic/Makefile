@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2003/10/18 19:44:57 sturm Exp $
-
-BROKEN=		"not functional; needs update"
+# $OpenBSD: Makefile,v 1.6 2004/04/13 19:38:37 naddy Exp $
 
 COMMENT=	"make pretty graphs from Analog logfiles"
 
-VERSION=	2.13
+VERSION=	2.21
 DISTNAME=	rmagic-${VERSION}
-PKGNAME=	reportmagic-${VERSION}p1
+PKGNAME=	reportmagic-${VERSION}
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.reportmagic.org/

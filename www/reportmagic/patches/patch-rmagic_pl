@@ -1,16 +1,13 @@
-$OpenBSD: patch-rmagic_pl,v 1.1.1.1 2002/02/27 01:01:57 naddy Exp $
---- rmagic.pl.orig	Fri Jan 18 10:13:00 2002
-+++ rmagic.pl	Wed Feb 27 01:49:51 2002
-@@ -60,10 +60,11 @@ use File::Path;
- use File::Spec;
+$OpenBSD: patch-rmagic_pl,v 1.2 2004/04/13 19:38:37 naddy Exp $
+--- rmagic.pl.orig	2003-04-02 10:21:00.000000000 +0100
++++ rmagic.pl	2004-04-08 17:49:15.000000000 +0100
+@@ -103,7 +103,9 @@ use File::Spec;
  
- # - Find execution directory
--use FindBin qw($RealBin);
-+#use FindBin qw($RealBin);
-+my $RealBin= '%%PREFIX%%/share/reportmagic/';
  
  # - Add execution directory to lib path, resolving symbolic refs
 -use lib $RealBin;
++#use lib $RealBin;
++$RealBin= '%%PREFIX%%/share/reportmagic/';
 +use lib '%%PREFIX%%/share/reportmagic/';
  
  # - Read INI files

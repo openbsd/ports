@@ -1,16 +1,16 @@
-$OpenBSD: patch-Install_PL,v 1.1.1.1 2002/02/27 01:01:57 naddy Exp $
---- Install.PL.orig	Fri Jan 18 10:13:00 2002
-+++ Install.PL	Wed Feb 27 01:50:29 2002
-@@ -43,7 +43,7 @@ use strict;
+$OpenBSD: patch-Install_PL,v 1.2 2004/04/13 19:38:37 naddy Exp $
+--- Install.PL.orig	2003-04-02 10:21:00.000000000 +0100
++++ Install.PL	2004-04-08 17:49:53.000000000 +0100
+@@ -46,7 +46,7 @@ use strict;
  use File::Copy;
  use File::Path;
  use Cwd;
 -use vars qw( $DEST $DOC $FILE_MODE $EXEC_MODE );
-+use vars qw( $DEST $PERL_DEST $BIN_DEST $DOC $FILE_MODE $EXEC_MODE );
++use vars qw( $DEST $PERL_DEST $BIN_DEST $DOC_DEST $FILE_MODE $EXEC_MODE );
  
  #
  # The following configurations may be made to modify the install
-@@ -56,13 +56,15 @@ use vars qw( $DEST $DOC $FILE_MODE $EXEC
+@@ -59,13 +59,15 @@ use vars qw( $DEST $DOC $FILE_MODE $EXEC
  # example to use the version number in your path. 
  # Make sure this remains in single quotes.
  #
@@ -24,24 +24,35 @@ $OpenBSD: patch-Install_PL,v 1.1.1.1 2002/02/27 01:01:57 naddy Exp $
  # You can use string concatenation, as in this example, 
  # to install the docs below the program.
 -$DOC = $DEST . 'docs/';
-+$DOC = "$ENV{'PREFIX'}/share/doc/reportmagic/";
++$DOC_DEST = "$ENV{'PREFIX'}/share/doc/reportmagic/";
  
  
  #
-@@ -226,10 +228,10 @@ installing the necessary Perl modules no
- #
- unless( defined $args{only_modules} || $err_cnt ) {
- 	chdir( $cwd );
--	print "Installing Report Magic files in $DEST.\n";
-+	print "Installing Report Magic files in $ENV{'TRUEPREFIX'}.\n";
- 		# make sure $DEST exisits
- 		if( !-d $DEST ) {
--			print "... Path does not exits, making it.\n";
-+#			print "... Path does not exits, making it.\n";
- 			mkpath( $DEST );
- 		} # end if
- 		&install( $FILE_MODE, 'README', $DEST ) || $err_cnt++;
-@@ -243,14 +245,14 @@ unless( defined $args{only_modules} || $
+@@ -100,19 +102,19 @@ foreach ( @ARGV ) {
+ 		$args{$k} = $v;
+ 	} else {
+ 		$DEST = $_;
+-		$DOC = $DEST . 'docs/';
++		$DOC_DEST = $DEST . 'docs/';
+ 	} # end if
+ } # end foreach
+ 
+ 
+ # Convert DEST, DOC
+ $DEST =~ s/\$\(VERSION\)/$VERSION/g;
+-$DOC =~ s/\$\(VERSION\)/$VERSION/g;
++$DOC_DEST=~ s/\$\(VERSION\)/$VERSION/g;
+ if( $DEST !~ m#/$# ) {
+ 	$DEST .= '/';
+ } # end if
+-if( $DOC !~ m#/$# ) {
+-	$DOC .= '/';
++if( $DOC_DEST !~ m#/$# ) {
++	$DOC_DEST .= '/';
+ } # end if
+ 
+ # Get CWD for later ('cause CPAN module is poorly behaved!)
+@@ -246,16 +247,16 @@ unless( defined $args{only_modules} || $
  	print "... Installing Report Magic language files.\n";
  		&install( $FILE_MODE, 'lang/', $DEST.'lang/' ) || $err_cnt++;
  	print "... Installing Report Magic program files.\n";
@@ -55,13 +66,20 @@ $OpenBSD: patch-Install_PL,v 1.1.1.1 2002/02/27 01:01:57 naddy Exp $
  	#
  
 -	print "Installing documentation in $DOC.\n";
+-		&install( $FILE_MODE, 'docs/', $DOC ) || $err_cnt++;
+-		&install( $FILE_MODE, 'docs/images/', $DOC.'images/' ) || $err_cnt++;
 +	print "Installing documentation.\n";
- 		&install( $FILE_MODE, 'docs/', $DOC ) || $err_cnt++;
- 		&install( $FILE_MODE, 'docs/images/', $DOC.'images/' ) || $err_cnt++;
++		&install( $FILE_MODE, 'docs/', $DOC_DEST ) || $err_cnt++;
++		&install( $FILE_MODE, 'docs/images/', $DOC_DEST.'images/' ) || $err_cnt++;
  
-@@ -265,8 +267,6 @@ if( $err_cnt ) {
+ } # end unless
+ 
+@@ -266,10 +267,8 @@ if( $err_cnt ) {
+ 	print "correct the situation. Often, by reading the error \n";
+ 	print "messages you can determine what needs to be changed.\n";
  } else {
- 	$DOC = 'docs/' if defined $args{only_modules};
+-	$DOC = 'docs/' if defined $args{only_modules};
++	$DOC_DEST = 'docs/' if defined $args{only_modules};
  	print "\nInstallation complete.\n";
 -	print "For help on using Report Magic see $DOC"."index.html.\n";
 -	print "You must agree to the license agreement at $DOC"."license.html before using Report Magic.\n";
