@@ -1,0 +1,20 @@
+--- configure.orig	Thu Dec  9 23:15:40 1999
++++ configure	Thu Dec  9 23:17:10 1999
+@@ -1136,7 +1136,7 @@
+ ac_given_srcdir=$srcdir
+ ac_given_INSTALL="$INSTALL"
+ 
+-trap 'rm -fr `echo "Makefile bladeenc/Makefile bladeenc/docs/Makefile bladeenc/docs/en/Makefile  config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
++trap 'rm -fr `echo "Makefile bladeenc/Makefile config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
+ EOF
+ cat >> $CONFIG_STATUS <<EOF
+ 
+@@ -1222,7 +1222,7 @@
+ 
+ cat >> $CONFIG_STATUS <<EOF
+ 
+-CONFIG_FILES=\${CONFIG_FILES-"Makefile bladeenc/Makefile bladeenc/docs/Makefile bladeenc/docs/en/Makefile "}
++CONFIG_FILES=\${CONFIG_FILES-"Makefile bladeenc/Makefile"}
+ EOF
+ cat >> $CONFIG_STATUS <<\EOF
+ for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
