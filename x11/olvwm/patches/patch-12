@@ -1,0 +1,35 @@
+--- menu.h.orig	Thu Jan 13 16:40:03 1994
++++ menu.h	Tue Sep 29 22:08:28 1998
+@@ -8,7 +8,7 @@
+ #define _OLWM_MENU_H
+ 
+ #ifdef IDENT
+-#ident "@(#)menu.h	1.4 olvwm version 07 Jan 1994"
++#ident "@(#)menu.h	1.5 olvwm version 09 Feb 1994"
+ #endif
+ 
+ /*
+@@ -56,17 +56,18 @@
+     FuncPtr	callback;	/* function to call when item hit */
+ 				/* NULL if button has pullright */
+ 
++    SemanticAction semantic;	/* semantic action for window menu items */
++
++    FuncPtr	generate_func;	/* If !NULL, called when this button is
++				 * hilighted to re-initialize action.submenu */
++    char	*generate_args;	/* args for generate function */
++
+     union {
+ 	struct _menu *submenu;	/* pointer to the submenu, if has_submenu */
+ 	char	*command;	/* command, if callback is AppMenuFunc */
+ 	void	*other;		/* unspecified */
+     } action;
+ 
+-    SemanticAction semantic;	/* semantic action for window menu items */
+-
+-    FuncPtr	generate_func;	/* If !NULL, called when this button is
+-				 * hilighted to re-initialize action.submenu */
+-    char	*generate_args;	/* args for generate function */
+ }           Button;
+ 
+ /*

@@ -1,0 +1,21 @@
+--- olvwmrc.y.orig	Thu Jan 13 16:46:53 1994
++++ olvwmrc.y	Tue Sep 29 22:08:29 1998
+@@ -526,7 +526,9 @@
+ 	    }
+ %%
+ /* Programs */
++#ifndef YYDEBUG
+ #define YYDEBUG 1
++#endif
+ #include "parse.c"
+ 
+ extern List	*ActiveClientList;
+@@ -577,7 +579,7 @@
+    return(True);
+ }
+ 
+-static char *
++extern char *
+ strexpand(s)
+ char *s;
+ {

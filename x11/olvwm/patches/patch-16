@@ -1,0 +1,33 @@
+--- olwm.c.orig	Thu Jan 13 16:36:12 1994
++++ olwm.c	Tue Sep 29 22:08:30 1998
+@@ -56,6 +56,9 @@
+ 
+ typedef	void	(*VoidFunc)();
+ 
++#ifdef __OpenBSD__
++#define MAXPID 30000
++#endif
+ 
+ /*
+  * Globals
+@@ -182,7 +185,7 @@
+ /*
+  * main	-- parse arguments, perform initialization, call event-loop
+  */
+-void
++int
+ main(argc, argv)
+ 	int argc;
+ 	char **argv;
+@@ -679,7 +682,11 @@
+ #else
+ 	int oldmask;
+ 	int pid;
++#ifndef __FreeBSD__
+ 	union wait status;
++#else
++	int status;
++#endif
+ #endif
+ 
+ 	if (!deadChildren)

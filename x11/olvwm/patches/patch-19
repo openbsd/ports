@@ -1,0 +1,20 @@
+--- resources.c.orig	Thu Jan 13 16:36:14 1994
++++ resources.c	Tue Sep 29 22:08:31 1998
+@@ -5,7 +5,7 @@
+  */
+ 
+ #ifdef IDENT
+-#ident "@(#)resources.c	1.6 olvwm version 07 Jan 1994"
++#ident "@(#)resources.c	1.7 olvwm version 09 Feb 1994"
+ #endif
+ 
+ /*
+@@ -1577,7 +1577,7 @@
+ 	    GRV.lc_ilang.locale ? GRV.lc_ilang.locale : "(null)",
+ 	    GRV.lc_numeric.locale ? GRV.lc_numeric.locale : "(null)",
+ 	    GRV.lc_datefmt.locale ? GRV.lc_datefmt.locale : "(null)");
+-										#endif
++#endif
+ 
+ 
+ /* ===== Updaters ========================================================= */

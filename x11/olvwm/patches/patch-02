@@ -1,0 +1,34 @@
+--- Imakefile.orig	Mon Jan 24 16:45:05 1994
++++ Imakefile	Tue Sep 29 22:12:06 1998
+@@ -45,8 +45,8 @@
+ /**/#MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DIDENT
+ 
+ /**/# For a generic Solaris 2.x system, I'd suggest
+-MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DSVR4 -DSYSV -DIDENT -x O4
+-
++#MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DSVR4 -DSYSV -DIDENT -x O4
++MORECCFLAGS= -DOW_I18N_L3 -DSHAPE -DREGEXP
+ /**/#
+ /**/# Set MORELDFLAGS to any link options you want.  Be sure to add -lxpm if you
+ /**/# want to include XPM support.  For a generic Solaris 1.x
+@@ -54,8 +54,8 @@
+ /**/#MORELDFLAGS=-L${OPENWINHOME}/lib
+ /**/#
+ /**/# For Solaris 2.x, I'd suggest
+-MORELDFLAGS=-L${OPENWINHOME}/lib -R ${OPENWINHOME}/lib -lintl
+-
++#MORELDFLAGS=-L${OPENWINHOME}/lib -R ${OPENWINHOME}/lib -lintl
++MORELDFLAGS=-L${OPENWINHOME}/lib -lcompat
+ 
+ /**/# No more changes needed
+ 
+@@ -139,7 +139,9 @@
+ 	@for i in $(MANPAGES) ;\
+ 	do \
+ 	echo "installing $$i"; \
++	$(RM) $(DESTDIR)$(MANDIR)/`basename $$i .man`.$(MANSUFFIX)* ; \
+ 	$(INSTALL) -c $(INSTMANFLAGS) $$i $(DESTDIR)$(MANDIR)/`basename $$i .man`.$(MANSUFFIX) ; \
++	$(COMPRESSMANCMD) $(DESTDIR)$(MANDIR)/`basename $$i .man`.$(MANSUFFIX) ; \
+ 	done
+ 
+ #include <XView.prog>

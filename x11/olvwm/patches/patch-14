@@ -1,0 +1,51 @@
+--- olvwm.info.orig	Tue Sep 29 22:08:29 1998
++++ olvwm.info	Tue Sep 29 22:08:29 1998
+@@ -0,0 +1,48 @@
++# -----------------------------------------------
++#	olvwm.info	31 October 1991
++#
++#	OpenWindows Version 3
++# -----------------------------------------------
++#	@(#)olvwm.info	1.2 25 Nov 1992
++##########################50######################
++:VDM:
++Virtual Desktop Manager
++
++The Virtual Desktop Manager (VDM) allows you to
++have 1 or more logical desktops one of which may
++be viewed at any time.  Each desktop is
++represented by a region surrounded with
++a dashed line.
++
++The background of the VDM represents the logical
++desktops which you currently have; you can
++increase or reduce this number simply by
++resizing the VDM.  If you make the VDM smaller, 
++the rightmost and bottommost desktops will
++"go away" and you will not be able to access
++any windows in that desktop.  The windows
++themselves are still active, though, and will
++appear if you again make the VDM larger.
++
++The desktop boundaries are not physical
++boundaries; a window can straddle a boundary
++and you can view portions of more that one
++desktop at a time (whatever amount that will
++fit on your screen).  Usually, though, you
++will see a logical boundary between desktops.
++
++To move to another desktop, you can use the arrow
++keys or you can double-click the SELECT button
++inside the VDM at the location you want to go to.
++Pressing MENU in the VDM brings up a menu which
++also allows you to move to a different desktop.
++
++The small windows in the desktop represent each
++frame as it appears on your screen.  In terms of
++window manager actions, they mimic the frame they
++represent:  you can select and move them with
++the SELECT button, you can bring up their
++window menu with the MENU button, you can drop
++items from other tools into them, etc.  All
++actions performed on one of these little
++windows affects the frame the window represents.

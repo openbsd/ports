@@ -1,0 +1,28 @@
+--- Makefile.sunpro.orig	Mon Jan 24 17:31:50 1994
++++ Makefile.sunpro	Tue Sep 29 22:08:26 1998
+@@ -60,7 +60,11 @@
+ #  -DSVR4		Support for System V Release 4 (you must also include
+ #			    	-DSYSV)
+ #  -DXPM		Support the XPM color pixmaps -- requires that you
+-#				have the xpm library somewhere
++#				have the xpm library (version 3.0) somewhere.
++#				If your xpm header isn't in /usr/openwin/include
++#				make sure to add the appropriate -I flag to
++#				MORECCFLAGS.  Also remember to add the
++#				library name to LDFLAGS.
+ #
+ # I haven't tested this on Solaris 1.x, but I'd suggest
+ #MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DIDENT
+@@ -71,10 +75,10 @@
+ #
+ # Set LDFLAGS to any link options you want.  For a generic Solaris 1.x
+ # system, I'd suggest
+-#LDFLAGS=-L${OPENWINHOME}/lib /auto/X11R5/lib/libXpm.a
++#LDFLAGS=-L${OPENWINHOME}/lib
+ #
+ # For Solaris 2.x, I'd suggest
+-LDFLAGS=-L${OPENWINHOME}/lib -R ${OPENWINHOME}/lib -lintl
++LDFLAGS=-L${OPENWINHOME}/lib -R${OPENWINHOME}/lib -lintl
+ 
+ #
+ # Which compiler to use

@@ -1,0 +1,11 @@
+--- st.c.orig	Thu Jan 13 16:36:18 1994
++++ st.c	Tue Sep 29 22:08:32 1998
+@@ -208,7 +208,7 @@
+     }
+ }
+ 
+-static rehash(table)
++extern rehash(table)
+ register st_table *table;
+ {
+     register st_table_entry *ptr, *next, **old_bins = table->bins;

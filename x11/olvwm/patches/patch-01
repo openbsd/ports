@@ -1,0 +1,17 @@
+--- CHANGES.orig	Mon Jan 24 16:43:14 1994
++++ CHANGES	Tue Sep 29 22:08:25 1998
+@@ -1,4 +1,13 @@
+-Version 3.4 fixes and enhancements:
++Version 4.1 fixes:
++    1)  Fixed compilation problems with /usr/ucb/cc on SunOS 4.1.3
++
++    2)  Fixed problems with AutoRaise
++
++    3)  Fixed problems with FreeIconSlots
++
++    4)  Now include olvwm.info and LEGAL_NOTICE
++
++Version 4.0 fixes and enhancements:
+     1) Now based on version 3.2 of olwm; this adds a lot of features
+        defined in the 3.2 olwm man page:  menu accelerators, patterned
+        backgrounds, etc.

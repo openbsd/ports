@@ -1,0 +1,47 @@
+--- mem.c.orig	Thu Jan 13 16:36:08 1994
++++ mem.c	Tue Sep 29 22:08:28 1998
+@@ -18,7 +18,7 @@
+ 
+ 
+ #include <sys/types.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <memory.h>
+ #include <stdio.h>
+ 
+@@ -139,7 +139,7 @@
+ {
+     void       *p;
+ 
+-    if ((p = malloc(sz)) == NULL)
++    if ((p = (int *)malloc(sz)) == NULL)
+       ErrorGeneral(gettext("Memory allocation failure."));
+ 
+ #ifdef MEMDEBUG
+@@ -164,7 +164,7 @@
+ {
+     void       *p;
+ 
+-    if ((p = malloc(sz)) == NULL)
++    if ((p = (int *)malloc(sz)) == NULL)
+ 	ErrorGeneral(GetString("Memory allocation failure."));
+ 
+     memset((char *) p, 0, (int) sz);
+@@ -191,7 +191,7 @@
+ {
+     void       *p;
+ 
+-    if ((p = calloc(num, sz)) == NULL)
++    if ((p = (int *)calloc(num, sz)) == NULL)
+ 	ErrorGeneral(GetString("Memory array allocation failure."));
+ 
+     memset((char *) p, 0, (int) sz * (int) num);
+@@ -210,7 +210,7 @@
+ {
+     void       *t;
+ 
+-    if ((t = realloc(p, sz)) == NULL)
++    if ((t = (int *)realloc(p, sz)) == NULL)
+ 	ErrorGeneral(GetString("Memory array allocation failure."));
+ 
+ #ifdef MEMDEBUG

@@ -1,0 +1,21 @@
+--- evbind.c.orig	Thu Jan 13 16:36:05 1994
++++ evbind.c	Tue Sep 29 22:08:27 1998
+@@ -5,7 +5,7 @@
+  */
+ 
+ #ifdef IDENT
+-#ident	"@(#)evbind.c	1.5 olvwm version 07 Jan 1994"
++#ident	"@(#)evbind.c	1.6 olvwm version 09 Feb 1994"
+ #endif
+ 
+ /*
+@@ -20,7 +20,9 @@
+ #include <sys/types.h>
+ #include <sys/time.h>
+ 
++#ifdef __STDC__
+ #include <X11/Intrinsic.h>
++#endif
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
+ #include <X11/keysym.h>
