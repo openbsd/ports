@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/07/14 23:44:28 jolan Exp $
---- Makefile.in.orig	Thu Jun 26 11:14:04 2003
-+++ Makefile.in	Sat Jul  5 19:30:34 2003
-@@ -345,7 +345,7 @@ install-data-am: install-confDATA
+$OpenBSD: patch-Makefile_in,v 1.2 2004/05/10 00:06:47 brad Exp $
+--- Makefile.in.orig	2003-11-10 17:20:57.000000000 -0500
++++ Makefile.in	2004-05-07 20:47:20.000000000 -0400
+@@ -353,7 +353,7 @@ install-data-am: install-confDATA
  install-data: install-data-recursive
  
  install-am: all-am

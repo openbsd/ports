@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_master_master-settings_h,v 1.1 2003/07/23 06:03:01 jolan Exp $
---- src/master/master-settings.h.orig	Sun May 18 07:26:29 2003
-+++ src/master/master-settings.h	Tue Jul 15 15:18:26 2003
-@@ -53,6 +53,7 @@ struct settings {
+$OpenBSD: patch-src_master_master-settings_h,v 1.2 2004/05/10 00:06:47 brad Exp $
+--- src/master/master-settings.h.orig	2003-08-24 09:11:56.000000000 -0400
++++ src/master/master-settings.h	2004-05-07 20:50:24.000000000 -0400
+@@ -54,6 +54,7 @@ struct settings {
  	unsigned int mbox_dotlock_change_timeout;
  	unsigned int umask;
  	int mail_drop_priv_before_exec;

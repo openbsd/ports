@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.3 2003/08/30 00:11:31 jolan Exp $
---- dovecot-example.conf.orig	2003-06-26 11:11:06.000000000 -0500
-+++ dovecot-example.conf	2003-08-28 20:20:17.000000000 -0500
+$OpenBSD: patch-dovecot-example_conf,v 1.4 2004/05/10 00:06:47 brad Exp $
+--- dovecot-example.conf.orig	2003-11-08 10:21:22.000000000 -0500
++++ dovecot-example.conf	2004-05-07 21:23:23.000000000 -0400
 @@ -1,13 +1,12 @@
  ## Dovecot 1.0 configuration file
  
@@ -76,7 +76,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.3 2003/08/30 00:11:31 jolan Exp $
  
  ##
  ## Mail processes
-@@ -257,6 +256,8 @@ login = pop3
+@@ -261,6 +260,8 @@ login = pop3
  
  # Use mmap() instead of read() to read mail files. read() seems to be a bit
  # faster with my Linux/x86 and it's better with NFS, so that's the default.
@@ -85,7 +85,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.3 2003/08/30 00:11:31 jolan Exp $
  #mail_read_mmaped = no
  
  # Copy mail to another folders using hard links. This is much faster than
-@@ -267,6 +268,12 @@ login = pop3
+@@ -271,6 +272,12 @@ login = pop3
  # If you care about performance, enable it.
  #maildir_copy_with_hardlinks = no
  
@@ -98,7 +98,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.3 2003/08/30 00:11:31 jolan Exp $
  # Check if mails' content has been changed by external programs. This slows
  # down things as extra stat() needs to be called for each file. If changes are
  # noticed, the message is treated as a new message, since IMAP protocol
-@@ -284,7 +291,7 @@ login = pop3
+@@ -288,7 +295,7 @@ login = pop3
  # with is important to avoid deadlocks if other MTAs/MUAs are using both fcntl
  # and flock. Some operating systems don't allow using both of them
  # simultaneously, eg. BSDs. If dotlock is used, it's always created first.
@@ -107,7 +107,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.3 2003/08/30 00:11:31 jolan Exp $
  
  # Should we create dotlock file even when we want only a read-lock? Setting
  # this to yes hurts the performance when the mailbox is accessed simultaneously
-@@ -314,7 +321,7 @@ login = pop3
+@@ -318,7 +325,7 @@ login = pop3
  ##
  
  # Executable location
@@ -116,7 +116,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.3 2003/08/30 00:11:31 jolan Exp $
  
  # Set max. process size in megabytes. Most of the memory goes to mmap()ing
  # files, so it shouldn't harm much even if this limit is set pretty high.
-@@ -322,14 +329,14 @@ login = pop3
+@@ -326,14 +333,14 @@ login = pop3
  
  # Support for dynamically loadable modules.
  #imap_use_modules = no
@@ -133,7 +133,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.3 2003/08/30 00:11:31 jolan Exp $
  
  # Set max. process size in megabytes. Most of the memory goes to mmap()ing
  # files, so it shouldn't harm much even if this limit is set pretty high.
-@@ -337,7 +344,7 @@ login = pop3
+@@ -341,7 +348,7 @@ login = pop3
  
  # Support for dynamically loadable modules.
  #pop3_use_modules = no
@@ -142,16 +142,22 @@ $OpenBSD: patch-dovecot-example_conf,v 1.3 2003/08/30 00:11:31 jolan Exp $
  
  ##
  ## Authentication processes
-@@ -386,10 +393,10 @@ auth_userdb = passwd
+@@ -380,8 +387,7 @@ auth_mechanisms = plain
+ #   vpopmail: vpopmail library
+ #   ldap <config path>: LDAP, see doc/dovecot-ldap.conf
+ #   pgsql <config path>: a PostgreSQL database, see doc/dovecot-pgsql.conf
+-#auth_userdb = passwd
+-auth_userdb = pgsql /usr/local/etc/dovecot-pgsql.conf
++auth_userdb = passwd
+ 
+ # Where password database is kept:
+ #   passwd: /etc/passwd or similiar, using getpwnam()
+@@ -391,7 +397,7 @@ auth_userdb = pgsql /usr/local/etc/dovec
  #   vpopmail: vpopmail authentication
  #   ldap <config path>: LDAP, see doc/dovecot-ldap.conf
  #   pgsql <config path>: a PostgreSQL database, see doc/dovecot-pgsql.conf
--auth_passdb = pam
+-auth_passdb = pgsql /usr/local/etc/dovecot-pgsql.conf
 +auth_passdb = passwd
  
- # Executable location
--#auth_executable = /usr/libexec/dovecot/dovecot-auth
-+#auth_executable = _PREFIX_/libexec/dovecot/dovecot-auth
+ #auth_executable = /usr/libexec/dovecot/dovecot-auth
  
- # Set max. process size in megabytes.
- #auth_process_size = 256

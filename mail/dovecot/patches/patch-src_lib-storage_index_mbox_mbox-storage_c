@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_lib-storage_index_mbox_mbox-storage_c,v 1.1 2003/07/23 06:03:01 jolan Exp $
---- src/lib-storage/index/mbox/mbox-storage.c.orig	Wed Jun 25 20:02:04 2003
-+++ src/lib-storage/index/mbox/mbox-storage.c	Tue Jul 15 15:18:11 2003
-@@ -317,7 +317,7 @@ static const char *mbox_get_path(struct 
+$OpenBSD: patch-src_lib-storage_index_mbox_mbox-storage_c,v 1.2 2004/05/10 00:06:47 brad Exp $
+--- src/lib-storage/index/mbox/mbox-storage.c.orig	2003-11-08 09:54:54.000000000 -0500
++++ src/lib-storage/index/mbox/mbox-storage.c	2004-05-07 21:38:04.000000000 -0400
+@@ -320,7 +320,7 @@ static const char *mbox_get_path(struct 
  }
  
  static struct mailbox *mbox_open(struct mail_storage *storage, const char *name,
@@ -10,16 +10,16 @@ $OpenBSD: patch-src_lib-storage_index_mbox_mbox-storage_c,v 1.1 2003/07/23 06:03
  {
  	struct index_mailbox *ibox;
  	struct mail_index *index;
-@@ -344,7 +344,7 @@ static struct mailbox *mbox_open(struct 
+@@ -347,7 +347,7 @@ static struct mailbox *mbox_open(struct 
  	}
  
- 	ibox = index_storage_init(storage, &mbox_mailbox, index,
--				  name, readonly, fast);
-+				  name, flags);
+ 	ibox = index_storage_mailbox_init(storage, &mbox_mailbox, index,
+-					  name, readonly, fast);
++					  name, flags);
  	if (ibox != NULL)
  		ibox->expunge_locked = mbox_expunge_locked;
  	return (struct mailbox *) ibox;
-@@ -352,7 +352,7 @@ static struct mailbox *mbox_open(struct 
+@@ -355,7 +355,7 @@ static struct mailbox *mbox_open(struct 
  
  static struct mailbox *
  mbox_open_mailbox(struct mail_storage *storage,
@@ -28,7 +28,7 @@ $OpenBSD: patch-src_lib-storage_index_mbox_mbox-storage_c,v 1.1 2003/07/23 06:03
  {
  	const char *path;
  	struct stat st;
-@@ -364,7 +364,7 @@ mbox_open_mailbox(struct mail_storage *s
+@@ -367,7 +367,7 @@ mbox_open_mailbox(struct mail_storage *s
  		/* make sure inbox exists */
  		if (!verify_inbox(storage))
  			return FALSE;
@@ -37,7 +37,7 @@ $OpenBSD: patch-src_lib-storage_index_mbox_mbox-storage_c,v 1.1 2003/07/23 06:03
  	}
  
  	if (!mbox_is_valid_existing_name(name)) {
-@@ -384,7 +384,7 @@ mbox_open_mailbox(struct mail_storage *s
+@@ -387,7 +387,7 @@ mbox_open_mailbox(struct mail_storage *s
  		if (!create_mbox_index_dirs(storage, name))
  			return NULL;
  
