@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/21 16:25:09 espie Exp $
+lib/kde2/libkwinliquid.la
+lib/libkcm_transmenu.la
+lib/liquid.la
+share/applnk/Settings/LookNFeel/transmenu.desktop
+share/apps/kdisplay/color-schemes/Liquid.kcsrc
+share/apps/kstyle/themes/liquid.themerc
+share/apps/kwin/liquid.desktop
+%%SHARED%%
+@dirrm share/apps/kwin
+@dirrm share/apps/kstyle/themes
+@dirrm share/apps/kstyle
+@dirrm share/apps/kdisplay/color-schemes
+@dirrm share/apps/kdisplay
+@dirrm share/apps
+@dirrm share/applnk/Settings/LookNFeel
+@dirrm share/applnk/Settings
+@dirrm share/applnk
+@dirrm lib/kde2

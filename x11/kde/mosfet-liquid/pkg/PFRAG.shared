@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/08/21 16:25:09 espie Exp $
+lib/kde2/libkwinliquid.so.0.0
+lib/libkcm_transmenu.so.0.0
+lib/libliquid.so.0.0
+DYNLIBDIR(%D/lib)
+NEWDYNLIBDIR(%D/lib/kde2)
