@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.39 2001/03/24 21:47:12 brad Exp $
+# $OpenBSD: Makefile,v 1.40 2001/03/24 22:07:08 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
+
+COMMENT=	"multithreaded SQL database"
 
 VERSION=	3.23.35
 DISTNAME=	mysql-${VERSION}
 CATEGORIES=	databases
-NEED_VERSION=	1.336
+NEED_VERSION=	1.363
 MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
 		http://www.mysql.net/Downloads/%SUBDIR%/ \
 		http://mysql.he.net/Downloads/%SUBDIR%/ \
@@ -53,11 +55,10 @@ pre-build:
 	@echo ""
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql/Flags
 	@sed -e s#@PREFIX@#${TRUEPREFIX}#g \
-		${FILESDIR}/startup.sh > ${WRKDIR}/startup.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/startup.sh ${PREFIX}/lib/mysql
+		${FILESDIR}/startup.sh > ${WRKBUILD}/startup.sh
+	${INSTALL_SCRIPT} ${WRKBUILD}/startup.sh ${PREFIX}/lib/mysql
 	cd ${WRKSRC}/Docs; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/mysql
 	${INSTALL_DATA} ${WRKSRC}/Docs/Flags/*.gif \
 		${PREFIX}/share/doc/mysql/Flags
