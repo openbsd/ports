@@ -1,16 +1,16 @@
-$OpenBSD: patch-install_sh,v 1.9 2004/07/07 12:14:43 sturm Exp $
---- install.sh.orig	2004-07-06 13:37:54.000000000 +0200
-+++ install.sh	2004-07-07 14:02:45.000000000 +0200
-@@ -1132,7 +1132,7 @@ run_install()
- 	mkdir $mkdirv $mkdirp $doc_dir/
- 	chmod $chmodv 755 $doc_dir
- 	cp $cpv $cpf LICENSE $doc_dir
--	if not test -d "$doc_dir/help"; then ln -s $str_localdirshare/help $doc_dir/help; fi
-+	ln -s $str_localdirshare/help $doc_dir/help
+$OpenBSD: patch-install_sh,v 1.10 2005/02/05 13:14:35 sturm Exp $
+--- install.sh.orig	Mon Jan 31 16:19:45 2005
++++ install.sh	Sat Feb  5 14:04:03 2005
+@@ -1129,7 +1129,7 @@ run_install()
+ 	    mkdir $mkdirv $mkdirp $share_dir/help/
+ 	    chmod $chmodv 755 $share_dir/help
+ 	    cp $cpv $cpf $cpR help/* $share_dir/help/
+-	    if not test -d "$doc_dir/help"; then ln -s $str_localdirshare/help $doc_dir/help; fi
++	    ln -s $str_localdirshare/help $doc_dir/help
+ 	fi
  
-     # Shared files
- 	debug_msg 1 "Shared files"
-@@ -1183,9 +1183,7 @@ run_install()
+ 	mkdir $mkdirv $mkdirp $share_dir/config/
+@@ -1179,9 +1179,7 @@ run_install()
  	chmod $chmodv 755 $share_dir/styles/user
  	cp $cpv $cpf $cpR styles/user/* $share_dir/styles/user/
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-install_sh,v 1.9 2004/07/07 12:14:43 sturm Exp $
  
  	cp $cpv $cpf hhd.ssr chartables.bin $share_dir/
  
-@@ -1280,7 +1278,7 @@ run_install()
+@@ -1287,7 +1285,7 @@ run_install()
  
  	# System wide configuration files
  	config_dir="/etc"
@@ -30,7 +30,7 @@ $OpenBSD: patch-install_sh,v 1.9 2004/07/07 12:14:43 sturm Exp $
  	    echo
  	    echo "System wide configuration files:"
  	    echo "  $config_dir/opera6rc"
-@@ -1302,12 +1300,6 @@ run_install()
+@@ -1309,12 +1307,6 @@ run_install()
  	fi
  
       # Shorcuts and Icons
