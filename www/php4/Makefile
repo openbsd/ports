@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.41 2001/06/12 15:07:29 avsm Exp $
+# $OpenBSD: Makefile,v 1.42 2001/06/18 16:27:41 avsm Exp $
 
 MULTI_PACKAGES=	-pear
+SUBPACKAGE?=
 
 COMMENT=	"server-side HTML-embedded scripting language"
 COMMENT-pear=	"collection of base classes for common PHP tasks"
@@ -186,6 +187,11 @@ BUILD_DEPENDS+=         ${LOCALBASE}/lib/libiodbc.a::databases/iodbc
 .else
 CONFIGURE_ARGS+=        --without-iodbc
 .endif        
+
+.if ${SUBPACKAGE} == "-pear"
+LIB_DEPENDS=
+RUN_DEPENDS=
+.endif
 
 do-install:
 	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp4.so.0.0 \
