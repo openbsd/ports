@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/04/07 19:34:47 jasoni Exp $
+# $OpenBSD: Makefile,v 1.13 2001/04/07 19:44:20 jasoni Exp $
 # $FreeBSD Id: Makefile,v 1.2 1999/06/28 02:22:43 billf Exp $
 #
 
@@ -6,7 +6,7 @@ COMMENT=	"a TrueType font server for X11"
 
 DISTNAME=	xfstt-1.1
 CATEGORIES=	x11
-NEED_VERSION=   1.223
+NEED_VERSION=   1.363
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= X11/fonts
 

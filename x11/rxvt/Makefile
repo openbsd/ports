@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2001/04/07 19:34:46 jasoni Exp $
+# $OpenBSD: Makefile,v 1.18 2001/04/07 19:44:19 jasoni Exp $
 
 COMMENT=	"color, low memory usage, xterm replacement"
 
 DISTNAME=	rxvt-2.7.3
 CATEGORIES=	x11
-NEED_VERSION=	1.310
+NEED_VERSION=	1.363
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 		ftp://mason.primenet.com.au/pub/rxvt/ 
 
