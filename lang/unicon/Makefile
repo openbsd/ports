@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/10/08 18:25:01 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/09 23:29:57 espie Exp $
 
 CATEGORIES=	lang
 DISTNAME=	unicon-10.0beta
@@ -24,13 +24,20 @@ MAKE_ENV=	ARCH="${MACHINE_ARCH}"
 CONF_DIR=	${WRKSRC}/config/unix/openbsd
 ALL_TARGET=	Unicon
 
+CONFIGURE_TARGET=X-Configure
+
 pre-configure:
 	cp -R ${FILESDIR}/openbsd ${WRKSRC}/config/unix
 	if [ -f ${CONF_DIR}/${ARCH}_rswitch.c ] ; then \
 		ln -f ${CONF_DIR}/${ARCH}_rswitch.c ${CONF_DIR}/rswitch.c ;\
 	else \
 		touch ${CONF_DIR}/rswitch.c ;\
+		echo "#define NoCoexpr" \
+		    >>${WRKSRC}/config/unix/openbsd/define.h;\
 	fi 
+
+do-configure:
+	cd ${WRKSRC} && make ${CONFIGURE_TARGET} name=openbsd
 
 # We put a wrapper around icont for finding the library files when
 # they're installed
@@ -39,7 +46,7 @@ pre-configure:
 # a small file...
 pre-install:
 .for i in unicon ivib
-	cd ${WRKBUILD}/bin && mv $i $i.bak && \
+	-cd ${WRKBUILD}/bin && mv $i $i.bak && \
 		sed -e s,`pwd -P`,${TRUEPREFIX}/bin, <$i.bak >$i
 .endfor
 
@@ -55,7 +62,7 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/bin/rt.h ${PREFIX}/include
 	cd ${PREFIX}/bin && ${WRKBUILD}/bin/patchstr ${PREFIX}/lib/icont ${TRUEPREFIX}/bin/iconx
 	${INSTALL_SCRIPT} ${WRKBUILD}/bin/unicon ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKBUILD}/bin/ivib ${PREFIX}/bin
+	-${INSTALL_SCRIPT} ${WRKBUILD}/bin/ivib ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/ipl/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/share/ipl/include
 	for i in ${WRKBUILD}/ipl/lib/*.u; do \
