@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2000/09/03 11:55:00 jakob Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2000/12/15 17:36:22 naddy Exp $
 #
 # php4 de-installation
 
-CONF=`/usr/sbin/apxs -q SYSCONFDIR`/httpd.conf
-
 set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+CONF=`apxs -q SYSCONFDIR`/httpd.conf
 
 rm -f /usr/lib/apache/modules/libphp4.so
 
