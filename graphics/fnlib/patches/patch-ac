@@ -1,0 +1,14 @@
+--- ltmain.sh.orig	Sun Apr 18 02:17:28 1999
++++ ltmain.sh	Sun Apr 18 02:17:44 1999
+@@ -1984,11 +1984,6 @@
+       done
+     fi
+ 
+-    echo "To link against installed libraries in LIBDIR, users may have to:"
+-    if test -n "$shlibpath_var"; then
+-      echo "   - add LIBDIR to their \`$shlibpath_var' environment variable"
+-    fi
+-    echo "   - use the \`-LLIBDIR' linker flag"
+     exit 0
+     ;;
+ 
