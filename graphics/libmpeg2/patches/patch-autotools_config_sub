@@ -1,0 +1,30 @@
+$OpenBSD: patch-autotools_config_sub,v 1.1.1.1 2003/07/19 18:18:07 jolan Exp $
+--- autotools/config.sub.orig	Wed Jul  9 20:31:02 2003
++++ autotools/config.sub	Wed Jul  9 20:32:10 2003
+@@ -179,7 +179,7 @@ case $basic_machine in
+ 		| hppa64 \
+ 		| alpha | alphaev[4-8] | alphaev56 | alphapca5[67] \
+ 		| alphaev6[78] \
+-		| we32k | ns16k | clipper | i370 | sh | powerpc | powerpcle \
++		| we32k | ns16k | clipper | i370 | sh | macppc | powerpc | powerpcle \
+ 		| 1750a | dsp16xx | pdp11 | mips16 | mips64 | mipsel | mips64el \
+ 		| mips64orion | mips64orionel | mipstx39 | mipstx39el \
+ 		| mips64vr4300 | mips64vr4300el | mips64vr4100 | mips64vr4100el \
+@@ -216,7 +216,7 @@ case $basic_machine in
+ 	      | alphaev6[78]-* \
+ 	      | we32k-* | cydra-* | ns16k-* | pn-* | np1-* | xps100-* \
+ 	      | clipper-* | orion-* \
+-	      | sparclite-* | pdp11-* | sh-* | powerpc-* | powerpcle-* \
++	      | sparclite-* | pdp11-* | sh-* | macppc-* | powerpc-* | powerpcle-* \
+ 	      | sparc64-* | sparcv9-* | sparc86x-* | mips16-* | mips64-* | mipsel-* \
+ 	      | mips64el-* | mips64orion-* | mips64orionel-* \
+ 	      | mips64vr4100-* | mips64vr4100el-* | mips64vr4300-* | mips64vr4300el-* \
+@@ -655,6 +655,8 @@ case $basic_machine in
+ 		;;
+ 	ppc)	basic_machine=powerpc-unknown
+ 	        ;;
++	macppc-*)	basic_machine=macppc-`echo $basic_machine | sed 's/^[^-]*-//'`
++		;;
+ 	ppc-*)	basic_machine=powerpc-`echo $basic_machine | sed 's/^[^-]*-//'`
+ 		;;
+ 	ppcle | powerpclittle | ppc-le | powerpc-little)
