@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 21:09:18 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/16 20:41:50 marc Exp $
 
 COMMENT=	"Garmin GPS upload/download utilities"
 
@@ -7,7 +7,7 @@ CATEGORIES=	misc
 NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.snafu.org/pub/
 
-MAINTAINER=	Marco S Hyman <marc@snafu.org>
+MAINTAINER=	Marco S Hyman <marc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
