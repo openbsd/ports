@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.fr,v 1.14 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.fr,v 1.15 2004/03/08 11:10:15 espie Exp $
 share/apps/ktuberling/sounds/fr/bouche.wav
 share/apps/ktuberling/sounds/fr/boucle-d-oreille.wav
 share/apps/ktuberling/sounds/fr/chapeau.wav
@@ -81,9 +81,19 @@ ${DOC}artsbuilder/tools.docbook
 ${DOC}atlantik/common
 ${DOC}atlantik/${C}
 ${DOC}atlantik/${I}
+${DOC}cervisia/annotate.png
+${DOC}cervisia/checkout.png
+${DOC}cervisia/commit.png
 ${DOC}cervisia/common
+${DOC}cervisia/diff.png
+${DOC}cervisia/history.png
+${DOC}cervisia/import.png
 ${DOC}cervisia/${C}
 ${DOC}cervisia/${I}
+${DOC}cervisia/logtree.png
+${DOC}cervisia/mainview.png
+${DOC}cervisia/resolve.png
+${DOC}cervisia/updatetag.png
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -221,6 +231,12 @@ ${DOC}kbounce/${I}
 ${DOC}kbounce/jezball_corridor1.png
 ${DOC}kbounce/jezball_corridor2.png
 ${DOC}kbounce/jezball_newWall.png
+${DOC}kbruch/checked.png
+${DOC}kbruch/common
+${DOC}kbruch/gui_main.png
+${DOC}kbruch/${C}
+${DOC}kbruch/${I}
+${DOC}kbruch/reduced.png
 ${DOC}kbugbuster/common
 ${DOC}kbugbuster/${C}
 ${DOC}kbugbuster/${I}
@@ -265,6 +281,9 @@ ${DOC}kcontrol/crypto/${I}
 ${DOC}kcontrol/desktop/common
 ${DOC}kcontrol/desktop/${C}
 ${DOC}kcontrol/desktop/${I}
+${DOC}kcontrol/desktopbehavior/common
+${DOC}kcontrol/desktopbehavior/${C}
+${DOC}kcontrol/desktopbehavior/${I}
 ${DOC}kcontrol/ebrowsing/common
 ${DOC}kcontrol/ebrowsing/${C}
 ${DOC}kcontrol/ebrowsing/${I}
@@ -495,6 +514,11 @@ ${DOC}kgamma/${I}
 ${DOC}kget/common
 ${DOC}kget/${C}
 ${DOC}kget/${I}
+${DOC}kget/kget1.png
+${DOC}kget/kget2.png
+${DOC}kget/kget3.png
+${DOC}kget/kget4.png
+${DOC}kget/kget5.png
 ${DOC}kghostview/common
 ${DOC}kghostview/${C}
 ${DOC}kghostview/${I}
@@ -507,6 +531,9 @@ ${DOC}kgoldrunner/tute008.png
 ${DOC}kgpg/common
 ${DOC}kgpg/${C}
 ${DOC}kgpg/${I}
+${DOC}kgpgcertmanager/common
+${DOC}kgpgcertmanager/${C}
+${DOC}kgpgcertmanager/${I}
 ${DOC}khangman/common
 ${DOC}khangman/${C}
 ${DOC}khangman/${I}
@@ -1156,6 +1183,9 @@ ${DOC}kspaceduel/kspaceduel3.png
 ${DOC}kspell/common
 ${DOC}kspell/${C}
 ${DOC}kspell/${I}
+${DOC}ksplashml/common
+${DOC}ksplashml/${C}
+${DOC}ksplashml/${I}
 ${DOC}kstars/aavso.png
 ${DOC}kstars/ai-contents.docbook
 ${DOC}kstars/altvstime.docbook
@@ -1866,6 +1896,7 @@ ${LOC}libkonq.mo
 ${LOC}libkpimexchange.mo
 ${LOC}libkscan.mo
 ${LOC}libkscreensaver.mo
+${LOC}libksieve.mo
 ${LOC}libksirtet.mo
 ${LOC}libksync.mo
 ${LOC}libtaskbar.mo
@@ -1932,6 +1963,7 @@ share/locale/fr/relecture_gui
 @dirrm ${DOC}ksysv
 @dirrm ${DOC}ksysguard
 @dirrm ${DOC}kstars
+@dirrm ${DOC}ksplashml
 @dirrm ${DOC}kspell
 @dirrm ${DOC}kspaceduel
 @dirrm ${DOC}ksokoban
@@ -2036,6 +2068,7 @@ share/locale/fr/relecture_gui
 @dirrm ${DOC}khelpcenter/faq
 @dirrm ${DOC}khelpcenter
 @dirrm ${DOC}khangman
+@dirrm ${DOC}kgpgcertmanager
 @dirrm ${DOC}kgpg
 @dirrm ${DOC}kgoldrunner
 @dirrm ${DOC}kghostview
@@ -2098,6 +2131,7 @@ share/locale/fr/relecture_gui
 @dirrm ${DOC}kcontrol/energy
 @dirrm ${DOC}kcontrol/email
 @dirrm ${DOC}kcontrol/ebrowsing
+@dirrm ${DOC}kcontrol/desktopbehavior
 @dirrm ${DOC}kcontrol/desktop
 @dirrm ${DOC}kcontrol/crypto
 @dirrm ${DOC}kcontrol/cookies
@@ -2113,6 +2147,7 @@ share/locale/fr/relecture_gui
 @dirrm ${DOC}kcalc
 @dirrm ${DOC}kcachegrind
 @dirrm ${DOC}kbugbuster
+@dirrm ${DOC}kbruch
 @dirrm ${DOC}kbounce
 @dirrm ${DOC}kblackbox
 @dirrm ${DOC}kbattleship

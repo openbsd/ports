@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.de,v 1.13 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.de,v 1.14 2004/03/08 11:10:15 espie Exp $
 share/apps/ktuberling/sounds/de/abzeichen.wav
 share/apps/ktuberling/sounds/de/auge.wav
 share/apps/ktuberling/sounds/de/augenbraue.wav
@@ -364,6 +364,9 @@ ${DOC}kcron/kcronstart.png
 ${DOC}kcron/newtask.png
 ${DOC}kcron/newvariable.png
 ${DOC}kcron/print.png
+${DOC}kdat/common
+${DOC}kdat/${C}
+${DOC}kdat/${I}
 ${DOC}kdebugdialog/common
 ${DOC}kdebugdialog/${C}
 ${DOC}kdebugdialog/${I}
@@ -439,6 +442,15 @@ ${DOC}kget/kget5.png
 ${DOC}kghostview/common
 ${DOC}kghostview/${C}
 ${DOC}kghostview/${I}
+${DOC}kgpg/common
+${DOC}kgpg/editor.png
+${DOC}kgpg/${C}
+${DOC}kgpg/${I}
+${DOC}kgpg/keygen.png
+${DOC}kgpg/keymanage.png
+${DOC}kgpg/keys.png
+${DOC}kgpg/kicker.png
+${DOC}kgpg/options.png
 ${DOC}kgpgcertmanager/common
 ${DOC}kgpgcertmanager/${C}
 ${DOC}kgpgcertmanager/${I}
@@ -1823,6 +1835,7 @@ share/locale/de/flag.png
 @dirrm ${DOC}khelpcenter
 @dirrm ${DOC}khangman
 @dirrm ${DOC}kgpgcertmanager
+@dirrm ${DOC}kgpg
 @dirrm ${DOC}kghostview
 @dirrm ${DOC}kget
 @dirrm ${DOC}kgamma
@@ -1839,6 +1852,7 @@ share/locale/de/flag.png
 @dirrm ${DOC}kdesu
 @dirrm ${DOC}kdeprint
 @dirrm ${DOC}kdebugdialog
+@dirrm ${DOC}kdat
 @dirrm ${DOC}kcron
 @dirrm ${DOC}kcontrol/windowmanagement
 @dirrm ${DOC}kcontrol/useragent

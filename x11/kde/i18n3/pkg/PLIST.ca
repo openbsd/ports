@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ca,v 1.13 2004/02/07 12:29:12 espie Exp $
+@comment $OpenBSD: PLIST.ca,v 1.14 2004/03/08 11:10:15 espie Exp $
 ${DOC}katomic/common
 ${DOC}katomic/${C}
 ${DOC}katomic/${I}
@@ -31,6 +31,7 @@ ${DOC}kdf/kdf_config.png
 ${DOC}keduca/common
 ${DOC}keduca/${C}
 ${DOC}keduca/${I}
+${DOC}keduca/screenshot.png
 ${DOC}kgpgcertmanager/common
 ${DOC}kgpgcertmanager/${C}
 ${DOC}kgpgcertmanager/${I}
@@ -164,16 +165,21 @@ ${DOC}kmoon/${I}
 ${DOC}kompare/common
 ${DOC}kompare/${C}
 ${DOC}kompare/${I}
+${DOC}kpercentage/answer.png
 ${DOC}kpercentage/commands.docbook
 ${DOC}kpercentage/common
 ${DOC}kpercentage/credits.docbook
 ${DOC}kpercentage/devel.docbook
+${DOC}kpercentage/edu-logo.png
 ${DOC}kpercentage/faq.docbook
+${DOC}kpercentage/help.png
 ${DOC}kpercentage/${C}
 ${DOC}kpercentage/${I}
 ${DOC}kpercentage/install.docbook
 ${DOC}kpercentage/introduction.docbook
+${DOC}kpercentage/main.png
 ${DOC}kpercentage/using.docbook
+${DOC}kpercentage/welcome.png
 ${DOC}kpf/common
 ${DOC}kpf/${C}
 ${DOC}kpf/${I}
@@ -361,6 +367,7 @@ ${LOC}kbattleship.mo
 ${LOC}kbinaryclock.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
+${LOC}kbruch.mo
 ${LOC}kbugbuster.mo
 ${LOC}kcalc.mo
 ${LOC}kcardchooser.mo
@@ -436,8 +443,10 @@ ${LOC}kcmspellchecking.mo
 ${LOC}kcmstyle.mo
 ${LOC}kcmtaskbar.mo
 ${LOC}kcmusb.mo
+${LOC}kcmview1394.mo
 ${LOC}kcmvim.mo
 ${LOC}kcmwifi.mo
+${LOC}kcmxinerama.mo
 ${LOC}kcoloredit.mo
 ${LOC}kcontrol.mo
 ${LOC}kcron.mo
@@ -457,6 +466,7 @@ ${LOC}kdesu.mo
 ${LOC}kdesud.mo
 ${LOC}kdevtipofday.mo
 ${LOC}kdf.mo
+${LOC}kdgantt.mo
 ${LOC}kdialog.mo
 ${LOC}kdict.mo
 ${LOC}kdictapplet.mo
@@ -507,6 +517,7 @@ ${LOC}kfilereplace.mo
 ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
+${LOC}kfontinst.mo
 ${LOC}kfouleggs.mo
 ${LOC}kgamma.mo
 ${LOC}kgantt.mo
@@ -635,9 +646,11 @@ ${LOC}ksnapshot.mo
 ${LOC}ksokoban.mo
 ${LOC}kspaceduel.mo
 ${LOC}ksplash.mo
+${LOC}ksplashthemes.mo
 ${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
+${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
 ${LOC}ksync.mo
@@ -660,6 +673,7 @@ ${LOC}ktuberling.mo
 ${LOC}ktux.mo
 ${LOC}kuick_plugin.mo
 ${LOC}kuickshow.mo
+${LOC}kuiviewer.mo
 ${LOC}kuser.mo
 ${LOC}kview.mo
 ${LOC}kview_scale.mo

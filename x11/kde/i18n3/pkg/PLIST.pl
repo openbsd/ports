@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.pl,v 1.13 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.pl,v 1.14 2004/03/08 11:10:15 espie Exp $
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
@@ -18,6 +18,7 @@ ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
 ${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
+${LOC}cvsservice.mo
 ${LOC}dcopservice.mo
 ${LOC}desktop_kde-i18n.mo
 ${LOC}desktop_kdeaccessibility.mo
@@ -35,6 +36,8 @@ ${LOC}desktop_kdepim.mo
 ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
+${LOC}desktop_kdevelop.mo
+${LOC}desktop_quanta.mo
 ${LOC}devicesapplet.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}display.mo
@@ -47,9 +50,11 @@ ${LOC}ffrs.mo
 ${LOC}filetypes.mo
 ${LOC}flashkard.mo
 ${LOC}fontinst.mo
+${LOC}fsview.mo
 ${LOC}htmlsearch.mo
 ${LOC}imagerename_plugin.mo
 ${LOC}imgalleryplugin.mo
+${LOC}irkick.mo
 ${LOC}jefferson.mo
 ${LOC}juk.mo
 ${LOC}kabc2mutt.mo
@@ -79,6 +84,7 @@ ${LOC}katefll_plugin.mo
 ${LOC}katehelloworld.mo
 ${LOC}katehtmltools.mo
 ${LOC}kateinsertcommand.mo
+${LOC}katemake.mo
 ${LOC}katemodeline.mo
 ${LOC}kateopenheader.mo
 ${LOC}katepart.mo
@@ -96,6 +102,7 @@ ${LOC}kbattleship.mo
 ${LOC}kbinaryclock.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
+${LOC}kbruch.mo
 ${LOC}kbugbuster.mo
 ${LOC}kcalc.mo
 ${LOC}kcardchooser.mo
@@ -127,6 +134,7 @@ ${LOC}kcmicons.mo
 ${LOC}kcminfo.mo
 ${LOC}kcminput.mo
 ${LOC}kcmioslaveinfo.mo
+${LOC}kcmkabconfig.mo
 ${LOC}kcmkamera.mo
 ${LOC}kcmkclock.mo
 ${LOC}kcmkded.mo
@@ -137,6 +145,7 @@ ${LOC}kcmkmix.mo
 ${LOC}kcmkonq.mo
 ${LOC}kcmkonqhtml.mo
 ${LOC}kcmkonsole.mo
+${LOC}kcmkontactnt.mo
 ${LOC}kcmktalkd.mo
 ${LOC}kcmkuick.mo
 ${LOC}kcmkurifilt.mo
@@ -151,6 +160,7 @@ ${LOC}kcmlaunch.mo
 ${LOC}kcmlayout.mo
 ${LOC}kcmlilo.mo
 ${LOC}kcmlinuz.mo
+${LOC}kcmlirc.mo
 ${LOC}kcmlocale.mo
 ${LOC}kcmmediacontrol.mo
 ${LOC}kcmmidi.mo
@@ -168,6 +178,7 @@ ${LOC}kcmstyle.mo
 ${LOC}kcmtaskbar.mo
 ${LOC}kcmusb.mo
 ${LOC}kcmview1394.mo
+${LOC}kcmvim.mo
 ${LOC}kcmxinerama.mo
 ${LOC}kcoloredit.mo
 ${LOC}kcontrol.mo
@@ -177,6 +188,7 @@ ${LOC}kdcop.mo
 ${LOC}kdebugdialog.mo
 ${LOC}kdelibs.mo
 ${LOC}kdelibs_colors.mo
+${LOC}kdelirc.mo
 ${LOC}kdepasswd.mo
 ${LOC}kdeprint.mo
 ${LOC}kdeprint_part.mo
@@ -187,6 +199,7 @@ ${LOC}kdesu.mo
 ${LOC}kdesud.mo
 ${LOC}kdevtipofday.mo
 ${LOC}kdf.mo
+${LOC}kdgantt.mo
 ${LOC}kdialog.mo
 ${LOC}kdict.mo
 ${LOC}kdictapplet.mo
@@ -233,6 +246,7 @@ ${LOC}kfile_vcf.mo
 ${LOC}kfile_wav.mo
 ${LOC}kfile_xbm.mo
 ${LOC}kfileaudiopreview.mo
+${LOC}kfilereplace.mo
 ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
@@ -243,6 +257,7 @@ ${LOC}kgantt.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
 ${LOC}kgoldrunner.mo
+${LOC}kgpg.mo
 ${LOC}kgpgcertmanager.mo
 ${LOC}khangman.mo
 ${LOC}khelpcenter.mo
@@ -270,6 +285,7 @@ ${LOC}kio_pop3.mo
 ${LOC}kio_print.mo
 ${LOC}kio_settings.mo
 ${LOC}kio_sftp.mo
+${LOC}kio_sieve.mo
 ${LOC}kio_smb.mo
 ${LOC}kio_smbro.mo
 ${LOC}kio_smtp.mo
@@ -300,6 +316,7 @@ ${LOC}kmidi.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
+${LOC}kmobile.mo
 ${LOC}kmoon.mo
 ${LOC}kmousetool.mo
 ${LOC}kmouth.mo
@@ -314,11 +331,13 @@ ${LOC}kodo.mo
 ${LOC}kolf.mo
 ${LOC}kolourpicker.mo
 ${LOC}kompare.mo
+${LOC}konq_smbmounterplugin.mo
 ${LOC}konqsidebar_mediaplayer.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
 ${LOC}konsole.mo
 ${LOC}konsolekalendar.mo
+${LOC}kontact.mo
 ${LOC}kooka.mo
 ${LOC}kopete.mo
 ${LOC}korganizer.mo
@@ -353,6 +372,7 @@ ${LOC}ksame.mo
 ${LOC}kscd.mo
 ${LOC}kscreensaver.mo
 ${LOC}kshisen.mo
+${LOC}ksig.mo
 ${LOC}ksim.mo
 ${LOC}ksirc.mo
 ${LOC}ksirtet.mo
@@ -384,6 +404,7 @@ ${LOC}ktexteditor_kdatatool.mo
 ${LOC}ktimemon.mo
 ${LOC}ktimer.mo
 ${LOC}ktip.mo
+${LOC}ktnef.mo
 ${LOC}ktouch.mo
 ${LOC}ktron.mo
 ${LOC}ktuberling.mo
@@ -422,6 +443,8 @@ ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
 ${LOC}kxmlrpcd.mo
 ${LOC}kxsconfig.mo
+${LOC}kxsldbg.mo
+${LOC}libcalendarresources.mo
 ${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkcal.mo
 ${LOC}libkcalsystem.mo
@@ -439,6 +462,7 @@ ${LOC}libkonq.mo
 ${LOC}libkpimexchange.mo
 ${LOC}libkscan.mo
 ${LOC}libkscreensaver.mo
+${LOC}libksieve.mo
 ${LOC}libksirtet.mo
 ${LOC}libksync.mo
 ${LOC}libtaskbar.mo
@@ -447,6 +471,7 @@ ${LOC}lockout.mo
 ${LOC}lskat.mo
 ${LOC}lyrics.mo
 ${LOC}mediacontrol.mo
+${LOC}minitoolsplugin.mo
 ${LOC}naughtyapplet.mo
 ${LOC}noatun.mo
 ${LOC}nsplugin.mo
@@ -468,6 +493,7 @@ ${LOC}uachangerplugin.mo
 ${LOC}umbrello.mo
 ${LOC}userinfo.mo
 ${LOC}validatorsplugin.mo
+${LOC}vimpart.mo
 ${LOC}wakeup.mo
 ${LOC}wavecapture.mo
 ${LOC}webarchiver.mo

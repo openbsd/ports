@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.az,v 1.9 2004/02/07 12:29:12 espie Exp $
+@comment $OpenBSD: PLIST.az,v 1.10 2004/03/08 11:10:15 espie Exp $
 ${LOC}aktion.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -140,7 +140,6 @@ ${LOC}kdesktop.mo
 ${LOC}kdessh.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
-${LOC}kdevelop.mo
 ${LOC}kdevtipofday.mo
 ${LOC}kdf.mo
 ${LOC}kdialog.mo

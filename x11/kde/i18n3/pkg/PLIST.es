@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.es,v 1.13 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.es,v 1.14 2004/03/08 11:10:15 espie Exp $
 share/apps/ktuberling/sounds/es/anteojos.wav
 share/apps/ktuberling/sounds/es/bigote.wav
 share/apps/ktuberling/sounds/es/boca.wav
@@ -127,7 +127,10 @@ ${DOC}kasteroids/common
 ${DOC}kasteroids/fuel.png
 ${DOC}kasteroids/${C}
 ${DOC}kasteroids/${I}
+${DOC}kate-plugins/common
 ${DOC}kate-plugins/htmltools.docbook
+${DOC}kate-plugins/${C}
+${DOC}kate-plugins/${I}
 ${DOC}kate-plugins/insertcommand.docbook
 ${DOC}kate-plugins/openheader.docbook
 ${DOC}kate-plugins/projectmanager.docbook
@@ -494,6 +497,9 @@ ${DOC}khelpcenter/whatiskde.docbook
 ${DOC}khexedit/common
 ${DOC}khexedit/${C}
 ${DOC}khexedit/${I}
+${DOC}kicker-applets/common
+${DOC}kicker-applets/${C}
+${DOC}kicker-applets/${I}
 ${DOC}kicker-applets/kolourpicker.docbook
 ${DOC}kicker-applets/ktimemon.docbook
 ${DOC}kicker/bookmarks_icon.png
@@ -627,11 +633,14 @@ ${DOC}klipper/common
 ${DOC}klipper/${C}
 ${DOC}klipper/${I}
 ${DOC}klipper/screenshot.png
+${DOC}kmail/common
 ${DOC}kmail/configure.docbook
 ${DOC}kmail/credits-and-licenses.docbook
 ${DOC}kmail/faq.docbook
 ${DOC}kmail/getting-started.docbook
 ${DOC}kmail/importing.docbook
+${DOC}kmail/${C}
+${DOC}kmail/${I}
 ${DOC}kmail/intro.docbook
 ${DOC}kmail/menus.docbook
 ${DOC}kmail/using-kmail.docbook
@@ -666,9 +675,6 @@ ${DOC}kmines/kmines2.png
 ${DOC}kmix/common
 ${DOC}kmix/${C}
 ${DOC}kmix/${I}
-${DOC}kmoon/common
-${DOC}kmoon/${C}
-${DOC}kmoon/${I}
 ${DOC}kmouth/common
 ${DOC}kmouth/${C}
 ${DOC}kmouth/${I}
@@ -752,6 +758,9 @@ ${DOC}kontact/${I}
 ${DOC}kooka/common
 ${DOC}kooka/${C}
 ${DOC}kooka/${I}
+${DOC}kopete/common
+${DOC}kopete/${C}
+${DOC}kopete/${I}
 ${DOC}korganizer/common
 ${DOC}korganizer/exchange-plugin.docbook
 ${DOC}korganizer/group-scheduling.docbook
@@ -921,9 +930,15 @@ ${DOC}kview/snapshot9.png
 ${DOC}kvoctrain/common
 ${DOC}kvoctrain/${C}
 ${DOC}kvoctrain/${I}
+${DOC}kwallet/common
+${DOC}kwallet/${C}
+${DOC}kwallet/${I}
 ${DOC}kweather/common
 ${DOC}kweather/${C}
 ${DOC}kweather/${I}
+${DOC}kwifimanager/common
+${DOC}kwifimanager/${C}
+${DOC}kwifimanager/${I}
 ${DOC}kwin4/common
 ${DOC}kwin4/${C}
 ${DOC}kwin4/${I}
@@ -948,18 +963,6 @@ ${DOC}megami/${I}
 ${DOC}noatun/common
 ${DOC}noatun/${C}
 ${DOC}noatun/${I}
-${DOC}quanta/adv-quanta.docbook
-${DOC}quanta/common
-${DOC}quanta/debugging-quanta.docbook
-${DOC}quanta/extending-quanta.docbook
-${DOC}quanta/fundamentals.docbook
-${DOC}quanta/${C}
-${DOC}quanta/${I}
-${DOC}quanta/installation.docbook
-${DOC}quanta/introduction.docbook
-${DOC}quanta/quanta-menus.docbook
-${DOC}quanta/quanta-projects.docbook
-${DOC}quanta/using-quanta.docbook
 ${DOC}umbrello/authors.docbook
 ${DOC}umbrello/credits.docbook
 ${DOC}umbrello/faq.docbook
@@ -1476,7 +1479,6 @@ share/locale/es/charset
 share/locale/es/entry.desktop
 share/locale/es/flag.png
 @dirrm ${DOC}umbrello
-@dirrm ${DOC}quanta
 @dirrm ${DOC}noatun
 @dirrm ${DOC}megami
 @dirrm ${DOC}lskat
@@ -1485,7 +1487,9 @@ share/locale/es/flag.png
 @dirrm ${DOC}kwuftpd
 @dirrm ${DOC}kworldclock
 @dirrm ${DOC}kwin4
+@dirrm ${DOC}kwifimanager
 @dirrm ${DOC}kweather
+@dirrm ${DOC}kwallet
 @dirrm ${DOC}kvoctrain
 @dirrm ${DOC}kview
 @dirrm ${DOC}kverbos
@@ -1519,6 +1523,7 @@ share/locale/es/flag.png
 @dirrm ${DOC}kpackage
 @dirrm ${DOC}korn
 @dirrm ${DOC}korganizer
+@dirrm ${DOC}kopete
 @dirrm ${DOC}kooka
 @dirrm ${DOC}kontact
 @dirrm ${DOC}konsolekalendar
@@ -1532,7 +1537,6 @@ share/locale/es/flag.png
 @dirrm ${DOC}knode
 @dirrm ${DOC}kmplot
 @dirrm ${DOC}kmouth
-@dirrm ${DOC}kmoon
 @dirrm ${DOC}kmix
 @dirrm ${DOC}kmines
 @dirrm ${DOC}kmid

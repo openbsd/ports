@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.da,v 1.12 2004/02/07 12:29:12 espie Exp $
+@comment $OpenBSD: PLIST.da,v 1.13 2004/03/08 11:10:15 espie Exp $
 share/apps/ktuberling/sounds/da/briller.wav
 share/apps/ktuberling/sounds/da/cigar.wav
 share/apps/ktuberling/sounds/da/haar.wav
@@ -38,6 +38,22 @@ ${DOC}amor/${I}
 ${DOC}ark/common
 ${DOC}ark/${C}
 ${DOC}ark/${I}
+${DOC}artsbuilder/apis.docbook
+${DOC}artsbuilder/artsbuilder.docbook
+${DOC}artsbuilder/detail.docbook
+${DOC}artsbuilder/digitalaudio.docbook
+${DOC}artsbuilder/faq.docbook
+${DOC}artsbuilder/future.docbook
+${DOC}artsbuilder/glossary.docbook
+${DOC}artsbuilder/gui.docbook
+${DOC}artsbuilder/helping.docbook
+${DOC}artsbuilder/mcop.docbook
+${DOC}artsbuilder/midi.docbook
+${DOC}artsbuilder/midiintro.docbook
+${DOC}artsbuilder/modules.docbook
+${DOC}artsbuilder/porting.docbook
+${DOC}artsbuilder/references.docbook
+${DOC}artsbuilder/tools.docbook
 ${DOC}atlantik/common
 ${DOC}atlantik/${C}
 ${DOC}atlantik/${I}
@@ -854,6 +870,7 @@ ${DOC}kooka/${I}
 ${DOC}kopete/common
 ${DOC}kopete/${C}
 ${DOC}kopete/${I}
+${DOC}kopete/menus.docbook
 ${DOC}korganizer/common
 ${DOC}korganizer/exchange-plugin.docbook
 ${DOC}korganizer/group-scheduling.docbook
@@ -1938,6 +1955,7 @@ share/locale/da/flag.png
 @dirrm ${DOC}common
 @dirrm ${DOC}cervisia
 @dirrm ${DOC}atlantik
+@dirrm ${DOC}artsbuilder
 @dirrm ${DOC}ark
 @dirrm ${DOC}amor
 @dirrm ${DOC}KRegExpEditor

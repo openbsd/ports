@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.uk,v 1.15 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.uk,v 1.16 2004/03/08 11:10:15 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -112,6 +112,7 @@ ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}artsbuilder.mo
 ${LOC}artscontrol.mo
+${LOC}artsmodules.mo
 ${LOC}atlantikdesigner.mo
 ${LOC}babelfish.mo
 ${LOC}cervisia.mo
@@ -150,7 +151,9 @@ ${LOC}fontinst.mo
 ${LOC}htmlsearch.mo
 ${LOC}imagerename_plugin.mo
 ${LOC}imgalleryplugin.mo
+${LOC}irkick.mo
 ${LOC}jefferson.mo
+${LOC}juk.mo
 ${LOC}kabc2mutt.mo
 ${LOC}kabc_dir.mo
 ${LOC}kabc_file.mo
@@ -205,6 +208,7 @@ ${LOC}kcmarts.mo
 ${LOC}kcmaudiocd.mo
 ${LOC}kcmbackground.mo
 ${LOC}kcmbell.mo
+${LOC}kcmcddb.mo
 ${LOC}kcmcgi.mo
 ${LOC}kcmcolors.mo
 ${LOC}kcmcomponentchooser.mo
@@ -232,6 +236,7 @@ ${LOC}kcmkonsole.mo
 ${LOC}kcmktalkd.mo
 ${LOC}kcmkuick.mo
 ${LOC}kcmkurifilt.mo
+${LOC}kcmkvaio.mo
 ${LOC}kcmkwallet.mo
 ${LOC}kcmkwindecoration.mo
 ${LOC}kcmkwintheme.mo
@@ -243,6 +248,7 @@ ${LOC}kcmlaunch.mo
 ${LOC}kcmlayout.mo
 ${LOC}kcmlilo.mo
 ${LOC}kcmlinuz.mo
+${LOC}kcmlirc.mo
 ${LOC}kcmlocale.mo
 ${LOC}kcmmediacontrol.mo
 ${LOC}kcmmidi.mo
@@ -269,6 +275,7 @@ ${LOC}kdcop.mo
 ${LOC}kdebugdialog.mo
 ${LOC}kdelibs.mo
 ${LOC}kdelibs_colors.mo
+${LOC}kdelirc.mo
 ${LOC}kdepasswd.mo
 ${LOC}kdeprint.mo
 ${LOC}kdeprint_part.mo
@@ -334,6 +341,7 @@ ${LOC}kgamma.mo
 ${LOC}kgantt.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
+${LOC}kgpg.mo
 ${LOC}kgpgcertmanager.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
@@ -496,6 +504,7 @@ ${LOC}kxsconfig.mo
 ${LOC}libcalendarresources.mo
 ${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkcalsystem.mo
+${LOC}libkcddb.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdehighscores.mo
 ${LOC}libkdenetwork.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.eu,v 1.8 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.eu,v 1.9 2004/03/08 11:10:15 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -532,6 +532,7 @@ ${LOC}noatun.mo
 ${LOC}nsplugin.mo
 ${LOC}passwords.mo
 ${LOC}pitchablespeed.mo
+${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
 ${LOC}qeditor.mo
 ${LOC}quanta.mo

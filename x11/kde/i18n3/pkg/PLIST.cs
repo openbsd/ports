@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.cs,v 1.13 2004/02/07 12:29:12 espie Exp $
+@comment $OpenBSD: PLIST.cs,v 1.14 2004/03/08 11:10:15 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -511,7 +511,6 @@ ${LOC}kpersonalizer.mo
 ${LOC}kpf.mo
 ${LOC}kpilot.mo
 ${LOC}kpoker.mo
-${LOC}kpovmodeler.mo
 ${LOC}kppp.mo
 ${LOC}kppplogview.mo
 ${LOC}kprinter.mo
@@ -629,7 +628,6 @@ ${LOC}lockout.mo
 ${LOC}lskat.mo
 ${LOC}lyrics.mo
 ${LOC}mediacontrol.mo
-${LOC}megami.mo
 ${LOC}minitoolsplugin.mo
 ${LOC}naughtyapplet.mo
 ${LOC}nexscope.mo
@@ -639,7 +637,6 @@ ${LOC}passwords.mo
 ${LOC}pitchablespeed.mo
 ${LOC}privacy.mo
 ${LOC}qeditor.mo
-${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}secpolicy.mo
 ${LOC}spy.mo

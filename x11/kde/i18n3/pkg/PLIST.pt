@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.pt,v 1.14 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.pt,v 1.15 2004/03/08 11:10:15 espie Exp $
 share/apps/ktuberling/sounds/pt/bigode.wav
 share/apps/ktuberling/sounds/pt/boca.wav
 share/apps/ktuberling/sounds/pt/brincos.wav
@@ -20,9 +20,15 @@ share/apps/ktuberling/sounds/pt/pinguim.wav
 share/apps/ktuberling/sounds/pt/relogio.wav
 share/apps/ktuberling/sounds/pt/senhor-batata.wav
 share/apps/ktuberling/sounds/pt/sobrancelha.wav
+${DOC}KRegExpEditor/common
+${DOC}KRegExpEditor/${C}
+${DOC}KRegExpEditor/${I}
 ${DOC}amor/common
 ${DOC}amor/${C}
 ${DOC}amor/${I}
+${DOC}ark/common
+${DOC}ark/${C}
+${DOC}ark/${I}
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -108,9 +114,15 @@ ${DOC}kate/regular-expressions.docbook
 ${DOC}kbugbuster/common
 ${DOC}kbugbuster/${C}
 ${DOC}kbugbuster/${I}
+${DOC}kcalc/common
+${DOC}kcalc/${C}
+${DOC}kcalc/${I}
 ${DOC}kcharselect/common
 ${DOC}kcharselect/${C}
 ${DOC}kcharselect/${I}
+${DOC}kcoloredit/common
+${DOC}kcoloredit/${C}
+${DOC}kcoloredit/${I}
 ${DOC}kcontrol/arts/common
 ${DOC}kcontrol/arts/${C}
 ${DOC}kcontrol/arts/${I}
@@ -287,6 +299,9 @@ ${DOC}kcron/kcronstart.png
 ${DOC}kcron/newtask.png
 ${DOC}kcron/newvariable.png
 ${DOC}kcron/print.png
+${DOC}kdat/common
+${DOC}kdat/${C}
+${DOC}kdat/${I}
 ${DOC}kdebugdialog/common
 ${DOC}kdebugdialog/${C}
 ${DOC}kdebugdialog/${I}
@@ -317,6 +332,12 @@ ${DOC}kdm/common
 ${DOC}kdm/${C}
 ${DOC}kdm/${I}
 ${DOC}kdm/kdmrc-ref.docbook
+${DOC}kdvi/common
+${DOC}kdvi/${C}
+${DOC}kdvi/${I}
+${DOC}kedit/common
+${DOC}kedit/${C}
+${DOC}kedit/${I}
 ${DOC}kenolaba/common
 ${DOC}kenolaba/${C}
 ${DOC}kenolaba/${I}
@@ -326,6 +347,15 @@ ${DOC}kfind/${I}
 ${DOC}kfloppy/common
 ${DOC}kfloppy/${C}
 ${DOC}kfloppy/${I}
+${DOC}kgamma/common
+${DOC}kgamma/${C}
+${DOC}kgamma/${I}
+${DOC}kghostview/common
+${DOC}kghostview/${C}
+${DOC}kghostview/${I}
+${DOC}kgpg/common
+${DOC}kgpg/${C}
+${DOC}kgpg/${I}
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/help.docbook
@@ -335,6 +365,9 @@ ${DOC}khelpcenter/links.docbook
 ${DOC}khelpcenter/support.docbook
 ${DOC}khelpcenter/welcome.docbook
 ${DOC}khelpcenter/whatiskde.docbook
+${DOC}khexedit/common
+${DOC}khexedit/${C}
+${DOC}khexedit/${I}
 ${DOC}kicker-applets/common
 ${DOC}kicker-applets/${C}
 ${DOC}kicker-applets/${I}
@@ -441,6 +474,9 @@ ${DOC}kioslave/telnet.docbook
 ${DOC}kioslave/thumbnail.docbook
 ${DOC}kioslave/webdav.docbook
 ${DOC}kioslave/webdavs.docbook
+${DOC}kjots/common
+${DOC}kjots/${C}
+${DOC}kjots/${I}
 ${DOC}klickety/common
 ${DOC}klickety/${C}
 ${DOC}klickety/${I}
@@ -484,16 +520,28 @@ ${DOC}konqueror/sidebar.docbook
 ${DOC}konsole/common
 ${DOC}konsole/${C}
 ${DOC}konsole/${I}
+${DOC}kooka/common
+${DOC}kooka/${C}
+${DOC}kooka/${I}
 ${DOC}kpackage/common
 ${DOC}kpackage/${C}
 ${DOC}kpackage/${I}
 ${DOC}kpager/common
 ${DOC}kpager/${C}
 ${DOC}kpager/${I}
+${DOC}kpaint/common
+${DOC}kpaint/${C}
+${DOC}kpaint/${I}
 ${DOC}kpat/man.docbook
+${DOC}kpdf/common
+${DOC}kpdf/${C}
+${DOC}kpdf/${I}
 ${DOC}krfb/common
 ${DOC}krfb/${C}
 ${DOC}krfb/${I}
+${DOC}kruler/common
+${DOC}kruler/${C}
+${DOC}kruler/${I}
 ${DOC}ksim/common
 ${DOC}ksim/${C}
 ${DOC}ksim/${I}
@@ -521,6 +569,9 @@ ${DOC}ktimer/${I}
 ${DOC}kuser/common
 ${DOC}kuser/${C}
 ${DOC}kuser/${I}
+${DOC}kwallet/common
+${DOC}kwallet/${C}
+${DOC}kwallet/${I}
 ${DOC}kweather/common
 ${DOC}kweather/${C}
 ${DOC}kweather/${I}
@@ -539,9 +590,36 @@ ${DOC}kxconfig/${I}
 ${DOC}kxkb/common
 ${DOC}kxkb/${C}
 ${DOC}kxkb/${I}
+${DOC}kxsldbg/callstack.docbook
+${DOC}kxsldbg/common
+${DOC}kxsldbg/credits.docbook
+${DOC}kxsldbg/entities.docbook
+${DOC}kxsldbg/glossary.docbook
+${DOC}kxsldbg/${C}
+${DOC}kxsldbg/${I}
+${DOC}kxsldbg/kxsldbg_configure.docbook
+${DOC}kxsldbg/kxsldbg_inspector.docbook
+${DOC}kxsldbg/kxsldbg_mainwindow.docbook
+${DOC}kxsldbg/kxsldbg_tools.docbook
+${DOC}kxsldbg/sources.docbook
+${DOC}kxsldbg/templates.docbook
+${DOC}kxsldbg/variables.docbook
+${DOC}quanta/adv-quanta.docbook
+${DOC}quanta/common
 ${DOC}quanta/config-quanta.docbook
+${DOC}quanta/credits-license.docbook
+${DOC}quanta/debugging-quanta.docbook
+${DOC}quanta/extending-quanta.docbook
+${DOC}quanta/fundamentals.docbook
 ${DOC}quanta/glossary.docbook
+${DOC}quanta/${C}
+${DOC}quanta/${I}
 ${DOC}quanta/installation.docbook
+${DOC}quanta/introduction.docbook
+${DOC}quanta/q-and-a.docbook
+${DOC}quanta/quanta-menus.docbook
+${DOC}quanta/quanta-projects.docbook
+${DOC}quanta/working-with-quanta.docbook
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
@@ -1051,12 +1129,14 @@ share/locale/pt/charset
 share/locale/pt/entry.desktop
 share/locale/pt/flag.png
 @dirrm ${DOC}quanta
+@dirrm ${DOC}kxsldbg
 @dirrm ${DOC}kxkb
 @dirrm ${DOC}kxconfig
 @dirrm ${DOC}kwuftpd
 @dirrm ${DOC}kwrite
 @dirrm ${DOC}kworldclock
 @dirrm ${DOC}kweather
+@dirrm ${DOC}kwallet
 @dirrm ${DOC}kuser
 @dirrm ${DOC}ktimer
 @dirrm ${DOC}kteatime
@@ -1066,10 +1146,14 @@ share/locale/pt/flag.png
 @dirrm ${DOC}kspell
 @dirrm ${DOC}ksnapshot
 @dirrm ${DOC}ksim
+@dirrm ${DOC}kruler
 @dirrm ${DOC}krfb
+@dirrm ${DOC}kpdf
 @dirrm ${DOC}kpat
+@dirrm ${DOC}kpaint
 @dirrm ${DOC}kpager
 @dirrm ${DOC}kpackage
+@dirrm ${DOC}kooka
 @dirrm ${DOC}konsole
 @dirrm ${DOC}konqueror
 @dirrm ${DOC}konq-plugins
@@ -1080,6 +1164,7 @@ share/locale/pt/flag.png
 @dirrm ${DOC}kmathtool
 @dirrm ${DOC}klipper
 @dirrm ${DOC}klickety
+@dirrm ${DOC}kjots
 @dirrm ${DOC}kioslave
 @dirrm ${DOC}kinfocenter/xserver
 @dirrm ${DOC}kinfocenter/usb
@@ -1101,15 +1186,22 @@ share/locale/pt/flag.png
 @dirrm ${DOC}kinfocenter
 @dirrm ${DOC}kicker-applets
 @dirrm ${DOC}kicker
+@dirrm ${DOC}khexedit
 @dirrm ${DOC}khelpcenter
+@dirrm ${DOC}kgpg
+@dirrm ${DOC}kghostview
+@dirrm ${DOC}kgamma
 @dirrm ${DOC}kfloppy
 @dirrm ${DOC}kfind
 @dirrm ${DOC}kenolaba
+@dirrm ${DOC}kedit
+@dirrm ${DOC}kdvi
 @dirrm ${DOC}kdm
 @dirrm ${DOC}kdf
 @dirrm ${DOC}kdesu
 @dirrm ${DOC}kdeprint
 @dirrm ${DOC}kdebugdialog
+@dirrm ${DOC}kdat
 @dirrm ${DOC}kcron
 @dirrm ${DOC}kcontrol/windowmanagement
 @dirrm ${DOC}kcontrol/useragent
@@ -1166,7 +1258,9 @@ share/locale/pt/flag.png
 @dirrm ${DOC}kcontrol/background
 @dirrm ${DOC}kcontrol/arts
 @dirrm ${DOC}kcontrol
+@dirrm ${DOC}kcoloredit
 @dirrm ${DOC}kcharselect
+@dirrm ${DOC}kcalc
 @dirrm ${DOC}kbugbuster
 @dirrm ${DOC}kate-plugins
 @dirrm ${DOC}kate
@@ -1174,7 +1268,9 @@ share/locale/pt/flag.png
 @dirrm ${DOC}kaddressbook
 @dirrm ${DOC}kaboodle
 @dirrm ${DOC}common
+@dirrm ${DOC}ark
 @dirrm ${DOC}amor
+@dirrm ${DOC}KRegExpEditor
 @dirrm share/doc/HTML/pt
 @dirrm share/apps/ktuberling/sounds/pt
 @dirrm share/apps/ktuberling/sounds

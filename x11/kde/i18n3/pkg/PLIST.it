@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.it,v 1.13 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.it,v 1.14 2004/03/08 11:10:15 espie Exp $
 share/apps/ktuberling/sounds/it/baffi.wav
 share/apps/ktuberling/sounds/it/bocca.wav
 share/apps/ktuberling/sounds/it/capelli.wav
@@ -99,6 +99,12 @@ ${DOC}kamera/${I}
 ${DOC}kasteroids/common
 ${DOC}kasteroids/${C}
 ${DOC}kasteroids/${I}
+${DOC}kate-plugins/htmltools.docbook
+${DOC}kate-plugins/insertcommand.docbook
+${DOC}kate-plugins/openheader.docbook
+${DOC}kate-plugins/textfilter.docbook
+${DOC}kate-plugins/xmlcheck.docbook
+${DOC}kate-plugins/xmltools.docbook
 ${DOC}katomic/common
 ${DOC}katomic/${C}
 ${DOC}katomic/${I}
@@ -507,6 +513,7 @@ ${DOC}kpercentage/using.docbook
 ${DOC}kpoker/common
 ${DOC}kpoker/${C}
 ${DOC}kpoker/${I}
+${DOC}kppp/global-settings.docbook
 ${DOC}krec/common
 ${DOC}krec/${C}
 ${DOC}krec/${I}
@@ -729,6 +736,9 @@ ${DOC}lskat/${I}
 ${DOC}megami/common
 ${DOC}megami/${C}
 ${DOC}megami/${I}
+${DOC}mouse/common
+${DOC}mouse/${C}
+${DOC}mouse/${I}
 ${DOC}noatun/common
 ${DOC}noatun/${C}
 ${DOC}noatun/${I}
@@ -1179,8 +1189,6 @@ ${LOC}kwin_quartz_config.mo
 ${LOC}kwireless.mo
 ${LOC}kworldclock.mo
 ${LOC}kwriteconfig.mo
-${LOC}kwuftpd.mo
-${LOC}kxconfig.mo
 ${LOC}kxkb.mo
 ${LOC}kxmlrpcd.mo
 ${LOC}kxsconfig.mo
@@ -1243,6 +1251,7 @@ share/locale/it/charset
 share/locale/it/entry.desktop
 share/locale/it/flag.png
 @dirrm ${DOC}noatun
+@dirrm ${DOC}mouse
 @dirrm ${DOC}megami
 @dirrm ${DOC}lskat
 @dirrm ${DOC}lisa
@@ -1274,6 +1283,7 @@ share/locale/it/flag.png
 @dirrm ${DOC}kruler
 @dirrm ${DOC}kreversi
 @dirrm ${DOC}krec
+@dirrm ${DOC}kppp
 @dirrm ${DOC}kpoker
 @dirrm ${DOC}kpercentage
 @dirrm ${DOC}kpat
@@ -1375,6 +1385,7 @@ share/locale/it/flag.png
 @dirrm ${DOC}kbattleship
 @dirrm ${DOC}kbackgammon
 @dirrm ${DOC}katomic
+@dirrm ${DOC}kate-plugins
 @dirrm ${DOC}kasteroids
 @dirrm ${DOC}kamera
 @dirrm ${DOC}kalzium

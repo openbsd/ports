@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.gl,v 1.2 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.gl,v 1.3 2004/03/08 11:10:15 espie Exp $
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -14,6 +14,7 @@ ${LOC}clockapplet.mo
 ${LOC}crashesplugin.mo
 ${LOC}dcopservice.mo
 ${LOC}desktop_kde-i18n.mo
+${LOC}desktop_kdeaddons.mo
 ${LOC}desktop_kdeadmin.mo
 ${LOC}desktop_kdebase.mo
 ${LOC}desktop_kdeedu.mo
@@ -23,6 +24,7 @@ ${LOC}desktop_kdelibs.mo
 ${LOC}desktop_kdemultimedia.mo
 ${LOC}desktop_kdenetwork.mo
 ${LOC}desktop_kdepim.mo
+${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
 ${LOC}desktop_quanta.mo
@@ -110,6 +112,7 @@ ${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
 ${LOC}kcmperformance.mo
 ${LOC}kcmprintmgr.mo
+${LOC}kcmsamba.mo
 ${LOC}kcmscreensaver.mo
 ${LOC}kcmsmartcard.mo
 ${LOC}kcmsmserver.mo
@@ -118,6 +121,7 @@ ${LOC}kcmspellchecking.mo
 ${LOC}kcmstyle.mo
 ${LOC}kcmtaskbar.mo
 ${LOC}kcmthemes.mo
+${LOC}kcmusb.mo
 ${LOC}kcmview1394.mo
 ${LOC}kcmxinerama.mo
 ${LOC}kcoloredit.mo
@@ -217,10 +221,12 @@ ${LOC}klickety.mo
 ${LOC}klines.mo
 ${LOC}klipper.mo
 ${LOC}kmail.mo
+${LOC}kmathtool.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
 ${LOC}kmessedwords.mo
+${LOC}kmid.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
 ${LOC}kmoon.mo
@@ -259,6 +265,7 @@ ${LOC}ksmserver.mo
 ${LOC}ksnake.mo
 ${LOC}ksnapshot.mo
 ${LOC}ksplash.mo
+${LOC}ksplashthemes.mo
 ${LOC}kstart.mo
 ${LOC}kstyle_keramik_config.mo
 ${LOC}ksysctrl.mo
@@ -272,6 +279,7 @@ ${LOC}ktexteditor_insertfile.mo
 ${LOC}ktexteditor_kdatatool.mo
 ${LOC}ktimer.mo
 ${LOC}ktip.mo
+${LOC}ktouch.mo
 ${LOC}ktron.mo
 ${LOC}ktux.mo
 ${LOC}kuick_plugin.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.en_GB,v 1.13 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.en_GB,v 1.14 2004/03/08 11:10:15 espie Exp $
 ${DOC}kaddressbook/common
 ${DOC}kaddressbook/${C}
 ${DOC}kaddressbook/${I}
@@ -202,6 +202,8 @@ ${DOC}kdm/kdmrc-ref.docbook
 ${DOC}kfind/common
 ${DOC}kfind/${C}
 ${DOC}kfind/${I}
+${DOC}khelpcenter/common
+${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/faq/about.docbook
 ${DOC}khelpcenter/faq/common
 ${DOC}khelpcenter/faq/configkde.docbook
@@ -225,9 +227,14 @@ ${DOC}khelpcenter/glossary/common
 ${DOC}khelpcenter/glossary/${C}
 ${DOC}khelpcenter/glossary/${I}
 ${DOC}khelpcenter/glossary/kdeprintingglossary.docbook
+${DOC}khelpcenter/help.docbook
+${DOC}khelpcenter/${C}
+${DOC}khelpcenter/${I}
+${DOC}khelpcenter/links.docbook
 ${DOC}khelpcenter/quickstart/common
 ${DOC}khelpcenter/quickstart/${C}
 ${DOC}khelpcenter/quickstart/${I}
+${DOC}khelpcenter/support.docbook
 ${DOC}khelpcenter/userguide/about-desktop.docbook
 ${DOC}khelpcenter/userguide/common
 ${DOC}khelpcenter/userguide/first-impressions.docbook
@@ -256,6 +263,8 @@ ${DOC}khelpcenter/userguide/ug-faq.docbook
 ${DOC}khelpcenter/visualdict/common
 ${DOC}khelpcenter/visualdict/${C}
 ${DOC}khelpcenter/visualdict/${I}
+${DOC}khelpcenter/welcome.docbook
+${DOC}khelpcenter/whatiskde.docbook
 ${DOC}kicker/common
 ${DOC}kicker/${C}
 ${DOC}kicker/${I}

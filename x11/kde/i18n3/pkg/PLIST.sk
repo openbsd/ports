@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sk,v 1.14 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.sk,v 1.15 2004/03/08 11:10:15 espie Exp $
 share/apps/ktuberling/sounds/sk/cigara.wav
 share/apps/ktuberling/sounds/sk/fuzy.wav
 share/apps/ktuberling/sounds/sk/hodinky.wav
@@ -673,6 +673,7 @@ ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
 ${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
+${LOC}cvsservice.mo
 ${LOC}dcopservice.mo
 ${LOC}desktop_kde-i18n.mo
 ${LOC}desktop_kdeaccessibility.mo
@@ -706,6 +707,7 @@ ${LOC}fsview.mo
 ${LOC}htmlsearch.mo
 ${LOC}imagerename_plugin.mo
 ${LOC}imgalleryplugin.mo
+${LOC}irkick.mo
 ${LOC}jefferson.mo
 ${LOC}juk.mo
 ${LOC}kabc2mutt.mo
@@ -753,6 +755,7 @@ ${LOC}kbattleship.mo
 ${LOC}kbinaryclock.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
+${LOC}kbruch.mo
 ${LOC}kbugbuster.mo
 ${LOC}kcalc.mo
 ${LOC}kcardchooser.mo
@@ -800,6 +803,7 @@ ${LOC}kcmktalkd.mo
 ${LOC}kcmkuick.mo
 ${LOC}kcmkurifilt.mo
 ${LOC}kcmkvaio.mo
+${LOC}kcmkwallet.mo
 ${LOC}kcmkwindecoration.mo
 ${LOC}kcmkwintheme.mo
 ${LOC}kcmkwm.mo
@@ -810,6 +814,7 @@ ${LOC}kcmlaunch.mo
 ${LOC}kcmlayout.mo
 ${LOC}kcmlilo.mo
 ${LOC}kcmlinuz.mo
+${LOC}kcmlirc.mo
 ${LOC}kcmlocale.mo
 ${LOC}kcmmediacontrol.mo
 ${LOC}kcmmidi.mo
@@ -849,6 +854,7 @@ ${LOC}kdesu.mo
 ${LOC}kdesud.mo
 ${LOC}kdevtipofday.mo
 ${LOC}kdf.mo
+${LOC}kdgantt.mo
 ${LOC}kdialog.mo
 ${LOC}kdict.mo
 ${LOC}kdictapplet.mo
@@ -905,6 +911,7 @@ ${LOC}kgantt.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
 ${LOC}kgoldrunner.mo
+${LOC}kgpg.mo
 ${LOC}kgpgcertmanager.mo
 ${LOC}khangman.mo
 ${LOC}khelpcenter.mo
@@ -964,6 +971,7 @@ ${LOC}kmidi.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
+${LOC}kmobile.mo
 ${LOC}kmoon.mo
 ${LOC}kmousetool.mo
 ${LOC}kmouth.mo
@@ -1050,6 +1058,7 @@ ${LOC}ktexteditor_kdatatool.mo
 ${LOC}ktimemon.mo
 ${LOC}ktimer.mo
 ${LOC}ktip.mo
+${LOC}ktnef.mo
 ${LOC}ktouch.mo
 ${LOC}ktron.mo
 ${LOC}ktuberling.mo
@@ -1069,6 +1078,7 @@ ${LOC}kviewshell.mo
 ${LOC}kviewtemplateplugin.mo
 ${LOC}kviewviewer.mo
 ${LOC}kvoctrain.mo
+${LOC}kwalletmanager.mo
 ${LOC}kweather.mo
 ${LOC}kwifimanager.mo
 ${LOC}kwin.mo
@@ -1106,6 +1116,7 @@ ${LOC}libkonq.mo
 ${LOC}libkpimexchange.mo
 ${LOC}libkscan.mo
 ${LOC}libkscreensaver.mo
+${LOC}libksieve.mo
 ${LOC}libksirtet.mo
 ${LOC}libksync.mo
 ${LOC}libtaskbar.mo
@@ -1135,6 +1146,7 @@ ${LOC}tippecanoe.mo
 ${LOC}tyler.mo
 ${LOC}uachangerplugin.mo
 ${LOC}umbrello.mo
+${LOC}userinfo.mo
 ${LOC}validatorsplugin.mo
 ${LOC}vimpart.mo
 ${LOC}wakeup.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.el,v 1.12 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.el,v 1.13 2004/03/08 11:10:15 espie Exp $
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
@@ -6,6 +6,7 @@ ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}artsbuilder.mo
 ${LOC}artscontrol.mo
+${LOC}atlantik.mo
 ${LOC}audiorename_plugin.mo
 ${LOC}autorefresh.mo
 ${LOC}babelfish.mo
@@ -51,6 +52,7 @@ ${LOC}imagerename_plugin.mo
 ${LOC}imgalleryplugin.mo
 ${LOC}irkick.mo
 ${LOC}jefferson.mo
+${LOC}juk.mo
 ${LOC}kabc2mutt.mo
 ${LOC}kabc_dir.mo
 ${LOC}kabc_file.mo
@@ -88,6 +90,7 @@ ${LOC}katexmltools.mo
 ${LOC}katomic.mo
 ${LOC}kaudiocreator.mo
 ${LOC}kbabel.mo
+${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
@@ -229,6 +232,7 @@ ${LOC}kfouleggs.mo
 ${LOC}kgamma.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
+${LOC}kgoldrunner.mo
 ${LOC}kgpg.mo
 ${LOC}khangman.mo
 ${LOC}khelpcenter.mo
@@ -260,6 +264,7 @@ ${LOC}kio_smb.mo
 ${LOC}kio_smbro.mo
 ${LOC}kio_smtp.mo
 ${LOC}kioexec.mo
+${LOC}kit.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
 ${LOC}kjumpingcube.mo
@@ -288,6 +293,7 @@ ${LOC}knorskverbs.mo
 ${LOC}knotes.mo
 ${LOC}knotify.mo
 ${LOC}kodo.mo
+${LOC}kolf.mo
 ${LOC}kolourpicker.mo
 ${LOC}kompare.mo
 ${LOC}konq_smbmounterplugin.mo
@@ -320,6 +326,7 @@ ${LOC}krunapplet.mo
 ${LOC}ksame.mo
 ${LOC}kscd.mo
 ${LOC}kscreensaver.mo
+${LOC}kshisen.mo
 ${LOC}ksig.mo
 ${LOC}ksirc.mo
 ${LOC}ksirtet.mo
@@ -327,6 +334,8 @@ ${LOC}ksmiletris.mo
 ${LOC}ksmserver.mo
 ${LOC}ksnake.mo
 ${LOC}ksnapshot.mo
+${LOC}ksokoban.mo
+${LOC}kspaceduel.mo
 ${LOC}ksplash.mo
 ${LOC}ksplashthemes.mo
 ${LOC}kstart.mo
@@ -395,6 +404,7 @@ ${LOC}libksync.mo
 ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo
+${LOC}lskat.mo
 ${LOC}lyrics.mo
 ${LOC}mediacontrol.mo
 ${LOC}minitoolsplugin.mo

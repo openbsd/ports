@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.nl,v 1.13 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.nl,v 1.14 2004/03/08 11:10:15 espie Exp $
 share/apps/ktuberling/sounds/nl/aardappelmannetje.wav
 share/apps/ktuberling/sounds/nl/bril.wav
 share/apps/ktuberling/sounds/nl/haar.wav
@@ -76,6 +76,9 @@ ${DOC}common/xml.dcl
 ${DOC}kaddressbook/common
 ${DOC}kaddressbook/${C}
 ${DOC}kaddressbook/${I}
+${DOC}kalzium/common
+${DOC}kalzium/${C}
+${DOC}kalzium/${I}
 ${DOC}kate-plugins/htmltools.docbook
 ${DOC}kate-plugins/insertcommand.docbook
 ${DOC}kate-plugins/openheader.docbook
@@ -369,6 +372,10 @@ ${DOC}kioslave/webdavs.docbook
 ${DOC}kmoon/common
 ${DOC}kmoon/${C}
 ${DOC}kmoon/${I}
+${DOC}kmplot/commands.docbook
+${DOC}kmplot/configuration.docbook
+${DOC}kmplot/credits.docbook
+${DOC}kmplot/developer.docbook
 ${DOC}kompare/common
 ${DOC}kompare/${C}
 ${DOC}kompare/${I}
@@ -376,6 +383,38 @@ ${DOC}konsole/konsole.png
 ${DOC}kspell/common
 ${DOC}kspell/${C}
 ${DOC}kspell/${I}
+${DOC}kstars/ai-contents.docbook
+${DOC}kstars/altvstime.docbook
+${DOC}kstars/astroinfo.docbook
+${DOC}kstars/blackbody.docbook
+${DOC}kstars/calc-apcoords.docbook
+${DOC}kstars/calc-dayduration.docbook
+${DOC}kstars/calc-eqgal.docbook
+${DOC}kstars/calc-geodetic.docbook
+${DOC}kstars/calc-horizontal.docbook
+${DOC}kstars/calc-julianday.docbook
+${DOC}kstars/calc-precess.docbook
+${DOC}kstars/calc-sidereal.docbook
+${DOC}kstars/calculator.docbook
+${DOC}kstars/cequator.docbook
+${DOC}kstars/colorandtemp.docbook
+${DOC}kstars/commands.docbook
+${DOC}kstars/config.docbook
+${DOC}kstars/cpoles.docbook
+${DOC}kstars/credits.docbook
+${DOC}kstars/csphere.docbook
+${DOC}kstars/darkmatter.docbook
+${DOC}kstars/dcop.docbook
+${DOC}kstars/details.docbook
+${DOC}kstars/dumpmode.docbook
+${DOC}kstars/ecliptic.docbook
+${DOC}kstars/ellipticalgalaxies.docbook
+${DOC}kstars/equinox.docbook
+${DOC}kstars/flux.docbook
+${DOC}kstars/geocoords.docbook
+${DOC}ktouch/common
+${DOC}ktouch/${C}
+${DOC}ktouch/${I}
 ${DOC}kweather/common
 ${DOC}kweather/${C}
 ${DOC}kweather/${I}
@@ -891,9 +930,12 @@ share/locale/nl/entry.desktop
 share/locale/nl/flag.png
 @dirrm ${DOC}kworldclock
 @dirrm ${DOC}kweather
+@dirrm ${DOC}ktouch
+@dirrm ${DOC}kstars
 @dirrm ${DOC}kspell
 @dirrm ${DOC}konsole
 @dirrm ${DOC}kompare
+@dirrm ${DOC}kmplot
 @dirrm ${DOC}kmoon
 @dirrm ${DOC}kioslave
 @dirrm ${DOC}kinfocenter/xserver
@@ -955,6 +997,7 @@ share/locale/nl/flag.png
 @dirrm ${DOC}kbugbuster
 @dirrm ${DOC}kate-plugins
 @dirrm ${DOC}kate
+@dirrm ${DOC}kalzium
 @dirrm ${DOC}kaddressbook
 @dirrm ${DOC}common
 @dirrm ${DOC}artsbuilder
