@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2003/04/14 09:10:02 wilfried Exp $
+# $OpenBSD: Makefile,v 1.89 2003/04/15 14:31:15 wilfried Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -71,7 +71,6 @@
      SUBDIR += netris
      SUBDIR += newvox
      SUBDIR += oilwar
-     SUBDIR += oilwar,no_sound
      SUBDIR += omega
 #    SUBDIR += oneko
 #    SUBDIR += oonsoo
