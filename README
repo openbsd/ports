@@ -6,6 +6,13 @@
 			http://www.openbsd.org
 
 
+======================================================================
+
+This file is  mostly obsolete. You should refer to the corresponding
+man-pages: ports(7), packages(7), bsd.port.mk(5) instead.
+
+======================================================================
+
 Contacts
 ========
 * individual ports list a 
@@ -23,7 +30,7 @@ If nothing happens after a reasonable delay, start plaguing him,
 or go to the next step.
 
 Developers with a major investment in the ports tree include
-brad@cvs.openbsd.org, turan@cvs.openbsd.org, espie@cvs.openbsd.org
+brad@cvs.openbsd.org, naddy@cvs.openbsd.org, espie@cvs.openbsd.org
 
 Those people can be contacted to put some pressure on a lazy maintainer.
 But we do read ports@openbsd.org, so...
@@ -330,4 +337,4 @@ please visit
 
 	http://www.openbsd.org/porting.html
 
-$OpenBSD: README,v 1.9 2001/02/21 23:23:13 avsm Exp $
+$OpenBSD: README,v 1.10 2001/04/11 15:57:50 espie Exp $
