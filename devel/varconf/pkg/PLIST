@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/29 07:18:59 pvalchev Exp $
+include/varconf/Config.h
+include/varconf/parse_error.h
+include/varconf/varconf.h
+include/varconf/variable.h
+lib/libvarconf.a
+lib/libvarconf.la
+%%SHARED%%
+@dirrm include/varconf
