@@ -1,0 +1,31 @@
+diff -udr buffer.ORG/Makefile buffer/Makefile
+--- buffer.ORG/Makefile	Wed Jul 14 17:59:17 1993
++++ Makefile	Thu Nov 16 20:09:23 1995
+@@ -8,7 +8,7 @@
+ 
+ # Where to install buffer and its manual pages
+ INSTBIN=/usr/local/bin
+-INSTMAN=/usr/man/manl
++INSTMAN=/usr/local/man/manl
+ # The manual page section (normally l or 1)
+ S=l
+ 
+diff -udr buffer.ORG/buffer.c buffer/buffer.c
+--- buffer.ORG/buffer.c	Wed Jul 14 17:59:17 1993
++++ buffer.c	Fri Nov 17 20:23:58 1995
+@@ -384,6 +384,7 @@
+ }
+ 
+ /* The interrupt handler */
++void
+ shutdown()
+ {
+ 	static int shutting;
+@@ -400,6 +401,7 @@
+ }
+ 
+ /* Shutdown because the child has ended */
++void
+ child_shutdown()
+ {
+ 	/* Find out which child has died.  (They may not be my
