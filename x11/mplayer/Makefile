@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2002/08/18 11:26:48 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2002/08/18 12:02:31 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -50,10 +50,12 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 		--disable-aa \
 		--disable-ossaudio \
 		--disable-arts \
+		--disable-dvdnav \
+		--disable-cdparanoia \
 		--enable-select \
 		--enable-vidix \
 		--enable-vorbis \
-		--with-extraincdir="${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+		--with-extraincdir=${LOCALBASE}/include/libpng:${LOCALBASE}/include \
 		--with-extralibdir=${LOCALBASE}/lib
 
 .if ${MACHINE_ARCH:Mpowerpc}
