@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/06/10 20:22:17 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2001/03/29 11:41:43 obecian Exp $
 # $FreeBSD: Makefile,v 1.12 1999/02/17 22:25:36 ache Exp $
+
+COMMENT=	"extract files from ARJ archives"
 
 DISTNAME=	unarj-2.43
 CATEGORIES=	archivers
-NEED_VERSION=	1.301
+NEED_VERSION=	1.364
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=	.tgz
 
