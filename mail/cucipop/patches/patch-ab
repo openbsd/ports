@@ -1,5 +1,5 @@
-*** authenticate.c.orig	Tue Jun 30 12:02:42 1998
---- authenticate.c	Tue Jun 30 12:04:50 1998
+*** authenticate.c.orig	Wed May 13 23:57:39 1998
+--- authenticate.c	Fri Oct  2 09:44:25 1998
 ***************
 *** 44,50 ****
   #define VIRTUALUSER	"vpop"
@@ -17,3 +17,84 @@
   #endif
   #ifndef MAILSPOOLHASH
   #define MAILSPOOLHASH	0      /* 2 would deliver to /var/spool/mail/b/a/bar */
+***************
+*** 82,87 ****
+--- 82,88 ----
+  
+  static void getlogname(user,sock)const char*user;const int sock;
+  { struct sockaddr_in sockname;int namelen=sizeof sockname;const char*retval="";
++   void *p;
+    if(!getsockname(sock,(struct sockaddr*)&sockname,&namelen))
+     { const struct hostent*hent=
+        gethostbyaddr((void*)&sockname.sin_addr.s_addr,sizeof sockname.sin_addr,
+***************
+*** 89,104 ****
+       if(hent)
+  	retval=hent->h_name;
+     }
+!   if(auth_logname=			   /* memory leak when out of memory */
+!    realloc(auth_logname,(namelen=strlen(retval))+1+strlen(user)+1))
+!    { strcpy(auth_logname,retval)[namelen]='/';
+       strcpy(auth_logname+namelen+1,user);
+!    }
+  }
+  
+  static const struct passwd*cgetpwnam(user,sock)const char*user;
+   const int sock;
+  {
+  #ifdef VIRTUALSERVER
+    DB_ENV dbenv;DB*db;
+    memset(&dbenv,0,sizeof dbenv);
+--- 90,106 ----
+       if(hent)
+  	retval=hent->h_name;
+     }
+!   if(p=realloc(auth_logname,(namelen=strlen(retval))+1+strlen(user)+1))
+!    { auth_logname=p;
+!      strcpy(auth_logname,retval)[namelen]='/';
+       strcpy(auth_logname+namelen+1,user);
+!    } else { free(auth_logname); auth_logname=NULL; }
+  }
+  
+  static const struct passwd*cgetpwnam(user,sock)const char*user;
+   const int sock;
+  {
++   void *p;
+  #ifdef VIRTUALSERVER
+    DB_ENV dbenv;DB*db;
+    memset(&dbenv,0,sizeof dbenv);
+***************
+*** 129,142 ****
+  novirt:	      strcpy(auth_logname,user);
+  	 }
+  	db->close(db,0);
+!       }					   /* memory leak when out of memory */
+!      else if(auth_logname=realloc(auth_logname,strlen(user)+1))
+! 	strcpy(auth_logname,user);			 /* DB doesn't exist */
+       db_appexit(&dbenv);
+     }
+    else						     /* DB subsystem problem */
+!    { if(auth_logname=realloc(auth_logname,strlen(user)+1))
+! 	strcpy(auth_logname,user);
+     }
+  #endif
+    return getpwnam(user);	       /* this should be selfexplanatory :-) */
+--- 131,148 ----
+  novirt:	      strcpy(auth_logname,user);
+  	 }
+  	db->close(db,0);
+!       }
+!      else if(p=realloc(auth_logname,strlen(user)+1))
+!       { auth_logname=p;
+!         strcpy(auth_logname,user);			 /* DB doesn't exist */
+!       } else { free(auth_logname); auth_logname=NULL; }
+       db_appexit(&dbenv);
+     }
+    else						     /* DB subsystem problem */
+!    { if(p=realloc(auth_logname,strlen(user)+1))
+! 	 { auth_logname=p;
+! 	   strcpy(auth_logname,user);
+! 	 } else { free(auth_logname); auth_logname=NULL; }
+     }
+  #endif
+    return getpwnam(user);	       /* this should be selfexplanatory :-) */
