@@ -1,7 +1,7 @@
-$OpenBSD: patch-ld_emulparams_hppaobsd_sh,v 1.6 2004/02/19 05:51:13 brad Exp $
+$OpenBSD: patch-ld_emulparams_hppaobsd_sh,v 1.7 2004/05/10 21:41:07 brad Exp $
 --- ld/emulparams/hppaobsd.sh.orig	2002-07-08 22:42:13.000000000 -0400
-+++ ld/emulparams/hppaobsd.sh	2004-02-19 00:45:04.000000000 -0500
-@@ -1,5 +1,14 @@
++++ ld/emulparams/hppaobsd.sh	2004-05-10 17:37:36.000000000 -0400
+@@ -1,5 +1,9 @@
  . ${srcdir}/emulparams/hppanbsd.sh
 +MAXPAGESIZE=0x1000
 +. ${srcdir}/emulparams/elf_obsd.sh
@@ -12,8 +12,3 @@ $OpenBSD: patch-ld_emulparams_hppaobsd_sh,v 1.6 2004/02/19 05:51:13 brad Exp $
 +ENTRY="__start"
 +
 +unset START
-+
-+case "${target}" in
-+hppa-*-openbsd3.2)
-+   unset PAD_RO RODATA_PADSIZE RODATA_ALIGN PAD_GOT PAD_PLT ;;
-+esac
