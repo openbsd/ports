@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/12/09 15:17:43 brad Exp $
-@pkgcfl irssi-*
+@comment $OpenBSD: PLIST,v 1.7 2002/12/13 16:28:31 brad Exp $
+@comment @pkgcfl irssi-*
 bin/silc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/TextUI.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/UI.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/perllocal.pod
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi.pm
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/TextUI.pm
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/UI.pm
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.so
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.so
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.so
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/perllocal.pod
 share/doc/silc/CHANGES
 @comment share/doc/silc/COPYING
 share/doc/silc/CREDITS
@@ -130,7 +130,7 @@ share/silc/themes/default.theme
 @dirrm share/silc
 @dirrm share/examples/silc
 @dirrm share/doc/silc
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi
+@comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI
+@comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI
+@comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi
+@comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi
