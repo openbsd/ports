@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/16 21:21:14 pedro Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/18 03:29:17 jolan Exp $
 
 COMMENT=	"posix library for the lua language"
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 DISTNAME=	lposix
-PKGNAME=	luaposix
+PKGNAME=	luaposix-20041216
+DIST_SUBDIR=	${PKGNAME}
 WRKDIST=	${WRKDIR}/posix
 CATEGORIES=	devel
 
