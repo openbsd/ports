@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2001/05/05 22:45:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2001/05/19 00:22:06 lebel Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -16,6 +16,7 @@
      SUBDIR += gogo
      SUBDIR += gom
      SUBDIR += gqmpeg
+     SUBDIR += grip
      SUBDIR += gsm
 #    SUBDIR += knapster
      SUBDIR += lame
