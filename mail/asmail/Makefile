@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/09 02:27:15 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/10/29 10:47:52 turan Exp $
+
+BROKEN=		bad packing lists
 
 DISTNAME=	asmail-0.50
 CATEGORIES=	mail x11
