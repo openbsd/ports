@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2002/06/13 03:45:57 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2002/12/29 19:37:52 fgsch Exp $
 
 COMMENT=	"character set conversion library"
 
 DISTNAME=	libiconv-1.8
 CATEGORIES=	converters devel
-NEED_VERSION=	1.528
 MASTER_SITES=	${MASTER_SITE_GNU:=libiconv/}
 
 HOMEPAGE=	http://www.gnu.org/software/libiconv/

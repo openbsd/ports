@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2002/06/09 05:24:31 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2002/12/29 19:37:52 fgsch Exp $
 
 COMMENT=	"module to encode and decode ASN.1 data structures"
 
 DISTNAME=	Convert-ASN1-0.15
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
-NEED_VERSION=	1.504
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/13 18:50:38 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/29 19:37:52 fgsch Exp $
 
 COMMENT=	"interface to iconv() codeset conversion function"
 
 DISTNAME=	Text-Iconv-1.2
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
-NEED_VERSION=	1.515
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

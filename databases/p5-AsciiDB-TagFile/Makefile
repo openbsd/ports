@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2002/06/09 05:24:35 wilfried Exp $
+# $OpenBSD: Makefile,v 1.12 2002/12/29 19:37:52 fgsch Exp $
 
 COMMENT=	"tie class for a simple ASCII database"
 DISTNAME=	AsciiDB-TagFile-1.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
-NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=AsciiDB/}
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>

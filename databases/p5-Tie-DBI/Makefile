@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/11/30 19:30:43 margarida Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/29 19:37:53 fgsch Exp $
 
 COMMENT=	"Tie hashes to DBI relational databases"
 
@@ -6,7 +6,6 @@ VERSION=	0.91
 DISTNAME=	Tie-DBI-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://stein.cshl.org/~lstein/Tie-DBI/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 01:17:31 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2002/12/29 19:37:52 fgsch Exp $
 
 COMMENT=	"GTK-based LDAP client"
 
@@ -6,7 +6,6 @@ VERSION=	0.5.0
 DISTNAME=	gq-${VERSION}
 PKGNAME=	${DISTNAME}
 CATEGORIES=	databases
-NEED_VERSION=	1.515
 
 MASTER_SITES=	${HOMEPAGE}/download/
 

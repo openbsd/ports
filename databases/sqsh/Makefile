@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2001/12/23 23:27:22 jcs Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 19:37:53 fgsch Exp $
 
 DISTNAME=	sqsh-2.1
 CATEGORIES=	databases shells
-NEED_VERSION=	1.474
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
