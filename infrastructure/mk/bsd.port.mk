@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.496 2001/11/12 14:32:52 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.497 2001/11/13 12:52:22 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2211,7 +2211,7 @@ _fetch-makefile-helper:
 .    if !defined(NO_CHECKSUM) && !empty(_CKSUMFILES:M${_F})
 	@checksum_file=${CHECKSUM_FILE}; \
 	test -f $$checksum_file || checksum_file=${MD5_FILE}; \
-	@if [ ! -f $$checksum_file ]; then \
+	if [ ! -f $$checksum_file ]; then \
 	  echo >&2 'Missing checksum file: $$checksum_file'; \
 	  echo '\t ERROR="no checksum file" \\'; \
 	else \
