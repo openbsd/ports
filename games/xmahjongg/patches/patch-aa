@@ -1,0 +1,31 @@
+--- Imakefile.orig	Sat Dec 11 03:35:21 1993
++++ Imakefile	Fri Aug 16 18:41:38 1996
+@@ -5,7 +5,26 @@
+ #	copyright laws of the United States.
+ # 
+ LOCAL_LIBRARIES = $(XLIB) 
+-SRCS	= xmahjongg.c draw.c event.c initial.c packet.c play.c random.c sysdep.c variables.c
+-OBJS	= xmahjongg.o draw.o event.o initial.o packet.o play.o random.o sysdep.o variables.o
++         LAYOUT = $(LIBDIR)/xmahjongg
++  EXTRA_DEFINES = -DLAYOUT=\"$(LAYOUT)\"
++         BOARDS = bridge default wedges
++           FONT = xmahjongg.bdf
++      MANSUFFIX = 6
++
++SRCS	= xmahjongg.c draw.c event.c initial.c packet.c \
++	play.c random.c sysdep.c variables.c
++OBJS	= xmahjongg.o draw.o event.o initial.o packet.o \
++	play.o random.o sysdep.o variables.o
++
++all:: $(FONT)
++$(FONT): x.bdf.1 x.bdf.2 x.bdf.3
++	@echo "Creating xmahjongg.bdf..."; \
++	cat x.bdf.1 x.bdf.2 x.bdf.3 > $(FONT)
+ 
+ ComplexProgramTarget(xmahjongg)
++InstallTarget(install,$(FONT),$(INSTDATFLAGS),$(FONTDIR)/misc)
++MakeDirectories(install,$(LAYOUT))
++InstallMultipleDestFlags(install,$(BOARDS),$(LAYOUT),$(INSTDATFLAGS))
++
++install::
++	RunProgram(MKFONTDIR,$(FONTDIR)/misc)

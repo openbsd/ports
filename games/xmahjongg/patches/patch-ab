@@ -1,0 +1,46 @@
+--- variables.c.orig	Sat Dec 11 03:35:04 1993
++++ variables.c	Fri Aug 16 17:38:24 1996
+@@ -7,17 +7,18 @@
+  ******************************************************************************
+  */
+ 
+-#ifdef	GLOBAL
+-#undef	GLOBAL
+-#endif
+-#define	GLOBAL 
+-
+ #include <pwd.h>
+ #include <stdio.h>
+ #include <string.h>
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
+ #include "xmahjongg.h"
++
++#ifdef	GLOBAL
++#undef	GLOBAL
++#endif
++#define	GLOBAL 
++
+ #include "variables.h"
+ 
+ variables()
+--- xmahjongg.h.orig	Sun Jun 18 03:07:25 1995
++++ xmahjongg.h	Fri Aug 16 17:47:28 1996
+@@ -14,7 +14,9 @@
+ /*
+  *	Path used for layout files
+  */
++#ifndef LAYOUT		/* to be passed from Imakefile */
+ #define	LAYOUT		"/usr/X11R6/lib/xmahjongg"
++#endif
+ 
+ /*
+  *	Fundamental definitions
+@@ -34,6 +36,7 @@
+ #define FREE		0
+ #define	USED		1
+ 
++#define GLOBAL		extern
+ /*
+  *	Dimensions for boxes, tiles and options
+  */
