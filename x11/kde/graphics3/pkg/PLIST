@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2004/10/19 00:25:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.24 2005/01/31 09:13:06 espie Exp $
 bin/kcolorchooser
 bin/kcoloredit
 bin/kdvi
@@ -204,6 +204,8 @@ ${KDE}/kfile_bmp.la
 ${KDE}/kfile_bmp.so
 ${KDE}/kfile_dvi.la
 ${KDE}/kfile_dvi.so
+${KDE}/kfile_exr.la
+${KDE}/kfile_exr.so
 ${KDE}/kfile_ico.la
 ${KDE}/kfile_ico.so
 ${KDE}/kfile_jpeg.la
@@ -1048,6 +1050,7 @@ share/services/kconfiguredialog/kviewviewerpluginsconfig.desktop
 share/services/kded/daemonwatcher.desktop
 share/services/kfile_bmp.desktop
 share/services/kfile_dvi.desktop
+share/services/kfile_exr.desktop
 share/services/kfile_ico.desktop
 share/services/kfile_jpeg.desktop
 share/services/kfile_pcx.desktop
