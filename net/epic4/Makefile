@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2000/04/01 09:05:57 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2000/04/18 23:56:26 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 DISTNAME=	epic4pre2.507
+PKGNAME=	epic4-pre2.507
 CATEGORIES=	net
 NEED_VERSION=	1.234
 MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-ALPHA/ \

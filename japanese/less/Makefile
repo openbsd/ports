@@ -5,11 +5,11 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
 # $FreeBSD: Makefile,v 1.13 1998/07/17 20:36:13 steve Exp $
-# $OpenBSD: Makefile,v 1.8 2000/03/27 01:08:55 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/18 23:56:26 espie Exp $
 #
 
 DISTNAME=	less-332
-PKGNAME=	ja-less-332-248
+PKGNAME=	ja-less-3.32p2.48
 CATEGORIES=	japanese
 NEED_VERSION=	1.175
 MASTER_SITES=	${MASTER_SITE_GNU}

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/12 00:25:21 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/18 23:56:26 espie Exp $
 
 DISTNAME=	gperf-2.7
-PKGNAME=	gperf-2.7-19981006
+PKGNAME=	gperf-2.7.19981006
 CATEGORIES=   	devel
 NEED_VERSION=	1.223
 
