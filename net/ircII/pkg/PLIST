@@ -1,10 +1,11 @@
-bin/irc
-bin/irc-4.4S
+@comment $OpenBSD: PLIST,v 1.4 2000/04/21 22:52:22 espie Exp $
+bin/ircII
+bin/ircII-4.4S
 bin/ircbug
 bin/ircflush
 bin/ircio
 bin/wserv
-man/man1/irc.1
+man/man1/ircII.1
 man/man1/ircbug.1
 share/irc/help/!
 share/irc/help/.date
@@ -597,6 +598,8 @@ share/irc/translation/SWEDISH_NAMES_COM
 share/irc/translation/SWISS
 share/irc/translation/UNITED_KINGDOM
 share/irc/translation/UNITED_KINGDOM_COM
+@exec echo "The ircII executable has been installed as %D/bin/ircII"
+@exec echo "to avoid conflict with another irc package"
 @dirrm share/irc/help/alias
 @dirrm share/irc/help/bind
 @dirrm share/irc/help/ctcp
