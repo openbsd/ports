@@ -1,5 +1,5 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.14 2001/07/03 13:17:23 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/07/03 13:27:38 espie Exp $
 
 COMMENT=	"useful and interesting programs for Icon"
 
@@ -58,14 +58,14 @@ do-build:
 	${BUILDENV} cd ${WRKSRC}/gprocs && icont -usc *.icn
 .endif
 # then build programs using library
-	${BUILDENV} cd ${WRKSRC}/progs && for i in *.icn; do echo $$i; icont -us $$i; done
+	${BUILDENV} cd ${WRKSRC}/progs && for i in *.icn; do icont -us $$i; done
 .if empty(FLAVOR:L:Mno_x11)
 	${BUILDENV} cd ${WRKSRC}/gprogs && for i in *.icn; do icont -us $$i; done
 .endif
 # finally build some supplementary packages
 .if empty(FLAVOR:L:Mno_x11)
 	${BUILDENV} cd ${WRKSRC}/gpacks/vib && ${MAKE}
-	${BUILDENV} cd ${WRKSRC}/gpacks/xtiles && icont -us xtiles.icn
+	${BUILDENV} cd ${WRKSRC}/gpacks/xtiles && icont -s xtiles.icn
 .endif
 
 do-install:
