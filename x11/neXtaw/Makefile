@@ -2,7 +2,7 @@
 
 COMMENT=		"libXaw widget set replacement"
 
-VERSION=		0.13.0
+VERSION=		0.14.0
 DISTNAME=		neXtaw-${VERSION}
 CATEGORIES=		x11 devel
 
