@@ -1,15 +1,19 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/20 19:23:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/07 20:55:10 naddy Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 V=			1.0.1
 DISTNAME=		GConf-${V}
 CATEGORIES=		devel
-NEED_VERSION=   	1.455
+NEED_VERSION=   	1.473
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	stable/sources/GConf
+
+PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+                        ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+                        patch-*
 
 LIB_DEPENDS=		oaf.::x11/gnome/oaf \
 			gnome.36::x11/gnome/libs

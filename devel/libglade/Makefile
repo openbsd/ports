@@ -1,15 +1,19 @@
-# $OpenBSD: Makefile,v 1.5 2001/09/20 18:39:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/07 20:55:10 naddy Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
 V=			0.16
 DISTNAME=		libglade-${V}
 CATEGORIES=		devel
-NEED_VERSION=   	1.455
+NEED_VERSION=   	1.473
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	stable/sources/libglade
+
+PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
+                        ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
+                        patch-*
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

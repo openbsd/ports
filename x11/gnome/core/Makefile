@@ -1,16 +1,20 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/20 18:58:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/07 20:55:11 naddy Exp $
 
 COMMENT=		"core GNOME system"
 V=			1.4.0.4
 DISTNAME=		gnome-core-${V}
-CATEGORIES=		x11
-NEED_VERSION=   	1.455
+CATEGORIES=		x11 x11/gnome
+NEED_VERSION=   	1.473
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	stable/sources/gnome-core
 EXTRACT_SUFX=		.tar.bz2
+
+PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+                        ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+                        patch-*
 
 LIB_DEPENDS=		glade.4::devel/libglade,gnome \
 			gnome.36::x11/gnome/libs \

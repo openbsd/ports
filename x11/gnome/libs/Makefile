@@ -1,15 +1,19 @@
-# $OpenBSD: Makefile,v 1.8 2001/09/20 19:26:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/07 20:55:11 naddy Exp $
 
 COMMENT=		"libraries for the GNOME project"
 V=			1.2.13
 DISTNAME=		gnome-libs-${V}
-CATEGORIES=		x11
-NEED_VERSION=   	1.455
+CATEGORIES=		x11 x11/gnome
+NEED_VERSION=   	1.473
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	stable/sources/gnome-libs
+
+PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
+                        ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
+                        patch-*
 
 LIB_DEPENDS=		gdk_imlib.19::graphics/imlib \
 			esd.2::audio/esound \

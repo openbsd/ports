@@ -1,15 +1,19 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/20 20:01:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/07 20:55:11 naddy Exp $
 
 COMMENT=		"Object Activation Framework for GNOME"
 V=			0.6.5
 DISTNAME=		oaf-${V}
 CATEGORIES=		devel
-NEED_VERSION=   	1.455
+NEED_VERSION=   	1.473
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	unstable/sources/oaf
+
+PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+                        ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+                        patch-*
 
 LIB_DEPENDS=		ORBit.5::devel/ORBit \
 			xml.9::textproc/libxml1 \

@@ -1,15 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/20 18:39:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/07 20:55:10 naddy Exp $
 
 COMMENT=		"free user interface builder for GTK+ and GNOME"
 V=			0.5.11
 DISTNAME=		glade-${V}
 CATEGORIES=		devel
-NEED_VERSION=   	1.455
+NEED_VERSION=   	1.473
 HOMEPAGE=		http://glade.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	stable/sources/glade
+
+PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
+                        ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
+                        patch-*
 
 LIB_DEPENDS=		gtk.1.2::x11/gtk+
 RUN_DEPENDS=  		automake::devel/automake \

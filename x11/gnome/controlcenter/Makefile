@@ -1,19 +1,24 @@
-# $OpenBSD: Makefile,v 1.7 2001/09/20 18:53:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/07 20:55:11 naddy Exp $
 
 COMMENT=		"GNOME control center"
 V=			1.4.0.1
 DISTNAME=		control-center-${V}
-CATEGORIES=		x11 gnome
-NEED_VERSION=   	1.455
+CATEGORIES=		x11 x11/gnome
+NEED_VERSION=   	1.473
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	stable/sources/control-center
 
+PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+                        ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+                        patch-*
+
 LIB_DEPENDS=		gnomecanvaspixbuf.::graphics/gdk-pixbuf,gnome \
 			gnome.36::x11/gnome/libs \
 			gnomevfs.::x11/gnome/vfs
+
 BUILD_DEPENDS=		scrollkeeper-config::textproc/scrollkeeper
 RUN_DEPENDS=		scrollkeeper-config::textproc/scrollkeeper
 
