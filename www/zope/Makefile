@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/04/25 18:47:57 matt Exp $
+# $OpenBSD: Makefile,v 1.13 2002/07/09 12:32:34 matt Exp $
 
 COMMENT=	"object-oriented web application server"
 
@@ -8,11 +8,10 @@ PORT_VERSION=	${VERSION}
 DISTNAME=	Zope-${VERSION}-src
 PKGNAME=	zope-${PORT_VERSION}
 CATEGORIES=     www
-NEED_VERSION=	1.516
 
 HOMEPAGE=	http://www.zope.org/
 
-MAINTAINER=	Matt Behrens <matt@openbsd.org>
+MAINTAINER=	Chris Humphries <chumphries@drauku.net>
 
 # Zope Public License (ZPL) 2.0 <http://www.zope.org/Resources/ZPL>
 PERMIT_PACKAGE_CDROM=	Yes

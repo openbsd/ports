@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2002/05/13 23:31:25 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2002/07/09 12:32:34 matt Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -15,7 +15,6 @@ COMMENT-expat=	"expat module for Python"
 PKGNAME=	python-${VERSION}${PATCHLEVEL}
 DISTNAME=	Python-${VERSION}${PATCHLEVEL}
 CATEGORIES=	lang
-NEED_VERSION=	1.527
 MASTER_SITES=	ftp://ftp.python.org/pub/${PSUBDIR}/ \
 		ftp://python.mirrors.netnumina.com/python/pub/${PSUBDIR}/ \
 		http://www.linux.org.hk/mirror/python/ftp/${PSUBDIR}/
@@ -24,7 +23,7 @@ EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.python.org/
 
-MAINTAINER=	Matt Behrens <matt@openbsd.org>
+MAINTAINER=	Chris Humphries <chumphries@drauku.net>
 
 # PSF license <http://www.python.org/${VERSION}/license.html>
 # A summary of changes to Python is required to be distributed
