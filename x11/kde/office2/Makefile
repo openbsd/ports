@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/22 15:02:29 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/04/24 22:06:17 todd Exp $
 
 COMMENT=		"office applications for kde"
 CATEGORIES=		x11 x11/kde productivity
@@ -13,7 +13,8 @@ EXTRACT_SUFX=		.tar.bz2
 
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
-BUILD_DEPENDS=	zsh:zsh-*:shells/zsh
+BUILD_DEPENDS=	zsh:zsh-*:shells/zsh \
+				uic::x11/qt2-designer
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
 
 CONFIGURE_STYLE=	autoconf
