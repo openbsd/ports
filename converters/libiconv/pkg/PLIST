@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/12 01:32:04 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/08/27 13:17:17 brad Exp $
 bin/iconv
 include/iconv.h
 include/libcharset.h
@@ -12,3 +12,8 @@ man/man1/iconv.1
 man/man3/iconv.3
 man/man3/iconv_close.3
 man/man3/iconv_open.3
+share/doc/libiconv/iconv.1.html
+share/doc/libiconv/iconv.3.html
+share/doc/libiconv/iconv_close.3.html
+share/doc/libiconv/iconv_open.3.html
+@dirrm share/doc/libiconv
