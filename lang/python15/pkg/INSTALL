@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $OpenBSD: INSTALL,v 1.1.1.1 2000/12/13 05:09:47 jasoni Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/08/21 04:10:24 jasoni Exp $
 #
 # python1.5.2 installation
 
@@ -15,7 +15,7 @@ do_notice()
 	echo "|"
 	echo "| $1 installation status:"
 	echo "|"
-	echo "|    - there appears to another version of python installed, to avoid"
+	echo "|    - there appears to be another version of python installed, to avoid"
 	echo "|      conflict, this python binary has been installed as:"
 	echo "|          ${PREFIX}/bin/python1.5"
 	echo "|"
