@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/05/05 21:59:48 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2001/07/30 21:03:16 jsyn Exp $
 
 COMMENT=	"reciprocating engine for X11"
 PKGNAME=	xengine-1.0.1
@@ -15,10 +15,8 @@ PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 
 DIST_SUBDIR=	xengine
-EXTRACT_CASES=	*.z) zcat ${FULLDISTDIR}/$$archive | gunshar ;;
+EXTRACT_CASES+=	*.z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${_SED_FIX_SHAR} | /bin/sh;;
 PATCH_DIST_STRIP=	-p1	# no ${PATCHFILES} but used below
-
-BUILD_DEPENDS=	gunshar::archivers/gshar+gunshar
 
 WRKDIST=	${WRKDIR}
 CONFIGURE_STYLE=	imake
