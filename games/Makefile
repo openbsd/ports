@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 1999/04/04 21:40:32 marc Exp $
+# $OpenBSD: Makefile,v 1.22 1999/04/30 21:42:16 brad Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -17,6 +17,7 @@
 #    SUBDIR += crossfire
 #    SUBDIR += dontspace
 #    SUBDIR += doom
+     SUBDIR += dopewars
 #    SUBDIR += empire
 #    SUBDIR += flying
      SUBDIR += freeciv
