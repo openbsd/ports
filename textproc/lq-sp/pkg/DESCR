@@ -1,0 +1,6 @@
+Liam Quinn's version of nsgmls, from the SP package.
+
+Provides error messages tuned for HTML and also adds support for
+redirects and name-based virtual hosts when fetching DTDs.
+
+WWW: ${HOMEPAGE}
