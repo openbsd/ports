@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2004/06/19 20:30:59 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.27 2004/06/22 05:20:13 brad Exp $
 @pkgcfl postfix-*
 libexec/postfix/anvil
 libexec/postfix/bounce
@@ -36,6 +36,7 @@ man/man1/postlog.1
 man/man1/postmap.1
 man/man1/postqueue.1
 man/man1/postsuper.1
+man/man1/qshape.1
 man/man1/sendmail.1
 man/man5/access.5
 man/man5/aliases.5
@@ -91,6 +92,7 @@ sbin/postlog
 sbin/postmap
 sbin/postqueue
 sbin/postsuper
+sbin/qshape
 sbin/sendmail
 share/doc/postfix/html/ADDRESS_CLASS_README.html
 share/doc/postfix/html/ADDRESS_REWRITING_README.html
@@ -185,8 +187,8 @@ share/doc/postfix/html/smtp-source.1.html
 share/doc/postfix/html/smtp.8.html
 share/doc/postfix/html/smtpd.8.html
 share/doc/postfix/html/spawn.8.html
-share/doc/postfix/html/trace.8.html
 share/doc/postfix/html/tcp_table.5.html
+share/doc/postfix/html/trace.8.html
 share/doc/postfix/html/transport.5.html
 share/doc/postfix/html/trivial-rewrite.8.html
 share/doc/postfix/html/verify.8.html

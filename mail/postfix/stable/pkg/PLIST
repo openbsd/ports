@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/04/25 10:36:40 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/06/22 05:20:13 brad Exp $
 @pkgcfl postfix-*
 libexec/postfix/bounce
 libexec/postfix/cleanup
@@ -35,6 +35,7 @@ man/man1/postlog.1
 man/man1/postmap.1
 man/man1/postqueue.1
 man/man1/postsuper.1
+man/man1/qshape.1
 man/man1/sendmail.1
 man/man5/access.5
 man/man5/aliases.5
@@ -88,6 +89,7 @@ sbin/postlog
 sbin/postmap
 sbin/postqueue
 sbin/postsuper
+sbin/qshape
 sbin/sendmail
 share/doc/postfix/html/ADDRESS_CLASS_README.html
 share/doc/postfix/html/ADDRESS_REWRITING_README.html
