@@ -1,7 +1,16 @@
-$OpenBSD: patch-Imakefile,v 1.1 2000/06/06 22:31:55 espie Exp $
---- Imakefile.orig	Wed Jun  7 00:29:54 2000
-+++ Imakefile	Wed Jun  7 00:29:58 2000
-@@ -30,5 +30,5 @@ OBJS = $(SRCS:.c=.o)
+--- Imakefile.orig	Mon Jul 17 07:28:19 1995
++++ Imakefile	Sun Jul  9 19:59:27 2000
+@@ -22,7 +22,7 @@
+ 
+-SYS_LIBRARIES = $(XBRLIB) $(COMMONLIB) $(XMLIB) $(XTOOLLIB) $(XLIB) -lm
++SYS_LIBRARIES = -L${PREFIX}/lib $(XBRLIB) $(COMMONLIB) $(XMLIB) $(XTOOLLIB) $(XLIB) -lm
+ 
+-INCLUDES = $(COMMONINC) $(XBRINC) $(XMINC)
++INCLUDES = $(COMMONINC) $(XBRINC) $(XMINC) -I${PREFIX}/include
+ 
+ SRCS = about.c help.c xtar.c
+ OBJS = $(SRCS:.c=.o)
+@@ -30,5 +30,5 @@
  MakeSubdirs($(SUBDIRS))
  ComplexProgramTarget(xtar)
  MakeDirectories(install,$(LIBDIR)/xtar)

@@ -1,0 +1,11 @@
+--- Xbr/Imakefile.orig	Sun Jul  9 19:58:00 2000
++++ Xbr/Imakefile	Sun Jul  9 19:58:13 2000
+@@ -20,7 +20,7 @@
+ 
+ OBJS = $(SRCS:.c=.o)
+ 
+-INCLUDES = $(XMINC)
++INCLUDES = $(XMINC) -I${PREFIX}/include
+ 
+ NormalLibraryObjectRule()
+ NormalLibraryTarget(Xbr,$(OBJS))
