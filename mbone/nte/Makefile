@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/09/02 21:38:15 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/09/02 21:45:14 brad Exp $
 
 DISTNAME=       nte-1.7.0
 CATEGORIES=	mbone
@@ -7,6 +7,7 @@ MAINTAINER=	angelos@openbsd.org
 
 NEED_VERSION=	1.111
 
+BUILD_DEPENDS=	${PREFIX}/lib/libcommon.a:${PORTSDIR}/mbone/common
 LIB_DEPENDS=	tcl80:${PORTSDIR}/lang/tcl80 \
 		tk80:${PORTSDIR}/x11/tk80
 
