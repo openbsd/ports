@@ -1,6 +1,14 @@
---- config/cf/site.def.orig	Fri Apr 28 08:03:58 2000
-+++ config/cf/site.def	Sat Jun 10 16:23:46 2000
-@@ -62,11 +62,86 @@
+--- config/cf/site.def.orig	Fri Apr 28 11:03:58 2000
++++ config/cf/site.def	Mon Jul 31 21:37:25 2000
+@@ -58,15 +58,94 @@
+ #  define HasCplusplus		YES
+ # endif
+ 
++# ifdef SparcArchitecture
++#  define PositionIndependentCFlags -fPIC
++# endif
++
+ #endif /* BeforeVendorCF */
  
  #ifdef AfterVendorCF
  
@@ -14,12 +22,12 @@
  # undef DefaultUserPath
 -# define DefaultUserPath /bin:/usr/bin:$(BINDIR):/usr/ucb:/usr/local/bin:/usr/local/bin/mh:/site/local/scripts
 +# define DefaultUserPath /bin:/usr/bin:$(BINDIR):/usr/ucb:/usr/local/bin
- 
++
 +# define BuildMotifDemos NO
 +
 +/* Use the installed Imake but not the configuration files */
 +# define ImakeCmd /usr/X11R6/bin/imake
-+
+ 
 +/*
 + * Actually, the macro MakeMakeSubdirs is identical to one that you find
 + * in Imake.rules, but to avoid using stupid 'bootstrap' imake, we need to
