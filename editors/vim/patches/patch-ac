@@ -1,0 +1,20 @@
+--- fileio.c.orig	Mon Nov 23 21:19:30 1998
++++ fileio.c		Mon Nov 23 21:19:53 1998
+@@ -2610,7 +2610,7 @@
+ 	    STRCAT(itmp, TEMPNAME);
+ 	    if ((p = vim_strchr(itmp, '?')) != NULL)
+ 		*p = extra_char;
+-	    if (*mktemp((char *)itmp) == NUL)
++	    if (mkstemp((char *)itmp) == NUL)
+ 		continue;
+ 	    return vim_strsave(itmp);
+ 	}
+@@ -2646,7 +2646,7 @@
+     STRCPY(itmp, TEMPNAME);
+     if ((p = vim_strchr(itmp, '?')) != NULL)
+ 	*p = extra_char;
+-    if (*mktemp((char *)itmp) == NUL)
++    if (mkstemp((char *)itmp) == NUL)
+ #   endif
+ #  endif
+ # endif

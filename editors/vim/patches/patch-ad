@@ -1,0 +1,29 @@
+--- ctags/main.c.orig	Mon Nov 23 21:50:56 1998
++++ ctags/main.c	Mon Nov 23 21:51:31 1998
+@@ -684,7 +684,7 @@
+      */
+     if (toStdout)
+     {
+-	TagFile.name = tmpnam(tempName);
++	TagFile.name = mkstemp(tempName);
+ 	TagFile.fp = fopen(TagFile.name, "w");
+     }
+     else
+@@ -779,7 +779,7 @@
+     char tempName[L_tmpnam];
+     int result = -1;
+ 
+-    if (tmpnam(tempName) != NULL)
++    if (mkstemp(tempName) != NULL)
+     {
+ 	result = copyFile(name, tempName, size);
+ 	if (result == 0)
+@@ -834,7 +834,7 @@
+ 
+ static void beginEtagsFile()
+ {
+-    tmpnam(TagFile.etags.name);
++    mkstemp(TagFile.etags.name);
+     TagFile.etags.fp = fopen(TagFile.etags.name, "w+b");
+     if (TagFile.etags.fp == NULL)
+ 	error(FATAL | PERROR, "cannot open \"%s\"", TagFile.etags.name);
