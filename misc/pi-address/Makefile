@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/06/02 23:41:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2001/06/09 19:55:10 espie Exp $
 
 COMMENT=	"PalmPilot address database editor"
 
@@ -25,7 +25,7 @@ USE_X11=		yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-pisock-dir=${LOCALBASE}
 CONFIGURE_ENV+=		QTINC=${LOCALBASE}/include/X11/qt \
-			QTLIB=${LOCALBASE}/lib
+			QTLIB=${LOCALBASE}/lib/qt
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pi-address

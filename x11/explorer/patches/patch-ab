@@ -1,6 +1,6 @@
---- src/config_expl.cpp.orig	Sun Oct 31 04:18:45 1999
-+++ src/config_expl.cpp	Sun Oct 31 04:19:00 1999
-@@ -398,7 +398,7 @@
+--- src/config_expl.cpp.orig	Fri Jul 11 16:32:33 1997
++++ src/config_expl.cpp	Thu Jun  7 21:45:41 2001
+@@ -398,7 +398,7 @@ int     ConfigClass::load_resources(void
  	}
  
      // check to see if the path is valid

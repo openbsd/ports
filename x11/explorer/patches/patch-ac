@@ -1,6 +1,6 @@
---- src/plugin_m.cpp.orig	Sun Oct 31 04:21:44 1999
-+++ src/plugin_m.cpp	Sun Oct 31 04:21:53 1999
-@@ -205,7 +205,7 @@
+--- src/plugin_m.cpp.orig	Fri Jul 11 16:32:33 1997
++++ src/plugin_m.cpp	Thu Jun  7 21:45:41 2001
+@@ -205,7 +205,7 @@ const char *name):QMultiLineEdit(parent,
  					"%s/plugins",
  					pldir);
  

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/04/07 19:44:18 jasoni Exp $
+# $OpenBSD: Makefile,v 1.18 2001/06/09 19:55:11 espie Exp $
 
 COMMENT=	"ICQ clone for UNIX"
 
@@ -19,6 +19,7 @@ LIB_DEPENDS=	qt::x11/qt
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ENV=	QT_MOC="${LOCALBASE}/bin/moc"
-CONFIGURE_ARGS=	--with-qt-includes=${LOCALBASE}/include/X11/qt
+CONFIGURE_ARGS=	--with-qt-includes=${LOCALBASE}/include/X11/qt \
+	--with-qt-libraries=${LOCALBASE}/lib/qt
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.15 2001/05/06 04:41:12 lebel Exp $
+# $OpenBSD: Makefile,v 1.16 2001/06/09 19:55:11 espie Exp $
 #
 
 COMMENT=	"file manager with same look and feel as Windows95(tm)"
@@ -25,7 +25,8 @@ LIB_DEPENDS=	qt.1.::x11/qt
 
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ARGS+=	--datadir='$${DESTDIR}${PREFIX}/lib/X11/explorer' \
-			--with-qt-include=${PREFIX}/include/X11/qt
+			--with-qt-include=${PREFIX}/include/X11/qt \
+			--with-qt-lib=${PREFIX}/lib/qt \
 
 ALL_TARGET=	explorer
 USE_X11=	Yes
