@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.528 2002/05/13 00:43:42 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.529 2002/05/15 18:23:21 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -46,8 +46,6 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 #				  locally.
 # MASTER_SITESn	- Primary location(s) for more distribution files, in case
 #				  some distfiles must be fetched from elsewhere.
-# MASTER_SITE_SUBDIR - Directory that "%SUBDIR%" in MASTER_SITES is
-#				  replaced by.
 #
 # Variables that typically apply to an individual port.  Non-Boolean
 # variables without defaults are *mandatory*.
@@ -891,19 +889,14 @@ MASTER_SITE_LOCAL?= \
 	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/LOCAL_PORTS/ \
 	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/LOCAL_PORTS/
 
-.if defined(MASTER_SITE_SUBDIR) && !empty(MASTER_SITE_SUBDIR)
-ERRORS+=	"MASTER_SITE_SUBDIR is obsolete, replace with {SITE:=subdir/}"
-.endif
 # Empty declarations to avoid "variable XXX is recursive" errors
 MASTER_SITES?=
-# Substitute subdirectory names in intermediate form
-_MASTER_SITES:=		${MASTER_SITES:S@%SUBDIR%@${MASTER_SITE_SUBDIR}@}
 # I guess we're in the master distribution business! :)  As we gain mirror
 # sites for distfiles, add them to this list.
 .if !defined(MASTER_SITE_OVERRIDE)
-MASTER_SITES:=	${_MASTER_SITES} ${MASTER_SITE_BACKUP}
+MASTER_SITES:=	${MASTER_SITES} ${MASTER_SITE_BACKUP}
 .else
-MASTER_SITES:=	${MASTER_SITE_OVERRIDE} ${_MASTER_SITES}
+MASTER_SITES:=	${MASTER_SITE_OVERRIDE} ${MASTER_SITES}
 .endif
 
 # _SITE_SELECTOR chooses the value of sites based on select.
@@ -912,11 +905,10 @@ _SITE_SELECTOR=case $$select in
 
 .for _I in 0 1 2 3 4 5 6 7 8 9
 .  if defined(MASTER_SITES${_I})
-_MASTER_SITES${_I}:=	${MASTER_SITES${_I}:S@%SUBDIR%@${MASTER_SITE_SUBDIR}@}
 .    if !defined(MASTER_SITE_OVERRIDE)
-MASTER_SITES${_I}:=	${_MASTER_SITES${_I}} ${MASTER_SITE_BACKUP}
+MASTER_SITES${_I}:=	${MASTER_SITES${_I}} ${MASTER_SITE_BACKUP}
 .    else
-MASTER_SITES${_I}:= ${MASTER_SITE_OVERRIDE} ${_MASTER_SITES${_I}}
+MASTER_SITES${_I}:= ${MASTER_SITE_OVERRIDE} ${MASTER_SITES${_I}}
 .    endif
 _SITE_SELECTOR+=*:${_I}) sites="${MASTER_SITES${_I}}";;
 .  endif
