@@ -1,5 +1,6 @@
 lib/librsaref.a
 lib/librsaref.so.2.0
+@exec /sbin/ldconfig -m %B
 include/rsa.h
 include/_des.h
 include/_md2.h
@@ -9,4 +10,3 @@ include/global.h
 share/doc/rsaref/info.txt
 share/doc/rsaref/rsaref.txt
 @dirrm share/doc/rsaref
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib
