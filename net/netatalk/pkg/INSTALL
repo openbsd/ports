@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 1999/05/30 22:28:35 brad Exp $
+# $OpenBSD: INSTALL,v 1.3 1999/05/30 22:51:10 brad Exp $
 #
 # Pre/post-installation setup of netatalk
 
@@ -9,9 +9,6 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=/etc/netatalk
-
-mkdir -p ${CONFIG_DIR}
-chmod 750 ${CONFIG_DIR}
 
 # Function: tell the user what s/he needs to do to use the port just installed
 #
@@ -31,6 +28,8 @@ do_notice()
 #
 do_install()
 {
+    mkdir -p ${CONFIG_DIR}
+    chmod 750 ${CONFIG_DIR}
     cp ${PREFIX}/lib/netatalk/* ${CONFIG_DIR}
     echo
     echo "+---------------"
