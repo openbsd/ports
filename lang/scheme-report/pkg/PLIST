@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/03 20:45:37 espie Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/r5rs.info
+info/r5rs.info
+@exec install-info --info-dir=%D/info %D/info/r5rs.info
