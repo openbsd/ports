@@ -1,0 +1,8 @@
+# Default .briconsrc file
+# A line starting with a '#' is a comment line
+# first line must have keyword %icon or %text
+# to indicate if button is an icon or text
+# for more information select the help button
+
+%text test1
+xterm
