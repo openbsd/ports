@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/22 09:48:59 peter Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/07 13:19:22 naddy Exp $
 
+IS_INTERACTIVE=	Yes
 DISTNAME=	HTML-Embperl-1.3.1
 PKGNAME=	p5-HTML-Embperl-1.3.1
 CATEGORIES=	www perl5
