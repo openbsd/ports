@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2001/02/09 10:58:13 reinhard Exp $
+# $OpenBSD: Makefile,v 1.23 2001/03/22 03:30:14 ian Exp $
 #
 
+     SUBDIR += R
 #    SUBDIR += Scilab
      SUBDIR += abs
 #    SUBDIR += apc
