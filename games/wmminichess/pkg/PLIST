@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/09 12:58:09 wilfried Exp $
+bin/minichess
+share/doc/wmminichess/README
+@dirrm share/doc/wmminichess

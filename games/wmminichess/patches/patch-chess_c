@@ -1,0 +1,22 @@
+$OpenBSD: patch-chess_c,v 1.1.1.1 2001/02/09 12:58:08 wilfried Exp $
+--- chess.c.orig	Mon Sep 13 19:15:50 1999
++++ chess.c	Thu Feb  8 22:40:27 2001
+@@ -1864,7 +1864,8 @@ void textGame
+         /* get the move from stdin */
+         bzero(move, 10);
+         printf(" > ");
+-        fgets(move, 10, stdin);
++        if(!fgets(move, 10, stdin))
++		strcpy(move, Q);
+ 
+ #ifdef DEBUG
+         if (strncasecmp(move, "gch", 3) == 0)
+@@ -1972,7 +1973,7 @@ int checkColor
+  *
+  * RETURNS: N/A
+  */
+-void main(int argc, char* argv[])
++int main(int argc, char* argv[])
+     {
+     int toChild[2];
+     int fromChild[2];

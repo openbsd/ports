@@ -1,0 +1,38 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/02/09 12:58:08 wilfried Exp $
+--- Makefile.orig	Thu Jul 29 06:59:39 1999
++++ Makefile	Tue Feb  6 15:04:20 2001
+@@ -22,7 +22,7 @@
+ 
+ 
+ # Specify the location of gnuchessx on your system.
+-GNUCHESS = /usr/local/bin/gnuchessx
++GNUCHESS = ${TRUEPREFIX}/bin/gnuchessx
+ 
+ # Where do you want the binary installed?
+ DESTDIR = /usr/local/bin
+@@ -33,16 +33,16 @@ BIN_NAME = minichess
+ # Uncomment this line if your using Solaris.
+ #SOLARIS_LIBS = -lsocket
+ 
+-CFLAGS = -ansi -I/usr/X11R6/include
+-LIBDIR = -L/usr/X11R6/lib
++CFLAGS += -I${X11BASE}/include
++LIBDIR = -L${X11BASE}/lib
+ LIBS   = -lXpm -lXext -lX11 $(SOLARIS_LIBS)
+ OBJS   = chess.o xgen.o
+ 
+ .c.o:
+-	gcc $(CFLAGS) -DENGINE=\"$(GNUCHESS)\" -c $< -o $*.o
++	$(CC) $(CFLAGS) -DENGINE=\"$(GNUCHESS)\" -c $< -o $@
+ 
+ $(BIN_NAME): $(OBJS)
+-	gcc $(CFLAGS) -o $(BIN_NAME) $(OBJS) $(LIBDIR) $(LIBS)
++	$(CC) $(CFLAGS) -o $(BIN_NAME) $(OBJS) $(LIBDIR) $(LIBS)
+ 
+ clean:
+ 	rm -f $(OBJS) $(BIN_NAME)
+@@ -50,4 +50,3 @@ clean:
+ install:
+ 	cp -f $(BIN_NAME) $(DESTDIR)
+ 	chmod 755 $(DESTDIR)/$(BIN_NAME)
+-
