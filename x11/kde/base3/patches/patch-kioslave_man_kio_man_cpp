@@ -1,0 +1,156 @@
+$OpenBSD: patch-kioslave_man_kio_man_cpp,v 1.1 2002/04/16 13:59:18 espie Exp $
+--- kioslave/man/kio_man.cpp.orig	Tue Apr 16 15:50:53 2002
++++ kioslave/man/kio_man.cpp	Tue Apr 16 15:45:34 2002
+@@ -120,21 +120,55 @@ MANProtocol::~MANProtocol()
+     _self = 0;
+ }
+ 
+-QStringList MANProtocol::findPages(const QString &section,
+-                                   const QString &title,
+-                                   bool full_path)
++void MANProtocol::addWhatIs(QMap<QString, QString> &i, const QString &name, const QString &mark)
+ {
+-    checkManPaths();
++    QFile f(name);
++    if (!f.open(IO_ReadOnly))
++	    return;
++    int marklen = mark.length();
++    QTextStream t(&f);
++    QString l;
++    while (!t.eof())
++    {
++	    l = t.readLine();	
++	    int pos = l.find(mark);
++	    if (pos != -1)
++	    {
++	    	QString names = l.left(pos);
++		QString descr = l.mid(pos+marklen);
++		while ((pos = names.find(",")) != -1)
++		{
++		    i[names.left(pos++)] = descr;
++		    while (names[pos] == ' ')
++		    	pos++;
++		    names = names.mid(pos);
++		}
++		i[names] = descr;
++	    }
++    }
++}
+ 
+-    QStringList list;
++QMap<QString, QString> MANProtocol::buildIndexMap(const QString &section)
++{
++    QMap<QString, QString> i;
++    QStringList man_dirs = manDirectories();
++    QString mark = " (" + section + ") - ";
+ 
+-    if (title.at(0) == '/') {
+-       list.append(title);
+-       return list;
++    for ( QStringList::ConstIterator it_dir = man_dirs.begin();
++          it_dir != man_dirs.end();
++          it_dir++ )
++    {
++        QString whatis = (*it_dir)+"/whatis.db";
++	addWhatIs(i, whatis, mark);
+     }
++    return i;
++}
+ 
++QStringList MANProtocol::manDirectories()
++{
++    checkManPaths();
+     //
+-    // Build a list of man direcotries including translations
++    // Build a list of man directories including translations
+     //
+     QStringList man_dirs;
+ 
+@@ -166,7 +200,21 @@ QStringList MANProtocol::findPages(const
+         // Untranslated pages in "<mandir>"
+         man_dirs += (*it_dir);
+     }
++    return man_dirs;
++}
+ 
++QStringList MANProtocol::findPages(const QString &section,
++                                   const QString &title,
++                                   bool full_path)
++{
++    QStringList list;
++
++    if (title.at(0) == '/') {
++       list.append(title);
++       return list;
++    }
++
++    QStringList man_dirs = manDirectories();
+     //
+     // Find pages
+     //
+@@ -511,6 +559,8 @@ QString sectionName(const QString& secti
+         return i18n("System Calls");
+     else if (section == "3")
+         return i18n("Subroutines");
++    else if (section == "3p")
++    	return i18n("Perl modules");
+     else if (section == "4")
+         return i18n("Devices");
+     else if (section == "5")
+@@ -523,6 +573,8 @@ QString sectionName(const QString& secti
+         return i18n("System Administration");
+     else if (section == "9")
+         return i18n("Kernel");
++    else if (section == "l")
++    	return i18n("Local");
+     else if (section == "n")
+         return i18n("New");
+ 
+@@ -544,7 +596,11 @@ void MANProtocol::showMainIndex()
+ 
+     QString sectList = getenv("MANSECT");
+     if (sectList.isEmpty())
++#ifdef __OpenBSD__
++        sectList = "1:2:3:3p:4:5:6:7:8:9:l:n";
++#else
+         sectList = "1:2:3:4:5:6:7:8:9:n";
++#endif
+     QStringList sections = QStringList::split(':', sectList);
+ 
+     os << "<table>" << endl;
+@@ -930,6 +986,7 @@ void MANProtocol::showIndex(const QStrin
+     // search for the man pages
+ 	QStringList pages = findPages( section, QString::null );
+ 
++	QMap<QString, QString> indexmap = buildIndexMap(section);
+ 
+     // print out the list
+     os << "<table>" << endl;
+@@ -960,7 +1017,8 @@ void MANProtocol::showIndex(const QStrin
+     {
+ 	os << "<tr><td><a href=\"man:" << it.data() << "\">\n"
+ 	   << it.key() << "</a></td><td>&nbsp;</td><td> "
+-	   << i18n("no idea yet") << "</td></tr>"  << endl;
++	   << (indexmap.contains(it.key()) ? indexmap[it.key()] : i18n("no idea"))
++	   << "</td></tr>"  << endl;
+     }
+ 
+ #else /* ! _USE_OLD_CODE */
+@@ -1094,7 +1152,7 @@ void MANProtocol::showIndex(const QStrin
+ 	((char *)manindex->manpage_begin)[manindex->manpage_len] = '\0';
+ 	os << manindex->manpage_begin
+ 	   << "</a></td><td>&nbsp;</td><td> "
+-	   << i18n("no idea yet")
++	   << (indexmap.contains(manindex->manpage_begin) ? indexmap[manindex->manpage_begin] : i18n("no idea"))
+ 	   << "</td></tr>"  << endl;
+ 	last_index = manindex;
+     }
+@@ -1135,7 +1193,7 @@ void MANProtocol::showIndex(const QStrin
+ 	manindex->manpage_begin[manindex->manpage_len] = '\0';
+ 	os << manindex->manpage_begin
+ 	   << "</a></td><td>&nbsp;</td><td> "
+-	   << i18n("no idea yet")
++	   << (indexmap.contains(manindex->manpage_begin) ? indexmap[manindex->manpage_begin] : i18n("no idea"))
+ 	   << "</td></tr>"  << endl;
+ 	last_index = manindex;
+     }

@@ -1,0 +1,13 @@
+$OpenBSD: patch-kioslave_man_kio_man_h,v 1.1 2002/04/16 13:59:18 espie Exp $
+--- kioslave/man/kio_man.h.orig	Tue Apr 16 14:38:14 2002
++++ kioslave/man/kio_man.h	Tue Apr 16 15:31:42 2002
+@@ -60,6 +60,9 @@ public:
+ 
+ private:
+     void checkManPaths();
++    QStringList manDirectories();
++    QMap<QString, QString> buildIndexMap(const QString& section);
++    void addWhatIs(QMap<QString, QString>& i, const QString& f, const QString& mark);
+     QStringList findPages(const QString& section, 
+                           const QString &title, 
+                           bool full_path = true);
