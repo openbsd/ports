@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2003/04/05 14:53:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2003/04/09 23:53:02 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/drkonqi
@@ -70,8 +70,6 @@ bin/kwmtheme
 bin/kwrite
 bin/kwrited
 bin/kxkb
-bin/nspluginscan
-bin/nspluginviewer
 bin/startkde
 include/KBackgroundIface.h
 include/KDesktopIface.h
@@ -290,7 +288,6 @@ lib/libkonq.la
 lib/libkonq_sidebar_tree.la
 lib/libkonqsidebarplugin.la
 lib/libksgrd.la
-lib/libnsplugin.la
 lib/libsensordisplays.la
 lib/libtaskbar.la
 lib/libtaskmanager.la
