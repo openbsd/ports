@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/07/09 17:11:03 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2001/11/21 01:29:49 matt Exp $
 
 COMMENT=	"Fast-Light Tool Kit"
 
@@ -7,7 +7,7 @@ PKGNAME=	fltk-${VER}
 DISTNAME=	${PKGNAME}-source
 
 CATEGORIES=	x11
-NEED_VERSION=	1.394
+NEED_VERSION=	1.498
 
 HOMEPAGE=	http://www.fltk.org/
 
@@ -25,6 +25,8 @@ USE_X11=	Yes
 CONFIGURE_STYLE=autoconf dest
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 WRKDIST=	${WRKDIR}/${PKGNAME}
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
 

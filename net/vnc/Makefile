@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/06/01 23:44:47 matt Exp $
+# $OpenBSD: Makefile,v 1.13 2001/11/21 01:29:48 matt Exp $
 # $FreeBSD: Makefile,v 1.10 1999/02/18 16:05:47 steve Exp $
 
 COMMENT=	"cross-platform remote desktop access"
@@ -9,7 +9,7 @@ PKGNAME=        vnc-${VERSION}
 PKGNAME-viewer=	vnc-viewer-${VERSION}
 DISTNAME=       ${PKGNAME}_unixsrc
 CATEGORIES=	net
-NEED_VERSION=	1.413
+NEED_VERSION=	1.498
 
 HOMEPAGE=	http://www.uk.research.att.com/vnc/
 MAINTAINER=	Matt Behrens <matt@openbsd.org>
@@ -30,6 +30,8 @@ CONFIGURE_STYLE=imake
 
 WRKDIST=	${WRKDIR}/vnc_unixsrc
 ALL_TARGET=    	World
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Xvnc/programs/Xserver/Xvnc \
