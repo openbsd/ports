@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/05 16:14:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/26 09:23:44 sturm Exp $
 bin/grip
 share/gnome/
 share/gnome/apps/
@@ -14,6 +14,7 @@ share/gnome/help/grip/C/cddb.html
 share/gnome/help/grip/C/cdplayer.html
 share/gnome/help/grip/C/cdplayer.png
 share/gnome/help/grip/C/cdplayersmall.png
+share/gnome/help/grip/C/cdscan.png
 share/gnome/help/grip/C/configure.html
 share/gnome/help/grip/C/discdb.png
 share/gnome/help/grip/C/discdbconfig.html
@@ -63,22 +64,34 @@ share/gnome/help/grip/C/ripping.html
 share/gnome/help/grip/C/ripping.png
 share/gnome/help/grip/C/ripprog.png
 share/gnome/help/grip/C/ripsmall.png
+share/gnome/help/grip/C/sect-scsi.html
 share/gnome/help/grip/C/sect-trackmode.html
 share/gnome/help/grip/C/smile1.png
 share/gnome/help/grip/C/smile2.png
 share/gnome/help/grip/C/smile3.png
 share/gnome/help/grip/C/smile4.png
 share/gnome/help/grip/C/smile5.png
+share/gnome/help/grip/C/smile6.png
 share/gnome/help/grip/C/smile7.png
 share/gnome/help/grip/C/smile8.png
 share/gnome/help/grip/C/stop.png
 share/gnome/help/grip/C/topic.dat
 share/gnome/help/grip/C/trkedit.png
 share/gnome/help/grip/C/volume.png
-share/gnome/help/grip/C/x131.html
+share/gnome/help/grip/C/x135.html
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
+share/locale/ca/LC_MESSAGES/grip.mo
 share/locale/de/LC_MESSAGES/grip.mo
+share/locale/es/LC_MESSAGES/grip.mo
 share/locale/fr/LC_MESSAGES/grip.mo
 share/locale/ja/LC_MESSAGES/grip.mo
+share/locale/pt_BR/LC_MESSAGES/grip.mo
+share/locale/ru/LC_MESSAGES/grip.mo
 share/locale/zh_CN/LC_MESSAGES/grip.mo
+share/locale/zh_HK/
+share/locale/zh_HK/LC_MESSAGES/
+share/locale/zh_HK/LC_MESSAGES/grip.mo
+share/locale/zh_TW/LC_MESSAGES/grip.mo
 share/pixmaps/
 share/pixmaps/gripicon.png

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_cddev_c,v 1.1 2002/05/07 21:05:33 lebel Exp $
---- src/cddev.c.orig	Sun Mar  3 13:02:18 2002
-+++ src/cddev.c	Tue May  7 16:59:39 2002
+$OpenBSD: patch-src_cddev_c,v 1.2 2004/09/26 09:23:44 sturm Exp $
+--- src/cddev.c.orig	Sat Jan  4 20:04:08 2003
++++ src/cddev.c	Sun Sep 26 10:06:26 2004
 @@ -52,7 +52,7 @@
  #define NON_BLOCKING
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_cddev_c,v 1.1 2002/05/07 21:05:33 lebel Exp $
      #define CDIOREADSUBCHANNEL CDIOCREADSUBCHANNEL
  #endif
  
-@@ -627,7 +627,10 @@ gboolean CDEject(DiscInfo *disc)
+@@ -628,7 +628,10 @@ gboolean CDEject(DiscInfo *disc)
    if(ioctl(disc->cd_desc,CDROMEJECT)<0)
      return FALSE;
  #endif

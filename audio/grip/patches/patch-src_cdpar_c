@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_cdpar_c,v 1.1 2004/09/26 09:23:44 sturm Exp $
+--- src/cdpar.c.orig	Sun Sep 26 10:07:18 2004
++++ src/cdpar.c	Sun Sep 26 10:07:40 2004
+@@ -60,10 +60,12 @@ static inline int bigendianp(void){
+   return(1);
+ }
+ 
++#if !defined (__OpenBSD__)
+ static inline size16 swap16(size16 x){
+   return((((unsigned size16)x & 0x00ffU) <<  8) | 
+          (((unsigned size16)x & 0xff00U) >>  8));
+ }
++#endif
+ 
+ /* Ugly hack because we can't pass user data to the callback */
+ int *global_rip_smile_level;
