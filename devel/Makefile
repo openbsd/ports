@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2000/08/31 06:57:48 brad Exp $
+# $OpenBSD: Makefile,v 1.39 2000/09/06 04:49:19 brad Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -46,7 +46,6 @@
      SUBDIR += lclint
      SUBDIR += libaudiofile
 #    SUBDIR += libdlmalloc
-     SUBDIR += libicq
 #    SUBDIR += libmalloc
      SUBDIR += libproplist
      SUBDIR += libsigc++
