@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2004/07/03 02:10:26 robert Exp $
+# $OpenBSD: Makefile,v 1.74 2004/08/09 11:09:10 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
@@ -38,7 +38,7 @@ PATCHFILES+=	vuln04-fix.diff:1
 
 .include <bsd.own.mk>
 
-MODULES= iconv
+MODULES= converters/libiconv
 
 LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \

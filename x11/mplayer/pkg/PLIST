@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/08/05 12:29:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/08/09 11:09:10 espie Exp $
 bin/mencoder
 bin/mplayer
 @man man/man1/mencoder.1
@@ -75,7 +75,9 @@ share/doc/mplayer/windows.html
 share/examples/mplayer/
 share/examples/mplayer/codecs.conf
 share/examples/mplayer/input.conf
+@sample ${CONFDIR}/input.conf
 share/examples/mplayer/menu.conf
+@sample ${CONFDIR}/menu.conf
 share/examples/mplayer/mplayer.conf
 @comment share/mplayer/
 @comment share/mplayer/font/

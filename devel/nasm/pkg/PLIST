@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/11/21 17:38:39 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/08/09 11:09:10 espie Exp $
 bin/nasm
 bin/ndisasm
-@unexec install-info --delete --info-dir=%D/info %D/info/nasm.info
-info/nasm.info
-@exec install-info --info-dir=%D/info %D/info/nasm.info
-man/man1/nasm.1
-man/man1/ndisasm.1
+@info info/nasm.info
+@man man/man1/nasm.1
+@man man/man1/ndisasm.1
+share/doc/nasm/
 share/doc/nasm/internal.doc
 share/doc/nasm/nasmdo10.html
 share/doc/nasm/nasmdoc0.html
@@ -21,4 +20,3 @@ share/doc/nasm/nasmdoc9.html
 share/doc/nasm/nasmdoca.html
 share/doc/nasm/nasmdocb.html
 share/doc/nasm/nasmdoci.html
-@dirrm share/doc/nasm

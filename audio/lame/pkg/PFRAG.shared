@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2001/08/26 12:00:38 espie Exp $
-lib/libmp3lame.so.0.1
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/09 11:09:10 espie Exp $
+@lib lib/libmp3lame.so.0.1
