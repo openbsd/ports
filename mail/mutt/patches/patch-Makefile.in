@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Jul 11 00:51:36 2000
++++ Makefile.in	Tue Jul 11 00:52:20 2000
+@@ -137,7 +137,7 @@
+ 
+ 
+ # top_srcdir is for building outside of the source tree
+-INCLUDES = -I$(top_srcdir) -I. $(IMAP_INCLUDES) -Iintl -I$(includedir)
++INCLUDES = -I$(top_srcdir) -I. $(IMAP_INCLUDES) -I$(includedir)
+ 
+ non_us_sources = pgp.c pgpinvoke.c pgpkey.c pgplib.c sha1dgst.c 	gnupgparse.c sha.h sha_locl.h 	doc/language.txt doc/language50.txt OPS.PGP doc/PGP-Notes.txt 	OPS.MIX remailer.c remailer.h pgpewrap		contrib/pgp2.rc contrib/pgp5.rc contrib/gpg.rc 	imap/imap_ssl.c imap/imap_ssl.h README.SSL
+ 

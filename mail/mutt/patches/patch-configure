@@ -1,0 +1,20 @@
+--- configure.orig	Thu Jul  6 19:07:35 2000
++++ configure	Tue Jul 11 00:54:30 2000
+@@ -3819,7 +3819,7 @@
+ 
+ 
+ if test x$mutt_cv_setgid = xyes; then
+-	DOTLOCK_GROUP='mail'
++	DOTLOCK_GROUP='wheel'
+ 	DOTLOCK_PERMISSION=2755
+ else
+ 	DOTLOCK_GROUP=''
+@@ -6600,8 +6600,6 @@
+    sed -e "/^#/d" -e "/^\$/d" -e "s,.*,	$posrcprefix& \\\\," -e "\$s/\(.*\) \\\\/\1/" \
+ 	< $srcdir/po/POTFILES.in > po/POTFILES
+   
+-CPPFLAGS="$CPPFLAGS -I\$(top_srcdir)/intl"
+-
+ MUTTLOCALEDIR=$mutt_cv_prefix/$DATADIRNAME/locale
+ 
+ cat >> confdefs.h <<EOF
