@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/28 22:41:15 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/02/08 22:52:45 alek Exp $
 
 COMMENT=		"Bomberman clone for GNOME"
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xi c esd gdk gdk_imlib gtk jpeg m \
-			png pthread stdc++ tiff ungif z
+			png pthread stdc++ tiff z
 
 MASTER_SITES=		http://savannah.nongnu.org/download/bombermaze/
 
@@ -24,7 +24,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	gdk_pixbuf.2::graphics/gdk-pixbuf \
 		audiofile.0::devel/libaudiofile \
 		glib.1,gmodule.1::devel/glib \
-	 	gif.5::graphics/libungif \
+	 	ungif.5::graphics/libungif \
 		art_lgpl.4,gnome.36,gnomeui.46,gnomesupport.0::x11/gnome/libs
 
 USE_LIBTOOL=		Yes
