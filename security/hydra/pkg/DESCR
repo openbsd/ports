@@ -1,10 +1,16 @@
-There are already several login hacker tools available, however none
-supports multiple protocols nor parallelized connects.
+Hydra is a multi-protocol, parallelized authentication brute forcer.
 
-This tool supports TELNET, FTP, POP3, IMAP, HTTP Basic and Cisco
-authentication only, however the module engine for new services is very
-simple, so it won't take long to add more services.  Planned are: SSH,
-SAMBA, PCNFS, R-services, and more.  Additionally, password-only
-protocols will be supported in the future: SNMP, RIP, OSPF and others.
+By assigning many parallel tasks, remote login brute forcing can be
+accelerated SIGNIFICANTLY, however it depends on the protocol.  The fastest is
+generally POP3, then FTP, then Telnet, and the least IMAP.
+
+Experiment with the task option (-t) to speed things up.  The higher, the
+faster (but too high, and it disables the service).  To prevent disabling you
+can now use the -g option for "slow-starts".
+
+The following protocols are supported:
+
+Cisco[-enable], FTP, HTTP[S], ICQ, IMAP, LDAP, NNTP, PCNFS, POP3, REXEC, SMB,
+SOCKS5, TELNET, and VNC.
 
 WWW: ${HOMEPAGE}
