@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/10 23:14:30 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/14 09:12:18 turan Exp $
 
 DISTNAME=	uemacs
 PKGNAME=	uemacs-4.0
@@ -11,6 +11,12 @@ NO_CDROM=	"NOFEE: may not charge for distribution"
 NEED_VERSION=	1.191
 
 MAINTAINER=	ports@openbsd.org
+
+LICENSE_TYPE=		COPY
+PERMIT_PKG_CDROM=	"weird no fee license"
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	"wierd no fee license"
+PERMIT_DISTF_FTP=	YES
 
 EXTRACT_BEFORE_ARGS=	-Laq
 
