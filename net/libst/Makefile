@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/15 16:47:07 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/01 02:20:51 naddy Exp $
 
 COMMENT=		"threaded library for writing Internet applications"
 
@@ -17,15 +17,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FLAGS=		CC='${CC}' LD='${CC}' LDFLAGS='-shared -fPIC'
+MAKE_FLAGS=		CC='${CC}' CFLAGS='${CFLAGS} -fPIC -DOPENBSD' \
+			LD='${CC}' LDFLAGS='-shared -fPIC'
 
 USE_GMAKE=		Yes
 ALL_TARGET=		openbsd-optimized
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/OPENBSD_2.9_OPT/libst.so ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/OPENBSD_2.9_OPT/libst.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/OPENBSD_2.9_OPT/st.h ${PREFIX}/include
+	${INSTALL_PROGRAM} ${WRKSRC}/OPENBSD_${OPSYS_VER}_OPT/libst.so \
+		${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/OPENBSD_${OPSYS_VER}_OPT/libst.a \
+		${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/OPENBSD_${OPSYS_VER}_OPT/st.h \
+		${PREFIX}/include
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libst
 	${INSTALL_DATA} ${WRKSRC}/docs/fig.gif ${PREFIX}/share/doc/libst
 	${INSTALL_DATA} ${WRKSRC}/docs/notes.html ${PREFIX}/share/doc/libst
