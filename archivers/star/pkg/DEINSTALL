@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2001/05/06 21:52:46 naddy Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2002/08/23 10:53:04 naddy Exp $
 #
 # star de-installation
 
@@ -29,8 +29,8 @@ do_unlink()
 	rm -f /etc/rmt
 	echo
 	echo "+---------------"
-	echo "| You should reset the /etc/rmt link to whatever it was
-	echo "| before star was installed, perhaps /usr/sbin/rmt
+	echo "| You should reset the /etc/rmt link to whatever it was"
+	echo "| before star was installed, perhaps /usr/sbin/rmt"
 	echo "| Try these steps as root:"
 	echo "|"
 	echo "|           cd /etc"
