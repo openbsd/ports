@@ -9,7 +9,7 @@ for $file (<*.tgz>)
 	$name =~ s/\.tgz$//;
 	unless ($cache && -f "t/CONTENTS.$name")
 		{
-		system("tar zxf $file +CONTENTS");
+		system("tar zxqf $file +CONTENTS");
 		rename("+CONTENTS", "t/CONTENTS.$name");
 		}
 	open(FILE, "t/CONTENTS.$name") or die "No contents";
