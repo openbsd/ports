@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/10/10 16:44:12 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/10/20 14:48:11 naddy Exp $
 
 COMMENT=		"Lightweight GNOME text editor"
 DISTNAME=		gedit-2.6.2	
@@ -34,7 +34,7 @@ USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -lm -lstdc++ -lintl"
+CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -lm -lstdc++ -lintl -liconv"
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gedit \
