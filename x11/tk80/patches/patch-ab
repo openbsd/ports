@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Aug 15 22:17:51 1997
-+++ Makefile.in	Wed Oct  1 10:07:16 1997
+--- Makefile.in.orig	Tue Nov 25 08:41:56 1997
++++ Makefile.in	Wed Apr  8 20:15:33 1998
 @@ -56,7 +56,9 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -97,41 +97,3 @@
  	for i in $(SRC_DIR)/library/*.tcl $(SRC_DIR)/library/tclIndex $(SRC_DIR)/library/prolog.ps $(UNIX_DIR)/tkAppInit.c; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -430,28 +453,28 @@
- 	@cd $(SRC_DIR)/doc; for i in *.1; \
- 	    do \
- 	    echo "Installing doc/$$i"; \
--	    rm -f $(MAN1_INSTALL_DIR)/$$i; \
-+	    rm -f $(MAN1_INSTALL_DIR)/$$i $(MAN1_INSTALL_DIR)/$$i.gz; \
- 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
--		    $$i > $(MAN1_INSTALL_DIR)/$$i; \
--	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
-+		    $$i | gzip -c > $(MAN1_INSTALL_DIR)/$$i.gz; \
-+	    chmod 444 $(MAN1_INSTALL_DIR)/$$i.gz; \
- 	    done;
- 	$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
- 	@cd $(SRC_DIR)/doc; for i in *.3; \
- 	    do \
- 	    echo "Installing doc/$$i"; \
--	    rm -f $(MAN3_INSTALL_DIR)/$$i; \
-+	    rm -f $(MAN3_INSTALL_DIR)/$$i $(MAN3_INSTALL_DIR)/$$i.gz; \
- 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
--		    $$i > $(MAN3_INSTALL_DIR)/$$i; \
--	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
-+		    $$i | gzip -c > $(MAN3_INSTALL_DIR)/$$i.gz; \
-+	    chmod 444 $(MAN3_INSTALL_DIR)/$$i.gz; \
- 	    done;
- 	$(UNIX_DIR)/mkLinks $(MAN3_INSTALL_DIR)
- 	@cd $(SRC_DIR)/doc; for i in *.n; \
- 	    do \
- 	    echo "Installing doc/$$i"; \
--	    rm -f $(MANN_INSTALL_DIR)/$$i; \
-+	    rm -f $(MANN_INSTALL_DIR)/$$i $(MANN_INSTALL_DIR)/$$i.gz; \
- 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
--		    $$i > $(MANN_INSTALL_DIR)/$$i; \
--	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
-+		    $$i | gzip -c > $(MANN_INSTALL_DIR)/$$i.gz; \
-+	    chmod 444 $(MANN_INSTALL_DIR)/$$i.gz; \
- 	    done;
- 	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
- 
