@@ -1,0 +1,47 @@
+$OpenBSD: patch-build_install_sh,v 1.1.1.1 2002/11/15 20:19:32 brad Exp $
+--- build/install.sh.orig	Fri Nov 15 02:28:49 2002
++++ build/install.sh	Fri Nov 15 02:33:20 2002
+@@ -109,43 +109,3 @@ mkdir $DOCS > /dev/null 2>&1
+ cp -r * $DOCS
+ cd $TOPLEVEL
+ cp maradns.pgp.key $DOCS
+-
+-# If the system in question does not already have configuration files,
+-# place example configuration files in /etc
+-if [ -d docs/$LANGUAGE/examples ] ; then
+-	cd doc/$LANGUAGE/examples
+-else
+-	cd doc/en/examples
+-fi
+-
+-if [ ! -f $RPM_BUILD_ROOT/etc/mararc ] ; then
+-	cp example_mararc $RPM_BUILD_ROOT/etc/mararc
+-fi
+-if [ ! -d $RPM_BUILD_ROOT/etc/maradns ] ; then
+-	mkdir $RPM_BUILD_ROOT/etc/maradns
+-	chmod 755 $RPM_BUILD_ROOT/etc/maradns
+-fi
+-cp example_csv1 $RPM_BUILD_ROOT/etc/maradns/db.example.com
+-
+-# Finally, set up the startup files, as needed
+-# Go back to the top-level MaraDNS directory
+-cd $TOPLEVEL
+-# And copy over the init files if this system looks to be a sysVish init
+-# system
+-if [ -d $RPM_BUILD_ROOT/etc/rc.d/init.d ] ; then
+-	echo Adding MaraDNS startup scripts
+-	if [ ! -f $RPM_BUILD_ROOT/etc/rc.d/init.d/maradns ] ; then
+-	      cp $BUILDDIR/mara.startup $RPM_BUILD_ROOT/etc/rc.d/init.d/maradns
+-	fi
+-	if cd $RPM_BUILD_ROOT/etc/rc.d/rc3.d/ ; then
+-		echo Starting up MaraDNS at runlevel 3
+-		rm S60maradns
+-		ln -s ../init.d/maradns S60maradns
+-	fi
+-	if cd $RPM_BUILD_ROOT/etc/rc.d/rc5.d/ ; then
+-		echo starting up MaraDNS at runlevel 5
+-		rm S60maradns
+-		ln -s ../init.d/maradns S60maradns
+-	fi
+-fi
+-
