@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2000/07/10 20:28:02 danh Exp $
+# $OpenBSD: Makefile,v 1.4 2000/08/07 03:59:10 brad Exp $
 
 DISTNAME=	solid-pop3d-0.15
 CATEGORIES=	net mail
-NEED_VERSION=	1.302
+NEED_VERSION=	1.310
 MASTER_SITES=	http://solidpop3d.pld.org.pl/
 
 HOMEPAGE=	http://solidpop3d.pld.org.pl/
