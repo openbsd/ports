@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2000/02/11 07:56:30 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/02/14 21:28:05 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
-DISTNAME=	mysql-3.22.30
+DISTNAME=	mysql-3.22.32
 CATEGORIES=	databases
 MASTER_SITES=	http://web.tryc.on.ca/mysql/Downloads/MySQL-3.22/ \
 		http://mysql.he.net/Downloads/MySQL-3.22/ \
@@ -65,7 +65,6 @@ pre-install:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql/Img
-	${INSTALL_DATA_DIR} ${PREFIX}/share/mysql/mysql
 	${INSTALL_SCRIPT} ${WRKDIR}/startup.sh ${PREFIX}/lib/mysql
 	cd ${WRKSRC}/Docs; ${INSTALL_DATA} manual.html manual.ps \
 	manual_toc.html manual.txt ${PREFIX}/share/doc/mysql

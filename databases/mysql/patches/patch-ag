@@ -1,5 +1,5 @@
---- configure.orig	Tue Jan 11 22:32:17 2000
-+++ configure	Thu Jan 13 13:22:15 2000
+--- configure.orig	Sat Feb 12 21:46:09 2000
++++ configure	Sun Feb 13 22:09:51 2000
 @@ -2743,7 +2743,7 @@
    ;;
  esac
@@ -40,7 +40,7 @@
  
  echo "$ac_t"""$FIND_PROC"" 1>&6
  
-@@ -4614,8 +4592,6 @@
+@@ -4646,8 +4624,6 @@
  #define $ac_tr_lib 1
  EOF
  
@@ -49,7 +49,7 @@
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -4849,28 +4825,6 @@
+@@ -4881,28 +4857,6 @@
  fi
  
  
