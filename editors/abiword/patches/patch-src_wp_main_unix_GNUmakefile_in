@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_wp_main_unix_GNUmakefile_in,v 1.1 2002/10/17 18:37:13 couderc Exp $
---- src/wp/main/unix/GNUmakefile.in.orig	Fri May 31 14:19:15 2002
-+++ src/wp/main/unix/GNUmakefile.in	Mon Sep  9 11:12:24 2002
-@@ -628,11 +628,13 @@ install-exec-local:	install-wrapper
+$OpenBSD: patch-src_wp_main_unix_GNUmakefile_in,v 1.2 2003/01/24 22:29:52 couderc Exp $
+--- src/wp/main/unix/GNUmakefile.in.orig	Thu Sep 12 02:26:29 2002
++++ src/wp/main/unix/GNUmakefile.in	Fri Nov 15 17:05:58 2002
+@@ -719,11 +719,13 @@ install-exec-local:	install-wrapper
  	@if test -f $(DESTDIR)/$(bindir)/abiword; then \
  	  echo "$(DESTDIR)/$(bindir)/abiword is a regular file - I'm not going to create a link."; \
  	else \
@@ -11,9 +11,9 @@ $OpenBSD: patch-src_wp_main_unix_GNUmakefile_in,v 1.1 2002/10/17 18:37:13 couder
  
  install-wrapper:	
 -	@$(top_srcdir)/src/pkg/common/unix/scripts/makewrapper.sh AbiWord $(pkgdatadir) $(bindir) $(DESTDIR)
-+	$(top_srcdir)/src/pkg/common/unix/scripts/makewrapper.sh AbiWord \
++	@$(top_srcdir)/src/pkg/common/unix/scripts/makewrapper.sh AbiWord \
 +		$(LOCALBASE)/share/AbiSuite $(LOCALBASE)/bin \
 +		`echo $(PREFIX) | sed -e s#$(LOCALBASE)##`
- 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

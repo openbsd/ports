@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2002/11/14 20:16:27 marcm Exp $
+# $OpenBSD: Makefile,v 1.24 2003/01/24 22:29:52 couderc Exp $
 
 COMMENT=	"open-source, cross-platform WYSIWYG word processor"
 
-VERSION=	1.0.2
+VERSION=	1.0.3
 DISTNAME=	abiword-${VERSION}
 CATEGORIES=	editors
 
@@ -25,7 +25,7 @@ MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=abiword/}
 
 USE_GMAKE=	Yes
 
-CONFIGURE_STYLE=	gnu autoconf
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-libpng=${LOCALBASE}/lib \
 			--with-libxml2 \
 			--disable-debug
@@ -58,7 +58,8 @@ post-patch:
 	@mv ${PFILE} ${PFILE}.orig
 	@sed -e s/tmpnam/mkstemp/ ${PFILE}.orig > ${PFILE}
 	@cd ${WRKDIR}/abiword-${VERSION}; \
-	patch < ${FILESDIR}/patch-wv_libole2_Makefile_in
+	patch < ${FILESDIR}/patch-wv_libole2_Makefile_in; \
+	patch < ${FILESDIR}/patch-psiconf_configure
 
 .if ${FLAVOR:L:Mgnome}
 post-install:
