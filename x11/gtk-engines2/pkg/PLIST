@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/03/28 07:38:13 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/05/21 06:44:10 marcm Exp $
+%%SHARED%%
 lib/gtk-2.0/2.0.0/engines/libmetal.la
 lib/gtk-2.0/2.0.0/engines/libpixmap.la
 lib/gtk-2.0/2.0.0/engines/libredmond95.la
