@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/07/09 13:22:30 naddy Exp $
+include/libexif/exif-byte-order.h
+include/libexif/exif-content.h
+include/libexif/exif-data.h
+include/libexif/exif-entry.h
+include/libexif/exif-format.h
+include/libexif/exif-note.h
+include/libexif/exif-result.h
+include/libexif/exif-tag.h
+include/libexif/exif-utils.h
+lib/libexif.a
+lib/libexif.la
+lib/pkgconfig/libexif.pc
+share/locale/de/LC_MESSAGES/libexif.mo
+%%SHARED%%
+@dirrm include/libexif
