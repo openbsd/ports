@@ -1,0 +1,14 @@
+$OpenBSD: patch-tcltk_h_in,v 1.1 2004/01/02 22:36:34 espie Exp $
+--- tcltk.h.in.orig	2004-01-02 23:30:06.000000000 +0100
++++ tcltk.h.in	2004-01-02 23:30:19.000000000 +0100
+@@ -12,8 +12,8 @@ extern char *TT_Temp;
+ #define TT_ARGS TT_Interp,__FILE__,__LINE__
+ #define TT_PROC_ARGS ClientData clientData, Tcl_Interp *interp, int argc, char *argv[]
+ #define TT_PROC_OBJS ClientData clientData, Tcl_Interp *interp, int objc, Tcl_Obj *CONST objv[]
+-#define TT_Install_Command(x) Tcl_CreateCommand(TT_Interp,TT_Fix_Name(#x),TT_Proc_##x##,0,0); free(TT_Temp)
+-#define TT_Install_ObjCommand(x) Tcl_CreateObjCommand(TT_Interp,TT_Fix_Name(#x),TT_Proc_##x##,0,0); free(TT_Temp)
++#define TT_Install_Command(x) Tcl_CreateCommand(TT_Interp,TT_Fix_Name(#x),TT_Proc_##x,0,0); free(TT_Temp)
++#define TT_Install_ObjCommand(x) Tcl_CreateObjCommand(TT_Interp,TT_Fix_Name(#x),TT_Proc_##x,0,0); free(TT_Temp)
+ #define ARGV(x) Tcl_GetStringFromObj(objv[x],NULL)
+ 
+ char *TT_Fix_Name(char *name);
