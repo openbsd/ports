@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/28 16:22:27 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/05 10:21:56 espie Exp $
 
 COMMENT-wnn4= 		"library for Japanese Input Method Wnn4"
 COMMENT-canna=		"library for Japanese Input Method canna"
 COMMENT-wnn4-canna=	"library for Japanese Input Method canna or wnn4"
-FULLPKGNAME-wnn4=	"ja-onew-wnn4-2.2.10"
-FULLPKGNAME-canna=	"ja-onew-canna-2.2.10"
-FULLPKGNAME-wnn4-canna=	"ja-onew-wnn4-canna-2.2.10"
+FULLPKGNAME=		ja-onew${FLAVOR_EXT}-2.2.10
 
 DISTNAME=	jvim2.0r+onew2.2.10
 CATEGORIES=	japanese
