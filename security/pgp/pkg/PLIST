@@ -1,3 +1,5 @@
+@option no-default-conflict
+@pkgcfl pgp-2.*
 bin/pgp
 man/man1/pgp.1
 lib/pgp/config.txt
