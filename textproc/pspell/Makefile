@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/06/07 15:16:25 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/07/16 14:48:46 lebel Exp $
 
 COMMENT=		"generic interface to spell checker libraries"
 
@@ -23,9 +23,10 @@ MASTER_SITE_SUBDIR=	pspell
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-doc-dir=${PREFIX}/share/doc/pspell
+			--enable-doc-dir=${PREFIX}/share/doc/pspell \
+			--disable-ltdl
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" 
 
 .include <bsd.port.mk>

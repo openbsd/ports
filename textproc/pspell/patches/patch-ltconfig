@@ -1,0 +1,12 @@
+$OpenBSD: patch-ltconfig,v 1.1 2001/07/16 14:48:46 lebel Exp $
+--- ltconfig.orig	Tue May  1 19:57:55 2001
++++ ltconfig	Mon Jul 16 10:29:34 2001
+@@ -1239,6 +1239,8 @@ newsos6)
+   library_names_spec='${libname}${release}.so$versuffix ${libname}${release}.so$major $libname.so'
+   shlibpath_var=LD_LIBRARY_PATH
+   shlibpath_overrides_runpath=yes
++  deplib_check_method=pass_all
++  sys_lib_dlsearch_path_spec='/usr/lib /usr/local/lib /usr/X11R6/lib /usr/local/lib/qt2'
+   ;;
+ 
+ openbsd*)
