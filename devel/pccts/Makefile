@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2001/10/03 16:06:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/25 17:39:58 fgsch Exp $
 
 COMMENT=	Purdue Compiler Construction Tool Set 
 
-DISTNAME=	pccts133mr29
-PKGNAME=	pccts-1.33r29
+DISTNAME=	pccts133mr31
+PKGNAME=	pccts-1.33r31
 CATEGORIES=	devel lang
-NEED_VERSION=	1.406
+NEED_VERSION=	1.460
 MASTER_SITES=	http://www.polhode.com/
 EXTRACT_SUFX=	.zip
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FILE=	makefile
-MAKE_FLAGS=    COPT="${CFLAGS}"
+MAKE_FLAGS=	COPT="${CFLAGS}"
 
 ALL_TARGET=
 
