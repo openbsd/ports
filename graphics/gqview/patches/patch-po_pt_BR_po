@@ -1,7 +1,7 @@
-$OpenBSD: patch-po_pt_BR_po,v 1.1 2001/05/14 21:04:14 brad Exp $
---- po/pt_BR.po.orig	Mon May 14 22:23:40 2001
-+++ po/pt_BR.po	Mon May 14 22:23:50 2001
-@@ -10,7 +10,7 @@ msgstr ""
+$OpenBSD: patch-po_pt_BR_po,v 1.2 2001/11/21 02:11:58 jcs Exp $
+--- po/pt_BR.po.orig	Tue Nov 20 18:42:39 2001
++++ po/pt_BR.po	Tue Nov 20 18:42:44 2001
+@@ -10,7 +10,7 @@
  "Last-Translator: Evandro F. Giovanini <elinux@linuxave.net>\n"
  "Language-Team: Vitor Fernandes <vitor_fernandes@SoftHome.net>\n"
  "MIME-Version: 1.0\n"
@@ -9,4 +9,4 @@ $OpenBSD: patch-po_pt_BR_po,v 1.1 2001/05/14 21:04:14 brad Exp $
 +"Content-Type: text/plain; charset=iso-8859-1\n"
  "Content-Transfer-Encoding: 8bit\n"
  
- #: src/config.c:294
+ #: src/cache_maint.c:245

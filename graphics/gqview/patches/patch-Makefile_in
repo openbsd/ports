@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/11/21 02:11:58 jcs Exp $
+--- Makefile.in.orig	Tue Nov 20 18:55:45 2001
++++ Makefile.in	Tue Nov 20 18:56:07 2001
+@@ -109,8 +109,8 @@
+ 	gqview.1
+ 
+ 
+-helpdir = $(prefix)/share/gqview
+-help_DATA = README
++helpdir = $(prefix)/share/doc/gqview
++help_DATA = README COPYING ChangeLog TODO
+ 
+ @HAVE_GNOME_TRUE@desktopdir = @HAVE_GNOME_TRUE@$(GNOME_DATADIR)/gnome/apps/Graphics
+ @HAVE_GNOME_TRUE@desktop_DATA = @HAVE_GNOME_TRUE@gqview.desktop

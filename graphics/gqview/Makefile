@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.16 2001/05/06 05:05:46 lebel Exp $
+# $OpenBSD: Makefile,v 1.17 2001/11/21 02:11:58 jcs Exp $
 # $FreeBSD: Makefile,v 1.15 1999/08/25 06:14:08 obrien Exp $
 
 COMMENT=	"gtk-based graphic file viewer"
 
-DISTNAME=	gqview-0.8.2
+DISTNAME=	gqview-0.99.0
 CATEGORIES=	graphics
-NEED_VERSION=	1.402
+NEED_VERSION=	1.499
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= gqview
 
 HOMEPAGE=	http://gqview.sourceforge.net
 
-LIB_DEPENDS=	gdk_imlib.19::graphics/imlib
+LIB_DEPENDS=	gdk_pixbuf.2::graphics/gdk-pixbuf
 
-MAINTAINER=	Brad Smith <brad@openbsd.org>
+MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -23,11 +23,5 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-DOCS=	COPYING ChangeLog README
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gqview
-	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/gqview
 
 .include <bsd.port.mk>
