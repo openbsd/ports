@@ -1,5 +1,5 @@
 # $FreeBSD: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
-# $OpenBSD: Makefile,v 1.8 2000/03/05 18:30:35 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/11 01:19:27 espie Exp $
 
 DISTNAME=	vatsrc-4.0b2
 PKGNAME=	vat-4.0b2
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 GSM_DIR=	audio/gsm
-GSM_WORK!=	cd ${PORTSDIR} && cd ${GSM_DIR} && make show VARNAME=WRKDIST
 
 # If configure is changed to look for libgsm.a in ${PREFIX}/lib, then
 # we can use this first BUILD_DEPENDS and save some work.
@@ -36,3 +35,5 @@ post-install:
 	@${STRIP} ${PREFIX}/bin/vat
 
 .include <bsd.port.mk>
+
+GSM_WORK!=	cd ${PORTSDIR} && cd ${GSM_DIR} && make show VARNAME=WRKDIST
