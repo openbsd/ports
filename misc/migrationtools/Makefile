@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2004/02/12 14:09:49 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2004/11/11 18:36:52 naddy Exp $
 
 COMMENT=	"perl scripts for migrating system information to LDAP"
 
-DISTNAME=	MigrationTools
-PKGNAME=	migrationtools-45
+DISTNAME=	MigrationTools-46
+PKGNAME=	${DISTNAME:L}
 CATEGORIES=	misc
 
 MASTER_SITES=	http://www.padl.com/download/
 HOMEPAGE=	http://www.padl.com/OSS/MigrationTools.html
 
-# BSD license, included with the source files
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -20,9 +20,7 @@ RUN_DEPENDS=	openldap:openldap-client-*:databases/openldap
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
-SUBST_VARS=	PKGNAME
-WRKDIST=	${WRKDIR}/${DISTNAME}-45
-MTSDIR=		${PREFIX}/share/${PKGNAME}/
+MTSDIR=		${PREFIX}/share/migrationtools/
 
 do-install:
 	${INSTALL_DATA_DIR} ${MTSDIR}
