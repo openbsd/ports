@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2000/07/05 14:50:55 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2001/01/03 19:28:16 brad Exp $
 
-DISTNAME=       zsh-3.1.9
+DISTNAME=	zsh-3.1.9
 CATEGORIES=	shells
-NEED_VERSION=	1.310
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://ftp.sterling.com/zsh/ \
 		ftp://ftp.rge.com/pub/zsh/ \
@@ -11,6 +11,8 @@ MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/ \
 		ftp://ftp.ips.oz.au/pub/packages/zsh/ \
 		ftp://ftp.uit.no/pub/unix/shells/zsh/
+
+HOMEPAGE=	http://www.zsh.org/
 
 MAINTAINER=	ports@openbsd.org
 
@@ -24,16 +26,11 @@ CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free \
 		--enable-fndir='$${datadir}/zsh/functions' \
 		--disable-dynamic
 
-FAKE_FLAGS=	MAKEDEFS="DESTDIR=\"${WRKINST}\""
-
-FLAVORS=static
+FLAVORS=	static
 FLAVOR?=
 
-.if defined(STATIC) && ${STATIC:U} == YES
-FLAVOR=static
-.endif
 .if ${FLAVOR:L} == "static"
-CONFIGURE_ENV+=	LDFLAGS=-static
+CONFIGURE_ENV=	LDFLAGS="-static"
 .endif
 
 .include <bsd.port.mk>
