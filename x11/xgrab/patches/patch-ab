@@ -1,24 +1,21 @@
-*** xgrabsc.c~	Mon Jun 28 18:14:49 1993
---- xgrabsc.c	Mon Feb 27 03:17:58 1995
-***************
-*** 246,251 ****
---- 246,252 ----
-  int ScreenNumberOfScreen (scr)
-      register Screen *scr;
-  {
-+ #ifdef BROKEN
-      register Display *dpy = scr->display;
-      register Screen *dpyscr = dpy->screens;
-      register int i;
-***************
-*** 254,259 ****
---- 255,263 ----
-  	if (scr == dpyscr) return i;
-      }
-      return -1;
-+ #else
-+     return XScreenNumberOfScreen (scr);
-+ #endif
-  }
-  
-  
+$OpenBSD: patch-ab,v 1.2 2000/06/02 15:47:50 espie Exp $
+--- xgrabsc.c.orig	Tue Nov  7 20:31:41 1995
++++ xgrabsc.c	Fri Jun  2 17:09:12 2000
+@@ -106,6 +106,7 @@ static Window xgTryChildren (win, WM_STA
+ int ScreenNumberOfScreen (scr)
+     register Screen *scr;
+ {
++#ifdef BROKEN
+     register Display *dpy = scr->display;
+     register int i;
+ 
+@@ -113,6 +114,9 @@ int ScreenNumberOfScreen (scr)
+ 	if (scr == ScreenOfDisplay(dpy,i)) return i;
+     }
+     return -1;
++#else
++    return XScreenNumberOfScreen (scr);
++#endif
+ }
+ 
+ 

@@ -1,5 +1,6 @@
---- Imakefile~	Tue Nov  7 20:31:39 1995
-+++ Imakefile	Wed Jul 31 02:54:37 1996
+$OpenBSD: patch-aa,v 1.2 2000/06/02 15:47:50 espie Exp $
+--- Imakefile.orig	Tue Nov  7 20:31:39 1995
++++ Imakefile	Fri Jun  2 17:31:46 2000
 @@ -14,7 +14,7 @@
   *========================================================================
   */
@@ -9,3 +10,29 @@
  
  /* you can specify many config.h options here if you don't want to
   * modify config.h.  E.g.,
+@@ -59,11 +59,11 @@ ComplexProgramTarget_1(xgrabsc,Nil,$(XLI
+ ComplexProgramTarget_2(xgrab,Nil,$(LIBS2))
+ SpecialObjectRule(Objs2,$(SRCS2) ADInc config.h, Nil)
+ 
+-xgrabsc.o:: xgrabsc.h cmdopts.h config.h
+-get.o:: xgrabsc.h config.h
+-mem.o:: xgrabsc.h config.h
+-convert.o:: xgrabsc.h config.h
+-write.o:: xgrabsc.h checkvm.h config.h
++xgrabsc.o: xgrabsc.h cmdopts.h config.h
++get.o: xgrabsc.h config.h
++mem.o: xgrabsc.h config.h
++convert.o: xgrabsc.h config.h
++write.o: xgrabsc.h checkvm.h config.h
+ 
+ ADInc: xgrab_ad.h
+ 	$(CP) xgrab_ad.h ADInc
+@@ -78,7 +78,7 @@ XGrab.ad: ADName
+ 
+ ADName: ADSource
+ 	rm -f ADName
+-	$(XRDB) -n ADSource >ADName
++	cpp <ADSource |sed -e '/^$$/d' -e '/^#/d' >ADName
+ 
+ clean::
+ 	$(RM) xgrabxaw_ad.h xgrabxm_ad.h xgrabxaw xgrabxm XGrab.ad xgrab_ad.h

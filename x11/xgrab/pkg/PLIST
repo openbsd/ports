@@ -1,5 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/06/02 15:47:50 espie Exp $
 bin/xgrab
 bin/xgrabsc
 lib/X11/app-defaults/XGrab
-man/man1/xgrab.1
-man/man1/xgrabsc.1
+man/cat1/xgrab.0
+man/cat1/xgrabsc.0
