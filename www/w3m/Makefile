@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.38 2002/02/02 03:19:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2002/02/04 15:05:32 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
-COMMENT=		"text-based web browser/pager"
-COMMENT-image=		"text-based web browser/pager with inline image support"
-COMMENT-japanese=	"Japanese text-based web browser/pager"
-COMMENT-japanese-image=	"Japanese text-based web browser/pager with image support"
+COMMENT=	"pager/text-based web browser"
 
 VERSION=	0.2.5
+M17N_VERSION=	20020202
 
 DISTNAME=	w3m-${VERSION}
 CATEGORIES=	www
-NEED_VERSION=	1.498
+NEED_VERSION=	1.504
 HOMEPAGE=	http://w3m.sourceforge.net/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -23,12 +21,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	w3m
-MASTER_SITES0=		http://sites.inka.de/mips/unix/distfiles/
-SUPDISTFILES=		${DISTFILES} ${IMG_PATCH}
-IMG_PATCH=		w3m-${VERSION}-img-2.2.patch.gz:0
-PATCH_DIST_STRIP=	-p1
+MASTER_SITES0=		http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
+MASTER_SITES1=		http://sites.inka.de/mips/unix/distfiles/
 
-FLAVORS=	image japanese
+SUPDISTFILES=	w3m-${VERSION}${EXTRACT_SUFX} \
+		w3m-${VERSION}-m17n-${M17N_VERSION}${EXTRACT_SUFX}:0 \
+		w3m-0.2.5-img-2.2.patch.gz:1
+
+FLAVORS=	image japanese m17n
 FLAVOR?=
 
 CONFIGURE_STYLE= simple
@@ -46,31 +46,37 @@ DOCS=	FAQ.html HISTORY MANUAL.html \
 	README README.dict README.func STORY.html \
 	keymap.default keymap.lynx menu.default menu.submenu
 
+PATCH_LIST=	patch-configure
+
 .if ${FLAVOR:L:Mimage}
-PATCHFILES=	${IMG_PATCH}
+.  if !${FLAVOR:L:Mm17n}
+PATCHFILES=	w3m-0.2.5-img-2.2.patch.gz:1
+PATCH_DIST_STRIP= -p1
+.  endif
 LIB_DEPENDS=	Imlib.19::graphics/imlib
 CONFIGURE_ENV+=	use_image=y
 DOCS+=		README.img
 .endif
 
 .if ${FLAVOR:L:Mjapanese}
-
-.  if ${FLAVOR:L:Mimage}
-FULLPKGNAME=	ja-${PKGNAME}-image
-.  else
-FULLPKGNAME=	ja-${PKGNAME}
-.  endif
+FULLPKGNAME=	ja-${PKGNAME}${FLAVOR_EXT:S/-japanese//}
 CATEGORIES+=	japanese
 CONFIGURE_ARGS+= --lang=ja --code=n
 DOCS+=		README.SSL README.cookie README.keymap \
 		README.mailcap README.menu
 DOCSRC=		${WRKSRC}/doc-jp
-
 .else
-
 CONFIGURE_ARGS+= --lang=en
 DOCSRC=		${WRKSRC}/doc
+.endif
 
+.if ${FLAVOR:L:Mm17n}
+DISTNAME=	w3m-${VERSION}-m17n-${M17N_VERSION}
+PKGNAME=	w3m-${VERSION}.${M17N_VERSION}
+CONFIGURE_ARGS+= --suffix="" --charset=UTF-8
+DOCS+=		README.m17n
+.else
+PATCH_LIST+=	patch-file_c
 .endif
 
 post-install:

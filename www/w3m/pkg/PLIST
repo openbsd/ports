@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.12 2002/02/02 03:19:01 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2002/02/04 15:05:32 naddy Exp $
 %%japanese%%
 !%%japanese%%
 %%image%%
+%%m17n%%
 bin/w3m
 bin/w3mman
 libexec/w3m/dirlist.cgi
