@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.457 2001/09/16 14:56:42 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.458 2001/09/19 15:16:39 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1196,6 +1196,7 @@ _flavor_fragment= \
 # Various dependency styles
 
 _fetch_depends_fragment= \
+	what=$$pkg; \
 	if pkg dependencies check $$pkg; then \
 		found=true; \
 	fi
@@ -1208,6 +1209,7 @@ _lib_depends_fragment=${_fetch_depends_fragment}
 .else
 .  if defined(NO_SHARED_LIBS)
 _lib_depends_fragment = \
+	what=$$dep; \
 	IFS=,; bad=false; for d in $$dep; do \
 		lib=`echo $$d | sed -e 's|\([^\\]\)[\\\.].*|\1|'`; \
 		tmp=`mktemp /tmp/bpmXXXXXXXXXX`; \
@@ -1217,6 +1219,7 @@ _lib_depends_fragment = \
 	done; $$bad || found=true
 .  else
 _lib_depends_fragment = \
+	what=$$dep; \
 	IFS=,; bad=false; for d in $$dep; do \
 		lib=`echo $$d | sed -e 's|\.$$||' -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
 		check=`${LDCONFIG} -r | awk "/:-l$$lib[ .]/"'{ print $$3 }'`; \
@@ -1225,7 +1228,7 @@ _lib_depends_fragment = \
 .  endif
 .endif
 
-_misc_depends_fragment = :
+_misc_depends_fragment = what=$$pkg; :
 
 depends: lib-depends misc-depends fetch-depends build-depends run-depends
 
@@ -1272,14 +1275,14 @@ ${WRKDIR}/.${_DEP}${_i:C,[:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 			*)  \
 				${_${_DEP}_depends_fragment}; \
 				if $$found; then \
-					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} depends on: $$dep - found"; \
+					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} depends on: $$what - found"; \
 					break; \
 				else \
 					: $${msg:= not found}; \
-					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} depends on: $$dep -$$msg"; \
+					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} depends on: $$what -$$msg"; \
 				fi;; \
 			esac; \
-			${ECHO_MSG} "===>  Verifying $$target for $$dep in $$dir"; \
+			${ECHO_MSG} "===>  Verifying $$target for $$what in $$dir"; \
 			if cd $$dir && eval $$toset ${MAKE} ${_DEPEND_THRU} $$target; then \
 				${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}"; \
 			else \
