@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.375 2001/03/28 15:01:01 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.376 2001/03/28 15:04:34 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1155,7 +1155,7 @@ addsum: fetch-all
 # Dependency checking
 ################################################################
 _flavor_fragment= \
-		multi=''; flavor=''; \
+		multi=''; flavor=''; sawflavor=false; \
 		case "$$dir" in \
 		*,*) \
 			IFS=,; first=true; for i in $$dir; do \
@@ -1166,6 +1166,7 @@ _flavor_fragment= \
 						X-*) \
 							multi="$$i";; \
 						*) \
+							sawflavor=true; \
 							flavor="$$flavor $$i";; \
 					esac \
 				fi; \
@@ -1175,9 +1176,9 @@ _flavor_fragment= \
 		case X$$multi in "X");; *) \
 			toset="$$toset SUBPACKAGE=\"$$multi\"";; \
 		esac; \
-		case X"$$flavor" in "X");; *) \
+		if $$sawflavor; then \
 			toset="$$toset FLAVOR=\"$$flavor\"";; \
-		esac
+		fi
 
 
 _fetch_depends_fragment= \
