@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.14 2001/08/18 13:11:10 espie Exp $
+# $OpenBSD: make-plist,v 1.15 2001/08/23 09:13:19 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -51,11 +51,11 @@ sub annotate
 	open(OLDFILE, '<', $filename) or die "Can't read $filename";
 	while(<OLDFILE>) {
 		chomp;
-		if (m/^\@mode\s+/) {
+		if (m/^\@mode\s*/) {
 			$mode = $';
-		} elsif (m/^\@owner\s+/) {
+		} elsif (m/^\@owner\s*/) {
 			$owner = $';
-		} elsif (m/^\@group\s+/) {
+		} elsif (m/^\@group\s*/) {
 			$group = $';
 		} elsif (m/^\@comment\s+no checksum$/) {
 			$nocheck = 1;
