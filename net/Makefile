@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2000/02/28 09:35:13 camield Exp $
+# $OpenBSD: Makefile,v 1.66 2000/03/24 11:11:27 form Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -26,7 +26,7 @@
      SUBDIR += epic4
      SUBDIR += ethereal
      SUBDIR += firewalk
-#    SUBDIR += fping
+     SUBDIR += fping
 #    SUBDIR += freewais-sf
 #    SUBDIR += fspclient
 #    SUBDIR += ftpsearch
