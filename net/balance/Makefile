@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/21 19:11:33 jsyn Exp $
+# $OpenBSD: Makefile,v 1.3 2001/11/15 19:25:52 jsyn Exp $
 
 COMMENT=		"tcp proxy with load balancing and failover mechanisms"
 
-VERSION=		2.28
+VERSION=		2.33
 DISTNAME=		balance-${VERSION}
 CATEGORIES=    		net
-NEED_VERSION=		1.425
+NEED_VERSION=		1.498
 
 HOMEPAGE=		http://balance.sourceforge.net/
 
@@ -21,6 +21,8 @@ MASTER_SITE_SUBDIR=	balance
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=		balance
+
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/balance ${PREFIX}/bin
