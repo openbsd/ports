@@ -1,5 +1,5 @@
---- Makefile.orig	Thu May 11 07:53:15 2000
-+++ Makefile	Wed Apr 18 11:42:55 2001
+--- Makefile.orig	Thu May 11 01:53:15 2000
++++ Makefile	Thu Sep 12 12:26:38 2002
 @@ -4,8 +4,8 @@
  CC=g++
  GC=gcc
@@ -11,7 +11,7 @@
  prefix = /usr/local
  
  all: xbreaky xbreaky.snd
-@@ -15,22 +15,22 @@
+@@ -15,22 +15,22 @@ xbreaky:
  	$(CC) $(LDFLAGS) xbreaky.o -o xbreaky
  
  xbreaky.snd:
@@ -34,8 +34,8 @@
 -	install -m644     COPYING      $(prefix)/doc/xbreaky
 -	install -m644     AUTHORS      $(prefix)/doc/xbreaky
 -	install -m644     xbreaky.6    $(prefix)/man/man6
-+	install -m6755 -s xbreaky      $(DESTDIR)$(prefix)/bin
-+	install -m6755 -s xbreaky.snd  $(DESTDIR)$(prefix)/bin
++	install -m555 -s xbreaky      $(DESTDIR)$(prefix)/bin
++	install -m555 -s xbreaky.snd  $(DESTDIR)$(prefix)/bin
 +	install -m644     xbreaky.xpm  $(DESTDIR)$(prefix)/share/xbreaky/pixmaps
 +	install -m644     *.dat        $(DESTDIR)$(prefix)/share/xbreaky
 +	install -m644     *.raw        $(DESTDIR)$(prefix)/share/xbreaky
