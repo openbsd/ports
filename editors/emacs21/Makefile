@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/18 01:58:03 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/20 02:27:24 mark Exp $
 # Original from A B <obsdfaq30@yahoo.com>
 
 COMMENT=	"GNU editor: extensible, customizable, self documenting"
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SUBST_VARS=	GCCARCH VERSION
 
+USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${GCCARCH}
 CONFIGURE_ENV= CPPFLAGS="-I${LOCALBASE}/include" \
