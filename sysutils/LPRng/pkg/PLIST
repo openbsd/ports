@@ -1,12 +1,13 @@
+@cwd /usr/local
+@name LPRng-3.5.1
 bin/lpq
 bin/lprm
 bin/lpr
-bin/lpc
-bin/checkpc
-bin/lpraccnt
-etc/lpd.perms
-etc/lpd.conf
-etc/rc.d/lprng.sh
+bin/lp
+bin/lpstat
+bin/cancel
+lib/lpd.conf-sample
+lib/lpd.perms-sample
 libexec/lpd
 libexec/lpf
 libexec/lpbanner
@@ -14,10 +15,26 @@ libexec/readfilecount
 libexec/removeoneline
 libexec/authenticate_pgp
 libexec/setupauth
-lib/liblpr.a
-@exec ranlib %D/%F
-lib/liblpr.so.3.21
-@exec /sbin/ldconfig -m %B
+share/doc/LPRng/LPRng.html
+share/doc/LPRng/LPRng-HOWTO.html
+share/doc/LPRng/LPRng-HOWTO-1.html
+share/doc/LPRng/LPRng-HOWTO-2.html
+share/doc/LPRng/LPRng-HOWTO-3.html
+share/doc/LPRng/LPRng-HOWTO-4.html
+share/doc/LPRng/LPRng-HOWTO-5.html
+share/doc/LPRng/LPRng-HOWTO-6.html
+share/doc/LPRng/LPRng-HOWTO-7.html
+share/doc/LPRng/LPRng-HOWTO-8.html
+share/doc/LPRng/LPRng-HOWTO-9.html
+share/doc/LPRng/LPRng-HOWTO-10.html
+share/doc/LPRng/LPRng-HOWTO-11.html
+share/doc/LPRng/LPRng-HOWTO-12.html
+share/doc/LPRng/LPRng-HOWTO-13.html
+share/doc/LPRng/LPRng-HOWTO-14.html
+share/doc/LPRng/LPRng-HOWTO-15.html
+share/doc/LPRng/bg.gif
+share/doc/LPRng/star1.gif
+man/man1/authenticate_pgp.1
 man/man1/cancel.1
 man/man1/lp.1
 man/man1/lpbanner.1
@@ -35,27 +52,15 @@ man/man5/lpd.perms.5
 man/man5/printcap.5
 man/man8/checkpc.8
 man/man8/lpd.8
-share/doc/LPRng/README
-share/doc/LPRng/README.1st
-share/doc/LPRng/README.LPRng_to_lpr_spooling
-share/doc/LPRng/README.accounting
-share/doc/LPRng/README.authentication
-share/doc/LPRng/README.banner
-share/doc/LPRng/README.bouncequeues
-share/doc/LPRng/README.deskjet
-share/doc/LPRng/README.install
-share/doc/LPRng/README.kerberos_authentication
-share/doc/LPRng/README.logger
-share/doc/LPRng/README.lp_Malformed_from_address
-share/doc/LPRng/README.lp_emulation
-share/doc/LPRng/README.lpd.conf
-share/doc/LPRng/README.lpd.perms
-share/doc/LPRng/README.nis
-share/doc/LPRng/README.pgp_authentication
-share/doc/LPRng/README.ports
-share/doc/LPRng/README.printcap
-share/doc/LPRng/README.routing
-share/doc/LPRng/README.solaris
-share/doc/LPRng/README.solaris.newsprint
-share/doc/LPRng/README.statusdisplays
+sbin/lpc
+sbin/checkpc
+sbin/lpraccnt
 @dirrm share/doc/LPRng
+@exec test -f /etc/lpd.conf || cp %D/lib/lpd.conf-sample /etc/lpd.conf
+@exec test -f /etc/lpd.conf || cp %D/lib/lpd.perms-sample /etc/lpd.perms
+@unexec echo ""
+@unexec echo "*** to completly delete this package issue the command:"
+@unexec echo "***     rm -f /etc/lpd.conf /etc/lpd.perms"
+@unexec echo "*** when logged in as root"
+@unexec echo ""
+

@@ -1,62 +1,45 @@
 # OpenBSD makefile for:	LPRng
-# Version required:	3.2.3
+# Version required:	3.5.1
 # Date created:		2 Apr 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.3 1998/04/12 22:51:12 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/08/15 00:41:42 marc Exp $
 #
 
-DISTNAME=	LPRng-3.2.3
-CATEGORIES=	sysutils print
-NO_CDROM=	"To many copyrights/licences to verify destribution OK"
-MASTER_SITES=	ftp://dickory.sdsu.edu/pub/LPRng/
-EXTRACT_SUFX=	.tgz
+DISTNAME=		LPRng-3.5.1
+CATEGORIES=		sysutils print
 
-MAINTAINER=	joey@openbsd.org
+MAINTAINER=		marc@openbsd.org
 
-MAKEFILE=	Makefile.bsd
-GNU_CONFIGURE=	yes
+MASTER_SITES=		ftp://ftp.astart.com/pub/LPRng/LPRng/
+EXTRACT_SUFX=		.tgz
 
-post-patch:
-	@mv ${WRKSRC}/src/common/default.c ${WRKSRC}/src/common/default.c.tmp
-	@${SED} -e "s|@@PREFIX@@|${PREFIX}|g" \
-	    <${WRKSRC}/src/common/default.c.tmp >${WRKSRC}/src/common/default.c
+NO_CDROM=		"To many copyrights/licences to verify destribution OK"
 
-pre-build:
-	(cd ${WRKSRC}/po ; ln -s Makefile ${MAKEFILE})
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--with-lpddir=${PREFIX}/libexec
+CONFIGURE_ARGS+=	--with-admindir=${PREFIX}/sbin
+
+MAKEFILE=		Makefile.bsd
+
+HTMLFILES=		LPRng-HOWTO-1.html LPRng-HOWTO-2.html \
+			LPRng-HOWTO-3.html LPRng-HOWTO-4.html \
+			LPRng-HOWTO-5.html LPRng-HOWTO-6.html \
+			LPRng-HOWTO-7.html LPRng-HOWTO-8.html \
+			LPRng-HOWTO-9.html LPRng-HOWTO-10.html \
+			LPRng-HOWTO-11.html LPRng-HOWTO-12.html \
+			LPRng-HOWTO-13.html LPRng-HOWTO-14.html \
+			LPRng-HOWTO-15.html LPRng-HOWTO.html \
+			LPRng.html bg.gif star1.gif
 
 post-install:
-	(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} default)
-	${LDCONFIG} -m ${PREFIX}/lib
-	${INSTALL} -d -g bin -o bin -m 0555 ${PREFIX}/share/doc/LPRng
-	(cd ${WRKSRC} ; ${INSTALL_DATA} \
-		README \
-		README.1st \
-		README.LPRng_to_lpr_spooling \
-		README.accounting \
-		README.authentication \
-		README.banner \
-		README.bouncequeues \
-		README.deskjet \
-		README.install \
-		README.kerberos_authentication \
-		README.logger \
-		README.lp_Malformed_from_address \
-		README.lp_emulation \
-		README.lpd.conf \
-		README.lpd.perms \
-		README.nis \
-		README.pgp_authentication \
-		README.ports \
-		README.printcap \
-		README.routing \
-		README.solaris \
-		README.solaris.newsprint \
-		README.statusdisplays \
+	${INSTALL_DATA} ${WRKSRC}/lpd.conf ${PREFIX}/lib/lpd.conf-sample
+	${INSTALL_DATA} ${WRKSRC}/lpd.perms ${PREFIX}/lib/lpd.perms-sample
+	test -f /etc/lpd.conf || ${INSTALL_DATA} ${WRKSRC}/lpd.conf /etc
+	test -f /etc/lpd.perms || ${INSTALL_DATA} ${WRKSRC}/lpd.perms /etc
+	${MKDIR} ${PREFIX}/share/doc/LPRng
+	(cd ${WRKSRC}/HOWTO && ${INSTALL_DATA} ${HTMLFILES} \
 		${PREFIX}/share/doc/LPRng )
-	@cat ${FILESDIR}/lprng.sh | \
-		${SED} -e "s|@@PREFIX@@|${PREFIX}|g" > ${PREFIX}/etc/rc.d/lprng.sh
-	@chmod +x ${PREFIX}/etc/rc.d/lprng.sh
 	@cat ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
