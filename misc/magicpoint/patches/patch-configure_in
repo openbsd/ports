@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.1 2003/04/19 13:30:47 espie Exp $
---- configure.in.orig	Sun Apr  6 16:18:59 2003
-+++ configure.in	Sun Apr  6 16:19:25 2003
-@@ -103,6 +103,8 @@ if test "$mgp_use_freetype" = "yes"; the
+$OpenBSD: patch-configure_in,v 1.2 2005/02/25 13:34:38 alek Exp $
+--- configure.in.orig	Wed Aug  4 18:23:35 2004
++++ configure.in	Fri Feb 25 14:22:41 2005
+@@ -117,6 +117,8 @@ if test "$mgp_use_freetype" = "yes"; the
   			ac_cv_ft_include="$dir/include"
   		elif test -d $dir/include/freetype -a -f $dir/include/freetype/freetype.h; then
   			ac_cv_ft_include="$dir/include/freetype"
@@ -10,3 +10,21 @@ $OpenBSD: patch-configure_in,v 1.1 2003/04/19 13:30:47 espie Exp $
  		fi
   		if test "$ac_cv_ft_lib" != "no" -a "$ac_cv_ft_include" != "no"; then
   			LIBS="-L$ac_cv_ft_lib $LIBS"
+@@ -131,7 +133,7 @@ if test "$mgp_use_freetype" = "yes"; the
+  		AC_MSG_RESULT($ac_cv_ft_lib and $ac_cv_ft_include)
+  	fi
+         if test "$mgp_use_freetype" = "yes"; then
+-	  LIBS="-L$ac_cv_ft_lib $LIBS"
++	  LIBS="-L$ac_cv_ft_lib $LIBS -liconv"
+ 	  OPTFLAGS="-I$ac_cv_ft_include $OPTFLAGS"
+ 	  DEPLIBS="$ac_cv_ft_lib/$ac_cv_ft_libpath $DEPLIBS"
+ 	  AC_CHECK_LIB(intl, dgettext)
+@@ -301,7 +303,7 @@ for i in /usr/pkg /usr/local /usr; do
+ 		else
+ 			break;
+ 		fi
+-		LIBS="$LIBS -L$i/lib"
++		LIBS="$LIBS -L$i/lib -ljpeg -llcms"
+ 		OPTFLAGS="$OPTFLAGS -I$i/include"
+ 		AC_CHECK_LIB(mng, mng_initialize, 
+ 			[LIBS="$LIBS -Wl,-rpath,$i/lib -lmng"
