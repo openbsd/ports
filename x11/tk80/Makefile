@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1999/04/03 09:14:59 brad Exp $
+# $OpenBSD: Makefile,v 1.12 1999/04/04 23:43:17 espie Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 
 DISTNAME=	tk8.0.5
@@ -17,7 +17,7 @@ LIB_DEPENDS=	tcl80.1.5:${PORTSDIR}/lang/tcl80
 WRKSRC=		${WRKDIR}/tk8.0.5/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
-CONFIGURE_ENV=  PORTSDIR=${PORTSDIR} PATH=${PATH}:${X11BASE}/bin
+CONFIGURE_ENV=  PORTSDIR=${PORTSDIR} 
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
