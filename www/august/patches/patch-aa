@@ -1,0 +1,8 @@
+--- august.orig	Thu Jun 29 19:46:04 2000
++++ august	Thu Jun 29 19:46:16 2000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/wish
++#!/usr/local/bin/wish8.3
+ #   August - HTML Editor for UNIX by Johan Bengtsson 
+ #   Copyright (C) 1999 2000 Johan Bengtsson johanb@lls.se
+ #   Snail mail: Johan Bengtsson, Fangdammsvagen 10, 433 43 Partille, Sweden.
