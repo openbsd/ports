@@ -1,11 +1,11 @@
---- kfile/Makefile.in.orig	Tue Sep 14 17:30:43 1999
-+++ kfile/Makefile.in	Tue Sep 14 17:34:57 1999
+--- kfile/Makefile.in.orig	Tue Mar  7 18:20:43 2000
++++ kfile/Makefile.in	Tue Mar  7 18:20:57 2000
 @@ -199,7 +199,7 @@
  toolbardir = $(kde_toolbardir)
  
  LDFLAGS = $(QT_LDFLAGS) $(X_LDFLAGS)
 -libkfile_la_LDFLAGS = -version-info 2:0 $(LDFLAGS)
-+libkfile_la_LDFLAGS = -version-info 1:1 $(LDFLAGS)
++libkfile_la_LDFLAGS = -version-info 1:2 $(LDFLAGS)
  libkfile_la_LIBADD = -lXext  $(LIB_QT)
  
  check_PROGRAMS = kfstest

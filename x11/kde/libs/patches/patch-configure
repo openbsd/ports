@@ -1,5 +1,5 @@
---- configure.orig	Tue Sep  7 11:23:19 1999
-+++ configure	Tue Sep 14 19:08:38 1999
+--- configure.orig	Tue Sep  7 15:23:19 1999
++++ configure	Tue Mar  7 18:50:08 2000
 @@ -1861,7 +1861,7 @@
  aix*)
    ac_symcode='[BCDTU]'
@@ -9,11 +9,37 @@
    ac_sympat='_\([_A-Za-z][_A-Za-z0-9]*\)'
    ac_symxfrm='_\1 \1'
    ;;
-@@ -3094,12 +3094,13 @@
-    The main things grep needs to know about mmap are:
+@@ -1907,7 +1907,6 @@
+   # Now try to grab the symbols.
+   ac_nlist=conftest.nm
+   if { (eval echo configure:1910: \"$NM conftest.$ac_objext \| $ac_cv_sys_global_symbol_pipe \> $ac_nlist\") 1>&5; (eval $NM conftest.$ac_objext \| $ac_cv_sys_global_symbol_pipe \> $ac_nlist) 2>&5; } && test -s "$ac_nlist"; then
+-
+     # Try sorting and uniquifying the output.
+     if sort "$ac_nlist" | uniq > "$ac_nlist"T; then
+       mv -f "$ac_nlist"T "$ac_nlist"
+@@ -2626,7 +2625,7 @@
+ #include "confdefs.h"
+ 
+ int main() {
+-} $ac_kw int foo() {
++} int $ac_kw foo() {
+ ; return 0; }
+ EOF
+ if { (eval echo configure:2633: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>&5; }; then
+@@ -3069,9 +3068,7 @@
+   cat > conftest.$ac_ext <<EOF
+ #line 3071 "configure"
+ #include "confdefs.h"
+-#ifdef __cplusplus
+-extern "C" void exit(int);
+-#endif
++#include <stdlib.h>
+ 
+ /* Thanks to Mike Haertel and Jim Avera for this test.
+    Here is a matrix of mmap possibilities:
+@@ -3095,11 +3092,11 @@
     * does it exist and is it safe to write into the mmap'd area
     * how to use it (BSD variants)  */
-+#include <stdlib.h>
  #include <sys/types.h>
 +#include <sys/stat.h>
  #include <fcntl.h>
@@ -24,7 +50,7 @@
  # ifdef HAVE_UNISTD_H
  #  include <unistd.h>
  # endif
-@@ -3137,14 +3138,6 @@
+@@ -3137,14 +3134,6 @@
  #  endif /* no HAVE_SYS_PARAM_H */
  # endif /* no _SC_PAGESIZE */
  
@@ -39,7 +65,7 @@
  int
  main()
  {
-@@ -3157,7 +3150,7 @@
+@@ -3157,7 +3146,7 @@
  	/*
  	 * First, make a file with some known garbage in it.
  	 */
@@ -48,7 +74,7 @@
  	if (!data)
  		exit(1);
  	for (i = 0; i < pagesize; ++i)
-@@ -3178,7 +3171,7 @@
+@@ -3178,7 +3167,7 @@
  	fd = open("conftestmmap", O_RDWR);
  	if (fd < 0)
  		exit(1);
@@ -57,7 +83,7 @@
  	if (!data2)
  		exit(1);
  	data2 += (pagesize - ((int) data2 & (pagesize - 1))) & (pagesize - 1);
-@@ -3196,7 +3189,7 @@
+@@ -3196,7 +3185,7 @@
  	 */
  	for (i = 0; i < pagesize; ++i)
  		*(data2 + i) = *(data2 + i) + 1;

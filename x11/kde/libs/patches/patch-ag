@@ -1,11 +1,11 @@
---- kimgio/Makefile.in.orig	Tue Sep 14 17:38:39 1999
-+++ kimgio/Makefile.in	Tue Sep 14 17:38:50 1999
+--- kimgio/Makefile.in.orig	Tue Mar  7 18:32:50 2000
++++ kimgio/Makefile.in	Tue Mar  7 18:33:04 2000
 @@ -159,7 +159,7 @@
  
  lib_LTLIBRARIES = libkimgio.la
  
 -libkimgio_la_LDFLAGS = -version-info 2:0
-+libkimgio_la_LDFLAGS = -version-info 1:1
++libkimgio_la_LDFLAGS = -version-info 1:2
  
  libkimgio_la_SOURCES = jpeg.cpp xview.cpp kimgio.cpp kimgio.h eps.cpp 		tiffr.cpp pngr.cpp
  
