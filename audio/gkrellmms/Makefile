@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/15 23:26:38 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/12 14:43:47 espie Exp $
 
 DISTNAME=	gkrellmms-0.5.5
 CATEGORIES=	audio
-NEED_VERSION=	1.444
+NEED_VERSION=	1.474
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -24,6 +24,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h::sysutils/gkrellm \
 		${LOCALBASE}/bin/xmms-config::audio/xmms
 RUN_DEPENDS=	gkrellm::sysutils/gkrellm \
 		xmms::audio/xmms
+LIB_DEPENDS+=	xmms::audio/xmms
 ALL_TARGET=	
 
 do-install:
