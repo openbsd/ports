@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/09/16 15:40:13 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.4 2000/11/13 16:21:43 jakob Exp $
 bin/dig
 bin/host
 bin/isc-config.sh
@@ -168,6 +168,7 @@ lib/libisc.a
 lib/liblwres.a
 lib/libomapi.a
 %%SHARED%%
+man/man1/dig.1
 man/man1/host.1
 man/man5/rndc.conf.5
 man/man8/dnssec-keygen.8
@@ -185,18 +186,19 @@ sbin/dnssec-signzone
 sbin/lwresd
 sbin/named
 sbin/rndc
-share/doc/bind9/arm/Bv9ARM.1.html
-share/doc/bind9/arm/Bv9ARM.2.html
-share/doc/bind9/arm/Bv9ARM.3.html
-share/doc/bind9/arm/Bv9ARM.4.html
-share/doc/bind9/arm/Bv9ARM.5.html
-share/doc/bind9/arm/Bv9ARM.6.html
-share/doc/bind9/arm/Bv9ARM.7.html
-share/doc/bind9/arm/Bv9ARM.8.html
-share/doc/bind9/arm/Bv9ARM.9.html
-share/doc/bind9/arm/Bv9ARM.css
+share/doc/bind9/arm/Bv9ARM-book.xml
+share/doc/bind9/arm/Bv9ARM.ch01.html
+share/doc/bind9/arm/Bv9ARM.ch02.html
+share/doc/bind9/arm/Bv9ARM.ch03.html
+share/doc/bind9/arm/Bv9ARM.ch04.html
+share/doc/bind9/arm/Bv9ARM.ch05.html
+share/doc/bind9/arm/Bv9ARM.ch06.html
+share/doc/bind9/arm/Bv9ARM.ch07.html
+share/doc/bind9/arm/Bv9ARM.ch08.html
+share/doc/bind9/arm/Bv9ARM.ch09.html
 share/doc/bind9/arm/Bv9ARM.html
-share/doc/bind9/arm/Bv9ARM.txt
+share/doc/bind9/arm/README-SGML
+share/doc/bind9/arm/nominum-docbook-html.dsl
 share/doc/bind9/arm/isc.color.gif
 share/doc/bind9/misc/dnssec
 share/doc/bind9/misc/ipv6

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2000/09/16 15:28:02 jakob Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2000/11/13 16:21:43 jakob Exp $
 lib/libdns.la
-lib/libdns.so.1.0
+lib/libdns.so.2.0
 lib/libisc.la
-lib/libisc.so.1.0
+lib/libisc.so.2.0
 lib/liblwres.la
 lib/liblwres.so.1.0
 lib/libomapi.la
