@@ -145,20 +145,11 @@ info/gtk.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/gdk.info %D/info/dir
 @exec install-info %D/info/gtk.info %D/info/dir
-info/gtk.info-1
-info/gtk.info-2
-info/gtk.info-3
-info/gtk.info-4
-info/gtk.info-5
-info/gtk.info-6
 share/themes/Default/gtk/gtkrc
 share/aclocal/gtk.m4
 lib/gtk/gtkrc.ja
 lib/gtk/gtkrc.ko
 lib/gtk/gtkrc.ru
 @dirrm lib/gtk
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
-@exec install-info %D/info/gtk.info %D/info/dir
-@exec install-info %D/info/gdk.info %D/info/dir
 @dirrm include/gtk
 @dirrm include/gdk
