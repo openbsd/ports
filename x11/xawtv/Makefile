@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/11/16 16:17:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/01 04:46:17 jolan Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc
 
-COMMENT=	"TV viewing application"
+COMMENT=	"TV viewing application for bktr(4) cards"
 
-DISTNAME=	xawtv-3.90
-DISTFILES=	${DISTNAME:S,-,_,}.tar.gz
+DISTNAME=	xawtv_3.91
+PKGNAME=	${DISTNAME:S,_,-,}
 CATEGORIES=	x11
 
 MAINTAINER=	Robert Nagy <thuglife@bsd.hu>
@@ -20,16 +20,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	jpeg.62::graphics/jpeg
 
 .if ${MACHINE_ARCH} == "i386"
-FLAVORS=	mmx
-FLAVOR?=
-.  if ${FLAVOR:L:Mmmx}
 CONFIGURE_ARGS+=--enable-mmx
-.  else
-CONFIGURE_ARGS+=--disable-mmx
-.  endif
 .endif
 
 CONFIGURE_STYLE=gnu
@@ -39,6 +34,8 @@ CONFIGURE_ENV=	PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
 MAKE_FLAGS=	verbose=yes SYSCONFDIR="${SYSCONFDIR}"
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
+
+WRKDIST=	${WRKDIR}/${PKGNAME}
 
 post-install:
 	@perl -pi -e "s,/etc/X11,${SYSCONFDIR}," ${PREFIX}/man/man5/xawtvrc.5
