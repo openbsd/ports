@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/09/30 03:10:46 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/12/01 19:14:21 marcm Exp $
 bin/razor-admin
 bin/razor-check
 bin/razor-client
@@ -31,7 +31,7 @@ man/man5/razor-agent.conf.5
 man/man5/razor-agents.5
 man/man5/razor-whitelist.5
 @comment @dirrm man/man3p
-@dirrm ${P5ARCH}/auto/razor-agents
+@comment @dirrm ${P5ARCH}/auto/razor-agents
 @comment @dirrm ${P5ARCH}/auto
 @comment @dirrm ${P5ARCH}
 @dirrm ${P5SITE}/Razor2/Signature

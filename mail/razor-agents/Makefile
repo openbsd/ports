@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/10/30 04:38:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2002/12/01 19:14:21 marcm Exp $
 
 COMMENT=		"agent for Razor spam filtering networks"
 
@@ -28,5 +28,6 @@ post-install:
 	@ln -s razor-client ${PREFIX}/bin/razor-report
 	@ln -s razor-client ${PREFIX}/bin/razor-revoke
 	@ln -s razor-client ${PREFIX}/bin/razor-admin
+	${INSTALL_MAN} ${WRKSRC}/blib/man5/*.5 ${PREFIX}/man/man5
 
 .include <bsd.port.mk>
