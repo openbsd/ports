@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.221 2002/06/19 21:11:58 fgsch Exp $
+# $OpenBSD: Makefile,v 1.222 2002/06/24 20:51:06 jakob Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -72,6 +72,7 @@
      SUBDIR += irssi
      SUBDIR += irssi,socks
      SUBDIR += irssi-icb
+     SUBDIR += isc-dhcp
      SUBDIR += jftpgw
      SUBDIR += kinkatta
      SUBDIR += kmago
