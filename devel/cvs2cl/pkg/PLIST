@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/25 20:49:45 danh Exp $
+bin/cvs2cl

@@ -1,0 +1,6 @@
+This Perl script produces a GNU-style ChangeLog for CVS-controlled
+sources, by running "cvs log" and parsing the output.
+
+Duplicate log messages get unified in the Right Way.
+
+WWW: ${HOMEPAGE}
