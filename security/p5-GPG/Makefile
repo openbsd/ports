@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/06/26 07:35:09 xsa Exp $
+# $OpenBSD: Makefile,v 1.10 2004/10/07 19:21:46 sturm Exp $
 
 COMMENT=	"perl5 interface to GnuPG using scalars"
 
@@ -6,7 +6,7 @@ VERSION=	0.06
 DISTNAME=	GPG-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../authors/id/M/MI/MILES}
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../authors/id/M/MI/MILES/}
 
 RUN_DEPENDS=	:gnupg-*:security/gnupg
 BUILD_DEPENDS=	${RUN_DEPENDS}
