@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2003/05/11 20:29:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.96 2003/06/01 10:39:21 jolan Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -41,6 +41,7 @@
 #    SUBDIR += flying
      SUBDIR += freeciv
      SUBDIR += freeciv,gtk
+     SUBDIR += freedroid
      SUBDIR += frotz
 #    SUBDIR += galaxis
      SUBDIR += gemdropx
