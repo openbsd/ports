@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.6 2004/02/01 14:55:03 espie Exp $
+# $OpenBSD: kde.port.mk,v 1.7 2004/02/23 18:12:34 espie Exp $
 MODULES+=	qt3
 MODQT_OVERRIDE_UIC?=No
 MODQT_MT?=Yes
@@ -38,6 +38,7 @@ MODKDE_VERSION?=
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.1/patch-* patch-*
 .elif ${MODKDE_VERSION} == "3.2"
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.2/patch-* patch-*
+AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
 LIB_DEPENDS+=lib/qt3/qt-mt.3.20::x11/qt3,mt
 .elif ${MODKDE_VERSION} == "2.2.2"
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-2.2.2/patch-* patch-*
