@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2002/03/04 16:15:41 espie Exp $
+# $OpenBSD: Makefile,v 1.129 2002/03/06 11:42:39 kevlo Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -66,6 +66,7 @@
 #    SUBDIR += iv
      SUBDIR += kde
      SUBDIR += kdirstat
+     SUBDIR += kountdown
      SUBDIR += lesstif
      SUBDIR += libdnd
 #    SUBDIR += libsx
