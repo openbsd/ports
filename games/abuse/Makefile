@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/12/29 15:10:07 fgsch Exp $
+# $OpenBSD: Makefile,v 1.23 2003/08/12 19:43:39 pvalchev Exp $
 
 COMMENT=	"full color 320x200 arcade quality platform shooter"
 
@@ -20,6 +20,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 .if ${MACHINE_ARCH} == "sparc"
 BROKEN=		"Does not work on SPARC"
+.endif
+
+.if ${MACHINE_ARCH} == "vax"
+BROKEN=		"gmake loops forever"
 .endif
 
 USE_X11=	Yes
