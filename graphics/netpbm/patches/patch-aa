@@ -1,109 +1,118 @@
-*** Makefile.orig	Wed Jan 26 18:47:35 1994
---- Makefile	Thu May 14 12:22:10 1998
-***************
-*** 48,78 ****
-  # By the way, you must have at least version 2.4 of libtiff.  Earlier
-  # versions will not work.
-  TIFFDEF =	-DLIBTIFF
-! TIFFINC =	-I../libtiff
-! TIFFLIB =	../libtiff/libtiff.a
-  TIFFBINARIES =	tifftopnm pnmtotiff
-  TIFFOBJECTS =	tifftopnm.o pnmtotiff.o
-  
-  # CONFIGURE: Define the directory that you want the binaries copied to.
-  # If you need scripts and binaries to be in different directories, you
-  # can set that up too.
-! INSTALLBINARIES =	/usr/local/netpbm
-  INSTALLSCRIPTS =	$(INSTALLBINARIES)
-  
-  # CONFIGURE: Define the directories that you want the manual sources copied to,
-  # plus the suffix you want them to have.
-! INSTALLMANUALS1 =	/usr/local/man/man1
-  SUFFIXMANUALS1 =	1
-! INSTALLMANUALS3 =	/usr/local/man/man3
-  SUFFIXMANUALS3 =	3
-! INSTALLMANUALS5 =	/usr/local/man/man5
-  SUFFIXMANUALS5 =	5
-  
-  # CONFIGURE: Normally the man pages are installed using "cp".  By changing
-  # this define you can use something else, for example a script that calls
-  # compress or pack. The ../mantocat is used on systems which use man pages
-  # in the "cat" format.
-! MANCP =			cp
-  #MANCP =		../mantocat
-  
-  # CONFIGURE: Normally the Makefiles build and install separate binaries for
---- 48,78 ----
-  # By the way, you must have at least version 2.4 of libtiff.  Earlier
-  # versions will not work.
-  TIFFDEF =	-DLIBTIFF
-! TIFFINC =	-I$(PREFIX)/include
-! TIFFLIB =	-L$(PREFIX)/lib -ltiff -ljpeg
-  TIFFBINARIES =	tifftopnm pnmtotiff
-  TIFFOBJECTS =	tifftopnm.o pnmtotiff.o
-  
-  # CONFIGURE: Define the directory that you want the binaries copied to.
-  # If you need scripts and binaries to be in different directories, you
-  # can set that up too.
-! INSTALLBINARIES =	$(PREFIX)/bin
-  INSTALLSCRIPTS =	$(INSTALLBINARIES)
-  
-  # CONFIGURE: Define the directories that you want the manual sources copied to,
-  # plus the suffix you want them to have.
-! INSTALLMANUALS1 =	$(PREFIX)/man/man1
-  SUFFIXMANUALS1 =	1
-! INSTALLMANUALS3 =	$(PREFIX)/man/man3
-  SUFFIXMANUALS3 =	3
-! INSTALLMANUALS5 =	$(PREFIX)/man/man5
-  SUFFIXMANUALS5 =	5
-  
-  # CONFIGURE: Normally the man pages are installed using "cp".  By changing
-  # this define you can use something else, for example a script that calls
-  # compress or pack. The ../mantocat is used on systems which use man pages
-  # in the "cat" format.
-! MANCP =			${INSTALL_MAN}
-  #MANCP =		../mantocat
-  
-  # CONFIGURE: Normally the Makefiles build and install separate binaries for
-***************
-*** 87,96 ****
-  #
-  # Note that if you make a "merge", the executables don't get created
-  # until you do the install.
-! #all:		binaries
-! #install:	install.bin install.man
-! all:		merge
-! install:	install.merge install.man
-  
-  # End of configurable definitions.
-  
---- 87,96 ----
-  #
-  # Note that if you make a "merge", the executables don't get created
-  # until you do the install.
-! all:		binaries
-! install:	install.bin install.man
-! #all:		merge
-! #install:	install.merge install.man
-  
-  # End of configurable definitions.
-  
-***************
-*** 99,106 ****
-  SUBDIRS =	pbm pgm ppm pnm
-  
-  binaries:
-! 	./stamp-date
-! 	( echo "libtiff" ; cd libtiff ; make )
-  	for i in $(SUBDIRS) ; do \
-  	    ( echo $$i ; cd $$i ; $(MAKE) $(MFLAGS) 'CC=$(CC)' 'CFLAGS=$(CFLAGS)' 'TIFFDEF=$(TIFFDEF)' 'TIFFINC=$(TIFFINC)' 'TIFFLIB=$(TIFFLIB)' 'TIFFBINARIES=$(TIFFBINARIES)' 'TIFFOBJECTS=$(TIFFOBJECTS)' 'LDFLAGS=$(LDFLAGS)' binaries ); \
-  	done
---- 99,106 ----
-  SUBDIRS =	pbm pgm ppm pnm
-  
-  binaries:
-! #	./stamp-date
-! #	( echo "libtiff" ; cd libtiff ; make )
-  	for i in $(SUBDIRS) ; do \
-  	    ( echo $$i ; cd $$i ; $(MAKE) $(MFLAGS) 'CC=$(CC)' 'CFLAGS=$(CFLAGS)' 'TIFFDEF=$(TIFFDEF)' 'TIFFINC=$(TIFFINC)' 'TIFFLIB=$(TIFFLIB)' 'TIFFBINARIES=$(TIFFBINARIES)' 'TIFFOBJECTS=$(TIFFOBJECTS)' 'LDFLAGS=$(LDFLAGS)' binaries ); \
-  	done
+--- Makefile.orig	Wed Jan 26 12:47:35 1994
++++ Makefile	Mon Jan 11 00:17:07 1999
+@@ -21,7 +21,7 @@
+ #CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
+ 
+ # CONFIGURE: cc flags go here.
+-CFLAGS =	-O
++CFLAGS =	-O2
+ #CFLAGS =	-g
+ #CFLAGS =	-g -O
+ 
+@@ -48,33 +48,36 @@
+ # By the way, you must have at least version 2.4 of libtiff.  Earlier
+ # versions will not work.
+ TIFFDEF =	-DLIBTIFF
+-TIFFINC =	-I../libtiff
+-TIFFLIB =	../libtiff/libtiff.a
++TIFFINC =	-I$(PREFIX)/include
++TIFFLIB =	-L$(PREFIX)/lib -ltiff -ljpeg
+ TIFFBINARIES =	tifftopnm pnmtotiff
+ TIFFOBJECTS =	tifftopnm.o pnmtotiff.o
+ 
+ # CONFIGURE: Define the directory that you want the binaries copied to.
+ # If you need scripts and binaries to be in different directories, you
+ # can set that up too.
+-INSTALLBINARIES =	/usr/local/netpbm
++INSTALLBINARIES =	$(PREFIX)/bin
+ INSTALLSCRIPTS =	$(INSTALLBINARIES)
+ 
+ # CONFIGURE: Define the directories that you want the manual sources copied to,
+ # plus the suffix you want them to have.
+-INSTALLMANUALS1 =	/usr/local/man/man1
++INSTALLMANUALS1 =	$(PREFIX)/man/man1
+ SUFFIXMANUALS1 =	1
+-INSTALLMANUALS3 =	/usr/local/man/man3
++INSTALLMANUALS3 =	$(PREFIX)/man/man3
+ SUFFIXMANUALS3 =	3
+-INSTALLMANUALS5 =	/usr/local/man/man5
++INSTALLMANUALS5 =	$(PREFIX)/man/man5
+ SUFFIXMANUALS5 =	5
+ 
+ # CONFIGURE: Normally the man pages are installed using "cp".  By changing
+ # this define you can use something else, for example a script that calls
+ # compress or pack. The ../mantocat is used on systems which use man pages
+ # in the "cat" format.
+-MANCP =			cp
++MANCP =			install -c -m 0644
+ #MANCP =		../mantocat
+ 
++INSTALLLIBS =		$(PREFIX)/lib
++INSTALLDEFS =		$(PREFIX)/include
++
+ # CONFIGURE: Normally the Makefiles build and install separate binaries for
+ # each program.  However, on some systems (especially those without shared
+ # libraries) this can mean a lot of space.  In this case you might try
+@@ -87,10 +90,10 @@
+ #
+ # Note that if you make a "merge", the executables don't get created
+ # until you do the install.
+-#all:		binaries
+-#install:	install.bin install.man
+-all:		merge
+-install:	install.merge install.man
++all:		binaries
++install:	install.bin install.man
++#all:		merge
++#install:	install.merge install.man
+ 
+ # End of configurable definitions.
+ 
+@@ -99,10 +102,10 @@
+ SUBDIRS =	pbm pgm ppm pnm
+ 
+ binaries:
+-	./stamp-date
+-	( echo "libtiff" ; cd libtiff ; make )
++#	./stamp-date
++#	( echo "libtiff" ; cd libtiff ; make )
+ 	for i in $(SUBDIRS) ; do \
+-	    ( echo $$i ; cd $$i ; $(MAKE) $(MFLAGS) 'CC=$(CC)' 'CFLAGS=$(CFLAGS)' 'TIFFDEF=$(TIFFDEF)' 'TIFFINC=$(TIFFINC)' 'TIFFLIB=$(TIFFLIB)' 'TIFFBINARIES=$(TIFFBINARIES)' 'TIFFOBJECTS=$(TIFFOBJECTS)' 'LDFLAGS=$(LDFLAGS)' binaries ); \
++	    ( echo "===> $$i" ; cd $$i ; $(MAKE) $(MFLAGS) 'CC=$(CC)' 'CFLAGS=$(CFLAGS)' 'TIFFDEF=$(TIFFDEF)' 'TIFFINC=$(TIFFINC)' 'TIFFLIB=$(TIFFLIB)' 'TIFFBINARIES=$(TIFFBINARIES)' 'TIFFOBJECTS=$(TIFFOBJECTS)' 'LDFLAGS=$(LDFLAGS)' binaries ); \
+ 	done
+ 
+ merge:
+@@ -113,15 +116,19 @@
+ 	done
+ 
+ install.bin:
+-	-mkdir $(INSTALLBINARIES)
++#	-mkdir $(INSTALLBINARIES)
++#	-mkdir $(INSTALLLIBS)
++#	-mkdir $(INSTALLDEFS)
+ 	for i in $(SUBDIRS) ; do \
+-	    ( echo $$i ; cd $$i ; $(MAKE) $(MFLAGS) 'CC=$(CC)' 'CFLAGS=$(CFLAGS)' 'TIFFDEF=$(TIFFDEF)' 'TIFFINC=$(TIFFINC)' 'TIFFLIB=$(TIFFLIB)' 'TIFFBINARIES=$(TIFFBINARIES)' 'TIFFOBJECTS=$(TIFFOBJECTS)' 'LDFLAGS=$(LDFLAGS)' 'INSTALLBINARIES=$(INSTALLBINARIES)' 'INSTALLSCRIPTS=$(INSTALLSCRIPTS)' install.bin ); \
++	    ( echo $$i ; cd $$i ; $(MAKE) $(MFLAGS) 'CC=$(CC)' 'CFLAGS=$(CFLAGS)' 'TIFFDEF=$(TIFFDEF)' 'TIFFINC=$(TIFFINC)' 'TIFFLIB=$(TIFFLIB)' 'TIFFBINARIES=$(TIFFBINARIES)' 'TIFFOBJECTS=$(TIFFOBJECTS)' 'LDFLAGS=$(LDFLAGS)' 'INSTALLBINARIES=$(INSTALLBINARIES)' 'INSTALLSCRIPTS=$(INSTALLSCRIPTS)' 'INSTALLLIBS=$(INSTALLLIBS)' 'INSTALLDEFS=$(INSTALLDEFS)' install.bin ); \
+ 	done
+ 
+ install.merge:
+-	-mkdir $(INSTALLBINARIES)
++#	-mkdir $(INSTALLBINARIES)
++#	-mkdir $(INSTALLLIBS)
++#	-mkdir $(INSTALLDEFS)
+ 	for i in $(SUBDIRS) ; do \
+-	    ( echo $$i ; cd $$i ; $(MAKE) $(MFLAGS) 'CC=$(CC)' 'CFLAGS=$(CFLAGS)' 'TIFFDEF=$(TIFFDEF)' 'TIFFINC=$(TIFFINC)' 'TIFFLIB=$(TIFFLIB)' 'TIFFBINARIES=$(TIFFBINARIES)' 'TIFFOBJECTS=$(TIFFOBJECTS)' 'LDFLAGS=$(LDFLAGS)' 'INSTALLBINARIES=$(INSTALLBINARIES)' 'INSTALLSCRIPTS=$(INSTALLSCRIPTS)' install.merge ); \
++	    ( echo $$i ; cd $$i ; $(MAKE) $(MFLAGS) 'CC=$(CC)' 'CFLAGS=$(CFLAGS)' 'TIFFDEF=$(TIFFDEF)' 'TIFFINC=$(TIFFINC)' 'TIFFLIB=$(TIFFLIB)' 'TIFFBINARIES=$(TIFFBINARIES)' 'TIFFOBJECTS=$(TIFFOBJECTS)' 'LDFLAGS=$(LDFLAGS)' 'INSTALLBINARIES=$(INSTALLBINARIES)' 'INSTALLSCRIPTS=$(INSTALLSCRIPTS)' 'INSTALLLIBS=$(INSTALLLIBS)' 'INSTALLDEFS=$(INSTALLDEFS)' install.merge ); \
+ 	done
+ 
+ install.man:
+@@ -131,7 +138,7 @@
+ 
+ clean:
+ 	rm -f *.shar *.shar? art.* *~
+-	echo "" > compile.h
+-	for i in $(SUBDIRS) libtiff ; do \
++	rm -f compile.h ; echo "" > compile.h
++	for i in $(SUBDIRS) ; do \
+ 	    ( echo $$i ; cd $$i ; $(MAKE) $(MFLAGS) clean ); \
+ 	done
