@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/01/08 21:09:04 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/04/18 21:47:50 avsm Exp $
 bin/GET
 bin/HEAD
 bin/POST
@@ -35,6 +35,7 @@ libdata/perl5/site_perl/LWP/Protocol/file.pm
 libdata/perl5/site_perl/LWP/Protocol/ftp.pm
 libdata/perl5/site_perl/LWP/Protocol/gopher.pm
 libdata/perl5/site_perl/LWP/Protocol/http.pm
+libdata/perl5/site_perl/LWP/Protocol/http11.pm
 libdata/perl5/site_perl/LWP/Protocol/https.pm
 libdata/perl5/site_perl/LWP/Protocol/mailto.pm
 libdata/perl5/site_perl/LWP/Protocol/nntp.pm
@@ -42,6 +43,7 @@ libdata/perl5/site_perl/LWP/RobotUA.pm
 libdata/perl5/site_perl/LWP/Simple.pm
 libdata/perl5/site_perl/LWP/UserAgent.pm
 libdata/perl5/site_perl/LWP/media.types
+libdata/perl5/site_perl/Net/HTTP.pm
 libdata/perl5/site_perl/WWW/RobotRules.pm
 libdata/perl5/site_perl/WWW/RobotRules/AnyDBM_File.pm
 libdata/perl5/site_perl/lwpcook.pod
