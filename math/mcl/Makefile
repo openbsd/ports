@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/18 16:23:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/18 16:31:52 naddy Exp $
 
 COMMENT=	"clustering algorithm for graphs"
 
-V=		04-174
+V=		04-314
 DISTNAME=	mcl-${V}
 PKGNAME=	mcl-${V:S,-,_,}
 CATEGORIES=	math
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}src/
+
+WANTLIB=	c m pthread
 
 CONFIGURE_STYLE=gnu
 

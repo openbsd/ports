@@ -1,0 +1,12 @@
+$OpenBSD: patch-graphs_Makefile_in,v 1.1 2004/12/18 16:31:53 naddy Exp $
+--- graphs/Makefile.in.orig	Tue Dec 14 21:17:24 2004
++++ graphs/Makefile.in	Tue Dec 14 21:18:17 2004
+@@ -141,7 +141,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-exampledir = $(datadir)/doc/$(PACKAGE)/examples
++exampledir = $(datadir)/examples/$(PACKAGE)
+ example_DATA = falkner.mci proteins.mci matula.mci \
+                   seven.mci small.mci small.png small.ps\
+                   data.raw data.hdr data.tab small.tab fznyy.tab fznyy.mci small64.mci

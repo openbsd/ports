@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 09:11:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/12/18 16:31:53 naddy Exp $
+bin/clmclose
 bin/clmdist
 bin/clmformat
 bin/clmimac
@@ -12,8 +13,10 @@ bin/mcx
 bin/mcxarray
 bin/mcxassemble
 bin/mcxconvert
+bin/mcxdump
 bin/mcxmap
 bin/mcxsubs
+@man man/man1/clmclose.1
 @man man/man1/clmdist.1
 @man man/man1/clmformat.1
 @man man/man1/clmimac.1
@@ -27,6 +30,7 @@ bin/mcxsubs
 @man man/man1/mcxarray.1
 @man man/man1/mcxassemble.1
 @man man/man1/mcxconvert.1
+@man man/man1/mcxdump.1
 @man man/man1/mcxmap.1
 @man man/man1/mcxsubs.1
 @man man/man5/mcxio.5
@@ -34,6 +38,8 @@ bin/mcxsubs
 @man man/man7/mclfaq.7
 @man man/man7/mclindex.7
 share/doc/mcl/
+share/doc/mcl/clmclose.html
+share/doc/mcl/clmclose.ps
 share/doc/mcl/clmdist.html
 share/doc/mcl/clmdist.ps
 share/doc/mcl/clmformat.html
@@ -69,6 +75,8 @@ share/doc/mcl/mcxassemble.html
 share/doc/mcl/mcxassemble.ps
 share/doc/mcl/mcxconvert.html
 share/doc/mcl/mcxconvert.ps
+share/doc/mcl/mcxdump.html
+share/doc/mcl/mcxdump.ps
 share/doc/mcl/mcxio.html
 share/doc/mcl/mcxio.ps
 share/doc/mcl/mcxmap.html
@@ -80,10 +88,13 @@ share/examples/mcl/data.hdr
 share/examples/mcl/data.raw
 share/examples/mcl/data.tab
 share/examples/mcl/falkner.mci
+share/examples/mcl/fznyy.mci
 share/examples/mcl/fznyy.tab
 share/examples/mcl/matula.mci
 share/examples/mcl/proteins.mci
+share/examples/mcl/seven.mci
 share/examples/mcl/small.mci
 share/examples/mcl/small.png
 share/examples/mcl/small.ps
 share/examples/mcl/small.tab
+share/examples/mcl/small64.mci
