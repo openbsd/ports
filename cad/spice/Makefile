@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/24 23:05:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2003/06/19 20:17:25 pvalchev Exp $
 
 COMMENT=	"Simulation Program for Integrated Circuit Electronics"
 
 DISTNAME=		sp3f4.kit
-PKGNAME=		spice-3f5
+PKGNAME=		spice-3f5p1
 CATEGORIES=     	cad
 
 PERMIT_PACKAGE_CDROM=	"no fee"
