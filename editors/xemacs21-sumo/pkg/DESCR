@@ -1,0 +1,33 @@
+Here is a list of bundled XEmacs' packages : (note that some are MULE-only)
+
+Sun            	ada            	apel           
+auctex         	bbdb           	c-support      
+calc           	calendar       	cc-mode        
+cookie         	crisp          	debug          
+dired          	edebug         	edict          
+ediff          	edit-utils     	edt            
+efs            	egg-its        	eicq           
+elib           	emerge         	eshell         
+eterm          	eudc           	footnote       
+forms          	frame-icon     	fsf-compat     
+games          	gnats          	gnus           
+hm--html-menus 	idlwave        	igrep          
+ilisp          	ispell         	jde            
+leim           	locale         	lookup         
+mail-lib       	mailcrypt      	mew            
+mh-e           	mine           	misc-games     
+mule-base      	net-utils      	os-utils       
+pc             	pcl-cvs        	pcomplete      
+prog-modes     	ps-print-nomule	psgml          
+reftex         	rmail          	scheme         
+semantic       	sgml           	sh-script      
+skk            	slider         	sounds-au      
+sounds-wav     	speedbar       	strokes        
+supercite      	texinfo        	text-modes     
+textools       	time           	tm             
+tooltalk       	tpu            	vc             
+vhdl           	view-process   	viper          
+vm             	w3             	xemacs-base    
+xemacs-devel   	zenirc
+
+WWW: ${HOMEPAGE}
