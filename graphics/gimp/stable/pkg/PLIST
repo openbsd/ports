@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/07/28 21:55:19 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/16 18:17:15 naddy Exp $
 bin/escputil
 bin/escputil-1.2
 bin/gimp
@@ -167,6 +167,7 @@ lib/gimp/plug-ins/gtm
 lib/gimp/plug-ins/guillotine
 lib/gimp/plug-ins/gz
 lib/gimp/plug-ins/header
+@comment lib/gimp/plug-ins/helpbrowser
 lib/gimp/plug-ins/hot
 lib/gimp/plug-ins/hrz
 lib/gimp/plug-ins/ifscompose
@@ -256,7 +257,6 @@ lib/libgimp.a
 lib/libgimp.la
 lib/libgimpui.a
 lib/libgimpui.la
-%%SHARED%%
 @comment man/man1/escputil-1.2.1
 man/man1/escputil.1
 man/man1/gimp-1.2.1
@@ -1450,6 +1450,19 @@ share/locale/zh_TW/LC_MESSAGES/gimp-libgimp.mo
 share/locale/zh_TW/LC_MESSAGES/gimp-script-fu.mo
 share/locale/zh_TW/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/gimp.mo
+%%SHARED%%
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/zh_CN
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/locale/lt/LC_MESSAGES
+@dirrm share/locale/lt
+@dirrm share/locale/ga/LC_MESSAGES
+@dirrm share/locale/ga
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@dirrm share/locale/en_GB/LC_MESSAGES
+@dirrm share/locale/en_GB
 @dirrm share/gimp/tips
 @dirrm share/gimp/scripts
 @dirrm share/gimp/patterns

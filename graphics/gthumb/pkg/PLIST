@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/05/31 20:48:24 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/12/16 18:17:15 naddy Exp $
 bin/gthumb
 bin/gthumb-image-viewer
 man/man1/gthumb.1
@@ -61,3 +61,5 @@ share/pixmaps/gthumb.png
 @dirrm share/gnome/help/gthumb/C/images
 @dirrm share/gnome/help/gthumb/C
 @dirrm share/gnome/help/gthumb
+@dirrm share/gnome/apps/Graphics
+@dirrm share/gnome/apps

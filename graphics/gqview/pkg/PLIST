@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2003/04/29 00:32:14 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.14 2003/12/16 18:17:15 naddy Exp $
 bin/gqview
 man/man1/gqview.1
 share/doc/gqview/README
@@ -28,4 +28,26 @@ share/locale/vi/LC_MESSAGES/gqview.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gqview.mo
 share/locale/zh_TW/LC_MESSAGES/gqview.mo
 @comment share/pixmaps/gqview.png
+@comment @dirrm share/pixmaps
+@dirrm share/locale/zh_TW/LC_MESSAGES
+@dirrm share/locale/zh_TW
+@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
+@dirrm share/locale/zh_CN.GB2312
+@dirrm share/locale/vi/LC_MESSAGES
+@dirrm share/locale/vi
+@dirrm share/locale/uk/LC_MESSAGES
+@dirrm share/locale/uk
+@dirrm share/locale/th/LC_MESSAGES
+@dirrm share/locale/th
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@comment @dirrm share/gnome/apps/Graphics
+@comment @dirrm share/gnome/apps
+@comment @dirrm share/gnome
 @dirrm share/doc/gqview

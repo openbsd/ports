@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/08 01:09:15 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/16 18:17:15 naddy Exp $
 bin/dia
 lib/dia/libbondgraph_objects.la
 lib/dia/libcgm_filter.la
@@ -1059,6 +1059,7 @@ share/locale/zh_TW/LC_MESSAGES/dia.mo
 share/mime-info/dia.keys
 share/mime-info/dia.mime
 %%SHARED%%
+@dirrm share/mime-info
 @dirrm share/dia/xslt
 @dirrm share/dia/sheets/UML
 @dirrm share/dia/sheets/GRAFCET
@@ -1084,4 +1085,5 @@ share/mime-info/dia.mime
 @dirrm share/dia/help/en
 @dirrm share/dia/help
 @dirrm share/dia
+@dirrm share/applications
 @dirrm lib/dia
