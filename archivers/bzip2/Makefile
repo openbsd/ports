@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 1998/09/14 05:41:17 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1999/02/11 05:51:07 fgsch Exp $
 #
 
-DISTNAME=	bzip2-0.9.0b
-PKGNAME=	bzip2-0.9.0b
+DISTNAME=	bzip2-0.9.0c
+PKGNAME=	bzip2-0.9.0c
 CATEGORIES=	archivers
 
 MAINTAINER=	angelos@openbsd.org
