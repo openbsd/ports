@@ -1,0 +1,11 @@
+--- gcc/configure.in.orig	Wed Jul 19 23:59:49 2000
++++ gcc/configure.in	Thu Jul 20 00:00:02 2000
+@@ -664,7 +664,7 @@ changequote([,])dnl
+ 		# avoid surprises, always provide an xm-openbsd file 
+ 		xm_file=${cpu_type}/xm-openbsd.h
+ 		# don't depend on processor x-fragments as well
+-		xmake_file=none
++		xmake_file=x-openbsd
+  		if test x$enable_threads = xyes; then
+  			thread_file='posix'
+ 			tmake_file="${tmake_file} t-openbsd-thread"
