@@ -1,6 +1,7 @@
---- Input/cdaudio/cdaudio.c.dist	Tue Apr  8 23:31:39 2003
-+++ Input/cdaudio/cdaudio.c	Wed Apr  9 00:07:00 2003
-@@ -552,6 +552,10 @@
+$OpenBSD: patch-Input_cdaudio_cdaudio_c,v 1.2 2004/01/22 20:15:22 naddy Exp $
+--- Input/cdaudio/cdaudio.c.orig	2002-02-05 15:39:11.000000000 +0100
++++ Input/cdaudio/cdaudio.c	2004-01-22 20:41:36.000000000 +0100
+@@ -552,6 +552,10 @@ static int get_current_frame(void)
  {
  	struct ioc_read_subchannel subchnl;
  	struct cd_sub_channel_info subinfo;
@@ -11,7 +12,7 @@
  	subchnl.address_format = CD_MSF_FORMAT;
  	subchnl.data_format = CD_CURRENT_POSITION;
  	subchnl.data_len = sizeof(subinfo);
-@@ -591,17 +595,23 @@
+@@ -591,17 +595,23 @@ gboolean cdda_get_toc_lowlevel(int fd, c
  {
  	struct ioc_toc_header tochdr;
  	struct ioc_read_toc_entry tocentry;
@@ -36,4 +37,3 @@
  			return FALSE;
  		info->track[i].minute =
  		    tocentry.data->addr.msf.minute;
-

@@ -1,7 +1,7 @@
-$OpenBSD: patch-xmms_main_c,v 1.4 2002/03/11 17:38:05 naddy Exp $
---- xmms/main.c.orig	Fri Dec 28 08:32:28 2001
-+++ xmms/main.c	Fri Jan 18 07:39:27 2002
-@@ -3379,7 +3373,8 @@
+$OpenBSD: patch-xmms_main_c,v 1.5 2004/01/22 20:15:22 naddy Exp $
+--- xmms/main.c.orig	2002-02-27 15:30:28.000000000 +0100
++++ xmms/main.c	2004-01-22 20:41:37.000000000 +0100
+@@ -3387,7 +3387,8 @@ int main(int argc, char **argv)
  #endif
  
  	signal(SIGPIPE, SIG_IGN); /* for controlsocket.c */
@@ -11,7 +11,7 @@ $OpenBSD: patch-xmms_main_c,v 1.4 2002/03/11 17:38:05 naddy Exp $
  	g_thread_init(NULL);
  	if (!g_thread_supported())
  	{
-@@ -3388,6 +3383,7 @@
+@@ -3396,6 +3397,7 @@ int main(int argc, char **argv)
  			 "installed LinuxThreads you need to recompile GLIB & GTK+\n"));
  		exit(1);
  	}

@@ -1,13 +1,13 @@
-$OpenBSD: patch-Output_Makefile_in,v 1.2 2001/07/25 15:48:26 naddy Exp $
---- Output/Makefile.in.orig	Mon Jun 18 21:55:33 2001
-+++ Output/Makefile.in	Wed Jul 25 16:47:42 2001
+$OpenBSD: patch-Output_Makefile_in,v 1.3 2004/01/22 20:15:22 naddy Exp $
+--- Output/Makefile.in.orig	2002-03-04 22:58:28.000000000 +0100
++++ Output/Makefile.in	2004-01-22 20:41:36.000000000 +0100
 @@ -1,4 +1,4 @@
--# Makefile.in generated automatically by automake 1.4 from Makefile.am
+-# Makefile.in generated automatically by automake 1.4-p5 from Makefile.am
 +# Makefile.in generated automatically by automake 1.4-p1 from Makefile.am
  
- # Copyright (C) 1994, 1995-8, 1999 Free Software Foundation, Inc.
+ # Copyright (C) 1994, 1995-8, 1999, 2001 Free Software Foundation, Inc.
  # This Makefile.in is free software; the Free Software Foundation
-@@ -157,7 +157,7 @@ sidplay_cflags = @sidplay_cflags@
+@@ -162,7 +162,7 @@ sidplay_cflags = @sidplay_cflags@
  sidplay_library = @sidplay_library@
  xmmsdir = @xmmsdir@
  

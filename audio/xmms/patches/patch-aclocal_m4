@@ -1,6 +1,6 @@
---- aclocal.m4.orig	Mon Mar  4 17:56:49 2002
-+++ aclocal.m4	Thu Mar  7 01:23:56 2002
-@@ -1082,7 +1082,7 @@
+--- aclocal.m4.orig	2002-03-04 22:56:49.000000000 +0100
++++ aclocal.m4	2004-01-22 20:41:37.000000000 +0100
+@@ -1082,7 +1082,7 @@ AC_DEFUN([AC_PROG_LIBTOOL],
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
  
  # Always use our own libtool.
@@ -9,7 +9,7 @@
  AC_SUBST(LIBTOOL)dnl
  
  # Prevent multiple expansion
-@@ -3211,9 +3211,14 @@
+@@ -3211,9 +3211,14 @@ openbsd*)
    version_type=sunos
    need_lib_prefix=no
    need_version=no
@@ -25,7 +25,7 @@
        shlibpath_overrides_runpath=no
        ;;
      *)
-@@ -3221,6 +3226,7 @@
+@@ -3221,6 +3226,7 @@ openbsd*)
        ;;
      esac
    else
@@ -33,7 +33,7 @@
      shlibpath_overrides_runpath=yes
    fi
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
-@@ -5131,10 +5137,9 @@
+@@ -5131,10 +5137,9 @@ AC_DEFUN(AM_WITH_NLS,
  
  	   if test "$gt_cv_func_gettext_libc" != "yes"; then
  	     AC_CHECK_LIB(intl, bindtextdomain,

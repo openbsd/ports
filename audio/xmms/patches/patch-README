@@ -1,6 +1,6 @@
---- README.orig	Tue Jan  8 11:59:15 2002
-+++ README	Wed Jan 23 12:25:33 2002
-@@ -39,6 +39,7 @@
+--- README.orig	2002-01-07 15:07:59.000000000 +0100
++++ README	2004-01-22 20:41:37.000000000 +0100
+@@ -39,6 +39,7 @@ TABLE OF CONTENTS
              3.6.2.1 OSS Driver
              3.6.2.2 Disk Writer
              3.6.2.3 eSound Output
@@ -8,12 +8,10 @@
        3.6.3 Effect plugins
              3.6.3.1 Echo
              3.6.3.2 Extra Stereo
-@@ -874,6 +875,35 @@
- the audio data is sent uncompressed to the remote ESD.
- 
+@@ -876,6 +877,35 @@ the audio data is sent uncompressed to t
  The 'Buffering' tab works just like the 'OSS Driver' one.
-+
-+
+ 
+ 
 +3.6.2.4 BSD Sun Output
 +----------------------
 +The 'Sun' output plugin will use the native audio(4) interface provided
@@ -41,6 +39,8 @@
 +
 +In the 'Status' tab you can see audio device information and real-time
 +playback status.
- 
- 
++
++
  3.6.3 Effect plugins
+ --------------------
+ Effect plugins can alter the sound of the music you are listening to.
