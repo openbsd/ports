@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2004/03/03 02:23:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2004/04/09 14:12:15 kevlo Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -42,7 +42,6 @@ MODGCC3_LANGS=	C++
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
-		glib.1,gmodule.1::devel/glib \
 		IDL.4::devel/ORBit \
 		jpeg.62::graphics/jpeg \
 		png.3::graphics/png
