@@ -1,0 +1,13 @@
+$OpenBSD: gcc-patch-src_Makefile_in,v 1.1.1.1 2003/05/23 21:26:46 jolan Exp $
+--- src/Makefile.in.orig	Tue Apr 29 12:56:59 2003
++++ src/Makefile.in	Wed May 21 17:36:31 2003
+@@ -177,6 +177,9 @@ uninstall-libLTLIBRARIES:
+ 	  $(LIBTOOL)  --mode=uninstall rm -f $(DESTDIR)$(libdir)/$$p; \
+ 	done
+ 
++sha.lo:
++	$(LIBTOOL) --mode=compile $(COMPILE) -c -O0 $<
++
+ .c.o:
+ 	$(COMPILE) -c $<
+ 
