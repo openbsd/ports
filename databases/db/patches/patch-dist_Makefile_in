@@ -1,0 +1,12 @@
+$OpenBSD: patch-dist_Makefile_in,v 1.1 2000/09/04 17:17:46 matt Exp $
+--- dist/Makefile.in.orig	Tue Jul 18 11:37:57 2000
++++ dist/Makefile.in	Wed Aug 30 19:33:44 2000
+@@ -112,7 +112,7 @@ exec_prefix=@exec_prefix@
+ bindir=	@bindir@
+ includedir=@includedir@
+ libdir=	@libdir@
+-docdir=	$(prefix)/docs
++docdir=	$(prefix)/share/doc/db
+ 
+ dmode=	755
+ emode=	555

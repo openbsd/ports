@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2000/09/04 17:17:46 matt Exp $
+@comment $OpenBSD: PLIST-java,v 1.1 2000/09/04 17:17:47 matt Exp $
 bin/db_archive
 bin/db_checkpoint
 bin/db_deadlock
@@ -19,6 +19,10 @@ lib/libdb.so
 lib/libdb_cxx-3.1.la
 lib/libdb_cxx-3.so
 lib/libdb_cxx.so
+lib/libdb_java-3.1.la
+lib/libdb_java-3.1_g.so
+lib/libdb_java-3.so
+lib/libdb_java.so
 share/doc/db/api_c/c_index.html
 share/doc/db/api_c/c_pindex.html
 share/doc/db/api_c/db_close.html
@@ -682,11 +686,16 @@ share/doc/db/utility/db_upgrade.html
 share/doc/db/utility/db_verify.html
 share/doc/db/utility/index.html
 share/examples/db/AccessExample.cpp
+share/examples/db/AccessExample.java
 share/examples/db/BtRecExample.cpp
+share/examples/db/BtRecExample.java
 share/examples/db/EnvExample.cpp
+share/examples/db/EnvExample.java
 share/examples/db/LockExample.cpp
+share/examples/db/LockExample.java
 share/examples/db/MpoolExample.cpp
 share/examples/db/TpcbExample.cpp
+share/examples/db/TpcbExample.java
 share/examples/db/ex_access.c
 share/examples/db/ex_btrec.c
 share/examples/db/ex_dbclient.c
@@ -695,7 +704,10 @@ share/examples/db/ex_lock.c
 share/examples/db/ex_mpool.c
 share/examples/db/ex_thread.c
 share/examples/db/ex_tpcb.c
-%%SHARED%%
+lib/libdb-3.1.so.0.0
+lib/libdb_cxx-3.1.so.0.0
+lib/libdb_java-3.1.so.0.0
+DYNLIBDIR(%D/lib)
 @dirrm share/examples/db
 @dirrm share/doc/db/utility
 @dirrm share/doc/db/sleepycat

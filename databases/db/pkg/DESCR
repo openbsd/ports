@@ -1,7 +1,7 @@
-In November of 1999, Sleepycat Software released Version 3.0 of Berkeley DB. 
-The 3.X code line includes major new features, some of which require a
-database format upgrade. Release 3 also modified the Berkeley DB API. 
-Applications developed using version 2 of Berkeley DB will need to be upgraded 
-in order to use release 3.X. 
+In November of 1999, Sleepycat Software released Version 3.0 of
+Berkeley DB.  The 3.X code line includes major new features, some
+of which require a database format upgrade. Release 3 also modified
+the Berkeley DB API.  Applications developed using version 2 of
+Berkeley DB will need to be upgraded in order to use release 3.X.
 
-For more information, refer to http://www.sleepycat.com
+WWW: http://www.sleepycat.com/
