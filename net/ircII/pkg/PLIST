@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2000/08/27 01:01:43 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2000/09/18 22:24:23 brad Exp $
 bin/ircII
 bin/ircII-${VERSION}
 bin/ircbug
@@ -252,6 +252,8 @@ share/irc/help/on/exec_prompt
 share/irc/help/on/flood
 share/irc/help/on/help
 share/irc/help/on/hook
+share/irc/help/on/icb_error
+share/irc/help/on/icb_status
 share/irc/help/on/idle
 share/irc/help/on/input
 share/irc/help/on/invite
@@ -314,6 +316,7 @@ share/irc/help/servlist
 share/irc/help/set/always_split_biggest
 share/irc/help/set/auto_unmark_away
 share/irc/help/set/auto_whowas
+share/irc/help/set/background_colour
 share/irc/help/set/beep
 share/irc/help/set/beep_max
 share/irc/help/set/beep_on_msg
@@ -325,6 +328,7 @@ share/irc/help/set/clock
 share/irc/help/set/clock_24hour
 share/irc/help/set/clock_alarm
 share/irc/help/set/cmdchars
+share/irc/help/set/colour
 share/irc/help/set/command_mode
 share/irc/help/set/continued_line
 share/irc/help/set/ctcp_reply_backlog_seconds
@@ -340,11 +344,13 @@ share/irc/help/set/flood_after
 share/irc/help/set/flood_rate
 share/irc/help/set/flood_users
 share/irc/help/set/flood_warning
+share/irc/help/set/foreground_colour
 share/irc/help/set/full_status_line
 share/irc/help/set/help_pager
 share/irc/help/set/help_path
 share/irc/help/set/help_prompt
 share/irc/help/set/help_window
+share/irc/help/set/hide_channel_keys
 share/irc/help/set/hide_private_channels
 share/irc/help/set/highlight_char
 share/irc/help/set/history
@@ -420,6 +426,7 @@ share/irc/help/set/user_information
 share/irc/help/set/user_wallops
 share/irc/help/set/verbose_ctcp
 share/irc/help/set/warn_of_ignores
+share/irc/help/set/xterm_geomoptstr
 share/irc/help/set/xterm_options
 share/irc/help/set/xterm_path
 share/irc/help/signoff
@@ -469,6 +476,7 @@ share/irc/help/window/move
 share/irc/help/window/name
 share/irc/help/window/new
 share/irc/help/window/next
+share/irc/help/window/nostatus
 share/irc/help/window/notify
 share/irc/help/window/notify_level
 share/irc/help/window/number

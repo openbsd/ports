@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2000/09/12 16:15:44 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/09/18 22:24:23 brad Exp $
 # $FreeBSD: Makefile,v 1.15 1998/01/25 20:40:00 torstenb Exp $
 
-VERSION=	4.4X
+VERSION=	4.4Z
 DISTNAME=	ircii-${VERSION}
 CATEGORIES=	net
 NEED_VERSION=	1.328
 MASTER_SITES=	ftp://ircftp.au.eterna.com.au/pub/ircII/
-EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	brad@openbsd.org
 
