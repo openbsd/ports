@@ -15,6 +15,7 @@ share/doc/mutt/TODO
 share/doc/mutt/README.SECURITY
 share/locale/cs/LC_MESSAGES/mutt.mo
 share/locale/de/LC_MESSAGES/mutt.mo
+share/locale/el/LC_MESSAGES/mutt.mo
 share/locale/es/LC_MESSAGES/mutt.mo
 share/locale/fr/LC_MESSAGES/mutt.mo
 share/locale/id/LC_MESSAGES/mutt.mo
@@ -25,6 +26,7 @@ share/locale/pl/LC_MESSAGES/mutt.mo
 share/locale/ru/LC_MESSAGES/mutt.mo
 share/locale/sk/LC_MESSAGES/mutt.mo
 share/locale/uk/LC_MESSAGES/mutt.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/mutt.mo
 share/mutt/charsets/ansi-x3-110-1983
 share/mutt/charsets/ansi-x3-4-1968
 share/mutt/charsets/asmo-449
