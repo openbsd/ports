@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 1999/02/27 15:47:17 rohee Exp $
+# $OpenBSD: Makefile,v 1.13 1999/11/08 14:07:07 dugsong Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
+     SUBDIR += abiword
 #    SUBDIR += asedit
      SUBDIR += axe
      SUBDIR += beav
