@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.235 2002/10/15 11:26:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.236 2002/10/28 17:41:25 todd Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -49,6 +49,7 @@
      SUBDIR += flow-tools
      SUBDIR += fping
      SUBDIR += ftpcopy
+     SUBDIR += gabber
      SUBDIR += gaim
      SUBDIR += gaim,esd
      SUBDIR += gated
