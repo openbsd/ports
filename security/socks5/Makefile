@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2001/05/06 03:46:22 lebel Exp $
+# $OpenBSD: Makefile,v 1.26 2001/07/29 01:06:02 pvalchev Exp $
 
 COMMENT=	"SOCKS v5 application layer gateway and clients"
 
@@ -25,8 +25,8 @@ PERMIT_DISTFILES_FTP=	commercial
 #		--with-passwd
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--with-libconffile="/etc/libsocks5.conf" \
-		--with-srvconffile="/etc/socks5.conf" \
+CONFIGURE_ARGS=	--with-libconffile="${SYSCONFDIR}/libsocks5.conf" \
+		--with-srvconffile="${SYSCONFDIR}/socks5.conf" \
 		--with-srvpidfile="/var/run/socks5.pid" \
 		--with-srvidtfile="/var/run/socks5.ident" \
 		${EXTRA_CONFIGURE_ARGS}
