@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/13 20:44:34 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/09/19 11:46:32 naddy Exp $
 bin/libglade-config
 bin/libglade-xgettext
 include/glade/glade-build.h
@@ -24,5 +24,4 @@ share/gnome/html/libglade/libglade.html
 %%gnome%%
 %%SHARED%%
 @dirrm share/gnome/html/libglade
-@dirrm lib/pkgconfig
 @dirrm include/glade
