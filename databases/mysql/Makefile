@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2001/07/22 20:35:29 brad Exp $
+# $OpenBSD: Makefile,v 1.51 2001/07/22 22:25:51 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 COMMENT=	"multithreaded SQL database (client)"
@@ -21,7 +21,9 @@ MASTER_SITE_SUBDIR= MySQL-3.23
 
 HOMEPAGE=	http://www.mysql.com/
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/pth/libpthread.a:pth-1.4.*:devel/pth
+.if !defined(PACKAGING)
+LIB_DEPENDS=	pthread.14:pth-1.4.*:devel/pth
+.endif
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -61,7 +63,7 @@ CONFIGURE_ARGS+= --with-berkeley-db --with-innodb
 CONFIGURE_ARGS+= --without-berkeley-db --without-innodb
 .endif
 
-.if ${SUBPACKAGE} == "-server"
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-server"
 LIB_DEPENDS=	pthread.14:pth-1.4.*:devel/pth
 RUN_DEPENDS=	mysql:mysql-client-3.23.*:databases/mysql
 .endif
