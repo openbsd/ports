@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.5 2004/08/08 16:34:32 espie Exp $
+@comment $OpenBSD: PLIST-server,v 1.6 2004/10/18 06:44:18 jakob Exp $
 libexec/slapd
 libexec/slurpd
 @man man/man5/slapd-bdb.5
@@ -15,6 +15,10 @@ libexec/slurpd
 @man man/man5/slapd.access.5
 @man man/man5/slapd.conf.5
 @man man/man5/slapd.replog.5
+@man man/man5/slapd-monitor.5
+@man man/man5/slapd.plugin.5
+@man man/man8/slapdn.8
+@man man/man8/slaptest.8
 @man man/man8/slapadd.8
 @man man/man8/slapcat.8
 @man man/man8/slapd.8
@@ -23,9 +27,10 @@ libexec/slurpd
 @man man/man8/slurpd.8
 sbin/slapadd
 sbin/slapcat
+sbin/slapdn
 sbin/slapindex
 sbin/slappasswd
-share/examples/openldap/schema/
+sbin/slaptest
 share/examples/openldap/schema/corba.schema
 share/examples/openldap/schema/core.schema
 share/examples/openldap/schema/cosine.schema
@@ -35,8 +40,6 @@ share/examples/openldap/schema/misc.schema
 share/examples/openldap/schema/nis.schema
 share/examples/openldap/schema/openldap.schema
 share/examples/openldap/slapd.conf
-share/openldap/
-share/openldap/ucdata/
 share/openldap/ucdata/case.dat
 share/openldap/ucdata/cmbcl.dat
 share/openldap/ucdata/comp.dat

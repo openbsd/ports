@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2004/07/31 21:17:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2004/10/18 06:44:18 jakob Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
 
-VERSION=	2.1.30
+VERSION=	2.2.17
 DISTNAME=	openldap-${VERSION}
 FULLPKGNAME=	openldap-client-${VERSION}
 PKGNAME-server=	openldap-server-${VERSION}
@@ -35,13 +35,15 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	\
 			${CONFIGURE_SHARED} \
 			--localstatedir="/var" \
-			--enable-ipv6 \
+			--enable-ipv6
+
+# slapd options
+CONFIGURE_ARGS+=	\
 			--enable-slapd \
 			--enable-cleartext \
 			--enable-crypt \
-			--enable-phonetic \
-			--enable-wrappers \
-			--enable-slurpd
+			--enable-rewrite \
+			--enable-wrappers
 
 # slapd modules
 CONFIGURE_ARGS+=	\
@@ -49,14 +51,17 @@ CONFIGURE_ARGS+=	\
 			--enable-ldap \
 			--enable-ldbm \
 			--enable-meta \
-			--enable-rewrite \
 			--enable-monitor \
 			--enable-null \
 			--enable-passwd \
 			--enable-perl \
 			--enable-shell
 
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build
+# slurpd modules
+CONFIGURE_ARGS+=	\
+			--enable-slurpd
+
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/build
 
 REGRESS_TARGET=	test
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/08/08 16:34:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/10/18 06:44:18 jakob Exp $
 bin/ldapadd
 bin/ldapcompare
 bin/ldapdelete
@@ -14,6 +14,7 @@ include/ldap_cdefs.h
 include/ldap_features.h
 include/ldap_schema.h
 include/ldap_utf8.h
+include/slapi-plugin.h
 lib/liblber.a
 lib/liblber.la
 lib/libldap.a
@@ -29,8 +30,18 @@ lib/libldap_r.la
 @man man/man1/ldapsearch.1
 @man man/man1/ldapwhoami.1
 @man man/man3/ber_alloc_t.3
+@man man/man3/ber_bvarray_add.3
+@man man/man3/ber_bvarray_free.3
+@man man/man3/ber_bvdup.3
+@man man/man3/ber_bvecadd.3
+@man man/man3/ber_bvecfree.3
+@man man/man3/ber_bvfree.3
+@man man/man3/ber_bvstr.3
+@man man/man3/ber_bvstrdup.3
+@man man/man3/ber_dupbv.3
 @man man/man3/ber_first_element.3
 @man man/man3/ber_flush.3
+@man man/man3/ber_free.3
 @man man/man3/ber_get_bitstring.3
 @man man/man3/ber_get_boolean.3
 @man man/man3/ber_get_enum.3
@@ -52,6 +63,7 @@ lib/libldap_r.la
 @man man/man3/ber_scanf.3
 @man man/man3/ber_skip_tag.3
 @man man/man3/ber_start_set.3
+@man man/man3/ber_str2bv.3
 @man man/man3/lber-decode.3
 @man man/man3/lber-encode.3
 @man man/man3/lber-memory.3
@@ -170,6 +182,6 @@ lib/libldap_r.la
 @man man/man3/ldap_value_free_len.3
 @man man/man5/ldap.conf.5
 @man man/man5/ldif.5
-share/examples/openldap/
 share/examples/openldap/ldap.conf
+share/examples/openldap/schema/dyngroup.schema
 %%SHARED%%
