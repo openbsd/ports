@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 1999/03/25 21:51:27 espie Exp $
+# $OpenBSD: Makefile,v 1.20 1999/04/02 22:49:19 espie Exp $
 
 # This is a configuration file for egcs, stable release.
 
@@ -21,7 +21,7 @@ ONLY_FOR_ARCHS = i386 sparc m68k alpha
 # user configuration section
 
 # see files/tests for testing procedure
-MAKE_TESTS=no
+#MAKE_TESTS=yes
 MAKE_GXX=yes
 MAKE_FORTRAN=yes
 MAKE_OBJC=yes
