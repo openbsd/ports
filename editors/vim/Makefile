@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 1999/09/28 15:29:53 jasoni Exp $
+# $OpenBSD: Makefile,v 1.11 1999/09/30 15:28:45 jasoni Exp $
 
 DISTNAME=	vim-5.5
 CATEGORIES=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
 		ftp://ftp.oce.nl/pub/vim/unix/  \
-		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
+		ftp://ftp.berlin.de.vim.org/misc/editors/vim/unix/ \
 		ftp://ftp.is.co.za/applications/editors/vim/  \
 		ftp://ftp.progsoc.uts.edu.au/pub/vim/ 
 DISTFILES=	${DISTNAME}-src.tar.gz ${DISTNAME}-rt.tar.gz
