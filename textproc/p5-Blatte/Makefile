@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/21 21:25:53 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/14 12:07:10 naddy Exp $
 
 COMMENT=	"text macro/markup/template language"
 
@@ -10,8 +10,7 @@ CATEGORIES=	textproc perl5
 NEED_VERSION=	1.515
 MAINTAINER=	Brian J. Kifiak <bk@rt.fm>
 
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= 	../by-authors/id/B/BO/BOBG/
+MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=../by-authors/id/B/BO/BOBG/}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

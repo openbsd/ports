@@ -3,7 +3,7 @@
 # Date created:		May 16 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.13 2001/06/20 01:43:37 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2002/05/14 12:07:11 naddy Exp $
 #
 
 COMMENT=	"word differences between text files"
@@ -11,8 +11,7 @@ COMMENT=	"word differences between text files"
 DISTNAME=	wdiff-0.5
 CATEGORIES=	textproc
 NEED_VERSION=	1.402
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= wdiff
+MASTER_SITES=	${MASTER_SITE_GNU:=wdiff/}
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

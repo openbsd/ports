@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/01/01 12:51:05 shell Exp $
+# $OpenBSD: Makefile,v 1.14 2002/05/14 12:07:10 naddy Exp $
 
 COMMENT=	"fast XSLT module for perl"
 
@@ -10,8 +10,7 @@ NEED_VERSION=	1.504
 
 HOMEPAGE=	http://www.axkit.org/
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	XML
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/03/21 21:25:53 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/05/14 12:07:10 naddy Exp $
 
 COMMENT=	"graphical front end to Unix diff"
 
@@ -6,8 +6,7 @@ DISTNAME=	mgdiff
 PKGNAME=	mgdiff-1.0
 CATEGORIES=	textproc
 NEED_VERSION=	1.515
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR= applications
+MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

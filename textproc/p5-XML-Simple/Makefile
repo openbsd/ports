@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/02/10 02:52:26 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/14 12:07:10 naddy Exp $
 
 COMMENT=	"trivial perl API for reading/writing XML"
 
@@ -6,8 +6,7 @@ DISTNAME=	XML-Simple-1.08
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 NEED_VERSION=	1.504
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= XML
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 HOMEPAGE=	http://www.web.co.nz/~grantm/cpan/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

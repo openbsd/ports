@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/01/05 14:52:09 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/14 12:07:10 naddy Exp $
 
 COMMENT=	"perl module collection for working with XML"
 
@@ -7,8 +7,7 @@ DISTNAME=	libxml-perl-${VERSION}
 PKGNAME=	p5-Libxml-${VERSION}
 CATEGORIES=	textproc perl5
 NEED_VERSION=	1.504
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= XML
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 RUN_DEPENDS=	::textproc/p5-XML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}

@@ -3,7 +3,7 @@
 # Date created:				December 1, 1997
 # Whom:					Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.12 2001/06/20 01:43:35 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2002/05/14 12:07:09 naddy Exp $
 #
 
 COMMENT=		"C-language sources to HTML converter"
@@ -14,8 +14,7 @@ NEED_VERSION=		1.402
 
 # Old versions seem to stay there...
 MASTER_SITES=		http://user.cs.tu-berlin.de/%7Eschintke/x2html/ \
-			${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/www/converters
+			${MASTER_SITE_SUNSITE:=apps/www/converters/}
 
 MAINTAINER=		Angelos D. Keromytis <angelos@openbsd.org>
 

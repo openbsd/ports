@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/01/28 23:03:24 shell Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/14 12:07:10 naddy Exp $
 
 COMMENT=	"perl module to the SAX2 NamespaceSupport class"
 
@@ -7,8 +7,7 @@ DISTNAME=	XML-NamespaceSupport-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 NEED_VERSION=	1.504
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= XML
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

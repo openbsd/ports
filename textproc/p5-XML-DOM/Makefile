@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/01/05 23:04:58 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/14 12:07:10 naddy Exp $
 
 COMMENT=	"perl module to build DOM Level 1 structures"
 
@@ -6,8 +6,7 @@ DISTNAME=	XML-DOM-1.36
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 NEED_VERSION=	1.504
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= XML
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 

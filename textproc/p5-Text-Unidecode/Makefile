@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/12/05 07:49:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/14 12:07:10 naddy Exp $
 
 COMMENT=	"US-ASCII transliterations of Unicode text"
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Text
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Text/}
 
 CONFIGURE_STYLE= perl
 

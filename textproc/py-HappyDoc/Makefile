@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/02/15 19:53:43 matt Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/14 12:07:10 naddy Exp $
 
 COMMENT=	"python tool for generate Python API documents"
 
@@ -8,8 +8,7 @@ CATEGORIES=    	textproc
 NEED_VERSION=	1.504
 
 HOMEPAGE=	http://happydoc.sf.net/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	happydoc
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=happydoc/}
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 

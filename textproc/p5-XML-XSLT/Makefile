@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/04/20 01:36:38 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/14 12:07:10 naddy Exp $
 
 COMMENT=	"perl module to perform XSLT transformations"
 
@@ -6,8 +6,7 @@ DISTNAME=	XML-XSLT-0.32
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 NEED_VERSION=	1.515
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= XML
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 

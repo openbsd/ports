@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/24 12:36:37 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/14 12:07:10 naddy Exp $
 
 COMMENT=		"Scrollkeeper Open Documentation Cataloging System"
 V=			0.2
@@ -8,8 +8,7 @@ NEED_VERSION=   	1.455
 HOMEPAGE=		http://scrollkeeper.sourceforge.net
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
-MASTER_SITES=		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= 	stable/sources/scrollkeeper
+MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/scrollkeeper/}
 
 MODULES=		gettext
 LIB_DEPENDS=		xml.9::textproc/libxml1

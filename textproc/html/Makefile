@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/04/25 01:51:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2002/05/14 12:07:09 naddy Exp $
 
 COMMENT=	"all W3C-published SGML DTDs for HTML"
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
 
-MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL}
-MASTER_SITE_SUBDIR=	kuriyama
+MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL:=kuriyama/}
 EXTRACT_ONLY=	# empty
 NO_BUILD=       Yes
 WRKDIST=	${WRKDIR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/21 21:25:53 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/14 12:07:10 naddy Exp $
 
 COMMENT=	"LaTeX vgrind(1) look-alike"
 
@@ -24,8 +24,7 @@ WRKDIST=${WRKDIR}
 
 EXTRACT_CASES= *) cp ${FULLDISTDIR}/$$archive ${WRKDIST};;
 
-MASTER_SITES=${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=support/lgrind
+MASTER_SITES=${MASTER_SITE_TEX_CTAN:=support/lgrind/}
 DIST_SUBDIR=${DISTNAME}
 
 MAKE_FLAGS=BASEDIR=${PREFIX} DEFSFILE=${PREFIX}/share/texmf/tex/latex/lgrind/lgrindef VERSION=${VERSION} CFLAGS='${CFLAGS}'
