@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2002/03/21 20:35:41 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2002/09/15 23:04:46 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc
 
@@ -7,6 +7,8 @@ IGNORE=		"requires Solaris shared libraries"
 .endif
 
 COMMENT=	"RAR archiver (binary port)"
+
+DISTNAME=rar-2.0x
 
 .if ${MACHINE_ARCH} == "i386"
 DISTFILES=	rarbsd.sfx
