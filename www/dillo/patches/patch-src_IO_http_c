@@ -1,0 +1,47 @@
+$OpenBSD: patch-src_IO_http_c,v 1.1 2002/04/02 02:28:00 pvalchev Exp $
+--- src/IO/http.c.orig	Thu Jan 24 07:00:04 2002
++++ src/IO/http.c	Mon Apr  1 19:03:49 2002
+@@ -189,7 +189,7 @@ static gboolean
+ {
+    ChainLink *Info;
+    SocketData_t *S;
+-   gint SKey = (gint) data;
++   gint SKey = GPOINTER_TO_INT(data);
+ 
+    DEBUG_MSG(3, "Http_use_socket: %s [errno %d] [GIOcond %d]\n",
+              g_strerror(errno), errno, cond);
+@@ -230,7 +230,7 @@ static int Http_connect_socket(ChainLink
+ {
+    gint status;
+    struct sockaddr_in name;
+-   SocketData_t *S = a_Klist_get_data(ValidSocks, (gint)Info->LocalKey);
++   SocketData_t *S = a_Klist_get_data(ValidSocks, GPOINTER_TO_INT(Info->LocalKey));
+ 
+    /* Some OSes require this...  */
+    memset(&name, 0, sizeof(name));
+@@ -324,7 +324,7 @@ static gint Http_get(ChainLink *Info, vo
+ {
+    void *link;
+    const DilloUrl *Url = Data;
+-   SocketData_t *S = a_Klist_get_data(ValidSocks, (gint)Info->LocalKey);
++   SocketData_t *S = a_Klist_get_data(ValidSocks, GPOINTER_TO_INT(Info->LocalKey));
+    gchar hostname[256], *Host = hostname;
+ 
+    /* Reference Info data */
+@@ -369,14 +369,14 @@ static gint Http_get(ChainLink *Info, vo
+ void
+  a_Http_ccc(int Op, int Branch, ChainLink *Info, void *Data, void *ExtraData)
+ {
+-   gint SKey = (gint)Info->LocalKey;
++   gint SKey = GPOINTER_TO_INT(Info->LocalKey);
+    SocketData_t *S = a_Klist_get_data(ValidSocks, SKey);
+ 
+    if ( Branch == 1 ) {
+       /* DNS query branch */
+       switch (Op) {
+       case OpStart:
+-         Info->LocalKey = (void *) SKey = Http_sock_new();
++         Info->LocalKey = GINT_TO_POINTER(SKey) = Http_sock_new();
+          if (Http_get(Info, Data, ExtraData) < 0) {
+             DEBUG_MSG(2, " HTTP: new abort handler! #2\n");
+             S = a_Klist_get_data(ValidSocks, SKey);

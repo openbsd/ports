@@ -1,0 +1,57 @@
+$OpenBSD: patch-src_dw_style_c,v 1.1 2002/04/02 02:28:00 pvalchev Exp $
+--- src/dw_style.c.orig	Mon Apr  1 18:53:40 2002
++++ src/dw_style.c	Mon Apr  1 18:55:26 2002
+@@ -655,7 +655,7 @@ DwStyleColor* a_Dw_style_color_new (gint
+ {
+    DwStyleColor *color;
+ 
+-   color = g_hash_table_lookup (colors_table, (gconstpointer)color_val);
++   color = g_hash_table_lookup (colors_table, GINT_TO_POINTER(color_val));
+    if (color == NULL) {
+       color = g_new (DwStyleColor, 1);
+       color->ref_count = 0;
+@@ -663,7 +663,7 @@ DwStyleColor* a_Dw_style_color_new (gint
+ 
+       Dw_style_color_create (color_val, window,
+                              &color->color, &color->gc, 0);
+-      g_hash_table_insert (colors_table, (gpointer)color_val, color);
++      g_hash_table_insert (colors_table, GINT_TO_POINTER(color_val), color);
+    }
+ 
+    return color;
+@@ -674,7 +674,7 @@ DwStyleColor* a_Dw_style_color_new (gint
+  */
+ static void Dw_style_color_remove (DwStyleColor *color)
+ {
+-   g_hash_table_remove (colors_table, (gpointer)color->color_val);
++   g_hash_table_remove (colors_table, GINT_TO_POINTER(color->color_val));
+    gdk_gc_destroy (color->gc);
+    g_free (color);
+ }
+@@ -689,7 +689,7 @@ DwStyleShadedColor* a_Dw_style_shaded_co
+ {
+    DwStyleShadedColor *color;
+ 
+-   color = g_hash_table_lookup (shaded_colors_table, (gconstpointer)color_val);
++   color = g_hash_table_lookup (shaded_colors_table, GINT_TO_POINTER(color_val));
+    if (color == NULL) {
+       color = g_new (DwStyleShadedColor, 1);
+       color->ref_count = 0;
+@@ -701,7 +701,7 @@ DwStyleShadedColor* a_Dw_style_shaded_co
+                              &color->color_dark, &color->gc_dark, -1);
+       Dw_style_color_create (color_val, window,
+                              &color->color_light, &color->gc_light, +1);
+-      g_hash_table_insert (shaded_colors_table, (gpointer)color_val, color);
++      g_hash_table_insert (shaded_colors_table, GINT_TO_POINTER(color_val), color);
+    }
+ 
+    return color;
+@@ -712,7 +712,7 @@ DwStyleShadedColor* a_Dw_style_shaded_co
+  */
+ static void Dw_style_shaded_color_remove (DwStyleShadedColor *color)
+ {
+-   g_hash_table_remove (shaded_colors_table, (gpointer)color->color_val);
++   g_hash_table_remove (shaded_colors_table, GINT_TO_POINTER(color->color_val));
+    gdk_gc_destroy (color->gc);
+    gdk_gc_destroy (color->gc_dark);
+    gdk_gc_destroy (color->gc_light);
