@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/07/25 03:03:31 shell Exp $
+lib/libcgicc.so.2.3
+DYNLIBDIR(%B)
