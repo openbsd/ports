@@ -1,4 +1,4 @@
-#
+# $OpenBSD: Makefile,v 1.8 1999/03/15 01:10:40 brad Exp $
 
 DISTNAME=		jpegsrc.v6b
 PKGNAME=		jpeg-6b
