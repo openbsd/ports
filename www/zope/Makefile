@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/26 00:55:26 matt Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/09 22:58:50 matt Exp $
 
 COMMENT=	"object-oriented web application server"
 
 VERSION=	2.4.1
 DISTNAME=	Zope-${VERSION}-src
-PKGNAME=	zope-${VERSION}
+PKGNAME=	zope-${VERSION}.1
 CATEGORIES=     www
 NEED_VERSION=	1.419
 
@@ -21,6 +21,11 @@ MASTER_SITES=	http://www.zope.org/Products/Zope/${VERSION}/
 EXTRACT_SUFX=	.tgz
 EXTRACT_CASES=	*.tgz) gtar zxf ${FULLDISTDIR}/$$archive ;;
 
+HOTFIX_DATE0=	2001-09-28
+MASTER_SITES0=	http://www.zope.org/Products/Zope/Hotfix_${HOTFIX_DATE0}/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		Hotfix_${HOTFIX_DATE0}.tgz:0
+
 BUILD_DEPENDS=	python2.1:python-2.1*-threads:lang/python \
 		gtar::archivers/gtar					
 RUN_DEPENDS=	python2.1:python-2.1*-threads:lang/python
@@ -28,10 +33,10 @@ RUN_DEPENDS=	python2.1:python-2.1*-threads:lang/python
 # Note that the configure script is really just for pcgi, but it's
 # the only one in the package.
 
-CONFIGURE_STYLE=autoconf
+CONFIGURE_STYLE=gnu
 
-WRKBUILD=	${WRKSRC}/pcgi
-AUTOCONF_DIR=	${WRKBUILD}
+WRKBUILD=			${WRKSRC}/pcgi
+MODGNU_CONFIG_GUESS_DIRS=	${WRKBUILD}
 
 ZOPEHOME=	${PREFIX}/lib/zope
 PRODUCTSDIR=	${ZOPEHOME}/lib/python/Products
@@ -67,6 +72,10 @@ do-install:
 		${PREFIX}/share/doc/zope
 	${INSTALL_DATA} ${WRKSRC}/doc/changenotes/* \
 		${PREFIX}/share/doc/zope/changenotes
+	${INSTALL_DATA_DIR} ${PRODUCTSDIR}/Hotfix_${HOTFIX_DATE0}
+	${INSTALL_DATA} \
+		${WRKDIR}/lib/python/Products/Hotfix_${HOTFIX_DATE0}/* \
+		${PRODUCTSDIR}/Hotfix_${HOTFIX_DATE0}
 
 .include <bsd.port.mk>
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/09/26 00:55:26 matt Exp $
+@comment $OpenBSD: PLIST,v 1.3 2001/10/09 22:58:50 matt Exp $
 bin/zope-instance
 lib/zope/Extensions/README.txt
 lib/zope/ZServer/DebugLogger.py
@@ -671,6 +671,8 @@ lib/zope/lib/python/Products/ExternalMethod/help/ExternalMethod.py
 lib/zope/lib/python/Products/ExternalMethod/help/ExternalMethod.pyc
 lib/zope/lib/python/Products/ExternalMethod/version.txt
 lib/zope/lib/python/Products/ExternalMethod/www/function.gif
+lib/zope/lib/python/Products/Hotfix_2001-09-28/README.txt
+lib/zope/lib/python/Products/Hotfix_2001-09-28/__init__.py
 lib/zope/lib/python/Products/MIMETools/MIMETag.py
 lib/zope/lib/python/Products/MIMETools/MIMETag.pyc
 lib/zope/lib/python/Products/MIMETools/README.txt
@@ -1705,6 +1707,7 @@ lib/zope/pcgi/Util/killpcgi.py
 lib/zope/pcgi/Util/killpcgi.pyc
 lib/zope/pcgi/Util/pcgifile.py
 lib/zope/pcgi/Util/pcgifile.pyc
+lib/zope/pcgi/config.guess
 lib/zope/pcgi/config.h.in
 lib/zope/pcgi/configure
 lib/zope/pcgi/configure.in
@@ -1860,6 +1863,7 @@ share/doc/zope/changenotes/010620-2.4-btreeconflict.stx
 @dirrm lib/zope/lib/python/Products/MailHost/dtml
 @dirrm lib/zope/lib/python/Products/MailHost
 @dirrm lib/zope/lib/python/Products/MIMETools
+@dirrm lib/zope/lib/python/Products/Hotfix_2001-09-28
 @dirrm lib/zope/lib/python/Products/ExternalMethod/www
 @dirrm lib/zope/lib/python/Products/ExternalMethod/help
 @dirrm lib/zope/lib/python/Products/ExternalMethod/dtml
