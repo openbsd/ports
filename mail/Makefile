@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2000/01/28 13:00:00 kevlo Exp $
+# $OpenBSD: Makefile,v 1.23 2000/01/28 13:16:21 kevlo Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -8,17 +8,20 @@
      SUBDIR += checkpassword
      SUBDIR += cucipop
 #    SUBDIR += cyrus
+     SUBDIR += dot-forward
      SUBDIR += elm
      SUBDIR += exim
      SUBDIR += exmh
      SUBDIR += exmh2
      SUBDIR += ezmlm
      SUBDIR += faces
+     SUBDIR += fastforward
      SUBDIR += fetchmail
      SUBDIR += imap-uw
 #    SUBDIR += mailagent
 #    SUBDIR += majorcool
 #    SUBDIR += majordomo
+     SUBDIR += mess822
      SUBDIR += metamail
 #    SUBDIR += mew
      SUBDIR += mh
