@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.121 1999/09/26 10:50:07 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.122 1999/09/26 10:51:34 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -598,11 +598,7 @@ MAKE_FLAGS?=	-f
 MAKEFILE?=		Makefile
 MAKE_ENV+=		PATH=${PORTPATH} PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MOTIFLIB="${MOTIFLIB}" CFLAGS="${CFLAGS}"
 
-.if exists(/usr/bin/fetch)
-FETCH_CMD?=		/usr/bin/fetch
-.else
 FETCH_CMD?=		/usr/bin/ftp
-.endif
 
 # By default, distfiles have no restrictions placed on them
 MIRROR_DISTFILE?=	Yes
