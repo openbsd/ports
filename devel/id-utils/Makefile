@@ -1,26 +1,21 @@
-# $OpenBSD: Makefile,v 1.7 1999/04/01 06:20:07 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/05/11 03:04:35 marc Exp $
 
-DISTNAME=	id-utils-3.2
+DISTNAME=	id-utils-3.2d
 CATEGORIES=	devel
 
 MAINTAINER=	ports@OpenBSD.ORG
-# International files don't want to be built separately
-SEPARATE_BUILD=simple
 
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= id-utils
+MASTER_SITES=	ftp://alpha.gnu.org/gnu/ \
+		ftp://ftp.enst.fr/pub/gnu/gnits/
 
 # need to byte-compile a .el file
+#
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 
+# International files don't want to be built separately
+#
+SEPARATE_BUILD=	simple
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	${SETENV}
 USE_GMAKE=	yes
-
-post-install:
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
-	@install-info ${PREFIX}/info/id-utils.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
