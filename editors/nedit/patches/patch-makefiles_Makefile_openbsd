@@ -1,0 +1,26 @@
+$OpenBSD: patch-makefiles_Makefile_openbsd,v 1.1 2002/06/13 05:44:57 form Exp $
+--- makefiles/Makefile.openbsd.orig	Thu Nov 15 20:28:28 2001
++++ makefiles/Makefile.openbsd	Thu Jun 13 12:22:13 2002
+@@ -1,14 +1,18 @@
+ # $Id: patch-makefiles_Makefile_openbsd,v 1.1 2002/06/13 05:44:57 form Exp $
+-CC=cc
+-AR=ar
++CC?=cc
++AR?=ar
+ 
+ # For editres, add -DEDITRES to CFLAGS and -lXmu to LIBS
+ #
+ # To evaluate an alternative layout for the Replace/Find dialog, add
+ # -DREPLACE_SCOPE to the CFLAGS. See the README file for more information.
+ #
+-CFLAGS=-O -I/usr/X11R6/include -DUSE_DIRENT -DUSE_LPR_PRINT_CMD
++LOCALBASE?=/usr/local
++X11BASE?=/usr/X11R6
++CFLAGS+=-I${X11BASE}/include -I${LOCALBASE}/include
++CFLAGS+=-DUSE_DIRENT -DUSE_LPR_PRINT_CMD -DHAVE_MKSTEMP
+ ARFLAGS=-ur
+-LIBS= -L/usr/X11R6/lib -lXm -lXpm -lXp -lXext -lXt -lSM -lICE -lX11 -lm
++MOTIFLIB?=-L${LOCALBASE} -lXm
++LIBS=-L${X11BASE}/lib ${MOTIFLIB} -lXpm -lXp -lXext -lXt -lSM -lICE -lX11 -lm
+ 
+ include Makefile.common
