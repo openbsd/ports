@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_inc_c,v 1.1 2003/01/17 12:04:28 couderc Exp $
---- src/inc.c.orig	Fri Jan 17 13:43:36 2003
-+++ src/inc.c	Fri Jan 17 13:44:04 2003
-@@ -76,7 +76,9 @@ static GdkBitmap *errorxpmmask;
+$OpenBSD: patch-src_inc_c,v 1.2 2004/04/10 19:13:50 couderc Exp $
+--- src/inc.c.orig	2004-02-29 12:53:58.000000000 +0100
++++ src/inc.c	2004-04-09 17:07:33.000000000 +0200
+@@ -75,7 +75,9 @@ static GdkBitmap *errorxpmmask;
  static GdkPixmap *okxpm;
  static GdkBitmap *okxpmmask;
  

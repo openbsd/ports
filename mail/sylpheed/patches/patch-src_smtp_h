@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_smtp_h,v 1.1 2003/01/17 12:04:28 couderc Exp $
---- src/smtp.h.orig	Fri Jan 17 13:33:49 2003
-+++ src/smtp.h	Fri Jan 17 13:34:33 2003
-@@ -36,7 +36,9 @@ typedef struct _SMTPSession	SMTPSession;
+$OpenBSD: patch-src_smtp_h,v 1.2 2004/04/10 19:13:50 couderc Exp $
+--- src/smtp.h.orig	2003-04-30 03:23:08.000000000 +0200
++++ src/smtp.h	2004-04-09 17:07:33.000000000 +0200
+@@ -32,7 +32,9 @@ typedef struct _SMTPSession	SMTPSession;
  
  #define SMTP_SESSION(obj)	((SMTPSession *)obj)
  
@@ -10,5 +10,5 @@ $OpenBSD: patch-src_smtp_h,v 1.1 2003/01/17 12:04:28 couderc Exp $
 +#  define MSGBUFSIZE		8192
 +#endif
  
- #define	SM_OK			0
- #define	SM_ERROR		128
+ typedef enum
+ {

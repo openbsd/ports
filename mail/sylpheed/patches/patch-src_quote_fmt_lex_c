@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_quote_fmt_lex_c,v 1.1 2004/04/10 19:13:50 couderc Exp $
+--- src/quote_fmt_lex.c.orig	2004-04-09 19:09:16.000000000 +0200
++++ src/quote_fmt_lex.c	2004-04-09 19:27:05.000000000 +0200
+@@ -21,7 +21,11 @@
+ #include <string.h>
+ #include <errno.h>
+ #include <stdlib.h>
++#ifndef __OpenBSD__
+ #include <stdint.h> /* May break IA64 test-noansi-r */
++#else
++#include <inttypes.h>
++#endif
+ 
+ /* end standard C headers. */
+ 
