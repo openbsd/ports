@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2001/12/06 18:31:39 bmc Exp $
+# $OpenBSD: Makefile,v 1.22 2001/12/13 16:25:05 brad Exp $
 
 COMMENT=	"highly flexible sniffer/basic NIDS"
 
 DISTNAME=	snort-1.8.3
 CATEGORIES=	net security
-NEED_VERSION=	1.499
+NEED_VERSION=	1.500
 MASTER_SITES=	${HOMEPAGE}/releases/
 
 HOMEPAGE=       http://www.snort.org
@@ -36,7 +36,7 @@ CONFIGURE_ARGS+= --without-postgresql
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-LIB_DEPENDS+=	mysqlclient.10:mysql-client-3.23.*:databases/mysql
+LIB_DEPENDS+=	lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
 CONFIGURE_ARGS+= --with-mysql="${LOCALBASE}"
 .else
 CONFIGURE_ARGS+= --without-mysql
