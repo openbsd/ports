@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 1998/08/28 06:11:48 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/10/07 18:43:11 marc Exp $
 # $FreeBSD: Makefile,v 1.25 1998/07/16 06:44:37 vanilla Exp $
-
-# Port			created			by
-# mgetty+sendfax	27 April 1998		form
+#
 
 DISTNAME=	mgetty1.1.17-Aug07
 PKGNAME=	mgetty-1.1.17
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
+
+BROKEN=		"newer version available"
 
 MAINTAINER=	form@vs.itam.nsc.ru
+
+MASTER_SITES=	ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
 
 IS_INTERACTIVE=	yes
 
