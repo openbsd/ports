@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/12/09 21:13:05 couderc Exp $
-lib/ruby/1.6/${MACHINE_ARCH}-openbsd${OPSYS_VER}/pcap.so
-lib/ruby/1.6/pcap_misc.rb
-lib/ruby/1.6/pcaplet.rb
+@comment $OpenBSD: PLIST,v 1.4 2004/02/20 23:22:15 couderc Exp $
+lib/ruby/site_ruby/${REV}/${SUB}/pcap.so
+lib/ruby/site_ruby/${REV}/pcap_misc.rb
+lib/ruby/site_ruby/${REV}/pcaplet.rb
 share/doc/ruby/ruby-pcap/Capture.html
 share/doc/ruby/ruby-pcap/Dumper.html
 share/doc/ruby/ruby-pcap/Filter.html
@@ -20,4 +20,6 @@ share/examples/ruby/ruby-pcap/httpdump.rb
 share/examples/ruby/ruby-pcap/tcpdump.rb
 share/examples/ruby/ruby-pcap/test.rb
 @dirrm share/examples/ruby/ruby-pcap
+@dirrm share/examples/ruby
 @dirrm share/doc/ruby/ruby-pcap
+@dirrm share/doc/ruby
