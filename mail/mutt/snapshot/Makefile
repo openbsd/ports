@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/02/18 18:56:57 lebel Exp $
+# $OpenBSD: Makefile,v 1.27 2004/02/19 20:05:51 brad Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
@@ -54,7 +54,6 @@ CONFIGURE_ARGS+= --with-curses
 .if ${FLAVOR:L:Mcompressed}
 PATCHFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
 PATCH_DIST_STRIP=-p1
-BUILD_DEPENDS+=	::devel/automake
 CONFIGURE_ARGS+= --enable-compressed
 CONFIGURE_STYLE+= automake
 .else
