@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2000/06/10 17:39:15 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/07/04 00:09:50 krw Exp $
 
 DISTNAME=       gsm-1.0.10
 CATEGORIES=	audio
-NEED_VERSION=	1.230
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/local/kbs/tubmik/gsm/
 
 MAINTAINER=	angelos@openbsd.org
