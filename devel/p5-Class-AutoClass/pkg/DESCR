@@ -1,0 +1,5 @@
+Automatically define simple get and set methods and automatically
+initialize objects in a (possibly multiple) inheritance hierarchy.
+
+This package is beta code, it mostly exists to provide full
+functionality for bioperl.
