@@ -1,0 +1,30 @@
+$OpenBSD: patch-index_c,v 1.1.1.1 2001/02/06 11:50:24 wilfried Exp $
+--- index.c.orig	Sun Feb 14 10:50:42 1999
++++ index.c	Mon Feb  5 08:28:36 2001
+@@ -117,7 +117,7 @@ idx_find_entry( char *file, int ntracks,
+ 	/*
+ 	 * Search for the first matching entry.
+ 	 */
+-	sprintf(keyval, "%07d", tracks[ntracks - 1] - fuzz);
++	snprintf(keyval, sizeof(keyval), "%07d", tracks[ntracks - 1] - fuzz);
+ 	key.data = keyval;
+ 	key.size = 7;
+ 	if (c = (index->seq)(index, &key, &data, R_CURSOR))
+@@ -249,7 +249,7 @@ idx_delete_entry(char *file, int track, 
+ 	/*
+ 	 * Search for the first matching entry.
+ 	 */
+-	sprintf(keyval, "%07d", track - fuzz);
++	snprintf(keyval, sizeof(keyval), "%07d", track - fuzz);
+ 	key.data = keyval;
+ 	key.size = 7;
+ 	if (c = (index->seq)(index, &key, &data, R_CURSOR))
+@@ -354,7 +354,7 @@ idx_write_entry( char *file, int track, 
+ 	key.data = keyval;
+ 	key.size = 7;
+ 
+-	sprintf(keyval, "%07d", track);
++	snprintf(keyval, sizeof(keyval), "%07d", track);
+ 
+ 	status = (index->put)(index, &key, &data, 0);
+ 

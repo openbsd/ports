@@ -1,0 +1,35 @@
+$OpenBSD: patch-plat_openbsd_c,v 1.1.1.1 2001/02/06 11:50:21 wilfried Exp $
+--- plat_openbsd.c.orig	Sun Mar  7 09:36:40 1999
++++ plat_openbsd.c	Mon Feb  5 08:00:55 2001
+@@ -54,10 +54,13 @@ static char plat_openbsd[] = "$Id: plat_
+ #include <sys/ioctl.h>
+ #include <sys/cdio.h>
+ #include <sys/scsiio.h>
++#include <scsi/cd.h>
+ #include <scsi/scsi_all.h>
+ #include <scsi/scsi_cd.h>
+ 
+ #include "include/wm_struct.h"
++#include "include/wm_cdrom.h"
++#include "include/wm_helpers.h"
+ 
+ #define WM_MSG_CLASS WM_MSG_CLASS_PLATFORM
+ 
+@@ -82,7 +85,7 @@ gen_init(struct wm_drive *d)
+  * Get the number of tracks on the CD.
+  */
+ int
+-gen_get_trackcount(struct wm_drive *d, int tracks)
++gen_get_trackcount(struct wm_drive *d, int *tracks)
+ {
+ 	struct ioc_toc_header	hdr;
+ 
+@@ -473,7 +476,7 @@ wmcd_open(struct wm_drive *d)
+ 			if (!warned)
+ 			{
+ 				fprintf(stderr,
+-		"As root, please run\n\nchmod 666 %s\n\n%s\n", cd_device,
++		"As root, please run\n\nchmod 644 %s\n\n%s\n", cd_device,
+ 		"to give yourself permission to access the CD-ROM device.");
+ 				warned++;
+ 			}

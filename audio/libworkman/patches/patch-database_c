@@ -1,0 +1,198 @@
+$OpenBSD: patch-database_c,v 1.1.1.1 2001/02/06 11:50:24 wilfried Exp $
+--- database.c.orig	Fri May 28 05:35:54 1999
++++ database.c	Mon Feb  5 08:58:29 2001
+@@ -121,8 +121,8 @@ nomem:
+ 				exit(1);
+ 			}
+ 
+-			strcpy(rcfile, home);
+-			strcat(rcfile, RCFILE);
++			strlcpy(rcfile, home, sizeof(rcfile));
++			strlcat(rcfile, RCFILE, sizeof(rcfile));
+ 		}
+ 		else
+ 			no_rc = 1;
+@@ -141,8 +141,8 @@ nomem:
+ 			if (databases == NULL)
+ 				goto nomem;
+ 
+-			strcpy(wmdb, home);
+-			strcat(wmdb, DBFILE);
++			strlcpy(wmdb, home, sizeof(wmdb));
++			strlcat(wmdb, DBFILE, sizeof(wmdb));
+ 			databases[0] = wmdb;
+ 			databases[1] = NULL;
+ 		}
+@@ -214,27 +214,31 @@ print_cdinfo(struct wm_cdinfo *cd, int p
+ {
+ 	int		i;
+ 	char		tempbuf[2000];	/* XXX - is this always big enough? */
++	char		tmp2buf[12];
+ 	static char	*cdibuf = NULL;
+ 	struct wm_playlist	*l;
+ 
+-	sprintf(tempbuf, "\ntracks %d", cd->ntracks);
++	snprintf(tempbuf, sizeof(tempbuf), "\ntracks %d", cd->ntracks);
+ 	for (i = 0; i < cur_ntracks; i++)
+-		if (cd->trk[i].section < 2)
+-			sprintf(tempbuf + strlen(tempbuf), " %d",
+-				cd->trk[i].start);
+-	sprintf(tempbuf + strlen(tempbuf), " %d\n", cd->length);
++		if (cd->trk[i].section < 2) {
++			snprintf(tmp2buf, sizeof(tmp2buf), " %d", cd->trk[i].start);
++			strlcat(tempbuf, tmp2buf, sizeof(tempbuf));
++		}
++	snprintf(tmp2buf, sizeof(tmp2buf), " %d\n", cd->length);
++	strlcat(tempbuf, tmp2buf, sizeof(tempbuf));
+ 
+ 	wm_strmcpy(&cdibuf, tempbuf);
+ 
+ 	if (cur_nsections)
+ 	{
+-		sprintf(tempbuf, "sections %d", cur_nsections);
++		snprintf(tempbuf, sizeof(tempbuf), "sections %d", cur_nsections);
+ 		/* fixed a bug here */
+ 		for (i = 0; i < cur_ntracks; i++)
+-			if (cd->trk[i].section > 1)
+-				sprintf(tempbuf + strlen(tempbuf), " %d",
+-					cd->trk[i].start);
+-		sprintf(tempbuf + strlen(tempbuf), "\n");
++			if (cd->trk[i].section > 1) {
++				snprintf(tmp2buf, sizeof(tmp2buf), " %d", cd->trk[i].start);
++				strlcat(tempbuf, tmp2buf, sizeof(tempbuf));
++			}
++		strlcat(tempbuf, "\n", sizeof(tempbuf));
+ 
+ 		wm_strmcat(&cdibuf, tempbuf);
+ 	}
+@@ -257,11 +261,11 @@ print_cdinfo(struct wm_cdinfo *cd, int p
+ 			{
+ 				for (i = 0; l->list[i]; i++)
+ 					;
+-				sprintf(tempbuf, " %d", i);
++				snprintf(tempbuf, sizeof(tempbuf), " %d", i);
+ 				wm_strmcat(&cdibuf, tempbuf);
+ 				for (i = 0; l->list[i]; i++)
+ 				{
+-					sprintf(tempbuf, " %d", l->list[i]);
++					snprintf(tempbuf, sizeof(tempbuf), " %d", l->list[i]);
+ 					wm_strmcat(&cdibuf, tempbuf);
+ 				}
+ 				wm_strmcat(&cdibuf, "\n");
+@@ -276,24 +280,24 @@ print_cdinfo(struct wm_cdinfo *cd, int p
+ 			 * Have to maintain compatibility with old versions,
+ 			 * where volume was 0-32.
+ 			 */
+-			sprintf(tempbuf, "cdvolume %d\n", (cd->volume * 32) / 100);
++			snprintf(tempbuf, sizeof(tempbuf), "cdvolume %d\n", (cd->volume * 32) / 100);
+ 			wm_strmcat(&cdibuf, tempbuf);
+ 		}
+ 
+ 		if (cd->playmode)
+ 		{
+-			sprintf(tempbuf, "playmode %d\n", cd->playmode);
++			snprintf(tempbuf, sizeof(tempbuf), "playmode %d\n", cd->playmode);
+ 			wm_strmcat(&cdibuf, tempbuf);
+ 		}
+ 
+ 		if (mark_a)
+ 		{
+-			sprintf(tempbuf, "mark %d START\n", mark_a);
++			snprintf(tempbuf, sizeof(tempbuf), "mark %d START\n", mark_a);
+ 			wm_strmcat(&cdibuf, tempbuf);
+ 		}
+ 		if (mark_b)
+ 		{
+-			sprintf(tempbuf, "mark %d END\n", mark_b);
++			snprintf(tempbuf, sizeof(tempbuf), "mark %d END\n", mark_b);
+ 			wm_strmcat(&cdibuf, tempbuf);
+ 		}
+ 
+@@ -304,12 +308,12 @@ print_cdinfo(struct wm_cdinfo *cd, int p
+ 		{
+ 			if (cd->trk[i].avoid)
+ 			{
+-				sprintf(tempbuf, "dontplay %d\n", i + 1);
++				snprintf(tempbuf, sizeof(tempbuf), "dontplay %d\n", i + 1);
+ 				wm_strmcat(&cdibuf, tempbuf);
+ 			}
+ 			if (cd->trk[i].volume)
+ 			{
+-				sprintf(tempbuf, "volume %d %d\n", i + 1,
++				snprintf(tempbuf, sizeof(tempbuf), "volume %d %d\n", i + 1,
+ 					(cd->trk[i].volume * 32) / 100);
+ 				wm_strmcat(&cdibuf, tempbuf);
+ 			}
+@@ -852,7 +856,7 @@ chomp:
+                                 if (searching > 1)
+                                 {
+                                     strcpy(cd->cdname, "Probably://");
+-				    fgets(cd->cdname + strlen(cd->cdname), sizeof(cd->cdname), fp);
++				    fgets(cd->cdname + strlen(cd->cdname), sizeof(cd->cdname)-strlen(cd->cdname), fp);
+                                 } 
+                                 else 
+                                 {
+@@ -1226,17 +1230,17 @@ save_globals(FILE *fp)
+ 
+ 	if (cddb.protocol)
+ 	{
+-		sprintf(temp, "cddbprotocol ");
++		snprintf(temp, sizeof(temp), "cddbprotocol ");
+ 		switch(cddb.protocol)
+ 		{
+ 		 case 1: /* cddbp */
+-		    sprintf(temp + strlen(temp), "cddbp\n");
++		    strlcat(temp, "cddbp\n", sizeof(temp));
+ 		    break;
+ 		 case 2: /* http */
+-		    sprintf(temp + strlen(temp), "http\n");
++		    strlcat(temp, "http\n", sizeof(temp));
+ 		    break;
+ 		 case 3: /* proxy */
+-		    sprintf(temp + strlen(temp), "proxy\n");
++		    strlcat(temp, "proxy\n", sizeof(temp));
+ 		    break;
+ 		 default:
+ 		    break;
+@@ -1245,28 +1249,28 @@ save_globals(FILE *fp)
+ 	    
+ 		if(cddb.mail_adress[0])
+ 	 	{
+-			sprintf(temp,"cddbmailadress %s\n",
++			snprintf(temp,sizeof(temp),"cddbmailadress %s\n",
+ 				cddb.mail_adress);
+ 			wm_strmcat(&globes, temp);
+ 		}
+ 
+ 		if(cddb.cddb_server[0])
+ 	 	{
+-			sprintf(temp,"cddbserver %s\n",
++			snprintf(temp,sizeof(temp),"cddbserver %s\n",
+ 				cddb.cddb_server);
+ 			wm_strmcat(&globes, temp);
+ 		}
+ 
+ 		if(cddb.path_to_cgi[0])
+ 	 	{
+-			sprintf(temp,"cddbpathtocgi %s\n",
++			snprintf(temp,sizeof(temp),"cddbpathtocgi %s\n",
+ 				cddb.mail_adress);
+ 			wm_strmcat(&globes, temp);
+ 		}
+ 
+ 		if(cddb.proxy_server[0])
+ 	 	{
+-			sprintf(temp,"cddbproxy %s\n",
++			snprintf(temp,sizeof(temp),"cddbproxy %s\n",
+ 				cddb.mail_adress);
+ 			wm_strmcat(&globes, temp);
+ 		}
+@@ -1274,7 +1278,7 @@ save_globals(FILE *fp)
+ 
+ 	if (cur_stopmode == 1 || cur_stopmode == 2)
+ 	{
+-		sprintf(temp, "whendone %s\n", cur_stopmode == 1 ? "repeat" :
++		snprintf(temp, sizeof(temp), "whendone %s\n", cur_stopmode == 1 ? "repeat" :
+ 			"eject");
+ 		wm_strmcat(&globes, temp);
+ 	}

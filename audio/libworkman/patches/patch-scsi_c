@@ -1,0 +1,16 @@
+$OpenBSD: patch-scsi_c,v 1.1.1.1 2001/02/06 11:50:24 wilfried Exp $
+--- scsi.c.orig	Thu Jun 17 08:48:03 1999
++++ scsi.c	Mon Feb  5 08:13:43 2001
+@@ -202,9 +202,9 @@ wm_scsi_get_drive_type( struct wm_drive 
+ 	wm_lib_message(WM_MSG_LEVEL_INFO|WM_MSG_CLASS, "Sending SCSI inquiry command...");
+ 	if (sendscsi(d, buf, sizeof(buf), 1, SCMD_INQUIRY, 0, 0, 0, sizeof(buf), 0,0,0,0,0,0,0))
+ 	  {
+-		sprintf( vendor, WM_STR_GENVENDOR);
+-		sprintf( model, WM_STR_GENMODEL);
+-		sprintf( rev, WM_STR_GENREV);
++		strlcpy( vendor, WM_STR_GENVENDOR, sizeof(vendor));
++		strlcpy( model, WM_STR_GENMODEL, sizeof(model));
++		strlcpy( rev, WM_STR_GENREV, sizeof(rev));
+ 		wm_lib_message(WM_MSG_LEVEL_ERROR|WM_MSG_CLASS, "\nSCSI inquiry command not supported by the hardware\n");
+ 		return (WM_ERR_SCSI_INQUIRY_FAILED);
+ 	  }

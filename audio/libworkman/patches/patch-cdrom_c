@@ -1,0 +1,28 @@
+$OpenBSD: patch-cdrom_c,v 1.1.1.1 2001/02/06 11:50:24 wilfried Exp $
+--- cdrom.c.orig	Wed May  5 18:34:19 1999
++++ cdrom.c	Mon Feb  5 08:23:21 2001
+@@ -132,9 +132,9 @@ char *wm_drive_revision( void )
+ 
+ void wm_drive_settype( char *vendor, char *model, char *revision )
+ {
+-	sprintf( _wm_drive_vendor, "%s", vendor );
+-	sprintf( _wm_drive_model, "%s", model );
+-	sprintf( _wm_drive_revision, "%s", revision );
++	strlcpy( _wm_drive_vendor, vendor, sizeof(_wm_drive_vendor) );
++	strlcpy( _wm_drive_model, model, sizeof(_wm_drive_model) );
++	strlcpy( _wm_drive_revision, revision, sizeof(_wm_drive_revision) );
+ }
+ 
+ /*
+@@ -154,9 +154,9 @@ find_drive_struct(char *vendor, char *mo
+ 			continue;
+ 		
+ 		if (d->proto->vendor[0] == '\0')
+-			strcpy(d->proto->vendor, vendor);
++			strlcpy(d->proto->vendor, vendor, sizeof(d->proto->vendor));
+ 		if (d->proto->model[0] == '\0')
+-			strcpy(d->proto->model, model);
++			strlcpy(d->proto->model, model, sizeof(d->proto->model));
+ 
+ 		return (d->proto);
+ 	}

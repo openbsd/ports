@@ -1,0 +1,133 @@
+$OpenBSD: patch-cddb_c,v 1.1.1.1 2001/02/06 11:50:22 wilfried Exp $
+--- cddb.c.orig	Thu May 27 08:37:10 1999
++++ cddb.c	Mon Feb  5 08:54:06 2001
+@@ -73,10 +73,10 @@ void
+ cddb_cur2struct(void)
+ {
+ 	cddb.protocol = cur_cddb_protocol;
+-	strcpy(cddb.cddb_server,  cur_cddb_server);
+-	strcpy(cddb.mail_adress,  cur_cddb_mail_adress);
+-	strcpy(cddb.path_to_cgi,  cur_cddb_path_to_cgi);
+-	strcpy(cddb.proxy_server, cur_cddb_proxy_server);
++	strlcpy(cddb.cddb_server,  cur_cddb_server, sizeof(cddb.cddb_server));
++	strlcpy(cddb.mail_adress,  cur_cddb_mail_adress, sizeof(cddb.mail_adress));
++	strlcpy(cddb.path_to_cgi,  cur_cddb_path_to_cgi, sizeof(cddb.path_to_cgi));
++	strlcpy(cddb.proxy_server, cur_cddb_proxy_server, sizeof(cddb.proxy_server));
+ } /* cddb_cur2struct() */
+ 
+ /*
+@@ -104,7 +104,7 @@ cddb_sum(int n)
+ 	int	ret = 0;
+ 
+ 	/* For backward compatibility this algorithm must not change */
+-	sprintf(buf, "%lu", (unsigned long)n);
++	snprintf(buf, sizeof(buf), "%lu", (unsigned long)n);
+ 	for (p = buf; *p != '\0'; p++)
+ 	  ret += (*p - '0');
+ 
+@@ -175,10 +175,10 @@ string_makehello(char *line,char delim)
+ {
+ 	char mail[84],*host;
+ 	
+-	strcpy(mail,cddb.mail_adress);
++	strlcpy(mail,cddb.mail_adress,sizeof(mail));
+ 	host=string_split(mail,'@');
+ 	
+-	sprintf(line,"%shello%c%s%c%s%c%s%c%s",
++	snprintf(line, sizeof(line), "%shello%c%s%c%s%c%s%c%s",
+ 		delim == ' ' ? "cddb " : "&",
+ 		delim == ' ' ? ' ' : '=',
+ 		mail,delim,
+@@ -226,7 +226,7 @@ connect_open(void)
+ 			printf("unknown host: %s\n", host);
+ 			return (-1);
+ 		}
+-		strcpy(namebuf, host);
++		strlcpy(namebuf, host, sizeof(namebuf));
+ 		def.h_name = namebuf;
+ 		def.h_addr_list = alist, def.h_addr = (char *)&defaddr;
+ 		def.h_length = sizeof (struct in_addr);
+@@ -317,14 +317,14 @@ connect_read_entry(void)
+ 					t2 = t;
+ 				if(*t2 == ' ')
+ 				  t2++;
+-				strcpy(cd->cdname,t2);
++				strlcpy(cd->cdname,t2,sizeof(cd->cdname));
+ 				
+ 				for(t2=t;*t2;t2++)
+ 				{
+ 					if((*t2 == ' ') && (*(t2+1) == 0))
+ 					  *t2=0;
+ 				}
+-				strcpy(cd->artist,t);
++				strlcpy(cd->artist,t,sizeof(cd->artist));
+ 			}
+ 			
+ 			if('T' == type)
+@@ -359,7 +359,7 @@ void
+ cddbp_read(char *category, unsigned int id)
+ {
+ 	char tempbuf[84];
+-	sprintf(tempbuf, "cddb read %s %08x", category, id);
++	snprintf(tempbuf, sizeof(tempbuf), "cddb read %s %08x", category, id);
+ 	cddbp_send(tempbuf);
+ } /* cddbp_read() */
+ 
+@@ -400,7 +400,7 @@ void
+ http_read(char *category, unsigned int id)
+ {
+ 	char tempbuf[84];
+-	sprintf(tempbuf, "cddb+read+%s+%08x", category, id);
++	snprintf(tempbuf, sizeof(tempbuf), "cddb+read+%s+%08x", category, id);
+ 	http_send(tempbuf);
+ } /* http_read() */
+ 
+@@ -411,7 +411,7 @@ void
+ cddb_request(void)
+ {
+ 	int i;
+-	char tempbuf[2000];
++	char tempbuf[2000], tmp2buf[12];
+ 	extern int cur_ntracks;
+ 	
+ 	int status;
+@@ -447,12 +447,14 @@ cddb_request(void)
+ 		printf("[%s]\n",tempbuf);
+ 		
+ 		printf("query\n");
+-		sprintf(tempbuf, "cddb query %08x %d",thiscd.cddbid,thiscd.ntracks);
++		snprintf(tempbuf, sizeof(tempbuf), "cddb query %08x %d",thiscd.cddbid,thiscd.ntracks);
+ 		for (i = 0; i < cur_ntracks; i++)
+-		  if (thiscd.trk[i].section < 2)
+-		    sprintf(tempbuf + strlen(tempbuf), " %d",
+-			    thiscd.trk[i].start);
+-		sprintf(tempbuf + strlen(tempbuf), " %d\n", thiscd.length);
++		  if (thiscd.trk[i].section < 2) {
++		    snprintf(tmp2buf, sizeof(tmp2buf), " %d", thiscd.trk[i].start);
++		    strlcat(tempbuf, tmp2buf, sizeof(tempbuf));
++		  }
++		snprintf(tmp2buf, sizeof(tmp2buf), " %d\n", thiscd.length);
++		strlcat(tempbuf, tmp2buf, sizeof(tempbuf));
+ 		printf(">%s<\n",tempbuf);
+ 		cddbp_send(tempbuf);
+ 		connect_getline(tempbuf);
+@@ -491,12 +493,14 @@ cddb_request(void)
+ 		printf("USING HTTP%s\n",
+ 		       (cddb.protocol == 3) ? " WITH PROXY" : "");
+ 		printf("query\n");
+-		sprintf(tempbuf, "cddb+query+%08x+%d",thiscd.cddbid,thiscd.ntracks);
++		snprintf(tempbuf, sizeof(tempbuf), "cddb+query+%08x+%d",thiscd.cddbid,thiscd.ntracks);
+ 		for (i = 0; i < cur_ntracks; i++)
+-		  if (thiscd.trk[i].section < 2)
+-		    sprintf(tempbuf + strlen(tempbuf), "+%d",
+-			    thiscd.trk[i].start);
+-		sprintf(tempbuf + strlen(tempbuf), "+%d", thiscd.length);
++		  if (thiscd.trk[i].section < 2) {
++		    snprintf(tmp2buf, sizeof(tmp2buf), "+%d", thiscd.trk[i].start);
++		    strlcat(tempbuf, tmp2buf, sizeof(tempbuf));
++		}
++		snprintf(tmp2buf, sizeof(tmp2buf), "+%d", thiscd.length);
++		strlcat(tempbuf, tmp2buf, sizeof(tempbuf));
+ 		printf(">%s<\n",tempbuf);
+ 		connect_open();
+ 		http_send(tempbuf);

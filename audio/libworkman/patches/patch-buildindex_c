@@ -1,0 +1,39 @@
+$OpenBSD: patch-buildindex_c,v 1.1.1.1 2001/02/06 11:50:24 wilfried Exp $
+--- buildindex.c.orig	Sun Feb 14 10:50:42 1999
++++ buildindex.c	Mon Feb  5 08:14:34 2001
+@@ -89,7 +89,7 @@ main(argc, argv)
+ 		 */
+ 		if (fstat(fileno(fp), &st))
+ 		{
+-			sprintf(indname, "%s: fstat", argv[i]);
++			snprintf(indname, sizeof(indname), "%s: fstat", argv[i]);
+ 			perror(indname);
+ 			fclose(fp);
+ 			continue;
+@@ -97,7 +97,7 @@ main(argc, argv)
+ 
+ 		if (lock && lockit(fileno(fp), F_WRLCK))
+ 		{
+-			sprintf(indname, "%s: Warning: Couldn't lock", argv[i]);
++			snprintf(indname, sizeof(indname), "%s: Warning: Couldn't lock", argv[i]);
+ 			perror(indname);
+ 			locked = 0;
+ 		}
+@@ -116,7 +116,7 @@ main(argc, argv)
+ 		bt.prefix = NULL;	/* no prefix comparisons */
+ 
+ 		/* Index files have ".ind" extensions */
+-		sprintf(indname, "%s.ind", argv[i]);
++		snprintf(indname, sizeof(indname), "%s.ind", argv[i]);
+ 		if ((db = dbopen(indname, O_CREAT | O_RDWR | O_TRUNC,
+ 			st.st_mode, DB_BTREE, &bt)) == NULL)
+ 		{
+@@ -166,7 +166,7 @@ main(argc, argv)
+ 				continue;
+ 			}
+ 			sscanf(c+1, "%d", &frame);
+-			sprintf(framebuf, "%07d", frame);
++			snprintf(framebuf, sizeof(framebuf), "%07d", frame);
+ 			pos = htonl(pos);
+ 
+ 			if ((db->put)(db, &key, &data, 0))

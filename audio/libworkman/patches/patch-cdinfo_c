@@ -1,0 +1,56 @@
+$OpenBSD: patch-cdinfo_c,v 1.1.1.1 2001/02/06 11:50:24 wilfried Exp $
+--- cdinfo.c.orig	Thu May 27 08:54:50 1999
++++ cdinfo.c	Mon Feb  5 08:24:02 2001
+@@ -304,32 +304,32 @@ listentry( int num )
+ 	        {
+     			if (cd->trk[num].section > 9) 
+ 			{
+-				sprintf(tracknum, "%*d.%d", digits,
++				snprintf(tracknum, sizeof(tracknum), "%*d.%d", digits,
+ 					cd->trk[num].track,
+ 					cd->trk[num].section);
+ 			} else {
+ 				if (cd->trk[num].section)
+ 				{
+-					sprintf(tracknum, "%*d.%*d", digits,
++					snprintf(tracknum, sizeof(tracknum), "%*d.%*d", digits,
+ 						cd->trk[num].track, sdigits,
+ 						cd->trk[num].section);
+ 				} else {
+-					sprintf(tracknum, "%*d%*s", digits,
++					snprintf(tracknum, sizeof(tracknum), "%*d%*s", digits,
+ 						cd->trk[num].track,
+ 						2 - sdigits, " ");
+ /*						2 - sdigits - big_spaces, " ");*/
+ 				}
+ 			}
+ 		} else {
+-			sprintf(tracknum, "%*d", digits, cd->trk[num].track);
++			snprintf(tracknum, sizeof(tracknum), "%*d", digits, cd->trk[num].track);
+ 		}
+ 
+ 		if (cd->trk[num].data)
+ 		{
+-			sprintf(buf, "%s) %3dMB %s", tracknum,
++			snprintf(buf, sizeof(buf), "%s) %3dMB %s", tracknum,
+ 				cd->trk[num].length / 1024, name);
+ 		} else {
+-			sprintf(buf, "%s) %02d:%02d %s", tracknum,
++			snprintf(buf, sizeof(buf), "%s) %02d:%02d %s", tracknum,
+ 				cd->trk[num].length / 60,
+ 				cd->trk[num].length % 60, name);
+                 }
+@@ -544,11 +544,11 @@ stash_cdinfo(char *artist, char *cdname,
+ 	{
+ 		if (strcmp(cd->artist, artist))
+ 			info_modified = 1;
+-		strcpy(cd->artist, artist);
++		strlcpy(cd->artist, artist, sizeof(cd->artist));
+ 
+ 		if (strcmp(cd->cdname, cdname))
+ 			info_modified = 1;
+-		strcpy(cd->cdname, cdname);
++		strlcpy(cd->cdname, cdname, sizeof(cd->cdname));
+ 
+ 		if (!!cd->autoplay != !!autoplay)
+ 			info_modified = 1;

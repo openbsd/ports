@@ -1,0 +1,44 @@
+$OpenBSD: patch-Imakefile,v 1.1.1.1 2001/02/06 11:50:21 wilfried Exp $
+--- Imakefile.orig	Sat May 29 17:48:17 1999
++++ Imakefile	Mon Feb  5 07:53:53 2001
+@@ -31,7 +31,17 @@ XCOMM
+ 
+ #include "include/wm_version.h"
+ 
+-WM_LIBVER=WM_LIBVER_MAJOR.WM_LIBVER_MINOR.WM_LIBVER_PL
++WM_LIBVER=WM_LIBVER_MAJOR.WM_LIBVER_MINOR
++
++#define DoNormalLib   YES
++#define DoSharedLib   YES
++#define DoExtraLib    NO
++#define DoDebugLib    NO
++#define DoProfileLib  NO
++#define HasSharedData NO
++#define LibName       workman
++#define SoRev         WM_LIBVER
++#define LibHeaders    NO
+ 
+ SRCS = cddb.c cdrom.c cdinfo.c plat_freebsd.c plat_sun.c plat_hpux.c \
+        plat_ultrix.c plat_news.c plat_bsd386.c plat_osf1.c plat_linux.c \
+@@ -47,6 +57,7 @@ OBJS = cddb.o cdrom.o cdinfo.o plat_free
+ 
+ HEADERS= \
+ 	include/wm_cdda.h \
++	include/wm_cddb.h \
+ 	include/wm_cdinfo.h \
+ 	include/wm_cdrom.h \
+ 	include/wm_config.h \
+@@ -62,13 +73,6 @@ HEADERS= \
+        
+ 
+ #include <Library.tmpl>
+-
+-#ifdef SHARED_LIBWORKMAN
+-SharedLibraryTarget(workman,$(WM_LIBVER),$(OBJS),.,.)
+-InstallSharedLibrary(workman,$(WM_LIBVER),$(LIBDIR))
+-#else
+-NormalLibraryTarget(workman, $(OBJS))
+-#endif
+ 
+ InstallMultiple($(HEADERS),$(WMINCDIR))
+ 
