@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2004/06/23 14:51:32 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2004/07/26 21:16:21 jakob Exp $
 
 COMMENT=	"Dynamic Host Control Protocol Server"
 
-VERSION=	3.0.1rc14
+VERSION=	3.0.1
 DISTNAME=	isc-dhcp-${VERSION}
 CATEGORIES=	net
 
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.isc.org/isc/dhcp/ \
 
 HOMEPAGE=	http://www.isc.org/products/DHCP/
 
-MAINTAINER=	Wesley Griffin <wgriffin@jtan.com>
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
