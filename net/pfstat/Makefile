@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/08/12 11:37:03 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.3 2003/01/24 17:59:45 dhartmei Exp $
 
 COMMENT=	"packet filter statistics visualization"
 
-DISTNAME=	pfstat-1.1
+DISTNAME=	pfstat-1.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.benzedrine.cx/
 
