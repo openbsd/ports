@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/05/24 01:09:59 jolan Exp $
+# $OpenBSD: Makefile,v 1.18 2003/08/02 01:41:43 jolan Exp $
 
 COMMENT=	"FREEZE / MELT compression program - often used in QNX"
 
@@ -16,5 +16,12 @@ CONFIGURE_STYLE= gnu dest
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -I."
 NO_REGRESS=	Yes
+
+post-configure:
+	@perl -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile
+	@perl -pi -e 's|%%SYSCONFDIR%%|${SYSCONFDIR}|g' \
+		${WRKSRC}/Makefile \
+		${WRKSRC}/freeze.1 \
+		${WRKSRC}/statist.1
 
 .include <bsd.port.mk>

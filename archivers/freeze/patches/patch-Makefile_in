@@ -1,6 +1,7 @@
---- Makefile.in.orig	Wed Feb 24 08:36:56 1993
-+++ Makefile.in	Sun Mar 26 15:52:20 2000
-@@ -15,6 +15,7 @@
+$OpenBSD: patch-Makefile_in,v 1.2 2003/08/02 01:41:43 jolan Exp $
+--- Makefile.in.orig	1993-02-24 14:36:56.000000000 +0100
++++ Makefile.in	2003-08-01 08:29:26.000000000 +0200
+@@ -15,10 +15,11 @@ EXE           =
  
  .PHONY:         default
  
@@ -8,7 +9,12 @@
  default:        prog
  
  # Added the prefix macro, so that it was easier to change installation place.
-@@ -32,9 +33,9 @@
+-prefix        = /usr/local
++prefix        = %%PREFIX%%
+ DEST          = $(prefix)/bin
+ MANDEST       = $(prefix)/man/man1
+ SEC           = 1
+@@ -32,9 +33,9 @@ HDRS          = bitio.h\
  
  # define DEFFILE as a filename with freeze's default Huffman values
  # e.g. -DDEFFILE=\"/etc/default/freeze\"
@@ -16,7 +22,7 @@
 +# !!!! NOTE !!!! default is now /etc/freeze.cnf !!!!!
  
 -OPTIONS       = -DDEFFILE=\"$(prefix)/lib/freeze.cnf\"
-+OPTIONS       = -DDEFFILE=\"/etc/freeze.cnf\"
++OPTIONS       = -DDEFFILE=\"%%SYSCONFDIR%%/freeze.cnf\"
  
  LINTFLAGS     = -DDEBUG -DGATHER_STAT -x -h
  

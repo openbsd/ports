@@ -1,6 +1,7 @@
---- configure.orig	Sat Dec 25 23:57:00 1999
-+++ configure	Sat Dec 25 23:57:19 1999
-@@ -126,7 +126,6 @@
+$OpenBSD: patch-configure,v 1.2 2003/08/02 01:41:43 jolan Exp $
+--- configure.orig	1993-02-24 14:36:54.000000000 +0100
++++ configure	2003-08-01 08:29:26.000000000 +0200
+@@ -126,7 +126,6 @@ EOF
  ${CC-cc} -E conftest.c > conftest.out 2>&1
  if egrep yes conftest.out >/dev/null 2>&1; then
    GCC=1 # For later tests.
