@@ -11,6 +11,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_KDE}	
 MASTER_SITE_SUBDIR=	stable/1.1.2/distribution/tar/generic/source/bz2
+DIST_SUBDIR=	kde
 
 MULTI_PACKAGES=-kabalone -kasteroids -kblackbox -kmahjongg -kmines\
 -konquest -kpat -kpoker -kreversi -ksame -kshisen -ksirtet -ksmiletris \

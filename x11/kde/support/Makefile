@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/05/22 14:32:42 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/28 11:49:14 espie Exp $
 
 DISTNAME=		kdesupport-1.1.2	
 CATEGORIES=     	x11 converters	
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_KDE}	
 MASTER_SITE_SUBDIR=	stable/1.1.2/distribution/tar/generic/source/bz2
+DIST_SUBDIR=		kde
 
 LIB_DEPENDS=		qt.1.45::x11/qt
 #			jpeg.62::graphics/jpeg 
