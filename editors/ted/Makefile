@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/04/18 15:02:45 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/18 17:51:25 espie Exp $
 
 
 COMMENT=	"X11 based RTF editor"
-V=2.8
+V=2.9
 DISTNAME=	ted-$V
 CATEGORIES=	editors textproc print
 NEED_VERSION=	1.400
