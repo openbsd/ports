@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 1999/04/01 06:20:05 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/11/03 01:01:25 turan Exp $
+
+BROKEN=		dependency databases/postgresql is also broken
 
 DISTNAME=	DBD-Pg-0.69
 PKGNAME=	p5-DBD-Pg-0.69

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 1999/10/14 22:08:27 espie Exp $
+# $OpenBSD: Makefile,v 1.12 1999/11/03 01:01:26 turan Exp $
+
+BROKEN=		can not consistantly build this port based on which emacs is installed.  Mark broken until consistancy can be 100%.
 
 DISTNAME=	id-utils-3.2d
 CATEGORIES=	devel
