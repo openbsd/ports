@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/12/14 09:31:50 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/10/18 15:36:34 naddy Exp $
 bin/convert_smbpasswd
 bin/make_printerdef
 bin/make_smbcodepage
@@ -507,3 +507,4 @@ share/swat/using_samba/this_edition.html
 @dirrm share/doc/samba
 @dirrm lib/samba/codepages
 @dirrm lib/samba
+@extraunexec rm -rf ${CONFDIR} ${SAMBA_SPOOL}
