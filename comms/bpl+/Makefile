@@ -1,17 +1,13 @@
-# OpenBSD makefile for:	bpl+
-# Version required:		1.0
-# Date created:			31 Dec 1997
-# Whom:				ejovi
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/31 18:36:18 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/07 05:14:56 marc Exp $
 #
 
 DISTNAME=	bpl+
 PKGNAME=	bpl+-1.0
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.tohoku.ac.jp/pub/net/telnet/telnetx/
 
 MAINTAINER=	joey@OpenBSD.ORG
+
+MASTER_SITES=	ftp://ftp.tohoku.ac.jp/pub/net/telnet/telnetx/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bpl ${PREFIX}/bin

@@ -1,13 +1,11 @@
-# OpenBSD makefile for:  c2t
-# Version required:     	  1.0
-# Date created:			  Nov 26, 1997
-# Whom:				  ejovi
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/26 22:56:45 joey Exp $	
+# $OpenBSD: Makefile,v 1.2 1998/10/07 05:09:51 marc Exp $	
 #
 
-PKGNAME=	zh-c2t-1.0
+DISTNAME=	zh-c2t-1.0
 CATEGORIES=	chinese
+
+MAINTAINER=     joey@OpenBSD.ORG
+
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
 		ftp://ftp.ifcss.org/pub/software/x-win/cxterm/dict/gb/  \
 		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/convert/  \
@@ -15,11 +13,9 @@ MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/dict/gb/
 DISTFILES=	c2t.tar.gz TONEPY.tit
-
-MAINTAINER=     joey@OpenBSD.ORG
+EXTRACT_ONLY=	c2t.tar.gz
 
 NO_WRKSUBDIR=	yes
-EXTRACT_ONLY=	c2t.tar.gz
 MAN1=		c2t.1
 
 do-install:
