@@ -1,0 +1,12 @@
+$OpenBSD: patch-killustrator_share_BezierTool_cc,v 1.1.1.1 2000/12/18 02:54:59 espie Exp $
+--- killustrator/share/BezierTool.cc.orig	Mon Dec 18 02:38:41 2000
++++ killustrator/share/BezierTool.cc	Mon Dec 18 02:38:53 2000
+@@ -22,7 +22,7 @@
+ 
+ */
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <math.h>
+ #else
+ #include <values.h>

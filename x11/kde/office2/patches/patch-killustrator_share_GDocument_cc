@@ -1,0 +1,12 @@
+$OpenBSD: patch-killustrator_share_GDocument_cc,v 1.1.1.1 2000/12/18 02:54:59 espie Exp $
+--- killustrator/share/GDocument.cc.orig	Mon Dec 18 02:39:02 2000
++++ killustrator/share/GDocument.cc	Mon Dec 18 02:39:15 2000
+@@ -39,7 +39,7 @@
+ #include <assert.h>
+ #include <kdebug.h>
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <math.h>
+ #else
+ #include <values.h>

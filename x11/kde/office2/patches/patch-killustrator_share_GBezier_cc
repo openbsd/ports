@@ -1,0 +1,13 @@
+$OpenBSD: patch-killustrator_share_GBezier_cc,v 1.1.1.1 2000/12/18 02:54:59 espie Exp $
+--- killustrator/share/GBezier.cc.orig	Mon Dec 18 02:37:28 2000
++++ killustrator/share/GBezier.cc	Mon Dec 18 02:37:41 2000
+@@ -22,7 +22,9 @@
+ */
+ 
+ #include <float.h>
++#ifndef __OpenBSD__
+ #include <values.h>
++#endif
+ #include <GBezier.h>
+ #include <GCurve.h>
+ #include <Arrow.h>

@@ -1,0 +1,20 @@
+$OpenBSD: patch-kchart_engine_h,v 1.1.1.1 2000/12/18 02:54:59 espie Exp $
+--- kchart/engine.h.orig	Mon Dec 18 01:55:26 2000
++++ kchart/engine.h	Mon Dec 18 02:32:51 2000
+@@ -13,7 +13,16 @@
+ 
+ #include <qfont.h>
+ #include <qcolor.h>
++#ifdef __OpenBSD__
++#include <limits.h>
++#include <math.h>
++#define MAXSHORT	SHRT_MAX
++#define MAXINT		INT_MAX
++#define MAXDOUBLE 	DBL_MAX
++#else
+ #include <values.h>
++#endif
++
+ #include <kchart_part.h>
+ 
+ class KChartParameters;

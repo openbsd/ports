@@ -1,0 +1,21 @@
+Koffice is a collection of office applications linked together by a
+common basis. This common basis assures that all office application
+can work together. You can, for instance, insert a spreadsheet in
+your thesis without leaving your document. Editing the spreadsheet
+happens _inside_ your thesis.
+ 
+The applications included in KOffice as of the release of KDE2 are:
+- KWord
+  Professional text editing
+- KSpread
+  Professional number cruncher/spreadsheet
+- KPresenter
+  Professional presentation program
+- KChart
+  Graphing of your abstract data
+- KIllustrator
+  Vector graphics tool
+- KOffice Workspace
+  A combination of all of the above                                                
+
+WWW ${HOMEPAGE}
