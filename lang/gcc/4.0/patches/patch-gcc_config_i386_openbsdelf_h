@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_i386_openbsdelf_h,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
---- gcc/config/i386/openbsdelf.h.orig	Mon Sep 13 14:37:10 2004
-+++ gcc/config/i386/openbsdelf.h	Mon Sep 13 14:27:40 2004
-@@ -0,0 +1,135 @@
+$OpenBSD: patch-gcc_config_i386_openbsdelf_h,v 1.2 2005/01/04 12:07:18 espie Exp $
+--- gcc/config/i386/openbsdelf.h.orig	Mon Jan  3 22:38:27 2005
++++ gcc/config/i386/openbsdelf.h	Tue Jan  4 12:46:14 2005
+@@ -0,0 +1,131 @@
 +
 +/* Configuration for an OpenBSD i386 target.
 +   
@@ -133,7 +133,3 @@ $OpenBSD: patch-gcc_config_i386_openbsdelf_h,v 1.1.1.1 2004/09/23 22:13:31 espie
 +   %{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so}"
 +
 +#define OBSD_HAS_CORRECT_SPECS
-+
-+/* pick up defines for mprotect (used in TRANSFER_FROM_TRANPOLINE) */
-+#include <sys/types.h>
-+#include <sys/mman.h>

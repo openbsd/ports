@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_openbsd_h,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
---- gcc/config/openbsd.h.orig	Mon Jul  5 21:49:14 2004
-+++ gcc/config/openbsd.h	Tue Sep 14 20:23:47 2004
+$OpenBSD: patch-gcc_config_openbsd_h,v 1.2 2005/01/04 12:07:18 espie Exp $
+--- gcc/config/openbsd.h.orig	Sun Oct 24 03:42:48 2004
++++ gcc/config/openbsd.h	Tue Jan  4 12:45:59 2005
 @@ -52,29 +52,60 @@ Boston, MA 02111-1307, USA.  */
  
  #ifdef OPENBSD_NATIVE
@@ -82,7 +82,7 @@ $OpenBSD: patch-gcc_config_openbsd_h,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
  
  #ifndef OBSD_HAS_CORRECT_SPECS
  
-@@ -275,3 +305,18 @@ do {									 \
+@@ -275,3 +305,21 @@ do {									 \
     as this depends on a few other details as well...  */
  #define HANDLE_SYSV_PRAGMA 1
  
@@ -101,3 +101,6 @@ $OpenBSD: patch-gcc_config_openbsd_h,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
 +  if (mprotect (page, end - page, PROT_READ | PROT_WRITE | PROT_EXEC) < 0) \
 +    perror ("mprotect of trampoline code");				\
 +}
++
++#include <sys/types.h>
++#include <sys/mman.h>
