@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2003/10/18 19:44:50 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/01/17 15:07:45 naddy Exp $
 
 COMMENT=	"DBI persistent connection, authentication and authorization"
 
-VERSION=	0.88
-DISTNAME=	ApacheDBI-${VERSION}
+VERSION=	0.93
+DISTNAME=	Apache-DBI-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
 RUN_DEPENDS=	:mod_perl-*:www/mod_perl \
 		:p5-DBI-*:databases/p5-DBI
 
-MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
+MAINTAINER=	Ben Lovett <ben@tilderoot.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
