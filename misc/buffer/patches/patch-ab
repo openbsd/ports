@@ -1,0 +1,18 @@
+--- buffer.c.orig	Wed Jul 14 17:59:17 1993
++++ buffer.c	Thu Mar 11 02:55:42 1999
+@@ -384,6 +384,7 @@
+ }
+ 
+ /* The interrupt handler */
++void
+ shutdown()
+ {
+ 	static int shutting;
+@@ -400,6 +401,7 @@
+ }
+ 
+ /* Shutdown because the child has ended */
++void
+ child_shutdown()
+ {
+ 	/* Find out which child has died.  (They may not be my
