@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2003/06/04 22:02:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.118 2003/06/18 01:32:49 naddy Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -134,6 +134,7 @@
      SUBDIR += zope
      SUBDIR += zope-cmf
      SUBDIR += zope-fortune
+     SUBDIR += zope-fscounter
      SUBDIR += zope-logger
      SUBDIR += zope-zippy
 
