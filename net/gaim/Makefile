@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.73 2005/01/28 16:33:28 fgsch Exp $
+# $OpenBSD: Makefile,v 1.74 2005/02/27 06:52:22 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"Gtk AIM, ICQ, IRC, Jabber, MSN, Yahoo, SILC and Zephyr client"
 
-DISTNAME=	gaim-1.1.2
+DISTNAME=	gaim-1.1.4
 CATEGORIES=	net
 
 HOMEPAGE=	http://gaim.sourceforge.net/

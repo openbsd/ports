@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.18 2004/12/10 20:57:08 fgsch Exp $
---- configure.orig	Fri Dec  3 01:24:48 2004
-+++ configure	Fri Dec 10 02:22:25 2004
+$OpenBSD: patch-configure,v 1.19 2005/02/27 06:52:22 brad Exp $
+--- configure.orig	Thu Feb 24 21:44:01 2005
++++ configure	Sat Feb 26 23:01:07 2005
 @@ -464,7 +464,7 @@ ac_includes_default="\
  # include <unistd.h>
  #endif"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.18 2004/12/10 20:57:08 fgsch Exp $
  ac_subst_files=''
  
  # Initialize some variables set by options.
-@@ -1059,6 +1059,7 @@ Optional Features:
+@@ -1060,6 +1060,7 @@ Optional Features:
    --disable-gtktest       do not try to compile and run a test GTK+ program
    --disable-startup-notification    compile without startup notification support
    --disable-gevolution    compile without the Gaim-Evolution plugin
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.18 2004/12/10 20:57:08 fgsch Exp $
    --enable-gnutls=yes,no    Attempt to use GNUTLS for SSL support (preferred) default=yes
    --enable-nss=yes,no,static    Attempt to use Mozilla libnss for SSL support default=yes
    --disable-aotest       Do not try to compile and run a test ao program
-@@ -1092,6 +1093,8 @@ Optional Packages:
+@@ -1093,6 +1094,8 @@ Optional Packages:
    --with-x                use the X Window System
    --with-perl-lib=site|vendor|DIR  Specify where to install the
  								   Perl libraries for gaim. Default is site.
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure,v 1.18 2004/12/10 20:57:08 fgsch Exp $
    --with-gnutls-includes=PREFIX   Location of GNUTLS includes.
    --with-gnutls-libs=PREFIX       Location of GNUTLS libraries.
    --with-nspr-includes=PREFIX     Specify location of Mozilla nspr4 includes.
-@@ -3698,12 +3701,10 @@ nto-qnx*)
+@@ -3699,12 +3702,10 @@ nto-qnx*)
    ;;
  
  openbsd*)
@@ -42,7 +42,7 @@ $OpenBSD: patch-configure,v 1.18 2004/12/10 20:57:08 fgsch Exp $
    fi
    ;;
  
-@@ -5558,6 +5559,19 @@ else
+@@ -5559,6 +5560,19 @@ else
      lt_cv_sys_max_cmd_len=8192;
      ;;
  
@@ -62,7 +62,7 @@ $OpenBSD: patch-configure,v 1.18 2004/12/10 20:57:08 fgsch Exp $
   *)
      # If test is not a shell built-in, we'll probably end up computing a
      # maximum length that is only half of the actual maximum length, but
-@@ -7415,6 +7429,7 @@ if test -z "$aix_libpath"; then aix_libp
+@@ -7416,6 +7430,7 @@ if test -z "$aix_libpath"; then aix_libp
        hardcode_shlibpath_var=no
        if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
  	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
@@ -70,7 +70,7 @@ $OpenBSD: patch-configure,v 1.18 2004/12/10 20:57:08 fgsch Exp $
  	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
  	export_dynamic_flag_spec='${wl}-E'
        else
-@@ -8111,7 +8126,7 @@ nto-qnx*)
+@@ -8112,7 +8127,7 @@ nto-qnx*)
  openbsd*)
    version_type=sunos
    need_lib_prefix=no
@@ -79,7 +79,7 @@ $OpenBSD: patch-configure,v 1.18 2004/12/10 20:57:08 fgsch Exp $
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
-@@ -10522,6 +10537,23 @@ if test -z "$aix_libpath"; then aix_libp
+@@ -10523,6 +10538,23 @@ if test -z "$aix_libpath"; then aix_libp
      # Workaround some broken pre-1.5 toolchains
      output_verbose_link_cmd='$CC -shared $CFLAGS -v conftest.$objext 2>&1 | grep conftest.$objext | $SED -e "s:-lgcc -lc -lgcc::"'
      ;;
@@ -103,7 +103,7 @@ $OpenBSD: patch-configure,v 1.18 2004/12/10 20:57:08 fgsch Exp $
    osf3*)
      case $cc_basename in
        KCC)
-@@ -27839,7 +27871,7 @@ fi
+@@ -28205,7 +28237,7 @@ fi
  	if test "$ac_silc_libs" != "no"; then
  		SILC_LIBS="-L$ac_silc_libs"
  	fi
@@ -112,7 +112,7 @@ $OpenBSD: patch-configure,v 1.18 2004/12/10 20:57:08 fgsch Exp $
  	echo "$as_me:$LINENO: checking for silc_client_init in -lsilcclient" >&5
  echo $ECHO_N "checking for silc_client_init in -lsilcclient... $ECHO_C" >&6
  if test "${ac_cv_lib_silcclient_silc_client_init+set}" = set; then
-@@ -31984,6 +32016,14 @@ fi
+@@ -32569,6 +32601,14 @@ fi
  
  
  
@@ -127,7 +127,7 @@ $OpenBSD: patch-configure,v 1.18 2004/12/10 20:57:08 fgsch Exp $
  # Check whether --enable-gnutls or --disable-gnutls was given.
  if test "${enable_gnutls+set}" = set; then
    enableval="$enable_gnutls"
-@@ -32002,6 +32042,299 @@ fi;
+@@ -32587,6 +32627,299 @@ fi;
  
  msg_ssl="None"
  
@@ -427,7 +427,7 @@ $OpenBSD: patch-configure,v 1.18 2004/12/10 20:57:08 fgsch Exp $
  if test "x$enable_gnutls" != "xno"; then
  	enable_gnutls="no"
  	prefix=`eval echo $prefix`
-@@ -33181,12 +33514,20 @@ else
+@@ -33766,12 +34099,20 @@ else
  fi
  
  
@@ -449,7 +449,7 @@ $OpenBSD: patch-configure,v 1.18 2004/12/10 20:57:08 fgsch Exp $
  fi
  
  if test "$enable_tcl" = yes; then
-@@ -37014,6 +37355,13 @@ echo "$as_me: error: conditional \"USE_P
+@@ -37604,6 +37945,13 @@ echo "$as_me: error: conditional \"USE_P
  Usually this means the macro was only invoked conditionally." >&2;}
     { (exit 1); exit 1; }; }
  fi
@@ -463,7 +463,7 @@ $OpenBSD: patch-configure,v 1.18 2004/12/10 20:57:08 fgsch Exp $
  if test -z "${USE_GNUTLS_TRUE}" && test -z "${USE_GNUTLS_FALSE}"; then
    { { echo "$as_me:$LINENO: error: conditional \"USE_GNUTLS\" was never defined.
  Usually this means the macro was only invoked conditionally." >&5
-@@ -37866,6 +38214,10 @@ s,@PERL_LIBS@,$PERL_LIBS,;t t
+@@ -38456,6 +38804,10 @@ s,@PERL_LIBS@,$PERL_LIBS,;t t
  s,@PERL_MM_PARAMS@,$PERL_MM_PARAMS,;t t
  s,@DYNALOADER_A@,$DYNALOADER_A,;t t
  s,@LIBPERL_A@,$LIBPERL_A,;t t
