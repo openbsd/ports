@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2001/02/10 19:02:24 reinhard Exp $
+# $OpenBSD: Makefile,v 1.40 2001/03/08 11:54:15 reinhard Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -30,6 +30,7 @@
      SUBDIR += gnugo
      SUBDIR += gnushogi
 #    SUBDIR += golddig
+     SUBDIR += gtkballs
      SUBDIR += gtkpool
 #    SUBDIR += imaze
 #    SUBDIR += jetpack
