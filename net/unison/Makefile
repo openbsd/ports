@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/12/22 09:47:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/27 22:13:56 sturm Exp $
 
 COMMENT=	"multi-platform file synchronization tool"
 
@@ -34,16 +34,16 @@ USE_X11=	Yes
 MAKE_FLAGS=	UISTYLE=text
 .endif
 
+# CFLAGS _must_ be empty.  This is an OCaml compiler.
 MAKE_FLAGS+=	NATIVE=${MODOCAML_NATIVE:S/Yes/true/:S/No/false/} \
-		OCAMLOPT=ocamlopt.opt
+		OCAMLOPT=ocamlopt.opt \
+		CFLAGS=
+
 # We are still not sure whether ocaml works -with-pthreads on all
 # architectures.  For now keep it at default false.
 # MAKE_FLAGS+=	THREADS=true
 
 NO_REGRESS=	Yes
-
-# CFLAGS _must_ be empty.  This is an OCaml compiler.
-CFLAGS=
 
 # Empty to avoid multiple all:: entries and use the first target entry.
 ALL_TARGET=
