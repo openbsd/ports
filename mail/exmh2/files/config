@@ -5,7 +5,7 @@ set exmh(maintainer) welch@acm.org
 set mh_path !!PREFIX!!/bin
 set exmh(slocal) !!PREFIX!!/lib/mh/slocal
 set mime(dir) !!PREFIX!!/bin
-set mailcap_default !!PREFIX!!/etc/mailcap
+set mailcap_default /etc/mailcap
 set exmh(expect) !!EXPECT!!
 set exmh(expectk) !!EXPECTK!!
 set faces(dir) !!FACES!!

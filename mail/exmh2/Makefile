@@ -3,7 +3,7 @@
 # Date released:		May 16 1998
 # Whom:				Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1998/06/29 22:34:48 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/07/29 23:02:37 marc Exp $
 #
 
 DISTNAME=	exmh-2.0.2
@@ -19,7 +19,7 @@ WISH=		wish8.0
 TCLSH=		tclsh8.0
 
 # exmh is pretty useless without this, but it's not needed to build it.
-RUN_DEPENDS+=	repl:${PORTSDIR}/mail/mh
+RUN_DEPENDS+=	repl:${PORTSDIR}/mail/nmh
 
 # full mime support needs mmencode/mmdecode from metamail
 RUN_DEPENDS+=	mmencode:${PORTSDIR}/mail/metamail
@@ -31,7 +31,7 @@ RUN_DEPENDS+=	mmencode:${PORTSDIR}/mail/metamail
 # mail/faces
 # audio/rplay
 
-MAN1=		exmh.1
+NO_PACKAGE=	needs per-host config at build time
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} TCLSH=${TCLSH} \
