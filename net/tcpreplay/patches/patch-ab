@@ -1,36 +1,20 @@
-*** configure-orig	Fri May 14 11:36:15 1999
---- configure	Fri May 14 11:36:26 1999
-***************
-*** 1100,1106 ****
-  done
-  
-  
-! subdirs="Libnet-0.99 libpcap-0.4"
-  
-  
-  
---- 1100,1106 ----
-  done
-  
-  
-! subdirs="Libnet-0.99"
-  
-  
-  
-***************
-*** 1485,1491 ****
-      esac
-    done
-  
-!   for ac_config_dir in Libnet-0.99 libpcap-0.4; do
-  
-      # Do not complain, so a configure script can configure whichever
-      # parts of a large source tree are present.
---- 1485,1491 ----
-      esac
-    done
-  
-!   for ac_config_dir in Libnet-0.99; do
-  
-      # Do not complain, so a configure script can configure whichever
-      # parts of a large source tree are present.
+--- configure.orig	Sat Jun 12 22:02:02 1999
++++ configure	Sat Jun 12 22:02:33 1999
+@@ -1194,7 +1194,7 @@
+ done
+ 
+ 
+-subdirs="Libnet-0.99 libpcap-0.4"
++subdirs="Libnet-0.99"
+ 
+ 
+ 
+@@ -1579,7 +1579,7 @@
+     esac
+   done
+ 
+-  for ac_config_dir in Libnet-0.99 libpcap-0.4; do
++  for ac_config_dir in Libnet-0.99; do
+ 
+     # Do not complain, so a configure script can configure whichever
+     # parts of a large source tree are present.

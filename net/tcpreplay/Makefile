@@ -1,14 +1,7 @@
-# Makefile for:		tcpreplay
-# Version required:	1.0
-# Date created:		14 May 1999
-# Whom:			dugsong@monkey.org
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1999/05/14 15:45:52 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 1999/06/13 02:14:17 brad Exp $
 
-DISTNAME=	tcpreplay-1.0
-
+DISTNAME=	tcpreplay-1.0.1
 CATEGORIES=	net
-
 MASTER_SITES=	http://www.anzen.com/research/nidsbench/
 
 MAINTAINER=	dugsong@monkey.org
