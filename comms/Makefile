@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/11/18 17:22:01 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/06/04 18:36:53 jason Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 #
 
@@ -6,6 +6,7 @@
      SUBDIR += conserver
 #    SUBDIR += ecu
      SUBDIR += efax
+     SUBDIR += flipit
      SUBDIR += hylafax
      SUBDIR += hylafax,a4
      SUBDIR += jpilot
