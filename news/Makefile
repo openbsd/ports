@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/04/29 03:54:36 angelos Exp $
+# $OpenBSD: Makefile,v 1.5 2000/07/11 10:21:10 espie Exp $
 # $FreeBSD: Makefile,v 1.32 1997/11/16 04:58:09 fenner Exp $
 #
 
@@ -10,6 +10,7 @@
 #    SUBDIR += knews
 #    SUBDIR += ifmail
      SUBDIR += leafnode
+     SUBDIR += linleech
      SUBDIR += newsfetch
 #    SUBDIR += nn
 #    SUBDIR += nntp
