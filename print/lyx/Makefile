@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2002/06/09 04:08:19 wilfried Exp $
+# $OpenBSD: Makefile,v 1.27 2002/06/09 16:10:24 brad Exp $
 
 COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
 
@@ -23,11 +23,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	:teTeX_base-*:print/teTeX/base
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+BUILD_DEPENDS+=	:teTeX_base-*:print/teTeX/base
+RUN_DEPENDS+=	:teTeX_base-*:print/teTeX/base \
 		:ispell-*:textproc/ispell
-LIB_DEPENDS=	forms::x11/xforms \
-		intl.1::devel/gettext
+LIB_DEPENDS+=	forms::x11/xforms
 
 CONFIGURE_STYLE=		autoconf
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
