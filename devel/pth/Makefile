@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/24 00:07:13 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2001/12/21 00:36:37 brad Exp $
 
 COMMENT=	"GNU portable threads"
 
 DISTNAME=	pth-1.4.0
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
-NEED_VERSION=	1.402
+NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= pth
 
@@ -26,10 +26,6 @@ CONFIGURE_ARGS+= --enable-static --enable-pthread \
 		 --includedir="${PREFIX}/include/pth" \
 		 --libdir="${PREFIX}/lib/pth"
 
-post-build:
-	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
-
-test:	build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} test
+REGRESS_TARGET=	test
 
 .include <bsd.port.mk>
