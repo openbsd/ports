@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2003/07/04 00:59:56 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2003/08/08 20:36:17 jolan Exp $
 
 COMMENT=	"tactical war game like Battle Isle"
 
-DISTNAME=	crimson-0.3.4
+DISTNAME=	crimson-0.3.5
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}crimson/
 

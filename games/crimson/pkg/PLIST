@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/07/04 00:59:56 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/08/08 20:36:17 jolan Exp $
 bin/bi2cf
 bin/cfed
 bin/comet
@@ -17,6 +17,7 @@ share/crimson/levels/IslandHoppers.lev
 share/crimson/levels/LankhValley.lev
 share/crimson/levels/LostFactories.lev
 share/crimson/levels/MountainDefense.lev
+share/crimson/levels/Revelation.lev
 share/crimson/levels/Uprising.lev
 share/crimson/sound/ask.wav
 share/crimson/sound/clicked.wav
