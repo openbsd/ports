@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/04/27 15:23:58 wcobb Exp $
+# $OpenBSD: Makefile,v 1.2 2002/07/17 20:25:06 lebel Exp $
 
 COMMENT=	"display the moon's phase"
 
@@ -21,6 +21,7 @@ MASTER_SITES=	ftp://ftp.vector.co.jp/pack/dos/edu/science/space/
 
 BUILD_DEPENDS=	::archivers/lha
 
+MAKE_ENV=	CC="${CC}"
 MAKE_FILE=	makefile
 NO_REGRESS=	Yes
 
