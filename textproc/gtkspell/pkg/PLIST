@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/08/12 06:29:36 jolan Exp $
+include/gtkspell-2.0/gtkspell/gtkspell.h
+lib/libgtkspell.a
+lib/libgtkspell.la
+lib/pkgconfig/gtkspell-2.0.pc
+%%SHARED%%
+@comment @dirrm lib/pkgconfig
+@dirrm include/gtkspell-2.0/gtkspell
+@dirrm include/gtkspell-2.0

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/08/12 06:29:36 jolan Exp $
+--- Makefile.in.orig	2003-01-01 20:21:05.000000000 -0600
++++ Makefile.in	2003-08-10 01:25:03.000000000 -0500
+@@ -81,7 +81,7 @@ SPELLER_LIB = @SPELLER_LIB@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
+ 
+-SUBDIRS = gtkspell examples docs
++SUBDIRS = gtkspell examples
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = gtkspell-2.0.pc
