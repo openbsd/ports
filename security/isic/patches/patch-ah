@@ -1,0 +1,33 @@
+--- esic.c.orig	Tue Dec  7 16:09:04 1999
++++ esic.c	Mon Jan 24 14:48:15 2000
+@@ -7,9 +7,9 @@
+  * The bastards always have to take a standard and fuck with it.
+  */
+ 
++#define __GLIBC__	1	/* XXX */
+ #include <libnet.h>
+ #include <netinet/if_ether.h>
+-#include <netinet/ip.h>
+ 
+ #ifndef ETHER_FRAME_SIZE
+ # define ETHER_FRAME_SIZE 1500
+@@ -28,8 +28,8 @@
+ 	u_int16_t proto = htons(ETHERTYPE_IP);
+ 	struct ether_addr *ea = NULL;
+ 	u_int16_t *data = NULL;
+-	struct link_int *lli;
+-	u_char dev[128] = "";
++	struct libnet_link_int *lli;
++	char dev[128] = "";
+ 	u_char *buf = NULL;
+ 	int proto_rand = 0;
+ 	struct timeval tv, tv2;
+@@ -136,7 +136,7 @@
+ 	bzero(buf, ETHER_FRAME_SIZE);
+ 	ether = (struct ether_header *) buf;
+ 
+-	if ( (lli = open_link_interface(dev, errtxt)) == NULL) {
++	if ( (lli = libnet_open_link_interface(dev, errtxt)) == NULL) {
+ 		printf("Failed to open link layer:  %s\n", errtxt);
+ 		free( buf );
+ 		exit( -1 );

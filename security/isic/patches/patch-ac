@@ -1,0 +1,38 @@
+--- isic.c.orig	Mon Jan 24 14:24:28 2000
++++ isic.c	Mon Jan 24 14:25:02 2000
+@@ -82,7 +82,7 @@
+ 			dst_ip_rand = 1;
+ 			break;
+ 		}
+-		if (!(dst_ip = name_resolve(optarg, 1))) {
++		if (!(dst_ip = libnet_name_resolve(optarg, 1))) {
+ 			fprintf(stderr, "Bad dest IP\n");
+ 			exit( -1 );
+ 		}
+@@ -94,7 +94,7 @@
+ 			src_ip_rand = 1;
+ 			break;
+ 		}
+-		if (!(src_ip = name_resolve(optarg, 1))) {
++		if (!(src_ip = libnet_name_resolve(optarg, 1))) {
+ 			fprintf(stderr, "Bad source IP\n");
+ 			exit( -1 );
+ 		}
+@@ -153,7 +153,7 @@
+ 		exit( -1 );
+ 	}
+ 
+-	if ( (sock = open_raw_sock(IPPROTO_RAW)) == -1 ) {
++	if ( (sock = libnet_open_raw_sock(IPPROTO_RAW)) == -1 ) {
+ 		perror("socket: ");
+ 		exit(EXIT_FAILURE);
+ 	}
+@@ -237,7 +237,7 @@
+  		 
+ 		if ( skip <= acx ) {
+ 			for ( cx = 0; cx < repeat; cx++ ) {
+-				c = write_ip(sock, buf, IP_H + payload_s);
++				c = libnet_write_ip(sock, buf, IP_H + payload_s);
+ 				datapushed+=c;
+ 			}
+ 	/*  This is way too noisy!

@@ -1,0 +1,13 @@
+--- isic.h~	Tue Dec  7 16:09:04 1999
++++ isic.h	Mon Jan 24 14:20:18 2000
+@@ -7,10 +7,6 @@
+ 
+ #include <libnet.h>
+ 
+-#include <netinet/tcp.h>
+-#include <netinet/udp.h>
+-#include <netinet/ip_icmp.h>
+-
+ #include <sys/time.h>
+ #include <signal.h>
+ 

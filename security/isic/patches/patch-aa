@@ -1,0 +1,12 @@
+--- configure.in.orig	Tue Dec  7 16:09:04 1999
++++ configure.in	Mon Jan 24 14:18:20 2000
+@@ -4,7 +4,8 @@
+ AC_PROG_INSTALL
+ 
+ dnl Bah.... Quick hack to fine libnet
+-AC_CHECK_FILE(/usr/local/lib/libnet.a, [FOO=$LIBS; LIBS=-L/usr/local/lib $LIBS])
++PREFIX=/usr/local
++AC_CHECK_FILE($PREFIX/lib/libnet.a, [FOO=$LIBS; CFLAGS="$CFLAGS -I$PREFIX/include" LIBS="-L$PREFIX/lib $LIBS"])
+ AC_CHECK_FILE(/usr/lib/aout/libnet.a, [FOO=$LIBS; LIBS=-L/usr/lib/aout $LIBS])
+ AC_HAVE_LIBRARY(net, [DEFINES= ] ,
+   AC_MSG_ERROR([Cannot find libnet...  please get it from

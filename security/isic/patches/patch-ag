@@ -1,0 +1,28 @@
+--- Makefile.in.orig	Mon Dec 27 00:15:04 1999
++++ Makefile.in	Mon Jan 24 14:50:27 2000
+@@ -2,6 +2,8 @@
+ # To build for Trinux, add '-static' to LDFLAGS
+ # and 'strip *sic' after they compile
+ 
++PREFIX ?= /usr/local
++
+ CC	= @CC@
+ DEFS	= @DEFS@ `libnet-config --defines`
+ CFLAGS	= @CFLAGS@ `libnet-config --cflags`
+@@ -29,7 +31,7 @@
+ icmpsic: icmpsic.c isic.h
+ 	gcc -o icmpsic icmpsic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
+ 
+-esic: esic.c esic.h
++esic: esic.c
+ 	gcc -o esic esic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
+ 
+ realclean: distclean
+@@ -43,5 +45,5 @@
+ 	tar -czvf ../isic-$(VERSION).tgz *
+ 
+ install: $(BINS)
+-	$(INSTALL) -g 0 -m 0755 -o root -d /usr/local/bin
+-	$(INSTALL) -g 0 -m 0755 -o root -c $(BINS) /usr/local/bin
++	$(INSTALL) -m 0755 -d ${PREFIX}/bin
++	$(INSTALL) -m 0755 -c $(BINS) ${PREFIX}/bin

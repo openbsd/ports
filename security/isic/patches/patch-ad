@@ -1,0 +1,47 @@
+--- icmpsic.c.orig	Tue Dec  7 16:09:04 1999
++++ icmpsic.c	Mon Jan 24 14:27:21 2000
+@@ -79,7 +79,7 @@
+ 			dst_ip_rand = 1;
+ 			break;
+ 		}
+-		if (!(dst_ip = name_resolve(optarg, 1))) {
++		if (!(dst_ip = libnet_name_resolve(optarg, 1))) {
+ 			fprintf(stderr, "Bad dest IP\n");
+ 			exit( -1 );
+ 		}
+@@ -91,7 +91,7 @@
+ 			src_ip_rand = 1;
+ 			break;
+ 		}
+-		if (!(src_ip = name_resolve(optarg, 1))) {
++		if (!(src_ip = libnet_name_resolve(optarg, 1))) {
+ 			fprintf(stderr, "Bad source IP\n");
+ 			exit( -1 );
+ 		}
+@@ -156,7 +156,7 @@
+ 		exit( -1 );
+ 	}
+ 
+-	if ( (sock = open_raw_sock(IPPROTO_RAW)) == -1 ) {
++	if ( (sock = libnet_open_raw_sock(IPPROTO_RAW)) == -1 ) {
+ 		perror("socket: ");
+ 		exit(EXIT_FAILURE);
+ 	}
+@@ -258,7 +258,7 @@
+ 
+ 		if ( rand() <= (RAND_MAX * ICMPCksm) )
+ 			icmp->icmp_cksum = rand() & 0xffff;
+-		else	do_checksum(buf, IPPROTO_ICMP, 4 + payload_s);
++		else	libnet_do_checksum(buf, IPPROTO_ICMP, 4 + payload_s);
+ 
+ 
+ 
+@@ -273,7 +273,7 @@
+ 		
+ 		if ( skip <= acx ) {
+ 			for ( cx = 0; cx < repeat; cx++ ) {
+-				c = write_ip(sock, buf, packet_len);
++				c = libnet_write_ip(sock, buf, packet_len);
+ 				datapushed+=c;
+ 			}
+ 			if (c != (packet_len) ) {
