@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.360 2005/03/30 03:16:24 jolan Exp $
+# $OpenBSD: Makefile,v 1.361 2005/03/30 07:45:54 jolan Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -157,6 +157,7 @@
      SUBDIR += p5-Net-CIDR-Lite
      SUBDIR += p5-Net-DAAP-Client
      SUBDIR += p5-Net-DAAP-DMAP
+     SUBDIR += p5-Net-DAV-Server
      SUBDIR += p5-Net-DNS
      SUBDIR += p5-Net-DNS-SEC
      SUBDIR += p5-Net-Daemon
