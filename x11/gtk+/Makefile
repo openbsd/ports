@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2001/04/22 21:39:01 brad Exp $
-
-.if ${MACHINE_ARCH} == "powerpc"
-BROKEN=		A bug in GCC on powerpc
-.endif
+# $OpenBSD: Makefile,v 1.45 2001/06/29 22:32:52 drahn Exp $
 
 COMMENT=	"General Toolkit for X11 GUI"
 
