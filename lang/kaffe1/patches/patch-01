@@ -1,0 +1,11 @@
+--- system.h.orig	Sat Apr  3 14:07:25 1999
++++ system.h	Thu Jul 15 18:40:15 1999
+@@ -28,7 +28,7 @@
+ #define	kaffe_specification_name	"Java Platform API Specification"
+ #define	kaffe_class_version		"46.0"
+ 
+-#if defined(unix) || defined(__BEOS__)
++#if defined(unix) || defined(__unix__) ||  defined(__BEOS__)
+ #define	file_separator		"/"
+ #define	path_separator		":"
+ #define	line_separator		"\n"
