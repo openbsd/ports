@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2004/07/24 12:47:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2004/08/01 16:20:01 naddy Exp $
 bin/kcolorchooser
 bin/kcoloredit
 bin/kdvi
@@ -946,3 +946,4 @@ share/services/svgthumbnail.desktop
 share/servicetypes/kimageviewer.desktop
 share/servicetypes/kimageviewercanvas.desktop
 share/servicetypes/ksvgrenderer.desktop
+%%SHARED%%
