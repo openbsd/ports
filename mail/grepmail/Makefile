@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/28 20:15:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/06/04 19:23:30 shell Exp $
 # vim:ts=8
 
 DISTNAME=	grepmail-4.47
-CATEGORIES=	mail
+CATEGORIES=	mail perl5
 NEED_VERSION=	1.405
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,9 +19,10 @@ MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
 BUILD_DEPENDS=	${PERL_MODULES}/Date/Parse.pm::devel/p5-Time-TimeDate \
-		${PERL_MODULES}/Date/Manip.pm::converters/p5-DateManip \
+		${PERL_MODULES}/Date/Manip.pm::converters/p5-DateManip
+RUN_DEPENDS=	${BUILD_DEPENDS} \
 		bzip2::archivers/bzip2
-RUN_DEPENDS=	bzip2::archivers/bzip2
+		
 CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>
