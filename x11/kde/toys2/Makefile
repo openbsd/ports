@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2001/09/19 14:13:29 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/09/19 15:20:12 espie Exp $
 
 COMMENT=	"some useless kde applications"
 
 CATEGORIES=		x11 x11/kde games
-NEED_VERSION=		1.447
+NEED_VERSION=		1.458
 VERSION=		2.2.1
 DISTNAME=		kdetoys-${VERSION}
 DIST_SUBDIR=		kde
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	stable/${VERSION}/src/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=	qt2
-LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
+LIB_DEPENDS=	kdecore.3::x11/kde/libs2
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}

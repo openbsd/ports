@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2001/09/19 14:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/09/19 15:20:12 espie Exp $
 
 COMMENT= 		"X11 toolkit, graphics applications"
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.447
+NEED_VERSION=		1.458
 VERSION=		2.2.1
 DISTNAME=		kdegraphics-${VERSION}
 DIST_SUBDIR=		kde
@@ -13,10 +13,9 @@ MASTER_SITE_SUBDIR=	stable/${VERSION}/src/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=	qt2
-LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
+LIB_DEPENDS=	kdecore.3::x11/kde/libs2
 
-BUILD_DEPENDS=	uic::x11/qt2-designer
-BUILD_DEPENDS+=	zsh:zsh-*:shells/zsh/stable
+BUILD_DEPENDS=	::x11/qt2-designer :zsh-*:shells/zsh/stable
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}

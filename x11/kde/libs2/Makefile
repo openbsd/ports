@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2001/09/19 14:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2001/09/19 15:20:12 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.447
+NEED_VERSION=		1.458
 VERSION=		2.2.1
 DISTNAME=		kdelibs-${VERSION}
 DIST_SUBDIR=		kde
@@ -17,16 +17,15 @@ EXTRACT_SUFX=		.tar.bz2
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
 MODULES=	qt2
-LIB_DEPENDS= 	png.2.::graphics/png \
-		jpeg.62.::graphics/jpeg \
-		tiff.35.::graphics/tiff \
-		audiofile.::devel/libaudiofile \
-		pcreposix.::devel/pcre \
+LIB_DEPENDS= 	png.2::graphics/png \
+		jpeg.62::graphics/jpeg \
+		tiff.35::graphics/tiff \
+		audiofile::devel/libaudiofile \
+		pcreposix::devel/pcre \
 		xml2:libxml->=2.3.13:textproc/libxml \
 		bz2::archivers/bzip2
 
-BUILD_DEPENDS=	zsh:zsh-*:shells/zsh/stable
-BUILD_DEPENDS+=	${LOCALBASE}/share/doc/qt2/html/index.html::x11/qt2,-html
+BUILD_DEPENDS=	:zsh-*:shells/zsh/stable ::x11/qt2,-html
 
 # glib2.0 
 # qt docs

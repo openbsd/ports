@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2001/09/19 14:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2001/09/19 15:20:11 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"X11 toolkit, netscape plugins"
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.447
+NEED_VERSION=		1.458
 VERSION=		2.2.1
 DISTNAME=		kdebase-${VERSION}
 PKGNAME-plugins=	kdebase-ns-${VERSION}
@@ -26,14 +26,12 @@ SUBPACKAGE?=
 USE_MOTIF=	any
 .endif
 
-LIB_DEPENDS=	kdecore.3,kdeui,kdezoinx::x11/kde/libs2 \
+LIB_DEPENDS=	kdecore.3,kdeui::x11/kde/libs2 \
 		ldap.2::databases/openldap \
 		vorbis.::audio/libvorbis \
 		cdda_paranoia.::audio/cdparanoia
 
-BUILD_DEPENDS=	uic::x11/qt2-designer
-BUILD_DEPENDS+=	zsh:zsh-*:shells/zsh/stable
-BUILD_DEPENDS+= ${LOCALBASE}/include/lame/lame.h::audio/lame
+BUILD_DEPENDS=	::x11/qt2-designer :zsh-*:shells/zsh/stable ::audio/lame
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}

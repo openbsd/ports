@@ -1,24 +1,22 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/21 17:22:53 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/19 15:20:12 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries documentation"
 CATEGORIES=		x11 x11/kde devel
-NEED_VERSION=		1.363
-VERSION=		2.2
+NEED_VERSION=		1.458
+VERSION=		2.2.1
 PKGNAME=		kdelibs-doc-${VERSION}
 
 HOMEPAGE=		http://www.kde.org
 DISTFILES=
 
-BUILD_DEPENDS=	kdoc::x11/kde/kdoc2 \
-	/nonexistent::x11/kde/libs2:patch \
-	${LOCALBASE}/share/doc/qt2/html/classes.html::x11/qt2,-html
+BUILD_DEPENDS=	::x11/kde/kdoc2 ::x11/kde/libs2:patch ::x11/qt2,-html
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 WRKDIST=	${WRKDIR}
 DDIR=		${PREFIX}/share/doc/html/kdelibs
 
-KSRC=`cd ${PORTSDIR} && cd x11/kde/libs2 && make show VARNAME=WRKSRC`
+KSRC=`cd ${PORTSDIR} && cd x11/kde/libs2 && make show=WRKSRC`
 
 do-build:
 	qt2kdoc -u "file:${LOCALBASE}/share/doc/qt2/html" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/09/19 14:13:29 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/09/19 15:20:12 espie Exp $
 
 COMMENT=		games for KDE
 COMMENT-cards=		faces for kde card games
@@ -29,7 +29,7 @@ COMMENT-kwin4=		4 in a rows game for kde
 COMMENT-lskat=		card game for two players, based on Skat
 
 CATEGORIES=		x11 x11/kde games
-NEED_VERSION=		1.404
+NEED_VERSION=		1.458
 VERSION=		2.2.1
 DISTNAME=		kdegames-${VERSION}
 DIST_SUBDIR=		kde
@@ -42,9 +42,8 @@ EXTRACT_SUFX=		.tar.bz2
 # duplicated over the place.
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
-LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
-BUILD_DEPENDS=	uic::x11/qt2-designer
-BUILD_DEPENDS+=	zsh:zsh-*:shells/zsh/stable
+LIB_DEPENDS=	kdecore.3::x11/kde/libs2
+BUILD_DEPENDS=	::x11/qt2-designer :zsh-*:shells/zsh/stable
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
@@ -66,7 +65,7 @@ SUBST_VARS=VERSION
 
 .if defined(PACKAGING)
 .  if (${SUBPACKAGE} == "-kpat" || ${SUBPACKAGE} == "-kpoker" || ${SUBPACKAGE} == "-lskat")
-RUN_DEPENDS+=	${LOCALBASE}/lib/libkdegames.la::x11/kde/games2,-cards
+RUN_DEPENDS+=	::x11/kde/games2,-cards
 .  endif
 .endif
 

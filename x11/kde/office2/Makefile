@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2001/09/06 13:01:53 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/09/19 15:20:12 espie Exp $
 
 COMMENT=		"office applications for kde"
 CATEGORIES=		x11 x11/kde productivity
-NEED_VERSION=		1.451
+NEED_VERSION=		1.458
 VERSION=		1.1
 DISTNAME=		koffice-${VERSION}
 DIST_SUBDIR=		kde
@@ -13,9 +13,8 @@ EXTRACT_SUFX=		.tar.bz2
 
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
-BUILD_DEPENDS=	zsh:zsh-*:shells/zsh/stable \
-				uic::x11/qt2-designer
-LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
+BUILD_DEPENDS=	:zsh-*:shells/zsh/stable ::x11/qt2-designer
+LIB_DEPENDS=	kdecore.3::x11/kde/libs2
 
 MODULES=	qt2
 CONFIGURE_STYLE=	autoconf
