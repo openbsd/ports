@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Fri Jul 21 03:17:46 2000
++++ doc/Makefile.in	Fri Jul 21 03:22:01 2000
+@@ -38,7 +38,7 @@
+ 
+ #-------------------------------------------------------------------------
+ 
+-all:	rxvt.1
++all:	# rxvt.1
+ 
+ rxvt.1: rxvt.tbl Makefile
+ 	@if test x$(TBL) = x; then : ; else echo "$(TBL) $(srcdir)/rxvt.tbl | grep -v '^.lf' > rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl | grep -v '^.lf' > rxvt.1 ; fi

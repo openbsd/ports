@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Jan 18 14:29:32 2000
-+++ Makefile.in	Tue Jan 18 14:29:52 2000
+--- Makefile.in.orig	Tue Dec 21 05:07:54 1999
++++ Makefile.in	Fri Jul 21 02:29:31 2000
 @@ -9,7 +9,7 @@
  first_rule: all
  dummy:

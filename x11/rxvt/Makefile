@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2000/06/26 15:40:31 jasoni Exp $
+# $OpenBSD: Makefile,v 1.15 2000/07/21 07:35:06 brad Exp $
 
-DISTNAME=	rxvt-2.7.2
+DISTNAME=	rxvt-2.7.3
 CATEGORIES=	x11
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 		ftp://mason.primenet.com.au/pub/rxvt/ 
 
@@ -14,12 +15,9 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--enable-utmp --enable-wtmp \
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--enable-utmp --enable-wtmp \
 		--with-xpm --enable-xpm-background --enable-transparency \
 		--enable-xgetdefault --enable-languages --enable-xim 
-
-post-install:
-	@chmod 4755 ${PREFIX}/bin/rxvt
 
 .include <bsd.port.mk>

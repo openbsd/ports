@@ -1,6 +1,6 @@
---- src/feature.h.orig	Tue Jan 18 16:18:23 2000
-+++ src/feature.h	Tue Jan 18 16:19:00 2000
-@@ -392,7 +392,7 @@
+--- src/feature.h.orig	Thu Jan 13 20:26:24 2000
++++ src/feature.h	Fri Jul 21 02:29:44 2000
+@@ -397,7 +397,7 @@
   */
  #define NFONTS		7
  #define FONT0_IDX	2

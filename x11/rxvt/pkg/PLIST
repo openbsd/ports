@@ -1,3 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.5 2000/07/21 07:35:07 brad Exp $
+@mode 4755
 bin/rxvt
-@exec chmod 4755 %D/bin/rxvt
+@mode
 man/man1/rxvt.1
