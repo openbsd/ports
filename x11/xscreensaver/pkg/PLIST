@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/06/24 16:23:37 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/07/07 14:31:21 sturm Exp $
 !%%no_gle%%
 %%gtk2%%
 @comment bin/screensaver-properties-capplet
@@ -57,7 +57,6 @@ lib/xscreensaver/config/engine.xml
 lib/xscreensaver/config/epicycle.xml
 lib/xscreensaver/config/eruption.xml
 lib/xscreensaver/config/euler2d.xml
-lib/xscreensaver/config/extrusion.xml
 lib/xscreensaver/config/fadeplot.xml
 lib/xscreensaver/config/fireflies.xml
 lib/xscreensaver/config/flag.xml
@@ -436,7 +435,6 @@ man/man1/engine.1
 man/man1/epicycle.1
 man/man1/eruption.1
 man/man1/euler2d.1
-man/man1/extrusion.1
 man/man1/fadeplot.1
 man/man1/flag.1
 man/man1/flame.1
