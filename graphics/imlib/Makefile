@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.31 2001/10/24 12:19:22 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2001/10/28 03:30:36 brad Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	"image manipulation library for X11"
 
 DISTNAME=	imlib-1.9.8.1
 CATEGORIES=	devel graphics
-NEED_VERSION=	1.474
+NEED_VERSION=	1.475
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/imlib
 
 LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
+		jpeg.62::graphics/jpeg \
 		gif.4.1::graphics/giflib \
 		png.2::graphics/png \
 		tiff.35::graphics/tiff
