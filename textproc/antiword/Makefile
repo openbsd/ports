@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/01 22:08:08 obecian Exp $
+# $OpenBSD: Makefile,v 1.3 2001/02/01 18:09:03 brad Exp $
 
 DISTNAME=	antiword-0.30
 CATEGORIES=	textproc
-NEED_VERSION=	1.320
+NEED_VERSION=	1.336
 MASTER_SITES=	http://www.winfield.demon.nl/linux/
-
-WRKDIST=	${WRKDIR}/antiword.0.30
 
 HOMEPAGE=	http://www.winfield.demon.nl/
 
@@ -15,6 +13,11 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall -pedantic -DNDEBUG" \
+		LD="${CC}"
+
+WRKDIST=	${WRKDIR}/antiword.0.30
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/antiword ${PREFIX}/bin
