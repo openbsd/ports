@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/08/26 07:37:59 mark Exp $
+# $OpenBSD: Makefile,v 1.2 2002/08/26 07:51:08 mark Exp $
 
 COMMENT=		"MS SQL audit tools"
 
@@ -10,6 +10,7 @@ HOMEPAGE=		http://www.cqure.net/
 
 MAINTAINER=		Mark Grimes <mark@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
