@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2002/05/23 14:37:22 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2002/07/16 12:20:42 espie Exp $
 ${KDE}/libchildpanel_panelextension.so.1.0
 ${KDE}/libclock_panelapplet.so.1.0
 ${KDE}/libdockbar_panelextension.so.1.0
