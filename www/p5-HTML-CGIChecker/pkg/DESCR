@@ -1,0 +1,19 @@
+HTML::CGIChecker is a module for web developers to parse HTML and
+to detect HTML code that could break a page in some way.
+
+This module is not a HTML validator, but it allows one to check the
+HTML code that users post to a web application, for example to a
+discussion board, to prevent them to post a piece of code that would
+render the rest of a page it is displayed on unusable.
+
+Using it one also can deny javascripts, images, tables or any other
+tags on an individual basis. It also can check for correct quoting
+and correct URLs.
+
+The module can autocorrect some common bad users' behaviour, for
+example the use of unescaped HTML brackets in a chat room, etc.
+
+It is easy to use and very useful in any CGI application in which
+you want its users to be able to use HTML in their posts to some
+customizable extent. It is object oriented and designed to be easily
+extensible.
