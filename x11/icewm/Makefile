@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2002/01/20 19:54:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2002/05/13 19:08:46 jsyn Exp $
 
 COMMENT=		"small, fast window manager"
 
 DISTNAME=		icewm-1.0.9-2
 PKGNAME=		icewm-1.0.9.2
 CATEGORIES=     	x11	
-NEED_VERSION=		1.500
+NEED_VERSION=		1.528
 
 HOMEPAGE=		http://www.icewm.org/
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=           ${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=     icewm
+MASTER_SITES=           ${MASTER_SITE_SOURCEFORGE:=icewm/}
 
 LIB_DEPENDS=		Imlib.19::graphics/imlib
 
