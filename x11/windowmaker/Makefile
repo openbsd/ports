@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/12/18 08:13:40 jasoni Exp $
+# $OpenBSD: Makefile,v 1.3 1998/12/28 22:51:48 jasoni Exp $
 #
 
 DISTNAME=	WindowMaker-0.20.3
@@ -16,9 +16,10 @@ LIB_DEPENDS=	jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
                 png\\.1\\.:${PORTSDIR}/graphics/png \
 		gif\\.3\\.:${PORTSDIR}/graphics/giflib
 GNU_CONFIGURE=	YES
-CONFIGURE_ENV=	INSTALL="/usr/bin/install -c"
-CONFIGURE_ARGS=	--with-gfx-incs=-I/usr/local/include \
-		--with-gfx-libs=-L/usr/local/lib 
+CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/share/WindowMaker/Pixmaps \
+		--with-gfx-incs="-I${PREFIX}/include -I${PREFIX}/include/giflib" \
+		--with-gfx-libs=-L${PREFIX}/lib \
+		--disable-debug
 
 post-install:	
 		@${INSTALL_DATA} ${WRKDIR}/WindowMaker-data/pixmaps/* \

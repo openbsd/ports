@@ -1,81 +1,72 @@
 --- libPropList/filehandling.c.orig	Sat Oct 17 15:58:37 1998
-+++ libPropList/filehandling.c	Sat Dec 19 23:04:09 1998
-@@ -16,6 +16,7 @@
- #include <stdlib.h>
++++ libPropList/filehandling.c	Fri Dec 25 15:04:44 1998
+@@ -17,6 +17,10 @@
  #include <string.h>
  #include <unistd.h>
-+#include <limits.h>
  
++#ifdef HAVE_MKSTEMP
++#	include <limits.h>
++#endif
++
  #define pl_scan_string(c) yy_scan_string(c)
  #define plparse() yyparse()
-@@ -345,58 +346,30 @@
+ #define pl_delete_buffer(b) yy_delete_buffer(b)
+@@ -345,22 +349,34 @@
  
  BOOL PLSave(proplist_t pl, BOOL atomically)
  {
--  const char *theFileName;
++#ifdef HAVE_MKSTEMP
 +  char theFileName[ PATH_MAX+1 ] = "\0";
 +  const char *tempmask = ".XXXXXXXXXX";
-   const char *theRealFileName = NULL;
--  char tmp_fileName[255];
--  char tmp_realFileName[255];
--  char dirname[255];
--  char *tmp_dirname, *tmp2_dirname;
--  char *basename, *tmp_basename;
--  FILE *theFile;
-+  FILE *theFile = NULL;
++#else
+   const char *theFileName;
+-  const char *theRealFileName = NULL;
+   char tmp_fileName[255];
+   char tmp_realFileName[255];
+   char dirname[255];
+   char *tmp_dirname, *tmp2_dirname;
+   char *basename, *tmp_basename;
++#endif
++  const char *theRealFileName = NULL;
+   FILE *theFile;
    int c;
    char *desc = NULL;
    
    theRealFileName = PLGetString(PLGetFilename(pl));
-+
    if(!theRealFileName) return NO;
-   
-+  /* Open the file (whether temp or real) for writing. */
+-  
++
    if (atomically)
      {
--      theFileName = tmpnam(NULL);
--      strcpy(tmp_fileName, theFileName);
--
--      if((tmp_basename=strtok(tmp_fileName, "/")))
--	do
--	  basename=tmp_basename;
--	while((tmp_basename=strtok(NULL, "/")));
--      else
--	basename=(char *)theFileName;
--	
--      strcpy(tmp_realFileName, theRealFileName);
--      dirname[0]='\0';
--
--      if((tmp_dirname=strtok(tmp_realFileName, "/")))
-- 	{
--	  if(theRealFileName[0]=='/')
--	    strcat(dirname, "/");
--	  tmp2_dirname = strtok(NULL, "/");
--	  while((tmp2_dirname)) 
--	    { 
--	      strcat(dirname, tmp_dirname); 
--	      strcat(dirname, "/"); 
--	      tmp_dirname = tmp2_dirname; 
--	      tmp2_dirname = strtok(NULL, "/"); 
--	    } 
--	} 
--      
--      theFileName = strcat(dirname, basename);
++#ifdef HAVE_MKSTEMP 
 +       if (strlen( theRealFileName )+strlen( tempmask ) > PATH_MAX)
 +         goto failure;  /* path too long to create temporary file */
 +       strncpy( theFileName, theRealFileName, PATH_MAX );
-+       strncpy( theFileName, tempmask, PATH_MAX - strlen( theRealFileName ) );
++       strncat( theFileName, tempmask, PATH_MAX - strlen( theFileName ) );
 +       theFile = fdopen( mkstemp( theFileName ), "w" );	
++#else
+       theFileName = tmpnam(NULL);
+       strcpy(tmp_fileName, theFileName);
+ 
+@@ -389,14 +405,21 @@
+ 	} 
+       
+       theFileName = strcat(dirname, basename);
++#endif
      } 
    else
      { 
--      theFileName = theRealFileName;
-+       theFile = fopen( theRealFileName, "w" );
++#ifdef HAVE_MKSTEMP
++      theFile = fopen( theRealFileName, "w" );
++#else
+       theFileName = theRealFileName;
++#endif
      } 
--
--  /* Open the file (whether temp or real) for writing. */
--  theFile = fopen(theFileName, "w");
+ 
++#ifndef HAVE_MKSTEMP
+   /* Open the file (whether temp or real) for writing. */
+   theFile = fopen(theFileName, "w");
++#endif
  
    if (theFile == NULL)          /* Something went wrong; we weren't
                                   * even able to open the file. */
-

@@ -1,6 +1,73 @@
 --- configure.orig	Fri Nov 27 06:24:31 1998
-+++ configure	Sun Dec 20 10:36:34 1998
-@@ -1912,7 +1912,8 @@
++++ configure	Fri Dec 25 10:00:52 1998
+@@ -1270,65 +1270,7 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-# Find a good install program.  We prefer a C program (faster),
+-# so one script is as good as another.  But avoid the broken or
+-# incompatible versions:
+-# SysV /etc/install, /usr/sbin/install
+-# SunOS /usr/etc/install
+-# IRIX /sbin/install
+-# AIX /bin/install
+-# AFS /usr/afsws/bin/install, which mishandles nonexistent args
+-# SVR4 /usr/ucb/install, which tries to use the nonexistent group "staff"
+-# ./install, which can be erroneously created by make from ./install.sh.
+-echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
+-echo "configure:1285: checking for a BSD compatible install" >&5
+-if test -z "$INSTALL"; then
+-if eval "test \"`echo '$''{'ac_cv_path_install'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-    IFS="${IFS= 	}"; ac_save_IFS="$IFS"; IFS="${IFS}:"
+-  for ac_dir in $PATH; do
+-    # Account for people who put trailing slashes in PATH elements.
+-    case "$ac_dir/" in
+-    /|./|.//|/etc/*|/usr/sbin/*|/usr/etc/*|/sbin/*|/usr/afsws/bin/*|/usr/ucb/*) ;;
+-    *)
+-      # OSF1 and SCO ODT 3.0 have their own names for install.
+-      for ac_prog in ginstall installbsd scoinst install; do
+-        if test -f $ac_dir/$ac_prog; then
+-	  if test $ac_prog = install &&
+-            grep dspmsg $ac_dir/$ac_prog >/dev/null 2>&1; then
+-	    # AIX install.  It has an incompatible calling convention.
+-	    # OSF/1 installbsd also uses dspmsg, but is usable.
+-	    :
+-	  else
+-	    ac_cv_path_install="$ac_dir/$ac_prog -c"
+-	    break 2
+-	  fi
+-	fi
+-      done
+-      ;;
+-    esac
+-  done
+-  IFS="$ac_save_IFS"
+-
+-fi
+-  if test "${ac_cv_path_install+set}" = set; then
+-    INSTALL="$ac_cv_path_install"
+-  else
+-    # As a last resort, use the slow shell script.  We don't cache a
+-    # path for INSTALL within a source directory, because that will
+-    # break other packages using the cache if that directory is
+-    # removed, or if the path is relative.
+-    INSTALL="$ac_install_sh"
+-  fi
+-fi
+-echo "$ac_t""$INSTALL" 1>&6
+-
+-# Use test -z because SunOS4 sh mishandles braces in ${var-val}.
+-# It thinks the first close brace ends the variable substitution.
+-test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
+-
+-test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
++# No need to check for BSD compatible install again. Is there?
+ 
+ echo $ac_n "checking whether ln -s works""... $ac_c" 1>&6
+ echo "configure:1335: checking whether ln -s works" >&5
+@@ -1912,7 +1854,8 @@
    ;;
    *)
    IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS="${IFS}:"
@@ -10,22 +77,27 @@
      test -z "$ac_dir" && ac_dir=.
      if test -f $ac_dir/$ac_word; then
        ac_cv_path_CPP_PATH="$ac_dir/$ac_word"
-@@ -3751,7 +3752,7 @@
-     if test "$my_libok" = yes; then
- 	my_old_cppflags=$CPPFLAGS
- 	CPPFLAGS="$CPPFLAGS $GFX_INC_PATH $XCFLAGS"
--	ac_safe=`echo "gif_lib.h" | sed 'y%./+-%__p_%'`
-+	ac_safe=`echo "giflib/gif_lib.h" | sed 'y%./+-%__p_%'`
- echo $ac_n "checking for gif_lib.h""... $ac_c" 1>&6
- echo "configure:3757: checking for gif_lib.h" >&5
- if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
-@@ -3760,7 +3761,7 @@
-   cat > conftest.$ac_ext <<EOF
- #line 3762 "configure"
- #include "confdefs.h"
--#include <gif_lib.h>
-+#include <giflib/gif_lib.h>
- EOF
- ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:3767: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
-
+@@ -5068,7 +5011,22 @@
+       *) # Relative path.
+         ac_sub_cache_file="$ac_dots$cache_file" ;;
+       esac
+-  case "$ac_given_INSTALL" in
++      # Ensure that ac_given_INSTALL is non-empty!
++      # 
++      # It WILL be empty during normal ./configure runs because
++      # it is set inside a 'cat > $CONFIG_STATUS <<EOF' construct 
++      # and thus lost once the redirection ended.
++      # 
++      # This is harmless in cases where $INSTALL is not an
++      # environment variable since this fiddling would not be passed 
++      # along to the subshells doing configure's in subdirectories. BUT
++      # for BSD systems where this script is being run from a port
++      # Makefile that sets INSTALL in the environment it causes FAILURE
++      # when it comes time to actually install things!
++      if test -z "$ac_given_INSTALL"; then 
++         ac_given_INSTALL="$INSTALL"
++      fi
++      case "$ac_given_INSTALL" in
+         [/$]*) INSTALL="$ac_given_INSTALL" ;;
+         *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+         esac
