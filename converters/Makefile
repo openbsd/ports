@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/08/18 03:59:16 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2001/11/02 15:26:00 espie Exp $
 #
 
     SUBDIR += base64
@@ -6,6 +6,7 @@
     SUBDIR += html2wml
     SUBDIR += ish
     SUBDIR += libiconv
+    SUBDIR += libdvdcss
     SUBDIR += mimepp
     SUBDIR += mpack
     SUBDIR += p5-Convert-ASN1
