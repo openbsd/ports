@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2001/02/12 19:53:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.60 2001/02/17 11:57:40 jakob Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -19,6 +19,7 @@
      SUBDIR += dsniff
      SUBDIR += fragrouter
      SUBDIR += gnupg
+     SUBDIR += heimdal
      SUBDIR += isic
      SUBDIR += its4
      SUBDIR += john
