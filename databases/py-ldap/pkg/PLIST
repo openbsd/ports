@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/01 15:24:06 sturm Exp $
+@option no-default-conflict
+@pkgcfl py-ldap-*-${MODPY_VERSION}
+lib/python${MODPY_VERSION}/site-packages/_ldap.so
+lib/python${MODPY_VERSION}/site-packages/dsml.py
+lib/python${MODPY_VERSION}/site-packages/dsml.pyc
+lib/python${MODPY_VERSION}/site-packages/dsml.pyo
+lib/python${MODPY_VERSION}/site-packages/ldap/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ldap/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ldap/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/ldap/async.py
+lib/python${MODPY_VERSION}/site-packages/ldap/async.pyc
+lib/python${MODPY_VERSION}/site-packages/ldap/async.pyo
+lib/python${MODPY_VERSION}/site-packages/ldap/cidict.py
+lib/python${MODPY_VERSION}/site-packages/ldap/cidict.pyc
+lib/python${MODPY_VERSION}/site-packages/ldap/cidict.pyo
+lib/python${MODPY_VERSION}/site-packages/ldap/functions.py
+lib/python${MODPY_VERSION}/site-packages/ldap/functions.pyc
+lib/python${MODPY_VERSION}/site-packages/ldap/functions.pyo
+lib/python${MODPY_VERSION}/site-packages/ldap/ldapobject.py
+lib/python${MODPY_VERSION}/site-packages/ldap/ldapobject.pyc
+lib/python${MODPY_VERSION}/site-packages/ldap/ldapobject.pyo
+lib/python${MODPY_VERSION}/site-packages/ldap/modlist.py
+lib/python${MODPY_VERSION}/site-packages/ldap/modlist.pyc
+lib/python${MODPY_VERSION}/site-packages/ldap/modlist.pyo
+lib/python${MODPY_VERSION}/site-packages/ldap/sasl.py
+lib/python${MODPY_VERSION}/site-packages/ldap/sasl.pyc
+lib/python${MODPY_VERSION}/site-packages/ldap/sasl.pyo
+lib/python${MODPY_VERSION}/site-packages/ldap/schema/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ldap/schema/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ldap/schema/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/ldap/schema/models.py
+lib/python${MODPY_VERSION}/site-packages/ldap/schema/models.pyc
+lib/python${MODPY_VERSION}/site-packages/ldap/schema/models.pyo
+lib/python${MODPY_VERSION}/site-packages/ldap/schema/subentry.py
+lib/python${MODPY_VERSION}/site-packages/ldap/schema/subentry.pyc
+lib/python${MODPY_VERSION}/site-packages/ldap/schema/subentry.pyo
+lib/python${MODPY_VERSION}/site-packages/ldap/schema/tokenizer.py
+lib/python${MODPY_VERSION}/site-packages/ldap/schema/tokenizer.pyc
+lib/python${MODPY_VERSION}/site-packages/ldap/schema/tokenizer.pyo
+lib/python${MODPY_VERSION}/site-packages/ldapurl.py
+lib/python${MODPY_VERSION}/site-packages/ldapurl.pyc
+lib/python${MODPY_VERSION}/site-packages/ldapurl.pyo
+lib/python${MODPY_VERSION}/site-packages/ldif.py
+lib/python${MODPY_VERSION}/site-packages/ldif.pyc
+lib/python${MODPY_VERSION}/site-packages/ldif.pyo
+@dirrm lib/python${MODPY_VERSION}/site-packages/ldap/schema
+@dirrm lib/python${MODPY_VERSION}/site-packages/ldap
