@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2000/09/17 14:56:26 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2000/10/05 00:15:36 marc Exp $
 
+BROKEN=		"remote access exploit"
 VERSION=	4.21
 DISTNAME=	pine${VERSION}
 NEED_VERSION=	1.320
