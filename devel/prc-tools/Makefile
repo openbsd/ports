@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.19 2001/08/30 22:16:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2001/08/31 02:07:57 pvalchev Exp $
 
 FAKE=No
 COMMENT=	"PalmPilot(tm) development environment"
 
-DISTNAME=       prc-tools.0.5.0
-PKGNAME=	prc-tools-0.5.0
+VERSION=	0.5.0
+DISTNAME=       prc-tools.${VERSION}
+PKGNAME=	prc-tools-${VERSION}
 CATEGORIES=     devel palm
-NEED_VERSION=	1.440
+NEED_VERSION=	1.448
 MASTER_SITES=   ftp://ryeham.ee.ryerson.ca/pub/PalmOS/ \
 		${MASTER_SITE_GNU}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		binutils-2.7.tar.gz gdb-4.16.tar.gz gcc-2.7.2.2.tar.gz
 
-MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
+MAINTAINER=	ports@openbsd.org
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	YES
