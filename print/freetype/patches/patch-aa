@@ -1,0 +1,11 @@
+--- lib/arch/unix/Makefile.in.orig	Wed Mar 31 16:24:18 1999
++++ lib/arch/unix/Makefile.in	Wed Mar 31 16:24:31 1999
+@@ -178,7 +178,7 @@
+ libttf.la: $(LIB_FILES)
+ 	$(LIBTOOL) --mode=link $(CC) -o libttf.la $(LIB_FILES) \
+                                -rpath $(libdir) \
+-                               -version-info $(version_info) $(FT_LIBS)
++                               -version-info 1:2:0 $(FT_LIBS)
+ 
+ install: libttf.la
+ 	$(MKINSTALLDIRS) $(libdir) $(includedir)
