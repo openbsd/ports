@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-objc,v 1.1 2001/07/09 10:26:22 espie Exp $
+@comment $OpenBSD: PLIST-objc,v 1.2 2001/07/11 10:58:36 espie Exp $
 @option no-default-conflict
-@pkgcfl egcs-*-c++
-@pkgcfl gcc-*-c++
+@pkgcfl egcs-*-objc
+@pkgcfl gcc-*-objc
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/cc1obj
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/objc/NXConstStr.h
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/objc/Object.h

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-g77,v 1.1 2001/07/09 10:26:22 espie Exp $
+@comment $OpenBSD: PLIST-g77,v 1.2 2001/07/11 10:58:36 espie Exp $
 @option no-default-conflict
-@pkgcfl egcs-*-c++
-@pkgcfl gcc-*-c++
+@pkgcfl egcs-*-g77
+@pkgcfl gcc-*-g77
 @unexec install-info --delete --info-dir=%D/info %D/info/g77.info
 bin/eg77
 info/g77.info
