@@ -1,5 +1,5 @@
---- fig2dev/Imakefile.orig	Thu Apr 19 13:19:38 2001
-+++ fig2dev/Imakefile	Tue Jun 19 15:31:27 2001
+--- fig2dev/Imakefile.orig	Thu Apr 19 19:19:38 2001
++++ fig2dev/Imakefile	Fri Jul 19 09:22:56 2002
 @@ -28,13 +28,13 @@ XCOMM ******
  XCOMM You should point XFIGLIBDIR to the same directory you did when you compiled
  XCOMM and installed xfig.  This will be made automatic in the future.
@@ -32,7 +32,7 @@
 -PNGLIBDIR = $(USRLIBDIR)
 -PNGINC = -I/usr/include/X11
 +PNGLIBDIR = ${LOCALBASE}/lib
-+PNGINC = -I${LOCALBASE}/include
++PNGINC = -I${LOCALBASE}/include/libpng
  #endif
  
  XCOMM ****************
@@ -82,3 +82,12 @@
  
  #ifdef USEPNG
  DUSEPNG = -DUSE_PNG
+@@ -218,7 +218,7 @@ DEPLIBJPEG = $(JPEGLIBDIR)/libjpeg.a
+ 
+ IMAKE_DEFINES = $(DUSEPNG) $(DUSEJPEG) $(DUSEXPM)
+ 
+-DEVDEFINES = $(DUSEPNG) $(DUSEJPEG) $(DUSEXPM) $(XPMINC) $(JPEGINC) $(DDNFSS) $(DDA4) \
++DEVDEFINES = $(DUSEPNG) $(DUSEJPEG) $(DUSEXPM) $(PNGINC) $(XPMINC) $(JPEGINC) $(DDNFSS) $(DDA4) \
+ 		$(DDLATEX2E_GRAPHICS) $(DDEPSFIG) $(DDIBMGEC) $(DDDVIPS) $(I18N_DEV_DEFS)
+ 
+ #define IHaveSubdirs
