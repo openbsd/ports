@@ -1,5 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/22 22:39:40 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/05 18:35:46 brad Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
+
+# http://www.freebsd.org/cgi-bin/cvsweb.cgi/ports/net/gated/Makefile
+# see commit message for rev 1.22 of the Makefile
 
 BROKEN=		"Security hole (buffer overflow possibly yielding root)"
 
