@@ -1,0 +1,22 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/03/23 14:12:32 espie Exp $
+--- configure.in.orig	Sun Nov 12 17:44:04 2000
++++ configure.in	Fri Mar 23 14:55:44 2001
+@@ -513,7 +513,7 @@ if test "$with_dln_a_out" != yes; then
+                           LDFLAGS="-export-dynamic"
+ 			fi
+ 			rb_cv_dlopen=yes ;;
+-	openbsd*) 	LDSHARED="ld -Bforcearchive -Bshareable"
++	openbsd*) 	LDSHARED='$(CC) -shared -fPIC'
+ 			rb_cv_dlopen=yes ;;
+ 	bsdi3*) 	case "$CC" in
+ 			*shlicc*)	LDSHARED="$CC -r"
+@@ -780,6 +780,9 @@ if test "$enable_shared" = 'yes'; then
+ 	   LIBRUBY_ALIASES=  # a.out platforms
+ 	fi
+  	;;
++    openbsd*)
++        LIBRUBY_SO='lib$(RUBY_INSTALL_NAME).so.$(MAJOR).'`expr ${MINOR} \* 10 + ${TEENY}`
++	;;
+     solaris*)
+ 	XLDFLAGS='-R${prefix}/lib'
+  	;;

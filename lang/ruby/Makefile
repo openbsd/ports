@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2001/02/21 17:17:17 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/03/23 14:12:32 espie Exp $
 
+COMMENT=	object oriented script language with threads
 VERSION=1.6.2
 DISTNAME=ruby-${VERSION}
 CATEGORIES = lang
-NEED_VERSION=	1.336
+NEED_VERSION=	1.362
 MASTER_SITES=ftp://ftp.netlab.co.jp/pub/lang/ruby/ \
     ftp://ftp.iij.ad.jp/pub/lang/ruby/ \
     ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/ \
