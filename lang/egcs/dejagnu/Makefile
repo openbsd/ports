@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/28 00:11:30 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/28 01:19:05 miod Exp $
 
 DISTNAME=       dejagnu-19990614
 CATEGORIES=	devel lang/egcs
@@ -9,7 +9,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://gcc.gnuc/org/pub/gcc/infrastructure/
+MASTER_SITES=	ftp://gcc.gnuc.org/pub/gcc/infrastructure/
 
 BUILD_DEPENDS=	expect::lang/expect
 LIB_DEPENDS=	tk83.1.3:x11/tk/8.3
