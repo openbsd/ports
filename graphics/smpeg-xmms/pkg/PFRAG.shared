@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/07/29 21:49:00 pvalchev Exp $
+lib/xmms/Input/libsmpeg_xmms.la
+lib/xmms/Input/libsmpeg_xmms.so

@@ -1,0 +1,4 @@
+The smpeg xmms plugin allows playing mpeg videos in xmms and VCD movies,
+thanks to the smpeg library.
+
+WWW: ${HOMEPAGE}
