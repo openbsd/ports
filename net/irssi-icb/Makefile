@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/02/25 16:41:51 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/02/27 04:06:26 lebel Exp $
 
 NOT_FOR_ARCHS=  ${NO_SHARED_ARCHS}
 
@@ -35,6 +35,7 @@ post-extract:
 	@lndir -s `cd ${PORTSDIR} && cd net/irssi && ${MAKE} show VARNAME=WRKDIST` ${WRKDIR}/irssi-src
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/irssi
 	${INSTALL_DATA} ${WRKSRC}/README \
 	   		${PREFIX}/share/doc/irssi/icb-plugin.txt
 
