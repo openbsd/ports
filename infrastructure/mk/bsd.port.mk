@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.492 2001/11/12 01:27:26 pvalchev Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.493 2001/11/12 14:14:46 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1213,6 +1213,17 @@ _flavor_fragment= \
 		esac; \
 		if $$sawflavor; then \
 			toset="$$toset FLAVOR=\"$$flavor\""; \
+		fi; \
+		cd ${PORTSDIR}; \
+		if [ -L $$dir ]; then \
+			echo 1>&2 ">> Broken dependency: $$dir is a symbolic link"; \
+			exit 1; \
+		fi; \
+		if cd $$dir 2>/dev/null; then \
+			:; \
+		else \
+			echo 1>&2 ">> Broken dependency: $$dir non existent"; \
+			exit 1; \
 		fi
 
 # Various dependency styles
@@ -1280,20 +1291,11 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 		Xpackage) early_exit=true;; \
 		*) early_exit=true; dep="/nonexistent";; esac; \
 		${_flavor_fragment}; defaulted=false; \
-		case "X$$pkg" in X) pkg=`cd ${PORTSDIR} && cd $$dir && \
-			eval $$toset ${MAKE} _print-packagename`; \
+		case "X$$pkg" in X) pkg=`eval $$toset ${MAKE} _print-packagename`; \
 			defaulted=true;; esac; \
 		for abort in false false true; do \
 			if $$abort; then \
 				${ECHO_MSG} "Dependency check failed"; \
-				exit 1; \
-			fi; \
-			cd ${PORTSDIR}; \
-			if [ ! -d $$dir ]; then \
-				echo ">> No directory for $$dep ($$dir)"; \
-			fi; \
-			if [ -L $$dir ]; then \
-				echo ">> Broken dependency: $$dir is a symbolic link"; \
 				exit 1; \
 			fi; \
 			found=false; \
@@ -1311,7 +1313,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 				fi;; \
 			esac; \
 			${ECHO_MSG} "===>  Verifying $$target for $$what in $$dir"; \
-			if cd $$dir && eval $$toset ${MAKE} ${_DEPEND_THRU} $$target; then \
+			if eval $$toset ${MAKE} ${_DEPEND_THRU} $$target; then \
 				${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}"; \
 			else \
 				exit 1; \
@@ -2289,9 +2291,7 @@ clean-depends:
 	   `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
 		${_flavor_fragment}; \
-		if cd ${PORTSDIR} && cd $$dir 2>/dev/null ; then \
-			eval $$toset ${MAKE} CLEANDEPENDS=No ${_DEPEND_THRU} clean clean-depends; \
-		fi \
+		eval $$toset ${MAKE} CLEANDEPENDS=No ${_DEPEND_THRU} clean clean-depends; \
 	done
 .  endif
 .endif
@@ -2430,15 +2430,10 @@ recurse-build-depends:
 	@pname=`cd ${.CURDIR} && ${MAKE} _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
 	unset FLAVOR SUBPACKAGE || true; \
 	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
-		 | tr '\040' '\012' | sort -u`; do \
-		 ${_flavor_fragment}; \
-		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! eval $$toset ${MAKE} _DEPEND_ECHO=\"echo $$pname\" package-name recurse-build-depends ${_DEPEND_THRU}; then  \
-				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
-				exit 1; \
-			fi; \
-		else \
-			echo 1>&2  "*** Build dependencies bogus: \"$$dir\" non-existent"; \
+		| tr '\040' '\012' | sort -u`; do \
+		${_flavor_fragment}; \
+		if ! eval $$toset ${MAKE} _DEPEND_ECHO=\"echo $$pname\" package-name recurse-build-depends ${_DEPEND_THRU}; then  \
+			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 			exit 1; \
 		fi; \
 	done 
@@ -2454,13 +2449,8 @@ depends-list:
 	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
 		${_flavor_fragment}; \
-		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! eval $$toset ${MAKE} recurse-build-depends ${_DEPEND_THRU}; then  \
-				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
-				exit 1; \
-			fi; \
-		else \
-			echo 1>&2  "*** Build dependencies bogus: \"$$dir\" non-existent"; \
+		if ! eval $$toset ${MAKE} recurse-build-depends ${_DEPEND_THRU}; then  \
+			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 			exit 1; \
 		fi; \
 	done 
@@ -2476,13 +2466,8 @@ recurse-package-depends:
 	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
 		${_flavor_fragment}; \
-		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! eval $$toset ${MAKE} _DEPEND_ECHO=\"echo $$pname\" package-name recurse-package-depends ${_DEPEND_THRU}; then  \
-				echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
-				exit 1; \
-			fi; \
-		else \
-			echo 1>&2 "*** @pkgdep registration bogus: \"$$dir\" non-existent"; \
+		if ! eval $$toset ${MAKE} _DEPEND_ECHO=\"echo $$pname\" package-name recurse-package-depends ${_DEPEND_THRU}; then  \
+			echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
 			exit 1; \
 		fi; \
 	done
@@ -2499,7 +2484,6 @@ _recurse-lib-depends:
 		IFS=:; read dep pkg dir target; \
 		${_flavor_fragment}; \
 		IFS=,; for j in $$dep; do echo $$j; done; \
-		cd ${PORTSDIR}; cd $$dir; \
 		eval $$toset ${MAKE} ${_DEPEND_THRU} _recurse-lib-depends; \
 	}
 .endfor
@@ -2508,7 +2492,6 @@ _recurse-lib-depends:
 	echo '${_i}' | { \
 		IFS=:; read dep pkg dir target; \
 		${_flavor_fragment}; \
-		cd ${PORTSDIR}; cd $$dir; \
 		eval $$toset ${MAKE} ${_DEPEND_THRU} _recurse-lib-depends; \
 	}
 .endfor
@@ -2520,13 +2503,8 @@ package-depends:
 	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
 		${_flavor_fragment}; \
-		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! eval $$toset ${MAKE} recurse-package-depends ${_DEPEND_THRU}; then  \
-				echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
-				exit 1; \
-			fi; \
-		else \
-			echo 1>&2 "*** @pkgdep registration bogus: \"$$dir\" non-existent"; \
+		if ! eval $$toset ${MAKE} recurse-package-depends ${_DEPEND_THRU}; then  \
+			echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
 			exit 1; \
 		fi; \
 	done
@@ -2543,13 +2521,8 @@ _recurse-dir-depends:
 		self2="$$dir"; \
 		${_flavor_fragment}; \
 		toset="$$toset self=\"$$self2\""; \
-		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! eval $$toset ${MAKE} _recurse-dir-depends ${_DEPEND_THRU}; then  \
-				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
-				exit 1; \
-			fi; \
-		else \
-			echo 1>&2  "*** Build dependencies bogus: \"$$dir\" non-existent"; \
+		if ! eval $$toset ${MAKE} _recurse-dir-depends ${_DEPEND_THRU}; then  \
+			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 			exit 1; \
 		fi; \
 	done 
@@ -2565,13 +2538,8 @@ dir-depends:
 		self2="$$dir"; \
 		${_flavor_fragment}; \
 		toset="$$toset self=\"$$self2\""; \
-		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! eval $$toset ${MAKE} _recurse-dir-depends ${_DEPEND_THRU}; then  \
-				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
-				exit 1; \
-			fi; \
-		else \
-			echo 1>&2  "*** Build dependencies bogus: \"$$dir\" non-existent"; \
+		if ! eval $$toset ${MAKE} _recurse-dir-depends ${_DEPEND_THRU}; then  \
+			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 			exit 1; \
 		fi; \
 	done 
@@ -2608,13 +2576,8 @@ _package-recurse-dir-depends:
 		self2="$$dir"; \
 		${_flavor_fragment}; \
 		toset="$$toset self=\"$$self2\""; \
-		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! eval $$toset ${MAKE} _package-recurse-dir-depends ${_DEPEND_THRU}; then  \
-				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
-				exit 1; \
-			fi; \
-		else \
-			echo 1>&2  "*** Run dependencies bogus: \"$$dir\" non-existent"; \
+		if ! eval $$toset ${MAKE} _package-recurse-dir-depends ${_DEPEND_THRU}; then  \
+			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 			exit 1; \
 		fi; \
 	done 
@@ -2630,13 +2593,8 @@ package-dir-depends:
 		self2="$$dir"; \
 		${_flavor_fragment}; \
 		toset="$$toset self=\"$$self2\""; \
-		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! eval $$toset ${MAKE} _package-recurse-dir-depends ${_DEPEND_THRU}; then  \
-				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
-				exit 1; \
-			fi; \
-		else \
-			echo 1>&2  "*** Run dependencies bogus: \"$$dir\" non-existent"; \
+		if ! eval $$toset ${MAKE} _package-recurse-dir-depends ${_DEPEND_THRU}; then  \
+			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 			exit 1; \
 		fi; \
 	done 
@@ -2652,17 +2610,12 @@ new-depends:
 		| tr '\040' '\012' | sort -u`; do \
 		dir=$${spec#*:}; pkg=$${spec%:*}; \
 		${_flavor_fragment}; \
-		default=`cd ${PORTSDIR} && cd $$dir 2>/dev/null && eval $$toset ${MAKE} package-name`; \
+		default=`eval $$toset ${MAKE} package-name`; \
 		: $${pkg:=$$default}; \
 		echo "@newdepend $$self:$$pkg:$$default"; \
 		toset="$$toset self=\"$$default\""; \
-		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! eval $$toset ${MAKE} new-depends; then  \
-				echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
-				exit 1; \
-			fi; \
-		else \
-			echo 1>&2 "*** @pkgdep registration bogus: \"$$dir\" non-existent"; \
+		if ! eval $$toset ${MAKE} new-depends; then  \
+			echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
 			exit 1; \
 		fi; \
 	done
