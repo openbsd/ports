@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2003/05/26 16:53:05 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2003/05/31 00:03:22 brad Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc
@@ -23,7 +23,7 @@ MASTER_SITES=		http://www2.mplayerhq.hu/MPlayer/releases/
 MASTER_SITES+=		http://www.mplayerhq.hu/MPlayer/releases/
 MASTER_SITES+=		http://ftp.lug.udel.edu/MPlayer/releases/
 # The skins tarball changes on a daily basis so it is mirrored
-# locally, do NOT change this
+# locally, do NOT change this.
 #MASTER_SITES0=		http://www2.mplayerhq.hu/MPlayer/Skin/
 MASTER_SITES0=		http://www.sightly.net/mplayer/
 
@@ -35,17 +35,13 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKIN}-${SKINVER}${EXTRACT_SUFX}:0
 
 .include <bsd.own.mk>
 
-.if ${ELF_TOOLCHAIN:L} == "no"
-BUILD_DEPENDS+=	:binutils->=2.11.2:devel/binutils/stable
-MAKE_ENV+=	AR=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/ar
-CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/as
-.endif
-LIB_DEPENDS+=	png::graphics/png \
+MODULES= iconv
+
+LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
 		mp3lame::audio/lame \
 		ungif,gif::graphics/libungif \
-		vorbis.0,vorbisfile.1::audio/libvorbis \
-		iconv::converters/libiconv
+		vorbis.0,vorbisfile.1::audio/libvorbis
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
@@ -142,7 +138,7 @@ CONFIGURE_ARGS+=--disable-mad
 ONLY_FOR_ARCHS=i386
 
 RUN_DEPENDS+=	:win32-codecs-*:graphics/win32-codecs
-BUILD_DEPENDS+=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	:win32-codecs-*:graphics/win32-codecs
 CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32 \
 		--enable-qtx-codecs \
 		--with-reallibdir=${LOCALBASE}/lib/win32
@@ -164,11 +160,6 @@ CONFIGURE_ARGS+=--enable-aa
 LIB_DEPENDS+=  aa.1.3::graphics/aalib
 .else
 CONFIGURE_ARGS+=--disable-aa
-.endif
-
-.if ${ELF_TOOLCHAIN:L} == "no"
-post-patch:
-	@ln -s ${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/as ${WRKDIR}/bin/as
 .endif
 
 NO_REGRESS=	Yes
