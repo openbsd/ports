@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/24 18:39:25 avsm Exp $
+pear/lib/.registry/PHPUnit.reg
+pear/lib/PHPUnit.php
+pear/lib/PHPUnit/Assert.php
+pear/lib/PHPUnit/GUI/HTML.php
+pear/lib/PHPUnit/GUI/HTML.tpl
+pear/lib/PHPUnit/GUI/SetupDecorator.php
+pear/lib/PHPUnit/RepeatedTest.php
+pear/lib/PHPUnit/TestCase.php
+pear/lib/PHPUnit/TestDecorator.php
+pear/lib/PHPUnit/TestFailure.php
+pear/lib/PHPUnit/TestListener.php
+pear/lib/PHPUnit/TestResult.php
+pear/lib/PHPUnit/TestSuite.php
+@dirrm pear/lib/PHPUnit/GUI
+@dirrm pear/lib/PHPUnit
