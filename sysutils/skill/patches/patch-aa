@@ -1,0 +1,12 @@
+--- GuessOS.orig	Tue Feb  8 04:21:24 2000
++++ GuessOS	Thu Mar  9 13:32:31 2000
+@@ -65,6 +65,9 @@
+     *"4.4BSD"*)
+ 	OS=bsd44
+ 	;;
++    *"OpenBSD"*)
++	OS=bsd44
++	;;
+     *"NetBSD"*)
+ 	OS=bsd44
+ 	;;

@@ -1,0 +1,7 @@
+bin/skill
+bin/snice
+man/man1/skill.1
+man/man1/snice.1
+@exec chown root %D/bin/skill
+@exec chgrp kmem %D/bin/skill
+@exec chmod 2555 %D/bin/skill
