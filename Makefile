@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2004/05/07 09:04:21 xsa Exp $
+# $OpenBSD: Makefile,v 1.45 2004/06/21 21:28:29 xsa Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -49,6 +49,7 @@ SUBDIR += mail
 SUBDIR += math
 SUBDIR += mbone
 SUBDIR += misc
+SUBDIR += multimedia
 SUBDIR += net
 SUBDIR += news
 SUBDIR += palm
