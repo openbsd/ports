@@ -1,0 +1,8 @@
+@comment $NetBSD: PLIST,v 1.1 1998/03/18 22:40:47 cjs Exp $
+bin/icb
+libdata/icbserverdb
+libdata/icb/sample.icbrc
+libdata/icb/bartender
+libdata/icb/confuse
+libdata/icb/echofile
+@dirrm libdata/icb

@@ -1,0 +1,22 @@
+*** icb/strings.c.orig	Sat Feb 25 03:20:30 1995
+--- icb/strings.c	Wed May  6 18:32:20 1998
+***************
+*** 333,338 ****
+--- 333,339 ----
+  /* cat multiple strings into one */
+  /* call with strscat(dest, src, src, ...) */
+  
++ #if 0
+  char *
+  strscat(va_alist)
+  va_dcl
+***************
+*** 357,362 ****
+--- 358,364 ----
+  	*dest = '\0';
+  	return(dest);
+  }
++ #endif
+  
+  char *basename(path)
+  char *path;
