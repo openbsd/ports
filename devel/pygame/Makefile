@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2004/01/30 08:39:48 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/04/10 23:08:11 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"set of Python modules designed for writing games"
 
-DISTNAME=	pygame-1.5.6
+DISTNAME=	pygame-1.6
 CATEGORIES=	devel games
 HOMEPAGE=	http://www.pygame.org/
 
@@ -57,7 +57,9 @@ post-install:
 		${DOCDIR}/$i
 .endfor
 
-do-regress:
-	@cd ${WRKSRC} && ${MODPY_BIN} ./run_tests.py
+do-regress: fake
+	@cd ${WRKSRC} && ${MAKE_ENV} \
+		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
+			${MODPY_BIN} ./run_tests.py
 
 .include <bsd.port.mk>

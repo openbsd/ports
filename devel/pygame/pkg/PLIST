@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/08/08 21:48:58 jolan Exp $
-include/python${MODPY_VERSION}/pygame/CPS.h
+@comment $OpenBSD: PLIST,v 1.2 2004/04/10 23:08:11 xsa Exp $
 include/python${MODPY_VERSION}/pygame/font.h
 include/python${MODPY_VERSION}/pygame/mixer.h
 include/python${MODPY_VERSION}/pygame/pygame.h
-include/python${MODPY_VERSION}/pygame/setproctitle.h
 lib/python${MODPY_VERSION}/site-packages/pygame/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pygame/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/base.so
@@ -26,6 +24,8 @@ lib/python${MODPY_VERSION}/site-packages/pygame/joystick.so
 lib/python${MODPY_VERSION}/site-packages/pygame/key.so
 lib/python${MODPY_VERSION}/site-packages/pygame/locals.py
 lib/python${MODPY_VERSION}/site-packages/pygame/locals.pyc
+lib/python${MODPY_VERSION}/site-packages/pygame/macosx.py
+lib/python${MODPY_VERSION}/site-packages/pygame/macosx.pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/mixer.so
 lib/python${MODPY_VERSION}/site-packages/pygame/mixer_music.so
 lib/python${MODPY_VERSION}/site-packages/pygame/mouse.so
@@ -143,6 +143,7 @@ share/examples/pygame/data/punch.wav
 share/examples/pygame/data/secosmic_lo.wav
 share/examples/pygame/data/shot.gif
 share/examples/pygame/data/whiff.wav
+share/examples/pygame/eventlist.py
 share/examples/pygame/fonty.py
 @comment share/examples/pygame/glcube.py
 share/examples/pygame/liquid.py
