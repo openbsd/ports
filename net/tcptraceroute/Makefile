@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/07 04:23:22 obecian Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/10 01:09:36 obecian Exp $
 
 COMMENT=		"traceroute implementation using TCP packets"
 
@@ -19,6 +19,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://michael.toren.net/code/tcptraceroute/
 
 LIB_DEPENDS=		net::net/libnet
+
+MAKE_FLAGS=		CC="${CC}" \
+			CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+
+ALL_TARGET=
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcptraceroute ${PREFIX}/sbin
