@@ -1,0 +1,12 @@
+$OpenBSD: patch-mysql-test_Makefile_in,v 1.1 2001/07/22 20:35:29 brad Exp $
+--- mysql-test/Makefile.in.orig	Sun Jul 22 01:50:00 2001
++++ mysql-test/Makefile.in	Sun Jul 22 01:50:41 2001
+@@ -175,7 +175,7 @@ sql_server_dirs = @sql_server_dirs@
+ thread_dirs = @thread_dirs@
+ uname_prog = @uname_prog@
+ 
+-benchdir_root = $(prefix)
++benchdir_root = $(datadir)
+ testdir = $(benchdir_root)/mysql-test
+ EXTRA_SCRIPTS = mysql-test-run.sh install_test_db.sh
+ EXTRA_DIST = $(EXTRA_SCRIPTS) 

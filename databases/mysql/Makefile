@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.49 2001/06/15 19:10:11 brad Exp $
+# $OpenBSD: Makefile,v 1.50 2001/07/22 20:35:29 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 COMMENT=	"multithreaded SQL database (client)"
 COMMENT-server=	"multithreaded SQL database (server)"
+COMMENT-tests=	"multithreaded SQL database (test suite)"
 
-VERSION=	3.23.39
+VERSION=	3.23.40
 DISTNAME=	mysql-${VERSION}
 FULLPKGNAME=	mysql-client-${VERSION}
 FULLPKGNAME-server=	mysql-server-${VERSION}${FLAVOR_EXT}
+FULLPKGNAME-tests=	mysql-tests-${VERSION}
 CATEGORIES=	databases
 NEED_VERSION=	1.413
 MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
@@ -50,7 +52,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/pth" \
 FLAVORS=	max
 FLAVOR?=
 
-MULTI_PACKAGES=	-server
+MULTI_PACKAGES=	-server -tests
 SUBPACKAGE?=
 
 .if ${FLAVOR:L:Mmax}

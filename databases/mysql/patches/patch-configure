@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.8 2001/06/15 19:10:12 brad Exp $
---- configure.orig	Tue Jun 12 15:07:37 2001
-+++ configure	Fri Jun 15 10:50:33 2001
+$OpenBSD: patch-configure,v 1.9 2001/07/22 20:35:29 brad Exp $
+--- configure.orig	Wed Jul 18 17:19:27 2001
++++ configure	Sat Jul 21 20:12:14 2001
 @@ -2996,7 +2996,7 @@ else
    ;;
  esac
@@ -66,7 +66,7 @@ $OpenBSD: patch-configure,v 1.8 2001/06/15 19:10:12 brad Exp $
  #include <tcpd.h>
  int allow_severity = 0;
  int deny_severity  = 0;
-@@ -5929,8 +5900,6 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+@@ -5938,8 +5909,6 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
  #define $ac_tr_lib 1
  EOF
  
@@ -75,7 +75,7 @@ $OpenBSD: patch-configure,v 1.8 2001/06/15 19:10:12 brad Exp $
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -6160,29 +6129,6 @@ EOF
+@@ -6169,29 +6138,6 @@ EOF
  
  fi
  

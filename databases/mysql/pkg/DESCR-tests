@@ -1,0 +1,6 @@
+MySQL is a multi-threaded SQL database with a command syntax very similar
+to mSQL.
+
+This is the tests portion of MySQL, it provides a test suite for MySQL.
+
+WWW: ${HOMEPAGE}
