@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/02/21 01:37:19 couderc Exp $
+# $OpenBSD: Makefile,v 1.18 2004/02/26 13:43:26 couderc Exp $
 
 COMMENT=		"Fast and light gtk-based web browser"
 
@@ -29,9 +29,5 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-cookies --enable-ipv6
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dillo
-	${INSTALL_DATA} ${WRKSRC}/dillorc ${PREFIX}/share/examples/dillo/
 
 .include <bsd.port.mk>

@@ -1,0 +1,14 @@
+$OpenBSD: patch-dpid_Makefile_in,v 1.1 2004/02/26 13:43:26 couderc Exp $
+--- dpid/Makefile.in.orig	2004-02-08 13:57:47.000000000 +0100
++++ dpid/Makefile.in	2004-02-26 14:18:50.000000000 +0100
+@@ -462,8 +462,8 @@ uninstall-am: uninstall-binPROGRAMS unin
+ 
+ 
+ install-data-local :
+-	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
+-	echo dpi_dir=$(libdir)/dillo/dpi > $(DESTDIR)$(sysconfdir)/dpidrc
++	$(mkinstalldirs) $(PREFIX)/share/examples/dillo/
++	echo dpi_dir=$(libdir)/dillo/dpi > $(PREFIX)/share/examples/dillo/dpidrc
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
