@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/03/21 23:56:50 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2001/03/22 00:42:14 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt2
@@ -112,7 +112,7 @@ do-install:
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.30 ${PREFIX}/lib/qt2; \
 	fi
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/moc ${QT_LIBDIR}/bin
-	${INSTALL_MAN} ${WRKSRC}/moc/moc.1 ${QTMANDIR}/man1/moc2.1
+	${INSTALL_MAN} ${WRKSRC}/src/moc/moc.1 ${QT_MANDIR}/man1/moc2.1
 	@ln -sf ${TRUEPREFIX}/lib/qt2/bin/moc ${PREFIX}/bin/moc2
 	${INSTALL_SCRIPT} ${WRKBUILD}/bin/findtr ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKBUILD}/bin/qt20fix ${PREFIX}/bin
