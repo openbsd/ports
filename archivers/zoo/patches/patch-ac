@@ -1,0 +1,36 @@
+*** zoopack.c.orig	Tue Nov 25 15:02:41 1997
+--- zoopack.c	Tue Nov 25 15:10:46 1997
+***************
+*** 78,83 ****
+--- 78,86 ----
+  int curr_dir = 0;									/* create backup in curr dir */
+  static char partial_msg[] =
+     "Partially packed archive left in %s.\n";
++ #if defined(__OpenBSD__)
++ int tempfd;
++ #endif
+  
+  #ifdef FATTR
+  unsigned long zoofattr;							/* zoo archive protection */
+***************
+*** 171,178 ****
+  } else {
+     strcpy (temp_file, xes);
+  }
+! mktemp (temp_file);                    /* ... and make unique */
+! new_file = zoocreate (temp_file);
+  if (new_file == NOFILE)
+     prterror ('f', "Could not create temporary file %s.\n", temp_file);
+  
+--- 174,184 ----
+  } else {
+     strcpy (temp_file, xes);
+  }
+! tempfd = mkstemp (temp_file);                    /* ... and make unique */
+! if (tempfd == -1)
+!    prterror ('f', "Could not create temporary file %s.\n", temp_file);
+! new_file = fdopen(tempfd, "w+");
+! /*new_file = zoocreate (temp_file); */
+  if (new_file == NOFILE)
+     prterror ('f', "Could not create temporary file %s.\n", temp_file);
+  
