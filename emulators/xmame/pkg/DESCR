@@ -1,0 +1,13 @@
+MAME stands for Multi Arcade Machine Emulator. As the name suggests, it is
+a program that emulates the hardware (and low-level firmware) of a massive
+variety of arcade machines.
+
+MESS stands for Multi Emulator Super System. It is an emulator for the
+hardware of many different games consoles (e.g. Sega, NES, SNES, etc.)
+as well as many different old games-oriented home computers (e.g. C64,
+C128, ZX80, etc.)
+
+While the two programs are conceptually different, and have different
+development teams, they share a lot of code and are distributed together.
+
+You can check out the xmame/xmess homepage at: ${HOMEPAGE}

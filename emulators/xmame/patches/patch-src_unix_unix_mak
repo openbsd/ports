@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_unix_unix_mak,v 1.1.1.1 2001/04/04 14:31:55 naddy Exp $
+--- src/unix/unix.mak.orig	Tue Feb  6 01:45:55 2001
++++ src/unix/unix.mak	Tue Apr  3 23:27:41 2001
+@@ -319,17 +319,17 @@ install: $(INST.$(DISPLAY_METHOD)) insta
+ install-man:
+ 	@echo installing manual pages under $(MANDIR) ...
+ 	-$(INSTALL_MAN_DIR) $(MANDIR)
+-	$(INSTALL_MAN) doc/x$(TARGET).6 $(MANDIR)/x$(TARGET).6
++	$(INSTALL_MAN) doc/xmame.6 $(MANDIR)/x$(TARGET).6
+ 
+ doinstall:
+ 	@echo installing binaries under $(BINDIR)...
+ 	-$(INSTALL_PROGRAM_DIR) $(BINDIR)
+-	$(INSTALL_PROGRAM) $(NAME).$(DISPLAY_METHOD) $(BINDIR)
++	$(INSTALL_PROGRAM) $(NAME).$(DISPLAY_METHOD) $(BINDIR)/$(NAME)
+ 
+ doinstallsuid:
+ 	@echo installing binaries under $(BINDIR)...
+ 	-$(INSTALL_PROGRAM_DIR) $(BINDIR)
+-	$(INSTALL_PROGRAM_SUID) $(NAME).$(DISPLAY_METHOD) $(BINDIR)
++	$(INSTALL_PROGRAM_SUID) $(NAME).$(DISPLAY_METHOD) $(BINDIR)/$(NAME)
+ 
+ copycab:
+ 	@echo installing cabinet files under $(XMAMEROOT)...
