@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/02 19:24:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/02 19:38:04 naddy Exp $
 
 COMMENT=	"convert Intel assembly language (nasm) to AT&T syntax (gas)"
 
@@ -27,14 +27,12 @@ DATADIRS=	i2g g2i m2g
 DOCS=		BUGS DATAFILES README
 
 do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/intel2gas ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${DATAPREFIX}
 .for dir in ${DATADIRS}
 	${INSTALL_DATA_DIR} ${DATAPREFIX}/${dir}
 	@cd ${WRKSRC}; ${INSTALL_DATA} ${dir}/* ${DATAPREFIX}/${dir}
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/intel2gas ${PREFIX}/bin
-
-post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/intel2gas
 	@cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/intel2gas
 
