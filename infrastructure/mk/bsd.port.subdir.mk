@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.37 2001/04/18 14:43:55 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.38 2001/04/20 15:00:04 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -122,6 +122,7 @@ _SUBDIRUSE: .USE
 		edir=$${dir}; \
 	    else \
 		${ECHO_MSG} "===> ${PKGPATH}${_SEP}$${dir} non-existent"; \
+		${REPORT_PROBLEM}; \
 		continue; \
 	    fi; \
 	    ${ECHO_MSG} "===> ${PKGPATH}${_SEP}$${edir}$$display"; \
