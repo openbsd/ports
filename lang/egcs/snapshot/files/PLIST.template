@@ -3,7 +3,7 @@
 bin/egcc
 bin/eprotoize
 bin/eunprotoize
-bin/gcov
+bin/egcov
 bin/ARCH-gcc
 ARCH/include/_G_config.h
 lib/gcc-lib/ARCH/VERSION/SYSCALLS.c.X
