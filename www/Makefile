@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2001/01/19 12:44:45 avsm Exp $
+# $OpenBSD: Makefile,v 1.41 2001/01/21 19:40:48 avsm Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -44,6 +44,7 @@
 #    SUBDIR += p5-HTML-Stream
      SUBDIR += p5-HTML-TableExtract
      SUBDIR += p5-HTML-Tagset
+     SUBDIR += p5-HTML-Tree
 #    SUBDIR += p5-HTTPD-Tools
      SUBDIR += p5-URI
 #    SUBDIR += p5-WWW-Search
