@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/09/18 09:36:44 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2004/10/03 09:03:41 sturm Exp $
 
 COMMENT= 		"K Desktop Environment, multimedia applications"
 CATEGORIES=		x11 x11/kde
@@ -8,6 +8,7 @@ MODKDE_VERSION=		3.3.0
 
 LIB_DEPENDS= DCOP,kdecore.6,kdefakes,kdefx,kdesu,kdeui,kio,kmid,kparts,kmediaplayer,kutils::x11/kde/libs3 \
 	artsc,artskde::x11/kde/arts3 \
+	FLAC::audio/flac \
 	ogg::audio/libogg \
 	vorbis,vorbisenc::audio/libvorbis \
 	cdda_paranoia,cdda_interface::audio/cdparanoia \
