@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/07/08 14:21:58 matt Exp $
+# $OpenBSD: Makefile,v 1.2 2000/07/08 18:11:23 espie Exp $
 
 DISTNAME=	motif
 PKGNAME=	openmotif-2.1.30
 CATEGORIES=	x11
-
 NEED_VERSION=	1.310
 
 MASTER_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R2.1.30/tars/ \
@@ -13,8 +12,6 @@ MASTER_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R2.1.30/tars/ \
 DISTFILES=	openmotif2.1.30.tar.gz
 
 MAINTAINER=	smcho@tsp.korea.ac.kr
-
-FAKE=		Yes
 
 PERMIT_PACKAGE_CDROM=	Unclear
 PERMIT_DISTFILES_CDROM=	Unclear
@@ -49,39 +46,38 @@ pre-extract:
 
 post-patch:
 # fix sections
-	@(cd ${WRKSRC}/doc/man/man1 && perl -pi -e "s|user cmd|1|" *.1)
-	@(cd ${WRKSRC}/doc/man/man3 && perl -pi -e "s|library call|3|" *.3)
+	@cd ${WRKSRC}/doc/man/man1 && perl -pi -e "s|user cmd|1|" *.1
+	@cd ${WRKSRC}/doc/man/man3 && perl -pi -e "s|library call|3|" *.3
 # mwmrc is not a kernel interface!!
-	@(cd ${WRKSRC}/doc/man/man4 && perl -pi -e "s|special file|5|" *.4 \
-	    && mv mwmrc.4 ../man5/mwmrc.5)
-	@(cd ${WRKSRC}/doc/man/man5 && perl -pi -e "s|file formats|5|" *.5)
-	@(cd ${WRKSRC}/config/cf && \
+	@cd ${WRKSRC}/doc/man/man4 && perl -pi -e "s|special file|5|" *.4 \
+	    && mv mwmrc.4 ../man5/mwmrc.5
+	@cd ${WRKSRC}/doc/man/man5 && perl -pi -e "s|file formats|5|" *.5
+	@cd ${WRKSRC}/config/cf && \
 	    sed -e "s|%%PREFIX%%|${PREFIX}|g" < site.def > site.def.new && \
 	    mv -f site.def.new site.def && \
 	    sed -e "s|%%PREFIX%%|${PREFIX}|g" < Motif.tmpl > Motif.tmpl.new && \
-	    mv -f Motif.tmpl.new Motif.tmpl )
+	    mv -f Motif.tmpl.new Motif.tmpl
 
 pre-build:
 	# Import from our current X installation.
 	@cp -f ${XCONFIGF} ${WRKDIR}/motif/config/cf
 	@mkdir -p ${WRKSRC}/imports/x11
-	@(cd ${WRKSRC}/imports/x11 && for i in bin include lib ; do \
+	@cd ${WRKSRC}/imports/x11 && for i in bin include lib ; do \
 	    if [ -f $$i ] ; then rm $$i; fi; \
 	    ln -s ${X11BASE}/$$i $$i; \
-	done)
+	done
 
 # Install the manpages, because the Open Group doesn't think we need them.
 # Silly Open Group.
-do-install:
-	@(cd ${WRKSRC} && ${MAKE} install)
+post-install:
 	@echo -n "installing man pages:"
-	@(for i in man1 man3 man5 ; do cd ${WRKSRC}/doc/man/$$i; \
+	@for i in man1 man3 man5 ; do cd ${WRKSRC}/doc/man/$$i; \
 	    echo -n " $$i"; \
 	    for m in *; do \
 		 mkdir -p ${PREFIX}/man/$$i; \
 		 $(INSTALL_MAN) $$m ${PREFIX}/man/$$i; \
 	    done; \
-	done)
+	done
 	@echo "."
 
 .include <bsd.port.mk>
