@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/04/04 06:46:22 brad Exp $
-
+# $OpenBSD: Makefile,v 1.10 1999/04/18 23:19:52 brad Exp $
 # NOTE:
 # At one time this port was installed as libtiff34.a to get rid of a
 # rumored incompatibility between libtiff3.3 and 3.4.  This is no longer
@@ -10,19 +9,19 @@
 #	tiff34.h -> tiff.h
 #	tiffio34.h -> tiffio.h
 #
+
 DISTNAME=	tiff-v3.4
 PKGNAME=	tiff-3.4
 CATEGORIES=	graphics
+MASTER_SITES=   ftp://ftp.sgi.com/graphics/tiff/ \
+		ftp://ftp.isri.unlv.edu/pub/mirror/tiff/
+EXTRACT_SUFX=	-tar.gz
 
 NEED_VERSION=	1.64
 
 MAINTAINER=	don@OpenBSD.ORG
 
-MASTER_SITES=   ftp://ftp.sgi.com/graphics/tiff/ \
-		ftp://ftp.isri.unlv.edu/pub/mirror/tiff/
-EXTRACT_SUFX=	-tar.gz
-
-LIB_DEPENDS=    jpeg.62:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=    jpeg:${PORTSDIR}/graphics/jpeg
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN=${PREFIX}/bin \
@@ -35,11 +34,9 @@ CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN=${PREFIX}/bin \
 		--with-INSTALL="/bin/sh ${WRKSRC}/port/install.sh" \
 		--noninteractive
 
-WRKSRC=		${WRKDIR}/tiff-v3.4
-
 DOCDIR=	${PREFIX}/share/doc/tiff34
 
-# Create symbolic the symbolic links for backwards compatibility
+# Create symbolic links for backwards compatibility
 #
 post-install:
 	${LN} -sf libtiff.a ${PREFIX}/lib/libtiff34.a
