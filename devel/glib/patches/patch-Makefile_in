@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Mar  2 12:37:20 2001
-+++ Makefile.in	Sun Mar 11 22:53:13 2001
-@@ -96,9 +96,9 @@
+--- Makefile.in.orig	Thu Mar 15 10:48:50 2001
++++ Makefile.in	Thu Sep 20 00:13:08 2001
+@@ -96,9 +96,9 @@ VERSION = @VERSION@
  
  AUTOMAKE_OPTIONS = 1.4
  
@@ -12,7 +12,7 @@
  
  bin_SCRIPTS = glib-config
  
-@@ -123,7 +123,7 @@
+@@ -123,7 +123,7 @@ configinclude_DATA =  	glibconfig.h
  
  CONFIGURE_DEPENDENCIES = acglib.m4		
  
@@ -21,7 +21,7 @@
  
  
  noinst_PROGRAMS = testglib testgdate testgdateparser
-@@ -629,7 +629,7 @@
+@@ -629,7 +629,7 @@ uninstall-am: uninstall-libLTLIBRARIES u
  		uninstall-configincludeDATA uninstall-m4dataDATA \
  		uninstall-pkgconfigDATA uninstall-glibincludeHEADERS
  uninstall: uninstall-recursive

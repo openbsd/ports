@@ -1,5 +1,5 @@
 --- glib.h.orig	Mon Feb 26 22:44:38 2001
-+++ glib.h	Sun Mar 11 22:30:51 2001
++++ glib.h	Thu Sep 20 00:13:09 2001
 @@ -27,6 +27,8 @@
  #ifndef __G_LIB_H__
  #define __G_LIB_H__
@@ -9,7 +9,7 @@
  /* system specific config file glibconfig.h provides definitions for
   * the extrema of many of the standard types. These are:
   *
-@@ -119,8 +121,12 @@
+@@ -119,8 +121,12 @@ extern "C" {
   *  defined then the current definition is correct.
   */
  #ifndef	NULL
@@ -22,7 +22,7 @@
  
  #ifndef	FALSE
  #define	FALSE	(0)
-@@ -130,11 +136,13 @@
+@@ -130,11 +136,13 @@ extern "C" {
  #define	TRUE	(!FALSE)
  #endif
  
