@@ -915,7 +915,3 @@ var/X11R6/lib/rgb.txt
 @dirrm var/X11R6/lib
 @dirrm var/X11R6
 @dirrm var
-@exec echo "***"
-@exec echo "*** Installation complete. See compat_linux(8)"
-@exec echo "*** for more information."
-@exec echo "***"
