@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/12/15 13:57:56 alek Exp $
+# $OpenBSD: Makefile,v 1.24 2005/01/25 09:45:58 alek Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
@@ -16,7 +16,7 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-libs/1.4/}
 PATCH_LIST+=		patch-* sup-alpha-*
 .endif
 
-LIB_DEPENDS=		Imlib,gdk_imlib.19::graphics/imlib \
+LIB_DEPENDS=		gdk_imlib.19::graphics/imlib \
 			esd.2::audio/esound \
 			ORBit.5,ORBitutil.5,IIOP.5,ORBitCosNaming.5::devel/ORBit \
 			gdk.1.2::x11/gtk+
