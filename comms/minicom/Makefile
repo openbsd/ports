@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.14 1999/12/09 03:28:30 form Exp $
+# $OpenBSD: Makefile,v 1.15 2000/02/01 02:57:59 form Exp $
 #
-# Use make LRZSZ=yes to build minicom with lrzsz package support.
 
 PKGNAME=	minicom-1.82.1
 DISTNAME=	${PKGNAME}.src
@@ -14,19 +13,9 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
 MASTER_SITE_SUBDIR=     apps/serialcomm/dialout
 
 RUN_DEPENDS=	kermit:${PORTSDIR}/comms/kermit
-.if defined(USE_LRZSZ) && ${USE_LRZSZ:U} == "YES"
-RUN_DEPENDS+=	lrz:${PORTSDIR}/comms/lrzsz lsz:${PORTSDIR}/comms/lrzsz
-.else
-RUN_DEPENDS+=	rz:${PORTSDIR}/comms/rzsz sz:${PORTSDIR}/comms/rzsz
-.endif
+RUN_DEPENDS+=	lrz:${PORTSDIR}/comms/lrzsz
 
 WRKSRC=		${WRKDIR}/${PKGNAME}/src
-
-.if defined(USE_LRZSZ) && ${USE_LRZSZ:U} == "YES"
-post-patch:
-	@cd ${WRKSRC}; ${PATCH} ${PATCH_STRIP} < ${FILESDIR}/patch-lrzsz \
-		2>/dev/null
-.endif
 
 post-install:
 .if exists(/etc/minicom/minicom.users)
