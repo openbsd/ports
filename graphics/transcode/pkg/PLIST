@@ -1,5 +1,5 @@
 %%i386%%
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/18 18:56:51 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/06/24 19:27:00 sturm Exp $
 bin/avifix
 bin/aviindex
 bin/avimerge
@@ -21,10 +21,10 @@ bin/transcode
 @comment lib/transcode/a52_decore.la
 lib/transcode/a52_decore.so
 @comment lib/transcode/af6_decore.la
-lib/transcode/af6_decore.so
+@comment lib/transcode/af6_decore.so
 @comment lib/transcode/export_ac3.la
 lib/transcode/export_ac3.so
-lib/transcode/export_af6.conf
+@comment lib/transcode/export_af6.conf
 @comment lib/transcode/export_debugppm.la
 lib/transcode/export_debugppm.so
 @comment lib/transcode/export_divx4.la
@@ -247,7 +247,7 @@ man/man1/transcode.1
 share/doc/transcode/ChangeLog
 share/doc/transcode/OPTIMIZERS
 share/doc/transcode/README.Inverse.Telecine.txt
-@comment share/doc/transcode/README.cluster
+share/doc/transcode/README.cluster
 share/doc/transcode/README.filter.modfps
 share/doc/transcode/README.rip
 share/doc/transcode/README.sync
@@ -289,7 +289,7 @@ share/doc/transcode/html/faq.html
 share/doc/transcode/html/filter.html
 share/doc/transcode/html/import_ac3.html
 share/doc/transcode/html/import_avi.html
-share/doc/transcode/html/import_dv.html
+@comment share/doc/transcode/html/import_dv.html
 share/doc/transcode/html/import_dvd.html
 share/doc/transcode/html/import_mp3.html
 share/doc/transcode/html/import_mpeg2.html

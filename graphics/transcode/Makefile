@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/18 18:56:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/06/24 19:27:00 sturm Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -49,10 +49,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBFAME_CONFIG="no"
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autotools
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--enable-liba52 --with-a52 \
-		--with-dvdread \
-		--with-lame \
-		--with-libjpeg-mods \
+		--enable-liba52 \
 		--with-ogg --with-vorbis \
 		--disable-altivec --disable-sse \
 		--disable-mjpeg \

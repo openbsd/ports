@@ -1,6 +1,6 @@
-$OpenBSD: patch-bbmpeg_tcmplex_Makefile_in,v 1.1.1.1 2004/06/18 18:56:51 sturm Exp $
---- bbmpeg/tcmplex/Makefile.in.orig	2004-06-11 14:55:20.000000000 +0200
-+++ bbmpeg/tcmplex/Makefile.in	2004-06-11 15:02:04.000000000 +0200
+$OpenBSD: patch-bbmpeg_tcmplex_Makefile_in,v 1.2 2004/06/24 19:27:00 sturm Exp $
+--- bbmpeg/tcmplex/Makefile.in.orig	2004-01-06 12:39:09.000000000 -0800
++++ bbmpeg/tcmplex/Makefile.in	2004-06-18 19:18:34.000000000 -0700
 @@ -67,7 +67,7 @@ CCAS = @CCAS@
  CCASFLAGS = @CCASFLAGS@
  CCDEPMODE = @CCDEPMODE@

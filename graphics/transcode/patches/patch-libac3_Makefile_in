@@ -1,174 +1,20 @@
-$OpenBSD: patch-libac3_Makefile_in,v 1.1.1.1 2004/06/18 18:56:48 sturm Exp $
---- libac3/Makefile.in.orig	2004-01-06 21:39:16.000000000 +0100
-+++ libac3/Makefile.in	2004-06-10 14:29:01.000000000 +0200
+$OpenBSD: patch-libac3_Makefile_in,v 1.2 2004/06/24 19:27:00 sturm Exp $
+--- libac3/Makefile.in.orig	2004-06-18 17:33:17.000000000 -0700
++++ libac3/Makefile.in	2004-06-18 17:42:47.000000000 -0700
 @@ -67,7 +67,7 @@ CCAS = @CCAS@
  CCASFLAGS = @CCASFLAGS@
  CCDEPMODE = @CCDEPMODE@
  
 -CFLAGS = -O3 -funroll-loops -ffast-math -DLINUX -fPIC -DPIC @CFLAGS@
-+CFLAGS = -funroll-loops -ffast-math -DLINUX @CFLAGS@
++CFLAGS = -funroll-loops -ffast-math -DLINUX -fPIC -DPIC @CFLAGS@
  CPP = @CPP@
  CPPFLAGS = @CPPFLAGS@
  CXX = @CXX@
-@@ -194,7 +194,6 @@ LIBLVE_CFLAGS = @LIBLVE_CFLAGS@
- LIBLVE_LIBS = @LIBLVE_LIBS@
- LIBMPEG3_CFLAGS = @LIBMPEG3_CFLAGS@
- LIBMPEG3_LIBS = @LIBMPEG3_LIBS@
--LIBOBJS = @LIBOBJS@
- LIBS = @LIBS@
- LIBTOOL = @LIBTOOL@
- LIBXML2CONFIG = @LIBXML2CONFIG@
-@@ -315,9 +314,9 @@ x_libraries = @x_libraries@
- AUTOMAKE_OPTIONS = 1.3 foreign
- DEFAULT_INCLUDES = -I$(top_srcdir) -I$(srcdir) -I$(top_builddir) -I.
- 
--noinst_LIBRARIES = libac3_tc.a
-+noinst_LTLIBRARIES = libac3_tc.la
- 
--libac3_tc_a_SOURCES = bitstream.c decode.c imdct.c coeff.c exponent.c stats.c\
-+libac3_tc_la_SOURCES = bitstream.c decode.c imdct.c coeff.c exponent.c stats.c\
- 	bit_allocate.c  parse.c crc.c debug.c rematrix.c downmix.c dither.c \
- 	sanity_check.c
- 
-@@ -330,26 +329,24 @@ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/autotools/mkinstalldirs
- CONFIG_HEADER = $(top_builddir)/config.h
- CONFIG_CLEAN_FILES =
--LIBRARIES = $(noinst_LIBRARIES)
-+LTLIBRARIES = $(noinst_LTLIBRARIES)
- 
--libac3_tc_a_AR = $(AR) cru
--libac3_tc_a_LIBADD =
--am_libac3_tc_a_OBJECTS = bitstream.$(OBJEXT) decode.$(OBJEXT) \
--	imdct.$(OBJEXT) coeff.$(OBJEXT) exponent.$(OBJEXT) \
--	stats.$(OBJEXT) bit_allocate.$(OBJEXT) parse.$(OBJEXT) \
--	crc.$(OBJEXT) debug.$(OBJEXT) rematrix.$(OBJEXT) \
--	downmix.$(OBJEXT) dither.$(OBJEXT) sanity_check.$(OBJEXT)
--libac3_tc_a_OBJECTS = $(am_libac3_tc_a_OBJECTS)
-+libac3_tc_la_LDFLAGS =
-+libac3_tc_la_LIBADD =
-+am_libac3_tc_la_OBJECTS = bitstream.lo decode.lo imdct.lo coeff.lo \
-+	exponent.lo stats.lo bit_allocate.lo parse.lo crc.lo debug.lo \
-+	rematrix.lo downmix.lo dither.lo sanity_check.lo
-+libac3_tc_la_OBJECTS = $(am_libac3_tc_la_OBJECTS)
- depcomp = $(SHELL) $(top_srcdir)/autotools/depcomp
- am__depfiles_maybe = depfiles
--@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/bit_allocate.Po \
--@AMDEP_TRUE@	./$(DEPDIR)/bitstream.Po ./$(DEPDIR)/coeff.Po \
--@AMDEP_TRUE@	./$(DEPDIR)/crc.Po ./$(DEPDIR)/debug.Po \
--@AMDEP_TRUE@	./$(DEPDIR)/decode.Po ./$(DEPDIR)/dither.Po \
--@AMDEP_TRUE@	./$(DEPDIR)/downmix.Po ./$(DEPDIR)/exponent.Po \
--@AMDEP_TRUE@	./$(DEPDIR)/imdct.Po ./$(DEPDIR)/parse.Po \
--@AMDEP_TRUE@	./$(DEPDIR)/rematrix.Po ./$(DEPDIR)/sanity_check.Po \
--@AMDEP_TRUE@	./$(DEPDIR)/stats.Po
-+@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/bit_allocate.Plo \
-+@AMDEP_TRUE@	./$(DEPDIR)/bitstream.Plo ./$(DEPDIR)/coeff.Plo \
-+@AMDEP_TRUE@	./$(DEPDIR)/crc.Plo ./$(DEPDIR)/debug.Plo \
-+@AMDEP_TRUE@	./$(DEPDIR)/decode.Plo ./$(DEPDIR)/dither.Plo \
-+@AMDEP_TRUE@	./$(DEPDIR)/downmix.Plo ./$(DEPDIR)/exponent.Plo \
-+@AMDEP_TRUE@	./$(DEPDIR)/imdct.Plo ./$(DEPDIR)/parse.Plo \
-+@AMDEP_TRUE@	./$(DEPDIR)/rematrix.Plo \
-+@AMDEP_TRUE@	./$(DEPDIR)/sanity_check.Plo ./$(DEPDIR)/stats.Plo
- COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
- 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
- LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
-@@ -357,12 +354,12 @@ LTCOMPILE = $(LIBTOOL) --mode=compile $(
- CCLD = $(CC)
- LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
- 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
--DIST_SOURCES = $(libac3_tc_a_SOURCES)
-+DIST_SOURCES = $(libac3_tc_la_SOURCES)
- HEADERS = $(noinst_HEADERS)
- 
- DIST_COMMON = README $(noinst_HEADERS) $(srcdir)/Makefile.in COPYING \
- 	Makefile.am
--SOURCES = $(libac3_tc_a_SOURCES)
-+SOURCES = $(libac3_tc_la_SOURCES)
- 
- all: all-am
- 
-@@ -374,12 +371,16 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_
- Makefile: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.in  $(top_builddir)/config.status
- 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
- 
--clean-noinstLIBRARIES:
--	-test -z "$(noinst_LIBRARIES)" || rm -f $(noinst_LIBRARIES)
--libac3_tc.a: $(libac3_tc_a_OBJECTS) $(libac3_tc_a_DEPENDENCIES) 
--	-rm -f libac3_tc.a
--	$(libac3_tc_a_AR) libac3_tc.a $(libac3_tc_a_OBJECTS) $(libac3_tc_a_LIBADD)
--	$(RANLIB) libac3_tc.a
-+clean-noinstLTLIBRARIES:
-+	-test -z "$(noinst_LTLIBRARIES)" || rm -f $(noinst_LTLIBRARIES)
-+	@list='$(noinst_LTLIBRARIES)'; for p in $$list; do \
-+	  dir="`echo $$p | sed -e 's|/[^/]*$$||'`"; \
-+	  test "$$dir" = "$$p" && dir=.; \
-+	  echo "rm -f \"$${dir}/so_locations\""; \
-+	  rm -f "$${dir}/so_locations"; \
-+	done
-+libac3_tc.la: $(libac3_tc_la_OBJECTS) $(libac3_tc_la_DEPENDENCIES) 
-+	$(LINK)  $(libac3_tc_la_LDFLAGS) $(libac3_tc_la_OBJECTS) $(libac3_tc_la_LIBADD) $(LIBS)
+@@ -380,6 +380,7 @@ libac3_tc.a: $(libac3_tc_a_OBJECTS) $(li
+ 	-rm -f libac3_tc.a
+ 	$(libac3_tc_a_AR) libac3_tc.a $(libac3_tc_a_OBJECTS) $(libac3_tc_a_LIBADD)
+ 	$(RANLIB) libac3_tc.a
++	cp libac3_tc.a libac3_tc_pic.a
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT) core *.core
-@@ -387,20 +388,20 @@ mostlyclean-compile:
- distclean-compile:
- 	-rm -f *.tab.c
- 
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bit_allocate.Po@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bitstream.Po@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/coeff.Po@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/crc.Po@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/debug.Po@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/decode.Po@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dither.Po@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/downmix.Po@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/exponent.Po@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/imdct.Po@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/parse.Po@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rematrix.Po@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sanity_check.Po@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stats.Po@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bit_allocate.Plo@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bitstream.Plo@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/coeff.Plo@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/crc.Plo@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/debug.Plo@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/decode.Plo@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dither.Plo@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/downmix.Plo@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/exponent.Plo@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/imdct.Plo@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/parse.Plo@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rematrix.Plo@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sanity_check.Plo@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stats.Plo@am__quote@
- 
- .c.o:
- @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" \
-@@ -532,7 +533,7 @@ distdir: $(DISTFILES)
- 	done
- check-am: all-am
- check: check-am
--all-am: Makefile $(LIBRARIES) $(HEADERS)
-+all-am: Makefile $(LTLIBRARIES) $(HEADERS)
- 
- installdirs:
- install: install-am
-@@ -561,7 +562,7 @@ maintainer-clean-generic:
- 	@echo "it deletes files that may require special tools to rebuild."
- clean: clean-am
- 
--clean-am: clean-generic clean-libtool clean-noinstLIBRARIES \
-+clean-am: clean-generic clean-libtool clean-noinstLTLIBRARIES \
- 	mostlyclean-am
- 
- distclean: distclean-am
-@@ -611,7 +612,7 @@ ps-am:
- uninstall-am: uninstall-info-am
- 
- .PHONY: CTAGS GTAGS all all-am check check-am clean clean-generic \
--	clean-libtool clean-noinstLIBRARIES ctags distclean \
-+	clean-libtool clean-noinstLTLIBRARIES ctags distclean \
- 	distclean-compile distclean-generic distclean-libtool \
- 	distclean-tags distdir dvi dvi-am info info-am install \
- 	install-am install-data install-data-am install-exec \

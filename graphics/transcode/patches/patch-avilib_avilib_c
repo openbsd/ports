@@ -1,4 +1,4 @@
-$OpenBSD
+$OpenBSD: patch-avilib_avilib_c,v 1.2 2004/06/24 19:27:00 sturm Exp $
 --- avilib/avilib.c.orig	Fri Apr 23 23:27:42 2004
 +++ avilib/avilib.c	Mon Apr 26 12:56:03 2004
 @@ -25,8 +25,6 @@

@@ -1,6 +1,6 @@
-$OpenBSD: patch-autotools_ltmain_sh,v 1.1.1.1 2004/06/18 18:56:51 sturm Exp $
---- autotools/ltmain.sh.orig	2004-06-13 11:08:28.000000000 +0200
-+++ autotools/ltmain.sh	2004-06-13 11:10:13.000000000 +0200
+$OpenBSD: patch-autotools_ltmain_sh,v 1.2 2004/06/24 19:27:00 sturm Exp $
+--- autotools/ltmain.sh.orig	2003-12-20 03:49:10.000000000 -0800
++++ autotools/ltmain.sh	2004-06-18 18:09:03.000000000 -0700
 @@ -2206,10 +2206,6 @@ EOF
  	link_static=no # Whether the deplib will be linked statically
  	if test -n "$library_names" &&
@@ -12,6 +12,15 @@ $OpenBSD: patch-autotools_ltmain_sh,v 1.1.1.1 2004/06/18 18:56:51 sturm Exp $
  	  # This is a shared library
  	
        # Warn about portability, can't link against -module's on some systems (darwin)
+@@ -3334,7 +3330,7 @@ EOF
+ 	      if test -n "$a_deplib" ; then
+ 		libname=`eval \\$echo \"$libname_spec\"`
+ 		for i in $lib_search_path $sys_lib_search_path $shlib_search_path; do
+-		  potential_libs=`ls $i/$libname[.-]* 2>/dev/null`
++		  potential_libs=`ls $i/$libname[.-]* $i/${libname}_pic.a 2>/dev/null`
+ 		  for potent_lib in $potential_libs; do
+ 		    potlib="$potent_lib" # see symlink-check above in file_magic test
+ 		    if eval $echo \"$potent_lib\" 2>/dev/null \
 @@ -5696,40 +5692,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
