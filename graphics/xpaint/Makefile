@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2000/05/21 12:39:01 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2000/05/30 09:28:42 fgsch Exp $
 
-DISTNAME=	xpaint-2.5.5
+DISTNAME=	xpaint-2.5.7
 CATEGORIES=	graphics x11
-NEED_VERSION=	 1.230
-FAKE=No
-MASTER_SITES=	http://www.danbbs.dk/~torsten/xpaint/
+NEED_VERSION=	1.230
+MASTER_SITES=	http://home.worldonline.dk/~torsten/xpaint/
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -17,6 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff \
 		png.1.6::graphics/png
+
+FAKE=		Yes
 
 USE_IMAKE=	Yes
 
