@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/09/15 00:06:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2004/09/15 00:40:23 pvalchev Exp $
 
 COMMENT=		"new mail notification utility for KDE"
 
@@ -8,6 +8,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 HOMEPAGE=		http://www.granroth.org/kbiff/
 
+# GPL
 PERMIT_PACKAGE_CDROM=  	Yes
 PERMIT_PACKAGE_FTP=    	Yes
 PERMIT_DISTFILES_CDROM=	Yes

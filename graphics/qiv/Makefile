@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/09/15 00:06:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2004/09/15 00:40:23 pvalchev Exp $
 
 COMMENT=		"very small and pretty fast gdk/Imlib image viewer"
 
@@ -13,6 +13,7 @@ MASTER_SITES=		http://www.klografx.net/qiv/download/
 
 LIB_DEPENDS=		gdk_imlib.19::graphics/imlib
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/09/15 00:06:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2004/09/15 00:40:23 pvalchev Exp $
 
 COMMENT=		"finds and then operates on files"
 
@@ -7,6 +7,7 @@ CATEGORIES=		misc
 
 HOMEPAGE=		http://www.gnu.org/software/findutils/
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2004/09/15 00:06:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2004/09/15 00:40:23 pvalchev Exp $
 
 COMMENT=		"GNU command line utilities"
 
 DISTNAME=		sh-utils-2.0
 CATEGORIES=		misc
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

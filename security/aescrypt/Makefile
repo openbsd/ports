@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/09/15 00:06:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2004/09/15 00:40:23 pvalchev Exp $
 
 COMMENT=		"encrypt/decrypt using Rijndael encryption algorithm"
 
@@ -8,6 +8,7 @@ CATEGORIES=		security
 
 HOMEPAGE=		http://aescrypt.sourceforge.net/
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
