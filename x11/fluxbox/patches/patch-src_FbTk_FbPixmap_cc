@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_FbTk_FbPixmap_cc,v 1.1 2005/01/23 12:44:10 matthieu Exp $
+--- src/FbTk/FbPixmap.cc.orig	Fri Dec 10 10:21:51 2004
++++ src/FbTk/FbPixmap.cc	Sat Jan 22 12:00:25 2005
+@@ -288,7 +288,7 @@ Pixmap FbPixmap::getRootPixmap(int scree
+     Atom real_type;
+     int real_format;
+     unsigned long items_read, items_left;
+-    unsigned int *data;
++    unsigned long *data;
+ 
+     unsigned int prop = 0;
+     static const char* prop_ids[] = {

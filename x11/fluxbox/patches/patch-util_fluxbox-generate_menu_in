@@ -1,11 +1,11 @@
-$OpenBSD: patch-util_fluxbox-generate_menu_in,v 1.1 2005/01/14 05:53:02 david Exp $
---- util/fluxbox-generate_menu.in.orig	Sun Apr 25 12:15:49 2004
-+++ util/fluxbox-generate_menu.in	Thu Jan 13 23:48:13 2005
-@@ -1199,7 +1199,6 @@ append_submenu "${FBSETTINGSMENU}"
+$OpenBSD: patch-util_fluxbox-generate_menu_in,v 1.2 2005/01/23 12:44:10 matthieu Exp $
+--- util/fluxbox-generate_menu.in.orig	Wed Jan  5 16:25:44 2005
++++ util/fluxbox-generate_menu.in	Sat Jan 22 12:01:32 2005
+@@ -1241,7 +1241,6 @@ append_submenu "${FBSETTINGSMENU}"
  
      append_menu "[submenu] (${SYSTEMSTYLES}) {${STYLEMENUTITLE}}"
          append "[stylesdir] (${PREFIX}/share/fluxbox/styles)"
--	append "[stylesdir] (/usr/share/commonbox/styles/)"
+-        append "[stylesdir] (/usr/share/commonbox/styles/)"
      append_menu_end
  
      append_menu "[submenu] (${USERSTYLES}) {${STYLEMENUTITLE}}"

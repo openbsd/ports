@@ -1,0 +1,57 @@
+$OpenBSD: patch-src_Ewmh_cc,v 1.3 2005/01/23 12:44:10 matthieu Exp $
+--- src/Ewmh.cc.orig	Mon Jan 17 19:37:46 2005
++++ src/Ewmh.cc	Sat Jan 22 12:00:25 2005
+@@ -415,7 +415,7 @@ void Ewmh::updateCurrentWorkspace(BScree
+      * This MUST be set and updated by the Window Manager.
+      *
+      */
+-    unsigned int workspace = screen.currentWorkspaceID();
++    unsigned long workspace = screen.currentWorkspaceID();
+     screen.rootWindow().changeProperty(m_net_current_desktop,
+                                        XA_CARDINAL, 32,
+                                        PropModeReplace,
+@@ -432,7 +432,7 @@ void Ewmh::updateWorkspaceCount(BScreen 
+      * Window Manager to indicate the number of virtual
+      * desktops.
+      */
+-    unsigned int numworkspaces = screen.getCount();
++    unsigned long numworkspaces = screen.getCount();
+     screen.rootWindow().changeProperty(m_net_number_of_desktops,
+                                        XA_CARDINAL, 32,
+                                        PropModeReplace,
+@@ -450,7 +450,7 @@ void Ewmh::updateViewPort(BScreen &scree
+      * desktops, this MUST always be set to (0,0).
+      *
+      */
+-    int value[2] = {0, 0}; // we dont support large desktops
++    long value[2] = {0, 0}; // we dont support large desktops
+     screen.rootWindow().changeProperty(m_net_desktop_viewport,
+                                        XA_CARDINAL, 32,
+                                        PropModeReplace,
+@@ -470,7 +470,7 @@ void Ewmh::updateGeometry(BScreen &scree
+      * Window Manager.
+      *
+      */
+-    int value[2] = {screen.width(), screen.height()};
++    long value[2] = {screen.width(), screen.height()};
+     screen.rootWindow().changeProperty(m_net_desktop_geometry,
+                                        XA_CARDINAL, 32,
+                                        PropModeReplace,
+@@ -497,7 +497,7 @@ void Ewmh::updateWorkarea(BScreen &scree
+      * Not sure how to handle xinerama stuff here.
+      * So i'm just doing this on the first head.
+      */
+-    unsigned int *coords = new unsigned int[4*screen.getCount()];
++    unsigned long *coords = new unsigned long[4*screen.getCount()];
+     for (unsigned int i=0; i<screen.getCount()*4; i+=4) {
+         // x, y
+         coords[i] = screen.maxLeft(0);
+@@ -568,7 +568,7 @@ void Ewmh::updateHints(FluxboxWindow &wi
+ }
+ 
+ void Ewmh::updateWorkspace(FluxboxWindow &win) {
+-    int workspace = win.workspaceNumber();
++    long workspace = win.workspaceNumber();
+     if (win.isStuck())
+         workspace = 0xFFFFFFFF; // appear on all desktops/workspaces
+ 

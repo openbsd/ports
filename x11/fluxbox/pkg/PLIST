@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/09/18 13:19:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2005/01/23 12:44:10 matthieu Exp $
 @conflict blackbox-*
 @conflict openbox-*
 bin/bsetroot
@@ -17,50 +17,6 @@ share/fluxbox/
 share/fluxbox/init
 share/fluxbox/keys
 share/fluxbox/menu
-share/fluxbox/nls/
-share/fluxbox/nls/C/
-share/fluxbox/nls/C/fluxbox.cat
-share/fluxbox/nls/POSIX
-share/fluxbox/nls/US_ASCII
-share/fluxbox/nls/bg_BG/
-share/fluxbox/nls/bg_BG/fluxbox.cat
-share/fluxbox/nls/da_DK/
-share/fluxbox/nls/da_DK/fluxbox.cat
-share/fluxbox/nls/de_DE/
-share/fluxbox/nls/de_DE/fluxbox.cat
-share/fluxbox/nls/en
-share/fluxbox/nls/en_US
-share/fluxbox/nls/es
-share/fluxbox/nls/es_ES/
-share/fluxbox/nls/es_ES/fluxbox.cat
-share/fluxbox/nls/et_EE/
-share/fluxbox/nls/et_EE/fluxbox.cat
-share/fluxbox/nls/fr
-share/fluxbox/nls/fr_FR/
-share/fluxbox/nls/fr_FR/fluxbox.cat
-share/fluxbox/nls/it_IT/
-share/fluxbox/nls/it_IT/fluxbox.cat
-share/fluxbox/nls/ja_JP/
-share/fluxbox/nls/ja_JP/fluxbox.cat
-share/fluxbox/nls/lv
-share/fluxbox/nls/lv_LV/
-share/fluxbox/nls/lv_LV/fluxbox.cat
-share/fluxbox/nls/nl_NL/
-share/fluxbox/nls/nl_NL/fluxbox.cat
-share/fluxbox/nls/pl_PL/
-share/fluxbox/nls/pl_PL/fluxbox.cat
-share/fluxbox/nls/pt_BR/
-share/fluxbox/nls/pt_BR/fluxbox.cat
-share/fluxbox/nls/pt_PT/
-share/fluxbox/nls/pt_PT/fluxbox.cat
-share/fluxbox/nls/ru_RU/
-share/fluxbox/nls/ru_RU/fluxbox.cat
-share/fluxbox/nls/sl_SI/
-share/fluxbox/nls/sl_SI/fluxbox.cat
-share/fluxbox/nls/sv_SE/
-share/fluxbox/nls/sv_SE/fluxbox.cat
-share/fluxbox/nls/tr_TR/
-share/fluxbox/nls/tr_TR/fluxbox.cat
 share/fluxbox/styles/
 share/fluxbox/styles/Artwiz
 share/fluxbox/styles/BlueFlux/

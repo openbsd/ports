@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2004/12/17 15:18:32 alek Exp $
+# $OpenBSD: Makefile,v 1.32 2005/01/23 12:44:10 matthieu Exp $
 
 COMMENT=		"window manager based on the original Blackbox code"
 
-VERSION=		0.9.9
+VERSION=		0.9.12
 DISTNAME=		fluxbox-${VERSION}
 CATEGORIES=		x11
 
@@ -15,18 +15,22 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xext Xft Xinerama Xpm Xrandr Xrender c \
-			fontconfig freetype m stdc++
+WANTLIB=		ICE SM X11 Xext Xft Xinerama Xpm Xrandr Xrender \
+			fontconfig Imlib2 ltdl freetype stdc++ m c expat
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
-CONFIGURE_ARGS=		--enable-kde --enable-xinerama
+CONFIGURE_ARGS=		--enable-xinerama --enable-imlib2
 
-USE_GMAKE=		Yes
 USE_X11=		Yes
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
+NO_REGRESS=		Yes
+
+SEPARATE_BUILD=		simple
+
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
+LIB_DEPENDS=		Imlib2.2::graphics/imlib2
+
+CONFIGURE_ENV=		PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
 
 .include <bsd.port.mk>

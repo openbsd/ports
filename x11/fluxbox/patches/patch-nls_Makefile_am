@@ -1,0 +1,11 @@
+$OpenBSD: patch-nls_Makefile_am,v 1.1 2005/01/23 12:44:10 matthieu Exp $
+--- nls/Makefile.am.orig	Mon Jan 10 04:06:57 2005
++++ nls/Makefile.am	Mon Jan 10 04:07:17 2005
+@@ -17,5 +17,5 @@ distclean-local:
+ 	rm -f *\~
+ 
+ fluxbox-nls.hh:
+-	chmod +x nlsinfo
+-	./nlsinfo -H -N FBNLS $(top_srcdir)/src $(top_srcdir)/util > fluxbox-nls.hh
++	chmod +x ${srcdir}/nlsinfo
++	${srcdir}/nlsinfo -H -N FBNLS $(top_srcdir)/src $(top_srcdir)/util > fluxbox-nls.hh
