@@ -1,9 +1,18 @@
-$OpenBSD: patch-wmcalc_c,v 1.1.1.1 2001/01/16 21:31:44 naddy Exp $
---- wmcalc.c.orig	Tue Oct 31 03:42:32 2000
-+++ wmcalc.c	Fri Jan 12 11:53:28 2001
-@@ -89,10 +89,10 @@ int main( int argc, char **argv ) {
-   char Geometry_str[64] = "64x64+0+0";
-   char Display_str[64] = "";
+$OpenBSD: patch-wmcalc_c,v 1.2 2001/01/19 18:50:14 naddy Exp $
+--- wmcalc.c.orig	Thu Jan 18 07:18:25 2001
++++ wmcalc.c	Fri Jan 19 18:35:23 2001
+@@ -38,7 +38,7 @@
+  ****************************************************************/
+ 
+ #include "wmcalc_x.h"
+-#include <XKBlib.h>
++#include <X11/XKBlib.h>
+ #include <stdio.h>
+ #include <math.h>
+ #include <stdlib.h>
+@@ -107,10 +107,10 @@ int main( int argc, char **argv ) {
+   int bufsize = 20;
+   int chcnt = 0;
    
 -  strcpy(configfile, getenv("HOME"));  // Added to wmbutton by Casey Harkin, 3/6/99
 -  strcat(configfile, CONFFILENAME);    // Fixed Bug - didn't look in home directory

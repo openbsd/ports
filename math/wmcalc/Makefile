@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/18 16:10:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/01/19 18:50:13 naddy Exp $
 
-DISTNAME=	wmcalc-0.21
+DISTNAME=	wmcalc-0.3
 CATEGORIES=	math x11 x11/windowmaker
 NEED_VERSION=	1.340
 HOMEPAGE=	http://members.access1.net/ehflora/

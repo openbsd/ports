@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2001/01/16 21:31:44 naddy Exp $
---- Makefile.orig	Thu Sep 21 04:22:25 2000
-+++ Makefile	Tue Jan 16 22:09:16 2001
+$OpenBSD: patch-Makefile,v 1.2 2001/01/19 18:50:14 naddy Exp $
+--- Makefile.orig	Mon Dec 11 05:51:48 2000
++++ Makefile	Fri Jan 19 18:34:51 2001
 @@ -1,15 +1,17 @@
--INCLUDES =-I/usr/X11R6/include/X11 -I/usr/local/include -I/usr/include/X11R6/X11
--LIBINC =-L/usr/X11R6/lib -L/usr/include/lib
-+INCLUDES =-I${X11BASE}/include -I${X11BASE}/include/X11
+-INCLUDES =-I/usr/X11R6/include/X11 -I/usr/local/include
+-LIBINC =-L/usr/X11R6/lib
++INCLUDES =-I${X11BASE}/include
 +LIBINC =-L${X11BASE}/lib
  LIBS = -lX11 -lXpm -lXext -lm
  
@@ -13,11 +13,11 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2001/01/16 21:31:44 naddy Exp $
  
  .c.o:
 -	gcc -O2 -c -Wall ${INCLUDES} ${FLAGS} $< -o $*.o
-+	${CC} ${CFLAGS} -c ${INCLUDES} ${FLAGS} $< -o $*.o
++	$(CC) $(CFLAGS) -c ${INCLUDES} ${FLAGS} $< -o $*.o
  
  ${TARGET}: ${OBJECTS}
 -	gcc -O2 -o ${TARGET} ${OBJECTS} ${LIBINC} ${LIBS}
-+	${CC} -o ${TARGET} ${OBJECTS} ${LIBINC} ${LIBS}
++	$(CC) -o ${TARGET} ${OBJECTS} ${LIBINC} ${LIBS}
 +
 +all:: ${TARGET}
  
