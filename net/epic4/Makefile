@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/11 08:19:44 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/22 22:39:39 turan Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 DISTNAME=	epic4-2000
@@ -12,6 +12,11 @@ EXTRACT_ONLY=	epic4-2000.tar.gz
 NEED_VERSION=	1.218
 
 MAINTAINER=	brad@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 FAKE=	Yes
 

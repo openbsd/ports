@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/03/05 18:30:37 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/03/22 22:39:39 turan Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 DISTNAME=	BitchX-1.0c16
@@ -17,6 +17,11 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:security/socks5
 .endif
 
 MAINTAINER=	brad@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no obvious license"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no obvious license"
+PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
 USE_GMAKE=	Yes

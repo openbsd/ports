@@ -1,16 +1,19 @@
-# $OpenBSD: Makefile,v 1.6 1999/12/30 08:11:55 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/22 22:39:40 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
+
+BROKEN=		"Security hole (buffer overflow possibly yielding root)"
 
 DISTNAME=	gated-3-5-11
 PKGNAME=	gated-3.5.11
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.gated.merit.edu/net-research/gated/
 
-NO_CDROM=	"LIC: requires licence for redistribution"
-
-BROKEN=		"Security hole (buffer overflow possibly yielding root)"
-
 MAINTAINER=	ports@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"commercial software"
+PERMIT_PACKAGE_FTP=	"commercial software"
+PERMIT_DISTFILES_CDROM=	"commercial software"
+PERMIT_DISTFILES_FTP=	Yes
 
 ALL_TARGET=	gated
 

@@ -3,7 +3,7 @@
 # Date created:			  Mon June 23, 1997
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 2000/02/11 01:10:08 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/22 22:42:30 turan Exp $
 #
 
 DISTNAME=	icmpinfo-1.11
@@ -11,6 +11,11 @@ CATEGORIES=	net sysutils
 MASTER_SITES=	ftp://hplyot.obspm.fr/net/
 
 MAINTAINER=     angelos@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 ALL_TARGET=
 MAN1=		icmpinfo.1
