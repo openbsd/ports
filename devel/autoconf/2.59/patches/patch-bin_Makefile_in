@@ -1,0 +1,69 @@
+$OpenBSD: patch-bin_Makefile_in,v 1.1.1.1 2004/02/10 00:00:14 espie Exp $
+--- bin/Makefile.in.orig	2003-11-06 10:33:26.000000000 +0100
++++ bin/Makefile.in	2004-02-09 22:43:26.000000000 +0100
+@@ -198,7 +198,7 @@ edit = sed \
+ 	-e 's,@AWK\@,$(AWK),g' \
+ 	-e 's,@VERSION\@,$(VERSION),g' \
+ 	-e 's,@PACKAGE_NAME\@,$(PACKAGE_NAME),g' \
+-	-e 's,@configure_input\@,Generated from $<; do not edit by hand.,g'
++	-e 's,@configure_input\@,Generated from $$a; do not edit by hand.,g' $$a
+ 
+ 
+ # autoconf is written in M4sh.
+@@ -468,49 +468,49 @@ $(srcdir)/autoconf.in: $(srcdir)/autocon
+ 
+ autoconf: $(srcdir)/autoconf.in Makefile
+ 	rm -f autoconf autoconf.tmp
+-	$(edit) $(srcdir)/autoconf.in >autoconf.tmp
++	a=$(srcdir)/autoconf.in; $(edit) >autoconf.tmp
+ 	chmod +x autoconf.tmp
+ 	chmod -w autoconf.tmp
+ 	mv -f autoconf.tmp autoconf
+ 
+ autoheader: $(srcdir)/autoheader.in Makefile
+ 	rm -f autoheader autoheader.tmp
+-	$(edit) $(srcdir)/autoheader.in >autoheader.tmp
++	a=$(srcdir)/autoheader.in;$(edit) >autoheader.tmp
+ 	chmod +x autoheader.tmp
+ 	chmod -w autoheader.tmp
+ 	mv -f autoheader.tmp autoheader
+ 
+ autom4te: $(srcdir)/autom4te.in Makefile
+ 	rm -f autom4te autom4te.tmp
+-	$(edit) $(srcdir)/autom4te.in >autom4te.tmp
++	a=$(srcdir)/autom4te.in;$(edit) >autom4te.tmp
+ 	chmod +x autom4te.tmp
+ 	chmod -w autom4te.tmp
+ 	mv -f autom4te.tmp autom4te
+ 
+ autoreconf: $(srcdir)/autoreconf.in Makefile
+ 	rm -f autoreconf autoreconf.tmp
+-	$(edit) $(srcdir)/autoreconf.in >autoreconf.tmp
++	a=$(srcdir)/autoreconf.in;$(edit) >autoreconf.tmp
+ 	chmod +x autoreconf.tmp
+ 	chmod -w autoreconf.tmp
+ 	mv -f autoreconf.tmp autoreconf
+ 
+ autoscan: $(srcdir)/autoscan.in Makefile
+ 	rm -f autoscan autoscan.tmp
+-	$(edit) $(srcdir)/autoscan.in >autoscan.tmp
++	a=$(srcdir)/autoscan.in;$(edit) >autoscan.tmp
+ 	chmod +x autoscan.tmp
+ 	chmod -w autoscan.tmp
+ 	mv -f autoscan.tmp autoscan
+ 
+ autoupdate: $(srcdir)/autoupdate.in Makefile
+ 	rm -f autoupdate autoupdate.tmp
+-	$(edit) $(srcdir)/autoupdate.in >autoupdate.tmp
++	a=$(srcdir)/autoupdate.in;$(edit) >autoupdate.tmp
+ 	chmod +x autoupdate.tmp
+ 	chmod -w autoupdate.tmp
+ 	mv -f autoupdate.tmp autoupdate
+ 
+ ifnames: $(srcdir)/ifnames.in Makefile
+ 	rm -f ifnames ifnames.tmp
+-	$(edit) $(srcdir)/ifnames.in >ifnames.tmp
++	a=$(srcdir)/ifnames.in;$(edit) >ifnames.tmp
+ 	chmod +x ifnames.tmp
+ 	chmod -w ifnames.tmp
+ 	mv -f ifnames.tmp ifnames
