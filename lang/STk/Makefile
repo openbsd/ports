@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/04/09 17:36:46 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/29 00:02:51 turan Exp $
 
 VER=		3.1.1
 DISTNAME=       STk-${VER}
@@ -6,9 +6,12 @@ CATEGORIES=	lang
 FAKE=No
 MASTER_SITES=	ftp://kaolin.unice.fr/pub/STk/
 
-NO_CDROM=	"NOFEE:	Can not sell"
-
 MAINTAINER=	ports@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 GNU_CONFIGURE=	yes
 
