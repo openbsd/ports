@@ -1,26 +1,31 @@
 # New ports collection makefile for:	lesstif
-# Version required:	0.83
+# Version required:	0.85
 # Date created:		December 10, 1996
 # Whom:			form@vs.itam.nsc.ru
 #
-# $OpenBSD: Makefile,v 1.8 1998/06/11 08:51:26 todd Exp $
+# $OpenBSD: Makefile,v 1.9 1998/06/23 23:11:10 marc Exp $
 # FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp
 #
 
-DISTNAME=	lesstif-0.83
+DISTNAME=	lesstif-0.85
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
-		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/
 
 MAINTAINER=	form@vs.itam.nsc.ru
 
-#	see below for shared lib version information
+MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
+		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/
 
-MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
-GNU_CONFIGURE=  yes
-# comment this and remove the strip statement in post-install for debugging
-CONFIGURE_ARGS=	--disable-debug --enable-static
 USE_X11=	yes
+
+# see below for shared lib version information
+#
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--disable-debug
+.if (${MACHINE_ARCH} != "alpha")
+CONFIGURE_ARGS+=	--enable-shared
+.endif
+CONFIGURE_ARGS+=	--enable-static
+CONFIGURE_ENV=		${SETENV}
 
 .if defined(HAVE_MOTIF)
 IS_INTERACTIVE=	yes
