@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/15 19:48:27 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/08/31 22:16:50 shell Exp $
 lib/python${PYTHON_VER}/site-packages/unittest.py
 lib/python${PYTHON_VER}/site-packages/unittest.pyc
-lib/python${PYTHON_VER}/site-packages/unittestgui.py
-lib/python${PYTHON_VER}/site-packages/unittestgui.pyc
+!%%no_x11%%
