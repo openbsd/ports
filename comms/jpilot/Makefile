@@ -1,15 +1,12 @@
-# New ports collection makefile for:   jpilot
-# Version required:    0.96
-# Date created:        23 August 1999
-# Whom:                Alex Varju <varju@webct.com>
-#
-# $OpenBSD: Makefile,v 1.7 2000/04/08 10:42:17 ho Exp $
-# $FreeBSD: ports/palm/jpilot/Makefile,v 1.6 1999/11/11 22:40:39 sumikawa Exp $
+# $OpenBSD: Makefile,v 1.8 2000/09/10 12:58:56 jakob Exp $
 
-DISTNAME=	jpilot-0.98
+DISTNAME=	jpilot-0.98.1
 CATEGORIES=	comms
-NEED_VERSION=	 1.230
-MASTER_SITES=	http://jpilot.linuxbox.com/
+NEED_VERSION=	1.322
+
+MASTER_SITES=	http://jpilot.linuxave.net/
+
+HOMEPAGE=	http://jpilot.linuxave.net/
 
 MAINTAINER=	ho@openbsd.org
 
@@ -18,12 +15,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=		Yes
-
 LIB_DEPENDS=	pisock.3::comms/pilot-link \
 		gtk.1.2::x11/gtk+
 
-USE_AUTOCONF=	yes
+USE_X11=		yes
+CONFIGURE_STYLE=	autoconf
 
 post-install:
 	mkdir -p ${PREFIX}/share/doc/jpilot
