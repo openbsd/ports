@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/10/11 13:19:46 robert Exp $
+# $OpenBSD: Makefile,v 1.20 2004/10/18 06:45:35 jakob Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=        --with-mysql \
  
 .if ${FLAVOR:L:Mldap}
 LIB_DEPENDS+=           ldap.2,lber:openldap-client-2.*:databases/openldap
-CONFIGURE_ARGS+=        --with-ldap
+CONFIGURE_ARGS+=        --with-ldap=${LOCALBASE}
 .endif
 
 post-build:
