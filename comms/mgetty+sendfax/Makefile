@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2000/04/09 17:36:09 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/08/15 19:38:18 brad Exp $
 # $FreeBSD: Makefile,v 1.25 1998/07/16 06:44:37 vanilla Exp $
 
-BROKEN=		installs files in /etc automatically
+BROKEN=		insecure tempfile handling: can overwrite any file on the system
 
 DISTNAME=	mgetty1.1.21-Jul24
 PKGNAME=	mgetty-1.1.21
