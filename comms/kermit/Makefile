@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2001/10/15 10:46:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2002/01/27 17:38:20 naddy Exp $
 
 COMMENT=	"serial and network communications package"
 
-PKGNAME=	kermit-7.0.197
-DISTNAME=	cku197
+PKGNAME=	kermit-8.0.200
+DISTNAME=	cku200
 CATEGORIES=	comms
-NEED_VERSION=	1.463
+NEED_VERSION=	1.504
 HOMEPAGE=	http://www.kermit-project.org/
+
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"discriminatory license"
 PERMIT_PACKAGE_FTP=	Yes
@@ -26,35 +28,19 @@ MAKE_FLAGS=	KTARGET=openbsd \
 		LIBS="-lcurses -lutil -lm"
 
 DOCDIR=		${PREFIX}/share/doc/kermit
-EXAMPLESDIR=	${PREFIX}/share/examples/kermit
+DOCS=		COPYING.TXT ckaaaa.txt ckcbwr.txt ckccfg.txt ckcplm.txt \
+		ckermit70.txt ckermit80.txt ckubwr.txt ckuins.txt ckututor.txt
+EXAMPLEDIR=	${PREFIX}/share/examples/kermit
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/wermit ${PREFIX}/bin/kermit
 	${INSTALL_MAN} ${WRKSRC}/ckuker.nr ${PREFIX}/man/man1/kermit.1
-	@echo "Installing documentation ..."
-	@${INSTALL_DATA_DIR} ${DOCDIR}
-	@for file in ckuaaa.txt ckermit2.txt ckcbwr.txt ckubwr.txt \
-	    ckuins.txt telnet.txt security.txt iksd.txt ckcplm.txt \
-	    ckccfg.txt ; \
-	do \
-	    ${INSTALL_DATA} ${WRKSRC}/$$file ${DOCDIR} ; \
+	${INSTALL_DATA_DIR} ${DOCDIR}
+	for file in ${DOCS}; do \
+	    ${INSTALL_DATA} ${WRKSRC}/$$file ${DOCDIR}; \
 	done
-	@echo "Installing examples ..."
-	@${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-	@set -- \
-	    ckermit.ini dot.kermrc \
-	    ckermod.ini dot.mykermrc \
-	    ckurzsz.ini dot.rzszkermrc \
-	    ckermit.kdd dot.kdd \
-	    ckermit.knd dot.knd \
-	    ckermit.ksd dot.ksd \
-	    ckedemo.ksc ckedemo.ksc \
-	    ckepage.ksc ckepage.ksc \
-	    ckevt.ksc ckevt.ksc \
-	    iksdpy iksdpy ; \
-	while [ $$# -gt 1 ]; do \
-	    file=$$1; dest=$$2 ; shift ; shift ; \
-	    ${INSTALL_DATA} ${WRKSRC}/$$file ${EXAMPLESDIR}/$$dest; \
-	done
+	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
+	${INSTALL_DATA} ${WRKSRC}/ckermit.ini ${EXAMPLEDIR}/dot.kermrc
+	${INSTALL_DATA} ${WRKSRC}/ckermod.ini ${EXAMPLEDIR}/dot.mykermrc
 
 .include <bsd.port.mk>
