@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2005/03/13 05:02:17 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.30 2005/03/26 19:05:54 wilfried Exp $
 %%SHARED%%
 %%gtk2%%
 !%%gtk2%%
@@ -570,6 +570,7 @@ mozilla/greprefs/security-prefs.js
 mozilla/greprefs/xpinstall.js
 mozilla/mozilla-bin
 mozilla/mozilla-config
+mozilla/mozilla-xremote-client
 mozilla/regchrome
 mozilla/regxpcom
 mozilla/res/

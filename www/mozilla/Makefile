@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.83 2005/03/13 05:02:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.84 2005/03/26 19:05:54 wilfried Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
 COMMENT=	"open source version of the Netscape browser"
 COMMENT-devel=	"devel files for Gecko"
 
-VER=		1.7.5
+VER=		1.7.6
 DISTNAME=	mozilla
 PKGNAME=	mozilla-${VER}
 DISTFILES=	mozilla-source-${VER}.tar.bz2
@@ -144,7 +144,7 @@ do-install:
 	${INSTALL_DATA} ${MOB}/bin/LICENSE ${MOZ}
 	${INSTALL_SCRIPT} ${MOB}/bin/mozilla ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${MOB}/bin/run-mozilla.sh ${MOB}/bin/mozilla-config ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/bin/regchrome ${MOB}/bin/regxpcom ${MOB}/bin/mozilla-bin ${MOZ}
+	${INSTALL_PROGRAM} ${MOB}/bin/regchrome ${MOB}/bin/regxpcom ${MOB}/bin/mozilla-bin ${MOB}/bin/mozilla-xremote-client ${MOZ}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
