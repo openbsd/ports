@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/20 20:46:30 lebel Exp $
+# $OpenBSD: Makefile,v 1.18 2002/05/03 15:13:14 lebel Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
-VERSION=	1.3.28
+VERSION=	1.3.99
 DISTNAME=	mutt-${VERSION}i
 CATEGORIES=	mail
 NEED_VERSION=	1.460
