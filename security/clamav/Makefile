@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/09 17:07:52 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2005/01/27 19:47:46 mbalmer Exp $
 
 COMMENT=		"free virus scanner"
-DISTNAME=		clamav-0.80
+DISTNAME=		clamav-0.81
 CATEGORIES=		security
 
 HOMEPAGE=		http://www.clamav.net/
@@ -51,9 +51,6 @@ DOCS=			clamav-mirror-howto.pdf clamdoc.pdf signatures.pdf
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/clamav \
 		${PREFIX}/share/examples/clamav
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/clamav/html
-	cd ${WRKSRC}/docs; ${INSTALL_DATA} html/* \
-		${PREFIX}/share/doc/clamav/html
 	cd ${WRKSRC}/docs; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/clamav
 	cd ${WRKSRC}/etc; ${INSTALL_DATA} clamd.conf \
 		freshclam.conf ${PREFIX}/share/examples/clamav
