@@ -1,3 +1,4 @@
+$OpenBSD: patch-ld_configure_tgt,v 1.6 2003/06/08 03:04:50 brad Exp $
 --- ld/configure.tgt.orig	Mon Oct 28 10:58:12 2002
 +++ ld/configure.tgt	Thu Jun  5 22:48:19 2003
 @@ -70,12 +70,15 @@ sparc*-*-linux-gnu*)	targ_emul=elf32_spa

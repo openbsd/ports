@@ -1,3 +1,4 @@
+$OpenBSD: patch-gprof_Makefile_in,v 1.3 2003/06/08 03:04:50 brad Exp $
 --- gprof/Makefile.in.orig	Sat Jul 13 21:14:42 2002
 +++ gprof/Makefile.in	Sun Mar 16 16:08:24 2003
 @@ -504,6 +504,7 @@ maintainer-clean-recursive:

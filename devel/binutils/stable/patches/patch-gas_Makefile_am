@@ -1,3 +1,4 @@
+$OpenBSD: patch-gas_Makefile_am,v 1.4 2003/06/08 03:04:50 brad Exp $
 --- gas/Makefile.am.orig	Sun Mar 16 15:56:19 2003
 +++ gas/Makefile.am	Sun Mar 16 15:58:04 2003
 @@ -376,6 +376,7 @@ TARG_ENV_HFILES = \

@@ -1,3 +1,4 @@
+$OpenBSD: patch-binutils_dllwrap_c,v 1.4 2003/06/08 03:04:50 brad Exp $
 --- binutils/dllwrap.c.orig	Mon Jul 15 22:04:32 2002
 +++ binutils/dllwrap.c	Sun Mar 16 15:35:15 2003
 @@ -366,7 +366,11 @@ run (what, args)

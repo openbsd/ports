@@ -1,3 +1,4 @@
+$OpenBSD: patch-bfd_configure_in,v 1.4 2003/06/08 03:04:50 brad Exp $
 --- bfd/configure.in.orig	Sun Mar 16 14:57:15 2003
 +++ bfd/configure.in	Sun Mar 16 15:00:08 2003
 @@ -365,7 +365,7 @@ changequote([,])dnl

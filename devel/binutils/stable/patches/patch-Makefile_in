@@ -1,3 +1,4 @@
+$OpenBSD: patch-Makefile_in,v 1.4 2003/06/08 03:04:50 brad Exp $
 --- Makefile.in.orig	Sat Mar 15 17:15:38 2003
 +++ Makefile.in	Sat Mar 15 17:15:48 2003
 @@ -1755,7 +1755,7 @@ configure-target-libiberty: $(ALL_GCC_C)

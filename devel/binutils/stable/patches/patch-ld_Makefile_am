@@ -1,3 +1,4 @@
+$OpenBSD: patch-ld_Makefile_am,v 1.5 2003/06/08 03:04:50 brad Exp $
 --- ld/Makefile.am.orig	Sun Mar 16 16:13:08 2003
 +++ ld/Makefile.am	Sun Mar 16 16:30:29 2003
 @@ -210,6 +210,7 @@ ALL_EMULATIONS = \

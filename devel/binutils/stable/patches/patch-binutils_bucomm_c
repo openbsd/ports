@@ -1,3 +1,4 @@
+$OpenBSD: patch-binutils_bucomm_c,v 1.4 2003/06/08 03:04:50 brad Exp $
 --- binutils/bucomm.c.orig	Mon Oct 28 11:01:19 2002
 +++ binutils/bucomm.c	Sun Mar 16 17:19:58 2003
 @@ -200,12 +200,14 @@ print_arelt_descr (file, abfd, verbose)

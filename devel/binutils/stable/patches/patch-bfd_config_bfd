@@ -1,3 +1,4 @@
+$OpenBSD: patch-bfd_config_bfd,v 1.8 2003/06/08 03:04:50 brad Exp $
 --- bfd/config.bfd.orig	Thu Nov  7 11:57:50 2002
 +++ bfd/config.bfd	Thu Jun  5 22:40:52 2003
 @@ -413,11 +413,15 @@ case "${targ}" in

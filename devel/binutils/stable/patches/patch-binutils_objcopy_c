@@ -1,3 +1,4 @@
+$OpenBSD: patch-binutils_objcopy_c,v 1.4 2003/06/08 03:04:50 brad Exp $
 --- binutils/objcopy.c.orig	Mon Jul 15 22:04:33 2002
 +++ binutils/objcopy.c	Sun Mar 16 19:47:51 2003
 @@ -1292,7 +1292,7 @@ copy_archive (ibfd, obfd, output_target)

@@ -1,3 +1,4 @@
+$OpenBSD: patch-binutils_ar_c,v 1.4 2003/06/08 03:04:50 brad Exp $
 --- binutils/ar.c.orig	Mon Jul 15 22:04:30 2002
 +++ binutils/ar.c	Sun Mar 16 17:19:57 2003
 @@ -1089,7 +1089,7 @@ write_archive (iarch)
