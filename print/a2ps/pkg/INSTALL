@@ -1,0 +1,70 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2000/06/11 01:13:43 weingart Exp $
+#
+# Pre/post-installation setup of a2ps
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+A2PSCFG=/etc/a2ps.cfg
+A2PSSITECFG=/etc/a2ps-site.cfg
+
+# Function: tell the user what s/he needs to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The files ${A2PSCFG}, ${A2PSSITECFG} exist on your system.  They"
+    echo "| have NOT been updated.  Please look at the files in"
+    echo "| ${PREFIX}/share/a2ps/etc"
+    echo "| and add any desired (but missing) entries into your"
+    echo "| current ${A2PSCFG} and ${A2PSSITECFG} files"
+    echo "+---------------"
+    echo
+}
+
+# Function: install the a2ps*.cfg where it is supposed to be.
+#
+do_install()
+{
+    cp ${PREFIX}/share/a2ps/etc/a2ps.cfg /etc
+    cp ${PREFIX}/share/a2ps/etc/a2ps-site.cfg /etc
+    echo
+    echo "+---------------"
+    echo "| The files ${A2PSCFG} and ${A2PSSITECFG} have been created"
+    echo "| on your system.  You may want to verify/edit their contents"
+    echo "+---------------"
+    echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if [ -e ${A2PSCFG} ]; then
+	    do_notice $1
+	else
+	    do_install $1
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
+
