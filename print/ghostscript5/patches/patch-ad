@@ -1,4 +1,0 @@
---- /dev/null	Sun May 18 19:02:12 1997
-+++ cdj850.dev	Sun May 18 19:14:48 1997
-@@ -0,0 +1 @@
-+-dev cdj850 -include page -obj gdevcd8.o gdevpcl.o
