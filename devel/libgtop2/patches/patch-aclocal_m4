@@ -1,0 +1,74 @@
+$OpenBSD: patch-aclocal_m4,v 1.1.1.1 2003/01/31 18:35:57 todd Exp $
+--- aclocal.m4.orig	Mon Jun 10 14:45:51 2002
++++ aclocal.m4	Fri Dec  6 22:27:34 2002
+@@ -716,17 +716,23 @@ AC_DEFUN([GNOME_LIBGTOP_SYSDEPS],[
+ 	  fi
+ 	  libgtop_need_server=no
+ 	  ;;
+-	freebsd*|netbsd*|openbsd*|bsdi*)
++	freebsd*|netbsd*|bsdi*)
+ 	  libgtop_sysdeps_dir=freebsd
+ 	  libgtop_use_machine_h=yes
+ 	  libgtop_need_server=yes
+-	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server && chmod 2755 $(bindir)/libgtop_server'
++	  libgtop_postinstall='chgrp kmem $(DESTDIR)$(bindir)/libgtop_server && chmod 2755 $(DESTDIR)$(bindir)/libgtop_server2'
++	  ;;
++	openbsd*)
++	  libgtop_sysdeps_dir=openbsd
++	  libgtop_use_machine_h=yes
++	  libgtop_need_server=yes
++	  libgtop_postinstall='chgrp kmem $(DESTDIR)$(bindir)/libgtop_server && chmod 2755 $(DESTDIR)$(bindir)/libgtop_server2'
+ 	  ;;
+ 	solaris*)
+ 	  libgtop_sysdeps_dir=solaris
+ 	  libgtop_use_machine_h=yes
+ 	  libgtop_need_server=yes
+-	  libgtop_postinstall='chgrp sys $(bindir)/libgtop_server && chmod 2755 $(bindir)/libgtop_server'
++	  libgtop_postinstall='chgrp kmem $(DESTDIR)$(bindir)/libgtop_server && chmod 2755 $(DESTDIR)$(bindir)/libgtop_server2'
+ 	  ;;
+ 	*)
+ 	  if test x$hacker_mode = xyes ; then
+@@ -2561,10 +2567,24 @@ else
+     ;;
+ 
+   openbsd*)
+-    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+-    hardcode_libdir_flag_spec='-R$libdir'
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
++    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
++      export_dynamic_flag_spec='${wl}-E'
++    else
++      case "$host_os" in
++      openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
++	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
++	hardcode_libdir_flag_spec='-R$libdir'
++        ;;
++      *)
++        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++        hardcode_libdir_flag_spec='${wl}-R$libdir'
++        ;;
++      esac
++    fi
+     ;;
+ 
+   os2*)
+@@ -4171,6 +4191,16 @@ newos6*)
+   [lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [ML]SB (executable|dynamic lib)']
+   lt_cv_file_magic_cmd=/usr/bin/file
+   lt_cv_file_magic_test_file=/usr/lib/libnls.so
++  ;;
++
++openbsd*)
++  lt_cv_file_magic_cmd=/usr/bin/file
++  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
++  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++    lt_cv_deplibs_check_method='file_magic ELF [[0-9]][[0-9]]*-bit [[LM]]SB shared object'
++  else
++    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
++  fi
+   ;;
+ 
+ osf3* | osf4* | osf5*)
