@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2000/04/12 18:39:13 turan Exp $
+# $OpenBSD: Makefile,v 1.39 2000/05/21 12:39:00 fgsch Exp $
 
 DISTNAME=	gimp-1.1.17
 CATEGORIES=	graphics
@@ -19,7 +19,7 @@ LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		aa.1.3::graphics/aalib \
 		jpeg.62::graphics/jpeg \
 		mpeg.13::graphics/mpeg-lib \
-		png.1.3::graphics/png \
+		png.1.6::graphics/png \
 		tiff.35::graphics/tiff
 
 USE_GMAKE=	Yes

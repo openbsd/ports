@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/03/31 21:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/05/21 12:39:01 fgsch Exp $
 # $FreeBSD: Makefile,v 1.3 1999/03/08 20:59:19 steve Exp $
 
 DISTNAME=	aterm-0.3.6
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
-		png.1.3::graphics/png
+		png.1.6::graphics/png
 
 USE_X11=	Yes
 GNU_CONFIGURE=	Yes

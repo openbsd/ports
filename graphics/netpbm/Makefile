@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/24 23:28:10 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/05/21 12:39:01 fgsch Exp $
 # $NetBSD: Makefile,v 1.25 1999/03/04 14:18:54 tron Exp $
 
 DISTNAME=	netpbm-1mar1994
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_CDROM=	No
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff \
-		png.1.3::graphics/png
+		png.1.6::graphics/png
 
 NO_CONFIGURE=	Yes
 MAKE_ENV=	PREFIX=${PREFIX} MANCP="${INSTALL_MAN}"
