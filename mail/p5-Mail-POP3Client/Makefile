@@ -1,17 +1,11 @@
-# OpenBSD makefile for:			p5-Mail-POP3Client
-# Version required:			1.15
-# Date created:				May 16 1998
-# Whom:	      				Angelos D. Keromytis
-#
-#   $OpenBSD: Makefile,v 1.8 2000/06/28 13:55:03 espie Exp $
-#
+#   $OpenBSD: Makefile,v 1.9 2000/08/21 02:17:43 brad Exp $
 
-DISTNAME=	POP3Client-2.3
-PKGNAME=	p5-Mail-POP3Client-2.3
+DISTNAME=	POP3Client-2.6
+PKGNAME=	p5-Mail-POP3Client-2.6
 CATEGORIES=	mail perl5
-NEED_VERSION=	1.308
+NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Mail
+MASTER_SITE_SUBDIR= Mail
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -19,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-CONFIGURE_STYLE=	perl
+
+CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>
