@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: check-libs-elf,v 1.6 2004/11/21 11:06:38 espie Exp $
+# $OpenBSD: check-libs-elf,v 1.7 2004/11/21 11:17:47 espie Exp $
 
 #  Copyright (c) 2001 Marc Espie
 # 
@@ -50,12 +50,19 @@ sub find_library
 }
 
 my $error = 0;
+my %registered;
 
-my %registered = map { s/.*\///; s/\.$//; s/(?:\.\d+){1,2}$//; ($_, 1); }
-	split(/[ ,\n]+/, $ENV{'LIB_DEPENDS'});
+if (defined $ENV{'LIB_DEPENDS'}) {
+	for my $d (split(/[ ,\n]+/, $ENV{'LIB_DEPENDS'}) {
+		$d =~ s/.*\///;
+		$d =~ s/\.$//;
+		$d =~ s/(?:\.\d+){1,2}$//;
+		$registered{$d} = 1;
+	}
+}
 
 if (defined $ENV{'WANTLIB'}) {
-	for my $r ($ENV{'WANTLIB'}) {
+	for my $r (split(/\s+/, $ENV{'WANTLIB'})) {
 		$r =~ s/(?:\.\d+){1,2}$//;
 		$registered{$r} = 1;
 	}
