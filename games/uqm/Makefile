@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/08/08 00:27:24 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2004/10/01 05:08:22 jolan Exp $
 
 # 64-bit issues, unaligned memory access
 ONLY_FOR_ARCHS=	i386 powerpc
@@ -103,8 +103,8 @@ RUN_DEPENDS=	::games/uqm
 WRKSRC=	${WRKDIR}/${PKGNAME}
 
 do-configure:
-.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "i386" || \
-     ${MACHINE_ARCH} == "vax")
+.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
+	${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "vax")
 	@sed -e "s|@PREFIX@|${PREFIX}|g ; s|@ENDIAN@|undef|g" \
 		${FILESDIR}/config.h > ${WRKSRC}/src/config.h
 .else
