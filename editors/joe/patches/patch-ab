@@ -1,5 +1,5 @@
-*** Makefile.orig	Thu Apr 16 17:56:49 1998
---- Makefile	Thu Apr 16 17:57:27 1998
+*** Makefile.orig	Mon Jan 23 12:01:28 1995
+--- Makefile	Mon Sep 28 16:37:20 1998
 ***************
 *** 10,17 ****
   # to go:
@@ -19,3 +19,30 @@
   
   # If you want to use TERMINFO, you have to set
   # the following variable to 1.  Also you have to
+***************
+*** 115,126 ****
+  	chmod a+r $(WHERERC)/jpicorc
+  	chmod a+r $(WHEREMAN)/joe.1
+  	chmod a+x $(WHEREJOE)/termidx
+! 	rm -f $(WHERERC)/termcap
+! 	cp termcap $(WHERERC)/termcap
+! 	chmod a+r $(WHERERC)/termcap
+! 	rm -f $(WHERERC)/terminfo
+! 	cp terminfo $(WHERERC)/terminfo
+! 	chmod a+r $(WHERERC)/terminfo
+  
+  # Cleanup proceedure
+  
+--- 115,126 ----
+  	chmod a+r $(WHERERC)/jpicorc
+  	chmod a+r $(WHEREMAN)/joe.1
+  	chmod a+x $(WHEREJOE)/termidx
+! #	rm -f $(WHERERC)/termcap
+! #	cp termcap $(WHERERC)/termcap
+! #	chmod a+r $(WHERERC)/termcap
+! #	rm -f $(WHERERC)/terminfo
+! #	cp terminfo $(WHERERC)/terminfo
+! #	chmod a+r $(WHERERC)/terminfo
+  
+  # Cleanup proceedure
+  

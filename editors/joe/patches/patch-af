@@ -1,54 +1,20 @@
-*** termcap.c.orig	Thu Apr 16 18:04:11 1998
---- termcap.c	Thu Apr 16 18:05:15 1998
+*** termcap.c.orig	Mon Sep 28 16:33:10 1998
+--- termcap.c	Mon Sep 28 16:33:31 1998
 ***************
-*** 153,159 ****
-  char *tp, *pp, *qq, *namebuf, **npbuf, *idxname;
-  int sortsiz;
-  
-! if(!name && !(name=joeterm) && !(name=getenv("TERM"))) return 0;
-  cap=(CAP *)malloc(sizeof(CAP));
-  cap->tbuf=vsmk(4096);
-  cap->abuf=0;
---- 153,159 ----
-  char *tp, *pp, *qq, *namebuf, **npbuf, *idxname;
-  int sortsiz;
-  
-! if(!name && !(name=joeterm) && !(name=(char *)getenv("TERM"))) return 0;
-  cap=(CAP *)malloc(sizeof(CAP));
-  cap->tbuf=vsmk(4096);
-  cap->abuf=0;
-***************
-*** 175,190 ****
-  cap->sort=(struct sortentry *)malloc(sizeof(struct sortentry)*(sortsiz=64));
-  cap->sortlen=0;
-  
-! tp=getenv("TERMCAP");
-  
-  if(tp && tp[0]=='/') namebuf=vsncpy(NULL,0,sz(tp));
-  else
-   {
-   if(tp) cap->tbuf=vsncpy(sv(cap->tbuf),sz(tp));
-!  if((tp=getenv("TERMPATH"))) namebuf=vsncpy(NULL,0,sz(tp));
-   else
-    {
-!   if((tp=getenv("HOME")))
-     namebuf=vsncpy(NULL,0,sz(tp)),
-     namebuf=vsadd(namebuf,'/');
-    else
---- 175,190 ----
-  cap->sort=(struct sortentry *)malloc(sizeof(struct sortentry)*(sortsiz=64));
-  cap->sortlen=0;
-  
-! tp=(char *)getenv("TERMCAP");
-  
-  if(tp && tp[0]=='/') namebuf=vsncpy(NULL,0,sz(tp));
-  else
-   {
-   if(tp) cap->tbuf=vsncpy(sv(cap->tbuf),sz(tp));
-!  if((tp=(char *)getenv("TERMPATH"))) namebuf=vsncpy(NULL,0,sz(tp));
-   else
-    {
-!   if((tp=(char *)getenv("HOME")))
-     namebuf=vsncpy(NULL,0,sz(tp)),
-     namebuf=vsadd(namebuf,'/');
-    else
+*** 275,281 ****
+   *pp++=0;
+   loop1:
+   if(pp[0]==' ' || pp[0]=='\t') goto loop;
+!  for(q=0;pp[q] && pp[q]!='#' && pp[q]!='=' && pp[q]!='@' && pp[q]!=':';++q);
+   qq=pp;
+   c=pp[q]; pp[q]=0;
+   if(c) pp+=q+1;
+--- 275,282 ----
+   *pp++=0;
+   loop1:
+   if(pp[0]==' ' || pp[0]=='\t') goto loop;
+!  q=0; if (pp[q]=='@') q++;
+!  for(;pp[q] && pp[q]!='#' && pp[q]!='=' && pp[q]!='@' && pp[q]!=':';++q);
+   qq=pp;
+   c=pp[q]; pp[q]=0;
+   if(c) pp+=q+1;

@@ -13,7 +13,5 @@ lib/joe/jmacsrc
 lib/joe/jstarrc
 lib/joe/rjoerc
 lib/joe/jpicorc
-lib/joe/termcap
-lib/joe/terminfo
 man/man1/joe.1
 @dirrm lib/joe

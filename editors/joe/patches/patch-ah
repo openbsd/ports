@@ -1,0 +1,39 @@
+*** joerc.orig	Mon Sep 28 16:35:30 1998
+--- joerc	Mon Sep 28 16:36:16 1998
+***************
+*** 277,283 ****
+  	.kl		Left
+  	.kr		Right
+  	.kh		Home
+! 	.kH		End
+  	.kI		Insert
+  	.kD		Delete
+  	.kP		PgUp
+--- 277,283 ----
+  	.kl		Left
+  	.kr		Right
+  	.kh		Home
+! 	.kH or .@7	End
+  	.kI		Insert
+  	.kD		Delete
+  	.kP		PgUp
+***************
+*** 477,482 ****
+--- 477,483 ----
+  eof		^K ^V
+  eof		^K v
+  eol		.kH		Go to end of line
++ eol		.@7
+  eol		^E
+  exsave		^K X		Save and exit
+  exsave		^K ^X
+***************
+*** 570,575 ****
+--- 571,577 ----
+  eofmenu		^K ^V
+  eofmenu		^K v
+  eolmenu		.kH
++ eolmenu		.@7
+  eolmenu		^E
+  ltarwmenu	.kl
+  ltarwmenu	^B
