@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/14 14:46:07 camield Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/15 19:17:00 naddy Exp $
 
 COMMENT=		"threaded dns daemon, optimized for caching"
 
-DISTNAME=		pdnsd-1.1.5
+DISTNAME=		pdnsd-1.1.6
 CATEGORIES=     	net
 NEED_VERSION=		1.414
 HOMEPAGE=		http://home.t-online.de/home/Moestl/

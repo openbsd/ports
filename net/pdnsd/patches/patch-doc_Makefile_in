@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2001/07/15 19:17:00 naddy Exp $
+--- doc/Makefile.in.orig	Mon Jul  2 21:37:36 2001
++++ doc/Makefile.in	Sun Jul 15 20:42:16 2001
+@@ -229,7 +229,7 @@ maintainer-clean-generic clean mostlycle
+ install-data-hook:
+ 	$(mkinstalldirs) $(DESTDIR)/$(sysconfdir)
+ 	# For both source installs and RPM builds
+-	if test `whoami` = "root"; then \
++	if test `userinfo -e pdnsd`; then \
+ 	  $(INSTALL) -o 0 -g 0 -m 644 pdnsd.conf $(DESTDIR)/$(sysconfdir)/pdnsd.conf.sample ; \
+ 	else \
+ 	  $(INSTALL) -m 644 pdnsd.conf $(DESTDIR)/$(sysconfdir)/pdnsd.conf.sample ; \
