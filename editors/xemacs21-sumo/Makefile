@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/15 16:39:12 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/18 23:33:52 espie Exp $
 
 # 
 # What port/package will be created
@@ -12,6 +12,7 @@ NEED_VERSION=		1.353
 
 HOMEPAGE=		http://www.xemacs.org/
 
+COMMENT=		"complete set of supported XEmacs packages"
 # where to send bitches about this port
 #
 MAINTAINER=		Jean-Yves Burlett <jean-yves@burlett.org>

@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/04/15 17:30:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2001/04/18 23:33:54 espie Exp $
 @pkgcfl emacs-*
-@pkgcfl gnats-*
 @comment mailcrypt is included in xemacs-sumo-21
 @comment the conflict is only on info files
 @pkgcfl mailcrypt-*
@@ -17,7 +16,6 @@
 @unexec install-info --delete --info-dir=%D/info %D/info/eshell.info
 @unexec install-info --delete --info-dir=%D/info %D/info/eudc.info
 @unexec install-info --delete --info-dir=%D/info %D/info/forms.info
-@unexec install-info --delete --info-dir=%D/info %D/info/gnats.info
 @unexec install-info --delete --info-dir=%D/info %D/info/gnus-mime-en.info
 @unexec install-info --delete --info-dir=%D/info %D/info/gnus-mime-ja.info
 @unexec install-info --delete --info-dir=%D/info --section='XEmacs Editor' --entry='* Gnus: (gnus).	Gnus Mail and News reader.' %D/info/gnus.info
@@ -108,11 +106,6 @@ info/emacs-mime.info
 info/eshell.info
 info/eudc.info
 info/forms.info
-info/gnats.info
-info/gnats.info-1
-info/gnats.info-2
-info/gnats.info-3
-info/gnats.info-4
 info/gnus-mime-en.info
 info/gnus-mime-ja.info
 info/gnus.info
@@ -4480,7 +4473,6 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.zenirc
 @exec install-info --info-dir=%D/info %D/info/eshell.info
 @exec install-info --info-dir=%D/info %D/info/eudc.info
 @exec install-info --info-dir=%D/info %D/info/forms.info
-@exec install-info --info-dir=%D/info %D/info/gnats.info
 @exec install-info --info-dir=%D/info %D/info/gnus-mime-en.info
 @exec install-info --info-dir=%D/info %D/info/gnus-mime-ja.info
 @exec install-info --info-dir=%D/info --section='XEmacs Editor' --entry='* Gnus: (gnus).	Gnus Mail and News reader.' %D/info/gnus.info
