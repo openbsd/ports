@@ -1,5 +1,5 @@
---- scripts/mysql_install_db.sh.orig	Thu Feb  8 21:12:22 2001
-+++ scripts/mysql_install_db.sh	Wed Feb 14 19:40:32 2001
+--- scripts/mysql_install_db.sh.orig	Sat Mar 10 10:46:44 2001
++++ scripts/mysql_install_db.sh	Mon Mar 12 13:04:49 2001
 @@ -7,12 +7,9 @@
  #
  # All unrecognized arguments to this script are passed to mysqld.
@@ -125,12 +125,12 @@
      echo "able to use the new GRANT command!"
    fi
    echo
--  if test -z "$IN_RPM"
+-  if test "$IN_RPM" -eq 0
 -  then
--    echo "You can start the MySQL demon with:"
+-    echo "You can start the MySQL daemon with:"
 -    echo "cd @prefix@ ; $bindir/safe_mysqld &"
 -    echo
--    echo "You can test the MySQL demon with the benchmarks in the 'sql-bench' directory:"
+-    echo "You can test the MySQL daemon with the benchmarks in the 'sql-bench' directory:"
 -    echo "cd sql-bench ; run-all-tests"
 -    echo
 -  fi

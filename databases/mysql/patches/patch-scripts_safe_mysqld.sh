@@ -1,6 +1,6 @@
---- scripts/safe_mysqld.sh.orig	Fri Jan 19 12:24:19 2001
-+++ scripts/safe_mysqld.sh	Fri Jan 19 12:36:23 2001
-@@ -64,26 +64,9 @@
+--- scripts/safe_mysqld.sh.orig	Sat Mar 10 10:46:40 2001
++++ scripts/safe_mysqld.sh	Mon Mar 12 13:01:29 2001
+@@ -64,30 +64,9 @@
    done
  }
  
@@ -12,6 +12,10 @@
 -  MY_BASEDIR_VERSION=$MY_PWD		# Where bin, share and data are
 -  ledir=$MY_BASEDIR_VERSION/bin		# Where mysqld is
 -  DATADIR=$MY_BASEDIR_VERSION/data
+-  if test -z "defaults"
+-  then
+-    defaults="--defaults-extra-file=$MY_BASEDIR_VERSION/data/my.cnf"
+-  fi
 -# Check if this is a 'moved install directory'
 -elif test -f ./var/mysql/db.frm -a -f ./share/mysql/english/errmsg.sys -a \
 - -x ./libexec/mysqld
@@ -30,7 +34,7 @@
  
  MYSQL_UNIX_PORT=${MYSQL_UNIX_PORT:-@MYSQL_UNIX_ADDR@}
  MYSQL_TCP_PORT=${MYSQL_TCP_PORT:-@MYSQL_TCP_PORT@}
-@@ -202,10 +185,10 @@
+@@ -206,10 +185,10 @@
  echo "Starting $MYSQLD daemon with databases from $DATADIR"
  
  # Does this work on all systems?
@@ -45,7 +49,7 @@
  
  echo "`date +'%y%m%d %H:%M:%S  mysqld started'`" >> $err_log
  while true
-@@ -220,34 +203,6 @@
+@@ -224,34 +203,6 @@
    if test ! -f $pid_file		# This is removed if normal shutdown
    then
      break
