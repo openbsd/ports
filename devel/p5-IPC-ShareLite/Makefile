@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/10/16 13:02:03 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2003/04/30 19:14:43 wilfried Exp $
 
 COMMENT=	"simple interface to access shared memory"
 
-DISTNAME=	IPC-ShareLite-0.08
+DISTNAME=	IPC-ShareLite-0.09
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
