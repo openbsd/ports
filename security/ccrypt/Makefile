@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2003/06/20 06:25:55 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2003/11/20 02:45:18 kevlo Exp $
 
 COMMENT=	"encrypt and decrypt AES files and streams"
 
-DISTNAME=	ccrypt-1.4
+DISTNAME=	ccrypt-1.6
 CATEGORIES=	security
 
 HOMEPAGE=	http://quasar.mathstat.uottawa.ca/~selinger/ccrypt/
