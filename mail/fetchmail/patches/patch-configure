@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2002/05/01 22:19:37 fgsch Exp $
+--- configure.orig	Wed May  1 13:30:30 2002
++++ configure	Wed May  1 13:31:07 2002
+@@ -5828,7 +5828,7 @@ EOF
+ EOF
+ 
+   CEFLAGS="$CEFLAGS -I/usr/include/kerberosV"
+-  LIBS="$LIBS -lasn1 -lkrb5 -lcom_err"
++  LIBS="$LIBS -lkrb5 -lasn1 -lcom_err -lkafs"
+ else
+   if test "$with_kerberos5" != "yes" 
+   then
