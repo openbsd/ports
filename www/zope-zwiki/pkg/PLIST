@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/10/11 15:27:00 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/12/21 11:05:10 sturm Exp $
+lib/zope/lib/python/Products/ZWiki/Admin.py
+lib/zope/lib/python/Products/ZWiki/Admin.pyc
 lib/zope/lib/python/Products/ZWiki/CHANGES.txt
 lib/zope/lib/python/Products/ZWiki/CMF.py
 lib/zope/lib/python/Products/ZWiki/CMF.pyc
@@ -10,6 +12,8 @@ lib/zope/lib/python/Products/ZWiki/Defaults.py
 lib/zope/lib/python/Products/ZWiki/Defaults.pyc
 lib/zope/lib/python/Products/ZWiki/Diff.py
 lib/zope/lib/python/Products/ZWiki/Diff.pyc
+lib/zope/lib/python/Products/ZWiki/Editing.py
+lib/zope/lib/python/Products/ZWiki/Editing.pyc
 lib/zope/lib/python/Products/ZWiki/Extensions/Install.py
 lib/zope/lib/python/Products/ZWiki/Extensions/Install.pyc
 lib/zope/lib/python/Products/ZWiki/Extensions/README
@@ -29,6 +33,8 @@ lib/zope/lib/python/Products/ZWiki/Mail.py
 lib/zope/lib/python/Products/ZWiki/Mail.pyc
 lib/zope/lib/python/Products/ZWiki/Messages.py
 lib/zope/lib/python/Products/ZWiki/Messages.pyc
+lib/zope/lib/python/Products/ZWiki/PageTypes.py
+lib/zope/lib/python/Products/ZWiki/PageTypes.pyc
 lib/zope/lib/python/Products/ZWiki/Parents.py
 lib/zope/lib/python/Products/ZWiki/Parents.pyc
 lib/zope/lib/python/Products/ZWiki/Permissions.py
@@ -59,13 +65,13 @@ lib/zope/lib/python/Products/ZWiki/__init__.pyc
 lib/zope/lib/python/Products/ZWiki/content/basic/AnnoyingQuote.stx
 lib/zope/lib/python/Products/ZWiki/content/basic/FrontPage.stx
 lib/zope/lib/python/Products/ZWiki/content/basic/HelpPage.stx
-lib/zope/lib/python/Products/ZWiki/content/basic/RecentChanges.stxdtml
-lib/zope/lib/python/Products/ZWiki/content/basic/SearchPage.stxdtml
-lib/zope/lib/python/Products/ZWiki/content/basic/UserOptions.stxdtml
 lib/zope/lib/python/Products/ZWiki/content/basic/WikiWikiWeb.stx
 lib/zope/lib/python/Products/ZWiki/content/basic/ZWiki.stx
 lib/zope/lib/python/Products/ZWiki/content/basic/index_html.dtml
 lib/zope/lib/python/Products/ZWiki/content/basic/standard_error_message.dtml
+lib/zope/lib/python/Products/ZWiki/content/dtml/RecentChanges.stxdtml
+lib/zope/lib/python/Products/ZWiki/content/dtml/SearchPage.stxdtml
+lib/zope/lib/python/Products/ZWiki/content/dtml/UserOptions.stxdtml
 lib/zope/lib/python/Products/ZWiki/content/tracker/FilterIssues.stxdtml
 lib/zope/lib/python/Products/ZWiki/content/tracker/IssueTracker.stxdtml
 lib/zope/lib/python/Products/ZWiki/dtml/zwikiPageAdd.dtml
@@ -82,18 +88,36 @@ lib/zope/lib/python/Products/ZWiki/skins/default/backlinks.pt
 lib/zope/lib/python/Products/ZWiki/skins/default/contentspage.pt
 lib/zope/lib/python/Products/ZWiki/skins/default/diffform.pt
 lib/zope/lib/python/Products/ZWiki/skins/default/editform.pt
+lib/zope/lib/python/Products/ZWiki/skins/default/filterissues.pt
+lib/zope/lib/python/Products/ZWiki/skins/default/filterissuesdtml.dtml
+lib/zope/lib/python/Products/ZWiki/skins/default/issuetracker.pt
+lib/zope/lib/python/Products/ZWiki/skins/default/issuetrackerdtml.dtml
+lib/zope/lib/python/Products/ZWiki/skins/default/recentchanges.pt
+lib/zope/lib/python/Products/ZWiki/skins/default/recentchangesdtml.dtml
+lib/zope/lib/python/Products/ZWiki/skins/default/searchwiki.pt
+lib/zope/lib/python/Products/ZWiki/skins/default/searchwikidtml.dtml
+lib/zope/lib/python/Products/ZWiki/skins/default/stylesheet.css
 lib/zope/lib/python/Products/ZWiki/skins/default/subscribeform.pt
+lib/zope/lib/python/Products/ZWiki/skins/default/useroptions.pt
+lib/zope/lib/python/Products/ZWiki/skins/default/useroptionsdtml.dtml
 lib/zope/lib/python/Products/ZWiki/skins/default/wikipage.pt
+lib/zope/lib/python/Products/ZWiki/skins/default/wikipage_macros.pt
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/backlinks.pt
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/contentspage.pt
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/diffform.pt
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/editform.pt
-lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/no_dtml.dtml
-lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/recentchanges.dtml
-lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/searchwiki.dtml
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/filterissues.pt
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/filterissuesdtml.dtml
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/issuetracker.pt
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/issuetrackerdtml.dtml
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/recentchanges.pt
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/recentchangesdtml.dtml
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/searchwiki.pt
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/searchwikidtml.dtml
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/subscribeform.pt
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/uploaded.pt
-lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/useroptions.dtml
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/useroptions.pt
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/useroptionsdtml.dtml
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/wiki_icon.gif
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/wikifolder_edit.py
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/wikifolder_edit.pyc
@@ -103,14 +127,25 @@ lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/wikipage_footer.pt
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/wikipage_header.pt
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/wikipage_icon.gif
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/wikipage_view.pt
+lib/zope/lib/python/Products/ZWiki/tests/README.txt
 lib/zope/lib/python/Products/ZWiki/tests/__init__.py
 lib/zope/lib/python/Products/ZWiki/tests/__init__.pyc
+lib/zope/lib/python/Products/ZWiki/tests/framework.py
+lib/zope/lib/python/Products/ZWiki/tests/framework.pyc
 lib/zope/lib/python/Products/ZWiki/tests/support.py
 lib/zope/lib/python/Products/ZWiki/tests/support.pyc
+lib/zope/lib/python/Products/ZWiki/tests/testAdmin.py
+lib/zope/lib/python/Products/ZWiki/tests/testAdmin.pyc
+lib/zope/lib/python/Products/ZWiki/tests/testCMFPlone.py
+lib/zope/lib/python/Products/ZWiki/tests/testCMFPlone.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testCatalogAwareness.py
 lib/zope/lib/python/Products/ZWiki/tests/testCatalogAwareness.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testMail.py
 lib/zope/lib/python/Products/ZWiki/tests/testMail.pyc
+lib/zope/lib/python/Products/ZWiki/tests/testMessages.py
+lib/zope/lib/python/Products/ZWiki/tests/testMessages.pyc
+lib/zope/lib/python/Products/ZWiki/tests/testParents.py
+lib/zope/lib/python/Products/ZWiki/tests/testParents.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testPurpleNumbers.py
 lib/zope/lib/python/Products/ZWiki/tests/testPurpleNumbers.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testZWikiPage.py
@@ -128,6 +163,7 @@ lib/zope/lib/python/Products/ZWiki/version.txt
 @dirrm lib/zope/lib/python/Products/ZWiki/images
 @dirrm lib/zope/lib/python/Products/ZWiki/dtml
 @dirrm lib/zope/lib/python/Products/ZWiki/content/tracker
+@dirrm lib/zope/lib/python/Products/ZWiki/content/dtml
 @dirrm lib/zope/lib/python/Products/ZWiki/content/basic
 @dirrm lib/zope/lib/python/Products/ZWiki/content
 @dirrm lib/zope/lib/python/Products/ZWiki/Extensions
