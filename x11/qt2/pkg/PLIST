@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/10/08 06:02:04 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2000/10/31 09:50:15 espie Exp $
 bin/designer
 bin/findtr
 bin/moc2
@@ -957,6 +957,7 @@ share/doc/qt2/README.QT
 share/doc/qt2/changes-2.2.0
 share/doc/qt2/changes-2.2.1
 @unexec echo "Please remove %D/lib/qt2/man from /etc/man.conf manually if needed"
+@unexec echo "and remove %D/lib/qt2 from shlib_dirs in /etc/rc.conf as well"
 @dirrm include/X11/qt2
 @dirrm lib/qt2/tools/designer/templates
 @dirrm lib/qt2/tools/designer
