@@ -9,3 +9,4 @@ lib/X11/xbl/xbl-score.gif
 lib/X11/xbl/xbl-zoo.gif
 lib/X11/xbl/xbl.html
 man/mann/xbl.n
+@dirrm lib/X11/xbl

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:57 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/01/14 03:09:35 angelos Exp $
 #
 
-DISTNAME=	xbl-1.0h
+DISTNAME=	xbl-1.0j
 CATEGORIES=	games
 
 #BROKEN=	"newer version available"
@@ -13,5 +13,6 @@ EXTRACT_SUFX=	.tar.Z
 
 USE_X11=	yes
 HAS_CONFIGURE=	yes
+CFLAGS+=	-I${PREFIX}/include
 
 .include <bsd.port.mk>
