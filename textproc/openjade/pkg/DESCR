@@ -1,0 +1,20 @@
+Jade is James Clark's implementation of DSSSL -- Document Style
+Semantics and Specification Language -- an ISO standard for formatting
+SGML (and XML) documents.
+
+OpenJade is a project undertaken by the DSSSL community to maintain
+and extend Jade. OpenJade is distributed under the same license as
+Jade.
+
+OpenJade is a command line application and a set of components. The
+DSSSL engine receives as input an SGML or XML document and transforms
+it into formats like:
+
+* XML representation of the flow object tree. 
+* RTF format that can be rendered and printed with Microsoft's free
+  Word Viewer 97   
+* TeX format 
+* MIF format that can be rendered and printed with Framemaker 
+* SGML or XML format. This is used in conjunction with non-standard
+  flow object classes to generate SGML, thus allowing OpenJade to be
+  used for SGML/XML transformations. 

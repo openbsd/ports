@@ -1,0 +1,13 @@
+--- style/LangObj.cxx.orig	Fri Jul  2 00:49:58 1999
++++ style/LangObj.cxx	Sun Sep  3 12:25:30 2000
+@@ -12,8 +12,10 @@
+ #include <string.h>
+ #include <ctype.h>
+ #include <string.h>
++#ifndef __OpenBSD__
+ #include <wchar.h>
+ #include <wctype.h>
++#endif 
+ 
+ #ifdef SP_HAVE_LOCALE
+ #include <locale.h>

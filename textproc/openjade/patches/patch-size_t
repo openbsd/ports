@@ -1,0 +1,15 @@
+--- lib/parser_inst.m4.orig	Fri Aug 20 09:05:33 1999
++++ lib/parser_inst.m4	Sun Sep  3 14:30:59 2000
+@@ -166,10 +166,10 @@
+ __instantiate(Vector<LeafContentToken*>)
+ __instantiate(Vector<size_t>)
+  // we really just want to test if size_t == unsigned int
+-#if !defined(SIZEOF_SIZE_T) || !defined(SIZEOF_UNSIGNED_INT) || (SIZEOF_SIZE_T != SIZEOF_UNSIGNED_INT)
++#if defined(__alpha__) || defined(__sparc64__)
++ // #if !defined(SIZEOF_SIZE_T) || !defined(SIZEOF_UNSIGNED_INT) || (SIZEOF_SIZE_T != SIZEOF_UNSIGNED_INT)
+ __instantiate(Vector<unsigned int>)
+ #endif
+-
+ __instantiate(NamedTable<Id>)
+ __instantiate(NamedTableIter<Id>)
+ __instantiate(IListIter<EquivClass>)

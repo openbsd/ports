@@ -1,0 +1,43 @@
+@comment $OpenBSD: PLIST,v 1.1 2000/09/04 06:20:56 matthieu Exp $
+bin/onsgmls
+bin/openjade
+bin/osgmlnorm
+bin/ospam
+bin/ospent
+bin/osx
+share/doc/openjade/autoconf.htm
+share/doc/openjade/contributors.htm
+share/doc/openjade/copying.txt
+share/doc/openjade/dsssl2.htm
+share/doc/openjade/images/background.gif
+share/doc/openjade/images/dsssltitle.gif
+share/doc/openjade/images/space.gif
+share/doc/openjade/images/top-of-page.gif
+share/doc/openjade/index.htm
+share/doc/openjade/mif.htm
+share/doc/openjade/rtf.htm
+share/doc/openjade/sp/archform.htm
+share/doc/openjade/sp/build.htm
+share/doc/openjade/sp/catalog.htm
+share/doc/openjade/sp/charset.htm
+share/doc/openjade/sp/features.htm
+share/doc/openjade/sp/generic.htm
+share/doc/openjade/sp/ideas.htm
+share/doc/openjade/sp/index.htm
+share/doc/openjade/sp/new.htm
+share/doc/openjade/sp/nsgmls.htm
+share/doc/openjade/sp/sgmldecl.htm
+share/doc/openjade/sp/sgmlnorm.htm
+share/doc/openjade/sp/sgmlsout.htm
+share/doc/openjade/sp/spam.htm
+share/doc/openjade/sp/spent.htm
+share/doc/openjade/sp/sx.htm
+share/doc/openjade/sp/sysdecl.htm
+share/doc/openjade/sp/sysid.htm
+share/doc/openjade/sp/xml.htm
+share/doc/openjade/tex.htm
+share/doc/openjade/transform.htm
+share/doc/openjade/xmlfo.htm
+@dirrm share/doc/openjade/sp
+@dirrm share/doc/openjade/images
+@dirrm share/doc/openjade
