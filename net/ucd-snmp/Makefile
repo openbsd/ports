@@ -1,5 +1,5 @@
 # 
-# $OpenBSD: Makefile,v 1.11 2000/06/22 15:36:26 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2000/06/27 06:36:10 jakob Exp $
 # 
 
 DISTNAME=		ucd-snmp-4.1.2
@@ -16,9 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ucd-snmp.ucdavis.edu/	\
 		        ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--prefix='$${DESTDIR}${PREFIX}'
-CONFIGURE_ARGS+=	--sysconfdir='/etc'
+CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--with-persistent-directory='/var/ucd-snmp'
 CONFIGURE_ARGS+=	--with-sys-contact='<change_me>'
 CONFIGURE_ARGS+=	--with-sys-location='<change_me>'
