@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/09 10:50:51 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/17 12:41:41 wilfried Exp $
 
 DISTNAME=	yorick-1.4
 CATEGORIES=	math devel
 NEED_VERSION=	1.353
+MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/
 
 HOMEPAGE=	ftp://ftp-icf.llnl.gov/pub/Yorick/yorick-ad.html
-
-MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/
 
 MAINTAINER=	Peter Valchev <pvalchev@toxiclinux.org>
 
