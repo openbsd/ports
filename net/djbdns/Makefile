@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2001/01/23 09:11:18 camield Exp $
+# $OpenBSD: Makefile,v 1.10 2001/02/14 08:44:48 camield Exp $
 
-DISTNAME=	djbdns-1.04
+DISTNAME=	djbdns-1.05
 HOMEPAGE=	http://cr.yp.to/djbdns.html
 CATEGORIES=	net
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
@@ -40,7 +40,7 @@ pre-install:
 post-install:
 .for mtype in 1 5 8
 .  for file in ${MAN${mtype}LIST}
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}-man/${file}.${mtype} \
+	${INSTALL_MAN} ${WRKDIR}/djbdns-man/${file}.${mtype} \
 		${PREFIX}/man/man${mtype}
 .  endfor
 .endfor
