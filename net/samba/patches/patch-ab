@@ -1,0 +1,20 @@
+--- message.c.~1~	Mon Jan 26 12:05:40 1998
++++ message.c	Fri Mar 13 20:56:23 1998
+@@ -53,14 +53,13 @@
+     }
+ 
+   /* put it in a temporary file */
+-  sprintf(s,"%s/msg.XXXXXX",tmpdir());
+-  fstrcpy(name,(char *)mktemp(s));
+-
+-  fd = open(name,O_WRONLY|O_CREAT|O_TRUNC|O_EXCL,0600);
++  snprintf(s, sizeof(s),"%s/msg.XXXXXX",tmpdir());
++  fd = mkstemp( s );
+   if (fd == -1) {
+     DEBUG(1,("can't open message file %s\n",name));
+     return;
+   }
++  fstrcpy(name,s);
+ 
+   for (i=0;i<msgpos;) {
+     if (msgbuf[i]=='\r' && i<(msgpos-1) && msgbuf[i+1]=='\n') {

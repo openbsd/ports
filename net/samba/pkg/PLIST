@@ -1,4 +1,6 @@
 bin/addtosmbpass
+bin/make_printerdef
+bin/make_smbcodepage
 bin/nmblookup
 bin/smbclient
 bin/smbpasswd
@@ -7,8 +9,14 @@ bin/smbstatus
 bin/smbtar
 bin/testparm
 bin/testprns
-sbin/smbd
 sbin/nmbd
+sbin/smbd
+lib/codepages/codepage.437
+lib/codepages/codepage.850
+lib/codepages/codepage.852
+lib/codepages/codepage.866
+lib/codepages/codepage.932
+man/man1/make_smbcodepage.1
 man/man1/smbclient.1
 man/man1/smbrun.1
 man/man1/smbstatus.1
@@ -17,6 +25,82 @@ man/man1/testparm.1
 man/man1/testprns.1
 man/man5/smb.conf.5
 man/man7/samba.7
-man/man8/smbd.8
 man/man8/nmbd.8
+man/man8/smbd.8
+man/man8/smbmnt.8
+man/man8/smbmount.8
 man/man8/smbpasswd.8
+man/man8/smbumount.8
+share/doc/html/samba/Samba-Server-FAQ-1.html
+share/doc/html/samba/Samba-Server-FAQ-2.html
+share/doc/html/samba/Samba-Server-FAQ.html
+share/doc/html/samba/Samba-Server-FAQ.sgml
+share/doc/html/samba/Samba-meta-FAQ-1.html
+share/doc/html/samba/Samba-meta-FAQ-2.html
+share/doc/html/samba/Samba-meta-FAQ-3.html
+share/doc/html/samba/Samba-meta-FAQ-4.html
+share/doc/html/samba/Samba-meta-FAQ-5.html
+share/doc/html/samba/Samba-meta-FAQ-6.html
+share/doc/html/samba/Samba-meta-FAQ.html
+share/doc/html/samba/Samba-meta-FAQ.sgml
+share/doc/html/samba/Samba-meta-FAQ.txt
+share/doc/html/samba/sambafaq-1.html
+share/doc/html/samba/sambafaq-2.html
+share/doc/html/samba/sambafaq-3.html
+share/doc/html/samba/sambafaq-4.html
+share/doc/html/samba/sambafaq-5.html
+share/doc/html/samba/sambafaq.html
+share/doc/html/samba/sambafaq.sgml
+share/doc/samba/Application_Serving.txt
+share/doc/samba/BROWSING.txt
+share/doc/samba/BUGS.txt
+share/doc/samba/CVS_ACCESS.txt
+share/doc/samba/DIAGNOSIS.txt
+share/doc/samba/DNIX.txt
+share/doc/samba/DOMAIN.txt
+share/doc/samba/DOMAIN_CONTROL.txt
+share/doc/samba/ENCRYPTION.txt
+share/doc/samba/Faxing.txt
+share/doc/samba/GOTCHAS.txt
+share/doc/samba/HINTS.txt
+share/doc/samba/INSTALL.sambatar
+share/doc/samba/MIRRORS.txt
+share/doc/samba/NT4_PlainPassword.reg
+share/doc/samba/NTDOMAIN.txt
+share/doc/samba/NetBIOS.txt
+share/doc/samba/OS2-Client-HOWTO.txt
+share/doc/samba/PRINTER_DRIVER.txt
+share/doc/samba/PROJECTS
+share/doc/samba/Passwords.txt
+share/doc/samba/Printing.txt
+share/doc/samba/README.DCEDFS
+share/doc/samba/README.jis
+share/doc/samba/README.sambatar
+share/doc/samba/SCO.txt
+share/doc/samba/SMBTAR.notes
+share/doc/samba/Speed.txt
+share/doc/samba/Support.txt
+share/doc/samba/THANKS
+share/doc/samba/Tracing.txt
+share/doc/samba/UNIX-SMB.txt
+share/doc/samba/UNIX_INSTALL.txt
+share/doc/samba/Win95.txt
+share/doc/samba/Win95_PlainPassword.reg
+share/doc/samba/WinNT.txt
+share/doc/samba/announce
+share/doc/samba/cifsntdomain.txt
+share/doc/samba/history
+share/doc/samba/samba.lsm
+share/doc/samba/security_level.txt
+share/doc/samba/wfw_slip.htm
+share/doc/samba/sambafaq.txt
+@dirrm lib/codepages
+@dirrm share/doc/html/samba
+@dirrm share/doc/samba
+@unexec echo ""
+@unexec echo "*** Remove these files (if they exist)"
+@unexec echo "***	/etc/smb.conf"
+@unexec echo "***	/etc/lmhosts"
+@unexec echo "***	/etc/smbpasswd"
+@unexec echo "*** if you wish to completely delete samba from your system."
+@unexec echo ""

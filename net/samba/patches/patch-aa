@@ -1,0 +1,10 @@
+--- includes.h.~1~	Thu Feb 12 17:44:28 1998
++++ includes.h	Fri Mar 13 21:07:30 1998
+@@ -530,6 +530,7 @@
+ #ifdef __OpenBSD__
+ #include <strings.h>
+ #include <netinet/tcp.h>
++#include <arpa/inet.h>
+ #define NO_GETSPNAM
+ #define SIGNAL_CAST (void (*)())
+ #define USE_DIRECT
