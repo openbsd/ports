@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2001/04/17 20:53:04 reinhard Exp $
+# $OpenBSD: Makefile,v 1.29 2001/05/23 15:28:49 jakob Exp $
 
 COMMENT=	'GNU privacy guard - a free PGP replacement'
 
-DISTNAME=	gnupg-1.0.4
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	gnupg-1.0.5
+PKGNAME=	${DISTNAME}
 CATEGORIES=	security
 NEED_VERSION=	1.363
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
@@ -18,8 +18,8 @@ MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 		ftp://ftp.net.lut.ac.uk/gcrypt/gnupg/ \
 		ftp://gd.tuwien.ac.at/privacy/gnupg/gnupg/
 MASTER_SITES0=	ftp://ftp.gnupg.org/pub/gcrypt/contrib/ 
-DISTFILES=	gnupg-1.0.4.tar.gz 
-EXTRACT_ONLY=	gnupg-1.0.4.tar.gz 
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 HOMEPAGE=	http://www.gnupg.org/
 
@@ -43,9 +43,9 @@ PERMIT_DISTFILES_CDROM=	"a patented algorithm"
 PERMIT_DISTFILES_FTP=	"a patented algorithm"
 # NB: idea.c is found in ${MASTER_SITES0}
 DISTFILES+=	idea.c:0
+PATCH_LIST=	patch-*
 PATCH_LIST+=	${FILESDIR}/patch-cipher_Makefile_am 
 PATCH_LIST+=	${FILESDIR}/patch-cipher_Makefile_in
-SED_PLIST+=	-e 's,^!%%idea%%,lib/gnupg/idea,'
 pre-patch:
 	@cp ${DISTDIR}/idea.c ${WRKSRC}/cipher
 .endif
