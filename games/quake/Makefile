@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/29 15:10:08 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2003/02/15 17:25:15 naddy Exp $
 
 COMMENT=		"Quake/Quake-world client"
 COMMENT-server=		"Quake world server"
@@ -68,6 +68,6 @@ post-extract:
 	cp ${FILESDIR}/snd_openbsd.c ${WRKDIST}/common
 
 post-patch:
-	cd ${WRKDIST}; autoreconf
+	cd ${WRKDIST}; AUTOCONF_VERSION="${AUTOCONF_VERSION}" autoreconf
 
 .include <bsd.port.mk>
