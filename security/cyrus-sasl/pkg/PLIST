@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/11/13 08:34:30 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/11/15 23:17:59 jakob Exp $
 include/sasl/hmac-md5.h
 include/sasl/md5.h
 include/sasl/md5global.h
@@ -13,13 +13,14 @@ lib/sasl/libcrammd5.a
 lib/sasl/libcrammd5.la
 lib/sasl/libdigestmd5.a
 lib/sasl/libdigestmd5.la
+lib/sasl/libgssapiv2.a
+lib/sasl/libgssapiv2.la
 lib/sasl/libkerberos4.a
 lib/sasl/libkerberos4.la
 lib/sasl/liblogin.a
 lib/sasl/liblogin.la
 lib/sasl/libplain.a
 lib/sasl/libplain.la
-%%SHARED%%
 man/man3/sasl.3
 man/man3/sasl_authorize_t.3
 man/man3/sasl_callbacks.3
@@ -47,20 +48,21 @@ man/man3/sasl_setprop.3
 man/man3/sasl_usererr.3
 man/man8/sasldblistusers.8
 man/man8/saslpasswd.8
+sbin/pwcheck
 sbin/sasldblistusers
 sbin/saslpasswd
-sbin/pwcheck
-share/doc/sasl/programming.html
-share/doc/sasl/sysadmin.html
+share/doc/sasl/draft-newman-auth-scram-03.txt
 share/doc/sasl/gssapi.html
 share/doc/sasl/index.html
+share/doc/sasl/programming.html
 share/doc/sasl/rfc1321.txt
 share/doc/sasl/rfc2095.txt
 share/doc/sasl/rfc2104.txt
 share/doc/sasl/rfc2222.txt
 share/doc/sasl/rfc2245.txt
 share/doc/sasl/rfc2831.txt
-share/doc/sasl/draft-newman-auth-scram-03.txt
-@dirrm include/sasl
-@dirrm lib/sasl
+share/doc/sasl/sysadmin.html
+%%SHARED%%
 @dirrm share/doc/sasl
+@dirrm lib/sasl
+@dirrm include/sasl
