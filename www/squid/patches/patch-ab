@@ -1,5 +1,5 @@
 --- configure.orig	Fri Apr 28 16:17:12 2000
-+++ configure	Wed Jun 28 00:52:33 2000
++++ configure	Sun Jul  9 19:32:00 2000
 @@ -673,12 +673,6 @@
  REGEXLIB=''	# -lregex
  LIBREGEX=''	# libregex.a
@@ -13,11 +13,18 @@
  case "$host_os" in
  cygwin32|os2)
  	exec_suffix=".exe"
-@@ -4063,18 +4057,6 @@
- 
+@@ -2301,6 +2295,7 @@
+ 	netinet/tcp.h \
+ 	netinet/ip_compat.h \
+ 	netinet/ip_fil.h \
++	netinet/ip_fil_compat.h \
+ 	netinet/ip_nat.h \
+ 	poll.h \
+ 	pwd.h \
+@@ -4064,18 +4059,6 @@
  		;;
  esac
--
+ 
 -# Remove optimization for GCC 2.95.[12]
 -# gcc -O[2] on *BSD and Linux (x86) causes pointers to magically become NULL
 -if test "$GCC" = "yes"; then
@@ -29,6 +36,22 @@
 -		;;
 -	esac
 -fi
- 
+-
  # Recommended by Balint Nagy Endre <bne@CareNet.hu>
  case "$host" in
+ 	*-univel-sysv4.2MP)
+@@ -4338,6 +4321,14 @@
+ EOF
+ 
+     elif test "$ac_cv_header_netinet_ip_compat_h" = "yes" &&
++         test "$ac_cv_header_netinet_ip_fil_h" = "yes" &&
++         test "$ac_cv_header_netinet_ip_nat_h" = "yes" ; then
++        IPF_TRANSPARENT="yes"
++        cat >> confdefs.h <<\EOF
++#define IPF_TRANSPARENT 1
++EOF
++
++    elif test "$ac_cv_header_netinet_ip_fil_compat_h" = "yes" &&
+          test "$ac_cv_header_netinet_ip_fil_h" = "yes" &&
+          test "$ac_cv_header_netinet_ip_nat_h" = "yes" ; then
+         IPF_TRANSPARENT="yes"

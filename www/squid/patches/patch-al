@@ -1,0 +1,11 @@
+--- src/client_side.c.orig	Sun Jul  9 19:29:45 2000
++++ src/client_side.c	Sun Jul  9 19:30:25 2000
+@@ -43,6 +43,8 @@
+ #include <net/if.h>
+ #if HAVE_IP_COMPAT_H
+ #include <ip_compat.h>
++#elif HAVE_NETINET_IP_FIL_COMPAT_H
++#include <netinet/ip_fil_compat.h>
+ #elif HAVE_NETINET_IP_COMPAT_H
+ #include <netinet/ip_compat.h>
+ #endif
