@@ -1,0 +1,16 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/03/23 17:00:12 espie Exp $
+lib/kde3/libkfile_pdf.so.0.0
+lib/kde3/libkfile_png.so.0.0
+lib/kde3/libkfile_ps.so.0.0
+lib/libkcolorchooser.so.0.0
+lib/libkdvi.so.0.0
+lib/libkfax.so.0.0
+lib/libkghostview.so.0.0
+lib/libkmultipage.so.0.0
+lib/libkpagetest.so.0.0
+lib/libkuickshow.so.0.0
+lib/libkview.so.0.0
+lib/libkviewerpart.so.0.0
+lib/libkviewpart.so.0.0
+DYNLIBDIR(%D/lib)
+NEWDYNLIBDIR(%D/lib/kde3)

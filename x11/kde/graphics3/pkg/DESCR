@@ -1,0 +1,22 @@
+Various kde graphics utilities.
+
+Document handling:
+* kdvi
+* kfax
+* kghostview
+
+Graphics:
+* kiconedit
+* kpaint
+* ksnapshot
+* kview
+
+Colors:
+* kcolorchooser
+* kcoloredit
+
+Misc:
+* kfract
+* kruler
+
+WWW: ${HOMEPAGE}
