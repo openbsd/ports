@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2004/07/30 09:02:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.127 2004/10/11 00:52:48 naddy Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -41,6 +41,7 @@
      SUBDIR += imp
      SUBDIR += isync
      SUBDIR += kbiff
+     SUBDIR += mail-notification
      SUBDIR += mailcrypt
      SUBDIR += maildrop
      SUBDIR += mailgraph
