@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.341 2004/12/04 19:57:45 couderc Exp $
+# $OpenBSD: Makefile,v 1.342 2004/12/07 13:26:25 alek Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -28,6 +28,7 @@
      SUBDIR += clive
      SUBDIR += clog
      SUBDIR += cnupm
+     SUBDIR += coccinella
      SUBDIR += courtney
      SUBDIR += crawl
      SUBDIR += ctrace
