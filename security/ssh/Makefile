@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.40 1999/10/12 01:22:54 brad Exp $
+# $OpenBSD: Makefile,v 1.41 1999/11/24 02:57:56 brad Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
-MASTER_SITES=	ftp://ftp.cs.hut.fi/pub/ssh/ \
+MASTER_SITES=	http://the.wiretapped.net/security/cryptography/ssh/SSH/ \
+		ftp://ftp.cs.hut.fi/pub/ssh/ \
 		ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/ssh/
-MASTER_SITES0=	ftp://idea.dsi.unimi.it/pub/security/crypt/math/ \
+MASTER_SITES0=	http://the.wiretapped.net/security/cryptography/libs/rsa/ \
+		ftp://idea.dsi.unimi.it/pub/security/crypt/math/ \
 		ftp://ftp.it.net.au/mirrors/crypto/misc/
 
 PATCH_SITES=	http://www.ssh.fi/sshprotocols2/patches/
@@ -118,8 +120,8 @@ post-install:
 		${ECHO} "Generating a secret host key..."; \
 		${PREFIX}/bin/ssh-keygen -f ${ETCDIR}/ssh_host_key -N ""; \
 	fi
-	${RM} -f ${PREFIX}/man/man1/slogin.1
-	${LN} -sf ssh.1 ${PREFIX}/man/man1/slogin.1
+	@${RM} -f ${PREFIX}/man/man1/slogin.1
+	@${LN} -sf ssh.1 ${PREFIX}/man/man1/slogin.1
 	@${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
