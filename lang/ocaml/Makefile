@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2004/11/14 12:47:50 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2005/01/25 15:56:38 alek Exp $
 
 COMMENT=	"ML language based on complete class-based objective system"
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 c curses m pthread
 
 
 CONFIGURE_STYLE=	simple
