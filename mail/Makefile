@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2003/04/17 10:14:04 wilfried Exp $
+# $OpenBSD: Makefile,v 1.107 2003/04/30 15:27:11 lebel Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -80,6 +80,7 @@
      SUBDIR += teapop
      SUBDIR += tkrat
      SUBDIR += tmda
+     SUBDIR += tmda,no_x11
      SUBDIR += tnef
      SUBDIR += ttygrin
      SUBDIR += vrfy
