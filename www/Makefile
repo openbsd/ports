@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2000/07/14 18:11:25 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2000/07/20 10:09:48 jakob Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -44,6 +44,7 @@
 #    SUBDIR += p5-libwww
      SUBDIR += php3
      SUBDIR += squid
+     SUBDIR += thttpd
      SUBDIR += tidy
      SUBDIR += transproxy
 #    SUBDIR += vrweb
