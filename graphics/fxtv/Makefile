@@ -8,7 +8,7 @@
 # Whom:			Randall Hopper <aa8vb@ipass.net>
 #
 # $FreeBSD: Makefile,v 1.17 1999/03/16 14:01:06 roger Exp $
-# $OpenBSD: Makefile,v 1.1 1999/03/24 02:14:46 downsj Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/24 02:20:21 downsj Exp $
 #
 
 DISTNAME=	fxtv-0.48
@@ -16,7 +16,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.ipass.net/~dbhopper/aa8vb/fxtv/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	aa8vb@ipass.net
+MAINTAINER=	downsj@downsj.com
 
 LIB_DEPENDS=	tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34 \
 		jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
