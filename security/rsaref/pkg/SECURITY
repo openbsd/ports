@@ -1,4 +1,0 @@
-
-patch-ac fixes the buffer overflow in RSA{Private,Public}{De,En}crypt(),
-as published by CORE SDI in their advisory of Dec. 1, 1999.
-
