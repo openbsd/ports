@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-slovak,v 1.1 2002/11/28 22:38:42 jakob Exp $
+lib/ispell/slovak.aff
+lib/ispell/slovak.hash
+@exec echo 'invoking %D/bin/ispell-config'
+@exec %D/bin/ispell-config

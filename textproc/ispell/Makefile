@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2002/10/28 22:43:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2002/11/28 22:38:41 jakob Exp $
 
 COMMENT=		interactive spelling checker
 COMMENT-french=		ispell dictionary for French
@@ -6,6 +6,7 @@ COMMENT-german=		ispell dictionary for German
 COMMENT-swedish=	ispell dictionary for Swedish
 COMMENT-russian=	ispell dictionary for Russian
 COMMENT-portuguese=	ispell dictionary for Rortuguese
+COMMENT-slovak=		ispell dictionary for Slovak
 
 VERSION=	3.2.06
 DISTNAME=	ispell-${VERSION}
@@ -23,6 +24,7 @@ MASTER_SITES2=	http://www.sslug.dk/locale/ispell/iswedish/
 MASTER_SITES3=	ftp://mch5.chem.msu.su/pub/russian/ispell/ \
 		ftp://ftp.afti.nsu.ru/pub/mirrors/russian-ispell/
 MASTER_SITES4=	http://natura.di.uminho.pt/~jj/pln/
+MASTER_SITES5=	http://ispell.hq.sk/
 
 DIST_SUBDIR=	ispell
 
@@ -31,21 +33,24 @@ GERMAN_DICT=		hk2-deutsch
 SWEDISH_DICT=		iswedish-1.2.1
 RUSSIAN_DICT=		rus-ispell-0.99e7
 PORTUGUESE_DICT=	UMportugues
+SLOVAK_DICT=		ispell-sk-0.1.10
 
 DISTFILES=	${DISTNAME}.tar.gz \
 		${FRENCH_DICT}.tar.gz:0 \
 		${GERMAN_DICT}.tar.gz:1 \
 		${SWEDISH_DICT}.tar.gz:2 \
 		${RUSSIAN_DICT}.tar.gz:3 \
-		${PORTUGUESE_DICT}.tgz:4
+		${PORTUGUESE_DICT}.tgz:4 \
+		${SLOVAK_DICT}.tar.gz:5
 
 EXTRACT_ONLY=	${DISTNAME}.tar.gz \
 		${SWEDISH_DICT}.tar.gz \
-		${PORTUGUESE_DICT}.tgz
+		${PORTUGUESE_DICT}.tgz \
+		${SLOVAK_DICT}.tar.gz
 
 SUBST_VARS+=	VERSION
 
-MULTI_PACKAGES=	-french -german -swedish -russian -portuguese
+MULTI_PACKAGES=	-french -german -swedish -russian -portuguese -slovak
 .for i in ${MULTI_PACKAGES}
 PKGNAME$i=	ispell$i-${VERSION}
 .endfor
@@ -106,6 +111,10 @@ post-build:
 	${WRKDIST}/buildhash portugues.dic portugues.aff portuguese.hash; \
 	cp portugues.aff portuguese.aff)
 
+	@(cd ${WRKDIR}/${SLOVAK_DICT}; \
+	cat *.words | sort -u -f > slovak.words; \
+	${WRKDIST}/buildhash slovak.words slovak.aff slovak.hash)
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/ispell ${PREFIX}/bin/ispell
 	${INSTALL_PROGRAM} ${WRKDIST}/buildhash ${PREFIX}/bin/buildhash
@@ -148,6 +157,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/russian/russian.{aff,hash} \
 		${PREFIX}/lib/ispell
 	${INSTALL_DATA} ${WRKDIR}/portugues/portuguese.{aff,hash} \
+		${PREFIX}/lib/ispell
+	${INSTALL_DATA} ${WRKDIR}/${SLOVAK_DICT}/slovak.{aff,hash} \
 		${PREFIX}/lib/ispell
 
 .include <bsd.port.mk>
