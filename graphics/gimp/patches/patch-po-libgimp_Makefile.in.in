@@ -1,3 +1,4 @@
+$OpenBSD: patch-po-libgimp_Makefile.in.in,v 1.2 2001/08/09 01:43:16 brad Exp $
 --- po-libgimp/Makefile.in.in.orig	Thu Jan 27 05:46:58 2000
 +++ po-libgimp/Makefile.in.in	Sat Jul 22 15:32:25 2000
 @@ -111,9 +111,9 @@

@@ -1,6 +1,7 @@
---- Makefile.in.orig	Thu Jan 25 13:44:52 2001
-+++ Makefile.in	Thu Jan 25 13:49:11 2001
-@@ -419,21 +419,21 @@
+$OpenBSD: patch-Makefile.in,v 1.2 2001/08/09 01:43:16 brad Exp $
+--- Makefile.in.orig	Fri Jul 27 09:36:13 2001
++++ Makefile.in	Wed Aug  8 14:29:46 2001
+@@ -421,21 +421,21 @@
  
  install-gimpsysconfDATA: $(gimpsysconf_DATA)
  	@$(NORMAL_INSTALL)
@@ -28,7 +29,7 @@
  	done
  
  install-m4dataDATA: $(m4data_DATA)
-@@ -638,7 +638,7 @@
+@@ -640,7 +640,7 @@
  installdirs-am:
  	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(gimpdatadir) \
  		$(DESTDIR)$(mandir)/man1 $(DESTDIR)$(mandir)/man5 \

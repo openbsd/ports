@@ -1,3 +1,4 @@
+$OpenBSD: patch-ltmain.sh,v 1.4 2001/08/09 01:43:16 brad Exp $
 --- ltmain.sh.orig	Tue Dec 19 17:01:46 2000
 +++ ltmain.sh	Wed Feb 21 09:53:54 2001
 @@ -1079,7 +1079,18 @@ compiler."

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.63 2001/08/03 13:50:21 brad Exp $
+# $OpenBSD: Makefile,v 1.64 2001/08/09 01:43:16 brad Exp $
 
 COMMENT=	"GNU Image Manipulation Program"
 
-VERSION=	1.2.1
+VERSION=	1.2.2
 DISTNAME=	gimp-${VERSION}
 CATEGORIES=	graphics
 NEED_VERSION=	1.413
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/gnu/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/%SUBDIR%/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.gimp.org/%SUBDIR%/
-MASTER_SITE_SUBDIR= gimp/v1.2/old/v${VERSION}
+MASTER_SITE_SUBDIR= gimp/v1.2/v${VERSION}
 
 HOMEPAGE=	http://www.gimp.org/
 
