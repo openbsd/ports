@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 1999/04/09 05:12:32 brad Exp $
+# $OpenBSD: Makefile,v 1.17 1999/04/12 23:23:09 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.42
@@ -22,11 +22,10 @@ USE_GMAKE=	yes
 USE_X11=	yes
 MAKE_ENV+=	QTDIR=${WRKSRC} CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
-EXAMPLES=aclock application biff connect cursor dclock desktop \
-	dirview dragdrop drawdemo forever hello layout life menu \
-	movies picture pref progress qdir qmag qwerty scrollview \
-	showimg splitter table tetrix tictac timestmp tooltip \
-	validator widgets xform
+EXAMPLES=aclock application biff connect cursor dclock desktop dirview \
+	dragdrop drawdemo forever hello layout life menu movies pref \
+	progress qdir qmag qwerty scrollview showimg splitter table \
+	tetrix tictac timestmp tooltip validator widgets xform
 
 post-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${USE_TARGET}
