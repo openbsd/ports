@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.562 2003/07/24 12:50:38 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.563 2003/07/25 02:17:51 pvalchev Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -447,11 +447,11 @@ PATCH_DIST_STRIP?=	-p0
 
 PATCH_DEBUG?=No
 .if ${PATCH_DEBUG:L} != "no"
-PATCH_ARGS?=	-d ${WRKDIST} -b ${PATCHORIG} -E ${PATCH_STRIP}
-PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${WRKDIST} -E ${PATCH_DIST_STRIP}
+PATCH_ARGS?=	-d ${WRKDIST} -z ${PATCHORIG} -E ${PATCH_STRIP}
+PATCH_DIST_ARGS?=	-z ${DISTORIG} -d ${WRKDIST} -E ${PATCH_DIST_STRIP}
 .else
-PATCH_ARGS?=	-d ${WRKDIST} -b ${PATCHORIG} --forward --quiet -E ${PATCH_STRIP}
-PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${WRKDIST} --forward --quiet -E ${PATCH_DIST_STRIP}
+PATCH_ARGS?=	-d ${WRKDIST} -z ${PATCHORIG} --forward --quiet -E ${PATCH_STRIP}
+PATCH_DIST_ARGS?=	-z ${DISTORIG} -d ${WRKDIST} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 
 PATCH_CHECK_ONLY?=No
