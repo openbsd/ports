@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/08 05:23:49 jolan Exp $
+lib/aspell/malay.alias
+lib/aspell/ms.multi
+lib/aspell/ms.rws
+share/aspell/ms.dat
