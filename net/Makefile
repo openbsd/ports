@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2001/01/03 15:09:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.105 2001/01/05 10:17:28 danh Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -37,6 +37,7 @@
      SUBDIR += icecast
      SUBDIR += icmpinfo
      SUBDIR += ipfm
+     SUBDIR += iplog
      SUBDIR += irc
      SUBDIR += ircII
      SUBDIR += irssi
