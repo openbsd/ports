@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.zu,v 1.5 2002/09/15 00:33:16 naddy Exp $
+@comment $OpenBSD: PLIST.zu,v 1.6 2003/01/06 14:37:13 espie Exp $
 ${LOC}aktion.mo
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
@@ -164,6 +164,7 @@ ${LOC}kmessedwords.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}knewsticker.mo
+${LOC}knode.mo
 ${LOC}knotes.mo
 ${LOC}knotify.mo
 ${LOC}kolourpicker.mo
@@ -252,3 +253,6 @@ ${LOC}validatorsplugin.mo
 ${LOC}webarchiver.mo
 share/locale/zu/charset
 share/locale/zu/entry.desktop
+@comment @dirrm share/locale/zu/LC_MESSAGES
+@comment @dirrm share/locale/zu
+@comment @dirrm share/locale

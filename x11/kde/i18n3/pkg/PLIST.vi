@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.vi,v 1.5 2002/09/15 00:33:16 naddy Exp $
+@comment $OpenBSD: PLIST.vi,v 1.6 2003/01/06 14:37:13 espie Exp $
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}babelfish.mo
@@ -6,18 +6,33 @@ ${LOC}cervisia.mo
 ${LOC}clockapplet.mo
 ${LOC}cupsdconf.mo
 ${LOC}desktop.mo
+${LOC}desktop_kdeaddons.mo
+${LOC}dirfilterplugin.mo
+${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
+${LOC}dub.mo
 ${LOC}extensionproxy.mo
 ${LOC}filetypes.mo
 ${LOC}fontinst.mo
 ${LOC}gideon.mo
 ${LOC}htmlsearch.mo
+${LOC}imgalleryplugin.mo
 ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
 ${LOC}kappfinder.mo
 ${LOC}kasbarextension.mo
 ${LOC}kate.mo
+${LOC}katehelloworld.mo
+${LOC}katehtmltools.mo
+${LOC}kateinsertcommand.mo
+${LOC}kateopenheader.mo
+${LOC}kateprojectmanager.mo
+${LOC}katetextfilter.mo
+${LOC}katexmltools.mo
+${LOC}katomic.mo
 ${LOC}kbabel.mo
+${LOC}kbattleship.mo
+${LOC}kblackbox.mo
 ${LOC}kbounce.mo
 ${LOC}kbugbuster.mo
 ${LOC}kcalc.mo
@@ -48,6 +63,7 @@ ${LOC}kcmkonq.mo
 ${LOC}kcmkonqhtml.mo
 ${LOC}kcmkonsole.mo
 ${LOC}kcmktalkd.mo
+${LOC}kcmkuick.mo
 ${LOC}kcmkurifilt.mo
 ${LOC}kcmkwindecoration.mo
 ${LOC}kcmkwintheme.mo
@@ -87,6 +103,7 @@ ${LOC}kdmchooser.mo
 ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
 ${LOC}kedit.mo
+${LOC}kenolaba.mo
 ${LOC}kfind.mo
 ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
@@ -95,6 +112,7 @@ ${LOC}kfmexec.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
 ${LOC}khotkeys.mo
+${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_finger.mo
@@ -112,6 +130,7 @@ ${LOC}kio_smb.mo
 ${LOC}kio_smbro.mo
 ${LOC}kit.mo
 ${LOC}kjobviewer.mo
+${LOC}kjumpingcube.mo
 ${LOC}klegacyimport.mo
 ${LOC}kless.mo
 ${LOC}klipper.mo
@@ -124,7 +143,9 @@ ${LOC}kminipagerapplet.mo
 ${LOC}knewsticker.mo
 ${LOC}knode.mo
 ${LOC}knotify.mo
+${LOC}kolourpicker.mo
 ${LOC}kompare.mo
+${LOC}konqsidebar_mediaplayer.mo
 ${LOC}konqueror.mo
 ${LOC}konsole.mo
 ${LOC}korn.mo
@@ -138,6 +159,7 @@ ${LOC}kprinter.mo
 ${LOC}kreadconfig.mo
 ${LOC}krfb.mo
 ${LOC}krunapplet.mo
+${LOC}ksame.mo
 ${LOC}ksirc.mo
 ${LOC}ksmserver.mo
 ${LOC}ksplash.mo
@@ -148,7 +170,9 @@ ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
 ${LOC}ktalkd.mo
 ${LOC}ktaskbarapplet.mo
+${LOC}ktimemon.mo
 ${LOC}ktip.mo
+${LOC}kuick_plugin.mo
 ${LOC}kwin.mo
 ${LOC}kwin_default_config.mo
 ${LOC}kwin_icewm_config.mo
@@ -169,6 +193,12 @@ ${LOC}passwords.mo
 ${LOC}quicklauncher.mo
 ${LOC}spy.mo
 ${LOC}taskbarextension.mo
+${LOC}uachangerplugin.mo
+${LOC}validatorsplugin.mo
+${LOC}webarchiver.mo
 share/locale/vi/charset
 share/locale/vi/entry.desktop
 share/locale/vi/flag.png
+@comment @dirrm share/locale/vi/LC_MESSAGES
+@comment @dirrm share/locale/vi
+@comment @dirrm share/locale

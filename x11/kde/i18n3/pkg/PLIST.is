@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.is,v 1.5 2002/09/15 00:33:15 naddy Exp $
+@comment $OpenBSD: PLIST.is,v 1.6 2003/01/06 14:37:13 espie Exp $
 ${LOC}aktion.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -276,3 +276,6 @@ ${LOC}twister.mo
 share/locale/is/charset
 share/locale/is/entry.desktop
 share/locale/is/flag.png
+@comment @dirrm share/locale/is/LC_MESSAGES
+@comment @dirrm share/locale/is
+@comment @dirrm share/locale

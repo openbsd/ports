@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ven,v 1.5 2002/09/15 00:33:16 naddy Exp $
+@comment $OpenBSD: PLIST.ven,v 1.6 2003/01/06 14:37:13 espie Exp $
 ${LOC}appletproxy.mo
 ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
@@ -17,6 +17,7 @@ ${LOC}kate.mo
 ${LOC}katehelloworld.mo
 ${LOC}katehtmltools.mo
 ${LOC}kateopenheader.mo
+${LOC}katepart.mo
 ${LOC}katetextfilter.mo
 ${LOC}kcmaccess.mo
 ${LOC}kcmarts.mo
@@ -42,14 +43,18 @@ ${LOC}kcmkio.mo
 ${LOC}kcmkonq.mo
 ${LOC}kcmkonqhtml.mo
 ${LOC}kcmkonsole.mo
+${LOC}kcmktalkd.mo
 ${LOC}kcmkurifilt.mo
 ${LOC}kcmkwindecoration.mo
 ${LOC}kcmkwintheme.mo
 ${LOC}kcmkwm.mo
+${LOC}kcmkxmlrpcd.mo
+${LOC}kcmlanbrowser.mo
 ${LOC}kcmlaunch.mo
 ${LOC}kcmlayout.mo
 ${LOC}kcmlocale.mo
 ${LOC}kcmmidi.mo
+${LOC}kcmnewsticker.mo
 ${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
 ${LOC}kcmsamba.mo
@@ -70,6 +75,8 @@ ${LOC}kdeprintfax.mo
 ${LOC}kdesktop.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
+${LOC}kdict.mo
+${LOC}kdictapplet.mo
 ${LOC}kdmchooser.mo
 ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
@@ -85,6 +92,7 @@ ${LOC}kio_finger.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_help.mo
 ${LOC}kio_imap4.mo
+${LOC}kio_lan.mo
 ${LOC}kio_man.mo
 ${LOC}kio_nfs.mo
 ${LOC}kio_nntp.mo
@@ -99,6 +107,7 @@ ${LOC}klegacyimport.mo
 ${LOC}klettres.mo
 ${LOC}klipper.mo
 ${LOC}klock.mo
+${LOC}kmcop.mo
 ${LOC}kmenuedit.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}knotify.mo
@@ -125,9 +134,11 @@ ${LOC}kwin_icewm_config.mo
 ${LOC}kwin_modernsys_config.mo
 ${LOC}kwin_quartz_config.mo
 ${LOC}kxkb.mo
+${LOC}kxmlrpcd.mo
 ${LOC}libkicker.mo
 ${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkonq.mo
+${LOC}libkscreensaver.mo
 ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo
@@ -139,3 +150,6 @@ ${LOC}taskbarextension.mo
 ${LOC}uachangerplugin.mo
 share/locale/ven/charset
 share/locale/ven/entry.desktop
+@comment @dirrm share/locale/ven/LC_MESSAGES
+@comment @dirrm share/locale/ven
+@comment @dirrm share/locale

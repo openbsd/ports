@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ru,v 1.5 2002/09/15 00:33:16 naddy Exp $
+@comment $OpenBSD: PLIST.ru,v 1.6 2003/01/06 14:37:13 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -180,6 +180,7 @@ ${LOC}desktop.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
+${LOC}dub.mo
 ${LOC}empath.mo
 ${LOC}extensionproxy.mo
 ${LOC}filetypes.mo
@@ -301,6 +302,8 @@ ${LOC}kfile_mp3.mo
 ${LOC}kfile_ogg.mo
 ${LOC}kfile_pdf.mo
 ${LOC}kfile_png.mo
+${LOC}kfile_ps.mo
+${LOC}kfile_wav.mo
 ${LOC}kfind.mo
 ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
@@ -327,8 +330,11 @@ ${LOC}kio_man.mo
 ${LOC}kio_nfs.mo
 ${LOC}kio_nntp.mo
 ${LOC}kio_pop3.mo
+${LOC}kio_print.mo
+${LOC}kio_sftp.mo
 ${LOC}kio_smb.mo
 ${LOC}kio_smbro.mo
+${LOC}kio_smtp.mo
 ${LOC}kit.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
@@ -410,6 +416,7 @@ ${LOC}kstartperf.mo
 ${LOC}ksysctrl.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
+${LOC}ksystraycmd.mo
 ${LOC}ksysv.mo
 ${LOC}ktalkd.mo
 ${LOC}ktaskbarapplet.mo
@@ -430,7 +437,9 @@ ${LOC}kvoctrain.mo
 ${LOC}kwin.mo
 ${LOC}kwin4.mo
 ${LOC}kwin_b2_config.mo
+${LOC}kwin_cde_config.mo
 ${LOC}kwin_default_config.mo
+${LOC}kwin_glow_config.mo
 ${LOC}kwin_icewm_config.mo
 ${LOC}kwin_modernsys_config.mo
 ${LOC}kwin_quartz_config.mo
@@ -440,7 +449,10 @@ ${LOC}kxkb.mo
 ${LOC}kxmlrpcd.mo
 ${LOC}kxsconfig.mo
 ${LOC}libkdegames.mo
+${LOC}libkdehighscores.mo
 ${LOC}libkdenetwork.mo
+${LOC}libkicker.mo
+${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkonq.mo
 ${LOC}libkscan.mo
 ${LOC}libkscreensaver.mo
@@ -467,6 +479,9 @@ ${LOC}webarchiver.mo
 share/locale/ru/charset
 share/locale/ru/entry.desktop
 share/locale/ru/flag.png
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale
 @dirrm ${DOC}noatun
 @dirrm ${DOC}kwuftpd
 @dirrm ${DOC}kworldclock
@@ -493,3 +508,4 @@ share/locale/ru/flag.png
 @dirrm ${DOC}kandy
 @dirrm ${DOC}common
 @dirrm share/doc/HTML/ru
+@comment @dirrm share/doc/HTML

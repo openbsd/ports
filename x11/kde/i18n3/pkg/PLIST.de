@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.de,v 1.5 2002/09/15 00:33:15 naddy Exp $
+@comment $OpenBSD: PLIST.de,v 1.6 2003/01/06 14:37:13 espie Exp $
 share/apps/ktuberling/sounds/de/abzeichen.wav
 share/apps/ktuberling/sounds/de/auge.wav
 share/apps/ktuberling/sounds/de/augenbraue.wav
@@ -10,6 +10,9 @@ share/apps/ktuberling/sounds/de/ohr.wav
 share/apps/ktuberling/sounds/de/ohrring.wav
 share/apps/ktuberling/sounds/de/schnurrbart.wav
 share/apps/ktuberling/sounds/de/uhr.wav
+${DOC}KRegExpEditor/common
+${DOC}KRegExpEditor/${C}
+${DOC}KRegExpEditor/${I}
 ${DOC}aktion/aktion.png
 ${DOC}aktion/aktiontoolbar.png
 ${DOC}aktion/common
@@ -79,6 +82,10 @@ ${DOC}common/web-docbottom.png
 ${DOC}common/web-doctop.png
 ${DOC}common/x11-license.html
 ${DOC}common/xml.dcl
+${DOC}glossary/common
+${DOC}glossary/${C}
+${DOC}glossary/${I}
+${DOC}glossary/kdeprintingglossary.docbook
 ${DOC}kab/common
 ${DOC}kab/fehler.png
 ${DOC}kab/${C}
@@ -88,6 +95,9 @@ ${DOC}kab/kab-using.png
 ${DOC}kaddressbook/common
 ${DOC}kaddressbook/${C}
 ${DOC}kaddressbook/${I}
+${DOC}kalarm/common
+${DOC}kalarm/${C}
+${DOC}kalarm/${I}
 ${DOC}kandy/common
 ${DOC}kandy/${C}
 ${DOC}kandy/${I}
@@ -119,6 +129,7 @@ ${DOC}kate/mdi.docbook
 ${DOC}kate/menus.docbook
 ${DOC}kate/part.docbook
 ${DOC}kate/plugins.docbook
+${DOC}kate/regular-expressions.docbook
 ${DOC}katomic/common
 ${DOC}katomic/${C}
 ${DOC}katomic/${I}
@@ -467,6 +478,9 @@ ${DOC}kjots/${I}
 ${DOC}kjumpingcube/common
 ${DOC}kjumpingcube/${C}
 ${DOC}kjumpingcube/${I}
+${DOC}klettres/common
+${DOC}klettres/${C}
+${DOC}klettres/${I}
 ${DOC}klines/common
 ${DOC}klines/${C}
 ${DOC}klines/${I}
@@ -486,6 +500,9 @@ ${DOC}klprfax/${I}
 ${DOC}kmail/common
 ${DOC}kmail/${C}
 ${DOC}kmail/${I}
+${DOC}kmenuedit/common
+${DOC}kmenuedit/${C}
+${DOC}kmenuedit/${I}
 ${DOC}kmessedwords/common
 ${DOC}kmessedwords/${C}
 ${DOC}kmessedwords/${I}
@@ -551,6 +568,19 @@ ${DOC}knotes/${I}
 ${DOC}koncd/common
 ${DOC}koncd/${C}
 ${DOC}koncd/${I}
+${DOC}konq-plugins/archiver.docbook
+${DOC}konq-plugins/babel.docbook
+${DOC}konq-plugins/common
+${DOC}konq-plugins/dirfilter.docbook
+${DOC}konq-plugins/domtree.docbook
+${DOC}konq-plugins/imgallery.docbook
+${DOC}konq-plugins/${C}
+${DOC}konq-plugins/${I}
+${DOC}konq-plugins/kuick.docbook
+${DOC}konq-plugins/mediaplayer.docbook
+${DOC}konq-plugins/settings.docbook
+${DOC}konq-plugins/uachanger.docbook
+${DOC}konq-plugins/validators.docbook
 ${DOC}konqueror/cmndline.png
 ${DOC}konqueror/common
 ${DOC}konqueror/dirtree.png
@@ -597,6 +627,9 @@ ${DOC}kpat/man.docbook
 ${DOC}kpf/common
 ${DOC}kpf/${C}
 ${DOC}kpf/${I}
+${DOC}kpilot/common
+${DOC}kpilot/${C}
+${DOC}kpilot/${I}
 ${DOC}kpoker/common
 ${DOC}kpoker/${C}
 ${DOC}kpoker/${I}
@@ -1118,6 +1151,9 @@ ${LOC}webarchiver.mo
 share/locale/de/charset
 share/locale/de/entry.desktop
 share/locale/de/flag.png
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale
 @dirrm ${DOC}noatun
 @dirrm ${DOC}lskat
 @dirrm ${DOC}lisa
@@ -1147,6 +1183,7 @@ share/locale/de/flag.png
 @dirrm ${DOC}kreversi
 @dirrm ${DOC}kppp
 @dirrm ${DOC}kpoker
+@dirrm ${DOC}kpilot
 @dirrm ${DOC}kpf
 @dirrm ${DOC}kpat
 @dirrm ${DOC}kpaint
@@ -1157,6 +1194,7 @@ share/locale/de/flag.png
 @dirrm ${DOC}konsole
 @dirrm ${DOC}konquest
 @dirrm ${DOC}konqueror
+@dirrm ${DOC}konq-plugins
 @dirrm ${DOC}koncd
 @dirrm ${DOC}knotes
 @dirrm ${DOC}knode
@@ -1167,12 +1205,14 @@ share/locale/de/flag.png
 @dirrm ${DOC}kmidi
 @dirrm ${DOC}kmid
 @dirrm ${DOC}kmessedwords
+@dirrm ${DOC}kmenuedit
 @dirrm ${DOC}kmail
 @dirrm ${DOC}klprfax
 @dirrm ${DOC}klpq
 @dirrm ${DOC}kljettool
 @dirrm ${DOC}klipper
 @dirrm ${DOC}klines
+@dirrm ${DOC}klettres
 @dirrm ${DOC}kjumpingcube
 @dirrm ${DOC}kjots
 @dirrm ${DOC}kit
@@ -1215,14 +1255,19 @@ share/locale/de/flag.png
 @dirrm ${DOC}kasteroids
 @dirrm ${DOC}karm
 @dirrm ${DOC}kandy
+@dirrm ${DOC}kalarm
 @dirrm ${DOC}kaddressbook
 @dirrm ${DOC}kab
+@dirrm ${DOC}glossary
 @dirrm ${DOC}common
 @dirrm ${DOC}artsbuilder
 @dirrm ${DOC}ark
 @dirrm ${DOC}amor
 @dirrm ${DOC}aktion
+@dirrm ${DOC}KRegExpEditor
 @dirrm share/doc/HTML/de
+@comment @dirrm share/doc/HTML
 @dirrm share/apps/ktuberling/sounds/de
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
+@comment @dirrm share/apps

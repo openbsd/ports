@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sv,v 1.5 2002/09/15 00:33:16 naddy Exp $
+@comment $OpenBSD: PLIST.sv,v 1.6 2003/01/06 14:37:13 espie Exp $
 share/apps/ktuberling/sounds/sv/brosch.wav
 share/apps/ktuberling/sounds/sv/cigarr.wav
 share/apps/ktuberling/sounds/sv/fluga.wav
@@ -924,7 +924,6 @@ ${LOC}empath.mo
 ${LOC}extensionproxy.mo
 ${LOC}filetypes.mo
 ${LOC}fontinst.mo
-${LOC}gideon.mo
 ${LOC}htmlsearch.mo
 ${LOC}imgalleryplugin.mo
 ${LOC}kab.mo
@@ -1224,6 +1223,9 @@ ${LOC}webarchiver.mo
 share/locale/sv/charset
 share/locale/sv/entry.desktop
 share/locale/sv/flag.png
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale
 @dirrm ${DOC}noatun
 @dirrm ${DOC}lskat
 @dirrm ${DOC}lisa
@@ -1350,6 +1352,8 @@ share/locale/sv/flag.png
 @dirrm ${DOC}aktion
 @dirrm ${DOC}KRegExpEditor
 @dirrm share/doc/HTML/sv
+@comment @dirrm share/doc/HTML
 @dirrm share/apps/ktuberling/sounds/sv
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
+@comment @dirrm share/apps
