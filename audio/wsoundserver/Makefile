@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/02/09 00:01:05 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2001/02/13 18:29:45 wilfried Exp $
 
 DISTNAME=	WSoundServer-0.4.0
 PKGNAME=	${DISTNAME:L}
@@ -31,6 +31,9 @@ FLAVOR?=
 LIB_DEPENDS+= esd::audio/esound
 CONFIGURE_ARGS+= --enable-esd
 .endif
+
+post-patch:
+	@touch ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/wsoundserver
