@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/18 05:01:59 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1999/01/14 01:23:54 angelos Exp $
 #
 
-DISTNAME=	Compress-Zlib-0.50
-PKGNAME=	p5-Compress-Zlib-0.50
+DISTNAME=	Compress-Zlib-1.01
+PKGNAME=	p5-Compress-Zlib-1.01
 CATEGORIES=	archivers perl5
-
-#BROKEN=		"current version is 1.01"
 
 MAINTAINER=	angelos@openbsd.org
 
