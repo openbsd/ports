@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/05/06 00:34:42 lebel Exp $
+# $OpenBSD: Makefile,v 1.22 2001/07/20 23:52:48 rohee Exp $
 
 COMMENT=	"MS-Windows 3.1/95/NT emulator for Unix (Alpha release)"
 
@@ -11,7 +11,7 @@ FAKE=No
 
 ONLY_FOR_ARCHS= i386
 
-MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -30,7 +30,8 @@ WRKDIST=	${WRKDIR}/${PKGNAME}
 pre-fetch:
 	@echo
 	@echo "  WARNING: This application requires a kernel compiled with"
-	@echo "           'option USER_LDT' for proper operation."
+	@echo "           'option USER_LDT' for proper operation. The GENERIC"
+	@echo "           kernel does not have this option enabled by default."
 	@echo
 .endif
 
