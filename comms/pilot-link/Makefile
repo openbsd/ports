@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.26 2001/10/17 11:19:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2002/02/18 21:37:41 pvalchev Exp $
 
 COMMENT=	"PalmPilot communication utilities"
 
-VERSION=	0.9.3
+VERSION=	0.9.5
 DISTNAME=	pilot-link.${VERSION}
 PKGNAME=	pilot-link-${VERSION}
 CATEGORIES=	comms palm
-NEED_VERSION=	1.475
-MASTER_SITES=	ftp://ryeham.ee.ryerson.ca/pub/PalmOS/ \
-		ftp://ftp.forth.org/pub/PalmOS/ryerson/
+NEED_VERSION=	1.504
+EXTRACT_SUFX=	.tar.bz2
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+HOMEPAGE=	http://www.pilot-link.org
+
+MASTER_SITES=	${HOMEPAGE}/source/
 
 LIB_DEPENDS=	tk83::x11/tk/8.3
 

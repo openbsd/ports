@@ -1,7 +1,7 @@
-$OpenBSD: patch-pilot-mail_c,v 1.1 2001/06/03 21:40:21 brad Exp $
---- pilot-mail.c.orig	Sun Jun  3 17:38:13 2001
-+++ pilot-mail.c	Sun Jun  3 17:38:42 2001
-@@ -15,7 +15,7 @@
+$OpenBSD: patch-pilot-mail_c,v 1.2 2002/02/18 21:37:41 pvalchev Exp $
+--- pilot-mail.c.orig	Mon May 21 00:55:45 2001
++++ pilot-mail.c	Mon Feb 18 13:20:26 2002
+@@ -28,7 +28,7 @@
  #define POPUSER		""
  #define POPPASS		""
  #define PILOTFROM	""

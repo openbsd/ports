@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_ltconfig,v 1.1 2001/06/03 21:39:30 brad Exp $
---- scripts/ltconfig.orig	Thu May  7 21:41:18 1998
-+++ scripts/ltconfig	Sun Jun  3 17:07:16 2001
-@@ -702,7 +702,7 @@ hardcode_shlibpath_var=unsupported
+$OpenBSD: patch-scripts_ltconfig,v 1.2 2002/02/18 21:37:41 pvalchev Exp $
+--- scripts/ltconfig.orig	Fri Oct 27 17:10:06 2000
++++ scripts/ltconfig	Mon Feb 18 13:20:49 2002
+@@ -706,7 +706,7 @@ hardcode_shlibpath_var=unsupported
  runpath_var=
  
  case "$host_os" in
@@ -10,7 +10,7 @@ $OpenBSD: patch-scripts_ltconfig,v 1.1 2001/06/03 21:39:30 brad Exp $
    # On these operating systems, we should treat GNU ld like the system ld.
    gnu_ld_acts_native=yes
    ;;
-@@ -815,10 +815,21 @@ else
+@@ -819,10 +819,21 @@ else
      ;;
  
    openbsd*)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/06/03 21:42:31 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/02/18 21:37:41 pvalchev Exp $
 bin/addresses
 bin/ccexample
 bin/debugsh
@@ -21,9 +21,11 @@ bin/pi-nredir
 bin/pi-port
 bin/pilot-addresses
 bin/pilot-clip
+bin/pilot-debug
 bin/pilot-dedupe
 bin/pilot-file
 bin/pilot-mail
+bin/pilot-prc
 bin/pilot-schlep
 bin/pilot-undelete
 bin/pilot-xfer
@@ -46,6 +48,7 @@ include/pi-dlp.h
 include/pi-dlp.hxx
 include/pi-expense.h
 include/pi-file.h
+include/pi-header.h
 include/pi-hinote.h
 include/pi-iambicExpense.h
 include/pi-iambicExpense.hxx
@@ -67,6 +70,7 @@ include/pi-sync.h
 include/pi-syspkt.h
 include/pi-todo.h
 include/pi-todo.hxx
+include/pi-util.h
 include/pi-version.h
 lib/libpicc.a
 lib/libpisock.a
@@ -88,6 +92,7 @@ man/man1/install-datebook.1
 man/man1/install-hinote.1
 man/man1/install-memo.1
 man/man1/install-user.1
+man/man1/pilot-addresses.1
 man/man1/pilot-xfer.1
 man/man1/read-ical.1
 man/man7/pilot-link.7

@@ -1,28 +1,19 @@
-$OpenBSD: patch-configure,v 1.1 2001/06/03 23:58:36 brad Exp $
---- configure.orig	Fri May 14 02:52:43 1999
-+++ configure	Sun Jun  3 19:36:17 2001
-@@ -1538,7 +1538,7 @@ fi
- 
- 
- ac_save_LIBS="$LIBS"
--LIBS="$LIBS -lreadline"
-+LIBS="$LIBS -lreadline -lcurses"
- cat > conftest.$ac_ext <<EOF
- #line 1544 "configure"
- #include "confdefs.h"
-@@ -1549,7 +1549,7 @@ int main() {
+$OpenBSD: patch-configure,v 1.2 2002/02/18 21:37:41 pvalchev Exp $
+--- configure.orig	Mon Mar 12 21:06:17 2001
++++ configure	Mon Feb 18 13:19:57 2002
+@@ -1736,7 +1736,7 @@ int main() {
  EOF
- if { (eval echo configure:1551: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+ if { (eval echo configure:1738: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
    rm -rf conftest*
 -  RLLIBS="-lreadline"
 +  RLLIBS="-lreadline -lcurses"
  else
    echo "configure: failed program was:" >&5
    cat conftest.$ac_ext >&5
-@@ -2642,7 +2642,9 @@ fi
+@@ -2829,7 +2829,9 @@ fi
  itcl=''
  if test "x$with_tcl" = "xyes" || test "x$with_tcl" = "x" ; then
- 	for tcl_path in /usr/local/tcl8.0 /usr/local/tcl7.6 /usr/local/tcl7.5 /usr/local /usr /usr/local/tcl7.4; do
+ 	for tcl_path in /usr /usr/local /usr/lib/tcl8.3 /usr/local/tcl8.0 /usr/local/tcl7.6 /usr/local/tcl7.5 /usr/local/tcl7.4; do
 -		if test -f $tcl_path/lib/tclConfig.sh; then
 +		if test -f $tcl_path/lib/tcl8.3/tclConfig.sh; then
 +			with_tcl=$tcl_path; break
@@ -30,7 +21,7 @@ $OpenBSD: patch-configure,v 1.1 2001/06/03 23:58:36 brad Exp $
  			with_tcl=$tcl_path; break
  		elif test -f $tcl_path/lib/itcl/tclConfig.sh; then
  			itcl='/itcl'
-@@ -2683,13 +2685,13 @@ if test "x$with_tcl" = "x"; then
+@@ -2870,13 +2872,13 @@ if test "x$with_tcl" = "x"; then
  elif test "x$with_tcl" = "xno"; then
  	echo "$ac_t""not used" 1>&6
  else
@@ -46,7 +37,7 @@ $OpenBSD: patch-configure,v 1.1 2001/06/03 23:58:36 brad Exp $
  		TCL_BIN="$TCL_EXEC_PREFIX/bin"
  		TCLLIBS="$TCL_LIB_SPEC $TCL_LIBS"
  		TCLTKLIBS="$TCLLIBS"
-@@ -2700,7 +2702,7 @@ else
+@@ -2889,7 +2891,7 @@ else
  		
  		if test "x$with_itcl" = "xyes" || test "x$with_itcl" = "x"; then
  			for itcl_path in $with_tcl; do
@@ -55,7 +46,7 @@ $OpenBSD: patch-configure,v 1.1 2001/06/03 23:58:36 brad Exp $
  					with_itcl=$itcl_path; break
  				fi
  			done
-@@ -2718,13 +2720,13 @@ echo "configure:2716: checking for Itcl"
+@@ -2907,13 +2909,13 @@ echo "configure:2905: checking for Itcl"
  		elif test "x$with_itcl" = "xno"; then
  			echo "$ac_t""not used" 1>&6
  		else
@@ -71,7 +62,7 @@ $OpenBSD: patch-configure,v 1.1 2001/06/03 23:58:36 brad Exp $
  				#TK_BIN="$TK_EXEC_PREFIX/bin"
  				#TKLIBS="$TK_LIB_SPEC $TCL_LIB_SPEC $TK_LIBS"
  				#TCLTK_LIBS="\$(TK_LIB_SPEC) \$(TCL_LIB_SPEC) \$(TK_LIBS)"
-@@ -2742,7 +2744,7 @@ echo "configure:2716: checking for Itcl"
+@@ -2931,7 +2933,7 @@ echo "configure:2905: checking for Itcl"
  
  		if test "x$with_tk" = "xyes" || test "x$with_tk" = "x"; then
  			for tk_path in $with_tcl; do
@@ -80,7 +71,7 @@ $OpenBSD: patch-configure,v 1.1 2001/06/03 23:58:36 brad Exp $
  					with_tk=$tk_path; break
  				fi
  			done
-@@ -2760,13 +2762,13 @@ echo "configure:2758: checking for Tk" >
+@@ -2949,13 +2951,13 @@ echo "configure:2947: checking for Tk" >
  		elif test "x$with_tk" = "xno"; then
  			echo "$ac_t""not used" 1>&6
  		else
