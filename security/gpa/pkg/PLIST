@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/07 03:12:08 shell Exp $
+bin/gpa
+share/gpa/gpa_logo.ppm
+share/gpa/gpa_tips.de
+share/gpa/gpa_tips.en
+share/gpa/gtkrc
+share/locale/de/LC_MESSAGES/gpa.mo
+share/locale/fr/LC_MESSAGES/gpa.mo
+@dirrm share/gpa
