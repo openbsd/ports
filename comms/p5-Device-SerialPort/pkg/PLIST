@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/08/03 14:44:18 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/09 11:54:03 espie Exp $
 bin/modemtest
 ${P5ARCH}/
 ${P5ARCH}/Device/
@@ -10,5 +10,4 @@ ${P5ARCH}/auto/Device/SerialPort/.packlist
 ${P5ARCH}/auto/Device/SerialPort/SerialPort.bs
 ${P5ARCH}/auto/Device/SerialPort/SerialPort.so
 @man man/man1/modemtest.1
-man/man3p/
 @man man/man3p/Device::SerialPort.3p

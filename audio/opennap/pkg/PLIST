@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/04/13 09:31:06 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/08/09 11:50:26 espie Exp $
 sbin/metaserver
 sbin/opennap
 sbin/setup
+share/doc/opennap/
 share/doc/opennap/FAQ
 share/doc/opennap/README
 share/doc/opennap/manual.html
 share/doc/opennap/napster.txt
+share/examples/opennap/
 share/examples/opennap/sample.block
 share/examples/opennap/sample.channels
 share/examples/opennap/sample.config
@@ -13,8 +15,6 @@ share/examples/opennap/sample.filter
 share/examples/opennap/sample.motd
 share/examples/opennap/sample.servers
 share/examples/opennap/sample.users
-@dirrm share/examples/opennap
-@dirrm share/doc/opennap
 @extraunexec rm -rf ${SYSCONFDIR}/opennap
 @extraunexec userdel _opennap
 @extraunexec groupdel _opennap

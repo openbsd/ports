@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/10/07 17:17:31 fgsch Exp $
-%%debug%%
+@comment $OpenBSD: PLIST,v 1.10 2004/08/09 11:46:23 espie Exp $
 bin/addresses
 bin/ccexample
 bin/debugsh
@@ -75,6 +74,7 @@ include/pi-version.h
 lib/libpicc.a
 lib/libpisock.a
 lib/libpisock.la
+lib/pix/
 lib/pix/b1.gif
 lib/pix/b2.gif
 lib/pix/b3.gif
@@ -85,15 +85,15 @@ lib/pix/b7.gif
 lib/pix/case.gif
 lib/pix/case.xbm
 lib/pix/casemask.xbm
-man/man1/dlpsh.1
-man/man1/ietf2datebook.1
-man/man1/install-datebook.1
-man/man1/install-hinote.1
-man/man1/install-memo.1
-man/man1/install-user.1
-man/man1/pilot-addresses.1
-man/man1/pilot-xfer.1
-man/man1/read-ical.1
-man/man7/pilot-link.7
+@man man/man1/dlpsh.1
+@man man/man1/ietf2datebook.1
+@man man/man1/install-datebook.1
+@man man/man1/install-hinote.1
+@man man/man1/install-memo.1
+@man man/man1/install-user.1
+@man man/man1/pilot-addresses.1
+@man man/man1/pilot-xfer.1
+@man man/man1/read-ical.1
+@man man/man7/pilot-link.7
+%%debug%%
 %%SHARED%%
-@dirrm lib/pix

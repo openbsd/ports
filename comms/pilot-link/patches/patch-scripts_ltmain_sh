@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_ltmain_sh,v 1.1 2001/06/03 21:39:30 brad Exp $
---- scripts/ltmain.sh.orig	Sun Jun  3 17:08:12 2001
-+++ scripts/ltmain.sh	Sun Jun  3 17:15:33 2001
-@@ -506,7 +506,28 @@ if test -z "$show_help"; then
+$OpenBSD: patch-scripts_ltmain_sh,v 1.2 2004/08/09 11:46:23 espie Exp $
+--- scripts/ltmain.sh.orig	Mon Jul 31 02:13:38 2000
++++ scripts/ltmain.sh	Mon Aug  9 13:32:27 2004
+@@ -506,8 +506,29 @@ if test -z "$show_help"; then
          deplibs="$deplibs $arg"
          ;;
  
@@ -24,13 +24,14 @@ $OpenBSD: patch-scripts_ltmain_sh,v 1.1 2001/06/03 21:39:30 brad Exp $
 +	fi
 +	deplibs="$deplibs $arg"
 +	;;
-+
+ 
 +      -?thread)
 +	deplibs="$deplibs $arg"
 +	;;
- 
++
        -no-undefined)
  	allow_undefined=no
+ 	continue
 @@ -1002,7 +1023,15 @@ if test -z "$show_help"; then
  
        # Add libc to deplibs on all systems.

@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/08/21 19:11:37 grange Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/09 11:54:03 espie Exp $
 bin/scmxx
-man/man1/scmxx.1
+@man man/man1/scmxx.1
+share/doc/scmxx/
 share/doc/scmxx/doc_sources.txt
 share/doc/scmxx/gsm0338.txt
 share/doc/scmxx/gsmcharset.txt
+share/examples/scmxx/
 share/examples/scmxx/phonebook
 share/examples/scmxx/sms.txt
 share/examples/scmxx/vCalendar.vcs
 share/examples/scmxx/vCard.vcf
-@dirrm share/examples/scmxx
-@dirrm share/doc/scmxx
