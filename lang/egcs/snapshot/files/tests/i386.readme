@@ -31,12 +31,12 @@ FAIL: gcc.c-torture/execute/990119-1.c execution,  -O2
 FAIL: gcc.c-torture/execute/990119-1.c execution,  -O2 -fomit-frame-pointer -finline-functions 
 FAIL: gcc.c-torture/execute/990119-1.c execution,  -O2 -g 
 FAIL: gcc.c-torture/execute/990119-1.c execution,  -Os 
-FAIL: gcc.c-torture/execute/990128-1.c execution,  -O2 
-FAIL: gcc.c-torture/execute/990128-1.c execution,  -O2 -fomit-frame-pointer -finline-functions 
-FAIL: gcc.c-torture/execute/990128-1.c execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-loops 
-FAIL: gcc.c-torture/execute/990128-1.c execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-all-loops 
-FAIL: gcc.c-torture/execute/990128-1.c execution,  -O2 -g 
-FAIL: gcc.c-torture/execute/990128-1.c execution,  -Os 
+FAIL: gcc.c-torture/execute/990130-1.c compilation,  -O0 
+FAIL: gcc.c-torture/execute/990130-1.c compilation,  -O1 
+FAIL: gcc.c-torture/execute/990130-1.c compilation,  -O2 
+FAIL: gcc.c-torture/execute/990130-1.c compilation,  -O2 -fomit-frame-pointer -finline-functions 
+FAIL: gcc.c-torture/execute/990130-1.c compilation,  -O2 -g 
+FAIL: gcc.c-torture/execute/990130-1.c compilation,  -Os 
 FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O1 
 FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O2 
 FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O2 -fomit-frame-pointer -finline-functions 
@@ -49,18 +49,10 @@ FAIL: gcc.c-torture/execute/ieee/rbug.c execution,  -O1
 FAIL: gcc.c-torture/execute/ieee/rbug.c execution,  -O2 
 FAIL: gcc.c-torture/execute/ieee/rbug.c execution,  -O2 -g 
 FAIL: gcc.c-torture/execute/ieee/rbug.c execution,  -Os 
-FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -O0 
-FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -O1 
-FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -O2 
-FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -O2 -fomit-frame-pointer -finline-functions 
-FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -O2 -g 
-FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -Os 
 FAIL: gcc.c-torture/noncompile/951227-1.c
 FAIL: gcc.c-torture/special/981006-1.c  (test for bogus messages, line 11)
 FAIL: gcc.c-torture/special/981006-1.c  (test for bogus messages, line 12)
 FAIL: gcc.dg/980414-1.c (test for excess errors)
-FAIL: gcc.dg/990117-1.c (test for excess errors)
-FAIL: gcc.dg/990130-1.c (test for excess errors)
 FAIL: gcc.dg/cpp-if1.c invalid number (test for errors, line 12)
 FAIL: gcc.dg/cpp-if1.c invalid number (test for errors, line 15)
 FAIL: gcc.dg/cpp-if1.c invalid number (test for errors, line 18)
@@ -74,11 +66,12 @@ FAIL: gcc.misc-tests/m-un-2.c (test for excess errors)
 
 		=== gcc Summary ===
 
-# of expected passes		7928
-# of unexpected failures	51
-# of expected failures		13
+# of expected passes		7930
+# of unexpected failures	43
+# of expected failures		19
+# of untested testcases		6
 # of unsupported tests		12
-/vbig/ports/lang/egcs-snapshot/egcs-19990131/gcc/xgcc version egcs-2.93.04 19990131 (gcc2 ss-980929 experimental)
+/vbig/ports/lang/egcs-snapshot/build-i386/gcc/xgcc version egcs-2.93.06 19990208 (gcc2 ss-980929 experimental)
 
 		=== g++ tests ===
 
@@ -86,7 +79,6 @@ FAIL: gcc.misc-tests/m-un-2.c (test for excess errors)
 Running target unix
 FAIL: g++.law/profile1.C (test for excess errors)
 FAIL: g++.mike/p6610a.C  Execution test
-FAIL: g++.ns/template6.C (test for excess errors)
 FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 21)
 FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 22)
 FAIL: g++.other/null1.C NULL used in arithmetic (test for warnings, line 25)
@@ -101,16 +93,16 @@ FAIL: g++.other/null1.C converting NULL to int (test for warnings, line 35)
 FAIL: g++.other/null1.C converting NULL to int (test for warnings, line 36)
 FAIL: g++.other/null1.C NULL bound to integer template parameter (test for warnings, line 37)
 FAIL: g++.other/null1.C converting NULL to int (test for warnings, line 38)
+FAIL: g++.pt/explicit73.C (test for excess errors)
 FAIL: g++.pt/instantiate4.C (test for excess errors)
-FAIL: g++.robertl/eb83.C caused compiler crash
 
 		=== g++ Summary ===
 
-# of expected passes		4818
-# of unexpected failures	19
-# of expected failures		90
+# of expected passes		4833
+# of unexpected failures	18
+# of expected failures		89
 # of untested testcases		7
-/vbig/ports/lang/egcs-snapshot/egcs-19990131/gcc/testsuite/../xgcc version egcs-2.93.04 19990131 (gcc2 ss-980929 experimental)
+/vbig/ports/lang/egcs-snapshot/build-i386/gcc/testsuite/../xgcc version egcs-2.93.06 19990208 (gcc2 ss-980929 experimental)
 
 		=== g77 tests ===
 
@@ -133,9 +125,9 @@ Running target unix
 		=== objc Summary ===
 
 # of expected passes		38
-/vbig/ports/lang/egcs-snapshot/egcs-19990131/gcc/xgcc version egcs-2.93.04 19990131 (gcc2 ss-980929 experimental)
+/vbig/ports/lang/egcs-snapshot/build-i386/gcc/xgcc version egcs-2.93.06 19990208 (gcc2 ss-980929 experimental)
 
 
-Compiler version: egcs-2.93.04 19990131 (gcc2 ss-980929 experimental) 
+Compiler version: egcs-2.93.06 19990208 (gcc2 ss-980929 experimental) 
 Platform: i386-unknown-openbsd2.4
-configure flags: --with-gcc-version-trigger=/usr/ports/lang/egcs-snapshot/work/source/gcc/version.c --host=i386-unknown-openbsd2.4 --prefix=/usr/local --verbose --program-transform-name=s,^,e, --with-gnu-as --with-gnu-ld --enable-shared --prefix=/usr/local --norecursion
+configure flags: --with-gcc-version-trigger=/usr/ports/lang/egcs-snapshot/work/egcs-19990208/gcc/version.c --host=i386-unknown-openbsd2.4 --prefix=/usr/local --verbose --program-transform-name=s,^,e, --with-gnu-as --with-gnu-ld --enable-shared --prefix=/usr/local --norecursion
