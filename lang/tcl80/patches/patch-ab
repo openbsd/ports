@@ -56,7 +56,7 @@
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
 +	@echo "Installing libtcl80.a"
 +	@$(INSTALL_DATA) libtcl80.a $(LIB_INSTALL_DIR)/libtcl80.a
-+	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtcl80.a)
++	@(cd $(LIB_INSTALL_DIR); ranlib libtcl80.a)
 +	@chmod 555 $(LIB_INSTALL_DIR)/libtcl80.a
  	@echo "Installing tclsh"
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
