@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_proxy_c,v 1.1 2003/10/23 05:58:53 pvalchev Exp $
+--- src/proxy.c.orig	2003-10-22 19:31:15.000000000 -0600
++++ src/proxy.c	2003-10-22 19:31:25.000000000 -0600
+@@ -449,7 +449,7 @@ static void trap_gdb_bug()
+ 	fputs("\n* * *\n",stderr);
+ 	fputs(message,stderr);
+ 	fputs("* * *\n\n",stderr);
+-	execlp("xmessage","xmessage","-center", message, NULL);
++	execlp("xmessage","xmessage","-center", message, (void *)NULL);
+ 	_exit(1);
+ }
+ 
