@@ -4,8 +4,3 @@ Windows registry but lots better. It's being written for the GNOME desktop.
 For more information about GConf and the GNOME project, visit:
 
 WWW: ${HOMEPAGE}
-
-Available flavors:
-
-	  db3:	 Berkely DB version 3 backend
-	  guile: Build guile wrappers
