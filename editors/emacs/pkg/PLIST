@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/03/22 07:23:51 jasoni Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/07/06 15:27:53 naddy Exp $
 @pkgcfl xemacs-20*
-bin/etags
-bin/ctags
-bin/emacsclient
 bin/b2m
-bin/rcs-checkin
-bin/emacs-${VER}
-@comment emacs is a link to emacs-${VER}
+bin/ctags
 bin/emacs
+bin/emacs-${VER}
+bin/emacsclient
+bin/etags
+bin/rcs-checkin
 @unexec install-info --delete %D/info/ccmode %D/info/dir
 info/ccmode
 info/ccmode-1
@@ -142,15 +141,11 @@ libexec/emacs/${VER}/${GCCARCH}/hexl
 libexec/emacs/${VER}/${GCCARCH}/rcs2log
 libexec/emacs/${VER}/${GCCARCH}/vcdiff
 libexec/emacs/${VER}/${GCCARCH}/fns-${VER}.1.el
-@dirrm libexec/emacs/${VER}/${GCCARCH}
-@dirrm libexec/emacs/${VER}
-@dirrm libexec/emacs
 man/man1/emacs.1
 man/man1/etags.1
 man/man1/ctags.1
 share/emacs/${VER}/etc/e/eterm
 share/emacs/${VER}/etc/e/eterm.ti
-@dirrm share/emacs/${VER}/etc/e
 share/emacs/${VER}/etc/3B-MAXMEM
 share/emacs/${VER}/etc/COPYING
 share/emacs/${VER}/etc/AIX.DUMP
@@ -239,7 +234,6 @@ share/emacs/${VER}/etc/ulimit.hack
 share/emacs/${VER}/etc/vipcard.tex
 share/emacs/${VER}/etc/viperCard.tex
 share/emacs/${VER}/etc/yow.lines
-@dirrm share/emacs/${VER}/etc
 share/emacs/${VER}/lisp/abbrev.el
 share/emacs/${VER}/lisp/abbrevlist.el
 share/emacs/${VER}/lisp/add-log.el
@@ -312,7 +306,6 @@ share/emacs/${VER}/lisp/calendar/diary-lib.elc
 share/emacs/${VER}/lisp/calendar/holidays.elc
 share/emacs/${VER}/lisp/calendar/lunar.elc
 share/emacs/${VER}/lisp/calendar/solar.elc
-@dirrm share/emacs/${VER}/lisp/calendar
 share/emacs/${VER}/lisp/delsel.el
 share/emacs/${VER}/lisp/derived.el
 share/emacs/${VER}/lisp/desktop.el
@@ -493,7 +486,6 @@ share/emacs/${VER}/lisp/textmodes/texnfo-upd.elc
 share/emacs/${VER}/lisp/textmodes/text-mode.elc
 share/emacs/${VER}/lisp/textmodes/two-column.elc
 share/emacs/${VER}/lisp/textmodes/underline.elc
-@dirrm share/emacs/${VER}/lisp/textmodes
 share/emacs/${VER}/lisp/term/AT386.el
 share/emacs/${VER}/lisp/term/apollo.el
 share/emacs/${VER}/lisp/term/bg-mouse.el
@@ -539,7 +531,6 @@ share/emacs/${VER}/lisp/term/wyse50.elc
 share/emacs/${VER}/lisp/term/x-win.elc
 share/emacs/${VER}/lisp/term/xterm.elc
 share/emacs/${VER}/lisp/term/README
-@dirrm share/emacs/${VER}/lisp/term
 share/emacs/${VER}/lisp/skeleton.el
 share/emacs/${VER}/lisp/snmp-mode.el
 share/emacs/${VER}/lisp/sort.el
@@ -888,7 +879,6 @@ share/emacs/${VER}/lisp/progmodes/simula.elc
 share/emacs/${VER}/lisp/progmodes/sql.elc
 share/emacs/${VER}/lisp/progmodes/tcl-mode.elc
 share/emacs/${VER}/lisp/progmodes/vhdl-mode.elc
-@dirrm share/emacs/${VER}/lisp/progmodes
 share/emacs/${VER}/lisp/play/blackbox.el
 share/emacs/${VER}/lisp/play/bruce.el
 share/emacs/${VER}/lisp/play/cookie1.el
@@ -934,7 +924,6 @@ share/emacs/${VER}/lisp/play/spook.elc
 share/emacs/${VER}/lisp/play/studly.elc
 share/emacs/${VER}/lisp/play/tetris.elc
 share/emacs/${VER}/lisp/play/yow.elc
-@dirrm share/emacs/${VER}/lisp/play
 share/emacs/${VER}/lisp/mail/blessmail.el
 share/emacs/${VER}/lisp/mail/emacsbug.el
 share/emacs/${VER}/lisp/mail/feedmail.el
@@ -1009,7 +998,6 @@ share/emacs/${VER}/lisp/mail/supercite.elc
 share/emacs/${VER}/lisp/mail/undigest.elc
 share/emacs/${VER}/lisp/mail/unrmail.elc
 share/emacs/${VER}/lisp/mail/vms-pmail.elc
-@dirrm share/emacs/${VER}/lisp/mail
 share/emacs/${VER}/lisp/language/china-util.el
 share/emacs/${VER}/lisp/language/chinese.el
 share/emacs/${VER}/lisp/language/cyril-util.el
@@ -1068,7 +1056,6 @@ share/emacs/${VER}/lisp/language/tibet-util.elc
 share/emacs/${VER}/lisp/language/tibetan.elc
 share/emacs/${VER}/lisp/language/viet-util.elc
 share/emacs/${VER}/lisp/language/vietnamese.elc
-@dirrm share/emacs/${VER}/lisp/language
 share/emacs/${VER}/lisp/international/ccl.el
 share/emacs/${VER}/lisp/international/characters.el
 share/emacs/${VER}/lisp/international/codepage.el
@@ -1123,7 +1110,6 @@ share/emacs/${VER}/lisp/international/skkdic-cnv.elc
 share/emacs/${VER}/lisp/international/skkdic-utl.elc
 share/emacs/${VER}/lisp/international/swedish.elc
 share/emacs/${VER}/lisp/international/titdic-cnv.elc
-@dirrm share/emacs/${VER}/lisp/international
 share/emacs/${VER}/lisp/gnus/earcon.el
 share/emacs/${VER}/lisp/gnus/gnus-agent.el
 share/emacs/${VER}/lisp/gnus/gnus-art.el
@@ -1257,7 +1243,6 @@ share/emacs/${VER}/lisp/gnus/nnweb.elc
 share/emacs/${VER}/lisp/gnus/parse-time.elc
 share/emacs/${VER}/lisp/gnus/pop3.elc
 share/emacs/${VER}/lisp/gnus/score-mode.elc
-@dirrm share/emacs/${VER}/lisp/gnus
 share/emacs/${VER}/lisp/emulation/crisp.el
 share/emacs/${VER}/lisp/emulation/edt-lk201.el
 share/emacs/${VER}/lisp/emulation/edt-mapper.el
@@ -1306,7 +1291,6 @@ share/emacs/${VER}/lisp/emulation/viper-mous.elc
 share/emacs/${VER}/lisp/emulation/viper-util.elc
 share/emacs/${VER}/lisp/emulation/viper.elc
 share/emacs/${VER}/lisp/emulation/ws-mode.elc
-@dirrm share/emacs/${VER}/lisp/emulation
 share/emacs/${VER}/lisp/emacs-lisp/advice.el
 share/emacs/${VER}/lisp/emacs-lisp/assoc.el
 share/emacs/${VER}/lisp/emacs-lisp/autoload.el
@@ -1395,16 +1379,29 @@ share/emacs/${VER}/lisp/emacs-lisp/shadow.elc
 share/emacs/${VER}/lisp/emacs-lisp/sregex.elc
 share/emacs/${VER}/lisp/emacs-lisp/tq.elc
 share/emacs/${VER}/lisp/emacs-lisp/trace.elc
-@dirrm share/emacs/${VER}/lisp/emacs-lisp
 share/emacs/${VER}/lisp/COPYING
 share/emacs/${VER}/lisp/auto-show.el
 share/emacs/${VER}/lisp/info.el
-@dirrm share/emacs/${VER}/lisp
 share/emacs/${VER}/site-lisp/subdirs.el
-@dirrm share/emacs/${VER}/site-lisp
-@exec if [ ! -d %D/share/emacs/${VER}/leim ]; then mkdir -p %D/share/emacs/${VER}/leim; fi
-@dirrm share/emacs/${VER}/leim
 share/emacs/site-lisp/subdirs.el
-@dirrm share/emacs/${VER}
 @dirrm share/emacs/site-lisp
+@dirrm share/emacs/${VER}/site-lisp
+@dirrm share/emacs/${VER}/lisp
+@dirrm share/emacs/${VER}/lisp/emacs-lisp
+@dirrm share/emacs/${VER}/lisp/emulation
+@dirrm share/emacs/${VER}/lisp/gnus
+@dirrm share/emacs/${VER}/lisp/international
+@dirrm share/emacs/${VER}/lisp/language
+@dirrm share/emacs/${VER}/lisp/mail
+@dirrm share/emacs/${VER}/lisp/play
+@dirrm share/emacs/${VER}/lisp/progmodes
+@dirrm share/emacs/${VER}/lisp/term
+@dirrm share/emacs/${VER}/lisp/textmodes
+@dirrm share/emacs/${VER}/lisp/calendar
+@dirrm share/emacs/${VER}/etc
+@dirrm share/emacs/${VER}/etc/e
+@dirrm share/emacs/${VER}
 @dirrm share/emacs
+@dirrm libexec/emacs/${VER}/${GCCARCH}
+@dirrm libexec/emacs/${VER}
+@dirrm libexec/emacs
