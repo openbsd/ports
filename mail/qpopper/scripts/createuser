@@ -1,0 +1,29 @@
+#!/usr/bin/perl
+#
+
+eval '(exit $?0)' && eval 'exec /usr/bin/perl -S $0 ${1+"$@"}'
+& eval 'exec /usr/bin/perl -S $0 $argv:q'
+if 0;
+
+if( $> ) {
+	print "\nYou must be root to run this step!\n\n";
+	exit 1;
+} 
+
+if( getpwnam( "pop" ) ) {
+	( $null, $null, $popUID ) = getpwnam( "pop" );
+} else {
+	$popUID = 75;
+	while( getpwuid( $popUID ) ) {
+		$popUID++;
+	}
+}
+
+( $null, $null, $popGID ) = getgrnam( "bin" );
+
+print "pop user using uid $popUID, gid $popGID\n";
+
+print( "/usr/bin/chpass -a \"pop:*:$popUID\:$popUID\:\:\:\:POP pseudo-user\:/\:/sbin/nologin\"" );
+system( "/usr/bin/chpass -a \"pop:*:$popUID\:$popGID\:\:\:\:POP pseudo-user\:/\:/sbin/nologin\"" );
+print( "\n" );
+

@@ -1,0 +1,44 @@
+--- configure.orig	Tue Sep 16 12:30:47 1997
++++ configure	Fri May  1 11:07:09 1998
+@@ -14,7 +14,7 @@
+ ac_help="$ac_help
+  --enable-debugging	compiling in debug mode"
+ ac_help="$ac_help
+- --with-apop=path 	Set the pop.auth file path [/etc/pop.auth]"
++ --enable-apop[=path] 	Set the pop.auth file path [/etc/pop.auth]"
+ 
+ # Initialize some variables set by options.
+ # The variables have the same names as the options, with
+@@ -865,11 +865,13 @@
+ 	if test -z "$apop" ; then
+ 		cat >> confdefs.h <<EOF
+ #define APOP "/etc/pop.auth"
++#define POPUID "pop"
+ EOF
+ 
+ 	else
+ 		cat >> confdefs.h <<EOF
+ #define APOP "$apop"
++#define POPUID "pop"
+ EOF
+ 
+ 	fi
+@@ -972,15 +974,15 @@
+ EOF
+ 
+ 	cat >> confdefs.h <<\EOF
+-#define POP_DROP "/var/mail/.%s.pop"
++#define POP_DROP "/var/tmp/.%s.pop"
+ EOF
+ 
+ 	cat >> confdefs.h <<\EOF
+-#define POP_TMPDROP "/var/mail/tmpXXXXXX"
++#define POP_TMPDROP "/var/tmp/tmpXXXXXX"
+ EOF
+ 
+ 	cat >> confdefs.h <<\EOF
+-#define POP_TMPXMIT "/var/mail/xmitXXXXXX"
++#define POP_TMPXMIT "/var/tmp/xmitXXXXXX"
+ EOF
+ 
+ 	echo "$ac_t""found at /var/mail" 1>&6

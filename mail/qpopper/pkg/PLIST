@@ -1,0 +1,9 @@
+sbin/popauth
+libexec/popper
+man/man8/popper.8
+man/man8/popauth.8
+@exec echo "see popper(8) for final installation instructions"
+@unexec echo ""
+@unexec echo "*** You must remove the file /etc/pop.auth.db by hand to"
+@unexec echo "*** fully delete this package from your system"
+@unexec echo ""
