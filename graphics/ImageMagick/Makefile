@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.43 2000/10/03 02:15:31 brad Exp $
+# $OpenBSD: Makefile,v 1.44 2000/11/30 04:41:37 dugsong Exp $
 
-DISTNAME=	ImageMagick-5.2.2
+DISTNAME=	ImageMagick-5.2.5
 CATEGORIES=     graphics
 NEED_VERSION=	1.330
-MASTER_SITES=	ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
-		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/ \
-		ftp://ftp.fifi.org/pub/ImageMagick/ \
-		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
-		ftp://ftp.ms.mff.cuni.cz/MIRRORS/ftp.wizards.dupont.com/pub/ImageMagick/ \
-		ftp://ftp.oce.nl/pub/Internet/audio+video/ImageMagick/
+MASTER_SITES=	ftp://ftp.simplesystems.org/pub/ImageMagick/ \
+		ftp://ftp.cdrom.com/pub/ImageMagick/ \
+		ftp://ftp.yggdrasil.com/mirrors/site/ftp.wizards.dupont.com/pub/ImageMagick/
 
-HOMEPAGE=	http://www.wizards.dupont.com/cristy/ImageMagick.html
+HOMEPAGE=	http://www.simplesystems.org/ImageMagick/
 
 LIB_DEPENDS=	bz2.10::archivers/bzip2 \
 		jbig.1.2::graphics/jbigkit \

@@ -1,13 +1,12 @@
---- magick/magick.h.orig	Sat Jul 15 22:19:37 2000
-+++ magick/magick.h	Mon Jul 24 18:20:30 2000
-@@ -9,8 +9,10 @@
+--- magick/magick.h.orig	Fri Nov  3 19:09:26 2000
++++ magick/magick.h	Wed Nov 29 23:04:47 2000
+@@ -9,8 +9,8 @@
  */
  #define __EXTENSIONS__  1
  #define _POSIX_C_SOURCE  199506L
 +#ifndef __OpenBSD__
  #define _XOPEN_SOURCE  500
+-#ifndef __NetBSD__
  #define _XOPEN_SOURCE_EXTENDED  1
-+#endif
+ #endif
  
- #include <stdio.h>
- #include <stdlib.h>
