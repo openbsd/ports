@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.28 2002/12/14 14:09:07 naddy Exp $
 
 COMMENT=	"format ascii files for printing on PostScript printers"
 
 DISTNAME=	a2ps-4.13b
 WRKDIST=	${WRKDIR}/a2ps-4.13
 CATEGORIES=	print
-NEED_VERSION=	1.402
-
-MAINTAINER=	Tobias Weingartner <weingart@openbsd.org>
 
 # License info.  There is some questionable Sun and
 # Adobe Copyrighted things in this source tree.  It
@@ -18,6 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/
+
+MODULES=	gettext
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/auxdir
@@ -35,8 +34,10 @@ PAPERSIZE=	Letter
 .endif
 .endif
 
-CONFIGURE_ARGS+=	--with-medium=$(PAPERSIZE) \
-			${CONFIGURE_SHARED}
+CONFIGURE_ARGS=	--with-medium=${PAPERSIZE} \
+		${CONFIGURE_SHARED}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-build:
 	/usr/bin/touch $(WRKSRC)/doc/*.info
