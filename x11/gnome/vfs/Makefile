@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/16 22:18:59 heko Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/18 15:18:52 naddy Exp $
 
-COMMENT=		"the GNOME Virtual File System"
+COMMENT=		"GNOME Virtual File System"
 V=			1.0.1
 DISTNAME=		gnome-vfs-${V}
 CATEGORIES=		devel
@@ -23,13 +23,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
-CONFIGURE_STYLE= 	gnu
+CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/gtk-1.2 -D_POSIX_THREAD_SYSCALL_SOFT=1" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
-	@install -d ${PREFIX}/share/gnome-vfs; \
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/gnome-vfs; \
         cp -r ${PREFIX}/../../etc/* ${PREFIX}/share/gnome-vfs/
 
 .include <bsd.port.mk>

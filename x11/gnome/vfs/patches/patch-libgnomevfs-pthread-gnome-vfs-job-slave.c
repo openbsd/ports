@@ -1,6 +1,4 @@
-# $OpenBSD: patch-libgnomevfs-pthread-gnome-vfs-job-slave.c,v 1.1.1.1 2001/09/13 21:25:11 todd Exp $
-#$NetBSD: patch-af,v 1.1 2001/04/06 22:03:09 rh Exp $#
-
+$OpenBSD: patch-libgnomevfs-pthread-gnome-vfs-job-slave.c,v 1.2 2001/09/18 15:18:52 naddy Exp $
 --- libgnomevfs-pthread/gnome-vfs-job-slave.c.orig	Sun Feb  4 04:54:14 2001
 +++ libgnomevfs-pthread/gnome-vfs-job-slave.c	Thu Aug 30 16:05:18 2001
 @@ -60,14 +60,22 @@ thread_routine (void *data)

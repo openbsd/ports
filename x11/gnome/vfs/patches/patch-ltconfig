@@ -1,3 +1,4 @@
+$OpenBSD: patch-ltconfig,v 1.2 2001/09/18 15:18:52 naddy Exp $
 --- ltconfig.orig	Tue May  8 01:12:25 2001
 +++ ltconfig	Thu Aug 30 16:05:18 2001
 @@ -1105,6 +1105,9 @@ cygwin* | mingw*)

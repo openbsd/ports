@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/13 21:25:11 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/09/18 15:18:52 naddy Exp $
 bin/gnome-vfs-config
 include/libgnomevfs/gnome-vfs-application-registry.h
 include/libgnomevfs/gnome-vfs-async-ops.h
@@ -46,30 +46,6 @@ lib/libgnomevfs-pthread.a
 lib/libgnomevfs-pthread.la
 lib/libgnomevfs.a
 lib/libgnomevfs.la
-lib/locale/ca/LC_MESSAGES/gnome-vfs.mo
-lib/locale/da/LC_MESSAGES/gnome-vfs.mo
-lib/locale/de/LC_MESSAGES/gnome-vfs.mo
-lib/locale/el/LC_MESSAGES/gnome-vfs.mo
-lib/locale/es/LC_MESSAGES/gnome-vfs.mo
-lib/locale/fi/LC_MESSAGES/gnome-vfs.mo
-lib/locale/fr/LC_MESSAGES/gnome-vfs.mo
-lib/locale/ga/LC_MESSAGES/gnome-vfs.mo
-lib/locale/gl/LC_MESSAGES/gnome-vfs.mo
-lib/locale/hu/LC_MESSAGES/gnome-vfs.mo
-lib/locale/it/LC_MESSAGES/gnome-vfs.mo
-lib/locale/lt/LC_MESSAGES/gnome-vfs.mo
-lib/locale/nl/LC_MESSAGES/gnome-vfs.mo
-lib/locale/no/LC_MESSAGES/gnome-vfs.mo
-lib/locale/pl/LC_MESSAGES/gnome-vfs.mo
-lib/locale/pt_BR/LC_MESSAGES/gnome-vfs.mo
-lib/locale/ro/LC_MESSAGES/gnome-vfs.mo
-lib/locale/ru/LC_MESSAGES/gnome-vfs.mo
-lib/locale/sk/LC_MESSAGES/gnome-vfs.mo
-lib/locale/sl/LC_MESSAGES/gnome-vfs.mo
-lib/locale/sv/LC_MESSAGES/gnome-vfs.mo
-lib/locale/tr/LC_MESSAGES/gnome-vfs.mo
-lib/locale/uk/LC_MESSAGES/gnome-vfs.mo
-lib/locale/wa/LC_MESSAGES/gnome-vfs.mo
 lib/vfs/extfs/README
 lib/vfs/extfs/a
 lib/vfs/extfs/ar
@@ -119,6 +95,30 @@ share/gnome-vfs/vfs/modules/cdda-module.conf
 share/gnome-vfs/vfs/modules/default-modules.conf
 share/gnome/html/gnome-vfs-decl.txt
 share/gnome/html/gnome-vfs-sections.txt
+share/locale/ca/LC_MESSAGES/gnome-vfs.mo
+share/locale/da/LC_MESSAGES/gnome-vfs.mo
+share/locale/de/LC_MESSAGES/gnome-vfs.mo
+share/locale/el/LC_MESSAGES/gnome-vfs.mo
+share/locale/es/LC_MESSAGES/gnome-vfs.mo
+share/locale/fi/LC_MESSAGES/gnome-vfs.mo
+share/locale/fr/LC_MESSAGES/gnome-vfs.mo
+share/locale/ga/LC_MESSAGES/gnome-vfs.mo
+share/locale/gl/LC_MESSAGES/gnome-vfs.mo
+share/locale/hu/LC_MESSAGES/gnome-vfs.mo
+share/locale/it/LC_MESSAGES/gnome-vfs.mo
+share/locale/lt/LC_MESSAGES/gnome-vfs.mo
+share/locale/nl/LC_MESSAGES/gnome-vfs.mo
+share/locale/no/LC_MESSAGES/gnome-vfs.mo
+share/locale/pl/LC_MESSAGES/gnome-vfs.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-vfs.mo
+share/locale/ro/LC_MESSAGES/gnome-vfs.mo
+share/locale/ru/LC_MESSAGES/gnome-vfs.mo
+share/locale/sk/LC_MESSAGES/gnome-vfs.mo
+share/locale/sl/LC_MESSAGES/gnome-vfs.mo
+share/locale/sv/LC_MESSAGES/gnome-vfs.mo
+share/locale/tr/LC_MESSAGES/gnome-vfs.mo
+share/locale/uk/LC_MESSAGES/gnome-vfs.mo
+share/locale/wa/LC_MESSAGES/gnome-vfs.mo
 share/mime-info/gnome-vfs.keys
 share/mime-info/gnome-vfs.mime
 %%SHARED%%
@@ -135,55 +135,6 @@ share/mime-info/gnome-vfs.mime
 @dirrm lib/vfs/include
 @dirrm lib/vfs/extfs
 @dirrm lib/vfs
-@dirrm lib/locale/wa/LC_MESSAGES
-@dirrm lib/locale/wa
-@dirrm lib/locale/uk/LC_MESSAGES
-@dirrm lib/locale/uk
-@dirrm lib/locale/tr/LC_MESSAGES
-@dirrm lib/locale/tr
-@dirrm lib/locale/sv/LC_MESSAGES
-@dirrm lib/locale/sv
-@dirrm lib/locale/sl/LC_MESSAGES
-@dirrm lib/locale/sl
-@dirrm lib/locale/sk/LC_MESSAGES
-@dirrm lib/locale/sk
-@dirrm lib/locale/ru/LC_MESSAGES
-@dirrm lib/locale/ru
-@dirrm lib/locale/ro/LC_MESSAGES
-@dirrm lib/locale/ro
-@dirrm lib/locale/pt_BR/LC_MESSAGES
-@dirrm lib/locale/pt_BR
-@dirrm lib/locale/pl/LC_MESSAGES
-@dirrm lib/locale/pl
-@dirrm lib/locale/no/LC_MESSAGES
-@dirrm lib/locale/no
-@dirrm lib/locale/nl/LC_MESSAGES
-@dirrm lib/locale/nl
-@dirrm lib/locale/lt/LC_MESSAGES
-@dirrm lib/locale/lt
-@dirrm lib/locale/it/LC_MESSAGES
-@dirrm lib/locale/it
-@dirrm lib/locale/hu/LC_MESSAGES
-@dirrm lib/locale/hu
-@dirrm lib/locale/gl/LC_MESSAGES
-@dirrm lib/locale/gl
-@dirrm lib/locale/ga/LC_MESSAGES
-@dirrm lib/locale/ga
-@dirrm lib/locale/fr/LC_MESSAGES
-@dirrm lib/locale/fr
-@dirrm lib/locale/fi/LC_MESSAGES
-@dirrm lib/locale/fi
-@dirrm lib/locale/es/LC_MESSAGES
-@dirrm lib/locale/es
-@dirrm lib/locale/el/LC_MESSAGES
-@dirrm lib/locale/el
-@dirrm lib/locale/de/LC_MESSAGES
-@dirrm lib/locale/de
-@dirrm lib/locale/da/LC_MESSAGES
-@dirrm lib/locale/da
-@dirrm lib/locale/ca/LC_MESSAGES
-@dirrm lib/locale/ca
-@dirrm lib/locale
 @dirrm include/libgnomevfs
 @exec mkdir -p %D/doc
 @dirrm doc

@@ -1,6 +1,4 @@
-# $OpenBSD: patch-libgnomevfs-pthread-gnome-vfs-job.c,v 1.1.1.1 2001/09/13 21:25:11 todd Exp $
-#$NetBSD: patch-ae,v 1.1 2001/04/06 22:03:09 rh Exp $#
-
+$OpenBSD: patch-libgnomevfs-pthread-gnome-vfs-job.c,v 1.2 2001/09/18 15:18:52 naddy Exp $
 --- libgnomevfs-pthread/gnome-vfs-job.c.orig	Thu Mar 15 00:20:06 2001
 +++ libgnomevfs-pthread/gnome-vfs-job.c	Thu Aug 30 16:05:18 2001
 @@ -166,13 +166,21 @@ job_notify (GnomeVFSJob *job, GnomeVFSNo
