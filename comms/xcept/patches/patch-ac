@@ -1,7 +1,7 @@
 --- /dev/null	Sun Sep  1 12:14:31 1996
 +++ etc/Makefile	Sun Sep  1 14:38:51 1996
-@@ -0,0 +1,10 @@
-+DESTDIR = /usr/local/etc
+@@ -0,0 +1,11 @@
++DESTDIR = ${PREFIX}/etc
 +MODE= 644
 +OWNER= root
 +GROUP= bin
@@ -9,6 +9,7 @@
 +all:
 +
 +install:
++	mkdir -p ${DESTDIR}
 +	${INSTALL} -c -m ${MODE} -o ${OWNER} -g ${GROUP} init.cept ${DESTDIR}/cept.init
 +	${INSTALL} -c -m ${MODE} -o ${OWNER} -g ${GROUP} users.cept ${DESTDIR}/cept.users
 --- etc/init.cept.orig	Tue Jun 28 16:09:20 1994

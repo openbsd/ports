@@ -5,7 +5,7 @@
  #   overridden by enironment variable XCEPTSCRIPTS or by command line
  #   option '-S').
 -SCRIPTSDIR = /usr/local/btx
-+SCRIPTSDIR = /usr/local/lib/xcept
++SCRIPTSDIR = ${PREFIX}/lib/xcept
  
  
  #define compiler and X11 include+library pathes 
@@ -24,9 +24,10 @@
 -MODE	= 755
 +GROUP	= bin
 +BINMODE	= 755
- BINDIR	= /usr/local/bin
+-BINDIR	= /usr/local/bin
 -MANDIR	= /usr/local/man/manl
-+MANDIR	= /usr/local/man/man1
++BINDIR	= ${PREFIX}/bin
++MANDIR	= ${PREFIX}/man/man1
 +MANMODE = 644
  
 +.ifdef NOMANCOMPRESS

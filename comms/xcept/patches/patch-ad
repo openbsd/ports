@@ -7,7 +7,7 @@
 +SCRIPTS = ascii.xcept Bundesbahn.xcept DeutscheBank-Kontoauszug.xcept \
 +	  on-off.xcept popup.xcept Sparkasse.xcept \
 +          ZDF.xcept client-mode xcept.pl ZDF.pl
-+DEST    = /usr/local/lib/xcept
++DEST    = ${PREFIX}/lib/xcept
 +
 +all:
 +

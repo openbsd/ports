@@ -22,9 +22,10 @@
  
 -BINDIR= /usr/local/bin# 		directory for the executable ceptd
 -MANDIR= /usr/local/man/manl# 	directory for the ceptds manpage 
-+BINDIR= /usr/local/libexec# 	directory for the executable ceptd
-+MANDIR= /usr/local/man/man8# 	directory for the ceptds manpage 
- ETCDIR= /usr/local/etc# 	directory for 'init file' and 'users file'
+-ETCDIR= /usr/local/etc# 	directory for 'init file' and 'users file'
++BINDIR= ${PREFIX}/libexec# 	directory for the executable ceptd
++MANDIR= ${PREFIX}/man/man8# 	directory for the ceptds manpage 
++ETCDIR= ${PREFIX}/etc# 	directory for 'init file' and 'users file'
  
  # defaults for the ceptd :
  
