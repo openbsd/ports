@@ -1,0 +1,28 @@
+$OpenBSD: patch-DBlib_DBlib_xs,v 1.1 2003/05/24 06:34:37 jcs Exp $
+--- DBlib/DBlib.xs.orig	Fri May 23 11:07:52 2003
++++ DBlib/DBlib.xs	Fri May 23 11:08:27 2003
+@@ -908,10 +908,10 @@
+ 	else
+ 	    p = scriptname;
+ 	
+-	/* The script name must not be longer than MAXNAME or DBSETLAPP */
++	/* The script name must not be longer than DBMAXNAME or DBSETLAPP */
+ 	/* fails */
+-	if((int)strlen(p) > MAXNAME)
+-	    p[MAXNAME] = 0;
++	if((int)strlen(p) > DBMAXNAME)
++	    p[DBMAXNAME] = 0;
+ 	
+ 	DBSETLAPP(ptr, p);
+     }
+@@ -1622,8 +1622,8 @@
+ 	    goto not_there;
+ #endif
+ 	if (strEQ(name, "MAXNAME"))
+-#ifdef MAXNAME
+-	    return MAXNAME;
++#ifdef DBMAXNAME
++	    return DBMAXNAME;
+ #else
+ 	    goto not_there;
+ #endif
