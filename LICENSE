@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.33 1999/10/02 18:33:21 brad Exp $
+$OpenBSD: LICENSE,v 1.34 1999/10/02 18:48:01 brad Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -208,7 +208,8 @@ N	emulators/linux_lib		linux_lib-2.6.1.tar.gz		GPL
 Y	emulators/wine			Wine-990225.tar.gz		BSD
 Y	emulators/x48			x48-0.4.0.tar.gz		GPL
 Y	emulators/xcopilot		xcopilot-0.6.6.tar.gz		GPL
-Y	games/abuse			-none-				
+Y	games/abuse			abuse-2.0.tar.gz		PD
+Y	games/abuse			abuse_data.tar.gz		PD
 N	games/agm			agm-1.3.1.tar.gz		NOFEE
 Y	games/an			an-0.93.tar.gz			GPL
 -	games/bnetd			bnetd-0.4.1.tar.gz
@@ -250,19 +251,19 @@ N	games/xminehunter		xminehunter-0.4.tar.gz		COPY
 N	games/xminesweep		xminesweep3.0.tar.Z		COPY
 Y	games/xmj			xmj.tar.gz			BSD
 N	games/xmris			xmris.4.04.tgz			NOFEE
-Y	games/xneko			xneko.tar.gz			BSD
+Y	games/xneko			xneko.tar			BSD
 Y	games/xonix			xonix-1.4.tar.gz		BSD
 Y	games/xpat2			xpat2-1.04-src.tar.gz		GPL
 Y	games/xripple			xripple.tar.gz			COPY
-Y	games/xroach			xroach.tar.gz			COPY
+Y	games/xroach			xroach.tar			COPY
 N	games/xscrabble			xscrabble.tar.gz		NOFEE
 Y	games/xskat			xskat-1.6.tar.gz		COPY
 Y	games/xsol			xsol-new.tar.gz			BSD
 Y	games/xsoldier			xsoldier-0.96.tar.gz		GPL
 N	games/xteddy			xteddy-1.0.tar.gz		NOFEE
-Y	graphics/ImageMagick		ImageMagick-4.2.0.tar.gz	BSD
--	graphics/MesaGL			MesaLib-3.0.tar.gz
--	graphics/MesaGL			MesaDemos-3.0.tar.gz
+Y	graphics/ImageMagick		ImageMagick-4.2.7.tar.gz	BSD
+-	graphics/Mesa			MesaLib-3.0.tar.gz
+-	graphics/Mesa			MesaDemos-3.0.tar.gz
 Y	graphics/aalib			aalib-1.2.tar.gz		GPL
 Y	graphics/compface		compface.tar.gz			COPY
 -	graphics/fxtv			fxtv-0.48.tgz
