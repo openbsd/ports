@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/09/20 16:45:50 brad Exp $
 bin/lopster
 share/lopster/pixmaps/arrowd.xpm
 share/lopster/pixmaps/arrowl.xpm

@@ -1,8 +1,11 @@
+# $OpenBSD: Makefile,v 1.2 2000/09/20 16:45:49 brad Exp $
+
 DISTNAME=	lopster-0.9.3
 CATEGORIES=	audio
 NEED_VERSION=	1.320
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= lopster
+EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://lopster.sourceforge.net
 
@@ -15,9 +18,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-EXTRACT_SUFX=		.tgz
-CONFIGURE_STYLE=	gnu
-USE_GMAKE=		Yes
-USE_X11=		Yes
+USE_X11=	Yes
+USE_GMAKE=	Yes
+CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>
