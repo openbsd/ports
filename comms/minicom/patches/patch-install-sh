@@ -1,14 +1,14 @@
-# $OpenBSD: patch-install-sh,v 1.1 2000/05/18 04:41:32 form Exp $
+# $OpenBSD: patch-install-sh,v 1.2 2000/06/03 06:20:56 form Exp $
 
---- install.sh.orig	Wed Apr 22 00:45:42 1998
-+++ install.sh	Thu May 18 11:26:48 2000
-@@ -15,15 +15,16 @@
- 	exit 1
- fi
+--- install.sh.orig	Wed Mar 15 22:25:21 2000
++++ install.sh	Sat Jun  3 13:08:20 2000
+@@ -20,15 +20,15 @@
+ 	mkdir -p $i
+ done
  
 -if test ! -d $1
 -then
--	mkdir $1
+-	mkdir -p $1
 -	if [ $? != 0 ]
 -	then
 -		echo "$1: No such directory"
@@ -17,18 +17,17 @@
 -fi
 +#if test ! -d $1
 +#then
-+#	mkdir $1
++#	mkdir -p $1
 +#	if [ $? != 0 ]
 +#	then
 +#		echo "$1: No such directory"
 +#		exit 1
 +#	fi
 +#fi
-+#chown uucp $1
  
  if test ! -d $2
  then
-@@ -41,8 +42,8 @@
+@@ -46,8 +46,8 @@
  then
  	echo "Installing minicom in $2"
  	cp minicom $2/minicom
@@ -39,7 +38,7 @@
  	chmod 755 $2/minicom
  fi
  
-@@ -54,18 +55,18 @@
+@@ -59,18 +59,18 @@
  	cp $i $2/$i
  	chmod 755 $2/$i
  	chown root $2/$i
@@ -67,7 +66,7 @@
  
  echo "Installing manpages in $3"
  for i in minicom.1 runscript.1 ascii-xfr.1
-@@ -73,30 +74,30 @@
+@@ -78,17 +78,17 @@
  	cp ../man/$i $3
  	chmod 644 $3/$i
  	chown root $3/$i
@@ -94,13 +93,7 @@
  
  mkdir -p $4 2>/dev/null
  
- if test -d $4
- then
- 		echo "Installing script demos, docs, & character tables in $4"
--		cp ../doc/* $4
-+		##cp ../doc/* $4
- 		cp -r ../demos $4
- 		cp -r ../tables $4
+@@ -101,7 +101,7 @@
  		chmod -f 644 $4/* $4/demos/* $4/tables/*
  		chmod -f a+x $4/demos $4/tables
  		chown -f root $4/* $4/demos/* $4/tables/*
@@ -109,22 +102,3 @@
  else
  	echo "You don't have a $4 directory - script examples not installed."
  fi
-@@ -106,11 +107,12 @@
-     rm minicom.o
- fi
- 	
--echo "Minicom is NOT setuid yet - you must do this yourself by entering:"
--echo
--echo "chmod +s $2/minicom"
--echo
--echo "or make your modem device in the /dev directory world writable "
--echo "with chmod a+rw"
-+###echo "Minicom is NOT setuid yet - you must do this yourself by entering:"
-+###echo
-+###echo "chmod +s $2/minicom"
-+###echo
-+chmod u+s $2/minicom
-+###echo "or make your modem device in the /dev directory world writable "
-+###echo "with chmod a+rw"
- 
- exit 0

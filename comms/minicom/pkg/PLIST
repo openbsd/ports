@@ -1,29 +1,54 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/05/18 04:41:32 form Exp $
+@comment $OpenBSD: PLIST,v 1.7 2000/06/03 06:20:57 form Exp $
 bin/ascii-xfr
-@owner uucp
-@group dialer
-@mode 6555
 bin/minicom
-@owner
-@group
-@mode
 bin/runscript
 bin/xminicom
 man/man1/ascii-xfr.1
 man/man1/minicom.1
 man/man1/runscript.1
+share/doc/minicom/Announce-1.78
+share/doc/minicom/Announce-1.82
+share/doc/minicom/Announce-1.82.1
+share/doc/minicom/Announce-1.83
+share/doc/minicom/Announce-1.83.1
+share/doc/minicom/COMPATABILITY.lrzsz
+share/doc/minicom/ChangeLog
+share/doc/minicom/HistSearch
+share/doc/minicom/Locales
+share/doc/minicom/Macros
+share/doc/minicom/Porting
+share/doc/minicom/QuickStart.modemu
+share/doc/minicom/README.lrzsz
+share/doc/minicom/RedHat
+share/doc/minicom/TODO.lrzsz
+share/doc/minicom/Todo
+share/doc/minicom/Todo.175
+share/doc/minicom/Todo.Irix.dif
+share/doc/minicom/Todo.emacskey.dif
+share/doc/minicom/Todo.fsel
+share/doc/minicom/copyright.modemu
 share/doc/minicom/demos/htsalogin
 share/doc/minicom/demos/saralogin
 share/doc/minicom/demos/scriptdemo
 share/doc/minicom/demos/unixlogin
+share/doc/minicom/developers
+share/doc/minicom/fselector.txt
+share/doc/minicom/japanese
+share/doc/minicom/minicom.FAQ
+share/doc/minicom/minicom.users
+share/doc/minicom/minirc.dfl
+share/doc/minicom/modemu.README
+share/doc/minicom/pl-translation.txt
+share/doc/minicom/portugues-brasil
+share/doc/minicom/suomeksi
 share/doc/minicom/tables/mc.iso
 share/doc/minicom/tables/mc.noconv
 share/doc/minicom/tables/mc.pc8
 share/doc/minicom/tables/mc.sf7
 share/locale/fi_FI/LC_MESSAGES/minicom.mo
 share/locale/fr/LC_MESSAGES/minicom.mo
-share/locale/ja_JP.sjis/LC_MESSAGES/minicom.mo
-share/locale/ja_JP.ujis/LC_MESSAGES/minicom.mo
+share/locale/ja/LC_MESSAGES/minicom.mo
+share/locale/ja_JP.SJIS/LC_MESSAGES/minicom.mo
 share/locale/ko/LC_MESSAGES/minicom.mo
 share/locale/pl/LC_MESSAGES/minicom.mo
 share/locale/pt_BR/LC_MESSAGES/minicom.mo

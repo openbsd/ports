@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/05/18 04:41:32 form Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/06/03 06:20:57 form Exp $
 #
 # Pre/post-installation setup of minicom
 
@@ -34,7 +34,7 @@ do_install()
 	echo
 	echo "+---------------"
 	echo "| The $1 configuration files have been installed into"
-	echo "| $CONFIG_DIR}. Please view these files and change"
+	echo "| ${CONFIG_DIR}. Please view these files and change"
 	echo "| the configuration to meet your needs."
 	echo "+---------------"
 	echo
