@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/30 13:48:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2004/10/07 17:14:24 naddy Exp $
 
 COMMENT=	"9wm with automatic window tiling and virtual desktops"
 
-DISTNAME=	larswm-7.2.8
+DISTNAME=	larswm-7.5.3
 CATEGORIES=	plan9
-MASTER_SITES=	http://www-personal.umich.edu/~larsb/larswm/ \
+MASTER_SITES=	http://home.earthlink.net/~lab1701/larswm/ \
 		http://openbsd.rutgers.edu/
 
 MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
@@ -18,14 +18,13 @@ CONFIGURE_STYLE= imake
 
 NO_REGRESS=	Yes
 
-DOCS=		ChangeLog README README.9wm keyboard_refcard.ms \
-		mouse_refcard.ms
+DOCS=   ChangeLog README README.9wm
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/larswm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/larswm
 	cd ${WRKSRC}; ${INSTALL_DATA} \
-	    sample.barclock sample.larswmrc sample.xmodmaprc sample.xsession \
+	    sample.larswmrc sample.xsession \
 	    ${PREFIX}/share/examples/larswm
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/larswm
 
