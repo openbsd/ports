@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2000/06/22 16:07:23 jakob Exp $
+# $OpenBSD: Makefile,v 1.29 2000/07/13 06:56:40 kevlo Exp $
 
-DISTNAME=	ethereal-0.8.9
+DISTNAME=	ethereal-0.8.10
 CATEGORIES=	net x11
 NEED_VERSION=	1.302
 
