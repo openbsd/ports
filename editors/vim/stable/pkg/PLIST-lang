@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-lang,v 1.1 2001/11/08 03:24:18 lebel Exp $
-@pkgdep vim-${VERSION}${FLAVOR_EXT}
+@comment $OpenBSD: PLIST-lang,v 1.2 2002/03/23 03:17:42 lebel Exp $
 share/vim/vim60/lang/README.txt
 share/vim/vim60/lang/af/LC_MESSAGES/vim.mo
 share/vim/vim60/lang/cs/LC_MESSAGES/vim.mo
