@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2001/02/26 02:55:34 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2001/04/21 15:01:02 brad Exp $
+
+COMMENT=	"raw IP packet construction library"
 
 DISTNAME=	libnet-1.0.2a
 CATEGORIES=	net
-NEED_VERSION=	1.305
+NEED_VERSION=	1.384
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
 
 HOMEPAGE=	http://www.packetfactory.net/Projects/Libnet/
@@ -21,5 +23,5 @@ WRKDIST=	${WRKDIR}/Libnet-1.0.2a
 .include <bsd.port.mk>
 
 .if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-MAKE_ENV=	NO_SHARED_LIBS=Yes
+MAKE_ENV+=	NO_SHARED_LIBS=Yes
 .endif
