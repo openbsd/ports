@@ -1,7 +1,16 @@
-$OpenBSD: patch-cvsweb_conf,v 1.4 2001/01/06 13:29:25 naddy Exp $
---- cvsweb.conf.orig	Wed Jan  3 09:57:49 2001
-+++ cvsweb.conf	Sat Jan  6 00:21:53 2001
-@@ -192,7 +192,7 @@ EOT
+$OpenBSD: patch-cvsweb_conf,v 1.5 2001/01/12 00:13:09 naddy Exp $
+--- cvsweb.conf.orig	Thu Jan 11 03:00:55 2001
++++ cvsweb.conf	Thu Jan 11 18:14:54 2001
+@@ -15,7 +15,7 @@
+ #   uname, cvs, rlog, rcsdiff
+ #   gzip (if you enable $allow_compress)
+ #   tar,rm (if you enable $allow_tar)
+-$command_path = '/bin:/usr/bin:/usr/local/bin';
++$command_path = '/bin:/usr/bin';
+ 
+ # Search the above directories for each command
+ for (qw(uname cvs rlog rcsdiff gzip tar rm)) {
+@@ -206,7 +206,7 @@ EOT
  # These default icons are coming with apache.
  # If these icons are too large, check out the miniicons in the
  # icons/ directory; they have a width/height of 16/16
@@ -10,7 +19,7 @@ $OpenBSD: patch-cvsweb_conf,v 1.4 2001/01/06 13:29:25 naddy Exp $
  # format:             TEXT      ICON-URL              width height
  %ICONS  = (
  	   back => [ ("[BACK]", "$iconsdir/back.gif", 20,   22) ],
-@@ -312,7 +312,7 @@ $inputTextSize = 12;
+@@ -326,7 +326,7 @@ $inputTextSize = 12;
  # cvsweb to guess the correct mime-type on
  # checkout; you can use the mime.types from
  # apache here:
@@ -19,21 +28,3 @@ $OpenBSD: patch-cvsweb_conf,v 1.4 2001/01/06 13:29:25 naddy Exp $
  
  # quick mime-type lookup; maps file-suffices to
  # mime-types for displaying checkouts in the browser.
-@@ -384,7 +384,7 @@ $edit_option_form = (not $dirtable);
- #   cvs, rlog, rcsdiff
- #   gzip (if you enable $allow_compress)
- #   tar,rm (if you enable $allow_tar)
--$command_path = '/bin:/usr/bin:/usr/local/bin';
-+$command_path = '/bin:/usr/bin';
- 
- # If you have files which automatically refers to other files
- # (such as HTML) then this allows you to browse the checked
-@@ -443,7 +443,7 @@ $allow_tar = '';
- #      GNU tar has some useful options against unexpected errors.
- 
- # Options to pass to cvs(1).
--@cvs_options = qw(-l);
-+@cvs_options = qw(-R -l);
- # e.g. @cvs_options = qw(-R -l);
- #      -R (read only access mode) is implemented only in FreeBSD's and
- #      OpenBSD's cvs(1).
