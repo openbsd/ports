@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2003/06/22 02:45:31 jolan Exp $
+--- configure.orig	Tue Mar  4 14:09:14 2003
++++ configure	Sat Jun 14 22:29:21 2003
+@@ -2162,14 +2162,14 @@ fi
+ if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+   
+-      echo $ac_n "checking for main in -lpthread""... $ac_c" 1>&6
+-echo "configure:2167: checking for main in -lpthread" >&5
++      echo $ac_n "checking for main in -pthread""... $ac_c" 1>&6
++echo "configure:2167: checking for main in -pthread" >&5
+ ac_lib_var=`echo pthread'_'main | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2175 "configure"
+ #include "confdefs.h"
