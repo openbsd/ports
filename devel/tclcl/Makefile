@@ -1,6 +1,6 @@
 #
 # $FreeBSD: ports/devel/tclcl/Makefile,v 1.4 1999/11/28 18:31:57 steve Exp $
-# $OpenBSD: Makefile,v 1.9 2000/07/14 06:11:05 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2000/11/09 12:13:34 espie Exp $
 #
 
 DISTNAME=	tclcl-src-1.0b9
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 LIB_DEPENDS=    tk83.1::x11/tk/8.3 \
 		otcl.1::lang/otcl
