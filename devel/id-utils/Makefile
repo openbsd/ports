@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2004/11/23 11:22:02 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2005/02/21 20:49:25 alek Exp $
 
 COMMENT=	"gid/lid tools for looking up variables in code"
 
 DISTNAME=	id-utils-3.2d
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 # License: GPL
@@ -20,6 +21,8 @@ MODULES=	devel/gettext
 # don't compile emacs mode files now, install what's needed
 # and run it at pkg_add time
 CONFIGURE_ARGS=--without-emacs
+CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/id-utils

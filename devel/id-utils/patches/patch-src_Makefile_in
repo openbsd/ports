@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2005/02/21 20:49:26 alek Exp $
+--- src/Makefile.in.orig	Mon Feb 21 21:38:11 2005
++++ src/Makefile.in	Mon Feb 21 21:38:20 2005
+@@ -102,7 +102,7 @@ EXTRA_DIST = ansi2knr.1 ansi2knr.c $(bin
+ 
+ localedir = $(datadir)/locale
+ 
+-INCLUDES = -I. -I$(srcdir) 	   -I../libidu -I$(top_srcdir)/libidu 	   -I../lib -I$(top_srcdir)/lib 	   -I../intl -I$(top_srcdir)/intl 	   -I.. -I$(top_srcdir) 
++INCLUDES = -I. -I$(srcdir) 	   -I../libidu -I$(top_srcdir)/libidu 	   -I../lib -I$(top_srcdir)/lib 	    	   -I.. -I$(top_srcdir) 
+ 
+ DEFS = -DLOCALEDIR=\"$(localedir)\" @DEFS@
+ LDADD = @INTLLIBS@ ../libidu/libidu.a ../lib/libsys.a

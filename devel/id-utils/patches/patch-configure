@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure,v 1.1 2005/02/21 20:49:26 alek Exp $
+--- configure.orig	Mon Feb 21 21:29:38 2005
++++ configure	Mon Feb 21 21:30:02 2005
+@@ -3545,7 +3545,7 @@ if eval "test \"\${ac_cv_lib_$ac_lib_var
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3551 "configure"
+ #include "confdefs.h"
+@@ -3585,7 +3585,7 @@ if eval "test \"\${ac_cv_lib_$ac_lib_var
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3591 "configure"
+ #include "confdefs.h"
+@@ -3628,7 +3628,7 @@ fi
+ 
+ 
+ 	     if test "$gt_cv_func_gettext_libintl" = yes; then
+-	       LIBS="$LIBS -lintl"
++	       LIBS="$LIBS -lintl -liconv"
+ 	     fi
+ 
+ 	   fi

@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1 2005/02/21 20:49:26 alek Exp $
+--- lib/Makefile.in.orig	Mon Feb 21 21:38:37 2005
++++ lib/Makefile.in	Mon Feb 21 21:38:41 2005
+@@ -105,7 +105,7 @@ libsys_a_SOURCES = xgetcwd.c xmalloc.c g
+ noinst_HEADERS = ansidecl.h error.h fnmatch.h getopt.h obstack.h 	pathmax.h regex.h xalloca.h xdirent.h xfnmatch.h 	xmalloc.h xobstack.h xstddef.h xstdlib.h xstring.h xsysstat.h 	xunistd.h
+ 
+ 
+-INCLUDES = -I. -I$(srcdir) 	   -I../intl -I$(top_srcdir)/intl 	   -I.. -I$(top_srcdir)
++INCLUDES = -I. -I$(srcdir) 	    	   -I.. -I$(top_srcdir)
+ 
+ DEFS = -DLOCALEDIR=\"$(localedir)\" @DEFS@
+ libsys_a_LIBADD = @LIBOBJS@ @ALLOCA@

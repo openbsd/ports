@@ -1,0 +1,12 @@
+$OpenBSD: patch-libidu_Makefile_in,v 1.1 2005/02/21 20:49:26 alek Exp $
+--- libidu/Makefile.in.orig	Mon Feb 21 21:38:56 2005
++++ libidu/Makefile.in	Mon Feb 21 21:39:04 2005
+@@ -106,7 +106,7 @@ EXTRA_DIST = $(idu_DATA)
+ 
+ noinst_HEADERS = dynvec.h hash.h idfile.h scanners.h tokflags.h xnls.h
+ 
+-INCLUDES = -I. -I$(srcdir) 	   -I../lib -I$(top_srcdir)/lib 	   -I../intl -I$(top_srcdir)/intl 	   -I.. -I$(top_srcdir)
++INCLUDES = -I. -I$(srcdir) 	   -I../lib -I$(top_srcdir)/lib 	    	   -I.. -I$(top_srcdir)
+ 
+ DEFS = -DLOCALEDIR=\"$(localedir)\" @DEFS@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
