@@ -379,12 +379,13 @@ sub build_package($$$$)
 			my $arg = "cd $PORTSDIR/$port && ";
 			$arg .= "FLAVOR=\"$flavor\" " if defined $flavor;
 			$arg .= "$MAKE $MAKEFLAGS package";
+
+			start_logger($host);
+
 			open STDOUT, '>', "$FIFO{$host}" or
 			  die "Cannot redirect STDOUT: $!";
 			open STDERR, ">&STDOUT" or
 			  die "Cannot redirect STDERR: $!";
-
-			start_logger($host);
 
 			exec @SSH, $host, $arg;
 			die "exec(): $!";
