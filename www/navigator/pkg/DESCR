@@ -16,7 +16,7 @@ a program that provides world-wide, unconditional, full strength
 NOTICE
 ------
 i386:	Use of this port requires a kernel compiled with
-	'option COMPAT_BSDOS' and 'option COMPAT_43'
+	'option COMPAT_BSDOS'
 SPARC:	Use of this port requires a kernel compiled with
 	'option COMPAT_SUNOS'
 

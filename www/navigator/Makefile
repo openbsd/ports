@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 1999/09/05 01:09:45 brad Exp $
+# $OpenBSD: Makefile,v 1.17 1999/09/15 18:23:50 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -6,41 +6,51 @@
 # WARNING
 # -------
 # i386: Requires a kernel built with
-#	'option COMPAT_BSDOS' and 'option COMPAT_43'
+#	'option COMPAT_BSDOS'
 # SPARC: Requires a kernel built with
 #	 'option COMPAT_SUNOS'
 
 ONLY_FOR_ARCHS=	i386 sparc
 NEED_VERSION=	1.89
 
-NS_i386=	navigator-v461-export.x86-bsdi-bsd2.tar.gz
-NS_SPARC=	navigator-v461-export.sparc-sun-sunos4.1.3_U1.tar.gz
+NAVIGATOR_V=	4.61
+NAVIGATOR_V2=	461
+NS_I386=	navigator-v${NAVIGATOR_V2}-export.x86-bsdi-bsd2.tar.gz
+NS_SPARC=	navigator-v${NAVIGATOR_V2}-export.sparc-sun-sunos4.1.3_U1.tar.gz
 FORTIFY=	Fortify-1.4.4-unix-src
 
 .if ${MACHINE_ARCH} == "i386"
-DISTNAME=	navigator-v461-export.x86-bsdi-bsd2
-NAVIGATORNAME=	navigator-v461.x86-bsdi-bsd2
+DISTNAME=	navigator-v${NAVIGATOR_V2}-export.x86-bsdi-bsd2
+NAVIGATORNAME=	navigator-v${NAVIGATOR_V2}.x86-bsdi-bsd2
+MAINDIR=	bsdi21/navigator_standalone
+SUPDIR=		sunos413/navigator_standalone
+SUPDISTFILES=	${NS_SPARC}
 .endif
 .if ${MACHINE_ARCH} == "sparc"
-DISTNAME=	navigator-v461-export.sparc-sun-sunos4.1.3_U1
-NAVIGATORNAME=	navigator-v461.sparc-sun-sunos4.1.3_U1
+DISTNAME=	navigator-v${NAVIGATOR_V2}-export.sparc-sun-sunos4.1.3_U1
+NAVIGATORNAME=	navigator-v${NAVIGATOR_V2}.sparc-sun-sunos4.1.3_U1
+MAINDIR=	sunos413/navigator_standalone
+SUPDIR=		bsdi21/navigator_standalone
+SUPDISTFILES=	${NS_I386}
 .endif
 
-PKGNAME=	navigator-4.61-fortified
+PKGNAME=	navigator-${NAVIGATOR_V}-fortified
 CATEGORIES=     www
 DIST_SUBDIR=	${PKGNAME}
 NO_CDROM=       "NOFEE: see http://www.fortify.net/copyright.txt"
-MASTER_SITES=	ftp://ftp.fortify.net/pub/Fortify/ \
-		ftp://ftp.netscape.com/pub/communicator/english/4.61/unix/unsupported/bsdi21/navigator_standalone/ \
-		ftp://ftp.netscape.com/pub/communicator/english/4.61/unix/unsupported/sunos413/navigator_standalone/ \
-		ftp://ftp.sunet.se/pub/security/tools/net/Fortify/ \
-		ftp://ftp.funet.fi/pub/crypt/mirrors/fortify/ \
-		ftp://ftp.replay.com/pub/crypto/apache/Fortify/ \
-		ftp://ftp.it.net.au/mirrors/Fortify/
+
+SUBMAIN=pub/communicator/english/${NAVIGATOR_V}/unix/unsupported/${MAINDIR}
+SUBSUP=	pub/communicator/english/${NAVIGATOR_V}/unix/unsupported/${SUPDIR}
+
+SITE_LIST= \
+	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/ \
+	ftp://netscape.Mirror.McGill.CA/pub/mirrors/ftp.netscape.com/ \
+	ftp://ftp.netscape.com/ \
+	ftp://ftp.the.net/pub/mirrors/ftp.netscape.com/ \
+	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/
 
 DISTFILES=	${DISTNAME}.tar.gz \
 		${FORTIFY}.tar.gz
-SUPDISTFILES=	${NS_i386} ${NS_SPARC} ${FORTIFY}.tar.gz
 
 OBJMACHINE=	"yes"
 NO_WRKSUBDIR=	"No work subdirectory"
@@ -54,9 +64,8 @@ pre-fetch:
 .if ${MACHINE_ARCH} == "i386"
 	@${ECHO} ""
 	@${ECHO} "  WARNING: This application requires a kernel compiled with"
-	@${ECHO} "           'option COMPAT_BSDOS' and 'option COMPAT_43'"
-	@${ECHO} "           for proper operation.  The GENERIC kernel contains"
-	@${ECHO} "           these options."
+	@${ECHO} "           'option COMPAT_BSDOS' for proper operation.  The"
+	@${ECHO} "           GENERIC kernel contains these options."
 	@${ECHO} ""
 .endif
 .if ${MACHINE_ARCH} == "sparc"
@@ -87,10 +96,12 @@ post-install:
 .endif
 	@cd ${WRKDIR}/${FORTIFY} && \
 	${LN} -sf languages/English Messages && \
-	src/cmdline/fortify ${PREFIX}/netscape/netscape
+	(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) \
+	| src/cmdline/fortify ${PREFIX}/netscape/netscape
 .if ${MACHINE_ARCH} == "sparc"
 	@cd ${WRKDIR}/${FORTIFY} && \
-	src/cmdline/fortify ${PREFIX}/netscape/netscape_nis
+	(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) \
+	| src/cmdline/fortify ${PREFIX}/netscape/netscape_nis
 .endif
 	@${SED} 's#@netscape_home@#${PREFIX}/netscape#' \
 	 ${FILESDIR}/netscape.${MACHINE_ARCH} > ${WRKDIR}/netscape
@@ -99,3 +110,18 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/netscape ${PREFIX}/bin
 
 .include <bsd.port.mk>
+
+# You can find a large mirror list at
+# http://home.netscape.com/download/mirror_site.html
+
+MASTER_SITES=	ftp://ftp.fortify.net/pub/Fortify/
+.for _SITE in ${SITE_LIST}
+MASTER_SITES+=	${_SITE}${SUBMAIN}/
+.if make(makesum) || make(addsum) || defined(__FETCH_ALL)
+MASTER_SITES+=	${_SITE}${SUBSUP}/
+.endif
+.endfor
+MASTER_SITES+=	ftp://ftp.sunet.se/pub/security/tools/net/Fortify/ \
+		ftp://ftp.funet.fi/pub/crypt/mirrors/fortify/ \
+		ftp://ftp.replay.com/pub/crypto/apache/Fortify/ \
+		ftp://ftp.it.net.au/mirrors/Fortify/
