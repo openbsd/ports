@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2001/09/19 01:06:39 shell Exp $
+# $OpenBSD: Makefile,v 1.36 2001/09/19 20:46:44 jakob Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -6,6 +6,7 @@
      SUBDIR += freetds
      SUBDIR += gdbm
      SUBDIR += gnats
+     SUBDIR += gq
      SUBDIR += iodbc
      SUBDIR += mysql
      SUBDIR += mysql,max
