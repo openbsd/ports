@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/29 19:49:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2003/01/19 03:22:56 brad Exp $
+
+BROKEN=		"does not compile with Qt 3.1 and up"
 
 COMMENT=	"file monitor"
 
