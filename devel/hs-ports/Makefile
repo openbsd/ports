@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/03/08 22:52:44 dons Exp $
+# $OpenBSD: Makefile,v 1.4 2005/03/26 03:37:09 dons Exp $
 # $FreeBSD: ports/devel/hs-hpl/Makefile,v 1.11 2004/03/11 07:48:11 obraun Exp $
 
 # only for archs to which the GHC ffi has been ported
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS= i386
 
 COMMENT=	"Haskell library for concurrent and distributed programming"
 
-V=		0.4.1
+V=		0.4.3
 DISTNAME=	hs-ports-${V}
 CATEGORIES=	devel
 MAINTAINER=	Don Stewart <dons@openbsd.org>
@@ -20,6 +20,7 @@ WRKDIST=	${WRKDIR}/ports-${V}
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--prefix=${PREFIX}
+SUBST_VARS+=	V	
 
 do-regress:
 	@( cd ${WRKDIST}/tests && sh test.sh )
