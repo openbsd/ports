@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/19 15:24:58 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/17 12:28:54 wilfried Exp $
 
 DISTNAME=	mcsim-4.2.0
 CATEGORIES=	math
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 do-build:
-	@(cd ${WRKSRC}/mod && ${MAKE})
-	@(cd ${WRKSRC}/sim && ${MAKE})
+	@(cd ${WRKSRC}/mod && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS})
+	@(cd ${WRKSRC}/sim && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS})
 	@(cd ${WRKSRC}/sim && chmod 755 Test_mcsim && ./Test_mcsim)
 
 do-install:

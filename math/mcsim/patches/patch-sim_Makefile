@@ -1,6 +1,6 @@
-$OpenBSD: patch-sim_Makefile,v 1.1.1.1 2001/01/19 15:24:58 reinhard Exp $
---- sim/Makefile.orig	Fri Nov 14 15:45:53 1997
-+++ sim/Makefile	Sun Jan 14 17:35:02 2001
+$OpenBSD: patch-sim_Makefile,v 1.2 2001/03/17 12:28:55 wilfried Exp $
+--- sim/Makefile.orig	Fri Nov 14 16:45:53 1997
++++ sim/Makefile	Wed Mar 14 23:21:51 2001
 @@ -62,8 +62,8 @@ MOD = mod
  #
  #>>>>  Define the COMPILER name and LINKER name here only.
@@ -12,14 +12,7 @@ $OpenBSD: patch-sim_Makefile,v 1.1.1.1 2001/01/19 15:24:58 reinhard Exp $
  
  #>>>>  Define PATHS
  #	The include path should be a directory containing header
-@@ -101,13 +101,13 @@ OBJPATH = o
- #>>>> To compile with OPTIMIZATION uncomment the following lines
- #
- DEBUG_SYMBOLS = -DNDEBUG
--C_OPTIM_FLAG = -O
-+C_OPTIM_FLAG = -O2
- L_OPTIM_FLAG =
- 
+@@ -107,13 +107,13 @@ L_OPTIM_FLAG =
  #
  #>>>> Include any special warning flags 
  #
@@ -28,3 +21,10 @@ $OpenBSD: patch-sim_Makefile,v 1.1.1.1 2001/01/19 15:24:58 reinhard Exp $
  
  #--------------------
  #****  You shouldn't need to change the next 2 lines.  They are dependent
+ #****  only on the above setup.
+ 
+-CFLAGS = $(C_OPTIM_FLAG) $(C_DEBUG_FLAG) $(DEBUG_SYMBOLS) \
++CFLAGS += $(C_DEBUG_FLAG) $(DEBUG_SYMBOLS) \
+ 	-I $(INCPATH) $(WARNINGS)
+ CLFLAGS = $(L_OPTIM_FLAG) $(L_DEBUG_FLAG)
+ 
