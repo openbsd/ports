@@ -18,12 +18,3 @@
  
  /*
   * Below are the IRCII variable defaults.  For boolean variables, use 1 for
-@@ -584,7 +584,7 @@
- #define DEFAULT_BITCHX_HELP_FILE DEFAULT_CTOOLZ_DIR"/BitchX.hlp"
- #else
- #define DEFAULT_MSGLOGFILE "BitchX.away"
--#define DEFAULT_CTOOLZ_DIR "~/.BitchX"
-+#define DEFAULT_CTOOLZ_DIR "__PREFIX__/lib/bitchx"
- #define DEFAULT_SCRIPT_HELP_FILE DEFAULT_CTOOLZ_DIR"/BitchX.help"
- #define DEFAULT_BITCHX_HELP_FILE DEFAULT_CTOOLZ_DIR"/BitchX.help"
- #endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/03/22 14:52:15 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/03/29 04:51:59 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 DISTNAME=	ircii-pana-75p3
@@ -12,9 +12,8 @@ MAINTAINER=	brad@openbsd.org
 BROKEN=                "Currently does not build on Alpha"
 .endif
 
+WRKSRC=	${WRKDIR}/BitchX
 GNU_CONFIGURE=	yes
-
-WRKSRC=		${WRKDIR}/BitchX
 
 post-extract:
 	@chmod u+x ${WRKSRC}/WinNT/include
