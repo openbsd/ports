@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2001/07/13 14:06:53 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2001/08/10 22:58:56 naddy Exp $
 
 # This is a configuration file for egcs
 
@@ -244,7 +244,7 @@ SEPARATE_BUILD=concurrent
 # build section
 # should work without gmake. If it turns out to be needed, this must be 
 # reported to MAINTAINER.
-#USE_GMAKE= yes
+USE_GMAKE= yes
 
 # you shouldn't skip bootstrap unless you know what you're doing
 # use bootstrap-lean if you're pressed for space
