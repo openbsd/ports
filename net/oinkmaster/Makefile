@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/02/03 19:18:14 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2003/02/05 14:52:15 lebel Exp $
 
 COMMENT=	"update your Snort 1.8+ rules"
 
 DISTNAME=	oinkmaster-0.6
 CATEGORIES=	net security
-MASTER_SITES=	${HOMEPAGE}/dl/contrib/rule_management/oinkmaster/
+MASTER_SITES=	http://www.snort.org/dl/contrib/rule_management/oinkmaster/
 
 HOMEPAGE=       http://nitzer.dhs.org/oinkmaster/
 
