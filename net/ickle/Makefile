@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/12/21 00:43:01 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/12/23 20:49:53 pvalchev Exp $
 
 COMMENT=	"gtk-based icq 2000 client"
 
@@ -21,7 +21,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
 
-CONFIGURE_STYLE= 	gnu
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=	LDFLAGS="-L${WRKBUILD}/src/.libs -L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-gnome=no
 
 .include <bsd.port.mk>
