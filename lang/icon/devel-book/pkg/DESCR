@@ -1,0 +1,34 @@
+This is the reference book for the implementation of the Icon
+programming language. Even though it was written for Icon 6,
+it is still relevant to the current implementation.
+
+This is a pdf document, so get a pdf viewer to use it.
+
+This book is old enough to have been scanned off the printed material.
+The resulting pdf is not of very high quality.
+ 
+Chapters
+    Introduction 
+    Icon Language Overview 
+    Organization of the Implementation 
+    Values and Variables 
+    Strings and Csets 
+    Lists 
+    Sets and Tables 
+    The Interpreter 
+    Expression Evaluation 
+    Functions, Procedures, and Co-Expressions 
+    Storage Management 
+    Run-Time Support Operations 
+Appendices
+    Data Structures 
+    Virtual machine Instructions 
+    Virtual Machine Code 
+    Adding Functions and Data Types 
+    Projects 
+    Solution to Selected Exercises 
+References
+Index
+
+Flavor:
+    two-sided: reduced version of the book (two pages per physical page)
