@@ -1,0 +1,31 @@
+--- xpdf/Stream.cc.orig	Fri Jan 15 13:15:47 1999
++++ xpdf/Stream.cc	Fri Jan 15 13:30:04 1999
+@@ -719,6 +719,7 @@
+ 
+ void LZWStream::reset() {
+   FILE *f;
++  int fd;
+ 
+   str->reset();
+   bufPtr = bufEnd = buf;
+@@ -734,9 +735,10 @@
+   strcpy(zCmd, uncompressCmd);
+   strcat(zCmd, " ");
+   zName = zCmd + strlen(zCmd);
+-  tmpnam(zName);
++  strcat(zName,"/tmp/xpdf.XXXXXX");
+   strcat(zName, ".Z");
+-  if (!(f = fopen(zName, "wb"))) {
++  fd=mkstemps(zName,strlen(".Z"));
++  if (!(f = fdopen(fd, "w"))) {
+     error(getPos(), "Couldn't open temporary file '%s'", zName);
+     return;
+   }
+@@ -752,6 +754,7 @@
+ #ifdef VMS
+   if (!system(zCmd)) {
+ #else
++  /* THIS IS AWFULL! */
+   if (system(zCmd)) {
+ #endif
+     error(getPos(), "Couldn't execute '%s'", zCmd);
