@@ -338,7 +338,10 @@ GNUstep/Apps/WPrefs.app/tiff/speed3.tiff
 GNUstep/Apps/WPrefs.app/tiff/speed4.tiff
 GNUstep/Apps/WPrefs.app/tiff/speed3s.tiff
 GNUstep/Apps/WPrefs.app/tiff/speed4s.tiff
+GNUstep/Apps/WPrefs.app/tiff/tdel.tiff
+GNUstep/Apps/WPrefs.app/tiff/tedit.tiff
 GNUstep/Apps/WPrefs.app/tiff/temp.tiff
+GNUstep/Apps/WPrefs.app/tiff/textr.tiff
 GNUstep/Apps/WPrefs.app/tiff/theme.tiff
 GNUstep/Apps/WPrefs.app/tiff/timer0.tiff
 GNUstep/Apps/WPrefs.app/tiff/timer0s.tiff
@@ -352,6 +355,7 @@ GNUstep/Apps/WPrefs.app/tiff/timer4.tiff
 GNUstep/Apps/WPrefs.app/tiff/timer4s.tiff
 GNUstep/Apps/WPrefs.app/tiff/timer5.tiff
 GNUstep/Apps/WPrefs.app/tiff/timer5s.tiff
+GNUstep/Apps/WPrefs.app/tiff/tnew.tiff
 GNUstep/Apps/WPrefs.app/tiff/whandling.tiff
 GNUstep/Apps/WPrefs.app/tiff/windowfocus.tiff
 GNUstep/Apps/WPrefs.app/tiff/workspace.tiff

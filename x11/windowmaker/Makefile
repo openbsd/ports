@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 1999/03/09 04:13:58 jasoni Exp $
+# $OpenBSD: Makefile,v 1.9 1999/03/15 06:36:38 jasoni Exp $
 #
 
-DISTNAME=	WindowMaker-0.51.1
+DISTNAME=	WindowMaker-0.51.2
 CATEGORIES=	x11
 
 MAINTAINER=	jasoni@openbsd.org
