@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 1999/04/22 22:09:04 brad Exp $
+# $OpenBSD: Makefile,v 1.20 1999/04/25 18:49:03 brad Exp $
 
 DISTNAME=	gtk+-1.2.2
 CATEGORIES=     x11
@@ -15,7 +15,6 @@ LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib \
 		intl:${PORTSDIR}/devel/gettext
 
 USE_X11=	yes
-USE_PERL5=	yes
 SYSCONFDIR=	${PREFIX}/lib
 SEPARATE_BUILD=	yes
 GNU_CONFIGURE=	yes
