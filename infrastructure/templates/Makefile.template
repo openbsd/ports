@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.27 2001/03/08 03:31:43 kevlo Exp $
+# $OpenBSD: Makefile.template,v 1.28 2001/03/16 15:34:13 espie Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -12,11 +12,18 @@
 #BROKEN=		"reason"
 #RESTRICTED=		"reason"
 
+#
+# Very short description of the package, 60 chars max
+#
+COMMENT=		???
+# COMMENT-foo=		???	for multi packages
+
 # 
 # What port/package will be created
 #
 DISTNAME=		???
 #PKGNAME=		???
+#PKGNAME-foo=		???	for multi packages
 CATEGORIES=     	???
 #NEED_VERSION=		?.??
 # Always put the NEED_VERSION line right after CATEGORIES
