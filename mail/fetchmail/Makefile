@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.67 2001/06/25 06:34:20 fgsch Exp $
+# $OpenBSD: Makefile,v 1.68 2001/06/26 02:35:44 fgsch Exp $
 
 COMMENT=	"mail retrieval utility for POP2, POP3, KPOP, IMAP and more"
 
-DISTNAME=	fetchmail-5.8.9
+DISTNAME=	fetchmail-5.8.10
 CATEGORIES=	mail
 NEED_VERSION=	1.402
 MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
