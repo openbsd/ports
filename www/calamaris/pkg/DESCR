@@ -1,0 +1,6 @@
+calamaris parses logfiles from Squid, NetCache, Inktomi Traffic Server,
+Oops! proxy server, Novell Internet Caching System, Compaq Tasksmart
+or Netscape/iplanet Web Proxy Server and generates a report.
+Written in perl5.
+
+WWW: ${HOMEPAGE}
