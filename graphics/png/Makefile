@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 1999/02/21 04:26:12 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1999/03/13 19:08:34 csapuntz Exp $
 #
 
-DISTNAME=       libpng-1.0.2
-PKGNAME=        png-1.0.2
+DISTNAME=       libpng-1.0.3
+PKGNAME=        png-1.0.3
 CATEGORIES=     graphics
 
 NEED_VERSION=	1.64
