@@ -1,0 +1,5 @@
+Chora is a tool for viewing code repositories that are managed using
+the CVS source control system.  It aims to provide a high degree of
+integration with CVS and the other Horde web-based tools.
+
+WWW: ${HOMEPAGE}

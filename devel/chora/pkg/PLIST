@@ -1,0 +1,142 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/08/12 00:54:25 avsm Exp $
+horde/chora/COPYING
+horde/chora/README
+horde/chora/annotate.php
+horde/chora/co.php
+horde/chora/config/.htaccess
+horde/chora/config/README
+horde/chora/config/conf.php.dist
+horde/chora/config/cvsroots.php.dist
+horde/chora/config/html.php.dist
+horde/chora/config/longIntro.txt.dist
+horde/chora/config/mime_drivers.php.dist
+horde/chora/config/prefs.php.dist
+horde/chora/cvs.php
+horde/chora/diff.php
+horde/chora/docs/BUGS
+horde/chora/docs/CHANGES
+horde/chora/docs/CREDITS
+horde/chora/docs/GOALS
+horde/chora/docs/INSTALL
+horde/chora/graphics/back.gif
+horde/chora/graphics/chora.gif
+horde/chora/graphics/deleted.gif
+horde/chora/graphics/down.gif
+horde/chora/graphics/folder.gif
+horde/chora/graphics/mime/text.gif
+horde/chora/graphics/up.gif
+horde/chora/history.php
+horde/chora/index.php
+horde/chora/lib/.htaccess
+horde/chora/lib/CVSLib.php
+horde/chora/lib/CVSLib/Annotate.php
+horde/chora/lib/CVSLib/Checkout.php
+horde/chora/lib/CVSLib/Diff.php
+horde/chora/lib/CVSLib/Directory.php
+horde/chora/lib/CVSLib/Error.php
+horde/chora/lib/CVSLib/File.php
+horde/chora/lib/CVSLib/Log.php
+horde/chora/lib/CVSLib/Rev.php
+horde/chora/lib/${HORDE_NAME}.php
+horde/chora/lib/MIME/Viewer/text.php
+horde/chora/lib/README.CVSLib
+horde/chora/lib/base.php
+horde/chora/lib/constants.php
+horde/chora/lib/version.php
+horde/chora/locale/.htaccess
+horde/chora/locale/cs_CZ/LC_MESSAGES/chora.mo
+horde/chora/locale/de_DE/LC_MESSAGES/chora.mo
+horde/chora/locale/es_ES/LC_MESSAGES/chora.mo
+horde/chora/locale/fr_FR/LC_MESSAGES/chora.mo
+horde/chora/locale/nb_NO/LC_MESSAGES/chora.mo
+horde/chora/locale/nl_NL/LC_MESSAGES/chora.mo
+horde/chora/locale/pl_PL/LC_MESSAGES/chora.mo
+horde/chora/locale/pt_BR/LC_MESSAGES/chora.mo
+horde/chora/locale/sv_SE/LC_MESSAGES/chora.mo
+horde/chora/po/.htaccess
+horde/chora/po/Makefile
+horde/chora/po/README
+horde/chora/po/cs_CZ.po
+horde/chora/po/de_DE.po
+horde/chora/po/es_ES.po
+horde/chora/po/extract.pl
+horde/chora/po/fr_FR.po
+horde/chora/po/nb_NO.po
+horde/chora/po/nl_NL.po
+horde/chora/po/pl_PL.po
+horde/chora/po/pt_BR.po
+horde/chora/po/shtool
+horde/chora/po/sv_SE.po
+horde/chora/po/xgettext.sh
+horde/chora/templates/.htaccess
+horde/chora/templates/annotate/footer.inc
+horde/chora/templates/annotate/header.inc
+horde/chora/templates/annotate/line.inc
+horde/chora/templates/checkout/footer.inc
+horde/chora/templates/checkout/header.inc
+horde/chora/templates/common-footer.inc
+horde/chora/templates/common-header.inc
+horde/chora/templates/diff/hr/add.inc
+horde/chora/templates/diff/hr/change.inc
+horde/chora/templates/diff/hr/empty.inc
+horde/chora/templates/diff/hr/footer.inc
+horde/chora/templates/diff/hr/header.inc
+horde/chora/templates/diff/hr/nochange.inc
+horde/chora/templates/diff/hr/remove.inc
+horde/chora/templates/diff/hr/row.inc
+horde/chora/templates/directory/back.inc
+horde/chora/templates/directory/dir.inc
+horde/chora/templates/directory/file.inc
+horde/chora/templates/directory/footer.inc
+horde/chora/templates/directory/header.inc
+horde/chora/templates/error_page.inc
+horde/chora/templates/history/blank.inc
+horde/chora/templates/history/branch_cell.inc
+horde/chora/templates/history/footer.inc
+horde/chora/templates/history/header.inc
+horde/chora/templates/history/rev.inc
+horde/chora/templates/history/row_end.inc
+horde/chora/templates/history/row_start.inc
+horde/chora/templates/index/css.inc
+horde/chora/templates/index/notconfigured.inc
+horde/chora/templates/log/header.inc
+horde/chora/templates/log/request.inc
+horde/chora/templates/log/rev.inc
+@dirrm horde/chora/templates/log
+@dirrm horde/chora/templates/index
+@dirrm horde/chora/templates/history
+@dirrm horde/chora/templates/directory
+@dirrm horde/chora/templates/diff/hr
+@dirrm horde/chora/templates/diff
+@dirrm horde/chora/templates/checkout
+@dirrm horde/chora/templates/annotate
+@dirrm horde/chora/templates
+@dirrm horde/chora/po
+@dirrm horde/chora/locale/sv_SE/LC_MESSAGES
+@dirrm horde/chora/locale/sv_SE
+@dirrm horde/chora/locale/pt_BR/LC_MESSAGES
+@dirrm horde/chora/locale/pt_BR
+@dirrm horde/chora/locale/pl_PL/LC_MESSAGES
+@dirrm horde/chora/locale/pl_PL
+@dirrm horde/chora/locale/nl_NL/LC_MESSAGES
+@dirrm horde/chora/locale/nl_NL
+@dirrm horde/chora/locale/nb_NO/LC_MESSAGES
+@dirrm horde/chora/locale/nb_NO
+@dirrm horde/chora/locale/fr_FR/LC_MESSAGES
+@dirrm horde/chora/locale/fr_FR
+@dirrm horde/chora/locale/es_ES/LC_MESSAGES
+@dirrm horde/chora/locale/es_ES
+@dirrm horde/chora/locale/de_DE/LC_MESSAGES
+@dirrm horde/chora/locale/de_DE
+@dirrm horde/chora/locale/cs_CZ/LC_MESSAGES
+@dirrm horde/chora/locale/cs_CZ
+@dirrm horde/chora/locale
+@dirrm horde/chora/lib/MIME/Viewer
+@dirrm horde/chora/lib/MIME
+@dirrm horde/chora/lib/CVSLib
+@dirrm horde/chora/lib
+@dirrm horde/chora/graphics/mime
+@dirrm horde/chora/graphics
+@dirrm horde/chora/docs
+@dirrm horde/chora/config
+@dirrm horde/chora
