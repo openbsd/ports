@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/22 10:10:54 shell Exp $
+# $OpenBSD: Makefile,v 1.3 2001/07/04 16:30:32 pvalchev Exp $
 
 COMMENT=	"FTP listing and transfer tools"
 
-DISTNAME=	ftpcopy-0.3.7
+DISTNAME=	ftpcopy-0.3.9
 HOMEPAGE=	http://www.ohse.de/uwe/ftpcopy.html
 
 CATEGORIES=	net
-NEED_VERSION=	1.405
+NEED_VERSION=	1.419
 MAINTAINER=	Brian J. Kifiak <bk@rt.fm>
 
 MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/ \
