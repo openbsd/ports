@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2004/06/25 00:14:38 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2004/09/28 15:43:13 robert Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc
 
 COMMENT=	"TV viewing application for bktr(4) cards"
 
-DISTNAME=	xawtv-3.93
+DISTNAME=	xawtv-3.94
 CATEGORIES=	x11
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
