@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 04:41:08 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/07/07 04:28:21 pvalchev Exp $
 
-COMMENT=	"displays the date and resembles the toolba"
+COMMENT=	"displays the date and resembles the toolbar"
 
 DISTNAME=	bbdate-0.2.1
 CATEGORIES=	x11
