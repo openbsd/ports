@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/07/28 04:40:40 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2002/09/19 06:42:00 marcm Exp $
 
 COMMENT=		"high-performance 2D graphics library"
 
@@ -9,7 +9,7 @@ CATEGORIES=		graphics
 
 HOMEPAGE=		http://www.artofcode.com/libart.html
 
-MAINTAINER=		Marc Matteo <marcm@lectroid.net>
+MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2002/06/03 13:14:57 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2002/09/19 06:42:00 marcm Exp $
 
 COMMENT=		"agent for Razor spam filtering networks"
 
 VERSION=		1.20
 DISTNAME=		razor-agents-${VERSION}
 CATEGORIES=		mail
-NEED_VERSION=   	1.531
 HOMEPAGE=		http://razor.sourceforge.net/
 
-MAINTAINER=		Marc Matteo <marcm@lectroid.net>
+MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

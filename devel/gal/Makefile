@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/21 19:43:55 nino Exp $
+# $OpenBSD: Makefile,v 1.2 2002/09/19 06:41:59 marcm Exp $
 
 COMMENT=		"GNOME Application Libs"
 
 DISTNAME=		gal-0.19.2
 CATEGORIES=    		devel x11/gnome
-NEED_VERSION=		1.530
 HOMEPAGE=		http://www.gnome.org/
 
-MAINTAINER=		Marc Matteo <marcm@lectroid.net>
+MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

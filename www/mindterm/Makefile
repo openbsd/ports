@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/03/21 21:25:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/09/19 06:42:00 marcm Exp $
 
 COMMENT=	"web-based java SSH client"
 
@@ -6,13 +6,12 @@ VERSION=	2.1
 DISTNAME=	mindterm_${VERSION}-bin
 PKGNAME=	mindterm-${VERSION}
 CATEGORIES=	www security
-NEED_VERSION=	1.515
 MASTER_SITES=	http://support.appgate.com/mindterm/personal/
 EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://www.appgate.com/ag.asp?template=products&level1=product_mindterm
 
-MAINTAINER=	Marc Matteo <marcm@lectroid.net>
+MAINTAINER=	Marc Matteo <marcm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"non-commercial use only"
 PERMIT_PACKAGE_FTP=	Yes

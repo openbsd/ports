@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/09/14 22:41:03 marcm Exp $
+# $OpenBSD: Makefile,v 1.17 2002/09/19 06:42:00 marcm Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
@@ -9,7 +9,7 @@ CATEGORIES=     	x11
 
 HOMEPAGE=		http://www.jwz.org/xscreensaver/
 
-MAINTAINER=		Marc Matteo <marcm@lectroid.net>
+MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

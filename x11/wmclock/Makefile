@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/21 21:25:56 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/09/19 06:42:00 marcm Exp $
 
 COMMENT=		"Window Maker dock.app clock"
 
 VERSION=		1.0.12.2
 DISTNAME=		wmclock-${VERSION}
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.515
 MASTER_SITES=		${HOMEPAGE}
 
 HOMEPAGE=		http://www.ntrnet.net/~jmknoble/WindowMaker/wmclock/
 
-MAINTAINER=		Marc Matteo <marcm@lectroid.net>
+MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
