@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/02/15 16:42:22 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2003/05/19 00:10:36 naddy Exp $
 
 COMMENT=	"MPEG2 and MPEG-4 AAC decoder"
 
@@ -9,9 +9,9 @@ HOMEPAGE=	http://faac.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Patents
-PERMIT_PACKAGE_FTP=	Patents
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Patents
-PERMIT_DISTFILES_FTP=	Patents
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://faac.sourceforge.net/files/
 

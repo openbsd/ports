@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/27 00:03:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2003/05/19 00:10:37 naddy Exp $
 
 DISTNAME=	cadubi_1.2
 PKGNAME=	${DISTNAME:S/_/-/g}
 CATEGORIES=	graphics editors
 
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	"May not be used in a for-profit package"
-PERMIT_DISTFILES_CDROM=	No
+PERMIT_PACKAGE_CDROM=	"May not be used in a for-profit package"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"May not be used in a for-profit package"
 PERMIT_DISTFILES_FTP=	Yes
 
 COMMENT=	"ASCII drawing utility"
