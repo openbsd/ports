@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2001/06/11 14:45:24 lebel Exp $
+# $OpenBSD: Makefile,v 1.76 2001/06/16 14:57:35 lebel Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -69,6 +69,7 @@
      SUBDIR += sentinel
      SUBDIR += shash
      SUBDIR += shash,static
+     SUBDIR += siphon
      SUBDIR += slurpie
      SUBDIR += smbsniff
      SUBDIR += smurflog
