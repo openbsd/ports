@@ -1,3 +1,4 @@
+man/man1/queso.1
 sbin/queso
 share/doc/queso/Documentation.txt
 @dirrm share/doc/queso

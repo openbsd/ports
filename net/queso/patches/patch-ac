@@ -1,0 +1,105 @@
+Patch helping 64 bit cleanness taken from the Debian Linux package made
+by Stéphane Bortmeyer <bortzmeyer@debian.org>. 64 bit patch originally
+by Bart Warmerdam <bartw@xs4all.nl>.
+
+--- tcpip.h.orig
++++ tcpip.h
+@@ -4,12 +4,12 @@
+   {
+     unsigned char vh;
+     unsigned char stype;
+-    unsigned short length;
+-    unsigned short ident;
+-    unsigned short frag;
++    u_int16_t length;
++    u_int16_t ident;
++    u_int16_t frag;
+     unsigned char ttl;
+     unsigned char protocol;
+-    unsigned short cksum;
++    u_int16_t cksum;
+     struct in_addr sip;
+     struct in_addr dip;
+   }
+@@ -17,15 +17,15 @@
+ 
+ typedef struct
+   {
+-    unsigned short sport;
+-    unsigned short dport;
+-    unsigned long seqnum;
+-    unsigned long acknum;
++    u_int16_t sport;
++    u_int16_t dport;
++    u_int32_t seqnum;
++    u_int32_t acknum;
+     unsigned char txoff;
+     unsigned char flags;
+-    unsigned short window;
+-    unsigned short cksum;
+-    unsigned short urgentptr;
++    u_int16_t window;
++    u_int16_t cksum;
++    u_int16_t urgentptr;
+   }
+ tcprec;
+ 
+@@ -35,7 +35,7 @@
+     struct in_addr dip;
+     unsigned char zero;
+     unsigned char proto;
+-    unsigned short tcplen;
++    u_int16_t tcplen;
+   }
+ tcpsrec;
+ 
+@@ -43,12 +43,12 @@
+   {
+     unsigned char type;
+     unsigned char code;
+-    unsigned short cksum;
+-    unsigned long zero;
++    u_int16_t cksum;
++    u_int32_t zero;
+     iprec ip;
+-    unsigned short sport;
+-    unsigned short dport;
+-    unsigned long seq;
++    u_int16_t sport;
++    u_int16_t dport;
++    u_int32_t seq;
+   }
+ icmprec;
+ 
+@@ -67,23 +67,23 @@
+   {
+     struct sockaddr_in from;
+     struct sockaddr_in dest;
+-    unsigned short sport;
+-    unsigned short dport;
+-    unsigned long seq;
+-    unsigned long ack;
++    u_int16_t sport;
++    u_int16_t dport;
++    u_int32_t seq;
++    u_int32_t ack;
+   }
+ spoofrec;
+ 
+ /* -------------- Prototiping --------------- */
+ void init_tcpip(void);
+ int init_pcap(char*);
+-unsigned short in_cksum (unsigned short *, int);  
++u_int16_t in_cksum (u_int16_t *, int);  
+ void sendip (spoofrec *, char *, short, short *, short *, short);
+-unsigned short tcpcksum (spoofrec *, char *, short);
++u_int16_t tcpcksum (spoofrec *, char *, short);
+ short resolve_host (char *, struct sockaddr_in *);
+ short gettcp (spoofrec *, tcprec *);
+-void sendtcp (spoofrec *, unsigned short, short); 
+-void sendicmp (spoofrec *, struct sockaddr_in *, unsigned short);
+-struct in_addr getlocalip (unsigned long dest);
++void sendtcp (spoofrec *, u_int16_t, short); 
++void sendicmp (spoofrec *, struct sockaddr_in *, u_int16_t);
++struct in_addr getlocalip (u_int32_t dest);
+ char *tcpip_id(void);

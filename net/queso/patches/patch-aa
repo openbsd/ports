@@ -1,5 +1,81 @@
---- tcpip.c.orig	Mon Jul 26 23:34:24 1999
-+++ tcpip.c	Mon Jul 26 23:39:18 1999
+Patch helping 64 bit cleanness taken from the Debian Linux package made
+by Stéphane Bortmeyer <bortzmeyer@debian.org>. 64 bit patch originally
+by Bart Warmerdam <bartw@xs4all.nl>.
+
+Integrate previous OpenBSD patch using new libpcap types.
+
+--- tcpip.c.orig	Tue Sep 22 22:35:43 1998
++++ tcpip.c	Wed Sep 29 14:43:06 1999
+@@ -40,7 +40,7 @@
+ typedef struct
+   {
+     struct in_addr addr;
+-    unsigned long naddr;	/* netmask */
++    u_int32_t naddr;	/* netmask */
+     interfacerec *iface;
+   }
+ routerec;
+@@ -61,11 +61,11 @@
+ #endif
+ 
+ int sendsock, readsock;
+-unsigned short ipident;
++u_int16_t ipident;
+ 
+ /* This function will determine the checksum for a specific packet. Used by */
+ /*  nearly EVERYTHING on the internet */
+-unsigned short
++u_int16_t
+ inet_checksum (void *addr, int len)
+ {
+   register int nleft = len;
+@@ -106,16 +106,16 @@
+   struct in_addr dest_address;
+   unsigned char place_holder;
+   unsigned char protocol;
+-  unsigned short length;
++  u_int16_t length;
+ } psuedohdr;
+ 
+-unsigned short tcp_checksum(char *packet,
++u_int16_t tcp_checksum(char *packet,
+                            int length,
+                            struct in_addr source_address,
+                            struct in_addr dest_address)
+ {
+   char *psuedo_packet;
+-  unsigned short cksum;
++  u_int16_t cksum;
+   
+   psuedohdr.protocol = IPPROTO_TCP;
+   psuedohdr.length = htons(length);
+@@ -133,7 +133,7 @@
+   memcpy((psuedo_packet + sizeof(psuedohdr)),
+          packet,length);
+   
+-  cksum = inet_checksum((unsigned short *)psuedo_packet,(length + sizeof(psuedohdr)));
++  cksum = inet_checksum((u_int16_t *)psuedo_packet,(length + sizeof(psuedohdr)));
+   free(psuedo_packet);
+   return cksum;
+ }
+@@ -153,7 +153,7 @@
+   memset (sa, 0, sizeof (struct sockaddr));
+   sa->sin_family = AF_INET;
+   sa->sin_addr.s_addr = inet_addr (host);
+-  if ((long) inet_addr (host) == -1)
++  if ((int32_t) inet_addr (host) == -1)
+     {
+       ent = gethostbyname (host);
+       if (ent != NULL)
+@@ -173,7 +173,7 @@
+ 
+ /* Sends a TCP packet */
+ void
+-sendtcp (spoofrec * spoof, unsigned short flags, short rep)
++sendtcp (spoofrec * spoof, u_int16_t flags, short rep)
+ {
+   struct tcphdr tcp;
+   struct ip ip;
 @@ -271,6 +271,7 @@
      switch(datalink) {
        case DLT_EN10MB:
@@ -13,7 +89,43 @@
        case DLT_IEEE802:
          offset = 22; break;
 +      case DLT_ENC:
-+        offset = 12; break;
++	offset = 12; break;
        default:
          fprintf(stderr, "unknown datalink type (%d)", datalink);
          return(0);
+@@ -319,7 +322,7 @@
+ /*-- Linux: Search out IP in Routing tables --*/
+ /*-- Other: Return hostname ip ---------------*/
+ struct in_addr
+-getlocalip (unsigned long dest)
++getlocalip (u_int32_t dest)
+ {
+   static struct in_addr ina;
+ #ifdef LINUX  /*---------------------------------------------- LINUX --*/
+@@ -327,7 +330,7 @@
+ 
+   for (i = 0; i < numroutes; i++)
+     {
+-      if ((dest & routes[i].naddr) == (unsigned long) routes[i].addr.s_addr)
++      if ((dest & routes[i].naddr) == (u_int32_t) routes[i].addr.s_addr)
+         {
+           return (routes[i].iface->addr);
+         }
+@@ -434,7 +437,7 @@
+       else
+         strcpy (iface, ptr);
+       ptr = strtok (NULL, "\t ");       /* hack avoiding fscanf */
+-      routes[i].addr.s_addr=(unsigned long)strtol(ptr,NULL,16);
++      routes[i].addr.s_addr=(u_int32_t)strtol(ptr,NULL,16);
+       for (i1 = 0; i1 < 6; i1++)
+         {
+           ptr = strtok (NULL, "\t ");   /* ignore Gateway Flags RefCnt Use Metric */
+@@ -443,7 +446,7 @@
+         fputs ("Error parsing /proc/net/route\n", stderr);
+         continue;
+       }
+-      routes[i].naddr=(unsigned long)strtol(ptr,NULL,16);   /* Netmask */
++      routes[i].naddr=(u_int32_t)strtol(ptr,NULL,16);   /* Netmask */
+ 
+       found = 0;
+       for (i1 = 0; i1 < numinterfaces; i1++)
