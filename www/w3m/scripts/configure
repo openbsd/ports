@@ -1,0 +1,30 @@
+# $Id: configure,v 1.1 2000/01/30 22:12:24 d Exp $
+
+echo "Creating ${WRKBUILD}/config.param"
+
+set `uname -a`
+host=$2
+
+exec 1>${WRKBUILD}/config.param
+
+echo "# Configuretion at $host"
+echo def_bindir="${PREFIX}/bin"
+echo def_libdir="${PREFIX}/lib/w3m"
+echo def_helpdir="${PREFIX}/share/w3m"
+echo pref_lang=2
+echo lynx_key=y
+echo use_color=y
+echo use_mouse=y
+echo use_menu=y
+echo use_cookie=y
+echo use_ssl=y
+echo dmodel=5
+echo ded="vi"
+echo dmail="mail"
+echo dbrowser="lynx"
+echo dcc='${CC}'
+echo dcflags='${CFLAGS}'
+echo dtermlib='-ltermlib'
+echo dldflags=''
+
+exit 0

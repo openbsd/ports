@@ -1,36 +1,31 @@
---- XMakefile.orig	Fri Oct  8 08:19:52 1999
-+++ XMakefile	Fri Oct  8 22:06:01 1999
-@@ -15,7 +15,8 @@
- INCLUDES=-I.
- 
- DEFS=$(INCLUDES) #-DSTR_DEBUG # -DDEBUG
--CFLAGS=$(MYCFLAGS) $(DEFS) 
-+CFLAGS+=$(MYCFLAGS) $(DEFS) 
-+PREFIX?=/usr/local
- LIBS=$(GCLIB) -lm $(LOCAL_LIBRARIES) $(SYS_LIBRARIES)
- 
- $(TARGET): $(ALLOBJS) $(GCTARGET)
-@@ -27,15 +28,14 @@
+--- XMakefile.orig	Fri Jan 28 20:14:18 2000
++++ XMakefile	Fri Jan 28 20:19:41 2000
+@@ -50,17 +50,17 @@
  	cd gc; make CC='$(CC) $(MYCFLAGS)'
  
- install: $(TARGET)
--	-mkdir $(DESTDIR)$(BIN_DIR)
--	-mkdir $(DESTDIR)$(HELP_DIR)
--	cp $(TARGET) $(DESTDIR)$(BIN_DIR)
--	cp w3mhelp_en.html $(DESTDIR)$(HELP_DIR)
--	cp w3mhelp_ja.html $(DESTDIR)$(HELP_DIR)
--	cp w3mhelp-lynx_en.html $(DESTDIR)$(HELP_DIR)
--	cp w3mhelp-lynx_ja.html $(DESTDIR)$(HELP_DIR)
--	cp $(HELP_FILE) $(DESTDIR)$(HELP_DIR)/w3mhelp.html
--	chmod go+r $(DESTDIR)$(HELP_DIR)/w3mhelp.html
-+	-mkdir -p -m 755 $(BIN_DIR)
-+	-mkdir -p -m 755 $(HELP_DIR)
-+	-mkdir -p -m 755 $(DOC_DIR)
-+	install -c -m 755 $(TARGET) $(BIN_DIR)
-+	install -c -m 644 w3mhelp*.html $(HELP_DIR)
-+	ln -s $(HELP_DIR)/$(HELP_FILE) $(HELP_DIR)/w3mhelp.html
-+	install -c -m 644 doc/* $(DOC_DIR)
-+	mv $(DOC_DIR)/w3m.1 $(PREFIX)/man/man1
+ install: $(TARGETS)
+-	-$(MKDIR) $(DESTDIR)$(BIN_DIR)
+-	-$(MKDIR) $(DESTDIR)$(HELP_DIR)
+-	-$(MKDIR) $(DESTDIR)$(LIB_DIR)
+-	$(INSTALL) -m 755 $(TARGET) $(DESTDIR)$(BIN_DIR)/$(TARGET)
+-	$(INSTALL) -m 644 w3mhelp_en.html $(DESTDIR)$(HELP_DIR)/w3mhelp_en.html
+-	$(INSTALL) -m 644 w3mhelp_ja.html $(DESTDIR)$(HELP_DIR)/w3mhelp_ja.html
+-	$(INSTALL) -m 644 w3mhelp-lynx_en.html $(DESTDIR)$(HELP_DIR)/w3mhelp-lynx_en.html
+-	$(INSTALL) -m 644 w3mhelp-lynx_ja.html $(DESTDIR)$(HELP_DIR)/w3mhelp-lynx_ja.html
+-	$(INSTALL) -m 644 $(HELP_FILE) $(DESTDIR)$(HELP_DIR)/w3mhelp.html
+-	for d in $(BOOKMARKER) $(HELPER); do $(INSTALL) -m 755 $$d $(DESTDIR)$(LIB_DIR)/$$d; done
+-	(cd scripts; ln -s ../install.sh .; for i in *.cgi; do $(INSTALL) -m 755 $$i $(DESTDIR)$(LIB_DIR)/$$i; done)
++	$(BSD_INSTALL_PROGRAM_DIR) $(BIN_DIR)
++	$(BSD_INSTALL_DATA_DIR) $(HELP_DIR)
++	$(BSD_INSTALL_PROGRAM_DIR) $(LIB_DIR)
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(BIN_DIR)
++	$(BSD_INSTALL_DATA) w3mhelp_en.html $(HELP_DIR)
++	$(BSD_INSTALL_DATA) w3mhelp_ja.html $(HELP_DIR)
++	$(BSD_INSTALL_DATA) w3mhelp-lynx_en.html $(HELP_DIR)
++	$(BSD_INSTALL_DATA) w3mhelp-lynx_ja.html $(HELP_DIR)
++	ln $(HELP_DIR)/$(HELP_FILE) $(HELP_DIR)/w3mhelp.html
++	for d in $(BOOKMARKER) $(HELPER); do $(BSD_INSTALL_PROGRAM) $$d $(LIB_DIR); done
++	(cd scripts; for i in *.cgi; do $(BSD_INSTALL_SCRIPT) $$i $(LIB_DIR); done)
  
  uninstall:
  	-$(RM) $(BIN_DIR)/$(TARGET)

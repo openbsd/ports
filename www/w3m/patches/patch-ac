@@ -1,7 +1,7 @@
---- main.c.orig	Sat Oct  9 00:04:43 1999
-+++ main.c	Sat Oct  9 00:10:21 1999
-@@ -47,10 +47,21 @@
- # include "gc_private.h"
+--- main.c.orig	Fri Jan 21 17:18:58 2000
++++ main.c	Fri Jan 28 22:34:23 2000
+@@ -73,10 +73,21 @@
+ #endif
  int real_main(int,char**,char**);
  
 +/* Out-of-memory handler for GC. */
