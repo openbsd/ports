@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/10/16 12:58:52 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2002/11/13 18:47:15 naddy Exp $
 
 COMMENT=	"module to declare real exception classes in perl"
 
-DISTNAME=	Exception-Class-1.05
+DISTNAME=	Exception-Class-1.07
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
