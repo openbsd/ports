@@ -1,5 +1,5 @@
---- build.orig	Fri Sep 15 05:44:47 2000
-+++ build	Fri Sep 15 05:48:19 2000
+--- build.orig	Mon Nov 15 17:16:25 1999
++++ build	Tue Sep 19 17:05:58 2000
 @@ -277,18 +277,6 @@
  	  esac
  	fi
@@ -19,7 +19,7 @@
          echo "Making Pico and Pilot"
          cd $PHOME/pico
          eval echo make "$makeargs" -f makefile.$picotarg
-@@ -304,8 +292,6 @@
+@@ -304,14 +292,12 @@
          cd $PHOME/bin
          rm -f pine mtest imapd pico pilot
          if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
@@ -28,6 +28,13 @@
          if [ -s ../pico/pico ] ;      then ln ../pico/pico pico ; fi
          if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot ; fi
          cd $PHOME
+         echo ''
+         echo "Links to executables are in bin directory:"
+-        size bin/pine bin/mtest bin/imapd bin/pico bin/pilot
++        size bin/pine bin/pico bin/pilot
+ 	case $maketarg in
+ 	    mnt)    echo "Fixing stacksizes ..."
+ 		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
 @@ -321,15 +307,12 @@
  
  
