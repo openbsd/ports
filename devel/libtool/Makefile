@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/06/10 17:50:17 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2000/06/10 18:14:47 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 DISTNAME=	libtool-1.3.5
@@ -13,8 +13,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-FAKE=	Yes
 
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= gnu
