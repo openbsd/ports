@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/12/23 16:11:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/12/29 14:16:30 espie Exp $
 bin/ical2vcal
 bin/kabcfrontend
 bin/kalarm
@@ -314,8 +314,8 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/doc/HTML/en/karm
 @dirrm share/doc/HTML/en/kandy
 @dirrm share/doc/HTML/en/kalarm
-@dirrm share/doc/HTML
-@dirrm share/config
+@comment @dirrm share/doc/HTML
+@comment @dirrm share/config
 @dirrm share/apps/korganizer/sounds
 @dirrm share/apps/korganizer/plugins
 @dirrm share/apps/korganizer/icons/hicolor/32x32/actions
@@ -365,9 +365,9 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/apps/kalarm/icons/hicolor
 @dirrm share/apps/kalarm/icons
 @dirrm share/apps/kalarm
-@dirrm share/apps
-@dirrm share/applnk/Settings/System
-@dirrm share/applnk/Applications
+@comment @dirrm share/apps
+@comment @dirrm share/applnk/Settings/System
+@comment @dirrm share/applnk/Applications
 @dirrm include/korganizer
 @dirrm include/kgantt
 @dirrm include/calendar
