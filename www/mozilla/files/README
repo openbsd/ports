@@ -1,0 +1,46 @@
+			    MOZILLA for OpenBSD
+
+In good OpenBSD style I stole the NetBSD mozilla port and turned
+it into an OpenBSD mozilla port.  The OpenBSD patches are 42395
+bytes long and include the 11448 of NetBSD patches.  However:
+
+	      ***** MOZILLA IS NOT READY FOR PRIME TIME *****
+
+I'm adding it to the OpenBSD ports for those that want to play and/or
+get it to a state where it is ready for prime time.  Here are the
+general caveats:
+
+1) Only checked with lesstif 0.86.0, older versions will probably not
+   Use the OpenBSD lesstif port -- it fixes a problem where the 2.0
+   version of libXm.a overwrites the 1.2 version.
+
+2) This warning is spit out on occasion
+
+	    Warning: 
+		Name: bookmarkList
+		Class: XmLGrid
+		Attempt to destroy dropSite info for widget that
+	    hasn't been added as a dropSite.
+
+   doesn't seem to hurt anything, though.
+
+3) There are uses of tempnam, tmpnam, and mktemp that have not
+   been looked at/changed yet.
+
+4) It will NOT compile on a sparc with default optimizer settings.
+   gcc blows up.  To compile on a sparc do this:
+
+   make patch
+   change line 257 of work/mozilla/config/config.mk from -O to -O0
+   make
+
+   HOWEVER: that only makes it compile.  Try to run and you'll get
+   `Memory fault' in 5-10 seconds.  Perfect opportunity for sparc
+   developers to get their debugger skills in shape :-)
+
+5) I've used it less than 10 minutes on an i386.  It didn't crash
+   in that time :-)
+
+6) I've not tried to build it/run it on any other architecture.
+   I suspect the usual problems wrt libraries on the alpha.
+
