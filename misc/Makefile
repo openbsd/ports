@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2001/01/21 16:37:41 kevlo Exp $
+# $OpenBSD: Makefile,v 1.40 2001/02/08 20:08:55 todd Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -33,6 +33,7 @@
 #    SUBDIR += kdeutils
 #    SUBDIR += kp
 #    SUBDIR += less
+     SUBDIR += libutf8
 #    SUBDIR += lile
 #    SUBDIR += logsurfer
      SUBDIR += magicpoint
