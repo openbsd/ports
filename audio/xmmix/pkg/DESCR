@@ -1,5 +1,3 @@
-From the README:
-
   Xmmix is a sound mixer utility for the X Window System using the
   OSF/Motif interface.  It requires the Unix Sound System (formerly
   "VoxWare") sound driver by Hannu Savolainen (hannu@voxware.pp.fi).
@@ -14,7 +12,3 @@ From the README:
   current release version, online README file, FTP service to get
   the software, an interactive form to send comments and
   suggestions, and late breaking announcement, if any.
-
-I don't have hardware to test all the features, but it looks ok.
-eric.
-erich@FreeBSD.org

@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 1999/04/01 06:20:03 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/09/06 19:03:42 brad Exp $
 
-DISTNAME=		xmmix-1.2
-CATEGORIES=		audio
+DISTNAME=	xmmix-1.2
+CATEGORIES=	audio
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR= applications
 
-MAINTAINER=		ports@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
-MASTER_SITES=		${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	applications/
-
-USE_IMAKE=		yes
-USE_MOTIF=		yes
+USE_IMAKE=	yes
+USE_MOTIF=	yes
 
 .include <bsd.port.mk>
