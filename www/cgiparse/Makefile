@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/09 04:11:59 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/10/31 06:49:00 turan Exp $
+
+BROKEN=		bad packing lists, man/man3/cgigetvalue.3, man/man3/cgiclose.3, man/man3/cginewquerystr.3
 
 DISTNAME=	cgiparse-0.8e
 CATEGORIES=	www
