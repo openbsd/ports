@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2003/12/21 18:21:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.27 2004/02/14 22:25:25 sturm Exp $
 
 COMMENT=		"reduce the amount of SPAM/UCE (junk-mail)"
 
-VERSION=		1.0
+VERSION=		1.0.2
 DISTNAME=		tmda-${VERSION}
 CATEGORIES=		mail
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://tmda.net/releases/ \
-			http://tmda.net/releases/old/
+MASTER_SITES=		http://tmda.net/releases/stable/
 EXTRACT_SUFX=		.tgz
 
 PYTHON_VER=     	2.2

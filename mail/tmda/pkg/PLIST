@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2003/11/17 21:02:25 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/02/14 22:25:25 sturm Exp $
 bin/tmda-address
 bin/tmda-check-address
 bin/tmda-filter
@@ -88,7 +88,6 @@ share/doc/tmda/CRYPTO
 share/doc/tmda/INSTALL
 share/doc/tmda/README
 share/doc/tmda/UPGRADE
-share/doc/tmda/bugs.html
 share/doc/tmda/challengeresponse.html
 share/doc/tmda/config-client.html
 share/doc/tmda/config-filter.html
@@ -110,7 +109,6 @@ share/doc/tmda/features.html
 share/doc/tmda/filter-sources.html
 share/doc/tmda/history.html
 share/doc/tmda/howto-template.html
-share/doc/tmda/howtos.html
 share/doc/tmda/img/tmda-186x253.png
 share/doc/tmda/img/tmda-47x64.png
 share/doc/tmda/img/tmda-562x765.png
@@ -119,14 +117,8 @@ share/doc/tmda/img/tmda-93x127.png
 share/doc/tmda/img/tmda-nt-616x616.png
 share/doc/tmda/index.html
 share/doc/tmda/install.html
-share/doc/tmda/inuse.html
 share/doc/tmda/logos.html
-share/doc/tmda/mirrors.html
-share/doc/tmda/press.html
 share/doc/tmda/requirements.html
-share/doc/tmda/resources.html
-share/doc/tmda/results.html
-share/doc/tmda/support-commercial.html
 share/doc/tmda/tmda-ofmipd.html
 share/doc/tmda/tmda-vdomains.html
 share/doc/tmda/trouble.html
