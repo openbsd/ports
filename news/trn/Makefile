@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/12 20:33:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 01:31:38 naddy Exp $
 
 CATEGORIES=news
 MAINTAINER= Marc Espie <espie@openbsd.org>
@@ -6,8 +6,8 @@ NEED_VERSION=1.346
 
 MASTER_SITES=${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=trn
-V=74
-DISTNAME=trn4-test$V
+V=76
+DISTNAME=trn-4.0-test$V
 PKGNAME=trn-4.0.$V
 
 PERMIT_PACKAGE_FTP=Yes
