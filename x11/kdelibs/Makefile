@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.4 1999/06/10 15:02:47 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/06/14 23:44:21 espie Exp $
+# Original Author: Yanick Cote <yanick@fries.net>
 
 DISTNAME=	kdelibs-1.1.1
 CATEGORIES=	x11
@@ -6,8 +7,6 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR= stable/1.1.1/distribution/tar/generic/source/bz2
 
 NEED_VERSION=	1.92
-
-MAINTAINER=	yanick@fries.net
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	qt.1.44:${PORTSDIR}/x11/qt \
@@ -17,7 +16,7 @@ LIB_DEPENDS=	qt.1.44:${PORTSDIR}/x11/qt \
 		tiff.3.4:${PORTSDIR}/graphics/tiff34
 
 .if ${MACHINE_ARCH} == "i386"
-BROKEN=		"Currently doesn't build on i386 due to gas bug"
+BROKEN=		"gas bug, to be fixed soon"
 .endif
 
 # Internal Compiler errors
