@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2003/10/05 21:42:29 jakob Exp $
+# $OpenBSD: Makefile,v 1.57 2004/05/11 22:29:23 jakob Exp $
 
 COMMENT=	"program for Internet E-mail and News"
 COMMENT-pico=	"small text editor"
@@ -6,8 +6,8 @@ COMMENT-pilot=	"file system browser"
 
 CATEGORIES=	mail news
 
-VERSION=	4.58
-PICO_VERSION=	4.6
+VERSION=	4.60
+PICO_VERSION=	4.7
 PILOT_VERSION=	2.0
 
 DISTNAME=	pine${VERSION}
@@ -28,6 +28,7 @@ PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
+VMEM_WARNING=	Yes
 
 FLAVORS=	kerberos ldap
 FLAVOR?=
@@ -65,10 +66,8 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pine
 	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes.txt ${PREFIX}/share/doc/pine
-	${INSTALL_DATA} ${FILESDIR}/dot.pinerc.pgp.sample ${PREFIX}/share/doc/pine
 	cd ${WRKSRC}/bin; ${INSTALL_PROGRAM} pico pilot pine rpdump rpload \
 		${PREFIX}/bin
-	cd ${FILESDIR}; ${INSTALL_SCRIPT} pgpencrypt pgpdecode pgpsign ${PREFIX}/bin
 	cd ${WRKSRC}/doc; ${INSTALL_MAN} pico.1 pilot.1 pine.1 rpdump.1 rpload.1 \
 		${PREFIX}/man/man1
 

@@ -1,20 +1,7 @@
-$OpenBSD: patch-pine_pine_hlp,v 1.4 2003/10/05 21:42:29 jakob Exp $
+$OpenBSD: patch-pine_pine_hlp,v 1.5 2004/05/11 22:29:23 jakob Exp $
 --- pine/pine.hlp.orig	Tue Sep  9 23:19:06 2003
 +++ pine/pine.hlp	Sat Sep 20 00:08:13 2003
-@@ -1012,9 +1012,9 @@ Unix Pine:
-  executable     &lt;Unix search path&gt;/pine
-  persnl cfg     ~/.pinerc
-  except cfg     ~/.pinercex
-- global cfg     /usr/local/lib/pine.conf
-- fixed cfg      /usr/local/lib/pine.conf.fixed
-- local help     /usr/local/lib/pine.info
-+ global cfg     /etc/pine.conf
-+ fixed cfg      /etc/pine.conf.fixed
-+ local help     /etc/pine.info
- 
-  interrupted    ~/.pine-interrupted-mail
-  debug          ~/.pine-debugN
-@@ -1026,8 +1026,7 @@ Unix Pine:
+@@ -809,8 +809,7 @@
   postponed#     ~/mail/postponed-msgs
   sentmail#      ~/mail/sent-mail
   mailcap#       ~/.mailcap + /etc/mailcap
@@ -22,82 +9,9 @@ $OpenBSD: patch-pine_pine_hlp,v 1.4 2003/10/05 21:42:29 jakob Exp $
 - mimetypes#     ~/.mime.types + /etc/mime.types + /usr/local/lib/mime.types
 + mimetypes#     ~/.mime.types + /etc/mime.types
  
-  news-spool	varies across Unix flavors, e.g. /usr/spool/news or /var/news
+  news-spool	varies across Unix flavors, e.g. /var/spool/news or /usr/spool/news
   active-news	varies across Unix flavors, e.g. /usr/lib/news/active
-@@ -1452,9 +1451,9 @@ contact email address may have been set 
- this link now to send a message to it:<BR>
- <A HREF="X-Pine-Gripe:_LOCAL_ADDRESS_?local"><!--#echo var="_LOCAL_FULLNAME_"--></A><P>
- <!--chtml endif-->
--<!--chtml if [ -r /usr/local/lib/pine.info ]-->
-+<!--chtml if [ -r /etc/pine.info ]-->
- <HR WIDTH="75%">Local Support Contacts:<P>
--<!--#include file="/usr/local/lib/pine.info"-->
-+<!--#include file="/etc/pine.info"-->
- <HR WIDTH="75%">
- <!--chtml endif-->
- <P> 
-@@ -1542,7 +1541,7 @@ To Exit this screen and continue your Pi
- <OL>
-   <LI> <A HREF="#intro">Introduction</A>
-   <LI> <A HREF="#pine_help">Pine Help</A>
--<!--chtml if [ -r /usr/local/lib/pine.info ]-->
-+<!--chtml if [ -r /etc/pine.info ]-->
-   <LI> <A HREF="#local_support">Local Support Contacts</A>
- <!--chtml endif-->
-   <LI> <A HREF="#giving_cmds">Giving Commands in Pine</A>
-@@ -1654,9 +1653,9 @@ copy of Pine you are using has been prop
- at your site.)
- 
- 
--<!--chtml if [ -r /usr/local/lib/pine.info ]-->
-+<!--chtml if [ -r /etc/pine.info ]-->
- <H2><A NAME="local_support">Local Support Contacts</A></H2>
--<!--#include file="/usr/local/lib/pine.info"-->
-+<!--#include file="/etc/pine.info"-->
- <!--chtml endif-->
- 
- <H2><A NAME="giving_cmds">Giving Commands in Pine</A></H2>
-@@ -2342,7 +2341,7 @@ screen or standard output. To generate a
- file, execute
- 
- <PRE><CODE>
--		pine -conf > /usr/local/lib/pine.conf
-+		pine -conf > /etc/pine.conf
- </CODE></PRE>
- <P>
- 
-@@ -2350,7 +2349,7 @@ To generate a system configuration file 
- system configuration file, execute
- 
- <PRE><CODE>
--		pine -P old-pine.conf -conf > /usr/local/lib/pine.conf
-+		pine -P old-pine.conf -conf > /etc/pine.conf
- </CODE></PRE>
- <P>
- A system configuration file is not required.
-@@ -2519,7 +2518,7 @@ Pinerc may be either a local file or a r
- <DT> -P <EM>pinerc</EM>
- 
- <DD> Uses the named file as the system wide configuration file instead of
--<EM>/usr/local/lib/pine.conf</EM> on UNIX, or nothing on <EM>PC-Pine</EM>.
-+<EM>/etc/pine.conf</EM> on UNIX, or nothing on <EM>PC-Pine</EM>.
- Pinerc may be either a local file or a remote configuration folder.
- <P>
- 
-@@ -3247,10 +3246,10 @@ In increasing order of precedence they a
- </OL>
- <P>
- The fixed configuration file is normally
--<CODE>/usr/local/lib/pine.conf.fixed</CODE>.
-+<CODE>/etc/pine.conf.fixed</CODE>.
- <P>
- The system-wide configuration file is normally
--<CODE>/usr/local/lib/pine.conf</CODE> for Unix Pine and is normally not
-+<CODE>/etc/pine.conf</CODE> for Unix Pine and is normally not
- set for PC-Pine.
- For PC-Pine, if the environment variable <EM>$PINECONF</EM> is set, that
- is used for the system-wide configuration.
-@@ -16269,7 +16268,7 @@ a semi-colon (;) under Windows; for exam
+@@ -17782,7 +17781,7 @@
  </PRE>
  <!--chtml else-->
  a colon (:) under UNIX; for example:<PRE>
@@ -106,8 +20,8 @@ $OpenBSD: patch-pine_pine_hlp,v 1.4 2003/10/05 21:42:29 jakob Exp $
  </PRE>
  <!--chtml endif-->
  <P><UL>
-@@ -19068,7 +19067,7 @@ the fourth is for the connection method 
- <H1>OPTION: ssh-path</H1>
+@@ -20847,7 +20846,7 @@
+ <H1>OPTION: Ssh-Path</H1>
  
  Sets the name of the command used to open a UNIX secure shell
 -connection. The default is typically <CODE>/usr/local/bin/ssh</CODE>.
@@ -115,16 +29,16 @@ $OpenBSD: patch-pine_pine_hlp,v 1.4 2003/10/05 21:42:29 jakob Exp $
  <P>
  <UL>   
  <LI><A HREF="h_finding_help">Finding more information and requesting help</A>
-@@ -20451,7 +20450,7 @@ argument (see the &quot;lynx&quot; examp
+@@ -22632,7 +22631,7 @@
  So, here are some example entries:
  <PRE>
- url-viewers = _TEST(&quot;test -n '$&#123;DISPLAY}'&quot;)_  /usr/local/bin/netscape
+ URL-Viewers = _TEST(&quot;test -n '$&#123;DISPLAY}'&quot;)_  /usr/local/bin/netscape
 -              &quot;/usr/local/bin/lynx _URL_&quot;
 +              &quot;/usr/bin/lynx _URL_&quot;
                C:&#92;BIN&#92;NETSCAPE.BAT
  </PRE>
  <P>
-@@ -20459,7 +20458,7 @@ This example shows that for the first vi
+@@ -22640,7 +22639,7 @@
  the environment variable &quot;DISPLAY&quot; must be defined.  If it
  is, then the path and file &quot;/usr/local/bin/netscape&quot; must exist.  
  If neither condition is met,
@@ -133,8 +47,8 @@ $OpenBSD: patch-pine_pine_hlp,v 1.4 2003/10/05 21:42:29 jakob Exp $
  If it does, then the &quot;_URL_&quot; token is replaced by the selected URL. 
  If the path to &quot;lynx&quot; is invalid,
  then the final path and file C:&#92;BIN&#92;NETSCAPE.BAT must exist.  
-@@ -20555,7 +20554,7 @@ because of its length, but should all ap
- url-viewers = _TEST("test -L /myhomedir/.netscape/lock")_ &quot;/usr/local/bin/netscape -remote 'openURL(_URL_,  new-window)' &amp;&quot;<BR>
+@@ -22736,7 +22735,7 @@
+ URL-Viewers = _TEST("test -L /myhomedir/.netscape/lock")_ &quot;/usr/local/bin/netscape -remote 'openURL(_URL_,  new-window)' &amp;&quot;<BR>
  
  _TEST(&quot;test -n '$&#123;DISPLAY}'&quot;)_ &quot;/usr/local/bin/netscape &amp;&quot;<BR>
 -              &quot;/usr/local/bin/lynx '_URL_'&quot;
