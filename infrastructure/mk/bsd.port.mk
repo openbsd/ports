@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.453 2001/09/07 09:48:23 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.454 2001/09/07 10:56:50 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1256,7 +1256,7 @@ _print-packagename:
 _DEP${_DEP}_COOKIES=
 .  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
 .    for _i in ${${_DEP:U}_DEPENDS}
-${WRKDIR}/.${_DEP}${_i:C,[:./<=>],-,g}: ${_WRKDIR_COOKIE}
+${WRKDIR}/.${_DEP}${_i:C,[:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 	@unset PACKAGING DEPENDS_TARGET FLAVOR SUBPACKAGE || true; \
 	echo '${_i}'|{ \
 		IFS=:; read dep pkg dir target; \
@@ -1304,7 +1304,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[:./<=>],-,g}: ${_WRKDIR_COOKIE}
 		done; \
 	}
 	@${_MAKE_COOKIE} $@
-_DEP${_DEP}_COOKIES+=${WRKDIR}/.${_DEP}${_i:C,[:./<=>],-,g}
+_DEP${_DEP}_COOKIES+=${WRKDIR}/.${_DEP}${_i:C,[:./<=>*],-,g}
 .    endfor
 .  endif
 ${_DEP}-depends: ${_DEP${_DEP}_COOKIES}
