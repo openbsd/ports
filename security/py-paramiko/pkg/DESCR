@@ -1,0 +1,2 @@
+paramiko is a module for Python  that implements the SSH2 protocol for
+secure connections to remote machines.
