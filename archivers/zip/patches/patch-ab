@@ -1,0 +1,62 @@
+*** fileio.c.orig	Mon Apr 15 17:28:31 1996
+--- fileio.c	Tue Nov 25 16:29:03 1997
+***************
+*** 596,606 ****
+  }
+  
+  
+! char *tempname(zip)
+  char *zip;              /* path name of zip file to generate temp name for */
+  
+  /* Return a temporary file name in its own malloc'ed space, using tempath. */
+  {
+  #ifdef CMS_MVS
+     return tmpnam(NULL);
+  #else /* !CMS_MVS */
+--- 596,609 ----
+  }
+  
+  
+! char *tempname(zip, fpfp)
+  char *zip;              /* path name of zip file to generate temp name for */
++ FILE *fpfp;
+  
+  /* Return a temporary file name in its own malloc'ed space, using tempath. */
+  {
++    int fdfd;
++ 
+  #ifdef CMS_MVS
+     return tmpnam(NULL);
+  #else /* !CMS_MVS */
+***************
+*** 646,652 ****
+    }
+  #else
+    strcat(t, "ziXXXXXX"); /* must use lowercase for Linux dos file system */
+!   return mktemp(t);
+  #endif
+  #endif /* ?CMS_MVS */
+  }
+--- 649,670 ----
+    }
+  #else
+    strcat(t, "ziXXXXXX"); /* must use lowercase for Linux dos file system */
+!   fdfd = mkstemp(t);
+!   if (fdfd == -1)
+!   {
+! 	free(t);
+! 	return NULL;
+!   }
+! 
+!   fpfp = fdopen(fdfd, "w+");
+!   if (fpfp == NULL)
+!   {
+! 	free(t);
+! 	close(fdfd);
+! 	return NULL;
+!   }
+! 
+!   return t;
+  #endif
+  #endif /* ?CMS_MVS */
+  }

@@ -1,5 +1,5 @@
-*** zipnote.c.orig	Mon Nov 24 18:28:46 1997
---- zipnote.c	Mon Nov 24 18:29:53 1997
+*** zipnote.c.orig	Mon Apr  1 12:10:51 1996
+--- zipnote.c	Tue Nov 25 16:28:00 1997
 ***************
 *** 403,409 ****
   
@@ -69,7 +69,7 @@
       z->com = strlen(z->comment);
       z = z->nxt;                         /* point to next entry */
 ***************
-*** 439,445 ****
+*** 439,452 ****
     if (a != NULL)                        /* change zip file comment */
     {
       zcomment = malloc(1);  *zcomment = 0;
@@ -77,7 +77,14 @@
         if ((r = catalloc(&zcomment, a)) != ZE_OK)
           ziperr(r, "was building new comments");
       zcomlen = strlen(zcomment);
---- 439,445 ----
+    }
+  
+    /* Open output zip file for writing */
+!   if ((tempzf = y = fopen(tempzip = tempname(zipfile), FOPW)) == NULL)
+      ziperr(ZE_TEMP, tempzip);
+  
+    /* Open input zip file again, copy preamble if any */
+--- 439,455 ----
     if (a != NULL)                        /* change zip file comment */
     {
       zcomment = malloc(1);  *zcomment = 0;
@@ -85,3 +92,13 @@
         if ((r = catalloc(&zcomment, a)) != ZE_OK)
           ziperr(r, "was building new comments");
       zcomlen = strlen(zcomment);
+    }
+  
+    /* Open output zip file for writing */
+!   tempzip = tempname(zipfile, y);
+!   tempzf = y;
+! 
+!   if ((tempzf == NULL) || (tempzip == NULL))
+      ziperr(ZE_TEMP, tempzip);
+  
+    /* Open input zip file again, copy preamble if any */

@@ -1,0 +1,19 @@
+*** zip.h.orig	Tue Nov 25 16:25:57 1997
+--- zip.h	Tue Nov 25 16:26:16 1997
+***************
+*** 275,281 ****
+  int replace OF((char *, char *));
+  int getfileattr OF((char *));
+  int setfileattr OF((char *, int));
+! char *tempname OF((char *));
+  int fcopy OF((FILE *, FILE *, ulg));
+  
+  #ifdef ZMEM
+--- 275,281 ----
+  int replace OF((char *, char *));
+  int getfileattr OF((char *));
+  int setfileattr OF((char *, int));
+! char *tempname OF((char *, FILE *));
+  int fcopy OF((FILE *, FILE *, ulg));
+  
+  #ifdef ZMEM
