@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2003/04/24 21:42:38 matthieu Exp $
+# $OpenBSD: Makefile,v 1.2 2003/04/24 22:06:56 matthieu Exp $
 
 COMMENT=	"X11 Cursors themes"
 
@@ -23,6 +23,8 @@ MASTER_SITES=		http://www.cryptonomicon.org/distfiles/ \
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	imake
+
+NOT_FOR_ARCHES=		vax
 
 pre-configure:
 	@sed -e s,@LOCALBASE@,${LOCALBASE}, < ${FILESDIR}/host.def \
