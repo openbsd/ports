@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2001/03/12 16:18:34 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2001/03/14 16:23:31 espie Exp $
 lib/kde2/libhtmlthumbnail.so.0.0
 lib/kde2/libimagethumbnail.so.0.0
 lib/kde2/libkaccess.so.0.0
@@ -10,7 +10,6 @@ lib/kde2/libkcm_clock.so.0.0
 lib/kde2/libkcm_colors.so.0.0
 lib/kde2/libkcm_crypto.so.0.0
 lib/kde2/libkcm_email.so.0.0
-lib/kde2/libkcm_energy.so.0.0
 lib/kde2/libkcm_filetypes.so.0.0
 lib/kde2/libkcm_fonts.so.0.0
 lib/kde2/libkcm_icons.so.0.0
@@ -30,7 +29,9 @@ lib/kde2/libkcm_locale.so.0.0
 lib/kde2/libkcm_midi.so.0.0
 lib/kde2/libkcm_passwords.so.0.0
 lib/kde2/libkcm_samba.so.0.0
-lib/kde2/libkcm_screensaver.so.0.0
+@comment Those are apparently only built with XFree4
+@comment lib/kde2/libkcm_energy.so.0.0
+@comment lib/kde2/libkcm_screensaver.so.0.0
 lib/kde2/libkcm_smserver.so.0.0
 lib/kde2/libkcm_style.so.0.0
 lib/kde2/libkcm_taskbar.so.0.0
