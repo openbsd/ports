@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/02/25 02:35:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/03/01 23:49:27 xsa Exp $
 
 COMMENT=	"Convert PNG images to Windows .ico files"
 
@@ -6,8 +6,8 @@ VERSION=	2002-12-08
 PKGNAME=	png2ico-${VERSION:S/-//g}
 DISTNAME=	png2ico-src-${VERSION}
 CATEGORIES=	graphics www
-HOMEPAGE=	http://www.winterdrache.de/freeware/png2ico/data/
-MASTER_SITES=	${HOMEPAGE}
+HOMEPAGE=	http://www.winterdrache.de/freeware/png2ico/
+MASTER_SITES=	${HOMEPAGE}data/
 
 MAINTAINER=	Wilbern Cobb <wcobb@openbsd.org>
 
