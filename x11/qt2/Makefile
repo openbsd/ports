@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2001/03/07 21:42:00 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2001/03/12 16:21:34 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
-VERSION=	2.4
+VERSION=	3.0
 DISTNAME=	qt-2.${VERSION}
 PKGNAME=	qt2-${VERSION}
 CATEGORIES=	x11
@@ -26,6 +26,8 @@ MAKE_ENV=	QTDIR="${WRKSRC}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	-gif -system-libmng -system-libpng -system-jpeg \
 		-system-zlib -no-thread -sm
+# For XFree 4
+# CONFIGURE_ARGS+=-xft
 CONFIGURE_ENV=	QTDIR="${WRKSRC}" MODULES="${MODULES}"
 
 MULTI_PACKAGES=	-examples -html
@@ -94,8 +96,8 @@ do-install:
 	@if [ -f ${WRKBUILD}/lib/libqt.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.a ${PREFIX}/lib/qt2; \
 	fi
-	@if [ -f ${WRKBUILD}/lib/libqt.so.2.24 ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.24 ${PREFIX}/lib/qt2; \
+	@if [ -f ${WRKBUILD}/lib/libqt.so.2.30 ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.30 ${PREFIX}/lib/qt2; \
 	fi
 	@if [ -f ${WRKBUILD}/lib/libqutil.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqutil.a ${PREFIX}/lib/qt2; \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2000/12/16 23:26:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2001/03/12 16:21:35 espie Exp $
 bin/designer
 bin/findtr
 bin/moc2
@@ -954,10 +954,7 @@ share/doc/qt2/FAQ
 share/doc/qt2/LICENSE.GPL
 share/doc/qt2/README
 share/doc/qt2/README.QT
-share/doc/qt2/changes-2.2.0
-share/doc/qt2/changes-2.2.1
-share/doc/qt2/changes-2.2.2
-share/doc/qt2/changes-2.2.3
+share/doc/qt2/changes-2.3.0
 @unexec echo "Please remove %D/lib/qt2/man from /etc/man.conf manually if needed"
 %%SHARED%%
 @dirrm share/doc/qt2

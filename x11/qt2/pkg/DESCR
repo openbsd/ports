@@ -5,3 +5,7 @@ or on the web (${HOMEPAGE}).
 
 There is also a qt2-examples package, that contains a tutorial and 
 simple example programs (source + binaries).
+
+Available flavor:
+gl
+	includes limited OpenGL support. Not actually required for kde2.
