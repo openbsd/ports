@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/01/29 22:02:18 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/29 22:17:09 pvalchev Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 
 # Requires existing JDK 1.3 to build
@@ -90,7 +90,7 @@ FETCH_MANUALLY+="and BSD patches:"
 FETCH_MANUALLY+="    ${file}"
 .endfor
 FETCH_MANUALLY+="from http://www.sun.com/software/java2/download.html"
-FETCH_MANUALLY+="and http://www.eyesbeyond.com/freebsddom/java/jdk.html,"
+FETCH_MANUALLY+="and http://www.eyesbeyond.com/freebsddom/java/jdk13.html,"
 FETCH_MANUALLY+="place it in ${FULLDISTDIR} and then run make again."
 
 JDKHOME=		jdk-${V}
