@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_codeconv_c,v 1.1 2003/01/17 12:04:28 couderc Exp $
+--- src/codeconv.c.orig	Thu Jan 16 04:09:46 2003
++++ src/codeconv.c	Fri Jan 17 13:47:33 2003
+@@ -705,7 +705,7 @@ gchar *conv_iconv_strdup(const gchar *in
+ 	outbuf_p = outbuf;
+ 	out_left = out_size;
+ 
+-	while ((n_conv = iconv(cd, (gchar **)&inbuf_p, &in_left,
++	while ((n_conv = iconv(cd, (const char **) &inbuf_p, &in_left,
+ 			       &outbuf_p, &out_left)) < 0) {
+ 		if (EILSEQ == errno) {
+ 			*outbuf_p = '\0';

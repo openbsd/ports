@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_inc_c,v 1.1 2003/01/17 12:04:28 couderc Exp $
+--- src/inc.c.orig	Fri Jan 17 13:43:36 2003
++++ src/inc.c	Fri Jan 17 13:44:04 2003
+@@ -76,7 +76,9 @@ static GdkBitmap *errorxpmmask;
+ static GdkPixmap *okxpm;
+ static GdkBitmap *okxpmmask;
+ 
+-#define MSGBUFSIZE	8192
++#ifndef MSGBUFSIZE
++#  define MSGBUFSIZE	8192
++#endif
+ 
+ static void inc_finished		(MainWindow		*mainwin,
+ 					 gboolean		 new_messages);
