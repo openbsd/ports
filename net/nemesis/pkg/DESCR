@@ -1,0 +1,5 @@
+Nemesis is a command line, portable "human IP stack". It can be
+useful for easy injection of packet streams from simple shell
+scripts. It supports 8 protocols (ARP, DNS, ICMP, IGMP, OSPF,
+RIP, TCP, UDP), and packets can be injected on either Layer 2 or
+Layer 3.
