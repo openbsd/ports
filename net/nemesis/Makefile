@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/02/03 06:38:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2003/03/27 17:41:26 pvalchev Exp $
 
 COMMENT=	"Command line arbitrary packet builder"
 
@@ -7,11 +7,11 @@ CATEGORIES=	net security
 MASTER_SITES=	http://jeff.wwti.com/nemesis/ \
 		http://www.packetfactory.net/projects/nemesis/
 
-HOMEPAGE=	http://jeff.wwti.com/nemesis/
+HOMEPAGE=	http://cerberus.sourcefire.com/~jeff/nemesis/
 
 LIB_DEPENDS=	net::net/libnet
 
-MAINTAINER=	Mark Grimes <mark@stateful.net>
+MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
