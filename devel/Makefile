@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2001/07/12 09:06:18 kevlo Exp $
+# $OpenBSD: Makefile,v 1.89 2001/07/16 16:45:24 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -94,6 +94,7 @@
      SUBDIR += rats
      SUBDIR += sdl
      SUBDIR += sdl,oss,esd
+     SUBDIR += sdlmm
      SUBDIR += sdl-image
      SUBDIR += sdl-mixer
      SUBDIR += sdl-net
