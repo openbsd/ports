@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 13:26:51 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/01/11 00:21:14 naddy Exp $
 
 DISTNAME=	ghostscript-6.01
 CATEGORIES=	print lang
@@ -44,9 +44,9 @@ BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 		INSTALL_DATA='${INSTALL_DATA}' \
 		SHARE_LIBPNG=1 \
 		SHARE_ZLIB=1 \
+		CFLAGS_STANDARD='${CFLAGS}' \
 		XLDFLAGS=-L${PREFIX}/lib \
 		XINCLUDE=-I${X11BASE}/include \
-		XCFLAGS='${CFLAGS}' \
 		XLIBS='Xt SM ICE Xext X11' \
 		XLIBDIRS=-L${X11BASE}/lib \
 		GLOBJDIR=./objects \
