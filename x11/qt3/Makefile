@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/05 12:40:52 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/05 14:46:32 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt3
@@ -140,9 +140,9 @@ pre-build:
 	@echo ""
 
 LIBRARIES=qt.so.3.2 editor.so.1.0 qui.so.1.0
-PROGRAMS3=moc findtr qt20fix qtrename140
-PROGRAMS=assistant designer linguist lrelease lupdate qm2ts \
-	qtconfig uic qmake
+PROGRAMS3=moc findtr qt20fix qtrename140 uic designer
+PROGRAMS=assistant linguist lrelease lupdate qm2ts \
+	qtconfig qmake
 
 do-install:
 	${INSTALL_DATA_DIR} ${QT_INCDIR}
