@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/02/15 05:05:14 turan Exp $
+# $OpenBSD: Makefile,v 1.17 2000/03/04 18:35:53 espie Exp $
 
 DISTNAME=	zsh-3.0.7
 CATEGORIES=	shells
@@ -11,6 +11,7 @@ MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://ftp.ips.oz.au/pub/packages/zsh/ \
 		ftp://ftp.uit.no/pub/unix/shells/zsh/
 
+BROKEN=		"Documentation does not agree with texinfo-4.0"
 MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		BSD
