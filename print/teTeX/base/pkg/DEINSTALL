@@ -1,11 +1,12 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2003/02/18 16:04:50 sturm Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/04/04 21:19:23 sturm Exp $
 #
 # tetex base de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG=${SYSCONFDIR}/tetex.cfg
 TEXMFCNF=$PREFIX/share/texmf/web2c/texmf.cnf
 
 if [ -f $TEXMFCNF ]; then
@@ -17,10 +18,11 @@ if [ -f $TEXMFCNF ]; then
     echo "+---------------"
     echo "| Your $TEXMFCNF file has been"
     echo "| preserved as $TEXMFCNF.old."
-    echo "| To completely deinstall the $1 package you need to"
-    echo "| perform this step as root:"
+    echo "| To completely deinstall the $1 package you"
+    echo "| need to perform these steps as root:"
     echo "|"
     echo "|           rm -f $TEXMFCNF.old"
+    echo "|           rm -f $CONFIG"
     echo "|"
     echo "| Do not do this if you plan on re-installing $1"
     echo "| at some future time."

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2003/02/19 12:14:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.25 2003/04/04 21:19:23 sturm Exp $
 
 COMMENT=	"TeX distribution, executables"
 
-VERSION=	2.0.1
+VERSION=	2.0.2
 DISTNAME=	tetex-base-${VERSION}
-PKGNAME=	${DISTNAME:S/tetex-/teTeX_/}p0
+PKGNAME=	${DISTNAME:S/tetex-/teTeX_/}
 CATEGORIES=	print
 
 DISTFILES=	tetex-src-${VERSION}.tar.gz
@@ -30,31 +30,21 @@ CONFIGURE_ARGS= --disable-multiplatform \
 		--with-pnglib-include=${PREFIX}/include/libpng \
 		--with-system-zlib
 
-FLAVORS=	a4 no_x11
+FLAVORS=	no_x11
 FLAVOR?= 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=--without-x
-.	if ${FLAVOR:L:Ma4}
-CONFIGURE_ARGS+=--enable-a4
-.	else
-CONFIGURE_ARGS+=--disable-a4
-.	endif
 .else
 CONFIGURE_ARGS+=--with-system-t1lib \
 		--with-t1lib-libdir=${PREFIX}/lib \
 		--with-t1lib-include=${PREFIX}/include
 LIB_DEPENDS+=	t1.4::devel/t1lib
-USE_X11=	Yes
-.	if ${FLAVOR:L:Ma4}
-CONFIGURE_ARGS+=--enable-a4
-RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu,a4
-.	else
-CONFIGURE_ARGS+=--disable-a4
 RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
-.	endif
+USE_X11=	Yes
 .endif
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/base/src/}
+TETEX_EXDIR=	${PREFIX}/share/examples/teTeX
 
 # find texmf after fake
 REGRESS_FLAGS=	DESTDIR="${WRKINST}"
@@ -69,6 +59,13 @@ pre-fake:
 	lndir ${TRUEPREFIX}/share/texmf ${TEXMF_DIR}
 	# mktexlsr is too smart for its own good
 	rm ${TEXMF_DIR}/ls-R
+
+post-install:
+	${INSTALL_DATA_DIR} ${TETEX_EXDIR}
+	${INSTALL_DATA} files/tetex.cfg ${TETEX_EXDIR}/tetex.cfg
+	${INSTALL_SCRIPT} files/tetex_setup.sh ${PREFIX}/bin/tetex_setup
+	@perl -i -pe "s#%%SYSCONFDIR%%#${SYSCONFDIR}#;" \
+		-e "s#%%PREFIX%%#${TRUEPREFIX}#;" ${PREFIX}/bin/tetex_setup
 
 # need the texmf part visible...
 pre-regress: fake

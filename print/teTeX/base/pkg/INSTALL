@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2003/02/18 16:04:50 sturm Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/04/04 21:19:23 sturm Exp $
 #
 # Pre/post-installation setup of tetex base
 
@@ -8,6 +8,7 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG=${SYSCONFDIR}/tetex.cfg
 TEXMFCNF=$PREFIX/share/texmf/web2c/texmf.cnf
 
 do_prenotice()
@@ -16,27 +17,40 @@ do_prenotice()
     echo "+---------------"
 }
 
-do_notice()
-{
-    echo "| Run $PREFIX/bin/texconfig to adjust for your local"
-    echo "| environment."
-    echo "+---------------"
-    echo
-}
-
-do_install()
+do_texmf_cnf_install()
 {
     mv $TEXMFCNF $TEXMFCNF.dist
     mv $TEXMFCNF.old $TEXMFCNF
-    echo
-    echo "+---------------"
-    echo "| The existing $TEXMFCNF.old has been"
-    echo "| installed as $TEXMFCNF. You may want"
-    echo "| to compare it to the distribution's file"
+    echo "| The existing $TEXMFCNF.old has"
+    echo "| been installed as $TEXMFCNF."
+    echo "| You may want to compare it to the distribution's file"
     echo "| $TEXMFCNF.dist and update your"
     echo "| configuration as needed."
     echo "|"
 }
+
+do_tetex_cfg_install()
+{
+    cp -p $PREFIX/share/examples/teTeX/tetex.cfg $CONFIG
+}
+
+do_tetex_cfg_notice()
+{
+    echo "| The existing configuration file $CONFIG has not been"
+    echo "| updated. You may want to compare it to the distribution's"
+    echo "| file $PREFIX/share/examples/teTeX/tetex.cfg and update"
+    echo "| your configuration as needed."
+    echo "|"
+}
+
+do_notice()
+{
+    echo "| Run $PREFIX/bin/texconfig to adjust for your local"
+    echo "| environment or see $CONFIG."
+    echo "+---------------"
+    echo
+}
+
 
 # verify proper execution
 #
@@ -52,10 +66,14 @@ case $2 in
 	: nothing to pre-install for this port
 	;;
     POST-INSTALL)
+	do_prenotice
 	if [ -f $TEXMFCNF.old ]; then
-	    do_install $1
+	    do_texmf_cnf_install $1
+	fi
+	if [ -f $CONFIG ]; then
+	    do_tetex_cfg_notice
 	else
-	    do_prenotice
+	    do_tetex_cfg_install
 	fi
 	do_notice
 	;;

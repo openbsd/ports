@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2003/02/19 11:42:50 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.12 2003/04/04 21:19:23 sturm Exp $
 @pkgcfl dvipdfm-*
 !%%no_x11%%
 @unexec install-info --delete --info-dir=%D/info %D/info/dvips.info
@@ -110,12 +110,13 @@ bin/pooltype
 bin/ps2frag
 bin/ps2pk
 bin/pslatex
-bin/readlink
+@comment bin/readlink
 bin/rubibtex
 bin/rumakeindex
 @comment bin/t1mapper
 bin/tangle
 bin/tcdialog
+bin/tetex_setup
 bin/tex
 bin/texconfig
 bin/texdoc
@@ -250,9 +251,11 @@ man/man1/inimf.1
 man/man1/inimpost.1
 man/man1/iniomega.1
 man/man1/initex.1
+man/man1/kpsepath.1
 man/man1/kpsestat.1
 man/man1/kpsetool.1
 man/man1/kpsewhich.1
+man/man1/kpsexpand.1
 man/man1/lambda.1
 man/man1/latex.1
 man/man1/mag.1
@@ -284,7 +287,7 @@ man/man1/pooltype.1
 man/man1/ps2frag.1
 man/man1/ps2pk.1
 man/man1/pslatex.1
-man/man1/readlink.1
+@comment man/man1/readlink.1
 man/man1/rubibtex.1
 man/man1/rumakeindex.1
 @comment man/man1/t1mapper.1
@@ -317,6 +320,7 @@ man/man5/fmtutil.cnf.5
 man/man8/fmtutil.8
 man/man8/mkfontdesc.8
 man/man8/texlinks.8
+share/examples/teTeX/tetex.cfg
 share/texmf/doc/tetex/TETEXDOC.dvi
 share/texmf/doc/tetex/TETEXDOC.pdf
 share/texmf/doc/tetex/TETEXDOC.ps
@@ -365,7 +369,6 @@ share/texmf/web2c/mf.base
 share/texmf/web2c/mf.log
 share/texmf/web2c/mf.pool
 @comment share/texmf/web2c/mfw.base
-@comment share/texmf/web2c/mfw.log
 share/texmf/web2c/mktex.opt
 share/texmf/web2c/mktexdir
 share/texmf/web2c/mktexdir.opt
@@ -410,6 +413,7 @@ share/texmf/web2c/tex.pool
 @comment no checksum
 share/texmf/web2c/texmf.cnf
 @comment share/texmf/xdvi/xdvi.cfg
+@dirrm share/examples/teTeX
 @dirrm share/texmf/texconfig/x
 @dirrm share/texmf/texconfig/v
 @dirrm share/texmf/texconfig/g
