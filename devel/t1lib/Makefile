@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2003/11/14 23:47:01 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2004/04/08 06:21:19 brad Exp $
 
 COMMENT=	"Type 1 rasterizer library for UNIX/X11"
 
-DISTNAME=	t1lib-5.0.0
+DISTNAME=	t1lib-5.0.2
 CATEGORIES=	devel textproc
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=libs/graphics/}
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-# work around optimizer bug in gcc 2.95/3.2
+# work around optimizer bug in gcc 3.3.2 (in-tree)
 .if ${MACHINE_ARCH} == "sparc64"
 PATCH_LIST=	gcc-patch-* patch-*
 .endif
