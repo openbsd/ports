@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/30 08:39:49 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2004/06/16 10:40:44 xsa Exp $
 
 COMMENT=	"Apache module for finding the country of web requests"
 
@@ -12,8 +12,6 @@ CATEGORIES=	www
 
 HOMEPAGE=	http://www.maxmind.com/app/mod_geoip
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/mod_geoip/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # Apache Software License
 PERMIT_PACKAGE_CDROM=	Yes
