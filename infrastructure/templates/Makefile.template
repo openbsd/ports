@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.8 2000/02/12 08:08:58 turan Exp $
+# $OpenBSD: Makefile.template,v 1.9 2000/02/12 09:24:30 turan Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -63,6 +63,13 @@ MAINTAINER=		ports@openbsd.org
 #         NOTE: A LICENSE THAT ALLOWS COPYING/REDISTRIBUTION MAY STILL
 #         BE RESTRICTIVE WITH RESPECT TO USE OF THE BINARY AND/OR
 #         SOURCE CODE.  PLEASE READ ALL LICENSES/COPYRIGHTS CAREFULLY.
+#
+# When you determine the license type, make sure to look at ALL distfiles.
+# Every distfile can have a different license.  The PERMIT_* values are
+# determined by the most restrictive license.  If you have two licenses
+# that are in conflict, set LICENSE_TYPE="lic1,lic2" and set the appropriate
+# PERMIT_* values to no.  NONE licenses can be ignored if the licenses 
+# differ.  Make SURE you get these values right.
 
 LICENSE_TYPE=		"License type"
 PERMIT_PKG_CDROM=	"YES|'Reason if NO'"
