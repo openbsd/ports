@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2002/12/08 20:34:41 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2004/10/23 15:54:42 robert Exp $
 
 COMMENT=		"Extracts files from Microsoft CAB archives"
 
 # 
 # What port/package will be created
 #
-DISTNAME=		cabextract-0.6
+DISTNAME=		cabextract-1.1
 CATEGORIES=		archivers
 
 HOMEPAGE=		http://www.kyz.uklinux.net/cabextract.php3
