@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 1999/12/10 14:34:22 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/02/11 00:37:38 espie Exp $
 
 DISTNAME=	tcsh-6.09
 .if defined(STATIC) && ${STATIC:U} == YES
@@ -8,6 +8,7 @@ PKGNAME=	tcsh-6.09.00
 .endif
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/
+NEED_VERSION=	1.191
 
 MAINTAINER=	brad@openbsd.org
 
@@ -19,7 +20,7 @@ CONFIGURE_ENV+=	LDFLAGS=-static
 .endif
 
 ALL_TARGET=	all catalogs
-WRKSRC=	${WRKDIR}/tcsh-6.09.00
+WRKDIST=	${WRKDIR}/tcsh-6.09.00
 
 do-install:
 	@mkdir -p ${PREFIX}/share/nls/el_GR.ISO_8859-7

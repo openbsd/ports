@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/07/12 12:02:26 angelos Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:21 espie Exp $
 
 DISTNAME=       prc-tools.0.5.0
 PKGNAME=	prc-tools-0.5.0
@@ -7,12 +7,13 @@ MASTER_SITES=   ftp://ryeham.ee.ryerson.ca/pub/PalmOS/ \
 		${MASTER_SITE_GNU}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		binutils-2.7.tar.gz gdb-4.16.tar.gz gcc-2.7.2.2.tar.gz
+NEED_VERSION=	1.191
 
 MAINTAINER=     angelos@openbsd.org
 
 # install things in ${LOCALBASE}/pilot to avoid conflicts
 PREFIX=		${LOCALBASE}/pilot
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKDIST=	${WRKDIR}/${PKGNAME}
 
 USE_PERL5=	yes
 ALL_TARGET=	gnutools all

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2000/01/23 07:06:15 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:28 espie Exp $
 
 DISTNAME=	elm-2.4ME+66
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ozone.fmi.fi/KEH/
+NEED_VERSION=	1.191
 
 MAINTAINER=	pjanzen@openbsd.org
 
@@ -12,7 +13,7 @@ CONFIGURE_ARGS+= -S -d
 CONFIGURE_ENV+=	PREFIX="${PREFIX}"
 SCRIPTS_ENV=	OPSYS="${OPSYS}"
 
-WRKSRC=	${WRKDIR}/elm2.4.ME+.66
+WRKDIST=	${WRKDIR}/elm2.4.ME+.66
 
 pre-configure:
 	@cp ${FILESDIR}/config.sh ${WRKSRC}

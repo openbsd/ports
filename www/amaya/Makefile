@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/07/30 22:14:51 rohee Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:39 espie Exp $
 #
 # Amaya, the W3C http://www.w3.org browser
 #
@@ -14,13 +14,13 @@ MAINTAINER	= rohee@OpenBSD.ORG
 MASTER_SITES	= ftp://ftp.w3.org/pub/amaya/ \
                   ftp://ftp-eu.w3.org/pub/amaya/
 
-NEED_VERSION	= 1.80
+NEED_VERSION=	1.191
 
 USE_MOTIF	= yes
 
 #SEPARATE_BUILD=	concurrent
 
-WRKSRC		= ${WRKDIR}/Amaya
+WRKDIST= 	${WRKDIR}/Amaya
 WRKBUILD	= ${WRKSRC}/obj
 
 #USE_X11		= yes # not used :-(, all goes in /usr/local

@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 1999/09/06 16:26:49 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/11 00:37:29 espie Exp $
 
 DISTNAME=	mm2.7
 PKGNAME=	metamail-2.7
 CATEGORIES=	mail
 MASTER_SITES=	ftp://thumper.bellcore.com/pub/nsb/
 EXTRACT_SUFX=	.tar.Z
+NEED_VERSION=	1.191
 
 MAINTAINER=	marc@openbsd.org
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKDIST=		${WRKDIR}/${DISTNAME}/src
 
 pre-install:
 	@(cd ${WRKSRC}/bin && ${RM} -f *.orig)

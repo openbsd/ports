@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 1999/12/06 13:47:34 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:17 espie Exp $
 # Original from: Bruno Rohée
 
 DISTNAME=	gqmpeg-0.6.3.src
 PKGNAME=	gqmpeg-0.6.3
 CATEGORIES=     audio
 MASTER_SITES=	http://gqview.netpedia.net/
+NEED_VERSION=	1.191
 
 HOMEPAGE=	http://gqview.netpedia.net/mpeg-over.html
 
@@ -19,7 +20,7 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 NO_CONFIGURE=	yes
 
 ALL_TARGET=	gqmpeg
-WRKSRC=	${WRKDIR}/${PKGNAME}
+WRKDIST=	${WRKDIR}/${PKGNAME}
 
 DOCS=	COPYING FAQ README SKIN-SPECS ChangeLog
 

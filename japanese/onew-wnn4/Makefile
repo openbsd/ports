@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/11/22 00:13:46 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:27 espie Exp $
 #
 
 DISTNAME=	jvim2.0r+onew2.2.10
@@ -8,13 +8,14 @@ MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
 
 MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
+NEED_VERSION=	1.191
 
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 LIB_DEPENDS=	${LIB_INPUT_METHOD}
 
 PATCHDIR=	${.CURDIR}/../onew-wnn4/patches
 FILESDIR=	${.CURDIR}/../onew-wnn4/files
-WRKSRC=		${WRKDIR}/onew
+WRKDIST=		${WRKDIR}/onew
 # A value 'all' must not be set to TARGET.
 ALL_TARGET=	
 

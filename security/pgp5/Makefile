@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/12/24 06:22:13 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/11 00:37:37 espie Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.es.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.se.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.ch.pgpi.com/pub/pgp/5.0/unix/
+NEED_VERSION=	1.191
 
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 RESTRICTED=	"Crypto; export-controlled"
@@ -31,7 +32,7 @@ LIB_DEPENDS=	rsaref.2:${PORTSDIR}/security/rsaref
 CONFIGURE_ARGS=	--with-rsaref
 .endif
 
-WRKSRC=	${WRKDIR}/pgp50i/src
+WRKDIST=	${WRKDIR}/pgp50i/src
 
 pre-fetch:
 .if !defined(NO_WARNINGS)

@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 1999/12/17 17:56:30 ho Exp $
+# $OpenBSD: Makefile,v 1.11 2000/02/11 00:37:32 espie Exp $
 
 DISTNAME=	bind-openbsd-8.2.2-P6-19991217
 PKGNAME=	bind-8.2.2-P6
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.gsnig.net/pub/openbsd-bind/ \
 		ftp://ftp.sekure.net/pub/gsnig/openbsd-bind/
+NEED_VERSION=	1.191
 
 MAINTAINER=	ho@openbsd.org,jakob@openbsd.org
 
-WRKSRC=		${WRKDIR}/named
+WRKDIST=		${WRKDIR}/named
 PREFIX=		/
 NO_MTREE=	yes
 NO_CONFIGURE=	yes

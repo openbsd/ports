@@ -2,19 +2,20 @@
 # Date created:         28 Dec 1999
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/12/28 11:22:00 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:38 espie Exp $
 #
 
 DISTNAME=       apc-upsd
 PKGNAME=        apc-upsd
 CATEGORIES=     sysutils
 MASTER_SITES=   http://www.knienieder.com/software/
+NEED_VERSION=	1.191
 
 MAINTAINER=     kevlo@openbsd.org
 
 EXTRACT_SUFX=   .tgz
 
-WRKSRC=         ${WRKDIR}/${PKGNAME}/src
+WRKDIST=         ${WRKDIR}/${PKGNAME}/src
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/apc-upsd ${PREFIX}/sbin

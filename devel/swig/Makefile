@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/10/28 10:06:07 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/11 00:37:21 espie Exp $
 
 BROKEN=		c++ syntax errors
 
@@ -11,8 +11,9 @@ CATEGORIES=	devel
 MAINTAINER=	ports@openbsd.org
 
 MASTER_SITES=	ftp://ftp.cs.utah.edu/pub/beazley/SWIG/
+NEED_VERSION=	1.191
 
-WRKSRC=		${WRKDIR}/SWIG1.1
+WRKDIST=	${WRKDIR}/SWIG1.1
 GNU_CONFIGURE=	yes
 
 post-build:

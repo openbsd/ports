@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 1999/10/26 04:56:37 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:28 espie Exp $
 
 BROKEN=		bad packing lists
 
 DISTNAME=	faces-1.6.1
 CATEGORIES=	mail
 
-NEED_VERSION=	1.64
+NEED_VERSION=	1.191
 NO_CDROM=	"NOFEE:	Can not sell"
 
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/ \
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	angelos@openbsd.org
 
-WRKSRC=		$(WRKDIR)/faces
+WRKDIST=		$(WRKDIR)/faces
 MAN1=		compface.1 faces.1 face_update.1
 MAN3=		compface.3 
 

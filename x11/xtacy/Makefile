@@ -3,7 +3,7 @@
 # Date created:         December 21, 1997
 # Whom:                 Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/01/24 22:02:17 don Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:40 espie Exp $
 #
 
 DISTNAME=	Xtacy113
@@ -12,13 +12,14 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://sidehack.gweep.net/pub/gweep_progs/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/toys
+NEED_VERSION=	1.191
 
 MAINTAINER=	don@OpenBSD.ORG
 
 MAN1=	xtacy.1
 
 USE_X11=	yes
-WRKSRC=		${WRKDIR}/Xtacy
+WRKDIST=	${WRKDIR}/Xtacy
 ALL_TARGET=	xtacy
 
 pre-install:

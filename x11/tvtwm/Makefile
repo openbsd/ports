@@ -4,7 +4,7 @@
 # Whom:                 gpalmer
 #
 # $FreeBSD: ports/x11-wm/tvtwm/Makefile,v 1.17 1999/08/31 06:53:15 mharo Exp $
-# $OpenBSD: Makefile,v 1.1.1.1 1999/11/08 14:18:36 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:39 espie Exp $
 
 PKGNAME=	tvtwm-pl11
 
@@ -16,8 +16,9 @@ MAINTAINER=	dugsong@monkey.org
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	window_managers
+NEED_VERSION=	1.191
 
-WRKSRC=		${WRKDIR}/tvtwm
+WRKDIST=	${WRKDIR}/tvtwm
 
 USE_IMAKE=	yes
 

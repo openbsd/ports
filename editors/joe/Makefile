@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 1999/08/30 15:07:17 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2000/02/11 00:37:22 espie Exp $
 
 DISTNAME=	joe2.8
 PKGNAME=	joe-2.8
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.std.com/src/editors/
 EXTRACT_SUFX=	.tar.Z
+NEED_VERSION=	1.191
 
 MAINTAINER=	ports@openbsd.org
 
-WRKSRC=		${WRKDIR}/joe
+WRKDIST=	${WRKDIR}/joe
 ALL_TARGET=	joe
 
 MAKE_ENV+=	SYS_JOERC="/etc/joe" TERMINFO="1"

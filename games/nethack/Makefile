@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/02 17:02:40 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/11 00:37:23 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 DISTNAME=	nethack-3.2.3
@@ -6,17 +6,16 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/oldver/3.2.2/src/ \
 		ftp://ftp.uu.net/pub/games/nethack/sources/ \
 		${MASTER_SITE_GNU}
+NEED_VERSION=	1.191
 
 DISTFILES=	nethack-3.2.2.tar.gz
-WRKSRC=${WRKDIR}/nethack-3.2.2
+WRKDIST=${WRKDIR}/nethack-3.2.2
 
 MASTER_SITES0=	ftp://ftp.nethack.org/pub/nethack/oldver/3.2.3/src/
 PATCHFILES=nh-3.2.2-3.2.3.diff:0
 
 
 MASTER_SITE_SUBDIR= nethack
-
-NEED_VERSION=	1.175
 
 MAINTAINER=	espie@openbsd.org
 

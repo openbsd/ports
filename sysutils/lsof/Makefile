@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/02/01 22:28:50 angelos Exp $
+# $OpenBSD: Makefile,v 1.20 2000/02/11 00:37:38 espie Exp $
 
 DISTNAME=	lsof_4.49B.n+obsd
 PKGNAME=	lsof-4.49B
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
 
 NO_PACKAGE=	"compile from source to set proper options"
 
-NEED_VERSION=	1.114
+NEED_VERSION=	1.191
 
 MAINTAINER=     angelos@openbsd.org
 
@@ -18,7 +18,7 @@ CONFIGURE_SCRIPT= Configure
 CONFIGURE_ARGS=	-n openbsd
 
 SRCBALL_NAME=	${DISTNAME:S/_W$//}
-WRKSRC=		${WRKDIR}/${SRCBALL_NAME}
+WRKDIST=	${WRKDIR}/${SRCBALL_NAME}
 
 .if ( ${MACHINE_ARCH} == "sparc" )
 IS_INTERACTIVE=	yes

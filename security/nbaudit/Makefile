@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 1999/09/20 13:26:08 form Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:36 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/02/14 04:10:30 obrien Exp $
 
 DISTNAME=	nat10
 PKGNAME=	nbaudit-1.0
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.auscert.org.au/pub/coast/mirrors/ftp.secnet.com/tools/nat10/
+NEED_VERSION=	1.191
 
 MAINTAINER=	ports@openbsd.org
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKDIST=	${WRKDIR}/${DISTNAME}
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/nat ${PREFIX}/bin/nbaudit

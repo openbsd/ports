@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 1999/12/21 00:17:56 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/11 00:37:32 espie Exp $
 
 DISTNAME=	libnet-1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
 EXTRACT_SUFX=	.tgz
+NEED_VERSION=	1.191
 
 MAINTAINER=	dugsong@monkey.org
 
 GNU_CONFIGURE=	yes
 
-WRKSRC=	${WRKDIR}/Libnet-1.0
+WRKDIST=	${WRKDIR}/Libnet-1.0
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/01/07 18:09:36 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/11 00:37:28 espie Exp $
 # $FreeBSD: Makefile,v 1.26 2000/01/05 07:11:48 jseger Exp $
 
 DISTNAME=	tcl8.2.3
@@ -6,8 +6,7 @@ PKGNAME=	tcl-8.2.3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR= tcl8_2
-
-NEED_VERSION=	1.92
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -21,7 +20,7 @@ CONFIGURE_ARGS+= --disable-load
 .endif
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 
-WRKSRC=	${WRKDIR}/${DISTNAME}/unix
+WRKDIST=	${WRKDIR}/${DISTNAME}/unix
 
 post-install:
 	@${LDCONFIG} -m ${PREFIX}/lib

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 1999/09/23 20:32:41 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/11 00:37:23 espie Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
 DISTNAME=	adom-g14
 CATEGORIES=	games
 MASTER_SITES=	http://www.adom.de/adom/
 DISTFILES=	adom-099g14-elf.tar.gz
+NEED_VERSION=	1.191
 
 ONLY_FOR_ARCHS=	i386
 
@@ -14,7 +15,7 @@ NO_PACKAGE=	"prevented by license"
 
 MAINTAINER=	espie@openbsd.org
 
-WRKSRC=		${WRKDIR}/adom
+WRKDIST=	${WRKDIR}/adom
 
 ADOM_DOC=	${PREFIX}/share/doc/adom
 

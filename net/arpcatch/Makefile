@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/01/21 15:39:59 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:31 espie Exp $
 
 DISTNAME=	arpcatch
 PKGNAME=	arpcatch
 CATEGORIES=	net
 MASTER_SITES=	http://www.enteract.com/~tqbf/
+NEED_VERSION=	1.191
 
 MAINTAINER=	ports@openbsd.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKDIST=		${WRKDIR}/${PKGNAME}
 
 ALL_TARGET=
 INSTALL_TARGET=	install

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/11/03 01:20:47 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:35 espie Exp $
 
 BROKEN=		does not install cleanly, major fixups required.
 
@@ -7,8 +7,9 @@ PKGNAME=	cnews-cr.g
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.zoo.toronto.edu/pub/
 EXTRACT_SUFX=	.tar.Z
+NEED_VERSION=	1.191
 
-WRKSRC=		${WRKDIR}
+WRKDIST=	${WRKDIR}
 MAKEFILE=	makefile
 MAN1=		checknews.1cn inews.1cn postnews.1cn readnews.1cn
 MAN5=		controlperm.5 news.5 newsctl.5 newsdb.5 newsoverview.5 \

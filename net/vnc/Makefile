@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/04/18 21:09:53 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:34 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1999/02/18 16:05:47 steve Exp $
 
 DISTNAME=       vnc-3.3.2r3_unixsrc
@@ -6,13 +6,14 @@ PKGNAME=        vnc-3.3.2r3
 CATEGORIES=	net
 MASTER_SITES=   http://www.uk.research.att.com/vnc/dist/
 DISTFILES=	vnc-3.3.2r3_unixsrc.tgz vnc-3.3.2_doc.tgz
+NEED_VERSION=	1.191
 
 MAINTAINER=	brad@openbsd.org
 
 EXTRACT_ONLY=	vnc-3.3.2r3_unixsrc.tgz
 IGNOREFILES=	${DISTFILES}
 
-WRKSRC=		${WRKDIR}/vnc_unixsrc
+WRKDIST=		${WRKDIR}/vnc_unixsrc
 
 USE_IMAKE=	yes
 

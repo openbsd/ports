@@ -3,7 +3,7 @@
 # Date created:		12 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/12/05 18:09:08 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:33 espie Exp $
 
 PKGNAME=	nsping-0.8
 
@@ -12,10 +12,11 @@ CATEGORIES=	net
 DISTNAME=	nsping
 
 MASTER_SITES=	http://www.enteract.com/~tqbf/
+NEED_VERSION=	1.191
 
 MAINTAINER=	dugsong@monkey.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKDIST=		${WRKDIR}/${PKGNAME}
 
 NO_CONFIGURE=	yes
 

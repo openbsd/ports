@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/01 02:57:57 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:19 espie Exp $
 
 DISTNAME=       xcept-2.1.2
 CATEGORIES=	comms
@@ -6,7 +6,8 @@ CATEGORIES=	comms
 MAINTAINER=     ports@openbsd.org
 
 MASTER_SITES=   ${MASTER_SITE_LOCAL}
+NEED_VERSION=	1.191
 
-WRKSRC=		${WRKDIR}/XCept-2.1.2
+WRKDIST=		${WRKDIR}/XCept-2.1.2
 
 .include <bsd.port.mk>

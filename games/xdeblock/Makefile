@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.4 1999/10/02 19:45:48 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:24 espie Exp $
 
 DISTNAME=	xdeblock
 PKGNAME=	xdeblock-1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://www.vector.co.jp/pack/unix/game/action/block/
 EXTRACT_SUFX=	.tgz
+NEED_VERSION=	1.191
 
 NEED_VERSION=	1.114
 
 MAINTAINER=	angelos@openbsd.org
 
 USE_IMAKE=	yes
-WRKSRC=		${WRKDIR}/xdeblo_v1.0
+WRKDIST=	${WRKDIR}/xdeblo_v1.0
 NO_INSTALL_MANPAGES=	yes
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/03/30 06:01:54 marc Exp $ 
+# $OpenBSD: Makefile,v 1.3 2000/02/11 00:37:34 espie Exp $ 
 # Id: Makefile,v 1.7 1996/11/18 11:36:43 asami Exp $
 #
 
@@ -10,10 +10,11 @@ MAINTAINER=	ports@OpenBSD.ORG
 
 MASTER_SITES=   ftp://princeton.edu/pub/tintin++/dist/
 EXTRACT_SUFX=   .tar.Z
+NEED_VERSION=	1.191
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
-WRKSRC=         ${WRKDIR}/tintin++/src
+WRKDIST=         ${WRKDIR}/tintin++/src
 
 .include <bsd.port.mk>

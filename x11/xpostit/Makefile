@@ -3,7 +3,7 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/01/24 21:51:54 don Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:40 espie Exp $
 #
 
 DISTNAME=	xpostit3.3.1
@@ -16,10 +16,11 @@ CATEGORIES=	x11
 #
 MASTER_SITES=	ftp://ftp.hrz.th-darmstadt.de/pub/X11/R5contrib/
 EXTRACT_SUFX=	.tar.Z
+NEED_VERSION=	1.191
 
 MAINTAINER=	don@OpenBSD.ORG
 
 USE_IMAKE=	yes
-WRKSRC=		${WRKDIR}/xpostit
+WRKDIST=	${WRKDIR}/xpostit
 
 .include <bsd.port.mk>

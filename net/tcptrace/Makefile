@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/11/12 14:14:52 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:34 espie Exp $
 
 DISTNAME=	tcptrace.5.2.1
 PKGNAME=	tcptrace-5.2.1
 CATEGORIES=	net
 MASTER_SITES=	http://jarok.cs.ohiou.edu/software/tcptrace/files/5.2.1/
+NEED_VERSION=	1.191
 
 MAINTAINER=	jethro@dqc.org
 
 GNU_CONFIGURE=	yes
 
 ALL_TARGET=	tcptrace
-WRKSRC=	${WRKDIR}/tcptrace_5.2.1
+WRKDIST=	${WRKDIR}/tcptrace_5.2.1
 
 DOCFILES=	ARGS BUGS CHANGES COPYRIGHT FAQ README README.mailing_list \
 		README.modules README.tput_graphs WWW dot_tcptracerc.sample

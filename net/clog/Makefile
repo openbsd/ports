@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/09/10 22:44:27 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:32 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1997/11/05 11:39:40 obrien Exp $
 
 DISTNAME=	clog-1.6
@@ -8,9 +8,10 @@ MASTER_SITES=	ftp://ftp.cso.uiuc.edu/pub/security/coast/unix/clog/  \
 		ftp://ftp.ox.ac.uk/pub/comp/security/COAST/mirrors/ftp.saturn.net/clog/  \
 		ftp://ftp.rediris.es/mirror/coast/tools/unix/clog/
 
+NEED_VERSION=	1.191
 MAINTAINER=	ports@openbsd.org
 
-WRKSRC=		${WRKDIR}/clog
+WRKDIST=		${WRKDIR}/clog
 ALL_TARGET=	freebsd
 
 do-install:

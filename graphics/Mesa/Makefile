@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/11/14 23:02:39 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:25 espie Exp $
 # $FreeBSD: Makefile,v 1.30 1998/11/11 05:37:18 asami Exp $
 
 PKGNAME=	Mesa-3.0
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://iris.ssec.wisc.edu/pub/Mesa/ \
 		ftp://ftp.mesa3d.org/mesa/
 DISTFILES=	MesaLib-3.0.tar.gz MesaDemos-3.0.tar.gz
 
-NEEDED_VERSION=	1.64
+NEED_VERSION=	1.191
 
 HOMEPAGE=	http://www.mesa3d.org/
 
@@ -17,7 +17,7 @@ MAINTAINER=	brad@openbsd.org
 
 USE_X11=	yes
 
-WRKSRC=	${WRKDIR}/Mesa-3.0
+WRKDIST=	${WRKDIR}/Mesa-3.0
 
 SHLIB_VERSION=	3.0
 GLUT_VERSION=	3.7

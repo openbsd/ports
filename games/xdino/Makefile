@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/11/09 01:49:58 marc Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:25 espie Exp $
 #
 
 DISTNAME=        xdino-5.4.4
@@ -8,8 +8,9 @@ MAINTAINER=	angelos@openbsd.org
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles
+NEED_VERSION=	1.191
 
-WRKSRC=		${WRKDIR}/xdino
+WRKDIST=	${WRKDIR}/xdino
 USE_IMAKE=	yes
 
 post-install:

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2000/02/02 18:18:41 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/02/11 00:37:20 espie Exp $
 
 DISTNAME=	db-3.0.55
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/update/3.0.55/
+NEED_VERSION=	1.191
 
 MAINTAINER=	tacho@openbsd.org
 
@@ -18,7 +19,7 @@ IS_INTERACTIVE=	yes
 
 NO_PACKAGE=	"interactive port"
 
-WRKSRC=	${WRKDIR}/${DISTNAME}/build_unix
+WRKDIST=	${WRKDIR}/${DISTNAME}/build_unix
 
 EXAMPLES_C=	README ex_access.c ex_btrec.c ex_env.c ex_lock.c \
 		ex_mpool.c ex_thread.c ex_tpcb.c ex_tpcb.h

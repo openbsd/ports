@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2000/01/23 05:03:00 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/11 00:37:16 espie Exp $
 
 DISTNAME=	sattrack-3.1.6
 CATEGORIES=	astro
 MASTER_SITES=   ${MASTER_SITE_LOCAL}
+NEED_VERSION=	1.191
 
 NO_CDROM=	"COPY: may not be bundled"
 
 MAINTAINER=	angelos@openbsd.org
 
-WRKSRC=		${WRKDIR}/SatTrack-3.1.6/src
+WRKDIST=		${WRKDIR}/SatTrack-3.1.6/src
 
 post-patch:
 	@sed -e s,__PREFIX__,$(PREFIX), $(WRKSRC)/../run/getsts > $(WRKSRC)/../run/getsts.new

@@ -1,19 +1,20 @@
 #
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
-# $OpenBSD: Makefile,v 1.1.1.1 2000/01/06 02:46:03 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:33 espie Exp $
 #
 
 DISTNAME=	ns-src-2.1b5
 PKGNAME=	ns-2.1b5
 CATEGORIES=	net
 MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/vint/
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
 BUILD_DEPENDS=	${PREFIX}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
 RUN_DEPENDS=	${PREFIX}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKDIST=		${WRKDIR}/${PKGNAME}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl-ver=8.2 --with-tk-ver=8.2

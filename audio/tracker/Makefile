@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 1999/09/06 18:46:47 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/11 00:37:17 espie Exp $
 
 DISTNAME=	tracker-5.3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.uni-trier.de/pub/unix/audio/tracker/
+NEED_VERSION=	1.191
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	espie@openbsd.org
 
 USE_GMAKE=	yes
 
-WRKSRC=		${WRKDIR}/tracker
+WRKDIST=		${WRKDIR}/tracker
 PATCH_STRIP= 	-p2
 MAKE_FLAGS=	MACHINE=openbsd CC=$(CC) INSTALL="$(INSTALL)" \
 		INST_BIN_OPT="-c -s -m $(BINMODE) -o $(BINOWN) -g $(BINGRP)" \

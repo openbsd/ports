@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/01/03 02:22:42 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:33 espie Exp $
 #
 # OpenBSD port for pop3gwd.
 # Created: 1999/12/28 ianm@cit.nepean.uws.edu.au
@@ -11,6 +11,7 @@ MAINTAINER=		ianm@cit.nepean.uws.edu.au
 
 MASTER_SITES=	http://www.students.cs.unibo.it/~borgia/homepage/Software/
 EXTRACT_SUFX=		.tar.gz
+NEED_VERSION=	1.191
 
-WRKSRC=	${WRKDIR}/pop3gwd/
+WRKDIST=	${WRKDIR}/pop3gwd/
 .include <bsd.port.mk>

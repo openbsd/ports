@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 1999/11/12 06:35:13 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2000/02/11 00:37:23 espie Exp $
 
 DATE= 		990225
 DISTNAME= 	Wine-${DATE}
 PKGNAME=	wine-${DATE}
 CATEGORIES=	emulators x11
 
-NEED_VERSION= 1.73
+NEED_VERSION=	1.191
 
 ONLY_FOR_ARCHS= i386
 
@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	ALPHA/wine/development
 USE_X11	=	yes
 GNU_CONFIGURE=	yes
 
-WRKSRC=	${WRKDIR}/${PKGNAME}
+WRKDIST=	${WRKDIR}/${PKGNAME}
 
 post-configure:
 	cd ${WRKSRC} && make depend

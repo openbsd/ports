@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 1999/09/27 13:31:25 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:24 espie Exp $
 
 DISTNAME=	xchomp-pl1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_BACKUP}
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
-WRKSRC=		${WRKDIR}/xchomp
+WRKDIST=	${WRKDIR}/xchomp
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES= yes
 

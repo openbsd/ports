@@ -3,7 +3,7 @@
 # Date created:		Halloween 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.2 2000/01/06 18:56:57 dugsong Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/11 00:37:37 espie Exp $
 
 PKGNAME=	whisker-1.3.0a
 
@@ -12,10 +12,11 @@ CATEGORIES=	security
 MAINTAINER=	dugsong@monkey.org
 
 MASTER_SITES=	http://www.wiretrip.net/rfp/bins/whisker/
+NEED_VERSION=	1.191
 
 DISTNAME=	whisker
 
-WRKSRC=		${WRKDIR}/v1.3
+WRKDIST=	${WRKDIR}/v1.3
 
 NO_CONFIGURE=	yes
 

@@ -1,12 +1,12 @@
 # $FreeBSD: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
-# $OpenBSD: Makefile,v 1.4 1999/09/04 23:29:27 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:30 espie Exp $
 
 DISTNAME=	vatsrc-4.0b2
 PKGNAME=	vat-4.0b2
 CATEGORIES=	mbone
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 
-NEED_VERSION=	1.114
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -25,7 +25,7 @@ USE_X11=	yes
 USE_AUTOCONF=   yes
 CONFIGURE_ARGS= --with-gsm=${GSM_WORK}
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKDIST=		${WRKDIR}/${PKGNAME}
 
 post-install:
 	@${STRIP} ${PREFIX}/bin/vat

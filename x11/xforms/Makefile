@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/09 04:12:01 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:40 espie Exp $
 
 DISTNAME=	bxform-088
 PKGNAME=	xforms-0.88
-WRKSRC=		${WRKDIR}/xforms
+WRKDIST=	${WRKDIR}/xforms
 CATEGORIES=	x11
 MASTER_SITES=	ftp://bragg.phys.uwm.edu/pub/xforms/%SUBDIR%/
+NEED_VERSION=	1.191
 
 .if (${MACHINE_ARCH} == "hp300")
 XFORMS_ARCH=	m68k

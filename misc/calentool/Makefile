@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/09/30 16:27:52 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:30 espie Exp $
 #
 
 DISTNAME=	calentool-2.3
 PKGNAME=	calentool-2.3
 CATEGORIES=	misc x11
 MASTER_SITES = http://www.darwinsys.com/freeware/
+NEED_VERSION=	1.191
 
 NO_CDROM=   "NOFEE: can not sell"
 
 LIB_DEPENDS=    xview\\.3.*:${PORTSDIR}/x11/xview-lib
 
-WRKSRC     = ${WRKDIR}/xcalentool-2.3
+WRKDIST     = ${WRKDIR}/xcalentool-2.3
 
 USE_IMAKE=	yes
 USE_X11=	yes

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2000/01/13 22:25:34 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:22 espie Exp $
 
 VERS=		0.7.7
 PKGNAME=	abiword-${VERS}
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/Version-${VERS}/lf/
 DIST_SUBDIR=	${PKGNAME}
+NEED_VERSION=	1.191
 
 MAINTAINER=	dugsong@monkey.org
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	gtk.1.2:${PORTSDIR}/x11/gtk+ \
 		png.1.3:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
-WRKSRC=		${WRKDIR}/abi-${VERS}
+WRKDIST=		${WRKDIR}/abi-${VERS}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

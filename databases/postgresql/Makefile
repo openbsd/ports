@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 1999/12/09 02:57:07 form Exp $
+# $OpenBSD: Makefile,v 1.21 2000/02/11 00:37:20 espie Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 DISTNAME=	postgresql-6.5.3
 CATEGORIES=	databases
 
-NEED_VERSION=	1.64
+NEED_VERSION=	1.191
 
 MAINTAINER=	form@OpenBSD.ORG
 
@@ -75,7 +75,7 @@ CONFIGURE_ARGS= --prefix=${PREFIX}/pgsql \
 		--with-includes="${PREFIX}/include ${TCL_INCDIR} \
 		${TK_INCDIR}" ${WITH_TCL} --with-libraries=${PREFIX}/lib
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKDIST=		${WRKDIR}/${DISTNAME}/src
 
 PLIST=		${WRKDIR}/PLIST
 

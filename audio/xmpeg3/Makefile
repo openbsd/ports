@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 1999/09/06 19:08:36 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/11 00:37:18 espie Exp $
 
 DISTNAME=	xmp3_1.0.0
 PKGNAME=	xmpeg3-1.0
 CATEGORIES=	audio tk80
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/audio/mpeg/amp/
+NEED_VERSION=	1.191
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	angelos@openbsd.org
@@ -11,7 +12,7 @@ MAINTAINER=	angelos@openbsd.org
 RUN_DEPENDS=	amp:${PORTSDIR}/audio/amp \
 		wish8.0:${PORTSDIR}/x11/tk80
 
-WRKSRC=		${WRKDIR}/xmpeg3
+WRKDIST=		${WRKDIR}/xmpeg3
 NO_BUILD=	yes
 
 post-patch:

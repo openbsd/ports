@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2000/01/27 14:04:54 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:17 espie Exp $
 
 DISTNAME=	dist10
 PKGNAME=	mp3encode-1.10
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.sunet.se/pub/multimedia/Berkeley/mpeg2/conformance-bitstreams/audio/mpeg2/software/technical_report/
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 
-WRKSRC=	${WRKDIR}/${DISTNAME}/lsf/encoder
+WRKDIST=	${WRKDIR}/${DISTNAME}/lsf/encoder
 
 # Directories and extra files
 TABLE_LIB=	${PREFIX}/lib/mp3encode

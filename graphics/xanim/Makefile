@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 1999/10/29 10:28:22 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/11 00:37:26 espie Exp $
 
 CDROM=        "NOFEE: can not sell"
 
 NEED_VERSION=1.121
 DISTNAME=xanim-2.80.1
-WRKSRC=${WRKDIR}/xanim2801
+WRKDIST=${WRKDIR}/xanim2801
 CATEGORIES= graphics x11
 
 MAINTAINER=espie@openbsd.org
@@ -13,6 +13,7 @@ MAINTAINER=espie@openbsd.org
 DIST_SUBDIR=xanim
 MASTER_SITES=ftp://xanim.va.pubnix.com/
 MASTER_SITES0=ftp://xanim.va.pubnix.com/modules/
+NEED_VERSION=	1.191
 
 BASEDISTFILE=xanim2801.tar.gz
 DISTFILES=${BASEDISTFILE}

@@ -3,7 +3,7 @@
 # Date created:         22 Nov 1999
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.2 1999/11/24 03:43:34 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/11 00:37:38 espie Exp $
 #
 
 DISTNAME=	upsd-2.0.1.6
@@ -12,10 +12,11 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://www.ww.net/pub/wildwind/upsd/ \
 		http://www.cre8tivegroup.com/ \
 		ftp://ftp.sw.ru/pub/unix/upsd/
+NEED_VERSION=	1.191
 
 MAINTAINER=	kevlo@openbsd.org
 
-WRKSRC=		${WRKDIR}/upsd-2.0
+WRKDIST=	${WRKDIR}/upsd-2.0
 
 pre-build:
 	@${MV} ${WRKSRC}/config.h ${WRKSRC}/conf.h.orig

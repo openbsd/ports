@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/09/23 21:52:29 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/11 00:37:15 espie Exp $
 
 DISTNAME=	nulib325
 PKGNAME=	nulib-3.25
@@ -10,7 +10,8 @@ NO_CDROM=	"NOFEE: Can not sell"
 
 MAINTAINER=     angelos@openbsd.org
 
-WRKSRC=		${WRKDIR}/nulib
+NEED_VERSION=	1.191
+WRKDIST=		${WRKDIR}/nulib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nulib ${PREFIX}/bin/nulib

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/01/09 07:16:49 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2000/02/11 00:37:39 espie Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 
 DISTNAME=	tk8.0.5
@@ -7,7 +7,7 @@ CATEGORIES=	x11 tk80
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR= tcl8_0
 
-NEED_VERSION=	1.92
+NEED_VERSION=	1.191
 
 MAINTAINER=	niklas@openbsd.org
 
@@ -19,7 +19,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-tcl="${PREFIX}/lib/tcl8.0"
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} 
 
-WRKSRC=	${WRKDIR}/${DISTNAME}/unix
+WRKDIST=	${WRKDIR}/${DISTNAME}/unix
 
 post-install:
 	@${LDCONFIG} -m ${PREFIX}/lib

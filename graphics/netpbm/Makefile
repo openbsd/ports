@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/10/27 00:09:15 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/11 00:37:26 espie Exp $
 # $NetBSD: Makefile,v 1.25 1999/03/04 14:18:54 tron Exp $
 
 DISTNAME=	netpbm-1mar1994
@@ -11,7 +11,7 @@ MASTER_SITES1=	ftp://swrinde.nde.swri.edu/pub/png/applications/
 DISTFILES=	${DISTNAME}.tar.gz:0 pcxtoppm.tar.gz rletopnm.tar.gz \
 		pnmtopng-2.37.3.tar.gz:1
 
-NEED_VERSION=	1.121
+NEED_VERSION=	1.191
 
 MAINTAINER=	brad@openbsd.org
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	jpeg.62:${PORTSDIR}/graphics/jpeg \
 NO_CONFIGURE=	yes
 MAKE_ENV=	PREFIX=${PREFIX} MANCP="${INSTALL_MAN}"
 
-WRKSRC=	${WRKDIR}/netpbm
+WRKDIST=	${WRKDIR}/netpbm
 
 post-extract:
 	@(cd ${WRKSRC} && \

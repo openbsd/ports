@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 1999/10/30 21:11:16 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/11 00:37:26 espie Exp $
 
 DISTNAME=	xpaint-2.5.5
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://www.danbbs.dk/~torsten/xpaint/
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -12,6 +13,6 @@ LIB_DEPENDS=	jpeg.62:${PORTSDIR}/graphics/jpeg \
 
 USE_IMAKE=	yes
 
-WRKSRC=	${WRKDIR}/xpaint
+WRKDIST=	${WRKDIR}/xpaint
 
 .include <bsd.port.mk>

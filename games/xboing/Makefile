@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/09 02:27:12 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/11 00:37:24 espie Exp $
 
 DISTNAME=	xboing2.4
 PKGNAME=	xboing-2.4
@@ -8,8 +8,9 @@ MAINTAINER=	angelos@openbsd.org
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
+NEED_VERSION=	1.191
 
 USE_IMAKE=	yes
-WRKSRC= ${WRKDIR}/xboing
+WRKDIST= ${WRKDIR}/xboing
 
 .include <bsd.port.mk>

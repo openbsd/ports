@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 1999/12/04 03:51:48 angelos Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/11 00:37:27 espie Exp $
 
 DISTNAME=	camlp4
 PKGNAME=	camlp4-2.04
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/Daniel.de_Rauglaudre/Camlp4/
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -15,6 +16,6 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	world bootstrap opt
 
-WRKSRC=		${WRKDIR}/camlp4-2.04
+WRKDIST=		${WRKDIR}/camlp4-2.04
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2000/01/29 23:22:32 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2000/02/11 00:37:34 espie Exp $
 
 DISTNAME=	samba-2.0.6
 CATEGORIES=	net
@@ -7,6 +7,7 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 		ftp://ca.samba.org/pub/samba/ \
 		ftp://ftp.uni-trier.de/pub/unix/network/samba/ \
 		ftp://ring.asahi-net.or.jp/pub/net/samba/
+NEED_VERSION=	1.191
 
 MAINTAINER=	Peter.Galbavy@knowledge.com
 
@@ -50,7 +51,7 @@ CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/samba" \
 # uncomment this if you want NISPLUS_HOME support
 #CONFIGURE_ARGS+=	--with-nisplus-home
 
-WRKSRC=	${WRKDIR}/${DISTNAME}/source
+WRKDIST=	${WRKDIR}/${DISTNAME}/source
 
 SAMBA_SPOOL=	/var/spool/samba
 SAMBA_LOGDIR=	/var/log

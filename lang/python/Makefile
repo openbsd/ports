@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/12/31 04:22:42 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/11 00:37:28 espie Exp $
 
 DISTNAME=	py152
 PKGNAME=	python-1.5.2
@@ -6,6 +6,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 EXTRACT_SUFX=	.tgz
+NEED_VERSION=	1.191
 
 MAINTAINER=	jasoni@openbsd.org
 
@@ -18,7 +19,7 @@ MAKE_FLAGS+=	OPT="${CFLAGS}"
 
 PLIST=	${WRKDIR}/PLIST
 
-WRKSRC=	${WRKDIR}/Python-1.5.2
+WRKDIST=	${WRKDIR}/Python-1.5.2
 
 # Support for Tk is compiled in by default.
 WITH_TK?=	Yes

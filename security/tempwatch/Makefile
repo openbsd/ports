@@ -3,7 +3,7 @@
 # Date created:		25 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/12/05 18:21:51 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:37 espie Exp $
 
 PKGNAME=	tempwatch-1.0
 
@@ -16,8 +16,9 @@ DISTFILES=	l0pht-watch${EXTRACT_SUFX} watch.txt
 EXTRACT_ONLY=	l0pht-watch${EXTRACT_SUFX}
 
 MASTER_SITES=	http://www.l0pht.com/advisories/
+NEED_VERSION=	1.191
 
-WRKSRC=		${WRKDIR}/temp-watch
+WRKDIST=	${WRKDIR}/temp-watch
 
 NO_CONFIGURE=	yes
 

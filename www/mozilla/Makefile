@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/10/05 16:51:31 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:39 espie Exp $
 #
 # From: $NetBSD: Makefile,v 1.13 1998/08/04 13:09:21 fvdl Exp $
 #	but modified to use lesstif 0.86.0...
@@ -13,13 +13,14 @@ MAINTAINER=	marc@OpenBSD.org
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/source/ \
 	ftp://sunsite.org.uk/Mirrors/ftp.mozilla.org/pub/mozilla/source/ \
 	ftp://mirror.aarnet.edu.au/pub/mozilla/mozilla/source/
+NEED_VERSION=	1.191
 
 LIB_DEPENDS=	Xm\\.1\\.:${PORTSDIR}/x11/lesstif
 
 USE_X11=	yes
 USE_GMAKE=	yes
 
-WRKSRC=		${WRKDIR}/mozilla
+WRKDIST=	${WRKDIR}/mozilla
 
 RELEASE!=	uname -r
 MOZ_OBJDIR=	${OPSYS}${RELEASE}_OPT.OBJ

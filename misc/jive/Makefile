@@ -3,18 +3,19 @@
 # Date created:			  29 April 1998
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1999/12/15 08:36:25 dugsong Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/11 00:37:31 espie Exp $
 #
 
 DISTNAME=	jive-1.1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.nuxi.com/pub/misc/
+NEED_VERSION=	1.191
 
 MASTER_SITE_SUBDIR= games/amusements
 
 MAINTAINER=     angelos@openbsd.org
 
-WRKSRC=		${WRKDIR}/jive
+WRKDIST=		${WRKDIR}/jive
 MAN1=		jive.1
 
 do-install:

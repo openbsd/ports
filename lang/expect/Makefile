@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2000/01/01 07:10:58 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/02/11 00:37:28 espie Exp $
 
 DISTNAME=	expect-5.30
 CATEGORIES=	lang
 MASTER_SITES=	http://expect.nist.gov/old/
-
-NEED_VERSION=	1.73
+NEED_VERSION=	1.191
 
 MAINTAINER=	niklas@openbsd.org
 
@@ -18,7 +17,7 @@ CONFIGURE_ARGS+=--with-tclconfig=${PREFIX}/lib/tcl8.0 \
 		--with-tkconfig=${PREFIX}/lib/tk8.0 \
 		--with-tkinclude=${PREFIX}/include/tk8.0
 
-WRKSRC=	${WRKDIR}/${PKGNAME}
+WRKDIST=	${WRKDIR}/${PKGNAME}
 
 test:	build
 	@(cd ${WRKBUILD}; make test)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/01/14 03:37:27 angelos Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:24 espie Exp $
 #
 
 DISTNAME=       xblast-2.6.beta
@@ -12,8 +12,9 @@ MAINTAINER=	angelos@openbsd.org
 # MASTER_SITE_SUBDIR= games/multiplayer
 # but right now only available from:
 MASTER_SITES=   http://www.ikp.uni-koeln.de/~vogel/archive/
+NEED_VERSION=	1.191
 
-WRKSRC=		${WRKDIR}/XBlast-2.6.beta
+WRKDIST=	${WRKDIR}/XBlast-2.6.beta
 USE_IMAKE=      yes
 
 .include <bsd.port.mk>

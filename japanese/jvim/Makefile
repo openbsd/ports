@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/09/22 20:30:20 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:27 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 
 DISTNAME=	jvim2.0r+onew2.2.10
@@ -7,7 +7,7 @@ CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
 
-NEED_VERSION=	1.114
+NEED_VERSION=	1.191
 
 MAINTAINER=	espie@openbsd.org
 
@@ -19,7 +19,7 @@ FILESDIR=	${.CURDIR}/../jvim/files
 PLIST=		${.CURDIR}/../jvim/pkg/PLIST
 MANLANG=	ja_JP.EUC
 MAN1=		jcat.1 jfold.1 jgrep.1 jvim.1
-WRKSRC=		${WRKDIR}/jvim2.0r
+WRKDIST=	${WRKDIR}/jvim2.0r
 
 # Specifying a velue INPUT_METHOD, and seting values BUILD_DEPENDS,
 # LIB_DEPENDS, etc.

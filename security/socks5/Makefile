@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1999/10/29 09:40:17 turan Exp $
+# $OpenBSD: Makefile,v 1.14 2000/02/11 00:37:37 espie Exp $
 
 DISTNAME=	socks5-v1.0r10
 PKGNAME=	socks5-1.0.10
@@ -11,6 +11,7 @@ RESTRICTED=	"no commercial use"
 MIRROR_DISTFILE=no
 IS_INTERACTIVE=	yes
 NO_PACKAGE=	interactive port
+NEED_VERSION=	1.191
 
 # here are some extra configure args you may wish to use
 # see the readme file before screwing with them
@@ -21,7 +22,7 @@ NO_PACKAGE=	interactive port
 #		--with-passwd
 
 ETCDIR?=	/etc
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKDIST=	${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libconffile=${ETCDIR}/libsocks5.conf \
 		--with-srvconffile=${ETCDIR}/socks5.conf \

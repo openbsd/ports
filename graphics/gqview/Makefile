@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/10/28 20:43:08 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:25 espie Exp $
 # $FreeBSD: Makefile,v 1.15 1999/08/25 06:14:08 obrien Exp $
 
 DISTNAME=	gqview-0.7.0.src
@@ -6,6 +6,7 @@ PKGNAME=	gqview-0.7.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://gqview.netpedia.net/ \
 		http://www.geocities.com/SiliconValley/Haven/5235/
+NEED_VERSION=	1.191
 
 MAINTAINER=	brad@openbsd.org
 
@@ -16,7 +17,7 @@ LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib \
 USE_X11=	yes
 
 ALL_TARGET=	gqview
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKDIST=	${WRKDIR}/${PKGNAME}
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/gqview

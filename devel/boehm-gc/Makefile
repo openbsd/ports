@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/ \
 
 ONLY_FOR_ARCHS=	i386 m68k sparc
 
-NEED_VERSION=	1.89
+NEED_VERSION=	1.191
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - || true
 
@@ -20,7 +20,7 @@ MAKE_ENV=	CP="${CP}" \
 
 ALL_TARGET=	OpenBSD-pkg-all
 INSTALL_TARGET=	OpenBSD-pkg-install
-WRKSRC=		${WRKDIR}/gc
+WRKDIST=		${WRKDIR}/gc
 
 post-patch:
 	@${MV} ${WRKSRC}/gc.man ${WRKSRC}/gc.man.in

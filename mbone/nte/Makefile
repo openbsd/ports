@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 1999/09/04 23:21:07 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/11 00:37:30 espie Exp $
 
 DISTNAME=       nte-1.7.0
 CATEGORIES=	mbone
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/nte/1.7.0/
 
-NEED_VERSION=	1.111
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	tcl80.1.5:${PORTSDIR}/lang/tcl80 \
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 
-WRKSRC=		${WRKDIR}/nte
+WRKDIST=		${WRKDIR}/nte
 
 post-extract:
 	@${CP} ${FILESDIR}/Makefile.work ${WRKSRC}/Makefile

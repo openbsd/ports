@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1999/12/13 03:58:18 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/02/11 00:37:37 espie Exp $
 
 DISTNAME=       pgp263is
 PKGNAME=	pgp-2.6.3
@@ -6,6 +6,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://the.wiretapped.net/security/cryptography/pgp/2.x/src/ \
 		ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
 		ftp://ftp.dk.pgpi.com/mirrors/ftp.ifi.uio.no/pub/pgp/2.x/src/
+NEED_VERSION=	1.191
 
 MAINTAINER=	ports@openbsd.org
 
@@ -13,7 +14,7 @@ NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 RESTRICTED=	"Crypto; export-controlled"
 
 IS_INTERACTIVE=	yes
-WRKSRC=	${WRKDIR}/src
+WRKDIST=	${WRKDIR}/src
 
 # common C flags
 CFLAGS+=-DUNIX -DPORTABLE -DMERIT -DIDEA32 -DMAX_NAMELEN=255 \

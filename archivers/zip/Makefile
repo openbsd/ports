@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.10 1999/12/24 08:59:53 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/02/11 00:37:16 espie Exp $
 # $FreeBSD: Makefile,v 1.11 1997/11/25 20:45:45 ache Exp $
 
 DISTNAME=	zip22
 PKGNAME=	zip-2.2
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/infozip/src/
+NEED_VERSION=	1.191
 
 MAINTAINER=	ports@openbsd.org
 
 ALL_TARGET=	generic
 MAKEFILE=	unix/Makefile
 
-WRKSRC=	${WRKDIR}/${PKGNAME}
+WRKDIST=	${WRKDIR}/${PKGNAME}
 
 post-install:
 	@mkdir -p ${PREFIX}/share/doc/zip

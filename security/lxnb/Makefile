@@ -3,7 +3,7 @@
 # Date created:		10 Feb 2000
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.1.1.1 2000/02/10 22:08:25 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:36 espie Exp $
 
 PKGNAME=	lxnb-0.4
 
@@ -14,8 +14,9 @@ MAINTAINER=	dugsong@monkey.org
 MASTER_SITES=	http://ns2.crw.se/~tm/projects/lxnb/
 DISTNAME=	linux-netbus-client-v0.4
 EXTRACT_SUFX=	.tgz
+NEED_VERSION=	1.191
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKDIST=	${WRKDIR}/${PKGNAME}
 
 NO_CONFIGURE=	yes
 
