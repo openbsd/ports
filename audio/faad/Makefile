@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/20 23:40:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2003/02/15 14:19:19 espie Exp $
 
 COMMENT=	"MPEG2 and MPEG-4 AAC decoder"
 
@@ -17,16 +17,19 @@ MASTER_SITES=	http://faac.sourceforge.net/files/
 
 LIB_DEPENDS=	sndfile:libsndfile->=1.0.1:audio/libsndfile
 
-BUILD_DEPENDS=	::devel/autoconf
+AUTOCONF_VERSION=2.13
+BUILD_DEPENDS=	::devel/autoconf/${AUTOCONF_VERSION} ::devel/metaauto
 USE_LIBTOOL=	Yes
 
 WRKDIST=	${WRKDIR}/faad2
-CONFIGURE_STYLE= automake
+CONFIGURE_STYLE= automake autoconf
+AUTOCONF_VERSION=2.13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="-lm"
+		LIBS="-lm" \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
 post-patch:
-	@cd ${WRKSRC} && sh bootstrap
+	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} sh bootstrap
 
 .include <bsd.port.mk>
