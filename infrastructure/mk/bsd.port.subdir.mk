@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.24 2000/04/10 17:51:26 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.25 2000/04/16 20:10:21 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -63,13 +63,15 @@ _SUBDIRUSE: .USE
 				continue 2; \
 			fi; \
 		done; \
-		if expr "$$entry" : '.*:' >/dev/null; then \
-			flavor=`echo $$entry | sed -e 's/.*://' -e 's/,/ /g'`; \
-			entry=`echo $$entry | sed -e 's/:.*//'`; \
+		if expr "$$entry" : '.*[,:]' >/dev/null; then \
+			flavor=`echo $$entry | sed -e 's/[^,:]*[,:]//' -e 's/,/ /g'`; \
+			entry=`echo $$entry | sed -e 's/[:,].*//'`; \
 			display=" ($$flavor)"; \
+			varname=FLAVOR; \
 		else \
 			flavor=''; \
 			display=''; \
+			varname=DUMMY; \
 		fi; \
 		if cd ${.CURDIR}/$${entry}.${MACHINE} 2>/dev/null; then \
 			edir=$${entry}.${MACHINE}; \
@@ -83,7 +85,7 @@ _SUBDIRUSE: .USE
 		if ${MAKE} ${.TARGET:realinstall=install} \
 			DIRPRFX=${DIRPRFX}$$edir/ \
 			RECURSIVE_FETCH_LIST=${RECURSIVE_FETCH_LIST} \
-			FLAVOR="$$flavor"; \
+			$$varname="$$flavor"; \
 		then :; else ${REPORT_PROBLEM}; fi; \
 	done
 
