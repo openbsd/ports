@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/04/13 23:22:49 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2001/04/20 16:27:38 espie Exp $
 
 COMMENT=	"University of Washington's c-client mail access routines"
 
@@ -40,5 +40,5 @@ do-install:
 .include <bsd.port.mk>
 
 .if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-MAKE_ENV=	NO_SHARED_LIBS=	Yes
+MAKE_ENV+=	NO_SHARED_LIBS=	Yes
 .endif
