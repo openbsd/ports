@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/06/25 12:01:05 wilfried Exp $
+# $OpenBSD: Makefile,v 1.13 2003/06/26 07:42:59 wilfried Exp $
 
 COMMENT=	"redesign of Mozilla's browser component"
 
@@ -52,8 +52,7 @@ CONFIGURE_ARGS=					\
 CFLAGS+=	-fno-stack-protector
 CONFIGURE_ENV=	MOZ_PHOENIX=1
 MAKE_ENV=	MOZ_PHOENIX=1 \
-		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
-		
+		LD_LIBRARY_PATH="${WRKSRC}/dist/bin"
 
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/mozilla-firebird
