@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2002/04/28 08:25:17 pvalchev Exp $
---- src/Makefile.in.orig	Sun Feb 24 09:15:23 2002
-+++ src/Makefile.in	Sun Apr 28 02:02:05 2002
+$OpenBSD: patch-src_Makefile_in,v 1.2 2004/02/12 16:09:18 naddy Exp $
+--- src/Makefile.in.orig	2002-02-24 08:15:01.000000000 -0800
++++ src/Makefile.in	2004-02-07 12:38:53.000000000 -0800
 @@ -425,12 +425,12 @@ install-data-local:
  	$(mkinstalldirs) $(DESTDIR)$(inst_dir)
  	$(mkinstalldirs) $(DESTDIR)$(hi_dir)
  	if ! test -f $(DESTDIR)$(hi_dir)/lbreakout2.hscr; then \
 -	  $(INSTALL_DATA) --mode=666 empty.hscr $(DESTDIR)$(hi_dir)/lbreakout2.hscr; \
-+	  $(INSTALL_DATA) --mode=666 empty.hscr $(DESTDIR)$(inst_dir)/lbreakout2.hscr; \
++	  $(INSTALL_DATA) empty.hscr $(DESTDIR)$(inst_dir)/lbreakout2.hscr; \
  	fi;
  
  uninstall-local:

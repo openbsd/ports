@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/28 08:25:17 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/02/12 16:09:18 naddy Exp $
 @mode g+s
 @group games
 bin/lbreakout2
@@ -78,3 +78,5 @@ share/lbreakout2/sounds/wontgiveup.wav
 @dirrm share/lbreakout2/levels
 @dirrm share/lbreakout2/gfx
 @dirrm share/lbreakout2
+@cwd /var/games
+@extra lbreakout2.hscr

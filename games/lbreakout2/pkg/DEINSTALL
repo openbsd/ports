@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2002/04/28 08:25:17 pvalchev Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2004/02/12 16:09:18 naddy Exp $
 #
 # lbreakout2 de-installation script
 
@@ -34,7 +34,7 @@ fi
 #
 case $2 in
     DEINSTALL)
-	if [ -d $SCORE_DIR ]; then
+	if [ "$PKG_DELETE_EXTRA" != Yes -a -f $SCORE_FILE ]; then
 	    do_notice "$1"
 	fi
 	;;
