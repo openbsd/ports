@@ -1,19 +1,17 @@
-$OpenBSD: patch-ltconfig,v 1.1.1.1 2001/01/09 20:59:36 naddy Exp $
---- ltconfig.orig	Fri Mar 31 22:10:25 2000
-+++ ltconfig	Tue Jan  9 20:59:01 2001
-@@ -1061,7 +1061,10 @@ cygwin* | mingw*)
+$OpenBSD: patch-ltconfig,v 1.2 2001/02/18 21:06:51 brad Exp $
+--- ltconfig.orig	Fri Mar 31 15:10:25 2000
++++ ltconfig	Sun Feb 18 11:03:22 2001
+@@ -1061,6 +1061,9 @@
      with_gnu_ld=no
    fi
    ;;
--
 +openbsd*)
 +  with_gnu_ld=no
 +  ;;
-+ 
+ 
  esac
  
- ld_shlibs=yes
-@@ -1317,10 +1320,18 @@ else
+@@ -1317,10 +1320,21 @@
      ;;
  
    openbsd*)
@@ -22,19 +20,22 @@ $OpenBSD: patch-ltconfig,v 1.1.1.1 2001/01/09 20:59:36 naddy Exp $
      hardcode_direct=yes
      hardcode_shlibpath_var=no
 +    case "$host_os" in
-+      openbsd2.[01234567])
-+       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
-+       hardcode_libdir_flag_spec='-R$libdir'
++      openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
++	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
++	hardcode_libdir_flag_spec='-R$libdir'
 +      ;;
 +      *)
-+       archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
-+       hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
++	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++	if [ "`/usr/bin/file /usr/lib/libc.so.* | grep ELF`" != "" ]; then
++	  export_dynamic_flag_spec='${wl}-E'
++	fi
 +      ;;
 +    esac
      ;;
  
    os2*)
-@@ -1857,13 +1868,10 @@ netbsd*)
+@@ -1857,13 +1871,10 @@
  
  openbsd*)
    version_type=sunos
