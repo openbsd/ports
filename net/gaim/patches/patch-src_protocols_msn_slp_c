@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_protocols_msn_slp_c,v 1.1 2004/08/14 00:27:06 robert Exp $
+--- src/protocols/msn/slp.c.orig	Tue Jun 15 04:37:25 2004
++++ src/protocols/msn/slp.c	Fri Aug 13 00:04:47 2004
+@@ -645,8 +645,12 @@
+ 			if ((c = strchr(status, '\r')) || (c = strchr(status, '\n')) ||
+ 				(c = strchr(status, '\0')))
+ 			{
+-				strncpy(temp, status, c - status);
+-				temp[c - status] = '\0';
++				size_t offset =  c - status;
++				if (offset >= sizeof(temp))
++					offset = sizeof(temp) - 1;
++		      
++				strncpy(temp, status, offset);
++				temp[offset] = '\0';
+ 			}
+ 
+ 			gaim_debug_error("msn", "Received non-OK result: %s\n", temp);
