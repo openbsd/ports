@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/09 20:03:18 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/10 19:26:14 pvalchev Exp $
 
 # XXX might not be hard to add more (macppc at least)
 ONLY_FOR_ARCHS=		i386
@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 		--enable-select \
 		--enable-gl \
 		--enable-gui \
-		--with-extraincdir=${LOCALBASE}/include \
+		--with-extraincdir="${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		--with-extralibdir=${LOCALBASE}/lib
 
 # Optimizations
