@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2001/05/24 02:27:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.33 2002/02/03 19:45:46 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
 COMMENT=	"graphics library for fast PNG creation"
 
 DISTNAME=	gd-1.8.3
 CATEGORIES=	graphics
-NEED_VERSION=	1.384
+NEED_VERSION=	1.500
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/
 
@@ -41,6 +41,8 @@ MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF" \
 		LIBS="-lgd -lm -lpng -lz -ljpeg -lttf -lXpm -lX11" \
 		LIBDIRS="-L. -L${LOCALBASE}/lib -L${X11BASE}/lib"
 .endif
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gd
