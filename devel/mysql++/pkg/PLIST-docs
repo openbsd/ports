@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST-docs,v 1.1 2001/06/05 12:30:09 wilfried Exp $
+share/doc/mysql++/html/1_Introduction.html
+share/doc/mysql++/html/2_Overview.html
+share/doc/mysql++/html/3_Important.html
+share/doc/mysql++/html/4_Tutorial.html
+share/doc/mysql++/html/5_Class.html
+share/doc/mysql++/html/6_Template.html
+share/doc/mysql++/html/7_Specialized.html
+share/doc/mysql++/html/8_Long.html
+share/doc/mysql++/html/A_Changelog.html
+share/doc/mysql++/html/About_this.html
+share/doc/mysql++/html/Appendices.html
+share/doc/mysql++/html/B_Do.html
+share/doc/mysql++/html/C_Credits.html
+share/doc/mysql++/html/Contents.html
+share/doc/mysql++/html/D_Copyright.html
+share/doc/mysql++/html/E_Feedback.html
+share/doc/mysql++/html/Introductory_Material.html
+share/doc/mysql++/html/Usage.html
+share/doc/mysql++/html/WARNINGS
+share/doc/mysql++/html/contents.png
+share/doc/mysql++/html/index.html
+share/doc/mysql++/html/internals.pl
+share/doc/mysql++/html/labels.pl
+share/doc/mysql++/html/manual.css
+share/doc/mysql++/html/manual.html
+share/doc/mysql++/html/next.png
+share/doc/mysql++/html/next_g.png
+share/doc/mysql++/html/prev.png
+share/doc/mysql++/html/prev_g.png
+share/doc/mysql++/html/up.png
+share/doc/mysql++/html/up_g.png
+@dirrm share/doc/mysql++/html
+@dirrm share/doc/mysql++

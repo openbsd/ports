@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/06/03 05:32:16 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2001/06/05 12:30:02 wilfried Exp $
 
 COMMENT=		"C++ API for MySQL"
+COMMENT-docs=		"C++ API for MySQL documentation"
 
-DISTNAME=		mysql++-1.7.8
+VERSION=		1.7.9
+DISTNAME=		mysql++-${VERSION}
+PKGNAME-docs=		mysql++-docs-${VERSION}
 CATEGORIES=		devel
 NEED_VERSION=		1.402
 
@@ -24,7 +27,14 @@ LIB_DEPENDS=		mysqlclient.10:mysql-client-3.23.*:databases/mysql
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu autoconf
 
+MULTI_PACKAGES=		-docs
+SUBPACKAGE?=
+
 pre-configure:
 	@cd ${WRKSRC} && automake -a
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql++/html
+	${INSTALL_DATA} ${WRKSRC}/doc/man-html/* ${PREFIX}/share/doc/mysql++/html
 
 .include <bsd.port.mk>
