@@ -1,0 +1,24 @@
+--- main.c.orig	Sat Oct  9 00:04:43 1999
++++ main.c	Sat Oct  9 00:10:21 1999
+@@ -47,10 +47,21 @@
+ # include "gc_private.h"
+ int real_main(int,char**,char**);
+ 
++/* Out-of-memory handler for GC. */
++void *
++die_oom(size_t bytes)
++{
++  fprintf(stderr, "Out of memory: %d bytes unavailable!\n", bytes);
++  exit(1);
++}
++
+ int
+ main(int argc, char **argv, char **envp)
+ {
+     int dummy;
++
++    /* Set up to die if we run out of memory. */
++    GC_oom_fn = die_oom;
+     GC_stackbottom = (ptr_t)(&dummy);
+     return(real_main(argc, argv, envp));
+ }

@@ -1,0 +1,13 @@
+
+[ http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/eng/ ]
+
+w3m is a pager/text-based WWW browser. It is a similar application to
+Lynx, but it has several features Lynx doesn't have.
+
+     w3m can render table. 
+     w3m can render frame. (it converts the frames into a table) 
+     w3m can display documents given from standard input easily. 
+     w3m is small. Binary size of w3m on Sparc workstation is under
+     300KByte.
+
+-d.

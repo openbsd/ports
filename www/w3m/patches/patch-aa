@@ -1,0 +1,36 @@
+--- XMakefile.orig	Fri Oct  8 08:19:52 1999
++++ XMakefile	Fri Oct  8 22:06:01 1999
+@@ -15,7 +15,8 @@
+ INCLUDES=-I.
+ 
+ DEFS=$(INCLUDES) #-DSTR_DEBUG # -DDEBUG
+-CFLAGS=$(MYCFLAGS) $(DEFS) 
++CFLAGS+=$(MYCFLAGS) $(DEFS) 
++PREFIX?=/usr/local
+ LIBS=$(GCLIB) -lm $(LOCAL_LIBRARIES) $(SYS_LIBRARIES)
+ 
+ $(TARGET): $(ALLOBJS) $(GCTARGET)
+@@ -27,15 +28,14 @@
+ 	cd gc; make CC='$(CC) $(MYCFLAGS)'
+ 
+ install: $(TARGET)
+-	-mkdir $(DESTDIR)$(BIN_DIR)
+-	-mkdir $(DESTDIR)$(HELP_DIR)
+-	cp $(TARGET) $(DESTDIR)$(BIN_DIR)
+-	cp w3mhelp_en.html $(DESTDIR)$(HELP_DIR)
+-	cp w3mhelp_ja.html $(DESTDIR)$(HELP_DIR)
+-	cp w3mhelp-lynx_en.html $(DESTDIR)$(HELP_DIR)
+-	cp w3mhelp-lynx_ja.html $(DESTDIR)$(HELP_DIR)
+-	cp $(HELP_FILE) $(DESTDIR)$(HELP_DIR)/w3mhelp.html
+-	chmod go+r $(DESTDIR)$(HELP_DIR)/w3mhelp.html
++	-mkdir -p -m 755 $(BIN_DIR)
++	-mkdir -p -m 755 $(HELP_DIR)
++	-mkdir -p -m 755 $(DOC_DIR)
++	install -c -m 755 $(TARGET) $(BIN_DIR)
++	install -c -m 644 w3mhelp*.html $(HELP_DIR)
++	ln -s $(HELP_DIR)/$(HELP_FILE) $(HELP_DIR)/w3mhelp.html
++	install -c -m 644 doc/* $(DOC_DIR)
++	mv $(DOC_DIR)/w3m.1 $(PREFIX)/man/man1
+ 
+ uninstall:
+ 	-$(RM) $(BIN_DIR)/$(TARGET)

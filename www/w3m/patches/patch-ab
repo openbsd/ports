@@ -1,0 +1,54 @@
+--- config.h.orig	Thu Oct  7 05:29:53 1999
++++ config.h	Sat Oct  9 01:21:22 1999
+@@ -28,37 +28,37 @@
+ /**********************************************************/
+ #ifdef makefile_parameter
+ 
+-BIN_DIR = /usr/local/bin
+-HELP_DIR = /usr/local/lib
+-HELP_FILE = w3mhelp_ja.html
+-SYS_LIBRARIES =  -lbsd -lnsl -ltermcap -L/usr/local/ssl/lib -lssl -lcrypto
++BIN_DIR = $(PREFIX)/bin
++HELP_DIR = $(PREFIX)/share/w3m
++HELP_FILE = w3mhelp-lynx_en.html
++DOC_DIR = $(PREFIX)/share/doc/w3m
++SYS_LIBRARIES =  -lcurses
+ LOCAL_LIBRARIES = 
+ CC = gcc
+-MYCFLAGS = -g -I./gc  -I/usr/local/ssl/include -I/usr/local/ssl/include/openssl
+-KEYBIND_SRC = keybind.c
+-KEYBIND_OBJ = keybind.o
++MYCFLAGS = -DHELP_FILE="\"$(PREFIX)/share/w3m/w3mhelp.html\"" -I./gc
++KEYBIND_SRC = keybind_lynx.c
++KEYBIND_OBJ = keybind_lynx.o
+ EXT=
+ GCLIB=gc/gc.a
+ GCTARGET=gc/gc.a
+ #else
+ 
+ 
+-#define DISPLAY_CODE 'E'
++#define DISPLAY_CODE 'x'
+ 
+ #define JA 0
+ #define EN 1
+-#define LANG JA
+-#define KANJI_SYMBOLS
++#define LANG EN
++#undef KANJI_SYMBOLS
+ #define COLOR
+ #undef MOUSE
+ #define MENU
+ #define USE_COOKIE
+-#define USE_SSL
++#undef USE_SSL
+ 
+-#define DEF_EDITOR "/bin/vi"
+-#define DEF_MAILER "/bin/mail"
++#define DEF_EDITOR "/usr/bin/vi"
++#define DEF_MAILER "/usr/bin/mail"
+ #define DEF_EXT_BROWSER "/usr/bin/lynx"
+-#define HELP_FILE "/usr/local/lib/w3mhelp.html"
+ #define BOOKMARK "~/.w3m/bookmark.html"
+ #define KEYMAP_FILE  "~/.w3m/keymap"
+ #define MENU_FILE    "~/.w3m/menu"
