@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/09 17:36:18 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/05/31 14:33:35 espie Exp $
 # $FreeBSD: Makefile,v 1.3 1999/03/15 19:59:22 nectar Exp $
 
 DISTNAME=	libicq-0.33
 CATEGORIES=	devel
 NEED_VERSION=	 1.230
-FAKE=No
+FAKE=		Yes
 MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/
 
 MAINTAINER=	brad@openbsd.org
