@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/03/31 12:40:11 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2004/01/06 20:58:43 sturm Exp $
 
 COMMENT=	"chinese input utility for X"
 
@@ -13,6 +13,7 @@ HOMEPAGE=	http://xcin.linux.org.tw/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -22,10 +23,12 @@ RUN_DEPENDS=	::chinese/taipeifonts
 
 USE_X11=	Yes
 
-CONFIGURE_STYLE=	gnu old
+CONFIGURE_STYLE=gnu old dest
 CONFIGURE_ARGS=	--os=OpenBSD --no-menu
 
 NO_REGRESS=	Yes
+
+MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS}'
 
 CINS=	cj.cin cj.tab cj.tab.rev phone.tab phone.cin phone.tab phone.tab.rev \
 	pinyin.cin pinyin.tab pinyin.tab.rev array30.cin array30.tab \
@@ -38,7 +41,7 @@ BINS=	cin2tab et.kbm et26.kbm hsu.kbm lphrase phs_out pho.sel1st \
 
 post-configure:
 	mv ${WRKSRC}/config.status ${WRKSRC}/config.status.orig
-	sed -e '/OPT_XCIN_CFONT/s/=.*/=-taipei-ming-medium-r-normal--16-160-75-75-c-160-big5-0/' -e '/OPT_XCIN_EFONT/s/=.*/=8x16/' -e '/PATH_XCIN_DIR/s!=.*!=/usr/local/lib/xcin!' ${WRKSRC}/config.status.orig > ${WRKSRC}/config.status
+	sed -e '/OPT_XCIN_CFONT/s/=.*/=-taipei-ming-medium-r-normal--16-160-75-75-c-160-big5-0/' -e '/OPT_XCIN_EFONT/s/=.*/=8x16/' ${WRKSRC}/config.status.orig > ${WRKSRC}/config.status
 
 post-extract:
 	mv ${WRKSRC}/script/os_def/FreeBSD ${WRKSRC}/script/os_def/FreeBSD.orig

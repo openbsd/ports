@@ -1,6 +1,7 @@
---- input_tab/Makefile.in.orig	Wed May 31 22:42:23 2000
-+++ input_tab/Makefile.in	Thu Jun  1 01:42:46 2000
-@@ -15,13 +15,28 @@
+$OpenBSD: patch-input_tab_Makefile_in,v 1.1 2004/01/06 20:58:43 sturm Exp $
+--- input_tab/Makefile.in.orig	1999-02-24 09:30:34.000000000 +0100
++++ input_tab/Makefile.in	2004-01-06 21:35:17.000000000 +0100
+@@ -15,8 +15,23 @@ cin2tab:
  	(cd ../src; make cin2tab)
  	ln -s ../src/cin2tab .
  
@@ -26,9 +27,3 @@
  
  install: all
  	if [ ! -d $(PATH_XCIN_DIR) ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR); fi
- 	for f in $(install_tabs); do\
--	    cp $$f $(PATH_XCIN_DIR); echo $(PATH_XCIN_DIR)/$$f >> filelist;\
-+	    cp $$f $(DESTDIR)$(PATH_XCIN_DIR); echo $(DESTDIR)$(PATH_XCIN_DIR)/$$f >> filelist;\
- 	done
- 
- clean:

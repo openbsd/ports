@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2004/01/06 20:58:43 sturm Exp $
+--- src/Makefile.in.orig	1999-02-24 09:30:33.000000000 +0100
++++ src/Makefile.in	2004-01-06 21:33:55.000000000 +0100
+@@ -60,7 +60,7 @@ pho.sel1st: d1st pho1st
+ sample.phs.out: phs_out sample.phs
+ 	./phs_out sample.phs
+ tsin_pin.map: pin2tsin pin_pho
+-	./pin2tsin pin_pho
++	./pin2tsin pin_pho &  
+ tsin.rel: tsa2rel tsin.rel.src
+ 	./tsa2rel tsin.rel.src > tsin.rel
+ 
