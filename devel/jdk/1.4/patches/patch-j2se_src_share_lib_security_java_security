@@ -1,0 +1,17 @@
+$OpenBSD: patch-j2se_src_share_lib_security_java_security,v 1.1.1.1 2004/12/21 04:01:05 kurt Exp $
+--- j2se/src/share/lib/security/java.security.orig	Wed Oct 13 17:06:16 2004
++++ j2se/src/share/lib/security/java.security	Wed Oct 13 17:09:45 2004
+@@ -59,11 +59,11 @@ security.provider.5=sun.security.jgss.Su
+ # On Windows systems, the URL file:/dev/random enables use of the
+ # Microsoft CryptoAPI seed functionality.
+ #
+-securerandom.source=file:/dev/random
++securerandom.source=file:/dev/srandom
+ #
+ # The entropy gathering device is described as a URL and can 
+ # also be specified with the property "java.security.egd". For example,
+-#   -Djava.security.egd=file:/dev/urandom
++#   -Djava.security.egd=file:/dev/arandom
+ # Specifying this property will override the securerandom.source setting.
+ 
+ #

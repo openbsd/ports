@@ -1,0 +1,18 @@
+$OpenBSD: patch-j2se_make_common_Defs-bsd_gmk,v 1.1.1.1 2004/12/21 04:01:05 kurt Exp $
+--- j2se/make/common/Defs-bsd.gmk.orig	Fri Dec 17 16:54:16 2004
++++ j2se/make/common/Defs-bsd.gmk	Fri Dec 17 18:31:01 2004
+@@ -493,6 +493,14 @@ ifdef ALT_MOTIF_DIR
+ endif
+ MOTIF_LIB = $(MOTIF_DIR)/lib
+ 
++# 
++# The ODBC Driver Manager libs
++# Set ALT_ODBCDIR to build with iODBC otherwise build dummy libs
++# 
++ifdef ALT_ODBCDIR
++  ODBCDIR = $(ALT_ODBCDIR)
++endif
++
+ #
+ # Japanese manpages
+ #
