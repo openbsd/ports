@@ -1,0 +1,20 @@
+$OpenBSD: patch-util_Makefile_in,v 1.1 2001/08/01 09:04:41 wilfried Exp $
+--- util/Makefile.in.orig	Mon Jul 23 22:03:14 2001
++++ util/Makefile.in	Wed Aug  1 10:18:21 2001
+@@ -127,13 +127,13 @@ seticons_LDADD = $(liblist)
+ 
+ geticonset_LDADD = $(liblist)
+ 
+-wmagnify_LDADD =  	$(top_builddir)/WINGs/libWINGs.a 	$(top_builddir)/wrlib/libwraster.la 	@LIBPL@ 	@DLLIBS@
++wmagnify_LDADD =  	$(top_builddir)/WINGs/libWINGs.a 	$(top_builddir)/wrlib/libwraster.la 	@LIBPL@ 	@INTLIBS@ 	@DLLIBS@
+ 
+ 
+-wmsetup_LDADD =  	$(top_builddir)/WINGs/libWINGs.a 	$(top_builddir)/wrlib/libwraster.la 	@LIBPL@ 	@DLLIBS@
++wmsetup_LDADD =  	$(top_builddir)/WINGs/libWINGs.a 	$(top_builddir)/wrlib/libwraster.la 	@LIBPL@ 	@INTLIBS@ 	@DLLIBS@
+ 
+ 
+-wmsetbg_LDADD =  	$(top_builddir)/WINGs/libWINGs.a 	$(top_builddir)/wrlib/libwraster.la 	@LIBPL@ 	@DLLIBS@
++wmsetbg_LDADD =  	$(top_builddir)/WINGs/libWINGs.a 	$(top_builddir)/wrlib/libwraster.la 	@LIBPL@ 	@INTLIBS@ 	@DLLIBS@
+ 
+ 
+ CLEANFILES = wmaker.inst wmchlocale

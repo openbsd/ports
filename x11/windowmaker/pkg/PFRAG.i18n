@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.i18n,v 1.1 2001/05/21 14:06:02 wilfried Exp $
+@comment $OpenBSD: PFRAG.i18n,v 1.2 2001/08/01 09:04:42 wilfried Exp $
 @comment Bulgarian
 share/WindowMaker/menu.bg
 share/WindowMaker/plmenu.bg
@@ -60,6 +60,7 @@ share/locale/it/LC_MESSAGES/WPrefs.mo
 share/locale/it/LC_MESSAGES/WindowMaker.mo
 @comment Japanese
 share/WindowMaker/menu.ja
+share/WindowMaker/plmenu.ja
 share/locale/ja/LC_MESSAGES/WPrefs.mo
 share/locale/ja/LC_MESSAGES/WindowMaker.mo
 @comment Korean
@@ -92,13 +93,14 @@ share/locale/ru/LC_MESSAGES/WindowMaker.mo
 @comment Slovak
 share/WindowMaker/menu.sk
 share/WindowMaker/plmenu.sk
+share/locale/sk/LC_MESSAGES/WINGs.mo
 share/locale/sk/LC_MESSAGES/WPrefs.mo
 share/locale/sk/LC_MESSAGES/WindowMaker.mo
+@comment Slovene
+share/WindowMaker/menu.sl
 @comment Swedish
 share/WindowMaker/menu.sv
 share/locale/sv/LC_MESSAGES/WindowMaker.mo
-@comment Slovene
-share/WindowMaker/menu.sl
 @comment Turkish
 share/WindowMaker/menu.tr
 share/locale/tr/LC_MESSAGES/WindowMaker.mo
