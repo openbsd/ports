@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2003/10/26 23:49:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2004/02/21 01:18:08 pvalchev Exp $
 
 COMMENT=	"SOCKS v5 application layer gateway and clients"
 
@@ -6,7 +6,7 @@ DISTNAME=	socks5-v1.0r11
 PKGNAME=	socks5-1.0.11
 CATEGORIES=	security net
 
-HOMEPAGE=	http://www.socks.nec.com/reference/socks5.html
+HOMEPAGE=	http://www.socks.permeo.com/AboutSOCKS/SOCKSvF.asp
 
 PERMIT_PACKAGE_CDROM=	commercial
 PERMIT_PACKAGE_FTP=	commercial

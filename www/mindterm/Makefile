@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/02/01 20:22:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/02/21 01:18:08 pvalchev Exp $
 
 COMMENT=	"web-based java SSH client"
 
@@ -9,7 +9,7 @@ CATEGORIES=	www security
 MASTER_SITES=	http://support.appgate.com/mindterm/personal/
 EXTRACT_SUFX=	.zip
 
-HOMEPAGE=	http://www.appgate.com/ag.asp?template=products&level1=product_mindterm
+HOMEPAGE=	http://www.appgate.com/products/5_MindTerm/
 
 # custom
 PERMIT_PACKAGE_CDROM=	"may not sell"

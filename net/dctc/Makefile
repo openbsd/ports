@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/12/03 19:29:08 nino Exp $
+# $OpenBSD: Makefile,v 1.3 2004/02/21 01:18:08 pvalchev Exp $
 
 COMMENT=		"Direct Connect clone"
 
 DISTNAME=		dctc-0.68.0
 CATEGORIES=		net
-HOMEPAGE=		http://ac2i.tzo.com/dctc/
+HOMEPAGE=		http://ac2i.homelinux.com/dctc/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

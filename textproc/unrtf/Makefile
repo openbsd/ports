@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/02/21 01:11:46 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2004/02/21 01:18:08 pvalchev Exp $
 
 COMMENT=	"RTF document converter"
 
@@ -6,7 +6,7 @@ VERSION=	0.18.1
 DISTNAME=	unrtf-${VERSION}
 CATEGORIES=	textproc
 
-HOMEPAGE=	http://www.geocities.com/tuorfa/unrtf.html
+HOMEPAGE=	http://www.gnu.org/software/unrtf/unrtf.html
 
 MASTER_SITES=	${MASTER_SITE_GNU:=unrtf/}
 

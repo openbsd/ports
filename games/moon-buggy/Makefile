@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 15:10:08 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/21 01:18:07 pvalchev Exp $
 
 COMMENT=	"drive some car across the moon"
 
 DISTNAME=	moon-buggy-0.5.1
 CATEGORIES=    	games	
-HOMEPAGE=	http://www.mathematik.uni-kl.de/~wwwstoch/voss/moon-buggy.html	
+HOMEPAGE=	http://hangout.de/moon-buggy/
 
 MAINTAINER=	Felix Kronlage <fkr@grummel.net>
 
