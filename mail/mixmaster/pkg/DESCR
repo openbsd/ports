@@ -20,8 +20,4 @@ from any message you sent to them and then forwarding them a
 destination of your choice. The recipient of such a message would
 not know who had sent it.
 
-The addition of encryption to this scheme gave significant protection
-from attackers who simply look a the primary improvement with the
-type 2 remailer Mixmaster.
-
 WWW: ${HOMEPAGE}

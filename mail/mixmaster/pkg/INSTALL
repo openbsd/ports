@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $OpenBSD: INSTALL,v 1.1.1.1 2001/07/04 15:22:34 lebel Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/09/14 15:21:14 naddy Exp $
 #
 #      Mixmaster installation script, using many ideas from
 #      Adam Shostack's Install-Mix.
@@ -10,7 +10,8 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 MIXMASTER_BIN=${PREFIX}/sbin/mixmaster
 MIXDIR=${PREFIX}/share/examples/mixmaster
-MIXDEST=${SYSCONFDIR}
+MIXDEST=${SYSCONFDIR}/mixmaster
+MIXSPOOL=/var/spool/mixmaster
 
 # verify proper execution
 #
@@ -39,7 +40,7 @@ do_accts()
         useradd \
             -g mixmaster \
             -c "Anonymous Remailer" \
-            -d $MIXDEST \
+            -m -d $MIXDEST \
             -s /sbin/nologin \
             -p \* \
             mixmaster
@@ -49,20 +50,7 @@ do_accts()
 last_message() 
 {
 
-echo "|"
 echo "| Installation of mixmaster client complete."
-echo "|"
-echo "| Consider updating the files"
-echo "|"
-echo "|   $MIXDEST/mix.list"
-echo "|   $MIXDEST/type2.list"
-echo "|   $MIXDEST/pubring.mix"
-echo "|"
-echo "| periodically with a script like"
-echo "|"
-echo "|   $MIXDIR/getlist"
-echo "|"
-echo "| or you might loose mail by using remailers, that are out of order now."
 echo "|"
 echo "| The binary is suid 'mixmaster' and can only be executed by members of"
 echo "| the group 'mixmaster'. Add all users to that group, that are allowed"
@@ -76,17 +64,17 @@ exit 0
 # install client config files
 do_install()
 {
+echo ""
+echo "+---------------"
 if [ ! -d $MIXDEST ]
 then
   install -d -o mixmaster -g mixmaster -m 0710 $MIXDEST
-  echo ""
-  echo "+---------------"
-else
-  echo ""
-  echo "+---------------"
-  echo "| $MIXDEST does already exist. It will not be updated by this"
+elif [ -f $MIXDEST/mix.cfg ]
+then
+  echo "| $MIXDEST/mix.cfg does already exist. It will not be updated by this"
   echo "| script. If this is not your intention, please deinstall mixmaster,"
   echo "| delete $MIXDEST and reinstall."
+  echo "|"
   last_message
 fi
 
@@ -97,10 +85,17 @@ then
 fi
 
 cd $MIXDIR
-for i in "mixmaster.conf type2.list pubring.mix mix.list urls"
+for i in "mix.cfg mlist.txt pubring.mix type2.list *.blk"
 do
   install -o mixmaster -g mixmaster -m 0640 $i $MIXDEST
 done
+
+if [ ! -d $MIXSPOOL ]
+then
+  install -d -o mixmaster -g mixmaster -m 0770 $MIXSPOOL
+fi
+ln -s $MIXSPOOL $MIXDEST/pool
+chmod 0770 $MIXDEST/pool
 
 last_message
 }

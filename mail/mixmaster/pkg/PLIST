@@ -1,17 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/04 15:22:34 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/09/14 15:21:14 naddy Exp $
 sbin/mixmaster
 man/man1/mixmaster.1
-share/examples/mixmaster/destination.block
-share/examples/mixmaster/getlist
-share/examples/mixmaster/headers.del
-share/examples/mixmaster/keyinfo.txt.in
-share/examples/mixmaster/mix.help
-share/examples/mixmaster/mix.help.in
-share/examples/mixmaster/mix.list
-share/examples/mixmaster/mixmaster.conf
-share/examples/mixmaster/mixmaster.conf.in
+share/examples/mixmaster/README
+share/examples/mixmaster/abuse.txt.in
+share/examples/mixmaster/adminkey.txt
+share/examples/mixmaster/blocked.txt.in
+share/examples/mixmaster/dest.alw
+share/examples/mixmaster/dest.blk
+share/examples/mixmaster/end.hlp
+share/examples/mixmaster/header.blk
+share/examples/mixmaster/intro.hlp
+share/examples/mixmaster/mix.cfg
+share/examples/mixmaster/mix.cfg.ex
+share/examples/mixmaster/mix.hlp
+share/examples/mixmaster/mlist.txt
+share/examples/mixmaster/news.hlp
+share/examples/mixmaster/pgp.hlp
+share/examples/mixmaster/pgponly.hlp
+share/examples/mixmaster/pubring.asc
 share/examples/mixmaster/pubring.mix
-share/examples/mixmaster/source.block
+share/examples/mixmaster/rab.blk
+share/examples/mixmaster/reply.txt.in
+share/examples/mixmaster/rlist.txt
+share/examples/mixmaster/type1.hlp
 share/examples/mixmaster/type2.list
-share/examples/mixmaster/urls
+share/examples/mixmaster/usage.txt.in
 @dirrm share/examples/mixmaster

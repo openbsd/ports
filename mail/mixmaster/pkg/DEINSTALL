@@ -1,12 +1,12 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/07/04 15:22:34 lebel Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2002/09/14 15:21:14 naddy Exp $
 #
 # mixmaster de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${SYSCONFDIR}
+CONFIG_DIR=${SYSCONFDIR}/mixmaster
 
 if [ -d $CONFIG_DIR ]; then
     echo ""
@@ -14,13 +14,8 @@ if [ -d $CONFIG_DIR ]; then
     echo "| To completely deinstall the $1 package you need to perform"
     echo "| these steps as root:"
     echo "|"
-    echo "|   rm -rf $CONFIG_DIR and/or"
+    echo "|   rm -fr /var/spool/mixmaster"
     echo "|   rmuser mixmaster" 
-    echo "|"
-    echo "| You can also remove any crontab entries for 'mixmaster' by"
-    echo "| executing as root" 
-    echo "|"
-    echo "|   crontab -u mixmaster -r"
     echo "+---------------"
     echo ""
 fi
