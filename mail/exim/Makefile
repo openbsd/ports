@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2004/05/10 07:42:32 brad Exp $
+# $OpenBSD: Makefile,v 1.39 2004/05/10 08:42:42 brad Exp $
 
 COMMENT=	"flexible mail transfer agent"
 
@@ -27,7 +27,7 @@ FLAVORS=	no_x11 no_perl mysql postgresql ldap no_ssl
 FLAVOR?=
 
 MAKE_ENV=	FLAVOR="${FLAVOR}"
-MAKE_FLAGS=	CC="${CC}"
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 EXIM_MAKECAT=
 EXIM_LOOKUP_INCLUDE=
