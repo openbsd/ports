@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2004/06/23 03:26:11 marcm Exp $
+# $OpenBSD: Makefile,v 1.11 2004/07/08 17:09:38 marcm Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 COMMENT-battstat=	"GNOME applet for monitoring battery level"
 
-VERSION=		2.6.1
+VERSION=		2.6.2
 DISTNAME=		gnome-applets-${VERSION}
 PKGNAME=		gnome-applets2-${VERSION}
 PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}
