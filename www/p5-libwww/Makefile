@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/03/30 23:18:45 avsm Exp $
+# $OpenBSD: Makefile,v 1.7 2001/04/09 23:21:41 avsm Exp $
 
 COMMENT=	"library for WWW access in Perl"
 
@@ -14,7 +14,8 @@ BUILD_DEPENDS=  ${PERL_MODULES}/URI.pm::www/p5-URI \
 		${PERL_MODULES}/${ARCH}-openbsd/HTML/Entities.pm::www/p5-HTML-Parser \
 		${PERL_MODULES}/Net/Cmd.pm::net/p5-libnet \
 		${PERL_MODULES}/${ARCH}-openbsd/MD5.pm::security/p5-Digest-MD5 \
-		${PERL_MODULES}/${ARCH}-openbsd/Crypt/SSLeay.pm::security/p5-Crypt-SSLeay
+		${PERL_MODULES}/${ARCH}-openbsd/Crypt/SSLeay.pm::security/p5-Crypt-SSLeay \
+		${PERL_MODULES}/${ARCH}-openbsd/HTTP/GHTTP.pm::www/p5-HTTP-GHTTP
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
