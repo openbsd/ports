@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2000/06/02 16:29:15 form Exp $
+# $OpenBSD: INSTALL,v 1.3 2000/07/11 07:49:06 form Exp $
 #
 # Pre/post-installation setup of joe
 
@@ -34,7 +34,7 @@ do_install()
 	echo
 	echo "+---------------"
 	echo "| The $1 configuration files have been installed into"
-	echo "| $CONFIG_DIR}. Please view these files and change"
+	echo "| ${CONFIG_DIR}. Please view these files and change"
 	echo "| the configuration to meet your needs."
 	echo "+---------------"
 	echo
