@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2001/05/29 06:11:36 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2001/09/14 23:48:45 jakob Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.merit.edu/postfix/%SUBDIR%/ \
 DIST_SUBDIR=	postfix
 
 HOMEPAGE=	http://www.postfix.org/
-
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
