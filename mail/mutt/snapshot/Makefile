@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2001/09/24 17:39:16 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/24 15:31:19 lebel Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
-VERSION=	1.3.21
+VERSION=	1.3.23
 DISTNAME=	mutt-${VERSION}i
 CATEGORIES=     mail
 NEED_VERSION=	1.460
-MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/devel/ \
-                ftp://ftp.gbnet.net/pub/mutt-international/devel/ \
-                ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/devel/ \
-                ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/devel/ \
-		ftp://ftp.iks-jena.de/pub/mitarb/lutz/crypt/software/pgp/mutt/devel/
+MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
+                ftp://ftp.gbnet.net/pub/mutt-international/ \
+                ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
+                ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/ \
+		ftp://ftp.iks-jena.de/pub/mitarb/lutz/crypt/software/pgp/mutt/
 
 HOMEPAGE=	http://www.mutt.org/
 
@@ -47,7 +47,7 @@ CONFIGURE_ARGS+= --with-curses
 # http://www.spinnaker.de/mutt/compressed/
 .if ${FLAVOR:L:Mcompressed}
 MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
-PATCHFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
+PATCHFILES+=	patch-${VERSION}.rr.compressed.2.gz:0
 PATCH_DIST_STRIP=-p1
 CONFIGURE_ARGS+= --enable-compressed
 .endif

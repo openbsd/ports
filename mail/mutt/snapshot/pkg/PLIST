@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/20 19:51:53 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/10/24 15:31:19 lebel Exp $
 bin/flea
 bin/mutt
 bin/mutt_dotlock
@@ -20,7 +20,6 @@ share/doc/mutt/PGP-Notes.txt
 share/doc/mutt/README
 share/doc/mutt/README.SECURITY
 share/doc/mutt/README.SSL
-share/doc/mutt/README.UPGRADE
 share/doc/mutt/TODO
 share/doc/mutt/applying-patches.txt
 share/doc/mutt/devel-notes.txt
