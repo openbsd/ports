@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/11/18 20:41:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2004/02/04 15:57:27 xsa Exp $
 
 COMMENT=	"Zope content management framework"
 
@@ -7,6 +7,8 @@ PKGNAME=	zope-${DISTNAME:L}
 CATEGORIES=	www
 
 HOMEPAGE=	http://cmf.zope.org/
+
+MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # Zope Public License (ZPL) 2.0 <http://www.zope.org/Resources/ZPL>
 PERMIT_PACKAGE_CDROM=	Yes
