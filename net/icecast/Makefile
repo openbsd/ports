@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2000/08/29 04:27:50 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/08/29 04:28:55 brad Exp $
 
 ONLY_FOR_ARCH=	i386
 
 DISTNAME=	icecast-1.3.7
-CATEGORIES=	audio net www
+CATEGORIES=	net audio www
 NEED_VERSION=	1.320
 MASTER_SITES=	http://www.icecast.org/releases/
 
