@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/02 22:54:05 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2002/04/15 20:16:53 pvalchev Exp $
 
 COMMENT=	"game where you deal drugs on the streets of NY"
 
@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR= dopewars
 
 HOMEPAGE=	http://dopewars.sourceforge.net/
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+
+LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
