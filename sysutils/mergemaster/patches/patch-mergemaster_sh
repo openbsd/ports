@@ -1,6 +1,6 @@
-$OpenBSD: patch-mergemaster_sh,v 1.5 2003/05/13 20:40:04 naddy Exp $
+$OpenBSD: patch-mergemaster_sh,v 1.6 2003/05/17 19:39:31 naddy Exp $
 --- mergemaster.sh.orig	Sat May 10 16:06:02 2003
-+++ mergemaster.sh	Tue May 13 11:58:38 2003
++++ mergemaster.sh	Sat May 17 13:22:34 2003
 @@ -404,7 +404,7 @@ fi
  
  # Define what CVS $Id tag to look for to aid portability.
@@ -97,7 +97,7 @@ $OpenBSD: patch-mergemaster_sh,v 1.5 2003/05/13 20:40:04 naddy Exp $
  # Use the umask/mode information to install the files
  # Create directories as needed
  #
-@@ -666,12 +611,9 @@ do_install_and_rm () {
+@@ -666,12 +611,8 @@ do_install_and_rm () {
    rm -f "${2}"
  }
  
@@ -107,12 +107,11 @@ $OpenBSD: patch-mergemaster_sh,v 1.5 2003/05/13 20:40:04 naddy Exp $
 -  OCTAL=$(( ~$(echo "obase=10; ibase=8; ${CONFIRMED_UMASK}" | bc) & 4095 &
 -    $(echo "obase=10; ibase=8; $(stat -f "%OMp%OLp" ${1})" | bc) )) 
 -  printf "%04o\n" ${OCTAL}
-+  perl -e 'printf "%04o\n", (((stat("$ARGV[0]"))[2] & 07777) &~ \
-+    oct("$ARGV[1]"))' "${1}" "${CONFIRMED_UMASK}"
++  perl -e 'printf "%04o\n", (((stat("$ARGV[0]"))[2] & 07777) &~ oct("$ARGV[1]"))' "${1}" "${CONFIRMED_UMASK}"
  }
  
  mm_install () {
-@@ -698,7 +640,9 @@ mm_install () {
+@@ -698,7 +639,9 @@ mm_install () {
        NEED_NEWALIASES=yes
        ;;
      /etc/login.conf)
@@ -123,7 +122,7 @@ $OpenBSD: patch-mergemaster_sh,v 1.5 2003/05/13 20:40:04 naddy Exp $
        ;;
      /etc/master.passwd)
        do_install_and_rm 600 "${1}" "${DESTDIR}${INSTALL_DIR}"
-@@ -1015,47 +959,27 @@ fi
+@@ -1015,47 +958,27 @@ fi
  case "${COMP_CONFS}" in
  '') ;;
  *)
