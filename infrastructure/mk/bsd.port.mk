@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.584 2003/08/15 00:04:45 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.585 2003/08/21 20:22:45 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -94,7 +94,6 @@ show:
 FAKE?=Yes
 TRUST_PACKAGES?=No
 BIN_PACKAGES?=No
-WRKINST?=${WRKDIR}/fake-${ARCH}${_FLAVOR_EXT2}
 _LIBLIST=${WRKDIR}/.liblist-${ARCH}${_FLAVOR_EXT2}
 _BUILDLIBLIST=${WRKDIR}/.buildliblist-${ARCH}${_FLAVOR_EXT2}
 
@@ -460,6 +459,12 @@ BZIP2?=	bzip2
 
 MAKE_ENV+=	EXTRA_SYS_MK_INCLUDES="<bsd.own.mk>"
 
+
+.if defined(FAKEOBJDIR)
+WRKINST?=	${FAKEOBJDIR}/${PKGNAME}${_FLAVOR_EXT2}
+.else
+WRKINST?=	${WRKDIR}/fake-${ARCH}${_FLAVOR_EXT2}
+.endif
 
 .if defined(WRKOBJDIR)
 .  if defined(SEPARATE_BUILD) && ${SEPARATE_BUILD:L:Mflavored}
