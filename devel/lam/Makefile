@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/04/09 17:36:17 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/06/02 16:09:51 yanick Exp $
 # Original from: Yannick Cote
 
 DISTNAME=		lam-6.3.1
@@ -6,6 +6,7 @@ CATEGORIES=     	devel math net
 FAKE=No
 
 MAINTAINER=		yanick@openbsd.org
+BROKEN=			"Waiting for the 6.3.3 version which will contain a decent build process."
 
 MASTER_SITES=		http://www.mpi.nd.edu/downloads/lam/
 
