@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/11 01:22:17 naddy Exp $
+${P5ARCH}/Text/Tmpl.pm
+${P5ARCH}/Text/libtmpl.pod
+${P5ARCH}/Text/template_extend.pod
+${P5ARCH}/Text/template_syntax.pod
+${P5ARCH}/auto/Text/Tmpl/Tmpl.bs
+${P5ARCH}/auto/Text/Tmpl/Tmpl.so
+${P5ARCH}/auto/Text/Tmpl/autosplit.ix
+man/man3p/Text::Tmpl.3
+man/man3p/libtmpl.3
+man/man3p/template_extend.3
+man/man3p/template_syntax.3
+@dirrm ${P5ARCH}/auto/Text/Tmpl

@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2003/05/11 01:22:17 naddy Exp $
+--- Makefile.PL.orig	Sat May 10 19:08:54 2003
++++ Makefile.PL	Sat May 10 19:09:01 2003
+@@ -6,7 +6,6 @@ WriteMakefile(
+     'OBJECT'       => 'context.o default_tags.o nclist.o parser.o '
+                     . 'staglist.o tagplist.o template.o varlist.o '
+                     . 'tokens.o perl_tags.o Tmpl.o',
+-    'OPTIMIZE'     => '-O3',
+     'INC'          => '-I.',
+     'MAN3PODS'     => {
+                         'Tmpl.pm'             => 'blib/man3/Text::Tmpl.3',

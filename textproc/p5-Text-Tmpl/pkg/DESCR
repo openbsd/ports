@@ -1,0 +1,4 @@
+Text::Tmpl is a simplified template library, which allows for text
+template to be interpreted from a Perl script. The template language
+allows for variables, flow control, and loops, and the template format
+can be defined from the perl script.
