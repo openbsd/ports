@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2003/02/04 14:42:59 lebel Exp $
+# $OpenBSD: Makefile,v 1.22 2003/04/30 14:37:37 lebel Exp $
 
 COMMENT=		"reduce the amount of SPAM/UCE (junk-mail)"
 
-VERSION=		0.69
+VERSION=		0.76
 DISTNAME=		tmda-${VERSION}
 CATEGORIES=		mail
 
@@ -19,17 +19,26 @@ MASTER_SITES=		http://tmda.net/releases/ \
 			http://tmda.net/releases/old/
 EXTRACT_SUFX=		.tgz
 
-RUN_DEPENDS+=   	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-BUILD_DEPENDS=  	${RUN_DEPENDS}
+FLAVORS=		no_x11
+FLAVOR?=
 
-PYTHON_VER=     	2.1
-PYTHON_LIBDIR=		lib/python${PYTHON_VER}
+PYTHON_VER=     	2.2
+
+.if ${FLAVOR} != "no_x11"
+RUN_DEPENDS=		:python-tkinter-${PYTHON_VER}*:lang/python/${PYTHON_VER},-tkinter
+.endif
+RUN_DEPENDS+=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+BUILD_DEPENDS=		${RUN_DEPENDS}
+
+PYTHON_LIBDIR=		lib/python${PYTHON_VER}/site-packages
 SUBST_VARS=		PYTHON_VER
 NO_REGRESS=		Yes
 
+CONTRIB_FILES=		collectaddys printcdb sample.config sendit.sh \
+			def2html printdbm tmda.el vadduser-tmda
+
 do-build:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/python${PYTHON_VER} -c \
-		'import compileall; compileall.compile_dir(".", force=1)'
+	@cd ${WRKSRC} && ${LOCALBASE}/bin/python${PYTHON_VER} ./compileall
 
 do-install:
 	@perl -pi -e 's:htdocs:${TRUEPREFIX}/share/doc/tmda:' ${WRKSRC}/INSTALL
@@ -40,11 +49,14 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/tmda
 	${INSTALL_DATA} ${WRKSRC}/templates/*.txt ${PREFIX}/share/tmda
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tmda-* ${PREFIX}/bin
+.if ${FLAVOR} == "no_x11"
+	@rm -f ${PREFIX}/bin/tmda-gui
+.endif
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tmda/contrib
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tmda
 	${INSTALL_DATA} ${WRKSRC}/contrib/sample.config \
 		${PREFIX}/share/examples/tmda
-.for f in collectaddys printcdb def2html printdbm tmda.el
+.for f in ${CONTRIB_FILES}
 	${INSTALL_DATA} ${WRKSRC}/contrib/$f ${PREFIX}/share/doc/tmda/contrib
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/htdocs/*.html ${PREFIX}/share/doc/tmda
