@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/04/29 10:38:20 form Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/20 02:34:24 pvalchev Exp $
 # $RuOBSD: Makefile,v 1.3 2002/04/28 16:29:29 grange Exp $
 
 COMMENT=		"proxy-cache-servers logfiles analizer"
 
-DISTNAME=		calamaris-2.45
+DISTNAME=		calamaris-2.46
 CATEGORIES=		www sysutils
-NEED_VERSION=		1.525
+NEED_VERSION=		1.530
 
 HOMEPAGE=		http://cord.de/tools/squid/calamaris/	
 
