@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.6 2000/02/12 01:00:28 espie Exp $
+# $OpenBSD: Makefile.template,v 1.7 2000/02/12 06:02:05 turan Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -19,13 +19,60 @@ CATEGORIES=     	???
 #COMES_WITH=		???
 #ONLY_FOR_ARCHS=	???
 #BROKEN=		"reason"
-#NO_CDROM=		"reason"
 #RESTRICTED=		"reason"
 #MIRROR_DISTFILE=	no
 
 # where to send bitches about this port
 #
 MAINTAINER=		ports@openbsd.org
+
+# Licensing for this port.  License types:
+# BSD:    BSD (or a BSD like) license.
+#         Can be distributed.  Documentation that mentions package may
+#         need to include owners copyright.
+# COMM:   Commercial software.
+#         For fee software.
+# COPY:   Copyright that allows or denys distribution
+#         Read copyright before use, there may be usage restrictions
+#         even if distribution is allowed.
+# CRYPTO: Third party crypto not allowed.
+# ELM:    Can not charge _extra_ for distribution
+#         May distribute when the price of the distribution does would
+#         not change if the port were removed from the distribution.
+# GPL:    Licensed under one of the various GNU licenses.
+# INC:    Package is included in OpenBSD, distribution not needed.
+# LIC:    Requires license for redistribution.
+#         Note: a license may only be required for a `commercial' distribution
+#         which is how I'm treating the OpenBSD CD-ROMs.
+# NONE:   No license/copyright found in source code or related documentation.
+# NOFEE:  Can not charge for distribution
+#         The software may be `free', but the copyright states `may not charge
+#         for distribution' or words to that effect.
+# PAT:    Patent or Patent Pending
+# PD:     Explicitly stated to be in the Public Domain.
+# PERL:   PERL (or PERL like) license.
+# REST:   Restrictive license
+# SHARE:  Shareware.
+# X:      X Consortium (or X consortium like, e.g. XFree86) license.
+#         a full and unrestricted irrevocable, world-wide, paid up,
+#         royalty-free, nonexclusive right and license to deal in this
+#         software...
+# TOG:    The Open Group license.  Not to be confused with X or XFree86.
+#         Software distributed under the TOG license is NOT free.
+# 
+#         NOTE: A LICENSE THAT ALLOWS COPYING/REDISTRIBUTION MAY STILL
+#         BE RESTRICTIVE WITH RESPECT TO USE OF THE BINARY AND/OR
+#         SOURCE CODE.  PLEASE READ ALL LICENSES/COPYRIGHTS CAREFULLY.
+#
+# LICENSE_FILE is the path to the file that contains licensing information
+# for this port.  LICENSE_MD5 is the MD5 checksum of that file.  Set
+# NO_LICENSE if the port does not have a license.
+
+LICENSE_TYPE=		"License type"
+PERMIT_PKG_CDROM=	"YES|'Reason if NO'"
+PERMIT_PKG_FTP=		"YES|'Reason if NO'"
+PERMIT_DISTF_CDROM=	"YES|'Reason if NO'"
+PERMIT_DISTF_FTP=	"YES|'Reason if NO'"
 
 # where the source files and patches can be fetched
 #

@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.196 2000/02/12 00:49:17 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.197 2000/02/12 06:02:04 turan Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1197,6 +1197,15 @@ ${_EXTRACT_COOKIE}:
 	@cd ${.CURDIR} && make post-extract
 .  endif
 .endif
+
+# You need to define LICENCE_TYPE and PERMIT_* to make the warning go away.
+# See ports/infrastructure/templates/Makefile.template
+.if !defined(LICENSE_TYPE) || !defined(PERMIT_PKG_CDROM) || \
+!defined(PERMIT_PKG_FTP) || !defined(PERMIT_DISTF_CDROM) || \
+!defined( PERMIT_DISTF_FTP)
+	@echo "*** LICENSING INFO INCOMPLETE!  NOTIFY MAINTAINER! ***"
+.endif
+
 	@${_MAKE_COOKIE} ${_EXTRACT_COOKIE}
 
 
