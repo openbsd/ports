@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2001/10/28 12:30:14 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2001/11/06 08:45:43 kevlo Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -22,7 +22,7 @@ LIB_DEPENDS= 	png.2::graphics/png \
 		tiff.35::graphics/tiff \
 		audiofile::devel/libaudiofile \
 		pcreposix,pcre::devel/pcre \
-		xml2:libxml->=2.3.13:textproc/libxml \
+		xml2:libxml->=2.4.7:textproc/libxml \
 		bz2::archivers/bzip2
 
 BUILD_DEPENDS=	:zsh-*:shells/zsh/stable ::x11/qt2,-html
