@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2001/04/15 03:14:15 matt Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/07 02:28:23 matt Exp $
 
 COMMENT=	"Fast-Light Tool Kit"
 
-VER=		1.0.10
+VER=		1.0.11
 PKGNAME=	fltk-${VER}
 DISTNAME=	${PKGNAME}-source
 
@@ -20,17 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.fltk.org/pub/fltk/${VER}/
 
-# The -glut FLAVOR builds fltk's GLUT emulation layer.
-FLAVORS=	glut
-FLAVOR?=
-
-.if ${FLAVOR:L:Mglut}
-CONFIGURE_ARGS+=--enable-glut
-.else
-CONFIGURE_ARGS+=--disable-glut
-.endif
-
-CONFIGURE_STYLE=gnu dest
+CONFIGURE_STYLE=autoconf dest
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 WRKDIST=	${WRKDIR}/${PKGNAME}
 

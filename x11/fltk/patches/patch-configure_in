@@ -1,34 +1,43 @@
-$OpenBSD: patch-configure_in,v 1.1 2001/04/15 03:14:15 matt Exp $
---- configure.in.orig	Wed Dec  6 16:09:59 2000
-+++ configure.in	Sat Apr 14 21:58:21 2001
-@@ -79,7 +79,7 @@ if eval "test x$enable_shared = xyes"; t
+$OpenBSD: patch-configure_in,v 1.2 2001/06/07 02:28:25 matt Exp $
+--- configure.in.orig	Mon May  7 10:34:22 2001
++++ configure.in	Wed Jun  6 22:14:02 2001
+@@ -80,7 +80,7 @@ if eval "test x$enable_shared = xyes"; t
  	  ;;
        FreeBSD* | NetBSD* | OpenBSD*)
            DSONAME="libfltk.so.1"
 -	  DSOCOMMAND="\$(CXX) -Wl,-soname,\$@ -shared \$(OPTIM) -o"
 +	  DSOCOMMAND="\$(CXX) -Wl,-soname,\$@ -fPIC -shared \$(OPTIM) -o"
  	  ;;
-       *)
-           echo "Warning: shared libraries may not be supported.  Trying -shared"
-@@ -146,18 +146,24 @@ LIBS="$LIBS$X_LIBS"
- CFLAGS="$CFLAGS$X_CFLAGS"
- CXXFLAGS="$CXXFLAGS$X_CFLAGS"
- 
--dnl My test to see if OpenGL is on this machine:
+       AIX*)
+           PICFLAG=0
+@@ -178,10 +178,10 @@ dnl Check for OpenGL unless disabled...
  GLLIB=
--AC_CHECK_LIB(GL, glXMakeCurrent, AC_DEFINE(HAVE_GL) GLLIB=" -lGLU -lGL", \
--    AC_CHECK_LIB(MesaGL,glXMakeCurrent, AC_DEFINE(HAVE_GL) GLLIB=" -lMesaGLU -lMesaGL",,\
--	-lX11 -lXext $X_EXTRA_LIBS -lm), \
-+AC_ARG_ENABLE(glut, [  --enable-glut           build the GLUT compatibility layer [default=no]],[
-+if eval "test x$enable_glut = xyes"; then
-+AC_CHECK_LIB(GLU, gluCylinder, AC_DEFINE(HAVE_GL) GLLIB=" -lGLU -lGL", \
-     -lX11 -lXext $X_EXTRA_LIBS -lm)
- AC_SUBST(GLLIB)
-+if eval "test x\"$GLLIB\" = x"; then
-+    AC_MSG_ERROR([--enable-glut was specified but GLU could not be found])
-+fi
-+fi])
  
+ if test x$enable_gl != xno; then
++    SAVE_ac_cpp=$ac_cpp
++    ac_cpp="$ac_cpp -I$x_includes"
+     AC_CHECK_HEADER(GL/gl.h,
+-	AC_CHECK_LIB(GL, glXMakeCurrent, AC_DEFINE(HAVE_GL) GLLIB="-lGL", \
+-	    AC_CHECK_LIB(MesaGL,glXMakeCurrent, AC_DEFINE(HAVE_GL) GLLIB=" -lMesaGL",,\
+-		-lX11 -lXext $X_EXTRA_LIBS -lm), \
++	AC_CHECK_LIB(GLU, gluCylinder, AC_DEFINE(HAVE_GL) GLLIB="-lGL", \
+ 	    -lX11 -lXext $X_EXTRA_LIBS -lm)
+     )
+     AC_CHECK_HEADER(GL/glu.h,
+@@ -189,19 +189,20 @@ if test x$enable_gl != xno; then
+ 	if test x$ac_cv_lib_GL_glXMakeCurrent = xyes; then
+ 	    GLLIB="-lGLU $GLLIB"
+ 	fi
+-	if test x$ac_cv_lib_MesaGL_glXMakeCurrent = xyes; then
+-	    GLLIB="-lMesaGLU $GLLIB"
+-	fi
+     )
++    ac_cpp=$SAVE_ac_cpp
+ fi
+ 
+ AC_SUBST(GLLIB)
+ 
+ dnl Check for the Xdbe extension...
 +SAVE_ac_cpp=$ac_cpp
 +ac_cpp="$ac_cpp -I$x_includes"
  AC_CHECK_HEADER(X11/extensions/Xdbe.h, \
@@ -37,20 +46,23 @@ $OpenBSD: patch-configure_in,v 1.1 2001/04/15 03:14:15 matt Exp $
      fi)
 +ac_cpp=$SAVE_ac_cpp
  
+ dnl Check for overlay visuals...
  AC_CACHE_CHECK("for X overlay visuals", ac_cv_have_overlay,
-     if xprop -root 2>/dev/null | grep -c "SERVER_OVERLAY_VISUALS" >/dev/null; then
-@@ -175,17 +181,6 @@ MAKEDEPEND="\$(CXX) -M"
- dnl add warnings to compiler switches:
- dnl do this last so messing with switches does not break tests
- if test -n "$GXX"; then
+@@ -263,20 +264,6 @@ if test -n "$GXX"; then
+     # Use gcc instead of c++ or g++, since we don't need the C++
+     # library to depend on...
+     CXX="$CC"
 -    CFLAGS="-Wall $CFLAGS"
 -    CXXFLAGS="-Wall $CXXFLAGS"
 -    if test -z "$DEBUGFLAG"; then
--    	# Note: Can't use -fomit-frame-pointer - prevents tools like
+-    	#
+-	# Note: Can't use -fomit-frame-pointer - prevents tools like
 -	#       libsafe from working!
--	# WAS: I removed the -fforce-mem, -fforce-addr, -fcaller-saves
--	#      They all seemed to make either no difference or enlarged
--	#      the code by a few hundred bytes.
+-        #
+-	#       Don't use -fforce-mem, -fforce-addr, or -fcaller-saves.
+-	#       They all seem to make either no difference or enlarge
+-	#       the code by a few hundred bytes.
+-        #
 -        CFLAGS="-O2 $CFLAGS"
 -        CXXFLAGS="-O2 $CXXFLAGS"
 -    fi
