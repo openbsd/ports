@@ -1,3 +1,17 @@
+bin/mxmkmf
+bin/mwm
+bin/xmbind
+bin/uil
+lib/X11/lesstif/Imake.tmpl
+lib/X11/lesstif/Motif.rules
+lib/X11/lesstif/Motif.tmpl
+lib/X11/mwm/system.mwmrc
+lib/X11/mwm/alt.map
+lib/X11/mwm/README
+lib/libXm.la
+lib/libMrm.la
+include/Xm
+include/Mrm
 man/man1/mwm.1
 man/man1/xmbind.1
 man/man1/lesstif.1
@@ -70,61 +84,6 @@ man/man3/Rect.3
 man/man3/UnNamedObj.3
 man/man3/Constraint.3
 man/man5/mwmrc.5
-lib/X11/lesstif/Imake.tmpl
-lib/X11/lesstif/Motif.rules
-lib/X11/lesstif/Motif.tmpl
-lib/X11/mwm/system.mwmrc
-lib/X11/mwm/alt.map
-lib/X11/mwm/README
-lib/libXm.la
-lib/libMrm.la
-share/LessTif/doc/html/images/hungry.gif
-share/LessTif/doc/html/images/lesstif-realsmall.gif
-share/LessTif/doc/html/images/lesstif-small.gif
-share/LessTif/doc/html/images/lesstif.gif
-share/LessTif/doc/html/images/ltsunlogo.gif
-share/LessTif/doc/html/imgs/lesstif.jpg
-share/LessTif/doc/html/imgs/ltsunlogo.gif
-share/LessTif/doc/html/COPYING.LIB.html
-share/LessTif/doc/html/FAQ.html
-share/LessTif/doc/html/apps.html
-share/LessTif/doc/html/bug-reporting.html
-share/LessTif/doc/html/bugs.html
-share/LessTif/doc/html/button.html
-share/LessTif/doc/html/cdrom.html
-share/LessTif/doc/html/core.html
-share/LessTif/doc/html/current.html
-share/LessTif/doc/html/cvs.html
-share/LessTif/doc/html/download.html
-share/LessTif/doc/html/index.html
-share/LessTif/doc/html/links.html
-share/LessTif/doc/html/lists.html
-share/LessTif/doc/html/mirrors.html
-share/LessTif/doc/html/platforms.html
-share/LessTif/doc/html/release-policy.html
-share/LessTif/doc/html/test_policy.html
-share/LessTif/doc/html/test_summary.html
-share/LessTif/doc/html/testers.html
-share/LessTif/doc/html/versions.html
-share/LessTif/doc/html/web_button.html
-share/LessTif/doc/html/INSTALL.html
-share/LessTif/AUTHORS
-share/LessTif/BUG-REPORTING
-share/LessTif/COPYING
-share/LessTif/COPYING.LIB
-share/LessTif/CREDITS
-share/LessTif/INSTALL
-share/LessTif/KNOWN_BUGS
-share/LessTif/NEWS
-share/LessTif/README
-share/LessTif/RELEASE-POLICY
-share/LessTif/TODO
-include/Xm
-include/Mrm
-bin/mxmkmf
-bin/mwm
-bin/xmbind
-bin/uil
 LessTif/Motif1.2/include/Xm/Xm.h
 LessTif/Motif1.2/include/Xm/ArrowB.h
 LessTif/Motif1.2/include/Xm/ArrowBG.h
@@ -404,20 +363,61 @@ LessTif/doc/man/man3/XtConfigureObject.3
 LessTif/doc/man/man3/XtDestroyWidget.3
 LessTif/doc/man/man3/XtManageChild.3
 LessTif/doc/man/man3/XtUnmanageChild.3
+share/LessTif/doc/html/images/hungry.gif
+share/LessTif/doc/html/images/lesstif-realsmall.gif
+share/LessTif/doc/html/images/lesstif-small.gif
+share/LessTif/doc/html/images/lesstif.gif
+share/LessTif/doc/html/images/ltsunlogo.gif
+share/LessTif/doc/html/imgs/lesstif.jpg
+share/LessTif/doc/html/imgs/ltsunlogo.gif
+share/LessTif/doc/html/COPYING.LIB.html
+share/LessTif/doc/html/FAQ.html
+share/LessTif/doc/html/apps.html
+share/LessTif/doc/html/bug-reporting.html
+share/LessTif/doc/html/bugs.html
+share/LessTif/doc/html/button.html
+share/LessTif/doc/html/cdrom.html
+share/LessTif/doc/html/core.html
+share/LessTif/doc/html/current.html
+share/LessTif/doc/html/cvs.html
+share/LessTif/doc/html/download.html
+share/LessTif/doc/html/index.html
+share/LessTif/doc/html/links.html
+share/LessTif/doc/html/lists.html
+share/LessTif/doc/html/mirrors.html
+share/LessTif/doc/html/platforms.html
+share/LessTif/doc/html/release-policy.html
+share/LessTif/doc/html/test_policy.html
+share/LessTif/doc/html/test_summary.html
+share/LessTif/doc/html/testers.html
+share/LessTif/doc/html/versions.html
+share/LessTif/doc/html/web_button.html
+share/LessTif/doc/html/INSTALL.html
+share/LessTif/AUTHORS
+share/LessTif/BUG-REPORTING
+share/LessTif/COPYING
+share/LessTif/COPYING.LIB
+share/LessTif/CREDITS
+share/LessTif/INSTALL
+share/LessTif/KNOWN_BUGS
+share/LessTif/NEWS
+share/LessTif/README
+share/LessTif/RELEASE-POLICY
+share/LessTif/TODO
+@dirrm LessTif/Motif1.2/include/Xm
+@dirrm LessTif/Motif1.2/include/Mrm
+@dirrm LessTif/Motif1.2/include
+@dirrm LessTif/Motif1.2/lib
+@dirrm LessTif/Motif1.2/
+@dirrm LessTif/Motif2.0/include/Xm
+@dirrm LessTif/Motif2.0/include/Mrm
+@dirrm LessTif/Motif2.0/include
+@dirrm LessTif/Motif2.0
 @dirrm LessTif/doc/man/man1
 @dirrm LessTif/doc/man/man3
 @dirrm LessTif/doc/man/man5
 @dirrm LessTif/doc/man
 @dirrm LessTif/doc/html
-@dirrm LessTif/Motif2.0/include/Mrm
-@dirrm LessTif/Motif2.0/include/Xm
-@dirrm LessTif/Motif2.0/include
-@dirrm LessTif/Motif2.0
-@dirrm LessTif/Motif1.2/include/Mrm
-@dirrm LessTif/Motif1.2/include/Xm
-@dirrm LessTif/Motif1.2/include
-@dirrm LessTif/Motif1.2/lib
-@dirrm LessTif/Motif1.2
 @dirrm LessTif/doc
 @dirrm LessTif
 @dirrm share/LessTif/doc/html/imgs
@@ -427,3 +427,8 @@ LessTif/doc/man/man3/XtUnmanageChild.3
 @dirrm share/LessTif
 @dirrm lib/X11/mwm
 @dirrm lib/X11/lesstif
+@exec /sbin/ldconfig -m %B
+
+
+
+
