@@ -1,8 +1,8 @@
---- p0f.c.orig	Tue Feb  5 14:59:56 2002
-+++ p0f.c	Tue Feb  5 14:59:21 2002
-@@ -291,7 +291,7 @@
-   int i=0;
+--- p0f.c.orig	Mon May 13 12:59:40 2002
++++ p0f.c	Fri Feb  7 21:40:19 2003
+@@ -397,7 +397,7 @@ void load_fprints(char *filename) {
    char *p;
+   //bzero(fips,120000);
    x=fopen(filename, "r");
 -  if (!x) x=fopen("p0f.fp", "r");
 +  if (!x) x=fopen(SYSCONFDIR "p0f.fp", "r");

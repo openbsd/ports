@@ -1,7 +1,7 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2001/10/29 03:20:38 jcs Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/07/19 17:02:06 jose Exp $
 #
-# Pre/post-installation setup of p0f, stolen from jsyn's siphone scripts
+# Pre/post-installation setup of p0f, stolen from jsyn's siphon scripts
 
 # exit on errors, use a sane path and install prefix
 
@@ -9,7 +9,8 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=${SYSCONFDIR}/p0f.fp
-SAMPLE_CONFIG_DIR=$PREFIX/share/examples/p0f
+MYSQL_CONFIG=${SYSCONFDIR}/p0f-mysql.conf
+SAMPLE_CONFIG_DIR=${PREFIX}/share/examples/p0f
 
 do_notice()
 {
@@ -19,6 +20,10 @@ do_notice()
     echo "| has NOT been changed. You may want to compare it to the"
     echo "| current sample file in $SAMPLE_CONFIG_DIR,"
     echo "| and update your configuration as needed."
+    if [ -f $MYSQL_CONFIG ]; then
+	echo "| The existing $1 configuration file in $MYSQL_CONFIG"
+	echo "| has NOT been changed."
+    fi
     echo "+---------------"
     echo
 }
@@ -27,11 +32,24 @@ do_install()
 {
     install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/p0f.fp \
                                     $CONFIG_FILE
+    if [ -f $SAMPLE_CONFIG_DIR/mysql/p0f-mysql.conf ]; then
+	install -o root -g wheel -m 644 \
+	    $SAMPLE_CONFIG_DIR/mysql/p0f-mysql.conf $MYSQL_CONFIG
+    fi
     echo
     echo "+---------------"
     echo "| The $1 configuration file has been installed at"
-    echo "| $CONFIG_FILE. Please view this file and change the configuration"
+    echo "| $CONFIG_FILE."
+    if [ -f $MYSQL_CONFIG ]; then
+	echo "| The $1 MySQL configuration file has been installed at"
+	echo "| $MYSQL_CONFIG"
+    fi
+    echo "| Please view this file and change the configuration"
     echo "| to meet your needs."
+    if [ -f $MYSQL_CONFIG ]; then
+	echo "| Instructions on setting up MySQL support for $1 are in"
+ 	echo "| $SAMPLE_CONFIG_DIR/README"
+    fi
     echo "+---------------"
     echo
 }

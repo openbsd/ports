@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/10/29 03:20:38 jcs Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/07/19 17:02:06 jose Exp $
 #
 # p0f de-installation, ganked from siphon de-installation
 
@@ -7,6 +7,7 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=${SYSCONFDIR}/p0f.fp
+MYSQL_CONFIG=${SYSCONFDIR}/p0f-mysql.conf
 
 if [ -f $CONFIG_FILE ]; then
     echo
@@ -15,6 +16,9 @@ if [ -f $CONFIG_FILE ]; then
     echo "| this step as root:"
     echo "|"
     echo "|           rm -f $CONFIG_FILE"
+    if [ -f $MYSQL_CONFIG ]; then
+	echo "|           rm -f $MYSQL_CONFIG"
+    fi
     echo "|"
     echo "| Do not do this if you plan on re-installing $1"
     echo "| at some future time."
