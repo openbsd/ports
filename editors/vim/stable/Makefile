@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/10/31 00:02:10 lebel Exp $
+# $OpenBSD: Makefile,v 1.20 2001/11/01 01:49:15 brad Exp $
 
 COMMENT=	"vi clone, many additional features"
 
@@ -76,7 +76,7 @@ USE_MOTIF=any
 CONFIGURE_ARGS+=--enable-gui="athena" --with-x --enable-fontset --enable-xim
 .elif ${FLAVOR:L:Mgtk} && \
 	!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena}
-MODULES+=	gtk
+LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+
 CONFIGURE_ARGS+=--enable-gui="gtk" --with-x --enable-fontset --enable-xim
 .else
 ERRORS+="Fatal: You must select one GUI interface: no_x11, gtk, athena or motif"
