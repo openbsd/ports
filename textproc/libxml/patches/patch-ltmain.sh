@@ -1,45 +1,60 @@
---- ltmain.sh.orig	Thu Aug 23 19:24:25 2001
-+++ ltmain.sh	Wed Sep  5 15:11:27 2001
-@@ -1031,12 +1031,28 @@ compiler."
- 	    # These systems don't actually have a C library (as such)
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
+--- ltmain.sh.orig	Sun Nov  4 20:24:01 2001
++++ ltmain.sh	Tue Nov  6 12:41:48 2001
+@@ -1021,15 +1021,18 @@
+ 	;;
+ 
+       -l*)
+-	if test "X$arg" = "X-lc" || test "X$arg" = "X-lm"; then
+-	  case $host in
+-	  *-*-cygwin* | *-*-pw32* | *-*-beos*)
+-	    # These systems don't actually have a C or math library (as such)
++	if test "$arg" = "-lc"; then
++	  case "$host" in
 +	  *-*-openbsd*)
 +	    # Do not include libc due to us having libc/libc_r.
-+	    test "X$arg" = "X-lc" && continue
-+	    ;;
-+	  esac
-+	fi
-+	if test "X$arg" = "X-lc_r"; then
-+	  case $host in
+ 	    continue
+ 	    ;;
+-	  *-*-mingw* | *-*-os2*)
+-	    # These systems don't actually have a C library (as such)
+-	    test "X$arg" = "X-lc" && continue
++          esac
++	elif test "$arg" = "-lc_r"; then
++	  case "$host" in
 +	  *-*-openbsd*)
 +	    # Do not include libc_r directly, use -pthread flag.
 +	    continue
-+	    ;;
+ 	    ;;
  	  esac
  	fi
- 	deplibs="$deplibs $arg"
+@@ -1037,6 +1040,17 @@
  	continue
  	;;
  
-+      -?thread)
-+	deplibs="$deplibs $arg"
++      -pthread)
++	case $host in
++	*-*-openbsd*)
++	  deplibs="$deplibs $arg"
++	  ;;
++	*)
++	  continue
++	  ;;
++	esac
 +	;;
 +
        -module)
  	module=yes
  	continue
-@@ -2401,6 +2417,9 @@ compiler."
- 	  *-*-cygwin* | *-*-mingw* | *-*-pw32* | *-*-os2* | *-*-beos*)
- 	    # these systems don't actually have a c library (as such)!
- 	    ;;
-+	  *-*-openbsd*)
-+	    # Do not include libc due to us having libc/libc_r.
-+	    ;;
- 	  *-*-rhapsody* | *-*-darwin1.[012])
+@@ -2405,6 +2419,9 @@
  	    # Rhapsody C library is in the System framework
  	    deplibs="$deplibs -framework System"
-@@ -4412,40 +4431,6 @@ relink_command=\"$relink_command\""
+ 	    ;;
++          *-*-openbsd*)
++	    # Do not include libc due to us having libc/libc_r.
++	    ;;
+ 	  *-*-netbsd*)
+ 	    # Don't link with libc until the a.out ld.so is fixed.
+ 	    ;;
+@@ -4412,40 +4429,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  
