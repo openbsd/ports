@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/05 18:30:30 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/06 17:04:30 espie Exp $
 # Original from: Marco S Hyman <marc@OpenBSD.ORG>
 
 DISTNAME=	xv-3.10a
@@ -6,6 +6,11 @@ DIST_SUBDIR=	xv
 CATEGORIES=     graphics x11
 NEED_VERSION=	1.223
 NO_CDROM=	"NOFEE: can not sell"
+
+PERMIT_DISTFILES_FTP=Yes
+PERMIT_PACKAGE_FTP=Yes
+PERMIT_DISTFILES_CDROM=Must buy license
+PERMIT_PACKAGE_CDROM=Must buy license
 
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -38,6 +43,7 @@ LIB_DEPENDS=    jpeg.62.:graphics/jpeg \
 		png.1.:graphics/png
 
 USE_IMAKE=	Yes
+FAKE=Yes
 
 pre-patch:
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xcmap.diff
