@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2001/10/26 04:24:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2001/12/03 06:05:43 pvalchev Exp $
 
 COMMENT=	"curses-based icq client implementation"
 
-DISTNAME=	centericq-4.0.0
+DISTNAME=	centericq-4.2.1
 CATEGORIES=	net	
-NEED_VERSION=	1.482
+NEED_VERSION=	1.500
 MASTER_SITES=	http://konst.org.ua/download/ \
 		http://konst.home.welcomehome.org/
 

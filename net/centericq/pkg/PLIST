@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/10/26 04:24:12 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/12/03 06:05:44 pvalchev Exp $
 bin/centericq
 bin/cicqconv
+bin/cicqsync
 man/man1/centericq.1
 share/centericq/cont.wav
 share/centericq/email.wav
