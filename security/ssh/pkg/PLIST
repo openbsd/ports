@@ -20,4 +20,4 @@ man/man1/ssh.1
 @unexec rm -f %B/slogin.1
 man/man8/sshd.8
 sbin/sshd
-@exec if [ ! -f %D/etc/ssh_host_key ]; then echo "Generating a secret host key.." ; %D/bin/ssh-keygen -N "" -f %D/etc/ssh_host_key; fi
+@exec if [ ! -f /etc/ssh_host_key ]; then echo "Generating a secret host key.." ; %D/bin/ssh-keygen -N "" -f /etc/ssh_host_key; fi
