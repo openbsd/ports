@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/06/10 17:39:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2000/07/11 07:47:11 jakob Exp $
 bin/knapster
 share/applnk/Applications/knapster.kdelnk
+share/doc/HTML/en/knapster/index.html
 share/doc/HTML/en/knapster/index-1.html
-share/doc/HTML/en/knapster/index-10.html
-share/doc/HTML/en/knapster/index-11.html
 share/doc/HTML/en/knapster/index-2.html
 share/doc/HTML/en/knapster/index-3.html
 share/doc/HTML/en/knapster/index-4.html
@@ -12,7 +11,8 @@ share/doc/HTML/en/knapster/index-6.html
 share/doc/HTML/en/knapster/index-7.html
 share/doc/HTML/en/knapster/index-8.html
 share/doc/HTML/en/knapster/index-9.html
-share/doc/HTML/en/knapster/index.html
+share/doc/HTML/en/knapster/index-10.html
+share/doc/HTML/en/knapster/index-11.html
 share/doc/HTML/en/knapster/logotp3.png
 share/icons/knapster.xpm
 share/icons/mini/knapster.xpm

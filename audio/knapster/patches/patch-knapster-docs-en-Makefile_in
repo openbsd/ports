@@ -1,0 +1,22 @@
+--- knapster/docs/en/Makefile.in.orig	Mon Jun 19 15:41:20 2000
++++ knapster/docs/en/Makefile.in	Tue Jul 11 09:30:52 2000
+@@ -286,6 +286,10 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(kde_htmldir)/en/knapster/
+ 	$(INSTALL_DATA) index-9.html $(DESTDIR)$(kde_htmldir)/en/knapster/index-9.html
+ 	$(mkinstalldirs) $(DESTDIR)$(kde_htmldir)/en/knapster/
++	$(INSTALL_DATA) index-10.html $(DESTDIR)$(kde_htmldir)/en/knapster/index-10.html
++	$(mkinstalldirs) $(DESTDIR)$(kde_htmldir)/en/knapster/
++	$(INSTALL_DATA) index-11.html $(DESTDIR)$(kde_htmldir)/en/knapster/index-11.html
++	$(mkinstalldirs) $(DESTDIR)$(kde_htmldir)/en/knapster/
+ 	$(INSTALL_DATA) logotp3.png $(DESTDIR)$(kde_htmldir)/en/knapster/logotp3.png
+ 
+ uninstall-local:
+@@ -299,6 +303,8 @@
+ 	-rm -f $(DESTDIR)$(kde_htmldir)/en/knapster/index-7.html
+ 	-rm -f $(DESTDIR)$(kde_htmldir)/en/knapster/index-8.html
+ 	-rm -f $(DESTDIR)$(kde_htmldir)/en/knapster/index-9.html
++	-rm -f $(DESTDIR)$(kde_htmldir)/en/knapster/index-10.html
++	-rm -f $(DESTDIR)$(kde_htmldir)/en/knapster/index-11.html
+ 	-rm -f $(DESTDIR)$(kde_htmldir)/en/knapster/logotp3.png
+ 
+ ####### kdevelop will overwrite this part!!! (end)############

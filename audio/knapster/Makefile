@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2000/06/10 17:39:16 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/07/11 07:47:10 jakob Exp $
 
-DISTNAME=		knapster-0.10
+DISTNAME=		knapster-0.12
 CATEGORIES=     	audio
 NEED_VERSION=		1.300
 
