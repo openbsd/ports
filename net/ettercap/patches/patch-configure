@@ -1,8 +1,9 @@
---- configure~	Thu Apr 18 09:16:16 2002
-+++ configure	Thu May  2 20:05:50 2002
-@@ -7878,13 +7878,13 @@ done
+$OpenBSD: patch-configure,v 1.5 2002/06/17 02:21:43 mark Exp $
+--- configure.orig	Fri May 17 06:41:27 2002
++++ configure	Wed Jun 12 21:56:47 2002
+@@ -7754,13 +7754,13 @@ if test $check_ncurses -ne 0; then
+    curses_warn=0
  
-    if test $ncurses_warn -ne 1; then
  
 -echo "$as_me:$LINENO: checking for newpad in -lncurses" >&5
 -echo $ECHO_N "checking for newpad in -lncurses... $ECHO_C" >&6
@@ -17,7 +18,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  #include "confdefs.h"
-@@ -7938,7 +7938,7 @@ if test $ac_cv_lib_ncurses_newpad = yes;
+@@ -7814,7 +7814,7 @@ if test $ac_cv_lib_ncurses_newpad = yes;
  #define HAVE_LIBNCURSES 1
  _ACEOF
  
@@ -25,4 +26,31 @@
 +  LIBS="-lcurses $LIBS"
  
  else
-   ncurses_warn=2
+   ncurses_warn=1
+@@ -8917,7 +8917,7 @@ if test $check_ssh -ne 0; then
+ 
+    if test -f $ssl_path/include/openssl/ssl.h; then
+       COPTS="$COPTS -I$ssl_path/include"
+-      LIBS="$LIBS -L$ssl_path/lib -lssl -lcrypto"
++      LIBS="$LIBS -L$ssl_path/lib -lssl -lcrypto -ldes"
+       cat >>confdefs.h <<\_ACEOF
+ #define HAVE_OPENSSL 1
+ _ACEOF
+@@ -8927,7 +8927,7 @@ _ACEOF
+ echo "${ECHO_T}yes" >&6
+    elif test -f $ssl_path/ssl/include/openssl/ssl.h; then
+       COPTS="$COPTS -I$ssl_path/ssl/include"
+-      LIBS="$LIBS -L$ssl_path/ssl/lib -lssl -lcrypto"
++      LIBS="$LIBS -L$ssl_path/ssl/lib -lssl -lcrypto -ldes"
+       cat >>confdefs.h <<\_ACEOF
+ #define HAVE_OPENSSL 1
+ _ACEOF
+@@ -8936,7 +8936,7 @@ _ACEOF
+       echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+    elif test -f /usr/include/openssl/ssl.h; then
+-      LIBS="$LIBS -lssl -lcrypto"
++      LIBS="$LIBS -lssl -lcrypto -ldes"
+       cat >>confdefs.h <<\_ACEOF
+ #define HAVE_OPENSSL 1
+ _ACEOF

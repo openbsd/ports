@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/05/03 03:19:14 mark Exp $
+@comment $OpenBSD: PLIST,v 1.10 2002/06/17 02:21:43 mark Exp $
 lib/ettercap/ec_H00_lurker.so
 lib/ettercap/ec_H01_zaratan.so
 lib/ettercap/ec_H05_roper.so
@@ -13,6 +13,7 @@ lib/ettercap/ec_beholder.so
 lib/ettercap/ec_dummy.so
 lib/ettercap/ec_golem.so
 lib/ettercap/ec_imp.so
+lib/ettercap/ec_lamia.so
 lib/ettercap/ec_leech.so
 lib/ettercap/ec_ooze.so
 lib/ettercap/ec_phantom.so

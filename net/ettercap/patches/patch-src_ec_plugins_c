@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_ec_plugins_c,v 1.1 2002/06/17 02:21:43 mark Exp $
+--- src/ec_plugins.c.orig	Sun Jun 16 21:23:52 2002
++++ src/ec_plugins.c	Sun Jun 16 21:24:36 2002
+@@ -57,7 +57,7 @@
+    #define RTLD_NOW DL_LAZY
+ #endif
+ 
+-#if defined(OPENBSD) || defined(MACOSX)
++#if defined(OPENBSD) && !defined(__ELF__) || defined(MACOSX)
+    #define SYM_PREFIX "_"     // for the symbols loaded with dlsym
+ #else
+    #define SYM_PREFIX ""
+

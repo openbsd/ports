@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_ec_dissector_ssh_c,v 1.1 2002/06/17 02:21:43 mark Exp $
+--- src/ec_dissector_ssh.c.orig	Fri Mar  8 00:49:55 2002
++++ src/ec_dissector_ssh.c	Wed Jun 12 21:56:47 2002
+@@ -29,6 +29,7 @@
+ #else
+ 	#include <arpa/nameser.h>
+ #endif
++#include <des.h>
+ #include <openssl/ssl.h>
+ #include <openssl/rand.h>
+ #include <ctype.h>
