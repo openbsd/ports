@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2001/10/25 16:14:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2001/11/05 15:40:07 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
@@ -10,8 +10,8 @@ COMMENT-kanji-m17n=	"Japanese multi-script text-based web browser/pager"
 COMMENT-kanji-image=	"Japanese text-based web browser/pager with image support"
 
 V_AITO=		0.2.1	# aito's official release
-V_INU=		1.4	# inu branch
-V_IMG=		1.11	# image extension
+V_INU=		1.5	# inu branch
+V_IMG=		1.12	# image extension
 V_M17N=		0.19	# multilingualization extension
 
 AITO_DISTNAME=	w3m-${V_AITO}
@@ -32,14 +32,14 @@ MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
 		http://mi.med.tohoku.ac.jp/~satodai/w3m/src/ \
 		http://www.instinct.org/w3m/ \
 		ftp://ftp.wiretapped.net/pub/w3m/
-MASTER_SITES0=	http://mi.med.tohoku.ac.jp/~satodai/w3m/inusrc/200109/
+MASTER_SITES0=	http://mi.med.tohoku.ac.jp/~satodai/w3m/inu/200110/
 MASTER_SITES1=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
 
 INU_DISTFILE=	${INU_DISTNAME}${EXTRACT_SUFX}:0
 IMG_PATCH=	w3m-${V_AITO}-inu-${V_INU}-img-${V_IMG}.patch:1
 M17N_PATCH=	w3m-${V_AITO}-m17n-${V_M17N}.patch.gz:1
 PATCH_DIST_STRIP= -p1
-SUPDISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${INU_DISTFILE} \
+SUPDISTFILES=	${AITO_DISTNAME}${EXTRACT_SUFX} ${INU_DISTFILE} \
 		${IMG_PATCH} ${M17N_PATCH}
 
 FLAVORS=	kanji image m17n
