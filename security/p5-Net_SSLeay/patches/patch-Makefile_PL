@@ -1,6 +1,6 @@
---- Makefile.PL.orig	Thu Apr 19 22:55:07 2001
-+++ Makefile.PL	Thu Apr 19 23:00:38 2001
-@@ -20,16 +20,8 @@
+--- Makefile.PL.orig	Thu Jul 19 13:37:20 2001
++++ Makefile.PL	Thu Jul 19 13:38:01 2001
+@@ -26,17 +26,8 @@
  $make_it = shift if $ARGV[0] eq '-m';
  $test_it = shift if $ARGV[0] eq '-t';
  $debug = $test_it = shift if $ARGV[0] eq '-d';
@@ -14,8 +14,9 @@
 -    $openssl_path = '/usr/local/ssl' if -x '/usr/local/ssl/bin/openssl';
 -}
 -
-+# Define the path here, ${PREFIX} confused the Makefile.PL
+-$openssl_vers = '0.9.6b';
 +$openssl_path = '/usr';
- $openssl_vers = '0.9.6a';
++$openssl_vers = '0.9.6a';
  
  print "Checking for OpenSSL-$openssl_vers or newer...\n";
+ 
