@@ -1,0 +1,93 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/23 20:14:34 sturm Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/SSH/
+${P5SITE}/Net/SSH/Perl/
+${P5SITE}/Net/SSH/Perl.pm
+${P5SITE}/Net/SSH/Perl/Agent.pm
+${P5SITE}/Net/SSH/Perl/Auth/
+${P5SITE}/Net/SSH/Perl/Auth.pm
+${P5SITE}/Net/SSH/Perl/Auth/ChallengeResponse.pm
+${P5SITE}/Net/SSH/Perl/Auth/KeyboardInt.pm
+${P5SITE}/Net/SSH/Perl/Auth/Password.pm
+${P5SITE}/Net/SSH/Perl/Auth/PublicKey.pm
+${P5SITE}/Net/SSH/Perl/Auth/RSA.pm
+${P5SITE}/Net/SSH/Perl/Auth/Rhosts.pm
+${P5SITE}/Net/SSH/Perl/Auth/Rhosts_RSA.pm
+${P5SITE}/Net/SSH/Perl/AuthMgr.pm
+${P5SITE}/Net/SSH/Perl/Buffer.pm
+${P5SITE}/Net/SSH/Perl/Channel.pm
+${P5SITE}/Net/SSH/Perl/ChannelMgr.pm
+${P5SITE}/Net/SSH/Perl/Cipher/
+${P5SITE}/Net/SSH/Perl/Cipher.pm
+${P5SITE}/Net/SSH/Perl/Cipher/Blowfish.pm
+${P5SITE}/Net/SSH/Perl/Cipher/CBC.pm
+${P5SITE}/Net/SSH/Perl/Cipher/CFB.pm
+${P5SITE}/Net/SSH/Perl/Cipher/DES.pm
+${P5SITE}/Net/SSH/Perl/Cipher/DES3.pm
+${P5SITE}/Net/SSH/Perl/Cipher/IDEA.pm
+${P5SITE}/Net/SSH/Perl/Cipher/RC4.pm
+${P5SITE}/Net/SSH/Perl/Comp/
+${P5SITE}/Net/SSH/Perl/Comp.pm
+${P5SITE}/Net/SSH/Perl/Comp/Zlib.pm
+${P5SITE}/Net/SSH/Perl/Config.pm
+${P5SITE}/Net/SSH/Perl/Constants.pm
+${P5SITE}/Net/SSH/Perl/Handle/
+${P5SITE}/Net/SSH/Perl/Handle/SSH1.pm
+${P5SITE}/Net/SSH/Perl/Handle/SSH2.pm
+${P5SITE}/Net/SSH/Perl/Kex/
+${P5SITE}/Net/SSH/Perl/Kex.pm
+${P5SITE}/Net/SSH/Perl/Kex/DH1.pm
+${P5SITE}/Net/SSH/Perl/Key/
+${P5SITE}/Net/SSH/Perl/Key.pm
+${P5SITE}/Net/SSH/Perl/Key/DSA.pm
+${P5SITE}/Net/SSH/Perl/Key/RSA.pm
+${P5SITE}/Net/SSH/Perl/Key/RSA1.pm
+${P5SITE}/Net/SSH/Perl/Mac.pm
+${P5SITE}/Net/SSH/Perl/Packet.pm
+${P5SITE}/Net/SSH/Perl/SSH1.pm
+${P5SITE}/Net/SSH/Perl/SSH2.pm
+${P5SITE}/Net/SSH/Perl/Util/
+${P5SITE}/Net/SSH/Perl/Util.pm
+${P5SITE}/Net/SSH/Perl/Util/Authfile.pm
+${P5SITE}/Net/SSH/Perl/Util/Hosts.pm
+${P5SITE}/Net/SSH/Perl/Util/RSA.pm
+${P5SITE}/Net/SSH/Perl/Util/SSH1MP.pm
+${P5SITE}/Net/SSH/Perl/Util/SSH1Misc.pm
+${P5SITE}/Net/SSH/Perl/Util/SSH2MP.pm
+${P5SITE}/Net/SSH/Perl/Util/Term.pm
+@man man/man3p/Net::SSH::Perl.3p
+@man man/man3p/Net::SSH::Perl::Agent.3p
+@man man/man3p/Net::SSH::Perl::Auth.3p
+@man man/man3p/Net::SSH::Perl::Auth::KeyboardInt.3p
+@man man/man3p/Net::SSH::Perl::Auth::Password.3p
+@man man/man3p/Net::SSH::Perl::Auth::PublicKey.3p
+@man man/man3p/Net::SSH::Perl::Auth::RSA.3p
+@man man/man3p/Net::SSH::Perl::Auth::Rhosts.3p
+@man man/man3p/Net::SSH::Perl::Auth::Rhosts_RSA.3p
+@man man/man3p/Net::SSH::Perl::AuthMgr.3p
+@man man/man3p/Net::SSH::Perl::Buffer.3p
+@man man/man3p/Net::SSH::Perl::Channel.3p
+@man man/man3p/Net::SSH::Perl::ChannelMgr.3p
+@man man/man3p/Net::SSH::Perl::Cipher.3p
+@man man/man3p/Net::SSH::Perl::Cipher::Blowfish.3p
+@man man/man3p/Net::SSH::Perl::Cipher::CBC.3p
+@man man/man3p/Net::SSH::Perl::Cipher::CFB.3p
+@man man/man3p/Net::SSH::Perl::Cipher::DES.3p
+@man man/man3p/Net::SSH::Perl::Cipher::DES3.3p
+@man man/man3p/Net::SSH::Perl::Cipher::IDEA.3p
+@man man/man3p/Net::SSH::Perl::Cipher::RC4.3p
+@man man/man3p/Net::SSH::Perl::Comp.3p
+@man man/man3p/Net::SSH::Perl::Comp::Zlib.3p
+@man man/man3p/Net::SSH::Perl::Config.3p
+@man man/man3p/Net::SSH::Perl::Constants.3p
+@man man/man3p/Net::SSH::Perl::Kex.3p
+@man man/man3p/Net::SSH::Perl::Kex::DH1.3p
+@man man/man3p/Net::SSH::Perl::Key.3p
+@man man/man3p/Net::SSH::Perl::Key::DSA.3p
+@man man/man3p/Net::SSH::Perl::Key::RSA.3p
+@man man/man3p/Net::SSH::Perl::Key::RSA1.3p
+@man man/man3p/Net::SSH::Perl::Mac.3p
+@man man/man3p/Net::SSH::Perl::Packet.3p
+@man man/man3p/Net::SSH::Perl::SSH1.3p
+@man man/man3p/Net::SSH::Perl::SSH2.3p
+@man man/man3p/Net::SSH::Perl::Util.3p

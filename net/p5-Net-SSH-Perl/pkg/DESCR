@@ -1,0 +1,3 @@
+Net::SSH::Perl is an all-Perl module implementing an SSH
+(Secure Shell) client. It is compatible with both the SSH-1 and
+SSH-2 protocols.
