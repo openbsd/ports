@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/14 15:45:20 wilfried Exp $
+bin/wmpop3
+share/doc/wmpop3/README
+share/examples/wmpop3/wmpop3rc
+@dirrm share/examples/wmpop3
+@dirrm share/doc/wmpop3

@@ -1,0 +1,76 @@
+$OpenBSD: patch-wmpop3_wmpop3_c,v 1.1.1.1 2001/02/14 15:45:20 wilfried Exp $
+--- wmpop3/wmpop3.c.orig	Fri Aug 13 17:56:19 1999
++++ wmpop3/wmpop3.c	Mon Feb 12 18:22:34 2001
+@@ -49,7 +49,7 @@ int  wminet_mask_height = 64;
+ 
+ char *ProgName;
+ 
+-char mailclient[32]   = "pine";
++char mailclient[512]   = "xterm -e pine";
+ char password[32];
+ char username[32];
+ char popserver[128];
+@@ -103,7 +103,7 @@ int main(int argc, char *argv[]) {
+             case 'c' :
+                 if (argc > (i+1))
+                 {
+-                    strcpy(config_file, argv[i+1]);
++                    strlcpy(config_file, argv[i+1], sizeof(config_file));
+                     i++;
+                 }
+                 break;
+@@ -138,7 +138,7 @@ void wmCheckMail_routine(int argc, char 
+     Pop3   pc;
+ 
+     if( !strcmp( config_file, "not-defined") )
+-        sprintf(config_file, "%s/.wmpop3rc", getenv("HOME"));
++        snprintf(config_file, sizeof(config_file), "%s/.wmpop3rc", getenv("HOME"));
+ 
+     if( readConfigFile(config_file) == -1){
+         exit(0);
+@@ -394,7 +394,7 @@ int  readConfigFile( char *filename ){
+     FILE *fp;
+ 
+     if( (fp = fopen( filename, "r")) == 0 ){
+-        sprintf(config_file, "%s/.wmpop3rc", getenv("HOME"));
++        snprintf(config_file, sizeof(config_file), "%s/.wmpop3rc", getenv("HOME"));
+         printf("-Config file does not exit : %s\n",config_file);
+         printf("+Trying to create new config file.\n");
+         if((fp = fopen(config_file,"w")) == 0){
+@@ -428,7 +428,7 @@ int  readConfigFile( char *filename ){
+                     printf("Invalid UserName.\n");
+                     return -1;
+                 }
+-                strcpy(username, ptr); 
++                strlcpy(username, ptr, sizeof(username)); 
+             }
+             else if( !strcmp( ptr, "password") ){
+                 ptr = strtok( 0, " \n");
+@@ -436,7 +436,7 @@ int  readConfigFile( char *filename ){
+                     printf("Invalid password.\n");
+                     return -1;
+                 }
+-                strcpy(password, ptr); 
++                strlcpy(password, ptr, sizeof(password)); 
+             }
+             else if( !strcmp( ptr, "popserver") ){
+                 ptr = strtok( 0, " \n");
+@@ -444,15 +444,15 @@ int  readConfigFile( char *filename ){
+                     printf("Invalid popserver address.\n");
+                     return -1;
+                 }
+-                strcpy(popserver, ptr); 
++                strlcpy(popserver, ptr, sizeof(popserver)); 
+             }
+             else if( !strcmp( ptr, "mailclient") ){
+-                ptr = strtok( 0, " \n");
++                ptr = strtok( 0, "#\n");
+                 if( ptr == 0){
+                     printf("Invalid mailclient.\n");
+                     return -1;
+                 }
+-                strcpy(mailclient, ptr); 
++                strlcpy(mailclient, ptr, sizeof(mailclient)); 
+             }
+             else if( !strcmp( ptr, "port") ){
+                 ptr = strtok( 0, " \n");

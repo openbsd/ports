@@ -1,0 +1,9 @@
+$OpenBSD: patch-wmpop3_wmpop3rc,v 1.1.1.1 2001/02/14 15:45:20 wilfried Exp $
+--- wmpop3/wmpop3rc.orig	Fri Aug 13 17:56:19 1999
++++ wmpop3/wmpop3rc	Mon Feb 12 18:23:07 2001
+@@ -8,4 +8,4 @@ viewallmessages   0      # 0 Shows unrea
+ #                          1 Shows only unread messages    
+ autochecking      1      # 1 enables, 0 disables
+ mailcheckdelay    10     # default mail check time in minutes
+-mailclient        kmail  # default mail client
++mailclient        xterm -e pine  # default mail client

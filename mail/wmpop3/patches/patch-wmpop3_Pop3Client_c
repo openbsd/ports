@@ -1,0 +1,50 @@
+$OpenBSD: 
+--- wmpop3/Pop3Client.c.orig	Fri Aug 13 17:56:19 1999
++++ wmpop3/Pop3Client.c	Mon Feb 12 17:48:41 2001
+@@ -42,8 +42,8 @@ Pop3 pop3Create(void){
+     pc = (Pop3)malloc( sizeof(*pc) );
+     if( pc == 0)
+         return 0;
+-    strcpy(pc->password , "");
+-    strcpy(pc->userName , "");
++    pc->password[0]   = '\0';
++    pc->userName[0]   = '\0';
+     pc->connected     = NOT_CONNECTED;
+     pc->serverPort    = 110;
+     pc->localPort     = 0;
+@@ -96,7 +96,7 @@ int pop3Login(Pop3 pc, char *name, char 
+           return -1;
+       }
+ 
+-      sprintf(pc->outBuf,"USER %s\r\n",name);
++      snprintf(pc->outBuf,sizeof(pc->outBuf),"USER %s\r\n",name);
+       send(pc->s, &pc->outBuf,strlen(pc->outBuf),0); 
+       size =recv(pc->s,pc->inBuf,1024,0);
+       memset(temp,0,1024);
+@@ -107,7 +107,7 @@ int pop3Login(Pop3 pc, char *name, char 
+       }
+ 
+       memset(pc->outBuf,0,1024);
+-      sprintf(pc->outBuf,"PASS %s\r\n",pass);
++      snprintf(pc->outBuf,sizeof(pc->outBuf),"PASS %s\r\n",pass);
+       send(pc->s, pc->outBuf, strlen(pc->outBuf),0 );
+       size =recv(pc->s,&pc->inBuf,1024,0);
+       memset(temp,0,1024);
+@@ -128,7 +128,7 @@ int pop3CheckMail(Pop3 pc){
+         return -1;
+ 
+      /* Find total number of messages in mail box */
+-     sprintf(pc->outBuf,"STAT\r\n");
++     snprintf(pc->outBuf,sizeof(pc->outBuf),"STAT\r\n");
+      send(pc->s, pc->outBuf, strlen(pc->outBuf),0 );
+      size =recv(pc->s,pc->inBuf,1024,0);
+      memset(temp,0,1024);
+@@ -142,7 +142,7 @@ int pop3CheckMail(Pop3 pc){
+          return -1;
+      }
+ 
+-     sprintf(pc->outBuf,"LAST\r\n");
++     snprintf(pc->outBuf,sizeof(pc->outBuf),"LAST\r\n");
+      send(pc->s, pc->outBuf, strlen(pc->outBuf),0 );
+      size =recv(pc->s,pc->inBuf,1024,0);
+      memset(temp,0,1024);
