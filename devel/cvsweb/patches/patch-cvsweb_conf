@@ -1,7 +1,15 @@
-$OpenBSD: patch-cvsweb_conf,v 1.8 2001/08/01 19:59:25 naddy Exp $
---- cvsweb.conf.orig	Wed Aug  1 21:36:14 2001
-+++ cvsweb.conf	Wed Aug  1 21:37:16 2001
-@@ -212,7 +212,7 @@ EOT
+$OpenBSD: patch-cvsweb_conf,v 1.9 2003/08/16 18:12:10 naddy Exp $
+--- cvsweb.conf.orig	2002-09-23 07:30:17.000000000 +0200
++++ cvsweb.conf	2003-08-16 18:25:42.000000000 +0200
+@@ -115,7 +115,6 @@ $mancgi =
+ 	#   h      Human readable
+ 	#   u      Unified diff
+ 	#   c      Context diff
+-	#   s      Side by side
+ 	"f" => "u",
+ 
+ 	# hidecvsroot: Don't show the CVSROOT directory
+@@ -200,7 +199,7 @@ EOT
  # These default icons are coming with apache.
  # If these icons are too large, check out the miniicons in the
  # icons/ directory; they have a width/height of 16/16
@@ -10,7 +18,27 @@ $OpenBSD: patch-cvsweb_conf,v 1.8 2001/08/01 19:59:25 naddy Exp $
  
  # format:             TEXT      ICON-URL              width height
  %ICONS = (
-@@ -346,7 +346,7 @@ $inputTextSize = 12;
+@@ -290,19 +289,6 @@ $use_descriptions = 0;
+ # exceed the width of the browser
+ $hr_breakable = 1;
+ 
+-# give out function names in diffs
+-# this just makes sense if we have C-files, otherwise
+-# diff's heuristic doesn't work well ..
+-# ( '-p' option to diff)
+-$showfunc = 1;
+-
+-# For each pair of regexps, files that match the first regexp will be diff'ed
+-# with an '-F' option with the second regexp.
+-%funcline_regexp = (
+-	"\\.(4th|fr)\$" => "\\(^\\|[ \t]\\): ",
+-	"\\.rb\$"       => "^[\t ]*\\(class\\|module\\|def\\) ",
+-);
+-
+ # ignore whitespaces for human readable diffs
+ # (indendation and stuff ..)
+ # ( '-w' option to diff)
+@@ -335,7 +321,7 @@ $inputTextSize = 12;
  # cvsweb to guess the correct mime-type on
  # checkout; you can use the mime.types from
  # apache here:

@@ -1,7 +1,7 @@
-$OpenBSD: patch-cvsweb_cgi,v 1.9 2001/08/01 19:59:25 naddy Exp $
---- cvsweb.cgi.orig	Wed Aug  1 21:34:42 2001
-+++ cvsweb.cgi	Wed Aug  1 21:35:16 2001
-@@ -153,7 +153,7 @@ use File::Basename;
+$OpenBSD: patch-cvsweb_cgi,v 1.10 2003/08/16 18:12:10 naddy Exp $
+--- cvsweb.cgi.orig	2002-09-26 22:56:05.000000000 +0200
++++ cvsweb.cgi	2003-08-16 18:22:40.000000000 +0200
+@@ -157,7 +157,7 @@ use File::Basename ();
  
  # == EDIT this ==
  # Locations to search for user configuration, in order:
@@ -10,3 +10,45 @@ $OpenBSD: patch-cvsweb_cgi,v 1.9 2001/08/01 19:59:25 naddy Exp $
  	if (defined($_) && -r $_) {
  		$config = $_;
  		last;
+@@ -193,7 +193,7 @@ $tmpdir = defined($ENV{TMPDIR}) ? $ENV{T
+ $LOG_FILESEPARATOR = q/^={77}$/;
+ $LOG_REVSEPARATOR  = q/^-{28}$/;
+ 
+-@DIFFTYPES = qw(h H u c s);
++@DIFFTYPES = qw(h H u c);
+ @DIFFTYPES{@DIFFTYPES} = (
+ 	{
+ 		'descr'   => 'colored',
+@@ -215,11 +215,6 @@ $LOG_REVSEPARATOR  = q/^-{28}$/;
+ 		'opts'    => ['-c'],
+ 		'colored' => 0,
+ 	},
+-	{
+-		'descr'   => 'side by side',
+-		'opts'    => ['--side-by-side', '--width=164'],
+-		'colored' => 0,
+-	},
+ );
+ 
+ @LOGSORTKEYS = qw(cvs date rev);
+@@ -2014,20 +2009,6 @@ sub doDiff($$$$$$) {
+ 	my @difftype       = @{$difftype->{'opts'}};
+ 	my $human_readable = $difftype->{'colored'};
+ 
+-	# apply special options
+-	if ($showfunc) {
+-		push @difftype, '-p' if $f ne 's';
+-
+-		my ($re1, $re2);
+-
+-		while (($re1, $re2) = each %funcline_regexp) {
+-			if ($fullname =~ /$re1/) {
+-				push @difftype, '-F', $re2;
+-				last;
+-			}
+-		}
+-	}
+-
+ 	if ($human_readable) {
+ 		if ($hr_ignwhite) {
+ 			push @difftype, '-w';
