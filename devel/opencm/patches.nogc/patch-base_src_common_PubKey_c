@@ -1,0 +1,75 @@
+$OpenBSD: patch-base_src_common_PubKey_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/PubKey.c.orig	Sat Mar 29 16:15:29 2003
++++ base/src/common/PubKey.c	Thu May 22 17:46:42 2003
+@@ -78,7 +78,7 @@ pubkey_serialize(SDR_stream *strm, const
+       if ((num = BIO_get_mem_data(inMem, &tmpbuf)) == 0)
+ 	THROW(ExTruncated, "Cannot recover cert from memory BIO");
+ 
+-      data = (char *)GC_MALLOC_ATOMIC(sizeof(char) * (num + 1));
++      data = (char *)malloc(sizeof(char) * (num + 1));
+       memcpy(data, tmpbuf, num);
+       data[num] = 0;
+ 
+@@ -94,7 +94,7 @@ pubkey_serialize(SDR_stream *strm, const
+ void *
+ pubkey_deserialize(const DeserializeInfo *di, SDR_stream *strm)
+ {
+-  PubKey *p = (PubKey *) GC_MALLOC(sizeof(User));
++  PubKey *p = (PubKey *) malloc(sizeof(User));
+ 
+   ser_init(p, &PubKey_SerType, di->ver);
+   SER_MODIFIED(p);
+@@ -167,7 +167,7 @@ pubkey_isvalid(PubKey *pk)
+ PubKey *
+ pubkey_from_X509(X509 *cert)
+ {
+-  PubKey *p = (PubKey *) GC_MALLOC(sizeof(User));
++  PubKey *p = (PubKey *) malloc(sizeof(User));
+ 
+   ser_init(p, &PubKey_SerType, PubKey_SerType.ver);
+   SER_MODIFIED(p);
+@@ -202,7 +202,7 @@ pubkey_getid(PubKey *pk)
+ 		 ERR_reason_error_string(ERR_get_error())));
+ 
+   /* Now allocate enough space for a string-ified version of tmpbuf*/
+-  data = (char *)GC_MALLOC_ATOMIC(sizeof(char) * (num + 1));
++  data = (char *)malloc(sizeof(char) * (num + 1));
+   memcpy(data, tmpbuf, num);
+   data[num] = 0;  /* null-terminate the string */
+ 
+@@ -218,7 +218,7 @@ PubKey *
+ pubkey_from_PemFile(const char *fileName)
+ {
+   FILE *f = NULL;
+-  PubKey *p = (PubKey *) GC_MALLOC(sizeof(User));
++  PubKey *p = (PubKey *) malloc(sizeof(User));
+   TRY {
+     f = xfopen(fileName, 'r', 't');
+ 
+@@ -255,7 +255,7 @@ pubkey_GetExpiration(PubKey *pk)
+       ASN1_TIME_print(inMem, X509_get_notAfter(pk->keys.x509_cert));
+       num = BIO_get_mem_data(inMem, &tmpbuf);
+ 
+-      expires = (char *)GC_MALLOC_ATOMIC(sizeof(char) * (num + 1));
++      expires = (char *)malloc(sizeof(char) * (num + 1));
+       memcpy(expires, tmpbuf, num);
+       expires[num] = 0;
+ 
+@@ -273,7 +273,7 @@ pubkey_GetExpiration(PubKey *pk)
+   }
+ }
+ 
+-const char *
++char *
+ pubkey_GetEmail(PubKey *pk)
+ {
+   if(pk == 0)
+@@ -284,7 +284,7 @@ pubkey_GetEmail(PubKey *pk)
+     {
+       X509 *x = pk->keys.x509_cert;
+       STACK* emails;
+-      const char* email = 0;
++      char* email = 0;
+ 
+       emails = X509_get1_email(x);
+ 

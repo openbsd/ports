@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_src_opencm_h,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/opencm.h.orig	Sat Mar 29 16:15:28 2003
++++ base/src/opencm.h	Thu May 22 17:46:42 2003
+@@ -77,8 +77,6 @@
+ #include <paths.h>
+ #endif
+ 
+-#include "../gc6.1/include/gc.h"
+-
+ /* #define USE_BASE16 */
+ 
+ #define CM_APPNAME   "opencm"

@@ -1,0 +1,21 @@
+$OpenBSD: patch-base_src_common_WireString_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/WireString.c.orig	Sat Mar 29 16:15:26 2003
++++ base/src/common/WireString.c	Thu May 22 17:46:42 2003
+@@ -52,7 +52,7 @@ wires_serialize(SDR_stream *strm, const 
+ void *
+ wires_deserialize(const DeserializeInfo *di, SDR_stream *strm)
+ {
+-  WireString *p = (WireString *) GC_MALLOC(sizeof(WireString));
++  WireString *p = (WireString *) malloc(sizeof(WireString));
+ 
+   ser_init(p, &WireString_SerType, di->ver);
+   p->value          = sdr_r_string("value", strm);
+@@ -73,7 +73,7 @@ wires_mark(Repository *r, const void *co
+ WireString *
+ wires_create(const char *argument)
+ {
+-  WireString *p = (WireString *) GC_MALLOC(sizeof(WireString));
++  WireString *p = (WireString *) malloc(sizeof(WireString));
+ 
+   ser_init(p, &WireString_SerType, WireString_SerType.ver);
+ 

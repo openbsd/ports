@@ -1,0 +1,30 @@
+$OpenBSD: patch-base_src_common_path_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/path.c.orig	Mon Mar 31 10:29:20 2003
++++ base/src/common/path.c	Thu May 22 17:46:42 2003
+@@ -137,7 +137,7 @@ path_join(const char *dir, const char *t
+     THROW(ExNullArg, "no tail to path_join()");
+ 
+   s =
+-     (char *) GC_MALLOC_ATOMIC(sizeof(char) * (strlen(dir) + strlen(tail) + 2)); 
++     (char *) malloc(sizeof(char) * (strlen(dir) + strlen(tail) + 2)); 
+ 
+   strcpy(s, dir);
+   strcat(s, "/");
+@@ -318,7 +318,7 @@ path_current_directory()
+ #else
+   int len = 255; /* POSIX guarantees this (or does it?) */
+ #endif
+-  char * dir = (char *) GC_MALLOC_ATOMIC(sizeof(char) * len); 
++  char * dir = (char *) malloc(sizeof(char) * len); 
+   char *cwd;
+ 
+   do {
+@@ -326,7 +326,7 @@ path_current_directory()
+     if (cwd == NULL) {
+       if (errno == ERANGE) {
+ 	len *= 2;
+-	dir = (char *) GC_MALLOC_ATOMIC(sizeof(char) * len); 
++	dir = (char *) malloc(sizeof(char) * len); 
+       }
+       else
+ 	return NULL;

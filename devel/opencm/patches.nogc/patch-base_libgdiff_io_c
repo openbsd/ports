@@ -1,0 +1,139 @@
+$OpenBSD: patch-base_libgdiff_io_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/libgdiff/io.c.orig	Sat Mar 29 16:15:20 2003
++++ base/libgdiff/io.c	Thu May 22 17:46:40 2003
+@@ -88,12 +88,12 @@ sip (current, skip_test)
+     {
+       /* Leave room for a sentinel.  */
+       current->bufsize = sizeof (word);
+-      current->buffer = GC_MALLOC (current->bufsize);
++      current->buffer = malloc (current->bufsize);
+     }
+   else
+     {
+       current->bufsize = STAT_BLOCKSIZE (current->stat);
+-      current->buffer = GC_MALLOC (current->bufsize);
++      current->buffer = malloc (current->bufsize);
+ 
+       if (! skip_test)
+ 	{
+@@ -143,7 +143,7 @@ slurp (current)
+       if (current->bufsize < cc)
+ 	{
+ 	  current->bufsize = cc;
+-	  current->buffer = GC_REALLOC (current->buffer, cc);
++	  current->buffer = realloc (current->buffer, cc);
+ 	}
+ 
+       if (current->buffered_chars < current->stat.st_size)
+@@ -164,7 +164,7 @@ slurp (current)
+ 	  if (current->buffered_chars == current->bufsize)
+ 	    {
+ 	      current->bufsize = current->bufsize * 2;
+-	      current->buffer = GC_REALLOC (current->buffer, current->bufsize);
++	      current->buffer = realloc (current->buffer, current->bufsize);
+ 	    }
+ 	  cc = read (current->desc,
+ 		     current->buffer + current->buffered_chars,
+@@ -177,7 +177,7 @@ slurp (current)
+ 	}
+       /* Allocate just enough room for appended newline and sentinel.  */
+       current->bufsize = current->buffered_chars + 1 + sizeof (word);
+-      current->buffer = GC_REALLOC (current->buffer, current->bufsize);
++      current->buffer = realloc (current->buffer, current->bufsize);
+     }
+ }
+ 
+@@ -199,7 +199,7 @@ find_and_hash_each_line (current)
+   int alloc_lines = current->alloc_lines;
+   int line = 0;
+   int linbuf_base = current->linbuf_base;
+-  int *cureqs = (int *) GC_MALLOC (alloc_lines * sizeof (int));
++  int *cureqs = (int *) malloc (alloc_lines * sizeof (int));
+   struct equivclass *eqs = equivs;
+   int eqs_index = equivs_index;
+   int eqs_alloc = equivs_alloc;
+@@ -302,7 +302,7 @@ find_and_hash_each_line (current)
+ 	    i = eqs_index++;
+ 	    if (i == eqs_alloc)
+ 	      eqs = (struct equivclass *)
+-		      GC_REALLOC (eqs, (eqs_alloc*=2) * sizeof(*eqs));
++		      realloc (eqs, (eqs_alloc*=2) * sizeof(*eqs));
+ 	    eqs[i].next = *bucket;
+ 	    eqs[i].hash = h;
+ 	    eqs[i].line = ip;
+@@ -330,8 +330,8 @@ find_and_hash_each_line (current)
+ 	{
+ 	  /* Double (alloc_lines - linbuf_base) by adding to alloc_lines.  */
+ 	  alloc_lines = 2 * alloc_lines - linbuf_base;
+-	  cureqs = (int *) GC_REALLOC (cureqs, alloc_lines * sizeof (*cureqs));
+-	  linbuf = (char const **) GC_REALLOC (linbuf + linbuf_base,
++	  cureqs = (int *) realloc (cureqs, alloc_lines * sizeof (*cureqs));
++	  linbuf = (char const **) realloc (linbuf + linbuf_base,
+ 					     (alloc_lines - linbuf_base)
+ 					     * sizeof (*linbuf))
+ 		   - linbuf_base;
+@@ -352,7 +352,7 @@ find_and_hash_each_line (current)
+ 	{
+ 	  /* Double (alloc_lines - linbuf_base) by adding to alloc_lines.  */
+ 	  alloc_lines = 2 * alloc_lines - linbuf_base;
+-	  linbuf = (char const **) GC_REALLOC (linbuf + linbuf_base,
++	  linbuf = (char const **) realloc (linbuf + linbuf_base,
+ 					     (alloc_lines - linbuf_base)
+ 					     * sizeof (*linbuf))
+ 		   - linbuf_base;
+@@ -566,7 +566,7 @@ find_identical_ends (filevec)
+     }
+ 
+   lines = 0;
+-  linbuf0 = (char const **) GC_MALLOC (alloc_lines0 * sizeof (*linbuf0));
++  linbuf0 = (char const **) malloc (alloc_lines0 * sizeof (*linbuf0));
+ 
+   /* If the prefix is needed, find the prefix lines.  */
+   if (! (no_diff_means_no_output
+@@ -579,7 +579,7 @@ find_identical_ends (filevec)
+ 	{
+ 	  int l = lines++ & prefix_mask;
+ 	  if (l == alloc_lines0)
+-	    linbuf0 = (char const **) GC_REALLOC (linbuf0, (alloc_lines0 *= 2)
++	    linbuf0 = (char const **) realloc (linbuf0, (alloc_lines0 *= 2)
+ 							 * sizeof(*linbuf0));
+ 	  linbuf0[l] = p0;
+ 	  while (*p0++ != '\n')
+@@ -595,7 +595,7 @@ find_identical_ends (filevec)
+     = (buffered_prefix
+        + GUESS_LINES (lines, filevec[1].prefix_end - buffer1, tem)
+        + context);
+-  linbuf1 = (char const **) GC_MALLOC (alloc_lines1 * sizeof (*linbuf1));
++  linbuf1 = (char const **) malloc (alloc_lines1 * sizeof (*linbuf1));
+ 
+   if (buffered_prefix != lines)
+     {
+@@ -687,7 +687,7 @@ read_files (filevec, pretend_binary)
+   find_identical_ends (filevec);
+ 
+   equivs_alloc = filevec[0].alloc_lines + filevec[1].alloc_lines + 1;
+-  equivs = (struct equivclass *) GC_MALLOC (equivs_alloc * sizeof (struct equivclass));
++  equivs = (struct equivclass *) malloc (equivs_alloc * sizeof (struct equivclass));
+   /* Equivalence class 0 is permanently safe for lines that were not
+      hashed.  Real equivalence classes start at 1. */
+   equivs_index = 1;
+@@ -697,7 +697,7 @@ read_files (filevec, pretend_binary)
+       abort ();
+   nbuckets = primes[i];
+ 
+-  buckets = (int *) GC_MALLOC ((nbuckets + 1) * sizeof (*buckets));
++  buckets = (int *) malloc ((nbuckets + 1) * sizeof (*buckets));
+   bzero (buckets++, (nbuckets + 1) * sizeof (*buckets));
+ 
+   for (i = 0; i < 2; i++)
+@@ -705,8 +705,8 @@ read_files (filevec, pretend_binary)
+ 
+   filevec[0].equiv_max = filevec[1].equiv_max = equivs_index;
+ 
+-  GC_FREE (equivs);
+-  GC_FREE (buckets - 1);
++  free (equivs);
++  free (buckets - 1);
+ 
+   return 0;
+ }

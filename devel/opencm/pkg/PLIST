@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/10/11 12:27:00 todd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/05/23 13:22:14 todd Exp $
 bin/cm
+@comment info/dir
+info/opencm.info.gz
 share/opencm/help/add.help
 share/opencm/help/adduser.help
 share/opencm/help/bind.help
@@ -23,6 +25,7 @@ share/opencm/help/mv.help
 share/opencm/help/note.help
 share/opencm/help/notes.help
 share/opencm/help/opt-basic.help
+share/opencm/help/opt-debugging.help
 share/opencm/help/opt-obscure.help
 share/opencm/help/opt-server.help
 share/opencm/help/rebind.help
@@ -43,6 +46,7 @@ share/opencm/help/status.help
 share/opencm/help/tag.help
 share/opencm/help/unbind.help
 share/opencm/help/update.help
+share/opencm/help/upgrade.help
 share/opencm/help/version.help
 share/opencm/help/whoami.help
 share/opencm/tools/cvsconvert.py

@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_src_common_Version_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/Version.c.orig	Sat Mar 29 16:15:21 2003
++++ base/src/common/Version.c	Thu May 22 17:46:42 2003
+@@ -43,7 +43,7 @@
+ Version *
+ version_create(const char *cfgName, uint64_t rev)
+ {
+-  Version *v = (Version *) GC_MALLOC(sizeof(Version));
++  Version *v = (Version *) malloc(sizeof(Version));
+ 
+   ser_init(v, &Version_SerType, Version_SerType.ver);
+   v->cfgName = cfgName;

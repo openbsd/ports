@@ -1,0 +1,84 @@
+$OpenBSD: patch-base_src_common_Buffer_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/Buffer.c.orig	Sun Apr  6 16:03:43 2003
++++ base/src/common/Buffer.c	Fri May 23 07:50:43 2003
+@@ -38,6 +38,8 @@
+  * POSSIBILITY OF SUCH DAMAGE.
+  */
+ 
++#include <err.h>
++
+ #include <opencm.h>
+ #include "../../zlib/zlib.h"
+ 
+@@ -63,10 +65,15 @@ void
+ buffer_show(const void *vp)
+ {
+   const Buffer *buf = vp;
++  char *xstr;
+   
+   report(0, "Frozen:   %c\n", buf->frozen ? 'Y' : 'N');
+-  report(0, "Bias:     %s\n", xunsigned64_str(CMGET(buf,bias)));
+-  report(0, "End:      %s\n", xunsigned64_str(CMGET(buf,end)));
++  xstr = xunsigned64_str(CMGET(buf,bias));
++  report(0, "Bias:     %s\n", xstr);
++  free(xstr);
++  xstr = xunsigned64_str(CMGET(buf,end));
++  report(0, "End:      %s\n", xstr);
++  free(xstr);
+   report(0, "Descrip: <omitted>\n");
+ }
+ 
+@@ -101,7 +108,10 @@ buffer_mark(Repository *r, const void *c
+ Buffer *
+ buffer_create(void)
+ {
+-  Buffer *buf = (Buffer *) GC_MALLOC(sizeof(Buffer));
++  Buffer *buf = (Buffer *) calloc(1, sizeof(Buffer));
++  if (buf == NULL)
++    errx(1, "calloc failed in buffer_create");
++
+   ser_init(buf, &Buffer_SerType, Buffer_SerType.ver);
+   SER_MODIFIED(buf);
+ 
+@@ -155,7 +165,10 @@ buffer_append(Buffer *buf, const void *v
+   unsigned char *bp = (unsigned char *) vp;
+ 
+   while (BLKNDX(end) >= vec_size(CMGET(buf,vec))) {
+-    unsigned char* block = GC_MALLOC_ATOMIC(BUFFER_BLOCK_SIZE);
++    unsigned char* block = calloc(1, BUFFER_BLOCK_SIZE);
++    if (block == NULL)
++      errx(1, "calloc failed in buffer_append");
++
+     obvec_append(CMCLOBBER(buf,vec), block);
+   }
+   
+@@ -214,9 +227,14 @@ buffer_FromFilePtr(const char *name, FIL
+   rewind(f);
+ 
+   for ( ;; ) {
+-    unsigned char *block = GC_MALLOC_ATOMIC(BUFFER_BLOCK_SIZE);
++    unsigned char *block = calloc(1, BUFFER_BLOCK_SIZE);
++    size_t take;
++
++    if (block == NULL)
++      errx(1, "calloc failed in buffer_FromFilePtr");
++
++    take = fread(block, 1, BUFFER_BLOCK_SIZE, f);
+ 
+-    size_t take = fread(block, 1, BUFFER_BLOCK_SIZE, f);
+     if (take == 0 && feof(f))
+       break;
+     else if (take == 0)
+@@ -338,7 +356,11 @@ char *
+ buffer_asString(const Buffer *buf)
+ {
+   ocmoff_t len = buffer_length(buf);
+-  char *s = GC_MALLOC_ATOMIC(len+1);
++  char *s = calloc(1, len+1);
++  if (s == NULL) {
++    errx(1, "calloc failed in buffer_asString");
++  }
++
+   s[len] = 0;
+ 
+   buffer_read(buf, s, 0, len);

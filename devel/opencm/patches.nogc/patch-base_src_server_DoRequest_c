@@ -1,0 +1,21 @@
+$OpenBSD: patch-base_src_server_DoRequest_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/server/DoRequest.c.orig	Mon Mar 31 10:29:19 2003
++++ base/src/server/DoRequest.c	Thu May 22 17:46:43 2003
+@@ -100,7 +100,7 @@ svr_SendInfoGram(Channel *c, const char 
+   /* Make one message containing the net-order of the size followed
+    * by the actual bytes of the message: */
+   total = htonl(total);
+-  message = (void *)GC_MALLOC_ATOMIC(sizeof(total) + reply_strm->len);
++  message = (void *)malloc(sizeof(total) + reply_strm->len);
+   memcpy(message, &total, sizeof(total));
+   memcpy(message+sizeof(total), reply_strm->data, reply_strm->len);
+   chan_awrite(c, message, sizeof(total)+reply_strm->len, NULL);
+@@ -500,7 +500,7 @@ svr_DoRequest(Channel *c, Request *req) 
+     /* Make sure this buffer is malloc'd:  chan_awrite() relies
+      * on the buffer pointer's validity well beyond the scope of this
+      * local declaration block. */
+-    char *totbuf = (char *)GC_MALLOC_ATOMIC(sizeof(reqlen_t));
++    char *totbuf = (char *)malloc(sizeof(reqlen_t));
+ 
+     Buffer *buf = stream_asBuffer(reply_strm);
+     ocmoff_t end, pos;

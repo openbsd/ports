@@ -1,0 +1,92 @@
+$OpenBSD: patch-base_libgdiff_diff3_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/libgdiff/diff3.c.orig	Sun Apr  6 16:03:44 2003
++++ base/libgdiff/diff3.c	Thu May 22 17:46:39 2003
+@@ -17,11 +17,11 @@
+ /* Librarification by Tim Pierce */
+ 
+ #include "../config.h"
+-#include "../gc6.1/include/gc.h"
+ 
+ #include "system.h"
+ #include <stdio.h>
+ #include <setjmp.h>
++#include <stdlib.h>
+ #include "getopt.h"
+ #include "diffrun.h"
+ 
+@@ -156,7 +156,7 @@ struct diff3_block {
+  * General memory allocation function.
+  */
+ #define	ALLOCATE(number, type)	\
+-  (type *) GC_MALLOC ((number) * sizeof (type))
++  (type *) malloc ((number) * sizeof (type))
+ 
+ /* Options variables for flags set on command line.  */
+ 
+@@ -474,8 +474,8 @@ diff3_run (argc, argv, out, callbacks_ar
+       conflicts_found = 0;
+     }
+ 
+-  GC_FREE(content0);
+-  GC_FREE(content1);
++  free(content0);
++  free(content1);
+   free_diff_blocks(thread0);
+   free_diff_blocks(thread1);
+   free_diff3_blocks(diff3);
+@@ -1319,7 +1319,7 @@ read_diff (filea, fileb, output_placemen
+   if (fstat (fd, &pipestat) == 0)
+     current_chunk_size = max (current_chunk_size, STAT_BLOCKSIZE (pipestat));
+ 
+-  diff_result = GC_MALLOC (current_chunk_size);
++  diff_result = malloc (current_chunk_size);
+   total = 0;
+   do {
+     bytes = myread (fd,
+@@ -1334,7 +1334,7 @@ read_diff (filea, fileb, output_placemen
+ 	  current_chunk_size = (size_t) -1;
+ 	else
+ 	  diff3_fatal ("files are too large to fit into memory");
+-	diff_result = GC_REALLOC (diff_result, (current_chunk_size *= 2));
++	diff_result = realloc (diff_result, (current_chunk_size *= 2));
+       }
+   } while (bytes);
+ 
+@@ -1889,11 +1889,11 @@ free_diff_blocks(p)
+   while (p)
+     {
+       next = p->next;
+-      if (p->lines[0]) GC_FREE(p->lines[0]);
+-      if (p->lines[1]) GC_FREE(p->lines[1]);
+-      if (p->lengths[0]) GC_FREE(p->lengths[0]);
+-      if (p->lengths[1]) GC_FREE(p->lengths[1]);
+-      GC_FREE(p);
++      if (p->lines[0]) free(p->lines[0]);
++      if (p->lines[1]) free(p->lines[1]);
++      if (p->lengths[0]) free(p->lengths[0]);
++      if (p->lengths[1]) free(p->lengths[1]);
++      free(p);
+       p = next;
+     }
+ }
+@@ -1907,13 +1907,13 @@ free_diff3_blocks(p)
+   while (p)
+     {
+       next = p->next;
+-      if (p->lines[0]) GC_FREE(p->lines[0]);
+-      if (p->lines[1]) GC_FREE(p->lines[1]);
+-      if (p->lines[2]) GC_FREE(p->lines[2]);
+-      if (p->lengths[0]) GC_FREE(p->lengths[0]);
+-      if (p->lengths[1]) GC_FREE(p->lengths[1]);
+-      if (p->lengths[2]) GC_FREE(p->lengths[2]);
+-      GC_FREE(p);
++      if (p->lines[0]) free(p->lines[0]);
++      if (p->lines[1]) free(p->lines[1]);
++      if (p->lines[2]) free(p->lines[2]);
++      if (p->lengths[0]) free(p->lengths[0]);
++      if (p->lengths[1]) free(p->lengths[1]);
++      if (p->lengths[2]) free(p->lengths[2]);
++      free(p);
+       p = next;
+     }
+ }

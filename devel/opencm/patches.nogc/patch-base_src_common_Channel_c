@@ -1,0 +1,71 @@
+$OpenBSD: patch-base_src_common_Channel_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/Channel.c.orig	Sat Mar 29 16:15:25 2003
++++ base/src/common/Channel.c	Fri May 23 07:41:27 2003
+@@ -38,6 +38,8 @@
+  * POSSIBILITY OF SUCH DAMAGE.
+  */
+ 
++#include <err.h>
++
+ #include <opencm.h>
+ 
+ static unsigned int global_connection_counter = 0;
+@@ -271,8 +273,8 @@ chan_select(Channel **chanset, int maxfd
+ 
+       /* Remove and close any Channels that were aclosed: */
+       if (chanset[u]->closed) {
+-	log_trace(TRC_COMM, "Connection dropped (connection id=%d, heap=%d)\n", 
+-	       chanset[u]->connection_id, GC_get_heap_size());
++	log_trace(TRC_COMM, "Connection dropped (connection id=%d)\n", 
++	       chanset[u]->connection_id);
+ 	chanset[u]->close(chanset[u]);
+ 	chanset[u] = NULL;
+ 	num_active_clients--;
+@@ -349,12 +351,15 @@ chan_select(Channel **chanset, int maxfd
+ Channel *
+ chan_create(void)
+ {
+-  Channel *c = (Channel *)GC_MALLOC(sizeof(Channel));
++  Channel *c = (Channel *) calloc(1, sizeof(Channel));
++  if (c == NULL)
++    errx(1, "calloc failed in chan_create");
+ 
+   c->pendingRead = FALSE;
+   c->pendingWrite = FALSE;
+ 
+   c->rCallback = NULL;
++  c->hCallback = NULL;
+ 
+   c->send = NULL;
+   c->receive = NULL;
+@@ -363,9 +368,13 @@ chan_create(void)
+   c->close = NULL;
+   c->aclose = NULL;
+   c->closed = FALSE;
++  c->shake = NULL;
+ 
+   c->read_buf = 0;
+-  c->read_scratch = GC_MALLOC_ATOMIC(CHAN_RDBOUND);
++  c->read_scratch = calloc(1, CHAN_RDBOUND);
++  if (c->read_scratch == NULL)
++    errx(1, "second calloc failed in chan_create");
++
+   c->read_so_far = 0;
+   c->read_wanted = 0;
+   c->rbuf_limit = 0;
+@@ -374,11 +383,11 @@ chan_create(void)
+ 
+   c->uri = NULL;
+ 
+-  c->ctx = 0;
+-  c->ssl = 0;
+-  c->sbio = 0;
++  c->ctx = NULL;
++  c->ssl = NULL;
++  c->sbio = NULL;
+   c->peerCert = 0;
+-  c->xinfo = 0;
++  c->xinfo = NULL;
+ 
+   c->check_idleness = FALSE;
+   c->max_idle_time = 0;

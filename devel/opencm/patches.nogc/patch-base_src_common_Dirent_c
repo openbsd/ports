@@ -1,0 +1,21 @@
+$OpenBSD: patch-base_src_common_Dirent_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/Dirent.c.orig	Sat Mar 29 16:15:25 2003
++++ base/src/common/Dirent.c	Thu May 22 17:46:42 2003
+@@ -43,7 +43,7 @@
+ Dirent *
+ dirent_create(const char *key, const char *value)
+ {
+-  Dirent *z = (Dirent *)GC_MALLOC(sizeof(Dirent));
++  Dirent *z = (Dirent *)malloc(sizeof(Dirent));
+ 
+   ser_init(z, &Dirent_SerType, Dirent_SerType.ver);
+   SER_MODIFIED(z);
+@@ -74,7 +74,7 @@ dirent_serialize(SDR_stream *strm, const
+ void *
+ dirent_deserialize(const DeserializeInfo *di, SDR_stream *strm)
+ {
+-  Dirent *z = (Dirent *)GC_MALLOC(sizeof(Dirent));
++  Dirent *z = (Dirent *)malloc(sizeof(Dirent));
+ 
+   ser_init(z, &Dirent_SerType, di->ver);
+   SER_MODIFIED(z);

@@ -1,0 +1,70 @@
+$OpenBSD: patch-base_src_common_ChannelSSL_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/ChannelSSL.c.orig	Wed Apr 23 14:50:38 2003
++++ base/src/common/ChannelSSL.c	Thu May 22 17:46:42 2003
+@@ -400,7 +400,17 @@ ssl_flush(Channel *c, OC_bool blocking)
+ 	}
+       default:
+ 	{
+-	  c->writeQueue = 0;
++          while(c->writeQueue->next) {
++            PendingWrite *tmp, *q = c->writeQueue;
++            while (q->next) {
++              tmp = q;
++              q = q->next;
++            }
++            free(tmp->next);
++            tmp->next = NULL;
++          }
++	  free(c->writeQueue);
++	  c->writeQueue = NULL;
+ 	  c->aclose(c);
+ 	  return;
+ 	}
+@@ -423,6 +433,7 @@ ssl_flush(Channel *c, OC_bool blocking)
+       pw->callback = NULL;
+       fn(c);
+       c->writeQueue = pw->next;
++      free(pw);
+     }
+   }
+ }
+@@ -518,7 +529,7 @@ ssl_pull(Channel *c, OC_bool blocking)
+ static void
+ ssl_send(Channel *c, const void *buf, size_t len, ChannelCompletionFn fn) 
+ {
+-  PendingWrite *pw = (PendingWrite *)GC_MALLOC(sizeof(PendingWrite));
++  PendingWrite *pw = (PendingWrite *)malloc(sizeof(PendingWrite));
+ 
+   if (!fn) fn = NullChannelCallback;
+ 
+@@ -526,6 +537,7 @@ ssl_send(Channel *c, const void *buf, si
+   pw->len = len;
+   pw->sent = 0;
+   pw->callback = fn;
++  pw->next = NULL;
+ 
+   if (c->writeQueue == 0) {
+     c->writeQueue = pw;
+@@ -555,18 +567,16 @@ ssl_receive(Channel *c, size_t len, Chan
+ static void
+ ssl_aclose(Channel *c)
+ {
+-  log_trace(TRC_COMM, 
+-	     "Closing (async) SSL connection (connection id=%d, heap=%d)\n",
+-	     c->connection_id, GC_get_heap_size());
++  log_trace(TRC_COMM, "Closing (async) SSL connection (connection id=%d)\n",
++	 c->connection_id);
+   c->closed = TRUE;
+ }
+ 
+ static void
+ ssl_close(Channel *c)
+ {
+-  log_trace(TRC_COMM,
+-	     "Shutting down SSL connection (connection id=%d, heap=%d)\n", 
+-	     c->connection_id, GC_get_heap_size());
++  log_trace(TRC_COMM, "Shutting down SSL connection (connection id=%d)\n", 
++	 c->connection_id);
+   c->rCallback = NULL;
+ 
+   TRY { 

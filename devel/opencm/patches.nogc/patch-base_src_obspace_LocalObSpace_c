@@ -1,0 +1,30 @@
+$OpenBSD: patch-base_src_obspace_LocalObSpace_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/obspace/LocalObSpace.c.orig	Sat Mar 29 16:15:28 2003
++++ base/src/obspace/LocalObSpace.c	Thu May 22 17:46:42 2003
+@@ -102,7 +102,7 @@ validate_x509_cert(const char *reposName
+     if ((num = BIO_get_mem_data(saved_cert_mem, &vbuf)) == 0)
+       return FALSE;
+ 
+-    saved_cert_data = (char *)GC_MALLOC_ATOMIC(sizeof(char) * (num + 1));
++    saved_cert_data = (char *)malloc(sizeof(char) * (num + 1));
+     memcpy(saved_cert_data, vbuf, num);
+     saved_cert_data[num] = 0;
+ 
+@@ -112,7 +112,7 @@ validate_x509_cert(const char *reposName
+     if ((num = BIO_get_mem_data(cert_mem, &vbuf)) == 0)
+       return FALSE;
+ 
+-    cert_data = (char *)GC_MALLOC_ATOMIC(sizeof(char) * (num + 1));
++    cert_data = (char *)malloc(sizeof(char) * (num + 1));
+     memcpy(cert_data, vbuf, num);
+     cert_data[num] = 0;
+ 
+@@ -169,7 +169,7 @@ ReadOneLineFile(const char *path)
+   size_t len = path_file_length(path);
+   FILE *f = xfopen(path, 'r', 't');
+ 
+-  buf = GC_MALLOC_ATOMIC(len + 1);
++  buf = malloc(len + 1);
+ 
+   /* Length may get truncated if this is a WIN32 text file */
+   len = fread(buf, 1, len, f);

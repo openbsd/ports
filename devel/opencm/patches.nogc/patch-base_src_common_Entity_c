@@ -1,0 +1,30 @@
+$OpenBSD: patch-base_src_common_Entity_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/Entity.c.orig	Sat Mar 29 16:15:22 2003
++++ base/src/common/Entity.c	Thu May 22 17:46:42 2003
+@@ -64,7 +64,7 @@ entity_serialize(SDR_stream *strm, const
+ void *
+ entity_deserialize(const DeserializeInfo *di, SDR_stream *strm)
+ {
+-  Entity *e = (Entity *) GC_MALLOC(sizeof(Entity));
++  Entity *e = (Entity *) malloc(sizeof(Entity));
+ 
+   ser_init(e, &Entity_SerType, di->ver);
+   SER_MODIFIED(e);
+@@ -137,7 +137,7 @@ entity_show(const void *v)
+ Entity *
+ entity_dup(const Entity *ent)
+ {
+-  Entity *e = (Entity *) GC_MALLOC(sizeof(Entity));
++  Entity *e = (Entity *) malloc(sizeof(Entity));
+ 
+   ser_init(e, &Entity_SerType, Entity_SerType.ver);
+   SER_MODIFIED(e);
+@@ -170,7 +170,7 @@ entity_CreateFamNID(void)
+ Entity *
+ entity_create(char eType, const char *famNID)
+ {
+-  Entity *e = (Entity *) GC_MALLOC(sizeof(Entity));
++  Entity *e = (Entity *) malloc(sizeof(Entity));
+ 
+   ser_init(e, &Entity_SerType, Entity_SerType.ver);
+   SER_MODIFIED(e);

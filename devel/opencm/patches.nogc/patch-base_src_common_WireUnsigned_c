@@ -1,0 +1,21 @@
+$OpenBSD: patch-base_src_common_WireUnsigned_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/WireUnsigned.c.orig	Sat Mar 29 16:15:19 2003
++++ base/src/common/WireUnsigned.c	Thu May 22 17:46:42 2003
+@@ -52,7 +52,7 @@ wireu_serialize(SDR_stream *strm, const 
+ void *
+ wireu_deserialize(const DeserializeInfo *di, SDR_stream *strm)
+ {
+-  WireUnsigned *p = (WireUnsigned *) GC_MALLOC(sizeof(WireUnsigned));
++  WireUnsigned *p = (WireUnsigned *) malloc(sizeof(WireUnsigned));
+ 
+   ser_init(p, &WireUnsigned_SerType, di->ver);
+   p->value          = sdr_r_u64("value", strm);
+@@ -71,7 +71,7 @@ wireu_mark(Repository *r, const void *co
+ WireUnsigned *
+ wireu_create(uint64_t argument)
+ {
+-  WireUnsigned *p = (WireUnsigned *) GC_MALLOC(sizeof(WireUnsigned));
++  WireUnsigned *p = (WireUnsigned *) malloc(sizeof(WireUnsigned));
+ 
+   ser_init(p, &WireUnsigned_SerType, WireUnsigned_SerType.ver);
+   p->value = argument;

@@ -1,0 +1,35 @@
+$OpenBSD: patch-base_src_client_PendingChange_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/client/PendingChange.c.orig	Sat Mar 29 16:15:21 2003
++++ base/src/client/PendingChange.c	Thu May 22 17:46:42 2003
+@@ -55,7 +55,7 @@ pendingchange_create(Repository *r,
+   Revision *rev;
+   Change *chg;
+   PendingChange *pc = 
+-    (PendingChange *) GC_MALLOC(sizeof(PendingChange));
++    (PendingChange *) malloc(sizeof(PendingChange));
+ 
+   ser_init(pc, &PendingChange_SerType, PendingChange_SerType.ver);
+   SER_MODIFIED(pc);
+@@ -328,10 +328,12 @@ pendingchange_show(const void *ob)
+ {
+   unsigned u;
+   const PendingChange *pc = ob;
++  char *nRev = xunsigned64_str(pc->nRevisions);
+   
+   report(0, "Creator:          %s\n", pc->creator);
+   report(0, "Derived from:     %s/%s\n",
+-	 pc->branchURI, xunsigned64_str(pc->nRevisions));
++	 pc->branchURI, nRev);
++  free(nRev);
+   report(0, "FilterSet:        %s\n", 
+ 	  pc->filterSet ? buffer_asString(pc->filterSet) : "<none>");
+   report(0, "FilterSetName:    %s\n", pc->filterSetName);
+@@ -370,7 +372,7 @@ void *
+ pendingchange_deserialize(const DeserializeInfo *di, SDR_stream *strm)
+ {
+   PendingChange *pc = (PendingChange *) 
+-    GC_MALLOC(sizeof(PendingChange));
++    malloc(sizeof(PendingChange));
+ 
+   ser_init(pc, &PendingChange_SerType, di->ver);
+   SER_MODIFIED(pc);

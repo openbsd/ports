@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_src_repos_AuthRepos_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/repos/AuthRepos.c.orig	Mon Mar 31 10:29:19 2003
++++ base/src/repos/AuthRepos.c	Thu May 22 17:46:42 2003
+@@ -495,7 +495,7 @@ authrepository_init(Repository *r)
+ Repository *
+ authrepository_wrap(Repository *r, PubKey *pk)
+ {
+-  Repository *authR = (Repository *) GC_MALLOC(sizeof(Repository));
++  Repository *authR = (Repository *) malloc(sizeof(Repository));
+   
+   authR->uri = r->uri;
+   authR->authMutable = 0;

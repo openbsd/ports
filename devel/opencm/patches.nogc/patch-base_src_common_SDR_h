@@ -1,0 +1,11 @@
+$OpenBSD: patch-base_src_common_SDR_h,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/SDR.h.orig	Sun Apr  6 16:03:43 2003
++++ base/src/common/SDR.h	Thu May 22 17:46:42 2003
+@@ -224,6 +224,6 @@ void           sdr_nshow(const void *);
+ /* Format the print-style arguments into a dynamically allocated
+    string. This is a wrapper for stream_vprintf(), intended for use
+    with the exceptions package to format the explanation string. */
+-const char *format(const char *fmt, ...) __attribute__ ((format (printf, 1, 2)));
++char *format(const char *fmt, ...) __attribute__ ((format (printf, 1, 2)));
+ 
+ #endif /* COMMON_SDR_H */

@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_src_common_OS_unix-os_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/OS/unix-os.c.orig	Wed Dec  4 15:22:30 2002
++++ base/src/common/OS/unix-os.c	Thu May 22 17:46:42 2003
+@@ -352,7 +352,7 @@ os_validate_local_lockfile(const char *p
+ 		 path, errno));
+   }
+ 
+-  buf = GC_MALLOC_ATOMIC(statbuf.st_size + 1);
++  buf = malloc(statbuf.st_size + 1);
+   read(lfd, buf, statbuf.st_size);
+   buf[statbuf.st_size] = 0;
+ 

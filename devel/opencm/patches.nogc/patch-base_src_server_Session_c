@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_src_server_Session_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/server/Session.c.orig	Wed Dec 18 14:16:45 2002
++++ base/src/server/Session.c	Thu May 22 17:46:43 2003
+@@ -45,7 +45,7 @@
+ Session *
+ session_create(Repository *r)
+ {
+-  Session *s = (Session *) GC_MALLOC(sizeof(Session));
++  Session *s = (Session *) malloc(sizeof(Session));
+ 
+   s->repos = r;
+   s->compressionLevel = 0;	/* until client says otherwise */

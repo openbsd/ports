@@ -1,0 +1,215 @@
+$OpenBSD: patch-base_src_client_browse_Browse_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/client/browse/Browse.c.orig	Sat Mar 29 16:15:31 2003
++++ base/src/client/browse/Browse.c	Thu May 22 17:46:42 2003
+@@ -65,7 +65,7 @@ typedef struct FileEntry {
+   OC_bool isDir;
+ } FileEntry;
+ 
+-static const char *
++static char *
+ uri_encode(const char *s)
+ {
+   const char *from;
+@@ -91,7 +91,7 @@ uri_encode(const char *s)
+ 
+   }
+ 
+-  out = to = GC_MALLOC_ATOMIC(to_len + 1);
++  out = to = malloc(to_len + 1);
+ 
+   for (from = s; *from; from++) {
+     if ( isalpha(*from) ||
+@@ -114,14 +114,14 @@ uri_encode(const char *s)
+   return out;
+ }
+ 
+-static const char *
++static char *
+ uri_decode(const char *from)
+ {
+   size_t len = strlen(from);
+   char *out;
+   char *to;
+ 
+-  out = to = GC_MALLOC_ATOMIC(len + 1);
++  out = to = malloc(len + 1);
+ 
+   for (; *from; from++) {
+     unsigned value = *from;
+@@ -183,7 +183,7 @@ cmp_dirname(const void *v1, const void *
+   return strcmp(de1->key, de2->key);
+ }
+ 
+-static const char *
++static char *
+ xlate_time(const char *tmISO)
+ {
+   char *time = xstrdup(tmISO);
+@@ -232,7 +232,7 @@ show_files(SDR_stream *out, Repository *
+       glob_match(e->fsName, prefix, GM_FS_COMPONENT);
+ 
+     if (rest) {
+-      FileEntry * fe = GC_MALLOC(sizeof(FileEntry));
++      FileEntry * fe = malloc(sizeof(FileEntry));
+       fe->e = e;
+       fe->name = path_car(rest);
+       fe->isDir = path_cdr(rest) ? 1 : 0;
+@@ -262,6 +262,8 @@ show_files(SDR_stream *out, Repository *
+ 
+   if (vec_size(ev) > 0) {
+     const char *last = 0;
++    char *xstr;
++    char *uri;
+ 
+     stream_printf(out, "<table>");
+ 
+@@ -287,13 +289,20 @@ show_files(SDR_stream *out, Repository *
+ 
+       fe = vec_fetch(ev,w,const FileEntry*);
+       last = fe->name;
++      uri = uri_encode(last);
++      if (fe->isDir)
++	xstr = xunsigned64_str(fe->e->length);
++      else
++	xstr = "";
+ 
+       stream_printf(out, "<tr valign=\"top\">");
+       stream_printf(out, "<td>" "%s" "</td>", fe->isDir ? "[Dir]" : "[File]");
+       stream_printf(out, "<td>" LINK("/opencm/%s/%s", "%s") "</td>",
+-                    thisPageURI, uri_encode(last), last);
+-      stream_printf(out, "<td>" "%s" "</td>", 
+-                    fe->isDir ? "" : xunsigned64_str(fe->e->length));
++                    thisPageURI, uri, last);
++      free(uri);
++      stream_printf(out, "<td>" "%s" "</td>", xstr);
++      if (fe->isDir)
++	free(xstr);
+       stream_printf(out, "<td>" "%c" "</td>",
+                     fe->isDir ? ' ' : fe->e->entityType);
+       stream_printf(out, "<td>" "%s" "</td>", 
+@@ -301,6 +310,7 @@ show_files(SDR_stream *out, Repository *
+       stream_printf(out, "<td>" "%s" "</td>", author);
+ 
+       stream_printf(out, "</tr>");
++
+     }
+ 
+     stream_printf(out, "</table>");
+@@ -455,6 +465,7 @@ show_html(SDR_stream *out, Repository *r
+ 	stream_printf(out, "<hr>\n");
+ 
+ 	if (vec_size(dir->entries)) {
++	  char *uri;
+ 	  stream_printf(out, "<table>");
+ 
+ 	  stream_printf(out, "<tr valign=\"top\">");
+@@ -492,19 +503,34 @@ show_html(SDR_stream *out, Repository *r
+ 		    (m && (m->flags & MF_FROZEN)) ? "F" : "",
+ 		    (m && (m->flags & MF_NOTRAIL)) ? "N" : "");
+ 
++	    uri = uri_encode(de->key);
+ 	    stream_printf(out, "<td>" LINK("/opencm/%s/%s", CONTENT("%s")) "</td>\n",
+ 		    thisPageURI,
+-		    uri_encode(de->key), de->key);
++		    uri, de->key);
++	    free(uri);
++
+ 	    if (s) {
+-	      const char *email = u ? pubkey_GetEmail(u->pubKey) : "???";
+-	      const char *author = email;
+-	      if (u)
++	      char *email;
++	      char *author;
++	      char *xstr;
++	      if (u) {
++		email = pubkey_GetEmail(u->pubKey);
+ 		author = format(LINK("/opencm/everyone/%s", CONTENT("%s")),
+ 				email, email);
+-	      stream_printf(out, "<td>%s</td>", xunsigned64_str(m->nRevisions));
++	      } else
++	        author = email = "???";
++	      xstr = xunsigned64_str(m->nRevisions);
++
++	      stream_printf(out, "<td>%s</td>", xstr);
+ 	      stream_printf(out, "<td>%s</td>", s->ser_type->tyName);
+ 	      stream_printf(out, "<td>%s</td>", xlate_time(rev->reviseTime));
+ 	      stream_printf(out, "<td>%s</td>", author);
++
++	      free(xstr);
++	      if(u) {
++		free(author);
++		free(email);
++	      }
+ 	    }
+ 	    else {
+ 	      stream_printf(out, "<td colspan='5'><em>inaccessable</em></td>");
+@@ -550,16 +576,20 @@ show_html(SDR_stream *out, Repository *r
+ 
+ 	  {
+ 	    const char *name = "<unknown>";
++	    char *uri;
+ 
+ 	    if (s && GETTYPE(s) == TY_User)
+ 	      name = pubkey_GetEmail(((User *) s)->pubKey);
+ 	    else if (s && GETTYPE(s) == TY_Group)
+ 	      name = m->name;
+ 
++	    uri = uri_encode(name);
++
+ 	    stream_printf(out, "<tr valign=\"top\">");
+ 
+ 	    stream_printf(out, "<td>" LINK("/opencm/%s/%s", "%s") "</td>", 
+-		    thisPageURI, uri_encode(name), name);
++		    thisPageURI, uri, name);
++	    free(uri);
+ 
+ #if 0
+ 	    stream_printf(out, "<td>" LINK("/opencm/%s", "%s") "</td>", tn, name);
+@@ -640,7 +670,7 @@ show_html(SDR_stream *out, Repository *r
+ 	  w = vec_size(revs);
+ 
+ 	  do {
+-	    const char *revno;
++	    char *revno;
+ 	    Revision *rev;
+ 	    User *u = 0;
+ 	    const char *userName = "<unavailable>";
+@@ -667,6 +697,7 @@ show_html(SDR_stream *out, Repository *r
+ 	    stream_printf(out, "<tr valign=\"top\">");
+ 	    stream_printf(out, "<td>" LINK("/opencm/%s/%s", "%s") "</td>", 
+ 		    thisPageURI, revno, revno);
++	    free(revno);
+ 	    stream_printf(out, "<td>" CONTENT("%s") "</td>", xlate_time(rev->reviseTime));
+ 	    stream_printf(out, "<td>" CONTENT("%s") "</td>", 
+ 		    userName);
+@@ -689,11 +720,13 @@ show_html(SDR_stream *out, Repository *r
+ 	CommitInfo *ci =
+ 	  (CommitInfo *)repos_GetEntity(repos, res->m->uri,
+ 					CMGET(chg,commitInfoTrueName));
++	char *xstr = xunsigned64_str(ver->rev);
+ 	
+ 	stream_printf(out, page_header(format("Commit %s", res->fp_frag)));
+ 	stream_printf(out, BODY);
+ 	stream_printf(out, "<center>\n");
+-	stream_printf(out, "Commit %s (%s)\n", res->fp_frag, xunsigned64_str(ver->rev));
++	stream_printf(out, "Commit %s (%s)\n", res->fp_frag, xstr);
++	free(xstr);
+ 	stream_printf(out, "</center>\n");
+ 	stream_printf(out, "<hr>\n");
+ 
+@@ -717,13 +750,14 @@ show_html(SDR_stream *out, Repository *r
+ 	  (CommitInfo *)repos_GetEntity(repos, res->m->uri,
+ 					CMGET(chg,commitInfoTrueName));
+ 
+-	const char *revNo = xunsigned64_str(fsDir->rev);
++	char *revNo = xunsigned64_str(fsDir->rev);
+ 
+ 	stream_printf(out, page_header(format("Commit %s, %s/", 
+ 					      revNo, fsDir->path)));
+ 	stream_printf(out, BODY);
+ 	stream_printf(out, "<center>\n");
+ 	stream_printf(out, "Commit %s, %s/\n", revNo, fsDir->path);
++	free(revNo);
+ 	stream_printf(out, "</center>\n");
+ 	stream_printf(out, "<hr>\n");
+ 

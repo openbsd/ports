@@ -1,0 +1,48 @@
+$OpenBSD: patch-base_src_common_User_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/User.c.orig	Sat Mar 29 16:15:30 2003
++++ base/src/common/User.c	Thu May 22 17:46:42 2003
+@@ -61,7 +61,7 @@ user_serialize(SDR_stream *strm, const v
+ void *
+ user_deserialize(const DeserializeInfo *di, SDR_stream *strm)
+ {
+-  User *u = (User *) GC_MALLOC(sizeof(User));
++  User *u = (User *) malloc(sizeof(User));
+ 
+   ser_init(u, &User_SerType, di->ver);
+ 
+@@ -86,7 +86,7 @@ user_mark(Repository *r, const void *con
+ User *
+ user_create(PubKey *pk, const char *dirURI)
+ {
+-  User *u = (User *) GC_MALLOC(sizeof(User));
++  User *u = (User *) malloc(sizeof(User));
+ 
+   ser_init(u, &User_SerType, User_SerType.ver);
+ 
+@@ -100,7 +100,7 @@ user_create(PubKey *pk, const char *dirU
+ User *
+ user_dup(User *u)
+ {
+-  User *newU = (User *) GC_MALLOC(sizeof(User));
++  User *newU = (User *) malloc(sizeof(User));
+   memcpy(newU, u, sizeof(*u));
+ 
+   return newU;
+@@ -113,7 +113,7 @@ user_create(X509 *x)
+   long num = 0;
+   void *tmpbuf = NULL;
+   char *data;
+-  User *p = (User *) GC_MALLOC(sizeof(User));
++  User *p = (User *) malloc(sizeof(User));
+   BIO *inMem = BIO_new(BIO_s_mem());
+ 
+   if (x == NULL)
+@@ -125,7 +125,7 @@ user_create(X509 *x)
+   if ((num = BIO_get_mem_data(inMem, &tmpbuf)) == 0)
+     return NULL;
+ 
+-  data = (char *)GC_MALLOC_ATOMIC(sizeof(char) * (num + 1));
++  data = (char *)malloc(sizeof(char) * (num + 1));
+   memcpy(data, tmpbuf, num);
+   data[num] = 0;
+ 

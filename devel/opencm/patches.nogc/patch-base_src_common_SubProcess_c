@@ -1,0 +1,20 @@
+$OpenBSD: patch-base_src_common_SubProcess_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/SubProcess.c.orig	Sat Mar 29 16:15:30 2003
++++ base/src/common/SubProcess.c	Thu May 22 17:46:42 2003
+@@ -47,14 +47,14 @@ maybe_grow_argv(SubProcess *proc)
+ {
+   if (proc->narg == proc->maxarg) {
+     proc->maxarg += 64;
+-    proc->argv = GC_REALLOC(proc->argv, sizeof(char *) * proc->maxarg);
++    proc->argv = realloc(proc->argv, sizeof(char *) * proc->maxarg);
+   }
+ }
+ 
+ SubProcess *
+ subprocess_create(void)
+ {
+-  SubProcess *proc = GC_MALLOC(sizeof(SubProcess));
++  SubProcess *proc = malloc(sizeof(SubProcess));
+ 
+   proc->narg = 0;
+   proc->maxarg = 0;

@@ -1,0 +1,22 @@
+$OpenBSD: patch-base_aclocal_m4,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/aclocal.m4.orig	Tue Apr 22 08:59:16 2003
++++ base/aclocal.m4	Thu May 22 17:46:39 2003
+@@ -1,18 +1,3 @@
+-AC_DEFUN([AC_AUTOCONFIG_GC], [
+-  AC_MSG_CHECKING([if autoconf has been run for gc6.1])
+-  if test -d gc6.1; then
+-    if test -r gc6.1/configure; then
+-      AC_MSG_RESULT([yes])
+-    else
+-      (cd gc6.1; autoconf)
+-      AC_MSG_RESULT([built])
+-    fi
+-  else
+-    echo "no - using external gc6.1"
+-  fi
+-  ])
+-])
+-
+ dnl The check for libtermcap/libcurses is a HUGE mess. First, the headers
+ dnl and the libraries need to agree. Second, we need to get the proper header
+ dnl macros defined. The objective of the macro below is to identify

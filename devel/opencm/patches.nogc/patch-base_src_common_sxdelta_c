@@ -1,0 +1,61 @@
+$OpenBSD: patch-base_src_common_sxdelta_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/sxdelta.c.orig	Sat Mar 29 16:15:25 2003
++++ base/src/common/sxdelta.c	Thu May 22 17:46:42 2003
+@@ -130,7 +130,7 @@
+ SXDelta *
+ sxdelta_create(Buffer *cmd, Buffer *ins)
+ {
+-  SXDelta *xd = (SXDelta *) GC_MALLOC(sizeof(SXDelta));
++  SXDelta *xd = (SXDelta *) malloc(sizeof(SXDelta));
+   ser_init(xd, &SXDelta_SerType, SXDelta_SerType.ver);
+   SER_MODIFIED(xd);
+ 
+@@ -152,7 +152,7 @@ sxdelta_serialize(SDR_stream *strm, cons
+ void *
+ sxdelta_deserialize(const DeserializeInfo *di, SDR_stream *strm)
+ {
+-  SXDelta *sxd = (SXDelta *) GC_MALLOC(sizeof(SXDelta));
++  SXDelta *sxd = (SXDelta *) malloc(sizeof(SXDelta));
+   ser_init(sxd, &SXDelta_SerType, di->ver);
+ 
+   sxd->cmd = sdr_read("cmd", strm);
+@@ -237,10 +237,10 @@ compute_base_hashes(Buffer *buf)
+ 
+   assert(SKIPSZ >= CHUNKSZ);
+ 
+-  bh = GC_MALLOC(sizeof(hashvec_t));
++  bh = malloc(sizeof(hashvec_t));
+   bh->nhash = bufLen - (bufLen % CHUNKSZ); /* chop residual */
+   bh->nhash = bufLen / SKIPSZ;
+-  bh->hash = GC_MALLOC_ATOMIC(sizeof(hashpos_t) * bh->nhash);
++  bh->hash = malloc(sizeof(hashpos_t) * bh->nhash);
+ 
+   if (bh->nhash == 0)
+     return bh;
+@@ -536,7 +536,7 @@ XDeltaArchive_t *
+ xda_fromStream(SDR_stream *s)
+ {
+   unsigned u;
+-  XDeltaArchive_t *xda = GC_MALLOC(sizeof(XDeltaArchive_t));
++  XDeltaArchive_t *xda = malloc(sizeof(XDeltaArchive_t));
+ 
+   if (s == 0 || stream_length(s) == 0) {
+     xda->magic = "sxd2";
+@@ -548,7 +548,7 @@ xda_fromStream(SDR_stream *s)
+     /* We allocate an EXTRA directory slot. This is because the insert
+        operation adds at most one object, and it is cheaper to avoid
+        reallocating the array later. */
+-    xda->dir = GC_MALLOC(sizeof(xdirent_t) * xda->maxDirent);
++    xda->dir = malloc(sizeof(xdirent_t) * xda->maxDirent);
+     return xda;
+   }
+ 
+@@ -561,7 +561,7 @@ xda_fromStream(SDR_stream *s)
+   /* We allocate an EXTRA directory slot. This is because the insert
+      operation adds at most one object, and it is cheaper to avoid
+      reallocating the array later. */
+-  xda->dir = GC_MALLOC(sizeof(xdirent_t) * xda->maxDirent);
++  xda->dir = malloc(sizeof(xdirent_t) * xda->maxDirent);
+ 
+   /* For each dirent, read in its values */
+   for (u = 0; u < xda->nDirent; u++) {

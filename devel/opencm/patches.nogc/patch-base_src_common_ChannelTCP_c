@@ -1,0 +1,33 @@
+$OpenBSD: patch-base_src_common_ChannelTCP_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/ChannelTCP.c.orig	Sat Mar 29 16:15:24 2003
++++ base/src/common/ChannelTCP.c	Thu May 22 17:46:42 2003
+@@ -295,7 +295,7 @@ tcp_pull(Channel *c, OC_bool blocking)
+ static void
+ tcp_send(Channel *c, const void *buf, size_t len, ChannelCompletionFn fn) 
+ {
+-  PendingWrite *pw = (PendingWrite *)GC_MALLOC(sizeof(PendingWrite));
++  PendingWrite *pw = (PendingWrite *)malloc(sizeof(PendingWrite));
+ 
+   if (!fn) fn = NullChannelCallback;
+ 
+@@ -332,16 +332,16 @@ tcp_receive(Channel *c, size_t len, Chan
+ static void
+ tcp_aclose(Channel *c)
+ {
+-  log_trace(TRC_COMM, "Closing (async) TCP connection (connection id=%d, heap=%d)\n",
+-	 c->connection_id, GC_get_heap_size());
++  log_trace(TRC_COMM, "Closing (async) TCP connection (connection id=%d)\n",
++	 c->connection_id);
+   c->closed = TRUE;
+ }
+ 
+ static void
+ tcp_close(Channel *c)
+ {
+-  log_trace(TRC_COMM, "Shutting down TCP connection (connection id=%d, heap=%d)\n", 
+-	 c->connection_id, GC_get_heap_size());
++  log_trace(TRC_COMM, "Shutting down TCP connection (connection id=%d)\n", 
++	 c->connection_id);
+   c->rCallback = NULL;
+   c->writeQueue = NULL;
+   TRY { 

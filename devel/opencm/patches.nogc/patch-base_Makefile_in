@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_Makefile_in,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/Makefile.in.orig	Fri Jan 17 16:20:31 2003
++++ base/Makefile.in	Thu May 22 17:46:39 2003
+@@ -127,7 +127,7 @@ DISTFILES = \
+ 
+ ### Subdirectories to run make in for the primary targets.
+ # Unix source subdirs, where we'll want to run lint and etags:
+-USOURCE_SUBDIRS = libgdiff gc6.1 zlib src
++USOURCE_SUBDIRS = libgdiff zlib src
+ # All other subdirs:
+ SUBDIRS = ${USOURCE_SUBDIRS} doc tools etc
+ 

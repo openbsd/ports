@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_src_client_WorkSpace_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/client/WorkSpace.c.orig	Tue Apr 22 08:59:15 2003
++++ base/src/client/WorkSpace.c	Thu May 22 17:46:42 2003
+@@ -193,7 +193,7 @@ ws_Init(struct command *cmd, const char 
+      variables.
+  */
+ 
+-  WorkSpace *ws = GC_MALLOC(sizeof(WorkSpace));
++  WorkSpace *ws = calloc(1, sizeof(WorkSpace));
+ 
+   /* Eventually we will support layered projects, and it will be
+      possible for rootPath to be non-null. Until then, just barf if

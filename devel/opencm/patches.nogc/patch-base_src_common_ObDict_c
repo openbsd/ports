@@ -1,0 +1,21 @@
+$OpenBSD: patch-base_src_common_ObDict_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/ObDict.c.orig	Wed Jan  1 01:53:25 2003
++++ base/src/common/ObDict.c	Thu May 22 17:46:42 2003
+@@ -67,7 +67,7 @@ obdict_check(ObDict *dict)
+ ObDictEntry *
+ ode_create(const char *tn, void *vp, unsigned w)
+ {
+-  ObDictEntry *ode = GC_MALLOC(sizeof(ObDictEntry));
++  ObDictEntry *ode = malloc(sizeof(ObDictEntry));
+   ode->trueName = tn;
+ 
+   ode->tnHash = truename_hash(tn);
+@@ -82,7 +82,7 @@ ode_create(const char *tn, void *vp, uns
+ ObDict *
+ obdict_create(void)
+ {
+-  ObDict *dict = GC_MALLOC(sizeof(ObDict));
++  ObDict *dict = malloc(sizeof(ObDict));
+   return dict;
+ }
+ 

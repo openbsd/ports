@@ -1,0 +1,42 @@
+$OpenBSD: patch-base_libgdiff_dir_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/libgdiff/dir.c.orig	Sat Mar 29 16:15:26 2003
++++ base/libgdiff/dir.c	Thu May 22 17:46:40 2003
+@@ -69,7 +69,7 @@ dir_sort (dir, dirdata)
+ 
+       data_alloc = max (1, (size_t) dir->stat.st_size);
+       data_used = 0;
+-      dirdata->data = data = GC_MALLOC (data_alloc);
++      dirdata->data = data = malloc (data_alloc);
+ 
+       /* Read the directory entries, and insert the subfiles
+ 	 into the `data' table.  */
+@@ -88,7 +88,7 @@ dir_sort (dir, dirdata)
+ 	    continue;
+ 
+ 	  while (data_alloc < data_used + d_size)
+-	    dirdata->data = data = GC_REALLOC (data, data_alloc *= 2);
++	    dirdata->data = data = realloc (data, data_alloc *= 2);
+ 	  memcpy (data + data_used, d_name, d_size);
+ 	  data_used += d_size;
+ 	  nnames++;
+@@ -109,7 +109,7 @@ dir_sort (dir, dirdata)
+     }
+ 
+   /* Create the `names' table from the `data' table.  */
+-  dirdata->names = names = (char const **) GC_MALLOC (sizeof (char *)
++  dirdata->names = names = (char const **) malloc (sizeof (char *)
+ 						    * (nnames + 1));
+   for (i = 0;  i < nnames;  i++)
+     {
+@@ -209,9 +209,9 @@ diff_dirs (filevec, handle_file, depth)
+   for (i = 0; i < 2; i++)
+     {
+       if (dirdata[i].names)
+-	GC_FREE (dirdata[i].names);
++	free (dirdata[i].names);
+       if (dirdata[i].data)
+-	GC_FREE (dirdata[i].data);
++	free (dirdata[i].data);
+     }
+ 
+   return val;

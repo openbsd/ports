@@ -1,0 +1,21 @@
+$OpenBSD: patch-base_src_common_rbtree_c,v 1.1 2003/05/23 13:22:14 todd Exp $
+--- base/src/common/rbtree.c.orig	Sat Mar 29 16:15:31 2003
++++ base/src/common/rbtree.c	Thu May 22 17:46:42 2003
+@@ -101,7 +101,7 @@ rbtree_s_cmpkey(const rbnode *rn1, const
+ rbnode *
+ rbnode_create(const void *kvp, uint32_t kw, const void *data)
+ {
+-  rbnode *rbn = GC_MALLOC(sizeof(rbnode));
++  rbnode *rbn = malloc(sizeof(rbnode));
+   rbn->left = TREE_NIL;
+   rbn->right = TREE_NIL;
+   rbn->parent = TREE_NIL;
+@@ -117,7 +117,7 @@ rbtree_create(int (*cmp)(const rbnode *,
+ 	      int (*cmpkey)(const rbnode *, const rbkey *),
+ 	      OC_bool multiKey)
+ {
+-  rbtree *rbt = GC_MALLOC(sizeof(rbtree));
++  rbtree *rbt = malloc(sizeof(rbtree));
+ 
+   rbt->seqNo = 0;
+   rbt->multiKey = multiKey;
