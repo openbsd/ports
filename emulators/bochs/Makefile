@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2001/05/26 05:52:55 todd Exp $
+# $OpenBSD: Makefile,v 1.21 2001/06/13 16:12:49 todd Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 COMMENT=	"x86 machine simulator"
-DISTNAME=	bochs-1.2.pre1
+DISTNAME=	bochs-1.2.1
 CATEGORIES=	emulators
-NEED_VERSION=	1.364
+NEED_VERSION=	1.413
 MASTER_SITES=	http://prdownloads.sourceforge.net/bochs/
 
 HOMEPAGE=	http://bochs.sourceforge.net/
@@ -65,7 +65,7 @@ post-configure:
 		< ${WRKSRC}/.bochsrc > ${WRKSRC}/bochsrc
 
 BIOS  = BIOS-bochs-4-processors BIOS-bochs-2-processors
-BIOS += BIOS-bochs-2001_0524 BIOS-bochs-2001_0517
+BIOS += BIOS-bochs-latest
 BIOS += VGABIOS-elpin-2.40
 
 do-install:
@@ -80,6 +80,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/font/vga.bdf ${PREFIX}/share/bochs/fonts
 	${INSTALL_DATA} ${WRKSRC}/font/vga.pcf ${PREFIX}/share/bochs/fonts
 	${INSTALL_DATA} ${WRKSRC}/bochsrc ${PREFIX}/share/bochs
-	mkfontdir ${PREFIX}/share/bochs/fonts
+	${X11BASE}/bin/mkfontdir ${PREFIX}/share/bochs/fonts
 
 .include <bsd.port.mk>

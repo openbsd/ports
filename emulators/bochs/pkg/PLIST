@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/05/26 05:52:56 todd Exp $
+@comment $OpenBSD: PLIST,v 1.8 2001/06/13 16:12:50 todd Exp $
 bin/bochs
 share/bochs/bios/BIOS-bochs-2-processors
-share/bochs/bios/BIOS-bochs-2001_0517
-share/bochs/bios/BIOS-bochs-2001_0524
 share/bochs/bios/BIOS-bochs-4-processors
+share/bochs/bios/BIOS-bochs-latest
 share/bochs/bios/VGABIOS-elpin-2.40
 share/bochs/bochsrc
 share/bochs/fonts/fonts.dir
