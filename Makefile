@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2002/03/13 13:51:59 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2002/08/26 22:33:22 brad Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -58,7 +58,7 @@ SUBDIR += textproc
 #SUBDIR += vietnamese
 SUBDIR += www
 SUBDIR += x11
-.  if exists(mystuff) && !make(describe)
+.  if exists(mystuff) && !make(describe) && !make(fetch-makefile)
 SUBDIR += mystuff
 .  endif
 .endif
