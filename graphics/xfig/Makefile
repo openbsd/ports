@@ -3,11 +3,11 @@
 # Date created:		December 2, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 1998/06/13 23:26:57 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/07/04 06:41:03 marc Exp $
 #
 
-DISTNAME=	xfig.3.2
-PKGNAME=	xfig-3.2
+DISTNAME=	xfig.3.2.2
+PKGNAME=	xfig-3.2.2
 CATEGORIES=	graphics x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/drawing_tools/xfig
@@ -21,7 +21,8 @@ OS_HAS_XPM=	2.3
 .if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
 LIB_DEPENDS+=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 .endif
-RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
+RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig \
+		gv:${PORTSDIR}/print/gv
 
 USE_IMAKE=	yes
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
