@@ -1,1 +1,1 @@
-.include "${PORTSDIR}/devel/gettext/files/gettext.port.mk"
+.include "${PORTSDIR}/devel/gettext/gettext.port.mk"

@@ -1,4 +1,4 @@
-# $OpenBSD: gettext.port.mk,v 1.8 2001/11/27 17:44:04 brad Exp $
+# $OpenBSD: gettext.port.mk,v 1.1 2004/08/03 09:10:01 espie Exp $
 
 # This dependency entry is to ensure libiconv is installed when using
 # the gettext module. This is necessary incase another program uses
