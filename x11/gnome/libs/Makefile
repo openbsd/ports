@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/14 18:50:20 heko Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/17 23:01:00 naddy Exp $
 
 COMMENT=		"libraries for the GNOME project"
 V=			1.2.13
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
-CONFIGURE_STYLE= 	gnu
+CONFIGURE_STYLE= 	autoconf
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= 	--with-kde-datadir=${LOCALBASE}/share
@@ -36,7 +36,7 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			DB_LIB="-ldb"
 
 post-install:
-	@install -d ${PREFIX}/share/gnome-libs; \
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/gnome-libs; \
 	cp -r ${PREFIX}/../../etc/* ${PREFIX}/share/gnome-libs/
 
 .include <bsd.port.mk>

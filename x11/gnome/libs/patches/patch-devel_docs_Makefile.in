@@ -1,4 +1,4 @@
-# $OpenBSD: patch-devel_docs_Makefile.in,v 1.1.1.1 2001/09/13 20:27:19 todd Exp $
+$OpenBSD: patch-devel_docs_Makefile.in,v 1.2 2001/09/17 23:01:00 naddy Exp $
 --- devel-docs/Makefile.in.orig	Fri Mar 16 20:47:38 2001
 +++ devel-docs/Makefile.in	Mon Aug 27 19:25:17 2001
 @@ -156,7 +156,7 @@ TEXT_FILES =  	README.gtkcauldron				REA

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/13 20:27:19 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/09/17 23:01:00 naddy Exp $
 bin/dns-helper
 bin/gconfigger
 bin/gnome-bug
@@ -205,6 +205,11 @@ share/doc/gnome-libs/mime-type-handling.txt
 share/doc/gnome-libs/session-management.txt
 share/doc/gnome-libs/suggestions.txt
 share/doc/mkstub
+share/gnome-libs/mime-magic
+share/gnome-libs/mime-magic.dat
+share/gnome-libs/paper.config
+share/gnome-libs/sound/events/gnome.soundlist
+share/gnome-libs/sound/events/gtk-events.soundlist
 share/gnome/html/gnome-decl.txt
 share/gnome/html/gnome-sections.txt
 share/gnome/html/gnome.html
@@ -319,11 +324,6 @@ share/gnome/html/gnomeui/gtkted.html
 share/gnome/html/gnomeui/libgnomeui.html
 share/gnome/html/gnorba-decl.txt
 share/gnome/html/gnorba-sections.txt
-share/gnome-libs/mime-magic
-share/gnome-libs/mime-magic.dat
-share/gnome-libs/paper.config
-share/gnome-libs/sound/events/gnome.soundlist
-share/gnome-libs/sound/events/gtk-events.soundlist
 share/gtkrc
 share/gtkrc.el
 share/gtkrc.eo
@@ -350,6 +350,46 @@ share/idl/desktop-textviewer.idl
 share/idl/gnome-factory.idl
 share/idl/gnome-unknown.idl
 share/idl/name-service.idl
+share/locale/az/LC_MESSAGES/gnome-libs.mo
+share/locale/ca/LC_MESSAGES/gnome-libs.mo
+share/locale/cs/LC_MESSAGES/gnome-libs.mo
+share/locale/da/LC_MESSAGES/gnome-libs.mo
+share/locale/de/LC_MESSAGES/gnome-libs.mo
+share/locale/el/LC_MESSAGES/gnome-libs.mo
+share/locale/en_GB/LC_MESSAGES/gnome-libs.mo
+share/locale/es/LC_MESSAGES/gnome-libs.mo
+share/locale/et/LC_MESSAGES/gnome-libs.mo
+share/locale/eu/LC_MESSAGES/gnome-libs.mo
+share/locale/fi/LC_MESSAGES/gnome-libs.mo
+share/locale/fr/LC_MESSAGES/gnome-libs.mo
+share/locale/ga/LC_MESSAGES/gnome-libs.mo
+share/locale/gl/LC_MESSAGES/gnome-libs.mo
+share/locale/hr/LC_MESSAGES/gnome-libs.mo
+share/locale/hu/LC_MESSAGES/gnome-libs.mo
+share/locale/it/LC_MESSAGES/gnome-libs.mo
+share/locale/ja/LC_MESSAGES/gnome-libs.mo
+share/locale/ko/LC_MESSAGES/gnome-libs.mo
+share/locale/lt/LC_MESSAGES/gnome-libs.mo
+share/locale/nl/LC_MESSAGES/gnome-libs.mo
+share/locale/nn/LC_MESSAGES/gnome-libs.mo
+share/locale/no/LC_MESSAGES/gnome-libs.mo
+share/locale/pl/LC_MESSAGES/gnome-libs.mo
+share/locale/pt/LC_MESSAGES/gnome-libs.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-libs.mo
+share/locale/ro/LC_MESSAGES/gnome-libs.mo
+share/locale/ru/LC_MESSAGES/gnome-libs.mo
+share/locale/sk/LC_MESSAGES/gnome-libs.mo
+share/locale/sl/LC_MESSAGES/gnome-libs.mo
+share/locale/sp/LC_MESSAGES/gnome-libs.mo
+share/locale/sr/LC_MESSAGES/gnome-libs.mo
+share/locale/sv/LC_MESSAGES/gnome-libs.mo
+share/locale/ta/LC_MESSAGES/gnome-libs.mo
+share/locale/tr/LC_MESSAGES/gnome-libs.mo
+share/locale/uk/LC_MESSAGES/gnome-libs.mo
+share/locale/vi/LC_MESSAGES/gnome-libs.mo
+share/locale/wa/LC_MESSAGES/gnome-libs.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-libs.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/gnome-libs.mo
 share/mime-info/gnome.mime
 share/pixmaps/calculator-font.png
 share/pixmaps/gnome-default-dlg.png
@@ -377,7 +417,7 @@ share/type-convert/type.convert
 @dirrm share/gnome-libs/sound/events
 @dirrm share/gnome-libs/sound
 @dirrm share/gnome-libs
-@dirrm share/doc/gnome-libs/
+@dirrm share/doc/gnome-libs
 @dirrm lib/gnome-libs/include
 @dirrm lib/gnome-libs
 @dirrm include/zvt
