@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2000/08/28 16:14:21 fgsch Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/08/29 04:27:51 brad Exp $
 #
 # Pre/post-installation setup of icecast
 
@@ -8,36 +8,32 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=/etc/icecast
-CONFIG_FILE=${CONFIG_DIR}/icecast.conf
+CONFIG_DIR=${SYSCONFDIR}
+CONFIG_FILE=$CONFIG_DIR/icecast.conf
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/icecast
 LOG_DIR=/var/log/icecast
 
-install -d -o root -g wheel -m 755 ${LOG_DIR}
+install -d -o root -g wheel -m 755 $LOG_DIR
 
-# Function: tell the user what s/he needs to do to use the port just installed
-#
 do_notice()
 {
     echo
     echo "+---------------"
-    echo "| The existing $1 configuration files in ${CONFIG_DIR},"
+    echo "| The existing $1 configuration files in $CONFIG_DIR,"
     echo "| have NOT been changed.  You may want to compare them to the"
-    echo "| current sample files, ${PREFIX}/share/examples/icecast/icecast.conf.dist,"
+    echo "| current sample files, $SAMPLE_CONFIG_DIR/icecast.conf.dist,"
     echo "| and update your configuration as needed."
     echo "+---------------"
     echo
 }
 
-# Function: install the icecast configuration files from the samples
-#
 do_install()
 {
-    install -d -o root -g wheel -m 755 ${CONFIG_DIR}
-    install -o root -g wheel -m 644 \
-	${PREFIX}/share/examples/icecast/icecast.conf.dist ${CONFIG_FILE}
+    install -d -o root -g wheel -m 755 $CONFIG_DIR
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/icecast.conf.dist $CONFIG_FILE
     echo
     echo "+---------------"
-    echo "| The $1 configuration files in ${CONFIG_DIR},"
+    echo "| The $1 configuration files in $CONFIG_DIR,"
     echo "| have been installed.  Please view these files and change"
     echo "| the configuration to meet your needs"
     echo "+---------------"
