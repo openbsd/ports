@@ -1,0 +1,11 @@
+bin/aafire
+bin/aainfo
+bin/aasavefont
+bin/aatest
+include/aalib.h
+lib/libaa.a
+lib/libaa.la
+@unexec install-info --delete %D/info/aalib.info %D/info/dir
+info/aalib.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/aalib.info %D/info/dir
