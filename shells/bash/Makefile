@@ -1,15 +1,11 @@
-# OpenBSD makefile for:	bash
-# Version required:     1.14.7
-# Date created:		17 November 1997
-# Whom:			gene
-#
-# $OpenBSD: Makefile,v 1.4 1997/12/13 00:20:42 gene Exp $
+# $OpenBSD: Makefile,v 1.5 1999/02/19 23:26:48 marc Exp $
 #
 
 DISTNAME=       bash-1.14.7
 CATEGORIES=	shells
 MASTER_SITES=   ${MASTER_SITE_GNU}
 
+BROKEN=		"very old, out of date version: see the \"bash2\" port"
 MAINTAINER=	gene@OpenBSD.ORG
 
 WRKSRC=         ${WRKDIR}/${DISTNAME}
