@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.12 2000/07/17 07:34:57 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/09/27 21:26:45 brad Exp $
 
-VER=		0.7.10
-PKGNAME=	abiword-${VER}
+VERSION=	0.7.10
+PKGNAME=	abiword-${VERSION}
 CATEGORIES=	editors
-NEED_VERSION=	1.310
-MASTER_SITES=	http://download.abisource.com/releases/${VER}/src/lf/
-DISTFILES=	abi-${VER}.tar.gz abidistfiles-${VER}.tar.gz \
-		libiconv-${VER}.tar.gz unixfonts-${VER}.tar.gz \
-		wv-${VER}.tar.gz
+NEED_VERSION=	1.330
+MASTER_SITES=	http://download.abisource.com/releases/${VERSION}/src/lf/
+DISTFILES=	abi-${VERSION}.tar.gz abidistfiles-${VERSION}.tar.gz \
+		libiconv-${VERSION}.tar.gz unixfonts-${VERSION}.tar.gz \
+		wv-${VERSION}.tar.gz
 DIST_SUBDIR=	abiword
 
 HOMEPAGE=	http://www.abisource.com/
 
-BUILD_DEPENDS=	${PREFIX}/lib/libexpat.a::textproc/expat
-LIB_DEPENDS=	png.1::graphics/png \
+LIB_DEPENDS=	expat.1::textproc/expat \
+		png.1::graphics/png \
 		gtk.1.2::x11/gtk+
 RUN_DEPENDS=	ispell::textproc/ispell
 
@@ -24,19 +24,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_GMAKE=	Yes
-
-CONFIGURE_ARGS=	--without-Magick --without-png --without-ttf
-
 MAKE_FLAGS=	prefix="${PREFIX}"
 FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}"
 
-WRKDIST=	${WRKDIR}/abi-${VER}
+USE_GMAKE=	Yes
 
 ALL_TARGET=	compile
 
+WRKDIST=	${WRKDIR}/abi-${VERSION}
+
 do-configure:
-	@cd ${WRKDIR}/wv; ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS}
+	@cd ${WRKDIR}/wv; ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS} \
+		--without-Magick --without-png --without-ttf
 
 post-install:
 	@cd ${PREFIX}/bin && \
