@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/06/18 17:11:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/11/22 14:51:04 naddy Exp $
 
 COMMENT=		"speaking ascii cow"
 DISTNAME=		cowsay-3.03
 CATEGORIES=		games
-NEED_VERSION=		1.531
 
 HOMEPAGE=		http://www.nog.net/~tony/warez/cowsay.shtml
 
@@ -16,7 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.nog.net/~tony/warez/
-
 NO_REGRESS=		Yes
 NO_BUILD=		Yes
 
@@ -30,7 +28,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/cowsay.1 ${PREFIX}/man/man1
 	ln -s cowsay.1 ${PREFIX}/man/man1/cowthink.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/cows
-	${INSTALL_DATA} ${WRKSRC}/cows/* ${PREFIX}/share/cows
-	
+	${INSTALL_DATA} ${WRKSRC}/cows/* ${FILESDIR}/blowfish.cow \
+		${PREFIX}/share/cows
 	
 .include <bsd.port.mk>

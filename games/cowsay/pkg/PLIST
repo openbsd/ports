@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/06/18 17:11:33 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/11/22 14:51:04 naddy Exp $
 bin/cowsay
 bin/cowthink
 man/man1/cowsay.1
 man/man1/cowthink.1
+share/cows/blowfish.cow
 share/cows/beavis.zen.cow
 share/cows/bong.cow
 share/cows/bud-frogs.cow
