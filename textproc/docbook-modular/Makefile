@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2000/12/22 20:20:58 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2001/02/21 23:43:58 avsm Exp $
 
-DISTNAME=	docbook-modular-1.60
+DISTNAME=	docbook-modular-1.62
 CATEGORIES=    	textproc print
-NEED_VERSION=	1.340
+NEED_VERSION=	1.354
 
 HOMEPAGE=	http://www.nwalsh.com/docbook/dsssl/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.nwalsh.com/docbook/dsssl/
 EXTRACT_SUFX=	.zip	
-DISTFILES=	db160${EXTRACT_SUFX} db160d${EXTRACT_SUFX}
+DISTFILES=	db162${EXTRACT_SUFX} db162d${EXTRACT_SUFX}
 
 SEPARATE_BUILD=	concurrent
 NO_BUILD=	Yes
