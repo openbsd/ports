@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/29 18:27:26 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/03/17 21:33:08 couderc Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/gpgme.info
 bin/gpgme-config
 include/gpgme.h
+info/gpgme.info
 lib/libgpgme.a
 lib/libgpgme.la
-share/examples/gpgme/gpgme.m4
+share/aclocal/gpgme.m4
 %%SHARED%%
-@dirrm share/examples/gpgme
+@exec install-info --info-dir=%D/info %D/info/gpgme.info

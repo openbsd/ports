@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/02/28 20:06:27 couderc Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/17 21:33:08 couderc Exp $
 
 COMMENT=		"GnuPG Made Easy"
 
-DISTNAME=		gpgme-0.2.3
+DISTNAME=		gpgme-0.3.4
 CATEGORIES=     	security devel
-NEED_VERSION=		1.489
+NEED_VERSION=		1.508
 
 HOMEPAGE=		http://www.gnupg.org/gpgme.html
 
@@ -18,10 +18,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.gnupg.org/pub/gcrypt/alpha/gpgme/
 
-USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--without-gpgsm
+CONFIGURE_ENV=		MAKEINFO="makeinfo --no-split"
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::security/gnupg
+
+pre-build:
+	@rm -f ${WRKSRC}/doc/gpgme.info*
 
 .include <bsd.port.mk>
