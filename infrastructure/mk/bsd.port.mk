@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.478 2001/10/24 11:47:41 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.479 2001/10/24 11:49:45 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2423,6 +2423,28 @@ recurse-package-depends:
 .  endif
 .endif
 
+# Print list of all libraries we're allowed to depend upon.
+_recurse-lib-depends:
+.for _i in  ${LIB_DEPENDS}
+	@unset FLAVOR SUBPACKAGE  || true; \
+	echo '${_i}' | { \
+		IFS=:; read dep pkg dir target; \
+		${_flavor_fragment}; \
+		IFS=,; for j in $$dep; do echo $$j; done; \
+		cd ${PORTSDIR}; cd $$dir; \
+		eval $$toset ${MAKE} ${_DEPEND_THRU} _recurse-lib-depends; \
+	}
+.endfor
+.for _i in  ${RUN_DEPENDS}
+	@unset FLAVOR SUBPACKAGE  || true; \
+	echo '${_i}' | { \
+		IFS=:; read dep pkg dir target; \
+		${_flavor_fragment}; \
+		cd ${PORTSDIR}; cd $$dir; \
+		eval $$toset ${MAKE} ${_DEPEND_THRU} _recurse-lib-depends; \
+	}
+.endfor
+
 .if !target(package-depends)
 package-depends:
 .  if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
@@ -2672,4 +2694,4 @@ unlink-categories:
    link-categories unlink-categories _package new-depends \
    dir-depends _recurse-dir-depends package-dir-depends \
    _package-recurse-dir-depends recursebuild-depends-list run-depends-list \
-   bulk-packages bulk-do
+   bulk-packages bulk-do _recurse-lib-depends
