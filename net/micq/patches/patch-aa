@@ -1,13 +1,12 @@
-# $OpenBSD: patch-aa,v 1.4 1999/09/15 13:03:36 form Exp $
-
---- Makefile.orig	Wed Sep 15 19:50:21 1999
-+++ Makefile	Wed Sep 15 19:53:05 1999
-@@ -2,12 +2,16 @@
+--- Makefile.orig	Wed Oct 13 19:17:18 1999
++++ Makefile	Tue Jan  4 01:47:39 2000
+@@ -1,13 +1,16 @@
+ # Anyone who knows how to make Makefiles please help out.
  # I have no clue but this appears to work fairly well
  # be sure to use gmake
- CC = gcc
+-CC = gcc
 -CFLAGS = -O4 -Wall -DUNIX -DANSI_COLOR 
-+CFLAGS = -Wall -DUNIX -DANSI_COLOR 
++CFLAGS += -Wall -DUNIX -DANSI_COLOR 
  CFLAGS += -DMAX_CONTACTS=255
  CFLAGS += -DUSE_MREADLINE
  #CFLAGS += -DCOLOR_SCHEME_A
