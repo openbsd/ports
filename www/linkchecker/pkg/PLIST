@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/12/05 21:53:31 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/01/23 10:03:56 jakob Exp $
 bin/linkchecker
 lib/python2.1/site-packages/DNS/Base.py
 lib/python2.1/site-packages/DNS/Class.py
@@ -56,5 +56,3 @@ share/locale/fr/LC_MESSAGES/linkcheck.mo
 @dirrm share/linkchecker
 @dirrm lib/python2.1/site-packages/linkcheck
 @dirrm lib/python2.1/site-packages/DNS
-@dirrm lib/python2.1/site-packages
-@dirrm lib/python2.1
