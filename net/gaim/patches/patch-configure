@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.14 2004/07/08 18:27:41 brad Exp $
---- configure.orig	Thu Jun 24 18:51:28 2004
-+++ configure	Thu Jul  8 11:39:31 2004
+$OpenBSD: patch-configure,v 1.15 2004/08/29 12:53:57 espie Exp $
+--- configure.orig	Thu Jun 24 20:51:28 2004
++++ configure	Sat Aug 28 20:24:03 2004
 @@ -463,7 +463,7 @@ ac_includes_default="\
  # include <unistd.h>
  #endif"
@@ -27,7 +27,74 @@ $OpenBSD: patch-configure,v 1.14 2004/07/08 18:27:41 brad Exp $
    --with-gnutls-includes=PREFIX   Location of GNUTLS includes.
    --with-gnutls-libs=PREFIX       Location of GNUTLS libraries.
    --with-nspr-includes=PREFIX     Specify location of Mozilla nspr4 includes.
-@@ -24125,7 +24128,7 @@ SILC_LIBS=""
+@@ -3569,12 +3572,10 @@ nto-qnx)
+   ;;
+ 
+ openbsd*)
+-  lt_cv_file_magic_cmd=/usr/bin/file
+-  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-    lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
++    lt_cv_deplibs_check_method='match_pattern /lib[^/]+(\.so\.[0-9]+\.[0-9]+|\.so|_pic\.a)$'
+   else
+-    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
++    lt_cv_deplibs_check_method='match_pattern /lib[^/]+(\.so\.[0-9]+\.[0-9]+|_pic\.a)$'
+   fi
+   ;;
+ 
+@@ -5330,6 +5331,19 @@ else
+     lt_cv_sys_max_cmd_len=8192;
+     ;;
+ 
++  netbsd* | freebsd* | openbsd* | darwin* )
++    # This has been around since 386BSD, at least.  Likely further.
++    if test -x /sbin/sysctl; then
++      lt_cv_sys_max_cmd_len=`/sbin/sysctl -n kern.argmax`
++    elif test -x /usr/sbin/sysctl; then
++      lt_cv_sys_max_cmd_len=`/usr/sbin/sysctl -n kern.argmax`
++    else
++      lt_cv_sys_max_cmd_len=65536 # usable default for *BSD
++    fi
++    # And add a safety zone
++    lt_cv_sys_max_cmd_len=`expr $lt_cv_sys_max_cmd_len \/ 4`
++    ;;
++
+  *)
+     # If test is not a shell built-in, we'll probably end up computing a
+     # maximum length that is only half of the actual maximum length, but
+@@ -7160,6 +7174,7 @@ if test -z "$aix_libpath"; then aix_libp
+       hardcode_shlibpath_var=no
+       if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+ 	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++	archive_expsym_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags ${wl}-retain-symbols-file,$export_symbols'
+ 	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
+ 	export_dynamic_flag_spec='${wl}-E'
+       else
+@@ -10109,6 +10124,23 @@ if test -z "$aix_libpath"; then aix_libp
+     # Workaround some broken pre-1.5 toolchains
+     output_verbose_link_cmd='$CC -shared $CFLAGS -v conftest.$objext 2>&1 | grep conftest.$objext | $SED -e "s:-lgcc -lc -lgcc::"'
+     ;;
++  openbsd2*)
++      # C++ shared libraries are fairly broken
++      ld_shlibs_CXX=no
++      ;;
++  openbsd*)
++      hardcode_direct_CXX=yes
++      hardcode_shlibpath_var_CXX=no
++      archive_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
++      hardcode_libdir_flag_spec_CXX='${wl}-rpath,$libdir'
++      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++       archive_expsym_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags ${wl}-retain-symbols-fil
++e,$export_symbols -o $lib'
++       export_dynamic_flag_spec_CXX='${wl}-E'
++       whole_archive_flag_spec_CXX="$wlarc"'--whole-archive$convenience '"$wlarc"'--no-whole-archive'
++      fi
++      output_verbose_link_cmd='echo'
++      ;;
+   osf3*)
+     case $cc_basename in
+       KCC)
+@@ -24125,7 +24157,7 @@ SILC_LIBS=""
  if test "$ac_silc_libs" != "no"; then
  	SILC_LIBS="-L$ac_silc_libs"
  fi
@@ -36,7 +103,7 @@ $OpenBSD: patch-configure,v 1.14 2004/07/08 18:27:41 brad Exp $
  echo "$as_me:$LINENO: checking for silc_client_init in -lsilcclient" >&5
  echo $ECHO_N "checking for silc_client_init in -lsilcclient... $ECHO_C" >&6
  if test "${ac_cv_lib_silcclient_silc_client_init+set}" = set; then
-@@ -27930,6 +27933,14 @@ fi
+@@ -27930,6 +27962,14 @@ fi
  
  
  
@@ -51,7 +118,7 @@ $OpenBSD: patch-configure,v 1.14 2004/07/08 18:27:41 brad Exp $
  # Check whether --enable-gnutls or --disable-gnutls was given.
  if test "${enable_gnutls+set}" = set; then
    enableval="$enable_gnutls"
-@@ -27948,6 +27959,299 @@ fi;
+@@ -27948,6 +27988,299 @@ fi;
  
  msg_ssl="None"
  
@@ -351,7 +418,7 @@ $OpenBSD: patch-configure,v 1.14 2004/07/08 18:27:41 brad Exp $
  if test "x$enable_gnutls" != "xno"; then
  	enable_gnutls="no"
  	prefix=`eval echo $prefix`
-@@ -29063,12 +29367,20 @@ else
+@@ -29063,12 +29396,20 @@ else
  fi
  
  
@@ -373,7 +440,7 @@ $OpenBSD: patch-configure,v 1.14 2004/07/08 18:27:41 brad Exp $
  fi
  
  if test "$enable_tcl" = yes; then
-@@ -32506,6 +32818,13 @@ echo "$as_me: error: conditional \"USE_P
+@@ -32506,6 +32847,13 @@ echo "$as_me: error: conditional \"USE_P
  Usually this means the macro was only invoked conditionally." >&2;}
     { (exit 1); exit 1; }; }
  fi
@@ -387,7 +454,7 @@ $OpenBSD: patch-configure,v 1.14 2004/07/08 18:27:41 brad Exp $
  if test -z "${USE_GNUTLS_TRUE}" && test -z "${USE_GNUTLS_FALSE}"; then
    { { echo "$as_me:$LINENO: error: conditional \"USE_GNUTLS\" was never defined.
  Usually this means the macro was only invoked conditionally." >&5
-@@ -33349,6 +33668,10 @@ s,@PERL_LIBS@,$PERL_LIBS,;t t
+@@ -33349,6 +33697,10 @@ s,@PERL_LIBS@,$PERL_LIBS,;t t
  s,@PERL_MM_PARAMS@,$PERL_MM_PARAMS,;t t
  s,@DYNALOADER_A@,$DYNALOADER_A,;t t
  s,@LIBPERL_A@,$LIBPERL_A,;t t
