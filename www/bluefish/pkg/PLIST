@@ -2,9 +2,11 @@ bin/bluefish
 share/doc/bluefish/README
 share/locale/da/LC_MESSAGES/bluefish.mo
 share/locale/de/LC_MESSAGES/bluefish.mo
+share/locale/es/LC_MESSAGES/bluefish.mo
 share/locale/fr/LC_MESSAGES/bluefish.mo
+share/locale/ru/LC_MESSAGES/bluefish.mo
 lib/bluefish/php3_functions
 lib/bluefish/rxml_functions
 lib/bluefish/ssi_functions
-@dirrm share/doc/bluefish
 @dirrm lib/bluefish
+@dirrm share/doc/bluefish
