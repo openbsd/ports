@@ -1,0 +1,65 @@
+$OpenBSD: patch-cpu_vm8086_cc,v 1.1 2001/02/02 16:59:10 todd Exp $
+--- cpu/vm8086.cc.orig	Sat Mar 25 21:39:09 2000
++++ cpu/vm8086.cc	Thu Oct 19 10:59:03 2000
+@@ -75,13 +75,13 @@ BX_CPU_C::stack_return_to_v86(Bit32u new
+ 
+   // top 36 bytes of stack must be within stack limits, else #GP(0)
+   if ( !can_pop(36) ) {
+-    bx_panic("iret: VM: top 36 bytes not within limits\n");
++    bio->panic("iret: VM: top 36 bytes not within limits\n");
+     exception(BX_SS_EXCEPTION, 0, 0);
+     return;
+     }
+ 
+   if ( new_eip & 0xffff0000 ) {
+-    bx_printf("IRET to V86-mode: ignoring upper 16-bits\n");
++    bio->printf("[CPU%u] IRET to V86-mode: ignoring upper 16-bits\n",BX_SIM_ID);
+     new_eip = new_eip & 0xffff;
+     }
+ 
+@@ -119,13 +119,13 @@ BX_CPU_C::stack_return_to_v86(Bit32u new
+   void
+ BX_CPU_C::stack_return_from_v86(BxInstruction_t *i)
+ {
+-  //bx_printf("stack_return_from_v86:\n");
++  //bio->printf("[CPU%u] stack_return_from_v86:\n",BX_SIM_ID);
+   exception(BX_GP_EXCEPTION, 0, 0);
+ 
+ #if 0
+   if (IOPL != 3) {
+     // trap to virtual 8086 monitor
+-    bx_printf("stack_return_from_v86: IOPL != 3\n");
++    bio->printf("[CPU0] stack_return_from_v86: IOPL != 3\n",BX_SIM_ID);
+     exception(BX_GP_EXCEPTION, 0, 0);
+     }
+ 
+@@ -277,23 +277,23 @@ BX_CPU_C::init_v8086_mode(void)
+   void
+ BX_CPU_C::stack_return_to_v86(Bit32u new_eip, Bit32u raw_cs_selector, Bit32u flags32)
+ {
+-  bx_printf("stack_return_to_v86: VM bit set in EFLAGS stack image\n");
++  bio->printf("[CPU%u] stack_return_to_v86: VM bit set in EFLAGS stack image\n",BX_SIM_ID);
+   v8086_message();
+ }
+ 
+   void
+ BX_CPU_C::stack_return_from_v86(void)
+ {
+-  bx_printf("stack_return_from_v86:\n");
++  bio->printf("[CPU%u] stack_return_from_v86:\n",BX_SIM_ID);
+   v8086_message();
+ }
+ 
+   void
+ BX_CPU_C::v8086_message(void)
+ {
+-  bx_printf("Program compiled with BX_SUPPORT_V8086_MODE = 0\n");
+-  bx_printf("You need to rerun the configure script and recompile\n");
+-  bx_printf("  to use virtual-8086 mode features.\n");
+-  bx_panic("Bummer!\n");
++  bio->printf("[CPU%u] Program compiled with BX_SUPPORT_V8086_MODE = 0\n",BX_SIM_ID);
++  bio->printf("[CPU%u] You need to rerun the configure script and recompile\n",BX_SIM_ID);
++  bio->printf("[CPU%u] to use virtual-8086 mode features.\n",BX_SIM_ID);
++  bio->printf("[CPU%u] Bummer!\n",BX_SIM_ID);
+ }
+ #endif // BX_SUPPORT_V8086_MODE

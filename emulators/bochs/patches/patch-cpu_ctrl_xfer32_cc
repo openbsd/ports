@@ -1,0 +1,121 @@
+$OpenBSD: patch-cpu_ctrl_xfer32_cc,v 1.1 2001/02/02 16:59:07 todd Exp $
+--- cpu/ctrl_xfer32.cc.orig	Sat Mar 25 21:39:07 2000
++++ cpu/ctrl_xfer32.cc	Tue Oct 31 12:52:03 2000
+@@ -52,7 +52,7 @@ BX_CPU_C::RETnear32_Iw(BxInstruction_t *
+ 
+     if (protected_mode()) {
+       if ( !can_pop(4) ) {
+-        bx_panic("retnear_iw: can't pop EIP\n");
++        bio->panic("retnear_iw: can't pop EIP\n");
+         /* ??? #SS(0) -or #GP(0) */
+         }
+ 
+@@ -61,12 +61,14 @@ BX_CPU_C::RETnear32_Iw(BxInstruction_t *
+ 
+       if (protected_mode() &&
+           (return_EIP > BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled) ) {
+-        bx_panic("retnear_iw: EIP > limit\n");
++        bio->printf("[CPU%u] retnear_iw: EIP(0x%x) > limit(0x%x)\n", BX_SIM_ID,
++		return_EIP, BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled);
++        exception(BX_GP_EXCEPTION, 0, 0);
+         }
+ 
+       /* Pentium book says imm16 is number of words ??? */
+       if ( !can_pop(4 + imm16) ) {
+-        bx_panic("retnear_iw: can't release bytes from stack\n");
++        bio->panic("retnear_iw: can't release bytes from stack\n");
+         /* #GP(0) -or #SS(0) ??? */
+         }
+ 
+@@ -108,7 +110,7 @@ BX_CPU_C::RETnear32(BxInstruction_t *i)
+ 
+     if (protected_mode()) {
+       if ( !can_pop(4) ) {
+-        bx_panic("retnear: can't pop EIP\n");
++        bio->panic("retnear: can't pop EIP\n");
+         /* ??? #SS(0) -or #GP(0) */
+         }
+ 
+@@ -116,8 +118,10 @@ BX_CPU_C::RETnear32(BxInstruction_t *i)
+         4, CPL==3, BX_READ, &return_EIP);
+ 
+       if ( return_EIP > BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled ) {
+-        bx_panic("retnear: EIP > limit\n");
+-        //exception(BX_GP_EXCEPTION, 0, 0);
++        bio->printf("[CPU%u] retnear: EIP(0x%x) > limit(0x%x)\n", BX_SIM_ID,
++		return_EIP,
++		BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled);
++        exception(BX_GP_EXCEPTION, 0, 0);
+         }
+       BX_CPU_THIS_PTR eip = return_EIP;
+       if (BX_CPU_THIS_PTR sregs[BX_SEG_REG_SS].cache.u.segment.d_b) /* 32bit stack */
+@@ -220,7 +224,7 @@ BX_CPU_C::CALL_Ad(BxInstruction_t *i)
+ 
+   if ( protected_mode() ) {
+     if ( new_EIP > BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled ) {
+-      bx_panic("call_av: offset outside of CS limits\n");
++      bio->panic("call_av: offset outside of CS limits\n");
+       exception(BX_GP_EXCEPTION, 0, 0);
+       }
+     }
+@@ -288,11 +292,13 @@ BX_CPU_C::CALL_Ed(BxInstruction_t *i)
+ 
+     if (protected_mode()) {
+       if (op1_32 > BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled) {
+-        bx_panic("call_ev: EIP out of CS limits!\n");
++        bio->printf("[CPU%u] call_ev: EIP(0x%x) out of CS limits(0x%x)!\n", BX_SIM_ID,
++		op1_32,
++		BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled);
+         exception(BX_GP_EXCEPTION, 0, 0);
+         }
+       if ( !can_push(&BX_CPU_THIS_PTR sregs[BX_SEG_REG_SS].cache, temp_ESP, 4) ) {
+-        bx_panic("call_ev: can't push EIP\n");
++        bio->panic("call_ev: can't push EIP\n");
+         }
+       }
+ 
+@@ -315,7 +321,7 @@ BX_CPU_C::CALL32_Ep(BxInstruction_t *i)
+ 
+     /* op1_32 is a register or memory reference */
+     if (i->mod == 0xc0) {
+-      bx_panic("CALL_Ep: op1 is a register\n");
++      bio->panic("CALL_Ep: op1 is a register\n");
+       }
+ 
+     /* pointer, segment address pair */
+@@ -353,7 +359,7 @@ BX_CPU_C::JMP_Jd(BxInstruction_t *i)
+ #if BX_CPU_LEVEL >= 2
+   if (protected_mode()) {
+     if ( new_EIP > BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled ) {
+-      bx_panic("jmp_jv: offset outside of CS limits\n");
++      bio->panic("jmp_jv: offset outside of CS limits\n");
+       exception(BX_GP_EXCEPTION, 0, 0);
+       }
+     }
+@@ -397,7 +403,7 @@ BX_CPU_C::JCC_Jd(BxInstruction_t *i)
+ #if BX_CPU_LEVEL >= 2
+     if (protected_mode()) {
+       if ( new_EIP > BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled ) {
+-        bx_panic("jo_routine: offset outside of CS limits\n");
++        bio->panic("jo_routine: offset outside of CS limits\n");
+         exception(BX_GP_EXCEPTION, 0, 0);
+         }
+       }
+@@ -469,7 +475,7 @@ BX_CPU_C::JMP_Ed(BxInstruction_t *i)
+ #if BX_CPU_LEVEL >= 2
+   if (protected_mode()) {
+     if (new_EIP > BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].cache.u.segment.limit_scaled) {
+-      bx_panic("jmp_ev: IP out of CS limits!\n");
++      bio->panic("jmp_ev: IP out of CS limits!\n");
+       exception(BX_GP_EXCEPTION, 0, 0);
+       }
+     }
+@@ -491,7 +497,7 @@ BX_CPU_C::JMP32_Ep(BxInstruction_t *i)
+     /* op1_32 is a register or memory reference */
+     if (i->mod == 0xc0) {
+       /* far indirect must specify a memory address */
+-      bx_panic("JMP_Ep(): op1 is a register\n");
++      bio->panic("JMP_Ep(): op1 is a register\n");
+       }
+ 
+     /* pointer, segment address pair */

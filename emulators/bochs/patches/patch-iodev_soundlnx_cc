@@ -1,0 +1,12 @@
+$OpenBSD: patch-iodev_soundlnx_cc,v 1.1 2001/02/02 16:59:12 todd Exp $
+--- iodev/soundlnx.cc.orig	Sat Mar 25 21:34:46 2000
++++ iodev/soundlnx.cc	Tue Oct 17 12:04:02 2000
+@@ -76,7 +76,7 @@ int bx_sound_linux_c::openmidioutput(cha
+ int bx_sound_linux_c::sendmidicommand(int delta, int command, int length, Bit8u data[])
+ {
+   UNUSED(delta);
+-  //  bx_panic("Sendmidicommand!!");
++  //  bio->panic("Sendmidicommand!!");
+ 
+   fputc(command, midi);
+   fwrite(data, 1, length, midi);

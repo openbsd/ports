@@ -1,0 +1,180 @@
+$OpenBSD: patch-gui_beos_cc,v 1.1 2001/02/02 16:59:10 todd Exp $
+--- gui/beos.cc.orig	Sat Mar 25 21:45:08 2000
++++ gui/beos.cc	Fri Oct 20 11:36:03 2000
+@@ -195,13 +195,20 @@ bx_gui_c::specific_init(bx_gui_c *th, in
+   char *window_name = "Bochs 80386+ emulator, http://world.std.com/~bochs";
+ #endif
+ 
++// if not using debugger, then we can take control of SIGINT.
++// If using debugger, it needs control of this.
++#if BX_DEBUGGER==0
++  signal(SIGINT, bx_signal_handler);
++#endif
++
++
+   bx_gui_c_ptr = th;
+ UNUSED(argc);
+ UNUSED(argv);
+ UNUSED(window_name);
+ 
+ if (bx_options.private_colormap) {
+-  fprintf(stderr, "#WARNING: BeOS: private_colormap option not handled yet.\n");
++  bio->printf("#WARNING: BeOS: private_colormap option not handled yet.\n");
+   }
+ 
+   x_tilesize = tilewidth;
+@@ -219,8 +226,8 @@ if (bx_options.private_colormap) {
+   // width = columns * font_width;
+   // height = rows * font_height;
+ 
+-bx_printf("font_width = %u\n", (unsigned) font_width);
+-bx_printf("font_height = %u\n", (unsigned) font_height);
++bio->printf("font_width = %u\n", (unsigned) font_width);
++bio->printf("font_height = %u\n", (unsigned) font_height);
+ 
+   // Create pixmap of depth 1 (bitmap) for icon
+   // icon_pixmap = XCreateBitmapFromData(bx_x_display, win,
+@@ -502,14 +509,14 @@ void  BochsView::MouseDown(BPoint point)
+     headerbar_click(int(point.x), int(point.y));
+     return;
+     }
+-  fprintf(stderr, "# mousedown()\n");
++  bio->printf("# mousedown()\n");
+ }
+ 
+ void  BochsView::MouseUp(BPoint point)
+ {
+   UNUSED(point);
+   // currently a place holder function
+-  fprintf(stderr, "# mouseup()\n");
++  bio->printf("# mouseup()\n");
+ }
+ 
+ void  BochsView::MouseMoved(BPoint point,
+@@ -518,7 +525,7 @@ void  BochsView::MouseMoved(BPoint point
+   UNUSED(point);
+   UNUSED(transit);
+   UNUSED(message);
+-  fprintf(stderr, "# mousemoved()\n");
++  bio->printf("# mousemoved()\n");
+ }
+ 
+ void BochsView::KeyDown(const char *bytes, int32 numBytes)
+@@ -531,7 +538,7 @@ void BochsView::KeyDown(const char *byte
+ 
+   msg = Window()->CurrentMessage();
+   if ( !msg ) {
+-    fprintf(stderr, "# keydown() msg NULL\n");
++    bio->printf("# keydown() msg NULL\n");
+     return;
+     }
+   modifiers = msg->FindInt32("modifiers");
+@@ -554,11 +561,11 @@ void BochsView::KeyDown(const char *byte
+   B_RIGHT_OPTION_KEY   = 0x00008000
+ #endif
+ //if (modifiers) {
+-//  fprintf(stderr, "# modifiers = %08x\n", (unsigned) modifiers);
++//  bio->printf("# modifiers = %08x\n", (unsigned) modifiers);
+ //  }
+ 
+   if (numBytes == 1) {
+-    //fprintf(stderr, "# down: char %02xh\n", (unsigned) bytes[0]);
++    //bio->printf("# down: char %02xh\n", (unsigned) bytes[0]);
+     byte = bytes[0];
+     if ( byte == 0x00 ) {
+       // Ctrl-Space
+@@ -828,7 +835,7 @@ void BochsView::KeyDown(const char *byte
+           case B_SCROLL_KEY: break;
+           case B_PAUSE_KEY: break;
+           default:
+-            fprintf(stderr, "# keydown() unknown function key %08xh\n",
++            bio->printf("# keydown() unknown function key %08xh\n",
+               (unsigned) key);
+           }
+ #endif
+@@ -868,7 +875,7 @@ void BochsView::KeyDown(const char *byte
+           enq_key_event(BX_KEY_CTRL_L,     BX_KEY_RELEASED);
+           return;
+           }
+-        fprintf(stderr, "# keydown: char %02xh unhandled\n",
++        bio->printf("# keydown: char %02xh unhandled\n",
+           (unsigned) bytes[0]);
+         return;
+       }
+@@ -876,7 +883,7 @@ void BochsView::KeyDown(const char *byte
+     }
+   else {
+     // ignore for now
+-    fprintf(stderr, "# keydown() ignoring multibyte key\n");
++    bio->printf("# keydown() ignoring multibyte key\n");
+     }
+ }
+ 
+@@ -947,7 +954,7 @@ BochsView::FillRect(BRect r, pattern p)
+ enq_key_event(Bit32u key, Bit32u press_release)
+ {
+   if ( ((tail+1) % SCANCODE_BUFSIZE) == head ) {
+-    fprintf(stderr, "# enq_key_event: buffer full\n");
++    bio->printf("# enq_key_event: buffer full\n");
+     return;
+     }
+   keyevents[tail] = key | press_release;
+@@ -960,7 +967,7 @@ deq_key_event(void)
+   Bit32u key;
+ 
+   if ( head == tail ) {
+-    fprintf(stderr, "# deq_key_event: buffer empty\n");
++    bio->printf("# deq_key_event: buffer empty\n");
+     return(0);
+     }
+   key = keyevents[head];
+@@ -989,7 +996,7 @@ bx_gui_c::create_bitmap(const unsigned c
+   unsigned char *data;
+ 
+   if (bx_bitmap_entries >= BX_MAX_PIXMAPS) {
+-    bx_panic("beos: too many pixmaps, increase BX_MAX_PIXMAPS\n");
++    bio->panic("beos: too many pixmaps, increase BX_MAX_PIXMAPS\n");
+     }
+ 
+   bx_bitmaps[bx_bitmap_entries].bmap =
+@@ -1005,7 +1012,7 @@ bx_gui_c::create_bitmap(const unsigned c
+   bx_bitmaps[bx_bitmap_entries].xdim = xdim;
+   bx_bitmaps[bx_bitmap_entries].ydim = ydim;
+   if (!bx_bitmaps[bx_bitmap_entries].bmap) {
+-    bx_panic("beos: could not create bitmap\n");
++    bio->panic("beos: could not create bitmap\n");
+     }
+   bx_bitmap_entries++;
+   return(bx_bitmap_entries-1); // return index as handle
+@@ -1018,7 +1025,7 @@ bx_gui_c::headerbar_bitmap(unsigned bmap
+   unsigned hb_index;
+ 
+   if ( (bx_headerbar_entries+1) > BX_MAX_HEADERBAR_ENTRIES )
+-    bx_panic("beos: too many headerbar entries, increase BX_MAX_HEADERBAR_ENTRIES\n");
++    bio->panic("beos: too many headerbar entries, increase BX_MAX_HEADERBAR_ENTRIES\n");
+ 
+   bx_headerbar_entries++;
+   hb_index = bx_headerbar_entries - 1;
+@@ -1111,13 +1118,13 @@ create_vga_font(void)
+   unsigned char *data;
+   BRect brect(0,0, 7,15);
+ 
+-  fprintf(stderr, "# BeOS: creating VGA font from bitmaps\n");
++  bio->printf("# BeOS: creating VGA font from bitmaps\n");
+ 
+   // VGA font is 8wide x 16high
+   for (unsigned c=0; c<256; c++) {
+     vgafont[c] = new BBitmap(brect, B_MONOCHROME_1_BIT);
+     if (!vgafont[c]) {
+-      bx_panic("beos: could not create bitmap\n");
++      bio->panic("beos: could not create bitmap\n");
+       }
+ 
+     bitslength = vgafont[c]->BitsLength();
+@@ -1134,5 +1141,5 @@ create_vga_font(void)
+   void
+ bx_gui_c::exit(void)
+ {
+-  fprintf(stderr, "# WARNING: BEOS: bx_gui_c::exit() not implemented yet.\n");
++  bio->printf("# WARNING: BEOS: bx_gui_c::exit() not implemented yet.\n");
+ }

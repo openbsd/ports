@@ -1,0 +1,370 @@
+$OpenBSD: patch-iodev_pit_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
+--- iodev/pit.cc.orig	Sat Mar 25 21:33:31 2000
++++ iodev/pit.cc	Thu Oct 19 11:23:33 2000
+@@ -238,11 +238,11 @@ bx_pit_c::read( Bit32u   address, unsign
+   UNUSED(this_ptr);
+ #endif  // !BX_USE_PIT_SMF
+   if (io_len > 1)
+-    bx_panic("pit: io read from port %04x, len=%u\n", (unsigned) address,
++    bio->panic("pit: io read from port %04x, len=%u\n", (unsigned) address,
+              (unsigned) io_len);
+ 
+-  if (bx_dbg.pit)
+-    bx_printf("pit: io read from port %04x\n", (unsigned) address);
++  if (bio->getdbg().pit)
++    bio->printf("[PIT]  io read from port %04x\n", (unsigned) address);
+ 
+   switch (address) {
+     case 0x40: /* timer 0 - system ticks */
+@@ -263,7 +263,7 @@ bx_pit_c::read( Bit32u   address, unsign
+       break;
+ 
+     default:
+-      bx_panic("pit: unsupported io read from port %04x\n", address);
++      bio->panic("pit: unsupported io read from port %04x\n", address);
+     }
+   return(0); /* keep compiler happy */
+ }
+@@ -294,11 +294,11 @@ bx_pit_c::write( Bit32u   address, Bit32
+   value = (Bit8u  ) dvalue;
+ 
+   if (io_len > 1)
+-    bx_panic("pit: io write to port %04x, len=%u\n", (unsigned) address,
++    bio->panic("pit: io write to port %04x, len=%u\n", (unsigned) address,
+              (unsigned) io_len);
+ 
+-  if (bx_dbg.pit)
+-    bx_printf("pit: write to port %04x = %02x\n",
++  if (bio->getdbg().pit)
++    bio->printf("[PIT]  write to port %04x = %02x\n",
+       (unsigned) address, (unsigned) value);
+ 
+   switch (address) {
+@@ -323,14 +323,14 @@ bx_pit_c::write( Bit32u   address, Bit32
+       mode     = (value >> 1) & 0x07;
+       bcd_mode = value & 0x01;
+ #if 0
+-bx_printf("timer 0-2 mode control: comm:%02x mode:%02x bcd_mode:%u\n",
++bio->printf("[PIT] timer 0-2 mode control: comm:%02x mode:%02x bcd_mode:%u\n",
+   (unsigned) command, (unsigned) mode, (unsigned) bcd_mode);
+ #endif
+ 
+       if ( (mode > 5) || (command > 0x0e) )
+-        bx_panic("pit: outp(43h)=%02xh out of range\n", (unsigned) value);
++        bio->panic("pit: outp(43h)=%02xh out of range\n", (unsigned) value);
+       if (bcd_mode)
+-        bx_panic("pit: outp(43h)=%02xh: bcd mode unhandled\n",
++        bio->panic("pit: outp(43h)=%02xh: bcd mode unhandled\n",
+           (unsigned) bcd_mode);
+ 
+       switch (command) {
+@@ -340,7 +340,7 @@ bx_printf("timer 0-2 mode control: comm:
+ 
+         case 0x1: /* timer 0: LSB mode */
+         case 0x2: /* timer 0: MSB mode */
+-          bx_panic("pit: outp(43h): command %02xh unhandled\n",
++          bio->panic("pit: outp(43h): command %02xh unhandled\n",
+             (unsigned) command);
+           break;
+         case 0x3: /* timer 0: 16-bit mode */
+@@ -350,7 +350,7 @@ bx_printf("timer 0-2 mode control: comm:
+           BX_PIT_THIS s.timer[0].input_latch_toggle = 0;
+           BX_PIT_THIS s.timer[0].bcd_mode    = bcd_mode;
+           if ( (mode!=3 && mode!=2 && mode!=0) || bcd_mode!=0 )
+-            bx_panic("pit: outp(43h): comm 3, mode %02x, bcd %02x unhandled\n",
++            bio->panic("pit: outp(43h): comm 3, mode %02x, bcd %02x unhandled\n",
+               (unsigned) mode, bcd_mode);
+           break;
+         case 0x4: /* timer 1: counter latch */
+@@ -359,7 +359,7 @@ bx_printf("timer 0-2 mode control: comm:
+ 
+         case 0x5: /* timer 1: LSB mode */
+         case 0x6: /* timer 1: MSB mode */
+-          bx_printf("pit: outp(43h): command %02xh unhandled (ignored)\n",
++          bio->printf("[PIT]  outp(43h): command %02xh unhandled (ignored)\n",
+             (unsigned) command);
+           break;
+         case 0x7: /* timer 1: 16-bit mode */
+@@ -369,7 +369,7 @@ bx_printf("timer 0-2 mode control: comm:
+           BX_PIT_THIS s.timer[1].input_latch_toggle = 0;
+           BX_PIT_THIS s.timer[1].bcd_mode    = bcd_mode;
+           if ( mode!=2 || bcd_mode!=0 )
+-            bx_panic("pit: outp(43h): comm 7, mode %02x, bcd %02x unhandled\n",
++            bio->panic("pit: outp(43h): comm 7, mode %02x, bcd %02x unhandled\n",
+               (unsigned) mode, bcd_mode);
+           break;
+         case 0x8: /* timer 2: counter latch */
+@@ -378,7 +378,7 @@ bx_printf("timer 0-2 mode control: comm:
+ 
+         case 0x9: /* timer 2: LSB mode */
+         case 0xa: /* timer 2: MSB mode */
+-          bx_panic("pit: outp(43h): command %02xh unhandled\n",
++          bio->panic("pit: outp(43h): command %02xh unhandled\n",
+             (unsigned) command);
+           break;
+         case 0xb: /* timer 2: 16-bit mode */
+@@ -388,7 +388,7 @@ bx_printf("timer 0-2 mode control: comm:
+           BX_PIT_THIS s.timer[2].input_latch_toggle = 0;
+           BX_PIT_THIS s.timer[2].bcd_mode    = bcd_mode;
+           if ( (mode!=3 && mode!=2) || bcd_mode!=0 )
+-            bx_panic("pit: outp(43h): comm Bh, mode %02x, bcd %02x unhandled\n",
++            bio->panic("pit: outp(43h): comm Bh, mode %02x, bcd %02x unhandled\n",
+               (unsigned) mode, bcd_mode);
+           break;
+ #if 0
+@@ -402,16 +402,16 @@ bx_printf("timer 0-2 mode control: comm:
+           break;
+ 
+         case 0xe: /* latch status of timers */
+-          bx_panic("pit: outp(43h): command %02xh unhandled\n",
++          bio->panic("pit: outp(43h): command %02xh unhandled\n",
+             (unsigned) command);
+           break;
+ #endif
+         case 0x0c: case 0x0d: case 0x0e: case 0x0f:
+-          bx_printf("pit: ignoring 8254 command %u\n", (unsigned) command);
++          bio->printf("[PIT]  ignoring 8254 command %u\n", (unsigned) command);
+           break;
+ 
+         default: /* 0xc & 0xf */
+-          bx_panic("pit: outp(43h) command %1xh unhandled\n",
++          bio->panic("pit: outp(43h) command %1xh unhandled\n",
+             (unsigned) command);
+           break;
+         }
+@@ -428,7 +428,7 @@ bx_printf("timer 0-2 mode control: comm:
+       break;
+ 
+     default:
+-      bx_panic("pit: unsupported io write to port %04x = %02x\n",
++      bio->panic("pit: unsupported io write to port %04x = %02x\n",
+         (unsigned) address, (unsigned) value);
+     }
+ }
+@@ -447,34 +447,34 @@ bx_pit_c::write_count_reg( Bit8u   value
+         BX_PIT_THIS s.timer[timerid].input_latch_value = value;
+         BX_PIT_THIS s.timer[timerid].input_latch_toggle = 1;
+         xfer_complete = 0;
+-        if (bx_dbg.pit)
+-          bx_printf("pit: BX_PIT_THIS s.timer[timerid] write L = %02x\n", (unsigned) value);
++        if (bio->getdbg().pit)
++          bio->printf("[PIT]  BX_PIT_THIS s.timer[timerid] write L = %02x\n", (unsigned) value);
+         }
+       else {
+         BX_PIT_THIS s.timer[timerid].input_latch_value |= (value << 8);
+         BX_PIT_THIS s.timer[timerid].input_latch_toggle = 0;
+         xfer_complete = 1;
+-        if (bx_dbg.pit)
+-          bx_printf("pit: BX_PIT_THIS s.timer[timerid] write H = %02x\n", (unsigned) value);
++        if (bio->getdbg().pit)
++          bio->printf("[PIT]  BX_PIT_THIS s.timer[timerid] write H = %02x\n", (unsigned) value);
+         }
+       break;
+ 
+     case BX_PIT_LATCH_MODE_MSB: /* write1=MSB, LSB=0 */
+       BX_PIT_THIS s.timer[timerid].input_latch_value = (value << 8);
+       xfer_complete = 1;
+-      if (bx_dbg.pit)
+-        bx_printf("pit: BX_PIT_THIS s.timer[timerid] write H = %02x\n", (unsigned) value);
++      if (bio->getdbg().pit)
++        bio->printf("[PIT]  BX_PIT_THIS s.timer[timerid] write H = %02x\n", (unsigned) value);
+       break;
+ 
+     case BX_PIT_LATCH_MODE_LSB: /* write1=LSB, MSB=0 */
+       BX_PIT_THIS s.timer[timerid].input_latch_value = value;
+       xfer_complete = 1;
+-      if (bx_dbg.pit)
+-        bx_printf("pit: BX_PIT_THIS s.timer[timerid] write L = %02x\n", (unsigned) value);
++      if (bio->getdbg().pit)
++        bio->printf("[PIT]  BX_PIT_THIS s.timer[timerid] write L = %02x\n", (unsigned) value);
+       break;
+ 
+     default:
+-      bx_panic("write_count_reg: latch_mode unknown\n");
++      bio->panic("write_count_reg: latch_mode unknown\n");
+       xfer_complete = 0;
+     }
+ 
+@@ -502,12 +502,12 @@ bx_pit_c::write_count_reg( Bit8u   value
+           }
+         break;
+       case 1:
+-        bx_panic("pit:write_count_reg(%u): mode1 unsupported\n",
++        bio->panic("pit:write_count_reg(%u): mode1 unsupported\n",
+                  timerid);
+         break;
+       case 2:
+         if ( BX_PIT_THIS s.timer[timerid].counter_max == 1 )
+-          bx_panic("pit:write_count_reg(%u): mode %u counter_max=1\n",
++          bio->panic("pit:write_count_reg(%u): mode %u counter_max=1\n",
+                    timerid, (unsigned) BX_PIT_THIS s.timer[timerid].mode);
+         if ( BX_PIT_THIS s.timer[timerid].GATE && !BX_PIT_THIS s.timer[timerid].active ) {
+           // software triggered
+@@ -519,7 +519,7 @@ bx_pit_c::write_count_reg( Bit8u   value
+         break;
+       case 3:
+         if ( BX_PIT_THIS s.timer[timerid].counter_max == 1 )
+-          bx_panic("pit:write_count_reg(%u): mode %u counter_max=1\n",
++          bio->panic("pit:write_count_reg(%u): mode %u counter_max=1\n",
+                    timerid, (unsigned) BX_PIT_THIS s.timer[timerid].mode);
+         BX_PIT_THIS s.timer[timerid].counter_max = BX_PIT_THIS s.timer[timerid].counter_max & 0xfffe;
+         if ( BX_PIT_THIS s.timer[timerid].GATE && !BX_PIT_THIS s.timer[timerid].active ) {
+@@ -531,11 +531,11 @@ bx_pit_c::write_count_reg( Bit8u   value
+           }
+         break;
+       case 4:
+-        bx_panic("pit:write_count_reg(%u): mode4 unsupported\n",
++        bio->panic("pit:write_count_reg(%u): mode4 unsupported\n",
+                  timerid);
+         break;
+       case 5:
+-        bx_panic("pit:write_count_reg(%u): mode5 unsupported\n",
++        bio->panic("pit:write_count_reg(%u): mode5 unsupported\n",
+                  timerid);
+         break;
+       }
+@@ -554,7 +554,7 @@ bx_pit_c::read_counter( unsigned timerid
+     }
+   else { /* direct unlatched read */
+     counter_value = BX_PIT_THIS s.timer[timerid].counter;
+-bx_printf("CV=%04x\n", (unsigned) BX_PIT_THIS s.timer[timerid].counter);
++bio->printf("[PIT] CV=%04x\n", (unsigned) BX_PIT_THIS s.timer[timerid].counter);
+     }
+ 
+   switch (BX_PIT_THIS s.timer[timerid].latch_mode) {
+@@ -578,7 +578,7 @@ bx_printf("CV=%04x\n", (unsigned) BX_PIT
+         BX_PIT_THIS s.timer[timerid].output_latch_full = 0;
+       break;
+     default:
+-      bx_panic("pit: io read from port 40h: unknown latch mode\n");
++      bio->panic("pit: io read from port 40h: unknown latch mode\n");
+       retval = 0; /* keep compiler happy */
+     }
+   return( retval );
+@@ -590,15 +590,15 @@ bx_pit_c::latch( unsigned timerid )
+ {
+   /* subsequent counter latch commands are ignored until value read out */
+   if (BX_PIT_THIS s.timer[timerid].output_latch_full) {
+-    bx_printf("pit: pit(%u) latch: output latch full, ignoring\n",
++    bio->printf("[PIT]  pit(%u) latch: output latch full, ignoring\n",
+               timerid);
+     return;
+     }
+ 
+   BX_PIT_THIS s.timer[timerid].output_latch_value = BX_PIT_THIS s.timer[timerid].counter;
+ 
+-  if (bx_dbg.pit)
+-    bx_printf("pit: latch_value = %lu\n", BX_PIT_THIS s.timer[timerid].output_latch_value);
++  if (bio->getdbg().pit)
++    bio->printf("[PIT]  latch_value = %lu\n", BX_PIT_THIS s.timer[timerid].output_latch_value);
+   BX_PIT_THIS s.timer[timerid].output_latch_toggle = 0;
+   BX_PIT_THIS s.timer[timerid].output_latch_full   = 1;
+ }
+@@ -608,7 +608,7 @@ bx_pit_c::set_GATE(unsigned pit_id, unsi
+ {
+   // GATE's for Timer 0 & Timer 1 are tied high.
+   if (pit_id != 2)
+-    bx_panic("pit:set_GATE: pit_id != 2\n");
++    bio->panic("pit:set_GATE: pit_id != 2\n");
+ 
+   value = (value > 0);
+ 
+@@ -644,7 +644,7 @@ bx_pit_c::set_GATE(unsigned pit_id, unsi
+       case 4:
+       case 5:
+       default:
+-        bx_panic("bx_pit_c::set_GATE: unhandled timer2 mode %u\n",
++        bio->panic("bx_pit_c::set_GATE: unhandled timer2 mode %u\n",
+                  (unsigned) BX_PIT_THIS s.timer[2].mode);
+       }
+     }
+@@ -667,7 +667,7 @@ bx_pit_c::set_GATE(unsigned pit_id, unsi
+       case 4:
+       case 5:
+       default:
+-        bx_panic("bx_pit_c::set_GATE: unhandled timer2 mode %u\n",
++        bio->panic("bx_pit_c::set_GATE: unhandled timer2 mode %u\n",
+                  (unsigned) BX_PIT_THIS s.timer[2].mode);
+       }
+     }
+@@ -685,14 +685,14 @@ bx_pit_c::start(unsigned timerid)
+   else {
+     period_hz = 1193182 / BX_PIT_THIS s.timer[timerid].counter_max;
+     }
+-  bx_printf("timer%u period set to %lu hz\n", timerid, period_hz);
++  bio->printf("[PIT] timer%u period set to %lu hz\n", timerid, period_hz);
+ 
+ 
+   switch (BX_PIT_THIS s.timer[timerid].mode) {
+     case 0: /* single timeout */
+       break;
+     case 1: /* retriggerable one-shot */
+-      bx_panic("start: mode %u unhandled\n",
++      bio->panic("start: mode %u unhandled\n",
+                (unsigned) BX_PIT_THIS s.timer[timerid].mode);
+       break;
+     case 2: /* rate generator */
+@@ -700,15 +700,15 @@ bx_pit_c::start(unsigned timerid)
+     case 3: /* square wave mode */
+       break;
+     case 4: /* software triggered strobe */
+-      bx_panic("start: mode %u unhandled\n",
++      bio->panic("start: mode %u unhandled\n",
+                (unsigned) BX_PIT_THIS s.timer[timerid].mode);
+       break;
+     case 5: /* hardware retriggerable strobe */
+-      bx_panic("start: mode %u unhandled\n",
++      bio->panic("start: mode %u unhandled\n",
+                (unsigned) BX_PIT_THIS s.timer[timerid].mode);
+       break;
+     default:
+-      bx_panic("start: timer%u has bad mode\n",
++      bio->panic("start: timer%u has bad mode\n",
+                (unsigned) BX_PIT_THIS s.timer[timerid].mode);
+     }
+ }
+@@ -776,7 +776,7 @@ bx_pit_c::periodic( Bit32u   usec_delta 
+ 
+         case 1: // Mode 1: Retriggerable One-Shot
+           // wraps after count expires
+-          bx_panic("bx_pit_c::periodic: bad mode: timer[%u], mode %u\n",
++          bio->panic("bx_pit_c::periodic: bad mode: timer[%u], mode %u\n",
+                         i, (unsigned) BX_PIT_THIS s.timer[i].mode);
+           break;
+ 
+@@ -818,30 +818,30 @@ bx_pit_c::periodic( Bit32u   usec_delta 
+             // counter expired, reload
+             BX_PIT_THIS s.timer[i].counter = BX_PIT_THIS s.timer[i].counter_max;
+             BX_PIT_THIS s.timer[i].OUT     = !BX_PIT_THIS s.timer[i].OUT;
+-            //bx_printf("CV: reload t%u to %04x\n", (unsigned) i, (unsigned)
++            //bio->printf("[PIT] CV: reload t%u to %04x\n", (unsigned) i, (unsigned)
+             //  BX_PIT_THIS s.timer[i].counter);
+             }
+           else {
+             // decrement counter by elapsed useconds
+             BX_PIT_THIS s.timer[i].counter -= (Bit16u ) ( 2*usec_delta );
+-            //bx_printf("CV: dec count to %04x\n",
++            //bio->printf("[PIT] CV: dec count to %04x\n",
+             //          (unsigned) BX_PIT_THIS s.timer[i].counter);
+             }
+           break;
+ 
+         case 4: // Mode 4: Software Triggered Strobe
+           // wraps after count expires
+-          bx_panic("bx_pit_c::periodic: bad mode: timer[%u], mode %u\n",
++          bio->panic("bx_pit_c::periodic: bad mode: timer[%u], mode %u\n",
+                         i, (unsigned) BX_PIT_THIS s.timer[i].mode);
+           break;
+ 
+         case 5: // Mode 5: Hardware Retriggerable Strobe
+           // wraps after count expires
+-          bx_panic("bx_pit_c::periodic: bad mode: timer[%u], mode %u\n",
++          bio->panic("bx_pit_c::periodic: bad mode: timer[%u], mode %u\n",
+                         i, (unsigned) BX_PIT_THIS s.timer[i].mode);
+           break;
+         default:
+-          bx_panic("bx_pit_c::periodic: bad mode: timer[%u], mode %u\n",
++          bio->panic("bx_pit_c::periodic: bad mode: timer[%u], mode %u\n",
+                         i, (unsigned) BX_PIT_THIS s.timer[i].mode);
+           break;
+         } // switch ( BX_PIT_THIS s.tim...

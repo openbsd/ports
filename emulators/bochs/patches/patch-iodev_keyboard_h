@@ -1,0 +1,12 @@
+$OpenBSD: patch-iodev_keyboard_h,v 1.1 2001/02/02 16:59:11 todd Exp $
+--- iodev/keyboard.h.orig	Sat Mar 25 21:36:56 2000
++++ iodev/keyboard.h	Tue Oct 17 12:04:06 2000
+@@ -132,7 +132,7 @@ private:
+ 	    break;
+ 
+ 	  default:
+-	    bx_panic("[mouse] invalid resolution_cpmm");
++	    bio->panic("[mouse] invalid resolution_cpmm");
+ 	  };
+ 	  return ret;
+ 	}

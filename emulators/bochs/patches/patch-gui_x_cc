@@ -1,0 +1,376 @@
+$OpenBSD: patch-gui_x_cc,v 1.1 2001/02/02 16:59:10 todd Exp $
+--- gui/x.cc.orig	Sat Mar 25 21:43:36 2000
++++ gui/x.cc	Mon Oct 23 22:11:14 2000
+@@ -27,6 +27,7 @@ extern "C" {
+ #include <X11/Xos.h>
+ #include <X11/Xatom.h>
+ #include <X11/keysym.h>
++#include <signal.h>
+ }
+ 
+ #include "bochs.h"
+@@ -279,11 +280,16 @@ bx_gui_c::specific_init(bx_gui_c *th, in
+   unsigned long plane_masks_return[1];
+   XColor color;
+ 
++// if not using debugger, then we can take control of SIGINT.
++// If using debugger, it needs control of this.
++#if BX_DEBUGGER==0
++  signal(SIGINT, bx_signal_handler);
++#endif
+ 
+   UNUSED(th);
+ 
+ if (bx_options.private_colormap) {
+-  fprintf(stderr, "# WARNING: X11: private_colormap option not handled yet.\n");
++  bio->printf("#X] WARNING: X11: private_colormap option not handled yet.\n");
+   }
+ 
+   x_tilesize = tilewidth;
+@@ -299,7 +305,7 @@ if (bx_options.private_colormap) {
+   /* connect to X server */
+   if ( (bx_x_display=XOpenDisplay(display_name)) == NULL )
+   {
+-    bx_panic("%s: cannot connect to X server %s\n",
++    bio->panic("%s: cannot connect to X server %s\n",
+         progname, XDisplayName(display_name));
+   }
+ 
+@@ -321,8 +327,8 @@ if (bx_options.private_colormap) {
+   dimension_x = columns * font_width;
+   dimension_y = rows * font_height + headerbar_y;
+ 
+-bx_printf("font_width = %u\n", (unsigned) font_width);
+-bx_printf("font_height = %u\n", (unsigned) font_height);
++bio->printf("[X] font_width = %u\n", (unsigned) font_width);
++bio->printf("[X] font_height = %u\n", (unsigned) font_height);
+ 
+   /* create opaque window */
+   win = XCreateSimpleWindow(bx_x_display, RootWindow(bx_x_display,bx_x_screen_num),
+@@ -346,7 +352,7 @@ bx_printf("font_height = %u\n", (unsigne
+                                    default_visual, AllocNone);
+     if (XAllocColorCells(bx_x_display, default_cmap, False,
+                          plane_masks_return, 0, col_vals, 256) == 0) {
+-      bx_panic("XAllocColorCells returns error.\n");
++      bio->panic("XAllocColorCells returns error.\n");
+       }
+ 
+     win_attr.colormap = default_cmap;
+@@ -383,7 +389,7 @@ bx_printf("font_height = %u\n", (unsigne
+   black_pixel = col_vals[0];
+   white_pixel = col_vals[15];
+ 
+-  bx_printf("default_depth = %d\n", default_depth);
++  bio->printf("[X] default_depth = %d\n", default_depth);
+ 
+   //select_visual();
+ 
+@@ -419,12 +425,12 @@ bx_printf("font_height = %u\n", (unsigne
+    * XTextProperty structures and set their other
+    * fields properly. */
+   if (XStringListToTextProperty(&window_name, 1, &windowName) == 0) {
+-    bx_panic("%s: structure allocation for windowName failed.\n",
++    bio->panic("%s: structure allocation for windowName failed.\n",
+         progname);
+   }
+ 
+   if (XStringListToTextProperty(&icon_name, 1, &iconName) == 0) {
+-    bx_panic("%s: structure allocation for iconName failed.\n",
++    bio->panic("%s: structure allocation for iconName failed.\n",
+         progname);
+   }
+ 
+@@ -469,12 +475,12 @@ bx_printf("font_height = %u\n", (unsigne
+   XMapWindow(bx_x_display, win);
+   XSync(bx_x_display, /* no discard */ 0);
+ 
+-  bx_printf("waiting for MapNotify\n");
++  bio->printf("[X] waiting for MapNotify\n");
+   while (1) {
+     XNextEvent(bx_x_display, &report);
+     if (report.type == MapNotify) break;
+     }
+-  bx_printf("MapNotify found.\n");
++  bio->printf("[X] MapNotify found.\n");
+ 
+ {
+   char *imagedata;
+@@ -488,19 +494,19 @@ bx_printf("font_height = %u\n", (unsigne
+              32,                     // # bits of padding
+              0 );                    // bytes_per_line, let X11 calculate
+   if (!ximage)
+-    bx_panic("vga: couldn't XCreateImage()\n");
++    bio->panic("vga: couldn't XCreateImage()\n");
+ 
+   imDepth = default_depth;
+   imWide  = ximage->bytes_per_line;
+   imBPP   = ximage->bits_per_pixel;
+ 
+   imagedata = (char *) malloc( (size_t) (ximage->bytes_per_line * y_tilesize) );
+-  if (!imagedata) bx_panic("imagedata: malloc returned error\n");
++  if (!imagedata) bio->panic("imagedata: malloc returned error\n");
+ 
+   ximage->data = imagedata;
+ 
+   if (imBPP < imDepth) {
+-    bx_panic("vga_x: bits_per_pixel < depth ?\n");
++    bio->panic("vga_x: bits_per_pixel < depth ?\n");
+     }
+ 
+ }
+@@ -523,8 +529,8 @@ load_font(void)
+ 
+   /* Load font and get font information structure. */
+   if ((font_info = XLoadQueryFont(bx_x_display,"vga")) == NULL) {
+-    fprintf(stderr, "# %s: Cannot open vga font\n", progname);
+-    bx_panic("Could not open vga font\n");
++    bio->printf("#X] %s: Cannot open vga font\n", progname);
++    bio->panic("X Could not open vga font\n");
+     }
+ }
+ 
+@@ -577,17 +583,17 @@ bx_gui_c::handle_events(void)
+       break;
+ 
+     case ConfigureNotify:
+-//bx_printf("ConfigureNotify Xevent\n");
++//bio->printf("[X] ConfigureNotify Xevent\n");
+       show_headerbar();
+       break;
+ 
+     case ButtonPress:
+       button_event = (XButtonEvent *) &report;
+-//bx_printf("xxx: buttonpress\n");
++//bio->printf("[X] xxx: buttonpress\n");
+       if (button_event->y < BX_HEADER_BAR_Y) {
+-//bx_printf("xxx:   in headerbar\n");
++//bio->printf("[X] xxx:   in headerbar\n");
+         if (mouse_update) {
+-//bx_printf("xxx:   mouse_update=1\n");
++//bio->printf("[X] xxx:   mouse_update=1\n");
+           send_keyboard_mouse_status();
+           mouse_update = 0;
+           }
+@@ -599,28 +605,28 @@ bx_gui_c::handle_events(void)
+       current_x = button_event->x;
+       current_y = button_event->y;
+       mouse_update = 1;
+-//bx_printf("xxx:   x,y=(%d,%d)\n", current_x, current_y);
++//bio->printf("[X] xxx:   x,y=(%d,%d)\n", current_x, current_y);
+       switch (button_event->button) {
+         case Button1:
+-//bx_printf("xxx:   button1\n");
++//bio->printf("[X] xxx:   button1\n");
+           mouse_button_state |= 0x01;
+           send_keyboard_mouse_status();
+           mouse_update = 0;
+           break;
+         case Button2:
+-//bx_printf("xxx:   button2\n");
++//bio->printf("[X] xxx:   button2\n");
+ 
+ 	      // (mch) Hack for easier mouse handling (toggle mouse enable)
+ 	      mouse_handler();
+ 	      if (bx_options.mouse_enabled) {
+-		    bx_printf("[x] Mouse enabled\n");
++		    bio->printf("[x] Mouse enabled\n");
+ 		    mouse_enable_x = current_x;
+ 		    mouse_enable_y = current_y;
+ 		    disable_cursor();
+ 		    // Move the cursor to a 'safe' place
+ 		    warp_cursor(warp_home_x-current_x, warp_home_y-current_y);
+ 	      } else {
+-		    bx_printf("[x] Mouse disabled\n");
++		    bio->printf("[x] Mouse disabled\n");
+ 		    enable_cursor();
+ 		    warp_cursor(mouse_enable_x-current_x, mouse_enable_y-current_y);
+ 	      }
+@@ -630,7 +636,7 @@ bx_gui_c::handle_events(void)
+           //mouse_update = 0;
+           break;
+         case Button3:
+-//bx_printf("xxx:   button3\n");
++//bio->printf("[X] xxx:   button3\n");
+           mouse_button_state |= 0x02;
+           send_keyboard_mouse_status();
+           mouse_update = 0;
+@@ -640,11 +646,11 @@ bx_gui_c::handle_events(void)
+ 
+     case ButtonRelease:
+       button_event = (XButtonEvent *) &report;
+-//bx_printf("xxx: buttonrelease\n");
++//bio->printf("[X] xxx: buttonrelease\n");
+       if (button_event->y < BX_HEADER_BAR_Y) {
+-//bx_printf("xxx:   in headerbar\n");
++//bio->printf("[X] xxx:   in headerbar\n");
+         if (mouse_update) {
+-//bx_printf("xxx:   mouse_update=1\n");
++//bio->printf("[X] xxx:   mouse_update=1\n");
+           send_keyboard_mouse_status();
+           mouse_update = 0;
+           }
+@@ -656,22 +662,22 @@ bx_gui_c::handle_events(void)
+       current_x = button_event->x;
+       current_y = button_event->y;
+       mouse_update = 1;
+-//bx_printf("xxx:   x,y=(%d,%d)\n", current_x, current_y);
++//bio->printf("[X] xxx:   x,y=(%d,%d)\n", current_x, current_y);
+       switch (button_event->button) {
+         case Button1:
+-//bx_printf("xxx:   button1\n");
++//bio->printf("[X] xxx:   button1\n");
+           mouse_button_state &= ~0x01;
+           send_keyboard_mouse_status();
+           mouse_update = 0;
+           break;
+         case Button2:
+-//bx_printf("xxx:   button2\n");
++//bio->printf("[X] xxx:   button2\n");
+           //mouse_button_state &= ~;
+           //send_keyboard_mouse_status();
+           //mouse_update = 0;
+           break;
+         case Button3:
+-//bx_printf("xxx:   button3\n");
++//bio->printf("[X] xxx:   button3\n");
+           mouse_button_state &= ~0x02;
+           send_keyboard_mouse_status();
+           mouse_update = 0;
+@@ -682,14 +688,14 @@ bx_gui_c::handle_events(void)
+     case KeyPress:
+       key_event = (XKeyEvent *) &report;
+       charcount = XLookupString(key_event, buffer, bufsize, &keysym, &compose);
+-/*fprintf(stderr, "# >>> %s\n", XKeysymToString(keysym));*/
++/*bio->printf("#X] >>> %s\n", XKeysymToString(keysym));*/
+       xkeypress(keysym, 0);
+       break;
+ 
+     case KeyRelease:
+       key_event = (XKeyEvent *) &report;
+       charcount = XLookupString(key_event, buffer, bufsize, &keysym, &compose);
+-/*fprintf(stderr, "# <<< %s\n", XKeysymToString(keysym));*/
++/*bio->printf("#X] <<< %s\n", XKeysymToString(keysym));*/
+       xkeypress(keysym, 1);
+       break;
+ 
+@@ -698,34 +704,34 @@ bx_gui_c::handle_events(void)
+       current_x = pointer_event->x;
+       current_y = pointer_event->y;
+       mouse_update = 1;
+-//bx_printf("xxx: motionNotify x,y=(%d,%d)\n", current_x, current_y);
++//bio->printf("[X] xxx: motionNotify x,y=(%d,%d)\n", current_x, current_y);
+       break;
+ 
+     case EnterNotify:
+       enter_event = (XEnterWindowEvent *) &report;
+       prev_x = current_x = enter_event->x;
+       prev_y = current_y = enter_event->y;
+-//bx_printf("xxx: enterNotify x,y=(%d,%d)\n", current_x, current_y);
++//bio->printf("[X] xxx: enterNotify x,y=(%d,%d)\n", current_x, current_y);
+       break;
+ 
+     case LeaveNotify:
+       leave_event = (XLeaveWindowEvent *) &report;
+       prev_x = current_x = -1;
+       prev_y = current_y = -1;
+-//bx_printf("xxx: LeaveNotify x,y set to -1\n");
++//bio->printf("[X] xxx: LeaveNotify x,y set to -1\n");
+       break;
+ 
+     case MapNotify:
+       /* screen needs redraw, since X would have tossed previous
+        * requests before window mapped
+        */
+-//bx_printf("xxx: mapnotify: found\n");
++//bio->printf("[X] xxx: mapnotify: found\n");
+       //retval = 1;
+       break;
+ 
+     default:
+ 	  // (mch) Ignore...
+-	  // bx_printf("xxx: default Xevent type\n");
++	  // bio->printf("[X] xxx: default Xevent type\n");
+       /* all events selected by StructureNotifyMask are thrown away here,
+        * since nothing is done with them */
+       break;
+@@ -733,7 +739,7 @@ bx_gui_c::handle_events(void)
+   } /* end while */
+ 
+   if (mouse_update) {
+-    //bx_printf("xxx: bottom, send status\n");
++    //bio->printf("[X] xxx: bottom, send status\n");
+     send_keyboard_mouse_status();
+     }
+ }
+@@ -742,7 +748,7 @@ bx_gui_c::handle_events(void)
+   void
+ send_keyboard_mouse_status(void)
+ {
+-//bx_printf("xxx: prev=(%d,%d) curr=(%d,%d)\n",
++//bio->printf("[X] xxx: prev=(%d,%d) curr=(%d,%d)\n",
+ //  prev_x, prev_y, current_x, current_y);
+ 
+   if ( (prev_x!=-1) && (current_x!=-1) && (prev_y!=-1) && (current_y!=-1)) {
+@@ -753,7 +759,7 @@ send_keyboard_mouse_status(void)
+     dy = -(current_y - prev_y - warp_dy);
+     warp_cursor(warp_home_x-current_x, warp_home_y-current_y);
+ 
+-//bx_printf("xxx: MOUSE_MOTION: dx=%d, dy=%d\n", (int) dx, (int) dy);
++//bio->printf("[X] xxx: MOUSE_MOTION: dx=%d, dy=%d\n", (int) dx, (int) dy);
+     bx_devices.keyboard->mouse_motion( dx, dy, mouse_button_state);
+     //if (warped) {
+     //  prev_x = current_x = -1;
+@@ -911,7 +917,7 @@ xkeypress(KeySym keysym, int press_relea
+     case XK_Page_Down:   key_event = BX_KEY_PAGE_DOWN; break;
+ 
+     default:
+-      fprintf(stderr, "# xkeypress(): keysym %x unhandled!\n", (unsigned) keysym);
++      bio->printf("#X] xkeypress(): keysym %x unhandled!\n", (unsigned) keysym);
+       return;
+       break;
+     }
+@@ -1076,7 +1082,7 @@ bx_gui_c::graphics_tile_update(Bit8u *ti
+             }
+           break;
+         default:
+-          bx_panic("X_graphics_tile_update: bits_per_pixel %u not implemented\n",
++          bio->panic("X_graphics_tile_update: bits_per_pixel %u not implemented\n",
+             (unsigned) imBPP);
+           break;
+         }
+@@ -1157,7 +1163,7 @@ bx_gui_c::show_headerbar(void)
+ bx_gui_c::create_bitmap(const unsigned char *bmap, unsigned xdim, unsigned ydim)
+ {
+   if (bx_bitmap_entries >= BX_MAX_PIXMAPS) {
+-    bx_panic("x: too many pixmaps, increase BX_MAX_PIXMAPS\n");
++    bio->panic("x: too many pixmaps, increase BX_MAX_PIXMAPS\n");
+     }
+ 
+   bx_bitmaps[bx_bitmap_entries].bmap =
+@@ -1165,7 +1171,7 @@ bx_gui_c::create_bitmap(const unsigned c
+   bx_bitmaps[bx_bitmap_entries].xdim = xdim;
+   bx_bitmaps[bx_bitmap_entries].ydim = ydim;
+   if (!bx_bitmaps[bx_bitmap_entries].bmap) {
+-    bx_panic("x: could not create bitmap\n");
++    bio->panic("x: could not create bitmap\n");
+     }
+   bx_bitmap_entries++;
+   return(bx_bitmap_entries-1); // return index as handle
+@@ -1178,7 +1184,7 @@ bx_gui_c::headerbar_bitmap(unsigned bmap
+   unsigned hb_index;
+ 
+   if ( (bx_headerbar_entries+1) > BX_MAX_HEADERBAR_ENTRIES )
+-    bx_panic("x: too many headerbar entries, increase BX_MAX_HEADERBAR_ENTRIES\n");
++    bio->panic("x: too many headerbar entries, increase BX_MAX_HEADERBAR_ENTRIES\n");
+ 
+   bx_headerbar_entries++;
+   hb_index = bx_headerbar_entries - 1;
+@@ -1240,7 +1246,7 @@ headerbar_click(int x, int y)
+   void
+ bx_gui_c::exit(void)
+ {
+-  bx_printf("Note: X11: bx_gui_c::exit() not implemented yet.\n");
++  bio->printf("[X] Note: bx_gui_c::exit() not implemented yet.\n");
+ }
+ 
+ static void warp_cursor (int dx, int dy)

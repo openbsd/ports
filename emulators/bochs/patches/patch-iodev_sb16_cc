@@ -1,0 +1,30 @@
+$OpenBSD: patch-iodev_sb16_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
+--- iodev/sb16.cc.orig	Sat Mar 25 21:34:08 2000
++++ iodev/sb16.cc	Tue Oct 17 12:04:02 2000
+@@ -104,7 +104,7 @@ void bx_sb16_c::init(bx_devices_c *d)
+       LOGFILE = fopen(bx_options.sb16.logfile,"w"); // logfile for errors etc.
+       if (LOGFILE == NULL)
+ 	{
+-	  bx_printf("#SB16: Error opening file %s. Logging disabled.", bx_options.sb16.logfile);
++	  bio->printf("#SB16: Error opening file %s. Logging disabled.", bx_options.sb16.logfile);
+ 	  bx_options.sb16.loglevel = 0;
+ 	}
+     }
+@@ -156,7 +156,7 @@ void bx_sb16_c::init(bx_devices_c *d)
+       bx_options.sb16.wavemode = 0;
+     }
+ 
+-  bx_printf("#SB16 options: midi=%d,%s  wave=%d,%s  log=%d,%s  dmatimer=%d\n",
++  bio->printf("#SB16 options: midi=%d,%s  wave=%d,%s  log=%d,%s  dmatimer=%d\n",
+ 	    bx_options.sb16.midimode, bx_options.sb16.midifile,
+ 	    bx_options.sb16.wavemode, bx_options.sb16.wavefile,
+ 	    bx_options.sb16.loglevel, bx_options.sb16.logfile,
+@@ -3227,7 +3227,7 @@ Boolean bx_sb16_buffer::puts(char *data,
+   va_end(ap);
+ 
+   if ( (int) strlen(string) >= length)
+-    bx_panic("bx_sb16_buffer: puts() too long!\n");
++    bio->panic("bx_sb16_buffer: puts() too long!\n");
+ 
+   while (string[index] != 0)
+     {

@@ -1,0 +1,10 @@
+--- iodev/Makefile.in.orig	Wed Oct  4 11:12:01 2000
++++ iodev/Makefile.in	Wed Oct  4 11:12:22 2000
+@@ -62,6 +62,7 @@ BX_HW_IODEV_OBJS = \
+   keyboard.o \
+   parallel.o \
+   serial.o \
++  serial_raw.o \
+   $(VIDEO_OBJS) \
+   @PCI_OBJ@ \
+   @NE2K_OBJS@ \

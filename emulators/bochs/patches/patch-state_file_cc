@@ -1,0 +1,23 @@
+$OpenBSD: patch-state_file_cc,v 1.1 2001/02/02 16:59:12 todd Exp $
+--- state_file.cc.orig	Sat Mar 25 21:24:40 2000
++++ state_file.cc	Tue Oct 17 12:04:03 2000
+@@ -111,16 +111,16 @@ state_file::state_file (const char *name
+ {
+ UNUSED(name);
+ UNUSED(options);
+-  bx_printf("state_file::state_file()\n");
++  bio->printf("state_file::state_file()\n");
+ }
+ 
+ state_file::state_file (FILE *f)
+ {
+ UNUSED(f);
+-  bx_printf("state_file::state_file(FILE *)\n");
++  bio->printf("state_file::state_file(FILE *)\n");
+ }
+ 
+ state_file::~state_file()
+ {
+-  bx_printf("state_file::~state_file()\n");
++  bio->printf("state_file::~state_file()\n");
+ }

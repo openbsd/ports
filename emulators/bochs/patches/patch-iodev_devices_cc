@@ -1,0 +1,134 @@
+$OpenBSD: patch-iodev_devices_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
+--- iodev/devices.cc.orig	Sat Mar 25 21:32:21 2000
++++ iodev/devices.cc	Tue Oct 17 12:04:02 2000
+@@ -273,11 +273,11 @@ bx_devices_c::port92_read(Bit32u address
+   UNUSED(this_ptr);
+ #endif  // !BX_USE_DEV_SMF
+   if (io_len > 1)
+-    bx_panic("devices.c: port 92h: io read from address %08x, len=%u\n",
++    bio->panic("devices.c: port 92h: io read from address %08x, len=%u\n",
+              (unsigned) address, (unsigned) io_len);
+ 
+-  bx_printf("devices: port92h read partially supported!!!\n");
+-  bx_printf("devices:   returning %02x\n", (unsigned) (BX_GET_ENABLE_A20() << 1));
++  bio->printf("devices: port92h read partially supported!!!\n");
++  bio->printf("devices:   returning %02x\n", (unsigned) (BX_GET_ENABLE_A20() << 1));
+   return(BX_GET_ENABLE_A20() << 1);
+ }
+ 
+@@ -300,17 +300,17 @@ bx_devices_c::port92_write(Bit32u addres
+   Boolean bx_cpu_reset;
+ 
+   if (io_len > 1)
+-    bx_panic("devices.c: port 92h: io read from address %08x, len=%u\n",
++    bio->panic("devices.c: port 92h: io read from address %08x, len=%u\n",
+              (unsigned) address, (unsigned) io_len);
+ 
+-  bx_printf("devices: port92h write of %02x partially supported!!!\n",
++  bio->printf("devices: port92h write of %02x partially supported!!!\n",
+     (unsigned) value);
+-bx_printf("devices: A20: set_enable_a20() called\n");
++bio->printf("devices: A20: set_enable_a20() called\n");
+   BX_SET_ENABLE_A20( (value & 0x02) >> 1 );
+-  bx_printf("A20: now %u\n", (unsigned) BX_GET_ENABLE_A20());
++  bio->printf("A20: now %u\n", (unsigned) BX_GET_ENABLE_A20());
+   bx_cpu_reset  = (value & 0x01); /* high speed reset */
+   if (bx_cpu_reset) {
+-    bx_panic("PORT 92h write: CPU reset requested!\n");
++    bio->panic("PORT 92h write: CPU reset requested!\n");
+     }
+ }
+ 
+@@ -333,8 +333,8 @@ bx_devices_c::timer()
+ 
+   retval = keyboard->periodic( TIMER_DELTA );
+   if (retval & 0x01) {
+-    if (bx_dbg.keyboard)
+-      bx_printf("keyboard: interrupt(1)\n");
++    if (bio->getdbg().keyboard)
++      bio->printf("keyboard: interrupt(1)\n");
+     pic->trigger_irq(1);
+     }
+   if (retval & 0x02)
+@@ -382,11 +382,11 @@ bx_devices_c::dma_write8(unsigned channe
+ bx_devices_c::register_irq(unsigned irq, const char *name)
+ {
+   if (irq >= BX_MAX_IRQS) {
+-    bx_panic("IO device %s registered with IRQ=%d above %u\n",
++    bio->panic("IO device %s registered with IRQ=%d above %u\n",
+              name, irq, (unsigned) BX_MAX_IRQS-1);
+     }
+   if (irq_handler_name[irq]) {
+-    bx_panic("IRQ %u conflict, %s with %s\n", irq,
++    bio->panic("IRQ %u conflict, %s with %s\n", irq,
+       irq_handler_name[irq], name);
+     }
+   irq_handler_name[irq] = name;
+@@ -396,18 +396,18 @@ bx_devices_c::register_irq(unsigned irq,
+ bx_devices_c::unregister_irq(unsigned irq, const char *name)
+ {
+   if (irq >= BX_MAX_IRQS) {
+-    bx_panic("IO device %s tried to unregister IRQ %d above %u\n",
++    bio->panic("IO device %s tried to unregister IRQ %d above %u\n",
+              name, irq, (unsigned) BX_MAX_IRQS-1);
+     }
+ 
+   if (!irq_handler_name[irq]) {
+-    bx_printf("IO device %s tried to unregister IRQ %d, not registered\n",
++    bio->printf("IO device %s tried to unregister IRQ %d, not registered\n",
+ 	      name, irq);
+     return;
+   }
+ 
+   if (strcmp(irq_handler_name[irq], name)) {
+-    bx_printf("IRQ %u not registered to %s but to %s\n", irq,
++    bio->printf("IRQ %u not registered to %s but to %s\n", irq,
+       name, irq_handler_name[irq]);
+     return;
+     }
+@@ -430,8 +430,8 @@ bx_devices_c::register_io_read_handler( 
+   if (handle >= num_read_handles) {
+     /* no existing handle found, create new one */
+     if (num_read_handles >= BX_MAX_IO_DEVICES) {
+-      bx_printf("too many IO devices installed.\n");
+-      bx_panic("  try increasing BX_MAX_IO_DEVICES\n");
++      bio->printf("too many IO devices installed.\n");
++      bio->panic("  try increasing BX_MAX_IO_DEVICES\n");
+       }
+     num_read_handles++;
+     io_read_handler[handle].funct          = f;
+@@ -444,9 +444,9 @@ bx_devices_c::register_io_read_handler( 
+     // another handler is already registered for that address
+     // if it is not the Unmapped port handler, bail
+     if ( strcmp( io_read_handler[read_handler_id[addr]].handler_name, "Unmapped" ) ) {
+-      bx_printf("IO device address conflict(read) at IO address %Xh\n",
++      bio->printf("IO device address conflict(read) at IO address %Xh\n",
+         (unsigned) addr);
+-      bx_panic("  conflicting devices: %s & %s\n",
++      bio->panic("  conflicting devices: %s & %s\n",
+         io_read_handler[handle].handler_name, io_read_handler[read_handler_id[addr]].handler_name);
+       }
+     }
+@@ -471,8 +471,8 @@ bx_devices_c::register_io_write_handler(
+   if (handle >= num_write_handles) {
+     /* no existing handle found, create new one */
+     if (num_write_handles >= BX_MAX_IO_DEVICES) {
+-      bx_printf("too many IO devices installed.\n");
+-      bx_panic("  try increasing BX_MAX_IO_DEVICES\n");
++      bio->printf("too many IO devices installed.\n");
++      bio->panic("  try increasing BX_MAX_IO_DEVICES\n");
+       }
+     num_write_handles++;
+     io_write_handler[handle].funct          = f;
+@@ -485,9 +485,9 @@ bx_devices_c::register_io_write_handler(
+     // another handler is already registered for that address
+     // if it is not the Unmapped port handler, bail
+     if ( strcmp( io_write_handler[write_handler_id[addr]].handler_name, "Unmapped" ) ) {
+-      bx_printf("IO device address conflict(write) at IO address %Xh\n",
++      bio->printf("IO device address conflict(write) at IO address %Xh\n",
+         (unsigned) addr);
+-      bx_panic("  conflicting devices: %s & %s\n",
++      bio->panic("  conflicting devices: %s & %s\n",
+         io_write_handler[handle].handler_name, io_write_handler[write_handler_id[addr]].handler_name);
+       }
+     }

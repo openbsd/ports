@@ -1,0 +1,26 @@
+$OpenBSD: patch-gui_gui_cc,v 1.1 2001/02/02 16:59:10 todd Exp $
+--- gui/gui.cc.orig	Sat Mar 25 21:43:36 2000
++++ gui/gui.cc	Fri Oct 20 16:53:18 2000
+@@ -151,19 +151,19 @@ bx_gui_c::floppyB_handler(void)
+   void
+ bx_gui_c::reset_handler(void)
+ {
+-  fprintf(stderr, "# RESET callback (unimplemented).\n");
++  bio->printf("#GUI] RESET callback (unimplemented).\n");
+ }
+ 
+   void
+ bx_gui_c::power_handler(void)
+ {
+-  bx_panic("POWER button turned off.\n");
++  bio->panic("gui POWER button turned off.\n");
+ }
+ 
+   void
+ bx_gui_c::snapshot_handler(void)
+ {
+-  fprintf(stderr, "# SNAPSHOT callback (unimplemented).\n");
++  bio->printf("#GUI] SNAPSHOT callback (unimplemented).\n");
+ }
+ 
+   void

@@ -1,0 +1,54 @@
+$OpenBSD: patch-cpu_arith32_cc,v 1.1 2001/02/02 16:59:07 todd Exp $
+--- cpu/arith32.cc.orig	Sat Mar 25 21:39:07 2000
++++ cpu/arith32.cc	Tue Oct 31 12:49:53 2000
+@@ -533,14 +533,14 @@ BX_CPU_C::CDQ(BxInstruction_t *i)
+   void
+ BX_CPU_C::CMPXCHG_XBTS(BxInstruction_t *i)
+ {
+-  bx_printf("CMPXCHG_XBTS:\n");
++  bio->printf("[CPU%u] CMPXCHG_XBTS:\n", BX_SIM_ID);
+   UndefinedOpcode(i);
+ }
+ 
+   void
+ BX_CPU_C::CMPXCHG_IBTS(BxInstruction_t *i)
+ {
+-  bx_printf("CMPXCHG_IBTS:\n");
++  bio->printf("[CPU%u] CMPXCHG_IBTS:\n", BX_SIM_ID);
+   UndefinedOpcode(i);
+ }
+ 
+@@ -590,7 +590,7 @@ BX_CPU_C::XADD_EdGd(BxInstruction_t *i)
+ 
+     SET_FLAGS_OSZAPC_32(op1_32, op2_32, sum_32, BX_INSTR_XADD32);
+ #else
+-  bx_panic("XADD_EdGd: not supported on < 80486\n");
++  bio->panic("XADD_EdGd: not supported on < 80486\n");
+ #endif
+ }
+ 
+@@ -842,7 +842,7 @@ BX_CPU_C::CMPXCHG_EdGd(BxInstruction_t *
+       EAX = op1_32;
+       }
+ #else
+-  bx_panic("CMPXCHG_EdGd:\n");
++  bio->panic("CMPXCHG_EdGd:\n");
+ #endif
+ }
+ 
+@@ -851,12 +851,12 @@ BX_CPU_C::CMPXCHG8B(BxInstruction_t *i)
+ {
+ #if (BX_CPU_LEVEL >= 5) || (BX_CPU_LEVEL_HACKED >= 5)
+   if (i->mod != 0xc0) {
+-    bx_printf("CMPXCHG8B: dest is reg: #UD\n");
++    bio->printf("[CPU%u] CMPXCHG8B: dest is reg: #UD\n", BX_SIM_ID);
+     UndefinedOpcode(i);
+     }
+-  bx_panic("CMPXCHG8B: not implemented yet\n");
++  bio->panic("[CPU%u] CMPXCHG8B: not implemented yet\n", BX_SIM_ID);
+ #else
+-  bx_printf("CMPXCHG8B: not implemented yet\n");
++  bio->printf("[CPU%u] CMPXCHG8B: not implemented yet\n", BX_SIM_ID);
+   UndefinedOpcode(i);
+ #endif
+ }

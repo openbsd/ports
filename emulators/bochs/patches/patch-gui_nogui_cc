@@ -1,0 +1,56 @@
+$OpenBSD: patch-gui_nogui_cc,v 1.1 2001/02/02 16:59:10 todd Exp $
+--- gui/nogui.cc.orig	Sat Mar 25 21:43:36 2000
++++ gui/nogui.cc	Fri Oct 20 11:37:22 2000
+@@ -25,7 +25,6 @@
+ #include "bochs.h"
+ #include "icon_bochs.h"
+ 
+-
+ // This file defines stubs for the GUI interface, which is a
+ // place to start if you want to port bochs to a platform, for
+ // which there is no support for your native GUI, or if you want to compile
+@@ -66,9 +65,15 @@ bx_gui_c::specific_init(bx_gui_c *th, in
+   UNUSED(headerbar_y);
+ 
+   UNUSED(bochs_icon_bits);  // global variable
++// if not using debugger, then we can take control of SIGINT.
++// If using debugger, it needs control of this.
++#if BX_DEBUGGER==0
++  signal(SIGINT, bx_signal_handler);
++#endif
++
+ 
+   if (bx_options.private_colormap) {
+-    fprintf(stderr, "# WARNING: NOGUI: private_colormap option ignored.\n");
++    bio->printf("#NOGUI] WARNING: private_colormap option ignored.\n");
+     }
+ }
+ 
+@@ -126,10 +131,9 @@ bx_gui_c::clear_screen(void)
+ //
+ // cursor_x: new x location of cursor
+ // cursor_y: new y location of cursor
+-
+   void
+ bx_gui_c::text_update(Bit8u *old_text, Bit8u *new_text,
+-                      unsigned long cursor_x, unsigned long cursor_y
++                      unsigned long cursor_x, unsigned long cursor_y,
+                       unsigned nrows)
+ {
+   UNUSED(old_text);
+@@ -150,6 +154,8 @@ bx_gui_c::text_update(Bit8u *old_text, B
+   Boolean
+ bx_gui_c::palette_change(unsigned index, unsigned red, unsigned green, unsigned blue)
+ {
++  bio->printf("[NOGUI] color pallete request (%d,%d,%d,%d) ignored\n",
++		index,red,green,blue);
+   UNUSED(index);
+   UNUSED(red);
+   UNUSED(green);
+@@ -285,5 +291,5 @@ bx_gui_c::replace_bitmap(unsigned hbar_i
+   void
+ bx_gui_c::exit(void)
+ {
+-  fprintf(stderr, "# WARNING: win32: bx_gui_c::exit() not implemented yet.\n");
++	bio->printf("[NOGUI] exiting\n");
+ }

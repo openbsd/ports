@@ -1,0 +1,85 @@
+$OpenBSD: patch-cpu_paging_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
+--- cpu/paging.cc.orig	Sat Mar 25 21:39:26 2000
++++ cpu/paging.cc	Tue Oct 31 12:30:12 2000
+@@ -315,23 +315,23 @@ static unsigned priv_check[BX_PRIV_CHECK
+ BX_CPU_C::enable_paging(void)
+ {
+   TLB_flush();
+-  if (bx_dbg.paging) bx_printf("enable_paging():\n");
+-//fprintf(stderr, "#(%u)enable_paging():-------------------------\n", BX_SIM_ID);
++  if (bio->getdbg().paging) bio->printf("enable_paging():\n");
++//bio->printf("#(%u)enable_paging():-------------------------\n", BX_SIM_ID);
+ }
+ 
+   void
+ BX_CPU_C::disable_paging(void)
+ {
+   TLB_flush();
+-  if (bx_dbg.paging) bx_printf("disable_paging():\n");
++  if (bio->getdbg().paging) bio->printf("disable_paging():\n");
+ }
+ 
+   void
+ BX_CPU_C::CR3_change(Bit32u value32)
+ {
+-  if (bx_dbg.paging) {
+-    bx_printf("CR3_change(): flush TLB cache\n");
+-    bx_printf("Page Directory Base %08x\n", (unsigned) value32);
++  if (bio->getdbg().paging) {
++    bio->printf("CR3_change(): flush TLB cache\n");
++    bio->printf("Page Directory Base %08x\n", (unsigned) value32);
+     }
+ 
+   // flush TLB even if value does not change
+@@ -419,7 +419,7 @@ BX_CPU_C::INVLPG(BxInstruction_t* i)
+ 
+   // Operand must not be a register
+   if (i->mod == 0xc0) {
+-    bx_printf("INVLPG: op is a register");
++    bio->printf("INVLPG: op is a register");
+     UndefinedOpcode(i);
+     }
+   // Can not be executed in v8086 mode
+@@ -429,7 +429,7 @@ BX_CPU_C::INVLPG(BxInstruction_t* i)
+   // Protected instruction: CPL0 only
+   if (BX_CPU_THIS_PTR cr0.pe) {
+     if (CPL!=0) {
+-      bx_printf("INVLPG: CPL!=0\n");
++      bio->printf("INVLPG: CPL!=0\n");
+       exception(BX_GP_EXCEPTION, 0, 0);
+       }
+     }
+@@ -912,20 +912,20 @@ BX_CPU_C::access_linear(Bit32u laddress,
+   void
+ BX_CPU_C::enable_paging(void)
+ {
+-  bx_panic("enable_paging(): not implemented\n");
++  bio->panic("enable_paging(): not implemented\n");
+ }
+ 
+   void
+ BX_CPU_C::disable_paging(void)
+ {
+-  bx_panic("disable_paging() called\n");
++  bio->panic("disable_paging() called\n");
+ }
+ 
+   void
+ BX_CPU_C::CR3_change(Bit32u value32)
+ {
+-  bx_printf("CR3_change(): flush TLB cache\n");
+-  bx_printf("Page Directory Base %08x\n", (unsigned) value32);
++  bio->printf("CR3_change(): flush TLB cache\n");
++  bio->printf("Page Directory Base %08x\n", (unsigned) value32);
+ }
+ 
+ 
+@@ -944,7 +944,7 @@ BX_CPU_C::access_linear(Bit32u laddress,
+     return;
+     }
+ 
+-  bx_panic("access_linear: paging not supported\n");
++  bio->panic("access_linear: paging not supported\n");
+ }
+ 
+ 

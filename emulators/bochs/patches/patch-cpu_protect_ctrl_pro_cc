@@ -1,0 +1,43 @@
+$OpenBSD: patch-cpu_protect_ctrl_pro_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
+--- cpu/protect_ctrl_pro.cc.orig	Sat Mar 25 21:39:09 2000
++++ cpu/protect_ctrl_pro.cc	Tue Oct 17 12:04:01 2000
+@@ -34,15 +34,15 @@
+   void
+ BX_CPU_C::enter_protected_mode(void)
+ {
+-// bx_printf("processor switching into PROTECTED mode!!!\n");
++// bio->printf("processor switching into PROTECTED mode!!!\n");
+ // debug(BX_CPU_THIS_PTR prev_eip);
+-  if (v8086_mode()) bx_panic("protect_ctrl: v8086 mode unsupported\n");
++  if (v8086_mode()) bio->panic("protect_ctrl: v8086 mode unsupported\n");
+ 
+-  if (bx_dbg.reset)
+-    bx_printf("processor switching into PROTECTED mode!!!\n");
++  if (bio->getdbg().reset)
++    bio->printf("processor switching into PROTECTED mode!!!\n");
+ 
+ if ( BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].selector.rpl!=0 || BX_CPU_THIS_PTR sregs[BX_SEG_REG_SS].selector.rpl!=0 )
+-  bx_panic("enter_protected_mode: CS or SS rpl != 0\n");
++  bio->panic("enter_protected_mode: CS or SS rpl != 0\n");
+ }
+ 
+ 
+@@ -50,13 +50,13 @@ if ( BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS
+ BX_CPU_C::enter_real_mode(void)
+ {
+ // ???
+-// bx_printf("processor switching into REAL mode!!!\n");
++// bio->printf("processor switching into REAL mode!!!\n");
+ // debug(BX_CPU_THIS_PTR prev_eip);
+-  if (v8086_mode()) bx_panic("protect_ctrl: v8086 mode unsupported\n");
++  if (v8086_mode()) bio->panic("protect_ctrl: v8086 mode unsupported\n");
+ 
+-  if (bx_dbg.reset)
+-    bx_printf("processor switching into REAL mode!!!\n");
++  if (bio->getdbg().reset)
++    bio->printf("processor switching into REAL mode!!!\n");
+ 
+ if ( BX_CPU_THIS_PTR sregs[BX_SEG_REG_CS].selector.rpl!=0 || BX_CPU_THIS_PTR sregs[BX_SEG_REG_SS].selector.rpl!=0 )
+-  bx_panic("enter_real_mode: CS or SS rpl != 0\n");
++  bio->panic("enter_real_mode: CS or SS rpl != 0\n");
+ }

@@ -1,0 +1,39 @@
+$OpenBSD: patch-load32bitOShack_cc,v 1.1 2001/02/02 16:59:12 todd Exp $
+--- load32bitOShack.cc.orig	Sat Mar 25 21:23:19 2000
++++ load32bitOShack.cc	Tue Oct 17 12:04:03 2000
+@@ -45,7 +45,7 @@ bx_load32bitOSimagehack(void)
+   fp = fopen(bx_options.load32bitOSImage.iolog, "r");
+ 
+   if (fp == NULL) {
+-    bx_panic("could not open IO init file.\n");
++    bio->panic("could not open IO init file.\n");
+     }
+ 
+   while (1) {
+@@ -54,7 +54,7 @@ bx_load32bitOSimagehack(void)
+     ret = fscanf(fp, "%u %u %x %x\n",
+       &len, &op, &port, &val);
+     if (ret != 4) {
+-      bx_panic("could not open IO init file.\n");
++      bio->panic("could not open IO init file.\n");
+       }
+     if (op == 0) {
+       // read
+@@ -65,7 +65,7 @@ bx_load32bitOSimagehack(void)
+       bx_devices.outp(port, val, len);
+       }
+     else {
+-      bx_panic("bad IO op in init filen");
++      bio->panic("bad IO op in init filen");
+       }
+     if (feof(fp)) break;
+     }
+@@ -79,7 +79,7 @@ bx_load32bitOSimagehack(void)
+       bx_load_null_kernel_hack();
+       break;
+     default:
+-      bx_panic("load32bitOSImage: OS not recognized\n");
++      bio->panic("load32bitOSImage: OS not recognized\n");
+     }
+ }
+ 

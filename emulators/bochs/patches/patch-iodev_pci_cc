@@ -1,0 +1,121 @@
+$OpenBSD: patch-iodev_pci_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
+--- iodev/pci.cc.orig	Sat Mar 25 21:28:49 2000
++++ iodev/pci.cc	Fri Oct 20 16:25:43 2000
+@@ -118,15 +118,17 @@ bx_pci_c::read(Bit32u address, unsigned 
+         default:
+           retMask = 0xFFFFFFFF; break;
+         }
+-      bx_printf("440FX IO read from port: %04x, len: %02x, data: %04x\n",
++	if(bio->getdbg().io)
++      bio->printf("[440FX] IO read from port: %04x, len: %02x, data: %04x\n",
+                 address, io_len, (val440fx & retMask));
+       return (val440fx & retMask);
+       }
+     }
+ 
+-  bx_panic("pci: unsupported IO read to port 0x%x\n",
+-           (unsigned) address);
+-  return(0xffffffff);
++	if(bio->getdbg().unsupported_io)
++  		bio->printf("pci: unsupported IO read to port 0x%x\n",
++			(unsigned) address);
++	return(0xffffffff);
+ }
+ 
+ 
+@@ -152,7 +154,8 @@ bx_pci_c::write(Bit32u address, Bit32u v
+   switch (address) {
+     case 0xCF8:
+       BX_PCI_THIS s.i440fx.confAddr = value;
+-      bx_printf("440FX IO write to port %04x of %04x, len %02x \n",
++	if(bio->getdbg().io)
++      bio->printf("[PCI] 440FX IO write to port %04x of %04x, len %02x \n",
+                 address, value, io_len);
+       break;
+ 
+@@ -173,7 +176,8 @@ bx_pci_c::write(Bit32u address, Bit32u v
+       if (BX_PCI_THIS s.i440fx.confAddr & 0x80000000) {
+         idx = (BX_PCI_THIS s.i440fx.confAddr & 0xFC);
+         BX_PCI_THIS s.i440fx.array[idx] = (BX_PCI_THIS s.i440fx.array[idx] & ~dMask) | (value & dMask);
+-        bx_printf("440FX IO write to port %04x of %04x, len %02x \n",
++	if(bio->getdbg().io)
++        bio->printf("440FX IO write to port %04x of %04x, len %02x \n",
+                   address, value, io_len);
+         }
+      }
+@@ -194,7 +198,8 @@ bx_pci_c::write(Bit32u address, Bit32u v
+       if (BX_PCI_THIS s.i440fx.confAddr & 0x80000000) {
+         idx = (BX_PCI_THIS s.i440fx.confAddr & 0xFC);
+         BX_PCI_THIS s.i440fx.array[idx] = (BX_PCI_THIS s.i440fx.array[idx] & ~dMask) | ((value << 8) & dMask);
+-        bx_printf("440FX IO write to port %04x of %04x, len %02x \n",
++	if(bio->getdbg().io)
++        bio->printf("440FX IO write to port %04x of %04x, len %02x \n",
+                   address, value, io_len);
+         }
+      }
+@@ -215,7 +220,8 @@ bx_pci_c::write(Bit32u address, Bit32u v
+       if (BX_PCI_THIS s.i440fx.confAddr & 0x80000000) {
+         idx = (BX_PCI_THIS s.i440fx.confAddr & 0xFC);
+         BX_PCI_THIS s.i440fx.array[idx] = (BX_PCI_THIS s.i440fx.array[idx] & ~dMask) | ((value << 16) & dMask);
+-        bx_printf("440FX IO write to port %04x of %04x, len %02x \n",
++	if(bio->getdbg().io)
++        bio->printf("440FX IO write to port %04x of %04x, len %02x \n",
+                   address, value, io_len);
+         }
+      }
+@@ -234,14 +240,16 @@ bx_pci_c::write(Bit32u address, Bit32u v
+       if (BX_PCI_THIS s.i440fx.confAddr & 0x80000000) {
+         idx = (BX_PCI_THIS s.i440fx.confAddr & 0xFC);
+         BX_PCI_THIS s.i440fx.array[idx] = (BX_PCI_THIS s.i440fx.array[idx] & ~dMask) | ((value << 24) & dMask);
+-        bx_printf("440FX IO write to port %04x of %04x, len %02x \n",
++	if(bio->getdbg().io)
++        bio->printf("440FX IO write to port %04x of %04x, len %02x \n",
+                   address, value, io_len);
+         }
+      }
+      break;
+ 
+     default:
+-      bx_panic("pci: IO write to port 0x%x\n", (unsigned) address);
++	if(bio->getdbg().unsupported_io)
++		bio->printf("pci: IO write to port 0x%x\n", (unsigned) address);
+     }
+ }
+ 
+@@ -315,8 +323,10 @@ bx_pci_c::rd_memType (Bit32u addr)
+            return (mapRead ( (BX_PCI_THIS s.i440fx.array[0x58] >> 12) & 0x3));
+ 
+       default:
+-           bx_panic ("wr_memType () Error: Memory Type not known !\n");
+-           return(0); // keep compiler happy
++	if(bio->getdbg().unsupported_io)
++           bio->printf("[PCI] rd_memType(): Memory Type(0x%x) not known !\n",
++			(addr & 0xFC000) >> 12);
++           return(0);
+            break;
+    }
+ 
+@@ -361,8 +371,10 @@ bx_pci_c::wr_memType (Bit32u addr)
+            return (mapWrite ( (BX_PCI_THIS s.i440fx.array[0x58] >> 12) & 0x3));
+ 
+       default:
+-           bx_panic ("rd_memType () Error: Memory Type not known !\n");
+-           return(0); // keep compiler happy
++	if(bio->getdbg().unsupported)
++           bio->printf("[PCI] wr_memType(): Memory Type 0x%x not known !\n",
++		(addr & 0xFC000) >> 12);
++           return(0);
+            break;
+    }
+ }
+@@ -398,7 +410,9 @@ bx_pci_c::i440fx_fetch_ptr(Bit32u addr)
+       case 0x1:   // Read from ROM
+         return (&bx_pci.s.i440fx.shadow[(addr - 0xc0000)]);
+       default:
+-        bx_panic("i440fx_fetch_ptr(): default case\n");
++	if(bio->getdbg().unsupported_io)
++        	bio->printf("[PCI] i440fx_fetch_ptr(): default case 0x%x\n",
++			bx_pci.rd_memType(addr));
+         return(0);
+       }
+     }

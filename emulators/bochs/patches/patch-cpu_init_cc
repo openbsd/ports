@@ -1,0 +1,68 @@
+$OpenBSD: patch-cpu_init_cc,v 1.1 2001/02/02 16:59:08 todd Exp $
+--- cpu/init.cc.orig	Sat Mar 25 21:39:08 2000
++++ cpu/init.cc	Thu Oct 19 10:56:32 2000
+@@ -36,7 +36,7 @@ BX_CPU_C::BX_CPU_C(void)
+ {
+   // BX_CPU_C constructor
+ 
+-  bx_printf("(%u)BX_CPU_C::BX_CPU_C(void) called\n", BX_SIM_ID);
++  bio->printf("[CPU%u] BX_CPU_C::BX_CPU_C(void) called\n", BX_SIM_ID);
+ 
+   /* hack for the following fields.  Its easier to decode mod-rm bytes if
+      you can assume there's always a base & index register used.  For
+@@ -153,8 +153,8 @@ BX_CPU_C::BX_CPU_C(void)
+   DTRead16vShim = NULL;
+   DTRead32vShim = NULL;
+   DTReadRMW8vShim = (BxDTShim_t) DTASReadRMW8vShim;
+-fprintf(stderr, "DTReadRMW8vShim is %x\n", (unsigned) DTReadRMW8vShim);
+-fprintf(stderr, "&DTReadRMW8vShim is %x\n", (unsigned) &DTReadRMW8vShim);
++bio->printf("[CPU%u] DTReadRMW8vShim is %x\n", BX_SIM_ID, (unsigned) DTReadRMW8vShim);
++bio->printf("[CPU%u] &DTReadRMW8vShim is %x\n", BX_SIM_ID, (unsigned) &DTReadRMW8vShim);
+   DTReadRMW16vShim = NULL;
+   DTReadRMW32vShim = NULL;
+   DTWriteRMW8vShim = (BxDTShim_t) DTASWriteRMW8vShim;
+@@ -171,7 +171,7 @@ fprintf(stderr, "&DTReadRMW8vShim is %x\
+ 
+ BX_CPU_C::~BX_CPU_C(void)
+ {
+-  bx_printf("(%u)BX_CPU_C::~BX_CPU_C(void) called\n", BX_SIM_ID);
++  bio->printf("[CPU%u] BX_CPU_C::~BX_CPU_C(void) called\n", BX_SIM_ID);
+   BX_INSTR_SHUTDOWN();
+ }
+ 
+@@ -590,7 +590,7 @@ BX_CPU_C::sanity_checks(void)
+        ch != ((ECX >> 8) & 0xFF) ||
+        dh != ((EDX >> 8) & 0xFF) ||
+        bh != ((EBX >> 8) & 0xFF) ) {
+-    bx_panic("problems using BX_READ_8BIT_REG()!\n");
++    bio->panic("problems using BX_READ_8BIT_REG()!\n");
+     }
+ 
+   ax = AX;
+@@ -610,7 +610,7 @@ BX_CPU_C::sanity_checks(void)
+        bp != (EBP & 0xFFFF) ||
+        si != (ESI & 0xFFFF) ||
+        di != (EDI & 0xFFFF) ) {
+-    bx_panic("problems using BX_READ_16BIT_REG()!\n");
++    bio->panic("problems using BX_READ_16BIT_REG()!\n");
+     }
+ 
+ 
+@@ -625,13 +625,13 @@ BX_CPU_C::sanity_checks(void)
+ 
+ 
+   if (sizeof(Bit8u)  != 1  ||  sizeof(Bit8s)  != 1)
+-    bx_panic("data type Bit8u or Bit8s is not of length 1 byte!\n");
++    bio->panic("data type Bit8u or Bit8s is not of length 1 byte!\n");
+   if (sizeof(Bit16u) != 2  ||  sizeof(Bit16s) != 2)
+-    bx_panic("data type Bit16u or Bit16s is not of length 2 bytes!\n");
++    bio->panic("data type Bit16u or Bit16s is not of length 2 bytes!\n");
+   if (sizeof(Bit32u) != 4  ||  sizeof(Bit32s) != 4)
+-    bx_panic("data type Bit32u or Bit32s is not of length 4 bytes!\n");
++    bio->panic("data type Bit32u or Bit32s is not of length 4 bytes!\n");
+ 
+-  fprintf(stderr, "#(%u)all sanity checks passed!\n", BX_SIM_ID);
++  bio->printf("#CPU%u] all sanity checks passed!\n", BX_SIM_ID);
+ }
+ 
+ 

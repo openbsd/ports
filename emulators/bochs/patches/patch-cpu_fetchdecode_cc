@@ -1,0 +1,42 @@
+$OpenBSD: patch-cpu_fetchdecode_cc,v 1.1 2001/02/02 16:59:08 todd Exp $
+--- cpu/fetchdecode.cc.orig	Sat Mar 25 21:39:08 2000
++++ cpu/fetchdecode.cc	Tue Oct 17 12:04:01 2000
+@@ -1458,7 +1458,7 @@ another_byte:
+           break;
+ 
+         default:
+-bx_panic("fetch_decode: prefix default = 0x%02x\n", b1);
++bio->panic("fetch_decode: prefix default = 0x%02x\n", b1);
+         }
+       }
+     // opcode requires another byte
+@@ -1867,8 +1867,8 @@ modrm_done:
+           }
+         break;
+       default:
+-bx_printf("b1 was %x\n", b1);
+-        bx_panic("fetchdecode: imm_mode = %u\n", imm_mode);
++bio->printf("b1 was %x\n", b1);
++        bio->panic("fetchdecode: imm_mode = %u\n", imm_mode);
+       }
+     }
+ 
+@@ -1884,10 +1884,7 @@ bx_printf("b1 was %x\n", b1);
+ BxError(BxInstruction_t *i)
+ {
+   // extern void dump_core();
+-  bx_printf("BxError: instruction with op1=0x%x\n", i->b1);
+-  bx_printf("nnn was %u\n", i->nnn);
+-
+-  bx_printf("WARNING: Encountered an unknown instruction (signalling illegal instruction):\n");
++  bio->printf("BxError: instruction with op1=0x%x, nnn = %u, unknown instruction\n", i->b1, i->nnn);
+   // dump_core();
+ 
+   BX_CPU_THIS_PTR UndefinedOpcode(i);
+@@ -1896,5 +1893,5 @@ BxError(BxInstruction_t *i)
+   void
+ BxResolveError(BxInstruction_t *i)
+ {
+-  bx_panic("BxResolveError: instruction with op1=0x%x\n", i->b1);
++  bio->panic("BxResolveError: instruction with op1=0x%x\n", i->b1);
+ }

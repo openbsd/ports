@@ -1,6 +1,6 @@
---- debug/lexer.l.orig	Tue Jul 18 00:05:31 2000
-+++ debug/lexer.l	Tue Jul 18 00:05:42 2000
-@@ -105,7 +105,7 @@
+--- debug/lexer.l.orig	Mon Nov  1 19:17:09 1999
++++ debug/lexer.l	Tue Oct  3 13:18:08 2000
+@@ -105,7 +105,7 @@ v2l             { bxlval.sval = strdup(b
  \/[0-9]+                           { bxlval.sval = strdup(bxtext); return(BX_TOKEN_XFORMAT); }
  0x[0-9a-fA-F]+  { bxlval.uval = strtoul(bxtext+2, NULL, 16); return(BX_TOKEN_NUMERIC); }
  0[0-7]+         { bxlval.uval = strtoul(bxtext+1, NULL, 8); return(BX_TOKEN_NUMERIC); }

@@ -1,0 +1,12 @@
+$OpenBSD: patch-cpu_shift16_cc,v 1.1 2001/02/02 16:59:09 todd Exp $
+--- cpu/shift16.cc.orig	Sat Mar 25 21:39:09 2000
++++ cpu/shift16.cc	Tue Oct 17 12:04:01 2000
+@@ -91,7 +91,7 @@ BX_CPU_C::SHLD_EwGw(BxInstruction_t *i)
+ BX_CPU_C::SHRD_EwGw(BxInstruction_t *i)
+ {
+ #if BX_CPU_LEVEL < 3
+-  bx_panic("shrd_evgvib: not supported on < 386\n");
++  bio->panic("shrd_evgvib: not supported on < 386\n");
+ #else
+   Bit16u op1_16, op2_16, result_16;
+   Bit32u temp_32, result_32;

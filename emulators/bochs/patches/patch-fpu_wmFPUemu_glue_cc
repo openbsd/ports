@@ -1,0 +1,64 @@
+$OpenBSD: patch-fpu_wmFPUemu_glue_cc,v 1.1 2001/02/02 16:59:10 todd Exp $
+--- fpu/wmFPUemu_glue.cc.orig	Sat Mar 25 21:57:00 2000
++++ fpu/wmFPUemu_glue.cc	Tue Oct 17 12:04:03 2000
+@@ -155,7 +155,7 @@ fpu_verify_area(unsigned what, void *ptr
+   void
+ FPU_printall(void)
+ {
+-  bx_panic("FPU_printall\n");
++  bio->panic("FPU_printall\n");
+ }
+ 
+ 
+@@ -179,7 +179,7 @@ fpu_get_user(void *ptr, unsigned len)
+       BX_CPU.read_virtual_dword(fpu_iptr->seg, (Bit32u) ptr, &val32);
+       break;
+     default:
+-      bx_panic("fpu_get_user: len=%u\n", len);
++      bio->panic("fpu_get_user: len=%u\n", len);
+     }
+   return(val32);
+ }
+@@ -205,7 +205,7 @@ fpu_put_user(unsigned val, void *ptr, un
+       BX_CPU.write_virtual_dword(fpu_iptr->seg, (Bit32u) ptr, &val32);
+       break;
+     default:
+-      bx_panic("fpu_put_user: len=%u\n", len);
++      bio->panic("fpu_put_user: len=%u\n", len);
+     }
+ }
+ 
+@@ -223,28 +223,28 @@ math_abort(struct info *info, unsigned i
+     case SIGFPE:
+       if (BX_CPU.cr0.ne == 0) {
+         // MSDOS compatibility external interrupt (IRQ13)
+-        bx_panic("math_abort: MSDOS compatibility not supported yet\n");
++        bio->panic("math_abort: MSDOS compatibility not supported yet\n");
+         }
+       BX_CPU.exception(BX_MF_EXCEPTION, 0, 0);
+       // execution does not reach here
+ 
+     case SIGILL:
+-      bx_panic("math_abort: SIGILL not implemented yet.\n");
++      bio->panic("math_abort: SIGILL not implemented yet.\n");
+       break;
+     case SIGSEGV:
+-      bx_panic("math_abort: SIGSEGV not implemented yet.\n");
++      bio->panic("math_abort: SIGSEGV not implemented yet.\n");
+       break;
+     }
+ 
+ #else
+   UNUSED(signal);
+-  bx_panic("math_abort: CPU<4 not supported yet\n");
++  bio->panic("math_abort: CPU<4 not supported yet\n");
+ #endif
+ }
+ 
+   int
+ printk(const char * fmt, ...)
+ {
+-  bx_printf("printk not complete: %s\n", fmt);
++  bio->printf("printk not complete: %s\n", fmt);
+   return(0); // for now
+ }

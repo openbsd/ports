@@ -1,0 +1,100 @@
+$OpenBSD: patch-iodev_eth_obsd_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
+--- iodev/eth_obsd.cc.orig	Wed Oct 18 20:20:38 2000
++++ iodev/eth_obsd.cc	Wed Oct 18 20:27:29 2000
+@@ -0,0 +1,96 @@
++//  Copyright (C) 2000  MandrakeSoft S.A.
++//
++//    MandrakeSoft S.A.
++//    43, rue d'Aboukir
++//    75002 Paris - France
++//    http://www.linux-mandrake.com/
++//    http://www.mandrakesoft.com/
++//
++//  This library is free software; you can redistribute it and/or
++//  modify it under the terms of the GNU Lesser General Public
++//  License as published by the Free Software Foundation; either
++//  version 2 of the License, or (at your option) any later version.
++//
++//  This library is distributed in the hope that it will be useful,
++//  but WITHOUT ANY WARRANTY; without even the implied warranty of
++//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++//  Lesser General Public License for more details.
++//
++//  You should have received a copy of the GNU Lesser General Public
++//  License along with this library; if not, write to the Free Software
++//  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
++
++#include "bochs.h"
++
++extern "C" {
++#include <sys/param.h>
++#include <netinet/in.h>
++#include <net/if_types.h>
++#include <net/if_tun.h>
++#include <netinet/in_systm.h>
++#include <netinet/ip.h>
++#include <sys/un.h>
++#include <sys/ioctl.h>
++#include <termios.h>
++
++};
++
++//
++//  Define the class. This is private to this module
++//
++class bx_obsd_pktmover_c : public eth_pktmover_c {
++public:
++  bx_obsd_pktmover_c(const char *netif, const char *macaddr,
++		     eth_rx_handler_t rxh,
++		     void *rxarg);
++  void sendpkt(void *buf, unsigned io_len);
++};
++
++
++//
++//  Define the static class that registers the derived pktmover class,
++// and allocates one on request.
++//
++class bx_obsd_locator_c : public eth_locator_c {
++public:
++  bx_obsd_locator_c(void) : eth_locator_c("obsd") {}
++protected:
++  eth_pktmover_c *allocate(const char *netif, const char *macaddr,
++			   eth_rx_handler_t rxh,
++			   void *rxarg) {
++	struct tuninfo info;
++	memset(&info, '\0', sizeof info);
++	info.type = IFT_PPP;
++	info.mtu = mtu;
++
++	info.baudrate = bundle->bandwidth;
++	info.flags = IFF_UP|IFF_POINTOPOINT;
++	if (ioctl(bundle->dev.fd, TUNSIFINFO, &info) < 0)
++		bio->printf("ioctl(TUNSIFINFO): %s\n",
++			strerror(errno));
++
++    return (new bx_obsd_pktmover_c(netif, macaddr, rxh, rxarg));
++  }
++} bx_obsd_match;
++
++
++//
++// Define the methods for the bx_obsd_pktmover derived class
++//
++
++// the constructor
++bx_obsd_pktmover_c::bx_obsd_pktmover_c(const char *netif, 
++				       const char *macaddr,
++				       eth_rx_handler_t rxh,
++				       void *rxarg)
++{
++  // Nothing here.
++}
++
++// the output routine - called with pre-formatted ethernet frame.
++void
++bx_obsd_pktmover_c::sendpkt(void *buf, unsigned io_len)
++{
++  // silent discard.
++}
++

@@ -1,0 +1,126 @@
+$OpenBSD: patch-bxio_h,v 1.1 2001/02/02 16:59:06 todd Exp $
+--- bxio.h.orig	Mon Oct 23 22:25:25 2000
++++ bxio.h	Tue Oct 31 13:13:50 2000
+@@ -0,0 +1,122 @@
++//  Copyright (C) 2000  MandrakeSoft S.A.
++//
++//    MandrakeSoft S.A.
++//    43, rue d'Aboukir
++//    75002 Paris - France
++//    http://www.linux-mandrake.com/
++//    http://www.mandrakesoft.com/
++//
++//  This library is free software; you can redistribute it and/or
++//  modify it under the terms of the GNU Lesser General Public
++//  License as published by the Free Software Foundation; either
++//  version 2 of the License, or (at your option) any later version.
++//
++//  This library is distributed in the hope that it will be useful,
++//  but WITHOUT ANY WARRANTY; without even the implied warranty of
++//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++//  Lesser General Public License for more details.
++//
++//  You should have received a copy of the GNU Lesser General Public
++//  License along with this library; if not, write to the Free Software
++//  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
++
++
++#ifndef BXIO_H
++#  define BXIO_H 1
++
++extern "C" {
++#include <stdarg.h>
++#include <stdio.h>
++#include <stdlib.h>
++#ifndef WIN32
++#  include <unistd.h>
++#else
++#  include <io.h>
++#endif
++#include <time.h>
++#ifdef macintosh
++#  include <types.h>
++#  include <stat.h>
++#  include <utime.h>
++#else
++#  ifndef WIN32
++#    include <sys/time.h>
++#  endif
++#  include <sys/types.h>
++#  include <sys/stat.h>
++#endif
++#include <ctype.h>
++#include <string.h>
++#include <fcntl.h>
++#ifdef macintosh
++#  include "macutils.h"
++#  define SuperDrive "[fd:]"
++#endif
++}
++
++typedef struct bx_debug {
++  Boolean cpu;
++  Boolean floppy;
++  Boolean keyboard;
++  Boolean video;
++  Boolean disk;
++  Boolean pit;
++  Boolean pic;
++  Boolean bios;
++  Boolean cmos;
++  Boolean a20;
++  Boolean interrupts;
++  Boolean exceptions;
++  Boolean unsupported;
++  Boolean temp;
++  Boolean reset;
++  Boolean debugger;
++  Boolean mouse;
++  Boolean io;
++  Boolean xms;
++  Boolean v8086;
++  Boolean paging;
++  Boolean creg;
++  Boolean dreg;
++  Boolean dma;
++  Boolean unsupported_io;
++  Boolean serial;
++  Boolean cdrom;
++  Boolean network;
++#ifdef MAGIC_BREAKPOINT
++  Boolean magic_break_enabled;
++#endif /* MAGIC_BREAKPOINT */
++  void* record_io;
++  } bx_debug_t;
++
++class bxio {
++	void init_debug(void);
++	void init(void);
++public:
++	bxio(int fd);
++	bxio(char *fn);
++	bxio(FILE *fs);
++	bxio(void);
++	~bxio(void);
++	void set_attribs(int attr);
++	void init_log(FILE *fs);
++	void init_log(int fd);
++	void init_log(char *fn);
++	void panic(char *fmt, ...);
++	void printf(char *fmt, ...);
++	void atexit(void);
++	bx_debug_t getdbg(void);
++	void setdbg(bx_debug_t dbg);
++	void flush(void);
++protected:
++	bx_debug_t dbg;
++	FILE *logfd;
++	char *logfn;
++	int status;
++	int showtick;
++};
++
++typedef class bxio bxio_t;
++extern bxio_t *bio;
++
++#endif  /* BXIO_H */
