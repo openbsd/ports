@@ -39,7 +39,7 @@ int argc; char **argv;
 
 	if (argc!=3)
 	{
-		fprintf(stderr, "usage: tcpblast destination nblkocks\n");
+		fprintf(stderr, "usage: tcpblast destination nblocks\n");
 		fprintf(stderr, "blocksize: %d bytes\n", BLKSIZE);
 		exit(1);
 	}
