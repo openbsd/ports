@@ -1,55 +1,31 @@
---- src/Makefile.orig	Mon Mar 16 14:52:25 1998
-+++ src/Makefile	Tue Jul 14 20:47:19 1998
-@@ -1,11 +1,17 @@
--
--####### This section will soon be automatically generated.  At the moment
--#######    it is for building with gcc.
--
-+####### This section was automatically generated from
-+#######    /openbsd/ports/x11/qt/work/qt-1.33/Makefile for building on
-+#######    openbsd-gcc-shared on Tue Jul 14 19:45:35 PDT 1998
-+
-+INCDIR = /openbsd/ports/x11/qt/work/qt-1.33/include
-+CFLAGS = -O2 -fno-strength-reduce -Wall -W -I/usr/X11R6/include
-+LIBCFLAGS = -fPIC
-+YACCCFLAGS = -Wno-unused -Wno-parentheses
-+LFLAGS = -L/openbsd/ports/x11/qt/work/qt-1.33/lib -lqt -L/usr/X11R6/lib
- CC = gcc
-+MOC = /openbsd/ports/x11/qt/work/qt-1.33/bin/moc
-+SHELL =	/bin/sh
- 
--####### End of not-yet-automatically generated section
--
-+####### End of automatically generated section
- #
- # $Source: /home/cvs/ports/x11/qt/patches/Attic/patch-ab,v $
- #
-@@ -65,7 +71,7 @@
- 
- VERSION=1.33
- 
--all: unconfigured # will be changed by ../Makefile
-+all: link-openbsd-gcc-shared
- 
- tools kernel widgets dialogs: FORCE
- 	cd $@; $(MAKE)
-@@ -249,6 +255,19 @@
- 	ar q libqt.a $(OBJECTS) $(METAOBJ)
- 	ranlib libqt.a
- 	mv libqt.a ../lib
-+
-+link-openbsd-gcc-shared: link-openbsd-gcc-static
-+	-rm -f ../lib/libqt.so.$(VERSION)
-+	ld -Bshareable \
-+		-o libqt.so.$(VERSION) \
-+		`lorder /usr/lib/c++rt0.o $(OBJECTS) $(METAOBJ) | tsort` \
-+		-L/usr/X11R6/lib -lX11
-+	mv libqt.so.$(VERSION) ../lib
-+
-+link-openbsd-gcc-static: tools kernel widgets dialogs
-+	ar q libqt.a $(OBJECTS) $(METAOBJ)
-+	mv libqt.a ../lib
-+	ranlib ../lib/libqt.a
- 
- link-osf1-cxx-shared: tools kernel widgets dialogs
- 	-rm -f ../lib/libqt.so.$(VERSION)
+*** configs/openbsd-g++-static.orig	Fri Jul 10 02:24:41 1998
+--- configs/openbsd-g++-static	Wed Jul 22 17:54:44 1998
+***************
+*** 48,60 ****
+  SYSCONF_AR		= ar q
+  SYSCONF_LINK_TARGET_STATIC = lib$(TARGET).a
+  SYSCONF_LINK_LIB_STATIC	= rm -f $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC);  \
+! 				 $(SYSCONF_AR) $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) $(OBJECTS) $(OBJMOC) \
+  				 ranlib $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC)
+  # Compiling application source
+! SYSCONF_CFLAGS		= -O2 -fno-strength-reduce
+  # Compiling library source
+! SYSCONF_CFLAGS_LIB	= -O2 -fno-strength-reduce -fPIC
+  # Compiling shared-object source
+! SYSCONF_CFLAGS_SHOBJ	= -O2 -fno-strength-reduce -fPIC
+  SYSCONF_LINK_LIB	= $(SYSCONF_LINK_LIB_STATIC)
+  SYSCONF_LINK_TARGET	= $(SYSCONF_LINK_TARGET_STATIC)
+--- 48,60 ----
+  SYSCONF_AR		= ar q
+  SYSCONF_LINK_TARGET_STATIC = lib$(TARGET).a
+  SYSCONF_LINK_LIB_STATIC	= rm -f $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC);  \
+! 				 $(SYSCONF_AR) $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) $(OBJECTS) $(OBJMOC); \
+  				 ranlib $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC)
+  # Compiling application source
+! SYSCONF_CFLAGS		= -O2 -pipe -fno-strength-reduce
+  # Compiling library source
+! SYSCONF_CFLAGS_LIB	= -O2 -pipe -fno-strength-reduce -fPIC
+  # Compiling shared-object source
+! SYSCONF_CFLAGS_SHOBJ	= -O2 -pipe -fno-strength-reduce -fPIC
+  SYSCONF_LINK_LIB	= $(SYSCONF_LINK_LIB_STATIC)
+  SYSCONF_LINK_TARGET	= $(SYSCONF_LINK_TARGET_STATIC)
