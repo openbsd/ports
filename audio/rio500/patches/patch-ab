@@ -1,0 +1,11 @@
+--- include/libfon.h.orig	Sun Mar  5 16:14:21 2000
++++ include/libfon.h	Sun May 28 22:00:27 2000
+@@ -22,7 +22,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #include <sys/param.h>
+ #else
+ #include <stdint.h>

@@ -1,0 +1,11 @@
+--- lib/Makefile.in.orig	Fri Apr 21 04:47:46 2000
++++ lib/Makefile.in	Sun May 28 22:17:25 2000
+@@ -277,7 +277,7 @@
+ check: check-am
+ installcheck-am:
+ installcheck: installcheck-am
+-install-exec-am: install-libLIBRARIES
++install-exec-am:
+ install-exec: install-exec-am
+ 
+ install-data-am:

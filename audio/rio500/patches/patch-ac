@@ -1,0 +1,11 @@
+--- include/Makefile.in.orig	Fri Apr 21 04:48:07 2000
++++ include/Makefile.in	Sun May 28 22:16:16 2000
+@@ -211,7 +211,7 @@
+ install-exec-am:
+ install-exec: install-exec-am
+ 
+-install-data-am: install-includeHEADERS
++install-data-am:
+ install-data: install-data-am
+ 
+ install-am: all-am
