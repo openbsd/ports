@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/01/19 00:08:58 espie Exp $
+# $OpenBSD: Makefile,v 1.6 1999/02/05 01:22:37 marc Exp $
 #
 
 DISTNAME=       autoconf-2.13
@@ -8,7 +8,12 @@ MAINTAINER=	marc@OpenBSD.ORG
 
 MASTER_SITES=	${MASTER_SITE_GNU}
 
+# Both are needed for now as bsd.port.mk does not cause RUN_DEPENDS to
+# be created before running configure, which causes the build to do the
+# wrong thing.  The RUN_DEPENDS is needed for packages.
+#
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 GNU_CONFIGURE=	yes
 
