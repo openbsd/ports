@@ -3,7 +3,7 @@
 # Date created:		10 Nov 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.3 1998/07/26 06:28:59 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1999/04/08 22:41:17 marc Exp $
 #
 
 DISTNAME=	mm2.7
@@ -21,7 +21,6 @@ pre-install:
 	@(cd ${WRKSRC}/bin && rm -f *.orig)
 
 post-install:
-	@test -f /etc/mailcap || \
-		${INSTALL_DATA} ${PREFIX}/lib/metamail/mailcap /etc
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>

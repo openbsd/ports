@@ -50,11 +50,6 @@ man/man1/showpartial.1
 man/man1/showpicture.1
 man/man1/splitmail.1
 man/man4/mailcap.4
-@exec test -f /etc/mailcap || install -m 644 %D/lib/metamail/mailcap /etc
 @exec test -d /usr/X11R6 && mkfontdir %D/lib/metamail/fonts
 @dirrm lib/metamail/fonts
 @dirrm lib/metamail
-@unexec echo ""
-@unexec echo "*** To completely remove this package you must also remove the"
-@unexec echo "*** file /etc/mailcap"
-@unexec echo ""
