@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2002/02/17 07:13:40 brad Exp $
+# $OpenBSD: Makefile,v 1.40 2002/03/23 23:54:05 brad Exp $
 
 COMMENT=	"multi-screen window manager"
 
@@ -26,6 +26,9 @@ FLAVORS=	static
 FLAVOR?=
 
 .if ${FLAVOR:L} == "static"
+. if ${MACHINE_ARCH} == "sparc64"
+BROKEN=		"Static FLAVOR broken on ${MACHINE_ARCH}"
+. endif
 CONFIGURE_ENV=	LDFLAGS="-static"
 .endif
 
