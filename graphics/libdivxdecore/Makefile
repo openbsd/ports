@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/28 11:43:42 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/24 23:23:36 fgsch Exp $
 
 COMMENT=	"opendivx decoding API"
 
 DISTNAME=	libdivxdecore-0.4.7
 CATEGORIES=	graphics devel
-NEED_VERSION=	1.480
 MASTER_SITES=	http://download2.projectmayo.com/dnload/divx4linux/xmps/
 
 HOMEPAGE=	http://www.projectmayo.com/projects/detail.php?projectId=4

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/15 17:42:25 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/24 23:23:36 fgsch Exp $
 
 COMMENT=	"UUCP suite"
 
 DISTNAME=	uucp-1.06.2
 CATEGORIES=	net mail
-NEED_VERSION=	1.420
 MASTER_SITES=	${MASTER_SITE_GNU:=uucp/}
 
 PERMIT_PACKAGE_CDROM=	Yes
