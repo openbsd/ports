@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.314 2000/07/11 10:32:22 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.315 2000/07/14 23:01:12 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -396,7 +396,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # list-distfiles- list the distribution and patch files used by a port.
 #				  Typical use is (from the top level of the ports tree)
 #				  make ECHO_MSG=: list-distfiles | tee some-file
-# obj			- pre-build ${WRKDIR} -> ${WRKOBJDIR}/${PORTSUBDIR} links
+# obj			- pre-build ${WRKDIR} -> ${WRKOBJDIR}/${PKGPATH} links
 # print-depends - print all dependencies for the given package
 #
 # Default sequence for "all" is:  fetch checksum extract patch configure build
@@ -703,10 +703,10 @@ WRKBUILD?=		${WRKSRC}
 
 WRKPKG?=		${WRKBUILD}/pkg
 
-.if defined(WRKOBJDIR)
-__canonical_PORTSDIR!=	cd ${PORTSDIR}; pwd -P
-__canonical_CURDIR!=	cd ${.CURDIR}; pwd -P
-PORTSUBDIR=		${__canonical_CURDIR:S,${__canonical_PORTSDIR}/,,}
+.if !defined(PKGPATH)
+_PORTSDIR!=	cd ${PORTSDIR} && pwd -P
+_CURDIR!=	cd ${.CURDIR} && pwd -P
+PKGPATH=${_CURDIR:S,${_PORTSDIR}/,,}/
 .endif
 
 # A few aliases for *-install targets
@@ -1403,13 +1403,13 @@ ${_EXTRACT_COOKIE}:
 .else
 # What EXTRACT normally does:
 .  if defined(WRKOBJDIR)
-	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT}
-	@mkdir -p ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT}
+	@rm -rf ${WRKOBJDIR}/${PKGPATH}${_FEXT}
+	@mkdir -p ${WRKOBJDIR}/${PKGPATH}${_FEXT}
 	@if [ ! -L ${WRKDIR} ] || \
-	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PORTSUBDIR}${_FEXT} ]; then \
-		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT}"; \
+	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PKGPATH}${_FEXT} ]; then \
+		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PKGPATH}${_FEXT}"; \
 		rm -f ${WRKDIR}; \
-		ln -sf ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT} ${WRKDIR}; \
+		ln -sf ${WRKOBJDIR}/${PKGPATH}${_FEXT} ${WRKDIR}; \
 	fi
 .  else
 	@rm -rf ${WRKDIR}
@@ -1925,13 +1925,13 @@ list-distfiles:
 .if !target(obj)
 obj:
 .  if defined(WRKOBJDIR)
-	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT}
-	@mkdir -p ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT}
+	@rm -rf ${WRKOBJDIR}/${PKGPATH}${_FEXT}
+	@mkdir -p ${WRKOBJDIR}/${PKGPATH}${_FEXT}
 	@if [ ! -L ${WRKDIR} ] || \
-	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PORTSUBDIR}${_FEXT} ]; then \
-		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT}"; \
+	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PKGPATH}${_FEXT} ]; then \
+		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PKGPATH}${_FEXT}"; \
 		rm -f ${WRKDIR}; \
-		ln -sf ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT} ${WRKDIR}; \
+		ln -sf ${WRKOBJDIR}/${PKGPATH}${_FEXT} ${WRKDIR}; \
 	fi
 .  else
 	@echo ">>"
@@ -2051,7 +2051,7 @@ fetch-list-recursive:
 .  if ${RECURSIVE_FETCH_LIST:L} != "no"
 	@for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
 	| tr '\040' '\012' | sort -u`; do \
-		cd ${PORTSDIR} && cd $$dir && ${MAKE} fetch-list-recursive; \
+		cd ${PORTSDIR} && cd $$dir && PKGPATH="$$dir" ${MAKE} fetch-list-recursive; \
 	done
 .  endif # ${RECURSIVE_FETCH_LIST} != "NO"
 .endif # !target(fetch-list-recursive)
@@ -2130,12 +2130,12 @@ fetch-makefile:
 .if defined(PERMIT_DISTFILES_CDROM) && ${PERMIT_DISTFILES_CDROM:L} == "yes"
 	@echo -n " cdrom"
 .endif
-	@echo ":: "`${MAKE} package-name FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}`
+	@echo ":: ${PKGPATH}/${PKGNAME}"
 	@cd ${.CURDIR} && exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes _fetch-makefile-helper
 
 _fetch-makefile-helper:
 # write generic package dependencies
-	@name=`${MAKE} package-name FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}`; \
+	@name='${PKGPATH}/${PKGNAME}'; \
 	echo ".PHONY: $${name}"; \
 	case '${RECURSIVE_FETCH_LIST:L}' in yes) \
 	  echo "$${name}:: "`${MAKE} depends-list package-depends FULL_PACKAGE_NAME=Yes |${_SORT_DEPENDS}`;; \
@@ -2181,9 +2181,7 @@ _fetch-makefile-helper:
 
 # The README.html target needs full information (this is passed via 
 # depends-list and package-depends)
-.ifndef FULL_PACKAGE_NAME
-FULL_PACKAGE_NAME=No
-.endif 
+FULL_PACKAGE_NAME?=No
 
 # Make variables to pass along on recursive builds
 _DEPEND_THRU=FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME} FLAVOR='' SUBPACKAGE=''
@@ -2194,16 +2192,12 @@ _DEPEND_THRU=FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME} FLAVOR='' SUBPACKAGE=''
 .if !target(package-name)
 package-name:
 .  if (${FULL_PACKAGE_NAME:L} == "yes")
-	@${_DEPEND_ECHO} `${MAKE} package-path`/${PKGNAME}
+	@${_DEPEND_ECHO} '${PKGPATH}/${PKGNAME}'
 .  else
 	@${_DEPEND_ECHO} '${PKGNAME}'
 .  endif 
 .endif 
 
-.if !target(package-path)
-package-path:
-	@pwd | sed s@`cd ${PORTSDIR} ; pwd`/@@g
-.endif
 # Build a package but don't check the package cookie
 
 .if !target(repackage)
@@ -2264,7 +2258,7 @@ ${_DEP}-depends:
 		else \
 			${ECHO_MSG} "===>  ${PKGNAME} depends on file: $$prog - not found"; \
 			${ECHO_MSG} "===>  Verifying $$target for $$prog in $$dir"; \
-			if cd $$dir && ${MAKE} ${_DEPEND_THRU} $$target; then \
+			if cd $$dir && PKGPATH="$$dir" ${MAKE} ${_DEPEND_THRU} $$target; then \
 				${ECHO_MSG} "===> Returning to build of ${PKGNAME}"; \
 			else \
 				exit 1; \
@@ -2297,7 +2291,7 @@ lib-depends:
 		else \
 			${ECHO_MSG} "===>  ${PKGNAME} depends on library: $$lib - not found"; \
 			${ECHO_MSG} "===>  Verifying $$target for $$lib in $$dir"; \
-			if cd $$dir && ${MAKE} ${_DEPEND_THRU} $$target; then \
+			if cd $$dir && PKGPATH="$$dir" ${MAKE} ${_DEPEND_THRU} $$target; then \
 				${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
 			else \
 				rm -f $$tmp; \
@@ -2326,7 +2320,7 @@ lib-depends:
 		if [ "X$$reallib" = X"" ]; then \
 			${ECHO_MSG} "===>  ${PKGNAME} depends on shared library: $$libname - not found"; \
 			${ECHO_MSG} "===>  Verifying $$target for $$libname in $$dir"; \
-			if cd $$dir && ${MAKE} ${_DEPEND_THRU} $$target; then \
+			if cd $$dir && PKGPATH="$$dir" ${MAKE} ${_DEPEND_THRU} $$target; then \
 				${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
 			else \
 				exit 1; \
@@ -2354,7 +2348,7 @@ misc-depends:
 		fi; \
 		${ECHO_MSG} "===>  ${PKGNAME} depends on: $$dir"; \
 		${ECHO_MSG} "===>  Verifying $$target for $$dir"; \
-		if cd $$dir && ${MAKE} ${_DEPEND_THRU} $$target; then \
+		if cd $$dir && PKGPATH="$$dir" ${MAKE} ${_DEPEND_THRU} $$target; then \
 			${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
 		else \
 			exit 1; \
@@ -2387,7 +2381,7 @@ clean-depends:
 	   `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
 		if cd ${PORTSDIR} && cd $$dir 2>/dev/null ; then \
-			${MAKE} CLEANDEPENDS=No ${_DEPEND_THRU} clean clean-depends; \
+			PKGPATH="$$dir" ${MAKE} CLEANDEPENDS=No ${_DEPEND_THRU} clean clean-depends; \
 		fi \
 	done
 .  endif
@@ -2553,7 +2547,7 @@ recurse-build-depends:
 	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
 		 | tr '\040' '\012' | sort -u`; do \
 		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! ${MAKE} _DEPEND_ECHO="echo $$pname" package-name recurse-build-depends ${_DEPEND_THRU}; then  \
+			if ! PKGPATH="$$dir" ${MAKE} _DEPEND_ECHO="echo $$pname" package-name recurse-build-depends ${_DEPEND_THRU}; then  \
 				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 				exit 1; \
 			fi; \
@@ -2573,7 +2567,7 @@ depends-list:
 	@for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
 		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! ${MAKE} recurse-build-depends ${_DEPEND_THRU}; then  \
+			if ! PKGPATH="$$dir" ${MAKE} recurse-build-depends ${_DEPEND_THRU}; then  \
 				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 				exit 1; \
 			fi; \
@@ -2593,7 +2587,7 @@ recurse-package-depends:
 	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
 		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! ${MAKE} _DEPEND_ECHO="echo $$pname" package-name recurse-package-depends ${_DEPEND_THRU}; then  \
+			if ! PKGPATH="$$dir" ${MAKE} _DEPEND_ECHO="echo $$pname" package-name recurse-package-depends ${_DEPEND_THRU}; then  \
 				echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
 				exit 1; \
 			fi; \
@@ -2613,7 +2607,7 @@ package-depends:
 	@for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
 		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! ${MAKE} recurse-package-depends ${_DEPEND_THRU}; then  \
+			if ! PKGPATH="$$dir" ${MAKE} recurse-package-depends ${_DEPEND_THRU}; then  \
 				echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
 				exit 1; \
 			fi; \
@@ -2641,7 +2635,7 @@ readme:
 HTMLIFY=	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
 
 .if make(README.html) || make(readme) || make(readmes)
-PKGDEPTH!=${MAKE} package-path|sed -e 's|[^./][^/]*|..|g'
+PKGDEPTH!=echo ${PKGPATH}|sed -e 's|[^./][^/]*|..|g'
 .endif
 
 .if !target(print-depends)
@@ -2721,7 +2715,7 @@ tags:
    fetch-list-recursive install lib-depends makesum mirror-distfiles \
    cdrom-packages ftp-packages \
    misc-depends package package-depends package-links package-name \
-   package-noinstall package-path patch plist update-patches post-build \
+   package-noinstall patch plist update-patches post-build \
    post-configure post-extract post-fetch post-install post-package \
    post-patch pre-build pre-clean pre-configure pre-distclean \
    pre-extract pre-fetch pre-install pre-package pre-patch \

@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.27 2000/06/24 14:12:33 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.28 2000/07/14 23:01:11 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -49,6 +49,16 @@ STRIP?=	-s
 OPSYS=	OpenBSD
 .endif
 
+.if !defined(PKGPATH)
+_PORTSDIR!=	cd ${PORTSDIR} && pwd -P
+_CURDIR!=	cd ${.CURDIR} && pwd -P
+.  if ${_PORTSDIR} == ${_CURDIR}
+PKGPATH=
+.  else
+PKGPATH=${_CURDIR:S,${_PORTSDIR}/,,}/
+.  endif
+.endif
+
 ECHO_MSG?=	echo
 
 RECURSIVE_FETCH_LIST?=	No
@@ -59,7 +69,7 @@ _SUBDIRUSE: .USE
 	@for entry in ${SUBDIR}; do \
 		for dud in $$DUDS; do \
 			if [ $${dud} = $${entry} ]; then \
-				${ECHO_MSG} "===> ${DIRPRFX}$${entry} skipped"; \
+				${ECHO_MSG} "===> ${PKGPATH}$${entry} skipped"; \
 				continue 2; \
 			fi; \
 		done; \
@@ -78,12 +88,12 @@ _SUBDIRUSE: .USE
 		elif cd ${.CURDIR}/$${entry} 2>/dev/null; then \
 			edir=$${entry}; \
 		else \
-			${ECHO_MSG} "===> ${DIRPRFX}$${entry} non-existent"; \
+			${ECHO_MSG} "===> ${PKGPATH}$${entry} non-existent"; \
 			continue; \
 		fi; \
-		${ECHO_MSG} "===> ${DIRPRFX}$${edir}$$display"; \
+		${ECHO_MSG} "===> ${PKGPATH}$${edir}$$display"; \
 		if env  $$varname="$$flavor" \
-			DIRPRFX=${DIRPRFX}$$edir/ \
+			PKGPATH=${PKGPATH}$$edir/ \
 			RECURSIVE_FETCH_LIST=${RECURSIVE_FETCH_LIST} \
 			${MAKE} ${.TARGET:realinstall=install}; \
 		then :; else ${REPORT_PROBLEM}; fi; \
