@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Nov 16 10:55:22 1999
-+++ Makefile	Wed Mar 22 20:33:24 2000
+--- Makefile.orig	Sat Apr  8 07:19:41 2000
++++ Makefile	Tue Jun 20 13:29:41 2000
 @@ -16,7 +16,12 @@
  	@echo "Enter 'make test' in order to start some automatic tests."
  
@@ -14,7 +14,7 @@
  
  pbm: lib
  	(cd pbmtools; make "CC=$(CC)" "CFLAGS=$(CFLAGS)")
-@@ -45,3 +50,18 @@
+@@ -45,3 +50,16 @@
  	scp ANNOUNCE \
  	  $(DISTUID)@$(DISTHOST):$(DISTPATH)/jbigkit-$(VERSION)-announce.txt
  	mv ../jbigkit-$(VERSION).tar.gz $(HOME)/.www/download/
@@ -24,10 +24,8 @@
 +	${BSD_INSTALL_DATA_DIR} ${PREFIX}/include
 +	${BSD_INSTALL_DATA_DIR} ${PREFIX}/lib
 +	${BSD_INSTALL_MAN_DIR} ${PREFIX}/man/man1
-+	${BSD_INSTALL_MAN_DIR} ${PREFIX}/man/man5
 +	cd pbmtools; ${BSD_INSTALL_PROGRAM} jbgtopbm pbmtojbg ${PREFIX}/bin; \
 +	${BSD_INSTALL_MAN} jbgtopbm.1 pbmtojbg.1 ${PREFIX}/man/man1; \
-+	${BSD_INSTALL_MAN} pbm.5 pgm.5 ${PREFIX}/man/man5
 +	${BSD_INSTALL_DATA} libjbig/jbig.h ${PREFIX}/include
 +	${BSD_INSTALL_DATA} libjbig/libjbig.a ${PREFIX}/lib
 +	@if [ -f libjbig/libjbig.so.$(VERSION) ]; then \
