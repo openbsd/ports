@@ -1,6 +1,11 @@
---- mp3cddbtag.orig	Sat Mar 10 17:12:38 2001
-+++ mp3cddbtag	Wed May 30 19:45:01 2001
-@@ -50,10 +50,10 @@
+--- mp3cddbtag.orig	Sat Mar 10 23:12:38 2001
++++ mp3cddbtag	Thu Nov 15 13:54:49 2001
+@@ -46,14 +46,14 @@ for i in `seq 1 $files`; do
+     if [ -z "$artist" ]; then artist=$artist_album; fi
+     comment=$(uppercase `egrep "^$i.COMMENT: " $1 | cut -d' ' -f2-`)
+ 
+-    mp3info -d "$file"
++    mp3info -W "$file"
  
      if [ "`echo $genre | cut -b1`" = '%' ]; then
  	mp3info -y "$year" -g "`echo $genre | cut -b2-`" -a "$artist" -l "$album" -t "$title" \
@@ -8,8 +13,8 @@
 +	        -c "$comment" "$file" 
      else
 -	mp3info -y "$year" -g "$genre" -a "$artist" -l "$album" -t "$title" -c "$comment"   \
-+	mp3info -y "$year" -G "$genre" -a "$artist" -l "$album" -t "$title" -c "$comment"   \
 -	        -n 0 "$file" | grep -v 'G : '
++	mp3info -y "$year" -G "$genre" -a "$artist" -l "$album" -t "$title" -c "$comment"   \
 +	        "$file" | grep -v 'G : '
      fi
  
