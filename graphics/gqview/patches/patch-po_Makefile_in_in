@@ -1,16 +1,15 @@
-$OpenBSD: patch-po_Makefile_in_in,v 1.1 2001/11/21 02:11:58 jcs Exp $
---- po/Makefile.in.in.orig	Mon Nov 19 11:02:59 2001
-+++ po/Makefile.in.in	Tue Nov 20 19:00:19 2001
-@@ -19,7 +19,7 @@
+--- po/Makefile.in.in~	Sat Dec 22 00:07:28 2001
++++ po/Makefile.in.in	Sat Dec 22 00:09:05 2001
+@@ -19,7 +19,7 @@ VPATH = @srcdir@
  prefix = @prefix@
  exec_prefix = @exec_prefix@
  datadir = $(prefix)/@DATADIRNAME@
 -localedir = $(datadir)/locale
-+localedir = $(DESTDIR)$(prefix)/share/locale
++localedir = $(DESTDIR)$(prefix)/locale
  gnulocaledir = $(prefix)/share/locale
  gettextsrcdir = $(prefix)/share/gettext/po
  subdir = po
-@@ -111,9 +111,9 @@
+@@ -111,9 +111,9 @@ install-data: install-data-@USE_NLS@
  install-data-no: all
  install-data-yes: all
  	if test -r "$(MKINSTALLDIRS)"; then \

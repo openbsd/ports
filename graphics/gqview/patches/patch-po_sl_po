@@ -1,7 +1,6 @@
-$OpenBSD: patch-po_sl_po,v 1.1 2001/11/21 02:11:58 jcs Exp $
---- po/sl.po.orig	Tue Nov 20 18:44:38 2001
-+++ po/sl.po	Tue Nov 20 18:44:41 2001
-@@ -11,7 +11,7 @@
+--- po/sl.po~	Sat Dec 22 00:12:18 2001
++++ po/sl.po	Sat Dec 22 00:12:37 2001
+@@ -11,7 +11,7 @@ msgstr ""
  "Last-Translator: Matej Erman <matej.erman@guest.arnes.si>\n"
  "Language-Team: slovene <sl@li.org>\n"
  "MIME-Version: 1.0\n"

@@ -1,26 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/11/21 02:11:58 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/12/22 09:08:04 obecian Exp $
 bin/gqview
+locale/da/LC_MESSAGES/gqview.mo
+locale/de/LC_MESSAGES/gqview.mo
+locale/es/LC_MESSAGES/gqview.mo
+locale/et/LC_MESSAGES/gqview.mo
+locale/fi/LC_MESSAGES/gqview.mo
+locale/fr/LC_MESSAGES/gqview.mo
+locale/hu/LC_MESSAGES/gqview.mo
+locale/it/LC_MESSAGES/gqview.mo
+locale/ja/LC_MESSAGES/gqview.mo
+locale/nl/LC_MESSAGES/gqview.mo
+locale/no/LC_MESSAGES/gqview.mo
+locale/pl/LC_MESSAGES/gqview.mo
+locale/pt_BR/LC_MESSAGES/gqview.mo
+locale/ru/LC_MESSAGES/gqview.mo
+locale/sk/LC_MESSAGES/gqview.mo
+locale/sl/LC_MESSAGES/gqview.mo
+locale/tr/LC_MESSAGES/gqview.mo
+locale/uk/LC_MESSAGES/gqview.mo
+locale/zh_CN.GB2312/LC_MESSAGES/gqview.mo
+locale/zh_TW/LC_MESSAGES/gqview.mo
 man/man1/gqview.1
 share/doc/gqview/COPYING
 share/doc/gqview/ChangeLog
 share/doc/gqview/README
 share/doc/gqview/TODO
-share/locale/de/LC_MESSAGES/gqview.mo
-share/locale/es/LC_MESSAGES/gqview.mo
-share/locale/et/LC_MESSAGES/gqview.mo
-share/locale/fi/LC_MESSAGES/gqview.mo
-share/locale/fr/LC_MESSAGES/gqview.mo
-share/locale/hu/LC_MESSAGES/gqview.mo
-share/locale/it/LC_MESSAGES/gqview.mo
-share/locale/ja/LC_MESSAGES/gqview.mo
-share/locale/nl/LC_MESSAGES/gqview.mo
-share/locale/pl/LC_MESSAGES/gqview.mo
-share/locale/pt_BR/LC_MESSAGES/gqview.mo
-share/locale/ru/LC_MESSAGES/gqview.mo
-share/locale/sk/LC_MESSAGES/gqview.mo
-share/locale/sl/LC_MESSAGES/gqview.mo
-share/locale/tr/LC_MESSAGES/gqview.mo
-share/locale/uk/LC_MESSAGES/gqview.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/gqview.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/gqview.mo
 @dirrm share/doc/gqview
