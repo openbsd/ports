@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/05/24 21:57:32 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/12/15 17:28:34 naddy Exp $
 bin/razor-admin
 bin/razor-check
 bin/razor-client
@@ -39,15 +39,15 @@ man/man3p/Razor2::Syslog.3p
 man/man5/razor-agent.conf.5
 man/man5/razor-agents.5
 man/man5/razor-whitelist.5
-@comment @dirrm man/man3p
+@dirrm man/man3p
 @comment @dirrm ${P5ARCH}/auto/razor-agents
 @dirrm ${P5ARCH}/auto/Razor2/Syslog
 @dirrm ${P5ARCH}/auto/Razor2/Preproc/deHTMLxs
 @dirrm ${P5ARCH}/auto/Razor2/Preproc
 @dirrm ${P5ARCH}/auto/Razor2
-@comment @dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}/auto
 @dirrm ${P5ARCH}/Razor2/Signature
 @dirrm ${P5ARCH}/Razor2/Preproc
 @dirrm ${P5ARCH}/Razor2/Client
 @dirrm ${P5ARCH}/Razor2
-@comment @dirrm ${P5ARCH}
+@dirrm ${P5ARCH}

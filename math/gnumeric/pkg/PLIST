@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/15 03:31:14 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/12/15 17:33:03 naddy Exp $
 bin/gnumeric
 bin/ssconvert
 lib/bonobo/servers/GNOME_Gnumeric.server
@@ -680,13 +680,13 @@ share/schemas/gnumeric/gnumeric-general.schemas
 share/schemas/gnumeric/gnumeric-plugins.schemas
 @dirrm share/schemas/gnumeric
 @dirrm share/pixmaps/gnumeric
-@comment @dirrm share/pixmaps
+@dirrm share/pixmaps
 @dirrm share/omf/gnumeric
-@comment @dirrm share/mime-info
+@dirrm share/mime-info
 @dirrm share/mc/templates
 @dirrm share/mc
-@comment @dirrm share/locale/en_CA/LC_MESSAGES
-@comment @dirrm share/locale/en_CA
+@dirrm share/locale/en_CA/LC_MESSAGES
+@dirrm share/locale/en_CA
 @dirrm share/gnumeric/${VERSION}-bonobo/templates
 @dirrm share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures
 @dirrm share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C
@@ -705,7 +705,7 @@ share/schemas/gnumeric/gnumeric-plugins.schemas
 @dirrm share/gnumeric/${VERSION}-bonobo/autoformat-templates
 @dirrm share/gnumeric/${VERSION}-bonobo
 @dirrm share/gnumeric
-@comment @dirrm share/applications
+@dirrm share/applications
 @dirrm lib/gnumeric/${VERSION}-bonobo/plugins/xml_sax
 @dirrm lib/gnumeric/${VERSION}-bonobo/plugins/xbase
 @dirrm lib/gnumeric/${VERSION}-bonobo/plugins/uihello

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/10/09 15:39:33 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/15 17:28:34 naddy Exp $
 lib/mailman/Mailman/Archiver/Archiver.py
 lib/mailman/Mailman/Archiver/Archiver.pyc
 lib/mailman/Mailman/Archiver/HyperArch.py
@@ -1677,8 +1677,8 @@ share/doc/mailman/UPGRADING
 @dirrm lib/mailman/Mailman/Cgi
 @dirrm lib/mailman/Mailman/Bouncers
 @dirrm lib/mailman/Mailman/Archiver
-@comment @dirrm lib/mailman/Mailman
-@comment @dirrm lib/mailman
+@dirrm lib/mailman/Mailman
+@dirrm lib/mailman
 @extra /var/cron/tabs/_mailman
 @extraunexec rm -fr /var/spool/mailman
 @extraunexec userdel -r _mailman
