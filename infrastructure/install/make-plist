@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.16 2002/04/03 15:00:30 espie Exp $
+# $OpenBSD: make-plist,v 1.17 2002/04/15 06:38:23 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -67,6 +67,10 @@ sub annotate
 			# we don't warn for stuff we probably added...
 			next if m/^mkdir -p/||m/^install-info /;
 			$manual = 1;
+		} elsif (/^\@comment\s+/) {
+			$_ = $';
+			$annotated{$_} = [ 'comment' ] 
+			    unless defined $annotated{$_};
 		} elsif (m/^\@/) {
 			next;
 		} elsif (m/^\!?\%\%(.*)\%\%/) {
@@ -283,6 +287,10 @@ sub handle_file
 
     if (defined $annotated{$fname}) {
     	my ($mode, $owner, $group, $nocheck) = @{$annotated{$fname}};
+	if ($mode eq 'comment') {
+		print "\@comment $fname\n";
+		return;
+	}
 	if ($mode ne '') {
 		$string="\@mode $mode\n$string\@mode\n";
 	}
