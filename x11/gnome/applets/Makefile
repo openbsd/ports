@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/12/03 19:01:13 nino Exp $
+# $OpenBSD: Makefile,v 1.19 2002/12/03 21:16:33 pvalchev Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 
@@ -6,7 +6,7 @@ DISTNAME=		gnome-applets-1.4.0.5
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
-MAINTAINER=		Jim Geovedi <negative@magnesium.net>
+MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-applets/1.4/}
 EXTRACT_SUFX=		.tar.bz2
