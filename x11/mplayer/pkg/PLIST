@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2004/09/15 19:26:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2004/10/18 06:48:20 biorn Exp $
 bin/mencoder
 bin/mplayer
 @man man/man1/mencoder.1
@@ -32,7 +32,7 @@ share/doc/mplayer/gcc-296.html
 share/doc/mplayer/gui.html
 share/doc/mplayer/history.html
 share/doc/mplayer/howtoread.html
-share/doc/mplayer/hpux.html
+share/doc/mplayer/hp-ux.html
 share/doc/mplayer/index.html
 share/doc/mplayer/install.html
 share/doc/mplayer/intro.html
@@ -41,13 +41,13 @@ share/doc/mplayer/joe-barr.html
 share/doc/mplayer/linux.html
 share/doc/mplayer/macos.html
 share/doc/mplayer/mailinglists.html
-share/doc/mplayer/menc-feat-divx4.html
 share/doc/mplayer/menc-feat-dvd-mpeg4.html
 share/doc/mplayer/menc-feat-enc-images.html
 share/doc/mplayer/menc-feat-enc-libavcodec.html
 share/doc/mplayer/menc-feat-extractsub.html
 share/doc/mplayer/menc-feat-fix-avi.html
 share/doc/mplayer/menc-feat-mpeg.html
+share/doc/mplayer/menc-feat-mpeg4.html
 share/doc/mplayer/menc-feat-rescale.html
 share/doc/mplayer/menc-feat-streamcopy.html
 share/doc/mplayer/menc-feat-telecine.html

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.74 2004/08/09 11:09:10 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2004/10/18 06:48:08 biorn Exp $
 
 # May not be hard to add more.
-ONLY_FOR_ARCHS=		amd64 i386 powerpc
+ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64
 
 COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
-DISTNAME=		MPlayer-1.0pre4
+DISTNAME=		MPlayer-1.0pre5
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}p1
+PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -27,14 +27,11 @@ MASTER_SITES+=		http://ftp.lug.udel.edu/MPlayer/releases/
 #MASTER_SITES0=		http://www2.mplayerhq.hu/MPlayer/Skin/
 MASTER_SITES0=		http://www.sightly.net/mplayer/
 
-MASTER_SITES1=		${MASTER_SITES:S,releases,patches,}
-
 MAINTAINER=     Bjorn Sandell <biorn@dce.chalmers.se>
 
 SKIN=		default
 SKINVER=	1.7
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKIN}-${SKINVER}${EXTRACT_SUFX}:0
-PATCHFILES+=	vuln04-fix.diff:1
 
 .include <bsd.own.mk>
 
@@ -76,7 +73,7 @@ CONFIGURE_ARGS+=--enable-runtime-cpudetection
 CONFIGURE_ARGS+=--disable-altivec
 .endif
 
-FLAVORS=	arts esd sdl ggi debug mad win32 no_x11 aa
+FLAVORS=	arts esd sdl ggi debug mad no_x11 aa
 FLAVOR?=
 
 .if ${FLAVOR:L:Marts}
@@ -135,11 +132,7 @@ LIB_DEPENDS+=	mad.2::audio/libmad
 CONFIGURE_ARGS+=--disable-mad
 .endif
 
-.if ${FLAVOR:L:Mwin32}
-ONLY_FOR_ARCHS=i386
-
-RUN_DEPENDS+=	:win32-codecs-*:graphics/win32-codecs
-BUILD_DEPENDS+=	:win32-codecs-*:graphics/win32-codecs
+.if ${MACHINE_ARCH:Mi386}
 CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32 \
 		--enable-qtx \
 		--with-reallibdir=${LOCALBASE}/lib/win32

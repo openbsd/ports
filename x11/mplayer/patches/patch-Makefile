@@ -1,16 +1,16 @@
-$OpenBSD: patch-Makefile,v 1.8 2004/05/06 07:27:49 biorn Exp $
---- Makefile.orig	2004-04-13 13:22:37.000000000 +0200
-+++ Makefile	2004-04-28 12:24:12.000000000 +0200
-@@ -229,7 +229,7 @@ mplayer_wine.so:	$(MPLAYER_DEP)
+$OpenBSD: patch-Makefile,v 1.9 2004/10/18 06:48:20 biorn Exp $
+--- Makefile.orig	Fri Jul  9 19:32:17 2004
++++ Makefile	Sat Sep 18 21:43:32 2004
+@@ -224,7 +224,7 @@ mplayer_wine.so:	$(MPLAYER_DEP)
+ 
  ifeq ($(MENCODER),yes)
  $(PRG_MENCODER): $(MENCODER_DEP)
- 	./darwinfixlib.sh $(MENCODER_DEP) libmpcodecs/libmpencoders.a
 -	$(CC) $(CFLAGS) -o $(PRG_MENCODER) $(OBJS_MENCODER) libmpcodecs/libmpencoders.a $(ENCORE_LIB) $(COMMON_LIBS) $(EXTRA_LIB) $(MLIB_LIB) $(LIRC_LIB) $(LIRCC_LIB) $(ARCH_LIB) $(I18NLIBS) -lm 
 +	$(CXX) $(CFLAGS) -o $(PRG_MENCODER) $(OBJS_MENCODER) libmpcodecs/libmpencoders.a $(ENCORE_LIB) $(COMMON_LIBS) $(EXTRA_LIB) $(MLIB_LIB) $(LIRC_LIB) $(LIRCC_LIB) $(ARCH_LIB) $(I18NLIBS) -lm 
  endif
  
  codecs.conf.h: $(PRG_CFG) etc/codecs.conf
-@@ -287,8 +287,6 @@ ifeq ($(GUI),yes)
+@@ -282,8 +282,6 @@ ifeq ($(GUI),yes)
  	@echo "*** Download skin(s) at http://www.mplayerhq.hu/homepage/dload.html"
  	@echo "*** for GUI, and extract to $(DATADIR)/Skin/"
  endif

@@ -1,25 +1,7 @@
-$OpenBSD: patch-configure,v 1.27 2004/06/22 08:13:11 brad Exp $
---- configure.orig	2004-04-26 05:44:06.000000000 -0400
-+++ configure	2004-05-28 22:12:05.000000000 -0400
-@@ -440,7 +440,7 @@ if test -z "$_target" ; then
-       i[3-9]86*|x86|x86pc|k5|k6|k6_2|k6_3|k6-2|k6-3|pentium*|athlon*|i586_i686|i586-i686) host_arch=i386 ;;
-       ia64) host_arch=ia64 ;;
-       x86_64|amd64) host_arch=x86_64 ;;
--      ppc) host_arch=ppc ;;
-+      macppc|ppc) host_arch=ppc ;;
-       alpha) host_arch=alpha ;;
-       sparc*) host_arch=sparc ;;
-       parisc*|hppa*|9000*) host_arch=hppa ;;
-@@ -4148,7 +4148,7 @@ echores "$_sgiaudio"
- 
- 
- echocheck "VCD support"
--if linux || bsdos || freebsd || netbsd || sunos ; then
-+if linux || bsdos || freebsd || netbsd || openbsd || sunos ; then
-   _inputmodules="vcd $_inputmodules"
-   _def_vcd='#define HAVE_VCD 1'
-   echores "ok"
-@@ -4991,7 +4991,7 @@ fi
+$OpenBSD: patch-configure,v 1.28 2004/10/18 06:48:20 biorn Exp $
+--- configure.orig	Thu Jul 15 09:50:13 2004
++++ configure	Thu Jul 15 09:51:27 2004
+@@ -2001,7 +2001,7 @@ echores "$_setlocale"
  
  
  echocheck "iconv"
@@ -28,13 +10,12 @@ $OpenBSD: patch-configure,v 1.27 2004/06/22 08:13:11 brad Exp $
    _iconv_tmp='#include <iconv.h>'
  
    cat > $TMPC << EOF
-@@ -6459,6 +6459,9 @@ $_def_vcd
- #elif defined(SYS_DARWIN)
- #define DEFAULT_CDROM_DEVICE    "/dev/rdiskN"
- #define DEFAULT_DVD_DEVICE	DEFAULT_CDROM_DEVICE
-+#elif defined(__OpenBSD__)
-+#define DEFAULT_CDROM_DEVICE	"/dev/rcd0a"
-+#define DEFAULT_DVD_DEVICE	DEFAULT_CDROM_DEVICE
- #else
- #define DEFAULT_CDROM_DEVICE    "/dev/cdrom"
- #define DEFAULT_DVD_DEVICE	"/dev/dvd"
+@@ -4329,7 +4329,7 @@ echores "$_sgiaudio"
+ 
+ 
+ echocheck "VCD support"
+-if linux || bsdos || freebsd || netbsd || sunos ; then
++if linux || bsdos || freebsd || netbsd || openbsd || sunos ; then
+   _inputmodules="vcd $_inputmodules"
+   _def_vcd='#define HAVE_VCD 1'
+   echores "ok"

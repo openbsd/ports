@@ -1,0 +1,15 @@
+$OpenBSD: patch-mp3lib_layer2_c,v 1.1 2004/10/18 06:48:20 biorn Exp $
+--- mp3lib/layer2.c.orig	Tue Apr  6 03:06:21 2004
++++ mp3lib/layer2.c	Fri Sep 17 23:30:00 2004
+@@ -288,6 +288,11 @@ static int do_layer2(struct frame *fr,in
+   fr->jsbound = (fr->mode == MPG_MD_JOINT_STEREO) ?
+      (fr->mode_ext<<2)+4 : fr->II_sblimit;
+ 
++  if (fr->jsbound > fr->II_sblimit) {
++         fprintf(stderr, "Truncating stereo boundary to sideband limit.\n");
++         fr->jsbound=fr->II_sblimit;
++  }
++
+   if(stereo == 1 || single == 3)
+     single = 0;
+ 
