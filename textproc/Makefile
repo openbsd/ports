@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2001/03/20 14:31:42 wilfried Exp $
+# $OpenBSD: Makefile,v 1.47 2001/03/22 00:00:19 avsm Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -31,6 +31,7 @@
      SUBDIR += p5-Text-PDF
      SUBDIR += p5-XML-DOM
      SUBDIR += p5-XML-Parser
+     SUBDIR += p5-XML-RSS
      SUBDIR += p5-XML-Sablotron
      SUBDIR += p5-XML-Simple
      SUBDIR += p5-XML-Writer
