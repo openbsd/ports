@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/03/30 20:46:26 drahn Exp $
-lib/libhfsp.so.0.0
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/10/13 16:36:35 pvalchev Exp $
+@lib lib/libhfsp.so.0.0
