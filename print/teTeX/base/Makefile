@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.30 2005/01/27 05:03:27 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2005/02/21 21:36:07 sturm Exp $
 
 COMMENT=	"TeX distribution, executables"
 
-VERSION=	2.0.2
+VERSION=	3.0
 DISTNAME=	tetex-base-${VERSION}
-PKGNAME=	${DISTNAME:S/tetex-/teTeX_/}p3
+PKGNAME=	${DISTNAME:S/tetex-/teTeX_/}
 CATEGORIES=	print
 
 DISTFILES=	tetex-src-${VERSION}.tar.gz
 
-BUILD_DEPENDS=	:teTeX_texmf->=2.0:print/teTeX/texmf
-RUN_DEPENDS=	:teTeX_texmf->=2.0:print/teTeX/texmf \
+WANTLIB=	c m ncurses stdc++ z
+
+BUILD_DEPENDS=	:teTeX_texmf->=3.0:print/teTeX/texmf
+RUN_DEPENDS=	:teTeX_texmf->=3.0:print/teTeX/texmf \
 		:texi2html->=1.56:textproc/texi2html
 LIB_DEPENDS=	png.3::graphics/png
 
 CONFIGURE_STYLE=gnu dest
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config \
-		${WRKSRC}/libs/libwww/config \
 		${WRKSRC}/libs/ncurses \
 		${WRKSRC}/texk \
 		${WRKSRC}/utils/texinfo
@@ -35,9 +36,11 @@ FLAVOR?=
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=--without-x
 .else
+WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xp Xpm Xt
 CONFIGURE_ARGS+=--with-system-t1lib \
 		--with-t1lib-libdir=${PREFIX}/lib \
-		--with-t1lib-include=${PREFIX}/include
+		--with-t1lib-include=${PREFIX}/include \
+		--with-xdvi-x-toolkit=xaw
 LIB_DEPENDS+=	t1.4::devel/t1lib
 RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
 USE_X11=	Yes
@@ -50,18 +53,19 @@ TETEX_EXDIR=	${PREFIX}/share/examples/teTeX
 REGRESS_FLAGS=	DESTDIR="${WRKINST}"
 
 post-configure:
-	@find ${WRKBUILD} -name Makefile -exec perl -i -pe \
-	    's#^(texmf\s*\=\s*)${PREFIX}#$$1\$${${DESTDIRNAME}}${PREFIX}#' {} \;
+	@perl -pi -e "s,\@sysconfdir\@,${SYSCONFDIR}," \
+		${WRKSRC}/texk/kpathsea/texmf.in-teTeX
 
 # need the texmf part visible...
 pre-fake:
 	${INSTALL_DATA_DIR} ${TEXMF_DIR}
-	lndir ${TRUEPREFIX}/share/texmf ${TEXMF_DIR}
+	${INSTALL_DATA_DIR} ${WRKINST}/var/texmf
+	lndir ${TRUEPREFIX}/share/texmf-dist ${TEXMF_DIR}
 	# mktexlsr is too smart for its own good
 	rm ${TEXMF_DIR}/ls-R
 
 post-install:
-	@mv ${PREFIX}/share/texmf/web2c/texmf.cnf \
+	@cp ${PREFIX}/share/texmf/web2c/texmf.cnf \
 		${PREFIX}/share/texmf/web2c/texmf.cnf.dist
 	${INSTALL_DATA_DIR} ${TETEX_EXDIR}
 	${INSTALL_DATA} files/tetex.cfg ${TETEX_EXDIR}/tetex.cfg
@@ -70,6 +74,6 @@ post-install:
 		-e "s#%%PREFIX%%#${TRUEPREFIX}#;" ${PREFIX}/bin/tetex_setup
 
 # need the texmf part visible...
-pre-regress: fake
+pre-regress: _internal-fake
 
 .include <bsd.port.mk>

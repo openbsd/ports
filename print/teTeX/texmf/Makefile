@@ -1,22 +1,28 @@
-# $OpenBSD: Makefile,v 1.19 2004/02/01 20:40:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2005/02/21 21:36:07 sturm Exp $
 
 COMMENT=	"TeX distribution, common support files"
+COMMENT-doc=	"TeX distribution, documentation"
 
-DISTNAME=	tetex-texmf-2.0.2
-PKGNAME=	${DISTNAME:S/tetex-/teTeX_/}p0
+V=		3.0
+DISTNAME=	tetex-texmf-${V}
+PKGNAME=	teTeX_texmf-${V}
+PKGNAME-doc=	teTeX_texmf-doc-${V}
 CATEGORIES=	print
 
-MASTER_SITES0=	ftp://ftp.erisiandiscord.de/pub/OpenBSD/distfiles/
-
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} listings-1.1.tar.gz:0
-
 WRKDIST=	${WRKDIR}
+
+MULTI_PACKAGES=	-doc
+SUBPACKAGE?=
 
 # better than NO_EXTRACT, as this builds WRKDIR correctly for us.
 EXTRACT_ONLY=
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-doc"
+PERMIT_PACKAGE_FTP=	"Removed for space constraints"
+.endif
 
 do-install:
 	@${INSTALL_DATA_DIR} ${TEXMF_DIR}

@@ -1,7 +1,7 @@
-$OpenBSD: patch-texk_gsftopk_gsftopk_c,v 1.1 2003/10/28 20:01:12 sturm Exp $
---- texk/gsftopk/gsftopk.c.orig	2003-10-28 20:40:57.000000000 +0100
-+++ texk/gsftopk/gsftopk.c	2003-10-28 20:41:32.000000000 +0100
-@@ -2585,7 +2585,7 @@ Author of gsftopk: Paul Vojta.");
+$OpenBSD: patch-texk_gsftopk_gsftopk_c,v 1.2 2005/02/21 21:36:07 sturm Exp $
+--- texk/gsftopk/gsftopk.c.orig	Fri Feb  6 22:20:54 2004
++++ texk/gsftopk/gsftopk.c	Thu Feb 10 22:18:03 2005
+@@ -2586,7 +2586,7 @@ Author of gsftopk: Paul Vojta.");
  	    execlp(gspath, "gs", "-dNODISPLAY", "-dNOGC", substarg, "-q", "--",
  		/* render.ps */ searchpath,
  		PSname,

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: tetex_setup.sh,v 1.2 2004/05/17 05:32:39 sturm Exp $
+# $OpenBSD: tetex_setup.sh,v 1.3 2005/02/21 21:36:07 sturm Exp $
 #
 # This file is NOT part of teTeX itself, but only of the OpenBSD port of
 # teTeX. For questions please contact the port's MAINTAINER.
@@ -8,7 +8,7 @@
 
 . %%SYSCONFDIR%%/tetex.cfg
 
-TEXCONFIG=%%PREFIX%%/bin/texconfig
+TEXCONFIG=%%PREFIX%%/bin/texconfig-sys
 
 if [ "X${MODE}" != "X" ]; then
 	$TEXCONFIG mode $MODE
@@ -25,7 +25,7 @@ if [ "X${PS_PDFTEX}" != "X" ]; then
 	$TEXCONFIG pdftex paper $PS_PDFTEX
 fi
 if [ "X${PS_XDVI}" != "X" ]; then
-	$TEXCONFIG xdvi $PS_XDVI
+	$TEXCONFIG xdvi paper $PS_XDVI
 fi
 
 if [ "X${DVIPS_PRINTCMD}" != "X" ]; then

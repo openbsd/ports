@@ -1,6 +1,6 @@
-$OpenBSD: patch-libs_xpdf_xpdf_Catalog_cc,v 1.1 2004/11/27 14:15:04 sturm Exp $
---- libs/xpdf/xpdf/Catalog.cc.orig	Sun Nov  3 23:15:36 2002
-+++ libs/xpdf/xpdf/Catalog.cc	Sat Nov 27 14:51:17 2004
+$OpenBSD: patch-libs_xpdf_xpdf_Catalog_cc,v 1.2 2005/02/21 21:36:07 sturm Exp $
+--- libs/xpdf/xpdf/Catalog.cc.orig	Thu Jan 22 02:26:45 2004
++++ libs/xpdf/xpdf/Catalog.cc	Thu Feb 10 22:18:02 2005
 @@ -22,6 +22,7 @@
  #include "Error.h"
  #include "Link.h"
@@ -9,9 +9,9 @@ $OpenBSD: patch-libs_xpdf_xpdf_Catalog_cc,v 1.1 2004/11/27 14:15:04 sturm Exp $
  
  //------------------------------------------------------------------------
  // Catalog
-@@ -63,6 +64,12 @@ Catalog::Catalog(XRef *xrefA) {
+@@ -64,6 +65,12 @@ Catalog::Catalog(XRef *xrefA) {
    }
-   pagesSize = numPages0 = obj.getInt();
+   pagesSize = numPages0 = (int)obj.getNum();
    obj.free();
 +  if ((pagesSize >= INT_MAX / sizeof(Page *)) ||
 +      (pagesSize >= INT_MAX / sizeof(Ref))) {
@@ -22,7 +22,7 @@ $OpenBSD: patch-libs_xpdf_xpdf_Catalog_cc,v 1.1 2004/11/27 14:15:04 sturm Exp $
    pages = (Page **)gmalloc(pagesSize * sizeof(Page *));
    pageRefs = (Ref *)gmalloc(pagesSize * sizeof(Ref));
    for (i = 0; i < pagesSize; ++i) {
-@@ -190,6 +197,11 @@ int Catalog::readPageTree(Dict *pagesDic
+@@ -191,6 +198,11 @@ int Catalog::readPageTree(Dict *pagesDic
        }
        if (start >= pagesSize) {
  	pagesSize += 32;
