@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2002/05/13 18:50:38 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2002/06/15 20:47:28 brad Exp $
 
 COMMENT=	"GNU parser generator"
 
-DISTNAME=       bison-1.32
+DISTNAME=       bison-1.35
 CATEGORIES=	devel
-NEED_VERSION=	1.500
+NEED_VERSION=	1.528
 MASTER_SITES=	${MASTER_SITE_GNU:=bison/}
 
 HOMEPAGE=	http://www.gnu.org/software/bison/
