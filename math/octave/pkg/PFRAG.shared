@@ -1,9 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/07/15 18:07:16 naddy Exp $
-lib/octave-${VERSION}/libcruft.so.${SHLIB_VER}
-lib/octave-${VERSION}/liboctave.so.${SHLIB_VER}
-lib/octave-${VERSION}/liboctinterp.so.${SHLIB_VER}
-NEWDYNLIBDIR(%D/lib/octave-${VERSION})
-@comment octave modules
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/10/03 12:35:20 naddy Exp $
+@lib lib/octave-${VERSION}/libcruft.so.${SHLIB_VER}
+@lib lib/octave-${VERSION}/liboctave.so.${SHLIB_VER}
+@lib lib/octave-${VERSION}/liboctinterp.so.${SHLIB_VER}
 libexec/octave/${VERSION}/oct/${GCCARCH}/airy.oct
 libexec/octave/${VERSION}/oct/${GCCARCH}/balance.oct
 libexec/octave/${VERSION}/oct/${GCCARCH}/besselh.oct
