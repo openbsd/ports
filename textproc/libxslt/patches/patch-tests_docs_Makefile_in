@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_docs_Makefile_in,v 1.1 2002/10/28 22:17:39 naddy Exp $
---- tests/docs/Makefile.in.orig	Mon Oct 28 23:11:10 2002
-+++ tests/docs/Makefile.in	Mon Oct 28 23:11:29 2002
-@@ -254,7 +254,7 @@ info: info-am
+$OpenBSD: patch-tests_docs_Makefile_in,v 1.2 2003/08/11 23:49:45 marcm Exp $
+--- tests/docs/Makefile.in.orig	Sun Jul  6 15:00:29 2003
++++ tests/docs/Makefile.in	Mon Jul  7 21:49:03 2003
+@@ -291,7 +291,7 @@ info: info-am
  dvi-am:
  dvi: dvi-am
  check-am: all-am

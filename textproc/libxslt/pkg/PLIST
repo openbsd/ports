@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2002/10/29 10:59:39 shell Exp $
+@comment $OpenBSD: PLIST,v 1.16 2003/08/11 23:49:45 marcm Exp $
 bin/xslt-config
 bin/xsltproc
 include/libexslt/exslt.h
@@ -31,8 +31,9 @@ lib/libxsltbreakpoint.la
 lib/pkgconfig/libxslt.pc
 lib/xsltConf.sh
 man/man1/xsltproc.1
-man/man4/libexslt.4
-man/man4/libxslt.4
+man/man3/libexslt.3
+man/man3/libxslt.3
+share/aclocal/libxslt.m4
 share/doc/libxslt/html/API.html
 share/doc/libxslt/html/APIchunk0.html
 share/doc/libxslt/html/APIchunk1.html
@@ -41,6 +42,7 @@ share/doc/libxslt/html/APIchunk3.html
 share/doc/libxslt/html/APIchunk4.html
 share/doc/libxslt/html/APIchunk5.html
 share/doc/libxslt/html/APIchunk6.html
+share/doc/libxslt/html/APIchunk7.html
 share/doc/libxslt/html/APIconstructors.html
 share/doc/libxslt/html/APIfiles.html
 share/doc/libxslt/html/APIfunctions.html
@@ -58,7 +60,6 @@ share/doc/libxslt/html/downloads.html
 share/doc/libxslt/html/extensions.html
 share/doc/libxslt/html/help.html
 share/doc/libxslt/html/index.html
-share/doc/libxslt/html/index.sgml
 share/doc/libxslt/html/internals.html
 share/doc/libxslt/html/intro.html
 share/doc/libxslt/html/libxslt-attributes.html
@@ -69,12 +70,13 @@ share/doc/libxslt/html/libxslt-keys.html
 share/doc/libxslt/html/libxslt-lib.html
 share/doc/libxslt/html/libxslt-namespaces.html
 share/doc/libxslt/html/libxslt-notes.html
-share/doc/libxslt/html/libxslt-numbersinternals.html
+share/doc/libxslt/html/libxslt-numbersInternals.html
 share/doc/libxslt/html/libxslt-pattern.html
 share/doc/libxslt/html/libxslt-templates.html
 share/doc/libxslt/html/libxslt-transform.html
 share/doc/libxslt/html/libxslt-variables.html
 share/doc/libxslt/html/libxslt-xslt.html
+share/doc/libxslt/html/libxslt-xsltInternals.html
 share/doc/libxslt/html/libxslt-xsltinternals.html
 share/doc/libxslt/html/libxslt-xsltutils.html
 share/doc/libxslt/html/news.html
@@ -96,5 +98,7 @@ share/doc/libxslt/html/xsltproc2.html
 @dirrm share/doc/libxslt/html/tutorial
 @dirrm share/doc/libxslt/html
 @dirrm share/doc/libxslt
+@comment @dirrm share/aclocal
+@comment @dirrm lib/pkgconfig
 @dirrm include/libxslt
 @dirrm include/libexslt

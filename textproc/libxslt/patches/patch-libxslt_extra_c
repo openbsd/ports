@@ -1,7 +1,7 @@
-$OpenBSD: patch-libxslt_extra_c,v 1.1 2002/07/11 17:21:42 shell Exp $
---- libxslt/extra.c.orig	Tue Mar 19 04:09:55 2002
-+++ libxslt/extra.c	Fri Jul 12 00:58:24 2002
-@@ -244,10 +244,9 @@ xsltFunctionLocalTime(xmlXPathParserCont
+$OpenBSD: patch-libxslt_extra_c,v 1.2 2003/08/11 23:49:45 marcm Exp $
+--- libxslt/extra.c.orig	Wed Feb  5 03:29:50 2003
++++ libxslt/extra.c	Mon Jul  7 21:49:03 2003
+@@ -241,10 +241,9 @@ xsltFunctionLocalTime(xmlXPathParserCont
      local_tm = localtime(&gmt);
  
      /*
