@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/21 19:17:54 nino Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/09/15 15:57:41 marcm Exp $
 bin/gnome-font-install
 include/gnome-1.0/libgnomeprint/gnome-font-dialog.h
 include/gnome-1.0/libgnomeprint/gnome-font-face-private.h
@@ -26,8 +26,6 @@ include/gnome-1.0/libgnomeprint/gnome-text.h
 lib/libgnomeprint.a
 lib/libgnomeprint.la
 lib/printConf.sh
-share/examples/gnome-print/gnome/fonts/gnome-print-ghostscript.fontmap
-share/examples/gnome-print/gnome/fonts/gnome-print-x11.fontmap
 @comment share/fonts/README.binaries
 @comment share/fonts/README.installer
 share/fonts/afms/adobe/pagd8a.afm
@@ -84,7 +82,5 @@ share/gnome/fonts/defaults.fontmap
 @comment @dirrm share/fonts/afms/adobe
 @comment @dirrm share/fonts/afms
 @comment @dirrm share/fonts
-@dirrm share/examples/gnome-print/gnome/fonts
-@dirrm share/examples/gnome-print/gnome
-@dirrm share/examples/gnome-print
 @dirrm include/gnome-1.0/libgnomeprint
+@exec %D/bin/gnome-font-install --smart

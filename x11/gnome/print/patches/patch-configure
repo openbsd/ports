@@ -1,42 +1,10 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2002/05/21 19:17:54 nino Exp $
---- configure.orig	Mon Jan 28 11:58:57 2002
-+++ configure	Mon May 13 17:00:37 2002
-@@ -3594,8 +3594,8 @@ else
-     hardcode_direct=yes
-     hardcode_shlibpath_var=no
-     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
--      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
--      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-+      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-+      hardcode_libdir_flag_spec='${wl}-R$libdir'
-       export_dynamic_flag_spec='${wl}-E'
-     else
-       case "$host_os" in
-@@ -3604,8 +3604,8 @@ else
- 	hardcode_libdir_flag_spec='-R$libdir'
-         ;;
-       *)
--        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
--        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-+        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-+        hardcode_libdir_flag_spec='${wl}-R$libdir'
-         ;;
-       esac
-     fi
-@@ -3791,6 +3791,7 @@ EOF
-     ld_shlibs=no
-     ;;
-   esac
-+  PATH_SEPARATOR=$lt_cv_sys_path_separator
- fi
- echo "$ac_t""$ld_shlibs" 1>&6
- test "$ld_shlibs" = no && can_build_shared=no
-@@ -4140,6 +4141,16 @@ os2*)
-   library_names_spec='$libname.dll $libname.a'
-   dynamic_linker='OS/2 ld.exe'
-   shlibpath_var=LIBPATH
-+  ;;
-+
+$OpenBSD: patch-configure,v 1.2 2002/09/15 15:57:41 marcm Exp $
+--- configure.orig	Sun Jun  2 09:44:20 2002
++++ configure	Wed Sep  4 23:54:01 2002
+@@ -1861,6 +1861,16 @@ newos6*)
+   lt_cv_file_magic_test_file=/usr/lib/libnls.so
+   ;;
+ 
 +openbsd*)
 +  lt_cv_file_magic_cmd=/usr/bin/file
 +  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
@@ -45,6 +13,52 @@ $OpenBSD: patch-configure,v 1.1.1.1 2002/05/21 19:17:54 nino Exp $
 +  else
 +    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
 +  fi
-   ;;
- 
++  ;;
++
  osf3* | osf4* | osf5*)
+   # this will be overridden with pass_all, but let us keep it just in case
+   lt_cv_deplibs_check_method='file_magic COFF format alpha shared library'
+@@ -3123,7 +3133,9 @@ cygwin* | mingw* | pw32* )
+     with_gnu_ld=no
+   fi
+   ;;
+-
++openbsd*)
++  with_gnu_ld=no
++  ;;
+ esac
+ 
+ ld_shlibs=yes
+@@ -3527,8 +3539,8 @@ else
+     ;;
+ 
+   openbsd*)
+-    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+-    hardcode_libdir_flag_spec='-R$libdir'
++    archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++    hardcode_libdir_flag_spec='${wl}-R$libdir'
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+     ;;
+@@ -3684,6 +3696,7 @@ else
+     ld_shlibs=no
+     ;;
+   esac
++  PATH_SEPARATOR=$lt_cv_sys_path_separator
+ fi
+ echo "$ac_t""$ld_shlibs" 1>&6
+ test "$ld_shlibs" = no && can_build_shared=no
+@@ -4007,10 +4020,9 @@ newsos6)
+ 
+ openbsd*)
+   version_type=sunos
+-  if test "$with_gnu_ld" = yes; then
+-    need_lib_prefix=no
+-    need_version=no
+-  fi
++  need_lib_prefix=no
++  need_version=no
++  shlibpath_overrides_runpath=yes
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
