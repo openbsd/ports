@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.47 2004/08/07 07:47:38 espie Exp $
+# $OpenBSD: make-plist,v 1.48 2004/08/08 14:13:41 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -85,6 +85,18 @@ sub deduce_fragment
 {
 }
 
+sub clone_tags
+{
+	my ($self, $plist) = @_;
+
+	if (defined $self->{tags}) {
+		for my $t (@{$self->{tags}}) {
+			$t->clone()->add_object($plist);
+			$plist->{nonempty} = 1;
+		}
+	}
+}
+
 package OpenBSD::PackingElement::Fragment;
 our @ISA=qw(OpenBSD::PackingElement);
 sub copy_extra
@@ -157,7 +169,9 @@ sub register
 	my ($self, $plist, $files, $comments) = @_;
 	if (defined $plist->{state}->{lastfile}) {
 	    $plist->{state}->{lastfile}->tag_along($self);
-    	}
+    	} else {
+	    $plist->{tag_marker}->tag_along($self);
+	}
 }
 
 package OpenBSD::PackingElement::Unexec;
@@ -460,6 +474,7 @@ sub parse_original_plist
 {
     my ($name, $prefix) = @_;
     my $plist = create_packinglist($name, $prefix);
+    $plist->{tag_marker} = new OpenBSD::PackingElement('');
     $plist->fromfile($name, 
 	sub {
 	    my ($fh, $cont) = @_;
@@ -477,6 +492,7 @@ sub parse_original_plist
 	}
     ) or return;
 
+    delete $plist->{state}->{lastfile};
     for my $item (@{$plist->{items}}) {
     	$item->register($plist, $foundfiles, $foundcomments);
     }
@@ -490,6 +506,7 @@ sub replaces
 		$n->{original} = $orig;
 		$orig->{replacement} = $n;
 		$n->{filename} = $orig->{filename};
+		$orig->{tag_marker}->clone_tags($n);
 	}
 }
 
@@ -702,12 +719,7 @@ for my $i (sort keys %$files) {
 
 		# Copy properties from source item
 		if (defined $item) {
-			if (defined $item->{tags}) {
-				for my $t (@{$item->{tags}}) {
-					$t->clone()->add_object($p);
-					$p->{nonempty} = 1;
-				}
-			}
+			$item->clone_tags($p);
 		}
 	}
 }
