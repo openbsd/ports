@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/03/05 11:53:57 turan Exp $
+# $OpenBSD: Makefile,v 1.11 1999/03/29 19:17:24 turan Exp $
 
 DISTNAME=		mutt-0.95.4i
 CATEGORIES=     	mail
@@ -15,11 +15,11 @@ MASTER_SITES=		ftp://ftp.guug.de/pub/mutt/ \
 			ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/ 
 
 GNU_CONFIGURE=		yes
+SYSCONFDIR=		${PREFIX}/etc
 CONFIGURE_ARGS=		--prefix=/usr/local \
 			--with-slang=/usr/local \
 			--with-docdir=/usr/local/share/doc/mutt \
-			--with-sharedir=/usr/local/share/mutt \
-
+			--with-sharedir=/usr/local/share/mutt
 
 LIB_DEPENDS=    slang.1.22:${PORTSDIR}/devel/libslang
 
