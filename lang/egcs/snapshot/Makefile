@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.83 2001/03/17 16:15:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.84 2001/03/21 14:44:01 wilfried Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 
 COM=		'GNU compiler collection (experimental)'
 COMMENT=	${COM}: core C compiler
-COMMENT-c++=	${COM}: C++ compiler
+COMMENT-c++ =	${COM}: C++ compiler
 COMMENT-chill=	${COM}: Chill compiler
 COMMENT-g77=	${COM}: f77 compiler
 COMMENT-java=	${COM}: java compiler
 COMMENT-objc=	${COM}: obj C compiler
 
 PKGNAME=	${DISTNAME}-core
-PKGNAME-c++=	${DISTNAME}-c++
+PKGNAME-c++ =	${DISTNAME}-c++
 PKGNAME-chill=	${DISTNAME}-chill
 PKGNAME-g77=	${DISTNAME}-g77
 PKGNAME-java=	${DISTNAME}-java
