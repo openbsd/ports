@@ -1,0 +1,10 @@
+$OpenBSD: patch-doc_timer_example_php,v 1.1.1.1 2003/05/23 21:32:52 avsm Exp $
+--- doc/timer_example.php.orig	Fri May 23 22:29:23 2003
++++ doc/timer_example.php	Fri May 23 22:29:42 2003
+@@ -1,5 +1,5 @@
+ <?php
+-require '../Timer.php';
++require 'Benchmark/Timer.php';
+ 
+ function wait($amount) {
+     for ($i=0; $i < $amount; $i++) {

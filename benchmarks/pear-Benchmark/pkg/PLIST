@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/23 21:32:52 avsm Exp $
+pear/doc/Benchmark/doc/timer_example.php
+pear/lib/.registry/Benchmark.reg
+pear/lib/Benchmark/Iterate.php
+pear/lib/Benchmark/Profiler.php
+pear/lib/Benchmark/Timer.php
+@dirrm pear/lib/Benchmark
+@dirrm pear/doc/Benchmark/doc
+@dirrm pear/doc/Benchmark
