@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Sat Dec  1 20:31:02 2001
++++ doc/Makefile.in	Sat Dec  1 20:31:14 2001
+@@ -75,7 +75,7 @@
+ 
+ EXTRA_DIST = ccrypt.1.in man2html.sed cypfaq01.txt
+ 
+-htmldir = $(prefix)/doc/ccrypt
++htmldir = $(prefix)/share/doc/ccrypt
+ 
+ DISTCLEANFILES = ccrypt.ps ccrypt.html
+ 

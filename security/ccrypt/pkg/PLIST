@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/12/01 12:52:26 kevlo Exp $
+bin/ccat
+bin/ccdecrypt
+bin/ccencrypt
+bin/ccrypt
+man/man1/ccat.1
+man/man1/ccdecrypt.1
+man/man1/ccencrypt.1
+man/man1/ccrypt.1
+share/doc/ccrypt/ccrypt.html
+@dirrm share/doc/ccrypt
