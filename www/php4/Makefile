@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2002/01/09 16:00:51 jcs Exp $
+# $OpenBSD: Makefile,v 1.64 2002/03/03 12:13:29 avsm Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -10,7 +10,7 @@ COMMENT-pear=	"collection of base classes for common PHP tasks"
 # and has Apache that supports DSO's.
 ONLY_FOR_ARCHS=	i386 m68k sparc
 
-V=		4.1.1
+V=		4.1.2
 DISTNAME=	php-${V}
 PKGNAME=	php4-${V}
 FULLPKGNAME-pear= php4-pear-${V}
@@ -54,7 +54,9 @@ USE_LIBTOOL=	Yes
 
 FLAVORS+=	gdbm gettext imap ldap mhash mm recode snmp
 FLAVORS+=	gd no_x11 pdflib mcrypt curl
-FLAVORS+=	dbase filepro mysql mysql_bundled postgresql iodbc freetds
+FLAVORS+=	dbase filepro mysql mysql_bundled postgresql iodbc
+# FLAVORS+=	freetds
+
 FLAVOR?= 
 
 .if ${FLAVOR:L:Mcurl}
@@ -196,12 +198,12 @@ LIB_DEPENDS+=		iodbc.2::databases/iodbc
 CONFIGURE_ARGS+=        --without-iodbc
 .endif        
 
-.if ${FLAVOR:L:Mfreetds}
-CONFIGURE_ARGS+=        --with-sybase-ct=${LOCALBASE}
-LIB_DEPENDS+=		tds.0,ct.0::databases/freetds
-.else
-CONFIGURE_ARGS+=        --without-sybase-ct
-.endif        
+# .if ${FLAVOR:L:Mfreetds}
+# CONFIGURE_ARGS+=        --with-sybase-ct=${LOCALBASE}
+# LIB_DEPENDS+=		tds.0,ct.0::databases/freetds
+# .else
+# CONFIGURE_ARGS+=        --without-sybase-ct
+# .endif        
 
 .if ${SUBPACKAGE} == "-pear"
 LIB_DEPENDS=
