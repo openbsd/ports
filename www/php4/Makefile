@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/09/03 11:55:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2000/09/04 21:15:40 jakob Exp $
 
 DISTNAME=	php-4.0.2
 PKGNAME=	php4-4.0.2
@@ -43,8 +43,6 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-pcre-regex \
 			--with-xml \
 			--with-zlib
-
-USE_LIBTOOL=		yes
 
 # gdbm
 CONFIGURE_ARGS+=	--with-gdbm
