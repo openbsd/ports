@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2003/12/31 07:13:20 brad Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/02/26 09:52:58 brad Exp $
 bin/karbon
 bin/kchart
 bin/kformula
@@ -2931,9 +2931,19 @@ share/templates/Presentation.desktop
 share/templates/SpreadSheet.desktop
 share/templates/TextDocument.desktop
 %%SHARED%%
+@dirrm share/templates/.source
+@dirrm share/templates
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/22x22/apps
 @dirrm share/icons/locolor/22x22
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
+@dirrm share/icons/crystalsvg/48x48/apps
+@dirrm share/icons/crystalsvg/32x32/apps
 @dirrm share/icons/crystalsvg/22x22/apps
+@dirrm share/icons/crystalsvg/16x16/apps
 @dirrm share/doc/HTML/en/thesaurus
 @dirrm share/doc/HTML/en/kword
 @dirrm share/doc/HTML/en/kugar
@@ -3143,4 +3153,6 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/karbon/icons
 @dirrm share/apps/karbon/gradients
 @dirrm share/apps/karbon
+@dirrm share/applnk/Office
+@dirrm share/applnk
 @dirrm include/kword
