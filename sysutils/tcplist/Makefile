@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/06 19:39:01 rohee Exp $
+# $OpenBSD: Makefile,v 1.4 1999/06/03 01:28:08 brad Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	tcplist-2.2
@@ -10,11 +10,11 @@ MAINTAINER=     ports@OpenBSD.ORG
 
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
-EXTRACT_CMD=	cat
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	|sh
 NO_WRKSUBDIR=	yes
+EXTRACT_CMD=	${CAT}
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS= | ${SH}
+
 INSTALL_TARGET=	install install.man
-MAN1=		tcplist.1
 
 .include <bsd.port.mk>
