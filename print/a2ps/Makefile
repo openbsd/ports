@@ -3,7 +3,7 @@
 # Date created:         31 January 1998
 # Whom:                 Tobias Weingartner (weingart@openbsd.org)
 #
-# $OpenBSD: Makefile,v 1.3 1998/06/10 20:18:00 weingart Exp $
+# $OpenBSD: Makefile,v 1.4 1998/06/18 22:55:45 angelos Exp $
 #
 
 PKGNAME=	a2ps-4.10.2
@@ -66,8 +66,9 @@ pre-configure:
 	@echo "that each PAPERSIZE has a leading capital letter, and Letterdj"
 	@echo "allows a slightly larger margins for DeskJets."
 	@false
-.endif
+.else
 	echo $(PAPERSIZE) > $(WRKDIR)/.media
+.endif
 
 .include <bsd.port.mk>
 
