@@ -3,5 +3,3 @@ current version it contains GNOME::Spell::Dictionary object, which
 provides spell checking dictionary (see Spell.idl for exact API
 definition). It's based on pspell package, which is required to
 build gnome-spell.
-
-WWW: ${HOMEPAGE}

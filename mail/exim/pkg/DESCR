@@ -15,5 +15,3 @@ This port can be built with the following flavors:
 * iconv			- support character code conversions
 
 All this flavors are independent of each other.
-
-WWW: ${HOMEPAGE}

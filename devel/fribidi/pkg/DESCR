@@ -1,5 +1,3 @@
 A library to handle bidirectional scripts (eg. hebrew, arabic), so that
 the display is done in the proper way; while the text data itself is
 always written in logical order.
-
-WWW: ${HOMEPAGE}
