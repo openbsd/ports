@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/25 17:27:50 sturm Exp $
-man/man8/openvpn.8
+@comment $OpenBSD: PLIST,v 1.2 2004/08/08 18:48:38 sturm Exp $
+@man man/man8/openvpn.8
 sbin/openvpn
+share/examples/openvpn/
+share/examples/openvpn/easy-rsa/
 share/examples/openvpn/easy-rsa/README
 share/examples/openvpn/easy-rsa/build-ca
 share/examples/openvpn/easy-rsa/build-dh
@@ -13,6 +15,7 @@ share/examples/openvpn/easy-rsa/clean-all
 share/examples/openvpn/easy-rsa/openssl.cnf
 share/examples/openvpn/easy-rsa/sign-req
 share/examples/openvpn/easy-rsa/vars
+share/examples/openvpn/sample-config-files/
 share/examples/openvpn/sample-config-files/README
 share/examples/openvpn/sample-config-files/firewall.sh
 share/examples/openvpn/sample-config-files/home.up
@@ -27,6 +30,7 @@ share/examples/openvpn/sample-config-files/tls-home.conf
 share/examples/openvpn/sample-config-files/tls-office.conf
 share/examples/openvpn/sample-config-files/xinetd-client-config
 share/examples/openvpn/sample-config-files/xinetd-server-config
+share/examples/openvpn/sample-keys/
 share/examples/openvpn/sample-keys/README
 share/examples/openvpn/sample-keys/client.crt
 share/examples/openvpn/sample-keys/client.key
@@ -35,10 +39,6 @@ share/examples/openvpn/sample-keys/server.crt
 share/examples/openvpn/sample-keys/server.key
 share/examples/openvpn/sample-keys/tmp-ca.crt
 share/examples/openvpn/sample-keys/tmp-ca.key
+share/examples/openvpn/sample-scripts/
 share/examples/openvpn/sample-scripts/openvpn.init
 share/examples/openvpn/sample-scripts/verify-cn
-@dirrm share/examples/openvpn/sample-scripts
-@dirrm share/examples/openvpn/sample-keys
-@dirrm share/examples/openvpn/sample-config-files
-@dirrm share/examples/openvpn/easy-rsa
-@dirrm share/examples/openvpn

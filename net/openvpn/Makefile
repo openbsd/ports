@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/30 21:29:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/08 18:48:38 sturm Exp $
+# Original from: Jorge A. Cortes Montiel <jcortes@bsdcoders.org>
 
 COMMENT=	"easy-to-use, robust, and highly configurable VPN"
 
-VERSION=	1.5.0
+VERSION=	1.6.0
 DISTNAME=	openvpn-${VERSION}
 CATEGORIES=	net security
 
 HOMEPAGE=	http://openvpn.sourceforge.net/
 
-MAINTAINER=	Jorge A. Cortes Montiel <jcortes@bsdcoders.org>
+MAINTAINER=	Thomas Delaet <thomas@delaet.org>	
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
