@@ -1,0 +1,13 @@
+$OpenBSD: patch-videod_c,v 1.1 2003/05/22 09:49:43 wcobb Exp $
+--- videod.c.orig	Thu May 22 06:45:56 2003
++++ videod.c	Thu May 22 06:46:46 2003
+@@ -331,7 +331,8 @@ main(int argc, char **argv)
+ 		if (ioctl(video, METEORCAPTUR, &single) != 0)
+ 			err(1, "METEORCAPTUR single");
+ 
+-		if (tm->tm_min != last_min && (tm->tm_min % snap_ival) == 0) {
++		if (tm->tm_min != last_min &&
++		    (snap_ival == 0 || (tm->tm_min % snap_ival) == 0)) {
+ 			char mon_dir[FILENAME_MAX];
+ 			char day_dir[FILENAME_MAX];
+ 
