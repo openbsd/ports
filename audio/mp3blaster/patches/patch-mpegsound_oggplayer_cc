@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpegsound_oggplayer_cc,v 1.1 2003/12/01 19:18:19 naddy Exp $
+--- mpegsound/oggplayer.cc.orig	2003-12-01 20:00:37.000000000 +0100
++++ mpegsound/oggplayer.cc	2003-12-01 20:00:54.000000000 +0100
+@@ -23,7 +23,7 @@ Oggplayer::Oggplayer()
+ /* Martijn suggests that big endiannes is already taken care of in the rawplayer
+  * class.
+  */
+-#if 0 && defined(WORDS_BIGENDIAN)
++#if defined(WORDS_BIGENDIAN)
+ 	bigendian = 1;
+ #endif
+ 	//TODO: On what hardware is data unsigned, and how do I know?

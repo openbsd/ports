@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/23 15:24:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2003/12/01 19:18:19 naddy Exp $
 
 COMMENT=	"text console audio player with an interactive interface"
 
-DISTNAME=	mp3blaster-3.1.3
+DISTNAME=	mp3blaster-3.2.0
 CATEGORIES=	audio
 HOMEPAGE=	http://www.stack.nl/~brama/mp3blaster/
 
@@ -19,14 +19,7 @@ MASTER_SITES=	${HOMEPAGE}src/
 LIB_DEPENDS=	sidplay.1::audio/libsidplay \
 		vorbis.1,vorbisfile.2::audio/libvorbis
 
-CONFIGURE_STYLE= autoconf
-AUTOCONF_NEW=	yes
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-cxxflags="${CXXFLAGS}"
-
-post-extract:
-	@cd ${WRKSRC}; touch -r configure.in configure.in.stamp
-
-post-configure:
-	@cd ${WRKSRC}; touch -r configure.in.stamp configure.in
 
 .include <bsd.port.mk>
