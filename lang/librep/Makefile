@@ -1,5 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/25 04:44:00 danh Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/22 23:20:40 avsm Exp $
 # Original from: John Harper <jsh@users.sourceforge.net>
+
+.if ${MACHINE_ARCH} == "powerpc"
+BROKEN=		A bug in GCC on powerpc
+.endif
 
 VERSION=	0.13.4
 DISTNAME=	librep-${VERSION}
