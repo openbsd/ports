@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/19 16:33:15 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/05 10:25:41 reinhard Exp $
+
+BROKEN=		"changed download policy; sources no longer available"
 
 DISTNAME=	GTL-0.3.3
 PKGNAME=	gtl-0.3.3
