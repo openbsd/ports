@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/03/24 03:03:07 brad Exp $
-#
+# $OpenBSD: Makefile,v 1.7 1999/03/24 03:10:06 brad Exp $
 
 DISTNAME=       libggi-2.0b1
 CATEGORIES=     graphics
@@ -30,6 +29,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/libggi.conf ${docdir}/libggi.conf.example
 	${INSTALL_DATA} ${WRKSRC}/extensions/misc/libggimisc.conf \
 		${docdir}/libggimisc.conf.example
+	${LDCONFIG} -m ${PREFIX}/lib
 
 docdir=${PREFIX}/share/doc/ggi
 
