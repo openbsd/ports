@@ -1,5 +1,7 @@
 # $FreeBSD: ports/net/ipfm/Makefile,v 1.2 2000/04/09 18:11:44 cpiazza Exp $
-# $OpenBSD: Makefile,v 1.3 2000/10/22 15:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/29 10:14:28 form Exp $
+
+COMMENT=	"IP bandwidth analysis tool"
 
 DISTNAME=	ipfm-0.10.4
 CATEGORIES=     net

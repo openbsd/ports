@@ -1,5 +1,7 @@
 # $FreeBSD: ports/net/fping/Makefile,v 1.8 2000/03/22 00:26:51 obrien Exp $
-# $OpenBSD: Makefile,v 1.5 2000/12/14 13:23:00 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2001/03/29 10:14:27 form Exp $
+
+COMMENT=	"quickly ping N hosts w/o flooding the network"
 
 DISTNAME=	part01
 PKGNAME=	fping-1.20
