@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 17:54:16 espie Exp $
-@pkgcfl gnuls-*
+@comment $OpenBSD: PLIST,v 1.7 2004/09/18 12:55:53 espie Exp $
+@conflict gnuls-*
 bin/gchgrp
 bin/gchmod
 bin/gchown

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/15 17:54:17 espie Exp $
-@pkgcfl es-[0-9]*
+@comment $OpenBSD: PLIST,v 1.9 2004/09/18 12:55:53 espie Exp $
+@conflict es-*
 bin/bzip.xnc
 bin/groups.xnc
 bin/gzip.xnc

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-ls,v 1.4 2004/09/15 17:54:16 espie Exp $
-@pkgcfl fileutils-[0-9]*
+@comment $OpenBSD: PLIST-ls,v 1.5 2004/09/18 12:55:53 espie Exp $
+@conflict fileutils-*
 bin/gdir
 bin/gdircolors
 bin/gls

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/10 11:05:58 espie Exp $
-@pkgcfl rpm2cpio-*
+@comment $OpenBSD: PLIST,v 1.5 2004/09/18 12:55:53 espie Exp $
+@conflict rpm2cpio-*
 bin/gendiff
 bin/rpm
 bin/rpm2cpio
