@@ -1,105 +1,724 @@
+.linux_lib-version
 bin/bash
+bin/sh
 etc/host.conf
-etc/ld.so.conf
 etc/ld.so.cache
-etc/revision-history
+etc/ld.so.conf
 etc/nsswitch.conf
-lib/ld-linux.so.1.7.14
+etc/revision-history
+etc/rpc
 lib/ld-linux.so.1
-lib/ld.so.1.7.14
+lib/ld-linux.so.1.7.14
+lib/ld-linux.so.2
 lib/ld.so
-lib/libdl.so.1.7.14
+lib/ld.so.1.7.14
+lib/libBrokenLocale.so.1
+lib/libc.so.5
 lib/libc.so.5.3.12
-lib/libm.so.5.0.6
+lib/libc.so.5.4.23
+lib/libc.so.6
+lib/libcrypt.so.1
+lib/libdb.so.2
+lib/libdl.so
+lib/libdl.so.1
+lib/libdl.so.1.7.14
+lib/libdl.so.2
+lib/libfbm.so
+lib/libfbm.so.1
 lib/libfbm.so.1.0.0
-lib/libtermcap.so.2.0.8
+lib/libm.so.5
+lib/libm.so.5.0.6
 lib/libm.so.5.0.8
+lib/libm.so.6
+lib/libnsl.so.1
+lib/libnss_compat.so.1
+lib/libnss_db.so.1
+lib/libnss_dns.so.1
+lib/libnss_files.so.1
+lib/libnss_nis.so.1
+lib/libpthread.so.0
+lib/libresolv.so.2
+lib/libtermcap.so.2
+lib/libtermcap.so.2.0.8
+lib/libutil.so.1
 sbin/ldconfig
+usr/X11
+usr/X11R6/lib/X11
+usr/X11R6/lib/libICE.so.6
 usr/X11R6/lib/libICE.so.6.0
+usr/X11R6/lib/libPEX5.so.6
 usr/X11R6/lib/libPEX5.so.6.0
+usr/X11R6/lib/libSM.so.6
 usr/X11R6/lib/libSM.so.6.0
+usr/X11R6/lib/libX11.so.6
 usr/X11R6/lib/libX11.so.6.0
+usr/X11R6/lib/libXIE.so.6
 usr/X11R6/lib/libXIE.so.6.0
+usr/X11R6/lib/libXaw.so.6
 usr/X11R6/lib/libXaw.so.6.0
-usr/X11R6/lib/libXext.so.6.0
-usr/X11R6/lib/libXi.so.6.0
-usr/X11R6/lib/libXmu.so.6.0
-usr/X11R6/lib/libXt.so.6.0
-usr/X11R6/lib/libXtst.so.6.0
-usr/X11R6/lib/libXpm.so.4.8
+usr/X11R6/lib/libXaw3d.so.6
 usr/X11R6/lib/libXaw3d.so.6.0
+usr/X11R6/lib/libXext.so.6
+usr/X11R6/lib/libXext.so.6.0
+usr/X11R6/lib/libXi.so.6
+usr/X11R6/lib/libXi.so.6.0
+usr/X11R6/lib/libXmu.so.6
+usr/X11R6/lib/libXmu.so.6.0
+usr/X11R6/lib/libXpm.so.4
+usr/X11R6/lib/libXpm.so.4.8
+usr/X11R6/lib/libXt.so.6
+usr/X11R6/lib/libXt.so.6.0
+usr/X11R6/lib/libXtst.so.6
+usr/X11R6/lib/libXtst.so.6.0
 usr/X11R6/lib/libforms.so.0.81
+usr/X386
+usr/bin/gencat
+usr/bin/getconf
+usr/bin/glibcbug
 usr/bin/ldd
-usr/lib/libf2c.so.0.20
-usr/lib/libg++.so.27.1.4
-usr/lib/libstdc++.so.27.1.4
-usr/lib/libpng.so.1.0.89
-usr/lib/libvga.so.1.2.10
-usr/lib/libvgagl.so.1.2.10
-usr/lib/libz.so.1.0.4
-usr/lib/libjpeg.so.6.0.1
-usr/lib/libpbm.so.1.0.0
-usr/lib/libpgm.so.1.0.0
-usr/lib/libpnm.so.1.0.0
-usr/lib/libppm.so.1.0.0
-usr/lib/librle.so.1.0.0
-usr/lib/libtiff.so.3.4.28
-usr/lib/libform.so.1.9.9e
-usr/lib/libmenu.so.1.9.9e
-usr/lib/libncurses.so.1.9.9e
-usr/lib/libpanel.so.1.9.9e
-usr/lib/libtcl7.5.so
-usr/lib/libtclx.so.75.2
-usr/lib/libtclx.so
-usr/lib/libtkx.so.41.2
-usr/lib/libtkx.so
-usr/lib/libtk4.1.so
-usr/lib/libgdbm.so.2.0.0
-usr/lib/zoneinfo/localtime
+usr/bin/locale
+usr/bin/localedef
+usr/bin/makedb
+usr/bin/rpcgen
+usr/bin/tzselect
+usr/i486-linuxaout/lib/libX11.so.3
 usr/i486-linuxaout/lib/libX11.so.3.1.0
+usr/i486-linuxaout/lib/libX11.so.6
 usr/i486-linuxaout/lib/libX11.so.6.0
+usr/i486-linuxaout/lib/libXIE.so.6
 usr/i486-linuxaout/lib/libXIE.so.6.0
+usr/i486-linuxaout/lib/libXaw.so.3
 usr/i486-linuxaout/lib/libXaw.so.3.1.0
+usr/i486-linuxaout/lib/libXaw.so.6
 usr/i486-linuxaout/lib/libXaw.so.6.0
+usr/i486-linuxaout/lib/libXpm.so.4
 usr/i486-linuxaout/lib/libXpm.so.4.2
+usr/i486-linuxaout/lib/libXt.so.3
 usr/i486-linuxaout/lib/libXt.so.3.1.0
+usr/i486-linuxaout/lib/libXt.so.6
 usr/i486-linuxaout/lib/libXt.so.6.0
+usr/i486-linuxaout/lib/libc.so.4
 usr/i486-linuxaout/lib/libc.so.4.7.2
+usr/i486-linuxaout/lib/libcurses.so.0
 usr/i486-linuxaout/lib/libcurses.so.0.1.2
+usr/i486-linuxaout/lib/libdb.so.1
 usr/i486-linuxaout/lib/libdb.so.1.85.1
+usr/i486-linuxaout/lib/libm.so.4
 usr/i486-linuxaout/lib/libm.so.4.6.27
+usr/i486-linuxaout/lib/libtcl.so.3
 usr/i486-linuxaout/lib/libtcl.so.3.1
+usr/i486-linuxaout/lib/libtk.so.3
 usr/i486-linuxaout/lib/libtk.so.3.1.1
+usr/i486-linuxaout/lib/libvga.so.1
 usr/i486-linuxaout/lib/libvga.so.1.2.7
+usr/lib/X11
+usr/lib/libc.so
+usr/lib/libf2c.so
+usr/lib/libf2c.so.0
+usr/lib/libf2c.so.0.20
+usr/lib/libform.so.1.9.9e
+usr/lib/libform.so.3.0
+usr/lib/libg++.so
+usr/lib/libg++.so.26
+usr/lib/libg++.so.27
+usr/lib/libg++.so.27.1.4
+usr/lib/libgdbm.so.2
+usr/lib/libgdbm.so.2.0.0
+usr/lib/libjpeg.so
+usr/lib/libjpeg.so.6
+usr/lib/libjpeg.so.6.0.1
+usr/lib/libm.so
+usr/lib/libmenu.so.1.9.9e
+usr/lib/libmenu.so.3.0
+usr/lib/libncurses.so.1.9.9e
+usr/lib/libncurses.so.3.0
+usr/lib/libpanel.so.1.9.9e
+usr/lib/libpanel.so.3.0
+usr/lib/libpbm.so
+usr/lib/libpbm.so.1
+usr/lib/libpbm.so.1.0.0
+usr/lib/libpgm.so
+usr/lib/libpgm.so.1
+usr/lib/libpgm.so.1.0.0
+usr/lib/libpng.so
+usr/lib/libpng.so.1
+usr/lib/libpng.so.1.0.89
+usr/lib/libpnm.so
+usr/lib/libpnm.so.1
+usr/lib/libpnm.so.1.0.0
+usr/lib/libppm.so
+usr/lib/libppm.so.1
+usr/lib/libppm.so.1.0.0
+usr/lib/librle.so
+usr/lib/librle.so.1
+usr/lib/librle.so.1.0.0
+usr/lib/libstdc++.so
+usr/lib/libstdc++.so.26
+usr/lib/libstdc++.so.27
+usr/lib/libstdc++.so.27.1.4
+usr/lib/libtcl.so
+usr/lib/libtcl7.5.so
+usr/lib/libtclx.so
+usr/lib/libtclx.so.75.2
+usr/lib/libtiff.so
+usr/lib/libtiff.so.3
+usr/lib/libtiff.so.3.4.28
+usr/lib/libtk.so
+usr/lib/libtk4.1.so
+usr/lib/libtkx.so
+usr/lib/libtkx.so.41.2
+usr/lib/libvga.so
+usr/lib/libvga.so.1
+usr/lib/libvga.so.1.2.11
+usr/lib/libvgagl.so
+usr/lib/libvgagl.so.1
+usr/lib/libvgagl.so.1.2.11
+usr/lib/libz.so
+usr/lib/libz.so.1
+usr/lib/libz.so.1.0.4
+usr/lib/zoneinfo/localtime
+usr/openwin/lib/libolgx.so.3
 usr/openwin/lib/libolgx.so.3.2.2
+usr/openwin/lib/libxview.so.3
 usr/openwin/lib/libxview.so.3.2.2
+usr/sbin/rpcinfo
+usr/sbin/zdump
+usr/sbin/zic
+usr/share/i18n/charmaps/ANSI_X3.110-1983
+usr/share/i18n/charmaps/ANSI_X3.4-1968
+usr/share/i18n/charmaps/ASMO_449
+usr/share/i18n/charmaps/BALTIC
+usr/share/i18n/charmaps/BS_4730
+usr/share/i18n/charmaps/BS_VIEWDATA
+usr/share/i18n/charmaps/CP1250
+usr/share/i18n/charmaps/CP1251
+usr/share/i18n/charmaps/CP1252
+usr/share/i18n/charmaps/CP1253
+usr/share/i18n/charmaps/CP1254
+usr/share/i18n/charmaps/CP1255
+usr/share/i18n/charmaps/CP1256
+usr/share/i18n/charmaps/CP1257
+usr/share/i18n/charmaps/CSA_Z243.4-1985-1
+usr/share/i18n/charmaps/CSA_Z243.4-1985-2
+usr/share/i18n/charmaps/CSA_Z243.4-1985-GR
+usr/share/i18n/charmaps/CSN_369103
+usr/share/i18n/charmaps/CWI
+usr/share/i18n/charmaps/DEC-MCS
+usr/share/i18n/charmaps/DIN_66003
+usr/share/i18n/charmaps/DS_2089
+usr/share/i18n/charmaps/EBCDIC-AT-DE
+usr/share/i18n/charmaps/EBCDIC-AT-DE-A
+usr/share/i18n/charmaps/EBCDIC-CA-FR
+usr/share/i18n/charmaps/EBCDIC-DK-NO
+usr/share/i18n/charmaps/EBCDIC-DK-NO-A
+usr/share/i18n/charmaps/EBCDIC-ES
+usr/share/i18n/charmaps/EBCDIC-ES-A
+usr/share/i18n/charmaps/EBCDIC-ES-S
+usr/share/i18n/charmaps/EBCDIC-FI-SE
+usr/share/i18n/charmaps/EBCDIC-FI-SE-A
+usr/share/i18n/charmaps/EBCDIC-FR
+usr/share/i18n/charmaps/EBCDIC-IS-FRISS
+usr/share/i18n/charmaps/EBCDIC-IT
+usr/share/i18n/charmaps/EBCDIC-PT
+usr/share/i18n/charmaps/EBCDIC-UK
+usr/share/i18n/charmaps/EBCDIC-US
+usr/share/i18n/charmaps/ECMA-CYRILLIC
+usr/share/i18n/charmaps/ES
+usr/share/i18n/charmaps/ES2
+usr/share/i18n/charmaps/GB_1988-80
+usr/share/i18n/charmaps/GOST_19768-74
+usr/share/i18n/charmaps/GREEK-CCITT
+usr/share/i18n/charmaps/GREEK7
+usr/share/i18n/charmaps/GREEK7-OLD
+usr/share/i18n/charmaps/HP-ROMAN8
+usr/share/i18n/charmaps/IBM037
+usr/share/i18n/charmaps/IBM038
+usr/share/i18n/charmaps/IBM1004
+usr/share/i18n/charmaps/IBM1026
+usr/share/i18n/charmaps/IBM1047
+usr/share/i18n/charmaps/IBM256
+usr/share/i18n/charmaps/IBM273
+usr/share/i18n/charmaps/IBM274
+usr/share/i18n/charmaps/IBM275
+usr/share/i18n/charmaps/IBM277
+usr/share/i18n/charmaps/IBM278
+usr/share/i18n/charmaps/IBM280
+usr/share/i18n/charmaps/IBM281
+usr/share/i18n/charmaps/IBM284
+usr/share/i18n/charmaps/IBM285
+usr/share/i18n/charmaps/IBM290
+usr/share/i18n/charmaps/IBM297
+usr/share/i18n/charmaps/IBM420
+usr/share/i18n/charmaps/IBM423
+usr/share/i18n/charmaps/IBM424
+usr/share/i18n/charmaps/IBM437
+usr/share/i18n/charmaps/IBM500
+usr/share/i18n/charmaps/IBM850
+usr/share/i18n/charmaps/IBM851
+usr/share/i18n/charmaps/IBM852
+usr/share/i18n/charmaps/IBM855
+usr/share/i18n/charmaps/IBM857
+usr/share/i18n/charmaps/IBM860
+usr/share/i18n/charmaps/IBM861
+usr/share/i18n/charmaps/IBM862
+usr/share/i18n/charmaps/IBM863
+usr/share/i18n/charmaps/IBM864
+usr/share/i18n/charmaps/IBM865
+usr/share/i18n/charmaps/IBM868
+usr/share/i18n/charmaps/IBM869
+usr/share/i18n/charmaps/IBM870
+usr/share/i18n/charmaps/IBM871
+usr/share/i18n/charmaps/IBM875
+usr/share/i18n/charmaps/IBM880
+usr/share/i18n/charmaps/IBM891
+usr/share/i18n/charmaps/IBM903
+usr/share/i18n/charmaps/IBM904
+usr/share/i18n/charmaps/IBM905
+usr/share/i18n/charmaps/IBM918
+usr/share/i18n/charmaps/IEC_P27-1
+usr/share/i18n/charmaps/INIS
+usr/share/i18n/charmaps/INIS-8
+usr/share/i18n/charmaps/INIS-CYRILLIC
+usr/share/i18n/charmaps/INVARIANT
+usr/share/i18n/charmaps/ISO-8859-1
+usr/share/i18n/charmaps/ISO-8859-10
+usr/share/i18n/charmaps/ISO-8859-2
+usr/share/i18n/charmaps/ISO-8859-3
+usr/share/i18n/charmaps/ISO-8859-4
+usr/share/i18n/charmaps/ISO-8859-5
+usr/share/i18n/charmaps/ISO-8859-6
+usr/share/i18n/charmaps/ISO-8859-7
+usr/share/i18n/charmaps/ISO-8859-8
+usr/share/i18n/charmaps/ISO-8859-9
+usr/share/i18n/charmaps/ISO-IR-90
+usr/share/i18n/charmaps/ISO_10367-BOX
+usr/share/i18n/charmaps/ISO_10646
+usr/share/i18n/charmaps/ISO_2033-1983
+usr/share/i18n/charmaps/ISO_5427
+usr/share/i18n/charmaps/ISO_5427-EXT
+usr/share/i18n/charmaps/ISO_5428
+usr/share/i18n/charmaps/ISO_646.BASIC
+usr/share/i18n/charmaps/ISO_646.IRV
+usr/share/i18n/charmaps/ISO_6937
+usr/share/i18n/charmaps/ISO_6937-2-25
+usr/share/i18n/charmaps/ISO_6937-2-ADD
+usr/share/i18n/charmaps/ISO_8859-1,GL
+usr/share/i18n/charmaps/ISO_8859-SUPP
+usr/share/i18n/charmaps/IT
+usr/share/i18n/charmaps/JIS_C6220-1969-JP
+usr/share/i18n/charmaps/JIS_C6220-1969-RO
+usr/share/i18n/charmaps/JIS_C6229-1984-A
+usr/share/i18n/charmaps/JIS_C6229-1984-B
+usr/share/i18n/charmaps/JIS_C6229-1984-B-ADD
+usr/share/i18n/charmaps/JIS_C6229-1984-HAND
+usr/share/i18n/charmaps/JIS_C6229-1984-HAND-ADD
+usr/share/i18n/charmaps/JIS_C6229-1984-KANA
+usr/share/i18n/charmaps/JIS_X0201
+usr/share/i18n/charmaps/JUS_I.B1.002
+usr/share/i18n/charmaps/JUS_I.B1.003-MAC
+usr/share/i18n/charmaps/JUS_I.B1.003-SERB
+usr/share/i18n/charmaps/KOI-8
+usr/share/i18n/charmaps/KOI8-R
+usr/share/i18n/charmaps/KSC5636
+usr/share/i18n/charmaps/LATIN-GREEK
+usr/share/i18n/charmaps/LATIN-GREEK-1
+usr/share/i18n/charmaps/MAC-IS
+usr/share/i18n/charmaps/MACINTOSH
+usr/share/i18n/charmaps/MSZ_7795.3
+usr/share/i18n/charmaps/NATS-DANO
+usr/share/i18n/charmaps/NATS-DANO-ADD
+usr/share/i18n/charmaps/NATS-SEFI
+usr/share/i18n/charmaps/NATS-SEFI-ADD
+usr/share/i18n/charmaps/NC_NC00-10
+usr/share/i18n/charmaps/NEXTSTEP
+usr/share/i18n/charmaps/NF_Z_62-010
+usr/share/i18n/charmaps/NF_Z_62-010-1973
+usr/share/i18n/charmaps/NS_4551-1
+usr/share/i18n/charmaps/NS_4551-2
+usr/share/i18n/charmaps/PT
+usr/share/i18n/charmaps/PT2
+usr/share/i18n/charmaps/SAMI
+usr/share/i18n/charmaps/SEN_850200_B
+usr/share/i18n/charmaps/SEN_850200_C
+usr/share/i18n/charmaps/T.101-G2
+usr/share/i18n/charmaps/T.61-7BIT
+usr/share/i18n/charmaps/T.61-8BIT
+usr/share/i18n/charmaps/VIDEOTEX-SUPPL
+usr/share/i18n/locales/POSIX
+usr/share/i18n/locales/cs_CZ
+usr/share/i18n/locales/da_DK
+usr/share/i18n/locales/de_AT
+usr/share/i18n/locales/de_BE
+usr/share/i18n/locales/de_CH
+usr/share/i18n/locales/de_DE
+usr/share/i18n/locales/de_LU
+usr/share/i18n/locales/en_AU
+usr/share/i18n/locales/en_CA
+usr/share/i18n/locales/en_CA,2.5
+usr/share/i18n/locales/en_DK
+usr/share/i18n/locales/en_DK.com
+usr/share/i18n/locales/en_GB
+usr/share/i18n/locales/en_IE
+usr/share/i18n/locales/en_NZ
+usr/share/i18n/locales/en_US
+usr/share/i18n/locales/es_AR
+usr/share/i18n/locales/es_BO
+usr/share/i18n/locales/es_CL
+usr/share/i18n/locales/es_CO
+usr/share/i18n/locales/es_DO
+usr/share/i18n/locales/es_EC
+usr/share/i18n/locales/es_ES
+usr/share/i18n/locales/es_GT
+usr/share/i18n/locales/es_HN
+usr/share/i18n/locales/es_MX
+usr/share/i18n/locales/es_PA
+usr/share/i18n/locales/es_PE
+usr/share/i18n/locales/es_PY
+usr/share/i18n/locales/es_SV
+usr/share/i18n/locales/es_US
+usr/share/i18n/locales/es_UY
+usr/share/i18n/locales/es_VE
+usr/share/i18n/locales/et_EE
+usr/share/i18n/locales/eu_ES
+usr/share/i18n/locales/fi_FI
+usr/share/i18n/locales/fo_FO
+usr/share/i18n/locales/fr_BE
+usr/share/i18n/locales/fr_CA
+usr/share/i18n/locales/fr_CA,2.13
+usr/share/i18n/locales/fr_CH
+usr/share/i18n/locales/fr_FR
+usr/share/i18n/locales/fr_LU
+usr/share/i18n/locales/ga_IE
+usr/share/i18n/locales/gr_GR
+usr/share/i18n/locales/he_IL
+usr/share/i18n/locales/hr_HR
+usr/share/i18n/locales/hu_HU
+usr/share/i18n/locales/is_IS
+usr/share/i18n/locales/it_IT
+usr/share/i18n/locales/iw_IL
+usr/share/i18n/locales/ja_JP
+usr/share/i18n/locales/kl_GL
+usr/share/i18n/locales/lt_LT
+usr/share/i18n/locales/lv_LV
+usr/share/i18n/locales/nl_BE
+usr/share/i18n/locales/nl_NL
+usr/share/i18n/locales/no_NO
+usr/share/i18n/locales/pl_PL
+usr/share/i18n/locales/pt_BR
+usr/share/i18n/locales/pt_PT
+usr/share/i18n/locales/ro_RO
+usr/share/i18n/locales/ru_RU
+usr/share/i18n/locales/ru_SU
+usr/share/i18n/locales/ru_SU.localedata
+usr/share/i18n/locales/sl_SI
+usr/share/i18n/locales/sv_FI
+usr/share/i18n/locales/sv_SE
+usr/share/i18n/locales/tr_TR
+usr/share/i18n/locales/zh_CN
+usr/share/locale/cs_CZ/LC_COLLATE
+usr/share/locale/cs_CZ/LC_CTYPE
+usr/share/locale/cs_CZ/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/cs_CZ/LC_MONETARY
+usr/share/locale/cs_CZ/LC_NUMERIC
+usr/share/locale/cs_CZ/LC_TIME
+usr/share/locale/da_DK/LC_COLLATE
+usr/share/locale/da_DK/LC_CTYPE
+usr/share/locale/da_DK/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/da_DK/LC_MONETARY
+usr/share/locale/da_DK/LC_NUMERIC
+usr/share/locale/da_DK/LC_TIME
+usr/share/locale/de/LC_MESSAGES/libc.mo
+usr/share/locale/de_AT/LC_COLLATE
+usr/share/locale/de_AT/LC_CTYPE
+usr/share/locale/de_AT/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/de_AT/LC_MONETARY
+usr/share/locale/de_AT/LC_NUMERIC
+usr/share/locale/de_AT/LC_TIME
+usr/share/locale/de_BE/LC_COLLATE
+usr/share/locale/de_BE/LC_CTYPE
+usr/share/locale/de_BE/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/de_BE/LC_MONETARY
+usr/share/locale/de_BE/LC_NUMERIC
+usr/share/locale/de_BE/LC_TIME
+usr/share/locale/de_CH/LC_COLLATE
+usr/share/locale/de_CH/LC_CTYPE
+usr/share/locale/de_CH/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/de_CH/LC_MONETARY
+usr/share/locale/de_CH/LC_NUMERIC
+usr/share/locale/de_CH/LC_TIME
+usr/share/locale/de_DE/LC_COLLATE
+usr/share/locale/de_DE/LC_CTYPE
+usr/share/locale/de_DE/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/de_DE/LC_MONETARY
+usr/share/locale/de_DE/LC_NUMERIC
+usr/share/locale/de_DE/LC_TIME
+usr/share/locale/de_LU/LC_COLLATE
+usr/share/locale/de_LU/LC_CTYPE
+usr/share/locale/de_LU/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/de_LU/LC_MONETARY
+usr/share/locale/de_LU/LC_NUMERIC
+usr/share/locale/de_LU/LC_TIME
+usr/share/locale/en_CA/LC_COLLATE
+usr/share/locale/en_CA/LC_CTYPE
+usr/share/locale/en_CA/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/en_CA/LC_MONETARY
+usr/share/locale/en_CA/LC_NUMERIC
+usr/share/locale/en_CA/LC_TIME
+usr/share/locale/en_DK/LC_COLLATE
+usr/share/locale/en_DK/LC_CTYPE
+usr/share/locale/en_DK/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/en_DK/LC_MONETARY
+usr/share/locale/en_DK/LC_NUMERIC
+usr/share/locale/en_DK/LC_TIME
+usr/share/locale/en_GB/LC_COLLATE
+usr/share/locale/en_GB/LC_CTYPE
+usr/share/locale/en_GB/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/en_GB/LC_MONETARY
+usr/share/locale/en_GB/LC_NUMERIC
+usr/share/locale/en_GB/LC_TIME
+usr/share/locale/en_IE/LC_COLLATE
+usr/share/locale/en_IE/LC_CTYPE
+usr/share/locale/en_IE/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/en_IE/LC_MONETARY
+usr/share/locale/en_IE/LC_NUMERIC
+usr/share/locale/en_IE/LC_TIME
+usr/share/locale/en_US/LC_COLLATE
+usr/share/locale/en_US/LC_CTYPE
+usr/share/locale/en_US/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/en_US/LC_MONETARY
+usr/share/locale/en_US/LC_NUMERIC
+usr/share/locale/en_US/LC_TIME
+usr/share/locale/es/LC_MESSAGES/libc.mo
+usr/share/locale/es_ES/LC_COLLATE
+usr/share/locale/es_ES/LC_CTYPE
+usr/share/locale/es_ES/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/es_ES/LC_MONETARY
+usr/share/locale/es_ES/LC_NUMERIC
+usr/share/locale/es_ES/LC_TIME
+usr/share/locale/et_EE/LC_COLLATE
+usr/share/locale/et_EE/LC_CTYPE
+usr/share/locale/et_EE/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/et_EE/LC_MONETARY
+usr/share/locale/et_EE/LC_NUMERIC
+usr/share/locale/et_EE/LC_TIME
+usr/share/locale/eu_ES/LC_COLLATE
+usr/share/locale/eu_ES/LC_CTYPE
+usr/share/locale/eu_ES/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/eu_ES/LC_MONETARY
+usr/share/locale/eu_ES/LC_NUMERIC
+usr/share/locale/eu_ES/LC_TIME
+usr/share/locale/fi_FI/LC_COLLATE
+usr/share/locale/fi_FI/LC_CTYPE
+usr/share/locale/fi_FI/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/fi_FI/LC_MONETARY
+usr/share/locale/fi_FI/LC_NUMERIC
+usr/share/locale/fi_FI/LC_TIME
+usr/share/locale/fo_FO/LC_COLLATE
+usr/share/locale/fo_FO/LC_CTYPE
+usr/share/locale/fo_FO/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/fo_FO/LC_MONETARY
+usr/share/locale/fo_FO/LC_NUMERIC
+usr/share/locale/fo_FO/LC_TIME
+usr/share/locale/fr/LC_MESSAGES/libc.mo
+usr/share/locale/fr_BE/LC_COLLATE
+usr/share/locale/fr_BE/LC_CTYPE
+usr/share/locale/fr_BE/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/fr_BE/LC_MONETARY
+usr/share/locale/fr_BE/LC_NUMERIC
+usr/share/locale/fr_BE/LC_TIME
+usr/share/locale/fr_CA/LC_COLLATE
+usr/share/locale/fr_CA/LC_CTYPE
+usr/share/locale/fr_CA/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/fr_CA/LC_MONETARY
+usr/share/locale/fr_CA/LC_NUMERIC
+usr/share/locale/fr_CA/LC_TIME
+usr/share/locale/fr_CH/LC_COLLATE
+usr/share/locale/fr_CH/LC_CTYPE
+usr/share/locale/fr_CH/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/fr_CH/LC_MONETARY
+usr/share/locale/fr_CH/LC_NUMERIC
+usr/share/locale/fr_CH/LC_TIME
+usr/share/locale/fr_FR/LC_COLLATE
+usr/share/locale/fr_FR/LC_CTYPE
+usr/share/locale/fr_FR/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/fr_FR/LC_MONETARY
+usr/share/locale/fr_FR/LC_NUMERIC
+usr/share/locale/fr_FR/LC_TIME
+usr/share/locale/fr_LU/LC_COLLATE
+usr/share/locale/fr_LU/LC_CTYPE
+usr/share/locale/fr_LU/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/fr_LU/LC_MONETARY
+usr/share/locale/fr_LU/LC_NUMERIC
+usr/share/locale/fr_LU/LC_TIME
+usr/share/locale/ga_IE/LC_COLLATE
+usr/share/locale/ga_IE/LC_CTYPE
+usr/share/locale/ga_IE/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/ga_IE/LC_MONETARY
+usr/share/locale/ga_IE/LC_NUMERIC
+usr/share/locale/ga_IE/LC_TIME
+usr/share/locale/gr_GR/LC_COLLATE
+usr/share/locale/gr_GR/LC_CTYPE
+usr/share/locale/gr_GR/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/gr_GR/LC_MONETARY
+usr/share/locale/gr_GR/LC_NUMERIC
+usr/share/locale/gr_GR/LC_TIME
+usr/share/locale/hr_HR/LC_COLLATE
+usr/share/locale/hr_HR/LC_CTYPE
+usr/share/locale/hr_HR/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/hr_HR/LC_MONETARY
+usr/share/locale/hr_HR/LC_NUMERIC
+usr/share/locale/hr_HR/LC_TIME
+usr/share/locale/hu_HU/LC_COLLATE
+usr/share/locale/hu_HU/LC_CTYPE
+usr/share/locale/hu_HU/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/hu_HU/LC_MONETARY
+usr/share/locale/hu_HU/LC_NUMERIC
+usr/share/locale/hu_HU/LC_TIME
+usr/share/locale/is_IS/LC_COLLATE
+usr/share/locale/is_IS/LC_CTYPE
+usr/share/locale/is_IS/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/is_IS/LC_MONETARY
+usr/share/locale/is_IS/LC_NUMERIC
+usr/share/locale/is_IS/LC_TIME
+usr/share/locale/it_IT/LC_COLLATE
+usr/share/locale/it_IT/LC_CTYPE
+usr/share/locale/it_IT/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/it_IT/LC_MONETARY
+usr/share/locale/it_IT/LC_NUMERIC
+usr/share/locale/it_IT/LC_TIME
+usr/share/locale/iw_IL/LC_COLLATE
+usr/share/locale/iw_IL/LC_CTYPE
+usr/share/locale/iw_IL/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/iw_IL/LC_MONETARY
+usr/share/locale/iw_IL/LC_NUMERIC
+usr/share/locale/iw_IL/LC_TIME
+usr/share/locale/kl_GL/LC_COLLATE
+usr/share/locale/kl_GL/LC_CTYPE
+usr/share/locale/kl_GL/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/kl_GL/LC_MONETARY
+usr/share/locale/kl_GL/LC_NUMERIC
+usr/share/locale/kl_GL/LC_TIME
+usr/share/locale/ko/LC_MESSAGES/libc.mo
+usr/share/locale/locale.alias
+usr/share/locale/lt_LT/LC_COLLATE
+usr/share/locale/lt_LT/LC_CTYPE
+usr/share/locale/lt_LT/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/lt_LT/LC_MONETARY
+usr/share/locale/lt_LT/LC_NUMERIC
+usr/share/locale/lt_LT/LC_TIME
+usr/share/locale/lv_LV/LC_COLLATE
+usr/share/locale/lv_LV/LC_CTYPE
+usr/share/locale/lv_LV/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/lv_LV/LC_MONETARY
+usr/share/locale/lv_LV/LC_NUMERIC
+usr/share/locale/lv_LV/LC_TIME
+usr/share/locale/nl/LC_MESSAGES/libc.mo
+usr/share/locale/nl_BE/LC_COLLATE
+usr/share/locale/nl_BE/LC_CTYPE
+usr/share/locale/nl_BE/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/nl_BE/LC_MONETARY
+usr/share/locale/nl_BE/LC_NUMERIC
+usr/share/locale/nl_BE/LC_TIME
+usr/share/locale/nl_NL/LC_COLLATE
+usr/share/locale/nl_NL/LC_CTYPE
+usr/share/locale/nl_NL/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/nl_NL/LC_MONETARY
+usr/share/locale/nl_NL/LC_NUMERIC
+usr/share/locale/nl_NL/LC_TIME
+usr/share/locale/no_NO/LC_COLLATE
+usr/share/locale/no_NO/LC_CTYPE
+usr/share/locale/no_NO/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/no_NO/LC_MONETARY
+usr/share/locale/no_NO/LC_NUMERIC
+usr/share/locale/no_NO/LC_TIME
+usr/share/locale/pl/LC_MESSAGES/libc.mo
+usr/share/locale/pl_PL/LC_COLLATE
+usr/share/locale/pl_PL/LC_CTYPE
+usr/share/locale/pl_PL/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/pl_PL/LC_MONETARY
+usr/share/locale/pl_PL/LC_NUMERIC
+usr/share/locale/pl_PL/LC_TIME
+usr/share/locale/pt_BR/LC_COLLATE
+usr/share/locale/pt_BR/LC_CTYPE
+usr/share/locale/pt_BR/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/pt_BR/LC_MONETARY
+usr/share/locale/pt_BR/LC_NUMERIC
+usr/share/locale/pt_BR/LC_TIME
+usr/share/locale/pt_PT/LC_COLLATE
+usr/share/locale/pt_PT/LC_CTYPE
+usr/share/locale/pt_PT/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/pt_PT/LC_MONETARY
+usr/share/locale/pt_PT/LC_NUMERIC
+usr/share/locale/pt_PT/LC_TIME
+usr/share/locale/ro_RO/LC_COLLATE
+usr/share/locale/ro_RO/LC_CTYPE
+usr/share/locale/ro_RO/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/ro_RO/LC_MONETARY
+usr/share/locale/ro_RO/LC_NUMERIC
+usr/share/locale/ro_RO/LC_TIME
+usr/share/locale/ru_RU/LC_COLLATE
+usr/share/locale/ru_RU/LC_CTYPE
+usr/share/locale/ru_RU/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/ru_RU/LC_MONETARY
+usr/share/locale/ru_RU/LC_NUMERIC
+usr/share/locale/ru_RU/LC_TIME
+usr/share/locale/ru_SU/LC_COLLATE
+usr/share/locale/ru_SU/LC_CTYPE
+usr/share/locale/ru_SU/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/ru_SU/LC_MONETARY
+usr/share/locale/ru_SU/LC_NUMERIC
+usr/share/locale/ru_SU/LC_TIME
+usr/share/locale/sl_SI/LC_COLLATE
+usr/share/locale/sl_SI/LC_CTYPE
+usr/share/locale/sl_SI/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/sl_SI/LC_MONETARY
+usr/share/locale/sl_SI/LC_NUMERIC
+usr/share/locale/sl_SI/LC_TIME
+usr/share/locale/sv/LC_MESSAGES/libc.mo
+usr/share/locale/sv_FI/LC_COLLATE
+usr/share/locale/sv_FI/LC_CTYPE
+usr/share/locale/sv_FI/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/sv_FI/LC_MONETARY
+usr/share/locale/sv_FI/LC_NUMERIC
+usr/share/locale/sv_FI/LC_TIME
+usr/share/locale/sv_SE/LC_COLLATE
+usr/share/locale/sv_SE/LC_CTYPE
+usr/share/locale/sv_SE/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/sv_SE/LC_MONETARY
+usr/share/locale/sv_SE/LC_NUMERIC
+usr/share/locale/sv_SE/LC_TIME
+usr/share/locale/tr_TR/LC_COLLATE
+usr/share/locale/tr_TR/LC_CTYPE
+usr/share/locale/tr_TR/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/tr_TR/LC_MONETARY
+usr/share/locale/tr_TR/LC_NUMERIC
+usr/share/locale/tr_TR/LC_TIME
 var/X11R6/lib/XErrorDB
 var/X11R6/lib/XKeysymDB
 var/X11R6/lib/Xcms.txt
+var/X11R6/lib/app-defaults/Beforelight
 var/X11R6/lib/app-defaults/Bitmap
 var/X11R6/lib/app-defaults/Bitmap-color
+var/X11R6/lib/app-defaults/Chooser
+var/X11R6/lib/app-defaults/Clock-color
 var/X11R6/lib/app-defaults/Editres
 var/X11R6/lib/app-defaults/Editres-color
-var/X11R6/lib/app-defaults/Clock-color
 var/X11R6/lib/app-defaults/XClipboard
 var/X11R6/lib/app-defaults/XClock
 var/X11R6/lib/app-defaults/XConsole
-var/X11R6/lib/app-defaults/Chooser
-var/X11R6/lib/app-defaults/Xfd
 var/X11R6/lib/app-defaults/XLogo
 var/X11R6/lib/app-defaults/XLogo-color
+var/X11R6/lib/app-defaults/XSm
+var/X11R6/lib/app-defaults/XTerm
+var/X11R6/lib/app-defaults/Xfd
 var/X11R6/lib/app-defaults/Xmag
 var/X11R6/lib/app-defaults/Xmh
-var/X11R6/lib/app-defaults/XTerm
-var/X11R6/lib/app-defaults/Beforelight
-var/X11R6/lib/app-defaults/XSm
 var/X11R6/lib/app-defaults/Xvidtune
-var/X11R6/lib/locale/locale.alias
-var/X11R6/lib/locale/locale.dir
-var/X11R6/lib/locale/compose.dir
 var/X11R6/lib/locale/C/XLC_LOCALE
-var/X11R6/lib/locale/iso8859-1/XLC_LOCALE
+var/X11R6/lib/locale/compose.dir
+var/X11R6/lib/locale/en_US.utf/XLC_LOCALE
 var/X11R6/lib/locale/iso8859-1/Compose
+var/X11R6/lib/locale/iso8859-1/XLC_LOCALE
 var/X11R6/lib/locale/iso8859-2/XLC_LOCALE
 var/X11R6/lib/locale/iso8859-3/XLC_LOCALE
 var/X11R6/lib/locale/iso8859-4/XLC_LOCALE
@@ -108,14 +727,15 @@ var/X11R6/lib/locale/iso8859-6/XLC_LOCALE
 var/X11R6/lib/locale/iso8859-7/XLC_LOCALE
 var/X11R6/lib/locale/iso8859-8/XLC_LOCALE
 var/X11R6/lib/locale/iso8859-9/XLC_LOCALE
-var/X11R6/lib/locale/ja/XLC_LOCALE
 var/X11R6/lib/locale/ja.JIS/XLC_LOCALE
 var/X11R6/lib/locale/ja.SJIS/XLC_LOCALE
+var/X11R6/lib/locale/ja/XLC_LOCALE
 var/X11R6/lib/locale/ko/XLC_LOCALE
-var/X11R6/lib/locale/zh/XLC_LOCALE
-var/X11R6/lib/locale/zh_TW/XLC_LOCALE
-var/X11R6/lib/locale/th_TH.TACTIS/XLC_LOCALE
-var/X11R6/lib/locale/en_US.utf/XLC_LOCALE
+var/X11R6/lib/locale/locale.alias
+var/X11R6/lib/locale/locale.dir
+var/X11R6/lib/locale/tbl_data/gb2312
+var/X11R6/lib/locale/tbl_data/jis0208
+var/X11R6/lib/locale/tbl_data/ksc5601
 var/X11R6/lib/locale/tbl_data/tab8859_1
 var/X11R6/lib/locale/tbl_data/tab8859_2
 var/X11R6/lib/locale/tbl_data/tab8859_3
@@ -125,10 +745,9 @@ var/X11R6/lib/locale/tbl_data/tab8859_6
 var/X11R6/lib/locale/tbl_data/tab8859_7
 var/X11R6/lib/locale/tbl_data/tab8859_8
 var/X11R6/lib/locale/tbl_data/tab8859_9
-var/X11R6/lib/locale/tbl_data/jis0208
-var/X11R6/lib/locale/tbl_data/ksc5601
-var/X11R6/lib/locale/tbl_data/gb2312
-var/X11R6/lib/rgb.txt
+var/X11R6/lib/locale/th_TH.TACTIS/XLC_LOCALE
+var/X11R6/lib/locale/zh/XLC_LOCALE
+var/X11R6/lib/locale/zh_TW/XLC_LOCALE
 var/X11R6/lib/nls/C
 var/X11R6/lib/nls/ja_JP.jis7
 var/X11R6/lib/nls/ja_JP.jis8
@@ -145,87 +764,7 @@ var/X11R6/lib/nls/nls.dir
 var/X11R6/lib/nls/wr_WR.ct
 var/X11R6/lib/nls/zh_CN.ugb
 var/X11R6/lib/nls/zh_TW.big5
-.linux_lib-version
-bin/sh
-lib/libdl.so
-lib/libtermcap.so.2
-lib/libfbm.so.1
-lib/libm.so.5
-lib/libc.so.5
-lib/libdl.so.1
-lib/libfbm.so
-usr/X11R6/lib/libXaw3d.so.6
-usr/X11R6/lib/libXpm.so.4
-usr/X11R6/lib/libXtst.so.6
-usr/X11R6/lib/libXt.so.6
-usr/X11R6/lib/libXmu.so.6
-usr/X11R6/lib/libXi.so.6
-usr/X11R6/lib/libXext.so.6
-usr/X11R6/lib/libXaw.so.6
-usr/X11R6/lib/libXIE.so.6
-usr/X11R6/lib/libX11.so.6
-usr/X11R6/lib/libSM.so.6
-usr/X11R6/lib/libPEX5.so.6
-usr/X11R6/lib/libICE.so.6
-@unexec rm -f %D/usr/X11R6/lib/X11
-@unexec rm -f %D/usr/lib/X11
-@unexec rm -f %D/usr/X11 %D/usr/X386
-usr/lib/libf2c.so
-usr/lib/libc.so
-usr/lib/libm.so
-usr/lib/libg++.so
-usr/lib/libstdc++.so
-usr/lib/libpng.so
-usr/lib/libvga.so
-usr/lib/libvgagl.so
-usr/lib/libz.so
-usr/lib/libjpeg.so
-usr/lib/libpbm.so
-usr/lib/libpgm.so
-usr/lib/libpnm.so
-usr/lib/libppm.so
-usr/lib/librle.so
-usr/lib/libtiff.so
-usr/lib/libtiff.so.3
-usr/lib/librle.so.1
-usr/lib/libppm.so.1
-usr/lib/libpnm.so.1
-usr/lib/libpgm.so.1
-usr/lib/libpbm.so.1
-usr/lib/libjpeg.so.6
-usr/lib/libz.so.1
-usr/lib/libvgagl.so.1
-usr/lib/libvga.so.1
-usr/lib/libpng.so.1
-usr/lib/libstdc++.so.27
-usr/lib/libg++.so.27
-usr/lib/libf2c.so.0
-usr/lib/libform.so.3.0
-usr/lib/libmenu.so.3.0
-usr/lib/libncurses.so.3.0
-usr/lib/libpanel.so.3.0
-usr/lib/libtcl.so
-usr/lib/libtk.so
-usr/lib/libgdbm.so.2
-usr/lib/libstdc++.so.26
-usr/lib/libg++.so.26
-usr/i486-linuxaout/lib/libX11.so.3
-usr/i486-linuxaout/lib/libX11.so.6
-usr/i486-linuxaout/lib/libXIE.so.6
-usr/i486-linuxaout/lib/libXaw.so.3
-usr/i486-linuxaout/lib/libXaw.so.6
-usr/i486-linuxaout/lib/libXpm.so.4
-usr/i486-linuxaout/lib/libXt.so.3
-usr/i486-linuxaout/lib/libXt.so.6
-usr/i486-linuxaout/lib/libc.so.4
-usr/i486-linuxaout/lib/libcurses.so.0
-usr/i486-linuxaout/lib/libdb.so.1
-usr/i486-linuxaout/lib/libm.so.4
-usr/i486-linuxaout/lib/libtcl.so.3
-usr/i486-linuxaout/lib/libtk.so.3
-usr/i486-linuxaout/lib/libvga.so.1
-usr/openwin/lib/libxview.so.3
-usr/openwin/lib/libolgx.so.3
+var/X11R6/lib/rgb.txt
 @dirrm bin
 @dirrm etc
 @dirrm lib
@@ -237,10 +776,118 @@ usr/openwin/lib/libolgx.so.3
 @dirrm usr/lib
 @dirrm usr/i486-linuxaout/lib
 @dirrm usr/i486-linuxaout
-@dirrm usr/local/lib
-@dirrm usr/local
 @dirrm usr/openwin/lib
 @dirrm usr/openwin
+@dirrm usr/sbin
+@dirrm usr/share/i18n/charmaps
+@dirrm usr/share/i18n/locales
+@dirrm usr/share/i18n
+@dirrm usr/share/locale/cs_CZ/LC_MESSAGES
+@dirrm usr/share/locale/cs_CZ
+@dirrm usr/share/locale/da_DK/LC_MESSAGES
+@dirrm usr/share/locale/da_DK
+@dirrm usr/share/locale/de/LC_MESSAGES
+@dirrm usr/share/locale/de
+@dirrm usr/share/locale/de_AT/LC_MESSAGES
+@dirrm usr/share/locale/de_AT
+@dirrm usr/share/locale/de_BE/LC_MESSAGES
+@dirrm usr/share/locale/de_BE
+@dirrm usr/share/locale/de_CH/LC_MESSAGES
+@dirrm usr/share/locale/de_CH
+@dirrm usr/share/locale/de_DE/LC_MESSAGES
+@dirrm usr/share/locale/de_DE
+@dirrm usr/share/locale/de_LU/LC_MESSAGES
+@dirrm usr/share/locale/de_LU
+@dirrm usr/share/locale/en_CA/LC_MESSAGES
+@dirrm usr/share/locale/en_CA
+@dirrm usr/share/locale/en_DK/LC_MESSAGES
+@dirrm usr/share/locale/en_DK
+@dirrm usr/share/locale/en_GB/LC_MESSAGES
+@dirrm usr/share/locale/en_GB
+@dirrm usr/share/locale/en_IE/LC_MESSAGES
+@dirrm usr/share/locale/en_IE
+@dirrm usr/share/locale/en_US/LC_MESSAGES
+@dirrm usr/share/locale/en_US
+@dirrm usr/share/locale/es/LC_MESSAGES
+@dirrm usr/share/locale/es
+@dirrm usr/share/locale/es_ES/LC_MESSAGES
+@dirrm usr/share/locale/es_ES
+@dirrm usr/share/locale/et_EE/LC_MESSAGES
+@dirrm usr/share/locale/et_EE
+@dirrm usr/share/locale/eu_ES/LC_MESSAGES
+@dirrm usr/share/locale/eu_ES
+@dirrm usr/share/locale/fi_FI/LC_MESSAGES
+@dirrm usr/share/locale/fi_FI
+@dirrm usr/share/locale/fo_FO/LC_MESSAGES
+@dirrm usr/share/locale/fo_FO
+@dirrm usr/share/locale/fr/LC_MESSAGES
+@dirrm usr/share/locale/fr
+@dirrm usr/share/locale/fr_BE/LC_MESSAGES
+@dirrm usr/share/locale/fr_BE
+@dirrm usr/share/locale/fr_CA/LC_MESSAGES
+@dirrm usr/share/locale/fr_CA
+@dirrm usr/share/locale/fr_CH/LC_MESSAGES
+@dirrm usr/share/locale/fr_CH
+@dirrm usr/share/locale/fr_FR/LC_MESSAGES
+@dirrm usr/share/locale/fr_FR
+@dirrm usr/share/locale/fr_LU/LC_MESSAGES
+@dirrm usr/share/locale/fr_LU
+@dirrm usr/share/locale/ga_IE/LC_MESSAGES
+@dirrm usr/share/locale/ga_IE
+@dirrm usr/share/locale/gr_GR/LC_MESSAGES
+@dirrm usr/share/locale/gr_GR
+@dirrm usr/share/locale/hr_HR/LC_MESSAGES
+@dirrm usr/share/locale/hr_HR
+@dirrm usr/share/locale/hu_HU/LC_MESSAGES
+@dirrm usr/share/locale/hu_HU
+@dirrm usr/share/locale/is_IS/LC_MESSAGES
+@dirrm usr/share/locale/is_IS
+@dirrm usr/share/locale/it_IT/LC_MESSAGES
+@dirrm usr/share/locale/it_IT
+@dirrm usr/share/locale/iw_IL/LC_MESSAGES
+@dirrm usr/share/locale/iw_IL
+@dirrm usr/share/locale/kl_GL/LC_MESSAGES
+@dirrm usr/share/locale/kl_GL
+@dirrm usr/share/locale/ko/LC_MESSAGES
+@dirrm usr/share/locale/ko
+@dirrm usr/share/locale/lt_LT/LC_MESSAGES
+@dirrm usr/share/locale/lt_LT
+@dirrm usr/share/locale/lv_LV/LC_MESSAGES
+@dirrm usr/share/locale/lv_LV
+@dirrm usr/share/locale/nl/LC_MESSAGES
+@dirrm usr/share/locale/nl
+@dirrm usr/share/locale/nl_BE/LC_MESSAGES
+@dirrm usr/share/locale/nl_BE
+@dirrm usr/share/locale/nl_NL/LC_MESSAGES
+@dirrm usr/share/locale/nl_NL
+@dirrm usr/share/locale/no_NO/LC_MESSAGES
+@dirrm usr/share/locale/no_NO
+@dirrm usr/share/locale/pl/LC_MESSAGES
+@dirrm usr/share/locale/pl
+@dirrm usr/share/locale/pl_PL/LC_MESSAGES
+@dirrm usr/share/locale/pl_PL
+@dirrm usr/share/locale/pt_BR/LC_MESSAGES
+@dirrm usr/share/locale/pt_BR
+@dirrm usr/share/locale/pt_PT/LC_MESSAGES
+@dirrm usr/share/locale/pt_PT
+@dirrm usr/share/locale/ro_RO/LC_MESSAGES
+@dirrm usr/share/locale/ro_RO
+@dirrm usr/share/locale/ru_RU/LC_MESSAGES
+@dirrm usr/share/locale/ru_RU
+@dirrm usr/share/locale/ru_SU/LC_MESSAGES
+@dirrm usr/share/locale/ru_SU
+@dirrm usr/share/locale/sl_SI/LC_MESSAGES
+@dirrm usr/share/locale/sl_SI
+@dirrm usr/share/locale/sv/LC_MESSAGES
+@dirrm usr/share/locale/sv
+@dirrm usr/share/locale/sv_FI/LC_MESSAGES
+@dirrm usr/share/locale/sv_FI
+@dirrm usr/share/locale/sv_SE/LC_MESSAGES
+@dirrm usr/share/locale/sv_SE
+@dirrm usr/share/locale/tr_TR/LC_MESSAGES
+@dirrm usr/share/locale/tr_TR
+@dirrm usr/share/locale
+@dirrm usr/share
 @dirrm usr
 @dirrm var/X11R6/lib/app-defaults
 @dirrm var/X11R6/lib/locale/C
@@ -268,8 +915,7 @@ usr/openwin/lib/libolgx.so.3
 @dirrm var/X11R6/lib
 @dirrm var/X11R6
 @dirrm var
-dev/dsp
-@dirrm dev
-@exec mkdir -p %D/usr/local
-@exec mkdir -p %D/usr/local/lib
-@exec %D/sbin/ldconfig
+@exec echo "***"
+@exec echo "*** Installation complete. See compat_linux(8)"
+@exec echo "*** for more information."
+@exec echo "***"
