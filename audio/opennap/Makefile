@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2000/09/24 07:04:01 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/31 22:41:48 brad Exp $
 
-DISTNAME=	opennap-0.36
+COMMENT=	"OpenNAP open-source Napster(tm) server"
+
+DISTNAME=	opennap-0.41
 CATEGORIES=	audio net
-NEED_VERSION=	1.330
+NEED_VERSION=	1.364
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= opennap
 
@@ -15,6 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+SYSCONFDIR=	/etc/opennap
+SEPARATE_BUILD=	concurrent
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-resume
@@ -22,10 +26,8 @@ CONFIGURE_ARGS=	--enable-resume
 DOCS=	README napster.txt
 
 post-install:
-	(echo "${PREFIX}/share/opennap"; echo "admin"; echo "opennap"; echo "") | ${WRKSRC}/setup
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/opennap
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/opennap
-	@chown -R nobody:nobody ${PREFIX}/share/opennap
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/opennap
 	${INSTALL_DATA} ${WRKSRC}/sample.* ${PREFIX}/share/examples/opennap
 

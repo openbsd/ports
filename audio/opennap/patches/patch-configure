@@ -1,0 +1,11 @@
+--- configure.orig	Sun Mar 25 23:43:51 2001
++++ configure	Sun Mar 25 23:44:19 2001
+@@ -1834,7 +1834,7 @@
+ 
+ else
+   rm -rf conftest*
+-  SHAREDIR=\${pkgdatadir}
++  SHAREDIR=\${sysconfdir}
+ fi
+ rm -f conftest*
+ 
