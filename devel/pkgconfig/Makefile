@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/01/02 19:23:05 marcm Exp $
+# $OpenBSD: Makefile,v 1.12 2003/01/11 05:53:03 marcm Exp $
 
 COMMENT=		"tool for managing library compile/link flags"
 
@@ -23,5 +23,6 @@ BUILD_DEPENDS=		:glib->=1.2.8:devel/glib
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--with-installed-glib
+CONFIGURE_ARGS+=	--no-recursion
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2003/01/02 19:23:05 marcm Exp $
---- Makefile.in.orig	Wed Jan  1 19:03:18 2003
-+++ Makefile.in	Wed Jan  1 19:05:03 2003
+$OpenBSD: patch-Makefile_in,v 1.2 2003/01/11 05:53:03 marcm Exp $
+--- Makefile.in.orig	Thu Oct 10 14:19:02 2002
++++ Makefile.in	Fri Jan 10 13:10:25 2003
 @@ -117,7 +117,7 @@ bin_PROGRAMS =  pkg-config$(EXEEXT)
  PROGRAMS =  $(bin_PROGRAMS)
  
@@ -10,3 +10,19 @@ $OpenBSD: patch-Makefile_in,v 1.1 2003/01/02 19:23:05 marcm Exp $
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
  LIBS = @LIBS@
+@@ -479,12 +479,12 @@ distdir: $(DISTFILES)
+ 	done
+ findme.o: findme.c config.h findme.h
+ main.o: main.c config.h pkg.h partial-glib.h glib-1.2.8/glib.h \
+-	glib-1.2.8/glibconfig.h parse.h popt.h
++	parse.h popt.h
+ parse.o: parse.c config.h parse.h pkg.h partial-glib.h glib-1.2.8/glib.h \
+-	glib-1.2.8/glibconfig.h popt.h
++	popt.h
+ partial-glib.o: partial-glib.c
+ pkg.o: pkg.c config.h pkg.h partial-glib.h glib-1.2.8/glib.h \
+-	glib-1.2.8/glibconfig.h parse.h
++	parse.h
+ popt.o: popt.c config.h findme.h popt.h poptint.h
+ poptconfig.o: poptconfig.c config.h popt.h poptint.h
+ popthelp.o: popthelp.c config.h popt.h poptint.h
