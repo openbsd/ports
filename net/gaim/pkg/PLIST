@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/10/06 08:11:15 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/10/06 21:21:09 jcs Exp $
 bin/gaim
 man/man1/gaim.1
 share/gnome/apps/Internet/gaim.desktop
@@ -10,4 +10,4 @@ share/locale/pl/LC_MESSAGES/gaim.mo
 share/locale/ru/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
 share/pixmaps/gaim.xpm
-@dirrm lib/gaim
+%%SHARED%%
