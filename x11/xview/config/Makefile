@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2002/10/29 19:49:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2002/12/11 16:38:24 sturm Exp $
 
 COMMENT=	"OpenLook Toolkit config files"
 
 PKGNAME=	xview-config-${XVIEW_VERSION}
 CATEGORIES=	x11
-NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -17,7 +16,7 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 PATCH_LIST=	p-*
-FAKE_FLAGS=	CONFIGDIR=/usr/local/lib/X11/config
+FAKE_FLAGS=	CONFIGDIR=${LOCALBASE}/lib/X11/config
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/config
