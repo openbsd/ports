@@ -14,7 +14,7 @@
  	*-*-*openbsd*)
  		CFLAGS="$CFLAGS -D__LINUX__ -D__FreeBSD__"
 -		NFLAGS="$NFLAGS -D__LINUX__ -D__FreeBSD__ -D__OpenBSD__ -f aoutb"
-+		NFLAGS="$NFLAGS -D__LINUX__ -D__FreeBSD__ -D__OpenBSD__ -f elf"
++		NFLAGS="$NFLAGS -D__LINUX__ -D__FreeBSD__ -D__OpenBSD__ -DELF -f elf"
  		;;
  	*-*-*bsd*)
  		CFLAGS="$CFLAGS -D__LINUX__ -D__FreeBSD__"
