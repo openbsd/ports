@@ -1,0 +1,18 @@
+--- doc/RPTP.texi.orig	Mon Jun 29 20:04:34 1998
++++ doc/RPTP.texi	Sat Apr  8 18:33:12 2000
+@@ -7,9 +7,15 @@
+ @finalout
+ @end iftex
+ @setchapternewpage odd
++@dircategory Programming & development tools
+ @c %**end of header
+ 
+ @ifinfo
++@format
++START-INFO-DIR-ENTRY
++* RPTP: (RPTP).		The RPTP Protocol
++END-INFO-DIR-ENTRY
++@end format
+ 
+ This file documents RPTP protocol.
+ 

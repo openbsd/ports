@@ -1,0 +1,18 @@
+--- doc/RPLAY.texi.orig	Mon Jun 29 20:04:34 1998
++++ doc/RPLAY.texi	Sat Apr  8 18:32:48 2000
+@@ -6,9 +6,15 @@
+ @finalout
+ @end iftex
+ @setchapternewpage odd
++@dircategory Programming & development tools
+ @c %**end of header
+ 
+ @ifinfo
++@format
++START-INFO-DIR-ENTRY
++* RPLAY: (RPLAY).		The RPLAY Protocol
++END-INFO-DIR-ENTRY
++@end format
+ 
+ This file documents RPLAY protocol.
+ 
