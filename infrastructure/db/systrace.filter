@@ -73,7 +73,9 @@
 	native-issetugid: permit
 	native-kill: permit
 	native-lchown: permit
-	native-link: permit
+	native-link: filename match "/tmp" and filename[1] match "/tmp" then permit
+	native-link: filename match "${WRKDIR}" and filename[1] match "${WRKDIR}" then permit
+	native-link: filename[1] match "/<non-existent filename>: *" then deny[enoent]
 	native-listen: true then permit log
 	native-lseek: permit
 	native-madvise: permit
@@ -127,7 +129,10 @@
 	native-socket: permit
 	native-socketpair: permit
 	native-statfs: permit
-	native-symlink: permit
+	native-symlink: filename match "/tmp" then permit
+	native-symlink: filename match "${WRKDIR}" then permit
+	native-symlink: filename match "/<non-existent filename>: *" then deny[enoent]
+	native-symlink: string eq "" and filename eq "" then deny[enoent]
 	native-sync: permit
 	native-umask: permit
 	native-utimes: permit
