@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2002/03/02 23:59:52 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2002/03/30 00:13:23 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"X11 toolkit, netscape plugins"
@@ -18,13 +18,13 @@ EXTRACT_SUFX=		.tar.bz2
 # duplicated over the place.
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
-MULTI_PACKAGES=-plugins
+#MULTI_PACKAGES=-plugins
 MODULES=qt2
 
-SUBPACKAGE?=
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-plugins"
-USE_MOTIF=	any
-.endif
+#SUBPACKAGE?=
+#.if !defined(PACKAGING) || ${SUBPACKAGE} == "-plugins"
+#USE_MOTIF=	any
+#.endif
 
 LIB_DEPENDS=	kdecore.3,kdeui,DCOP,artskde,kab,kdefakes,kdeprint,kdeprint_management,kdesu,kfile,khtml,kio,kjava,kmid,kparts,kscreensaver,kspell,kssl,ksycoca,ktexteditor,soundserver_idl::x11/kde/libs2 \
 		ldap.2,lber:openldap-client-2.*:databases/openldap \
@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	--with-xdmdir=/var/X11/kdm
 CONFIGURE_ARGS+=	--disable-debug
 CONFIGURE_ARGS+=	--enable-final
 #CONFIGURE_ARGS+=	--enable-debug
-#CONFIGURE_ARGS+=	--without-motif
+CONFIGURE_ARGS+=	--without-motif
 #CONFIGURE_ARGS+=--enable-static --enable-debug --disable-shared
 
 PATCH_LIST=${PORTSDIR}/x11/kde/libs2/patches/p-* patch-*

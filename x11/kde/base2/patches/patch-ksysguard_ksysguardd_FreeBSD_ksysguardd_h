@@ -1,5 +1,5 @@
---- ksysguard/ksysguardd/FreeBSD/ksysguardd.h.orig	Mon Dec 24 10:37:00 2001
-+++ ksysguard/ksysguardd/FreeBSD/ksysguardd.h	Mon Dec 24 10:36:51 2001
+--- ksysguard/ksysguardd/FreeBSD/ksysguardd.h.orig	Sun Dec 30 20:41:59 2001
++++ ksysguard/ksysguardd/FreeBSD/ksysguardd.h	Sun Dec 30 20:41:59 2001
 @@ -0,0 +1,31 @@
 +/*
 +    KSysGuard, the KDE System Guard
@@ -19,7 +19,7 @@
 +    along with this program; if not, write to the Free Software
 +    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 +
-+	$Id: patch-ksysguard_ksysguardd_FreeBSD_ksysguardd_h,v 1.1 2001/12/31 12:30:54 espie Exp $
++	$Id: patch-ksysguard_ksysguardd_FreeBSD_ksysguardd_h,v 1.2 2002/03/30 00:13:23 espie Exp $
 +*/
 +
 +#ifndef _ksysguardd_h_

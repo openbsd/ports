@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-plugins,v 1.1 2001/04/24 11:44:06 espie Exp $
-lib/libkcm_nsplugin.so.0.0
-lib/libnsplugin.so.1.1
-DYNLIBDIR(%D/lib)

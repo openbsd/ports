@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-plugins,v 1.2 2001/09/21 15:48:21 espie Exp $
-%%SHARED%%
-bin/nspluginscan
-bin/nspluginviewer
-lib/libkcm_nsplugin.la
-lib/libnsplugin.la
-share/applnk/Settings/WebBrowsing/nsplugin.desktop
