@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/28 12:11:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/15 16:17:56 naddy Exp $
 
 COMMENT=	"play, encode, and manage Ogg Vorbis files"
 DISTNAME=	vorbis-tools-1.0beta4
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--with-ogg-prefix=${LOCALBASE} \
 		--with-ao-prefix=${LOCALBASE}
 
 post-patch:
-	@cd ${WRKSRC} && touch acinlude.m4 aclocal.m4 configure.in
+	@cd ${WRKSRC} && touch acinclude.m4 aclocal.m4 configure.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vorbis-tools
