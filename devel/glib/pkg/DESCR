@@ -2,11 +2,4 @@ General-purpose library from the GTK+ team, includes support
 routines for C such as lists, trees, hashes, memory allocation, and
 many other things.
 
-The official ftp site is:
-  ftp://ftp.gtk.org/pub/gtk/
-
-The official web site is:
-  ${HOMEPAGE}
-
-A mailing list is located at:
-  gtk-list@redhat.com
+WWW: ${HOMEPAGE}

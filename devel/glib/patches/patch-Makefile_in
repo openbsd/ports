@@ -1,16 +1,15 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2001/02/19 20:34:46 danh Exp $
---- Makefile.in.orig	Wed May 24 21:06:06 2000
-+++ Makefile.in	Mon Feb 19 15:32:17 2001
-@@ -97,7 +97,7 @@ AUTOMAKE_OPTIONS = 1.4
+--- Makefile.in.orig	Fri Mar  2 12:37:20 2001
++++ Makefile.in	Wed Mar  7 08:45:42 2001
+@@ -98,7 +98,7 @@
  
  SUBDIRS = . gmodule gthread docs tests
  
 -configincludedir = $(pkglibdir)/include
-+configincludedir = $(includedir)
++configincludedir = $(includedir)/glib-1.2
  
  bin_SCRIPTS = glib-config
  
-@@ -121,7 +121,7 @@ configinclude_DATA =  	glibconfig.h
+@@ -123,7 +123,7 @@
  
  CONFIGURE_DEPENDENCIES = acglib.m4		
  
@@ -19,9 +18,9 @@ $OpenBSD: patch-Makefile_in,v 1.1 2001/02/19 20:34:46 danh Exp $
  
  
  noinst_PROGRAMS = testglib testgdate testgdateparser
-@@ -570,7 +570,7 @@ uninstall-am: uninstall-libLTLIBRARIES u
+@@ -629,7 +629,7 @@
  		uninstall-configincludeDATA uninstall-m4dataDATA \
- 		uninstall-includeHEADERS
+ 		uninstall-pkgconfigDATA uninstall-glibincludeHEADERS
  uninstall: uninstall-recursive
 -all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) \
 +all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(DATA) \

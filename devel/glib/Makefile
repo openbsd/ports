@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2000/11/11 21:53:30 brad Exp $
+# $OpenBSD: Makefile,v 1.35 2001/03/07 22:51:22 brad Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN=		"BROKEN on powerpc: reason unknown at the moment"
 .endif
 
-DISTNAME=	glib-1.2.8
+DISTNAME=	glib-1.2.9
 CATEGORIES=	devel
 NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static --includedir="${PREFIX}/include/glib"
+CONFIGURE_ARGS+= --enable-static
 
 FLAVORS=	threads
 FLAVOR?=
@@ -39,9 +39,5 @@ CONFIGURE_ARGS+= --disable-threads
 
 post-extract:
 	@rm -f ${WRKSRC}/docs/glib.info*
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal
-	${INSTALL_DATA} ${WRKSRC}/glib.m4 ${PREFIX}/share/aclocal
 
 .include <bsd.port.mk>
