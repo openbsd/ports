@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2003/10/08 16:01:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2003/12/14 00:52:21 naddy Exp $
 
 COMMENT=	"Ogg bitstream library"
 
-DISTNAME=	libogg-1.0
+DISTNAME=	libogg-1.1
 CATEGORIES=    	audio
 HOMEPAGE=	http://www.xiph.org/ogg/
 
@@ -14,9 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://www.vorbis.com/files/1.0/unix/ \
-		http://www.casterclub.com/vorbis/unix/ \
-		http://www.math.utoledo.edu/~chaese/Vorbis/unix/
+MASTER_SITES=	http://www.vorbis.com/files/1.0.1/unix/
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

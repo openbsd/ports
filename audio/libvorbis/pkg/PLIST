@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/07/20 00:52:45 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/12/14 00:52:22 naddy Exp $
 include/vorbis/codec.h
 include/vorbis/vorbisenc.h
 include/vorbis/vorbisfile.h
@@ -8,9 +8,12 @@ lib/libvorbisenc.a
 lib/libvorbisenc.la
 lib/libvorbisfile.a
 lib/libvorbisfile.la
+lib/pkgconfig/vorbis.pc
+lib/pkgconfig/vorbisenc.pc
+lib/pkgconfig/vorbisfile.pc
 share/aclocal/vorbis.m4
 share/doc/libvorbis/components.png
-share/doc/libvorbis/draft-moffitt-vorbis-rtp-00.txt
+share/doc/libvorbis/draft-kerr-avt-vorbis-rtp-02.txt
 share/doc/libvorbis/eightphase.png
 share/doc/libvorbis/evenlsp.png
 share/doc/libvorbis/floor1-1.png
@@ -38,14 +41,6 @@ share/doc/libvorbis/v-comment.html
 share/doc/libvorbis/vorbis-clip.txt
 share/doc/libvorbis/vorbis-errors.txt
 share/doc/libvorbis/vorbis-fidelity.html
-share/doc/libvorbis/vorbis-ogg.html
-share/doc/libvorbis/vorbis-spec-bitpack.html
-share/doc/libvorbis/vorbis-spec-codebook.html
-share/doc/libvorbis/vorbis-spec-floor0.html
-share/doc/libvorbis/vorbis-spec-floor1.html
-share/doc/libvorbis/vorbis-spec-intro.html
-share/doc/libvorbis/vorbis-spec-ref.html
-share/doc/libvorbis/vorbis-spec-res.html
 share/doc/libvorbis/vorbis.html
 share/doc/libvorbis/vorbisenc/index.html
 share/doc/libvorbis/vorbisenc/overview.html
@@ -56,8 +51,10 @@ share/doc/libvorbis/vorbisenc/vorbis_encode_init.html
 share/doc/libvorbis/vorbisenc/vorbis_encode_init_vbr.html
 share/doc/libvorbis/vorbisenc/vorbis_info.html
 share/doc/libvorbis/vorbisfile/OggVorbis_File.html
+share/doc/libvorbis/vorbisfile/callbacks.html
 share/doc/libvorbis/vorbisfile/chaining_example_c.html
 share/doc/libvorbis/vorbisfile/chainingexample.html
+share/doc/libvorbis/vorbisfile/crosslap.html
 share/doc/libvorbis/vorbisfile/datastructures.html
 share/doc/libvorbis/vorbisfile/decoding.html
 share/doc/libvorbis/vorbisfile/example.html
@@ -70,13 +67,18 @@ share/doc/libvorbis/vorbisfile/ov_bitrate_instant.html
 share/doc/libvorbis/vorbisfile/ov_callbacks.html
 share/doc/libvorbis/vorbisfile/ov_clear.html
 share/doc/libvorbis/vorbisfile/ov_comment.html
+share/doc/libvorbis/vorbisfile/ov_crosslap.html
 share/doc/libvorbis/vorbisfile/ov_info.html
 share/doc/libvorbis/vorbisfile/ov_open.html
 share/doc/libvorbis/vorbisfile/ov_open_callbacks.html
 share/doc/libvorbis/vorbisfile/ov_pcm_seek.html
+share/doc/libvorbis/vorbisfile/ov_pcm_seek_lap.html
+share/doc/libvorbis/vorbisfile/ov_pcm_seek_page.html
+share/doc/libvorbis/vorbisfile/ov_pcm_seek_page_lap.html
 share/doc/libvorbis/vorbisfile/ov_pcm_tell.html
 share/doc/libvorbis/vorbisfile/ov_pcm_total.html
 share/doc/libvorbis/vorbisfile/ov_raw_seek.html
+share/doc/libvorbis/vorbisfile/ov_raw_seek_lap.html
 share/doc/libvorbis/vorbisfile/ov_raw_tell.html
 share/doc/libvorbis/vorbisfile/ov_raw_total.html
 share/doc/libvorbis/vorbisfile/ov_read.html
@@ -88,15 +90,21 @@ share/doc/libvorbis/vorbisfile/ov_test.html
 share/doc/libvorbis/vorbisfile/ov_test_callbacks.html
 share/doc/libvorbis/vorbisfile/ov_test_open.html
 share/doc/libvorbis/vorbisfile/ov_time_seek.html
+share/doc/libvorbis/vorbisfile/ov_time_seek_lap.html
+share/doc/libvorbis/vorbisfile/ov_time_seek_page.html
+share/doc/libvorbis/vorbisfile/ov_time_seek_page_lap.html
 share/doc/libvorbis/vorbisfile/ov_time_tell.html
 share/doc/libvorbis/vorbisfile/ov_time_total.html
 share/doc/libvorbis/vorbisfile/overview.html
 share/doc/libvorbis/vorbisfile/reference.html
+share/doc/libvorbis/vorbisfile/return.html
 share/doc/libvorbis/vorbisfile/seekexample.html
 share/doc/libvorbis/vorbisfile/seeking.html
+share/doc/libvorbis/vorbisfile/seeking_example_c.html
 share/doc/libvorbis/vorbisfile/seeking_test_c.html
 share/doc/libvorbis/vorbisfile/seekingexample.html
 share/doc/libvorbis/vorbisfile/style.css
+share/doc/libvorbis/vorbisfile/threads.html
 share/doc/libvorbis/vorbisfile/vorbis_comment.html
 share/doc/libvorbis/vorbisfile/vorbis_info.html
 share/doc/libvorbis/vorbisfile/vorbisfile_example_c.html
@@ -110,4 +118,6 @@ share/doc/libvorbis/window2.png
 @dirrm share/doc/libvorbis/vorbisfile
 @dirrm share/doc/libvorbis/vorbisenc
 @dirrm share/doc/libvorbis
+@dirrm share/aclocal
+@dirrm lib/pkgconfig
 @dirrm include/vorbis
