@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2004/08/09 20:39:54 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2005/02/28 12:29:19 mbalmer Exp $
 
 COMMENT=	"base package for HTML handling in PHP"
 
-V=		1.2.1
-DISTNAME=	HTML_Common-${V}
-PKGNAME=	pear-HTML-Common-${V}
+DISTNAME=	HTML_Common-1.2.1
+PKGNAME=	pear-${DISTNAME:S/_/-/}
 CATEGORIES=	devel www pear
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
-
+MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 MODULES=	www/php4/pear
 
 # PHP License
