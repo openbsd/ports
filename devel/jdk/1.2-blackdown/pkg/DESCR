@@ -1,6 +1,0 @@
-Blackdown port of Sun's Java Development Kit 1.2, running under
-Linux emulation.
-
-This software has restrictive licensing terms which prohibit its
-redistribution; see ${PREFIX}/jdk1.2-blackdown/LICENSE for more
-information.
