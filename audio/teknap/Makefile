@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/11/01 08:15:39 jasoni Exp $
+# $OpenBSD: Makefile,v 1.9 2002/11/27 07:50:28 ish Exp $
 
 COMMENT=	"console napster client"
 
@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.teknap.com/pub/TekNap/
 
 HOMEPAGE=	http://www.TekNap.com/
 
-MAINTAINER=	Jason Ish <jasoni@openbsd.org>
+MAINTAINER=	Jason Ish <ish@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

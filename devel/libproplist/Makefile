@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/05/13 18:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2002/11/27 07:50:28 ish Exp $
 
 COMMENT=	"GNUstep/OPENSTEP property lists compatibility library"
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_WINDOWMAKER:=libs/}
 
 HOMEPAGE=	http://www.windowmaker.org/
 
-MAINTAINER=	Jason Ish <jasoni@openbsd.org>
+MAINTAINER=	Jason Ish <ish@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/06/04 21:17:04 jasoni Exp $
+# $OpenBSD: Makefile,v 1.3 2002/11/27 07:50:28 ish Exp $
 
 COMMENT=	"audio file volume normalizer"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.cs.columbia.edu/~cvaill/normalize/
 
 HOMEPAGE=	http://www.cs.columbia.edu/~cvaill/normalize/
 
-MAINTAINER=	Jason Ish <jasoni@openbsd.org>
+MAINTAINER=	Jason Ish <ish@openbsd.org>
 
 # GPL license
 PERMIT_PACKAGE_CDROM=	Yes

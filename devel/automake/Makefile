@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2002/11/16 05:33:51 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2002/11/27 07:50:28 ish Exp $
 
 COMMENT=	"GNU Standards-compliant Makefile generator"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=automake/}
 
 HOMEPAGE=	http://www.gnu.org/software/automake/
 
-MAINTAINER=	Jason Ish <jasoni@openbsd.org>
+MAINTAINER=	Jason Ish <ish@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

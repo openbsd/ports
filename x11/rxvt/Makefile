@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2002/01/07 17:58:49 shell Exp $
+# $OpenBSD: Makefile,v 1.26 2002/11/27 07:50:28 ish Exp $
 
 COMMENT=	"color, low memory usage, xterm replacement"
 
@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 
 HOMEPAGE=	http://www.rxvt.org/
 
-MAINTAINER=	Jason Ish <jasoni@openbsd.org>
+MAINTAINER=	Jason Ish <ish@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

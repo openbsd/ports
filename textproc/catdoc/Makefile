@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/11/13 22:13:24 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/11/27 07:50:28 ish Exp $
 
 COMMENT=	"MS Word ==> ASCII or TeX, Tk viewer included"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.ice.ru/pub/vitus/
 
 HOMEPAGE=	http://www.fe.msk.ru/~vitus/catdoc/index.html	
 
-MAINTAINER=	Jason Ish <jasoni@openbsd.org>
+MAINTAINER=	Jason Ish <ish@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
