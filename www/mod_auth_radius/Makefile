@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2003/10/18 19:44:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2004/06/18 16:24:19 jcs Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-VERSION=	1.5.2
-DISTNAME=	mod_auth_radius
-PKGNAME=	${DISTNAME}-${VERSION}
+DISTNAME=	mod_auth_radius-1.5.7
 CATEGORIES=	www
 
 # Apache
