@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2001/12/06 07:28:11 jasoni Exp $
+# $OpenBSD: Makefile,v 1.13 2001/12/06 07:29:45 jasoni Exp $
 
 COMMENT=	"transparent www proxy driver for IPFILTER"
 
 DISTNAME=	transproxy-1.4
 CATEGORIES=	www net
-NEED_VERSION=	1.402
+NEED_VERSION=	1.500
 
 MASTER_SITES=	ftp://ftp.nlc.net.au/pub/unix/transproxy/
 EXTRACT_SUFX=	.tgz
