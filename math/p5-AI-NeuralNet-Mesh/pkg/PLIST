@@ -1,4 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:04 espie Exp $
-libdata/perl5/site_perl/AI/NeuralNet/Mesh.pm
+@comment $OpenBSD: PLIST,v 1.3 2003/12/31 17:32:38 naddy Exp $
+${P5SITE}/AI/NeuralNet/Mesh.pm
+@comment ${P5ARCH}/auto/AI/NeuralNet/Mesh/.packlist
 man/man3p/AI::NeuralNet::Mesh.3p
-@dirrm libdata/perl5/site_perl/AI/NeuralNet
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/AI/NeuralNet/Mesh
+@comment @dirrm ${P5ARCH}/auto/AI/NeuralNet
+@comment @dirrm ${P5ARCH}/auto/AI
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/AI/NeuralNet
+@dirrm ${P5SITE}/AI
