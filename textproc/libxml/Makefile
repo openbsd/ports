@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.47 2002/04/24 04:58:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.48 2002/05/08 01:40:39 kevlo Exp $
 
 COMMENT=	"XML parsing library"
 
-VERSION=	2.4.20
+VERSION=	2.4.21
 DISTNAME=	libxml2-${VERSION}
 PKGNAME=	libxml-${VERSION}
 CATEGORIES=	textproc
-NEED_VERSION=	1.504
+NEED_VERSION=	1.526
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/libxml
 
@@ -29,17 +29,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ARGS+= --with-html-dir="${PREFIX}/share"
 CONFIGURE_ARGS+= --with-iconv="${LOCALBASE}"
-
-FLAVORS=	python
-FLAVOR?=
-
-.if ${FLAVOR:L:Mpython}
-BUILD_DEPENDS+=	:python-2.2*:lang/python/2.2
-RUN_DEPENDS+=	:python-2.2*:lang/python/2.2
-CONFIGURE_ARGS+= --with-python
-.else
 CONFIGURE_ARGS+= --without-python
-.endif
 
 REGRESS_TARGET=	tests
 
