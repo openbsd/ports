@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2000/06/10 20:22:15 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/07/01 02:00:53 brad Exp $
 
 DISTNAME=	lzo-1.06
 CATEGORIES=	archivers devel
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.rhrz.uni-bonn.de/pub-koeln/util/arc/ \
 		ftp://ftp.fu-berlin.de/pub/unix/tools/archivers/lzo/ \
 		${MASTER_SITE_SUNSITE}
