@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2000/08/21 12:20:23 brad Exp $
-@pkgcfl libIDL-*
+@comment $OpenBSD: PLIST,v 1.12 2000/08/30 19:20:51 brad Exp $
 bin/libIDL-config
 bin/name-client
 bin/old-name-server
