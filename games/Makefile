@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2001/07/04 11:16:37 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2001/07/04 16:58:43 lebel Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -39,6 +39,7 @@
 #    SUBDIR += lincity
      SUBDIR += hackdata
      SUBDIR += moon-buggy
+     SUBDIR += moria
      SUBDIR += nethack
      SUBDIR += nethack,no_x11
      SUBDIR += nethack,qt
