@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/06/20 21:55:18 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/07 13:23:39 lebel Exp $
 
 COMMENT=		"Advanced Intrusion Detection Environment"
 
@@ -19,8 +19,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.cs.tut.fi/~rammer/ \
-			ftp://ftp.linux.hr/pub/aide/
+MASTER_SITES=		ftp://ftp.cs.tut.fi/pub/src/gnu/ \
+			http://www.cs.tut.fi/~rammer/ \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-mhash
