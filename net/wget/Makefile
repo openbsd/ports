@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/04/06 22:51:48 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/04/07 00:56:43 espie Exp $
 
 DISTNAME=	wget-1.5.3
 CATEGORIES=	net
@@ -24,7 +24,6 @@ post-patch:
 
 HAS_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
-CONFIGURE_ARGS+=--disable-nls
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
