@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2001/03/08 11:23:38 reinhard Exp $
+# $OpenBSD: Makefile,v 1.56 2001/03/30 22:04:21 avsm Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -57,6 +57,7 @@
      SUBDIR += p5-GD-Graph
      SUBDIR += p5-GD-Graph3d
      SUBDIR += p5-GD-TextUtil
+     SUBDIR += p5-Image-Info
 #    SUBDIR += p5-Image-Size
 #    SUBDIR += pgperl
 #    SUBDIR += pgplot
