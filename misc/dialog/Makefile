@@ -2,6 +2,9 @@
 # Version required:     	  0.6z
 # Date created:			  12 November 1998
 # Whom:				  Yannick Cote 
+#
+# $OpenBSD: Makefile,v 1.2 1998/11/19 00:29:35 yanick Exp $
+#
 
 DISTNAME= 	dialog-0.6z	
 CATEGORIES=	misc
