@@ -1,0 +1,13 @@
+SPLint is a tool for statically checking C programs.  With minimal
+effort, SPLint can be used as a better lint.  If additional effort is
+invested adding annotations to programs, SPLint can perform stronger
+checks than can be done by any standard lint.
+
+SPLint can detect lots of obscure errors that other lints can't find.
+It takes some getting used to, and tends to output quite a large number
+of warnings unless tuned for the current project.
+
+It is the successor of LCLint, an earlier effort, with more checks 
+with respect to buffer sizes calculations.
+
+WWW: ${HOMEPAGE}
