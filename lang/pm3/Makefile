@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/10/27 14:12:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2003/05/11 22:42:32 naddy Exp $
 
 CATEGORIES=	lang
 ONLY_FOR_ARCHS=	i386
@@ -13,13 +13,14 @@ V=1.1.15
 DISTNAME=	pm3-$V
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-DISTFILES=	pm3-$V-src.tgz pm3-$V-OpenBSD_386-boot.tgz:0
+DISTFILES=	pm3-$V-src.tgz pm3-${V}a-OpenBSD_386-boot.tgz:1
 PATCHFILES=	pm3-$V-BSD.patch-v1.2.gz:0
 
 EXTRACT_ONLY=pm3-$V-src.tgz
 
 MASTER_SITES= ftp://m3.polymtl.ca/pub/m3/targzip/
 MASTER_SITES0= http://people.freebsd.org/~jdp/pm3-for-bsd/
+MASTER_SITES1= http://grappa.unix-ag.uni-kl.de/~naddy/
 
 ALL_TARGET=exportall
 
@@ -29,11 +30,9 @@ USE_MOTIF=	any
 
 post-extract:
 	@cd ${WRKDIST} && \
-	    tar zxf ${FULLDISTDIR}/pm3-1.1.15-OpenBSD_386-boot.tgz
+	    tar zxf ${FULLDISTDIR}/pm3-${V}a-OpenBSD_386-boot.tgz
 
 PATCH_DIST_STRIP=-p1
-
-USE_GMAKE=Yes
 
 WRKINST=${WRKDIST}/binaries/OpenBSD_386
 
