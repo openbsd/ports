@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2000/09/24 01:23:44 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/11/18 18:06:53 brad Exp $
 
-DISTNAME=	audiofile-0.1.10
-PKGNAME=	libaudiofile-0.1.10
+DISTNAME=	audiofile-0.1.11
+PKGNAME=	libaudiofile-0.1.11
 CATEGORIES=	devel
-NEED_VERSION=	1.330
-MASTER_SITES=	ftp://ftp.68k.org./pub/michael/ \
+NEED_VERSION=	1.336
+MASTER_SITES=	ftp://ftp.68k.org/pub/michael/ \
 		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/audiofile
 
