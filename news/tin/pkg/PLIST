@@ -1,4 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/07/02 11:05:48 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/08/18 19:00:05 fgsch Exp $
 bin/rtin
 bin/tin
+man/man1/rtin.1
 man/man1/tin.1
+man/man5/tin.5
+share/locale/de/LC_MESSAGES/tin.mo
+share/locale/en_GB/LC_MESSAGES/tin.mo
+share/locale/et/LC_MESSAGES/tin.mo
+share/locale/fr/LC_MESSAGES/tin.mo
+share/tin/metamutt
+share/tin/mime.types
+share/tin/opt-case.pl
+share/tin/opt-case.pl.1
+share/tin/tin.defaults
+share/tin/url_handler.sh
+share/tin/w2r.pl
+share/tin/w2r.pl.1
+@dirrm share/tin
