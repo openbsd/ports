@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2003/10/12 02:08:14 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2003/10/22 05:25:21 jolan Exp $
 
 COMMENT=		"crypto library based on code used in GnuPG"
 
 VERSION=		1.1.12
 DISTNAME=		libgcrypt-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		security
 
 HOMEPAGE=		http://www.gnu.org/directory/security/libgcrypt.html
