@@ -1,5 +1,6 @@
---- help.c	Sat Jul 12 18:54:34 1997
-+++ /home/andy/tmp/wrk/help.c	Tue Dec 16 12:15:00 1997
+$OpenBSD: patch-help_c,v 1.1 2002/03/21 09:59:48 form Exp $
+--- help.c.orig	Sun Jul 13 01:54:34 1997
++++ help.c	Thu Mar 21 15:23:53 2002
 @@ -10,7 +10,7 @@
  
  #define CS              34

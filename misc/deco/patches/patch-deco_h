@@ -1,0 +1,14 @@
+$OpenBSD: patch-deco_h,v 1.1 2002/03/21 09:59:48 form Exp $
+--- deco.h.orig	Fri Jul 18 20:07:03 1997
++++ deco.h	Thu Mar 21 15:23:54 2002
+@@ -107,8 +107,8 @@ int strbcmp (char *s, char *b);
+ int match (unsigned char *name, unsigned char *pat);
+ int getmenu (void);
+ void downmenu (struct menu *m);
+-char *timestr (long tim);
+-long timeval (long tim);
++char *timestr (time_t tim);
++long timeval (time_t tim);
+ int hexview (char *filename);
+ void viewpage (int line, int col);
+ void viewchar (int c);

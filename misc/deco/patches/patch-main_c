@@ -1,0 +1,12 @@
+$OpenBSD: patch-main_c,v 1.1 2002/03/21 09:59:48 form Exp $
+--- main.c.orig	Tue Dec 29 02:16:43 1998
++++ main.c	Thu Mar 21 15:23:54 2002
+@@ -103,7 +103,7 @@ static void execute (void);
+ static void docmdreg (int c);
+ static void doscrreg (int c);
+ 
+-void main (int argc, char **argv, char **envp)
++int main (int argc, char **argv, char **envp)
+ {
+ 	register c;
+ 

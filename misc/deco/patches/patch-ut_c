@@ -1,0 +1,21 @@
+$OpenBSD: patch-ut_c,v 1.1 2002/03/21 09:59:48 form Exp $
+--- ut.c.orig	Tue Jan  4 13:21:31 2000
++++ ut.c	Thu Mar 21 15:23:54 2002
+@@ -24,7 +24,7 @@
+ 
+ static char pattern [] = "00-Mon-1900 00:00:00";
+ 
+-char *timestr (long tim)
++char *timestr (time_t tim)
+ {
+ 	struct tm *t = localtime (&tim);
+ 	register char *p = pattern;
+@@ -49,7 +49,7 @@ char *timestr (long tim)
+ 	return (p);
+ }
+ 
+-long timeval (long tim)
++long timeval (time_t tim)
+ {
+ 	struct tm *t = localtime (&tim);
+ 

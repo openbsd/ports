@@ -1,0 +1,8 @@
+$OpenBSD: patch-menu_c,v 1.1 2002/03/21 09:59:48 form Exp $
+--- menu.c.orig	Sun Jul 13 00:53:25 1997
++++ menu.c	Thu Mar 21 15:23:54 2002
+@@ -1,3 +1,4 @@
++#include <time.h>
+ #include "deco.h"
+ #include "scr.h"
+ #include "menu.h"

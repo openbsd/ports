@@ -1,0 +1,30 @@
+$OpenBSD: patch-rec_c,v 1.1 2002/03/21 09:59:48 form Exp $
+--- rec.c.orig	Sun Jul 13 01:52:20 1997
++++ rec.c	Thu Mar 21 15:47:00 2002
+@@ -61,7 +61,7 @@ static int lenbuf;
+ static char *scanbuf, *pbuf;
+ static char *tfilename;
+ static int eoln;
+-static int MAXLEN = ((unsigned int) (int) -1 >> 1) / sizeof (struct index);
++static int MAXLEN = 32767;
+ 
+ static int ffcopy (int from, int to)
+ {
+@@ -168,6 +168,9 @@ REC *RecOpen (int fd, int wmode)
+ 	if (wmode) {
+ 		if (! tfilename)
+ 			tfilename = tfilepattern;
++#ifdef HAVE_MKSTEMP
++		r->tfd = mkstemp(tfilename);
++#else
+ 		r->tfd = creat (tfilename, 0600);
+ 		if (r->tfd < 0) {
+ 			error ("Cannot open temporary file");
+@@ -175,6 +178,7 @@ REC *RecOpen (int fd, int wmode)
+ 		}
+ 		close (r->tfd);
+ 		r->tfd = open (tfilename, 2);
++#endif
+ 		if (r->tfd < 0) {
+ 			error ("Cannot reopen temporary file");
+ 			return (0);
