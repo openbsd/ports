@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2001/05/06 00:29:03 lebel Exp $
+# $OpenBSD: Makefile,v 1.25 2001/09/15 21:43:42 brad Exp $
 
 COMMENT=	"GNU editor"
 
 VER=		20.7
 DISTNAME=	emacs-${VER}
 CATEGORIES=	editors
-NEED_VERSION=	1.402
+NEED_VERSION=	1.435
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= emacs
 
@@ -20,15 +20,12 @@ SUBST_VARS=	GCCARCH VER
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu dest
+CONFIGURE_ARGS+= ${GCCARCH}
 
 FLAVORS=	no_x11
 FLAVOR?=
 
-.if ${MACHINE} == "pmax"
-M_ARCH=		mipsel
-.else
 M_ARCH=		${MACHINE_ARCH}
-.endif
 
 GCCARCH=	${M_ARCH}-unknown-openbsd${OPSYS_VER}
 
@@ -42,7 +39,7 @@ GCCARCH=	${M_ARCH}-unknown-openbsd${OPSYS_VER}
 .if ${FLAVOR:L} == "no_x11"
 CONFIGURE_ARGS+= --without-x
 .else
-CONFIGURE_ARGS+= ${GCCARCH} --with-x-toolkit
+CONFIGURE_ARGS+= --with-x-toolkit
 .endif
 
 # Do NOT strip on install.  We will strip those things that can be
