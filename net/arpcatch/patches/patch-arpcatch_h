@@ -1,0 +1,41 @@
+$OpenBSD: patch-arpcatch_h,v 1.1 2001/04/20 07:53:02 reinhard Exp $
+--- arpcatch.h.orig	Mon Aug 18 23:51:02 1997
++++ arpcatch.h	Tue Apr 17 16:00:13 2001
+@@ -5,6 +5,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <unistd.h>
+ #include <string.h>
+ #include <errno.h>
+ #include <syslog.h>
+@@ -12,6 +13,7 @@
+ #include <limits.h>
+ #include <fcntl.h>
+ #include <assert.h>
++#include <ctype.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/param.h>
+@@ -25,8 +27,6 @@
+ 
+ #include <net/bpf.h>
+ #include <net/if.h>
+-#include <net/ethernet.h>
+-#include <net/if_arp.h>
+ #include <netinet/if_ether.h>
+ 
+ #include "list.h"
+@@ -76,5 +76,12 @@ int bpf_immediate(int, int);
+ int bpf_promisc(int, int);
+ 
+ table_t *read_config(char *);
++void chop(char *);
++void *NEW(const int);
++u_long resolve(char *);
++
++int arp_send(int, u_long *, u_long *, struct ether_addr *, struct ether_addr *);
++
++
+ 
+ #endif

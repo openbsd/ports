@@ -1,0 +1,36 @@
+$OpenBSD: patch-bpf_c,v 1.1 2001/04/20 07:53:02 reinhard Exp $
+--- bpf.c.orig	Mon Aug 18 23:38:20 1997
++++ bpf.c	Tue Apr 17 16:00:13 2001
+@@ -47,21 +47,26 @@ int bpf_open(char *device) {
+ 
+ 	do {
+ 		snprintf(file, PATH_MAX, "/dev/bpf%d", i++);
+-		if((fd = open(file, O_RDWR)) < 0)
+-			continue;
+-	} while(errno == EBUSY && fd < 0);
++		fd = open(file, O_RDWR);
++	} while(fd < 0 && errno == EBUSY);
+ 	
+-	if(fd < 0)
++	if(fd < 0) {
++		perror("bpf open");
+ 		return(-1);
++	}
+ 
+ 	memset(&ifr, 0, sizeof(ifr));
+ 	strncpy(ifr.ifr_name, device, 15);
+ 	
+-	if(bpf_setbuf(fd, DEFAULT_BUFLEN) < 0)
++	if(bpf_setbuf(fd, DEFAULT_BUFLEN) < 0) {
++		perror("bpf setbuf");
+ 		return(-2);
++	}
+ 
+-	if(ioctl(fd, BIOCSETIF, (char *) &ifr) < 0)
++	if(ioctl(fd, BIOCSETIF, (char *) &ifr) < 0) {
++		perror("bpf ioctl");
+ 		return(-3);
++	}
+ 
+ 	return(fd);
+ }

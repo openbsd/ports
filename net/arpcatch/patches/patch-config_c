@@ -1,0 +1,11 @@
+$OpenBSD: patch-config_c,v 1.1 2001/04/20 07:53:02 reinhard Exp $
+--- config.c.orig	Mon Nov 24 12:18:54 1997
++++ config.c	Tue Apr 17 16:00:13 2001
+@@ -1,7 +1,6 @@
+ #include "arpcatch.h"
+ #include <sys/types.h>
+ #include <sys/socket.h>
+-#include <net/ethernet.h>
+ 
+ static list_t *add_host(char *buffer, list_t *hosts);
+ static int add_proxy(char *buffer, table_t *at);

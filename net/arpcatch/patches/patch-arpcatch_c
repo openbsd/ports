@@ -1,0 +1,36 @@
+	$OpenBSD: patch-arpcatch_c,v 1.1 2001/04/20 07:53:02 reinhard Exp $
+--- arpcatch.c.orig	Fri Aug 22 02:57:01 1997
++++ arpcatch.c	Tue Apr 17 16:00:13 2001
+@@ -37,6 +37,7 @@ int main(int argc, char **argv) {
+ 		}
+ 	}
+ 
++	printf("Starting on %s interface\n",device);
+ 	if(!(at = read_config(configfile))) {
+ 		perror("config file read");
+ 		exit(errno);
+@@ -50,6 +51,7 @@ int main(int argc, char **argv) {
+ 	read_loop(fd, at);
+ 
+ 	perror("read");
++return 1;
+ }	
+ 
+ /* needs cleaning up */
+@@ -63,7 +65,6 @@ int read_loop(int fd, table_t *at) {
+ 	struct ether_addr	*ea;
+ 	struct ether_arp 	*ah;
+ 
+-	struct in_addr foo;
+ 
+ 	for(;;) {
+ 		struct in_addr ia;
+@@ -129,7 +130,7 @@ int init_bpf(char *device) {
+ 	
+ 	fd = bpf_open(device);
+ 	if(fd < 0) {
+-		perror("bpf open");
++		fprintf(stderr,"Error initializing bpf filter\nExiting..\n");
+ 		exit(errno);
+ 	}
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-libtqbf_c,v 1.1 2001/04/20 07:53:02 reinhard Exp $
+--- libtqbf.c.orig	Mon Aug 18 22:02:13 1997
++++ libtqbf.c	Tue Apr 17 16:00:13 2001
+@@ -349,8 +349,6 @@ u_long resolve(char *address) {
+ int jday (int month, int day, int year) {
+ 	int c, ya, jd;
+ 
+-	int brit_jd = 2361222;
+-
+ 	if (month > 2) 
+ 		month -= 3;
+ 	else 
