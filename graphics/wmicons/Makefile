@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/28 13:39:00 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2001/07/04 21:24:51 wilfried Exp $
 
 COMMENT=		'icons mainly for use in Window Maker'
 
 DISTNAME=		wmicons-1.0
 CATEGORIES=		graphics x11 x11/windowmaker
-NEED_VERSION=		1.364
+NEED_VERSION=		1.419
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
@@ -26,6 +26,9 @@ NO_BUILD=		Yes
 
 WMICONDIR=		${PREFIX}/share/WindowMaker/Pixmaps
 WMDOCDIR=		${PREFIX}/share/doc/wmicons
+
+post-extract:
+	cd ${WRKDIR} && tar xf NeXT_XEmacs_tar
 
 do-install:
 	${INSTALL_DATA_DIR} ${WMDOCDIR} ${WMICONDIR}
