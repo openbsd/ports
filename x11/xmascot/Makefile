@@ -3,10 +3,10 @@
 # Date created:        25 January 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1999/10/31 08:31:32 turan Exp $
+# $OpenBSD: Makefile,v 1.3 1999/10/31 08:49:04 angelos Exp $
 #
 
-BROKEN=		bad packing lists, man/man1/xmascot.1
+BROKEN=		waiting for turans@ to verify
 
 DISTNAME=	xmascot2.5p2
 PKGNAME=        xmascot-2.5p2
@@ -17,6 +17,5 @@ MAINTAINER=	angelos@openbsd.org
 
 USE_GMAKE=	yes
 USE_IMAKE=	yes
-MAN1=		xmascot.1
 
 .include <bsd.port.mk>
