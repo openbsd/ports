@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.23 2004/02/08 11:17:11 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.24 2004/02/08 12:23:18 jakob Exp $
 @pkgcfl postfix-*
 %%tls%%
+%%ipv6%%
 libexec/postfix/anvil
 libexec/postfix/bounce
 libexec/postfix/cleanup
