@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.1 2004/12/11 14:27:57 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.2 2004/12/11 14:35:05 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -42,7 +42,7 @@ sub check_wantlibs
 	my ($item, $t, $where, $handle) = @_;
 	my $name = $item->{name};
 	$name =~ s/^(.*\/)?(.*)\.\d+\.\d+$/$2/;
-	$t->{$name} = 1;
+	$t->{haslib}->{$name} = 1;
 }
 
 package OpenBSD::PackingElement::FileBase;
@@ -94,11 +94,11 @@ sub check_wantlibs
 		}
 		for my $lib (@l) {
 			$lib =~ s/^(.*\/)?lib(.*)\.so\.\d+\.\d+$/$2/;
-			if (!defined $t->{$lib}) {
-				print "Missing: $lib ($fullname)\n";
-			}
-			$t->{$lib} = 2;
+			$t->{needlib}->{$lib} = $fullname;
 		}
+	}
+	if ($fullname =~ m/^(.*\/)?lib(.*)\.so\.\d+\.\d+$/) {
+		$t->{haslib}->{$2} = 1;
 	}
 	unlink($where.$fullname);
 }
@@ -111,9 +111,15 @@ sub analyze
 
 	my $where = File::Temp::mkdtemp("/tmp/zoinx.XXXXXXXXXX");
 	my $pkgname = $plist->pkgname();
-	my $t = {};
+	my $t = { haslib => {}, needlib => {} };
 	$plist->visit('check_wantlibs', $t, $where, @l);
-	while (my ($k, $v) = each %$t) {
+	while (my ($lib, $fullname) = each %{$t->{needlib}}) {
+		if (!defined $t->{haslib}->{$lib}) {
+			print "Missing: $lib ($fullname)\n";
+		}
+		$t->{haslib}->{$lib} = 2;
+	}
+	while (my ($k, $v) = each %{$t->{haslib}}) {
 		next if $v == 2;
 		print "Extra: $k\n";
 	}
