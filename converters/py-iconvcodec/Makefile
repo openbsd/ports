@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/12/30 09:22:33 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2003/12/31 05:27:11 kevlo Exp $
 
 COMMENT=	"universal unicode codec using iconv for Python"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://download.berlios.de/cjkpython/
 
-MODPY_SETUP=	setup.py --with-libiconv=${LOCALBASE}
+MODPY_DISTUTILS_BUILDARGS=	--with-libiconv=${LOCALBASE}
 
 NO_REGRESS=	Yes
 
