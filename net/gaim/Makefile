@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.40 2003/05/04 02:47:19 brad Exp $
+# $OpenBSD: Makefile,v 1.41 2003/06/02 13:37:16 brad Exp $
 
-DISTNAME=	gaim-0.62
+DISTNAME=	gaim-0.64
 CATEGORIES=	net
 
 # GPL
@@ -13,7 +13,7 @@ COMMENT=	"Gtk AIM, ICQ, IRC, Jabber, MSN, Yahoo, and Zephyr client"
 HOMEPAGE=	http://gaim.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaim/}
 
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 MODULES=	iconv gettext
 
