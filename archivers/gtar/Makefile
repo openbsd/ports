@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2001/01/22 00:13:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2001/03/29 15:01:54 brad Exp $
+
+COMMENT=	"GNU version of the traditional tar archiver"
 
 DISTNAME=	tar-1.13.19
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
-NEED_VERSION=	1.330
+NEED_VERSION=	1.364
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/tar/ \
 		ftp://ftp.sunsite.org.uk/Mirrors/alpha.gnu.org/gnu/tar/ \
 		ftp://ftp.funet.fi/pub/mirrors/alpha.gnu.org/gnu/tar/

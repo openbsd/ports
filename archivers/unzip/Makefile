@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2001/02/26 08:44:53 kevlo Exp $
+# $OpenBSD: Makefile,v 1.22 2001/03/29 15:02:02 brad Exp $
+
+COMMENT=	"extract, list & test files in a ZIP archive"
 
 DISTNAME=	unzip542
 PKGNAME=	unzip-5.42
 CATEGORIES=	archivers
-NEED_VERSION=	1.336
+NEED_VERSION=	1.364
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/infozip/src/
 
 HOMEPAGE=	http://www.info-zip.org/pub/infozip/Info-ZIP.html

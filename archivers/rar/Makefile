@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2001/02/27 17:53:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2001/03/29 15:01:59 brad Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc
+
+COMMENT=	"RAR archiver (binary port)"
 
 .if ${MACHINE_ARCH} == "i386"
 DISTFILES=	rarbsd.sfx
@@ -13,12 +15,12 @@ PKGNAME=	rar-2.01
 SUPDISTFILES=	rarsparc.sfx rarbsd.sfx
 
 CATEGORIES=	archivers
-NEED_VERSION=	1.330
+NEED_VERSION=	1.364
 MASTER_SITES=	${HOMEPAGE}/rar/ \
 		ftp://ftp.netlab.sk/public/rarsoft/rar/
 
 EXTRACT_CASES=	*.sfx) ${SUDO} chmod a+x ${FULLDISTDIR}/$$archive && \
-	${FULLDISTDIR}/$$archive;;
+			${FULLDISTDIR}/$$archive;;
 
 HOMEPAGE=	http://www.rarsoft.com
 

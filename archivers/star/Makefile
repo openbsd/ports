@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/10/01 21:15:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/29 15:02:00 brad Exp $
 # $FreeBSD: Makefile,v 1.7 1998/12/24 13:15:23 dirk Exp $
+
+COMMENT=	"unique standard tape archiver with many enhancements"
 
 DISTNAME=	star-1.2
 CATEGORIES=	archivers sysutils
+NEED_VERSION=	1.364
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/star/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= utils/compress
