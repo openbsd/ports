@@ -3,12 +3,12 @@
 # Date created:		1998-June-02
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.2 1998/06/09 03:31:14 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/08/17 03:55:26 marc Exp $
 #
 
 # What port/package will be created
 #
-DISTNAME=		gtk+-1.0.4
+DISTNAME=		gtk+-1.0.5
 CATEGORIES=     	x11
 
 # where to send bitches about this port
