@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/09/16 15:39:19 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2000/09/21 10:17:53 jakob Exp $
 
 VERSION=	9.0.0
 DISTNAME=	bind-${VERSION}
@@ -29,10 +29,15 @@ FAKE_FLAGS+=		DESTDIR=${WRKINST} \
 EXAMPLEFILES=		named.conf named.root \
 			named.localhost named.loopback
 
-FLAVORS=		debug
+FLAVORS=		debug static
 FLAVOR?=
+
 .if ${FLAVOR:L} == "debug"
 CONFIGURE_ENV+=		CFLAGS=-g
+.endif
+
+.if ${FLAVOR:L} == "static"
+CONFIGURE_ENV+=		CFLAGS="-O2 -static"
 .endif
 
 post-install:
