@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2003/05/17 03:15:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2003/06/26 21:51:22 pvalchev Exp $
 # $FreeBSD: ports/lang/clisp/Makefile,v 1.4 2000/05/14 05:40:46 billf Exp $
 
-NOT_FOR_ARCHS=	powerpc sparc sparc64
+NOT_FOR_ARCHS=	powerpc sparc sparc64 vax
 # XXX This will panic any m68k
 NOT_FOR_ARCHS+=	m68k
 
