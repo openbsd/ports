@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/10/14 20:28:20 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/15 03:31:14 marcm Exp $
 bin/gnumeric
 bin/ssconvert
 lib/bonobo/servers/GNOME_Gnumeric.server
@@ -685,91 +685,8 @@ share/schemas/gnumeric/gnumeric-plugins.schemas
 @comment @dirrm share/mime-info
 @dirrm share/mc/templates
 @dirrm share/mc
-@comment @dirrm share/locale/zh_TW/LC_MESSAGES
-@comment @dirrm share/locale/zh_TW
-@comment @dirrm share/locale/zh_CN/LC_MESSAGES
-@comment @dirrm share/locale/zh_CN
-@comment @dirrm share/locale/vi/LC_MESSAGES
-@comment @dirrm share/locale/vi
-@comment @dirrm share/locale/uk/LC_MESSAGES
-@comment @dirrm share/locale/uk
-@comment @dirrm share/locale/tr/LC_MESSAGES
-@comment @dirrm share/locale/tr
-@comment @dirrm share/locale/sv/LC_MESSAGES
-@comment @dirrm share/locale/sv
-@comment @dirrm share/locale/sr@Latn/LC_MESSAGES
-@comment @dirrm share/locale/sr@Latn
-@comment @dirrm share/locale/sr/LC_MESSAGES
-@comment @dirrm share/locale/sr
-@comment @dirrm share/locale/sk/LC_MESSAGES
-@comment @dirrm share/locale/sk
-@comment @dirrm share/locale/ru/LC_MESSAGES
-@comment @dirrm share/locale/ru
-@comment @dirrm share/locale/ro/LC_MESSAGES
-@comment @dirrm share/locale/ro
-@comment @dirrm share/locale/pt_BR/LC_MESSAGES
-@comment @dirrm share/locale/pt_BR
-@comment @dirrm share/locale/pt/LC_MESSAGES
-@comment @dirrm share/locale/pt
-@comment @dirrm share/locale/pl/LC_MESSAGES
-@comment @dirrm share/locale/pl
-@comment @dirrm share/locale/no/LC_MESSAGES
-@comment @dirrm share/locale/no
-@comment @dirrm share/locale/nn/LC_MESSAGES
-@comment @dirrm share/locale/nn
-@comment @dirrm share/locale/nl/LC_MESSAGES
-@comment @dirrm share/locale/nl
-@comment @dirrm share/locale/ms/LC_MESSAGES
-@comment @dirrm share/locale/ms
-@comment @dirrm share/locale/ml/LC_MESSAGES
-@comment @dirrm share/locale/ml
-@comment @dirrm share/locale/lv/LC_MESSAGES
-@comment @dirrm share/locale/lv
-@comment @dirrm share/locale/ko/LC_MESSAGES
-@comment @dirrm share/locale/ko
-@comment @dirrm share/locale/ja/LC_MESSAGES
-@comment @dirrm share/locale/ja
-@comment @dirrm share/locale/it/LC_MESSAGES
-@comment @dirrm share/locale/it
-@comment @dirrm share/locale/hu/LC_MESSAGES
-@comment @dirrm share/locale/hu
-@comment @dirrm share/locale/hr/LC_MESSAGES
-@comment @dirrm share/locale/hr
-@comment @dirrm share/locale/he/LC_MESSAGES
-@comment @dirrm share/locale/he
-@comment @dirrm share/locale/gl/LC_MESSAGES
-@comment @dirrm share/locale/gl
-@comment @dirrm share/locale/ga/LC_MESSAGES
-@comment @dirrm share/locale/ga
-@comment @dirrm share/locale/fr/LC_MESSAGES
-@comment @dirrm share/locale/fr
-@comment @dirrm share/locale/fi/LC_MESSAGES
-@comment @dirrm share/locale/fi
-@comment @dirrm share/locale/et/LC_MESSAGES
-@comment @dirrm share/locale/et
-@comment @dirrm share/locale/es/LC_MESSAGES
-@comment @dirrm share/locale/es
-@comment @dirrm share/locale/en_GB/LC_MESSAGES
-@comment @dirrm share/locale/en_GB
 @comment @dirrm share/locale/en_CA/LC_MESSAGES
 @comment @dirrm share/locale/en_CA
-@comment @dirrm share/locale/el/LC_MESSAGES
-@comment @dirrm share/locale/el
-@comment @dirrm share/locale/de/LC_MESSAGES
-@comment @dirrm share/locale/de
-@comment @dirrm share/locale/da/LC_MESSAGES
-@comment @dirrm share/locale/da
-@comment @dirrm share/locale/cs/LC_MESSAGES
-@comment @dirrm share/locale/cs
-@comment @dirrm share/locale/ca/LC_MESSAGES
-@comment @dirrm share/locale/ca
-@comment @dirrm share/locale/bg/LC_MESSAGES
-@comment @dirrm share/locale/bg
-@comment @dirrm share/locale/az/LC_MESSAGES
-@comment @dirrm share/locale/az
-@comment @dirrm share/locale/am/LC_MESSAGES
-@comment @dirrm share/locale/am
-@comment @dirrm share/locale
 @dirrm share/gnumeric/${VERSION}-bonobo/templates
 @dirrm share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures
 @dirrm share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C
@@ -826,7 +743,6 @@ share/schemas/gnumeric/gnumeric-plugins.schemas
 @dirrm lib/gnumeric/${VERSION}-bonobo/plugins
 @dirrm lib/gnumeric/${VERSION}-bonobo
 @dirrm lib/gnumeric
-@comment @dirrm lib/bonobo
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnumeric/*.schemas > /dev/null
