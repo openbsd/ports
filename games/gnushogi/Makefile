@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/08/02 20:27:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/10 13:26:07 naddy Exp $
 #
 
 COMMENT=	"GNU version of Shogi"
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=gnushogi/}
 
+MAKE_ENV=	CC="${CC}"
 WRKSRC=		${WRKDIST}/src
 
 NO_REGRESS=	Yes
