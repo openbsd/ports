@@ -1,0 +1,46 @@
+$OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_apm_c,v 1.1 2003/01/09 02:47:40 espie Exp $
+--- ksysguard/ksysguardd/FreeBSD/apm.c.orig	Thu Jan  9 01:24:30 2003
++++ ksysguard/ksysguardd/FreeBSD/apm.c	Thu Jan  9 01:27:04 2003
+@@ -20,7 +20,11 @@
+ */
+ 
+ #include <fcntl.h>
++#ifdef __OpenBSD__
++#include <machine/apmvar.h>
++#else
+ #include <machine/apm_bios.h>
++#endif
+ #include <stdio.h>
+ 
+ #include "Command.h"
+@@ -59,6 +63,22 @@ exitApm(void)
+ 	close(ApmFD);
+ }
+ 
++#ifdef __OpenBSD__
++
++int
++updateApm(void)
++{
++	struct apm_power_info info;
++	int retval;
++
++	retval = ioctl(ApmFD, APM_IOC_GETPOWER, &info);
++
++	BattFill = info.battery_life;
++	BattTime = info.minutes_left;
++
++	return retval;
++}
++#else
+ int
+ updateApm(void)
+ {
+@@ -72,6 +92,7 @@ updateApm(void)
+ 
+ 	return retval;
+ }
++#endif
+ 
+ void
+ printApmBatFill(const char* c)

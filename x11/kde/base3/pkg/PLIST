@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2003/01/05 20:52:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2003/01/09 02:47:40 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -58,6 +58,7 @@ bin/ksmserver
 bin/ksplash
 bin/kstart
 bin/ksysguard
+bin/ksysguardd
 bin/ksystraycmd
 bin/ktip
 bin/kwebdesktop

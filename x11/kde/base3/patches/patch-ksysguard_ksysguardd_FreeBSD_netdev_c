@@ -1,0 +1,21 @@
+$OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_netdev_c,v 1.1 2003/01/09 02:47:40 espie Exp $
+--- ksysguard/ksysguardd/FreeBSD/netdev.c.orig	Thu Jan  9 01:27:29 2003
++++ ksysguard/ksysguardd/FreeBSD/netdev.c	Thu Jan  9 01:29:21 2003
+@@ -19,6 +19,7 @@
+ 	$Id: patch-ksysguard_ksysguardd_FreeBSD_netdev_c,v 1.1 2003/01/09 02:47:40 espie Exp $
+ */
+ 
++#ifdef __FreeBSD__
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/sysctl.h>
+@@ -317,3 +318,9 @@ void printNetDevSentBytesInfo(const char
+ 	if (!strncmp(retval[1], "collisions", 10))
+ 		fprintf(CurrentClient, "Transmitter Collisions\t0\t0\t1/s\n");
+ }
++#else
++void initNetDev(void) {}
++void exitNetDev(void) {}
++void updateNetDev(void) {}
++void checkNetDev(void) {}
++#endif

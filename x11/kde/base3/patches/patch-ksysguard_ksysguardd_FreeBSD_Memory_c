@@ -1,0 +1,92 @@
+$OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_Memory_c,v 1.1 2003/01/09 02:47:40 espie Exp $
+--- ksysguard/ksysguardd/FreeBSD/Memory.c.orig	Fri Sep 14 23:11:20 2001
++++ ksysguard/ksysguardd/FreeBSD/Memory.c	Thu Jan  9 01:23:54 2003
+@@ -32,7 +32,11 @@
+ #include <sys/types.h>
+ #include <sys/vmmeter.h>
+ #include <unistd.h>
++#ifdef __OpenBSD__
++#include <sys/swap.h>
++#else
+ #include <vm/vm_param.h>
++#endif
+ 
+ #include "Command.h"
+ #include "Memory.h"
+@@ -82,15 +86,42 @@ updateMemory(void)
+ 	struct vmtotal p;
+ 	FILE *file;
+ 	char buf[256];
++#ifdef __FreeBSD__
+ 	struct kvm_swap kswap[16];
++#endif
+ 	int i, swap_count, hlen, pagesize = getpagesize();
+ 	long blocksize;
+ 
+         len = sizeof (Total);
++#ifdef __OpenBSD__
++        mib[0] = CTL_HW;
++        mib[1] = HW_PHYSMEM;
++        sysctl(mib, 2, &Total, &len, NULL, 0);
++#else
+         sysctlbyname("hw.physmem", &Total, &len, NULL, 0);
++#endif
+         Total /= 1024;
+ 
+ 	/* Borrowed from pstat */ 
++
++#ifdef __OpenBSD__
++	swap_count = swapctl(SWAP_NSWAP, 0, 0);
++	if (swap_count > 0) {
++		struct swapent *swdev;
++		swdev = malloc(swap_count * sizeof(*swdev));
++		if (swdev == NULL)
++			return 0;
++		(void)swapctl(SWAP_STATS, swdev, swap_count);
++		STotal = SUsed = 0;
++		for (i = 0; i < swap_count; i++) {
++		    if (!(swdev[i].se_flags & SWF_ENABLE))
++			continue;
++		    STotal += swdev[i].se_nblks;
++		    SUsed += swdev[i].se_inuse;
++		}
++		SFree = STotal - SUsed;
++	}
++#else
+ 	swap_count = kvm_getswapinfo(kd, kswap, 16, SWIF_DEV_PREFIX);
+ 	getbsize(&hlen, &blocksize);
+ 
+@@ -101,22 +132,33 @@ updateMemory(void)
+ 		SUsed = CONVERT(kswap[0].ksw_used);
+ 		SFree = CONVERT(kswap[0].ksw_total - kswap[0].ksw_used);
+ 	}
++#endif
+ 
+         len = sizeof (Buffers);
++#ifndef __OpenBSD__
+         if ((sysctlbyname("vfs.bufspace", &Buffers, &len, NULL, 0) == -1) || !len)
++#endif
+                 Buffers = 0; /* Doesn't work under FreeBSD v2.2.x */
+         Buffers /= 1024;
+ 
+ 
+         len = sizeof (Cached);
++#ifndef __OpenBSD__
+         if ((sysctlbyname("vm.stats.vm.v_cache_count", &Cached, &len, NULL, 0) == -1) || !len)
++#endif
+                 Cached = 0; /* Doesn't work under FreeBSD v2.2.x */
+         Cached *= getpagesize() / 1024;
+ 
+ 
+ 	/* initializes the pointer to the vmmeter struct */
+ 	len = sizeof (p);
++#ifdef __OpenBSD__
++        mib[0] = CTL_VM;
++        mib[1] = VM_METER;
++        sysctl(mib, 2, &p, &len, NULL, 0);
++#else
+ 	sysctlbyname("vm.vmmeter", &p, &len, NULL, 0);
++#endif
+         MFree = p.t_free * getpagesize() / 1024;
+         Used = p.t_arm * getpagesize() / 1024 + Buffers + Cached;
+ 

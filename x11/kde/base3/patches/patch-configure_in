@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_in,v 1.6 2003/01/09 02:47:40 espie Exp $
+--- configure.in.orig	Wed Jan  8 20:39:13 2003
++++ configure.in	Wed Jan  8 22:57:28 2003
+@@ -1339,6 +1339,7 @@ AC_MSG_CHECKING(if ksysguardd can be com
+ case "$host" in 
+   *-*-linux*) ksysguardd_compile=yes; UNAME='Linux' ;;
+   *-*-freebsd*) ksysguardd_compile=yes; UNAME='FreeBSD' ;;
++  *-*-openbsd*) ksysguardd_compile=yes; UNAME='FreeBSD' ;;
+   *-*-solaris*) ksysguardd_compile=yes; UNAME='Solaris' ;;
+   *-*-osf*) ksysguardd_compile=yes; UNAME='Tru64' ;;
+   *) ksysguardd_compile=no; UNAME='' ;;
