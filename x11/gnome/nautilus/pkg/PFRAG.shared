@@ -1,0 +1,8 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/01/31 19:03:46 todd Exp $
+lib/libnautilus-adapter.so.2.0
+lib/libnautilus-private.so.2.0
+lib/libnautilus.so.2.0
+lib/bonobo/libnautilus-history-view.so
+lib/bonobo/libnautilus-notes-view.so
+lib/bonobo/libnautilus-tree-view.so
+DYNLIBDIR(%D/lib)

@@ -1,0 +1,61 @@
+$OpenBSD: patch-data_static_bookmarks_xml,v 1.1.1.1 2003/01/31 19:03:46 todd Exp $
+--- data/static_bookmarks.xml.orig	Wed Aug 22 03:51:36 2001
++++ data/static_bookmarks.xml	Sat Aug 17 23:58:39 2002
+@@ -1,12 +1,15 @@
+ <?xml version="1.0"?>
+ <bookmarks>
++  <folder _name="OpenBSD">
++        <bookmark _name="OpenBSD" icon_name="i-web" uri="http://www.openbsd.org/"/>
++        <bookmark _name="OpenBSD Errata" icon_name="i-web" uri="http://www.openbsd.org/errata.html"/>
++        <bookmark _name="OpenBSD FAQ" icon_name="i-web" uri="http://www.openbsd.org/faq/"/>
++        <bookmark _name="OpenBSD Mailing Lists" icon_name="i-web" uri="http://www.openbsd.org/mail.html"/>
++  </folder>
+   <folder _name="Software">
+         <bookmark _name="Allaire" icon_name="i-web" uri="http://www.allaire.com/Products/index.cfm"/>
+         <bookmark _name="Borland" icon_name="i-web" uri="http://www.borland.com/kylix/"/>
+-        <bookmark _name="MandrakeSoft" icon_name="i-web" uri="http://mandrakesoft.com/"/>
+         <bookmark _name="Netraverse" icon_name="i-web" uri="http://www.netraverse.com"/>
+-        <bookmark _name="Red Hat" icon_name="i-web" uri="http://www.redhat.com"/>
+-        <bookmark _name="SuSE" icon_name="i-web" uri="http://www.suse.com"/>
+         <bookmark _name="Sun StarOffice" icon_name="i-web" uri="http://www.sun.com/products/staroffice/"/>
+         <bookmark _name="Ximian" icon_name="i-web" uri="http://www.ximian.com"/>
+         <bookmark _name="Zero-Knowledge" icon_name="i-web" uri="http://www.zeroknowledge.com"/>
+@@ -20,35 +23,22 @@
+   </folder>
+   <folder _name="News and Media">
+          <bookmark _name="Binary Freedom" icon_name="i-web" uri="http://www.binaryfreedom.com/"/>
+-         <bookmark _name="CNET Linux Center" icon_name="i-web" uri="http://linux.cnet.com/linux/0-1518529-7-3378110.html"/>
+-         <bookmark _name="LinuxOrbit.com" icon_name="i-web" uri="http://www.linuxorbit.com"/>
+          <bookmark _name="Linux Weekly News" icon_name="i-web" uri="http://www.lwn.net"/>
+          <bookmark _name="O'Reilly" icon_name="i-web" uri="http://www.oreillynet.com"/>
++         <bookmark _name="OpenBSD Journal" icon_name="i-web" uri="http://www.deadly.org/"/>
+          <bookmark _name="OSDN" icon_name="i-web" uri="http://www.osdn.com"/>
+-         <bookmark _name="ZDNet Linux Resource Center" icon_name="i-web" uri="http://linux.zdnet.com"/>
++         <bookmark _name="Slashdot" icon_name="i-web" uri="http://slashdot.org/"/>
+   </folder>
+   <folder _name="Web Services">
+          <bookmark _name="CollabNet" icon_name="i-web" uri="http://www.collab.net/community/"/>
+          <bookmark _name="Covalent" icon_name="i-web" uri="http://www.covalent.com"/>
+          <bookmark _name="Rackspace" icon_name="i-web" uri="http://www.rackspace.com"/>
+-         <bookmark _name="Red Hat Network" icon_name="i-web" uri="http://www.redhat.com/network/"/>
+          <bookmark _name="SourceForge" icon_name="i-web" uri="http://www.sourceforge.net"/>
+   </folder>
+-  <folder _name="International">
+-         <bookmark _name="Conectiva" icon_name="i-web" uri="http://en.conectiva.com/"/>
+-         <bookmark _name="Linux One" icon_name="i-web" uri="http://www.linuxone.co.kr/english2/eng/main.htm"/>
+-         <bookmark _name="Open Source Asia" icon_name="i-web" uri="http://www.opensourceasia.com"/>
+-         <bookmark _name="RedFlag Linux" icon_name="i-web" uri="http://www.redflag-linux.com/english/index.html"/>
+-         <bookmark _name="Sun Wah Linux" icon_name="i-web" uri="http://www.sw-linux.com/nonflash_front.htm"/>
+-  </folder>
+-  <folder _name="Linux Resources">
+-         <bookmark _name="Debian.org" icon_name="i-web" uri="http://www.debian.org"/>
++  <folder _name="OpenSource Resources">
+          <bookmark _name="Freshmeat.net" icon_name="i-web" uri="http://www.freshmeat.net"/>
+          <bookmark _name="GNOME.org" icon_name="i-web" uri="http://www.gnome.org"/>
+          <bookmark _name="GNU.org" icon_name="i-web" uri="http://www.gnu.org"/>
+-         <bookmark _name="Linux Online" icon_name="i-web" uri="http://www.linux.org"/>
+-         <bookmark _name="Linux Documentation Project" icon_name="i-web" uri="http://www.linuxdoc.org"/>
+-         <bookmark _name="LinuxNewbie.org" icon_name="i-web" uri="http://www.linuxnewbie.org"/>
+          <bookmark _name="OpenOffice" icon_name="i-web" uri="http://www.openoffice.org"/>
+   </folder>
+ </bookmarks>

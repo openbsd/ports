@@ -1,0 +1,11 @@
+$OpenBSD: patch-libnautilus-private_nautilus-thumbnails_c,v 1.1.1.1 2003/01/31 19:03:46 todd Exp $
+--- libnautilus-private/nautilus-thumbnails.c.orig	Wed Aug 21 20:27:51 2002
++++ libnautilus-private/nautilus-thumbnails.c	Wed Aug 21 20:28:31 2002
+@@ -309,6 +309,7 @@ thumbnail_thread_starter_cb (gpointer da
+ 	pthread_attr_init (&thread_attributes);
+ 	pthread_attr_setdetachstate (&thread_attributes,
+ 				     PTHREAD_CREATE_DETACHED);
++	pthread_attr_setstacksize (&thread_attributes, 128*1024);
+ #ifdef DEBUG_THUMBNAILS
+ 	g_message ("(Main Thread) Creating thumbnails thread\n");
+ #endif

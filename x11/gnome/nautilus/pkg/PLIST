@@ -1,0 +1,693 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 19:03:47 todd Exp $
+bin/nautilus
+include/libnautilus/libnautilus.h
+include/libnautilus/nautilus-bonobo-ui.h
+include/libnautilus/nautilus-clipboard.h
+include/libnautilus/nautilus-distributed-undo.h
+include/libnautilus/nautilus-idle-queue.h
+include/libnautilus/nautilus-undo-private.h
+include/libnautilus/nautilus-undo.h
+include/libnautilus/nautilus-view-component.h
+include/libnautilus/nautilus-view-standard-main.h
+include/libnautilus/nautilus-view.h
+lib/bonobo/libnautilus-history-view.la
+lib/bonobo/libnautilus-notes-view.la
+lib/bonobo/libnautilus-tree-view.la
+lib/bonobo/servers/Nautilus_ComponentAdapterFactory_std.server
+lib/bonobo/servers/Nautilus_Control_throbber.server
+lib/bonobo/servers/Nautilus_View_content-loser.server
+lib/bonobo/servers/Nautilus_View_history.server
+lib/bonobo/servers/Nautilus_View_music.server
+lib/bonobo/servers/Nautilus_View_notes.server
+lib/bonobo/servers/Nautilus_View_sample.server
+lib/bonobo/servers/Nautilus_View_sidebar-loser.server
+lib/bonobo/servers/Nautilus_View_text.server
+lib/bonobo/servers/Nautilus_View_tree.server
+lib/bonobo/servers/Nautilus_shell.server
+lib/libnautilus-adapter.la
+lib/libnautilus-private.la
+lib/libnautilus.la
+lib/pkgconfig/libnautilus.pc
+libexec/nautilus-adapter
+libexec/nautilus-content-loser
+libexec/nautilus-music-view
+libexec/nautilus-sample-content-view
+libexec/nautilus-sidebar-loser
+libexec/nautilus-text-view
+libexec/nautilus-throbber
+share/applications/nautilus.desktop
+share/examples/nautilus/X11/serverconfig/.directory
+share/examples/nautilus/X11/starthere/.directory
+share/examples/nautilus/X11/starthere/applications.desktop
+share/examples/nautilus/X11/starthere/preferences.desktop
+share/examples/nautilus/X11/starthere/serverconfig.desktop
+share/examples/nautilus/X11/starthere/sysconfig.desktop
+share/examples/nautilus/X11/sysconfig/.directory
+share/gnome-2.0/ui/nautilus-clipboard-ui.xml
+share/gnome-2.0/ui/nautilus-content-loser-ui.xml
+share/gnome-2.0/ui/nautilus-desktop-icon-view-ui.xml
+share/gnome-2.0/ui/nautilus-directory-view-ui.xml
+share/gnome-2.0/ui/nautilus-icon-view-ui.xml
+share/gnome-2.0/ui/nautilus-sample-content-view-ui.xml
+share/gnome-2.0/ui/nautilus-search-list-view-ui.xml
+share/gnome-2.0/ui/nautilus-shell-ui.xml
+share/gnome-2.0/ui/nautilus-sidebar-loser-ui.xml
+share/idl/nautilus-distributed-undo.idl
+share/idl/nautilus-view-component.idl
+share/locale/am/LC_MESSAGES/nautilus.mo
+share/locale/az/LC_MESSAGES/nautilus.mo
+share/locale/be/LC_MESSAGES/nautilus.mo
+share/locale/bg/LC_MESSAGES/nautilus.mo
+share/locale/ca/LC_MESSAGES/nautilus.mo
+share/locale/cs/LC_MESSAGES/nautilus.mo
+share/locale/da/LC_MESSAGES/nautilus.mo
+share/locale/de/LC_MESSAGES/nautilus.mo
+share/locale/el/LC_MESSAGES/nautilus.mo
+share/locale/en_GB/LC_MESSAGES/nautilus.mo
+share/locale/es/LC_MESSAGES/nautilus.mo
+share/locale/et/LC_MESSAGES/nautilus.mo
+share/locale/eu/LC_MESSAGES/nautilus.mo
+share/locale/fi/LC_MESSAGES/nautilus.mo
+share/locale/fr/LC_MESSAGES/nautilus.mo
+share/locale/ga/LC_MESSAGES/nautilus.mo
+share/locale/gl/LC_MESSAGES/nautilus.mo
+share/locale/hu/LC_MESSAGES/nautilus.mo
+share/locale/it/LC_MESSAGES/nautilus.mo
+share/locale/ja/LC_MESSAGES/nautilus.mo
+share/locale/ko/LC_MESSAGES/nautilus.mo
+share/locale/lt/LC_MESSAGES/nautilus.mo
+share/locale/lv/LC_MESSAGES/nautilus.mo
+share/locale/ms/LC_MESSAGES/nautilus.mo
+share/locale/nl/LC_MESSAGES/nautilus.mo
+share/locale/nn/LC_MESSAGES/nautilus.mo
+share/locale/no/LC_MESSAGES/nautilus.mo
+share/locale/pl/LC_MESSAGES/nautilus.mo
+share/locale/pt/LC_MESSAGES/nautilus.mo
+share/locale/pt_BR/LC_MESSAGES/nautilus.mo
+share/locale/ro/LC_MESSAGES/nautilus.mo
+share/locale/ru/LC_MESSAGES/nautilus.mo
+share/locale/sk/LC_MESSAGES/nautilus.mo
+share/locale/sl/LC_MESSAGES/nautilus.mo
+share/locale/sq/LC_MESSAGES/nautilus.mo
+share/locale/sv/LC_MESSAGES/nautilus.mo
+share/locale/ta/LC_MESSAGES/nautilus.mo
+share/locale/tr/LC_MESSAGES/nautilus.mo
+share/locale/uk/LC_MESSAGES/nautilus.mo
+share/locale/vi/LC_MESSAGES/nautilus.mo
+share/locale/zh_CN/LC_MESSAGES/nautilus.mo
+share/locale/zh_TW/LC_MESSAGES/nautilus.mo
+share/nautilus/browser.xml
+share/nautilus/emblems/OK.png
+share/nautilus/emblems/art.png
+share/nautilus/emblems/camera.png
+share/nautilus/emblems/certified.png
+share/nautilus/emblems/cool.png
+share/nautilus/emblems/danger.png
+share/nautilus/emblems/distinguished.png
+share/nautilus/emblems/documents.png
+share/nautilus/emblems/draft.png
+share/nautilus/emblems/erase.png
+share/nautilus/emblems/favorite.png
+share/nautilus/emblems/important.png
+share/nautilus/emblems/mail.png
+share/nautilus/emblems/multimedia.png
+share/nautilus/emblems/new.png
+share/nautilus/emblems/ohno.png
+share/nautilus/emblems/package.png
+share/nautilus/emblems/personal.png
+share/nautilus/emblems/pictures.png
+share/nautilus/emblems/sound.png
+share/nautilus/emblems/special.png
+share/nautilus/emblems/urgent.png
+share/nautilus/emblems/web.png
+share/nautilus/filesystem-attributes.xml
+share/nautilus/glade/nautilus-bookmarks-window.glade
+share/nautilus/nautilus-extras.placeholder
+share/nautilus/nautilus-suggested.placeholder
+share/nautilus/patterns/.striated.png
+share/nautilus/patterns/blue_gray_rough.png
+share/nautilus/patterns/blue_ridge.png
+share/nautilus/patterns/blue_type.png
+share/nautilus/patterns/brushed_metal.png
+share/nautilus/patterns/burlap.jpg
+share/nautilus/patterns/camouflage.png
+share/nautilus/patterns/chalk.jpg
+share/nautilus/patterns/cork.png
+share/nautilus/patterns/countertop.png
+share/nautilus/patterns/dark-gnome.jpg
+share/nautilus/patterns/dots.png
+share/nautilus/patterns/fibers.png
+share/nautilus/patterns/fleur_de_lis.png
+share/nautilus/patterns/floral.png
+share/nautilus/patterns/fossil.png
+share/nautilus/patterns/gnome.jpg
+share/nautilus/patterns/green_weave.png
+share/nautilus/patterns/ice.png
+share/nautilus/patterns/manila_paper.png
+share/nautilus/patterns/moss_ridge.png
+share/nautilus/patterns/numbers.png
+share/nautilus/patterns/ocean_stripes.png
+share/nautilus/patterns/purple_marble.png
+share/nautilus/patterns/reset.png
+share/nautilus/patterns/ridged_paper.png
+share/nautilus/patterns/rough_paper.png
+share/nautilus/patterns/sky_ridge.png
+share/nautilus/patterns/snow_ridge.png
+share/nautilus/patterns/stucco.jpg
+share/nautilus/patterns/terracotta.png
+share/nautilus/patterns/wavy_white.png
+share/nautilus/services/text/google.xml
+share/nautilus/services/text/webster.xml
+share/nautilus/starthere-link.desktop
+share/nautilus/starthere.desktop
+share/nautilus/static_bookmarks.xml
+share/pixmaps/gnome-starthere-96.png
+share/pixmaps/gnome-starthere.png
+share/pixmaps/nautilus/CD_drive.png
+share/pixmaps/nautilus/HD_drive.png
+share/pixmaps/nautilus/Search.png
+share/pixmaps/nautilus/audio.png
+share/pixmaps/nautilus/backgrounds.png
+share/pixmaps/nautilus/chit_frame.png
+share/pixmaps/nautilus/colors.png
+share/pixmaps/nautilus/cpu.png
+share/pixmaps/nautilus/crux_eggplant/Search.png
+share/pixmaps/nautilus/crux_eggplant/backgrounds/background_pattern.png
+share/pixmaps/nautilus/crux_eggplant/backgrounds/window_pattern.png
+share/pixmaps/nautilus/crux_eggplant/crux_eggplant.xml
+share/pixmaps/nautilus/crux_eggplant/decrement-i.png
+share/pixmaps/nautilus/crux_eggplant/decrement.png
+share/pixmaps/nautilus/crux_eggplant/emblem-nowrite-72.png
+share/pixmaps/nautilus/crux_eggplant/emblem-nowrite-96.png
+share/pixmaps/nautilus/crux_eggplant/emblem-nowrite.png
+share/pixmaps/nautilus/crux_eggplant/i-directory-12.png
+share/pixmaps/nautilus/crux_eggplant/i-directory-192.png
+share/pixmaps/nautilus/crux_eggplant/i-directory-20.png
+share/pixmaps/nautilus/crux_eggplant/i-directory-24.png
+share/pixmaps/nautilus/crux_eggplant/i-directory-36.png
+share/pixmaps/nautilus/crux_eggplant/i-directory-72.png
+share/pixmaps/nautilus/crux_eggplant/i-directory-96.png
+share/pixmaps/nautilus/crux_eggplant/i-directory.png
+share/pixmaps/nautilus/crux_eggplant/i-directory.xml
+share/pixmaps/nautilus/crux_eggplant/i-regular.xml
+share/pixmaps/nautilus/crux_eggplant/increment-i.png
+share/pixmaps/nautilus/crux_eggplant/increment.png
+share/pixmaps/nautilus/crux_eggplant/number_strip.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/fill-active-prelight.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/fill-active.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/fill-empty-space.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/fill-prelight.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/fill.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/left-bumper-active-prelight.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/left-bumper-active.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/left-bumper-prelight.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/left-bumper.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/middle-normal-normal.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/middle-normal-prelight.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/middle-prelight-normal.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/right-bumper-prelight.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/right-bumper.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/right-empty-space.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/right-top-active-prelight.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/right-top-active.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/right-top-prelight.png
+share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces/right-top.png
+share/pixmaps/nautilus/crux_eggplant/theme_preview.png
+share/pixmaps/nautilus/crux_eggplant/throbber/001.png
+share/pixmaps/nautilus/crux_eggplant/throbber/002.png
+share/pixmaps/nautilus/crux_eggplant/throbber/003.png
+share/pixmaps/nautilus/crux_eggplant/throbber/004.png
+share/pixmaps/nautilus/crux_eggplant/throbber/005.png
+share/pixmaps/nautilus/crux_eggplant/throbber/006.png
+share/pixmaps/nautilus/crux_eggplant/throbber/007.png
+share/pixmaps/nautilus/crux_eggplant/throbber/008.png
+share/pixmaps/nautilus/crux_eggplant/throbber/009.png
+share/pixmaps/nautilus/crux_eggplant/throbber/010.png
+share/pixmaps/nautilus/crux_eggplant/throbber/011.png
+share/pixmaps/nautilus/crux_eggplant/throbber/012.png
+share/pixmaps/nautilus/crux_eggplant/throbber/013.png
+share/pixmaps/nautilus/crux_eggplant/throbber/014.png
+share/pixmaps/nautilus/crux_eggplant/throbber/015.png
+share/pixmaps/nautilus/crux_eggplant/throbber/016.png
+share/pixmaps/nautilus/crux_eggplant/throbber/017.png
+share/pixmaps/nautilus/crux_eggplant/throbber/018.png
+share/pixmaps/nautilus/crux_eggplant/throbber/019.png
+share/pixmaps/nautilus/crux_eggplant/throbber/020.png
+share/pixmaps/nautilus/crux_eggplant/throbber/021.png
+share/pixmaps/nautilus/crux_eggplant/throbber/022.png
+share/pixmaps/nautilus/crux_eggplant/throbber/023.png
+share/pixmaps/nautilus/crux_eggplant/throbber/024.png
+share/pixmaps/nautilus/crux_eggplant/throbber/025.png
+share/pixmaps/nautilus/crux_eggplant/throbber/026.png
+share/pixmaps/nautilus/crux_eggplant/throbber/027.png
+share/pixmaps/nautilus/crux_eggplant/throbber/028.png
+share/pixmaps/nautilus/crux_eggplant/throbber/029.png
+share/pixmaps/nautilus/crux_eggplant/throbber/030.png
+share/pixmaps/nautilus/crux_eggplant/throbber/rest.png
+share/pixmaps/nautilus/crux_eggplant/zoom_body.png
+share/pixmaps/nautilus/crux_teal/Search.png
+share/pixmaps/nautilus/crux_teal/backgrounds/background_pattern.png
+share/pixmaps/nautilus/crux_teal/backgrounds/window_pattern.png
+share/pixmaps/nautilus/crux_teal/crux_teal.xml
+share/pixmaps/nautilus/crux_teal/decrement-i.png
+share/pixmaps/nautilus/crux_teal/decrement.png
+share/pixmaps/nautilus/crux_teal/emblem-nowrite-72.png
+share/pixmaps/nautilus/crux_teal/emblem-nowrite-96.png
+share/pixmaps/nautilus/crux_teal/emblem-nowrite.png
+share/pixmaps/nautilus/crux_teal/i-directory-12.png
+share/pixmaps/nautilus/crux_teal/i-directory-192.png
+share/pixmaps/nautilus/crux_teal/i-directory-20.png
+share/pixmaps/nautilus/crux_teal/i-directory-24.png
+share/pixmaps/nautilus/crux_teal/i-directory-36.png
+share/pixmaps/nautilus/crux_teal/i-directory-72.png
+share/pixmaps/nautilus/crux_teal/i-directory-96.png
+share/pixmaps/nautilus/crux_teal/i-directory.png
+share/pixmaps/nautilus/crux_teal/i-directory.xml
+share/pixmaps/nautilus/crux_teal/i-regular-12.png
+share/pixmaps/nautilus/crux_teal/i-regular-192.png
+share/pixmaps/nautilus/crux_teal/i-regular-20.png
+share/pixmaps/nautilus/crux_teal/i-regular-24.png
+share/pixmaps/nautilus/crux_teal/i-regular-36.png
+share/pixmaps/nautilus/crux_teal/i-regular-72.png
+share/pixmaps/nautilus/crux_teal/i-regular-96.png
+share/pixmaps/nautilus/crux_teal/i-regular.png
+share/pixmaps/nautilus/crux_teal/i-regular.xml
+share/pixmaps/nautilus/crux_teal/increment-i.png
+share/pixmaps/nautilus/crux_teal/increment.png
+share/pixmaps/nautilus/crux_teal/number_strip.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/fill-active-prelight.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/fill-active.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/fill-empty-space.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/fill-prelight.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/fill.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/left-bumper-active-prelight.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/left-bumper-active.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/left-bumper-prelight.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/left-bumper.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/middle-normal-normal.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/middle-normal-prelight.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/middle-prelight-normal.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/right-bumper-prelight.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/right-bumper.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/right-empty-space.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/right-top-active-prelight.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/right-top-active.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/right-top-prelight.png
+share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces/right-top.png
+share/pixmaps/nautilus/crux_teal/theme_preview.png
+share/pixmaps/nautilus/crux_teal/throbber/001.png
+share/pixmaps/nautilus/crux_teal/throbber/002.png
+share/pixmaps/nautilus/crux_teal/throbber/003.png
+share/pixmaps/nautilus/crux_teal/throbber/004.png
+share/pixmaps/nautilus/crux_teal/throbber/005.png
+share/pixmaps/nautilus/crux_teal/throbber/006.png
+share/pixmaps/nautilus/crux_teal/throbber/007.png
+share/pixmaps/nautilus/crux_teal/throbber/008.png
+share/pixmaps/nautilus/crux_teal/throbber/009.png
+share/pixmaps/nautilus/crux_teal/throbber/010.png
+share/pixmaps/nautilus/crux_teal/throbber/011.png
+share/pixmaps/nautilus/crux_teal/throbber/012.png
+share/pixmaps/nautilus/crux_teal/throbber/013.png
+share/pixmaps/nautilus/crux_teal/throbber/014.png
+share/pixmaps/nautilus/crux_teal/throbber/015.png
+share/pixmaps/nautilus/crux_teal/throbber/016.png
+share/pixmaps/nautilus/crux_teal/throbber/017.png
+share/pixmaps/nautilus/crux_teal/throbber/018.png
+share/pixmaps/nautilus/crux_teal/throbber/019.png
+share/pixmaps/nautilus/crux_teal/throbber/020.png
+share/pixmaps/nautilus/crux_teal/throbber/021.png
+share/pixmaps/nautilus/crux_teal/throbber/022.png
+share/pixmaps/nautilus/crux_teal/throbber/023.png
+share/pixmaps/nautilus/crux_teal/throbber/024.png
+share/pixmaps/nautilus/crux_teal/throbber/025.png
+share/pixmaps/nautilus/crux_teal/throbber/026.png
+share/pixmaps/nautilus/crux_teal/throbber/027.png
+share/pixmaps/nautilus/crux_teal/throbber/028.png
+share/pixmaps/nautilus/crux_teal/throbber/029.png
+share/pixmaps/nautilus/crux_teal/throbber/030.png
+share/pixmaps/nautilus/crux_teal/throbber/rest.png
+share/pixmaps/nautilus/crux_teal/zoom_body.png
+share/pixmaps/nautilus/decrement.png
+share/pixmaps/nautilus/default/Search.png
+share/pixmaps/nautilus/default/decrement.png
+share/pixmaps/nautilus/default/default.xml
+share/pixmaps/nautilus/default/desktop-home.png
+share/pixmaps/nautilus/default/emblem-OK.svg
+share/pixmaps/nautilus/default/emblem-art.png
+share/pixmaps/nautilus/default/emblem-broken-link.png
+share/pixmaps/nautilus/default/emblem-camera.png
+share/pixmaps/nautilus/default/emblem-certified.svg
+share/pixmaps/nautilus/default/emblem-cool.svg
+share/pixmaps/nautilus/default/emblem-danger.svg
+share/pixmaps/nautilus/default/emblem-distinguished.svg
+share/pixmaps/nautilus/default/emblem-documents.png
+share/pixmaps/nautilus/default/emblem-draft.svg
+share/pixmaps/nautilus/default/emblem-favorite.svg
+share/pixmaps/nautilus/default/emblem-generic.png
+share/pixmaps/nautilus/default/emblem-important.svg
+share/pixmaps/nautilus/default/emblem-mail.png
+share/pixmaps/nautilus/default/emblem-multimedia.png
+share/pixmaps/nautilus/default/emblem-new.svg
+share/pixmaps/nautilus/default/emblem-noread.svg
+share/pixmaps/nautilus/default/emblem-nowrite.svg
+share/pixmaps/nautilus/default/emblem-ohno.svg
+share/pixmaps/nautilus/default/emblem-package.png
+share/pixmaps/nautilus/default/emblem-personal.svg
+share/pixmaps/nautilus/default/emblem-pictures.png
+share/pixmaps/nautilus/default/emblem-sound.png
+share/pixmaps/nautilus/default/emblem-special.svg
+share/pixmaps/nautilus/default/emblem-symbolic-link-12.png
+share/pixmaps/nautilus/default/emblem-symbolic-link-24.png
+share/pixmaps/nautilus/default/emblem-symbolic-link-36.png
+share/pixmaps/nautilus/default/emblem-symbolic-link.png
+share/pixmaps/nautilus/default/emblem-trash.png
+share/pixmaps/nautilus/default/emblem-urgent.svg
+share/pixmaps/nautilus/default/emblem-web.png
+share/pixmaps/nautilus/default/i-bookmark-20.png
+share/pixmaps/nautilus/default/i-bookmark-missing-20.png
+share/pixmaps/nautilus/default/i-bookmark-missing.png
+share/pixmaps/nautilus/default/i-bookmark.png
+share/pixmaps/nautilus/default/i-broken-image.png
+share/pixmaps/nautilus/default/i-directory-12.png
+share/pixmaps/nautilus/default/i-directory-24.png
+share/pixmaps/nautilus/default/i-directory-36.png
+share/pixmaps/nautilus/default/i-directory-72.png
+share/pixmaps/nautilus/default/i-directory-96.png
+share/pixmaps/nautilus/default/i-directory-accept-12.png
+share/pixmaps/nautilus/default/i-directory-accept-24.png
+share/pixmaps/nautilus/default/i-directory-accept-36.png
+share/pixmaps/nautilus/default/i-directory-accept-72.png
+share/pixmaps/nautilus/default/i-directory-accept-96.png
+share/pixmaps/nautilus/default/i-directory-accept.png
+share/pixmaps/nautilus/default/i-directory-accept.xml
+share/pixmaps/nautilus/default/i-directory.png
+share/pixmaps/nautilus/default/i-directory.xml
+share/pixmaps/nautilus/default/i-regular-12.png
+share/pixmaps/nautilus/default/i-regular-24.png
+share/pixmaps/nautilus/default/i-regular-36.png
+share/pixmaps/nautilus/default/i-regular-72.png
+share/pixmaps/nautilus/default/i-regular-96.png
+share/pixmaps/nautilus/default/i-regular.png
+share/pixmaps/nautilus/default/i-regular.xml
+share/pixmaps/nautilus/default/i-search-72.png
+share/pixmaps/nautilus/default/i-spreadsheet.png
+share/pixmaps/nautilus/default/i-stalled.png
+share/pixmaps/nautilus/default/i-symlink.png
+share/pixmaps/nautilus/default/i-web-72.png
+share/pixmaps/nautilus/default/increment.png
+share/pixmaps/nautilus/default/loading.png
+share/pixmaps/nautilus/default/manual.png
+share/pixmaps/nautilus/default/number_strip.png
+share/pixmaps/nautilus/default/side_bar_image.png
+share/pixmaps/nautilus/default/theme_preview.png
+share/pixmaps/nautilus/default/trash-empty-192.png
+share/pixmaps/nautilus/default/trash-empty.png
+share/pixmaps/nautilus/default/trash-full-192.png
+share/pixmaps/nautilus/default/trash-full.png
+share/pixmaps/nautilus/default/zoom_body.png
+share/pixmaps/nautilus/emblems.png
+share/pixmaps/nautilus/gnome/Services.png
+share/pixmaps/nautilus/gnome/application-x-e-cfg.png
+share/pixmaps/nautilus/gnome/audio-192.png
+share/pixmaps/nautilus/gnome/emblem-nowrite-72.png
+share/pixmaps/nautilus/gnome/emblem-nowrite-96.png
+share/pixmaps/nautilus/gnome/emblem-nowrite.png
+share/pixmaps/nautilus/gnome/gnome.xml
+share/pixmaps/nautilus/gnome/i-core.png
+share/pixmaps/nautilus/gnome/i-dirclosed.png
+share/pixmaps/nautilus/gnome/i-directory-12.png
+share/pixmaps/nautilus/gnome/i-directory-192.png
+share/pixmaps/nautilus/gnome/i-directory-20.png
+share/pixmaps/nautilus/gnome/i-directory-24.png
+share/pixmaps/nautilus/gnome/i-directory-36.png
+share/pixmaps/nautilus/gnome/i-directory-72.png
+share/pixmaps/nautilus/gnome/i-directory-96.png
+share/pixmaps/nautilus/gnome/i-directory-accept-12.png
+share/pixmaps/nautilus/gnome/i-directory-accept-192.png
+share/pixmaps/nautilus/gnome/i-directory-accept-20.png
+share/pixmaps/nautilus/gnome/i-directory-accept-24.png
+share/pixmaps/nautilus/gnome/i-directory-accept-36.png
+share/pixmaps/nautilus/gnome/i-directory-accept-72.png
+share/pixmaps/nautilus/gnome/i-directory-accept-96.png
+share/pixmaps/nautilus/gnome/i-directory-accept.png
+share/pixmaps/nautilus/gnome/i-directory.png
+share/pixmaps/nautilus/gnome/i-executable.png
+share/pixmaps/nautilus/gnome/i-music-192.png
+share/pixmaps/nautilus/gnome/i-music.png
+share/pixmaps/nautilus/gnome/i-nfs.png
+share/pixmaps/nautilus/gnome/i-regular.png
+share/pixmaps/nautilus/gnome/i-regular.xml
+share/pixmaps/nautilus/gnome/i-stalled.png
+share/pixmaps/nautilus/gnome/linux-penguin.png
+share/pixmaps/nautilus/gnome/rpm-directory.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/fill-active-prelight.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/fill-active.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/fill-empty-space.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/fill-prelight.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/fill.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/left-bumper-active-prelight.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/left-bumper-active.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/left-bumper-prelight.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/left-bumper.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/middle-normal-normal.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/middle-normal-prelight.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/middle-prelight-normal.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/right-bumper-prelight.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/right-bumper.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/right-empty-space.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/right-top-active-prelight.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/right-top-active.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/right-top-prelight.png
+share/pixmaps/nautilus/gnome/sidebar_tab_pieces/right-top.png
+share/pixmaps/nautilus/gnome/theme_preview.png
+share/pixmaps/nautilus/gnome/throbber/001.png
+share/pixmaps/nautilus/gnome/throbber/002.png
+share/pixmaps/nautilus/gnome/throbber/003.png
+share/pixmaps/nautilus/gnome/throbber/004.png
+share/pixmaps/nautilus/gnome/throbber/005.png
+share/pixmaps/nautilus/gnome/throbber/006.png
+share/pixmaps/nautilus/gnome/throbber/rest.png
+share/pixmaps/nautilus/gnome/trash-empty-192.png
+share/pixmaps/nautilus/gnome/trash-empty-accept-192.png
+share/pixmaps/nautilus/gnome/trash-empty-accept.png
+share/pixmaps/nautilus/gnome/trash-empty.png
+share/pixmaps/nautilus/gnome/trash-full-192.png
+share/pixmaps/nautilus/gnome/trash-full.png
+share/pixmaps/nautilus/increment.png
+share/pixmaps/nautilus/knob.png
+share/pixmaps/nautilus/memory_chip.gif
+share/pixmaps/nautilus/nautilus-launch-icon.png
+share/pixmaps/nautilus/nautilus-mini-logo.png
+share/pixmaps/nautilus/note-indicator.png
+share/pixmaps/nautilus/number_strip.png
+share/pixmaps/nautilus/side_bar_image.png
+share/pixmaps/nautilus/sidebar_tab_pieces/fill-active-prelight.png
+share/pixmaps/nautilus/sidebar_tab_pieces/fill-active.png
+share/pixmaps/nautilus/sidebar_tab_pieces/fill-empty-space.png
+share/pixmaps/nautilus/sidebar_tab_pieces/fill-prelight.png
+share/pixmaps/nautilus/sidebar_tab_pieces/fill.png
+share/pixmaps/nautilus/sidebar_tab_pieces/left-bumper-active-prelight.png
+share/pixmaps/nautilus/sidebar_tab_pieces/left-bumper-active.png
+share/pixmaps/nautilus/sidebar_tab_pieces/left-bumper-prelight.png
+share/pixmaps/nautilus/sidebar_tab_pieces/left-bumper.png
+share/pixmaps/nautilus/sidebar_tab_pieces/middle-normal-normal.png
+share/pixmaps/nautilus/sidebar_tab_pieces/middle-normal-prelight.png
+share/pixmaps/nautilus/sidebar_tab_pieces/middle-prelight-normal.png
+share/pixmaps/nautilus/sidebar_tab_pieces/right-bumper-prelight.png
+share/pixmaps/nautilus/sidebar_tab_pieces/right-bumper.png
+share/pixmaps/nautilus/sidebar_tab_pieces/right-empty-space.png
+share/pixmaps/nautilus/sidebar_tab_pieces/right-top-active-prelight.png
+share/pixmaps/nautilus/sidebar_tab_pieces/right-top-active.png
+share/pixmaps/nautilus/sidebar_tab_pieces/right-top-prelight.png
+share/pixmaps/nautilus/sidebar_tab_pieces/right-top.png
+share/pixmaps/nautilus/sierra/Sierra_desktop.png
+share/pixmaps/nautilus/sierra/green_weave.png
+share/pixmaps/nautilus/sierra/i-directory-12.png
+share/pixmaps/nautilus/sierra/i-directory-24.png
+share/pixmaps/nautilus/sierra/i-directory-36.png
+share/pixmaps/nautilus/sierra/i-directory-72.png
+share/pixmaps/nautilus/sierra/i-directory-96.png
+share/pixmaps/nautilus/sierra/i-directory-accept-12.png
+share/pixmaps/nautilus/sierra/i-directory-accept-24.png
+share/pixmaps/nautilus/sierra/i-directory-accept-36.png
+share/pixmaps/nautilus/sierra/i-directory-accept-72.png
+share/pixmaps/nautilus/sierra/i-directory-accept-96.png
+share/pixmaps/nautilus/sierra/i-directory-accept.png
+share/pixmaps/nautilus/sierra/i-directory.png
+share/pixmaps/nautilus/sierra/number_strip.png
+share/pixmaps/nautilus/sierra/sierra.xml
+share/pixmaps/nautilus/sierra/theme_preview.png
+share/pixmaps/nautilus/tahoe/blueridge.png
+share/pixmaps/nautilus/tahoe/bluewall.png
+share/pixmaps/nautilus/tahoe/i-directory-12.png
+share/pixmaps/nautilus/tahoe/i-directory-24.png
+share/pixmaps/nautilus/tahoe/i-directory-36.png
+share/pixmaps/nautilus/tahoe/i-directory-72.png
+share/pixmaps/nautilus/tahoe/i-directory-96.png
+share/pixmaps/nautilus/tahoe/i-directory-accept-12.png
+share/pixmaps/nautilus/tahoe/i-directory-accept-24.png
+share/pixmaps/nautilus/tahoe/i-directory-accept-36.png
+share/pixmaps/nautilus/tahoe/i-directory-accept-72.png
+share/pixmaps/nautilus/tahoe/i-directory-accept-96.png
+share/pixmaps/nautilus/tahoe/i-directory-accept.png
+share/pixmaps/nautilus/tahoe/i-directory.png
+share/pixmaps/nautilus/tahoe/number_strip.png
+share/pixmaps/nautilus/tahoe/tahoe.xml
+share/pixmaps/nautilus/tahoe/theme_preview.png
+share/pixmaps/nautilus/text-selection-frame.png
+share/pixmaps/nautilus/throbber/001.png
+share/pixmaps/nautilus/throbber/002.png
+share/pixmaps/nautilus/throbber/003.png
+share/pixmaps/nautilus/throbber/004.png
+share/pixmaps/nautilus/throbber/005.png
+share/pixmaps/nautilus/throbber/006.png
+share/pixmaps/nautilus/throbber/007.png
+share/pixmaps/nautilus/throbber/008.png
+share/pixmaps/nautilus/throbber/009.png
+share/pixmaps/nautilus/throbber/010.png
+share/pixmaps/nautilus/throbber/011.png
+share/pixmaps/nautilus/throbber/012.png
+share/pixmaps/nautilus/throbber/013.png
+share/pixmaps/nautilus/throbber/014.png
+share/pixmaps/nautilus/throbber/015.png
+share/pixmaps/nautilus/throbber/016.png
+share/pixmaps/nautilus/throbber/017.png
+share/pixmaps/nautilus/throbber/018.png
+share/pixmaps/nautilus/throbber/019.png
+share/pixmaps/nautilus/throbber/020.png
+share/pixmaps/nautilus/throbber/021.png
+share/pixmaps/nautilus/throbber/022.png
+share/pixmaps/nautilus/throbber/023.png
+share/pixmaps/nautilus/throbber/024.png
+share/pixmaps/nautilus/throbber/025.png
+share/pixmaps/nautilus/throbber/026.png
+share/pixmaps/nautilus/throbber/027.png
+share/pixmaps/nautilus/throbber/028.png
+share/pixmaps/nautilus/throbber/029.png
+share/pixmaps/nautilus/throbber/030.png
+share/pixmaps/nautilus/throbber/rest.png
+share/pixmaps/nautilus/thumbnail_frame.png
+share/pixmaps/nautilus/zoom_body.png
+share/schemas/nautilus/apps_nautilus_preferences.schemas
+%%SHARED%%
+@dirrm share/schemas/nautilus
+@dirrm share/pixmaps/nautilus/throbber
+@dirrm share/pixmaps/nautilus/tahoe
+@dirrm share/pixmaps/nautilus/sierra
+@dirrm share/pixmaps/nautilus/sidebar_tab_pieces
+@dirrm share/pixmaps/nautilus/gnome/throbber
+@dirrm share/pixmaps/nautilus/gnome/sidebar_tab_pieces
+@dirrm share/pixmaps/nautilus/gnome
+@dirrm share/pixmaps/nautilus/default
+@dirrm share/pixmaps/nautilus/crux_teal/throbber
+@dirrm share/pixmaps/nautilus/crux_teal/sidebar_tab_pieces
+@dirrm share/pixmaps/nautilus/crux_teal/backgrounds
+@dirrm share/pixmaps/nautilus/crux_teal
+@dirrm share/pixmaps/nautilus/crux_eggplant/throbber
+@dirrm share/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces
+@dirrm share/pixmaps/nautilus/crux_eggplant/backgrounds
+@dirrm share/pixmaps/nautilus/crux_eggplant
+@dirrm share/pixmaps/nautilus
+@comment @dirrm share/pixmaps
+@dirrm share/nautilus/services/text
+@dirrm share/nautilus/services
+@dirrm share/nautilus/patterns
+@dirrm share/nautilus/glade
+@dirrm share/nautilus/emblems
+@dirrm share/nautilus
+@comment @dirrm share/locale/zh_TW/LC_MESSAGES
+@comment @dirrm share/locale/zh_TW
+@comment @dirrm share/locale/zh_CN/LC_MESSAGES
+@comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/vi/LC_MESSAGES
+@comment @dirrm share/locale/vi
+@comment @dirrm share/locale/uk/LC_MESSAGES
+@comment @dirrm share/locale/uk
+@comment @dirrm share/locale/tr/LC_MESSAGES
+@comment @dirrm share/locale/tr
+@comment @dirrm share/locale/ta/LC_MESSAGES
+@comment @dirrm share/locale/ta
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sq/LC_MESSAGES
+@comment @dirrm share/locale/sq
+@comment @dirrm share/locale/sl/LC_MESSAGES
+@comment @dirrm share/locale/sl
+@comment @dirrm share/locale/sk/LC_MESSAGES
+@comment @dirrm share/locale/sk
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/ro/LC_MESSAGES
+@comment @dirrm share/locale/ro
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/pt/LC_MESSAGES
+@comment @dirrm share/locale/pt
+@comment @dirrm share/locale/pl/LC_MESSAGES
+@comment @dirrm share/locale/pl
+@comment @dirrm share/locale/no/LC_MESSAGES
+@comment @dirrm share/locale/no
+@comment @dirrm share/locale/nn/LC_MESSAGES
+@comment @dirrm share/locale/nn
+@comment @dirrm share/locale/nl/LC_MESSAGES
+@comment @dirrm share/locale/nl
+@comment @dirrm share/locale/ms/LC_MESSAGES
+@comment @dirrm share/locale/ms
+@comment @dirrm share/locale/lv/LC_MESSAGES
+@comment @dirrm share/locale/lv
+@comment @dirrm share/locale/lt/LC_MESSAGES
+@comment @dirrm share/locale/lt
+@comment @dirrm share/locale/ko/LC_MESSAGES
+@comment @dirrm share/locale/ko
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/hu/LC_MESSAGES
+@comment @dirrm share/locale/hu
+@comment @dirrm share/locale/gl/LC_MESSAGES
+@comment @dirrm share/locale/gl
+@comment @dirrm share/locale/ga/LC_MESSAGES
+@comment @dirrm share/locale/ga
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/fi/LC_MESSAGES
+@comment @dirrm share/locale/fi
+@comment @dirrm share/locale/eu/LC_MESSAGES
+@comment @dirrm share/locale/eu
+@comment @dirrm share/locale/et/LC_MESSAGES
+@comment @dirrm share/locale/et
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/en_GB/LC_MESSAGES
+@comment @dirrm share/locale/en_GB
+@comment @dirrm share/locale/el/LC_MESSAGES
+@comment @dirrm share/locale/el
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale/cs/LC_MESSAGES
+@comment @dirrm share/locale/cs
+@comment @dirrm share/locale/ca/LC_MESSAGES
+@comment @dirrm share/locale/ca
+@comment @dirrm share/locale/bg/LC_MESSAGES
+@comment @dirrm share/locale/bg
+@comment @dirrm share/locale/be/LC_MESSAGES
+@comment @dirrm share/locale/be
+@comment @dirrm share/locale/az/LC_MESSAGES
+@comment @dirrm share/locale/az
+@comment @dirrm share/locale/am/LC_MESSAGES
+@comment @dirrm share/locale/am
+@comment @dirrm share/locale
+@comment @dirrm share/idl
+@dirrm share/examples/nautilus/X11/sysconfig
+@dirrm share/examples/nautilus/X11/starthere
+@dirrm share/examples/nautilus/X11/serverconfig
+@dirrm share/examples/nautilus/X11
+@dirrm share/examples/nautilus
+@comment @dirrm share/applications
+@comment @dirrm lib/pkgconfig
+@comment @dirrm lib/bonobo
+@dirrm include/libnautilus
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/nautilus/*.schemas > /dev/null

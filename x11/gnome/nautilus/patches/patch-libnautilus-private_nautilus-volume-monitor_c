@@ -1,0 +1,151 @@
+$OpenBSD: patch-libnautilus-private_nautilus-volume-monitor_c,v 1.1.1.1 2003/01/31 19:03:46 todd Exp $
+--- libnautilus-private/nautilus-volume-monitor.c.orig	Thu Aug 29 03:56:02 2002
++++ libnautilus-private/nautilus-volume-monitor.c	Tue Sep 24 15:35:52 2002
+@@ -73,6 +73,9 @@
+ #include <sys/mnttab.h>
+ #define MOUNT_TABLE_PATH "/etc/mnttab"
+ #else
++#if defined (HAVE_GETMNTINFO)
++#define BSD_MNT 1
++#endif
+ /* FIXME: How does this help anything? */
+ #define MOUNT_TABLE_PATH ""
+ #endif
+@@ -507,7 +510,17 @@ has_removable_mntent_options (MountTable
+ 		return TRUE;
+ 	}
+ #endif
+-	
++
++#ifdef BSD_MNT
++	struct fstab *fs;
++	if (fs = getfsfile (ent->f_mntonname)) {
++		if (strstr (fs->fs_mntops, "noauto")) {
++			return TRUE;
++		}
++	} else if (ent->f_owner == getuid()) {
++		return TRUE;
++	}
++#endif
+ 	return FALSE;
+ }
+ 
+@@ -519,6 +532,7 @@ has_removable_mntent_options (MountTable
+  * Caller needs to free these as well as the list.
+  */
+ 
++#if !defined(BSD_MNT)
+ static GList *
+ get_removable_volumes (NautilusVolumeMonitor *monitor)
+ {
+@@ -602,6 +616,40 @@ get_removable_volumes (NautilusVolumeMon
+ 	return g_list_sort (g_list_reverse (volumes), (GCompareFunc) floppy_sort);
+ }
+ 
++#else /* BSD_MNT */
++
++static GList *
++get_removable_volumes (NautilusVolumeMonitor *monitor)
++{
++	struct fstab *fsent;
++	GList *volumes = NULL;
++	MountTableEntry *ent = NULL;
++	NautilusVolume *volume = NULL;
++
++	setfsent();
++	while ((fsent = getfsent ()) != NULL) {
++		if (strstr (fsent->fs_mntops, "noauto")) {
++			volume = create_volume (fsent->fs_spec, fsent->fs_file);
++			volume->is_removable = TRUE;
++			volumes = finish_creating_volume_and_prepend
++				(monitor, volume, fsent->fs_vfstype, volumes);
++		}	
++	}
++	endfsent();
++
++#ifdef HAVE_CDDA
++	volume = create_volume (CD_AUDIO_PATH, CD_AUDIO_PATH);
++	volumes = finish_creating_volume_and_prepend (monitor, volume, "cdda", volumes);
++#endif
++
++	load_additional_mount_list_info (volumes);
++	
++	/* Move all floppy mounts to top of list */
++	return g_list_sort (g_list_reverse (volumes), (GCompareFunc) floppy_sort);
++}
++
++#endif
++
+ static gboolean
+ entry_is_supermounted_volume (const MountTableEntry *ent, const NautilusVolume *volume)
+ {
+@@ -619,7 +667,7 @@ entry_is_supermounted_volume (const Moun
+       return result;
+ }
+ 
+-#ifndef SOLARIS_MNT
++#if !defined(SOLARIS_MNT) && !defined(BSD_MNT)
+ 
+ static gboolean
+ volume_is_removable (const NautilusVolume *volume)
+@@ -992,7 +1040,35 @@ get_mount_list (NautilusVolumeMonitor *m
+         return volumes;
+ }
+ 
+-#else /* !SOLARIS_MNT */
++#elif defined (BSD_MNT) /* !SOLARIS_MNT */
++
++static GList *
++get_mount_list (NautilusVolumeMonitor *monitor) 
++{
++	struct statfs *mntbufp, *mnt;
++	int cnt, i;
++	GList *volumes;
++	NautilusVolume *volume;
++
++	volumes = NULL;
++
++	if ((cnt = getmntinfo(&mntbufp, MNT_WAIT)) == 0) {
++		g_warning ("getmntinfo failed: %s", g_strerror (errno));
++		return NULL;
++	}
++
++	for (i = 0; i < cnt; ++i) {
++		mnt = (mntbufp + i);
++		volume = create_volume (mnt->f_mntfromname, mnt->f_mntonname);
++		volume->is_removable = has_removable_mntent_options (mnt);
++		volumes = finish_creating_volume_and_prepend
++			(monitor, volume, mnt->f_fstypename, volumes);
++	}
++
++	return volumes;
++}
++
++#else /* !BSD_MNT */
+ 
+ static gboolean
+ option_list_has_option (const char *optlist,
+@@ -1768,7 +1844,7 @@ load_additional_mount_list_info (GList *
+ 	for (node = volume_list; node != NULL; node = node->next) {
+ 		volume = node->data;
+ 		
+-#ifndef SOLARIS_MNT
++#if !defined(SOLARIS_MNT) && !defined(BSD_MNT)
+ 		/* These are set up by get_current_mount_list for Solaris. */
+ 		volume->is_removable = volume_is_removable (volume);
+ #endif
+@@ -1797,8 +1873,13 @@ finish_creating_volume (NautilusVolumeMo
+ 		ok = mount_volume_auto_add (volume);
+ 	} else if (strcmp (file_system_type_name, "cdda") == 0) {
+ 		ok = mount_volume_cdda_add (volume);
+-	} else if (strcmp (file_system_type_name, "iso9660") == 0) {
++	} else if ((strcmp (file_system_type_name, "iso9660") == 0)
++			||  (strcmp (file_system_type_name, "cd9660") == 0)) {
+ 		ok = mount_volume_iso9660_add (volume);
++	} else if (eel_str_has_prefix (volume->device_path, floppy_device_path_prefix)) {
++		volume->device_type = NAUTILUS_DEVICE_FLOPPY_DRIVE;
++		volume->is_removable = TRUE;
++		return TRUE;
+ 	} else if (strcmp (file_system_type_name, "nfs") == 0) {
+ 		ok = mount_volume_nfs_add (volume);
+ 		volume->is_removable = FALSE;
