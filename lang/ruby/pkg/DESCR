@@ -8,3 +8,5 @@ Some features:
 - built-in threads and mutexes
 - `mark and sweep' gc that makes it easy to add modules
 - faster than perl
+
+See ${HOMEPAGE} for more details.

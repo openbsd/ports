@@ -1,15 +1,15 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2000/05/18 18:38:00 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2000/07/04 13:47:56 espie Exp $
 lib/libruby.so
 lib/libruby.so.1.4.4
-@exec /sbin/ldconfig -m %B
-lib/ruby/REV/SUB/curses.so
-lib/ruby/REV/SUB/dbm.so
-lib/ruby/REV/SUB/etc.so
-lib/ruby/REV/SUB/fcntl.so
-lib/ruby/REV/SUB/md5.so
-lib/ruby/REV/SUB/nkf.so
-lib/ruby/REV/SUB/pty.so
-lib/ruby/REV/SUB/sdbm.so
-lib/ruby/REV/SUB/socket.so
-lib/ruby/REV/SUB/tcltklib.so
-lib/ruby/REV/SUB/tkutil.so
+DYNLIBDIR(%B)
+lib/ruby/${REV}/${SUB}/curses.so
+lib/ruby/${REV}/${SUB}/dbm.so
+lib/ruby/${REV}/${SUB}/etc.so
+lib/ruby/${REV}/${SUB}/fcntl.so
+lib/ruby/${REV}/${SUB}/md5.so
+lib/ruby/${REV}/${SUB}/nkf.so
+lib/ruby/${REV}/${SUB}/pty.so
+lib/ruby/${REV}/${SUB}/sdbm.so
+lib/ruby/${REV}/${SUB}/socket.so
+lib/ruby/${REV}/${SUB}/tcltklib.so
+lib/ruby/${REV}/${SUB}/tkutil.so

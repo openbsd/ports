@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2000/06/28 13:51:24 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/07/04 13:47:55 espie Exp $
 
 DISTNAME=ruby-1.4.4
 CATEGORIES = lang
-NEED_VERSION=	1.308
+NEED_VERSION=	1.310
 MASTER_SITES=ftp://ftp.netlab.co.jp/pub/lang/ruby/ \
     ftp://ftp.iij.ad.jp/pub/lang/ruby/ \
     ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/ \
