@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/01/21 21:59:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2004/01/11 21:44:26 biorn Exp $
 
 COMMENT=	"jump'n run game with unique video effects"
 
@@ -9,9 +9,9 @@ PKGNAME=	amph-${VERSION}
 CATEGORIES=	games x11
 EXTRACT_SUFX=	.tar.bz2
 
-HOMEPAGE=	http://www.dataway.ch/~lukasl/amph/amph.html
+HOMEPAGE=	http://n.ethz.ch/student/loehrerl/amph/amph.html
 
-MASTER_SITES=	http://www.dataway.ch/~lukasl/amph/files/
+MASTER_SITES=	http://n.ethz.ch/student/loehrerl/amph/files/
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
