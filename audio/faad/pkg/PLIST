@@ -1,8 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/13 17:50:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/28 01:30:00 jolan Exp $
 bin/faad
 include/faad.h
+include/mp4.h
+include/mp4ff.h
+include/mpeg4ip.h
+include/systems.h
 lib/libfaad.a
 lib/libfaad.la
+lib/libmp4ff.a
+lib/libmp4ff.la
 lib/libmp4v2.a
 lib/libmp4v2.la
 %%SHARED%%

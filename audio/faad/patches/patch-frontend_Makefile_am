@@ -1,12 +1,12 @@
-$OpenBSD: patch-frontend_Makefile_am,v 1.1 2002/12/20 23:40:13 naddy Exp $
---- frontend/Makefile.am.orig	Sat Dec 21 00:06:28 2002
-+++ frontend/Makefile.am	Sat Dec 21 00:07:26 2002
-@@ -2,8 +2,5 @@ bin_PROGRAMS = faad
+$OpenBSD: patch-frontend_Makefile_am,v 1.2 2004/04/28 01:30:00 jolan Exp $
+--- frontend/Makefile.am.orig	2003-11-06 05:04:13.000000000 -0600
++++ frontend/Makefile.am	2004-04-24 20:51:42.000000000 -0500
+@@ -1,7 +1,6 @@
+ bin_PROGRAMS = faad
  
- faad_SOURCES = main.c audio.c
+-faad_SOURCES = main.c audio.c $(top_srcdir)/common/faad/getopt.c \
+-   audio.h
++faad_SOURCES = main.c audio.c audio.h
  
--CXXFLAGS = -O2
--CFLAGS = -O2 -D_FILE_OFFSET_BITS=64
- INCLUDES = -I$(top_srcdir)/include -I$(top_srcdir)/common/mp4v2
--LDFLAGS =
- LDADD = $(top_builddir)/libfaad/libfaad.la $(top_builddir)/common/mp4v2/libmp4v2.la  -lm -lsndfile 
+ AM_CFLAGS = -O2
+ INCLUDES = -I$(top_srcdir)/include -I$(top_srcdir)/common/faad \

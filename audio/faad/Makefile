@@ -1,41 +1,35 @@
-# $OpenBSD: Makefile,v 1.10 2004/02/23 00:33:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2004/04/28 01:30:00 jolan Exp $
 
 COMMENT=	"MPEG2 and MPEG-4 AAC decoder"
-
-DISTNAME=	faad2-1.1
-PKGNAME=	faad-2.1.1
+DISTNAME=	faad2-2.0
+PKGNAME=	faad-2.0
 CATEGORIES=    	audio
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=faac/}
+
 HOMEPAGE=	http://faac.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Patents
+PERMIT_PACKAGE_CDROM=	"Patents"
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Patents
+PERMIT_DISTFILES_CDROM=	"Patents"
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://faac.sourceforge.net/files/
-
-LIB_DEPENDS=	sndfile:libsndfile->=1.0.1:audio/libsndfile
-
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
+BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS}
+USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
 WRKDIST=	${WRKDIR}/faad2
 CONFIGURE_STYLE= automake
-AUTOCONF_VERSION=2.13
+AUTOCONF_VERSION=2.59
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-lm" \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION}
-
-.include <bsd.own.mk>
-USE_GCC3?=No
-.if ${USE_GCC3:L} == "yes"
-MAKE_FLAGS+=libmp4v2_la_LIBADD=-lsupc++
-.endif
+CONFIGURE_ARGS+=--with-mp4v2
 
 post-patch:
 	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		PATH=${PORTPATH} sh bootstrap
+	@perl -pi -e 's/--no-verify//g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
