@@ -1,3 +1,4 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2003/02/15 23:58:57 brad Exp $
 --- Makefile.in.orig	Tue Jan  5 14:27:16 1999
 +++ Makefile.in	Wed Nov 17 16:41:36 1999
 @@ -22,6 +22,7 @@ srcdir = @srcdir@

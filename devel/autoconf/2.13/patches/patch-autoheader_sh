@@ -1,3 +1,4 @@
+$OpenBSD: patch-autoheader_sh,v 1.1 2003/02/15 23:58:57 brad Exp $
 --- autoheader.sh.orig	Tue Jan  5 08:28:39 1999
 +++ autoheader.sh	Mon Mar 20 21:02:16 2000
 @@ -110,19 +110,10 @@

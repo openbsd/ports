@@ -1,3 +1,4 @@
+$OpenBSD: patch-autoconf_texi,v 1.1 2003/02/15 23:58:57 brad Exp $
 --- autoconf.texi.orig	Tue Jan  5 05:28:37 1999
 +++ autoconf.texi	Wed Jan  6 13:06:27 1999
 @@ -4,6 +4,7 @@
