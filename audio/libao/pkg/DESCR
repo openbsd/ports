@@ -1,8 +1,10 @@
 libao is a cross-platform audio library that allows programs to output
 audio using a simple API on a wide variety of platforms.  On OpenBSD,
 it currently supports:
-   * Null output
+   * null output
+   * raw output
+   * AU files
    * WAV files
-   * Sun (OpenBSD's native sound system)
+   * sun (OpenBSD's native sound system)
 
 WWW: ${HOMEPAGE}
