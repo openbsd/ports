@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2000/06/11 01:50:22 fgsch Exp $
+# $OpenBSD: Makefile,v 1.19 2000/06/29 22:25:47 fgsch Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
 CATEGORIES=	security
-NEED_VERSION=	1.301
+NEED_VERSION=	1.308
 MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.at.pgpi.com/pub/pgpi/5.0/unix/ \
 		ftp://ftp.cz.pgpi.com/pub/pgpi/5.0/unix/ \
@@ -28,19 +28,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FLAVORS=	usa intl
 
-
-.if defined(USA_RESIDENT)
-.if ${USA_RESIDENT:L} == "yes"
-FLAVOR=usa
-.elif ${USA_RESIDENT:L} == "no"
-FLAVOR=intl
-.endif
-.endif
-
 # No default flavor, error.
 FLAVOR?=
 .if empty(FLAVOR)
-pre-fetch pre-extract:
+.BEGIN:
 	@echo ""
 	@echo "The variable USA_RESIDENT must be set to either Yes or No"
 	@echo "in order to build this package.  USA residents that are"
