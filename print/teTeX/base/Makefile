@@ -1,6 +1,6 @@
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.6 2000/03/24 23:28:31 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/06/25 22:23:39 marc Exp $
 
 PKGNAME=	teTeX_base-1.0.7
 CATEGORIES=	print/teTeX
@@ -22,7 +22,7 @@ RUN_DEPENDS=${PREFIX}/share/texmf/ls-R::print/teTeX/texmf
 
 BUILD_DEPENDS=${PREFIX}/share/texmf/ls-R::print/teTeX/texmf
 
-LIB_DEPENDS=png.1.3::graphics/png \
+LIB_DEPENDS=png.1::graphics/png \
 	Xaw3d.6.1::x11/Xaw3d
 
 PNGDIR=${PREFIX}
