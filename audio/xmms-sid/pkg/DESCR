@@ -1,0 +1,5 @@
+XMMS-SID is a plugin for XMMS (X MultiMedia System) which provides
+support for playing SID tunes.  For the actual playing, XMMS-SID
+uses the libsidplay SID-chip/6502 emulator engine.
+
+WWW: ${HOMEPAGE}

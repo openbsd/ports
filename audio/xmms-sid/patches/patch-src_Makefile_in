@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2002/05/22 22:47:46 naddy Exp $
+--- src/Makefile.in.orig	Mon May 20 22:51:50 2002
++++ src/Makefile.in	Mon May 20 22:52:30 2002
+@@ -104,12 +104,12 @@ lib_LTLIBRARIES = libsid.la
+ 
+ # Generals
+ 
+-CFLAGS = -O2 -W -Wall -I$(top_builddir) -I$(top_srcdir) -I$(includedir) -D_REENTRANT @GTK_CFLAGS@ @SIDPLAY_CFLAGS@ -lstdc++
++CFLAGS = @CFLAGS@ -I$(top_builddir) -I$(top_srcdir) -I$(includedir) -D_REENTRANT @GTK_CFLAGS@ @SIDPLAY_CFLAGS@
+ CXXFLAGS = $(CFLAGS)
+-LIBS = -lsidplay
++LIBS = -lsidplay -lstdc++
+ 
+ libsid_la_LDFLAGS = -module -avoid-version
+-libsid_la_LIBADD = @GTK_LIBS@ @PTHREAD_LIBS@
++libsid_la_LIBADD = @GTK_LIBS@
+ 
+ # Plugin sources
+ libsid_la_SOURCES = \
