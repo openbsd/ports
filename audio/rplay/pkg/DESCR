@@ -4,3 +4,5 @@ supports SunOS 4.1.X, Solaris 2.X, Linux, SGI IRIX 4 & 5, HP9000/705,
 HP9000/710, FreeBSD and now OpenBSD.  The rplay clients and client library
 should work on any system that supports Berkeley sockets.  X Windows is not
 required.
+
+WWW: ${HOMEPAGE}

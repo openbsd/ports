@@ -1,0 +1,69 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2000/09/21 07:47:06 brad Exp $
+#
+# Pre/post-installation setup of rplay
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=${SYSCONFDIR}
+
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration files in $CONFIG_DIR,"
+    echo "| have NOT been changed."
+    echo "+---------------"
+    echo
+}
+
+do_install()
+{
+    install -d -o root -g wheel -m 755 $CONFIG_DIR
+    echo localhost > $CONFIG_DIR/rplay.hosts
+    chown root.wheel $CONFIG_DIR/rplay.hosts
+    chmod 644 $CONFIG_DIR/rplay.hosts
+    touch $CONFIG_DIR/rplay.{conf,helpers,servers}
+    chown root.wheel $CONFIG_DIR/rplay.{conf,helpers,servers}
+    chmod 644 $CONFIG_DIR/rplay.{conf,helpers,servers}
+    echo
+    echo "+---------------"
+    echo "| The $1 configuration files have been installed into"
+    echo "| $CONFIG_DIR. Please view these files and change the configuration"
+    echo "| to meet your needs."
+    echo "+---------------"
+    echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if [ ! -d $CONFIG_DIR ]; then
+	    do_install $1
+	elif [ ! -f $CONFIG_DIR/rplay.hosts ]; then
+	    do_install $1
+	else
+	    do_notice $1
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

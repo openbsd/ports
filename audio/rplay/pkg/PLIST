@@ -1,15 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/06/10 17:39:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2000/09/21 07:47:07 brad Exp $
+bin/rplay
+bin/rptp
+include/rplay.h
 @unexec install-info --delete --info-dir=%D/info %D/info/RPLAY.info
 @unexec install-info --delete --info-dir=%D/info %D/info/RPTP.info
 @unexec install-info --delete --info-dir=%D/info %D/info/librplay.info
 @unexec install-info --delete --info-dir=%D/info %D/info/rplay.info
-bin/rplay
-bin/rptp
-include/rplay.h
 info/RPLAY.info
 info/RPTP.info
 info/librplay.info
 info/rplay.info
+@exec install-info --info-dir=%D/info %D/info/RPLAY.info
+@exec install-info --info-dir=%D/info %D/info/RPTP.info
+@exec install-info --info-dir=%D/info %D/info/librplay.info
+@exec install-info --info-dir=%D/info %D/info/rplay.info
 lib/librplay.a
 man/man1/rplay.1
 man/man1/rptp.1
@@ -19,12 +23,3 @@ man/man5/rplay.hosts.5
 man/man5/rplay.servers.5
 man/man8/rplayd.8
 sbin/rplayd
-@exec if [ ! -d /etc/rplay ]; then echo "Installing default configs..."; mkdir -p /etc/rplay; echo localhost >/etc/rplay/rplay.hosts; touch /etc/rplay/rplay.{conf,helpers,servers}; fi
-@unexec if [ -d /etc/rplay ]; then echo "***"; echo "*** Finished uninstalling rplay."; echo "*** Configuration files stored in /etc/rplay have not been removed."; echo "*** You may wish to remove them manually."; fi
-@exec install-info --info-dir=%D/info %D/info/RPLAY.info
-@exec install-info --info-dir=%D/info %D/info/RPTP.info
-@exec install-info --info-dir=%D/info %D/info/librplay.info
-@exec install-info --info-dir=%D/info %D/info/rplay.info
-@comment requires XForms
-@comment bin/xrplay
-@comment man/man1/xrplay.1
