@@ -1,0 +1,7 @@
++------------
+| A sample configuration file has been installed already.  You can
+| find it in ${PREFIX}/share/examples/iplog.  To get started quickly,
+| you can copy this to /etc and edit it appropriately.
+|
+| See iplog.conf(5) also for more information.
++------------

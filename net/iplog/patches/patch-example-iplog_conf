@@ -1,0 +1,18 @@
+$OpenBSD: patch-example-iplog_conf,v 1.1.1.1 2001/01/05 10:16:18 danh Exp $
+--- example-iplog.conf.orig	Mon Jul  3 14:32:42 2000
++++ example-iplog.conf	Wed Jan  3 18:01:03 2001
+@@ -32,11 +32,11 @@ set log_dest false
+ # Ignore DNS traffic from nameservers in /etc/resolv.conf.
+ set ignore_dns
+ 
+-# Listen on eth0 and eth1
+-interface eth0,eth1
++# Listen on xl0 and xl0
++# interface xl0,xl1
+ 
+ # Operate in promiscuous mode and watch the 192.168.0.x network
+-promisc 192.168.0.0/24
++# promisc 192.168.0.0/24
+ 
+ /*
+ ** Ignore DNS traffic from nameservers.

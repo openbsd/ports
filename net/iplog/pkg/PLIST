@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/05 10:16:18 danh Exp $
+man/man5/iplog.conf.5
+man/man8/iplog.8
+sbin/iplog
+share/examples/iplog/iplog.conf
+@dirrm share/examples/iplog
