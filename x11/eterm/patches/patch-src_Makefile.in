@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Fri Nov  5 14:03:54 1999
-+++ src/Makefile.in	Mon Jul  3 01:58:09 2000
-@@ -106,7 +106,7 @@
+--- src/Makefile.in.orig	Fri Nov  5 20:03:54 1999
++++ src/Makefile.in	Thu Mar  7 20:46:29 2002
+@@ -106,7 +106,7 @@ lib_LTLIBRARIES = libEterm.la
  libEterm_la_SOURCES = activeconfig.c activeeterm.c activetags.c command.c 		graphics.c grkelot.c menubar.c misc.c netdisp.c options.c 		pixmap.c screen.c scrollbar.c system.c threads.c utmp.c
  
  libEterm_la_DEPENDENCIES = $(DIST_ROOT)/libmej/libmej.la feature.h

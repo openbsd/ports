@@ -1,6 +1,6 @@
---- src/options.c.orig	Tue Nov  2 08:34:35 1999
-+++ src/options.c	Thu Aug 10 20:42:57 2000
-@@ -1328,6 +1328,10 @@
+--- src/options.c.orig	Tue Nov  2 17:34:35 1999
++++ src/options.c	Thu Mar  7 20:46:30 2002
+@@ -1328,6 +1328,10 @@ get_initial_options(int argc, char *argv
  #define CTX_UNDEF        ((unsigned char) -1)
  #define CTX_MAX          8
  
@@ -11,7 +11,7 @@
  /* This structure defines a context and its attributes */
  
  struct context_struct {
-@@ -1566,6 +1570,7 @@
+@@ -1566,6 +1570,7 @@ shell_expand(char *s)
    unsigned long fsize, cnt1 = 0, cnt2 = 0;
    const unsigned long max = CONFIG_BUFF - 1;
    char *Command, *Output, *EnvVar, *OutFile;
@@ -19,7 +19,7 @@
    FILE *fp;
  
    ASSERT_RVAL(s != NULL, (char *) NULL);
-@@ -1716,40 +1721,51 @@
+@@ -1716,40 +1721,51 @@ shell_expand(char *s)
  	  }
            ASSERT(l < CONFIG_BUFF);
  	  Command[l] = 0;

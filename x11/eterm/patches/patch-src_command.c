@@ -1,6 +1,6 @@
---- src/command.c.orig	Tue Nov  2 11:34:35 1999
-+++ src/command.c	Sat Aug 12 04:58:09 2000
-@@ -676,6 +676,8 @@
+--- src/command.c.orig	Tue Nov  2 17:34:35 1999
++++ src/command.c	Thu Mar  7 20:46:30 2002
+@@ -676,6 +676,8 @@ privileges(int mode)
  
  #ifdef HAVE_SETRESGID
        setresgid(my_rgid, my_rgid, my_egid);
@@ -9,7 +9,7 @@
  #elif defined(HAVE_SAVED_UIDS)
        setregid(my_rgid, my_rgid);
  #else
-@@ -685,6 +687,8 @@
+@@ -685,6 +687,8 @@ privileges(int mode)
  
  #ifdef HAVE_SETRESUID
        setresuid(my_ruid, my_ruid, my_euid);
@@ -18,7 +18,7 @@
  #elif defined(HAVE_SAVED_UIDS)
        setreuid(my_ruid, my_ruid);
  #else
-@@ -705,6 +709,8 @@
+@@ -705,6 +709,8 @@ privileges(int mode)
  
  #ifdef HAVE_SETRESUID
        setresuid(my_ruid, my_euid, my_euid);
@@ -27,7 +27,7 @@
  #elif defined(HAVE_SAVED_UIDS)
        setreuid(my_ruid, my_euid);
  #else
-@@ -714,6 +720,8 @@
+@@ -714,6 +720,8 @@ privileges(int mode)
  
  #ifdef HAVE_SETRESGID
        setresgid(my_rgid, my_egid, my_egid);
@@ -36,7 +36,7 @@
  #elif defined(HAVE_SAVED_UIDS)
        setregid(my_rgid, my_egid);
  #else
-@@ -2298,8 +2306,16 @@
+@@ -2298,8 +2306,16 @@ run_command(char *argv[])
         because the exec*() calls reset the saved uid/gid to the
         effective uid/gid                               -- mej */
  # ifndef __CYGWIN32__

@@ -1,6 +1,6 @@
---- configure.orig	Sat Aug 12 04:49:16 2000
-+++ configure	Sat Aug 12 04:49:29 2000
-@@ -3822,7 +3822,7 @@
+--- configure.orig	Fri Nov  5 19:56:30 1999
++++ configure	Thu Mar  7 20:46:29 2002
+@@ -3822,7 +3822,7 @@ cat >> confdefs.h <<EOF
  EOF
  
  

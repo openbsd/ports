@@ -1,6 +1,6 @@
---- libmej/Makefile.in.orig	Fri Nov  5 14:03:53 1999
-+++ libmej/Makefile.in	Mon Jul  3 01:58:10 2000
-@@ -107,7 +107,7 @@
+--- libmej/Makefile.in.orig	Fri Nov  5 20:03:53 1999
++++ libmej/Makefile.in	Thu Mar  7 20:46:29 2002
+@@ -107,7 +107,7 @@ libmej_la_SOURCES = debug.c mem.c string
  
  INCLUDES = -I. -I$(top_srcdir) -I$(top_srcdir)/src -I.. -I$(includedir) -I$(prefix)/include $(X_CFLAGS)
  

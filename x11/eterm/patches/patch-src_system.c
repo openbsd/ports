@@ -1,6 +1,6 @@
---- src/system.c.orig	Wed Oct 27 12:44:06 1999
-+++ src/system.c	Sat Aug 12 05:02:38 2000
-@@ -67,8 +67,16 @@
+--- src/system.c.orig	Wed Oct 27 18:44:06 1999
++++ src/system.c	Thu Mar  7 20:46:30 2002
+@@ -67,8 +67,16 @@ system_wait(char *command)
    D_OPTIONS(("system_wait(%s) called.\n", command));
  
    if (!(pid = fork())) {
@@ -17,7 +17,7 @@
      execl("/bin/sh", "sh", "-c", command, (char *) NULL);
      print_error("system_wait():  execl(%s) failed -- %s", command, strerror(errno));
      exit(EXIT_FAILURE);
-@@ -87,8 +95,16 @@
+@@ -87,8 +95,16 @@ system_no_wait(char *command)
    D_OPTIONS(("system_no_wait(%s) called.\n", command));
  
    if (!(pid = fork())) {
