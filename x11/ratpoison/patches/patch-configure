@@ -1,11 +1,14 @@
-$OpenBSD: patch-configure,v 1.1 2002/07/15 22:04:18 naddy Exp $
---- configure.orig	Mon Jul 15 23:56:06 2002
-+++ configure	Mon Jul 15 23:56:35 2002
-@@ -846,7 +846,6 @@ cat >> confdefs.h <<EOF
- EOF
+$OpenBSD: patch-configure,v 1.2 2003/07/02 06:29:15 sturm Exp $
+--- configure.orig	Mon Jun  9 18:45:35 2003
++++ configure	Tue Jul  1 08:32:58 2003
+@@ -2611,10 +2611,6 @@ ac_link='$CC -o conftest$ac_exeext $CFLA
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  
--CFLAGS="$CFLAGS -Wall -O2"
- echo $ac_n "checking build system type""... $ac_c" 1>&6
- echo "configure:852: checking build system type" >&5
- 
+-if test "x$CC" = "xgcc"; then
+-	CFLAGS="$CFLAGS -Wall -O2"
+-fi
+-
+ echo "$as_me:$LINENO: checking terminal emulator" >&5
+ echo $ECHO_N "checking terminal emulator... $ECHO_C" >&6
+ echo "$as_me:$LINENO: result: $term_prog" >&5

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2002/07/15 22:04:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2003/07/02 06:29:15 sturm Exp $
 
 COMMENT=	"minimal wm based on GNU screen"
 
-DISTNAME=	ratpoison-1.1.1
+DISTNAME=	ratpoison-1.2.2
 CATEGORIES=	x11
 HOMEPAGE=	http://ratpoison.sourceforge.net/
 
@@ -20,5 +20,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ratpoison/} \
 USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
+
+CONFIGURE_ARGS+=	--with-xterm=${X11BASE}/bin/xterm
 
 .include <bsd.port.mk>
