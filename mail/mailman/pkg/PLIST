@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/01/01 17:29:08 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/01/14 21:00:10 djm Exp $
 lib/mailman/Mailman/Archiver/Archiver.py
 lib/mailman/Mailman/Archiver/Archiver.pyc
 lib/mailman/Mailman/Archiver/HyperArch.py
@@ -580,7 +580,7 @@ lib/mailman/pythonlib/korean/qwerty2bul.py
 lib/mailman/pythonlib/korean/qwerty2bul.pyc
 lib/mailman/pythonlib/korean/unijohab.py
 lib/mailman/pythonlib/korean/unijohab.pyc
-lib/mailman/pythonlib/lib/python2.2/site-packages/japanese.pth
+lib/mailman/pythonlib/lib/python${PYTHON_VER}/site-packages/japanese.pth
 lib/mailman/scripts/admin
 lib/mailman/scripts/bounces
 lib/mailman/scripts/confirm
@@ -1787,8 +1787,8 @@ share/doc/mailman/UPGRADING
 @dirrm lib/mailman/templates/big5
 @dirrm lib/mailman/templates
 @dirrm lib/mailman/scripts
-@dirrm lib/mailman/pythonlib/lib/python2.2/site-packages
-@dirrm lib/mailman/pythonlib/lib/python2.2
+@dirrm lib/mailman/pythonlib/lib/python${PYTHON_VER}/site-packages
+@dirrm lib/mailman/pythonlib/lib/python${PYTHON_VER}
 @dirrm lib/mailman/pythonlib/lib
 @dirrm lib/mailman/pythonlib/korean/python
 @dirrm lib/mailman/pythonlib/korean/mappings
