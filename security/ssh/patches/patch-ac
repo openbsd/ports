@@ -1,6 +1,15 @@
---- Makefile.in.orig	Wed May 12 07:19:31 1999
-+++ Makefile.in	Fri May 14 14:06:10 1999
-@@ -301,12 +301,17 @@
+--- Makefile.in.orig	Wed May 12 05:19:31 1999
++++ Makefile.in	Wed Oct  6 22:55:44 1999
+@@ -294,19 +294,24 @@
+ transform	= @program_transform_name@
+ 
+ HOST_KEY_FILE 	= $(etcdir)/ssh_host_key
+-HOST_CONFIG_FILE = $(etcdir)/ssh_config
+-SERVER_CONFIG_FILE = $(etcdir)/sshd_config
++HOST_CONFIG_FILE = $(etcdir)/ssh_port_config
++SERVER_CONFIG_FILE = $(etcdir)/sshd_port_config
+ TIS_MAP_FILE	= $(etcdir)/sshd_tis.map
+ 
  SHELL = /bin/sh
  
  GMPDIR 		= gmp-2.0.2-ssh-2

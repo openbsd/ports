@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 1999/10/04 22:58:31 brad Exp $
+# $OpenBSD: Makefile,v 1.37 1999/10/07 05:23:58 turan Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
@@ -22,7 +22,7 @@ MASTER_SITES0=	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-cry
 DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz:0
 .endif
 
-ETCDIR?=	${PREFIX}/etc
+ETCDIR?=	/etc
 RSHPROG?=	/usr/bin/rsh
 
 IS_INTERACTIVE=	yes
