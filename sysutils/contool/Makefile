@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/18 05:02:10 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/10/29 00:32:04 ian Exp $
 
 DISTNAME=	contool-3.3a
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.kfu.com/pub/
 
-#MAINTAINER=	nsayer@quack.kfu.com
 MAINTAINER=		ian@openbsd.org
 
 LIB_DEPENDS=	xview\\.3\\.:${PORTSDIR}/x11/xview-lib
@@ -16,8 +14,5 @@ USE_IMAKE=	yes
 
 pre-install:
 	@${MKDIR} ${PREFIX}/lib/help
-
-post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
