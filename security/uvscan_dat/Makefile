@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2001/11/30 13:21:04 jakob Exp $
+# $OpenBSD: Makefile,v 1.17 2001/12/13 17:28:49 jakob Exp $
 # $NetBSD: Makefile,v 1.2 2000/06/19 14:30:02 rh Exp $
 
 COMMENT=	AntiVirus DAT file for uvscan
 
-VERSION=	4173
+VERSION=	4176
 DISTNAME=	dat-${VERSION}
 PKGNAME=	uvscan_${DISTNAME}
 CATEGORIES=	security
