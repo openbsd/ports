@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/30 12:58:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/04 22:52:12 espie Exp $
 bin/kdoc
 bin/makekdedoc
 bin/qt2kdoc

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2001/09/28 06:02:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/04/04 22:52:12 espie Exp $
 
 COMMENT= 		"embedded documentation in C++"
 CATEGORIES=		x11 x11/kde devel
 NEED_VERSION=		1.458
-VERSION=		2.2.1
+VERSION=		2.2.2
 DISTNAME=		kdoc-${VERSION}
 DIST_SUBDIR=		kde
 

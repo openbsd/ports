@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/12/31 12:30:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/04/04 22:52:12 espie Exp $
 share/doc/html/kdelibs/dcop/DCOPClient.html
 share/doc/html/kdelibs/dcop/DCOPConnection.html
 share/doc/html/kdelibs/dcop/DCOPMsg.html
