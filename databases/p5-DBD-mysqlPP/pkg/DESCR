@@ -1,0 +1,2 @@
+DBD::mysqlPP is a Pure Perl MySQL Database Interface driver for the
+mysql database.
