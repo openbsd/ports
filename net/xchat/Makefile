@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2003/04/19 15:45:22 couderc Exp $
+# $OpenBSD: Makefile,v 1.44 2003/05/26 11:30:05 couderc Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 
 COMMENT=	"X-Chat is an X11 IRC client"
@@ -29,11 +29,12 @@ MODULES=	iconv gettext
 USE_GMAKE=	Yes
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --disable-python --disable-gnome \
-		 --disable-zvt --disable-mmx \
-		 --enable-ipv6 --enable-openssl="/usr" \
-		 --enable-japanese-conv \
-		 --with-libiconv-prefix="${LOCALBASE}"
+CONFIGURE_ARGS+=	--disable-python --disable-gnome \
+			--disable-zvt --disable-mmx \
+			--enable-ipv6 --enable-openssl="/usr" \
+			--enable-japanese-conv
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 DOCDIR=		${PREFIX}/share/doc/xchat
 
