@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2001/11/29 15:16:14 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2001/11/29 18:53:43 brad Exp $
 
 COMMENT=	"Type 1 rasterizer library for UNIX/X11"
 
 VERSION=	1.3.1
 DISTNAME=	t1lib-${VERSION}
 CATEGORIES=	devel textproc
-NEED_VERSION=	1.489
+NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= libs/graphics
 
@@ -37,4 +37,3 @@ post-patch:
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh
 
 .include <bsd.port.mk>
-
