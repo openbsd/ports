@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/05/21 12:24:43 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/10/26 11:31:12 downsj Exp $
 
 DISTNAME=	uemacs
 PKGNAME=	uemacs-4.0
@@ -10,7 +10,7 @@ NO_CDROM=	"NOFEE: may not charge for distribution"
 
 NEED_VERSION=	1.91
 
-MAINTAINER=	downsj@downsj.com
+MAINTAINER=	ports@openbsd.org
 
 EXTRACT_BEFORE_ARGS=	-Laq
 

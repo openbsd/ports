@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 1999/09/06 19:06:14 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/10/26 11:30:41 downsj Exp $
 
 DISTNAME=	xmp-1.1.5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/sound/players
 
-MAINTAINER=	downsj@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 PATCH_STRIP=	-p1
 PATCH_DIST_STRIP= -p1

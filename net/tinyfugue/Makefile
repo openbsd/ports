@@ -7,7 +7,7 @@
 # Date created:		4 January 1997
 # Whom:			mike@binghamton.edu
 #
-# $OpenBSD: Makefile,v 1.2 1999/03/11 03:15:09 downsj Exp $
+# $OpenBSD: Makefile,v 1.3 1999/10/26 11:32:15 downsj Exp $
 # $FreeBSD: Makefile,v 1.16 1999/02/16 03:06:21 jseger Exp $
 #
 
@@ -17,7 +17,7 @@ CATEGORIES=	net games
 MASTER_SITES=	ftp://tf.tcp.com/pub/tinyfugue/ \
 		ftp://ftp.demon.co.uk/pub/games/mud/
 
-MAINTAINER=	downsj@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 .if defined(PARALLEL_PACKAGE_BUILD)
 BROKEN=		tries to cd to directory that do not exist yet
