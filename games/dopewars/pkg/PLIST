@@ -1,7 +1,6 @@
+bin/dopewars
 @group games
 @mode 2755
-bin/dopewars
-share/doc/dopewars/ChangeLog
 share/doc/dopewars/LICENCE
 share/doc/dopewars/README
 share/doc/dopewars/aiplayer.html
@@ -10,7 +9,7 @@ share/doc/dopewars/commandline.html
 share/doc/dopewars/configfile.html
 share/doc/dopewars/credits.html
 share/doc/dopewars/developer.html
-share/doc/dopewars/example-cfg
+share/doc/dopewars/dopewars-cfg.sample
 share/doc/dopewars/index.html
 share/doc/dopewars/installation.html
 share/doc/dopewars/metaserver.html
