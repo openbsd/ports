@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/16 13:49:17 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2003/01/02 18:56:06 lebel Exp $
 
 NOT_FOR_ARCHS=  ${NO_SHARED_ARCHS}
 
 COMMENT=	"icb plugin for irssi"
 
-DISTNAME=	irssi-icb-0.13
+DISTNAME=	irssi-icb-0.14
 MASTER_SITES=   http://www.irssi.org/files/plugins/icb/ \
                 http://fi.irssi.org/files/plugins/icb/ \
                 http://no.irssi.org/files/plugins/icb/ \
