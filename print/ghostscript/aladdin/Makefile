@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/04/13 17:01:03 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/05/05 21:05:10 espie Exp $
 
 COMMENT="AFPL PostScript interpreter"
 
@@ -9,11 +9,12 @@ NEED_VERSION=	1.395
 
 DIR=		aladdin/gs${VERSION:S/.//}
 MASTER_SITES=	${GS_SITES}
+MASTER_SITES1= ${PDF_SITES}
 
 HOMEPAGE=	http://www.cs.wisc.edu/~ghost/
 
 MASTER_SITE_SUBDIR=     ghostscript
-DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} 
+DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} pdf_sec.ps:1
 
 SUBST_VARS=		OSREV	VERSION
 DIST_SUBDIR=	gs
@@ -145,5 +146,6 @@ pre-install:
 
 post-install:
 	strip ${PREFIX}/bin/gs
+	${INSTALL_DATA} ${FULLDISTDIR}/pdf_sec.ps ${PREFIX}/${PDFDIR}
 
 .include <bsd.port.mk>

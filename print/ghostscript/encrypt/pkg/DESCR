@@ -1,5 +1,0 @@
-This allows ghostscript to read encrypted pdf files.
-Separate package from ghostscript to allow CD-Rom 
-redistribution.
-
-WWW: ${HOMEPAGE}

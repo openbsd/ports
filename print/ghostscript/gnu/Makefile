@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/04/13 17:01:05 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2001/05/05 21:05:17 espie Exp $
 # Original from:	Andreas Klemm <andreas@klemm.gtn.com>
 
 COMMENT=	"GNU Postscript interpreter"
@@ -16,9 +16,10 @@ MASTER_SITES= ${GS_SITES} ${MASTER_SITE_GNU}
 HOMEPAGE=	http://www.cs.wisc.edu/%7Eghost/
 
 MASTER_SITES0=  http://www.erdw.ethz.ch/%7Ebonk/ftp/gs-driver-distrib/
+MASTER_SITES1= ${PDF_SITES}
 
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
-		${HP850_DRV}:0 
+		${HP850_DRV}:0 pdf_sec.ps:1
 
 SUBST_VARS=		OSREV	VERSION
 DIST_SUBDIR=	gs
@@ -113,5 +114,6 @@ post-install:
 		${PREFIX}/share/ghostscript/${VERSION}/doc
 	${INSTALL_DATA} ${WRKSRC}/readme.hp8 \
 		${PREFIX}/share/ghostscript/${VERSION}/doc
+	${INSTALL_DATA} ${FULLDISTDIR}/pdf_sec.ps ${PREFIX}/${PDFDIR}
 
 .include <bsd.port.mk>
