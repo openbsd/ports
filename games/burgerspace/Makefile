@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/11/23 21:35:18 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2001/12/28 21:51:08 pvalchev Exp $
 
 COMMENT=	"burgertime clone for X"
 
-VERSION=	1.5
+VERSION=	1.6
 DISTNAME=	burgerspace-${VERSION}
 CATEGORIES=	games
-NEED_VERSION=	1.433
+NEED_VERSION=	1.502
 
 HOMEPAGE=	http://www3.sympatico.ca/sarrazip/dev/burgerspace.html
 
@@ -16,16 +16,13 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-#MASTER_SITES=	http://sites.netscape.net/sarrazip/
-MASTER_SITES=	${MASTER_SITE_BACKUP}
+MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
-LIB_DEPENDS=	gengameng.3.0:gengameng-*:devel/gengameng
+BUILD_DEPENDS=	automake::devel/automake
+LIB_DEPENDS=	gengameng.4.0::devel/gengameng
 
 USE_X11=	Yes
 
-SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_STYLE= autoconf
 
 .include <bsd.port.mk>

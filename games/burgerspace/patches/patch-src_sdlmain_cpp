@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_sdlmain_cc,v 1.1.1.1 2001/08/07 05:13:34 pvalchev Exp $
---- src/sdlmain.cc.orig	Fri Apr 27 14:51:46 2001
-+++ src/sdlmain.cc	Mon Aug  6 22:08:25 2001
+$OpenBSD: patch-src_sdlmain_cpp,v 1.1 2001/12/28 21:51:08 pvalchev Exp $
+--- src/sdlmain.cpp.orig	Fri Nov 23 22:12:36 2001
++++ src/sdlmain.cpp	Fri Dec 28 14:32:32 2001
 @@ -26,8 +26,22 @@
  #include <errno.h>
  #include <time.h>
