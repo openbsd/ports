@@ -3,11 +3,11 @@
 # Date created:		6 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/11/08 14:05:52 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 1999/11/08 14:08:48 dugsong Exp $
 
 PKGNAME=	abiword-0.7.6
 
-CATEGORIES=	security
+CATEGORIES=	editors
 
 MAINTAINER=	dugsong@monkey.org
 
