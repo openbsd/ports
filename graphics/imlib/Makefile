@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2001/10/28 03:30:36 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2001/10/28 04:12:14 brad Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	"image manipulation library for X11"
@@ -14,6 +14,9 @@ LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
 		gif.4.1::graphics/giflib \
 		png.2::graphics/png \
 		tiff.35::graphics/tiff
+BUILD_DEPENDS=	::graphics/netpbm
+RUN_DEPENDS=	::graphics/jpeg \
+		::graphics/netpbm
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -30,6 +33,10 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-modules
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \
+		patch-*
 
 pre-build:
 	@echo ""
