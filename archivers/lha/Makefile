@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/02/04 22:16:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2002/02/14 17:16:09 naddy Exp $
 
 COMMENT=	"archive files using LZW compression (.lzh files)"
 
@@ -9,6 +9,8 @@ CATEGORIES=	archivers
 NEED_VERSION=	1.504
 
 HOMEPAGE=       http://www2m.biglobe.ne.jp/~dolphin/lha/lha.htm
+
+MAINTAINER=	Yozo Toda <yozo@v007.vaio.ne.jp>
 
 PERMIT_PACKAGE_CDROM=	"requires advance notification"
 PERMIT_PACKAGE_FTP=	Yes
