@@ -1,4 +1,4 @@
- $OpenBSD: patch-support_gnomesupport.h,v 1.2 2001/09/19 14:37:49 naddy Exp $
+ $OpenBSD: patch-support_gnomesupport.h,v 1.3 2001/11/27 23:07:02 todd Exp $
 --- support/gnomesupport.h.orig	Tue Feb 27 14:27:58 2001
 +++ support/gnomesupport.h	Mon Aug 27 17:23:18 2001
 @@ -5,37 +5,11 @@

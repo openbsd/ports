@@ -1,7 +1,7 @@
-$OpenBSD: patch-sysdeps_guile_names_Makefile_in,v 1.1 2001/09/20 18:39:13 naddy Exp $
---- sysdeps/guile/names/Makefile.in.orig	Thu Sep 20 15:39:58 2001
-+++ sysdeps/guile/names/Makefile.in	Thu Sep 20 15:40:17 2001
-@@ -454,7 +454,7 @@ guile-names.c: guile-names.pl $(top_buil
+$OpenBSD: patch-sysdeps_guile_names_Makefile_in,v 1.2 2001/11/27 23:07:02 todd Exp $
+--- sysdeps/guile/names/Makefile.in.orig	Tue Nov 27 03:04:59 2001
++++ sysdeps/guile/names/Makefile.in	Tue Nov 27 21:19:44 2001
+@@ -438,7 +438,7 @@ guile-names.c: guile-names.pl $(top_buil
  	mv gnc-t guile-names.c
  
  guile-names.x: guile-names.c

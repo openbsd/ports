@@ -1,4 +1,4 @@
-$OpenBSD: patch-sysdeps_freebsd_prockernel_c,v 1.1 2001/09/29 13:01:56 naddy Exp $
+$OpenBSD: patch-sysdeps_freebsd_prockernel_c,v 1.2 2001/11/27 23:07:02 todd Exp $
 --- sysdeps/freebsd/prockernel.c.orig	Fri Sep 28 20:14:49 2001
 +++ sysdeps/freebsd/prockernel.c	Fri Sep 28 20:38:18 2001
 @@ -68,7 +68,9 @@ void

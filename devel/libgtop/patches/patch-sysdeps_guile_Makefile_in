@@ -1,7 +1,7 @@
-$OpenBSD: patch-sysdeps_guile_Makefile_in,v 1.1 2001/09/20 18:39:13 naddy Exp $
---- sysdeps/guile/Makefile.in.orig	Thu Sep 20 15:39:55 2001
-+++ sysdeps/guile/Makefile.in	Thu Sep 20 15:40:08 2001
-@@ -529,7 +529,7 @@ guile.c: guile.pl $(top_builddir)/config
+$OpenBSD: patch-sysdeps_guile_Makefile_in,v 1.2 2001/11/27 23:07:02 todd Exp $
+--- sysdeps/guile/Makefile.in.orig	Tue Nov 27 03:04:55 2001
++++ sysdeps/guile/Makefile.in	Tue Nov 27 21:19:44 2001
+@@ -516,7 +516,7 @@ guile.c: guile.pl $(top_builddir)/config
  	mv gnc-t guile.c
  
  guile.x: guile.c

@@ -1,6 +1,6 @@
-$OpenBSD: patch-sysdeps_freebsd_procmem.c,v 1.3 2001/11/13 09:03:25 wilfried Exp $
---- sysdeps/freebsd/procmem.c.orig	Thu May 27 20:56:49 1999
-+++ sysdeps/freebsd/procmem.c	Mon Nov 12 20:53:53 2001
+$OpenBSD: patch-sysdeps_freebsd_procmem.c,v 1.4 2001/11/27 23:07:02 todd Exp $
+--- sysdeps/freebsd/procmem.c.orig	Mon Nov 26 23:37:59 2001
++++ sysdeps/freebsd/procmem.c	Tue Nov 27 21:30:45 2001
 @@ -31,8 +31,6 @@
  #include <sys/param.h>
  #include <sys/proc.h>
@@ -59,12 +59,25 @@ $OpenBSD: patch-sysdeps_freebsd_procmem.c,v 1.3 2001/11/13 09:03:25 wilfried Exp
  		if (!entry.object.uvm_obj)
  			continue;
  
-@@ -232,7 +227,7 @@ glibtop_get_proc_mem_p (glibtop *server,
+@@ -232,16 +227,15 @@ glibtop_get_proc_mem_p (glibtop *server,
  #endif
  		/* If the object is of type vnode, add its size */
  
 -#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
+-		if (!vnode.v_uvm.u_flags & UVM_VNODE_VALID)
+-			continue;
 +#if (defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)) || defined(OpenBSD)
- 		if (!vnode.v_uvm.u_flags & UVM_VNODE_VALID)
- 			continue;
  
+ 		if ((vnode.v_type != VREG) || (vnode.v_tag != VT_UFS) ||
+ 		    !vnode.v_data) continue;
+ 
+-		/* Reference count must be at least two. */
+-		if (vnode.v_uvm.u_obj.uo_refs <= 1)
+-			continue;
++
++               /* Reference count must be at least two. */
++               if (vnode.v_usecount <= 1)
++                       continue;
+ 
+ 		buf->share += pagetok (vnode.v_uvm.u_obj.uo_npages) << LOG1024;
+ #endif
