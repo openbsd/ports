@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 1999/02/09 17:39:18 rohee Exp $
+# $OpenBSD: Makefile,v 1.10 1999/03/29 18:25:54 rohee Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
 #    SUBDIR += Mosaic         # requires Motif
      SUBDIR += analog
      SUBDIR += amaya          # requires Motif (lesstif works)
+     SUBDIR += amaya-english-dict
+     SUBDIR += amaya-french-dict
      SUBDIR += apache
 #    SUBDIR += apache-current
 #    SUBDIR += apache-php
