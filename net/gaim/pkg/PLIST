@@ -1,31 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.21 2003/08/13 03:07:51 jolan Exp $
-%%audio%%
+@comment $OpenBSD: PLIST,v 1.22 2003/08/17 03:46:39 brad Exp $
 bin/gaim
 bin/gaim-remote
 include/gaim-remote/remote-socket.h
 include/gaim-remote/remote.h
-lib/gaim/autorecon.la
-lib/gaim/docklet.la
-lib/gaim/gaim-remote.la
-lib/gaim/gestures.la
-lib/gaim/history.la
-lib/gaim/iconaway.la
-lib/gaim/idle.la
-lib/gaim/libgg.la
-lib/gaim/libirc.la
-lib/gaim/libjabber.la
-lib/gaim/libmsn.la
-lib/gaim/libnapster.la
-lib/gaim/liboscar.la
-lib/gaim/libtoc.la
-lib/gaim/libyahoo.la
-lib/gaim/libzephyr.la
-lib/gaim/perl.la
-lib/gaim/spellchk.la
-lib/gaim/statenotify.la
-lib/gaim/ticker.la
-lib/gaim/timestamp.la
-lib/libgaim-remote.la
+@comment lib/gaim/autorecon.la
+@comment lib/gaim/docklet.la
+@comment lib/gaim/gaim-remote.la
+@comment lib/gaim/gestures.la
+@comment lib/gaim/history.la
+@comment lib/gaim/iconaway.la
+@comment lib/gaim/idle.la
+@comment lib/gaim/libgg.la
+@comment lib/gaim/libirc.la
+@comment lib/gaim/libjabber.la
+@comment lib/gaim/libmsn.la
+@comment lib/gaim/libnapster.la
+@comment lib/gaim/liboscar.la
+@comment lib/gaim/libtoc.la
+@comment lib/gaim/libyahoo.la
+@comment lib/gaim/libzephyr.la
+@comment lib/gaim/notify.la
+@comment lib/gaim/perl.la
+@comment lib/gaim/spellchk.la
+@comment lib/gaim/statenotify.la
+@comment lib/gaim/ticker.la
+@comment lib/gaim/timestamp.la
+@comment lib/libgaim-remote.la
 man/man1/gaim-remote.1
 man/man1/gaim.1
 share/applications/gaim.desktop
@@ -40,6 +40,7 @@ share/locale/es/LC_MESSAGES/gaim.mo
 share/locale/fi/LC_MESSAGES/gaim.mo
 share/locale/fr/LC_MESSAGES/gaim.mo
 share/locale/he/LC_MESSAGES/gaim.mo
+share/locale/hi/LC_MESSAGES/gaim.mo
 share/locale/hu/LC_MESSAGES/gaim.mo
 share/locale/it/LC_MESSAGES/gaim.mo
 share/locale/ja/LC_MESSAGES/gaim.mo
@@ -52,6 +53,7 @@ share/locale/ro/LC_MESSAGES/gaim.mo
 share/locale/ru/LC_MESSAGES/gaim.mo
 share/locale/sk/LC_MESSAGES/gaim.mo
 share/locale/sr/LC_MESSAGES/gaim.mo
+share/locale/sr@Latn/LC_MESSAGES/gaim.mo
 share/locale/sv/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
 share/locale/zh_TW/LC_MESSAGES/gaim.mo
@@ -226,6 +228,7 @@ share/pixmaps/gaim/status/default/female.png
 share/pixmaps/gaim/status/default/freeforchat.png
 share/pixmaps/gaim/status/default/gadu-gadu.png
 share/pixmaps/gaim/status/default/game.png
+share/pixmaps/gaim/status/default/hiptop.png
 share/pixmaps/gaim/status/default/icq.png
 share/pixmaps/gaim/status/default/invisible.png
 share/pixmaps/gaim/status/default/irc.png
@@ -248,7 +251,14 @@ share/pixmaps/gaim/tb_drag_arrow_right.xpm
 share/pixmaps/gaim/tb_drag_arrow_up.xpm
 share/pixmaps/gaim/typed.png
 share/pixmaps/gaim/typing.png
+share/sounds/gaim/arrive.wav
+share/sounds/gaim/leave.wav
+share/sounds/gaim/receive.wav
+share/sounds/gaim/redalert.wav
+share/sounds/gaim/send.wav
 %%SHARED%%
+@dirrm share/sounds/gaim
+@comment @dirrm share/sounds
 @dirrm share/pixmaps/gaim/status/default
 @dirrm share/pixmaps/gaim/status
 @dirrm share/pixmaps/gaim/smileys/default
@@ -264,6 +274,8 @@ share/pixmaps/gaim/typing.png
 @comment @dirrm share/locale/zh_CN
 @comment @dirrm share/locale/sv/LC_MESSAGES
 @comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sr@Latn/LC_MESSAGES
+@comment @dirrm share/locale/sr@Latn
 @comment @dirrm share/locale/sr/LC_MESSAGES
 @comment @dirrm share/locale/sr
 @comment @dirrm share/locale/sk/LC_MESSAGES
@@ -288,6 +300,8 @@ share/pixmaps/gaim/typing.png
 @comment @dirrm share/locale/it
 @comment @dirrm share/locale/hu/LC_MESSAGES
 @comment @dirrm share/locale/hu
+@comment @dirrm share/locale/hi/LC_MESSAGES
+@comment @dirrm share/locale/hi
 @comment @dirrm share/locale/he/LC_MESSAGES
 @comment @dirrm share/locale/he
 @comment @dirrm share/locale/fr/LC_MESSAGES
