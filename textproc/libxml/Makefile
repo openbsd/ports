@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2003/01/14 06:34:16 kevlo Exp $
+# $OpenBSD: Makefile,v 1.61 2003/05/23 05:42:30 kevlo Exp $
 
 COMMENT=	"XML parsing library"
 
@@ -10,8 +10,6 @@ MASTER_SITES=	ftp://xmlsoft.org/ \
 		ftp://xmlsoft.org/old/
 
 HOMEPAGE=	http://xmlsoft.org/ 
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
