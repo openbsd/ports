@@ -1,0 +1,28 @@
+--- src/getloadavg.c.orig	Sun Oct 12 03:40:10 1997
++++ src/getloadavg.c	Mon May  4 12:38:33 1998
+@@ -59,6 +59,7 @@
+    __linux__			Linux: assumes /proc filesystem mounted.
+    				Support from Michael K. Johnson.
+    __NetBSD__			NetBSD: assumes /kern filesystem mounted.
++   __OpenBSD__			OpenBSD: dito.
+ 
+    In addition, to avoid nesting many #ifdefs, we internally set
+    LDAV_DONE to indicate that the load average has been computed.
+@@ -624,7 +625,7 @@
+ 
+ #endif /* __linux__ */
+ 
+-#if !defined (LDAV_DONE) && defined (__NetBSD__)
++#if !defined (LDAV_DONE) && (defined (__NetBSD__) || defined (__OpenBSD__))
+ #define LDAV_DONE
+ #undef LOAD_AVE_TYPE
+ 
+@@ -651,7 +652,7 @@
+ 
+   return elem;
+ 
+-#endif /* __NetBSD__ */
++#endif /* __NetBSD__ or __OpenBSD__ */
+ 
+ #if !defined (LDAV_DONE) && defined (NeXT)
+ #define LDAV_DONE

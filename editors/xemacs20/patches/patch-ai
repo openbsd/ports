@@ -1,0 +1,16 @@
+--- src/s/openbsd.h.orig	Thu Jan  1 01:00:00 1970
++++ src/s/openbsd.h   Sat May  9 23:00:43 1998
+@@ -0,0 +1,12 @@
++/* s/ file for openbsd systems.  */
++
++/* Get most of the stuff from bsd4.3 */
++#include "bsd4-3.h"
++
++/* OpenBSD alpha has no shared libs yet.  -hgw */
++#if defined (__alpha__) && !defined (__ELF__)
++#define NO_SHARED_LIBS
++#endif
++
++/* Get the rest of the stuff from that less-POSIX-conformant system */
++#include "netbsd.h"
+

@@ -1,0 +1,16 @@
+--- src/malloc.c.orig	Mon Jul  7 02:54:09 1997
++++ src/malloc.c	Mon May  4 12:57:45 1998
+@@ -188,11 +188,11 @@
+ #ifndef HPUX
+ /* not sure where this for NetBSD should really go
+    and it probably applies to other systems */
+-#if !defined(__NetBSD__) && !defined(__bsdi__)
++#if !defined(__NetBSD__) && !defined(__bsdi__) && !defined(__OpenBSD__)
+ extern void *sbrk (ptrdiff_t);
+ #else
+ extern char *sbrk ();
+-#endif /* __NetBSD__ */
++#endif /* __NetBSD__ or __OpenBSD__ */
+ #endif /* HPUX */
+ #else
+ extern void *sbrk ();

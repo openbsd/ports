@@ -1,0 +1,18 @@
+--- src/m/sparc.h.orig	Thu Jun 12 03:50:11 1997
++++ src/m/sparc.h	Sun May  3 21:58:59 1998
+@@ -58,7 +58,8 @@
+ 
+ #define SEGMENT_MASK (SEGSIZ - 1)
+ 
+-#if ! defined (__NetBSD__) && ! defined (__linux__)
++#if ! defined (__NetBSD__) && ! defined (__linux__) && ! defined (__OpenBSD__)
++
+ /* This really belongs in s/sun.h.  */
+ 
+ /* Say that the text segment of a.out includes the header;
+@@ -71,4 +72,4 @@
+ 
+ #define A_TEXT_SEEK(HDR) (N_TXTOFF (hdr) + sizeof (hdr))
+ 
+-#endif /* not Linux or NetBSD */
++#endif /* not Linux or NetBSD or OpenBSD */

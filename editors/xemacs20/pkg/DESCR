@@ -1,0 +1,46 @@
+About XEmacs:
+
+XEmacs (formerly known as Lucid Emacs) is a powerful, extensible text
+editor with full GUI support, initially based on an early version of
+GNU Emacs 19 from the Free Software Foundation and since kept up to
+date with recent versions of that product.  XEmacs stems from a
+collaboration of Lucid, Inc. with Sun Microsystems, Inc. and the
+University of Illinois with additional support having been provided by
+Amdahl Corporation, INS Engineering Corporation, and a huge amount of
+volunteer effort.
+
+XEmacs provides a great number of new features.  More details on
+XEmacs's functionality, including bundled packages, can be obtained
+through the info on-line information system.
+
+The XEmacs web page can be browsed, using any WWW browser at
+
+		    http://www.xemacs.org/
+
+Note that W3 (XEmacs's own browser), might need customization (due to
+firewalls) in order to work correctly.
+
+XEmacs is the result of the time and effort of many people.  The
+developers responsible for the 20.3 release are:
+
+	* SL Baur  <steve@xemacs.org>
+	* Jason Mastaler  <jason@mastaler.com>
+	* Martin Buchholz  <mrb@sun.eng.com>
+	* Kyle Jones  <kyle_jones@wonderworks.com>
+	* Hrvoje Niksic  <hniksic@srce.hr>
+
+	* And many other contributors...
+
+Chuck Thompson was Mr. XEmacs from 19.11 through 19.14.  Ben Wing was
+crucial to each of these releases.
+
+	* Chuck Thompson  <cthomp@xemacs.org>
+	* Ben Wing  <wing@xemacs.org>
+
+Jamie Zawinski was Mr. Lucid Emacs from 19.0 through 19.10, the last
+release actually named Lucid Emacs.  A lot of work has been done by
+Richard Mlynarik.
+
+	* Jamie Zawinski  <jwz@netscape.com>
+	* Richard Mlynarik  <mly@adoc.xerox.com>
+

@@ -1,0 +1,39 @@
+--- configure.in.orig	Tue Feb 10 04:58:57 1998
++++ configure.in	Mon May  4 00:36:08 1998
+@@ -330,7 +330,7 @@
+ dnl BETA NOTE: ! Will you please add to this list?  Nonexistent dirs
+ dnl are dropped from the list at runtime, so it is safe to add
+ dnl directories to this list that you don't have at home.
+-infopath='/usr/local/info:/usr/info:/usr/local/lib/texmf/doc/info:/usr/lib/texmf/doc/info'
++infopath='/usr/local/info:/usr/info:/usr/local/lib/texmf/doc/info:/usr/lib/texmf/doc/info:/usr/share/info'
+ infopath_user_defined='no'
+ lispdir='${datadir}/xemacs-${version}/lisp'
+ lispdir_user_defined='no'
+@@ -960,6 +960,7 @@
+ case "$canonical" in
+   *-*-linux*    ) opsys=linux ;;
+   *-*-netbsd*   ) opsys=netbsd ;;
++  *-*-openbsd*  ) opsys=openbsd ;;
+   *-*-nextstep* ) opsys=nextstep ;;
+   *-*-vms       ) opsys=vms ;;
+ 
+@@ -1017,6 +1018,19 @@
+                       machine=hp9000s300 ;;
+       pc532-*-netbsd* | ns32k-*-netbsd* )  machine=ns32000 ;;
+       pmax-*-netbsd*  | mips-*-netbsd*  )  machine=pmax ;;
++    esac
++  ;;
++
++  dnl OpenBSD ports
++  *-*-openbsd* )
++    case "${canonical}" in
++      alpha*-*-openbsd*)	machine=alpha ;;
++      i386-*-openbsd*)	machine=intel386 ;;
++      m68k-*-openbsd*)  machine=hp9000s300 ;;
++      mipsel-*-openbsd*) machine=pmax ;;
++      ns32k-*-openbsd*)	machine=ns32000 ;;
++      sparc-*-openbsd*)	machine=sparc ;;
++      vax-*-netbsd*)	machine=vax ;;
+     esac
+   ;;
+ 

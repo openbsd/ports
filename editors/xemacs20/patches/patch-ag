@@ -1,0 +1,11 @@
+--- src/mem-limits.h.orig	Mon Jul  7 02:54:11 1997
++++ src/mem-limits.h	Mon May  4 12:48:02 1998
+@@ -54,7 +54,7 @@
+ #include <sys/resource.h>
+ #endif
+ 
+-#if defined(__bsdi__) || defined(__NetBSD__)
++#if defined(__bsdi__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #define BSD4_2
+ #endif
+ 

@@ -1,0 +1,11 @@
+--- config.sub.orig	Wed Dec 18 23:42:14 1996
++++ config.sub	Sun May  3 22:37:56 1998
+@@ -678,7 +678,7 @@
+ 	      | -lynxos* | -bosx* | -nextstep* | -cxux* | -aout* | -elf* \
+ 	      | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
+ 	      | -udi* | -eabi* | -lites* | -ieee* | -go32* | -aux* \
+-	      | -cygwin32* | -pe* | -psos* | -moss* )
++	      | -cygwin32* | -pe* | -psos* | -moss* | -openbsd* )
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-sunos5*)
