@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/12 02:55:18 matt Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/16 23:38:40 matt Exp $
 
 COMMENT=	"Zope content management framework"
 
@@ -9,7 +9,7 @@ NEED_VERSION=	1.509
 
 HOMEPAGE=	http://cmf.zope.org/
 
-MAINTAINER=	Matt Behrens <matt@zigg.com>
+MAINTAINER=	Matt Behrens <matt@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -20,6 +20,7 @@ MASTER_SITES=	${HOMEPAGE}/download/CMF-${VERSION}/
 
 DISTNAME=	CMF-${VERSION}
 
+# Zope Public License (ZPL) 2.0 <http://www.zope.org/Resources/ZPL>
 BUILD_DEPENDS=	:python-2.1*:lang/python/2.1 \
 		:zope->=2.4.0:www/zope
 RUN_DEPENDS=	:python-2.1*:lang/python/2.1 \
