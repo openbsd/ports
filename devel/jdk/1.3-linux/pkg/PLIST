@@ -1,16 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/01/15 22:38:02 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/08/10 22:20:26 naddy Exp $
 @option no-default-conflict
 @pkgcfl jdk-linux-1.3*
+jdk1.3.1-linux/
 jdk1.3.1-linux/COPYRIGHT
 jdk1.3.1-linux/LICENSE
 jdk1.3.1-linux/README
 jdk1.3.1-linux/README.html
+jdk1.3.1-linux/bin/
 jdk1.3.1-linux/bin/.java_wrapper
 jdk1.3.1-linux/bin/ControlPanel
 jdk1.3.1-linux/bin/HtmlConverter
 jdk1.3.1-linux/bin/appletviewer
 jdk1.3.1-linux/bin/awt_robot
 jdk1.3.1-linux/bin/extcheck
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/
 jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/appletviewer
 jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/extcheck
 jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/idlj
@@ -33,6 +37,7 @@ jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/rmid
 jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/rmiregistry
 jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/serialver
 jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads/tnameserv
+jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/
 jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/appletviewer
 jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/extcheck
 jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads/idlj
@@ -79,12 +84,16 @@ jdk1.3.1-linux/bin/rmid
 jdk1.3.1-linux/bin/rmiregistry
 jdk1.3.1-linux/bin/serialver
 jdk1.3.1-linux/bin/tnameserv
+jdk1.3.1-linux/demo/
+jdk1.3.1-linux/demo/applets/
+jdk1.3.1-linux/demo/applets/Animator/
 jdk1.3.1-linux/demo/applets/Animator/Animation.class
 jdk1.3.1-linux/demo/applets/Animator/AnimationFrame.class
 jdk1.3.1-linux/demo/applets/Animator/Animator.class
 jdk1.3.1-linux/demo/applets/Animator/Animator.java
 jdk1.3.1-linux/demo/applets/Animator/DescriptionFrame.class
 jdk1.3.1-linux/demo/applets/Animator/ParseException.class
+jdk1.3.1-linux/demo/applets/Animator/audio/
 jdk1.3.1-linux/demo/applets/Animator/audio/0.au
 jdk1.3.1-linux/demo/applets/Animator/audio/1.au
 jdk1.3.1-linux/demo/applets/Animator/audio/2.au
@@ -100,6 +109,8 @@ jdk1.3.1-linux/demo/applets/Animator/example1.html
 jdk1.3.1-linux/demo/applets/Animator/example2.html
 jdk1.3.1-linux/demo/applets/Animator/example3.html
 jdk1.3.1-linux/demo/applets/Animator/example4.html
+jdk1.3.1-linux/demo/applets/Animator/images/
+jdk1.3.1-linux/demo/applets/Animator/images/Beans/
 jdk1.3.1-linux/demo/applets/Animator/images/Beans/T1.gif
 jdk1.3.1-linux/demo/applets/Animator/images/Beans/T10.gif
 jdk1.3.1-linux/demo/applets/Animator/images/Beans/T2.gif
@@ -110,49 +121,60 @@ jdk1.3.1-linux/demo/applets/Animator/images/Beans/T6.gif
 jdk1.3.1-linux/demo/applets/Animator/images/Beans/T7.gif
 jdk1.3.1-linux/demo/applets/Animator/images/Beans/T8.gif
 jdk1.3.1-linux/demo/applets/Animator/images/Beans/T9.gif
+jdk1.3.1-linux/demo/applets/Animator/images/SimpleAnimation/
 jdk1.3.1-linux/demo/applets/Animator/images/SimpleAnimation/T1.gif
 jdk1.3.1-linux/demo/applets/Animator/images/SimpleAnimation/T2.gif
 jdk1.3.1-linux/demo/applets/Animator/images/loading-msg.gif
+jdk1.3.1-linux/demo/applets/ArcTest/
 jdk1.3.1-linux/demo/applets/ArcTest/ArcCanvas.class
 jdk1.3.1-linux/demo/applets/ArcTest/ArcControls.class
 jdk1.3.1-linux/demo/applets/ArcTest/ArcTest.class
 jdk1.3.1-linux/demo/applets/ArcTest/ArcTest.java
 jdk1.3.1-linux/demo/applets/ArcTest/example1.html
+jdk1.3.1-linux/demo/applets/BarChart/
 jdk1.3.1-linux/demo/applets/BarChart/Chart.class
 jdk1.3.1-linux/demo/applets/BarChart/Chart.java
 jdk1.3.1-linux/demo/applets/BarChart/example1.html
+jdk1.3.1-linux/demo/applets/Blink/
 jdk1.3.1-linux/demo/applets/Blink/Blink$1.class
 jdk1.3.1-linux/demo/applets/Blink/Blink.class
 jdk1.3.1-linux/demo/applets/Blink/Blink.java
 jdk1.3.1-linux/demo/applets/Blink/example1.html
+jdk1.3.1-linux/demo/applets/CardTest/
 jdk1.3.1-linux/demo/applets/CardTest/CardPanel.class
 jdk1.3.1-linux/demo/applets/CardTest/CardTest.class
 jdk1.3.1-linux/demo/applets/CardTest/CardTest.java
 jdk1.3.1-linux/demo/applets/CardTest/example1.html
+jdk1.3.1-linux/demo/applets/Clock/
 jdk1.3.1-linux/demo/applets/Clock/Clock2.class
 jdk1.3.1-linux/demo/applets/Clock/Clock2.java
 jdk1.3.1-linux/demo/applets/Clock/example1.html
+jdk1.3.1-linux/demo/applets/DitherTest/
 jdk1.3.1-linux/demo/applets/DitherTest/DitherCanvas.class
 jdk1.3.1-linux/demo/applets/DitherTest/DitherControls.class
 jdk1.3.1-linux/demo/applets/DitherTest/DitherTest.class
 jdk1.3.1-linux/demo/applets/DitherTest/DitherTest.java
 jdk1.3.1-linux/demo/applets/DitherTest/example1.html
+jdk1.3.1-linux/demo/applets/DrawTest/
 jdk1.3.1-linux/demo/applets/DrawTest/DrawControls.class
 jdk1.3.1-linux/demo/applets/DrawTest/DrawPanel.class
 jdk1.3.1-linux/demo/applets/DrawTest/DrawTest.class
 jdk1.3.1-linux/demo/applets/DrawTest/DrawTest.java
 jdk1.3.1-linux/demo/applets/DrawTest/example1.html
+jdk1.3.1-linux/demo/applets/Fractal/
 jdk1.3.1-linux/demo/applets/Fractal/CLSFractal.class
 jdk1.3.1-linux/demo/applets/Fractal/CLSFractal.java
 jdk1.3.1-linux/demo/applets/Fractal/CLSRule.class
 jdk1.3.1-linux/demo/applets/Fractal/CLSTurtle.class
 jdk1.3.1-linux/demo/applets/Fractal/ContextLSystem.class
 jdk1.3.1-linux/demo/applets/Fractal/example1.html
+jdk1.3.1-linux/demo/applets/GraphLayout/
 jdk1.3.1-linux/demo/applets/GraphLayout/Edge.class
 jdk1.3.1-linux/demo/applets/GraphLayout/Graph.class
 jdk1.3.1-linux/demo/applets/GraphLayout/Graph.java
 jdk1.3.1-linux/demo/applets/GraphLayout/GraphPanel.class
 jdk1.3.1-linux/demo/applets/GraphLayout/Node.class
+jdk1.3.1-linux/demo/applets/GraphLayout/audio/
 jdk1.3.1-linux/demo/applets/GraphLayout/audio/computer.au
 jdk1.3.1-linux/demo/applets/GraphLayout/audio/drip.au
 jdk1.3.1-linux/demo/applets/GraphLayout/audio/gong.au
@@ -160,6 +182,7 @@ jdk1.3.1-linux/demo/applets/GraphLayout/example1.html
 jdk1.3.1-linux/demo/applets/GraphLayout/example2.html
 jdk1.3.1-linux/demo/applets/GraphLayout/example3.html
 jdk1.3.1-linux/demo/applets/GraphLayout/example4.html
+jdk1.3.1-linux/demo/applets/GraphicsTest/
 jdk1.3.1-linux/demo/applets/GraphicsTest/AppletFrame.class
 jdk1.3.1-linux/demo/applets/GraphicsTest/AppletFrame.java
 jdk1.3.1-linux/demo/applets/GraphicsTest/ArcCard.class
@@ -177,6 +200,7 @@ jdk1.3.1-linux/demo/applets/GraphicsTest/RoundRectShape.class
 jdk1.3.1-linux/demo/applets/GraphicsTest/Shape.class
 jdk1.3.1-linux/demo/applets/GraphicsTest/ShapeTest.class
 jdk1.3.1-linux/demo/applets/GraphicsTest/example1.html
+jdk1.3.1-linux/demo/applets/ImageMap/
 jdk1.3.1-linux/demo/applets/ImageMap/AniArea.class
 jdk1.3.1-linux/demo/applets/ImageMap/AniArea.java
 jdk1.3.1-linux/demo/applets/ImageMap/ButtonFilter.class
@@ -207,21 +231,26 @@ jdk1.3.1-linux/demo/applets/ImageMap/SoundArea.class
 jdk1.3.1-linux/demo/applets/ImageMap/SoundArea.java
 jdk1.3.1-linux/demo/applets/ImageMap/TickerArea.class
 jdk1.3.1-linux/demo/applets/ImageMap/TickerArea.java
+jdk1.3.1-linux/demo/applets/ImageMap/audio/
 jdk1.3.1-linux/demo/applets/ImageMap/audio/chirp1.au
 jdk1.3.1-linux/demo/applets/ImageMap/audio/hi.au
 jdk1.3.1-linux/demo/applets/ImageMap/example1.html
 jdk1.3.1-linux/demo/applets/ImageMap/imagemapcheat.html
+jdk1.3.1-linux/demo/applets/ImageMap/images/
 jdk1.3.1-linux/demo/applets/ImageMap/images/jim.graham.gif
 jdk1.3.1-linux/demo/applets/ImageMap/sources.html
+jdk1.3.1-linux/demo/applets/JumpingBox/
 jdk1.3.1-linux/demo/applets/JumpingBox/MouseTrack.class
 jdk1.3.1-linux/demo/applets/JumpingBox/MouseTrack.java
 jdk1.3.1-linux/demo/applets/JumpingBox/example1.html
+jdk1.3.1-linux/demo/applets/JumpingBox/sounds/
 jdk1.3.1-linux/demo/applets/JumpingBox/sounds/adapt-or-die.au
 jdk1.3.1-linux/demo/applets/JumpingBox/sounds/cannot.be.completed.au
 jdk1.3.1-linux/demo/applets/JumpingBox/sounds/ip.au
 jdk1.3.1-linux/demo/applets/JumpingBox/sounds/that.hurts.au
 jdk1.3.1-linux/demo/applets/JumpingBox/sounds/thin.bell.au
 jdk1.3.1-linux/demo/applets/JumpingBox/sounds/tiptoe.thru.the.tulips.au
+jdk1.3.1-linux/demo/applets/MoleculeViewer/
 jdk1.3.1-linux/demo/applets/MoleculeViewer/Atom.class
 jdk1.3.1-linux/demo/applets/MoleculeViewer/Matrix3D.class
 jdk1.3.1-linux/demo/applets/MoleculeViewer/Matrix3D.java
@@ -231,18 +260,22 @@ jdk1.3.1-linux/demo/applets/MoleculeViewer/XYZChemModel.class
 jdk1.3.1-linux/demo/applets/MoleculeViewer/example1.html
 jdk1.3.1-linux/demo/applets/MoleculeViewer/example2.html
 jdk1.3.1-linux/demo/applets/MoleculeViewer/example3.html
+jdk1.3.1-linux/demo/applets/MoleculeViewer/models/
 jdk1.3.1-linux/demo/applets/MoleculeViewer/models/HyaluronicAcid.xyz
 jdk1.3.1-linux/demo/applets/MoleculeViewer/models/benzene.xyz
 jdk1.3.1-linux/demo/applets/MoleculeViewer/models/buckminsterfullerine.xyz
 jdk1.3.1-linux/demo/applets/MoleculeViewer/models/cyclohexane.xyz
 jdk1.3.1-linux/demo/applets/MoleculeViewer/models/ethane.xyz
 jdk1.3.1-linux/demo/applets/MoleculeViewer/models/water.xyz
+jdk1.3.1-linux/demo/applets/NervousText/
 jdk1.3.1-linux/demo/applets/NervousText/NervousText.class
 jdk1.3.1-linux/demo/applets/NervousText/NervousText.java
 jdk1.3.1-linux/demo/applets/NervousText/example1.html
+jdk1.3.1-linux/demo/applets/SimpleGraph/
 jdk1.3.1-linux/demo/applets/SimpleGraph/GraphApplet.class
 jdk1.3.1-linux/demo/applets/SimpleGraph/GraphApplet.java
 jdk1.3.1-linux/demo/applets/SimpleGraph/example1.html
+jdk1.3.1-linux/demo/applets/SortDemo/
 jdk1.3.1-linux/demo/applets/SortDemo/BidirBubbleSortAlgorithm.class
 jdk1.3.1-linux/demo/applets/SortDemo/BidirBubbleSortAlgorithm.java
 jdk1.3.1-linux/demo/applets/SortDemo/BubbleSortAlgorithm.class
@@ -254,6 +287,7 @@ jdk1.3.1-linux/demo/applets/SortDemo/SortAlgorithm.java
 jdk1.3.1-linux/demo/applets/SortDemo/SortItem.class
 jdk1.3.1-linux/demo/applets/SortDemo/SortItem.java
 jdk1.3.1-linux/demo/applets/SortDemo/example1.html
+jdk1.3.1-linux/demo/applets/SpreadSheet/
 jdk1.3.1-linux/demo/applets/SpreadSheet/Cell.class
 jdk1.3.1-linux/demo/applets/SpreadSheet/CellUpdater.class
 jdk1.3.1-linux/demo/applets/SpreadSheet/InputField.class
@@ -262,21 +296,26 @@ jdk1.3.1-linux/demo/applets/SpreadSheet/SpreadSheet.class
 jdk1.3.1-linux/demo/applets/SpreadSheet/SpreadSheet.java
 jdk1.3.1-linux/demo/applets/SpreadSheet/SpreadSheetInput.class
 jdk1.3.1-linux/demo/applets/SpreadSheet/example1.html
+jdk1.3.1-linux/demo/applets/SymbolTest/
 jdk1.3.1-linux/demo/applets/SymbolTest/SymbolCanvas.class
 jdk1.3.1-linux/demo/applets/SymbolTest/SymbolTest$MyAdapter.class
 jdk1.3.1-linux/demo/applets/SymbolTest/SymbolTest.class
 jdk1.3.1-linux/demo/applets/SymbolTest/SymbolTest.java
 jdk1.3.1-linux/demo/applets/SymbolTest/example1.html
+jdk1.3.1-linux/demo/applets/TicTacToe/
 jdk1.3.1-linux/demo/applets/TicTacToe/TicTacToe.class
 jdk1.3.1-linux/demo/applets/TicTacToe/TicTacToe.java
+jdk1.3.1-linux/demo/applets/TicTacToe/audio/
 jdk1.3.1-linux/demo/applets/TicTacToe/audio/beep.au
 jdk1.3.1-linux/demo/applets/TicTacToe/audio/ding.au
 jdk1.3.1-linux/demo/applets/TicTacToe/audio/return.au
 jdk1.3.1-linux/demo/applets/TicTacToe/audio/yahoo1.au
 jdk1.3.1-linux/demo/applets/TicTacToe/audio/yahoo2.au
 jdk1.3.1-linux/demo/applets/TicTacToe/example1.html
+jdk1.3.1-linux/demo/applets/TicTacToe/images/
 jdk1.3.1-linux/demo/applets/TicTacToe/images/cross.gif
 jdk1.3.1-linux/demo/applets/TicTacToe/images/not.gif
+jdk1.3.1-linux/demo/applets/WireFrame/
 jdk1.3.1-linux/demo/applets/WireFrame/FileFormatException.class
 jdk1.3.1-linux/demo/applets/WireFrame/Matrix3D.class
 jdk1.3.1-linux/demo/applets/WireFrame/Matrix3D.java
@@ -287,58 +326,82 @@ jdk1.3.1-linux/demo/applets/WireFrame/example1.html
 jdk1.3.1-linux/demo/applets/WireFrame/example2.html
 jdk1.3.1-linux/demo/applets/WireFrame/example3.html
 jdk1.3.1-linux/demo/applets/WireFrame/example4.html
+jdk1.3.1-linux/demo/applets/WireFrame/models/
 jdk1.3.1-linux/demo/applets/WireFrame/models/cube.obj
 jdk1.3.1-linux/demo/applets/WireFrame/models/dinasaur.obj
 jdk1.3.1-linux/demo/applets/WireFrame/models/hughes_500.obj
 jdk1.3.1-linux/demo/applets/WireFrame/models/knoxS.obj
+jdk1.3.1-linux/demo/jfc/
+jdk1.3.1-linux/demo/jfc/DBDemos/
+jdk1.3.1-linux/demo/jfc/DBDemos/CreateCoffees/
+jdk1.3.1-linux/demo/jfc/DBDemos/CreateCoffees/MSAccess/
 jdk1.3.1-linux/demo/jfc/DBDemos/CreateCoffees/MSAccess/CreateCoffees.class
 jdk1.3.1-linux/demo/jfc/DBDemos/CreateCoffees/MSAccess/CreateCoffees.java
 jdk1.3.1-linux/demo/jfc/DBDemos/CreateCoffees/MSAccess/runnit.bat
+jdk1.3.1-linux/demo/jfc/DBDemos/CreateCoffees/Sybase/
 jdk1.3.1-linux/demo/jfc/DBDemos/CreateCoffees/Sybase/CreateCoffees.class
 jdk1.3.1-linux/demo/jfc/DBDemos/CreateCoffees/Sybase/CreateCoffees.java
 jdk1.3.1-linux/demo/jfc/DBDemos/CreateCoffees/Sybase/runnit.bat
+jdk1.3.1-linux/demo/jfc/DBDemos/CreateSuppliers/
+jdk1.3.1-linux/demo/jfc/DBDemos/CreateSuppliers/MSAccess/
 jdk1.3.1-linux/demo/jfc/DBDemos/CreateSuppliers/MSAccess/CreateSuppliers.class
 jdk1.3.1-linux/demo/jfc/DBDemos/CreateSuppliers/MSAccess/CreateSuppliers.java
 jdk1.3.1-linux/demo/jfc/DBDemos/CreateSuppliers/MSAccess/runnit.bat
+jdk1.3.1-linux/demo/jfc/DBDemos/CreateSuppliers/Sybase/
 jdk1.3.1-linux/demo/jfc/DBDemos/CreateSuppliers/Sybase/CreateSuppliers.class
 jdk1.3.1-linux/demo/jfc/DBDemos/CreateSuppliers/Sybase/CreateSuppliers.java
 jdk1.3.1-linux/demo/jfc/DBDemos/CreateSuppliers/Sybase/runnit.bat
+jdk1.3.1-linux/demo/jfc/DBDemos/InsertCoffees/
+jdk1.3.1-linux/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/
 jdk1.3.1-linux/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/InsertCoffees.class
 jdk1.3.1-linux/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/InsertCoffees.java
 jdk1.3.1-linux/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/runnit.bat
+jdk1.3.1-linux/demo/jfc/DBDemos/InsertCoffees/Sybase/
 jdk1.3.1-linux/demo/jfc/DBDemos/InsertCoffees/Sybase/InsertCoffees.class
 jdk1.3.1-linux/demo/jfc/DBDemos/InsertCoffees/Sybase/InsertCoffees.java
 jdk1.3.1-linux/demo/jfc/DBDemos/InsertCoffees/Sybase/runnit.bat
+jdk1.3.1-linux/demo/jfc/DBDemos/InsertSuppliers/
+jdk1.3.1-linux/demo/jfc/DBDemos/InsertSuppliers/MSAccess/
 jdk1.3.1-linux/demo/jfc/DBDemos/InsertSuppliers/MSAccess/InsertSuppliers.class
 jdk1.3.1-linux/demo/jfc/DBDemos/InsertSuppliers/MSAccess/InsertSuppliers.java
 jdk1.3.1-linux/demo/jfc/DBDemos/InsertSuppliers/MSAccess/runnit.bat
+jdk1.3.1-linux/demo/jfc/DBDemos/InsertSuppliers/Sybase/
 jdk1.3.1-linux/demo/jfc/DBDemos/InsertSuppliers/Sybase/InsertSuppliers.class
 jdk1.3.1-linux/demo/jfc/DBDemos/InsertSuppliers/Sybase/InsertSuppliers.java
 jdk1.3.1-linux/demo/jfc/DBDemos/InsertSuppliers/Sybase/runnit.bat
+jdk1.3.1-linux/demo/jfc/DBDemos/JavaDB/
 jdk1.3.1-linux/demo/jfc/DBDemos/JavaDB/CAFEJAVA.MDB
 jdk1.3.1-linux/demo/jfc/DBDemos/JavaDB/CAFEJAVA.ldb
 jdk1.3.1-linux/demo/jfc/DBDemos/README.txt
 jdk1.3.1-linux/demo/jfc/DBDemos/private.fls
+jdk1.3.1-linux/demo/jfc/FileChooserDemo/
 jdk1.3.1-linux/demo/jfc/FileChooserDemo/FileChooserDemo.jar
 jdk1.3.1-linux/demo/jfc/FileChooserDemo/README.txt
+jdk1.3.1-linux/demo/jfc/FileChooserDemo/images/
 jdk1.3.1-linux/demo/jfc/FileChooserDemo/images/gifIcon.gif
 jdk1.3.1-linux/demo/jfc/FileChooserDemo/images/jpgIcon.jpg
+jdk1.3.1-linux/demo/jfc/FileChooserDemo/src/
 jdk1.3.1-linux/demo/jfc/FileChooserDemo/src/ExampleFileFilter.java
 jdk1.3.1-linux/demo/jfc/FileChooserDemo/src/ExampleFileView.java
 jdk1.3.1-linux/demo/jfc/FileChooserDemo/src/FileChooserDemo.java
+jdk1.3.1-linux/demo/jfc/Font2DTest/
 jdk1.3.1-linux/demo/jfc/Font2DTest/Font2DTest.html
 jdk1.3.1-linux/demo/jfc/Font2DTest/Font2DTest.jar
 jdk1.3.1-linux/demo/jfc/Font2DTest/README.txt
+jdk1.3.1-linux/demo/jfc/Font2DTest/resources/
 jdk1.3.1-linux/demo/jfc/Font2DTest/resources/TextResources.properties
 jdk1.3.1-linux/demo/jfc/Font2DTest/resources/TextResources_de.properties
 jdk1.3.1-linux/demo/jfc/Font2DTest/resources/TextResources_en.properties
 jdk1.3.1-linux/demo/jfc/Font2DTest/resources/TextResources_en_GB.properties
 jdk1.3.1-linux/demo/jfc/Font2DTest/resources/TextResources_ko.properties
 jdk1.3.1-linux/demo/jfc/Font2DTest/resources/resource.data
+jdk1.3.1-linux/demo/jfc/Font2DTest/src/
 jdk1.3.1-linux/demo/jfc/Font2DTest/src/Font2DTest.java
+jdk1.3.1-linux/demo/jfc/Java2D/
 jdk1.3.1-linux/demo/jfc/Java2D/Java2Demo.html
 jdk1.3.1-linux/demo/jfc/Java2D/Java2Demo.jar
 jdk1.3.1-linux/demo/jfc/Java2D/README.txt
+jdk1.3.1-linux/demo/jfc/Java2D/src/
 jdk1.3.1-linux/demo/jfc/Java2D/src/AnimatingControlsSurface.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/AnimatingSurface.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/CloningFeature.java
@@ -360,47 +423,61 @@ jdk1.3.1-linux/demo/jfc/Java2D/src/RunWindow.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/Surface.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/TextureChooser.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/Tools.java
+jdk1.3.1-linux/demo/jfc/Java2D/src/demos/
+jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Arcs_Curves/
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Arcs_Curves/Arcs.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Arcs_Curves/BezierAnim.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Arcs_Curves/Curves.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Arcs_Curves/Ellipses.java
+jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Clipping/
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Clipping/Areas.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Clipping/ClipAnim.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Clipping/Intersection.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Clipping/Text.java
+jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Colors/
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Colors/BullsEye.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Colors/ColorConvert.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Colors/Rotator3D.java
+jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Composite/
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Composite/ACimages.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Composite/ACrules.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Composite/FadeAnim.java
+jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Fonts/
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Fonts/AllFonts.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Fonts/AttributedStr.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Fonts/Highlighting.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Fonts/Outline.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Fonts/Tree.java
+jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Images/
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Images/DukeAnim.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Images/ImageOps.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Images/JPEGFlip.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Images/WarpImage.java
+jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Lines/
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Lines/Caps.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Lines/Dash.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Lines/Joins.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Lines/LineAnim.java
+jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Mix/
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Mix/Balls.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Mix/BezierScroller.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Mix/Stars3D.java
+jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Paint/
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Paint/GradAnim.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Paint/Gradient.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Paint/Texture.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Paint/TextureAnim.java
+jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Paths/
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Paths/Append.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Paths/CurveQuadTo.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Paths/FillStroke.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Paths/WindingRule.java
+jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Transforms/
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Transforms/Rotate.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Transforms/SelectTx.java
 jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Transforms/TransformAnim.java
+jdk1.3.1-linux/demo/jfc/Metalworks/
+jdk1.3.1-linux/demo/jfc/Metalworks/HelpFiles/
 jdk1.3.1-linux/demo/jfc/Metalworks/HelpFiles/back.gif
 jdk1.3.1-linux/demo/jfc/Metalworks/HelpFiles/credits.html
 jdk1.3.1-linux/demo/jfc/Metalworks/HelpFiles/duke.gif
@@ -412,12 +489,14 @@ jdk1.3.1-linux/demo/jfc/Metalworks/HelpFiles/toc.html
 jdk1.3.1-linux/demo/jfc/Metalworks/Metalworks.jar
 jdk1.3.1-linux/demo/jfc/Metalworks/MyTheme.theme
 jdk1.3.1-linux/demo/jfc/Metalworks/README.txt
+jdk1.3.1-linux/demo/jfc/Metalworks/images/
 jdk1.3.1-linux/demo/jfc/Metalworks/images/palette_crop.gif
 jdk1.3.1-linux/demo/jfc/Metalworks/images/palette_draw.gif
 jdk1.3.1-linux/demo/jfc/Metalworks/images/palette_hand.gif
 jdk1.3.1-linux/demo/jfc/Metalworks/images/palette_select.gif
 jdk1.3.1-linux/demo/jfc/Metalworks/images/palette_text.gif
 jdk1.3.1-linux/demo/jfc/Metalworks/images/palette_zoom.gif
+jdk1.3.1-linux/demo/jfc/Metalworks/src/
 jdk1.3.1-linux/demo/jfc/Metalworks/src/AquaMetalTheme.java
 jdk1.3.1-linux/demo/jfc/Metalworks/src/BigContrastMetalTheme.java
 jdk1.3.1-linux/demo/jfc/Metalworks/src/ContrastMetalTheme.java
@@ -433,8 +512,10 @@ jdk1.3.1-linux/demo/jfc/Metalworks/src/MetalworksInBox.java
 jdk1.3.1-linux/demo/jfc/Metalworks/src/MetalworksPrefs.java
 jdk1.3.1-linux/demo/jfc/Metalworks/src/PropertiesMetalTheme.java
 jdk1.3.1-linux/demo/jfc/Metalworks/src/UISwitchListener.java
+jdk1.3.1-linux/demo/jfc/Notepad/
 jdk1.3.1-linux/demo/jfc/Notepad/Notepad.jar
 jdk1.3.1-linux/demo/jfc/Notepad/README.txt
+jdk1.3.1-linux/demo/jfc/Notepad/resources/
 jdk1.3.1-linux/demo/jfc/Notepad/resources/Notepad.properties
 jdk1.3.1-linux/demo/jfc/Notepad/resources/Notepad_fr.properties
 jdk1.3.1-linux/demo/jfc/Notepad/resources/Notepad_sv.properties
@@ -445,22 +526,30 @@ jdk1.3.1-linux/demo/jfc/Notepad/resources/new.gif
 jdk1.3.1-linux/demo/jfc/Notepad/resources/open.gif
 jdk1.3.1-linux/demo/jfc/Notepad/resources/paste.gif
 jdk1.3.1-linux/demo/jfc/Notepad/resources/save.gif
+jdk1.3.1-linux/demo/jfc/Notepad/src/
 jdk1.3.1-linux/demo/jfc/Notepad/src/ElementTreePanel.java
 jdk1.3.1-linux/demo/jfc/Notepad/src/Notepad.java
+jdk1.3.1-linux/demo/jfc/SampleTree/
 jdk1.3.1-linux/demo/jfc/SampleTree/README.txt
 jdk1.3.1-linux/demo/jfc/SampleTree/SampleTree.jar
+jdk1.3.1-linux/demo/jfc/SampleTree/images/
 jdk1.3.1-linux/demo/jfc/SampleTree/images/collapsed.gif
 jdk1.3.1-linux/demo/jfc/SampleTree/images/expanded.gif
+jdk1.3.1-linux/demo/jfc/SampleTree/src/
 jdk1.3.1-linux/demo/jfc/SampleTree/src/DynamicTreeNode.java
 jdk1.3.1-linux/demo/jfc/SampleTree/src/SampleData.java
 jdk1.3.1-linux/demo/jfc/SampleTree/src/SampleTree.java
 jdk1.3.1-linux/demo/jfc/SampleTree/src/SampleTreeCellRenderer.java
 jdk1.3.1-linux/demo/jfc/SampleTree/src/SampleTreeModel.java
+jdk1.3.1-linux/demo/jfc/SimpleExample/
 jdk1.3.1-linux/demo/jfc/SimpleExample/README.txt
 jdk1.3.1-linux/demo/jfc/SimpleExample/SimpleExample.jar
+jdk1.3.1-linux/demo/jfc/SimpleExample/src/
 jdk1.3.1-linux/demo/jfc/SimpleExample/src/SimpleExample.java
+jdk1.3.1-linux/demo/jfc/Stylepad/
 jdk1.3.1-linux/demo/jfc/Stylepad/README.txt
 jdk1.3.1-linux/demo/jfc/Stylepad/Stylepad.jar
+jdk1.3.1-linux/demo/jfc/Stylepad/resources/
 jdk1.3.1-linux/demo/jfc/Stylepad/resources/Notepad.properties
 jdk1.3.1-linux/demo/jfc/Stylepad/resources/Notepad_fr.properties
 jdk1.3.1-linux/demo/jfc/Stylepad/resources/Notepad_sv.properties
@@ -487,19 +576,24 @@ jdk1.3.1-linux/demo/jfc/Stylepad/resources/rabbit2.gif
 jdk1.3.1-linux/demo/jfc/Stylepad/resources/right.gif
 jdk1.3.1-linux/demo/jfc/Stylepad/resources/save.gif
 jdk1.3.1-linux/demo/jfc/Stylepad/resources/underline.gif
+jdk1.3.1-linux/demo/jfc/Stylepad/src/
 jdk1.3.1-linux/demo/jfc/Stylepad/src/ElementTreePanel.java
 jdk1.3.1-linux/demo/jfc/Stylepad/src/HelloWorld.java
 jdk1.3.1-linux/demo/jfc/Stylepad/src/Notepad.java
 jdk1.3.1-linux/demo/jfc/Stylepad/src/Stylepad.java
 jdk1.3.1-linux/demo/jfc/Stylepad/src/Wonderland.java
+jdk1.3.1-linux/demo/jfc/SwingApplet/
 jdk1.3.1-linux/demo/jfc/SwingApplet/README.txt
 jdk1.3.1-linux/demo/jfc/SwingApplet/SwingApplet.html
 jdk1.3.1-linux/demo/jfc/SwingApplet/SwingApplet.jar
+jdk1.3.1-linux/demo/jfc/SwingApplet/src/
 jdk1.3.1-linux/demo/jfc/SwingApplet/src/SwingApplet.java
+jdk1.3.1-linux/demo/jfc/SwingSet2/
 jdk1.3.1-linux/demo/jfc/SwingSet2/README.txt
 jdk1.3.1-linux/demo/jfc/SwingSet2/SwingSet2.html
 jdk1.3.1-linux/demo/jfc/SwingSet2/SwingSet2.jar
 jdk1.3.1-linux/demo/jfc/SwingSet2/SwingSet2Plugin.html
+jdk1.3.1-linux/demo/jfc/SwingSet2/src/
 jdk1.3.1-linux/demo/jfc/SwingSet2/src/AquaTheme.java
 jdk1.3.1-linux/demo/jfc/SwingSet2/src/BezierAnimationPanel.java
 jdk1.3.1-linux/demo/jfc/SwingSet2/src/ButtonDemo.java
@@ -531,8 +625,10 @@ jdk1.3.1-linux/demo/jfc/SwingSet2/src/TabbedPaneDemo.java
 jdk1.3.1-linux/demo/jfc/SwingSet2/src/TableDemo.java
 jdk1.3.1-linux/demo/jfc/SwingSet2/src/ToolTipDemo.java
 jdk1.3.1-linux/demo/jfc/SwingSet2/src/TreeDemo.java
+jdk1.3.1-linux/demo/jfc/TableExample/
 jdk1.3.1-linux/demo/jfc/TableExample/README.txt
 jdk1.3.1-linux/demo/jfc/TableExample/TableExample.jar
+jdk1.3.1-linux/demo/jfc/TableExample/src/
 jdk1.3.1-linux/demo/jfc/TableExample/src/JDBCAdapter.java
 jdk1.3.1-linux/demo/jfc/TableExample/src/OldJTable.java
 jdk1.3.1-linux/demo/jfc/TableExample/src/TableExample.java
@@ -541,10 +637,13 @@ jdk1.3.1-linux/demo/jfc/TableExample/src/TableExample3.java
 jdk1.3.1-linux/demo/jfc/TableExample/src/TableExample4.java
 jdk1.3.1-linux/demo/jfc/TableExample/src/TableMap.java
 jdk1.3.1-linux/demo/jfc/TableExample/src/TableSorter.java
+jdk1.3.1-linux/demo/jpda/
 jdk1.3.1-linux/demo/jpda/examples.jar
+jdk1.3.1-linux/demo/sound/
 jdk1.3.1-linux/demo/sound/JavaSound.html
 jdk1.3.1-linux/demo/sound/JavaSound.jar
 jdk1.3.1-linux/demo/sound/README.txt
+jdk1.3.1-linux/demo/sound/media/
 jdk1.3.1-linux/demo/sound/media/ambient.rmf
 jdk1.3.1-linux/demo/sound/media/bark.aiff
 jdk1.3.1-linux/demo/sound/media/bong.wav
@@ -554,6 +653,7 @@ jdk1.3.1-linux/demo/sound/media/sfx-medley.rmf
 jdk1.3.1-linux/demo/sound/media/spacemusic.au
 jdk1.3.1-linux/demo/sound/media/trance.rmf
 jdk1.3.1-linux/demo/sound/media/trippygaia1.mid
+jdk1.3.1-linux/demo/sound/src/
 jdk1.3.1-linux/demo/sound/src/CapturePlayback.java
 jdk1.3.1-linux/demo/sound/src/ControlContext.java
 jdk1.3.1-linux/demo/sound/src/Groove.java
@@ -562,6 +662,8 @@ jdk1.3.1-linux/demo/sound/src/JavaSoundApplet.java
 jdk1.3.1-linux/demo/sound/src/Juke.java
 jdk1.3.1-linux/demo/sound/src/MidiSynth.java
 jdk1.3.1-linux/demo/sound/src/TempoDial.java
+jdk1.3.1-linux/include/
+jdk1.3.1-linux/include-old/
 jdk1.3.1-linux/include-old/StubPreamble.h
 jdk1.3.1-linux/include-old/alloc_cache.h
 jdk1.3.1-linux/include-old/bag.h
@@ -586,6 +688,7 @@ jdk1.3.1-linux/include-old/jmath.h
 jdk1.3.1-linux/include-old/jvm.h
 jdk1.3.1-linux/include-old/jvmdi.h
 jdk1.3.1-linux/include-old/jvmpi.h
+jdk1.3.1-linux/include-old/linux/
 jdk1.3.1-linux/include-old/linux/byteorder_md.h
 jdk1.3.1-linux/include-old/linux/gc_md.h
 jdk1.3.1-linux/include-old/linux/hpi_md.h
@@ -621,17 +724,22 @@ jdk1.3.1-linux/include/jawt.h
 jdk1.3.1-linux/include/jni.h
 jdk1.3.1-linux/include/jvmdi.h
 jdk1.3.1-linux/include/jvmpi.h
+jdk1.3.1-linux/include/linux/
 jdk1.3.1-linux/include/linux/jawt_md.h
 jdk1.3.1-linux/include/linux/jni_md.h
+jdk1.3.1-linux/jre/
 jdk1.3.1-linux/jre/CHANGES
 jdk1.3.1-linux/jre/COPYRIGHT
 jdk1.3.1-linux/jre/ControlPanel.html
 jdk1.3.1-linux/jre/LICENSE
 jdk1.3.1-linux/jre/README
 jdk1.3.1-linux/jre/Welcome.html
+jdk1.3.1-linux/jre/bin/
 jdk1.3.1-linux/jre/bin/.java_wrapper
 jdk1.3.1-linux/jre/bin/ControlPanel
 jdk1.3.1-linux/jre/bin/awt_robot
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/
 jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/appletviewer
 jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/extcheck
 jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/idlj
@@ -654,6 +762,7 @@ jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/rmid
 jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/rmiregistry
 jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/serialver
 jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads/tnameserv
+jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/native_threads/
 jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/native_threads/java
 jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/native_threads/java_vm
 jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/native_threads/keytool
@@ -669,17 +778,23 @@ jdk1.3.1-linux/jre/bin/realpath
 jdk1.3.1-linux/jre/bin/rmid
 jdk1.3.1-linux/jre/bin/rmiregistry
 jdk1.3.1-linux/jre/bin/tnameserv
+jdk1.3.1-linux/jre/lib/
+jdk1.3.1-linux/jre/lib/applet/
+jdk1.3.1-linux/jre/lib/audio/
 jdk1.3.1-linux/jre/lib/audio/soundbank.gm
+jdk1.3.1-linux/jre/lib/cmm/
 jdk1.3.1-linux/jre/lib/cmm/CIEXYZ.pf
 jdk1.3.1-linux/jre/lib/cmm/GRAY.pf
 jdk1.3.1-linux/jre/lib/cmm/LINEAR_RGB.pf
 jdk1.3.1-linux/jre/lib/cmm/PYCC.pf
 jdk1.3.1-linux/jre/lib/cmm/sRGB.pf
 jdk1.3.1-linux/jre/lib/content-types.properties
+jdk1.3.1-linux/jre/lib/ext/
 jdk1.3.1-linux/jre/lib/flavormap.properties
 jdk1.3.1-linux/jre/lib/font.properties
 jdk1.3.1-linux/jre/lib/font.properties.ja
 jdk1.3.1-linux/jre/lib/font.properties.zh
+jdk1.3.1-linux/jre/lib/fonts/
 jdk1.3.1-linux/jre/lib/fonts/LucidaBrightDemiBold.ttf
 jdk1.3.1-linux/jre/lib/fonts/LucidaBrightDemiItalic.ttf
 jdk1.3.1-linux/jre/lib/fonts/LucidaBrightItalic.ttf
@@ -694,10 +809,14 @@ jdk1.3.1-linux/jre/lib/fonts/LucidaTypewriterOblique.ttf
 jdk1.3.1-linux/jre/lib/fonts/LucidaTypewriterRegular.ttf
 jdk1.3.1-linux/jre/lib/fonts/fonts.dir
 jdk1.3.1-linux/jre/lib/i18n.jar
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/classic/
 jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/classic/Xusage.txt
 jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/classic/libjvm.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/client/
 jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/client/Xusage.txt
 jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/client/libjvm.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/green_threads/
 jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/green_threads/libhpi.so
 jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/hotspot
 jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libJdbcOdbc.so
@@ -719,9 +838,13 @@ jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libnet.so
 jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libpreemptive_close.so
 jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libverify.so
 jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/libzip.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/native_threads/
 jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/native_threads/libhpi.so
+jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/server/
 jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/server/Xusage.txt
 jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/server/libjvm.so
+jdk1.3.1-linux/jre/lib/images/
+jdk1.3.1-linux/jre/lib/images/cursors/
 jdk1.3.1-linux/jre/lib/images/cursors/cursors.properties
 jdk1.3.1-linux/jre/lib/images/cursors/invalid32x32.gif
 jdk1.3.1-linux/jre/lib/images/cursors/motif_CopyDrop32x32.gif
@@ -732,232 +855,116 @@ jdk1.3.1-linux/jre/lib/images/cursors/motif_MoveDrop32x32.gif
 jdk1.3.1-linux/jre/lib/images/cursors/motif_MoveNoDrop32x32.gif
 jdk1.3.1-linux/jre/lib/javaplugin.jar
 jdk1.3.1-linux/jre/lib/jvm.cfg
+@comment jdk1.3.1-linux/jre/lib/jvm.cfg.orig
 jdk1.3.1-linux/jre/lib/jvm.hprof.txt
 jdk1.3.1-linux/jre/lib/jvm.jcov.txt
+jdk1.3.1-linux/jre/lib/locale/
+jdk1.3.1-linux/jre/lib/locale/de/
+jdk1.3.1-linux/jre/lib/locale/de/LC_MESSAGES/
 jdk1.3.1-linux/jre/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.3.1-linux/jre/lib/locale/es/
+jdk1.3.1-linux/jre/lib/locale/es/LC_MESSAGES/
 jdk1.3.1-linux/jre/lib/locale/es/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.3.1-linux/jre/lib/locale/fr/
+jdk1.3.1-linux/jre/lib/locale/fr/LC_MESSAGES/
 jdk1.3.1-linux/jre/lib/locale/fr/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.3.1-linux/jre/lib/locale/it/
+jdk1.3.1-linux/jre/lib/locale/it/LC_MESSAGES/
 jdk1.3.1-linux/jre/lib/locale/it/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.3.1-linux/jre/lib/locale/ja/
+jdk1.3.1-linux/jre/lib/locale/ja/LC_MESSAGES/
 jdk1.3.1-linux/jre/lib/locale/ja/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.3.1-linux/jre/lib/locale/ko/
+jdk1.3.1-linux/jre/lib/locale/ko.UTF-8/
+jdk1.3.1-linux/jre/lib/locale/ko.UTF-8/LC_MESSAGES/
 jdk1.3.1-linux/jre/lib/locale/ko.UTF-8/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.3.1-linux/jre/lib/locale/ko/LC_MESSAGES/
 jdk1.3.1-linux/jre/lib/locale/ko/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.3.1-linux/jre/lib/locale/sv/
+jdk1.3.1-linux/jre/lib/locale/sv/LC_MESSAGES/
 jdk1.3.1-linux/jre/lib/locale/sv/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.3.1-linux/jre/lib/locale/zh/
+jdk1.3.1-linux/jre/lib/locale/zh.GBK/
+jdk1.3.1-linux/jre/lib/locale/zh.GBK/LC_MESSAGES/
 jdk1.3.1-linux/jre/lib/locale/zh.GBK/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.3.1-linux/jre/lib/locale/zh/LC_MESSAGES/
 jdk1.3.1-linux/jre/lib/locale/zh/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.3.1-linux/jre/lib/locale/zh_TW/
+jdk1.3.1-linux/jre/lib/locale/zh_TW.BIG5/
+jdk1.3.1-linux/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES/
 jdk1.3.1-linux/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
+jdk1.3.1-linux/jre/lib/locale/zh_TW/LC_MESSAGES/
 jdk1.3.1-linux/jre/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
 jdk1.3.1-linux/jre/lib/psfont.properties.ja
 jdk1.3.1-linux/jre/lib/psfontj2d.properties
 jdk1.3.1-linux/jre/lib/rt.jar
+jdk1.3.1-linux/jre/lib/security/
 jdk1.3.1-linux/jre/lib/security/cacerts
 jdk1.3.1-linux/jre/lib/security/java.policy
 jdk1.3.1-linux/jre/lib/security/java.security
 jdk1.3.1-linux/jre/lib/sunrsasign.jar
 jdk1.3.1-linux/jre/lib/tzmappings
+jdk1.3.1-linux/jre/plugin/
+jdk1.3.1-linux/jre/plugin/${MACHINE_ARCH}/
+jdk1.3.1-linux/jre/plugin/${MACHINE_ARCH}/ns4/
 jdk1.3.1-linux/jre/plugin/${MACHINE_ARCH}/ns4/javaplugin.so
+jdk1.3.1-linux/jre/plugin/${MACHINE_ARCH}/ns600/
 jdk1.3.1-linux/jre/plugin/${MACHINE_ARCH}/ns600/libjavaplugin_oji.so
+jdk1.3.1-linux/lib/
+jdk1.3.1-linux/lib/com/
+jdk1.3.1-linux/lib/com/sun/
+jdk1.3.1-linux/lib/com/sun/tools/
+jdk1.3.1-linux/lib/com/sun/tools/javah/
+jdk1.3.1-linux/lib/com/sun/tools/javah/resources/
+jdk1.3.1-linux/lib/com/sun/tools/javah/resources/OpenBSD_${MACHINE_ARCH}.properties
 jdk1.3.1-linux/lib/dt.jar
 jdk1.3.1-linux/lib/htmlconverter.jar
+jdk1.3.1-linux/lib/${MACHINE_ARCH}/
 jdk1.3.1-linux/lib/${MACHINE_ARCH}/libdt_socket.so
 jdk1.3.1-linux/lib/${MACHINE_ARCH}/libjdwp.so
 jdk1.3.1-linux/lib/ir.idl
 jdk1.3.1-linux/lib/orb.idl
 jdk1.3.1-linux/lib/tools.jar
+jdk1.3.1-linux/man/
 jdk1.3.1-linux/man/ja
-jdk1.3.1-linux/man/ja_JP.eucJP/man1/appletviewer.1
-jdk1.3.1-linux/man/ja_JP.eucJP/man1/extcheck.1
-jdk1.3.1-linux/man/ja_JP.eucJP/man1/jar.1
-jdk1.3.1-linux/man/ja_JP.eucJP/man1/jarsigner.1
-jdk1.3.1-linux/man/ja_JP.eucJP/man1/java.1
-jdk1.3.1-linux/man/ja_JP.eucJP/man1/javac.1
-jdk1.3.1-linux/man/ja_JP.eucJP/man1/javadoc.1
-jdk1.3.1-linux/man/ja_JP.eucJP/man1/javah.1
-jdk1.3.1-linux/man/ja_JP.eucJP/man1/javap.1
-jdk1.3.1-linux/man/ja_JP.eucJP/man1/jdb.1
-jdk1.3.1-linux/man/ja_JP.eucJP/man1/keytool.1
-jdk1.3.1-linux/man/ja_JP.eucJP/man1/native2ascii.1
-jdk1.3.1-linux/man/ja_JP.eucJP/man1/rmic.1
-jdk1.3.1-linux/man/ja_JP.eucJP/man1/rmid.1
-jdk1.3.1-linux/man/ja_JP.eucJP/man1/rmiregistry.1
-jdk1.3.1-linux/man/ja_JP.eucJP/man1/serialver.1
-jdk1.3.1-linux/man/ja_JP.eucJP/man1/tnameserv.1
-jdk1.3.1-linux/man/man1/appletviewer.1
-jdk1.3.1-linux/man/man1/extcheck.1
-jdk1.3.1-linux/man/man1/jar.1
-jdk1.3.1-linux/man/man1/jarsigner.1
-jdk1.3.1-linux/man/man1/java.1
-jdk1.3.1-linux/man/man1/javac.1
-jdk1.3.1-linux/man/man1/javadoc.1
-jdk1.3.1-linux/man/man1/javah.1
-jdk1.3.1-linux/man/man1/javap.1
-jdk1.3.1-linux/man/man1/jdb.1
-jdk1.3.1-linux/man/man1/keytool.1
-jdk1.3.1-linux/man/man1/native2ascii.1
-jdk1.3.1-linux/man/man1/rmic.1
-jdk1.3.1-linux/man/man1/rmid.1
-jdk1.3.1-linux/man/man1/rmiregistry.1
-jdk1.3.1-linux/man/man1/serialver.1
-jdk1.3.1-linux/man/man1/tnameserv.1
+jdk1.3.1-linux/man/ja_JP.eucJP/
+jdk1.3.1-linux/man/ja_JP.eucJP/man1/
+@man jdk1.3.1-linux/man/ja_JP.eucJP/man1/appletviewer.1
+@man jdk1.3.1-linux/man/ja_JP.eucJP/man1/extcheck.1
+@man jdk1.3.1-linux/man/ja_JP.eucJP/man1/jar.1
+@man jdk1.3.1-linux/man/ja_JP.eucJP/man1/jarsigner.1
+@man jdk1.3.1-linux/man/ja_JP.eucJP/man1/java.1
+@man jdk1.3.1-linux/man/ja_JP.eucJP/man1/javac.1
+@man jdk1.3.1-linux/man/ja_JP.eucJP/man1/javadoc.1
+@man jdk1.3.1-linux/man/ja_JP.eucJP/man1/javah.1
+@man jdk1.3.1-linux/man/ja_JP.eucJP/man1/javap.1
+@man jdk1.3.1-linux/man/ja_JP.eucJP/man1/jdb.1
+@man jdk1.3.1-linux/man/ja_JP.eucJP/man1/keytool.1
+@man jdk1.3.1-linux/man/ja_JP.eucJP/man1/native2ascii.1
+@man jdk1.3.1-linux/man/ja_JP.eucJP/man1/rmic.1
+@man jdk1.3.1-linux/man/ja_JP.eucJP/man1/rmid.1
+@man jdk1.3.1-linux/man/ja_JP.eucJP/man1/rmiregistry.1
+@man jdk1.3.1-linux/man/ja_JP.eucJP/man1/serialver.1
+@man jdk1.3.1-linux/man/ja_JP.eucJP/man1/tnameserv.1
+jdk1.3.1-linux/man/man1/
+@man jdk1.3.1-linux/man/man1/appletviewer.1
+@man jdk1.3.1-linux/man/man1/extcheck.1
+@man jdk1.3.1-linux/man/man1/jar.1
+@man jdk1.3.1-linux/man/man1/jarsigner.1
+@man jdk1.3.1-linux/man/man1/java.1
+@man jdk1.3.1-linux/man/man1/javac.1
+@man jdk1.3.1-linux/man/man1/javadoc.1
+@man jdk1.3.1-linux/man/man1/javah.1
+@man jdk1.3.1-linux/man/man1/javap.1
+@man jdk1.3.1-linux/man/man1/jdb.1
+@man jdk1.3.1-linux/man/man1/keytool.1
+@man jdk1.3.1-linux/man/man1/native2ascii.1
+@man jdk1.3.1-linux/man/man1/rmic.1
+@man jdk1.3.1-linux/man/man1/rmid.1
+@man jdk1.3.1-linux/man/man1/rmiregistry.1
+@man jdk1.3.1-linux/man/man1/serialver.1
+@man jdk1.3.1-linux/man/man1/tnameserv.1
 jdk1.3.1-linux/src.jar
-@dirrm jdk1.3.1-linux/man/man1
-@dirrm jdk1.3.1-linux/man/ja_JP.eucJP/man1
-@dirrm jdk1.3.1-linux/man/ja_JP.eucJP
-@dirrm jdk1.3.1-linux/man
-@dirrm jdk1.3.1-linux/lib/${MACHINE_ARCH}
-@dirrm jdk1.3.1-linux/lib
-@dirrm jdk1.3.1-linux/jre/plugin/${MACHINE_ARCH}/ns600
-@dirrm jdk1.3.1-linux/jre/plugin/${MACHINE_ARCH}/ns4
-@dirrm jdk1.3.1-linux/jre/plugin/${MACHINE_ARCH}
-@dirrm jdk1.3.1-linux/jre/plugin
-@dirrm jdk1.3.1-linux/jre/lib/security
-@dirrm jdk1.3.1-linux/jre/lib/locale/zh_TW/LC_MESSAGES
-@dirrm jdk1.3.1-linux/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES
-@dirrm jdk1.3.1-linux/jre/lib/locale/zh_TW.BIG5
-@dirrm jdk1.3.1-linux/jre/lib/locale/zh_TW
-@dirrm jdk1.3.1-linux/jre/lib/locale/zh/LC_MESSAGES
-@dirrm jdk1.3.1-linux/jre/lib/locale/zh.GBK/LC_MESSAGES
-@dirrm jdk1.3.1-linux/jre/lib/locale/zh.GBK
-@dirrm jdk1.3.1-linux/jre/lib/locale/zh
-@dirrm jdk1.3.1-linux/jre/lib/locale/sv/LC_MESSAGES
-@dirrm jdk1.3.1-linux/jre/lib/locale/sv
-@dirrm jdk1.3.1-linux/jre/lib/locale/ko/LC_MESSAGES
-@dirrm jdk1.3.1-linux/jre/lib/locale/ko.UTF-8/LC_MESSAGES
-@dirrm jdk1.3.1-linux/jre/lib/locale/ko.UTF-8
-@dirrm jdk1.3.1-linux/jre/lib/locale/ko
-@dirrm jdk1.3.1-linux/jre/lib/locale/ja/LC_MESSAGES
-@dirrm jdk1.3.1-linux/jre/lib/locale/ja
-@dirrm jdk1.3.1-linux/jre/lib/locale/it/LC_MESSAGES
-@dirrm jdk1.3.1-linux/jre/lib/locale/it
-@dirrm jdk1.3.1-linux/jre/lib/locale/fr/LC_MESSAGES
-@dirrm jdk1.3.1-linux/jre/lib/locale/fr
-@dirrm jdk1.3.1-linux/jre/lib/locale/es/LC_MESSAGES
-@dirrm jdk1.3.1-linux/jre/lib/locale/es
-@dirrm jdk1.3.1-linux/jre/lib/locale/de/LC_MESSAGES
-@dirrm jdk1.3.1-linux/jre/lib/locale/de
-@dirrm jdk1.3.1-linux/jre/lib/locale
-@dirrm jdk1.3.1-linux/jre/lib/images/cursors
-@dirrm jdk1.3.1-linux/jre/lib/images
-@dirrm jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/server
-@dirrm jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/native_threads
-@dirrm jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/green_threads
-@dirrm jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/client
-@dirrm jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}/classic
-@dirrm jdk1.3.1-linux/jre/lib/${MACHINE_ARCH}
-@dirrm jdk1.3.1-linux/jre/lib/fonts
 @exec mkdir -p %D/jdk1.3.1-linux/jre/lib/ext
-@dirrm jdk1.3.1-linux/jre/lib/ext
-@dirrm jdk1.3.1-linux/jre/lib/cmm
-@dirrm jdk1.3.1-linux/jre/lib/audio
 @exec mkdir -p %D/jdk1.3.1-linux/jre/lib/applet
-@dirrm jdk1.3.1-linux/jre/lib/applet
-@dirrm jdk1.3.1-linux/jre/lib
-@dirrm jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/native_threads
-@dirrm jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}/green_threads
-@dirrm jdk1.3.1-linux/jre/bin/${MACHINE_ARCH}
-@dirrm jdk1.3.1-linux/jre/bin
-@dirrm jdk1.3.1-linux/jre
-@dirrm jdk1.3.1-linux/include/linux
-@dirrm jdk1.3.1-linux/include-old/linux
-@dirrm jdk1.3.1-linux/include-old
-@dirrm jdk1.3.1-linux/include
-@dirrm jdk1.3.1-linux/demo/sound/src
-@dirrm jdk1.3.1-linux/demo/sound/media
-@dirrm jdk1.3.1-linux/demo/sound
-@dirrm jdk1.3.1-linux/demo/jpda
-@dirrm jdk1.3.1-linux/demo/jfc/TableExample/src
-@dirrm jdk1.3.1-linux/demo/jfc/TableExample
-@dirrm jdk1.3.1-linux/demo/jfc/SwingSet2/src
-@dirrm jdk1.3.1-linux/demo/jfc/SwingSet2
-@dirrm jdk1.3.1-linux/demo/jfc/SwingApplet/src
-@dirrm jdk1.3.1-linux/demo/jfc/SwingApplet
-@dirrm jdk1.3.1-linux/demo/jfc/Stylepad/src
-@dirrm jdk1.3.1-linux/demo/jfc/Stylepad/resources
-@dirrm jdk1.3.1-linux/demo/jfc/Stylepad
-@dirrm jdk1.3.1-linux/demo/jfc/SimpleExample/src
-@dirrm jdk1.3.1-linux/demo/jfc/SimpleExample
-@dirrm jdk1.3.1-linux/demo/jfc/SampleTree/src
-@dirrm jdk1.3.1-linux/demo/jfc/SampleTree/images
-@dirrm jdk1.3.1-linux/demo/jfc/SampleTree
-@dirrm jdk1.3.1-linux/demo/jfc/Notepad/src
-@dirrm jdk1.3.1-linux/demo/jfc/Notepad/resources
-@dirrm jdk1.3.1-linux/demo/jfc/Notepad
-@dirrm jdk1.3.1-linux/demo/jfc/Metalworks/src
-@dirrm jdk1.3.1-linux/demo/jfc/Metalworks/images
-@dirrm jdk1.3.1-linux/demo/jfc/Metalworks/HelpFiles
-@dirrm jdk1.3.1-linux/demo/jfc/Metalworks
-@dirrm jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Transforms
-@dirrm jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Paths
-@dirrm jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Paint
-@dirrm jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Mix
-@dirrm jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Lines
-@dirrm jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Images
-@dirrm jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Fonts
-@dirrm jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Composite
-@dirrm jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Colors
-@dirrm jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Clipping
-@dirrm jdk1.3.1-linux/demo/jfc/Java2D/src/demos/Arcs_Curves
-@dirrm jdk1.3.1-linux/demo/jfc/Java2D/src/demos
-@dirrm jdk1.3.1-linux/demo/jfc/Java2D/src
-@dirrm jdk1.3.1-linux/demo/jfc/Java2D
-@dirrm jdk1.3.1-linux/demo/jfc/Font2DTest/src
-@dirrm jdk1.3.1-linux/demo/jfc/Font2DTest/resources
-@dirrm jdk1.3.1-linux/demo/jfc/Font2DTest
-@dirrm jdk1.3.1-linux/demo/jfc/FileChooserDemo/src
-@dirrm jdk1.3.1-linux/demo/jfc/FileChooserDemo/images
-@dirrm jdk1.3.1-linux/demo/jfc/FileChooserDemo
-@dirrm jdk1.3.1-linux/demo/jfc/DBDemos/JavaDB
-@dirrm jdk1.3.1-linux/demo/jfc/DBDemos/InsertSuppliers/Sybase
-@dirrm jdk1.3.1-linux/demo/jfc/DBDemos/InsertSuppliers/MSAccess
-@dirrm jdk1.3.1-linux/demo/jfc/DBDemos/InsertSuppliers
-@dirrm jdk1.3.1-linux/demo/jfc/DBDemos/InsertCoffees/Sybase
-@dirrm jdk1.3.1-linux/demo/jfc/DBDemos/InsertCoffees/SQLSrvr
-@dirrm jdk1.3.1-linux/demo/jfc/DBDemos/InsertCoffees
-@dirrm jdk1.3.1-linux/demo/jfc/DBDemos/CreateSuppliers/Sybase
-@dirrm jdk1.3.1-linux/demo/jfc/DBDemos/CreateSuppliers/MSAccess
-@dirrm jdk1.3.1-linux/demo/jfc/DBDemos/CreateSuppliers
-@dirrm jdk1.3.1-linux/demo/jfc/DBDemos/CreateCoffees/Sybase
-@dirrm jdk1.3.1-linux/demo/jfc/DBDemos/CreateCoffees/MSAccess
-@dirrm jdk1.3.1-linux/demo/jfc/DBDemos/CreateCoffees
-@dirrm jdk1.3.1-linux/demo/jfc/DBDemos
-@dirrm jdk1.3.1-linux/demo/jfc
-@dirrm jdk1.3.1-linux/demo/applets/WireFrame/models
-@dirrm jdk1.3.1-linux/demo/applets/WireFrame
-@dirrm jdk1.3.1-linux/demo/applets/TicTacToe/images
-@dirrm jdk1.3.1-linux/demo/applets/TicTacToe/audio
-@dirrm jdk1.3.1-linux/demo/applets/TicTacToe
-@dirrm jdk1.3.1-linux/demo/applets/SymbolTest
-@dirrm jdk1.3.1-linux/demo/applets/SpreadSheet
-@dirrm jdk1.3.1-linux/demo/applets/SortDemo
-@dirrm jdk1.3.1-linux/demo/applets/SimpleGraph
-@dirrm jdk1.3.1-linux/demo/applets/NervousText
-@dirrm jdk1.3.1-linux/demo/applets/MoleculeViewer/models
-@dirrm jdk1.3.1-linux/demo/applets/MoleculeViewer
-@dirrm jdk1.3.1-linux/demo/applets/JumpingBox/sounds
-@dirrm jdk1.3.1-linux/demo/applets/JumpingBox
-@dirrm jdk1.3.1-linux/demo/applets/ImageMap/images
-@dirrm jdk1.3.1-linux/demo/applets/ImageMap/audio
-@dirrm jdk1.3.1-linux/demo/applets/ImageMap
-@dirrm jdk1.3.1-linux/demo/applets/GraphicsTest
-@dirrm jdk1.3.1-linux/demo/applets/GraphLayout/audio
-@dirrm jdk1.3.1-linux/demo/applets/GraphLayout
-@dirrm jdk1.3.1-linux/demo/applets/Fractal
-@dirrm jdk1.3.1-linux/demo/applets/DrawTest
-@dirrm jdk1.3.1-linux/demo/applets/DitherTest
-@dirrm jdk1.3.1-linux/demo/applets/Clock
-@dirrm jdk1.3.1-linux/demo/applets/CardTest
-@dirrm jdk1.3.1-linux/demo/applets/Blink
-@dirrm jdk1.3.1-linux/demo/applets/BarChart
-@dirrm jdk1.3.1-linux/demo/applets/ArcTest
-@dirrm jdk1.3.1-linux/demo/applets/Animator/images/SimpleAnimation
-@dirrm jdk1.3.1-linux/demo/applets/Animator/images/Beans
-@dirrm jdk1.3.1-linux/demo/applets/Animator/images
-@dirrm jdk1.3.1-linux/demo/applets/Animator/audio
-@dirrm jdk1.3.1-linux/demo/applets/Animator
-@dirrm jdk1.3.1-linux/demo/applets
-@dirrm jdk1.3.1-linux/demo
-@dirrm jdk1.3.1-linux/bin/${MACHINE_ARCH}/native_threads
-@dirrm jdk1.3.1-linux/bin/${MACHINE_ARCH}/green_threads
-@dirrm jdk1.3.1-linux/bin/${MACHINE_ARCH}
-@dirrm jdk1.3.1-linux/bin
-@dirrm jdk1.3.1-linux
 @exec sysctl -w kern.emul.linux=1

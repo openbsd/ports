@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2004/06/26 07:35:06 xsa Exp $
+# $OpenBSD: Makefile,v 1.25 2004/08/10 22:20:26 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Java Development Kit for Java 2 Standard Edition 1.3"
-VERSION=	1.3.1_11
+VERSION=	1.3.1_12
 
 DISTNAME=	jdk${VERSION}
 PKGNAME=	jdk-linux-${VERSION}
