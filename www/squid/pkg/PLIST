@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/03/01 04:36:30 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/04/17 18:03:21 brad Exp $
 bin/RunAccel
 bin/RunCache
 bin/squid
@@ -36,6 +36,35 @@ share/examples/squid/errors/Bulgarian/ERR_UNSUP_REQ
 share/examples/squid/errors/Bulgarian/ERR_URN_RESOLVE
 share/examples/squid/errors/Bulgarian/ERR_WRITE_ERROR
 share/examples/squid/errors/Bulgarian/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Catalan/ERR_ACCESS_DENIED
+share/examples/squid/errors/Catalan/ERR_CACHE_ACCESS_DENIED
+share/examples/squid/errors/Catalan/ERR_CACHE_MGR_ACCESS_DENIED
+share/examples/squid/errors/Catalan/ERR_CANNOT_FORWARD
+share/examples/squid/errors/Catalan/ERR_CONNECT_FAIL
+share/examples/squid/errors/Catalan/ERR_DNS_FAIL
+share/examples/squid/errors/Catalan/ERR_FORWARDING_DENIED
+share/examples/squid/errors/Catalan/ERR_FTP_DISABLED
+share/examples/squid/errors/Catalan/ERR_FTP_FAILURE
+share/examples/squid/errors/Catalan/ERR_FTP_FORBIDDEN
+share/examples/squid/errors/Catalan/ERR_FTP_NOT_FOUND
+share/examples/squid/errors/Catalan/ERR_FTP_PUT_CREATED
+share/examples/squid/errors/Catalan/ERR_FTP_PUT_ERROR
+share/examples/squid/errors/Catalan/ERR_FTP_PUT_MODIFIED
+share/examples/squid/errors/Catalan/ERR_FTP_UNAVAILABLE
+share/examples/squid/errors/Catalan/ERR_INVALID_REQ
+share/examples/squid/errors/Catalan/ERR_INVALID_URL
+share/examples/squid/errors/Catalan/ERR_LIFETIME_EXP
+share/examples/squid/errors/Catalan/ERR_NO_RELAY
+share/examples/squid/errors/Catalan/ERR_ONLY_IF_CACHED_MISS
+share/examples/squid/errors/Catalan/ERR_READ_ERROR
+share/examples/squid/errors/Catalan/ERR_READ_TIMEOUT
+share/examples/squid/errors/Catalan/ERR_SHUTTING_DOWN
+share/examples/squid/errors/Catalan/ERR_SOCKET_FAILURE
+share/examples/squid/errors/Catalan/ERR_TOO_BIG
+share/examples/squid/errors/Catalan/ERR_UNSUP_REQ
+share/examples/squid/errors/Catalan/ERR_URN_RESOLVE
+share/examples/squid/errors/Catalan/ERR_WRITE_ERROR
+share/examples/squid/errors/Catalan/ERR_ZERO_SIZE_OBJECT
 share/examples/squid/errors/Czech/ERR_ACCESS_DENIED
 share/examples/squid/errors/Czech/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Czech/ERR_CACHE_MGR_ACCESS_DENIED
@@ -270,6 +299,35 @@ share/examples/squid/errors/German/ERR_UNSUP_REQ
 share/examples/squid/errors/German/ERR_URN_RESOLVE
 share/examples/squid/errors/German/ERR_WRITE_ERROR
 share/examples/squid/errors/German/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Hebrew/ERR_ACCESS_DENIED
+share/examples/squid/errors/Hebrew/ERR_CACHE_ACCESS_DENIED
+share/examples/squid/errors/Hebrew/ERR_CACHE_MGR_ACCESS_DENIED
+share/examples/squid/errors/Hebrew/ERR_CANNOT_FORWARD
+share/examples/squid/errors/Hebrew/ERR_CONNECT_FAIL
+share/examples/squid/errors/Hebrew/ERR_DNS_FAIL
+share/examples/squid/errors/Hebrew/ERR_FORWARDING_DENIED
+share/examples/squid/errors/Hebrew/ERR_FTP_DISABLED
+share/examples/squid/errors/Hebrew/ERR_FTP_FAILURE
+share/examples/squid/errors/Hebrew/ERR_FTP_FORBIDDEN
+share/examples/squid/errors/Hebrew/ERR_FTP_NOT_FOUND
+share/examples/squid/errors/Hebrew/ERR_FTP_PUT_CREATED
+share/examples/squid/errors/Hebrew/ERR_FTP_PUT_ERROR
+share/examples/squid/errors/Hebrew/ERR_FTP_PUT_MODIFIED
+share/examples/squid/errors/Hebrew/ERR_FTP_UNAVAILABLE
+share/examples/squid/errors/Hebrew/ERR_INVALID_REQ
+share/examples/squid/errors/Hebrew/ERR_INVALID_URL
+share/examples/squid/errors/Hebrew/ERR_LIFETIME_EXP
+share/examples/squid/errors/Hebrew/ERR_NO_RELAY
+share/examples/squid/errors/Hebrew/ERR_ONLY_IF_CACHED_MISS
+share/examples/squid/errors/Hebrew/ERR_READ_ERROR
+share/examples/squid/errors/Hebrew/ERR_READ_TIMEOUT
+share/examples/squid/errors/Hebrew/ERR_SHUTTING_DOWN
+share/examples/squid/errors/Hebrew/ERR_SOCKET_FAILURE
+share/examples/squid/errors/Hebrew/ERR_TOO_BIG
+share/examples/squid/errors/Hebrew/ERR_UNSUP_REQ
+share/examples/squid/errors/Hebrew/ERR_URN_RESOLVE
+share/examples/squid/errors/Hebrew/ERR_WRITE_ERROR
+share/examples/squid/errors/Hebrew/ERR_ZERO_SIZE_OBJECT
 share/examples/squid/errors/Hungarian/ERR_ACCESS_DENIED
 share/examples/squid/errors/Hungarian/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Hungarian/ERR_CACHE_MGR_ACCESS_DENIED
@@ -763,7 +821,9 @@ share/examples/squid/icons/anthony-xbm.gif
 share/examples/squid/icons/anthony-xpm.gif
 share/examples/squid/mib.txt
 share/examples/squid/mime.conf
+@comment share/examples/squid/mime.conf.default
 share/examples/squid/squid.conf
+@comment share/examples/squid/squid.conf.default
 @dirrm share/examples/squid/icons
 @dirrm share/examples/squid/errors/Turkish
 @dirrm share/examples/squid/errors/Traditional_Chinese
@@ -781,6 +841,7 @@ share/examples/squid/squid.conf
 @dirrm share/examples/squid/errors/Japanese
 @dirrm share/examples/squid/errors/Italian
 @dirrm share/examples/squid/errors/Hungarian
+@dirrm share/examples/squid/errors/Hebrew
 @dirrm share/examples/squid/errors/German
 @dirrm share/examples/squid/errors/French
 @dirrm share/examples/squid/errors/Finnish
@@ -789,6 +850,7 @@ share/examples/squid/squid.conf
 @dirrm share/examples/squid/errors/Dutch
 @dirrm share/examples/squid/errors/Danish
 @dirrm share/examples/squid/errors/Czech
+@dirrm share/examples/squid/errors/Catalan
 @dirrm share/examples/squid/errors/Bulgarian
 @dirrm share/examples/squid/errors
 @dirrm share/examples/squid

@@ -1,7 +1,27 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2002/02/20 01:17:03 brad Exp $
---- src/Makefile.in.orig	Thu Feb  7 12:47:49 2002
-+++ src/Makefile.in	Thu Feb  7 13:03:31 2002
-@@ -791,37 +791,37 @@ CCDEPMODE = @CCDEPMODE@
+$OpenBSD: patch-src_Makefile_in,v 1.2 2002/04/17 18:03:21 brad Exp $
+--- src/Makefile.in.orig	Sun Apr 14 16:02:03 2002
++++ src/Makefile.in	Wed Apr 17 13:28:26 2002
+@@ -366,8 +366,8 @@ EXTRA_DIST = \
+ 
+ 
+ DEFAULT_PREFIX = $(prefix)
+-DEFAULT_CONFIG_FILE = $(sysconfdir)/squid.conf
+-DEFAULT_MIME_TABLE = $(sysconfdir)/mime.conf
++DEFAULT_CONFIG_FILE = $(prefix)/share/examples/squid/squid.conf
++DEFAULT_MIME_TABLE = $(prefix)/share/examples/squid/mime.conf
+ DEFAULT_DNSSERVER = $(libexecdir)/@OPT_DNSSERVER_EXE@
+ DEFAULT_LOG_PREFIX = $(localstatedir)/logs
+ DEFAULT_CACHE_LOG = $(DEFAULT_LOG_PREFIX)/cache.log
+@@ -382,7 +382,7 @@ DEFAULT_ICON_DIR = $(datadir)/icons
+ DEFAULT_ERROR_DIR = $(datadir)/errors/@ERR_DEFAULT_LANGUAGE@
+ DEFAULT_MIB_PATH = $(datadir)/mib.txt
+ 
+-DEFS = @DEFS@ -DDEFAULT_CONFIG_FILE=\"$(DEFAULT_CONFIG_FILE)\"
++DEFS = @DEFS@ -DDEFAULT_CONFIG_FILE=\"$(sysconfdir)/squid.conf\"
+ 
+ DISTCLEANFILES = cf_gen_defines.h cf.data cf_parser.h squid.conf.default \
+ 	globals.c string_arrays.c repl_modules.c auth_modules.c store_modules.c
+@@ -784,37 +784,37 @@ CCDEPMODE = @CCDEPMODE@
  uninstall-info-am:
  install-dataDATA: $(data_DATA)
  	@$(NORMAL_INSTALL)
@@ -49,7 +69,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2002/02/20 01:17:03 brad Exp $
  	done
  
  # This directory's subdirectories are mostly independent; you can cd
-@@ -955,7 +955,7 @@ check: check-recursive
+@@ -948,7 +948,7 @@ check: check-recursive
  all-am: Makefile $(PROGRAMS) $(DATA)
  installdirs: installdirs-recursive
  installdirs-am:
@@ -58,46 +78,12 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2002/02/20 01:17:03 brad Exp $
  
  install: install-recursive
  install-exec: install-exec-recursive
-@@ -1104,28 +1104,28 @@ auth_modules.c: auth_modules.sh Makefile
- 	@$(SHELL) $(srcdir)/auth_modules.sh $(AUTH_MODULES) >auth_modules.c
+@@ -1071,7 +1071,7 @@ cf_gen_defines.h: $(srcdir)/cf_gen_defin
  
- install-data-local: install-sysconfDATA install-dataDATA
--	@if test -f $(DESTDIR)$(sysconfdir)/mime.conf ; then \
--	        echo "$@ will not overwrite existing $(DESTDIR)$(sysconfdir)/mime.conf" ; \
-+	@if test -f $(DESTDIR)$(prefix)/share/examples/squid/mime.conf ; then \
-+	        echo "$@ will not overwrite existing $(DESTDIR)$(prefix)/share/examples/squid/mime.conf" ; \
- 	else \
--	        echo "$(INSTALL_DATA) $(srcdir)/mime.conf.default $(DESTDIR)$(sysconfdir)/mime.conf" ;\
--	        $(INSTALL_DATA) $(srcdir)/mime.conf.default $(DESTDIR)$(sysconfdir)/mime.conf; \
-+	        echo "$(INSTALL_DATA) $(srcdir)/mime.conf.default $(DESTDIR)$(prefix)/share/examples/squid/mime.conf" ;\
-+	        $(INSTALL_DATA) $(srcdir)/mime.conf.default $(DESTDIR)$(prefix)/share/examples/squid/mime.conf; \
- 	fi
--	@if test -f $(DESTDIR)$(sysconfdir)/squid.conf ; then \
--	        echo "$@ will not overwrite existing $(DESTDIR)$(sysconfdir)/squid.conf" ; \
-+	@if test -f $(DESTDIR)$(prefix)/share/examples/squid/squid.conf ; then \
-+	        echo "$@ will not overwrite existing $(DESTDIR)$(prefix)/share/examples/squid/squid.conf" ; \
- 	else \
--	        echo "$(INSTALL_DATA) squid.conf.default $(DESTDIR)$(sysconfdir)/squid.conf"; \
--	        $(INSTALL_DATA) squid.conf.default $(DESTDIR)$(sysconfdir)/squid.conf; \
-+	        echo "$(INSTALL_DATA) squid.conf.default $(DESTDIR)$(prefix)/share/examples/squid/squid.conf"; \
-+	        $(INSTALL_DATA) squid.conf.default $(DESTDIR)$(prefix)/share/examples/squid/squid.conf; \
- 	fi
- 	$(mkinstalldirs) $(DESTDIR)$(DEFAULT_LOG_PREFIX)
- 
- uninstall-local:
--	@if test -f $(DESTDIR)$(sysconfdir)/mime.conf ; then \
--		echo "rm -f $(DESTDIR)$(sysconfdir)/mime.conf"; \
--		$(RM) -f $(DESTDIR)$(sysconfdir)/mime.conf; \
-+	@if test -f $(DESTDIR)$(prefix)/share/examples/squid/mime.conf ; then \
-+		echo "rm -f $(DESTDIR)$(prefix)/share/examples/squid/mime.conf"; \
-+		$(RM) -f $(DESTDIR)$(prefix)/share/examples/squid/mime.conf; \
- 	fi
--	@if test -f $(DESTDIR)$(sysconfdir)/squid.conf ; then \
--		echo "rm -f $(DESTDIR)$(sysconfdir)/squid.conf"; \
--		$(RM) -f $(DESTDIR)$(sysconfdir)/squid.conf; \
-+	@if test -f $(DESTDIR)$(prefix)/share/examples/squid/squid.conf ; then \
-+		echo "rm -f $(DESTDIR)$(prefix)/share/examples/squid/squid.conf"; \
-+		$(RM) -f $(DESTDIR)$(prefix)/share/examples/squid/squid.conf; \
- 	fi
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
+ cf.data: cf.data.pre Makefile
+ 	sed "\
+-	s%@DEFAULT_MIME_TABLE@%$(DEFAULT_MIME_TABLE)%g;\
++	s%@DEFAULT_MIME_TABLE@%$(sysconfdir)/mime.conf%g;\
+ 	s%@DEFAULT_DNSSERVER@%$(DEFAULT_DNSSERVER)%g;\
+ 	s%@DEFAULT_UNLINKD@%$(DEFAULT_UNLINKD)%g;\
+ 	s%@DEFAULT_PINGER@%$(DEFAULT_PINGER)%g;\

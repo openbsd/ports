@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.1 2002/03/21 21:17:54 brad Exp $
---- lib/Makefile.in.orig	Thu Nov 29 06:16:53 2001
-+++ lib/Makefile.in	Thu Mar 21 15:34:27 2002
-@@ -328,6 +328,13 @@ distclean-depend:
+$OpenBSD: patch-lib_Makefile_in,v 1.2 2002/04/17 18:03:21 brad Exp $
+--- lib/Makefile.in.orig	Sat Apr 13 20:14:52 2002
++++ lib/Makefile.in	Wed Apr 17 13:19:18 2002
+@@ -323,6 +323,13 @@ distclean-depend:
  @AMDEP_TRUE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
  	$(COMPILE) -c `cygpath -w $<`
  CCDEPMODE = @CCDEPMODE@

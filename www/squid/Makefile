@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2002/03/21 21:17:54 brad Exp $
+# $OpenBSD: Makefile,v 1.42 2002/04/17 18:03:21 brad Exp $
 
 COMMENT=	"WWW and FTP proxy cache and accelerator"
 
-DISTNAME=	squid-2.5.PRE5
+DISTNAME=	squid-2.5.PRE6
 CATEGORIES=	www
-NEED_VERSION=	1.500
+NEED_VERSION=	1.522
 MASTER_SITES=	http://www.squid-cache.org/Versions/v2/2.5/
 DIST_SUBDIR=	squid
 
@@ -44,6 +44,6 @@ post-extract:
 	@rm -f ${WRKSRC}/include/autoconf.h
 
 post-install:
-	@chown -R root:wheel ${PREFIX}/share/examples/squid
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/squid
 
 .include <bsd.port.mk>
