@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2001/11/13 22:13:23 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/12/13 09:39:35 reinhard Exp $
 
 COMMENT=	"3D creation software"
 ONLY_FOR_ARCHS=	i386
 
-PKGNAME=	blender-2.12
-DISTNAME=	blender2.12-linux-glibc2.1.2-i386-static
+V=		2.23
+PKGNAME=	blender-${V}
+DISTNAME=	blender-creator-${V}-linux-glibc2.1.2-i386-static
 CATEGORIES=	graphics
-NEED_VERSION=	1.496
+NEED_VERSION=	1.500
+
 HOMEPAGE=	http://www.blender.nl/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} demo212.tgz LogicBricks212.tgz
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
@@ -22,18 +23,14 @@ MASTER_SITES=	ftp://ftp.blender.nl/pub/
 RUN_DEPENDS=	::emulators/redhat/base
 
 NO_BUILD=	Yes
-
-DIRS=	plugins python 
-DEMOS=	demo212 LogicBricks212 
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/blender ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/blender
 	${INSTALL_DATA} ${WRKSRC}/{README,copyright.txt} \
 		${PREFIX}/share/examples/blender
-	cd ${WRKSRC} && tar cf - ${DIRS} | \
-		(cd ${PREFIX}/share/examples/blender && tar xf -)
-	cd ${WRKDIR} && tar cf - ${DEMOS} | \
+	cd ${WRKSRC} && tar cf - plugins | \
 		(cd ${PREFIX}/share/examples/blender && tar xf -)
 
 .include <bsd.port.mk>

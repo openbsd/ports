@@ -1,66 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/15 09:06:47 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/12/13 09:39:35 reinhard Exp $
 bin/blender
-share/examples/blender/LogicBricks212/.Bpib
-share/examples/blender/LogicBricks212/1.sensors/always.blend
-share/examples/blender/LogicBricks212/1.sensors/collision.blend
-share/examples/blender/LogicBricks212/1.sensors/collision_sound.blend
-share/examples/blender/LogicBricks212/1.sensors/keyboard.blend
-share/examples/blender/LogicBricks212/1.sensors/mouse_button.blend
-share/examples/blender/LogicBricks212/1.sensors/near_property.blend
-share/examples/blender/LogicBricks212/1.sensors/property.blend
-share/examples/blender/LogicBricks212/1.sensors/pulses.blend
-share/examples/blender/LogicBricks212/1.sensors/radar3.blend
-share/examples/blender/LogicBricks212/1.sensors/random.blend
-share/examples/blender/LogicBricks212/1.sensors/ray.blend
-share/examples/blender/LogicBricks212/1.sensors/samples/metalting.wav
-share/examples/blender/LogicBricks212/1.sensors/samples/metalting.wav.001
-share/examples/blender/LogicBricks212/1.sensors/textures/.Bpib
-share/examples/blender/LogicBricks212/1.sensors/textures/texture.jpg
-share/examples/blender/LogicBricks212/1.sensors/touch.blend
-share/examples/blender/LogicBricks212/2.controllers/and.blend
-share/examples/blender/LogicBricks212/2.controllers/expression.blend
-share/examples/blender/LogicBricks212/2.controllers/or.blend
-share/examples/blender/LogicBricks212/2.controllers/python_AllKeys.blend
-share/examples/blender/LogicBricks212/2.controllers/python_LOD.blend
-share/examples/blender/LogicBricks212/2.controllers/python_mouse2ipo.blend
-share/examples/blender/LogicBricks212/2.controllers/python_rec_play.blend
-share/examples/blender/LogicBricks212/2.controllers/python_record_playback.blend
-share/examples/blender/LogicBricks212/2.controllers/python_sensor_ray.blend
-share/examples/blender/LogicBricks212/2.controllers/python_velocity.blend
-share/examples/blender/LogicBricks212/2.controllers/samples/boom.wav
-share/examples/blender/LogicBricks212/2.controllers/samples/phaser.wav
-share/examples/blender/LogicBricks212/2.controllers/textures/.Bpib
-share/examples/blender/LogicBricks212/2.controllers/textures/moveit.001
-share/examples/blender/LogicBricks212/2.controllers/textures/texture.jpg
-share/examples/blender/LogicBricks212/2.controllers/textures/texture.jpg.001
-share/examples/blender/LogicBricks212/2.controllers/textures/texture.jpg.002
-share/examples/blender/LogicBricks212/3.actuators/Ipo_property.blend
-share/examples/blender/LogicBricks212/3.actuators/actuator_Ipo_property.blend
-share/examples/blender/LogicBricks212/3.actuators/add_object2.blend
-share/examples/blender/LogicBricks212/3.actuators/camera.blend
-share/examples/blender/LogicBricks212/3.actuators/end_object2.blend
-share/examples/blender/LogicBricks212/3.actuators/motion.blend
-share/examples/blender/LogicBricks212/3.actuators/motion_LinV.blend
-share/examples/blender/LogicBricks212/3.actuators/property_doors.blend
-share/examples/blender/LogicBricks212/3.actuators/property_string.blend
-share/examples/blender/LogicBricks212/3.actuators/samples/metalting.wav
-share/examples/blender/LogicBricks212/3.actuators/sound_property.blend
-share/examples/blender/LogicBricks212/3.actuators/textures/.Bpib
-share/examples/blender/LogicBricks212/3.actuators/textures/texture.jpg
 share/examples/blender/README
 share/examples/blender/copyright.txt
-share/examples/blender/demo212/AddObjectWithParentFun.blend
-share/examples/blender/demo212/MG1.blend
-share/examples/blender/demo212/ParticleFire.blend
-share/examples/blender/demo212/ScreenClock.blend
-share/examples/blender/demo212/animated_light_bullet.blend
-share/examples/blender/demo212/conveyor-head.blend
-share/examples/blender/demo212/egypt_vis.blend
-share/examples/blender/demo212/raceboat2.blend
-share/examples/blender/demo212/record_playback.blend
-share/examples/blender/demo212/rigidbodyAndLod.blend
-share/examples/blender/demo212/rigidbodytest.blend
-share/examples/blender/demo212/roundvehicle.blend
 share/examples/blender/plugins/Makefile
 share/examples/blender/plugins/bmake
 share/examples/blender/plugins/include/floatpatch.h
@@ -79,28 +20,8 @@ share/examples/blender/plugins/texture/clouds2.c
 share/examples/blender/plugins/texture/clouds2.so
 share/examples/blender/plugins/texture/tiles.c
 share/examples/blender/plugins/texture/tiles.so
-share/examples/blender/python/ivexport.py
-share/examples/blender/python/lwo2iv.py
-share/examples/blender/python/lwoimport.py
-share/examples/blender/python/mimport.py
-share/examples/blender/python/objimport.py
-share/examples/blender/python/povexport.py
-share/examples/blender/python/ribexport.py
-share/examples/blender/python/wrlexport.py
-@dirrm share/examples/blender/python
 @dirrm share/examples/blender/plugins/texture
 @dirrm share/examples/blender/plugins/sequence
 @dirrm share/examples/blender/plugins/include
 @dirrm share/examples/blender/plugins
-@dirrm share/examples/blender/demo212
-@dirrm share/examples/blender/LogicBricks212/3.actuators/textures
-@dirrm share/examples/blender/LogicBricks212/3.actuators/samples
-@dirrm share/examples/blender/LogicBricks212/3.actuators
-@dirrm share/examples/blender/LogicBricks212/2.controllers/textures
-@dirrm share/examples/blender/LogicBricks212/2.controllers/samples
-@dirrm share/examples/blender/LogicBricks212/2.controllers
-@dirrm share/examples/blender/LogicBricks212/1.sensors/textures
-@dirrm share/examples/blender/LogicBricks212/1.sensors/samples
-@dirrm share/examples/blender/LogicBricks212/1.sensors
-@dirrm share/examples/blender/LogicBricks212
 @dirrm share/examples/blender
