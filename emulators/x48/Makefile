@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 00:34:43 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2002/02/21 01:04:22 naddy Exp $
 #
 
 COMMENT=		"HP48sx emulator"
 
 DISTNAME=		x48-0.4.0
 CATEGORIES=		emulators
-NEED_VERSION=		1.402
+NEED_VERSION=		1.504
 
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/emulators
 
-CONFIGURE_STYLE=imake noman
+CONFIGURE_STYLE=	imake noman
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/x48
