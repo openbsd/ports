@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/03 04:04:30 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/01 17:06:06 espie Exp $
 
 DISTNAME=	doc++-3.4.7
 CATEGORIES=	devel
@@ -14,8 +14,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/doctools
 
-RUN_DEPENDS=	gs::print/ghostscript/gnu \
-		tex::print/teTeX/base
+RUN_DEPENDS=	gs:ghostscript-*:print/ghostscript/gnu \
+		tex:teTeX_base-*:print/teTeX/base
 
 USE_GMAKE=	Yes
 
