@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2005/02/15 15:12:42 couderc Exp $
+# $OpenBSD: Makefile,v 1.38 2005/02/21 15:57:01 couderc Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
 VERSION=	1.0
 DISTNAME=	bluefish-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www 
 HOMEPAGE=	http://bluefish.openoffice.nl/
 
@@ -28,7 +28,8 @@ WANTLIB=		X11 Xext Xft Xinerama Xrender atk-1.0.0.0 c \
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
+		::misc/shared-mime-info
 LIB_DEPENDS=	gtk-x11-2.0.0.14,gdk-x11-2.0.0.14,gdk_pixbuf-2.0.0.14::x11/gtk+2 \
 		pcre::devel/pcre \
 		aspell::textproc/aspell/core
