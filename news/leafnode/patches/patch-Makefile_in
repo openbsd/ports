@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2001/02/24 18:04:55 fgsch Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2001/03/07 03:00:00 fgsch Exp $
 --- Makefile.in.orig	Mon Jan  8 04:37:44 2001
-+++ Makefile.in	Sat Feb 24 14:50:13 2001
++++ Makefile.in	Tue Mar  6 23:39:02 2001
 @@ -32,7 +32,9 @@ BINDIR = $(PREFIX_USR)/sbin
  MANDIR = $(PREFIX_USR)/man
  SPOOLDIR = $(PREFIX_VAR)/spool/news
  LIBDIR   = /etc/leafnode
 -LOCKFILE = /var/lock/news/fetchnews.lck
-+LOCKFILE = $(PREFIX_VAR)/run/news/fetchnews.lck
++LOCKFILE = $(SPOOLDIR)/fetchnews.lck
 +
 +INSTALLROOT = $(DESTDIR)
  
