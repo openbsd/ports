@@ -1,25 +1,23 @@
-# $OpenBSD: DEINSTALL,v 1.2 2000/04/08 05:41:34 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2000/08/15 13:24:01 brad Exp $
 #
 # MySQL de-installation
 
-set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-DB_DIR=${PKG_DB_DIR:-/var/mysql}
+DB_DIR=${DB_DIR}
 
-if [ -d ${DB_DIR} ]; then
-     echo
-     echo "+---------------"
-     echo "| To completely deinstall the $1 package you need to perform"
-     echo "| these steps as root:"
-     echo "|"
-     echo "|           rmuser mysql"
-     echo "|           rmgroup mysql"
-     echo "|           rm -rf ${DB_DIR}"
-     echo "|"
-     echo "| Do not do this if you plan on re-installing $1"
-     echo "| at some future time."
-     echo "+---------------"
-     echo
-fi
+echo
+echo "+---------------"
+echo "| To completely deinstall the $1 package you need to perform"
+echo "| these steps as root:"
+echo "|"
+echo "|           user del mysql"
+echo "|           group del mysql"
+echo "|           rm -rf $DB_DIR"
+echo "|"
+echo "| Do not do this if you plan on re-installing $1"
+echo "| at some future time."
+echo "+---------------"
+echo
+
 exit 0

@@ -1,7 +1,5 @@
-# $OpenBSD: Makefile,v 1.26 2000/07/28 22:04:25 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2000/08/15 13:24:00 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
-
-#BROKEN=	installs files automatically in /etc
 
 DISTNAME=	mysql-3.22.32
 CATEGORIES=	databases
@@ -24,16 +22,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+DB_DIR?=	/var/mysql
+SUBST_VARS=	DB_DIR
+
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
-		 --localstatedir="/var/mysql" \
+		 --localstatedir="${DB_DIR}" \
 		 --without-perl \
 		 --without-debug \
 		 --without-readline \
 		 --without-bench \
 		 --without-mit-threads \
-		 --with-unix-socket-path="/var/mysql/mysql.sock"
+		 --with-unix-socket-path="${DB_DIR}/mysql.sock"
 
 FLAVORS=	pth
 FLAVOR?=
