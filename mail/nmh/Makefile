@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2000/04/09 17:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/04/17 16:22:46 dugsong Exp $
 
-DISTNAME=		nmh-1.0.3
+DISTNAME=		nmh-1.0.4
 CATEGORIES=     	mail
-FAKE=No
 
 MAINTAINER=		ports@openbsd.org
 
@@ -12,11 +11,15 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
-MASTER_SITES= 		ftp://ftp.math.gatech.edu/pub/nmh/
+MASTER_SITES= 		ftp://ftp.mhost.com/pub/nmh/
 
-SYSCONFDIR=		${PREFIX}/lib/nmh
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--libdir=${PREFIX}/libexec \
-			--sysconfdir=${SYSCONFDIR}
+HAS_CONFIGURE=		yes
+CONFIGURE_ARGS=		--prefix='$$(DESTDIR)$(PREFIX)' \
+			--libdir='$${exec_prefix}/libexec' \
+			--sysconfdir='$${prefix}/lib/nmh' \
+			--with-krb4=/usr \
+			--enable-nmh-pop
+
+FAKE=			yes
 
 .include <bsd.port.mk>
