@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/08/21 16:33:33 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2000/08/23 07:32:04 jakob Exp $
 
 DISTNAME=	cyrus-sasl-1.5.24
 CATEGORIES=     security
@@ -19,7 +19,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/sasl \
 			--enable-krb4=/usr \
 			--enable-static \
-			--enable-shared
+			--enable-shared \
+			--with-pwcheck=/var/pwcheck
 SEPARATE_BUILD=		concurrent
 
 post-install:

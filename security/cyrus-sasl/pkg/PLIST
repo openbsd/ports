@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/08/21 16:33:34 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.3 2000/08/23 07:32:04 jakob Exp $
 include/sasl/hmac-md5.h
 include/sasl/md5.h
 include/sasl/md5global.h
@@ -52,6 +52,7 @@ man/man8/sasldblistusers.8
 man/man8/saslpasswd.8
 sbin/sasldblistusers
 sbin/saslpasswd
+sbin/pwcheck
 share/doc/sasl/programming.html
 share/doc/sasl/sysadmin.html
 share/doc/sasl/gssapi.html
