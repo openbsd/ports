@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/02 16:02:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/04/09 18:19:45 lebel Exp $
 bin/ex
 bin/rview
 bin/rvim
 bin/view
 bin/vim
+bin/vimdiff
 bin/vimtutor
 bin/xxd
 !%%no_x11%%
@@ -12,6 +13,7 @@ man/man1/rview.1
 man/man1/rvim.1
 man/man1/view.1
 man/man1/vim.1
+man/man1/vimdiff.1
 man/man1/vimtutor.1
 man/man1/xxd.1
 share/vim/vim60${V}/bugreport.vim
@@ -20,6 +22,7 @@ share/vim/vim60${V}/doc/change.txt
 share/vim/vim60${V}/doc/cmdline.txt
 share/vim/vim60${V}/doc/debugger.txt
 share/vim/vim60${V}/doc/develop.txt
+share/vim/vim60${V}/doc/diff.txt
 share/vim/vim60${V}/doc/digraph.txt
 share/vim/vim60${V}/doc/editing.txt
 share/vim/vim60${V}/doc/eval.txt
@@ -57,6 +60,7 @@ share/vim/vim60${V}/doc/os_mac.txt
 share/vim/vim60${V}/doc/os_mint.txt
 share/vim/vim60${V}/doc/os_msdos.txt
 share/vim/vim60${V}/doc/os_os2.txt
+share/vim/vim60${V}/doc/os_qnx.txt
 share/vim/vim60${V}/doc/os_riscos.txt
 share/vim/vim60${V}/doc/os_unix.txt
 share/vim/vim60${V}/doc/os_vms.txt
@@ -116,6 +120,7 @@ share/vim/vim60${V}/ftplugin/mail.vim
 share/vim/vim60${V}/ftplugin/make.vim
 share/vim/vim60${V}/ftplugin/man.vim
 share/vim/vim60${V}/ftplugin/python.vim
+share/vim/vim60${V}/ftplugin/ruby.vim
 share/vim/vim60${V}/ftplugin/vim.vim
 share/vim/vim60${V}/ftplugin/xs.vim
 share/vim/vim60${V}/ftplugof.vim
@@ -127,6 +132,8 @@ share/vim/vim60${V}/indent/make.vim
 share/vim/vim60${V}/indent/matlab.vim
 share/vim/vim60${V}/indent/perl.vim
 share/vim/vim60${V}/indent/python.vim
+share/vim/vim60${V}/indent/ruby.vim
+share/vim/vim60${V}/indent/sdl.vim
 share/vim/vim60${V}/indent/sh.vim
 share/vim/vim60${V}/indent/tcl.vim
 share/vim/vim60${V}/indent/verilog.vim
@@ -233,6 +240,7 @@ share/vim/vim60${V}/syntax/docbk.vim
 share/vim/vim60${V}/syntax/dosbatch.vim
 share/vim/vim60${V}/syntax/dosini.vim
 share/vim/vim60${V}/syntax/dracula.vim
+share/vim/vim60${V}/syntax/dsl.vim
 share/vim/vim60${V}/syntax/dtd.vim
 share/vim/vim60${V}/syntax/dtml.vim
 share/vim/vim60${V}/syntax/dylan.vim
@@ -471,8 +479,8 @@ share/vim/vim60${V}/tutor/README.txt
 share/vim/vim60${V}/tutor/tutor
 share/vim/vim60${V}/tutor/tutor.vim
 share/vim/vim60${V}/vimrc_example.vim
-@dirrm share/vim/vim60${V}/tools
 @dirrm share/vim/vim60${V}/tutor
+@dirrm share/vim/vim60${V}/tools
 @dirrm share/vim/vim60${V}/syntax
 @dirrm share/vim/vim60${V}/plugin
 @dirrm share/vim/vim60${V}/macros/urm
