@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/01/15 00:34:19 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2002/07/30 14:36:50 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1999/01/26 22:19:07 billf Exp $
 
 COMMENT=	"simple and easy to use TCP port scanner"
@@ -6,10 +6,7 @@ COMMENT=	"simple and easy to use TCP port scanner"
 DISTNAME=	PortScanner-1.2
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	security
-NEED_VERSION=	1.500
 MASTER_SITES=	http://www.ameth.org/~veilleux/PortScan/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
