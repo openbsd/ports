@@ -1,4 +1,3 @@
 lib/libwx_base.so
 lib/libwx_base.so.2
-lib/libwx_base.so.2.4
-DYNLIBDIR(%D/lib)
+@lib lib/libwx_base.so.2.4

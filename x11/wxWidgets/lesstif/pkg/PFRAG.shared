@@ -1,4 +1,3 @@
 lib/libwx_motif.so
 lib/libwx_motif.so.2
-lib/libwx_motif.so.2.4
-DYNLIBDIR(%D/lib)
+@lib lib/libwx_motif.so.2.4

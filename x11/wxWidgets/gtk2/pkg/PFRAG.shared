@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/07/16 21:01:36 todd Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 20:00:07 espie Exp $
 lib/libwx_gtk2.so
 lib/libwx_gtk2.so.2
-lib/libwx_gtk2.so.2.4
-DYNLIBDIR(%D/lib)
+@lib lib/libwx_gtk2.so.2.4

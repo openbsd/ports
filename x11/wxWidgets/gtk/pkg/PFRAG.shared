@@ -1,4 +1,3 @@
 lib/libwx_gtk.so
 lib/libwx_gtk.so.2
-lib/libwx_gtk.so.2.4
-DYNLIBDIR(%D/lib)
+@lib lib/libwx_gtk.so.2.4
