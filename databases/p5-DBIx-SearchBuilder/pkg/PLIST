@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/21 03:45:45 msf Exp $
+${P5SITE}/DBIx/
+${P5SITE}/DBIx/SearchBuilder/
+${P5SITE}/DBIx/SearchBuilder.pm
+${P5SITE}/DBIx/SearchBuilder/Handle/
+${P5SITE}/DBIx/SearchBuilder/Handle.pm
+${P5SITE}/DBIx/SearchBuilder/Handle/Informix.pm
+${P5SITE}/DBIx/SearchBuilder/Handle/ODBC.pm
+${P5SITE}/DBIx/SearchBuilder/Handle/Oracle.pm
+${P5SITE}/DBIx/SearchBuilder/Handle/Pg.pm
+${P5SITE}/DBIx/SearchBuilder/Handle/SQLite.pm
+${P5SITE}/DBIx/SearchBuilder/Handle/Sybase.pm
+${P5SITE}/DBIx/SearchBuilder/Handle/mysql.pm
+${P5SITE}/DBIx/SearchBuilder/Handle/mysqlPP.pm
+${P5SITE}/DBIx/SearchBuilder/Record/
+${P5SITE}/DBIx/SearchBuilder/Record.pm
+${P5SITE}/DBIx/SearchBuilder/Record/Cachable.pm
+${P5SITE}/DBIx/SearchBuilder/Union.pm
+@man man/man3p/DBIx::SearchBuilder.3p
+@man man/man3p/DBIx::SearchBuilder::Handle.3p
+@man man/man3p/DBIx::SearchBuilder::Handle::Informix.3p
+@man man/man3p/DBIx::SearchBuilder::Handle::ODBC.3p
+@man man/man3p/DBIx::SearchBuilder::Handle::Oracle.3p
+@man man/man3p/DBIx::SearchBuilder::Handle::Pg.3p
+@man man/man3p/DBIx::SearchBuilder::Handle::SQLite.3p
+@man man/man3p/DBIx::SearchBuilder::Handle::Sybase.3p
+@man man/man3p/DBIx::SearchBuilder::Handle::mysql.3p
+@man man/man3p/DBIx::SearchBuilder::Handle::mysqlPP.3p
+@man man/man3p/DBIx::SearchBuilder::Record.3p
+@man man/man3p/DBIx::SearchBuilder::Record::Cachable.3p
+@man man/man3p/DBIx::SearchBuilder::Union.3p
