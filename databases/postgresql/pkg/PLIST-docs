@@ -1,12 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.8 2001/09/03 23:24:37 brad Exp $
-share/doc/postgresql/COPYRIGHT
-share/doc/postgresql/FAQ
-share/doc/postgresql/FAQ_DEV
-share/doc/postgresql/HISTORY
-share/doc/postgresql/INSTALL
-share/doc/postgresql/README
-share/doc/postgresql/README.OpenBSD
-share/doc/postgresql/TODO
+@comment $OpenBSD: PLIST-docs,v 1.9 2001/09/26 13:04:28 peter Exp $
 share/doc/postgresql/html/admin.html
 share/doc/postgresql/html/advanced.html
 share/doc/postgresql/html/altern-locations.html
@@ -499,14 +491,5 @@ share/doc/postgresql/html/xoper.html
 share/doc/postgresql/html/xplang.html
 share/doc/postgresql/html/xtypes.html
 share/doc/postgresql/html/y2k.html
-share/doc/postgresql/register.txt
-share/postgresql/global.bki
-share/postgresql/global.description
-share/postgresql/pg_hba.conf.sample
-share/postgresql/pg_ident.conf.sample
-share/postgresql/postgresql.conf.sample
-share/postgresql/template1.bki
-share/postgresql/template1.description
 @dirrm share/postgresql
 @dirrm share/doc/postgresql/html
-@dirrm share/doc/postgresql
