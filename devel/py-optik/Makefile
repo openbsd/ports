@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/12/29 20:19:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2003/07/31 19:12:00 sturm Exp $
 
 COMMENT=	"command line parsing library for Python"
 
@@ -19,18 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=optik/}
 
-PYTHON_VER=	2.2
-BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-RUN_DEPENDS=	${BUILD_DEPENDS}
+MODULES=	python
 
-SUBST_VARS=	PYTHON_VER
 NO_REGRESS=	Yes
-PY_CMD=		@cd ${WRKSRC}; python${PYTHON_VER} ./setup.py
-
-do-build:
-	${PY_CMD} build --build-base=${WRKSRC}
-
-do-install:
-	${PY_CMD} install --prefix=${PREFIX}
 
 .include <bsd.port.mk>

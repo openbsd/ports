@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/25 17:08:50 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2003/07/31 19:11:59 sturm Exp $
 
 COMMENT=	"python tool for generate Python API documents"
 
@@ -17,20 +17,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-PYTHON_VER=	2.2
-BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-RUN_DEPENDS=	${BUILD_DEPENDS}
+MODULES=	python
 
-SUBST_VARS=	PYTHON_VER
 NO_REGRESS=	Yes
-PY_CMD=		@cd ${WRKSRC}; python${PYTHON_VER} ./setup.py
-
 WRKSRC=		${WRKDIR}/HappyDoc-r2_1
-
-do-build:
-	${PY_CMD} build --build-base=${WRKSRC}
-
-do-install:
-	${PY_CMD} install --prefix=${PREFIX}
 
 .include <bsd.port.mk>

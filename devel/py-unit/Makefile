@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/12/29 20:19:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2003/07/31 19:12:00 sturm Exp $
 
 
 COMMENT=		"unit testing framework for python"
@@ -23,24 +23,15 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pyunit/}
 FLAVORS=		no_x11
 FLAVOR?=
 
-PYTHON_VER=	2.1
+MODULES=	python
 
-.if ${FLAVOR} != "no_x11"
-PY_MODULE=	${LOCALBASE}/lib/python${PYTHON_VER}/lib-dynload/_tkinter.so
-BUILD_DEPENDS=	:python-tkinter-${PYTHON_VER}*:lang/python/${PYTHON_VER},-tkinter
+MODPY_VERSION=	2.1
+
+.if !${FLAVOR:L:Mno_x11}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	:python-tkinter-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-tkinter
 .endif
-BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 
-RUN_DEPENDS=	${BUILD_DEPENDS}
-SUBST_VARS=	PYTHON_VER
 NO_REGRESS=	Yes
-
-do-build:
-	cd ${WRKSRC}; python${PYTHON_VER} ./setup.py build \
-		--build-base=${WRKSRC}
-
-do-install:
-	cd ${WRKSRC}; python${PYTHON_VER} ./setup.py install \
-		--prefix=${PREFIX}
 
 .include <bsd.port.mk>

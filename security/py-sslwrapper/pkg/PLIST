@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/10 06:08:03 shell Exp $
-lib/python${PYTHON_VER}/site-packages/POW.so
+@comment $OpenBSD: PLIST,v 1.2 2003/07/31 19:12:00 sturm Exp $
+lib/python${MODPY_VERSION}/site-packages/POW.so

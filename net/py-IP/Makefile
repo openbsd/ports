@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 21:14:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2003/07/31 19:11:59 sturm Exp $
 
 COMMENT=	"python module to handle IPv4 and IPv6 address"
 
@@ -12,25 +12,18 @@ MASTER_SITES=	${HOMEPAGE}
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-PYTHON_VER=	2.1
-BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-RUN_DEPENDS=	${BUILD_DEPENDS}
+MODULES=	python
 
-SUBST_VARS=	PYTHON_VER
-PY_CMD=		@cd ${WRKSRC}; python${PYTHON_VER} setup.py
-
-do-build:
-	${PY_CMD} build --build-base=${WRKSRC}
-
-do-install:
-	${PY_CMD} install -O2 --prefix=${PREFIX}
+MODPY_VERSION=	2.1
+MODPY_DISTUTILS_INSTALLARGS=	-O2
 
 do-regress:
-	@cd ${WRKSRC}/test; python${PYTHON_VER} test_IPy.py
+	@cd ${WRKSRC}/test; ${MODPY_BIN} ./test_IPy.py
 
 .include <bsd.port.mk>

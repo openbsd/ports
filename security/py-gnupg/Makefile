@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/12/29 20:31:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2003/07/31 19:11:59 sturm Exp $
 
 
 COMMENT=	"python module for GnuPG interface"
@@ -12,6 +12,7 @@ HOMEPAGE=	http://py-gnupg.sourceforge.net/
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
+# LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -19,21 +20,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=py-gnupg/}
 
-PYTHON_VER=	2.1
+MODULES=	python
 
-BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
-		::security/gnupg
-RUN_DEPENDS=	${BUILD_DEPENDS}
+MODPY_VERSION=	2.1
+MODPY_DISTUTILS_INSTALLARGS=	-O1
 
-PY_CMD=		cd ${WRKSRC}; python${PYTHON_VER} ./setup.py
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	:gnupg-*:security/gnupg
 
-SUBST_VARS=	PYTHON_VER
 NO_REGRESS=	Yes
-
-do-build:
-	${PY_CMD} build --build-base=${WRKSRC}
-
-do-install:
-	${PY_CMD} install -O1 --prefix=${PREFIX}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/09/13 09:00:00 shell Exp $
+# $OpenBSD: Makefile,v 1.8 2003/07/31 19:12:00 sturm Exp $
 
 COMMENT=	"OpenSSL Wrappers for Python"
 
@@ -18,24 +18,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pow/}
 
-PYTHON_VER=	2.2
+MODULES=	python
 
-BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-RUN_DEPENDS=	${BUILD_DEPENDS}
 NO_REGRESS=	Yes
 
-PY_CMD=		cd ${WRKSRC}; python${PYTHON_VER} ./setup.py.new
-
-SUBST_VARS=	PYTHON_VER
-
 post-patch:
-	@sed -e 's|%%LOCALBASE%%|${LOCALBASE}|g'	\
-		< ${WRKSRC}/setup.py > ${WRKSRC}/setup.py.new
-
-do-build:
-	${PY_CMD} build --build-base=${WRKSRC}
-
-do-install:
-	${PY_CMD} install --prefix=${PREFIX}
+	@perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/09/16 07:36:32 shell Exp $
+# $OpenBSD: Makefile,v 1.5 2003/07/31 19:11:59 sturm Exp $
 
 COMMENT=	"python Cryptographic Toolkit"
 
@@ -21,23 +21,14 @@ PERMIT_DISTFILES_FTP=	Yes
 FLAVORS=	py22
 FLAVOR?=
 
+MODULES=	python
+
 .if ${FLAVOR:L:Mpy22}
-PYTHON_VER=	2.2
+MODPY_VERSION=	2.2
 .else
-PYTHON_VER=	2.1
+MODPY_VERSION=	2.1
 .endif
 
-BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-RUN_DEPENDS=	${BUILD_DEPENDS}
 NO_REGRESS=	Yes
-
-PY_CMD=		cd ${WRKSRC}; python${PYTHON_VER} ./setup.py
-SUBST_VARS=	PYTHON_VER
-
-do-build:
-	${PY_CMD} build --build-base=${WRKSRC}
-
-do-install:
-	${PY_CMD} install --prefix=${PREFIX}
 
 .include <bsd.port.mk>

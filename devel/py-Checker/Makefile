@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/07/15 04:09:33 shell Exp $
+# $OpenBSD: Makefile,v 1.20 2003/07/31 19:11:59 sturm Exp $
 
 
 COMMENT=	"python codes checker"
@@ -20,24 +20,17 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pychecker/}
 
-PYTHON_VER=	2.2
+MODULES=	python
 
-RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-BUILD_DEPENDS=	${RUN_DEPENDS}
+MODPY_DISTUTILS_INSTALLARGS=	-O1
 
-SUBST_VARS=	PYTHON_VER
 NO_REGRESS=	Yes
 
-PY_CMD= @cd ${WRKSRC} && python${PYTHON_VER} ./setup.py
 DOC_DIR=	${PREFIX}/share/doc/py-Checker/
 DOC_FILE=	CHANGELOG KNOWN_BUGS TODO MAINTAINERS README
 
-do-build:
-	${PY_CMD} build --build-base=${WRKSRC}
-
-do-install:
+post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}
-	${PY_CMD} install -O1 --prefix=${PREFIX}
 .for i in ${DOC_FILE}
 	${INSTALL_DATA} ${WRKSRC}/$i ${DOC_DIR}
 .endfor

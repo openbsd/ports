@@ -4,5 +4,3 @@ additions to everyday Python programming.
 
 The BASE package includes the Open Source subpackages of the series and
 is needed by all other add-on packages of the series.
-
-WWW: ${HOMEPAGE}

@@ -1,5 +1,3 @@
 PycURL is a Python module that interface with the cURL library, by
 using this module, you can fetch documents identified by a URI from
 within a Python program.
-
-WWW: ${HOMEPAGE}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/12/29 20:19:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2003/07/31 19:11:59 sturm Exp $
 
 
 COMMENT=	"python library for creating postscript or PDF charts"
@@ -6,12 +6,13 @@ COMMENT=	"python library for creating postscript or PDF charts"
 VERSION=	1.18
 DISTNAME=	PyChart-${VERSION}
 PKGNAME=	py-Chart-${VERSION}
-CATEGORIES=    	textproc devel
+CATEGORIES=	textproc devel
 
 HOMEPAGE=	http://www.hpl.hp.com/personal/Yasushi_Saito/pychart/
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -19,19 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-PYTHON_VER=	2.2
+MODULES=	python
 
-BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-RUN_DEPENDS=	${BUILD_DEPENDS}
-SUBST_VARS=	PYTHON_VER
 NO_REGRESS=	Yes
-
-PY_CMD=		cd ${WRKSRC}; python${PYTHON_VER} ./setup.py
-
-do-build:
-	${PY_CMD} build --build-base=${WRKSRC}
-
-do-install:
-	${PY_CMD} install --prefix=${PREFIX}
 
 .include <bsd.port.mk>

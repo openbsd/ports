@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/03/30 06:54:51 shell Exp $
+# $OpenBSD: Makefile,v 1.16 2003/07/31 19:12:00 sturm Exp $
 
 COMMENT=	"python module for writing basic XML applications"
 
@@ -18,38 +18,29 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
+MODULES=	python
+
+MODPY_DISTUTILS_BUILDARGS=	--with-libexpat=${LOCALBASE}
+
 # pyexpat - use our own pyexpat.so
 # otherwise use the python-expat version
 
 FLAVORS=pyexpat
 FLAVOR?=
 
-PYTHON_VER=     2.2
-
 LIB_DEPENDS=	expat.2::textproc/expat
-BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .if !${FLAVOR:L:Mpyexpat}
-BUILD_DEPENDS+=	:python-expat-${PYTHON_VER}*:lang/python/${PYTHON_VER},-expat
+BUILD_DEPENDS+=	:python-expat-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-expat
 .endif
 
-SUBST_VARS=     PYTHON_VER
 NO_REGRESS=	Yes
-
-PY_CMD=		cd ${WRKSRC}; python${PYTHON_VER} ./setup.py
 
 DOC_DIR=	${PREFIX}/share/doc/PyXML/
 SRC_DOCDIR=	${WRKSRC}/doc
 DOCEXT=		*.txt *.tex
 
-do-build:
-	${PY_CMD} build \
-		--build-base=${WRKSRC} \
-		--with-libexpat=${LOCALBASE}
-
-do-install:
-	${PY_CMD} install --prefix=${PREFIX}
+post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}
 	${INSTALL_DATA_DIR} ${DOC_DIR}/4DOM
 	${INSTALL_DATA_DIR} ${DOC_DIR}/xmlproc

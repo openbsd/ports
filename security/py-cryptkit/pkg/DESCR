@@ -13,5 +13,3 @@ that essentially perform the same task ( like DES/RC4/RC2 or MD5/SHA
 ), CryptKit takes the minimalist approach of implementing only one
 version of each crypto primitive. Great care went into selecting the
 best of what was available.
-
-WWW: ${HOMEPAGE}

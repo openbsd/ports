@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/09/15 11:08:42 shell Exp $
+# $OpenBSD: Makefile,v 1.9 2003/07/31 19:11:59 sturm Exp $
 
 COMMENT=	"fast array facility to the Python language"
 
@@ -21,25 +21,12 @@ HOMEPAGE=	http://www.pfdubois.com/numpy/
 FLAVORS=	python2.1
 FLAVOR?=
 
-.if ${FLAVOR:L} == "python2.1"
-PYTHON_VER=	2.1
-.else
-PYTHON_VER=	2.2
+MODULES=	python
+
+.if ${FLAVOR:L:Mpython2.1}
+MODPY_VERSION=	2.1
 .endif
 
-SUBST_VARS=	PYTHON_VER
 NO_REGRESS=	Yes
-
-BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-PY_SETUP=	setup.py
-PY_CMD=		@cd ${WRKSRC} && python${PYTHON_VER} ${PY_SETUP}
-
-do-build:
-	${PY_CMD} build --build-base=${WRKSRC}
-
-do-install:
-	${PY_CMD} install --prefix=${PREFIX}
 
 .include <bsd.port.mk>
