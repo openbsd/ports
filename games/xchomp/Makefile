@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:57 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/12/18 03:46:20 jasoni Exp $
 #
 
 DISTNAME=       xchomp-pl1
 CATEGORIES=	games
 
-BROKEN=		"What should the master site be?"
+#BROKEN=		"What should the master site be?"
 
 MAINTAINER=	angelos@openbsd.org
 
-MASTER_SITES=
+MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	../../R5contrib
 #
 # Original sources in multi-part compressed shell archive
