@@ -1,15 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 1999/05/20 23:25:55 brad Exp $
+# $OpenBSD: Makefile,v 1.16 1999/05/21 18:47:25 brad Exp $
 
 DISTNAME=	ImageMagick-4.2.5
 CATEGORIES=     graphics
-MASTER_SITES=	ftp://204.183.81.131/pub/ImageMagick/ \
-		ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
-		ftp://ftp.cci.fr/pub/unix/gfx/ImageMagick/ \
-		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/ \
-		ftp://ftp.fifi.org/pub/ImageMagick/ \
-		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
-		ftp://ftp.ms.mff.cuni.cz/MIRRORS/ftp.wizards.dupont.com/pub/ImageMagick/ \
-		ftp://ftp.oce.nl/pub/Internet/audio+video/ImageMagick/
+MASTER_SITES=	ftp://ftp.wizards.dupont.com/pub/ImageMagick/
 
 HOMEPAGE=	http://www.wizards.dupont.com/cristy/ImageMagick.html
 
