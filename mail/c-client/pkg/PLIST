@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/08/02 22:01:27 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/07/18 22:30:20 jakob Exp $
 include/c-client/c-client.h
 include/c-client/env.h
 include/c-client/env_unix.h
@@ -13,7 +13,6 @@ include/c-client/misc.h
 include/c-client/nl.h
 include/c-client/nntp.h
 include/c-client/osdep.h
-include/c-client/pop3.h
 include/c-client/rfc822.h
 include/c-client/smtp.h
 include/c-client/tcp.h

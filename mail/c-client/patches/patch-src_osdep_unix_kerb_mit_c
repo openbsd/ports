@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_osdep_unix_kerb_mit_c,v 1.1 2004/04/02 08:18:48 jakob Exp $
---- src/osdep/unix/kerb_mit.c.orig	Thu Apr 17 09:29:01 2003
-+++ src/osdep/unix/kerb_mit.c	Thu Apr 17 09:29:19 2003
-@@ -19,8 +19,13 @@
+$OpenBSD: patch-src_osdep_unix_kerb_mit_c,v 1.2 2004/07/18 22:30:19 jakob Exp $
+--- src/osdep/unix/kerb_mit.c.orig	Wed Jul  7 17:20:47 2004
++++ src/osdep/unix/kerb_mit.c	Wed Jul  7 17:21:21 2004
+@@ -19,9 +19,13 @@
   */
  
  #define PROTOTYPE(x) x
@@ -11,7 +11,8 @@ $OpenBSD: patch-src_osdep_unix_kerb_mit_c,v 1.1 2004/04/02 08:18:48 jakob Exp $
 +#else
  #include <gssapi/gssapi_generic.h>
  #include <gssapi/gssapi_krb5.h>
+-
 +#endif
  
- 
  long kerberos_server_valid (void);
+ long kerberos_try_kinit (OM_uint32 error);

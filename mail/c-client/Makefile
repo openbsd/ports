@@ -1,10 +1,9 @@
-# $tgId: obsd.ports,v 3.38 2002/11/27 19:37:23 tg Exp $
-# $OpenBSD: Makefile,v 1.29 2004/04/02 08:18:48 jakob Exp $
+# $OpenBSD: Makefile,v 1.30 2004/07/18 22:30:19 jakob Exp $
 
 COMMENT=	"University of Washington's c-client mail access routines"
 NO_REGRESS=	Yes
 
-VERSION=	4.58
+VERSION=	4.61
 DISTNAME=	pine${VERSION}
 PKGNAME=	c-client-${VERSION}
 CATEGORIES=	mail devel
@@ -39,7 +38,7 @@ WRKDIST=	${WRKDIR}/${DISTNAME}/imap
 
 HEADERS=	c-client.h env.h env_unix.h flstring.h fs.h ftl.h imap4r1.h \
 		linkage.c linkage.h mail.h misc.h nl.h nntp.h osdep.h \
-		pop3.h rfc822.h smtp.h tcp.h utf8.h
+		rfc822.h smtp.h tcp.h utf8.h
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/c-client
