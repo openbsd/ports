@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2001/07/12 08:42:18 kevlo Exp $
+# $OpenBSD: Makefile,v 1.33 2001/07/15 09:26:17 kevlo Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -23,6 +23,7 @@
      SUBDIR += jed,no_x11
      SUBDIR += joe
      SUBDIR += jove
+     SUBDIR += kxmleditor
 #    SUBDIR += mule
 #    SUBDIR += mule-common
      SUBDIR += nano
