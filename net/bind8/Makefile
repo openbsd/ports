@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2000/06/16 23:06:09 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/07/17 19:21:48 espie Exp $
 
 DISTNAME=	bind-openbsd-8.2.2-P6-19991217
 PKGNAME=	bind-8.2.2-P6
 CATEGORIES=	net
-NEED_VERSION=	1.197
+NEED_VERSION=	1.317
 MASTER_SITES=	ftp://ftp.gsnig.org/pub/openbsd-bind/ \
 		ftp://ftp.sekure.net/pub/gsnig/openbsd-bind/
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=     "Unclear status of crypto components."
 PERMIT_DISTFILES_CDROM= "Unclear status of crypto components."
 PERMIT_DISTFILES_FTP=   "Unclear status of crypto components."
 
-pre-install pre-package:
+pre-install:
 	@${SH} ${PKGDIR}/INSTALL ${DISTNAME} PRE-INSTALL
 
 post-install:
@@ -32,4 +32,3 @@ pre-fake:
 	@mkdir -p ${WRKINST}/usr/sbin ${WRKINST}/usr/libexec
 
 .include <bsd.port.mk>
-
