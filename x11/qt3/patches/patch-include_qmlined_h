@@ -1,0 +1,10 @@
+$OpenBSD: patch-include_qmlined_h,v 1.1 2003/01/21 16:14:42 espie Exp $
+--- include/qmlined.h.orig	Tue Jan 21 17:07:29 2003
++++ include/qmlined.h	Tue Jan 21 17:07:41 2003
+@@ -22,5 +22,5 @@
+ *****************************************************************************/
+ #ifndef QMLINED_H
+ #define QMLINED_H
+-#include "qtmultilineedit.h"
++#include "qmultilineedit.h"
+ #endif
