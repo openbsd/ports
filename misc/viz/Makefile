@@ -3,16 +3,16 @@
 # Date created:                      10 Nov 1999
 # Whom:                              Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.5 2000/08/21 03:56:38 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/09 07:44:35 kevlo Exp $
 #
 
 DISTNAME=	viz-1.1.1
 CATEGORIES=	misc
 NEED_VERSION=   1.319
-MASTER_SITES=	ftp://freebsd.csie.nctu.edu.tw/pub/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kevlo@openbsd.org
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
