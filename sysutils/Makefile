@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/07/21 14:37:45 niklas Exp $
+# $OpenBSD: Makefile,v 1.5 1998/09/18 00:11:51 marc Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -7,6 +7,7 @@
 #    SUBDIR += asrpages
 #    SUBDIR += cdrecord
 #    SUBDIR += cd-write
+     SUBDIR += cfengine
 #    SUBDIR += contool
      SUBDIR += idled
      SUBDIR += lsof
