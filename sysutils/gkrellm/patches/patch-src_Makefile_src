@@ -1,8 +1,9 @@
-$OpenBSD: patch-src_Makefile_src,v 1.3 2001/11/01 02:28:53 jcs Exp $
---- src/Makefile.src.orig	Fri Oct 12 08:01:04 2001
-+++ src/Makefile.src	Wed Oct 31 20:04:07 2001
-@@ -1,14 +1,14 @@
+$OpenBSD: patch-src_Makefile_src,v 1.4 2002/01/06 21:06:50 jcs Exp $
+--- src/Makefile.src.orig	Sun Jan  6 14:42:03 2002
++++ src/Makefile.src	Sun Jan  6 14:46:26 2002
+@@ -1,15 +1,15 @@
  GTK_CONFIG ?= gtk-config
+ EXTRAOBJS ?= md5c.o
  BINMODE ?= 755
 -INSTALLDIR ?= /usr/local/bin
 -INCLUDEDIR ?= /usr/local/include
@@ -20,7 +21,7 @@ $OpenBSD: patch-src_Makefile_src,v 1.3 2001/11/01 02:28:53 jcs Exp $
  
  GKRELLM_INCLUDES = gkrellm.h gkrellm_public_proto.h
  
-@@ -18,7 +18,7 @@
+@@ -19,7 +19,7 @@
  GTK_LIB = `$(GTK_CONFIG) --libs gthread`
  IMLIB_LIB = `imlib-config --libs-gdk`
  
@@ -29,7 +30,7 @@ $OpenBSD: patch-src_Makefile_src,v 1.3 2001/11/01 02:28:53 jcs Exp $
  FLAGS+= $(PTHREAD_INC)
  
  LIBS = $(GTK_LIB) $(IMLIB_LIB) $(GTOP_LIBS) $(SYS_LIBS)
-@@ -35,8 +35,7 @@
+@@ -36,8 +36,7 @@
      FLAGS += -DHAVE_GETADDRINFO
  endif
  
@@ -37,16 +38,16 @@ $OpenBSD: patch-src_Makefile_src,v 1.3 2001/11/01 02:28:53 jcs Exp $
 -CC = gcc -Wall $(FLAGS) $(CFLAGS)
 +CFLAGS += $(FLAGS)
  
- OBJS =	main.o alerts.o apm.o clock.o cpu.o disk.o fs.o hostname.o \
+ OBJS =	main.o alerts.o apm.o base64.o clock.o cpu.o disk.o fs.o hostname.o \
  	inet.o mail.o meminfo.o net.o proc.o sensors.o uptime.o \
-@@ -60,6 +59,10 @@
- 
+@@ -63,6 +62,10 @@
  netbsd:
  	$(MAKE) PTHREAD_INC=-I/usr/local/include \
-+	GTK_CONFIG=gtk-config GTOP_LIBS= SYS_LIBS="-lkvm" gkrellm
+ 	GTK_CONFIG=gtk-config GTOP_LIBS= EXTRAOBJS= SYS_LIBS="-lkvm" gkrellm
 +
 +openbsd:
 +	$(MAKE) PTHREAD_INC=-I${LOCALBASE}/include/pth \
- 	GTK_CONFIG=gtk-config GTOP_LIBS= SYS_LIBS="-lkvm" gkrellm
++	GTK_CONFIG=gtk-config GTOP_LIBS= SYS_LIBS="-lkvm" gkrellm
  
  solaris:
+ 	$(MAKE) CFLAGS="-Wno-implicit-int" \

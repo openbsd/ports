@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/11/01 02:28:53 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/01/06 21:06:50 jcs Exp $
 bin/gkrellm
 include/gkrellm/gkrellm.h
 include/gkrellm/gkrellm_public_proto.h
@@ -8,6 +8,7 @@ share/locale/es/LC_MESSAGES/gkrellm.mo
 share/locale/fr/LC_MESSAGES/gkrellm.mo
 share/locale/ja/LC_MESSAGES/gkrellm.mo
 share/locale/pl/LC_MESSAGES/gkrellm.mo
+share/locale/ru/LC_MESSAGES/gkrellm.mo
 share/locale/sv/LC_MESSAGES/gkrellm.mo
 @exec mkdir -p %D/lib/gkrellm/plugins
 @dirrm lib/gkrellm/plugins
