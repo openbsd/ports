@@ -1,33 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/14 11:50:24 wilfried Exp $
-libdata/perl5/site_perl/i386-openbsd/BSD/Resource.pm
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/Resource.bs
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/Resource.so
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/_g.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/autosplit.ix
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/get_rlimits.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/getpriority.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/getrlimit.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/getrusage.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/hard.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/idrss.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/inblock.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/ixrss.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/majflt.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/maxrss.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/minflt.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/msgrcv.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/msgsnd.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/nivcsw.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/nsignals.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/nswap.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/nvcsw.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/oublock.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/setpriority.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/setrlimit.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/soft.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/stime.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/times.al
-libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource/utime.al
+@comment $OpenBSD: PLIST,v 1.2 2001/03/24 02:40:00 avsm Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/BSD/Resource.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/Resource.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/Resource.so
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/_g.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/autosplit.ix
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/get_rlimits.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/getpriority.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/getrlimit.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/getrusage.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/hard.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/idrss.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/inblock.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/ixrss.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/majflt.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/maxrss.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/minflt.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/msgrcv.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/msgsnd.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/nivcsw.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/nsignals.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/nswap.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/nvcsw.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/oublock.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/setpriority.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/setrlimit.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/soft.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/stime.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/times.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource/utime.al
 man/man3/BSD::Resource.3p
-@dirrm libdata/perl5/site_perl/i386-openbsd/auto/BSD/Resource
-@dirrm libdata/perl5/site_perl/i386-openbsd/BSD
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/BSD/Resource
