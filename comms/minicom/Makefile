@@ -1,16 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 1999/04/01 02:57:56 brad Exp $
+# $OpenBSD: Makefile,v 1.12 1999/06/23 06:39:12 form Exp $
 
-PKGNAME=	minicom-1.82
+PKGNAME=	minicom-1.82.1
 DISTNAME=	${PKGNAME}.src
 CATEGORIES=	comms
 
-BROKEN=		"can't find this version as of 16feb99"
-MIRROR_DISTFILE="can't find this version as of 16feb99"
-
-MAINTAINER=     ports@openbsd.org
+MAINTAINER=     form@openbsd.org
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
-		ftp://ftp.cistron.nl/pub/people/miquels/software/  \
 		http://www.clinet.fi/~walker/
 
 MASTER_SITE_SUBDIR=     apps/serialcomm/dialout
