@@ -1,6 +1,7 @@
---- Makefile.in.orig	Thu Jan 31 22:33:44 2002
-+++ Makefile.in	Fri Feb  1 21:06:00 2002
-@@ -533,19 +533,10 @@
+$OpenBSD: patch-makefilein,v 1.3 2002/02/05 23:51:30 naddy Exp $
+--- Makefile.in.orig	Sun Feb  3 18:27:16 2002
++++ Makefile.in	Tue Feb  5 16:34:42 2002
+@@ -533,19 +533,10 @@ install-dirs:
  	-mkdir -p $(docdir)
  	-mkdir -p $(logsdir)
  
@@ -21,9 +22,9 @@
  	$(INSTALL_DATA) $(srcdir)/COPYING $(docdir)/
  	$(INSTALL_DATA) $(srcdir)/CHANGES $(docdir)/
  	$(INSTALL_DATA) $(srcdir)/CREDITS $(docdir)/
-@@ -553,24 +544,13 @@
- 	$(INSTALL_DATA) $(srcdir)/INSTALL $(docdir)/
- 	$(INSTALL_DATA) $(srcdir)/TODO $(docdir)/
+@@ -558,24 +549,13 @@ toolkit-install:
+ 	-$(INSTALL_DATA) $(srcdir)/doc/toolkit/silc* $(docdir)/toolkit
+ 	-$(INSTALL_DATA) $(srcdir)/doc/toolkit/index* $(docdir)/toolkit
  
 -examples-install:
 -	-mkdir -p $(docdir)/examples/
@@ -44,6 +45,6 @@
  
 -@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs sim-install doc-install etc-install
 +@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs doc-install etc-install
- @SILC_DIST_CLIENT_FALSE@install-data-hook: install-dirs generate-server-key sim-install doc-install examples-install etc-install
+ @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs generate-server-key sim-install doc-install toolkit-install examples-install etc-install
+ @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs generate-server-key sim-install doc-install examples-install etc-install
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
