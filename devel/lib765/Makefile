@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/01/09 22:36:01 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2003/10/17 06:24:42 grange Exp $
 
 COMMENT=		"library for the floppy controller emulation"
 
-DISTNAME=		lib765-0.3.0
+DISTNAME=		lib765-0.3.1.1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.seasip.demon.co.uk/Unix/LibDsk/
