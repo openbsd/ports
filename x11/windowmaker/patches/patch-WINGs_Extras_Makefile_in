@@ -1,0 +1,13 @@
+$OpenBSD: patch-WINGs_Extras_Makefile_in,v 1.1 2001/02/07 13:32:35 wilfried Exp $
+--- WINGs/Extras/Makefile.in.orig	Sun Jan  7 00:22:06 2001
++++ WINGs/Extras/Makefile.in	Wed Feb  7 10:00:27 2001
+@@ -94,8 +94,7 @@ wprefsdir = @wprefsdir@
+ 
+ AUTOMAKE_OPTIONS = no-dependencies
+ 
+-# is this a kluge? if so, how should i do it?
+-includedir = @includedir@/WINGs
++includedir = @includedir@
+ 
+ include_HEADERS = wtableview.h wtabledelegates.h 
+ 

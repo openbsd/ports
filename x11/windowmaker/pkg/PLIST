@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2001/01/19 03:44:51 jasoni Exp $
+@comment $OpenBSD: PLIST,v 1.21 2001/02/07 13:32:36 wilfried Exp $
 GNUstep/Apps/WPrefs.app/WPrefs
 GNUstep/Apps/WPrefs.app/WPrefs.tiff
 GNUstep/Apps/WPrefs.app/WPrefs.xpm
@@ -84,13 +84,13 @@ bin/wmsetup
 bin/wsetfont
 bin/wxcopy
 bin/wxpaste
-include/WINGs/WINGs.h
-include/WINGs/WINGsP.h
-include/WINGs/WUtil.h
-include/WINGs/wtabledelegates.h
-include/WINGs/wtableview.h
+include/WINGs.h
+include/WINGsP.h
 include/WMaker.h
+include/WUtil.h
 include/wraster.h
+include/wtabledelegates.h
+include/wtableview.h
 lib/libExtraWINGs.a
 lib/libWINGs.a
 lib/libWMaker.a
@@ -361,7 +361,6 @@ share/WindowMaker/xtree.dat
 @dirrm share/WINGs
 @exec mkdir -p %D/lib/locale
 @dirrm lib/locale
-@dirrm include/WINGs
 @exec mkdir -p %D/GNUstep/Apps/WPrefs.app/xpm
 @dirrm GNUstep/Apps/WPrefs.app/xpm
 @dirrm GNUstep/Apps/WPrefs.app/tiff

@@ -1,0 +1,13 @@
+$OpenBSD: patch-WINGs_Makefile_in,v 1.1 2001/02/07 13:32:36 wilfried Exp $
+--- WINGs/Makefile.in.orig	Sun Jan  7 00:22:02 2001
++++ WINGs/Makefile.in	Wed Feb  7 10:00:19 2001
+@@ -98,8 +98,7 @@ SUBDIRS = . Documentation Resources Exam
+ 
+ #libWINGs_la_LDFLAGS = -version-info 1:1:0
+ 
+-# is this a kluge? if so, how should i do it?
+-includedir = @includedir@/WINGs
++includedir = @includedir@
+ 
+ include_HEADERS = WINGs.h WUtil.h WINGsP.h
+ 
