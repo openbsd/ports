@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/12/31 10:37:16 reinhard Exp $
+# $OpenBSD: Makefile,v 1.10 2001/03/22 17:47:20 reinhard Exp $
 # Original from: Jaakko Heinonen <jheinonen@bigfoot.com>
 
-DISTNAME=	abook-0.4.11
+DISTNAME=	abook-0.4.12
 CATEGORIES=	mail
-NEED_VERSION=	1.348
-MASTER_SITES=	ftp://abook.sourceforge.net/pub/abook/
+NEED_VERSION=	1.353
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=abook
 
 HOMEPAGE=	http://abook.sourceforge.net
 
