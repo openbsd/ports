@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/21 16:35:31 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/27 09:31:28 kevlo Exp $
 
-DISTNAME=	Locale-Codes-1.04
+DISTNAME=	Locale-Codes-1.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	misc perl5
 NEED_VERSION=	1.351
