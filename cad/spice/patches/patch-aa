@@ -1,0 +1,12 @@
+--- src/include/cpstd.h.~1~	Wed Apr 14 12:57:42 1993
++++ src/include/cpstd.h	Wed Jun  3 14:49:24 1998
+@@ -50,7 +50,9 @@
+ extern char *printnum();
+ extern int cp_numdgt;
+ extern void fatal();
++#if ! defined( HAS_STDLIB )
+ extern void setenv();
++#endif
+ extern void cp_printword();
+ 
+ /* Externs from wlist.c */

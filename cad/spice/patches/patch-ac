@@ -1,0 +1,11 @@
+--- src/lib/fte/inp.c.~1~	Thu Apr 29 16:06:28 1993
++++ src/lib/fte/inp.c	Tue Jun  2 22:07:46 1998
+@@ -666,7 +666,7 @@
+ 
+     fprintf(cp_out, "run circuit? ");
+     fflush(cp_out);
+-    (void) gets(buf);
++    (void) fgets(buf, sizeof buf, stdin);
+     if (buf[0] != 'n') {
+       fprintf(cp_out, "running circuit\n");
+       com_run(NULL);

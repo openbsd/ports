@@ -1,0 +1,12 @@
+--- src/lib/mfb/mfbgnc.c.orig	Mon May 18 03:41:26 1998
++++ src/lib/mfb/mfbgnc.c	Tue May 19 00:52:27 1998
+@@ -25,7 +25,9 @@
+ 
+ /* Library routines */
+ #ifdef HAS_FTIME
++#ifndef __OpenBSD__
+ extern void ftime();
++#endif /*__OpenBSD__*/
+ #endif
+ 
+ /*
