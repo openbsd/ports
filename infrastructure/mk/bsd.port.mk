@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.335 2000/09/23 12:36:39 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.336 2000/09/23 12:40:27 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1577,7 +1577,7 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 	fi
 .  if ${CONFIGURE_STYLE:L:Mperl}
 	@arch=`/usr/bin/perl -e 'use Config; print $$Config{archname}, "\n";'`; \
-     cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
+     cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} \
      /usr/bin/perl Makefile.PL \
      	PREFIX='$${DESTDIR}${PREFIX}' \
 		INSTALLSITELIB='$${DESTDIR}${PREFIX}/libdata/perl5/site_perl' \
@@ -1587,7 +1587,7 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 		INSTALLMAN1DIR='$${DESTDIR}${PREFIX}/man/man1' \
 		INSTALLMAN3DIR='$${DESTDIR}${PREFIX}/man/man3' \
 		INSTALLBIN='$${PREFIX}/bin' \
-		INSTALLSCRIPT='$${INSTALLBIN}'
+		INSTALLSCRIPT='$${INSTALLBIN}' ${CONFIGURE_ARGS}
 .  endif
 .  if ${CONFIGURE_STYLE:L:Msimple} || ${CONFIGURE_STYLE:L:Mgnu}
 	@cd ${WRKBUILD} && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
