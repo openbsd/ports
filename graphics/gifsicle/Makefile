@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2001/02/13 08:21:30 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2001/02/14 07:36:03 jakob Exp $
 
-DISTNAME=		gifsicle-1.24
+DISTNAME=		gifsicle-1.25
 CATEGORIES=     	graphics
 NEED_VERSION=		1.305
 
