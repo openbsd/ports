@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/05/14 20:46:20 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/07/08 21:50:44 avsm Exp $
 @mode 0555
 bin/dotlock
 bin/mailbot
@@ -16,8 +16,7 @@ man/man1/reformime.1
 man/man5/maildropex.5
 man/man5/maildropfilter.5
 man/man5/maildropgdbm.5
-man/man8/deliverquota.8
-man/man8/maildirquota.8
+man/man7/maildirquota.7
 share/doc/maildrop/INSTALL
 share/doc/maildrop/README
 share/doc/maildrop/README.postfix

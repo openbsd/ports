@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/13 23:31:25 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/07/08 21:50:44 avsm Exp $
 
 COMMENT=	"local mail delivery agent with filtering abilities"
 
-DISTNAME=	maildrop-1.3.4
+DISTNAME=	maildrop-1.4.0
 CATEGORIES=    	mail
 NEED_VERSION=	1.463
 
