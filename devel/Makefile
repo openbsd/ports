@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.257 2004/11/28 14:46:48 alek Exp $
+# $OpenBSD: Makefile,v 1.258 2004/12/01 05:37:17 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -133,6 +133,7 @@
      SUBDIR += p5-C-Scan
      SUBDIR += p5-Cache-Cache
      SUBDIR += p5-Carp-Assert
+     SUBDIR += p5-Carp-Clan
      SUBDIR += p5-Carp-Datum
      SUBDIR += p5-Class-Accessor
      SUBDIR += p5-Class-Container
