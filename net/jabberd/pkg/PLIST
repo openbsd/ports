@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/10/08 15:27:27 naddy Exp $
+@newgroup ${JABBERDGROUP}:533
+@newuser ${JABBERDUSER}:533:${JABBERDGROUP}:daemon:jabberd account:/nonexistent:/bin/sh
 libexec/jabberd/
 libexec/jabberd/c2s
 libexec/jabberd/resolver
@@ -13,23 +15,33 @@ libexec/jabberd/sm
 @man man/man8/sm.8
 sbin/jabberd
 share/examples/jabberd/
+@sample ${CONFIG_DIR}/
+@group ${JABBERDGROUP}
+@owner ${JABBERDUSER}
+@mode 640
 share/examples/jabberd/c2s.xml
+@sample ${CONFIG_DIR}/c2s.xml
 share/examples/jabberd/db-setup.mysql
 share/examples/jabberd/jabberd.cfg
+@sample ${CONFIG_DIR}/jabberd.cfg
 share/examples/jabberd/resolver.xml
+@sample ${CONFIG_DIR}/resolver.xml
 share/examples/jabberd/router-users.xml
+@sample ${CONFIG_DIR}/router-users.xml
 share/examples/jabberd/router.xml
+@sample ${CONFIG_DIR}/router.xml
 share/examples/jabberd/s2s.xml
+@sample ${CONFIG_DIR}/s2s.xml
 share/examples/jabberd/sm.xml
+@sample ${CONFIG_DIR}/sm.xml
+@mode 750
 share/examples/jabberd/templates/
+@sample ${CONFIG_DIR}/templates/
+@mode 640
 share/examples/jabberd/templates/roster.xml
-@cwd ${SYSCONFDIR}
-@extra jabberd/templates/roster.xml
-@extra jabberd/templates
-@extra jabberd/jabberd.cfg
-@extra jabberd/c2s.xml
-@extra jabberd/resolver.xml
-@extra jabberd/router-users.xml
-@extra jabberd/router.xml
-@extra jabberd/s2s.xml
-@extra jabberd/sm.xml
+@sample ${CONFIG_DIR}/templates/roster.xml
+@mode 771
+@sample ${JABBERDDIR}/
+@mode 775
+@sample ${JABBERDDIR}/pid/
+@sample ${JABBERDDIR}/log/

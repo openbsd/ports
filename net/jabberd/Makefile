@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/10/06 01:08:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/10/08 15:27:27 naddy Exp $
 
 COMMENT=		"jabber server"
 DISTNAME=		jabberd-2.0s3
@@ -24,7 +24,6 @@ EXAMPLES=		${PREFIX}/share/examples/jabberd
 SUBST_VARS=		CONFIG_DIR EXAMPLES \
 			JABBERDUSER JABBERDGROUP JABBERDDIR
 
-BUILD_DEPENDS=		::databases/mysql,-server
 LIB_DEPENDS=		lib/mysql/mysqlclient.10::databases/mysql
 
 MODULES=		converters/libiconv
