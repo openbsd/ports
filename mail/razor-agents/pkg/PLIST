@@ -1,16 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/06/03 13:14:57 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/09/20 02:18:15 marcm Exp $
 bin/razor-check
-bin/razor-discover
+bin/razor-client
+bin/razor-register
 bin/razor-report
-${P5SITE}/Razor/Agent.pm
-${P5SITE}/Razor/Client.pm
-${P5SITE}/Razor/Config.pm
-${P5SITE}/Razor/Errorhandler.pm
-${P5SITE}/Razor/String.pm
-${P5SITE}/Razor/Version.pm
-${P5ARCH}/auto/razor-agents/.packlist
+bin/razor-revoke
+${P5SITE}/Razor2/Client/Agent.pm
+@comment ${P5SITE}/Razor2/Client/Agent.pm.orig
+${P5SITE}/Razor2/Client/Config.pm
+${P5SITE}/Razor2/Client/Core.pm
+${P5SITE}/Razor2/Client/Engine.pm
+${P5SITE}/Razor2/Client/Version.pm
+${P5SITE}/Razor2/Errorhandler.pm
+${P5SITE}/Razor2/Logger.pm
+${P5SITE}/Razor2/Preproc/Manager.pm
+${P5SITE}/Razor2/Preproc/VR1.pm
+${P5SITE}/Razor2/Preproc/deBase64.pm
+${P5SITE}/Razor2/Preproc/deHTML.pm
+${P5SITE}/Razor2/Preproc/deNewline.pm
+${P5SITE}/Razor2/Preproc/deQP.pm
+${P5SITE}/Razor2/Preproc/enBase64.pm
+${P5SITE}/Razor2/Signature/Ephemeral.pm
+${P5SITE}/Razor2/String.pm
+@comment ${P5ARCH}/auto/razor-agents/.packlist
+man/man1/razor-admin.1
 man/man1/razor-check.1
-man/man1/razor-discover.1
 man/man1/razor-report.1
+man/man1/razor-revoke.1
+man/man3p/Razor2::Errorhandler.3p
+man/man5/razor-agent.conf.5
+man/man5/razor-agents.5
+man/man5/razor-whitelist.5
+@comment @dirrm man/man3p
 @dirrm ${P5ARCH}/auto/razor-agents
-@dirrm ${P5SITE}/Razor
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Razor2/Signature
+@dirrm ${P5SITE}/Razor2/Preproc
+@dirrm ${P5SITE}/Razor2/Client
+@dirrm ${P5SITE}/Razor2

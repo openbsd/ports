@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/19 06:42:00 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2002/09/20 02:18:15 marcm Exp $
 
 COMMENT=		"agent for Razor spam filtering networks"
 
-VERSION=		1.20
-DISTNAME=		razor-agents-${VERSION}
+DISTNAME=		razor-agents-2.14
 CATEGORIES=		mail
 HOMEPAGE=		http://razor.sourceforge.net/
 
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
+# Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -16,14 +16,19 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=razor/}
 
-# Uh, the razor SDK uses Mail-Tools 1.40... but it's not in the
-# ports tree (yet)
-BUILD_DEPENDS=		:p5-Net-DNS->=0.12:net/p5-Net-DNS \
+BUILD_DEPENDS=		:p5-Digest-Nilsimsa->=0.06:security/p5-Digest-Nilsimsa \
+			:p5-Net-DNS->=0.23:net/p5-Net-DNS \
+			:p5-Test-Simple->=0.44:devel/p5-Test-Simple \
 			:p5-Time-HiRes->=1.20:devel/p5-Time-HiRes \
-			:p5-Digest-SHA1->=2.00:security/p5-Digest-SHA1 \
-			:p5-Mail-Tools->=1.15:mail/p5-Mail-Tools
+			:p5-URI->=1.19:www/p5-URI
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= 	perl
+
+post-install:
+	@ln -s razor-client ${PREFIX}/bin/razor-check
+	@ln -s razor-client ${PREFIX}/bin/razor-register
+	@ln -s razor-client ${PREFIX}/bin/razor-report
+	@ln -s razor-client ${PREFIX}/bin/razor-revoke
 
 .include <bsd.port.mk>
