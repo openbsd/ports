@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/02/12 09:33:58 turan Exp $
+# $OpenBSD: Makefile,v 1.12 2000/02/13 07:03:18 turan Exp $
 
 NEED_VERSION=	1.116
 DISTNAME=	lclint-2.4b
@@ -12,11 +12,11 @@ DISTFILES=	${EXTRACT_ONLY} ${GUIDE}
 
 MAINTAINER=	espie@cvs.openbsd.org
 
-LICENSE_TYPE=		GPL
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+LICENSE_TYPE=		"GPL NONE"
+PERMIT_PKG_CDROM=	NO
+PERMIT_PKG_FTP=		NO
+PERMIT_DISTF_CDROM=	NO
+PERMIT_DISTF_FTP=	NO
 AUTHOR=		evs@sds.lcs.mit.edu # David Evans
 BUGS=		lclint-bug@sds.lcs.mit.edu
 
