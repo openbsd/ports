@@ -1,0 +1,6 @@
+Antiword resources are in ${PREFIX}/share/antiword/resources.
+
+Copy the files from this directory into $HOME/.antiword, for
+each user wishing to use antiword.
+ 
+This allows each user to customize antiword how s/he wants.
