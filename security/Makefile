@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2001/11/15 06:22:00 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.92 2001/12/01 12:52:57 kevlo Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -12,6 +12,7 @@
      SUBDIR += arirang
      SUBDIR += bfbtester
      SUBDIR += bounix
+     SUBDIR += ccrypt
      SUBDIR += cfs
      SUBDIR += cgichk
      SUBDIR += chrootuid
