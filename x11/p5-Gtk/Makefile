@@ -1,34 +1,60 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/01 07:31:29 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/07 05:45:46 shell Exp $
 
-COMMENT=		"perl modules for Gtk libraries"
+COMMENT=	"set of modules to use Gtk+ libraries from Perl"
 
-VERSION=		0.7008
-DISTNAME=		Gtk-Perl-${VERSION}
-PKGNAME=		p5-Gtk-${VERSION}
+VERSION=	0.7008
+DISTNAME=	Gtk-Perl-${VERSION}
+PKGNAME=	p5-Gtk-${VERSION}
 
-CATEGORIES=     	x11 devel perl5
-NEED_VERSION=		1.417
-
-HOMEPAGE=		http://www.gtkperl.org/
-
-MAINTAINER=		Shell Hung <shell@openbsd.org>
+CATEGORIES=	x11 devel perl5
+NEED_VERSION=	1.433
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Gtk
+HOMEPAGE=	http://www.gtkperl.org/
 
-PERL_MODULES=		${LOCALBASE}/libdata/perl5/site_perl
-BUILD_DEPENDS=		${PERL_MODULES}/${MACHINE_ARCH}-openbsd/XML/Parser.pm::textproc/p5-XML-Parser \
-			${PERL_MODULES}/XML/Writer.pm::textproc/p5-XML-Writer
-LIB_DEPENDS=		gtk.1.::x11/gtk+
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR= Gtk
 
-USE_X11=		Yes
-CONFIGURE_STYLE=	perl
-CONFIGURE_ARGS+=	--with-gtk  \
-			--without-guessing
+MAINTAINER=	Joshua Stein <jcs@rt.fm>
+
+USE_X11=	Yes
+
+PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl/
+PERL_MODULES2=	${PERL_MODULES}/${MACHINE_ARCH}-openbsd
+LIB_DEPENDS=	gdk_pixbuf.2::graphics/gdk-pixbuf \
+		gdk_imlib.19::graphics/imlib
+BUILD_DEPENDS=	${PERL_MODULES2}/XML/Parser.pm::textproc/p5-XML-Parser \
+		${PERL_MODULES}/XML/Writer.pm::textproc/p5-XML-Writer
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+CONFIGURE_STYLE= perl
+CONFIGURE_ARGS=	--without-gtkhtml --without-gtkxmhtml --without-gnome \
+		--without-gnomeprint --without-applets --without-glade
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+MAKE_FLAGS=	INST_MAN3DIR="../blib/man3"
+
+PERLDIR=	"${DESTDIR}/${PREFIX}/libdata/perl5/site_perl"
+FAKE_FLAGS=	${MAKE_FLAGS} \
+		INSTALLPRIVLIB="${PERLDIR}" \
+		INSTALLARCHLIB="${PERLDIR}/${MACHINE_ARCH}-openbsd" \
+		INSTALLSITELIB="${PERLDIR}" \
+		INSTALLSITEARCH="${PERLDIR}/${MACHINE_ARCH}-openbsd" \
+		INSTALLMAN3DIR="${DESTDIR}/${PREFIX}/man/man3" \
+
+FLAVORS=	gtkglarea
+FLAVOR?=	
+
+.if ${FLAVOR:L:Mgtkglarea}
+LIB_DEPENDS+=	gtkgl.1.2::x11/gtkglarea
+CONFIGURE_ARGS+= --with-gtkglarea-force
+.else
+CONFIGURE_ARGS+= --without-gtkglarea
+.endif
 
 .include <bsd.port.mk>
