@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/04/18 00:36:22 jolan Exp $
+# $OpenBSD: Makefile,v 1.10 2004/07/05 22:07:01 jolan Exp $
 
 COMMENT=	"audio/video converter and streamer with bktr(4) support"
 DISTNAME=	ffmpeg-0.4.8
@@ -75,7 +75,7 @@ do-install:
 		${PREFIX}/include/postproc
 	${INSTALL_DATA} ${WRKBUILD}/libavcodec/libavcodec.a \
 		${WRKBUILD}/libavformat/libavformat.a ${PREFIX}/lib
-.if !defined(NO_SHARED_LIBS)
+.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
 	${INSTALL_DATA} ${WRKBUILD}/libavcodec/libavcodec.so.${SV} \
 		${PREFIX}/lib/libavcodec.so.${SV}
 	${INSTALL_DATA} ${WRKBUILD}/libavformat/libavformat.so.${SV} \
