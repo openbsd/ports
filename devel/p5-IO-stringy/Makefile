@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/08/21 21:22:07 shell Exp $
+# $OpenBSD: Makefile,v 1.8 2001/09/01 01:49:42 shell Exp $
 
 COMMENT=		"in-core objects like strings and arrays for I/O"
 
@@ -6,7 +6,7 @@ VERSION=		2.108
 DISTNAME=		IO-stringy-${VERSION}
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
-NEED_VERSION=		1.434
+NEED_VERSION=		1.448
 
 MAINTAINER=		Shell Hung <shell@openbsd.org>
 
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+HOMEPAGE=		http://www.zeegee.com/code/perl/IO-stringy/
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= 	IO
