@@ -1,24 +1,29 @@
-$OpenBSD: patch-master.cf,v 1.12 2004/04/25 10:36:39 jakob Exp $
+$OpenBSD: patch-master.cf,v 1.13 2004/12/28 09:08:12 jakob Exp $
 
---- conf/master.cf.orig	Sat Apr 24 23:39:28 2004
-+++ conf/master.cf	Sat Apr 24 23:42:33 2004
-@@ -77,33 +77,33 @@
+--- conf/master.cf.orig	Thu Dec 16 16:46:38 2004
++++ conf/master.cf	Tue Dec 28 09:19:27 2004
+@@ -6,39 +6,39 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
  # ==========================================================================
 -smtp      inet  n       -       n       -       -       smtpd
--#smtps    inet  n       -       n       -       -       smtpd
+-#submission inet n      -       n       -       -       smtpd
 +smtp      inet  n       -       -       -       -       smtpd
++#submission inet n      -       -       -       -       smtpd
+ #	-o smtpd_etrn_restrictions=reject
+ #	-o smtpd_client_restrictions=permit_sasl_authenticated,reject
+-#smtps    inet  n       -       n       -       -       smtpd
 +#smtps    inet  n       -       -       -       -       smtpd
  #  -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes
  #submission   inet    n       -       n       -       -       smtpd
- #  -o smtpd_enforce_tls=yes -o smtpd_sasl_auth_enable=yes -o smtpd_etrn_restrictions=reject
+ #  -o smtpd_etrn_restrictions=reject
+ #  -o smtpd_enforce_tls=yes -o smtpd_sasl_auth_enable=yes
 -#628      inet  n       -       n       -       -       qmqpd
 -pickup    fifo  n       -       n       60      1       pickup
 -cleanup   unix  n       -       n       -       0       cleanup
 -qmgr      fifo  n       -       n       300     1       qmgr
 -#qmgr     fifo  n       -       n       300     1       oqmgr
--#tlsmgr   fifo  -       -       n       300     1       tlsmgr
+-tlsmgr    unix  -       -       n       1000?   1       tlsmgr
 -rewrite   unix  -       -       n       -       -       trivial-rewrite
 -bounce    unix  -       -       n       -       0       bounce
 -defer     unix  -       -       n       -       0       bounce
@@ -30,7 +35,7 @@ $OpenBSD: patch-master.cf,v 1.12 2004/04/25 10:36:39 jakob Exp $
 +cleanup   unix  n       -       -       -       0       cleanup
 +qmgr      fifo  n       -       -       300     1       qmgr
 +#qmgr     fifo  n       -       -       300     1       oqmgr
-+#tlsmgr   fifo  -       -       -       300     1       tlsmgr
++tlsmgr    unix  -       -       -       1000?   1       tlsmgr
 +rewrite   unix  -       -       -       -       -       trivial-rewrite
 +bounce    unix  -       -       -       -       0       bounce
 +defer     unix  -       -       -       -       0       bounce
@@ -45,14 +50,18 @@ $OpenBSD: patch-master.cf,v 1.12 2004/04/25 10:36:39 jakob Exp $
  #       -o smtp_helo_timeout=5 -o smtp_connect_timeout=5
 -showq     unix  n       -       n       -       -       showq
 -error     unix  -       -       n       -       -       error
+-discard   unix  -       -       n       -       -       discard
 +showq     unix  n       -       -       -       -       showq
 +error     unix  -       -       -       -       -       error
++discard   unix  -       -       -       -       -       discard
  local     unix  -       n       n       -       -       local
  virtual   unix  -       n       n       -       -       virtual
 -lmtp      unix  -       -       n       -       -       lmtp
 -anvil     unix  -       -       n       -       1       anvil
+-scache	  unix	-	-	n	-	1	scache
 +lmtp      unix  -       -       -       -       -       lmtp
 +anvil     unix  -       -       -       -       1       anvil
++scache	  unix	-	-	-	-	1	scache
  #
+ # ====================================================================
  # Interfaces to non-Postfix software. Be sure to examine the manual
- # pages of the non-Postfix software to find out what options it wants.
