@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2001/07/28 07:25:02 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.94 2001/07/29 07:20:09 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -112,6 +112,7 @@
      SUBDIR += t1lib
      SUBDIR += tclcl
      SUBDIR += tkcvs
+     SUBDIR += varconf
      SUBDIR += xmake
 
 .include <bsd.port.subdir.mk>
