@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2003/12/29 11:27:41 matthieu Exp $
+# $OpenBSD: Makefile,v 1.60 2004/05/10 04:48:42 dons Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -51,6 +51,7 @@
 #    SUBDIR += modula-3-lib
 #    SUBDIR += modula-3-socks
 #    SUBDIR += moscow_ml
+     SUBDIR += nhc98
 #    SUBDIR += objc
      SUBDIR += ocaml
      SUBDIR += otcl
