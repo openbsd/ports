@@ -1,21 +1,62 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/04/12 10:02:33 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/07/09 21:16:27 naddy Exp $
 bin/ion
-bin/ion-edit
-bin/ion-man
-bin/ion-runinxterm
-bin/ion-ssh
-bin/ion-view
-man/man1/ion.1x
-share/doc/ion/config.txt
-share/doc/ion/functions.txt
-share/examples/ion/bindings-default.conf
-share/examples/ion/bindings-sun.conf
-share/examples/ion/kludges.conf
-share/examples/ion/look-brownsteel.conf
-share/examples/ion/look-greyviolet.conf
-share/examples/ion/look-simpleblue.conf
-share/examples/ion/look-wheat.conf
-share/examples/ion/sample.conf
+bin/pwm
+lib/ion/de.la
+lib/ion/dock.la
+lib/ion/floatws.la
+lib/ion/ion-completefile
+lib/ion/ionws.la
+lib/ion/lc/ioncore-efbb.lc
+lib/ion/lc/ioncorelib-mplexfns.lc
+lib/ion/lc/ioncorelib.lc
+lib/ion/lc/menulib.lc
+lib/ion/lc/querylib.lc
+lib/ion/menu.la
+lib/ion/query.la
+man/man1/ion.1
+man/man1/pwm.1
+share/doc/ion/ChangeLog
+share/doc/ion/LICENSE
+share/doc/ion/README
+share/examples/ion/dock-draw.lua
+share/examples/ion/dock.lua
+share/examples/ion/draw.lua
+share/examples/ion/floatws.lua
+share/examples/ion/ion-bindings.lua
+share/examples/ion/ion-menus.lua
+share/examples/ion/ion.lua
+share/examples/ion/ionws.lua
+share/examples/ion/kludges.lua
+share/examples/ion/look-brownsteel.lua
+share/examples/ion/look-clean.lua
+share/examples/ion/look-cleanios.lua
+share/examples/ion/look-cleanviolet.lua
+share/examples/ion/look-dusky.lua
+share/examples/ion/look-greyviolet.lua
+share/examples/ion/look-ios.lua
+share/examples/ion/look-simpleblue.lua
+share/examples/ion/look-wheat2.lua
+share/examples/ion/menu.lua
+share/examples/ion/pwm-bindings.lua
+share/examples/ion/pwm-menus.lua
+share/examples/ion/pwm.lua
+share/examples/ion/query.lua
+share/ion/delib.lua
+share/ion/ion-edit
+share/ion/ion-man
+share/ion/ion-runinxterm
+share/ion/ion-ssh
+share/ion/ion-view
+share/ion/ioncore-efbb.lua
+share/ion/ioncorelib-mplexfns.lua
+share/ion/ioncorelib.lua
+share/ion/menulib.lua
+share/ion/querylib.lua
+share/ion/welcome_message.txt
+%%SHARED%%
+@dirrm share/ion
 @dirrm share/examples/ion
 @dirrm share/doc/ion
+@dirrm lib/ion/lc
+@dirrm lib/ion
 @extraunexec rm -rf ${SYSCONFDIR}/ion

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2002/04/26 03:35:34 pvalchev Exp $
+# $OpenBSD: INSTALL,v 1.3 2004/07/09 21:16:27 naddy Exp $
 #
 # Pre/post-installation setup of ion
 
@@ -9,7 +9,6 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}/ion
-CONFIG_FILE=$CONFIG_DIR/ion.conf
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/ion
 
 # Function: tell the user what they need to do to use the port just installed
@@ -18,8 +17,8 @@ do_notice()
 {
     echo
     echo "+---------------"
-    echo "| The existing $1 configuration file, ${CONFIG_FILE},"
-    echo "| has NOT been changed.  You may want to compare it to the"
+    echo "| The existing $1 configuration files in ${CONFIG_DIR}"
+    echo "| have NOT been changed.  You may want to compare it to the"
     echo "| current sample files in ${SAMPLE_CONFIG_DIR}"
     echo "| and update your configuration as needed."
     echo "+---------------"
@@ -30,13 +29,12 @@ do_notice()
 #
 do_install()
 {
-    install -o root -g wheel -d ${CONFIG_DIR}
-    install -o root -g wheel ${SAMPLE_CONFIG_DIR}/sample.conf ${CONFIG_FILE}
-    perl -i -pe "s#(include\\s+\")([^\"]*\")#\$1$SAMPLE_CONFIG_DIR/\$2#" ${CONFIG_FILE}
+    install -o root -g wheel -m 0755 -d ${CONFIG_DIR}
+    install -o root -g wheel ${SAMPLE_CONFIG_DIR}/* ${CONFIG_DIR}
     echo
     echo "+---------------"
-    echo "| The $1 configuration file, ${CONFIG_FILE},"
-    echo "| has been installed.  Please view this file and change"
+    echo "| The $1 configuration files have been installed in"
+    echo "| ${CONFIG_DIR}. Please view this files and change"
     echo "| the configuration to meet your needs."
     echo "+---------------"
     echo
@@ -56,7 +54,7 @@ case $2 in
 	: nothing to pre-install for this port
 	;;
     POST-INSTALL)
-	if [ -f ${CONFIG_FILE} ]; then
+	if [ -d ${CONFIG_DIR} ]; then
 	    do_notice "$1"
 	else
 	    do_install "$1"

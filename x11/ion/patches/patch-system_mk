@@ -1,46 +1,72 @@
---- system.mk.orig	Thu Jan 24 22:40:35 2002
-+++ system.mk	Thu Jan 24 22:44:22 2002
-@@ -7,13 +7,14 @@
+$OpenBSD: patch-system_mk,v 1.4 2004/07/09 21:16:26 naddy Exp $
+--- system.mk.orig	Tue Jun  1 16:35:23 2004
++++ system.mk	Fri Jul  9 23:07:44 2004
+@@ -7,7 +7,7 @@
  ## Installation paths
  ##
  
 -PREFIX=/usr/local
 +#PREFIX=/usr/local
  
- # No need to modify these usually
+ # Unless you are creating a package conforming to some OS's standards, you
+ # probably do not want to modify the following directories:
+@@ -15,15 +15,16 @@ PREFIX=/usr/local
+ # Main binaries
  BINDIR=$(PREFIX)/bin
--ETCDIR=$(PREFIX)/etc
-+ETCDIR=$(SYSCONFDIR)
- MANDIR=$(PREFIX)/man
--DOCDIR=$(PREFIX)/doc
-+DOCDIR=$(PREFIX)/share/doc
-+EXAMPLEDIR=$(PREFIX)/share/examples
- # Not used
- INCDIR=$(PREFIX)/include
+ # Configuration .lua files
+-ETCDIR=$(PREFIX)/etc/ion
++ETCDIR=$(PREFIX)/share/examples/ion
+ # Some .lua files and ion-* shell scripts
+ SHAREDIR=$(PREFIX)/share/ion
+ # Manual pages
+-MANDIR=$(PREFIX)/share/man
++MANDIR=$(PREFIX)/man
+ # Some documents
+ DOCDIR=$(PREFIX)/share/doc/ion
++EXAMPLEDIR=$(PREFIX)/share/examples/ion
+ # Nothing at the moment
+-INCDIR=$(PREFIX)/include/ion
++INCDIR=$(PREFIX)/include
+ # Nothing at the moment
  LIBDIR=$(PREFIX)/lib
-@@ -24,14 +25,14 @@ LIBDIR=$(PREFIX)/lib
- ##
+ # Modules
+@@ -56,10 +57,10 @@ LTDL_LIBS=-lltdl
+ # autoconf-expecting wrapper. If you also set PRELOAD_MODULES=1 and disable
+ # Xinerama support below, Ion should compile on Cygwin.
+ #
+-#LIBTOOLDIR=/usr/local/stow/libtool-1.5
+-#LIBTOOL=$(LIBTOOLDIR)/bin/libtool
+-#LTDL_INCLUDES=-I$(LIBTOOLDIR)/include
+-#LTDL_LIBS=-L$(LIBTOOLDIR)/lib -lltdl
++LIBTOOLDIR=/usr/local
++LIBTOOL=$(LIBTOOLDIR)/bin/libtool
++LTDL_INCLUDES=-I$(LIBTOOLDIR)/share/libtool/libltdl
++LTDL_LIBS=-L$(LIBTOOLDIR)/lib -lltdl
  
- #MODULE_SUPPORT=-DCF_NO_MODULE_SUPPORT
--MODULE_SUPPORT_LDFLAGS=-export-dynamic -ldl
-+MODULE_SUPPORT_LDFLAGS=
- 
- 
- ##
+ # Set PRELOAD_MODULES=1 if your system does not support dynamically loaded
+ # modules. 
+@@ -90,7 +91,7 @@ LUAC=$(LUA_DIR)/bin/luac
  ## X libraries, includes and options
  ##
  
 -X11_PREFIX=/usr/X11R6
 +X11_PREFIX=$(X11BASE)
- 
  # SunOS/Solaris
  #X11_PREFIX=/usr/openwin
-@@ -52,14 +53,14 @@ X11_DEFINES=
+ 
+@@ -119,29 +120,29 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WOR
  # asprintf and vasprintf in the c library. (gnu libc has.)
  # If HAS_SYSTEM_ASPRINTF is not defined, an implementation
- # in libtu/sprintf_2.2/ is used.
+ # in sprintf_2.2/ is used.
 -#HAS_SYSTEM_ASPRINTF=1
 +HAS_SYSTEM_ASPRINTF=1
+ 
+ 
+ # If you're on an archaic system (such as relatively recent *BSD releases)
+ # without even dummy multibyte/widechar support, you may have to uncomment
+ # the following line:
+-#DEFINES += -DCF_NO_MB_SUPPORT
++DEFINES += -DCF_NO_MB_SUPPORT
  
  
  ##
@@ -50,33 +76,19 @@
 -CC=gcc
 +#CC=gcc
  
- # The POSIX_SOURCE, XOPEN_SOURCE and WARN options should not be necessary,
- # they're mainly for development use. So, if they cause trouble (not
-@@ -68,7 +69,7 @@ CC=gcc
- 
- # libtu/ uses POSIX_SOURCE
- 
--POSIX_SOURCE=-ansi -D_POSIX_SOURCE
-+#POSIX_SOURCE=-ansi -D_POSIX_SOURCE
- 
- # and . (ion) XOPEN_SOURCE.
- # There is variation among systems what should be used and how they interpret
-@@ -81,13 +82,13 @@ POSIX_SOURCE=-ansi -D_POSIX_SOURCE
- 
- # Same as '-Wall -pedantic-errors' without '-Wunused' as callbacks often
+ # Same as '-Wall -pedantic' without '-Wunused' as callbacks often
  # have unused variables.
 -WARN=	-W -Wimplicit -Wreturn-type -Wswitch -Wcomment \
 -	-Wtrigraphs -Wformat -Wchar-subscripts \
--	-Wparentheses -pedantic-errors -Wuninitialized
+-	-Wparentheses -pedantic -Wuninitialized
 +#WARN=	-W -Wimplicit -Wreturn-type -Wswitch -Wcomment \
 +#	-Wtrigraphs -Wformat -Wchar-subscripts \
-+#	-Wparentheses -pedantic-errors -Wuninitialized
++#	-Wparentheses -pedantic -Wuninitialized
  
+-CFLAGS=-g -Os $(WARN) $(DEFINES) $(EXTRA_INCLUDES) $(INCLUDES)
+-LDFLAGS=-g -Os $(EXTRA_LIBS) $(LIBS)
++CFLAGS+=$(WARN) $(DEFINES) $(EXTRA_INCLUDES) $(INCLUDES)
++LDFLAGS+=$(EXTRA_LIBS) $(LIBS)
  
--CFLAGS=-g -O2 $(WARN) $(DEFINES) $(INCLUDES) $(EXTRA_INCLUDES)
--LDFLAGS=-g $(LIBS) $(EXTRA_LIBS)
-+CFLAGS+=  $(WARN) $(DEFINES) $(INCLUDES) $(EXTRA_INCLUDES)
-+LDFLAGS+= $(LIBS) $(EXTRA_LIBS)
- 
- 
- ##
+ # The following options are mainly for development use and can be used
+ # to check that the code seems to conform to some standards. Depending

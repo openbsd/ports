@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2004/07/09 21:16:27 naddy Exp $
+lib/ion/de.so
+lib/ion/dock.so
+lib/ion/floatws.so
+lib/ion/ionws.so
+lib/ion/menu.so
+lib/ion/query.so
