@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/23 03:29:06 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2001/06/07 13:43:22 naddy Exp $
+
+COMMENT=	"XFree86-based xterm with Korean language support"
 
 DISTNAME=	hanterm-xf-p19
 CATEGORIES=	korean x11
