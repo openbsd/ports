@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2002/03/17 23:33:29 lebel Exp $
+# $OpenBSD: Makefile,v 1.43 2002/03/23 02:49:33 lebel Exp $
 
 COMMENT=	"vi clone, many additional features, snapshot version"
 COMMENT-lang=	"vi clone, NLS subpackage, snapshot version"
 
 DISTNAME=	vim-6.1b
-REVISION=       23
+REVISION=       34
 VERSION=        6.1b.${REVISION}
 PKGNAME=	vim-${VERSION}
 DISTNAME=	vim-6.1b
@@ -48,6 +48,10 @@ MODULES=	gettext iconv
 
 MULTI_PACKAGES= -lang
 SUBPACKAGE?=
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-lang"
+RUN_DEPENDS=::editors/vim/snapshot
+.endif
+
 .for i in ${MULTI_PACKAGES}
 PKGNAME$i=      vim$i-${VERSION}
 .endfor
