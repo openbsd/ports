@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2003/02/11 12:25:06 couderc Exp $
+# $OpenBSD: Makefile,v 1.36 2003/02/13 21:35:09 couderc Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
@@ -16,11 +16,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/sylpheed/
 
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS= --enable-ssl \
-		--enable-ipv6
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
-                LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--enable-ssl \
+			--enable-ipv6
+CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 FLAVORS=	compface gpgme imlib
 FLAVOR?=
@@ -28,24 +28,24 @@ FLAVOR?=
 .if ${FLAVOR:L:Mcompface}
 PERMIT_PACKAGE_CDROM=	"No Fee"
 PERMIT_DISTFILES_CDROM=	"No Fee"
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcompface.a::graphics/compface
+BUILD_DEPENDS=		${LOCALBASE}/lib/libcompface.a::graphics/compface
 .else
-CONFIGURE_ARGS+= --disable-compface
+CONFIGURE_ARGS+=	--disable-compface
 .endif
 
 .if ${FLAVOR:L:Mgpgme}
-LIB_DEPENDS=	gpgme.4::security/gpgme
-CONFIGURE_ARGS+= --enable-gpgme
+LIB_DEPENDS=		gpgme.4::security/gpgme
+CONFIGURE_ARGS+=	--enable-gpgme
 .else
-CONFIGURE_ARGS+= --disable-gpgme
+CONFIGURE_ARGS+=	--disable-gpgme
 .endif
 
 .if ${FLAVOR:L:Mimlib}
-LIB_DEPENDS+=	gdk_imlib.19::graphics/imlib
-CONFIGURE_ARGS+= --disable-gdk-pixbuf
+LIB_DEPENDS+=		gdk_imlib.19::graphics/imlib
+CONFIGURE_ARGS+=	--disable-gdk-pixbuf
 .else
-LIB_DEPENDS+=	gdk_pixbuf.2::graphics/gdk-pixbuf
-CONFIGURE_ARGS+= --disable-imlib
+LIB_DEPENDS+=		gdk_pixbuf.2::graphics/gdk-pixbuf
+CONFIGURE_ARGS+=	--disable-imlib
 .endif
 
 .include <bsd.port.mk>
