@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/06/10 03:18:35 wilfried Exp $
+# $OpenBSD: Makefile,v 1.20 2002/06/15 05:11:31 pvalchev Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -65,7 +65,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Msdl}
 CONFIGURE_ARGS+=--enable-sdl \
 		--with-sdl-config=${LOCALBASE}/bin/sdl-config
-LIB_DEPENDS+=	SDL:sdl>=1.2.4p1:devel/sdl
+LIB_DEPENDS+=	SDL:sdl-1.2.4p1,>=1.2.5-*:devel/sdl
 .else
 CONFIGURE_ARGS+=--disable-sdl
 .endif
@@ -100,7 +100,7 @@ pre-fetch:
 .if ${MACHINE_ARCH} != i386
 	@echo
 	@echo "Sorry, this CPU does not support Win32 codec DLLs,"
-	@echo "and you cannot use the win32 flavor.
+	@echo "and you cannot use the win32 flavor."
 	@echo
 	@exit 1
 .else
