@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/01/08 20:18:48 avsm Exp $
+# $OpenBSD: Makefile,v 1.17 2001/01/13 12:47:26 avsm Exp $
 
 DISTNAME=	indent-2.2.6
 CATEGORIES=	devel
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--program-prefix="g"
+SEPARATE_BUILD= concurrent
 
 post-extract:
 	@rm ${WRKSRC}/indent.info*
