@@ -1,0 +1,26 @@
+integrit is an alternative to file integrity verification programs
+like tripwire and aide. It helps you determine whether an intruder
+has modified a computer system.
+
+Its features include: 
+* Small memory footprint during runtime.
+  This is a big deal because a machine that is important enough to
+  protect is probably doing important things. Since the other
+  processes are important, integrit doesn't step on anyone's toes:
+  its conservative with memory.
+* Simple, modular design and implementation means a smaller learning
+  curve and better potential for open-source development.
+* Uses up-to-date cryptographic algorithms from gnupg.  
+* Designed with unattended use in mind, e.g., integrit includes
+  the MD5 checksum of newly generated databases in its report.
+* Intuitive cascading rulesets for the paths listed in the
+  configuration file.
+* An option to reset the access times of selected files or directory
+  trees after doing checksums.
+* Output format can be XML or an easy-to-scan human-readable format.
+* Simultaneous check and update: integrit can generate a new database
+  while running a check against an old database.
+* Distribution contains standalone auxiliary programs for convenience
+  that you can safely ignore or else use when needed.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,14 @@
+$OpenBSD: patch-utils_Makefile_in,v 1.1.1.1 2002/11/17 00:15:19 brad Exp $
+--- utils/Makefile.in.orig	Sun Sep 15 22:27:21 2002
++++ utils/Makefile.in	Sun Sep 15 22:28:27 2002
+@@ -29,8 +29,8 @@ RM	 = @RM@
+ PROGS	 = i-viewdb i-ls
+ LS_OBJ	 = ls.o
+ VIEWDB_OBJ = viewdb.o
+-SBINDIR	 = @sbindir@
+-BINDIR	 = @bindir@
++SBINDIR	 = ${PREFIX}/sbin
++BINDIR	 = ${PREFIX}/bin
+ INSTALL	 = @INSTALL@
+ CPPFLAGS = -I.. -I$(srcdir)/.. @CPPFLAGS@
+ CFLAGS	 = @CFLAGS@

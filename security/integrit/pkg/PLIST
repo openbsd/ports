@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/17 00:15:19 brad Exp $
+bin/i-ls
+@unexec install-info --delete --info-dir=%D/info %D/info/integrit.info
+info/integrit.info
+@exec install-info --info-dir=%D/info %D/info/integrit.info
+man/man1/i-ls.1
+man/man1/i-viewdb.1
+man/man1/integrit.1
+sbin/i-viewdb
+sbin/integrit
+share/doc/integrit/README
+share/doc/integrit/crontab
+share/doc/integrit/install_db
+share/doc/integrit/integrit_check
+share/doc/integrit/viewreport
+share/examples/integrit/root.conf
+share/examples/integrit/src.conf
+share/examples/integrit/usr.conf
+@dirrm share/examples/integrit
+@dirrm share/doc/integrit

@@ -1,0 +1,17 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2002/11/17 00:15:19 brad Exp $
+--- doc/Makefile.in.orig	Tue Aug 27 04:55:12 2002
++++ doc/Makefile.in	Sun Sep 15 22:31:01 2002
+@@ -23,11 +23,11 @@ exec_prefix	 = @exec_prefix@
+ srcdir		 = @srcdir@
+ # we aren't using VPATH
+ # VPATH		 = @srcdir@
+-MANDIR		 = @mandir@
++MANDIR		 = ${PREFIX}/man
+ INSTALL	 = @INSTALL@
+ INSTALL_INFO	 = install-info
+ INFO_FILES	 = integrit.info
+-infodir	 = @infodir@
++infodir	 = ${PREFIX}/info
+ 
+ # target for developers puts info file in srcdir
+ # 

@@ -1,0 +1,8 @@
+--- dep.mak.orig	Sat Nov 16 17:10:03 2002
++++ dep.mak	Sat Nov 16 17:10:17 2002
+@@ -40,4 +40,4 @@ xstrdup.o : ${srcdir}/xstrdup.c  ${srcdi
+ md5.o : ${srcdir}/gnupg/md5.c  ${srcdir}/cdb.h ${srcdir}/cdb_hash.h Makefile
+ 	${CC} ${CPPFLAGS} ${CFLAGS} ${DEFS} -o $@ -c ${srcdir}/gnupg/md5.c
+ sha1.o : ${srcdir}/gnupg/sha1.c  ${srcdir}/cdb.h ${srcdir}/cdb_hash.h Makefile
+-	${CC} ${CPPFLAGS} ${CFLAGS} ${DEFS} -o $@ -c ${srcdir}/gnupg/sha1.c
++	${CC} ${CPPFLAGS} ${CFLAGS} ${DEFS} -O0 -o $@ -c ${srcdir}/gnupg/sha1.c
