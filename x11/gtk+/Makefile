@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 1999/10/27 01:21:56 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2000/01/01 00:09:50 brad Exp $
 
 DISTNAME=	gtk+-1.2.6
 CATEGORIES=     x11
@@ -41,15 +41,12 @@ pre-extract:
 	fi
 
 post-extract:
-	@${RM} -f ${WRKSRC}/docs/gtk.info*
-	@${RM} -f ${WRKSRC}/docs/gdk.info*
+	@rm -f ${WRKSRC}/docs/gtk.info*
+	@rm -f ${WRKSRC}/docs/gdk.info*
 
 post-install:
-	@${MKDIR} ${LOCALBASE}/share/aclocal
-	@${INSTALL_DATA} ${WRKSRC}/gtk.m4 ${LOCALBASE}/share/aclocal/
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
+	${INSTALL_DATA_DIR} ${LOCALBASE}/share/aclocal
+	${INSTALL_DATA} ${WRKSRC}/gtk.m4 ${LOCALBASE}/share/aclocal/
 	@install-info ${PREFIX}/info/gtk.info ${PREFIX}/info/dir
 	@install-info ${PREFIX}/info/gdk.info ${PREFIX}/info/dir
 	@${LDCONFIG} -m ${PREFIX}/lib

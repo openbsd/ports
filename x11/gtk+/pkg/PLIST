@@ -1,10 +1,10 @@
 bin/gtk-config
 include/gdk/gdk.h
 include/gdk/gdkcursors.h
-include/gdk/gdkrgb.h
 include/gdk/gdki18n.h
 include/gdk/gdkkeysyms.h
 include/gdk/gdkprivate.h
+include/gdk/gdkrgb.h
 include/gdk/gdktypes.h
 include/gdk/gdkx.h
 include/gtk/gtk.h
@@ -15,9 +15,9 @@ include/gtk/gtkalignment.h
 include/gtk/gtkarg.h
 include/gtk/gtkarrow.h
 include/gtk/gtkaspectframe.h
+include/gtk/gtkbbox.h
 include/gtk/gtkbin.h
 include/gtk/gtkbindings.h
-include/gtk/gtkbbox.h
 include/gtk/gtkbox.h
 include/gtk/gtkbutton.h
 include/gtk/gtkcalendar.h
@@ -28,7 +28,6 @@ include/gtk/gtkcolorsel.h
 include/gtk/gtkcombo.h
 include/gtk/gtkcompat.h
 include/gtk/gtkcontainer.h
-include/gtk/gtkgc.h
 include/gtk/gtkctree.h
 include/gtk/gtkcurve.h
 include/gtk/gtkdata.h
@@ -40,11 +39,13 @@ include/gtk/gtkeditable.h
 include/gtk/gtkentry.h
 include/gtk/gtkenums.h
 include/gtk/gtkeventbox.h
+include/gtk/gtkfeatures.h
 include/gtk/gtkfilesel.h
 include/gtk/gtkfixed.h
 include/gtk/gtkfontsel.h
 include/gtk/gtkframe.h
 include/gtk/gtkgamma.h
+include/gtk/gtkgc.h
 include/gtk/gtkhandlebox.h
 include/gtk/gtkhbbox.h
 include/gtk/gtkhbox.h
@@ -52,8 +53,8 @@ include/gtk/gtkhpaned.h
 include/gtk/gtkhruler.h
 include/gtk/gtkhscale.h
 include/gtk/gtkhscrollbar.h
-include/gtk/gtkimage.h
 include/gtk/gtkhseparator.h
+include/gtk/gtkimage.h
 include/gtk/gtkinputdialog.h
 include/gtk/gtkinvisible.h
 include/gtk/gtkitem.h
@@ -63,6 +64,7 @@ include/gtk/gtklayout.h
 include/gtk/gtklist.h
 include/gtk/gtklistitem.h
 include/gtk/gtkmain.h
+include/gtk/gtkmarshal.h
 include/gtk/gtkmenu.h
 include/gtk/gtkmenubar.h
 include/gtk/gtkmenufactory.h
@@ -75,7 +77,6 @@ include/gtk/gtkoptionmenu.h
 include/gtk/gtkpacker.h
 include/gtk/gtkpaned.h
 include/gtk/gtkpixmap.h
-include/gtk/gtkrc.h
 include/gtk/gtkplug.h
 include/gtk/gtkpreview.h
 include/gtk/gtkprivate.h
@@ -84,6 +85,7 @@ include/gtk/gtkprogressbar.h
 include/gtk/gtkradiobutton.h
 include/gtk/gtkradiomenuitem.h
 include/gtk/gtkrange.h
+include/gtk/gtkrc.h
 include/gtk/gtkruler.h
 include/gtk/gtkscale.h
 include/gtk/gtkscrollbar.h
@@ -93,8 +95,8 @@ include/gtk/gtkseparator.h
 include/gtk/gtksignal.h
 include/gtk/gtksocket.h
 include/gtk/gtkspinbutton.h
-include/gtk/gtkstyle.h
 include/gtk/gtkstatusbar.h
+include/gtk/gtkstyle.h
 include/gtk/gtktable.h
 include/gtk/gtktearoffmenuitem.h
 include/gtk/gtktext.h
@@ -105,6 +107,7 @@ include/gtk/gtktoolbar.h
 include/gtk/gtktooltips.h
 include/gtk/gtktree.h
 include/gtk/gtktreeitem.h
+include/gtk/gtktypebuiltins.h
 include/gtk/gtktypeutils.h
 include/gtk/gtkvbbox.h
 include/gtk/gtkvbox.h
@@ -116,9 +119,6 @@ include/gtk/gtkvscrollbar.h
 include/gtk/gtkvseparator.h
 include/gtk/gtkwidget.h
 include/gtk/gtkwindow.h
-include/gtk/gtkfeatures.h
-include/gtk/gtkmarshal.h
-include/gtk/gtktypebuiltins.h
 @unexec install-info --delete %D/info/gdk.info %D/info/dir
 @unexec install-info --delete %D/info/gtk.info %D/info/dir
 info/gdk.info
@@ -160,8 +160,8 @@ share/locale/ru/LC_MESSAGES/gtk+.mo
 share/locale/sk/LC_MESSAGES/gtk+.mo
 share/locale/sl/LC_MESSAGES/gtk+.mo
 share/locale/sv/LC_MESSAGES/gtk+.mo
-share/locale/wa/LC_MESSAGES/gtk+.mo
 share/locale/uk/LC_MESSAGES/gtk+.mo
+share/locale/wa/LC_MESSAGES/gtk+.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gtk+.mo
 share/themes/Default/gtk/gtkrc
 share/themes/Default/gtk/gtkrc.bg
@@ -206,8 +206,8 @@ share/themes/Default/gtk/gtkrc.vi_VN.viscii
 share/themes/Default/gtk/gtkrc.vi_VN.viscii111
 share/themes/Default/gtk/gtkrc.zh_CN
 share/themes/Default/gtk/gtkrc.zh_TW.Big5
+@dirrm include/gdk
+@dirrm include/gtk
 @dirrm share/themes/Default/gtk
 @dirrm share/themes/Default
 @dirrm share/themes
-@dirrm include/gtk
-@dirrm include/gdk
