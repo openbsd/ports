@@ -1,0 +1,24 @@
+$OpenBSD: patch-randnum_c,v 1.1.1.1 2003/12/03 02:18:44 naddy Exp $
+--- randnum.c.orig	2003-12-03 02:06:51.000000000 +0100
++++ randnum.c	2003-12-03 02:09:07.000000000 +0100
+@@ -17,6 +17,15 @@
+ 
+ #include "pwgen.h"
+ 
++#ifdef HAVE_ARC4RANDOM
++
++int pw_random_number(int max_num)
++{
++	return (arc4random() % max_num);
++}
++
++#else
++
+ #ifdef HAVE_DRAND48
+ extern double drand48(void);
+ #endif
+@@ -90,3 +99,4 @@ int pw_random_number(int max_num)
+ 	return ((int) (random() / ((float) RAND_MAX) * max_num));
+ #endif
+ }
++#endif	/* HAVE_ARC4RANDOM */

@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/03 02:18:44 naddy Exp $
+bin/pwgen
+man/man1/pwgen.1
