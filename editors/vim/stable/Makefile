@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.77 2003/10/20 15:58:39 lebel Exp $
+# $OpenBSD: Makefile,v 1.78 2003/11/12 20:04:06 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
 
 DISTNAME=	vim-6.2
-REVISION=	127
+REVISION=	153
 VERSION=	6.2.${REVISION}
 PKGNAME=	vim-${VERSION}
 P=		${DISTNAME:C/[-\.]//g}
