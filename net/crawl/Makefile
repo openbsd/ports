@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/12/08 17:42:34 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2004/01/10 08:33:11 sturm Exp $
 
 COMMENT=		"small and efficient HTTP crawler"
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.monkey.org/~provos/
 
-LIB_DEPENDS=		db.3::databases/db/v3
+LIB_DEPENDS=		lib/db/db.3:db->3,<4:databases/db/v3
 
 DESTDIRNAME=		install_prefix
 
