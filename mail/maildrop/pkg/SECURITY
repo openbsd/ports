@@ -23,5 +23,5 @@ ${PREFIX}/bin/maildrop
 ${PREFIX}/bin/dotlock
 ${PREFIX}/bin/reformail
 
-Anil Madhavapeddy, <avsm@openbsd.org>
-$OpenBSD: SECURITY,v 1.1.1.1 2000/10/09 22:29:05 avsm Exp $
+Marc Balmer <mbalmer@openbsd.org>
+$OpenBSD: SECURITY,v 1.2 2004/12/06 23:06:01 mbalmer Exp $

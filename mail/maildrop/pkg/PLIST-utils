@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-utils,v 1.2 2004/09/15 09:09:42 espie Exp $
+@comment $OpenBSD: PLIST-utils,v 1.3 2004/12/06 23:06:01 mbalmer Exp $
 bin/deliverquota
 bin/maildirmake
 bin/makeuserdb
@@ -13,3 +13,10 @@ bin/vchkpw2userdb
 @man man/man8/userdb.8
 @man man/man8/userdbpw.8
 @man man/man8/vchkpw2userdb.8
+share/doc/maildrop/scripts/
+share/doc/maildrop/scripts/makedat
+share/doc/maildrop/scripts/makeuserdb
+share/doc/maildrop/scripts/pw2userdb
+share/doc/maildrop/scripts/userdb
+share/doc/maildrop/scripts/userdbpw
+share/doc/maildrop/scripts/vchkpw2userdb

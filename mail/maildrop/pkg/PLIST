@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 09:09:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/12/06 23:06:01 mbalmer Exp $
 @mode 0555
 bin/lockmail
 bin/mailbot
@@ -17,10 +17,10 @@ bin/reformime
 @man man/man1/reformail.1
 @man man/man1/reformime.1
 @man man/man5/maildir.5
-@man man/man5/maildropex.5
-@man man/man5/maildropfilter.5
-@man man/man5/maildropgdbm.5
 @man man/man7/maildirquota.7
+@man man/man7/maildropex.7
+@man man/man7/maildropfilter.7
+@man man/man7/maildropgdbm.7
 share/doc/maildrop/
 share/doc/maildrop/INSTALL
 share/doc/maildrop/README
@@ -47,10 +47,5 @@ share/doc/maildrop/html/rfc2045.html
 share/doc/maildrop/html/rfc822.html
 share/doc/maildrop/html/userdb.html
 share/doc/maildrop/html/userdbpw.html
-share/doc/maildrop/scripts/
-share/doc/maildrop/scripts/makedat
-share/doc/maildrop/scripts/makeuserdb
-share/doc/maildrop/scripts/pw2userdb
-share/doc/maildrop/scripts/userdb
-share/doc/maildrop/scripts/userdbpw
-share/doc/maildrop/scripts/vchkpw2userdb
+%%ldap%%
+%%mysql%%
