@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2005/03/03 20:55:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.33 2005/03/09 22:22:20 sturm Exp $
 
 COMMENT=	"TeX distribution, executables"
 COMMENT-fmt=	"format files"
@@ -54,6 +54,7 @@ SUBPACKAGE?=
 .if defined(PACKAGING)
 .  if ${SUBPACKAGE} == "-fmt"
 PREFIX=		/var
+FULLPKGNAME-fmt=${PKGNAME-fmt}
 .  else
 RUN_DEPENDS+=	::print/teTeX/base,-fmt
 .  endif
