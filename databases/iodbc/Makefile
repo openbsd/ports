@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/11/22 17:32:18 dugsong Exp $
-
-PKGNAME=	iodbc-2.50.3
+# $OpenBSD: Makefile,v 1.2 2001/02/19 17:59:42 danh Exp $
 
 DISTNAME=	libiodbc-2.50.3
-
+PKGNAME=	iodbc-2.50.3
 CATEGORIES=	databases
-
+NEED_VERSION=	1.356
 MASTER_SITES=	http://www.iodbc.org/dist/
+
+HOMEPAGE=	http://www.iodbc.org/
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
@@ -16,11 +16,8 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-CONFIGURE_STYLE=gnu
-
-CONFIGURE_ARGS+=--with-iodbc-inidir=/etc
-
-USE_LIBTOOL=	yes
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS+= --with-iodbc-inidir="${SYSCONFDIR}"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/iodbc

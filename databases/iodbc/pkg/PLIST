@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/11/22 17:32:18 dugsong Exp $
-lib/libiodbc.so.2.50
-lib/libiodbc.la
-lib/libiodbc.a
+@comment $OpenBSD: PLIST,v 1.2 2001/02/19 17:59:42 danh Exp $
 include/isql.h
 include/isqlext.h
 include/isqltypes.h
 include/sql.h
 include/sqlext.h
 include/sqltypes.h
+lib/libiodbc.a
+lib/libiodbc.la
 share/doc/iodbc/COPYING
 share/examples/iodbc/odbc.ini
+%%SHARED%%
 @dirrm share/examples/iodbc
 @dirrm share/doc/iodbc
