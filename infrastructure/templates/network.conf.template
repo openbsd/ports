@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.41 2002/05/16 16:31:05 brad Exp $
+# $OpenBSD: network.conf.template,v 1.42 2002/05/25 11:57:04 naddy Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -165,11 +165,10 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.shellhung.org/pub/CPAN/modules/by-module/
 
 MASTER_SITE_TEX_CTAN+=	\
-	ftp://ftp.wustl.edu/packages/TeX/ \
 	ftp://ftp.funet.fi/pub/TeX/CTAN/ \
 	ftp://ctan.unsw.edu.au/tex-archive/ \
-	ftp://ftp.cise.ufl.edu/tex-archive/ \
-	ftp://ftp.tex.ac.uk/public/ctan/tex-archive/ \
+	ftp://ftp.cise.ufl.edu/pub/mirrors/tex-archive/ \
+	ftp://ftp.tex.ac.uk/tex-archive/ \
 	ftp://ftp.kddlabs.co.jp/CTAN/ \
 	ftp://sunsite.auc.dk/pub/tex/ctan/ \
 	ftp://ctan.tug.org/tex-archive/ \
