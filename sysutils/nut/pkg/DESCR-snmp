@@ -1,0 +1,12 @@
+Experimental driver for monitoring UPSs via SNMP.  Supports a wide 
+range of devices by loading various MIBS, including:
+
+       ietf:  UPS that is RFC 1628 (UPS MIB)  compliant,  ie  MGE
+              UPS SYSTEMS, Liebert, perhaps others (default)
+
+       mge:   MGE UPS SYSTEMS devices with SNMP cards (ref 66062,
+              66045, 66074 and 66244)
+
+       apcc:  APC AP9606 APC Web/SNMP  management  card,  perhaps
+              others
+

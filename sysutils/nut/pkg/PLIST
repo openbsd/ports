@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/27 03:10:24 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/10/03 03:13:10 marcm Exp $
 @conflict upsd-*
+@newuser ${NUT_USER}:${NUT_ID}:::UPS User:/var/empty:/sbin/nologin
 bin/apcsmart
 bin/belkin
 bin/belkinunv
@@ -61,7 +62,6 @@ bin/victronups
 @man man/man8/powercom.8
 @man man/man8/safenet.8
 @man man/man8/sms.8
-@man man/man8/snmp-ups.8
 @man man/man8/tripplite.8
 @man man/man8/tripplitesu.8
 @man man/man8/upsc.8
@@ -113,19 +113,27 @@ share/doc/nut/ssl.txt
 share/doc/nut/upssched.txt
 share/examples/nut/
 @sample ${SYSCONFDIR}/nut/
+@owner ${NUT_USER}
 share/examples/nut/ups.conf
 @sample ${SYSCONFDIR}/nut/ups.conf
 share/examples/nut/upsd.conf
+@mode 600
 @sample ${SYSCONFDIR}/nut/upsd.conf
-@exec chmod 600 ${SYSCONFDIR}/nut/upsd.conf
+@mode
 share/examples/nut/upsd.users
+@mode 600
 @sample ${SYSCONFDIR}/nut/upsd.users
-@exec chmod 600 ${SYSCONFDIR}/nut/upsd.users
+@mode
 share/examples/nut/upsmon.conf
+@mode 600
 @sample ${SYSCONFDIR}/nut/upsmon.conf
-@exec chmod 600 ${SYSCONFDIR}/nut/upsmon.conf
+@mode
 share/examples/nut/upssched.conf
 @sample ${SYSCONFDIR}/nut/upssched.conf
+@mode 700
+@sample /var/db/nut/
+@mode
+@owner
 share/ups/
 share/ups/cmdvartab
 share/ups/driver.list

@@ -7,7 +7,7 @@
 | # Start Nut
 | if [ -x ${PREFIX}/bin/upsdrvctl ]; then
 |     echo -n ' nut'
-|     ${PREFIX}/bin/upsdrvctl start > /dev/null
+|     ${PREFIX}/bin/upsdrvctl start > /dev/null 2>&1
 |     ${PREFIX}/sbin/upsd > /dev/null 2>&1
 |     ${PREFIX}/sbin/upsmon > /dev/null 2>&1
 | fi

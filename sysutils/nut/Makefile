@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2004/09/27 03:10:24 marcm Exp $
+# $OpenBSD: Makefile,v 1.14 2004/10/03 03:13:10 marcm Exp $
 
 COMMENT=		"UPS monitoring program supporting many brands"
 COMMENT-cgi=		"CGIs for monitoring Nut-based UPSs"
+COMMENT-snmp=		"driver for monitoring UPSs via SNMP"
 
 VERSION=		2.0.0
 DISTNAME=		nut-${VERSION}
 PKGNAME-cgi=		nut-cgi-${VERSION}
+PKGNAME-snmp=		nut-snmp-${VERSION}
 CATEGORIES=		sysutils
 HOMEPAGE=		http://www.networkupstools.org/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 MASTER_SITES=		http://random.networkupstools.org/source/2.0/
 
@@ -22,40 +22,53 @@ PERMIT_DISTFILES_FTP=	Yes
 WEB_ROOT=		/var/www
 NUT_USER=		_ups
 NUT_ID=			529
-NUT_STATEDIR=		/var/db/nut
-CONFDIR=		${SYSCONFDIR}/nut
-SUBST_VARS=		WEB_ROOT NUT_USER NUT_ID NUT_STATEDIR CONFDIR
+SUBST_VARS=		WEB_ROOT NUT_USER NUT_ID
 
 CONFIGURE_STYLE=	gnu old
-CONFIGURE_ARGS+=	--sysconfdir=${CONFDIR}
+CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR}/nut
 CONFIGURE_ARGS+=	--datadir=${LOCALBASE}/share/ups
-CONFIGURE_ARGS+=	--with-statepath=${NUT_STATEDIR}
+CONFIGURE_ARGS+=	--with-statepath=/var/db/nut
 CONFIGURE_ARGS+=	--with-user=${NUT_USER}
 CONFIGURE_ARGS+=	--with-ssl
+CONFIGURE_ARGS+=	--enable-strip
 
-PSEUDO_FLAVORS=		no_cgi
+ALL_TARGET=		all
+INSTALL_TARGET=		install
+
+PSEUDO_FLAVORS=		no_cgi snmp
 FLAVOR?=
 MULTI_PACKAGES=
 .if !${FLAVOR:L:Mno_cgi}
 MULTI_PACKAGES+=	-cgi
+.endif
+.if ${FLAVOR:L:Msnmp}
+MULTI_PACKAGES+=	-snmp
 .endif
 SUBPACKAGE?=
 
 .if defined(PACKAGING)
 . if ${SUBPACKAGE} == "-cgi"
 PREFIX=			${WEB_ROOT}
+. elif ${SUBPACKAGE} == "-snmp"
+LIB_DEPENDS+=		netsnmp::net/net-snmp
 . endif
 .else
 . if ${MULTI_PACKAGES:M-cgi}
-BUILD_DEPENDS=		:gd->=1.8.3:graphics/gd
+BUILD_DEPENDS+=		:gd->=1.8.3:graphics/gd
 
 CONFIGURE_ARGS+=	--with-cgi
 CONFIGURE_ARGS+=	--with-cgipath="${WEB_ROOT}/cgi-bin/nut"
 CONFIGURE_ARGS+=	--with-gd-libs="-L${LOCALBASE}/lib -lgd -lpng -lz -ljpeg -lttf -lm"
 CONFIGURE_ARGS+=	--with-gd-includes="-I${LOCALBASE}/include"
 
-ALL_TARGET=		all cgi
-INSTALL_TARGET=		install install-cgi
+ALL_TARGET+=		cgi
+INSTALL_TARGET+=	install-cgi
+. endif
+. if ${MULTI_PACKAGES:M-snmp}
+LIB_DEPENDS+=		netsnmp::net/net-snmp
+
+ALL_TARGET+=		snmp
+INSTALL_TARGET+=	install-snmp
 . endif
 .endif
 
