@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/10/09 15:10:34 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2004/12/07 00:23:22 alek Exp $
 
 COMMENT=	"convert text into the Doc format used by PalmPilots"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
+WANTLIB=		c m stdc++ 
 
 WRKDIST=	${WRKDIR}
 ALL_TARGET=	pilot_makedoc

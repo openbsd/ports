@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/10/31 07:27:37 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2004/12/07 00:23:20 alek Exp $
 
 # memory fault at -O2/-O1 when building with gcc2. -O0 reveals some C++ issue
 # with gcc2 (same as the powerpc issue which is why it uses the gcc module).
@@ -25,6 +25,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c curses m stdc++ 
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} --enable-static

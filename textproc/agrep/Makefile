@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/11/15 15:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2004/12/07 00:23:20 alek Exp $
 
 COMMENT=	"approximate grep (fast approximate pattern-matching tool)"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_FTP=	"may not modify"
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
+WANTLIB=		c
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 

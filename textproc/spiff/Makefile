@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/11/15 15:12:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2004/12/07 00:23:23 alek Exp $
 
 COMMENT=	"very flexible diff-like program"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	"may not modify"
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m 
 
 NO_REGRESS=	Yes
 

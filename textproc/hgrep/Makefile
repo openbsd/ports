@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/01/04 19:09:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2004/12/07 00:23:21 alek Exp $
 
 COMMENT=		"grep wrapper with search highlighting"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c termcap 
 
 MASTER_SITES=		${HOMEPAGE}
 DISTFILES=		hgrep_04oct1999.tar.gz

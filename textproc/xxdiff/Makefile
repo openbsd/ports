@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/10/08 08:22:29 xsa Exp $
+# $OpenBSD: Makefile,v 1.20 2004/12/07 00:23:24 alek Exp $
 
 COMMENT=	"graphical file comparator and merge tool"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		X11 Xext c m png pthread stdc++ 
 
 BUILD_DEPENDS=	:bison-*:devel/bison \
 		:tmake->=1.10:devel/tmake

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/11/12 23:59:54 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2004/12/07 00:23:22 alek Exp $
 
 COMMENT=	"graphical front end to Unix diff"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xext Xmu Xt c 
 
 USE_MOTIF=	any
 CONFIGURE_STYLE= imake

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/11/15 15:12:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/12/07 00:23:23 alek Exp $
 
 COMMENT=	"reverse compile man pages from formatted form"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c 
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=polyglotman/}
 

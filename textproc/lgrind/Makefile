@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/06/26 07:35:09 xsa Exp $
+# $OpenBSD: Makefile,v 1.14 2004/12/07 00:23:21 alek Exp $
 
 COMMENT=	"LaTeX vgrind(1) look-alike"
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM=	"May not be sold"
 PERMIT_DISTFILES_CDROM=	"May not be sold"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c 
 
 WRKDIST=	${WRKDIR}
 

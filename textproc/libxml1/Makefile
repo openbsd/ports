@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/11/15 15:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/12/07 00:23:22 alek Exp $
 
 COMMENT=	"XML parsing library for GNOME"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c z 
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu

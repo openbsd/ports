@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/10/11 17:21:58 weingart Exp $
+# $OpenBSD: Makefile,v 1.16 2004/12/07 00:23:21 alek Exp $
 
 COMMENT=	"text search engine"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c 
 
 MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
 DISTFILES=	glimpse-4.1.src.tar.gz

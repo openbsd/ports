@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/23 09:09:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2004/12/07 00:23:24 alek Exp $
 
 COMMENT=	"word differences between text files"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c termcap 
 
 CONFIGURE_STYLE=gnu dest old
 

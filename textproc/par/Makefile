@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/11/15 15:12:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2004/12/07 00:23:22 alek Exp $
 
 COMMENT=	"paragraph reflow for email"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c 
 
 MASTER_SITES=   ${HOMEPAGE}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/16 02:47:36 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/12/07 00:23:20 alek Exp $
 
 COMMENT=		"accumulates and displays statistics from a diff file"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c 
 
 NO_REGRESS=		Yes	# 'testing' directory not present
 
