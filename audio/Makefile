@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2002/02/04 15:02:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.78 2002/02/05 03:53:51 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -31,6 +31,8 @@
      SUBDIR += libao,
      SUBDIR += liba52
      SUBDIR += libcdaudio
+     SUBDIR += libmikmod
+     SUBDIR += libmikmod,esd
      SUBDIR += libogg
      SUBDIR += libvorbis
      SUBDIR += libworkman
