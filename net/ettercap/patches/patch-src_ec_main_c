@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ec_main_c,v 1.1 2002/12/28 23:29:13 pvalchev Exp $
---- src/ec_main.c.orig	Sat Dec 28 14:47:21 2002
-+++ src/ec_main.c	Sat Dec 28 14:47:37 2002
-@@ -522,7 +522,7 @@ void Main_Check_NewRelease(void)
+$OpenBSD: patch-src_ec_main_c,v 1.2 2003/06/18 14:20:42 avsm Exp $
+--- src/ec_main.c.orig	Mon May  5 13:38:13 2003
++++ src/ec_main.c	Wed Jun 18 15:10:25 2003
+@@ -589,7 +589,7 @@ void Main_Check_NewRelease(void)
           {
              char wget[100];
              snprintf(wget, sizeof(wget), "http://%s/download/ettercap-%s.tar.gz", host, latest);
