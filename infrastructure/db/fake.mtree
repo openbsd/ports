@@ -21,6 +21,10 @@
 		..
 	    ..
 	    libdata
+		perl5
+		    site_perl
+		    ..
+		..
 	    ..
 	    libexec
 	    ..
