@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 1999/08/13 02:12:28 brad Exp $
+# $OpenBSD: Makefile,v 1.11 1999/09/01 17:57:00 brad Exp $
 
-DISTNAME=	ethereal-0.7.2
+DISTNAME=	ethereal-0.7.3
 CATEGORIES=	net x11
 MASTER_SITES=	http://ethereal.zing.org/distribution/ \
 		http://ethereal.boehm.org/distribution/ \
