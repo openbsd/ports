@@ -1,0 +1,98 @@
+--- lib/Makefile.orig	Thu Jun 26 14:07:56 1997
++++ lib/Makefile	Sat Nov  7 17:23:01 1998
+@@ -11,9 +11,10 @@
+ 
+ #
+ # Where all the include files are:
+-INCS = -I.
++INCS = -I. -I${X11BASE}/include
+ 
+-LIBDIR = /usr/lib
++IDIR=    ${PREFIX}/include/giflib
++LIBDIR = ${PREFIX}/lib
+ 
+ #
+ # What devices we should be able to grab into gif images. Note that if
+@@ -31,9 +32,9 @@
+ # the -Wxxx with -Wall. I can not add -Wimplicit as my system uses old cc
+ # h files.
+ #
+-# CC = gcc
++CC = gcc
+ #
+-# CFLAGS = -O -c -W -Wreturn-type -Wcomment
++CFLAGS = -O -c -W -Wreturn-type -Wcomment
+ # CFLAGS = -g -pg -c -W -Wreturn-type -Wcomment
+ #
+ # for sun 4 (gunnars@ifi.uib.no). Tested using gcc 1.39.
+@@ -60,31 +61,43 @@
+ #
+ # GNU CC over Linux and XFree86
+ #
+-CC = gcc
++#CC = gcc
+ #
+ #CFLAGS = -fno-builtin -O -c -W -Wreturn-type -Wcomment
+-CFLAGS = -fno-builtin -g -c -W -Wreturn-type -Wcomment
++#CFLAGS = -fno-builtin -g -c -W -Wreturn-type -Wcomment
+ 
+ 
+ OBJS = dev2gif.o egif_lib.o dgif_lib.o gifalloc.o gif_font.o gif_hash.o \
+ 	gif_err.o quantize.o qprintf.o getarg.o
+ 
++SOBJS= dev2gif.so egif_lib.so dgif_lib.so gifalloc.so gif_font.so gif_hash.so \
++	gif_err.so quantize.so qprintf.so getarg.so
++
++.SUFFIXES: .o .so
++
+ .c.o:
+-	$(CC) $(INCS) $(DEVS) $(CFLAGS) $<
++	$(CC) -c $(INCS) $(DEVS) $(CFLAGS) $<
++
++.c.so:
++	$(CC) -c $(INCS) $(DEVS) $(CFLAGS) -fpic -DPIC -o $@ $<
+ 
+ all: static shared
+ 
+ static: libgif.a
++.if (${MACHINE_ARCH} == "alpha")
++shared:
++.else
+ shared: $(SHLIB)
++.endif
+ 
+ libgif.a: $(OBJS)
+ 	rm -f libgif.a
+ 	ar rcv libgif.a $(OBJS)
+ 	-ranlib libgif.a
+ 
+-$(SHLIB): $(OBJS)
++$(SHLIB): $(SOBJS)
+ 	rm -f libgif.so.$(V)
+-	gcc -shared -o $(SHLIB) $(OBJS)
++	ld -Bshareable -o $(SHLIB) $(SOBJS)
+ 
+ dev2gif.o: gif_lib.h
+ egif_lib.o: gif_lib.h gif_hash.h
+@@ -98,9 +111,18 @@
+ getarg.o: getarg.h
+ 
+ install-lib: libgif.a
+-	cp libgif.a libgif.so.$(V) $(LIBDIR)
++	${BSD_INSTALL_DATA} libgif.a $(LIBDIR)
++.if (${MACHINE_ARCH} != "alpha")
++	${BSD_INSTALL_DATA} libgif.so.$(V) $(LIBDIR)
++.endif
++	${BSD_INSTALL_DATA_DIR} ${IDIR}
++	${BSD_INSTALL_DATA} *.h ${IDIR}
++
++uninstall-lib:
++	${RM} -f $(LIBDIR)/libgif.a
++.if (${MACHINE_ARCH} != "alpha")
++	${RM} -f $(LIBDIR)/$(SHLIB)
++.endif
+ 
+-uninstall-lib: shared static
+-	rm -f $(LIBDIR)/libgif.a $(LIBDIR)/$(SHLIB)
+ clean:
+ 	rm -f *.[oa] *~ libgif.so.$(V)

@@ -1,0 +1,48 @@
+--- util/Makefile.orig	Thu Jun 26 10:22:30 1997
++++ util/Makefile	Wed Nov  4 18:10:27 1998
+@@ -6,7 +6,7 @@
+ #
+ #	make -f makefile.unx [all] [rle] [iris]
+ #
+-# To install them in the /usr/bin directory:
++# To install them in the ${PREFIX}/bin directory:
+ #
+ #	make -f makefile.unx [install-all] [install-rle] [install-iris]
+ #
+@@ -27,7 +27,7 @@
+ GIF_INC_DEPEND = ../lib/libgif.a ../lib/gif_lib.h ../lib/getarg.h
+ 
+ # Where to copy executables to:
+-DEST = /usr/bin
++DEST = ${PREFIX}/bin
+ 
+ # These are the flags for gcc, in BSD4.3 or Sun O.S. 4.0.3
+ #
+@@ -35,8 +35,8 @@
+ # the -Wxxx with -Wall. I can not add -Wimplicit as my system uses old cc
+ # h files.
+ #
+-# CC = gcc
+-# CFLAGS = $(INC) -O -s -W -Wreturn-type -Wcomment
++CC = gcc
++CFLAGS = $(INC) -O -s -W -Wreturn-type -Wcomment
+ # CFLAGS = $(INC) -g -pg -W -Wreturn-type -Wcomment
+ 
+ 
+@@ -81,12 +81,12 @@
+ 
+ # Linux using XFree86
+ #
+-CC = gcc
++#CC = gcc
+ #CFLAGS = $(INC) -fno-builtin -O -s -W -Wreturn-type -Wcomment
+-CFLAGS = $(INC) -fno-builtin -g -W -Wreturn-type -Wcomment
++#CFLAGS = $(INC) -fno-builtin -g -W -Wreturn-type -Wcomment
+ XLIBS = -lX11
+-X_INC_DIR = /usr/X11/include
+-X_LIB_DIR = /usr/X11/lib
++X_INC_DIR = ${X11BASE}/include
++X_LIB_DIR = ${X11BASE}/lib
+ 
+ BINARIES = gif2epsn gif2ps gif2rgb gif2x11 gifasm gifbg \
+ 	gifclip gifclrmp gifcomb giffix gifflip gifhisto \

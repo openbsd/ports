@@ -1,0 +1,11 @@
+This package has been released under an X Consortium-life freeware
+license. Use and copy as you see fit. If you make useful changes, add
+new tools, or find and fix bugs, please send your mods to the
+maintainers for general distribution.
+The util directory includes programs to clip, rotate, scale, and
+position GIF images. It includes an X11 viewer, code to dump GIFs to
+an Epson-compatible printer in graphics mode, and many conversion
+utilities. These are no replacement for an interactive graphics
+editor, but they can be very useful for scripted image generation or
+transformation.
+

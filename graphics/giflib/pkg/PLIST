@@ -1,0 +1,38 @@
+@cwd /usr/local
+@name giflib-3.0
+bin/rgb2gif
+bin/gif2epsn
+bin/gifcompose
+bin/gifcolor
+bin/icon2gif
+bin/giffiltr
+bin/gifspnge
+bin/text2gif
+bin/raw2gif
+bin/gifwedge
+bin/giftext
+bin/gifrsize
+bin/gifrotat
+bin/gifpos
+bin/gifovly
+bin/gifinto
+bin/gifinter
+bin/gifhisto
+bin/gifflip
+bin/giffix
+bin/gifcomb
+bin/gifclrmp
+bin/gifclip
+bin/gifbg
+bin/gifasm
+bin/gif2x11
+bin/gif2rgb
+bin/gif2ps
+bin/gifburst
+lib/libgif.so.3.0
+lib/libgif.a
+include/giflib/gif_lib.h
+include/giflib/gif_hash.h
+include/giflib/getarg.h
+@dirrm include/giflib
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib
