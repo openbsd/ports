@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 1999/09/16 08:12:48 espie Exp $
+# $OpenBSD: Makefile,v 1.19 1999/09/21 02:17:02 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -34,7 +34,7 @@ SUPDIR=		bsdi21/navigator_standalone
 SUPDISTFILES=	${NS_I386}
 .endif
 
-PKGNAME=	navigator-${NAVIGATOR_V}-fortified
+PKGNAME=	navigator-${NAVIGATOR_V}
 CATEGORIES=     www
 DIST_SUBDIR=	netscape
 NO_CDROM=       "NOFEE: see http://www.fortify.net/copyright.txt"
