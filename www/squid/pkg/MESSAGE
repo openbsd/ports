@@ -19,5 +19,5 @@ trying to run Squid for the first time.
 
 You can also edit /etc/rc.local so that Squid is started automatically:
     if [ -x ${PREFIX}/bin/squid ]; then
-	echo -n ' squid';	${PREFIX}/bin/squid &
+	echo -n ' squid';	${PREFIX}/bin/squid
     fi
