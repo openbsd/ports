@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.11 2000/07/20 04:56:43 brad Exp $
 bin/autoexpect
 bin/autopasswd
 bin/cryptdir
@@ -25,10 +26,8 @@ include/expect_comm.h
 include/expect_tcl.h
 include/tcldbg.h
 lib/expect5.31/libexpect531.a
-lib/expect5.31/pkgIndex.tcl
 lib/libexpect531.a
-lib/libexpect531.so.1.2
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 man/man1/autoexpect.1
 man/man1/cryptdir.1
 man/man1/decryptdir.1
