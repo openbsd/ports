@@ -1,4 +1,4 @@
-/*	$OpenBSD: ssl-openssl.c,v 1.5 2004/04/24 08:04:13 brad Exp $	*/
+/*	$OpenBSD: ssl-openssl.c,v 1.6 2004/06/24 23:06:02 brad Exp $	*/
 
 /*
  * OpenSSL SSL-plugin for gaim
@@ -97,6 +97,10 @@ static void ssl_openssl_connect_cb(gpointer data, gint source, GaimInputConditio
    */
   if(source < 0)
     {
+      if(gsc->error_cb != NULL)
+	gsc->error_cb(gsc, GAIM_SSL_CONNECT_FAILED, gsc->connect_cb_data);
+
+      gaim_ssl_close(gsc);
       return;
     }
 
