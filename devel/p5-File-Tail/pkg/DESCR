@@ -1,0 +1,10 @@
+The File::Tail module is designed for reading files which are
+continously appended to (the name comes from the tail -f directive).
+Usually such files are logfiles of some description.
+
+The module tries hard not to busy wait on the file, dynamically
+calcultaing how long it should wait before it pays to try reading
+the file again.
+
+The module should handle normal log truncations ("close; move; open"
+or "cat /dev/null >file") transparently, without losing any input.
