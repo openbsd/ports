@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2003/12/18 03:56:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/03/02 22:18:53 naddy Exp $
 
 COMMENT=	"breakout game with many levels, powerups, good graphics" 
 
-VERSION=	2.2.2
-DISTNAME=	lbreakout2-${VERSION}
+DISTNAME=	lbreakout2-2.2.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://lgames.sourceforge.net/index.php?action=show_project&project=LBreakout2
@@ -27,9 +27,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
-
-# avoid triggering aclocal/automake
-post-patch:
-	@touch -r ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure.in
 
 .include <bsd.port.mk>
