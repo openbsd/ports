@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/10/10 16:44:12 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2004/10/16 21:40:59 marcm Exp $
 
 COMMENT=		"GNOME panel"
 
@@ -27,11 +27,11 @@ RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper \
 LIB_DEPENDS= 		gnome-desktop-2.0::x11/gnome/desktop \
 			wnck-1.4::devel/libwnck
 
-SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	--disable-gtk-doc
+CONFIGURE_ARGS+= 	--disable-eds
 CONFIGURE_ARGS+= 	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-panel
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib"
