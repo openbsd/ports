@@ -1,0 +1,12 @@
+$OpenBSD: patch-WindowMaker_plmenu,v 1.1 2001/09/07 14:11:28 wilfried Exp $
+--- WindowMaker/plmenu.orig	Fri Jan 14 17:48:18 2000
++++ WindowMaker/plmenu	Fri Sep  7 15:16:52 2001
+@@ -94,7 +94,7 @@
+    ),   
+   ("Save Theme", SHEXEC, "getstyle -t $HOME/GNUstep/Library/WindowMaker/Themes/\"%a(Theme name)\""),
+   ("Save IconSet", SHEXEC, "geticonset $HOME/GNUstep/Library/WindowMaker/IconSets/\"%a(IconSet name)\""),
+-  ("Preferences Utility", EXEC, "/usr/local/GNUstep/Apps/WPrefs.app/WPrefs")
++  ("Preferences Utility", EXEC, "#wprefsdir#/WPrefs")
+   ), 
+  ("Exit",
+   ("Restart", RESTART),

@@ -1,6 +1,6 @@
-$OpenBSD: patch-util_Makefile_in,v 1.1 2001/08/01 09:04:41 wilfried Exp $
+$OpenBSD: patch-util_Makefile_in,v 1.2 2001/09/07 14:11:28 wilfried Exp $
 --- util/Makefile.in.orig	Mon Jul 23 22:03:14 2001
-+++ util/Makefile.in	Wed Aug  1 10:18:21 2001
++++ util/Makefile.in	Fri Sep  7 15:34:04 2001
 @@ -127,13 +127,13 @@ seticons_LDADD = $(liblist)
  
  geticonset_LDADD = $(liblist)
@@ -18,3 +18,11 @@ $OpenBSD: patch-util_Makefile_in,v 1.1 2001/08/01 09:04:41 wilfried Exp $
  
  
  CLEANFILES = wmaker.inst wmchlocale
+@@ -476,6 +476,7 @@ wmaker.inst: $(srcdir)/wmaker.inst.in ./
+ 	-rm -f wmaker.inst
+ 	sed -e "s|#pkgdatadir#|$(pkgdatadir)|" \
+ 		-e "s|#sysconfdir#|$(sysconfdir)/WindowMaker|" \
++		-e "s|#wpref#|$(wprefsdir)|" \
+ 		-e "s|#version#|$(VERSION)|" \
+ 		-e "s|#bindir#|$(bindir)|" \
+ 		-e "s|#LITE#|@LITE@|" \
