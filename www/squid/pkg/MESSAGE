@@ -1,7 +1,4 @@
 NOTES ON OpenBSD POST-INSTALLATION OF SQUID 2.5
------------------------------------------------
-
- ** An old squid.conf will not work with Squid 2.5! **
 
 The local (OpenBSD) differences are:
 - configuration files are in		${SYSCONFDIR}/squid
@@ -18,6 +15,8 @@ Please remember to initialize the cache by running "squid -z" before
 trying to run Squid for the first time.
 
 You can also edit /etc/rc.local so that Squid is started automatically:
+
     if [ -x ${PREFIX}/sbin/squid ]; then
 	echo -n ' squid';	${PREFIX}/sbin/squid
     fi
+
