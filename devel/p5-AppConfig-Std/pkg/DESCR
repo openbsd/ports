@@ -1,0 +1,4 @@
+AppConfig::Std is a subclass of Andy Wardley's AppConfig module,
+to provide standard command-line arguments for tool scripts.
+It is a Perl5 module to handle global configuration variables
+for perl programs.
