@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/15 20:35:19 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/07/14 16:10:54 espie Exp $
 bin/bonobo-moniker-xmldb
 bin/cedit
+@dir include/bonobo-conf
 include/bonobo-conf/Bonobo_Config.h
 include/bonobo-conf/bonobo-config-control.h
 include/bonobo-conf/bonobo-config-database.h
@@ -10,6 +11,8 @@ include/bonobo-conf/bonobo-preferences.h
 include/bonobo-conf/bonobo-property-bag-proxy.h
 include/bonobo-conf/bonobo-property-editor.h
 include/bonobo-conf/bonobo-property-frame.h
+@dir lib/bonobo
+@dir lib/bonobo/monikers
 lib/bonobo/monikers/libmoniker_config.a
 lib/bonobo/monikers/libmoniker_config.la
 lib/bonobo/monikers/libmoniker_gconf.a
@@ -17,13 +20,21 @@ lib/bonobo/monikers/libmoniker_gconf.la
 lib/bonobo_confConf.sh
 lib/libbonobo_conf.a
 lib/libbonobo_conf.la
+@comment @dir share/bonobo-conf
+@comment @dir share/bonobo-conf/html
+@comment @dir share/bonobo-conf/html/bonobo-conf
+@dir share/idl
 share/idl/Bonobo_Config.idl
+@dir share/locale/az
+@dir share/locale/az/LC_MESSAGES
 share/locale/az/LC_MESSAGES/bonobo-conf.mo
 share/locale/da/LC_MESSAGES/bonobo-conf.mo
 share/locale/de/LC_MESSAGES/bonobo-conf.mo
 share/locale/el/LC_MESSAGES/bonobo-conf.mo
 share/locale/es/LC_MESSAGES/bonobo-conf.mo
 share/locale/fr/LC_MESSAGES/bonobo-conf.mo
+@dir share/locale/hu
+@dir share/locale/hu/LC_MESSAGES
 share/locale/hu/LC_MESSAGES/bonobo-conf.mo
 share/locale/it/LC_MESSAGES/bonobo-conf.mo
 share/locale/nn/LC_MESSAGES/bonobo-conf.mo
@@ -31,51 +42,16 @@ share/locale/no/LC_MESSAGES/bonobo-conf.mo
 share/locale/pl/LC_MESSAGES/bonobo-conf.mo
 share/locale/pt/LC_MESSAGES/bonobo-conf.mo
 share/locale/pt_BR/LC_MESSAGES/bonobo-conf.mo
+@dir share/locale/sk
+@dir share/locale/sk/LC_MESSAGES
 share/locale/sk/LC_MESSAGES/bonobo-conf.mo
 share/locale/sv/LC_MESSAGES/bonobo-conf.mo
 share/locale/tr/LC_MESSAGES/bonobo-conf.mo
+@dir share/locale/zh_TW
+@dir share/locale/zh_TW/LC_MESSAGES
 share/locale/zh_TW/LC_MESSAGES/bonobo-conf.mo
+@dir share/oaf
 share/oaf/Bonobo_Moniker_config.oaf
 share/oaf/Bonobo_Moniker_gconf.oaf
 share/oaf/Bonobo_Moniker_xmldb.oaf
 %%SHARED%%
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nn/LC_MESSAGES
-@dirrm share/locale/nn
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/az/LC_MESSAGES
-@dirrm share/locale/az
-@dirrm share/locale
-@comment @exec mkdir -p %D/share/bonobo-conf/html/bonobo-conf
-@comment @dirrm share/bonobo-conf/html/bonobo-conf
-@comment @dirrm share/bonobo-conf/html
-@comment @dirrm share/bonobo-conf
-@dirrm include/bonobo-conf

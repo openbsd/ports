@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/05/30 12:56:59 nino Exp $
-lib/libbonobo_conf.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/07/14 16:10:54 espie Exp $
 lib/bonobo/monikers/libmoniker_config.so
 lib/bonobo/monikers/libmoniker_gconf.so
+lib/libbonobo_conf.so.0.0
 DYNLIBDIR(%D/lib)
