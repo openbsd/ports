@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/14 04:21:59 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/08 14:22:30 espie Exp $
 
 DISTNAME=       MIME-Base64-2.11
 PKGNAME=        MIME-Base64-2.11
@@ -13,8 +13,24 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=     MIME
+FAKE=			Yes
+
+pre-fake:
+	@mkdir -p ${WRKINST}`/usr/bin/perl -e 'use Config; print $$Config{installarchlib}, "\n";'`
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} /usr/bin/perl Makefile.PL
+	@arch=`/usr/bin/perl -e 'use Config; print $$Config{archname}, "\n";'`; \
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
+	/usr/bin/perl Makefile.PL \
+	    PREFIX='$${DESTDIR}${PREFIX}' \
+	    INSTALLSITELIB='$${DESTDIR}${PREFIX}/libdata/perl5/site_perl' \
+	    INSTALLSITEARCH="\$${INSTALLSITELIB}/$$arch" \
+	    INSTALLPRIVLIB='$${DESTDIR}/usr/libdata/perl5' \
+	    INSTALLARCHLIB="\$${INSTALLPRIVLIB}/$$arch" \
+	    INSTALLMAN1DIR='$${DESTDIR}${PREFIX}/man/man1' \
+	    INSTALLMAN3DIR='$${DESTDIR}${PREFIX}/man/man3' \
+	    INSTALLBIN='$${PREFIX}/bin' \
+	    INSTALLSCRIPT='$${INSTALLBIN}'
+
 
 .include <bsd.port.mk>
