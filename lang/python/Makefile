@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/07/14 02:15:56 matt Exp $
+# $OpenBSD: Makefile,v 1.19 2000/07/20 04:11:04 jasoni Exp $
 
 DISTNAME=	py152
 PKGNAME=	python-1.5.2
@@ -12,7 +12,6 @@ HOMEPAGE=	http://www.python.org/
 
 MAINTAINER=	jasoni@openbsd.org
 
-LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -33,10 +32,8 @@ LIB_DEPENDS+=	tk80.1.5::x11/tk/8.0
 SETUP_LOCAL+=	Setup.tk
 .endif
 
-FAKE=		Yes
-HAS_CONFIGURE=	Yes
+CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --prefix='$${DESTDIR}${PREFIX}'
 CONFIGURE_ARGS+= --with-fpectl 
 MAKE_FLAGS+=	OPT="${CFLAGS}"
 
