@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/24 20:21:48 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/12 10:42:53 avsm Exp $
 
-DISTNAME=	Math-GMP-1.05
+COMMENT=	"high speed arbitrary-size integer math"
+
+DISTNAME=	Math-GMP-1.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	math perl5
-NEED_VERSION=	1.351
+NEED_VERSION=	1.391
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Math
 
