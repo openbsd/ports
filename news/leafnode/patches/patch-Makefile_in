@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2001/03/12 15:44:34 wilfried Exp $
---- Makefile.in.orig	Mon Jan  8 08:37:44 2001
-+++ Makefile.in	Mon Mar 12 16:39:04 2001
+$OpenBSD: patch-Makefile_in,v 1.4 2001/06/10 21:32:26 rohee Exp $
+--- Makefile.in.orig	Tue Jun  5 17:36:14 2001
++++ Makefile.in	Thu Jun  7 23:50:19 2001
 @@ -19,7 +19,7 @@ PCRELIB = @PCRELIB@
  # Flags
  DEBUG  = -g
@@ -21,7 +21,7 @@ $OpenBSD: patch-Makefile_in,v 1.3 2001/03/12 15:44:34 wilfried Exp $
  
  # RPM crap
  RPM = @RPM@
-@@ -123,51 +125,15 @@ config.o: config.c Makefile
+@@ -122,51 +124,15 @@ config.o: config.c Makefile
  		-DVERSION=\"$(VERSION)\" $<
  
  install: liblnutil.a nntpd fetchnews texpire checkgroups applyfilter newsq
