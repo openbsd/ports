@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2001/05/06 04:22:57 lebel Exp $
+# $OpenBSD: Makefile,v 1.32 2001/06/08 19:03:35 brad Exp $
 
 COMMENT=	"WWW and FTP proxy cache and accelerator"
 
 DISTNAME=	squid-2.3.STABLE4
 PKGNAME=	squid-2.3
 CATEGORIES=	www
-NEED_VERSION=	1.402
+NEED_VERSION=	1.413
 MASTER_SITES=	http://www.squid-cache.org/Versions/v2/2.3/
 MASTER_SITES0=	http://www.squid-cache.org/Versions/v2/2.3/bugs/
 EXTRACT_SUFX=	-src.tar.gz
@@ -34,18 +34,8 @@ STATEDIR?=	/var/squid
 SUBST_VARS=	STATEDIR
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--localstatedir="${STATEDIR}"
-
-FLAVORS=	transparent heap
-FLAVOR?=
-
-.if ${FLAVOR:L:Mtransparent}
-CONFIGURE_ARGS+= --enable-ipf-transparent
-.endif
-
-.if ${FLAVOR:L:Mheap}
-CONFIGURE_ARGS+= --enable-heap-replacement
-.endif
+CONFIGURE_ARGS=	--localstatedir="${STATEDIR}" \
+		--enable-heap-replacement
 
 MAKE_FILE=	makefile
 

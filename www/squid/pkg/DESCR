@@ -11,8 +11,4 @@ Squid supports SSL, extensive access controls, and full request logging.
 By using the lightweight Internet Cache Protocol, Squid caches can be
 arranged in a hierarchy or mesh for additional bandwidth savings.
 
-Flavors:
-	transparent	- support for transparent proxying
-	heap		- alternate cache object replacement algorithms
-
 WWW: ${HOMEPAGE}
