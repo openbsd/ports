@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/16 21:56:35 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/31 20:09:18 wilfried Exp $
 
 COMMENT=	"creates cover for audio cds using cddb and latex"
 
@@ -23,6 +23,8 @@ RUN_DEPENDS=	latex::print/teTeX/base \
 		convert::graphics/ImageMagick \
 		${PERL_MODULES}/LWP.pm::www/p5-libwww \
 		${PERL_MODULES}/${MACHINE_ARCH}-openbsd/Audio/CD.pm::audio/p5-Audio-CD
+
+NO_REGRESS=	Yes
 
 do-build:
 	@cd ${WRKSRC}; \

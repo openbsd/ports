@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/04 15:22:33 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/31 20:09:19 wilfried Exp $
 
 COMMENT=	"client for anonymous remailing"
 
@@ -27,6 +27,8 @@ SYSCONFDIR=	/etc/mixmaster
 
 WRKDIST=${WRKDIR}/Mix-${VERSION:S/.//g}
 WRKSRC=${WRKDIST}/Src
+
+NO_REGRESS=	Yes
 
 MAKE_ENV=	SYSCONFDIR="${SYSCONFDIR}"
 

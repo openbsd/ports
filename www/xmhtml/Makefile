@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/13 17:50:44 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/31 20:09:19 wilfried Exp $
 # $FreeBSD: ports/x11-toolkits/xmhtml/Makefile,v 1.15 2001/06/29 05:19:06 lkoeller Exp $
 # Original from: Peter Hawkins <thepish@freebsd.org>
 
@@ -23,6 +23,8 @@ MASTER_SITES=	${HOMEPAGE}/dist/
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.2::graphics/png
+
+NO_REGRESS=	Yes
 
 MAKE_ENV=	CC="${LIBTOOL} ${CC}"
 

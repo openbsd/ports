@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/29 02:13:04 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/31 20:09:18 wilfried Exp $
 
 COMMENT=	"mailing list manager with web interface"
 
@@ -22,6 +22,8 @@ EXTRACT_SUFX=		.tgz
 
 BUILD_DEPENDS=		python::lang/python
 RUN_DEPENDS=		${BUILD_DEPENDS}
+
+NO_REGRESS=		Yes
 
 MMDOC=			${PREFIX}/share/doc/mailman
 MMEXAMPLES=		${PREFIX}/share/examples/mailman
