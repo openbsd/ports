@@ -3,15 +3,14 @@
 # Date created:	        26 Nov 1997
 # Whom:                 Stanislav Grozev <tacho@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.3 1998/02/06 13:39:46 niklas Exp $
+# $OpenBSD: Makefile,v 1.4 1998/02/06 17:53:53 tacho Exp $
 #
 
-DISTNAME=	db-2.3.12
+DISTNAME=	db-2.3.16
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
+MASTER_SITES=	http://www.sleepycat.com/packages/
 
 MAINTAINER=	tacho@openbsd.org
-BROKEN=		yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build.unix
 
@@ -30,7 +29,7 @@ MAN3=	db_appinit.3 db_cursor.3 db_dbm.3 db_hsearch.3 db_intro.3 db_lock.3 \
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/db
 .for doc in hash.usenix.ps libtp.usenix.ps
-	${INSTALL_DATA} ${WRKSRC}/../docs/${doc} ${PREFIX}/share/doc/db
+	${INSTALL_DATA} ${WRKSRC}/../documents/${doc} ${PREFIX}/share/doc/db
 	gzip -9 ${PREFIX}/share/doc/db/${doc}
 .endfor
 	${MKDIR} ${PREFIX}/share/examples/db

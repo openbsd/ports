@@ -1,6 +1,7 @@
 include/db.h
 include/db_cxx.h
 include/db_185.h
+include/db-config.h
 lib/libdb.a
 bin/db_archive
 bin/db_checkpoint
