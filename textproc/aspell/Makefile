@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/23 21:25:43 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/06/07 14:42:51 lebel Exp $
 
 COMMENT=		"spell checker designed to eventually replace Ispell"
-COMMENT-danish=		"aspell dictionary fro Danish"
-COMMENT-dutch=		"aspell dictionary fro Dutch"
+COMMENT-danish=		"aspell dictionary for Danish"
+COMMENT-dutch=		"aspell dictionary for Dutch"
 COMMENT-french=		"aspell dictionary for French"
 COMMENT-swedish=	"aspell dictionary for Swedish"
 
