@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/05/06 21:52:46 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/06/26 15:22:54 naddy Exp $
 bin/star
+bin/tartest
 bin/ustar
 libexec/srmt
 man/man1/star.1
+man/man1/tartest.1
 man/man1/ustar.1
 man/man8/srmt.8
 share/examples/star/srmt.conf.sample

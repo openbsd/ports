@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/30 23:27:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2002/06/26 15:22:54 naddy Exp $
 # $FreeBSD: Makefile,v 1.7 1998/12/24 13:15:23 dirk Exp $
 
 COMMENT=	"unique standard tape archiver with many enhancements"
 
-DISTNAME=	star-1.4
+DISTNAME=	star-1.4.1
 CATEGORIES=	archivers sysutils
 NEED_VERSION=	1.515
 
@@ -38,14 +38,16 @@ do-configure:
 		${WRKSRC}/RULES/${MACHINE}-openbsd-${CC}.rul
 .endif
 
+OBJ=	OBJ/${MACHINE}-openbsd-${CC}
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/star/OBJ/${MACHINE}-openbsd-${CC}/star \
-		${PREFIX}/bin/star
+.for prog in star tartest
+	${INSTALL_PROGRAM} ${WRKBUILD}/${prog}/${OBJ}/${prog} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${prog}/${prog}.1 ${PREFIX}/man/man1
+.endfor
 	cd ${PREFIX}/bin; ln -sf star ustar
-	${INSTALL_MAN} ${WRKSRC}/star/star.1 ${PREFIX}/man/man1/star.1
 	cd ${PREFIX}/man/man1; ln -sf star.1 ustar.1
-	${INSTALL_PROGRAM} ${WRKBUILD}/rmt/OBJ/${MACHINE}-openbsd-${CC}/rmt \
-		${PREFIX}/libexec/srmt
+	${INSTALL_PROGRAM} ${WRKBUILD}/rmt/${OBJ}/rmt ${PREFIX}/libexec/srmt
 	perl -pi -e 's,%%SYSCONFDIR%%,${SYSCONFDIR},g' ${WRKSRC}/rmt/rmt.1
 	${INSTALL_MAN} ${WRKSRC}/rmt/rmt.1 ${PREFIX}/man/man8/srmt.8
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/star
