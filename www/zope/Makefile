@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/09 22:58:50 matt Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/02 03:35:11 matt Exp $
 
 COMMENT=	"object-oriented web application server"
 
-VERSION=	2.4.1
+VERSION=	2.4.2
 DISTNAME=	Zope-${VERSION}-src
-PKGNAME=	zope-${VERSION}.1
+PKGNAME=	zope-${VERSION}
 CATEGORIES=     www
-NEED_VERSION=	1.419
+NEED_VERSION=	1.488
 
 HOMEPAGE=	http://www.zope.org/
 
@@ -20,11 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://www.zope.org/Products/Zope/${VERSION}/
 EXTRACT_SUFX=	.tgz
 EXTRACT_CASES=	*.tgz) gtar zxf ${FULLDISTDIR}/$$archive ;;
-
-HOTFIX_DATE0=	2001-09-28
-MASTER_SITES0=	http://www.zope.org/Products/Zope/Hotfix_${HOTFIX_DATE0}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		Hotfix_${HOTFIX_DATE0}.tgz:0
 
 BUILD_DEPENDS=	python2.1:python-2.1*-threads:lang/python \
 		gtar::archivers/gtar					
@@ -42,7 +37,9 @@ ZOPEHOME=	${PREFIX}/lib/zope
 PRODUCTSDIR=	${ZOPEHOME}/lib/python/Products
 
 do-build:
-	cd ${WRKSRC} && ZDIR=${ZOPEHOME} python w_pcgi.py
+	cd ${WRKSRC} && \
+		ZDIR=${ZOPEHOME} python w_pcgi.py && \
+		ZDIR=${ZOPEHOME} python -O inst/compilezpy.py
 	sed -e "s%@@PREFIX@@%${PREFIX}%g" \
 		-e "s%@@LOCALBASE@@%${LOCALBASE}%g" \
 		< ${FILESDIR}/zope-instance > ${WRKSRC}/zope-instance
@@ -72,10 +69,9 @@ do-install:
 		${PREFIX}/share/doc/zope
 	${INSTALL_DATA} ${WRKSRC}/doc/changenotes/* \
 		${PREFIX}/share/doc/zope/changenotes
-	${INSTALL_DATA_DIR} ${PRODUCTSDIR}/Hotfix_${HOTFIX_DATE0}
-	${INSTALL_DATA} \
-		${WRKDIR}/lib/python/Products/Hotfix_${HOTFIX_DATE0}/* \
-		${PRODUCTSDIR}/Hotfix_${HOTFIX_DATE0}
+
+do-regress:
+	cd ${WRKSRC} && python utilities/testrunner.py -a
 
 .include <bsd.port.mk>
 
