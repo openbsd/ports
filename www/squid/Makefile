@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 1999/05/09 20:01:50 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/05/22 18:23:46 brad Exp $
 
-DISTNAME=	squid-2.2.STABLE2
+DISTNAME=	squid-2.2.STABLE3
 PKGNAME=	squid-2.2
 CATEGORIES=	www
 MASTER_SITES=	ftp://squid.nlanr.net/pub/squid-2/STABLE/ \
@@ -11,7 +11,6 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	ports@openbsd.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}.STABLE2
 STRIP=		# won't install scripts correctly otherwise.
 MAKEFILE=	makefile
 SYSCONFDIR=	/etc/squid
