@@ -4,7 +4,6 @@ bin/jpegtran
 bin/rdjpgcom
 bin/wrjpgcom
 lib/libjpeg.a
-@exec ranlib %D/%F
 lib/libjpeg.so.62.0
 @exec [ -x /sbin/ldconfig ] && /sbin/ldconfig -m %B
 lib/libjpeg.la

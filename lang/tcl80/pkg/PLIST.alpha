@@ -1,6 +1,5 @@
 bin/tclsh8.0
 lib/libtcl80.a
-@exec ranlib %D/%F
 include/tcl8.0/tcl.h
 include/tcl8.0/generic/tcl.h
 include/tcl8.0/generic/tclCompile.h

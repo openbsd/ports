@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.3 1998/04/14 05:44:53 marc Exp $
+$OpenBSD: LICENSE,v 1.4 1998/09/08 18:01:33 marc Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -143,6 +143,7 @@ Y	mail/exim			exim-texinfo-1.80.tar.gz	COPY
 N	mail/faces			faces-1.6.1.tar.Z		NOFEE
 Y	mail/fetchmail			fetchmail-4.3.8.tar.gz		GPL
 Y	mail/metamail			mm2.7.tar.Z			BSD
+Y	mail/nmh			nmh-0.27.tar.gz			BSD
 Y	mail/pgpsendmail		PGPsendmail-v1.4.5.tar.gz	GPL
 Y	mail/pine			pine3.96.tar.gz			BSD
 Y	mail/popclient			popclient-3.0b6.tar.gz		COPY
@@ -163,7 +164,7 @@ Y	net/irc				irc2.9.2p3.tgz			GPL
 Y	net/ircii-epic			ircii2.8.2-EPIC3.004.tar.gz	COPY
 Y	net/ircii-epic			ircii2.8.2-EPIC3.help.tar.gz	COPY
 Y	net/mirror			mirror-2.8.tar.gz		COPY
-Y	net/netpipe			netpipes3.2.tar.gz		GPL
+Y	net/netpipe			netpipes-4.1.1-export.tar.gz	GPL
 Y	net/samba			samba-1.9.18p3.tar.gz		GPL
 Y	net/tintin++			tintin++v1.5pl6.tar.Z		NONE
 Y	net/trafshow			trafshow-2.0.tgz		BSD
@@ -171,7 +172,7 @@ Y	net/ucd-snmp			ucd-snmp-3.2.tar.gz		BSD
 Y	net/wget			wget-1.4.5.tar.gz		GPL
 Y	net/ytalk			ytalk-v3pl2.tar.gz		COPY
 Y	news/aub			aub				COPY
-Y	news/leafnode			leafnode-1.0.2.src.elf.tgz	COPY
+Y	news/leafnode			leafnode-1.4-7.src.elf.tar.gz	COPY
 Y	news/newsfetch			newsfetch-1.0.tar.gz		NONE
 Y	news/plor			plor-0.3.1.tar.gz		GPL
 Y	news/slrn			slrn0.9.4.3.tar.gz		GPL
@@ -206,7 +207,7 @@ Y	shells/tcsh			tcsh-6.07.tar.gz		BSD
 Y	shells/zsh			zsh-3.0.5.tar.gz		BSD
 N	sysutils/LPRng			LPRng-3.2.3.tgz			MANY!
 N	sysutils/idled			idled-1.16.tar.gz		NOFEE
-Y	sysutils/lsof			lsof_4.15_W.tar.gz		BSD
+Y	sysutils/lsof			lsof_4.34_W.tar.gz		BSD
 Y	sysutils/rtty			rtty-3.2.tar.gz			BSD
 Y	sysutils/setquota		setquota-0.1.tar.gz		BSD
 Y	sysutils/socket			socket-1.1.tar.gz		GPL

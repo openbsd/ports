@@ -1,7 +1,6 @@
 bin/cxpm
 bin/sxpm
 lib/libXpm.a
-@exec ranlib %D/%F
 lib/libXpm.so.4.11
 @exec /sbin/ldconfig -m %B
 include/X11/xpm.h

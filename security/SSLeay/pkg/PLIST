@@ -73,9 +73,7 @@ ssl/bin/c_name
 ssl/bin/c_rehash
 ssl/lib/ssleay.cnf
 ssl/lib/libcrypto.a
-@exec ranlib %D/%F
 ssl/lib/libssl.a
-@exec ranlib %D/%F
 ssl/include/crypto.h
 ssl/include/cryptall.h
 ssl/include/md2.h

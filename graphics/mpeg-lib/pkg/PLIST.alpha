@@ -1,3 +1,2 @@
 lib/libmpeg.a
-@exec ranlib %D/%F
 include/mpeg.h

@@ -9,7 +9,6 @@ bin/mogrify
 bin/montage
 lib/libMagick.la
 lib/libMagick.a
-@exec ranlib %D/%F
 man/man1/xtp.1
 man/man1/ImageMagick.1
 man/man1/animate.1

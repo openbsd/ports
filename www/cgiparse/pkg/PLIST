@@ -1,6 +1,5 @@
 include/cgi.h
 lib/libcgiparse.a
-@exec ranlib %D/%F
 lib/libcgiparse.so.1.0
 @exec /sbin/ldconfig -m %B
 man/man3/cgigetvalue.3

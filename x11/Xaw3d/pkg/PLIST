@@ -1,5 +1,4 @@
 lib/libXaw3d.a
-@exec ranlib %D/%F
 lib/libXaw3d.so.6.1
 @exec /sbin/ldconfig -m %B
 include/X11/Xaw3d/AllWidgets.h

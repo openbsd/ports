@@ -1,7 +1,6 @@
 @cwd /usr/local
 @name rsaref-2.0
 lib/librsaref.a
-@exec ranlib %D/%F
 include/rsa.h
 include/_des.h
 include/_md2.h

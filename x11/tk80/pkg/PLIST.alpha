@@ -1,6 +1,5 @@
 bin/wish8.0
 lib/libtk80.a
-@exec ranlib %D/%F
 lib/tk8.0/tkConfig.sh
 lib/tk8.0/images/README
 lib/tk8.0/images/logo100.gif

@@ -25,7 +25,6 @@ info/regex.info-2
 info/regex.info-3
 lib/liba2ps.la
 lib/liba2ps.a
-@exec ranlib %D/%F
 man/man1/ogonkify.1
 man/man1/a2ps.1
 man/man1/card.1

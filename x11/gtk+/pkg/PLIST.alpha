@@ -101,13 +101,10 @@ include/gtk/gtkwidget.h
 include/gtk/gtkwindow.h
 include/gtk/gtktypebuiltins.h
 lib/libglib.a
-@exec ranlib %D/%F
 lib/libglib.la
 lib/libgdk.a
-@exec ranlib %D/%F
 lib/libgdk.la
 lib/libgtk.a
-@exec ranlib %D/%F
 lib/libgtk.la
 lib/glib/include/glibconfig.h
 bin/gtk-config

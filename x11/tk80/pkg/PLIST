@@ -1,6 +1,5 @@
 bin/wish8.0
 lib/libtk80.a
-@exec ranlib %D/%F
 lib/libtk80.so.1.2
 @exec /sbin/ldconfig -m %B
 lib/tk8.0/tkConfig.sh

@@ -1,7 +1,6 @@
 bin/cxpm
 bin/sxpm
 lib/libXpm.a
-@exec ranlib %D/%F
 include/X11/xpm.h
 man/cat1/cxpm.0
 man/cat1/sxpm.0

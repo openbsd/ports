@@ -4,7 +4,6 @@ bin/jpegtran
 bin/rdjpgcom
 bin/wrjpgcom
 lib/libjpeg.a
-@exec ranlib %D/%F
 lib/libjpeg.la
 man/man1/cjpeg.1
 man/man1/djpeg.1

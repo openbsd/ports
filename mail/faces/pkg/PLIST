@@ -6,7 +6,6 @@ bin/uncompface
 man/man1/compface.1
 man/man1/uncompface.1
 lib/libcompface.a
-@exec ranlib %D/%F
 lib/libcompface.so.1.0
 @exec /sbin/ldconfig -m %D/lib
 include/compface.h

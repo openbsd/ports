@@ -16,19 +16,14 @@ include/gck/gckvector.h
 lib/libgimp.so.1.0
 lib/libgimp.la
 lib/libgimp.a
-@exec ranlib %D/%F
 lib/libgimpui.so.1.0
 lib/libgimpui.la
 lib/libgimpui.a
-@exec ranlib %D/%F
 lib/libgck.so.1.0
 lib/libgck.la
 lib/libgck.a
-@exec ranlib %D/%F
 lib/gimp/1.0/plug-ins/libmegawidget.a
-@exec ranlib %D/%F
 lib/gimp/1.0/plug-ins/libgpc.a
-@exec ranlib %D/%F
 lib/gimp/1.0/plug-ins/MapObject
 lib/gimp/1.0/plug-ins/AlienMap
 lib/gimp/1.0/plug-ins/dbbrowser

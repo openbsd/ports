@@ -26,9 +26,7 @@ include/expect_comm.h
 include/expect_tcl.h
 include/tclRegexp.h
 lib/expect5.26/libexpect526.a
-@exec ranlib %D/%F
 lib/libexpect526.a
-@exec ranlib %D/%F
 man/man1/autoexpect.1
 man/man1/cryptdir.1
 man/man1/decryptdir.1

@@ -27,9 +27,7 @@ include/expect_tcl.h
 include/tclRegexp.h
 lib/expect5.26/pkgIndex.tcl
 lib/expect5.26/libexpect526.a
-@exec ranlib %D/%F
 lib/libexpect526.a
-@exec ranlib %D/%F
 lib/libexpect526.so.1.2
 @exec /sbin/ldconfig -m %B
 man/man1/autoexpect.1

@@ -1,5 +1,4 @@
 lib/libtiff.a
-@exec ranlib %D/%F
 @exec ln -sf %f %B/libtiff34.a
 @unexec rm -f %B/libtiff34.a
 lib/libtiff.so.3.4

@@ -25,7 +25,6 @@ info/regex.info-2
 info/regex.info-3
 lib/liba2ps.la
 lib/liba2ps.a
-@exec ranlib %D/%F
 lib/liba2ps.so.1.0
 @exec [ -x /sbin/ldconfig ] && /sbin/ldconfig -m %B
 man/man1/ogonkify.1

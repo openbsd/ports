@@ -15,5 +15,4 @@ man/man3/gsm.3
 man/man3/gsm_explode.3
 man/man3/gsm_option.3
 man/man3/gsm_print.3
-@exec ranlib %D/%F
 include/gsm.h

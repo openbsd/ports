@@ -17,7 +17,6 @@ man/man5/libsocks5.conf.5
 man/man5/socks5.conf.5
 man/man5/socks5.passwd.5
 lib/libsocks5.a
-@exec ranlib -m %D/lib/libsocks5.a
 lib/libsocks5_sh.so
 @exec /sbin/ldconfig -m %D/lib
 lib/socks/README

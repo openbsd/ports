@@ -1,9 +1,7 @@
 bin/xgettext
 bin/msgfmt
 lib/libolgx.a
-@exec ranlib %D/%F
 lib/libxview.a
-@exec ranlib %D/%F
 @exec /sbin/ldconfig -m %B
 lib/.text_extras_menu
 lib/.textswrc

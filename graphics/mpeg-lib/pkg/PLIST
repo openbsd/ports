@@ -1,5 +1,4 @@
 lib/libmpeg.a
-@exec ranlib %D/%F
 lib/libmpeg.so.1.2
 @exec /sbin/ldconfig -m %B
 include/mpeg.h
