@@ -1,5 +1,3 @@
-etc/rc.d/rplayd.sh
-etc/rplay.hosts
 bin/rplay
 bin/rptp
 @comment requires XForms
