@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.30 2004/12/28 09:08:12 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.31 2004/12/28 09:15:59 jakob Exp $
 @conflict postfix-*
+@newuser _postfix:507:507:daemon:Postfix Daemon:/var/empty:/sbin/nologin
+@newgroup _postfix:507
+@newgroup _postdrop:508
 libexec/postfix/
 libexec/postfix/anvil
 libexec/postfix/bounce
