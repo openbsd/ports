@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2002/01/25 20:09:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/13 23:38:05 pvalchev Exp $
+
+ONLY_FOR_ARCHS=		alpha i386
 
 COMMENT=		"threaded library for writing Internet applications"
 
