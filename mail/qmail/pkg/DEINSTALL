@@ -1,0 +1,65 @@
+#!/bin/sh
+#
+#
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+QMAILDIR=${PKG_PREFIX:-/var/qmail}
+
+do_accts()
+{
+	echo
+	echo "- remove qmail users"
+	echo "rmuser alias"
+	echo "rmuser qmaild"
+	echo "rmuser qmaill"
+	echo "rmuser qmailp"
+	echo "rmuser qmailq"
+	echo "rmuser qmailr"
+	echo "rmuser qmails"
+}
+
+do_groups()
+{	
+	echo
+	echo "- remove qmail groups"
+	echo "rmgroup qmail"
+	echo "rmgroup nofiles"
+}
+
+do_qmaildir()
+{
+	echo
+	echo "- remove remaining qmail files"
+	echo "rm -rf $QMAILDIR"
+}
+
+do_misc()
+{	
+	echo
+	echo "- check that qmail daemons are no longer started"
+	echo "  (/etc/rc.local, /etc/inetd.conf, /etc/mailer.conf)"
+
+}
+
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { DEINSTALL }" >&2
+    exit 1
+fi
+
+case $2 in
+    DEINSTALL)
+	echo "----------------"
+	echo "To completely remove qmail do the following as root:"
+	echo "----------------"
+	do_accts
+	do_groups
+	do_qmaildir
+	do_misc
+	;;
+    *)
+	echo "Usage: `basename $0` distname DEINSTALL" >&2
+	exit 1
+	;;
+esac
+
+exit 0

@@ -1,0 +1,178 @@
+#!/bin/sh
+#
+# Inspired by INSTALL from postfix port by dugsong@
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+QMAILDIR=${PREFIX:-$PKG_PREFIX}
+
+# Unlikely, but not impossible: these UIDs may clash
+# with already installed UIDs.
+# Workaround: make these users and groups yourself
+# before installing the port or package.
+
+ALIASUID=2750
+QMAILDUID=2850
+QMAILLUID=2851
+QMAILPUID=2852
+QMAILQUID=2853
+QMAILRUID=2854
+QMAILSUID=2855
+QMAILGID=2850
+NOFILESGID=32750
+
+# set up qmail user/group accounts.
+#
+do_accts()
+{
+    # Create qmail and nofiles group.
+    # qmail
+    line=`egrep '^qmail:' /etc/group`
+    if [ "$line" != "" ]; then
+	echo -n "-> Using "
+        QMAILGID=`echo $line | cut -f3 -d:`
+    else
+        echo -n "-> Creating "
+        echo "qmail:*:${QMAILGID}:" >> /etc/group
+    fi
+    echo "group 'qmail', gid $QMAILGID"
+    # nofiles
+    line=`egrep '^nofiles:' /etc/group`
+    if [ "$line" != "" ]; then
+	echo -n "-> Using "
+        NOFILESGID=`echo $line | cut -f3 -d:`
+    else
+        echo -n "-> Creating "
+        echo "nofiles:*:${NOFILESGID}:" >> /etc/group
+    fi
+    echo "group 'nofiles', gid $NOFILESGID"
+
+    # Create users alias, qmaild, qmaill, qmailp, qmailq, qmailr, qmails
+    # alias
+    line=`egrep '^alias:' /etc/passwd`
+    if [ "$line" != "" ]; then
+	echo -n "-> Using "
+        ALIASUID=`echo $line | cut -f3 -d:`
+    else
+        echo -n "-> Creating "
+        chpass -l -a "alias:*:${ALIASUID}:${NOFILESGID}::::QMAIL:${QMAILDIR}/alias:/sbin/nologin"
+    fi
+    echo "account 'alias', uid $ALIASUID, gid $NOFILESGID"
+    # qmaild
+    line=`egrep '^qmaild:' /etc/passwd`
+    if [ "$line" != "" ]; then
+	echo -n "-> Using "
+        QMAILDUID=`echo $line | cut -f3 -d:`
+    else
+        echo -n "-> Creating "
+        chpass -l -a "qmaild:*:${QMAILDUID}:${NOFILESGID}::::QMAIL:${QMAILDIR}:/sbin/nologin"
+    fi
+    echo "account 'qmaild', uid $QMAILDUID, gid $NOFILESGID"
+    # qmaill
+    line=`egrep '^qmaill:' /etc/passwd`
+    if [ "$line" != "" ]; then
+	echo -n "-> Using "
+        QMAILLUID=`echo $line | cut -f3 -d:`
+    else
+        echo -n "-> Creating "
+        chpass -l -a "qmaill:*:${QMAILLUID}:${NOFILESGID}::::QMAIL:${QMAILDIR}:/sbin/nologin"
+    fi
+    echo "account 'qmaill', uid $QMAILLUID, gid $NOFILESGID"
+    # qmailp
+    line=`egrep '^qmailp:' /etc/passwd`
+    if [ "$line" != "" ]; then
+	echo -n "-> Using "
+        QMAILPUID=`echo $line | cut -f3 -d:`
+    else
+        echo -n "-> Creating "
+        chpass -l -a "qmailp:*:${QMAILPUID}:${NOFILESGID}::::QMAIL:${QMAILDIR}:/sbin/nologin"
+    fi
+    echo "account 'qmailp', uid $QMAILPUID, gid $NOFILESGID"
+    # qmailq
+    line=`egrep '^qmailq:' /etc/passwd`
+    if [ "$line" != "" ]; then
+	echo -n "-> Using "
+        QMAILQUID=`echo $line | cut -f3 -d:`
+    else
+        echo -n "-> Creating "
+        chpass -l -a "qmailq:*:${QMAILQUID}:${QMAILGID}::::QMAIL:${QMAILDIR}:/sbin/nologin"
+    fi
+    echo "account 'qmailq', uid $QMAILQUID, gid $QMAILGID"
+    # qmailr
+    line=`egrep '^qmailr:' /etc/passwd`
+    if [ "$line" != "" ]; then
+	echo -n "-> Using "
+        QMAILRUID=`echo $line | cut -f3 -d:`
+    else
+        echo -n "-> Creating "
+        chpass -l -a "qmailr:*:${QMAILRUID}:${QMAILGID}::::QMAIL:${QMAILDIR}:/sbin/nologin"
+    fi
+    echo "account 'qmailr', uid $QMAILRUID, gid $QMAILGID"
+    # qmails
+    line=`egrep '^qmails:' /etc/passwd`
+    if [ "$line" != "" ]; then
+        QMAILSUID=`echo $line | cut -f3 -d:`
+	echo -n "-> Using "
+    else
+        echo -n "-> Creating "
+        chpass -l -a "qmails:*:${QMAILSUID}:${QMAILGID}::::QMAIL:${PREFIX}:/sbin/nologin"
+    fi
+    echo "account 'qmails', uid $QMAILSUID, gid $QMAILGID"
+}
+
+do_advice()
+{
+	echo "----------------"
+	echo "qmail is installed"
+	echo "----------------"
+	echo
+	echo "To activate qmail, please read $QMAILDIR/doc/INSTALL"
+	echo "Steps 1, 2, 3 and 5 have been done by this port/package."
+	echo "The config command from step 4 can be found in $QMAILDIR/setup"
+	echo 
+	echo "It is recommended to use tcpserver instead of inetd for qmail-smtpd"
+	echo "and/or qmail-pop3d. It is installed as a dependency."
+	echo
+	echo "If you want to replace Sendmail on your system, be sure to look"
+	echo "at mailwrapper(8)."
+	echo "Here's a sample /etc/mailer.conf:"
+	echo
+	echo "sendmail        $QMAILDIR/bin/sendmail"
+	echo "send-mail       $QMAILDIR/bin/sendmail"
+	echo "mailq           $QMAILDIR/bin/qmail-qread"
+	echo " # you will need fastforward for newaliases to work"
+	echo "newaliases      $QMAILDIR/bin/newaliases"
+	echo " # not sure about these, mail corrections to this port's maintainer"
+	echo "hoststat        /usr/bin/true"
+	echo "purgestat       /usr/bin/true"
+	echo
+	echo "Enjoy qmail!"
+}
+
+do_aliases()
+{
+	touch ${QMAILDIR}/alias/.qmail-postmaster	\
+	      ${QMAILDIR}/alias/.qmail-mailer-daemon	\
+	      ${QMAILDIR}/alias/.qmail-root	
+	chmod 644 ${QMAILDIR}/alias/.qmail-postmaster		\
+		  ${QMAILDIR}/alias/.qmail-mailer-daemon	\
+		  ${QMAILDIR}/alias/.qmail-root	
+}
+		
+case $2 in
+    PRE-INSTALL)
+	do_accts
+	;;
+    POST-INSTALL)
+	# Install will abort because it cannot install all files.
+	# It will make qmail/queue though, which is what we want.
+	sh -c "${QMAILDIR}/setup/install >/dev/null 2>&1"
+	do_aliases
+	do_advice
+	;;
+    *)
+	echo "Usage: `basename $0` distname <PRE-INSTALL|POST-INSTALL>" >&2
+	exit 1
+	;;
+esac
+
+exit 0
