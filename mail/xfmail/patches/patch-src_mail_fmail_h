@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mail_fmail_h,v 1.1 2002/05/22 06:48:55 form Exp $
+--- src/mail/fmail.h.orig	Wed May 22 13:37:52 2002
++++ src/mail/fmail.h	Wed May 22 13:38:08 2002
+@@ -367,7 +367,7 @@ extern int vsnprintf(char *, size_t, con
+ 	#endif
+ 
+ 	#ifndef _PATH_ISPELL
+-		#define _PATH_ISPELL  "/usr/bin/ispell"
++		#define _PATH_ISPELL  "/usr/local/bin/ispell"
+ 	#endif
+ 
+ 	#define NO_SORT     0x00

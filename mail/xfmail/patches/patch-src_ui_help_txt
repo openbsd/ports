@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ui_help_txt,v 1.1 2002/05/22 06:48:55 form Exp $
+--- src/ui/help.txt.orig	Wed May 22 13:42:13 2002
++++ src/ui/help.txt	Wed May 22 13:42:45 2002
+@@ -2336,7 +2336,7 @@ Config Smart POP.^Config-SPOP
+  the ispell session itself.
+ 
+  - Path to ispell program
+-    The full path to the ispell program (defaults to /usr/bin/ispell).
++    The full path to the ispell program (defaults to /usr/local/bin/ispell).
+ 
+  - Ignore cited text
+     Cited text (text that is marked as included) isn't spell checked if

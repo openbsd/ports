@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_ui_view_edit_cpp,v 1.1 2002/05/22 06:48:55 form Exp $
+--- src/ui/view_edit.cpp.orig	Wed May 22 13:35:39 2002
++++ src/ui/view_edit.cpp	Wed May 22 13:35:59 2002
+@@ -141,7 +141,7 @@ void view_conf(int set_default, FD_confi
+ 														 set_default)));
+ 	fl_set_input(view_obj->View_EView,
+ 				 Config.getCStringDefault("extview",
+-										 "/usr/bin/X11/xedit",
++										 "/usr/X11R6/bin/xedit",
+ 										 set_default));
+ 	fl_set_input(view_obj->View_URL,
+ 				 Config.getCStringDefault("urlview", "",
+@@ -205,7 +205,7 @@ void edit_conf(int set_default, FD_confi
+ 									   set_default));
+ 	fl_set_input(edit_obj->Edit_EEdit,
+ 				 Config.getCStringDefault("extedit",
+-										 "/usr/bin/X11/xedit",
++										 "/usr/X11R6/bin/xedit",
+ 										 set_default));
+ }
+ void handle_edit_input(FD_config_viewedit * form) {
+@@ -269,7 +269,7 @@ int file_view(char *file, struct _proc_i
+ 
+ 	strcpy(viewfile, file);
+ 	if(!Config.getInt("intview", 0)) {
+-		e = Config.getCString("extview", "/usr/bin/X11/xedit");
++		e = Config.getCString("extview", "/usr/X11R6/bin/xedit");
+ 		command[0] = '\0';
+ 		added = 0;
+ 		for(i = 0; i < strlen(e); i++) {
