@@ -1,7 +1,5 @@
 # $FreeBSD: ports/russian/cyrproxy/Makefile,v 1.4 1999/08/31 01:46:57 peter Exp $
-# $OpenBSD: Makefile,v 1.3 2000/03/03 11:27:25 turan Exp $
-
-BROKEN=		installs files automatically in /etc
+# $OpenBSD: Makefile,v 1.4 2000/03/03 12:45:59 turan Exp $
 
 DISTNAME=		cyrproxy-1.4.2
 CATEGORIES=		russian net www
