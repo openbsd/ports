@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/03/15 06:50:11 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/15 12:33:32 naddy Exp $
 
 COMMENT=	"documentation system for C, C++, IDL and Java"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	docpp
 
-RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu \ 
+RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu \
 		:teTeX_base-*:print/teTeX/base
 
 USE_GMAKE=	Yes
