@@ -3,16 +3,16 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 1999/10/31 07:29:01 turan Exp $
+# $OpenBSD: Makefile,v 1.4 1999/10/31 09:26:17 angelos Exp $
 #
 
-BROKEN=		syntax errors in config_expl.cpp
+BROKEN=		waiting for turans@ to verify
 
 DISTNAME=	explorer-0.72
 CATEGORIES=	x11
 MASTER_SITES=	ftp://jungfrau.ptf.hro.nl/pub/explorer/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LIB_DEPENDS=	qt\\.1\\.:${PORTSDIR}/x11/qt
 

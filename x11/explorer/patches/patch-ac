@@ -1,0 +1,11 @@
+--- src/plugin_m.cpp.orig	Sun Oct 31 04:21:44 1999
++++ src/plugin_m.cpp	Sun Oct 31 04:21:53 1999
+@@ -205,7 +205,7 @@
+ 					"%s/plugins",
+ 					pldir);
+ 
+-			struct DIR *checkdir;
++			DIR *checkdir;
+ 
+ 			checkdir = opendir(plugin_path);
+ 			if (checkdir == NULL)

@@ -1,0 +1,11 @@
+--- src/config_expl.cpp.orig	Sun Oct 31 04:18:45 1999
++++ src/config_expl.cpp	Sun Oct 31 04:19:00 1999
+@@ -398,7 +398,7 @@
+ 	}
+ 
+     // check to see if the path is valid
+-    struct DIR *checkdir;
++    DIR *checkdir;
+ 
+     //>---------- first check for the explorer path itself
+ 
