@@ -1,6 +1,6 @@
 Using samba package in OpenBSD environment:
 
-1. Copy /usr/local/lib/smb.conf.sample to /etc/samba/smb.conf and edit
+1. Copy /usr/local/lib/samba/smb.conf.sample to /etc/samba/smb.conf and edit
    it.
 
 2. Edit /etc/rc.conf file:
