@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/10 15:16:47 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/23 06:10:42 turan Exp $
 #
 
 DISTNAME=	glimpse-4.1
 CATEGORIES=	textproc databases
 
-NO_CDROM=	"NOFEE:	Can not sell"
-
 MAINTAINER=	weingart@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
 DISTFILES=	glimpse-4.1.src.tar.gz

@@ -3,7 +3,7 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/10 23:14:36 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/23 06:10:42 turan Exp $
 #
 
 NEED_VERSION=	1.116
@@ -14,6 +14,11 @@ DISTFILES=	article.dtd book.dtd maths.dtd serial.dtd
 NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 DIST_SUBDIR=	iso12083
 
