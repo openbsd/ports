@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2002/06/29 11:36:07 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2002/06/29 11:36:57 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -113,7 +113,6 @@ pre-fetch:
 RUN_DEPENDS+=	win32/divx.dll:win32-codecs-*:graphics/win32-codecs
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32
-.endif
 .else
 CONFIGURE_ARGS+=--disable-win32
 .endif
