@@ -1,12 +1,12 @@
-$OpenBSD: patch-browser_app_mozilla_in,v 1.1 2003/05/20 12:46:46 wilfried Exp $
+$OpenBSD: patch-browser_app_mozilla_in,v 1.2 2003/05/21 10:18:58 wilfried Exp $
 --- browser/app/mozilla.in.orig	Wed Aug 21 21:21:36 2002
-+++ browser/app/mozilla.in	Tue May 20 14:37:01 2003
++++ browser/app/mozilla.in	Wed May 21 12:13:09 2003
 @@ -115,6 +115,6 @@ export MRE_HOME
  eval "set -- $moreargs"
  if [ $debugging = 1 ]
  then
 -  echo $dist_bin/run-mozilla.sh $script_args $dist_bin/$MOZILLA_BIN "$@"
-+  echo $dist_bin/run-mozilla.sh $script_args /usr/local/bin/$MOZILLA_BIN "$@"
++  echo $dist_bin/run-mozilla.sh $script_args /usr/local/mozilla/$MOZILLA_BIN "$@"
  fi
 -exec "$dist_bin/run-mozilla.sh" $script_args "$dist_bin/$MOZILLA_BIN" "$@"
-+exec "$dist_bin/run-mozilla.sh" $script_args "/usr/local/bin/$MOZILLA_BIN" "$@"
++exec "$dist_bin/run-mozilla.sh" $script_args "/usr/local/mozilla/$MOZILLA_BIN" "$@"
