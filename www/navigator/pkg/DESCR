@@ -1,12 +1,12 @@
 
-Netscape stand-alone Navigator 4.5 for the i386, fortified
+Netscape stand-alone Navigator 4.51 for the i386, fortified
 -----------------------------------------------------------
 
 Release notes for this version of Netscape are available on-line.  After
 starting the program, select "Release Notes" from the "Help" menu.  This
 will take you to the URL
 
-    http://home.netscape.com/eng/mozilla/4.0/relnotes/unix-4.0.html
+    http://home.netscape.com/eng/mozilla/4.5/relnotes/unix-4.51.html
 
 which lists new features and known problems of this release.
 
@@ -20,4 +20,3 @@ NOTICE: Use of this port requires a kernel compiled with 'option COMPAT_BSDOS'
 
 ---
 http://www.monkey.org/~dugsong/
-

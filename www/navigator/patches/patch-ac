@@ -1,0 +1,45 @@
+*** Fortify-1.4.1-unix-x86/src/cmdline/Makefile-orig	Tue Nov  3 12:02:51 1998
+--- Fortify-1.4.1-unix-x86/src/cmdline/Makefile	Tue Nov  3 12:05:28 1998
+***************
+*** 2,10 ****
+  COMMON	= ../common
+  INC	= -I. -I$(COMMON)
+  
+! CC	= gcc # -Wall
+  
+  # For GNU/Linux systems
+! CFLAGS	= $(INC) -O2	# -static
+! LDFLAGS = -static
+  
+--- 2,10 ----
+  COMMON	= ../common
+  INC	= -I. -I$(COMMON)
+  
+! #CC	= gcc # -Wall
+  
+  # For GNU/Linux systems
+! #CFLAGS	= $(INC) -O2	# -static
+! #LDFLAGS = -static
+  
+***************
+*** 30,39 ****
+  #LDFLAGS = # -static
+  
+  # Everything else
+! #CFLAGS	= $(INC) -O
+! #LDFLAGS = # -static
+
+  # ----------------------------------------------------------------------
+  # You should not need to modify anything below here
+  #
+  # Everything else
+--- 31,38 ----
+  #LDFLAGS = # -static
+  
+  # Everything else
+! CFLAGS	= $(INC) -O2
+! LDFLAGS = # -static
+
+  # ----------------------------------------------------------------------
+  # You should not need to modify anything below here
+  #
