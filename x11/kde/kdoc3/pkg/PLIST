@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/11 00:34:17 espie Exp $
+bin/kdoc
+bin/makekdedoc
+bin/qt2kdoc
+man/man1/kdoc.1
+man/man1/makekdedoc.1
+man/man1/qt2kdoc.1
+share/doc/kdoc/README
+share/doc/kdoc/index.docbook
+share/kdoc/Ast.pm
+share/kdoc/Iter.pm
+share/kdoc/kdocAstGen.pm
+share/kdoc/kdocAstSearch.pm
+share/kdoc/kdocAstUtil.pm
+share/kdoc/kdocCxxDocbook.pm
+share/kdoc/kdocCxxHTML.pm
+share/kdoc/kdocCxxLaTeX.pm
+share/kdoc/kdocDocHelper.pm
+share/kdoc/kdocDocIter.pm
+share/kdoc/kdocHTMLutil.pm
+share/kdoc/kdocLib.pm
+share/kdoc/kdocMan.pm
+share/kdoc/kdocParseCxx.pm
+share/kdoc/kdocParseDoc.pm
+share/kdoc/kdocParsePy.pm
+share/kdoc/kdocParser.pm
+share/kdoc/kdocUtil.pm
+share/kdoc/kdoctexi.pm
+@dirrm share/kdoc
+@dirrm share/doc/kdoc
