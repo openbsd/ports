@@ -1,12 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2004/11/28 22:41:21 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2005/01/06 00:19:24 jsg Exp $
 
 COMMENT=	"collection of various tools for scummvm"
-# this tarball is horribly packaged
-VERSION=	0.6.1
-DISTNAME=	scummvm-tools-${VERSION}-src
-PKGNAME=	${DISTNAME:S/-src//}
-WRKDIST=	${WRKDIR}/scummvm-${VERSION}-tools
-EXTRACT_SUFX=   .tar.bz2
+VERSION=	0.7.0
+DISTNAME=	scummvm-tools-${VERSION}
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -39,13 +35,17 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scummvm-tools
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/scummvm-tools	
 	${INSTALL_PROGRAM} \
-		${WRKBUILD}/descumm \
-		${WRKBUILD}/extract \
-		${WRKBUILD}/simon{1decr,2mp3} \
-		${WRKBUILD}/desword2 \
-		${WRKBUILD}/rescumm \
 		${WRKBUILD}/compress_san \
 		${WRKBUILD}/convbdf \
+		${WRKBUILD}/dekyra \
+		${WRKBUILD}/descumm \
+		${WRKBUILD}/desword2 \
+		${WRKBUILD}/extract \
+		${WRKBUILD}/queenrebuild \
+		${WRKBUILD}/rescumm \
+		${WRKBUILD}/saga2mp3 \
+		${WRKBUILD}/simon{1decr,2mp3} \
+		${WRKBUILD}/sword{1mp3,2mp3} \
 		${PREFIX}/bin
 
 .include <bsd.port.mk>
