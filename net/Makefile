@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.329 2004/09/26 10:08:04 espie Exp $
+# $OpenBSD: Makefile,v 1.330 2004/10/02 23:54:30 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -84,6 +84,7 @@
      SUBDIR += iperf
      SUBDIR += ipfm
      SUBDIR += iplog
+     SUBDIR += ipsvd
      SUBDIR += ipv6calc
      SUBDIR += irc
      SUBDIR += ircII
