@@ -1,0 +1,77 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/06/08 12:06:01 pvalchev Exp $
+bin/bombermaze
+lib/locale/da/LC_MESSAGES/bombermaze.mo
+lib/locale/de/LC_MESSAGES/bombermaze.mo
+lib/locale/es/LC_MESSAGES/bombermaze.mo
+lib/locale/fr/LC_MESSAGES/bombermaze.mo
+lib/locale/it/LC_MESSAGES/bombermaze.mo
+lib/locale/ja/LC_MESSAGES/bombermaze.mo
+lib/locale/no/LC_MESSAGES/bombermaze.mo
+lib/locale/pt_BR/LC_MESSAGES/bombermaze.mo
+lib/locale/ru/LC_MESSAGES/bombermaze.mo
+lib/locale/uk/LC_MESSAGES/bombermaze.mo
+share/bombermaze/maps/11x11
+share/bombermaze/maps/11x11_random
+share/bombermaze/maps/15x13
+share/bombermaze/maps/15x13_random
+share/bombermaze/maps/15x15
+share/bombermaze/maps/15x15_random
+share/bombermaze/pixmaps/title.png
+share/bombermaze/themes/default/README
+share/bombermaze/themes/default/bomb.png
+share/bombermaze/themes/default/brick.png
+share/bombermaze/themes/default/fire.png
+share/bombermaze/themes/default/floor.png
+share/bombermaze/themes/default/player1.png
+share/bombermaze/themes/default/player2.png
+share/bombermaze/themes/default/player3.png
+share/bombermaze/themes/default/player4.png
+share/bombermaze/themes/default/powerup.png
+share/bombermaze/themes/default/wall.png
+share/bombermaze/themes/gnomed/README
+share/bombermaze/themes/gnomed/bomb.png
+share/bombermaze/themes/gnomed/brick.png
+share/bombermaze/themes/gnomed/fire.png
+share/bombermaze/themes/gnomed/floor.png
+share/bombermaze/themes/gnomed/player1.png
+share/bombermaze/themes/gnomed/player2.png
+share/bombermaze/themes/gnomed/player3.png
+share/bombermaze/themes/gnomed/player4.png
+share/bombermaze/themes/gnomed/powerup.png
+share/bombermaze/themes/gnomed/wall.png
+share/bombermaze/themes/icons3d/README
+share/bombermaze/themes/icons3d/bomb.png
+share/bombermaze/themes/icons3d/brick.png
+share/bombermaze/themes/icons3d/fire.png
+share/bombermaze/themes/icons3d/floor.png
+share/bombermaze/themes/icons3d/player1.png
+share/bombermaze/themes/icons3d/player2.png
+share/bombermaze/themes/icons3d/player3.png
+share/bombermaze/themes/icons3d/player4.png
+share/bombermaze/themes/icons3d/powerup.png
+share/bombermaze/themes/icons3d/wall.png
+share/bombermaze/themes/space/README
+share/bombermaze/themes/space/bomb.png
+share/bombermaze/themes/space/brick.png
+share/bombermaze/themes/space/fire.png
+share/bombermaze/themes/space/floor.png
+share/bombermaze/themes/space/player1.png
+share/bombermaze/themes/space/player2.png
+share/bombermaze/themes/space/player3.png
+share/bombermaze/themes/space/player4.png
+share/bombermaze/themes/space/powerup.png
+share/bombermaze/themes/space/wall.png
+share/gnome/apps/Games/bombermaze.desktop
+share/gnome/help/bombermaze/C/animation.html
+share/gnome/help/bombermaze/C/index.html
+share/gnome/help/bombermaze/C/numeric.html
+share/gnome/help/bombermaze/C/topic.dat
+share/pixmaps/bombermaze.png
+@dirrm share/bombermaze/themes/space
+@dirrm share/bombermaze/themes/icons3d
+@dirrm share/bombermaze/themes/gnomed
+@dirrm share/bombermaze/themes/default
+@dirrm share/bombermaze/themes
+@dirrm share/bombermaze/pixmaps
+@dirrm share/bombermaze/maps
+@dirrm share/bombermaze
