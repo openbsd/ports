@@ -12,7 +12,7 @@
       static int getOpenMax();
   };
 *** util/TextFmt.c++.orig	Sat Feb 14 02:47:30 1998
---- util/TextFmt.c++	Mon Nov  9 15:55:13 1998
+--- util/TextFmt.c++	Mon Nov  9 16:28:13 1998
 ***************
 *** 47,52 ****
 --- 47,53 ----
@@ -24,7 +24,7 @@
   #define LUNIT 	(72*20)		// local coord system is .05 scale
   #define	ICVT(x) ((TextCoord)((x)*LUNIT))	// scale inches to local coordinates
 ***************
-*** 240,255 ****
+*** 240,251 ****
       output = o;
       pageHeight = ICVT(physPageHeight);
       pageWidth = ICVT(physPageWidth);
@@ -37,11 +37,7 @@
       if (tf == NULL)
   	fatal("%s: Cannot open temporary file: %s",
   	    (const char*) tempfile, strerror(errno));
--     Sys::unlink(tempfile);			// so it'll be removed on exit
-  
-      numcol = fxmax(1,numcol);
-      if (pointSize == -1)
---- 241,260 ----
+--- 241,257 ----
       output = o;
       pageHeight = ICVT(physPageHeight);
       pageWidth = ICVT(physPageWidth);
@@ -59,6 +55,3 @@
       if (tf == NULL)
   	fatal("%s: Cannot open temporary file: %s",
   	    (const char*) tempfile, strerror(errno));
-  
-      numcol = fxmax(1,numcol);
-      if (pointSize == -1)
