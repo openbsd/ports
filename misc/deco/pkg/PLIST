@@ -1,4 +1,5 @@
 bin/deco
+man/man1/deco.1
 share/deco/help/d.edit
 share/deco/help/d.general
 share/deco/help/d.hexview
