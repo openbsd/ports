@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2000/09/24 07:04:15 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2001/03/11 22:47:26 brad Exp $
 
 DISTNAME=	gtkglarea-1.2.2
 CATEGORIES=	x11 graphics
-NEED_VERSION=	1.330
+NEED_VERSION=	1.336
 MASTER_SITES=	http://www.student.oulu.fi/~jlof/gtkglarea/download/
 
 HOMEPAGE=	http://www.student.oulu.fi/~jlof/gtkglarea/
@@ -21,6 +21,7 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gtkglarea
