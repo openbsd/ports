@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2002/01/04 17:34:08 shell Exp $
+# $OpenBSD: Makefile,v 1.188 2002/01/16 21:23:40 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -134,6 +134,7 @@
      SUBDIR += rsync
      SUBDIR += samba
      SUBDIR += sharity-light
+     SUBDIR += silc-client
      SUBDIR += sing
      SUBDIR += sirc
      SUBDIR += slirp
