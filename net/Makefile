@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 1999/10/29 00:18:57 dugsong Exp $
+# $OpenBSD: Makefile,v 1.52 1999/11/08 17:42:30 turan Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -79,7 +79,7 @@
 #    SUBDIR += pcnfsd
 #    SUBDIR += pmf
      SUBDIR += popa3d
-     SUBDIR += proftpd
+#     SUBDIR += proftpd
      SUBDIR += queso
 #    SUBDIR += radius
 #    SUBDIR += ratoolset
