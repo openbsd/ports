@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2003/08/27 00:14:49 brad Exp $
+# $OpenBSD: Makefile,v 1.87 2003/12/28 22:17:50 espie Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -53,6 +53,14 @@ CONFIGURE_ARGS+= --enable-static \
 		 --without-mit-threads \
 		 --without-perl \
 		 --without-readline
+
+.include <bsd.own.mk>
+USE_GCC3?= No
+.if ${USE_GCC3:L} == "yes"
+CONFIGURE_ARGS+= --with-client-ldflags=-lsupc++
+CONFIGURE_ARGS+= --with-mysqld-ldflags=-lsupc++
+.endif
+
 CONFIGURE_ENV=	HOSTNAME="/bin/hostname -s"
 
 FLAVORS=	bdb
