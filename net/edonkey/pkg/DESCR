@@ -1,3 +1,6 @@
 eDonkey2000 allows you to share and trade any type of file.
 
+This is the eDonkey 'core'. You can use this program with a spartanic
+commandline or install edonkey-gui to control it remotely.
+
 WWW: ${HOMEPAGE}
