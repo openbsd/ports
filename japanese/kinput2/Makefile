@@ -1,5 +1,4 @@
-# Date created: 26 Apr. 2000
-# Whom:		SUZUKI Hitoshi <sigh@kuzirabekon.econ.nagasaki-u.ac.jp>
+# $OpenBSD: Makefile,v 1.9 2002/01/25 22:20:14 jsyn Exp $
 
 COMMENT-canna=		X input method for Japanese, canna support
 COMMENT-canna-wnn=	X input method for Japanese, canna and wnn support
