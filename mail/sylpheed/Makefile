@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.53 2005/01/19 22:05:29 couderc Exp $
+# $OpenBSD: Makefile,v 1.54 2005/02/14 22:21:30 couderc Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
-VERSION=	1.0.0
+VERSION=	1.0.1
 DISTNAME=	sylpheed-${VERSION}
 CATEGORIES=    	mail news x11
 HOMEPAGE=	http://sylpheed.good-day.net
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xi c crypto gdk glib gmodule gtk iconv intl \
 			jpeg m png pthread ssl tiff z
 
-MASTER_SITES=	${HOMEPAGE}/sylpheed/
+MASTER_SITES=	${HOMEPAGE}/sylpheed/v1.0/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-ssl --enable-ipv6 \
