@@ -1,6 +1,16 @@
---- ltmain.sh.orig	Sun Jun 11 22:52:14 2000
-+++ ltmain.sh	Sun Jun 11 22:55:13 2000
-@@ -3567,40 +3567,6 @@
+--- ltmain.sh.orig	Sat Oct 21 13:54:20 2000
++++ ltmain.sh	Sat Oct 21 13:54:11 2000
+@@ -1799,6 +1799,9 @@
+ 	  # rhapsody is a little odd...
+ 	  deplibs="$deplibs -framework System"
+ 	  ;;
++	*-*-openbsd*)
++	  # do not include libc due to us having libc/libc_r.
++	  ;;
+ 	*)
+ 	  # Add libc to deplibs on all other systems.
+ 	  deplibs="$deplibs -lc"
+@@ -3567,40 +3570,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
