@@ -1,0 +1,37 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/08/28 14:24:28 wilfried Exp $
+--- Makefile.orig	Fri Mar 16 08:00:22 2001
++++ Makefile	Mon Aug 27 17:56:55 2001
+@@ -10,17 +10,17 @@ PREFIX = /usr/local
+ # no user serviceable parts below
+ EXTRA += $(WMAN)
+ # optimization cflags
+-CFLAGS = -O3 -ansi -Wall `gtk-config --cflags` ${EXTRA}
++CFLAGS += -Wall `gtk-config --cflags` ${EXTRA}
+ # profiling cflags
+ # CFLAGS = -ansi -Wall -pg -O3 `gtk-config --cflags` ${EXTRA} -DPRO
+ # test coverage cflags
+ # CFLAGS = -fprofile-arcs -ftest-coverage -Wall -ansi -g `gtk-config --cflags` ${EXTRA} -DPRO
+ 
+ 
+-SHELL=sh
++#SHELL=sh
+ OS = $(shell uname -s)
+ OBJS = bubblemon.o
+-CC = gcc
++#CC = gcc
+ 
+ # special things for Linux
+ ifeq ($(OS), Linux)
+@@ -34,6 +34,12 @@ ifeq ($(OS), FreeBSD)
+     OBJS += sys_freebsd.o
+     LIBS = `gtk-config --libs | sed "s/-lgtk//g"` -lkvm
+     INSTALL = -c -g kmem -m 2755 -o root
++endif
++
++# special things for OpenBSD
++ifeq ($(OS), OpenBSD)
++    OBJS += sys_openbsd.o
++    LIBS = `gtk-config --libs | sed "s/-lgtk//g"`
+ endif
+ 
+ #special things for SunOS
