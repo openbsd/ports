@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/02/18 00:25:32 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/12/08 19:53:32 obecian Exp $
 bin/antiword
 bin/antiword-kde-dnd.sh
 man/man1/antiword.1
-share/doc/antiword/ChangeLog
-share/doc/antiword/History
-share/doc/antiword/Netscape
-share/doc/antiword/QandA
-share/doc/antiword/ReadMe
+share/antiword/hi32-app-antiword.png
+share/antiword/hi48-app-antiword.png
+share/antiword/kde/Antiword.desktop.eu
+share/antiword/kde/Antiword.desktop.us
+share/antiword/lo16-app-antiword.png
+share/antiword/lo32-app-antiword.png
 share/antiword/resources/8859-1.txt
 share/antiword/resources/8859-10.txt
 share/antiword/resources/8859-13.txt
@@ -23,16 +24,21 @@ share/antiword/resources/8859-9.txt
 share/antiword/resources/Default
 share/antiword/resources/Example
 share/antiword/resources/MacRoman.txt
+share/antiword/resources/UTF-8.txt
 share/antiword/resources/Unicode
 share/antiword/resources/cp1250.txt
 share/antiword/resources/cp1251.txt
 share/antiword/resources/cp1252.txt
+share/antiword/resources/fontnames
 share/antiword/resources/fontnames.russian
 share/antiword/resources/koi8-r.txt
 share/antiword/resources/roman.txt
-share/antiword/kde/Antiword.kdelnk.eu
-share/antiword/kde/Antiword.kdelnk.us
-share/antiword/antiword.xpm
+share/doc/antiword/ChangeLog
+share/doc/antiword/FAQ
+share/doc/antiword/History
+share/doc/antiword/Netscape
+share/doc/antiword/QandA
+share/doc/antiword/ReadMe
 @dirrm share/doc/antiword
 @dirrm share/antiword/resources
 @dirrm share/antiword/kde
