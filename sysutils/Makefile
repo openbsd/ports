@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/10/01 21:19:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2000/11/18 13:55:11 naddy Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -33,6 +33,7 @@
 #    SUBDIR += tua
      SUBDIR += upsd
      SUBDIR += usbutil
+     SUBDIR += wmmon
      SUBDIR += xbatt
      SUBDIR += webmin
      SUBDIR += whowatch
