@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2002/12/27 15:19:15 jakob Exp $
+# $OpenBSD: Makefile,v 1.37 2003/01/21 16:43:29 jakob Exp $
 
-COMMENT=		Berkeley Internet Name Daemon
-COMMENT-libbind=	BIND 8 compatible stub resolver library
+COMMENT=	Berkeley Internet Name Daemon
 
 VERSION=	9.2.1
 DISTNAME=	bind-${VERSION}
 PKGNAME=	bind-${VERSION}p1
 CATEGORIES=	net
-
-MULTI_PACKAGES=		-libbind
-PKGNAME-libbind=	libbind-${VERSION}
 
 MASTER_SITES+=	ftp://ftp.isc.org/isc/bind9/${VERSION}/ \
 		ftp://ftp.epix.net/pub/isc/bind9/${VERSION}/ \
@@ -36,7 +32,7 @@ SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-libtool ${CONFIGURE_SHARED} \
 			--localstatedir=/var \
-			--enable-libbind \
+			--disable-libbind \
 			--with-openssl="/usr" \
 			--with-randomdev=/dev/arandom
 

@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-libbind,v 1.1 2002/07/07 11:21:59 jakob Exp $
-lib/libbind.so.0.1
-DYNLIBDIR(%D/lib)
