@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1999/10/05 19:20:52 brad Exp $
+# $OpenBSD: Makefile,v 1.12 1999/10/07 19:08:28 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -44,18 +44,18 @@ DIST_SUBDIR=	netscape
 NO_CDROM=       "NOFEE: see http://www.fortify.net/copyright.txt"
 
 MASTER_SITES= \
-	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/${SUBSUP}/ \
 	ftp://netscape.Mirror.McGill.CA/pub/mirrors/ftp.netscape.com/${SUBSUP}/ \
 	ftp://ftp.netscape.com/${SUBSUP}/ \
 	ftp://ftp.the.net/pub/mirrors/ftp.netscape.com/${SUBSUP}/ \
-	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/${SUBSUP}/
+	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/${SUBSUP}/ \
+	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/${SUBSUP}/
 
 MASTER_SITES0= \
-	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/${SUBMAIN}/ \
 	ftp://netscape.Mirror.McGill.CA/pub/mirrors/ftp.netscape.com/${SUBMAIN}$/ \
 	ftp://ftp.netscape.com/${SUBMAIN}/ \
 	ftp://ftp.the.net/pub/mirrors/ftp.netscape.com/${SUBMAIN}/ \
-	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/${SUBMAIN}/
+	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/${SUBMAIN}/ \
+	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/${SUBMAIN}/
 
 MASTER_SITES1=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/Fortify/ \
