@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/16 17:05:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/06/20 15:51:13 pvalchev Exp $
 
 COMMENT=	"graphical display for the current uvm status"
 
@@ -23,6 +23,13 @@ WRKDIST=	${WRKDIR}/xuvmstat
 MAKE_ENV=	X11BASE="${X11BASE}"
 
 USE_X11=	Yes
+
+pre-fetch:
+	@echo ""
+	@echo "  WARNING: This application requires a kernel compiled"
+	@echo "  with 'option UVM' for proper operation.  The GENERIC"
+	@echo "  kernel contains this option."
+	@echo ""
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xuvmstat ${PREFIX}/bin
