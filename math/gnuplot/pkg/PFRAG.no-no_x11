@@ -1,2 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.1 2000/09/22 21:27:30 brad Exp $
-bin/gnuplot_x11
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2004/12/21 16:56:59 danh Exp $
+libexec/gnuplot/
+libexec/gnuplot/4.0/
+libexec/gnuplot/4.0/gnuplot_x11

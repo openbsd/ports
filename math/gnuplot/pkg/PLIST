@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/09/15 09:11:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/12/21 16:56:59 danh Exp $
 bin/gnuplot
 bin/lasergnu
 @info info/gnuplot.info
 @man man/man1/gnuplot.1
 @man man/man1/lasergnu.1
-share/gnuplot.gih
+share/gnuplot/
+share/gnuplot/4.0/
+share/gnuplot/4.0/gnuplot.gih
 !%%no_x11%%
