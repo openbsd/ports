@@ -1,7 +1,13 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2003/01/03 14:00:56 reinhard Exp $
---- Makefile.in.orig	Wed Mar 27 13:16:28 2002
-+++ Makefile.in	Fri Mar 29 14:00:38 2002
-@@ -273,14 +273,14 @@ install: install-$(PLUGINS)
+$OpenBSD: patch-Makefile_in,v 1.5 2003/03/05 22:48:08 pvalchev Exp $
+--- Makefile.in.orig	Wed Mar 27 05:16:28 2002
++++ Makefile.in	Wed Mar  5 15:30:36 2003
+@@ -268,19 +268,19 @@ install: install-$(PLUGINS)
+ 	$(INSM) ./yo-man/*.1 $(INSTMAN)/man1
+ 	$(INS) ./ives/ives $(INSTDIR)
+ 	$(INS) ./ives/iedit $(INSTDIR)
+-	$(INS) ./ives/iview $(INSTDIR)
++	$(INS) ./ives/iview $(INSTDIR)/vs
+ 	$(INS) ./xsetup/xncsetup $(INSTDIR)
  	$(INS) ./xjroot/xjpegroot $(INSTDIR)
  	$(INS) ./launch/xnlaunch $(INSTDIR)
  	$(INS) ./resloader/xncloader $(INSTDIR)
@@ -20,3 +26,12 @@ $OpenBSD: patch-Makefile_in,v 1.4 2003/01/03 14:00:56 reinhard Exp $
  
  install-:
  	@echo "Skipping..."
+@@ -290,7 +290,7 @@ install-rpm:
+ 	cp ./nc /usr/local/bin/xnc
+ 	cp ./ives/ives /usr/local/bin
+ 	cp ./ives/iedit /usr/local/bin
+-	cp ./ives/iview /usr/local/bin
++	cp ./ives/iview /usr/local/bin/vs
+ 	cp ./xsetup/xncsetup /usr/local/bin
+ 	cp ./xjroot/xjpegroot /usr/local/bin
+ 	cp ./launch/xnlaunch /usr/local/bin
