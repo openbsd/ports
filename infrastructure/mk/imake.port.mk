@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: imake.port.mk,v 1.2 2002/06/27 12:47:23 mpech Exp $
+# $OpenBSD: imake.port.mk,v 1.3 2003/07/28 17:17:05 sturm Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -19,7 +19,7 @@ MODIMAKE_configure= \
 	if [ -e ${X11BASE}/lib/X11/config/ports.cf ] || \
 		fgrep >/dev/null 2>/dev/null Ports \
 			${X11BASE}/lib/X11/config/OpenBSD.cf; then \
-		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF}; \
+		cd ${WRKSRC} && ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} ${XMKMF}; \
 	else \
 		echo >&2 "Error: your X installation is not recent enough"; \
 		echo >&2 "Update to a more recent version, or use a ports tree"; \

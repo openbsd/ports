@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.564 2003/07/25 12:46:26 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.565 2003/07/28 17:17:04 sturm Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -361,6 +361,7 @@ PKGFILE${_s} = ${PKGREPOSITORY}/${FULLPKGNAME${_s}}${PKG_SUFX}
 .  endfor
 .endif
 
+_SYSTRACE_COOKIE=	${WRKDIR}/systrace.policy
 _WRKDIR_COOKIE=		${WRKDIR}/.extract_started
 _EXTRACT_COOKIE=	${WRKDIR}/.extract_done
 _PATCH_COOKIE=		${WRKDIR}/.patch_done
@@ -587,6 +588,29 @@ _INSTALL_MACROS=	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			BSD_INSTALL_MAN_DIR="${INSTALL_MAN_DIR}"
 MAKE_ENV+=	${_INSTALL_MACROS}
 SCRIPTS_ENV+=	${_INSTALL_MACROS}
+
+# setup systrace
+USE_SYSTRACE?=	No
+NO_SYSTRACE?=	No
+.if ${USE_SYSTRACE:L} == "yes" && ${NO_SYSTRACE:L} == "no"
+_SYSTRACE_CMD?=	/bin/systrace -i -a -f ${_SYSTRACE_COOKIE}
+.else
+_SYSTRACE_CMD=
+.endif
+SYSTRACE_FILTER?=		${PORTSDIR}/infrastructure/db/systrace.filter
+_SYSTRACE_POLICIES+=	/bin/sh /bin/tar /usr/bin/env /usr/bin/make \
+	${LOCALBASE}/bin/gmake ${LOCALBASE}/bin/unzip
+SYSTRACE_SUBST_VARS+=	WRKOBJDIR PORTSDIR DISTDIR
+.for _v in ${SYSTRACE_SUBST_VARS}
+_SYSTRACE_SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
+.endfor
+
+${_SYSTRACE_COOKIE}:
+	@rm -f $@
+.for _i in ${_SYSTRACE_POLICIES}
+	@echo "Policy: ${_i}, Emulation: native" >> $@
+	@sed ${_SYSTRACE_SED_SUBST} ${SYSTRACE_FILTER} >> $@
+.endfor
 
 # Create the generic variable substitution list, from subst vars
 SUBST_VARS+=MACHINE_ARCH ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT MAINTAINER
@@ -1421,14 +1445,14 @@ ${_WRKDIR_COOKIE}:
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin
 	@${_MAKE_COOKIE} $@
 
-${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE}
+${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
 	@cd ${.CURDIR} && exec ${MAKE} checksum build-depends lib-depends
 	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}${_MASTER}"
 .if target(pre-extract)
-	@cd ${.CURDIR} && exec ${MAKE} pre-extract
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} pre-extract
 .endif
 .if target(do-extract)
-	@cd ${.CURDIR} && exec ${MAKE} do-extract
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} do-extract
 .else
 # What EXTRACT normally does:
 	@PATH=${PORTPATH}; set -e; cd ${WRKDIR}; \
@@ -1440,7 +1464,7 @@ ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE}
 # End of EXTRACT
 .endif
 .if target(post-extract)
-	@cd ${.CURDIR} && exec ${MAKE} post-extract
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} post-extract
 .endif
 	@${_MAKE_COOKIE} $@
 
@@ -1548,7 +1572,8 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 
 
 MODSIMPLE_configure= \
-	cd ${WRKBUILD} && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
+	cd ${WRKBUILD} && ${_SYSTRACE_CMD} ${SETENV} \
+		CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
 		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
 		ac_given_INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
@@ -1563,15 +1588,15 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 	@${ECHO_MSG} "===>  Configuring for ${FULLPKGNAME}${_MASTER}"
 	@mkdir -p ${WRKBUILD} ${WRKPKG}
 .if target(pre-configure)
-	@cd ${.CURDIR} && exec ${MAKE} pre-configure
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} pre-configure
 .endif
 .if target(do-configure)
-	@cd ${.CURDIR} && exec ${MAKE} do-configure
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} do-configure
 .else
 # What CONFIGURE normally does
 	@if [ -f ${SCRIPTDIR}/configure ]; then \
-		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
-		  ${SCRIPTDIR}/configure; \
+		cd ${.CURDIR} &&  ${_SYSTRACE_CMD} ${SETENV} \
+			${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure; \
 	fi
 .  for _c in ${CONFIGURE_STYLE:L}
 .    if defined(MOD${_c:U}_configure)
@@ -1581,7 +1606,7 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 # End of CONFIGURE.
 .endif
 .if target(post-configure)
-	@cd ${.CURDIR} && exec ${MAKE} post-configure
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} post-configure
 .endif
 	@${_MAKE_COOKIE} $@
 
@@ -1606,17 +1631,17 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 	echo ""
 .endif
 .  if target(pre-build)
-	@cd ${.CURDIR} && exec ${MAKE} pre-build
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} pre-build
 .  endif
 .  if target(do-build)
-	@cd ${.CURDIR} && exec ${MAKE} do-build
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} do-build
 .  else
 # What BUILD normally does:
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
+	@cd ${WRKBUILD} && exec ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
 # End of BUILD
 .  endif
 .  if target(post-build)
-	@cd ${.CURDIR} && exec ${MAKE} post-build
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} post-build
 .  endif
 .endif
 	@${_MAKE_COOKIE} $@
@@ -1666,21 +1691,21 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 .  endfor
 
 .  if target(pre-fake)
-	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} pre-fake ${_FAKE_SETUP}
+	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} ${MAKE} pre-fake ${_FAKE_SETUP}
 .  endif
 	@${SUDO} ${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
 .  if target(pre-install)
-	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} pre-install ${_FAKE_SETUP}
+	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} ${MAKE} pre-install ${_FAKE_SETUP}
 .  endif
 .  if target(do-install)
-	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} do-install ${_FAKE_SETUP}
+	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} ${MAKE} do-install ${_FAKE_SETUP}
 .  else
 # What FAKE normally does:
-	@cd ${WRKBUILD} && exec ${SUDO} ${SETENV} ${MAKE_ENV} ${_FAKE_SETUP} ${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
+	@cd ${WRKBUILD} && exec ${SUDO} ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} ${_FAKE_SETUP} ${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 # End of FAKE.
 .  endif
 .  if target(post-install)
-	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} post-install ${_FAKE_SETUP}
+	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} ${MAKE} post-install ${_FAKE_SETUP}
 .  endif
 .  for _p in ${PROTECT_MOUNT_POINTS}
 	@${SUDO} mount -u -w ${_p}
