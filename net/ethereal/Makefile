@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2004/04/25 22:21:18 jakob Exp $
+# $OpenBSD: Makefile,v 1.90 2004/05/10 06:14:43 jakob Exp $
 
 COMMENT=	"network protocol analyzer"
 COMMENT-x11=	"network protocol analyzer (X11 GUI)"
@@ -31,10 +31,13 @@ SUBST_VARS+=		VERSION
 SEPARATE_BUILD=		concurrent
 
 FLAVORS=	snmp adns gtk1
+PSEUDO_FLAVORS=	no_x11
 FLAVOR?=
 SUBPACKAGE?=
 
+.if ! ${FLAVOR:L:Mno_x11}
 USE_X11=		Yes
+.endif
 
 MODULES+=		iconv
 LIB_DEPENDS+=		pcre::devel/pcre
@@ -42,7 +45,7 @@ LIB_DEPENDS+=		pcre::devel/pcre
 CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE} \
 			--with-glib-prefix=${LOCALBASE} \
 
-.if ${USE_X11:L} == "yes"
+.if ! ${FLAVOR:L:Mno_x11}
 MULTI_PACKAGES+=	-x11
 CONFIGURE_ARGS+=	--enable-ethereal \
 			--with-gtk-prefix=${LOCALBASE}
@@ -53,14 +56,14 @@ CONFIGURE_ARGS+=	--disable-ethereal
 .if ${FLAVOR:L:Mgtk1}
 CONFIGURE_ARGS+=	--enable-gtk1
 LIB_DEPENDS+=		glib.1.2,gmodule.1.2::devel/glib
-.if ${USE_X11:L} == "yes"
+.if ! ${FLAVOR:L:Mno_x11}
 BUILD_DEPENDS+=		gtk.1.2::x11/gtk+
 .endif
 .else
 CONFIGURE_ARGS+=	--enable-gtk2
 LIB_DEPENDS+=		glib-2.0.0.0,gthread-2.0.0.0::devel/glib2
 BUILD_DEPENDS+=		:pkgconfig-*:devel/pkgconfig
-.if ${USE_X11:L} == "yes"
+.if ! ${FLAVOR:L:Mno_x11}
 BUILD_DEPENDS+=		gdk_pixbuf-2.0.0.0,gdk-x11-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 .endif
 .endif
