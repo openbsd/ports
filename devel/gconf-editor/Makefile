@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/10 20:33:59 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/22 05:58:48 marcm Exp $
 
 COMMENT=		"editor for the GConf configuration system"
 
-DISTNAME=		gconf-editor-2.8.2
+VERSION=		2.8.2
+DISTNAME=		gconf-editor-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -27,7 +29,8 @@ EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
-LIB_DEPENDS=		gconf-2::devel/gconf2
+LIB_DEPENDS=		gconf-2::devel/gconf2 \
+			gnomeui-2::x11/gnome/libgnomeui
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
