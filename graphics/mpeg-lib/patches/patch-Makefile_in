@@ -1,6 +1,7 @@
---- Makefile.in.orig	Thu Nov 26 11:03:29 1998
-+++ Makefile.in	Mon Oct 16 15:29:06 2000
-@@ -15,11 +15,13 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2004/06/22 03:07:17 brad Exp $
+--- Makefile.in.orig	1998-11-26 09:03:29.000000000 -0700
++++ Makefile.in	2004-06-21 20:04:38.000000000 -0600
+@@ -15,11 +15,13 @@ CFLAGS        = $(OPTIMIZE) $(EXTRA_CFLA
  CPPFLAGS      = $(INCLUDE_DIRS) $(DEFINES)
  
  # Installation directories (and install program)
@@ -15,7 +16,7 @@
  
  # Other miscellaneous programs
  AR            = @AR@
-@@ -37,23 +39,29 @@
+@@ -37,23 +39,29 @@ DITHER_SRC    = fs2.c fs2fast.c fs4.c hy
  		mono.c ordered.c ordered2.c mb_ordered.c
  LIBSRC        = @libsrc@
  LIBOBJ        = @libobj@
@@ -39,7 +40,7 @@
  		$(CC) -c $(CFLAGS) $(CPPFLAGS) $<
  
 +.c.so:
-+		$(CC) -c $(CFLAGS) $(CPPFLAGS) $(PICFLAG) -DPIC $< -o $@
++		$(CC) -c $(CFLAGS) $(CPPFLAGS) $(PICFLAG) $< -o $@
  
 -# Library/cleanup targets: 
  
@@ -48,7 +49,7 @@
  
  lib:		$(LIBRARY)
  
-@@ -63,17 +71,24 @@
+@@ -63,17 +71,24 @@ $(LIBRARY):	$(LIBOBJ)
  		$(AR) $(ARFLAGS) $(LIBRARY) $(LIBOBJ)
  		$(RANLIB) $(LIBRARY)
  

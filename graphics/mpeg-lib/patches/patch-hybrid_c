@@ -1,5 +1,6 @@
---- ordered.c.orig	Sat Jan  8 14:03:02 2000
-+++ ordered.c	Sat Jan  8 14:03:38 2000
+$OpenBSD: patch-hybrid_c,v 1.1 2004/06/22 03:07:17 brad Exp $
+--- hybrid.c.orig	1999-07-23 21:50:51.000000000 -0600
++++ hybrid.c	2004-06-21 20:01:38.000000000 -0600
 @@ -21,7 +21,9 @@
  /* This file contains C code to implement an ordered dither. */
  

@@ -1,5 +1,6 @@
---- video.c.orig	Sat Jul 24 00:00:51 1999
-+++ video.c	Thu Dec 23 22:41:32 1999
+$OpenBSD: patch-video_c,v 1.1 2004/06/22 03:07:18 brad Exp $
+--- video.c.orig	1999-07-23 22:00:51.000000000 -0600
++++ video.c	2004-06-21 20:01:38.000000000 -0600
 @@ -49,6 +49,10 @@
  #include "proto.h"
  #include "my_dmalloc.h"
@@ -11,7 +12,7 @@
  /* Declarations of functions. */
  static void ReconIMBlock(VidStream *,int);
  static void ReconPMBlock(VidStream *,int,int,int,int);
-@@ -445,7 +449,9 @@
+@@ -445,7 +449,9 @@ mpegVidRsrc(time_stamp, vid_stream)
    static int num_calls = 0;
    unsigned int data;
    int i, status;

@@ -1,0 +1,13 @@
+$OpenBSD: patch-gdith_c,v 1.1 2004/06/22 03:07:17 brad Exp $
+--- gdith.c.orig	1999-07-23 22:04:42.000000000 -0600
++++ gdith.c	2004-06-21 20:01:38.000000000 -0600
+@@ -21,7 +21,9 @@
+ 
+ 
+ #include <config.h>
++#ifdef HAVE_MALLOC_H
+ #include <malloc.h>
++#endif
+ #include <memory.h>
+ #include "mpeg.h"
+ #include "dither.h"
