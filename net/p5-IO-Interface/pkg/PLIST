@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/07/18 06:17:50 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/31 19:37:57 naddy Exp $
 ${P5ARCH}/IO/Interface.pm
+@comment ${P5ARCH}/auto/IO/Interface/.packlist
 ${P5ARCH}/auto/IO/Interface/Interface.bs
 ${P5ARCH}/auto/IO/Interface/Interface.so
 ${P5ARCH}/auto/IO/Interface/autosplit.ix
 man/man3p/IO::Interface.3p
+@dirrm man/man3p
 @dirrm ${P5ARCH}/auto/IO/Interface
+@dirrm ${P5ARCH}/auto/IO
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}/IO
+@dirrm ${P5ARCH}

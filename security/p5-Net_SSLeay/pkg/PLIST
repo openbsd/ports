@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/06/06 01:10:06 shell Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/12/31 19:37:57 naddy Exp $
 ${P5ARCH}/Net/SSLeay.pm
 ${P5ARCH}/Net/SSLeay/Handle.pm
 ${P5ARCH}/Net/ptrtstrun.pl
+@comment ${P5ARCH}/auto/Net/SSLeay/.packlist
 ${P5ARCH}/auto/Net/SSLeay/SSLeay.bs
 ${P5ARCH}/auto/Net/SSLeay/SSLeay.so
 ${P5ARCH}/auto/Net/SSLeay/autosplit.ix
@@ -65,5 +66,10 @@ share/examples/p5-Net-SSLeay/sslcat.pl
 share/examples/p5-Net-SSLeay/sslecho.pl
 share/examples/p5-Net-SSLeay/stdio_bulk.pl
 @dirrm share/examples/p5-Net-SSLeay
+@dirrm man/man3p
 @dirrm ${P5ARCH}/auto/Net/SSLeay
+@dirrm ${P5ARCH}/auto/Net
+@dirrm ${P5ARCH}/auto
 @dirrm ${P5ARCH}/Net/SSLeay
+@dirrm ${P5ARCH}/Net
+@dirrm ${P5ARCH}

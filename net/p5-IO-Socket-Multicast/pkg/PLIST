@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/07/18 06:18:57 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/31 19:37:57 naddy Exp $
 ${P5ARCH}/IO/Socket/Multicast.pm
+@comment ${P5ARCH}/auto/IO/Socket/Multicast/.packlist
 ${P5ARCH}/auto/IO/Socket/Multicast/Multicast.bs
 ${P5ARCH}/auto/IO/Socket/Multicast/Multicast.so
 man/man3p/IO::Socket::Multicast.3p
 @dirrm ${P5ARCH}/auto/IO/Socket/Multicast
+@dirrm ${P5ARCH}/auto/IO/Socket
+@dirrm ${P5ARCH}/IO/Socket

@@ -1,13 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/16 19:25:03 espie Exp $
-libdata/perl5/site_perl/IO/AtomicFile.pm
-libdata/perl5/site_perl/IO/InnerFile.pm
-libdata/perl5/site_perl/IO/Lines.pm
-libdata/perl5/site_perl/IO/Scalar.pm
-libdata/perl5/site_perl/IO/Scalar.pm.html
-libdata/perl5/site_perl/IO/ScalarArray.pm
-libdata/perl5/site_perl/IO/Stringy.pm
-libdata/perl5/site_perl/IO/Wrap.pm
-libdata/perl5/site_perl/IO/WrapTie.pm
+@comment $OpenBSD: PLIST,v 1.6 2003/12/31 19:37:57 naddy Exp $
+${P5SITE}/IO/AtomicFile.pm
+${P5SITE}/IO/InnerFile.pm
+${P5SITE}/IO/Lines.pm
+${P5SITE}/IO/Scalar.pm
+${P5SITE}/IO/Scalar.pm.html
+${P5SITE}/IO/ScalarArray.pm
+${P5SITE}/IO/Stringy.pm
+${P5SITE}/IO/Wrap.pm
+${P5SITE}/IO/WrapTie.pm
+@comment ${P5ARCH}/auto/IO-stringy/.packlist
 man/man3p/IO::AtomicFile.3p
 man/man3p/IO::InnerFile.3p
 man/man3p/IO::Lines.3p
@@ -34,3 +35,8 @@ share/doc/p5-IO-stringy/index.menu
 @dirrm share/doc/p5-IO-stringy/IO/icons
 @dirrm share/doc/p5-IO-stringy/IO
 @dirrm share/doc/p5-IO-stringy
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/IO-stringy
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/IO

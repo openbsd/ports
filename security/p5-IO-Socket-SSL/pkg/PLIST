@@ -1,8 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/09/01 15:16:17 shell Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/12/31 19:37:57 naddy Exp $
 ${P5SITE}/IO/Socket/SSL.pm
+@comment ${P5ARCH}/auto/IO/Socket/SSL/.packlist
 man/man3p/IO::Socket::SSL.3p
 share/examples/p5-IO-Socket-SSL/daemon.pl
 share/examples/p5-IO-Socket-SSL/ssl_client.pl
 share/examples/p5-IO-Socket-SSL/ssl_server.pl
 @dirrm share/examples/p5-IO-Socket-SSL
+@comment @dirrm ${P5ARCH}/auto/IO/Socket/SSL
+@comment @dirrm ${P5ARCH}/auto/IO/Socket
+@comment @dirrm ${P5ARCH}/auto/IO
 @dirrm ${P5SITE}/IO/Socket
+@dirrm ${P5SITE}/IO
