@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/29 18:17:47 avsm Exp $
+${P5SITE}/Bundle/DBD/CSV.pm
+${P5SITE}/DBD/CSV.pm
+${P5SITE}/DBD/File.pm
+man/man3p/Bundle::DBD::CSV.3p
+man/man3p/DBD::CSV.3p
+man/man3p/DBD::File.3p
