@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2000/09/10 11:35:45 brad Exp $
+# $OpenBSD: Makefile,v 1.43 2000/09/10 21:59:39 obecian Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -9,6 +9,7 @@
 #    SUBDIR += camediaplay
      SUBDIR += compface
 #    SUBDIR += dc3play
+     SUBDIR += dia
 #    SUBDIR += dore
      SUBDIR += fnlib
      SUBDIR += fxtv
