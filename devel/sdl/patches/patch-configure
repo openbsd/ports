@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2001/06/23 19:05:36 pvalchev Exp $
+$OpenBSD: patch-configure,v 1.7 2001/06/23 23:35:09 pvalchev Exp $
 --- configure.orig	Mon Jun 18 09:21:53 2001
-+++ configure	Fri Jun 22 15:57:42 2001
++++ configure	Sat Jun 23 17:28:02 2001
 @@ -3318,7 +3318,11 @@ echo "configure:3316: checking for OSS a
  #line 3319 "configure"
  #include "confdefs.h"
@@ -1054,16 +1054,12 @@ $OpenBSD: patch-configure,v 1.6 2001/06/23 19:05:36 pvalchev Exp $
          ;;
      *-*-sysv5*)
          ARCH=sysv5
-@@ -8896,9 +8906,9 @@ if test $ARCH = solaris; then
-   SDL_RLD_FLAGS="-R\${exec_prefix}/lib"
+@@ -8897,7 +8907,7 @@ if test $ARCH = solaris; then
  fi
  
--if test $ARCH = openbsd; then
+ if test $ARCH = openbsd; then
 -  SDL_RLD_FLAGS="-L${X11BASE}/lib -Wl,-rpath,\${exec_prefix}/lib -Wl,-rpath,${X11BASE}/lib"
--fi
-+#if test $ARCH = openbsd; then
-+#  SDL_RLD_FLAGS="-L${X11BASE}/lib -Wl,-rpath,\${exec_prefix}/lib -Wl,-rpath,${X11BASE}/lib"
-+#fi
++  SDL_RLD_FLAGS="-Wl,-rpath,${X11BASE}/lib"
+ fi
  
  if test x$enable_video = xtrue; then
-     if test "$VIDEO_SUBDIRS" = ""; then

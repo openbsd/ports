@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.6 2001/06/23 19:05:36 pvalchev Exp $
+$OpenBSD: patch-configure_in,v 1.7 2001/06/23 23:35:10 pvalchev Exp $
 --- configure.in.orig	Mon Jun 18 09:21:38 2001
-+++ configure.in	Fri Jun 22 15:57:39 2001
++++ configure.in	Sat Jun 23 17:27:55 2001
 @@ -246,7 +246,11 @@ CheckOSS()
          AC_MSG_CHECKING(for OSS audio support)
          have_oss=no
@@ -29,16 +29,12 @@ $OpenBSD: patch-configure_in,v 1.6 2001/06/23 19:05:36 pvalchev Exp $
          ;;
      *-*-sysv5*)
          ARCH=sysv5
-@@ -1958,9 +1968,9 @@ if test $ARCH = solaris; then
-   SDL_RLD_FLAGS="-R\${exec_prefix}/lib"
+@@ -1959,7 +1969,7 @@ if test $ARCH = solaris; then
  fi
  
--if test $ARCH = openbsd; then
+ if test $ARCH = openbsd; then
 -  SDL_RLD_FLAGS="-L${X11BASE}/lib -Wl,-rpath,\${exec_prefix}/lib -Wl,-rpath,${X11BASE}/lib"
--fi
-+#if test $ARCH = openbsd; then
-+#  SDL_RLD_FLAGS="-L${X11BASE}/lib -Wl,-rpath,\${exec_prefix}/lib -Wl,-rpath,${X11BASE}/lib"
-+#fi
++  SDL_RLD_FLAGS="-Wl,-rpath,${X11BASE}/lib"
+ fi
  
  dnl Output the video drivers we use
- if test x$enable_video = xtrue; then
