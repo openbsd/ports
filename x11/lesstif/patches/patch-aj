@@ -1,11 +1,24 @@
---- doc/www.lesstif.org/Makefile.in.orig	Fri Jan 14 17:42:41 2000
-+++ doc/www.lesstif.org/Makefile.in	Thu Jan 27 10:17:28 2000
-@@ -127,7 +127,7 @@
+--- doc/www.lesstif.org/Makefile.in.orig	Sun May 14 20:47:15 2000
++++ doc/www.lesstif.org/Makefile.in	Mon Jun 19 03:36:19 2000
+@@ -128,7 +128,7 @@
  # Lets put the informational stuff in a sub directory to avoid 
  # polluting /usr/local for default installs.
  #
--rootdir = $(exec_prefix)/LessTif/doc
-+rootdir = $(pkgdatadir)/doc/html
- root_DATA = COPYING.LIB.html FAQ.html apps.html \
+-docdir = $(exec_prefix)/LessTif/doc
++docdir = $(pkgdatadir)/doc/html
+ doc_DATA = COPYING.LIB.html FAQ.html INSTALL.html apps.html \
  		bugs.html cdrom.html core.html current.html \
  		cvs.html download.html index.html links.html lists.html \
+@@ -138,10 +138,10 @@
+ 		Advocacy.html Xbae.html Xlt.html
+ 
+ 
+-rootdir = $(exec_prefix)/LessTif
++rootdir = $(pkgdatadir)
+ root_DATA = Install
+ 
+-root2dir = $(exec_prefix)/LessTif
++root2dir = $(pkgdatadir)
+ root2_DATA = FAQ
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../include/LTconfig.h

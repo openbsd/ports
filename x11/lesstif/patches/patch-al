@@ -1,6 +1,6 @@
---- doc/lessdox/functions/Makefile.in.orig	Fri Nov  5 15:15:03 1999
-+++ doc/lessdox/functions/Makefile.in	Fri Dec 17 23:37:28 1999
-@@ -120,10 +120,10 @@
+--- doc/lessdox/functions/Makefile.in.orig	Sun May 14 20:47:15 2000
++++ doc/lessdox/functions/Makefile.in	Sat Jun 17 02:50:22 2000
+@@ -121,10 +121,10 @@
  EXTRA_DIST =  $(man1_DATA) $(man3_DATA) $(man5_DATA)
  SUFFIXES = .1 .3 .5 .html
  
@@ -15,7 +15,7 @@
  
  man1_DATA = 
  man3_DATA = 
-@@ -138,7 +138,7 @@
+@@ -139,7 +139,7 @@
  # build them.
  #
  

@@ -1,6 +1,6 @@
---- lib/Makefile.in.orig	Fri Nov  5 15:14:32 1999
-+++ lib/Makefile.in	Fri Dec 17 23:36:57 1999
-@@ -120,9 +120,6 @@
+--- lib/Makefile.in.orig	Sun May 14 20:47:09 2000
++++ lib/Makefile.in	Sat Jun 17 02:49:53 2000
+@@ -121,9 +121,6 @@
  MAINTAINERCLEANFILES = Makefile.in
  SUBDIRS = config \
  		Xm Mrm Uil \
@@ -9,4 +9,4 @@
 -		Xm-CDE Mrm-CDE \
  		@BuildXltDir@ @BuildXbaeDir@
  
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ 

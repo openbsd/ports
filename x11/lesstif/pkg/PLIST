@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2000/06/14 14:08:07 brad Exp $
-LessTif/FAQ
+@comment $OpenBSD: PLIST,v 1.20 2000/06/20 01:24:45 brad Exp $
 LessTif/Motif1.2/include/Mrm/MrmAppl.h
 LessTif/Motif1.2/include/Mrm/MrmDecls.h
 LessTif/Motif1.2/include/Mrm/MrmPrivate.h
@@ -209,7 +208,8 @@ share/LessTif/BUG-REPORTING
 share/LessTif/COPYING
 share/LessTif/COPYING.LIB
 share/LessTif/CREDITS
-share/LessTif/INSTALL
+share/LessTif/Install
+share/LessTif/FAQ
 share/LessTif/KNOWN_BUGS
 share/LessTif/NEWS
 share/LessTif/README
@@ -225,7 +225,6 @@ share/LessTif/doc/html/images/ltsunlogo.png
 share/LessTif/doc/html/COPYING.LIB.html
 share/LessTif/doc/html/FAQ.html
 share/LessTif/doc/html/INSTALL.html
-share/LessTif/doc/html/NOTES
 share/LessTif/doc/html/UIL.txt
 share/LessTif/doc/html/Advocacy.html
 share/LessTif/doc/html/All.html

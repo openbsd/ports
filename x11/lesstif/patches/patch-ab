@@ -1,6 +1,6 @@
---- lib/config/Makefile.in.orig	Fri Nov  5 15:14:33 1999
-+++ lib/config/Makefile.in	Fri Dec 17 22:32:30 1999
-@@ -120,7 +120,7 @@
+--- lib/config/Makefile.in.orig	Sun May 14 20:47:09 2000
++++ lib/config/Makefile.in	Sat Jun 17 02:41:05 2000
+@@ -121,7 +121,7 @@
  MAINTAINERCLEANFILES = Makefile.in
  bin_SCRIPTS = mxmkmf
  

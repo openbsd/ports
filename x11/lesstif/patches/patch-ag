@@ -1,6 +1,6 @@
---- doc/www.lesstif.org/images/Makefile.in.orig	Fri Jan 14 17:42:41 2000
-+++ doc/www.lesstif.org/images/Makefile.in	Thu Jan 27 10:04:42 2000
-@@ -126,7 +126,7 @@
+--- doc/www.lesstif.org/images/Makefile.in.orig	Sun May 14 20:47:15 2000
++++ doc/www.lesstif.org/images/Makefile.in	Sat Jun 17 02:45:37 2000
+@@ -127,7 +127,7 @@
  # Lets put the informational stuff in a sub directory to avoid 
  # poluting /usr/local for default installs.
  #

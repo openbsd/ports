@@ -1,20 +1,20 @@
---- Makefile.in.orig	Fri Nov  5 15:14:31 1999
-+++ Makefile.in	Fri Dec 17 23:25:19 1999
-@@ -128,7 +128,7 @@
+--- Makefile.in.orig	Sun May 14 20:49:26 2000
++++ Makefile.in	Sat Jun 17 02:45:03 2000
+@@ -131,7 +131,7 @@
  # Lets put the informational stuff in a sub directory to avoid 
  # poluting /usr/local for default installs.
  #
 -rootdir = $(exec_prefix)/LessTif
 +rootdir = $(pkgdatadir)
  root_DATA = AUTHORS BUG-REPORTING COPYING COPYING.LIB CREDITS \
- 	INSTALL KNOWN_BUGS NEWS README RELEASE-POLICY TODO
+ 	KNOWN_BUGS NEWS README RELEASE-POLICY TODO release-notes.txt
  
-@@ -137,7 +137,7 @@
- 		BUG-REPORTING CREDITS KNOWN_BUGS RELEASE-POLICY
+@@ -140,7 +140,7 @@
+ 		BUG-REPORTING CREDITS KNOWN_BUGS RELEASE-POLICY NOTES
  
  
 -htmldir = $(exec_prefix)/LessTif/doc
 +htmldir = $(pkgdatadir)/doc/html
- html_DATA = NOTES
+ html_DATA = release-notes.html
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

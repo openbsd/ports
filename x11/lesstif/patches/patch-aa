@@ -1,0 +1,11 @@
+--- configure.orig	Mon Jun 19 12:52:18 2000
++++ configure	Mon Jun 19 12:52:32 2000
+@@ -909,7 +909,7 @@
+ 
+ 
+ 
+-PACKAGE=lesstif
++PACKAGE=LessTif
+ 
+ VERSION=$MAJOR_VERSION.$MINOR_VERSION.$PICO_VERSION
+ 
