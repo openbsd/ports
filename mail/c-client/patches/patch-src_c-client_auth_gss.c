@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_c-client_auth_gss.c,v 1.2 2001/11/19 01:56:13 brad Exp $
---- src/c-client/auth_gss.c.orig	Fri Sep 28 21:16:11 2001
-+++ src/c-client/auth_gss.c	Sat Nov 17 19:15:56 2001
-@@ -19,8 +19,19 @@
+$OpenBSD: patch-src_c-client_auth_gss.c,v 1.3 2002/12/01 21:15:38 jakob Exp $
+--- src/c-client/auth_gss.c.orig	Thu Nov 22 05:07:04 2001
++++ src/c-client/auth_gss.c	Sun Dec  1 14:47:24 2002
+@@ -19,8 +19,14 @@
   */
  
  #define PROTOTYPE(x) x
@@ -12,11 +12,6 @@ $OpenBSD: patch-src_c-client_auth_gss.c,v 1.2 2001/11/19 01:56:13 brad Exp $
 +#else
  #include <gssapi/gssapi_generic.h>
  #include <gssapi/gssapi_krb5.h>
-+#endif
-+
-+#ifdef HEIMDAL
-+#define gss_nt_service_name    GSS_C_NT_HOSTBASED_SERVICE
-+#define KRB5_FCC_NOFILE                KRB5_CC_NOTFOUND
 +#endif
  
  long auth_gssapi_valid (void);

@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.24 2002/11/25 20:08:48 jakob Exp $
+# $tgId: obsd.ports,v 3.38 2002/11/27 19:37:23 tg Exp $
+# $OpenBSD: Makefile,v 1.25 2002/12/01 21:15:38 jakob Exp $
 
 COMMENT=	"University of Washington's c-client mail access routines"
+NO_REGRESS=	Yes
 
-VERSION=	4.44
+VERSION=	4.50
 DISTNAME=	pine${VERSION}
 PKGNAME=	c-client-${VERSION}
 CATEGORIES=	mail devel
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
-		ftp://ftp.sunet.se/pub/unix/mail/pine/ \
+		ftp://ftp.sunet.se/pub/unix/mail/pine/
 
 HOMEPAGE=	http://www.washington.edu/imap/
 
@@ -24,8 +26,6 @@ SUBST_VARS=	SHLIB
 MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" SHLIB="${SHLIB}" \
 		SSLTYPE="unix" EXTRAAUTHENTICATORS="gss" \
 		CC="${CC}"
-
-NO_REGRESS=	Yes
 
 ALL_TARGET=	bso
 

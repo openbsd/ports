@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_osdep_unix_Makefile,v 1.9 2001/11/27 15:10:00 brad Exp $
---- src/osdep/unix/Makefile.orig	Tue Nov  6 19:23:48 2001
-+++ src/osdep/unix/Makefile	Tue Nov 27 07:05:26 2001
-@@ -28,8 +28,8 @@ SSLTYPE=none
+$OpenBSD: patch-src_osdep_unix_Makefile,v 1.10 2002/12/01 21:15:38 jakob Exp $
+--- src/osdep/unix/Makefile.orig	Tue Oct 15 02:44:49 2002
++++ src/osdep/unix/Makefile	Sun Dec  1 14:45:09 2002
+@@ -28,8 +28,8 @@ SSLTYPE=nopwd
  
  # Extended flags needed for SSL.  You may need to modify.
  
@@ -20,7 +20,7 @@ $OpenBSD: patch-src_osdep_unix_Makefile,v 1.9 2001/11/27 15:10:00 brad Exp $
  
  # Normally no need to change any of these
  
-@@ -115,6 +116,7 @@ BINARIES=mail.o misc.o newsrc.o smanager
+@@ -115,6 +116,7 @@ BINARIES=osdep.o mail.o misc.o newsrc.o 
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
@@ -94,10 +94,15 @@ $OpenBSD: patch-src_osdep_unix_Makefile,v 1.9 2001/11/27 15:10:00 brad Exp $
  	osdep.h env_unix.h tcp_unix.h \
  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
  	auths.c crexcl.c flocksim.c nfstest.c flcksafe.c fsync.c gethstid.c \
-@@ -824,7 +841,12 @@ osdep.o:mail.h misc.h env.h fs.h ftl.h n
+@@ -824,12 +841,12 @@ osdep.o:mail.h misc.h env.h fs.h ftl.h n
  	write.c sslstdio.c \
  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
  	OSCFLAGS
+-	@echo Building OS-dependent module
+-	@echo If you get No such file error messages for files x509.h, ssl.h,
+-	@echo pem.h, buffer.h, bio.h, and crypto.h, that means that OpenSSL
+-	@echo is not installed on your system.  Either install OpenSSL first
+-	@echo or build with command: make `$(CAT) OSTYPE` SSLTYPE=none
 -	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` `$(CAT) OSCFLAGS` -c osdep.c
 +
 +osdep.o: $(OSDEPS)
