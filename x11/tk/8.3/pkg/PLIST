@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/07/19 06:09:44 brad Exp $
 @option no-default-conflict
 @pkgcfl tk-8.3.*
 bin/wish8.3
@@ -30,8 +31,7 @@ include/tk8.3/unix/tkUnixDefault.h
 include/tk8.3/unix/tkUnixInt.h
 include/tk8.3/unix/tkUnixPort.h
 lib/libtk83.a
-lib/libtk83.so.1.3
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 lib/libtkstub83.a
 lib/tk8.3/bgerror.tcl
 lib/tk8.3/button.tcl
