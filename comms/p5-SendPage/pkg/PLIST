@@ -1,0 +1,47 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/14 18:00:14 todd Exp $
+bin/email2page
+bin/sendmail2snpp
+bin/sendpage
+bin/snpp
+${P5SITE}/Sendpage/
+${P5SITE}/Sendpage/KeesConf.pm
+${P5SITE}/Sendpage/KeesLog.pm
+${P5SITE}/Sendpage/Modem.pm
+${P5SITE}/Sendpage/Page.pm
+${P5SITE}/Sendpage/PageQueue.pm
+${P5SITE}/Sendpage/PagingCentral.pm
+${P5SITE}/Sendpage/Queue.pm
+${P5SITE}/Sendpage/Recipient.pm
+${P5SITE}/Sendpage/SNPPServer.pm
+@man man/man1/email2page.1
+@man man/man1/sendpage.1
+@man man/man1/snpp.1
+@man man/man3p/Sendpage::KeesConf.3p
+@man man/man3p/Sendpage::KeesLog.3p
+@man man/man3p/Sendpage::Modem.3p
+@man man/man3p/Sendpage::Page.3p
+@man man/man3p/Sendpage::PageQueue.3p
+@man man/man3p/Sendpage::PagingCentral.3p
+@man man/man3p/Sendpage::Queue.3p
+@man man/man3p/Sendpage::Recipient.3p
+share/docs/
+share/docs/sendpage/
+share/docs/sendpage/Changes
+share/docs/sendpage/FEATURES
+share/docs/sendpage/README
+share/docs/sendpage/THANKS
+share/docs/sendpage/docs/
+share/docs/sendpage/docs/PagingCentrals.txt
+share/docs/sendpage/docs/README
+share/docs/sendpage/docs/pc-testing.txt
+share/docs/sendpage/docs/postfix.txt
+share/docs/sendpage/docs/rfc1861.txt
+share/docs/sendpage/docs/sendmail.txt
+share/docs/sendpage/docs/sendpage.php
+share/examples/sendpage/
+share/examples/sendpage/email2page.conf
+@sample ${SYSCONFDIR}/email2page.conf
+share/examples/sendpage/sendpage.cf
+@sample ${SYSCONFDIR}/sendpage.cf
+share/examples/sendpage/snpp.conf
+@sample ${SYSCONFDIR}/snpp.conf
