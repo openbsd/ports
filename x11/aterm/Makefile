@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2001/07/09 17:10:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.25 2002/01/09 19:53:11 mark Exp $
 # $FreeBSD: Makefile,v 1.3 1999/03/08 20:59:19 steve Exp $
 
 COMMENT=	"color vt102 terminal emulator with transparency support"
 
-DISTNAME=	aterm-0.4.0
+DISTNAME=	aterm-0.4.2
 CATEGORIES=	x11
-NEED_VERSION=	1.413
+NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= aterm
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://aterm.sourceforge.net/
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.2::graphics/png
 
-MAINTAINER=	Brad Smith <brad@openbsd.org>
+MAINTAINER=	Mark Grimes <mark@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
