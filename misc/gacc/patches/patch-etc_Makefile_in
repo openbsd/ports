@@ -1,0 +1,44 @@
+--- etc/Makefile.in.orig	Thu Jan 18 10:02:38 2001
++++ etc/Makefile.in	Thu Jan 18 10:04:30 2001
+@@ -104,14 +104,13 @@
+ VERSION = @VERSION@
+ l = @l@
+ 
+-data_DATA = categories.def.fr categories.def.en essai.wallet
+-sysconf_DATA = gaccrc
++data_DATA = categories.def.fr categories.def.en essai.wallet gaccrc
+ EXTRA_DIST = categories.def.fr.in categories.def.en.in essai.wallet.in gaccrc.in
+ CLEANFILES = categories.def.fr categories.def.en essai.wallet gaccrc
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../src/config.h
+ CONFIG_CLEAN_FILES = 
+-DATA =  $(data_DATA) $(sysconf_DATA)
++DATA =  $(data_DATA)
+ 
+ DIST_COMMON =  Makefile.am Makefile.in
+ 
+@@ -149,24 +148,6 @@
+ 	  rm -f $(DESTDIR)$(datadir)/$$p; \
+ 	done
+ 
+-install-sysconfDATA: $(sysconf_DATA)
+-	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
+-	@list='$(sysconf_DATA)'; for p in $$list; do \
+-	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p; \
+-	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p; \
+-	  fi; fi; \
+-	done
+-
+-uninstall-sysconfDATA:
+-	@$(NORMAL_UNINSTALL)
+-	list='$(sysconf_DATA)'; for p in $$list; do \
+-	  rm -f $(DESTDIR)$(sysconfdir)/$$p; \
+-	done
+ tags: TAGS
+ TAGS:
+ 
