@@ -3,7 +3,7 @@
 # Date created:		April 8, 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 2000/02/15 05:04:40 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/04 18:25:34 angelos Exp $
 #
 
 DISTNAME=	mh-6.8.3
@@ -17,6 +17,8 @@ MASTER_SITES0= 	ftp://ftp.ics.uci.edu/pub/mh/updates/
 PATCHFILES=	MH.6.8.4.Z:0
 
 MAINTAINER=	angelos@openbsd.org
+
+BROKEN=		"Buffer overflow in MIME support, use nmh >= 1.03 instead."
 
 LICENSE_TYPE=		PD
 PERMIT_PACKAGE_CDROM=	YES
