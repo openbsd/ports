@@ -1,0 +1,55 @@
+--- Makefile.in.orig	Sun Apr  2 01:51:13 2000
++++ Makefile.in	Sun Apr  2 01:53:53 2000
+@@ -34,15 +34,15 @@
+ 
+ bluefish:all
+ all:
+-	@$(MAKE) -C intl all
+-	@$(MAKE) -C po all
+-	@$(MAKE) -C man all
++	@cd intl; $(MAKE) all
++	@cd po; $(MAKE) all
++	@cd man; $(MAKE) all
+ 	@cd ${srcdir}/ && $(MAKE) all
+ 
+ clean:
+-	@$(MAKE) -C intl clean
+-	@$(MAKE) -C po clean
+-	@$(MAKE) -C man clean
++	@cd intl; $(MAKE) clean
++	@cd po; $(MAKE) clean
++	@cd man; $(MAKE) clean
+ 	rm -f core *~
+ 	@cd ${srcdir}/ && $(MAKE) clean
+ 
+@@ -51,16 +51,16 @@
+ 	@cd ${srcdir}/ && $(MAKE) patchclean  
+ 
+ distclean:
+-	@$(MAKE) -C intl distclean
+-	@$(MAKE) -C po distclean
+-	@$(MAKE) -C man distclean
++	@cd intl; $(MAKE) distclean
++	@cd po; $(MAKE) distclean
++	@cd man; $(MAKE) distclean
+ 	@cd ${srcdir}/ && $(MAKE) distclean
+ 	rm -f Makefile ${srcdir}/Makefile config.status config.cache config.log
+ 	rm -f *.orig *.rej
+ 
+ install:
+-	@$(MAKE) -C po install
+-	@$(MAKE) -C man install
++	@cd po; $(MAKE) install
++	@cd man; $(MAKE) install
+ 	$(INSTALL) -d -m 755 $(install_location)
+ 	$(INSTALL) -m 644 ./data/php3_functions $(install_location)/php3_functions
+ 	$(INSTALL) -m 644 ./data/ssi_functions $(install_location)/ssi_functions
+@@ -72,7 +72,7 @@
+ 	rm $(install_location)/php3_functions
+ 	rm $(install_location)/ssi_functions
+ 	rm $(install_location)/rxml_functions	
+-	@$(MAKE) -C man uninstall
++	@cd man; $(MAKE) uninstall
+ 	rm -f $(install_location)
+ 	@cd ${srcdir}/ && $(MAKE) uninstall
+ 
