@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/05/19 00:10:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2003/08/24 21:27:30 sturm Exp $
 
 COMMENT=	"MPEG2 and MPEG-4 AAC decoder"
 
@@ -17,7 +17,6 @@ MASTER_SITES=	http://faac.sourceforge.net/files/
 
 LIB_DEPENDS=	sndfile:libsndfile->=1.0.1:audio/libsndfile
 
-AUTOCONF_VERSION=2.13
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
 USE_LIBTOOL=	Yes
 
@@ -28,6 +27,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-lm" \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION}
+
+.if ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=	patch-* gcc-*
+.endif
 
 post-patch:
 	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} sh bootstrap
