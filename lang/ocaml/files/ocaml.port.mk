@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.4 2004/03/05 21:54:36 avsm Exp $
+# $OpenBSD: ocaml.port.mk,v 1.5 2004/06/22 18:14:44 avsm Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
@@ -10,7 +10,8 @@
 # PFRAG.native.no-foo -- nativecode files for FLAVOR != foo
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "i386" || \
-	${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "amd64"
+	${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "amd64" ||
+	${MACHINE_ARCH} == "powerpc"
 MODOCAML_NATIVE=Yes
 
 # include nativecode base files

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/03/05 21:54:35 avsm Exp $
+# $OpenBSD: Makefile,v 1.28 2004/06/22 18:14:44 avsm Exp $
 
 COMMENT=	"ML language based on complete class-based objective system"
 
@@ -35,7 +35,8 @@ FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 USE_GMAKE=	Yes
 
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "sparc" || \
-	${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64"
+	${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
+	${MACHINE_ARCH} == "powerpc"
 ALL_TARGET=	world bootstrap opt opt.opt
 SED_PLIST=	|sed -e '/^%%native%%$$/r${PKGDIR}/PFRAG.native' -e '//d'
 .else
@@ -46,6 +47,9 @@ SED_PLIST=	|sed -e '/^%%native%%$$/d'
 NO_REGRESS=	Yes
 
 DOCFILES=	${DISTNAME}-refman.html.tar.gz
+
+post-extract:
+	@cp ${WRKSRC}/asmrun/power-elf.S ${WRKSRC}/asmrun/power-bsd.S
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml/html/libref
