@@ -1,0 +1,12 @@
+$OpenBSD: patch-wmifinfo_c,v 1.1 2004/12/01 07:37:19 pvalchev Exp $
+--- wmifinfo.c.orig	Wed Dec  1 00:35:48 2004
++++ wmifinfo.c	Wed Dec  1 00:36:01 2004
+@@ -22,7 +22,7 @@
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
+ #include <netinet/if_ether.h>
+-#include <net/if_ieee80211.h>
++#include <net80211/ieee80211.h>
+ #include <dev/ic/if_wi_ieee.h>
+ #include <dev/ic/if_wireg.h>
+ #include <dev/ic/if_wi_hostap.h>
