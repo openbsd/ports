@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/30 11:06:38 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/19 13:08:33 lebel Exp $
 
 COMMENT=	"graphical file comparator and merge tool"
 
 DISTNAME=	xxdiff-1.9.1
-CATEGORIES=	textproc
-NEED_VERSION=	1.377
+CATEGORIES=	textproc x11
+NEED_VERSION=	1.396
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= xxdiff
 
@@ -30,10 +30,11 @@ SEPARATE_BUILD= concurrent
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	QTDIR="${LOCALBASE}"  \
-		USER_LDFLAGS="-L${LOCALBASE}/lib/X11 -L${LOCALBASE}/lib/qt2" \
-		USER_INCLUDES="-I${LOCALBASE}/include/X11 -I${LOCALBASE}/include/X11/qt2" \
+		USER_LDFLAGS="-L${LOCALBASE}/lib/qt2 -L${LOCALBASE}/lib/X11" \
+		USER_INCLUDES="-I${LOCALBASE}/include/X11/qt2 -I${LOCALBASE}/include/X11 " \
 		MOC="${LOCALBASE}/bin/moc2"
 MAKE_ENV=	${CONFIGURE_ENV}
+MAKE_FLAGS=     CXXLD='${CXX} -L${LOCALBASE}/lib/qt2'
 
 WRKSRC= ${WRKDIST}/xxdiff
 
