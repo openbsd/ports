@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 .if (${MACHINE_ARCH} != "alpha")
 CONFIGURE_ARGS=	--enable-shared
 .endif
-.if (${MACHINE_ARCH} == "pmax")
+.if (${MACHINE_ARCH} == "mips")
 CONFIGURE_ARGS=	--disable-load
 .endif
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
