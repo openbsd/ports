@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/03/13 02:57:51 shell Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/05 11:14:12 shell Exp $
 
 COMMENT=	"tool for managing library compile/link flags"
 
@@ -10,8 +10,6 @@ NEED_VERSION=	1.504
 HOMEPAGE=	http://www.freedesktop.org/software/pkgconfig/
 MASTER_SITES=	${HOMEPAGE}releases/	\
 		http://www.marcuscom.com/downloads/
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
