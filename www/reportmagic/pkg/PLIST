@@ -1,0 +1,125 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/27 01:01:57 naddy Exp $
+bin/rmagic
+libdata/perl5/site_perl/wadg/Errors.pm
+libdata/perl5/site_perl/wadg/Formatter.pm
+libdata/perl5/site_perl/wadg/HTMLWriter.pm
+libdata/perl5/site_perl/wadg/rm/CROParser.pm
+libdata/perl5/site_perl/wadg/rm/Graphs.pm
+libdata/perl5/site_perl/wadg/rm/Report.pm
+libdata/perl5/site_perl/wadg/rm/Report/GeneralSummary.pm
+libdata/perl5/site_perl/wadg/rm/Report/HierarchicalReport.pm
+libdata/perl5/site_perl/wadg/rm/Report/QuickSummary.pm
+libdata/perl5/site_perl/wadg/rm/Report/RangeReport.pm
+libdata/perl5/site_perl/wadg/rm/Report/TimeReport.pm
+libdata/perl5/site_perl/wadg/rm/Report/TimeSummary.pm
+libdata/perl5/site_perl/wadg/rm/Settings.pm
+share/doc/reportmagic/FTL.txt
+share/doc/reportmagic/advanced.html
+share/doc/reportmagic/changes.html
+share/doc/reportmagic/changes0.html
+share/doc/reportmagic/changes1.html
+share/doc/reportmagic/columns.html
+share/doc/reportmagic/commands.html
+share/doc/reportmagic/config.html
+share/doc/reportmagic/datefmts.html
+share/doc/reportmagic/faq.html
+share/doc/reportmagic/filefmts.html
+share/doc/reportmagic/images/logo.gif
+share/doc/reportmagic/images/title.gif
+share/doc/reportmagic/index.html
+share/doc/reportmagic/inst_mac.html
+share/doc/reportmagic/inst_osx.html
+share/doc/reportmagic/inst_src.html
+share/doc/reportmagic/inst_win.html
+share/doc/reportmagic/jpeg.txt
+share/doc/reportmagic/libgd.txt
+share/doc/reportmagic/libpng.txt
+share/doc/reportmagic/license.html
+share/doc/reportmagic/map.html
+share/doc/reportmagic/overview.html
+share/doc/reportmagic/repconf.html
+share/doc/reportmagic/reports.html
+share/doc/reportmagic/samples.html
+share/doc/reportmagic/siteindex.html
+share/doc/reportmagic/thanks.html
+share/doc/reportmagic/whatsnew.html
+share/doc/reportmagic/zlib.txt
+share/reportmagic/README
+share/reportmagic/analogo.gif
+share/reportmagic/lang/INDEX.txt
+share/reportmagic/lang/ca/cdata.ini
+share/reportmagic/lang/ca/lang.ini
+share/reportmagic/lang/ca/rdata.ini
+share/reportmagic/lang/ca/rmagic.ini
+share/reportmagic/lang/de/cdata.ini
+share/reportmagic/lang/de/lang.ini
+share/reportmagic/lang/de/rdata.ini
+share/reportmagic/lang/de/rmagic.ini
+share/reportmagic/lang/en/cdata.ini
+share/reportmagic/lang/en/lang.ini
+share/reportmagic/lang/en/rdata.ini
+share/reportmagic/lang/en/rmagic.ini
+share/reportmagic/lang/es/cdata.ini
+share/reportmagic/lang/es/lang.ini
+share/reportmagic/lang/es/rdata.ini
+share/reportmagic/lang/es/rmagic.ini
+share/reportmagic/lang/fr/cdata.ini
+share/reportmagic/lang/fr/lang.ini
+share/reportmagic/lang/fr/rdata.ini
+share/reportmagic/lang/fr/rmagic.ini
+share/reportmagic/lang/hu/cdata.ini
+share/reportmagic/lang/hu/lang.ini
+share/reportmagic/lang/hu/rdata.ini
+share/reportmagic/lang/hu/rmagic.ini
+share/reportmagic/lang/it/cdata.ini
+share/reportmagic/lang/it/lang.ini
+share/reportmagic/lang/it/rdata.ini
+share/reportmagic/lang/it/rmagic.ini
+share/reportmagic/lang/pl/cdata.ini
+share/reportmagic/lang/pl/lang.ini
+share/reportmagic/lang/pl/rdata.ini
+share/reportmagic/lang/pt-BR/cdata.ini
+share/reportmagic/lang/pt-BR/lang.ini
+share/reportmagic/lang/pt-BR/rdata.ini
+share/reportmagic/lang/pt/cdata.ini
+share/reportmagic/lang/pt/lang.ini
+share/reportmagic/lang/pt/rdata.ini
+share/reportmagic/lang/ru/cdata.ini
+share/reportmagic/lang/sv/cdata.ini
+share/reportmagic/lang/sv/lang.ini
+share/reportmagic/lang/sv/rdata.ini
+share/reportmagic/lang/sv/rmagic.ini
+share/reportmagic/rmagic.sample
+share/reportmagic/rmlogo.gif
+share/reportmagic/sample.dat
+share/reportmagic/samples/corpimg.ini
+share/reportmagic/samples/fineprint.html
+share/reportmagic/samples/images/back.jpg
+share/reportmagic/samples/images/bullet.gif
+share/reportmagic/samples/images/bullet2.gif
+share/reportmagic/samples/images/layout.gif
+share/reportmagic/samples/manyfile.ini
+share/reportmagic/samples/noframes.ini
+share/reportmagic/samples/onefile.ini
+share/reportmagic/samples/report.dat
+@dirrm share/reportmagic/samples/images
+@dirrm share/reportmagic/samples
+@dirrm share/reportmagic/lang/sv
+@dirrm share/reportmagic/lang/ru
+@dirrm share/reportmagic/lang/pt-BR
+@dirrm share/reportmagic/lang/pt
+@dirrm share/reportmagic/lang/pl
+@dirrm share/reportmagic/lang/it
+@dirrm share/reportmagic/lang/hu
+@dirrm share/reportmagic/lang/fr
+@dirrm share/reportmagic/lang/es
+@dirrm share/reportmagic/lang/en
+@dirrm share/reportmagic/lang/de
+@dirrm share/reportmagic/lang/ca
+@dirrm share/reportmagic/lang
+@dirrm share/reportmagic
+@dirrm share/doc/reportmagic/images
+@dirrm share/doc/reportmagic
+@dirrm libdata/perl5/site_perl/wadg/rm/Report
+@dirrm libdata/perl5/site_perl/wadg/rm
+@dirrm libdata/perl5/site_perl/wadg
