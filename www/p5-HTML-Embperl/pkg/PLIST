@@ -1,26 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/16 19:25:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/01/18 01:41:36 naddy Exp $
 bin/embpexec.pl
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl/Changes.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl/Faq.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl/Features.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl/FeaturesD.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl/INSTALL.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl/Intro.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl/IntroD.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl/IntroEmbperlObject.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl/Mail.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl/Module.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl/NEWS.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl/Session.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl/TipsAndTricks.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/EmbperlD.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/EmbperlObject.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/HTML/Embperl/Embperl.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/HTML/Embperl/Embperl.so
+${P5ARCH}/HTML/Embperl.pm
+${P5ARCH}/HTML/Embperl.pod
+${P5ARCH}/HTML/Embperl/CVS.pod
+${P5ARCH}/HTML/Embperl/Changes.pod
+${P5ARCH}/HTML/Embperl/Faq.pod
+${P5ARCH}/HTML/Embperl/Features.pod
+${P5ARCH}/HTML/Embperl/FeaturesD.pod
+${P5ARCH}/HTML/Embperl/INSTALL.pod
+${P5ARCH}/HTML/Embperl/Intro.pod
+${P5ARCH}/HTML/Embperl/IntroD.pod
+${P5ARCH}/HTML/Embperl/IntroEmbperlObject.pod
+${P5ARCH}/HTML/Embperl/Mail.pm
+${P5ARCH}/HTML/Embperl/Module.pm
+${P5ARCH}/HTML/Embperl/NEWS.pod
+${P5ARCH}/HTML/Embperl/Session.pm
+${P5ARCH}/HTML/Embperl/TipsAndTricks.pod
+${P5ARCH}/HTML/EmbperlD.pod
+${P5ARCH}/HTML/EmbperlObject.pm
+@comment ${P5ARCH}/auto/HTML/Embperl/.packlist
+${P5ARCH}/auto/HTML/Embperl/Embperl.bs
+${P5ARCH}/auto/HTML/Embperl/Embperl.so
 man/man1/embpexec.pl.1
 man/man3p/HTML::Embperl.3p
+man/man3p/HTML::Embperl::CVS.3p
 man/man3p/HTML::Embperl::Changes.3p
 man/man3p/HTML::Embperl::Faq.3p
 man/man3p/HTML::Embperl::Features.3p
@@ -35,5 +38,7 @@ man/man3p/HTML::Embperl::Session.3p
 man/man3p/HTML::Embperl::TipsAndTricks.3p
 man/man3p/HTML::EmbperlD.3p
 man/man3p/HTML::EmbperlObject.3p
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/HTML/Embperl
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl
+@dirrm ${P5ARCH}/auto/HTML/Embperl
+@dirrm ${P5ARCH}/auto/HTML
+@dirrm ${P5ARCH}/HTML/Embperl
+@dirrm ${P5ARCH}/HTML
