@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1999/03/29 19:17:24 turan Exp $
+# $OpenBSD: Makefile,v 1.12 1999/03/29 19:47:46 turan Exp $
 
 DISTNAME=		mutt-0.95.4i
 CATEGORIES=     	mail
@@ -39,7 +39,7 @@ post-install:
 	@${ECHO} '************************************************************'
 	@${ECHO} '* Remember to create or update Muttrc and mime.types       *'
 	@${ECHO} '* from the Muttrc.sample and mime.types.sample files which *'
-	@${ECHO} '* have been copied into the PREFIX/share/mutt directory.   *'
+	@${ECHO} '* have been copied into the /usr/local/etc/ directory.     *'
 	@${ECHO} '************************************************************'
 	@${ECHO}
 
