@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 1998/11/09 01:49:56 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/10/02 22:50:31 brad Exp $
 
 DISTNAME=	xbill-2.0
 CATEGORIES=	games
-
-MAINTAINER=	don@OpenBSD.ORG
-
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	games
+MASTER_SITE_SUBDIR= games
 EXTRACT_SUFX=	.tgz
+
+BROKEN=		"does not compile with EGCS"
+
+MAINTAINER=	ports@openbsd.org
 
 USE_IMAKE=	yes
 
