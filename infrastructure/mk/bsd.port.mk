@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.656 2004/11/10 23:40:42 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.657 2004/11/15 11:49:05 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1001,7 +1001,7 @@ DEPENDS_TARGET=	install
 # Various dependency styles
 
 _build_depends_fragment= \
-	if pkg dependencies check "$$pkg"; then \
+	if pkg_info -q -e "$$pkg"; then \
 		found=true; \
 	fi
 _run_depends_fragment=${_build_depends_fragment}
@@ -1025,7 +1025,10 @@ _libresolve_fragment = \
 
 
 _lib_depends_fragment = \
-	what=$$dep; \
+	if $$defaulted; then \
+		pkg=`echo $$pkg|sed -e 's,-[0-9].*,-*,'`; \
+	fi; \
+	what="$$dep ($$pkg)"; \
 	IFS=,; bad=false; for d in $$dep; do \
 		listlibs='ls $$shdir 2>/dev/null'; \
 		${_libresolve_fragment}; \
@@ -1033,7 +1036,10 @@ _lib_depends_fragment = \
 		Missing\ library) bad=true; msg="$$msg $$d missing...";; \
 		Error:*) bad=true; msg="$$msg $$d unsolvable...";; \
 		esac; \
-	done; $$bad || found=true
+	done; $$bad || found2=true; \
+	if pkg_info -q -e "$$pkg" && $$found2; then \
+		found=true; \
+	fi
 
 _build_depends_target=${DEPENDS_TARGET}
 _run_depends_target=${DEPENDS_TARGET}
@@ -1818,7 +1824,7 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
 .    endif
 .  endfor
 .  if ${TRUST_PACKAGES:L} == "yes"
-	@if pkg dependencies check ${FULLPKGNAME${SUBPACKAGE}}; then \
+	@if pkg_info -q -e ${FULLPKGNAME${SUBPACKAGE}}; then \
 		echo "Package ${FULLPKGNAME${SUBPACKAGE}} is already installed"; \
 	else \
 		${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} ${PKGFILE${SUBPACKAGE}}; \
@@ -2353,7 +2359,7 @@ _solve-package-depends:
 		libspecs='';comma=''; \
 		default=`eval $$toset ${MAKE} _print-packagename`; \
 		case "X$$pkg" in X) pkg=`echo $$default|sed -e 's,-[0-9].*,-*,'`;; esac; \
-		if pkg dependencies check $$pkg; then \
+		if pkg_info -q -e $$pkg; then \
 			listlibs='ls $$shdir 2>/dev/null'; \
 		else \
 			eval $$toset ${MAKE} ${PKGREPOSITORY}/$$default.tgz; \
