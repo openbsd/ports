@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2003/10/17 18:03:55 brad Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/03/03 01:20:42 brad Exp $
 bin/RunAccel
 bin/RunCache
 bin/squidclient
@@ -451,9 +451,12 @@ share/examples/squid/errors/Lithuanian/ERR_DNS_FAIL
 share/examples/squid/errors/Lithuanian/ERR_FORWARDING_DENIED
 share/examples/squid/errors/Lithuanian/ERR_FTP_DISABLED
 share/examples/squid/errors/Lithuanian/ERR_FTP_FAILURE
+share/examples/squid/errors/Lithuanian/ERR_FTP_FORBIDDEN
+share/examples/squid/errors/Lithuanian/ERR_FTP_NOT_FOUND
 share/examples/squid/errors/Lithuanian/ERR_FTP_PUT_CREATED
 share/examples/squid/errors/Lithuanian/ERR_FTP_PUT_ERROR
 share/examples/squid/errors/Lithuanian/ERR_FTP_PUT_MODIFIED
+share/examples/squid/errors/Lithuanian/ERR_FTP_UNAVAILABLE
 share/examples/squid/errors/Lithuanian/ERR_INVALID_REQ
 share/examples/squid/errors/Lithuanian/ERR_INVALID_URL
 share/examples/squid/errors/Lithuanian/ERR_LIFETIME_EXP
@@ -461,7 +464,9 @@ share/examples/squid/errors/Lithuanian/ERR_NO_RELAY
 share/examples/squid/errors/Lithuanian/ERR_ONLY_IF_CACHED_MISS
 share/examples/squid/errors/Lithuanian/ERR_READ_ERROR
 share/examples/squid/errors/Lithuanian/ERR_READ_TIMEOUT
+share/examples/squid/errors/Lithuanian/ERR_SHUTTING_DOWN
 share/examples/squid/errors/Lithuanian/ERR_SOCKET_FAILURE
+share/examples/squid/errors/Lithuanian/ERR_TOO_BIG
 share/examples/squid/errors/Lithuanian/ERR_UNSUP_REQ
 share/examples/squid/errors/Lithuanian/ERR_URN_RESOLVE
 share/examples/squid/errors/Lithuanian/ERR_WRITE_ERROR
