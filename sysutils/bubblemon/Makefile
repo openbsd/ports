@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.13 2003/04/30 14:57:15 avsm Exp $
+# $OpenBSD: Makefile,v 1.14 2003/09/23 21:18:30 marcm Exp $
 
 COMMENT=		"GNOME panel applet that displays the CPU + memory load"
 
-DISTNAME=		bubblemon-1.2.9
+DISTNAME=		bubblemon-2.0.1
 CATEGORIES=		sysutils x11/gnome
 
 HOMEPAGE=		http://www.d.kth.se/~d92-jwa/code/
 
 MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 
-MASTER_SITES=		http://www.d.kth.se/~d92-jwa/code/bubblemon/ \
-			http://www.d.kth.se/~d92-jwa/code/bubblemon/attic \
-			http://nforced.com/openbsd/distfiles/
+MASTER_SITES=		http://savannah.nongnu.org/download/bubblemon/
 
-LIB_DEPENDS=		panel_applet::x11/gnome/core \
-			gtop.1,gtop_common,gtop_sysdeps::devel/libgtop,gnome
+LIB_DEPENDS=		panel-applet-2::x11/gnome/panel \
+			gtop-2.0.0.0,gtop_common-2.0.0.0,gtop_suid_common-2.0.0.0,gtop_sysdeps-2.0.0.0::devel/libgtop2
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,13 +21,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
+USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-post-install:
-	@${INSTALL_DATA_DIR} -d ${PREFIX}/share/examples/bubblemon; \
-	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/bubblemon/
 
 .include <bsd.port.mk>
