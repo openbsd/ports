@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Sep  1 18:50:31 1999
-+++ Makefile.in	Thu Aug 24 23:07:52 2000
+--- Makefile.in.orig	Fri Sep  1 14:43:54 2000
++++ Makefile.in	Fri Sep  1 14:47:58 2000
 @@ -7,6 +7,8 @@
  srcdir = @srcdir@
  VPATH = @srcdir@
@@ -9,18 +9,19 @@
  # Where to install screen.
  
  prefix = @prefix@
-@@ -21,8 +23,8 @@
+@@ -21,9 +23,9 @@
  ETCSCREENRC = `sed < config.h -n -e '/define ETCSCREENRC/s/^.*"\([^"]*\)"/\1/p'`
  
  CC = @CC@
 -CFLAGS = -O
--LDFLAGS =
 +CFLAGS = @CFLAGS@
+ CPPFLAGS = @CPPFLAGS@
+-LDFLAGS =
 +LDFLAGS = @LDFLAGS@
  LIBS = @LIBS@
  
- CPP_DEPEND=$(CC) -MM
-@@ -62,7 +64,7 @@
+ CPP=@CPP@
+@@ -59,7 +61,7 @@
  	kmapdef.o acls.o braille.o braille_tsi.o logfile.o layer.o \
  	sched.o teln.o nethack.o
  
@@ -29,7 +30,7 @@
  
  screen: $(OFILES)
  	$(CC) $(LDFLAGS) -o $@ $(OFILES) $(LIBS)
-@@ -71,18 +73,18 @@
+@@ -68,14 +70,14 @@
  	$(CC) -c -I. -I$(srcdir) $(M_CFLAGS) $(DEFS) $(OPTIONS) $(CFLAGS) $<
  
  install_bin: .version screen
@@ -47,48 +48,27 @@
 -	ln -s $(SCREEN) $(bindir)/screen
 +	-if [ -f $(DESTDIR)$(bindir)/screen ] && [ ! -f $(DESTDIR)$(bindir)/screen.old ]; then mv $(DESTDIR)$(bindir)/screen $(DESTDIR)$(bindir)/screen.old; fi
 +	rm -f $(DESTDIR)$(bindir)/screen
-+	cd $(DESTDIR)$(bindir) && ln -fs $(SCREEN) screen
++	cd $(DESTDIR)$(bindir) && ln -sf $(SCREEN) screen
  
  ###############################################################################
  install: installdirs install_bin
--	cd doc ; $(MAKE) install
-+	cd doc ; $(MAKE) $(AM_MAKEFLAGS) install
- 	-if [ -d /usr/lib/terminfo ]; then \
- 		PATH="$PATH:/usr/5bin" tic ${srcdir}/terminfo/screeninfo.src; \
- 		chmod 644 /usr/lib/terminfo/s/screen*; \
-@@ -94,15 +96,15 @@
+@@ -91,14 +93,14 @@
  
  installdirs:
  # Path leading to ETCSCREENRC and Socketdirectory not checked.
 -	$(srcdir)/etc/mkinstalldirs $(bindir)
--	cd doc ; $(MAKE) installdirs
 +	$(srcdir)/etc/mkinstalldirs $(DESTDIR)$(bindir)
-+	cd doc ; $(MAKE) $(AM_MAKEFLAGS) installdirs
+ 	cd doc ; $(MAKE) installdirs
  
  uninstall: .version
 -	rm -f $(bindir)/$(SCREEN)
 -	rm -f $(bindir)/screen
 -	-mv $(bindir)/screen.old $(bindir)/screen
 -	rm -f $(ETCSCREENRC)
--	cd doc; $(MAKE) uninstall
 +	rm -f $(DESTDIR)$(bindir)/$(SCREEN)
 +	rm -f $(DESTDIR)$(bindir)/screen
 +	-mv $(DESTDIR)$(bindir)/screen.old $(DESTDIR)$(bindir)/screen
 +	rm -f $(DESTDIR)$(ETCSCREENRC)
-+	cd doc; $(MAKE) $(AM_MAKEFLAGS) uninstall
+ 	cd doc; $(MAKE) uninstall
  
  shadow:
- 	mkdir shadow;
-@@ -127,10 +129,10 @@
- 	CC="$(CC) $(CFLAGS)" srcdir=${srcdir} sh $(srcdir)/osdef.sh
- 
- docs:
--	cd doc; $(MAKE) dvi screen.info
-+	cd doc; $(MAKE) $(AM_MAKEFLAGS) dvi screen.info
- 
- dvi info screen.info:
--	-cd doc; $(MAKE) $@
-+	-cd doc; $(MAKE) $(AM_MAKEFLAGS) $@
- 
- mostlyclean:
- 	rm -f $(OFILES) screen config.cache osdef0.c osdef1.sed osdef2.sed

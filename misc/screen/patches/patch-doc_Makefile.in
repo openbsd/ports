@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	Wed Sep  1 18:50:32 1999
-+++ doc/Makefile.in	Thu Aug 24 18:08:30 2000
+--- doc/Makefile.in.orig	Fri Sep  1 14:48:22 2000
++++ doc/Makefile.in	Fri Sep  1 14:50:30 2000
 @@ -3,13 +3,15 @@
  srcdir = @srcdir@
  VPATH = @srcdir@
