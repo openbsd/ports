@@ -1,0 +1,14 @@
+--- Makefile.orig	Wed Sep 16 15:56:29 1998
++++ Makefile	Tue Sep 29 16:33:05 1998
+@@ -1,7 +1,10 @@
+-all:	idiff
++all:	idiff idiff.0
+ 
+ idiff:	idiff.c
+ 	$(CC) idiff.c -o idiff
++
++idiff.0:	idiff.1
++		nroff -man $? > $@
+ 
+ clean:
+ 	rm -f *.o a.out

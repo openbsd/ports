@@ -1,0 +1,7 @@
+This is idiff, a front-end to diff that lets you manually merge
+two versions of a file. It runs diff for you, and presents the
+results one "chunk" at a time.
+
+Idiff was written by Kernighan and Pike, and first appeared in their
+1984 book The UNIX Programming Environment (Prentice-Hall).
+Source code is used by permission.

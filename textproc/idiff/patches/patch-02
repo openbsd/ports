@@ -1,0 +1,79 @@
+--- idiff.1.orig	Tue Sep 29 16:33:05 1998
++++ idiff.1	Thu Sep 13 18:15:40 1990
+@@ -0,0 +1,76 @@
++.TH IDIFF Local
++.SH NAME
++idiff \- interactive diff of two files
++.SH SYNOPSIS
++.B idiff
++file1 file2
++.SH DESCRIPTION
++.I Idiff
++runs
++.IR diff (1)
++on the specified files and then
++presents each chunk of
++.I diff
++output and offers the user the option of
++choosing the ``from'' part or the ``to'' part,
++or editing the parts.
++.I Idiff
++produces the selected pieces in the proper order in a file called
++.IR idiff.out .
++.LP
++After each chunk is presented,
++.I idiff
++will prompt the user (with a `? ')
++for a command.
++The valid commands are:
++.TP
++.B <
++Take the ``from'' portion of the displayed chunk.
++This is the portion which
++was extracted from the first file specified.
++.TP
++.B >
++Take the ``to'' portion of the displayed chunk.
++This corresponds to that
++extracted from the second file specified.
++.TP
++.B e
++Invoke an editor on the chunk.
++The contents of shell variable EDITOR select the editor to be used.
++The default is
++.IR /bin/ed .
++Whatever is written out from
++.I ed
++will be placed into the final output.
++.TP
++.B q<
++Take all the rest of the '<' choices automatically.
++Think of this as ``quit from''.
++.TP
++.B q>
++Take all the rest of the '>' choices automatically.
++Think of this as ``quit to''.
++.TP
++.B !
++Pass the command buffer to the shell for processing.
++.LP
++All code that
++.I diff
++considers identical in both input files 
++is automatically put into the output file.
++.SH FILES
++.I idiff.out 
++\- merged output
++.SH BUGS
++It is not possible to pass any options to
++.I diff
++through
++.I idiff.
++Giving a file and a directory for
++.I diff
++to search for the second file will fail in strange ways.
++.SH HISTORY
++.I Idiff
++appears in the book
++.I ``The UNIX Programming Environment''
++by Brian Kernighan and Rob Pike.
