@@ -1,10 +1,10 @@
---- xtoys.orig	Mon Jul 24 10:40:51 2000
-+++ xtoys	Mon Jul 24 10:41:01 2000
+--- xtoys.orig	Mon Aug  2 02:11:02 1999
++++ xtoys	Wed Oct  4 01:42:50 2000
 @@ -1,5 +1,5 @@
 -#!/bin/bash
 -ximg="`ls /usr/share/xteddy` `ls /usr/local/share/xteddy`"
 +#!/bin/sh
-+ximg="`ls /usr/local/share/xteddy`"
++ximg="`ls !!PREFIX!!/share/xteddy`"
  NUM=0
  for i in $ximg ; do
    NUM=`expr $NUM + 1`
