@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.291 2000/06/02 14:37:17 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.292 2000/06/07 15:46:15 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1944,8 +1944,8 @@ clean: pre-clean
 .  if ${CLEANDEPENDS:L}=="yes"
 	@cd ${.CURDIR} && exec ${MAKE} clean-depends
 .  endif
-	@if cd ${WRKINST} 2>/dev/null; then ${SUDO} rm -rf ${WRKINST}; fi
 	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
+	@if cd ${WRKINST} 2>/dev/null; then ${SUDO} rm -rf ${WRKINST}; fi
 	@if [ -L ${WRKDIR} ]; then rm -rf `readlink ${WRKDIR}`; fi
 	@rm -rf ${WRKDIR}
 .endif
