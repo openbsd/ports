@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.663 2004/11/19 22:12:28 sturm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.664 2004/11/21 10:43:48 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1031,6 +1031,15 @@ _libresolve_fragment = \
 			${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} $$d` \
 			|| true
 
+_syslibresolve_fragment = \
+		case "$$d" in \
+		*/*) shprefix="$${d%/*}/"; shdir="${LOCALBASE}/$${d%/*}"; \
+			d=$${d\#\#*/};; \
+		*) shprefix="" shdir="/usr/lib /usr/X11R6/lib ${LOCALBASE}/lib";; \
+		esac; \
+		check=`eval $$listlibs| perl \
+			${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} $$d` \
+			|| true
 
 _lib_depends_fragment = \
 	if $$defaulted; then \
@@ -2370,6 +2379,55 @@ _recurse-lib-depends-check:
 .endfor
 
 
+_print-package-args:
+.for _i in ${RUN_DEPENDS}
+	@unset FLAVOR SUBPACKAGE || true; \
+	echo '${_i}' |{ \
+		IFS=:; read dep pkg pkgpath target; \
+		dir=$$pkgpath; ${_flavor_fragment}; \
+		default=`eval $$toset ${MAKE} _print-packagename`; \
+		: $${pkg:=$$default}; \
+		echo "-P $$pkgpath:$$pkg:$$default"; \
+	}
+.endfor
+.if ${NO_SHARED_LIBS:L} != "yes"
+.  for _i in ${LIB_DEPENDS}
+	@unset FLAVOR SUBPACKAGE || true; \
+	echo '${_i}'|{ \
+		IFS=:; read dep pkg pkgpath target; \
+		dir=$$pkgpath; ${_flavor_fragment}; \
+		libspecs='';comma=''; \
+		default=`eval $$toset ${MAKE} _print-packagename`; \
+		case "X$$pkg" in X) pkg=`echo $$default|sed -e 's,-[0-9].*,-*,'`;; esac; \
+		listlibs='ls $$shdir 2>/dev/null'; \
+		IFS=,; for d in $$dep; do \
+			${_libresolve_fragment}; \
+			case "$$check" in \
+			*.a) continue;; \
+			Missing\ library|Error:*) \
+				echo 1>&2 "Can't resolve libspec $$d"; \
+				exit 1;; \
+			*) \
+				echo "-W $$shprefix$$check";; \
+			esac; \
+		done; \
+		echo "-P $$pkgpath:$$pkg:$$default"; \
+	}
+.  endfor
+.  for _i in ${WANTLIB}
+	@d=${_i}; listlibs='ls $$shdir 2>/dev/null'; \
+	${_syslibresolve_fragment}; \
+	case "$$check" in \
+	*.a) continue;; \
+	Missing\ library|Error:*) \
+		echo 1>&2 "Can't resolve libspec $$d"; \
+		exit 1;; \
+	*) \
+		echo "-W $$shprefix$$check";; \
+	esac
+.   endfor
+.endif
+
 # Write a correct list of dependencies for packages.
 _solve-package-depends:
 .for _i in ${RUN_DEPENDS}
@@ -2582,7 +2640,7 @@ uninstall deinstall:
 	_package _package-links _print-packagename \
 	_recurse-all-dir-depends _recurse-lib-depends-check \ 
 	_recurse-run-dir-depends _solve-package-depends _refetch \
-	addsum \
+	addsum _print-package-args \
 	all all-dir-depends build \
 	build-depends build-depends-list build-dir-depends \
 	checkpatch checksum clean \
