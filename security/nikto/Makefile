@@ -2,7 +2,7 @@
 
 COMMENT=	"Web and CGI vulnerability scanner with SSL support"
 
-DISTNAME=	nikto-1.32
+DISTNAME=	nikto-1.34
 CATEGORIES=	security www
 
 HOMEPAGE=	http://www.cirt.net/code/nikto.shtml
