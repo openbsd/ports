@@ -1,5 +1,5 @@
 Contains Perl 5 modules SNMP_Session.pm and BER.pm, which, when used
-together, provide rudimentary access to remote SNMP (v1) agents.
+together, provide rudimentary access to remote SNMP agents.
 
 This module differs from existing SNMP packages in that it is completely
 stand-alone, i.e.  you don't need to have another SNMP package such as
