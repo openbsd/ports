@@ -1,25 +1,27 @@
 --- unix/makefile.orig	Wed Jul  1 04:29:10 1998
-+++ unix/makefile	Thu May 20 20:23:50 1999
-@@ -16,11 +16,11 @@
- #CFLAGS = -Wall -O3 -s #-DNDEBUG
- #CFLAGS = -g -Wall -DMDEBUG
- #CFLAGS = -O3 -fno-strength-reduce -fomit-frame-pointer # These are for Linux
--CFLAGS = -O -g -Wall -dLO_HI_BYTE_ORDER
-+#CFLAGS = -O -g -Wall -dLO_HI_BYTE_ORDER
- CHALLOC = challoc.o
- CHALLOC =
++++ unix/makefile	Mon Feb 14 16:42:41 2000
+@@ -22,23 +22,12 @@
  CHNEW = chnew.o challoc.o
--CC = gcc
-+#CC = gcc
+ CC = gcc
  
- ifeq ($(OSTYPE), Linux)
- CFLAGS += -DUNIX -DCASEINSENSE
-@@ -38,7 +38,7 @@
+-ifeq ($(OSTYPE), Linux)
+-CFLAGS += -DUNIX -DCASEINSENSE
+-else
+-ifeq ($(OSTYPE), DOS)
+-EXEEXT = .exe
+-CFLAGS += -DDOS
+-else
+-CFLAGS += -DUNIX -DCASEINSENSE
+-endif
+-endif
+-
+ # not all systems require the math library
+ #LIBS = -lm
  
  
  unace$(EXEEXT): $(OBJ) $(CHALLOC)
 -	gcc $(CFLAGS) -o $@ $^ $(LIBS)
-+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
++	$(CC) $(CFLAGS) -o $@ $(OBJ) $(LIBS)
  
  clean:
  	rm -f *.o a.out core unace unace.exe
