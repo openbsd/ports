@@ -1,7 +1,0 @@
-
-fixed unsafe use of mktemp() in xip/xippkt.c
-
-there may be other issues in the packet decoding routines.
-
--d.
-
