@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2005/01/26 16:41:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2005/02/14 22:14:25 couderc Exp $
 
 COMMENT=		"GnuPG Made Easy"
 
-DISTNAME=		gpgme-0.3.15
+DISTNAME=		gpgme-1.0.2
 CATEGORIES=     	security devel
 
 HOMEPAGE=		http://www.gnupg.org/gpgme.html
@@ -20,7 +20,8 @@ MASTER_SITES=		ftp://ftp.gnupg.org/gcrypt/gpgme/
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-gpgsm
 
-RUN_DEPENDS=		:gnupg->=1.2.*:security/gnupg
+RUN_DEPENDS=		:gnupg->=1.4.*:security/gnupg
 BUILD_DEPENDS=		${RUN_DEPENDS}
+LIB_DEPENDS=		gpg-error::security/libgpg-error
 
 .include <bsd.port.mk>
