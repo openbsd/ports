@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/10/10 16:44:12 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2004/10/16 13:01:12 espie Exp $
 
 COMMENT=		"GNOME control center"
 
@@ -34,6 +34,8 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/control
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
+FAKE_FLAGS=sysconfdir=${TRUEPREFIX}/share/examples/controlcenter2 \
+	DESTDIR=${WRKINST}
 
 # Work around a really dumb icon issue...
 #pre-build:
