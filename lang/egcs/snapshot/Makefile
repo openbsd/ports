@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2002/06/05 23:58:49 espie Exp $
+# $OpenBSD: Makefile,v 1.89 2002/06/06 13:46:39 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64
 
@@ -307,21 +307,21 @@ post-install:
 
 # Tests still need to be performed at the end of install, I don't know why.
 
-REGRESS_DEPENDS+=::lang/egcs/stable
+REGRESS_DEPENDS+=::lang/egcs/snapshot
 .if defined(MAKE_GXX) && ${MAKE_GXX:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/stable,-c++
+REGRESS_DEPENDS+=::lang/egcs/snapshot,-c++
 .endif
 .if defined(MAKE_FORTRAN) && ${MAKE_FORTRAN:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/stable,-g77
+REGRESS_DEPENDS+=::lang/egcs/snapshot,-g77
 .endif
 .if defined(MAKE_OBJC) && ${MAKE_OBJC:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/stable,-objc
+REGRESS_DEPENDS+=::lang/egcs/snapshot,-objc
 .endif
 .if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/stable,-java
+REGRESS_DEPENDS+=::lang/egcs/snapshot,-java
 .endif
 .if defined(MAKE_ADA) && ${MAKE_ADA:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/stable,-ada
+REGRESS_DEPENDS+=::lang/egcs/snapshot,-ada
 .endif
 
 TEST_RESULT=${WRKBUILD}/test.result
@@ -346,7 +346,7 @@ GCC_NAME=${WRKBUILD}/gcc/xgcc
 
 .if defined(PACKAGING) && defined(SUBPACKAGE)
 .  if !empty(SUBPACKAGE)
-RUN_DEPENDS+=::lang/egcs/stable
+RUN_DEPENDS+=::lang/egcs/snapshot
 .  endif
 .endif
 
