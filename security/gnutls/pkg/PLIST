@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:36:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/22 08:06:40 robert Exp $
 bin/certtool
 bin/gnutls-cli
 bin/gnutls-cli-debug
@@ -26,7 +26,7 @@ lib/libgnutls.la
 @man man/man1/gnutls-cli-debug.1
 @man man/man1/gnutls-cli.1
 @man man/man1/gnutls-serv.1
-@man man/man1/gnutls-srpcrypt.1
+@man man/man1/srptool.1
 share/aclocal/
 share/aclocal/libgnutls-extra.m4
 share/aclocal/libgnutls.m4
@@ -37,15 +37,14 @@ share/examples/gnutls/ex-alert.c
 share/examples/gnutls/ex-cert-select.c
 share/examples/gnutls/ex-client-resume.c
 share/examples/gnutls/ex-client-srp.c
-share/examples/gnutls/ex-client1.c
 share/examples/gnutls/ex-client2.c
 share/examples/gnutls/ex-crq.c
 share/examples/gnutls/ex-pkcs12.c
-share/examples/gnutls/ex-rfc2818.c
 share/examples/gnutls/ex-serv-export.c
 share/examples/gnutls/ex-serv-pgp.c
 share/examples/gnutls/ex-serv-srp.c
 share/examples/gnutls/ex-serv1.c
 share/examples/gnutls/ex-session-info.c
+share/examples/gnutls/ex-verify.c
 share/examples/gnutls/ex-x509-info.c
 %%SHARED%%

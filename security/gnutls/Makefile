@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2004/09/15 18:35:59 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2004/09/22 08:06:40 robert Exp $
 
 COMMENT=		"GNU Transport Layer Security library"
 
-VERSION=		1.0.13
+VERSION=		1.0.20
 DISTNAME=		gnutls-${VERSION}
 CATEGORIES=		security
 
@@ -20,6 +20,7 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/gnutls/ \
 		http://sunsite.dk/pub/security/gcrypt/gnutls/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/gnutls/
 
+MODULES=	converters/libiconv
 LIB_DEPENDS=	gcrypt.12::security/libgcrypt \
 		opencdk.8::security/opencdk \
 		lzo::archivers/lzo
