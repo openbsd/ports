@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/20 01:01:46 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/08/19 17:23:34 pvalchev Exp $
 bin/xp-mapedit
 bin/xp-replay
 bin/xpilot
 bin/xpilots
+man/man6/xp-mapedit.0
 man/man6/xp-replay.0
 man/man6/xpilot.0
 man/man6/xpilots.0

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2002/05/13 18:50:43 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/08/19 17:23:34 pvalchev Exp $
 
 COMMENT=	"multiplayer 2d space battles game"
 
-DISTNAME=	xpilot-4.5.3
+DISTNAME=	xpilot-4.5.4
 CATEGORIES=	games x11
-NEED_VERSION=	1.525
 
 HOMEPAGE=	http://www.xpilot.org/
 
