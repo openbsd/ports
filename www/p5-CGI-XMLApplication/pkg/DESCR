@@ -1,0 +1,8 @@
+CGI::XMLApplication is a CGI application class, that intends to
+enable perl artists to implement CGIs that make use of XML/XSLT
+functionality, without taking too much care about specialized
+errorchecking. Also it is ment to provide the power of the XML::LibXML
+/ XML::LibXSLT module package. CGI::XMLApplication's serialization
+process pays a lot attention of keeping an application stable to
+run. So a programmer has not to bother about some of XML::LibXML/
+XML::LibXSLT serialization pitfalls.
