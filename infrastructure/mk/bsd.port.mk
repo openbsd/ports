@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.480 2001/10/24 11:53:54 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.481 2001/10/24 11:57:34 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1353,12 +1353,25 @@ ${_BUILDLIBLIST}: ${_FAKE_COOKIE}
 
 .if defined(IGNORE) && !defined(NO_IGNORE)
 fetch checksum extract patch configure all build install regress \
-uninstall deinstall fake package:
+uninstall deinstall fake package lib-depends-check:
 .  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} ${IGNORE}."
 .  endif
 
 .else 
+# For now, just check all libnames are present
+# The check is done on the fake area, be wary of multi-packages situation,
+# since we don't take it into account yet.
+#
+# Note that we cache needed library names, and libraries we're allowed to
+# depend upon, but not the actual list of lib depends, since this list is
+# going to be tweaked as a result of running lib-depends-check.
+#
+lib-depends-check: ${_LIBLIST} ${_BUILDLIBLIST}
+	@LIB_DEPENDS="`${MAKE} _recurse-lib-depends`" PKG_DBDIR='${PKG_DBDIR}' \
+		perl ${PORTSDIR}/infrastructure/install/check-libs \
+		${_LIBLIST} ${_BUILDLIBLIST}
+
 
 
 # Most standard port targets create a cookie to avoid being re-run.
@@ -2718,4 +2731,4 @@ unlink-categories:
    link-categories unlink-categories _package new-depends \
    dir-depends _recurse-dir-depends package-dir-depends \
    _package-recurse-dir-depends recursebuild-depends-list run-depends-list \
-   bulk-packages bulk-do _recurse-lib-depends
+   bulk-packages bulk-do _recurse-lib-depends lib-depends-check
