@@ -2,6 +2,8 @@
 @name egcs-1.1b
 @pkgdep autoconf-2.12
 @pkgdep m4-1.4
+@unexec install-info --delete %D/info/egcc.info %D/info/dir
+@unexec install-info --delete %D/info/ecpp.info %D/info/dir
 ARCH/include/_G_config.h
 ARCH/lib/libiberty.a
 bin/ARCH-gcc
@@ -202,11 +204,13 @@ lib/libstdc++.a
 lib/libstdc++.so
 lib/libstdc++.so.2.9
 lib/libstdc++.so.2.9.0
-man/man1/cccp.1
+man/man1/ecccp.1
 man/man1/eg++.1
 man/man1/egcc.1
 @dirrm include/g++/std
 @dirrm include/g++
-@dirrm lib/gcc/lib/ARCH/egcs-2.91.57/include
+@dirrm lib/gcc-lib/ARCH/egcs-2.91.57/include
 @dirrm lib/gcc-lib/ARCH/egcs-2.91.57
 @exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib
+@exec install-info %D/info/egcc.info %D/info/dir
+@exec install-info %D/info/ecpp.info %D/info/dir

@@ -56,6 +56,14 @@ gcc does not support -Os)
 # of expected failures          221
 # of untested testcases         7
 
-Looking at it more closely, prog
+There is one bug in gcc 2.8.1 that also shows up in egcs under standard 
+OpenBSD configuration: if using -finline-functions, gcc emits stabs lines
+for CTORS at an incorrect position. Hence, the linker no longer finds the
+CTORS, hence everything breaks down. This has been reported to egcs-bugs.
+
+The way we get around this problem is by relying on collect2: egcs is
+built with use_collect2=yes, so it does no longer relies on stabs for
+propert CTOR collection, and the bug is no longer visible.
+
 
 			Marc Espie

@@ -1,9 +1,16 @@
---- gcc/cpp.texi.orig	Thu Oct  8 21:23:50 1998
-+++ gcc/cpp.texi	Thu Oct  8 21:23:58 1998
-@@ -1,5 +1,5 @@
+--- gcc/cpp.texi.orig	Tue Jun 23 10:35:51 1998
++++ gcc/cpp.texi	Tue Oct 13 14:28:51 1998
+@@ -1,11 +1,11 @@
  \input texinfo
 -@setfilename cpp.info
 +@setfilename ecpp.info
  @settitle The C Preprocessor
  
  @ifinfo
+ @dircategory Programming
+ @direntry
+-* Cpp: (cpp).		       The GNU C preprocessor.
++* ECpp: (ecpp).		       The experimental GNU C preprocessor.
+ @end direntry
+ @end ifinfo
+ 

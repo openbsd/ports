@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.3 1998/10/11 14:08:23 espie Exp $
+# $OpenBSD: Makefile,v 1.4 1998/10/13 14:52:34 espie Exp $
 #
 
 # This is a configuration file for egcs, stable release
@@ -80,7 +80,7 @@ CONFIGURE_SCRIPT=../source/configure
 
 CONFIGURE_ENV=CFLAGS=-O2
 CONFIGURE_ARGS= --prefix=${PREFIX} \
---verbose --with-gnu-ld ---with-gnu-as \
+--verbose --with-gnu-ld --with-gnu-as \
 --program-transform-name=s,^,e,
 .if (${MACHINE_ARCH} != "alpha")
 CONFIGURE_ARGS+=--enable-shared
