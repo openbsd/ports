@@ -3,12 +3,12 @@
 # Date created:				15 Dec 1997
 # Whom:					niklas
 #
-# $OpenBSD: Makefile,v 1.2 1997/12/17 23:05:06 niklas Exp $
+# $OpenBSD: Makefile,v 1.3 1997/12/19 14:27:07 niklas Exp $
 #
 
 DISTNAME=	cdrecord-1.6a7
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/alpha
+MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/alpha/
 
 MAINTAINER=	niklas@openbsd.org
 
