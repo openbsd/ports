@@ -1,0 +1,21 @@
+*** src/lharc.c.bak	Fri Mar  8 09:09:06 1996
+--- src/lharc.c	Wed Aug 28 21:13:02 1996
+***************
+*** 318,324 ****
+  		cmd_filec = 0;
+  		if ((xfilev = (char **) malloc(sizeof(char *) * xfilec)) == NULL)
+  			fatal_error("Virtual memory exhausted\n");
+! 		while (gets(inpbuf)) {
+  			if (cmd_filec >= xfilec) {
+  				xfilec += 256;
+  				cmd_filev = (char **) realloc(xfilev,
+--- 318,326 ----
+  		cmd_filec = 0;
+  		if ((xfilev = (char **) malloc(sizeof(char *) * xfilec)) == NULL)
+  			fatal_error("Virtual memory exhausted\n");
+! 		while (fgets(inpbuf, sizeof(inpbuf), stdin)) {
+! 			if ((p = strchr(inpbuf, '\n')))
+! 				*p = '\0';
+  			if (cmd_filec >= xfilec) {
+  				xfilec += 256;
+  				cmd_filev = (char **) realloc(xfilev,
