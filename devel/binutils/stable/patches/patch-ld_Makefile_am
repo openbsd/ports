@@ -1,7 +1,7 @@
-$OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
---- ld/Makefile.am.orig	Wed Jan  1 19:56:31 2003
-+++ ld/Makefile.am	Mon Jul 21 16:31:14 2003
-@@ -120,7 +120,9 @@ ALL_EMULATIONS = \
+$OpenBSD: patch-ld_Makefile_am,v 1.8 2003/10/11 00:52:22 brad Exp $
+--- ld/Makefile.am.orig	2003-04-24 08:36:07.000000000 -0400
++++ ld/Makefile.am	2003-09-04 02:03:37.000000000 -0400
+@@ -121,7 +121,9 @@ ALL_EMULATIONS = \
  	earmelf_fbsd.o \
  	earmelf_linux.o \
  	earmelf_nbsd.o \
@@ -9,9 +9,9 @@ $OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
  	earmelfb_nbsd.o \
 +	earmelfb_obsd.o \
  	earmelf_oabi.o \
+ 	earmnto.o \
  	earmnbsd.o \
- 	earmpe.o \
-@@ -151,6 +153,7 @@ ALL_EMULATIONS = \
+@@ -153,6 +155,7 @@ ALL_EMULATIONS = \
  	eelf32_i960.o \
  	eelf32_i860.o \
  	eelf32_sparc.o \
@@ -19,15 +19,15 @@ $OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
  	eelf32b4300.o \
  	eelf32bmip.o \
  	eelf32bmipn32.o \
-@@ -169,6 +172,7 @@ ALL_EMULATIONS = \
+@@ -177,6 +180,7 @@ ALL_EMULATIONS = \
  	eelf32openrisc.o \
  	eelf32ppc.o \
  	eelf32ppc_fbsd.o \
 +	eelf32ppc_obsd.o \
  	eelf32ppclinux.o \
+ 	eelf32ppcnto.o \
  	eelf32ppcsim.o \
- 	eelf32ppcwindiss.o \
-@@ -178,6 +182,7 @@ ALL_EMULATIONS = \
+@@ -188,6 +192,7 @@ ALL_EMULATIONS = \
  	eelf_i386_be.o \
  	eelf_i386_chaos.o \
  	eelf_i386_fbsd.o \
@@ -35,7 +35,7 @@ $OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
  	eelf_i386_ldso.o \
  	eelf_s390.o \
  	egld960.o \
-@@ -210,6 +215,7 @@ ALL_EMULATIONS = \
+@@ -224,6 +229,7 @@ ALL_EMULATIONS = \
  	ei386moss.o \
  	ei386msdos.o \
  	ei386nbsd.o \
@@ -43,7 +43,7 @@ $OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
  	ei386nto.o \
  	ei386nw.o \
  	ei386pe.o \
-@@ -228,6 +234,7 @@ ALL_EMULATIONS = \
+@@ -242,6 +248,7 @@ ALL_EMULATIONS = \
  	em68klinux.o \
  	em68klynx.o \
  	em68knbsd.o \
@@ -51,7 +51,7 @@ $OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
  	em68kpsos.o \
  	em88kbcs.o \
  	emcorepe.o \
-@@ -268,6 +275,7 @@ ALL_EMULATIONS = \
+@@ -326,6 +333,7 @@ ALL_EMULATIONS = \
  	esparclinux.o \
  	esparclynx.o \
  	esparcnbsd.o \
@@ -59,7 +59,7 @@ $OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
  	est2000.o \
  	esun3.o \
  	esun4.o \
-@@ -293,11 +301,14 @@ ALL_64_EMULATIONS = \
+@@ -354,11 +362,14 @@ ALL_64_EMULATIONS = \
  	eshlelf64_nbsd.o \
  	eelf_x86_64.o \
  	eelf_x86_64_fbsd.o \
@@ -74,7 +74,7 @@ $OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
  	eelf64alpha_nbsd.o \
  	eelf64bmip.o \
  	eelf64btsmip.o \
-@@ -415,6 +426,17 @@ earmelfb_nbsd.c: $(srcdir)/emulparams/ar
+@@ -480,6 +491,17 @@ earmelfb_nbsd.c: $(srcdir)/emulparams/ar
    $(srcdir)/emultempl/elf32.em $(srcdir)/emultempl/armelf.em \
    $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} armelfb_nbsd "$(tdir_armelfb_nbsd)"
@@ -92,7 +92,7 @@ $OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
  earmaoutb.c:	$(srcdir)/emulparams/armaoutb.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/armaout.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} armaoutb "$(tdir_armaoutb)"
-@@ -540,6 +562,10 @@ em32relf.c: $(srcdir)/emulparams/m32relf
+@@ -614,6 +636,10 @@ em32relf.c: $(srcdir)/emulparams/m32relf
  eelf32_sparc.c: $(srcdir)/emulparams/elf32_sparc.sh \
    $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} elf32_sparc "$(tdir_elf32_sparc)"
@@ -103,8 +103,8 @@ $OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
  eelf32_i860.c: $(srcdir)/emulparams/elf32_i860.sh \
    $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} elf32_i860 "$(tdir_elf32_i860)"
-@@ -608,6 +634,10 @@ eelf32ppc_fbsd.c: $(srcdir)/emulparams/e
-   $(srcdir)/emulparams/elf32ppc.sh \
+@@ -700,6 +726,10 @@ eelf32ppc_fbsd.c: $(srcdir)/emulparams/e
+   $(srcdir)/emulparams/elf32ppc.sh $(srcdir)/emultempl/ppc32elf.em \
    $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} elf32ppc_fbsd "$(tdir_elf32ppc_fbsd)"
 +eelf32ppc_obsd.c: $(srcdir)/emulparams/elf32ppc_obsd.sh \
@@ -112,9 +112,9 @@ $OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
 +  $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
 +	${GENSCRIPTS} elf32ppc_obsd "$(tdir_elf32ppc_obsd)"
  eelf32ppcsim.c: $(srcdir)/emulparams/elf32ppcsim.sh \
-   $(srcdir)/emulparams/elf32ppc.sh \
+   $(srcdir)/emulparams/elf32ppc.sh $(srcdir)/emultempl/ppc32elf.em \
    $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
-@@ -633,6 +663,10 @@ eelf64alpha_fbsd.c: $(srcdir)/emulparams
+@@ -734,6 +764,10 @@ eelf64alpha_fbsd.c: $(srcdir)/emulparams
    $(srcdir)/emulparams/elf64alpha.sh \
    $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} elf64alpha_fbsd "$(tdir_elf64alpha_fbsd)"
@@ -125,7 +125,7 @@ $OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
  eelf64alpha_nbsd.c: $(srcdir)/emulparams/elf64alpha_nbsd.sh \
    $(srcdir)/emulparams/elf64alpha.sh \
    $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
-@@ -663,6 +697,10 @@ eelf64_sparc_fbsd.c: $(srcdir)/emulparam
+@@ -764,6 +798,10 @@ eelf64_sparc_fbsd.c: $(srcdir)/emulparam
    $(srcdir)/emulparams/elf64_sparc.sh \
    $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} elf64_sparc_fbsd "$(tdir_elf64_sparc_fbsd)"
@@ -136,7 +136,7 @@ $OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
  eelf64bmip.c: $(srcdir)/emulparams/elf64bmip.sh \
    $(srcdir)/emulparams/elf32bmipn32.sh \
    $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
-@@ -693,6 +731,10 @@ eelf_x86_64_fbsd.c: $(srcdir)/emulparams
+@@ -794,6 +832,10 @@ eelf_x86_64_fbsd.c: $(srcdir)/emulparams
    $(srcdir)/emulparams/elf_x86_64.sh \
    $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} elf_x86_64_fbsd "$(tdir_elf_x86_64_fbsd)"
@@ -147,7 +147,7 @@ $OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
  eelf_i386_be.c: $(srcdir)/emulparams/elf_i386_be.sh \
    $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} elf_i386_be "$(tdir_elf_i386_be)"
-@@ -703,6 +745,10 @@ eelf_i386_fbsd.c: $(srcdir)/emulparams/e
+@@ -804,6 +846,10 @@ eelf_i386_fbsd.c: $(srcdir)/emulparams/e
    $(srcdir)/emulparams/elf_i386.sh \
    $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} elf_i386_fbsd "$(tdir_elf_i386_fbsd)"
@@ -158,7 +158,7 @@ $OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
  eelf_i386_ldso.c: $(srcdir)/emulparams/elf_i386_ldso.sh \
    $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} elf_i386_ldso "$(tdir_elf_i386_ldso)"
-@@ -809,6 +855,9 @@ ei386msdos.c: $(srcdir)/emulparams/i386m
+@@ -924,6 +970,9 @@ ei386msdos.c: $(srcdir)/emulparams/i386m
  ei386nbsd.c:	$(srcdir)/emulparams/i386nbsd.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/aout.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} i386nbsd "$(tdir_i386nbsd)"
@@ -168,7 +168,7 @@ $OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
  ei386nto.c:	$(srcdir)/emulparams/i386nto.sh \
    $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} i386nto "$(tdir_i386nto)"
-@@ -866,6 +915,9 @@ em68klynx.c: $(srcdir)/emulparams/m68kly
+@@ -981,6 +1030,9 @@ em68klynx.c: $(srcdir)/emulparams/m68kly
  em68knbsd.c:	$(srcdir)/emulparams/m68knbsd.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/aout.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} m68knbsd "$(tdir_m68knbsd)"
@@ -178,7 +178,7 @@ $OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
  em68kpsos.c:	$(srcdir)/emulparams/m68kpsos.sh \
    $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/psos.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} m68kpsos "$(tdir_m68kpsos)"
-@@ -1025,6 +1077,9 @@ esparclynx.c: $(srcdir)/emulparams/sparc
+@@ -1322,6 +1374,9 @@ esparclynx.c: $(srcdir)/emulparams/sparc
  esparcnbsd.c:	$(srcdir)/emulparams/sparcnbsd.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/aout.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} sparcnbsd "$(tdir_sparcnbsd)"
@@ -188,7 +188,7 @@ $OpenBSD: patch-ld_Makefile_am,v 1.7 2003/07/28 05:12:01 brad Exp $
  est2000.c: $(srcdir)/emulparams/st2000.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/st2000.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} st2000 "$(tdir_st2000)"
-@@ -1212,7 +1267,7 @@ install-exec-local: ld-new$(EXEEXT)
+@@ -1518,7 +1573,7 @@ install-exec-local: ld-new$(EXEEXT)
  	$(mkinstalldirs) $(DESTDIR)$(bindir) $(DESTDIR)$(tooldir)/bin
  	@list='$(noinst_PROGRAMS)'; for p in $$list; do \
  	  if test -f $$p; then \

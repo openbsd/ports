@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2003/07/28 05:12:00 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2003/10/11 00:52:21 brad Exp $
 
 COMMENT=		"GNU development tools"
 
-V=			2.13.2.1
+V=			2.14
 DISTNAME=		binutils-$V
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GNU:=binutils/}
+EXTRACT_SUFX=		.tar.bz2
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -39,7 +40,6 @@ SEPARATE_BUILD=		flavored
 .if !empty(FLAVOR:L) && ${FLAVOR:L} != ${MACHINE_ARCH}
 CONFIGURE_ARGS+=	--target=${FLAVOR:L}-unknown-openbsd${OSREV}
 TARGET_ARCH=		${FLAVOR:L}
-PLIST=			${PKGDIR}/PLIST.cross
 FULLPKGNAME=		binutils-${TARGET_ARCH}-$V
 .if ${FLAVOR} == "x86_64" || ${FLAVOR} == "sparc64" || ${FLAVOR} == "alpha"
 CONFIGURE_ARGS+=	--enable-64-bit-bfd
@@ -53,7 +53,20 @@ TARGET_DIR=		$${PREFIX}/${TARGET_ARCH}-unknown-openbsd${OSREV}
 REGRESS_TARGET=		check
 REGRESS_DEPENDS=	::devel/dejagnu
 
-FILES=			ar nm-new objdump ranlib size strings strip-new 
+PLIST_ARCH?=
+.if !empty(FLAVOR:L)
+. if ${FLAVOR:L} == "armeb"
+    PLIST_ARCH=	arm
+. else
+    PLIST_ARCH= ${FLAVOR:L}
+. endif
+.else
+ PLIST_ARCH= ${MACHINE_ARCH}
+.endif
+
+SED_PLIST+=		|sed -e '/^%%arch%%$$/r${PKGDIR}/PFRAG.${PLIST_ARCH}' -e '//d'
+
+FILES=			addr2line ar nm-new objdump ranlib readelf size strings strip-new 
 
 EMULPARAMS=		i386obsd.sh sparcobsd.sh m68kobsd.sh \
 			elf32_sparc_obsd.sh elf32ppc_obsd.sh \
@@ -75,16 +88,15 @@ post-patch:
 do-install:
 	${INSTALL_DATA_DIR} ${TARGET_DIR}/bin
 	${INSTALL_DATA_DIR} ${TARGET_DIR}/man/man1
-	if [ -f ${WRKBUILD}/gprof/gprof ]; then \
-	  cd ${WRKBUILD};  \
-	     ${INSTALL_PROGRAM} gprof/gprof ${TARGET_DIR}/bin; \
-	     ${INSTALL_MAN} gprof/gprof.1 ${TARGET_DIR}/man/man1; \
-	fi
+	${INSTALL_DATA_DIR} ${TARGET_DIR}/lib/ldscripts
 	cd ${WRKBUILD} && {						\
+	    ${INSTALL_PROGRAM} binutils/addr2line ${TARGET_DIR}/bin;	\
+	    ${INSTALL_PROGRAM} binutils/readelf ${TARGET_DIR}/bin;	\
 	    ${INSTALL_PROGRAM} gas/as-new ${TARGET_DIR}/bin/as;		\
 	    ${INSTALL_PROGRAM} ld/ld-new ${TARGET_DIR}/bin/ld;		\
 	    ${INSTALL_MAN} gas/doc/as.1 ${TARGET_DIR}/man/man1;		\
 	    ${INSTALL_MAN} ld/ld.1 ${TARGET_DIR}/man/man1;		\
+	    ${INSTALL_DATA} ld/ldscripts/* ${TARGET_DIR}/lib/ldscripts;	\
 	    for s in ${FILES}; do					\
 		d=`echo $${s} | sed s/-new//`;				\
 		${INSTALL_PROGRAM} binutils/$${s} ${TARGET_DIR}/bin/$${d}; \

@@ -1,12 +1,12 @@
-$OpenBSD: patch-binutils_bucomm_h,v 1.4 2003/06/08 03:04:50 brad Exp $
---- binutils/bucomm.h.orig	Sun Jul 29 01:31:43 2001
-+++ binutils/bucomm.h	Sun Mar 16 17:19:58 2003
-@@ -168,7 +168,7 @@ void list_supported_architectures PARAMS
+$OpenBSD: patch-binutils_bucomm_h,v 1.5 2003/10/11 00:52:22 brad Exp $
+--- binutils/bucomm.h.orig	2003-03-24 06:28:35.000000000 -0500
++++ binutils/bucomm.h	2003-09-04 02:26:28.000000000 -0400
+@@ -182,7 +182,7 @@ void print_arelt_descr
+   PARAMS ((FILE *, bfd *, bfd_boolean));
  
- void print_arelt_descr PARAMS ((FILE *file, bfd *abfd, boolean verbose));
+ char *make_tempname
+-  PARAMS ((char *));
++  PARAMS ((char *, int));
  
--char *make_tempname PARAMS ((char *));
-+char *make_tempname PARAMS ((char *, int));
- 
- bfd_vma parse_vma PARAMS ((const char *, const char *));
- 
+ bfd_vma parse_vma
+   PARAMS ((const char *, const char *));
