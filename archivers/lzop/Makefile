@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2000/09/23 19:59:51 danh Exp $
+# $OpenBSD: Makefile,v 1.7 2001/03/28 19:14:00 danh Exp $
 # $FreeBSD: ports/archivers/lzop/Makefile,v 1.3 2000/06/22 05:51:49 will Exp $
+
+COMMENT=	"fast file compressor similar to gzip"
 
 DISTNAME=	lzop-1.00
 CATEGORIES=	archivers
-NEED_VERSION=	1.334
+NEED_VERSION=	1.364
 MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/lzo-download/
 
 HOMEPAGE=	http://wildsau.idv.uni-linz.ac.at/mfx/lzop.html
