@@ -1,0 +1,11 @@
+--- adcomplain.pl.orig	Mon Jun 26 15:57:58 2000
++++ adcomplain.pl	Mon Jun 26 15:58:18 2000
+@@ -1,7 +1,4 @@
+-#! /bin/sh -- # -*- perl -*-
+-# first line invokes sh.  Some systems may need to refer to perl directly, i.e.:
+-
+-#! /bin/perl
++#! /usr/bin/perl
+ 
+ # But the first way is preferable, because we have a trick (below) that
+ # allows perl to be _anywhere_ in the user's path.  The intent is to reduce
