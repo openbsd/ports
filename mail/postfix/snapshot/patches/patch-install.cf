@@ -1,4 +1,0 @@
---- /dev/null 		Fri Jan  4 11:30:49 2002
-+++ conf/install.cf	Fri Jan  4 11:30:49 2002
-@@ -0,0 +1 @@
-+setgid=maildrop

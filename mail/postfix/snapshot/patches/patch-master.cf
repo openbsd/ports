@@ -1,34 +1,32 @@
-$Id: patch-master.cf,v 1.5 2001/08/09 07:37:38 jakob Exp $
-
---- conf/master.cf.orig	Tue Aug  7 00:59:13 2001
-+++ conf/master.cf	Thu Aug  9 09:27:53 2001
+--- conf/master.cf.orig	Tue Jan  8 16:08:32 2002
++++ conf/master.cf	Tue Jan  8 16:18:38 2002
 @@ -68,22 +68,22 @@
  # service type	private	unpriv	chroot	wakeup	maxproc	command + args
  # 		(yes)	(yes)	(yes)	(never)	(50)
  # ==========================================================================
 -smtp	  inet	n	-	n	-	-	smtpd
 -#628	  inet	n	-	n	-	-	qmqpd
--pickup	  fifo	n	n	n	60	1	pickup
--cleanup	  unix	-	-	n	-	0	cleanup
+-pickup	  fifo	n	-	n	60	1	pickup
+-cleanup	  unix	n	-	n	-	0	cleanup
 -qmgr	  fifo	n	-	n	300	1	qmgr
 -#qmgr	  fifo	n	-	n	300	1	nqmgr
 -rewrite	  unix	-	-	n	-	-	trivial-rewrite
 -bounce	  unix	-	-	n	-	0	bounce
 -defer	  unix	-	-	n	-	0	bounce
--flush	  unix	-	-	n	1000?	0	flush
+-flush	  unix	n	-	n	1000?	0	flush
 -smtp	  unix	-	-	n	-	-	smtp
 -showq     unix	n	-	n	-	-	showq
 -error     unix	-	-	n	-	-	error
 +smtp	  inet	n	-	-	-	-	smtpd
 +#628	  inet	n	-	-	-	-	qmqpd
-+pickup	  fifo	n	n	-	60	1	pickup
-+cleanup	  unix	-	-	-	-	0	cleanup
++pickup	  fifo	n	-	-	60	1	pickup
++cleanup	  unix	n	-	-	-	0	cleanup
 +qmgr	  fifo	n	-	-	300	1	qmgr
 +#qmgr	  fifo	n	-	-	300	1	nqmgr
 +rewrite	  unix	-	-	-	-	-	trivial-rewrite
 +bounce	  unix	-	-	-	-	0	bounce
 +defer	  unix	-	-	-	-	0	bounce
-+flush	  unix	-	-	-	1000?	0	flush
++flush	  unix	n	-	-	1000?	0	flush
 +smtp	  unix	-	-	-	-	-	smtp
 +showq     unix	n	-	-	-	-	showq
 +error     unix	-	-	-	-	-	error

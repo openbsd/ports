@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2002/01/04 12:59:15 jakob Exp $
+# $OpenBSD: INSTALL,v 1.3 2002/01/08 20:12:02 jakob Exp $
 #
 # Pre/post-installation setup of postfix
 
@@ -13,12 +13,12 @@ SPOOL_DIR=/var/spool/postfix
 #
 do_accts()
 {
-    groupinfo -e maildrop
+    groupinfo -e postdrop
     if [ $? -eq 0 ]; then
-	echo "-> Using group 'maildrop' for postdrop"
+	echo "-> Using group 'postdrop' for postdrop"
     else
-	echo "-> Creating maildrop group"
-	groupadd maildrop
+	echo "-> Creating postdrop group"
+	groupadd postdrop
     fi
 
     userinfo -e postfix
@@ -28,7 +28,7 @@ do_accts()
 	echo "-> Creating postfix user & group"
 	useradd \
 	    -g =uid \
-	    -c "Disgruntled Postal Worker" \
+	    -c "Postfix Daemon" \
 	    -d /nonexistent \
 	    -s /sbin/nologin \
 	    -p \* \
@@ -101,11 +101,10 @@ do_configs()
 	echo ""
     fi
 
-    # Configure setgid maildrop
-    install -o root -g wheel -m 555 $SAMPLE_CONFIG_DIR/postfix-script-sgid $CONFIG_DIR/postfix-script
-    chgrp maildrop $PREFIX/sbin/postdrop
-    chmod 2755 $PREFIX/sbin/postdrop
-    install -o root -g wheel -m 444 $SAMPLE_CONFIG_DIR/install.cf $CONFIG_DIR/install.cf
+    # Configure setgid postdrop
+    install -o root -g wheel -m 555 $SAMPLE_CONFIG_DIR/postfix-script $CONFIG_DIR/postfix-script
+    chgrp postdrop $PREFIX/sbin/postdrop $PREFIX/sbin/postqueue
+    chmod 2755 $PREFIX/sbin/postdrop $PREFIX/sbin/postqueue
 }
 
 # Function: tell the user what s/he needs to do to use the port just installed

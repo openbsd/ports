@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/01/04 12:59:15 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/01/08 20:12:02 jakob Exp $
 @pkgcfl postfix-*
 libexec/postfix/bounce
 libexec/postfix/cleanup
@@ -30,6 +30,7 @@ man/man1/postkick.1
 man/man1/postlock.1
 man/man1/postlog.1
 man/man1/postmap.1
+man/man1/postqueue.1
 man/man1/postsuper.1
 man/man1/sendmail.1
 man/man5/access.5
@@ -70,6 +71,7 @@ sbin/postkick
 sbin/postlock
 sbin/postlog
 sbin/postmap
+sbin/postqueue
 sbin/postsuper
 sbin/qmqp-source
 sbin/sendmail
@@ -114,6 +116,7 @@ share/doc/postfix/postkick.1.html
 share/doc/postfix/postlock.1.html
 share/doc/postfix/postlog.1.html
 share/doc/postfix/postmap.1.html
+share/doc/postfix/postqueue.1.html
 share/doc/postfix/postsuper.1.html
 share/doc/postfix/qmgr.8.html
 share/doc/postfix/qmqpd.8.html
@@ -140,15 +143,11 @@ share/examples/postfix/LICENSE
 share/examples/postfix/access
 share/examples/postfix/aliases
 share/examples/postfix/canonical
-share/examples/postfix/install.cf
 share/examples/postfix/main.cf
 share/examples/postfix/main.cf.default
 share/examples/postfix/master.cf
 share/examples/postfix/pcre_table
 share/examples/postfix/postfix-script
-share/examples/postfix/postfix-script-diff
-share/examples/postfix/postfix-script-nosgid
-share/examples/postfix/postfix-script-sgid
 share/examples/postfix/regexp_table
 share/examples/postfix/relocated
 share/examples/postfix/sample-aliases.cf
