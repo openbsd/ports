@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/07/03 21:05:13 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2000/07/31 08:09:56 jakob Exp $
 
 DISTNAME=		gifsicle-1.20
 CATEGORIES=     	graphics
@@ -11,7 +11,10 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-MASTER_SITES=		http://www.lcdf.org/gifsicle/
+MASTER_SITES=		http://www.lcdf.org/gifsicle/ \
+			ftp://ftp.lcdf.org/pub/ \
+			ftp://ftp.lcdf.org/pub/OLD-VERSIONS/
+
 HOMEPAGE=		http://www.lcdf.org/gifsicle/
 
 CONFIGURE_STYLE=	gnu
