@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1997/12/03 04:18:28 angelos Exp $
+# $OpenBSD: Makefile,v 1.5 1997/12/12 05:48:12 angelos Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -16,7 +16,7 @@
 #    SUBDIR += gifmerge
 #    SUBDIR += giftool
 #    SUBDIR += giftrans
-#    SUBDIR += gimp
+     SUBDIR += gimp
 #    SUBDIR += gimp-devel
 #    SUBDIR += hdf
 #    SUBDIR += hobbes-icons-xpm
