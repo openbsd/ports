@@ -1,6 +1,6 @@
---- Makefile.PL.orig	Thu Aug 16 22:03:38 2001
-+++ Makefile.PL	Tue Dec 25 17:07:47 2001
-@@ -13,7 +13,7 @@
+--- Makefile.PL.orig	Wed Jun 26 15:18:11 2002
++++ Makefile.PL	Fri Jul 12 01:12:32 2002
+@@ -13,7 +13,7 @@ my $currdir = dirname($0) || '.';
  chdir($currdir) || die("can't change to $currdir: $!");
  
  # FIND POSSIBLE SSL INSTALLATIONS
@@ -9,7 +9,7 @@
  my @CANDIDATE;
  my $open_ssl = 0;
  my $dir;
-@@ -47,7 +47,7 @@
+@@ -47,7 +47,7 @@ if($opt_default && (@CANDIDATE == 1) && 
  	unless($CANDIDATE[0][0]) {
  	    print "No OpenSSL installation found, usually in $POSSIBLE_SSL_DIRS[0]\n";
  	}

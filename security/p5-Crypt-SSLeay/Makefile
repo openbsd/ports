@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2002/07/10 20:48:15 avsm Exp $
+# $OpenBSD: Makefile,v 1.14 2002/07/11 17:15:03 shell Exp $
 
 COMMENT=	"library to provide LWP https support via OpenSSL"
 
-DISTNAME=	Crypt-SSLeay-0.40
+DISTNAME=	Crypt-SSLeay-0.41
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
-NEED_VERSION=	1.503
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Crypt/}
 
