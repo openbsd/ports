@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/29 15:15:18 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2003/05/11 21:00:03 wilfried Exp $
 
 COMMENT=	"perl interface to tar archives"
 VERSION=	0.22
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=	::archivers/p5-Compress-Zlib
+RUN_DEPENDS=	:p5-Compress-Zlib-*:archivers/p5-Compress-Zlib
 
 CONFIGURE_STYLE= perl
 
