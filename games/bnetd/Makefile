@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/04 06:59:21 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/05/06 02:15:12 brad Exp $
 
 DISTNAME=	bnetd-0.4.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.bnetd.org/files/
+
+BROKEN=		"Newer version available"
 
 MAINTAINER=	brad@openbsd.org
 
