@@ -1,6 +1,12 @@
 --- Makefile.in.orig	Thu Nov 26 11:03:29 1998
-+++ Makefile.in	Thu Dec 23 22:55:03 1999
-@@ -19,13 +19,14 @@
++++ Makefile.in	Thu Sep 14 08:44:26 2000
+@@ -15,16 +15,19 @@
+ CPPFLAGS      = $(INCLUDE_DIRS) $(DEFINES)
+ 
+ # Installation directories (and install program)
++DESTDIR         = 
++
+ prefix          = @prefix@
  exec_prefix     = @exec_prefix@
  INSTALL_INCLUDE = @includedir@
  INSTALL_LIBRARY = @libdir@
@@ -11,70 +17,43 @@
  AR            = @AR@
  ARFLAGS       = -ru
  RANLIB        = @RANLIB@
++LIBTOOL       = libtool --quiet
  
-+.SUFFIXES: .c .o .so
  
  # Source for the library itself -- note that we define LIBSRC and
- # LIBOBJ this way (instead of just LIBOBJ=$(LIBSRC:.c=.o) because
-@@ -37,12 +38,13 @@
- 		mono.c ordered.c ordered2.c mb_ordered.c
- LIBSRC        = @libsrc@
- LIBOBJ        = @libobj@
-+SHLIBOBJ      = @shlibobj@
+@@ -48,7 +51,7 @@
  
- 
- # Other files of interest
- 
- LIBRARY       = libmpeg.a
--SHLIB         = libmpeg.so
-+SHLIB         = libmpeg.so.13.1
- HEADER        = mpeg.h
- EXTRAS        = @extras@
- 
-@@ -50,10 +52,16 @@
+ # Implicit targets
  .c.o:
- 		$(CC) -c $(CFLAGS) $(CPPFLAGS) $<
+-		$(CC) -c $(CFLAGS) $(CPPFLAGS) $<
++		$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) $(CPPFLAGS) $<
  
-+.c.so:
-+		$(CC) -c $(CFLAGS) $(CPPFLAGS) -fpic -DPIC $< -o $@
  
  # Library/cleanup targets: 
+@@ -60,20 +63,19 @@
+ shlib:          $(SHLIB)
  
-+.if defined(NO_SHARED_LIBRARY) && ${NO_SHARED_LIBRARY:U} == YES
- all:		lib $(EXTRAS)
-+.else
-+all:		lib shlib $(EXTRAS)
-+.endif
+ $(LIBRARY):	$(LIBOBJ)
+-		$(AR) $(ARFLAGS) $(LIBRARY) $(LIBOBJ)
+-		$(RANLIB) $(LIBRARY)
++		$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libmpeg.la \
++			$(LIBOBJ:.o=.lo) -version-info 13:1:0 -rpath $(INSTALL_LIBRARY)
++
  
- lib:		$(LIBRARY)
+ $(SHLIB):	$(LIBOBJ)
+ 		$(CC) -shared -o $(SHLIB) $(LIBOBJ)
  
-@@ -63,17 +71,22 @@
- 		$(AR) $(ARFLAGS) $(LIBRARY) $(LIBOBJ)
- 		$(RANLIB) $(LIBRARY)
- 
--$(SHLIB):	$(LIBOBJ)
--		$(CC) -shared -o $(SHLIB) $(LIBOBJ)
-+$(SHLIB):	$(SHLIBOBJ)
-+		ld -Bshareable -Bforcearchive -o $(SHLIB) $(SHLIBOBJ)
- 
-+.if defined(NO_SHARED_LIBRARY) && ${NO_SHARED_LIBRARY:U} == YES
  install:	$(LIBRARY)
 -		$(INSTALL) -d $(INSTALL_INCLUDE) $(INSTALL_LIBRARY)
 -		$(INSTALL) -m 0644 $(HEADER) $(INSTALL_INCLUDE)/$(HEADER)
 -		$(INSTALL) -m 0644 $(LIBRARY) $(INSTALL_LIBRARY)/$(LIBRARY)
 -		@if test -f $(SHLIB) ; then echo "warning: $(SHLIB) *not* installed (installing shared libraries is too system-specific)" ; fi
-+.else
-+install:	$(LIBRARY) $(SHLIB)
-+.endif
-+		$(INSTALL_DATA) $(HEADER) $(INSTALL_INCLUDE)/$(HEADER)
-+		$(INSTALL_DATA) $(LIBRARY) $(INSTALL_LIBRARY)/$(LIBRARY)
-+		@if [ -f $(SHLIB) ]; then \
-+		 $(INSTALL_DATA) $(SHLIB) $(INSTALL_LIBRARY)/$(SHLIB) ;\
-+		fi
++		$(INSTALL_DATA) $(HEADER) $(DESTDIR)$(INSTALL_INCLUDE)
++		libtool --mode=install $(INSTALL_DATA) libmpeg.la $(DESTDIR)$(INSTALL_LIBRARY)
  
  clean:
 -		rm -f $(LIBRARY) $(EXTRAS) $(LIBOBJ) core
-+		rm -f $(LIBRARY) $(SHLIB) $(EXTRAS) $(LIBOBJ) core
++		rm -f $(LIBRARY) $(SHLIB) $(EXTRAS) $(LIBOBJ) $(LIBOBJ:.o=.lo) core
  		cd extras && $(MAKE) clean
  
  distclean:	clean
