@@ -1,0 +1,11 @@
+--- antiword.h.orig	Sat Feb 17 04:43:25 2001
++++ antiword.h	Sat Feb 17 04:47:04 2001
+@@ -41,7 +41,7 @@
+  #endif /* __riscos */
+ #endif /* !PATH_MAX */
+ 
+-#define SIZE_T_MAX		(size_t)UINT_MAX
++/* #define SIZE_T_MAX		(size_t)UINT_MAX */
+ 
+ #if defined(__riscos)
+ #define FILE_SEPARATOR		"."
