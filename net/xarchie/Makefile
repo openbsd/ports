@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2000/04/09 17:37:39 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/24 01:42:37 kevlo Exp $
 # $FreeBSD: Makefile,v 1.12 1996/12/01 01:23:22 obrien Exp $
 
 DISTNAME=	xarchie-2.0.10
 CATEGORIES=	net
-FAKE=No
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
@@ -14,6 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
+FAKE=		Yes
 
 .include <bsd.port.mk>
