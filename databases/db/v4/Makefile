@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/03/07 18:55:21 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2004/05/27 21:05:25 pvalchev Exp $
 
 REVISION=	4
 VERSION=	${REVISION}.2.52
@@ -11,9 +11,5 @@ PATCHFILES=	patch.${VERSION}.1:0 \
 CONFIGURE_STYLE=gnu
 
 DEST_SUBDIR=	${REVISION}
-
-.if ${MACHINE_ARCH} == "powerpc"                                                    
-CONFIGURE_ARGS+=--enable-posixmutexes                                       
-.endif                                                                              
 
 .include <bsd.port.mk>
