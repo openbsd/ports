@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_audio_SDL_audio_c,v 1.5 2001/07/04 20:17:29 pvalchev Exp $
---- src/audio/SDL_audio.c.orig	Wed Jul  4 14:05:04 2001
-+++ src/audio/SDL_audio.c	Wed Jul  4 14:05:20 2001
+$OpenBSD: patch-src_audio_SDL_audio_c,v 1.6 2001/07/06 15:25:21 pvalchev Exp $
+--- src/audio/SDL_audio.c.orig	Fri Jun 15 19:51:42 2001
++++ src/audio/SDL_audio.c	Fri Jul  6 08:51:50 2001
 @@ -47,7 +47,7 @@ static AudioBootStrap *bootstrap[] = {
  #ifdef ALSA_SUPPORT
  	&ALSA_bootstrap,
  #endif
 -#ifdef __OpenBSD__
-+#if defined(__OpenBSD__) && !defined(OSS_SUPPORT)
++#if defined(__OpenBSD__) && !defined(OSS_SUPPORT) && !defined(ESD_SUPPORT)
  	&OBSD_bootstrap,
  #endif
  #if (defined(unix) && !defined(__CYGWIN32__)) && \
