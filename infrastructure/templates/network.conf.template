@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.38 2002/05/13 07:45:45 jsyn Exp $
+# $OpenBSD: network.conf.template,v 1.39 2002/05/15 18:20:43 espie Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -45,213 +45,213 @@ MASTER_SITE_BACKUP?=	\
 
 # Popular master sites, most useful sites come first.
 MASTER_SITE_GNU+=	\
-	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
-	ftp://gatekeeper.dec.com/pub/GNU/%SUBDIR%/ \
-	ftp://ftp.uu.net/archive/systems/gnu/%SUBDIR%/ \
-	ftp://ftp.de.uu.net/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/gnu/prep/%SUBDIR%/ \
-	ftp://ftp.leo.org/pub/comp/os/unix/gnu/%SUBDIR%/ \
-	ftp://ftp.digex.net/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.wustl.edu/systems/gnu/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.mirror.ac.uk/sites/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
-	ftp://sunsite.org.uk/Mirrors/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.informatik.hu-berlin.de/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.rediris.es/mirror/gnu/%SUBDIR%/ \
-	ftp://ftp.lip6.fr/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.uvsq.fr/pub/gnu/%SUBDIR%/ \
-  	ftp://ftp.sunet.se/pub/gnu/%SUBDIR%/
+	ftp://ftp.gnu.org/gnu/ \
+	ftp://gatekeeper.dec.com/pub/GNU/ \
+	ftp://ftp.uu.net/archive/systems/gnu/ \
+	ftp://ftp.de.uu.net/pub/gnu/ \
+	ftp://ftp.funet.fi/pub/gnu/prep/ \
+	ftp://ftp.leo.org/pub/comp/os/unix/gnu/ \
+	ftp://ftp.digex.net/pub/gnu/ \
+	ftp://ftp.wustl.edu/systems/gnu/ \
+	ftp://ftp.kddlabs.co.jp/pub/gnu/ \
+	ftp://ftp.mirror.ac.uk/sites/ftp.gnu.org/pub/gnu/ \
+	ftp://sunsite.org.uk/Mirrors/ftp.gnu.org/pub/gnu/ \
+	ftp://ftp.informatik.hu-berlin.de/pub/gnu/ \
+	ftp://ftp.rediris.es/mirror/gnu/ \
+	ftp://ftp.lip6.fr/pub/gnu/ \
+	ftp://ftp.chg.ru/pub/gnu/ \
+	ftp://ftp.uvsq.fr/pub/gnu/ \
+  	ftp://ftp.sunet.se/pub/gnu/
 
 MASTER_SITE_XCONTRIB+=	\
-	ftp://crl.dec.com/pub/X11/contrib/%SUBDIR%/ \
-	ftp://uiarchive.uiuc.edu/mirrors/ftp/ftp.x.org/contrib/%SUBDIR%/ \
-	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/%SUBDIR%/ \
-	ftp://ftp.duke.edu/pub/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.x.org/contrib/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/X11/contrib/%SUBDIR%/ \
-	ftp://mirror.xmission.com/X/contrib/%SUBDIR%/ \
-	ftp://ftp2.x.org/contrib/%SUBDIR%/ \
-	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.is.co.za/x/contrib/%SUBDIR%/ \
-	ftp://ftp.uvsq.fr/pub/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.dl.ac.uk/src/X/contrib/%SUBDIR%/ \
-	ftp://sunsite.org.uk/Mirrors/ftp.x.org/contrib/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/X11/contrib/%SUBDIR%/
+	ftp://crl.dec.com/pub/X11/contrib/ \
+	ftp://uiarchive.uiuc.edu/mirrors/ftp/ftp.x.org/contrib/ \
+	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/ \
+	ftp://ftp.duke.edu/pub/X11/contrib/ \
+	ftp://ftp.x.org/contrib/ \
+	ftp://ftp.sunet.se/pub/X11/contrib/ \
+	ftp://ftp.kddlabs.co.jp/X11/contrib/ \
+	ftp://mirror.xmission.com/X/contrib/ \
+	ftp://ftp2.x.org/contrib/ \
+	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/ \
+	ftp://ftp.is.co.za/x/contrib/ \
+	ftp://ftp.uvsq.fr/pub/X11/contrib/ \
+	ftp://ftp.dl.ac.uk/src/X/contrib/ \
+	ftp://sunsite.org.uk/Mirrors/ftp.x.org/contrib/ \
+	ftp://ftp.chg.ru/pub/X11/contrib/
 
 MASTER_SITE_SUNSITE+=	\
-	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
-	ftp://ftp.oit.unc.edu/pub/Linux/%SUBDIR%/ \
-	http://www.ibiblio.org/pub/Linux/%SUBDIR%/ \
-	http://linux.dsi.internet2.edu/%SUBDIR%/ \
-	ftp://ftp.unicamp.br/pub/systems/Linux/%SUBDIR%/ \
-	ftp://ftp.tuwien.ac.at/z3/opsys/linux/ibiblio/%SUBDIR%/ \
-	ftp://ftp.univie.ac.at/systems/linux/metalab/%SUBDIR%/ \
-	ftp://sunsite.cnlab-switch.ch/mirror/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.cs.tu-berlin.de/pub/linux/Mirrors/sunsite.unc.edu/%SUBDIR%/ \
-	ftp://ftp.fu-berlin.de/unix/linux/mirrors/sunsite.unc.edu/%SUBDIR%/ \
-	ftp://ftp.uni-bremen.de/pub/mirrors/sunsite/%SUBDIR%/ \
-	ftp://ftp.uni-jena.de/pub/linux/MIRROR.sunsite/%SUBDIR%/ \
-	ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.uni-tuebingen.de/pub/linux/mirrors/ftp.metalab.unc.edu/pub/Linux/%SUBDIR%/ \
-	ftp://ftp.uni-magdeburg.de/pub/mirror/linux/ftp.metalab.unc.edu/%SUBDIR%/ \
-	ftp://ftp.uni-stuttgart.de/pub/mirror/sunsite.unc.edu/pub/Linux/%SUBDIR%/ \
-	ftp://ftp.uniovi.es/pub1/linux/%SUBDIR%/ \
-	ftp://ftp.lip6.fr/pub/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.medasys-digital-systems.fr/pub1/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.uvsq.fr/pub5/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.leidenuniv.nl/pub/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.nvg.ntnu.no/pub/mirrors/metalab.unc.edu/%SUBDIR%/ \
-	ftp://ftp.icm.edu.pl/vol/rzm1/linux-sunsite/%SUBDIR%/ \
-	ftp://ftp.man.poznan.pl/vols/vol1/sunsite/%SUBDIR%/ \
-	ftp://ftp.pku.edu.cn/pub/linux/%SUBDIR%/ \
-	ftp://ftp.cse.cuhk.edu.hk/pub4/Linux/%SUBDIR%/ \
-	ftp://ftp.kobe-u.ac.jp/pub/Linux/metalab.unc.edu/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp//Linux/metalab.unc.edu/%SUBDIR%/ \
-	ftp://sunsite.sut.ac.jp/pub/archives/linux/sunsite-unc/%SUBDIR%/ \
-	ftp://ftp.dacom.co.kr/pub/mirrors/metalab.unc.edu/Linux/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/Linux/mirrors/metalab/%SUBDIR%/ \
-	ftp://sunsite.doc.ic.ac.uk/packages/linux/sunsite.unc-mirror/%SUBDIR%/ \
-	ftp://ftp.nluug.nl/vol/3/metalab/%SUBDIR%/ \
-	ftp://ftp.is.co.za/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/Linux/sunsite/%SUBDIR%/
+	ftp://metalab.unc.edu/pub/Linux/ \
+	ftp://ftp.oit.unc.edu/pub/Linux/ \
+	http://www.ibiblio.org/pub/Linux/ \
+	http://linux.dsi.internet2.edu/ \
+	ftp://ftp.unicamp.br/pub/systems/Linux/ \
+	ftp://ftp.tuwien.ac.at/z3/opsys/linux/ibiblio/ \
+	ftp://ftp.univie.ac.at/systems/linux/metalab/ \
+	ftp://sunsite.cnlab-switch.ch/mirror/linux/sunsite/ \
+	ftp://ftp.cs.tu-berlin.de/pub/linux/Mirrors/sunsite.unc.edu/ \
+	ftp://ftp.fu-berlin.de/unix/linux/mirrors/sunsite.unc.edu/ \
+	ftp://ftp.uni-bremen.de/pub/mirrors/sunsite/ \
+	ftp://ftp.uni-jena.de/pub/linux/MIRROR.sunsite/ \
+	ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.uni-tuebingen.de/pub/linux/mirrors/ftp.metalab.unc.edu/pub/Linux/ \
+	ftp://ftp.uni-magdeburg.de/pub/mirror/linux/ftp.metalab.unc.edu/ \
+	ftp://ftp.uni-stuttgart.de/pub/mirror/sunsite.unc.edu/pub/Linux/ \
+	ftp://ftp.uniovi.es/pub1/linux/ \
+	ftp://ftp.lip6.fr/pub/linux/sunsite/ \
+	ftp://ftp.medasys-digital-systems.fr/pub1/linux/sunsite/ \
+	ftp://ftp.uvsq.fr/pub5/linux/sunsite/ \
+	ftp://ftp.leidenuniv.nl/pub/linux/sunsite/ \
+	ftp://ftp.nvg.ntnu.no/pub/mirrors/metalab.unc.edu/ \
+	ftp://ftp.icm.edu.pl/vol/rzm1/linux-sunsite/ \
+	ftp://ftp.man.poznan.pl/vols/vol1/sunsite/ \
+	ftp://ftp.pku.edu.cn/pub/linux/ \
+	ftp://ftp.cse.cuhk.edu.hk/pub4/Linux/ \
+	ftp://ftp.kobe-u.ac.jp/pub/Linux/metalab.unc.edu/ \
+	ftp://ftp.kddlabs.co.jp//Linux/metalab.unc.edu/ \
+	ftp://sunsite.sut.ac.jp/pub/archives/linux/sunsite-unc/ \
+	ftp://ftp.dacom.co.kr/pub/mirrors/metalab.unc.edu/Linux/ \
+	ftp://ftp.funet.fi/pub/Linux/mirrors/metalab/ \
+	ftp://sunsite.doc.ic.ac.uk/packages/linux/sunsite.unc-mirror/ \
+	ftp://ftp.nluug.nl/vol/3/metalab/ \
+	ftp://ftp.is.co.za/linux/sunsite/ \
+	ftp://ftp.chg.ru/pub/Linux/sunsite/
 
 MASTER_SITE_SOURCEFORGE+=	\
-	http://us.dl.sourceforge.net/%SUBDIR%/ \
-	http://eu.dl.sourceforge.net/%SUBDIR%/ \
-	ftp://us.dl.sourceforge.net/%SUBDIR%/ \
-	ftp://eu.dl.sourceforge.net/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/sourceforge/%SUBDIR%/
+	http://us.dl.sourceforge.net/ \
+	http://eu.dl.sourceforge.net/ \
+	ftp://us.dl.sourceforge.net/ \
+	ftp://eu.dl.sourceforge.net/ \
+	ftp://ftp.kddlabs.co.jp/sourceforge/ \
+	ftp://ftp.chg.ru/pub/sourceforge/
 
 MASTER_SITE_GNOME+=	\
-	ftp://ftp.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
-	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/X11/GNOME/%SUBDIR%/ \
-	ftp://ftp.dit.upm.es/linux/gnome/%SUBDIR%/ \
-	ftp://ftp.tr.gnome.org/pub/GNOME/%SUBDIR%/ \
-	ftp://ftp.no.gnome.org/pub/GNOME/%SUBDIR%/ \
-	ftp://ftp.dataplus.se/pub/linux/gnome/%SUBDIR%/ \
-	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
-	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/www.gnome.org/%SUBDIR%/ \
-	ftp://ftp.sourceforge.net/pub/mirrors/gnome/%SUBDIR%/ \
-	ftp://ftp.uvsq.fr/pub/X11/gnome/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/X11/gnome/%SUBDIR%/ \
-	ftp://ftp.yggdrasil.com/mirrors/site/ftp.gnome.org/pub/GNOME/%SUBDIR%/
+	ftp://ftp.rpmfind.net/linux/gnome.org/ \
+	ftp://ftp.cse.buffalo.edu/pub/Gnome/ \
+	ftp://ftp.sunet.se/pub/X11/GNOME/ \
+	ftp://ftp.dit.upm.es/linux/gnome/ \
+	ftp://ftp.tr.gnome.org/pub/GNOME/ \
+	ftp://ftp.no.gnome.org/pub/GNOME/ \
+	ftp://ftp.dataplus.se/pub/linux/gnome/ \
+	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/ \
+	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/www.gnome.org/ \
+	ftp://ftp.sourceforge.net/pub/mirrors/gnome/ \
+	ftp://ftp.uvsq.fr/pub/X11/gnome/ \
+	ftp://ftp.chg.ru/pub/X11/gnome/ \
+	ftp://ftp.yggdrasil.com/mirrors/site/ftp.gnome.org/pub/GNOME/
 
 MASTER_SITE_PERL_CPAN+=	\
-	ftp://gatekeeper.dec.com/pub/plan/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.sourceforge.net/pub/mirrors/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://bioinfo.weizmann.ac.il/pub/software/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://csociety-ftp.ecn.purdue.edu/pub/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/lang/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/lang/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.auckland.ac.nz/pub/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://mirror.hiwaay.net/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.isu.net.sa/pub/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.bora.net/pub/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://uiarchive.uiuc.edu/pub/ftp/ftp.cpan.org/pub/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.ucr.ac.cr/pub/Unix/CPAN/modules/by-module/%SUBDIR%/ \
-	http://www.cpan.dk/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.cs.colorado.edu/pub/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.uvsq.fr/pub/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.mirror.ac.uk/sites/ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://sunsite.org.uk/packages/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.shellhung.org/pub/CPAN/modules/by-module/%SUBDIR%/
+	ftp://gatekeeper.dec.com/pub/plan/perl/CPAN/modules/by-module/ \
+	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/ \
+	ftp://ftp.sourceforge.net/pub/mirrors/CPAN/modules/by-module/ \
+	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/ \
+	ftp://bioinfo.weizmann.ac.il/pub/software/perl/CPAN/modules/by-module/ \
+	ftp://csociety-ftp.ecn.purdue.edu/pub/CPAN/modules/by-module/ \
+	ftp://ftp.kddlabs.co.jp/lang/perl/CPAN/modules/by-module/ \
+	ftp://ftp.sunet.se/pub/lang/perl/CPAN/modules/by-module/ \
+	ftp://ftp.auckland.ac.nz/pub/perl/CPAN/modules/by-module/ \
+	ftp://mirror.hiwaay.net/CPAN/modules/by-module/ \
+	ftp://ftp.isu.net.sa/pub/CPAN/modules/by-module/ \
+	ftp://ftp.bora.net/pub/CPAN/modules/by-module/ \
+	ftp://uiarchive.uiuc.edu/pub/ftp/ftp.cpan.org/pub/CPAN/modules/by-module/ \
+	ftp://ftp.ucr.ac.cr/pub/Unix/CPAN/modules/by-module/ \
+	http://www.cpan.dk/CPAN/modules/by-module/ \
+	ftp://ftp.cs.colorado.edu/pub/perl/CPAN/modules/by-module/ \
+	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/ \
+	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/ \
+	ftp://ftp.uvsq.fr/pub/perl/CPAN/modules/by-module/ \
+	ftp://ftp.mirror.ac.uk/sites/ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/ \
+	ftp://sunsite.org.uk/packages/perl/CPAN/modules/by-module/ \
+	ftp://ftp.shellhung.org/pub/CPAN/modules/by-module/
 
 MASTER_SITE_TEX_CTAN+=	\
-	ftp://ftp.wustl.edu/packages/TeX/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/TeX/CTAN/%SUBDIR%/ \
-	ftp://ctan.unsw.edu.au/tex-archive/%SUBDIR%/ \
-	ftp://ftp.cise.ufl.edu/tex-archive/%SUBDIR%/ \
-	ftp://ftp.tex.ac.uk/public/ctan/tex-archive/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/CTAN/%SUBDIR%/ \
-	ftp://sunsite.auc.dk/pub/tex/ctan/%SUBDIR%/ \
-	ftp://ctan.tug.org/tex-archive/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/TeX/CTAN/%SUBDIR%/ \
-	ftp://ftp.dante.de/tex-archive/%SUBDIR%/ \
-	ftp://ftp.uvsq.fr/pub/TeX/CTAN/%SUBDIR%/ \
- 	ftp://ftp.sunet.se/pub/text-processing/TeX/%SUBDIR%/
+	ftp://ftp.wustl.edu/packages/TeX/ \
+	ftp://ftp.funet.fi/pub/TeX/CTAN/ \
+	ftp://ctan.unsw.edu.au/tex-archive/ \
+	ftp://ftp.cise.ufl.edu/tex-archive/ \
+	ftp://ftp.tex.ac.uk/public/ctan/tex-archive/ \
+	ftp://ftp.kddlabs.co.jp/CTAN/ \
+	ftp://sunsite.auc.dk/pub/tex/ctan/ \
+	ftp://ctan.tug.org/tex-archive/ \
+	ftp://ftp.chg.ru/pub/TeX/CTAN/ \
+	ftp://ftp.dante.de/tex-archive/ \
+	ftp://ftp.uvsq.fr/pub/TeX/CTAN/ \
+ 	ftp://ftp.sunet.se/pub/text-processing/TeX/
 
 MASTER_SITE_KDE+=	\
-	ftp://ftp.kde.org/pub/kde/%SUBDIR%/ \
-	http://linux.dsi.internet2.edu/X11/kde/%SUBDIR%/ \
-	ftp://ftp.tuniv.szczecin.pl/pub/kde/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/X11/kde/%SUBDIR%/ \
-	ftp://ftp.mirror.ac.uk/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.dataplus.se/pub/linux/kde/%SUBDIR%/ \
-	ftp://ftp.uvsq.fr/pub/X11/kde/%SUBDIR%/ \
- 	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
- 	ftp://ftp.sunet.se/pub/X11/kde/%SUBDIR%/ \
-	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/ftp.kde.org/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/X11/kde/%SUBDIR%/
+	ftp://ftp.kde.org/pub/kde/ \
+	http://linux.dsi.internet2.edu/X11/kde/ \
+	ftp://ftp.tuniv.szczecin.pl/pub/kde/ \
+	ftp://ftp.kddlabs.co.jp/X11/kde/ \
+	ftp://ftp.mirror.ac.uk/sites/ftp.kde.org/pub/kde/ \
+	ftp://ftp.dataplus.se/pub/linux/kde/ \
+	ftp://ftp.uvsq.fr/pub/X11/kde/ \
+ 	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/ \
+ 	ftp://ftp.sunet.se/pub/X11/kde/ \
+	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/ftp.kde.org/ \
+	ftp://ftp.chg.ru/pub/X11/kde/
 
 MASTER_SITE_TCLTK+=	\
-	ftp://ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
-	ftp://mirror.neosoft.com/pub/tcl/mirror/ftp.scriptics.com/%SUBDIR%/ \
-	ftp://sunsite.utk.edu/pub/tcl/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/languages/tcl/tcl/%SUBDIR%/ \
-	ftp://ftp.cs.tu-berlin.de/pub/tcl/distrib/%SUBDIR%/ \
-	ftp://ftp.srcc.msu.su/mirror/ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
-	ftp://ftp.lip6.fr/pub/tcl/distrib/%SUBDIR%/
+	ftp://ftp.scriptics.com/pub/tcl/ \
+	ftp://mirror.neosoft.com/pub/tcl/mirror/ftp.scriptics.com/ \
+	ftp://sunsite.utk.edu/pub/tcl/ \
+	ftp://ftp.funet.fi/pub/languages/tcl/tcl/ \
+	ftp://ftp.cs.tu-berlin.de/pub/tcl/distrib/ \
+	ftp://ftp.srcc.msu.su/mirror/ftp.scriptics.com/pub/tcl/ \
+	ftp://ftp.lip6.fr/pub/tcl/distrib/
 
 MASTER_SITE_AFTERSTEP+=	\
-	ftp://ftp.afterstep.org/%SUBDIR%/ \
-	ftp://ftp.digex.net/pub/X11/window-managers/afterstep/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/X11/AfterStep/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/ \
-	ftp://ftp.linux.co.za/pub/windowmanagers/afterstep/%SUBDIR%/ \
-	ftp://ftp.uvsq.fr/pub/X11/window-managers/afterstep/%SUBDIR%/
+	ftp://ftp.afterstep.org/ \
+	ftp://ftp.digex.net/pub/X11/window-managers/afterstep/ \
+	ftp://ftp.kddlabs.co.jp/X11/AfterStep/ \
+	ftp://ftp.dti.ad.jp/pub/X/AfterStep/ \
+	ftp://ftp.linux.co.za/pub/windowmanagers/afterstep/ \
+	ftp://ftp.uvsq.fr/pub/X11/window-managers/afterstep/
 
 MASTER_SITE_WINDOWMAKER+=	\
-	ftp://ftp.windowmaker.org/pub/%SUBDIR%/ \
-	ftp://ftp.minet.net/pub/windowmaker/%SUBDIR%/ \
-	ftp://ftp.ziobudda.net/pub/Mirrors/ftp.windowmaker.org/%SUBDIR%/ \
-	ftp://ftp.task.gda.pl/mirror/ftp.windowmaker.org/pub/%SUBDIR%/ \
-	ftp://ftp.nectec.or.th/pub/mirrors/windowmaker/%SUBDIR%/ \
-	ftp://sunsite.ulatina.ac.cr/Mirrors/XWindows/Windomanagers/WindowMaker/%SUBDIR%/ \
-	ftp://ftp.grolier.fr/pub/mirrors/ftp.windowmaker.org/pub/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/X/WindowMaker/%SUBDIR%/
+	ftp://ftp.windowmaker.org/pub/ \
+	ftp://ftp.minet.net/pub/windowmaker/ \
+	ftp://ftp.ziobudda.net/pub/Mirrors/ftp.windowmaker.org/ \
+	ftp://ftp.task.gda.pl/mirror/ftp.windowmaker.org/pub/ \
+	ftp://ftp.nectec.or.th/pub/mirrors/windowmaker/ \
+	ftp://sunsite.ulatina.ac.cr/Mirrors/XWindows/Windomanagers/WindowMaker/ \
+	ftp://ftp.grolier.fr/pub/mirrors/ftp.windowmaker.org/pub/ \
+	ftp://ftp.dti.ad.jp/pub/X/WindowMaker/
 
 MASTER_SITE_SOURCEWARE+=	\
-	ftp://mirrors.rcn.net/mirrors/sources.redhat.com/%SUBDIR%/ \
-	ftp://sourceware.cygnus.com/pub/%SUBDIR%/ \
-	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/sources.redhat.com/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/sourceware/%SUBDIR%/ \
-	ftp://ftp.fic.uni.lodz.pl/pub/sources.redhat.com/pub/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
-	ftp://ftp.pvv.ntnu.no/pub/cygnus/sourceware.cygnus.com/%SUBDIR%/ \
-	ftp://ftp.sdn.co.za/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
-	ftp://ftp.sun.ac.za/sites/sourceware.cygnus.com/pub/%SUBDIR%/ \
-	ftp://ftp.unina.it/pub/Unix/cygnus/%SUBDIR%/ \
-	ftp://ftp1.sinica.edu.tw/pub3/CYGNUS/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/gnu/sourceware/%SUBDIR%/ \
-	ftp://planetmirror.com/pub/sourceware/%SUBDIR%/ \
-	ftp://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
-	ftp://sysg.kek.jp/cygnus/%SUBDIR%/ \
-	ftp://unix.hensa.ac.uk/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
-	ftp://www.carfield.com.hk/mirror/sources.redhat.com/%SUBDIR%/	
+	ftp://mirrors.rcn.net/mirrors/sources.redhat.com/ \
+	ftp://sourceware.cygnus.com/pub/ \
+	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/sources.redhat.com/ \
+	ftp://ftp.chg.ru/pub/sourceware/ \
+	ftp://ftp.fic.uni.lodz.pl/pub/sources.redhat.com/pub/ \
+	ftp://ftp.funet.fi/pub/mirrors/sourceware.cygnus.com/pub/ \
+	ftp://ftp.pvv.ntnu.no/pub/cygnus/sourceware.cygnus.com/ \
+	ftp://ftp.sdn.co.za/mirrors/sourceware.cygnus.com/pub/ \
+	ftp://ftp.sun.ac.za/sites/sourceware.cygnus.com/pub/ \
+	ftp://ftp.unina.it/pub/Unix/cygnus/ \
+	ftp://ftp1.sinica.edu.tw/pub3/CYGNUS/ \
+	ftp://gd.tuwien.ac.at/gnu/sourceware/ \
+	ftp://planetmirror.com/pub/sourceware/ \
+	ftp://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/ \
+	ftp://sysg.kek.jp/cygnus/ \
+	ftp://unix.hensa.ac.uk/mirrors/sourceware.cygnus.com/pub/ \
+	ftp://www.carfield.com.hk/mirror/sources.redhat.com/	
 
 MASTER_SITE_FREEBSD_LOCAL+=	\
-	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
-	ftp://ftp.se.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
-	ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
-	ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
-	ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
-	ftp://ftp.nectec.or.th/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
+	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
+	ftp://ftp.se.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
+	ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
+	ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
+	ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
+	ftp://ftp.nectec.or.th/pub/FreeBSD/ports/local-distfiles/
 
 MASTER_SITE_PACKETSTORM+=	\
-	http://packetstorm.linuxsecurity.com/%SUBDIR%/ \
-	http://packetstormsecurity.nl/%SUBDIR%/ \
-	http://packetstorm.decepticons.org/%SUBDIR%/ \
-	http://packetstorm.nulldetector.com/%SUBDIR%/ \
-	http://packetstorm.radisnet.net/%SUBDIR%/ \
-	http://packetstorm.acm.miami.edu/%SUBDIR%/ \
-	http://packetstorm.dnsi.info/%SUBDIR%/ \
-	http://packetstormsecurity.be/%SUBDIR%/ \
-	http://packetstorm.bjstuff.com/%SUBDIR%/ \
-	http://packetstormsecurity.packetstorm.org/%SUBDIR%/
+	http://packetstorm.linuxsecurity.com/ \
+	http://packetstormsecurity.nl/ \
+	http://packetstorm.decepticons.org/ \
+	http://packetstorm.nulldetector.com/ \
+	http://packetstorm.radisnet.net/ \
+	http://packetstorm.acm.miami.edu/ \
+	http://packetstorm.dnsi.info/ \
+	http://packetstormsecurity.be/ \
+	http://packetstorm.bjstuff.com/ \
+	http://packetstormsecurity.packetstorm.org/
