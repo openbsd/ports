@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2000/06/11 08:42:37 fgsch Exp $
+# $OpenBSD: Makefile,v 1.22 2000/06/28 01:00:09 fgsch Exp $
 
 DISTNAME=		blackbox-0.51.3.1
 CATEGORIES=		x11
-NEED_VERSION=		1.301
+NEED_VERSION=		1.308
 MASTER_SITES=		ftp://portal.alug.org/pub/blackbox/0.5x.x/ \
 			ftp://ftp.dti.ad.jp/pub/X/blackbox/0.5x.x/
 
@@ -19,9 +19,6 @@ USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 
 FLAVORS=kde
-.if defined(WITH_KDE) && ${WITH_KDE:U} == Yes
-FLAVOR=kde
-.endif
 FLAVOR?=
 
 .if ${FLAVOR:L} == "kde"
