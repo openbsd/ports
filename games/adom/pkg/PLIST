@@ -1,0 +1,6 @@
+bin/adom
+share/doc/adom/adomfaq.txt
+share/doc/adom/manual.doc
+share/doc/adom/readme.1st
+@dirrm share/doc/adom
+@unexec echo "Please remove /var/lib/adom/ hiscores manually"
