@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/10/29 01:59:14 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/30 04:38:12 pvalchev Exp $
 
 COMMENT=	"persistency for perl data structures"
 
@@ -14,9 +14,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Storable/}
-
-BUILD_DEPENDS=	:p5-Test-Simple-*:devel/p5-Test-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl
 

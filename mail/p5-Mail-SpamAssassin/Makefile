@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/17 17:46:31 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/30 04:38:13 pvalchev Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
@@ -20,7 +20,6 @@ MASTER_SITES=		${HOMEPAGE}/released/ \
 			${MASTER_SITE_PERL_CPAN:=Mail/}
 
 RUN_DEPENDS=		:p5-Net-DNS-*:net/p5-Net-DNS \
-			:p5-Time-HiRes-*:devel/p5-Time-HiRes \
 			:p5-HTML-Parser-*:www/p5-HTML-Parser \
 			:procmail-*:mail/procmail
 
