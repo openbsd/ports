@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/10/24 12:10:24 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2001/11/01 08:27:14 wilfried Exp $
 
 COMMENT=	"desktop organizer software for the palm pilot"
 
@@ -17,6 +17,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.0-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.0-ltmain_sh \
+		patch-*
 
 LIB_DEPENDS=	pisock.3:pilot-link-*:comms/pilot-link \
 		gtk.1.2,gdk.1.2:gtk+-*:x11/gtk+

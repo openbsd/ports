@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/07/19 06:20:00 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2001/11/01 08:27:15 wilfried Exp $
 
 COMMENT=	"solving toolkit for linear equalities and inequalities"
 
 DISTNAME=	cassowary-0.60
 CATEGORIES=	math
-NEED_VERSION=	1.363
+NEED_VERSION=	1.475
 HOMEPAGE=	http://www.cs.washington.edu/research/constraints/cassowary/
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
@@ -15,6 +15,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \
+		patch-*
 
 BUILD_DEPENDS=	bison::devel/bison
 LIB_DEPENDS=	GTL.1::devel/gtl \

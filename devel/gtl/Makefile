@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/05/09 23:26:18 pvalchev Exp $ 
+# $OpenBSD: Makefile,v 1.8 2001/11/01 08:27:14 wilfried Exp $ 
 
 COMMENT=	"c++ graph data template library based on the stl"
 
 PKGNAME=	${DISTNAME:L}
 DISTNAME=	GTL-1.0.0
 CATEGORIES=	devel
-NEED_VERSION=	1.363
+NEED_VERSION=	1.475
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
@@ -17,6 +17,10 @@ PERMIT_DISTFILES_FTP=	"use requires written permission"
 HOMEPAGE=	http://infosun.fmi.uni-passau.de/GTL/
 
 MASTER_SITES=	#see_do-fetch_target
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
+		patch-*
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/08/20 06:40:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/01 08:27:15 wilfried Exp $
 
 COMMENT=	"graphical user interface library for C++"
 
 VERSION=	0.3.40
 DISTNAME=	libuta-${VERSION}
 CATEGORIES=	devel
-NEED_VERSION=	1.440
+NEED_VERSION=	1.475
 
 HOMEPAGE=	http://libuta.sourceforge.net/
 
@@ -18,6 +18,10 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= libuta
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \
+		patch-*
 
 LIB_DEPENDS=	smpeg.1.3:smpeg-*:devel/smpeg \
 		SDL_mixer.0.0:sdl-mixer-*:devel/sdl-mixer \
