@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.9 2004/02/25 21:33:53 brad Exp $
---- configure.orig	2004-02-20 18:23:28.000000000 -0500
-+++ configure	2004-02-24 15:53:12.000000000 -0500
-@@ -5929,7 +5929,7 @@ fi
- fi
+$OpenBSD: patch-configure,v 1.10 2004/10/17 16:05:47 brad Exp $
+--- configure.orig	Fri Oct 15 16:44:50 2004
++++ configure	Sun Oct 17 11:31:28 2004
+@@ -4450,7 +4450,7 @@ fi
+ 
  
  cat >>confdefs.h <<_ACEOF
 -#define GQVIEW_HELPDIR "$prefix/share/gqview"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.9 2004/02/25 21:33:53 brad Exp $
  _ACEOF
  
  
-@@ -9223,12 +9223,11 @@ cat >>conftest.$ac_ext <<_ACEOF
+@@ -7747,12 +7747,11 @@ cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  #include <libintl.h>
  extern int _nl_msg_cat_cntr;

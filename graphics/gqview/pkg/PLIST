@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.17 2004/09/15 00:50:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2004/10/17 16:05:48 brad Exp $
 bin/gqview
 @man man/man1/gqview.1
+share/applications/
+share/applications/gqview.desktop
 share/doc/gqview/
 share/doc/gqview/README
 share/gnome/
