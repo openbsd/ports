@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/09/14 15:38:50 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/19 22:24:48 jsyn Exp $
 
 COMMENT=		"HTTP tunneling utility for SSH"
 
 DISTNAME=		corkscrew-2.0
 CATEGORIES=    		security net
-NEED_VERSION=		1.435
+NEED_VERSION=		1.499
 
 HOMEPAGE=		http://www.agroman.net/corkscrew/
 

@@ -1,3 +1,4 @@
+$OpenBSD: patch-corkscrew_c,v 1.2 2001/11/19 22:24:48 jsyn Exp $
 --- corkscrew.c.orig	Tue Aug 28 19:15:20 2001
 +++ corkscrew.c	Tue Aug 28 19:17:53 2001
 @@ -1,16 +1,19 @@
