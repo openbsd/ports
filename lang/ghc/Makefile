@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/08/01 14:03:39 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2003/08/03 18:07:27 avsm Exp $
 # Based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
 #
@@ -21,7 +21,7 @@ ONLY_FOR_ARCHS= i386
 COMMENT=	"compiler for the functional language Haskell"
 COMMENT-doc=	"documentation for the functional language Haskell"
 
-FULLVER=	6.0
+FULLVER=	6.0.1
 BOOTVER=	4.08.2
 
 DISTNAME=	ghc-${FULLVER}
@@ -51,7 +51,7 @@ DOC_DIR=	${PREFIX}/share/doc/ghc
 
 DISTFILES=	ghc-${FULLVER}-src.tar.bz2  ghc-${BOOTVER}-src.tar.bz2:0 \
 		${DOC_FILES:C/(.+)/\1.html.tar.gz:1/g} \
-                ghc-regress-${FULLVER}.0.tar.bz2:2
+                ghc-regress-${FULLVER}.tar.bz2:2
 
 .if ${MACHINE_ARCH} == "i386"
     HCSRC=ghc-${BOOTVER}-x86-hc.tar.bz2:0
@@ -62,7 +62,7 @@ DISTFILES=	ghc-${FULLVER}-src.tar.bz2  ghc-${BOOTVER}-src.tar.bz2:0 \
 DISTFILES+=	${HCSRC}
 
 REGRESS_DEPENDS=::lang/python/2.2
-REGRESS_RESULT=${WRKSRC}/${ARCH}.test.result
+REGRESS_RESULT=${WRKSRC}/actual.result
 REGRESS_FLAGS=TEST_HC="${WRKSRC}/ghc/compiler/stage2/ghc-inplace"
 REGRESS_FLAGS+=EXTRA_RUNTEST_OPTS="--output-summary=${REGRESS_RESULT}"
 

@@ -1,14 +1,15 @@
 Add a "check" target to make regress work nicely.
 
---- Makefile.orig	Thu May 29 23:55:03 2003
-+++ Makefile	Fri Jul 11 00:42:00 2003
-@@ -421,3 +421,16 @@
+--- Makefile.orig	Sat Jul 26 00:44:43 2003
++++ Makefile	Sun Aug  3 15:46:52 2003
+@@ -420,3 +420,17 @@
  
  # -----------------------------------------------------------------------------
  
 +check::
 +	( cd testsuite/tests/ghc-regress ; $(MAKE) $(MFLAGS) )
-+	@(if cmp -s expected.result i386.test.result ; then \
++	@(sed 's/ started at .*$$//' actual.result > actual.result_)
++	@(if cmp -s expected.result actual.result_ ; then \
 +                echo "All is good!" ; \
 +          else \
 +                echo ;\
@@ -17,5 +18,5 @@ Add a "check" target to make regress work nicely.
 +                echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@";\
 +                echo ;\
 +                echo "here is a diff:" ;\
-+                diff -u expected.result i386.test.result ;\
++                diff -u expected.result actual.result_ ;\
 +          fi ; exit 0 )
