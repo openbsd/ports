@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/06/25 22:40:15 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 13:26:51 espie Exp $
 # Original from:	Andreas Klemm <andreas@klemm.gtn.com>
 
 DISTNAME=	ghostscript-5.50
@@ -18,6 +18,7 @@ MASTER_SITES0=  http://www.erdw.ethz.ch/%7Ebonk/ftp/gs-driver-distrib/
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${HP850_DRV}:0 
 
+SUBST_VARS=		OSREV
 DIST_SUBDIR=	gs
 
 # png and jpeg sources are under a BSD license

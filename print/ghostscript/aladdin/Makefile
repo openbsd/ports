@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/16 17:50:14 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 13:26:51 espie Exp $
 
 DISTNAME=	ghostscript-6.01
 CATEGORIES=	print lang
@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=     ghostscript
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} \
 		${HP850_DRV}:0 
 
+SUBST_VARS=		OSREV
 DIST_SUBDIR=	gs
 
 # Aladdin license 
