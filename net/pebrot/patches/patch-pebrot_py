@@ -1,0 +1,12 @@
+$OpenBSD: patch-pebrot_py,v 1.1.1.1 2003/12/29 14:09:03 kevlo Exp $
+--- pebrot.py.orig	2003-12-29 21:53:09.000000000 +0000
++++ pebrot.py	2003-12-29 21:54:42.000000000 +0000
+@@ -1809,7 +1809,7 @@ def main():
+             print _('I can\'t find %s, so I will copy the supplied pebrotrc there.') \
+                 % CONFIG_FILE
+             raw_input( _('Press Enter to continue...') )
+-            shutil.copyfile( sys.path[0] + '/pebrotrc', CONFIG_FILE )
++            shutil.copyfile( '/usr/local/share/examples/pebrot/' + '/pebrotrc', CONFIG_FILE )
+             #os.chmod( CONFIG_FILE, 0600 )
+             print _('Please edit %s and specify your login and password.') \
+                 % CONFIG_FILE

@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/29 14:09:03 kevlo Exp $
+bin/pebrot
+lib/python${MODPY_VERSION}/site-packages/MSN.py
+lib/python${MODPY_VERSION}/site-packages/MSN.pyc
+lib/python${MODPY_VERSION}/site-packages/pebrot.py
+lib/python${MODPY_VERSION}/site-packages/pebrot.pyc
+lib/python${MODPY_VERSION}/site-packages/ui.py
+lib/python${MODPY_VERSION}/site-packages/ui.pyc
+share/doc/pebrot/README
+share/examples/pebrot/pebrotrc
+@dirrm share/examples/pebrot
+@dirrm share/doc/pebrot
