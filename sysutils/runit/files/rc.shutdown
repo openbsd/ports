@@ -1,7 +1,7 @@
 # Stop runit services
 
 echo -n 'Waiting for services to stop...'
-svwaitdown -k -t350 /service/*
+/usr/local/sbin/svwaitdown -k -t350 /service/*
 if [ $? -eq 0 ]; then
 	echo 'ok.'
 elif [ $? -eq 111 ]; then
