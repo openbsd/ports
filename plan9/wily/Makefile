@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/07/15 18:04:30 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/28 02:13:21 naddy Exp $
 
 COMMENT=	"clone of the Plan9 editor 'acme'"
 
@@ -19,6 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= autoconf
+
+NO_REGRESS=	Yes
 
 WILYDOCDIR=	${PREFIX}/share/doc/wily
 WILYTUTEDIR=	${WILYDOCDIR}/tute

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/21 21:25:50 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/28 02:13:21 naddy Exp $
 
 COMMENT=	"simple menu patterned after plan9"
 
 DISTNAME=	9menu-1.5
 CATEGORIES=	plan9
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
 
 EXTRACT_SUFX=	.shar.gz
@@ -22,6 +22,8 @@ MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
 ALL_TARGET=	9menu
 
 WRKDIST=	${WRKDIR}
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/9menu ${PREFIX}/bin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/08/25 03:09:41 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2002/10/28 02:13:21 naddy Exp $
 
 COMMENT=	"9wm with automatic window tiling and virtual desktops"
 
@@ -15,6 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= imake
+
+NO_REGRESS=	Yes
 
 DOCS=		ChangeLog README README.9wm keyboard_refcard.ms \
 		mouse_refcard.ms

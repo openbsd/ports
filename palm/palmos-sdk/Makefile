@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/09/18 11:55:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2002/10/28 02:13:21 naddy Exp $
 
 COMMENT=	"PalmOS include files"
 
@@ -26,6 +26,7 @@ BUILD_DEPENDS=	:rpm2cpio-*|rpm-*:converters/rpm2cpio
 
 PALMDEV=	${PREFIX}/palm
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 SUBST_VARS=	VERSION
 
 .include <bsd.own.mk>
