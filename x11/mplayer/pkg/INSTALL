@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2003/10/26 19:54:46 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/11/02 23:30:27 brad Exp $
 #
 # Pre/post-installation setup of MPlayer
 
@@ -23,10 +23,8 @@ do_notice()
 do_install()
 {
     install -d -o root -g wheel -m 755 $CONFIG_DIR
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/codecs.conf $CONFIG_DIR
     install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/input.conf $CONFIG_DIR
     install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/menu.conf $CONFIG_DIR
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/mplayer.conf $CONFIG_DIR
     echo
     echo "+---------------"
     echo "| The $1 configuration files have been installed into"
@@ -48,7 +46,7 @@ case $2 in
     POST-INSTALL)
 	if [ ! -d $CONFIG_DIR ]; then
 	    do_install $1
-	elif [ ! -f $CONFIG_DIR/mplayer.conf ]; then
+	elif [ ! -f $CONFIG_DIR/menu.conf ]; then
 	    do_install $1
 	else
 	    do_notice $1

@@ -1,6 +1,6 @@
-$OpenBSD: patch-vidix_drivers_Makefile,v 1.5 2003/01/03 23:06:36 brad Exp $
---- vidix/drivers/Makefile.orig	Sat Dec 21 14:06:23 2002
-+++ vidix/drivers/Makefile	Wed Dec 25 21:55:52 2002
+$OpenBSD: patch-vidix_drivers_Makefile,v 1.6 2003/11/02 23:30:27 brad Exp $
+--- vidix/drivers/Makefile.orig	2003-09-27 17:36:01.000000000 -0400
++++ vidix/drivers/Makefile	2003-10-26 19:53:32.000000000 -0500
 @@ -3,6 +3,7 @@
  include ../../config.mak
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-vidix_drivers_Makefile,v 1.5 2003/01/03 23:06:36 brad Exp $
  
  CYBERBLADE_VID=cyberblade_vid.so
  CYBERBLADE_SRCS=cyberblade_vid.c
-@@ -120,7 +121,7 @@ depend:
+@@ -126,7 +127,7 @@ depend:
  
  install:
  	mkdir -p $(LIBDIR)/mplayer/vidix

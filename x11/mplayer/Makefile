@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.60 2003/10/26 19:54:46 brad Exp $
+# $OpenBSD: Makefile,v 1.61 2003/11/02 23:30:27 brad Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc
 
 COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
-DISTNAME=		MPlayer-0.92
+DISTNAME=		MPlayer-1.0pre2
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}p1
+PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -64,15 +64,8 @@ CONFIGURE_ARGS+=--disable-alsa \
 CONFIGURE_ARGS+=--target=ppc-openbsd
 .endif
 
-FLAVORS=	arts esd sdl ggi debug mad win32 no_x11 cdda faad aa lzo
+FLAVORS=	arts esd sdl ggi debug mad win32 no_x11 cdda aa lzo
 FLAVOR?=
-
-.if ${FLAVOR:L:Mfaad}
-CONFIGURE_ARGS+=--enable-faad
-LIB_DEPENDS+=   faad::audio/faad
-.else
-CONFIGURE_ARGS+=--disable-faad
-.endif
 
 .if ${FLAVOR:L:Marts}
 CONFIGURE_ARGS+=--enable-arts
@@ -176,6 +169,6 @@ post-install:
 		${PREFIX}/share/examples/mplayer
 	${INSTALL_DATA} ${WRKDIST}/etc/example.conf \
 		${PREFIX}/share/examples/mplayer/mplayer.conf
-	${INSTALL_DATA} ${WRKDIST}/DOCS/*.html ${PREFIX}/share/doc/mplayer
+	${INSTALL_DATA} ${WRKDIST}/DOCS/en/*.html ${PREFIX}/share/doc/mplayer
 
 .include <bsd.port.mk>

@@ -1,16 +1,16 @@
-$OpenBSD: patch-Makefile,v 1.5 2003/10/26 19:54:46 brad Exp $
---- Makefile.orig	2003-08-09 10:12:30.000000000 -0400
-+++ Makefile	2003-08-21 17:28:02.000000000 -0400
-@@ -228,7 +228,7 @@ $(PRG_FIBMAP): fibmap_mplayer.o
+$OpenBSD: patch-Makefile,v 1.6 2003/11/02 23:30:27 brad Exp $
+--- Makefile.orig	2003-10-04 18:00:01.000000000 -0400
++++ Makefile	2003-10-26 19:57:37.000000000 -0500
+@@ -236,7 +236,7 @@ $(PRG_FIBMAP): fibmap_mplayer.o
  ifeq ($(MENCODER),yes)
  $(PRG_MENCODER): $(MENCODER_DEP)
  	./darwinfixlib.sh $(MENCODER_DEP) libmpcodecs/libmpencoders.a
--	$(CC) $(CFLAGS) -o $(PRG_MENCODER) $(OBJS_MENCODER) libmpcodecs/libmpencoders.a $(ENCORE_LIB) $(COMMON_LIBS) $(EXTRA_LIB) $(MLIB_LIB) $(LIRC_LIB) $(ARCH_LIB) $(I18NLIBS) -lm 
-+	$(CXX) $(CFLAGS) -o $(PRG_MENCODER) $(OBJS_MENCODER) libmpcodecs/libmpencoders.a $(ENCORE_LIB) $(COMMON_LIBS) $(EXTRA_LIB) $(MLIB_LIB) $(LIRC_LIB) $(ARCH_LIB) $(I18NLIBS) -lm 
+-	$(CC) $(CFLAGS) -o $(PRG_MENCODER) $(OBJS_MENCODER) libmpcodecs/libmpencoders.a $(ENCORE_LIB) $(COMMON_LIBS) $(EXTRA_LIB) $(MLIB_LIB) $(LIRC_LIB) $(LIRCC_LIB) $(ARCH_LIB) $(I18NLIBS) -lm 
++	$(CXX) $(CFLAGS) -o $(PRG_MENCODER) $(OBJS_MENCODER) libmpcodecs/libmpencoders.a $(ENCORE_LIB) $(COMMON_LIBS) $(EXTRA_LIB) $(MLIB_LIB) $(LIRC_LIB) $(LIRCC_LIB) $(ARCH_LIB) $(I18NLIBS) -lm 
  endif
  
  codecs.conf.h: $(PRG_CFG)
-@@ -276,8 +276,6 @@ ifeq ($(GUI),yes)
+@@ -294,8 +294,6 @@ ifeq ($(GUI),yes)
  	@echo "*** Download skin(s) at http://www.mplayerhq.hu/homepage/dload.html"
  	@echo "*** for GUI, and extract to $(DATADIR)/Skin/"
  endif
