@@ -1,0 +1,13 @@
+NTL is an object oriented library for number theory, written
+by Victor Shoup.  It provides objects and methods for 
+	- arbitrary length integers
+	- finite fields
+	- polynomials over fields
+	- extensions of fields.
+
+NTL's lattice reduction code is also one of the best available anywhere, in
+terms of both speed and robustness, and one of the few implementations of block
+Korkin-Zolotarev reduction with the Schnorr-Horner pruning heuristic. It has
+been used to "crack" several cryptosystems.
+
+WWW: ${HOMEPAGE}
