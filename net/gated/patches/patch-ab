@@ -1,0 +1,42 @@
+--- src/task.c.orig	Fri Jul 18 06:45:02 1997
++++ src/task.c	Wed Oct  1 21:40:45 1997
+@@ -5868,12 +5868,20 @@
+ 	}
+ 
+ 	/* Remove our association with a controling tty */
+-#ifdef	USE_SETPGRP
++#if defined(USE_SETPGRP) || defined(USE_SETSID)
++#if defined(USE_SETPGRP)
+ 	t = setpgrp();
+ 	if (t < 0) {
+ 	    perror("task_daemonize: setpgrp");
+ 	    exit(1);
+ 	}
++#else	/* USE_SETPGRP */
++	t = setsid();
++	if (t < 0) {
++	    perror("task_daemonize: setsid");
++	    exit(1);
++	}
++#endif	/* USE_SETPGRP */
+ 
+ 	task_signal_ignore(SIGHUP);
+ 
+@@ -5892,7 +5900,7 @@
+ 	    /* Parent */
+ 	    exit(0);
+ 	}
+-#else	/* USE_SETPGRP */
++#else	/* defined(USE_SETPGRP) || defined(USE_SETSID) */
+ 	t = setpgrp(0, getpid());
+ 	if (t < 0) {
+ 	    perror("task_daemonize: setpgrp");
+@@ -5907,7 +5915,7 @@
+ 	    }
+ 	    (void) close(t);
+ 	}
+-#endif	/* USE_SETPGRP */
++#endif	/* defined(USE_SETPGRP) || defined(USE_SETSID) */
+     }
+ 
+     /* Close all open files */

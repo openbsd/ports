@@ -1,0 +1,51 @@
+--- src/configs/freebsd.orig	Fri Jul  4 05:43:48 1997
++++ src/configs/freebsd	Wed Oct  1 21:40:45 1997
+@@ -1,27 +1,29 @@
+ #
+ #	$Id: patch-aa,v 1.1.1.1 1997/11/22 23:57:32 joey Exp $
+-#       Configuration for freebsd-2.0 alpha (i386)
++#       Configuration for FreeBSD-3.0 (and hopefully 2.2)
+ #
+ 
+ bindir  /usr/local/bin
+ sbindir /usr/local/sbin
+ mandir  /usr/local/man
+-mantype bsd44
++mantype bsd42
+ 
+ cc      cc
+ #cflags -g
+-cwflags -W -Wreturn-type -Wcast-qual -Wpointer-arith -Wwrite-strings -Wswitch -Wshadow
+-cflags  -O
++cwflags -Wreturn-type -Wpointer-arith -Wwrite-strings -Wswitch
++cflags  -O -g
+ 
+ ldflags -lkvm
+ 
+ lex     lex
+-lflags  -p -C -I
++lflags  -p -Cfe
++
++yflags	-d -v
+ 
+ mkdep   mkdep -flag -MM
+ 
+-options INCLUDE_UNISTD INCLUDE_PATHS GID_T=int
+-options POSIX_SIGNALS HAVE_WAITPID
++options INCLUDE_UNISTD INCLUDE_PATHS INCLUDE_IF_NEEDS_TIME GID_T=gid_t
++options POSIX_SIGNALS HAVE_WAITPID USE_SETSID
+ options VARIABLE_MASKS SOCKET_LENGTHS SOCKADDR_DL INCLUDE_IF_DL
+ options KRT_RTREAD_KINFO KRT_IFREAD_KINFO KRT_RT_SOCK USE_SYSCTL
+ options KRT_LLADDR_NONE KRT_SYMBOLS_SYSCTL KVM_TYPE_BSD44 KSYM_VERSION=VRS_SYM
+@@ -34,8 +36,9 @@
+ 
+ path_dump       /var/tmp/%s_dump
+ path_dumpdir    /var/tmp
+-path_pid        /var/run/%s.pid
++path_pid        /var/db/%s.pid
+ path_version    /var/run/%s.version
++path_unix       /kernel
+ 
+ #protocols      bgp egp hello icmp rip ospf iso slsp isis rdsic
+-protocols       hello icmp rip ospf
++protocols      bgp egp hello icmp rip ospf rdisc
