@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/04 21:54:06 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2001/02/17 11:34:21 jakob Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/06/05 12:01:24 rh Exp $
 
 DISTNAME=	vlnx407e
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	"Commercial software"
 PERMIT_DISTFILES_CDROM=	"Commercial software"
 PERMIT_DISTFILES_FTP=	"Commercial software"
 
-RUN_DEPENDS=	/emul/linux/lib/libc.so.5::emulators/linux_lib \
+RUN_DEPENDS=	/emul/linux/lib/libc.so.6::emulators/redhat_base \
 		${PREFIX}/libexec/uvscan/scan.dat::security/uvscan_dat
 
 ONLY_FOR_ARCH=	i386
