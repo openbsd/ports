@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/05/06 02:07:35 lebel Exp $
+# $OpenBSD: Makefile,v 1.16 2001/05/21 17:08:11 angelos Exp $
 
 COMMENT=	"voice communication over data networks"
 
@@ -25,7 +25,7 @@ MAKE_ENV+=	CCFLAGS=-DM_LITTLE_ENDIAN
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/speak_freely
-	@$(INSTALL_DATA) ${WRKSRC}/busy.au ${WRKSRC}/ring.au \
+	@${INSTALL_DATA} ${WRKSRC}/busy.au ${WRKSRC}/ring.au \
 		${PREFIX}/lib/speak_freely
 
 .include <bsd.port.mk>
