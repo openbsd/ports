@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2004/10/14 13:21:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/02 19:23:01 alek Exp $
 # $FreeBSD: Makefile,v 1.32 1997/11/16 04:58:09 fenner Exp $
 #
 
      SUBDIR += aub
-     SUBDIR += cnews
 #    SUBDIR += diablo
 #    SUBDIR += dnews
 #    SUBDIR += ifmail
