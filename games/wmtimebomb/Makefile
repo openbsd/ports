@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/03/21 20:57:07 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/04/19 11:05:52 wilfried Exp $
 
 COMMENT=		'wm-app; minesweeper'
 
@@ -9,13 +9,10 @@ NEED_VERSION=		1.515
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/mharo/ \
-			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
+PERMIT_PACKAGE_CDROM=	"no licence"
+PERMIT_PACKAGE_FTP=	"no licence"
+PERMIT_DISTFILES_CDROM=	"no licence"
+PERMIT_DISTFILES_FTP=	"no licence"
 
 MODULES=		gettext
 LIB_DEPENDS=		wraster.4::x11/windowmaker \
