@@ -3,7 +3,7 @@
 # Date created:         25 November 1997
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 1997/12/22 00:28:56 niklas Exp $
+# $OpenBSD: Makefile,v 1.5 1997/12/22 00:49:23 niklas Exp $
 #
 
 DISTNAME=	lsof_4.15_W
@@ -20,7 +20,7 @@ CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n openbsd
 MAN1=		lsof.1
 
-ONLY_FOR_ARCHS=	alpha i386
+ONLY_FOR_ARCHS=	alpha amiga arc hp300 i386 mac68k mvme68k pmax sun3 wgrisc
 
 SRCBALL_NAME=	${DISTNAME:S/_W$//}
 
