@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/25 00:42:52 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/25 18:41:38 brad Exp $
 
 COMMENT=	"graphical disk usage utility"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=  Yes
 MASTER_SITES=	${HOMEPAGE}/download/
 EXTRACT_SUFX=	.tgz
 
-LIB_DEPENDS=	kdecore.3,DCOP,kdesu,kdeui,kio::x11/kde/libs3
+LIB_DEPENDS=	kdecore.4,DCOP,kdesu,kdeui,kio::x11/kde/libs3
 
 MODULES=	qt3
 
