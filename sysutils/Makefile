@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2004/12/01 17:09:49 jcs Exp $
+# $OpenBSD: Makefile,v 1.86 2004/12/25 10:40:08 alek Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -18,6 +18,7 @@
      SUBDIR += freedt
      SUBDIR += ggrep
      SUBDIR += gkrellm
+     SUBDIR += hot-babe
      SUBDIR += idled
      SUBDIR += knutclient
      SUBDIR += libretto-config
