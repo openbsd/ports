@@ -3,22 +3,24 @@
 # Date created:		Nov 26 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/27 02:29:24 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/02/13 07:43:49 niklas Exp $
 #
 
-DISTNAME=	tcpblast
-PKGNAME=	tcpblast-1.0
-CATEGORIES=	net benchmarks
+DISTNAME=		tcpblast
+PKGNAME=		tcpblast-1.0
+CATEGORIES=		net benchmarks
 
-NO_EXTRACT=	yes
-NO_WRKDIR=	yes
+NO_CHECKSUM=		yes
+NO_WRKSUBDIR=		yes
+
+# Link the contained source files into the build environment
+_DISTDIR=		${.CURDIR}/src
+DISTFILES=		Makefile tcpblast.c
+EXTRACT_CMD=		${LN}
+EXTRACT_BEFORE_ARGS=	-sf
+EXTRACT_AFTER_ARGS=	${WRKSRC}
 
 fetch:
 	@${DO_NADA}
-
-pre-clean:
-	@echo "===>  Pre-clean for ${DISTNAME}"
-	@(${RM} -f ${.CURDIR}/tcpblast)
-	@(cd ${.CURDIR}/src; make clean)
 
 .include <bsd.port.mk>
