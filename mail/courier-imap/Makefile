@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2002/08/08 17:03:21 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.30 2002/08/19 18:54:36 avsm Exp $ 
 
 COMMENT=	"imap server for maildir format mailboxes"
 COMMENT-pop3=	"pop3 server for maildir format mailboxes"
@@ -100,11 +100,11 @@ post-install:
 	${INSTALL_DATA} ${WRKINST}${COURIERCONF}/$i ${EXAMPLE_DIR}
 .endfor
 .for i in mysql ldap pgsql daemon
-	${INSTALL_DATA} ${WRKINST}${COURIERCONF}/auth${i}rc.dist \
+	-${INSTALL_DATA} ${WRKINST}${COURIERCONF}/auth${i}rc.dist \
 			${EXAMPLE_DIR}/auth${i}rc
 .endfor
 .for i in authmysql.html authmysql.myownquery authpostgres.html ldap
-	${INSTALL_DATA} ${WRKSRC}/authlib/README.${i} \
+	-${INSTALL_DATA} ${WRKSRC}/authlib/README.${i} \
 			${PREFIX}/share/doc/courier-imap
 .endfor
 .for i in cram pwd userdb
