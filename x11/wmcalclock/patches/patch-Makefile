@@ -1,0 +1,40 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/01/03 14:05:15 naddy Exp $
+--- Src/Makefile.orig	Sat Mar 27 07:46:38 1999
++++ Src/Makefile	Thu Dec 21 17:51:39 2000
+@@ -1,8 +1,5 @@
+-CC     = gcc
+-CFLAGS = -O2 -Wall
+-INCDIR = -I/usr/X11R6/include/X11 -I/usr/X11R6/include
+-DESTDIR= /usr/X11R6
+-LIBDIR = -L/usr/X11R6/lib
++CFLAGS += -I${X11BASE}/include
++LIBDIR = -L${X11BASE}/lib
+ 
+ # for Linux
+ LIBS   = -lXpm -lX11 -lXext
+@@ -14,15 +11,11 @@ OBJS   = wmCalClock.o \
+          xutils.o
+ 
+ 
+-.c.o:
+-	$(CC) $(CFLAGS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)
+-
+-
+ all:	wmCalClock.o wmCalClock
+ 
+ wmCalClock.o: wmCalClock_master.xpm wmCalClock_mask.xbm
+ wmCalClock:	$(OBJS) 
+-	$(CC) $(COPTS) $(SYSTEM) -o wmCalClock $^ $(INCDIR) $(LIBDIR) $(LIBS)
++	$(CC) $(COPTS) $(SYSTEM) -o wmCalClock $(OBJS) $(INCDIR) $(LIBDIR) $(LIBS)
+ 
+ clean:
+ 	for i in $(OBJS) ; do \
+@@ -31,6 +24,6 @@ clean:
+ 	rm -f wmCalClock
+ 
+ install:: wmCalClock
+-	install -c -s -m 0755 wmCalClock $(DESTDIR)/bin
+-	install -c -m 0644 wmCalClock.1 $(DESTDIR)/man/man1 
++	$(BSD_INSTALL_PROGRAM) wmCalClock $(PREFIX)/bin
++	$(BSD_INSTALL_MAN) wmCalClock.1 $(PREFIX)/man/man1 
+ 

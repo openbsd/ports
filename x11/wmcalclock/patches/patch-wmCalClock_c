@@ -1,0 +1,48 @@
+$OpenBSD: patch-wmCalClock_c,v 1.1.1.1 2001/01/03 14:05:15 naddy Exp $
+--- Src/wmCalClock.c.orig	Fri Jul  2 23:01:35 1999
++++ Src/wmCalClock.c	Thu Dec 21 17:51:39 2000
+@@ -299,7 +299,7 @@ int main(int argc, char *argv[]) {
+     int			i, n, wid, extrady, extradx;
+     int 		Year, Month, DayOfWeek, DayOfMonth, OldDayOfMonth;
+     int			Hours, Mins, Secs, OldSecs, digit, xoff, D[10], xsize;
+-    long		CurrentLocalTime;
++    time_t		CurrentLocalTime;
+     double		UT, TU, TU2, TU3, T0, gmst, jd(), hour24();
+ 
+ 
+@@ -788,7 +788,7 @@ int  i;
+                 print_usage();
+                 exit(-1);
+             }
+-            strcpy(TimeColor, argv[++i]);
++            strlcpy(TimeColor, argv[++i], sizeof(TimeColor));
+ 
+         } else if (!strcmp(argv[i], "-bc")){
+ 
+@@ -797,7 +797,7 @@ int  i;
+                 print_usage();
+                 exit(-1);
+             }
+-            strcpy(BackgroundColor, argv[++i]);
++            strlcpy(BackgroundColor, argv[++i], sizeof(BackgroundColor));
+ 
+         } else if (!strcmp(argv[i], "-24")){
+ 
+@@ -820,7 +820,7 @@ int  i;
+                 print_usage();
+                 exit(-1);
+             }
+-	    strcpy(ExecuteCommand, argv[++i]);
++	    strlcpy(ExecuteCommand, argv[++i], sizeof(ExecuteCommand));
+ 	    HasExecute = 1;
+ 
+         } else if (!strcmp(argv[i], "-g")){
+@@ -999,7 +999,7 @@ void ButtonPressEvent(XButtonEvent *xev)
+     if (GotDoubleClick1) {
+         GotFirstClick1 = 0;
+         GotDoubleClick1 = 0;
+-        sprintf(Command, "%s &", ExecuteCommand);
++        snprintf(Command, sizeof(Command), "%s &", ExecuteCommand);
+         system(Command);
+     }
+ 
