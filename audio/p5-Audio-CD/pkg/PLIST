@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/19 03:21:10 kevlo Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/Audio/CD.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Audio/CD/CD.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Audio/CD/CD.so
+man/man3/Audio::CD.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Audio/CD

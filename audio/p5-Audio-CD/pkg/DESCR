@@ -1,0 +1,4 @@
+This module was created for adding CDDB support to <Xmms::shell> and
+cd tray <eject>. The author added methods for a good chunk of other
+<libcdaudio> functions while he was at it, but the docs and glue is
+not complete.  
