@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/08/12 01:43:53 jose Exp $
+# $OpenBSD: Makefile,v 1.8 2003/08/19 20:01:03 jose Exp $
 
 COMMENT=		"automated password generator"
 
@@ -23,6 +23,9 @@ MAKE_FLAGS=		CC="${CC}" FLAGS="${CFLAGS}" \
 FAKE_FLAGS=		INSTALL_PREFIX=${WRKINST}${PREFIX}
 
 NO_REGRESS=		Yes
+
+post-extract:
+	@find ${WRKDIST} -type d -print0 | xargs -0 chmod 0755 
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/perl/apgcli.pl ${PREFIX}/bin/apgcli
