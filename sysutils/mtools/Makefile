@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.14 1999/11/08 06:22:37 fgsch Exp $
+# $OpenBSD: Makefile,v 1.15 1999/11/10 05:48:03 fgsch Exp $
 
+DATE=		19991012
 DISTNAME=	mtools-3.9.6
-PKGNAME=	mtools-3.9.6-1012
+PKGNAME=	mtools-3.9.6-${DATE}
 CATEGORIES=	sysutils
 DIST_SUBDIR=	mtools
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/knaff/mtools/
 
 PATCH_SITES=	ftp://ftp.tux.org/pub/tux/knaff/mtools/
-PATCHFILES=	mtools-3.9.6-19991012.diff.gz
+PATCHFILES=	mtools-3.9.6-${DATE}.diff.gz
 
 MAINTAINER=	fgsch@openbsd.org
 
@@ -19,11 +20,5 @@ pre-patch:
 
 post-patch:
 	@${RM} ${WRKSRC}/mtools
-
-post-install:
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
-	@install-info ${PREFIX}/info/mtools.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
