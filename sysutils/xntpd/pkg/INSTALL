@@ -1,0 +1,52 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 1999/04/08 04:37:27 marc Exp $
+#
+# Pre/post-installation setup of xntpd
+
+# Function: tell the user what s/he needs to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| html documentation for $1 can be found in the directory"
+    echo "| ${PREFIX}/share/doc/ntp.  To use this application you must"
+    echo "|"
+    echo "| 1) create/update the file /etc/ntp.conf (see the documentation)"
+    echo "| 2) restart your system"
+    echo "|"
+    echo "| The system restart is necessary as $1 is started from"
+    echo "| /etc/rc.securelevel before the system securelevel is changed"
+    echo "+---------------"
+    echo
+}
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	do_notice $1
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

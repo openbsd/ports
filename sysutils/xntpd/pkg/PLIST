@@ -1,6 +1,6 @@
 sbin/xntpd
-@exec ln -sf %f %B/ntpd
-@unexec rm -f %B/ntpd
+@comment ntpd, a symbolic link to xntpd, is known by rc.securelevel
+sbin/ntpd
 sbin/ntpdate
 sbin/xntpdc
 sbin/ntpq
