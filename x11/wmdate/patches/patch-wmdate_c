@@ -1,0 +1,12 @@
+$OpenBSD: patch-wmdate_c,v 1.1.1.1 2001/01/16 22:10:16 naddy Exp $
+--- wmdate.c.orig	Mon May 17 22:25:23 1999
++++ wmdate.c	Tue Jan 16 16:35:36 2001
+@@ -95,7 +95,7 @@ main (int argc, char *argv[])
+    int old_day;
+    unsigned int w=183, h=84;
+ 
+-   DAParseArguments(argc, argv, options, 4, DESCRIPTION, VERSION);
++   DAParseArguments(argc, argv, options, 3, DESCRIPTION, VERSION);
+    shaped = !options[1].used;
+    doTest = options[2].used;
+  
