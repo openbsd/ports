@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/04/30 12:51:11 form Exp $
+# $OpenBSD: Makefile,v 1.4 1998/06/18 06:34:10 form Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -42,6 +42,7 @@
 #    SUBDIR += p5-libwww
 #    SUBDIR += squid11
 #    SUBDIR += squid11-novm
+     SUBDIR += transproxy
 #    SUBDIR += vrweb
 #    SUBDIR += w3
 #    SUBDIR += w3c-httpd
