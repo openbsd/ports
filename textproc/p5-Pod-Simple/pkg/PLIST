@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/28 23:14:32 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/31 20:04:22 naddy Exp $
 ${P5SITE}/Pod/Simple.pm
 ${P5SITE}/Pod/Simple.pod
 ${P5SITE}/Pod/Simple/BlackBox.pm
@@ -21,6 +21,9 @@ ${P5SITE}/Pod/Simple/Text.pm
 ${P5SITE}/Pod/Simple/TextContent.pm
 ${P5SITE}/Pod/Simple/TiedOutFH.pm
 ${P5SITE}/Pod/Simple/XMLOutStream.pm
+@comment ${P5ARCH}/auto/Pod/Simple/.packlist
+@comment ${P5SITE}/perlpod.pod
+@comment ${P5SITE}/perlpodspec.pod
 man/man3p/Pod::Simple.3p
 man/man3p/Pod::Simple::Checker.3p
 man/man3p/Pod::Simple::Debug.3p
@@ -40,4 +43,10 @@ man/man3p/Pod::Simple::Subclassing.3p
 man/man3p/Pod::Simple::Text.3p
 man/man3p/Pod::Simple::TextContent.3p
 man/man3p/Pod::Simple::XMLOutStream.3p
+@comment man/man3p/perlpod.3p
+@comment man/man3p/perlpodspec.3p
+@comment @dirrm ${P5ARCH}/auto/Pod/Simple
+@comment @dirrm ${P5ARCH}/auto/Pod
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
 @dirrm ${P5SITE}/Pod/Simple

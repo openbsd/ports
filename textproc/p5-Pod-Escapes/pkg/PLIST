@@ -1,3 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/28 23:12:16 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/31 20:04:22 naddy Exp $
 ${P5SITE}/Pod/Escapes.pm
+@comment ${P5ARCH}/auto/Pod/Escapes/.packlist
 man/man3p/Pod::Escapes.3p
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Pod/Escapes
+@comment @dirrm ${P5ARCH}/auto/Pod
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Pod
