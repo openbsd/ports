@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.181 2000/02/04 00:51:53 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.182 2000/02/04 11:09:33 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -171,8 +171,6 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # NO_PACKAGE	- Use a dummy (do-nothing) package target.
 # NO_PKG_REGISTER - Don't register a port install as a package.
 # NO_WRKSUBDIR	- Assume port unpacks directly into ${WRKDIR}.
-# NO_WRKDIR		- There's no work directory at all; port does this someplace
-#				  else.
 # NO_DEPENDS	- Don't verify build of dependencies.
 # CLEANDEPENDS  - Nuke dependent dirs on make clean (Default: no)
 # BROKEN		- Port is broken.  Set this string to the reason why.
@@ -389,7 +387,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # If you provide a do-patch, you MUST call distpatch explicitly.
 # The sequence of hooks actually run is: 
 #
-# pre-patch `real distpatch' post-distpatch `real-patch' post-patch
+# pre-patch `real distpatch' post-distpatch `real patch' post-patch
 # NEVER override the "regular" targets unless you want to open
 # a major can of worms.
 
@@ -629,15 +627,12 @@ MTREE_ARGS?=	-U -f ${MTREE_FILE} -d -e -q -p
 .include <bsd.own.mk>
 MAKE_ENV+=	EXTRA_SYS_MK_INCLUDES="<bsd.own.mk>"
 
-.if !defined(NO_WRKDIR)
-.  if defined(OBJMACHINE)
+.if defined(OBJMACHINE)
 WRKDIR?=		${.CURDIR}/work.${MACHINE_ARCH}
-.  else
-WRKDIR?=		${.CURDIR}/work
-.  endif
 .else
-WRKDIR?=		${.CURDIR}
+WRKDIR?=		${.CURDIR}/work
 .endif
+
 .if defined(NO_WRKSUBDIR)
 WRKSRC?=		${WRKDIR}
 .else
@@ -1060,7 +1055,34 @@ uninstall deinstall package:
 
 .else 
 
-fetch: real-fetch
+
+# Most standard port targets create a cookie to avoid being re-run.
+#
+# fetch is an exception, as it uses the files it fetches as `cookies',
+# and it's run by checksum, so in essence it's a sub-goal of extract,
+# in normal use.
+# 
+# Besides, fetch can't create cookies, as it does not have WRKDIR available
+# in the first place.
+#
+# IMPORTANT: pre-fetch/do-fetch/post-fetch MUST be designed so that they
+# can be run several times in a row.
+
+fetch: fetch-depends
+.  if target(pre-fetch)
+	@cd ${.CURDIR} && make pre-fetch
+.  endif
+.  if target(do-fetch)
+	@cd ${.CURDIR} && make do-fetch
+.  else
+# What FETCH normally does:
+	@cd ${.CURDIR} && make ${ALLFILES:S@^@${FULLDISTDIR}/@}
+# End of FETCH
+.  endif
+.  if target(post-fetch)
+	@cd ${.CURDIR} && make post-fetch
+.  endif
+
 
 checksum: fetch
 .  if ! (defined(NO_CHECKSUM) || defined(NO_EXTRACT))
@@ -1114,6 +1136,13 @@ checksum: fetch
   fi
 .  endif
 
+
+
+# Normal user-mode targets are PHONY targets, e.g., don't create the
+# corresponding file. However, there is nothing phony about the cookie.
+
+# The cookie's recipe hold the real rule for each of those targets.
+
 extract: ${_EXTRACT_COOKIE}
 patch: ${_PATCH_COOKIE}
 distpatch: ${_DISTPATCH_COOKIE}
@@ -1122,6 +1151,8 @@ build: ${_BUILD_COOKIE}
 install: ${_INSTALL_COOKIE}
 package: ${_PACKAGE_COOKIE}
 
+
+# ALL_HOOK is deprecated, `all' should be a synonym for `build'.
 .  if defined(ALL_HOOK)
 all:
 	@cd ${.CURDIR} && ${SETENV} CURDIR=${.CURDIR} DISTNAME=${DISTNAME} \
@@ -1150,13 +1181,6 @@ DEPENDS_TARGET=	install
 .  endif
 .endif
 
-################################################################
-# The following hooks are used to create easy dummy targets for
-# disabling some bit of default target behavior you don't want,
-# and to perform ports build in the correct order.
-################################################################
-
-# Disable checksum
 makesum: fetch-all
 .if !(defined(NO_CHECKSUM) || defined(NO_EXTRACT))
 	@mkdir -p ${FILESDIR} && rm -f ${CHECKSUM_FILE}
@@ -1169,6 +1193,7 @@ makesum: fetch-all
 	done
 	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE} 
 .endif
+
 
 addsum: fetch-all
 .if !(defined(NO_CHECKSUM) || defined(NO_EXTRACT))
@@ -1189,56 +1214,332 @@ addsum: fetch-all
 	fi
 .endif
 
+
+# The real targets. Note that some parts always get run, some parts can be
+# disabled, and there are hooks to override behavior.
+
 ${_EXTRACT_COOKIE}:
 	@cd ${.CURDIR} && make checksum build-depends lib-depends misc-depends
 .if !defined(NO_EXTRACT)
-	@cd ${.CURDIR} && make real-extract
+	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
+.  if target(pre-extract)
+	@cd ${.CURDIR} && make pre-extract
+.  endif
+.  if target(do-extract)
+	@cd ${.CURDIR} && make do-extract
+.  else
+# What EXTRACT normally does:
+.    if defined(WRKOBJDIR)
+	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}
+	@mkdir -p ${WRKOBJDIR}/${PORTSUBDIR}
+	@if [ ! -L ${WRKDIR} ] || \
+	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PORTSUBDIR} ]; then \
+		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PORTSUBDIR}"; \
+		rm -f ${WRKDIR}; \
+		ln -sf ${WRKOBJDIR}/${PORTSUBDIR} ${WRKDIR}; \
+	fi
+.    else
+	@rm -rf ${WRKDIR}
+	@mkdir -p ${WRKDIR}
+.    endif
+	@PATH=${PORTPATH}; \
+	for file in ${EXTRACT_ONLY}; do \
+		if cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${FULLDISTDIR}/$$file ${EXTRACT_AFTER_ARGS}; then : ; \
+		else\
+			exit 1; \
+		fi \
+	done
+# End of EXTRACT
+.  endif
+.  if target(post-extract)
+	@cd ${.CURDIR} && make post-extract
+.  endif
 .endif
 	@${_MAKE_COOKIE} ${_EXTRACT_COOKIE}
 
+
+
+# Both distpatch and patch invoke pre-patch, if it's defined.
+# Hence it needs special treatment (a specific cookie).
 .if target(pre-patch)
 ${_PREPATCH_COOKIE}:
 	@cd ${.CURDIR} && make pre-patch
 	@${_MAKE_COOKIE} ${_PREPATCH_COOKIE}
 .endif
 
+
+
+# The real distpatch
+
 ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .if !defined(NO_PATCH)
-	@cd ${.CURDIR} && make real-distpatch
+.  if target(pre-patch)
+	@cd ${.CURDIR} && make ${_PREPATCH_COOKIE}
+.  endif
+.  if target(do-distpatch)
+	@cd ${.CURDIR} && make do-distpatch
+.  else
+# What DISTPATCH normally does
+.    if defined(PATCHFILES)
+	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
+	@cd ${FULLDISTDIR}; \
+	  for i in ${_PATCHFILES}; do \
+	  	case ${PATCH_DEBUG_TMP:L} in \
+			yes) ${ECHO_MSG} "===>   Applying distribution patch $$i" ;; \
+		esac; \
+		case $$i in \
+			*.Z|*.gz) \
+				${GZCAT} $$i | ${PATCH} ${PATCH_DIST_ARGS}; \
+				;; \
+			*) \
+				${PATCH} ${PATCH_DIST_ARGS} < $$i; \
+				;; \
+		esac; \
+	  done
+.    endif
+# End of DISTPATCH.
+.  endif
+.  if target(post-distpatch)
+	@cd ${.CURDIR} && make post-distpatch
+.  endif
+.  if ${CLEANDISTORIG:L} == "yes"
+	@cd ${WRKSRC} && find . -name '*.orig' | xargs rm
+.  endif
 .endif
 	@${_MAKE_COOKIE} ${_DISTPATCH_COOKIE}
 
+
+# The real patch
+
 ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .if !defined(NO_PATCH)
-	@cd ${.CURDIR} && make real-patch
+	@${ECHO_MSG} "===>  Patching for ${PKGNAME}"
+.  if target(pre-patch)
+	@cd ${.CURDIR} && make ${_PREPATCH_COOKIE}
+.  endif
+.  if target(do-patch)
+	@cd ${.CURDIR} && make do-patch
+.  else
+# What PATCH normally does:
+# XXX test for efficiency, don't bother with distpatch if it's not needed
+.    if target(do-distpatch) || target(post-distpatch) || defined(PATCHFILES) || ${CLEANDISTORIG:L} == "yes"
+	@cd ${.CURDIR} && make distpatch
+.    endif 
+	@if cd ${PATCHDIR} 2>/dev/null; then \
+		error=0; \
+		for i in ${PATCH_LIST}; do \
+			case $$i in \
+				*.orig|*.rej|*~) \
+					${ECHO_MSG} "===>   Ignoring patchfile $$i" ; \
+					;; \
+				*) \
+				    if [ -e $$i ]; then \
+						case ${PATCH_DEBUG_TMP:L} in \
+							yes) ${ECHO_MSG} "===>   Applying ${OPSYS} patch $$i" ;; \
+						esac; \
+						${PATCH} ${PATCH_ARGS} < $$i || \
+							{ echo "***>   $$i did not apply cleanly"; \
+							error=1; }\
+					else \
+						echo "===>   Can't find patch matching $$i"; \
+						if [ -d ${PATCHDIR}/CVS -a "$$i" = \
+							"${PATCHDIR}/patch-*" ]; then \
+								echo "===>   Perhaps you forgot the -P flag to cvs co or update?"; \
+								error=1; \
+						fi; \
+					fi; \
+					;; \
+			esac; \
+		done;\
+		case $$error in 1) exit 1;; esac; \
+	fi
+# End of PATCH.
+.  endif
+.  if target(post-patch)
+	@cd ${.CURDIR} && make post-patch
+.  endif
 .endif
 .if !defined(PATCH_CHECK_ONLY) && defined(USE_AUTOCONF)
 	@cd ${AUTOCONF_DIR} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 .endif
 	@${_MAKE_COOKIE} ${_PATCH_COOKIE}
 
+
+# The real configure
+
 ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 .if !defined(NO_CONFIGURE)
-	@cd ${.CURDIR} && make real-configure
+	@${ECHO_MSG} "===>  Configuring for ${PKGNAME}"
+	@mkdir -p ${WRKBUILD}
+.  if target(pre-configure)
+	@cd ${.CURDIR} && make pre-configure
+.  endif
+.  if target(do-configure)
+	@cd ${.CURDIR} && make do-configure
+.  else
+# What CONFIGURE normally does
+	@if [ -f ${SCRIPTDIR}/configure ]; then \
+		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
+		  ${SCRIPTDIR}/configure; \
+	fi
+.    if defined(HAS_CONFIGURE)
+	@cd ${WRKBUILD} && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
+		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_MAN="${INSTALL_MAN}" \
+		INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}" \
+		YACC="${YACC}" \
+		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+.    endif
+.    if defined(USE_IMAKE)
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF}
+.    endif
+# End of CONFIGURE.
+.  endif
+.  if target(post-configure)
+	@cd ${.CURDIR} && make post-configure
+.  endif
 .endif
 	@${_MAKE_COOKIE} ${_CONFIGURE_COOKIE}
 
+
+# The real build
+
 ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 .if !defined(NO_BUILD) 
-	@cd ${.CURDIR} && make real-build
+	@${ECHO_MSG} "===>  Building for ${PKGNAME}"
+.  if target(pre-build)
+	@cd ${.CURDIR} && make pre-build
+.  endif
+.  if target(do-build)
+	@cd ${.CURDIR} && make do-build
+.  else
+# What BUILD normally does:
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET}
+# End of BUILD
+.  endif
+.  if target(post-build)
+	@cd ${.CURDIR} && make post-build
+.  endif
 .endif
 	@${_MAKE_COOKIE} ${_BUILD_COOKIE}
 
-${_INSTALL_COOKIE}: ${_BUILD_COOKIE} 
-	@cd ${.CURDIR} && make run-depends lib-depends 
+
+# The real install
+
+${_INSTALL_COOKIE}: ${_BUILD_COOKIE} run-depends lib-depends 
 .if !defined(NO_INSTALL)
-	@cd ${.CURDIR} && make real-install
+	@${ECHO_MSG} "===>  Installing for ${PKGNAME}"
+.  if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
+	@if [ -d ${PKG_DBDIR}/${PKGNAME} -o "X$$(ls -d ${PKG_DBDIR}/${PKGNAME:C/-[0-9].*//g}-* 2> /dev/null)" != "X" ]; then \
+		echo "===>  ${PKGNAME} is already installed - perhaps an older version?"; \
+		echo "      If so, you may wish to \`\`make deinstall'' and install"; \
+		echo "      this port again by \`\`make reinstall'' to upgrade it properly."; \
+		echo "      If you really wish to overwrite the old port of ${PKGNAME}"; \
+		echo "      without deleting it first, set the variable \"FORCE_PKG_REGISTER\""; \
+		echo "      in your environment or the \"make install\" command line."; \
+		exit 1; \
+	fi
+.  endif
+	@if [ `${SH} -c umask` != ${DEF_UMASK} ]; then \
+		${ECHO_MSG} "===>  Warning: your umask is \"`${SH} -c umask`"\".; \
+		${ECHO_MSG} "      If this is not desired, set it to an appropriate value"; \
+		${ECHO_MSG} "      and install this port again by \`\`make reinstall''."; \
+	fi
+.  if !defined(NO_MTREE)
+	@if [ `id -u` = 0 ]; then \
+		if [ ! -f ${MTREE_FILE} ]; then \
+			echo "Error: mtree file \"${MTREE_FILE}\" is missing."; \
+			echo "Copy it from a suitable location (e.g., /usr/src/etc/mtree) and try again."; \
+			exit 1; \
+		else \
+			if [ ! -d ${PREFIX} ]; then \
+				mkdir -p ${PREFIX}; \
+			fi; \
+			${MTREE_CMD} ${MTREE_ARGS} ${PREFIX}/; \
+		fi; \
+	else \
+		${ECHO_MSG} "Warning: not superuser, can't run mtree."; \
+		${ECHO_MSG} "Become root and try again to ensure correct permissions."; \
+	fi
+.  endif
+	@${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
+.  if target(pre-install)
+	@cd ${.CURDIR} && make pre-install
+.  endif
+.  if target(do-install)
+	@cd ${.CURDIR} && make do-install
+.  else
+# What INSTALL normally does:
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET}
+# End of INSTALL.
+.  endif
+.  if target(post-install)
+	@cd ${.CURDIR} && make post-install
+.  endif
+.  if defined(_MANPAGES) || defined(_CATPAGES)
+.    if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
+	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
+.      for manpage in ${_MANPAGES} ${_CATPAGES}
+	@${GUNZIP_CMD} ${manpage}.gz
+.      endfor
+.    elif !defined(MANCOMPRESSED) && !defined(NOMANCOMPRESS)
+	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
+.      for manpage in ${_MANPAGES} ${_CATPAGES}
+	@if [ -L ${manpage} ]; then \
+		set - `file ${manpage}`; \
+		shift `expr $$# - 1`; \
+		ln -sf $${1}.gz ${manpage}.gz; \
+		rm ${manpage}; \
+	else \
+		${GZIP_CMD} ${manpage}; \
+	fi
+.      endfor
+.    endif
+.  endif
+.  if exists(${PKGDIR}/MESSAGE)
+	@cat	${PKGDIR}/MESSAGE
+.  endif
+.  if !defined(NO_PKG_REGISTER)
+	@cd ${.CURDIR} && make fake-pkg
+.  endif
 .endif
 	@${_MAKE_COOKIE} ${_INSTALL_COOKIE}
 
+
 ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE}
 .if !defined(NO_PACKAGE)
-	@cd ${.CURDIR} && make real-package
+.  if target(pre-package)
+	@cd ${.CURDIR} && make pre-package
+.  endif
+.  if target(do-package)
+	@cd ${.CURDIR} && make do-package
+.  else
+# What PACKAGE normally does:
+	@if [ -e ${PLIST} ]; then \
+		${ECHO_MSG} "===>  Building package for ${PKGNAME}"; \
+		if [ -d ${PACKAGES} ]; then \
+			if [ ! -d ${PKGREPOSITORY} ]; then \
+				if ! mkdir -p ${PKGREPOSITORY}; then \
+					echo ">> Can't create directory ${PKGREPOSITORY}."; \
+					exit 1; \
+				fi; \
+			fi; \
+		fi; \
+		if ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
+			if [ -d ${PACKAGES} ]; then \
+				make package-links; \
+			fi; \
+		else \
+			make delete-package; \
+			exit 1; \
+		fi; \
+	fi
+# End of PACKAGE.
+.  endif
+.  if target(post-package)
+	@cd ${.CURDIR} && make post-package
+.  endif
 .else
 .  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${PKGNAME} may not be packaged: ${NO_PACKAGE}."
@@ -1248,15 +1549,9 @@ ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE}
 	@${_MAKE_COOKIE} ${_PACKAGE_COOKIE}
 .endif
 
-
-################################################################
-# Support for standard targets start here.
-################################################################
-
-
 .if !target(fetch-all)
 fetch-all:
-	@cd ${.CURDIR} && make __FETCH_ALL=Yes real-fetch
+	@cd ${.CURDIR} && make __FETCH_ALL=Yes fetch
 .endif
 
 # Separate target for each file fetch will retrieve
@@ -1331,7 +1626,7 @@ ${_F}:
 # re-distributed freely
 mirror-distfiles:
 .if (${MIRROR_DISTFILE:L} == "yes")
-	@make fetch-all __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes
+	@make __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes fetch
 .endif
 
 # list the distribution and patch files used by a port.  Typical
@@ -1354,8 +1649,7 @@ list-distfiles:
 #
 .if !target(obj)
 obj:
-.  if !defined(NO_WRKDIR)
-.    if defined(WRKOBJDIR)
+.  if defined(WRKOBJDIR)
 	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}
 	@mkdir -p ${WRKOBJDIR}/${PORTSUBDIR}
 	@if [ ! -L ${WRKDIR} ] || \
@@ -1364,18 +1658,14 @@ obj:
 		rm -f ${WRKDIR}; \
 		ln -sf ${WRKOBJDIR}/${PORTSUBDIR} ${WRKDIR}; \
 	fi
-.    else
+.  else
 	@echo ">>"
 	@echo ">> Please set the WRKOBJDIR variable before using 'make obj'"
 	@echo ">>"
 	@exit 1;
-.    endif
 .  endif
 .endif
 
-
-${WRKBUILD}:
-	mkdir -p ${WRKBUILD}
 
 # Some support rules for do-package
 
@@ -1403,313 +1693,6 @@ delete-package:
 	@make delete-package-links
 	@rm -f ${PKGFILE}
 .endif
-
-################################################################
-# The real targets start here.
-# 
-# You shouldn't EVER change these. If possible, add a pre-* or
-# post-* hook.  
-# In the worst case, define a do-* target that will override
-# the main body of the target.
-################################################################
-
-
-real-fetch: fetch-depends
-.if target(pre-fetch)
-	@cd ${.CURDIR} && make pre-fetch
-.endif
-.if target(do-fetch)
-	@cd ${.CURDIR} && make do-fetch
-.else
-# What FETCH normally does:
-	@cd ${.CURDIR} && make ${ALLFILES:S@^@${FULLDISTDIR}/@}
-# End of FETCH
-.endif
-.if target(post-fetch)
-	@cd ${.CURDIR} && make post-fetch
-.endif
-
-
-real-extract: 
-	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
-.if target(pre-extract)
-	@cd ${.CURDIR} && make pre-extract
-.endif
-.if target(do-extract)
-	@cd ${.CURDIR} && make do-extract
-.else
-# What EXTRACT normally does:
-.  if !defined(NO_WRKDIR)
-.    if defined(WRKOBJDIR)
-	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}
-	@mkdir -p ${WRKOBJDIR}/${PORTSUBDIR}
-	@if [ ! -L ${WRKDIR} ] || \
-	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PORTSUBDIR} ]; then \
-		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PORTSUBDIR}"; \
-		rm -f ${WRKDIR}; \
-		ln -sf ${WRKOBJDIR}/${PORTSUBDIR} ${WRKDIR}; \
-	fi
-.    else
-	@rm -rf ${WRKDIR}
-	@mkdir -p ${WRKDIR}
-.    endif
-.  endif
-	@PATH=${PORTPATH}; \
-	for file in ${EXTRACT_ONLY}; do \
-		if cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${FULLDISTDIR}/$$file ${EXTRACT_AFTER_ARGS}; then : ; \
-		else\
-			exit 1; \
-		fi \
-	done
-# End of EXTRACT
-.endif
-.if target(post-extract)
-	@cd ${.CURDIR} && make post-extract
-.endif
-
-real-distpatch:
-.if target(pre-patch)
-	@cd ${.CURDIR} && make ${_PREPATCH_COOKIE}
-.endif
-.if target(do-distpatch)
-	@cd ${.CURDIR} && make do-distpatch
-.else
-# What DISTPATCH normally does
-.  if defined(PATCHFILES)
-	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
-	@cd ${FULLDISTDIR}; \
-	  for i in ${_PATCHFILES}; do \
-	  	case ${PATCH_DEBUG_TMP:L} in \
-			yes) ${ECHO_MSG} "===>   Applying distribution patch $$i" ;; \
-		esac; \
-		case $$i in \
-			*.Z|*.gz) \
-				${GZCAT} $$i | ${PATCH} ${PATCH_DIST_ARGS}; \
-				;; \
-			*) \
-				${PATCH} ${PATCH_DIST_ARGS} < $$i; \
-				;; \
-		esac; \
-	  done
-.  endif
-# End of DISTPATCH.
-.endif
-.if target(post-distpatch)
-	@cd ${.CURDIR} && make post-distpatch
-.endif
-.if ${CLEANDISTORIG:L} == "yes"
-	@cd ${WRKSRC} && find . -name '*.orig' | xargs rm
-.endif
-
-real-patch: 
-	@${ECHO_MSG} "===>  Patching for ${PKGNAME}"
-.  if target(pre-patch)
-	@cd ${.CURDIR} && make ${_PREPATCH_COOKIE}
-.  endif
-.if target(do-patch)
-	@cd ${.CURDIR} && make do-patch
-.else
-# What PATCH normally does:
-# XXX test for efficiency, don't bother with distpatch if it's not needed
-.  if target(do-distpatch) || target(post-distpatch) || defined(PATCHFILES) || ${CLEANDISTORIG:L} == "yes"
-	@cd ${.CURDIR} && make distpatch
-.  endif 
-	@if cd ${PATCHDIR} 2>/dev/null; then \
-		error=0; \
-		for i in ${PATCH_LIST}; do \
-			case $$i in \
-				*.orig|*.rej|*~) \
-					${ECHO_MSG} "===>   Ignoring patchfile $$i" ; \
-					;; \
-				*) \
-				    if [ -e $$i ]; then \
-						case ${PATCH_DEBUG_TMP:L} in \
-							yes) ${ECHO_MSG} "===>   Applying ${OPSYS} patch $$i" ;; \
-						esac; \
-						${PATCH} ${PATCH_ARGS} < $$i || \
-							{ echo "***>   $$i did not apply cleanly"; \
-							error=1; }\
-					else \
-						echo "===>   Can't find patch matching $$i"; \
-						if [ -d ${PATCHDIR}/CVS -a "$$i" = \
-							"${PATCHDIR}/patch-*" ]; then \
-								echo "===>   Perhaps you forgot the -P flag to cvs co or update?"; \
-								error=1; \
-						fi; \
-					fi; \
-					;; \
-			esac; \
-		done;\
-		case $$error in 1) exit 1;; esac; \
-	fi
-# End of PATCH.
-.endif
-.if target(post-patch)
-	@cd ${.CURDIR} && make post-patch
-.endif
-
-
-real-configure: ${WRKBUILD}
-	@${ECHO_MSG} "===>  Configuring for ${PKGNAME}"
-.if target(pre-configure)
-	@cd ${.CURDIR} && make pre-configure
-.endif
-.if target(do-configure)
-	@cd ${.CURDIR} && make do-configure
-.else
-# What CONFIGURE normally does
-	@if [ -f ${SCRIPTDIR}/configure ]; then \
-		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
-		  ${SCRIPTDIR}/configure; \
-	fi
-.  if defined(HAS_CONFIGURE)
-	@cd ${WRKBUILD} && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
-		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_MAN="${INSTALL_MAN}" \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}" \
-		YACC="${YACC}" \
-		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
-.  endif
-.  if defined(USE_IMAKE)
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF}
-.  endif
-# End of CONFIGURE.
-.endif
-.if target(post-configure)
-	@cd ${.CURDIR} && make post-configure
-.endif
-
-
-
-real-build: 
-	@${ECHO_MSG} "===>  Building for ${PKGNAME}"
-.if target(pre-build)
-	@cd ${.CURDIR} && make pre-build
-.endif
-.if target(do-build)
-	@cd ${.CURDIR} && make do-build
-.else
-# What BUILD normally does:
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET}
-# End of BUILD
-.endif
-.if target(post-build)
-	@cd ${.CURDIR} && make post-build
-.endif
-
-
-real-install: 
-	@${ECHO_MSG} "===>  Installing for ${PKGNAME}"
-.if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
-	@if [ -d ${PKG_DBDIR}/${PKGNAME} -o "X$$(ls -d ${PKG_DBDIR}/${PKGNAME:C/-[0-9].*//g}-* 2> /dev/null)" != "X" ]; then \
-		echo "===>  ${PKGNAME} is already installed - perhaps an older version?"; \
-		echo "      If so, you may wish to \`\`make deinstall'' and install"; \
-		echo "      this port again by \`\`make reinstall'' to upgrade it properly."; \
-		echo "      If you really wish to overwrite the old port of ${PKGNAME}"; \
-		echo "      without deleting it first, set the variable \"FORCE_PKG_REGISTER\""; \
-		echo "      in your environment or the \"make install\" command line."; \
-		exit 1; \
-	fi
-.endif
-	@if [ `${SH} -c umask` != ${DEF_UMASK} ]; then \
-		${ECHO_MSG} "===>  Warning: your umask is \"`${SH} -c umask`"\".; \
-		${ECHO_MSG} "      If this is not desired, set it to an appropriate value"; \
-		${ECHO_MSG} "      and install this port again by \`\`make reinstall''."; \
-	fi
-.if !defined(NO_MTREE)
-	@if [ `id -u` = 0 ]; then \
-		if [ ! -f ${MTREE_FILE} ]; then \
-			echo "Error: mtree file \"${MTREE_FILE}\" is missing."; \
-			echo "Copy it from a suitable location (e.g., /usr/src/etc/mtree) and try again."; \
-			exit 1; \
-		else \
-			if [ ! -d ${PREFIX} ]; then \
-				mkdir -p ${PREFIX}; \
-			fi; \
-			${MTREE_CMD} ${MTREE_ARGS} ${PREFIX}/; \
-		fi; \
-	else \
-		${ECHO_MSG} "Warning: not superuser, can't run mtree."; \
-		${ECHO_MSG} "Become root and try again to ensure correct permissions."; \
-	fi
-.endif
-	@${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
-.if target(pre-install)
-	@cd ${.CURDIR} && make pre-install
-.endif
-.if target(do-install)
-	@cd ${.CURDIR} && make do-install
-.else
-# What INSTALL normally does:
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET}
-# End of INSTALL.
-.endif
-.if target(post-install)
-	@cd ${.CURDIR} && make post-install
-.endif
-.if defined(_MANPAGES) || defined(_CATPAGES)
-.  if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
-	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
-.    for manpage in ${_MANPAGES} ${_CATPAGES}
-	@${GUNZIP_CMD} ${manpage}.gz
-.    endfor
-.  elif !defined(MANCOMPRESSED) && !defined(NOMANCOMPRESS)
-	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
-.    for manpage in ${_MANPAGES} ${_CATPAGES}
-	@if [ -L ${manpage} ]; then \
-		set - `file ${manpage}`; \
-		shift `expr $$# - 1`; \
-		ln -sf $${1}.gz ${manpage}.gz; \
-		rm ${manpage}; \
-	else \
-		${GZIP_CMD} ${manpage}; \
-	fi
-.    endfor
-.  endif
-.endif
-.if exists(${PKGDIR}/MESSAGE)
-	@cat	${PKGDIR}/MESSAGE
-.endif
-.if !defined(NO_PKG_REGISTER)
-	@cd ${.CURDIR} && make fake-pkg
-.endif
-
-
-
-real-package:
-.if target(pre-package)
-	@cd ${.CURDIR} && make pre-package
-.endif
-.if target(do-package)
-	@cd ${.CURDIR} && make do-package
-.else
-# What PACKAGE normally does:
-	@if [ -e ${PLIST} ]; then \
-		${ECHO_MSG} "===>  Building package for ${PKGNAME}"; \
-		if [ -d ${PACKAGES} ]; then \
-			if [ ! -d ${PKGREPOSITORY} ]; then \
-				if ! mkdir -p ${PKGREPOSITORY}; then \
-					echo ">> Can't create directory ${PKGREPOSITORY}."; \
-					exit 1; \
-				fi; \
-			fi; \
-		fi; \
-		if ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
-			if [ -d ${PACKAGES} ]; then \
-				make package-links; \
-			fi; \
-		else \
-			make delete-package; \
-			exit 1; \
-		fi; \
-	fi
-# End of PACKAGE.
-.endif
-.if target(post-package)
-	@cd ${.CURDIR} && make post-package
-.endif
-
 
 # Checkpatch
 #
@@ -1758,22 +1741,8 @@ clean: pre-clean
 	@make clean-depends
 .  endif
 	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
-.  if !defined(NO_WRKDIR)
-.    if  defined(WRKOBJDIR)
-	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}
-	@rm -f ${WRKDIR}
-.    else
-	@if [ -d ${WRKDIR} ]; then \
-		if [ -w ${WRKDIR} ]; then \
-			rm -rf ${WRKDIR}; \
-		else \
-			${ECHO_MSG} "===>   ${WRKDIR} not writable, skipping"; \
-		fi; \
-	fi
-.    endif
-.  else
-	@rm -f ${_ALL_COOKIES}
-.  endif
+	@if [ -L ${WRKDIR} ]; then rm -rf `readlink ${WRKDIR}`; fi
+	@rm -rf ${WRKDIR}
 .endif
 
 .if !target(pre-distclean)
@@ -1923,12 +1892,13 @@ pre-repackage:
 	@rm -f ${_PACKAGE_COOKIE}
 .endif
 
-# Build a package but don't check the cookie for installation, also don't
+# Build a package but don't rely on cookie for installation, also don't
 # install package cookie
 
 .if !target(package-noinstall)
 package-noinstall:
-	@cd ${.CURDIR} && make PACKAGE_NOINSTALL=Yes real-package
+	@rm -f ${_PACKAGE_COOKIE}
+	@cd ${.CURDIR} && make PACKAGE_NOINSTALL=Yes ${_PACKAGE_COOKIE}
 .endif
 
 ################################################################
@@ -2362,8 +2332,7 @@ tags:
    post-patch pre-build pre-clean pre-configure pre-distclean \
    pre-extract pre-fetch pre-install pre-package pre-patch \
    pre-repackage print-depends-list print-package-depends readme \
-   readmes real-extract real-fetch real-install real-patch real-package \
-   real-configure reinstall \
+   readmes reinstall \
    repackage run-depends tags uninstall fetch-all print-depends \
    recurse-build-depends recurse-package-depends \
    distpatch real-distpatch do-distpatch post-distpatch
