@@ -1,5 +1,6 @@
---- po/Makefile.in.in.orig	Wed Jul 28 08:20:37 1999
-+++ po/Makefile.in.in	Fri Jun  9 23:09:32 2000
+$OpenBSD: patch-po_Makefile_in_in,v 1.1 2001/01/22 00:26:49 naddy Exp $
+--- po/Makefile.in.in.orig	Sun Oct 31 12:17:50 1999
++++ po/Makefile.in.in	Mon Jan 15 18:49:55 2001
 @@ -18,7 +18,7 @@ VPATH = @srcdir@
  
  prefix = @prefix@
