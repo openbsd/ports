@@ -1,0 +1,20 @@
+$OpenBSD: patch-xterm_man,v 1.1 2001/11/05 17:52:49 naddy Exp $
+--- xterm.man.orig	Sun Oct 28 23:29:59 2001
++++ xterm.man	Mon Nov  5 17:35:40 2001
+@@ -2760,13 +2760,13 @@ may be defined to a nonstandard location
+ .SH FILES
+ The actual pathnames given may differ on your system.
+ .TP 5
+-\fI/etc/utmp\fP
++\fI/var/run/utmp\fP
+ the system logfile, which records user logins.
+ .TP 5
+-\fI/etc/wtmp\fP
++\fI/var/log/wtmp\fP
+ the system logfile, which records user logins and logouts.
+ .TP 5
+-.I __apploaddir__/app-defaults/XTerm
++.I __apploaddir__/XTerm
+ the \fIxterm\fP default application resources.
+ .TP 5
+ .I __apploaddir__/XTerm-color

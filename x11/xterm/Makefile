@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2001/10/25 16:14:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2001/11/05 17:52:49 naddy Exp $
 
 COMMENT=	"newer version of xterm"
 
-DISTNAME=	xterm-162
+DISTNAME=	xterm-163
 CATEGORIES=	x11
 NEED_VERSION=	1.405
-HOMEPAGE=	http://dickey.his.com/xterm/xterm.html
+HOMEPAGE=	http://invisible-island.net/xterm/xterm.html
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://dickey.his.com/xterm/
+MASTER_SITES=	ftp://invisible-island.net/xterm/
 EXTRACT_SUFX=	.tgz
 
 FLAVORS=	col256 no_tek xaw3d
