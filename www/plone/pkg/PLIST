@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/18 13:15:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/10/06 08:58:24 xsa Exp $
 @conflict zope-btreefolder2-*
 @conflict zope-cmfquickinstaller-*
 @conflict zope-formulator-*
 @conflict zope-groupuserfolder-*
+@conflict zope-placelesstranslationservice-*
 lib/zope/lib/python/Products/BTreeFolder2/
 lib/zope/lib/python/Products/BTreeFolder2/BTreeFolder2.py
 lib/zope/lib/python/Products/BTreeFolder2/BTreeFolder2.pyc
