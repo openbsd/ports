@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/07/02 23:25:18 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/07/02 23:44:17 espie Exp $
 
 DISTNAME=		qvwm-1.1.8
 CATEGORIES=     	x11
@@ -16,8 +16,20 @@ MASTER_SITES=		ftp://ftp.qvwm.org/pub/qvwm/
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
+FLAVORS=		esound imlib
+FLAVOR?=
 
-CONFIGURE_ARGS+=--without-imlib
+.if ${FLAVOR:L:Mesound}
+LIB_DEPENDS+=esd.2.::audio/esound
+CONFIGURE_ARGS+=--with-esd-prefix=${LOCALBASE}
+.else
 CONFIGURE_ARGS+=--without-esd
+.endif
+.if ${FLAVOR:L:Mimlib}
+LIB_DEPENDS+=Imlib.19.::graphics/imlib
+CONFIGURE_ARGS+=--with-imlib-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--without-imlib
+.endif
 
 .include <bsd.port.mk>
