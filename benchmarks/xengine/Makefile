@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/10/24 22:46:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2004/11/21 18:01:04 espie Exp $
 
 COMMENT=	"reciprocating engine for X11"
 PKGNAME=	xengine-1.0.1
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xaw Xext Xmu Xpm Xt c m
 
 DIST_SUBDIR=	xengine
 EXTRACT_CASES=	*.z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${_PERL_FIX_SHAR} | /bin/sh;;

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2003/09/30 10:25:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2004/11/21 18:01:03 espie Exp $
 # Uses pthreads
 
 COMMENT=	"performance test of sequential file I/O"
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	"incomplete/bad license"
 PERMIT_PACKAGE_FTP=	"incomplete/bad license"
 PERMIT_DISTFILES_CDROM=	"incomplete/bad license"
 PERMIT_DISTFILES_FTP=	"incomplete/bad license"
+WANTLIB=		c pthread
 
 MAKE_ENV=	CC="${CC}"
 

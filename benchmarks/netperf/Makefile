@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/07/23 18:29:52 jakob Exp $
+# $OpenBSD: Makefile,v 1.20 2004/11/21 18:01:03 espie Exp $
 
 COMMENT=	"Network performance benchmark"
 
@@ -7,8 +7,9 @@ CATEGORIES=	benchmarks net
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
-MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/ \
-		ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/archive/ \
+#MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/ \
+#		ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/archive/ \
+MASTER_SITES= \
 		http://ftp.sunet.se/pub/network/monitoring/netperf/ \
 		http://ftp.sunet.se/pub/network/monitoring/netperf/archive/
 
@@ -18,6 +19,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 MAKE_FILE=	makefile
 MAKE_FLAGS+=	CC="${CC}" CFLAGS='-O -DDEBUG_LOG_FILE="\"/tmp/netperf.debug\"" -DUSE_LOOPER -DDO_DNS'
