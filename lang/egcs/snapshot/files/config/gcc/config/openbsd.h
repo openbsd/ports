@@ -1,4 +1,4 @@
-/*	$OpenBSD: openbsd.h,v 1.3 1999/01/10 02:50:04 espie Exp $	*/
+/*	$OpenBSD: openbsd.h,v 1.4 1999/01/11 14:11:22 espie Exp $	*/
 /* vi:ts=8: 
  */
 
@@ -41,7 +41,6 @@
   (DEFAULT_SWITCH_TAKES_ARG(CHAR) \
    || (CHAR) == 'R')
 #endif
-#endif
 
 /* CPP_SPEC appropriate for OpenBSD. We deal with -posix and -pthread */
 #undef CPP_SPEC
@@ -54,7 +53,6 @@ still uses a special flavor of gas that needs to be told when generating pic
 code. */
 #undef ASM_SPEC
 #define ASM_SPEC " %| %{fpic:-k} %{fPIC:-k -K}"
-#endif
 #endif
 
 
