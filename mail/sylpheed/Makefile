@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2003/03/29 14:06:17 couderc Exp $
+# $OpenBSD: Makefile,v 1.39 2003/04/29 13:01:53 wilfried Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
@@ -30,13 +30,13 @@ FLAVOR?=
 .if ${FLAVOR:L:Mcompface}
 PERMIT_PACKAGE_CDROM=	"No Fee"
 PERMIT_DISTFILES_CDROM=	"No Fee"
-BUILD_DEPENDS=		::graphics/compface
+LIB_DEPENDS+=		compface.1::mail/faces
 .else
 CONFIGURE_ARGS+=	--disable-compface
 .endif
 
 .if ${FLAVOR:L:Mgpgme}
-LIB_DEPENDS=		gpgme.4::security/gpgme
+LIB_DEPENDS+=		gpgme.4::security/gpgme
 CONFIGURE_ARGS+=	--enable-gpgme
 .else
 CONFIGURE_ARGS+=	--disable-gpgme
