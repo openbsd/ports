@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/07/13 07:09:30 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/08/31 07:38:53 brad Exp $
 
 DISTNAME=	libnids-1.14
 CATEGORIES=	net
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes  
 
-CONFIGURE_STYLE= gnu
+FAKE_FLAGS=	install_prefix="${WRKINST}"
 
-FAKE_FLAGS=	AM_MAKEFLAGS="install_prefix=\"${WRKINST}\""
+CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>
