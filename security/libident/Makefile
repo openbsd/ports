@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 15:43:24 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 03:45:55 lebel Exp $
+
+COMMENT=	"library to interface the ident protocol server (rfc1413)"
 
 DISTNAME=	libident-0.22
 CATEGORIES=	devel net security
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/libs/
+NEED_VERSION=	1.402
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

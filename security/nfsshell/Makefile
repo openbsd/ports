@@ -3,14 +3,16 @@
 # Date created:		10 Jun 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:46 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 03:46:00 lebel Exp $
+
+COMMENT=	"NFS auditing tool"
 
 PKGNAME=	nfsshell-1.0
 
 DISTNAME=	nfsshell
 
 CATEGORIES=	security
-NEED_VERSION=	1.191
+NEED_VERSION=	1.402
 
 WRKDIST=	${WRKDIR}/nfs
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/04 11:36:04 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 03:46:07 lebel Exp $
+
+COMMENT=	"interface to md5 message-digest algorithm"
 
 DISTNAME=	MD5-1.7
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
-NEED_VERSION=	1.348
+NEED_VERSION=	1.402
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

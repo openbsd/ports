@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2001/03/17 15:46:36 wilfried Exp $
+# $OpenBSD: Makefile,v 1.18 2001/05/06 03:45:40 lebel Exp $
+
+COMMENT=	"cryptographic file system (user-space NFS server)"
 
 DISTNAME=	cfs-1.3.3
 CATEGORIES=	security
@@ -7,6 +9,7 @@ MASTER_SITES=	http://the.wiretapped.net/security/cryptography/filesystems/ \
 		ftp://ftp.informatik.uni-hamburg.de/pub/virus/crypt/disk/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
+NEED_VERSION=	1.402
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes

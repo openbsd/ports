@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2001/01/29 05:01:11 dugsong Exp $
+# $OpenBSD: Makefile,v 1.15 2001/05/06 03:45:51 lebel Exp $
+
+COMMENT=	"extremely fast password cracker"
 
 DISTNAME=	john-1.6
 CATEGORIES=     security
-NEED_VERSION=	1.320
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.openwall.com/john/ \
 		http://www.false.com/security/john/ \
 		ftp://ftp.false.com/pub/security/john/

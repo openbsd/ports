@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/22 06:59:26 obecian Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/06 03:45:37 lebel Exp $
+
+COMMENT=	"brute force binary tester"
 
 DISTNAME=	bfbtester-2.0
 CATEGORIES=	security
-NEED_VERSION= 1.340
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bfbtester
 

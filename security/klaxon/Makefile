@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/15 20:54:30 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 03:45:53 lebel Exp $
+
+COMMENT=	"small service wedge to do ident lookup on connecting party"
 
 DISTNAME=		klaxon
 PKGNAME=		klaxon-1.5
 CATEGORIES=     	security
+NEED_VERSION=		1.402
 
 HOMEPAGE=		http://www.eng.auburn.edu/users/doug/second.html
 

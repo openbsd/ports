@@ -3,13 +3,15 @@
 # Date created:		10 Feb 2000
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:45 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 03:45:57 lebel Exp $
+
+COMMENT=	"NetBus client"
 
 DISTNAME=       linux-netbus-client-v0.4
 PKGNAME=	lxnb-0.4
 
 CATEGORIES=	security
-NEED_VERSION=	1.314
+NEED_VERSION=	1.402
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 

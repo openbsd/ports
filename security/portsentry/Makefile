@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/06 07:26:59 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 03:46:15 lebel Exp $
+
+COMMENT=	"port scan detection and active defense"
 
 DISTNAME=	portsentry-1.0
 CATEGORIES=	security
-NEED_VERSION=	1.358
+NEED_VERSION=	1.402
 
 HOMEPAGE=	http://www.psionic.com/abacus/portsentry
 

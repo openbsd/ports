@@ -3,13 +3,15 @@
 # Date created:		September 28, 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2001/04/19 10:41:17 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 03:46:12 lebel Exp $
+
+COMMENT=	"library to generate (and manipulate) PGP packets"
 
 #BROKEN=		inconsistant build failures
 
 DISTNAME=       PGPlib-1.1
 CATEGORIES=	security
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 FAKE=No
 MASTER_SITES=	ftp://dslab1.cs.uit.no/pub/
 

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2001/02/24 18:05:18 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 03:45:50 lebel Exp $
+
+COMMENT=	"scan C/C++ source code for security problems"
 
 DISTNAME=	its4-1.1.1
 CATEGORIES=	security
-NEED_VERSION=	1.336
+NEED_VERSION=	1.402
 MASTER_SITES=	#see-do-fetch-target
 EXTRACT_SUFX=	.tgz
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2001/04/19 10:41:18 wilfried Exp $
+# $OpenBSD: Makefile,v 1.16 2001/05/06 03:46:24 lebel Exp $
+
+COMMENT=	"Secure Telnet, encrypted version of the telnet daemon"
 
 DISTNAME=	stel
 PKGNAME=	${DISTNAME}-19960505
 CATEGORIES=	security
-NEED_VERSION=	1.210
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.ox.ac.uk/pub/crypto/misc/ \
 		ftp://ftp.mupad.de/pub/crypto/misc/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/security/tool/stel/

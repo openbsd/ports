@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2001/03/22 22:06:41 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2001/05/06 03:45:44 lebel Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
+
+COMMENT=	"the "Sensible" Unix Password Cracker"
 
 DISTNAME=	crack5.0
 PKGNAME=	crack-5.0
 CATEGORIES=	security
-NEED_VERSION=	1.336
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.ox.ac.uk/pub/comp/security/software/crackers/  \
 		ftp://ftp.auscert.org.au/pub/coast/mirrors/cert.org/tools/crack/ \
 

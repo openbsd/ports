@@ -3,12 +3,14 @@
 # Date created:		25 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.7 2000/10/22 14:03:48 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/05/06 03:46:28 lebel Exp $
+
+COMMENT=	"temporary file auditing tool"
 
 PKGNAME=	tempwatch-1.0
 
 CATEGORIES=	security
-NEED_VERSION=	1.191
+NEED_VERSION=	1.402
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 

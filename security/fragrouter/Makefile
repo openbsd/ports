@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 15:43:23 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 03:45:47 lebel Exp $
+
+COMMENT=	"tool for testing network IDS implementations"
 
 DISTNAME=	fragrouter-1.6
 
 CATEGORIES=	security
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 
 MASTER_SITES=	http://www.anzen.com/research/nidsbench/
 

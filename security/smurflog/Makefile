@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2001/03/26 15:58:20 todd Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 03:46:20 lebel Exp $
+
+COMMENT=	"a program to assist logging of smurf attacks"
 
 COMMENT=	"logs smurf attacks"
 DISTNAME=	smurflog-2.1
 CATEGORIES=	net security
-NEED_VERSION=	1.364
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.nectar.com/distfiles/
 #		http://www.sy.net/security/ \
 #		http://www.bitchx.com/~humble/files/
