@@ -1,5 +1,0 @@
-Logcheck is a scheduled auditing tool that scans system log files
-for security violations and unusual activity.  Reports of suspicious
-log entries are mailed to a specified user (usually root).
-
-WWW: ${HOMEPAGE}
