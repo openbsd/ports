@@ -1,0 +1,9 @@
+$OpenBSD: SECURITY,v 1.1 2000/12/06 09:48:38 espie Exp $
+
+rpm uses a few mktemp, but looking at these, they all appear to be wrapped
+and calling open() properly.
+
+Note that rpm has some inherent security problems anyway. Who should you
+trust when installing RPMs on your system ? Its use should probably be 
+limited to installing linux-compatibility library, within ports, with
+proper md5 checksumming.
