@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/08/10 09:26:14 xsa Exp $
+# $OpenBSD: Makefile,v 1.14 2004/08/12 21:56:41 naddy Exp $
 
 COMMENT=	"extendable encryption program that supports many ciphers"
 
@@ -26,6 +26,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= 	--enable-static --with-catgets 
 CONFIGURE_ENV+=  	CPPFLAGS="-I${LOCALBASE}/include" \
-                	LDFLAGS="-L${LOCALBASE}/lib -lintl -lltdl"
+                	LDFLAGS="-L${LOCALBASE}/lib -lintl -liconv -lltdl"
 
 .include <bsd.port.mk>
