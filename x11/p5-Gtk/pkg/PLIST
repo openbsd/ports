@@ -1,0 +1,50 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/01 07:31:29 shell Exp $
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Atoms.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/CListModel.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/ColorSelectButton.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/Files.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/GdkTypes.h
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/GtkDefs.h
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/GtkTypemap
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/GtkTypes.h
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/MiscTypes.h
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/PerlGtkExt.h
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/PerlGtkInt.h
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gendefs.pl
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gendoc.pl
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/genext.pl
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gpdoc2pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-0.99.defs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-0.99.typemap
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-1.0.defs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-1.1.1.defs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-1.1.3.defs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-1.1.4.defs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-1.1.6.defs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-1.1.defs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-1.2.defs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-1.2.typemap
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/ppport.h
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Keysyms.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/LWP.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/LWP/http.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/LogHandler.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Types.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/TypesLazy.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/io.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/lazy.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gdk/autosplit.ix
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gtk.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gtk.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/autosplit.ix
+man/man3/Gtk.3pm
+man/man3/Gtk::CListModel.3pm
+man/man3/Gtk::cookbook.3pm
+man/man3/Gtk::objects.3pm
+man/man3/Gtk::reference.3pm
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/base
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gdk
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/LWP
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install
