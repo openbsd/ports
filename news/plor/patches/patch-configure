@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2001/03/12 15:28:14 wilfried Exp $
+--- configure.orig	Wed Jan 28 21:13:46 1998
++++ configure	Mon Mar 12 16:24:38 2001
+@@ -523,11 +523,6 @@ VERSION=0.3.2
+ 
+ PACKAGE=plor
+ 
+-CFLAGS="-g -ansi -pedantic -Wall -O2 -fomit-frame-pointer"
+-
+-LDFLAGS=-g 
+-
+-
+ if test "$program_transform_name" = s,x,x,; then
+   program_transform_name=
+ else
