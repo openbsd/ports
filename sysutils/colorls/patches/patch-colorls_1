@@ -1,6 +1,6 @@
-$OpenBSD: patch-colorls_1,v 1.4 2003/08/27 00:41:51 naddy Exp $
---- colorls.1.orig	2003-08-27 02:00:19.000000000 +0200
-+++ colorls.1	2003-08-27 02:01:20.000000000 +0200
+$OpenBSD: patch-colorls_1,v 1.5 2005/02/27 17:37:46 naddy Exp $
+--- colorls.1.orig	Sun Feb 27 18:20:27 2005
++++ colorls.1	Sun Feb 27 18:23:12 2005
 @@ -41,9 +41,17 @@
  .Nd list directory contents
  .Sh SYNOPSIS
@@ -31,18 +31,18 @@ $OpenBSD: patch-colorls_1,v 1.4 2003/08/27 00:41:51 naddy Exp $
 +in the environment.
 +(See below).
  .It Fl L
- If argument is a symbolic link, list the file or directory the link references
- rather than the link itself.
-@@ -395,7 +409,7 @@ The
+ If argument is a symbolic link, evaluate the file information and file type
+ to be those of the file referenced by the link, and not the link itself;
+@@ -401,7 +415,7 @@ The
  .Nm
- utility exits 0 on success or >0 if an error occurred.
+ utility exits 0 on success or \*(Gt0 if an error occurred.
  .Sh ENVIRONMENT
 -.Bl -tag -width BLOCKSIZE
 +.Bl -tag -width CLICOLOR_FORCE
  .It Ev BLOCKSIZE
  If the environment variable
  .Ev BLOCKSIZE
-@@ -405,6 +419,44 @@ option is not specified, the block count
+@@ -411,6 +425,44 @@ option is not specified, the block count
  (see
  .Fl s )
  will be displayed in units of that size block.
@@ -87,7 +87,7 @@ $OpenBSD: patch-colorls_1,v 1.4 2003/08/27 00:41:51 naddy Exp $
  .It COLUMNS
  If this variable contains a string representing a
  decimal integer, it is used as the
-@@ -417,6 +469,99 @@ many pathname text columns to display
+@@ -423,6 +475,99 @@ many pathname text columns to display
  based on the width provided
  (see
  .Fl C ) .
@@ -177,7 +177,7 @@ $OpenBSD: patch-colorls_1,v 1.4 2003/08/27 00:41:51 naddy Exp $
 +.Pp
 +The default is
 +.Qq exfxcxdxbxegedabagacad ,
-+i.e. blue foreground and
++i.e., blue foreground and
 +default background for regular directories, black foreground and red
 +background for setuid executables, etc.
 +.It Ev TERM
@@ -187,7 +187,7 @@ $OpenBSD: patch-colorls_1,v 1.4 2003/08/27 00:41:51 naddy Exp $
  .It Ev TZ
  The timezone to use when displaying dates.
  See
-@@ -444,6 +589,7 @@ printed first.
+@@ -450,6 +595,7 @@ printed first:
  .Sh SEE ALSO
  .Xr chflags 1 ,
  .Xr chmod 1 ,
