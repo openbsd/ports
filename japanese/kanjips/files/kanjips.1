@@ -1,0 +1,66 @@
+.\"	$OpenBSD: kanjips.1,v 1.1 2000/04/23 15:43:17 espie Exp $
+.\"
+.\" Copyright (c) 2000 Marc Espie
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE AUTHORS ``AS IS'' AND ANY EXPRESS 
+.\" OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+.\" WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY 
+.\" DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.Dd April 23, 2000
+.Dt KANJIPS 1
+.Os
+.Sh NAME
+.Nm kanjips
+.Nd "scan convert japanese fonts to bitmap fonts in a PostScript document"
+.Sh SYNOPSIS
+.Nm kanjips
+.Sh DESCRIPTION
+.Nm
+is a filter that reads PostScript files with Japanese fonts, and converts
+the fonts to a bitmap representation that is suitable for printing on
+a simple PostScript printer.
+.Pp
+Even if Japanese PostScript fonts are available, it may be unadvisable
+to download megabytes of data just to print a single page in draft mode.
+.Sh FILES
+.Bl -tag -compact -width /usr/local/share/kanjips_fonts
+.It Pa /usr/local/share/kanjips_fonts
+Path to the bitmap fonts jis24, jis32, jis48.
+.El
+.Sh LIMITATIONS
+.Nm
+is only configured to use bitmap fonts. It would also be able to use 
+bdf X11 fonts or metafont pk fonts, but not, for instance, pcf fonts,
+which is what X11 currently uses.
+.Pp
+.Nm
+is fairly simplistic in its recognition of japanese strings. The only
+program outputting PostScript that 
+.Nm
+can process is probably
+.Xr jenscript 1 .
+.Pp
+.Nm
+uses a simple strategy and encodes bitmap fonts on a page basis.
+Hence, it does not cache data from printed page to printed page.
+Hence, it does only work with structured PostScript documents that 
+use proper page boundaries.
+.Sh SEE ALSO
+.Xr jenscript 1 

@@ -1,0 +1,133 @@
+.\"	$OpenBSD: jenscript.1,v 1.1 2000/04/23 15:43:17 espie Exp $
+.\"
+.\" Copyright (c) 2000 Marc Espie
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE AUTHORS ``AS IS'' AND ANY EXPRESS 
+.\" OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+.\" WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY 
+.\" DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.Dd April 23, 2000
+.Dt JENSCRIPT 1
+.Os
+.Sh NAME
+.Nm jenscript
+.Nd convert japanese text to PostScript
+.Sh SYNOPSIS
+.Nm jenscript
+.Op Fl EGMdknsx
+.Op Ar -columns
+.Op Fl F Ar afont
+.Op Fl L Ar lines
+.Op Fl P Ar printpage
+.Op Fl S Ar fontsize
+.Op Fl b Ar header
+.Op Fl f Ar kfont
+.Op Fl l Ar language
+.Ar files ...
+.Sh DESCRIPTION
+.Nm
+prints 
+.Ar files
+as a PostScript file. The result will hold japanese font names,
+and may need post-processing through
+.Xr kanjips 1 
+to be printed.
+.Pp
+The options are as follows:
+.Bl -tag -width indent
+.It Fl E
+Assume EUC encoding for the input files, 
+instead of the default JIS/SJIS encodings.
+Note that
+.Nm
+does not handle automatic encoding recognition. You should use
+a tool such as
+.Xr nkf 1
+for that.
+.It Fl G
+Display a banner on top of each page.
+.It Fl M
+Set manual feed.
+.It Fl d
+Debug mode.
+.It Fl k
+Encode character data as octal, for transmission on 7-bit lines.
+.It Fl n
+Suppress PS-Adobe-2.0 in header.
+.It Fl s
+Use A4 paper size instead of the default US letter size.
+.It Fl x
+Use fixed width fonts for roman characters.
+This replaces Times-Roman, Times-Bold, and Times-Italic with Courier,
+Courier-Bold and Courier-Oblique.
+.It Ar -columns
+Output
+.Ar columns 
+columns on each page. By default, 
+.Nm
+outputs one single column.
+.It Fl F Ar afont
+Use  the single PostScript font
+.Ar afont
+instead of the default roman fonts. 
+.It Fl L Ar lines
+Output 
+.Ar lines
+lines in each column. By default, the number of lines is computed
+from the font size.
+.It Fl P Ar printpage
+Start printing from page 
+.Ar printpage .
+.It Fl S Ar fontsize
+Use 
+.Ar fontsize
+as the roman character font size. By default, 6 points.
+.It Fl b Ar header
+Print 
+.Ar header
+in the header line instead of the current file name. 
+This only makes sense if
+.Fl g
+is also used.
+.It Fl f Ar kfont
+Use
+.Ar kfont
+as a japanese kanji font.  
+.It Fl l Ar language
+Format text according to 
+.Xr vgrind 1
+specs for 
+.Ar language
+.El
+.Pp
+The choice of japanese font and japanese font sizes are normally 
+automatic from the roman font size. Sizes of 6 points, 8 points and 12
+points correspond to the jis24, jis32 and jis48 fonts, respectively.
+Since those are bitmap fonts, using other sizes will only affect the
+roman characters sizes.
+.Sh FILES
+.Bl -tag -compact -width /usr/local/share/kanjips_fonts
+.It Pa /usr/local/share/kanjips_fonts
+Where the jis24, jis32, jis48 fonts are used.
+.El
+.Sh SEE ALSO
+.Xr kanjips 1 ,
+.Xr nkf 1 ,
+.Xr vgrind 1

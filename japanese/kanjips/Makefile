@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/04/22 23:42:40 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/04/23 15:43:17 espie Exp $
 
 CATEGORIES=japanese print
 
@@ -50,5 +50,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCDIR}/kanjips.readme
 	${INSTALL_DATA} ${WRKDIST}/jenscript/README ${DOCDIR}/jenscript.readme
 	${INSTALL_SCRIPT} ${WRKDIST}/mp/README ${DOCDIR}/mp-j.readme
+	${INSTALL_MAN} ${FILESDIR}/jenscript.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${FILESDIR}/kanjips.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
