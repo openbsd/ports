@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/29 22:32:29 shell Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/10 08:43:49 shell Exp $
 
 
 COMMENT=		"object oriented interface for CGI script applications"
 
 VERSION=		0.9.3
-DISTNAME=		CGI-XMLApplication_${VERSION}
+DISTNAME=		CGI-XMLApplication-${VERSION}
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=     	www
-NEED_VERSION=		1.427
+NEED_VERSION=		1.454
 
 MAINTAINER=		Shell Hung <shell@openbsd.org>
 
