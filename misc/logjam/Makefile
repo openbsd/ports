@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/08/27 22:59:10 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2003/02/12 18:14:28 brad Exp $
 
 COMMENT=	"gtk livejournal client"
 
-VERSION=	3.0.4
+VERSION=	4.0.1
 DISTNAME=	logjam-${VERSION}
 CATEGORIES=	misc x11
 
@@ -16,34 +16,25 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=		http://logjam.danga.com/download/
+MASTER_SITES=	http://logjam.danga.com/download/
 
-LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ 	\
-			curl.2::net/curl	\
-			gthread.1.2::devel/glib 
-			
+MODULES=	gettext
 
-PSEUDO_FLAVORS=		xmms gnome
-FLAVOR?= 		
+BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
+LIB_DEPENDS=	glib-2.0.0.0,gobject-2.0.0.0,gthread-2.0.0.0::devel/glib2 \
+		gtk-x11-2.0.0.0,gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0::x11/gtk+2 \
+		curl.2::net/curl \
+		xml2::textproc/libxml
 
-.if ${FLAVOR:L:Mxmms}
-LIB_DEPENDS+=         xmms::audio/xmms
-.else
-CONFIGURE_ARGS+=        --with-xmms=no
-.endif 
+PORTHOME=	${WRKDIR}
 
-.if ${FLAVOR:L:Mgnome} 
-#CONFIGURE_ARGS+= 	--with-gnome=yes	# gnome support broken
-CONFIGURE_ARGS+=	--with-gnome=no
-.else
-CONFIGURE_ARGS+=	--with-gnome=no
-.endif
-			
+CONFIGURE_ARGS+=	--without-gnome
+CONFIGURE_ARGS+=	--with-xmms=runtime
 
 USE_X11=        	Yes
 CONFIGURE_STYLE=	gnu
 
-CONFIGURE_ENV=		CXXFLAGS="${CFLAGS} -L${LOCALBASE}/lib" 	\
-			LDFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
