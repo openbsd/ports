@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/23 15:14:40 lebel Exp $
+bin/corkscrew
+share/doc/corkscrew/ChangeLog
+share/doc/corkscrew/README
+@dirrm share/doc/corkscrew
