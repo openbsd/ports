@@ -3,13 +3,12 @@
 # Date created:		10 Feb 2000
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.5 2000/04/09 17:38:03 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/30 10:00:12 kevlo Exp $
 
 PKGNAME=	lxnb-0.4
 
 CATEGORIES=	security
 NEED_VERSION=	1.191
-FAKE=No
 
 MAINTAINER=	dugsong@monkey.org
 
@@ -24,7 +23,8 @@ EXTRACT_SUFX=	.tgz
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
 
-NO_CONFIGURE=	yes
+NO_CONFIGURE=	Yes
+FAKE=		Yes
 
 pre-build:
 	rm -f ${WRKSRC}/lxnetbus
