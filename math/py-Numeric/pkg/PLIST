@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/12/22 14:33:39 shell Exp $
+include/python${PYTHON_VER}/Numeric/arrayobject.h
+include/python${PYTHON_VER}/Numeric/f2c.h
+include/python${PYTHON_VER}/Numeric/ranlib.h
+include/python${PYTHON_VER}/Numeric/ufuncobject.h
+lib/python${PYTHON_VER}/site-packages/Numeric.pth
+lib/python${PYTHON_VER}/site-packages/Numeric/ArrayPrinter.py
+lib/python${PYTHON_VER}/site-packages/Numeric/ArrayPrinter.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/LinearAlgebra.py
+lib/python${PYTHON_VER}/site-packages/Numeric/LinearAlgebra.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/MLab.py
+lib/python${PYTHON_VER}/site-packages/Numeric/MLab.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/Matrix.py
+lib/python${PYTHON_VER}/site-packages/Numeric/Matrix.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/Numeric.py
+lib/python${PYTHON_VER}/site-packages/Numeric/Numeric.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/Precision.py
+lib/python${PYTHON_VER}/site-packages/Numeric/Precision.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/RandomArray.py
+lib/python${PYTHON_VER}/site-packages/Numeric/RandomArray.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/UserArray.py
+lib/python${PYTHON_VER}/site-packages/Numeric/UserArray.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/_numpy.so
+lib/python${PYTHON_VER}/site-packages/Numeric/arrayfns.so
+lib/python${PYTHON_VER}/site-packages/Numeric/lapack_lite.so
+lib/python${PYTHON_VER}/site-packages/Numeric/multiarray.so
+lib/python${PYTHON_VER}/site-packages/Numeric/numeric_version.py
+lib/python${PYTHON_VER}/site-packages/Numeric/numeric_version.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/ranlib.so
+lib/python${PYTHON_VER}/site-packages/Numeric/umath.so
+@dirrm lib/python${PYTHON_VER}/site-packages/Numeric
+@dirrm include/python${PYTHON_VER}/Numeric
