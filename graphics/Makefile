@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2001/12/03 16:44:27 brad Exp $
+# $OpenBSD: Makefile,v 1.87 2001/12/11 01:37:02 fgsch Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -52,6 +52,7 @@
      SUBDIR += kuickshow
      SUBDIR += lcms
      SUBDIR += libart
+     SUBDIR += libdivxdecore
      SUBDIR += libmng
      SUBDIR += libungif
      SUBDIR += libwmf
