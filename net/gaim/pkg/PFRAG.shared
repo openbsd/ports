@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2001/12/17 00:35:13 jcs Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.7 2002/01/25 03:21:41 jcs Exp $
 lib/gaim/autorecon.so
 lib/gaim/chatlist.so
 lib/gaim/iconaway.so
