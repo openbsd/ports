@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/07/17 21:29:06 wcobb Exp $
+# $OpenBSD: Makefile,v 1.7 2002/08/31 03:54:58 wcobb Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -25,7 +25,6 @@ LIB_DEPENDS=		SDL.:sdl-*-!no_x11:devel/sdl \
 			png.2::graphics/png
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-sdl-prefix=${LOCALBASE} \
@@ -35,12 +34,14 @@ CONFIGURE_ARGS=		--with-sdl-prefix=${LOCALBASE} \
 CONFIGURE_ENV+=		LDFLAGS="-lm" CFLAGS="${CFLAGS:N-O*}"
 ALL_TARGET=
 
-DOCS=			opengl.txt readme.txt srcinfo.txt todo.txt \
-			whatsnew.txt
+DOCS=			opengl.txt whatsnew.txt
 
 WRKSRC=			${WRKDIST}/src
 
 NO_REGRESS=		Yes
+
+post-extract:
+	rm -fr ${WRKSRC}/obj
 
 do-install:
 	    ${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zsnes
