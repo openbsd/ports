@@ -1,0 +1,116 @@
+diff -u -r --new-file --exclude=CVS rsync-2.3.0/cleanup.c rsync-2.3.1/cleanup.c
+--- rsync-2.3.0/cleanup.c	Thu Nov 26 03:24:39 1998
++++ rsync-2.3.1/cleanup.c	Wed Apr  7 01:04:16 1999
+@@ -30,10 +30,13 @@
+ static int cleanup_fd1, cleanup_fd2;
+ static struct map_struct *cleanup_buf;
+ static int cleanup_pid = 0;
++extern int io_error;
+ 
+ void _exit_cleanup(int code, const char *file, int line)
+ {
+ 	extern int keep_partial;
++
++	if (code == 0 && io_error) code = RERR_FILEIO;
+ 
+ 	signal(SIGUSR1, SIG_IGN);
+ 
+diff -u -r --new-file --exclude=CVS rsync-2.3.0/clientserver.c rsync-2.3.1/clientserver.c
+--- rsync-2.3.0/clientserver.c	Tue Mar 16 08:23:11 1999
++++ rsync-2.3.1/clientserver.c	Wed Apr  7 01:04:16 1999
+@@ -417,6 +417,7 @@
+ int daemon_main(void)
+ {
+ 	extern char *config_file;
++	extern int orig_umask;
+ 	char *pid_file;
+ 
+ 	if (is_a_socket(STDIN_FILENO)) {
+@@ -447,16 +448,19 @@
+ 	rprintf(FINFO,"rsyncd version %s starting\n",VERSION);
+ 
+ 	if (((pid_file = lp_pid_file()) != NULL) && (*pid_file != '\0')) {
+-		FILE *f;
++		char pidbuf[16];
++		int fd;
+ 		int pid = (int) getpid();
+ 		cleanup_set_pid(pid);
+-		if ((f = fopen(lp_pid_file(), "w")) == NULL) {
++		if ((fd = do_open(lp_pid_file(), O_WRONLY|O_CREAT|O_TRUNC,
++					0666 & ~orig_umask)) == -1) {
+ 		    cleanup_set_pid(0);
+ 		    fprintf(stderr,"failed to create pid file %s\n", pid_file);
+ 		    exit_cleanup(RERR_FILEIO);
+ 		}
+-		fprintf(f, "%d\n", pid);
+-		fclose(f);
++		slprintf(pidbuf, sizeof(pidbuf), "%d\n", pid);
++		write(fd, pidbuf, strlen(pidbuf));
++		close(fd);
+ 	}
+ 
+ 	start_accept_loop(rsync_port, start_daemon);
+diff -u -r --new-file --exclude=CVS rsync-2.3.0/generator.c rsync-2.3.1/generator.c
+--- rsync-2.3.0/generator.c	Tue Mar 16 08:23:11 1999
++++ rsync-2.3.1/generator.c	Wed Apr  7 01:04:16 1999
+@@ -317,7 +317,8 @@
+ 	}
+ 
+ 	if (skip_file(fname, file, &st)) {
+-		set_perms(fname,file,&st,1);
++		if (fnamecmp == fname)
++			set_perms(fname,file,&st,1);
+ 		return;
+ 	}
+ 
+diff -u -r --new-file --exclude=CVS rsync-2.3.0/main.c rsync-2.3.1/main.c
+--- rsync-2.3.0/main.c	Tue Mar 16 08:23:11 1999
++++ rsync-2.3.1/main.c	Wed Apr  7 01:04:16 1999
+@@ -208,7 +208,7 @@
+ 		return name;
+ 	}
+ 
+-	if (flist->count == 1)
++	if (flist->count <= 1)
+ 		return name;
+ 
+ 	if (do_mkdir(name,0777 & ~orig_umask) != 0) {
+@@ -355,8 +355,8 @@
+ 		recv_exclude_list(f_in);
+ 
+ 	flist = recv_file_list(f_in);
+-	if (!flist || flist->count == 0) {
+-		rprintf(FERROR,"server_recv: nothing to do\n");
++	if (!flist) {
++		rprintf(FERROR,"server_recv: recv_file_list error\n");
+ 		exit_cleanup(RERR_FILESELECT);
+ 	}
+ 	
+diff -u -r --new-file --exclude=CVS rsync-2.3.0/receiver.c rsync-2.3.1/receiver.c
+--- rsync-2.3.0/receiver.c	Tue Mar 16 08:23:11 1999
++++ rsync-2.3.1/receiver.c	Wed Apr  7 01:04:16 1999
+@@ -417,6 +417,9 @@
+ 		fd2 = do_open(fnametmp,O_WRONLY|O_CREAT|O_EXCL,
+ 			      file->mode & INITACCESSPERMS);
+ 
++		/* in most cases parent directories will already exist
++		   because their information should have been previously
++		   transferred, but that may not be the case with -R */
+ 		if (fd2 == -1 && relative_paths && errno == ENOENT && 
+ 		    create_directory_path(fnametmp) == 0) {
+ 			fd2 = do_open(fnametmp,O_WRONLY|O_CREAT|O_EXCL,
+@@ -474,7 +477,7 @@
+ 	for (i = 0; i < flist->count; i++) {
+ 		file = flist->files[i];
+ 		if (!file->basename || !S_ISDIR(file->mode)) continue;
+-		recv_generator(f_name(file),flist,i,-1);
++		recv_generator(local_name?local_name:f_name(file),flist,i,-1);
+ 	}
+ 
+ 	if (verbose > 2)
+diff -u -r --new-file --exclude=CVS rsync-2.3.0/version.h rsync-2.3.1/version.h
+--- rsync-2.3.0/version.h	Tue Mar 16 08:23:18 1999
++++ rsync-2.3.1/version.h	Wed Apr  7 01:09:25 1999
+@@ -1 +1 @@
+-#define VERSION "2.3.0"
++#define VERSION "2.3.1"

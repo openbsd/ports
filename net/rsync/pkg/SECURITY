@@ -1,6 +1,64 @@
-$OpenBDS$
+$OpenBSD: SECURITY,v 1.2 1999/04/09 02:20:16 espie Exp $
 
 ${WRKDIR}/receiver.c
 	call to mktemp (wrapper function do_mktemp) does seem to be correct.
 
 The server makes extensive use of strlcpy/strlcat/snprintf.
+
+rsync-2.3.1 came out after ports freeze. A small patch was included in this
+port that fixes the relevant security advisory (the patched version is
+functionally identical to rsync-2.3.1, but the documentation has not been
+upgraded for size reasons... get the real thing !)
+
+-------------------------------------------------------------------
+From tridge@samba.org Thu Apr  8 02:19:54 CEST 1999
+Subject: rsync 2.3.1 release - security fix
+
+I discovered a security hole in rsync yesterday and have released
+rsync 2.3.1 to fix it.
+
+The new version and patches against the last version are available at
+http://rsync.samba.org/ or ftp://rsync.samba.org/pub/rsync/
+
+The problem happened when all of these conditions held true:
+
+1) the source file list contains exactly one filename and that
+   is the name of an empty directory
+2) the source directory name is specified on the command line
+   as "somedir/" or "somedir/." or "." not as "somedir"
+3) the destination directory doesn't exist
+4) you have recursion and permission transfer enabled (the -a option
+   will do this)
+5) the working directory of the receiving process is not the
+   destination directory (this happens when you do remote rsync
+   transfers)
+
+(the short summary is that you need to be transferring an empty
+directory into a non-existent directory)
+
+In that case (which is quite rare) the permissions from the empty
+directory in the source file list were set on the working directory of
+the receiving process. In the case of a remote rsync over rsh or ssh
+this means that the permissions on your home directory are changed to
+those of the empty directory you are transferring.
+
+This is a serious bug (and security hole) as it may change your home
+directory permissions to allow other users access to your files. A
+user can't exploit this hole deliberately to gain privileges (ie. this
+is not an "active" security hole) but a system administrator could
+easily be caught by the bug and inadvertently compromise the security
+of their system.
+
+To see if you have been hit by this bug you should look at the
+permissions on your home directory. If they are not what you expect
+then perhaps you have been bitten by this bug.
+
+The fix is to chmod your home directory back to the correct
+permissions and upgrade to rsync 2.3.1. The bug is in the receiving
+side of rsync, so it is quite safe to continue to use older anonymous
+rsync servers as long as you upgrade your client.
+
+This bug has been present in all versions of rsync. I apologize for
+any inconvenience.
+
+     Tridge
