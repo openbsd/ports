@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2002/03/07 19:32:13 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2002/03/11 18:00:30 brad Exp $
 
 COMMENT=	"small, easy to set up, fast and very secure FTP server"
 
-DISTNAME=	pure-ftpd-1.0.9
+DISTNAME=	pure-ftpd-1.0.10
 CATEGORIES=	net
 NEED_VERSION=	1.500
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= pureftpd
 
-HOMEPAGE=	http://pureftpd.sourceforge.net/
+HOMEPAGE=	http://www.pureftpd.org/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -48,7 +48,6 @@ CONF_FILE+= pureftpd-mysql.conf
 
 .if ${FLAVOR:L:Mpostgresql}
 LIB_DEPENDS+= pq.2::databases/postgresql
-CFLAGS+= -I/usr/local/include/postgresql
 CONFIGURE_ARGS+= --with-pgsql="${LOCALBASE}"
 DOCS+=	README.PGSQL
 CONF_FILE+= pureftpd-pgsql.conf
