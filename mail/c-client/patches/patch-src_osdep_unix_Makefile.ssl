@@ -1,0 +1,13 @@
+--- src/osdep/unix/Makefile.ssl.orig	Fri Dec  8 09:28:02 2000
++++ src/osdep/unix/Makefile.ssl	Fri Dec  8 09:27:14 2000
+@@ -20,8 +20,8 @@
+ 
+ # Extended flags needed for additional authenticators.  You may need to modify.
+ 
+-SSLDIR=/usr/local/ssl
+-SSLCERTS=$(SSLDIR)/certs
++SSLDIR=/usr
++SSLCERTS=/etc/ssl
+ SSLINCLUDE=$(SSLDIR)/include
+ SSLLIB=$(SSLDIR)/lib
+ 

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2000/11/11 16:32:45 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/12/12 14:44:24 brad Exp $
 
-DISTNAME=	imap-2000
-PKGNAME=	c-client-2000
+DISTNAME=	imap-2000a
+PKGNAME=	c-client-2000a
 CATEGORIES=	mail devel
 NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/
@@ -14,10 +14,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
-SHLIB=	libc-client.so.2.0
+SHLIB=	libc-client.so.2.1
 SUBST_VARS=	SHLIB
 
-MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" SHLIB="${SHLIB}"
+MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" SHLIB="${SHLIB}" \
+		SPECIALAUTHENTICATORS="ssl"
 
 ALL_TARGET=	bso
 
@@ -36,5 +37,5 @@ do-install:
 .include <bsd.port.mk>
 
 .if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-MAKE_ENV=	NO_SHARED_LIBS=Yes
+MAKE_ENV=	NO_SHARED_LIBS=	Yes
 .endif
