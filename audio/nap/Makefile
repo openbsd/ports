@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/11/11 21:58:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2001/11/11 23:29:33 pvalchev Exp $
 
 COMMENT=	"gnu curses-based napster client"
 
@@ -7,7 +7,7 @@ DISTNAME=	nap-${VERSION}
 CATEGORIES=    	audio
 NEED_VERSION=	1.491
 
-HOMEPAGE=	http://theory.stanford.edu/~selinger/nap/
+HOMEPAGE=	http://nap.sourceforge.net/
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
@@ -16,8 +16,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE} \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://quasar.mathstat.uottawa.ca/~selinger/nap/ \
+		http://theory.stanford.edu/~selinger/nap/
+	      	
 MASTER_SITE_SUBDIR= nap
 
 SEPARATE_BUILD=	concurrent
