@@ -1,16 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.13 2002/04/28 17:15:55 brad Exp $
+@comment $OpenBSD: PLIST,v 1.14 2002/11/13 02:15:59 brad Exp $
 @pkgcfl fluxbox-*
 @pkgcfl openbox-*
 bin/blackbox
 bin/bsetbg
 bin/bsetroot
-@comment man/ja_JP/man1/blackbox.1
-@comment man/ja_JP/man1/bsetroot.1
 man/man1/blackbox.1
+man/man1/bsetbg.1
 man/man1/bsetroot.1
-@comment man/nl_NL/man1/blackbox.1
-@comment man/nl_NL/man1/bsetroot.1
-@comment man/sl_SI/man1/blackbox.1
 share/blackbox/menu
 share/blackbox/nls/C/blackbox.cat
 share/blackbox/nls/POSIX
@@ -19,23 +15,33 @@ share/blackbox/nls/da_DK/blackbox.cat
 share/blackbox/nls/de
 share/blackbox/nls/de_DE/blackbox.cat
 share/blackbox/nls/en
+share/blackbox/nls/en_GB
 share/blackbox/nls/en_US
 share/blackbox/nls/es
+share/blackbox/nls/es_AR/blackbox.cat
 share/blackbox/nls/es_ES/blackbox.cat
-share/blackbox/nls/et_EE/blackbox.cat
+share/blackbox/nls/es_MX
 share/blackbox/nls/fr
 share/blackbox/nls/fr_FR/blackbox.cat
+share/blackbox/nls/hu_HU/blackbox.cat
 share/blackbox/nls/it
 share/blackbox/nls/it_IT/blackbox.cat
 share/blackbox/nls/ja_JP/blackbox.cat
+share/blackbox/nls/ko_KR/blackbox.cat
+share/blackbox/nls/lv_LV/blackbox.cat
 share/blackbox/nls/nl
 share/blackbox/nls/nl_NL/blackbox.cat
+share/blackbox/nls/no_NO/blackbox.cat
+share/blackbox/nls/pl_PL/blackbox.cat
 share/blackbox/nls/pt_BR/blackbox.cat
+share/blackbox/nls/ro_RO/blackbox.cat
 share/blackbox/nls/ru_RU/blackbox.cat
+share/blackbox/nls/sk_SK/blackbox.cat
 share/blackbox/nls/sl_SI/blackbox.cat
 share/blackbox/nls/sv_SE/blackbox.cat
-share/blackbox/nls/tr_TR/blackbox.cat
+share/blackbox/nls/uk_UA/blackbox.cat
 share/blackbox/nls/zh_CN/blackbox.cat
+share/blackbox/nls/zh_TW/blackbox.cat
 share/blackbox/styles/Artwiz
 share/blackbox/styles/Cthulhain
 share/blackbox/styles/Flux
@@ -50,28 +56,30 @@ share/blackbox/styles/Shade
 share/blackbox/styles/Spiff
 share/blackbox/styles/TDF
 share/blackbox/styles/Twice
-share/doc/blackbox/AUTHORS
-share/doc/blackbox/ChangeLog
-share/doc/blackbox/ChangeLog-0.40.x
-share/doc/blackbox/ChangeLog-0.50.x
-share/doc/blackbox/ChangeLog-0.51.x
-share/doc/blackbox/ChangeLog-0.60.x
 share/doc/blackbox/README
 share/doc/blackbox/README.bsetbg
 @dirrm share/doc/blackbox
 @dirrm share/blackbox/styles
+@dirrm share/blackbox/nls/zh_TW
 @dirrm share/blackbox/nls/zh_CN
-@dirrm share/blackbox/nls/tr_TR
+@dirrm share/blackbox/nls/uk_UA
 @dirrm share/blackbox/nls/sv_SE
 @dirrm share/blackbox/nls/sl_SI
+@dirrm share/blackbox/nls/sk_SK
 @dirrm share/blackbox/nls/ru_RU
+@dirrm share/blackbox/nls/ro_RO
 @dirrm share/blackbox/nls/pt_BR
+@dirrm share/blackbox/nls/pl_PL
+@dirrm share/blackbox/nls/no_NO
 @dirrm share/blackbox/nls/nl_NL
+@dirrm share/blackbox/nls/lv_LV
+@dirrm share/blackbox/nls/ko_KR
 @dirrm share/blackbox/nls/ja_JP
 @dirrm share/blackbox/nls/it_IT
+@dirrm share/blackbox/nls/hu_HU
 @dirrm share/blackbox/nls/fr_FR
-@dirrm share/blackbox/nls/et_EE
 @dirrm share/blackbox/nls/es_ES
+@dirrm share/blackbox/nls/es_AR
 @dirrm share/blackbox/nls/de_DE
 @dirrm share/blackbox/nls/da_DK
 @dirrm share/blackbox/nls/C
