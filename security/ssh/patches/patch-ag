@@ -1,0 +1,11 @@
+--- sshd.8.in.~1~	Tue Jan 20 04:24:13 1998
++++ sshd.8.in	Sat Apr 11 17:34:45 1998
+@@ -361,7 +361,7 @@
+ should print information whether you have new mail or not
+ when a user logs in interactively.  (On some systems it is also
+ printed by the shell, /etc/profile, or equivalent.)  The default is
+-"yes".
++"no".
+ 
+ .if \n(CO \{
+ .TP

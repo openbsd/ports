@@ -1,0 +1,11 @@
+--- servconf.c.~1~	Tue Jan 20 04:24:08 1998
++++ servconf.c	Sat Apr 11 17:33:32 1998
+@@ -203,7 +203,7 @@
+   if (options->idle_timeout == -1)
+     options->idle_timeout = 0;
+   if (options->check_mail == -1)
+-    options->check_mail = 1;
++    options->check_mail = 0;	/* default to no checking */
+ #ifdef XAUTH_PATH
+   if (options->xauth_path == NULL)
+     options->xauth_path = XAUTH_PATH;
