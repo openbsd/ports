@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2001/02/27 23:03:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2001/04/08 23:32:44 naddy Exp $
+
+COMMENT=	"Simulation Program for Integrated Circuit Electronics"
 
 DISTNAME=		sp3f4.kit
 PKGNAME=		spice-3f5
 CATEGORIES=     	cad
-NEED_VERSION=		1.191
+NEED_VERSION=		1.363
 
 MAINTAINER=		ports@openbsd.org
 
