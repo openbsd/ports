@@ -1,7 +1,7 @@
 " pf syntax file
 " Language:	OpenBSD packet filter (pf) configuration
 " Maintainer:	Camiel Dobbelaar <cd@sentia.nl>
-" Last Change:	2002 Jul 12
+" Last Change:	2002 Nov 04
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -11,20 +11,18 @@ elseif exists("b:current_syntax")
   finish
 endif
 
-setlocal iskeyword+=-
 setlocal iskeyword+=$
+setlocal iskeyword+=-
 setlocal iskeyword+=.
+setlocal iskeyword+=:
 setlocal iskeyword+=_
 
-syn keyword	pfCmd		binat block nat pass rdr scrub set
-syn keyword	pfLimit		frags states
-syn keyword	pfOptim		aggressive conservative default
-syn keyword	pfOptim		high-latency normal satellite
-syn keyword	pfSet		limit loginterface optimization timeout
-syn keyword	pfTimeout	icmp.error icmp.first other.first other.multiple
-syn keyword	pfTimeout	tcp.closed tcp.closing tcp.established
-syn keyword	pfTimeout	tcp.finwait tcp.first tcp.opening
-syn keyword	pfTimeout	udp.first udp.multiple udp.single
+syn keyword	pfCmd		antispoof binat block nat pass rdr scrub set
+syn keyword	pfService	auth bgp domain finger ftp ftp-data http https
+syn keyword	pfService	ident imap irc isakmp kerberos mail nameserver
+syn keyword	pfService	nfs nntp ntp pop3 portmap pptp rpcbind rsync
+syn keyword	pfService	smtp snmp snmp-trap snmptrap socks ssh sunrpc
+syn keyword	pfService	syslog telnet tftp www
 syn keyword	pfTodo		TODO XXX contained
 syn keyword	pfWildAddr	all any
 syn match	pfComment	/#.*$/ contains=pfTodo
@@ -32,13 +30,14 @@ syn match	pfCont		/\\$/
 syn match	pfErrClose	/}/
 syn match	pfErrOpen	/{/ contained
 syn match	pfIPv4		/\<\d\{1,3}\.\d\{1,3}\.\d\{1,3}\.\d\{1,3}\>/
+syn match	pfIPv6		/\<[a-fA-F0-9:]\+:[a-fA-F0-9:.]\+\>/
 syn match	pfNetmask	/\/\d\+\>/
 syn match	pfNum		/\<\d\+\>/
 syn match	pfVar		/\<$[a-zA-Z][a-zA-Z0-9_]*\>/
-syn match	pfVarAssign	/^\s*[a-zA-Z][a-zA-Z0-9_]*\s*=\s*"/me=e-1 contains=pfVarInit
-syn match	pfVarInit	/\<[a-zA-Z][a-zA-Z0-9_]*\>/ contained
-syn region	pfList		start=/{/ms=s+1 end=/}/ transparent contains=ALLBUT,pfErrClose,pfTodo,pfVarInit
-syn region	pfString	start=/"/ end=/"/ transparent contains=pfCont,pfErrClose,pfIPv4,pfList,pfNum,pfWildAddr
+syn match	pfVarAssign	/^\s*[a-zA-Z][a-zA-Z0-9_]*\s*=/me=e-1
+syn region	pfList		start=/{/ms=s+1 end=/}/ transparent contains=ALLBUT,pfComment,pfErrClose,pfList,pfTodo,pfVarAssign
+syn region	pfString	start=/"/ end=/"/ transparent contains=ALLBUT,pfComment,pfErrOpen,pfString,pfTodo,pfVarAssign
+syn region	pfString	start=/'/ end=/'/ transparent contains=ALLBUT,pfComment,pfErrOpen,pfString,pfTodo,pfVarAssign
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
@@ -57,15 +56,13 @@ if version >= 508 || !exists("did_c_syn_inits")
   HiLink pfErrClose	Error
   HiLink pfErrOpen	Error
   HiLink pfIPv4		Type
-  HiLink pfLimit	Identifier
+  HiLink pfIPv6		Type
   HiLink pfNetmask	Constant
   HiLink pfNum		Constant
-  HiLink pfOptim	Constant
-  HiLink pfSet		Special
-  HiLink pfTimeout	Identifier
+  HiLink pfService	Constant
   HiLink pfTodo		Todo
   HiLink pfVar		Identifier
-  HiLink pfVarInit	Identifier
+  HiLink pfVarAssign	Identifier
   HiLink pfWildAddr	Type
 
   delcommand HiLink
