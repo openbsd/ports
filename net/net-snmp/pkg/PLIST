@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/10/08 18:41:39 danh Exp $
-@conflict ucd-snmp-*
+@comment $OpenBSD: PLIST,v 1.6 2004/10/13 02:08:59 danh Exp $
 bin/encode_keychange
 bin/fixproc
 @comment bin/ipf-mod.pl
