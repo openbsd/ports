@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2000/10/01 21:24:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2000/11/01 14:50:00 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -115,7 +115,7 @@
      SUBDIR += swig
      SUBDIR += t1lib
 #    SUBDIR += tclcheck
-#    SUBDIR += tclcl
+     SUBDIR += tclcl
      SUBDIR += tkcvs
 #    SUBDIR += tkref
 #    SUBDIR += tvision
