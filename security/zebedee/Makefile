@@ -1,27 +1,44 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 20:31:41 fgsch Exp $
-#
+# $OpenBSD: Makefile,v 1.5 2003/01/30 22:39:58 sturm Exp $
 
 COMMENT=	"portable, encrypted, compressed tunnel"
 
-DISTNAME=	zebedee-2.2.2
+VERSION=	2.4.1
+DISTNAME=	zebedee-${VERSION}
 CATEGORIES=	security net
 
 HOMEPAGE=	http://www.winton.org.uk/zebedee/
 
+MAINTAINER=	Jon Leonard <oiler@unseenedge.net>
+
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	http://www.winton.org.uk/zebedee/ \
-		http://www.hewgill.com/zebedee/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=zebedee/} \
+		http://www.winton.org.uk/zebedee/
 
-MAINTAINER=	Jon Leonard <jleonard@iss.net>
+FLAVORS=	udp_spoof
+FLAVOR?=
 
 LIB_DEPENDS=	bz2::archivers/bzip2
+DEFINES_openbsd= -DHAVE_PTHREADS -DBUGGY_FORK_WITH_THREADS
+OSLIBS_openbsd=	-pthread
+
+.if ${FLAVOR:L:Mudp_spoof}
+LIB_DEPENDS+=	net::net/libnet
+LIBNET_DEFS=	`libnet-config --defines`
+DEFINES_openbsd+= -DUSE_UDP_SPOOFING ${LIBNET_DEFS}
+LIBNET_LIBS=	`libnet-config --libs`
+OSLIBS_openbsd+= ${LIBNET_LIBS}
+.endif
+
 NO_REGRESS=	Yes
 
-MAKE_FLAGS+=	OS=openbsd
+MAKE_FLAGS+=	CC="${CC}" CFLAGS="${CFLAGS}" OS=openbsd \
+		DEFINES_openbsd="${DEFINES_openbsd}" \
+		OSLIBS_openbsd="${OSLIBS_openbsd}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zebedee ${PREFIX}/bin

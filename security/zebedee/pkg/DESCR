@@ -3,4 +3,8 @@ UDP tunnel between two systems. This allows traffic such as telnet, ftp,
 VNC, and X to be protected from snooping as well as potentially gaining
 performance over low-bandwidth networks from compression.
 
+Flavors:
+	udp_spoof - Limited unidirectional UDP source address spoofing,
+		    intended for applications like syslog.
+
 WWW: ${HOMEPAGE}

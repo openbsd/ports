@@ -1,20 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:53 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/01/30 22:39:58 sturm Exp $
 bin/ftpgw.tcl
 bin/zebedee
-man/man1/zebedee.1 
-man/man1/ftpgw.tcl.1 
-share/examples/zebedee/server.zbd
-share/examples/zebedee/client1.key
-share/examples/zebedee/client2.key
-share/examples/zebedee/clients.id
-share/examples/zebedee/server.id
-share/examples/zebedee/server.key
-share/examples/zebedee/vncserver.zbd
-share/examples/zebedee/vncviewer.zbd
+man/man1/ftpgw.tcl.1
+man/man1/zebedee.1
 share/doc/zebedee/CHANGES.txt
 share/doc/zebedee/LICENCE.txt
 share/doc/zebedee/README.txt
 share/doc/zebedee/ftpgw.tcl.html
 share/doc/zebedee/zebedee.html
+share/examples/zebedee/client1.key
+share/examples/zebedee/client2.key
+share/examples/zebedee/clients.id
+share/examples/zebedee/server.id
+share/examples/zebedee/server.key
+share/examples/zebedee/server.zbd
+share/examples/zebedee/vncserver.zbd
+share/examples/zebedee/vncviewer.zbd
 @dirrm share/examples/zebedee
 @dirrm share/doc/zebedee
