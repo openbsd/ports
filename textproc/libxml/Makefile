@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2002/03/22 17:13:16 brad Exp $
+# $OpenBSD: Makefile,v 1.45 2002/03/26 16:05:36 kevlo Exp $
 
 COMMENT=	"XML parsing library"
 
@@ -37,7 +37,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mpython}
 BUILD_DEPENDS+=	:python-2.2*:lang/python/2.2
 RUN_DEPENDS+=	:python-2.2*:lang/python/2.2
-CONFIGURE_ARGS+= --with-pyton
+CONFIGURE_ARGS+= --with-python
 .else
 CONFIGURE_ARGS+= --without-python
 .endif
