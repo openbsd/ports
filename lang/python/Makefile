@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2001/07/28 18:43:49 matt Exp $
+# $OpenBSD: Makefile,v 1.33 2001/07/29 02:47:21 jasoni Exp $
 
 COMMENT= 	"interpreted object-oriented programming language"
 COMMENT-tools=	"extra tools for python"
 
-VERSION=	2.1
+VERSION=	2.1.1
 PKGNAME=	python-${VERSION}
 DISTNAME=	Python-${VERSION}
 CATEGORIES=	lang
@@ -83,7 +83,7 @@ patch:
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/pydoc ${PREFIX}/bin
 	@strip ${PREFIX}/bin/python
-	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python${VERSION}; \
+	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python2.1; \
 		tar -xf -)
 
 .include <bsd.port.mk>
