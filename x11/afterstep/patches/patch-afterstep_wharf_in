@@ -1,11 +1,11 @@
---- afterstep/wharf.in.orig	Fri Oct 20 03:27:58 2000
-+++ afterstep/wharf.in	Wed Jun  6 12:05:58 2001
+--- afterstep/wharf.in.orig	Sat Aug 11 18:49:34 2001
++++ afterstep/wharf.in	Sat Aug 11 18:50:04 2001
 @@ -99,7 +99,7 @@
  #
  *Wharf Applications FileFolders.xpm,3_dots.xpm Folders
   #*Wharf Files Computer.xpm Exec "-" Files &
-- *Wharf xiterm linux-penguin.xpm Exec "-" xiterm -sl 500 -vb -fn 10x20 &
-+ *Wharf xterm monitor_bsd.xpm Exec "-" xterm -sl 500 -vb -fn 10x20 &
+- *Wharf xterm linux-penguin.xpm Exec "-" (exec aterm) || (exec xterm) &
++ *Wharf xterm monitor_bsd.xpm Exec "-" (exec aterm) || (exec xterm) &
  
   *Wharf Helpme Info.xpm,3_dots.xpm Folders
          *Wharf xman Bookshelf.xpm Exec "-" xman &

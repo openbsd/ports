@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2001/06/06 10:12:31 kevlo Exp $
+# $OpenBSD: Makefile,v 1.18 2001/08/11 16:00:25 kevlo Exp $
 
 COMMENT=	"Window manager, continuation of the Bowman NeXTSTEP clone"
 
-DISTNAME=	AfterStep-1.8.8
-PKGNAME=	afterstep-1.8.8
+DISTNAME=	AfterStep-1.8.9
+PKGNAME=	afterstep-1.8.9
 CATEGORIES=     x11
 NEED_VERSION=	1.402
 MASTER_SITES=   ftp://ftp.afterstep.org/stable/
