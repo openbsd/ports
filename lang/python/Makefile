@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.28 2001/03/22 00:28:33 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2001/03/29 16:54:05 jasoni Exp $
+
+COMMENT= 	"interpreted object-oriented programming language"
+COMMENT-tools=	"extra tools for python"
 
 VERSION=	2.0
 DISTNAME=	python-${VERSION}
