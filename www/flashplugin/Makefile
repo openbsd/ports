@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/25 16:14:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/21 21:25:54 espie Exp $
 # $FreeBSD: ports/www/linux-flashplugin/Makefile,v 1.9 2001/07/21 14:27:22 okazaki Exp $
 
 ONLY_FOR_ARCHS=	i386
@@ -9,7 +9,7 @@ VERSION=	5.0r47
 PKGNAME=	flashplugin-${VERSION}
 DISTNAME=	flash_linux
 CATEGORIES=	www
-NEED_VERSION=	1.460
+NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www.macromedia.com/
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/28 12:30:14 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/21 21:25:55 espie Exp $
 
 COMMENT=	"qt-based window manager"
 
 DISTNAME=	qlwm-1.7
 CATEGORIES=	x11
-NEED_VERSION=	1.483
+NEED_VERSION=	1.515
 
 HOMEPAGE=	http://qlwm.get.to/
 MASTER_SITES=	http://www.netcologne.de/~nc-lindenal/qlwm/

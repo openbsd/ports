@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/12/27 00:36:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/21 21:25:54 espie Exp $
 
 COMMENT=	"web-based java SSH client"
 
@@ -6,7 +6,7 @@ VERSION=	2.1
 DISTNAME=	mindterm_${VERSION}-bin
 PKGNAME=	mindterm-${VERSION}
 CATEGORIES=	www security
-NEED_VERSION=	1.475
+NEED_VERSION=	1.515
 MASTER_SITES=	http://support.appgate.com/mindterm/personal/
 EXTRACT_SUFX=	.zip
 

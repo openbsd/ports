@@ -3,14 +3,14 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.10 2001/10/28 13:05:51 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/21 21:25:57 espie Exp $
 #
 
 COMMENT=	"display a dialog box and prompt user for text"
 
 DISTNAME=	xprompt-1.4
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES= 	${MASTER_SITE_LOCAL}
 
 PERMIT_PACKAGE_CDROM=	Yes

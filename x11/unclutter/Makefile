@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/09 17:11:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/21 21:25:56 espie Exp $
 
 COMMENT=	"hides idle X11 cursor"
 
 DISTNAME=	unclutter-8
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MAINTAINER=	Brian J. Kifiak <bk@rt.fm>
 
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}

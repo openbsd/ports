@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2001/10/28 13:05:49 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2002/03/21 21:25:51 espie Exp $
 
 COMMENT=	"Pretty Good Privacy 2.6.3ia"
 
 DISTNAME=	pgp263is
 PKGNAME=	pgp-2.6.3
 CATEGORIES=	security
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	http://the.wiretapped.net/security/cryptography/pgp/2.x/src/ \
 		ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
 		ftp://ftp.dk.pgpi.com/mirrors/ftp.ifi.uio.no/pub/pgp/2.x/src/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2001/11/11 13:57:32 heko Exp $
+# $OpenBSD: Makefile,v 1.61 2002/03/21 21:25:55 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=	"C++ X11 GUI toolkit"
@@ -10,7 +10,7 @@ DISTNAME=	qt-${VERSION}
 PKGNAME-examples=qt-examples-${VERSION}
 PKGNAME-html=	qt-html-${VERSION}
 CATEGORIES=	x11
-NEED_VERSION=	1.483
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 HOMEPAGE=	http://www.trolltech.com/products/qt/

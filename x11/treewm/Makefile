@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/11/10 18:33:37 heko Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 21:25:56 espie Exp $
 
 COMMENT=		"tree window manager"
 DISTNAME=		treewm-0.3.3
 CATEGORIES=		x11
-NEED_VERSION=		1.489
+NEED_VERSION=		1.515
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			http://openbsd.rutgers.edu/

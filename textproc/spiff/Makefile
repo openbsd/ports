@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/05/06 04:11:54 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2002/03/21 21:25:53 espie Exp $
 #
 
 COMMENT=	"very flexible diff-like program"
 
 DISTNAME=	spiff-1.0
 CATEGORIES=	textproc
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	http://www.darwinsys.com/freeware/
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>

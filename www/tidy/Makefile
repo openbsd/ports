@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/05/06 04:22:58 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/21 21:25:55 espie Exp $
 # Original from: Bruno Rohee <rohee@OpenBSD.ORG>
 
 COMMENT=	"validate, correct, and pretty-print HTML files"
@@ -8,7 +8,7 @@ DISTNAME=	tidy${TIDYDATE}
 PKGNAME=	tidy-${TIDYDATE}
 
 CATEGORIES=     www
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 

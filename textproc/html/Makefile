@@ -3,14 +3,14 @@
 # Date created:		December 1, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.15 2001/06/27 20:56:28 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2002/03/21 21:25:53 espie Exp $
 #
 
 COMMENT=	"all W3C published SGML DTDs for HTML"
 
 DISTNAME=	html-4.0b
 CATEGORIES=	textproc
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://fallout.campusview.indiana.edu/pub/sgml/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>

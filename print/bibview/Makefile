@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:48 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/03/21 21:25:50 espie Exp $
 
 COMMENT=	"GUI for manipulating BibTeX bibliography databases"
 
 DISTNAME=	bibview-2.2
 CATEGORIES=	databases print
-NEED_VERSION=	1.363
+NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

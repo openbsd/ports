@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/08/01 20:55:50 millert Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 21:25:52 espie Exp $
 
 COMMENT=	"Libretto BIOS Setting Program"
 
 DISTNAME=	libapm-linux-1.0beta5
 PKGNAME=	libretto-config-1.0b5
 CATEGORIES=	sysutils
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MAINTAINER=	Todd Miller <millert@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/10/28 13:05:49 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/21 21:25:52 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	"create tcp socket and connect to stdin/out"
@@ -6,7 +6,7 @@ COMMENT=	"create tcp socket and connect to stdin/out"
 DISTNAME=	socket-1.1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://people.freebsd.org/~wosch/src/
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

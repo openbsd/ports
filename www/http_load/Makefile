@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/08/06 00:41:48 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2002/03/21 21:25:54 espie Exp $
 
 COMMENT=	"multiprocessing HTTP performance testing client"
 
 DISTNAME=	http_load-05apr2001
 PKGNAME=	http_load-20010405
 CATEGORIES=	www benchmarks
-NEED_VERSION=	1.413
+NEED_VERSION=	1.515
 MASTER_SITES=	http://www.acme.com/software/http_load/
 
 HOMEPAGE=	http://www.acme.com/software/http_load/

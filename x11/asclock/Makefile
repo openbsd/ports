@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2001/05/06 04:41:07 lebel Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/21 21:25:55 espie Exp $
 
 COMMENT=	"afterstep clock with some language extensions"
 
 DISTNAME=	asclock-2.0.12
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.afterstep.org/apps/asclock/ \
 		ftp://fuf.sh.cvut.cz/pub/AfterStep/apps/asclock/ \
 		http://www.tigr.net/afterstep/download/asclock/

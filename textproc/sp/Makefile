@@ -3,7 +3,7 @@
 # Date created:		May 21 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:49 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/03/21 21:25:53 espie Exp $
 #
 
 COMMENT=	"OO toolkit for SGML parsing and entity management"
@@ -12,7 +12,7 @@ DISTNAME=	sp-1.2.1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.jclark.com/pub/sp/
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

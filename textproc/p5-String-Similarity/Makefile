@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/15 02:13:55 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 21:25:53 espie Exp $
 
 COMMENT=	"calculate the similarity of two strings"
 
 DISTNAME=	String-Similarity-0.02
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5 
-NEED_VERSION=	1.414
+NEED_VERSION=	1.515
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

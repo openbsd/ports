@@ -3,7 +3,7 @@
 # Date created:		6 January 1998
 # Whom:			don
 #
-# $OpenBSD: Makefile,v 1.10 2001/10/28 13:05:50 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/21 21:25:55 espie Exp $
 #
 
 COMMENT=	"blow holes through windows"
@@ -11,7 +11,7 @@ COMMENT=	"blow holes through windows"
 DISTNAME=	blast-1.0-ss-11.00
 PKGNAME=	blast-1.0
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/X11/Demos/blast-1.0/ \
 		ftp://hpftp.cict.fr/hpux/X11/Demos/blast-1.0/
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2001/08/05 20:50:55 jsyn Exp $
+# $OpenBSD: Makefile,v 1.18 2002/03/21 21:25:50 espie Exp $
 
 COMMENT=	"translate character sets"
 
 DISTNAME=	tcs
 PKGNAME=	tcs-19950325
 CATEGORIES=	plan9
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES= 	ftp://plan9.bell-labs.com/plan9/unixsrc/ \
 		ftp://ftp.gwdg.de/pub/gnu2/plan9/unixsrc/
 EXTRACT_SUFX=	.shar.Z

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2001/07/09 17:11:31 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/21 21:25:56 espie Exp $
 #
 
 COMMENT=		"one keyboard/mouse to multiple X displays"
 DISTNAME=		x2x-1.27
 CATEGORIES=     	x11
-NEED_VERSION=		1.364
+NEED_VERSION=		1.515
 
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 

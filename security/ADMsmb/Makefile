@@ -3,14 +3,14 @@
 # Date created:		14 Mar 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.8 2001/05/06 03:45:33 lebel Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/21 21:25:51 espie Exp $
 
 COMMENT=	"Samba security scanner"
 
 PKGNAME=	ADMsmb-0.2
 
 CATEGORIES=	security
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 DISTNAME=	ADMsmb-v0.2
 EXTRACT_SUFX=	.tgz

@@ -3,14 +3,14 @@
 # Date created:			  May 17 1998
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.13 2001/06/27 02:51:37 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/21 21:25:50 espie Exp $
 #
 
 COMMENT=		"strip TeX/LaTeX codes from a file"
 
 DISTNAME=		detex-2.6
 CATEGORIES=		print
-NEED_VERSION=		1.402
+NEED_VERSION=		1.515
 MASTER_SITES=		ftp://ftp.cs.purdue.edu/pub/trinkle/
 EXTRACT_SUFX=		.tar
 

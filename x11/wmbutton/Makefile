@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2001/10/26 22:36:37 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2002/03/21 21:25:56 espie Exp $
 
 COMMENT=		'wm-dockapp; application launching program'
 
 DISTNAME=		wmbutton-0.4
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.482
+NEED_VERSION=		1.515
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 

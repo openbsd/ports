@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/08 20:48:56 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/21 21:25:53 espie Exp $
 
 COMMENT=	"text macro/markup/template language"
 
@@ -7,7 +7,7 @@ PKGNAME=	p5-${DISTNAME}
 HOMEPAGE=	http://www.blatte.org/
 
 CATEGORIES=	textproc perl5
-NEED_VERSION=	1.387
+NEED_VERSION=	1.515
 MAINTAINER=	Brian J. Kifiak <bk@rt.fm>
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}

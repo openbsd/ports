@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/10/27 09:39:00 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 21:25:51 espie Exp $
 
 COMMENT=	"perl interface to SSL sockets"
 
@@ -6,7 +6,7 @@ VERSION=	0.80
 DISTNAME=	IO-Socket-SSL-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
-NEED_VERSION=	1.484
+NEED_VERSION=	1.515
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= IO

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/01/04 22:32:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2002/03/21 21:25:52 espie Exp $
 
 COMMENT=		'wm-dockapp; shows rotating 3d-object and CPU load'
 
 DISTNAME=		wmcube-gdk-0.98p2
 CATEGORIES=		sysutils x11 x11/windowmaker
-NEED_VERSION=		1.487
+NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.ne.jp/asahi/linux/timecop/
 

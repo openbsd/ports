@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2001/05/06 03:45:54 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/21 21:25:51 espie Exp $
 
 COMMENT=	"Microsoft LANMAN & NT password sniffer/cracker"
 
 PKGNAME=	l0phtcrack-2.52
 CATEGORIES=	security
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	http://www.l0pht.com/l0phtcrack/dist/
 DISTFILES=	lcsrc.zip readsmb.c
 EXTRACT_ONLY=	lcsrc.zip

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:49 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/03/21 21:25:52 espie Exp $
 #
 
 COMMENT=	"multiuser "tip"/"cu" replacement with logging"
 
 DISTNAME=       rtty-3.2
 CATEGORIES=	sysutils
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:51 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/03/21 21:25:57 espie Exp $
 
 COMMENT=	"PostIt (R) messages onto your X11 screen"
 
 DISTNAME=	xpostit3.3.1
 PKGNAME=	xpostit-3.3.1
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 # Not all servers archie could find actually still have it.  Alas, some
 # servers only have the comp.sources.x version, with its distfile named

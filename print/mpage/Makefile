@@ -3,7 +3,7 @@
 # Version required:     mpage 2.5
 # Date created:         August, 10th 1999
 # Whom:                 Ian McWilliam
-# $OpenBSD: Makefile,v 1.15 2001/06/20 01:43:32 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2002/03/21 21:25:50 espie Exp $
 
 COMMENT=	"print multiple pages per sheet on PostScript printer"
 
@@ -11,7 +11,7 @@ DISTNAME=	mpage-2.5
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.mesa.nl/pub/mpage/
 EXTRACT_SUFX=	.tgz
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MAINTAINER=	Ian McWilliam <i.mcwilliam@uws.edu.au>
 

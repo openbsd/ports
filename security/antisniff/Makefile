@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2001/08/27 13:40:20 dugsong Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/21 21:25:51 espie Exp $
 
 COMMENT=	"promiscuous mode interface detector"
 
 PKGNAME=	antisniff-1.1.2
 
 CATEGORIES=	security
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MASTER_SITES=	http://www.securitysoftwaretech.com/antisniff/dist/
 HOMEPAGE=	http://www.securitysoftwaretech.com/antisniff/

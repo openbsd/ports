@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2001/07/12 15:06:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/21 21:25:51 espie Exp $
 
 COMMENT=	"watch a tcpdump trace in real-time"
 
 DISTNAME=	parse
 PKGNAME=	parse-1.0
 CATEGORIES=	security
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 

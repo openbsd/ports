@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/06 00:33:25 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 21:25:54 espie Exp $
 
 COMMENT=	"HTTP latency performance testing client"
 
 DISTNAME=	http_ping_09jul2001
 PKGNAME=	http_ping-20010709
 CATEGORIES=	www benchmarks
-NEED_VERSION=	1.413
+NEED_VERSION=	1.515
 MASTER_SITES=	http://www.acme.com/software/http_ping/
 
 HOMEPAGE=	http://www.acme.com/software/http_ping/

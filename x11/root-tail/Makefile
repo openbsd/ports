@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/06 04:41:24 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/21 21:25:55 espie Exp $
 
 COMMENT=	"tails a given file anywhere on your X11 root window"
 
 DISTNAME=	root-tail-0.0.10
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 HOMEPAGE=	http://root-tail.plan9.de
 

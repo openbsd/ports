@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2001/11/10 15:00:50 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2002/03/21 21:25:52 espie Exp $
 
 COMMENT=	"console tool for openlook"
 
 DISTNAME=	contool-3.3a
 CATEGORIES=	sysutils
-NEED_VERSION=	1.474
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.kfu.com/pub/
 
 MAINTAINER=		Ian Darwin <ian@openbsd.org>

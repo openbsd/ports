@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/10 15:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/21 21:25:51 espie Exp $
 
 COMMENT=	"perl5 interface to GnuPG"
 
@@ -6,7 +6,7 @@ VERSION=	0.31
 DISTNAME=	GnuPG-Interface-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
-NEED_VERSION=	1.489
+NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= GnuPG
 

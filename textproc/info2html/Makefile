@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 04:11:43 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/21 21:25:53 espie Exp $
 
 COMMENT=	"translate GNU info files into HTML pages"
 
 DISTNAME=	info2html-1.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://people.freebsd.org/~wosch/src/
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 

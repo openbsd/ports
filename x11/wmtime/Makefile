@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/09 17:11:29 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 21:25:56 espie Exp $
 
 COMMENT=	"time/date applet for WindowMaker"
 
@@ -6,7 +6,7 @@ DISTNAME=	wmtime-1.0b2
 CATEGORIES=	x11 x11/windowmaker
 MASTER_SITES=	ftp://ftp.enteract.com/users/rneswold/
 HOMEPAGE=	http://windowmaker.mezaway.org
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MAINTAINER= 	Arthur H. Johnson II <arthur@linuxbox.nu>	
 

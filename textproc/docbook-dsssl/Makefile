@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/11 23:33:48 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 21:25:53 espie Exp $
 
 COMMENT=	"modular DSSSL stylesheets for the DocBook DTD"
 
 V=		1.72
 DISTNAME=	docbook-dsssl-${V}
 CATEGORIES=    	textproc print
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 HOMEPAGE=	http://docbook.sourceforge.net/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

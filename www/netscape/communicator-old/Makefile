@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2001/08/24 15:04:02 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/03/21 21:25:54 espie Exp $
 
 COMMENT=	"Netscape Communicator"
 
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 PROGRAM_V=	4.61
 V2:=		${PROGRAM_V:S/.//}

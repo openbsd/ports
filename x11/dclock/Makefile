@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/05/06 04:41:11 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/21 21:25:55 espie Exp $
 # $FreeBSD: Makefile,v 1.9 1999/08/31 06:52:30 mharo Exp $
 
 COMMENT=	"digital clock with optional military time and alarm"
@@ -6,7 +6,7 @@ COMMENT=	"digital clock with optional military time and alarm"
 PKGNAME=	dclock-pl4
 
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 DISTNAME=	dclock
 EXTRACT_SUFX=	.shar.Z

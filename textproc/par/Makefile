@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/28 13:05:49 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/21 21:25:53 espie Exp $
 
 COMMENT=	"paragraph reflow for email"
 
 DISTNAME=       Par152
 PKGNAME=        par-1.52
 CATEGORIES=	textproc
-NEED_VERSION=	1.440
+NEED_VERSION=	1.515
 MASTER_SITES=   http://www.cs.berkeley.edu/~amc/Par/
 
 PERMIT_PACKAGE_CDROM=	Yes

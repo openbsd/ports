@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 03:46:18 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/21 21:25:51 espie Exp $
 
 COMMENT=	"ICMP router discovery protocol spoofer"
 
 DISTNAME=	rdp
 PKGNAME=	rdp-1.0
 CATEGORIES=	security
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	http://www.l0pht.com/advisories/
 
 LIB_DEPENDS=	net::net/libnet

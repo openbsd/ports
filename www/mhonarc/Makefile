@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/10 15:00:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/21 21:25:54 espie Exp $
 
 COMMENT=		"highly customizable e-mail to HTML converter"
 
 DISTNAME=		MHonArc2.4.9
 PKGNAME=		mhonarc-2.4.9
 CATEGORIES=     	www mail
-NEED_VERSION=		1.489
+NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.mhonarc.org/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>

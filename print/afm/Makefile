@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/06 03:19:48 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2002/03/21 21:25:50 espie Exp $
 
 COMMENT=	"Adobe Font Metrics"
 
@@ -7,7 +7,7 @@ PKGNAME=	afm-1.0
 CATEGORIES=	print
 MASTER_SITES=	ftp://sgi.com/sgi/fax/source/
 EXTRACT_SUFX=	-tar.Z
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MAINTAINER=	David Leonard <d@openbsd.org>
 

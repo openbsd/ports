@@ -3,7 +3,7 @@
 # Date created:		14 Mar 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.4 2001/05/06 03:45:31 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 21:25:51 espie Exp $
 
 COMMENT=	"connect() and bind() wrapper to evade packet filtering"
 
@@ -11,7 +11,7 @@ PKGNAME=	ADMfzap-0.1
 CATEGORIES=	security
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 DISTNAME=	ADMfzap
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MASTER_SITES=	http://ADM.isp.at/ADM/ \
 		ftp://ADM.isp.at/ADM/

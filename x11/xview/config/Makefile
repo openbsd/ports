@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/06 04:41:46 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/21 21:25:57 espie Exp $
 
 COMMENT=	"OpenLook Toolkit config files"
 
 PKGNAME=	xview-config-${XVIEW_VERSION}
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

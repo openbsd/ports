@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/05/06 04:11:43 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/21 21:25:53 espie Exp $
 #
 
 COMMENT=	"powerful command-line front end to diff"
@@ -7,7 +7,7 @@ PKGNAME=	idiff-1.0
 DISTNAME=	idiff-1.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.darwinsys.com/freeware/
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 

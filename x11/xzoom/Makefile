@@ -3,14 +3,14 @@
 # Date created:		December 21, 1997
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.8 2001/10/28 13:05:51 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/21 21:25:57 espie Exp $
 #
 
 COMMENT=	"magnify, rotate, mirror the image on the X11 screen"
 
 DISTNAME=	xzoom-0.3
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/X
 EXTRACT_SUFX=	.tgz

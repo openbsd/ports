@@ -3,7 +3,7 @@
 # Date created:		27 Oct 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.10 2001/07/06 19:34:04 jsyn Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/21 21:25:51 espie Exp $
 
 COMMENT=	"scans webservers for vulnerable CGI programs"
 
@@ -13,7 +13,7 @@ DISTNAME=	cgichk3.6
 EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	security
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MASTER_SITES=	http://web.singnet.com.sg/~cksss/ \
 		http://www.securityfocus.com/data/tools/auditing/network/

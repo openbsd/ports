@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/05/06 04:22:48 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2002/03/21 21:25:54 espie Exp $
 
 COMMENT=	"strip cascading style sheets from webpages"
 
 DISTNAME=	decss
 PKGNAME=	decss-0.0.6
 CATEGORIES=	www
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=   ${HOMEPAGE}
 
 HOMEPAGE=       http://www.pigdog.org/decss/

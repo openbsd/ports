@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1 2001/05/09 17:53:43 millert Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 21:25:52 espie Exp $
 
 COMMENT=	"Western Digital and SMC ethernet card configuration program"
 
 DISTNAME=	wdsetup-0.6b
 PKGNAME=	wdsetup-0.6b
 CATEGORIES=	sysutils
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MAINTAINER=	Todd Miller <millert@openbsd.org>
 

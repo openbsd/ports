@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/11/13 22:13:25 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/21 21:25:55 espie Exp $
 
 COMMENT=		"Small menubar for X11 written in Perl/Tk"
 V=			1.18
 DISTNAME=		belt-${V}
 CATEGORIES=     	x11
-NEED_VERSION=		1.482
+NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.stacken.kth.se/~maxz/programming/perl/index.html\#belt
 MASTER_SITES=		${HOMEPAGE:S/index.html\#belt//}

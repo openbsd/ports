@@ -3,7 +3,7 @@
 # Date created:		14 Mar 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.13 2001/06/27 20:56:28 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/21 21:25:51 espie Exp $
 
 COMMENT=	"SNMP audit scanner"
 
@@ -11,7 +11,7 @@ PKGNAME=	ADMsnmp-0.1
 DISTNAME=	ADMsnmp.0.1
 
 CATEGORIES=	security
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MASTER_SITES=	http://el8.org/~antilove/ \
 		ftp://ADM.isp.at/ADM/ \

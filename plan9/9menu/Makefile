@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2001/08/02 18:54:04 angelos Exp $
+# $OpenBSD: Makefile,v 1.15 2002/03/21 21:25:50 espie Exp $
 
 COMMENT=	"simple menu patterned after plan9"
 
 DISTNAME=	9menu-1.5
 CATEGORIES=	plan9
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
 
 EXTRACT_SUFX=	.shar.gz

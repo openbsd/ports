@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/08/22 00:11:08 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/21 21:25:53 espie Exp $
 
 COMMENT=	"perl interface to the Sablotron XSLT engine"
 
 DISTNAME=	XML-Sablotron-0.65
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
-NEED_VERSION=	1.407
+NEED_VERSION=	1.515
 MASTER_SITES=	http://www.gingerall.cz/download/
 
 HOMEPAGE=	http://www.gingerall.cz/

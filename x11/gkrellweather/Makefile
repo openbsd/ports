@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/11/10 15:00:52 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/21 21:25:55 espie Exp $
 
 COMMENT=	"weather display plugin for gkrellm"
 
 DISTNAME=	gkrellweather-0.2.7
 CATEGORIES=	x11
-NEED_VERSION=	1.489
+NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/15 06:48:01 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 21:25:54 espie Exp $
 
 COMMENT=	"perl module to detect dangerous HTML code"
 
@@ -6,7 +6,7 @@ VERSION=	0.90
 DISTNAME=	HTML-CGIChecker-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www security perl5
-NEED_VERSION=	1.435
+NEED_VERSION=	1.515
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= HTML

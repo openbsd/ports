@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2002/01/31 20:39:01 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/21 21:25:55 espie Exp $
 #
 
 COMMENT=	"tvtwm with pie (circular) menus"
 
 DISTNAME=	piewm-1.03
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

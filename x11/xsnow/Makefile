@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/28 13:05:51 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/21 21:25:57 espie Exp $
 
 COMMENT=	"snowy and Santa-y desktop"
 
 DISTNAME=	xsnow-1.40
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 EXTRACT_SUFX=	.tar.Z

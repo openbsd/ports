@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/12/26 23:23:25 marc Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 21:25:54 espie Exp $
 
 COMMENT=	"HTML text formating class"
 
 DISTNAME=	HTML-Format-1.23
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
-NEED_VERSION=	1.414
+NEED_VERSION=	1.515
 
 MAINTAINER=	Marco S Hyman <marc@openbsd.org>
 

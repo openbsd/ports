@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/17 05:04:36 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/21 21:25:54 espie Exp $
 
 COMMENT=	"transparently compress Apache output"
 
@@ -10,7 +10,7 @@ VERSION=	1.3.19.1a
 DISTNAME=	mod_gzip.c
 PKGNAME=	mod_gzip-${VERSION}
 CATEGORIES=	www
-NEED_VERSION=	1.435
+NEED_VERSION=	1.515
 MASTER_SITES=	http://www.remotecommunications.com/apache/mod_gzip/src/${VERSION}/
 EXTRACT_SUFX=   .gz
 

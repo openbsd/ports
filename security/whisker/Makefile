@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/06 03:46:29 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2002/03/21 21:25:52 espie Exp $
 
 COMMENT=	"stealthy webserver vulnerability scanner"
 
 DISTNAME=	whisker
 PKGNAME=	whisker-1.4
 CATEGORIES=	security
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	http://www.wiretrip.net/rfp/bins/whisker/
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>

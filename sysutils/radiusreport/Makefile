@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2001/11/13 20:14:39 danh Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/21 21:25:52 espie Exp $
 
 COMMENT=	"RADIUS log file analysis tool"
 
 DISTNAME=	radiusreport-0.3b6
 CATEGORIES=	sysutils
-NEED_VERSION=	1.364
+NEED_VERSION=	1.515
 MASTER_SITES=	http://www.pgregg.com/projects/radiusreport/
 EXTRACT_SUFX=	.tar
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/08/22 18:36:08 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 21:25:50 espie Exp $
 
 COMMENT=	"PalmOS include files"
 
@@ -6,7 +6,7 @@ VERSION=	3.5.1
 DISTNAME=	sdk35
 PKGNAME=	palmos-sdk-${VERSION}
 CATEGORIES=	palm devel
-NEED_VERSION=	1.440
+NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www.palmos.com/dev/tech/tools/gcc/
 

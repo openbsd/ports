@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/10/28 13:05:49 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/21 21:25:52 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	"print inode contents"
@@ -6,7 +6,7 @@ COMMENT=	"print inode contents"
 DISTNAME=	stat-1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freebsd.org/~wosch/src/
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
