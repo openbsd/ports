@@ -3,11 +3,11 @@
 # Date created:		September 28, 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.10 2001/05/06 03:46:12 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/09/12 14:21:07 naddy Exp $
 
 COMMENT=	"library to generate (and manipulate) PGP packets"
 
-#BROKEN=		inconsistant build failures
+BROKEN=		"does not build"
 
 DISTNAME=       PGPlib-1.1
 CATEGORIES=	security
