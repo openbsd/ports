@@ -1,6 +1,6 @@
-$OpenBSD: patch-sys_unix_Makefile_src,v 1.5 2002/03/23 14:51:46 espie Exp $
+$OpenBSD: patch-sys_unix_Makefile_src,v 1.6 2002/12/01 17:36:01 espie Exp $
 --- sys/unix/Makefile.src.orig	Thu Mar 21 00:43:54 2002
-+++ sys/unix/Makefile.src	Sat Mar 23 14:44:36 2002
++++ sys/unix/Makefile.src	Sun Dec  1 18:13:55 2002
 @@ -1,6 +1,7 @@
  #	NetHack Makefile.
  #	SCCS Id: @(#)Makefile.src	3.4	2002/03/02
@@ -46,6 +46,15 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.5 2002/03/23 14:51:46 espie Exp $
  # any other strange libraries your system needs (for Sysunix only -- the more
  # specialized targets should already be right)
  #
+@@ -381,7 +377,7 @@ $(GAME):	$(SYSTEM)
+ 
+ Sysunix:	$(HOBJ) Makefile
+ 	@echo "Loading ..."
+-	@$(CC) $(LFLAGS) -o $(GAME) $(HOBJ) $(WINLIB) $(LIBS)
++	@$(LINKCMD) $(LFLAGS) -o $(GAME) $(HOBJ) $(WINLIB) $(LIBS)
+ 	@touch Sysunix
+ 
+ Sys3B2:	$(HOBJ) Makefile
 @@ -448,15 +444,17 @@ objects.o:
  	$(CC) $(CFLAGS) -c objects.c
  	@rm -f $(MAKEDEFS)
