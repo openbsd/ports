@@ -1,0 +1,4 @@
+WMAPM is an APM/battery monitor.  It is used to visually display and
+interpret details of APM/battery status from the system's BIOS.
+
+WWW: ${HOMEPAGE}

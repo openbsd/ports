@@ -1,0 +1,157 @@
+$OpenBSD: patch-wmapm_c,v 1.1.1.1 2001/01/11 00:13:12 naddy Exp $
+--- wmapm/wmapm.c.orig	Tue Jan 11 17:37:25 2000
++++ wmapm/wmapm.c	Wed Jan 10 17:35:20 2001
+@@ -151,12 +151,17 @@
+ #endif
+ 
+ 
+-#ifdef FreeBSD
++#if defined(FreeBSD) || defined(__OpenBSD__)
+ #include <err.h>
+ #include <sys/file.h>
+ #include <sys/ioctl.h>
++#endif 
++#if defined(FreeBSD)
+ #include <machine/apm_bios.h>
++#elif defined(__OpenBSD__)
++#include <i386/apmvar.h>
+ #endif 
++#include <errno.h>
+ #include <stdio.h>
+ #include <unistd.h>
+ #include <stdlib.h>
+@@ -173,10 +178,10 @@
+ 
+ #ifdef Linux
+ int apm_read(struct my_apm_info *i);
+-#else
+-# ifdef FreeBSD
++#elif defined(FreeBSD)
+ int apm_read(apm_info_t temp_info);
+-# endif
++#elif defined(__OpenBSD__)
++int apm_read(struct apm_power_info *temp_info);
+ #endif
+ int apm_exists();
+ void ParseCMDLine(int argc, char *argv[]);
+@@ -217,6 +222,8 @@ int main(int argc, char *argv[]) {
+ 			digit;
+ #ifdef FreeBSD
+     struct apm_info 	temp_info;
++#elif defined(__OpenBSD__)
++    struct apm_power_info 	temp_info;
+ #endif
+     XEvent		event;
+     int			m, mMax, n, nMax, k, Toggle;
+@@ -305,12 +312,10 @@ int main(int argc, char *argv[]) {
+ 
+ #if defined(Linux) || defined(SunOS)
+ 	    if (apm_read(&my_cur_info)) {
+-#else
+-# ifdef FreeBSD
++#elif defined(FreeBSD) || defined(__OpenBSD__)
+             if (apm_read(&temp_info)) {
+-# endif
+ #endif
+-		fprintf(stderr, "Cannot read APM information: %i\n");
++		fprintf(stderr, "Cannot read APM information: %i\n", errno);
+ 		exit(1);
+ 	    }
+ 
+@@ -320,6 +325,11 @@ int main(int argc, char *argv[]) {
+ 	    my_cur_info.battery_status     = (int)temp_info.ai_batt_stat;
+ 	    my_cur_info.battery_percentage = (int)temp_info.ai_batt_life;
+ 	    my_cur_info.battery_time       = (int)temp_info.ai_batt_time;
++#elif defined(__OpenBSD__)
++	    my_cur_info.ac_line_status     = (int)temp_info.ac_state;
++	    my_cur_info.battery_status     = (int)temp_info.battery_state;
++	    my_cur_info.battery_percentage = (int)temp_info.battery_life;
++	    my_cur_info.battery_time       = (int)temp_info.minutes_left;
+ #endif
+ 	
+ 
+@@ -399,10 +409,10 @@ int main(int argc, char *argv[]) {
+ 	     */
+ #ifdef Linux
+ 	    if (my_cur_info.battery_time >= ((my_cur_info.using_minutes) ? 1440 : 86400) ) {
+-#else
+-# ifdef FreeBSD
++#elif defined(FreeBSD)
+ 	    if (my_cur_info.battery_time >= 86400) {
+-# endif
++#elif defined(__OpenBSD__)
++	    if (my_cur_info.battery_time >= 1440) {
+ #endif
+ 
+ 		/*
+@@ -417,9 +427,10 @@ int main(int argc, char *argv[]) {
+ 
+ #ifdef Linux
+ 		time_left = (my_cur_info.using_minutes) ? my_cur_info.battery_time : my_cur_info.battery_time / 60;
+-#endif
+-#ifdef FreeBSD
+-		time_left = (my_cur_info.using_minutes) ? my_cur_info.battery_time / 60 : my_cur_info.battery_time / 3600;
++#elif defined(FreeBSD)
++		time_left = my_cur_info.battery_time / 3600;
++#elif defined(__OpenBSD__)
++		time_left = my_cur_info.battery_time;
+ #endif
+ 
+ 	        hour_left = time_left / 60;
+@@ -689,7 +700,7 @@ void pressEvent(XButtonEvent *xev){
+ 	copyXPMArea(21, 106, 13, 11, 46, 48);
+ 	RedrawWindow();
+ #ifndef SunOS
+-  	system("apm -s");
++  	system("apm -z");
+ #endif
+ 	usleep(2000000L);
+ 
+@@ -837,13 +848,12 @@ int apm_read(struct my_apm_info *i){
+     return retcode;
+ 
+ }
+-#else
+-# ifdef FreeBSD
++#elif defined(FreeBSD)
+ int apm_read(apm_info_t temp_info) {
+ 
+     int fd;
+    
+-    if ( (fd = open(APMDEV, O_RDWR)) < 0){
++    if ( (fd = open(APMDEV, O_RDONLY)) < 0){
+ 
+ 	return(1);
+ 
+@@ -860,10 +870,28 @@ int apm_read(apm_info_t temp_info) {
+     }
+ 
+ }
+-# endif
+-#endif 
++#elif defined(__OpenBSD__)
++int apm_read(struct apm_power_info *temp_info) {
++
++    int fd;
++   
++    if ( (fd = open(APMDEV, O_RDONLY)) < 0){
++	return(1);
+ 
+-#ifdef SunOS
++    } else if ( ioctl(fd, APM_IOC_GETPOWER, temp_info) == -1 ) {
++
++        close(fd);
++        return(1);
++
++    } else {
++
++	close(fd);
++	return(0);
++
++    }
++
++}
++#elif defined(SunOS)
+ int apm_read(struct my_apm_info *i) {
+ 
+ 	int fd;
