@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1998/12/18 12:10:30 form Exp $
+# $OpenBSD: Makefile,v 1.13 1999/06/11 19:13:04 dugsong Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 #
 
@@ -9,6 +9,7 @@
      SUBDIR += hylafax
      SUBDIR += kermit
      SUBDIR += lrzsz
+     SUBDIR += malsync
      SUBDIR += mgetty+sendfax
      SUBDIR += minicom
      SUBDIR += pilot-link
