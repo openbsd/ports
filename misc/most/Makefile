@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/08 19:11:37 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2001/01/02 15:47:30 naddy Exp $
 
 DISTNAME=	most-4.9.0
 CATEGORIES=	misc
 NEED_VERSION=	1.330
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/ \
-		http://www.resentment.org/~unix/
+		http://openbsd.rutgers.edu/
 
 LIB_DEPENDS=	slang.14::devel/libslang
 
-MAINTAINER=	William Yodlowsky <unix@resentment.org>
+MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
