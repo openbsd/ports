@@ -1,0 +1,22 @@
+$OpenBSD: patch-bitmaps_Makefile_in,v 1.1.1.1 2001/03/07 15:47:04 wilfried Exp $
+--- bitmaps/Makefile.in.orig	Mon Jan 20 15:01:52 1997
++++ bitmaps/Makefile.in	Tue Feb 13 13:59:58 2001
+@@ -99,7 +99,6 @@ Makefile: $(top_builddir)/config.status 
+ 	cd $(top_builddir) && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= ./config.status
+ 
+ install-bitmapDATA: $(bitmap_DATA)
+-	$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(bitmapdir)
+ 	list="$(bitmap_DATA)"; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+@@ -131,10 +130,8 @@ dvi:
+ check: all
+ installcheck:
+ install-exec: 
+-	$(NORMAL_INSTALL)
+ 
+ install-data: install-bitmapDATA
+-	$(NORMAL_INSTALL)
+ 
+ install: install-exec install-data all
+ 	@:

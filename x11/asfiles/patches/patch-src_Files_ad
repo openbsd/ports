@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Files_ad,v 1.1.1.1 2001/03/07 15:47:04 wilfried Exp $
+--- src/Files.ad.orig	Mon Apr 21 05:55:17 1997
++++ src/Files.ad	Mon Feb 12 21:12:48 2001
+@@ -110,8 +110,8 @@ Files*defaultDisplayType: 		Icons
+ Files*defaultSortType: 		SortByName
+ 
+ ! The default editor to use
+-Files*defaultEditor: 		exec xemacs
+-Files*defaultViewer: 		exec xemacs
++Files*defaultEditor: 		exec xterm -e vi
++Files*defaultViewer: 		exec xterm -e vi
+ 
+ ! The default terminal program to use
+ Files*defaultTerm: 		exec xterm

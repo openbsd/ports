@@ -1,0 +1,8 @@
+This is a hack to OffiX Files-2.4e to make it look like the NeXT file
+manager.  The icons are now pretty.
+
+It provides virtually all of the features that you would expect in a
+file manager -- move around your directory tree in multiple windows,
+move, copy or delete files, and launch programs with simple mouse operations.
+
+It is dockable provided you use Window Maker.

@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_regexp_Makefile_in,v 1.1.1.1 2001/03/07 15:47:04 wilfried Exp $
+--- src/regexp/Makefile.in.orig	Mon Jan 20 15:01:51 1997
++++ src/regexp/Makefile.in	Tue Feb 13 13:59:49 2001
+@@ -121,7 +121,6 @@ libregx.a: $(regx_OBJECTS) $(regx_DEPEND
+ 	$(AR) cru libregx.a $(regx_OBJECTS) $(regx_LIBADD)
+ 	$(RANLIB) libregx.a
+ install-man: $(MANS)
+-	$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(mandir)/man3
+ 	sect=3;				\
+ 	inst=`echo "regexp" | sed '$(transform)'`.3; \
+@@ -169,10 +168,8 @@ dvi:
+ check: all
+ installcheck:
+ install-exec: 
+-	$(NORMAL_INSTALL)
+ 
+ install-data: install-man
+-	$(NORMAL_INSTALL)
+ 
+ install: install-exec install-data all
+ 	@:

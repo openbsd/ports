@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2001/03/07 15:47:04 wilfried Exp $
+--- src/Makefile.in.orig	Tue Feb 13 13:57:17 2001
++++ src/Makefile.in	Tue Feb 13 13:59:35 2001
+@@ -117,7 +117,6 @@ distclean-binPROGRAMS:
+ maintainer-clean-binPROGRAMS:
+ 
+ install-binPROGRAMS: $(bin_PROGRAMS)
+-	$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(bindir)
+ 	list="$(bin_PROGRAMS)"; for p in $$list; do \
+ 	  if test -f $$p; then \
+@@ -146,7 +145,6 @@ maintainer-clean-compile:
+ files: $(files_OBJECTS) $(files_DEPENDENCIES)
+ 	$(LINK) $(files_OBJECTS) $(files_LDADD) $(LIBS)
+ install-man: $(MANS)
+-	$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(mandir)/man1
+ 	sect=1;				\
+ 	inst=`echo "files" | sed '$(transform)'`.1; \
+@@ -160,7 +158,6 @@ uninstall-man:
+ 
+ 
+ install-offixDATA: $(offix_DATA)
+-	$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(offixdir)
+ 	list="$(offix_DATA)"; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+@@ -285,10 +282,8 @@ install-data-am: install-man install-off
+ uninstall-am: uninstall-binPROGRAMS uninstall-man uninstall-offixDATA
+ 
+ install-exec: install-exec-recursive install-exec-am
+-	$(NORMAL_INSTALL)
+ 
+ install-data: install-data-recursive install-data-am
+-	$(NORMAL_INSTALL)
+ 
+ install: install-recursive install-exec-am install-data-am
+ 	@:
