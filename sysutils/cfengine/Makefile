@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2004/08/08 14:02:11 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2004/08/13 19:25:42 brad Exp $
+
+BROKEN=		"this version of cfengine has security problems"
 
 COMMENT=	"GNU system administration tool for networks"
 
