@@ -48,7 +48,7 @@ xmp-1.1.5|/usr/ports/audio/xmp|/usr/local|Extended Module Player; many formats p
 xmpeg3-1.0|/usr/ports/audio/xmpeg3|/usr/local|Simple TCL interface to the Amp Mpeg-3 player|/usr/ports/audio/xmpeg3/pkg/DESCR|angelos@openbsd.org|audio tk80||tcl-8.0.5 amp-0.7.6 tk-8.0.5|any
 bonnie-1.0|/usr/ports/benchmarks/bonnie|/usr/local|performance test of filesystem I/O|/usr/ports/benchmarks/bonnie/pkg/DESCR|niklas@openbsd.org|benchmarks|||any
 bytebench-3.1|/usr/ports/benchmarks/bytebench|/usr/local|BYTE magazine benchmark suite|/usr/ports/benchmarks/bytebench/pkg/DESCR|angelos@openbsd.org|benchmarks|||any
-iozone-3.3|/usr/ports/benchmarks/iozone|/usr/local|performance test of sequential file I/O|/usr/ports/benchmarks/iozone/pkg/DESCR|niklas@openbsd.org|benchmarks|||any
+iozone-3.7|/usr/ports/benchmarks/iozone|/usr/local|performance test of sequential file I/O|/usr/ports/benchmarks/iozone/pkg/DESCR|niklas@openbsd.org|benchmarks|||any
 lmbench-1.1|/usr/ports/benchmarks/lmbench|/usr/local|system performance measurement|/usr/ports/benchmarks/lmbench/pkg/DESCR|ports@openbsd.org|benchmarks|||any
 netperf-2.1pl3|/usr/ports/benchmarks/netperf|/usr/local|Network performance benchmark|/usr/ports/benchmarks/netperf/pkg/DESCR|jakob@openbsd.org|benchmarks net|||any
 netpipe-2.3|/usr/ports/benchmarks/netpipe|/usr/local|self-scaling network benchmark|/usr/ports/benchmarks/netpipe/pkg/DESCR|brad@openbsd.org|benchmarks net|||any
@@ -147,7 +147,7 @@ connect4-3.2|/usr/ports/games/connect4|/usr/local|curses version of the classic 
 dopewars-1.4.2|/usr/ports/games/dopewars|/usr/local|game where you deal drugs on the streets of NY|/usr/ports/games/dopewars/pkg/DESCR|ports@openbsd.org|games|||any
 freeciv-1.8.1|/usr/ports/games/freeciv|/usr/local|Civilization clone for X; multiplayer|/usr/ports/games/freeciv/pkg/DESCR|israfil@gmx.net|games|jpeg-6b png-1.0.3 tiff-3.4b37 unzip-5.40 gmake-3.77 bzip2-0.9.5c jbigkit-1.0 mpeg_lib-1.2.1 netpbm-19940301 freetype-1.2 ghostscript-5.10 transfig-3.2.1 gettext-0.10.35 glib-1.2.4 ImageMagick-4.2.8 giflib-4.1.0 gtk+-1.2.4 imlib-1.9.4|gettext-0.10.35 glib-1.2.4 giflib-4.1.0 jpeg-6b png-1.0.3 tiff-3.4b37 gtk+-1.2.4 imlib-1.9.4|any
 gnuchess-4.0.79|/usr/ports/games/gnuchess|/usr/local|"Classic" Gnu Chess|/usr/ports/games/gnuchess/pkg/DESCR|angelos@openbsd.org|games|||any
-gnugo-1.2|/usr/ports/games/gnugo|/usr/local|GNU version of Go|/usr/ports/games/gnugo/pkg/DESCR|angelos@openbsd.org|games|||any
+gnugo-2.4|/usr/ports/games/gnugo|/usr/local|GNU version of Go|/usr/ports/games/gnugo/pkg/DESCR|ports@openbsd.org|games|gmake-3.77||any
 gnushogi-1.2.3|/usr/ports/games/gnushogi|/usr/local|GNU version of Shogi|/usr/ports/games/gnushogi/pkg/DESCR|angelos@openbsd.org|games|||any
 nethack-3.2.2|/usr/ports/games/nethack|/usr/X11R6|dungeon explorin', hackin', game.  Piece of cake|/usr/ports/games/nethack/pkg/DESCR|espie@OpenBSD.ORG|games|gmake-3.77||any
 netris-0.4|/usr/ports/games/netris|/usr/local|network head-to-head version of T*tris|/usr/ports/games/netris/pkg/DESCR|angelos@openbsd.org|games|||any
@@ -204,7 +204,7 @@ libgii-0.1|/usr/ports/graphics/gii|/usr/local|General Input Library (used by lib
 gimp-1.1.5|/usr/ports/graphics/gimp|/usr/X11R6|the GIMP: the GNU Image Manipulation Program|/usr/ports/graphics/gimp/pkg/DESCR|brad@openbsd.org|graphics|gettext-0.10.35 glib-1.2.4 gmake-3.77 aalib-1.2 jpeg-6b mpeg_lib-1.2.1 png-1.0.3 tiff-3.4b37 gtk+-1.2.4|gettext-0.10.35 glib-1.2.4 aalib-1.2 jpeg-6b mpeg_lib-1.2.1 png-1.0.3 tiff-3.4b37 gtk+-1.2.4|any
 gqview-0.7.0|/usr/ports/graphics/gqview|/usr/X11R6|a gtk-based graphic file viewer|/usr/ports/graphics/gqview/pkg/DESCR|brad@openbsd.org|graphics|jpeg-6b png-1.0.3 tiff-3.4b37 unzip-5.40 gmake-3.77 bzip2-0.9.5c jbigkit-1.0 mpeg_lib-1.2.1 netpbm-19940301 freetype-1.2 ghostscript-5.10 transfig-3.2.1 glib-1.2.4 gettext-0.10.35 ImageMagick-4.2.8 giflib-4.1.0 gtk+-1.2.4 imlib-1.9.4|glib-1.2.4 gettext-0.10.35 giflib-4.1.0 jpeg-6b png-1.0.3 tiff-3.4b37 gtk+-1.2.4 imlib-1.9.4|any
 imlib-1.9.4|/usr/ports/graphics/imlib|/usr/X11R6|image manipulation library for X11|/usr/ports/graphics/imlib/pkg/DESCR|brad@openbsd.org|graphics|jpeg-6b png-1.0.3 tiff-3.4b37 unzip-5.40 gmake-3.77 bzip2-0.9.5c jbigkit-1.0 mpeg_lib-1.2.1 netpbm-19940301 freetype-1.2 ghostscript-5.10 transfig-3.2.1 gettext-0.10.35 glib-1.2.4 ImageMagick-4.2.8 giflib-4.1.0 gtk+-1.2.4|gettext-0.10.35 glib-1.2.4 giflib-4.1.0 jpeg-6b png-1.0.3 tiff-3.4b37 gtk+-1.2.4|any
-jbigkit-1.0|/usr/ports/graphics/jbigkit|/usr/local|A lossless image compression library|/usr/ports/graphics/jbigkit/pkg/DESCR|brad@openbsd.org|graphics|||any
+jbigkit-1.0|/usr/ports/graphics/jbigkit|/usr/local|lossless image compression library|/usr/ports/graphics/jbigkit/pkg/DESCR|brad@openbsd.org|graphics|||any
 jpeg-6b|/usr/ports/graphics/jpeg|/usr/local|IJG's jpeg compression utilities|/usr/ports/graphics/jpeg/pkg/DESCR|angelos@openbsd.org|graphics|||any
 mpeg_lib-1.2.1|/usr/ports/graphics/mpeg-lib|/usr/local|collection of C routines to decode MPEG movies|/usr/ports/graphics/mpeg-lib/pkg/DESCR|marc@OpenBSD.ORG|graphics|||any
 mpeg_play-2.4|/usr/ports/graphics/mpeg_play|/usr/X11R6|play mpeg movies on X11|/usr/ports/graphics/mpeg_play/pkg/DESCR|don@OpenBSD.ORG|graphics|||any
@@ -228,7 +228,7 @@ ja-onew-wnn4-2.2.10|/usr/ports/japanese/onew-wnn4|/usr/local|library for Japanes
 gofer-2.30a|/usr/ports/lang/Gofer|/usr/local|lazy functional language|/usr/ports/lang/Gofer/pkg/DESCR|don@OpenBSD.ORG|lang|||any
 STk-3.1|/usr/ports/lang/STk|/usr/local|scheme interpreter with Tk interface|/usr/ports/lang/STk/pkg/DESCR|don@openBSD.ORG|lang|||any
 camlp4-2.02|/usr/ports/lang/camlp4|/usr/local|Pre-Processor-Pretty-Printer for Objective Caml|/usr/ports/lang/camlp4/pkg/DESCR|angelos@openbsd.org|lang|gmake-3.77 ocaml-2.02||any
-gcc-2.95.1|/usr/ports/lang/egcs/stable|/usr/local|experimental GNU C, C++, f77..., release flavor|/usr/ports/lang/egcs/stable/pkg/DESCR|Marc.Espie@openbsd.org|lang|tcl-8.0.5 tk-8.0.5 m4-1.4 expect-5.30 bzip2-0.9.5c autoconf-2.13 dejagnu-1.3||any
+gcc-2.95.1|/usr/ports/lang/egcs/stable|/usr/local|experimental GNU C, C++, f77..., release flavor|/usr/ports/lang/egcs/stable/pkg/DESCR|Marc.Espie@openbsd.org|lang|m4-1.4 bzip2-0.9.5c autoconf-2.13||any
 egcs-19990907|/usr/ports/lang/egcs/snapshot|/usr/local|experimental GNU C, C++, f77, java..., snapshot flavor|/usr/ports/lang/egcs/snapshot/pkg/DESCR|Marc.Espie@openbsd.org|lang|tcl-8.0.5 tk-8.0.5 m4-1.4 expect-5.30 autoconf-2.13 dejagnu-1.3||any
 erlang-47.4.0|/usr/ports/lang/erlang|/usr/local|Ericsson's high-level functional programming language|/usr/ports/lang/erlang/pkg/DESCR|marc@openbsd.org|lang|m4-1.4 autoconf-2.13 gmake-3.77||any
 expect-5.30|/usr/ports/lang/expect|/usr/local|sophisticated scripter based on Tcl/Tk|/usr/ports/lang/expect/pkg/DESCR|niklas@openbsd.org|lang|tcl-8.0.5 tk-8.0.5|tcl-8.0.5 tk-8.0.5|any
@@ -252,7 +252,7 @@ exim-2.12|/usr/ports/mail/exim|/usr/local|high performance MTA for Unix systems 
 exmh-1.6.9|/usr/ports/mail/exmh|/usr/local|** No Description|/dev/null|marc@openbsd.org|mail tk80|||any
 exmh-2.0.2|/usr/ports/mail/exmh2|/usr/local|X11/Tk-based mail reader front end to MH|/usr/ports/mail/exmh2/pkg/DESCR|angelos@openbsd.org|mail tk80|tcl-8.0.5|tcl-8.0.5 metamail-2.7 nmh-1.0 tk-8.0.5|any
 faces-1.6.1|/usr/ports/mail/faces|/usr/local|visual mail, user and print face server|/usr/ports/mail/faces/pkg/DESCR|angelos@openbsd.org|mail|||any
-fetchmail-5.0.7|/usr/ports/mail/fetchmail|/usr/local|mail retrieval/forwarding for POP2, POP3, APOP, IMAP|/usr/ports/mail/fetchmail/pkg/DESCR|fgsch@openbsd.org|mail|||any
+fetchmail-5.0.8|/usr/ports/mail/fetchmail|/usr/local|mail retrieval/forwarding for POP2, POP3, APOP, IMAP|/usr/ports/mail/fetchmail/pkg/DESCR|fgsch@openbsd.org|mail|||any
 metamail-2.7|/usr/ports/mail/metamail|/usr/local|MIME implementation|/usr/ports/mail/metamail/pkg/DESCR|marc@openbsd.org|mail|||any
 mh-6.8.4|/usr/ports/mail/mh|/usr/local|Rand MH mail handling system|/usr/ports/mail/mh/pkg/DESCR|angelos@openbsd.org|mail|||any
 movemail-1.0|/usr/ports/mail/movemail|/usr/local|move your mail box to another location|/usr/ports/mail/movemail/pkg/DESCR|angelos@openbsd.org|mail|||any
@@ -319,7 +319,7 @@ bitchx-75p3|/usr/ports/net/bitchx|/usr/local|alternative ircII color client|/usr
 clog-1.6|/usr/ports/net/clog|/usr/local|tcp connection logger daemon|/usr/ports/net/clog/pkg/DESCR|ports@openbsd.org|net security|||any
 curl-5.11|/usr/ports/net/curl|/usr/local|get files from FTP, GOPHER, HTTP or HTTPS servers|/usr/ports/net/curl/pkg/DESCR|markus.friedl@informatik.uni-erlangen.de|net|SSLeay-0.9.0b||any
 dxpc-3.7.0|/usr/ports/net/dxpc|/usr/local|X11 over a low bandwidth link|/usr/ports/net/dxpc/pkg/DESCR|espie@openbsd.org|net X11|m4-1.4 autoconf-2.13||any
-epic4pre2.004-19990718|/usr/ports/net/epic4|/usr/local|The (E)nhanced (P)rogrammable (I)RC-II (C)lient.|/usr/ports/net/epic4/pkg/DESCR|brad@openbsd.org|net|||any
+epic4pre2.004-19990909|/usr/ports/net/epic4|/usr/local|The (E)nhanced (P)rogrammable (I)RC-II (C)lient.|/usr/ports/net/epic4/pkg/DESCR|brad@openbsd.org|net|||any
 ethereal-0.7.3|/usr/ports/net/ethereal|/usr/X11R6|network protocol analyzer|/usr/ports/net/ethereal/pkg/DESCR|jakob@crt.se|net x11|gettext-0.10.35 glib-1.2.4 gtk+-1.2.4|gettext-0.10.35 glib-1.2.4 gtk+-1.2.4|any
 firewalk-0.8|/usr/ports/net/firewalk|/usr/local|gateway acl scanner (via static-source port traceroute)|/usr/ports/net/firewalk/pkg/DESCR|dugsong@monkey.org|net|libnet-0.99c||any
 gated-3.5.11|/usr/ports/net/gated|/usr/local|routing protocol daemon|/usr/ports/net/gated/pkg/DESCR|ports@OpenBSD.ORG|net|||any
@@ -332,7 +332,7 @@ ircII-4.4|/usr/ports/net/ircII|/usr/local|'Internet Relay Chat' client|/usr/port
 ircii-2.8.2-epic3.004|/usr/ports/net/ircii-epic|/usr/local|enhanced version of ircII (internet relay chat)|/usr/ports/net/ircii-epic/pkg/DESCR|brad@openbsd.org|net|||any
 libnet-0.99c|/usr/ports/net/libnet|/usr/local|raw IP packet construction library|/usr/ports/net/libnet/pkg/DESCR|dugsong@monkey.org|net|||any
 licq-0.61|/usr/ports/net/licq|/usr/local|ICQ clone for UNIX|/usr/ports/net/licq/pkg/DESCR|ports@openbsd.org|net|Mesa-3.0 gmake-3.77 qt-1.44|Mesa-3.0 qt-1.44|any
-micq-0.4.1|/usr/ports/net/micq|/usr/local|Text-based ICQ implementation.|/usr/ports/net/micq/pkg/DESCR|form@openbsd.org|net|||any
+micq-0.4.2|/usr/ports/net/micq|/usr/local|Text-based ICQ implementation.|/usr/ports/net/micq/pkg/DESCR|form@openbsd.org|net|||any
 mirror-2.9|/usr/ports/net/mirror|/usr/local|mirror packages on remote sites|/usr/ports/net/mirror/pkg/DESCR|ports@openbsd.org|net|||any
 mrt-1.6.0a|/usr/ports/net/mrtd|/usr/local|Daemon/Libs/Toolkit for routing BPG4, RIP, OSPF, etc|/usr/ports/net/mrtd/pkg/DESCR|turan@openbsd.org|net|||any
 mrtg-2.8.8|/usr/ports/net/mrtg|/usr/local|multi-router traffic grapher|/usr/ports/net/mrtg/pkg/DESCR|brad@openbsd.org|net|gmake-3.77 png-1.0.3 freetype-1.2 gd-1.6.3|png-1.0.3 freetype-1.2 gd-1.6.3|any
@@ -400,7 +400,7 @@ wget-msgs-1.5.3-ru|/usr/ports/russian/wget-msgs|/usr/local|russian messages for 
 xcyrillic-1.1|/usr/ports/russian/xcyrillic|/usr/X11R6|setup X11 fonts for russian language (koi8-r)|/usr/ports/russian/xcyrillic/pkg/DESCR|ports@openbsd.org|russian x11|||any
 xruskb-1.9.3|/usr/ports/russian/xruskb|/usr/X11R6|english-russian keyboard switcher for X11|/usr/ports/russian/xruskb/pkg/DESCR|form@openbsd.org|russian x11|||any
 ADMsmb-0.2|/usr/ports/security/ADMsmb|/usr/local|Samba security scanner|/usr/ports/security/ADMsmb/pkg/DESCR|dugsong@monkey.org|security|||any
-ADMsnmp-0.1|/usr/ports/security/ADMsnmp|/usr/local|SNMP audit scanner|/usr/ports/security/ADMsnmp/pkg/DESCR|dugsong@monkey.org|security|||any
+ADMsnmp-0.1|/usr/ports/security/ADMsnmp|/usr/local|** No Description|/dev/null|dugsong@monkey.org|security|||any
 SSLeay-0.9.0b|/usr/ports/security/SSLeay|/usr/local|Eric Young's implementation of SSL and supporting libraries|/usr/ports/security/SSLeay/pkg/DESCR|dugsong@monkey.org|security|||any
 bounix-1.21|/usr/ports/security/bounix|/usr/local|Back Orifice Unix client by the cDc|/usr/ports/security/bounix/pkg/DESCR|dugsong@monkey.org|security|||any
 cfs-1.3.3|/usr/ports/security/cfs|/usr/local|cryptographic file system (user-space NFS server)|/usr/ports/security/cfs/pkg/DESCR|angelos@openbsd.org|security|||any
@@ -448,7 +448,7 @@ stat-1.3|/usr/ports/sysutils/stat|/usr/local|print inode contents|/usr/ports/sys
 tcplist-2.2|/usr/ports/sysutils/tcplist|/usr/local|list tcp connections to/from the local machine|/usr/ports/sysutils/tcplist/pkg/DESCR|ports@OpenBSD.ORG|sysutils net||lsof-4.45|any
 xbatt-1.2|/usr/ports/sysutils/xbatt|/usr/X11R6|laptop battery status display for X11|/usr/ports/sysutils/xbatt/pkg/DESCR|niklas@openbsd.org|sysutils x11|||i386
 xntp3-5.93e-export|/usr/ports/sysutils/xntpd|/usr/local|Network Time Protocol implementation|/usr/ports/sysutils/xntpd/pkg/DESCR|jason@openbsd.org|sysutils|||any
-xosview-1.7.2|/usr/ports/sysutils/xosview|/usr/X11R6|X11 graphical display of OS statistics|/usr/ports/sysutils/xosview/pkg/DESCR|form@OpenBSD.ORG|sysutils|||any
+xosview-1.7.2|/usr/ports/sysutils/xosview|/usr/X11R6|X11 graphical display of OS statistics|/usr/ports/sysutils/xosview/pkg/DESCR|form@openbsd.org|sysutils|||any
 zap-1.1|/usr/ports/sysutils/zap|/usr/local|interactive process killer|/usr/ports/sysutils/zap/pkg/DESCR|ian@openbsd.org|sysutils|||any
 TclXML-1.1.1|/usr/ports/textproc/TclXML|/usr/local|a pure-Tcl implementation of a XML parser|/usr/ports/textproc/TclXML/pkg/DESCR|jakob@openbsd.org|textproc||tcl-8.0.5|any
 agrep-2.04|/usr/ports/textproc/agrep|/usr/local|approximate grep (fast approximate pattern-matching tool)|/usr/ports/textproc/agrep/pkg/DESCR|angelos@openbsd.org|textproc|||any
