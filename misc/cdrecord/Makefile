@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/09/26 18:21:53 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2001/10/01 15:32:27 brad Exp $
 
 COMMENT=	"creates CD's on a CD-Recorder"
 
@@ -28,7 +28,7 @@ MAKE_ENV=	MAKEPROG="${MAKE_PROGRAM}"
 OBJDIR=		OBJ/${MACHINE}-openbsd-${CC}
 
 post-extract:
-	@cp -f ${FILESDIR}/rules/* ${WRKSRC}/RULES
+	@cp -f ${FILESDIR}/rules/*.rul ${WRKSRC}/RULES
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cdrecord
