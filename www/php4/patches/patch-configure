@@ -1,6 +1,39 @@
-$OpenBSD: patch-configure,v 1.3 2000/12/28 17:53:17 avsm Exp $
---- configure.orig	Thu Dec 28 16:53:29 2000
-+++ configure	Thu Dec 28 16:54:06 2000
+$OpenBSD: patch-configure,v 1.4 2001/01/07 21:08:11 avsm Exp $
+--- configure.orig	Wed Dec 20 07:44:27 2000
++++ configure	Sun Jan  7 18:38:39 2001
+@@ -376,7 +376,7 @@ ac_help="$ac_help
+   --with-exec-dir[=DIR]   Only allow executables in DIR when in safe mode
+                           defaults to /usr/local/php/bin"
+ ac_help="$ac_help
+-  --with-openssl[=DIR]    Include OpenSSL support (requires OpenSSL >= 0.9.6) "
++  --with-openssl[=DIR]    Include OpenSSL support (requires OpenSSL >= 0.9.5) "
+ ac_help="$ac_help
+   --enable-sigchild       Enable PHP's own SIGCHLD handler."
+ ac_help="$ac_help
+@@ -7578,7 +7578,7 @@ echo "configure:7576: checking for OpenS
+ #include "confdefs.h"
+ 
+   #include <openssl/opensslv.h>
+-  #if OPENSSL_VERSION_NUMBER >= 0x0090600fL
++  #if OPENSSL_VERSION_NUMBER >= 0x0090500fL
+   yes
+   #endif
+   
+@@ -7587,12 +7587,12 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
+   egrep "yes" >/dev/null 2>&1; then
+   rm -rf conftest*
+   
+-    echo "$ac_t"">= 0.9.6" 1>&6
++    echo "$ac_t"">= 0.9.5" 1>&6
+   
+ else
+   rm -rf conftest*
+   
+-    { echo "configure: error: OpenSSL version 0.9.6 or greater required." 1>&2; exit 1; }
++    { echo "configure: error: OpenSSL version 0.9.5 or greater required." 1>&2; exit 1; }
+   
+ fi
+ rm -f conftest*
 @@ -23084,12 +23084,7 @@ fi
  
    LIBS=$old_LIBS
@@ -15,18 +48,39 @@ $OpenBSD: patch-configure,v 1.3 2000/12/28 17:53:17 avsm Exp $
      
   case "ltdl" in
   c|c_r|pthread*) ;;
-@@ -23102,8 +23097,13 @@ EOF
-   ;;
-   esac
- 
--	cat >> confdefs.h <<\EOF
-+    cat >> confdefs.h <<\EOF
+@@ -23106,6 +23101,11 @@ EOF
  #define HAVE_LIBMCRYPT24 1
-+EOF
-+
+ EOF
+ 
 +  elif test "$ac_cv_lib_mcrypt_init_mcrypt" = "yes"; then
 +    cat >> confdefs.h <<\EOF
 +#define HAVE_LIBMCRYPT22 1
- EOF
- 
++EOF
++
    else
+     { echo "configure: error: Sorry" 1>&2; exit 1; }
+   fi
+@@ -39359,7 +39359,7 @@ echo "configure:39357: checking for Open
+ #include "confdefs.h"
+ 
+   #include <openssl/opensslv.h>
+-  #if OPENSSL_VERSION_NUMBER >= 0x0090600fL
++  #if OPENSSL_VERSION_NUMBER >= 0x0090500fL
+   yes
+   #endif
+   
+@@ -39368,12 +39368,12 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
+   egrep "yes" >/dev/null 2>&1; then
+   rm -rf conftest*
+   
+-    echo "$ac_t"">= 0.9.6" 1>&6
++    echo "$ac_t"">= 0.9.5" 1>&6
+   
+ else
+   rm -rf conftest*
+   
+-    { echo "configure: error: OpenSSL version 0.9.6 or greater required." 1>&2; exit 1; }
++    { echo "configure: error: OpenSSL version 0.9.5 or greater required." 1>&2; exit 1; }
+   
+ fi
+ rm -f conftest*

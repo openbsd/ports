@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/01/06 14:17:33 avsm Exp $
+# $OpenBSD: Makefile,v 1.22 2001/01/07 21:08:11 avsm Exp $
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
@@ -32,6 +32,7 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-yp \
 			--with-pcre-regex \
 			--with-xml \
+			--with-openssl \
 			--with-zlib
 
 FLAVORS+=	gdbm gettext ftp imap ldap mhash mm recode snmp
