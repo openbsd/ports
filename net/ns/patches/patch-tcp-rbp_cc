@@ -1,0 +1,21 @@
+$OpenBSD: patch-tcp-rbp_cc,v 1.1 2002/09/29 14:32:45 naddy Exp $
+--- tcp-rbp.cc.orig	Sun Sep 29 13:54:59 2002
++++ tcp-rbp.cc	Sun Sep 29 13:55:32 2002
+@@ -70,7 +70,7 @@ protected:
+ // Hmmm... ``a is a'' in the construction of the RBPVegasPaceTimer edifice :->
+ 
+ class RBPVegasTcpAgent : public virtual VegasTcpAgent {
+-	friend RBPVegasPaceTimer;
++	friend class RBPVegasPaceTimer;
+  public:
+ 	RBPVegasTcpAgent();
+ 	virtual void recv(Packet *pkt, Handler *);
+@@ -232,7 +232,7 @@ protected:
+ // Hmmm... ``a is a'' in the construction of the RBPRenoPaceTimer edifice :->
+ 
+ class RBPRenoTcpAgent : public virtual RenoTcpAgent {
+-	friend RBPRenoPaceTimer;
++	friend class RBPRenoPaceTimer;
+  public:
+ 	RBPRenoTcpAgent();
+ 	virtual void recv(Packet *pkt, Handler *);

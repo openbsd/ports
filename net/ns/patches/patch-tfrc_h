@@ -1,0 +1,14 @@
+$OpenBSD: patch-tfrc_h,v 1.1 2002/09/29 14:32:45 naddy Exp $
+--- tfrc.h.orig	Sun Sep 29 13:49:17 2002
++++ tfrc.h	Sun Sep 29 13:49:30 2002
+@@ -109,8 +109,8 @@ protected:
+ }; 
+ 
+ class TfrcAgent : public Agent {
+-		friend TfrcSendTimer;
+-	friend TfrcNoFeedbackTimer;
++		friend class TfrcSendTimer;
++	friend class TfrcNoFeedbackTimer;
+ public:
+ 	TfrcAgent();
+ 	void recv(Packet*, Handler*);

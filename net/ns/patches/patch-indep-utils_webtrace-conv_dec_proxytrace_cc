@@ -1,0 +1,9 @@
+$OpenBSD: patch-indep-utils_webtrace-conv_dec_proxytrace_cc,v 1.1 2002/09/29 14:32:45 naddy Exp $
+--- indep-utils/webtrace-conv/dec/proxytrace.cc.orig	Sun Sep 29 16:25:55 2002
++++ indep-utils/webtrace-conv/dec/proxytrace.cc	Sun Sep 29 16:26:10 2002
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ #include "proxytrace.h"
+ 

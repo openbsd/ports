@@ -1,0 +1,12 @@
+$OpenBSD: patch-drr_cc,v 1.1 2002/09/29 14:32:45 naddy Exp $
+--- drr.cc.orig	Sun Sep 29 13:57:38 2002
++++ drr.cc	Sun Sep 29 13:57:48 2002
+@@ -32,7 +32,7 @@ class DRR;
+ 
+ class PacketDRR : public PacketQueue {
+ 	PacketDRR(): pkts(0),src(-1),bcount(0),prev(0),next(0),deficitCounter(0),turn(0) {}
+-	friend DRR;
++	friend class DRR;
+ 	protected :
+ 	int pkts;
+ 	int src;    //to detect collisions keep track of actual src address

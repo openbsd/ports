@@ -1,0 +1,14 @@
+$OpenBSD: patch-snoop_h,v 1.1 2002/09/29 14:32:45 naddy Exp $
+--- snoop.h.orig	Sun Sep 29 14:01:04 2002
++++ snoop.h	Sun Sep 29 14:01:19 2002
+@@ -111,8 +111,8 @@ class SnoopRxmitHandler;
+ class SnoopPersistHandler;
+ 
+ class Snoop : public NsObject {
+-	friend SnoopRxmitHandler;
+-	friend SnoopPersistHandler;
++	friend class SnoopRxmitHandler;
++	friend class SnoopPersistHandler;
+   public:
+ 	Snoop();
+ 	void recv(Packet *, Handler *);
