@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2001/10/03 07:54:10 kevlo Exp $
+# $OpenBSD: Makefile,v 1.61 2001/10/28 02:25:36 naddy Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -141,6 +141,7 @@
 #    SUBDIR += yamsweeper
      SUBDIR += zangband
      SUBDIR += zangband,no_x11
+     SUBDIR += zoom
 #    SUBDIR += ztrack
 
 .include <bsd.port.subdir.mk>
