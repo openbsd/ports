@@ -12,4 +12,7 @@ Internet's SDPS, all flavors of IMAP (including IMAP4rev1 with RFC1731
 Kerberos v4 or GSSAPI authentication or CRAM-MD5 authentication), and
 ESMTP ETRN.  Fetchmail also supports end-to-end encryption with OpenSSL.
 
+Flavors:
+	kerberos - build with support for Kerberos IV
+
 WWW: ${HOMEPAGE}

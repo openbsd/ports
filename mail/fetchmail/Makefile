@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.61 2000/12/14 15:20:28 brad Exp $
+# $OpenBSD: Makefile,v 1.62 2001/02/15 21:21:37 brad Exp $
 
-DISTNAME=	fetchmail-5.6.1
+DISTNAME=	fetchmail-5.6.5
 CATEGORIES=	mail
 NEED_VERSION=	1.336
 MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
@@ -25,6 +25,9 @@ FLAVOR?=
 CONFIGURE_ARGS+= --with-kerberos
 .endif
 
+DOCS=	FAQ NOTES FEATURES README COPYING fetchmail-FAQ.html \
+	fetchmail-features.html design-notes.html todo.html
+
 pre-patch:
 	@sed -e "s|@PREFIX@|${LOCALBASE}|" \
 	  ${FILESDIR}/fetchmailconf > ${WRKDIR}/fetchmailconf
@@ -34,10 +37,7 @@ pre-patch:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/fetchmail
 	@cd ${PREFIX}/man/man1 && ln -sf fetchmail.1 fetchmailconf.1
-	cd ${WRKSRC} && ${INSTALL_DATA} \
-	  sample.rcfile FAQ NOTES FEATURES README COPYING \
-	  fetchmail-FAQ.html fetchmail-features.html \
-	  design-notes.html ${PREFIX}/share/doc/fetchmail
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/fetchmail
 	${INSTALL_SCRIPT} ${WRKSRC}/fetchmailconf \
 	  ${PREFIX}/libexec/fetchmailconf.bin
 	${INSTALL_SCRIPT} ${WRKDIR}/fetchmailconf ${PREFIX}/bin
