@@ -1,15 +1,6 @@
-$OpenBSD: patch-cvsweb_conf,v 1.6 2001/03/24 22:39:04 naddy Exp $
---- cvsweb.conf.orig	Sun Jan 14 10:04:04 2001
-+++ cvsweb.conf	Sat Mar 24 23:14:31 2001
-@@ -15,7 +15,7 @@
- #   uname, cvs, rlog, rcsdiff
- #   gzip (if you enable $allow_compress)
- #   tar,rm (if you enable $allow_tar)
--$command_path = '/bin:/usr/bin:/usr/local/bin';
-+$command_path = '/bin:/usr/bin';
- 
- # Search the above directories for each command
- for (qw(uname cvs rlog rcsdiff gzip tar rm)) {
+$OpenBSD: patch-cvsweb_conf,v 1.7 2001/07/09 16:55:04 naddy Exp $
+--- cvsweb.conf.orig	Fri Jul  6 11:44:28 2001
++++ cvsweb.conf	Mon Jul  9 18:26:56 2001
 @@ -209,7 +209,7 @@ EOT
  # These default icons are coming with apache.
  # If these icons are too large, check out the miniicons in the
