@@ -1,0 +1,34 @@
+*** unix/Makefile.orig	Mon Nov 24 14:30:41 1997
+--- unix/Makefile	Mon Nov 24 14:37:38 1997
+***************
+*** 123,129 ****
+  SYSTEMS6 = next next10 next2x next3x nextfat osf1 pixel ptx pyramid realix 
+  SYSTEMS7 = regulus rs6000 sco sco_dos sco_sl sco_x286 sequent sgi solaris 
+  SYSTEMS8 = solaris_pkg stardent stellar sunos3 sunos4 sysv sysv_gcc sysv6300 
+! SYSTEMS9 = tahoe ti_sysv ultrix vax v7 wombat xenix xos
+  
+  
+  ####################
+--- 123,129 ----
+  SYSTEMS6 = next next10 next2x next3x nextfat osf1 pixel ptx pyramid realix 
+  SYSTEMS7 = regulus rs6000 sco sco_dos sco_sl sco_x286 sequent sgi solaris 
+  SYSTEMS8 = solaris_pkg stardent stellar sunos3 sunos4 sysv sysv_gcc sysv6300 
+! SYSTEMS9 = tahoe ti_sysv ultrix vax v7 wombat xenix xos openbsd
+  
+  
+  ####################
+***************
+*** 661,666 ****
+--- 661,672 ----
+  # FreeBSD on Intel:
+  freebsd:		unix_make
+  	@echo 'NOTE:  use bsd target for non-Intel FreeBSD compiles (if any).'
++ 	$(MAKE) unzips CC=gcc LD=gcc AS=gcc\
++ 	 CF="-O3 -Wall -I. -DASM_CRC -DBSD $(LOC)"\
++ 	 AF="-Di386 $(AF)" CRC32=crc_gcc
++ 
++ # OpenBSD
++ openbsd:		unix_make
+  	$(MAKE) unzips CC=gcc LD=gcc AS=gcc\
+  	 CF="-O3 -Wall -I. -DASM_CRC -DBSD $(LOC)"\
+  	 AF="-Di386 $(AF)" CRC32=crc_gcc
