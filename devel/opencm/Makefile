@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/12 15:08:57 todd Exp $
+# $OpenBSD: Makefile,v 1.6 2002/09/12 15:26:33 todd Exp $
 
 COMMENT=		"OpenCM change management system"
 COMMENT-docs=		"OpenCM Documentation"
@@ -34,7 +34,7 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include"
+			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
 
 FLAVORS=docs
 FLAVOR?=
