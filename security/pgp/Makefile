@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/03/24 23:28:33 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/03/31 03:16:53 kevlo Exp $
 
 DISTNAME=       pgp263is
 PKGNAME=	pgp-2.6.3
@@ -15,6 +15,8 @@ RESTRICTED=	"Crypto; export-controlled"
 
 IS_INTERACTIVE=	Yes
 WRKDIST=	${WRKDIR}/src
+
+FAKE=		Yes
 
 # common C flags
 CFLAGS+=-DUNIX -DPORTABLE -DMERIT -DIDEA32 -DMAX_NAMELEN=255 \
