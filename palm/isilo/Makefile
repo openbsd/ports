@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/02 23:57:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2002/01/25 08:17:34 pvalchev Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -8,7 +8,7 @@ VER=		2.58
 DISTNAME=	iSiloBSD
 PKGNAME=	isilo-${VER}
 CATEGORIES=	palm textproc
-NEED_VERSION=	1.413
+NEED_VERSION=	1.504
 EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://www.iSilo.com/
@@ -24,6 +24,7 @@ MASTER_SITES=	ftp://ftp.iSilo.com/pub/
 
 WRKDIST=        ${WRKDIR}
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 post-extract:
 	@cp ${FILESDIR}/Makefile ${FILESDIR}/iSiloBSD.1 ${WRKDIR}

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/02 06:59:46 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2002/01/25 08:17:34 pvalchev Exp $
 
 COMMENT=	"bookmarks on your palm"
 
 DISTNAME=	palm-bookmarks-0.2
 CATEGORIES=	palm textproc
-NEED_VERSION=	1.433
+NEED_VERSION=	1.504
 
 HOMEPAGE=	http://www.liacs.nl/~jvhemert/scripts/palm-bookmarks/
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/palm-bookmarks.cgi ${PREFIX}/bin/palm-bookmarks

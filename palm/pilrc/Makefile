@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/24 12:31:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/01/25 08:17:34 pvalchev Exp $
 
 COMMENT=	"generate resources for PalmOS applications from text descr"
 
 DISTNAME=	pilrc-2.8p5
 PKGNAME=	${DISTNAME:S/p4/.4/}
 CATEGORIES=	palm devel
-NEED_VERSION=	1.474
+NEED_VERSION=	1.504
 
 HOMEPAGE=	http://www.ardiri.com/index.php?redir=palm\&cat=pilrc
 
@@ -23,6 +23,7 @@ FLAVORS=	no_x11
 FLAVOR?=
 
 USE_GMAKE=	Yes
+NO_REGRESS=	Yes
 CONFIGURE_STYLE= gnu
 
 .if ${FLAVOR:L:Mno_x11}
