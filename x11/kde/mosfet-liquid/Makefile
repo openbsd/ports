@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.4 2001/08/27 14:05:24 espie Exp $
-V=0.5
+# $OpenBSD: Makefile,v 1.5 2001/09/10 23:55:01 brad Exp $
+V=0.5.1
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.447
 COMMENT=	"KDE style engine"
