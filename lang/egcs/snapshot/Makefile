@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.13 1999/01/09 16:55:27 espie Exp $
+# $OpenBSD: Makefile,v 1.14 1999/01/10 02:50:02 espie Exp $
 #
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -20,7 +20,7 @@ MAINTAINER=	Marc.Espie@openbsd.org
 MIRROR_DISTFILE=no
 
 # with some help from Jason L. Wright for sparc...
-ONLY_FOR_ARCHS = i386 sparc m68k
+ONLY_FOR_ARCHS = i386 sparc m68k sparc pa
 
 # user configuration section
 
@@ -31,10 +31,10 @@ ONLY_FOR_ARCHS = i386 sparc m68k
 # YOU MUST USE THE MAMMOTH ARCHIVE !!!
 MAKE_TESTS=yes
 MAKE_GXX=yes
-MAKE_FORTRAN=yes
-MAKE_CHILL=yes
-MAKE_OBJC=yes
-MAKE_JAVA=yes
+#MAKE_FORTRAN=yes
+#MAKE_CHILL=yes
+#MAKE_OBJC=yes
+#MAKE_JAVA=yes
 
 .if defined(MAKE_TESTS)
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
@@ -44,7 +44,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1998-12-20
+LATEST_DATE=1999-01-03
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -222,7 +222,7 @@ PATCH_LIST+=patch-java-*
 # get openbsd configuration files where they should be
 post-patch:
 		# avoid packaging include copies along...
-	find ${WRKSRC} -name \*.orig|xargs ${RM}
+	#find ${WRKSRC} -name \*.orig|xargs ${RM}
 	${CP} -R ${FILESDIR}/config/* ${WRKSRC}
 	-${RM} -rf ${WRKSRC}/texinfo 
 	cd ${WRKSRC}; \
@@ -308,8 +308,10 @@ ALL_TARGET+=check
 
 # XXX we need to override do-build to get the warnings from within make
 do-build:
-	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET} 2>warnings)
-
+	@(cd ${WRKSRC}; \
+	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET} 2>warnings) || \
+	(echo "Make bootstrap failed."; \
+	echo "Don't forget to look at ${WRKSRC}/warnings")
 
 
 ####

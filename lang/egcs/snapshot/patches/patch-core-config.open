@@ -1,6 +1,49 @@
---- gcc/configure.in.orig	Sat Nov  7 14:00:02 1998
-+++ gcc/configure.in	Tue Nov 17 00:23:07 1998
-@@ -1082,10 +1082,8 @@
+--- gcc/configure.in.orig	Thu Dec 17 22:09:07 1998
++++ gcc/configure.in	Mon Dec 28 23:03:47 1998
+@@ -497,11 +497,19 @@
+ 	tm_file=${cpu_type}/${cpu_type}.h
+ 	xm_file=${cpu_type}/xm-${cpu_type}.h
+ 	
+-	# Set the default macros to define for GNU/Linux systems.
++	# Common parts for linux-gnu and openbsd systems
+ 	case $machine in
+ 	*-*-linux-gnu*)
+ 		xm_defines="HAVE_ATEXIT POSIX BSTRING"
+ 		;;
++	*-*-openbsd*)
++		tm_file=${cpu_type}/openbsd.h
++		# On OpenBSD systems, the headers are okay
++		fixincludes=Makefile.in
++		tmake_file="t-libc-ok t-openbsd"
++		# we need collect2 until our bug is fixed...
++		use_collect2=yes
++		;;
+ 	esac
+ 
+ 	case $machine in
+@@ -581,6 +589,11 @@
+ 		fixincludes=fixinc.wrap
+ 		gas=yes gnu_ld=yes
+ 		;;
++
++	alpha*-*-openbsd*)
++		# nothing special
++		;;
++
+ 		
+ 	alpha*-dec-osf*)
+ 		if test x$stabs = xyes
+@@ -771,6 +784,9 @@
+ 	h8300-*-*)
+ 		float_format=i32
+ 		;;
++	hppa*-*-openbsd*)
++		target_cpu_default=1
++		;;
+ 	hppa1.1-*-pro*)
+ 		tm_file="pa/pa-pro.h ${tm_file} pa/pa-pro-end.h libgloss.h"
+ 		xm_file=pa/xm-papro.h
+@@ -1096,10 +1112,8 @@
  		fixincludes=fixinc.wrap
  		tmake_file=i386/t-freebsd
  		;;
@@ -12,51 +55,81 @@
  changequote([,])dnl
  		tm_file=i386/netbsd.h
  		# On NetBSD, the headers are already okay, except for math.h.
-@@ -1093,6 +1091,16 @@
+@@ -1107,6 +1121,11 @@
  		tmake_file=t-netbsd
  		;;
  changequote(,)dnl
 +	i[34567]86-*-openbsd*)
 +changequote([,])dnl
-+		tm_file=i386/openbsd.h
-+		# On OpenBSD, the headers are already okay.
-+		fixincludes=Makefile.in
-+		tmake_file=t-openbsd
-+		# XXX may need adding until the bug is fixed...
-+		use_collect2=yes
++		# nothing special
 +		;;
 +changequote(,)dnl
  	i[34567]86-*-coff*)
  changequote([,])dnl
  		tm_file=i386/i386-coff.h
-@@ -1947,6 +1955,15 @@
+@@ -1967,6 +1986,9 @@
  		tmake_file=t-netbsd
  		float_format=m68k
  		;;
 +	m68k*-*-openbsd*)
-+		tm_file=m68k/openbsd.h
-+		# On OpenBSD, the headers are already okay.
-+		fixincludes=Makefile.in
-+		tmake_file=t-openbsd
 +		float_format=m68k
-+		# XXX may need adding until the bug is fixed...
-+		use_collect2=yes
 +		;;
  	m68k-*-sysv3*)			# Motorola m68k's running system V.3
  		xm_file="xm-alloca.h ${xm_file}"
  		xm_defines=USG
-@@ -2916,6 +2933,14 @@
- 		# On NetBSD, the headers are already okay, except for math.h.
+@@ -2298,6 +2320,12 @@
+ 		gas=yes
+ 		fixincludes=Makefile.in 
+ 		;;
++	mips*el-*-openbsd*)	# mips le
++		tm_file=mips/openbsd-le.h
++		;;
++	mips*-*-openbsd*)		# mips big endian
++		tm_file=mips/openbsd-be.h
++		;;
+ 	mips-sony-bsd* | mips-sony-newsos*)	# Sony NEWS 3600 or risc/news.
+ 		tm_file="mips/news4.h ${tm_file}"
+ 		if test x$stabs = xyes; then
+@@ -2648,6 +2676,9 @@
+                 ;;
+         pdp11-*-*)
+ 		;;
++	ns32k-*-openbsd*)
++		# Nothing special
++		;;
+ 	pyramid-*-*)
+ 		cpu_type=pyr
+ 		xmake_file=pyr/x-pyr
+@@ -2660,6 +2691,12 @@
+ 		xmake_file=romp/x-mach
+ 		use_collect2=yes
+ 		;;
++	romp-*-openbsd*)
++		# Nothing special
++		;;
++	powerpc-*-openbsd*)
++		tmake_file="${tmake_file} rs6000/t-rs6000 rs6000/t-openbsd"
++		;;
+ 	powerpc-*-beos*)
+ 		cpu_type=rs6000
+ 		tm_file=rs6000/beos.h
+@@ -2949,6 +2986,9 @@
  		fixincludes=fixinc.wrap
  		tmake_file=t-netbsd
-+		;;
-+	sparc-*-openbsd*)
-+		tm_file=sparc/openbsd.h
-+		# On OpenBSD, the headers are already okay.
-+		fixincludes=Makefile.in
-+		tmake_file=t-openbsd
-+		# XXX may need adding until the bug is fixed...
-+		use_collect2=yes
  		;;
++	sparc-*-openbsd*)
++		# nothing special
++		;;
  	sparc-*-bsd*)
  		tm_file=sparc/bsd.h
+ 		;;
+@@ -3167,6 +3207,9 @@
+ 		fixincludes=fixinc.wrap
+ 		tmake_file=t-netbsd
+ 		float_format=vax
++		;;
++	vax-*-openbsd*)
++		tmake_file="${tm_file} vax/t-openbsd"
+ 		;;
+ 	vax-*-ultrix*)			# vaxen running ultrix
+ 		tm_file="${tm_file} vax/ultrix.h"
