@@ -1,5 +1,5 @@
 Calc is arbitrary precision arithmetic system that uses a C-like
-language. Calc is useful as a calculator, an algorithm prototyped and
+language. Calc is useful as a calculator, an algorithm prototyper and
 as a mathematical research tool. More importantly, calc provides one
 with a machine independent means of computation. Calc comes with a
 rich set of builtin mathematical and programmatic functions. A

@@ -1,0 +1,20 @@
+$OpenBSD: patch-lib_calc_c,v 1.1 2002/08/02 01:50:34 wcobb Exp $
+--- lib_calc.c.orig	Wed Jul 17 22:23:36 2002
++++ lib_calc.c	Wed Jul 17 22:25:22 2002
+@@ -438,9 +438,14 @@ initenv(void)
+ 		if (ent == NULL) {
+ 			/* just assume . is home if all else fails */
+ 			home = ".";
++		} else {
++			home = (char *)malloc(strlen(ent->pw_dir)+1);
++			if (home == NULL) {
++				home = ".";
++			} else {
++				strcpy(home, ent->pw_dir);
++			}
+ 		}
+-		home = (char *)malloc(strlen(ent->pw_dir)+1);
+-		strcpy(home, ent->pw_dir);
+ 	}
+ #endif /* Windoz free systems */
+ 
