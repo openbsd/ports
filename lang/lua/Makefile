@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/07/03 14:23:32 pedro Exp $
+# $OpenBSD: Makefile,v 1.13 2004/07/04 23:34:36 pedro Exp $
 
 COMMENT=	"powerful, light-weight programming language"
 
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
 
-.if !defined(NO_SHARED_LIBS)
+.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
 CFLAGS+=	-fPIC
 ALL_TARGET+=	all so sobin
 .endif
