@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.9 2004/01/07 14:57:34 dhartmei Exp $
+$OpenBSD: user.list,v 1.10 2004/02/16 12:04:29 jakob Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -36,3 +36,4 @@ id  user		group		port options
 525 _quagga		_quagga		net/quagga
 526 _tomcat		_tomcat		www/jakarta-tomcat
 527 _milter-regex	_milter-regex	mail/milter-regex
+528 _stunnel		_stunnel	security/stunnel
