@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/17 21:48:03 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/08/28 17:14:49 naddy Exp $
 lib/zope/lib/python/Products/ZWiki/CHANGES.txt
 lib/zope/lib/python/Products/ZWiki/CMF.py
 lib/zope/lib/python/Products/ZWiki/CMF.pyc
@@ -34,6 +34,8 @@ lib/zope/lib/python/Products/ZWiki/Parents.py
 lib/zope/lib/python/Products/ZWiki/Parents.pyc
 lib/zope/lib/python/Products/ZWiki/Permissions.py
 lib/zope/lib/python/Products/ZWiki/Permissions.pyc
+lib/zope/lib/python/Products/ZWiki/PurpleNumbers.py
+lib/zope/lib/python/Products/ZWiki/PurpleNumbers.pyc
 lib/zope/lib/python/Products/ZWiki/README.txt
 lib/zope/lib/python/Products/ZWiki/Regexps.py
 lib/zope/lib/python/Products/ZWiki/Regexps.pyc
@@ -106,6 +108,8 @@ lib/zope/lib/python/Products/ZWiki/tests/testMailin.py
 lib/zope/lib/python/Products/ZWiki/tests/testMailin.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testMailout.py
 lib/zope/lib/python/Products/ZWiki/tests/testMailout.pyc
+lib/zope/lib/python/Products/ZWiki/tests/testPurpleNumbers.py
+lib/zope/lib/python/Products/ZWiki/tests/testPurpleNumbers.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testRendering.py
 lib/zope/lib/python/Products/ZWiki/tests/testRendering.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testZWikiPage.py

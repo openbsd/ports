@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/17 21:48:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2003/08/28 17:14:49 naddy Exp $
 
 COMMENT=	"Wiki engine for Zope"
 
-VERSION=	0.20.0
+VERSION=	0.21.1
 DISTNAME=	ZWiki-${VERSION}
 PKGNAME=	zope-zwiki-${VERSION}
 CATEGORIES=	www
 
-HOMEPAGE=	http://www.zope.org/Members/simon/ZWiki/
-MASTER_SITES=	${HOMEPAGE}
+HOMEPAGE=	http://zwiki.org/
+MASTER_SITES=	http://zwiki.org/releases/
+
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
