@@ -1,6 +1,6 @@
-$OpenBSD: patch-tcl_Makefile_in,v 1.1.1.1 2000/06/14 05:57:50 jakob Exp $
+$OpenBSD: patch-tcl_Makefile_in,v 1.2 2000/06/15 10:39:44 camield Exp $
 --- tcl/Makefile.in.orig	Mon Jun 12 14:29:45 2000
-+++ tcl/Makefile.in	Tue Jun 13 22:11:11 2000
++++ tcl/Makefile.in	Wed Jun 14 12:51:00 2000
 @@ -32,8 +32,6 @@ mandir = @mandir@
  includedir = @includedir@
  oldincludedir = /usr/include

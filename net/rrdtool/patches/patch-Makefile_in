@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2000/06/14 05:57:50 jakob Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2000/06/15 10:39:43 camield Exp $
 --- Makefile.in.orig	Mon Jun 12 14:23:37 2000
-+++ Makefile.in	Tue Jun 13 22:11:11 2000
++++ Makefile.in	Wed Jun 14 11:47:28 2000
 @@ -32,8 +32,6 @@ mandir = @mandir@
  includedir = @includedir@
  oldincludedir = /usr/include
@@ -10,3 +10,22 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2000/06/14 05:57:50 jakob Exp $
  pkgdatadir = $(datadir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
+@@ -382,12 +380,12 @@ maintainer-clean
+ 
+ 
+ # lets schedule the perl stuff for installation
+-install-data-local:
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
+-	$(INSTALL) -m 644 perl-piped/RRDp.pm $(DESTDIR)$(prefix)/lib/perl
+-	$(INSTALL) -m 644 perl-shared/RRDs.pm $(DESTDIR)$(prefix)/lib/perl
+-	$(INSTALL) -m 644 perl-shared/blib/arch/auto/RRDs/RRDs.bs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
+-	$(INSTALL) -m 755 perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
++install-data-local: 
++	$(INSTALL) -d -m 755 $(DESTDIR)$(prefix)/libdata/perl5/site_perl/$(MACHINE_ARCH)-openbsd/auto/RRDs
++	$(INSTALL) -m 644 perl-piped/RRDp.pm $(DESTDIR)$(prefix)/libdata/perl5/site_perl/$(MACHINE_ARCH)-openbsd
++	$(INSTALL) -m 644 perl-shared/RRDs.pm $(DESTDIR)$(prefix)/libdata/perl5/site_perl/$(MACHINE_ARCH)-openbsd
++	$(INSTALL) -m 644 perl-shared/blib/arch/auto/RRDs/RRDs.bs $(DESTDIR)$(prefix)/libdata/perl5/site_perl/$(MACHINE_ARCH)-openbsd/auto/RRDs
++	$(INSTALL) -m 755 perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/libdata/perl5/site_perl/$(MACHINE_ARCH)-openbsd/auto/RRDs
+ 
+ # rules for building the perl module
+ perl_piped: perl-piped/Makefile

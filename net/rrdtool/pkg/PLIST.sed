@@ -1,15 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/06/14 05:57:50 jakob Exp $
+@comment $OpenBSD: PLIST.sed,v 1.1 2000/06/15 10:39:45 camield Exp $
 bin/rrdcgi
 bin/rrdtool
 bin/trytime
 include/rrd.h
 lib/librrd.a
 lib/librrd.la
-lib/librrd.so.0.0
-lib/perl/RRDp.pm
-lib/perl/RRDs.pm
-lib/perl/auto/RRDs/RRDs.bs
-lib/perl/auto/RRDs/RRDs.so
+%%SHARED%%
+libdata/perl5/site_perl/@ARCH@-openbsd/RRDp.pm
+libdata/perl5/site_perl/@ARCH@-openbsd/RRDs.pm
+libdata/perl5/site_perl/@ARCH@-openbsd/auto/RRDs/RRDs.bs
 man/man1/RRDp.1
 man/man1/RRDs.1
 man/man1/bin_dec_hex.1
@@ -116,8 +115,4 @@ share/examples/rrdtool/stripes.pl
 @dirrm share/examples/rrdtool
 @dirrm share/doc/rrdtool/html
 @dirrm share/doc/rrdtool
-@dirrm lib/perl/auto/RRDs
-@dirrm lib/perl/auto
-@dirrm lib/perl
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
-@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
+@dirrm libdata/perl5/site_perl/@ARCH@-openbsd/auto/RRDs

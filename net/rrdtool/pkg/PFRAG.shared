@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2000/06/15 10:39:44 camield Exp $
+lib/librrd.so.0.0
+libdata/perl5/site_perl/@ARCH@-openbsd/auto/RRDs/RRDs.so
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
+@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
