@@ -1,0 +1,70 @@
+Subject: Re: ICE on m68k-unknown-openbsd24, egcs-1.1.1 
+From: Jeffrey A Law <law@hurl.cygnus.com>
+  In message <19981213231720.65462@liafa1.liafa.jussieu.fr>you write:
+  > Rather non-sensical code-sample, I've trimmed everything that I could...
+  > 
+  > This triggers an ICE on m68k-unknown-openbsd24 with any optimization
+  > (-O or -O2):
+  > reload.c: 3524: Internal compiler error in function find_reloads 
+  > Even if it's fixed in recent snapshots, a patch would be appreciated...
+  > 
+  > void f()
+  > 	{
+  > 	unsigned long  *wnump;
+  > 	unsigned long  d0;
+  > 	unsigned long long  rem;
+  > 	for (;;)
+  > 		{
+  > 		rem=(unsigned long long )d0*d0;
+  > 		if ((rem <= ((unsigned long long )(rem<< 32 )+wnump[-2])))
+  > 			break;
+  > 		}
+  > 	}
+  > -- 
+This patch should fix your problem.
+
+        * m68k.md (adddi_dilshr32): Allow all operands to be registers too.
+        (adddi_dishl32): Similarly.
+
+Index: m68k.md
+===================================================================
+RCS file: /egcs/carton/cvsfiles/egcs/gcc/config/m68k/m68k.md,v
+retrieving revision 1.23
+diff -c -3 -p -r1.23 m68k.md
+*** m68k.md	1998/12/16 21:06:58	1.23
+--- m68k.md	1998/12/31 08:12:59
+***************
+*** 2104,2110 ****
+  ;;    (plus:DI (match_operand:DI 2 "general_operand" "%0")
+  ;;	(lshiftrt:DI (match_operand:DI 1 "general_operand" "ro")
+  ;;            (const_int 32))))]
+!     (plus:DI (lshiftrt:DI (match_operand:DI 1 "general_operand" "o,r")
+              (const_int 32))
+          (match_operand:DI 2 "general_operand" "0,0")))]
+    ""
+--- 2104,2110 ----
+  ;;    (plus:DI (match_operand:DI 2 "general_operand" "%0")
+  ;;	(lshiftrt:DI (match_operand:DI 1 "general_operand" "ro")
+  ;;            (const_int 32))))]
+!     (plus:DI (lshiftrt:DI (match_operand:DI 1 "general_operand" "ro,r")
+              (const_int 32))
+          (match_operand:DI 2 "general_operand" "0,0")))]
+    ""
+***************
+*** 2123,2129 ****
+  ;;    (plus:DI (match_operand:DI 2 "general_operand" "%0")
+  ;;	(ashift:DI (match_operand:DI 1 "general_operand" "ro")
+  ;;            (const_int 32))))]
+!     (plus:DI (ashift:DI (match_operand:DI 1 "general_operand" "o,r")
+              (const_int 32))
+          (match_operand:DI 2 "general_operand" "0,0")))]
+    ""
+--- 2123,2129 ----
+  ;;    (plus:DI (match_operand:DI 2 "general_operand" "%0")
+  ;;	(ashift:DI (match_operand:DI 1 "general_operand" "ro")
+  ;;            (const_int 32))))]
+!     (plus:DI (ashift:DI (match_operand:DI 1 "general_operand" "ro,r")
+              (const_int 32))
+          (match_operand:DI 2 "general_operand" "0,0")))]
+    ""
+
