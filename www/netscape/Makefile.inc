@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2000/07/06 23:22:21 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2000/07/09 21:59:13 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -58,7 +58,7 @@ pre-fetch:
 .if ${MACHINE_ARCH} == "sparc"
 	@echo ""
 	@echo "  WARNING: This application requires a kernel compiled with"
-	@echo "           'option COMPAT_SUNOS' and SunOS shared librarys"
+	@echo "           'option COMPAT_SUNOS' and SunOS shared libraries"
 	@echo "           for proper operation, see compat_sunos(8) for"
 	@echo "           further details. The GENERIC kernel contains"
 	@echo "           this option."
