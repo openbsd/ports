@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/30 02:01:12 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/16 03:10:21 kevlo Exp $
 
 COMMENT=	"Python unicode codecs for Chinese, Japanese and Korean"
 
-DISTNAME=	cjkcodecs-1.0.2
+DISTNAME=	cjkcodecs-1.0.3
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	converters
 
