@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 17:53:59 todd Exp $
-bin/linc-cleanup-sockets
+@comment $OpenBSD: PLIST,v 1.2 2003/08/06 20:44:09 marcm Exp $
 bin/linc-config
 include/linc-1.0/linc/linc-config.h
 include/linc-1.0/linc/linc-connection.h
@@ -14,9 +13,6 @@ share/aclocal/linc.m4
 share/gtk-doc/html/linc/c4.html
 share/gtk-doc/html/linc/index.html
 share/gtk-doc/html/linc/index.sgml
-share/gtk-doc/html/linc/linc-config.html
-share/gtk-doc/html/linc/linc-linc-config.html
-share/gtk-doc/html/linc/linc-linc-private.html
 share/gtk-doc/html/linc/linc-linc-protocol.html
 share/gtk-doc/html/linc/linc-linc-types.html
 share/gtk-doc/html/linc/linc-linc.html

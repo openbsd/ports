@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2003/06/12 19:39:57 marcm Exp $
+# $OpenBSD: Makefile,v 1.4 2003/08/06 20:44:09 marcm Exp $
 
 COMMENT=		"portable library for obtaining system information"
 
-V=			2.0.1
+V=			2.0.2
 DISTNAME=		libgtop-${V}
 PKGNAME=		libgtop2-${V}
 CATEGORIES=		devel
@@ -29,8 +29,7 @@ LIB_DEPENDS=	glib-2.0.0.0::devel/glib2
 SEPARATE_BUILD=		concurrent
 USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	autoconf
-# Should be 2.53
-AUTOCONF_VERSION=	2.52
+AUTOCONF_VERSION=	2.57
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

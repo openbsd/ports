@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/06/12 19:45:35 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/08/06 20:44:09 marcm Exp $
 
 COMMENT=		"An experimental terminal emulator"
 
-DISTNAME=		vte-0.10.28
+DISTNAME=		vte-0.10.29
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/

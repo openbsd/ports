@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2003/01/31 18:19:29 todd Exp $
+# $OpenBSD: Makefile,v 1.12 2003/08/06 20:44:08 marcm Exp $
 
 COMMENT=		"IDL parsing library"
 
-DISTNAME=		libIDL-0.8.0
+DISTNAME=		libIDL-0.8.2
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
@@ -17,9 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libIDL/0.8/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		gettext
-
-BUILD_DEPENDS=		:pkgconfig->=0.12.0p1:devel/pkgconfig
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		glib-2.0.0.0::devel/glib2
 
 USE_GMAKE=		Yes

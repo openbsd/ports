@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/06/12 19:38:55 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/08/06 20:44:09 marcm Exp $
 include/libwnck-1.0/libwnck/application.h
 include/libwnck-1.0/libwnck/libwnck.h
 include/libwnck-1.0/libwnck/pager.h
@@ -18,6 +18,7 @@ share/locale/ar/LC_MESSAGES/libwnck.mo
 share/locale/az/LC_MESSAGES/libwnck.mo
 share/locale/be/LC_MESSAGES/libwnck.mo
 share/locale/bg/LC_MESSAGES/libwnck.mo
+share/locale/bn/LC_MESSAGES/libwnck.mo
 share/locale/ca/LC_MESSAGES/libwnck.mo
 share/locale/cs/LC_MESSAGES/libwnck.mo
 share/locale/da/LC_MESSAGES/libwnck.mo
@@ -28,15 +29,20 @@ share/locale/et/LC_MESSAGES/libwnck.mo
 share/locale/fa/LC_MESSAGES/libwnck.mo
 share/locale/fi/LC_MESSAGES/libwnck.mo
 share/locale/fr/LC_MESSAGES/libwnck.mo
+share/locale/ga/LC_MESSAGES/libwnck.mo
 share/locale/gl/LC_MESSAGES/libwnck.mo
 share/locale/he/LC_MESSAGES/libwnck.mo
 share/locale/hi/LC_MESSAGES/libwnck.mo
 share/locale/hu/LC_MESSAGES/libwnck.mo
+share/locale/id/LC_MESSAGES/libwnck.mo
+share/locale/is/LC_MESSAGES/libwnck.mo
 share/locale/it/LC_MESSAGES/libwnck.mo
 share/locale/ja/LC_MESSAGES/libwnck.mo
+share/locale/kn/LC_MESSAGES/libwnck.mo
 share/locale/ko/LC_MESSAGES/libwnck.mo
 share/locale/lv/LC_MESSAGES/libwnck.mo
 share/locale/mk/LC_MESSAGES/libwnck.mo
+share/locale/ml/LC_MESSAGES/libwnck.mo
 share/locale/mn/LC_MESSAGES/libwnck.mo
 share/locale/ms/LC_MESSAGES/libwnck.mo
 share/locale/nl/LC_MESSAGES/libwnck.mo
@@ -50,7 +56,11 @@ share/locale/ru/LC_MESSAGES/libwnck.mo
 share/locale/sk/LC_MESSAGES/libwnck.mo
 share/locale/sl/LC_MESSAGES/libwnck.mo
 share/locale/sq/LC_MESSAGES/libwnck.mo
+share/locale/sr/LC_MESSAGES/libwnck.mo
+share/locale/sr@Latn/LC_MESSAGES/libwnck.mo
 share/locale/sv/LC_MESSAGES/libwnck.mo
+share/locale/ta/LC_MESSAGES/libwnck.mo
+share/locale/th/LC_MESSAGES/libwnck.mo
 share/locale/tr/LC_MESSAGES/libwnck.mo
 share/locale/uk/LC_MESSAGES/libwnck.mo
 share/locale/vi/LC_MESSAGES/libwnck.mo
@@ -70,8 +80,16 @@ share/locale/zh_TW/LC_MESSAGES/libwnck.mo
 @comment @dirrm share/locale/uk
 @comment @dirrm share/locale/tr/LC_MESSAGES
 @comment @dirrm share/locale/tr
+@comment @dirrm share/locale/th/LC_MESSAGES
+@comment @dirrm share/locale/th
+@comment @dirrm share/locale/ta/LC_MESSAGES
+@comment @dirrm share/locale/ta
 @comment @dirrm share/locale/sv/LC_MESSAGES
 @comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sr@Latn/LC_MESSAGES
+@comment @dirrm share/locale/sr@Latn
+@comment @dirrm share/locale/sr/LC_MESSAGES
+@comment @dirrm share/locale/sr
 @comment @dirrm share/locale/sq/LC_MESSAGES
 @comment @dirrm share/locale/sq
 @comment @dirrm share/locale/sl/LC_MESSAGES
@@ -98,16 +116,24 @@ share/locale/zh_TW/LC_MESSAGES/libwnck.mo
 @comment @dirrm share/locale/ms
 @comment @dirrm share/locale/mn/LC_MESSAGES
 @comment @dirrm share/locale/mn
+@comment @dirrm share/locale/ml/LC_MESSAGES
+@comment @dirrm share/locale/ml
 @comment @dirrm share/locale/mk/LC_MESSAGES
 @comment @dirrm share/locale/mk
 @comment @dirrm share/locale/lv/LC_MESSAGES
 @comment @dirrm share/locale/lv
 @comment @dirrm share/locale/ko/LC_MESSAGES
 @comment @dirrm share/locale/ko
+@comment @dirrm share/locale/kn/LC_MESSAGES
+@comment @dirrm share/locale/kn
 @comment @dirrm share/locale/ja/LC_MESSAGES
 @comment @dirrm share/locale/ja
 @comment @dirrm share/locale/it/LC_MESSAGES
 @comment @dirrm share/locale/it
+@comment @dirrm share/locale/is/LC_MESSAGES
+@comment @dirrm share/locale/is
+@comment @dirrm share/locale/id/LC_MESSAGES
+@comment @dirrm share/locale/id
 @comment @dirrm share/locale/hu/LC_MESSAGES
 @comment @dirrm share/locale/hu
 @comment @dirrm share/locale/hi/LC_MESSAGES
@@ -116,6 +142,8 @@ share/locale/zh_TW/LC_MESSAGES/libwnck.mo
 @comment @dirrm share/locale/he
 @comment @dirrm share/locale/gl/LC_MESSAGES
 @comment @dirrm share/locale/gl
+@comment @dirrm share/locale/ga/LC_MESSAGES
+@comment @dirrm share/locale/ga
 @comment @dirrm share/locale/fr/LC_MESSAGES
 @comment @dirrm share/locale/fr
 @comment @dirrm share/locale/fi/LC_MESSAGES
@@ -136,6 +164,8 @@ share/locale/zh_TW/LC_MESSAGES/libwnck.mo
 @comment @dirrm share/locale/cs
 @comment @dirrm share/locale/ca/LC_MESSAGES
 @comment @dirrm share/locale/ca
+@comment @dirrm share/locale/bn/LC_MESSAGES
+@comment @dirrm share/locale/bn
 @comment @dirrm share/locale/bg/LC_MESSAGES
 @comment @dirrm share/locale/bg
 @comment @dirrm share/locale/be/LC_MESSAGES
