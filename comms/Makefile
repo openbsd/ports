@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 1997/11/27 23:44:38 niklas Exp $
+# $OpenBSD: Makefile,v 1.2 1997/12/31 16:29:56 joey Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 #
 
@@ -6,10 +6,10 @@
 #    SUBDIR += conserver
 #    SUBDIR += ecu
 #    SUBDIR += hylafax
-#    SUBDIR += kermit
+    SUBDIR += kermit
 #    SUBDIR += lrzsz
 #    SUBDIR += mgetty+sendfax
-#    SUBDIR += minicom
+    SUBDIR += minicom
 #    SUBDIR += qpage
     SUBDIR += rzsz
 #    SUBDIR += seyon
