@@ -1,6 +1,15 @@
-$OpenBSD: patch-examples_Makefile_in,v 1.5 2003/06/30 03:57:38 marcm Exp $
---- examples/Makefile.in.orig	Sun Jun  8 21:41:51 2003
-+++ examples/Makefile.in	Thu Jun 19 09:18:58 2003
+$OpenBSD: patch-examples_Makefile_in,v 1.6 2003/08/11 23:55:23 marcm Exp $
+--- examples/Makefile.in.orig	2003-06-08 21:41:51.000000000 -0700
++++ examples/Makefile.in	2003-08-11 13:53:56.000000000 -0700
+@@ -193,7 +193,7 @@ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
+ @BUILD_QT_TEST_TRUE@bin_PROGRAMS =  pango-viewer$(EXEEXT)
+ @BUILD_QT_TEST_FALSE@bin_PROGRAMS = 
+-@HAVE_FREETYPE_TRUE@noinst_PROGRAMS =  pangoft2topgm$(EXEEXT)
++@HAVE_FREETYPE_TRUE@noinst_PROGRAMS = 
+ @HAVE_FREETYPE_FALSE@noinst_PROGRAMS = 
+ PROGRAMS =  $(bin_PROGRAMS) $(noinst_PROGRAMS)
+ 
 @@ -527,7 +527,7 @@ pango.modules:
  	if find ../modules -name '*.so' | grep 'so' > /dev/null ; then \
            echo "Writing a pango.modules file to use when running examples before installing Pango."; \
