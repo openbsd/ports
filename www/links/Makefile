@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/10 00:40:56 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/01/04 06:53:10 dugsong Exp $
 
 CATEGORIES=		www
 NEED_VERSION=		1.317
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-DISTNAME=	links-0.92
+DISTNAME=	links-0.95
 
 MASTER_SITES=	http://artax.karlin.mff.cuni.cz/%7Emikulas/links/download/
 CONFIGURE_STYLE=	gnu
