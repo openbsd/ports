@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.1 2002/05/29 13:22:11 espie Exp $
---- gcc/config/sparc/openbsd64.h.orig	Wed May 29 15:18:09 2002
-+++ gcc/config/sparc/openbsd64.h	Wed May 29 15:18:05 2002
-@@ -0,0 +1,116 @@
+$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.2 2002/05/29 14:10:40 espie Exp $
+--- gcc/config/sparc/openbsd64.h.orig	Wed May 29 15:35:47 2002
++++ gcc/config/sparc/openbsd64.h	Wed May 29 16:03:13 2002
+@@ -0,0 +1,104 @@
 +/* Configuration file for sparc64 OpenBSD target.
 +   Copyright (C) 1999 Free Software Foundation, Inc.
 +
@@ -21,18 +21,6 @@ $OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.1 2002/05/29 13:22:11 espie Exp
 +along with GNU CC; see the file COPYING.  If not, write to
 +the Free Software Foundation, 59 Temple Place - Suite 330,
 +Boston, MA 02111-1307, USA.  */
-+
-+#ifndef TARGET_CPU_DEFAULT
-+#define TARGET_CPU_DEFAULT	TARGET_CPU_ultrasparc
-+#endif
-+
-+#include <sparc/sp64-elf.h>
-+
-+#define OBSD_HAS_DECLARE_FUNCTION_NAME
-+#define OBSD_HAS_DECLARE_FUNCTION_SIZE
-+#define OBSD_HAS_DECLARE_OBJECT
-+
-+#include <openbsd.h>
 +
 +#undef TARGET_VERSION
 +#define TARGET_VERSION fprintf (stderr, " (sparc64 OpenBSD ELF)")

@@ -1,5 +1,5 @@
 --- libstdc++-v3/src/Makefile.in.orig	Tue Apr  2 04:47:04 2002
-+++ libstdc++-v3/src/Makefile.in	Wed May 29 03:28:55 2002
++++ libstdc++-v3/src/Makefile.in	Wed May 29 15:35:47 2002
 @@ -154,7 +154,7 @@ mkinstalldirs = $(SHELL) $(toplevel_srcd
  CXX = @glibcpp_CXX@
  toolexecdir = @glibcpp_toolexecdir@
