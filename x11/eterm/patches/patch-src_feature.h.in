@@ -1,0 +1,5 @@
+--- src/feature.h.in.orig	Wed Aug 18 16:54:24 1999
++++ src/feature.h.in		Wed Aug 9 15:30:21 2000
+@@ -383,1 +383,1 @@
+-/* #define HAVE_SAVED_UIDS */
++#define HAVE_SAVED_UIDS
