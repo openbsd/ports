@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2002/03/20 22:19:49 lebel Exp $
+# $OpenBSD: Makefile,v 1.15 2002/06/05 15:10:57 reinhard Exp $
 # Original from: Timo Sirainen <tss@iki.fi>
 
 COMMENT=	"modular IRC client with many features (ipv6,socks,proxy)"
 
-DISTNAME=	irssi-0.8.4
+DISTNAME=	irssi-0.8.4a
 CATEGORIES=	net
-NEED_VERSION=	1.504
+NEED_VERSION=	1.531
 
 MASTER_SITES=	${HOMEPAGE}/files/ \
 		http://nl.irssi.org/files/ \
@@ -43,6 +43,8 @@ BUILD_DEPENDS=		socks.1::security/dante
 .endif
 
 SAMPLE=		default.theme colorless.theme
+
+WRKDIST=	${WRKDIR}/${DISTNAME:S/a$//}
 
 pre-configure:
 	@perl -pi -e 's,doc/irssi,irssi,g' ${WRKSRC}/docs/Makefile.in
