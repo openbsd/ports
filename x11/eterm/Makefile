@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/08 21:10:19 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/23 16:08:13 espie Exp $
 
 PKGNAME=	eterm-0.8.10
 DISTNAME=	Eterm-0.8.10
@@ -11,7 +11,7 @@ HOMEPAGE=	http://eterm.sourceforge.net/
 
 LIB_DEPENDS=	Imlib.19::graphics/imlib
 
-MAINTAINER=	halogen@nol.net
+MAINTAINER=	Kyle Hargraves <halogen@nol.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

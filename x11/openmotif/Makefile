@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/08/10 01:40:40 matt Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/23 16:08:12 espie Exp $
 
 DISTNAME=	motif
 PKGNAME=	openmotif-2.1.30
@@ -8,7 +8,7 @@ NEED_VERSION=	1.310
 
 HOMEPAGE=	http://www.opengroup.org/openmotif/
 
-MAINTAINER=	smcho@tsp.korea.ac.kr
+MAINTAINER=	Sungman Cho <smcho@tsp.korea.ac.kr>
 
 PERMIT_PACKAGE_CDROM=	Unclear
 PERMIT_DISTFILES_CDROM=	Unclear

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/09/10 07:29:55 obecian Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/23 16:08:12 espie Exp $
 
 DISTNAME=	nemesis-1.1
 CATEGORIES=	net security
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.packetninja.net/nemesis/
 
 BUILD_DEPENDS=	${PREFIX}/lib/libnet.a::net/libnet
 
-MAINTAINER=	halogen@nol.net
+MAINTAINER=	Kyle Hargraves <halogen@nol.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

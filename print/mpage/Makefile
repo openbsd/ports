@@ -3,7 +3,7 @@
 # Version required:     mpage 2.5
 # Date created:         August, 10th 1999
 # Whom:                 Ian McWilliam
-# $OpenBSD: Makefile,v 1.12 2000/10/22 15:43:18 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/23 16:08:13 espie Exp $
 
 
 DISTNAME=	mpage-2.5
@@ -11,7 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.mesa.nl/pub/mpage/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ianm@cit.nepean.uws.edu.au
+MAINTAINER=	Ian McWilliam <i.mcwilliam@uws.edu.au>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes
