@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/03/17 17:07:11 naddy Exp $
+--- configure.in.orig	Sat Mar 17 16:50:29 2001
++++ configure.in	Sat Mar 17 16:52:47 2001
+@@ -67,7 +67,7 @@ dnl ------------------------------------
+ dnl Check for library functions
+ dnl --------------------------------------------------
+ 
+-dnl none
++AC_FUNC_SMMAP
+ 
+ dnl --------------------------------------------------
+ dnl Work around FHS stupidity

@@ -1,6 +1,6 @@
-$OpenBSD: patch-ogg123_Makefile_in,v 1.1.1.1 2001/03/14 01:58:25 todd Exp $
---- ogg123/Makefile.in.orig	Tue Mar 13 17:48:16 2001
-+++ ogg123/Makefile.in	Tue Mar 13 17:49:35 2001
+$OpenBSD: patch-ogg123_Makefile_in,v 1.2 2001/03/17 17:07:11 naddy Exp $
+--- ogg123/Makefile.in.orig	Sat Mar 17 17:55:34 2001
++++ ogg123/Makefile.in	Sat Mar 17 17:55:54 2001
 @@ -85,7 +85,7 @@ AUTOMAKE_OPTIONS = foreign
  bin_PROGRAMS = ogg123
  docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
