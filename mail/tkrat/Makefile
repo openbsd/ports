@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/27 17:21:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2003/12/27 23:34:42 jose Exp $
 
 COMMENT=	"mail user agent for X in C with a Tcl/Tk frontend"
 
-DISTNAME=	tkrat-2.0.3
+DISTNAME=	tkrat-2.1.2
 CATEGORIES=	mail x11
 
 HOMEPAGE=	http://www.tkrat.org/
@@ -16,14 +16,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/downloads/stable/
 
-LIB_DEPENDS=	tcl83.1.3::lang/tcl/8.3 \
-		tk83.1.3::x11/tk/8.3	
+LIB_DEPENDS=	tcl84::lang/tcl/8.4 \
+		tk84::x11/tk/8.4	
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--with-tcl-bin="${LOCALBASE}/bin" \
-		--with-tcl-include="${LOCALBASE}/include/tcl8.3 \
-			${LOCALBASE}/include/tk8.3"
+		--with-tcl-include="${LOCALBASE}/include/tcl8.4 \
+			${LOCALBASE}/include/tk8.4"
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/28 01:38:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2003/12/27 23:39:34 jose Exp $
 
 COMMENT=	"ircII internet relay chat client"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	ftp://ftp.netsplit.de/pub/tcltk/
 
 RUN_DEPENDS=	:ircII-*:net/ircII \
-		:tk-8.3.*:x11/tk/8.3
+		:tk-8.4.*:x11/tk/8.4
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

@@ -1,6 +1,6 @@
---- util/Makefile.in.orig	Sat Jul  7 16:40:27 2001
-+++ util/Makefile.in	Sat Jul  7 17:46:35 2001
-@@ -37,8 +37,8 @@
+--- util/Makefile.in.orig	2003-09-23 14:13:37.000000000 -0400
++++ util/Makefile.in	2003-12-20 18:44:56.000000000 -0500
+@@ -37,8 +37,8 @@ SHELL =         /bin/sh
     exec_prefix = @exec_prefix@
         MAN_DIR = @mandir@
         BIN_DIR = @bindir@
@@ -11,7 +11,7 @@
  
               CC = @CC@
         INCLUDES = @TCL_INCLUDE@ @XINCLUDES@
-@@ -66,7 +66,7 @@
+@@ -69,7 +69,7 @@ BUSYLIB_VERSION = @BUSYLIB_VERSION@
  DUMMYLIB = rat_dummy${SHLIB_SUFFIX}
  CFLAGS = ${TK_DEFS} ${EXTRA_CFLAGS} ${FIX_INCLUDE} ${INCLUDES} \
           ${SHLIB_CFLAGS} -DBUSYLIB_VERSION=\"${BUSYLIB_VERSION}\"
@@ -20,14 +20,15 @@
  
  BUSYSRC = blt_busy.c blt_window.c
  BUSYOBJ = ${BUSYSRC:.c=.o}
-@@ -101,9 +101,7 @@
+@@ -105,9 +105,8 @@ install.bin:  ${TARGETS_LIB} ${DUMMYLIB}
  	INST=${INSTALL_PREFIX}${LIB_DIR}; \
  	    echo "if [catch {load ./${DUMMYLIB}; \
  		     cd $$INST; \
--		     pkg_mkIndex -verbose -load ./*${SHLIB_SUFFIX} . \
+-		     pkg_mkIndex -load ./*${SHLIB_SUFFIX} . \
 -				 *${SHLIB_SUFFIX}} error] \
 -	  	  {puts \$$error; exit 1}" | ${TCLSH}
 +		     pkg_mkIndex -verbose -load ./${BUSYLIB}}]" | ${TCLSH}
++
  
  install.shared:  ${TARGETS_data}
  	if test ! -d ${INSTALL_PREFIX}${DATA_DIR} ; then\

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2002/12/26 15:48:22 couderc Exp $
+# $OpenBSD: Makefile,v 1.26 2003/12/27 23:40:35 jose Exp $
 
 COMMENT=	"object oriented script language with threads"
 
@@ -40,11 +40,11 @@ CONFIGURE_ENV=	YACC=yacc
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .if ${FLAVOR:L} == "tk"
-LIB_DEPENDS=	tcl83.::lang/tcl/8.3 \
-		tk83.::x11/tk/8.3
+LIB_DEPENDS=	tcl84.::lang/tcl/8.4 \
+		tk84.::x11/tk/8.4
 
-CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.3 \
-			--with-tk-include=${PREFIX}/include/tk8.3 \
+CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.4 \
+			--with-tk-include=${PREFIX}/include/tk8.4 \
 			--with-X11-dir=${X11BASE} 
 .else
 CONFIGURE_ARGS+=	--without-x11

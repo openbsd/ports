@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/26 12:52:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2003/12/27 23:41:01 jose Exp $
 
 COMMENT=	"Commodore 64 emulator"
 
@@ -21,10 +21,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 CONFIGURE_STYLE=	gnu
 USE_X11=		Yes
 
-RUN_DEPENDS=	::x11/tk/8.3
+RUN_DEPENDS=	::x11/tk/8.4
 LIB_DEPENDS=	SDL:sdl-*-!no_x11:devel/sdl
 
-WISH=wish8.3
+WISH=wish8.4
 FRODOLIBDIR=${PREFIX}/lib/frodo
 
 CONFIGURE_ENV=		CFLAGS='${CFLAGS} -O3 -D__unix -DX_USE_SHM -fno-exceptions'

@@ -1,4 +1,4 @@
-$OpenBSD: patch-roxirc,v 1.1 2003/06/20 03:31:42 kevlo Exp $
+$OpenBSD: patch-roxirc,v 1.2 2003/12/27 23:39:06 jose Exp $
 --- roxirc.orig	Fri Jun 20 11:21:26 2003
 +++ roxirc	Fri Jun 20 11:21:51 2003
 @@ -1,7 +1,4 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-roxirc,v 1.1 2003/06/20 03:31:42 kevlo Exp $
 -# \
 -if [ -x "$HOME/.roxirc/.wish" ]; then exec $HOME/.roxirc/.wish "$0" -- "$@"; elif [ `which tclkit` ]; then exec tclkit "$0" -- "$@"; elif [ `which wish` ]; then exec wish "$0" -- "$@"; else echo "Please make sure tclkit or wish is in your PATH or link $HOME/.roxirc/.wish to wish 8.3 or newer"; exit; fi;
 -
-+#!/usr/local/bin/wish8.3
++#!/usr/local/bin/wish8.4
  # Copyright (c) 1997-2003 Aaron Faupell (roxirc@lighter.net)
  #
  # Redistribution and use in source and binary forms, with or without

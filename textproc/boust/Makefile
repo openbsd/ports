@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/09/23 15:29:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/12/27 23:36:46 jose Exp $
 
 COMMENT=		"boustrophedon text reader"
 DISTNAME=		boust-0.161
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}bin/
 
-RUN_DEPENDS=		::x11/tk/8.3
+RUN_DEPENDS=		::x11/tk/8.4
 USE_X11=		Yes
 
 NO_BUILD=		Yes

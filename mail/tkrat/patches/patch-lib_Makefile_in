@@ -1,6 +1,6 @@
---- lib/Makefile.in.orig	Mon May  1 20:31:01 2000
-+++ lib/Makefile.in	Mon Jul  9 20:57:46 2001
-@@ -25,7 +25,7 @@
+--- lib/Makefile.in.orig	2003-09-23 14:13:37.000000000 -0400
++++ lib/Makefile.in	2003-12-20 19:17:54.000000000 -0500
+@@ -25,7 +25,7 @@ EXTRA_CFLAGS = @CFLAGS@ @MEM_DEBUG_FLAGS
         MAN_DIR = @mandir@
         BIN_DIR = @bindir@
        DATA_DIR = @datadir@/`echo tkrat${VERSION} | sed '${TRANSFORM}'`
@@ -9,7 +9,7 @@
  
  # Pointer to the imap c-client directory
        C_CLIENT = ${TOP_DIR}/imap/c-client
-@@ -51,6 +51,7 @@
+@@ -54,6 +54,7 @@ SHELL =         /bin/sh
        SHLIB_LD_LIBS = @SHLIB_LD_LIBS@
              VERSION = @VERSION@
        RATLIB_SUFFIX = @RATLIB_SUFFIX@
@@ -17,7 +17,7 @@
              INSTALL = @INSTALL@
                TCLSH = @tclsh@
            TRANSFORM = @program_transform_name@
-@@ -64,7 +65,8 @@
+@@ -67,7 +68,8 @@ SHELL =         /bin/sh
  CFLAGS = ${TK_DEFS} ${EXTRA_CFLAGS} -I${C_CLIENT} ${FIX_INCLUDE} ${INCLUDES} \
  	 ${SHLIB_CFLAGS} -DVERSION=\"${VERSION}\"
  C_CLIENT_LIB = ${C_CLIENT}/c-client.a
@@ -26,28 +26,28 @@
 +BUSYLIB = blt_busy${SHLIB_SUFFIX}.${BUSYLIB_VERSION}
  DUMMYLIB = ratDummy${SHLIB_SUFFIX}
  
- SRC = ratAppInit.c ratFolder.c ratStdFolder.c ratMessage.c ratCode.c \
-@@ -86,9 +88,11 @@
+ HEADERS = rat.h ratFolder.h ratPGP.h ratStdFolder.h
+@@ -90,9 +92,11 @@ ${DUMMYLIB}: ratDummy.o
  	${SHLIB_LD} -o ${DUMMYLIB} ratDummy.o $(EXTRA_LIBS) ${SHLIB_LD_LIBS}
  
  pkgIndex.tcl: ${RATLIB} ${DUMMYLIB}
 +	cp ../util/${BUSYLIB} . ; \
  	echo "if [catch {load ./${DUMMYLIB}; \
  			 load ./${RATLIB}; \
--			 pkg_mkIndex -verbose . ${RATLIB}} error] \
+-			 pkg_mkIndex . ${RATLIB}} error] \
 +			 load ./${BUSYLIB}; \
-+			 pkg_mkIndex -verbose . ${RATLIB} ${BUSYLIB}} error] \
++			 pkg_mkIndex . ${RATLIB} ${BUSYLIB}} error] \
  		  {puts \$$error; exit 1}" | ${TCLSH}
  
  install.bin: ${RATLIB} ${DUMMYLIB}
-@@ -99,9 +103,7 @@
+@@ -103,9 +107,7 @@ install.bin: ${RATLIB} ${DUMMYLIB}
  	INST=${INSTALL_PREFIX}${LIB_DIR}; \
  	    echo "if [catch {load ./${DUMMYLIB}; \
  		     cd $$INST; \
--		     pkg_mkIndex -verbose -load ./*${SHLIB_SUFFIX} . \
+-		     pkg_mkIndex -load ./*${SHLIB_SUFFIX} . \
 -				 *${SHLIB_SUFFIX}} error] \
 -	  	  {puts \$$error; exit 1}" | ${TCLSH}
 +		     pkg_mkIndex -verbose -load ./${RATLIB}} ]" | ${TCLSH}
  
- install: install.data
+ install: install.bin
  

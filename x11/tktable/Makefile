@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/10/08 17:13:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2003/12/27 23:36:27 jose Exp $
 
 COMMENT=	"tk extension"
 
@@ -18,14 +18,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tktable/}
 
-BUILD_DEPENDS=	::x11/tk/8.3
+BUILD_DEPENDS=	::x11/tk/8.4
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.3 \
-		--with-tk=${PREFIX}/lib/tk8.3 \
-		--with-tclinclude=${PREFIX}/include/tcl8.3 \
-		--with-tkinclude=${PREFIX}/include/tk8.3
+CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.4 \
+		--with-tk=${PREFIX}/lib/tk8.4 \
+		--with-tclinclude=${PREFIX}/include/tcl8.4 \
+		--with-tkinclude=${PREFIX}/include/tk8.4
 
 MAKE_ENV=	DISPLAY="${DISPLAY}" XAUTHORITY="${XAUTHORITY}"
 REGRESS_TARGET=	test

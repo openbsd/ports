@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/23 00:37:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2003/12/27 23:38:02 jose Exp $
 
 COMMENT=	"Tcl/Tk-based manual browser"
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tkman/}
 
-LIB_DEPENDS=	tk83.1.::x11/tk/8.3
+LIB_DEPENDS=	tk84::x11/tk/8.4
 RUN_DEPENDS=	::textproc/rman \
 		::textproc/glimpse
 

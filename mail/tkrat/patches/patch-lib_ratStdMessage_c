@@ -1,17 +1,18 @@
-$OpenBSD: patch-lib_ratStdMessage_c,v 1.1 2003/06/18 03:14:44 avsm Exp $
---- lib/ratStdMessage.c.orig	Wed Jun 18 03:58:36 2003
-+++ lib/ratStdMessage.c	Wed Jun 18 04:04:00 2003
-@@ -435,10 +435,9 @@ Std_MakeChildrenProc(Tcl_Interp *interp,
+$OpenBSD: patch-lib_ratStdMessage_c,v 1.2 2003/12/27 23:34:42 jose Exp $
+--- lib/ratStdMessage.c.orig	2002-02-04 15:35:10.000000000 -0500
++++ lib/ratStdMessage.c	2003-12-20 18:43:31.000000000 -0500
+@@ -435,10 +435,10 @@ Std_MakeChildrenProc(Tcl_Interp *interp,
  	    partInfoPtr->msgPtr = bodyInfoPtr->msgPtr;
  	    partInfoPtr->clientData = (ClientData)partStdInfoPtr;
  	    if (stdBodyInfoPtr->section) {
--		partStdInfoPtr->section = (char*)ckalloc(
--			strlen(stdBodyInfoPtr->section)+8);
--		snprintf(partStdInfoPtr->section,
--			sizeof(partStdInfoPtr->section), "%s.%d",
-+		size_t section_len = strlen(stdBodyInfoPtr->section)+8;
-+		partStdInfoPtr->section = (char*)ckalloc(section_len);
-+		snprintf(partStdInfoPtr->section, section_len, "%s.%d",
- 			stdBodyInfoPtr->section, index++);
+-		size = strlen(stdBodyInfoPtr->section) + 8;
+-		partStdInfoPtr->section = (char*)ckalloc(size);
+-		snprintf(partStdInfoPtr->section, size, "%s.%d",
+-			 stdBodyInfoPtr->section, index++);
++                size_t section_len = strlen(stdBodyInfoPtr->section)+8;
++                partStdInfoPtr->section = (char*)ckalloc(section_len);
++                snprintf(partStdInfoPtr->section, section_len, "%s.%d",
++                         stdBodyInfoPtr->section, index++);
  	    } else {
  		partStdInfoPtr->section = (char*)ckalloc(8);
+ 		sprintf(partStdInfoPtr->section, "%d", index++);

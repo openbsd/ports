@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/10/27 21:07:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2003/12/27 23:37:02 jose Exp $
 
 COMMENT=	"publishing and presentation tool"
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=    ::x11/tk/8.3
+RUN_DEPENDS=    ::x11/tk/8.4
 
 WRKDIST=        ${WRKDIR}/${PKGNAME}
 

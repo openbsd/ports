@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/10/25 22:37:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2003/12/27 23:40:49 jose Exp $
 
 COMMENT=	"graphical frontend to CVS"
 DISTNAME=	tkcvs-6.0
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/sorted/packages-7.6/apps/tkcvs-6.0/
 
-BUILD_DEPENDS=	:tk-8.3.*:x11/tk/8.3 
+BUILD_DEPENDS=	:tk-8.4.*:x11/tk/8.4 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	Yes

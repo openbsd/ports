@@ -1,11 +1,11 @@
 --- scripts/tkremind.orig	Tue Mar 28 22:43:44 2000
 +++ scripts/tkremind	Tue Mar 28 22:43:59 2000
 @@ -15,7 +15,7 @@
- # $Id: patch-scripts-tkremind,v 1.1 2000/04/14 08:06:57 turan Exp $
+ # $Id: patch-scripts-tkremind,v 1.2 2003/12/27 23:37:18 jose Exp $
  
  # the next line restarts using wish \
 -exec wish "$0" "$@"
-+exec wish8.3 "$0" "$@"
++exec wish8.4 "$0" "$@"
  
  wm withdraw .
  

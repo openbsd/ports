@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/08/14 18:46:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/27 23:34:42 jose Exp $
 bin/tkrat
 lib/tkrat/pkgIndex.tcl
-%%SHARED%%
 man/man1/tkrat.1
 share/doc/tkrat/CONFIGURATION
 share/doc/tkrat/interface
@@ -18,11 +17,14 @@ share/tkrat/exp.tcl
 share/tkrat/folder.tcl
 share/tkrat/font.tcl
 share/tkrat/help.tcl
+share/tkrat/html.tcl
 share/tkrat/info.tcl
 share/tkrat/keydef.tcl
 share/tkrat/languages.tcl
+share/tkrat/mime.tcl
 share/tkrat/options.tcl
 share/tkrat/pgp.tcl
+share/tkrat/pkgIndex.tcl
 share/tkrat/preferences.tcl
 share/tkrat/print.tcl
 share/tkrat/show.tcl
@@ -33,24 +35,32 @@ share/tkrat/text_balText_de.tcl
 share/tkrat/text_balText_en.tcl
 share/tkrat/text_balText_fr.tcl
 share/tkrat/text_balText_it.tcl
+share/tkrat/text_balText_pl.tcl
+share/tkrat/text_balText_pt.tcl
 share/tkrat/text_balText_sr.tcl
 share/tkrat/text_balText_sv.tcl
 share/tkrat/text_changes_de.tcl
 share/tkrat/text_changes_en.tcl
 share/tkrat/text_changes_fr.tcl
 share/tkrat/text_changes_it.tcl
+share/tkrat/text_changes_pl.tcl
+share/tkrat/text_changes_pt.tcl
 share/tkrat/text_changes_sr.tcl
 share/tkrat/text_changes_sv.tcl
 share/tkrat/text_help_de.tcl
 share/tkrat/text_help_en.tcl
 share/tkrat/text_help_fr.tcl
 share/tkrat/text_help_it.tcl
+share/tkrat/text_help_pl.tcl
+share/tkrat/text_help_pt.tcl
 share/tkrat/text_help_sr.tcl
 share/tkrat/text_help_sv.tcl
 share/tkrat/text_t_de.tcl
 share/tkrat/text_t_en.tcl
 share/tkrat/text_t_fr.tcl
 share/tkrat/text_t_it.tcl
+share/tkrat/text_t_pl.tcl
+share/tkrat/text_t_pt.tcl
 share/tkrat/text_t_sr.tcl
 share/tkrat/text_t_sv.tcl
 share/tkrat/tkrat.xbm
@@ -62,15 +72,17 @@ share/tkrat/util/pkgIndex.tcl
 share/tkrat/util/rat_balloon.tcl
 share/tkrat/util/rat_ed.tcl
 share/tkrat/util/rat_edit.tcl
+share/tkrat/util/rat_enriched.tcl
 share/tkrat/util/rat_fbox.tcl
 share/tkrat/util/rat_ispell.tcl
 share/tkrat/util/rat_list.tcl
-share/tkrat/util/rat_tabbed.tcl
 share/tkrat/util/rat_textlist.tcl
+share/tkrat/util/rat_tree.tcl
 share/tkrat/vfolder.tcl
 share/tkrat/vfolderdef.tcl
 share/tkrat/watcher.tcl
 share/tkrat/winctl.tcl
+%%SHARED%%
 @dirrm share/tkrat/util
 @dirrm share/tkrat
 @dirrm share/doc/tkrat

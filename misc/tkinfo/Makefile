@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2002/12/23 00:37:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2003/12/27 23:37:45 jose Exp $
 
 COMMENT=	"Tk script to read GNU info files and display them"
 
-DISTNAME=	tkinfo-2.5
+DISTNAME=	tkinfo-2.6
 CATEGORIES=	misc 
 
 MASTER_SITES=	${HOMEPAGE}
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:tk-8.3.*:x11/tk/8.3
+RUN_DEPENDS=	:tk-8.4.*:x11/tk/8.4
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

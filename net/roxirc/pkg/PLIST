@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/06/20 03:31:47 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/12/27 23:39:06 jose Exp $
 bin/roxirc
 share/doc/roxirc/bindings
 share/doc/roxirc/config
@@ -12,5 +12,4 @@ share/doc/roxirc/oper
 share/doc/roxirc/prefs
 share/doc/roxirc/single
 share/doc/roxirc/startup
-share/doc/roxirc/xresources
 @dirrm share/doc/roxirc

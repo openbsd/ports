@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2003/12/13 15:03:07 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2003/12/27 23:36:09 jose Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -76,7 +76,7 @@ RUN_DEPENDS+=		::lang/python/${VERSION},-tkinter
 .endif
 
 .if empty(FLAVOR:L:Mno_tkinter)
-BUILD_DEPENDS+=		::x11/tk/8.3
+BUILD_DEPENDS+=		::x11/tk/8.4
 SETUP_LOCAL+=		Setup.tkinter
 .  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
 MULTI_PACKAGES+=	-tkinter
@@ -84,14 +84,14 @@ SED_PLIST+=		| sed -e '/^%%tkinter%%/d' \
 			| sed -e '/^%%tkinter_no_shared%%/r${PKGDIR}/PFRAG-tkinter.no_shared' -e '//d'
 .  else
 SED_PLIST+=		| sed -e '/^%%tkinter%%/r${PKGDIR}/PFRAG-tkinter.no_shared' -e '//d'
-LIB_DEPENDS+=		tk83::x11/tk/8.3
+LIB_DEPENDS+=		tk84::x11/tk/8.4
 .  endif
 .else
 SED_PLIST+=		| sed -e '/^%%tkinter%%/d'
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-tkinter"
-LIB_DEPENDS+=		tk83::x11/tk/8.3
+LIB_DEPENDS+=		tk84::x11/tk/8.4
 .endif
 
 .if empty(FLAVOR:L:Mno_mpz)

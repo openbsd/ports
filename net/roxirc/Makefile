@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/06/20 03:31:25 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2003/12/27 23:39:06 jose Exp $
 
 COMMENT=	"Tcl/Tk irc client"
 
@@ -16,13 +16,13 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/betas/
 
-RUN_DEPENDS=	:tk-8.3.*:x11/tk/8.3
+RUN_DEPENDS=	:tk-8.4.*:x11/tk/8.4
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 DOCS=	bindings config extras help hilight lagmeter menus mirccolors \
-	oper prefs single startup xresources
+	oper prefs single startup
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/roxirc
