@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2002/11/07 06:21:18 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.30 2002/11/07 06:37:47 pvalchev Exp $
 # $NetBSD: Makefile,v 1.9 1998/04/15 10:38:50 agc Exp $
 
 COMMENT=	"graphical performance meter"
@@ -21,10 +21,6 @@ CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/config
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-L${X11BASE}/lib" \
 		UVM=Yes
-
-.if (${MACHINE_ARCH} == "alpha")
-BROKEN=		"compilation errors"
-.endif
 
 NO_REGRESS=	Yes
 
