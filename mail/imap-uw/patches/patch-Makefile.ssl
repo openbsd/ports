@@ -1,6 +1,6 @@
---- src/osdep/unix/Makefile.ssl.orig	Wed Sep  6 18:07:02 2000
-+++ src/osdep/unix/Makefile.ssl	Fri Sep 22 13:47:19 2000
-@@ -41,14 +41,14 @@
+--- src/osdep/unix/Makefile.ssl.orig	Wed Dec  6 20:07:34 2000
++++ src/osdep/unix/Makefile.ssl	Wed Dec  6 20:08:01 2000
+@@ -20,8 +20,8 @@
  
  # Extended flags needed for additional authenticators.  You may need to modify.
  
@@ -11,11 +11,3 @@
  SSLINCLUDE=$(SSLDIR)/include
  SSLLIB=$(SSLDIR)/lib
  
- # Some versions of MIT Kerberos also have a libcrypto, get the right one
--#SSLCRYPTO=-lcrypto
--SSLCRYPTO=$(SSLLIB)/libcrypto.a
-+SSLCRYPTO=-lcrypto
-+#SSLCRYPTO=$(SSLLIB)/libcrypto.a
- 
- # RSA Security Inc. released the RSA public key encryption algorithm into
- # the public domain on September 6, 2000.  There is no longer any need to
