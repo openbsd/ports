@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.6 2002/05/30 12:20:09 espie Exp $
---- gcc/config/sparc/openbsd64.h.orig	Thu May 30 11:34:47 2002
-+++ gcc/config/sparc/openbsd64.h	Thu May 30 12:00:36 2002
-@@ -0,0 +1,75 @@
+$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.7 2002/06/03 10:13:34 art Exp $
+--- gcc/config/sparc/openbsd64.h.orig	Sat Jun  1 23:45:17 2002
++++ gcc/config/sparc/openbsd64.h	Sun Jun  2 06:25:40 2002
+@@ -0,0 +1,77 @@
 +/* Configuration file for sparc64 OpenBSD target.
 +   Copyright (C) 1999 Free Software Foundation, Inc.
 +
@@ -40,6 +40,8 @@ $OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.6 2002/05/30 12:20:09 espie Exp
 +
 +#undef CPP_SUBTARGET_SPEC
 +#define CPP_SUBTARGET_SPEC ""
++
++#undef CPLUSPLUS_CPP_SPEC
 +
 +#undef MD_EXEC_PREFIX
 +#undef MD_STARTFILE_PREFIX
