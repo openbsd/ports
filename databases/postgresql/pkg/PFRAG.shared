@@ -1,14 +1,7 @@
-pgsql/lib/libecpg.so
-pgsql/lib/libecpg.so.3
+@comment $OpenBSD: PFRAG.shared,v 1.4 2000/08/25 15:30:27 brad Exp $
 pgsql/lib/libecpg.so.3.1.1
-pgsql/lib/libpgeasy.so
-pgsql/lib/libpgeasy.so.2
 pgsql/lib/libpgeasy.so.2.1
-pgsql/lib/libpq++.so
-pgsql/lib/libpq++.so.3
 pgsql/lib/libpq++.so.3.1
-pgsql/lib/libpq.so
-pgsql/lib/libpq.so.2
 pgsql/lib/libpq.so.2.1
 pgsql/lib/plpgsql.so
 NEWDYNLIBDIR(%B)

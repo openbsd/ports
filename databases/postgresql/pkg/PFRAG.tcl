@@ -1,3 +1,4 @@
+@comment $OpenBSD: PFRAG.tcl,v 1.2 2000/08/25 15:30:27 brad Exp $
 pgsql/bin/pgaccess
 pgsql/bin/pgtclsh
 pgsql/bin/pgtksh
