@@ -1,0 +1,19 @@
+*** xvtiffwr.c.~1~	Tue Jan  3 13:28:13 1995
+--- xvtiffwr.c	Fri Feb 13 17:07:49 1998
+***************
+*** 9,15 ****
+  
+  #ifdef HAVE_TIFF
+  
+! #include "tiffio.h"    /* has to be after xv.h, as it needs varargs/stdarg */
+  
+  
+  #define ALLOW_JPEG 0  /* set to '1' to allow 'JPEG' choice in dialog box */
+--- 9,15 ----
+  
+  #ifdef HAVE_TIFF
+  
+! #include "tiffio34.h"    /* has to be after xv.h, as it needs varargs/stdarg */
+  
+  
+  #define ALLOW_JPEG 0  /* set to '1' to allow 'JPEG' choice in dialog box */
