@@ -1,0 +1,25 @@
+$OpenBSD: patch-mplex_mjpeg_types_h,v 1.1.1.1 2004/11/24 02:27:33 jolan Exp $
+--- mplex/mjpeg_types.h.orig	Mon Mar  8 16:10:53 2004
++++ mplex/mjpeg_types.h	Sun Oct 17 21:57:38 2004
+@@ -21,10 +21,6 @@
+ #ifndef __MJPEG_TYPES_H__
+ #define __MJPEG_TYPES_H__
+ 
+-#ifndef HAVE_STDINT_H
+-#define HAVE_STDINT_H
+-#endif
+-
+ #ifndef HAVE_INTTYPES_H
+ #define HAVE_INTTYPES_H
+ #endif
+@@ -36,9 +32,7 @@
+  * to check for it or provide typedefs/defines
+ */
+ 
+-#if defined(HAVE_STDINT_H)
+-# include <stdint.h>
+-#elif defined(HAVE_INTTYPES_H)
++#if defined(HAVE_INTTYPES_H)
+ # include <inttypes.h>
+ #elif  defined(_WIN32)
+ #include <win32defs.h>

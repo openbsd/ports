@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/24 02:27:33 jolan Exp $
+bin/streamanalyze
+bin/streamdvd
+share/doc/streamdvd/
+share/doc/streamdvd/README.streamanalyze
+share/doc/streamdvd/README.streamdvd

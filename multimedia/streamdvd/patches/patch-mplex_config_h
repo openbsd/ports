@@ -1,0 +1,12 @@
+$OpenBSD: patch-mplex_config_h,v 1.1.1.1 2004/11/24 02:27:33 jolan Exp $
+--- mplex/config.h.orig	Mon Mar  8 16:10:53 2004
++++ mplex/config.h	Sun Oct 17 21:57:38 2004
+@@ -77,7 +77,7 @@
+ #define HAVE_SDL 1
+ 
+ /* Define to 1 if you have the <stdint.h> header file. */
+-#define HAVE_STDINT_H 1
++/* #undef HAVE_STDINT_H */
+ 
+ /* Define to 1 if you have the <stdlib.h> header file. */
+ #define HAVE_STDLIB_H 1
