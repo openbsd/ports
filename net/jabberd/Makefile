@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/11/17 21:08:26 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2004/11/17 21:11:07 jakob Exp $
 
 COMMENT=		"jabber server"
 DISTNAME=		jabberd-2.0s4
@@ -32,10 +32,10 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--localstatedir=/var \
 			--enable-ssl \
 			--disable-idn \
-			--enable-mysql \
 			--with-extra-include-path=${LOCALBASE}/include \
 			--with-extra-library-path=${LOCALBASE}/lib \
 
+# MySQL backend
 CONFIGURE_ARGS+=	--enable-mysql \
 			--with-extra-include-path=${LOCALBASE}/include/mysql \
 			--with-extra-library-path=${LOCALBASE}/lib/mysql
