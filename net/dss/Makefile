@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2003/07/25 23:22:06 naddy Exp $
-			
+# $OpenBSD: Makefile,v 1.3 2003/08/29 22:25:33 brad Exp $
+
+BROKEN=			"security issues"
+
 COMMENT=		"Darwin Streaming Server"
 COMMENT-admin=		"Darwin Streaming Server, Admin Interface"
 COMMENT-examples=	"Darwin Streaming Server, Example Movies"
