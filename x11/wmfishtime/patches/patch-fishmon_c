@@ -1,15 +1,7 @@
-$OpenBSD: patch-fishmon_c,v 1.1.1.1 2001/08/28 14:28:19 wilfried Exp $
+$OpenBSD: patch-fishmon_c,v 1.2 2002/12/25 11:03:19 wilfried Exp $
 --- fishmon.c.orig	Sat May 26 22:53:09 2001
-+++ fishmon.c	Mon Aug 27 15:43:00 2001
-@@ -36,7 +36,6 @@
- #include <stdlib.h>
- #include <string.h>
- #include <assert.h>
--#include <getopt.h>
- 
- /* x11 includes */
- #include <gdk/gdk.h>
-@@ -562,7 +561,7 @@ static void prepare_backbuffer(int solid
++++ fishmon.c	Wed Dec 25 11:58:52 2002
+@@ -562,7 +562,7 @@ static void prepare_backbuffer(int solid
      curr_time = time(NULL);
      data = localtime(&curr_time);
  
@@ -18,58 +10,3 @@ $OpenBSD: patch-fishmon_c,v 1.1.1.1 2001/08/28 14:28:19 wilfried Exp $
  	    data->tm_mday, month[data->tm_mon]);
  
      draw_string(2, 47, buffer);
-@@ -1017,28 +1016,25 @@ static void check_mail(void)
- static void parse_options(int argc, char **argv)
- {
-     static int ch = 0;
--    static struct option long_opts[] = {
--	{ "h",		no_argument, NULL, 1 },
--	{ "help",	no_argument, NULL, 1 },
--	{ "v",		no_argument, NULL, 2 },
--	{ "version",	no_argument, NULL, 2 },
--	{ "c",		no_argument, &enable_check_mail, 1 },
--	{ "check-mail", no_argument, &enable_check_mail, 1 },
--	{ "b",		no_argument, &broken_wm, 1 },
--	{ "broken",	no_argument, &broken_wm, 1 },
--	{ 0, 0, 0, 0 }
--    };
- 
--    while ((ch = getopt_long_only(argc, argv, "", long_opts, NULL)) != -1) {
-+    while ((ch = getopt(argc, argv, "hvcb")) != -1) {
- 	switch (ch) {
--	    case 1:
-+	    case 'h':
-+	    case '?':
-+	    default:
- 		do_help();
- 		exit(0);
- 		break;
--	    case 2:
-+	    case 'v':
- 		do_version();
- 		exit(0);
- 		break;
-+	    case 'c':
-+		enable_check_mail=1;
-+		break;
-+	    case 'b':
-+		broken_wm=1;
-+		break;
- 	}
-     }
- }
-@@ -1046,10 +1042,10 @@ static void parse_options(int argc, char
- static void do_help(void)
- {
-     printf("Usage: wmfishtime [options]\n\n"
--	   " -h\t--help\t\tshow this message and exit\n"
--	   " -v\t--version\tshow version and exit\n"
--	   " -c\t--check-mail\tenables check for new mail\n"
--	   " -b\t--broken\tactivates broken window manager fix\n\n"
-+	   " -h\t\tshow this message and exit\n"
-+	   " -v\tshow version and exit\n"
-+	   " -c\tenables check for new mail\n"
-+	   " -b\tactivates broken window manager fix\n\n"
- 	   "Yet Another Waste of CPU Cycles! Dock app clock with\n"
- 	   "shy fish, bubbles and mail check functionality (disabled by default).\n"
- 	   "Try out the man page wmfishtime (1x).\n");
