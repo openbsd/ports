@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Feb  5 12:51:41 2001
-+++ Makefile.in	Sun Feb 25 05:21:28 2001
-@@ -36,7 +36,7 @@
+--- Makefile.in.orig	2001-02-05 18:51:41.000000000 +0100
++++ Makefile.in	2003-12-31 10:41:03.000000000 +0100
+@@ -36,7 +36,7 @@ AR          =   @AR@
  LN          =   @LN@
  CC          =   @CC@
  ENSUREDIR   =   $(srcdir)/ensure-dir.sh
@@ -9,7 +9,7 @@
  CFLAGS      =   @CFLAGS@
  CPPFLAGS    =   @CPPFLAGS@
  OBJECTS     =   src/libnet_resolve.o\
-@@ -66,17 +66,28 @@
+@@ -66,17 +66,28 @@ OBJECTS     =   src/libnet_resolve.o\
  		src/libnet_hex_dump.o\
  		src/libnet_if_addr.o\
  		src/libnet_port_list.o 
@@ -39,7 +39,7 @@
  version.o: version.h
  version.h: ./VERSION
  	@rm -f $@
-@@ -91,25 +102,34 @@
+@@ -91,25 +102,34 @@ util:    libnet install
  example: libnet install
  	cd example; make
  
