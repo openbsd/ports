@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/05/13 03:06:41 cannings Exp $
+# $OpenBSD: Makefile,v 1.17 2003/05/24 19:39:20 pvalchev Exp $
 
 COMMENT=	"clone of the Plan9 editor 'acme'"
 
@@ -23,6 +23,8 @@ LIB_DEPENDS=		Xg.0.0,frame.0.0,plan9c.0.0::plan9/9libs
 SEPARATE_BUILD=		simple
 USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
+CONFIGURE_ARGS=		--with-9libs=${LOCALBASE}/include/9libs
+CONFIGURE_ENV=		mhw_cv_mod_9libs_lib_path=${LOCALBASE}/lib
 
 NO_REGRESS=		Yes
 
