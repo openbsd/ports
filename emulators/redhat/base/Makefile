@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2003/08/02 02:37:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2003/08/26 22:49:43 brad Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 8.0"
 
-PKGNAME=	redhat_base-8.0
+PKGNAME=	redhat_base-8.0p1
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
@@ -17,9 +17,9 @@ RPMS=		glibc-2.3.2-4.80.6.i386.rpm:0 \
 		glibc-common-2.3.2-4.80.6.i386.rpm:0 \
 		termcap-11.0.1-13.noarch.rpm \
 		libtermcap-2.0.8-31.i386.rpm \
-		bash-2.05b-5.i386.rpm \
+		bash-2.05b-5.1.i386.rpm:0 \
 		ncurses-5.2-28.i386.rpm \
-		zlib-1.1.4-4.i386.rpm \
+		zlib-1.1.4-8.8x.i386.rpm:0 \
 		fileutils-4.1.9-11.i386.rpm \
 		binutils-2.13.90.0.2-2.i386.rpm \
 		compat-libstdc++-7.3-2.96.110.i386.rpm \
@@ -27,7 +27,7 @@ RPMS=		glibc-2.3.2-4.80.6.i386.rpm:0 \
 		sh-utils-2.0.12-3.i386.rpm \
 		readline-4.3-3.i386.rpm \
 		rpm-4.1-1.06.i386.rpm \
-		XFree86-libs-4.2.0-72.i386.rpm \
+		XFree86-libs-4.2.1-21.i386.rpm:0 \
 		glib-1.2.10-8.i386.rpm \
 		gtk+-1.2.10-22.i386.rpm \
 		libjpeg-6b-21.i386.rpm \
