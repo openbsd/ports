@@ -3,7 +3,7 @@
 # Date created:         December 2, 1997
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1998/02/06 19:17:43 don Exp $
+# $OpenBSD: Makefile,v 1.3 1998/02/12 14:38:32 niklas Exp $
 #
 
 DISTNAME=       libpng-0.96
@@ -15,5 +15,8 @@ EXTRACT_SUFX=   .tgz
 MAINTAINER=     angelos@openbsd.org
 
 MAKEFILE=       makefile
+
+post-install:
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
