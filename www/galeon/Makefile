@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/08/15 08:49:33 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2003/08/15 11:33:04 wilfried Exp $
 
 COMMENT=		"GNOME web browser based on gecko"
 
@@ -17,7 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=galeon/}
 
-MODULES=		gettext
+MODULES=		gettext gcc3
+MODGCC3_ARCHES=		alpha sparc64
+MODGCC3_LANGS=		C++
 
 BUILD_DEPENDS=		:mozilla-${MOZ}:www/mozilla \
 			:mozilla-devel-${MOZ}:www/mozilla,-devel \

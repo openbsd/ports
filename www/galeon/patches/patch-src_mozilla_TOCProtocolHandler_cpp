@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mozilla_TOCProtocolHandler_cpp,v 1.1 2003/08/15 11:33:04 wilfried Exp $
+--- src/mozilla/TOCProtocolHandler.cpp.orig	2003-01-26 03:17:47.000000000 +0100
++++ src/mozilla/TOCProtocolHandler.cpp	2003-08-15 12:50:31.000000000 +0200
+@@ -404,7 +404,7 @@ NS_METHOD GTOCProtocolHandler::CreateHel
+ 	nsresult rv;
+ 
+ 	struct dirent **namelist;
+-	int n = scandir (SHARE_DIR"/../gnome/help", &namelist, select,
++	int n = scandir (SHARE_DIR"/../gnome/help", &namelist, (int (*)(struct dirent *))select,
+ 			 alphasort);
+ 	if (n<0) return NS_ERROR_FAILURE;
+ 

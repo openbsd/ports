@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.3 2003/07/04 06:41:12 marcm Exp $
---- configure.orig	Sun Jun  8 16:18:42 2003
-+++ configure	Thu Jul  3 22:32:12 2003
+$OpenBSD: patch-configure,v 1.4 2003/08/15 11:33:04 wilfried Exp $
+--- configure.orig	2003-06-09 01:18:42.000000000 +0200
++++ configure	2003-08-15 11:10:16.000000000 +0200
 @@ -11708,6 +11708,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -28,16 +28,18 @@ $OpenBSD: patch-configure,v 1.3 2003/07/04 06:41:12 marcm Exp $
  	NetBSD)
  		;;
  	FreeBSD)
-@@ -12342,7 +12348,7 @@ rm -f conftest.$ac_objext conftest.$ac_e
+@@ -12340,9 +12346,7 @@ sed 's/^/| /' conftest.$ac_ext >&5
+ fi
+ rm -f conftest.$ac_objext conftest.$ac_ext
  
- CC="$_save_cc"
- 
+-CC="$_save_cc"
+-
 -LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lgtksuperwin"
 +LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lgtksuperwin $GTK_LIBS"
  echo "$as_me:$LINENO: checking for gdk_superwin_get_type in -lgtksuperwin" >&5
  echo $ECHO_N "checking for gdk_superwin_get_type in -lgtksuperwin... $ECHO_C" >&6
  if test "${ac_cv_lib_gtksuperwin_gdk_superwin_get_type+set}" = set; then
-@@ -12402,14 +12408,14 @@ if test $ac_cv_lib_gtksuperwin_gdk_super
+@@ -12402,14 +12406,14 @@ if test $ac_cv_lib_gtksuperwin_gdk_super
  fi
  
  
