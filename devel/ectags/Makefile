@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2003/06/14 21:13:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/10/11 01:01:56 naddy Exp $
 
 COMMENT=	"multilanguage implementation of ctags"
 
-DISTNAME=	ctags-5.5
+DISTNAME=	ctags-5.5.4
 PKGNAME=	e${DISTNAME}
 CATEGORIES=	devel
 HOMEPAGE=	http://ctags.sourceforge.net/
@@ -22,12 +22,12 @@ CONFIGURE_STYLE=	gnu
 DOCS=		FAQ NEWS README EXTENDING.html
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ectags
-	@cd ${WRKBUILD}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/ectags
 	${INSTALL_PROGRAM} ${WRKBUILD}/ctags ${PREFIX}/bin/ectags
-	${INSTALL_MAN} ${WRKBUILD}/ctags.1 ${PREFIX}/man/man1/ectags.1
+	${INSTALL_MAN} ${WRKSRC}/ctags.1 ${PREFIX}/man/man1/ectags.1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ectags
+	@cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/ectags
 
 NO_REGRESS=	Yes
-SEPERATE_BUILD= concurrent
+SEPARATE_BUILD= simple
 
 .include <bsd.port.mk>
