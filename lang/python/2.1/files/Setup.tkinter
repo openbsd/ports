@@ -17,8 +17,8 @@ TKPATH=:lib-tk
 # *** Always uncomment this (leave the leading underscore in!):
 _tkinter _tkinter.c tkappinit.c -DWITH_APPINIT \
 # *** Uncomment and edit to reflect where your Tcl/Tk headers are:
-	-I${LOCALBASE}/include/tcl8.3 \
-	-I${LOCALBASE}/include/tk8.3 \
+	-I${LOCALBASE}/include/tcl8.4 \
+	-I${LOCALBASE}/include/tk8.4 \
 # *** Uncomment and edit to reflect where your X11 header files are:
 	-I${X11BASE}/include \
 # *** Or uncomment this for Solaris:
@@ -34,7 +34,7 @@ _tkinter _tkinter.c tkappinit.c -DWITH_APPINIT \
 # *** Uncomment and edit to reflect where your Tcl/Tk libraries are:
 	-L${LOCALBASE}/lib \
 # *** Uncomment and edit to reflect your Tcl/Tk versions:
-	-ltk83 -ltcl83 \
+	-ltk84 -ltcl84 \
 # *** Uncomment and edit to reflect where your X11 libraries are:
 	-L${X11BASE}/lib \
 # *** Or uncomment this for Solaris:
