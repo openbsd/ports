@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/03/09 02:12:54 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/03/12 17:43:44 espie Exp $
 
 CATEGORIES=		www
 NEED_VERSION=		1.223
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 FAKE=		Yes
-DISTNAME=	links-0.83
+DISTNAME=	links-0.84
 
 MASTER_SITES=	http://artax.karlin.mff.cuni.cz/%7Emikulas/links/download/
 
