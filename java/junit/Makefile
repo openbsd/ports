@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2005/01/07 19:06:52 kurt Exp $
+# $OpenBSD: Makefile,v 1.8 2005/03/15 22:46:21 kurt Exp $
+
+# Requires a JVM
+ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"regression testing utility for use with the Java language"
 

@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2005/03/03 21:50:43 kurt Exp $
+# $OpenBSD: Makefile,v 1.3 2005/03/15 22:46:21 kurt Exp $
+
+# Requires a JVM
+ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Java servlet 2.4 and Java server pages 2.0 server"
 COMMENT-examples="example applications and documentation"
