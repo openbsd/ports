@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 19:41:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/10/07 19:36:14 sturm Exp $
 bin/faxalter
 bin/faxcover
 bin/faxmail
@@ -97,15 +97,15 @@ libdata/hylafax/config/zyxel-2864
 libdata/hylafax/dev/
 libdata/hylafax/docq/
 libdata/hylafax/doneq/
-libdata/hylafax${SYSCONFDIR}/
-libdata/hylafax${SYSCONFDIR}/cover.templ
-libdata/hylafax${SYSCONFDIR}/dialrules
-libdata/hylafax${SYSCONFDIR}/dialrules.europe
-libdata/hylafax${SYSCONFDIR}/dialrules.sf-ba
-libdata/hylafax${SYSCONFDIR}/dpsprinter.ps
-libdata/hylafax${SYSCONFDIR}/hosts.hfaxd
-libdata/hylafax${SYSCONFDIR}/lutRS18.pcf
-libdata/hylafax${SYSCONFDIR}/xferfaxlog
+libdata/hylafax/etc/
+libdata/hylafax/etc/cover.templ
+libdata/hylafax/etc/dialrules
+libdata/hylafax/etc/dialrules.europe
+libdata/hylafax/etc/dialrules.sf-ba
+libdata/hylafax/etc/dpsprinter.ps
+libdata/hylafax/etc/hosts.hfaxd
+libdata/hylafax/etc/lutRS18.pcf
+libdata/hylafax/etc/xferfaxlog
 libdata/hylafax/info/
 libdata/hylafax/log/
 libdata/hylafax/pollq/
