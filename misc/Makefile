@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2002/11/15 20:31:35 couderc Exp $
+# $OpenBSD: Makefile,v 1.67 2003/01/28 00:08:00 margarida Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -63,6 +63,7 @@
      SUBDIR += p5-Locale-Codes
 #    SUBDIR += p5-Search
      SUBDIR += pdmenu
+     SUBDIR += pfm
      SUBDIR += pi-address
      SUBDIR += plan
      SUBDIR += remind
