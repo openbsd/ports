@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.4 2003/05/18 11:49:55 espie Exp $
+--- Makefile.orig	Sun May 18 13:13:23 2003
++++ Makefile	Sun May 18 13:13:43 2003
+@@ -228,7 +228,7 @@ $(PRG_FIBMAP): fibmap_mplayer.o
+ ifeq ($(MENCODER),yes)
+ $(PRG_MENCODER): $(MENCODER_DEP)
+ 	./darwinfixlib.sh $(MENCODER_DEP) libmpcodecs/libmpencoders.a
+-	$(CC) $(CFLAGS) -o $(PRG_MENCODER) $(OBJS_MENCODER) libmpcodecs/libmpencoders.a $(ENCORE_LIB) $(COMMON_LIBS) $(EXTRA_LIB) $(MLIB_LIB) $(LIRC_LIB) $(ARCH_LIB) $(I18NLIBS) -lm 
++	$(CXX) $(CFLAGS) -o $(PRG_MENCODER) $(OBJS_MENCODER) libmpcodecs/libmpencoders.a $(ENCORE_LIB) $(COMMON_LIBS) $(EXTRA_LIB) $(MLIB_LIB) $(LIRC_LIB) $(ARCH_LIB) $(I18NLIBS) -lm 
+ endif
+ 
+ codecs.conf.h: $(PRG_CFG)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2003/04/17 22:16:18 wilfried Exp $
+# $OpenBSD: Makefile,v 1.55 2003/05/18 11:49:55 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc
@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 CONFIGURE_ARGS+=--target=ppc-openbsd
 .endif
 
-FLAVORS=	arts esd sdl ggi debug mad win32 no_x11 cdda faad aa lzo
+FLAVORS=	arts esd sdl ggi debug mad win32 no_x11 cdda faad aa lzo real
 FLAVOR?=
 
 .if ${FLAVOR:L:Mfaad}
@@ -148,6 +148,13 @@ CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32 \
 .else
 CONFIGURE_ARGS+=--disable-win32 \
 		--disable-qtx-codecs
+.endif
+
+.if ${FLAVOR:L:Mreal}
+CONFIGURE_ARGS+=--with-reallibdir=${LOCALBASE}/lib/real
+CONFIGURE_ARGS+=--enable-real
+.else
+CONFIGURE_ARGS+=--disable-real
 .endif
 
 .if ${FLAVOR:L:Mcdda}
