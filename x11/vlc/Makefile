@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/08/10 11:16:44 xsa Exp $
+# $OpenBSD: Makefile,v 1.15 2004/09/15 19:23:50 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -71,9 +71,9 @@ FLAVORS=	no_dvd
 FLAVOR?=
 
 .if ${MACHINE_ARCH} == "i386"
-SED_PLIST+=	|sed -e '/^IF${MACHINE_ARCH}:/s///'
+PKG_ARGS+=-Di386=1
 .else
-SED_PLIST+=	|sed -e '/^IFi386:/d'
+PKG_ARGS+=-Di386=0
 .endif
 
 # XXX video window initialization fails without this
