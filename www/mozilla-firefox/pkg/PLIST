@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/03/16 08:59:04 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/03/26 19:05:27 wilfried Exp $
 @conflict mozilla-firebird-*
 %%SHARED%%
 bin/firefox
@@ -362,6 +362,7 @@ mozilla-firefox/greprefs/xpinstall.js
 mozilla-firefox/mozicon16.xpm
 mozilla-firefox/mozicon50.xpm
 mozilla-firefox/mozilla-firefox-bin
+mozilla-firefox/mozilla-xremote-client
 mozilla-firefox/regchrome
 mozilla-firefox/regxpcom
 mozilla-firefox/res/

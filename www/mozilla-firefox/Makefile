@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2005/03/16 08:59:04 wilfried Exp $
+# $OpenBSD: Makefile,v 1.22 2005/03/26 19:05:27 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	"redesign of Mozilla's browser component"
 
-VER=		1.0.1
+VER=		1.0.2
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}p1
+PKGNAME=	mozilla-firefox-${VER}
 
 CATEGORIES=	www
 
@@ -103,7 +103,7 @@ do-install:
 	${INSTALL_SCRIPT} ${MOB}/firefox ${PREFIX}/bin/
 	ln -f ${PREFIX}/bin/firefox ${PREFIX}/bin/mozilla-firefox
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOB}/firefox-config ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/regchrome ${MOB}/regxpcom ${MOB}/firefox-bin ${MOZ}
+	${INSTALL_PROGRAM} ${MOB}/regchrome ${MOB}/regxpcom ${MOB}/firefox-bin ${MOB}/mozilla-xremote-client ${MOZ}
 	ln -f ${MOZ}/firefox-bin ${MOZ}/mozilla-firefox-bin
 
 	${INSTALL_DATA_DIR} ${MOZ}/extensions
