@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2004/06/24 07:44:58 brad Exp $
+# $OpenBSD: Makefile,v 1.66 2004/07/02 01:53:09 brad Exp $
 
 COMMENT=	"display and manipulate images under X11"
 
@@ -35,7 +35,8 @@ PERMIT_DISTFILES_FTP=	Yes
 SUBST_VARS=	VER
 
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.59
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-lzw \
 		 --with-quantum-depth=16 \
