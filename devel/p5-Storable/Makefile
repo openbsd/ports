@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/09/02 10:16:29 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2001/12/08 15:08:57 kevlo Exp $
 
 COMMENT=	"persistency for perl data structures"
 
-DISTNAME=	Storable-1.0.13
+DISTNAME=	Storable-1.0.14
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
-NEED_VERSION=	1.407
+NEED_VERSION=	1.500
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
