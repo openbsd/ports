@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2003/11/12 03:45:05 brad Exp $
+lib/libobparser.so.2.0
+lib/libobrender.so.2.0
+DYNLIBDIR(%D/lib)
