@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2003/10/04 23:26:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2004/01/14 02:05:01 brad Exp $
 
 COMMENT=	"small, easy to use editor"
 
@@ -22,7 +22,8 @@ FLAVOR?=
 
 MODULES=	gettext
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.57
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-all
