@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2001/10/27 09:39:40 shell Exp $
+# $OpenBSD: Makefile,v 1.89 2001/10/29 03:35:20 jcs Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -48,6 +48,7 @@
      SUBDIR += nfsshell
      SUBDIR += outguess
      SUBDIR += parse
+     SUBDIR += p0f
      SUBDIR += p5-Authen-Radius
      SUBDIR += p5-Crypt-Blowfish
      SUBDIR += p5-Crypt-CBC
