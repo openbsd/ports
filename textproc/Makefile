@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2002/12/06 20:56:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.88 2003/02/03 15:46:58 naddy Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -82,6 +82,7 @@
      SUBDIR += unrtf
 #    SUBDIR += unroff
      SUBDIR += urlview
+     SUBDIR += wdg-sgml-lib
      SUBDIR += wdiff
      SUBDIR += xerces
      SUBDIR += xml2rfc
