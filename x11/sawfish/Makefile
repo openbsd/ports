@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/10/29 19:48:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2002/12/01 02:53:24 naddy Exp $
 
 COMMENT=	"extensible window manager"
 
@@ -10,8 +10,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sawmill/}
 
 HOMEPAGE=       http://sawmill.sourceforge.net/
 
-BUILD_DEPENDS=	:rep-gtk-*:x11/rep-gtk
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	:rep-gtk-*:x11/rep-gtk
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		glib.1.2::devel/glib \
 		rep.10::lang/librep \

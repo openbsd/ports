@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/07/15 04:00:40 shell Exp $
+# $OpenBSD: Makefile,v 1.13 2002/12/01 02:53:24 naddy Exp $
 
 COMMENT=	"on-the-fly HTML to WML conversion"
 
@@ -15,12 +15,12 @@ PERMIT_DISTFILES_FTP=   Yes
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 
-BUILD_DEPENDS=	:p5-libwww-*:www/p5-libwww \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	:p5-libwww-*:www/p5-libwww \
 		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		:p5-XML-LibXML-*:textproc/p5-XML-LibXML \
 		:p5-XML-Checker-*:textproc/p5-XML-Checker \
 		:p5-Text-Template-*:textproc/p5-Text-Template
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	Yes
 USE_GMAKE=	Yes
