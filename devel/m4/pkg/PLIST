@@ -1,6 +1,7 @@
-@unexec install-info --delete --info-dir=%D/info %D/info/m4.info
 bin/gm4
+@unexec install-info --delete --info-dir=%D/info %D/info/m4.info
 info/m4.info
+@exec install-info --info-dir=%D/info %D/info/m4.info
 share/examples/gm4/capitalize.m4
 share/examples/gm4/comments.m4
 share/examples/gm4/ddivert.m4
@@ -28,4 +29,3 @@ share/examples/gm4/translit.m4
 share/examples/gm4/undivert.m4
 share/examples/gm4/wrap.m4
 @dirrm share/examples/gm4
-@exec install-info --info-dir=%D/info %D/info/m4.info

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/09/08 16:42:46 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/12/12 20:51:15 brad Exp $
 # $FreeBSD: Makefile,v 1.7 1997/06/16 08:22:35 max Exp $
 
 DISTNAME=	m4-1.4
@@ -17,11 +17,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS= --prefix=${PREFIX} --program-prefix=g
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/gm4
+	@mkdir -p ${PREFIX}/share/examples/gm4
 	${INSTALL_DATA} ${WRKSRC}/examples/*.m4 ${PREFIX}/share/examples/gm4
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
 	@install-info ${PREFIX}/info/m4.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
