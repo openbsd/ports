@@ -1,0 +1,50 @@
+#!/bin/sh
+# $OpenBSD: check_register,v 1.1 2001/04/08 17:01:31 espie Exp $
+# Copyright (c) 2001
+# Marc Espie.  All rights reserved.
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Neither the name of OpenBSD nor the names of its contributors
+#    may be used to endorse or promote products derived from this software
+#    without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY ITS AUTHOR AND THE OpenBSD project ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+
+
+# This script scans the ports tree twice, looking for discrepancies between
+# what's linked, and what's in there.
+
+: ${PORTSDIR:=/usr/ports}
+: ${TMPDIR:=/tmp}
+: ${diffopts:=-u}
+
+known1=`mktemp ${TMPDIR}/known.XXXXXXXXX`
+known2=`mktemp ${TMPDIR}/known.XXXXXXXXX`
+cd ${PORTSDIR} && make show ECHO_MSG=: VARNAME=FULLPKGPATH | tee ${known1}
+sort -o ${known1} -u ${known1}
+
+cd ${PORTSDIR} && find . -path ./distfiles -prune -o \
+	-path ./packages\* -prune -o -path ./logs\* -prune -o \
+	-name work\* -prune -o -name Makefile -print | \
+	xargs fgrep -l bsd.port.mk| \
+	while read f
+	do
+		d=`dirname $f`
+		echo $d
+		cd ${PORTSDIR} && cd $d && make show VARNAME=FULLPKGPATH >>${known2}
+	done
+sort -o ${known2} -u ${known2}
+diff $diffopts ${known1} ${known2}
