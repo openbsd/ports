@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2001/05/12 05:46:53 shell Exp $
+# $OpenBSD: Makefile,v 1.28 2001/05/20 13:06:44 kevlo Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += cdb
@@ -17,6 +17,7 @@
      SUBDIR += p5-DBD-Pg
      SUBDIR += p5-DBI
      SUBDIR += p5-DBIx-XHTML_Table
+     SUBDIR += p5-SQL-Statement
      SUBDIR += postgresql
      SUBDIR += postgresql,tcl
      SUBDIR += postgresql,odbc
