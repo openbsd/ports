@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2001/01/21 19:40:48 avsm Exp $
+# $OpenBSD: Makefile,v 1.42 2001/02/01 17:54:41 avsm Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -39,6 +39,7 @@
      SUBDIR += p5-CGI
 #    SUBDIR += p5-CGI_Lite
      SUBDIR += p5-HTML-Base
+     SUBDIR += p5-HTML-Mason
      SUBDIR += p5-HTML-Parser
 #    SUBDIR += p5-HTML-QuickCheck
 #    SUBDIR += p5-HTML-Stream
