@@ -1,4 +1,4 @@
-$RuOBSD: patch-ipcad_conf,v 1.3 2002/04/27 02:41:28 form Exp $
+$OpenBSD: patch-ipcad_conf,v 1.2 2002/04/29 04:25:30 form Exp $
 --- ipcad.conf.orig	Mon Mar 25 10:10:39 2002
 +++ ipcad.conf	Sat Apr 27 09:39:15 2002
 @@ -71,11 +71,11 @@ rsh enable at 127.0.0.1;
