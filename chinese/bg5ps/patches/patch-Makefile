@@ -1,0 +1,40 @@
+--- Makefile.orig	Mon Feb 14 20:41:27 2000
++++ Makefile	Sun Jan 21 22:40:02 2001
+@@ -19,28 +19,24 @@
+ 
+ CC = gcc
+ INSTALL = install
+-CFLAGS =
++CFLAGS = -I${LOCALBASE}/include
+ LIBS = -lttf -lm
+-INCLUDEDIR = 
++LIBSDIR= -L${LOCALBASE}/lib
+ 
+-prefix = /usr
+-BINDIR = $(prefix)/bin
+-ETCDIR = /etc/chinese/
++PREFIX?= /usr/local
++BINDIR = $(PREFIX)/bin
+ 
+ all: ttf2psm
+ 
+ %.o : %.c
+-	$(CC) -c $(CFLAGS) $(INCLUDEDIR) $< -o $@
++	$(CC) -c $(CFLAGS) $< -o $@
+ 
+ ttf2psm: $(OBJS)
+-	$(CC) $(CFLAGS) $(INCLUDEDIR) $(LIBS) -o ttf2psm $(OBJS)
++	$(CC) $(CFLAGS) $(LIBSDIR) $(LIBS) -o ttf2psm $(OBJS)
+ 
+-install: all bg5ps bg5ps.conf
+-	mkdir -p $(ETCDIR)
+-	mkdir -p $(BINDIR)
+-	$(INSTALL) -m644 bg5ps.conf $(ETCDIR)/bg5ps.conf
+-	$(INSTALL) -m755 bg5ps $(BINDIR)
+-	$(INSTALL) -m755 ttf2psm $(BINDIR)
++install: all bg5ps 
++	install -m 755 bg5ps $(BINDIR)
++	install -m 755 ttf2psm $(BINDIR)
+ 
+ clean:
+ 	rm -rf *.o core ttf2psm *~
