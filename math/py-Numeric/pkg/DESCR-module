@@ -1,7 +1,0 @@
-Numarray is a reimplementation of Numeric which adds the ability
-to efficiently manipulate large numeric arrays in ways similar to
-Matlab and IDL.
-
-This package contains extra module for used by py-Numeric
-
-WWW: ${HOMEPAGE}

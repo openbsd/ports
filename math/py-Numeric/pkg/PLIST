@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/12/22 14:33:39 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/06/06 02:40:14 shell Exp $
 include/python${PYTHON_VER}/Numeric/arrayobject.h
 include/python${PYTHON_VER}/Numeric/f2c.h
 include/python${PYTHON_VER}/Numeric/ranlib.h
@@ -6,8 +6,19 @@ include/python${PYTHON_VER}/Numeric/ufuncobject.h
 lib/python${PYTHON_VER}/site-packages/Numeric.pth
 lib/python${PYTHON_VER}/site-packages/Numeric/ArrayPrinter.py
 lib/python${PYTHON_VER}/site-packages/Numeric/ArrayPrinter.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/FFT/FFT.py
+lib/python${PYTHON_VER}/site-packages/Numeric/FFT/FFT.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/FFT/__init__.py
+lib/python${PYTHON_VER}/site-packages/Numeric/FFT/__init__.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/FFT/fftpack.so
 lib/python${PYTHON_VER}/site-packages/Numeric/LinearAlgebra.py
 lib/python${PYTHON_VER}/site-packages/Numeric/LinearAlgebra.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/MA/MA.py
+lib/python${PYTHON_VER}/site-packages/Numeric/MA/MA.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/MA/MA_version.py
+lib/python${PYTHON_VER}/site-packages/Numeric/MA/MA_version.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/MA/__init__.py
+lib/python${PYTHON_VER}/site-packages/Numeric/MA/__init__.pyc
 lib/python${PYTHON_VER}/site-packages/Numeric/MLab.py
 lib/python${PYTHON_VER}/site-packages/Numeric/MLab.pyc
 lib/python${PYTHON_VER}/site-packages/Numeric/Matrix.py
@@ -16,17 +27,39 @@ lib/python${PYTHON_VER}/site-packages/Numeric/Numeric.py
 lib/python${PYTHON_VER}/site-packages/Numeric/Numeric.pyc
 lib/python${PYTHON_VER}/site-packages/Numeric/Precision.py
 lib/python${PYTHON_VER}/site-packages/Numeric/Precision.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/PropertiedClasses/Properties.py
+lib/python${PYTHON_VER}/site-packages/Numeric/PropertiedClasses/Properties.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/PropertiedClasses/Properties_version.py
+lib/python${PYTHON_VER}/site-packages/Numeric/PropertiedClasses/Properties_version.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/PropertiedClasses/__init__.py
+lib/python${PYTHON_VER}/site-packages/Numeric/PropertiedClasses/__init__.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/RNG/RNG.so
+lib/python${PYTHON_VER}/site-packages/Numeric/RNG/Statistics.py
+lib/python${PYTHON_VER}/site-packages/Numeric/RNG/Statistics.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/RNG/__init__.py
+lib/python${PYTHON_VER}/site-packages/Numeric/RNG/__init__.pyc
 lib/python${PYTHON_VER}/site-packages/Numeric/RandomArray.py
 lib/python${PYTHON_VER}/site-packages/Numeric/RandomArray.pyc
 lib/python${PYTHON_VER}/site-packages/Numeric/UserArray.py
 lib/python${PYTHON_VER}/site-packages/Numeric/UserArray.pyc
 lib/python${PYTHON_VER}/site-packages/Numeric/_numpy.so
 lib/python${PYTHON_VER}/site-packages/Numeric/arrayfns.so
+lib/python${PYTHON_VER}/site-packages/Numeric/kinds/__init__.py
+lib/python${PYTHON_VER}/site-packages/Numeric/kinds/__init__.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/kinds/_kinds.so
+lib/python${PYTHON_VER}/site-packages/Numeric/kinds/kinds.py
+lib/python${PYTHON_VER}/site-packages/Numeric/kinds/kinds.pyc
+lib/python${PYTHON_VER}/site-packages/Numeric/kinds/kinds_version.py
+lib/python${PYTHON_VER}/site-packages/Numeric/kinds/kinds_version.pyc
 lib/python${PYTHON_VER}/site-packages/Numeric/lapack_lite.so
 lib/python${PYTHON_VER}/site-packages/Numeric/multiarray.so
 lib/python${PYTHON_VER}/site-packages/Numeric/numeric_version.py
 lib/python${PYTHON_VER}/site-packages/Numeric/numeric_version.pyc
 lib/python${PYTHON_VER}/site-packages/Numeric/ranlib.so
 lib/python${PYTHON_VER}/site-packages/Numeric/umath.so
-@dirrm lib/python${PYTHON_VER}/site-packages/Numeric
+@dirrm lib/python${PYTHON_VER}/site-packages/Numeric/kinds
+@dirrm lib/python${PYTHON_VER}/site-packages/Numeric/RNG
+@dirrm lib/python${PYTHON_VER}/site-packages/Numeric/PropertiedClasses
+@dirrm lib/python${PYTHON_VER}/site-packages/Numeric/MA
+@dirrm lib/python${PYTHON_VER}/site-packages/Numeric/FFT
 @dirrm include/python${PYTHON_VER}/Numeric

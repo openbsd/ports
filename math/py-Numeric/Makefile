@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/13 23:31:26 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/06/06 02:40:14 shell Exp $
 
 COMMENT=	"fast array facility to the Python language"
-COMMENT-module=	"extra modules for py-Numeric"
 
-VERSION=	20.3
+VERSION=	21.0
 DISTNAME=	Numeric-${VERSION}
 PKGNAME=	py-${DISTNAME}
-PKGNAME-module=	py-Numeric-module-${VERSION}
 CATEGORIES=    	devel
-NEED_VERSION=	1.502
+NEED_VERSION=	1.531
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
@@ -21,21 +19,14 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=numpy/}
 HOMEPAGE=	http://www.pfdubois.com/numpy/
 
-PYTHON_VER=	2.1
+PYTHON_VER=	2.2
 SUBST_VARS=	PYTHON_VER
 NO_REGRESS=	Yes
 
 BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-MULTI_PACKAGES=	-module
-SUBPACKAGE?=
-
-.if ${SUBPACKAGE} == "-module"
-RUN_DEPENDS=    ::math/py-Numeric
-.endif
-
-PY_SETUP=	setup_all.py
+PY_SETUP=	setup.py
 PY_CMD=		@cd ${WRKSRC} && python${PYTHON_VER} ${PY_SETUP}
 
 do-build:
