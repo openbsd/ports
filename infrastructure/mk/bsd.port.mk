@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.522 2002/04/10 08:44:57 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.523 2002/04/17 15:58:48 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -448,7 +448,7 @@ PKGREPOSITORYSUBDIR?=	All
 PKG_SUFX?=		.tgz
 PKGREPOSITORY?=		${PACKAGES}/${PKGREPOSITORYSUBDIR}
 PKG_DBDIR?=		/var/db/pkg
-
+BULK_COOKIES_DIR?= ${PORTSDIR}/bulk/${MACHINE_ARCH}
 
 PKGNAME?=${DISTNAME}
 FULLPKGNAME?=${PKGNAME}${FLAVOR_EXT}
@@ -473,6 +473,7 @@ _PATCH_COOKIE=		${WRKDIR}/.patch_done
 _DISTPATCH_COOKIE=	${WRKDIR}/.distpatch_done
 _PREPATCH_COOKIE=	${WRKDIR}/.prepatch_done
 _INSTALL_COOKIE=	${PKG_DBDIR}/${FULLPKGNAME${SUBPACKAGE}}/+CONTENTS
+_BULK_COOKIE=		${BULK_COOKIES_DIR}/${FULLPKGNAME}
 .if ${FAKE:L} == "yes"
 _FAKE_COOKIE=		${WRKINST}/.fake_done
 _INSTALL_PRE_COOKIE=${WRKINST}/.install_started
@@ -1508,6 +1509,17 @@ refetch:
 # Normal user-mode targets are PHONY targets, e.g., don't create the
 # corresponding file. However, there is nothing phony about the cookie.
 
+BULK?=No
+_INSTALL_DEPS=${_INSTALL_COOKIE}
+_PACKAGE_DEPS=${_PACKAGE_COOKIES}
+.  if defined(ALWAYS_PACKAGE)
+_INSTALL_DEPS+=${_PACKAGE_COOKIES}
+.  endif
+.  if ${BULK:L} == "yes"
+_INSTALL_DEPS+=${_BULK_COOKIE}
+_PACKAGE_DEPS+=${_BULK_COOKIE}
+.  endif
+
 # The cookie's recipe hold the real rule for each of those targets.
 
 extract: ${_EXTRACT_COOKIE}
@@ -1519,13 +1531,10 @@ configure: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPmisc_COOKIES} \
 	${_CONFIGURE_COOKIE}
 all build: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPmisc_COOKIES} \
 	${_BUILD_COOKIE}
-.  if defined(ALWAYS_PACKAGE)
-install: ${_INSTALL_COOKIE} ${_PACKAGE_COOKIES}
-.  else
-install: ${_INSTALL_COOKIE}
-.  endif
+install: ${_INSTALL_DEPS}
 fake: ${_FAKE_COOKIE}
-package: ${_PACKAGE_COOKIES}
+package: ${_PACKAGE_DEPS}
+
 
 .  if defined(_IGNORE_REGRESS)
 regress:
@@ -1537,6 +1546,18 @@ regress: ${_DEPregress_COOKIES} ${_REGRESS_COOKIE}
 .  endif
 
 .endif # IGNORECMD
+
+BULK_TARGETS? = ftp-packages cdrom-packages
+
+${_BULK_COOKIE}: ${_PACKAGE_COOKIES}
+	@mkdir -p ${BULK_COOKIES_DIR}
+	@exec ${MAKE} ftp-packages cdrom-packages
+.for _i in ${BULK_TARGETS}
+	@${ECHO_MSG} "===> Running ${_i}"
+	@exec ${MAKE} ${_i} ${BULK_FLAGS}
+.endfor
+	@exec ${SUDO} ${MAKE} clean
+	@${_MAKE_COOKIE} $@
 
 _create_wrkobjdir =	\
 	rm -rf ${WRKOBJDIR}/${PKGNAME}${FLAVOR_EXT}; \
@@ -1941,26 +1962,6 @@ ${_F}:
 	done; exit 1
 .endfor
 
-bulk-packages:
-	@${MAKE} package BATCH=Yes && exec ${SUDO} ${MAKE} clean CLEANDEPENDS=Yes
-	@exec ${MAKE} ftp-packages cdrom-packages BATCH=Yes
-# bulk-packages is just 
-# make bulk-do BULK_TARGETS='package ftp-packages cdrom-packages clean'
-#			   BULK_FLAGS='BATCH=Yes CLEANDEPENDS=Yes'
-#
-# You can, for instance, do:
-# make clean='distclean install package'
-# make bulk-do 
-#	BULK_TARGETS='distclean clean=package regress lib-depends-check 
-#		package ftp-packages cdrom-packages clean'
-#	BULK_FLAGS='BATCH=Yes CLEANDEPENDS=Yes'
-#
-bulk-do:
-.for _i in ${BULK_TARGETS}
-	@exec ${MAKE} ${_i} ${BULK_FLAGS}
-.endfor
-
-
 # Invoke "make cdrom-packages CDROM_PACKAGES=/cdrom/snapshots/packages"
 # Invoke "make ftp-packages FTP_PACKAGES=/pub/OpenBSD/snapshots/packages"
 
@@ -2139,6 +2140,9 @@ clean: pre-clean
 	rm -f ${_PACKAGE_COOKIES}
 .  elif ${clean:L:Mpackage}
 	rm -f ${PKGFILE${SUBPACKAGE}}
+.  endif
+.  if ${clean:L:Mbulk}
+	rm -f ${_BULK_COOKIE}
 .  endif
 .endif
 
@@ -2792,5 +2796,5 @@ homepage-links:
    link-categories unlink-categories _package _solve-package-depends \
    dir-depends _recurse-dir-depends package-dir-depends \
    _package-recurse-dir-depends recursebuild-depends-list run-depends-list \
-   bulk-packages bulk-do _recurse-lib-depends lib-depends-check \
+   _recurse-lib-depends lib-depends-check \
    homepage-links manpages-check
