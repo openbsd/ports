@@ -1,0 +1,38 @@
+$OpenBSD: patch-autoconf_aclocal_m4,v 1.1 2002/05/08 02:04:08 brad Exp $
+--- autoconf/aclocal.m4.orig	Tue May  7 19:22:54 2002
++++ autoconf/aclocal.m4	Tue May  7 19:28:19 2002
+@@ -68,7 +68,7 @@ dnl# determine whether or not -R or -rpa
+ AC_DEFUN(JD_INIT_RPATH,
+ [
+ case "$host_os" in
+-  *linux*|*solaris* )
++  *linux*|*solaris*|*openbsd* )
+     if test "X$GCC" = Xyes
+     then
+       if test "X$ac_R_nospace" = "Xno"
+@@ -566,6 +566,25 @@ case "$host_os" in
+      ELFLIB="lib$(THIS_LIB).dylib"
+      ELFLIB_MAJOR="lib$(THIS_LIB).$(ELF_MAJOR_VERSION).dylib"
+      ELFLIB_MAJOR_MINOR="lib$(THIS_LIB).$(ELF_MAJOR_VERSION).$(ELF_MINOR_VERSION).dylib"
++     ;;
++  *openbsd* )
++     DYNAMIC_LINK_FLAGS=""
++     ELF_CC="$CC"
++     case `arch -s` in
++       sparc64)
++         ELF_CFLAGS="$CFLAGS -fPIC"
++        ;;
++       *)
++         ELF_CFLAGS="$CFLAGS -fpic"
++        ;;
++     esac
++     ELF_LINK="$CC -shared $ELF_CFLAGS"
++     ELF_LINK_CMD="\$(ELF_LINK)"
++     ELF_DEP_LIBS="\$(DL_LIB) -lm -lcurses"
++     CC_SHARED="$CC -shared $ELF_CFLAGS"
++     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
++       DYNAMIC_LINK_FLAGS="-Wl,-E"
++     fi
+      ;;
+   * )
+     echo "Note: ELF compiler for host_os=$host_os may be wrong"

@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Tue Feb 20 21:17:35 2001
-+++ src/Makefile.in	Fri Dec  7 23:32:33 2001
-@@ -36,7 +36,7 @@ prefix = @prefix@
+--- src/Makefile.in.orig	Sun Feb 10 02:39:19 2002
++++ src/Makefile.in	Tue May  7 19:57:00 2002
+@@ -38,7 +38,7 @@ prefix = @prefix@
  exec_prefix = @exec_prefix@
  install_lib_dir = @libdir@
  install_include_dir = @includedir@
