@@ -1,0 +1,19 @@
+*** pbm/pbmtext.c.orig	Sat May 30 18:53:47 1998
+--- pbm/pbmtext.c	Sat May 30 18:54:16 1998
+***************
+*** 105,111 ****
+      else
+  	{ /* Read text from stdin. */
+  	lines = 0;
+! 	while ( gets( buf ) != NULL )
+  	    {
+  	    int l;
+  
+--- 105,111 ----
+      else
+  	{ /* Read text from stdin. */
+  	lines = 0;
+! 	while ( fgets( buf, 4999, stdin ) != NULL )
+  	    {
+  	    int l;
+  

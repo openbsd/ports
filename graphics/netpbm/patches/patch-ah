@@ -1,0 +1,58 @@
+*** ppm/picttoppm.c.orig	Sat May 30 18:55:09 1998
+--- ppm/picttoppm.c	Sat May 30 18:59:35 1998
+***************
+*** 1437,1443 ****
+  		return;
+  #else
+  		FILE*	pnmscale;
+! 		char*	tmpfile = tmpnam((char*)0);
+  		char	command[1024];
+  		register byte* redsrc;
+  		register byte* greensrc;
+--- 1437,1443 ----
+  		return;
+  #else
+  		FILE*	pnmscale;
+! 		char*	tmpfile = strdup("/tmp/ami.XXXXXXXX");
+  		char	command[1024];
+  		register byte* redsrc;
+  		register byte* greensrc;
+***************
+*** 1448,1459 ****
+  		pixval maxval;
+  		pixel* row;
+  		pixel* rowp;
+  
+  #if (defined(AMIGA) || defined(VMS))
+                  char ami_tmpfile[L_tmpnam];
+                  int ami_result;
+!                 tmpnam(ami_tmpfile);
+!                 if (!(pnmscale = fopen(ami_tmpfile, "w")))
+                          pm_error("cannot create temporary file '%s'", ami_tmpfile);
+  #else /* AMIGA or VMS */
+  		sprintf(command, "pnmscale -xsize %d -ysize %d > %s",
+--- 1448,1461 ----
+  		pixval maxval;
+  		pixel* row;
+  		pixel* rowp;
++ 		int fd;
+  
+  #if (defined(AMIGA) || defined(VMS))
+                  char ami_tmpfile[L_tmpnam];
+                  int ami_result;
+! 		strcpy(ami_tmpfile, "/tmp/ami.XXXXXXXX");
+!                 fd = mkstemp(ami_tmpfile);
+!                 if (!(pnmscale = fdopen(fd, "w")))
+                          pm_error("cannot create temporary file '%s'", ami_tmpfile);
+  #else /* AMIGA or VMS */
+  		sprintf(command, "pnmscale -xsize %d -ysize %d > %s",
+***************
+*** 1526,1531 ****
+--- 1528,1534 ----
+                      unlink(ami_tmpfile);
+                      pm_perror("write error");
+                  }
++ 		close(mkstemp(tmpfile));
+                  sprintf(command, "pnmscale -xsize %d -ysize %d %s > %s",
+                          rectwidth(&clipdst), rectheight(&clipdst), ami_tmpfile, tmpfile);
+                  pm_message("running 'pnmscale -xsize %d -ysize %d' on a %d x %d image",
