@@ -1,5 +1,6 @@
---- map.h.orig	Wed Apr  3 16:58:52 1996
-+++ map.h	Sat Oct  2 18:26:55 1999
+$OpenBSD: patch-map_h,v 1.1 2002/10/06 00:49:03 naddy Exp $
+--- map.h.orig	Wed Apr  3 23:58:52 1996
++++ map.h	Sun Oct  6 00:55:01 2002
 @@ -38,14 +38,14 @@
  #define HIT_MASK       (CORE | U_MASK | R_MASK | D_MASK | L_MASK)
  

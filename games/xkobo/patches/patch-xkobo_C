@@ -1,0 +1,28 @@
+$OpenBSD: patch-xkobo_C,v 1.1 2002/10/06 00:49:03 naddy Exp $
+--- xkobo.C.orig	Fri Jun 14 19:27:27 1996
++++ xkobo.C	Sun Oct  6 01:00:38 2002
+@@ -33,6 +33,7 @@ extern "C"{
+ #include "xkobo.h"
+ #include "config.h"
+ #include "tiff.h"
++#include "radar.h"
+ #include "screen.h"
+ #include "manage.h"
+ #include "score.h"
+@@ -51,7 +52,7 @@ int             cheat_mode;
+ 
+ static int      signal_delivered = 1;
+ 
+-static void sig_handle(...)
++static void sig_handle(int)
+ {
+     signal_delivered = 1;
+ }
+@@ -228,6 +229,7 @@ int main(int argc, char *argv[])
+     
+     rand_num.init();
+     manage.init();
++    radar.prepare();
+     
+     memset(&sig_act, 0, sizeof(sig_act));
+     sig_act.sa_handler = sig_handle;

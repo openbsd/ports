@@ -1,6 +1,7 @@
---- file.C.orig	Thu Jan  9 21:17:36 1997
-+++ file.C	Sat Oct  2 18:26:56 1999
-@@ -42,7 +42,7 @@
+$OpenBSD: patch-file_C,v 1.1 2002/10/06 00:49:03 naddy Exp $
+--- file.C.orig	Fri Jan 10 03:17:36 1997
++++ file.C	Sun Oct  6 00:55:01 2002
+@@ -42,7 +42,7 @@ int load_block(char *file_name, void *t,
              ret = -2;
              break;
          }
@@ -9,7 +10,7 @@
          len -= i;
      } while (len > 0);
      for (;;){
-@@ -68,7 +68,7 @@
+@@ -68,7 +68,7 @@ int save_block(char *file_name, void *t,
              ret = -2;
              break;
          }
