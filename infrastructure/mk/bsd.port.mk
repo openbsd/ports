@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.157 1999/12/08 17:00:15 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.158 1999/12/08 17:11:09 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -490,21 +490,24 @@ LIB_DEPENDS+=		Xm.:${PORTSDIR}/x11/lesstif
 .include "${PORTSDIR}/../Makefile.inc"
 .endif
 
-EXTRACT_COOKIE?=	${WRKDIR}/.extract_done
-PATCH_COOKIE?=		${WRKDIR}/.patch_done
+_EXTRACT_COOKIE=	${WRKDIR}/.extract_done
+_PATCH_COOKIE=		${WRKDIR}/.patch_done
 .if defined(SEPARATE_BUILD)
-CONFIGURE_COOKIE?=	${WRKBUILD}/.configure_done
-INSTALL_PRE_COOKIE?=${WRKBUILD}/.install_started
-INSTALL_COOKIE?=	${WRKBUILD}/.install_done
-BUILD_COOKIE?=		${WRKBUILD}/.build_done
-PACKAGE_COOKIE?=	${WRKBUILD}/.package_done
+_CONFIGURE_COOKIE=	${WRKBUILD}/.configure_done
+_INSTALL_PRE_COOKIE=${WRKBUILD}/.install_started
+_INSTALL_COOKIE=	${WRKBUILD}/.install_done
+_BUILD_COOKIE=		${WRKBUILD}/.build_done
+_PACKAGE_COOKIE=	${WRKBUILD}/.package_done
 .else
-CONFIGURE_COOKIE?=	${WRKDIR}/.configure_done
-INSTALL_PRE_COOKIE?=${WRKDIR}/.install_started
-INSTALL_COOKIE?=	${WRKDIR}/.install_done
-BUILD_COOKIE?=		${WRKDIR}/.build_done
-PACKAGE_COOKIE?=	${WRKDIR}/.package_done
+_CONFIGURE_COOKIE=	${WRKDIR}/.configure_done
+_INSTALL_PRE_COOKIE=${WRKDIR}/.install_started
+_INSTALL_COOKIE=	${WRKDIR}/.install_done
+_BUILD_COOKIE=		${WRKDIR}/.build_done
+_PACKAGE_COOKIE=	${WRKDIR}/.package_done
 .endif
+_ALL_COOKIES=${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
+${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_PACKAGE_COOKIE}
+
 _MAKE_COOKIE=touch -f
 
 # Miscellaneous overridable commands:
@@ -1155,7 +1158,7 @@ checksum: fetch
 # Disable extract
 .if defined(NO_EXTRACT) && !target(extract)
 extract: 
-	@${_MAKE_COOKIE} ${EXTRACT_COOKIE}
+	@${_MAKE_COOKIE} ${_EXTRACT_COOKIE}
 checksum: fetch 
 	@${DO_NADA}
 makesum addsum: fetch-all
@@ -1165,25 +1168,25 @@ makesum addsum: fetch-all
 # Disable patch
 .if defined(NO_PATCH) && !target(patch)
 patch: extract
-	@${_MAKE_COOKIE} ${PATCH_COOKIE}
+	@${_MAKE_COOKIE} ${_PATCH_COOKIE}
 .endif
 
 # Disable configure
 .if defined(NO_CONFIGURE) && !target(configure)
 configure: patch
-	@${_MAKE_COOKIE} ${CONFIGURE_COOKIE}
+	@${_MAKE_COOKIE} ${_CONFIGURE_COOKIE}
 .endif
 
 # Disable build
 .if defined(NO_BUILD) && !target(build)
 build: configure
-	@${_MAKE_COOKIE} ${BUILD_COOKIE}
+	@${_MAKE_COOKIE} ${_BUILD_COOKIE}
 .endif
 
 # Disable install
 .if defined(NO_INSTALL) && !target(install)
 install: build
-	@${_MAKE_COOKIE} ${INSTALL_COOKIE}
+	@${_MAKE_COOKIE} ${_INSTALL_COOKIE}
 .endif
 
 # Disable package
@@ -1557,7 +1560,7 @@ _PORT_USE: .USE
 		${ECHO_MSG} "Become root and try again to ensure correct permissions."; \
 	fi
 .endif
-	@${_MAKE_COOKIE} ${INSTALL_PRE_COOKIE}
+	@${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
 .endif
 	@cd ${.CURDIR} && make ${.TARGET:S/^real-/pre-/}
 	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/pre-/} ]; then \
@@ -1597,25 +1600,25 @@ _PORT_USE: .USE
 	@cd ${.CURDIR} && make fake-pkg
 .endif
 .if make(real-extract)
-	@${_MAKE_COOKIE} ${EXTRACT_COOKIE}
+	@${_MAKE_COOKIE} ${_EXTRACT_COOKIE}
 .endif
 .if make(real-patch) && !defined(PATCH_CHECK_ONLY)
 .if defined(USE_AUTOCONF)
 	@cd ${AUTOCONF_DIR} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 .endif
-	@${_MAKE_COOKIE} ${PATCH_COOKIE}
+	@${_MAKE_COOKIE} ${_PATCH_COOKIE}
 .endif
 .if make(real-configure)
-	@${_MAKE_COOKIE} ${CONFIGURE_COOKIE}
+	@${_MAKE_COOKIE} ${_CONFIGURE_COOKIE}
 .endif
 .if make(real-install)
-	@${_MAKE_COOKIE} ${INSTALL_COOKIE}
+	@${_MAKE_COOKIE} ${_INSTALL_COOKIE}
 .endif
 .if make(real-build)
-	@${_MAKE_COOKIE} ${BUILD_COOKIE}
+	@${_MAKE_COOKIE} ${_BUILD_COOKIE}
 .endif
 .if make(real-package) && !defined(PACKAGE_NOINSTALL)
-	@${_MAKE_COOKIE} ${PACKAGE_COOKIE}
+	@${_MAKE_COOKIE} ${_PACKAGE_COOKIE}
 .endif
 
 ################################################################
@@ -1638,40 +1641,40 @@ fetch-all:
 
 
 .if !target(extract)
-extract: ${EXTRACT_COOKIE}
+extract: ${_EXTRACT_COOKIE}
 .endif
 
 .if !target(patch)
-patch: extract ${PATCH_COOKIE}
+patch: extract ${_PATCH_COOKIE}
 .endif
 
 .if !target(configure)
-configure: patch ${CONFIGURE_COOKIE}
+configure: patch ${_CONFIGURE_COOKIE}
 .endif
 
 .if !target(build)
-build: configure ${BUILD_COOKIE}
+build: configure ${_BUILD_COOKIE}
 .endif
 
 .if !target(install)
-install: build ${INSTALL_COOKIE}
+install: build ${_INSTALL_COOKIE}
 .endif
 
 .if !target(package)
-package: install ${PACKAGE_COOKIE}
+package: install ${_PACKAGE_COOKIE}
 .endif
 
-${EXTRACT_COOKIE}: 
+${_EXTRACT_COOKIE}: 
 	@cd ${.CURDIR} && make checksum real-extract
-${PATCH_COOKIE}:
+${_PATCH_COOKIE}:
 	@cd ${.CURDIR} && make real-patch
-${CONFIGURE_COOKIE}:
+${_CONFIGURE_COOKIE}:
 	@cd ${.CURDIR} && make real-configure
-${BUILD_COOKIE}:
+${_BUILD_COOKIE}:
 	@cd ${.CURDIR} && make real-build
-${INSTALL_COOKIE}:
+${_INSTALL_COOKIE}:
 	@cd ${.CURDIR} && make real-install
-${PACKAGE_COOKIE}:
+${_PACKAGE_COOKIE}:
 	@cd ${.CURDIR} && make real-package
 
 # And call the macros
@@ -1721,7 +1724,7 @@ checkpatch:
 
 .if !target(reinstall)
 reinstall:
-	@rm -f ${INSTALL_PRE_COOKIE} ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
+	@rm -f ${_INSTALL_PRE_COOKIE} ${_INSTALL_COOKIE} ${_PACKAGE_COOKIE}
 	@DEPENDS_TARGET=${DEPENDS_TARGET} make install
 .endif
 
@@ -1733,7 +1736,7 @@ reinstall:
 uninstall deinstall:
 	@${ECHO_MSG} "===> Deinstalling for ${PKGNAME}"
 	@${PKG_DELETE} -f ${PKGNAME}
-	@rm -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
+	@rm -f ${_INSTALL_COOKIE} ${_PACKAGE_COOKIE}
 .endif
 
 
@@ -1768,7 +1771,7 @@ clean: pre-clean
 	fi
 .endif
 .else
-	@rm -f ${WRKDIR}/.*_started ${WRKDIR}/.*_done
+	@rm -f ${_ALL_COOKIES}
 .endif
 .endif
 
@@ -1964,7 +1967,7 @@ checksum: fetch
 .if !target(plist)
 plist: install
 	@PREFIX=${PREFIX} LDCONFIG="${LDCONFIG}" MTREE_FILE=${MTREE_FILE} \
-	INSTALL_PRE_COOKIE=${INSTALL_PRE_COOKIE} \
+	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
 	perl ${PORTSDIR}/infrastructure/install/make-plist > ${PLIST}-auto
 .endif
 
@@ -2005,7 +2008,7 @@ package-path:
 repackage: pre-repackage package
 
 pre-repackage:
-	@rm -f ${PACKAGE_COOKIE}
+	@rm -f ${_PACKAGE_COOKIE}
 .endif
 
 # Build a package but don't check the cookie for installation, also don't
