@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ljtypes_c,v 1.1 2003/03/01 05:11:24 pvalchev Exp $
+--- src/ljtypes.c.orig	Fri Feb 28 20:02:31 2003
++++ src/ljtypes.c	Fri Feb 28 20:03:02 2003
+@@ -662,7 +662,7 @@ entry_from_user_editor(const char *filen
+ 		gchar *editor =
+ 			(getenv("VISUAL") ? getenv("VISUAL") :
+ 			 getenv("EDITOR") ? getenv("EDITOR") : "vi");
+-		execlp(editor, editor, filename, NULL);
++		execlp(editor, editor, filename, (void *)NULL);
+ 		_exit(0);
+ 	}
+ 

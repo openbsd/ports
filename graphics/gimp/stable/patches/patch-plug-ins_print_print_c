@@ -1,0 +1,12 @@
+$OpenBSD: patch-plug-ins_print_print_c,v 1.1 2003/03/01 05:11:23 pvalchev Exp $
+--- plug-ins/print/print.c.orig	Fri Feb 28 19:57:52 2003
++++ plug-ins/print/print.c	Fri Feb 28 19:58:03 2003
+@@ -571,7 +571,7 @@ run (char   *name,		/* I - Name of print
+ 	      dup2 (pipefd[0], 0);
+ 	      close (pipefd[0]);
+ 	      close (pipefd[1]);
+-	      execl("/bin/sh", "/bin/sh", "-c", vars.output_to, NULL);
++	      execl("/bin/sh", "/bin/sh", "-c", vars.output_to, (void *)NULL);
+ 	      /* NOTREACHED */
+ 	      exit (1);
+ 	    } else {
