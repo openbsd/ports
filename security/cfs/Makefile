@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2000/04/09 17:37:56 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/04/30 09:20:14 kevlo Exp $
 
 DISTNAME=	cfs-1.3.3
 CATEGORIES=	security
-FAKE=No
 MASTER_SITES=	http://the.wiretapped.net/security/cryptography/filesystems/ \
 		ftp://utopia.hacktic.nl/pub/crypto/disk/ \
 		ftp://ftp.informatik.uni-hamburg.de/pub/virus/crypt/disk/
@@ -17,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+FAKE=		Yes
 
 ALL_TARGET=	cfs
 
