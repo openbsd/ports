@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.26 2000/06/18 23:35:03 turan Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.27 2000/06/24 14:12:33 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -82,10 +82,10 @@ _SUBDIRUSE: .USE
 			continue; \
 		fi; \
 		${ECHO_MSG} "===> ${DIRPRFX}$${edir}$$display"; \
-		if ${MAKE} ${.TARGET:realinstall=install} \
+		if env  $$varname="$$flavor" \
 			DIRPRFX=${DIRPRFX}$$edir/ \
 			RECURSIVE_FETCH_LIST=${RECURSIVE_FETCH_LIST} \
-			$$varname="$$flavor"; \
+			${MAKE} ${.TARGET:realinstall=install}; \
 		then :; else ${REPORT_PROBLEM}; fi; \
 	done
 
