@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.26 2002/04/19 14:43:36 pvalchev Exp $
 
 COMMENT=	"network security scanner"
 
@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=--localstatedir=/var --enable-gmp=${LOCALBASE} \
 LIB_DEPENDS=	gmp.4.1::devel/gmp
 
 .if empty(FLAVOR:L:Mno_x11)
-LIB_DEPENDS+=	gtk.1.2::x11/gtk+
+LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+
 .else
 CONFIGURE_ARGS+=--disable-gtk
 .endif

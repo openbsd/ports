@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/02/15 19:19:33 nino Exp $
+# $OpenBSD: Makefile,v 1.14 2002/04/19 14:43:36 pvalchev Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
@@ -17,7 +17,8 @@ PATCH_LIST=		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
 
 LIB_DEPENDS=		Imlib,gdk_imlib.19::graphics/imlib \
 			esd.2::audio/esound \
-			ORBit.5,ORBitutil.5,IIOP.5,ORBitCosNaming.5::devel/ORBit
+			ORBit.5,ORBitutil.5,IIOP.5,ORBitCosNaming.5::devel/ORBit \
+			gdk.1.2::x11/gtk+
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

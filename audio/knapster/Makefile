@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/11/11 13:57:32 heko Exp $
+# $OpenBSD: Makefile,v 1.13 2002/04/19 14:43:36 pvalchev Exp $
 
 COMMENT=		"Napster client for KDE 2"
 VERSION=		0.3
@@ -18,7 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	knapster
 
-LIB_DEPENDS=		kdecore.3::x11/kde/libs2
+LIB_DEPENDS=		kdecore.3::x11/kde/libs2 \
+			gdk.1.2::x11/gtk+
 BUILD_DEPENDS=		::x11/qt2-designer
 
 USE_GMAKE=		Yes
