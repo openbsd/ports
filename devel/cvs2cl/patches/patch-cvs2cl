@@ -1,6 +1,6 @@
-$OpenBSD: patch-cvs2cl_pl,v 1.1.1.1 2000/07/25 20:49:45 danh Exp $
---- cvs2cl.pl.orig	Sun Jul 23 21:35:59 2000
-+++ cvs2cl.pl	Sun Jul 23 21:36:10 2000
+$OpenBSD: patch-cvs2cl,v 1.1 2000/12/05 12:53:40 avsm Exp $
+--- cvs2cl.orig	Thu Nov 23 15:16:54 2000
++++ cvs2cl	Thu Nov 23 15:17:21 2000
 @@ -1,6 +1,4 @@
 -#!/bin/sh
 -exec perl -w -x $0 ${1+"$@"} # -*- mode: perl; perl-indent-level: 2; -*-

@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/09 00:18:48 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2000/12/05 12:53:40 avsm Exp $
 # $FreeBSD: ports/devel/cvs2cl/Makefile,v 1.8 2000/07/09 03:15:07 knu Exp $
 
-DISTNAME=	cvs2cl-2.29
-CATEGORIES=     devel
-NEED_VERSION=	1.338
+DISTNAME=	cvs2cl-2.30
+DISTFILES=	2.30
+DIST_SUBDIR=	cvs2cl
 
-HOMEPAGE=	http://www.red-bean.com/~kfogel/cvs2cl.shtml
+CATEGORIES=     devel
+NEED_VERSION=	1.340
+
+HOMEPAGE=	http://www.red-bean.com/cvs2cl/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # (license is GPL)
@@ -14,13 +17,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
-
-SEPARATE_BUILD=	concurrent
+MASTER_SITES=	http://www.red-bean.com/cvs2cl/get-rev.cgi?revision=
+EXTRACT_ONLY=
 NO_BUILD=	Yes
-WRKDIST=	${WRKDIR}/cvs2cl
+SEPARATE_BUILD=	concurrent
+
+DIST_LOC=	${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
+FETCH_BEFORE_ARGS= -o ${DIST_LOC}
+
+do-extract:
+	${INSTALL_DATA_DIR} ${WRKSRC}
+	${INSTALL_SCRIPT} ${DIST_LOC} ${WRKSRC}/cvs2cl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIST}/cvs2cl.pl ${PREFIX}/bin/cvs2cl
+	${INSTALL_SCRIPT} ${DIST_LOC} ${PREFIX}/bin/cvs2cl
 
 .include <bsd.port.mk>
