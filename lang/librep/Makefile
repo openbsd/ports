@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/06 01:27:59 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2001/06/18 15:21:31 danh Exp $
 # Original from: John Harper <jsh@users.sourceforge.net>
 
 COMMENT=	"Emacs Lisp-like runtime library"
@@ -31,7 +31,7 @@ SUBST_VARS=	OPSYS_VER VERSION
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static
-CONFIGURE_ARGS+= --without-gmp --without-readline
+CONFIGURE_ARGS+= --without-gmp
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
