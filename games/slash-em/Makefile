@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/04 11:14:53 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/05 08:40:23 espie Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Hard"
-DISTNAME=	se006e4f4
+DISTNAME=	se006e4f5
 CATEGORIES=	games
 NEED_VERSION=	1.363
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-PKGNAME=slash-em-3.3.1.6e4f4
-WRKDIST=${WRKDIR}/slashem-0.0.6E4F4
+PKGNAME=slash-em-3.3.1.6e4f5
+WRKDIST=${WRKDIR}/slashem-0.0.6E4F5
 
 FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
 
