@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/10 15:00:53 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/17 00:42:55 naddy Exp $
 
 COMMENT=            "Gtk bindings for Python"
 COMMENT-gnome=      "Gtk and Gnome bindings for Python"
@@ -54,7 +54,7 @@ BUILD_DEPENDS+= ${RUN_DEPENDS}
                 panel_applet::x11/gnome/core
 .else
   PATCH_STRIP=  -p1
-  PATCH_LIST=   patch-pygtk_configure patch-pygtk_gtkmodule_c
+  PATCH_LIST=   patch-pygtk_configure
 
   LIB_DEPENDS+= glade.4::devel/libglade
   WRKDIST=      ${WRKDIR}/${DISTNAME}/pygtk
