@@ -1,14 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2004/10/05 22:22:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2004/10/06 01:13:12 naddy Exp $
 
 COMMENT=	"shell-like command line ftp and sftp client"
 
 DISTNAME=	lftp-3.0.9
 CATEGORIES=	net
-MASTER_SITES=	http://the.wiretapped.net/mirrors/lftp/ \
-		http://the.wiretapped.net/mirrors/lftp/old/ \
-		ftp://ftp.ayamura.org/pub/lftp/ \
-		ftp://ftp.ayamura.org/pub/lftp/old/ \
-		ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
+MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
 		ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/old/ \
 		http://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
 		http://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/old/
