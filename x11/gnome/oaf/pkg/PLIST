@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/05/29 14:32:55 nino Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/10/16 16:55:10 marcm Exp $
 bin/oaf-client
 bin/oaf-config
 bin/oaf-empty-server
@@ -129,3 +129,6 @@ share/oaf/empty.oafinfo
 @dirrm share/examples/oaf
 @comment @dirrm share/aclocal
 @dirrm include/liboaf
+@cwd ${SYSCONFDIR}
+@extra oaf/oaf-config.xml
+@extra oaf/

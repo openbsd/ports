@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/06/23 18:57:07 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/10/16 16:55:10 marcm Exp $
 @pkgcfl libgtop-*
 bin/dns-helper
 bin/gconfigger
@@ -632,3 +632,11 @@ share/type-convert/type.convert
 @dirrm include/gnome-1.0/libart_lgpl
 @dirrm include/gnome-1.0/gtk-xmhtml
 @dirrm include/gnome-1.0
+@cwd ${SYSCONFDIR}
+@extra mime-magic
+@extra mime-magic.dat
+@extra paper.config
+@extra sound/events/gnome.soundlist
+@extra sound/events/gtk-events.soundlist
+@extra sound/events/
+@extra sound/

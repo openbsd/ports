@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.4 2002/03/26 18:39:12 nino Exp $
+# $OpenBSD: DEINSTALL,v 1.5 2003/10/16 16:55:10 marcm Exp $
 #
 
 set -e
@@ -9,6 +9,9 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 FILES='
 oaf/oaf-config.xml
 '
+
+do_notice()
+{
     echo
     echo "+--------------- $1"
     echo "| To really remove $1 from your system you should also"
@@ -24,5 +27,27 @@ oaf/oaf-config.xml
     done
     echo "+--------------- $1"
     echo
+}
+
+# Verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname DEINSTALL" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    DEINSTALL)
+	if [ "$PKG_DELETE_EXTRA" != Yes ]; then
+	    do_notice "$1"
+	fi
+	;;
+    *)
+	echo "usage: $0 distname DEINSTALL" >&2
+	exit 1
+	;;
+esac
 
 exit 0
