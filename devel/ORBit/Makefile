@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2001/06/27 14:54:53 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2001/09/26 03:08:12 pvalchev Exp $
 
 COMMENT=	"high-performance CORBA ORB with support for the C language"
 
 DISTNAME=	ORBit-0.5.8
 CATEGORIES=	devel
-NEED_VERSION=	1.413
+NEED_VERSION=	1.460
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/ORBit
 
@@ -26,6 +26,8 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-indent
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/popt ${WRKSRC}/libIDL
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/orbit
