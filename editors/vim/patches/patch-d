@@ -1,0 +1,12 @@
+--- Makefile.old	Tue Jun  9 00:24:20 1998
++++ Makefile	Tue Jun  9 00:24:34 1998
+@@ -1041,7 +1041,8 @@
+ # If you want to keep an older version, rename it before running "make
+ # install".
+ #
+-install: installvim installtools
++#install: installvim installtools
++install: installvim
+ 
+ installvim: installvimbin installvimhelp installlinks installhelplinks installmacros
+ 

@@ -1,0 +1,83 @@
+--- Makefile.orig	Wed Feb 18 13:53:04 1998
++++ Makefile	Sun Mar 22 14:11:53 1998
+@@ -268,6 +268,7 @@
+ 
+ ### Extra configure arguments - just put anything here, just an example
+ #CONF_ARGS = --exec-prefix=/usr
++CONF_ARGS = --prefix=$(PREFIX)
+ 
+ ### For creating a plain Vim without any X11 related fancies use this one:
+ ### (otherwise Vim configure will try to include xterm titlebar access)
+@@ -1066,56 +1067,56 @@
+ installlinks: $(GUI_TARGETS) $(BINDIR)/$(EXTARGET) $(BINDIR)/$(VIEWTARGET) $(BINDIR)/$(RVIMTARGET) $(BINDIR)/$(RVIEWTARGET)
+ 
+ $(BINDIR)/$(EXTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(EXTARGET)
++	#cd $(BINDIR); ln -s $(VIMTARGET) $(EXTARGET)
+ 
+ $(BINDIR)/$(VIEWTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(VIEWTARGET)
++	#cd $(BINDIR); ln -s $(VIMTARGET) $(VIEWTARGET)
+ 
+ $(BINDIR)/$(GVIMTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(GVIMTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(GVIMTARGET)
+ 
+ $(BINDIR)/$(GVIEWTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(GVIEWTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(GVIEWTARGET)
+ 
+ $(BINDIR)/$(RVIMTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(RVIMTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(RVIMTARGET)
+ 
+ $(BINDIR)/$(RVIEWTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(RVIEWTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(RVIEWTARGET)
+ 
+ $(BINDIR)/$(RGVIMTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(RGVIMTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(RGVIMTARGET)
+ 
+ $(BINDIR)/$(RGVIEWTARGET):
+-	cd $(BINDIR); ln -s $(VIMTARGET) $(RGVIEWTARGET)
++	cd $(BINDIR); ln -sf $(VIMTARGET) $(RGVIEWTARGET)
+ 
+ # create links for the manual pages with various names to vim.  This is only
+ # done when the links (or manpages with the same name) don't exist yet.
+ installhelplinks: $(GUI_MAN_TARGETS) $(MANSUBDIR)/$(EXTARGET).1 $(MANSUBDIR)/$(VIEWTARGET).1 $(MANSUBDIR)/$(RVIMTARGET).1 $(MANSUBDIR)/$(RVIEWTARGET).1
+ 
+ $(MANSUBDIR)/$(EXTARGET).1:
+-	cd $(MANSUBDIR); ln -s $(VIMTARGET).1 $(EXTARGET).1
++#	cd $(MANSUBDIR); ln -s $(VIMTARGET).1 $(EXTARGET).1
+ 
+ $(MANSUBDIR)/$(VIEWTARGET).1:
+-	cd $(MANSUBDIR); ln -s $(VIMTARGET).1 $(VIEWTARGET).1
++#	cd $(MANSUBDIR); ln -s $(VIMTARGET).1 $(VIEWTARGET).1
+ 
+ $(MANSUBDIR)/$(GVIMTARGET).1:
+-	cd $(MANSUBDIR); ln -s $(VIMTARGET).1 $(GVIMTARGET).1
++#	cd $(MANSUBDIR); ln -s $(VIMTARGET).1 $(GVIMTARGET).1
+ 
+ $(MANSUBDIR)/$(GVIEWTARGET).1:
+-	cd $(MANSUBDIR); ln -s $(VIMTARGET).1 $(GVIEWTARGET).1
++#	cd $(MANSUBDIR); ln -s $(VIMTARGET).1 $(GVIEWTARGET).1
+ 
+ $(MANSUBDIR)/$(RVIMTARGET).1:
+-	cd $(MANSUBDIR); ln -s $(VIMTARGET).1 $(RVIMTARGET).1
++#	cd $(MANSUBDIR); ln -s $(VIMTARGET).1 $(RVIMTARGET).1
+ 
+ $(MANSUBDIR)/$(RVIEWTARGET).1:
+-	cd $(MANSUBDIR); ln -s $(VIMTARGET).1 $(RVIEWTARGET).1
++#	cd $(MANSUBDIR); ln -s $(VIMTARGET).1 $(RVIEWTARGET).1
+ 
+ $(MANSUBDIR)/$(RGVIMTARGET).1:
+-	cd $(MANSUBDIR); ln -s $(VIMTARGET).1 $(RGVIMTARGET).1
++#	cd $(MANSUBDIR); ln -s $(VIMTARGET).1 $(RGVIMTARGET).1
+ 
+ $(MANSUBDIR)/$(RGVIEWTARGET).1:
+-	cd $(MANSUBDIR); ln -s $(VIMTARGET).1 $(RGVIEWTARGET).1
++#	cd $(MANSUBDIR); ln -s $(VIMTARGET).1 $(RGVIEWTARGET).1
+ 
+ uninstall:
+ 	-rm -f $(BINDIR)/$(VIMTARGET)$(SUFFIX)
