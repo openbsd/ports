@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2001/09/23 05:32:18 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2001/12/02 22:35:26 brad Exp $
 # $FreeBSD: Makefile,v 1.4 1998/11/18 15:09:35 vanilla Exp $
 
 COMMENT=	"GNU gettext"
 
 DISTNAME=	gettext-0.10.40
 CATEGORIES=	devel
-NEED_VERSION=	1.460
+NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gettext
 
@@ -22,23 +22,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static
+CONFIGURE_ARGS+= --enable-static \
+		 --with-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-
-pre-extract:
-	@if [ -f ${LOCALBASE}/lib/libintl.so.?.? ]; then \
-	   echo "+-------------------"; \
-	   echo "| ERROR: you MUST remove the existing gettext installation"; \
-	   echo "| before compiling this version. To fully remove run"; \
-	   echo "| these commands as user root"; \
-	   echo "|"; \
-	   echo "|      pkg_delete -f `pkg_info -e 'gettext-*'`"; \
-	   echo "|      ldconfig -R"; \
-	   echo "|"; \
-	   echo "+-------------------"; \
-	   exit 1; \
-	fi
+		LDFLAGS="-L${WRKBUILD}/intl/.libs -L${LOCALBASE}/lib"
 
 post-extract:
 	@rm -f ${WRKSRC}/doc/gettext.info*
@@ -46,5 +33,8 @@ post-extract:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/po-mode.el \
 		${PREFIX}/share/gettext/po-mode.el
+
+do-regress:
+	@cd ${WRKBUILD}/tests && ${MAKE_PROGRAM} check-TESTS
 
 .include <bsd.port.mk>
