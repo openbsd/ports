@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2004/08/02 08:42:30 xsa Exp $
+# $OpenBSD: Makefile,v 1.142 2004/11/08 16:10:40 naddy Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -129,8 +129,6 @@
      SUBDIR += swatch
      SUBDIR += tempwatch
      SUBDIR += towitoko
-     SUBDIR += uvscan
-     SUBDIR += uvscan_dat
      SUBDIR += vomit
      SUBDIR += vpnc
      SUBDIR += whisker

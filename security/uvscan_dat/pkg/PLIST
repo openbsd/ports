@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/01/09 11:26:38 sturm Exp $
-libexec/uvscan/clean.dat
-libexec/uvscan/internet.dat
-libexec/uvscan/names.dat
-libexec/uvscan/scan.dat
-sbin/uvscan_update
-share/doc/uvscan/readme-dat-${VERSION}.txt
-@dirrm share/doc/uvscan
-@dirrm libexec/uvscan
