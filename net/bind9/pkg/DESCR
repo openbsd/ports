@@ -1,8 +1,0 @@
-BIND version 9 libraries, include files and API manual pages
-
-Flavours:
-
- static     Do not include shared libraries
- threads    Build a multi-threaded named
-
-WWW: ${HOMEPAGE}
