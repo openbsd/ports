@@ -1,0 +1,6 @@
+Before Motif came along, OPEN LOOK was the standard look and feel for X,
+for a thousand generations of... Sorry, wrong plot. For a long time.
+XView was the standard library, and TextEdit the standard Text Editor.
+Here is an OpenBSD port of TextEdit based upon Sun's open source distribution
+of The XView Toolkit. For more information on OPEN LOOK, refer to the
+OPEN LOOK CD-ROM, at http://www.darwinsys.com/olcd.

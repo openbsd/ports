@@ -1,0 +1,43 @@
+--- textedit.man.orig	Tue Sep 15 15:57:01 1998
++++ textedit.man	Tue Sep 15 15:59:39 1998
+@@ -7,7 +7,7 @@
+ .SH SYNOPSIS
+ .B textedit
+ [
+-.I generic-tool-arguments
++.I generic-xview-arguments
+ ] 
+ [
+ .B "\-Ea on\|" |\| off 
+@@ -95,10 +95,8 @@
+ ]
+ .I filename 
+ .SH AVAILABILITY
+-This command is available with the OpenWindows 
+-environment.
+-For information about installing OpenWindows, refer to the
+-.I OpenWindows Installation and Start-Up Guide.
++This command is availalbe on OpenBSD as the ports/package named 
++editors/textedit.
+ .SH DESCRIPTION
+ .IX tools textedit "" "\fLtextedit\fR"
+ .LP
+@@ -640,6 +638,13 @@
+ usually due to a missing file or running out of swap space
+ .PD
+ .RE
++.SH HISTORY
++The TextEdit sources are copyright by Sun but were distributed in
++their open source distributions of The XView Toolkit, which included
++permission to copy them. The version in the OpenBSD ports/editors/textedit
++is that found on Darwin Open Systems' 1995
++CD-ROM \fIThe XView and OPEN LOOK CD-ROM\fP (see 
++http://www.darwinsys.com/olcd).
+ .SH BUGS
+ Multi-click to change the current selection does not work for
+ .BR "Adjust Selection" .
+@@ -647,4 +652,3 @@
+ Handling of long lines is incorrect in certain scrolling situations.
+ .LP
+ There is no way to replay any editing sequence except the most recent.
+-.LP

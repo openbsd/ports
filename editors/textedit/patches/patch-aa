@@ -1,0 +1,61 @@
+--- textedit.c.orig	Tue Sep 15 15:37:56 1998
++++ textedit.c	Tue Sep 15 15:55:11 1998
+@@ -17,7 +17,7 @@
+ 
+ #include <fcntl.h>
+ #include <stdio.h>
+-#include <strings.h>
++#include <string.h>
+ #include <X11/X.h>
+ #include <xview/defaults.h>
+ #include <xview/font.h>
+@@ -31,19 +31,11 @@
+ #include <xview/sel_svc.h>
+ #include <xview/sel_attrs.h>
+ 
+-#ifdef ecd.help
++#ifdef ecd_help
+ #include <suntool/help.h>
+ #endif
+ 
+-/*
+- * The presence of this line caused textedit not to be built
+- * The function is already defined in the XView libraries
+-long	textsw_store_file();
+-*/
+-char	*getwd();
+-#ifndef __linux
+-char *sprintf();
+-#endif
++static void die(char *m1, char *m2, char *m3);
+ void	frame_cmdline_help();
+ static int		off();
+ static Notify_value	mysigproc();
+@@ -312,7 +304,8 @@
+ 	if (pass_on)
+ 	    (void)textsw_default_notify(textsw_local, attributes);
+ 	if (repaint) {
+-	    (void)sprintf(frame_label, "%s Text Editor - %s%s, dir; %s",
++	    (void)snprintf(frame_label, sizeof(frame_label),
++			"%s Text Editor - %s%s, dir; %s",
+ 		    (caps_lock_on) ? "[CAPS] " : "",
+ 		    current_filename,
+ 		    (was_read_only) ? " (read only)"
+@@ -521,7 +514,7 @@
+ 	    FRAME_LABEL,		"Text Editor",
+ 	    FRAME_SHOW_LABEL,		TRUE,
+ 	    FRAME_CMDLINE_HELP_PROC,	my_frame_help,
+-#ifdef ecd.help
++#ifdef ecd_help
+ 	    HELP_DATA,			"sunview:textedit",
+ #endif
+ 	    0);
+@@ -998,7 +991,7 @@
+ /*
+  * Misc. utilities
+  */
+-static
++static void
+ die(msg1, msg2, msg3)
+ 	char	*msg1, *msg2, *msg3;
+ {
