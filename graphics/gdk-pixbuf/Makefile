@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2002/05/13 23:31:24 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/05/26 17:18:10 brad Exp $
 
 COMMENT=	"GdkPixbuf graphics library"
 COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
 
-VERSION=	0.10.1
+VERSION=	0.17.0
 DISTNAME=	gdk-pixbuf-${VERSION}
-PKGNAME=	${DISTNAME}p1
-PKGNAME-gnome=	gdk-pixbuf-gnome-${VERSION}p1
+PKGNAME-gnome=	gdk-pixbuf-gnome-${VERSION}
 CATEGORIES=	graphics
-NEED_VERSION=	1.500
+NEED_VERSION=	1.525
 MASTER_SITES=	${MASTER_SITE_GNOME:=unstable/sources/gdk-pixbuf/}
 
 HOMEPAGE=	http://developer.gnome.org/arch/imaging/gdkpixbuf.html
@@ -20,17 +19,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
-		patch-*
-
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_NEW=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
 		 --disable-modules \
-		 --disable-mmx
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+		 --disable-mmx \
+		 --with-html-dir="${PREFIX}/share/html"
+CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 FLAVORS=	no_gnome
@@ -60,10 +57,5 @@ LIB_DEPENDS+=	gnome.36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs
 .if ${MULTI_PACKAGES:M-gnome}
 CONFIGURE_ARGS+= --with-gnome
 .endif
-
-pre-patch:
-	@find ${WRKSRC} -name "Makefile.in" | xargs perl -pi -e \
-		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
-		 s|\$$\(datadir\)/aclocal|\$$\(prefix\)/share/aclocal|g'
 
 .include <bsd.port.mk>

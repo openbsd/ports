@@ -1,7 +1,12 @@
-$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.5 2001/12/10 21:29:17 naddy Exp $
---- gdk-pixbuf/Makefile.in.orig	Sun Dec  9 19:39:10 2001
-+++ gdk-pixbuf/Makefile.in	Sun Dec  9 19:39:11 2001
-@@ -247,7 +247,7 @@ libgdk_pixbufincludedir = $(includedir)/
+--- gdk-pixbuf/Makefile.in.orig	Thu Apr 18 21:25:41 2002
++++ gdk-pixbuf/Makefile.in	Sun May 26 12:11:19 2002
+@@ -246,12 +246,12 @@ GDK_PIXBUF_LIBS = $(GLIB_LIBS) $(GTK_LIB
+ # The GdkPixBuf library
+ #
+ 
+-libgdk_pixbufincludedir = $(includedir)/gdk-pixbuf-1.0/gdk-pixbuf
++libgdk_pixbufincludedir = $(includedir)/gdk-pixbuf
+ 
  libgdk_pixbuf_la_SOURCES =  	gdk-pixbuf.c				gdk-pixbuf-animation.c			gdk-pixbuf-data.c			gdk-pixbuf-drawable.c			gdk-pixbuf-io.c				gdk-pixbuf-loader.c			gdk-pixbuf-render.c			gdk-pixbuf-scale.c			gdk-pixbuf-util.c			gdk-pixbuf-parse-color.c		$(extra_sources)
  
  
@@ -10,12 +15,12 @@ $OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.5 2001/12/10 21:29:17 naddy Exp $
  libgdk_pixbuf_la_LIBADD = pixops/libpixops.la
  
  #
-@@ -257,7 +257,7 @@ libgdk_pixbuf_la_LIBADD = pixops/libpixo
+@@ -261,7 +261,7 @@ libgdk_pixbuf_la_LIBADD = pixops/libpixo
  libgdk_pixbuf_xlib_la_SOURCES =  	gdk-pixbuf.c				gdk-pixbuf-xlib.c			gdk-pixbuf-animation.c			gdk-pixbuf-data.c			gdk-pixbuf-io.c				gdk-pixbuf-xlib-render.c		gdk-pixbuf-xlib-drawable.c		gdk-pixbuf-scale.c			gdk-pixbuf-util.c			gdk-pixbuf-xlibrgb.c			gdk-pixbuf-parse-color.c		$(extra_sources)
  
  
 -libgdk_pixbuf_xlib_la_LDFLAGS = -version-info 2:0:0 -export-dynamic $(GLIB_LIBS) $(X11_LIBS)
 +libgdk_pixbuf_xlib_la_LDFLAGS = -version-info 2:0:0 -export-dynamic $(GLIB_LIBS) $(X11_LIBS) $(LIBPNG) $(LIBJPEG) $(LIBTIFF)
- libgdk_pixbuf_xlib_la_LIBADD = pixops/libpixops.la
+ libgdk_pixbuf_xlib_la_LIBADD = pixops/libpixops.la libgdk_pixbuf.la $(GTK_LIBS)
  
  libgdk_pixbufinclude_HEADERS =  	gdk-pixbuf.h				gdk-pixbuf-loader.h			gdk-pixbuf-features.h			gdk-pixbuf-xlib.h			gdk-pixbuf-xlibrgb.h			$(CANVAS_PIXBUF_HEADERFILES)
