@@ -1,0 +1,15 @@
+$OpenBSD: patch-longlong_h,v 1.1 2004/02/26 22:50:54 pvalchev Exp $
+--- longlong.h.orig	2002-12-17 14:57:20.000000000 -0700
++++ longlong.h	2004-02-26 07:10:29.000000000 -0700
+@@ -715,8 +715,10 @@ extern UWtype __MPN(udiv_qrnnd) _PROTO (
+   } while (0)
+ #define count_trailing_zeros(count, x)					\
+   do {									\
++    UDItype __cbtmp;							\
+     ASSERT ((x) != 0);							\
+-    __asm__ ("bsfq %1,%0" : "=r" (count) : "rm" ((UDItype)(x)));	\
++    __asm__ ("bsfq %1,%0" : "=r" (__cbtmp) : "rm" ((UDItype)(x)));	\
++    (count) = __cbtmp;							\
+   } while (0)
+ #endif /* x86_64 */
+ 
