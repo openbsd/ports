@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-auto,v 1.1 2001/04/21 18:25:55 peter Exp $
-lib/libpgeasy.so.2.1
-lib/libpq++.so.3.1
-lib/libpq.so.2.1
-DYNLIBDIR(%D/lib)
