@@ -2,7 +2,7 @@
 
 # Sample script to use with fetch-makefile: fetch all distfiles
 
-# $OpenBSD: fetch-all,v 1.1 2000/03/04 17:58:32 espie Exp $
+# $OpenBSD: fetch-all,v 1.2 2000/03/27 02:16:48 espie Exp $
 #
 # Copyright (c) 2000 Marc Espie.
 # 
@@ -28,6 +28,7 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 dir=`dirname $1`
 file=`basename $1`
+mkdir -p $dir
 cd $dir
 for site in ${SITES}
 do
