@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/08 23:18:19 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/06/20 23:54:29 brad Exp $
 # $NetBSD: Makefile,v 1.4 1999/03/04 08:58:42 tron Exp $
 
 DISTNAME=	xtraceroute-0.8.14
@@ -11,8 +11,8 @@ MAINTAINER=	brad@openbsd.org
 
 HOMEPAGE=	http://www.dtek.chalmers.se/~d3august/xt/index.html
 
-LIB_DEPENDS=	MesaGL:${PORTSDIR}/graphics/MesaGL \
-		MesaGLU:${PORTSDIR}/graphics/MesaGL \
+LIB_DEPENDS=	MesaGL:${PORTSDIR}/graphics/Mesa \
+		MesaGLU:${PORTSDIR}/graphics/Mesa \
 		gtkgl:${PORTSDIR}/x11/gtkglarea \
 		intl:${PORTSDIR}/devel/gettext \
 		tiff:${PORTSDIR}/graphics/tiff34

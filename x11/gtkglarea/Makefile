@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/06/14 17:08:59 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/06/20 23:54:28 brad Exp $
 
 DISTNAME=	gtkglarea-1.2.1
 CATEGORIES=	x11 graphics
@@ -10,8 +10,8 @@ HOMEPAGE=	http://www.student.oulu.fi/~jlof/gtkglarea/
 
 MAINTAINER=	brad@openbsd.org
 
-LIB_DEPENDS=	MesaGL.3.0:${PORTSDIR}/graphics/MesaGL \
-		MesaGLU.3.0:${PORTSDIR}/graphics/MesaGL \
+LIB_DEPENDS=	MesaGL.3.0:${PORTSDIR}/graphics/Mesa \
+		MesaGLU.3.0:${PORTSDIR}/graphics/Mesa \
 		gtk.1.2:${PORTSDIR}/x11/gtk+
 
 USE_X11=	yes

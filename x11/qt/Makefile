@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 1999/06/13 03:44:49 brad Exp $
+# $OpenBSD: Makefile,v 1.23 1999/06/20 23:54:29 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.44
@@ -9,8 +9,8 @@ NEED_VERSION=	1.96
 
 MAINTAINER=	brad@openbsd.org
 
-LIB_DEPENDS=	MesaGL.3.0:${PORTSDIR}/graphics/MesaGL \
-		MesaGLU.3.0:${PORTSDIR}/graphics/MesaGL
+LIB_DEPENDS=	MesaGL.3.0:${PORTSDIR}/graphics/Mesa \
+		MesaGLU.3.0:${PORTSDIR}/graphics/Mesa
 
 USE_EGXX=	yes
 USE_GMAKE=	yes
