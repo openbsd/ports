@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: check-manpages,v 1.3 2004/03/04 17:48:29 espie Exp $
+# $OpenBSD: check-manpages,v 1.4 2004/11/13 11:49:48 espie Exp $
 #
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
@@ -50,7 +50,7 @@ for my $pkgname (@ARGV) {
 			$file->{name} = $n;
 			$n =~ m,^(.*/man)/(?:man.*?|cat.?)/,;
 			$mandirs{"$extract_dir$1"} = 1;
-			$file->{cwd} = $item->{cwd};
+			$file->{cwd} = $item->cwd();
 			$file->{destdir} = $extract_dir;
 			eval { $file->create(); };
 		}
