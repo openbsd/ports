@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2003/11/11 17:26:11 margarida Exp $
+--- configure.orig	2003-08-14 16:35:08.000000000 +0100
++++ configure	2003-11-03 22:21:50.000000000 +0000
+@@ -118,7 +118,7 @@ fi
+ 
+ echo
+ XDEFINES=""
+-XLIBS=""
++XLIBS="-lm"
+ XLIBPATHS=""
+ XIPATHS=""
+ 

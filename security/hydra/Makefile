@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2003/11/02 17:40:17 margarida Exp $
+# $OpenBSD: Makefile,v 1.10 2003/11/11 17:26:11 margarida Exp $
 
 COMMENT=		"parallelized login hacker"
 
-DISTNAME=		hydra-2.2
+DISTNAME=		hydra-2.4
 CATEGORIES=    		security
 
-HOMEPAGE=		http://www.thehackerschoice.com/
+HOMEPAGE=		http://www.thc.org/
 
 MASTER_SITES=		${HOMEPAGE}/releases/ \
 			${MASTER_SITE_PACKETSTORM:=groups/thc/}
@@ -21,10 +21,11 @@ PERMIT_DISTFILES_FTP=	Yes
 NO_REGRESS=		Yes
 
 CONFIGURE_STYLE=	gnu
-MAKE_FILE=		Makefile.hydra
+
+post-extract:
+		@chmod -R u+w ${WRKDIST}
 
 MAKE_FLAGS=		CC="${CC}" OPTS="${CFLAGS}"
-
 FAKE_FLAGS=		INSTALL="${WRKINST}${PREFIX}/bin"
 
 post-install:
