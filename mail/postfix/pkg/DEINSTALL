@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# Post-deinstallation cleanup of postfix.
+#
+# dugsong@monkey.org
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+
+if [ "$2" != "POST-DEINSTALL" ]; then exit 0 ; fi
+
+echo
+for file in /usr/sbin/sendmail /usr/bin/mailq /usr/bin/newaliases ; do
+   if [ -f ${file}-orig ]; then
+      echo "-> Restoring original $file"
+      mv ${file}-orig ${file}
+      echo
+   fi
+done
+
+perms=`ls -l /usr/sbin/sendmail | cut -f1 -d' '`
+if [ "$perms" != "-r-sr-xr-x" ]; then
+    echo "-> /usr/sbin/sendmail may need to be setuid root to function"
+    echo "   properly now. You may want to change its permissions manually."
+    echo
+fi
+
+if [ -d /etc/postfix ]; then
+    echo "-> /etc/postfix still exists - you may want to remove it manually."
+    echo
+fi
+
+if [ -d /var/spool/postfix ]; then
+    echo "-> /var/spool/postfix still exists - you may want to remove it manually."
+    echo
+fi
+
+echo "-> Account 'smtp' and group 'smtp' still exist - you may want to remove these manually."
+
+exit 0

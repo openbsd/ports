@@ -1,0 +1,79 @@
+#!/bin/sh
+
+# Pre/post-installation setup of postfix.
+#
+# dugsong@monkey.org
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+
+PKG_PREFIX=${PKG_PREFIX:-/usr/local}
+
+SMTPUID=6
+SMTPGID=6
+
+if [ "$2" = "PRE-INSTALL" ]; then
+    line=`egrep '^smtp:' /etc/group`
+    if [ "$line" != "" ]; then
+	SMTPGID=`echo $line | cut -f3 -d:`
+    else
+	echo "-> Creating smtp group, gid $SMTPGID"
+	echo "smtp:*:${SMTPGID}:" >> /etc/group
+	echo ""
+    fi
+    line=`egrep '^smtp:' /etc/passwd`
+    if [ "$line" != "" ]; then
+	SMTPUID=`echo $line | cut -f3 -d:`
+    else
+	echo "-> Creating smtp user, uid $SMTPUID"
+	chpass -a "smtp:*:${SMTPUID}:${SMTPGID}::::Disgruntled Postal Worker:/nonexistent:/sbin/nologin"
+	echo ""
+    fi
+    echo "-> Using account 'smtp' for postfix, uid $SMTPUID, gid $SMTPGID"
+    echo ""
+    exit 0
+fi
+
+if [ "$2" != "POST-INSTALL" ]; then exit 0; fi
+
+echo ""
+if [ ! -d /etc/postfix ]; then
+    echo "-> Creating postfix config directory /etc/postfix"
+    mkdir /etc/postfix
+    install -m 644 -c ${PKG_PREFIX}/lib/postfix/* /etc/postfix
+    chmod 755 /etc/postfix/postfix-script
+    echo ""
+fi
+sed "s@y0y0y0@${PKG_PREFIX}@g" /etc/postfix/main.cf > /etc/postfix/main.cf.$$
+mv /etc/postfix/main.cf.$$ /etc/postfix/main.cf
+
+if [ ! -d /var/spool/postfix ]; then
+    echo "-> Creating postfix spool directory /var/spool/postfix"
+    mkdir -p -m 755 /var/spool/postfix/etc
+    (cd /etc ; cp localtime services resolv.conf /var/spool/postfix/etc)
+    echo ""
+fi
+
+echo "Postfix can be set up to replace sendmail entirely."
+echo "Please read the documentation at http://www.postfix.org/"
+echo "carefully before you decide to do this!"
+echo
+printf "Do you want to replace sendmail with postfix? [Y/n] "
+read ans
+case $ans in n*|N*) exit 0 ;; esac
+echo
+echo "-> Disabling sendmail"
+set -x
+mv /usr/sbin/sendmail /usr/sbin/sendmail-orig
+mv /usr/bin/mailq /usr/bin/mailq-orig
+mv /usr/bin/newaliases /usr/bin/newaliases-orig
+chmod 555 /usr/sbin/sendmail-orig /usr/bin/mailq-orig /usr/bin/newaliases-orig
+set +x
+echo
+echo "-> Enabling postfix replacements"
+set -x
+ln -s ${PKG_PREFIX}/sbin/sendmail /usr/sbin/sendmail
+ln -s /usr/sbin/sendmail /usr/bin/mailq
+ln -s /usr/sbin/sendmail /usr/bin/newaliases
+set +x
+
+exit 0

@@ -1,0 +1,84 @@
+*** conf/main.cf.orig	Tue Dec  8 20:55:27 1998
+--- conf/main.cf	Fri Dec 11 14:09:27 1998
+***************
+*** 17,23 ****
+  # The program_directory parameter specifies the location of Postfix
+  # support programs and daemons. This directory must be owned by root.
+  #
+! program_directory = /some/where/postfix/bin
+  
+  # QUEUE AND PROCESS OWNERSHIP
+  #
+--- 17,23 ----
+  # The program_directory parameter specifies the location of Postfix
+  # support programs and daemons. This directory must be owned by root.
+  #
+! program_directory = y0y0y0/sbin
+  
+  # QUEUE AND PROCESS OWNERSHIP
+  #
+***************
+*** 27,40 ****
+  # OWNS NO OTHER FILES OR PROCESSES ON THE SYSTEM.  In particular,
+  # don't specify nobody or daemon. PLEASE USE A DEDICATED USER.
+  #
+! #mail_owner = postfix
+  
+  # The default_privs parameter specifies the default rights used by
+  # the local delivery agent for delivery to external file or command.
+  # These rights are used in the absence of a recipient user context.
+  # DO NOT SPECIFY A PRIVILEGED USER OR THE POSTFIX OWNER.
+  #
+! #default_privs = nobody
+  
+  # INTERNET HOST AND DOMAIN NAMES
+  # 
+--- 27,40 ----
+  # OWNS NO OTHER FILES OR PROCESSES ON THE SYSTEM.  In particular,
+  # don't specify nobody or daemon. PLEASE USE A DEDICATED USER.
+  #
+! mail_owner = smtp
+  
+  # The default_privs parameter specifies the default rights used by
+  # the local delivery agent for delivery to external file or command.
+  # These rights are used in the absence of a recipient user context.
+  # DO NOT SPECIFY A PRIVILEGED USER OR THE POSTFIX OWNER.
+  #
+! default_privs = nobody
+  
+  # INTERNET HOST AND DOMAIN NAMES
+  # 
+***************
+*** 166,172 ****
+  # "postfix reload" to eliminate the delay.
+  #
+  #alias_maps = dbm:/etc/aliases
+! #alias_maps = hash:/etc/aliases
+  #alias_maps = hash:/etc/aliases, nis:mail.aliases
+  
+  # ADDRESS EXTENSIONS (e.g., user+foo)
+--- 166,172 ----
+  # "postfix reload" to eliminate the delay.
+  #
+  #alias_maps = dbm:/etc/aliases
+! alias_maps = hash:/etc/aliases
+  #alias_maps = hash:/etc/aliases, nis:mail.aliases
+  
+  # ADDRESS EXTENSIONS (e.g., user+foo)
+***************
+*** 205,211 ****
+  #
+  #alias_database = dbm:/etc/aliases
+  #alias_database = dbm:/etc/mail/aliases
+! #alias_database = hash:/etc/aliases
+  
+  # JUNK MAIL CONTROLS
+  # 
+--- 205,211 ----
+  #
+  #alias_database = dbm:/etc/aliases
+  #alias_database = dbm:/etc/mail/aliases
+! alias_database = hash:/etc/aliases
+  
+  # JUNK MAIL CONTROLS
+  # 

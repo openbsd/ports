@@ -1,0 +1,56 @@
+*** Makefile.in.orig	Wed Dec  9 07:33:50 1998
+--- Makefile.in	Sat Dec 12 19:27:27 1998
+***************
+*** 6,11 ****
+--- 6,19 ----
+  	showq postalias postcat postconf postkick postlock postlog \
+  	postmap # man html
+  
++ PREFIX?=	/usr/local
++ SBINDIR= 	$(PREFIX)/sbin
++ LIBDIR=		$(PREFIX)/lib
++ MANDIR=		$(PREFIX)/man
++ HTMLDIR=	$(PREFIX)/share/doc
++ ETCDIR= 	/etc
++ SPOOLDIR=	/var/spool
++ 
+  default: update
+  
+  makefiles Makefiles:
+***************
+*** 38,40 ****
+--- 46,79 ----
+  	find . -type s -print | xargs rm -f
+  	find . -type d -print | xargs chmod 755
+  	find . -type f -print | xargs chmod a+r
++ 
++ install:
++ 	@echo "-> Creating postfix config directory $(ETCDIR)/postfix"
++ 	@[ -d $(ETCDIR)/postfix ] || mkdir -p -m 755 $(ETCDIR)/postfix
++ 	@(cd conf ; for file in * ; do \
++ 	   if [ ! -f $(ETCDIR)/postfix/$$file ] ; then \
++ 	      install -m 644 -c $$file $(ETCDIR)/postfix ; \
++ 	   fi ; \
++ 	done)
++ 	@chmod 755 $(ETCDIR)/postfix/postfix-script
++ 	@echo
++ 	@echo "-> Installing postfix sample configs in $(LIBDIR)/postfix"
++ 	@[ -d $(LIBDIR)/postfix ] || mkdir -p -m 755 $(LIBDIR)/postfix
++ 	@install -m 644 -c conf/* $(LIBDIR)/postfix
++ 	@echo
++ 	@echo "-> Creating postfix spool directory $(SPOOLDIR)/postfix"
++ 	@[ -d $(SPOOLDIR)/postfix/etc ] || mkdir -p -m 755 $(SPOOLDIR)/postfix/etc
++ 	@(cd /etc ; cp localtime services resolv.conf $(SPOOLDIR)/postfix/etc)
++ 	@echo
++ 	@echo "-> Installing postfix binaries in $(SBINDIR)"
++ 	@[ -d $(SBINDIR) ] || mkdir -p -m 755 $(SBINDIR)
++ 	@install -m 755 -c -s bin/* $(SBINDIR)
++ 	@echo
++ 	@echo "-> Installing postfix manpages in $(MANDIR)"
++ 	@install -m 644 -c man/man1/* $(MANDIR)/man1
++ 	@install -m 644 -c man/man5/* $(MANDIR)/man5
++ 	@install -m 644 -c man/man8/* $(MANDIR)/man8
++ 	@echo
++ 	@echo "-> Installing postfix HTML docs in $(HTMLDIR)/postfix"
++ 	@[ -d $(HTMLDIR)/postfix ] || mkdir -p -m 755 $(HTMLDIR)/postfix
++ 	@install -m 644 -c html/*.html html/*.gif html/*.fig $(HTMLDIR)/postfix

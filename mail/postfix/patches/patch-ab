@@ -1,0 +1,19 @@
+*** makedefs-orig	Fri Dec 11 01:55:19 1998
+--- makedefs	Fri Dec 11 01:54:25 1998
+***************
+*** 163,169 ****
+  */gcc|gcc) case `$CC -v` in
+  	   "gcc version 2.8"*) : ${OPT=};;
+  	   esac;;
+!        *) : ${OPT='-O'};;
+  esac
+  
+  : ${CC='gcc $(WARN)'} ${OPT='-O'} ${DEBUG='-g'}
+--- 163,169 ----
+  */gcc|gcc) case `$CC -v` in
+  	   "gcc version 2.8"*) : ${OPT=};;
+  	   esac;;
+!        *) : ${OPT="${CFLAGS:-'-O'}"};;
+  esac
+  
+  : ${CC='gcc $(WARN)'} ${OPT='-O'} ${DEBUG='-g'}
