@@ -1,4 +1,4 @@
-Version 2.3.16 of the Berkeley DB library. This version uses an incompatible
+Version 2.x.y of the Berkeley DB library. This version uses an incompatible
 underlying database than v1.85 and a different API. Utilities are included in
 the distribution to convert v1.85 databases to v2.3.16
 
