@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2002/09/12 15:26:33 todd Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/11 12:27:00 todd Exp $
 
 COMMENT=		"OpenCM change management system"
 COMMENT-docs=		"OpenCM Documentation"
 
-V=			0.1.0alpha16
+V=			0.1.0alpha17
 sV=			-1
 DISTNAME=		opencm-${V}${sV}-src
 PKGNAME=		opencm-${V}
@@ -33,7 +33,7 @@ USE_GMAKE=		Yes
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib -lz -lgc" \
 			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
 
 FLAVORS=docs
@@ -51,11 +51,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/opencm.ps ${PREFIX}/share/doc/opencm
 
 .else
-MAKE_FLAGS=		TEXI2DVI=: DVIPS=:
-FAKE_FLAGS=		TEXI2DVI=: DVIPS=:
+MAKE_FLAGS+=		TEXI2DVI=: DVIPS=:
+FAKE_FLAGS+=		TEXI2DVI=: DVIPS=:
 .endif
-MAKE_FLAGS+= LIBZ=-lz LIBGC=-lgc USOURCE_SUBDIRS="libgdiff src"
-FAKE_FLAGS+= LIBZ=-lz LIBGC=-lgc USOURCE_SUBDIRS="libgdiff src"
+MAKE_FLAGS+= LIBZ= LIBGC= USOURCE_SUBDIRS="libgdiff src"
+FAKE_FLAGS+= LIBZ= LIBGC= USOURCE_SUBDIRS="libgdiff src"
 
 PLIST=			${PKGDIR}/PLIST${SUBPACKAGE}
 

@@ -1,11 +1,11 @@
-$OpenBSD: patch-base_libgdiff_diff_h,v 1.1 2002/09/12 15:07:23 todd Exp $
---- base/libgdiff/diff.h.orig	Mon Aug  5 16:03:05 2002
-+++ base/libgdiff/diff.h	Thu Sep 12 10:03:09 2002
+$OpenBSD: patch-base_libgdiff_diff_h,v 1.2 2002/10/11 12:27:00 todd Exp $
+--- base/libgdiff/diff.h.orig	Fri Oct 11 06:45:32 2002
++++ base/libgdiff/diff.h	Fri Oct 11 06:45:43 2002
 @@ -15,7 +15,7 @@ GNU General Public License for more deta
  
  */
  
--#include "../gc6.0/include/gc.h"
+-#include "../gc6.1/include/gc.h"
 +#include <gc.h>
  #include "system.h"
  #include <stdio.h>
