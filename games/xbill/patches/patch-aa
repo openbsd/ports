@@ -1,12 +1,12 @@
---- Imakefile.orig	Thu Jan 23 11:38:35 1997
-+++ Imakefile	Sat Oct  2 18:45:18 1999
+--- Imakefile.orig	Thu Jan 23 17:38:35 1997
++++ Imakefile	Fri Jun  2 18:42:21 2000
 @@ -1,4 +1,4 @@
 -XBILL_DIR = /var/lib/games/xbill/
-+XBILL_DIR = $(PREFIX)/share/xbill/
++XBILL_DIR = /usr/local/share/xbill/
  XCOMM XBILL_DIR = $(HOME)/.xbill/
  
  XCOMM Which widget set?  Motif looks slightly better; Athena is free.
-@@ -19,7 +19,7 @@
+@@ -19,7 +19,7 @@ XBILL_DEF = -DXBILL_HOME=\"$(XBILL_DIR)\
  
  INCLUDES = -I. $(XPMINC)
  CXXDEFINES = $(XBILL_DEF) $(DEFS) $(INCS)
@@ -15,12 +15,14 @@
  
  CXX = g++ $(CCFLAGS)
  CCC = $(CXX)
-@@ -136,6 +136,7 @@
+@@ -136,6 +136,7 @@ XBMS =	bitmaps/apple.xbm \
  
  ComplexProgramTarget($(TARGET))
  
 -InstallProgramWithFlags(scores, $(XBILL_DIR), -m 777)
+-InstallMultiple ($(XPMS), $(XBILL_DIR)pixmaps)
+-InstallMultiple ($(XBMS), $(XBILL_DIR)bitmaps)
 +# need to pick something with "Flags", but Program ==> strip
 +InstallMultipleFlags(scores,$(XBILL_DIR),-m 666)
- InstallMultiple ($(XPMS), $(XBILL_DIR)pixmaps)
- InstallMultiple ($(XBMS), $(XBILL_DIR)bitmaps)
++InstallMultiple ($(XPMS),$(XBILL_DIR)pixmaps)
++InstallMultiple ($(XBMS),$(XBILL_DIR)bitmaps)

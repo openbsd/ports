@@ -1,6 +1,6 @@
---- Cable.h.orig	Tue Nov 30 19:57:29 1999
-+++ Cable.h	Tue Nov 30 19:57:39 1999
-@@ -13,7 +13,7 @@
+--- Cable.h.orig	Thu Jan 23 17:22:49 1997
++++ Cable.h	Fri Jun  2 18:32:04 2000
+@@ -13,7 +13,7 @@ public:
  	void setup();
  	void draw();
  	void update();
