@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2002/09/10 21:32:45 fgsch Exp $
+--- configure.in.orig	Tue Sep 10 13:11:46 2002
++++ configure.in	Tue Sep 10 13:12:35 2002
+@@ -28,7 +28,11 @@ AC_CHECK_LIB([nsl],
+ 
+ if test "$pthread_libs"; then
+ 		CFLAGS="$CFLAGS -DYSM_WITH_THREADS"
+-                LIBS="$pthread_libs $LIBS"
++		if test `uname -s` = "OpenBSD"; then
++			LIBS="-pthread $LIBS"
++		else
++	                LIBS="$pthread_libs $LIBS"
++		fi
+ else
+                 echo ""
+                 echo "YSM NOTICE"
+@@ -43,15 +47,5 @@ fi
+ AC_SUBST(pthread_libs)
+ 
+ AC_STDC_HEADERS
+-
+-MANPAGE="ysm.1"
+-
+-for MANDIR in "/usr/share/man" "/usr/man"
+-do
+-	if test -d $MANDIR ; then
+-		mandir=$MANDIR;
+-		break;
+-	fi
+-done
+ 
+ AC_OUTPUT([Makefile src/Makefile src/man/Makefile])

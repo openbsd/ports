@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_YSM_h,v 1.1.1.1 2002/09/10 21:32:45 fgsch Exp $
+--- src/YSM.h.orig	Thu Sep  5 14:55:55 2002
++++ src/YSM.h	Thu Sep  5 14:56:05 2002
+@@ -122,7 +122,7 @@ typedef int DWORD;
+ #define YSM_SILENT_SLAVES_STATUS
+ 
+ /* Undocumented hoh */
+-#define YSM_WAR_MODE
++#undef YSM_WAR_MODE
+ 
+ 
+ /* support for Monochrome ! */
