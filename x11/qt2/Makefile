@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2002/11/14 05:16:27 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.40 2003/04/10 16:58:19 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt2
@@ -28,7 +28,7 @@ MODGCC3_LANGS=	C++
 USE_X11=	Yes
 USE_GMAKE=	Yes
 MAKE_ENV=	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
-		SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}" \
+		SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS} -I${X11BASE}/include/freetype2" \
 		LD_LIBRARY_PATH="${WRKDIST}/lib"
 MAKE_FLAGS=	DESIGNER_SUBDIR=dummy
 CONFIGURE_STYLE= simple
