@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/05/19 08:50:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2004/08/02 12:45:59 espie Exp $
 
 COMMENT=	"Scheme interpreter with Tk interface"
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${NO_SHARED_LIBS:S/Yes/--disable-dynload/}
 
 FAKE_FLAGS=	root=${DESTDIR}
 
@@ -25,3 +24,7 @@ NO_REGRESS=	Yes
 SUBST_VARS=	STK_VERSION STK_ARCH
 
 .include <bsd.port.mk>
+
+.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
+CONFIGURE_ARGS+=	--disable-dynload
+.endif

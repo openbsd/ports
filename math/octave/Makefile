@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/29 19:43:50 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2004/08/02 12:48:13 espie Exp $
 
 COMMENT=	"High-level language for numerical computations"
 VERSION=	2.0.16
@@ -46,6 +46,6 @@ post-install:
 .include <bsd.port.mk>
 
 # if we can use shared libraries, make octave use modules.
-.if !defined (NO_SHARED_LIBS)
+.if !(defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes")
 CONFIGURE_ARGS+=	--enable-lite-kernel
 .endif
