@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 1999/12/07 08:26:41 form Exp $
+# $OpenBSD: Makefile,v 1.19 1999/12/07 11:47:47 form Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 DISTNAME=	postgresql-6.5.3
@@ -61,6 +61,9 @@ TK_INCDIR=	${LOCALBASE}/include/tk8.0
 MAKE_ENV=	USE_TCL=true TCL_INCDIR=${TCL_INCDIR} TK_INCDIR=${TK_INCDIR}
 LIB_DEPENDS=	tcl80:${PORTSDIR}/lang/tcl80 tk80:${PORTSDIR}/x11/tk80
 WITH_TCL=	--with-tcl --with-tclconfig="${LOCALBASE}/lib/tcl8.0 ${LOCALBASE}/lib/tk8.0"
+PKGNAME=	${DISTNAME}-tcl
+.else
+PKGNAME=	${DISTNAME}
 .endif
 
 USE_GMAKE=	yes
@@ -69,8 +72,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS= --prefix=${PREFIX}/pgsql \
 		--enable-locale \
 		--with-template=`uname -s | ${TR} '[A-Z]' '[a-z]'` \
-		--with-includes="${PREFIX}/include ${TCL_INCDIR} ${TK_INCDIR}" ${WITH_TCL} \
-		--with-libraries=${PREFIX}/lib
+		--with-includes="${PREFIX}/include ${TCL_INCDIR} \
+		${TK_INCDIR}" ${WITH_TCL} --with-libraries=${PREFIX}/lib
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
@@ -96,6 +99,15 @@ post-configure:
 	else \
 		${CP} ${PKGDIR}/PLIST.noshared ${WRKDIR}/PLIST; \
 	fi
+.endif
+
+.if defined(USE_TCL) || defined(USE_TK)
+post-patch:
+	@${MV} ${WRKSRC}/bin/pgaccess/main.tcl \
+		${WRKSRC}/bin/pgaccess/main.tcl.orig
+	@${SED} -e "s=wish=${LOCALBASE}/bin/wish8.0=" \
+		${WRKSRC}/bin/pgaccess/main.tcl.orig \
+		> ${WRKSRC}/bin/pgaccess/main.tcl
 .endif
 
 pre-build:
