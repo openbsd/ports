@@ -27,6 +27,7 @@ maple/bin/maple
 maple/bin/maple.system.type
 maple/bin/march
 maple/bin/mint
+maple/bin/resolv_display
 maple/bin/updt3to4
 maple/bin/updtsrc
 maple/bin/xmaple

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/05/22 00:24:58 espie Exp $
+# $OpenBSD: Makefile,v 1.2 1999/06/18 15:32:16 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -19,9 +19,9 @@ MIRROR_DISTFILE=	no
 
 MAINTAINER=		espie@cvs.openbsd.org
 
+NO_WRKSUBDIR=  yes
 NO_PATCH=		yes
 NO_CONFIGURE=	yes
-NO_BUILD=		yes
 NO_PACKAGE=		yes
 
 # verify that it makes sense to install maple here
@@ -37,6 +37,12 @@ install_bins/bin_ibm_intel_linux.tar
 # and so, we don't extract anything by ourselves
 # better than NO_EXTRACT, as this builds WRKDIR correctly for us.
 EXTRACT_ONLY=
+
+post-extract:
+	ln -sf ${FILESDIR}/resolv_display.c ${WRKSRC}
+	echo "all: resolv_display" >${WRKSRC}/Makefile
+
+ALL_TARGET=resolv_display
 
 do-fetch:
 	@mkdir -p ${_DISTDIR}
@@ -66,7 +72,8 @@ do-install:
 	@for file in ${MAPLE_DIR}/man/man1/*; do \
 		ln -s $$file ${PREFIX}/man/man1; \
 	done
-	@cd ${MAPLE_DIR} && patch -s <${PATCHDIR}/patch-aa && \
+	@cd ${MAPLE_DIR} && cat ${PATCHDIR}/patch-*| patch -s && \
 		rm ${MAPLE_DIR}/bin/*.orig
+	@${INSTALL_PROGRAM} ${WRKBUILD}/resolv_display ${MAPLE_DIR}/bin
 
 .include <bsd.port.mk>
