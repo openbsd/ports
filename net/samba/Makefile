@@ -3,7 +3,7 @@
 # Date created:				22 Apr 1998
 # Whom:					form
 #
-# $OpenBSD: Makefile,v 1.12 1998/08/05 02:36:36 form Exp $
+# $OpenBSD: Makefile,v 1.13 1998/08/11 13:32:35 form Exp $
 #
 
 DISTNAME=	samba-1.9.18p8
@@ -19,7 +19,7 @@ MAN5=		smb.conf.5
 MAN7=		samba.7
 MAN8=		smbd.8 nmbd.8 smbpasswd.8
 
-SAMPLE_CONFIG=	/etc/samba/smb.conf.default
+SAMPLE_CONFIG=	${PREFIX}/lib/samba/smb.conf.sample
 SAMBA_SPOOL=	/var/spool/samba
 XSAMBA_SPOOL=	\/var\/spool\/samba
 SAMBA_LOGDIR=	/var/log
@@ -33,7 +33,7 @@ SAMBA_DOCS=${WRKDIR}/${DISTNAME}/docs/INSTALL.sambatar \
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/samba
-	${CP} -rp ${WRKDIR}/${DISTNAME}/examples/* ${PREFIX}/share/examples/samba
+	${CP} -r ${WRKDIR}/${DISTNAME}/examples/* ${PREFIX}/share/examples/samba
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/samba/faq
 	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/samba
@@ -65,7 +65,7 @@ post-install:
 		${CAT} /etc/passwd | ${PREFIX}/bin/mksmbpasswd.sh > /etc/samba/smbpasswd ; \
 		chmod 600 /etc/samba/smbpasswd ;			\
 	fi
-	chown root.wheel ${PREFIX}/bin/smbpasswd
+	chown root.bin ${PREFIX}/bin/smbpasswd
 	chmod 111 ${PREFIX}/bin/smbpasswd
 	more ${FILESDIR}/README.OpenBSD
 

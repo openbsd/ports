@@ -1,27 +1,26 @@
-If you want to use samba ports,
+Using samba package in OpenBSD environment:
 
-1. Copy /etc/samba/smb.conf.default to /etc/samba/smb.conf, and edit
+1. Copy /usr/local/lib/smb.conf.sample to /etc/samba/smb.conf and edit
    it.
-2. Add startup commands to /etc/rc.local:
-	if [ -x /usr/local/sbin/smbd -a -x /usr/local/sbin/nmbd ]
-	then
-		echo -n ' nmbd';	/usr/local/sbin/nmbd -D
-		echo -n ' smbd';	/usr/local/sbin/smbd -D
-	fi
-3. Start samba (see commands above) or reboot.
 
-See document files in /usr/local/share/doc/samba and example config files in
-/usr/local/share/examples/samba for details.
+2. Edit /etc/rc.conf file:
+   ...
+   smbd=YES
+   nmbd=YES
 
-OpenBSD Samba ports for localization and encrypt passwords support are no
-longer provided because these supports have been integrated into the
-original distribution since 1.9.18.  If you're Western European or Japanese
-Windows users, please set "client code page" parameter in smb.conf (1.9.18
-does not support Chinese Windows. If you want to use Chinese samba, please
-use chinese/samba port).  See smb.conf.sample for details.  If you want to
-use NT4+SP3 or Win95+updates clients, set "encrypt passwords" parameter to
-yes and use smbpasswd [username] to use /etc/samba/smbpasswd for
-authentication.
+3. Edit /etc/rc.local file:
+   echo -n 'starting local daemons:'
+   ...
+   if [ -f /etc/samba/smb.conf ]; then
+       if [ X"${smbd}" = X"YES" -a -x /usr/local/sbin/smbd ]; then
+           echo -n ' smbd';    /usr/local/sbin/smbd -D
+       fi
+       if [ X"${nmbd}" = X"YES" -a -x /usr/local/sbin/nmbd ]; then
+           echo -n ' nmbd';    /usr/local/sbin/nmbd -D
+       fi
+   fi
+   ...
+   echo '.'
 
-OpenBSD port created by Oleg Safiullin <form@vs.itam.nsc.ru>
-	using FreeBSD port by Tatsumi Hosokawa <hosokawa@jp.FreeBSD.org>
+See documentation files in /usr/local/share/doc/samba and example config
+files in /usr/local/share/examples/samba for more information.

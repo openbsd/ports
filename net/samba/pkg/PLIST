@@ -21,6 +21,7 @@ lib/samba/codepages/codepage.932
 lib/samba/codepages/codepage.936
 lib/samba/codepages/codepage.949
 lib/samba/codepages/codepage.950
+lib/samba/smb.conf.sample
 man/man1/make_smbcodepage.1
 man/man1/smbclient.1
 man/man1/smbrun.1
@@ -110,6 +111,6 @@ share/doc/samba/README.sambatar
 @exec if [ ! -f /etc/samba/smbpasswd ]; then /bin/cat /etc/passwd | %D/bin/mksmbpasswd.sh > /etc/samba/smbpasswd; chown root.wheel /etc/samba/smbpasswd; chmod 600 /etc/samba/smbpasswd; fi
 @exec more %D/share/doc/samba/README.OpenBSD
 @unexec echo "***"
-@unexec echo "*** Remove /etc/samba directory and it's contents manually"
-@unexec echo "*** if you won't install samba again."
+@unexec echo "*** Remove /etc/samba directory and its contents manually"
+@unexec echo "*** to complete uninstall procedure."
 @unexec echo "***"
