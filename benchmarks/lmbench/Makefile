@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/15 05:04:03 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/04 09:47:22 turan Exp $
 
 DISTNAME=	lmbench
 PKGNAME=	lmbench-1.1
 CATEGORIES=	benchmarks
 
-BROKEN=	"version changed; different distributions/directories"
 MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		GPL
@@ -20,6 +19,12 @@ EXTRACT_SUFX=	.tar.Z
 
 ALL_TARGET=	build
 MAKE_ENV=	PATH=${PATH}:${WRKSRC}/scripts
+
+MAN1=	bargraph.1 graph.1
+MAN8=	lmbench.8 lat_proc.8 lat_mmap.8 lat_ctx.8 lat_syscall.8 lat_pipe.8 \
+	lat_tcp.8 lat_udp.8 lat_rpc.8 lat_connect.8 lat_fs.8 lat_pagefault.8 \
+	lat_mem_rd.8 bw_file_rd.8 bw_mem_cp.8 bw_mem_rd.8 bw_mem_wr.8 \
+	bw_mmap_rd.8 bw_pipe.8 bw_tcp.8 mhz.8 lmdd.8
 
 test: build
 	@(cd ${WRKSRC}; make results)
@@ -37,6 +42,7 @@ pre-install:
 	[ -d ${PREFIX}/lib/lmbench ] || mkdir -p ${PREFIX}/lib/lmbench
 
 do-install:
+	rm -rf ${WRKSRC}/{Results/RCS,doc/RCS,scripts/RCS,RCS}
 	cp ${FILESDIR}/Makefile ${PREFIX}/lib/lmbench
 	tar -C ${WRKSRC} -cf - Results bin scripts | \
 	  tar -C ${PREFIX}/lib/lmbench -xf -
