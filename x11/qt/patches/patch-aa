@@ -1,23 +1,42 @@
-*** src/tools/qglobal.h.orig	Sat Jan 10 13:13:45 1998
---- src/tools/qglobal.h	Sat Jan 10 13:14:37 1998
-***************
-*** 43,48 ****
---- 43,49 ----
-  //   LINUX	- Linux
-  //   FREEBSD	- FreeBSD
-  //   NETBSD	- NetBSD
-+ //   OPENBSD	- OpenBSD
-  //   IRIX	- SGI Irix
-  //   OSF	- OSF Unix
-  //   BSDI	- BSDI Unix
-***************
-*** 79,84 ****
---- 80,87 ----
-  #define _OS_FREEBSD_
-  #elif defined(__NetBSD__)
-  #define _OS_NETBSD_
-+ #elif defined(__OpenBSD__)
-+ #define _OS_OPENBSD_
-  #elif defined(sgi) || defined(__sgi)
-  #define _OS_IRIX_
-  #elif defined(__osf__)
+--- Makefile.~1~	Mon Mar 16 14:52:24 1998
++++ Makefile	Tue Jul 14 16:32:59 1998
+@@ -66,6 +66,8 @@
+ 	@echo " " linux-gcc-static
+ 	@echo " " netbsd-gcc-shared
+ 	@echo " " netbsd-gcc-static
++	@echo " " openbsd-gcc-shared
++	@echo " " openbsd-gcc-static
+ 	@echo " " osf1-cxx-shared
+ 	@echo " " osf1-cxx-static
+ 	@echo " " osf1-gcc-shared
+@@ -356,6 +358,30 @@
+ 	 YACCCFLAGS="-Wno-unused -Wno-parentheses" \
+ 	 LFLAGS="-lqt -L/usr/X11R6/lib -lX11" \
+ 	 SHELL="/bin/sh" PLATFORM=netbsd-gcc-static ./propagate
++	@touch variables
++	@echo
++	@echo Qt is now configured for building.  Just run "make" to build it.
++	@echo
++
++openbsd-gcc-shared: Makefile
++	 CC="gcc" \
++	 CFLAGS="-O2 -fno-strength-reduce -Wall -W -I/usr/X11R6/include" \
++	 LIBCFLAGS="-fPIC" \
++	 YACCCFLAGS="-Wno-unused -Wno-parentheses" \
++	 LFLAGS="-lqt -L/usr/X11R6/lib" \
++	 SHELL="/bin/sh" PLATFORM=openbsd-gcc-shared ./propagate
++	@touch variables
++	@echo
++	@echo Qt is now configured for building.  Just run "make" to build it.
++	@echo
++
++openbsd-gcc-static: Makefile
++	 CC="gcc" \
++	 CFLAGS="-O2 -fno-strength-reduce -Wall -W -I/usr/X11R6/include" \
++	 LIBCFLAGS="" \
++	 YACCCFLAGS="-Wno-unused -Wno-parentheses" \
++	 LFLAGS="-lqt -L/usr/X11R6/lib -lX11" \
++	 SHELL="/bin/sh" PLATFORM=openbsd-gcc-static ./propagate
+ 	@touch variables
+ 	@echo
+ 	@echo Qt is now configured for building.  Just run "make" to build it.

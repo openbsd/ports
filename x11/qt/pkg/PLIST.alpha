@@ -160,7 +160,6 @@ lib/qt/examples/widgets
 lib/qt/examples/makepic
 lib/libqt.a
 @exec ranlib %D/%F
-lib/libqt.so.1.33
 bin/moc
 man/man1/moc.1
 man/man3/QAccel.3
@@ -990,4 +989,3 @@ share/doc/qt/html/xform-xform-cpp.html
 @dirrm lib/qt/examples
 @dirrm lib/qt
 @dirrm include/X11/qt
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/X11R6/lib
