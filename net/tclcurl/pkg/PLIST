@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1 2003/08/12 02:20:31 jose Exp $
+lib/tcl8.3/tclcurl0.105/libtclcurl0105.so
+lib/tcl8.3/tclcurl0.105/pkgIndex.tcl
+lib/tcl8.3/tclcurl0.105/tclcurl.tcl
+man/mann/tclcurl.n
+man/mann/tclcurl_multi.n
+@dirrm lib/tcl8.3/tclcurl0.105

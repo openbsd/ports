@@ -1,0 +1,3 @@
+TclCurl gives the Tcl programmer a binding to libcurl, allowing you to
+get a URL with FTP, TELNET, LDAP, GOPHER, DICT, FILE, HTTP or HTTPS
+syntax.
