@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/12/03 17:22:50 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/02/21 00:59:01 pvalchev Exp $
 
 COMMENT=	"emacs interface to PGP and GnuPG"
 
@@ -16,16 +16,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu dest
 
-FLAVORS=	emacs21 gnupg pgp pgp5 xemacs
-FLAVOR?=	emacs21 gnupg
+FLAVORS=	gnupg pgp pgp5 
+FLAVOR?=	gnupg
 
-.if ${FLAVOR:L:Memacs21}
 BUILD_DEPENDS=	:emacs-21.*:editors/emacs21
-.endif
-
-.if ${FLAVOR:L:Mxemacs}
-BUILD_DEPENDS=	:xemacs-21.*:editors/xemacs21
-.endif
 
 .if ${FLAVOR:L:Mgnupg}
 RUN_DEPENDS=	:gnupg-*:security/gnupg
