@@ -1,0 +1,39 @@
+$OpenBSD: patch-Makefile,v 1.1 2002/09/28 23:12:31 naddy Exp $
+--- Makefile.orig	Sun Apr 21 11:25:51 2002
++++ Makefile	Sun Sep 29 00:47:06 2002
+@@ -1,9 +1,9 @@
+-CPP=g++
+-CC=gcc
++#CXX=g++
++#CC=gcc
+ AR=ar
+ RANLIB=ranlib
+-CFLAGS=-O2 -Wall -Iintl -I. -Igrin -Itgws -Ilisp -Iinterpretor \
+-       -include global.h
++CFLAGS+=   -Iintl -I. -Igrin -Itgws -Ilisp -Iinterpretor -include global.h
++CXXFLAGS+= -Iintl -I. -Igrin -Itgws -Ilisp -Iinterpretor -include global.h
+ 
+ OBJ_GRIN=grin/addressbook.o grin/composition.o grin/message.o \
+          grin/message_descriptor.o grin/mime.o grin/newsgroup.o \
+@@ -46,7 +46,7 @@ OBJ_GRINLISP=interpretor/grinlisp.o inte
+ .SUFFIXES: .cpp .o .c
+ 
+ .cpp.o: $*.cpp
+-	$(CPP) $(CFLAGS) -o $*.o -c $*.cpp
++	$(CXX) $(CXXFLAGS) -o $*.o -c $*.cpp
+ 
+ .c.o: $*.c
+ 	$(CC) $(CFLAGS) -o $*.o -c $*.c
+@@ -54,10 +54,10 @@ OBJ_GRINLISP=interpretor/grinlisp.o inte
+ all: ttygrin
+ 
+ grinlisp: $(OBJ_GRINLISP)
+-	$(CPP) -o $@ $(OBJ_GRINLISP)
++	$(CXX) -o $@ $(OBJ_GRINLISP)
+ 
+ ttygrin: $(OBJ_TTYGRIN)
+-	$(CPP) -o $@ $(OBJ_TTYGRIN) -lcurses
++	$(CXX) -o $@ $(OBJ_TTYGRIN) -lcurses
+ 
+ libintl.a: $(OBJ_INTL)
+ 	$(AR) cru $@ $(OBJ_INTL)
