@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2001/02/23 01:42:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.90 2001/03/07 15:58:43 wilfried Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -10,7 +10,7 @@
 #    SUBDIR += amiwm
      SUBDIR += asapm
      SUBDIR += asclock:classic,english
-#    SUBDIR += asfiles
+     SUBDIR += asfiles
      SUBDIR += aterm
 #    SUBDIR += auis
      SUBDIR += bbdate
@@ -50,7 +50,7 @@
 #    SUBDIR += iv
      SUBDIR += kde
      SUBDIR += lesstif
-#    SUBDIR += libdnd
+     SUBDIR += libdnd
 #    SUBDIR += libsx
      SUBDIR += lupe
 #    SUBDIR += mlvwm
