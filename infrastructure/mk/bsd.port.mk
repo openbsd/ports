@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.369 2001/03/28 11:43:16 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.370 2001/03/28 11:48:12 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1097,25 +1097,6 @@ refetch:
 
 
 
-# Normal user-mode targets are PHONY targets, e.g., don't create the
-# corresponding file. However, there is nothing phony about the cookie.
-
-# The cookie's recipe hold the real rule for each of those targets.
-
-extract: ${_EXTRACT_COOKIE}
-patch: ${_PATCH_COOKIE}
-distpatch: ${_DISTPATCH_COOKIE}
-configure: ${_CONFIGURE_COOKIE}
-all build: ${_BUILD_COOKIE}
-.if defined(ALWAYS_PACKAGE)
-install: ${_INSTALL_COOKIE} ${_PACKAGE_COOKIE}
-.else
-install: ${_INSTALL_COOKIE}
-.endif
-fake: ${_FAKE_COOKIE}
-package: ${_PACKAGE_COOKIE}
-
-
 uninstall deinstall:
 	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME}"
 	@${SUDO} ${PKG_DELETE} -f ${FULLPKGNAME}
@@ -1164,6 +1145,119 @@ addsum: fetch-all
 	fi
 .endif
 
+################################################################
+# Dependency checking
+################################################################
+
+_fetch_depends_fragment= \
+	case $$dep in \
+	/*) \
+		if [ -e "$$dep" ]; then \
+			found=true; \
+		fi;; \
+	*) \
+		p=${PORTPATH}; IFS=:; for d in $$p; do \
+			if [ -x $$d/$$dep ]; then \
+				found=true; \
+				break; \
+			fi \
+		done; unset IFS;; \
+	esac
+
+_build_depends_fragment = ${_fetch_depends_fragment}
+_run_depends_fragment = ${_fetch_depends_fragment}; earlyexit=true
+
+.if defined(NO_SHARED_LIBS)
+_lib_depends_fragment = \
+	lib=`echo $$dep | sed -e 's|\([^\\]\)[\\\.].*|\1|'`; \
+	tmp=`mktemp /tmp/bpmXXXXXXXXXX`; \
+	if ${LD} -r -o $$tmp -L${LOCALBASE}/lib -L${X11BASE}/lib -l$$lib; then \
+		found=true; \
+	fi
+.else
+_lib_depends_fragment = \
+	lib=`echo $$dep | sed -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
+	check=`${LDCONFIG} -r | awk "/-l$$lib/"'{ print $$3 }'`; \
+	case "X$$check" in "X") ;; *) found=true;; esac 
+.endif
+
+_misc_depends_fragment = :
+
+depends: lib-depends misc-depends fetch-depends build-depends run-depends
+
+# Let DEPENDS behave like the others
+.if defined(DEPENDS)
+MISC_DEPENDS=${DEPENDS:S/^/nonexistent::/}
+.endif
+
+.for _DEP in fetch build run lib misc
+${_DEP}-depends:
+.  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
+	@unset DEPENDS_TARGET || true; \
+	for i in ${${_DEP:U}_DEPENDS}; do \
+		echo $$i|{ \
+			IFS=:; read dep pkg dir target; \
+			case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
+			case "X$$pkg" in X) pkg=`cd ${PORTSDIR} && cd $$dir && \
+				${MAKE} ${_DEPEND_THRU} show VARNAME=FULLPKGNAME`;; esac; \
+			for abort in false false true; do \
+				if $$abort; then \
+					${ECHO_MSG} "Dependency check failed"; \
+					exit 1; \
+				fi; \
+				cd ${PORTSDIR}; \
+				if [ ! -d $$dir ]; then \
+					echo ">> No directory for $$dep ($$dir)"; \
+				fi; \
+				if [ -L $$dir ]; then \
+					echo ">> Broken dependency: $$dir is a symbolic link"; \
+					exit 1; \
+				fi; \
+				found=false; \
+				case "$$dep" in \
+				"/nonexistent") earlyexit=true;; \
+				*) earlyexit=false; \
+					${_${_DEP}_depends_fragment}; \
+					if $$found; then \
+						${ECHO_MSG} "===>  ${FULLPKGNAME} depends on: $$dep - found"; \
+						break; \
+					else \
+						${ECHO_MSG} "===>  ${FULLPKGNAME} depends on: $$dep - not found"; \
+					fi;; \
+				esac; \
+				${ECHO_MSG} "===>  Verifying $$target for $$dep in $$dir"; \
+				if cd $$dir && PKGPATH="$$dir" ${MAKE} ${_DEPEND_THRU} $$target; then \
+					${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME}"; \
+				else \
+					exit 1; \
+				fi; \
+				if $$earlyexit; then \
+					break; \
+				fi; \
+			done; \
+		}; \
+	done
+.  endif
+.endfor
+
+
+# Normal user-mode targets are PHONY targets, e.g., don't create the
+# corresponding file. However, there is nothing phony about the cookie.
+
+# The cookie's recipe hold the real rule for each of those targets.
+
+extract: ${_EXTRACT_COOKIE}
+patch: ${_PATCH_COOKIE}
+distpatch: ${_DISTPATCH_COOKIE}
+configure: ${_CONFIGURE_COOKIE}
+all build: ${_BUILD_COOKIE}
+.if defined(ALWAYS_PACKAGE)
+install: ${_INSTALL_COOKIE} ${_PACKAGE_COOKIE}
+.else
+install: ${_INSTALL_COOKIE}
+.endif
+fake: ${_FAKE_COOKIE}
+package: ${_PACKAGE_COOKIE}
 
 # The real targets. Note that some parts always get run, some parts can be
 # disabled, and there are hooks to override behavior.
@@ -1873,100 +1967,6 @@ package-noinstall:
 	@rm -f ${_PACKAGE_COOKIE}
 	@cd ${.CURDIR} && exec ${MAKE} PACKAGE_NOINSTALL=Yes ${_PACKAGE_COOKIE}
 .endif
-
-################################################################
-# Dependency checking
-################################################################
-_fetch_depends_fragment= \
-	case $$dep in \
-	/*) \
-		if [ -e "$$dep" ]; then \
-			found=true; \
-		fi;; \
-	*) \
-		p=${PORTPATH}; IFS=:; for d in $$p; do \
-			if [ -x $$d/$$dep ]; then \
-				found=true; \
-				break; \
-			fi \
-		done; unset IFS;; \
-	esac
-
-_build_depends_fragment = ${_fetch_depends_fragment}
-_run_depends_fragment = ${_fetch_depends_fragment}; earlyexit=true
-
-.if defined(NO_SHARED_LIBS)
-_lib_depends_fragment = \
-	lib=`echo $$dep | sed -e 's|\([^\\]\)[\\\.].*|\1|'`; \
-	tmp=`mktemp /tmp/bpmXXXXXXXXXX`; \
-	if ${LD} -r -o $$tmp -L${LOCALBASE}/lib -L${X11BASE}/lib -l$$lib; then \
-		found=true; \
-	fi
-.else
-_lib_depends_fragment = \
-	lib=`echo $$dep | sed -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
-	check=`${LDCONFIG} -r | awk "/-l$$lib/"'{ print $$3 }'`; \
-	case "X$$check" in "X") ;; *) found=true;; esac 
-.endif
-
-_misc_depends_fragment = :
-
-depends: lib-depends misc-depends fetch-depends build-depends run-depends
-
-# Let DEPENDS behave like the others
-.if defined(DEPENDS)
-MISC_DEPENDS=${DEPENDS:S/^/nonexistent::/}
-.endif
-
-.for _DEP in fetch build run lib misc
-${_DEP}-depends:
-.  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
-	@unset DEPENDS_TARGET || true; \
-	for i in ${${_DEP:U}_DEPENDS}; do \
-		echo $$i|{ \
-			IFS=:; read dep pkg dir target; \
-			case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
-			case "X$$pkg" in X) pkg=`cd ${PORTSDIR} && cd $$dir && \
-				${MAKE} ${_DEPEND_THRU} show VARNAME=FULLPKGNAME`;; esac; \
-			for abort in false false true; do \
-				if $$abort; then \
-					${ECHO_MSG} "Dependency check failed"; \
-					exit 1; \
-				fi; \
-				cd ${PORTSDIR}; \
-				if [ ! -d $$dir ]; then \
-					echo ">> No directory for $$dep ($$dir)"; \
-				fi; \
-				if [ -L $$dir ]; then \
-					echo ">> Broken dependency: $$dir is a symbolic link"; \
-					exit 1; \
-				fi; \
-				found=false; \
-				case "$$dep" in \
-				"/nonexistent") earlyexit=true;; \
-				*) earlyexit=false; \
-					${_${_DEP}_depends_fragment}; \
-					if $$found; then \
-						${ECHO_MSG} "===>  ${FULLPKGNAME} depends on: $$dep - found"; \
-						break; \
-					else \
-						${ECHO_MSG} "===>  ${FULLPKGNAME} depends on: $$dep - not found"; \
-					fi;; \
-				esac; \
-				${ECHO_MSG} "===>  Verifying $$target for $$dep in $$dir"; \
-				if cd $$dir && PKGPATH="$$dir" ${MAKE} ${_DEPEND_THRU} $$target; then \
-					${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME}"; \
-				else \
-					exit 1; \
-				fi; \
-				if $$earlyexit; then \
-					break; \
-				fi; \
-			done; \
-		}; \
-	done
-.  endif
-.endfor
 
 # Internal variables, used by dependencies targets 
 
