@@ -1,6 +1,6 @@
 Festival offers a general framework for building speech synthesis
 systems as well as including examples of various modules.  As a whole it
-offers full text to speech through a number APIs.  Festival is
+offers full text to speech through a number of APIs.  Festival is
 multi-lingual (currently English, Welsh and Spanish) though English is
 the most advanced.
 
