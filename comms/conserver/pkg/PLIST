@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:48 naddy Exp $
-share/examples/conserver/conserver.cf.eg
-share/examples/conserver/README.OpenBSD
-@dirrm share/examples/conserver
+@comment $OpenBSD: PLIST,v 1.4 2003/05/26 20:20:53 pvalchev Exp $
+bin/console
+man/man1/console.1
 man/man5/conserver.cf.5
+man/man5/conserver.passwd.5
 man/man8/conserver.8
-man/man8/console.8
 sbin/conserver
-sbin/console
+share/examples/conserver/README.OpenBSD
+share/examples/conserver/conserver.cf
+share/examples/conserver/conserver.passwd
+@dirrm share/examples/conserver

@@ -1,0 +1,29 @@
+$OpenBSD: patch-conserver_group_c,v 1.1 2003/05/26 20:20:53 pvalchev Exp $
+--- conserver/group.c.orig	Sat May 24 14:10:43 2003
++++ conserver/group.c	Sat May 24 14:12:07 2003
+@@ -1232,7 +1232,7 @@ SendRealBreak(pCLServing, pCEServing)
+ #else
+ # if HAVE_TCSENDBREAK
+ 	if (-1 == tcsendbreak(pCEServing->fdtty, 0)) {
+-	    FileWrite(pCLServing->fd, "failed]\r\n", -1);
++	    FileWrite(pCLServing->fd, "tcsendbreak failed]\r\n", -1);
+ 	    return;
+ 	}
+ # else
+@@ -3009,13 +3009,11 @@ Kiddie(pGE, sfd)
+ 				    continue;
+ 				}
+ #  if !defined(XTABS)		/* XXX hack */
+-#   define XTABS   TAB3
++#   define XTABS   OXTAB3
+ #  endif
+-				if (XTABS == (TABDLY & sbuf.c_oflag)) {
+-				    sbuf.c_oflag &= ~TABDLY;
+-				    sbuf.c_oflag |= TAB0;
++				if (XTABS & sbuf.c_oflag) {
++				    sbuf.c_oflag &= ~XTABS;
+ 				} else {
+-				    sbuf.c_oflag &= ~TABDLY;
+ 				    sbuf.c_oflag |= XTABS;
+ 				}
+ 				if (-1 ==

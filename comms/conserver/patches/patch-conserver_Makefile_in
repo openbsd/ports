@@ -1,0 +1,11 @@
+$OpenBSD: patch-conserver_Makefile_in,v 1.1 2003/05/26 20:20:53 pvalchev Exp $
+--- conserver/Makefile.in.orig	Sat May 24 14:08:15 2003
++++ conserver/Makefile.in	Sat May 24 14:08:56 2003
+@@ -53,7 +53,5 @@ install: conserver
+ 	$(INSTALL_PROGRAM) conserver $(DESTDIR)$(sbindir)
+ 	$(MKDIR) $(DESTDIR)$(mandir)/man8
+ 	$(INSTALL) conserver.man $(DESTDIR)$(mandir)/man8/conserver.8
+-	$(MKDIR) $(DESTDIR)$(sysconfdir)
+-	[ -f $(DESTDIR)$(sysconfdir)/conserver.rc ] || $(INSTALL) conserver.rc $(DESTDIR)$(sysconfdir)
+ 
+ .PHONY: clean distclean install
