@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/07/30 12:59:22 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2003/08/28 05:13:30 brad Exp $
 
 COMMENT=		"X11 toolkit, graphic applications"
 COMMENT-kamera=		"kde interface to digital cameras"
@@ -31,8 +31,8 @@ LIB_DEPENDS+=	Imlib::graphics/imlib \
 .else
 LIB_DEPENDS+=Imlib::graphics/imlib \
 	ungif::graphics/libungif \
-	glut::graphics/glut
-#	gphoto2,gphoto2_port::graphics/libgphoto2
+	glut::graphics/glut \
+	gphoto2,gphoto2_port::graphics/libgphoto2
 .endif
 
 
