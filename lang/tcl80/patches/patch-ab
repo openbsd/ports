@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Tue Mar  9 01:51:26 1999
-+++ Makefile.in	Wed Jan  5 22:45:47 2000
++++ Makefile.in	Thu Jan  6 03:08:24 2000
 @@ -55,7 +55,9 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
@@ -65,7 +65,7 @@
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
 +	@echo "Installing libtcl80.a"
 +	@$(INSTALL_DATA) libtcl80.a $(LIB_INSTALL_DIR)/libtcl80.a
-+	@(cd $(LIB_INSTALL_DIR); ranlib libtcl80.a)
++	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtcl80.a)
 +	@chmod 555 $(LIB_INSTALL_DIR)/libtcl80.a
  	@echo "Installing tclsh"
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
