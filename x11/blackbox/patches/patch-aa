@@ -1,0 +1,11 @@
+--- src/blackbox.cc.orig	Fri Nov 27 01:01:15 1998
++++ src/blackbox.cc	Fri Nov 27 01:03:32 1998
+@@ -94,6 +94,8 @@
+ #  include <process.h>
+ #endif
+ 
++#include <libgen.h> // for basename (3) on OpenBSD <br@spooky.net>
++
+ #ifndef HAVE_BASENAME
+ 
+ // *************************************************************************

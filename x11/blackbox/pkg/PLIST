@@ -1,0 +1,21 @@
+@cwd /usr/X11R6
+@name blackbox-0.50.0
+bin/bsetroot
+bin/blackbox
+share/Blackbox/styles/blackmagic
+share/Blackbox/styles/coldsteel
+share/Blackbox/styles/colorpurple
+share/Blackbox/styles/darkgreen
+share/Blackbox/styles/default
+share/Blackbox/styles/gnoid
+share/Blackbox/styles/green
+share/Blackbox/styles/onoid
+share/Blackbox/styles/pnoid
+share/Blackbox/styles/slatebox
+share/Blackbox/styles/steelblue
+share/Blackbox/styles/steelbox
+share/Blackbox/styles/stylesmenu
+share/Blackbox/rc
+share/Blackbox/menu
+@dirrm share/Blackbox/styles
+@dirrm share/Blackbox
