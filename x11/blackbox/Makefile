@@ -1,23 +1,27 @@
-# $OpenBSD: Makefile,v 1.18 2000/02/15 05:05:27 turan Exp $
+# $OpenBSD: Makefile,v 1.19 2000/03/15 23:59:53 rohee Exp $
+# Original from: Bruno Rohee <rohee@OpenBSD.ORG>
+#
+DISTNAME=		blackbox-0.51.3.1
+CATEGORIES=		x11
+MASTER_SITES=		ftp://portal.alug.org/pub/blackbox/0.5x.x/ \
+			ftp://ftp.dti.ad.jp/pub/X/blackbox/0.5x.x/
 
-DISTNAME=	blackbox-0.51.3.1
-CATEGORIES=	x11
-MASTER_SITES=	ftp://portal.alug.org/pub/blackbox/0.5x.x/ \
-		ftp://ftp.dti.ad.jp/pub/X/blackbox/0.5x.x/
+MAINTAINER=		rohee@OpenBSD.ORG
 
-MAINTAINER=	ports@openbsd.org
+HOMEPAGE=		http://blackbox.alug.org/
 
-LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=	yes
-GNU_CONFIGURE=	yes
+USE_X11=		Yes
+GNU_CONFIGURE=		Yes
 
-.if defined(WITH_KDE) && ${WITH_KDE:U} == YES
-CONFIGURE_ARGS+= --enable-kde
+FAKE=			Yes
+
+.if defined(WITH_KDE) && ${WITH_KDE:U} == Yes
+CONFIGURE_ARGS+= 	--enable-kde
 .endif
 
 post-install:

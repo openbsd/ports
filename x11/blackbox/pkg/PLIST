@@ -1,9 +1,6 @@
-bin/bsetroot
 bin/blackbox
-share/doc/blackbox/AUTHORS
-share/doc/blackbox/COPYING
-share/doc/blackbox/ChangeLog
-share/doc/blackbox/README
+bin/bsetroot
+share/Blackbox/menu
 share/Blackbox/styles/blackmagic
 share/Blackbox/styles/coldsteel
 share/Blackbox/styles/colorpurple
@@ -19,7 +16,10 @@ share/Blackbox/styles/slatebox
 share/Blackbox/styles/steelblue
 share/Blackbox/styles/steelbox
 share/Blackbox/styles/stylesmenu
-share/Blackbox/menu
+share/doc/blackbox/AUTHORS
+share/doc/blackbox/COPYING
+share/doc/blackbox/ChangeLog
+share/doc/blackbox/README
+@dirrm share/doc/blackbox
 @dirrm share/Blackbox/styles
 @dirrm share/Blackbox
-@dirrm share/doc/blackbox
