@@ -1,15 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/09/15 19:26:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/10/10 20:23:20 couderc Exp $
 bin/rox
 @man man/man1/ROX-Filer.1
 @man man/man1/rox.1
 rox/
 rox/ROX-Filer/
 rox/ROX-Filer/.DirIcon
-rox/ROX-Filer/Action-it.png
-rox/ROX-Filer/Action.png
 rox/ROX-Filer/AppInfo.xml
 rox/ROX-Filer/AppRun
-rox/ROX-Filer/AppRun.orig
 rox/ROX-Filer/Help/
 rox/ROX-Filer/Help/COPYING
 rox/ROX-Filer/Help/Changes
@@ -32,6 +29,7 @@ rox/ROX-Filer/Messages/ja.gmo
 rox/ROX-Filer/Messages/nl.gmo
 rox/ROX-Filer/Messages/no.gmo
 rox/ROX-Filer/Messages/pl.gmo
+rox/ROX-Filer/Messages/ro.gmo
 rox/ROX-Filer/Messages/ru.gmo
 rox/ROX-Filer/Messages/sv.gmo
 rox/ROX-Filer/Messages/zh_CN.gmo
@@ -129,6 +127,12 @@ rox/ROX-Filer/ROX/MIME/mime-video.png
 rox/ROX-Filer/ROX/MIME/mime-video:mpeg.png
 rox/ROX-Filer/ROX/MIME/mime-video:quicktime.png
 rox/ROX-Filer/ROX/index.theme
+rox/ROX-Filer/build/
+rox/ROX-Filer/build/Makefile
+rox/ROX-Filer/build/config.cache
+rox/ROX-Filer/build/config.h
+rox/ROX-Filer/build/config.log
+rox/ROX-Filer/build/config.status
 rox/ROX-Filer/images/
 rox/ROX-Filer/images/application.png
 rox/ROX-Filer/images/dirs.png
@@ -167,11 +171,7 @@ rox/ROX-Filer/src/choices.c
 rox/ROX-Filer/src/choices.h
 rox/ROX-Filer/src/collection.c
 rox/ROX-Filer/src/collection.h
-rox/ROX-Filer/src/config.cache
-rox/ROX-Filer/src/config.h
 rox/ROX-Filer/src/config.h.in
-rox/ROX-Filer/src/config.log
-rox/ROX-Filer/src/config.status
 rox/ROX-Filer/src/configure
 rox/ROX-Filer/src/configure.in
 rox/ROX-Filer/src/dir.c
@@ -239,6 +239,7 @@ rox/ROX-Filer/src/po/make-mo
 rox/ROX-Filer/src/po/nl.po
 rox/ROX-Filer/src/po/no.po
 rox/ROX-Filer/src/po/pl.po
+rox/ROX-Filer/src/po/ro.po
 rox/ROX-Filer/src/po/ru.po
 rox/ROX-Filer/src/po/sv.po
 rox/ROX-Filer/src/po/tips.py
