@@ -1,0 +1,5 @@
+Videod is a simple video capture daemon for bktr(4). Videod does
+periodical captures to JPEG files, which can be later used to
+produce time-lapse videos with graphics/mpeg_encode, for instance.
+
+WWW: ${HOMEPAGE}
