@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/24 02:27:10 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/05 17:35:26 obecian Exp $
 
 COMMENT=	"SDL image library"
 
-VER=	1.2.0
-PROJ=	SDL_image
+VER=		1.2.0
+PROJ=		SDL_image
 DISTNAME=	${PROJ}-${VER}
 PKGNAME=	sdl-image-${VER}
 CATEGORIES=	devel graphics
@@ -20,9 +20,9 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 LIB_DEPENDS=	SDL.:sdl-*-!no_x11:devel/sdl \
-	png.2::graphics/png \
-	tiff.35::graphics/tiff \
-	jpeg.62.::graphics/jpeg
+		png.2::graphics/png \
+		tiff.35::graphics/tiff \
+		jpeg.62.::graphics/jpeg
 
 USE_X11=	Yes
 
@@ -30,5 +30,8 @@ SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh
 
 .include <bsd.port.mk>

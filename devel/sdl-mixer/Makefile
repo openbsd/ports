@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/07 04:07:03 obecian Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/05 17:37:26 obecian Exp $
 
 COMMENT=	"SDL multi-channel audio mixer library"
-VER=	1.2.0
-PROJ=	SDL_mixer
+VER=		1.2.0
+PROJ=		SDL_mixer
 DISTNAME=	${PROJ}-${VER}
 PKGNAME=	sdl-mixer-${VER}
 CATEGORIES=	devel audio
@@ -26,13 +26,16 @@ LIB_DEPENDS+=	vorbis.0::audio/libvorbis
 .endif
 
 LIB_DEPENDS=	SDL.:sdl-*-!no_x11:devel/sdl \
-	smpeg.1::devel/smpeg
+		smpeg.1::devel/smpeg
 
 USE_X11=	Yes
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh
 
 .include <bsd.port.mk>
