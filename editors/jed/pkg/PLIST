@@ -27,6 +27,7 @@ lib/jed/lib/tm/linuxdoc.tm
 lib/jed/lib/abbrev.sl
 lib/jed/lib/abbrmisc.sl
 lib/jed/lib/acompile.sl
+lib/jed/lib/aprocess.sl
 lib/jed/lib/ashell.sl
 lib/jed/lib/backups.sl
 lib/jed/lib/bibtex.sl
