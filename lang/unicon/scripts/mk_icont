@@ -6,8 +6,8 @@ $PREFIX=shift;
 
 print <<"EOF";
 #!/bin/sh
-IPATH="\${IPATH-} $PREFIX/share/ipl/ucode"
-LPATH="\${LPATH-} $PREFIX/share/ipl/ginclude $PREFIX/share/ipl/include"
+IPATH="\${IPATH-} $PREFIX/share/ipl/lib"
+LPATH="\${LPATH-} $PREFIX/share/ipl/include"
 export IPATH LPATH
 exec $PREFIX/lib/icont "\$@"
 EOF
