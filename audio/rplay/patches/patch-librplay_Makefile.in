@@ -1,0 +1,11 @@
+--- librplay/Makefile.in.orig	Mon Feb  5 21:54:11 2001
++++ librplay/Makefile.in	Mon Feb  5 21:54:19 2001
+@@ -9,7 +9,7 @@
+ MKINSTALLDIRS= @srcdir@/../mkinstalldirs
+ 
+ CPPFLAGS=	$(CC_OPTIONS) -I. -I../include -I@srcdir@/../include @DEFS@
+-LDFLAGS=	$(LD_OPTIONS) -shared @LDFLAGS@
++LDFLAGS=	$(LD_OPTIONS) -shared -fPIC @LDFLAGS@
+ 
+ .c.o:
+ 		$(CC) -c $(CPPFLAGS) $(CFLAGS) $<
