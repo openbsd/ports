@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2003/10/07 05:47:58 marcm Exp $
+# $OpenBSD: Makefile,v 1.4 2003/12/05 08:20:40 pvalchev Exp $
 
-COMMENT=		"An experimental terminal emulator"
+COMMENT=		"experimental terminal emulator"
 
 DISTNAME=		vte-0.11.10
 CATEGORIES=		devel

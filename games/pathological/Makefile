@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/08/08 22:01:36 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2003/12/05 08:20:40 pvalchev Exp $
 
-COMMENT=	"an enriched clone of the game Logical by Rainbow Arts"
+COMMENT=	"enriched clone of the game Logical by Rainbow Arts"
 
 DISTNAME=	pathological-1.1.3
 CATEGORIES=	games

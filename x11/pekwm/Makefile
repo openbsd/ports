@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2003/01/04 18:30:08 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2003/12/05 08:20:40 pvalchev Exp $
 
-COMMENT=	"an aewm++ based pretty themable window manager"
+COMMENT=	"aewm++ based pretty themable window manager"
 
 VERSION=	0.1.1
 DISTNAME=	pekwm-${VERSION}
