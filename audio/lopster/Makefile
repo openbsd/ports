@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/16 05:27:41 mark Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/19 07:17:45 pvalchev Exp $
 
 COMMENT=	"full featured GTK Napster client"
 DISTNAME=	lopster-1.0.1-dev5.12
@@ -21,6 +21,11 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	gettext
+
+# XXX workaround gcc bugs on sparc64
+.if ${MACHINE_ARCH:Msparc64}
+PATCH_LIST=	gcc-* patch-*
+.endif
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
