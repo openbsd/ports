@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2001/04/13 03:24:22 obecian Exp $
+# $OpenBSD: Makefile,v 1.6 2001/06/10 01:05:30 jasoni Exp $
 
 COMMENT=	"console napster client"
-VERSION=	1.2
+
+VERSION=	1.3f
 DISTNAME=	TekNap-${VERSION}
 PKGNAME=	teknap-${VERSION}
 CATEGORIES=	audio
@@ -20,8 +21,5 @@ PERMIT_DISTFILES_FTP=   Yes
 CONFIGURE_STYLE=	gnu dest
 
 WRKDIST=	${WRKDIR}/TekNap
-
-post-install:
-	@ln -s TekNap-${VERSION} ${PREFIX}/bin/teknap
 
 .include <bsd.port.mk>

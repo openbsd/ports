@@ -5,7 +5,7 @@
  	@if test -f $(INSTALL_NAP); then $(MV) $(INSTALL_NAP) $(INSTALL_NAP).old; fi
  	$(RM) $(INSTALL_NAP)
 -	$(LN) $(bindir)/$(VERSION) $(INSTALL_NAP)
-+	#$(LN) $(bindir)/$(VERSION) $(INSTALL_NAP)
++	$(LN) $(VERSION) ${PREFIX}/bin/teknap
  
  install_local: local_installdirs installuserhelp
  	$(INSTALL) $(objdir)/TekNap $(local_dir)/bin/$(VERSION)
