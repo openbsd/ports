@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2000/11/18 23:15:38 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2001/04/18 23:24:51 avsm Exp $
 
-DISTNAME=		http_load_09nov00
-PKGNAME=		http_load-09nov00
+COMMENT=		"lightweight, single-threaded HTTP/HTTPS load tester"
+
+DISTNAME=		http_load_05apr2001
+PKGNAME=		http_load-20010405
 CATEGORIES=     	www benchmarks
-NEED_VERSION=		1.340
+NEED_VERSION=		1.401
 
 HOMEPAGE=		http://www.acme.com/software/http_load/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
