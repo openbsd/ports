@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/05/06 06:26:17 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/06/12 19:44:08 brad Exp $
 bin/gwenview
 man/man1/gwenview.1
 share/applnk/Graphics/gwenview.desktop
@@ -47,6 +47,7 @@ share/icons/hicolor/32x32/apps/gwenview.png
 share/icons/hicolor/48x48/apps/gwenview.png
 share/icons/locolor/16x16/apps/gwenview.png
 share/icons/locolor/32x32/apps/gwenview.png
+share/locale/ar/LC_MESSAGES/gwenview.mo
 share/locale/cs/LC_MESSAGES/gwenview.mo
 share/locale/da/LC_MESSAGES/gwenview.mo
 share/locale/de/LC_MESSAGES/gwenview.mo
@@ -66,6 +67,7 @@ share/locale/nso/LC_MESSAGES/gwenview.mo
 share/locale/pl/LC_MESSAGES/gwenview.mo
 share/locale/pt/LC_MESSAGES/gwenview.mo
 share/locale/pt_BR/LC_MESSAGES/gwenview.mo
+share/locale/ru/LC_MESSAGES/gwenview.mo
 share/locale/sv/LC_MESSAGES/gwenview.mo
 share/locale/tr/LC_MESSAGES/gwenview.mo
 share/locale/uk/LC_MESSAGES/gwenview.mo
@@ -93,6 +95,8 @@ share/locale/zu/LC_MESSAGES/gwenview.mo
 @comment @dirrm share/locale/tr
 @comment @dirrm share/locale/sv/LC_MESSAGES
 @comment @dirrm share/locale/sv
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
 @comment @dirrm share/locale/pt_BR/LC_MESSAGES
 @comment @dirrm share/locale/pt_BR
 @comment @dirrm share/locale/pt/LC_MESSAGES
@@ -131,6 +135,8 @@ share/locale/zu/LC_MESSAGES/gwenview.mo
 @comment @dirrm share/locale/da
 @comment @dirrm share/locale/cs/LC_MESSAGES
 @comment @dirrm share/locale/cs
+@comment @dirrm share/locale/ar/LC_MESSAGES
+@comment @dirrm share/locale/ar
 @comment @dirrm share/locale
 @comment @dirrm share/icons/hicolor/16x16/apps
 @comment @dirrm share/icons/hicolor/16x16
