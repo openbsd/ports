@@ -1,0 +1,10 @@
+To configure the apsfilter package, you have to run
+
+   ${SYSCONFDIR}/apsfilter/basedir/SETUP
+
+as root.
+
+Depending on your printer and what files you want to print,
+apsfilter needs some software for conversion like ghostscript,
+ImageMagick or teTeX. For details, see section 3.1 of
+file ${PREFIX}/share/doc/apsfilter/handbook.html
