@@ -1,0 +1,36 @@
+publicfile supplies files to the public through HTTP and FTP. 
+
+Security features: 
+
+- Before accepting any commands, publicfile chroot()s to the public file
+  area and sheds root privileges.
+- publicfile doesn't let users log in. Intruders can't use publicfile to
+  check your usernames and passwords.
+- publicfile refuses to supply files that are unreadable to owner, unreadable
+  to group, or unreadable to world.
+- publicfile never attempts to modify the public file area. It refuses all
+  HTTP and FTP modification commands.
+- publicfile never runs any other programs. It does not support HTTP CGI or
+  FTP SITE EXEC.
+- publicfile avoids bug-prone libraries such as stdio.
+- The publicfile FTP server uses local ports above 1024 for PORT connections.
+- The publicfile FTP server prohibits remote ports below 1024 for PORT.
+- The publicfile FTP server prohibits PORT relaying.
+- The publicfile FTP server includes automatic PASV IP protection.
+
+HTTP features: 
+
+- publicfile supports virtual hosts through the Host field. 
+- publicfile supports virtual hosts through absolute URLs. 
+- publicfile supports HTTP/1.1 persistent connections. 
+- publicfile supports HTTP/1.1 chunked responses. 
+- publicfile supports user-controlled content types. 
+- publicfile supports exact-prefix If-Modified-Since. 
+
+FTP features: 
+
+- publicfile has built-in LIST and NLST commands. You don't have to bother
+  setting up bin/ls, shared libraries, et al. inside the public file area. 
+- publicfile provides EPLF LIST responses, including options "i", "s", and "m". 
+- publicfile supports restarted transfers. 
+- publicfile supports pipelining. 
