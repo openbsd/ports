@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1999/09/28 16:57:31 brad Exp $
+# $OpenBSD: Makefile,v 1.13 1999/12/28 22:47:02 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/28 11:55:25 rse Exp $
 
 DISTNAME=	mm-1.0.12
@@ -14,13 +14,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
-test:
-	@cd ${WRKSRC} && ${MAKE} test
-
 post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
 
 post-install:
 	@${LDCONFIG} -m ${PREFIX}/lib
+
+test:	build
+	@cd ${WRKSRC} && make test
 
 .include <bsd.port.mk>
