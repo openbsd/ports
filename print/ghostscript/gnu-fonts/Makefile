@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/07/10 17:19:44 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/11 06:05:35 espie Exp $
 
 COMMENT=		"35 standard PostScript fonts with Adobe name aliases"
 
@@ -27,7 +27,7 @@ X11FONTDIR=	${PREFIX}/lib/X11/fonts
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
 	cd ${WRKDIST} && tar cf - fonts | (cd ${FONTDIR} && tar -xf -)
-	${INSTALL_DATA} ${FILESDIR}/fonts.alias ${FONTDIR}/fonts
+	${INSTALL_DATA} ${FILESDIR}/fonts.alias ${FONTDIR}/fonts/fonts.alias-gs
 	${INSTALL_DATA_DIR} ${X11FONTDIR}
 	cd ${X11FONTDIR} && ln -s ../../../share/ghostscript/fonts ghostscript
 

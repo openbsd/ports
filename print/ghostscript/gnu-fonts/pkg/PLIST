@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/29 19:08:42 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/11 06:05:35 espie Exp $
+lib/X11/fonts/
 lib/X11/fonts/ghostscript
+share/ghostscript/
+@fontdir share/ghostscript/fonts/
 share/ghostscript/fonts/a010013l.afm
 share/ghostscript/fonts/a010013l.pfb
 share/ghostscript/fonts/a010013l.pfm
@@ -39,9 +42,11 @@ share/ghostscript/fonts/c059036l.pfm
 share/ghostscript/fonts/d050000l.afm
 share/ghostscript/fonts/d050000l.pfb
 share/ghostscript/fonts/d050000l.pfm
-share/ghostscript/fonts/fonts.alias
-share/ghostscript/fonts/fonts.dir
+share/ghostscript/fonts/fonts.alias-gs
+@comment share/ghostscript/fonts/fonts.dir
+@comment share/ghostscript/fonts/fonts.dir.orig
 share/ghostscript/fonts/fonts.scale
+@comment share/ghostscript/fonts/fonts.scale.orig
 share/ghostscript/fonts/n019003l.afm
 share/ghostscript/fonts/n019003l.pfb
 share/ghostscript/fonts/n019003l.pfm
@@ -108,6 +113,3 @@ share/ghostscript/fonts/s050000l.pfm
 share/ghostscript/fonts/z003034l.afm
 share/ghostscript/fonts/z003034l.pfb
 share/ghostscript/fonts/z003034l.pfm
-@dirrm share/ghostscript/fonts
-@dirrm share/ghostscript
-@dirrm lib/X11/fonts
