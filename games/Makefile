@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2001/10/28 02:25:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2001/10/30 03:05:41 kevlo Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -45,6 +45,7 @@
 #    SUBDIR += jetpack
 #    SUBDIR += kdegames
 #    SUBDIR += klondike
+     SUBDIR += kslide
      SUBDIR += lgeneral
      SUBDIR += lincity
      SUBDIR += moon-buggy
