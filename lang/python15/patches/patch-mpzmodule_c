@@ -1,3 +1,4 @@
+$OpenBSD: patch-mpzmodule_c,v 1.2 2001/10/16 15:38:15 naddy Exp $
 --- Modules/mpzmodule.c.orig    Sat Feb 26 18:00:40 2000
 +++ Modules/mpzmodule.c Sat Feb 26 18:02:31 2000
 @@ -91,8 +91,9 @@
