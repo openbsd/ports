@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2003/06/13 21:54:15 marcm Exp $
-lib/libart_lgpl_2.so.5.12
+@comment $OpenBSD: PFRAG.shared,v 1.6 2003/08/15 03:48:28 marcm Exp $
+lib/libart_lgpl_2.so.5.14
 DYNLIBDIR(%D/lib)
