@@ -1,0 +1,12 @@
+$OpenBSD: patch-Imakefile,v 1.1 2003/04/06 00:43:21 naddy Exp $
+--- Imakefile.orig	Sat Mar 22 10:10:58 2003
++++ Imakefile	Sat Mar 22 10:11:20 2003
+@@ -17,7 +17,7 @@ INSTPGMFLAGS = -s -g kmem -m 2755 
+ 
+ LINTLIBS = $(LINTXLIB)
+ 
+-#if defined (FreeBSDArchitecture) || defined (OpenBSDArchitecture)
++#if defined (FreeBSDArchitecture)
+ SRCS = wmnet.c drivers.c getopt.c getopt1.c
+ OBJS = wmnet.o drivers.o getopt.o getopt1.o
+ #else

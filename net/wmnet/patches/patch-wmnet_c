@@ -1,7 +1,56 @@
-$OpenBSD: patch-wmnet_c,v 1.2 2002/12/30 09:15:26 pvalchev Exp $
---- wmnet.c.orig	Thu May  4 19:01:14 2000
-+++ wmnet.c	Mon Dec 30 00:51:50 2002
-@@ -76,6 +76,24 @@
+$OpenBSD: patch-wmnet_c,v 1.3 2003/04/06 00:43:21 naddy Exp $
+--- wmnet.c.orig	Fri May  5 07:01:14 2000
++++ wmnet.c	Sat Mar 22 10:35:16 2003
+@@ -49,33 +49,50 @@
+  *  5/4/2000   --  Support added for OpenBSD
+  */ 
+ 
+-#include<stdlib.h>
+-#include<stdio.h>
+-#include<X11/X.h>
+-#include<X11/Xlib.h>
+-#include<X11/Xutil.h>
+-#include<X11/Xatom.h>
+-#if defined (__FreeBSD__) || defined (__OpenBSD__)
+-# include<sys/socket.h>
+-# include"getopt.h"
+-#else
+-# include<getopt.h>
+-#endif
+-#include<net/if.h>
+-#include<signal.h>
+-#include<unistd.h>
+-#include<string.h>
+-#include<math.h>
+-#include<sys/time.h>
+-#include<sys/socket.h>
+-#include<sys/types.h>
+-#include<sys/ioctl.h>
+-#include<sys/wait.h>
+-#include<X11/extensions/shape.h>
++#include <sys/types.h>
++#include <sys/ioctl.h>
++#include <sys/socket.h>
++#include <sys/time.h>
++#include <sys/wait.h>
++
++#include <net/if.h>
++
++#include <X11/extensions/shape.h>
++#include <X11/X.h>
++#include <X11/Xatom.h>
++#include <X11/Xlib.h>
++#include <X11/Xutil.h>
++
++#include <err.h>
++#include <getopt.h>
++#include <math.h>
++#include <signal.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include <unistd.h>
+ 
  #include "XPM/arrow.xbm"
  #include "wmnet.h"
  
@@ -22,11 +71,11 @@ $OpenBSD: patch-wmnet_c,v 1.2 2002/12/30 09:15:26 pvalchev Exp $
 +
 +parser_func stat_gather;
 +
-+struct if_data_t id;
++static struct if_data_t id;
  
  /* Called on exit() from atexit() */
  void exit_func(void) {
-@@ -90,8 +108,6 @@ void got_signal(int x) {
+@@ -90,8 +107,6 @@ void got_signal(int x) {
  	} else exit(7);
  }
  
@@ -35,16 +84,145 @@ $OpenBSD: patch-wmnet_c,v 1.2 2002/12/30 09:15:26 pvalchev Exp $
  /* Does generic setting up of wmnet, (option parsing) and calls setupX() */
  void setup_wmnet(int argc, char **argv) {
  	int c;
-@@ -143,7 +159,7 @@ void setup_wmnet(int argc, char **argv) 
+@@ -143,10 +158,14 @@ void setup_wmnet(int argc, char **argv) 
  				exit(14);
  				break;
  			case 'W':
 -				device = strdup(optarg);
 +				id.device = strdup(optarg);
++				if (id.device == NULL)
++					err(1, "memory allocation for device");
  				break;
  			case 'D':
  				parser = strdup(optarg);
-@@ -313,8 +329,7 @@ void setup_wmnet(int argc, char **argv) 
++				if (parser == NULL)
++					err(1, "memory allocation for parser");
+ 				break;
+ #ifdef linux
+ 			case 'T':
+@@ -162,9 +181,10 @@ void setup_wmnet(int argc, char **argv) 
+ 				graphbox_height = 35;	
+ 				if (label == NULL) {
+ 					label = strdup(optarg);
++					if (label == NULL)
++						err(22, "memory allocation for label");
+ 				} else {
+-					fprintf(stderr, "wmnet: duplicate --label\n");
+-					exit(22);
++					errx(22, "duplicate --label");
+ 				}
+ 				break;
+ 			case 'B':
+@@ -172,8 +192,7 @@ void setup_wmnet(int argc, char **argv) 
+ 					labelbgcolorString = (char *)alloca(strlen(optarg)+1);
+ 					strncpy(labelbgcolorString, optarg, strlen(optarg)+1);
+ 				} else {
+-					fprintf(stderr, "wmnet: duplicate --labelbg\n");
+-					exit(23);
++					errx(23, "duplicate --labelbg");
+ 				}
+ 				break;
+ 			case 'F':
+@@ -181,8 +200,7 @@ void setup_wmnet(int argc, char **argv) 
+ 					labelfgcolorString = (char *)alloca(strlen(optarg)+1);
+ 					strncpy(labelfgcolorString, optarg, strlen(optarg)+1);
+ 				} else {
+-					fprintf(stderr, "wmnet: duplicate --labelfg\n");
+-					exit(23);
++					errx(23, "duplicate --labelfg");
+ 				}
+ 				break;
+ 			case 'l':
+@@ -193,8 +211,7 @@ void setup_wmnet(int argc, char **argv) 
+ 					rxcolorString = (char *)alloca(strlen(optarg)+1);
+ 					strncpy(rxcolorString, optarg, strlen(optarg)+1);
+ 				} else {
+-					fprintf(stderr, "wmnet: duplicate --rxcolor\n");
+-					exit(18);
++					errx(18, "duplicate --rxcolor");
+ 				}
+ 				break;
+ 			case 't':
+@@ -202,8 +219,7 @@ void setup_wmnet(int argc, char **argv) 
+ 					txcolorString = (char *)alloca(strlen(optarg)+1);
+ 					strncpy(txcolorString, optarg, strlen(optarg)+1);
+ 				} else {
+-					fprintf(stderr, "wmnet: duplicate --rxcolor\n");
+-					exit(19);
++					errx(19, "duplicate --txcolor");
+ 				}
+ 				break;
+ 			case 'x':
+@@ -217,9 +233,10 @@ void setup_wmnet(int argc, char **argv) 
+ 			case 'e':
+ 				if (click_command == NULL) {
+ 					click_command = strdup(optarg);	
++					if (click_command == NULL)
++						err(17, "memory allocation for click command");
+ 				} else {
+-					fprintf(stderr, "wmnet: duplicate --execute\n");
+-					exit(17);
++					errx(17, "duplicate --execute");
+ 				}
+ 				break;
+ 			case 'w':
+@@ -234,19 +251,16 @@ void setup_wmnet(int argc, char **argv) 
+ 					struct ifreq ifr;
+ 					strncpy(ifr.ifr_name, optarg, IFNAMSIZ );
+ 					ifr.ifr_name[IFNAMSIZ-1] = 0;
+-					if ((fds = socket(AF_INET, SOCK_DGRAM, 0)) == -1 || ioctl(fds, SIOCGIFFLAGS, &ifr) == -1 ) {
+-						perror("wmnet");
+-						exit(20);
+-					}
++					if ((fds = socket(AF_INET, SOCK_DGRAM, 0)) == -1)
++						err(20, "socket()");
++					if (ioctl(fds, SIOCGIFFLAGS, &ifr) == -1 )
++						err(20, "SIOCGIFFLAGS");
+ 					if ((ifr.ifr_flags & IFF_PROMISC) != 0) {  /* Is promiscuous mode not already unset? */
+ 						ifr.ifr_flags &= ~IFF_PROMISC;
+-						if (geteuid() != 0) {
+-							fprintf(stderr, "wmnet: this must be suid or you must be root!\n");
+-						}
+-						if(ioctl(fds, SIOCSIFFLAGS, &ifr) != 0) {
+-							fprintf(stderr, "wmnet: cannot unset promiscuous mode on %s\n", optarg);
+-							exit(21);
+-						}
++						if (geteuid() != 0)
++							warnx("this must be suid or you must be root!");
++						if(ioctl(fds, SIOCSIFFLAGS, &ifr) != 0)
++							err(21, "cannot unset promiscuous mode on %s", optarg);
+ 					}
+ 					close(fds);
+ 				}
+@@ -257,19 +271,16 @@ void setup_wmnet(int argc, char **argv) 
+ 					struct ifreq ifr;
+ 					strncpy(ifr.ifr_name, optarg, IFNAMSIZ );
+ 					ifr.ifr_name[IFNAMSIZ-1] = 0;
+-					if ((fds = socket(AF_INET, SOCK_DGRAM, 0)) == -1 || ioctl(fds, SIOCGIFFLAGS, &ifr) == -1 ) {
+-						perror("wmnet");
+-						exit(16);
+-					}
++					if ((fds = socket(AF_INET, SOCK_DGRAM, 0)) == -1)
++						err(16, "socket()");
++					if (ioctl(fds, SIOCGIFFLAGS, &ifr) == -1 )
++						err(16, "SIOCGIFFLAGS");
+ 					if ((ifr.ifr_flags & IFF_PROMISC) == 0) {  /* Is promiscuous mode not already set? */
+ 						ifr.ifr_flags |= IFF_PROMISC;
+-						if (geteuid() != 0) {
+-							fprintf(stderr, "wmnet: this must be suid or you must be root!\n");
+-						}
+-						if(ioctl(fds, SIOCSIFFLAGS, &ifr) != 0) {
+-							fprintf(stderr, "wmnet: cannot set promiscuous mode on %s\n", optarg);
+-							exit(13);
+-						}
++						if (geteuid() != 0)
++							warnx("wmnet: this must be suid or you must be root!");
++						if(ioctl(fds, SIOCSIFFLAGS, &ifr) != 0)
++							err(13, "cannot set promiscuous mode on %s", optarg);
+ 					}
+ 					close(fds);
+ 				}
+@@ -313,8 +324,7 @@ void setup_wmnet(int argc, char **argv) 
  	/* Relinquish suid privileges if there */
  	seteuid(getuid());
  
@@ -54,17 +232,182 @@ $OpenBSD: patch-wmnet_c,v 1.2 2002/12/30 09:15:26 pvalchev Exp $
  
  	if (txcolorString == NULL) txcolorString = "white";
  	if (rxcolorString == NULL) rxcolorString = "red";
-@@ -393,7 +408,7 @@ void setup_wmnet(int argc, char **argv) 
+@@ -322,22 +332,16 @@ void setup_wmnet(int argc, char **argv) 
+ 	if (labelbgcolorString == NULL) labelbgcolorString = "black";
+ 
+ 	/* Change dir to /, security precaution, and common courtesy */
+-	if (chdir("/") == -1) {
+-		perror("wmnet: chdir()");
+-		exit(16);
+-	}
++	if (chdir("/") == -1)
++		err(16, "chdir()");
+ 
+ 	/* Open X Display */
+-	if ((dpy = XOpenDisplay(NULL)) == NULL) {
+-		fprintf(stderr,"wmnet: doh...can't connect to X server, giving up\n");
+-		exit(1);
+-	}
++	if ((dpy = XOpenDisplay(NULL)) == NULL)
++		err(1, "doh...can't connect to X server");
+ 
+ 	/* assure ourself for a graceful exit */
+-	if (atexit(exit_func)) {
+-		fprintf(stderr,"wmnet: atexit() failed\n");
+-		exit(6);
+-	}
++	if (atexit(exit_func))
++		err(6, "atexit() failed");
+ 
+ 	signal_action.sa_handler = got_signal;
+ 	sigemptyset(&signal_action.sa_mask);
+@@ -347,40 +351,29 @@ void setup_wmnet(int argc, char **argv) 
+ #endif
+ 	if ((sigaction(SIGCHLD, &signal_action, NULL) == -1) ||
+ 	    (sigaction(SIGINT, &signal_action, NULL) == -1) ||
+-	    (sigaction(SIGTERM, &signal_action, NULL) == -1)) {
+-		fprintf(stderr,"wmnet: couldn't set signal handler\n");
+-		exit(8);
+-	}
+-
++	    (sigaction(SIGTERM, &signal_action, NULL) == -1))
++		err(8, "couldn't set signal handler");
+ 	
+ 	/* Setup initial foreground color */
+ 	if(rxcolorString) {
+-		if(!XParseColor(dpy, DefaultColormap(dpy, screen), rxcolorString, &thecolor)) {
+-			fprintf(stderr, "wmnet: what the heck is %s for a color?\n", rxcolorString);
+-			exit(12);
+-		}
++		if(!XParseColor(dpy, DefaultColormap(dpy, screen), rxcolorString, &thecolor))
++			err(12, "RX color %s", rxcolorString);
+ 		shadesOf(&thecolor, rx_pixel);
+ 	} 
+ 	if(txcolorString) {
+-		if(!XParseColor(dpy, DefaultColormap(dpy, screen), txcolorString, &thecolor)) {
+-			fprintf(stderr, "wmnet: what the heck is %s for a color?\n", txcolorString);
+-			exit(5);
+-		}
++		if(!XParseColor(dpy, DefaultColormap(dpy, screen), txcolorString, &thecolor))
++			err(5, "TX color %s", txcolorString);
+ 		shadesOf(&thecolor, tx_pixel);
+ 	}
+ 	if(labelfgcolorString) {
+-		if(!XParseColor(dpy, DefaultColormap(dpy, screen), labelfgcolorString, &thecolor)) {
+-			fprintf(stderr, "wmnet: what the heck is %s for a color?\n", labelfgcolorString);
+-			exit(24);
+-		}
++		if(!XParseColor(dpy, DefaultColormap(dpy, screen), labelfgcolorString, &thecolor))
++			err(24, "foreground label color %s", labelfgcolorString);
+ 		XAllocColor(dpy, DefaultColormap(dpy, screen), &thecolor);
+ 		labelfg_pixel = thecolor.pixel;
+ 	}
+ 	if(labelbgcolorString) {
+-		if(!XParseColor(dpy, DefaultColormap(dpy, screen), labelbgcolorString, &thecolor)) {
+-			fprintf(stderr, "wmnet: what the heck is %s for a color?\n", labelbgcolorString);
+-			exit(25);
+-		}
++		if(!XParseColor(dpy, DefaultColormap(dpy, screen), labelbgcolorString, &thecolor))
++			err(25, "background label color %s", labelbgcolorString);
+ 		XAllocColor(dpy, DefaultColormap(dpy, screen), &thecolor);
+ 		labelbg_pixel = thecolor.pixel;
+ 	}
+@@ -393,9 +386,8 @@ void setup_wmnet(int argc, char **argv) 
  	XSetCommand(dpy, main_window, argv, argc);
  
  	/* Get the initial stats for startup */
 -	stat_gather();
 +	stat_gather(&id);
  	
- 
+-
  	/* Rock n Roll */
-@@ -543,8 +558,8 @@ void tock(void) {
+ 	XMapWindow(dpy, main_window);
+ 
+@@ -410,14 +402,11 @@ void setupX(void) {
+ 	XColor color;
+ 	XRectangle bound = { 0, 0, 56, 56 }; 
+ 
+-
+ 	screen = DefaultScreen(dpy);
+ 
+ 	delete_atom = XInternAtom(dpy, "WM_DELETE_WINDOW", False);
+-	if (delete_atom == None) {
+-		fprintf(stderr,"wmnet: I need WindowMaker running! (or at least some window manager)\n");
+-		exit(2);
+-	}
++	if (delete_atom == None)
++		err(2, "test for window manager");
+ 	if (XInternAtom(dpy,"_WINDOWMAKER_WM_FUNCTION", True) != None) {
+ 		if (specified_state == -1) specified_state = WithdrawnState;
+ 	} else {
+@@ -436,10 +425,8 @@ void setupX(void) {
+ 	grey_pixel = color.pixel;
+ 
+ 
+-	if ((arrow = XCreateBitmapFromData(dpy, root_window, arrow_bits, arrow_width, arrow_height)) == None) {
+-		fprintf(stderr, "wmnet: unable to create arrow bitmap\n");
+-		exit(11);
+-	}
++	if ((arrow = XCreateBitmapFromData(dpy, root_window, arrow_bits, arrow_width, arrow_height)) == None)
++		err(11, "unable to create arrow bitmap");
+ 	gcv.graphics_exposures = False;
+ 	gcv.foreground = tx_pixel[HIGH_INTENSITY]; 
+ 	gcv.background = darkgrey_pixel;
+@@ -468,7 +455,6 @@ void setupX(void) {
+ 	shints.max_height = 64;
+ 	shints.flags = PMinSize | PMaxSize;
+ 	XSetWMNormalHints(dpy, main_window, &shints);
+-
+ 	
+ 	XStoreName(dpy, main_window, "wmnet");	
+ 	XShapeCombineRectangles(dpy, *visible_window, ShapeBounding, 4, 4, &bound, 1, ShapeBounding, 0); 
+@@ -489,8 +475,6 @@ void createWin(Window *win) {
+ 	XSetClassHint(dpy, *win, &classHint);
+ }
+ 
+-
+-
+ /* Handles Expose events, repaints the window */
+ void redraw(XExposeEvent *ee) {
+         static XRectangle cliprect = { 4, 51, 56, 9 };
+@@ -498,7 +482,6 @@ void redraw(XExposeEvent *ee) {
+ /*	if (wmaker_present == False) XFillRectangle(dpy, *visible_window, graphics_context, 0, 0, 64, 64); */
+ 	XFillRectangle(dpy, *visible_window, graphics_context, GRAPHBOX_X, GRAPHBOX_Y, GRAPHBOX_WIDTH, GRAPHBOX_HEIGHT); 
+ 
+-
+ 	XSetForeground(dpy, graphics_context, black_pixel);
+ 	XFillRectangle(dpy, *visible_window, graphics_context, TOPBOX_X, TOPBOX_Y, TOPBOX_WIDTH, TOPBOX_HEIGHT);
+ 	XDrawLine(dpy, *visible_window, graphics_context, GRAPHBOX_X_LEFT, GRAPHBOX_Y_TOP, GRAPHBOX_X_LEFT, GRAPHBOX_Y_BOTTOM);
+@@ -512,19 +495,16 @@ void redraw(XExposeEvent *ee) {
+ 		XSetClipMask(dpy, graphics_context, None);
  	}
+ 
+-
+ 	XSetForeground(dpy, graphics_context, white_pixel);
+ 	XDrawLine(dpy, *visible_window, graphics_context, GRAPHBOX_X_RIGHT, GRAPHBOX_Y_BOTTOM, GRAPHBOX_X_RIGHT, (GRAPHBOX_Y_TOP + 1)); 
+ 	XDrawLine(dpy, *visible_window, graphics_context, GRAPHBOX_X_LEFT, GRAPHBOX_Y_BOTTOM, GRAPHBOX_X_RIGHT, GRAPHBOX_Y_BOTTOM);
+ 
+-
+ 	XSetForeground(dpy, graphics_context, grey_pixel);
+ 	XSetBackground(dpy, graphics_context, black_pixel);
+ 	XCopyPlane(dpy, arrow, *visible_window, graphics_context, 7, 0, 7, 9, 53, 5, 1);
+ 	XCopyPlane(dpy, arrow, *visible_window, graphics_context, 0, 0, 7, 9, 46, 5, 1);
+ }
+ 	
+-	
+ /* Main loop that is called every delaytime.  This calls stat_gather() and updateSpeedometer() when needed 
+  * and takes care of the displaying and scrolling the graph */
+ void tock(void) {
+@@ -537,18 +517,14 @@ void tock(void) {
+ 	static unsigned long lifo_out[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+ 	static unsigned int t = 0, blank = 0;
+ 
+-	if (gettimeofday(&timenow, NULL)) {
+-		perror("wmnet: gettimeofday()");
+-		exit(10);
+-	}
++	if (gettimeofday(&timenow, NULL))
++		err(10, "gettimeofday()");
  	since = (timenow.tv_sec * 1000000L + timenow.tv_usec) - (timelast.tv_sec * 1000000L + timelast.tv_usec); 
  	if (since > displayDelay) {
 -		lifo_in[t] = diffbytes_in * (1000000L / since);
@@ -73,8 +416,17 @@ $OpenBSD: patch-wmnet_c,v 1.2 2002/12/30 09:15:26 pvalchev Exp $
 +		lifo_out[t] = id.db_out * (1000000L / since);
  		t = (t + 1) % 8;
  
+-
+-
+ 		/* in */
+ 		rate_rx = (lifo_in[0] + lifo_in[1] + lifo_in[2] + lifo_in[3] + lifo_in[4] + lifo_in[5] + lifo_in[6] + lifo_in[7]) / (unsigned long)8;
+ 		if(logscale) percent_rx = (log10(  ((rate_rx * 10000/ maxRate) < 1) ? 1 : ((double)rate_rx / (double)maxRate) * 10000.) / 4.);
+@@ -563,52 +539,48 @@ void tock(void) {
+ 		yy =  GRAPH_Y_UPPER + (GRAPH_HEIGHT * percent_tx) ; 
+ 		yy = yy > GRAPH_Y_BOTTOM ? GRAPH_Y_BOTTOM : yy; 
  
-@@ -568,33 +583,33 @@ void tock(void) {
+-
+ 		/* only update the speedometer every 7th displayDelay */
  		if (t == 7) updateSpeedometer(rate_rx, rate_tx);
  		
  		/* blank var is just for stopping executing the X* funcs when the disp is all black */
@@ -99,7 +451,7 @@ $OpenBSD: patch-wmnet_c,v 1.2 2002/12/30 09:15:26 pvalchev Exp $
  			}
  		}
  
- 
+-
 -		diffbytes_in = diffbytes_out = 0;
 +		id.db_in = id.db_out = 0;
  		timelast = timenow;
@@ -117,7 +469,9 @@ $OpenBSD: patch-wmnet_c,v 1.2 2002/12/30 09:15:26 pvalchev Exp $
  			XSetForeground(dpy, graphics_context, tx_pixel[HIGH_INTENSITY]);
  			XCopyPlane(dpy, arrow, *visible_window, graphics_context, 7, 0, 7, 9, 53, 5, 1);
  			/* XFillRectangle(dpy, *visible_window, graphics_context, 55, 5, 4, 4);  */
-@@ -603,7 +618,7 @@ void tock(void) {
+-		}
+-		else {
++		} else {
  			XSetForeground(dpy, graphics_context, grey_pixel);
  			XCopyPlane(dpy, arrow, *visible_window, graphics_context, 7, 0, 7, 9, 53, 5, 1);
  		}
@@ -126,16 +480,68 @@ $OpenBSD: patch-wmnet_c,v 1.2 2002/12/30 09:15:26 pvalchev Exp $
  			XSetForeground(dpy, graphics_context, rx_pixel[HIGH_INTENSITY]);
  			XCopyPlane(dpy, arrow, *visible_window, graphics_context, 0, 0, 7, 9, 46, 5, 1);
  			/* XFillRectangle(dpy, *visible_window, graphics_context, 55, 12, 4, 4);  */
-@@ -732,7 +747,7 @@ int main(int argc, char ** argv) {
+-		}
+-		else {
++		} else {
+ 			XSetForeground(dpy, graphics_context, grey_pixel);
+ 			XCopyPlane(dpy, arrow, *visible_window, graphics_context, 0, 0, 7, 9, 46, 5, 1);
+ 		}
+@@ -634,8 +606,6 @@ int updateSpeedometer(int rxRate, int tx
+ 	} 
+ 	collectandreturn = True;
+ 
+-
+-
+ 	if (txRate > rxRate) {
+ 		rate = (txRate + txRate_last) / 2000.;
+ 		color = tx_pixel[HIGH_INTENSITY];
+@@ -644,7 +614,6 @@ int updateSpeedometer(int rxRate, int tx
+ 		color = rx_pixel[HIGH_INTENSITY];
+ 	}
+ 
+-
+ 	if (!clear) {
+ 		XSetForeground(dpy, graphics_context, black_pixel);
+ 		XFillRectangle(dpy, *visible_window, graphics_context, 4, 5, 37, 9);
+@@ -675,7 +644,6 @@ int updateSpeedometer(int rxRate, int tx
+ 
+ }
+ 
+-
+ /* called from within tock to draw the shaded lines making up our bar-graph */
+ void drawColoredLine(int y1, int y2, unsigned long *shadecolor) {
+ 	int subline[4], i;
+@@ -709,15 +677,14 @@ void shadesOf(XColor *shade, unsigned lo
+ 	XAllocColor(dpy, DefaultColormap(dpy, screen), shade);
+ 	returnarray[LOW_INTENSITY] = shade->pixel;
+ }
+-	
+ 
+ /* Here is main, clear at the bottom.  Handles the event loop and calls tock() every delayTime milliseconds */
+ int main(int argc, char ** argv) {
+ 	unsigned int done = False;
+ 	XEvent event;
+-	
++
+ 	setup_wmnet(argc, argv);
+-	
++
+ 	while(!done) {
+ 		while(XPending(dpy)) {
+ 			XNextEvent(dpy, &event);	
+@@ -732,9 +699,8 @@ int main(int argc, char ** argv) {
  			case ButtonPress:
  				if(event.xbutton.button == Button1 && click_command != NULL) {
  					if (fork() == 0) {
 -						execl("/bin/sh", "sh", "-c", click_command, NULL);
+-						perror("wmnet: execl()");
+-						exit(15);
 +						execl("/bin/sh", "sh", "-c", click_command, (void *)NULL);
- 						perror("wmnet: execl()");
- 						exit(15);
++						err(15, "execl(/bin/sh)");
  					}
-@@ -747,4 +762,3 @@ int main(int argc, char ** argv) {
+ 				}
+ 				break;
+@@ -747,4 +713,3 @@ int main(int argc, char ** argv) {
  	}
  	return 0;
  }

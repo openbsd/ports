@@ -1,13 +1,37 @@
-$OpenBSD: patch-drivers_c,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
+$OpenBSD: patch-drivers_c,v 1.2 2003/04/06 00:43:21 naddy Exp $
 --- drivers.c.orig	Fri May  5 06:34:29 2000
-+++ drivers.c	Thu Sep 12 04:18:38 2002
-@@ -20,12 +20,15 @@
- #include<unistd.h>
- #include"config.h"
++++ drivers.c	Mon Mar 24 19:34:43 2003
+@@ -9,35 +9,40 @@
+  *  great, but please send me the diff.  
+  */
  
+-#include<stdlib.h>
+-#include<stdio.h>
+-#include<string.h>
+-#include<X11/Xlib.h>
+-#include<fcntl.h>
+-#include<sys/types.h>
+-#include<sys/stat.h>
+-#include<sys/socket.h>
+-#include<unistd.h>
+-#include"config.h"
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <sys/stat.h>
++
++#include <X11/Xlib.h>
++
++#include <err.h>
++#include <fcntl.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include <unistd.h>
+ 
++#include "config.h"
 +#include "wmnet.h"
 +
-+char buffer[256];
++static char buffer[512];
  
  /* For FreeBSD */
  #ifdef USE_KVM
@@ -20,12 +44,13 @@ $OpenBSD: patch-drivers_c,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
  
  kvm_t *kvmfd;
  struct nlist symbols[] = {
-@@ -33,11 +36,10 @@ struct nlist symbols[] = {
+  { "_ifnet" },
   { NULL }
  };
- unsigned long ifnet_savedaddr;
+-unsigned long ifnet_savedaddr;
 -int kvm_test(void);
 -int kvm_updateStats(void);
++static unsigned long ifnet_savedaddr = -1;
 +int kvm_test(struct if_data_t *);
 +int kvm_updateStats(struct if_data_t *);
  #endif /* USE_KVM */
@@ -34,7 +59,7 @@ $OpenBSD: patch-drivers_c,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
  #ifdef USE_LINUX_PPP
  #include<net/ppp_defs.h>
  
-@@ -57,18 +59,6 @@ static struct ifpppstatsreq ppp_stats_re
+@@ -57,18 +62,6 @@ static struct ifpppstatsreq ppp_stats_re
  #define ACCOUNT_IN_FOUND        1
  #define ACCOUNT_OUT_FOUND       2
  
@@ -53,7 +78,7 @@ $OpenBSD: patch-drivers_c,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
  #ifdef USE_IPFWADM
  int updateStats_ipfwadm(void);
  int ipfwadm_test(void);
-@@ -82,10 +72,8 @@ int updateStats_dev(void);
+@@ -82,10 +75,8 @@ int updateStats_dev(void);
  int dev_test(void);
  #endif
  
@@ -65,7 +90,7 @@ $OpenBSD: patch-drivers_c,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
   parser_func function;
   parser_func test;
  } drivers[] = {
-@@ -102,12 +90,13 @@ static struct drivers_struct {
+@@ -102,12 +93,13 @@ static struct drivers_struct {
   {"pppstats",updateStats_ppp, ppp_test},
  #endif
  #ifdef USE_KVM
@@ -81,13 +106,13 @@ $OpenBSD: patch-drivers_c,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
   int ind = 0;
   int len = 0;
   char *string, *ptr;
-@@ -127,14 +116,12 @@ char* available_drivers(void) {
+@@ -127,14 +119,12 @@ char* available_drivers(void) {
   *(--string) = '\0';
   return ptr; 
  } 
 -   
- 
 -
+ 
 -parser_func find_driver(void) {
 +parser_func find_driver(struct if_data_t *id) {
   int ind = 0;
@@ -99,7 +124,7 @@ $OpenBSD: patch-drivers_c,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
    }
    ind++;
   }
-@@ -143,12 +130,13 @@ parser_func find_driver(void) {
+@@ -143,12 +133,13 @@ parser_func find_driver(void) {
  }
  
  
@@ -116,7 +141,7 @@ $OpenBSD: patch-drivers_c,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
      fprintf(stderr, "wmnet: driver %s not appropriate for this machine\n", parser_name);
      exit(18);
    }
-@@ -157,9 +145,6 @@ parser_func setup_driver(char * parser_n
+@@ -157,9 +148,6 @@ parser_func setup_driver(char * parser_n
   fprintf(stderr, "wmnet: no driver %s\n", parser_name);
   exit(18);
  }
@@ -126,7 +151,7 @@ $OpenBSD: patch-drivers_c,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
  
  #ifdef linux
  /* All the data gathering is done in here. 
-@@ -441,20 +426,24 @@ int updateStats_ppp(void) {
+@@ -441,48 +429,58 @@ int updateStats_ppp(void) {
  #endif /* linux */
  
  #ifdef USE_KVM
@@ -138,24 +163,32 @@ $OpenBSD: patch-drivers_c,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
 -  if(device == NULL) device = "ec0";
 -  fprintf(stderr, "wmnet: using kmem driver to monitor %s\n", device);
 +  if(id->device == NULL) id->device = "ec0";
-+  fprintf(stderr, "wmnet: using kmem driver to monitor %s\n", id->device);
++  warnx("using kmem driver to monitor %s", id->device);
    return True;
  }
  
 -int kvm_updateStats(void) {
+- struct ifnet * ifnet = (struct ifnet *)buffer;
 +int kvm_updateStats(struct if_data_t *id) {
-  struct ifnet * ifnet = (struct ifnet *)buffer;
++ struct ifnet ifnetbuf, *ifnet;
   unsigned long ifnet_addr = ifnet_savedaddr;
   char devname[16];
   int flag = 0;
 + unsigned long tp_in, tp_out, tb_in, tb_out;
 + static unsigned long lp_in, lp_out, lb_in, lb_out;
-+ //static unsigned int dp_in, dp_out;
++
++ ifnet = &ifnetbuf;
 +
   while (ifnet_addr && flag != (ACCOUNT_IN_FOUND|ACCOUNT_OUT_FOUND)) {
-   kvm_read(kvmfd, ifnet_addr, buffer, sizeof(struct ifnet));
+-  kvm_read(kvmfd, ifnet_addr, buffer, sizeof(struct ifnet));
++  memset(ifnet, 0, sizeof(struct ifnet));
++  if (kvm_read(kvmfd, ifnet_addr, ifnet, sizeof(struct ifnet)) == -1) {
++	  warn("kvm_read() returned -1");
++	  break;
++  }
  #ifdef __OpenBSD__
-@@ -463,26 +452,27 @@ int kvm_updateStats(void) {
+   snprintf(devname, 15, "%s", ifnet->if_xname);
+ #else
    kvm_read(kvmfd, (unsigned long)ifnet->if_name, devname, 15);
    snprintf(devname, 15, "%s%d", devname, ifnet->if_unit);
  #endif
@@ -168,6 +201,8 @@ $OpenBSD: patch-drivers_c,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
 -                lastpackets_in = totalpackets_in;
 -                lastbytes_in = totalbytes_in;
 -                rx = True;
+-        }
+ 
 +   /* we found our struct */
 +  if(!strncmp(devname, id->device, strlen(id->device))) {
 +        tp_in =ifnet->if_ipackets;
@@ -178,8 +213,7 @@ $OpenBSD: patch-drivers_c,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
 +                lp_in = tp_in;
 +                lb_in = tb_in;
 +                id->rx = True;
-         }
- 
++        }
  
 -        totalpackets_out = ifnet->if_opackets;
 -        if (totalpackets_out != lastpackets_out) {
@@ -200,7 +234,7 @@ $OpenBSD: patch-drivers_c,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
          }
          flag = (ACCOUNT_IN_FOUND|ACCOUNT_OUT_FOUND);
  
-@@ -498,12 +488,8 @@ int kvm_updateStats(void) {
+@@ -498,12 +496,8 @@ int kvm_updateStats(void) {
  /* return True if no change to tx/rx
   * return False if display will need to be updated
   */	 
