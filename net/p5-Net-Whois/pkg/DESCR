@@ -1,0 +1,2 @@
+Net::Whois::Domain new() attempts to retrieve and parse the given
+domain's "whois" information from the InterNIC (whois.internic.net).
