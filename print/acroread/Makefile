@@ -1,35 +1,38 @@
 # OpenBSD makefile for:	acroread
-# Version required:	3.01
+# Version required:	4.0
 # Date created:		June 7 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1998/06/30 02:57:44 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/07/14 10:58:37 jakob Exp $
 #
 
-DISTNAME=	acroread_linux_301
-PKGNAME=	acroread-3.01
+DISTNAME=	linux-ar-40
+PKGNAME=	acroread-4.0
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/3.x/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/acrobatreader/unix/3.x/
+
+MASTER_SITES=	ftp://ftp-pac.adobe.com/pub/adobe/acrobatreader/unix/4.x/
 ONLY_FOR_ARCHS=	i386
 
 MAINTAINER=	angelos@openbsd.org
 
 RUN_DEPENDS=	/emul/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
 
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/ILINXR.install
 
 do-build:
 	@${ECHO_MSG} "Do a \`make install' as root."
 
 do-install:
-	@${MKDIR} ${PREFIX}/Acrobat3
-	@ReadInstallDir=${PREFIX}/Acrobat3 ${WRKDIR}/INSTALL
+	@${MKDIR} ${PREFIX}/Acrobat4
+	@ReadInstallDir=${PREFIX}/Acrobat4 ${WRKSRC}/INSTALL
 
 post-install:
-	@sed -e 's/Linux)/OpenBSD\|Linux)/' <${PREFIX}/Acrobat3/bin/acroread >${PREFIX}/bin/acroread
+	@cd ${PREFIX}/Acrobat4/bin && \
+	  ${PATCH} --quiet < ${FILESDIR}/acroread.diff && \
+	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat4/bin/acroread \
+	     ${PREFIX}/bin/acroread && ${RM} acroread.orig
 	@chmod +x ${PREFIX}/bin/acroread
 	@${ECHO_MSG} "Be sure to read the license agreement in"
-	@${ECHO_MSG} "${PREFIX}/Acrobat3/Reader/License.pdf"
+	@${ECHO_MSG} "${PREFIX}/Acrobat4/Reader/License.pdf"
 
 .include <bsd.port.mk>
