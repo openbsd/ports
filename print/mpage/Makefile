@@ -3,7 +3,7 @@
 # Version required:     mpage 2.5
 # Date created:         August, 10th 1999
 # Whom:                 Ian McWilliam
-# $OpenBSD: Makefile,v 1.8 2000/04/14 08:34:24 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/18 19:47:04 espie Exp $
 
 
 DISTNAME=	mpage-2.5
@@ -14,43 +14,29 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ianm@cit.nepean.uws.edu.au
 
 LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=		Yes
-FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
+FAKE=	Yes
+FLAVORS=us-letter legal a4
+FLAVOR?=
 
-FLAVORS=	us-letter legal a4
-
-.if defined(FLAVOR)
-.if ${FLAVOR:L:Mus-letter}
-PAGESIZE="PAGE_LETTER"
-MAKE_FLAGS+=	PAGESIZE="PAGE_LETTER"
-.elif ${FLAVOR:L:Mlegal}
-PAGESIZE="PAGE_LETTER"
-MAKE_FLAGS+=	PAGESIZE="PAGE_LEGAL"
-.elif ${FLAVOR:L:Ma4}
-PAGESIZE="PAGE_LETTER"
-MAKE_FLAGS+=	PAGESIZE="PAGE_A4"
-.endif
-.endif
 
 fetch-depends:
-.if !defined(NO_WARNINGS)
-.if !defined(PAGESIZE)
+.if ${FLAVOR:L} == "us-letter"
+MAKE_ENV+=	PAGESIZE=PAGE_LETTER
+.elif ${FLAVOR:L} == "legal"
+MAKE_ENV+=	PAGESIZE=PAGE_LEGAL
+.elif ${FLAVOR:L} == "a4"
+MAKE_ENV+=	PAGESIZE=PAGE_A4
+.else
 	@echo ""
-	@echo You must define your favorite page size:
-	@echo PAGE_LETTER for US letter
-	@echo PAGE_LEGAL for legal
-	@echo PAGE_A4 for European/Australian A4
-	@echo ""
-	@echo by setting the enivonment variable PAGESIZE=PAGE_A4
-	@echo or by the command \"make PAGESIZE=PAGE_A4\"
+	@echo >&2 "Unknown flavor: ${FLAVOR}"
+	@echo >&2 "You must set ONE flavor: ${FLAVORS}"
 	@echo ""
 	@exit 1
-.endif
 .endif
 
 .include <bsd.port.mk>
