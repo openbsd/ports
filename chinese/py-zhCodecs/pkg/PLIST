@@ -1,33 +1,33 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/07 15:48:00 shell Exp $
-lib/python${PYTHON_VER}/site-packages/big5_tw.py
-lib/python${PYTHON_VER}/site-packages/big5_tw.pyc
-lib/python${PYTHON_VER}/site-packages/big5_tw.pyo
-lib/python${PYTHON_VER}/site-packages/chinesecn/__init__.py
-lib/python${PYTHON_VER}/site-packages/chinesecn/__init__.pyc
-lib/python${PYTHON_VER}/site-packages/chinesecn/__init__.pyo
-lib/python${PYTHON_VER}/site-packages/chinesecn/euc_gb23122utf.py
-lib/python${PYTHON_VER}/site-packages/chinesecn/euc_gb23122utf.pyc
-lib/python${PYTHON_VER}/site-packages/chinesecn/euc_gb23122utf.pyo
-lib/python${PYTHON_VER}/site-packages/chinesecn/utf2euc_gb2312.py
-lib/python${PYTHON_VER}/site-packages/chinesecn/utf2euc_gb2312.pyc
-lib/python${PYTHON_VER}/site-packages/chinesecn/utf2euc_gb2312.pyo
-lib/python${PYTHON_VER}/site-packages/chinesetw/__init__.py
-lib/python${PYTHON_VER}/site-packages/chinesetw/__init__.pyc
-lib/python${PYTHON_VER}/site-packages/chinesetw/__init__.pyo
-lib/python${PYTHON_VER}/site-packages/chinesetw/big52utf1.py
-lib/python${PYTHON_VER}/site-packages/chinesetw/big52utf1.pyc
-lib/python${PYTHON_VER}/site-packages/chinesetw/big52utf1.pyo
-lib/python${PYTHON_VER}/site-packages/chinesetw/big52utf2.py
-lib/python${PYTHON_VER}/site-packages/chinesetw/big52utf2.pyc
-lib/python${PYTHON_VER}/site-packages/chinesetw/big52utf2.pyo
-lib/python${PYTHON_VER}/site-packages/chinesetw/utf2big51.py
-lib/python${PYTHON_VER}/site-packages/chinesetw/utf2big51.pyc
-lib/python${PYTHON_VER}/site-packages/chinesetw/utf2big51.pyo
-lib/python${PYTHON_VER}/site-packages/chinesetw/utf2big52.py
-lib/python${PYTHON_VER}/site-packages/chinesetw/utf2big52.pyc
-lib/python${PYTHON_VER}/site-packages/chinesetw/utf2big52.pyo
-lib/python${PYTHON_VER}/site-packages/eucgb2312_cn.py
-lib/python${PYTHON_VER}/site-packages/eucgb2312_cn.pyc
-lib/python${PYTHON_VER}/site-packages/eucgb2312_cn.pyo
-@dirrm lib/python${PYTHON_VER}/site-packages/chinesetw
-@dirrm lib/python${PYTHON_VER}/site-packages/chinesecn
+@comment $OpenBSD: PLIST,v 1.2 2003/10/13 16:24:27 sturm Exp $
+lib/python${MODPY_VERSION}/site-packages/big5_tw.py
+lib/python${MODPY_VERSION}/site-packages/big5_tw.pyc
+lib/python${MODPY_VERSION}/site-packages/big5_tw.pyo
+lib/python${MODPY_VERSION}/site-packages/chinesecn/__init__.py
+lib/python${MODPY_VERSION}/site-packages/chinesecn/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/chinesecn/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/chinesecn/euc_gb23122utf.py
+lib/python${MODPY_VERSION}/site-packages/chinesecn/euc_gb23122utf.pyc
+lib/python${MODPY_VERSION}/site-packages/chinesecn/euc_gb23122utf.pyo
+lib/python${MODPY_VERSION}/site-packages/chinesecn/utf2euc_gb2312.py
+lib/python${MODPY_VERSION}/site-packages/chinesecn/utf2euc_gb2312.pyc
+lib/python${MODPY_VERSION}/site-packages/chinesecn/utf2euc_gb2312.pyo
+lib/python${MODPY_VERSION}/site-packages/chinesetw/__init__.py
+lib/python${MODPY_VERSION}/site-packages/chinesetw/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/chinesetw/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/chinesetw/big52utf1.py
+lib/python${MODPY_VERSION}/site-packages/chinesetw/big52utf1.pyc
+lib/python${MODPY_VERSION}/site-packages/chinesetw/big52utf1.pyo
+lib/python${MODPY_VERSION}/site-packages/chinesetw/big52utf2.py
+lib/python${MODPY_VERSION}/site-packages/chinesetw/big52utf2.pyc
+lib/python${MODPY_VERSION}/site-packages/chinesetw/big52utf2.pyo
+lib/python${MODPY_VERSION}/site-packages/chinesetw/utf2big51.py
+lib/python${MODPY_VERSION}/site-packages/chinesetw/utf2big51.pyc
+lib/python${MODPY_VERSION}/site-packages/chinesetw/utf2big51.pyo
+lib/python${MODPY_VERSION}/site-packages/chinesetw/utf2big52.py
+lib/python${MODPY_VERSION}/site-packages/chinesetw/utf2big52.pyc
+lib/python${MODPY_VERSION}/site-packages/chinesetw/utf2big52.pyo
+lib/python${MODPY_VERSION}/site-packages/eucgb2312_cn.py
+lib/python${MODPY_VERSION}/site-packages/eucgb2312_cn.pyc
+lib/python${MODPY_VERSION}/site-packages/eucgb2312_cn.pyo
+@dirrm lib/python${MODPY_VERSION}/site-packages/chinesetw
+@dirrm lib/python${MODPY_VERSION}/site-packages/chinesecn
