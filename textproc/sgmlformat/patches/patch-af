@@ -1,6 +1,5 @@
-diff -u -r /tmp/sgmlformat-1.6/sgmlfmt/Makefile ./sgmlfmt/Makefile
---- /tmp/sgmlformat-1.6/sgmlfmt/Makefile	Tue Jul 22 15:40:33 1997
-+++ ./sgmlfmt/Makefile	Sun Apr  5 10:39:14 1998
+--- sgmlfmt/Makefile.orig	Tue Jul 22 15:40:33 1997
++++ sgmlfmt/Makefile	Sat Jun 10 02:31:14 2000
 @@ -2,7 +2,7 @@
  
  FILES=		sgmlfmt
@@ -10,3 +9,11 @@ diff -u -r /tmp/sgmlformat-1.6/sgmlfmt/Makefile ./sgmlfmt/Makefile
  
  all: sgmlfmt
  
+@@ -11,6 +11,6 @@ sgmlfmt: sgmlfmt.pl
+ 
+ afterinstall:
+ 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} ${FILES} \
+-		${BINDIR}
++		$(DESTDIR)${BINDIR}
+ 
+ .include <bsd.prog.mk>

@@ -1,6 +1,6 @@
 --- transpec/html.sdata.orig	Wed Jul 16 18:19:53 1997
-+++ transpec/html.sdata	Thu Apr  2 23:19:26 1998
-@@ -80,13 +80,14 @@
++++ transpec/html.sdata	Sat Jun 10 02:22:36 2000
+@@ -80,13 +80,14 @@ Enhancement by John R Fieber, 1996
  <map from="[darr  ]" to="&#38;darr;">
  <map from="[copy  ]" to="&#38;copy;">
  <map from="[reg   ]" to="&#38;reg;">

@@ -1,6 +1,6 @@
 --- transpec/roff.sdata.orig	Thu Sep 25 19:16:26 1997
-+++ transpec/roff.sdata	Thu Apr  2 23:21:10 1998
-@@ -92,6 +92,7 @@
++++ transpec/roff.sdata	Sat Jun 10 02:22:37 2000
+@@ -92,6 +92,7 @@ ISO SDATA entity translations for groff.
  <map from="[excl  ]" to="\N'33'">
  <map from="[iexcl ]" to="\(r!">
  <map from="[quot  ]" to="\N'39'">

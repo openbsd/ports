@@ -1,0 +1,16 @@
+$OpenBSD: patch-transpec_Makefile,v 1.1 2000/06/10 00:35:21 espie Exp $
+--- transpec/Makefile.orig	Sat Jun 10 02:27:39 2000
++++ transpec/Makefile	Sat Jun 10 02:27:51 2000
+@@ -10,10 +10,10 @@ NOOBJ=	noobj
+ all clean cleandir depend lint tags:
+ 
+ beforeinstall:
+-	@mkdir -p ${TRANSPEC_DIR}
++	@mkdir -p ${DESTDIR}${TRANSPEC_DIR}
+ 
+ afterinstall:
+ 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m 444 ${FILES} \
+-		${TRANSPEC_DIR}
++		${DESTDIR}${TRANSPEC_DIR}
+ 
+ .include <bsd.prog.mk>
