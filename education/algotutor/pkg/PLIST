@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/14 03:02:16 kevlo Exp $
+bin/algotutor
+bin/gen_at_graph
+${P5SITE}/algotutor/
+${P5SITE}/algotutor/.algotutor
+${P5SITE}/algotutor/BST.pm
+${P5SITE}/algotutor/DCEdge.pm
+${P5SITE}/algotutor/Edge.pm
+${P5SITE}/algotutor/Graph.pm
+${P5SITE}/algotutor/Heap.pm
+${P5SITE}/algotutor/PQueue.pm
+${P5SITE}/algotutor/RBTree.pm
+${P5SITE}/algotutor/RecCanvas.pm
+${P5SITE}/algotutor/RecDialog.pm
+${P5SITE}/algotutor/TreeNode.pm
+${P5SITE}/algotutor/Vector.pm
+${P5SITE}/algotutor/Vertex.pm
+${P5SITE}/algotutor/utilalgo
+@man man/man1/algotutor.1
+@man man/man1/gen_at_graph.1
+share/algotutor/
+share/algotutor/data/
+share/algotutor/data/countries.gr
+share/algotutor/data/lv.gr
+share/algotutor/data/randgrid.gr
+share/algotutor/data/trc.gr
+share/algotutor/data/tt.gr
+share/algotutor/graph/
+share/algotutor/graph/dfs
+share/algotutor/graph/flwa
+share/algotutor/graph/pfs
