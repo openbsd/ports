@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/31 16:20:04 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/04/11 15:01:21 brad Exp $
 ${P5SITE}/Curses/UI.pm
 ${P5SITE}/Curses/UI/Buttonbox.pm
 ${P5SITE}/Curses/UI/Calendar.pm
 ${P5SITE}/Curses/UI/Checkbox.pm
+${P5SITE}/Curses/UI/Color.pm
 ${P5SITE}/Curses/UI/Common.pm
 ${P5SITE}/Curses/UI/Container.pm
 ${P5SITE}/Curses/UI/Dialog/Basic.pm
 ${P5SITE}/Curses/UI/Dialog/Calendar.pm
+${P5SITE}/Curses/UI/Dialog/Dirbrowser.pm
 ${P5SITE}/Curses/UI/Dialog/Error.pm
 ${P5SITE}/Curses/UI/Dialog/Filebrowser.pm
 ${P5SITE}/Curses/UI/Dialog/Progress.pm
@@ -15,9 +17,12 @@ ${P5SITE}/Curses/UI/Label.pm
 ${P5SITE}/Curses/UI/Language.pm
 ${P5SITE}/Curses/UI/Language/dutch.pm
 ${P5SITE}/Curses/UI/Language/english.pm
+${P5SITE}/Curses/UI/Language/french.pm
 ${P5SITE}/Curses/UI/Language/german.pm
 ${P5SITE}/Curses/UI/Language/italian.pm
+${P5SITE}/Curses/UI/Language/norwegian.pm
 ${P5SITE}/Curses/UI/Language/polish.pm
+${P5SITE}/Curses/UI/Language/portuguese.pm
 ${P5SITE}/Curses/UI/Language/russian.pm
 ${P5SITE}/Curses/UI/Listbox.pm
 ${P5SITE}/Curses/UI/Menubar.pm
@@ -29,6 +34,7 @@ ${P5SITE}/Curses/UI/Searchable.pm
 ${P5SITE}/Curses/UI/TextEditor.pm
 ${P5SITE}/Curses/UI/TextEntry.pm
 ${P5SITE}/Curses/UI/TextViewer.pm
+${P5SITE}/Curses/UI/Tutorial.pod
 ${P5SITE}/Curses/UI/Widget.pm
 ${P5SITE}/Curses/UI/Window.pm
 @comment ${P5ARCH}/auto/Curses/UI/.packlist
@@ -36,6 +42,7 @@ man/man3p/Curses::UI.3p
 man/man3p/Curses::UI::Buttonbox.3p
 man/man3p/Curses::UI::Calendar.3p
 man/man3p/Curses::UI::Checkbox.3p
+man/man3p/Curses::UI::Color.3p
 man/man3p/Curses::UI::Common.3p
 man/man3p/Curses::UI::Container.3p
 man/man3p/Curses::UI::Dialog::Basic.3p
@@ -55,14 +62,18 @@ man/man3p/Curses::UI::Searchable.3p
 man/man3p/Curses::UI::TextEditor.3p
 man/man3p/Curses::UI::TextEntry.3p
 man/man3p/Curses::UI::TextViewer.3p
+man/man3p/Curses::UI::Tutorial.3p
 man/man3p/Curses::UI::Widget.3p
 man/man3p/Curses::UI::Window.3p
+share/examples/p5-Curses-UI/color_editor
+share/examples/p5-Curses-UI/demo-color
 share/examples/p5-Curses-UI/demo-language
 share/examples/p5-Curses-UI/demo-widgets
 share/examples/p5-Curses-UI/editor
 share/examples/p5-Curses-UI/hello_world
 share/examples/p5-Curses-UI/mouse_focustest
 share/examples/p5-Curses-UI/pop3_reader
+share/examples/p5-Curses-UI/tutorial
 @dirrm share/examples/p5-Curses-UI
 @dirrm man/man3p
 @comment @dirrm ${P5ARCH}/auto/Curses/UI
