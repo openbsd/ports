@@ -1,11 +1,13 @@
---- configure.orig	Wed May 24 01:27:59 2000
-+++ configure	Wed May 24 01:31:42 2000
-@@ -1868,7 +1868,14 @@
+--- configure.orig	Wed Apr 26 16:59:20 2000
++++ configure	Wed Jul 19 00:59:46 2000
+@@ -1868,9 +1868,14 @@
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
 -		# NetBSD/SPARC needs -fPIC, -fpic will not do.
-+		# OpenBSD needs -fPIC, -fpic will not do.
+-		SHLIB_CFLAGS="-fPIC"
+-		SHLIB_LD="ld -Bshareable -x"
++		# OpenBSD/SPARC needs -fPIC, -fpic will not do.
 +		case `machine` in
 +		sparc)
 +		    SHLIB_CFLAGS="-fPIC";;
@@ -13,10 +15,10 @@
 +		    SHLIB_CFLAGS="-fpic";;
 +		esac
 +		SHLIB_LD="ld -Bshareable -Bforcearchive -x"
- 		SHLIB_CFLAGS="-fPIC"
- 		SHLIB_LD="ld -Bshareable -x"
  		SHLIB_LD_LIBS=""
-@@ -1896,7 +1903,7 @@
+ 		SHLIB_SUFFIX=".so"
+ 		DL_OBJS="tclLoadDl.o"
+@@ -1896,7 +1901,7 @@
  else
    rm -rf conftest*
    echo "$ac_t""no" 1>&6
@@ -25,7 +27,7 @@
  		
  fi
  rm -f conftest*
-@@ -2382,6 +2389,7 @@
+@@ -2382,6 +2387,7 @@
  	echo "$ac_t""no" 1>&6
      fi
  
@@ -33,7 +35,7 @@
  
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
-@@ -4089,14 +4097,13 @@
+@@ -4089,14 +4095,13 @@
      TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
      TK_LIB_FILE=libtk${TK_SHARED_LIB_SUFFIX}
      MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${TCL_STUB_LIB_SPEC} \${LIBS}"
@@ -49,7 +51,7 @@
  
      TCL_STUB_FLAGS=""
  fi
-@@ -4139,7 +4146,7 @@
+@@ -4139,7 +4144,7 @@
  # Replace ${VERSION} with contents of ${TK_VERSION}
  eval "STUB_LIB_FILE=libtkstub${TK_UNSHARED_LIB_SUFFIX}"
  
