@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2002/04/02 16:45:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.25 2002/04/02 16:55:05 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -2484,11 +2484,9 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/kdisplay
 @dirrm share/apps/kdewizard/pics
 @dirrm share/apps/kdewizard
-@dirrm share/apps/kdesktop/programs
 @dirrm share/apps/kdesktop/pics
 @dirrm share/apps/kdesktop/patterns
 @dirrm share/apps/kdesktop/DesktopLinks
-@dirrm share/apps/kdesktop
 @dirrm share/apps/kdeprintfax/icons/hicolor/16x16/actions
 @dirrm share/apps/kdeprintfax/icons/hicolor/16x16
 @dirrm share/apps/kdeprintfax/icons/hicolor

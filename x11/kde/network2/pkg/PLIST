@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/02 16:45:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/04/02 16:55:05 espie Exp $
 bin/dsirc
 bin/kdict
 bin/kit
@@ -864,5 +864,4 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kdict/icons/hicolor
 @dirrm share/apps/kdict/icons
 @dirrm share/apps/kdict
-@dirrm share/apps/kconf_update
 @dirrm include/mimelib

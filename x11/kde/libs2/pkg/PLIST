@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2002/04/02 16:45:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2002/04/02 16:55:05 espie Exp $
 @pkgcfl arts-*
 bin/artsc-config
 bin/artscat
@@ -2656,6 +2656,12 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/apps/kdeprint/filters
 @dirrm share/apps/kdeprint
 @dirrm share/apps/kconf_update
+@exec mkdir -p %D/share/apps/kdesktop/programs
+@dirrm share/apps/kdesktop/programs
+@exec mkdir -p %D/share/apps/kdesktop
+@dirrm share/apps/kdesktop
+@exec mkdir -p %D/share/apps/kdesktop/programs
+@dirrm share/apps/kdesktop/programs
 @exec mkdir -p %D/share/apps/kab/pics
 @dirrm share/apps/kab/pics
 @dirrm share/apps/kab
