@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 05:05:47 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/18 03:48:06 kevlo Exp $
 
 COMMENT=	"high-performance 2D graphics library"
 
@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 NEED_VERSION=	1.402
 MASTER_SITES=	http://www.artofcode.com/libart/
 
-HOMEPAGE=	http://www.levien.com/libart/
+HOMEPAGE=	http://www.artofcode.com/libart.html
 
 MAINTAINER=	ports@openbsd.org
 
