@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/22 16:16:27 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/28 11:11:18 avsm Exp $
 
-DISTNAME=		jadetex-2.20
+COMMENT=		"macros for the OpenJade DSSSL TeX backend"
+
+DISTNAME=		jadetex-3.6
 CATEGORIES=     	print
-NEED_VERSION=		1.330
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://www.tug.org/applications/jadetex/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
@@ -14,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.tug.org/applications/jadetex/
 EXTRACT_SUFX=		.zip
-WRKDIST=		${WRKDIR}
+WRKDIST=		${WRKDIR}/jadetex
 
 LIB_DEPENDS=		png.1::graphics/png
 RUN_DEPENDS=		${PREFIX}/bin/tex::print/teTeX/texmf
