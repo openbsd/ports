@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2001/06/06 15:27:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.144 2001/06/07 18:46:21 lebel Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -40,6 +40,7 @@
      SUBDIR += ftpcopy
      SUBDIR += gaim
      SUBDIR += gated
+     SUBDIR += gtk-gnutella
      SUBDIR += hping
      SUBDIR += httptunnel
      SUBDIR += icb
