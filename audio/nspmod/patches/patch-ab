@@ -1,0 +1,42 @@
+*** Makefile	Wed May 20 21:01:59 1998
+--- Makefile.orig	Sun Sep 17 09:18:20 1995
+***************
+*** 25,34 ****
+  
+  #}
+  
+! #CFLAGS	= $(CFLAGS_OS) $(CFLAGS_OPT) $(CFLAGS_EXT)
+! CFLAGS_HIOPT_ = $(CFLAGS) $(CFLAGS_HIOPT)
+  LDFLAGS	= $(LDFLAGS_OS) $(LDFLAGS_EXT)
+! LIBS	= $(LIBS_EXT) $(LIBS_OS) -lossaudio
+  
+  PROG	= nspmod
+  all:	$(PROG)
+--- 25,34 ----
+  
+  #}
+  
+! CFLAGS	= $(CFLAGS_OS) $(CFLAGS_OPT) $(CFLAGS_EXT)
+! CFLAGS_HIOPT_ = $(CFLAGS_OS) $(CFLAGS_HIOPT) $(CFLAGS_EXT)
+  LDFLAGS	= $(LDFLAGS_OS) $(LDFLAGS_EXT)
+! LIBS	= $(LIBS_EXT) $(LIBS_OS)
+  
+  PROG	= nspmod
+  all:	$(PROG)
+***************
+*** 37,43 ****
+  	inst.o hirev.o mem.o
+  OBJS	= $(OBJS0) dacio.o
+  $(PROG): $(OBJS)
+! 	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
+  
+  hirev.o: hirev.c
+  	$(CC) $(CFLAGS_HIOPT_) -c hirev.c
+--- 37,43 ----
+  	inst.o hirev.o mem.o
+  OBJS	= $(OBJS0) dacio.o
+  $(PROG): $(OBJS)
+! 	$(CC) $(LDFLAGS) -o $@ $(OBJS)
+  
+  hirev.o: hirev.c
+  	$(CC) $(CFLAGS_HIOPT_) -c hirev.c
