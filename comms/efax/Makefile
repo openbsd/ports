@@ -1,19 +1,15 @@
-# OpenBSD makefile for:	kaffe
-# Version required:     1.0.b1
-# Date created:		27 Aug 1998
-# Whom:			ian
-#
-# $OpenBSD: Makefile,v 1.2 1998/09/13 01:48:17 ian Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/07 18:28:50 marc Exp $
 
 DISTNAME=       efax08a
 PKGNAME=        efax-0.8a
 CATEGORIES=	comm
 
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/apps/serialcomm/fax/
-
 MAINTAINER=	ian@OpenBSD.ORG
 
+MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/apps/serialcomm/fax/
+
 IS_INTERACTIVE=	yes # for reasons shown in pre-install!
+
 pre-install:
 		@echo "At this stage you MUST customize the \"fax\" script\n\
 slightly. In the following editor session, you must set the device\n\
