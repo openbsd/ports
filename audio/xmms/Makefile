@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2004/05/24 13:17:40 robert Exp $
+# $OpenBSD: Makefile,v 1.34 2004/08/03 10:22:40 espie Exp $
 
 COMMENT=		"Multimedia player for the X Window System"
 COMMENT-esd=		"Esound output plugin for XMMS"
@@ -47,7 +47,7 @@ MULTI_PACKAGES+=	-mp3
 
 SUBPACKAGE?=
 
-MODULES=		gettext
+MODULES=		devel/gettext
 RUN_DEPENDS=		:unzip-*:archivers/unzip
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 			gthread.1.2::devel/glib \

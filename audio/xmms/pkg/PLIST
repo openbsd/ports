@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/05/24 13:17:40 robert Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/08/03 10:22:40 espie Exp $
 bin/wmxmms
 bin/xmms
 bin/xmms-config
+include/xmms/
 include/xmms/configfile.h
 include/xmms/dirbrowser.h
 include/xmms/formatter.h
@@ -23,25 +24,39 @@ lib/libxmms.la
 @comment lib/xmms/Input/libtonegen.la
 @comment lib/xmms/Input/libvorbis.la
 @comment lib/xmms/Input/libwav.la
+@comment lib/xmms/Output/libOSS.la
 @comment lib/xmms/Output/libdisk_writer.la
 @comment lib/xmms/Output/libesdout.la
 @comment lib/xmms/Output/libsun.la
 @comment lib/xmms/Visualization/libbscope.la
 @comment lib/xmms/Visualization/libogl_spectrum.la
 @comment lib/xmms/Visualization/libsanalyzer.la
-man/man1/wmxmms.1
-man/man1/xmms.1
+@man man/man1/wmxmms.1
+@man man/man1/xmms.1
 share/aclocal/xmms.m4
+share/doc/xmms/
 share/doc/xmms/FAQ
 share/doc/xmms/NEWS
 share/doc/xmms/README
+share/locale/af/
+share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/xmms.mo
+share/locale/az/
+share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/xmms.mo
+share/locale/be/
+share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/xmms.mo
 share/locale/bg/LC_MESSAGES/xmms.mo
+share/locale/bs/
+share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/xmms.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/xmms.mo
 share/locale/cs/LC_MESSAGES/xmms.mo
+share/locale/cy/
+share/locale/cy/LC_MESSAGES/
 share/locale/cy/LC_MESSAGES/xmms.mo
 share/locale/da/LC_MESSAGES/xmms.mo
 share/locale/de/LC_MESSAGES/xmms.mo
@@ -50,21 +65,35 @@ share/locale/en/LC_MESSAGES/xmms.mo
 share/locale/eo/LC_MESSAGES/xmms.mo
 share/locale/es/LC_MESSAGES/xmms.mo
 share/locale/et/LC_MESSAGES/xmms.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/xmms.mo
 share/locale/fi/LC_MESSAGES/xmms.mo
 share/locale/fr/LC_MESSAGES/xmms.mo
+share/locale/ga/
+share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/xmms.mo
 share/locale/gl/LC_MESSAGES/xmms.mo
 share/locale/hr/LC_MESSAGES/xmms.mo
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/xmms.mo
 share/locale/id/LC_MESSAGES/xmms.mo
 share/locale/it/LC_MESSAGES/xmms.mo
 share/locale/ja/LC_MESSAGES/xmms.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/xmms.mo
 share/locale/ko/LC_MESSAGES/xmms.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/xmms.mo
 share/locale/lv/LC_MESSAGES/xmms.mo
+share/locale/mk/
+share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/xmms.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/xmms.mo
 share/locale/nl/LC_MESSAGES/xmms.mo
 share/locale/nn/LC_MESSAGES/xmms.mo
@@ -72,61 +101,45 @@ share/locale/no/LC_MESSAGES/xmms.mo
 share/locale/pl/LC_MESSAGES/xmms.mo
 share/locale/pt/LC_MESSAGES/xmms.mo
 share/locale/pt_BR/LC_MESSAGES/xmms.mo
+share/locale/ro/
+share/locale/ro/LC_MESSAGES/
 share/locale/ro/LC_MESSAGES/xmms.mo
 share/locale/ru/LC_MESSAGES/xmms.mo
 share/locale/sk/LC_MESSAGES/xmms.mo
 share/locale/sl/LC_MESSAGES/xmms.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/xmms.mo
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/xmms.mo
+share/locale/sr@Latn/
+share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/xmms.mo
 share/locale/sv/LC_MESSAGES/xmms.mo
+share/locale/tg/
+share/locale/tg/LC_MESSAGES/
 share/locale/tg/LC_MESSAGES/xmms.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/xmms.mo
 share/locale/tr/LC_MESSAGES/xmms.mo
 share/locale/uk/LC_MESSAGES/xmms.mo
+share/locale/uz/
+share/locale/uz/LC_MESSAGES/
 share/locale/uz/LC_MESSAGES/xmms.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/xmms.mo
+share/locale/wa/
+share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/xmms.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/xmms.mo
+share/locale/zh_TW/
+share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/xmms.mo
+share/xmms/
 share/xmms/wmxmms.xpm
 %%SHARED%%
-@dirrm share/xmms
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/uz/LC_MESSAGES
-@dirrm share/locale/uz
-@dirrm share/locale/th/LC_MESSAGES
-@dirrm share/locale/th
-@dirrm share/locale/tg/LC_MESSAGES
-@dirrm share/locale/tg
-@dirrm share/locale/sr@Latn/LC_MESSAGES
-@dirrm share/locale/sr@Latn
-@dirrm share/locale/sq/LC_MESSAGES
-@dirrm share/locale/sq
-@dirrm share/locale/ms/LC_MESSAGES
-@dirrm share/locale/ms
-@dirrm share/locale/mk/LC_MESSAGES
-@dirrm share/locale/mk
-@dirrm share/locale/lv/LC_MESSAGES
-@dirrm share/locale/lv
-@dirrm share/locale/ka/LC_MESSAGES
-@dirrm share/locale/ka
-@dirrm share/locale/eo/LC_MESSAGES
-@dirrm share/locale/eo
-@dirrm share/locale/en/LC_MESSAGES
-@dirrm share/locale/en
-@dirrm share/locale/cy/LC_MESSAGES
-@dirrm share/locale/cy
-@dirrm share/locale/bs/LC_MESSAGES
-@dirrm share/locale/bs
-@dirrm share/locale/bg/LC_MESSAGES
-@dirrm share/locale/bg
-@dirrm share/locale/be/LC_MESSAGES
-@dirrm share/locale/be
-@dirrm share/locale/af/LC_MESSAGES
-@dirrm share/locale/af
-@dirrm share/doc/xmms
-@dirrm include/xmms
