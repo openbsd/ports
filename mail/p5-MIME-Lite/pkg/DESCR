@@ -1,0 +1,7 @@
+MIME::Lite is intended as a simple, standalone module for generating
+(not parsing!) MIME messages... specifically, it allows you to output
+a simple, decent single- or multi-part message with text or binary
+attachments. It does not require that you have the Mail:: or MIME::
+modules installed.
+
+WWW: ${HOMEPAGE}

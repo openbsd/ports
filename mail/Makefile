@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2002/10/22 02:08:06 lebel Exp $
+# $OpenBSD: Makefile,v 1.99 2002/11/09 23:14:48 henning Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -48,6 +48,7 @@
      SUBDIR += nail
      SUBDIR += nmh
      SUBDIR += openwebmail
+     SUBDIR += p5-MIME-Lite
      SUBDIR += p5-MIME-Types
      SUBDIR += p5-MIME-tools
      SUBDIR += p5-Mail-Alias
