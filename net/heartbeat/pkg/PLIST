@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/22 22:05:30 naddy Exp $
-sbin/heartbeatd
-share/doc/heartbeat/README
-share/doc/heartbeat/draft-massar-v6ops-heartbeat-00.txt
-share/examples/heartbeat/heartbeat.conf
-@dirrm share/examples/heartbeat
-@dirrm share/doc/heartbeat

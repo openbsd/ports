@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.312 2004/04/22 22:06:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.313 2004/04/23 19:35:06 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -64,7 +64,6 @@
      SUBDIR += gnomeicu
      SUBDIR += gnut
      SUBDIR += gtk-gnutella
-     SUBDIR += heartbeat
      SUBDIR += honeyd
      SUBDIR += hping
      SUBDIR += httptunnel
@@ -213,6 +212,7 @@
      SUBDIR += sing
      SUBDIR += sipsak
      SUBDIR += sirc
+     SUBDIR += sixxs-heartbeatd
      SUBDIR += slirp
      SUBDIR += smokeping
      SUBDIR += sniffit
