@@ -3,14 +3,13 @@
 # Date created:				21 Apr 1998
 # Whom:					form@vs.itam.nsc.ru
 #
-# $OpenBSD: Makefile,v 1.2 1998/07/21 09:20:06 form Exp $
+# $OpenBSD: Makefile,v 1.3 1998/07/29 02:57:18 form Exp $
 #
 
-DISTNAME=	socks5-v1.0r5
-PKGNAME=	socks5-1.0.5
+DISTNAME=	socks5-v1.0r6
+PKGNAME=	socks5-1.0.6
 CATEGORIES=	net security
-MASTER_SITES=	ftp://ftp.ualg.pt/Linux/network/proxies/socks5/
-EXTRACT_SUFX=	.tar.gz
+#EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	form@vs.itam.nsc.ru
 
@@ -25,31 +24,29 @@ RESTRICTED=	"no commercial use"
 #		--with-syslog-facility=LOG_AUTH \
 #		--with-passwd
 
-WRKSRC=		${WRKDIR}/socks5-v1.0r5
+ETCDIR?=	/etc
+WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-srvpidfile=/var/run/socks5.pid \
+CONFIGURE_ARGS=	--with-libconffile=${ETCDIR}/libsocks5.conf \
+		--with-srvconffile=${ETCDIR}/socks5.conf \
+		--with-srvpidfile=/var/run/socks5.pid \
 		--with-srvidtfile=/var/run/socks5.ident \
 		${EXTRA_CONFIGURE_ARGS}
 MAN1=		runsocks.1 socks5.1 stopsocks.1 socks5_clients.1
 MAN5=		libsocks5.conf.5 socks5.conf.5
 
-SAMPLE_FILES=	README multiple_server.example \
-		server_2_multiple_server.example single_homed_host.example \
-		socks5.conf.dualhomed socks5.conf.gssapi \
-		socks5.conf.multipleservers socks5.conf.server2server \
-		socks5.conf.singlehomed
-
-DOC_FILES=	rfc1928.txt rfc1929.txt rfc1961.txt socks.faq
+do-fetch:
+	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
+	  ${ECHO} ""; \
+	  ${ECHO} "NEC requires that you grab the dist files from their"; \
+	  ${ECHO} "web site at http://www.socks5.nec.com.  Please make sure"; \
+	  ${ECHO} "you have ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}"; \
+	  ${ECHO} "and run make again."; \
+	  ${ECHO} ""; \
+	  exit 1;\
+	fi
 
 post-install:
-	${MKDIR} ${PREFIX}/lib/socks
-.for f in ${SAMPLE_FILES}
-	${INSTALL_DATA} ${WRKSRC}/examples/$f ${PREFIX}/lib/socks
-.endfor
-	${MKDIR} ${PREFIX}/share/doc/socks
-.for f in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/$f ${PREFIX}/share/doc/socks
-.endfor
 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
