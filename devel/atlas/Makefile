@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/12/28 22:11:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/11/17 09:02:19 pvalchev Exp $
 
 COMMENT=	"C++ reference implementation of the Atlas protocol"
 
@@ -6,7 +6,6 @@ VERSION=	0.4.3.1
 DISTNAME=	Atlas-C++-${VERSION}
 PKGNAME=	${DISTNAME:S/C++-//:L}
 CATEGORIES=	devel
-NEED_VERSION=	1.475
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
@@ -25,6 +24,9 @@ PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
 LIB_DEPENDS=	SDL::devel/sdl \
 		sigc.0.0:libsigc++-*:devel/libsigc++
 
+MODULES=	gcc3
+MODGCC3_ARCHES=	sparc64
+MODGCC3_LANGS=	C++
 USE_X11=	Yes
 
 SEPARATE_BUILD=	concurrent
