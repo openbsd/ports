@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2002/05/19 10:28:16 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.12 2002/07/14 11:29:15 couderc Exp $
 bin/sylpheed
 share/locale/cs/LC_MESSAGES/sylpheed.mo
 share/locale/da/LC_MESSAGES/sylpheed.mo
@@ -17,6 +17,7 @@ share/locale/pl/LC_MESSAGES/sylpheed.mo
 share/locale/pt_BR/LC_MESSAGES/sylpheed.mo
 share/locale/ro/LC_MESSAGES/sylpheed.mo
 share/locale/ru/LC_MESSAGES/sylpheed.mo
+share/locale/sl/LC_MESSAGES/sylpheed.mo
 share/locale/sv/LC_MESSAGES/sylpheed.mo
 share/locale/tr/LC_MESSAGES/sylpheed.mo
 share/locale/zh_CN/LC_MESSAGES/sylpheed.mo
