@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2005/03/26 19:05:54 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.31 2005/03/30 22:03:04 kurt Exp $
 %%SHARED%%
 %%gtk2%%
 !%%gtk2%%
@@ -595,6 +595,7 @@ mozilla/res/entityTables/htmlEntityVersions.properties
 mozilla/res/entityTables/mathml20.properties
 mozilla/res/entityTables/transliterate.properties
 mozilla/res/fonts/
+mozilla/res/fonts/fontEncoding.properties
 mozilla/res/fonts/mathfont.properties
 mozilla/res/fonts/mathfontCMEX10.properties
 mozilla/res/fonts/mathfontCMSY10.properties

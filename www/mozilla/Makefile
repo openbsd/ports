@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2005/03/26 19:05:54 wilfried Exp $
+# $OpenBSD: Makefile,v 1.85 2005/03/30 22:03:04 kurt Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -7,7 +7,7 @@ COMMENT-devel=	"devel files for Gecko"
 
 VER=		1.7.6
 DISTNAME=	mozilla
-PKGNAME=	mozilla-${VER}
+PKGNAME=	mozilla-${VER}p0
 DISTFILES=	mozilla-source-${VER}.tar.bz2
 
 CATEGORIES=	www
@@ -28,7 +28,7 @@ MULTI_PACKAGES=	-devel
 VMEM_WARNING=yes
 
 .for i in ${MULTI_PACKAGES}
-PKGNAME$i=	mozilla${i}-${VER}
+PKGNAME$i=	mozilla${i}-${VER}p0
 .endfor
 
 SUBPACKAGE?=
@@ -44,9 +44,11 @@ BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.3::graphics/png
 
+WANTLIB=	X11 Xext Xt m
+
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-devel"
 LIB_DEPENDS=
-WANTLIB=	X11 Xt m Xext
+MODULES=	devel/gettext
 .  if ${FLAVOR:L:Mgtk2}
 RUN_DEPENDS=	:${PKGNAME}-gtk2:www/mozilla,gtk2
 WANTLIB+=	Xft Xrender fontconfig freetype
@@ -55,7 +57,11 @@ RUN_DEPENDS=	:${PKGNAME}:www/mozilla
 .  endif
 .else
 RUN_DEPENDS=	:esound-0.2.*:audio/esound
-WANTLIB=	X11 Xext Xp Xt c m pthread stdc++ z
+WANTLIB+=	Xft Xp Xrender c fontconfig freetype pthread z
+.  if empty(MACHINE_ARCH:Malpha)
+WANTLIB+=	stdc++
+.  endif
+
 .  if ${FLAVOR:L:Mgtk2}
 LIB_DEPENDS+=	gnomevfs-2::x11/gnome/vfs2
 WANTLIB+=	ORBit-2 bonobo-2 bonobo-activation gconf-2 gthread-2.0.0.0
@@ -65,9 +71,8 @@ WANTLIB+=	ORBit-2 bonobo-2 bonobo-activation gconf-2 gthread-2.0.0.0
 .if ${FLAVOR:L:Mgtk2}
 BUILD_DEPENDS+=	:libIDL-*:devel/libIDL
 LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
-WANTLIB+=	Xcursor Xft Xinerama Xrender atk-1.0.0.0 fontconfig freetype \
-		glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
-		pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
+WANTLIB+=	Xcursor Xinerama atk-1.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
+		gobject-2.0.0.0 pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
 .else
 BUILD_DEPENDS+=	:ORBit-*:devel/ORBit
 LIB_DEPENDS+=	gtk.1,gdk.1::x11/gtk+
@@ -92,6 +97,7 @@ CONFIGURE_ARGS=					\
 		--with-system-zlib=/usr/lib	\
 		--with-pthreads			\
 		--without-system-nspr		\
+		--enable-xft			\
 		--enable-optimize=-Os		\
 		--enable-crypto			\
 		--enable-extensions=default	\
@@ -101,13 +107,9 @@ CONFIGURE_ARGS=					\
 		--disable-ldap
 
 .if ${FLAVOR:L:Mgtk2}
-CONFIGURE_ARGS+=--enable-default-toolkit=gtk2	\
-		--enable-xft			\
-		--disable-freetype2
+CONFIGURE_ARGS+=--enable-default-toolkit=gtk2
 .else
-CONFIGURE_ARGS+=--enable-default-toolkit=gtk	\
-		--disable-xft			\
-		--enable-freetype2
+CONFIGURE_ARGS+=--enable-default-toolkit=gtk
 .endif
 
 CONFIGURE_ENV=	PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
