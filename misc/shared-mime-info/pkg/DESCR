@@ -1,0 +1,21 @@
+Many programs and desktops use the MIME system to represent the types of
+files. Frequently, it is necessary to work out the correct MIME type for
+a file. This is generally done by examining the file's name or contents,
+and looking up the correct MIME type in a database.
+
+For interoperability, it is useful for different programs to use the
+same database so that different programs agree on the type of a file,
+and new rules for determining the type apply to all programs.
+
+This specification attempts to unify the type-guessing systems currently
+in use by GNOME, KDE and ROX. Only the name-to-type and contents-to-type
+mappings are covered by this spec; other MIME type information, such as
+the default handler for a particular type, or the icon to use to display
+it in a file manager, are not covered since these are a matter of style.
+
+In addition, freedesktop.org provides a shared database in this format
+to avoid inconsistencies between desktops. This database has been
+created by converting the existing KDE and GNOME databases to the new
+format and merging them together.
+
+WWW: ${HOMEPAGE}
