@@ -1,4 +1,4 @@
-$OpenBSD: patch-festival_src_modules_OGIdbase_OGIunitsel_diphone_cc,v 1.1 2004/08/09 09:03:16 espie Exp $
+$OpenBSD: ogi-patch-festival_src_modules_OGIdbase_OGIunitsel_diphone_cc,v 1.1 2004/08/11 23:08:24 jolan Exp $
 --- festival/src/modules/OGIdbase/OGIunitsel_diphone.cc.orig	Mon Aug  9 04:27:25 2004
 +++ festival/src/modules/OGIdbase/OGIunitsel_diphone.cc	Mon Aug  9 04:28:08 2004
 @@ -50,13 +50,13 @@ LISP OGIdbase_UnitSel_Diphone(LISP utt){

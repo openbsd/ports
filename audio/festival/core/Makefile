@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/08/06 03:36:24 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/11 23:08:24 jolan Exp $
 
 COMMENT=	"general multi-lingual speech synthesis system"
 V=		1.95
@@ -48,6 +48,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mogi}
 DISTFILES+=	OGIresLPC-2.0.9.tar.gz:0
+PATCH_LIST=	ogi-* patch-*
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_PACKAGE_CDROM=	"no fee"
 .endif

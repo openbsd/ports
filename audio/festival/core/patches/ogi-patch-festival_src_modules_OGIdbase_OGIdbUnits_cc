@@ -1,4 +1,4 @@
-$OpenBSD: patch-festival_src_modules_OGIdbase_OGIdbUnits_cc,v 1.1 2004/08/09 09:03:16 espie Exp $
+$OpenBSD: ogi-patch-festival_src_modules_OGIdbase_OGIdbUnits_cc,v 1.1 2004/08/11 23:08:24 jolan Exp $
 --- festival/src/modules/OGIdbase/OGIdbUnits.cc.orig	Mon Aug  9 04:28:45 2004
 +++ festival/src/modules/OGIdbase/OGIdbUnits.cc	Mon Aug  9 04:29:08 2004
 @@ -194,7 +194,7 @@ void OGIdbUnits::load_file(EST_String &u
