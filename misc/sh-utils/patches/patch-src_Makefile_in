@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2001/03/15 15:19:37 wilfried Exp $
+--- src/Makefile.in.orig	Sat Aug 14 17:42:37 1999
++++ src/Makefile.in	Thu Mar 15 15:49:12 2001
+@@ -803,8 +803,7 @@ check-am: all-am
+ check: check-am
+ installcheck-am:
+ installcheck: installcheck-am
+-install-exec-am: install-binPROGRAMS install-binSCRIPTS \
+-		install-exec-local
++install-exec-am: install-binPROGRAMS install-binSCRIPTS
+ install-exec: install-exec-am
+ 
+ install-data-am:

@@ -3,7 +3,9 @@ are mostly compliant with POSIX.2, where applicable. The programs
 that can be built with this package are basename, chroot, date,
 dirname, echo, env, expr, factor, false, groups, hostname, id,
 logname, nice, nohup, pathchk, printenv, printf, pwd, seq, sleep,
-stty, su, tee, test, true, tty, uname, users, who, whoami, and yes.
+stty, tee, test, true, tty, uname, users, who, whoami, and yes.
+
+su is not installed with this package.
 
 All the binaries are prefixed by the letter g to differentiate them
 with the standard applications with the same name.
