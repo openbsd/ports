@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/10/31 08:41:16 turan Exp $
+# $OpenBSD: Makefile,v 1.9 1999/11/09 04:58:34 brad Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 BROKEN=		bad packing lists, share/apps/kdisknav/CD-ROM.kdelnk
@@ -8,8 +8,6 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR= stable/1.1.1/distribution/tar/generic/source/bz2
 
-MAINTAINER=	yanick@openbsd.org
-
 NEED_VERSION=	1.92
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
@@ -17,6 +15,8 @@ LIB_DEPENDS=	qt.1.44:${PORTSDIR}/x11/qt \
 		jpeg.62:${PORTSDIR}/graphics/jpeg \
 		gif.4.1:${PORTSDIR}/graphics/giflib \
 		kdecore.1:${PORTSDIR}/x11/kdelibs
+
+MAINTAINER=	brad@openbsd.org
 
 USE_EGCC=	yes
 USE_EGXX=	yes
