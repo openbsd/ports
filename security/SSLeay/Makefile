@@ -3,7 +3,7 @@
 # Date created:		1998-Jul-4
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.2 1998/08/28 23:00:43 deraadt Exp $
+# $OpenBSD: Makefile,v 1.3 1998/12/16 20:27:58 marc Exp $
 #
 
 DISTNAME=	SSLeay-0.8.1b
@@ -16,6 +16,7 @@ RESTRICTED=	"Crypto; export-controlled"
 
 MASTER_SITES=	ftp://ftp.psy.uq.oz.au/pub/Crypto/SSL/
 
+.if !defined(NO_WARNINGS)
 fetch-depends:
 .if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
 	@${ECHO}
@@ -31,6 +32,7 @@ fetch-depends:
 	@${ECHO} given the command \"make USA_RESIDENT=YES\"
 	@${ECHO} ""
 	@${FALSE}
+.endif
 .endif
 
 post-patch:

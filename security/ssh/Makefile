@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 1998/12/03 18:24:35 marc Exp $
+# $OpenBSD: Makefile,v 1.30 1998/12/16 20:24:50 marc Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -15,7 +15,7 @@ MAINTAINER=	todd@OpenBSD.ORG
 MASTER_SITES= 	ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
 		ftp://ftp.cs.hut.fi/pub/ssh/
 
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+.if defined(NO_WARNINGS) || (defined(USA_RESIDENT) && ${USA_RESIDENT} == YES)
 DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz
 MASTER_SITES+=	\
 	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
@@ -75,6 +75,7 @@ post-patch:
 	@${RM} ${PATCHDIR}/patch-rsaref2
 .endif
 
+.if !defined(NO_WARNINGS)
 fetch-depends:
 .if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
 	@${ECHO}
@@ -88,6 +89,7 @@ fetch-depends:
 	@${ECHO} this program when given the command \"make USA_RESIDENT=YES\"
 	@${ECHO} ""
 	@${FALSE}
+.endif
 .endif
 
 post-extract:

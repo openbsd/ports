@@ -3,7 +3,7 @@
 # Date created:		19 Mar 1998
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.5 1998/08/28 23:00:45 deraadt Exp $
+# $OpenBSD: Makefile,v 1.6 1998/12/16 20:29:54 marc Exp $
 
 DISTNAME=       pgp263is
 PKGNAME=	pgp-2.6.3
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/src
 
 # Need to add rsaref for US residents
 #
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+.if defined(NO_WARNINGS) || (defined(USA_RESIDENT) && ${USA_RESIDENT} == YES)
 MASTER_SITES=	\
 	ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
 	ftp://ftp.dk.pgpi.com/mirrors/ftp.ifi.uio.no/pub/pgp/2.x/src/ \
@@ -32,6 +32,7 @@ DISTFILES=	\
 	rsaref2.tar.gz
 .endif
 
+.if !defined(NO_WARNINGS)
 fetch-depends:
 .if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
 	@${ECHO}
@@ -45,6 +46,7 @@ fetch-depends:
 	@${ECHO} this program when given the command \"make USA_RESIDENT=YES\"
 	@${ECHO} ""
 	@${FALSE}
+.endif
 .endif
 
 # 2nd level extract required
