@@ -1,0 +1,13 @@
+$OpenBSD: patch-config_h_in,v 1.1 2002/04/09 22:36:22 espie Exp $
+--- config.h.in.orig	Mon Mar 25 01:02:45 2002
++++ config.h.in	Wed Apr 10 00:25:24 2002
+@@ -70,6 +70,9 @@
+ /* Define if you have gethostname prototype */
+ #undef HAVE_GETHOSTNAME_PROTO
+ 
++/* Define if you have the `getpeereid' function. */
++#undef HAVE_GETPEEREID
++
+ /* Define if you have the `getpt' function. */
+ #undef HAVE_GETPT
+ 
