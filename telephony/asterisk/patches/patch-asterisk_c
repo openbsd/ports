@@ -1,0 +1,12 @@
+$OpenBSD: patch-asterisk_c,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
+--- asterisk.c.orig	Mon Sep 13 13:19:15 2004
++++ asterisk.c	Thu Sep 23 13:49:40 2004
+@@ -193,7 +193,7 @@ int ast_safe_system(const char *s)
+ 		for (x=STDERR_FILENO + 1; x<4096;x++) {
+ 			close(x);
+ 		}
+-		res = execl("/bin/sh", "/bin/sh", "-c", s, NULL);
++		res = execl("/bin/sh", "/bin/sh", "-c", s, (void *)NULL);
+ 		exit(1);
+ 	} else if (pid > 0) {
+ 		for(;;) {

@@ -1,0 +1,25 @@
+$OpenBSD: patch-rtp_c,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
+--- rtp.c.orig	Sat Sep 25 16:41:56 2004
++++ rtp.c	Sat Sep 25 16:44:48 2004
+@@ -342,9 +342,7 @@ struct ast_frame *ast_rtcp_read(struct a
+ 					0, (struct sockaddr *)&sin, &len);
+ 	
+ 	if (res < 0) {
+-		if (errno == EAGAIN)
+-			ast_log(LOG_NOTICE, "RTP: Received packet with bad UDP checksum\n");
+-		else
++		if (errno != EAGAIN)
+ 			ast_log(LOG_WARNING, "RTP Read error: %s\n", strerror(errno));
+ 		if (errno == EBADF)
+ 			CRASH;
+@@ -416,9 +414,7 @@ struct ast_frame *ast_rtp_read(struct as
+ 
+ 	rtpheader = (unsigned int *)(rtp->rawdata + AST_FRIENDLY_OFFSET);
+ 	if (res < 0) {
+-		if (errno == EAGAIN)
+-			ast_log(LOG_NOTICE, "RTP: Received packet with bad UDP checksum\n");
+-		else
++		if (errno != EAGAIN)
+ 			ast_log(LOG_WARNING, "RTP Read error: %s\n", strerror(errno));
+ 		if (errno == EBADF)
+ 			CRASH;

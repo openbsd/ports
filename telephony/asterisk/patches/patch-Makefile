@@ -1,0 +1,154 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
+--- Makefile.orig	Thu Sep 16 13:46:39 2004
++++ Makefile	Sat Sep 25 18:03:29 2004
+@@ -20,6 +20,7 @@ OSARCH=$(shell uname -s)
+ 
+ ifeq (${OSARCH},Linux)
+ PROC=$(shell uname -m)
++ifneq (${OSARCH},OpenBSD)
+ ifeq ($(PROC),x86_64)
+ # You must have GCC 3.4 to use k8, otherwise use athlon
+ PROC=k8
+@@ -39,6 +40,7 @@ OPTIONS+=-fomit-frame-pointer
+ endif
+ 
+ endif
++endif
+ 
+ ifeq ($(findstring BSD,${OSARCH}),BSD)
+ PROC=$(shell uname -m)
+@@ -62,10 +64,14 @@ PWD=$(shell pwd)
+ #K6OPT  = -DK6OPT
+ 
+ #Tell gcc to optimize the asterisk's code
++ifneq (${OSARCH},OpenBSD)
+ OPTIMIZE+=-O6
++endif
+ 
+ #Include debug symbols in the executables (-g) and profiling info (-pg)
++ifneq (${OSARCH},OpenBSD)
+ DEBUG=-g #-pg
++endif
+ 
+ # If you are running a radio application, define RADIO_RELAX so that the DTMF
+ # will be received more reliably
+@@ -90,7 +96,11 @@ MALLOC_DEBUG = #-include $(PWD)/include/
+ 
+ # Where to install asterisk after compiling
+ # Default -> leave empty
++ifeq (${OSARCH},OpenBSD)
++INSTALL_PREFIX= ${TRUEPREFIX}
++else
+ INSTALL_PREFIX=
++endif
+ 
+ # Staging directory
+ # Files are copied here temporarily during the install process
+@@ -110,31 +120,35 @@ BUSYDETECT+= #-DBUSYDETECT_TONEONLY
+ # Don't use together with -DBUSYDETECT_TONEONLY
+ BUSYDETECT+= #-DBUSYDETECT_COMPARE_TONE_AND_SILENCE
+ 
+-ASTLIBDIR=$(INSTALL_PREFIX)/usr/lib/asterisk
+-ASTVARLIBDIR=$(INSTALL_PREFIX)/var/lib/asterisk
+-ASTETCDIR=$(INSTALL_PREFIX)/etc/asterisk
+-ASTSPOOLDIR=$(INSTALL_PREFIX)/var/spool/asterisk
+-ASTLOGDIR=$(INSTALL_PREFIX)/var/log/asterisk
+-ASTHEADERDIR=$(INSTALL_PREFIX)/usr/include/asterisk
++ASTLIBDIR=$(INSTALL_PREFIX)/lib/asterisk
++ASTVARLIBDIR=$(INSTALL_PREFIX)/share/asterisk
++ASTETCDIR=${SYSCONFDIR}/asterisk
++ASTSPOOLDIR=/var/spool/asterisk
++ASTLOGDIR=/var/log/asterisk
++ASTHEADERDIR=$(INSTALL_PREFIX)/include/asterisk
+ ASTCONFPATH=$(ASTETCDIR)/asterisk.conf
+-ASTBINDIR=$(INSTALL_PREFIX)/usr/bin
+-ASTSBINDIR=$(INSTALL_PREFIX)/usr/sbin
+-ASTVARRUNDIR=$(INSTALL_PREFIX)/var/run
+-ASTMANDIR=$(INSTALL_PREFIX)/usr/share/man
++ASTBINDIR=$(INSTALL_PREFIX)/bin
++ASTSBINDIR=$(INSTALL_PREFIX)/sbin
++ASTVARRUNDIR=/var/run
++ASTMANDIR=$(INSTALL_PREFIX)/man
+ 
+ MODULES_DIR=$(ASTLIBDIR)/modules
+-AGI_DIR=$(ASTVARLIBDIR)/agi-bin
++AGI_DIR=/var/asterisk/agi-bin
+ 
+ INCLUDE=-Iinclude -I../include
+-CFLAGS=-pipe  -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations $(DEBUG) $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE #-DMAKE_VALGRIND_HAPPY
++CFLAGS+=-pipe  -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations $(DEBUG) $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE #-DMAKE_VALGRIND_HAPPY
+ CFLAGS+=$(OPTIMIZE)
+ 
++ifneq (${OSARCH},OpenBSD)
+ ifneq ($(PROC),ultrasparc)
+ CFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
+ endif
++endif
+ 
+ CFLAGS+=$(shell if uname -m | grep -q ppc; then echo "-fsigned-char"; fi)
++ifneq (${OSARCH},OpenBSD)
+ CFLAGS+=$(shell if [ -f /usr/include/osp/osp.h ]; then echo "-DOSP_SUPPORT -I/usr/include/osp" ; fi)
++endif
+ 
+ ifeq (${OSARCH},FreeBSD)
+ OSVERSION=$(shell make -V OSVERSION -f /usr/share/mk/bsd.port.subdir.mk)
+@@ -156,8 +170,10 @@ endif
+ #Uncomment this to use the older DSP routines
+ #CFLAGS+=-DOLD_DSP_ROUTINES
+ 
++ifneq (${OSARCH},OpenBSD)
+ CFLAGS+=$(shell if [ -f /usr/include/linux/zaptel.h ]; then echo "-DZAPTEL_OPTIMIZATIONS"; fi)
+ CFLAGS+=$(shell if [ -f /usr/local/include/zaptel.h ]; then echo "-DZAPTEL_OPTIMIZATIONS"; fi)
++endif
+ 
+ LIBEDIT=editline/libedit.a
+ 
+@@ -219,17 +235,21 @@ ASTLINK=-Wl,-E 
+ SOLINK=-shared -Xlinker -x
+ endif
+ 
++ifneq (${OSARCH},OpenBSD)
+ CC=gcc
++endif
+ INSTALL=install
+ 
+ _all: all
++ifneq (${OSARCH},OpenBSD)
+ 	@echo " +--------- Asterisk Build Complete ---------+"  
+ 	@echo " + Asterisk has successfully been built, but +"  
+ 	@echo " + cannot be run before being installed by   +"  
+ 	@echo " + running:                                  +"  
+ 	@echo " +                                           +"
+ 	@echo " +               $(MAKE) install                +"  
+-	@echo " +-------------------------------------------+"  
++	@echo " +-------------------------------------------+"
++endif
+ 
+ all: depend asterisk subdirs 
+ 
+@@ -397,7 +417,8 @@ bininstall: all
+ 	mkdir -p $(DESTDIR)$(ASTMANDIR)/man8
+ 	install -m 644 keys/iaxtel.pub $(DESTDIR)$(ASTVARLIBDIR)/keys
+ 	install -m 644 keys/freeworlddialup.pub $(DESTDIR)$(ASTVARLIBDIR)/keys
+-	install -m 644 asterisk.8.gz $(DESTDIR)$(ASTMANDIR)/man8
++	zcat asterisk.8.gz > asterisk.8
++	install -m 644 asterisk.8 $(DESTDIR)$(ASTMANDIR)/man8
+ 	if [ -d contrib/firmware/iax ]; then \
+ 		install -m 644 contrib/firmware/iax/iaxy.bin $(DESTDIR)$(ASTVARLIBDIR)/firmware/iax/iaxy.bin; \
+ 	else \
+@@ -406,6 +427,7 @@ bininstall: all
+ 	( cd $(DESTDIR)$(ASTVARLIBDIR)/sounds  ; ln -s $(ASTSPOOLDIR)/vm . )
+ 	( cd $(DESTDIR)$(ASTVARLIBDIR)/sounds  ; ln -s $(ASTSPOOLDIR)/voicemail . )
+ 	if [ -f mpg123-0.59r/mpg123 ]; then make -C mpg123-0.59r install; fi
++ifneq (${OSARCH},OpenBSD)
+ 	@echo " +---- Asterisk Installation Complete -------+"  
+ 	@echo " +                                           +"
+ 	@echo " +    YOU MUST READ THE SECURITY DOCUMENT    +"
+@@ -427,6 +449,7 @@ bininstall: all
+ 	@echo " + **Note** This requires that you have      +"
+ 	@echo " + doxygen installed on your local system    +"
+ 	@echo " +-------------------------------------------+"
++endif
+ 
+ install: all datafiles bininstall
+ 

@@ -1,0 +1,6 @@
+; $OpenBSD: extensions.conf.sample,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
+[default]
+exten => *99,1,Voicemailmain(${CALLERIDNUM})
+exten => _XXX,1,Dial(SIP/${EXTEN},12,tr)
+exten => _XXX,2,Voicemail(u${EXTEN})
+exten => _XXX,3,Hangup

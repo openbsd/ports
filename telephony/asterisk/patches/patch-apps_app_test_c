@@ -1,0 +1,11 @@
+$OpenBSD: patch-apps_app_test_c,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
+--- apps/app_test.c.orig	Wed Sep 22 07:15:00 2004
++++ apps/app_test.c	Thu Sep 23 13:51:46 2004
+@@ -13,6 +13,7 @@
+  */
+ 
+ #include <sys/types.h>
++#include <sys/stat.h>
+ #include <asterisk/channel.h>
+ #include <asterisk/module.h>
+ #include <asterisk/logger.h>

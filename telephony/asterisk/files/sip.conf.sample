@@ -1,0 +1,23 @@
+; $OpenBSD: sip.conf.sample,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
+
+; Phone #1
+[100]
+type=friend
+secret=100
+nat=yes
+host=dynamic
+canreinvite=no
+qualify=yes
+mailbox=100
+context=default
+
+; Phone #2
+[101]
+type=friend
+secret=101
+nat=yes
+host=dynamic
+canreinvite=no
+qualify=yes
+mailbox=100
+context=default
