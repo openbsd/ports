@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2000/06/28 07:08:32 brad Exp $
+# $OpenBSD: INSTALL,v 1.3 2000/07/19 07:38:31 brad Exp $
 #
 # Pre/post-installation setup of squid
 
@@ -17,32 +17,46 @@ install -d -o www -g www ${STATEDIR}/logs
 install -d -o www -g www ${STATEDIR}/cache
 ln -sf ${STATEDIR}/logs/squid.pid /var/run/squid.pid
 
-# Function: tell the user what s/he needs to do to use the port just installed
-#
 do_notice_conf()
 {
     echo
     echo "+---------------"
-    echo "| The existing $1 configuration files in /etc/squid have NOT"
+    echo "| The existing $1 configuration files in ${SYSCONFDIR} have NOT"
     echo "| been changed.  You may want to compare them to the current samples in"
     echo "| ${PREFIX}/lib/squid/conf, and update your configuration files as needed."
+    echo "+---------------"
+}
+
+do_notice_errors_and_icons()
+{
+    echo "+---------------"
+    echo "| The existing $1 errors and icons in ${PREFIX}/share/squid have NOT"
+    echo "| been changed.  You may want to compare them to the current samples in"
+    echo "| ${PREFIX}/lib/squid/errors and ${PREFIX}/lib/squid/icons, and
+    echo "| update them as needed."
     echo "+---------------"
     echo
 }
 
-# Function: install the system configuration files from the samples
-#
 do_install_conf()
 {
-    install -o root -g wheel ${PREFIX}/lib/squid/conf/squid.conf.sample /etc/squid/squid.conf
-    install -o root -g wheel ${PREFIX}/lib/squid/conf/mime.conf.sample /etc/squid/mime.conf
-    install -o root -g wheel ${PREFIX}/lib/squid/conf/mib.txt.sample /etc/squid/mib.txt
-    cp -R ${PREFIX}/lib/squid/errors/* ${PREFIX}/share/squid/errors
-    cp -R ${PREFIX}/lib/squid/icons/* ${PREFIX}/share/squid/icons
+    install -o root -g wheel ${PREFIX}/lib/squid/conf/squid.conf.sample ${SYSCONFDIR}/squid.conf
+    install -o root -g wheel ${PREFIX}/lib/squid/conf/mime.conf.sample ${SYSCONFDIR}/mime.conf
+    install -o root -g wheel ${PREFIX}/lib/squid/conf/mib.txt.sample ${SYSCONFDIR}/mib.txt
     echo
     echo "+---------------"
-    echo "| The $1 configuration files have been installed in /etc/squid."
+    echo "| The $1 configuration files have been installed in ${SYSCONFDIR}."
     echo "| Please view these files and change the configuration to meet your needs."
+    echo "+---------------"
+}
+
+do_install_errors_and_icons()
+{
+    cp -R ${PREFIX}/lib/squid/errors/* ${PREFIX}/share/squid/errors
+    cp -R ${PREFIX}/lib/squid/icons/* ${PREFIX}/share/squid/icons
+    echo "+---------------"
+    echo "| The $1 errors and icons have been installed in ${PREFIX}/share/squid."
+    echo "| Please view these files and change them to meet your needs."
     echo "+---------------"
     echo
 }
@@ -62,9 +76,14 @@ case $2 in
 	;;
     POST-INSTALL)
 	if [ -f $CONFIG_FILE ]; then
-	    do_notice_conf $1
+	    do_notice_conf
 	else
-	    do_install_conf $1
+	    do_install_conf
+	fi
+	if [ -f ${PREFIX}/share/squid/errors/ERR_TOO_BIG ]; then
+	    do_notice_errors_and_icons
+	else
+	    do_install_errors_and_icons
 	fi
 	;;
     *)
