@@ -1,0 +1,39 @@
+--- Input/cdaudio/cdaudio.c.dist	Tue Apr  8 23:31:39 2003
++++ Input/cdaudio/cdaudio.c	Wed Apr  9 00:07:00 2003
+@@ -552,6 +552,10 @@
+ {
+ 	struct ioc_read_subchannel subchnl;
+ 	struct cd_sub_channel_info subinfo;
++	
++	bzero (&subchnl, sizeof (subchnl));
++	bzero (&subinfo, sizeof (subinfo));
++
+ 	subchnl.address_format = CD_MSF_FORMAT;
+ 	subchnl.data_format = CD_CURRENT_POSITION;
+ 	subchnl.data_len = sizeof(subinfo);
+@@ -591,17 +595,23 @@
+ {
+ 	struct ioc_toc_header tochdr;
+ 	struct ioc_read_toc_entry tocentry;
++	struct cd_toc_entry entry;
+ 	int i;
+ 
+ 	if (ioctl(fd, CDIOREADTOCHEADER, &tochdr))
+ 		return FALSE;
+ 
++	bzero (&tocentry, sizeof (tocentry));
++	bzero (&entry, sizeof (entry));
++	tocentry.data_len = sizeof (entry);
++	tocentry.data = &entry;
++
+ 	for (i = tochdr.starting_track; i <= tochdr.ending_track; i++)
+ 	{		
+ 		tocentry.address_format = CD_MSF_FORMAT;
+ 
+ 		tocentry.starting_track = i;
+-		if (ioctl(fd, CDIOREADTOCENTRYS, &tocentry))
++		if (ioctl(fd, CDIOREADTOCENTRYS, &tocentry) < 0)
+ 			return FALSE;
+ 		info->track[i].minute =
+ 		    tocentry.data->addr.msf.minute;
+
