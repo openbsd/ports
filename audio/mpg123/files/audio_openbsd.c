@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <errno.h>
 
 #include <stdlib.h>
 
@@ -39,7 +40,11 @@ static void really_open_audio(struct audio_info_struct *ai)
       else 
 	ai->device = "/dev/audio";
     }
-    audio_fd = open(ai->device, O_WRONLY);
+    if ((audio_fd = open (ai->device, O_WRONLY)) == -1) {
+      fprintf (stderr, "Failed to open %.100s: %s\n", ai->device, 
+	       strerror (errno));
+      return;
+    }
     for (cap.index = 0; ioctl(audio_fd, AUDIO_GETENC, &cap) == 0; cap.index++) {
       if (cap.flags & AUDIO_ENCODINGFLAG_EMULATED)
 	continue;
@@ -251,5 +256,5 @@ int audio_close(struct audio_info_struct *ai)
 
 void audio_queueflush (struct audio_info_struct *ai)
 {
-	ioctl (ai->fn, AUDIO_FLUSH, 0);
+  ioctl (ai->fn, AUDIO_FLUSH, 0);
 }
