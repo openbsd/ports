@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2002/06/05 04:58:01 shell Exp $
+@comment $OpenBSD: PLIST,v 1.16 2002/06/15 10:02:45 shell Exp $
 bin/dbiproxy
 bin/dbish
 ${P5ARCH}/Bundle/DBI.pm
@@ -8,9 +8,10 @@ ${P5ARCH}/DBD/Proxy.pm
 ${P5ARCH}/DBD/Sponge.pm
 ${P5ARCH}/DBI.pm
 ${P5ARCH}/DBI/Changes.pm
-${P5ARCH}/DBI/Const/GetInfo.pm
 ${P5ARCH}/DBI/Const/GetInfo/ANSI.pm
 ${P5ARCH}/DBI/Const/GetInfo/ODBC.pm
+${P5ARCH}/DBI/Const/GetInfoReturn.pm
+${P5ARCH}/DBI/Const/GetInfoType.pm
 ${P5ARCH}/DBI/DBD.pm
 ${P5ARCH}/DBI/FAQ.pm
 ${P5ARCH}/DBI/Format.pm
@@ -24,6 +25,7 @@ ${P5ARCH}/auto/DBI/DBI.bs
 ${P5ARCH}/auto/DBI/DBI.so
 ${P5ARCH}/auto/DBI/DBIXS.h
 ${P5ARCH}/auto/DBI/Driver.xst
+${P5ARCH}/auto/DBI/Driver_xst.h
 ${P5ARCH}/auto/DBI/dbd_xsh.h
 ${P5ARCH}/auto/DBI/dbi_sql.h
 ${P5ARCH}/auto/DBI/dbipport.h
@@ -32,9 +34,10 @@ man/man1/dbish.1
 man/man3p/Bundle::DBI.3p
 man/man3p/DBD::Proxy.3p
 man/man3p/DBI.3p
-man/man3p/DBI::Const::GetInfo.3p
 man/man3p/DBI::Const::GetInfo::ANSI.3p
 man/man3p/DBI::Const::GetInfo::ODBC.3p
+man/man3p/DBI::Const::GetInfoReturn.3p
+man/man3p/DBI::Const::GetInfoType.3p
 man/man3p/DBI::DBD.3p
 man/man3p/DBI::FAQ.3p
 man/man3p/DBI::Format.3p
@@ -44,5 +47,6 @@ man/man3p/DBI::PurePerl.3p
 man/man3p/DBI::Shell.3p
 man/man3p/DBI::W32ODBC.3p
 man/man3p/Win32::DBIODBC.3p
+@dirrm ${P5ARCH}/auto/DBI
 @dirrm ${P5ARCH}/DBI/Const/GetInfo
 @dirrm ${P5ARCH}/DBI/Const
