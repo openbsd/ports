@@ -1,6 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2001/01/22 17:15:29 brad Exp $
-lib/libsocks.so
-lib/libsocks.so.1.0
-lib/libdsocks.so
+@comment $OpenBSD: PFRAG.shared,v 1.5 2001/12/11 03:07:21 jakob Exp $
 lib/libdsocks.so.1.0
-DYNLIBDIR(%B)
+lib/libsocks.so.1.0
+DYNLIBDIR(%D/lib)
