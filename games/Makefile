@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2003/02/03 04:11:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.83 2003/03/30 14:07:47 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -79,6 +79,7 @@
      SUBDIR += quake,
 #    SUBDIR += quakeserver
      SUBDIR += sarien
+     SUBDIR += scummvm
      SUBDIR += sdlroids
      SUBDIR += sdlzombies
      SUBDIR += slash
