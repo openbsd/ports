@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/19 07:27:37 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/06/25 09:37:06 kevlo Exp $
 bin/cpp2html
 bin/java2html
 bin/source-highlight
@@ -30,6 +30,7 @@ share/doc/source-highlight/mono.css
 share/doc/source-highlight/old_changes.html
 share/doc/source-highlight/source-highlight.html
 share/doc/source-highlight/startapp.cc.html
+share/doc/source-highlight/test.php3.html
 share/doc/source-highlight/test.pl.html
 share/doc/source-highlight/test.pm.html
 share/source-highlight/tags.j2h 
