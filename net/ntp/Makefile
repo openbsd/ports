@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2001/08/10 19:08:51 danh Exp $
+# $OpenBSD: Makefile,v 1.15 2001/10/03 19:52:52 danh Exp $
 
 COMMENT=	network time protocol implementation
 COMMENT-doc=	network time protocol documentation
 
-VERSION=	4.1.0
+VERSION=	4.1.71
 DISTNAME=	ntp-${VERSION}
 PKGNAME=	ntp-${VERSION}
 PKGNAME-doc=	ntp-doc-${VERSION}
@@ -28,7 +28,10 @@ SUBPACKAGE?=
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --bindir='${PREFIX}/sbin' \
-		 --enable-accurate-adjtime --disable-IRIG
+		 --enable-accurate-adjtime --disable-IRIG \
+		--with-openssl-libdir=/usr/lib \
+		--with-openssl-incdir=/usr/include \
+		--with-crypto=openssl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ntp

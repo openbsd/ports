@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/08/10 19:08:51 danh Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/10/03 19:52:53 danh Exp $
 @pkgcfl xntp3-*
-sbin/ntp-genkeys
+sbin/genkeys
 sbin/ntp-wait
 sbin/ntpd
 sbin/ntpdate
@@ -13,12 +13,8 @@ sbin/tickadj
 share/examples/ntp/README
 share/examples/ntp/baldwin.conf
 share/examples/ntp/beauregard.conf
-share/examples/ntp/dewey.conf
 share/examples/ntp/grundoon.conf
 share/examples/ntp/malarky.conf
-share/examples/ntp/ntp_malarky.conf
-share/examples/ntp/ntp_pogo.conf
-share/examples/ntp/ntp_rackety.conf
 share/examples/ntp/pogo.conf
 share/examples/ntp/rackety.conf
 @dirrm share/examples/ntp
