@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2003/10/14 20:28:20 marcm Exp $
+--- src/Makefile.in.orig	2003-10-08 15:59:32.000000000 -0700
++++ src/Makefile.in	2003-10-10 07:31:45.000000000 -0700
+@@ -247,7 +247,7 @@ EXTRA_DIST = GNOME_Gnumeric.xml GNOME_Gn
+ #	$(INTLLIBS)
+ 
+ # Bonobo requires things to be in a subdir of this form
+-uidir = $(gnumeric_datadir)/gnome-2.0/ui
++uidir = $(datadir)/gnome-2.0/ui
+ ui_DATA = GNOME_Gnumeric.xml GNOME_Gnumeric_Component.xml
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../gnumeric-config.h

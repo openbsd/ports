@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/10/14 20:28:20 marcm Exp $
+--- configure.orig	2003-10-08 08:56:11.000000000 -0700
++++ configure	2003-10-10 07:31:45.000000000 -0700
+@@ -20151,7 +20151,7 @@ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+-need_posix=yes
++need_posix=no
+ fi
+ rm -f conftest.$ac_objext conftest.$ac_ext
+ CFLAGS="$saved_CFLAGS"
+@@ -21458,7 +21458,7 @@ if test $ac_cv_func_bind_textdomain_code
+                DATADIRNAME=share
+ else
+   CATOBJEXT=.mo
+-               DATADIRNAME=lib
++               DATADIRNAME=share
+ fi
+ 
+ 	    ;;

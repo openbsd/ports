@@ -1,0 +1,832 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/10/14 20:28:20 marcm Exp $
+bin/gnumeric
+bin/ssconvert
+lib/bonobo/servers/GNOME_Gnumeric.server
+lib/gnumeric/${VERSION}-bonobo/plugins/applix/applix.la
+lib/gnumeric/${VERSION}-bonobo/plugins/applix/applix.so
+lib/gnumeric/${VERSION}-bonobo/plugins/applix/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/corba/corba.la
+lib/gnumeric/${VERSION}-bonobo/plugins/corba/corba.so
+lib/gnumeric/${VERSION}-bonobo/plugins/corba/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/derivatives/derivatives.la
+lib/gnumeric/${VERSION}-bonobo/plugins/derivatives/derivatives.so
+lib/gnumeric/${VERSION}-bonobo/plugins/derivatives/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/dif/dif.la
+lib/gnumeric/${VERSION}-bonobo/plugins/dif/dif.so
+lib/gnumeric/${VERSION}-bonobo/plugins/dif/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/excel/excel.la
+lib/gnumeric/${VERSION}-bonobo/plugins/excel/excel.so
+lib/gnumeric/${VERSION}-bonobo/plugins/excel/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-complex/plugin.la
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-complex/plugin.so
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-complex/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-database/plugin.la
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-database/plugin.so
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-database/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-date/plugin.la
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-date/plugin.so
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-date/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-eng/plugin.la
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-eng/plugin.so
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-eng/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-financial/plugin.la
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-financial/plugin.so
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-financial/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-info/plugin.la
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-info/plugin.so
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-info/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-logical/plugin.la
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-logical/plugin.so
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-logical/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-lookup/plugin.la
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-lookup/plugin.so
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-lookup/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-math/plugin.la
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-math/plugin.so
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-math/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-random/plugin.la
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-random/plugin.so
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-random/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-stat/plugin.la
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-stat/plugin.so
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-stat/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-string/plugin.la
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-string/plugin.so
+lib/gnumeric/${VERSION}-bonobo/plugins/fn-string/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/html/html.la
+lib/gnumeric/${VERSION}-bonobo/plugins/html/html.so
+lib/gnumeric/${VERSION}-bonobo/plugins/html/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/lotus/lotus.la
+lib/gnumeric/${VERSION}-bonobo/plugins/lotus/lotus.so
+lib/gnumeric/${VERSION}-bonobo/plugins/lotus/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/mps/mps.la
+lib/gnumeric/${VERSION}-bonobo/plugins/mps/mps.so
+lib/gnumeric/${VERSION}-bonobo/plugins/mps/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/numtheory/numtheory.la
+lib/gnumeric/${VERSION}-bonobo/plugins/numtheory/numtheory.so
+lib/gnumeric/${VERSION}-bonobo/plugins/numtheory/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/oleo/oleo.la
+lib/gnumeric/${VERSION}-bonobo/plugins/oleo/oleo.so
+lib/gnumeric/${VERSION}-bonobo/plugins/oleo/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/openoffice/openoffice.la
+lib/gnumeric/${VERSION}-bonobo/plugins/openoffice/openoffice.so
+lib/gnumeric/${VERSION}-bonobo/plugins/openoffice/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/plan_perfect/plan_perfect.la
+lib/gnumeric/${VERSION}-bonobo/plugins/plan_perfect/plan_perfect.so
+lib/gnumeric/${VERSION}-bonobo/plugins/plan_perfect/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_barcol/barcol.la
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_barcol/barcol.so
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_barcol/gog-barcol-prefs.glade
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_barcol/plot-types.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_barcol/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie/gog-pie-prefs.glade
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie/gog-ring-prefs.glade
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie/pie.la
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie/pie.so
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie/plot-types.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_xy/plot-types.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_xy/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_xy/xy.la
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_xy/xy.so
+lib/gnumeric/${VERSION}-bonobo/plugins/qpro/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/qpro/qpro.la
+lib/gnumeric/${VERSION}-bonobo/plugins/qpro/qpro.so
+lib/gnumeric/${VERSION}-bonobo/plugins/sample_datasource/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/sample_datasource/sample_datasource.la
+lib/gnumeric/${VERSION}-bonobo/plugins/sample_datasource/sample_datasource.so
+lib/gnumeric/${VERSION}-bonobo/plugins/sc/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/sc/sc.la
+lib/gnumeric/${VERSION}-bonobo/plugins/sc/sc.so
+lib/gnumeric/${VERSION}-bonobo/plugins/sylk/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/sylk/sylk.la
+lib/gnumeric/${VERSION}-bonobo/plugins/sylk/sylk.so
+lib/gnumeric/${VERSION}-bonobo/plugins/uihello/hello.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/uihello/plugin.la
+lib/gnumeric/${VERSION}-bonobo/plugins/uihello/plugin.so
+lib/gnumeric/${VERSION}-bonobo/plugins/uihello/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/xbase/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/xbase/xbase.la
+lib/gnumeric/${VERSION}-bonobo/plugins/xbase/xbase.so
+lib/gnumeric/${VERSION}-bonobo/plugins/xml_sax/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/xml_sax/xml_sax.la
+lib/gnumeric/${VERSION}-bonobo/plugins/xml_sax/xml_sax.so
+libexec/gnumeric-component
+share/applications/gnumeric.desktop
+share/gnome-2.0/ui/GNOME_Gnumeric.xml
+share/gnome-2.0/ui/GNOME_Gnumeric_Component.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/3D/.category
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/3D/autoformat.3D.button.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/3D/autoformat.3D.list.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Classical/.category
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Classical/autoformat.Classical.cool.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Classical/autoformat.Classical.simple.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Classical/autoformat.Classical.trendy.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Colourful/.category
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Colourful/autoformat.Colourful.banana.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Colourful/autoformat.Colourful.black.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Colourful/autoformat.Colourful.blue.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Colourful/autoformat.Colourful.orange.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Colourful/autoformat.Colourful.vanilla.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Financial/.category
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Financial/autoformat.Financial.basic.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Financial/autoformat.Financial.desert.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Financial/autoformat.Financial.ice.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Financial/autoformat.Financial.modern.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/Financial/autoformat.Financial.purple.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/General/.category
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/General/autoformat.General.advanced.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/General/autoformat.General.basic.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/General/autoformat.General.empty.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/General/autoformat.General.table.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/List/.category
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/List/autoformat.List.basic.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/List/autoformat.List.green.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/List/autoformat.List.lila.xml
+share/gnumeric/${VERSION}-bonobo/autoformat-templates/List/autoformat.List.simple.xml
+share/gnumeric/${VERSION}-bonobo/glade/advanced-filter.glade
+share/gnumeric/${VERSION}-bonobo/glade/anova-one.glade
+share/gnumeric/${VERSION}-bonobo/glade/anova-two.glade
+share/gnumeric/${VERSION}-bonobo/glade/autocorrect.glade
+share/gnumeric/${VERSION}-bonobo/glade/autofilter-expression.glade
+share/gnumeric/${VERSION}-bonobo/glade/autofilter-top10.glade
+share/gnumeric/${VERSION}-bonobo/glade/autoformat.glade
+share/gnumeric/${VERSION}-bonobo/glade/autosave.glade
+share/gnumeric/${VERSION}-bonobo/glade/cell-comment.glade
+share/gnumeric/${VERSION}-bonobo/glade/cell-format.glade
+share/gnumeric/${VERSION}-bonobo/glade/cell-sort.glade
+share/gnumeric/${VERSION}-bonobo/glade/col-width.glade
+share/gnumeric/${VERSION}-bonobo/glade/colrow.glade
+share/gnumeric/${VERSION}-bonobo/glade/consolidate.glade
+share/gnumeric/${VERSION}-bonobo/glade/correlation.glade
+share/gnumeric/${VERSION}-bonobo/glade/covariance.glade
+share/gnumeric/${VERSION}-bonobo/glade/delete-cells.glade
+share/gnumeric/${VERSION}-bonobo/glade/descriptive-stats.glade
+share/gnumeric/${VERSION}-bonobo/glade/dialog-stf-export.glade
+share/gnumeric/${VERSION}-bonobo/glade/dialog-stf.glade
+share/gnumeric/${VERSION}-bonobo/glade/dialog-zoom.glade
+share/gnumeric/${VERSION}-bonobo/glade/exp-smoothing.glade
+share/gnumeric/${VERSION}-bonobo/glade/fill-series.glade
+share/gnumeric/${VERSION}-bonobo/glade/font-sel.glade
+share/gnumeric/${VERSION}-bonobo/glade/format-selector.glade
+share/gnumeric/${VERSION}-bonobo/glade/formula-guru.glade
+share/gnumeric/${VERSION}-bonobo/glade/fourier-analysis.glade
+share/gnumeric/${VERSION}-bonobo/glade/function-select.glade
+share/gnumeric/${VERSION}-bonobo/glade/goalseek.glade
+share/gnumeric/${VERSION}-bonobo/glade/gog-axis-prefs.glade
+share/gnumeric/${VERSION}-bonobo/glade/gog-guru.glade
+share/gnumeric/${VERSION}-bonobo/glade/gog-style-prefs.glade
+share/gnumeric/${VERSION}-bonobo/glade/goto.glade
+share/gnumeric/${VERSION}-bonobo/glade/hf-config.glade
+share/gnumeric/${VERSION}-bonobo/glade/histogram.glade
+share/gnumeric/${VERSION}-bonobo/glade/hyperlink.glade
+share/gnumeric/${VERSION}-bonobo/glade/insert-cells.glade
+share/gnumeric/${VERSION}-bonobo/glade/mean-tests.glade
+share/gnumeric/${VERSION}-bonobo/glade/merge.glade
+share/gnumeric/${VERSION}-bonobo/glade/moving-averages.glade
+share/gnumeric/${VERSION}-bonobo/glade/names.glade
+share/gnumeric/${VERSION}-bonobo/glade/pivottable.glade
+share/gnumeric/${VERSION}-bonobo/glade/plugin-manager.glade
+share/gnumeric/${VERSION}-bonobo/glade/preferences.glade
+share/gnumeric/${VERSION}-bonobo/glade/print.glade
+share/gnumeric/${VERSION}-bonobo/glade/random-generation.glade
+share/gnumeric/${VERSION}-bonobo/glade/rank.glade
+share/gnumeric/${VERSION}-bonobo/glade/regression.glade
+share/gnumeric/${VERSION}-bonobo/glade/row-height.glade
+share/gnumeric/${VERSION}-bonobo/glade/sampling.glade
+share/gnumeric/${VERSION}-bonobo/glade/scenario-add.glade
+share/gnumeric/${VERSION}-bonobo/glade/scenario-manager.glade
+share/gnumeric/${VERSION}-bonobo/glade/search-replace.glade
+share/gnumeric/${VERSION}-bonobo/glade/search.glade
+share/gnumeric/${VERSION}-bonobo/glade/sheet-order.glade
+share/gnumeric/${VERSION}-bonobo/glade/shuffle.glade
+share/gnumeric/${VERSION}-bonobo/glade/simulation.glade
+share/gnumeric/${VERSION}-bonobo/glade/so-arrow.glade
+share/gnumeric/${VERSION}-bonobo/glade/so-checkbox.glade
+share/gnumeric/${VERSION}-bonobo/glade/so-fill.glade
+share/gnumeric/${VERSION}-bonobo/glade/so-frame.glade
+share/gnumeric/${VERSION}-bonobo/glade/so-scrollbar.glade
+share/gnumeric/${VERSION}-bonobo/glade/solver.glade
+share/gnumeric/${VERSION}-bonobo/glade/summary.glade
+share/gnumeric/${VERSION}-bonobo/glade/tabulate.glade
+share/gnumeric/${VERSION}-bonobo/glade/variance-tests.glade
+share/gnumeric/${VERSION}-bonobo/glade/view.glade
+share/gnumeric/${VERSION}-bonobo/glade/workbook-attr.glade
+share/gnumeric/${VERSION}-bonobo/idl/GNOME_Gnumeric.idl
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/about-authors.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/about-compiling.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/about-get-involved.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/about-history.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/about-license.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/analysis-complexNumbers.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/analysis-goalseek.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/analysis-overview.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/analysis-scenarios.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/analysis-simulation.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/analysis-solver.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/analysis-statistical.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/appendix-glossary.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/appendix-keybindings.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/configuration-localization.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/configuration-overview.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/configuration-plugins.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/configuration-preferences.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/configuration-toolbars.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/data-commentNlink.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/data-delete.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/data-entry-advanced.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/data-entry-external.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/data-entry.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/data-format.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/data-generate.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/data-insert.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/data-modify.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/data-move-copy.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/data-overview.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/data-selections.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/data-types.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/extending-code.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/extending-functions.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/extending-overview.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/extending-plugins.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/extending-python.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/advanced-filter-1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/advanced-filter-2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysis-tools.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ANOVA1-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ANOVA1-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ANOVA2w-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ANOVA2w-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ANOVA2wo-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ANOVA2wo-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-correlation-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-correlation-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-correlation-ex3.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-correlation.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-covariance-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-covariance-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-covariance.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-descstats-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-descstats-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-descstats.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-fourier-formula.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-fourier.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ftest-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ftest-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ftest.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-histogram-bins.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-histogram-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-histogram-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-histogram-ex3.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-histogram.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-moving-average-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-moving-average-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-moving-average.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-outputoptions.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-random-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-random-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-random.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ranges.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-rank-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-rank-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-rank.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-regression-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-regression-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-regression-ex3.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-regression.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-sampling-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-sampling-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-sampling.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-smoothing-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-smoothing-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-smoothing.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-tools.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ttest-equal-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ttest-equal-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ttest-equal.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ttest-paired-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ttest-paired-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ttest-paired.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ttest-unequal-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ttest-unequal-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ttest-unequal.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ttest.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ztest-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ztest-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-ztest.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/autofill-1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/autofill-10.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/autofill-2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/autofill-3.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/autofill-4.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/autofill-5.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/autofill-6.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/autofill-7.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/autofill-8.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/autofill-9.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-align-center.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-align-left.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-align-right.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-arrow.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-bold.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-borders.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-center-across-selection.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-checkbox.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-combo.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-copy.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-cut.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-decrease-indent.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-decrease-precision.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-equals.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-fill.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-font-size.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-font-type.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-frame.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-function.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-graph.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-increase-indent.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-increase-precision.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-insert-component.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-insert-object.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-italic.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-label.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-line.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-list.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-merge.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-money.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-new.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-open.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-oval.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-paste.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-percent.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-preview.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-print.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-rectangle.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-redo-and-history.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-save.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-sort-az.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-sort-za.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-split.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-sum.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-text-colour.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-thousands.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-underline.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-undo-and-history.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-zoom.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/buttonGroup-bonobo.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/buttonGroup-filesystem.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/buttonGroup-printing.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/cell-grid.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/cell-selected.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/cell-with-text.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/cells-1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/cells-2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/dialog-auto-correct.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/dialog-autosave.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/dialog-border.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/dialog-filter.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/dialog-graphing.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/dialog-insert-object.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/dialog-summary.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/file-dialog.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/file-formats-import-list.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-csv-export-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-csv-export-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-csv-import-ex1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-csv-import-ex2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-csv-import-ex3.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-csv-import-ex4.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-csv-import-ex5.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-dvi-example.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-formats-list.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-html-example.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-html32-example.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-html40-example.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-latex-example.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-xml-example.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/gnumeric-empty.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/gnumeric-labelled.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/gnumeric-power-example.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/gnumeric-rearranged.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/info-area.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/label-five.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/label-four.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/label-one.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/label-seven.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/label-six.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/label-three.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/label-transparent.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/label-two.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-context-col-row-header.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-context-grid.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-context-object.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-context-tabs.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-context-toolbars.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-data-labelled.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-edit-labelled.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-file-labelled.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-format-torn-off.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-help-torn-off.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-insert-labelled.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-tools-labelled.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-torn-off.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-view-labelled.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menubar.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/number-format-border-dialog.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/number-format-buttonbar.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/number-format-color-dialog.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/number-format-dialog.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/number-format-font-dialog.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/number-format-justification-dialog-2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/number-format-justification.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/number-format-protection.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/number-format-validation-warning.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/number-format-validation.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_arrow_left_std.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_cross.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_cross_hair.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_cross_wide.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_diagonal_resize.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_double_horizontal_arrow.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_double_vertical_arrow.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_four_way_arrow.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_hand_closed.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_hand_left.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_hand_open.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_left.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_resize_multiple.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_right.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_text_edit.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_zoom_in.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_zoom_out.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-large.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-preview-back.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-preview-first.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-preview-fit.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-preview-fittall.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-preview-fitwide.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-preview-last.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-preview-next.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-preview-toolbar.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-preview-zoomin.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-preview-zoomout.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-preview.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-worksheet.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/printing-preview.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/printing-setup-header-config.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/printing-setup-header.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/printing-setup-margins.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/printing-setup-page-1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/printing-setup-page.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/printing-setup-sheet.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/selection-1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/selection-10.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/selection-2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/selection-3.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/selection-4.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/selection-5.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/selection-6.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/selection-7.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/selection-8.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/selection-9.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/solver-01.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/solver-02.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/solver-03.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/solver-04.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/solver-05.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/toolbar-format.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/toolbar-object.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/toolbar-standard.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/toolbar.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/toolbars.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/worksheet-all-1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/worksheet-cols-1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/worksheet-data-1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/worksheet-data-2.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/worksheet-data-3.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/worksheet-data-4.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/worksheet-info-1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/worksheet-rows-1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/worksheet-running-calc-1.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/zoom-dialog.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/zoom-toolbar.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/zoom.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/files-autosave.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/files-opening.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/files-overview.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/files-saving.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/functions.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/gnumeric.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/graphics-drawings.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/graphics-images.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/graphics-overview.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/graphics-plots.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/gui-menus.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/gui-mouse.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/gui-other-elements.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/gui-overview.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/gui-toolbars.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/legal.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/manual-usage.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/morehelp.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/printing.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/quick-start.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/welcome.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/workbooks.xml
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/worksheets.xml
+share/gnumeric/${VERSION}-bonobo/templates/invoice.gnumeric
+share/gnumeric/${VERSION}-bonobo/templates/loan.gnumeric
+share/gnumeric/${VERSION}-bonobo/templates/mileage.gnumeric
+share/gnumeric/${VERSION}-bonobo/templates/purchase_order.gnumeric
+share/locale/am/LC_MESSAGES/gnumeric.mo
+share/locale/az/LC_MESSAGES/gnumeric.mo
+share/locale/bg/LC_MESSAGES/gnumeric.mo
+share/locale/ca/LC_MESSAGES/gnumeric.mo
+share/locale/cs/LC_MESSAGES/gnumeric.mo
+share/locale/da/LC_MESSAGES/gnumeric.mo
+share/locale/de/LC_MESSAGES/gnumeric.mo
+share/locale/el/LC_MESSAGES/gnumeric.mo
+share/locale/en_CA/LC_MESSAGES/gnumeric.mo
+share/locale/en_GB/LC_MESSAGES/gnumeric.mo
+share/locale/es/LC_MESSAGES/gnumeric.mo
+share/locale/et/LC_MESSAGES/gnumeric.mo
+share/locale/fi/LC_MESSAGES/gnumeric.mo
+share/locale/fr/LC_MESSAGES/gnumeric.mo
+share/locale/ga/LC_MESSAGES/gnumeric.mo
+share/locale/gl/LC_MESSAGES/gnumeric.mo
+share/locale/he/LC_MESSAGES/gnumeric.mo
+share/locale/hr/LC_MESSAGES/gnumeric.mo
+share/locale/hu/LC_MESSAGES/gnumeric.mo
+share/locale/it/LC_MESSAGES/gnumeric.mo
+share/locale/ja/LC_MESSAGES/gnumeric.mo
+share/locale/ko/LC_MESSAGES/gnumeric.mo
+share/locale/lv/LC_MESSAGES/gnumeric.mo
+share/locale/ml/LC_MESSAGES/gnumeric.mo
+share/locale/ms/LC_MESSAGES/gnumeric.mo
+share/locale/nl/LC_MESSAGES/gnumeric.mo
+share/locale/nn/LC_MESSAGES/gnumeric.mo
+share/locale/no/LC_MESSAGES/gnumeric.mo
+share/locale/pl/LC_MESSAGES/gnumeric.mo
+share/locale/pt/LC_MESSAGES/gnumeric.mo
+share/locale/pt_BR/LC_MESSAGES/gnumeric.mo
+share/locale/ro/LC_MESSAGES/gnumeric.mo
+share/locale/ru/LC_MESSAGES/gnumeric.mo
+share/locale/sk/LC_MESSAGES/gnumeric.mo
+share/locale/sr/LC_MESSAGES/gnumeric.mo
+share/locale/sr@Latn/LC_MESSAGES/gnumeric.mo
+share/locale/sv/LC_MESSAGES/gnumeric.mo
+share/locale/tr/LC_MESSAGES/gnumeric.mo
+share/locale/uk/LC_MESSAGES/gnumeric.mo
+share/locale/vi/LC_MESSAGES/gnumeric.mo
+share/locale/zh_CN/LC_MESSAGES/gnumeric.mo
+share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
+share/mc/templates/gnumeric.desktop
+share/mime-info/gnumeric.keys
+share/mime-info/gnumeric.mime
+share/omf/gnumeric/gnumeric-C.omf
+share/pixmaps/gnome-application-vnd.lotus-1-2-3.png
+share/pixmaps/gnome-application-x-applix-spreadsheet.png
+share/pixmaps/gnome-application-x-generic-spreadsheet.png
+share/pixmaps/gnome-application-x-gnumeric.png
+share/pixmaps/gnome-application-x-xls.png
+share/pixmaps/gnome-gnumeric.png
+share/pixmaps/gnumeric/area.xpm
+share/pixmaps/gnumeric/bar.xpm
+share/pixmaps/gnumeric/bubble.xpm
+share/pixmaps/gnumeric/chart_area_1_1.png
+share/pixmaps/gnumeric/chart_area_1_2.png
+share/pixmaps/gnumeric/chart_area_1_3.png
+share/pixmaps/gnumeric/chart_bar_1_1.png
+share/pixmaps/gnumeric/chart_bar_1_2.png
+share/pixmaps/gnumeric/chart_bar_1_3.png
+share/pixmaps/gnumeric/chart_bar_2_1.png
+share/pixmaps/gnumeric/chart_bar_2_2.png
+share/pixmaps/gnumeric/chart_bar_2_3.png
+share/pixmaps/gnumeric/chart_bubble_1_1.png
+share/pixmaps/gnumeric/chart_column_1_1.png
+share/pixmaps/gnumeric/chart_column_1_2.png
+share/pixmaps/gnumeric/chart_column_1_3.png
+share/pixmaps/gnumeric/chart_column_2_1.png
+share/pixmaps/gnumeric/chart_column_2_2.png
+share/pixmaps/gnumeric/chart_column_2_3.png
+share/pixmaps/gnumeric/chart_column_3_1.png
+share/pixmaps/gnumeric/chart_cone_1_1.png
+share/pixmaps/gnumeric/chart_cone_1_2.png
+share/pixmaps/gnumeric/chart_cone_1_3.png
+share/pixmaps/gnumeric/chart_cone_2_1.png
+share/pixmaps/gnumeric/chart_cone_2_2.png
+share/pixmaps/gnumeric/chart_cone_2_3.png
+share/pixmaps/gnumeric/chart_cone_3_1.png
+share/pixmaps/gnumeric/chart_cylinder_1_1.png
+share/pixmaps/gnumeric/chart_cylinder_1_2.png
+share/pixmaps/gnumeric/chart_cylinder_1_3.png
+share/pixmaps/gnumeric/chart_cylinder_2_1.png
+share/pixmaps/gnumeric/chart_cylinder_2_2.png
+share/pixmaps/gnumeric/chart_cylinder_2_3.png
+share/pixmaps/gnumeric/chart_cylinder_3_1.png
+share/pixmaps/gnumeric/chart_line_1_1.png
+share/pixmaps/gnumeric/chart_line_1_2.png
+share/pixmaps/gnumeric/chart_line_1_3.png
+share/pixmaps/gnumeric/chart_line_2_1.png
+share/pixmaps/gnumeric/chart_line_2_2.png
+share/pixmaps/gnumeric/chart_line_2_3.png
+share/pixmaps/gnumeric/chart_line_3_1.png
+share/pixmaps/gnumeric/chart_pie_1_1.png
+share/pixmaps/gnumeric/chart_pie_1_2.png
+share/pixmaps/gnumeric/chart_pie_1_3.png
+share/pixmaps/gnumeric/chart_pie_2_1.png
+share/pixmaps/gnumeric/chart_pie_2_2.png
+share/pixmaps/gnumeric/chart_pie_2_3.png
+share/pixmaps/gnumeric/chart_pyramid_1_1.png
+share/pixmaps/gnumeric/chart_pyramid_1_2.png
+share/pixmaps/gnumeric/chart_pyramid_1_3.png
+share/pixmaps/gnumeric/chart_pyramid_2_1.png
+share/pixmaps/gnumeric/chart_pyramid_2_2.png
+share/pixmaps/gnumeric/chart_pyramid_2_3.png
+share/pixmaps/gnumeric/chart_pyramid_3_1.png
+share/pixmaps/gnumeric/chart_ring_1_1.png
+share/pixmaps/gnumeric/chart_ring_1_2.png
+share/pixmaps/gnumeric/chart_scatter_1_1.png
+share/pixmaps/gnumeric/chart_scatter_2_1.png
+share/pixmaps/gnumeric/chart_scatter_2_2.png
+share/pixmaps/gnumeric/chart_scatter_3_1.png
+share/pixmaps/gnumeric/chart_scatter_3_2.png
+share/pixmaps/gnumeric/chart_stock_1_1.png
+share/pixmaps/gnumeric/chart_stock_1_2.png
+share/pixmaps/gnumeric/chart_stock_2_1.png
+share/pixmaps/gnumeric/chart_stock_2_2.png
+share/pixmaps/gnumeric/column.xpm
+share/pixmaps/gnumeric/doughnut.xpm
+share/pixmaps/gnumeric/down-right.png
+share/pixmaps/gnumeric/gnome-application-vnd.lotus-1-2-3.png
+share/pixmaps/gnumeric/gnome-application-x-applix-spreadsheet.png
+share/pixmaps/gnumeric/gnome-application-x-generic-spreadsheet.png
+share/pixmaps/gnumeric/gnome-application-x-gnumeric.png
+share/pixmaps/gnumeric/gnome-application-x-xls.png
+share/pixmaps/gnumeric/gnome-gnumeric.png
+share/pixmaps/gnumeric/linegraph.xpm
+share/pixmaps/gnumeric/orient-horizontal.png
+share/pixmaps/gnumeric/orient-vertical.png
+share/pixmaps/gnumeric/pie.xpm
+share/pixmaps/gnumeric/radar.xpm
+share/pixmaps/gnumeric/right-down.png
+share/pixmaps/gnumeric/scatter.xpm
+share/pixmaps/gnumeric/stf-druid.png
+share/pixmaps/gnumeric/stock.xpm
+share/pixmaps/gnumeric/surface.xpm
+share/schemas/gnumeric/gnumeric-dialogs.schemas
+share/schemas/gnumeric/gnumeric-general.schemas
+share/schemas/gnumeric/gnumeric-plugins.schemas
+@dirrm share/schemas/gnumeric
+@dirrm share/pixmaps/gnumeric
+@comment @dirrm share/pixmaps
+@dirrm share/omf/gnumeric
+@comment @dirrm share/mime-info
+@dirrm share/mc/templates
+@dirrm share/mc
+@comment @dirrm share/locale/zh_TW/LC_MESSAGES
+@comment @dirrm share/locale/zh_TW
+@comment @dirrm share/locale/zh_CN/LC_MESSAGES
+@comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/vi/LC_MESSAGES
+@comment @dirrm share/locale/vi
+@comment @dirrm share/locale/uk/LC_MESSAGES
+@comment @dirrm share/locale/uk
+@comment @dirrm share/locale/tr/LC_MESSAGES
+@comment @dirrm share/locale/tr
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sr@Latn/LC_MESSAGES
+@comment @dirrm share/locale/sr@Latn
+@comment @dirrm share/locale/sr/LC_MESSAGES
+@comment @dirrm share/locale/sr
+@comment @dirrm share/locale/sk/LC_MESSAGES
+@comment @dirrm share/locale/sk
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/ro/LC_MESSAGES
+@comment @dirrm share/locale/ro
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/pt/LC_MESSAGES
+@comment @dirrm share/locale/pt
+@comment @dirrm share/locale/pl/LC_MESSAGES
+@comment @dirrm share/locale/pl
+@comment @dirrm share/locale/no/LC_MESSAGES
+@comment @dirrm share/locale/no
+@comment @dirrm share/locale/nn/LC_MESSAGES
+@comment @dirrm share/locale/nn
+@comment @dirrm share/locale/nl/LC_MESSAGES
+@comment @dirrm share/locale/nl
+@comment @dirrm share/locale/ms/LC_MESSAGES
+@comment @dirrm share/locale/ms
+@comment @dirrm share/locale/ml/LC_MESSAGES
+@comment @dirrm share/locale/ml
+@comment @dirrm share/locale/lv/LC_MESSAGES
+@comment @dirrm share/locale/lv
+@comment @dirrm share/locale/ko/LC_MESSAGES
+@comment @dirrm share/locale/ko
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/hu/LC_MESSAGES
+@comment @dirrm share/locale/hu
+@comment @dirrm share/locale/hr/LC_MESSAGES
+@comment @dirrm share/locale/hr
+@comment @dirrm share/locale/he/LC_MESSAGES
+@comment @dirrm share/locale/he
+@comment @dirrm share/locale/gl/LC_MESSAGES
+@comment @dirrm share/locale/gl
+@comment @dirrm share/locale/ga/LC_MESSAGES
+@comment @dirrm share/locale/ga
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/fi/LC_MESSAGES
+@comment @dirrm share/locale/fi
+@comment @dirrm share/locale/et/LC_MESSAGES
+@comment @dirrm share/locale/et
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/en_GB/LC_MESSAGES
+@comment @dirrm share/locale/en_GB
+@comment @dirrm share/locale/en_CA/LC_MESSAGES
+@comment @dirrm share/locale/en_CA
+@comment @dirrm share/locale/el/LC_MESSAGES
+@comment @dirrm share/locale/el
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale/cs/LC_MESSAGES
+@comment @dirrm share/locale/cs
+@comment @dirrm share/locale/ca/LC_MESSAGES
+@comment @dirrm share/locale/ca
+@comment @dirrm share/locale/bg/LC_MESSAGES
+@comment @dirrm share/locale/bg
+@comment @dirrm share/locale/az/LC_MESSAGES
+@comment @dirrm share/locale/az
+@comment @dirrm share/locale/am/LC_MESSAGES
+@comment @dirrm share/locale/am
+@comment @dirrm share/locale
+@dirrm share/gnumeric/${VERSION}-bonobo/templates
+@dirrm share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures
+@dirrm share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C
+@dirrm share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric
+@dirrm share/gnumeric/${VERSION}-bonobo/share/gnome/help
+@dirrm share/gnumeric/${VERSION}-bonobo/share/gnome
+@dirrm share/gnumeric/${VERSION}-bonobo/share
+@dirrm share/gnumeric/${VERSION}-bonobo/idl
+@dirrm share/gnumeric/${VERSION}-bonobo/glade
+@dirrm share/gnumeric/${VERSION}-bonobo/autoformat-templates/List
+@dirrm share/gnumeric/${VERSION}-bonobo/autoformat-templates/General
+@dirrm share/gnumeric/${VERSION}-bonobo/autoformat-templates/Financial
+@dirrm share/gnumeric/${VERSION}-bonobo/autoformat-templates/Colourful
+@dirrm share/gnumeric/${VERSION}-bonobo/autoformat-templates/Classical
+@dirrm share/gnumeric/${VERSION}-bonobo/autoformat-templates/3D
+@dirrm share/gnumeric/${VERSION}-bonobo/autoformat-templates
+@dirrm share/gnumeric/${VERSION}-bonobo
+@dirrm share/gnumeric
+@comment @dirrm share/applications
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/xml_sax
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/xbase
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/uihello
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/sylk
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/sc
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/sample_datasource
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/qpro
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/plot_xy
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/plot_barcol
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/plan_perfect
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/openoffice
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/oleo
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/numtheory
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/mps
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/lotus
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/html
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-string
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-stat
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-random
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-math
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-lookup
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-logical
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-info
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-financial
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-eng
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-date
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-database
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/fn-complex
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/excel
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/dif
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/derivatives
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/corba
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins/applix
+@dirrm lib/gnumeric/${VERSION}-bonobo/plugins
+@dirrm lib/gnumeric/${VERSION}-bonobo
+@dirrm lib/gnumeric
+@comment @dirrm lib/bonobo
+@exec %D/bin/scrollkeeper-update -q
+@unexec %D/bin/scrollkeeper-update -q
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnumeric/*.schemas > /dev/null
