@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/09/01 09:23:11 couderc Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/18 02:05:19 mark Exp $
 
 COMMENT=		"Virtual desktop manager for X11"
 
-VERSION=0.3.3
+VERSION=0.3.5
 DISTNAME=		waimea-${VERSION}
 CATEGORIES=		x11
 
@@ -22,8 +22,5 @@ USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-pixmap
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/data/waimearc.example ${PREFIX}/share/Waimea
 
 .include <bsd.port.mk>

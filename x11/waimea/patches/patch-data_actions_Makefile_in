@@ -1,7 +1,7 @@
-$OpenBSD: patch-data_actions_Makefile_in,v 1.1.1.1 2002/09/01 09:23:11 couderc Exp $
---- data/actions/Makefile.in.orig	Fri Aug 30 11:05:19 2002
-+++ data/actions/Makefile.in	Fri Aug 30 11:05:52 2002
-@@ -200,11 +200,11 @@ mostlyclean distclean maintainer-clean
+$OpenBSD: patch-data_actions_Makefile_in,v 1.2 2002/10/18 02:05:19 mark Exp $
+--- data/actions/Makefile.in.orig	Sun Oct 13 20:54:39 2002
++++ data/actions/Makefile.in	Thu Oct 17 18:57:13 2002
+@@ -226,11 +226,11 @@ uninstall-am: uninstall-actionsDATA unin
  
  
  install-data-local:
@@ -12,6 +12,6 @@ $OpenBSD: patch-data_actions_Makefile_in,v 1.1.1.1 2002/09/01 09:23:11 couderc E
  uninstall-local:
 -	rm -f $(pkgdatadir)/actions/action
 +	rm -f $(DESTDIR)$(pkgdatadir)/actions/action
- 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

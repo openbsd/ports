@@ -1,0 +1,9 @@
+$OpenBSD: patch-data_styles_Default_style_in,v 1.1 2002/10/18 02:05:19 mark Exp $
+--- data/styles/Default.style.in.orig	Sun Oct 13 20:53:43 2002
++++ data/styles/Default.style.in	Thu Oct 17 18:57:13 2002
+@@ -112,4 +112,4 @@ handleWidth: 3
+ 
+ ! *.font:        arial:pixelsize=12 [xft]
+ 
+-rootCommand: Esetroot -s @pkgdatadir@/backgrounds/waimea.png
++!rootCommand: Esetroot -s @pkgdatadir@/backgrounds/waimea.png
