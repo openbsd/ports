@@ -1,0 +1,26 @@
+# $OpenBSD: patch-src-Makefile.in,v 1.1.1.1 2000/05/24 09:27:55 form Exp $
+
+--- src/Makefile.in.orig	Tue Nov 23 03:37:06 1999
++++ src/Makefile.in	Wed May 24 15:14:11 2000
+@@ -27,7 +27,7 @@
+ #WNOERROR=-Werror
+ #WARNINGS=$(WNOERROR) -ansi -pedantic -Wall -Wtraditional -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Dlint
+ 
+-CFLAGS=@CFLAGS@ $(WARNINGS)
++CFLAGS?=@CFLAGS@ $(WARNINGS)
+ YACC=@YACC@
+ NETLIBS=@LIBS@
+ LDFLAGS=@LDFLAGS@
+@@ -70,9 +70,9 @@
+ 	$(YACC) getdate.y
+ 	@mv -f y.tab.c getdate.c
+ 
+-install: all
+-	@if [ ! -d $(bindir) ]; then mkdir -p $(bindir); fi
+-	$(INSTALL_PROG) -s -c -m 0755 hypermail$(SUFFIX) $(bindir)
++install:
++	@if [ ! -d $(DESTDIR)$(bindir) ]; then mkdir -p $(DESTDIR)$(bindir); fi
++	$(INSTALL_PROG) -s -c -m 0755 hypermail$(SUFFIX) $(DESTDIR)$(bindir)/hypermail
+ 
+ mail.install:
+ 	@if [ ! -d $(cgidir) ]; then mkdir -p $(cgidir); fi

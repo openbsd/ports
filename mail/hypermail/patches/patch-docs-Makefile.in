@@ -1,0 +1,34 @@
+# $OpenBSD: patch-docs-Makefile.in,v 1.1.1.1 2000/05/24 09:27:55 form Exp $
+
+--- docs/Makefile.in.orig	Wed May 24 15:06:10 2000
++++ docs/Makefile.in	Wed May 24 15:07:55 2000
+@@ -31,18 +31,18 @@
+ install: install.man install.html
+ 
+ install.man:
+-	@(if [ ! -d $(mandir) ]; then mkdir -p $(mandir); fi)
+-	@(if [ ! -d $(mandir)/man1 ]; then mkdir -p $(mandir)/man1; fi)
+-	@(if [ ! -d $(mandir)/man4 ]; then mkdir -p $(mandir)/man4; fi)
+-	$(INSTALL_PROG) -c -m 0644 hypermail.1 $(mandir)/man1
+-	$(INSTALL_PROG) -c -m 0644 hmrc.4 $(mandir)/man4
++	@(if [ ! -d $(DESTDIR)$(mandir) ]; then mkdir -p $(DESTDIR)$(mandir); fi)
++	@(if [ ! -d $(DESTDIR)$(mandir)/man1 ]; then mkdir -p $(DESTDIR)$(mandir)/man1; fi)
++	@(if [ ! -d $(DESTDIR)$(mandir)/man4 ]; then mkdir -p $(DESTDIR)$(mandir)/man4; fi)
++	$(INSTALL_PROG) -c -m 0644 hypermail.1 $(DESTDIR)$(mandir)/man1
++	$(INSTALL_PROG) -c -m 0644 hmrc.4 $(DESTDIR)$(mandir)/man5/hmrc.5
+ 
+ install.html:
+-	@(if [ ! -d $(htmldir) ]; then mkdir -p $(htmldir); fi)
+-	$(INSTALL_PROG) -c -m 0644 hr.yellow.gif $(htmldir)
+-	$(INSTALL_PROG) -c -m 0644 hypermail.gif $(htmldir)
+-	$(INSTALL_PROG) -c -m 0644 hypermail.html $(htmldir)
+-	$(INSTALL_PROG) -c -m 0644 customizing.html $(htmldir)
+-	$(INSTALL_PROG) -c -m 0644 hmrc.html $(htmldir)
++	@(if [ ! -d $(DESTDIR)$(htmldir) ]; then mkdir -p $(DESTDIR)$(htmldir); fi)
++	$(INSTALL_PROG) -c -m 0644 hr.yellow.gif $(DESTDIR)$(htmldir)
++	$(INSTALL_PROG) -c -m 0644 hypermail.gif $(DESTDIR)$(htmldir)
++	$(INSTALL_PROG) -c -m 0644 hypermail.html $(DESTDIR)$(htmldir)
++	$(INSTALL_PROG) -c -m 0644 customizing.html $(DESTDIR)$(htmldir)
++	$(INSTALL_PROG) -c -m 0644 hmrc.html $(DESTDIR)$(htmldir)
+ 
+ clean:

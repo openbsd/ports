@@ -1,0 +1,37 @@
+# $OpenBSD: patch-Makefile.in,v 1.1.1.1 2000/05/24 09:27:55 form Exp $
+
+--- Makefile.in.orig	Thu Nov 18 04:44:29 1999
++++ Makefile.in	Wed May 24 15:10:44 2000
+@@ -28,11 +28,11 @@
+  
+ # Compiler to use
+ CC=@CC@ 
+-CFLAGS=@CFLAGS@ $(WARNINGS)
++CFLAGS?=@CFLAGS@ $(WARNINGS)
+ LIBS=@LIBS@
+ LDFLAGS=@LDFLAGS@
+ 
+-all:   hypermail support 
++all:   hypermail #support 
+ 
+ hypermail:
+ 	@cd src; $(MAKE) all CC="$(CC)" CFLAGS="$(CFLAGS)" \
+@@ -43,11 +43,14 @@
+ 
+ install: 
+ 	@cd src; $(MAKE) install CC="$(CC)" CFLAGS="$(CFLAGS)" \
+-		cgidir="$(cgidir)" bindir="$(bindir)" LIBS="$(LIBS)"
++		cgidir="$(cgidir)" bindir="$(bindir)" LIBS="$(LIBS)" \
++		DESTDIR=$(DESTDIR)
+ 	@cd docs; $(MAKE) install CC="$(CC)" CFLAGS="$(CFLAGS)" \
+-		$(MAKEFLAGS) mandir="$(mandir)" htmldir="$(htmldir)"
+-	@cd archive; $(MAKE) install CC="$(CC)" CFLAGS="$(CFLAGS)" \
+-		bindir="$(bindir)"
++		$(MAKEFLAGS) mandir="$(mandir)" htmldir="$(htmldir)" \
++		DESTDIR=$(DESTDIR)
++#	@cd archive; $(MAKE) install CC="$(CC)" CFLAGS="$(CFLAGS)" \
++#		bindir="$(bindir)" DESTDIR=$(DESTDIR)
++
+ 
+ uninstall: 
+ 	@cd src; $(MAKE) uninstall cgidir="$(cgidir)" bindir="$(bindir)" 
