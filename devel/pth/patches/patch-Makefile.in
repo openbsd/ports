@@ -1,0 +1,107 @@
+--- Makefile.in.orig	Fri Jul 28 05:43:28 2000
++++ Makefile.in	Fri Jul 28 05:50:59 2000
+@@ -45,6 +45,8 @@
+ mandir      = @mandir@
+ datadir     = @datadir@
+ 
++DESTDIR     = 
++
+ ##
+ ##  ____ TOOL DEFINITIONS ___________________________________________
+ ##
+@@ -213,28 +215,28 @@
+ 	@touch .done-install
+ 	@$(MAKE) $(MFLAGS) what-next
+ install-dirs:
+-	$(SHTOOL) mkdir -f -p -m 755 $(prefix)
+-	$(SHTOOL) mkdir -f -p -m 755 $(bindir)
+-	$(SHTOOL) mkdir -f -p -m 755 $(includedir)
+-	$(SHTOOL) mkdir -f -p -m 755 $(libdir)
+-	$(SHTOOL) mkdir -f -p -m 755 $(mandir)/man1
+-	$(SHTOOL) mkdir -f -p -m 755 $(mandir)/man3
+-	$(SHTOOL) mkdir -f -p -m 755 $(datadir)/aclocal
++	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(prefix)
++	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(bindir)
++	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(includedir)
++	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(libdir)
++	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(mandir)/man1
++	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(mandir)/man3
++	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(datadir)/aclocal
+ install-pth:
+-	$(SHTOOL) install -c -m 755 pth-config $(bindir)/pth-config
+-	$(SHTOOL) install -c -m 644 $(S)pth-config.1 $(mandir)/man1/pth-config.1
+-	$(SHTOOL) install -c -m 644 $(S)pth.3 $(mandir)/man3/pth.3
+-	$(SHTOOL) install -c -m 644 $(S)pth.m4 $(datadir)/aclocal/pth.m4
+-	$(SHTOOL) install -c -m 644 pth.h $(includedir)/pth.h
++	$(SHTOOL) install -c -m 755 pth-config $(DESTDIR)$(bindir)/pth-config
++	$(SHTOOL) install -c -m 644 $(S)pth-config.1 $(DESTDIR)$(mandir)/man1/pth-config.1
++	$(SHTOOL) install -c -m 644 $(S)pth.3 $(DESTDIR)$(mandir)/man3/pth.3
++	$(SHTOOL) install -c -m 644 $(S)pth.m4 $(DESTDIR)$(datadir)/aclocal/pth.m4
++	$(SHTOOL) install -c -m 644 pth.h $(DESTDIR)$(includedir)/pth.h
+ 	@umask 022; $(LIBTOOL) --mode=install \
+-	$(SHTOOL) install -c libpth.la $(libdir)/libpth.la
++	$(SHTOOL) install -c libpth.la $(DESTDIR)$(libdir)/libpth.la
+ install-pthread:
+-	$(SHTOOL) install -c -m 755 pthread-config $(bindir)/pthread-config
+-	$(SHTOOL) install -c -m 644 $(S)pthread-config.1 $(mandir)/man1/pthread-config.1
+-	$(SHTOOL) install -c -m 644 pthread.h $(includedir)/pthread.h
+-	$(SHTOOL) install -c -m 644 $(S)pthread.3 $(mandir)/man3/pthread.3
++	$(SHTOOL) install -c -m 755 pthread-config $(DESTDIR)$(bindir)/pthread-config
++	$(SHTOOL) install -c -m 644 $(S)pthread-config.1 $(DESTDIR)$(mandir)/man1/pthread-config.1
++	$(SHTOOL) install -c -m 644 pthread.h $(DESTDIR)$(includedir)/pthread.h
++	$(SHTOOL) install -c -m 644 $(S)pthread.3 $(DESTDIR)$(mandir)/man3/pthread.3
+ 	@umask 022; $(LIBTOOL) --mode=install \
+-	$(SHTOOL) install -c libpthread.la $(libdir)/libpthread.la
++	$(SHTOOL) install -c libpthread.la $(DESTDIR)$(libdir)/libpthread.la
+ 
+ #   uninstall the package
+ uninstall:
+@@ -242,28 +244,28 @@
+ 	@touch .done-uninstall
+ 	@$(MAKE) $(MFLAGS) what-next
+ uninstall-pthread:
+-	$(RM) $(bindir)/pthread-config
+-	$(RM) $(mandir)/man1/pthread-config.1
+-	$(RM) $(includedir)/pthread.h
+-	$(RM) $(mandir)/man3/pthread.3
+-	@$(LIBTOOL) --mode=uninstall $(RM) $(libdir)/libpthread.la
++	$(RM) $(DESTDIR)$(bindir)/pthread-config
++	$(RM) $(DESTDIR)$(mandir)/man1/pthread-config.1
++	$(RM) $(DESTDIR)$(includedir)/pthread.h
++	$(RM) $(DESTDIR)$(mandir)/man3/pthread.3
++	@$(LIBTOOL) --mode=uninstall $(RM) $(DESTDIR)$(libdir)/libpthread.la
+ uninstall-pth:
+-	$(RM) $(bindir)/pth-config
+-	$(RM) $(mandir)/man1/pth-config.1
+-	$(RM) $(mandir)/man3/pth.3
+-	$(RM) $(datadir)/aclocal/pth.m4
+-	$(RM) $(includedir)/pth.h
+-	@$(LIBTOOL) --mode=uninstall $(RM) $(libdir)/libpth.la
++	$(RM) $(DESTDIR)$(bindir)/pth-config
++	$(RM) $(DESTDIR)$(mandir)/man1/pth-config.1
++	$(RM) $(DESTDIR)$(mandir)/man3/pth.3
++	$(RM) $(DESTDIR)$(datadir)/aclocal/pth.m4
++	$(RM) $(DESTDIR)$(includedir)/pth.h
++	@$(LIBTOOL) --mode=uninstall $(RM) $(DESTDIR)$(libdir)/libpth.la
+ uninstall-dirs:
+-	-$(RMDIR) $(datadir)/aclocal >/dev/null 2>&1 || $(TRUE)
+-	-$(RMDIR) $(datadir) >/dev/null 2>&1 || $(TRUE)
+-	-$(RMDIR) $(mandir)/man1 >/dev/null 2>&1 || $(TRUE)
+-	-$(RMDIR) $(mandir)/man3 >/dev/null 2>&1 || $(TRUE)
+-	-$(RMDIR) $(mandir) >/dev/null 2>&1 || $(TRUE)
+-	-$(RMDIR) $(libdir) >/dev/null 2>&1 || $(TRUE)
+-	-$(RMDIR) $(includedir) >/dev/null 2>&1 || $(TRUE)
+-	-$(RMDIR) $(bindir) >/dev/null 2>&1 || $(TRUE)
+-	-$(RMDIR) $(prefix) >/dev/null 2>&1 || $(TRUE)
++	-$(RMDIR) $(DESTDIR)$(datadir)/aclocal >/dev/null 2>&1 || $(TRUE)
++	-$(RMDIR) $(DESTDIR)$(datadir) >/dev/null 2>&1 || $(TRUE)
++	-$(RMDIR) $(DESTDIR)$(mandir)/man1 >/dev/null 2>&1 || $(TRUE)
++	-$(RMDIR) $(DESTDIR)$(mandir)/man3 >/dev/null 2>&1 || $(TRUE)
++	-$(RMDIR) $(DESTDIR)$(mandir) >/dev/null 2>&1 || $(TRUE)
++	-$(RMDIR) $(DESTDIR)$(libdir) >/dev/null 2>&1 || $(TRUE)
++	-$(RMDIR) $(DESTDIR)$(includedir) >/dev/null 2>&1 || $(TRUE)
++	-$(RMDIR) $(DESTDIR)$(bindir) >/dev/null 2>&1 || $(TRUE)
++	-$(RMDIR) $(DESTDIR)$(prefix) >/dev/null 2>&1 || $(TRUE)
+ 
+ #   clean the source tree for re-building
+ clean:

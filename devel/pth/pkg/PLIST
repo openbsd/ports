@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/28 10:39:00 brad Exp $
+bin/pth-config
+bin/pthread-config
+include/pth.h
+include/pthread.h
+lib/libpth.a
+lib/libpth.la
+lib/libpthread.a
+lib/libpthread.la
+%%SHARED%%
+man/man1/pth-config.1
+man/man1/pthread-config.1
+man/man3/pth.3
+man/man3/pthread.3
+share/aclocal/pth.m4
