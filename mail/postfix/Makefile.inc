@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2000/09/25 21:02:29 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2000/10/05 20:58:34 jakob Exp $
 
 CATEGORIES=	mail
 NEED_VERSION=	1.310
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-MAKE_FLAGS=	CC="${CC}" DEBUG="" OPT="${CFLAGS}" \
+MAKE_FLAGS+=	CC="${CC}" DEBUG="" OPT="${CFLAGS}" \
 		OPTS="CC=\"${CC}\" DEBUG=\"\" OPT=\"${CFLAGS}\""
 
 ALL_TARGET=	default
