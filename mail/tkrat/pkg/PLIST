@@ -1,6 +1,9 @@
 bin/tkrat
 lib/ratatosk/ratatosk.so.2.0
 man/man1/tkrat.1
+share/doc/tkrat/interface
+share/doc/tkrat/userprocs
+share/doc/tkrat/userproc.example
 share/tkrat2.0/alias.tcl
 share/tkrat2.0/client.tcl
 share/tkrat2.0/compose.tcl
@@ -61,6 +64,7 @@ share/tkrat2.0/vfolder.tcl
 share/tkrat2.0/vfolderdef.tcl
 share/tkrat2.0/watcher.tcl
 share/tkrat2.0/winctl.tcl
+@dirrm share/doc/tkrat
 @dirrm share/tkrat2.0/util
 @dirrm share/tkrat2.0
 @dirrm lib/ratatosk
