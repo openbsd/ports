@@ -7,4 +7,3 @@ arpwatch/ethercodes.dat
 arpwatch/d.awk
 arpwatch/e.awk
 arpwatch/p.awk
-etc/rc.d/arpwatch.sh
