@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/11/11 14:16:11 heko Exp $
+share/control-center/.data/ChBgxss1.desktop
+share/control-center/.data/ChBgxss2.desktop
+share/control-center/.data/ChBgxss3.desktop
+share/control-center/.data/chbg_logo.xpm
+share/doc/chbg/kde2.txt
+share/doc/chbg/xscreensaver-howto.txt
+share/examples/chbg/chbgrc.sample
+share/gnome/apps/Graphics/chbg.desktop
+share/pixmaps/chbg_64x64.xpm
+@dirrm share/examples/chbg
+@dirrm share/doc/chbg
