@@ -3,7 +3,7 @@
 # Date created:		1998-Mar-20
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.4 1998/06/14 08:10:40 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1999/04/22 19:05:08 rohee Exp $
 #
 
 DISTNAME=	xv-3.10a
@@ -26,10 +26,16 @@ PATCHFILES=     xv-3.10a.JPEG-patch xv-3.10a.TIFF-patch
 
 # Various patches from the XV author's site
 #
-PATCH_SITES+=	ftp://ftp.trilon.com/pub/xv/patches/
-PATCHFILES+=	grabpatch vispatch mp-tiff-patch
+# (xpm.patch is integrated in xvpng.diff that is in xv-3.10a-png-1.2d.tar.gz)
+# longname.patch is integrated in patches/patch-aj
 
-MAINTAINER=	ports@OpenBSD.ORG
+PATCH_SITES+=	ftp://ftp.trilon.com/pub/xv/patches/
+PATCHFILES+=	deepcolor.patch gifpatch grabpatch \
+		mp-tiff-patch pdf.patch vispatch xvpng-fix2.patch
+
+MAINTAINER=	rohee@OpenBSD.ORG
+
+HOMEPAGE=http://www.trilon.com/xv/index.html
 
 LIB_DEPENDS=    jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
 		tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34 \
@@ -40,8 +46,8 @@ USE_IMAKE=	yes
 pre-patch:
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xcmap.diff
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xvpng.diff
-	@${CP} ${WRKDIR}/xvpng.c ${WRKSRC}
-	@${CP} ${WRKDIR}/bits/br_png ${WRKSRC}/bits
+	@${MV} ${WRKDIR}/xvpng.c ${WRKSRC}
+	@${MV} ${WRKDIR}/bits/br_png ${WRKSRC}/bits
 
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/xv
