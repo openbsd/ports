@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/10/05 14:09:15 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2005/03/28 18:44:13 xsa Exp $
 
 COMMENT=	"tool to manage groups of users within Zope"
 
-DISTNAME=	GroupUserFolder-3.1.1
+DISTNAME=	GroupUserFolder-3.2
 PKGNAME=	zope-${DISTNAME:L}
 CATEGORIES=	www
 

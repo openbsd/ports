@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/10/05 14:09:15 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/03/28 18:44:13 xsa Exp $
 @conflict plone-*
 lib/zope/lib/python/Products/GroupUserFolder/
+lib/zope/lib/python/Products/GroupUserFolder/ABOUT
 lib/zope/lib/python/Products/GroupUserFolder/CHANGES
 lib/zope/lib/python/Products/GroupUserFolder/CONTRIBUTORS
 lib/zope/lib/python/Products/GroupUserFolder/ChangeLog
@@ -30,11 +31,13 @@ lib/zope/lib/python/Products/GroupUserFolder/LDAPGroupFolder.py
 lib/zope/lib/python/Products/GroupUserFolder/LDAPGroupFolder.pyc
 lib/zope/lib/python/Products/GroupUserFolder/LDAPUserFolderAdapter.py
 lib/zope/lib/python/Products/GroupUserFolder/LDAPUserFolderAdapter.pyc
+lib/zope/lib/python/Products/GroupUserFolder/LICENSE
 lib/zope/lib/python/Products/GroupUserFolder/LICENSE.txt
 lib/zope/lib/python/Products/GroupUserFolder/Log.py
 lib/zope/lib/python/Products/GroupUserFolder/Log.pyc
-lib/zope/lib/python/Products/GroupUserFolder/Makefile
 lib/zope/lib/python/Products/GroupUserFolder/PRODUCT_NAME
+lib/zope/lib/python/Products/GroupUserFolder/PloneFeaturePreview.py
+lib/zope/lib/python/Products/GroupUserFolder/PloneFeaturePreview.pyc
 lib/zope/lib/python/Products/GroupUserFolder/README-LDAP.stx
 lib/zope/lib/python/Products/GroupUserFolder/README-Plone.stx
 lib/zope/lib/python/Products/GroupUserFolder/README.txt
@@ -56,10 +59,20 @@ lib/zope/lib/python/Products/GroupUserFolder/debian/templates
 lib/zope/lib/python/Products/GroupUserFolder/debian/watch
 lib/zope/lib/python/Products/GroupUserFolder/design.txt
 lib/zope/lib/python/Products/GroupUserFolder/doc/
+lib/zope/lib/python/Products/GroupUserFolder/doc/FAQ
 lib/zope/lib/python/Products/GroupUserFolder/doc/GRUF3.0.stx
+lib/zope/lib/python/Products/GroupUserFolder/doc/GRUFLogo.png
+lib/zope/lib/python/Products/GroupUserFolder/doc/SCREENSHOTS
+lib/zope/lib/python/Products/GroupUserFolder/doc/folder_contents.png
+lib/zope/lib/python/Products/GroupUserFolder/doc/icon.png
 lib/zope/lib/python/Products/GroupUserFolder/doc/interview.txt
-lib/zope/lib/python/Products/GroupUserFolder/doc/py2htmldoc.py
-lib/zope/lib/python/Products/GroupUserFolder/doc/py2htmldoc.pyc
+lib/zope/lib/python/Products/GroupUserFolder/doc/menu.png
+lib/zope/lib/python/Products/GroupUserFolder/doc/tab_audit.png
+lib/zope/lib/python/Products/GroupUserFolder/doc/tab_groups.png
+lib/zope/lib/python/Products/GroupUserFolder/doc/tab_overview.png
+lib/zope/lib/python/Products/GroupUserFolder/doc/tab_sources.png
+lib/zope/lib/python/Products/GroupUserFolder/doc/tab_users.png
+lib/zope/lib/python/Products/GroupUserFolder/doc/user_edit.png
 lib/zope/lib/python/Products/GroupUserFolder/dtml/
 lib/zope/lib/python/Products/GroupUserFolder/dtml/GRUFFolder_main.dtml
 lib/zope/lib/python/Products/GroupUserFolder/dtml/GRUF_audit.zpt
@@ -98,6 +111,10 @@ lib/zope/lib/python/Products/GroupUserFolder/skins/gruf/defaultGroup.gif
 lib/zope/lib/python/Products/GroupUserFolder/skins/gruf/folder_localrole_form_plone1.pt
 lib/zope/lib/python/Products/GroupUserFolder/skins/gruf/getUsersInGroup.py
 lib/zope/lib/python/Products/GroupUserFolder/skins/gruf/gruf_ldap_required_fields.py
+lib/zope/lib/python/Products/GroupUserFolder/skins/gruf/prefs_group_manage.cpy
+lib/zope/lib/python/Products/GroupUserFolder/skins/gruf/prefs_group_manage.cpy.metadata
+lib/zope/lib/python/Products/GroupUserFolder/skins/gruf_plone_2_0/
+lib/zope/lib/python/Products/GroupUserFolder/skins/gruf_plone_2_0/README.txt
 lib/zope/lib/python/Products/GroupUserFolder/tests/
 lib/zope/lib/python/Products/GroupUserFolder/tests/GRUFTestCase.py
 lib/zope/lib/python/Products/GroupUserFolder/tests/GRUFTestCase.pyc
@@ -132,22 +149,11 @@ lib/zope/lib/python/Products/GroupUserFolder/tests/testUserAPI.py
 lib/zope/lib/python/Products/GroupUserFolder/tests/testUserAPI.pyc
 lib/zope/lib/python/Products/GroupUserFolder/tool.gif
 lib/zope/lib/python/Products/GroupUserFolder/version.txt
-lib/zope/lib/python/Products/GroupUserFolder/website/
-lib/zope/lib/python/Products/GroupUserFolder/website/GRUFLogo.png
-lib/zope/lib/python/Products/GroupUserFolder/website/IWLogo.jpg
-lib/zope/lib/python/Products/GroupUserFolder/website/folder_contents.png
-lib/zope/lib/python/Products/GroupUserFolder/website/index.html
-lib/zope/lib/python/Products/GroupUserFolder/website/menu.png
-lib/zope/lib/python/Products/GroupUserFolder/website/tab_audit.png
-lib/zope/lib/python/Products/GroupUserFolder/website/tab_groups.png
-lib/zope/lib/python/Products/GroupUserFolder/website/tab_overview.png
-lib/zope/lib/python/Products/GroupUserFolder/website/tab_sources.png
-lib/zope/lib/python/Products/GroupUserFolder/website/tab_users.png
-lib/zope/lib/python/Products/GroupUserFolder/website/user_edit.png
 lib/zope/lib/python/Products/GroupUserFolder/www/
 lib/zope/lib/python/Products/GroupUserFolder/www/GRUFGroups.gif
 lib/zope/lib/python/Products/GroupUserFolder/www/GRUFUsers.gif
 lib/zope/lib/python/Products/GroupUserFolder/www/GroupUserFolder.gif
+lib/zope/lib/python/Products/GroupUserFolder/www/LDAPGroupFolder.gif
 lib/zope/lib/python/Products/GroupUserFolder/www/down_arrow.gif
 lib/zope/lib/python/Products/GroupUserFolder/www/down_arrow_grey.gif
 lib/zope/lib/python/Products/GroupUserFolder/www/up_arrow.gif
