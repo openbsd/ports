@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/25 16:58:54 sturm Exp $
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/SSL.so
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/__init__.py
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/crypto.so
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/rand.so
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/tsafe.py
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/tsafe.pyc
+share/examples/py-openssl/README
+share/examples/py-openssl/SecureXMLRPCServer.py
+share/examples/py-openssl/certgen.py
+share/examples/py-openssl/mk_simple_certs.py
+share/examples/py-openssl/proxy.py
+share/examples/py-openssl/simple/CA.cert
+share/examples/py-openssl/simple/CA.pkey
+share/examples/py-openssl/simple/client.cert
+share/examples/py-openssl/simple/client.pkey
+share/examples/py-openssl/simple/client.py
+share/examples/py-openssl/simple/server.cert
+share/examples/py-openssl/simple/server.pkey
+share/examples/py-openssl/simple/server.py
+@dirrm share/examples/py-openssl/simple
+@dirrm share/examples/py-openssl
+@dirrm lib/python${MODPY_VERSION}/site-packages/OpenSSL

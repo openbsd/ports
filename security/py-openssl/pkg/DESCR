@@ -1,0 +1,4 @@
+Python wrapper around a small subset of the OpenSSL library. Includes:
+SSL Context objects, SSL Connection objects, using Python sockets as
+transport layer. The Connection object wraps all the socket methods
+and can therefore be used interchangeably.
