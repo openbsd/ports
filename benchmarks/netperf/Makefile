@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/21 20:35:43 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/07/17 22:00:44 lebel Exp $
 
 COMMENT=	"Network performance benchmark"
 
 DISTNAME=	netperf-2.2alpha
 CATEGORIES=	benchmarks net
-NEED_VERSION=	1.515
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
@@ -21,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FILE=	makefile
-MAKE_FLAGS+=	CFLAGS='-O -DDEBUG_LOG_FILE="\"/tmp/netperf.debug\"" -DUSE_LOOPER -DDO_DNS'
+MAKE_FLAGS+=	CC="${CC}" CFLAGS='-O -DDEBUG_LOG_FILE="\"/tmp/netperf.debug\"" -DUSE_LOOPER -DDO_DNS'
 
 SHAREDIR=	${PREFIX}/share/netperf
 SCRIPTS=	arr_script snapshot_script \
