@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.684 2005/03/09 15:40:37 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.685 2005/03/13 22:51:34 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1039,6 +1039,7 @@ _libresolve_fragment = \
 
 _syslibresolve_fragment = \
 		case "$$d" in \
+		/*) shdir="$${d%/*}/"; shprefix=""; d=$${d\#\#*/};; \
 		*/*) shprefix="$${d%/*}/"; shdir="${LOCALBASE}/$${d%/*}"; \
 			d=$${d\#\#*/};; \
 		*) shprefix="" shdir="/usr/lib /usr/X11R6/lib ${LOCALBASE}/lib";; \
