@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_mreadline_c,v 1.1 2001/05/26 05:13:48 form Exp $
+--- src/mreadline.c.orig	Sat May 26 10:57:08 2001
++++ src/mreadline.c	Sat May 26 10:58:54 2001
+@@ -140,9 +140,17 @@ void R_process_input_tab (void)
+     }
+ 
+     if ((uin = TabGetNext ()))
++#ifdef HAVE_SNPRINTF
++        snprintf (s, sizeof(s), "%s %s/", message_cmd, UIN2Name (uin));
++#else
+         sprintf (s, "%s %s/", message_cmd, UIN2Name (uin));
++#endif
+     else
++#ifdef HAVE_SNPRINTF
++        snprintf (s, sizeof(s), "%s ", message_cmd);
++#else
+         sprintf (s, "%s ", message_cmd);
++#endif
+ 
+     clen = cpos = strlen (s);
+     R_undraw ();

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_i18n_c,v 1.1 2001/05/26 05:13:47 form Exp $
+--- src/i18n.c.orig	Sat May 26 11:41:53 2001
++++ src/i18n.c	Sat May 26 11:44:24 2001
+@@ -42,7 +42,7 @@ int i18nOpen (const char *loc)
+     if (i18nf == -1 && strchr (loc, '_'))
+         i18nf = M_fdopen ("%s/.micq/%.*s.i18n", getenv ("HOME") ? getenv ("HOME") : "", strchr (loc, '_') - loc, loc);
+     if (i18nf == -1)
+-        return 0;
++        return -1;
+ 
+     for (i = 0; i < i18nSLOTS; i++)
+         i18nStrings[i] = NULL;

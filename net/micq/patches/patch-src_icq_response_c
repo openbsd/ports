@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_icq_response_c,v 1.1 2001/05/26 05:13:47 form Exp $
+--- src/icq_response.c.orig	Sat May 26 11:20:57 2001
++++ src/icq_response.c	Sat May 26 11:21:14 2001
+@@ -509,7 +509,7 @@ void User_Offline (int sok, UBYTE * pak)
+     Time_Stamp ();
+     M_print (" ");
+     Print_UIN_Name_10 (remote_uin);
+-    M_print (" %s\n", i18n (30, " logged off."));
++    M_print (" %s\n", i18n (30, "logged off."));
+     log_event (remote_uin, LOG_ONLINE, "User logged off %s\n", UIN2Name (remote_uin));
+     if ((con = UIN2Contact (remote_uin)) != NULL)
+     {
+@@ -534,7 +534,7 @@ void User_Online (int sok, UBYTE * pak)
+         Time_Stamp ();
+         M_print (" ");
+         Print_UIN_Name_10 (remote_uin);
+-        M_print (" %s (", i18n (31, " logged on."));
++        M_print (" %s (", i18n (31, "logged on."));
+         Print_Status (new_status);
+         M_print (")");
+ 

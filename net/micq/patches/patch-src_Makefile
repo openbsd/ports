@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_Makefile,v 1.1 2001/05/26 05:13:47 form Exp $
+--- src/Makefile.orig	Sat May 26 10:52:10 2001
++++ src/Makefile	Sat May 26 10:52:36 2001
+@@ -2,11 +2,11 @@
+ # originally by Matt D. Smith
+ # rewritten by  Rico Gloeckner <mc@verdinet.de>
+ 
+-CC = gcc
+-CFLAGS = -O2 -Wall -DUNIX
++#CC = gcc
++CFLAGS += -DUNIX
+ 
+ # uncomment the line below for debuging info
+-CFLAGS += -g
++#CFLAGS += -g
+ 
+ CLIBS = 
+ #uncomment the line below if your using Solaris

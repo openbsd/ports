@@ -1,5 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.6 2001/05/26 05:13:48 form Exp $
 bin/micq
+man/man1/micq.1
 share/doc/micq/CHANGELOG
 share/doc/micq/README
-share/doc/micq/Readme_SOCKS5
+share/micq/bg.i18n
+share/micq/br.i18n
+share/micq/cn.i18n
+share/micq/de.i18n
+share/micq/en.i18n
+share/micq/es.i18n
+share/micq/fi.i18n
+share/micq/fr.i18n
+share/micq/hr.i18n
+share/micq/id.i18n
+share/micq/it.i18n
+share/micq/nl.i18n
+share/micq/pl.i18n
+share/micq/ru.i18n
+share/micq/se.i18n
+share/micq/uk.i18n
+share/micq/yu.i18n
+@dirrm share/micq
 @dirrm share/doc/micq
