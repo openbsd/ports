@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.67 2003/12/15 21:18:41 sturm Exp $
+# $OpenBSD: network.conf.template,v 1.68 2004/05/18 08:38:28 xsa Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -65,20 +65,20 @@ MASTER_SITE_GNU+=	\
   	ftp://ftp.sunet.se/pub/gnu/
 
 MASTER_SITE_XCONTRIB+=	\
-	ftp://uiarchive.uiuc.edu/mirrors/ftp/ftp.x.org/contrib/ \
 	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/ \
-	ftp://ftp.duke.edu/pub/X11/contrib/ \
 	ftp://ftp.x.org/contrib/ \
 	ftp://ftp.sunet.se/pub/X11/contrib/ \
 	ftp://ftp.kddlabs.co.jp/X11/contrib/ \
-	ftp://mirrors.xmission.com/X/contrib/ \
-	ftp://ftp.x.org/contrib/ \
-	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/ \
-	ftp://ftp.is.co.za/x/contrib/ \
+	ftp://gd.tuwien.ac.at/hci/x.org/contrib/ \
 	ftp://ftp.uvsq.fr/pub/X11/contrib/ \
+	ftp://ftp.eos.hokudai.ac.jp/pub/X11/contrib/ \
+	ftp://ftp.chg.ru/pub/X11/contrib/ \
+	ftp://ftp.duke.edu/pub/X11/contrib/ \
 	ftp://ftp.dl.ac.uk/src/X/contrib/ \
-	ftp://sunsite.org.uk/Mirrors/ftp.x.org/contrib/ \
-	ftp://ftp.chg.ru/pub/X11/contrib/
+	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/
+
+MASTER_SITE_R5CONTRIB+=	\
+	${MASTER_SITE_XCONTRIB:=../R5contrib/}
 
 MASTER_SITE_SUNSITE+=	\
 	ftp://metalab.unc.edu/pub/Linux/ \
