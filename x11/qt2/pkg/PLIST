@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2000/11/24 14:22:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2000/12/16 23:26:34 espie Exp $
 bin/designer
 bin/findtr
 bin/moc2
@@ -47,7 +47,6 @@ include/X11/qt2/qconfig-dist.h
 include/X11/qt2/qconfig-large.h
 include/X11/qt2/qconfig-medium.h
 include/X11/qt2/qconfig-minimal.h
-include/X11/qt2/qconfig-qpe.h
 include/X11/qt2/qconfig-small.h
 include/X11/qt2/qconfig.h
 include/X11/qt2/qconnect.h
@@ -269,6 +268,7 @@ include/X11/qt2/qvariant.h
 include/X11/qt2/qvbox.h
 include/X11/qt2/qvbuttongroup.h
 include/X11/qt2/qvector.h
+include/X11/qt2/qvfbhdr.h
 include/X11/qt2/qvgroupbox.h
 include/X11/qt2/qwhatsthis.h
 include/X11/qt2/qwidcoll.h
@@ -590,7 +590,6 @@ lib/qt2/man/man3/QValueStack.3
 lib/qt2/man/man3/QVariant.3
 lib/qt2/man/man3/QVector.3
 lib/qt2/man/man3/QWMatrix.3
-lib/qt2/man/man3/QWSDecoration.3
 lib/qt2/man/man3/QWaitCondition.3
 lib/qt2/man/man3/QWhatsThis.3
 lib/qt2/man/man3/QWheelEvent.3
@@ -930,7 +929,6 @@ lib/qt2/man/man3/qwindowsstyle.3
 lib/qt2/man/man3/qwizard.3
 lib/qt2/man/man3/qwmatrix.3
 lib/qt2/man/man3/qworkspace.3
-lib/qt2/man/man3/qwsdecoration.3
 lib/qt2/man/man3/qxmlattributes.3
 lib/qt2/man/man3/qxmlcontenthandler.3
 lib/qt2/man/man3/qxmldeclhandler.3
@@ -959,8 +957,8 @@ share/doc/qt2/README.QT
 share/doc/qt2/changes-2.2.0
 share/doc/qt2/changes-2.2.1
 share/doc/qt2/changes-2.2.2
+share/doc/qt2/changes-2.2.3
 @unexec echo "Please remove %D/lib/qt2/man from /etc/man.conf manually if needed"
-@unexec echo "and remove %D/lib/qt2 from shlib_dirs in /etc/rc.conf as well"
 %%SHARED%%
 @dirrm share/doc/qt2
 @dirrm lib/qt2/tools/designer/templates

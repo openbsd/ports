@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.5 2000/11/24 14:22:21 espie Exp $
+@comment $OpenBSD: PLIST-html,v 1.6 2000/12/16 23:26:34 espie Exp $
 share/doc/qt2/html/HOWTO-framebuffer.html
 share/doc/qt2/html/aboutqt.html
 share/doc/qt2/html/abstractwidgets.html
@@ -221,6 +221,7 @@ share/doc/qt2/html/functions.html
 share/doc/qt2/html/geomanagement.html
 share/doc/qt2/html/geometry.html
 share/doc/qt2/html/geometry.png
+share/doc/qt2/html/gpl.html
 share/doc/qt2/html/graph.g1n
 share/doc/qt2/html/grapher-grapher-cpp.html
 share/doc/qt2/html/gridlayout.png
@@ -529,6 +530,7 @@ share/doc/qt2/html/qdropevent.html
 share/doc/qt2/html/qdropsite-h.html
 share/doc/qt2/html/qdropsite-members.html
 share/doc/qt2/html/qdropsite.html
+share/doc/qt2/html/qembed.html
 share/doc/qt2/html/qeucjpcodec-h.html
 share/doc/qt2/html/qeucjpcodec-members.html
 share/doc/qt2/html/qeucjpcodec.html
@@ -1220,8 +1222,6 @@ share/doc/qt2/html/qwmatrix.html
 share/doc/qt2/html/qworkspace-h.html
 share/doc/qt2/html/qworkspace-members.html
 share/doc/qt2/html/qworkspace.html
-share/doc/qt2/html/qwsdecoration-members.html
-share/doc/qt2/html/qwsdecoration.html
 share/doc/qt2/html/qwsdisplay_qws-h.html
 share/doc/qt2/html/qwsmanager_qws-h.html
 share/doc/qt2/html/qxml-h.html
