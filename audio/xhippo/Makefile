@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/06/06 10:01:41 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2001/08/11 16:08:47 kevlo Exp $
 
 COMMENT=	"generic playlist manager for UNIX"
 
-DISTNAME=	xhippo-3.1
+DISTNAME=	xhippo-3.2
 CATEGORIES=	audio
 NEED_VERSION=	1.414
 
@@ -28,8 +28,8 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-DOCS=	ChangeLog gnu-xhippo.html screenshot.jpeg xhippo.info.gz \
-	xhippo.ps.gz xhippo.sgml xhippo.txt.gz
+DOCS=	ChangeLog gnu-xhippo.html screenshot.jpeg xhippo.html.gz \
+	xhippo.info.gz xhippo.ps.gz xhippo.sgml xhippo.txt.gz
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xhippo
@@ -37,5 +37,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/xhippo.config ${PREFIX}/share/examples/xhippo/xhippo.config-sample
 	${INSTALL_DATA} ${WRKSRC}/xhippo.gtkrc ${PREFIX}/share/examples/xhippo
 	cd ${WRKSRC}/doc; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/xhippo 
+	${INSTALL_MAN} ${WRKSRC}/doc/xhippo.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
