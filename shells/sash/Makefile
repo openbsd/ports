@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/08 19:28:39 wcobb Exp $
+# $OpenBSD: Makefile,v 1.6 2002/07/21 08:44:35 wcobb Exp $
 
 COMMENT=		"stand-alone shell with built-in commands"
 
-VERSION=		3.5
+VERSION=		3.6
 DISTNAME=		sash-${VERSION}
 CATEGORIES=		shells
-NEED_VERSION=		1.509
 HOMEPAGE=		http://www.canb.auug.org.au/~dbell/
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,6 +18,14 @@ MASTER_SITES=		http://www.canb.auug.org.au/~dbell/programs/ \
 			http://mirror.csoft.org/sash/
 
 ALL_TARGET=		sash
+
+CFLAGS+=		-DHAVE_GZIP=1 \
+			-DHAVE_LINUX_ATTR=0 \
+			-DHAVE_LINUX_MOUNT=0 \
+			-DHAVE_BSD_MOUNT=1 \
+			-DMOUNT_TYPE='\"ffs\"'
+
+MAKE_FLAGS=		CFLAGS="${CFLAGS}"
 
 do-install:
 	    cd ${WRKSRC} && ${INSTALL_PROGRAM} sash ${PREFIX}/bin
