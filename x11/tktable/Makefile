@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2001/07/09 17:11:23 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2001/08/11 16:04:45 kevlo Exp $
 
 COMMENT=	"tk extension"
 
-DISTNAME=	Tktable2.6
-PKGNAME=	Tktable-2.6
+DISTNAME=	Tktable2.7
+PKGNAME=	Tktable-2.7
 CATEGORIES=	x11
 NEED_VERSION=	1.402
-MASTER_SITES= 	http://tcl.activestate.com/community/hobbs/tcl/capp/tkTable/
 
 HOMEPAGE= 	http://tktable.sourceforge.net/
 
@@ -16,6 +15,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} 
+MASTER_SITE_SUBDIR=	tktable
 
 BUILD_DEPENDS=	wish8.3::x11/tk/8.3
 
@@ -28,7 +30,9 @@ CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.3 \
 		--with-tk=${PREFIX}/lib/tk8.3
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/Tktable
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/Tktable
+	${INSTALL_DATA} ${WRKSRC}/../doc/tkTable.html ${PREFIX}/share/doc/Tktable
 	@cp ${WRKSRC}/../demos/* ${PREFIX}/share/examples/Tktable
 
 .include <bsd.port.mk>
