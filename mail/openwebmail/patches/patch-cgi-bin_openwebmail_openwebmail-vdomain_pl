@@ -1,17 +1,22 @@
---- cgi-bin/openwebmail/openwebmail-vdomain.pl.orig	Mon Apr 14 13:22:55 2003
-+++ cgi-bin/openwebmail/openwebmail-vdomain.pl	Mon Apr 14 13:23:18 2003
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-vdomain_pl,v 1.2 2003/11/03 06:15:15 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail-vdomain.pl.orig	Sat Nov  1 11:27:27 2003
++++ cgi-bin/openwebmail/openwebmail-vdomain.pl	Sat Nov  1 11:28:10 2003
 @@ -1,4 +1,4 @@
 -#!/usr/bin/suidperl -T
 +#!/usr/bin/perl -T
  #
  # openwebmail-vdomain.pl - virtual domain user management
  #
-@@ -89,7 +89,7 @@
+@@ -102,10 +102,10 @@
  
  use vars qw($SCRIPT_DIR);
- if ( $0 =~ m!^(.*?)/[\w\d\-\.]+\.pl! ) { $SCRIPT_DIR=$1; }
+ if ( $0 =~ m!^(\S*)/[\w\d\-\.]+\.pl! ) { $SCRIPT_DIR=$1; }
 -if (!$SCRIPT_DIR && open(F, '/etc/openwebmail_path.conf')) {
 +if (!$SCRIPT_DIR && open(F, '%%SYSCONFDIR%%/openwebmail/openwebmail_path.conf')) {
-    $_=<F>; close(F); if ( $_=~/^([^\s]*)/) { $SCRIPT_DIR=$1; }
+    $_=<F>; close(F); if ( $_=~/^(\S*)/) { $SCRIPT_DIR=$1; }
  }
- if (!$SCRIPT_DIR) { print "Content-type: text/html\n\nSCRIPT_DIR not set in /etc/openwebmail_path.conf !\n"; exit 0; }
+-if (!$SCRIPT_DIR) { print "Content-type: text/html\n\nSCRIPT_DIR not set in /etc/openwebmail_path.conf !\n"; exit 0; }
++if (!$SCRIPT_DIR) { print "Content-type: text/html\n\nSCRIPT_DIR not set in %%SYSCONFDIR%%/openwebmail/openwebmail_path.conf !\n"; exit 0; }
+ push (@INC, $SCRIPT_DIR);
+ 
+ $ENV{PATH} = ""; # no PATH should be needed

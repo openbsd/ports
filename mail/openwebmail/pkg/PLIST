@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/07/16 10:32:18 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/11/03 06:15:20 kevlo Exp $
 cgi-bin/openwebmail/auth_ldap.pl
 cgi-bin/openwebmail/auth_mysql.pl
 cgi-bin/openwebmail/auth_mysql_vmail.pl
@@ -40,7 +40,9 @@ cgi-bin/openwebmail/pop3mail.pl
 cgi-bin/openwebmail/preload.pl
 cgi-bin/openwebmail/quota_du.pl
 cgi-bin/openwebmail/quota_unixfs.pl
+cgi-bin/openwebmail/userstat.pl
 cgi-bin/openwebmail/uty/addrbook_hotmail2owm.pl
+cgi-bin/openwebmail/uty/b2g.pl
 cgi-bin/openwebmail/uty/dbmtest.pl
 cgi-bin/openwebmail/uty/debugadd.pl
 cgi-bin/openwebmail/uty/debugdel.pl
@@ -51,9 +53,11 @@ cgi-bin/openwebmail/uty/filelock.pl.fake
 cgi-bin/openwebmail/uty/fixrc.pl
 cgi-bin/openwebmail/uty/fixvuser.pl
 cgi-bin/openwebmail/uty/fmthtml.pl
+cgi-bin/openwebmail/uty/g2b.pl
 cgi-bin/openwebmail/uty/gettimeofday.pl
 cgi-bin/openwebmail/uty/htmlarea.addcharset.pl
 cgi-bin/openwebmail/uty/iconv.pl.fake
+cgi-bin/openwebmail/uty/install-owm-suse.sh
 cgi-bin/openwebmail/uty/jcode.pl
 cgi-bin/openwebmail/uty/mkcool3d_en.sh
 cgi-bin/openwebmail/uty/mkcool3d_it.sh
@@ -81,15 +85,21 @@ conf/openwebmail/calendar.book
 conf/openwebmail/filter.book
 conf/openwebmail/g2b.map
 conf/openwebmail/holidays/de
+conf/openwebmail/holidays/de_CH
 conf/openwebmail/holidays/en
 conf/openwebmail/holidays/en_GB
 conf/openwebmail/holidays/en_US
 conf/openwebmail/holidays/es
 conf/openwebmail/holidays/hu
+conf/openwebmail/holidays/it
+conf/openwebmail/holidays/nl
+conf/openwebmail/holidays/pl
+conf/openwebmail/holidays/pt
 conf/openwebmail/holidays/pt_BR
 conf/openwebmail/holidays/sk
 conf/openwebmail/holidays/ur
 conf/openwebmail/holidays/zh_CN.GB2312
+conf/openwebmail/holidays/zh_HK.Big5
 conf/openwebmail/holidays/zh_TW.Big5
 conf/openwebmail/lang/ar.CP1256
 conf/openwebmail/lang/ar.ISO8859-6
@@ -103,6 +113,7 @@ conf/openwebmail/lang/en
 conf/openwebmail/lang/es
 conf/openwebmail/lang/fi
 conf/openwebmail/lang/fr
+conf/openwebmail/lang/he.CP1255
 conf/openwebmail/lang/he.ISO8859-8
 conf/openwebmail/lang/hu
 conf/openwebmail/lang/id
@@ -443,6 +454,7 @@ conf/openwebmail/templates/de/editfolders.template
 conf/openwebmail/templates/de/editfroms.template
 conf/openwebmail/templates/de/editpop3.template
 conf/openwebmail/templates/de/editstationery.template
+conf/openwebmail/templates/de/firsttimeuser.template
 conf/openwebmail/templates/de/footer.template
 conf/openwebmail/templates/de/header.template
 conf/openwebmail/templates/de/history.template
@@ -700,6 +712,52 @@ conf/openwebmail/templates/fr/vdomain_userlist.template
 conf/openwebmail/templates/fr/viewfolder.template
 conf/openwebmail/templates/fr/weekview.template
 conf/openwebmail/templates/fr/yearview.template
+conf/openwebmail/templates/he.CP1255/about.template
+conf/openwebmail/templates/he.CP1255/addressbook.template
+conf/openwebmail/templates/he.CP1255/advsearch.template
+conf/openwebmail/templates/he.CP1255/autoclose.template
+conf/openwebmail/templates/he.CP1255/chpwd.template
+conf/openwebmail/templates/he.CP1255/chpwdfailed.template
+conf/openwebmail/templates/he.CP1255/chpwdok.template
+conf/openwebmail/templates/he.CP1255/composemessage.template
+conf/openwebmail/templates/he.CP1255/dayview.template
+conf/openwebmail/templates/he.CP1255/dir.template
+conf/openwebmail/templates/he.CP1255/dirfilesel.template
+conf/openwebmail/templates/he.CP1255/editaddresses.template
+conf/openwebmail/templates/he.CP1255/editcalendar.template
+conf/openwebmail/templates/he.CP1255/editdictionary.template
+conf/openwebmail/templates/he.CP1255/editfile.template
+conf/openwebmail/templates/he.CP1255/editfilter.template
+conf/openwebmail/templates/he.CP1255/editfolders.template
+conf/openwebmail/templates/he.CP1255/editfroms.template
+conf/openwebmail/templates/he.CP1255/editpop3.template
+conf/openwebmail/templates/he.CP1255/editstationery.template
+conf/openwebmail/templates/he.CP1255/footer.template
+conf/openwebmail/templates/he.CP1255/header.template
+conf/openwebmail/templates/he.CP1255/history.template
+conf/openwebmail/templates/he.CP1255/importabook.template
+conf/openwebmail/templates/he.CP1255/listarchive.template
+conf/openwebmail/templates/he.CP1255/listview.template
+conf/openwebmail/templates/he.CP1255/login.template
+conf/openwebmail/templates/he.CP1255/loginfailed.template
+conf/openwebmail/templates/he.CP1255/logout.template
+conf/openwebmail/templates/he.CP1255/monthview.template
+conf/openwebmail/templates/he.CP1255/prefs.template
+conf/openwebmail/templates/he.CP1255/prefssaved.template
+conf/openwebmail/templates/he.CP1255/printmessage.template
+conf/openwebmail/templates/he.CP1255/readmessage.template
+conf/openwebmail/templates/he.CP1255/rebuildfailed.template
+conf/openwebmail/templates/he.CP1255/sessiontimeout.template
+conf/openwebmail/templates/he.CP1255/showmsg.js
+conf/openwebmail/templates/he.CP1255/spellcheck.template
+conf/openwebmail/templates/he.CP1255/timeoutchk.js
+conf/openwebmail/templates/he.CP1255/timeoutwarning.template
+conf/openwebmail/templates/he.CP1255/userfirsttime.template
+conf/openwebmail/templates/he.CP1255/vdomain_edituser.template
+conf/openwebmail/templates/he.CP1255/vdomain_userlist.template
+conf/openwebmail/templates/he.CP1255/viewfolder.template
+conf/openwebmail/templates/he.CP1255/weekview.template
+conf/openwebmail/templates/he.CP1255/yearview.template
 conf/openwebmail/templates/he.ISO8859-8/about.template
 conf/openwebmail/templates/he.ISO8859-8/addressbook.template
 conf/openwebmail/templates/he.ISO8859-8/advsearch.template
@@ -1805,6 +1863,7 @@ conf/openwebmail/templates/zh_TW.Big5/viewfolder.template
 conf/openwebmail/templates/zh_TW.Big5/weekview.template
 conf/openwebmail/templates/zh_TW.Big5/yearview.template
 conf/openwebmail/users.conf/SAMPLE
+conf/openwebmail/users.conf/guest
 htdocs/openwebmail/applet/mindterm/CHANGES
 htdocs/openwebmail/applet/mindterm/COPYING
 htdocs/openwebmail/applet/mindterm/FAQ
@@ -1818,6 +1877,7 @@ htdocs/openwebmail/applet/mindterm2/INSTALL.MINDTERM2
 htdocs/openwebmail/applet/mindterm2/ssh2.html
 htdocs/openwebmail/doc/Mandrake-README.txt
 htdocs/openwebmail/doc/RedHat-README.txt
+htdocs/openwebmail/doc/SuSE-README.txt
 htdocs/openwebmail/doc/accesskey.txt
 htdocs/openwebmail/doc/auth_module.txt
 htdocs/openwebmail/doc/changes.txt
@@ -2224,6 +2284,203 @@ htdocs/openwebmail/help/fr/tutorial/toolbars/main.html
 htdocs/openwebmail/help/fr/tutorial/toolbars/message.html
 htdocs/openwebmail/help/fr/tutorial/toolbars/search.html
 htdocs/openwebmail/help/fr/tutorial/toolbars/settings.html
+htdocs/openwebmail/help/nl/def/browser.html
+htdocs/openwebmail/help/nl/def/byte.html
+htdocs/openwebmail/help/nl/def/cgi.html
+htdocs/openwebmail/help/nl/def/character_set.html
+htdocs/openwebmail/help/nl/def/email_headers.html
+htdocs/openwebmail/help/nl/def/index.html
+htdocs/openwebmail/help/nl/def/javascript.html
+htdocs/openwebmail/help/nl/def/open_source.html
+htdocs/openwebmail/help/nl/def/regex.html
+htdocs/openwebmail/help/nl/def/smtp.html
+htdocs/openwebmail/help/nl/def/url.html
+htdocs/openwebmail/help/nl/images/blue_squares.gif
+htdocs/openwebmail/help/nl/images/buttons/about.gif
+htdocs/openwebmail/help/nl/images/buttons/add_address.gif
+htdocs/openwebmail/help/nl/images/buttons/addrbook.s.gif
+htdocs/openwebmail/help/nl/images/buttons/address.gif
+htdocs/openwebmail/help/nl/images/buttons/address_book.gif
+htdocs/openwebmail/help/nl/images/buttons/adduser.gif
+htdocs/openwebmail/help/nl/images/buttons/attach.gif
+htdocs/openwebmail/help/nl/images/buttons/backtofolder.gif
+htdocs/openwebmail/help/nl/images/buttons/backtoinbox.gif
+htdocs/openwebmail/help/nl/images/buttons/big52gb.gif
+htdocs/openwebmail/help/nl/images/buttons/blank.gif
+htdocs/openwebmail/help/nl/images/buttons/block_sender.gif
+htdocs/openwebmail/help/nl/images/buttons/block_smtp.gif
+htdocs/openwebmail/help/nl/images/buttons/blockemail.gif
+htdocs/openwebmail/help/nl/images/buttons/blockrelay.gif
+htdocs/openwebmail/help/nl/images/buttons/browse.gif
+htdocs/openwebmail/help/nl/images/buttons/cal-delete.gif
+htdocs/openwebmail/help/nl/images/buttons/calendar.gif
+htdocs/openwebmail/help/nl/images/buttons/checkbox.gif
+htdocs/openwebmail/help/nl/images/buttons/chpwd.gif
+htdocs/openwebmail/help/nl/images/buttons/clear_addresses.gif
+htdocs/openwebmail/help/nl/images/buttons/clearaddress.gif
+htdocs/openwebmail/help/nl/images/buttons/clearst.gif
+htdocs/openwebmail/help/nl/images/buttons/copy.gif
+htdocs/openwebmail/help/nl/images/buttons/day.gif
+htdocs/openwebmail/help/nl/images/buttons/dayview.gif
+htdocs/openwebmail/help/nl/images/buttons/dest_menu.gif
+htdocs/openwebmail/help/nl/images/buttons/disk.gif
+htdocs/openwebmail/help/nl/images/buttons/double_left.gif
+htdocs/openwebmail/help/nl/images/buttons/down.gif
+htdocs/openwebmail/help/nl/images/buttons/download.gif
+htdocs/openwebmail/help/nl/images/buttons/download.s.gif
+htdocs/openwebmail/help/nl/images/buttons/download.s.ow.gif
+htdocs/openwebmail/help/nl/images/buttons/earth.gif
+htdocs/openwebmail/help/nl/images/buttons/edit_email.gif
+htdocs/openwebmail/help/nl/images/buttons/edit_pop3.gif
+htdocs/openwebmail/help/nl/images/buttons/editdraft.gif
+htdocs/openwebmail/help/nl/images/buttons/editfroms.gif
+htdocs/openwebmail/help/nl/images/buttons/editst.gif
+htdocs/openwebmail/help/nl/images/buttons/editst.s.gif
+htdocs/openwebmail/help/nl/images/buttons/email.gif
+htdocs/openwebmail/help/nl/images/buttons/export.gif
+htdocs/openwebmail/help/nl/images/buttons/filter.gif
+htdocs/openwebmail/help/nl/images/buttons/first-grey.gif
+htdocs/openwebmail/help/nl/images/buttons/first.gif
+htdocs/openwebmail/help/nl/images/buttons/folder_menu.gif
+htdocs/openwebmail/help/nl/images/buttons/folder_menu2.gif
+htdocs/openwebmail/help/nl/images/buttons/folders.gif
+htdocs/openwebmail/help/nl/images/buttons/follow.down.gif
+htdocs/openwebmail/help/nl/images/buttons/follow.up.gif
+htdocs/openwebmail/help/nl/images/buttons/forward.gif
+htdocs/openwebmail/help/nl/images/buttons/forwardasorig.gif
+htdocs/openwebmail/help/nl/images/buttons/forwardattach.gif
+htdocs/openwebmail/help/nl/images/buttons/gb2big5.gif
+htdocs/openwebmail/help/nl/images/buttons/group.gif
+htdocs/openwebmail/help/nl/images/buttons/history.gif
+htdocs/openwebmail/help/nl/images/buttons/home.gif
+htdocs/openwebmail/help/nl/images/buttons/import.gif
+htdocs/openwebmail/help/nl/images/buttons/import.s.gif
+htdocs/openwebmail/help/nl/images/buttons/important.gif
+htdocs/openwebmail/help/nl/images/buttons/index.html
+htdocs/openwebmail/help/nl/images/buttons/info.gif
+htdocs/openwebmail/help/nl/images/buttons/last-grey.gif
+htdocs/openwebmail/help/nl/images/buttons/last.gif
+htdocs/openwebmail/help/nl/images/buttons/left-grey.gif
+htdocs/openwebmail/help/nl/images/buttons/left-grey.s.gif
+htdocs/openwebmail/help/nl/images/buttons/left.gif
+htdocs/openwebmail/help/nl/images/buttons/left.s.gif
+htdocs/openwebmail/help/nl/images/buttons/listview.gif
+htdocs/openwebmail/help/nl/images/buttons/logout.gif
+htdocs/openwebmail/help/nl/images/buttons/month.gif
+htdocs/openwebmail/help/nl/images/buttons/monthview.gif
+htdocs/openwebmail/help/nl/images/buttons/move.gif
+htdocs/openwebmail/help/nl/images/buttons/new.gif
+htdocs/openwebmail/help/nl/images/buttons/owm.gif
+htdocs/openwebmail/help/nl/images/buttons/password.gif
+htdocs/openwebmail/help/nl/images/buttons/pop3.gif
+htdocs/openwebmail/help/nl/images/buttons/pop3setup.gif
+htdocs/openwebmail/help/nl/images/buttons/print.gif
+htdocs/openwebmail/help/nl/images/buttons/read.a.gif
+htdocs/openwebmail/help/nl/images/buttons/read.gif
+htdocs/openwebmail/help/nl/images/buttons/refresh.gif
+htdocs/openwebmail/help/nl/images/buttons/reply.gif
+htdocs/openwebmail/help/nl/images/buttons/replyall.gif
+htdocs/openwebmail/help/nl/images/buttons/right-grey.gif
+htdocs/openwebmail/help/nl/images/buttons/right-grey.s.gif
+htdocs/openwebmail/help/nl/images/buttons/right.gif
+htdocs/openwebmail/help/nl/images/buttons/right.s.gif
+htdocs/openwebmail/help/nl/images/buttons/search.gif
+htdocs/openwebmail/help/nl/images/buttons/settings.gif
+htdocs/openwebmail/help/nl/images/buttons/sound.gif
+htdocs/openwebmail/help/nl/images/buttons/sshterm.gif
+htdocs/openwebmail/help/nl/images/buttons/stationery.gif
+htdocs/openwebmail/help/nl/images/buttons/totrash.gif
+htdocs/openwebmail/help/nl/images/buttons/trash.gif
+htdocs/openwebmail/help/nl/images/buttons/unread.a.gif
+htdocs/openwebmail/help/nl/images/buttons/unread.gif
+htdocs/openwebmail/help/nl/images/buttons/up.gif
+htdocs/openwebmail/help/nl/images/buttons/vdusers.gif
+htdocs/openwebmail/help/nl/images/buttons/webdisk.gif
+htdocs/openwebmail/help/nl/images/buttons/week.gif
+htdocs/openwebmail/help/nl/images/buttons/weekview.gif
+htdocs/openwebmail/help/nl/images/buttons/year.gif
+htdocs/openwebmail/help/nl/images/buttons/yearview.gif
+htdocs/openwebmail/help/nl/images/fade.gif
+htdocs/openwebmail/help/nl/images/globe.gif
+htdocs/openwebmail/help/nl/images/index.html
+htdocs/openwebmail/help/nl/images/logo.gif
+htdocs/openwebmail/help/nl/images/logo_small.gif
+htdocs/openwebmail/help/nl/images/screens/add_calendar_entry.gif
+htdocs/openwebmail/help/nl/images/screens/address_book.gif
+htdocs/openwebmail/help/nl/images/screens/advanced_search.gif
+htdocs/openwebmail/help/nl/images/screens/calendar.gif
+htdocs/openwebmail/help/nl/images/screens/calendar_small.gif
+htdocs/openwebmail/help/nl/images/screens/compose.gif
+htdocs/openwebmail/help/nl/images/screens/compose_small.gif
+htdocs/openwebmail/help/nl/images/screens/inbox_messages.gif
+htdocs/openwebmail/help/nl/images/screens/index.html
+htdocs/openwebmail/help/nl/images/screens/login.gif
+htdocs/openwebmail/help/nl/images/screens/message_big.gif
+htdocs/openwebmail/help/nl/images/screens/message_small.gif
+htdocs/openwebmail/help/nl/images/screens/message_toolbar.gif
+htdocs/openwebmail/help/nl/images/screens/movcop.gif
+htdocs/openwebmail/help/nl/images/screens/spellcheck.gif
+htdocs/openwebmail/help/nl/images/screens/subject_circled.gif
+htdocs/openwebmail/help/nl/images/space.gif
+htdocs/openwebmail/help/nl/images/toolbars/calendar.gif
+htdocs/openwebmail/help/nl/images/toolbars/index.html
+htdocs/openwebmail/help/nl/images/toolbars/main.gif
+htdocs/openwebmail/help/nl/images/toolbars/message.gif
+htdocs/openwebmail/help/nl/images/toolbars/message_bottom.gif
+htdocs/openwebmail/help/nl/images/toolbars/search.gif
+htdocs/openwebmail/help/nl/images/toolbars/settings.gif
+htdocs/openwebmail/help/nl/index.html
+htdocs/openwebmail/help/nl/templates_and_data/blank-template.html
+htdocs/openwebmail/help/nl/templates_and_data/borders-template.html
+htdocs/openwebmail/help/nl/templates_and_data/def.js
+htdocs/openwebmail/help/nl/templates_and_data/definition_template.html
+htdocs/openwebmail/help/nl/templates_and_data/index.html
+htdocs/openwebmail/help/nl/templates_and_data/makewin.js
+htdocs/openwebmail/help/nl/templates_and_data/style.css
+htdocs/openwebmail/help/nl/templates_and_data/version notes.txt
+htdocs/openwebmail/help/nl/tutorial/address_book/editing.html
+htdocs/openwebmail/help/nl/tutorial/address_book/import_export.html
+htdocs/openwebmail/help/nl/tutorial/address_book/index.html
+htdocs/openwebmail/help/nl/tutorial/address_book/using.html
+htdocs/openwebmail/help/nl/tutorial/basics/config.html
+htdocs/openwebmail/help/nl/tutorial/basics/inbox.html
+htdocs/openwebmail/help/nl/tutorial/basics/index.html
+htdocs/openwebmail/help/nl/tutorial/basics/login.html
+htdocs/openwebmail/help/nl/tutorial/basics/reading.html
+htdocs/openwebmail/help/nl/tutorial/calendar/adding.html
+htdocs/openwebmail/help/nl/tutorial/calendar/index.html
+htdocs/openwebmail/help/nl/tutorial/calendar/viewing.html
+htdocs/openwebmail/help/nl/tutorial/configuration/calendar.html
+htdocs/openwebmail/help/nl/tutorial/configuration/display.html
+htdocs/openwebmail/help/nl/tutorial/configuration/index.html
+htdocs/openwebmail/help/nl/tutorial/configuration/message_filtering.html
+htdocs/openwebmail/help/nl/tutorial/configuration/message_operation.html
+htdocs/openwebmail/help/nl/tutorial/configuration/message_reading.html
+htdocs/openwebmail/help/nl/tutorial/configuration/message_replying.html
+htdocs/openwebmail/help/nl/tutorial/configuration/misc.html
+htdocs/openwebmail/help/nl/tutorial/configuration/personal.html
+htdocs/openwebmail/help/nl/tutorial/index.html
+htdocs/openwebmail/help/nl/tutorial/messages/attach.html
+htdocs/openwebmail/help/nl/tutorial/messages/backing_up.html
+htdocs/openwebmail/help/nl/tutorial/messages/compose.html
+htdocs/openwebmail/help/nl/tutorial/messages/filter.html
+htdocs/openwebmail/help/nl/tutorial/messages/folders.html
+htdocs/openwebmail/help/nl/tutorial/messages/index.html
+htdocs/openwebmail/help/nl/tutorial/messages/move_copy.html
+htdocs/openwebmail/help/nl/tutorial/messages/saving.html
+htdocs/openwebmail/help/nl/tutorial/messages/search.html
+htdocs/openwebmail/help/nl/tutorial/messages/spellcheck.html
+htdocs/openwebmail/help/nl/tutorial/notes/addhelp.html
+htdocs/openwebmail/help/nl/tutorial/notes/advantages.html
+htdocs/openwebmail/help/nl/tutorial/notes/common.html
+htdocs/openwebmail/help/nl/tutorial/notes/index.html
+htdocs/openwebmail/help/nl/tutorial/notes/using_owm_help.html
+htdocs/openwebmail/help/nl/tutorial/toolbars/calendar.html
+htdocs/openwebmail/help/nl/tutorial/toolbars/index.html
+htdocs/openwebmail/help/nl/tutorial/toolbars/main.html
+htdocs/openwebmail/help/nl/tutorial/toolbars/message.html
+htdocs/openwebmail/help/nl/tutorial/toolbars/search.html
+htdocs/openwebmail/help/nl/tutorial/toolbars/settings.html
 htdocs/openwebmail/help/pt_BR/def/browser.html
 htdocs/openwebmail/help/pt_BR/def/byte.html
 htdocs/openwebmail/help/pt_BR/def/cgi.html
@@ -2362,6 +2619,7 @@ htdocs/openwebmail/help/zh_CN.GB2312/def/browser.html
 htdocs/openwebmail/help/zh_CN.GB2312/def/byte.html
 htdocs/openwebmail/help/zh_CN.GB2312/def/cgi.html
 htdocs/openwebmail/help/zh_CN.GB2312/def/character_set.html
+htdocs/openwebmail/help/zh_CN.GB2312/def/email_headers.html
 htdocs/openwebmail/help/zh_CN.GB2312/def/javascript.html
 htdocs/openwebmail/help/zh_CN.GB2312/def/open_source.html
 htdocs/openwebmail/help/zh_CN.GB2312/def/regex.html
@@ -2381,6 +2639,7 @@ htdocs/openwebmail/help/zh_CN.GB2312/images/buttons/clear_addresses.gif
 htdocs/openwebmail/help/zh_CN.GB2312/images/buttons/copy.gif
 htdocs/openwebmail/help/zh_CN.GB2312/images/buttons/day.gif
 htdocs/openwebmail/help/zh_CN.GB2312/images/buttons/dest_menu.gif
+htdocs/openwebmail/help/zh_CN.GB2312/images/buttons/disk.gif
 htdocs/openwebmail/help/zh_CN.GB2312/images/buttons/double_left.gif
 htdocs/openwebmail/help/zh_CN.GB2312/images/buttons/edit_email.gif
 htdocs/openwebmail/help/zh_CN.GB2312/images/buttons/edit_pop3.gif
@@ -2407,6 +2666,7 @@ htdocs/openwebmail/help/zh_CN.GB2312/images/buttons/reply.gif
 htdocs/openwebmail/help/zh_CN.GB2312/images/buttons/replyall.gif
 htdocs/openwebmail/help/zh_CN.GB2312/images/buttons/search.gif
 htdocs/openwebmail/help/zh_CN.GB2312/images/buttons/settings.gif
+htdocs/openwebmail/help/zh_CN.GB2312/images/buttons/stationery.gif
 htdocs/openwebmail/help/zh_CN.GB2312/images/buttons/trash.gif
 htdocs/openwebmail/help/zh_CN.GB2312/images/buttons/up.gif
 htdocs/openwebmail/help/zh_CN.GB2312/images/buttons/week.gif
@@ -2434,6 +2694,7 @@ htdocs/openwebmail/help/zh_CN.GB2312/images/space.gif
 htdocs/openwebmail/help/zh_CN.GB2312/images/toolbars/calendar.gif
 htdocs/openwebmail/help/zh_CN.GB2312/images/toolbars/main.gif
 htdocs/openwebmail/help/zh_CN.GB2312/images/toolbars/message.gif
+htdocs/openwebmail/help/zh_CN.GB2312/images/toolbars/message_bottom.gif
 htdocs/openwebmail/help/zh_CN.GB2312/images/toolbars/search.gif
 htdocs/openwebmail/help/zh_CN.GB2312/images/toolbars/settings.gif
 htdocs/openwebmail/help/zh_CN.GB2312/index.html
@@ -2467,12 +2728,19 @@ htdocs/openwebmail/help/zh_CN.GB2312/tutorial/configuration/misc.html
 htdocs/openwebmail/help/zh_CN.GB2312/tutorial/configuration/personal.html
 htdocs/openwebmail/help/zh_CN.GB2312/tutorial/index.html
 htdocs/openwebmail/help/zh_CN.GB2312/tutorial/messages/attach.html
+htdocs/openwebmail/help/zh_CN.GB2312/tutorial/messages/backing_up.html
 htdocs/openwebmail/help/zh_CN.GB2312/tutorial/messages/compose.html
 htdocs/openwebmail/help/zh_CN.GB2312/tutorial/messages/filter.html
 htdocs/openwebmail/help/zh_CN.GB2312/tutorial/messages/folders.html
 htdocs/openwebmail/help/zh_CN.GB2312/tutorial/messages/index.html
 htdocs/openwebmail/help/zh_CN.GB2312/tutorial/messages/move_copy.html
 htdocs/openwebmail/help/zh_CN.GB2312/tutorial/messages/saving.html
+htdocs/openwebmail/help/zh_CN.GB2312/tutorial/messages/search.files/advanced_search.gif
+htdocs/openwebmail/help/zh_CN.GB2312/tutorial/messages/search.files/logo_small.gif
+htdocs/openwebmail/help/zh_CN.GB2312/tutorial/messages/search.files/search.gif
+htdocs/openwebmail/help/zh_CN.GB2312/tutorial/messages/search.files/space.gif
+htdocs/openwebmail/help/zh_CN.GB2312/tutorial/messages/search.files/style.css
+htdocs/openwebmail/help/zh_CN.GB2312/tutorial/messages/search.html
 htdocs/openwebmail/help/zh_CN.GB2312/tutorial/messages/spellcheck.html
 htdocs/openwebmail/help/zh_CN.GB2312/tutorial/notes/addhelp.html
 htdocs/openwebmail/help/zh_CN.GB2312/tutorial/notes/advantages.html
@@ -2489,6 +2757,7 @@ htdocs/openwebmail/help/zh_TW.Big5/def/browser.html
 htdocs/openwebmail/help/zh_TW.Big5/def/byte.html
 htdocs/openwebmail/help/zh_TW.Big5/def/cgi.html
 htdocs/openwebmail/help/zh_TW.Big5/def/character_set.html
+htdocs/openwebmail/help/zh_TW.Big5/def/email_headers.html
 htdocs/openwebmail/help/zh_TW.Big5/def/javascript.html
 htdocs/openwebmail/help/zh_TW.Big5/def/open_source.html
 htdocs/openwebmail/help/zh_TW.Big5/def/regex.html
@@ -2508,6 +2777,7 @@ htdocs/openwebmail/help/zh_TW.Big5/images/buttons/clear_addresses.gif
 htdocs/openwebmail/help/zh_TW.Big5/images/buttons/copy.gif
 htdocs/openwebmail/help/zh_TW.Big5/images/buttons/day.gif
 htdocs/openwebmail/help/zh_TW.Big5/images/buttons/dest_menu.gif
+htdocs/openwebmail/help/zh_TW.Big5/images/buttons/disk.gif
 htdocs/openwebmail/help/zh_TW.Big5/images/buttons/double_left.gif
 htdocs/openwebmail/help/zh_TW.Big5/images/buttons/edit_email.gif
 htdocs/openwebmail/help/zh_TW.Big5/images/buttons/edit_pop3.gif
@@ -2534,6 +2804,7 @@ htdocs/openwebmail/help/zh_TW.Big5/images/buttons/reply.gif
 htdocs/openwebmail/help/zh_TW.Big5/images/buttons/replyall.gif
 htdocs/openwebmail/help/zh_TW.Big5/images/buttons/search.gif
 htdocs/openwebmail/help/zh_TW.Big5/images/buttons/settings.gif
+htdocs/openwebmail/help/zh_TW.Big5/images/buttons/stationery.gif
 htdocs/openwebmail/help/zh_TW.Big5/images/buttons/trash.gif
 htdocs/openwebmail/help/zh_TW.Big5/images/buttons/up.gif
 htdocs/openwebmail/help/zh_TW.Big5/images/buttons/week.gif
@@ -2561,6 +2832,7 @@ htdocs/openwebmail/help/zh_TW.Big5/images/space.gif
 htdocs/openwebmail/help/zh_TW.Big5/images/toolbars/calendar.gif
 htdocs/openwebmail/help/zh_TW.Big5/images/toolbars/main.gif
 htdocs/openwebmail/help/zh_TW.Big5/images/toolbars/message.gif
+htdocs/openwebmail/help/zh_TW.Big5/images/toolbars/message_bottom.gif
 htdocs/openwebmail/help/zh_TW.Big5/images/toolbars/search.gif
 htdocs/openwebmail/help/zh_TW.Big5/images/toolbars/settings.gif
 htdocs/openwebmail/help/zh_TW.Big5/index.html
@@ -2594,12 +2866,19 @@ htdocs/openwebmail/help/zh_TW.Big5/tutorial/configuration/misc.html
 htdocs/openwebmail/help/zh_TW.Big5/tutorial/configuration/personal.html
 htdocs/openwebmail/help/zh_TW.Big5/tutorial/index.html
 htdocs/openwebmail/help/zh_TW.Big5/tutorial/messages/attach.html
+htdocs/openwebmail/help/zh_TW.Big5/tutorial/messages/backing_up.html
 htdocs/openwebmail/help/zh_TW.Big5/tutorial/messages/compose.html
 htdocs/openwebmail/help/zh_TW.Big5/tutorial/messages/filter.html
 htdocs/openwebmail/help/zh_TW.Big5/tutorial/messages/folders.html
 htdocs/openwebmail/help/zh_TW.Big5/tutorial/messages/index.html
 htdocs/openwebmail/help/zh_TW.Big5/tutorial/messages/move_copy.html
 htdocs/openwebmail/help/zh_TW.Big5/tutorial/messages/saving.html
+htdocs/openwebmail/help/zh_TW.Big5/tutorial/messages/search.files/advanced_search.gif
+htdocs/openwebmail/help/zh_TW.Big5/tutorial/messages/search.files/logo_small.gif
+htdocs/openwebmail/help/zh_TW.Big5/tutorial/messages/search.files/search.gif
+htdocs/openwebmail/help/zh_TW.Big5/tutorial/messages/search.files/space.gif
+htdocs/openwebmail/help/zh_TW.Big5/tutorial/messages/search.files/style.css
+htdocs/openwebmail/help/zh_TW.Big5/tutorial/messages/search.html
 htdocs/openwebmail/help/zh_TW.Big5/tutorial/messages/spellcheck.html
 htdocs/openwebmail/help/zh_TW.Big5/tutorial/notes/addhelp.html
 htdocs/openwebmail/help/zh_TW.Big5/tutorial/notes/advantages.html
@@ -3527,6 +3806,94 @@ htdocs/openwebmail/images/iconsets/Cool3D.Francais/vdusers.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Francais/webdisk.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Francais/weekview.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Francais/yearview.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/addrbook.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/addrbook.s.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/adduser.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/advsearch.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/arrowleft-grey.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/arrowleft.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/arrowright-grey.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/arrowright.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/attach.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/backtofolder.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/blank.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/blockemail.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/blockrelay.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/cal-delete.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/cal-link.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/calendar.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/chpwd.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/clearaddress.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/clearst.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/compose.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/dayview.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/down.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/download.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/download.s.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/download.s.ow.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/earth.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/editdraft.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/editfroms.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/editfroms.s.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/editst.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/editst.s.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/email.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/export.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/filtersetup.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/first-grey.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/first-grey.s.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/first.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/first.s.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/folder.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/follow.down.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/follow.up.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/forward.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/forwardasatt.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/group.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/history.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/home.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/import.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/import.s.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/important.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/info.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/last-grey.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/last-grey.s.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/last.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/last.s.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/left-grey.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/left-grey.s.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/left.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/left.s.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/listview.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/logout.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/monthview.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/owm.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/pop3.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/pop3setup.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/prefs.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/print.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/read.a.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/read.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/refresh.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/reply.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/replyall.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/right-grey.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/right-grey.s.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/right.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/right.s.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/sound.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/sshterm.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/thumbnail.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/totrash.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/trash.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/unread.a.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/unread.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/up.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/vdusers.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/webdisk.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/weekview.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/yearview.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Hellenic/addrbook.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Hellenic/addrbook.s.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Hellenic/adduser.gif
@@ -5365,6 +5732,7 @@ htdocs/openwebmail/images/iconsets/Default/yearview.gif
 htdocs/openwebmail/images/iconsets/Text.Chinese.Simplified/icontext
 htdocs/openwebmail/images/iconsets/Text.Chinese.Traditional/icontext
 htdocs/openwebmail/images/iconsets/Text.English/icontext
+htdocs/openwebmail/images/iconsets/Text.Korean/icontext
 htdocs/openwebmail/images/iconsets/XP.Blue/Copyright.txt
 htdocs/openwebmail/images/iconsets/XP.Blue/addrbook.gif
 htdocs/openwebmail/images/iconsets/XP.Blue/addrbook.s.gif
@@ -5742,6 +6110,117 @@ htdocs/openwebmail/images/smilies/FaceYukky.png
 htdocs/openwebmail/images/spon_by_norv.gif
 htdocs/openwebmail/images/timezone.jpg
 htdocs/openwebmail/index.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/dialog.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/example-fully-loaded.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/example-spell-checker.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/example-table-operations.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/example.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/htmlarea.css
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/htmlarea.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_about.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_align_center.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_align_justify.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_align_left.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_align_right.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_blank.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_charmap.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_color_bg.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_color_fg.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_copy.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_custom.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_cut.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_delete.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_format_bold.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_format_italic.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_format_strike.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_format_sub.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_format_sup.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_format_underline.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_help.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_hr.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_html.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_image.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_indent_less.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_indent_more.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_link.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_list_bullet.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_list_num.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_paste.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_redo.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_show_border.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_splitcel.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/ed_undo.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/fullscreen_maximize.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/fullscreen_minimize.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images/insert_table.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/index.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/b5.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/da.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/de.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/en.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/es.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/fi.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/fr.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/gb.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/it.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/ja-euc.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/ja-jis.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/ja-sjis.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/ja-utf8.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/nb.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/nl.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/pl.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/pt_br.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/ro.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/ru.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/se.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang/vn.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/license.txt
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/SpellChecker/img/spell-check.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/SpellChecker/lang/en.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/SpellChecker/lang/ro.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/SpellChecker/readme-tech.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/SpellChecker/spell-check-logic.cgi
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/SpellChecker/spell-check-style.css
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/SpellChecker/spell-check-ui.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/SpellChecker/spell-check-ui.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/SpellChecker/spell-checker.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/img/cell-delete.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/img/cell-insert-after.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/img/cell-insert-before.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/img/cell-merge.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/img/cell-prop.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/img/cell-split.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/img/col-delete.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/img/col-insert-after.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/img/col-insert-before.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/img/col-split.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/img/row-delete.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/img/row-insert-above.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/img/row-insert-under.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/img/row-prop.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/img/row-split.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/img/table-prop.gif
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/lang/en.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/lang/fi.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/lang/ro.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/table-operations.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/popupdiv.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/popups/about.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/popups/blank.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/popups/custom2.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/popups/editor_help.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/popups/fullscreen.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/popups/insert_image.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/popups/insert_table.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/popups/old-fullscreen.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/popups/old_insert_image.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/popups/popup.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/popups/select_color.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/popupwin.js
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/reference.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/release-notes.html
+htdocs/openwebmail/javascript/HTMLArea-3.0-beta/test.cgi
 htdocs/openwebmail/javascript/htmlarea.openwebmail/dialog.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/htmlarea.css
 htdocs/openwebmail/javascript/htmlarea.openwebmail/htmlarea.js
@@ -5773,13 +6252,48 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/images/ed_indent_more.gif
 htdocs/openwebmail/javascript/htmlarea.openwebmail/images/ed_link.gif
 htdocs/openwebmail/javascript/htmlarea.openwebmail/images/ed_list_bullet.gif
 htdocs/openwebmail/javascript/htmlarea.openwebmail/images/ed_list_num.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/images/ed_paste.gif
 htdocs/openwebmail/javascript/htmlarea.openwebmail/images/ed_redo.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/images/ed_show_border.gif
 htdocs/openwebmail/javascript/htmlarea.openwebmail/images/ed_sound.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/images/ed_splitcel.gif
 htdocs/openwebmail/javascript/htmlarea.openwebmail/images/ed_undo.gif
 htdocs/openwebmail/javascript/htmlarea.openwebmail/images/fullscreen_maximize.gif
 htdocs/openwebmail/javascript/htmlarea.openwebmail/images/fullscreen_minimize.gif
 htdocs/openwebmail/javascript/htmlarea.openwebmail/images/insert_table.gif
 htdocs/openwebmail/javascript/htmlarea.openwebmail/license.txt
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/SpellChecker/img/spell-check.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/SpellChecker/lang/en.js
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/SpellChecker/lang/pl.js
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/SpellChecker/lang/ro.js
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/SpellChecker/readme-tech.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/SpellChecker/spell-check-logic.cgi
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/SpellChecker/spell-check-style.css
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/SpellChecker/spell-check-ui.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/SpellChecker/spell-check-ui.js
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/SpellChecker/spell-checker.js
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/img/cell-delete.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/img/cell-insert-after.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/img/cell-insert-before.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/img/cell-merge.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/img/cell-prop.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/img/cell-split.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/img/col-delete.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/img/col-insert-after.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/img/col-insert-before.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/img/col-split.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/img/row-delete.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/img/row-insert-above.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/img/row-insert-under.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/img/row-prop.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/img/row-split.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/img/table-prop.gif
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/lang/en.js
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/lang/fi.js
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/lang/pl.js
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/lang/ro.js
+htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/table-operations.js
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popupdiv.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.CP1256/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.CP1256/blank.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.CP1256/htmlarea-lang.js
@@ -5877,6 +6391,14 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fr/insert_sound.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fr/insert_table.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fr/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fr/select_color.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.CP1255/about.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.CP1255/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.CP1255/htmlarea-lang.js
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.CP1255/insert_image.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.CP1255/insert_sound.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.CP1255/insert_table.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.CP1255/popup.js
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.CP1255/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.ISO8859-8/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.ISO8859-8/blank.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.ISO8859-8/htmlarea-lang.js
@@ -6069,65 +6591,15 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_TW.Big5/insert_soun
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_TW.Big5/insert_table.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_TW.Big5/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_TW.Big5/select_color.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popupwin.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/readme.txt
-htdocs/openwebmail/javascript/htmlarea/dialog.js
-htdocs/openwebmail/javascript/htmlarea/example.html
-htdocs/openwebmail/javascript/htmlarea/htmlarea-lang-en.js
-htdocs/openwebmail/javascript/htmlarea/htmlarea.css
-htdocs/openwebmail/javascript/htmlarea/htmlarea.js
-htdocs/openwebmail/javascript/htmlarea/images/ed_about.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_align_center.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_align_justify.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_align_left.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_align_right.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_blank.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_charmap.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_color_bg.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_color_fg.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_copy.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_custom.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_cut.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_delete.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_format_bold.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_format_italic.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_format_strike.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_format_sub.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_format_sup.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_format_underline.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_help.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_hr.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_html.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_image.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_indent_less.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_indent_more.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_link.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_list_bullet.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_list_num.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_redo.gif
-htdocs/openwebmail/javascript/htmlarea/images/ed_undo.gif
-htdocs/openwebmail/javascript/htmlarea/images/fullscreen_maximize.gif
-htdocs/openwebmail/javascript/htmlarea/images/fullscreen_minimize.gif
-htdocs/openwebmail/javascript/htmlarea/images/insert_table.gif
-htdocs/openwebmail/javascript/htmlarea/license.txt
-htdocs/openwebmail/javascript/htmlarea/popups/about.html
-htdocs/openwebmail/javascript/htmlarea/popups/blank.html
-htdocs/openwebmail/javascript/htmlarea/popups/custom2.html
-htdocs/openwebmail/javascript/htmlarea/popups/editor_help.html
-htdocs/openwebmail/javascript/htmlarea/popups/fullscreen.html
-htdocs/openwebmail/javascript/htmlarea/popups/insert_image.html
-htdocs/openwebmail/javascript/htmlarea/popups/insert_table.html
-htdocs/openwebmail/javascript/htmlarea/popups/old-fullscreen.html
-htdocs/openwebmail/javascript/htmlarea/popups/old_insert_image.html
-htdocs/openwebmail/javascript/htmlarea/popups/popup.js
-htdocs/openwebmail/javascript/htmlarea/popups/select_color.html
-htdocs/openwebmail/javascript/htmlarea/readme.html
-htdocs/openwebmail/javascript/htmlarea/test.cgi
 htdocs/openwebmail/openwebmail.html
 htdocs/openwebmail/redirect.html
 htdocs/openwebmail/sounds/YouGotMail.Brazilian.wav
 htdocs/openwebmail/sounds/YouGotMail.English.wav
 htdocs/openwebmail/sounds/YouGotMail.French.wav
 htdocs/openwebmail/sounds/YouGotMail.Portuguese.wav
+htdocs/openwebmail/sounds/YouGotMail.Spanish_Male.wav
 htdocs/openwebmail/sounds/addamsahmailsin.wav
 htdocs/openwebmail/sounds/addamsmailsin.wav
 htdocs/openwebmail/sounds/alert.wav
@@ -6154,8 +6626,6 @@ htdocs/openwebmail/sounds/newmsg.wav
 htdocs/openwebmail/sounds/robymail.wav
 htdocs/openwebmail/sounds/silymail.wav
 @dirrm htdocs/openwebmail/sounds
-@dirrm htdocs/openwebmail/javascript/htmlarea/popups
-@dirrm htdocs/openwebmail/javascript/htmlarea/images
 @dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_TW.Big5
 @dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_CN.GB2312
 @dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ur
@@ -6180,6 +6650,7 @@ htdocs/openwebmail/sounds/silymail.wav
 @dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/id
 @dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/hu
 @dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.ISO8859-8
+@dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.CP1255
 @dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fr
 @dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fi
 @dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/es
@@ -6193,15 +6664,33 @@ htdocs/openwebmail/sounds/silymail.wav
 @dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.ISO8859-6
 @dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.CP1256
 @dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/popups
+@dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/lang
+@dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/img
+@dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations
+@dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/SpellChecker/lang
+@dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/SpellChecker/img
+@dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/SpellChecker
+@dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins
 @dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail/images
 @dirrm htdocs/openwebmail/javascript/htmlarea.openwebmail
-@dirrm htdocs/openwebmail/javascript/htmlarea
+@dirrm htdocs/openwebmail/javascript/HTMLArea-3.0-beta/popups
+@dirrm htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/lang
+@dirrm htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations/img
+@dirrm htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/TableOperations
+@dirrm htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/SpellChecker/lang
+@dirrm htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/SpellChecker/img
+@dirrm htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins/SpellChecker
+@dirrm htdocs/openwebmail/javascript/HTMLArea-3.0-beta/plugins
+@dirrm htdocs/openwebmail/javascript/HTMLArea-3.0-beta/lang
+@dirrm htdocs/openwebmail/javascript/HTMLArea-3.0-beta/images
+@dirrm htdocs/openwebmail/javascript/HTMLArea-3.0-beta
 @dirrm htdocs/openwebmail/javascript
 @dirrm htdocs/openwebmail/images/smilies
 @dirrm htdocs/openwebmail/images/iconsets/XP.Red
 @dirrm htdocs/openwebmail/images/iconsets/XP.Purple
 @dirrm htdocs/openwebmail/images/iconsets/XP.Green
 @dirrm htdocs/openwebmail/images/iconsets/XP.Blue
+@dirrm htdocs/openwebmail/images/iconsets/Text.Korean
 @dirrm htdocs/openwebmail/images/iconsets/Text.English
 @dirrm htdocs/openwebmail/images/iconsets/Text.Chinese.Traditional
 @dirrm htdocs/openwebmail/images/iconsets/Text.Chinese.Simplified
@@ -6225,6 +6714,7 @@ htdocs/openwebmail/sounds/silymail.wav
 @dirrm htdocs/openwebmail/images/iconsets/Cool3D.Korean
 @dirrm htdocs/openwebmail/images/iconsets/Cool3D.Italian
 @dirrm htdocs/openwebmail/images/iconsets/Cool3D.Hellenic
+@dirrm htdocs/openwebmail/images/iconsets/Cool3D.Hebrew
 @dirrm htdocs/openwebmail/images/iconsets/Cool3D.Francais
 @dirrm htdocs/openwebmail/images/iconsets/Cool3D.English
 @dirrm htdocs/openwebmail/images/iconsets/Cool3D.Dutch
@@ -6242,6 +6732,7 @@ htdocs/openwebmail/sounds/silymail.wav
 @dirrm htdocs/openwebmail/images
 @dirrm htdocs/openwebmail/help/zh_TW.Big5/tutorial/toolbars
 @dirrm htdocs/openwebmail/help/zh_TW.Big5/tutorial/notes
+@dirrm htdocs/openwebmail/help/zh_TW.Big5/tutorial/messages/search.files
 @dirrm htdocs/openwebmail/help/zh_TW.Big5/tutorial/messages
 @dirrm htdocs/openwebmail/help/zh_TW.Big5/tutorial/configuration
 @dirrm htdocs/openwebmail/help/zh_TW.Big5/tutorial/calendar
@@ -6257,6 +6748,7 @@ htdocs/openwebmail/sounds/silymail.wav
 @dirrm htdocs/openwebmail/help/zh_TW.Big5
 @dirrm htdocs/openwebmail/help/zh_CN.GB2312/tutorial/toolbars
 @dirrm htdocs/openwebmail/help/zh_CN.GB2312/tutorial/notes
+@dirrm htdocs/openwebmail/help/zh_CN.GB2312/tutorial/messages/search.files
 @dirrm htdocs/openwebmail/help/zh_CN.GB2312/tutorial/messages
 @dirrm htdocs/openwebmail/help/zh_CN.GB2312/tutorial/configuration
 @dirrm htdocs/openwebmail/help/zh_CN.GB2312/tutorial/calendar
@@ -6285,6 +6777,21 @@ htdocs/openwebmail/sounds/silymail.wav
 @dirrm htdocs/openwebmail/help/pt_BR/images
 @dirrm htdocs/openwebmail/help/pt_BR/def
 @dirrm htdocs/openwebmail/help/pt_BR
+@dirrm htdocs/openwebmail/help/nl/tutorial/toolbars
+@dirrm htdocs/openwebmail/help/nl/tutorial/notes
+@dirrm htdocs/openwebmail/help/nl/tutorial/messages
+@dirrm htdocs/openwebmail/help/nl/tutorial/configuration
+@dirrm htdocs/openwebmail/help/nl/tutorial/calendar
+@dirrm htdocs/openwebmail/help/nl/tutorial/basics
+@dirrm htdocs/openwebmail/help/nl/tutorial/address_book
+@dirrm htdocs/openwebmail/help/nl/tutorial
+@dirrm htdocs/openwebmail/help/nl/templates_and_data
+@dirrm htdocs/openwebmail/help/nl/images/toolbars
+@dirrm htdocs/openwebmail/help/nl/images/screens
+@dirrm htdocs/openwebmail/help/nl/images/buttons
+@dirrm htdocs/openwebmail/help/nl/images
+@dirrm htdocs/openwebmail/help/nl/def
+@dirrm htdocs/openwebmail/help/nl
 @dirrm htdocs/openwebmail/help/fr/tutorial/toolbars
 @dirrm htdocs/openwebmail/help/fr/tutorial/notes
 @dirrm htdocs/openwebmail/help/fr/tutorial/messages
@@ -6363,6 +6870,7 @@ htdocs/openwebmail/sounds/silymail.wav
 @dirrm conf/openwebmail/templates/id
 @dirrm conf/openwebmail/templates/hu
 @dirrm conf/openwebmail/templates/he.ISO8859-8
+@dirrm conf/openwebmail/templates/he.CP1255
 @dirrm conf/openwebmail/templates/fr
 @dirrm conf/openwebmail/templates/fi
 @dirrm conf/openwebmail/templates/es

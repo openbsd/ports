@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.9 2003/07/16 10:32:18 kevlo Exp $
+# $OpenBSD: INSTALL,v 1.10 2003/11/03 06:15:20 kevlo Exp $
 #
 # Pre/post-installation setup of openwebmail
 
@@ -16,6 +16,21 @@ SCRIPTFILES="openwebmail-abook.pl openwebmail-advsearch.pl openwebmail-cal.pl \
 	    openwebmail-read.pl openwebmail-send.pl openwebmail-spell.pl \
 	    openwebmail-tool.pl openwebmail-vdomain.pl openwebmail-viewatt.pl \
 	    openwebmail-webdisk.pl openwebmail.pl"
+OPENWEBMAILGROUP=_mail
+ID=524
+
+# Function: set up _mail group
+#
+do_accts()
+{
+    groupinfo -e $OPENWEBMAILGROUP
+    if [ $? -eq 0 ]; then
+	echo "===>  Using $OPENWEBMAILGROUP group for openwebmail"
+    else
+	echo "===>  Creating $OPENWEBMAILGROUP group for openwebmail"
+    groupadd -g $ID $OPENWEBMAILGROUP
+    fi
+}
 
 # Function: tell the user what they need to do to use the port just installed
 #
@@ -37,12 +52,17 @@ do_notice()
 #
 do_install()
 {
+    chgrp -R $OPENWEBMAILGROUP $CGI_DIR
     for file in $SCRIPTFILES
     do
-	chmod 4555 $CGI_DIR/$file
+	chgrp wheel $CGI_DIR/$file
+	chmod 4755 $CGI_DIR/$file
     done
-    chmod 770 $CONFIG_DIR/sessions
-    chmod 770 $CONFIG_DIR/users
+    chgrp wheel $CGI_DIR/ow-shared.pl
+    chmod 771 $CONFIG_DIR/{sessions,users}
+    chgrp -R $OPENWEBMAILGROUP $CONFIG_DIR
+    chgrp -R wheel $CONFIG_DIR/{users.conf,templates,styles,lang}
+    chown root.wheel $SAMPLE_CONFIG_FILE
     install -o root -g wheel -m 644 $SAMPLE_CONFIG_FILE $CONFIG_FILE
     echo "/var/www/cgi-bin/openwebmail/" | cat > $CONFIG_DIR/openwebmail_path.conf
     perl $CGI_DIR/openwebmail-tool.pl --init --no
@@ -61,7 +81,7 @@ do_warning()
     echo "+---------------"
     echo "| WARNING!"
     echo "|"
-    echo "| This port has changed its user from 'mail' to 'wheel'. If you"
+    echo "| This port has changed its user from 'mail' to '_mail'. If you"
     echo "| installed this port before, ensure all permissions are set"
     echo "| correctly and then \"groupdel mail\"."
     echo "+---------------"
@@ -78,7 +98,7 @@ fi
 #
 case $2 in
     PRE-INSTALL)
-	: nothing to pre-install for this port
+	do_accts
 	;;
     POST-INSTALL)
 	if [ -f ${CONFIG_FILE} ]; then

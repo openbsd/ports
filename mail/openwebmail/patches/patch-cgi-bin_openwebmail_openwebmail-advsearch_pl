@@ -1,18 +1,22 @@
-$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-advsearch_pl,v 1.2 2003/04/14 08:26:20 kevlo Exp $
---- cgi-bin/openwebmail/openwebmail-advsearch.pl.orig	Sat Nov 16 05:16:39 2002
-+++ cgi-bin/openwebmail/openwebmail-advsearch.pl	Thu Jan 30 14:45:07 2003
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-advsearch_pl,v 1.3 2003/11/03 06:15:15 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail-advsearch.pl.orig	Sat Nov  1 11:12:55 2003
++++ cgi-bin/openwebmail/openwebmail-advsearch.pl	Sat Nov  1 11:13:58 2003
 @@ -1,4 +1,4 @@
 -#!/usr/bin/suidperl -T
 +#!/usr/bin/perl -T
  #
  # openwebmail-adsearch.pl - advanced search program
  #
-@@ -7,7 +7,7 @@
+@@ -7,10 +7,10 @@
  
  use vars qw($SCRIPT_DIR);
- if ( $0 =~ m!^(.*?)/[\w\d\-\.]+\.pl! ) { $SCRIPT_DIR=$1; }
+ if ( $0 =~ m!^(\S*)/[\w\d\-\.]+\.pl! ) { $SCRIPT_DIR=$1; }
 -if (!$SCRIPT_DIR && open(F, '/etc/openwebmail_path.conf')) {
 +if (!$SCRIPT_DIR && open(F, '%%SYSCONFDIR%%/openwebmail/openwebmail_path.conf')) {
-    $_=<F>; close(F); if ( $_=~/^([^\s]*)/) { $SCRIPT_DIR=$1; }
+    $_=<F>; close(F); if ( $_=~/^(\S*)/) { $SCRIPT_DIR=$1; }
  }
- if (!$SCRIPT_DIR) { print "Content-type: text/html\n\nSCRIPT_DIR not set in /etc/openwebmail_path.conf !\n"; exit 0; }
+-if (!$SCRIPT_DIR) { print "Content-type: text/html\n\nSCRIPT_DIR not set in /etc/openwebmail_path.conf !\n"; exit 0; }
++if (!$SCRIPT_DIR) { print "Content-type: text/html\n\nSCRIPT_DIR not set in %%SYSCONFDIR%%/openwebmail/openwebmail_path.conf !\n"; exit 0; }
+ push (@INC, $SCRIPT_DIR);
+ 
+ $ENV{PATH} = ""; # no PATH should be needed
