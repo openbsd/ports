@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/07/09 12:35:54 matt Exp $
+# $OpenBSD: Makefile,v 1.12 2003/08/20 00:04:06 brad Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -24,8 +24,8 @@ MASTER_SITES=	ftp://ftp.tux.org/pub/java/$V/ \
 		ftp://ftp.uk.linux.org/pub/linux/java/$V/
 DISTFILES=	jdk1.2pre-v2.tar.bz2
 
-BUILD_DEPENDS=	:redhat_base->=6.2:emulators/redhat/base
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	:redhat_base->=6.2:emulators/redhat/base
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
