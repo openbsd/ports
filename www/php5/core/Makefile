@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/11 13:29:22 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/20 20:59:44 robert Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
 
 COMMENT=	"server-side HTML-embedded scripting language"
 COMMENT-pear=	"base classes for common PHP tasks"
-PKGNAME=	php5-core-${V}p1
+PKGNAME=	php5-core-${V}
 FULLPKGNAME-pear= php5-pear-${V}
 
 CONFIGURE_ARGS+= --with-apxs=/usr/sbin/apxs \
@@ -42,7 +42,7 @@ PHP_VERSION=	${V}
 PHPXS_SUBST+= -e 's,${i},${${i}},'
 .endfor
 
-WANTLIB=	c crypto des m ssl z
+WANTLIB=	c crypto des m ssl stdc++ z
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
 PREFIX=		${CHROOT_DIR}

@@ -1,6 +1,6 @@
-$OpenBSD: patch-php_ini-dist,v 1.1.1.1 2004/10/02 11:32:38 robert Exp $
---- php.ini-dist.orig	Tue Aug 10 02:44:23 2004
-+++ php.ini-dist	Wed Aug 25 16:38:35 2004
+$OpenBSD: patch-php_ini-dist,v 1.2 2004/12/20 20:59:44 robert Exp $
+--- php.ini-dist.orig	Sun Nov 28 14:22:11 2004
++++ php.ini-dist	Sat Dec 18 19:30:46 2004
 @@ -430,10 +430,7 @@
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
@@ -31,11 +31,10 @@ $OpenBSD: patch-php_ini-dist,v 1.1.1.1 2004/10/02 11:32:38 robert Exp $
  
  ; Define the anonymous ftp password (your email address)
  ;from="john@doe.com"
-@@ -523,76 +520,6 @@
- ; fgets() and file() will work regardless of the source of the file.
+@@ -524,74 +521,6 @@
  ; auto_detect_line_endings = Off
  
--
+ 
 -;;;;;;;;;;;;;;;;;;;;;;
 -; Dynamic Extensions ;
 -;;;;;;;;;;;;;;;;;;;;;;
@@ -73,7 +72,6 @@ $OpenBSD: patch-php_ini-dist,v 1.1.1.1 2004/10/02 11:32:38 robert Exp $
 -;extension=php_filepro.dll
 -;extension=php_gd2.dll
 -;extension=php_gettext.dll
--;extension=php_iconv.dll
 -;extension=php_ifx.dll
 -;extension=php_iisfunc.dll
 -;extension=php_imap.dll
@@ -108,7 +106,7 @@ $OpenBSD: patch-php_ini-dist,v 1.1.1.1 2004/10/02 11:32:38 robert Exp $
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
-@@ -604,13 +531,6 @@
+@@ -603,14 +532,6 @@
  define_syslog_variables  = Off
  
  [mail function]
@@ -119,13 +117,17 @@ $OpenBSD: patch-php_ini-dist,v 1.1.1.1 2004/10/02 11:32:38 robert Exp $
 -; For Win32 only.
 -;sendmail_from = me@example.com
 -
- ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
+-; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
  
-@@ -1195,3 +1115,54 @@
- ; Local Variables:
- ; tab-width: 4
- ; End:
+ ; Force the addition of the specified parameters to be passed as extra parameters
+@@ -1191,6 +1112,54 @@
+ ; instead of original one.
+ soap.wsdl_cache_ttl=86400
+ 
+-; Local Variables:
+-; tab-width: 4
+-; End:
 +
 +;;;;;;;;;;;;;;;;;;;;;;
 +; Dynamic Extensions ;

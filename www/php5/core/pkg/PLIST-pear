@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pear,v 1.1.1.1 2004/10/02 12:36:50 robert Exp $
+@comment $OpenBSD: PLIST-pear,v 1.2 2004/12/20 20:59:44 robert Exp $
 pear/
 pear/build/
 pear/build/Makefile.global
@@ -75,11 +75,21 @@ pear/include/Zend/zend_reflection_api.h
 pear/include/Zend/zend_stack.h
 pear/include/Zend/zend_static_allocator.h
 pear/include/Zend/zend_stream.h
+pear/include/Zend/zend_strtod.h
 pear/include/Zend/zend_ts_hash.h
 pear/include/Zend/zend_types.h
 pear/include/Zend/zend_variables.h
 pear/include/acconfig.h
 pear/include/ext/
+pear/include/ext/iconv/
+pear/include/ext/iconv/php_have_bsd_iconv.h
+pear/include/ext/iconv/php_have_glibc_iconv.h
+pear/include/ext/iconv/php_have_iconv.h
+pear/include/ext/iconv/php_have_libiconv.h
+pear/include/ext/iconv/php_iconv.h
+pear/include/ext/iconv/php_iconv_supports_errno.h
+pear/include/ext/iconv/php_php_iconv_h_path.h
+pear/include/ext/iconv/php_php_iconv_impl.h
 pear/include/ext/libxml/
 pear/include/ext/libxml/php_libxml.h
 pear/include/ext/mbstring/
@@ -163,6 +173,7 @@ pear/include/ext/xml/
 pear/include/ext/xml/expat/
 pear/include/ext/xml/expat_compat.h
 pear/include/ext/xml/php_xml.h
+pear/include/include/
 pear/include/main/
 pear/include/main/SAPI.h
 pear/include/main/build-defs.h
@@ -245,6 +256,7 @@ pear/lib/PEAR/Config.php
 pear/lib/PEAR/Dependency.php
 pear/lib/PEAR/Downloader.php
 pear/lib/PEAR/ErrorStack.php
+pear/lib/PEAR/Exception.php
 pear/lib/PEAR/Frontend/
 pear/lib/PEAR/Frontend/CLI.php
 pear/lib/PEAR/Installer.php

@@ -1,7 +1,7 @@
-$OpenBSD: patch-php_ini-recommended,v 1.1.1.1 2004/10/02 11:32:38 robert Exp $
---- php.ini-recommended.orig	Wed Jun 23 10:18:42 2004
-+++ php.ini-recommended	Tue Jul 27 01:24:10 2004
-@@ -437,10 +437,7 @@
+$OpenBSD: patch-php_ini-recommended,v 1.2 2004/12/20 20:59:44 robert Exp $
+--- php.ini-recommended.orig	Sun Nov 28 14:22:11 2004
++++ php.ini-recommended	Sat Dec 18 19:30:37 2004
+@@ -488,10 +488,7 @@
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ; UNIX: "/path1:/path2"
@@ -13,7 +13,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.1.1.1 2004/10/02 11:32:38 robert Exp $
  
  ; The root of the PHP pages, used only if nonempty.
  ; if PHP was not compiled with FORCE_REDIRECT, you SHOULD set doc_root
-@@ -454,7 +451,7 @@
+@@ -505,7 +502,7 @@
  user_dir =
  
  ; Directory in which the loadable extensions (modules) reside.
@@ -22,7 +22,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.1.1.1 2004/10/02 11:32:38 robert Exp $
  
  ; Whether or not to enable the dl() function.  The dl() function does NOT work
  ; properly in multithreaded servers, such as IIS or Zeus, and is automatically
-@@ -512,7 +509,7 @@
+@@ -563,7 +560,7 @@
  ;;;;;;;;;;;;;;;;;;
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
@@ -31,11 +31,10 @@ $OpenBSD: patch-php_ini-recommended,v 1.1.1.1 2004/10/02 11:32:38 robert Exp $
  
  ; Define the anonymous ftp password (your email address)
  ;from="john@doe.com"
-@@ -530,76 +527,6 @@
- ; fgets() and file() will work regardless of the source of the file.
+@@ -582,74 +579,6 @@
  ; auto_detect_line_endings = Off
  
--
+ 
 -;;;;;;;;;;;;;;;;;;;;;;
 -; Dynamic Extensions ;
 -;;;;;;;;;;;;;;;;;;;;;;
@@ -73,7 +72,6 @@ $OpenBSD: patch-php_ini-recommended,v 1.1.1.1 2004/10/02 11:32:38 robert Exp $
 -;extension=php_filepro.dll
 -;extension=php_gd2.dll
 -;extension=php_gettext.dll
--;extension=php_iconv.dll
 -;extension=php_ifx.dll
 -;extension=php_iisfunc.dll
 -;extension=php_imap.dll
@@ -108,7 +106,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.1.1.1 2004/10/02 11:32:38 robert Exp $
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
-@@ -611,13 +538,6 @@
+@@ -661,13 +590,6 @@
  define_syslog_variables  = Off
  
  [mail function]
@@ -122,13 +120,14 @@ $OpenBSD: patch-php_ini-recommended,v 1.1.1.1 2004/10/02 11:32:38 robert Exp $
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
  
-@@ -1191,6 +1111,53 @@
+@@ -1249,6 +1171,54 @@
  ; instead of original one.
  soap.wsdl_cache_ttl=86400
  
 -; Local Variables:
 -; tab-width: 4
 -; End:
++
 +;;;;;;;;;;;;;;;;;;;;;;
 +; Dynamic Extensions ;
 +;;;;;;;;;;;;;;;;;;;;;;
@@ -138,7 +137,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.1.1.1 2004/10/02 11:32:38 robert Exp $
 +;
 +;   extension=modulename.so
 +;
-+; Note that it should be the name of the module only; no directory information 
++; Note that it should be the name of the module only; no directory information
 +; needs to go here.  Specify the location of the extension with the
 +; extension_dir directive above.
 +
