@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2003/02/12 15:40:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/09/17 00:23:34 naddy Exp $
 
 COMMENT=	"faster and improved version of dd"
 
-DISTNAME=	sdd-1.31
+DISTNAME=	sdd-1.52
 CATEGORIES=	sysutils
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
