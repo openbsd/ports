@@ -1,0 +1,12 @@
+$OpenBSD: patch-GNUmakefile_in,v 1.1 2003/01/24 22:31:12 couderc Exp $
+--- GNUmakefile.in.orig	Thu Sep 12 02:26:24 2002
++++ GNUmakefile.in	Fri Nov 15 18:31:27 2002
+@@ -38,6 +38,8 @@ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+ top_builddir = .
+ 
++DESTDIR =
++
+ ACLOCAL = @ACLOCAL@
+ AUTOCONF = @AUTOCONF@
+ AUTOMAKE = @AUTOMAKE@
