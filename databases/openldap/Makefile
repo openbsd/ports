@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2002/01/16 07:17:38 jakob Exp $
+# $OpenBSD: Makefile,v 1.24 2002/01/16 09:03:33 jakob Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
@@ -43,6 +43,9 @@ CONFIGURE_ARGS+=	--without-kerberos \
 			--enable-ldap \
 			--enable-shell \
 			--enable-slurpd
+
+# disable IPv6 until implemented correctly
+CONFIGURE_ARGS+=	--disable-ipv6
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/build
 
