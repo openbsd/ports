@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 1999/04/22 01:07:46 jasoni Exp $
+# $OpenBSD: Makefile,v 1.15 1999/06/08 02:52:52 jasoni Exp $
 
-DISTNAME=	WindowMaker-0.53.0
+DISTNAME=	WindowMaker-0.60.0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/beta/srcs/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/beta/srcs/
