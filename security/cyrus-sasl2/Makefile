@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/07/19 05:28:46 kevlo Exp $
+# $OpenBSD: Makefile,v 1.15 2004/08/02 12:57:41 espie Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
@@ -66,8 +66,10 @@ post-install:
 
 .include <bsd.port.mk>
 
-.if ${FLAVOR:L:Msql} && !defined(NO_SHARED_LIBS)
-SED_PLIST+=-e '/%%SHARED-sql%%/r${PKGDIR}/PFRAG.sql.shared' -e '//d'
-.elif ${FLAVOR:L:Msql}
+.if ${FLAVOR:L:Msql}
+.  if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
 SED_PLIST+=-e '/%%SHARED-sql%%/d'
+.  else
+SED_PLIST+=-e '/%%SHARED-sql%%/r${PKGDIR}/PFRAG.sql.shared' -e '//d'
+.  endif
 .endif
