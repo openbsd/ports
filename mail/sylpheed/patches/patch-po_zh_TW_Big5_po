@@ -1,0 +1,62 @@
+$OpenBSD: patch-po_zh_TW_Big5_po,v 1.1 2001/05/14 20:00:11 naddy Exp $
+--- po/zh_TW.Big5.po.orig	Tue May  8 07:25:26 2001
++++ po/zh_TW.Big5.po	Mon May 14 19:34:01 2001
+@@ -903,7 +903,7 @@ msgstr "刪除 IMAP4 伺服器 (_I)"
+ 
+ #: src/folderview.c:219
+ msgid "/_Subscribe to newsgroup..."
+-msgstr "/訂閱\新聞群組(_S)..."
++msgstr "/訂閱新聞群組(_S)..."
+ 
+ #: src/folderview.c:221
+ msgid "/_Remove newsgroup"
+@@ -1042,11 +1042,11 @@ msgstr "刪除 IMAP4 伺服器"
+ 
+ #: src/folderview.c:1484
+ msgid "Subscribe newsgroup"
+-msgstr "訂閱\新聞群組"
++msgstr "訂閱新聞群組"
+ 
+ #: src/folderview.c:1485
+ msgid "Input subscribing newsgroup:"
+-msgstr "請輸入要訂閱\的新聞群組名稱："
++msgstr "請輸入要訂閱的新聞群組名稱："
+ 
+ #: src/folderview.c:1494
+ #, c-format
+@@ -1917,7 +1917,7 @@ msgid ""
+ "there."
+ msgstr ""
+ "無法產生信箱目錄。\n"
+-"也許\同樣名稱的檔案已經存在，或者是你沒有權限可以開新目錄。"
++"也許同樣名稱的檔案已經存在，或者是你沒有權限可以開新目錄。"
+ 
+ #: src/mainwindow.c:1134
+ msgid "Setting widgets..."
+@@ -2195,7 +2195,7 @@ msgstr "覆寫"
+ 
+ #: src/mimeview.c:704 src/summaryview.c:2015
+ msgid "Overwrite existing file?"
+-msgstr "您要覆蓋\掉已存在的檔案嗎？"
++msgstr "您要覆蓋掉已存在的檔案嗎？"
+ 
+ #: src/mimeview.c:773
+ #, c-format
+@@ -2485,7 +2485,7 @@ msgstr ""
+ 
+ #: src/prefs_account.c:780
+ msgid "Filter messages on receiving"
+-msgstr "打開信件過濾功\能"
++msgstr "打開信件過濾功能"
+ 
+ #: src/prefs_account.c:817 src/prefs_filter.c:244
+ msgid "Header"
+@@ -2884,7 +2884,7 @@ msgstr "設定信件列表選項..."
+ 
+ #: src/prefs_common.c:1263
+ msgid "Enable coloration of message"
+-msgstr "信件中的字允許\變色"
++msgstr "信件中的字允許變色"
+ 
+ #: src/prefs_common.c:1282
+ msgid "Display 2-byte alphabet and numeric with 1-byte character"
