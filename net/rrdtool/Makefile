@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/11/20 01:12:41 danh Exp $
+# $OpenBSD: Makefile,v 1.10 2000/12/07 17:25:09 brad Exp $
 
 VERSION=	1.0.28
 DISTNAME=	rrdtool-${VERSION}
@@ -27,19 +27,19 @@ LIB_DEPENDS+=	gd.18::graphics/gd
 LIB_DEPENDS+=	tcl83::lang/tcl/8.3
 .endif
 
-USE_LIBTOOL=	Yes
 .if ${FLAVOR:L:Mtcl}
 USE_GMAKE=	Yes
 .endif
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
-CONFIGURE_ENV=	LDFLAGS='-L${LOCALBASE}/lib' \
-		CPPFLAGS='-I${LOCALBASE}/include'
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= --enable-static
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include"
 
 .if ${FLAVOR:L:Mtcl}
-CONFIGURE_ARGS+= --with-tcllib='${LOCALBASE}/lib/tcl8.3'
-CONFIGURE_ENV+=	CFLAGS='-I${LOCALBASE}/include/tcl8.3'
+CONFIGURE_ARGS+= --with-tcllib="${LOCALBASE}/lib/tcl8.3"
+CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include/tcl8.3"
 .else
 CONFIGURE_ARGS+= --without-tcllib
 .endif
