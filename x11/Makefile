@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2000/06/23 00:03:21 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2000/07/01 18:01:41 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -117,7 +117,7 @@
      SUBDIR += xgrab
      SUBDIR += xglobe
      SUBDIR += xglobe,no_map,gfx
-#    SUBDIR += xkeycaps
+     SUBDIR += xkeycaps
      SUBDIR += xloadimage
      SUBDIR += xlockmore
      SUBDIR += xlogout
