@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1998/01/25 22:02:23 angelos Exp $
+# $OpenBSD: Makefile,v 1.8 1998/01/25 22:29:10 angelos Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -77,7 +77,7 @@
      SUBDIR += xantfarm
 #    SUBDIR += xautolock
 #    SUBDIR += xbuffy
-#    SUBDIR += xcb
+     SUBDIR += xcb
 #    SUBDIR += xco
 #    SUBDIR += xcoloredit
 #    SUBDIR += xcolors
