@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/08/10 08:48:23 kevlo Exp $
 Amaya/amaya/AmayaPage.html
 Amaya/amaya/GraphML.STR
 Amaya/amaya/GraphML.en
@@ -11,6 +12,8 @@ Amaya/amaya/HTML.fr
 Amaya/amaya/HTML.trans
 Amaya/amaya/HTMLP.PRS
 Amaya/amaya/HTMLPBW.PRS
+Amaya/amaya/HTMLPL.PRS
+Amaya/amaya/HTMLPLL.PRS
 Amaya/amaya/HTMLPLP.PRS
 Amaya/amaya/HTMLPLPUS.PRS
 Amaya/amaya/HTMLPP.PRS
@@ -18,6 +21,8 @@ Amaya/amaya/HTMLPPUS.PRS
 Amaya/amaya/HTMLT.TRA
 Amaya/amaya/HTMLTT.TRA
 Amaya/amaya/HTMLTX.TRA
+Amaya/amaya/HTMLUSL.PRS
+Amaya/amaya/HTMLUSLL.PRS
 Amaya/amaya/MathML.STR
 Amaya/amaya/MathML.en
 Amaya/amaya/MathML.fr
@@ -26,10 +31,16 @@ Amaya/amaya/MathMLP.PRS
 Amaya/amaya/MathMLT.TRA
 Amaya/amaya/MathMLTX.TRA
 Amaya/amaya/TextFile.STR
+Amaya/amaya/TextFile.conf
 Amaya/amaya/TextFileP.PRS
+Amaya/amaya/TextFilePL.PRS
 Amaya/amaya/TextFilePP.PRS
 Amaya/amaya/TextFilePPUS.PRS
 Amaya/amaya/TextFileT.TRA
+Amaya/amaya/TextFileUSL.PRS
+Amaya/amaya/XLink.STR
+Amaya/amaya/XLinkP.PRS
+Amaya/amaya/XLinkT.TRA
 Amaya/applis/bin/amaya
 Amaya/applis/bin/print
 Amaya/config/XKeysymDB
@@ -46,6 +57,10 @@ Amaya/config/fr-amayadialogue
 Amaya/config/fr-amayamsg
 Amaya/config/fr-corrdialogue
 Amaya/config/fr-libdialogue
+Amaya/config/it-amayadialogue
+Amaya/config/it-amayamsg
+Amaya/config/it-corrdialogue
+Amaya/config/it-libdialogue
 Amaya/config/tr-amayadialogue
 Amaya/config/tr-amayamsg
 Amaya/config/tr-corrdialogue
@@ -83,6 +98,7 @@ Amaya/doc/Icons/Link.gif
 Amaya/doc/Icons/NumList.gif
 Amaya/doc/Icons/OList.gif
 Amaya/doc/Icons/Plugin.gif
+Amaya/doc/Icons/Print.gif
 Amaya/doc/Icons/ProfilesMenu.gif
 Amaya/doc/Icons/ProxyMenu.gif
 Amaya/doc/Icons/PublishMenu.gif
@@ -139,8 +155,6 @@ Amaya/doc/amaya/Math.html
 Amaya/doc/amaya/Numbering.html
 Amaya/doc/amaya/Printing.html
 Amaya/doc/amaya/Publishing.html
-Amaya/doc/amaya/Put.html
-Amaya/doc/amaya/Registry.html
 Amaya/doc/amaya/Searching.html
 Amaya/doc/amaya/Selecting.html
 Amaya/doc/amaya/SpellChecking.html
@@ -155,14 +169,14 @@ Amaya/fonts/icones.pcf
 Amaya/fonts/icones1.fb
 Amaya/fonts/icones11.fb
 bin/amaya
-@dirrm Amaya/amaya
-@dirrm Amaya/applis/bin
-@dirrm Amaya/applis
-@dirrm Amaya/config
-@dirrm Amaya/dicopar
-@dirrm Amaya/doc/Icons
+@dirrm Amaya/fonts
 @dirrm Amaya/doc/amaya/HTML-elements
 @dirrm Amaya/doc/amaya
+@dirrm Amaya/doc/Icons
 @dirrm Amaya/doc
-@dirrm Amaya/fonts
+@dirrm Amaya/dicopar
+@dirrm Amaya/config
+@dirrm Amaya/applis/bin
+@dirrm Amaya/applis
+@dirrm Amaya/amaya
 @dirrm Amaya
