@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2001/04/06 19:07:24 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2001/04/18 19:26:50 brad Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	"image manipulation library for X11"
@@ -42,6 +42,6 @@ pre-build:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal
 	${INSTALL_DATA} ${WRKSRC}/imlib.m4 ${PREFIX}/share/aclocal
-	cd ${PREFIX}/share/examples/imlib && mv imrc imrc-sample
+	@cd ${PREFIX}/share/examples/imlib && mv imrc imrc-sample
 
 .include <bsd.port.mk>
