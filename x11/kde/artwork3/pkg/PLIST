@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/04 12:13:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/04/04 17:43:08 espie Exp $
 bin/kbanner.kss
 bin/kblob.kss
 bin/kbouboule.kss
@@ -2786,8 +2786,6 @@ share/wallpapers/sunday_brunch.jpg
 share/wallpapers/vegetative_fog.jpg
 share/wallpapers/winter_theme_1.jpg
 %%SHARED%%
-@dirrm share/wallpapers
-@dirrm share/sounds
 @dirrm share/icons/slick/64x64/mimetypes
 @dirrm share/icons/slick/64x64/filesystems
 @dirrm share/icons/slick/64x64/apps
@@ -2859,20 +2857,9 @@ share/wallpapers/winter_theme_1.jpg
 @dirrm share/icons/Locolor
 @dirrm share/apps/kworldclock/maps/rainfall
 @dirrm share/apps/kworldclock/maps/mggd
-@dirrm share/apps/kworldclock/maps/depths
 @dirrm share/apps/kworldclock/maps/caida_bw
 @dirrm share/apps/kworldclock/maps/caida
 @dirrm share/apps/kworldclock/maps/bio
 @dirrm share/apps/kworldclock/maps/alt
-@dirrm share/apps/kworldclock/maps
-@dirrm share/apps/kworldclock
 @dirrm share/apps/kwin/icewm-themes/Model
 @dirrm share/apps/kwin/icewm-themes/MenschMaschine
-@dirrm share/apps/kwin/icewm-themes
-@dirrm share/apps/kwin
-@dirrm share/apps/kthememgr/Themes
-@dirrm share/apps/kthememgr
-@dirrm share/apps/kscreensaver
-@dirrm share/applnk/System/ScreenSavers
-@dirrm share/applnk/System
-@dirrm share/applnk
