@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.180 2000/02/03 22:03:00 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.181 2000/02/04 00:51:53 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1229,7 +1229,8 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 .endif
 	@${_MAKE_COOKIE} ${_BUILD_COOKIE}
 
-${_INSTALL_COOKIE}: ${_BUILD_COOKIE} run-depends lib-depends 
+${_INSTALL_COOKIE}: ${_BUILD_COOKIE} 
+	@cd ${.CURDIR} && make run-depends lib-depends 
 .if !defined(NO_INSTALL)
 	@cd ${.CURDIR} && make real-install
 .endif
