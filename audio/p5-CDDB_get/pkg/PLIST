@@ -1,8 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/11/23 14:13:20 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/01/18 04:09:24 naddy Exp $
 bin/cddb
 ${P5SITE}/CDDB_get.pm
 ${P5SITE}/auto/CDDB_get/autosplit.ix
+@comment ${P5SITE}/cddb.pl
 @comment ${P5ARCH}/auto/CDDB_get/.packlist
 man/man3p/CDDB_get.3p
+@dirrm man/man3p
 @comment @dirrm ${P5ARCH}/auto/CDDB_get
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}
 @dirrm ${P5SITE}/auto/CDDB_get
+@dirrm ${P5SITE}/auto
