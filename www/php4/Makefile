@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2002/06/16 23:26:20 jcs Exp $
+# $OpenBSD: Makefile,v 1.69 2002/06/17 07:55:29 avsm Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 USE_LIBTOOL=	Yes
 
 FLAVORS+=	gdbm gettext imap ldap mhash mm recode snmp
-FLAVORS+=	gd no_x11 pdflib mcrypt curl
+FLAVORS+=	gd no_x11 pdflib mcrypt curl xslt
 FLAVORS+=	dbase filepro mysql mysql_bundled postgresql iodbc freetds
 
 FLAVOR?= 
@@ -63,6 +63,13 @@ CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
 LIB_DEPENDS+=		curl.2::net/curl
 .else
 CONFIGURE_ARGS+=	--without-curl
+.endif
+
+.if ${FLAVOR:L:Mxslt}
+CONFIGURE_ARGS+=	--enable-xslt --with-xslt-sablot=${LOCALBASE}
+LIB_DEPENDS+=		sablot.90::textproc/sablotron
+.else
+CONFIGURE_ARGS+=	--disable-xslt
 .endif
 
 .if ${FLAVOR:L:Mgdbm}
