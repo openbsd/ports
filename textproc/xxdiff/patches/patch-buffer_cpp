@@ -1,0 +1,11 @@
+--- buffer.cpp.orig	Tue Feb 26 17:58:56 2002
++++ buffer.cpp	Tue Feb 26 17:59:14 2002
+@@ -291,7 +291,7 @@ void XxBuffer::setDirectoryEntries( 
+          it != _directoryEntries.end();
+          ++it ) {
+       int len = (*it).length();
+-      ::strncpy( bufferPtr, (*it).latin1(), len );
++      ::strlcpy( bufferPtr, (*it).latin1(), len );
+       bufferPtr[len] = '\n';
+       bufferPtr += len + 1;
+    }

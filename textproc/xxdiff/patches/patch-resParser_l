@@ -1,0 +1,30 @@
+--- resParser.l.orig	Tue Feb 26 18:01:36 2002
++++ resParser.l	Tue Feb 26 18:02:09 2002
+@@ -65,11 +65,11 @@ iddot           [a-zA-Z][a-zA-Z0-9\.]*
+ {geomspec}	{ 
+    int len = ::strlen( yytext );
+    if ( len >= LEX_BUFFER_MAX ) {
+-      ::strncpy( lexerBuffer, yytext, LEX_BUFFER_MAX );
++      ::strlcpy( lexerBuffer, yytext, LEX_BUFFER_MAX );
+       lexerBuffer[ LEX_BUFFER_MAX-1 ] = 0;
+    }
+    else {
+-      ::strncpy( lexerBuffer, yytext, len );
++      ::strlcpy( lexerBuffer, yytext, len );
+    }
+    yylval->str = lexerBuffer;
+    BEGIN(INITIAL);
+@@ -206,11 +206,11 @@ iddot           [a-zA-Z][a-zA-Z0-9\.]*
+    /* strip the quotes */
+    int len = ::strlen( yytext );
+    if ( len >= LEX_BUFFER_MAX ) {
+-      ::strncpy( lexerBuffer, &(yytext[1]), LEX_BUFFER_MAX );
++      ::strlcpy( lexerBuffer, &(yytext[1]), LEX_BUFFER_MAX );
+       lexerBuffer[ LEX_BUFFER_MAX-1 ] = 0;
+    }
+    else {
+-      ::strncpy( lexerBuffer, &(yytext[1]), len-2 );
++      ::strlcpy( lexerBuffer, &(yytext[1]), len-2 );
+       lexerBuffer[ len-2 ] = 0;
+    }
+    yylval->str = lexerBuffer;

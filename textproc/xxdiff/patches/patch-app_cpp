@@ -1,0 +1,11 @@
+--- app.cpp.orig	Tue Feb 26 18:00:47 2002
++++ app.cpp	Tue Feb 26 18:01:14 2002
+@@ -2118,7 +2118,7 @@ void XxApp::editFile( const QString& fil
+       size_t size;
+       /* Bind a name to the socket.   */
+       name.sun_family = AF_FILE;
+-      ::strncpy( name.sun_path, "/tmp/xxdiff_socket", sizeof(name.sun_path) );
++      ::strlcpy( name.sun_path, "/tmp/xxdiff_socket", sizeof(name.sun_path) );
+ 
+       /* The size of the address is
+          the offset of the start of the filename,

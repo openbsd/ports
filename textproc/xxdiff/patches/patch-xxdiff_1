@@ -1,0 +1,11 @@
+--- xxdiff.1.orig	Tue Feb 26 18:08:26 2002
++++ xxdiff.1	Tue Feb 26 18:09:18 2002
+@@ -18,7 +18,7 @@
+ .\" Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ .\"
+ .na
+-.TH XXDIFF 2.1
++.TH XXDIFF 2.4
+ .SH NAME
+ xxdiff \- a graphical file comparator and merge tool
+ .SH SYNOPSIS
