@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/03/27 22:09:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2001/07/30 17:49:05 espie Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
@@ -7,7 +7,7 @@ CATEGORIES=	www
 NEED_VERSION=	1.364
 HOMEPAGE=	http://bluefish.openoffice.nl/
 
-MAINTAINER=	Couderc Damien <couderc.damien@wanadoo.fr>
+MAINTAINER=	Damien Couderc <couderc.damien@wanadoo.fr>
 
 MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/downloads/ \
 		ftp://bluefish.advancecreations.com/pub/bluefish/downloads/ \
