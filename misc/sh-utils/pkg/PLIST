@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/14 21:53:41 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/03/15 14:10:40 wilfried Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/sh-utils.info
 bin/gbasename
 bin/gchroot
@@ -56,7 +56,6 @@ man/man1/gprintf.1
 man/man1/gpwd.1
 man/man1/gsleep.1
 man/man1/gstty.1
-man/man1/gsu.1
 man/man1/gtee.1
 man/man1/gtest.1
 man/man1/gtrue.1
