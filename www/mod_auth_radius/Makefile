@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/12/15 04:07:29 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2002/01/16 04:23:05 brad Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -8,7 +8,7 @@ VERSION=	1.5.2
 DISTNAME=	mod_auth_radius
 PKGNAME=	${DISTNAME}-${VERSION}
 CATEGORIES=	www
-NEED_VERSION=	1.435
+NEED_VERSION=	1.500
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -24,8 +24,8 @@ MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
 
-post-extract:
-	@cp -f ${FILESDIR}/Makefile.OpenBSD ${WRKSRC}/Makefile
+do-build:
+	cd ${WRKSRC}; /usr/sbin/apxs -c mod_auth_radius.c
 
 post-build:
 	@sed 's,!!PREFIX!!,${PREFIX},' \
@@ -34,11 +34,11 @@ post-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mod_auth_radius
-	${INSTALL_DATA} ${WRKBUILD}/mod_auth_radius.so ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/mod_auth_radius.so ${PREFIX}/lib
 	${INSTALL_SCRIPT} ${WRKBUILD}/mod_auth_radius-enable ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKBUILD}/httpd.conf \
+	${INSTALL_DATA} ${WRKSRC}/httpd.conf \
 		${PREFIX}/share/examples/mod_auth_radius/httpd.conf-example
-	${INSTALL_DATA} ${WRKBUILD}/htaccess \
+	${INSTALL_DATA} ${WRKSRC}/htaccess \
 		${PREFIX}/share/examples/mod_auth_radius/htaccess-example
 
 .include <bsd.port.mk>
