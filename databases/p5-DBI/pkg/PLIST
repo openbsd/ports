@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2002/05/27 05:01:02 shell Exp $
+@comment $OpenBSD: PLIST,v 1.15 2002/06/05 04:58:01 shell Exp $
 bin/dbiproxy
 bin/dbish
 ${P5ARCH}/Bundle/DBI.pm
@@ -14,6 +14,7 @@ ${P5ARCH}/DBI/Const/GetInfo/ODBC.pm
 ${P5ARCH}/DBI/DBD.pm
 ${P5ARCH}/DBI/FAQ.pm
 ${P5ARCH}/DBI/Format.pm
+${P5ARCH}/DBI/Profile.pm
 ${P5ARCH}/DBI/ProxyServer.pm
 ${P5ARCH}/DBI/PurePerl.pm
 ${P5ARCH}/DBI/Shell.pm
@@ -37,6 +38,7 @@ man/man3p/DBI::Const::GetInfo::ODBC.3p
 man/man3p/DBI::DBD.3p
 man/man3p/DBI::FAQ.3p
 man/man3p/DBI::Format.3p
+man/man3p/DBI::Profile.3p
 man/man3p/DBI::ProxyServer.3p
 man/man3p/DBI::PurePerl.3p
 man/man3p/DBI::Shell.3p
