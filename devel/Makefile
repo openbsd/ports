@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2003/10/14 20:27:01 marcm Exp $
+# $OpenBSD: Makefile,v 1.189 2003/10/15 13:17:49 todd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -105,7 +105,6 @@
      SUBDIR += mysql++
      SUBDIR += nasm
      SUBDIR += opencm
-     SUBDIR += opencm,nogc
      SUBDIR += p5-Algorithm-Diff
      SUBDIR += p5-Algorithm-MDiff
      SUBDIR += p5-Algorithm-MarkovChain
