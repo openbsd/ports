@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2004/08/10 22:08:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.23 2004/08/11 06:11:57 espie Exp $
 bin/artsmessage
 bin/checkXML
 bin/dcop
@@ -1006,6 +1006,7 @@ share/apps/kde-conf-sample/
 share/apps/kde-conf-sample/xdg/
 share/apps/kde-conf-sample/xdg/menus/
 share/apps/kde-conf-sample/xdg/menus/applications.menu
+@sample ${SYSCONFDIR}/xdg/menus/applications.menu
 share/apps/kdeprint/
 share/apps/kdeprint/apsdriver1
 share/apps/kdeprint/apsdriver2
