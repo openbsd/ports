@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/02/24 02:25:55 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/17 03:51:51 brad Exp $
 # $FreeBSD: Makefile,v 1.54 1998/12/26 15:55:47 peter Exp $
 
 DISTNAME=	squid-2.1.PATCH2
 PKGNAME=	squid-2.1
 CATEGORIES=	www
-MASTER_SITES=  \
-	ftp://squid.nlanr.net/pub/squid-2/STABLE/ \
-	ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/squid-2/STABLE/ \
-	ftp://ftp.net.lut.ac.uk/squid/squid-2/STABLE/
+MASTER_SITES=	ftp://squid.nlanr.net/pub/squid-2/STABLE/ \
+		ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/squid-2/STABLE/ \
+		ftp://ftp.net.lut.ac.uk/squid/squid-2/STABLE/
+
 EXTRACT_SUFX=	-src.tar.gz
 
 PATCH_SITES=	http://squid.nlanr.net/Squid/v2/2.1/
@@ -17,8 +17,9 @@ MAINTAINER=	brad@openbsd.org
 
 DIST_SUBDIR=	squid2.1
 PATCH_DIST_STRIP= -p0
+SYSCONFDIR=	/etc/squid
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=/etc/squid \
+CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${SYSCONFDIR} \
 		--localstatedir=/var/squid
 STRIP=		# won't install scripts correctly othervise.
 MAKEFILE=	makefile
