@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/01/03 10:01:10 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/02/08 00:59:27 espie Exp $
 
 COMMENT=		"GStreamer Streaming-media framework plug-ins."
 
@@ -35,6 +35,8 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gst-plu
 # Disable plugins we won't or can't build...
 CONFIGURE_ARGS+=	--disable-alsa
 CONFIGURE_ARGS+=	--disable-mjpegtools
+CONFIGURE_ARGS+=	--disable-mpeg2enc
+CONFIGURE_ARGS+=	--disable-mplex
 CONFIGURE_ARGS+=	--disable-openquicktime
 CONFIGURE_ARGS+=	--disable-qcam
 # Speex in ports is too old
