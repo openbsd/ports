@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.213 2000/03/03 17:51:37 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.214 2000/03/03 20:41:11 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -549,7 +549,7 @@ FETCH_CMD?=		/usr/bin/ftp
 # By default, distfiles have no restrictions placed on them
 MIRROR_DISTFILE?=	Yes
 
-DISTORIG?=	bak.orig
+DISTORIG?=	.bak.orig
 PATCH?=			/usr/bin/patch
 PATCH_STRIP?=	-p0
 PATCH_DIST_STRIP?=	-p0
