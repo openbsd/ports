@@ -1,44 +1,50 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2002/01/07 12:13:52 reinhard Exp $
+# $OpenBSD: INSTALL,v 1.3 2003/12/15 21:21:18 sturm Exp $
 #
 # Pre/post-installation setup of jakarta-tomcat
 
-# exit on errors, use a sane path and install prefix
+# use a sane path and install prefix
 #
-set -e
+
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${CONFDIR}
-SAMPLE_CONFIG_DIR=$PREFIX/${DISTNAME}/conf
-CONF_FILES="catalina.policy server-noexamples.xml.config server.xml tomcat-users.xml web.xml"
-SAMPLE_WEBAPPS_DIR=$PREFIX/${DISTNAME}/webapps
+SAMPLE_CONFIG_DIR=${PREFIX}/${DISTNAME}/conf
+CONF_FILES="catalina.policy jk2.properties server-noexamples.xml.config server.xml tomcat.rc tomcat-users.xml web.xml"
+WEBAPP_DIRS="server webapps"
+TOMCATUSER=_tomcat
+TOMCATGROUP=_tomcat
+TOMCATID=526
 
 # Function: install configuration files
 #
 do_install_conf()
 {
-    install -d -o root -g wheel ${CONFIG_DIR}
+    install -d -o ${TOMCATUSER} -g ${TOMCATGROUP} ${CONFIG_DIR}
     cd ${SAMPLE_CONFIG_DIR}
     for i in ${CONF_FILES}; do
-        install -o root -g wheel -m 0644 $i ${CONFIG_DIR}
+        install -o ${TOMCATUSER} -g ${TOMCATGROUP} -m 0644 $i ${CONFIG_DIR}
     done
 
-    install -d -o root -g wheel ${TOMCATDIR}
+    install -d -o ${TOMCATUSER} -g ${TOMCATGROUP} ${TOMCATDIR}
     ln -sf ${CONFIG_DIR} ${TOMCATDIR}/conf
-    install -d -o root -g wheel ${TOMCATDIR}/logs
-    install -d -o root -g staff ${TOMCATDIR}/webapps
-    cd ${SAMPLE_WEBAPPS_DIR}
-    tar cf - . | (cd ${TOMCATDIR}/webapps && tar xf - )
-    install -d -o root -g staff ${TOMCATDIR}/work
+    install -d -o ${TOMCATUSER} -g ${TOMCATGROUP} ${TOMCATDIR}/webapps
+    cd ${PREFIX}/${DISTNAME}
+    tar cf - ${WEBAPP_DIRS} | (cd ${TOMCATDIR} && tar xf -)
+    cd ${TOMCATDIR} && chown -R ${TOMCATUSER}:${TOMCATGROUP} ${WEBAPP_DIRS}
+    install -d -o ${TOMCATUSER} -g ${TOMCATGROUP} ${TOMCATDIR}/logs
+    install -d -o ${TOMCATUSER} -g ${TOMCATGROUP} ${TOMCATDIR}/temp
+    install -d -o ${TOMCATUSER} -g ${TOMCATGROUP} ${TOMCATDIR}/work
 
     echo
     echo "+---------------"
     echo "| The $1 configuration files have"
     echo "| been installed in ${CONFIG_DIR}."
-    echo "| Please view these files and change the configuration"
+    echo "| Please review these files and change the configuration"
     echo "| to meet your needs."
     echo "|"
     echo "| \$CATALINA_BASE is ${TOMCATDIR}."
+    echo "| Review \`${CONFIG_DIR}/tomcat.rc' to reflect your environment (e.g. \$JAVA_HOME)."
     echo "+---------------"
     echo
 }
@@ -55,8 +61,30 @@ do_notice_conf()
     echo "| as needed."
     echo "| The existing $1 files in ${TOMCATDIR}"
     echo "| have NOT been deleted."
+    echo "|"
+    echo "| If you are updating from a previous version of $1,"
+    echo "| don't forget to wipe ${TOMCATDIR}/work/*."
+    echo "| Update \`${TOMCATDIR}/tomcat.rc' to point to your \$JAVA_HOME. See"
+    echo "| ${SAMPLE_CONFIG_DIR} for an example."
     echo "+---------------"
     echo
+}
+
+do_usergroup_install()
+{
+    # Create Tomcat user and group
+    if groupinfo -e ${TOMCATGROUP}; then
+        echo "===> Using \`${TOMCATGROUP}' group for Tomcat"
+    else
+        echo "===> Creating \`${TOMCATGROUP}' group for Tomcat"
+        groupadd -g ${TOMCATID} ${TOMCATGROUP}
+    fi
+    if userinfo -e ${TOMCATUSER}; then
+        echo "===> Using \`${TOMCATUSER}' user for Tomcat"
+    else
+        echo "===> Creating \`${TOMCATUSER}' user for Tomcat"
+        useradd -g ${TOMCATGROUP} -d /nonexistent -L daemon -c 'Tomcat Account' -s /sbin/nologin -u ${TOMCATID} ${TOMCATUSER}
+    fi
 }
 
 # Verify proper execution
@@ -70,7 +98,7 @@ fi
 #
 case $2 in
     PRE-INSTALL)
-        : nothing to pre-install for this port
+        do_usergroup_install
         ;;
     POST-INSTALL)
         if [ ! -d ${CONFIG_DIR} ]; then

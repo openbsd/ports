@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2003/05/12 18:02:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2003/12/15 21:21:18 sturm Exp $
 
 COMMENT=	"Java servlet 2.3 and Java server pages 1.2 server"
 
 # Requires a JVM
 ONLY_FOR_ARCHS=	i386
 
-V=		4.0.6
+V=		4.1.29
 DISTNAME=	jakarta-tomcat-${V}
 CATEGORIES=	www
-MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat-4.0/release/v${V}/bin/
-EXTRACT_SUFX=	.zip
+
+MASTER_SITES=	${MASTER_SITE_APACHE:=jakarta/tomcat-4/v$V/bin/} \
+		http://archive.apache.org/dist/jakarta/tomcat-4/archive/v${V}/bin/
 
 HOMEPAGE=	http://jakarta.apache.org/
 
@@ -17,6 +18,7 @@ MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
 JDK_VERSION=	1.3.1-linux
 JAVA_HOME=	${LOCALBASE}/jdk${JDK_VERSION}
+BUILD_DEPENDS=	::archivers/gtar
 RUN_DEPENDS=	:jdk-linux->1.3:devel/jdk/1.3-linux
 
 # Apache Software License
@@ -25,32 +27,31 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+TAR=		${LOCALBASE}/bin/gtar
+
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-CONF_FILES=catalina.policy server-noexamples.xml.config server.xml \
-tomcat-users.xml web.xml
 CONFDIR=	${SYSCONFDIR}/tomcat
-DIRS=		bin classes common conf lib server webapps
-DOCS=LICENSE RELEASE-NOTES-4.0-B1.txt RELEASE-NOTES-4.0-B2.txt \
-RELEASE-NOTES-4.0-B3.txt RELEASE-NOTES-4.0-B4.txt RELEASE-NOTES-4.0-B5.txt \
-RELEASE-NOTES-4.0-B6.txt RELEASE-NOTES-4.0-B7.txt RELEASE-NOTES-4.0-RC1.txt \
-RELEASE-NOTES-4.0-RC2.txt RELEASE-NOTES-4.0.1-B1.txt RELEASE-NOTES-4.0.1.txt \
-RELEASE-NOTES-4.0.txt RELEASE-PLAN-4.0.1.txt RELEASE-PLAN-4.0.txt RUNNING.txt
+DIRS=		bin common conf server shared temp webapps work
+DOCS=		LICENSE README.txt RELEASE-NOTES-4.1.txt RELEASE-PLAN-4.1.txt \
+		RUNNING.txt
 TOMCATDIR=	/var/tomcat
 SUBST_VARS=	TOMCATDIR CONFDIR DISTNAME
-
-post-patch:
-	@cd ${WRKDIST}/conf && perl -pi -e 's,\r,,g' ${CONF_FILES}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${DISTNAME}
 	cd ${WRKDIST} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/${DISTNAME}
-	cd ${WRKDIST}/bin && chmod +x *.sh	# for .zip file
 	cd ${WRKDIST} && \
 		tar cf - ${DIRS} | (cd ${PREFIX}/${DISTNAME} && tar -xf -)
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/${DISTNAME}/conf
-	rm -f ${PREFIX}/${DISTNAME}/bin/catalina.sh.orig \
-		${PREFIX}/${DISTNAME}/conf/server.xml.orig
+	@sed -e 's,y0y0y0,${TRUEPREFIX}/${DISTNAME},' \
+		-e 's,y0y0y1,${SYSCONFDIR},' \
+		< ${FILESDIR}/README.OpenBSD \
+		> ${PREFIX}/${DISTNAME}/conf/README.OpenBSD
+	@sed -e 's,y0y0y0,${TRUEPREFIX}/${DISTNAME},' \
+		-e 's,y0y0y1,${JAVA_HOME},' \
+		< ${FILESDIR}/tomcat.rc > ${PREFIX}/${DISTNAME}/conf/tomcat.rc
+	@perl -pi -e 's,y0y0y0,${SYSCONFDIR},' \
+		${PREFIX}/${DISTNAME}/bin/setclasspath.sh
 
 .include "bsd.port.mk"
