@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/06/14 02:48:46 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/09/06 17:36:34 brad Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1999/04/02 04:19:20 steve Exp $
 
 DISTNAME=	unacepub
@@ -10,9 +10,10 @@ NEED_VERSION=	1.91
 
 MAINTAINER=	brad@openbsd.org
 
-NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
 USE_ZIP=	yes
+
+NO_WRKSUBDIR=	yes
 ALL_TARGET=	unace
 MAKEFILE=	unix/makefile
 
