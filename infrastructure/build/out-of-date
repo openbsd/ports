@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: out-of-date,v 1.6 2003/08/02 11:17:37 espie Exp $
+# $OpenBSD: out-of-date,v 1.7 2003/09/28 10:59:42 espie Exp $
 # Copyright (c) 1999
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -34,7 +34,7 @@ trap "rm -r $TMPDIR" 0 1 2 3 15
 echo "Generate specs"
 pkg_info -f -a|sed -n -e 's/.*Comment: subdir=//p'|sed -e 's/ cdrom=.*//' >$TMPDIR/specs
 echo "Check new package names"
-cd $PORTSDIR && make SUBDIRLIST=$TMPDIR/specs show=FULLPKGNAME\${SUBPACKAGE} ECHO_MSG=: |sort >$TMPDIR/new
+cd $PORTSDIR && make SUBDIRLIST=$TMPDIR/specs show=FULLPKGNAME\${SUBPACKAGE} ECHO_MSG=: REPORT_PROBLEM=true|sort >$TMPDIR/new
 echo "Record old package names"
 pkg_info|cut -d\  -f1|sort >$TMPDIR/old
 echo "Show discrepancies"
