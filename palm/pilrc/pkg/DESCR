@@ -1,0 +1,5 @@
+PilRC is an application that takes a resource script file and generates
+one or more binary resource files that are to be used when developing
+for the Palm Computing Platform.
+
+WWW: ${HOMEPAGE}

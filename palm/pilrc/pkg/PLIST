@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/17 02:49:57 pvalchev Exp $
+bin/pilrc
+share/doc/pilrc/archive.html
+share/doc/pilrc/contrib.html
+share/doc/pilrc/download.html
+share/doc/pilrc/history.html
+share/doc/pilrc/images/download.gif
+share/doc/pilrc/index.html
+share/doc/pilrc/manual.html
+@dirrm share/doc/pilrc/images
+@dirrm share/doc/pilrc
