@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2002/10/26 20:44:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/27 10:16:15 mark Exp $
 
 COMMENT=	"graphical networked AD&D style game"
 
-VERSION=	1.3.0
+VERSION=	1.4.0
 DISTNAME=	crossfire-client-${VERSION}
 CATEGORIES=	games x11
+
+IMGDIST=	crossfire-client-images-${VERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${IMGDIST}${EXTRACT_SUFX}:0
 
 HOMEPAGE=	http://crossfire.real-time.com/
 
@@ -24,12 +27,20 @@ LIB_DEPENDS=   	gtk.1.2,gdk.1.2::x11/gtk+ \
 
 CONFIGURE_ARGS=	--disable-gnome	
 
+NO_REGRESS=	Yes
+
 USE_X11=		Yes
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/utils
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-NO_REGRESS=	Yes
+IMG=	bmaps.client crossfire.base crossfire.clsc
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/crossfire-client
+.for file in ${IMG}
+	${INSTALL_DATA} ${WRKDIR}/${file} ${PREFIX}/share/crossfire-client
+.endfor
 
 .include <bsd.port.mk>
