@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/30 01:06:34 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2005/01/12 20:33:42 sturm Exp $
 
 COMMENT=	"lightweight image viewer"
 
-DISTNAME=	feh-1.2.9
+DISTNAME=	feh-1.3.0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.linuxbrit.co.uk/feh/
