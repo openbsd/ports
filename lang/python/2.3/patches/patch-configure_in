@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure_in,v 1.4 2004/05/12 22:27:24 brad Exp $
---- configure.in.orig	2003-11-18 14:59:39.000000000 -0500
-+++ configure.in	2004-04-19 21:28:02.000000000 -0400
+$OpenBSD: patch-configure_in,v 1.5 2004/08/11 08:11:50 xsa Exp $
+--- configure.in.orig	Fri May  7 21:13:47 2004
++++ configure.in	Wed Aug 11 09:55:49 2004
 @@ -136,7 +136,7 @@ case $ac_sys_system/$ac_sys_release in
    # On OpenBSD, select(2) is not available if _XOPEN_SOURCE is defined,
    # even though select is a POSIX function. Reported by J. Ribbens.
    # Reconfirmed for OpenBSD 3.3 by Zachary Hamm, for 3.4 by Jason Ish.
 -  OpenBSD/2.* | OpenBSD/3.@<:@01234@:>@) 
-+  OpenBSD/2.* | OpenBSD/3.@<:@012345@:>@) 
++  OpenBSD/2.* | OpenBSD/3.@<:@0123456@:>@) 
      define_xopen_source=no;;
    # On Solaris 2.6, sys/wait.h is inconsistent in the usage
    # of union __?sigval. Reported by Stuart Bishop.
-@@ -1279,14 +1279,28 @@ then
+@@ -1280,14 +1280,28 @@ then
  	Linux*|GNU*) LDSHARED='$(CC) -shared';;
  	dgux*) LDSHARED="ld -G";;
  	BSD/OS*/4*) LDSHARED="gcc -shared";;
@@ -41,7 +41,7 @@ $OpenBSD: patch-configure_in,v 1.4 2004/05/12 22:27:24 brad Exp $
  	OpenUNIX*|UnixWare*)
  		if test "$GCC" = "yes"
  		then LDSHARED='$(CC) -shared'
-@@ -1423,9 +1437,10 @@ AC_CHECK_LIB(dld, shl_load)	# Dynamic li
+@@ -1424,9 +1438,10 @@ AC_CHECK_LIB(dld, shl_load)	# Dynamic li
  
  # only check for sem_ini if thread support is requested
  if test "$with_threads" = "yes" -o -z "$with_threads"; then

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_socketmodule_c,v 1.1.1.1 2003/12/31 17:38:33 sturm Exp $
---- Modules/socketmodule.c.orig	2003-10-20 16:34:47.000000000 +0200
-+++ Modules/socketmodule.c	2003-12-31 15:46:10.000000000 +0100
+$OpenBSD: patch-Modules_socketmodule_c,v 1.2 2004/08/11 08:11:50 xsa Exp $
+--- Modules/socketmodule.c.orig	Sun Apr 11 14:10:03 2004
++++ Modules/socketmodule.c	Wed Aug 11 00:07:43 2004
 @@ -63,9 +63,6 @@ Local naming conventions:
  
  #include "Python.h"
@@ -11,7 +11,7 @@ $OpenBSD: patch-Modules_socketmodule_c,v 1.1.1.1 2003/12/31 17:38:33 sturm Exp $
  /* Socket object documentation */
  PyDoc_STRVAR(sock_doc,
  "socket([family[, type[, proto]]]) -> socket object\n\
-@@ -2818,7 +2815,7 @@ Convert a 32-bit integer from network to
+@@ -2822,7 +2819,7 @@ Convert a 32-bit integer from network to
  static PyObject *
  socket_htons(PyObject *self, PyObject *args)
  {
@@ -20,7 +20,7 @@ $OpenBSD: patch-Modules_socketmodule_c,v 1.1.1.1 2003/12/31 17:38:33 sturm Exp $
  
  	if (!PyArg_ParseTuple(args, "i:htons", &x1)) {
  		return NULL;
-@@ -2889,7 +2886,7 @@ socket_inet_aton(PyObject *self, PyObjec
+@@ -2893,7 +2890,7 @@ socket_inet_aton(PyObject *self, PyObjec
  	struct in_addr buf;
  #else
  	/* Have to use inet_addr() instead */
@@ -29,7 +29,7 @@ $OpenBSD: patch-Modules_socketmodule_c,v 1.1.1.1 2003/12/31 17:38:33 sturm Exp $
  #endif
  	char *ip_addr;
  
-@@ -3020,7 +3017,7 @@ socket_inet_ntop(PyObject *self, PyObjec
+@@ -3024,7 +3021,7 @@ socket_inet_ntop(PyObject *self, PyObjec
  #endif
  	
  	/* Guarantee NUL-termination for PyString_FromString() below */
