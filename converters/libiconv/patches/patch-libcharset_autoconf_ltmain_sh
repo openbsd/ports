@@ -1,6 +1,75 @@
---- libcharset/autoconf/ltmain.sh.orig	Wed Feb  6 05:11:25 2002
-+++ libcharset/autoconf/ltmain.sh	Fri Jun  7 17:53:35 2002
-@@ -4465,40 +4465,6 @@ relink_command=\"$relink_command\""
+--- libcharset/autoconf/ltmain.sh.orig	Wed Feb  6 07:11:25 2002
++++ libcharset/autoconf/ltmain.sh	Mon Sep 16 19:04:12 2002
+@@ -546,8 +546,6 @@ compiler."
+ 	  if test $status -ne 0 && test ! -d $dir; then
+ 	    exit $status
+ 	  fi
+-	  $show "chmod 777 $dir"
+-	  $run chmod 777 $dir
+ 	fi
+       fi
+       if test "$compiler_o_lo" = yes; then
+@@ -1312,8 +1310,6 @@ compiler."
+       if test $status -ne 0 && test ! -d $output_objdir; then
+ 	exit $status
+       fi
+-      $show "chmod 777 $output_objdir"
+-      $run chmod 777 $output_objdir
+     fi
+ 
+     # Determine the type of output
+@@ -1888,11 +1884,7 @@ compiler."
+ 	      add="-l$name"
+ 	    else
+ 	      # We cannot seem to hardcode it, guess we'll fake it.
+-	      if test "X$installed" = Xyes; then
+-	        add_dir="-L$libdir"
+-	      else
+-	        add_dir="-L$DESTDIR$libdir"
+-	      fi
++	      add_dir="-L$libdir"
+ 	      add="-l$name"
+ 	    fi
+ 
+@@ -4149,21 +4141,12 @@ relink_command=\"$relink_command\""
+ 	esac
+ 
+ 	# Add the libdir to current_libdirs if it is the destination.
+-	DESTDIR=
+ 	if test "X$destdir" = "X$libdir"; then
+ 	  case "$current_libdirs " in
+ 	  *" $libdir "*) ;;
+ 	  *) current_libdirs="$current_libdirs $libdir" ;;
+ 	  esac
+ 	else
+-	  case "$destdir" in
+-	    *"$libdir")
+-	      DESTDIR=`$echo "$destdir" | sed -e 's!'"$libdir"'$!!'`
+-	      if test "X$destdir" != "X$DESTDIR$libdir"; then
+-		DESTDIR=
+-	      fi
+-	      ;;
+-	  esac
+ 	  # Note the libdir as a future libdir.
+ 	  case "$future_libdirs " in
+ 	  *" $libdir "*) ;;
+@@ -4177,7 +4160,6 @@ relink_command=\"$relink_command\""
+ 
+ 	if test -n "$relink_command"; then
+ 	  $echo "$modename: warning: relinking \`$file'" 1>&2
+-	  export DESTDIR
+ 	  $show "$relink_command"
+ 	  if $run eval "$relink_command"; then :
+ 	  else
+@@ -4185,7 +4167,6 @@ relink_command=\"$relink_command\""
+ 	    continue
+ 	  fi
+ 	fi
+-	unset DESTDIR
+ 
+ 	# See the names of the shared library.
+ 	set dummy $library_names
+@@ -4465,40 +4446,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  
