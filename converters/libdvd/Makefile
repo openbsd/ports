@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/03/02 22:42:14 hshoexer Exp $
+# $OpenBSD: Makefile,v 1.2 2004/05/31 09:46:14 hshoexer Exp $
 
 COMMENT=	"descramble scrambled DVDs using ACSS"
 
 VER=		0.2
 DISTNAME=	libdvd-${VER}
 CATEGORIES=	converters
-MASTER_SITES=	http://www.rommelwood.de/~hshoexer/${VER}/
-
-HOMEPAGE=	http://www.rommelwood.de/~hshoexer/
+MASTER_SITES=	http://www.rommelwood.de/~hshoexer/${VER}/ \
+		http://www.admingilde.org/~hshoexer/${VER}/
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
