@@ -1,13 +1,13 @@
 --- Makefile.in.orig	Tue Mar  9 01:51:26 1999
-+++ Makefile.in	Thu Jan  6 18:28:14 2000
++++ Makefile.in	Sat Jan  8 20:18:53 2000
 @@ -55,7 +55,9 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
  # Directory in which to install the include file tcl.h:
 -INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include
 +INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)
-+GENERIC_INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)/generic
-+UNIX_INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)/unix
++GENERIC_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/generic
++UNIX_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/unix
  
  # Top-level directory in which to install manual entries:
  MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
@@ -100,32 +100,7 @@
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -501,7 +520,7 @@
- 	@cd $(TOP_DIR)/doc; for i in *.1; \
- 	    do \
- 	    echo "Installing doc/$$i"; \
--	    rm -f $(MAN1_INSTALL_DIR)/$$i; \
-+	    rm -f $(MAN1_INSTALL_DIR)/$$i ; \
- 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
- 		    $$i > $(MAN1_INSTALL_DIR)/$$i; \
- 	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
-@@ -510,7 +529,7 @@
- 	@cd $(TOP_DIR)/doc; for i in *.3; \
- 	    do \
- 	    echo "Installing doc/$$i"; \
--	    rm -f $(MAN3_INSTALL_DIR)/$$i; \
-+	    rm -f $(MAN3_INSTALL_DIR)/$$i ; \
- 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
- 		    $$i > $(MAN3_INSTALL_DIR)/$$i; \
- 	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
-@@ -519,12 +538,19 @@
- 	@cd $(TOP_DIR)/doc; for i in *.n; \
- 	    do \
- 	    echo "Installing doc/$$i"; \
--	    rm -f $(MANN_INSTALL_DIR)/$$i; \
-+	    rm -f $(MANN_INSTALL_DIR)/$$i ; \
- 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
- 		    $$i > $(MANN_INSTALL_DIR)/$$i; \
+@@ -525,6 +544,13 @@
  	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
  	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
