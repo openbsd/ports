@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/07/31 15:27:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2001/08/01 23:18:53 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
@@ -10,7 +10,7 @@ COMMENT-kanji-m17n=	"multi-script text-based web browser/pager, japanese flavor"
 COMMENT-image-kanji=	"text-based web browser/pager with image support, japanese flavor"
 
 V_BASE=		0.2.1
-V_IMG=		1.9
+V_IMG=		1.10
 V_M17N=		0.19
 
 DISTNAME=	w3m-${V_BASE}
