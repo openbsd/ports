@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/03/27 07:18:57 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/04/25 18:37:43 brad Exp $
 
 DISTNAME=	curl-5.5.1
 CATEGORIES=	net
@@ -9,7 +9,8 @@ MASTER_SITES=	ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
 
 MAINTAINER=	markus.friedl@informatik.uni-erlangen.de
 
-BUILD_DEPENDS=  ${PREFIX}/ssl/lib/libssl.a:${PORTSDIR}/security/SSLeay
+BUILD_DEPENDS=	${PREFIX}/ssl/lib/libcrypto.a:${PORTSDIR}/security/SSLeay \
+		${PREFIX}/ssl/lib/libssl.a:${PORTSDIR}/security/SSLeay
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS=-I${PREFIX}/ssl/include/ \
@@ -20,12 +21,9 @@ CURLDOCFILES=	CHANGES INSTALL LEGAL MPL-1.0.txt README RESOURCES TODO
 
 post-install:
 	${INSTALL_MAN} $(WRKSRC)/curl.1 $(PREFIX)/man/man1
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${CURLDOCDIR}
-	set -e; for f in ${CURLDOCFILES}; do \
+	@set -e; for f in ${CURLDOCFILES}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${f} ${CURLDOCDIR}/; \
 	done
-	${INSTALL_DATA} ${WRKSRC}/README ${CURLDOCDIR}/
-.endif
 
 .include <bsd.port.mk>
