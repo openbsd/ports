@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/22 00:28:33 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/07 19:09:19 jasoni Exp $
 #
 # This port should remain Python 1.5.2.  Please do not upgrade.
+
+COMMENT=        "interpreted object-oriented programming language"
+COMMENT-tools=  "extra tools for python"
 
 DISTNAME=	py152
 PKGNAME=	python-1.5.2
