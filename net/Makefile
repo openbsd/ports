@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.297 2003/11/25 17:28:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.298 2003/12/11 19:03:50 david Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -183,6 +183,7 @@
      SUBDIR += py-curl
      SUBDIR += py-dns
      SUBDIR += py-libpcap
+     SUBDIR += quagga
      SUBDIR += queso
      SUBDIR += quirc
      SUBDIR += radiusd-cistron
