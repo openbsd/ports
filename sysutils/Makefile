@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2001/09/27 17:31:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2001/11/05 18:56:52 naddy Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -7,6 +7,7 @@
      SUBDIR += bubblemon-dockapp
      SUBDIR += bubblemon
      SUBDIR += cfengine
+     SUBDIR += colorls
      SUBDIR += contool
      SUBDIR += gkrellm
      SUBDIR += idled
