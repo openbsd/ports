@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 1998/11/10 08:54:08 form Exp $
+# $OpenBSD: Makefile,v 1.26 1998/12/17 04:54:43 marc Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -18,6 +18,7 @@
 #    SUBDIR += dgd-lpmud
 #    SUBDIR += dgd-net
 #    SUBDIR += dip
+     SUBDIR += dxpc
 #    SUBDIR += echoping
      SUBDIR += ethereal
 #    SUBDIR += fping
