@@ -1,7 +1,16 @@
-$OpenBSD: patch-configure,v 1.4 2001/08/09 01:43:16 brad Exp $
---- configure.orig	Thu Jul 26 14:13:35 2001
-+++ configure	Wed Aug  8 14:29:47 2001
-@@ -7116,9 +7116,9 @@
+$OpenBSD: patch-configure,v 1.5 2002/06/14 17:18:06 todd Exp $
+--- configure.orig	Thu Jul 26 13:13:35 2001
++++ configure	Wed Jun 12 09:14:58 2002
+@@ -5297,7 +5297,7 @@ else
+ 	{
+ 	  int id;
+ 	  char *shmaddr;
+-	id = shmget (IPC_PRIVATE, 4, IPC_CREAT | 0777);
++	id = shmget (IPC_PRIVATE, 4, IPC_CREAT | 0600);
+ 	if (id == -1)
+ 	  exit (2);
+ 	  shmaddr = shmat (id, 0, 0);
+@@ -7116,9 +7116,9 @@ fi
  
  fi
  

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.70 2002/05/13 23:31:24 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2002/06/14 17:18:06 todd Exp $
 
 COMMENT=	"GNU Image Manipulation Program"
 
 VERSION=	1.2.2
 DISTNAME=	gimp-${VERSION}
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	graphics
 NEED_VERSION=	1.486
 V=		gimp/v1.2/${VERSION}
