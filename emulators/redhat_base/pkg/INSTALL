@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2001/02/13 06:06:23 jasoni Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/02/14 22:29:06 brad Exp $
 #
 # Pre/post-installation setup of redhat_base
 
@@ -20,9 +20,9 @@ do_notice_top()
 
 do_notice_link()
 {
-    echo "| /emul/linux already exists and is not a link to $PREFIX."
+    echo "| /emul/linux already exists but it's not a symlink to $PREFIX."
     echo "|"
-    echo "| To make this port active you must make /emul/linux a link"
+    echo "| To make this port active you must make /emul/linux a symlink to"
     echo "| $PREFIX."
     echo "|"
 }
