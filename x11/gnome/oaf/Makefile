@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/14 14:41:30 todd Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/17 20:54:41 naddy Exp $
 
 COMMENT=		"Object Activation Framework for GNOME"
 V=			0.6.5
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
-CONFIGURE_STYLE= 	gnu
+CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
