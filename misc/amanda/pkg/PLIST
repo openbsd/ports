@@ -1,15 +1,13 @@
-lib/libamanda-2.4.1p1.so.0.0
+@comment $OpenBSD: PLIST,v 1.9 2000/09/22 22:49:01 brad Exp $
 lib/libamanda.a
 lib/libamanda.la
-lib/libamclient-2.4.1p1.so.0.0
 lib/libamclient.a
 lib/libamclient.la
-lib/libamserver-2.4.1p1.so.0.0
 lib/libamserver.a
 lib/libamserver.la
-lib/libamtape-2.4.1p1.so.0.0
 lib/libamtape.a
 lib/libamtape.la
+%%SHARED%%
 libexec/amandad
 libexec/amidxtaped
 libexec/amindexd
@@ -97,5 +95,3 @@ share/examples/amanda/amanda.conf
 share/examples/amanda/chg-multi.conf
 share/examples/amanda/chg-scsi.conf
 @dirrm share/examples/amanda
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
-@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2000/09/22 22:49:01 brad Exp $
+lib/libamanda-2.4.1p1.so.0.0
+lib/libamclient-2.4.1p1.so.0.0
+lib/libamserver-2.4.1p1.so.0.0
+lib/libamtape-2.4.1p1.so.0.0
+DYNLIBDIR(%B)
