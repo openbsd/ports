@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/07 17:16:30 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/07 17:47:09 espie Exp $
 
 DISTNAME=	ocaml-2.04
 CATEGORIES=	lang
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/
 DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}
 
@@ -13,7 +14,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 
+FAKE=		Yes
 HAS_CONFIGURE=	Yes
+
+# ocaml's configure script is too smart for its own good
+
+FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 USE_GMAKE=	Yes
 ALL_TARGET=	world bootstrap opt
 
@@ -23,6 +29,6 @@ post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml/html
 	@${INSTALL_DATA} ${WRKDIR}/htmlman/* ${PREFIX}/share/doc/ocaml/html
 	@strip ${PREFIX}/bin/ocamlrun ${PREFIX}/bin/ocamlyacc
-	@${INSTALL_DATA} ${WKRSRC}/LICENSE ${PREFIX}/share/doc/ocaml
+	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/ocaml
 
 .include <bsd.port.mk>
