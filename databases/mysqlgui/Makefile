@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/15 10:33:09 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/20 09:40:52 wilfried Exp $
 
 COMMENT=		'graphical sql client for MySQL'
 
-DISTNAME=		mysqlgui-1.7.4
+DISTNAME=		mysqlgui-1.7.5
 CATEGORIES=		databases
 NEED_VERSION=		1.380
 
@@ -33,6 +33,8 @@ LIB_DEPENDS=		intl::devel/gettext \
 
 USE_X11=		Yes
 
+WRKDIST=		${WRKDIR}/mysqlgui-src-1.7.5
+
 do-distpatch:
 	@for f in ${PATCHFILES:C/:[0-9]$//}; do \
 		cp ${FULLDISTDIR}/$$f ${WRKSRC} ; \
@@ -48,6 +50,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/mysqlgui ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysqlgui
 	${INSTALL_DATA} ${WRKSRC}/doc/my.cnf ${PREFIX}/share/doc/mysqlgui
-	${INSTALL_DATA} ${WRKSRC}/doc/readme.version_1.7.4 ${PREFIX}/share/doc/mysqlgui/readme
+	${INSTALL_DATA} ${WRKSRC}/doc/readme.version_1.7.5 ${PREFIX}/share/doc/mysqlgui/readme
 
 .include <bsd.port.mk>
