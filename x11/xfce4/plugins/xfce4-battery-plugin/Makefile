@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/16 22:05:10 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/03/12 03:42:10 pvalchev Exp $
 
-ONLY_FOR_ARCHS=	i386 macppc
+ONLY_FOR_ARCHS=	i386 macppc zaurus
 
 COMMENT=	"battery monitor panel plugin for xfce4"
 DISTNAME=	xfce4-battery-plugin-0.2.0
