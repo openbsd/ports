@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/09/15 09:11:58 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2004/10/11 13:01:05 avsm Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,10 +13,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://cran.r-project.org/src/base/ \
-		http://cran.uk.r-project.org/src/base/ \
-		http://cran.us.r-project.org/src/base/ \
-		http://cran.dk.r-project.org/src/base/
+MASTER_SITES=	http://cran.r-project.org/src/base/R-1/ \
+		http://cran.uk.r-project.org/src/base/R-1/ \
+		http://cran.us.r-project.org/src/base/R-1/ \
+		http://cran.dk.r-project.org/src/base/R-1/
 EXTRACT_SUFX=	.tgz
 
 USE_X11=	Yes
