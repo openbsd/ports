@@ -1,0 +1,18 @@
+$OpenBSD: patch-khexedit_dialog_cc,v 1.1.1.1 2002/04/04 14:23:48 espie Exp $
+--- khexedit/dialog.cc.orig	Thu Apr  4 15:31:17 2002
++++ khexedit/dialog.cc	Thu Apr  4 15:39:06 2002
+@@ -20,7 +20,14 @@
+ 
+ #include <ctype.h>
+ #include <iostream>
++#ifdef __OpenBSD__
++#include <float.h>
++#include <limits.h>
++#include <math.h>
++#define MAXINT INT_MAX
++#else
+ #include <values.h>
++#endif
+ 
+ #include <qbuttongroup.h> 
+ #include <qfileinfo.h> 

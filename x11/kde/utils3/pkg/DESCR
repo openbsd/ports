@@ -1,0 +1,26 @@
+Various kde applications:
+
+* ark: manager for compressed files and archives
+* kab: address book
+* karm: tracks time spend per task or project
+* kcalc: scientific calculator
+* kcharselect: select special characters from any fonts and put them into
+               the clipboard
+* charselectapplet: dito, but as a Kicker applet
+* kcardtools: 
+* kdepasswd: like 'passwd', a graphical password changer
+* kdessh: front end to ssh
+* kdf: like 'df', a graphical free disk space viewer
+* kedit: a simple text editor, without formatting like bold, italics etc
+* kfloppy: format a floppy disks with this app
+* khexedit: binary file editor
+* kjots: manages several "books" with a subject and notes
+* klaptopdaemon: battery and power management, including KControl plugins
+* kljettool: configure a HL LaserJet from KDE
+* klpq: front end to 'lpq', 'lprm' and 'lpc'
+* klprfax: send faxes by printing to a lpr device, needs efax and ghostscript
+* knotes: paste yellow notes all over your screen, virtually of course
+* kpm: combines 'ps', 'top' and 'kill' into a visual process watcher
+* kregexpeditor: graphical regular expression editor
+* ktimer: execute programs after some time
+
