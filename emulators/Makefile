@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 1999/12/20 20:03:00 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/07/07 14:31:05 espie Exp $
 
     SUBDIR += bochs
+    SUBDIR += frodo
     SUBDIR += freebsd_lib
     SUBDIR += linux_lib
     SUBDIR += simh
