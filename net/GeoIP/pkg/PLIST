@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/27 14:55:35 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/08/26 13:06:29 naddy Exp $
 bin/geoipexport
 bin/geoiplookup
 bin/geoipupdate
@@ -13,6 +13,7 @@ lib/libGeoIPBitReader.la
 lib/libGeoIPUpdate.a
 lib/libGeoIPUpdate.la
 man/man1/geoiplookup.1
+man/man1/geoipupdate.1
 share/examples/GeoIP/GeoIP.conf
 share/examples/GeoIP/GeoIP.dat
 %%SHARED%%
