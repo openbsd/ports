@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 1999/06/08 02:52:52 jasoni Exp $
+# $OpenBSD: Makefile,v 1.16 1999/09/21 02:55:03 jasoni Exp $
 
-DISTNAME=	WindowMaker-0.60.0
+DISTNAME=	WindowMaker-0.61.0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/beta/srcs/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/beta/srcs/
@@ -18,14 +18,14 @@ LIB_DEPENDS=	PropList:${PORTSDIR}/devel/libproplist \
 		gif:${PORTSDIR}/graphics/giflib
 
 # The files placed in $SYSCONFDIR are better placed in $PREFIX/share/WindowMaker
-SYSCONFDIR=	${PREFIX}/share/WindowMaker/Defaults
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static --with-pixmapdir=${PREFIX}/share/WindowMaker/Pixmaps \
-		--with-incs-from="-I${PREFIX}/include -I${PREFIX}/include/giflib" \
-		--with-libs-from="-L${PREFIX}/lib" --disable-debug 
-CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" \
-		LDFLAGS="-L${PREFIX}/lib"
+SYSCONFDIR=		${PREFIX}/share/WindowMaker/Defaults
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= 	--enable-static --with-pixmapdir=${PREFIX}/share/WindowMaker/Pixmaps \
+			--with-incs-from="-I${PREFIX}/include -I${PREFIX}/include/giflib" \
+			--with-libs-from="-L${PREFIX}/lib" --disable-debug 
+CONFIGURE_ENV=		CPPFLAGS="-I${PREFIX}/include" \
+			LDFLAGS="-L${PREFIX}/lib"
 
 post-configure:
 	@cd ${WRKDIR}/WindowMaker-extra-0.1; \
