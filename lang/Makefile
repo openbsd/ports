@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 1999/08/02 21:51:34 niklas Exp $
+# $OpenBSD: Makefile,v 1.18 1999/08/20 19:59:29 espie Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -25,7 +25,6 @@
      SUBDIR += guile
 #    SUBDIR += hugs
      SUBDIR += icon
-     SUBDIR += icon_lib
 #    SUBDIR += idl4
 #    SUBDIR += itcl
 #    SUBDIR += javac_netscape
