@@ -1,0 +1,28 @@
+--- sql/sql_parse.cc.orig	Tue Jan 11 17:55:26 2000
++++ sql/sql_parse.cc	Tue Jan 11 18:05:46 2000
+@@ -1102,6 +1102,25 @@
+ 		      tables ? &tables->grant.privilege : 0,
+ 		      tables ? 0 : 1))
+        goto error;
++
++     /* Check that the user isn't trying to change a password for another
++        user if he doesn't have UPDATE privilege to the MySQL database */
++
++     List_iterator <LEX_USER> user_list(lex->users_list);
++     LEX_USER *user;
++     while ((user=user_list++))
++     {
++       if (user->password.str &&
++	 (strcmp(thd->user,user->user.str) ||
++	  user->host.str && my_strcasecmp(user->host.str,
++					  thd->host ? thd->host : thd->ip)))
++       {
++       if (check_access(thd, UPDATE_ACL, "mysql",0,1))
++	 goto error;
++       break;					// We are allowed to do changes
++       }
++     }
++
+      if (tables)
+      {
+        if (grant_option && check_grant(thd,
