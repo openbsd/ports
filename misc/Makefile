@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1998/06/08 02:52:56 angelos Exp $
+# $OpenBSD: Makefile,v 1.12 1998/06/21 08:45:56 niklas Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -7,7 +7,7 @@
      SUBDIR += buffer
 #    SUBDIR += cal
      SUBDIR += cbb
-     SUBDIR += cdrecord-current
+     SUBDIR += cdrecord
 #    SUBDIR += chord
 #    SUBDIR += colorls
 #    SUBDIR += ctk
