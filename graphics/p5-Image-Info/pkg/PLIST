@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/07/06 10:26:28 shell Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/31 19:57:42 naddy Exp $
 ${P5SITE}/Image/Info.pm
 ${P5SITE}/Image/Info/BMP.pm
 ${P5SITE}/Image/Info/GIF.pm
@@ -9,9 +9,15 @@ ${P5SITE}/Image/Info/SVG.pm
 ${P5SITE}/Image/Info/XBM.pm
 ${P5SITE}/Image/Info/XPM.pm
 ${P5SITE}/Image/TIFF.pm
+@comment ${P5ARCH}/auto/Image/Info/.packlist
 man/man3p/Image::Info.3p
 man/man3p/Image::Info::BMP.3p
 man/man3p/Image::Info::SVG.3p
 man/man3p/Image::Info::XBM.3p
 man/man3p/Image::Info::XPM.3p
+@comment @dirrm ${P5ARCH}/auto/Image/Info
+@comment @dirrm ${P5ARCH}/auto/Image
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
 @dirrm ${P5SITE}/Image/Info
+@dirrm ${P5SITE}/Image

@@ -1,19 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/05/16 05:21:24 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/12/31 19:57:42 naddy Exp $
 bin/imgsize
-libdata/perl5/site_perl/Image/Size.pm
-libdata/perl5/site_perl/auto/Image/Size/autosplit.ix
-libdata/perl5/site_perl/auto/Image/Size/bmpsize.al
-libdata/perl5/site_perl/auto/Image/Size/gifsize.al
-libdata/perl5/site_perl/auto/Image/Size/jpegsize.al
-libdata/perl5/site_perl/auto/Image/Size/mngsize.al
-libdata/perl5/site_perl/auto/Image/Size/pcdsize.al
-libdata/perl5/site_perl/auto/Image/Size/pngsize.al
-libdata/perl5/site_perl/auto/Image/Size/ppmsize.al
-libdata/perl5/site_perl/auto/Image/Size/psdsize.al
-libdata/perl5/site_perl/auto/Image/Size/swfsize.al
-libdata/perl5/site_perl/auto/Image/Size/tiffsize.al
-libdata/perl5/site_perl/auto/Image/Size/xbmsize.al
-libdata/perl5/site_perl/auto/Image/Size/xpmsize.al
+${P5SITE}/Image/Size.pm
+${P5SITE}/auto/Image/Size/autosplit.ix
+${P5SITE}/auto/Image/Size/bmpsize.al
+${P5SITE}/auto/Image/Size/gifsize.al
+${P5SITE}/auto/Image/Size/jpegsize.al
+${P5SITE}/auto/Image/Size/mngsize.al
+${P5SITE}/auto/Image/Size/pcdsize.al
+${P5SITE}/auto/Image/Size/pngsize.al
+${P5SITE}/auto/Image/Size/ppmsize.al
+${P5SITE}/auto/Image/Size/psdsize.al
+${P5SITE}/auto/Image/Size/swfsize.al
+${P5SITE}/auto/Image/Size/tiffsize.al
+${P5SITE}/auto/Image/Size/xbmsize.al
+${P5SITE}/auto/Image/Size/xpmsize.al
+@comment ${P5ARCH}/auto/Image/Size/.packlist
 man/man1/imgsize.1
 man/man3p/Image::Size.3p
-@dirrm libdata/perl5/site_perl/auto/Image/Size
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Image/Size
+@comment @dirrm ${P5ARCH}/auto/Image
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/auto/Image/Size
+@dirrm ${P5SITE}/auto/Image
+@dirrm ${P5SITE}/auto
+@dirrm ${P5SITE}/Image
