@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/12 21:34:38 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/12 22:32:31 espie Exp $
 
-PKGNAME=	cdrdao-1.1.3
-CATEGORIES=	misc
+DISTNAME= 	cdrdao-1.1.3
+CATEGORIES=	audio misc
 NEED_VERSION=	1.302
 MASTER_SITES=	http://www.ping.de/sites/daneb/
-DISTNAME=	${PKGNAME}.src
+DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
 
 MAINTAINER=	fgsch@openbsd.org
 
@@ -19,10 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=		${PREFIX}/bin/antlr::devel/pccts
 
-WRKDIST=		${WRKDIR}/${PKGNAME}
-
 USE_GMAKE=		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--with-posix-threads=no
 
 post-install:
