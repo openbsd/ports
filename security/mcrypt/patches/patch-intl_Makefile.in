@@ -1,7 +1,7 @@
-$OpenBSD: patch-intl_Makefile.in,v 1.1.1.1 2000/11/27 15:56:03 avsm Exp $
---- intl/Makefile.in.orig	Mon Nov 20 15:43:32 2000
-+++ intl/Makefile.in	Mon Nov 20 15:44:07 2000
-@@ -25,7 +25,7 @@ top_srcdir = @top_srcdir@
+$OpenBSD: patch-intl_Makefile.in,v 1.2 2003/01/18 22:55:39 avsm Exp $
+--- intl/Makefile.in.orig	Sat Apr 27 12:50:56 2002
++++ intl/Makefile.in	Sat Jan 18 18:40:45 2003
+@@ -26,7 +26,7 @@ top_srcdir = @top_srcdir@
  top_builddir = ..
  VPATH = @srcdir@
  
@@ -9,4 +9,4 @@ $OpenBSD: patch-intl_Makefile.in,v 1.1.1.1 2000/11/27 15:56:03 avsm Exp $
 +prefix = ${DESTDIR}@prefix@
  exec_prefix = @exec_prefix@
  transform = @program_transform_name@
- libdir = $(exec_prefix)/lib
+ libdir = @libdir@

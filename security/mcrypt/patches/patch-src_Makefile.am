@@ -1,0 +1,10 @@
+--- src/Makefile.am.orig	Sat Jun 15 11:19:03 2002
++++ src/Makefile.am	Sat Jan 18 18:40:45 2003
+@@ -13,6 +13,6 @@ mcrypt_SOURCES = extra.c mcrypt.c keys.c
+ localedir = $(datadir)/locale
+ mcrypt_LDADD = gaaout.o @INTLLIBS@ 
+ gaaout.o: gaaout.c
+-	$(CC) -o gaaout.o -c gaaout.c -g $(INCLUDES) -I. -I..
++	$(CC) -o gaaout.o -c gaaout.c -g $(INCLUDES) -I. -I.. ${LIBMCRYPT_CFLAGS}
+ gaaout.c: mcrypt.gaa
+ 	gaa -o gaaout.c -i gaa.h mcrypt.gaa

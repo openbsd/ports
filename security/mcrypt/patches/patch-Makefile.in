@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile.in,v 1.1.1.1 2000/11/27 15:56:03 avsm Exp $
---- Makefile.in.orig	Mon Oct  2 16:23:35 2000
-+++ Makefile.in	Mon Nov 20 15:57:31 2000
-@@ -378,8 +378,7 @@ clean-generic maintainer-clean-generic c
- maintainer-clean
+$OpenBSD: patch-Makefile.in,v 1.2 2003/01/18 22:55:39 avsm Exp $
+--- Makefile.in.orig	Wed Oct  2 21:10:16 2002
++++ Makefile.in	Sat Jan 18 18:40:45 2003
+@@ -464,8 +464,7 @@ uninstall-info: uninstall-info-recursive
+ 	uninstall-info-recursive uninstall-local uninstall-recursive
  
  install-exec-hook:
 -	-$(RM) -f $(bindir)/mdecrypt

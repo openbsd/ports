@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2003/01/18 22:55:39 avsm Exp $
+--- src/Makefile.in.orig	Sat Jan 18 18:40:54 2003
++++ src/Makefile.in	Sat Jan 18 18:41:15 2003
+@@ -412,7 +412,7 @@ uninstall-am: uninstall-binPROGRAMS unin
+ 	uninstall-binPROGRAMS uninstall-info-am
+ 
+ gaaout.o: gaaout.c
+-	$(CC) -o gaaout.o -c gaaout.c -g $(INCLUDES) -I. -I..
++	$(CC) -o gaaout.o -c gaaout.c -g $(INCLUDES) -I. -I.. ${LIBMCRYPT_CFLAGS}
+ gaaout.c: mcrypt.gaa
+ 	gaa -o gaaout.c -i gaa.h mcrypt.gaa
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

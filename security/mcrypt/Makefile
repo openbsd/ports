@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2002/12/29 20:31:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2003/01/18 22:55:39 avsm Exp $
 
 COMMENT=		extendable encryption program that supports many ciphers
 
-DISTNAME=		mcrypt-2.5.7
+DISTNAME=		mcrypt-2.6.3
 CATEGORIES=     	security
 
 HOMEPAGE=		http://mcrypt.hellug.gr/mcrypt/
@@ -13,8 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://mcrypt.hellug.gr/pub/mcrypt/ \
-			ftp://argeas.cs-net.gr/pub/unix/mcrypt
+MASTER_SITES=		ftp://argeas.cs-net.gr/pub/unix/mcrypt/ \
+			ftp://mcrypt.hellug.gr/pub/mcrypt/ 
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
@@ -24,7 +24,7 @@ LIB_DEPENDS=		mcrypt.6::security/libmcrypt \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= 	--enable-static --with-catgets
+CONFIGURE_ARGS+= 	--enable-static --with-catgets 
 CONFIGURE_ENV+=  	CPPFLAGS="-I${LOCALBASE}/include" \
                 	LDFLAGS="-L${LOCALBASE}/lib -lintl -lltdl"
 
