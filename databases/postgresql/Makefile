@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2002/01/11 18:56:34 brad Exp $
+# $OpenBSD: Makefile,v 1.56 2002/03/25 03:18:20 brad Exp $
 
 COMMENT=	"PostgreSQL RDBMS"
 COMMENT-clients="PostgreSQL RDBMS client libraries and utilities"
@@ -103,6 +103,8 @@ post-patch:
 		${WRKSRC}/src/bin/pgaccess/main.tcl.orig \
 		> ${WRKSRC}/src/bin/pgaccess/main.tcl
 .endif
+
+INSTALL_TARGET=	install install-all-headers
 
 DOCS+=	${WRKSRC}/COPYRIGHT ${WRKSRC}/HISTORY \
 	${WRKSRC}/INSTALL ${WRKSRC}/README \
