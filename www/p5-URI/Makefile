@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/11 14:05:38 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/02/28 03:28:46 avsm Exp $
 
-DISTNAME=	URI-1.10
+DISTNAME=	URI-1.11
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 NEED_VERSION=	1.351

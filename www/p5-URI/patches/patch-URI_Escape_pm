@@ -1,0 +1,12 @@
+$OpenBSD: patch-URI_Escape_pm,v 1.1 2001/02/28 03:28:47 avsm Exp $
+--- URI/Escape.pm.orig	Wed Feb 28 02:57:56 2001
++++ URI/Escape.pm	Wed Feb 28 02:58:05 2001
+@@ -32,7 +32,7 @@ available to Internet users:
+ In addition any byte (octet) can be represented in a URI by an escape
+ sequence; a triplet consisting of the character "%" followed by two
+ hexadecimal digits.  Bytes can also be represented directly by a
+-character using the US-ASCII character for that octet (iff the
++character using the US-ASCII character for that octet (if the
+ character is part of C<uric>).
+ 
+ Some of the C<uric> characters are I<reserved> for use as delimiters

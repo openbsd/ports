@@ -1,0 +1,39 @@
+$OpenBSD: patch-URI_pm,v 1.1 2001/02/28 03:28:47 avsm Exp $
+--- URI.pm.orig	Wed Feb 28 02:53:01 2001
++++ URI.pm	Wed Feb 28 02:54:22 2001
+@@ -400,7 +400,7 @@ argument it will update the correspondin
+ returning the old value of the component.  Passing an undefined
+ argument will remove the component (if possible).  The description of
+ the various accessor methods will tell if the component is passed as
+-an escaped or an unescaped string.  Components that can be futher
++an escaped or an unescaped string.  Components that can be further
+ divided into sub-parts are usually passed escaped, as unescaping might
+ change its semantics.
+ 
+@@ -557,7 +557,7 @@ methods.
+ =item $uri->userinfo( [$new_userinfo] )
+ 
+ This method sets and returns the escaped userinfo part of the
+-authority componenent.
++authority component.
+ 
+ For some schemes this will be a user name and a password separated by
+ a colon.  This practice is not recommended. Embedding passwords in
+@@ -710,7 +710,7 @@ userinfo components: $uri->user and $uri
+ 
+ =item B<rlogin>:
+ 
+-An old speficication of the I<rlogin> URI scheme is found in RFC
++An old specification of the I<rlogin> URI scheme is found in RFC
+ 1738. C<URI> objects belonging to the rlogin scheme support the
+ common, generic and server methods.
+ 
+@@ -800,7 +800,7 @@ Copyright 1995 Martijn Koster.
+ This program is free software; you can redistribute it and/or modify
+ it under the same terms as Perl itself.
+ 
+-=head1 AUTHORS / ACKNOWLEDGMENTS
++=head1 AUTHORS / ACKNOWLEDGEMENTS
+ 
+ This module is based on the C<URI::URL> module, which in turn was
+ (distantly) based on the C<wwwurl.pl> code in the libwww-perl for
