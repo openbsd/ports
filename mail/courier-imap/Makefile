@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2003/02/17 16:14:34 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.33 2003/02/27 00:08:16 avsm Exp $ 
 
 COMMENT=	"imap server for maildir format mailboxes"
 COMMENT-pop3=	"pop3 server for maildir format mailboxes"
@@ -9,6 +9,9 @@ COMMENT-pgsql=	"pgsql authentication module for courier-imap"
 COURIERVER=	1.7.0
 DISTNAME=	courier-imap-${COURIERVER}
 FULLPKGNAME-pop3= courier-pop3-${COURIERVER}
+FULLPKGNAME-ldap= courier-ldap-${COURIERVER}
+FULLPKGNAME-mysql= courier-mysql-${COURIERVER}
+FULLPKGNAME-pgsql= courier-pgsql-${COURIERVER}
 
 CATEGORIES=	mail
 
