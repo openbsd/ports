@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2003/11/27 06:09:12 jolan Exp $
+# $OpenBSD: Makefile,v 1.106 2004/01/11 11:44:18 wilfried Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -115,10 +115,8 @@
 #    SUBDIR += uqmcontent
      SUBDIR += vectoroids
      SUBDIR += wanderer
-     SUBDIR += wmeyes
      SUBDIR += wmminichess
      SUBDIR += wmtictactoe
-     SUBDIR += wmtimebomb
      SUBDIR += xasteroids
      SUBDIR += xbat
      SUBDIR += xbattle
