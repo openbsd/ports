@@ -18,7 +18,7 @@
  	$(shared_env) ./tangle $(srcdir)/tangle.web $(srcdir)/tangle.ch
  	mv tangle.p tangleboot.p
  	date >stamp-tangle
-@@ -1062,3 +1062,11 @@
+@@ -1062,3 +1062,15 @@
  # Local variables:
  # page-delimiter: "^# \f"
  # End:
@@ -30,3 +30,7 @@
 +# sparc bug work-around
 +mfini.o: mfini.c
 +	$(compile) -O0 mfini.c
++
++# sparc bug work-around
++mpini.o: mpini.c
++	$(compile) -O0 mpini.c
