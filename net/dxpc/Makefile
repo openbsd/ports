@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/06/01 17:33:26 espie Exp $
+# $OpenBSD: Makefile,v 1.4 1999/06/01 17:38:19 espie Exp $
 
 DISTNAME=	dxpc-3.7.0
 CATEGORIES=	net X11
@@ -10,6 +10,7 @@ MASTER_SITES=	ftp://ftp.x.org/contrib/utilities/ \
 
 CXXFLAGS=	-O2 
 
+NEED_VERSION=1.47
 USE_EGXX=	yes
 
 # we need to make a proper check for accept
