@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/08/06 05:55:11 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/09/22 22:39:18 espie Exp $
 bin/lftp
 bin/lftpget
 lib/lftp/
 @man man/man1/lftp.1
 share/examples/lftp/
 share/examples/lftp/lftp.conf-sample
+@sample ${SYSCONFDIR}/lftp.conf
 share/lftp/
 share/lftp/import-ncftp
 share/lftp/import-netscape
