@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2000/07/08 20:25:40 brad Exp $
+# $OpenBSD: Makefile,v 1.45 2000/07/09 01:23:21 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.45
@@ -10,8 +10,6 @@ HOMEPAGE=	http://www.trolltech.com/products/qt/
 
 # for the qt image extension
 BUILD_DEPENDS=	${PREFIX}/include/jpeglib.h::graphics/jpeg
-LIB_DEPENDS=	png.1.::graphics/png \
-		jpeg.62.::graphics/jpeg
 
 MAINTAINER=	brad@openbsd.org
 
