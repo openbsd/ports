@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2000/11/18 13:51:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2000/11/19 20:21:12 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -7,6 +7,7 @@
 #    SUBDIR += SWIG
 #    SUBDIR += SpecTcl
 #    SUBDIR += asl
+     SUBDIR += autobook
      SUBDIR += autoconf
      SUBDIR += automake
 #    SUBDIR += bcc
