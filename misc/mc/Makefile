@@ -1,22 +1,24 @@
-# $OpenBSD: Makefile,v 1.9 2001/03/03 19:17:11 danh Exp $
+# $OpenBSD: Makefile,v 1.10 2001/03/05 06:36:08 fgsch Exp $
 
-DISTNAME=		mc-4.1.35
+DISTNAME=		mc-4.5.51
 CATEGORIES=		misc
-NEED_VERSION=		1.305
-MASTER_SITES=		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	mc
+NEED_VERSION=		1.355
+MASTER_SITES=		${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	stable/sources/mc
 
 MAINTAINER=		ports@openbsd.org
+
+HOMEPAGE=		http://www.gnome.org/mc/
+
+LIB_DEPENDS=		glib.1.2::devel/glib
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=			No
-
 CONFIGURE_STYLE=	gnu
 
-BROKEN=			"security is bad; auditing on the way"
+#BROKEN=			"final auditing. comming soon"
 
 .include <bsd.port.mk>
