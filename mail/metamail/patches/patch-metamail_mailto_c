@@ -1,6 +1,6 @@
-$OpenBSD: patch-metamail_mailto_c,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
---- metamail/mailto.c.orig	Wed Feb  9 13:30:26 1994
-+++ metamail/mailto.c	Wed Feb 20 14:09:51 2002
+$OpenBSD: patch-metamail_mailto_c,v 1.2 2004/05/06 22:45:08 pvalchev Exp $
+--- metamail/mailto.c.orig	1994-02-09 13:30:26.000000000 -0700
++++ metamail/mailto.c	2004-05-06 16:40:04.000000000 -0600
 @@ -195,7 +195,7 @@ tmpname() {
          sprintf(s, "%s/mm.XXXXXX", tmproot);
      }
@@ -128,7 +128,7 @@ $OpenBSD: patch-metamail_mailto_c,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
          if (!fpo) {
              printf("Cannot open temporary file, data insertion cancelled\n");
              return(NULL);
-@@ -1791,7 +1795,7 @@ CreateNewPart() {
+@@ -1791,12 +1795,13 @@ CreateNewPart() {
                  int ct;
                  printf("\nEnter the MIME Content-type value for the data from file %s\n    (type '?' for a list of locally-valid content-types): ", sdum);
                  fflush(stdout);
@@ -137,7 +137,13 @@ $OpenBSD: patch-metamail_mailto_c,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
                  if (index(LineBuf, '/')) {
                      char lc[100], *s, AnsBuf[100];
                      strcpy(lc, LineBuf);
-@@ -1809,7 +1813,7 @@ CreateNewPart() {
+                     for (s=lc; *s; ++s) {
+                         if (isupper(*s)) *s = tolower(*s);
++			if (*s == '\n') *s = '\0';
+                     }
+                     if (!strcmp(lc, "text/plain")) break;
+                     if (!strcmp(lc, "application/octet-stream")) break;
+@@ -1809,7 +1814,7 @@ CreateNewPart() {
                      }
                      if (mc) break;
                      printf("The MIME content-type '%s' is not listed in your local mailcap files,\nand may not be a valid MIME type.  Do you want to use it anyway [no] ? ", LineBuf);
@@ -146,7 +152,7 @@ $OpenBSD: patch-metamail_mailto_c,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
                      while (s && *s && isspace((unsigned char) *s)) ++s;
                      if (s && (*s == 'y' || *s == 'Y')) break;
                      continue;
-@@ -1866,7 +1870,8 @@ CreateNewPart() {
+@@ -1866,7 +1871,8 @@ CreateNewPart() {
          mp->content_type = mc->contenttype;
          mp->encoding_type_needed = WhichEncodingForFile(mp->filename, mp->content_type);
      } else {
@@ -156,7 +162,7 @@ $OpenBSD: patch-metamail_mailto_c,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
          FILE *fp, *fpout;
          int inheaders=1, bct=0;
  
-@@ -1936,7 +1941,7 @@ CreateNewPart() {
+@@ -1936,7 +1942,7 @@ CreateNewPart() {
              mp->encoding_type_needed = ENC_NONE;
          }
          newfilename = tmpname();
