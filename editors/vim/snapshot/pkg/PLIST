@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/04/21 14:38:52 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/05/06 00:18:24 lebel Exp $
 bin/ex
 bin/rview
 bin/rvim
@@ -69,6 +69,7 @@ share/vim/vim60${V}/doc/pattern.txt
 share/vim/vim60${V}/doc/pi_expl.txt
 share/vim/vim60${V}/doc/pi_gzip.txt
 share/vim/vim60${V}/doc/pi_netrw.txt
+share/vim/vim60${V}/doc/pi_spec.txt
 share/vim/vim60${V}/doc/quickfix.txt
 share/vim/vim60${V}/doc/quickref.txt
 share/vim/vim60${V}/doc/quotes.txt
@@ -122,6 +123,7 @@ share/vim/vim60${V}/ftplugin/make.vim
 share/vim/vim60${V}/ftplugin/man.vim
 share/vim/vim60${V}/ftplugin/python.vim
 share/vim/vim60${V}/ftplugin/ruby.vim
+share/vim/vim60${V}/ftplugin/spec.vim
 share/vim/vim60${V}/ftplugin/vim.vim
 share/vim/vim60${V}/ftplugin/xs.vim
 share/vim/vim60${V}/ftplugof.vim
@@ -262,12 +264,14 @@ share/vim/vim60${V}/syntax/focexec.vim
 share/vim/vim60${V}/syntax/form.vim
 share/vim/vim60${V}/syntax/forth.vim
 share/vim/vim60${V}/syntax/fortran.vim
+share/vim/vim60${V}/syntax/foxpro.vim
 share/vim/vim60${V}/syntax/fvwm.vim
 share/vim/vim60${V}/syntax/gdb.vim
 share/vim/vim60${V}/syntax/gdmo.vim
 share/vim/vim60${V}/syntax/gedcom.vim
 share/vim/vim60${V}/syntax/gnuplot.vim
 share/vim/vim60${V}/syntax/gp.vim
+share/vim/vim60${V}/syntax/groff.vim
 share/vim/vim60${V}/syntax/gsp.vim
 share/vim/vim60${V}/syntax/haskell.vim
 share/vim/vim60${V}/syntax/hb.vim
@@ -452,6 +456,7 @@ share/vim/vim60${V}/syntax/winbatch.vim
 share/vim/vim60${V}/syntax/wml.vim
 share/vim/vim60${V}/syntax/wsh.vim
 share/vim/vim60${V}/syntax/xdefaults.vim
+share/vim/vim60${V}/syntax/xkb.vim
 share/vim/vim60${V}/syntax/xmath.vim
 share/vim/vim60${V}/syntax/xml.vim
 share/vim/vim60${V}/syntax/xpm.vim
