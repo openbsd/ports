@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1999/11/08 14:07:07 dugsong Exp $
+# $OpenBSD: Makefile,v 1.14 2000/03/14 07:58:34 kevlo Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -7,6 +7,7 @@
      SUBDIR += axe
      SUBDIR += beav
 #    SUBDIR += bpatch
+     SUBDIR += bvi
 #    SUBDIR += e93
      SUBDIR += emacs
      SUBDIR += hexedit
