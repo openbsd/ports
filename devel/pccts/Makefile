@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/12 17:45:19 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/12 20:40:02 fgsch Exp $
 
 PKGNAME=	pccts-1.33
 CATEGORIES=	devel lang
@@ -8,7 +8,7 @@ DISTNAME=	pccts133mr
 
 MAINTAINER=	fgsch@openbsd.org
 
-LICENSE_TYPE=		Unknown
+LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -24,6 +24,6 @@ do-install:
 	cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} antlr dlg genmk sor \
 	  ${PREFIX}/bin 
 	${INSTALL_DATA_DIR} ${PREFIX}/include/pccts
-	cd ${WRKSRC}/h && ${INSTALL_DATA} *.h ${PREFIX}/include/pccts
+	${INSTALL_DATA} ${WRKSRC}/h/* ${PREFIX}/include/pccts
 
 .include <bsd.port.mk>
