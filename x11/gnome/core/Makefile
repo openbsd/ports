@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/02/15 19:18:52 nino Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/23 06:24:49 brad Exp $
 
 COMMENT=		"core GNOME system"
 
@@ -16,7 +16,8 @@ EXTRACT_SUFX=		.tar.bz2
 LIB_DEPENDS=		glade.4,glade-gnome::devel/libglade,gnome \
 			gnome.36,gnorba,zvt::x11/gnome/libs \
 			ghttp.1::www/libghttp \
-			gnomecanvaspixbuf,gdk_pixbuf::graphics/gdk-pixbuf,gnome \
+			gdk_pixbuf::graphics/gdk-pixbuf \
+			gnomecanvaspixbuf::graphics/gdk-pixbuf,-gnome \
 			capplet::x11/gnome/controlcenter
 
 BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/03/02 15:45:50 nino Exp $
+# $OpenBSD: Makefile,v 1.15 2002/03/23 06:24:49 brad Exp $
 
 COMMENT=		"GNOME control center"
 
@@ -13,7 +13,8 @@ MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	stable/sources/control-center
 EXTRACT_SUFX=		.tar.bz2
 
-LIB_DEPENDS=		gnomecanvaspixbuf,gdk_pixbuf::graphics/gdk-pixbuf,gnome \
+LIB_DEPENDS=		gdk_pixbuf::graphics/gdk-pixbuf \
+			gnomecanvaspixbuf::graphics/gdk-pixbuf,-gnome \
 			gnome.36,gnorba,gtkxmhtml::x11/gnome/libs \
 			gnomevfs.::x11/gnome/vfs
 
