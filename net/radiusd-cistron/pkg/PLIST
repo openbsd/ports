@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/09/18 13:01:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/10/11 15:04:46 danh Exp $
 @conflict radiusd-lucent-*
 bin/builddbm
 bin/radclient
@@ -36,26 +36,55 @@ share/doc/radiusd-cistron/README.simul
 share/doc/radiusd-cistron/README.tunnel
 share/doc/radiusd-cistron/README.usersfile
 share/examples/radiusd-cistron/
+@sample ${SYSCONFDIR}/raddb/
 share/examples/radiusd-cistron/clients
+@mode 0640
+@sample ${SYSCONFDIR}/raddb/clients
+@mode
 share/examples/radiusd-cistron/dictionary
+@sample ${SYSCONFDIR}/raddb/dictionary
 share/examples/radiusd-cistron/dictionary.ascend
+@sample ${SYSCONFDIR}/raddb/dictionary.ascend
 share/examples/radiusd-cistron/dictionary.bay
+@sample ${SYSCONFDIR}/raddb/dictionary.bay
 share/examples/radiusd-cistron/dictionary.cisco
+@sample ${SYSCONFDIR}/raddb/dictionary.cisco
 share/examples/radiusd-cistron/dictionary.cistron
+@sample ${SYSCONFDIR}/raddb/dictionary.cistron
 share/examples/radiusd-cistron/dictionary.compat
+@sample ${SYSCONFDIR}/raddb/dictionary.compat
 share/examples/radiusd-cistron/dictionary.erx
+@sample ${SYSCONFDIR}/raddb/dictionary.erx
 share/examples/radiusd-cistron/dictionary.livingston
+@sample ${SYSCONFDIR}/raddb/dictionary.livingston
 share/examples/radiusd-cistron/dictionary.redback
+@sample ${SYSCONFDIR}/raddb/dictionary.redback
 share/examples/radiusd-cistron/dictionary.shiva
+@sample ${SYSCONFDIR}/raddb/dictionary.shiva
 share/examples/radiusd-cistron/dictionary.standard
+@sample ${SYSCONFDIR}/raddb/dictionary.standard
 share/examples/radiusd-cistron/dictionary.tunnel
+@sample ${SYSCONFDIR}/raddb/dictionary.tunnel
 share/examples/radiusd-cistron/dictionary.usr
+@sample ${SYSCONFDIR}/raddb/dictionary.usr
 share/examples/radiusd-cistron/dictionary.versanet
+@sample ${SYSCONFDIR}/raddb/dictionary.versanet
 share/examples/radiusd-cistron/hints
+@sample ${SYSCONFDIR}/raddb/hints
 share/examples/radiusd-cistron/huntgroups
+@sample ${SYSCONFDIR}/raddb/huntgroups
 share/examples/radiusd-cistron/naslist
+@sample ${SYSCONFDIR}/raddb/naslist
 share/examples/radiusd-cistron/naspasswd
+@mode 0640
+@sample ${SYSCONFDIR}/raddb/naspasswd
+@mode
 share/examples/radiusd-cistron/realms
+@sample ${SYSCONFDIR}/raddb/realms
 share/examples/radiusd-cistron/users
-@extraunexec rm -rf ${SYSCONFDIR}/raddb
-@extraunexec rm -rf /var/log/radacct
+@mode 0640
+@sample ${SYSCONFDIR}/raddb/users
+@mode
+@sample /var/log/radacct/
+@extraunexec rm -rf ${SYSCONFDIR}/raddb/
+@extraunexec rm -rf /var/log/radacct/
