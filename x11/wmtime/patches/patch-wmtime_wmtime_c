@@ -1,0 +1,25 @@
+$OpenBSD: patch-wmtime_wmtime_c,v 1.1.1.1 2000/12/26 18:22:14 naddy Exp $
+--- wmtime/wmtime.c.orig	Tue Dec 26 19:05:24 2000
++++ wmtime/wmtime.c	Tue Dec 26 19:07:48 2000
+@@ -98,7 +98,7 @@ void printversion(void);
+ void wmtime_routine(int, char **);
+ void get_lang();
+ 
+-void main(int argc, char *argv[]) {
++int main(int argc, char *argv[]) {
+ 
+ 	int		i;
+ 	
+@@ -187,9 +187,9 @@ void wmtime_routine(int argc, char **arg
+ 	struct tm	*time_struct;
+ 	struct tm	old_time_struct;
+ 
+-	long		starttime;
+-	long		curtime;
+-	long		nexttime;
++	time_t		starttime;
++	time_t		curtime;
++	time_t		nexttime;
+ 
+ 	char		temp[128];
+ 	char		*p;
