@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/22 18:03:32 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/11/18 13:32:35 naddy Exp $
 
-DISTNAME=	root-tail-0.0.6
+DISTNAME=	root-tail-0.0.9
 CATEGORIES=	x11
-NEED_VERSION=	1.319
+NEED_VERSION=	1.340
 
 HOMEPAGE=	http://goof.com/pcg/marc/root-tail.html
 
@@ -13,7 +13,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	http://goof.com/pcg/marc/data/
+MASTER_SITES=	http://goof.com/pcg/marc/data/ \
+		ftp://goof.com/pub/pcg/marc/
 
 CONFIGURE_STYLE=	imake
 USE_X11=		Yes
