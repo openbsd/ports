@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.14 2001/02/22 19:28:14 danh Exp $
-@pkgcfl pgsql-clients-${VERSION}-*
+@comment $OpenBSD: PLIST-clients,v 1.1 2001/02/22 19:28:14 danh Exp $
+@pkgcfl pgsql-${VERSION}-*
 bin/createdb
 bin/createlang
 bin/createuser
@@ -7,20 +7,10 @@ bin/dropdb
 bin/droplang
 bin/dropuser
 bin/ecpg
-bin/initdb
-bin/initlocation
-bin/ipcclean
-bin/pg_ctl
 bin/pg_dump
 bin/pg_dumpall
 bin/pg_encoding
 bin/pg_id
-bin/pg_passwd
-bin/pg_upgrade
-bin/pg_version
-bin/pgwrap
-bin/postgres
-bin/postmaster
 bin/psql
 bin/vacuumdb
 include/pgsql/access/attnum.h
@@ -54,19 +44,10 @@ include/pgsql/utils/elog.h
 include/pgsql/utils/geo_decls.h
 include/pgsql/utils/mcxt.h
 include/pgsql/utils/palloc.h
-lib/pgsql/global1.bki.source
-lib/pgsql/global1.description
 lib/pgsql/libecpg.a
 lib/pgsql/libpgeasy.a
 lib/pgsql/libpq++.a
 lib/pgsql/libpq.a
-lib/pgsql/local1_template1.bki.source
-lib/pgsql/local1_template1.description
-lib/pgsql/pg_geqo.sample
-lib/pgsql/pg_hba.conf.sample
-lib/pgsql/pg_ident.conf.sample
-lib/pgsql/pg_options.sample
-lib/pgsql/postmaster.opts.default.sample
 man/man1/createdb.1
 man/man1/createlang.1
 man/man1/createuser.1
@@ -74,16 +55,8 @@ man/man1/dropdb.1
 man/man1/droplang.1
 man/man1/dropuser.1
 man/man1/ecpg.1
-man/man1/initdb.1
-man/man1/initlocation.1
-man/man1/ipcclean.1
-man/man1/pg_ctl.1
 man/man1/pg_dump.1
 man/man1/pg_dumpall.1
-man/man1/pg_passwd.1
-man/man1/pg_upgrade.1
-man/man1/postgres.1
-man/man1/postmaster.1
 man/man1/psql.1
 man/man1/vacuumdb.1
 man/manl/abort.l
@@ -166,6 +139,6 @@ share/doc/pgsql/register.txt
 @dirrm include/pgsql/libpq
 @dirrm include/pgsql/lib
 @dirrm include/pgsql/executor
-@dirrm include/pgsql/commands
-@dirrm include/pgsql/access
+@dirrm include/pgsql/commands 
+@dirrm include/pgsql/access 
 @dirrm include/pgsql

@@ -1,0 +1,23 @@
+--- Makefile.shlib.orig	Wed May 17 00:48:48 2000
++++ Makefile.shlib	Fri Nov 24 17:08:53 2000
+@@ -127,6 +127,20 @@
+   endif
+ endif
+ 
++ifeq ($(PORTNAME), openbsd)
++  ifdef BSD_SHLIB
++    install-shlib-dep	:= install-shlib
++    soname		:= lib$(NAME)$(DLSUFFIX).$(SO_MAJOR_VERSION)
++    shlib		:= lib$(NAME)$(DLSUFFIX).$(SO_MAJOR_VERSION).$(SO_MINOR_VERSION)
++    ifdef ELF_SYSTEM
++      LDFLAGS_SL	:= -x -shared --whole-archive -soname $(soname)
++    else
++      LDFLAGS_SL	:= -x -Bshareable -Bforcearchive
++    endif
++    CFLAGS		+= $(CFLAGS_SL)
++  endif
++endif
++
+ ifeq ($(PORTNAME), hpux)
+   install-shlib-dep	:= install-shlib
+ # HPUX doesn't believe in version numbers for shlibs

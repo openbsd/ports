@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.odbc.shared,v 1.1 2001/02/22 19:28:14 danh Exp $
+lib/pgsql/libpsqlodbc.so.0.26
+lib/pgsql/libpsqlodbc.so.0
+lib/pgsql/libpsqlodbc.so

@@ -1,0 +1,8 @@
+--- template/openbsd.orig	Fri Nov 24 17:12:21 2000
++++ template/openbsd	Fri Nov 24 17:11:34 2000
+@@ -6,4 +6,4 @@
+ USE_LOCALE:no
+ DLSUFFIX:.so
+ YFLAGS:-d
+-YACC:bison -y
++YACC:yacc

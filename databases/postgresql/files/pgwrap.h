@@ -1,4 +1,5 @@
-/*	$OpenBSD: pgwrap.h,v 1.1 1999/11/11 02:40:06 kevlo Exp $	*/
+/*	$OpenBSD: pgwrap.h,v 1.2 2001/02/22 19:28:13 danh Exp $	*/
+/*	$RuOBSD: pgwrap.h,v 1.2 2001/01/05 09:06:57 form Exp $	*/
 
 /*
  * Copyright (c) 1999 Oleg Safiullin
@@ -36,11 +37,11 @@
 #endif
 
 #ifndef PGBIN
-# define PGBIN "/usr/local/pgsql/bin"
+# define PGBIN "/usr/local/bin"
 #endif
 
 #ifndef PGLIB
-# define PGLIB "/usr/local/pgsql/lib"
+# define PGLIB "/usr/local/lib/pgsql"
 #endif
 
 #ifndef PGDATA
@@ -48,15 +49,11 @@
 #endif
 
 #ifndef PGPATH
-# define PGPATH PGBIN":/bin:/usr/bin"
+# define PGPATH (PGBIN ":" _PATH_DEFPATH)
 #endif
 
 #ifndef PGSHELL
-# define PGSHELL "/bin/sh"
-#endif
-
-#ifndef PGHOME
-# define PGHOME "/var/pgsql"
+# define PGSHELL _PATH_BSHELL
 #endif
 
 #endif	/* __PGWRAP_H__ */

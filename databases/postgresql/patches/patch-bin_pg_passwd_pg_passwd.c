@@ -1,4 +1,4 @@
-# $OpenBSD: patch-pg_passwd.c,v 1.1 2000/05/23 16:31:42 form Exp $
+# $OpenBSD: patch-bin_pg_passwd_pg_passwd.c,v 1.1 2001/02/22 19:28:13 danh Exp $
 
 --- bin/pg_passwd/pg_passwd.c.orig	Mon Apr 17 07:45:18 2000
 +++ bin/pg_passwd/pg_passwd.c	Sun May 14 00:09:40 2000

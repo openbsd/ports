@@ -1,0 +1,3 @@
+PostgreSQL RDBMS frontend applications for database administration
+and maintenance.
+Package includes psql - interactive SQL database query tool.

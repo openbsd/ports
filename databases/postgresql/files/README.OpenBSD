@@ -16,35 +16,29 @@ required:
 	# pgwrap initdb
 
 If you are upgrading PostgreSQL you don't need these steps. Read
-@PREFIX@/share/doc/pgsql/INSTALL for more information on how to
+/usr/local/share/doc/pgsql/INSTALL for more information on how to
 upgrade your existing databases. See also `Special notes for OpenBSD
 port' below.
 
 If you wish to start PostgreSQL automatically during system startup,
 add the following lines to /etc/rc.local:
 
-if [ -x @PREFIX@/bin/pgwrap -a -x @PREFIX@/pgsql/bin/postmaster ]; \
+if [ -x /usr/local/bin/pgwrap -a -x /usr/local/bin/postmaster ]; \
 	then
-	@PREFIX@/bin/pgwrap -o /var/pgsql/log \
+	/usr/local/bin/pgwrap -o /var/pgsql/log \
 		pg_ctl -w -o "-i -S -o -F" start
 	echo -n ' pgsql'
 fi
 
-Don't forget to add @PREFIX@/pgsql/lib directory to shared libraries path in
+Don't forget to add /usr/local/lib/pgsql directory to shared libraries path in
 /etc/rc.conf (if your architecture supports shared libraries):
 
-shlib_dirs="@PREFIX@/pgsql/lib"
+shlib_dirs="/usr/local/lib/pgsql"
 
-Add @PREFIX@/pgsql/man to ${MANPATH} if you wish to use PostgreSQL
-manual pages or update your /etc/man.conf:
+Be shure to update your /etc/man.conf to read SQL functions manual pages:
 
 	#PostgreSQL man pages
-	_whatdb		/usr/local/pgsql/man/whatis.db
-	_subdir		manl
 	_build		.l	/usr/bin/nroff -man %s
-	_default	/usr/local/pgsql/man/
-	pgsql		/usr/local/pgsql/man/
-	1		/usr/local/pgsql/man/man1
 	l		/usr/local/pgsql/man/manl
 
 
@@ -69,15 +63,15 @@ The `pgwrap' automatically sets up proper environment and permissions
 for PostgreSQL programs. The syntax for `pgwrap' program is:
 
 pgwrap [-n] [-o file] cmd [arg ...]
-	-n	- Do not add @PREFIX@/pgsql/bin prefix to cmd.
-	-o file	- Redirect stdout & atderr to file (write permissions
-		  for `pgsql' user or group required).
+	-n	- Do not add PostgreSQL binary prefix to cmd.
+	-o file	- Redirect stdout & stderr to file (write permissions
+		  for PostgreSQL user required).
 
 `pgwrap' automatically sets up the following environment variables:
 
 System variables (these variables are always set to the following values):
 
-	PATH=@PREFIX@/pgsql/bin:/bin:/usr/bin
+	PATH=/usr/local/bin:/bin:/usr/bin
 	USER=pgsql
 	LOGNAME=pgsql
 	SHELL=/bin/sh
@@ -86,9 +80,8 @@ System variables (these variables are always set to the following values):
 PostgreSQL variables (these variables are set to the following values,
 unless already set):
 
-	PGLIB=@PREFIX@/pgsql/lib
+	PGLIB=/usr/local/lib/pgsql
 	PGDATA=/var/pgsql/data
 
 You must have root privilegies to run `pgwrap'.
 
-$OpenBSD: README.OpenBSD.in,v 1.3 2000/05/23 16:31:41 form Exp $

@@ -1,0 +1,11 @@
+--- configure.orig	Fri Nov 24 16:34:50 2000
++++ configure	Fri Nov 24 16:35:43 2000
+@@ -635,7 +635,7 @@
+  freebsd1*|freebsd2*) os=freebsd need_tas=no ;;
+  freebsd*) os=freebsd need_tas=no elf=yes ;;
+   netbsd*) os=netbsd need_tas=no ;;
+-  openbsd*) os=bsd need_tas=no ;;
++ openbsd*) os=openbsd need_tas=no ;;
+     dgux*) os=dgux need_tas=no ;;
+      aix*) os=aix need_tas=no ;;
+ nextstep*) os=nextstep need_tas=no ;;

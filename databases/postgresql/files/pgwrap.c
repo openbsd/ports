@@ -1,4 +1,5 @@
-/*	$OpenBSD: pgwrap.c,v 1.2 1999/12/09 02:57:07 form Exp $	*/
+/*	$OpenBSD: pgwrap.c,v 1.3 2001/02/22 19:28:12 danh Exp $	*/
+/*	$RuOBSD: pgwrap.c,v 1.2 2001/01/05 09:06:56 form Exp $	*/
 
 /*
  * Copyright (c) 1999 Oleg Safiullin
@@ -36,33 +37,28 @@
  *
  * OPTIONS:
  * 	-n	- Do not add PostgreSQL binary prefix to cmd.
- *	-o file	- Redirect stdout & stderr to file (write permissions
- *		  for PostgreSQL pseudo-user or group required).
+ *	-o file	- Redirect stdout & stderr to file (write permissions for
+ *		  PostgreSQL user required).
  */
 
 #include <sys/types.h>
-#include <pwd.h>
-#include <unistd.h>
+#include <err.h>
 #include <libgen.h>
+#include <limits.h>
+#include <paths.h>
+#include <pwd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <err.h>
-#include <limits.h>
 #include <string.h>
+#include <unistd.h>
 
 #include "pgwrap.h"
 
 extern char **environ;
 
-void usage(void);
-int main(int, char **);
-
-void
-usage(void)
-{
-	fprintf(stderr, "usage: pgwrap [-n] [-o file] cmd [arg ...]\n");
-	exit(1);
-}
+int main __P((int, char **));
+void usage __P((void));
+int setupenv __P((struct passwd *));
 
 int
 main(argc, argv)
@@ -70,8 +66,11 @@ main(argc, argv)
 	char **argv;
 {
 	struct passwd *pw;
-	char prog[_POSIX_PATH_MAX], *file = NULL;
+	char prog[PATH_MAX], *file = NULL;
 	int ch, nflag = 0;
+
+	if (getuid())
+		errx(1, "must be root to run this program");
 
 	while ((ch = getopt(argc, argv, "no:")) != -1) {
 		switch (ch) {
@@ -81,7 +80,6 @@ main(argc, argv)
 		case 'o':
 			file = optarg;
 			break;
-		case '?':
 		default:
 			usage();
 			break;
@@ -91,36 +89,61 @@ main(argc, argv)
 		usage();
 	argv += optind;
 
-	if (getuid())
-		errx(1, "must be root to run this program");
 	if ((pw = getpwnam(PGUSER)) == NULL)
 		errx(1, "%s: no such user", PGUSER);
 
-	(void) setgroups(0, NULL);
-	(void) setgid(pw->pw_gid);
-	(void) setuid(pw->pw_uid);
+	if (initgroups(pw->pw_name, pw->pw_gid) < 0)
+		err(1, "initgroups");
+	if (setgid(pw->pw_gid) < 0)
+		err(1, "setgid");
+	if (setuid(pw->pw_uid) < 0)
+		err(1, "setuid");
 
-	if (file) {
+	if (setupenv(pw))
+		errx(1, "can't initizlize environment");
+
+	if (file != NULL) {
 		if (freopen(file, "w", stdout) == NULL)
 			err(1, "can't open `%s'", file);
 		(void) freopen(file, "w", stderr);
 	}
 
-	if (setenv("PGLIB", PGLIB, 0) < 0 || setenv("PGDATA", PGDATA, 0) < 0
-		|| setenv("PATH", PGPATH, 1) < 0
-		|| setenv("SHELL", PGSHELL, 1) < 0
-		|| setenv("USER", PGUSER, 1) < 0
-		|| setenv("LOGNAME", PGUSER, 1) < 0
-		|| setenv("HOME", PGHOME, 1) < 0)
-			err(1, "can't set environment");
-
 	if (!nflag) {
 		(void) snprintf(prog, sizeof(prog), "%s/%s", PGBIN, *argv);
 		*argv = prog;
+		(void) execve(*argv, argv, environ);
+		err(1, "execve");
+	} else {
+		(void) execvp(*argv, argv);
+		err(1, "execvp");
 	}
-	(void) execve(*argv, argv, environ);
-	err(1, "can't execute `%s'", *argv);
 
 	/* not reached */
 	return (0);
+}
+
+void
+usage(void)
+{
+	fprintf(stderr,
+	    "usage: pgwrap [-n] [-o file] cmd [arg ...]\n");
+	exit(1);
+}
+
+int
+setupenv(pw)
+	struct passwd *pw;
+{
+	int rval = 0;
+
+	rval += setenv("PGLIB", PGLIB, 0);
+	rval += setenv("PGDATA", PGDATA, 0);
+
+	rval += setenv("PATH", PGPATH, 1);
+	rval += setenv("SHELL", PGSHELL, 1);
+	rval += setenv("USER", pw->pw_name, 1);
+	rval += setenv("LOGNAME", pw->pw_name, 1);
+	rval += setenv("HOME", pw->pw_dir, 1);
+
+	return (rval);
 }

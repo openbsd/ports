@@ -1,0 +1,35 @@
+--- bin/pgaccess/Makefile.orig	Thu Dec 16 04:25:10 1999
++++ bin/pgaccess/Makefile	Fri Jan 12 22:17:29 2001
+@@ -17,21 +17,21 @@
+ 
+ pgaccess: pgaccess.sh
+ 	sed -e 's;__wish__;$(WISH);' pgaccess.sh |	\
+-	sed -e 's;__POSTGRESDIR__;$(POSTGRESDIR);' 	\
++	sed -e 's;__POSTGRESDIR__;$(PGACCESS_HOME);' 	\
+ 			> pgaccess
+ 
+ install:
+ 	$(INSTALL) $(INSTL_EXE_OPTS) pgaccess $(BINDIR)/pgaccess
+-	-@if [ ! -d $(POSTGRESDIR)/pgaccess ]; then mkdir $(POSTGRESDIR)/pgaccess; fi
+-	$(INSTALL) $(INSTL_EXE_OPTS) main.tcl $(POSTGRESDIR)/pgaccess
+-	-@if [ ! -d $(POSTGRESDIR)/pgaccess/lib ]; then mkdir $(POSTGRESDIR)/pgaccess/lib; fi
+-	$(INSTALL) $(INSTLOPTS) lib/*.tcl $(POSTGRESDIR)/pgaccess/lib
+-	-@if [ ! -d $(POSTGRESDIR)/pgaccess/lib/help ]; then mkdir $(POSTGRESDIR)/pgaccess/lib/help; fi
+-	$(INSTALL) $(INSTLOPTS) lib/help/*.hlp $(POSTGRESDIR)/pgaccess/lib/help
+-	-@if [ ! -d $(POSTGRESDIR)/pgaccess/lib/languages ]; then mkdir $(POSTGRESDIR)/pgaccess/lib/languages; fi
+-	$(INSTALL) $(INSTLOPTS) lib/languages/[a-z]* $(POSTGRESDIR)/pgaccess/lib/languages
+-	-@if [ ! -d $(POSTGRESDIR)/pgaccess/images ]; then mkdir $(POSTGRESDIR)/pgaccess/images; fi
+-	$(INSTALL) $(INSTLOPTS) images/*.gif $(POSTGRESDIR)/pgaccess/images
++	-@if [ ! -d $(PGACCESS_HOME)/pgaccess ]; then mkdir $(PGACCESS_HOME)/pgaccess; fi
++	$(INSTALL) $(INSTL_EXE_OPTS) main.tcl $(PGACCESS_HOME)/pgaccess
++	-@if [ ! -d $(PGACCESS_HOME)/pgaccess/lib ]; then mkdir $(PGACCESS_HOME)/pgaccess/lib; fi
++	$(INSTALL) $(INSTLOPTS) lib/*.tcl $(PGACCESS_HOME)/pgaccess/lib
++	-@if [ ! -d $(PGACCESS_HOME)/pgaccess/lib/help ]; then mkdir $(PGACCESS_HOME)/pgaccess/lib/help; fi
++	$(INSTALL) $(INSTLOPTS) lib/help/*.hlp $(PGACCESS_HOME)/pgaccess/lib/help
++	-@if [ ! -d $(PGACCESS_HOME)/pgaccess/lib/languages ]; then mkdir $(PGACCESS_HOME)/pgaccess/lib/languages; fi
++	$(INSTALL) $(INSTLOPTS) lib/languages/[a-z]* $(PGACCESS_HOME)/pgaccess/lib/languages
++	-@if [ ! -d $(PGACCESS_HOME)/pgaccess/images ]; then mkdir $(PGACCESS_HOME)/pgaccess/images; fi
++	$(INSTALL) $(INSTLOPTS) images/*.gif $(PGACCESS_HOME)/pgaccess/images
+ 
+ clean:
+ 	rm -f pgaccess

@@ -1,0 +1,31 @@
+--- Makefile.global.in.orig	Sun Jan 28 14:37:57 2001
++++ Makefile.global.in	Sun Jan 28 14:40:59 2001
+@@ -72,11 +72,11 @@
+ # look for it if you wish to use the -lpq convention.  Otherwise you
+ # can just put the absolute pathname to the library at the end of your
+ # command line.
+-LIBDIR= $(POSTGRESDIR)/lib
++LIBDIR= $(POSTGRESDIR)/lib/pgsql
+ 
+ # Where the database templates are stored
+ #
+-TEMPLATEDIR= $(POSTGRESDIR)/lib
++TEMPLATEDIR= $(POSTGRESDIR)/lib/pgsql
+ 
+ # This is the directory where IPC utilities ipcs and ipcrm are located
+ #
+@@ -90,12 +90,12 @@
+ POSTDOCDIR= $(POSTGRESDIR)/doc
+ 
+ # Where the header files necessary to build frontend programs get installed.
+-HEADERDIR= $(POSTGRESDIR)/include
++HEADERDIR= $(POSTGRESDIR)/include/pgsql
+ 
+ # Where the ODBC installation-wide configuration file gets installed.
+ # This needs to be a client-side readable area, so can't go in $PGDATA.
+ # - thomas 1998-10-05
+-ODBCINST= $(POSTGRESDIR)
++ODBCINST= $(POSTGRESDIR)/lib/pgsql
+ 
+ ##############################################################################
+ #
