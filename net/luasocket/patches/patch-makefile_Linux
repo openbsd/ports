@@ -1,0 +1,49 @@
+$OpenBSD: patch-makefile_Linux,v 1.1.1.1 2004/12/16 13:38:12 pedro Exp $
+--- makefile.Linux.orig	Mon Jul 26 17:17:35 2004
++++ makefile.Linux	Tue Aug 10 21:16:32 2004
+@@ -3,28 +3,13 @@ MV=1.0
+ 
+ LUAC=luac
+ BIN2C=bin2c
+-CC=gcc
+-OPT=-O2  
+-DEF = -DLUASOCKET_DEBUG #-Dsocklen_t=int
+ 
+-LOBJS= \
+-	luasocket.o \
+-	timeout.o \
+-	buffer.o \
+-	io.o \
+-	auxiliar.o \
+-	except.o \
+-	select.o \
+-	options.o \
+-	inet.o \
+-	tcp.o \
+-	udp.o \
+-	usocket.o 
++LOBJS=	luasocket.o timeout.o buffer.o io.o auxiliar.o except.o select.o\
++	options.o inet.o tcp.o udp.o usocket.o 
+ 
+-MOBJS= \
+-	mime.o 
++MOBJS=	mime.o 
+ 
+-CFLAGS=-I../../include $(PROF) $(OPT) $(DBG) $(DEF) -pedantic -W -Wall 
++CFLAGS+= -I$(LOCALBASE)/include
+ 
+ LDYN=luasocket.so.$(LV)
+ 
+@@ -33,10 +18,10 @@ MDYN=mime.so.$(MV)
+ all: $(LDYN) $(MDYN)
+ 
+ $(LDYN): $(LOBJS)
+-	gcc -shared -o $(LDYN) $(LOBJS)
++	$(CC) -shared -o $(LDYN) $(LOBJS)
+ 
+ $(MDYN): $(MOBJS)
+-	gcc -shared -o $(MDYN) $(MOBJS)
++	$(CC) -shared -o $(MDYN) $(MOBJS)
+ 
+ # dependencies
+ auxiliar.o: auxiliar.c auxiliar.h

@@ -1,0 +1,13 @@
+$OpenBSD: patch-etc_lua_lua,v 1.1.1.1 2004/12/16 13:38:12 pedro Exp $
+--- etc/lua.lua.orig	Mon Jul 26 17:17:36 2004
++++ etc/lua.lua	Fri Oct 15 00:17:54 2004
+@@ -7,6 +7,9 @@ local function find(lib)
+       f, e1 = loadfile(n)
+       if f then break end
+     end
++    if not f then
++      e1 = string.format("could not load package `%s' from path %s", lib, path)
++    end
+     return f, e1
+ end
+ 
