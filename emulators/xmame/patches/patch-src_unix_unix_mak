@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_unix_unix_mak,v 1.5 2002/02/05 15:27:17 naddy Exp $
---- src/unix/unix.mak.orig	Wed Jan 16 00:12:17 2002
-+++ src/unix/unix.mak	Wed Jan 16 00:16:57 2002
-@@ -174,7 +174,7 @@
+$OpenBSD: patch-src_unix_unix_mak,v 1.6 2002/02/06 02:05:08 naddy Exp $
+--- src/unix/unix.mak.orig	Mon Dec 31 09:19:03 2001
++++ src/unix/unix.mak	Wed Feb  6 02:18:56 2002
+@@ -153,7 +153,7 @@ MY_CFLAGS = $(CFLAGS) $(IL) $(CFLAGS.$(M
+ 	-Dstricmp=strcasecmp -Dstrnicmp=strncasecmp \
+ 	-DPI=M_PI -DUNIX -DSIGNED_SAMPLES \
+ 	$(COREDEFS) $(SOUNDDEFS) $(CPUDEFS) $(ASMDEFS) \
+-	$(INCLUDES) $(INCLUDE_PATH)
++	$(INCLUDE_PATH) $(INCLUDES) 
+ 
+ MY_LIBS = $(LIBS) $(LIBS.$(ARCH)) $(LIBS.$(DISPLAY_METHOD)) -lz
+ 
+@@ -174,7 +174,7 @@ endif
  # CONFIG are the cflags used to build the unix tree, this is were most defines
  # go
  CONFIG = $(MY_CFLAGS) $(CFLAGS.$(DISPLAY_METHOD)) -DNAME='\"x$(TARGET)\"' \
@@ -10,7 +19,7 @@ $OpenBSD: patch-src_unix_unix_mak,v 1.5 2002/02/05 15:27:17 naddy Exp $
  
  ifdef HAVE_GETTIMEOFDAY
  CONFIG += -DHAVE_GETTIMEOFDAY
-@@ -210,7 +210,7 @@
+@@ -210,7 +210,7 @@ CONFIG += -DLIN_FM_TOWNS
  endif
  ifdef JOY_USB
  CONFIG += -DUSB_JOYSTICK
@@ -19,7 +28,7 @@ $OpenBSD: patch-src_unix_unix_mak,v 1.5 2002/02/05 15:27:17 naddy Exp $
  endif
  
  ifdef EFENCE
-@@ -363,12 +363,12 @@
+@@ -363,12 +363,12 @@ install-man:
  doinstall:
  	@echo installing binaries under $(BINDIR)...
  	-$(INSTALL_PROGRAM_DIR) $(BINDIR)
