@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/07/30 10:27:46 shell Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/01/18 00:32:08 naddy Exp $
 ${P5SITE}/Bundle/Net/LDAP.pm
 ${P5SITE}/LWP/Protocol/ldap.pm
 ${P5SITE}/Net/LDAP.pm
@@ -37,6 +37,7 @@ ${P5SITE}/Net/LDAP/Search.pod
 ${P5SITE}/Net/LDAP/Security.pod
 ${P5SITE}/Net/LDAP/Util.pm
 ${P5SITE}/Net/LDAPS.pm
+@comment ${P5ARCH}/auto/perl-ldap/.packlist
 man/man3p/Bundle::Net::LDAP.3p
 man/man3p/Net::LDAP.3p
 man/man3p/Net::LDAP::Constant.3p
@@ -62,6 +63,12 @@ man/man3p/Net::LDAP::Search.3p
 man/man3p/Net::LDAP::Security.3p
 man/man3p/Net::LDAP::Util.3p
 man/man3p/Net::LDAPS.3p
+@comment @dirrm ${P5ARCH}/auto/perl-ldap
 @dirrm ${P5SITE}/Net/LDAP/Extension
 @dirrm ${P5SITE}/Net/LDAP/Control
 @dirrm ${P5SITE}/Net/LDAP
+@dirrm ${P5SITE}/Net
+@dirrm ${P5SITE}/LWP/Protocol
+@dirrm ${P5SITE}/LWP
+@dirrm ${P5SITE}/Bundle/Net
+@dirrm ${P5SITE}/Bundle

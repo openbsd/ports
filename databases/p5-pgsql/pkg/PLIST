@@ -1,5 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1 2003/05/21 13:24:09 markus Exp $
-${P5ARCH}/auto/Pg/Pg.so
-${P5ARCH}/auto/Pg/Pg.bs
+@comment $OpenBSD: PLIST,v 1.2 2004/01/18 00:32:08 naddy Exp $
 ${P5ARCH}/Pg.pm
+@comment ${P5ARCH}/auto/Pg/.packlist
+${P5ARCH}/auto/Pg/Pg.bs
+${P5ARCH}/auto/Pg/Pg.so
+${P5ARCH}/auto/Pg/autosplit.ix
+man/man3p/Pg.3p
+@dirrm man/man3p
 @dirrm ${P5ARCH}/auto/Pg
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}
