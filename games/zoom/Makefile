@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2004/03/10 17:32:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/04/09 21:15:12 naddy Exp $
 
 COMMENT=		"Z-code interpreter for X11"
 
-DISTNAME=		zoom-0.9.99beta3
+DISTNAME=		zoom-1.0.1
 CATEGORIES=     	games
 HOMEPAGE=		http://www.logicalshift.demon.co.uk/unix/zoom/
 
@@ -17,7 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}
 
 USE_X11=		Yes
+USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
+VMEM_WARNING=		Yes
 
 NO_REGRESS=		Yes
 
@@ -25,7 +27,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zoom
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/zoom/README
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/zoom
-	${INSTALL_DATA} ${WRKSRC}/zoomrc \
+	${INSTALL_DATA} ${WRKSRC}/src/zoomrc \
 		${PREFIX}/share/examples/zoom/dot.zoomrc
 
 .include <bsd.port.mk>
