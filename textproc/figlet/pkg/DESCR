@@ -1,4 +1,0 @@
-Figlet prints its input using large characters (called "FIGcharacters")
-made up of ordinary screen characters (called "sub-characters"). Figlet
-can print in a variety of fonts, both left-to-right and right-to-left, with
-adjacent FIGcharacter kerned and "smushed" together in various ways.
