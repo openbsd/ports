@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2000/06/20 20:26:45 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2000/07/07 04:28:32 jasoni Exp $
 
-DISTNAME=	vim-5.6
+DISTNAME=	vim-5.7
 CATEGORIES=	editors
 NEED_VERSION=	1.301
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
@@ -15,9 +15,8 @@ DIST_SUBDIR=	vim
 
 HOMEPAGE=	http://www.vim.org
 
-.for p in 01 02 03 05 06 10 11 12 13 14 15 16 17 18 19 21 22 25 27 28 29 30 \
-	  31 32 33 35 36 37 38 39 40 41 42 46 47
-PATCHFILES+=	5.6.0${p}:0
+.for p in 01 02
+PATCHFILES+=	5.7.0${p}:0
 .endfor
 .if defined(PATCH_DEBUG)
 PATCH_DIST_ARGS=-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}

@@ -1,4 +1,4 @@
-@comment $OpenBSDS$
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2000/07/07 04:28:33 jasoni Exp $
 bin/gview
 bin/gvim
 bin/rgview
