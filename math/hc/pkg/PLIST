@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/12/17 07:06:43 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/03 02:47:48 espie Exp $
+@pkgcfl zh-hc-*
 bin/hc
 man/man1/hc.1
