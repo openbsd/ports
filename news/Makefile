@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/05 21:28:10 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/06/09 05:53:07 jsyn Exp $
 # $FreeBSD: Makefile,v 1.32 1997/11/16 04:58:09 fenner Exp $
 #
 
@@ -7,9 +7,9 @@
      SUBDIR += dejasearch
 #    SUBDIR += diablo
 #    SUBDIR += dnews
+#    SUBDIR += ifmail
 #    SUBDIR += inn
 #    SUBDIR += knews
-#    SUBDIR += ifmail
      SUBDIR += leafnode
      SUBDIR += linleech
      SUBDIR += newsfetch
