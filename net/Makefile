@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.278 2003/06/06 22:11:31 jolan Exp $
+# $OpenBSD: Makefile,v 1.279 2003/06/14 21:08:09 sturm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -122,6 +122,7 @@
      SUBDIR += nsping
      SUBDIR += ntop
      SUBDIR += ntp
+     SUBDIR += nylon
      SUBDIR += oidentd
      SUBDIR += oinkmaster
      SUBDIR += openh323
