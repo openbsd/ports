@@ -3,13 +3,13 @@
 # Date created: 	10 Nov 1997
 # Whom: 		ejovi  
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:28 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1997/12/31 11:34:26 tacho Exp $
 #
 
-DISTNAME=	exim-1.71
+DISTNAME=	exim-1.82
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/
-DISTFILES=	exim-1.71.tar.gz exim-texinfo-1.71.tar.gz
+DISTFILES=	exim-1.82.tar.gz exim-texinfo-1.80.tar.gz
 
 MAINTAINER=	joey@OpenBSD.ORG
 

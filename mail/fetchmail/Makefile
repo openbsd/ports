@@ -3,10 +3,10 @@
 # Date created:		10 Nov 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.3 1997/11/24 03:27:38 angelos Exp $
+# $OpenBSD: Makefile,v 1.4 1997/12/31 11:34:28 tacho Exp $
 #
 
-DISTNAME=       fetchmail-4.3.0
+DISTNAME=       fetchmail-4.3.3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/fetchmail/
 
@@ -22,9 +22,6 @@ CONFIGURE_ARGS += --with-kerberos=/usr/include/kerberosIV
 .endif
 
 FDOC=   ${PREFIX}/share/doc/fetchmail
-
-post-patch:
-	@${CP} -f  /usr/include/md5.h ${WRKSRC}
 
 post-install:
 	install -d -m 555 -o ${DOCOWN} -g ${DOCGRP} ${FDOC}
