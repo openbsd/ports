@@ -3,6 +3,7 @@ lib/libtcl80.a
 include/tcl8.0/tcl.h
 include/tcl8.0/generic/tcl.h
 include/tcl8.0/generic/tclCompile.h
+include/tcl8.0/generic/tclInitScript.h
 include/tcl8.0/generic/tclInt.h
 include/tcl8.0/generic/tclMath.h
 include/tcl8.0/generic/tclPort.h
@@ -424,9 +425,7 @@ man/mann/upvar.n
 man/mann/variable.n
 man/mann/vwait.n
 man/mann/while.n
-man/mann/Base.n
 man/mann/Http.n
-man/mann/Safe.n
 man/mann/pkg_mkIndex.n
 @dirrm include/tcl8.0/generic
 @dirrm include/tcl8.0/unix
