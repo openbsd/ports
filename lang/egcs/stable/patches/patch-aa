@@ -1,0 +1,15 @@
+--- gcc/configure.in.orig	Fri Aug 28 02:19:04 1998
++++ gcc/configure.in	Sat Sep 26 02:40:34 1998
+@@ -868,6 +868,12 @@
+ 		fixincludes=fixinc.wrap
+ 		tmake_file=t-netbsd
+ 		;;
++	i[[34567]]86-*-openbsd*)
++		tm_file=i386/openbsd.h
++		# On OpenBSD, the headers are already okay, except for math.h.
++		fixincludes=fixinc.wrap
++		tmake_file=t-openbsd
++		;;
+ 	i[[34567]]86-*-coff*)
+ 		tm_file=i386/i386-coff.h
+ 		tmake_file=i386/t-i386bare

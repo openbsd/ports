@@ -1,0 +1,5 @@
+This port is used for people who need egcs, the experimental gcc compiler
+developped by cygnus.  egcs fixes lots of bugs compared to gcc 2.8.1.
+In exchange, it adds some new ones.  It's pretty useful for C++ development.
+
+For more details, refer to to http://egcs.cygnus.org/
