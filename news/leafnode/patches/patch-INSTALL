@@ -1,9 +1,9 @@
-$OpenBSD: patch-INSTALL,v 1.3 2003/01/21 16:58:11 marcm Exp $
---- INSTALL.orig	Tue Nov 26 04:06:05 2002
-+++ INSTALL	Sun Dec 22 22:43:22 2002
+$OpenBSD: patch-INSTALL,v 1.4 2003/05/21 06:51:43 marcm Exp $
+--- INSTALL.orig	Thu Mar 13 04:31:32 2003
++++ INSTALL	Fri May 16 09:45:41 2003
 @@ -172,11 +172,10 @@
-     for incoming NNTP connections.  Here is my inetd.conf line (insert
-     it at the leftmost column, without leading spaces!):
+     incoming NNTP connections.  Here is my inetd.conf line (insert it at the
+     leftmost column, without leading spaces!):
  
 -    nntp stream tcp nowait news /usr/sbin/tcpd /usr/local/sbin/leafnode
 +    nntp stream tcp nowait news /usr/libexec/tcpd /usr/local/sbin/leafnode
@@ -13,5 +13,5 @@ $OpenBSD: patch-INSTALL,v 1.3 2003/01/21 16:58:11 marcm Exp $
 -    /usr/sbin/tcpd, fetch the tcp_wrappers package and install it.
 +    /etc/hosts.allow and /etc/hosts.deny screening.
  
-     Using leafnode without tcpd is not supported and opens your computer
-     to abuse (even happens on modem lines that are only connected during
+     Using leafnode without tcpd is not supported and opens your computer to
+     abuse (even happens on modem lines that are only connected during the

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.26 2003/03/30 22:23:28 rohee Exp $
+# $OpenBSD: Makefile,v 1.27 2003/05/21 06:51:43 marcm Exp $
 
 COMMENT=		"USENET software package designed for small sites"
 
-VERSION=		1.9.36
+VERSION=		1.9.40
 DISTNAME=		leafnode-${VERSION}.rel
 PKGNAME=		leafnode-${VERSION}
 CATEGORIES=		news
 
 HOMEPAGE=		http://www.leafnode.org/
 
-MAINTAINER=		Bruno Rohée <rohee@openbsd.org>
+MAINTAINER=		Bruno Rohee <rohee@openbsd.org>
 
 # MIT/BSD like
 PERMIT_PACKAGE_CDROM=	Yes
