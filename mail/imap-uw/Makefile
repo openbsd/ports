@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2002/06/24 08:31:33 jakob Exp $
+# $OpenBSD: Makefile,v 1.26 2002/07/07 15:22:24 jakob Exp $
 
 COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 
@@ -34,11 +34,19 @@ MAKE_FLAGS+=	SSLTYPE="nopwd"
 MAKE_FLAGS+=	SSLTYPE="unix"
 .endif
 
+DOCDIR=		share/doc/imap-uw
+DOCFILES=	FAQ commndmt.txt drivers.txt formats.txt imaprc.txt \
+		md5.txt naming.txt
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/imapd/imapd ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop2d ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop3d ${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/src/imapd/imapd.8c ${PREFIX}/man/man8/imapd.8
 	${INSTALL_MAN} ${WRKSRC}/src/ipopd/ipopd.8c ${PREFIX}/man/man8/ipopd.8
+	${INSTALL_DATA_DIR} ${PREFIX}/${DOCDIR}
+.for f in ${DOCFILES}
+	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/${DOCDIR}
+.endfor
 
 .include <bsd.port.mk>
