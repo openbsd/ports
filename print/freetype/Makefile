@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/07/04 01:33:57 krw Exp $
+# $OpenBSD: Makefile,v 1.13 2000/07/19 23:06:26 brad Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 DISTNAME=	freetype-1.3
@@ -24,28 +24,9 @@ CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-nls
 
-# People that installed an older version of freetype wound up with a
-# shared lib with just a major (FreeBSD ELF versioning)... these files
-# MUST be removed as the version was incorrect (it came from 1.1
-# sources). Check that out here (and bitch if necessary).
-#
-pre-extract:
-	@if [ -f ${LOCALBASE}/lib/libttf.so.2 ]; then \
-	   echo "+-------------------"; \
-	   echo "| ERROR: you MUST remove the existing freetype installation"; \
-	   echo "| before installing this version. To fully remove run"; \
-	   echo "| these commands as user root"; \
-	   echo "|"; \
-	   echo "|      pkg_delete -f `pkg_info -e 'freetype-*'`"; \
-	   echo "|      ldconfig ${LOCALBASE}/lib"; \
-	   echo "|"; \
-	   echo "+-------------------"; \
-	   exit 1; \
-	fi
-
 # Older versions of freetype installed include files in ${PREFIX}/include
 # this is a compatibility hack for now.
 post-install:
-	@cd ${PREFIX}/include; ln -fs freetype/*.h .
+	@cd ${PREFIX}/include && ln -fs freetype/*.h .
 
 .include <bsd.port.mk>

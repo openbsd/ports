@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/06/12 16:42:13 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2000/07/19 23:06:27 brad Exp $
 bin/ftdump
 bin/ftlint
 bin/ftstring
@@ -7,6 +7,19 @@ bin/fttimer
 bin/ftview
 bin/ftzoom
 include/freetype.h
+include/fterrid.h
+include/ftnameid.h
+include/ftxcmap.h
+include/ftxerr18.h
+include/ftxgasp.h
+include/ftxgdef.h
+include/ftxgpos.h
+include/ftxgsub.h
+include/ftxkern.h
+include/ftxopen.h
+include/ftxpost.h
+include/ftxsbit.h
+include/ftxwidth.h
 include/freetype/freetype.h
 include/freetype/fterrid.h
 include/freetype/ftnameid.h
@@ -21,19 +34,6 @@ include/freetype/ftxopen.h
 include/freetype/ftxpost.h
 include/freetype/ftxsbit.h
 include/freetype/ftxwidth.h
-include/fterrid.h
-include/ftnameid.h
-include/ftxcmap.h
-include/ftxerr18.h
-include/ftxgasp.h
-include/ftxgdef.h
-include/ftxgpos.h
-include/ftxgsub.h
-include/ftxkern.h
-include/ftxopen.h
-include/ftxpost.h
-include/ftxsbit.h
-include/ftxwidth.h
 lib/libttf.a
 lib/libttf.la
 %%SHARED%%
