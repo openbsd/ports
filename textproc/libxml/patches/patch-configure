@@ -1,7 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2001/09/05 21:55:50 brad Exp $
---- configure.orig	Wed Sep  5 15:12:00 2001
-+++ configure	Wed Sep  5 17:37:39 2001
-@@ -2958,7 +2958,14 @@ old_postuninstall_cmds=
+--- configure.orig	Fri Sep 14 17:36:02 2001
++++ configure	Sat Sep 22 09:36:11 2001
+@@ -2958,7 +2958,14 @@
  
  if test -n "$RANLIB"; then
    old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
@@ -17,7 +16,7 @@ $OpenBSD: patch-configure,v 1.4 2001/09/05 21:55:50 brad Exp $
  fi
  
  # Allow CC to be a program name with arguments.
-@@ -3455,7 +3462,9 @@ cygwin* | mingw* | pw32* )
+@@ -3455,7 +3462,9 @@
      with_gnu_ld=no
    fi
    ;;
@@ -28,7 +27,7 @@ $OpenBSD: patch-configure,v 1.4 2001/09/05 21:55:50 brad Exp $
  esac
  
  ld_shlibs=yes
-@@ -3859,10 +3868,21 @@ else
+@@ -3859,10 +3868,21 @@
      ;;
  
    openbsd*)
@@ -52,7 +51,7 @@ $OpenBSD: patch-configure,v 1.4 2001/09/05 21:55:50 brad Exp $
      ;;
  
    os2*)
-@@ -4339,9 +4359,23 @@ newsos6)
+@@ -4339,9 +4359,23 @@
  
  openbsd*)
    version_type=sunos
@@ -79,3 +78,12 @@ $OpenBSD: patch-configure,v 1.4 2001/09/05 21:55:50 brad Exp $
    fi
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+@@ -7087,7 +7121,7 @@
+ 
+ 
+ XML_LIBDIR='-L${libdir}'
+-XML_INCLUDEDIR='-I${includedir}/libxml2/libxml -I${includedir}/libxml2'
++XML_INCLUDEDIR='-I${includedir}/libxml -I${includedir}/libxml'
+ 
+ XML_CFLAGS=""
+ RDL_LIBS=""
