@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/09/16 14:53:40 brad Exp $
 share/sgml/linuxdoc/README
 share/sgml/linuxdoc/catalog
 share/sgml/linuxdoc/freebsd-1.0.dtd
