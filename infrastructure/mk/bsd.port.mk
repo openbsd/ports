@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.598 2004/01/11 00:49:01 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.599 2004/01/11 15:04:01 sturm Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -573,7 +573,7 @@ SCRIPTS_ENV+=	${_INSTALL_MACROS}
 # setup systrace variables
 NO_SYSTRACE?=	No
 .if ${USE_SYSTRACE:L} == "yes" && ${NO_SYSTRACE:L} == "no"
-_SYSTRACE_CMD?=	/bin/systrace -i -a -f ${_SYSTRACE_COOKIE}
+_SYSTRACE_CMD?=	/bin/systrace -e -i -a -f ${_SYSTRACE_COOKIE}
 .else
 _SYSTRACE_CMD=
 .endif
