@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST-pear,v 1.6 2004/04/08 12:38:59 avsm Exp $
 pear/lib/.registry/archive_tar.reg
 pear/lib/.registry/console_getopt.reg
 pear/lib/.registry/pear.reg
@@ -8,8 +9,6 @@ pear/lib/.registry/net_smtp.reg
 pear/lib/.registry/net_socket.reg
 pear/lib/.registry/xml_parser.reg
 pear/lib/.registry/xml_rpc.reg
-pear/lib/.lock
-pear/lib/.filemap
 pear/lib/Archive/Tar.php
 pear/lib/Console/Getopt.php
 pear/lib/System.php
@@ -49,7 +48,7 @@ pear/lib/DB/ifx.php
 pear/lib/DB/msql.php
 pear/lib/DB/mssql.php
 pear/lib/DB/mysql.php
-pear/lib/DB/mysql4.php
+pear/lib/DB/mysqli.php
 pear/lib/DB/oci8.php
 pear/lib/DB/odbc.php
 pear/lib/DB/pgsql.php
@@ -83,10 +82,11 @@ pear/tests/DB/tests/limit.inc
 pear/tests/DB/tests/numcols.inc
 pear/tests/DB/tests/numrows.inc
 pear/tests/DB/tests/prepexe.inc
+pear/tests/DB/tests/run.cvs
 pear/tests/DB/tests/sequences.inc
 pear/tests/DB/tests/simplequery.inc
-pear/tests/DB/tests/tableinfo.inc
 pear/tests/DB/tests/transactions.inc
+pear/tests/DB/tests/skipif.inc
 pear/tests/DB/tests/driver/02fetch.phpt
 pear/tests/DB/tests/driver/03simplequery.phpt
 pear/tests/DB/tests/driver/04numcols.phpt
@@ -95,6 +95,7 @@ pear/tests/DB/tests/driver/06prepexec.phpt
 pear/tests/DB/tests/driver/08affectedrows.phpt
 pear/tests/DB/tests/driver/09numrows.phpt
 pear/tests/DB/tests/driver/10errormap.phpt
+pear/tests/DB/tests/driver/11transactions.phpt
 pear/tests/DB/tests/driver/13limit.phpt
 pear/tests/DB/tests/driver/14fetchmode_object.phpt
 pear/tests/DB/tests/driver/15quote.phpt
@@ -104,7 +105,8 @@ pear/tests/DB/tests/driver/18get.phpt
 pear/tests/DB/tests/driver/bug22328.phpt
 pear/tests/DB/tests/driver/connect.inc
 pear/tests/DB/tests/driver/mktable.inc
-pear/tests/DB/tests/driver/setup.inc
+pear/tests/DB/tests/driver/run.cvs
+pear/tests/DB/tests/driver/setup.inc.cvs
 pear/tests/DB/tests/driver/skipif.inc
 pear/tests/DB/tests/driver/01connect.phpt
 pear/tests/DB/tests/db_error.phpt
