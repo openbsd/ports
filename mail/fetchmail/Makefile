@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 1999/12/26 15:30:36 fgsch Exp $
+# $OpenBSD: Makefile,v 1.32 1999/12/26 16:04:06 fgsch Exp $
 
 DISTNAME=       fetchmail-5.2.2
 CATEGORIES=	mail
@@ -14,6 +14,9 @@ CONFIGURE_ARGS+= --with-kerberos
 .endif
 .if defined(WITH_SSL) && ${WITH_SSL:U} == YES
 CONFIGURE_ARGS+= --with-ssl
+.endif
+.if defined(WITH_IPV6) && ${WITH_IPV6:U} == YES
+CONFIGURE_ARGS+= --enable-inet6
 .endif
 
 post-install:
