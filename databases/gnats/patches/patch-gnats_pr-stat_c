@@ -1,0 +1,12 @@
+$OpenBSD: patch-gnats_pr-stat_c,v 1.1 2003/08/25 23:35:06 brad Exp $
+--- gnats/pr-stat.c.orig	Wed Nov 25 07:15:15 1998
++++ gnats/pr-stat.c	Wed Jul  2 13:23:13 2003
+@@ -148,7 +148,7 @@ do_category (c)
+     if ((strcmp (i->category, c) == 0)
+         && (check_state_type (i->state, "closed")))
+       {
+-	sprintf (path, "%s/%s", c, i->number);
++	snprintf (path, PATH_MAX, "%s/%s", c, i->number);
+ 	do_stat (path);
+       }
+ 

@@ -1,0 +1,79 @@
+$OpenBSD: patch-gnats_edit_c,v 1.1 2003/08/25 23:35:06 brad Exp $
+--- gnats/edit.c.orig	Wed Mar 17 16:45:37 1999
++++ gnats/edit.c	Wed Jul  2 13:23:13 2003
+@@ -89,7 +89,7 @@ modify_pr (fp)
+     {
+       t = get_date (date, NULL);       
+       new_index->date_required = (char *) xmalloc (18);
+-      sprintf (new_index->date_required, "%d", t);
++      snprintf (new_index->date_required, 18, "%d", t);
+     }
+   new_index->quarter = field_value (QUARTER);
+   new_index->keywords = field_value (KEYWORDS);
+@@ -103,7 +103,7 @@ modify_pr (fp)
+     {
+       t = get_date (date, NULL); 
+       new_index->arrival_date = (char *) xmalloc (18);
+-      sprintf (new_index->arrival_date, "%d", t);
++      snprintf (new_index->arrival_date, 18, "%d", t);
+     }
+   new_index->class = field_value (CLASS);
+   new_index->originator = field_value (ORIGINATOR);
+@@ -164,13 +164,13 @@ modify_pr (fp)
+ 		    program_name, lock_path, strerror (errno));
+ 	}
+       old_path = (char *) xmalloc (PATH_MAX);
+-      sprintf (old_path, "%s/%s/%s",  gnats_root, old_index->category, 
+-	       old_index->number);
++      snprintf (old_path, PATH_MAX,  "%s/%s/%s",  gnats_root,
++		old_index->category, old_index->number);
+ 
+       /* set this to be the file to be saved. now called .old. */
+       bkup_path = (char *) xmalloc (PATH_MAX);
+-      sprintf (bkup_path, "%s/%s/%s.old", gnats_root, old_index->category,
+-	       old_index->number);
++      snprintf (bkup_path, PATH_MAX, "%s/%s/%s.old", gnats_root,
++		old_index->category, old_index->number);
+     }
+   else
+     add_to_index ();
+@@ -182,15 +182,15 @@ modify_pr (fp)
+   if (! force)
+     {
+       if (strcmp (old_index->category, new_index->category) != 0)
+-	sprintf (path, "%s/%s/%s",  gnats_root, new_index->category, 
+-		 new_index->number);
++	snprintf (path, PATH_MAX, "%s/%s/%s",  gnats_root, new_index->category, 
++		  new_index->number);
+       else
+-	sprintf (path, "%s/%s/%s", gnats_root, old_index->category,
+-		 old_index->number);
++	snprintf (path, PATH_MAX, "%s/%s/%s", gnats_root, old_index->category,
++		  old_index->number);
+     }
+   else
+-    sprintf (path, "%s/%s/%s", gnats_root, new_index->category,
+-	     new_index->number);
++    snprintf (path, PATH_MAX, "%s/%s/%s", gnats_root, new_index->category,
++	      new_index->number);
+ 
+   if (! force && rename (old_path, bkup_path) < 0)
+     {
+@@ -289,7 +289,7 @@ modify_pr (fp)
+     {
+       t = get_date (date, NULL);       
+       new_index->last_modified = (char *) xmalloc (18);
+-      sprintf (new_index->last_modified, "%d", t);
++      snprintf (new_index->last_modified, 18, "%d", t);
+     }
+   date = field_value (CLOSED_DATE);
+   if (!date || date[0] == '\0')
+@@ -298,7 +298,7 @@ modify_pr (fp)
+     {
+       t = get_date (date, NULL);       
+       new_index->closed_date = (char *) xmalloc (18);
+-      sprintf (new_index->closed_date, "%d", t);
++      snprintf (new_index->closed_date, 18, "%d", t);
+     }
+   
+   write_header (prfile, NUM_HEADER_ITEMS);

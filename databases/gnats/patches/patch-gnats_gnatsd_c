@@ -1,0 +1,39 @@
+$OpenBSD: patch-gnats_gnatsd_c,v 1.1 2003/08/25 23:35:06 brad Exp $
+--- gnats/gnatsd.c.orig	Tue Sep 21 17:18:39 1999
++++ gnats/gnatsd.c	Wed Jul  2 13:23:13 2003
+@@ -237,7 +237,7 @@ get_name (host)
+     return NULL;
+   i = strlen (hp->h_name);
+   buf = (char *) xmalloc (i + 1);
+-  strcpy (buf, hp->h_name);
++  strlcpy (buf, hp->h_name, i + 1);
+   hp = gethostbyname (buf);
+   if (hp == NULL)
+     return NULL;
+@@ -336,7 +336,7 @@ allowed (host, ipaddr, database, access)
+      field to control what PRs, categories, or submitter-id PRs are
+      allowed, or whatever. */
+   
+-  sprintf (filename, "%s/gnats-adm/%s", database, ACCESS_FILE);
++  snprintf (filename, PATH_MAX, "%s/gnats-adm/%s", database, ACCESS_FILE);
+   acc = fopen (filename, "r");
+   if (acc == (FILE *)NULL)
+     {
+@@ -397,7 +397,7 @@ get_user_access (database, filename, use
+ {
+   FILE *acc;
+   char buffer[BUFSIZ], *x;
+-  char *fields[4], *db;
++  char *fields[4];
+   int i, access;
+   int found = 0;
+ 
+@@ -624,7 +624,7 @@ Argify(line, argvp, cp)
+ 	line++;
+     i = strlen(line);
+     p = (char *) xmalloc (sizeof (char) * (i + 1));
+-    strcpy(p, line);
++    strlcpy(p, line, i + 1);
+ 
+     /* Allocate worst-case amount of space. */
+     *argvp = argv = (char **) xmalloc (sizeof (char *) * (i + 2));

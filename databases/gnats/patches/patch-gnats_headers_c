@@ -1,0 +1,26 @@
+$OpenBSD: patch-gnats_headers_c,v 1.1 2003/08/25 23:35:06 brad Exp $
+--- gnats/headers.c.orig	Thu Nov  5 12:54:10 1998
++++ gnats/headers.c	Wed Jul  2 13:23:13 2003
+@@ -62,17 +62,18 @@ set_continued_header (i, buf)
+      char *buf;
+ {
+   char *b;
++  size_t len;
+ 
+   if (header[i].value != NULL)
+     {
+       if (keep_rec && i == RECEIVED)
+ 	{
+-	  b = (char *) xmalloc (strlen (header[i].value) + 10
+-				+ strlen (buf) + 1);
++	  len = strlen (header[i].value) + 10 + strlen (buf) + 1;
++	  b = (char *) xmalloc (len);
+ 	  if (*buf == ' ')
+-	    sprintf (b, "%sReceived:%s", header[i].value, buf);
++	    snprintf (b, len, "%sReceived:%s", header[i].value, buf);
+ 	  else
+-	    sprintf (b, "%sReceived: %s", header[i].value, buf);
++	    snprintf (b, len, "%sReceived: %s", header[i].value, buf);
+ 	  xfree (header[i].value);
+ 	  xfree (buf);
+ 	  header[i].value = b;

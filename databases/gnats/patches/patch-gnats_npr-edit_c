@@ -1,0 +1,15 @@
+$OpenBSD: patch-gnats_npr-edit_c,v 1.1 2003/08/25 23:35:06 brad Exp $
+--- gnats/npr-edit.c.orig	Tue Sep 21 17:18:39 1999
++++ gnats/npr-edit.c	Wed Jul  2 13:23:13 2003
+@@ -92,8 +92,9 @@ int
+ receive_list (cmd, suff)
+      char *cmd, *suff;
+ {
+-  char *s = (char *) xmalloc (strlen (outname) + 5);
+-  sprintf (s, "%s%s", outname, suff);
++  size_t len = strlen (outname) + 5;
++  char *s = (char *) xmalloc (len);
++  snprintf (s, len, "%s%s", outname, suff);
+   outfp = fopen (s, "w");
+   if (outfp == (FILE *)NULL)
+     {

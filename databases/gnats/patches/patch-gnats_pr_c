@@ -1,12 +1,91 @@
-$OpenBSD: patch-gnats_pr_c,v 1.1 2002/12/12 20:08:39 pvalchev Exp $
---- gnats/pr.c.orig	Thu Dec 12 00:55:26 2002
-+++ gnats/pr.c	Thu Dec 12 00:56:30 2002
-@@ -367,7 +367,7 @@ get_pr_enum_field (filename, default_val
+$OpenBSD: patch-gnats_pr_c,v 1.2 2003/08/25 23:33:56 brad Exp $
+--- gnats/pr.c.orig	Tue Mar  2 17:18:54 1999
++++ gnats/pr.c	Wed Jul  2 13:23:13 2003
+@@ -205,7 +205,7 @@ read_pr (fp, prune)
+ 	      u = unformatted + unformatted_len;
+ 	    }
+ 
+-	  strcat (u, pr[UNFORMATTED].value);
++	  strlcat (u, pr[UNFORMATTED].value, unformatted + unformatted_size - u);
+ 	  xfree (pr[UNFORMATTED].value);
+ 	}
+ 
+@@ -293,14 +293,14 @@ write_pr (fp, string)
+ 	{
+ 	  if (pr[string].datatype == MultiText)
+ 	    {
+-              sprintf (fmt, "%%s%s", ret);
++              snprintf (fmt, sizeof(fmt), "%%s%s", ret);
+               fprintf (fp, fmt, pr[string].name, pr[string].value);
+               write_multitext (fp, pr[i].value);
+ 	      MAYBE_NL(pr[string].value);
+ 	    }
+           else
+             {
+-              sprintf (fmt, "%%-16s %%s%s", ret);
++              snprintf (fmt, sizeof(fmt), "%%-16s %%s%s", ret);
+               fprintf (fp, fmt, pr[string].name, pr[string].value);
+             }
+ 	}
+@@ -338,7 +338,7 @@ write_pr_from_index (fp, name, value)
+   char   fmt[10], *t;
+   time_t time;
+ 
+-  sprintf (fmt, "%%-16s %%s%s", ret);
++  snprintf (fmt, sizeof(fmt), "%%-16s %%s%s", ret);
+ 
+   if (pr[name].datatype == Date)
+     {
+@@ -367,9 +367,9 @@ get_pr_enum_field (filename, default_val
    int len = 0, capacity = 80;
    int meaningful_line;
    FILE *fp;
 -  char c;
 +  int c;
    
-   sprintf (path, "%s/gnats-adm/%s", gnats_root, filename);
+-  sprintf (path, "%s/gnats-adm/%s", gnats_root, filename);
++  snprintf (path, PATH_MAX, "%s/gnats-adm/%s", gnats_root, filename);
    fp = fopen (path, "r");
+ 
+   if (fp == NULL)
+@@ -531,7 +531,7 @@ get_final_enum_value (list_str, default_
+      char *default_value;
+ {
+   char *res = NULL;
+-  char *tmp, *end;
++  char *tmp;
+   
+   if (list_str == NULL)
+     return default_value;
+@@ -751,9 +751,9 @@ check_enum_types (check)
+ 	    {
+ 	      if (check)
+ 		{
+-		  char *msg = (char *) xmalloc (100 + strlen (pr[i].value)
+-						+ strlen (pr[i].name)
+-						+ strlen (pr[i].default_value));
++		  size_t len = 100 + strlen (pr[i].value) + strlen (pr[i].name)
++			       + strlen (pr[i].default_value);
++		  char *msg = (char *) xmalloc (len);
+ 		  if (bad_enums == NULL)
+ 		    bad_enums = bad_enums_end
+ 		    = (struct bad_enum *) xmalloc (sizeof (struct bad_enum));
+@@ -765,15 +765,15 @@ check_enum_types (check)
+ 		    }
+ 
+ 		  if (check == 1)
+-		    sprintf (msg,
++		    snprintf (msg, len,
+ 			     "\tNote: There was a bad value `%s' for the field `%s'.\n\tIt was set to the default value of `%s'.\n",
+ 			     pr[i].value, pr[i].name, pr[i].default_value);
+ 		  else if (check == 2)
+                     {
+                       if (is_daemon)
+-		        sprintf (msg, "%s %s", pr[i].name, pr[i].value);
++		        snprintf (msg, len, "%s %s", pr[i].name, pr[i].value);
+                       else
+-		        sprintf (msg, "%s %s\n", pr[i].name, pr[i].value);
++		        snprintf (msg, len, "%s %s\n", pr[i].name, pr[i].value);
+                     }
+ 
+ 		  bad_enums_end->msg = msg;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-gnats_getclose_c,v 1.1 2003/08/25 23:35:06 brad Exp $
+--- gnats/getclose.c.orig	Wed Nov 25 07:14:57 1998
++++ gnats/getclose.c	Wed Jul  2 13:23:13 2003
+@@ -136,7 +136,7 @@ do_prlist ()
+     if (check_state_type (i->state, "closed")
+ 	&& regcmp ("no", i->confidential) == 0)
+       {
+-	sprintf (path, "%s/%s/%s", gnats_root, i->category, i->number);
++	snprintf (path, PATH_MAX, "%s/%s/%s", gnats_root, i->category, i->number);
+ 	do_stat (path, path + len + 1);
+       }
+ 

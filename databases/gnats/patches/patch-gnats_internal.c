@@ -1,6 +1,6 @@
-$OpenBSD: patch-gnats_internal.c,v 1.3 2002/05/09 16:16:02 millert Exp $
+$OpenBSD: patch-gnats_internal.c,v 1.4 2003/08/25 23:33:56 brad Exp $
 --- gnats/internal.c.orig	Tue Mar  2 17:18:53 1999
-+++ gnats/internal.c	Wed May  8 21:41:29 2002
++++ gnats/internal.c	Wed Jul  2 13:37:01 2003
 @@ -32,28 +32,25 @@ write_index (index_start)
  
    FILE *fp;
@@ -10,21 +10,26 @@ $OpenBSD: patch-gnats_internal.c,v 1.3 2002/05/09 16:16:02 millert Exp $
 -#endif
 +  int fd;
    Index *i;
++  size_t len;
  
 -#ifdef HAVE_MKTEMP
-   workfile = (char *) xmalloc (strlen (gnats_root) +
- 			       strlen ("/gnats-adm/indXXXXXX") +
- 			       1 /* null */ );
-   sprintf (workfile, "%s/gnats-adm/indXXXXXX", gnats_root);
+-  workfile = (char *) xmalloc (strlen (gnats_root) +
+-			       strlen ("/gnats-adm/indXXXXXX") +
+-			       1 /* null */ );
+-  sprintf (workfile, "%s/gnats-adm/indXXXXXX", gnats_root);
 -  mktemp (workfile);
 -#else
 -  workfile = (char *) xmalloc (L_tmpnam);
 -  tmpnam (name);
 -  strcpy (workfile, name);
 -#endif
- 
+-
 -  fp = fopen (workfile, "w");
 -  if (fp == NULL)
++  len = strlen (gnats_root) + strlen ("/gnats-adm/indXXXXXX") + 1 /* null */;
++  workfile = (char *) xmalloc (len);
++  snprintf (workfile, len, "%s/gnats-adm/indXXXXXX", gnats_root);
++
 +  if ((fd = mkstemp (workfile)) < 0) {
 +	  fprintf (stderr, "%s: can't open the temporary file %s\n",
 +		   program_name, workfile);
@@ -39,7 +44,7 @@ $OpenBSD: patch-gnats_internal.c,v 1.3 2002/05/09 16:16:02 millert Exp $
        xfree (workfile);
        return;
      }
-@@ -83,6 +80,7 @@ write_index (index_start)
+@@ -83,15 +80,14 @@ write_index (index_start)
  #endif
      }
  
@@ -47,3 +52,78 @@ $OpenBSD: patch-gnats_internal.c,v 1.3 2002/05/09 16:16:02 millert Exp $
    fclose (fp);
  
    block_signals ();
+ 
+-  path = (char *) xmalloc (strlen (gnats_root) +
+-			   strlen ("/gnats-adm/") +
+-			   strlen (INDEX) +
+-			   1 /* null*/ );
+-  sprintf (path, "%s/gnats-adm/%s", gnats_root, INDEX);
++  len = strlen (gnats_root) + strlen ("/gnats-adm/") + strlen (INDEX) + 1;
++  path = (char *) xmalloc (len);
++  snprintf (path, len, "%s/gnats-adm/%s", gnats_root, INDEX);
+ 
+   if ((rename (workfile, path)) < 0)
+     {
+@@ -124,14 +120,14 @@ add_to_index ()
+ 
+   block_signals ();
+ 
+-  sprintf (path, "%s/gnats-adm/%s", gnats_root, INDEX); 
++  snprintf (path, PATH_MAX, "%s/gnats-adm/%s", gnats_root, INDEX); 
+ 
+   fp = fopen (path, "a+");
+   if (fp == NULL) 
+     punt (1, "Can't append to the GNATS index file (%s).", path);
+ 
+   memset ((void *) buf, 0, sizeof (STR_MAXLONG));
+-  create_index_entry (buf);
++  create_index_entry (buf, STR_MAXLONG);
+   fputs (buf, fp);
+ 
+   fclose (fp);
+@@ -227,7 +223,7 @@ is_gnats_locked ()
+ {
+   char *path = (char *) alloca (PATH_MAX);
+   struct stat buf;
+-  sprintf (path, "%s/gnats-adm/gnats.lock", gnats_root);
++  snprintf (path, PATH_MAX, "%s/gnats-adm/locks/gnats.lock", gnats_root);
+   return stat (path, &buf) == 0;
+ }
+ 
+@@ -238,7 +234,7 @@ lock_gnats ()
+   struct stat buf;
+   int count;
+ 
+-  sprintf (path, "%s/gnats-adm/gnats.lock", gnats_root);
++  snprintf (path, PATH_MAX, "%s/gnats-adm/locks/gnats.lock", gnats_root);
+ 
+ #define MAXWAIT 10
+ #define GRANULARITY 1
+@@ -287,7 +283,7 @@ unlock_gnats ()
+   char *path = (char *) alloca (PATH_MAX);
+   struct stat buf;
+ 
+-  sprintf (path, "%s/gnats-adm/gnats.lock", gnats_root);
++  snprintf (path, PATH_MAX, "%s/gnats-adm/locks/gnats.lock", gnats_root);
+   
+   if (stat (path, &buf) < 0)
+     {
+@@ -325,7 +321,7 @@ gnats_locked ()
+   char *path = (char *) xmalloc (PATH_MAX);
+   struct stat buf;
+ 
+-  sprintf (path, "%s/gnats-adm/gnats.lock", gnats_root);
++  snprintf (path, PATH_MAX, "%s/gnats-adm/locks/gnats.lock", gnats_root);
+   
+   if (stat (path, &buf) < 0)
+     return 0;
+@@ -460,7 +456,8 @@ get_lock_path (fname)
+     return NULL;
+ 
+   path = (char *) xmalloc (PATH_MAX);
+-  sprintf (path, "%s/gnats-adm/locks/%s.lock", gnats_root, get_prid_from_path (fname));
++  snprintf (path, PATH_MAX, "%s/gnats-adm/locks/%s.lock", gnats_root,
++	    get_prid_from_path (fname));
+ 
+   return path;
+ }

@@ -1,0 +1,16 @@
+$OpenBSD: patch-gnats_nquery-pr_c,v 1.1 2003/08/25 23:35:06 brad Exp $
+--- gnats/nquery-pr.c.orig	Tue Sep 21 17:18:39 1999
++++ gnats/nquery-pr.c	Wed Jul  2 13:23:13 2003
+@@ -444,10 +444,10 @@ ask_about (info, args)
+     cmd = "QURY";
+ 
+   buf = (char *) xmalloc (current);
+-  strcpy (buf, cmd);
++  strlcpy (buf, cmd, current);
+   while (args[i])
+     {
+-      sprintf (buf, "%s %s", buf, args[i]);
++      snprintf (buf, current, "%s %s", buf, args[i]);
+       len += strlen (args[i++]) + 1;
+       if (args[i] == NULL)
+ 	break;

@@ -1,0 +1,81 @@
+$OpenBSD: patch-gnats_gen-closed-date_c,v 1.1 2003/08/25 23:35:06 brad Exp $
+--- gnats/gen-closed-date.c.orig	Tue Oct 26 23:22:29 1999
++++ gnats/gen-closed-date.c	Wed Jul  2 13:23:13 2003
+@@ -70,9 +70,10 @@ void usage (), version ();
+ static int
+ get_closed ()
+ {
+-     char *final1, *final2, str[133], *from_start, *to_start, from[32], to[32];
++     char *final1, *final2, *from_start, *to_start, from[32], to[32];
+      char *p, *c, *when_start, when[133], *new_audit, *copy_ptr;
+      int  len, from_len, to_len, closed_date_set = 0, changed_separator;
++     size_t audit_len;
+ 
+      p = pr[AUDIT_TRAIL].value;
+ 
+@@ -83,7 +84,8 @@ get_closed ()
+           return (1);
+      }
+ 
+-     new_audit = xmalloc (strlen (p) * 2);
++     audit_len = strlen (p) * 2;
++     new_audit = xmalloc (len);
+      new_audit[0] = '\0';
+      copy_ptr = p;
+ 
+@@ -105,8 +107,8 @@ get_closed ()
+                } else {
+                     /* Change - to -> here */
+                     final1++;
+-                    strncat (new_audit, copy_ptr, final1 - copy_ptr);
+-                    strcat  (new_audit, ">");
++                    strncat (new_audit, copy_ptr, final1 - copy_ptr); /* XXX */
++                    strlcat  (new_audit, ">", audit_len);
+                     copy_ptr = final1;
+                     changed_separator = 1;
+                }
+@@ -162,7 +164,7 @@ get_closed ()
+           }
+      } while (final1);
+ 
+-     strcat (new_audit, copy_ptr);
++     strlcat (new_audit, copy_ptr, audit_len);
+      xfree  (pr[AUDIT_TRAIL].value);
+      pr[AUDIT_TRAIL].value = new_audit;
+      
+@@ -245,7 +247,7 @@ do_category (c)
+       return;
+     }
+ 
+-  sprintf (path, "%s/%s/", gnats_root, c);
++  snprintf (path, len + 9, "%s/%s/", gnats_root, c);
+ 
+   /* Process each file in the directory; ignore files that have periods
+      in their names; either they're the . and .. dirs, or they're a
+@@ -254,7 +256,7 @@ do_category (c)
+     if (strchr (next->d_name, '.') == NULL)
+       {
+ 	p = path + len - 1;
+-	strcat (p, next->d_name);
++	strlcat (p, next->d_name, path + len + 9 - p);
+ 
+ 	fp = fopen (path, "r");
+ 	if (fp == (FILE *) NULL)
+@@ -378,7 +380,7 @@ get_categories ()
+   Categories *c;
+ 
+   if (! catfile)
+-    sprintf (path, "%s/gnats-adm/%s", gnats_root, CATEGORIES);
++    snprintf (path, PATH_MAX, "%s/gnats-adm/%s", gnats_root, CATEGORIES);
+   else
+     path = catfile;
+ 
+@@ -415,7 +417,7 @@ main (argc, argv)
+      int argc;
+      char **argv;
+ {
+-  int optc, i;
++  int optc;
+   Categories *clist, *c;
+ 
+   program_name = (char *) basename (argv[0]);

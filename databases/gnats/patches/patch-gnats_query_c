@@ -1,0 +1,94 @@
+$OpenBSD: patch-gnats_query_c,v 1.1 2003/08/25 23:35:06 brad Exp $
+--- gnats/query.c.orig	Wed Nov 25 07:15:19 1998
++++ gnats/query.c	Wed Jul  2 13:23:13 2003
+@@ -147,7 +147,7 @@ make_path (c, n)
+ {
+   char *path = (char *) xmalloc (PATH_MAX);
+ 
+-  sprintf (path, "%s/%s/%s", gnats_root, c, n);
++  snprintf (path, PATH_MAX, "%s/%s/%s", gnats_root, c, n);
+   return path;
+ }
+ 
+@@ -203,7 +203,7 @@ regcmp (pat, match)
+   switch (r.i)
+     {
+     case -2:
+-      fprintf (stderr, "%s: warning: re_match died with pattern %s and string $s\n",
++      fprintf (stderr, "%s: warning: re_match died with pattern %s and string %s\n",
+ 	       program_name, pat, match);
+       /*FALLTHRU*/
+     case -1:
+@@ -251,7 +251,7 @@ regfind (pat, match)
+   switch (r.i)
+     {
+     case -2:
+-      fprintf (stderr, "%s: warning: re_match died with pattern %s and string $s\n",
++      fprintf (stderr, "%s: warning: re_match died with pattern %s and string %s\n",
+ 	       program_name, pat, match);
+       /*FALLTHRU*/
+     case -1:
+@@ -301,8 +301,6 @@ pr_matches (s, i, opened)
+      Index *i;
+      int   *opened;
+ {
+-  int status;
+-  
+   *opened = 0;
+ 
+   if (skip_closed && check_state_type (i->state, "closed"))
+@@ -343,7 +341,7 @@ pr_matches (s, i, opened)
+       int    val = 0;
+       char *path = make_path (i->category, i->number);
+       
+-      if (val = get_pr (path, i->number, quiet))
++      if ((val = get_pr (path, i->number, quiet)))
+          *opened = 1;
+       xfree (path);
+ 
+@@ -490,15 +488,13 @@ print_pr (path, p, opened, i)
+     {
+       char *t, *q, *tempstr;
+ 
+-      tempstr = (char *) xmalloc (strlen (i->synopsis) + 1);
+-      strcpy (tempstr, i->synopsis);
++      tempstr = xstrdup(i->synopsis);
+       fprintf (outfile, "%-8.8s|%-16.16s|%-128.128s|%-3.3s|",
+ 	       i->number, i->category, disbar (tempstr), i->confidential);
+       xfree (tempstr);
+ 
+       /* Trim `foo (Full Foo)' to just `foo'.  */
+-      tempstr = (char *) xmalloc (strlen (i->responsible) + 1);
+-      strcpy (tempstr, i->responsible);
++      tempstr = xstrdup(i->responsible);
+       q = (char *) strchr (tempstr, ' ');
+       if (q != NULL)
+ 	*q = '\0';
+@@ -550,15 +546,13 @@ print_pr (path, p, opened, i)
+     {
+       char *t, *q, *tempstr;
+ 
+-      tempstr = (char *) xmalloc (strlen (i->synopsis) + 1);
+-      strcpy (tempstr, i->synopsis);
++      tempstr = xstrdup(i->synopsis);
+       fprintf (outfile, "%s|%s|%s|%s|",
+ 	       i->number, i->category, disbar (tempstr), i->confidential);
+       xfree (tempstr);
+ 
+       /* Trim `foo (Full Foo)' to just `foo'.  */
+-      tempstr = (char *) xmalloc (strlen (i->responsible) + 1);
+-      strcpy (tempstr, i->responsible);
++      tempstr = xstrdup(i->responsible);
+       q = (char *) strchr (tempstr, ' ');
+       if (q != NULL)
+ 	*q = '\0';
+@@ -611,8 +605,7 @@ print_pr (path, p, opened, i)
+       char *q, *tempstr;
+ 
+       /* Trim `foo (Full Foo)' to just `foo'.  */
+-      tempstr = (char *) xmalloc (strlen (i->responsible) + 1);
+-      strcpy (tempstr, i->responsible);
++      tempstr = xstrdup(i->responsible);
+       q = (char *) strchr (tempstr, ' ');
+       if (q != NULL)
+ 	*q = '\0';

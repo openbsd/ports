@@ -1,0 +1,22 @@
+$OpenBSD: patch-gnats_query-pr_c,v 1.1 2003/08/25 23:35:06 brad Exp $
+--- gnats/query-pr.c.orig	Tue Sep 21 17:18:39 1999
++++ gnats/query-pr.c	Wed Jul  2 13:23:13 2003
+@@ -92,7 +92,6 @@ query_pr (p, s)
+      char *p;
+      Index *s;
+ {
+-  char *path;
+   Index *i;
+   int opened, found = 0;
+ 
+@@ -112,8 +111,8 @@ query_pr (p, s)
+       char pat[40], *n;
+       if ((n = (char *) strchr (p, '/')) != NULL) /* Remove the category */
+         p = ++n;
+-      strcpy (pat, p);
+-      strcat (pat, "\\'");
++      strlcpy (pat, p, sizeof(pat));
++      strlcat (pat, "\\'", sizeof(pat));
+ 
+       for (i = index_chain; i ; i = i->next)
+         if (regcmp (pat, i->number) == 0)

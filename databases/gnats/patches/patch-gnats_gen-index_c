@@ -1,0 +1,39 @@
+$OpenBSD: patch-gnats_gen-index_c,v 1.1 2003/08/25 23:35:06 brad Exp $
+--- gnats/gen-index.c.orig	Tue Sep 21 17:18:39 1999
++++ gnats/gen-index.c	Wed Jul  2 13:23:13 2003
+@@ -118,7 +118,7 @@ do_category (c)
+       return;
+     }
+ 
+-  sprintf (path, "%s/%s/", gnats_root, c);
++  snprintf (path, len + 9, "%s/%s/", gnats_root, c);
+ 
+   /* Process each file in the directory; ignore files that have periods
+      in their names; either they're the . and .. dirs, or they're a
+@@ -127,7 +127,7 @@ do_category (c)
+     if (strchr (next->d_name, '.') == NULL)
+       {
+ 	p = path + len - 1;
+-	strcat (p, next->d_name);
++	strlcat (p, next->d_name, path + len + 9 - p);
+ 
+ 	fp = fopen (path, "r");
+ 	if (fp == (FILE *) NULL)
+@@ -150,7 +150,7 @@ do_category (c)
+ 	read_pr (fp, 1);
+ 	fclose (fp);
+ 
+-	create_index_entry (line);
++	create_index_entry (line, STR_MAXLONG);
+ 
+ 	if (sort_numerical == TRUE)
+ 	  {
+@@ -256,7 +256,7 @@ get_categories ()
+   Categories *c;
+ 
+   if (! catfile)
+-    sprintf (path, "%s/gnats-adm/%s", gnats_root, CATEGORIES);
++    snprintf (path, PATH_MAX, "%s/gnats-adm/%s", gnats_root, CATEGORIES);
+   else
+     path = catfile;
+ 

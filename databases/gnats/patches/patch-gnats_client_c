@@ -1,0 +1,12 @@
+$OpenBSD: patch-gnats_client_c,v 1.1 2003/08/25 23:35:06 brad Exp $
+--- gnats/client.c.orig	Tue Sep 21 17:18:39 1999
++++ gnats/client.c	Wed Jul  2 13:23:13 2003
+@@ -485,7 +485,7 @@ client_init ()
+        authenticator, but a constant should be nearly as secure.  */
+ #define CKSUM			0x10291966
+ 
+-    strcpy (hname, host->h_name);
++    strlcpy (hname, host->h_name, sizeof(hname));
+ 
+     realm = krb_realmofhost (hname);
+ 

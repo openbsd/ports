@@ -1,0 +1,32 @@
+$OpenBSD: patch-gnats_misc_c,v 1.1 2003/08/25 23:35:06 brad Exp $
+--- gnats/misc.c.orig	Wed Nov 25 07:15:04 1998
++++ gnats/misc.c	Wed Jul  2 13:23:13 2003
+@@ -71,9 +71,9 @@ log_msg (severity, has_arg, va_alist)
+     message2 = va_arg (args, char *);
+ 
+   if (has_arg)
+-    sprintf (buf, "%s: %s %s\n", program_name, message, message2);
++    snprintf (buf, STR_MAX, "%s: %s %s\n", program_name, message, message2);
+   else
+-    sprintf (buf, "%s: %s\n", program_name, message);
++    snprintf (buf, STR_MAX, "%s: %s\n", program_name, message);
+ 
+   if (debug_level >= severity)
+     {
+@@ -170,14 +170,14 @@ get_next_field (line, token, delim)
+   *t = '\0';
+ 
+   /* erase whitespace at the end of the token */
+-  while ((t > token) && (is_space[*(t-1)]))
++  while ((t > token) && (is_space[(u_char)*(t-1)]))
+     *--t = '\0';
+ 
+   if (! *line)
+     return NULL;
+   
+   /* skip over any white space after delim */
+-  while (*line != '\0' && is_space[*++line])
++  while (*line != '\0' && is_space[(u_char)*++line])
+     /* Nothing */ ;
+ 
+   t = strchr (line, '\n');

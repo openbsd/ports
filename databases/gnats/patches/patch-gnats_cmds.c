@@ -1,6 +1,6 @@
-$OpenBSD: patch-gnats_cmds.c,v 1.2 2002/05/09 16:16:02 millert Exp $
+$OpenBSD: patch-gnats_cmds.c,v 1.3 2003/08/25 23:33:56 brad Exp $
 --- gnats/cmds.c.orig	Sun Feb  4 13:56:10 2001
-+++ gnats/cmds.c	Wed May  8 22:08:48 2002
++++ gnats/cmds.c	Wed Jul  2 13:23:13 2003
 @@ -115,28 +115,26 @@ get_text ()
  {
    register FILE *tf;
@@ -42,3 +42,61 @@ $OpenBSD: patch-gnats_cmds.c,v 1.2 2002/05/09 16:16:02 millert Exp $
        return NULL;
      }
  
+@@ -228,8 +226,8 @@ do_query (ac, av)
+           p = av[i];
+           if ((n = (char *) strchr (p, '/')) != NULL) /* Remove the category */
+                p = ++n;
+-          strcpy (pat, p);
+-          strcat (pat, "\\'");
++          strlcpy (pat, p, sizeof(pat));
++          strlcat (pat, "\\'", sizeof(pat));
+           for (j = index_chain ; j ; j = j->next)
+        	    if (regcmp (pat, j->number) == 0)
+               {
+@@ -352,12 +350,13 @@ GNATS_lock (ac, av)
+       /* XXX FIXME -- we need a cleaner approach to this.  */
+       for (i = 2, len = 0; i < ac; i++)
+ 	len += strlen (av[i]);
+-      l = (char *) xmalloc (sizeof (char) * len + ac - 2);
+-      sprintf (l, "%s", av[2]);
++      len += ac - 2;
++      l = (char *) xmalloc (len);
++      snprintf (l, len, "%s", av[2]);
+       for (i = 3; i < ac; i++)
+ 	{
+-	  strcat (l, " ");
+-	  strcat (l, av[i]);
++	  strlcat (l, " ", len);
++	  strlcat (l, av[i], len);
+ 	}
+     }
+ 
+@@ -461,7 +460,7 @@ GNATS_user (ac, av)
+     }
+   
+   path = (char *) xmalloc (PATH_MAX);
+-  sprintf (path, "%s/gnats-adm/%s", gnats_root, DB_ACCESS_FILE);
++  snprintf (path, PATH_MAX, "%s/gnats-adm/%s", gnats_root, DB_ACCESS_FILE);
+   access = get_user_access (gnats_root, path, av[0], av[1]);
+   xfree (path);
+ 
+@@ -1531,8 +1530,8 @@ GNATS_auth (ac, av)
+ 	  return;
+ 	}
+ 
+-      strcpy (keyfile, gnats_root);
+-      strcat (keyfile, "/gnats-adm/srvtab");
++      strlcpy (keyfile, gnats_root, sizeof(keyfile));
++      strlcat (keyfile, "/gnats-adm/srvtab", sizeof(keyfile));
+       /* Sanity-check installation.  */
+       {
+ 	struct stat statbuf;
+@@ -1601,7 +1600,7 @@ GNATS_auth (ac, av)
+       p += 8;
+       k.ticket.length = strlen (p) / 2;
+       fromhex (k.ticket.dat, p, k.ticket.length);
+-      strcpy (instance, "*");
++      strlcpy (instance, "*", sizeof(instance));
+       status = krb_rd_req (&k.ticket, GNATS_KRB4_PRINCIPAL_NAME, instance,
+ 			   peer.sin_addr.s_addr, &k.auth, keyfile);
+       if (status != KSUCCESS)

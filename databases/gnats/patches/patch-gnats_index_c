@@ -1,0 +1,52 @@
+$OpenBSD: patch-gnats_index_c,v 1.1 2003/08/25 23:35:06 brad Exp $
+--- gnats/index.c.orig	Wed Mar 17 16:45:38 1999
++++ gnats/index.c	Wed Jul  2 13:23:13 2003
+@@ -33,8 +33,9 @@ time_t index_mtime;
+ char *index_filename = (char *)NULL;
+ 
+ void
+-create_index_entry (buf)
++create_index_entry (buf, bufsize)
+      char *buf;
++     size_t bufsize;
+ {
+   char *resp, *r;
+   char *tim;
+@@ -96,7 +97,8 @@ create_index_entry (buf)
+     *r = '\0';
+ 
+ #ifdef GNATS_RELEASE_BASED  	
+-  sprintf (buf, "%s/%s|%s|%s|%s|%s|%s|%s|%d|%s|%s|%d|%d|%d|%s|%s|%s|%s\n",
++  snprintf (buf, bufsize,
++	   "%s/%s|%s|%s|%s|%s|%s|%s|%d|%s|%s|%d|%d|%d|%s|%s|%s|%s\n",
+            field_value (CATEGORY), field_value (NUMBER), field_value (SUBMITTER),
+ 	   resp, field_value (STATE), field_value (CONFIDENTIAL), 
+ 	   field_value (SEVERITY), field_value (PRIORITY),
+@@ -105,7 +107,8 @@ create_index_entry (buf)
+            field_value (CLASS), field_value (ORIGINATOR),
+            field_value (RELEASE), field_value (SYNOPSIS));
+ #else
+-  sprintf (buf, "%s/%s|%s|%s|%s|%s|%s|%s|%d|%d|%d|%s|%s|%s|%s\n",
++  snprintf (buf, bufsize,
++	   "%s/%s|%s|%s|%s|%s|%s|%s|%d|%d|%d|%s|%s|%s|%s\n",
+            field_value (CATEGORY), field_value (NUMBER), field_value (SUBMITTER),
+ 	   resp, field_value (STATE), field_value (CONFIDENTIAL), 
+ 	   field_value (SEVERITY), field_value (PRIORITY),
+@@ -399,7 +402,7 @@ open_index ()
+   if (! index_filename)
+     {
+       index_filename = (char *) xmalloc (PATH_MAX);
+-      sprintf (index_filename, "%s/gnats-adm/%s", gnats_root, INDEX);
++      snprintf (index_filename, PATH_MAX, "%s/gnats-adm/%s", gnats_root, INDEX);
+     }
+ 
+   fp = fopen (index_filename, "r");
+@@ -478,7 +481,7 @@ get_category (p)
+     return NULL;
+ 
+   path = (char *) xmalloc (PATH_MAX);
+-  sprintf (path, "%s/%s/%s", gnats_root, category, p);
++  snprintf (path, PATH_MAX, "%s/%s/%s", gnats_root, category, p);
+ 
+   return path;
+ }

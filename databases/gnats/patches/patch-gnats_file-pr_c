@@ -1,0 +1,230 @@
+$OpenBSD: patch-gnats_file-pr_c,v 1.1 2003/08/25 23:35:06 brad Exp $
+--- gnats/file-pr.c.orig	Tue May  8 08:09:45 2001
++++ gnats/file-pr.c	Wed Jul  2 13:23:13 2003
+@@ -51,7 +51,6 @@ gnats (fp)
+   char *subject = NULL, *synopsis = NULL;
+   char *p;
+   char message[STR_MAX];
+-  char *from_address;
+ 
+   mode_t mode;
+   struct stat sbuf;
+@@ -97,7 +96,8 @@ gnats (fp)
+   bug_group = field_value (CATEGORY);
+   if (find_category (&category, bug_group) == -1)
+     {
+-      sprintf (message, "%s from: %s\n", default_category, bug_group);
++      snprintf (message, sizeof(message), "%s from: %s\n", default_category,
++		bug_group);
+       log_msg (LOG_INFO, 1, "resetting bug category to ", message);
+       bug_group = default_category;
+       set_field (CATEGORY, default_category);
+@@ -170,7 +170,7 @@ gnats (fp)
+       /* The `Subject:' line is assumed to have a newline at the end.  */
+       int l = strlen (synopsis);
+       char *buf = (char *) xmalloc (l + 2);
+-      strcpy (buf, synopsis);
++      strlcpy (buf, synopsis, l + 2);
+       buf[l] = '\n';
+       buf[l + 1] = '\0';
+       set_header (SUBJECT, buf);
+@@ -209,7 +209,7 @@ gnats (fp)
+   /* Put together the path to where the bug will be stored.  If the dir
+      is not there, and the category is the default, auto-create that one,
+      if we want to.  If not, make the bug pending, and store in there.  */
+-  sprintf (path, "%s/%s", gnats_root, bug_group);
++  snprintf (path, PATH_MAX, "%s/%s", gnats_root, bug_group);
+   err = stat (path, &sbuf);
+   if (err == -1 && !flag_autocreate)
+     {
+@@ -217,7 +217,7 @@ gnats (fp)
+       set_field (CATEGORY, default_category);
+       log_msg (LOG_INFO, 1, "directory does not exist, changing to default:",
+ 	       path);
+-      sprintf (path, "%s/%s", gnats_root, bug_group);
++      snprintf (path, PATH_MAX, "%s/%s", gnats_root, bug_group);
+       err = stat (path, &sbuf);
+     }
+ 
+@@ -254,7 +254,7 @@ gnats (fp)
+ 
+   /* Retrieve a unique bug number.  */
+   bug_number = get_bug_number ();
+-  sprintf (number, "%d", bug_number);
++  snprintf (number, sizeof(number), "%d", bug_number);
+   set_field (NUMBER, number);
+ 
+   /* Make sure all the values are ok; patch in any bogons, and keep
+@@ -262,8 +262,8 @@ gnats (fp)
+   bad_enums = check_enum_types (1);
+  
+   /* Write the file out.  */
+-  sprintf (bug_name, "%s/%d", bug_group, bug_number);
+-  sprintf (path, "%s/%s", gnats_root, bug_name);
++  snprintf (bug_name, sizeof(bug_name), "%s/%d", bug_group, bug_number);
++  snprintf (path, PATH_MAX, "%s/%s", gnats_root, bug_name);
+   create_report (path, 1);
+   log_msg (LOG_INFO, 1, "PR written out:", path);
+ 
+@@ -345,9 +345,10 @@ run_atpr (submitter, expired, bug_name, 
+   int len, i;
+   static char *ats[] = { "/usr/bin/at", "/bin/at", NULL };
+ 
+-  at_pr = (char *) xmalloc (strlen (bindir) + 7);
+-  strcpy (at_pr, bindir);
+-  strcat (at_pr, "/at-pr");
++  len = strlen (bindir) + 7;
++  at_pr = (char *) xmalloc (len);
++  strlcpy (at_pr, bindir, len);
++  strlcat (at_pr, "/at-pr", len);
+ 
+   len = strftime (buf, GNATS_TIME_LENGTH, "%H:%M %b %d", expired);
+ 
+@@ -355,8 +356,9 @@ run_atpr (submitter, expired, bug_name, 
+     {
+       if (access (ats[i], X_OK) == 0)
+ 	{
+-	  command = (char *) xmalloc (len + strlen (ats[i]) + 2);
+-	  sprintf (command, "%s %s", ats[i], buf);
++	  len += strlen (ats[i]) + 2;
++	  command = (char *) xmalloc (len);
++	  snprintf (command, len, "%s %s", ats[i], buf);
+ 	  break;
+ 	}
+     }
+@@ -410,7 +412,7 @@ check_if_reply ()
+   if (*s == '\0')
+     return NULL;
+ 
+-  strcpy (token, s);
++  strlcpy (token, s, sizeof(token));
+   s = token;
+ 
+   re_set_syntax (RE_NO_BK_PARENS);
+@@ -487,7 +489,7 @@ check_if_reply ()
+   else
+     {
+       path = xmalloc (PATH_MAX);
+-      sprintf (path, "%s/%s", gnats_root, s + start);
++      snprintf (path, PATH_MAX, "%s/%s", gnats_root, s + start);
+     }
+   if (stat (path, &buf) == -1)
+     {
+@@ -513,12 +515,11 @@ derive_submitter ()
+   char *compare;
+ 
+   char *name, *alias, *s, *t;
+-  int i, start, end;
+ 
+   FILE *fp;
+ 
+   from_address = header_value (FROM);
+-  strcpy (from_string, from_address);
++  strlcpy (from_string, from_address, sizeof(from_string));
+ 
+   if ((*from_string == '\0') || (*from_string == '\n'))
+   {
+@@ -540,7 +541,7 @@ derive_submitter ()
+       if ((*t == ' ') || (*t == '\n'))
+ 	*t = '\0';
+     }
+-  sprintf (path, "%s/gnats-adm/addresses", gnats_root);
++  snprintf (path, sizeof(path), "%s/gnats-adm/addresses", gnats_root);
+   if ((fp = fopen (path, "r")) == (FILE *) NULL)
+   {
+     xfree (token);
+@@ -686,8 +687,8 @@ append_notify (person)
+ 	   notify = (char *) xrealloc (notify, notify_size);
+ 	 }
+ 
+-       strcat (notify, n);
+-       strcat (notify, ", ");
++       strlcat (notify, n, STR_MAX);
++       strlcat (notify, ", ", STR_MAX);
+        notify_len += i + 2;
+ 
+        p = start;
+@@ -701,14 +702,15 @@ append_notify (person)
+ }
+ 
+ static void
+-try_append_notify (notify, string)
++try_append_notify (notify, string, len)
+      char *notify;
+      char *string;
++     size_t len;
+ {
+   char *try = append_notify (string);
+   if (try != NULL)
+     {
+-      strcat (notify, try);
++      strlcat (notify, try, len);
+       xfree (try);
+     }
+ }
+@@ -729,13 +731,13 @@ notify_responsible (responsible, subcont
+ 
+   notify[0] = '\0';
+ 
+-  try_append_notify (notify, subcontact);
+-  try_append_notify (notify, subnotify);
+-  try_append_notify (notify, cnotify);
++  try_append_notify (notify, subcontact, BUFSIZ);
++  try_append_notify (notify, subnotify, BUFSIZ);
++  try_append_notify (notify, cnotify, BUFSIZ);
+ 
+   {
+     char *gnotify = (char *) strdup (header_value (X_GNATS_NOTIFY));
+-    try_append_notify (notify, gnotify);
++    try_append_notify (notify, gnotify, BUFSIZ);
+     xfree (gnotify);
+   }
+ 
+@@ -897,7 +899,7 @@ append_report (infile, filename)
+   time_t t;
+   /* Where to keep the static index if necessary.  */
+   Index *current_index = (Index *)NULL;
+-  Index *i, *prev_index = NULL, *old_index = NULL;
++  Index *i;
+ 
+   /* Save the values we read while in main().  */
+   from = (char *) strdup (header_value (FROM));
+@@ -934,15 +936,15 @@ append_report (infile, filename)
+ 
+   /* Separate this from the rest of the audit trail.  */
+   APPEND_STRING ((char*)"\n", buf, b, buf_len, buf_max, l, 0);
+-  sprintf (line, "From: %s", from);
++  snprintf (line, STR_MAXLONG, "From: %s", from);
+   APPEND_STRING (line, buf, b, buf_len, buf_max, l, 0);
+-  sprintf (line, "To: %s", to);
++  snprintf (line, STR_MAXLONG, "To: %s", to);
+   APPEND_STRING (line, buf, b, buf_len, buf_max, l, 0);
+-  sprintf (line, "Cc: %s", cc);
++  snprintf (line, STR_MAXLONG, "Cc: %s", cc);
+   APPEND_STRING (line, buf, b, buf_len, buf_max, l, 0);
+-  sprintf (line, "Subject: %s", subject);
++  snprintf (line, STR_MAXLONG, "Subject: %s", subject);
+   APPEND_STRING (line, buf, b, buf_len, buf_max, l, 0);
+-  sprintf (line, "Date: %s", date);
++  snprintf (line, STR_MAXLONG, "Date: %s", date);
+   APPEND_STRING (line, buf, b, buf_len, buf_max, l, 0);
+   APPEND_STRING ((char*)"\n", buf, b, buf_len, buf_max, l, 0);
+ 
+@@ -988,7 +990,7 @@ append_report (infile, filename)
+         {
+           t = get_date (date, NULL);         
+           i->last_modified = (char *) xmalloc (18);
+-          sprintf (i->last_modified, "%d", t);    
++          snprintf (i->last_modified, 18, "%d", t);    
+           /* write out the new index.  */
+           write_index (current_index);
+           break; 
+@@ -1073,7 +1075,7 @@ get_bug_number ()
+   /* First try to find and lock the gnats lock file.  We need this since
+      they want every bug to have a unique number.  If lock doesn't exist,
+      make it, if possible.  */
+-  sprintf (sbuf, "%s/gnats-adm/current", gnats_root);
++  snprintf (sbuf, sizeof(sbuf), "%s/gnats-adm/current", gnats_root);
+ 
+   block_signals ();
+ 
