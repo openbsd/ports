@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/02/03 03:30:12 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/17 15:18:33 alek Exp $
 
 COMMENT=		"widgets library"
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		m 
 
 USE_X11=		Yes
 

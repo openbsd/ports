@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/09/15 19:26:29 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/17 15:18:33 alek Exp $
 
 
 COMMENT='front-end/embeddable kpart for mplayer'
@@ -31,6 +31,11 @@ PERMIT_PACKAGE_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
 PERMIT_DISTFILES_FTP=Yes
 PERMIT_DISTFILES_CDROM=Yes
+WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 artsflow artsflow_idl \
+		audiofile c esd glib-2.0.0.0 gmodule-2.0.0.0 gthread-2.0.0.0 \
+		iconv intl jpeg kmedia2_idl kwalletclient m mad mcop ogg \
+		ossaudio png pthread qtmcop soundserver_idl stdc++ util vorbis \
+		vorbisenc vorbisfile z 
 
 LIB_DEPENDS=kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kmediaplayer,kparts,artskde::x11/kde/libs3
 

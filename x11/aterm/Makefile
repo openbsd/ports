@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2004/09/18 00:24:44 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2004/12/17 15:18:32 alek Exp $
 
 DISTNAME=	aterm-0.4.2
 CATEGORIES=	x11
@@ -8,6 +8,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 c util
 
 COMMENT=	"color vt102 terminal emulator with transparency support"
 HOMEPAGE=	http://aterm.sourceforge.net/
@@ -45,6 +46,7 @@ LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 CONFIGURE_ARGS+= --with-xpm --enable-transparency \
 		--enable-background-image --enable-fading \
 		--with-jpeg --with-png
+WANTLIB+=	Xpm 
 .endif
 
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2004/07/14 13:15:02 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2004/12/17 15:18:34 alek Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64 amd64
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
 PERMIT_PACKAGE_FTP=Yes
+WANTLIB=	ICE SM X11 Xext Xinerama Xv Xxf86vm c iconv m z
 
 LIB_DEPENDS=	a52::audio/liba52 \
 		dvdread.3.0::devel/libdvdread \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/05/28 21:42:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/12/17 15:18:33 alek Exp $
 
 COMMENT=		"dockable program launcher"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xpm c 
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mterm/}
 

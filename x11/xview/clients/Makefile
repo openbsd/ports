@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/10/08 17:13:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/12/17 15:18:34 alek Exp $
 
 COMMENT=	"OpenLook applications and man pages"
 
@@ -15,6 +15,8 @@ WRKDIST=	${WRKDIR}/x11/xview/lib/${DISTNAME}
 WRKSRC=		${WRKDIST}/clients
 USE_X11=	Yes
 MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
+
+WANTLIB=	X11 Xext c m 
 
 do-configure:
 	cd ${WRKDIST} && $(MAKE_ENV) SUBDIRS=clients make Makefiles

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/10/08 17:13:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/12/17 15:18:33 alek Exp $
 
 COMMENT=	"win95-like window manager based on fvwm 2.x"
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
+WANTLIB=		X11 Xext Xpm c
 
 USE_X11=	Yes
 

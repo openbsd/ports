@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/09/28 01:24:41 jcs Exp $
+# $OpenBSD: Makefile,v 1.12 2004/12/17 15:18:31 alek Exp $
 
 COMMENT=	"Advanced Power Management monitor utility for X"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xext Xpm c
 
 LIB_DEPENDS=		jpeg.62::graphics/jpeg
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/01/29 17:37:57 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/17 15:18:32 alek Exp $
 
 COMMENT=		"minimalist window manager for the X Window System"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext c
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=evilwm/}
 DISTFILES=		evilwm_${V}.orig.tar.gz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/02/22 16:47:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2004/12/17 15:18:34 alek Exp $
 
 COMMENT=	"Motif toolkit"
 COMMENT-debuglibs="Motif toolkit debug libraries"
@@ -36,6 +36,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xext Xp Xt c m 
 
 MULTI_PACKAGES=	-demos -debuglibs
 SUBPACKAGE?=

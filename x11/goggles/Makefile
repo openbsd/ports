@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/02/12 02:19:39 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2004/12/17 15:18:33 alek Exp $
 
 COMMENT='gui for ogle'
 CATEGORIES=x11
@@ -26,4 +26,6 @@ PERMIT_DISTFILES_FTP=Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_PACKAGE_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
+WANTLIB=GL GLU X11 Xext Xv bz2 c iconv jpeg m png pthread stdc++ tiff xml2 z
+
 .include <bsd.port.mk>

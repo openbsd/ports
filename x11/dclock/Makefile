@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/05/18 08:45:33 xsa Exp $
+# $OpenBSD: Makefile,v 1.16 2004/12/17 15:18:32 alek Exp $
 # $FreeBSD: Makefile,v 1.9 1999/08/31 06:52:30 mharo Exp $
 
 COMMENT=	"digital clock with optional military time and alarm"
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
+WANTLIB=		X11 Xt c
 
 USE_X11=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/12/09 22:06:23 marcm Exp $
+# $OpenBSD: Makefile,v 1.11 2004/12/17 15:18:33 alek Exp $
 
 COMMENT=		"sample theme engines for GTK+ provided with GNOME"
 
@@ -20,6 +20,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xi gdk glib gmodule gtk iconv intl jpeg m png \
+			tiff ungif z
 
 USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu

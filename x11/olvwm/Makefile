@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/05/18 08:45:33 xsa Exp $
+# $OpenBSD: Makefile,v 1.28 2004/12/17 15:18:34 alek Exp $
 
 COMMENT=	"OpenLook Virtual Window manager"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
+WANTLIB=		X11 Xext Xpm c m 
 
 # The Patch01 and Patch02 patches are included in the patches directory.
 #

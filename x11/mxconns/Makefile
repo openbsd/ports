@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/12/03 01:33:15 jolan Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/17 15:18:33 alek Exp $
 
 COMMENT=	"interactive X11 proxy with selective X request replacement"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
+WANTLIB=		X11 Xext Xpm Xt c 
 
 USE_X11=	Yes
 USE_MOTIF=	any

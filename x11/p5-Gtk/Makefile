@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/11/23 12:48:29 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2004/12/17 15:18:34 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xi gdk glib gmodule iconv intl jpeg m png \
+			tiff ungif z 
 
 HOMEPAGE=	http://www.gtkperl.org/
 

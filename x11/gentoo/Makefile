@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/09/09 16:22:10 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/17 15:18:33 alek Exp $
 
 COMMENT=		"GTK+ Graphical filemanager"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xi c gmodule iconv intl m
 
 LIB_DEPENDS= 		gtk.1.2,gdk.1.2::x11/gtk+ \
 			glib.1::devel/glib 

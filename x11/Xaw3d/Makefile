@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/10/08 17:13:14 sturm Exp $
+# $OpenBSD: Makefile,v 1.21 2004/12/17 15:18:31 alek Exp $
 
 COMMENT=	"3D Athena Widget set that looks like Motif"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xext Xmu Xp Xpm Xt 
 
 USE_X11=	Yes
 
