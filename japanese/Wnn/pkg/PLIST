@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/08/05 14:11:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/09/15 00:53:48 espie Exp $
 bin/atod
 bin/atof
 bin/dtoa
@@ -7,8 +7,8 @@ bin/oldatonewa
 @mode u+s
 @owner root
 bin/uum
-@mode 
-@owner 
+@mode
+@owner
 bin/wddel
 bin/wdreg
 bin/wnnkill

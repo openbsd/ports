@@ -1,43 +1,46 @@
-@comment $OpenBSD: PLIST-dict,v 1.6 2004/07/24 12:43:16 espie Exp $
-ja_JP/pubdic/
+@comment $OpenBSD: PLIST-dict,v 1.7 2004/09/15 00:53:48 espie Exp $
+dict/
+dict/Wnn/
+dict/Wnn/ja_JP/
+dict/Wnn/ja_JP/pubdic/
 @comment no checksum
-ja_JP/pubdic/bio.dic
+dict/Wnn/ja_JP/pubdic/bio.dic
 @comment no checksum
-ja_JP/pubdic/chimei.dic
+dict/Wnn/ja_JP/pubdic/chimei.dic
 @comment no checksum
-ja_JP/pubdic/computer.dic
+dict/Wnn/ja_JP/pubdic/computer.dic
 @comment no checksum
-ja_JP/pubdic/full.fzk
+dict/Wnn/ja_JP/pubdic/full.fzk
 @comment no checksum
-ja_JP/pubdic/jinmei.dic
+dict/Wnn/ja_JP/pubdic/jinmei.dic
 @comment no checksum
-ja_JP/pubdic/kihon.dic
+dict/Wnn/ja_JP/pubdic/kihon.dic
 @comment no checksum
-ja_JP/pubdic/kougo.fzk
+dict/Wnn/ja_JP/pubdic/kougo.fzk
 @comment no checksum
-ja_JP/pubdic/koyuu.dic
+dict/Wnn/ja_JP/pubdic/koyuu.dic
 @comment no checksum
-ja_JP/pubdic/setsuji.dic
+dict/Wnn/ja_JP/pubdic/setsuji.dic
 @comment no checksum
-ja_JP/pubdic/special.dic
+dict/Wnn/ja_JP/pubdic/special.dic
 @comment no checksum
-ja_JP/pubdic/std.fzk
+dict/Wnn/ja_JP/pubdic/std.fzk
 @comment no checksum
-ja_JP/pubdic/symbol.dic
+dict/Wnn/ja_JP/pubdic/symbol.dic
 @comment no checksum
-ja_JP/pubdic/tankan.dic
-ja_JP/src/
-ja_JP/src/fzk.attr
-ja_JP/src/fzk.con
-ja_JP/src/fzk.fzkattr
-ja_JP/src/fzk.jirattr
-ja_JP/src/fzk.jircon
-ja_JP/src/fzk.master
-ja_JP/src/fzk.shuutan
-ja_JP/wnncons/
+dict/Wnn/ja_JP/pubdic/tankan.dic
+dict/Wnn/ja_JP/src/
+dict/Wnn/ja_JP/src/fzk.attr
+dict/Wnn/ja_JP/src/fzk.con
+dict/Wnn/ja_JP/src/fzk.fzkattr
+dict/Wnn/ja_JP/src/fzk.jirattr
+dict/Wnn/ja_JP/src/fzk.jircon
+dict/Wnn/ja_JP/src/fzk.master
+dict/Wnn/ja_JP/src/fzk.shuutan
+dict/Wnn/ja_JP/wnncons/
 @comment no checksum
-ja_JP/wnncons/tankan2.dic
+dict/Wnn/ja_JP/wnncons/tankan2.dic
 @comment no checksum
-ja_JP/wnncons/tankan3.dic
+dict/Wnn/ja_JP/wnncons/tankan3.dic
 @exec ${WNNBASE}/lib/wnn/install-script
 @unexec echo "usr info may exist: finish removing %D/ja_JP manually"

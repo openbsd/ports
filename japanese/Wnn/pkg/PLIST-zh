@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zh,v 1.9 2004/08/05 14:11:10 espie Exp $
+@comment $OpenBSD: PLIST-zh,v 1.10 2004/09/15 00:53:48 espie Exp $
 bin/catod
 bin/catof
 bin/cdtoa
@@ -6,8 +6,8 @@ bin/cserver
 @mode u+s
 @owner root
 bin/cuum
-@mode 
-@owner 
+@mode
+@owner
 bin/cwddel
 bin/cwdreg
 bin/cwnnkill

@@ -1,31 +1,35 @@
-@comment $OpenBSD: PLIST-zhdict,v 1.6 2004/07/24 12:43:16 espie Exp $
-zh_CN/sys/
+@comment $OpenBSD: PLIST-zhdict,v 1.7 2004/09/15 00:53:48 espie Exp $
+dict/
+dict/Wnn/
+dict/Wnn/zh_CN/
+dict/Wnn/zh_CN/sys/
 @comment no checksum
-zh_CN/sys/QianMa.dic
+dict/Wnn/zh_CN/sys/QianMa.dic
 @comment no checksum
-zh_CN/sys/WuBi.dic
+dict/Wnn/zh_CN/sys/WuBi.dic
 @comment no checksum
-zh_CN/sys/basic.dic
+dict/Wnn/zh_CN/sys/basic.dic
 @comment no checksum
-zh_CN/sys/computer.dic
+dict/Wnn/zh_CN/sys/computer.dic
 @comment no checksum
-zh_CN/sys/cwnn.dic
+dict/Wnn/zh_CN/sys/cwnn.dic
 @comment no checksum
-zh_CN/sys/full.con
+dict/Wnn/zh_CN/sys/full.con
 @comment no checksum
-zh_CN/sys/full.conR
+dict/Wnn/zh_CN/sys/full.conR
 @comment no checksum
-zh_CN/sys/level_1.dic
+dict/Wnn/zh_CN/sys/level_1.dic
 @comment no checksum
-zh_CN/sys/level_2.dic
-zh_TW/sys/
+dict/Wnn/zh_CN/sys/level_2.dic
+dict/Wnn/zh_TW/
+dict/Wnn/zh_TW/sys/
 @comment no checksum
-zh_TW/sys/cns_ch.dic
+dict/Wnn/zh_TW/sys/cns_ch.dic
 @comment no checksum
-zh_TW/sys/cns_wd.dic
+dict/Wnn/zh_TW/sys/cns_wd.dic
 @comment no checksum
-zh_TW/sys/full.con
+dict/Wnn/zh_TW/sys/full.con
 @comment no checksum
-zh_TW/sys/full.conR
+dict/Wnn/zh_TW/sys/full.conR
 @exec ${WNNBASE}/lib/wnn/install-script
 @unexec echo "usr info may exist: finish removing %D/zh_CN & %D/zh_TW manually"

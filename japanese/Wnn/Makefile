@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.46 2004/01/02 22:03:36 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2004/09/15 00:53:48 espie Exp $
 
 COMMENT= 	"Japanese input method"
 COMMENT-dict=	"dictionaries for Japanese Wnn"
@@ -28,7 +28,8 @@ PKGNAME-kodict=	ko-Wnndict-4.2p0
 PKGNAME-xwnmo=	Wnn-xwnmo-4.2
 PKGNAME-data=	Wnn-data-4.2
 
-WNNDICDIR=/var/dict/Wnn
+WNNDICBASE=/var
+WNNDICDIR=${WNNDICBASE}/dict/Wnn
 WNNBASE=${LOCALBASE}
 SUBST_VARS=WNNBASE
 
@@ -36,17 +37,17 @@ SUBST_VARS=WNNBASE
 SUBPACKAGE?=
 .  if ${SUBPACKAGE} == "-dict"
 CATEGORIES=	japanese
-PREFIX=${WNNDICDIR}
+PREFIX=${WNNDICBASE}
 .  elif ${SUBPACKAGE} == "-zh"
 CATEGORIES=	chinese
 .  elif ${SUBPACKAGE} == "-zhdict"
 CATEGORIES=	chinese
-PREFIX=${WNNDICDIR}
+PREFIX=${WNNDICBASE}
 .  elif ${SUBPACKAGE} == "-ko"
 CATEGORIES=	korean
 .  elif ${SUBPACKAGE} == "-kodict"
 CATEGORIES=	korean
-PREFIX=${WNNDICDIR}
+PREFIX=${WNNDICBASE}
 .  elif ${SUBPACKAGE} == "-xwnmo"
 CATEGORIES=	japanese chinese korean
 .  elif ${SUBPACKAGE} == "-data"
