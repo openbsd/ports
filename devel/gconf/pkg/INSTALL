@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.4 2002/08/30 19:42:52 nino Exp $
+# $OpenBSD: INSTALL,v 1.5 2002/08/31 13:31:58 nino Exp $
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
@@ -9,6 +9,13 @@ P_NAME=gconf
 DEST_PFX=${SYSCONFDIR}
 SOURCE_PFX=${PREFIX}/share/examples/${P_NAME}
 
+warn_if_old_config() {
+    if grep "${DEST_PFX}/gconf/gconf.xml.defaults" ${DEST_PFX}/gconf/1/path >/dev/null 2>&1; then
+	echo "|"
+	echo "| WARNING: The default path in your configuration is incorrect."
+	echo "| Make sure that you update your configuration before using ${P_NAME}!"
+    fi
+}
 
 do_post() {
     echo 
@@ -56,6 +63,9 @@ do_post() {
 	    echo "| ${DEST_PFX}/$f"
 	done 
     fi
+    
+    warn_if_old_config
+
     echo "+--------------- ${P_NAME}"
     echo 
 }
