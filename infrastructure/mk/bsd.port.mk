@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.123 1999/09/26 22:20:46 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.124 1999/09/30 16:24:47 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2102,12 +2102,9 @@ package-path:
 
 .if !target(package-depends)
 package-depends:
-	@pname=x; \
+.if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
+	@pname=`${MAKE} _DEPEND_ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`; \
 	for dir in `${ECHO} ${LIB_DEPENDS} ${RUN_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
-		case $$pname in \
-			x) \
-			 pname=`${MAKE} _DEPEND_ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`;; \
-		esac; \
 		if cd $$dir 2>/dev/null; then \
 			${ECHO} -n "$$pname "; \
 			${MAKE} package-name package-depends ${_DEPEND_THRU} || \
@@ -2116,6 +2113,7 @@ package-depends:
 			${ECHO_MSG} "Warning: \"$$dir\" non-existent -- @pkgdep registration incomplete" >&2; \
 		fi; \
 	done
+.endif
 .endif
 
 # Build a package but don't check the package cookie
@@ -2307,12 +2305,10 @@ clean-depends:
 
 .if !target(depends-list)
 depends-list:
-	@pname=x; \
+.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
+   defined(LIB_DEPENDS) || defined(DEPENDS)
+	@pname=`${MAKE} _DEPEND_ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`; \
 	for dir in `${ECHO} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
-		 case $$pname in \
-			 x) \
-				 pname=`${MAKE} _DEPEND_ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`;; \
-			esac; \
 		if cd $$dir 2>/dev/null; then \
 			${ECHO} -n "$$pname "; \
 			${MAKE} package-name depends-list ${_DEPEND_THRU} || \
@@ -2321,6 +2317,7 @@ depends-list:
 			${ECHO_MSG} "Warning: \"$$dir\" non-existent" >&2; \
 		fi; \
 	done 
+.endif
 .endif
 
 ################################################################
