@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/08/07 15:52:05 avsm Exp $
+# $OpenBSD: Makefile,v 1.12 2002/08/12 04:30:21 avsm Exp $
 
 PKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -134,7 +134,7 @@ CONFIGURE_ARGS+=	--without-mcrypt
 MULTI_PACKAGES+=	-mcrypt
 COMMENT-mcrypt=		"mcrypt encryption/decryption extensions for php4"
 CONFIGURE_ARGS+=	--with-mcrypt=shared,${LOCALBASE}
-MCRYPT_DEPENDS=		mcrypt::security/libmcrypt
+MCRYPT_DEPENDS=		mcrypt::security/libmcrypt ltdl.1::devel/libtool
 .endif
 
 # mhash

@@ -1,0 +1,12 @@
+$OpenBSD: patch-aclocal_m4,v 1.1 2002/08/12 04:30:21 avsm Exp $
+--- aclocal.m4.orig	Thu Aug  8 00:42:18 2002
++++ aclocal.m4	Thu Aug  8 00:42:41 2002
+@@ -4087,7 +4087,7 @@ openbsd*)
+     shlibpath_overrides_runpath=yes
+   fi
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  finish_cmds=
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
