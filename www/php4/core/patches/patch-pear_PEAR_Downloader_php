@@ -1,0 +1,24 @@
+$OpenBSD: patch-pear_PEAR_Downloader_php,v 1.1 2004/02/29 00:08:07 avsm Exp $
+--- pear/PEAR/Downloader.php.orig	2004-02-28 17:56:58.000000000 +0000
++++ pear/PEAR/Downloader.php	2004-02-28 17:58:04.000000000 +0000
+@@ -613,6 +613,20 @@ class PEAR_Downloader extends PEAR_Commo
+     }
+ 
+     // }}}
++    // {{{ _prependPath($path, $prepend)
++
++    function _prependPath($path, $prepend)
++    {
++        if (strlen($prepend) > 0) {
++            if (OS_WINDOWS && preg_match('/^[a-z]:/i', $path)) {
++                $path = $prepend . substr($path, 2);
++            } else {
++                $path = $prepend . $path;
++            }
++        }
++        return $path;
++    }
++    // }}}
+     // {{{ pushError($errmsg, $code)
+     
+     /**

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.9 2003/11/15 18:11:35 avsm Exp $
---- configure.in.orig	2003-11-02 22:15:05.000000000 +0000
-+++ configure.in	2003-11-14 08:01:05.000000000 +0000
+$OpenBSD: patch-configure_in,v 1.10 2004/02/29 00:08:08 avsm Exp $
+--- configure.in.orig	2004-02-16 15:34:16.000000000 +0000
++++ configure.in	2004-02-28 17:54:33.000000000 +0000
 @@ -31,9 +31,7 @@ AC_PREREQ(2.13)
  AC_INIT(README.CVS-RULES)
  
@@ -29,7 +29,7 @@ $OpenBSD: patch-configure_in,v 1.9 2003/11/15 18:11:35 avsm Exp $
      EXTRA_LDFLAGS="$EXTRA_LDFLAGS -avoid-version -module"
  ;;
  esac
-@@ -965,7 +963,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfd
+@@ -967,7 +965,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfd
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`

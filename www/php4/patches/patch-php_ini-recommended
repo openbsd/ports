@@ -1,6 +1,6 @@
-$OpenBSD: patch-php_ini-recommended,v 1.9 2003/11/15 18:11:35 avsm Exp $
---- php.ini-recommended.orig	2003-09-01 17:25:23.000000000 +0100
-+++ php.ini-recommended	2003-11-14 08:01:37.000000000 +0000
+$OpenBSD: patch-php_ini-recommended,v 1.10 2004/02/29 00:08:08 avsm Exp $
+--- php.ini-recommended.orig	2004-02-10 00:03:43.000000000 +0000
++++ php.ini-recommended	2004-02-28 17:54:25.000000000 +0000
 @@ -423,11 +423,8 @@ default_mimetype = "text/html"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.9 2003/11/15 18:11:35 avsm Exp $
  
  ; Whether or not to enable the dl() function.  The dl() function does NOT work
  ; properly in multithreaded servers, such as IIS or Zeus, and is automatically
-@@ -502,7 +499,7 @@ upload_max_filesize = 2M
+@@ -506,7 +503,7 @@ upload_max_filesize = 2M
  ;;;;;;;;;;;;;;;;;;
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
@@ -32,7 +32,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.9 2003/11/15 18:11:35 avsm Exp $
  
  ; Define the anonymous ftp password (your email address)
  ;from="john@doe.com"
-@@ -521,77 +518,6 @@ default_socket_timeout = 60
+@@ -525,77 +522,6 @@ default_socket_timeout = 60
  ; auto_detect_line_endings = Off
  
  
@@ -110,7 +110,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.9 2003/11/15 18:11:35 avsm Exp $
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
-@@ -603,11 +529,6 @@ default_socket_timeout = 60
+@@ -607,11 +533,6 @@ default_socket_timeout = 60
  define_syslog_variables  = Off
  
  [mail function]
@@ -122,7 +122,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.9 2003/11/15 18:11:35 avsm Exp $
  
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
-@@ -1106,6 +1027,56 @@ sockets.use_system_read = On
+@@ -1110,6 +1031,56 @@ sockets.use_system_read = On
  ;exif.decode_jis_motorola = JIS
  ;exif.decode_jis_intel    = JIS
  

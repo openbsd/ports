@@ -1,28 +1,120 @@
-@comment $OpenBSD: PLIST-pear,v 1.4 2003/12/16 13:44:37 naddy Exp $
-pear/build/Makefile.global
-pear/build/acinclude.m4
-pear/build/mkdep.awk
-pear/build/phpize.m4
-pear/build/scan_makefile_in.awk
-pear/build/shtool
-pear/data/PEAR/package.dtd
-pear/data/PEAR/template.spec
+pear/lib/.registry/archive_tar.reg
+pear/lib/.registry/console_getopt.reg
+pear/lib/.registry/pear.reg
+pear/lib/.registry/db.reg
+pear/lib/.registry/http.reg
+pear/lib/.registry/mail.reg
+pear/lib/.registry/net_smtp.reg
+pear/lib/.registry/net_socket.reg
+pear/lib/.registry/xml_parser.reg
+pear/lib/.registry/xml_rpc.reg
+pear/lib/.lock
+pear/lib/.filemap
+pear/lib/Archive/Tar.php
+pear/lib/Console/Getopt.php
+pear/lib/System.php
+pear/lib/pearcmd.php
+pear/lib/PEAR/Command.php
+pear/lib/PEAR/Common.php
+pear/lib/PEAR/Command/Build.php
+pear/lib/PEAR/Command/Common.php
+pear/lib/PEAR/Command/Config.php
+pear/lib/PEAR/Command/Install.php
+pear/lib/PEAR/Command/Package.php
+pear/lib/PEAR/Command/Registry.php
+pear/lib/PEAR/Command/Remote.php
+pear/lib/PEAR/Command/Mirror.php
+pear/lib/PEAR/Command/Auth.php
+pear/lib/PEAR/Config.php
+pear/lib/PEAR/Dependency.php
+pear/lib/PEAR/Downloader.php
+pear/lib/PEAR/Builder.php
+pear/lib/PEAR/Frontend/CLI.php
+pear/lib/PEAR/Installer.php
+pear/lib/PEAR/Packager.php
+pear/lib/PEAR/Registry.php
+pear/lib/PEAR/Remote.php
+pear/lib/PEAR/Autoloader.php
+pear/lib/OS/Guess.php
+pear/lib/Net/SMTP.php
+pear/lib/Net/Socket.php
+pear/lib/XML/Parser.php
+pear/lib/XML/RPC/Server.php
+pear/lib/XML/RPC.php
+pear/lib/PEAR.php
+pear/lib/DB/dbase.php
+pear/lib/DB/fbsql.php
+pear/lib/DB/ibase.php
+pear/lib/DB/ifx.php
+pear/lib/DB/msql.php
+pear/lib/DB/mssql.php
+pear/lib/DB/mysql.php
+pear/lib/DB/mysql4.php
+pear/lib/DB/oci8.php
+pear/lib/DB/odbc.php
+pear/lib/DB/pgsql.php
+pear/lib/DB/sybase.php
+pear/lib/DB/storage.php
+pear/lib/DB/sqlite.php
+pear/lib/DB/common.php
+pear/lib/DB.php
+pear/lib/HTTP.php
+pear/lib/Mail/sendmail.php
+pear/lib/Mail/smtp.php
+pear/lib/Mail/RFC822.php
+pear/lib/Mail/mail.php
+pear/lib/Mail.php
 pear/doc/Archive_Tar/docs/Archive_Tar.txt
-pear/doc/DB/doc/IDEAS
 pear/doc/DB/doc/MAINTAINERS
 pear/doc/DB/doc/STATUS
 pear/doc/DB/doc/TESTERS
-pear/include/TSRM/TSRM.h
-pear/include/TSRM/acconfig.h
-pear/include/TSRM/readdir.h
-pear/include/TSRM/tsrm_config.h
-pear/include/TSRM/tsrm_config.nw.h
-pear/include/TSRM/tsrm_config.w32.h
-pear/include/TSRM/tsrm_config_common.h
-pear/include/TSRM/tsrm_nw.h
-pear/include/TSRM/tsrm_strtok_r.h
-pear/include/TSRM/tsrm_virtual_cwd.h
-pear/include/TSRM/tsrm_win32.h
+pear/doc/DB/doc/IDEAS
+pear/data/PEAR/template.spec
+pear/data/PEAR/package.dtd
+pear/tests/DB/tests/db_parsedsn.phpt
+pear/tests/DB/tests/db_factory.phpt
+pear/tests/DB/tests/db_ismanip.phpt
+pear/tests/DB/tests/db_error2.phpt
+pear/tests/DB/tests/errors.inc
+pear/tests/DB/tests/fetchmode_object.inc
+pear/tests/DB/tests/fetchmodes.inc
+pear/tests/DB/tests/include.inc
+pear/tests/DB/tests/limit.inc
+pear/tests/DB/tests/numcols.inc
+pear/tests/DB/tests/numrows.inc
+pear/tests/DB/tests/prepexe.inc
+pear/tests/DB/tests/sequences.inc
+pear/tests/DB/tests/simplequery.inc
+pear/tests/DB/tests/tableinfo.inc
+pear/tests/DB/tests/transactions.inc
+pear/tests/DB/tests/driver/02fetch.phpt
+pear/tests/DB/tests/driver/03simplequery.phpt
+pear/tests/DB/tests/driver/04numcols.phpt
+pear/tests/DB/tests/driver/05sequences.phpt
+pear/tests/DB/tests/driver/06prepexec.phpt
+pear/tests/DB/tests/driver/08affectedrows.phpt
+pear/tests/DB/tests/driver/09numrows.phpt
+pear/tests/DB/tests/driver/10errormap.phpt
+pear/tests/DB/tests/driver/13limit.phpt
+pear/tests/DB/tests/driver/14fetchmode_object.phpt
+pear/tests/DB/tests/driver/15quote.phpt
+pear/tests/DB/tests/driver/16tableinfo.phpt
+pear/tests/DB/tests/driver/17query.phpt
+pear/tests/DB/tests/driver/18get.phpt
+pear/tests/DB/tests/driver/bug22328.phpt
+pear/tests/DB/tests/driver/connect.inc
+pear/tests/DB/tests/driver/mktable.inc
+pear/tests/DB/tests/driver/setup.inc
+pear/tests/DB/tests/driver/skipif.inc
+pear/tests/DB/tests/driver/01connect.phpt
+pear/tests/DB/tests/db_error.phpt
+pear/tests/XML_Parser/tests/002.phpt
+pear/tests/XML_Parser/tests/003.phpt
+pear/tests/XML_Parser/tests/004.phpt
+pear/tests/XML_Parser/tests/005.phpt
+pear/tests/XML_Parser/tests/test2.xml
+pear/tests/XML_Parser/tests/test3.xml
+pear/tests/XML_Parser/tests/001.phpt
 pear/include/Zend/FlexLexer.h
 pear/include/Zend/acconfig.h
 pear/include/Zend/zend.h
@@ -63,16 +155,17 @@ pear/include/Zend/zend_stack.h
 pear/include/Zend/zend_static_allocator.h
 pear/include/Zend/zend_types.h
 pear/include/Zend/zend_variables.h
-pear/include/acconfig.h
-pear/include/ext/mbstring/mbstring.h
-pear/include/ext/mbstring/php_mbregex.h
-pear/include/ext/mbstring/php_unicode.h
-pear/include/ext/mbstring/unicode_data.h
-pear/include/ext/pgsql/php_pgsql.h
-pear/include/ext/session/mod_files.h
-pear/include/ext/session/mod_mm.h
-pear/include/ext/session/mod_user.h
-pear/include/ext/session/php_session.h
+pear/include/TSRM/TSRM.h
+pear/include/TSRM/acconfig.h
+pear/include/TSRM/readdir.h
+pear/include/TSRM/tsrm_config.h
+pear/include/TSRM/tsrm_config.nw.h
+pear/include/TSRM/tsrm_config.w32.h
+pear/include/TSRM/tsrm_config_common.h
+pear/include/TSRM/tsrm_nw.h
+pear/include/TSRM/tsrm_strtok_r.h
+pear/include/TSRM/tsrm_virtual_cwd.h
+pear/include/TSRM/tsrm_win32.h
 pear/include/ext/standard/aggregation.h
 pear/include/ext/standard/base64.h
 pear/include/ext/standard/basic_functions.h
@@ -131,6 +224,10 @@ pear/include/ext/standard/uniqid.h
 pear/include/ext/standard/url.h
 pear/include/ext/standard/url_scanner.h
 pear/include/ext/standard/url_scanner_ex.h
+pear/include/ext/session/mod_files.h
+pear/include/ext/session/mod_mm.h
+pear/include/ext/session/mod_user.h
+pear/include/ext/session/php_session.h
 pear/include/ext/xml/expat/ascii.h
 pear/include/ext/xml/expat/asciitab.h
 pear/include/ext/xml/expat/expat.h
@@ -144,6 +241,26 @@ pear/include/ext/xml/expat/xmlrole.h
 pear/include/ext/xml/expat/xmltok.h
 pear/include/ext/xml/expat/xmltok_impl.h
 pear/include/ext/xml/php_xml.h
+pear/include/ext/mbstring/libmbfl/mbfl/mbfilter.h
+pear/include/ext/mbstring/libmbfl/mbfl/mbfilter_8bit.h
+pear/include/ext/mbstring/libmbfl/mbfl/mbfilter_pass.h
+pear/include/ext/mbstring/libmbfl/mbfl/mbfilter_wchar.h
+pear/include/ext/mbstring/libmbfl/mbfl/mbfl_allocators.h
+pear/include/ext/mbstring/libmbfl/mbfl/mbfl_consts.h
+pear/include/ext/mbstring/libmbfl/mbfl/mbfl_convert.h
+pear/include/ext/mbstring/libmbfl/mbfl/mbfl_defs.h
+pear/include/ext/mbstring/libmbfl/mbfl/mbfl_encoding.h
+pear/include/ext/mbstring/libmbfl/mbfl/mbfl_filter_output.h
+pear/include/ext/mbstring/libmbfl/mbfl/mbfl_ident.h
+pear/include/ext/mbstring/libmbfl/mbfl/mbfl_language.h
+pear/include/ext/mbstring/libmbfl/mbfl/mbfl_memory_device.h
+pear/include/ext/mbstring/libmbfl/mbfl/mbfl_string.h
+pear/include/ext/mbstring/mbstring.h
+pear/include/ext/mbstring/php_mbregex.h
+pear/include/ext/mbstring/php_unicode.h
+pear/include/ext/mbstring/unicode_data.h
+pear/include/ext/pgsql/php_pgsql.h
+pear/include/main/php_embed.h
 pear/include/main/SAPI.h
 pear/include/main/build-defs.h
 pear/include/main/config.nw.h
@@ -156,7 +273,6 @@ pear/include/main/php3_compat.h
 pear/include/main/php_compat.h
 pear/include/main/php_config.h
 pear/include/main/php_content_types.h
-pear/include/main/php_embed.h
 pear/include/main/php_globals.h
 pear/include/main/php_ini.h
 pear/include/main/php_logos.h
@@ -184,149 +300,52 @@ pear/include/regex/regex.h
 pear/include/regex/regex2.h
 pear/include/regex/regex_extra.h
 pear/include/regex/utils.h
-pear/lib/.filemap
-pear/lib/.lock
-pear/lib/.registry/archive_tar.reg
-pear/lib/.registry/console_getopt.reg
-pear/lib/.registry/db.reg
-pear/lib/.registry/http.reg
-pear/lib/.registry/mail.reg
-pear/lib/.registry/net_smtp.reg
-pear/lib/.registry/net_socket.reg
-pear/lib/.registry/pear.reg
-pear/lib/.registry/xml_parser.reg
-pear/lib/.registry/xml_rpc.reg
-pear/lib/Archive/Tar.php
-pear/lib/Console/Getopt.php
-pear/lib/DB.php
-pear/lib/DB/common.php
-pear/lib/DB/dbase.php
-pear/lib/DB/fbsql.php
-pear/lib/DB/ibase.php
-pear/lib/DB/ifx.php
-pear/lib/DB/msql.php
-pear/lib/DB/mssql.php
-pear/lib/DB/mysql.php
-pear/lib/DB/oci8.php
-pear/lib/DB/odbc.php
-pear/lib/DB/pgsql.php
-pear/lib/DB/sqlite.php
-pear/lib/DB/storage.php
-pear/lib/DB/sybase.php
-pear/lib/HTTP.php
-pear/lib/Mail.php
-pear/lib/Mail/RFC822.php
-pear/lib/Mail/mail.php
-pear/lib/Mail/sendmail.php
-pear/lib/Mail/smtp.php
-pear/lib/Net/SMTP.php
-pear/lib/Net/Socket.php
-pear/lib/OS/Guess.php
-pear/lib/PEAR.php
-pear/lib/PEAR/Autoloader.php
-pear/lib/PEAR/Builder.php
-pear/lib/PEAR/Command.php
-pear/lib/PEAR/Command/Auth.php
-pear/lib/PEAR/Command/Build.php
-pear/lib/PEAR/Command/Common.php
-pear/lib/PEAR/Command/Config.php
-pear/lib/PEAR/Command/Install.php
-pear/lib/PEAR/Command/Mirror.php
-pear/lib/PEAR/Command/Package.php
-pear/lib/PEAR/Command/Registry.php
-pear/lib/PEAR/Command/Remote.php
-pear/lib/PEAR/Common.php
-pear/lib/PEAR/Config.php
-pear/lib/PEAR/Dependency.php
-pear/lib/PEAR/Frontend/CLI.php
-pear/lib/PEAR/Installer.php
-pear/lib/PEAR/Packager.php
-pear/lib/PEAR/Registry.php
-pear/lib/PEAR/Remote.php
-pear/lib/System.php
-pear/lib/XML/Parser.php
-pear/lib/XML/RPC.php
-pear/lib/XML/RPC/Server.php
-pear/lib/pearcmd.php
-pear/tests/DB/tests/db_error.phpt
-pear/tests/DB/tests/db_error2.phpt
-pear/tests/DB/tests/db_factory.phpt
-pear/tests/DB/tests/db_ismanip.phpt
-pear/tests/DB/tests/db_parsedsn.phpt
-pear/tests/DB/tests/driver/01connect.phpt
-pear/tests/DB/tests/driver/02fetch.phpt
-pear/tests/DB/tests/driver/03simplequery.phpt
-pear/tests/DB/tests/driver/04numcols.phpt
-pear/tests/DB/tests/driver/05sequences.phpt
-pear/tests/DB/tests/driver/06prepexec.phpt
-pear/tests/DB/tests/driver/08affectedrows.phpt
-pear/tests/DB/tests/driver/09numrows.phpt
-pear/tests/DB/tests/driver/10errormap.phpt
-pear/tests/DB/tests/driver/13limit.phpt
-pear/tests/DB/tests/driver/14fetchmode_object.phpt
-pear/tests/DB/tests/driver/15quote.phpt
-pear/tests/DB/tests/driver/bug22328.phpt
-pear/tests/DB/tests/driver/connect.inc
-pear/tests/DB/tests/driver/mktable.inc
-pear/tests/DB/tests/driver/setup.inc
-pear/tests/DB/tests/driver/skipif.inc
-pear/tests/DB/tests/errors.inc
-pear/tests/DB/tests/fetchmode_object.inc
-pear/tests/DB/tests/fetchmodes.inc
-pear/tests/DB/tests/fetchrow.inc
-pear/tests/DB/tests/include.inc
-pear/tests/DB/tests/limit.inc
-pear/tests/DB/tests/numcols.inc
-pear/tests/DB/tests/numrows.inc
-pear/tests/DB/tests/prepexe.inc
-pear/tests/DB/tests/sequences.inc
-pear/tests/DB/tests/simplequery.inc
-pear/tests/DB/tests/tableinfo.inc
-pear/tests/DB/tests/transactions.inc
-pear/tests/XML_Parser/tests/001.phpt
-pear/tests/XML_Parser/tests/002.phpt
-pear/tests/XML_Parser/tests/003.phpt
-pear/tests/XML_Parser/tests/004.phpt
-pear/tests/XML_Parser/tests/005.phpt
-pear/tests/XML_Parser/tests/test2.xml
-pear/tests/XML_Parser/tests/test3.xml
-@dirrm pear/build
-@dirrm pear/include/regex
-@dirrm pear/include/main
-@dirrm pear/include/ext/pgsql
-@dirrm pear/include/ext/mbstring
-@dirrm pear/include/ext/xml/expat
-@dirrm pear/include/ext/xml
-@dirrm pear/include/ext/session
-@dirrm pear/include/ext/standard
-@dirrm pear/include/ext
-@dirrm pear/include/TSRM
-@dirrm pear/include/Zend
-@dirrm pear/include
+pear/include/acconfig.h
+pear/build/phpize.m4
+pear/build/mkdep.awk
+pear/build/shtool
+pear/build/scan_makefile_in.awk
+pear/build/Makefile.global
+pear/build/acinclude.m4
 @dirrm pear/tests/XML_Parser/tests
 @dirrm pear/tests/XML_Parser
 @dirrm pear/tests/DB/tests/driver
 @dirrm pear/tests/DB/tests
 @dirrm pear/tests/DB
 @dirrm pear/tests
-@dirrm pear/data/PEAR
-@dirrm pear/data
+@dirrm pear/lib/XML/RPC
+@dirrm pear/lib/XML
+@dirrm pear/lib/PEAR/Frontend
+@dirrm pear/lib/PEAR/Command
+@dirrm pear/lib/PEAR
+@dirrm pear/lib/OS
+@dirrm pear/lib/Net
+@dirrm pear/lib/Mail
+@dirrm pear/lib/DB
+@dirrm pear/lib/Console
+@dirrm pear/lib/Archive
+@dirrm pear/lib/.registry
+@dirrm pear/lib
+@dirrm pear/include/regex
+@dirrm pear/include/main
+@dirrm pear/include/ext/xml/expat
+@dirrm pear/include/ext/xml
+@dirrm pear/include/ext/standard
+@dirrm pear/include/ext/session
+@dirrm pear/include/ext/pgsql
+@dirrm pear/include/ext/mbstring/libmbfl/mbfl
+@dirrm pear/include/ext/mbstring/libmbfl
+@dirrm pear/include/ext/mbstring
+@dirrm pear/include/ext
+@dirrm pear/include/Zend
+@dirrm pear/include/TSRM
+@dirrm pear/include
 @dirrm pear/doc/DB/doc
 @dirrm pear/doc/DB
 @dirrm pear/doc/Archive_Tar/docs
 @dirrm pear/doc/Archive_Tar
 @dirrm pear/doc
-@dirrm pear/lib/Mail
-@dirrm pear/lib/DB
-@dirrm pear/lib/XML/RPC
-@dirrm pear/lib/XML
-@dirrm pear/lib/Net
-@dirrm pear/lib/OS
-@dirrm pear/lib/PEAR/Frontend
-@dirrm pear/lib/PEAR/Command
-@dirrm pear/lib/PEAR
-@dirrm pear/lib/Console
-@dirrm pear/lib/Archive
-@dirrm pear/lib/.registry
-@dirrm pear/lib
+@dirrm pear/data/PEAR
+@dirrm pear/data
+@dirrm pear/build
 @dirrm pear
