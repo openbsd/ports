@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/09/11 18:42:30 danh Exp $
+${P5SITE}/Net/SMTP/Server.pm
+${P5SITE}/Net/SMTP/Server/Client.pm
+${P5SITE}/Net/SMTP/Server/Relay.pm
+man/man3p/Net::SMTP::Server.3p
+man/man3p/Net::SMTP::Server::Client.3p
+man/man3p/Net::SMTP::Server::Relay.3p
+@dirrm ${P5SITE}/Net/SMTP/Server
+@dirrm ${P5SITE}/Net/SMTP
