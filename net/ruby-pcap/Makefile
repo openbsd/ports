@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/04/17 18:35:32 couderc Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/08 17:07:48 espie Exp $
 
 COMMENT=		"Ruby interface to LBL Packet Capture library"
 
@@ -9,7 +9,7 @@ NEED_VERSION=		1.504
 
 HOMEPAGE=		http://www.goto.info.waseda.ac.jp/~fukusima/ruby/pcap-e.html
 
-MAINTAINER=		Damien COUDERC <couderc@openbsd.org>
+MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
 # GPL license
 PERMIT_PACKAGE_CDROM=	Yes

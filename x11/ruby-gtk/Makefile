@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/04/17 20:27:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/08 17:07:48 espie Exp $
 
 COMMENT=		"Ruby extension library for GTK Toolkit"
 
@@ -9,7 +9,7 @@ NEED_VERSION=		1.504
 
 HOMEPAGE=		http://ruby-gnome.sourceforge.net
 
-MAINTAINER=		Damien COUDERC <couderc@openbsd.org>
+MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
 # GPL license
 PERMIT_PACKAGE_CDROM=	Yes
