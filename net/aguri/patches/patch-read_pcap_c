@@ -1,0 +1,59 @@
+$OpenBSD: patch-read_pcap_c,v 1.1.1.1 2003/05/04 18:57:29 margarida Exp $
+--- read_pcap.c.orig	Thu Mar 22 02:19:46 2001
++++ read_pcap.c	Sat Feb 22 14:37:30 2003
+@@ -36,6 +36,7 @@
+ #include <sys/socket.h>
+ #include <sys/queue.h>
+ #include <net/if.h>
++#include <net/if_pflog.h>
+ #include <netinet/in.h>
+ #include <netinet/in_systm.h>
+ #include <netinet/if_ether.h>
+@@ -63,6 +64,8 @@
+ 
+ static void ether_if_read(u_char *user, const struct pcap_pkthdr *h,
+ 			  const u_char *p);
++static void pflog_if_read(u_char *user, const struct pcap_pkthdr *h,
++			  const u_char *p);
+ static void fddi_if_read(u_char *user, const struct pcap_pkthdr *h,
+ 			 const u_char *p);
+ static void atm_if_read(u_char *user, const struct pcap_pkthdr *h,
+@@ -115,6 +118,7 @@ static struct printer printers[] = {
+ #endif
+ 	{ ppp_if_read,	DLT_PPP },
+ 	{ null_if_read,	DLT_NULL },
++	{ pflog_if_read,	DLT_PFLOG },
+ 	{ NULL,			0 },
+ };
+ 
+@@ -173,6 +177,30 @@ ether_if_read(u_char *user, const struct
+ 	} else if (ether_encap_read(ether_type, p, length, caplen) == 0) {
+ 		/* ether_type not known */
+ 	}
++}
++
++static void
++pflog_if_read(u_char *user, const struct pcap_pkthdr *h, const u_char *p)
++{
++	int caplen = h->caplen;
++	int length = h->len;
++
++	if (caplen < PFLOG_HDRLEN) {
++		return;
++	}
++
++	/*
++	 * Some printers want to get back at the ethernet addresses,
++	 * and/or check that they're not walking off the end of the packet.
++	 * Rather than pass them all the way down, we set these globals.
++	 */
++	packetp = p;
++	snapend = p + caplen;
++
++	p += PFLOG_HDRLEN;
++	length -= PFLOG_HDRLEN;
++	caplen -= PFLOG_HDRLEN;
++	ip_read(p, length);
+ }
+ 
+ static int
