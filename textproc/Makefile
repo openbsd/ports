@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2001/10/29 19:12:34 jasoni Exp $
+# $OpenBSD: Makefile,v 1.70 2001/12/05 07:50:12 kevlo Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -38,6 +38,7 @@
      SUBDIR += p5-String-Similarity
      SUBDIR += p5-Text-PDF
      SUBDIR += p5-Text-Template
+     SUBDIR += p5-Text-Unidecode
      SUBDIR += p5-WML-Card
      SUBDIR += p5-XML-DOM
      SUBDIR += p5-XML-LibXML
