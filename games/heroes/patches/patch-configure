@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2001/08/11 01:24:49 pvalchev Exp $
+--- configure.orig	Fri Aug 10 19:13:43 2001
++++ configure	Fri Aug 10 19:14:48 2001
+@@ -10010,8 +10010,6 @@ EOF
+ fi
+ echo "$as_me:10011: result: $ac_cv_prog_gcc_opt_flags" >&5
+ echo "${ECHO_T}$ac_cv_prog_gcc_opt_flags" >&6
+-else
+-  CFLAGS="$CFLAGS -O"
+ fi
+ # Check whether --enable-warnings or --disable-warnings was given.
+ if test "${enable_warnings+set}" = set; then
