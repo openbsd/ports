@@ -1,4 +1,4 @@
-$OpenBSD: patch-lt1.3.4-ltmain_sh,v 1.1 2001/10/03 14:47:01 brad Exp $
+$OpenBSD: patch-lt1.3.4-ltmain_sh,v 1.2 2001/10/06 01:38:03 brad Exp $
 --- ltmain.sh.orig	Tue Dec  7 16:50:49 1999
 +++ ltmain.sh	Wed Oct  3 10:11:58 2001
 @@ -1079,6 +1079,17 @@ compiler."
@@ -47,15 +47,6 @@ $OpenBSD: patch-lt1.3.4-ltmain_sh,v 1.1 2001/10/03 14:47:01 brad Exp $
  	*)
  	  # Add libc to deplibs on all other systems.
  	  deplibs="$deplibs -lc"
-@@ -2619,7 +2644,7 @@ static const void *lt_preloaded_setup() 
- 	  # linked before any other PIC object.  But we must not use
- 	  # pic_flag when linking with -static.  The problem exists in
- 	  # FreeBSD 2.2.6 and is fixed in FreeBSD 3.1.
--	  *-*-freebsd2*|*-*-freebsd3.0*|*-*-freebsdelf3.0*)
-+	  *-*-freebsd2*|*-*-freebsd3.0*|*-*-freebsdelf3.0*)
- 	    case "$compile_command " in
- 	    *" -static "*) ;;
- 	    *) pic_flag_for_symtable=" $pic_flag -DPIC -DFREEBSD_WORKAROUND";;
 @@ -3555,40 +3580,6 @@ libdir='$install_libdir'\
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
