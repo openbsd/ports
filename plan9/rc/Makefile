@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/11 01:10:11 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/12 06:30:02 turan Exp $
 
 WITH_EDITLINE=	yes
 DISTNAME=	rc-1.6
@@ -10,6 +10,12 @@ MASTER_SITES0=	http://www.star.le.ac.uk/~tjg/rc/misc/
 NEED_VERSION=	1.121
 
 MAINTAINER=	markus@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes

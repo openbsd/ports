@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/02/02 17:02:38 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/02/12 06:29:50 turan Exp $
 
 BROKEN=		bad packing lists
 
@@ -21,6 +21,12 @@ PATCHFILES=	gcc-2.8.x.patch:0
 PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	d@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 BUILD_DEPENDS=	${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/11 00:37:38 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/12 06:30:04 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	setquota-0.1
@@ -7,6 +7,12 @@ MASTER_SITES=	ftp://ftp.jurai.net/users/winter/
 NEED_VERSION=	1.191
 
 MAINTAINER= 	ports@OpenBSD.ORG
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 WRKDIST=	${WRKDIR}/setquota/
 

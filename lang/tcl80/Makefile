@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/02/11 00:37:28 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2000/02/12 06:29:57 turan Exp $
 # $FreeBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 
 DISTNAME=	tcl8.0.5
@@ -9,6 +9,12 @@ MASTER_SITE_SUBDIR= tcl8_0
 NEED_VERSION=	1.191
 
 MAINTAINER=	niklas@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/11 00:37:37 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 06:30:03 turan Exp $
 # $FreeBSD: Makefile,v 1.5 1999/03/09 00:16:14 jseger Exp $
 
 DISTNAME=	strobe-1.06
@@ -9,6 +9,12 @@ EXTRACT_SUFX=	.tgz
 NEED_VERSION=	1.191
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 WRKDIST=	${WRKDIR}/strobe
 ALL_TARGET=	strobe

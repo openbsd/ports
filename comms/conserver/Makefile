@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/10 23:14:29 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 06:29:50 turan Exp $
 
 DISTNAME=	conserver-5.21-Beta
 PKGNAME=	conserver-5.21
@@ -15,6 +15,12 @@ CATEGORIES=	comms
 NO_PACKAGE=	"binary distribution requires explicit acknowledgement"
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	ftp://ftp.uu.net/vendor/bitsko/config-mgmt/ \
 		ftp://unix.hensa.ac.uk/mirrors/uunet/vendor/bitsko/config-mgmt/

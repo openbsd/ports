@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/11 01:10:10 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 06:30:02 turan Exp $
 
 DISTNAME=       dhcp-1.4.0p3
 PKGNAME=        wide-dhcp-1.4.0.3
@@ -7,6 +7,12 @@ MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/
 DISTFILES=	${DISTNAME}.tar.gz
 
 MAINTAINER=	ports@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MAKE_ENV=	OSTYPE=`uname`
 

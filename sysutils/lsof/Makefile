@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2000/02/11 00:37:38 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2000/02/12 06:30:04 turan Exp $
 
 DISTNAME=	lsof_4.49B.n+obsd
 PKGNAME=	lsof-4.49B
@@ -12,6 +12,12 @@ NO_PACKAGE=	"compile from source to set proper options"
 NEED_VERSION=	1.191
 
 MAINTAINER=     angelos@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT= Configure

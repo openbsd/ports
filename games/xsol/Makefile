@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/11/05 02:16:40 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 06:29:54 turan Exp $
 
 DISTNAME=       xsol-new
 PKGNAME=	xsol-2.1.1
@@ -6,6 +6,12 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_IMAKE=      yes
 

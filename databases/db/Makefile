@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/02/11 00:37:20 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/02/12 06:29:51 turan Exp $
 
 DISTNAME=	db-3.0.55
 CATEGORIES=	databases
@@ -6,6 +6,12 @@ MASTER_SITES=	http://www.sleepycat.com/update/3.0.55/
 NEED_VERSION=	1.191
 
 MAINTAINER=	tacho@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../dist/configure

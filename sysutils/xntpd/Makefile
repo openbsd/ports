@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/12/12 21:18:05 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/12 06:30:04 turan Exp $
 
 DISTNAME=	xntp3-5.93e-export
 CATEGORIES=	sysutils
@@ -7,6 +7,12 @@ MASTER_SITES=	ftp://ftp.hawaii.edu/mirrors/ntp/ \
 		ftp://ftp.udel.edu/pub/ntp/
 
 MAINTAINER=     jason@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT= configure

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/11 01:10:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 06:30:00 turan Exp $
 
 DISTNAME=	arpwatch-2.1a4
 CATEGORIES=	net
@@ -8,6 +8,12 @@ MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet

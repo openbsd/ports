@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/01/05 05:17:14 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/02/12 06:29:57 turan Exp $
 
 DISTNAME=	pine4.21
 PKGNAME=	pine-4.21
@@ -7,6 +7,12 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/
 
 MAINTAINER=	ports@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pine

@@ -1,5 +1,5 @@
 # $FreeBSD: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
-# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:30 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 06:29:59 turan Exp $
 
 DISTNAME=	vatsrc-4.0b2
 PKGNAME=	vat-4.0b2
@@ -9,6 +9,12 @@ MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GSM_DIR=	${PORTSDIR}/audio/gsm
 GSM_WORK=       ${WRKDIRPREFIX}${GSM_DIR}/work/gsm-1.0-pl10

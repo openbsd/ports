@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2000/01/20 04:10:26 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2000/02/12 06:29:54 turan Exp $
 
 DISTNAME=	ImageMagick-4.2.9
 CATEGORIES=     graphics
@@ -14,6 +14,12 @@ HOMEPAGE=	http://www.wizards.dupont.com/cristy/ImageMagick.html
 NEED_VERSION=	1.73
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 LIB_DEPENDS=	bz2.9.5:${PORTSDIR}/archivers/bzip2 \
 		jbig.1.1:${PORTSDIR}/graphics/jbigkit \

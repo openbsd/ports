@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/02/11 00:37:38 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/02/12 06:30:03 turan Exp $
 
 DISTNAME=	tcsh-6.09
 .if defined(STATIC) && ${STATIC:U} == YES
@@ -11,6 +11,12 @@ MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/
 NEED_VERSION=	1.191
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GNU_CONFIGURE=	yes
 

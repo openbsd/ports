@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/11/03 01:11:49 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/12 06:29:59 turan Exp $
 
 BROKEN=		dependency mbone/wbd is also broken
 
@@ -7,6 +7,12 @@ DISTFILES=	relate-2.0.tar.gz
 CATEGORIES=	mbone
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/relate-ui/2.0/
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 NEED_VERSION=	1.111
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/11/12 14:40:57 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 06:29:53 turan Exp $
 
 DISTNAME=	xneko
 PKGNAME=	xneko-4.4
@@ -8,6 +8,12 @@ EXTRACT_SUFX=	.tar
 IGNOREFILES=	xneko.tar
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_X11=	yes
 

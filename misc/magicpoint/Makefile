@@ -3,8 +3,8 @@
 # Date created:		July 13 1999
 # Whom:			Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.4 2000/02/11 01:10:07 espie Exp $
-# $OpenBSD: Makefile,v 1.4 2000/02/11 01:10:07 espie Exp $
+# $Id: Makefile,v 1.5 2000/02/12 06:30:00 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/12 06:30:00 turan Exp $
 #
 
 DISTNAME=	magicpoint-1.05a
@@ -14,6 +14,12 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 # plus sign is for localized (i.e. Japanese) version
 LIB_DEPENDS+=	ttf.1:${PORTSDIR}/print/freetype

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/11 01:10:10 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/12 06:30:02 turan Exp $
 #
 
 DISTNAME=	ucd-snmp-3.6.2
@@ -7,6 +7,12 @@ MASTER_SITES= 	ftp://ucd-snmp.ucdavis.edu/				\
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/
 
 MAINTAINER=	hugh@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 
 GNU_CONFIGURE=	yes

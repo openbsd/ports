@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:17 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/12 06:29:50 turan Exp $
 
 DISTNAME=	dist10
 PKGNAME=	mp3encode-1.10
@@ -7,6 +7,12 @@ MASTER_SITES=	ftp://ftp.sunet.se/pub/multimedia/Berkeley/mpeg2/conformance-bitst
 NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes

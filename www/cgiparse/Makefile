@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/11/17 09:17:34 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 06:30:05 turan Exp $
 
 DISTNAME=	cgiparse-0.8e
 CATEGORIES=	www
@@ -6,6 +6,12 @@ CATEGORIES=	www
 NEED_VERSION=	1.64
 
 MAINTAINER=	ports@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/	\
 		http://d182-89.uoregon.edu/~jmg/

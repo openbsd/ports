@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/04 08:01:35 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 06:30:02 turan Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 DISTNAME=	freetype-1.3
@@ -13,6 +13,12 @@ MASTER_SITES=	ftp://ftp.tux.org/pub/devel/freetype/ \
 NEED_VERSION=	1.73
 
 MAINTAINER=	jasoni@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_GMAKE=	yes
 SEPARATE_BUILD=	concurrent

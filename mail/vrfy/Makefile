@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:29 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/12 06:29:58 turan Exp $
 #
 DISTNAME=		vrfy_990522
 PKGNAME=		vrfy-99.05.22
 CATEGORIES=		mail
 
 MAINTAINER=		rohee@OpenBSD.ORG
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 # how to fetch the tarball
 MASTER_SITES=		ftp://ftp.nikhef.nl/pub/network/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2000/02/11 01:10:01 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2000/02/12 06:29:51 turan Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 DISTNAME=	postgresql-6.5.3
@@ -7,6 +7,12 @@ CATEGORIES=	databases
 NEED_VERSION=	1.191
 
 MAINTAINER=	form@OpenBSD.ORG
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/ \
 		ftp://gd.tuwien.ac.at/db/www.postgresql.org/pub/ \

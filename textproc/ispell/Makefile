@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/02/12 00:44:01 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/02/12 06:30:05 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 NEED_VERSION=	1.163
@@ -18,6 +18,12 @@ SUPDISTFILES=	${FRENCH_DICT}.tar.gz:0 ${GERMAN_DICT}.tar.gz:1
 PATCHFILES=	ispell-html-mode.patch:2
 
 MAINTAINER=	ports@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MAKE_FLAGS=	TMPDIR=${WRKDIR} 
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/02/11 00:37:39 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2000/02/12 06:30:07 turan Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 
 DISTNAME=	tk8.0.5
@@ -10,6 +10,12 @@ MASTER_SITE_SUBDIR= tcl8_0
 NEED_VERSION=	1.191
 
 MAINTAINER=	niklas@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 LIB_DEPENDS=	tcl80.1.5:${PORTSDIR}/lang/tcl80
 

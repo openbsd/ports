@@ -3,7 +3,7 @@
 # Date created:         December 17, 1997
 # Whom:                 Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/12 00:44:02 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/12 06:30:08 turan Exp $
 #
 
 DISTNAME=	xloadimage
@@ -14,6 +14,12 @@ DISTFILES=	xloadimage.3.03.tar.Z
 NEED_VERSION=	1.195
 
 MAINTAINER=	don@OpenBSD.ORG
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 WRKDIST=	${WRKDIR}
 USE_IMAKE=	yes

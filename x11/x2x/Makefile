@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/03/01 10:39:00 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/12 06:30:07 turan Exp $
 #
 
 # 
@@ -8,6 +8,12 @@ DISTNAME=		x2x-1.27
 CATEGORIES=     	x11
 
 MAINTAINER=		todd@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/SRC/x2x/ \
 		ftp://ftp.digital.de/Digital/SRC/x2x/ \

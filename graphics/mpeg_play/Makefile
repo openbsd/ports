@@ -3,7 +3,7 @@
 # Date created:		19 December 1994
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/11 00:37:26 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/12 06:29:55 turan Exp $
 #
 
 DISTNAME=	mpeg_play-2.4
@@ -13,6 +13,12 @@ EXTRACT_SUFX=	-src.tar.gz
 NEED_VERSION=	1.191
 
 MAINTAINER=	don@OpenBSD.ORG
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 WRKDIST=	${WRKDIR}/mpeg_play
 USE_IMAKE=	yes

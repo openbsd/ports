@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/11 00:37:30 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 06:29:58 turan Exp $
 
 DISTNAME=       nte-1.7.0
 CATEGORIES=	mbone
@@ -7,6 +7,12 @@ MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/nte/1.7.0/
 NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 BUILD_DEPENDS=	${PREFIX}/lib/libcommon.a:${PORTSDIR}/mbone/common
 LIB_DEPENDS=	tcl80.1.5:${PORTSDIR}/lang/tcl80 \

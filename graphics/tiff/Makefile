@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/05 03:59:04 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/12 06:29:56 turan Exp $
 
 DISTNAME=	tiff-v3.5.4
 PKGNAME=	tiff-3.5.4
@@ -8,6 +8,12 @@ MASTER_SITES=	http://www.libtiff.org/
 NEED_VERSION=	1.64
 
 MAINTAINER=	brad@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 LIB_DEPENDS=    jpeg.62:${PORTSDIR}/graphics/jpeg
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/06/22 17:01:17 niklas Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 06:29:59 turan Exp $
 #
 
 DISTNAME=	amanda-2.4.1p1
@@ -7,6 +7,12 @@ CATEGORIES=	misc
 NEED_VERSION=	1.64
 
 MAINTAINER=	marc@OpenBSD.ORG
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/amanda/
 

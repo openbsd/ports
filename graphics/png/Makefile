@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/02/10 10:37:59 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/02/12 06:29:55 turan Exp $
 
 DISTNAME=       libpng-1.0.3
 PKGNAME=        png-1.0.3
@@ -8,6 +8,12 @@ MASTER_SITES=   ftp://ftp.uu.net/graphics/png/src/
 NEED_VERSION=	1.64
 
 MAINTAINER=     angelos@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 post-extract:
 	@chmod +w ${WRKSRC}/scripts

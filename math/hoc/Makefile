@@ -1,5 +1,5 @@
 # Ports collection makefile for	"hoc", the High Order Calculator
-# $OpenBSD: Makefile,v 1.6 2000/02/10 23:14:32 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 06:29:58 turan Exp $
 
 DISTNAME=	hoc
 PKGNAME=	hoc-1.1
@@ -13,6 +13,12 @@ EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty
 
 MAINTAINER=	ian@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 ALL_TARGET=	hoc
 MAKEFILE=	makefile

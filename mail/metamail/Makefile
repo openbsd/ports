@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/11 00:37:29 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 06:29:57 turan Exp $
 
 DISTNAME=	mm2.7
 PKGNAME=	metamail-2.7
@@ -8,6 +8,12 @@ EXTRACT_SUFX=	.tar.Z
 NEED_VERSION=	1.191
 
 MAINTAINER=	marc@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 WRKDIST=		${WRKDIR}/${DISTNAME}/src
 

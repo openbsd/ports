@@ -3,7 +3,7 @@
 # Date created:		31 Jan 2000
 # Who:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.4 2000/02/10 14:38:36 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/12 06:30:06 turan Exp $
 
 DISTNAME=	w3m-0.1.6
 
@@ -15,6 +15,12 @@ MASTER_SITES=	\
 		http://www.instinct.org/w3m/
 
 MAINTAINER=	dugsong@monkey.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 WRKDIST=	${WRKDIR}/w3m
 

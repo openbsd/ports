@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/09/04 01:54:34 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/12 06:29:58 turan Exp $
 
 DISTNAME=       rat-3.0
 DISTFILES=	rat-3.0.33.tar.gz
 CATEGORIES=	mbone
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/3.0.33/
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 NEED_VERSION=	1.111
 

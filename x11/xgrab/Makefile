@@ -3,7 +3,7 @@
 # Date created:         25 January 1998
 # Whom:                 Angelos
 #
-# $OpenBSD: Makefile,v 1.4 2000/02/12 00:44:01 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/12 06:30:08 turan Exp $
 #
 
 BROKEN=		port wants to open display during build.
@@ -17,6 +17,12 @@ EXTRACT_SUFX=	.tar.Z
 NEED_VERSION=	1.195
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_IMAKE=	yes
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \

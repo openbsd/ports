@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1999/12/10 14:38:56 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/02/12 06:30:03 turan Exp $
 
 DISTNAME=	zsh-3.0.7
 CATEGORIES=	shells
@@ -12,6 +12,12 @@ MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://ftp.uit.no/pub/unix/shells/zsh/
 
 MAINTAINER=	ports@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/01/27 21:14:02 form Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/12 06:30:06 turan Exp $
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html
 # For digit images look at:
@@ -10,6 +10,12 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.fccc.edu/users/muquit/src/wwwcount2.5/
 
 MAINTAINER=	form@openbsd.org
+
+LICENSE_TYPE=		BSD
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GNU_CONFIGURE=	yes
 
