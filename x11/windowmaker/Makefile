@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/02/08 03:59:15 jasoni Exp $
+# $OpenBSD: Makefile,v 1.7 1999/03/08 05:17:59 jasoni Exp $
 #
 
 DISTNAME=	WindowMaker-0.51.0
@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.windowmaker.org/pub/beta/srcs/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/beta/srcs/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 DATAFILES=	WindowMaker-data.tar.gz
+
+NEED_VERSION=	1.67
 
 LIB_DEPENDS=	PropList\\.1\\.:${PORTSDIR}/devel/libproplist \
 		jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
