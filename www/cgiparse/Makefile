@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2003/07/07 20:46:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2003/07/07 21:13:30 pvalchev Exp $
 
 COMMENT=	"C library to parse CGI Forms"
 
@@ -27,7 +27,7 @@ NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
 
-.if ${NO_SHARED_LIBS:L:Myes}
+.if defined(NO_SHARED_LIBS)
 ALL_TARGET=	allstatic
 INSTALL_TARGET=	installstatic
 .endif
