@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2003/07/22 21:33:56 brad Exp $
+# $OpenBSD: Makefile,v 1.122 2003/07/25 04:58:18 jolan Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -18,6 +18,7 @@
      SUBDIR += cronolog
      SUBDIR += decss
      SUBDIR += dillo
+     SUBDIR += ffproxy
 #    SUBDIR += fxhtml
 #    SUBDIR += gn
      SUBDIR += galeon
