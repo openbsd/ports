@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2000/06/07 00:52:43 espie Exp $
+--- Makefile.in.orig	Wed Jun  7 02:07:28 2000
++++ Makefile.in	Wed Jun  7 02:09:33 2000
+@@ -517,10 +517,10 @@ trip: rc tripping
+ 	./rc -p < $(srcdir)/trip.rc
+ 
+ install-exec-hook:
+-@AMC_HISTORY_TRUE@	$(INSTALL_PROGRAM) history $(bindir)/- ;\
+-@AMC_HISTORY_TRUE@	rm -f $(bindir)/--;  $(LN) $(bindir)/- $(bindir)/-- ;\
+-@AMC_HISTORY_TRUE@	rm -f $(bindir)/-p;  $(LN) $(bindir)/- $(bindir)/-p ;\
+-@AMC_HISTORY_TRUE@	rm -f $(bindir)/--p; $(LN) $(bindir)/- $(bindir)/--p
++@AMC_HISTORY_TRUE@	$(INSTALL_PROGRAM) history $(DESTDIR)$(bindir)/- ;\
++@AMC_HISTORY_TRUE@	cd $(DESTDIR)$(bindir); rm -f ./--;  $(LN) ./- -- ;\
++@AMC_HISTORY_TRUE@	cd $(DESTDIR)$(bindir); rm -f ./-p;  $(LN) ./- -p ;\
++@AMC_HISTORY_TRUE@	cd $(DESTDIR)$(bindir); rm -f ./--p;  $(LN) ./- --p 
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
