@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/30 15:07:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/11/22 16:43:45 sturm Exp $
 
 COMMENT=	"client for anonymous remailing"
 
@@ -6,7 +6,7 @@ VERSION=	2.9b40
 DISTNAME=	mixmaster-${VERSION}
 CATEGORIES=	mail security
 
-MAINTAINER=	Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>
+MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"only with patch notice"
 PERMIT_PACKAGE_FTP=	"only with patch notice"

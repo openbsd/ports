@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/11 00:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/11/22 16:43:45 sturm Exp $
 # $FreeBSD: ports/math/fftw/Makefile,v 1.11 2000/06/16 21:51:38 asami Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 
@@ -10,7 +10,7 @@ NEED_VERSION=	1.488
 
 HOMEPAGE=	http://www.fftw.org/
 
-MAINTAINER=	Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>
+MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

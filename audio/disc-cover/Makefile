@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/11/17 11:52:19 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2002/11/22 16:43:44 sturm Exp $
 
 COMMENT=	"creates cover for audio cds using cddb and latex"
 
@@ -7,7 +7,7 @@ CATEGORIES=	audio
 
 HOMEPAGE=	http://home.wanadoo.nl/jano/disc-cover.html
 
-MAINTAINER=	Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>	
+MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

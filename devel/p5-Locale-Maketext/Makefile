@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/11/17 18:59:31 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/11/22 16:43:44 sturm Exp $
 
 IGNORE=		"comes with ${OPSYS} as of release 3.3"
 
@@ -8,7 +8,7 @@ DISTNAME=		Locale-Maketext-1.03
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
 
-MAINTAINER=		Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>
+MAINTAINER=		Nikolay Sturm <sturm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

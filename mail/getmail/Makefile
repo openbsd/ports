@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/10/27 17:21:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/11/22 16:43:45 sturm Exp $
 
 COMMENT=	"POP3 mail retriever"
 
@@ -7,7 +7,7 @@ CATEGORIES=	mail
 
 HOMEPAGE=	http://www.qcc.ca/~charlesc/software/getmail-2.0/
 
-MAINTAINER=	Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>
+MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

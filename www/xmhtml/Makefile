@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/11 00:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/11/22 16:43:45 sturm Exp $
 # $FreeBSD: ports/x11-toolkits/xmhtml/Makefile,v 1.15 2001/06/29 05:19:06 lkoeller Exp $
 # Original from: Peter Hawkins <thepish@freebsd.org>
 
@@ -11,7 +11,7 @@ NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www.xs4all.nl/~ripley/XmHTML
 
-MAINTAINER=	Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>
+MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

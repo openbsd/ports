@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/09/13 17:05:20 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2002/11/22 16:43:45 sturm Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
@@ -9,7 +9,7 @@ CATEGORIES=	math
 
 HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/
 
-MAINTAINER=	Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>
+MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

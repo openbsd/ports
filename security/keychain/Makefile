@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/11/17 11:55:20 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2002/11/22 16:43:45 sturm Exp $
 
 COMMENT=		"front-end to ssh-agent"
 
@@ -7,7 +7,7 @@ CATEGORIES=		security
 
 HOMEPAGE=		http://www.gentoo.org/proj/en/keychain.xml
 
-MAINTAINER=		Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>
+MAINTAINER=		Nikolay Sturm <sturm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/11/03 16:40:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2002/11/22 16:43:45 sturm Exp $
 
 COMMENT=		"Gtk-based GUI client for the Gnutella Network"
 
@@ -7,7 +7,7 @@ CATEGORIES=     	net
 
 HOMEPAGE=		http://gtk-gnutella.sourceforge.net/
 
-MAINTAINER=		Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>
+MAINTAINER=		Nikolay Sturm <sturm@openbsd.org>
 
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 			xml2::textproc/libxml

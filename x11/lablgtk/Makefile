@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/11/21 16:10:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/11/22 16:43:45 sturm Exp $
 
 COMMENT=	"OCaml interface to GTK+"
 
@@ -7,7 +7,7 @@ CATEGORIES=	x11 devel
 
 HOMEPAGE=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
 
-MAINTAINER=	Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>
+MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
