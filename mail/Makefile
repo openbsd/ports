@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2004/11/25 15:20:37 xsa Exp $
+# $OpenBSD: Makefile,v 1.131 2004/12/10 10:05:42 jakob Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -82,6 +82,7 @@
      SUBDIR += poppassd
      SUBDIR += poppy
      SUBDIR += postfix
+     SUBDIR += postgrey
      SUBDIR += prepop
      SUBDIR += procmail
      SUBDIR += py-milter
