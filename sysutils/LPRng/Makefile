@@ -3,7 +3,7 @@
 # Date created:		2 Apr 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.14 2000/10/22 15:43:28 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/22 15:58:59 espie Exp $
 #
 
 DISTNAME=		LPRng-3.6.12
@@ -22,7 +22,6 @@ EXTRACT_SUFX=		.tgz
 
 NO_CDROM=		"To many copyrights/licences to verify destribution OK"
 
-HAS_CONFIGURE=		Yes
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS=	--with-sbindir='$${DESTDIR}${PREFIX}/sbin' \
 		--with-filterdir='$${DESTDIR}${PREFIX}/libexec/filters' \
