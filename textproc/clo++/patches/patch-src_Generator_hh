@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Generator_hh,v 1.1 2004/09/26 13:11:37 espie Exp $
+--- src/Generator.hh.orig	Sun Jan 28 04:22:40 2001
++++ src/Generator.hh	Mon Aug 16 20:04:26 2004
+@@ -38,6 +38,7 @@
+ #define __Generator_hh__
+ 
+ // Standard Includes
++#include <iostream>
+ #include <fstream>
+ #include <vector>
+ #include <algorithm>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/31 10:02:48 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/26 13:11:37 espie Exp $
 bin/clo++
+share/doc/clo++/
 share/doc/clo++/handbook.html
-@dirrm share/doc/clo++

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Clo_hh,v 1.1 2004/09/26 13:11:37 espie Exp $
+--- src/Clo.hh.orig	Mon Aug 16 19:40:35 2004
++++ src/Clo.hh	Mon Aug 16 19:40:49 2004
+@@ -63,6 +63,7 @@ namespace Clo {
+ 				autohelp = autoversion = false;
+ 			} // end constructor
+ 			Exception(string why) {m_why = why; autohelp=autoversion=false;}
++			~Exception() throw() {};
+ 			const char *what() {return m_why.c_str();}
+ 			const char *fancy() {if(m_fancy.empty()) return m_why.c_str(); else return m_fancy.c_str();}
+ 			bool autohelp, autoversion;

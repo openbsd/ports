@@ -1,0 +1,66 @@
+$OpenBSD: patch-src_Generator_cc,v 1.1 2004/09/26 13:11:37 espie Exp $
+--- src/Generator.cc.orig	Mon Aug 16 13:43:43 2004
++++ src/Generator.cc	Mon Aug 16 14:39:43 2004
+@@ -86,7 +86,7 @@ Generator::Generator() {
+ 	@author Peter Jones
+ **/
+ //#############################################################################
+-void Generator::add_option(Option &option, bool really=true) {
++void Generator::add_option(Option &option, bool really) {
+ 	switch (option.get_type()) {
+ 		case Option::type_flag:
+ 			m_types.flag_exists = true;
+@@ -583,7 +583,7 @@ void Generator::generate_subcommand_help
+ 	@author Peter Jones
+ **/
+ //#############################################################################
+-void Generator::generate_get_function(Option::Type type, bool prototype=false) {
++void Generator::generate_get_function(Option::Type type, bool prototype) {
+ 	vector<Command>::iterator	ci;
+ 	vector<Option>::iterator 	oi;
+ 	vector<string>				function_names, return_types, extensions;
+@@ -793,7 +793,7 @@ void Generator::generate_get_function(Op
+ 	@author Peter Jones
+ **/
+ //#############################################################################
+-void Generator::generate_long_option_test(Command *command=0) {
++void Generator::generate_long_option_test(Command *command) {
+ 	vector<Option> options;
+ 	vector<Option>::iterator oi;
+ 	string selse, command_name;
+@@ -884,7 +884,7 @@ void Generator::generate_long_option_tes
+ 	@author Peter Jones
+ **/
+ //#############################################################################
+-void Generator::generate_short_option_test(Command *command=0) {
++void Generator::generate_short_option_test(Command *command) {
+ 	vector<Option> options;
+ 	vector<Option>::iterator oi;
+ 	string selse, command_name;
+@@ -953,7 +953,7 @@ void Generator::generate_short_option_te
+ 	@author Peter Jones
+ **/
+ //#############################################################################
+-void Generator::generate_value_test(Command *command=0) {
++void Generator::generate_value_test(Command *command) {
+ 	vector<Option> options;
+ 	vector<Option>::iterator oi;
+ 	string selse, varname;
+@@ -1151,7 +1151,7 @@ void Generator::generate_set_defaults() 
+ 	@author Peter Jones
+ **/
+ //#############################################################################
+-void Generator::generate_parse_loop(Command *command=0) {
++void Generator::generate_parse_loop(Command *command) {
+ 	bool have_long_options, have_short_options;
+ 	string selse;
+ 
+@@ -1241,7 +1241,7 @@ void Generator::generate_parse_loop(Comm
+ 				insert(selse + "if (option_v == " + aliases_s + ") {"); indent();
+ 				insert("m_command = \"" + ci->get_name() +"\";");
+ 				insert("option_v.erase();");
+-				generate_parse_loop(ci);
++				generate_parse_loop(&(*ci));
+ 				generate_mandatory_test(ci->get_options());
+ 				if (selse.empty()) selse = "} else ";
+ 			}

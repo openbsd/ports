@@ -1,0 +1,78 @@
+$OpenBSD: patch-examples_complete_Clo_hh,v 1.1 2004/09/26 13:11:37 espie Exp $
+--- examples/complete/Clo.hh.orig	Mon Aug 16 19:46:32 2004
++++ examples/complete/Clo.hh	Mon Aug 16 19:52:29 2004
+@@ -152,6 +152,7 @@ bool truth_function(string test) {
+ 				autohelp = autoversion = false;
+ 			} // end constructor
+ 			Exception(string why) {m_why = why; autohelp=autoversion=false;}
++			~Exception() throw() {};
+ 			const char *what() {return m_why.c_str();}
+ 			const char *fancy() {if(m_fancy.empty()) return m_why.c_str(); else return m_fancy.c_str();}
+ 			bool autohelp, autoversion;
+@@ -547,7 +548,7 @@ bool truth_function(string test) {
+ 		
+ 	} // End parse()
+ 	
+-	bool Parser::get_flag_option(string option, string command="") {
++	bool Parser::get_flag_option(string option, string command) {
+ 		if (command == "remove") {
+ 			if (option == "R") {
+ 				return m_values.v_R;
+@@ -566,28 +567,28 @@ bool truth_function(string test) {
+ 			throw Exception("option '" + option + "' is not a bool option\n");
+ 		}
+ 	} // End get_flag_option()
+-	int Parser::get_count_option(string option, string command="") {
++	int Parser::get_count_option(string option, string command) {
+ 		if (option == "count") {
+ 			return m_values.v_count;
+ 		} else {
+ 			throw Exception("option '" + option + "' is not a int option\n");
+ 		}
+ 	} // End get_count_option()
+-	bool Parser::get_bool_option(string option, string command="") {
++	bool Parser::get_bool_option(string option, string command) {
+ 		if (option == "bool") {
+ 			return m_values.v_bool;
+ 		} else {
+ 			throw Exception("option '" + option + "' is not a bool option\n");
+ 		}
+ 	} // End get_bool_option()
+-	map<string, bool>& Parser::get_bool_map(string option, string command="") {
++	map<string, bool>& Parser::get_bool_map(string option, string command) {
+ 		if (option == "bool-map") {
+ 			return m_values.v_bool_map;
+ 		} else {
+ 			throw Exception("option '" + option + "' is not a map<string, bool>& option\n");
+ 		}
+ 	} // End get_bool_map()
+-	int Parser::get_int_option(string option, string command="") {
++	int Parser::get_int_option(string option, string command) {
+ 		if (command == "water") {
+ 			if (option == "speed") {
+ 				return m_values.v_speed;
+@@ -602,21 +603,21 @@ bool truth_function(string test) {
+ 			throw Exception("option '" + option + "' is not a int option\n");
+ 		}
+ 	} // End get_int_option()
+-	vector<int>& Parser::get_int_list(string option, string command="") {
++	vector<int>& Parser::get_int_list(string option, string command) {
+ 		if (option == "int-list") {
+ 			return m_values.v_int_list;
+ 		} else {
+ 			throw Exception("option '" + option + "' is not a vector<int>& option\n");
+ 		}
+ 	} // End get_int_list()
+-	double Parser::get_double_option(string option, string command="") {
++	double Parser::get_double_option(string option, string command) {
+ 		if (option == "double") {
+ 			return m_values.v_double;
+ 		} else {
+ 			throw Exception("option '" + option + "' is not a double option\n");
+ 		}
+ 	} // End get_double_option()
+-	string Parser::get_string_option(string option, string command="") {
++	string Parser::get_string_option(string option, string command) {
+ 		if (option == "string") {
+ 			return m_values.v_string;
+ 		} else {
