@@ -1,20 +1,20 @@
-$OpenBSD: patch-configure,v 1.6 2004/04/18 00:36:22 jolan Exp $
---- configure.orig	2003-09-28 10:26:39.000000000 -0500
-+++ configure	2004-02-26 21:20:18.000000000 -0600
-@@ -155,6 +155,12 @@ dv1394="no"
- make="gmake"
- LDFLAGS="$LDFLAGS -export-dynamic"
+$OpenBSD: patch-configure,v 1.7 2004/10/07 06:12:11 jolan Exp $
+--- configure.orig	Mon Jul  5 13:06:16 2004
++++ configure	Thu Oct  7 00:38:53 2004
+@@ -232,6 +232,12 @@ make="gmake"
+ CFLAGS="-pthread"
+ LDFLAGS="$LDFLAGS -export-dynamic -pthread"
  ;;
 +OpenBSD)
 +strip="echo"
 +extralibs="$extralibs -lossaudio"
 +source_path="`echo $0 | sed -e 's#/configure##'`"
-+SLIBSUF=.so`grep '#define FFMPEG_VERSION ' $source_path/libavcodec/avcodec.h | cut -d '"' -f 2 | cut -d '0' -f 2`
++SLIBSUF=.so`grep '#define FFMPEG_VERSION ' $source_path/libavcodec/avcodec.h | cut -d '"' -f 2 | cut -d '0' -f 2 | cut -d '-' -f 1`
 +;;
  BSD/OS)
  v4l="no"
  audio_oss="yes"
-@@ -276,9 +282,9 @@ for opt do
+@@ -347,9 +353,9 @@ for opt do
    ;;
    --make=*) make=`echo $opt | cut -d '=' -f 2`
    ;;

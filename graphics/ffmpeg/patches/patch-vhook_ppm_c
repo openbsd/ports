@@ -1,0 +1,12 @@
+$OpenBSD: patch-vhook_ppm_c,v 1.1 2004/10/07 06:12:11 jolan Exp $
+--- vhook/ppm.c.orig	Sun Sep 28 15:58:57 2003
++++ vhook/ppm.c	Thu Oct  7 00:46:12 2004
+@@ -73,7 +73,7 @@ rwpipe *rwpipe_open( int argc, char *arg
+             close( output[ 0 ] );
+             close( output[ 1 ] );
+ 
+-            execl("/bin/sh", "sh", "-c", command, NULL );
++            execl("/bin/sh", "sh", "-c", command, (void *)NULL );
+             exit( 255 );
+         }
+         else

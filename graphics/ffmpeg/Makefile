@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2004/07/05 22:07:01 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2004/10/07 06:12:11 jolan Exp $
 
 COMMENT=	"audio/video converter and streamer with bktr(4) support"
-DISTNAME=	ffmpeg-0.4.8
-PKGNAME=	${DISTNAME}p1
-SV=		${DISTNAME:S/ffmpeg-0.//}
+DISTNAME=	ffmpeg-0.4.9-pre1
+PKGNAME=	${DISTNAME:S/9-p/9p/}
+SV=		4.9
 CATEGORIES=	graphics x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ffmpeg/}
 
 HOMEPAGE=	http://ffmpeg.sourceforge.net/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	"patents"
@@ -43,6 +41,7 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-mp3lame \
 		--enable-vorbis \
 		--enable-a52bin \
+		--enable-gpl \
 		--disable-debug
 
 MAKE_ENV+=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
@@ -56,18 +55,15 @@ post-extract:
 	@cp ${FILESDIR}/grab_bsdbktr.c ${WRKSRC}/libavformat/
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ffmpeg
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/examples/ffmpeg
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/ffmpeg
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ffmpeg
 	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf \
-		${PREFIX}/share/doc/examples/ffmpeg
-	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
+		${PREFIX}/share/examples/ffmpeg
 	${INSTALL_PROGRAM} ${WRKBUILD}/ffmpeg ${PREFIX}/bin/ffmpeg
 	${INSTALL_PROGRAM} ${WRKBUILD}/ffplay ${PREFIX}/bin/ffplay
 	${INSTALL_PROGRAM} ${WRKBUILD}/ffserver ${PREFIX}/bin/ffserver
 	${INSTALL_DATA_DIR} ${PREFIX}/include/ffmpeg
 	${INSTALL_DATA_DIR} ${PREFIX}/include/postproc
-	${INSTALL_DATA} ${WRKSRC}/libavcodec/{avcodec,common}.h \
+	${INSTALL_DATA} ${WRKSRC}/libavcodec/{avcodec,common,rational}.h \
 		${PREFIX}/include/ffmpeg
 	${INSTALL_DATA} ${WRKSRC}/libavformat/{avformat.h,avio.h,rtp.h,rtsp.h,rtspcodes.h} \
 		${PREFIX}/include/ffmpeg

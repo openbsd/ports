@@ -1,13 +1,11 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2003/07/19 18:16:34 jolan Exp $
---- Makefile.orig	Thu Jun 12 01:42:44 2003
-+++ Makefile	Wed Jul 16 20:38:48 2003
-@@ -6,8 +6,7 @@ include config.mak
- 
+$OpenBSD: patch-Makefile,v 1.2 2004/10/07 06:12:11 jolan Exp $
+--- Makefile.orig	Thu Jul  8 06:02:04 2004
++++ Makefile	Thu Oct  7 00:26:50 2004
+@@ -7,7 +7,6 @@ include config.mak
  VPATH=$(SRC_PATH)
  
--CFLAGS= $(OPTFLAGS) -Wall -g -I. -I$(SRC_PATH) -I$(SRC_PATH)/libavcodec -I$(SRC_PATH)/libavformat -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE
+ CFLAGS=$(OPTFLAGS) -I. -I$(SRC_PATH) -I$(SRC_PATH)/libavcodec -I$(SRC_PATH)/libavformat -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE
 -LDFLAGS+= -g 
-+CFLAGS= $(OPTFLAGS) -Wall -I. -I$(SRC_PATH) -I$(SRC_PATH)/libavcodec -I$(SRC_PATH)/libavformat -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE
  
  ifeq ($(TARGET_GPROF),yes)
  CFLAGS+=-p

@@ -1,7 +1,7 @@
-$OpenBSD: patch-libavcodec_libpostproc_postprocess_c,v 1.1.1.1 2003/07/19 18:16:34 jolan Exp $
---- libavcodec/libpostproc/postprocess.c.orig	Thu Jun 12 01:42:46 2003
-+++ libavcodec/libpostproc/postprocess.c	Wed Jul 16 20:12:25 2003
-@@ -72,9 +72,9 @@ try to unroll inner for(x=0 ... loop to 
+$OpenBSD: patch-libavcodec_libpostproc_postprocess_c,v 1.2 2004/10/07 06:12:11 jolan Exp $
+--- libavcodec/libpostproc/postprocess.c.orig	Sat Jun  5 17:23:55 2004
++++ libavcodec/libpostproc/postprocess.c	Thu Oct  7 00:17:28 2004
+@@ -76,9 +76,9 @@ try to unroll inner for(x=0 ... loop to 
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>

@@ -1,7 +1,7 @@
-$OpenBSD: patch-libavcodec_Makefile,v 1.6 2004/04/18 00:36:22 jolan Exp $
---- libavcodec/Makefile.orig	2003-09-28 10:26:39.000000000 -0500
-+++ libavcodec/Makefile	2004-02-24 23:43:07.000000000 -0600
-@@ -142,6 +142,7 @@ OBJS := $(OBJS) $(ASM_OBJS)
+$OpenBSD: patch-libavcodec_Makefile,v 1.7 2004/10/07 06:12:11 jolan Exp $
+--- libavcodec/Makefile.orig	Fri Jun 18 08:11:15 2004
++++ libavcodec/Makefile	Thu Oct  7 00:28:00 2004
+@@ -177,6 +177,7 @@ OBJS := $(OBJS) $(ASM_OBJS)
  LIB= $(LIBPREF)avcodec$(LIBSUF)
  ifeq ($(BUILD_SHARED),yes)
  SLIB= $(SLIBPREF)avcodec$(SLIBSUF)
@@ -9,12 +9,12 @@ $OpenBSD: patch-libavcodec_Makefile,v 1.6 2004/04/18 00:36:22 jolan Exp $
  endif
  TESTS= imgresample-test dct-test motion-test fft-test
  
-@@ -162,7 +163,7 @@ ifeq ($(CONFIG_WIN32),yes)
+@@ -197,7 +198,7 @@ ifeq ($(CONFIG_WIN32),yes)
  	$(CC) $(SHFLAGS) -Wl,--output-def,$(@:.dll=.def) -o $@ $(OBJS) $(EXTRALIBS) $(AMREXTRALIBS)
  	-lib /machine:i386 /def:$(@:.dll=.def)
  else
--	$(CC) $(SHFLAGS) -o $@ $(OBJS) $(EXTRALIBS) $(AMREXTRALIBS)
-+	$(CC) $(LDFLAGS) $(SHFLAGS) -o $@ $(OBJS) $(EXTRALIBS) $(AMREXTRALIBS)
+-	$(CC) $(SHFLAGS) -o $@ $(OBJS) $(EXTRALIBS) $(AMREXTRALIBS) $(LDFLAGS)
++	$(CC) $(LDFLAGS) $(SHFLAGS) -o $@ $(OBJS) $(EXTRALIBS) $(AMREXTRALIBS) $(LDFLAGS)
  endif
  
  dsputil.o: dsputil.c dsputil.h
