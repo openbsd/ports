@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2003/02/16 18:17:57 margarida Exp $
+# $OpenBSD: Makefile,v 1.23 2003/05/13 08:57:47 margarida Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"multi-purpose sniffer/interceptor/logger"
 
-VER=		0.6.9
+VER=		0.6.a
 DISTNAME=	ettercap-${VER}
 CATEGORIES=	net
 
@@ -24,8 +24,18 @@ PERMIT_DISTFILES_FTP=   Yes
 MODULES=		gcc3   
 MODGCC3_ARCHES=		sparc64
 
+FLAVORS=		no_x11
+FLAVOR?=
+
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--enable-https --enable-plugins
+CONFIGURE_ARGS+=	--enable-https
+
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
+LIB_DEPENDS=		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+
+.if ${FLAVOR:L:Mno_x11}
+CONFIGURE_ARGS+=	--enable-gtk=no
+.endif
 
 NO_REGRESS=	Yes
 

@@ -15,27 +15,22 @@ It's possible to sniff in four modes.
           
 Cool Features:
 
-Characters injection in an established connection :
+* Characters injection in an established connection:
   you can inject character to server (emulating commands) or to
   client (emulating replies) maintaining the connection alive !!
-
-SSH1 support:
+* SSH1 support:
   you can sniff User and Pass, and even the data of an SSH1
   connection. ettercap is the first software capable to sniff an
   SSH connection in FULL-DUPLEX
-
-Plug-ins support:
+* Plug-ins support:
   You can create your own plugin using the ettercap's API.
-
-Password collector for:
+* Password collector for:
   TELNET, FTP, POP, RLOGIN, SSH1, ICQ, SMB, MySQL, HTTP
   (other protocols coming soon...) 
-
-OS fingerprint:
+* OS fingerprint:
   you can fingerprint the OS of the victim host and even its
   network adapter 
-
-Kill a connection:
-  from the connections list you can kill all the connections you want 
-
+* Kill a connection:
+  from the connections list you can kill all the connections you
+  want.
 WWW: ${HOMEPAGE}
