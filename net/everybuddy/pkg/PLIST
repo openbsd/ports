@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/17 13:35:32 aaron Exp $
+bin/contact-update.pl
+bin/everybuddy
+bin/update.pl
+man/man1/everybuddy.1
+share/pixmaps/ebicon.png
+share/sounds/everybuddy/BuddyArrive.au
+share/sounds/everybuddy/BuddyLeave.au
+share/sounds/everybuddy/Receive.au
+share/sounds/everybuddy/Send.au
+@dirrm share/sounds/everybuddy
+@dirrm share/sounds
+@dirrm share/pixmaps

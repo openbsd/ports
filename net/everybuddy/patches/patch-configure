@@ -1,0 +1,69 @@
+--- configure.orig	Mon Jan 29 12:34:36 2001
++++ configure	Mon Jan 29 12:42:51 2001
+@@ -2093,7 +2093,7 @@ if test "$have_ispell" = yes ; then
+ fi
+ 
+ 
+-$enable_applet=no
++enable_applet=no
+ # Check whether --enable-panel or --disable-panel was given.
+ if test "${enable_panel+set}" = set; then
+   enableval="$enable_panel"
+@@ -2415,7 +2415,7 @@ done
+ CFLAGS="$CFLAGS -I/usr/local/include -I/opt/include" 
+ 
+ EB_CFLAGS="$CFLAGS -I../"
+-EB_LIBS="$LIBS -L../libmsn -lmsn -L../libyahoo -lyahoo -L../libproxy -lproxy -L../libtoc -ltoc -lpthread -L../libicq -licq -L../libjabber -lEBjabber -ljabber -L../libxode -lxode"
++EB_LIBS="$LIBS -L../libmsn -lmsn -L../libyahoo -lyahoo -L../libproxy -lproxy -L../libtoc -ltoc -pthread -L../libicq -licq -L../libjabber -lEBjabber -ljabber -L../libxode -lxode"
+ EB_LDADD="$LDADD"
+ 
+ EB_CFLAGS="$EB_CFLAGS -D_REENTRANT -Wall -g "
+@@ -3509,14 +3509,14 @@ echo "configure:3494: checking extra lib
+ 
+ 	
+ 	PTHREAD_LIB=""
+-	echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
+-echo "configure:3514: checking for pthread_create in -lpthread" >&5
++	echo $ac_n "checking for pthread_create in -pthread""... $ac_c" 1>&6
++echo "configure:3514: checking for pthread_create in -pthread" >&5
+ ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3522 "configure"
+ #include "confdefs.h"
+@@ -3544,17 +3544,17 @@ LIBS="$ac_save_LIBS"
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  PTHREAD_LIB="-lpthread"
++  PTHREAD_LIB="-pthread"
+ else
+   echo "$ac_t""no" 1>&6
+-echo $ac_n "checking for pthread_create in -lpthreads""... $ac_c" 1>&6
+-echo "configure:3552: checking for pthread_create in -lpthreads" >&5
++echo $ac_n "checking for pthread_create in -pthreads""... $ac_c" 1>&6
++echo "configure:3552: checking for pthread_create in -pthread" >&5
+ ac_lib_var=`echo pthreads'_'pthread_create | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthreads  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3560 "configure"
+ #include "confdefs.h"
+@@ -3582,7 +3582,7 @@ LIBS="$ac_save_LIBS"
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  PTHREAD_LIB="-lpthreads"
++  PTHREAD_LIB="-pthread"
+ else
+   echo "$ac_t""no" 1>&6
+ echo $ac_n "checking for pthread_create in -lc_r""... $ac_c" 1>&6
