@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/06/29 13:03:53 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/07/14 10:34:34 couderc Exp $
 lib/ruby/1.6/${MACHINE_ARCH}-openbsd${OPSYS_VER}/gtk.so
-share/ruby-gtk/doc/.happy
+@comment share/ruby-gtk/doc/.happy
 share/ruby-gtk/doc/gtkbrows.rb
 share/ruby-gtk/doc/rbbr.rb
 share/ruby-gtk/doc/rbbr_gtk.rb
