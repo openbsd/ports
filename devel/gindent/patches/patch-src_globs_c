@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_globs_c,v 1.1 2002/08/26 02:55:09 pvalchev Exp $
+--- src/globs.c.orig	Fri Mar 15 00:48:45 2002
++++ src/globs.c	Sun Aug 25 20:37:31 2002
+@@ -19,9 +19,6 @@
+ #include "indent.h"
+ #include "globs.h"
+ 
+-#ifdef HAVE_MALLOC_H
+-#include <malloc.h>
+-#endif
+ #include <stdlib.h>
+ #include <errno.h>
+ 

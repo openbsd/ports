@@ -1,6 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/01/08 20:18:50 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/08/26 02:55:09 pvalchev Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/indent.info
 bin/gindent
+bin/gtexinfo2man
 info/indent.info
 man/man1/gindent.1
+share/doc/indent/indent.html
+share/locale/ca/LC_MESSAGES/indent.mo
+share/locale/da/LC_MESSAGES/indent.mo
+share/locale/de/LC_MESSAGES/indent.mo
+share/locale/eo/LC_MESSAGES/indent.mo
+share/locale/et/LC_MESSAGES/indent.mo
+share/locale/fr/LC_MESSAGES/indent.mo
+share/locale/gl/LC_MESSAGES/indent.mo
+share/locale/ja/LC_MESSAGES/indent.mo
+share/locale/ko/LC_MESSAGES/indent.mo
+share/locale/nl/LC_MESSAGES/indent.mo
+share/locale/pl/LC_MESSAGES/indent.mo
+share/locale/pt_BR/LC_MESSAGES/indent.mo
+share/locale/ru/LC_MESSAGES/indent.mo
+share/locale/sk/LC_MESSAGES/indent.mo
+share/locale/sv/LC_MESSAGES/indent.mo
+share/locale/tr/LC_MESSAGES/indent.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/indent.mo
+@dirrm share/doc/indent
 @exec install-info --info-dir=%D/info %D/info/indent.info
