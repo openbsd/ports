@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2003/12/16 21:01:38 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.29 2003/12/18 16:32:24 naddy Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/gdk.info
 @unexec install-info --delete --info-dir=%D/info %D/info/gtk.info
 bin/gtk-config
@@ -128,6 +128,8 @@ lib/libgdk.a
 lib/libgdk.la
 lib/libgtk.a
 lib/libgtk.la
+lib/pkgconfig/gdk.pc
+lib/pkgconfig/gtk+.pc
 man/man1/gtk-config.1
 share/aclocal/gtk.m4
 share/locale/az/LC_MESSAGES/gtk+.mo
