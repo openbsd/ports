@@ -1,0 +1,12 @@
+QHacc is a reasonably small, reasonably fast, reasonably featured home
+accounting program for unix and unix-like systems. 
+
+Some features:
+  American or European date formats
+  Memorized transactions
+  Split transactions
+  Double- or Single- entry bookkeeping
+  Several account types
+  Type-ahead text boxes and easy date selection fields  
+
+WWW: ${HOMEPAGE}

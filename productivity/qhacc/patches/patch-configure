@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2000/10/02 09:06:23 espie Exp $
+--- configure.orig	Sun Sep 24 17:21:54 2000
++++ configure	Sun Sep 24 17:22:56 2000
+@@ -1181,7 +1181,7 @@ fi
+ 
+ 
+ 
+-qtdirs="/usr/local/qt /usr/qt /opt/qt /usr/local/qt2"
++qtdirs="$QTDIR /usr/local/qt /usr/qt /opt/qt /usr/local/qt2"
+ 
+ 
+ 
+@@ -1209,7 +1209,7 @@ fi
+ 
+ 	for dir in $with_qt
+ 	do
+-		if test -f $dir/lib/libqt.so.2
++		if test -f $dir/lib/libqt.so.2 -o \! -z "$dir/lib/libqt.so.2.*"
+ 		then
+ 			qthome=$dir
+ 			echo "found in $dir"

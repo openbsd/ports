@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2000/10/02 09:06:23 espie Exp $
+--- src/Makefile.in.orig	Sat Sep 16 19:49:48 2000
++++ src/Makefile.in	Sun Sep 24 17:42:50 2000
+@@ -64,6 +64,8 @@ MAKEINFO = @MAKEINFO@
+ MYFLAGS = @MYFLAGS@
+ PACKAGE = @PACKAGE@
+ QTDIR = @QTDIR@
++QTLIBDIR = $(QTDIR)/lib
++QTINCDIR = $(QTDIR)/include
+ VERSION = @VERSION@
+ incgraphs = @incgraphs@
+ 
+@@ -80,8 +82,8 @@ BUILT_SOURCES = moc_qhacc.cpp moc_qhaccv
+ noinst_HEADERS = qhacc.h qhaccview.h accounts.h transaction.h qhaccvector.h 		qhaccrecwin.h qhacclineedits.h qhaccdialogs.h  		qhaccacctman.h qhaccacctchsr.h prefs.h globals.h 		qhaccloader.h qhaccgrapher.h
+ 
+ 
+-INCLUDES = $(all_includes) -I$(QTDIR)/include
+-qhacc_LDFLAGS = -L$(QTDIR)/lib
++INCLUDES = $(all_includes) -I$(QTINCDIR)
++qhacc_LDFLAGS = -L$(QTLIBDIR) -L$(X11BASE)/lib -L$(LOCALBASE)/lib
+ qhacc_LDADD = -lqt
+ MOC = $(QTDIR)/bin/moc
+ 
