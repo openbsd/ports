@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/09 04:57:56 jcs Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/13 05:40:55 jcs Exp $
 
 COMMENT=	"MPEG2 and MPEG-4 AAC decoder"
 COMMENT-xmms=	"XMMS input plugin for AAC files"
 DISTNAME=	faad2-2.0
-PKGNAME=	faad-2.0
-PKGNAME-xmms=	faad-xmms-2.0
+PKGNAME=	faad-2.0p0
+PKGNAME-xmms=	faad-xmms-2.0p0
 CATEGORIES=    	audio
 MASTER_SITES=	http://users.codefusionis.com/~jolan/
 
@@ -59,5 +59,11 @@ post-patch:
 	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		PATH=${PORTPATH} sh bootstrap
 	@perl -pi -e 's/--no-verify//g' ${WRKSRC}/configure
+
+post-configure:
+	@cp ${WRKSRC}/config.h ${WRKSRC}/faadconfig.h
+
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/faadconfig.h ${PREFIX}/include
 
 .include <bsd.port.mk>
