@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2003/04/23 18:40:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2003/05/30 09:45:09 sturm Exp $
 
 COMMENT=	"POP3 mail retriever"
 
-DISTNAME=	getmail-3.1.3
+DISTNAME=	getmail-3.1.7
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.qcc.ca/~charlesc/software/getmail-3.0/
@@ -29,7 +29,7 @@ GMDIR=		${PREFIX}/share/getmail
 
 HELPERS=	${WRKDIST}/getmail_maildir ${WRKDIST}/getmail_mbox \
 
-post-patch:
+do-configure:
 	@perl -i -p -e "s#/usr/lib/getmail#${PREFIX}/share/getmail#;" \
 		-e "s#/usr/bin/python#${LOCALBASE}/bin/python#;" \
 		${WRKDIST}/getmail ${HELPERS}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/04/23 18:40:05 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/05/30 09:45:09 sturm Exp $
 bin/getmail
 libexec/getmail_maildir
 libexec/getmail_mbox
