@@ -3,7 +3,7 @@
 # Date created:		26 Mar 1999
 # Whom:                 Jim Mock <jim@FreeBSD.org>
 #
-# $OpenBSD: Makefile,v 1.11 2001/05/11 09:50:56 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2001/06/12 07:10:51 kevlo Exp $
 
 COMMENT=	"gtk-based AOL Instant Messenger (AIM) client"
 
@@ -12,8 +12,11 @@ DISTNAME=	gaim-0.9.10
 CATEGORIES=	net
 NEED_VERSION=	1.402
 
-MASTER_SITES=	ftp://ftp.marko.net/pub/gaim/
-HOMEPAGE=	http://www.marko.net/gaim/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		ftp://ftp.marko.net/pub/gaim/
+MASTER_SITE_SUBDIR= gaim
+
+HOMEPAGE=	http://gaim.sourceforge.net/
 
 MAINTAINER=	ports@openbsd.org
 
