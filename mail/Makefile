@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2001/06/13 03:07:23 kevlo Exp $
+# $OpenBSD: Makefile,v 1.67 2001/07/04 15:23:47 lebel Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -45,6 +45,7 @@
      SUBDIR += mess822
      SUBDIR += metamail
      SUBDIR += mh
+     SUBDIR += mixmaster
      SUBDIR += movemail
      SUBDIR += mutt
      SUBDIR += mutt,slang
