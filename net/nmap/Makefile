@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2000/01/03 15:13:43 angelos Exp $
+# $OpenBSD: Makefile,v 1.16 2000/01/09 07:52:40 brad Exp $
 
 DISTNAME=	nmap-2.3BETA12
 PKGNAME=	nmap-2.3b12
-CATEGORIES=     net
+CATEGORIES=     net security
 MASTER_SITES=	http://www.insecure.org/nmap/dist/
 EXTRACT_SUFX=	.tgz
 
