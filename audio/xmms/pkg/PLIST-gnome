@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-gnome,v 1.1 2002/03/11 17:38:05 naddy Exp $
-bin/gnomexmms
-man/man1/gnomexmms.1
-share/applets/Multimedia/gnomexmms.desktop
-share/examples/xmms-gnome/CORBA/servers/gnomexmms.gnorba
-@dirrm share/examples/xmms-gnome/CORBA/servers
-@dirrm share/examples/xmms-gnome/CORBA
-@dirrm share/examples/xmms-gnome

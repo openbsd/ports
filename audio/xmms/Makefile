@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.27 2002/09/03 01:22:21 wcobb Exp $
+# $OpenBSD: Makefile,v 1.28 2003/04/06 00:48:23 wcobb Exp $
 
 COMMENT=		"Multimedia player for the X Window System"
-COMMENT-gnome=		"GNOME applet for XMMS"
 COMMENT-esd=		"Esound output plugin for XMMS"
 COMMENT-vorbis=		"Ogg Vorbis input plugin for XMMS"
 COMMENT-mikmod=		"Mikmod input plugin for XMMS"
@@ -9,7 +8,6 @@ COMMENT-mp3=		"MP3 input plugin for XMMS"
 
 VERSION=		1.2.7
 DISTNAME=		xmms-${VERSION}
-PKGNAME-gnome=		xmms-gnome-${VERSION}
 PKGNAME-esd=		xmms-esd-${VERSION}
 PKGNAME-vorbis=		xmms-vorbis-${VERSION}
 PKGNAME-mikmod=		xmms-mikmod-${VERSION}
@@ -35,12 +33,9 @@ MASTER_SITES=		http://www.xmms.org/files/$V/ \
 MASTER_SITES0=		http://vedge.com.ar/hack/ \
 			http://mirror.csoft.org/xmms/
 
-PSEUDO_FLAVORS=		no_gnome no_esd no_vorbis no_mikmod no_mp3
+PSEUDO_FLAVORS=		no_esd no_vorbis no_mikmod no_mp3
 FLAVOR?=
 MULTI_PACKAGES=
-.if !${FLAVOR:L:Mno_gnome}
-MULTI_PACKAGES+=	-gnome
-.endif
 .if !${FLAVOR:L:Mno_esd}
 MULTI_PACKAGES+=	-esd
 .endif
@@ -63,7 +58,8 @@ LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 USE_LIBTOOL=		Yes
 USE_X11=		Yes
 CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--without-gnome
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -77,11 +73,6 @@ DOCS=			README NEWS
 
 
 .if defined(PACKAGING)
-. if ${SUBPACKAGE} == "-gnome"
-RUN_DEPENDS=		::audio/xmms
-LIB_DEPENDS+=	gnome.36,gnomesupport.0,gnomeui.46,art_lgpl.4::x11/gnome/libs \
-		panel_applet.0::x11/gnome/core
-. endif
 . if ${SUBPACKAGE} == "-esd"
 LIB_DEPENDS=		esd.2::audio/esound
 RUN_DEPENDS=		::audio/xmms
@@ -100,14 +91,6 @@ PERMIT_DISTFILES_CDROM= "patent issues"
 RUN_DEPENDS=		::audio/xmms
 . endif
 .else
-. if ${MULTI_PACKAGES:M-gnome}
-LIB_DEPENDS+=	gnome.36,gnomesupport.0,gnomeui.46,art_lgpl.4::x11/gnome/libs \
-		panel_applet.0::x11/gnome/core
-CONFIGURE_ARGS+=	--with-gnome=${LOCALBASE}
-CONFIGURE_ENV+=		CPP_FLAGS="-I${LOCALBASE}/include"
-. else
-CONFIGURE_ARGS+=	--without-gnome
-. endif
 . if ${MULTI_PACKAGES:M-esd}
 LIB_DEPENDS+=		esd.2::audio/esound
 CONFIGURE_ARGS+=	--with-esd-prefix=${LOCALBASE}
@@ -138,9 +121,5 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xmms
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/xmms
-.if ${MULTI_PACKAGES:M-gnome}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xmms-gnome
-	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/xmms-gnome
-.endif
 
 .include <bsd.port.mk>
