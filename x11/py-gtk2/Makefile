@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/07/04 23:42:59 mjc Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/03 21:44:38 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/pygtk/2.2/}
 
-MODULES=	iconv python
+MODULES=	converters/libiconv lang/python
 
 MODPY_DISTUTILS_BUILDARGS=	--enable-threading
 
