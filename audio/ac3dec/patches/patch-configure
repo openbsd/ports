@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.7 2004/02/27 08:39:30 pvalchev Exp $
---- configure.orig	2000-03-29 17:51:49.000000000 -0700
-+++ configure	2004-02-27 01:28:04.000000000 -0700
+$OpenBSD: patch-configure,v 1.8 2004/10/27 16:47:05 pvalchev Exp $
+--- configure.orig	Wed Mar 29 17:51:49 2000
++++ configure	Wed Oct 27 15:19:38 2004
 @@ -528,7 +528,7 @@ fi
  
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.7 2004/02/27 08:39:30 pvalchev Exp $
    if test -f $ac_dir/install-sh; then
      ac_aux_dir=$ac_dir
      ac_install_sh="$ac_aux_dir/install-sh -c"
-@@ -1273,10 +1273,34 @@ sparc-*) cat >> confdefs.h <<\EOF
+@@ -1273,8 +1273,36 @@ sparc-*) cat >> confdefs.h <<\EOF
  #define __sparc__ 1
  EOF
  ;;
@@ -21,8 +21,8 @@ $OpenBSD: patch-configure,v 1.7 2004/02/27 08:39:30 pvalchev Exp $
 +;;
 +ppc-*|powerpc-*) cat >> confdefs.h <<\EOF
  #define __ppc__ 1
- EOF
- ;;
++EOF
++;;
 +vax-*) cat >> confdefs.h <<\EOF
 +#define __vax__ 1
 +EOF
@@ -43,6 +43,8 @@ $OpenBSD: patch-configure,v 1.7 2004/02/27 08:39:30 pvalchev Exp $
 +#define __amd64__ 1
 +EOF
 +;;
++mips64-*) cat >> confdefs.h <<\EOF
++#define __mips64__ 1
+ EOF
+ ;;
  *) echo "$host is not currently supported by ac3dec"; exit 1;;
- esac
- 
