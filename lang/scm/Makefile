@@ -1,5 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2002/12/29 20:41:08 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2003/09/07 19:53:08 pvalchev Exp $
 # losely based on the FreeBSD port
+
+.if ${MACHINE_ARCH} == "alpha"
+BROKEN=		"hangs at runtime during build process"
+.endif
 
 COMMENT=	"scheme r5 interpreter"
 
