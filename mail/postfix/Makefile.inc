@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.44 2004/12/28 09:00:46 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.45 2004/12/28 09:27:13 jakob Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -34,6 +34,8 @@ MAKE_CCARGS+=	-DHAS_SSL	# -stable
 MAKE_CCARGS+=	-DUSE_TLS	# -snapshot
 MAKE_AUXLIBS+=	-lssl -lcrypto
 
+WANTLIB=	c crypto ssl
+
 TLSHOMEPAGE=	http://www.aet.tu-cottbus.de/personen/jaenicke/pfixtls/
 SUBST_VARS+=	TLSHOMEPAGE
 
@@ -50,6 +52,7 @@ NO_REGRESS=	Yes
 LIB_DEPENDS+=	pcre::devel/pcre
 MAKE_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
+WANTLIB+=	pcre
 
 FLAVORS+=	sasl2 ldap mysql pgsql
 FLAVOR?=
@@ -58,24 +61,28 @@ FLAVOR?=
 LIB_DEPENDS+=	sasl2::security/cyrus-sasl2
 MAKE_CCARGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/sasl -DUSE_SASL_AUTH 
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2
+WANTLIB+=	sasl2
 .endif
 
 .if ${FLAVOR:L:Mldap}
 LIB_DEPENDS+=	ldap.2,lber:openldap-client-2.*:databases/openldap
 MAKE_CCARGS+=	-I${LOCALBASE}/include -DHAS_LDAP
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
+WANTLIB+=	ldap
 .endif
 
 .if ${FLAVOR:L:Mmysql}
 LIB_DEPENDS+=	lib/mysql/mysqlclient.10::databases/mysql
 MAKE_CCARGS+=	-I${LOCALBASE}/include/mysql -DHAS_MYSQL
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
+WANTLIB+=	mysqlclient
 .endif
 
 .if ${FLAVOR:L:Mpgsql}
 LIB_DEPENDS+=	pq.3:postgresql-client-*:databases/postgresql
 MAKE_CCARGS+=	-I${LOCALBASE}/include/postgresql -DHAS_PGSQL
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpq
+WANTLIB+=	pq
 .endif
 
 
