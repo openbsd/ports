@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/01 05:47:34 dugsong Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/12/01 08:07:20 dugsong Exp $
 bin/fm2ps
 bin/mif2rtf
 bin/pod2sdf
@@ -12,7 +12,6 @@ bin/sdfget
 bin/sdngen
 libdata/perl5/site_perl/Pod/Diff.pm
 libdata/perl5/site_perl/Pod/Sdf.pm
-libdata/perl5/site_perl/i386-openbsd/auto/SDF/.packlist
 libdata/perl5/site_perl/sdf/apiperl.pl
 libdata/perl5/site_perl/sdf/app.pl
 libdata/perl5/site_perl/sdf/app.sdf
@@ -198,7 +197,4 @@ man/man1/pod2sdf.1
 @dirrm libdata/perl5/site_perl/sdf/home/images
 @dirrm libdata/perl5/site_perl/sdf/home
 @dirrm libdata/perl5/site_perl/sdf
-@dirrm libdata/perl5/site_perl/i386-openbsd/auto/SDF
-@dirrm libdata/perl5/site_perl/i386-openbsd/auto
-@dirrm libdata/perl5/site_perl/i386-openbsd
 @dirrm libdata/perl5/site_perl/Pod
