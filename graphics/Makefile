@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2004/06/18 18:59:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.121 2004/07/01 21:56:34 robert Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -106,6 +106,7 @@
      SUBDIR += ruby-gdk-pixbuf
      SUBDIR += s10sh
 #    SUBDIR += sced
+     SUBDIR += scrot
      SUBDIR += smpeg-xmms
      SUBDIR += sng
 #    SUBDIR += spigot
