@@ -6,7 +6,9 @@ licensed under the GNU General Public License version 2.
      servers.
    * Support for multidrop or domain mailboxes.
    * Safe and reliable delivery to qmail-style Maildirs, as well as 
-     program (pipe) delivery.
+     program (pipe) delivery for use with arbitrary external MDAs.
+     Includes an MDA for mbox files that supports mboxrd format and
+     fcntl-type flock locking.
    * Does not destroy information by rewriting mail headers.
    * Does not cause mail loops by doing SMTP injection, and therefore
      does not require that you run an MTA (like qmail or sendmail) on

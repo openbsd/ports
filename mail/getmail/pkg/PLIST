@@ -1,14 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/02/10 20:44:24 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/02/22 08:41:47 sturm Exp $
 bin/getmail
+libexec/getmail_maildir
+libexec/getmail_mbox
 man/man1/getmail.1
 share/doc/getmail/docs.txt
 share/doc/getmail/faq.txt
-share/examples/getmail/getmailrc
+share/examples/getmail/getmailrc-example
 share/getmail/ConfParser.py
 share/getmail/getmail.py
 share/getmail/getmail_classes.py
 share/getmail/getmail_constants.py
 share/getmail/getmail_defaults.py
+share/getmail/getmail_mbox.py
 share/getmail/getmail_utilities.py
 share/getmail/timeoutsocket.py
 @dirrm share/getmail
