@@ -1,0 +1,12 @@
+$OpenBSD: patch-Imakefile,v 1.1 2002/01/14 13:47:22 naddy Exp $
+--- Imakefile.orig	Sun Jul 14 19:48:56 1996
++++ Imakefile	Mon Jan 14 14:41:27 2002
+@@ -43,7 +43,7 @@
+  * #include "Motif.tmpl"
+  * #include "Motif.rules"
+  */
+-LOCAL_LIBRARIES= XmClientLibs
++LOCAL_LIBRARIES= ${MOTIFLIB} ${XTOOLLIB} ${XLIB} -lossaudio
+ 
+ 
+ /*

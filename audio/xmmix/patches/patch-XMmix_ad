@@ -1,3 +1,4 @@
+$OpenBSD: patch-XMmix_ad,v 1.1 2002/01/14 13:47:22 naddy Exp $
 --- XMmix.ad.orig	Sun Jul 14 19:48:58 1996
 +++ XMmix.ad	Sun Apr  9 18:34:52 2000
 @@ -26,7 +26,7 @@

@@ -1,3 +1,4 @@
+$OpenBSD: patch-resource_h,v 1.1 2002/01/14 13:47:22 naddy Exp $
 --- resource.h.orig	Sun Jul 14 19:49:07 1996
 +++ resource.h	Sun Apr  9 18:35:52 2000
 @@ -63,7 +63,7 @@ STATIC XtResource	resources[] = {
