@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2000/08/16 07:41:20 camield Exp $
+# $OpenBSD: Makefile,v 1.44 2000/08/28 23:37:18 matt Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -35,6 +35,7 @@
      SUBDIR += pgp5:intl
      SUBDIR += pgplib
      SUBDIR += portscanner
+     SUBDIR += ppgen
      SUBDIR += radiusniff
      SUBDIR += rdp
      SUBDIR += rsaref
