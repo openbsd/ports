@@ -59,7 +59,7 @@
 -	install --mode=711 $(PROGRAM) $(INSTALLPATH)
 -	install --mode=744 mysql.xpm $(XMYSQL_XPMPATH)
 -	install --mode=744 sqlhelp.txt $(XMYSQL_HELPPATH) 
-+	install -s -m 511 $(PROGRAM) $(INSTALLPATH)
++	install -s -m ${BINMODE} $(PROGRAM) $(INSTALLPATH)
 +	install -m 444 mysql.xpm $(XMYSQL_XPMPATH)
 +	install -d -m 755 $(XMYSQL_HELPPATH)
 +	install -m 444 sqlhelp.txt $(XMYSQL_HELPPATH)
