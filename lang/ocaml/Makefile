@@ -1,12 +1,12 @@
 # OpenBSD makefile for:	Objective Caml
-# Version required:	1.07
+# Version required:	2.01
 # Date created:		December 12, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/02/13 02:09:02 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/02/13 04:20:08 angelos Exp $
 #
 
-DISTNAME=	ocaml-1.07
+DISTNAME=	ocaml-2.01
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/ \
 		ftp://ftp.inria.fr/lang/caml-light/
