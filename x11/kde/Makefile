@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2003/01/06 17:06:20 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2003/01/27 20:25:27 espie Exp $
 
      SUBDIR+= arts3
      SUBDIR+= libs3
@@ -11,12 +11,14 @@
      SUBDIR+= multimedia3
      SUBDIR+= network3
      SUBDIR+= pim3
+     SUBDIR+= sdk3
      SUBDIR+= toys3
      SUBDIR+= utils3
+     SUBDIR+= bindings3
+     SUBDIR+= quanta
      SUBDIR+= office3
      SUBDIR+= i18n3,af
      SUBDIR+= i18n3,ar
-     SUBDIR+= i18n3,az
      SUBDIR+= i18n3,bg
      SUBDIR+= i18n3,bs
      SUBDIR+= i18n3,ca
@@ -28,22 +30,20 @@
      SUBDIR+= i18n3,eo
      SUBDIR+= i18n3,es
      SUBDIR+= i18n3,et
+     SUBDIR+= i18n3,eu
+     SUBDIR+= i18n3,fa
      SUBDIR+= i18n3,fi
      SUBDIR+= i18n3,fr
      SUBDIR+= i18n3,he
-     SUBDIR+= i18n3,hr
      SUBDIR+= i18n3,hu
-     SUBDIR+= i18n3,id
-     SUBDIR+= i18n3,is
      SUBDIR+= i18n3,it
      SUBDIR+= i18n3,ja
-     SUBDIR+= i18n3,ko
      SUBDIR+= i18n3,lt
-     SUBDIR+= i18n3,lv
      SUBDIR+= i18n3,mt
      SUBDIR+= i18n3,nb
      SUBDIR+= i18n3,nl
      SUBDIR+= i18n3,nn
+     SUBDIR+= i18n3,nso
      SUBDIR+= i18n3,pl
      SUBDIR+= i18n3,pt
      SUBDIR+= i18n3,pt_BR
@@ -51,6 +51,7 @@
      SUBDIR+= i18n3,ru
      SUBDIR+= i18n3,sk
      SUBDIR+= i18n3,sl
+     SUBDIR+= i18n3,sr
      SUBDIR+= i18n3,sv
      SUBDIR+= i18n3,ta
      SUBDIR+= i18n3,th
