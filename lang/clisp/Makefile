@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2001/05/30 10:46:45 shell Exp $
+# $OpenBSD: Makefile,v 1.9 2001/07/18 13:56:29 shell Exp $
 # $FreeBSD: ports/lang/clisp/Makefile,v 1.4 2000/05/14 05:40:46 billf Exp $
 
 NOT_FOR_ARCHS=	powerpc sparc
 
 COMMENT=	"ANSI Common Lisp compiler"
 
-VERSION=	2.26
+VERSION=	2.27
 DISTNAME=	clisp-${VERSION}
 CATEGORIES=	lang
 NEED_VERSION=	1.378

@@ -1,0 +1,18 @@
+--- libiconv/Makefile.in.orig	Wed Jul 18 20:09:49 2001
++++ libiconv/Makefile.in	Wed Jul 18 20:10:21 2001
+@@ -18,9 +18,12 @@
+ @SET_MAKE@
+ 
+ # Programs used by "make install":
+-INSTALL = @INSTALL@
+-INSTALL_PROGRAM = @INSTALL_PROGRAM@
+-INSTALL_DATA = @INSTALL_DATA@
++#INSTALL = @INSTALL@
++#INSTALL_PROGRAM = @INSTALL_PROGRAM@
++#INSTALL_DATA = @INSTALL_DATA@
++INSTALL=install -c
++INSTALL_PROGRAM=install -c -s -m 555
++INSTALL_DATA=install -c -m 644
+ 
+ #### End of system configuration section. ####
+ 

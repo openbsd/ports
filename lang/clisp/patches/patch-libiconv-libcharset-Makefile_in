@@ -1,0 +1,16 @@
+--- libiconv/libcharset/Makefile.in.orig	Wed Jul 18 20:14:51 2001
++++ libiconv/libcharset/Makefile.in	Wed Jul 18 20:15:12 2001
+@@ -20,8 +20,11 @@
+ @SET_MAKE@
+ 
+ # Programs used by "make install":
+-INSTALL = @INSTALL@
+-INSTALL_DATA = @INSTALL_DATA@
++#INSTALL = @INSTALL@
++#INSTALL_DATA = @INSTALL_DATA@
++INSTALL=install -c
++INSTALL_PROGRAM=install -c -s -m 555
++INSTALL_DATA=install -c -m 644
+ MKINSTALLDIRS = $(SHELL) $(srcdir)/autoconf/mkinstalldirs
+ 
+ #### End of system configuration section. ####
