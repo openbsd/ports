@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:07 espie Exp $
-libdata/perl5/site_perl/HTML/AsSubs.pm
-libdata/perl5/site_perl/HTML/Element.pm
-libdata/perl5/site_perl/HTML/Element/traverse.pm
-libdata/perl5/site_perl/HTML/Parse.pm
-libdata/perl5/site_perl/HTML/Tree.pm
-libdata/perl5/site_perl/HTML/Tree/AboutObjects.pod
-libdata/perl5/site_perl/HTML/Tree/AboutTrees.pod
-libdata/perl5/site_perl/HTML/Tree/Scanning.pod
-libdata/perl5/site_perl/HTML/TreeBuilder.pm
+@comment $OpenBSD: PLIST,v 1.4 2002/11/30 20:00:36 margarida Exp $
+${P5SITE}/HTML/AsSubs.pm
+${P5SITE}/HTML/Element.pm
+${P5SITE}/HTML/Element/traverse.pm
+${P5SITE}/HTML/Parse.pm
+${P5SITE}/HTML/Tree.pm
+${P5SITE}/HTML/Tree/AboutObjects.pod
+${P5SITE}/HTML/Tree/AboutTrees.pod
+${P5SITE}/HTML/Tree/Scanning.pod
+${P5SITE}/HTML/TreeBuilder.pm
 man/man3p/HTML::AsSubs.3p
 man/man3p/HTML::Element.3p
 man/man3p/HTML::Element::traverse.3p
@@ -17,4 +17,5 @@ man/man3p/HTML::Tree::AboutObjects.3p
 man/man3p/HTML::Tree::AboutTrees.3p
 man/man3p/HTML::Tree::Scanning.3p
 man/man3p/HTML::TreeBuilder.3p
-@dirrm libdata/perl5/site_perl/HTML/Element
+@dirrm ${P5SITE}/HTML/Tree
+@dirrm ${P5SITE}/HTML/Element
