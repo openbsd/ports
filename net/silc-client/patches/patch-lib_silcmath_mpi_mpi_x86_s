@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_silcmath_mpi_mpi_x86_s,v 1.1 2002/07/17 19:10:40 fgsch Exp $
---- lib/silcmath/mpi/mpi_x86.s.orig	Fri Apr  5 13:54:43 2002
-+++ lib/silcmath/mpi/mpi_x86.s	Wed Jul 17 09:05:01 2002
+$OpenBSD: patch-lib_silcmath_mpi_mpi_x86_s,v 1.2 2002/10/22 22:05:08 mark Exp $
+--- lib/silcmath/mpi/mpi_x86.s.orig	Fri Apr  5 08:54:43 2002
++++ lib/silcmath/mpi/mpi_x86.s	Tue Oct 22 14:57:53 2002
 @@ -56,9 +56,9 @@
   #	edx:
   #	esi:	a ptr

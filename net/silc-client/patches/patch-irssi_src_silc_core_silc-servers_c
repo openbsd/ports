@@ -1,6 +1,6 @@
-$OpenBSD: patch-irssi_src_silc_core_silc-servers_c,v 1.1 2002/09/24 17:20:10 fgsch Exp $
---- irssi/src/silc/core/silc-servers.c.orig	Sat Jul  6 05:42:27 2002
-+++ irssi/src/silc/core/silc-servers.c	Tue Sep 24 02:28:01 2002
+$OpenBSD: patch-irssi_src_silc_core_silc-servers_c,v 1.2 2002/10/22 22:05:08 mark Exp $
+--- irssi/src/silc/core/silc-servers.c.orig	Sun Oct 20 05:14:17 2002
++++ irssi/src/silc/core/silc-servers.c	Tue Oct 22 14:57:53 2002
 @@ -69,8 +69,6 @@ static void silc_send_channel(SILC_SERVE
  typedef struct {
    char *nick;
@@ -105,7 +105,7 @@ $OpenBSD: patch-irssi_src_silc_core_silc-servers_c,v 1.1 2002/09/24 17:20:10 fgs
  
    silc_free(message);
  }
-@@ -940,7 +890,6 @@ void silc_server_init(void)
+@@ -951,7 +901,6 @@ void silc_server_init(void)
  
    signal_add_first("server connected", (SIGNAL_FUNC) sig_connected);
    signal_add("server disconnected", (SIGNAL_FUNC) sig_disconnected);
@@ -113,7 +113,7 @@ $OpenBSD: patch-irssi_src_silc_core_silc-servers_c,v 1.1 2002/09/24 17:20:10 fgs
    command_bind_silc("whois", MODULE_NAME, (SIGNAL_FUNC) command_self);
    command_bind_silc("whowas", MODULE_NAME, (SIGNAL_FUNC) command_self);
    command_bind_silc("nick", MODULE_NAME, (SIGNAL_FUNC) command_self);
-@@ -976,7 +925,6 @@ void silc_server_deinit(void)
+@@ -989,7 +938,6 @@ void silc_server_deinit(void)
  
    signal_remove("server connected", (SIGNAL_FUNC) sig_connected);
    signal_remove("server disconnected", (SIGNAL_FUNC) sig_disconnected);

@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_silcmath_mpi_configure,v 1.3 2002/09/24 17:20:10 fgsch Exp $
---- lib/silcmath/mpi/configure.orig	Sat Sep  7 14:04:50 2002
-+++ lib/silcmath/mpi/configure	Thu Sep 19 06:12:06 2002
-@@ -978,7 +978,7 @@ rm -f conftest.sh
+$OpenBSD: patch-lib_silcmath_mpi_configure,v 1.4 2002/10/22 22:05:08 mark Exp $
+--- lib/silcmath/mpi/configure.orig	Mon Oct 21 11:11:22 2002
++++ lib/silcmath/mpi/configure	Tue Oct 22 14:57:53 2002
+@@ -1243,7 +1243,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  # Compiler settings
  #
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_silcmath_mpi_configure,v 1.3 2002/09/24 17:20:10 fgsch Exp $
  if test "$GCC"; then
    CFLAGS="$CFLAGS -Wall"
  fi
-@@ -1892,7 +1892,7 @@ if test x$want_asm = xtrue; then
+@@ -2186,7 +2186,7 @@ if test x$want_asm = xtrue; then
    echo "Using assembler optimization if possible."
  fi
  

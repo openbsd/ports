@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.8 2002/09/24 17:20:10 fgsch Exp $
---- configure.orig	Thu Sep 19 06:09:58 2002
-+++ configure	Thu Sep 19 06:11:14 2002
-@@ -2663,13 +2663,6 @@ else
-   SILC_DIST_WIN32DLL_FALSE=
+$OpenBSD: patch-configure,v 1.9 2002/10/22 22:05:08 mark Exp $
+--- configure.orig	Mon Oct 21 11:11:09 2002
++++ configure	Tue Oct 22 14:57:53 2002
+@@ -3098,13 +3098,6 @@ else
  fi
+ 
  
 -# XXX
 -# Compiler flags
@@ -15,15 +15,16 @@ $OpenBSD: patch-configure,v 1.8 2002/09/24 17:20:10 fgsch Exp $
  # Program checking
  #
  # Find a good install program.  We prefer a C program (faster),
-@@ -10434,18 +10427,16 @@ echo "${ECHO_T}yes" >&6
+@@ -12477,19 +12470,17 @@ echo "${ECHO_T}yes" >&6
  #define SILC_DEBUG 1
- EOF
+ _ACEOF
  
 -        CFLAGS="-O -g $CFLAGS"
 +        CFLAGS="-g $CFLAGS"
+ 	summary_debug="yes"
          ;;
        *)
-         echo "$as_me:10440: result: no" >&5
+         echo "$as_me:$LINENO: result: no" >&5
  echo "${ECHO_T}no" >&6
 -        CFLAGS="-O2 -g $CFLAGS"
          ;;
@@ -32,6 +33,6 @@ $OpenBSD: patch-configure,v 1.8 2002/09/24 17:20:10 fgsch Exp $
  else
  
 -    CFLAGS="-O2 -g $CFLAGS"
-     echo "$as_me:10449: result: no" >&5
+     echo "$as_me:$LINENO: result: no" >&5
  echo "${ECHO_T}no" >&6
  

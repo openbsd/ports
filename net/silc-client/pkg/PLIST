@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/07/04 10:56:08 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/10/22 22:05:08 mark Exp $
 bin/silc
 share/doc/silc/CHANGES
 share/doc/silc/CREDITS
@@ -13,6 +13,7 @@ share/examples/silc-client/silc.conf
 share/silc/help/action
 share/silc/help/admin
 share/silc/help/alias
+share/silc/help/attr
 share/silc/help/away
 share/silc/help/ban
 share/silc/help/beep
@@ -79,6 +80,7 @@ share/silc/help/server
 share/silc/help/set
 share/silc/help/shutdown
 share/silc/help/silcoper
+share/silc/help/stats
 share/silc/help/statusbar
 share/silc/help/toggle
 share/silc/help/topic

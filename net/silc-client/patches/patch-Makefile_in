@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2002/07/04 10:56:08 fgsch Exp $
---- Makefile.in.orig	Sun Jun 23 16:25:10 2002
-+++ Makefile.in	Fri Jun 28 03:17:10 2002
-@@ -536,51 +536,25 @@ install-dirs:
+$OpenBSD: patch-Makefile_in,v 1.3 2002/10/22 22:05:08 mark Exp $
+--- Makefile.in.orig	Mon Oct 21 11:11:12 2002
++++ Makefile.in	Tue Oct 22 14:57:53 2002
+@@ -684,53 +684,25 @@ install-dirs:
  	-mkdir -p $(docdir)
  	-mkdir -p $(logsdir)
  
@@ -45,9 +45,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2002/07/04 10:56:08 fgsch Exp $
 -		$(etcdir)/silcalgs.conf; \
 -          chmod go= $(etcdir)/silcd.conf; \
 -	fi
- 	-@if test '!' -f $(etcdir)/silc.conf ; then \
- 	  $(INSTALL_DATA) $(srcdir)/irssi/silc.conf \
- 	  $(etcdir)/silc.conf; \
+-	-@if test '!' -d $(srcdir)/irssi ; then \
+-	  if test '!' -f $(etcdir)/silc.conf ; then \
++	-@if test '!' -d $(etcdir)/silc.conf ; then \
+ 	    $(INSTALL_DATA) $(srcdir)/irssi/silc.conf; \
+ 	    $(etcdir)/silc.conf; \
+-	  fi; \
  	fi
  
 -@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs sim-install doc-install etc-install
