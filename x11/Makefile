@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2004/03/12 18:06:57 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.185 2004/04/18 23:26:20 jolan Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -188,6 +188,7 @@
      SUBDIR += xawtv
 #    SUBDIR += xbuffy
      SUBDIR += xcb
+     SUBDIR += xclip
      SUBDIR += xco
      SUBDIR += xcoloredit
      SUBDIR += xcolors
