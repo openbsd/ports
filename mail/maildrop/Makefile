@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/09 12:22:44 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/06 08:52:00 avsm Exp $
 
-DISTNAME=	maildrop-1.3.0
+DISTNAME=	maildrop-1.3.1
 CATEGORIES=    	mail
 NEED_VERSION=	1.351
 
