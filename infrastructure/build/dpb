@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: dpb,v 1.6 2004/09/20 20:17:33 sturm Exp $
+# $OpenBSD: dpb,v 1.7 2004/10/24 14:16:38 sturm Exp $
 # Copyright (c) 2004 Nikolay Sturm <sturm@openbsd.org>.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -63,6 +63,7 @@ our %SSH_MASTER = ();
 
 # -A <Arch>: specify architecture of build hosts
 # -b: force creation of dependency file
+# -c: clean build, i.e. pkg_delete * before building a port
 # -d: debug run, don't actually build any packages
 # -e: perform expensive operations to get full dependency information in
 #     order to optimize build order by package importance
@@ -72,8 +73,8 @@ our %SSH_MASTER = ();
 # -s: build all packages in cwd
 # -T <Dependency File>: use <Dependency File> instead of a temporary one
 # -t <Timeout>: use this timeout instead of the default
-our ($opt_A, $opt_b, $opt_d, $opt_e, $opt_F, $opt_L, $opt_S, $opt_s, $opt_T, $opt_t);
-getopts('A:bdeF:L:S:sT:t:');
+our ($opt_A, $opt_b, $opt_c, $opt_d, $opt_e, $opt_F, $opt_L, $opt_S, $opt_s, $opt_T, $opt_t);
+getopts('A:bcdeF:L:S:sT:t:');
 
 $ARCH = $opt_A if defined $opt_A;
 
@@ -184,6 +185,28 @@ sub start_ssh_master($)
 		# child
 		my @args = (@SSH, "-N", "-M", "-S", "$TMPDIR/ssh-$host",
 			    "$host");
+		my_exec(\@args, "/dev/null");
+	}
+}
+
+sub clear_packages($)
+{
+	my $host = shift;
+	my $pid = fork();
+	
+	die "fork: $!" unless defined $pid;
+
+	if ($pid > 0) {
+		# parent
+
+		# just wait for pkg_delete to finish, we don't care
+		# about anything else
+		waitpid($pid, 0);
+	} else {
+		# child
+		# beware of format, might not work with /bin/sh -c otherwise
+		my @args = (@{$SHELL{$host}},
+		    "/usr/bin/sudo /usr/sbin/pkg_delete -c -q /var/db/pkg/*");
 		my_exec(\@args, "/dev/null");
 	}
 }
@@ -455,6 +478,7 @@ sub build_package($$$$)
 			my @args = (@{$SHELL{$host}}, $arg);
 			
 			start_logger($host);
+			clear_packages($host) if defined $opt_c;
 			my_exec(\@args, "$FIFO{$host}");
 		}
 		exit 0;
