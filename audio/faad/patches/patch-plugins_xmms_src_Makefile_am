@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_xmms_src_Makefile_am,v 1.1 2004/12/09 04:57:56 jcs Exp $
+--- plugins/xmms/src/Makefile.am.orig	Wed Dec  8 17:22:53 2004
++++ plugins/xmms/src/Makefile.am	Wed Dec  8 17:25:08 2004
+@@ -1,7 +1,7 @@
+ libdir = `$(XMMS_CONFIG) --input-plugin-dir`
+ lib_LTLIBRARIES = libmp4.la
+ 
+-libmp4_la_CFLAGS = `$(XMMS_CONFIG) --cflags` -Wall \
++CFLAGS = `$(XMMS_CONFIG) --cflags` -Wall \
+        `$(GTK_CONFIG) --cflags` -DHAVE_GLIB_H=1 \
+        -I$(top_srcdir)/include -I$(top_srcdir)/common/mp4v2
+ 
