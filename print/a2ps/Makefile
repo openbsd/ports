@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/08/10 09:26:13 xsa Exp $
+# $OpenBSD: Makefile,v 1.30 2004/12/25 20:58:34 alek Exp $
 
 COMMENT=	"format ascii files for printing on PostScript printers"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"No fee redistribution."
 PERMIT_DISTFILES_CDROM=	"No fee redistribution."
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/
 
