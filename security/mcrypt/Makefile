@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/06 11:18:33 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/06 08:34:02 avsm Exp $
 
 DISTNAME=		mcrypt-2.5.5
 CATEGORIES=     	security
@@ -16,7 +16,7 @@ MASTER_SITES=		ftp://mcrypt.hellug.gr/pub/mcrypt/ \
 			ftp://argeas.cs-net.gr/pub/unix/mcrypt
 
 USE_LIBTOOL=		Yes
-LIB_DEPENDS=		mcrypt.4::security/libmcrypt \
+LIB_DEPENDS=		mcrypt.5::security/libmcrypt \
 			intl.1::devel/gettext
 
 CONFIGURE_STYLE=	gnu
