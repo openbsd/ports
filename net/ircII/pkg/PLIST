@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/08/15 22:15:33 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2000/08/27 01:01:43 brad Exp $
 bin/ircII
 bin/ircII-${VERSION}
 bin/ircbug
@@ -610,8 +610,8 @@ share/irc/translation/UNITED_KINGDOM_COM
 @dirrm share/irc/help/set
 @dirrm share/irc/help/window
 @dirrm share/irc/help
-@dirrm share/irc/script
 @dirrm share/irc/translation
+@dirrm share/irc/script
 @dirrm share/irc
 @exec echo "The ircII executable has been installed as %D/bin/ircII"
 @exec echo "to avoid conflict with another irc package"
