@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/30 03:54:43 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/30 03:58:31 msf Exp $
 
 COMMENT=	"Porters stemming algorithm for Denmark"
 
@@ -8,7 +8,7 @@ CATEGORIES=	textproc perl5
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
-# Artistic
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
