@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/02/07 18:46:18 jasoni Exp $
+# $OpenBSD: Makefile,v 1.6 1999/02/08 03:59:15 jasoni Exp $
 #
 
 DISTNAME=	WindowMaker-0.51.0
@@ -17,6 +17,8 @@ LIB_DEPENDS=	PropList\\.1\\.:${PORTSDIR}/devel/libproplist \
                 png\\.1\\.:${PORTSDIR}/graphics/png \
 		gif\\.3\\.:${PORTSDIR}/graphics/giflib
 GNU_CONFIGURE=	YES
+CONFIGURE_ENV=	CFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib" \
+		CPPFLAGS="-I${PREFIX}/include"
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/share/WindowMaker/Pixmaps \
 		--with-gfx-incs="-I${PREFIX}/include -I${PREFIX}/include/giflib" \
 		--with-gfx-libs=-L${PREFIX}/lib \
