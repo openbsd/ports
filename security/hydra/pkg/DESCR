@@ -9,8 +9,7 @@ Experiment with the task option (-t) to speed things up. The higher,
 the faster (but too high, and it disables the service). To prevent 
 disabling you can now use the -g option for "slow-starts".
 
-The following protocols are supported:
-Cisco[-enable] (including AAA), FTP, HTTP[S], ICQ, IMAP, LDAP, NNTP,
-PCNFS, POP3, REXEC, SMB, SMBNT, SOCKS5, TELNET, MySQL, Socks5 and VNC.
-A generic SSL wrapper can also be used in conjuction with the other
-protocols.
+Currently this tool supports:
+TELNET, FTP, HTTP, HTTPS, HTTP-PROXY, LDAP, SMB, SMBNT, MS-SQL, MYSQL, REXEC,
+SOCKS5, VNC, POP3, IMAP, NNTP, PCNFS, ICQ, SAP/R3, Cisco auth, Cisco enable,
+Cisco AAA.

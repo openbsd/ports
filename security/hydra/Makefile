@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2003/12/14 16:35:49 margarida Exp $
+# $OpenBSD: Makefile,v 1.13 2004/10/02 04:08:42 tedu Exp $
 
 COMMENT=		"parallelized login hacker"
 
-DISTNAME=		hydra-2.5
+DISTNAME=		hydra-4.1-src
 CATEGORIES=    		security
 
 HOMEPAGE=		http://www.thc.org/
@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.thc.org/
 MASTER_SITES=		${HOMEPAGE}/releases/ \
 			${MASTER_SITE_PACKETSTORM:=groups/thc/}
 
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
+MAINTAINER=		Van Helsing <vh@helith.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
