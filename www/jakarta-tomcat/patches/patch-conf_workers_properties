@@ -1,4 +1,4 @@
-$OpenBSD: patch-conf_workers_properties,v 1.1.1.1 2001/06/17 12:18:17 reinhard Exp $
+$OpenBSD: patch-conf_workers_properties,v 1.2 2001/06/18 09:48:24 reinhard Exp $
 --- conf/workers.properties.orig	Tue Dec 12 22:36:26 2000
 +++ conf/workers.properties	Fri May 18 15:24:26 2001
 @@ -40,20 +40,20 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-conf_workers_properties,v 1.1.1.1 2001/06/17 12:18:17 reinhard E
  # directories.
  #
 -workers.tomcat_home=c:\jakarta-tomcat
-+workers.tomcat_home=PREFIX/tomcat
++workers.tomcat_home=/var/tomcat
  
  #
  # workers.java_home should point to your Java installation. Normally
