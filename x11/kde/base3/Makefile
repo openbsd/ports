@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/23 15:04:03 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/23 15:20:58 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"X11 toolkit, netscape plugins"
@@ -60,6 +60,7 @@ USE_GMAKE=		Yes
 CONFIGURE_ENV=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 CONFIGURE_ENV+=		ac_aux_files=''
 MAKE_ENV=		${CONFIGURE_ENV}
+PORTHOME=${WRKDIR}
 
 LAMEDIR=${WRKDIR}/lamestub
 
