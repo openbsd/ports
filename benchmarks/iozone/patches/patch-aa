@@ -1,5 +1,5 @@
---- makefile.orig	Thu Jun 24 14:43:59 1999
-+++ makefile	Wed Jul  7 21:38:13 1999
+--- makefile.orig	Tue Aug  3 17:25:05 1999
++++ makefile	Sun Aug  8 12:55:18 1999
 @@ -6,7 +6,7 @@
  #
  # Supports:	hpux, hpux_no_ansi, hpux-10.1, hpux_no_ansi-10.1,
@@ -9,15 +9,15 @@
  
  
  all:  
-@@ -31,6 +31,7 @@
- 	@echo "\t->   Solaris              (32bit)   <-"
- 	@echo "\t->   Windows (95/98/NT)   (32bit)   <-"
+@@ -15,6 +15,7 @@
+ 	@echo "\t->   AIX                  (32bit)   <-"
+ 	@echo "\t->   convex               (32bit)   <-" 
  	@echo "\t->   freebsd              (32bit)   <-"
 +	@echo "\t->   openbsd              (32bit)   <-"
- 	@echo ""
- 
- clean:
-@@ -182,6 +183,15 @@
+ 	@echo "\t->   ghpux                (32bit)   <-"
+ 	@echo "\t->   hpuxs-11.0 (simple)  (32bit)   <-"
+ 	@echo "\t->   hpux-11.0w           (64bit)   <-"
+@@ -197,6 +198,15 @@
  freebsd: iozone_freebsd.o libbif.o
  	cc -O -Dunix -DHAVE_ANSIC_C -DNO_THREADS -DSHARED_MEM \
  		iozone_freebsd.o libbif.o -o iozone
@@ -33,7 +33,7 @@
  #
  #
  # Now for the machine specific stuff
-@@ -383,3 +393,11 @@
+@@ -416,3 +426,11 @@
  	cc -c -O -Dunix -Dbsd4_2 -DHAVE_ANSIC_C -DNO_THREADS \
  		-DSHARED_MEM libbif.c -o libbif.o
  

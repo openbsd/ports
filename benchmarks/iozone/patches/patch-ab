@@ -1,5 +1,5 @@
---- iozone.c.orig	Thu Jun 24 14:43:59 1999
-+++ iozone.c	Wed Jul  7 21:41:35 1999
+--- iozone.c.orig	Tue Aug  3 17:25:04 1999
++++ iozone.c	Sun Aug  8 12:55:56 1999
 @@ -74,7 +74,7 @@
  int main();
  #ifndef __convex__
@@ -9,7 +9,7 @@
  #include <sys/types.h>
  #define O_SYNC 0
  #endif
-@@ -189,7 +189,7 @@
+@@ -192,7 +192,7 @@
  #include <signal.h>
  #include <unistd.h>
  #include <sys/types.h>
@@ -18,7 +18,7 @@
  #include <malloc.h>
  #endif
  /* SCO Unix System V */
-@@ -256,6 +256,11 @@
+@@ -259,6 +259,11 @@
  #ifdef bsd4_2
  #define BSDtime
  #endif
@@ -30,7 +30,7 @@
  #ifdef BSDtime
  #include <sys/time.h>
  #else
-@@ -274,6 +279,10 @@
+@@ -277,6 +282,10 @@
  long long page_size = 4096;
  #define MS_SYNC 0
  #define MS_ASYNC 0
