@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/10/07 17:05:42 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/28 16:09:30 marcm Exp $
 
 COMMENT=		"printing framework for GNOME"
 
-VERSION=		2.4.0
+VERSION=		2.4.2
 DISTNAME=		libgnomeprint-${VERSION}
 CATEGORIES=		devel
 
@@ -27,7 +27,6 @@ LIB_DEPENDS=		art_lgpl_2.5::graphics/libart \
 			pango-1.0.0.0::devel/pango \
 			xml2.6::textproc/libxml
 
-SEPARATE_BUILD= 	concurrent
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.1.1.1 2003/10/07 17:05:42 marcm Exp $
---- ltmain.sh.orig	2003-09-10 15:55:56.000000000 -0700
-+++ ltmain.sh	2003-09-26 13:45:45.000000000 -0700
-@@ -1288,6 +1288,17 @@ EOF
+$OpenBSD: patch-ltmain_sh,v 1.2 2004/01/28 16:09:30 marcm Exp $
+--- ltmain.sh.orig	2003-11-18 09:48:39.000000000 -0800
++++ ltmain.sh	2004-01-23 23:24:48.000000000 -0800
+@@ -1356,6 +1356,17 @@ EOF
  	continue
  	;;
  
@@ -19,17 +19,27 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2003/10/07 17:05:42 marcm Exp $
        -module)
  	module=yes
  	continue
-@@ -1965,6 +1976,9 @@ EOF
+@@ -2001,6 +2012,19 @@ EOF
  	  fi
  	  continue
  	  ;;
 +	-pthread)
++	  case $linkmode in
++	  lib)
++	    deplibs="$deplib $deplibs"
++	    newdependency_libs="$deplib $newdependency_libs"
++	    ;;
++	  prog)
++	    compile_deplibs="$deplib $compile_deplibs"
++	    finalize_deplibs="$deplib $finalize_deplibs"
++	    ;;
++	  esac
 +	  continue
 +	  ;;
  	%DEPLIBS%)
  	  alldeplibs=yes
  	  continue
-@@ -2213,10 +2227,6 @@ EOF
+@@ -2249,10 +2273,6 @@ EOF
  	link_static=no # Whether the deplib will be linked statically
  	if test -n "$library_names" &&
  	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
@@ -40,7 +50,7 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2003/10/07 17:05:42 marcm Exp $
  	  # This is a shared library
  	
        # Warn about portability, can't link against -module's on some systems (darwin)
-@@ -5728,40 +5738,6 @@ relink_command=\"$relink_command\""
+@@ -5764,40 +5784,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
