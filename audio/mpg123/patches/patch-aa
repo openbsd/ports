@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Feb 18 20:05:47 2000
-+++ Makefile	Fri Feb 18 20:07:40 2000
+--- Makefile.orig	Sun Mar 19 20:42:07 2000
++++ Makefile	Sun Mar 19 20:43:52 2000
 @@ -9,8 +9,10 @@
  MANDIR=$(PREFIX)/man
  SECTION=1
@@ -7,7 +7,7 @@
 -# Enable the below line If your plathome support IPv6
 -#CFLAGS+= -DINET6
 +# Enable the below line if your platform supports IPv6
-+.if defined(USE_INET6) && ${USE_INET6} == "YES"
++.if defined(USE_INET6) && ${USE_INET6:U} == YES
 +CFLAGS+= -DINET6
 +.endif
  # Additional LIBDIR and libraries if exist
@@ -28,14 +28,14 @@
 +		mpg123-make
 +
 +openbsd:
-+	$(MAKE) CC=cc LDFLAGS= \
++	$(MAKE) CC="$(CC)" LDFLAGS= \
 +		OBJECTS='decode.o dct64.o audio_openbsd.o term.o' \
 +		CFLAGS='$(CFLAGS) -Wall -ansi -pedantic -O3 -fomit-frame-pointer \
 +			-funroll-all-loops -ffast-math -DTERM_CONTROL \
 +			-DREAL_IS_FLOAT -DUSE_MMAP -DOPENBSD' mpg123-make
 +
 +openbsd-i386:
-+	$(MAKE) CC=cc LDFLAGS= \
++	$(MAKE) CC="$(CC)" LDFLAGS= \
 +		OBJECTS='decode_i386.o dct64_i386.o audio_openbsd.o term.o' \
 +		CFLAGS='$(CFLAGS) -Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
 +			-funroll-all-loops -ffast-math -DROT_I386 -DTERM_CONTROL \
