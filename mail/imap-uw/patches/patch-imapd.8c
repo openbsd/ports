@@ -1,3 +1,5 @@
+$OpenBSD: patch-imapd.8c,v 1.2 2001/09/24 22:01:49 jakob Exp $
+
 --- src/imapd/imapd.8c.orig	Tue Oct 13 04:31:21 1998
 +++ src/imapd/imapd.8c	Sat Oct 16 23:59:57 1999
 @@ -1,9 +1,9 @@

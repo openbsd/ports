@@ -1,3 +1,5 @@
+$OpenBSD: patch-ipopd.8c,v 1.2 2001/09/24 22:01:49 jakob Exp $
+
 --- src/ipopd/ipopd.8c.orig	Fri Jan 17 02:52:10 1992
 +++ src/ipopd/ipopd.8c	Sat Oct 16 23:59:21 1999
 @@ -1,11 +1,11 @@

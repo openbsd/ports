@@ -1,5 +1,5 @@
 This is the IMAP4rev1 server from the University of Washington.
-Included are backwards-compatbile (almost) POP2 and POP3 servers.
+Included are backwards-compatible (almost) POP2 and POP3 servers.
 
         ipop2d           POP2 daemon
         ipop3d           POP3 daemon

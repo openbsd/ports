@@ -1,0 +1,104 @@
+$OpenBSD: patch-src_osdep_unix_Makefile,v 1.1 2001/09/24 22:01:49 jakob Exp $
+
+--- src/osdep/unix/Makefile.orig	Tue Jul  3 08:02:10 2001
++++ src/osdep/unix/Makefile	Sun Aug 26 12:49:37 2001
+@@ -28,8 +28,8 @@
+ 
+ # Extended flags needed for SSL.  You may need to modify.
+ 
+-SSLDIR=/usr/local/ssl
+-SSLCERTS=$(SSLDIR)/certs
++SSLDIR=/usr
++SSLCERTS=/etc/ssl
+ SSLINCLUDE=$(SSLDIR)/include
+ SSLLIB=$(SSLDIR)/lib
+ 
+@@ -107,6 +107,7 @@
+ DEFAULTAUTHENTICATORS=md5 pla log
+ DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf unix news phile
+ 
++.SUFFIXES: .o .so
+ 
+ # Normally no need to change any of these
+ 
+@@ -115,6 +116,7 @@
+  dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
+  rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+  unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
++SOBINARIES=$(BINARIES:.o=.so)
+ CFLAGS=-g
+ 
+ CAT=cat
+@@ -123,6 +125,7 @@
+ RM=rm -rf
+ SH=sh
+ 
++PICFLAG= -fpic
+ 
+ # Primary build command
+ 
+@@ -234,7 +237,7 @@
+ 	 SPOOLDIR=/var \
+ 	 ACTIVEFILE=/usr/local/news/lib/active \
+ 	 RSHPATH=/usr/bin/rsh \
+-	 BASECFLAGS="-O2 -pipe"
++	 BASECFLAGS="-pipe"
+ 
+ cvx:	# Convex
+ 	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
+@@ -762,23 +765,29 @@
+ 
+ # Build it!
+ 
+-build:	clean once $(ARCHIVE)
++build:	clean once $(ARCHIVE) $(SHLIB)
+ 
+-all:	$(ARCHIVE)
++all:	$(ARCHIVE) $(SHLIB)
+ 
+ $(ARCHIVE): $(BINARIES)
+ 	sh -c '$(RM) $(ARCHIVE) || true'
+ 	@$(CAT) ARCHIVE
+ 	@$(SH) ARCHIVE
+ 
++$(SHLIB): $(SOBINARIES)
++	$(CC) -shared $(PICFLAG) -o $(SHLIB) $(SOBINARIES)
++
+ .c.o:
+ 	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` $*.c
+ 
++.c.so:
++	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` $(PICFLAG) -DPIC $(@:.so=.c) -o $@
++
+ 
+ # Cleanup
+ 
+ clean:
+-	sh -c '$(RM) auths.c crexcl.c nfstest.c linkage.[ch] siglocal.c osdep*.[ch] *.o ARCHIVE *FLAGS *TYPE $(ARCHIVE) || true'
++	sh -c '$(RM) auths.c crexcl.c nfstest.c linkage.[ch] siglocal.c osdep*.[ch] *.o *.so ARCHIVE *FLAGS *TYPE $(ARCHIVE) $(SHLIB) || true'
+ 
+ 
+ # Dependencies
+@@ -812,7 +821,7 @@
+ 
+ # OS-dependent
+ 
+-osdep.o:mail.h misc.h env.h fs.h ftl.h nl.h tcp.h \
++OSDEPS=	mail.h misc.h env.h fs.h ftl.h nl.h tcp.h \
+ 	osdep.h env_unix.h tcp_unix.h \
+ 	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
+ 	auths.c crexcl.c flocksim.c nfstest.c flcksafe.c fsync.c gethstid.c \
+@@ -824,7 +833,12 @@
+ 	write.c sslstdio.c \
+ 	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
+ 	OSCFLAGS
+-	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` `$(CAT) OSCFLAGS` -c osdep.c
++
++osdep.o: $(OSDEPS)
++	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` `$(CAT) OSCFLAGS` osdep.c
++
++osdep.so: $(OSDEPS)
++	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` `$(CAT) OSCFLAGS` $(PICFLAG) -DPIC osdep.c -o $@
+ 
+ osdep.c: osdepbas.c osdepckp.c osdeplog.c osdepssl.c
+ 	$(CAT) osdepbas.c osdepckp.c osdeplog.c osdepssl.c > osdep.c
