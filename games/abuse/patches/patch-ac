@@ -1,0 +1,32 @@
+--- abuse/Makefile.in.orig	Wed Jul  9 00:55:21 1997
++++ abuse/Makefile.in	Sat Aug 29 04:31:24 1998
+@@ -37,10 +37,10 @@
+ AUTOMAKE = @AUTOMAKE@
+ AUTOHEADER = @AUTOHEADER@
+ 
+-INSTALL = @INSTALL@
+-INSTALL_PROGRAM = @INSTALL_PROGRAM@
+-INSTALL_DATA = @INSTALL_DATA@
+-INSTALL_SCRIPT = @INSTALL_SCRIPT@
++INSTALL = /usr/bin/install -c
++INSTALL_PROGRAM = $(INSTALL) -s -o bin -g games -m 2755 
++INSTALL_DATA = $(INSTALL) -o bin -g games -m 0664
++INSTALL_SCRIPT = $(INSTALL) -o bin -g games -m 0755
+ transform = @program_transform_name@
+ 
+ NORMAL_INSTALL = true
+@@ -239,11 +239,11 @@
+ 
+ install-pkglibPROGRAMS: $(pkglib_PROGRAMS)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(pkglibdir)
++	$(mkinstalldirs) $(bindir)
+ 	@list='$(pkglib_PROGRAMS)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+-	    echo "  $(INSTALL_PROGRAM) $$p $(pkglibdir)/`echo $$p|sed '$(transform)'`"; \
+-	     $(INSTALL_PROGRAM) $$p $(pkglibdir)/`echo $$p|sed '$(transform)'`; \
++	    echo "  $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed '$(transform)'`"; \
++	     $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
+ 	  else :; fi; \
+ 	done
+ 

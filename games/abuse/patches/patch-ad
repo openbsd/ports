@@ -1,0 +1,9 @@
+--- abuse/abuse.in.orig	Wed Jul  9 00:54:43 1997
++++ abuse/abuse.in	Sat Aug 29 04:26:04 1998
+@@ -27,5 +27,5 @@
+ if [ x$TERM = xlinux ]; then
+   abuse.console ${1:+"$@"}
+ else
+-  abuse.x11R6 ${1:+"$@"}
++  @exec_prefix@/bin/abuse.x11R6 ${1:+"$@"}
+ fi
