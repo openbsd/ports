@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/10/31 09:50:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2000/11/24 14:22:21 espie Exp $
 bin/designer
 bin/findtr
 bin/moc2
@@ -44,8 +44,11 @@ include/X11/qt2/qcombo.h
 include/X11/qt2/qcombobox.h
 include/X11/qt2/qcommonstyle.h
 include/X11/qt2/qconfig-dist.h
-include/X11/qt2/qconfig-embedded.h
+include/X11/qt2/qconfig-large.h
+include/X11/qt2/qconfig-medium.h
 include/X11/qt2/qconfig-minimal.h
+include/X11/qt2/qconfig-qpe.h
+include/X11/qt2/qconfig-small.h
 include/X11/qt2/qconfig.h
 include/X11/qt2/qconnect.h
 include/X11/qt2/qconnection.h
@@ -282,10 +285,8 @@ include/X11/qt2/qwmatrix.h
 include/X11/qt2/qworkspace.h
 include/X11/qt2/qxml.h
 include/X11/qt2/qxt.h
-%%SHARED%%
-lib/qt2/bin/moc
 lib/qt2/bin/designer
-lib/qt2/man/man3/PCOPChannel.3
+lib/qt2/bin/moc
 lib/qt2/man/man3/QAccel.3
 lib/qt2/man/man3/QAction.3
 lib/qt2/man/man3/QActionGroup.3
@@ -336,6 +337,7 @@ lib/qt2/man/man3/QColorGroup.3
 lib/qt2/man/man3/QComboBox.3
 lib/qt2/man/man3/QCommonStyle.3
 lib/qt2/man/man3/QConstString.3
+lib/qt2/man/man3/QCopChannel.3
 lib/qt2/man/man3/QCursor.3
 lib/qt2/man/man3/QCustomEvent.3
 lib/qt2/man/man3/QCustomMenuItem.3
@@ -615,7 +617,6 @@ lib/qt2/man/man3/QXmlSimpleReader.3
 lib/qt2/man/man3/QXtApplication.3
 lib/qt2/man/man3/QXtWidget.3
 lib/qt2/man/man3/Qt.3
-lib/qt2/man/man3/pcopchannel.3
 lib/qt2/man/man3/qaccel.3
 lib/qt2/man/man3/qaction.3
 lib/qt2/man/man3/qactiongroup.3
@@ -665,6 +666,7 @@ lib/qt2/man/man3/qcolorgroup.3
 lib/qt2/man/man3/qcombobox.3
 lib/qt2/man/man3/qcommonstyle.3
 lib/qt2/man/man3/qconststring.3
+lib/qt2/man/man3/qcopchannel.3
 lib/qt2/man/man3/qcstring.3
 lib/qt2/man/man3/qcursor.3
 lib/qt2/man/man3/qcustomevent.3
@@ -956,14 +958,16 @@ share/doc/qt2/README
 share/doc/qt2/README.QT
 share/doc/qt2/changes-2.2.0
 share/doc/qt2/changes-2.2.1
+share/doc/qt2/changes-2.2.2
 @unexec echo "Please remove %D/lib/qt2/man from /etc/man.conf manually if needed"
 @unexec echo "and remove %D/lib/qt2 from shlib_dirs in /etc/rc.conf as well"
-@dirrm include/X11/qt2
+%%SHARED%%
+@dirrm share/doc/qt2
 @dirrm lib/qt2/tools/designer/templates
 @dirrm lib/qt2/tools/designer
 @dirrm lib/qt2/tools
-@dirrm lib/qt2/bin
 @dirrm lib/qt2/man/man3
 @dirrm lib/qt2/man
+@dirrm lib/qt2/bin
 @dirrm lib/qt2
-@dirrm share/doc/qt2
+@dirrm include/X11/qt2

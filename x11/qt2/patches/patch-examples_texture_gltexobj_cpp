@@ -1,0 +1,11 @@
+--- examples/texture/gltexobj.cpp.orig	Thu Nov 23 00:01:38 2000
++++ examples/texture/gltexobj.cpp	Thu Nov 23 00:02:49 2000
+@@ -173,7 +173,7 @@ GLuint GLTexobj::makeObject( const QImag
+     // cylinder
+     glTexImage2D( GL_TEXTURE_2D, 0, 3, tex1.width(), tex1.height(), 0,
+ 		  GL_RGBA, GL_UNSIGNED_BYTE, tex1.bits() );
+-    gluQuadricNormals( q, GLU_SMOOTH );
++    gluQuadricNormals( q, (GLenum) GLU_SMOOTH );
+     gluQuadricTexture( q, GL_TRUE );
+     gluCylinder(q, 0.6, 0.6, 2.0, 24, 1);
+ 

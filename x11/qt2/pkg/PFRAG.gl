@@ -1,7 +1,8 @@
-@comment $OpenBSD: PFRAG.gl,v 1.1 2000/09/22 15:02:36 espie Exp $
+@comment $OpenBSD: PFRAG.gl,v 1.2 2000/11/24 14:22:21 espie Exp $
 lib/qt2/examples/box/box
 lib/qt2/examples/gear/gear
 lib/qt2/examples/glpixmap/glpixmap
 lib/qt2/examples/overlay/overlay
 lib/qt2/examples/overlay_x11/overlayrubber
 lib/qt2/examples/sharedbox/sharedbox
+lib/qt2/examples/texture/texture

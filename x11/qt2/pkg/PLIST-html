@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.4 2000/10/11 09:54:23 espie Exp $
+@comment $OpenBSD: PLIST-html,v 1.5 2000/11/24 14:22:21 espie Exp $
 share/doc/qt2/html/HOWTO-framebuffer.html
 share/doc/qt2/html/aboutqt.html
 share/doc/qt2/html/abstractwidgets.html
@@ -41,10 +41,8 @@ share/doc/qt2/html/datastreamformat.html
 share/doc/qt2/html/dclock-main-cpp.html
 share/doc/qt2/html/debug.html
 share/doc/qt2/html/design.html
-share/doc/qt2/html/designer
 share/doc/qt2/html/designer.html
 share/doc/qt2/html/designer.png
-share/doc/qt2/html/designer/arrows
 share/doc/qt2/html/designer/arrows/home.png
 share/doc/qt2/html/designer/arrows/left.png
 share/doc/qt2/html/designer/arrows/right.png
@@ -100,7 +98,6 @@ share/doc/qt2/html/designer/chap9_5.html
 share/doc/qt2/html/designer/chap9_6.html
 share/doc/qt2/html/designer/colophon.html
 share/doc/qt2/html/designer/feedback.html
-share/doc/qt2/html/designer/figures
 share/doc/qt2/html/designer/figures/aboutdialog.png
 share/doc/qt2/html/designer/figures/adjustsize.png
 share/doc/qt2/html/designer/figures/breaklayout.png
@@ -435,6 +432,8 @@ share/doc/qt2/html/qconnection-members.html
 share/doc/qt2/html/qconnection.html
 share/doc/qt2/html/qconststring-members.html
 share/doc/qt2/html/qconststring.html
+share/doc/qt2/html/qcopchannel-members.html
+share/doc/qt2/html/qcopchannel.html
 share/doc/qt2/html/qcstring-h.html
 share/doc/qt2/html/qcstring-members.html
 share/doc/qt2/html/qcstring.html
@@ -1391,4 +1390,7 @@ share/doc/qt2/html/xml-sax.html
 share/doc/qt2/html/xml.html
 share/doc/qt2/html/xt.html
 share/doc/qt2/html/y2k.html
+@dirrm share/doc/qt2/html/designer/figures
+@dirrm share/doc/qt2/html/designer/arrows
+@dirrm share/doc/qt2/html/designer
 @dirrm share/doc/qt2/html

@@ -1,11 +1,12 @@
---- configs/openbsd-g++-shared-debug.orig	Wed Oct  4 05:55:24 2000
-+++ configs/openbsd-g++-shared-debug	Sat Oct  7 14:09:52 2000
-@@ -1,12 +1,12 @@
+--- configs/openbsd-g++-shared-debug.orig	Wed Nov  8 18:06:37 2000
++++ configs/openbsd-g++-shared-debug	Tue Nov 21 10:32:59 2000
+@@ -1,13 +1,13 @@
  # Compiling
  INTERFACE_DECL_PATH 	= .
 -SYSCONF_CXX		= g++
 +SYSCONF_CXX		= $(SYS_CXX)
  SYSCONF_CC		= gcc
+ DASHCROSS		= 
  
  # Compiling with support libraries
 -SYSCONF_CXXFLAGS_X11	= -I/usr/X11R6/include
@@ -16,7 +17,7 @@
  
  # Compiling YACC output
  SYSCONF_CXXFLAGS_YACC     = -Wno-unused -Wno-parentheses
-@@ -18,30 +18,30 @@
+@@ -19,30 +19,30 @@ SYSCONF_RPATH_OPENGL	= 
  
  # Linking with support libraries
  # X11
@@ -56,7 +57,7 @@
  # SYSCONF_LIBS_THREAD	= ???
  
  # Meta-object compiler
-@@ -55,9 +55,9 @@
+@@ -56,9 +56,9 @@ SYSCONF_UIC		= $(QTDIR)/bin/uic
  #   - Place target in $(DESTDIR) - which has a trailing /
  #   - Usually needs to incorporate $(VER_MAJ), $(VER_MIN) and $(VER_PATCH)
  #
