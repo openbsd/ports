@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2004/06/21 18:53:12 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/06/22 20:57:25 avsm Exp $
 
 # until tested on others, even though bytecode is produced
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 macppc
 
 COMMENT=	"framework for analysis and transformation of C"
 
