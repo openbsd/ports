@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/12/03 22:45:33 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2003/09/23 21:15:19 marcm Exp $
 
 COMMENT=		"GNOME ICQ client"
 V=			0.96.1
@@ -28,6 +28,6 @@ post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnomeicu; \
 	cp -rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/gnomeicu/
 
-BROKEN=			"Needs upgrade to a newer version"
+BROKEN=			"Needs upgrade to a newer version supporting Gnome 2 and Gnet 2"
 
 .include <bsd.port.mk>
