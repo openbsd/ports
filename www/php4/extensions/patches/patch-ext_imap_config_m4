@@ -1,7 +1,7 @@
-$OpenBSD: patch-ext_imap_config_m4,v 1.7 2003/05/28 19:27:34 avsm Exp $
---- ext/imap/config.m4.orig	Sat May 10 18:11:33 2003
-+++ ext/imap/config.m4	Tue May 27 19:41:19 2003
-@@ -86,10 +86,11 @@ AC_DEFUN(PHP_IMAP_KRB_CHK, [
+$OpenBSD: patch-ext_imap_config_m4,v 1.8 2003/11/15 18:11:35 avsm Exp $
+--- ext/imap/config.m4.orig	2003-10-03 06:25:35.000000000 +0100
++++ ext/imap/config.m4	2003-11-14 09:13:10.000000000 +0000
+@@ -85,10 +85,11 @@ AC_DEFUN(PHP_IMAP_KRB_CHK, [
      fi
      AC_DEFINE(HAVE_IMAP_KRB,1,[ ])
      PHP_ADD_LIBPATH($PHP_KERBEROS_DIR/lib, IMAP_SHARED_LIBADD)

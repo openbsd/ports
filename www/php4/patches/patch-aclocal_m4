@@ -1,7 +1,15 @@
-$OpenBSD: patch-aclocal_m4,v 1.4 2003/05/23 20:08:33 avsm Exp $
---- aclocal.m4.orig	Thu May 22 01:25:35 2003
-+++ aclocal.m4	Thu May 22 16:20:29 2003
-@@ -3968,7 +3968,7 @@ openbsd*)
+$OpenBSD: patch-aclocal_m4,v 1.5 2003/11/15 18:11:35 avsm Exp $
+--- aclocal.m4.orig	2003-11-02 23:27:49.000000000 +0000
++++ aclocal.m4	2003-11-14 09:24:24.000000000 +0000
+@@ -1659,6 +1659,7 @@ AC_DEFUN([PHP_SETUP_OPENSSL],[
+   
+     PHP_CHECK_LIBRARY(crypto, CRYPTO_free, [
+       PHP_ADD_LIBRARY(crypto,,$1)
++      PHP_ADD_LIBRARY(des,,$1)
+     ],[
+       AC_MSG_ERROR([libcrypto not found!])
+     ],[
+@@ -4069,7 +4070,7 @@ openbsd*)
      shlibpath_overrides_runpath=yes
    fi
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
