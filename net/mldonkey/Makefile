@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/12/31 17:06:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2003/12/31 17:26:35 sturm Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -17,6 +17,7 @@ HOMEPAGE=http://savannah.nongnu.org/projects/mldonkey/
 
 MASTER_SITES=http://savannah.nongnu.org/download/mldonkey/release-2.5-4/official/
 DISTNAME=mldonkey-2.5.4
+PKGNAME=${DISTNAME}p0
 DISTFILES=mldonkey-2.5-4.tar.gz
 WRKDIST=${WRKDIR}/mldonkey-2.5-4
 
