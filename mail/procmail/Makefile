@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2005/01/02 01:07:49 alek Exp $
+# $OpenBSD: Makefile,v 1.28 2005/01/04 21:16:43 sturm Exp $
 
 COMMENT=	"filtering local mail delivery agent"
 
 DISTNAME=	procmail-3.22
 CATEGORIES=	mail
 
-MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
+MASTER_SITES=	${HOMEPAGE} \
 		ftp://ftp.psg.com/pub/unix/procmail/ \
 		ftp://ftp.ucsb.edu/pub/mirrors/procmail/ \
 		ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/ \
