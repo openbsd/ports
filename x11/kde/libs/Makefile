@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/04/16 17:17:57 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/06/01 10:27:39 kevlo Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 DISTNAME=	kdelibs-1.1.2
@@ -12,7 +12,7 @@ BUILD_DEPENDS=	msgfmt::devel/gettext
 LIB_DEPENDS=	qt.1.45::x11/qt \
 		gif.4.1::graphics/giflib \
 		jpeg.62::graphics/jpeg \
-		png.1.3::graphics/png \
+		png.1.6::graphics/png \
 		tiff.35::graphics/tiff
 
 MAINTAINER=	brad@openbsd.org
