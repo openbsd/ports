@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/30 15:02:53 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/30 15:05:54 lebel Exp $
 
-COMMENT=	"conversions to and from arbitrary character sets and UTF8"
+COMMENT=	"conversions to and from arbitrary character sets"
 
 DISTNAME=	Unicode-Map-0.112
 PKGNAME=	p5-${DISTNAME}
