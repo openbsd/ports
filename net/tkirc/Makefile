@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 05:00:37 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/11 15:44:34 kevlo Exp $
 
 COMMENT=	"ircII internet relay chat client"
 
-DISTNAME=	tkirc2.43
+DISTNAME=	tkirc2.46
 CATEGORIES=	net
 NEED_VERSION=	1.402
 
