@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2003/08/23 19:24:50 sturm Exp $
+# $OpenBSD: INSTALL,v 1.2 2004/05/17 00:22:54 naddy Exp $
 #
 # Pre/post-installation setup of anacron
 
@@ -21,8 +21,6 @@ do_spooldir()
 #
 do_notice()
 {
-    # Text take from the README file of the anacron-2.3
-    # distribution.
     cat <<EOT
 +----------
 | To start using anacron:
@@ -38,16 +36,16 @@ do_notice()
 | SHELL=/bin/sh
 | PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 | # format: period delay job-identifier command
-| 1  5  cron.daily   sh /etc/daily 2>&1   | tee /var/log/daily.out   | mail -s "\`hostname\` daily output" root
-| 7  10 cron.weekly  sh /etc/weekly 2>&1  | tee /var/log/weekly.out  | mail -s "\`hostname\` weekly output" root
-| 30 15 cron.monthly sh /etc/monthly 2>&1 | tee /var/log/monthly.out | mail -s "\`hostname\` monthly output" root
+| 1  5  cron.daily   sh /etc/daily 2>&1   | tee /var/log/daily.out
+| 7  10 cron.weekly  sh /etc/weekly 2>&1  | tee /var/log/weekly.out
+| 30 15 cron.monthly sh /etc/monthly 2>&1 | tee /var/log/monthly.out
 | -----Cut
 | 
-| Comment the invocation of these jobs in root's crontab.
+| Comment out the invocation of these jobs in root's crontab.
 | 
 | Invoke anacron from /etc/rc.local like this:
 | 
-| if [ X"\${anacron}" == X"YES" -a -x ${PREFIX}/sbin/anacron -a -f ${SYSCONFDIR}/anacrontab ]; then
+| if [ X"\${anacron}" == X"YES" -a -x ${PREFIX}/sbin/anacron ]; then
 |     echo -n ' anacron'
 |     ${PREFIX}/sbin/anacron -s
 | fi
@@ -55,9 +53,7 @@ do_notice()
 | (and add "anacron=YES" to /etc/rc.conf.local)
 | 
 | If your machine is left running for more than 24h at a time, you
-| might also want to invoke anacron from a nightly cron job.
-| 
-| That's it.
+| might also want to invoke anacron from an early morning cron job.
 +----------
 
 EOT

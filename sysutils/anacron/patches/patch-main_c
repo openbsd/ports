@@ -1,0 +1,33 @@
+$OpenBSD: patch-main_c,v 1.1 2004/05/17 00:22:54 naddy Exp $
+--- main.c.orig	2004-05-12 21:16:27.000000000 +0100
++++ main.c	2004-05-12 21:18:40.000000000 +0100
+@@ -24,6 +24,7 @@
+ 
+ #include <time.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <unistd.h>
+ #include <signal.h>
+ #include <fcntl.h>
+@@ -72,8 +73,8 @@ print_usage()
+     printf("Usage:  anacron [-s] [-f] [-n] [-d] [-q] [-t anacrontab] [job] ...\n"
+ 	   "        anacron -u [job] ...\n"
+ 	   "        anacron [-V|-h]\n"
+-	   "\n"
+-	   " -s  Serialize execution of jobs\n"
++	   "\n");
++    printf(" -s  Serialize execution of jobs\n"
+ 	   " -f  Force execution of jobs, even before their time\n"
+ 	   " -n  Run jobs with no delay, implies -s\n"
+ 	   " -d  Don't fork to the background\n"
+@@ -82,8 +83,8 @@ print_usage()
+ 	   " -t  Use this anacrontab\n"
+ 	   " -V  Print version information\n"
+ 	   " -h  Print this message\n"
+-	   "\n"
+-	   "See the manpage for more details.\n"
++	   "\n");
++    printf("See the manpage for more details.\n"
+ 	   "\n");
+ }
+ 

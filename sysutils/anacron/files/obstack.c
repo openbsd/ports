@@ -24,6 +24,8 @@
 #include <config.h>
 #endif
 
+#include <stdlib.h>
+
 #include "obstack.h"
 
 /* NOTE BEFORE MODIFYING THIS FILE: This version number must be
