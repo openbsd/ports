@@ -1,0 +1,14 @@
+@cwd /usr/local
+@name xwpe-1.5.9a
+bin/we
+bin/xwe
+bin/xwpe
+bin/wpe
+lib/xwpe/help.xwpe
+lib/xwpe/help.key
+lib/xwpe/syntax_def
+man/man1/we.1
+man/man1/wpe.1
+man/man1/xwe.1
+man/man1/xwpe.1
+@dirrm lib/xwpe
