@@ -1,0 +1,8 @@
+This program is a clone of the well known Mahjongg game. 
+
+Your mission in this game is to remove all tiles from the game board. A matching
+pair of tiles can be removed, if they are 'free', which means that no other 
+tiles block them on the left or right side. 
+
+This game requires a 256 (or more) color display and a minimum resolution of 
+640 x 480. 

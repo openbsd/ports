@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST-kjumpingcube,v 1.1 2000/12/17 21:53:04 espie Exp $
+@pkgcfl kdegames-*
+bin/kjumpingcube
+share/applnk/Games/kjumpingcube.desktop
+share/doc/HTML/en/kjumpingcube/.anchors
+share/doc/HTML/en/kjumpingcube/common
+share/doc/HTML/en/kjumpingcube/compilation.html
+share/doc/HTML/en/kjumpingcube/credits.html
+share/doc/HTML/en/kjumpingcube/index.docbook
+share/doc/HTML/en/kjumpingcube/index.html
+share/doc/HTML/en/kjumpingcube/installation.html
+share/doc/HTML/en/kjumpingcube/introduction.html
+share/doc/HTML/en/kjumpingcube/menu-reference.html
+share/doc/HTML/en/kjumpingcube/playing-kjumpingcube.html
+share/doc/HTML/en/kjumpingcube/questions-answers-tips.html
+share/doc/HTML/en/kjumpingcube/requirements.html
+share/doc/HTML/en/kjumpingcube/toolbars.html
+share/icons/locolor/16x16/apps/kjumpingcube.png
+share/icons/locolor/32x32/apps/kjumpingcube.png
+@dirrm share/doc/HTML/en/kjumpingcube

@@ -1,0 +1,1 @@
+Reversi is a simple strategy game that is played by two players. There is only one type of piece - one side of it is black, the other white. If a player captures a piece on the board, that piece is turned and belongs to that player. The winner is the person that has more pieces of his own color on the board and if there are no more moves possible. 

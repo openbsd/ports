@@ -1,0 +1,70 @@
+@comment $OpenBSD: PLIST-ksnake,v 1.1 2000/12/17 21:53:04 espie Exp $
+@pkgcfl kdegames-*
+bin/ksnake
+share/applnk/Games/ksnake.desktop
+share/apps/ksnake/backgrounds/Bark.png
+share/apps/ksnake/backgrounds/Blue_Carpet.png
+share/apps/ksnake/backgrounds/Dark_Wood.png
+share/apps/ksnake/backgrounds/Granite.png
+share/apps/ksnake/backgrounds/Green_Carpet.png
+share/apps/ksnake/backgrounds/Mystique.png
+share/apps/ksnake/backgrounds/Rope_Weave.png
+share/apps/ksnake/backgrounds/Volcanic.png
+share/apps/ksnake/backgrounds/Wood.png
+share/apps/ksnake/highScores
+share/apps/ksnake/ksnakeui.rc
+share/apps/ksnake/levels/room01
+share/apps/ksnake/levels/room02
+share/apps/ksnake/levels/room03
+share/apps/ksnake/levels/room04
+share/apps/ksnake/levels/room05
+share/apps/ksnake/levels/room06
+share/apps/ksnake/levels/room07
+share/apps/ksnake/levels/room08
+share/apps/ksnake/levels/room09
+share/apps/ksnake/levels/room10
+share/apps/ksnake/levels/room11
+share/apps/ksnake/levels/room12
+share/apps/ksnake/levels/room13
+share/apps/ksnake/levels/room14
+share/apps/ksnake/levels/room15
+share/apps/ksnake/levels/room16
+share/apps/ksnake/levels/room17
+share/apps/ksnake/levels/room18
+share/apps/ksnake/levels/room19
+share/apps/ksnake/levels/room20
+share/apps/ksnake/levels/room21
+share/apps/ksnake/levels/room22
+share/apps/ksnake/levels/room23
+share/apps/ksnake/levels/room24
+share/apps/ksnake/levels/room25
+share/apps/ksnake/pics/apples.png
+share/apps/ksnake/pics/ball.png
+share/apps/ksnake/pics/brick.png
+share/apps/ksnake/pics/down.png
+share/apps/ksnake/pics/left.png
+share/apps/ksnake/pics/right.png
+share/apps/ksnake/pics/samy.png
+share/apps/ksnake/pics/snake1.png
+share/apps/ksnake/pics/snake2.png
+share/apps/ksnake/pics/up.png
+share/doc/HTML/en/ksnake/.anchors
+share/doc/HTML/en/ksnake/authors.html
+share/doc/HTML/en/ksnake/common
+share/doc/HTML/en/ksnake/customization.html
+share/doc/HTML/en/ksnake/epilogue.html
+share/doc/HTML/en/ksnake/index.cvlog
+share/doc/HTML/en/ksnake/index.docbook
+share/doc/HTML/en/ksnake/index.html
+share/doc/HTML/en/ksnake/introduction.html
+share/doc/HTML/en/ksnake/rulesofthegame.html
+share/doc/HTML/en/ksnake/scoring.html
+share/icons/hicolor/32x32/apps/ksnake.png
+share/icons/hicolor/48x48/apps/ksnake.png
+share/icons/locolor/16x16/apps/ksnake.png
+share/icons/locolor/32x32/apps/ksnake.png
+@dirrm share/doc/HTML/en/ksnake
+@dirrm share/apps/ksnake/pics
+@dirrm share/apps/ksnake/levels
+@dirrm share/apps/ksnake/backgrounds
+@dirrm share/apps/ksnake

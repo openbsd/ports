@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST-kfouleggs,v 1.1 2000/12/17 21:53:04 espie Exp $
+@pkgcfl kdegames-*
+bin/kfouleggs
+share/applnk/Games/kfouleggs.desktop
+share/apps/kfouleggs/kfouleggsui.rc
+share/doc/HTML/en/kfouleggs/.anchors
+share/doc/HTML/en/kfouleggs/aim-of-the-game.html
+share/doc/HTML/en/kfouleggs/commands.html
+share/doc/HTML/en/kfouleggs/common
+share/doc/HTML/en/kfouleggs/credits.html
+share/doc/HTML/en/kfouleggs/default-keybindings.html
+share/doc/HTML/en/kfouleggs/gameplay.html
+share/doc/HTML/en/kfouleggs/index.docbook
+share/doc/HTML/en/kfouleggs/index.html
+share/doc/HTML/en/kfouleggs/installation.html
+share/doc/HTML/en/kfouleggs/introduction.html
+share/doc/HTML/en/kfouleggs/multiplayer-and-network-play.html
+share/doc/HTML/en/kfouleggs/playing-the-game.html
+share/doc/HTML/en/kfouleggs/preferences.html
+@dirrm share/doc/HTML/en/kfouleggs
+@dirrm share/apps/kfouleggs

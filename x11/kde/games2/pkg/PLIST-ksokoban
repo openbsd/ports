@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST-ksokoban,v 1.1 2000/12/17 21:53:04 espie Exp $
+@pkgcfl kdegames-*
+bin/ksokoban
+share/applnk/Games/ksokoban.desktop
+share/doc/HTML/en/ksokoban/.anchors
+share/doc/HTML/en/ksokoban/common
+share/doc/HTML/en/ksokoban/credits.html
+share/doc/HTML/en/ksokoban/howtoplay.html
+share/doc/HTML/en/ksokoban/index.docbook
+share/doc/HTML/en/ksokoban/index.html
+share/doc/HTML/en/ksokoban/introduction.html
+share/doc/HTML/en/ksokoban/loadingexternallevels.html
+share/icons/hicolor/32x32/apps/ksokoban.png
+share/icons/hicolor/48x48/apps/ksokoban.png
+share/icons/locolor/16x16/apps/ksokoban.png
+share/icons/locolor/32x32/apps/ksokoban.png
+@dirrm share/doc/HTML/en/ksokoban

@@ -1,0 +1,5 @@
+KJumpingCube is a simple tactical game. You can play it against the
+computer or against a friend. The playing field consists of squares that
+contains points. By clicking on the squares you can increase the points,
+and if the points reach a maximum the points will jump to the squares
+neighbours and take them over. Winner is the one, who owns all squares.

@@ -1,4 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/11/19 20:23:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/12/17 21:53:03 espie Exp $
+@pkgcfl kabalone-*
+@pkgcfl kasteroids-*
+@pkgcfl katomic-*
+@pkgcfl kblackbox-*
+@pkgcfl kfouleggs-*
+@pkgcfl kjumpingcube-*
+@pkgcfl kmahjongg-*
+@pkgcfl kmines-*
+@pkgcfl konquest-*
+@pkgcfl kpat-*
+@pkgcfl kpoker-*
+@pkgcfl kreversi-*
+@pkgcfl ksame-*
+@pkgcfl kshisen-*
+@pkgcfl ksirtet-*
+@pkgcfl ksmiletris-*
+@pkgcfl ksnake-*
+@pkgcfl ksokoban-*
+@pkgcfl kspaceduel-*
+@pkgcfl ktron-*
+@pkgcfl ktuberling-*
+@pkgcfl lskat-*
 bin/kabalone
 bin/kasteroids
 bin/katomic
@@ -1129,10 +1151,19 @@ share/doc/HTML/en/kblackbox/toolbar.html
 share/doc/HTML/en/kblackbox/user-interaction.html
 share/doc/HTML/en/kblackbox/what-is-kblackbox.html
 share/doc/HTML/en/kfouleggs/.anchors
+share/doc/HTML/en/kfouleggs/aim-of-the-game.html
+share/doc/HTML/en/kfouleggs/commands.html
 share/doc/HTML/en/kfouleggs/common
+share/doc/HTML/en/kfouleggs/credits.html
+share/doc/HTML/en/kfouleggs/default-keybindings.html
+share/doc/HTML/en/kfouleggs/gameplay.html
 share/doc/HTML/en/kfouleggs/index.docbook
 share/doc/HTML/en/kfouleggs/index.html
+share/doc/HTML/en/kfouleggs/installation.html
 share/doc/HTML/en/kfouleggs/introduction.html
+share/doc/HTML/en/kfouleggs/multiplayer-and-network-play.html
+share/doc/HTML/en/kfouleggs/playing-the-game.html
+share/doc/HTML/en/kfouleggs/preferences.html
 share/doc/HTML/en/kjumpingcube/.anchors
 share/doc/HTML/en/kjumpingcube/common
 share/doc/HTML/en/kjumpingcube/compilation.html
@@ -1170,20 +1201,24 @@ share/doc/HTML/en/kmines/kmines2.png
 share/doc/HTML/en/kmines/prefs.html
 share/doc/HTML/en/kmines/settings-menu.html
 share/doc/HTML/en/konquest/.anchors
+share/doc/HTML/en/konquest/commands.html
 share/doc/HTML/en/konquest/common
-share/doc/HTML/en/konquest/epilogue.html
-share/doc/HTML/en/konquest/index.cvlog
+share/doc/HTML/en/konquest/compilation.html
+share/doc/HTML/en/konquest/configuration.html
+share/doc/HTML/en/konquest/credits.html
 share/doc/HTML/en/konquest/index.docbook
 share/doc/HTML/en/konquest/index.html
-share/doc/HTML/en/konquest/notes.html
-share/doc/HTML/en/konquest/playingthegame.html
+share/doc/HTML/en/konquest/installation.html
+share/doc/HTML/en/konquest/introduction.html
+share/doc/HTML/en/konquest/requirements.html
+share/doc/HTML/en/konquest/using-kapp.html
 share/doc/HTML/en/kpat/.anchors
 share/doc/HTML/en/kpat/calculation.html
 share/doc/HTML/en/kpat/common
 share/doc/HTML/en/kpat/compilation.html
 share/doc/HTML/en/kpat/credits.html
-share/doc/HTML/en/kpat/edit-menu.html
 share/doc/HTML/en/kpat/freecell.html
+share/doc/HTML/en/kpat/game-menu.html
 share/doc/HTML/en/kpat/grandfather.html
 share/doc/HTML/en/kpat/help.html
 share/doc/HTML/en/kpat/index.docbook
@@ -1195,6 +1230,7 @@ share/doc/HTML/en/kpat/microsolitaire.html
 share/doc/HTML/en/kpat/mod3.html
 share/doc/HTML/en/kpat/napoleon-s-tomb.html
 share/doc/HTML/en/kpat/rules-of-the-game.html
+share/doc/HTML/en/kpat/settings-menu.html
 share/doc/HTML/en/kpat/ten.html
 share/doc/HTML/en/kpat/the-idiot.html
 share/doc/HTML/en/kpat/using-kpat.html
@@ -1214,33 +1250,38 @@ share/doc/HTML/en/kpoker/kpoker1.png
 share/doc/HTML/en/kpoker/kpoker2.png
 share/doc/HTML/en/kpoker/new-game.html
 share/doc/HTML/en/kpoker/one-player-game.html
-share/doc/HTML/en/kpoker/options-menu.html
 share/doc/HTML/en/kpoker/scoring.html
+share/doc/HTML/en/kpoker/settings-menu.html
 share/doc/HTML/en/kpoker/two-player-game.html
 share/doc/HTML/en/kpoker/two-player-play.html
 share/doc/HTML/en/kpoker/where-do-i-get-the-latest-version-of-kpoker.html
 share/doc/HTML/en/kreversi/.anchors
-share/doc/HTML/en/kreversi/a-minute-to-learn.html
-share/doc/HTML/en/kreversi/authors.html
 share/doc/HTML/en/kreversi/common
-share/doc/HTML/en/kreversi/copyright.html
-share/doc/HTML/en/kreversi/epilogue.html
-share/doc/HTML/en/kreversi/index.cvlog
+share/doc/HTML/en/kreversi/credits-and-license.html
+share/doc/HTML/en/kreversi/game-menu.html
+share/doc/HTML/en/kreversi/help-menu.html
 share/doc/HTML/en/kreversi/index.docbook
 share/doc/HTML/en/kreversi/index.html
+share/doc/HTML/en/kreversi/installation.html
 share/doc/HTML/en/kreversi/introduction.html
-share/doc/HTML/en/kreversi/rulesofthegame.html
-share/doc/HTML/en/kreversi/strategyhints.html
+share/doc/HTML/en/kreversi/kreversi1.png
+share/doc/HTML/en/kreversi/object-of-the-game.html
+share/doc/HTML/en/kreversi/playing.html
+share/doc/HTML/en/kreversi/rules.html
+share/doc/HTML/en/kreversi/settings-menu.html
+share/doc/HTML/en/kreversi/tips.html
+share/doc/HTML/en/kreversi/user-interface.html
 share/doc/HTML/en/ksame/.anchors
+share/doc/HTML/en/ksame/commands.html
 share/doc/HTML/en/ksame/common
-share/doc/HTML/en/ksame/copyright.html
-share/doc/HTML/en/ksame/epilogue.html
-share/doc/HTML/en/ksame/index.cvlog
+share/doc/HTML/en/ksame/compilation.html
+share/doc/HTML/en/ksame/credits.html
 share/doc/HTML/en/ksame/index.docbook
 share/doc/HTML/en/ksame/index.html
+share/doc/HTML/en/ksame/installation.html
 share/doc/HTML/en/ksame/introduction.html
-share/doc/HTML/en/ksame/rules-of-the-game.html
-share/doc/HTML/en/ksame/strategy-hint.html
+share/doc/HTML/en/ksame/requirements.html
+share/doc/HTML/en/ksame/using-ksame.html
 share/doc/HTML/en/kshisen/.anchors
 share/doc/HTML/en/kshisen/common
 share/doc/HTML/en/kshisen/compilation.html
@@ -1436,15 +1477,51 @@ share/icons/locolor/32x32/apps/kspaceduel.png
 share/icons/locolor/32x32/apps/ktron.png
 share/icons/locolor/32x32/apps/ktuberling.png
 share/icons/locolor/32x32/apps/lskat.png
+@exec mkdir -p %D/share/icons/locolor/32x32/mimetypes
+@dirrm share/icons/locolor/32x32/mimetypes
+@exec mkdir -p %D/share/icons/locolor/32x32/filesystems
+@dirrm share/icons/locolor/32x32/filesystems
 @dirrm share/icons/locolor/32x32/apps
+@exec mkdir -p %D/share/icons/locolor/32x32/actions/kde
+@dirrm share/icons/locolor/32x32/actions/kde
+@dirrm share/icons/locolor/32x32/actions
 @dirrm share/icons/locolor/32x32
+@exec mkdir -p %D/share/icons/locolor/16x16/mimetypes
+@dirrm share/icons/locolor/16x16/mimetypes
+@exec mkdir -p %D/share/icons/locolor/16x16/filesystems
+@dirrm share/icons/locolor/16x16/filesystems
 @dirrm share/icons/locolor/16x16/apps
+@exec mkdir -p %D/share/icons/locolor/16x16/actions/kde
+@dirrm share/icons/locolor/16x16/actions/kde
+@dirrm share/icons/locolor/16x16/actions
 @dirrm share/icons/locolor/16x16
 @dirrm share/icons/locolor
+@exec mkdir -p %D/share/icons/hicolor/48x48/mimetypes
+@dirrm share/icons/hicolor/48x48/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/48x48/filesystems
+@dirrm share/icons/hicolor/48x48/filesystems
 @dirrm share/icons/hicolor/48x48/apps
+@exec mkdir -p %D/share/icons/hicolor/48x48/actions/kde
+@dirrm share/icons/hicolor/48x48/actions/kde
+@dirrm share/icons/hicolor/48x48/actions
 @dirrm share/icons/hicolor/48x48
+@exec mkdir -p %D/share/icons/hicolor/32x32/mimetypes
+@dirrm share/icons/hicolor/32x32/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/32x32/filesystems
+@dirrm share/icons/hicolor/32x32/filesystems
 @dirrm share/icons/hicolor/32x32/apps
+@exec mkdir -p %D/share/icons/hicolor/32x32/actions/kde
+@dirrm share/icons/hicolor/32x32/actions/kde
+@dirrm share/icons/hicolor/32x32/actions
 @dirrm share/icons/hicolor/32x32
+@exec mkdir -p %D/share/icons/hicolor/22x22/mimetypes
+@dirrm share/icons/hicolor/22x22/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/22x22/filesystems
+@dirrm share/icons/hicolor/22x22/filesystems
+@exec mkdir -p %D/share/icons/hicolor/22x22/actions/kde
+@dirrm share/icons/hicolor/22x22/actions/kde
+@dirrm share/icons/hicolor/22x22/actions
+@dirrm share/icons/hicolor/22x22
 @dirrm share/icons/hicolor
 @dirrm share/icons
 @dirrm share/doc/HTML/en/lskat
@@ -1471,6 +1548,8 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/doc/HTML/en/kabalone
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
+@exec mkdir -p %D/share/config
+@dirrm share/config
 @dirrm share/apps/lskat/grafix
 @dirrm share/apps/lskat
 @dirrm share/apps/ktuberling/sounds/en

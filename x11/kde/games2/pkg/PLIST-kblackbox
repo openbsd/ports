@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST-kblackbox,v 1.1 2000/12/17 21:53:04 espie Exp $
+@pkgcfl kdegames-*
+bin/kblackbox
+share/applnk/Games/kblackbox.desktop
+share/apps/kblackbox/pics/blue.xpm
+share/apps/kblackbox/pics/brown.xpm
+share/apps/kblackbox/pics/cyan.xpm
+share/apps/kblackbox/pics/done.xpm
+share/apps/kblackbox/pics/giveup.xpm
+share/apps/kblackbox/pics/gray.xpm
+share/apps/kblackbox/pics/green.xpm
+share/apps/kblackbox/pics/green2.xpm
+share/apps/kblackbox/pics/red.xpm
+share/apps/kblackbox/pics/white.xpm
+share/doc/HTML/en/kblackbox/.anchors
+share/doc/HTML/en/kblackbox/common
+share/doc/HTML/en/kblackbox/credits-and-license.html
+share/doc/HTML/en/kblackbox/game-description.html
+share/doc/HTML/en/kblackbox/game-rules.html
+share/doc/HTML/en/kblackbox/gui-description.html
+share/doc/HTML/en/kblackbox/help.html
+share/doc/HTML/en/kblackbox/index.docbook
+share/doc/HTML/en/kblackbox/index.html
+share/doc/HTML/en/kblackbox/installation.html
+share/doc/HTML/en/kblackbox/settings-menu.html
+share/doc/HTML/en/kblackbox/toolbar.html
+share/doc/HTML/en/kblackbox/user-interaction.html
+share/doc/HTML/en/kblackbox/what-is-kblackbox.html
+share/icons/hicolor/32x32/apps/kblackbox.png
+share/icons/hicolor/48x48/apps/kblackbox.png
+share/icons/locolor/16x16/apps/kblackbox.png
+share/icons/locolor/32x32/apps/kblackbox.png
+@dirrm share/doc/HTML/en/kblackbox
+@dirrm share/apps/kblackbox/pics
+@dirrm share/apps/kblackbox

@@ -1,0 +1,51 @@
+@comment $OpenBSD: PLIST-kreversi,v 1.1 2000/12/17 21:53:04 espie Exp $
+@pkgcfl kdegames-*
+bin/kreversi
+share/applnk/Games/kreversi.desktop
+share/apps/kreversi/pics/background/Dark_Wood.xpm
+share/apps/kreversi/pics/background/Earth.xpm
+share/apps/kreversi/pics/background/Granite.xpm
+share/apps/kreversi/pics/background/Hexagon.xpm
+share/apps/kreversi/pics/background/Light_Wood.xpm
+share/apps/kreversi/pics/background/Mystique.xpm
+share/apps/kreversi/pics/background/Ocean.xpm
+share/apps/kreversi/pics/background/Pipes.xpm
+share/apps/kreversi/pics/background/Puzzle.xpm
+share/apps/kreversi/pics/background/Stones.xpm
+share/apps/kreversi/pics/chips.xpm
+share/apps/kreversi/pics/chips_mono.xpm
+share/apps/kreversi/pics/help.xpm
+share/apps/kreversi/pics/hint.xpm
+share/apps/kreversi/pics/logo.xpm
+share/apps/kreversi/pics/stop.xpm
+share/apps/kreversi/pics/undo.xpm
+share/apps/kreversi/pics/zoomin.xpm
+share/apps/kreversi/pics/zoomout.xpm
+share/apps/kreversi/sounds/reversi-click.wav
+share/apps/kreversi/sounds/reversi-lost.wav
+share/apps/kreversi/sounds/reversi-won.wav
+share/doc/HTML/en/kreversi/.anchors
+share/doc/HTML/en/kreversi/common
+share/doc/HTML/en/kreversi/credits-and-license.html
+share/doc/HTML/en/kreversi/game-menu.html
+share/doc/HTML/en/kreversi/help-menu.html
+share/doc/HTML/en/kreversi/index.docbook
+share/doc/HTML/en/kreversi/index.html
+share/doc/HTML/en/kreversi/installation.html
+share/doc/HTML/en/kreversi/introduction.html
+share/doc/HTML/en/kreversi/kreversi1.png
+share/doc/HTML/en/kreversi/object-of-the-game.html
+share/doc/HTML/en/kreversi/playing.html
+share/doc/HTML/en/kreversi/rules.html
+share/doc/HTML/en/kreversi/settings-menu.html
+share/doc/HTML/en/kreversi/tips.html
+share/doc/HTML/en/kreversi/user-interface.html
+share/icons/hicolor/32x32/apps/kreversi.png
+share/icons/hicolor/48x48/apps/kreversi.png
+share/icons/locolor/16x16/apps/kreversi.png
+share/icons/locolor/32x32/apps/kreversi.png
+@dirrm share/doc/HTML/en/kreversi
+@dirrm share/apps/kreversi/sounds
+@dirrm share/apps/kreversi/pics/background
+@dirrm share/apps/kreversi/pics
+@dirrm share/apps/kreversi

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/11/19 20:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/12/17 21:53:01 espie Exp $
 
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.305
-VERSION=		2.0
+VERSION=		2.0.1
 DISTNAME=		kdegames-${VERSION}
 DIST_SUBDIR=		kde
 
@@ -19,6 +19,11 @@ CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--without-motif
 
+MULTI_PACKAGES=		-kabalone -kasteroids -katomic -kblackbox \
+-kfouleggs -kjumpingcube -kmahjongg -kmines -konquest -kpat -kpoker \
+-kreversi -ksame -kshisen -ksirtet -ksmiletris -ksnake -ksokoban \
+-kspaceduel -ktron -ktuberling -lskat
+
 # Not yet, too much time to compile
 #CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
@@ -33,5 +38,12 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
+.if defined(SUBPACKAGE)
+PKGNAME=${SUBPACKAGE:S/^-//}-${VERSION}
+.endif
+
+pre-fake:
+	${SUDO} /usr/sbin/mtree -U -e -d -n -p ${PREFIX} \
+	    -f ${PORTSDIR}/x11/kde/libs2/files/mtree >/dev/null
 
 .include <bsd.port.mk>

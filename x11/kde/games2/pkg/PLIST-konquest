@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST-konquest,v 1.1 2000/12/17 21:53:04 espie Exp $
+@pkgcfl kdegames-*
+bin/konquest
+share/applnk/Games/konquest.desktop
+share/apps/konquest/pics/konquest-splash.gif
+share/apps/konquest/pics/planet1.xpm
+share/apps/konquest/pics/planet2.xpm
+share/apps/konquest/pics/planet3.xpm
+share/apps/konquest/pics/planet4.xpm
+share/apps/konquest/pics/planet5.xpm
+share/apps/konquest/pics/planet6.xpm
+share/apps/konquest/pics/planet7.xpm
+share/apps/konquest/pics/planet8.xpm
+share/apps/konquest/pics/planet9.xpm
+share/apps/konquest/pics/ruler.xpm
+share/doc/HTML/en/konquest/.anchors
+share/doc/HTML/en/konquest/commands.html
+share/doc/HTML/en/konquest/common
+share/doc/HTML/en/konquest/compilation.html
+share/doc/HTML/en/konquest/configuration.html
+share/doc/HTML/en/konquest/credits.html
+share/doc/HTML/en/konquest/index.docbook
+share/doc/HTML/en/konquest/index.html
+share/doc/HTML/en/konquest/installation.html
+share/doc/HTML/en/konquest/introduction.html
+share/doc/HTML/en/konquest/requirements.html
+share/doc/HTML/en/konquest/using-kapp.html
+share/icons/hicolor/32x32/apps/konquest.png
+share/icons/hicolor/48x48/apps/konquest.png
+share/icons/locolor/16x16/apps/konquest.png
+share/icons/locolor/32x32/apps/konquest.png
+@dirrm share/doc/HTML/en/konquest
+@dirrm share/apps/konquest/pics
+@dirrm share/apps/konquest

@@ -1,0 +1,5 @@
+Abalone is a simple board strategy game that is played by two players. There are
+red and yellow pieces for each player. Beginning from a start position where 
+each player has 14 pieces, moves are drawn till one player has pushed 6 pieces 
+of his opponent out of the board. 
+

@@ -1,0 +1,42 @@
+@comment $OpenBSD: PLIST-kmahjongg,v 1.1 2000/12/17 21:53:04 espie Exp $
+@pkgcfl kdegames-*
+bin/kmahjongg
+share/applnk/Games/kmahjongg.desktop
+share/apps/kmahjongg/pics/cross.layout
+share/apps/kmahjongg/pics/default.bgnd
+share/apps/kmahjongg/pics/default.layout
+share/apps/kmahjongg/pics/default.tileset
+share/apps/kmahjongg/pics/haze.bgnd
+share/apps/kmahjongg/pics/kmahjongg.png
+share/apps/kmahjongg/pics/kmahjongg_bgnd.png
+share/apps/kmahjongg/pics/pirates.bgnd
+share/apps/kmahjongg/pics/pirates.layout
+share/apps/kmahjongg/pics/pirates.tileset
+share/apps/kmahjongg/pics/pyramid.layout
+share/apps/kmahjongg/pics/slate.bgnd
+share/apps/kmahjongg/pics/splash.png
+share/apps/kmahjongg/pics/stax.layout
+share/apps/kmahjongg/pics/test.layout
+share/apps/kmahjongg/pics/test2.layout
+share/apps/kmahjongg/pics/tower.layout
+share/apps/kmahjongg/pics/traditional.tileset
+share/apps/kmahjongg/pics/triangle.layout
+share/apps/kmahjongg/pics/wood.bgnd
+share/apps/kmahjongg/toolbar/newnum.xpm
+share/apps/kmahjongg/toolbar/pause.xpm
+share/apps/kmahjongg/toolbar/play.xpm
+share/doc/HTML/en/kmahjongg/.anchors
+share/doc/HTML/en/kmahjongg/common
+share/doc/HTML/en/kmahjongg/epilogue.html
+share/doc/HTML/en/kmahjongg/index.cvlog
+share/doc/HTML/en/kmahjongg/index.docbook
+share/doc/HTML/en/kmahjongg/index.html
+share/doc/HTML/en/kmahjongg/introduction.html
+share/icons/hicolor/32x32/apps/kmahjongg.png
+share/icons/hicolor/48x48/apps/kmahjongg.png
+share/icons/locolor/16x16/apps/kmahjongg.png
+share/icons/locolor/32x32/apps/kmahjongg.png
+@dirrm share/doc/HTML/en/kmahjongg
+@dirrm share/apps/kmahjongg/toolbar
+@dirrm share/apps/kmahjongg/pics
+@dirrm share/apps/kmahjongg

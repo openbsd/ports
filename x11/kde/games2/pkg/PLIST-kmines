@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST-kmines,v 1.1 2000/12/17 21:53:04 espie Exp $
+@pkgcfl kdegames-*
+bin/kmines
+share/applnk/Games/kmines.desktop
+share/apps/kmines/kminesui.rc
+share/doc/HTML/en/kmines/.anchors
+share/doc/HTML/en/kmines/command.html
+share/doc/HTML/en/kmines/common
+share/doc/HTML/en/kmines/compilation.html
+share/doc/HTML/en/kmines/credits.html
+share/doc/HTML/en/kmines/help-menu.html
+share/doc/HTML/en/kmines/howtoplay.html
+share/doc/HTML/en/kmines/index.docbook
+share/doc/HTML/en/kmines/index.html
+share/doc/HTML/en/kmines/installation.html
+share/doc/HTML/en/kmines/introduction.html
+share/doc/HTML/en/kmines/keys.html
+share/doc/HTML/en/kmines/kmines1.png
+share/doc/HTML/en/kmines/kmines2.png
+share/doc/HTML/en/kmines/prefs.html
+share/doc/HTML/en/kmines/settings-menu.html
+share/icons/hicolor/32x32/apps/kmines.png
+share/icons/hicolor/48x48/apps/kmines.png
+share/icons/locolor/16x16/apps/kmines.png
+share/icons/locolor/32x32/apps/kmines.png
+@dirrm share/doc/HTML/en/kmines
+@dirrm share/apps/kmines

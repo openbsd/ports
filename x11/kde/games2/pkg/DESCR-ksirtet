@@ -1,0 +1,4 @@
+This program is a clone of the well known game Tetris. You must fit the falling
+pieces to form full lines. You can rotate and translate the falling piece. The 
+game ends when no more piece can fall ie when your incomplete lines reach the 
+top of the board.

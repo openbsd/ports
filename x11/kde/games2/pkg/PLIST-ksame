@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST-ksame,v 1.1 2000/12/17 21:53:04 espie Exp $
+@pkgcfl kdegames-*
+bin/ksame
+share/applnk/Games/ksame.desktop
+share/apps/ksame/ksameui.rc
+share/apps/ksame/stones.png
+share/doc/HTML/en/ksame/.anchors
+share/doc/HTML/en/ksame/commands.html
+share/doc/HTML/en/ksame/common
+share/doc/HTML/en/ksame/compilation.html
+share/doc/HTML/en/ksame/credits.html
+share/doc/HTML/en/ksame/index.docbook
+share/doc/HTML/en/ksame/index.html
+share/doc/HTML/en/ksame/installation.html
+share/doc/HTML/en/ksame/introduction.html
+share/doc/HTML/en/ksame/requirements.html
+share/doc/HTML/en/ksame/using-ksame.html
+share/icons/hicolor/32x32/apps/ksame.png
+share/icons/hicolor/48x48/apps/ksame.png
+share/icons/locolor/16x16/apps/ksame.png
+share/icons/locolor/32x32/apps/ksame.png
+@dirrm share/doc/HTML/en/ksame
+@dirrm share/apps/ksame

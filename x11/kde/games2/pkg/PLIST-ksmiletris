@@ -1,0 +1,73 @@
+@comment $OpenBSD: PLIST-ksmiletris,v 1.1 2000/12/17 21:53:04 espie Exp $
+@pkgcfl kdegames-*
+bin/ksmiletris
+share/applnk/Games/ksmiletris.desktop
+share/apps/ksmiletris/data/bg1.bmp
+share/apps/ksmiletris/data/bg10.bmp
+share/apps/ksmiletris/data/bg11.bmp
+share/apps/ksmiletris/data/bg12.bmp
+share/apps/ksmiletris/data/bg13.bmp
+share/apps/ksmiletris/data/bg14.bmp
+share/apps/ksmiletris/data/bg15.bmp
+share/apps/ksmiletris/data/bg16.bmp
+share/apps/ksmiletris/data/bg2.bmp
+share/apps/ksmiletris/data/bg3.bmp
+share/apps/ksmiletris/data/bg4.bmp
+share/apps/ksmiletris/data/bg5.bmp
+share/apps/ksmiletris/data/bg6.bmp
+share/apps/ksmiletris/data/bg7.bmp
+share/apps/ksmiletris/data/bg8.bmp
+share/apps/ksmiletris/data/bg9.bmp
+share/apps/ksmiletris/data/block-a1.bmp
+share/apps/ksmiletris/data/block-a2.bmp
+share/apps/ksmiletris/data/block-a3.bmp
+share/apps/ksmiletris/data/block-a4.bmp
+share/apps/ksmiletris/data/block-a5.bmp
+share/apps/ksmiletris/data/block-a6.bmp
+share/apps/ksmiletris/data/block-a7.bmp
+share/apps/ksmiletris/data/block-a8.bmp
+share/apps/ksmiletris/data/block-b1.bmp
+share/apps/ksmiletris/data/block-b2.bmp
+share/apps/ksmiletris/data/block-b3.bmp
+share/apps/ksmiletris/data/block-b4.bmp
+share/apps/ksmiletris/data/block-b5.bmp
+share/apps/ksmiletris/data/block-b6.bmp
+share/apps/ksmiletris/data/block-b7.bmp
+share/apps/ksmiletris/data/block-b8.bmp
+share/apps/ksmiletris/data/block-c1.bmp
+share/apps/ksmiletris/data/block-c2.bmp
+share/apps/ksmiletris/data/block-c3.bmp
+share/apps/ksmiletris/data/block-c4.bmp
+share/apps/ksmiletris/data/block-c5.bmp
+share/apps/ksmiletris/data/block-c6.bmp
+share/apps/ksmiletris/data/block-c7.bmp
+share/apps/ksmiletris/data/block-c8.bmp
+share/apps/ksmiletris/data/broken-mask.bmp
+share/apps/ksmiletris/data/broken.bmp
+share/apps/ksmiletris/data/cleared-a.bmp
+share/apps/ksmiletris/data/cleared-b.bmp
+share/apps/ksmiletris/data/cleared-c.bmp
+share/apps/ksmiletris/data/pause.bmp
+share/apps/ksmiletris/sounds/break.wav
+share/apps/ksmiletris/sounds/clear.wav
+share/doc/HTML/en/ksmiletris/.anchors
+share/doc/HTML/en/ksmiletris/changes.html
+share/doc/HTML/en/ksmiletris/common
+share/doc/HTML/en/ksmiletris/credits.html
+share/doc/HTML/en/ksmiletris/developement.html
+share/doc/HTML/en/ksmiletris/epilogue.html
+share/doc/HTML/en/ksmiletris/index.cvlog
+share/doc/HTML/en/ksmiletris/index.docbook
+share/doc/HTML/en/ksmiletris/index.html
+share/doc/HTML/en/ksmiletris/introduction.html
+share/doc/HTML/en/ksmiletris/ksmiletris.png
+share/doc/HTML/en/ksmiletris/license.html
+share/doc/HTML/en/ksmiletris/to-do.html
+share/icons/hicolor/32x32/apps/ksmiletris.png
+share/icons/hicolor/48x48/apps/ksmiletris.png
+share/icons/locolor/16x16/apps/ksmiletris.png
+share/icons/locolor/32x32/apps/ksmiletris.png
+@dirrm share/doc/HTML/en/ksmiletris
+@dirrm share/apps/ksmiletris/sounds
+@dirrm share/apps/ksmiletris/data
+@dirrm share/apps/ksmiletris

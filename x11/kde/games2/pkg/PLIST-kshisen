@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST-kshisen,v 1.1 2000/12/17 21:53:04 espie Exp $
+@pkgcfl kdegames-*
+bin/kshisen
+share/applnk/Games/kshisen.desktop
+share/apps/kshisen/kshisen.xpm
+share/apps/kshisen/kshisen_bgnd.xpm
+share/apps/kshisen/mask.xpm
+share/apps/kshisen/paused.xpm
+share/doc/HTML/en/kshisen/.anchors
+share/doc/HTML/en/kshisen/common
+share/doc/HTML/en/kshisen/compilation.html
+share/doc/HTML/en/kshisen/configuration.html
+share/doc/HTML/en/kshisen/credits.html
+share/doc/HTML/en/kshisen/game-menu.html
+share/doc/HTML/en/kshisen/index.docbook
+share/doc/HTML/en/kshisen/index.html
+share/doc/HTML/en/kshisen/installation.html
+share/doc/HTML/en/kshisen/introduction.html
+share/doc/HTML/en/kshisen/key-bindings.html
+share/doc/HTML/en/kshisen/playing-kshisen.html
+share/doc/HTML/en/kshisen/requirements.html
+share/icons/hicolor/32x32/apps/kshisen.png
+share/icons/hicolor/48x48/apps/kshisen.png
+share/icons/locolor/16x16/apps/kshisen.png
+share/icons/locolor/32x32/apps/kshisen.png
+@dirrm share/doc/HTML/en/kshisen
+@dirrm share/apps/kshisen

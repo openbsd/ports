@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST-kabalone,v 1.1 2000/12/17 21:53:04 espie Exp $
+@pkgcfl kdegames-*
+bin/kabalone
+share/applnk/Games/kabalone.desktop
+share/apps/kabalone/kabaloneui.rc
+share/apps/kabalone/toolbar/edit.xpm
+share/apps/kabalone/toolbar/hint.xpm
+share/apps/kabalone/toolbar/net.xpm
+share/apps/kabalone/toolbar/new.xpm
+share/apps/kabalone/toolbar/noball.xpm
+share/apps/kabalone/toolbar/ok.xpm
+share/apps/kabalone/toolbar/redball.xpm
+share/apps/kabalone/toolbar/spy0.xpm
+share/apps/kabalone/toolbar/spy1.xpm
+share/apps/kabalone/toolbar/spy2.xpm
+share/apps/kabalone/toolbar/spy3.xpm
+share/apps/kabalone/toolbar/stop.xpm
+share/apps/kabalone/toolbar/undo.xpm
+share/apps/kabalone/toolbar/warning.xpm
+share/apps/kabalone/toolbar/yellowball.xpm
+share/doc/HTML/en/kabalone/.anchors
+share/doc/HTML/en/kabalone/command-line-options.html
+share/doc/HTML/en/kabalone/common
+share/doc/HTML/en/kabalone/credits-and-licenses.html
+share/doc/HTML/en/kabalone/edit-menu.html
+share/doc/HTML/en/kabalone/index.cvlog
+share/doc/HTML/en/kabalone/index.docbook
+share/doc/HTML/en/kabalone/index.html
+share/doc/HTML/en/kabalone/installation.html
+share/doc/HTML/en/kabalone/introduction.html
+share/doc/HTML/en/kabalone/rules-of-the-game.html
+share/doc/HTML/en/kabalone/settings-menu.html
+share/doc/HTML/en/kabalone/the-user-interface.html
+share/icons/hicolor/32x32/apps/kabalone.png
+share/icons/hicolor/48x48/apps/kabalone.png
+share/icons/locolor/16x16/apps/kabalone.png
+share/icons/locolor/32x32/apps/kabalone.png
+@dirrm share/doc/HTML/en/kabalone
+@dirrm share/apps/kabalone/toolbar
+@dirrm share/apps/kabalone
