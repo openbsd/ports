@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/13 22:13:25 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/17 11:19:50 naddy Exp $
 
 COMMENT=	"displays the date and resembles the toolbar"
 
-DISTNAME=	bbdate-0.2.1
+DISTNAME=	bbdate-0.2.3
 CATEGORIES=	x11
-NEED_VERSION=	1.496
 MASTER_SITES=	http://bbtools.thelinuxcommunity.org/sources/ \
 		http://openbsd.rutgers.edu/
 HOMEPAGE=	http://bbtools.thelinuxcommunity.org/available.phtml#bbdate
