@@ -1,6 +1,6 @@
-$OpenBSD: patch-wmtz_Makefile,v 1.1.1.1 2001/03/09 08:43:39 wilfried Exp $
---- wmtz/Makefile.orig	Sun Sep 24 15:17:00 2000
-+++ wmtz/Makefile	Thu Mar  8 13:26:33 2001
+$OpenBSD: patch-wmtz_Makefile,v 1.2 2001/06/15 09:59:34 wilfried Exp $
+--- wmtz/Makefile.orig	Sun Mar 11 14:57:59 2001
++++ wmtz/Makefile	Fri Jun 15 11:49:09 2001
 @@ -1,8 +1,5 @@
 -CC = gcc
 -LIBDIR = -L/usr/X11R6/lib
@@ -15,7 +15,7 @@ $OpenBSD: patch-wmtz_Makefile,v 1.1.1.1 2001/03/09 08:43:39 wilfried Exp $
  
  
  .c.o:
--	$(CC) -I/usr/X11R6/share/include $(FLAGS) -c -Wall $< -o $*.o
+-	$(CC) -I/usr/X11R6/include $(FLAGS) -c -Wall $< -o $*.o
 +	$(CC) -I${X11BASE}/include ${CFLAGS} -c $< -o $@
  
  wmtz: $(OBJS)
