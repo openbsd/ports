@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/09/15 18:17:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2004/11/23 22:33:32 david Exp $
 bin/micq
 man/de/
 man/de/man1/
@@ -39,6 +39,9 @@ man/ru_RU.KOI8-R/man5/
 @man man/ru_RU.KOI8-R/man5/micqrc.5
 man/ru_RU.KOI8-R/man7/
 @man man/ru_RU.KOI8-R/man7/micq.7
+man/sk/
+man/sk/man1/
+@man man/sk/man1/micq.1
 man/sr_YU@cyrillic/
 man/sr_YU@cyrillic/man1/
 @man man/sr_YU@cyrillic/man1/micq.1
@@ -74,6 +77,7 @@ share/micq/ro.i18n
 share/micq/ru.i18n
 share/micq/ru@fun.i18n
 share/micq/se.i18n
+share/micq/sk.i18n
 share/micq/sr.UTF-8.i18n
 share/micq/sr.i18n
 share/micq/uk.i18n
