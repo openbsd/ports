@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/12/07 18:31:21 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/12/08 00:01:22 brad Exp $
 
 DISTNAME=	mhash-0.8.3
 CATEGORIES=	security
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
