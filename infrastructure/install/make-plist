@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.18 2002/04/20 19:07:25 espie Exp $
+# $OpenBSD: make-plist,v 1.19 2002/12/23 16:07:51 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -42,6 +42,7 @@ use File::Spec;
 use File::Temp qw/ tempdir /;
 
 my %annotated;
+my %annotated_dir;
 my $keep = '';
 my $manual = 0;
 
@@ -69,8 +70,13 @@ sub annotate
 			$manual = 1;
 		} elsif (/^\@comment\s+/) {
 			$_ = $';
-			$annotated{$_} = [ 'comment' ] 
-			    unless defined $annotated{$_};
+			if (m/^\@dirrm\s+/) {
+				$_ = $';
+				$annotated_dir{$_} = 1;
+			} else {
+				$annotated{$_} = [ 'comment' ] 
+				    unless defined $annotated{$_};
+			}
 		} elsif (m/^\@/) {
 			next;
 		} elsif (m/^\!?\%\%(.*)\%\%/) {
@@ -330,12 +336,17 @@ if (@libfiles > 0) {
 }
 
 for my $d (sort { $b cmp $a } (grep { $newdir{$_} } (keys %newdir) ) ) {
-	# case of new directory that does not hold anything: it's marked
-	# for removal, but it must exist first
-	if (!$has_stuff{$d}) {
-		print "\@exec mkdir -p \%D/", strip($d), "\n";
+	my $dname = strip($d);
+	if ($annotated_dir{$dname}) {
+		print "\@comment \@dirrm $dname\n";
+	} else {
+		# case of new directory that does not hold anything: it's marked
+		# for removal, but it must exist first
+		if (!$has_stuff{$d}) {
+			print "\@exec mkdir -p \%D/$dname\n";
+		}
+		print "\@dirrm $dname\n";
 	}
-	print "\@dirrm ",strip($d), "\n";
 }
 	
 add_info('@exec install-info', \%infodir);
