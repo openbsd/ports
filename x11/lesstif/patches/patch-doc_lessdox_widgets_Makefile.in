@@ -1,6 +1,6 @@
---- doc/lessdox/widgets/Makefile.in.orig	Sun May 14 20:47:15 2000
-+++ doc/lessdox/widgets/Makefile.in	Sat Jun 17 02:42:39 2000
-@@ -121,10 +121,10 @@
+--- doc/lessdox/widgets/Makefile.in.orig	Sun Jun 25 12:38:18 2000
++++ doc/lessdox/widgets/Makefile.in	Thu Jun 29 22:40:47 2000
+@@ -117,10 +117,10 @@
  EXTRA_DIST =  $(man1_DATA) $(man3_DATA) $(man5_DATA)
  SUFFIXES = .1 .3 .5 .html
  
@@ -15,7 +15,7 @@
  
  man1_DATA = 
  man3_DATA = \
-@@ -170,7 +170,7 @@
+@@ -166,7 +166,7 @@
  # build them.
  #
  
@@ -24,7 +24,7 @@
  
  @HaveMan2html_TRUE@html_DATA = \
  @HaveMan2html_TRUE@${man1_DATA:.1=.html} ${man3_DATA:.3=.html} \
-@@ -384,7 +384,7 @@
+@@ -381,7 +381,7 @@
  # in both the http://www.lesstif.org and the locally installed case.
  #
  install-data-hook:

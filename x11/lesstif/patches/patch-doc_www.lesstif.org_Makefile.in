@@ -1,6 +1,6 @@
---- doc/www.lesstif.org/Makefile.in.orig	Sun May 14 20:47:15 2000
-+++ doc/www.lesstif.org/Makefile.in	Mon Jun 19 03:36:19 2000
-@@ -128,7 +128,7 @@
+--- doc/www.lesstif.org/Makefile.in.orig	Sun Jun 25 12:38:15 2000
++++ doc/www.lesstif.org/Makefile.in	Thu Jun 29 22:42:41 2000
+@@ -124,7 +124,7 @@
  # Lets put the informational stuff in a sub directory to avoid 
  # polluting /usr/local for default installs.
  #
@@ -9,7 +9,7 @@
  doc_DATA = COPYING.LIB.html FAQ.html INSTALL.html apps.html \
  		bugs.html cdrom.html core.html current.html \
  		cvs.html download.html index.html links.html lists.html \
-@@ -138,10 +138,10 @@
+@@ -134,10 +134,10 @@
  		Advocacy.html Xbae.html Xlt.html
  
  
