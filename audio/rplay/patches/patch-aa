@@ -1,0 +1,23 @@
+*** configure.bak	Fri Feb  2 03:30:38 1996
+--- configure	Fri Jun 13 19:14:52 1997
+***************
+*** 2589,2597 ****
+  
+  
+  if test "$no_x" = "yes" -o "$HAVE_FORMS" = "no"; then
+! 	BUILD_TARGETS="include lib adpcm gsm librplay rplayd rplay rptp doc"
+  else
+! 	BUILD_TARGETS="include lib adpcm gsm librplay rplayd rplay rptp xrplay doc"
+  fi
+  
+  
+--- 2589,2597 ----
+  
+  
+  if test "$no_x" = "yes" -o "$HAVE_FORMS" = "no"; then
+! 	BUILD_TARGETS="include lib adpcm librplay rplayd rplay rptp doc"
+  else
+! 	BUILD_TARGETS="include lib adpcm librplay rplayd rplay rptp xrplay doc"
+  fi
+  
+  

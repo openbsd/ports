@@ -1,0 +1,15 @@
+*** lib/regex.h.orig	Thu Dec  4 21:11:50 1997
+--- lib/regex.h	Thu Dec  4 21:12:03 1997
+***************
+*** 474,481 ****
+--- 474,483 ----
+  
+  /* 4.2 bsd compatibility.  */
+  #ifndef __FreeBSD__
++ #ifndef __OpenBSD__
+  extern char *re_comp _RE_ARGS ((_CONST_ char *));
+  extern int re_exec _RE_ARGS ((_CONST_ char *));
++ #endif
+  #endif
+  
+  /* POSIX compatibility.  */
