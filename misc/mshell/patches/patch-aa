@@ -1,4 +1,4 @@
-*** Makefile.orig	Tue May 27 00:29:12 1997
+*** Makefile.orig	Wed Mar 21 11:13:05 2001
 --- Makefile	Tue May 27 02:13:51 1997
 ***************
 *** 8,21 ****
@@ -20,7 +20,7 @@
   #
   # Check mshell.h for other options, e.g., max menu sizes.
   
-! CFLAGS =  -O -DBSD -DMENUDIR=\"${PREFIX}/lib/menus\" -DMAILDIR='"/var/mail/"' \
+! CFLAGS +=  -DBSD -DMENUDIR=\"${PREFIX}/lib/menus\" -DMAILDIR='"/var/mail/"' \
 ! 	-DGLOBAL_MACRO_FILE=\"${PREFIX}/lib/menus/macros\" \
 ! 	-DCOMMAND_LIST=\"${PREFIX}/lib/menus/commands\"
   OBJS =	mshell.o main.o string.o functions1.o functions2.o chdir.o mail.o \
@@ -29,7 +29,7 @@
 + all: mshell
 + 
   mshell: $(OBJS)
-! 	cc $(CFLAGS) $(OBJS) -lcurses -ltermlib -o mshell
+! 	${CC} $(CFLAGS) $(OBJS) -lcurses -ltermlib -o mshell
   
   $(OBJS) : mshell.h
   
