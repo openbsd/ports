@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.20 1999/09/15 05:18:36 fgsch Exp $
+# $OpenBSD: Makefile,v 1.21 1999/09/22 16:32:37 fgsch Exp $
 
-DISTNAME=       fetchmail-5.0.8
+DISTNAME=       fetchmail-5.1.0
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/fetchmail/
+MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
+		ftp://ftp.ccil.org/pub/esr/fetchmail/ 
 
 MAINTAINER=	fgsch@openbsd.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --disable-nls
 .if exists(/usr/lib/libkrb.a) && defined(MAKE_EBONES)
-CONFIGURE_ARGS+= --with-kerberos=/usr/include/kerberosIV
+CONFIGURE_ARGS+= --with-kerberos=yes
 .endif
 CONFIGURE_ENV=	LDFLAGS="${CFLAGS}"
 
