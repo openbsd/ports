@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/05/20 12:44:46 kevlo Exp $
+# $OpenBSD: Makefile,v 1.15 2001/05/21 04:00:35 kevlo Exp $
 
 COMMENT=	"shell-like command line ftp client"
 
@@ -17,15 +17,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 CONFIGURE_STYLE= gnu 
-
-FLAVORS=	ssl
-FLAVOR?=
-
-.if ${FLAVOR:L} == "ssl"
 CONFIGURE_ARGS=	--with-ssl
-.else
-CONFIGURE_ARGS=	--without-ssl
-.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/lftp
