@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/08/28 23:36:45 matt Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/22 16:21:18 espie Exp $
 
 DISTNAME=	ppgen-1.0
 CATEGORIES=	security
 NEED_VERSION=	1.319
 
-MAINTAINER=	matt@openbsd.org
+MAINTAINER=	Matt Behrens <matt@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 15:43:15 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 16:21:17 espie Exp $
 
 DISTNAME=		enscript-1.6.1
 NEED_VERSION=		1.319
 CATEGORIES=     	print
 
-MAINTAINER=		matt@openbsd.org
+MAINTAINER=		Matt Behrens <matt@openbsd.org>
 
 HOMEPAGE=		http://people.ssh.fi/mtr/genscript/
 
