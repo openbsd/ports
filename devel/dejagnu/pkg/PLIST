@@ -1,9 +1,6 @@
 bin/runtest
 @unexec install-info --delete %D/info/dejagnu.info %D/info/dir
 info/dejagnu.info
-info/dejagnu.info-1
-info/dejagnu.info-2
-info/dejagnu.info-3
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/dejagnu.info %D/info/dir
 lib/dejagnu/bug.exp

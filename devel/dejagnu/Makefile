@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/03/07 00:14:41 brad Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/03/29 21:22:39 brad Exp $
 
 DISTNAME=       dejagnu-1.3
 CATEGORIES=	devel
