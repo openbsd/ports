@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/24 22:12:03 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/05/16 18:47:20 espie Exp $
 
 DISTNAME=	Xaw3d-1.5
 CATEGORIES=	x11
@@ -26,6 +26,5 @@ post-extract:
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/Xaw3d
 	${INSTALL_DATA} ${WRKSRC}/README.XAW3D ${PREFIX}/share/doc/Xaw3d
-	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/03/19 00:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/05/16 18:49:39 espie Exp $
 
 DISTNAME=       libpng-1.0.3
 PKGNAME=        png-1.0.3
@@ -28,7 +28,6 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/png.5 ${PREFIX}/man/man5
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/png
 	${INSTALL_DATA} ${WRKSRC}/libpng.txt ${PREFIX}/share/doc/png
-	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
 
