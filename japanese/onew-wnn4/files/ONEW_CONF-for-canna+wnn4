@@ -7,4 +7,3 @@ CANNALIB	= -L%LOCALBASE%/lib -lcanna
 CANNA_RKPATH	= '".:$$HOME:%LOCALBASE%/lib/canna/dic:/tmp/onew_rktabs/canna"'
 RKKLIBS		= $(CANNALIB) $(WNNLIB)
 RKKOBJS		= $(CANNAOBJ) $(WNNOBJ)
-MISCLIB		= -lcrypt

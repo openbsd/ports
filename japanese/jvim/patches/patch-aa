@@ -1,5 +1,5 @@
 --- src/makefile.junx.orig	Sun Jul  2 22:54:33 1995
-+++ src/makefile.junx	Wed Jul 29 02:17:33 1998
++++ src/makefile.junx	Sun Nov 22 00:14:56 1998
 @@ -15,12 +15,12 @@
  #
  #>>>>> choose Japanese Kanji code
@@ -64,7 +64,7 @@
  
  ### Location of man page
 -MANDIR = $(PREFIX)/man
-+MANDIR = $(PREFIX)/man/ja
++MANDIR = $(PREFIX)/man/%MANLANG%
  MANLOC = $(MANDIR)/man1
  
  ### Location of help file

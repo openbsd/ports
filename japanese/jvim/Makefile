@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 PATCHDIR=	${.CURDIR}/../jvim/patches
 FILESDIR=	${.CURDIR}/../jvim/files
 PLIST=		${.CURDIR}/../jvim/pkg/PLIST
-MANLANG=	ja
+MANLANG=	ja_JP.EUC
 MAN1=		jcat.1 jfold.1 jgrep.1 jvim.1
 WRKSRC=		${WRKDIR}/jvim2.0r
 
@@ -37,7 +37,7 @@ JPLIB+=			-lcanna
 INPUT_METHOD+=		wnn4
 BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
 JPDEF+=			-DWNN_ISDIR
-JPLIB+=			-ljd -lcrypt
+JPLIB+=			-ljd 
 .elif defined(WNN6)
 INPUT_METHOD+=		wnn6
 BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
@@ -63,6 +63,7 @@ pre-build:
 	cd ${WRKSRC}/src; \
 	${SED}	-e 's,%LOCALBASE%,${LOCALBASE},g' \
 		-e 's,%X11BASE%,${X11BASE},g' \
+		-e 's,%MANLANG%,${MANLANG},g' \
 			./makefile.junx > Makefile; \
 
 do-build:
@@ -75,5 +76,6 @@ post-install:
 	for file in jcat jgrep jfold jvim; do \
 		strip ${LOCALBASE}/bin/$$file; \
 	done
+	@echo "You may have to add man/ja_JP.EUC to _default in /etc/man.conf manually"
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/18 05:02:08 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/11/22 00:13:46 espie Exp $
 #
 
 DISTNAME=	jvim2.0r+onew2.2.10
@@ -33,12 +33,12 @@ JPLIB+=			-lcanna
 INPUT_METHOD+=		wnn4
 BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
 JPDEF+=			-DWNN_ISDIR
-JPLIB+=			-ljd -lcrypt
+JPLIB+=			-ljd 
 .elif defined(WNN6)
 INPUT_METHOD+=		wnn6
 BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
 JPDEF+=			-DWNN_ISDIR
-JPLIB+=			-ljd -lcrypt
+JPLIB+=			-ljd 
 .endif
 #
 # Make a value of INPUT_METHOD

@@ -7,7 +7,7 @@ ask() {
     question=$1
     default=$2
     if [ -z "${PACKAGE_BUILDING}" ]; then
-	read -p "${question} (y/n) [${default}]? " answer
+	read "${question} (y/n) [${default}]? " answer
     fi
     if [ x${answer} = x ]; then
 	answer=${default}
@@ -59,8 +59,8 @@ EOF
     echo ""
     echo "You need an account 'wnn' whose ID number is 69"
     if yesno "Would you like to create it automatically?" y; then
-	adduser -noconfig -uid 69 -group bin -shell /sbin/nologin \
-		-home /root -batch wnn bin 
+	 gid=`id -g bin`
+	 chpass -a "wnn:*:69:${gid}::::Wnn server:/root:/sbin/nologin"
     else
 	echo "Please create it, and try again."
 	exit 1
@@ -102,19 +102,5 @@ POST-INSTALL)
       fi
       chown wnn $dir
     done
-
-    ## create a startup script ##
-    startup_script=${PKG_PREFIX}/etc/rc.d/${wnnname}.sh
-    if [ ! -f ${startup_script} ]; then
-      echo "Installing ${startup_script} startup file.";
-      echo '#!/bin/sh' > ${startup_script};
-      echo "wnn=${wnnserver}" >> ${startup_script};
-      echo 'if [ -f $wnn ]; then' >> ${startup_script};
-      echo "    echo -n ' ${wnnname}'" >> ${startup_script};
-      echo '    $wnn' >> ${startup_script};
-      echo "fi" >> ${startup_script};
-      chmod 755 ${startup_script};
-      chown bin.bin ${startup_script};
-    fi
     ;;
 esac

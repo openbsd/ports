@@ -84,7 +84,7 @@ diff -arcN ../Xsi.org/config/Project.tmpl ./config/Project.tmpl
   XCOMM -----------------------------------------------------------------------
   XCOMM X Window System make variables; these need to be coordinated with rules
   
-+     SYS_LIBRARIES = -lcrypt		/* For FreeBSD */
++ XCOMM    SYS_LIBRARIES = -lcrypt		/* For FreeBSD, not OpenBSD */
 + 
   /*
    * This list must be reflected in the DIRS_TO_BUILD list in the top-level

@@ -5,4 +5,3 @@ WNN_DICLIST	= '"kihon tankan tankan3 zip ikeiji symbol tankan2 tel usr/$$USER/ud
 WNN_DICDIRS	= '"iwanami/%s.dic;usr/$$USER/%s.h"'
 RKKLIBS		= $(WNNLIB)
 RKKOBJS		= $(WNNOBJ)
-MISCLIB		= -lcrypt
