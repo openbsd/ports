@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.30 2004/11/30 01:06:34 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2005/03/09 05:27:05 pvalchev Exp $
 
-ONLY_FOR_ARCHS=	i386 macppc
+ONLY_FOR_ARCHS=	i386 macppc amd64
 
 COMMENT=	"Display and capture for Brooktree-based cards"
 DISTNAME=	fxtv-1.03
