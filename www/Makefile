@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2004/12/21 20:46:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.165 2004/12/22 08:13:58 kevlo Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -47,6 +47,7 @@
      SUBDIR += links+,no_x11
      SUBDIR += man2web
 #    SUBDIR += mapedit
+     SUBDIR += mediawiki
      SUBDIR += mhonarc
      SUBDIR += mindterm
 #    SUBDIR += mmm
