@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sed,v 1.1 2000/06/11 01:13:44 weingart Exp $
+@comment $OpenBSD: PLIST,v 1.9 2000/06/11 02:17:23 espie Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/a2ps.info
 @unexec install-info --delete --info-dir=%D/info %D/info/ogonkify.info
 @unexec install-info --delete --info-dir=%D/info %D/info/regex.info

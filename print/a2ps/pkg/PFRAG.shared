@@ -1,3 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.2 2000/06/11 02:17:23 espie Exp $
 lib/liba2ps.so.1.0
 @exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
 @unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib

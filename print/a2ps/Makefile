@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2000/06/11 01:13:42 weingart Exp $
+# $OpenBSD: Makefile,v 1.23 2000/06/11 02:17:22 espie Exp $
 
 DISTNAME=	a2ps-4.13b
 WRKDIST=	${WRKDIR}/a2ps-4.13
 CATEGORIES=	print
-NEED_VERSION=	1.230
-FAKE=Yes
+NEED_VERSION=	1.300
 
 MAINTAINER=	weingart@OpenBSD.org
 
@@ -24,11 +23,11 @@ FLAVORS=	a4 letter letterdj
 FLAVOR?=	letter
 
 .if defined(FLAVOR)
-.if ${FLAVOR} == "a4"
+.if ${FLAVOR:L} == "a4"
 PAPERSIZE=	A4
-.elif ${FLAVOR} == "letterdj"
+.elif ${FLAVOR:L} == "letterdj"
 PAPERSIZE=	Letterdj
-.elif ${FLAVOR} == "letter"
+.elif ${FLAVOR:L} == "letter"
 PAPERSIZE=	Letter
 .endif
 .endif
