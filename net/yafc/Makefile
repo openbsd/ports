@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2000/09/15 17:03:42 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2000/09/29 15:19:19 avsm Exp $
 
 DISTNAME=	yafc-0.6.2
 CATEGORIES=	net
-NEED_VERSION=	1.330
+NEED_VERSION=	1.336
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= yafc
 
-HOMEPAGE=	http://www.stacken.kth.se/~mhe/yafc/
-MAINTAINER=	avsm@openbsd.org
+HOMEPAGE=	http://yafc.sourceforge.net/
+MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
