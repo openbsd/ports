@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2001/11/15 23:17:59 jakob Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2003/06/17 23:09:00 naddy Exp $
 lib/libsasl.so.8.10
 lib/sasl/libanonymous.so.1.16
 lib/sasl/libcrammd5.so.1.17
@@ -15,8 +15,6 @@ DYNLIBDIR(%D/lib)
 @unexec rm -f %D/lib/sasl/libkerberos4.so
 @unexec rm -f %D/lib/sasl/liblogin.so
 @unexec rm -f %D/lib/sasl/libplain.so
-@unexec rm /usr/lib/sasl
-@exec ln -sf %D/lib/sasl /usr/lib/sasl
 @exec cd %D/lib/sasl && ln -sf libanonymous.so.1.16 libanonymous.so
 @exec cd %D/lib/sasl && ln -sf libcrammd5.so.1.17 libcrammd5.so
 @exec cd %D/lib/sasl && ln -sf libdigestmd5.so.0.19 libdigestmd5.so
