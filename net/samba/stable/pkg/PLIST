@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:17:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/12/10 22:13:30 alek Exp $
 bin/convert_smbpasswd
 bin/make_printerdef
 bin/make_smbcodepage
@@ -266,7 +266,9 @@ share/examples/samba/printing/smbprint.sysv
 share/examples/samba/simple/
 share/examples/samba/simple/README
 share/examples/samba/simple/smb.conf
+@sample ${CONFDIR}/
 share/examples/samba/smb.conf
+@sample ${CONFDIR}/smb.conf
 @comment share/examples/samba/smb.conf.default
 share/examples/samba/svr4-startup/
 share/examples/samba/svr4-startup/README
@@ -508,4 +510,9 @@ share/swat/using_samba/index.html
 share/swat/using_samba/inx.html
 share/swat/using_samba/licenseinfo.html
 share/swat/using_samba/this_edition.html
-@extraunexec rm -rf ${CONFDIR} ${SAMBA_SPOOL}
+@mode 1755
+@sample ${SAMBA_SPOOL}/
+@exec cat /etc/passwd | ${PREFIX}/bin/mksmbpasswd.sh > ${CONFDIR}/smbpasswd
+@exec chmod 600 ${CONFDIR}/smbpasswd
+@extra ${CONFDIR}/smbpasswd
+@extraunexec rm -rf ${SAMBA_SPOOL}

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2004/09/30 19:55:12 robert Exp $
+# $OpenBSD: Makefile,v 1.25 2004/12/10 22:13:30 alek Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
 DISTNAME=	samba-2.2.12
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 MASTER_SITES=	http://us1.samba.org/samba/ftp/old-versions/ \
 		http://us4.samba.org/samba/ftp/old-versions/
@@ -16,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto ncurses readline ssl 
 
 MAKE_FLAGS=	PASSWD_PROGRAM="/usr/bin/passwd"
 FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}" \
