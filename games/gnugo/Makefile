@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/09/23 07:35:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.19 2003/09/23 16:44:06 fgsch Exp $
 
 COMMENT=	"GNU version of Go"
 
@@ -23,5 +23,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/gnugo
 	${INSTALL_DATA} ${WRKSRC}/interface/gnugo.el \
 		${PREFIX}/share/gnugo
+
+do-regress:
+	cd ${WRKSRC}/regression && ${MAKE} all_batches
 
 .include <bsd.port.mk>
