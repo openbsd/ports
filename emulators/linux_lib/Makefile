@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2001/01/21 18:52:16 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2001/02/08 15:32:33 brad Exp $
 # $NetBSD: Makefile,v 1.10 1998/04/24 09:07:55 agc Exp $
 # $FreeBSD Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp $
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
 
-PREFIX=		/usr/local/emul/linux
+PREFIX?=	${LOCALBASE}/emul/linux
 
 pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}
