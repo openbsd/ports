@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/07/10 11:56:35 matt Exp $
+# $OpenBSD: Makefile,v 1.9 2004/01/24 13:52:39 naddy Exp $
 
 COMMENT=		"simple slang-based menu program"
 
@@ -20,7 +20,8 @@ LIB_DEPENDS=		slang.14::devel/libslang
 
 FAKE_FLAGS=		INSTALL_PREFIX=${WRKINST}
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.13
 CONFIGURE_ENV=		SLANG_LIB_LOC=${LOCALBASE}/lib \
 			SLANG_H_LOC=${LOCALBASE}/include/slang.h
 WRKDIST=		${WRKDIR}/pdmenu
