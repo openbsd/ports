@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2002/04/30 18:12:43 fgsch Exp $
---- Makefile.in.orig	Tue Apr 30 01:49:38 2002
-+++ Makefile.in	Tue Apr 30 01:49:51 2002
-@@ -1675,7 +1675,7 @@ configure-target-libiberty: $(ALL_GCC_C)
+$OpenBSD: patch-Makefile_in,v 1.2 2002/05/04 10:43:07 fgsch Exp $
+--- Makefile.in.orig	Tue Jun 19 18:03:42 2001
++++ Makefile.in	Sat May  4 06:18:09 2002
+@@ -1675,13 +1675,13 @@ configure-target-libiberty: $(ALL_GCC_C)
  all-target-libiberty: configure-target-libiberty
  all-target: $(ALL_TARGET_MODULES)
  install-target: $(INSTALL_TARGET_MODULES)
@@ -10,3 +10,11 @@ $OpenBSD: patch-Makefile_in,v 1.1 2002/04/30 18:12:43 fgsch Exp $
  install-sid: install-tcl install-tk
  ### other supporting targets
  
+ MAKEDIRS= \
+-	$(prefix) \
+-	$(exec_prefix)
++	$(DESTDIR)$(prefix) \
++	$(DESTDIR)$(exec_prefix)
+ .PHONY: installdirs
+ installdirs: mkinstalldirs
+ 	$(SHELL) $(srcdir)/mkinstalldirs $(MAKEDIRS)
