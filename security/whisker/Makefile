@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/01/31 05:11:57 margarida Exp $
+# $OpenBSD: Makefile,v 1.13 2003/02/02 22:24:07 margarida Exp $
 
 COMMENT=	"stealthy webserver vulnerability scanner"
 
@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.wiretrip.net/rfp/bins/whisker/
 
 MAINTAINER=	Srebrenko Sehic <haver@insecure.dk>
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
