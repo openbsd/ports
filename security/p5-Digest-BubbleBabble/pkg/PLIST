@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/11 11:48:18 wilfried Exp $
+${P5SITE}/Digest/BubbleBabble.pm
+@comment ${P5ARCH}/auto/Digest/BubbleBabble/.packlist
+man/man3p/Digest::BubbleBabble.3p
+@dirrm man/man3p
+@dirrm ${P5ARCH}/auto/Digest/BubbleBabble
+@dirrm ${P5ARCH}/auto/Digest
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Digest
