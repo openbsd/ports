@@ -1,0 +1,9 @@
+$OpenBSD: patch-include_ggi_display_Makefile_am,v 1.1 2005/01/31 14:20:26 todd Exp $
+--- include/ggi/display/Makefile.am.orig	Thu Jan 29 07:49:34 2004
++++ include/ggi/display/Makefile.am	Sun Jan 30 15:40:46 2005
+@@ -6,4 +6,4 @@ ggiinclude_HEADERS = auto.h \
+ 	libkgi.h kgi.h fbdev.h glide.h lcd823.h svgalib.h \
+ 	ipc.h memory.h tele.h file.h \
+ 	aa.h monotext.h vcsa.h \
+-	directx.h quartz.h vgl.h
++	directx.h vgl.h

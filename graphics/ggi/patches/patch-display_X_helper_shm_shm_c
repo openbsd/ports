@@ -1,0 +1,18 @@
+$OpenBSD: patch-display_X_helper_shm_shm_c,v 1.1 2005/01/31 14:20:26 todd Exp $
+--- display/X/helper/shm/shm.c.orig	Sun Nov 14 14:21:41 2004
++++ display/X/helper/shm/shm.c	Sun Jan 30 15:40:36 2005
+@@ -1,4 +1,4 @@
+-/* $Id: patch-display_X_helper_shm_shm_c,v 1.1 2005/01/31 14:20:26 todd Exp $
++/* $Id: patch-display_X_helper_shm_shm_c,v 1.1 2005/01/31 14:20:26 todd Exp $
+ ******************************************************************************
+ 
+    MIT-SHM extension support for display-x
+@@ -287,7 +287,7 @@ static int _ggi_xshm_create_ximage(ggi_v
+ 	_ggi_build_pixfmtstr(vis, target + i, sizeof(target) - i, 1);
+ 	i = strlen(target);
+ #ifdef HAVE_SNPRINTF
+-	snprintf(target + i, GGI_MAX_APILEN, ":-layout=%iplb%i:-physz=%i,%i:pointer",
++	snprintf(target + i, GGI_MAX_APILEN - i, ":-layout=%iplb%i:-physz=%i,%i:pointer",
+ 		priv->ximage->bytes_per_line * LIBGGI_VIRTY(vis),
+ 		priv->ximage->bytes_per_line,
+ 		LIBGGI_MODE(vis)->size.x, LIBGGI_MODE(vis)->size.y);

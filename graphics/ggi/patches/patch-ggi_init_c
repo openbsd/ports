@@ -1,0 +1,30 @@
+$OpenBSD: patch-ggi_init_c,v 1.1 2005/01/31 14:20:26 todd Exp $
+--- ggi/init.c.orig	Wed Oct 27 07:26:22 2004
++++ ggi/init.c	Sun Jan 30 15:40:46 2005
+@@ -1,4 +1,4 @@
+-/* $Id: patch-ggi_init_c,v 1.1 2005/01/31 14:20:26 todd Exp $
++/* $Id: patch-ggi_init_c,v 1.1 2005/01/31 14:20:26 todd Exp $
+ ******************************************************************************
+ 
+    LibGGI initialization.
+@@ -320,9 +320,9 @@ ggi_visual *ggiOpen(const char *driver,.
+ 		return NULL;
+ 	}
+ 
+-	va_start(drivers,driver);
++	va_start(drivers, driver);
+ 
+-	argptr=va_arg(drivers,void *);
++	argptr = va_arg(drivers, void *);
+ 	va_end(drivers);
+ 
+ 	GGIDPRINT_CORE("Loading driver %s\n",driver);
+@@ -348,8 +348,6 @@ ggi_visual *ggiOpen(const char *driver,.
+ 
+ 	} while (0);
+ 	
+-
+-	va_end(drivers);
+ 
+ 	if (success) {
+ 		ggLock(_ggiVisuals.mutex);

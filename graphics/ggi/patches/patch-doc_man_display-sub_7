@@ -1,0 +1,23 @@
+$OpenBSD: patch-doc_man_display-sub_7,v 1.1 2005/01/31 14:20:26 todd Exp $
+--- doc/man/display-sub.7.orig	Mon Nov 22 05:42:53 2004
++++ doc/man/display-sub.7	Sun Jan 30 15:40:46 2005
+@@ -1,4 +1,4 @@
+-.TH "display-sub" 7 "2004-10-14" "libggi-2.1.x" GGI
++.TH "display-sub" 7 "2005-01-16" "libggi-2.1.x" GGI
+ .SH NAME
+ \fBdisplay-sub\fR : Make a child visual that is a window to the parent
+ .SH SYNOPSIS
+@@ -23,6 +23,13 @@ moving/resizing the window does \fInot\f
+ have to perform those yourself. All it does for you is providing a
+ virtual visual within an existing one, which is convenient to allow
+ for window system canvases to be about any GGI program.
++.RS
++\fBImportant:\fR
++It is possible to have (\fB0\fR, \fB0\fR) as upper, left corner. But
++beware, \fB0\fR means \fBGGI_AUTO\fR and therefore it may get overridden by
++\fBGGI_DEFMODE\fR environment variable. In this case, you may get
++unintended results.
++.RE
+ .SH OPTIONS
+ .TP
+ \fItarget-spec\fR

@@ -1,0 +1,18 @@
+$OpenBSD: patch-display_X_buffer_c,v 1.1 2005/01/31 14:20:26 todd Exp $
+--- display/X/buffer.c.orig	Sun Nov 14 14:52:00 2004
++++ display/X/buffer.c	Sun Jan 30 15:40:35 2005
+@@ -1,4 +1,4 @@
+-/* $Id: patch-display_X_buffer_c,v 1.1 2005/01/31 14:20:26 todd Exp $
++/* $Id: patch-display_X_buffer_c,v 1.1 2005/01/31 14:20:26 todd Exp $
+ ******************************************************************************
+ 
+    LibGGI Display-X target: buffer and buffer syncronization handling.
+@@ -211,7 +211,7 @@ int _ggi_x_create_ximage(ggi_visual *vis
+ 	_ggi_build_pixfmtstr(vis, target + i, sizeof(target) - i, 1);
+ 	i = strlen(target);
+ #ifdef HAVE_SNPRINTF
+-	snprintf(target + i, GGI_MAX_APILEN, ":-physz=%i,%i:pointer", 
++	snprintf(target + i, GGI_MAX_APILEN - i, ":-physz=%i,%i:pointer", 
+ 		LIBGGI_MODE(vis)->size.x, LIBGGI_MODE(vis)->size.y);
+ #else
+ 	sprintf(target + i, ":-physz=%i,%i:pointer", 

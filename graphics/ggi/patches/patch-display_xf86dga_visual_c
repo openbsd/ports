@@ -1,0 +1,74 @@
+$OpenBSD: patch-display_xf86dga_visual_c,v 1.1 2005/01/31 14:20:26 todd Exp $
+--- display/xf86dga/visual.c.orig	Sun Sep 12 16:01:40 2004
++++ display/xf86dga/visual.c	Sun Jan 30 15:40:46 2005
+@@ -1,4 +1,4 @@
+-/* $Id: patch-display_xf86dga_visual_c,v 1.1 2005/01/31 14:20:26 todd Exp $
++/* $Id: patch-display_xf86dga_visual_c,v 1.1 2005/01/31 14:20:26 todd Exp $
+ ******************************************************************************
+ 
+    XF86DGA display target.
+@@ -163,7 +163,7 @@ static int do_cleanup(ggi_visual * vis)
+ 	free(DGA_PRIV(vis));
+ 	free(LIBGGI_GC(vis));
+ 
+-	DGA_PRIV(vis) = NULL;
++	LIBGGI_PRIVATE(vis) = NULL;
+ 
+ 	ggUnregisterCleanup((ggcleanup_func *) do_cleanup, vis);
+ 
+@@ -235,7 +235,8 @@ static int GGIopen(ggi_visual * vis, str
+ 		goto out_freegc;
+ 
+ 	err = _ggi_physz_parse_option(options[OPT_PHYSZ].result,
+-			       &(priv->x.physzflags), &(priv->x.physz));
++				      &(priv->x.physzflags),
++				      &(priv->x.physz));
+ 	if (err != GGI_OK)
+ 		goto out_freegc;
+ 
+@@ -276,7 +277,7 @@ static int GGIopen(ggi_visual * vis, str
+ 	GGIDPRINT_MISC("Virtwidth: %d, depth: %d, size: %d\n",
+ 		       priv->width, priv->depth, priv->size);
+ 
+-	DGA_PRIV(vis) = priv;
++	LIBGGI_PRIVATE(vis) = (void *) priv;
+ 
+ 	/* Register cleanup handler */
+ 	ggRegisterCleanup((ggcleanup_func *) do_cleanup, vis);
+@@ -325,8 +326,10 @@ static int GGIopen(ggi_visual * vis, str
+ 		_args.win = DefaultRootWindow(priv->x.display);
+ 		_args.ptralwaysrel = 1;
+ 		_args.wait = 0;
+-		_args.exposefunc = _args.exposearg
+-		    = _args.resizefunc = _args.resizearg = NULL;
++		_args.exposefunc = NULL;
++		_args.exposearg = NULL;
++		_args.resizefunc = NULL;
++		_args.resizearg = NULL;
+ 		_args.gglock = priv->x.xliblock;
+ 
+ 		if ((inp = giiOpen("xwin", &_args, NULL)) == NULL) {
+@@ -372,20 +375,19 @@ static int GGIclose(ggi_visual * vis, st
+ }
+ 
+ 
+-EXPORTFUNC
+-int GGIdl_xf86dga(int func, void **funcptr);
++EXPORTFUNC int GGIdl_xf86dga(int func, void **funcptr);
+ 
+ int GGIdl_xf86dga(int func, void **funcptr)
+ {
+ 	switch (func) {
+ 	case GGIFUNC_open:
+-		*funcptr = GGIopen;
++		*funcptr = (void *) GGIopen;
+ 		return 0;
+ 	case GGIFUNC_exit:
+ 		*funcptr = NULL;
+ 		return 0;
+ 	case GGIFUNC_close:
+-		*funcptr = GGIclose;
++		*funcptr = (void *) GGIclose;
+ 		return 0;
+ 	default:
+ 		*funcptr = NULL;

@@ -1,0 +1,68 @@
+$OpenBSD: patch-display_xf86dga_extutil_h,v 1.1 2005/01/31 14:20:26 todd Exp $
+--- display/xf86dga/extutil.h.orig	Sat Sep 18 05:48:05 2004
++++ display/xf86dga/extutil.h	Sun Jan 30 15:40:46 2005
+@@ -1,4 +1,4 @@
+-/* $Id: patch-display_xf86dga_extutil_h,v 1.1 2005/01/31 14:20:26 todd Exp $ */
++/* $Id: patch-display_xf86dga_extutil_h,v 1.1 2005/01/31 14:20:26 todd Exp $ */
+ /*
+  * $XConsortium: extutil.h,v 1.15 94/10/07 15:36:33 kaleb Exp $
+  *
+@@ -153,9 +153,8 @@ extern XExtDisplayInfo *XextAddDisplay(
+ 					      /* extinfo */ ,
+ 					      Display * /* dpy */ ,
+ 					      char * /* ext_name */ ,
+-					      XExtensionHooks * /* hooks */
+-					      ,
+-					      int /* nevents */ ,
++					      XExtensionHooks *	/* hooks */
++					      , int /* nevents */ ,
+ 					      XPointer	/* data */
+ #endif
+     );
+@@ -187,8 +186,10 @@ extern XExtDisplayInfo *XextFindDisplay(
+  * something that is called many, many times would be bad.
+  */
+ #define XEXT_GENERATE_FIND_DISPLAY(proc,extinfo,extname,hooks,nev,data) \
+-XExtDisplayInfo *proc (dpy) \
+-    register Display *dpy; \
++XExtDisplayInfo *proc \
++    ( \
++    register Display *dpy \
++    ) \
+ { \
+     XExtDisplayInfo *dpyinfo; \
+     if (!extinfo) { if (!(extinfo = XextCreateExtension())) return NULL; } \
+@@ -198,20 +199,24 @@ XExtDisplayInfo *proc (dpy) \
+ }
+ 
+ #define XEXT_GENERATE_CLOSE_DISPLAY(proc,extinfo) \
+-int proc (dpy, codes) \
+-    Display *dpy; \
+-    XExtCodes *codes; \
++int proc \
++    ( \
++    Display *dpy, \
++    XExtCodes *codes \
++    ) \
+ { \
+     return XextRemoveDisplay (extinfo, dpy); \
+ }
+ 
+ #define XEXT_GENERATE_ERROR_STRING(proc,extname,nerr,errl) \
+-char *proc (dpy, code, codes, buf, n) \
+-    Display  *dpy; \
+-    int code; \
+-    XExtCodes *codes; \
+-    char *buf; \
+-    int n; \
++char *proc \
++    ( \
++    Display  *dpy, \
++    int code, \
++    XExtCodes *codes, \
++    char *buf, \
++    int n \
++    ) \
+ {  \
+     code -= codes->first_error;  \
+     if (code >= 0 && code < nerr) { \

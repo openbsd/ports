@@ -1,0 +1,18 @@
+$OpenBSD: patch-programs_regress_mode_c,v 1.1 2005/01/31 14:20:26 todd Exp $
+--- programs/regress/mode.c.orig	Sun Oct 10 04:18:46 2004
++++ programs/regress/mode.c	Sun Jan 30 15:40:46 2005
+@@ -1,4 +1,4 @@
+-/* $Id: patch-programs_regress_mode_c,v 1.1 2005/01/31 14:20:26 todd Exp $
++/* $Id: patch-programs_regress_mode_c,v 1.1 2005/01/31 14:20:26 todd Exp $
+ ******************************************************************************
+ 
+    This is a regression-test for mode handling.
+@@ -140,7 +140,7 @@ static void testcase3(const char *desc)
+ 	err = ggiInit();
+ 	printassert(err == GGI_OK, "ggiInit failed with %i\n", err);
+ 
+-	vis = ggiOpen("memory", NULL);
++	vis = ggiOpen(NULL);
+ 	printassert(vis != NULL, "ggiOpen() failed\n");
+ 
+ 	err = ggiCheckSimpleMode(vis, GGI_AUTO, GGI_AUTO, 2, GT_AUTO, &mode);

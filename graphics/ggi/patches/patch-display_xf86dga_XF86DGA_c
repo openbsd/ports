@@ -1,0 +1,189 @@
+$OpenBSD: patch-display_xf86dga_XF86DGA_c,v 1.1 2005/01/31 14:20:26 todd Exp $
+--- display/xf86dga/XF86DGA.c.orig	Sat Sep 18 05:50:34 2004
++++ display/xf86dga/XF86DGA.c	Sun Jan 30 15:40:46 2005
+@@ -1,4 +1,4 @@
+-/* $Id: patch-display_xf86dga_XF86DGA_c,v 1.1 2005/01/31 14:20:26 todd Exp $
++/* $Id: patch-display_xf86dga_XF86DGA_c,v 1.1 2005/01/31 14:20:26 todd Exp $
+ 
+ Copyright (c) 1995  Jon Tombs
+ Copyright (c) 1995,1996  The XFree86 Project, Inc
+@@ -51,7 +51,8 @@ static char *xf86dga_extension_name = XF
+  *                                                                           *
+  *****************************************************************************/
+ 
+-static int close_display();
++static XEXT_GENERATE_CLOSE_DISPLAY(close_display, xf86dga_info)
++
+ static /* const */ XExtensionHooks xf86dga_extension_hooks = {
+ 	NULL,			/* create_gc */
+ 	NULL,			/* copy_gc */
+@@ -70,16 +71,40 @@ static XEXT_GENERATE_FIND_DISPLAY(find_d
+ 				  xf86dga_extension_name,
+ 				  &xf86dga_extension_hooks, 0, NULL)
+ 
+-static XEXT_GENERATE_CLOSE_DISPLAY(close_display, xf86dga_info)
+ 
+-
+ /*****************************************************************************
+  *                                                                           *
+  *		    public XFree86-DGA Extension routines                *
+  *                                                                           *
+  *****************************************************************************/
+- static Bool _ggi_XF86DGAQueryExtension(Display * dpy, int *event_basep,
+-					int *error_basep)
++/* prototypes to suppress compiler warnings */
++Bool _ggi_XF86DGAQueryExtension(Display * dpy, int *event_basep,
++				int *error_basep);
++Bool _ggi_XF86DGAQueryVersion(Display * dpy, int *majorVersion,
++			      int *minorVersion);
++Bool _ggi_XF86DGAGetVideoLL(Display * dpy, int screen, int *offset,
++			    int *width, int *bank_size, int *ram_size);
++Bool _ggi_XF86DGADirectVideoLL(Display * dpy, int screen, int enable);
++Bool _ggi_XF86DGASetViewPort(Display * dpy, int screen, int x, int y);
++Bool _ggi_XF86DGAInstallColormap(Display * dpy, int screen, Colormap cmap);
++Bool _ggi_XF86DGAQueryDirectVideo(Display * dpy, int screen, int *flags);
++Bool _ggi_XF86DGACopyArea(Display * dpy, int screen, Drawable d,
++			  GC gc,
++			  int src_x, int src_y,
++			  unsigned int width, unsigned int height,
++			  int dst_x, int dst_y);
++Bool _ggi_XF86DGAFillRectangle(Display * dpy, int screen,
++			       Drawable d, GC gc,
++			       int x, int y,
++			       unsigned int width, unsigned int height);
++void _ggi_XF86DGAUnmap(void);
++int _ggi_XF86DGADirectVideo(Display * dis, int screen, int enable);
++int _ggi_XF86DGAGetVideo(Display * dis, int screen, char **addr,
++			 int *width, int *bank, int *ram);
++
++
++Bool _ggi_XF86DGAQueryExtension(Display * dpy, int *event_basep,
++				int *error_basep)
+ {
+ 	XExtDisplayInfo *info = find_display(dpy);
+ 
+@@ -93,8 +118,8 @@ static XEXT_GENERATE_CLOSE_DISPLAY(close
+ }
+ 
+ 
+-static Bool _ggi_XF86DGAQueryVersion(Display * dpy, int *majorVersion,
+-				     int *minorVersion)
++Bool _ggi_XF86DGAQueryVersion(Display * dpy, int *majorVersion,
++			      int *minorVersion)
+ {
+ 	XExtDisplayInfo *info = find_display(dpy);
+ 	xXF86DGAQueryVersionReply rep;
+@@ -118,9 +143,8 @@ static Bool _ggi_XF86DGAQueryVersion(Dis
+ 	return True;
+ }
+ 
+-static Bool _ggi_XF86DGAGetVideoLL(Display * dpy, int screen, int *offset,
+-				   int *width, int *bank_size,
+-				   int *ram_size)
++Bool _ggi_XF86DGAGetVideoLL(Display * dpy, int screen, int *offset,
++			    int *width, int *bank_size, int *ram_size)
+ {
+ 	XExtDisplayInfo *info = find_display(dpy);
+ 	xXF86DGAGetVideoLLReply rep;
+@@ -150,8 +174,7 @@ static Bool _ggi_XF86DGAGetVideoLL(Displ
+ }
+ 
+ 
+-static Bool _ggi_XF86DGADirectVideoLL(Display * dpy, int screen,
+-				      int enable)
++Bool _ggi_XF86DGADirectVideoLL(Display * dpy, int screen, int enable)
+ {
+ 	XExtDisplayInfo *info = find_display(dpy);
+ 	xXF86DGADirectVideoReq *req;
+@@ -170,8 +193,7 @@ static Bool _ggi_XF86DGADirectVideoLL(Di
+ 	return True;
+ }
+ 
+-static Bool _ggi_XF86DGASetViewPort(Display * dpy, int screen,
+-				    int x, int y)
++Bool _ggi_XF86DGASetViewPort(Display * dpy, int screen, int x, int y)
+ {
+ 	XExtDisplayInfo *info = find_display(dpy);
+ 	xXF86DGASetViewPortReq *req;
+@@ -192,8 +214,7 @@ static Bool _ggi_XF86DGASetViewPort(Disp
+ }
+ 
+ 
+-static Bool _ggi_XF86DGAInstallColormap(Display * dpy, int screen,
+-					Colormap cmap)
++Bool _ggi_XF86DGAInstallColormap(Display * dpy, int screen, Colormap cmap)
+ {
+ 	XExtDisplayInfo *info = find_display(dpy);
+ 	xXF86DGAInstallColormapReq *req;
+@@ -213,8 +234,7 @@ static Bool _ggi_XF86DGAInstallColormap(
+ }
+ 
+ 
+-static Bool _ggi_XF86DGAQueryDirectVideo(Display * dpy, int screen,
+-					 int *flags)
++Bool _ggi_XF86DGAQueryDirectVideo(Display * dpy, int screen, int *flags)
+ {
+ 	XExtDisplayInfo *info = find_display(dpy);
+ 	xXF86DGAQueryDirectVideoReply rep;
+@@ -239,11 +259,11 @@ static Bool _ggi_XF86DGAQueryDirectVideo
+ }
+ 
+ 
+-static Bool _ggi_XF86DGACopyArea(Display * dpy, int screen, Drawable d,
+-				 GC gc,
+-				 int src_x, int src_y,
+-				 unsigned int width, unsigned int height,
+-				 int dst_x, int dst_y)
++Bool _ggi_XF86DGACopyArea(Display * dpy, int screen, Drawable d,
++			  GC gc,
++			  int src_x, int src_y,
++			  unsigned int width, unsigned int height,
++			  int dst_x, int dst_y)
+ {
+ 	XExtDisplayInfo *info = find_display(dpy);
+ 	xXF86DGACopyAreaReq *req;
+@@ -270,11 +290,10 @@ static Bool _ggi_XF86DGACopyArea(Display
+ }
+ 
+ 
+-static Bool _ggi_XF86DGAFillRectangle(Display * dpy, int screen,
+-				      Drawable d, GC gc,
+-				      int x, int y,
+-				      unsigned int width,
+-				      unsigned int height)
++Bool _ggi_XF86DGAFillRectangle(Display * dpy, int screen,
++			       Drawable d, GC gc,
++			       int x, int y,
++			       unsigned int width, unsigned int height)
+ {
+ 	XExtDisplayInfo *info = find_display(dpy);
+ 	xXF86DGAFillRectangleReq *req;
+@@ -346,7 +365,7 @@ static int memory_fd;
+ static char *_XFree86addr = NULL;
+ static int _XFree86size = 0;
+ 
+-static int _ggi_XF86DGADirectVideo(Display * dis, int screen, int enable)
++int _ggi_XF86DGADirectVideo(Display * dis, int screen, int enable)
+ {
+ 	if (enable & XF86DGADirectGraphics) {
+ #if !defined(ISC) && !defined(HAS_SVR3_MMAP) && !defined(Lynx)
+@@ -384,8 +403,8 @@ static int _ggi_XF86DGADirectVideo(Displ
+ }
+ 
+ 
+-static int _ggi_XF86DGAGetVideo(Display * dis, int screen, char **addr,
+-				int *width, int *bank, int *ram)
++int _ggi_XF86DGAGetVideo(Display * dis, int screen, char **addr,
++			 int *width, int *bank, int *ram)
+ {
+ 	int offset;
+ 	char *devname;
+@@ -459,7 +478,7 @@ static int _ggi_XF86DGAGetVideo(Display 
+ }
+ 
+ 
+-static void _ggi_XF86DGAUnmap(void)
++void _ggi_XF86DGAUnmap(void)
+ {
+ 	munmap(_XFree86addr, _XFree86size);
+ 	close(memory_fd);

@@ -1,6 +1,6 @@
---- ltmain.sh.orig	2003-01-28 09:35:01.000000000 -0600
-+++ ltmain.sh	2004-01-20 06:38:27.000000000 -0600
-@@ -1781,11 +1781,6 @@ compiler."
+--- ltmain.sh.orig	Fri Oct 29 14:53:22 2004
++++ ltmain.sh	Sun Jan 30 15:23:51 2005
+@@ -1799,11 +1799,6 @@ compiler."
  	    continue
  	  fi
  
@@ -12,7 +12,7 @@
  	  if test -n "$old_archive_from_expsyms_cmds"; then
  	    # figure out the soname
  	    set dummy $library_names
-@@ -4583,40 +4578,6 @@ relink_command=\"$relink_command\""
+@@ -4613,40 +4608,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  
