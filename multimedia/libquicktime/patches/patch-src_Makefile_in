@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2004/12/04 21:44:34 sturm Exp $
+--- src/Makefile.in.orig	Fri Nov 26 00:46:51 2004
++++ src/Makefile.in	Fri Nov 26 00:56:34 2004
+@@ -211,7 +211,7 @@ lib_LTLIBRARIES = libquicktime.la
+ # Library dependencies are emtpy no
+ # Maybe we need zlib to read compressed quicktime headers
+ #
+-libquicktime_la_LDFLAGS = -export-dynamic
++libquicktime_la_LDFLAGS = -export-dynamic -version-info 1:0:0
+ @HAVE_FSEEKO_FALSE@FSEEKO_SRC = lqt_fseeko.c
+ 
+ 

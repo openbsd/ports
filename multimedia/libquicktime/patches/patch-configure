@@ -1,7 +1,44 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2004/07/09 07:30:17 sturm Exp $
---- configure.orig	Sat Sep  6 19:15:25 2003
-+++ configure	Mon Jul  5 22:10:46 2004
-@@ -8691,11 +8691,11 @@ ASFLAGS=
+$OpenBSD: patch-configure,v 1.2 2004/12/04 21:44:34 sturm Exp $
+--- configure.orig	Mon Jul 19 11:57:49 2004
++++ configure	Mon Aug  9 03:17:56 2004
+@@ -3500,12 +3500,10 @@ nto-qnx)
+   ;;
+ 
+ openbsd*)
+-  lt_cv_file_magic_cmd=/usr/bin/file
+-  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-    lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
++    lt_cv_deplibs_check_method='match_pattern /lib[^/]+(\.so\.[0-9]+\.[0-9]+|\.so|_pic\.a)$'
+   else
+-    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
++    lt_cv_deplibs_check_method='match_pattern /lib[^/]+(\.so\.[0-9]+\.[0-9]+|_pic\.a)$'
+   fi
+   ;;
+ 
+@@ -10040,6 +10038,21 @@ if test -z "$aix_libpath"; then aix_libp
+     # Workaround some broken pre-1.5 toolchains
+     output_verbose_link_cmd='$CC -shared $CFLAGS -v conftest.$objext 2>&1 | grep conftest.$objext | $SED -e "s:-lgcc -lc -lgcc::"'
+     ;;
++  openbsd2*)
++      # C++ shared libraries are fairly broken
++      ld_shlibs=no
++      ;;
++  openbsd*)
++      archive_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
++      hardcode_libdir_flag_spec_CXX='${wl}-rpath,$libdir'
++      hardcode_direct_CXX=yes
++      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++        archive_expsym_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags ${wl}-retain-symbols-file,$export_symbols -o $lib'
++        export_dynamic_flag_spec_CXX='${wl}-E'
++        whole_archive_flag_spec_CXX="$wlarc"'--whole-archive$convenience '"$wlarc"'--no-whole-archive'
++      fi
++      output_verbose_link_cmd='echo'
++      ;;
+   osf3*)
+     case $cc_basename in
+       KCC)
+@@ -19822,11 +19835,11 @@ ASFLAGS=
  
  
  
@@ -15,15 +52,15 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/07/09 07:30:17 sturm Exp $
  OPTIMIZE_CFLAGS="-O3"
  
  echo "$as_me:$LINENO: checking if $CC supports -funroll-all-loops flags" >&5
-@@ -8938,6 +8938,7 @@ echo "${ECHO_T}$ac_cv_try_cflags_ok" >&6
+@@ -20069,6 +20082,7 @@ echo "${ECHO_T}$ac_cv_try_cflags_ok" >&6
      else
          :
      fi
 +fi # OPTIMIZE = yes
  
- # large file support
- COMMON_FLAGS="$COMMON_FLAGS -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
-@@ -9181,7 +9182,7 @@ fi
+ # -Wno-unused-variable -Wno-unused-parameter
+ # -std=gnu99
+@@ -20373,7 +20387,7 @@ fi
  rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
  if test "$ac_cv_search_pthread_create" = no; then
    for ac_lib in gthread pthread c_r; do
@@ -32,7 +69,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/07/09 07:30:17 sturm Exp $
      cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -9217,7 +9218,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_l
+@@ -20409,7 +20423,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_l
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -41,34 +78,48 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/07/09 07:30:17 sturm Exp $
  break
  else
    echo "$as_me: failed program was:" >&5
-@@ -12316,7 +12317,7 @@ rm -f conftest.$ac_objext conftest$ac_ex
-   rm -f conf.glibtest
- 
- 
--LIBS="$GLIB_LIBS -ldv"
-+LIBS="$GLIB_LIBS -ldv -pthread"
- CFLAGS=$GLIB_CFLAGS
- 
- if test x$have_glib = xtrue; then
-@@ -12979,7 +12980,7 @@ fi;
-     VORBIS_LIBDIR="-L$prefix/lib"
+@@ -23354,7 +23368,7 @@ fi;
+     VORBIS_LIBS="-L$libdir"
    fi
  
--  VORBIS_LIBS="$VORBIS_LIBDIR -lvorbis -lm"
-+  VORBIS_LIBS="$VORBIS_LIBDIR -lvorbis -logg -lm"
+-  VORBIS_LIBS="$VORBIS_LIBS -lvorbis -lm"
++  VORBIS_LIBS="$VORBIS_LIBS -lvorbis -logg -lm"
    VORBISFILE_LIBS="-lvorbisfile"
    VORBISENC_LIBS="-lvorbisenc"
  
-@@ -13276,7 +13277,7 @@ fi
- have_libavcodec=false
+@@ -23547,7 +23561,7 @@ if test "${ac_cv_lib_mp3lame_lame_decode
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lmp3lame  -lm -lvorbis $LIBS"
++LIBS="-lmp3lame  -lm -lvorbis -logg $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -24448,6 +24462,7 @@ fi
+   else
+      PKG_CONFIG_MIN_VERSION=0.9.0
+      if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
++       if test X$with_ffmpeg_acl = Xyes ; then
+         echo "$as_me:$LINENO: checking for avcodec_acl = $AVCODEC_REQUIRED" >&5
+ echo $ECHO_N "checking for avcodec_acl = $AVCODEC_REQUIRED... $ECHO_C" >&6
  
- OLD_LIBS=$LIBS
--LIBS="-lavcodec -lm"
-+LIBS="-lavcodec -logg -lm"
+@@ -24476,8 +24491,13 @@ echo "${ECHO_T}$AVCODEC_LIBS" >&6
  
- echo "$as_me:$LINENO: checking for libavcodec" >&5
- echo $ECHO_N "checking for libavcodec... $ECHO_C" >&6
-@@ -13516,7 +13517,7 @@ fi
+         fi
+ 
++      else
++        echo "$as_me:$LINENO: result: yes" >&5
++        echo "${ECHO_T}yes" >&6
++        succeeded=yes
++        AVCODEC_LIBS="-lavcodec -logg"
++      fi # ffmpeg_acl
+ 
+-
+      else
+         echo "*** Your version of pkg-config is too old. You need version $PKG_CONFIG_MIN_VERSION or newer."
+         echo "*** See http://www.freedesktop.org/software/pkgconfig"
+@@ -24682,7 +24702,7 @@ fi
  
  # Set CPU specific compiler options
  

@@ -1,19 +1,19 @@
-$OpenBSD: patch-utils_lqtplay_c,v 1.1.1.1 2004/07/09 07:30:17 sturm Exp $
---- utils/lqtplay.c.orig	2002-06-25 04:41:49.000000000 -0700
-+++ utils/lqtplay.c	2004-06-04 20:18:10.000000000 -0700
-@@ -17,7 +17,11 @@
+$OpenBSD: patch-utils_lqtplay_c,v 1.2 2004/12/04 21:44:34 sturm Exp $
+--- utils/lqtplay.c.orig	Tue Jan 20 20:32:30 2004
++++ utils/lqtplay.c	Mon Aug  9 02:56:37 2004
+@@ -19,8 +19,10 @@
  #include <sys/ipc.h>
  #include <sys/shm.h>
  #include <sys/ioctl.h>
-+#if defined(__OpenBSD__)
-+#include <soundcard.h>
-+#else
+-#ifdef	HAVE_SOUNDCARD_H
++#ifdef	HAVE_SYS_SOUNDCARD_H
  #include <sys/soundcard.h>
-+#endif
++#else
++#include <soundcard.h>
+ #endif
  
  #include <X11/Xlib.h>
- #include <X11/Intrinsic.h>
-@@ -644,7 +648,7 @@ static void qt_init(FILE *fp, char *file
+@@ -656,7 +658,7 @@ static void qt_init(FILE *fp, char *file
  	qt_hasaudio = 1;
  	if (quicktime_track_channels(qt,0) > 1)
  	    qt_stereo = 1;

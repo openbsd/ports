@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 18:04:35 espie Exp $
-@lib lib/libquicktime.so.0.0
-@lib lib/libquicktime_mjpeg.so.0.0

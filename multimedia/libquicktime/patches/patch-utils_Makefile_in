@@ -1,7 +1,7 @@
-$OpenBSD: patch-utils_Makefile_in,v 1.1.1.1 2004/07/09 07:30:17 sturm Exp $
---- utils/Makefile.in.orig	2004-05-10 16:42:32.000000000 -0700
-+++ utils/Makefile.in	2004-05-10 16:43:30.000000000 -0700
-@@ -169,7 +169,7 @@ qtyuv4toyuv_LDADD = @UTIL_LIBADD@
+$OpenBSD: patch-utils_Makefile_in,v 1.2 2004/12/04 21:44:34 sturm Exp $
+--- utils/Makefile.in.orig	Mon Jul 19 11:57:53 2004
++++ utils/Makefile.in	Mon Aug  9 02:49:14 2004
+@@ -253,7 +253,7 @@ qtyuv4toyuv_LDADD = @UTIL_LIBADD@
  
  lqtplay_SOURCES = lqtplay.c
  lqtplay_LDADD = @UTIL_LIBADD@ @X_LIBS@ -lXaw -lXt @X_PRE_LIBS@ -lXext \
