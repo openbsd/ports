@@ -1,0 +1,14 @@
+$OpenBSD: patch-ltmain_sh,v 1.1.1.1 2003/12/15 06:00:12 jolan Exp $
+--- ltmain.sh.orig	2003-08-29 19:58:21.000000000 -0500
++++ ltmain.sh	2003-12-02 22:31:19.000000000 -0600
+@@ -5417,8 +5417,8 @@ relink_command=\"$relink_command\""
+ 	    for linkname
+ 	    do
+ 	      if test "$linkname" != "$realname"; then
+-		$show "(cd $destdir && $rm $linkname && $LN_S $realname $linkname)"
+-		$run eval "(cd $destdir && $rm $linkname && $LN_S $realname $linkname)"
++		$show "(cd $destdir && $rm $linkname && $mv $realname $linkname)"
++		$run eval "(cd $destdir && $rm $linkname && $mv $realname $linkname)"
+ 	      fi
+ 	    done
+ 	  fi
