@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2005/01/26 16:41:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2005/02/19 13:04:44 alek Exp $
 
 COMMENT=		"finds and then operates on files"
 
 DISTNAME=		findutils-4.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.gnu.org/software/findutils/
