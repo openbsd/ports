@@ -1,0 +1,81 @@
+$OpenBSD: patch-Mailman_Utils_py,v 1.1 2005/02/11 19:33:55 jakob Exp $
+--- Mailman/Utils.py.orig	Fri Dec 26 23:50:04 2003
++++ Mailman/Utils.py	Fri Feb 11 20:23:16 2005
+@@ -1,4 +1,4 @@
+-# Copyright (C) 1998-2003 by the Free Software Foundation, Inc.
++# Copyright (C) 1998-2004 by the Free Software Foundation, Inc.
+ #
+ # This program is free software; you can redistribute it and/or
+ # modify it under the terms of the GNU General Public License
+@@ -27,12 +27,13 @@ from __future__ import nested_scopes
+ 
+ import os
+ import re
+-import random
+-import urlparse
++import cgi
+ import sha
+-import errno
+ import time
+-import cgi
++import errno
++import base64
++import random
++import urlparse
+ import htmlentitydefs
+ import email.Header
+ import email.Iterators
+@@ -297,11 +298,52 @@ for v in _vowels:
+         _syllables.append(v+c)
+ del c, v
+ 
+-def MakeRandomPassword(length=6):
++def UserFriendly_MakeRandomPassword(length):
+     syls = []
+     while len(syls) * 2 < length:
+         syls.append(random.choice(_syllables))
+     return EMPTYSTRING.join(syls)[:length]
++
++
++def Secure_MakeRandomPassword(length):
++    bytesread = 0
++    bytes = []
++    fd = None
++    try:
++        while bytesread < length:
++            try:
++                # Python 2.4 has this on available systems.
++                newbytes = os.urandom(length - bytesread)
++            except (AttributeError, NotImplementedError):
++                if fd is None:
++                    try:
++                        fd = os.open('/dev/urandom', os.O_RDONLY)
++                    except OSError, e:
++                        if e.errno <> errno.ENOENT:
++                            raise
++                        # We have no available source of cryptographically
++                        # secure random characters.  Log an error and fallback
++                        # to the user friendly passwords.
++                        from Mailman.Logging.Syslog import syslog
++                        syslog('error',
++                               'urandom not available, passwords not secure')
++                        return UserFriendly_MakeRandomPassword(length)
++                newbytes = os.read(fd, length - bytesread)
++            bytes.append(newbytes)
++            bytesread += len(newbytes)
++        s = base64.encodestring(EMPTYSTRING.join(bytes))
++        # base64 will expand the string by 4/3rds
++        return s.replace('\n', '')[:length]
++    finally:
++        if fd is not None:
++            os.close(fd)
++
++
++def MakeRandomPassword(length=mm_cfg.MEMBER_PASSWORD_LENGTH):
++    if mm_cfg.USER_FRIENDLY_PASSWORDS:
++        return UserFriendly_MakeRandomPassword(length)
++    return Secure_MakeRandomPassword(length)
++
+ 
+ def GetRandomSeed():
+     chr1 = int(random.random() * 52)
