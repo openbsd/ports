@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/06 22:09:52 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/02/03 07:00:21 jolan Exp $
 bin/ike-scan
+man/man1/ike-scan.1
 share/doc/ike-scan/README
 share/doc/ike-scan/udp-backoff-fingerprinting-paper.txt
 share/ike-scan/ike-backoff-patterns

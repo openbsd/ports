@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2003/06/13 08:59:54 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/03 07:00:21 jolan Exp $
 
 COMMENT=	"VPN scanner and identifier"
-DISTNAME=	ike-scan-1.2
+DISTNAME=	ike-scan-1.5.1
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}download/ \
 		http://berlin.ccc.de/~cryx/ike-scan/
 
 HOMEPAGE=	http://www.nta-monitor.com/ike-scan/
 
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
+MAINTAINER=	Srebrenko Sehic <haver@insecure.dk>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
