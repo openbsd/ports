@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.147 1999/11/29 23:14:03 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.148 1999/12/01 13:36:50 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -737,10 +737,10 @@ PLIST?=		${PKGDIR}/PLIST
 
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
-SORT_DEPENDS?=tsort|tail -r
+_SORT_DEPENDS?=tsort|tail -r
 
 .if !defined(PKG_ARGS)
-PKG_ARGS=		-v -c ${COMMENT} -d ${DESCR} -f ${PLIST} -p ${PREFIX} -P "`${MAKE} package-depends|${SORT_DEPENDS}`"
+PKG_ARGS=		-v -c ${COMMENT} -d ${DESCR} -f ${PLIST} -p ${PREFIX} -P "`${MAKE} package-depends|${_SORT_DEPENDS}`"
 .if exists(${PKGDIR}/INSTALL)
 PKG_ARGS+=		-i ${PKGDIR}/INSTALL
 .endif
@@ -2225,18 +2225,30 @@ misc-depends:
 
 .endif
 
+# Internal variables, used by dependencies targets 
+
+.if defined(LIB_DEPENDS) || defined(DEPENDS)
+_ALWAYS_DEP = ${LIB_DEPENDS:C/^[^:]*://:C/:.*//} \
+	${DEPENDS:C/:.*//} 
+.endif
+
+.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS)
+_BUILD_DEP = ${FETCH_DEPENDS:C/^[^:]*://:C/:.*//} \
+	${BUILD_DEPENDS:C/^[^:]*://:C/:.*//}
+.endif
+
+.if defined(RUN_DEPENDS)
+_RUN_DEP = ${RUN_DEPENDS:C/^[^:]*://:C/:.*//} 
+.endif
+
 .if !target(clean-depends)
 clean-depends:
-.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS) \
-	|| defined(RUN_DEPENDS) || defined(DEPENDS)
+.if defined(_ALWAYS_DEP) || defined(_BUILD_DEP) || defined(_RUN_DEP)
 	@for dir in \
-	   `echo ${FETCH_DEPENDS:C/^[^:]*://:C/:.*//} \
-	   ${BUILD_DEPENDS:C/^[^:]*://:C/:.*//} \
-	   ${LIB_DEPENDS:C/^[^:]*://:C/:.*//} \
-	   ${RUN_DEPENDS:C/^[^:]*://:C/:.*//} \
-	   ${DEPENDS:C/:.*//} | ${TR} '\040' '\012' | sort -u`; do \
+	   `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
+		| tr '\040' '\012' | sort -u`; do \
 		if cd $$dir 2>/dev/null ; then \
-			${MAKE} CLEANDEPENDS=No clean clean-depends; \
+			make CLEANDEPENDS=No clean clean-depends; \
 		fi \
 	done
 .endif
@@ -2268,14 +2280,12 @@ describe:
 		echo -n "/dev/null|"; \
 	fi; \
 	echo -n "${MAINTAINER}|${CATEGORIES}|"
-.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
-   defined(LIB_DEPENDS) || defined(DEPENDS) || target(depends-list)
-	@cd ${.CURDIR} && echo -n `make depends-list|${SORT_DEPENDS}`
+.if defined(_ALWAYS_DEP) || defined(_BUILD_DEP) || target(depends-list)
+	@cd ${.CURDIR} && echo -n `make depends-list|${_SORT_DEPENDS}`
 .endif
 	@echo -n "|"
-.if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS) || \
-	target(package-depends)
-	@cd ${.CURDIR} && echo -n `make package-depends|${SORT_DEPENDS}`
+.if defined(_ALWAYS_DEP) || defined(_RUN_DEP) || target(package-depends)
+	@cd ${.CURDIR} && echo -n `make package-depends|${_SORT_DEPENDS}`
 .endif
 	@echo -n "|"
 	@if [ "${ONLY_FOR_ARCHS}" = "" ]; then \
@@ -2287,13 +2297,11 @@ describe:
 
 README.html:
 	@echo ${PKGNAME} | ${HTMLIFY} > $@.tmp3
-.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
-   defined(LIB_DEPENDS) || defined(DEPENDS) || target(depends-list)
-	@${MAKE} depends-list FULL_PACKAGE_NAME=Yes | ${SORT_DEPENDS}>$@.tmp1
+.if defined(_ALWAYS_DEP) || defined(_BUILD_DEP) || target(depends-list)
+	@make depends-list FULL_PACKAGE_NAME=Yes | ${_SORT_DEPENDS}>$@.tmp1
 .endif
-.if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS) || \
-	target(package-depends)
-	@${MAKE} package-depends FULL_PACKAGE_NAME=Yes | ${SORT_DEPENDS} >$@.tmp2
+.if defined(_ALWAYS_DEP) || defined(_RUN_DEP) || target(package-depends)
+	@make package-depends FULL_PACKAGE_NAME=Yes | ${_SORT_DEPENDS} >$@.tmp2
 .endif
 .for I in 1 2
 	@if [ -s $@.tmp$I ]; then \
@@ -2322,38 +2330,26 @@ README.html:
 
 .if !target(print-depends-list)
 print-depends-list:
-.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
-	defined(LIB_DEPENDS) || defined(DEPENDS) || target(depends-list)
+.if defined(_ALWAYS_DEP) || defined(_BUILD_DEP) || target(depends-list)
 	@echo -n 'This port requires package(s) "'
-	@echo -n `make ${_DEPEND_THRU} depends-list | ${SORT_DEPENDS}`
+	@echo -n `make ${_DEPEND_THRU} depends-list | ${_SORT_DEPENDS}`
 	@echo '" to build.'
 .endif
 .endif
 
 .if !target(print-package-depends)
 print-package-depends:
-.if defined(RUN_DEPENDS) || defined(LIB_DEPENDS) || defined(DEPENDS) || \
-   target(package-depends)
+.if defined(_ALWAYS_DEP) || defined(_RUN_DEP) || target(package-depends)
 	@echo -n 'This port requires package(s) "'
-	@echo -n `make ${_DEPEND_THRU} package-depends | ${SORT_DEPENDS}`
+	@echo -n `make ${_DEPEND_THRU} package-depends | ${_SORT_DEPENDS}`
 	@echo '" to run.'
 .endif
 .endif
 
-# Internal variables, used by recursive dependencies targets 
-
-_ALWAYS_DEP = ${LIB_DEPENDS:C/^[^:]*://:C/:.*//} \
-	${DEPENDS:C/:.*//} 
-
-_BUILD_DEP = ${FETCH_DEPENDS:C/^[^:]*://:C/:.*//} \
-	${BUILD_DEPENDS:C/^[^:]*://:C/:.*//}
-
-_RUN_DEP = ${RUN_DEPENDS:C/^[^:]*://:C/:.*//} 
 
 .if !target(recurse-build-depends)
 recurse-build-depends:
-.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
-   defined(LIB_DEPENDS) || defined(DEPENDS) || defined(RUN_DEPENDS)
+.if defined(_ALWAYS_DEP) || defined(_BUILD_DEP) || defined(_RUN_DEP)
 	@pname=`make _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
 	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
 		 | tr '\040' '\012' | sort -u`; do \
@@ -2374,8 +2370,7 @@ recurse-build-depends:
 
 .if !target(depends-list)
 depends-list:
-.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
-   defined(LIB_DEPENDS) || defined(DEPENDS)
+.if defined(_ALWAYS_DEP) || defined(_BUILD_DEP)
 	@for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
 		if cd $$dir 2>/dev/null; then \
@@ -2394,7 +2389,7 @@ depends-list:
 # Build (recursively) a list of package dependencies suitable for tsort
 .if !target(recurse-package-depends)
 recurse-package-depends:
-.if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
+.if defined(_ALWAYS_DEP) || defined(_RUN_DEP)
 	@pname=`make _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
 	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
@@ -2415,7 +2410,7 @@ recurse-package-depends:
 
 .if !target(package-depends)
 package-depends:
-.if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
+.if defined(_ALWAYS_DEP) || defined(_RUN_DEP)
 	@for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
 		if cd $$dir 2>/dev/null; then \
@@ -2488,7 +2483,7 @@ fake-pkg:
 		if [ -f ${PKGDIR}/MESSAGE ]; then \
 			${CP} ${PKGDIR}/MESSAGE ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
 		fi; \
-		for dep in `make package-depends ECHO_MSG=${TRUE} | ${SORT_DEPENDS}`; do \
+		for dep in `make package-depends ECHO_MSG=${TRUE} | ${_SORT_DEPENDS}`; do \
 			if [ -d ${PKG_DBDIR}/$$dep ]; then \
 				if ! ${GREP} ^${PKGNAME}$$ ${PKG_DBDIR}/$$dep/+REQUIRED_BY \
 					>/dev/null 2>&1; then \
