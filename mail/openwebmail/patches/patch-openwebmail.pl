@@ -1,21 +1,15 @@
---- cgi-bin/openwebmail/openwebmail.pl.orig	Tue Feb  5 11:29:23 2002
-+++ cgi-bin/openwebmail/openwebmail.pl	Tue Feb  5 11:30:24 2002
-@@ -21,12 +21,12 @@
- $ENV{BASH_ENV} = ""; # no startup sciprt for bash
- umask(0007); # make sure the openwebmail group can write
- 
--push (@INC, '/usr/local/www/cgi-bin/openwebmail', ".");
-+push (@INC, '%%PREFIX%%/cgi-bin/openwebmail', ".");
- require "openwebmail-shared.pl";
+--- cgi-bin/openwebmail/openwebmail.pl.orig	Wed Feb 27 16:44:43 2002
++++ cgi-bin/openwebmail/openwebmail.pl	Wed Feb 27 18:41:29 2002
+@@ -31,7 +31,7 @@
  require "filelock.pl";
  
  local %config;
--readconf(\%config, "/usr/local/www/cgi-bin/openwebmail/etc/openwebmail.conf");
+-readconf(\%config, "$SCRIPT_DIR/etc/openwebmail.conf");
 +readconf(\%config, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf");
  require $config{'auth_module'} or
     openwebmailerror("Can't open authentication module $config{'auth_module'}");
  
-@@ -64,7 +64,8 @@
+@@ -62,7 +62,8 @@
  %style = %{&readstyle};
  
  ($prefs{'language'} =~ /^([\w\d\._]+)$/) && ($prefs{'language'} = $1);

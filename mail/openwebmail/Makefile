@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/02/06 02:57:22 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2002/02/27 11:18:55 kevlo Exp $
 
 COMMENT=	"highly configurable webmail client"
 
-DISTNAME=	openwebmail-1.61
+DISTNAME=	openwebmail-1.62
 CATEGORIES=	mail
 NEED_VERSION=	1.504
 
@@ -38,13 +38,12 @@ SYSCONFDIR=	${PREFIX}/conf
 
 SCRIPTFILES=	checkmail.pl openwebmail-main.pl openwebmail-prefs.pl \
 		openwebmail-read.pl openwebmail-send.pl openwebmail-viewatt.pl \
-		openwebmail.pl spellcheck.pl
+		openwebmail.pl openwebmail-spell.pl
 CONFFILE=	openwebmail.conf
 
 do-configure:
 .for file in ${SCRIPTFILES}
-	@perl -pi -e 's@%%PREFIX%%@${PREFIX}@g; \
-		s@%%SYSCONFDIR%%@${SYSCONFDIR}@g' \
+	@perl -pi -e 's@%%SYSCONFDIR%%@${SYSCONFDIR}@g' \
 		${WRKSRC}/cgi-bin/openwebmail/${file}
 .endfor
 	@cd ${WRKSRC} && cp -Rp data htdocs

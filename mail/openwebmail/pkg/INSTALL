@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2002/02/05 04:53:17 kevlo Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/02/27 11:19:03 kevlo Exp $
 #
 # Pre/post-installation setup of openwebmail
 
@@ -13,7 +13,7 @@ CGI_DIR=${PREFIX}/cgi-bin/openwebmail
 SAMPLE_CONFIG_FILE=$CONFIG_FILE.dist
 SCRIPTFILES="checkmail.pl openwebmail-main.pl openwebmail-prefs.pl \
 	    openwebmail-read.pl openwebmail-send.pl openwebmail-viewatt.pl \
-	    openwebmail.pl spellcheck.pl"
+	    openwebmail.pl openwebmail-spell.pl"
 
 # Function: set up mail group 
 #
