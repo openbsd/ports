@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2004/01/08 21:11:22 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2004/01/14 19:51:40 sturm Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -51,21 +51,19 @@ RUN_DEPENDS=		::lang/python/${VERSION}
 # in the final package names.  On architectures without shared libs,
 # no_xxx flavors dictate what gets linked into the Python binary.
 
-# this cannot be put into 2.3/Makefile due to NO_SHARED_LIBS being
-# only defined in bsd.port.mk but MULTI_PACKAGES being already used
-# in there, too
+# this cannot be put into 2.3/Makefile due to NO_SHARED_LIBS vs MULTI_PACKAGES
 .if ${VERSION} == "2.3" &&  empty(FLAVOR:L:Mno_bsddb)
 BUILD_DEPENDS+=		::databases/db/v4
 SETUP_LOCAL+=		Setup.bsddb
 .  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
 MULTI_PACKAGES+=	-bsddb
 .  else
-LIB_DEPENDS+=		db.4::databases/db/v4
+LIB_DEPENDS+=		lib/db4/db.4::databases/db/v4
 .  endif
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-bsddb"
-LIB_DEPENDS+=		db.4:db->=4.1.25p0:databases/db/v4
+LIB_DEPENDS+=		lib/db4/db.4::databases/db/v4
 .endif
 
 .if empty(FLAVOR:L:Mno_gdbm)
