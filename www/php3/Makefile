@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2000/12/14 15:25:20 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2001/01/04 00:51:23 brad Exp $
+
+# This port current only works with archs supporting dynamic loading
+ONLY_FOR_ARCHS=	i386 m68k sparc
 
 DISTNAME=	php-3.0.18
 PKGNAME=	php3-3.0.18
 CATEGORIES=	www lang
-NEED_VERSION=	1.319
+NEED_VERSION=	1.336
 
 HOMEPAGE=	http://www.php.net/
 
@@ -18,9 +21,6 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-
-# This port current only works with archs supporting dynamic loading
-ONLY_FOR_ARCHS=	i386 m68k sparc mips
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \

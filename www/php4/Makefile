@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2001/01/03 00:33:38 avsm Exp $
+# $OpenBSD: Makefile,v 1.19 2001/01/04 00:51:23 brad Exp $
+
+# This port current only works with archs supporting dynamic loading
+ONLY_FOR_ARCHS=	i386 m68k sparc
 
 DISTNAME=	php-4.0.4
 PKGNAME=	php4-4.0.4
@@ -19,9 +22,6 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-
-# This port current only works with archs supporting dynamic loading
-ONLY_FOR_ARCHS=		i386 m68k sparc mips powerpc
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
@@ -179,9 +179,9 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/php4
 	${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/share/doc/php4
 	${INSTALL_DATA} ${WRKSRC}/php.ini-optimized ${PREFIX}/share/doc/php4
-	sed 's,y0y0y0,${TRUEPREFIX},' \
+	@sed 's,y0y0y0,${TRUEPREFIX},' \
 		<${FILESDIR}/php4-enable >${PREFIX}/sbin/php4-enable
-	chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/php4-enable
-	chmod ${BINMODE} ${PREFIX}/sbin/php4-enable
+	@chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/php4-enable
+	@chmod ${BINMODE} ${PREFIX}/sbin/php4-enable
 
 .include <bsd.port.mk>
