@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2001/05/06 00:12:45 lebel Exp $
+# $OpenBSD: Makefile,v 1.25 2001/06/27 14:54:53 brad Exp $
 
 COMMENT=	"high-performance CORBA ORB with support for the C language"
 
-DISTNAME=	ORBit-0.5.7
+DISTNAME=	ORBit-0.5.8
 CATEGORIES=	devel
-NEED_VERSION=	1.402
+NEED_VERSION=	1.413
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/ORBit
 
