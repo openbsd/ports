@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2003/09/02 18:49:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2003/09/25 06:50:21 pvalchev Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 8.0"
 
-PKGNAME=	redhat_base-8.0p2
+PKGNAME=	redhat_base-8.0p3
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
@@ -71,13 +71,14 @@ do-install:
 	@elf2olf -o linux ${PREFIX}/sbin/ldconfig
 	@elf2olf -o linux ${PREFIX}/bin/rpm
 
+# rename ldconfig and install wrapper
+	@cp -p ${PREFIX}/sbin/ldconfig ${PREFIX}/sbin/ldconfig.bin
+	${INSTALL_SCRIPT} ${FILESDIR}/ldconfig ${PREFIX}/sbin
+
 # make a copy of ld.so, convert to olf and then patch
 	@cp -p ${PREFIX}/lib/ld-2.3.2.so ${PREFIX}/usr/bin/ld-2.3.2-olf.so
 	@elf2olf -o linux ${PREFIX}/usr/bin/ld-2.3.2-olf.so
 	@perl ${FILESDIR}/fix-ldd.pl ${PREFIX}/usr/bin/ld-2.3.2-olf.so
-
-# run ldconfig
-	-chroot ${PREFIX} /sbin/ldconfig
 
 post-install:
 # remove setuid root bits

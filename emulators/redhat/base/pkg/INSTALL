@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2001/09/16 16:47:32 naddy Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/09/25 06:50:21 pvalchev Exp $
 #
 # Pre/post-installation setup of redhat_base
 
@@ -24,6 +24,24 @@ do_notice_link()
     echo "|"
     echo "| To make this port active you must make /emul/linux a symlink to"
     echo "| $PREFIX."
+    echo "|"
+}
+
+do_notice_sysctl()
+{
+    echo "| *** Warning: Linux compatibility not enabled."
+    echo "|"
+    echo "| Before this port will work you must:"
+    echo "|"
+    echo "|   1. Enable Linux compatibility:"
+    echo "|"
+    echo "|      Documentation on how to enable Linux compatibility can be"
+    echo "|      found in the compat_linux(8) man page."
+    echo "|"
+    echo "|   2. Update the Linux ld.so.cache file:"
+    echo "|"
+    echo "|       Once Linux compatibility has been enabled, run"
+    echo "|       /emul/linux/sbin/ldconfig as root."
     echo "|"
 }
 
@@ -60,7 +78,14 @@ case $2 in
 	else
 	    ln -sf $PREFIX /emul/linux
 	fi
-	
+
+	# Only run ldconfig if kern.emul.linux = 1.
+	if [ x`sysctl -n kern.emul.linux` = x1 ]; then
+		${PREFIX}/sbin/ldconfig
+	else
+		do_notice_sysctl
+	fi
+
 	do_notice_bottom $1
 	;;
     *)

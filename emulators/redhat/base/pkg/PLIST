@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/09/02 18:49:50 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/09/25 06:50:21 pvalchev Exp $
 @pkgcfl linux_lib-*
 @exec mkdir -p %D/dev
 @exec ln -sf /dev/console %D/dev/tty0
@@ -10,6 +10,14 @@
 @exec ln -sf /dev/sound %D/dev/dsp
 @exec ln -sf /dev/null %D/dev/null
 @unexec rm -rf %D/dev
+@unexec rm -f %D/etc/ld.so.cache
+@unexec rm -f %D/lib/libtermcap.so.2
+@unexec rm -f %D/usr/lib/libstdc++.so.2.9
+@unexec rm -f %D/usr/lib/libstdc++.so.2.8
+@unexec rm -f %D/usr/lib/libstdc++.so.2.7.2
+@unexec rm -f %D/usr/lib/libstdc++-libc6.1-1.so.2
+@unexec rm -f %D/usr/lib/libjpeg.so.62
+@unexec rm -f %D/usr/lib/libg++.so.2.7.2
 bin/basename
 bin/bash
 bin/bash2
@@ -101,7 +109,7 @@ etc/gtk/gtkrc.vi_VN.viscii111
 etc/gtk/gtkrc.yi
 etc/gtk/gtkrc.zh_CN
 etc/gtk/gtkrc.zh_TW.big5
-etc/ld.so.cache
+@comment no checksum
 etc/ld.so.conf
 etc/logrotate.d/rpm
 etc/nsswitch.conf
@@ -166,14 +174,16 @@ lib/libresolv-2.3.2.so
 lib/libresolv.so.2
 lib/librt-2.3.2.so
 lib/librt.so.1
-lib/libtermcap.so.2
 lib/libtermcap.so.2.0.8
 lib/libthread_db-1.0.so
 lib/libthread_db.so.1
 lib/libutil-2.3.2.so
 lib/libutil.so.1
 sbin/ldconfig
+sbin/ldconfig.bin
 sbin/sln
+usr/X11R6/lib/X11/XErrorDB
+usr/X11R6/lib/X11/XKeysymDB
 usr/X11R6/lib/X11/locale/C/XI18N_OBJS
 usr/X11R6/lib/X11/locale/C/XLC_LOCALE
 usr/X11R6/lib/X11/locale/armscii-8/Compose
@@ -307,6 +317,7 @@ usr/X11R6/lib/X11/locale/zh_TW.big5/XLC_LOCALE
 usr/X11R6/lib/X11/locale/zh_TW/Compose
 usr/X11R6/lib/X11/locale/zh_TW/XI18N_OBJS
 usr/X11R6/lib/X11/locale/zh_TW/XLC_LOCALE
+usr/X11R6/lib/X11/rgb.txt
 usr/X11R6/lib/libICE.so.6
 usr/X11R6/lib/libOSMesa.so.3
 usr/X11R6/lib/libSM.so.6
@@ -618,7 +629,6 @@ usr/lib/libfontconfig.so.1
 usr/lib/libform.so.5
 usr/lib/libfreetype.so.6
 usr/lib/libfreetype.so.6.3.1
-usr/lib/libg++.so.2.7.2
 usr/lib/libg++.so.2.7.2.8
 usr/lib/libgdk-1.2.so.0
 usr/lib/libgdk-1.2.so.0.9.1
@@ -632,7 +642,6 @@ usr/lib/libgtk-1.2.so.0
 usr/lib/libgtk-1.2.so.0.9.1
 usr/lib/libhistory.so.4
 usr/lib/libiberty.a
-usr/lib/libjpeg.so.62
 usr/lib/libjpeg.so.62.0.0
 usr/lib/libmenu.so.5
 usr/lib/libncurses.so.5
@@ -652,9 +661,7 @@ usr/lib/librpmdb-4.1.so
 usr/lib/librpmio-4.1.so
 usr/lib/libstdc++-2-libc6.1-1-2.9.0.so
 usr/lib/libstdc++-3-libc6.2-2-2.10.0.so
-usr/lib/libstdc++-libc6.1-1.so.2
 usr/lib/libstdc++-libc6.2-2.so.3
-usr/lib/libstdc++.so.2.7.2
 usr/lib/libstdc++.so.2.7.2.8
 usr/lib/libstdc++.so.2.8.0
 usr/lib/libstdc++.so.2.9.dummy
@@ -4821,6 +4828,7 @@ usr/share/locale/zh_TW/LC_MESSAGES/fileutils.mo
 usr/share/locale/zh_TW/LC_MESSAGES/libc.mo
 usr/share/man/ja/man8/rpm.8.gz
 usr/share/man/ja/man8/rpm2cpio.8.gz
+usr/share/man/man1/..1.gz
 usr/share/man/man1/:.1.gz
 usr/share/man/man1/[.1.gz
 usr/share/man/man1/addr2line.1.gz
@@ -7337,8 +7345,6 @@ usr/lib/libmenu.so.5.2
 usr/lib/libncurses.so.5.2
 usr/lib/libpanel.so.5.2
 usr/lib/libreadline.so.4.3
-usr/lib/libstdc++.so.2.8
-usr/lib/libstdc++.so.2.9
 @exec mkdir -p %D/var/spool/repackage
 @dirrm var/spool/repackage
 @dirrm var/spool
