@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2005/01/18 12:57:52 wilfried Exp $
+# $OpenBSD: Makefile,v 1.18 2005/03/13 05:06:18 kurt Exp $
+
+BROKEN="requires upgrade to sync with mozilla"
 
 COMMENT=		"GNOME web browser based on gecko"
 
@@ -6,7 +8,7 @@ V=			1.2.13
 DISTNAME=		galeon-${V}
 PKGNAME=		${DISTNAME}p1
 CATEGORIES=		www
-MOZ=			1.6
+MOZ=			1.7.5
 
 HOMEPAGE=		http://galeon.sourceforge.net/
 
