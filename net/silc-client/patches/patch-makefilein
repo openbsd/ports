@@ -1,7 +1,6 @@
-$OpenBSD: patch-makefilein,v 1.1 2002/01/27 13:29:26 naddy Exp $
---- Makefile.in.orig	Tue Jan 22 20:30:22 2002
-+++ Makefile.in	Sun Jan 27 14:17:09 2002
-@@ -534,19 +534,10 @@ install-dirs:
+--- Makefile.in.orig	Thu Jan 31 22:33:44 2002
++++ Makefile.in	Fri Feb  1 21:06:00 2002
+@@ -533,19 +533,10 @@
  	-mkdir -p $(docdir)
  	-mkdir -p $(logsdir)
  
@@ -11,7 +10,7 @@ $OpenBSD: patch-makefilein,v 1.1 2002/01/27 13:29:26 naddy Exp $
 -	fi
 -
 -sim-install:
--	$(INSTALL_DATA) $(srcdir)/lib/silcsim/*.so $(modulesdir)/
+-	-$(INSTALL_DATA) $(srcdir)/lib/silcsim/*.so $(modulesdir)/
 -
  doc-install:
  	$(INSTALL_DATA) $(srcdir)/doc/CodingStyle $(docdir)/
@@ -22,7 +21,7 @@ $OpenBSD: patch-makefilein,v 1.1 2002/01/27 13:29:26 naddy Exp $
  	$(INSTALL_DATA) $(srcdir)/COPYING $(docdir)/
  	$(INSTALL_DATA) $(srcdir)/CHANGES $(docdir)/
  	$(INSTALL_DATA) $(srcdir)/CREDITS $(docdir)/
-@@ -554,24 +545,13 @@ doc-install:
+@@ -553,24 +544,13 @@
  	$(INSTALL_DATA) $(srcdir)/INSTALL $(docdir)/
  	$(INSTALL_DATA) $(srcdir)/TODO $(docdir)/
  

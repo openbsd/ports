@@ -1,7 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2002/01/16 21:22:34 naddy Exp $
---- configure.orig	Mon Jan 14 21:48:08 2002
-+++ configure	Mon Jan 14 21:49:11 2002
-@@ -2661,12 +2661,6 @@ else
+--- configure.orig	Thu Jan 31 22:33:39 2002
++++ configure	Fri Feb  1 21:15:34 2002
+@@ -2660,12 +2660,6 @@
    SILC_DIST_WIN32DLL_FALSE=
  fi
  
@@ -14,7 +13,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2002/01/16 21:22:34 naddy Exp $
  # Program checking
  # Find a good install program.  We prefer a C program (faster),
  # so one script is as good as another.  But avoid the broken or
-@@ -12327,16 +12321,14 @@ echo "${ECHO_T}yes" >&6
+@@ -12326,16 +12320,14 @@
  #define SILC_DEBUG 1
  EOF
  
@@ -22,13 +21,13 @@ $OpenBSD: patch-configure,v 1.1.1.1 2002/01/16 21:22:34 naddy Exp $
 +    CFLAGS="-g $CFLAGS"
      ;;
    *)
-     echo "$as_me:12333: result: no" >&5
+     echo "$as_me:12332: result: no" >&5
  echo "${ECHO_T}no" >&6
 -    CFLAGS="-O2 -g $CFLAGS"
      ;;
  esac
  else
 -  CFLAGS="-O2 -g $CFLAGS"
-         echo "$as_me:12340: result: no" >&5
+         echo "$as_me:12339: result: no" >&5
  echo "${ECHO_T}no" >&6
  fi;
