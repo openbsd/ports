@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/10 00:40:57 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/12/04 14:22:02 espie Exp $
 
 CATEGORIES=x11
 HOMEPAGE=http://wwwrzstud.rz.uni-karlsruhe.de/%7Euddn/xglobe/
@@ -35,7 +35,7 @@ post-install::
 
 
 .if ${FLAVOR:L:Mqt2}
-LIB_DEPENDS=qt.2.:x11/qt2
+LIB_DEPENDS=qt.2.::x11/qt2
 MAKE_FLAGS+=QT_INCLUDE_DIR=${LOCALBASE}/include/X11/qt2
 MAKE_FLAGS+=QT_LIB_DIR=${LOCALBASE}/lib/qt2
 MAKE_FLAGS+=MOC=moc2
