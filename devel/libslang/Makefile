@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2000/10/22 14:03:07 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2000/11/11 22:40:55 brad Exp $
+
+.if ${MACHINE_ARCH} == "powerpc"
+BROKEN=		"BROKEN on powerpc: reason unknown at the moment"
+.endif
 
 DISTNAME=	slang-1.4.2
 PKGNAME=	libslang-1.4.2
