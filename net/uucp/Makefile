@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/13 02:39:04 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2001/07/13 03:10:52 fgsch Exp $
 
-COMMENT=	"Unix-to-Unix Copy Program suite"
+COMMENT=	"UUCP suite"
 
 DISTNAME=	uucp-1.06.2
 CATEGORIES=	net
