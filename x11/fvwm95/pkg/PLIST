@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 19:26:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/12/30 01:20:39 espie Exp $
+@conflict fvwm2-*
+@conflict fvwm2+fvicons-*
 bin/fvwm95
 bin/xpmroot
 icons/

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-fvwm2,v 1.6 2004/09/18 13:19:26 espie Exp $
+@comment $OpenBSD: PLIST-fvwm2,v 1.7 2004/12/30 01:20:39 espie Exp $
 @conflict fvwm2+fvicons-*
+@conflict fvwm95-*
 bin/FvwmCommand
 bin/fvwm-config
 bin/fvwm-menu-desktop
