@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.77 2003/10/08 19:35:30 jcs Exp $
+# $OpenBSD: Makefile,v 1.78 2003/11/04 17:42:43 jakob Exp $
 
 COMMENT=	"network protocol analyzer"
 
-VERSION=	0.9.15
+VERSION=	0.9.16
 DISTNAME=	ethereal-${VERSION}
 CATEGORIES=	net x11
 
@@ -29,13 +29,18 @@ SEPARATE_BUILD=		concurrent
 FLAVORS=	no_x11 snmp adns
 FLAVOR?=
 
+CONFIGURE_ARGS+=	--enable-gtk2 \
+			--with-glib-prefix=${LOCALBASE}
+LIB_DEPENDS+=		glib-2.0.0.0,gthread-2.0.0.0::devel/glib2
+
 .if ${FLAVOR:L:Mno_x11}
-LIB_DEPENDS+=		glib.1.2,gmodule.1.2::devel/glib
+USE_X11=		No
 CONFIGURE_ARGS+=	--disable-ethereal
 .else
 USE_X11=		Yes
-LIB_DEPENDS+=		gtk.1.2,gdk.1.2::x11/gtk+
-CONFIGURE_ARGS+=	--enable-ethereal
+CONFIGURE_ARGS+=	--enable-ethereal \
+			--with-gtk-prefix=${LOCALBASE}
+LIB_DEPENDS+=		gdk_pixbuf-2.0.0.0,gdk-x11-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 .endif
 
 .if ${FLAVOR:L:Msnmp}
