@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:41:35 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/11/15 12:57:42 kevlo Exp $
 
 DISTNAME=	bpl+
 PKGNAME=	bpl+-1.0
 CATEGORIES=	comms
 
 MAINTAINER=	ports@openbsd.org
-BROKEN="Tmpnam() warning is a genuine problem"
 
 PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	Yes
