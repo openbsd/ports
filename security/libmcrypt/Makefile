@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2001/02/26 04:48:29 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2001/03/24 01:34:00 avsm Exp $
 
-DISTNAME=	libmcrypt-2.4.9
+DISTNAME=	libmcrypt-2.4.10
 CATEGORIES=	security
-NEED_VERSION=	1.351
+NEED_VERSION=	1.363
 MASTER_SITES=	ftp://mcrypt.hellug.gr/pub/mcrypt/libmcrypt/ \
-		ftp://argeas.cs-net.gr/pub/unix/mcrypt
+		ftp://argeas.cs-net.gr/pub/unix/mcrypt/libmcrypt/
 
 HOMEPAGE=	http://mcrypt.hellug.gr/lib/
+MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
+
+COMMENT=	interface to access block and stream encryption algorithms
 
 LIB_DEPENDS=	mhash.2::security/mhash
-
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
