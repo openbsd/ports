@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2004/09/18 09:36:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2004/12/27 22:32:23 sturm Exp $
 bin/appletproxy
 bin/drkonqi
 bin/extensionproxy
@@ -2459,13 +2459,13 @@ share/doc/HTML/en/kxkb/index.cache.bz2
 share/doc/HTML/en/kxkb/index.docbook
 share/doc/kdm/
 share/doc/kdm/README
-share/fonts/
+@fontdir share/fonts/
 share/fonts/9x15.pcf.gz
 share/fonts/console8x16.pcf.gz
 share/fonts/console8x8.pcf.gz
-share/fonts/fonts.dir
-share/fonts/override/
-share/fonts/override/fonts.dir
+@comment share/fonts/fonts.dir
+@fontdir share/fonts/override/
+@comment share/fonts/override/fonts.dir
 share/icons/crystalsvg/128x128/apps/access.png
 share/icons/crystalsvg/128x128/apps/acroread.png
 share/icons/crystalsvg/128x128/apps/applixware.png
