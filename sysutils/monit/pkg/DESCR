@@ -20,5 +20,3 @@ monit supports:
  * Flexible and customizable email alert messages                    
  * Protocol verification. HTTP, FTP, SMTP, POP, IMAP and NNTP
  * A http interface to make monit accessible from a Browser
-
-WWW: ${HOMEPAGE}
