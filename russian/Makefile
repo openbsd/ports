@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/07/21 08:28:24 form Exp $
+# $OpenBSD: Makefile,v 1.2 1999/07/05 16:36:02 form Exp $
 #
 
+    SUBDIR += wget-msgs
     SUBDIR += xcyrillic
     SUBDIR += xruskb
 
