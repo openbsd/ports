@@ -1,22 +1,26 @@
-# $OpenBSD: Makefile,v 1.80 2003/06/30 12:19:23 espie Exp $
+# $OpenBSD: Makefile,v 1.81 2004/01/31 14:58:03 espie Exp $
 
-ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
+ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
 MAKE_GXX=Yes
 MAKE_FORTRAN=Yes
 MAKE_OBJC=Yes
 # Java is still mostly broken (boehm-gc)
-MAKE_JAVA=No
-
 
 .if ${MACHINE_ARCH} == "i386"
+MAKE_JAVA=Yes
 #MAKE_ADA=Yes
-MAKE_ADA=No
 #AS_PATH=/usr/bin/as
 #LD_PATH=/usr/bin/ld
-.else
-MAKE_ADA=No
 .endif
+
+MAKE_GXX?=No
+MAKE_FORTRAN?=No
+MAKE_OBJC?=No
+MAKE_JAVA?=No
+MAKE_ADA?=No
+
+MYDIR=lang/egcs/snapshot
 
 # This is a configuration file for gcc
 
@@ -24,7 +28,6 @@ COM=		'GNU compiler collection'
 COMMENT=	${COM}: core C compiler
 COMMENT-c++ =	${COM}: C++ compiler
 COMMENT-estdc=	${COM}: C++ compiler library
-COMMENT-chill=	${COM}: Chill compiler
 COMMENT-g77=	${COM}: f77 compiler
 COMMENT-java=	${COM}: java compiler
 COMMENT-objc=	${COM}: obj C compiler
@@ -33,7 +36,6 @@ COMMENT-ada=	${COM}: Ada compiler
 PKGNAME=	gcc-$V
 PKGNAME-c++ =	g++-$V
 PKGNAME-estdc =	libstdc++-$V
-PKGNAME-chill=	gchill-$V
 PKGNAME-g77=	g77-$V
 PKGNAME-java=	gcj-$V
 PKGNAME-objc=	gobjc-$V
@@ -41,6 +43,12 @@ PKGNAME-ada=	gnat-$V
 
 BUILD_DEPENDS=	::devel/autoconf/2.13
 BUILD_DEPENDS+=	::devel/metaauto
+SUBPACKAGE?=
+.if ${MAKE_JAVA:L} == "yes"
+.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-java"
+LIB_DEPENDS+=gc::devel/boehm-gc
+.  endif
+.endif
 
 # This can be patched out, apart from java that wants a pure parser.
 BUILD_DEPENDS+= :bison-*:devel/bison
@@ -59,7 +67,7 @@ PERMIT_DISTFILES_CDROM=Yes
 # see files/tests for precise testing procedure
 
 
-.if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
+.if ${MAKE_JAVA:L} == "yes"
 MAKE_GXX=Yes
 .endif
 
@@ -70,13 +78,13 @@ DESCR=${PKGDIR}/DESCR
 REGRESS_DEPENDS=::devel/dejagnu
 
 # No way around it, java wants a pure parser
-.if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
+.if ${MAKE_JAVA:L} == "yes"
 BUILD_DEPENDS+=:bison-*:devel/bison
 .endif
 
 #### fetch section
 
-V=3.2.3
+V=3.3.2
 DIRECTORY=releases/${DISTNAME}/
 DISTNAME=   gcc-$V
 
@@ -152,7 +160,7 @@ MASTER_SITES=${SITES:S/%DATE%/${LATEST_DATE}/}
 
 #ac_dirs=gcc libiberty libstdc++-v3 libf2c/libI77 libffi fastjar libjava
 ac_dirs=gcc libiberty libf2c/libI77 libffi fastjar libjava
-rm_dirs=zlib texinfo #boehm-gc
+rm_dirs=zlib texinfo boehm-gc
 
 # get openbsd configuration files where they should be
 post-patch:
@@ -185,24 +193,24 @@ CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gcc
 
 LANGS=c
-.if defined(MAKE_GXX) && ${MAKE_GXX:L} == "yes"
+.if ${MAKE_GXX:L} == "yes"
 LANGS:=${LANGS},c++
 MULTI_PACKAGES+=-c++ -estdc
 .endif
-.if defined(MAKE_FORTRAN) && ${MAKE_FORTRAN:L} == "yes"
+.if ${MAKE_FORTRAN:L} == "yes"
 LANGS:=${LANGS},f77
 MULTI_PACKAGES+=-g77
 .endif
-.if defined(MAKE_OBJC) && ${MAKE_OBJC:L} == "yes"
+.if ${MAKE_OBJC:L} == "yes"
 LANGS:=${LANGS},objc
 MULTI_PACKAGES+=-objc
 .endif
-.if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
+.if ${MAKE_JAVA:L} == "yes"
 LANGS:=${LANGS},java
 MULTI_PACKAGES+=-java
 CONFIGURE_ARGS+=--enable-java-gc=system-boehm
 .endif
-.if defined(MAKE_ADA) && ${MAKE_ADA:L} == "yes"
+.if ${MAKE_ADA:L} == "yes"
 LANGS:=${LANGS},ada
 MULTI_PACKAGES+=-ada
 
@@ -226,12 +234,9 @@ CONFIGURE_ARGS= --verbose --program-transform-name=s,^,e, \
 CONFIGURE_ARGS+=--enable-cpp
 CONFIGURE_ARGS+=--enable-languages=${LANGS}
 
-.if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
+.if ${MAKE_JAVA:L} == "yes"
 CONFIGURE_ARGS+=--enable-sjlj-exceptions
 
-# For boehm-gc
-#CONFIGURE_ENV+= LDFLAGS="${LDFLAGS} -L/usr/local/lib -lgc"
-#CONFIGURE_ENV+= CPPFLAGS="${CPPFLAGS} -I/usr/local/include"
 .endif
 
 
@@ -258,8 +263,10 @@ SEPARATE_BUILD=concurrent
 
 ####
 # build section
-# should work without gmake. If it turns out to be needed, this must be 
-# reported to MAINTAINER.
+# Issues without gmake:
+# stuff doesn't get passed thru correctly to libtool in multi-do
+# libstdc++-v3 wants gmake
+# java wants gmake
 USE_GMAKE= yes
 
 # you shouldn't skip bootstrap unless you know what you're doing
@@ -283,9 +290,7 @@ pre-build:
 post-build:
 		# avoid packaging include copies along...
 	find ${WRKBUILD} -name \*.orig|xargs rm
-	mkdir -p ${WRKBUILD}/gcc/include/machine
-	cp ${FILESDIR}/include/machine/ansi.h ${WRKBUILD}/gcc/include/machine
-.if defined(MAKE_ADA) && ${MAKE_ADA:L} == "yes"
+.if ${MAKE_ADA:L} == "yes"
 	cd ${WRKBUILD}/gcc && env ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} gnatlib_and_tools
 .endif
 
@@ -295,21 +300,21 @@ post-install:
 
 # Tests still need to be performed at the end of install, I don't know why.
 
-REGRESS_DEPENDS+=::lang/egcs/stable
-.if defined(MAKE_GXX) && ${MAKE_GXX:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/stable,-c++,-estdc
+REGRESS_DEPENDS+=::${MYDIR}
+.if ${MAKE_GXX:L} == "yes"
+REGRESS_DEPENDS+=::${MYDIR},-c++,-estdc
 .endif
-.if defined(MAKE_FORTRAN) && ${MAKE_FORTRAN:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/stable,-g77
+.if ${MAKE_FORTRAN:L} == "yes"
+REGRESS_DEPENDS+=::${MYDIR},-g77
 .endif
-.if defined(MAKE_OBJC) && ${MAKE_OBJC:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/stable,-objc
+.if ${MAKE_OBJC:L} == "yes"
+REGRESS_DEPENDS+=::${MYDIR},-objc
 .endif
-.if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/stable,-java
+.if ${MAKE_JAVA:L} == "yes"
+REGRESS_DEPENDS+=::${MYDIR},-java
 .endif
-.if defined(MAKE_ADA) && ${MAKE_ADA:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/stable,-ada
+.if ${MAKE_ADA:L} == "yes"
+REGRESS_DEPENDS+=::${MYDIR},-ada
 .endif
 
 TEST_RESULT=${WRKBUILD}/test.result
@@ -341,10 +346,10 @@ GCC_NAME=${WRKBUILD}/gcc/xgcc
 
 .if defined(PACKAGING) && defined(SUBPACKAGE)
 .  if !empty(SUBPACKAGE) && ${SUBPACKAGE} != "-estdc"
-RUN_DEPENDS+=::lang/egcs/stable
+RUN_DEPENDS+=::${MYDIR}
 .  endif
 .  if ${SUBPACKAGE} == "-c++"
-RUN_DEPENDS+=::lang/egcs/stable,-estdc
+RUN_DEPENDS+=::${MYDIR},-estdc
 .  endif
 .endif
 

@@ -1,4 +1,4 @@
-/* $OpenBSD: stdbool.h,v 1.1 2002/01/01 09:32:27 espie Exp $ */
+/* $OpenBSD: stdbool.h,v 1.2 2004/01/31 14:58:03 espie Exp $ */
 #ifndef _STDBOOL_H
 #define _STDBOOL_H
 

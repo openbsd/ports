@@ -34,8 +34,15 @@ Boston, MA 02111-1307, USA.  */
   (MASK_80387 | MASK_IEEE_FP | MASK_FLOAT_RETURNS | MASK_NO_FANCY_MATH_387)
 
 /* Run-time target specifications */
-#undef CPP_PREDEFINES 
-#define CPP_PREDEFINES "-D__unix__ -D__ELF__ -D__i386__ -D__OpenBSD__ -Asystem(unix) -Asystem(OpenBSD)"
+
+#define TARGET_OS_CPP_BUILTINS()		\
+  do						\
+    {						\
+    	OPENBSD_OS_CPP_BUILTINS_ELF();		\
+	builtin_define ("__unix__");		\
+	builtin_assert ("system=bsd");		\
+    }						\
+  while (0)
 
 /* As an elf system, we need crtbegin/crtend stuff.  */
 #undef STARTFILE_SPEC
@@ -56,9 +63,6 @@ Boston, MA 02111-1307, USA.  */
 
 #undef WCHAR_TYPE
 #define WCHAR_TYPE "int"
-
-#undef WCHAR_UNSIGNED
-#define WCHAR_UNSIGNED 0
 
 #undef WCHAR_TYPE_SIZE
 #define WCHAR_TYPE_SIZE BITS_PER_WORD

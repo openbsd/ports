@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-c++,v 1.12 2003/02/15 14:38:27 espie Exp $
+@comment $OpenBSD: PLIST-c++,v 1.13 2004/01/31 14:58:04 espie Exp $
 @pkgcfl egcs-*-core
 bin/ec++
-bin/ec++filt
 bin/eg++
 bin/${CONFIG}-ec++
 bin/${CONFIG}-eg++
@@ -39,7 +38,6 @@ include/c++/${V}/backward/stack.h
 include/c++/${V}/backward/stream.h
 include/c++/${V}/backward/streambuf.h
 include/c++/${V}/backward/strstream
-include/c++/${V}/backward/strstream.h
 include/c++/${V}/backward/tempbuf.h
 include/c++/${V}/backward/tree.h
 include/c++/${V}/backward/vector.h
@@ -53,22 +51,23 @@ include/c++/${V}/bits/cmath.tcc
 include/c++/${V}/bits/codecvt.h
 include/c++/${V}/bits/concept_check.h
 include/c++/${V}/bits/cpp_type_traits.h
+include/c++/${V}/bits/deque.tcc
 include/c++/${V}/bits/fpos.h
 include/c++/${V}/bits/fstream.tcc
 include/c++/${V}/bits/functexcept.h
-include/c++/${V}/bits/generic_shadow.h
 include/c++/${V}/bits/gslice.h
 include/c++/${V}/bits/gslice_array.h
 include/c++/${V}/bits/indirect_array.h
 include/c++/${V}/bits/ios_base.h
 include/c++/${V}/bits/istream.tcc
+include/c++/${V}/bits/list.tcc
+include/c++/${V}/bits/locale_classes.h
 include/c++/${V}/bits/locale_facets.h
 include/c++/${V}/bits/locale_facets.tcc
 include/c++/${V}/bits/localefwd.h
 include/c++/${V}/bits/mask_array.h
 include/c++/${V}/bits/ostream.tcc
 include/c++/${V}/bits/pthread_allocimpl.h
-include/c++/${V}/bits/slice.h
 include/c++/${V}/bits/slice_array.h
 include/c++/${V}/bits/sstream.tcc
 include/c++/${V}/bits/stl_algo.h
@@ -107,6 +106,7 @@ include/c++/${V}/bits/type_traits.h
 include/c++/${V}/bits/valarray_array.h
 include/c++/${V}/bits/valarray_array.tcc
 include/c++/${V}/bits/valarray_meta.h
+include/c++/${V}/bits/vector.tcc
 include/c++/${V}/bitset
 include/c++/${V}/cassert
 include/c++/${V}/cctype
@@ -155,7 +155,6 @@ include/c++/${V}/${CONFIG}/bits/c++config.h
 include/c++/${V}/${CONFIG}/bits/c++io.h
 include/c++/${V}/${CONFIG}/bits/c++locale.h
 include/c++/${V}/${CONFIG}/bits/codecvt_specializations.h
-include/c++/${V}/${CONFIG}/bits/cpu_limits.h
 include/c++/${V}/${CONFIG}/bits/ctype_base.h
 include/c++/${V}/${CONFIG}/bits/ctype_inline.h
 include/c++/${V}/${CONFIG}/bits/ctype_noninline.h
@@ -193,6 +192,7 @@ include/c++/${V}/valarray
 include/c++/${V}/vector
 IFPIC:lib/fpic/libestdc++.a
 IFPIC:lib/fpic/libestdc++.la
+IFPIC:lib/fpic/libiberty.a
 IFPIC:lib/fpic/libsupc++.a
 IFPIC:lib/fpic/libsupc++.la
 lib/gcc-lib/${CONFIG}/${V}/cc1plus

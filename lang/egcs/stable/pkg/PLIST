@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2003/02/15 14:38:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2004/01/31 14:58:04 espie Exp $
 @pkgcfl egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/cpp.info
 @unexec install-info --delete --info-dir=%D/info %D/info/cppinternals.info
@@ -9,78 +9,30 @@ bin/egcc
 bin/egccbug
 bin/egcov
 bin/${CONFIG}-egcc
+bin/${CONFIG}-gcc-${V}
 info/cpp.info
-info/cpp.info-1
-info/cpp.info-2
-info/cpp.info-3
-info/cpp.info-4
-info/cpp.info-5
 info/cppinternals.info
 info/gcc.info
-info/gcc.info-1
-info/gcc.info-10
-info/gcc.info-11
-info/gcc.info-12
-info/gcc.info-13
-info/gcc.info-14
-info/gcc.info-15
-info/gcc.info-16
-info/gcc.info-17
-info/gcc.info-18
-info/gcc.info-19
-info/gcc.info-2
-info/gcc.info-20
-info/gcc.info-21
-info/gcc.info-22
-info/gcc.info-23
-info/gcc.info-3
-info/gcc.info-4
-info/gcc.info-5
-info/gcc.info-6
-info/gcc.info-7
-info/gcc.info-8
-info/gcc.info-9
 info/gccint.info
-info/gccint.info-1
-info/gccint.info-10
-info/gccint.info-11
-info/gccint.info-12
-info/gccint.info-13
-info/gccint.info-14
-info/gccint.info-15
-info/gccint.info-16
-info/gccint.info-17
-info/gccint.info-18
-info/gccint.info-19
-info/gccint.info-2
-info/gccint.info-20
-info/gccint.info-21
-info/gccint.info-22
-info/gccint.info-23
-info/gccint.info-3
-info/gccint.info-4
-info/gccint.info-5
-info/gccint.info-6
-info/gccint.info-7
-info/gccint.info-8
-info/gccint.info-9
-IFPIC:lib/fpic/libiberty.a
 lib/gcc-lib/${CONFIG}/${V}/cc1
 lib/gcc-lib/${CONFIG}/${V}/collect2
-lib/gcc-lib/${CONFIG}/${V}/cpp0
 IFPIC:lib/gcc-lib/${CONFIG}/${V}/fpic/libgcc.a
 lib/gcc-lib/${CONFIG}/${V}/include/README
-lib/gcc-lib/${CONFIG}/${V}/include/float.h
 lib/gcc-lib/${CONFIG}/${V}/include/limits.h
 lib/gcc-lib/${CONFIG}/${V}/include/machine/ansi.h
 lib/gcc-lib/${CONFIG}/${V}/include/stdarg.h
 lib/gcc-lib/${CONFIG}/${V}/include/stdbool.h
 lib/gcc-lib/${CONFIG}/${V}/include/syslimits.h
 lib/gcc-lib/${CONFIG}/${V}/include/varargs.h
+lib/gcc-lib/${CONFIG}/${V}/install-tools/fixinc.sh
+lib/gcc-lib/${CONFIG}/${V}/install-tools/gsyslimits.h
+lib/gcc-lib/${CONFIG}/${V}/install-tools/include/README
+lib/gcc-lib/${CONFIG}/${V}/install-tools/include/limits.h
+lib/gcc-lib/${CONFIG}/${V}/install-tools/mkheaders
+lib/gcc-lib/${CONFIG}/${V}/install-tools/mkheaders.conf
 lib/gcc-lib/${CONFIG}/${V}/libgcc.a
 IFPPC:lib/gcc-lib/${CONFIG}/${V}/crtsavres.o
 lib/gcc-lib/${CONFIG}/${V}/specs
-lib/gcc-lib/${CONFIG}/${V}/tradcpp0
 lib/libiberty.a
 man/man1/cpp.1
 man/man1/egcc.1
@@ -88,6 +40,8 @@ man/man1/gcov.1
 @comment man/man7/fsf-funding.7
 @comment man/man7/gfdl.7
 @comment man/man7/gpl.7
+@dirrm lib/gcc-lib/${CONFIG}/${V}/install-tools/include
+@dirrm lib/gcc-lib/${CONFIG}/${V}/install-tools
 @dirrm lib/gcc-lib/${CONFIG}/${V}/include/machine
 @dirrm lib/gcc-lib/${CONFIG}/${V}/include
 IFPIC:@dirrm lib/gcc-lib/${CONFIG}/${V}/fpic
