@@ -1,0 +1,10 @@
+--- Makefile.PL.orig	2003-07-10 15:11:20.000000000 +0000
++++ Makefile.PL	2003-11-14 15:57:07.000000000 +0000
+@@ -7,7 +7,6 @@ WriteMakefile(
+     'LIBS'          => [''],   # e.g., '-lm' 
+     'DEFINE'        => '',     # e.g., '-DHAVE_SOMETHING' 
+     'INC'           => '',     # e.g., '-I/usr/include/other' 
+-    'INSTALLDIRS'   => 'perl', # 'perl' makes it replace std modules
+     'PL_FILES'      => {},
+     'PREREQ_PM'     => {
+ 			'File::Basename' => 0,
