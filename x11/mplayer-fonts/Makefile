@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/22 14:52:00 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2003/01/04 01:07:13 espie Exp $
 
 COMMENT='subtitle font for mplayer'
 CATEGORIES=x11
 BUILD_DEPENDS=:mplayer-fontmaker-*:x11/mplayer-fontmaker
 RUN_DEPENDS=:mplayer-*:x11/mplayer
 
-FLAVORS=luxi-sans luxi-sans-bold luxi-sans-italic
+FLAVORS=luxi-sans luxi-sans-bold luxi-sans-italic comic
 FLAVOR?=luxi-sans
 
 DIR=${X11BASE}/lib/X11/fonts/TTF
+TTF=ttf
+
 .if ${FLAVOR:L:Mluxi-sans}
 NAME=luxi-sans
 FONT=luxisr
@@ -22,11 +24,11 @@ FONT=luxisri
 
 DISTFILES=
 EXTRACT_ONLY=
-DISTNAME=mplayer-font-0.90rc1
-FULLPKGNAME=mplayer-${NAME}-0.90rc1
+DISTNAME=mplayer-font-0.90rc2
+FULLPKGNAME=mplayer-${NAME}-0.90rc2
 
 do-build:
-	cd ${WRKBUILD} && mksubfont ${DIR}/${FONT}.ttf
+	cd ${WRKBUILD} && mksubfont ${DIR}/${FONT}.${TTF}
 
 NO_REGRESS=Yes
 
