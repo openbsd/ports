@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2004/11/28 16:32:28 alek Exp $
+# $OpenBSD: Makefile,v 1.32 2004/12/27 08:24:44 jakob Exp $
 
 COMMENT=	"SSL encryption wrapper for standard network daemons"
 
-VERSION=	4.05
+VERSION=	4.06
 DISTNAME=	stunnel-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}
 CATEGORIES=	security
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
@@ -36,10 +36,11 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			${CONFIGURE_SHARED}
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/auto
 NO_REGRESS=		Yes
+USE_GMAKE=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/stunnel ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKBUILD}/doc/stunnel.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/stunnel.8 ${PREFIX}/man/man8
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/stunnel
 	${INSTALL_DATA} ${WRKBUILD}/tools/stunnel.conf-sample \
 		${PREFIX}/share/examples/stunnel

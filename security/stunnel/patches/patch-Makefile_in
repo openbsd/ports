@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2004/02/16 12:33:18 jakob Exp $
---- Makefile.in.orig	Mon Sep  2 11:21:17 2002
-+++ Makefile.in	Mon Sep  2 11:21:21 2002
-@@ -78,7 +78,7 @@ VERSION = @VERSION@
- host = @host@
+$OpenBSD: patch-Makefile_in,v 1.2 2004/12/27 08:24:44 jakob Exp $
+--- Makefile.in.orig	Sun Dec 26 00:36:52 2004
++++ Makefile.in	Mon Dec 27 09:10:31 2004
+@@ -180,7 +180,7 @@ sharedstatedir = @sharedstatedir@
  ssldir = @ssldir@
- 
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
 -SUBDIRS = src doc tools
 +SUBDIRS = src doc
  
