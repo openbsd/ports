@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/12 17:14:51 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/18 16:33:09 ian Exp $
 
 DISTNAME=	gnats-3.113
 
 CATEGORIES=	databases devel
 
-MASTER_SITES=	ftp://ftp://sourceware.cygnus.com/pub/gnats/snapshots/ \
+MASTER_SITES=	ftp://sourceware.cygnus.com/pub/gnats/snapshots/ \
 		ftp://ftp.freesoftware.com/pub/sourceware/gnats/snapshots/ \
 		ftp://gd.tuwien.ac.at/gnu/sourceware/gnats/snapshots/ \
 		ftp://ftp.chg.ru/pub/sourceware/gnats/snapshots/
