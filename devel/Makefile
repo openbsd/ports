@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.226 2004/05/16 03:23:52 dons Exp $
+# $OpenBSD: Makefile,v 1.227 2004/05/19 09:25:53 sturm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -128,6 +128,7 @@
      SUBDIR += p5-C-Scan
      SUBDIR += p5-Cache-Cache
      SUBDIR += p5-Carp-Datum
+     SUBDIR += p5-Class-Accessor
      SUBDIR += p5-Class-Container
      SUBDIR += p5-Class-Data-Inheritable
      SUBDIR += p5-Class-Date
@@ -135,6 +136,8 @@
      SUBDIR += p5-Class-MethodMaker
      SUBDIR += p5-Class-MethodMapper
      SUBDIR += p5-Class-ReturnValue
+     SUBDIR += p5-Class-Trigger
+     SUBDIR += p5-Class-Whitehole
      SUBDIR += p5-Config-IniFiles
      SUBDIR += p5-Curses
      SUBDIR += p5-Curses-UI
