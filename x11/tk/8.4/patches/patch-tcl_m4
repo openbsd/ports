@@ -1,25 +1,19 @@
---- tcl.m4.orig	Mon Mar  1 18:04:48 2004
-+++ tcl.m4	Sat Jul  3 14:09:56 2004
-@@ -1209,7 +1209,7 @@ dnl AC_CHECK_TOOL(AR, ar)
- 	    CC_SEARCH_FLAGS=""
- 	    LD_SEARCH_FLAGS=""
+$OpenBSD: patch-tcl_m4,v 1.4 2004/08/07 06:16:39 kevlo Exp $
+--- tcl.m4.orig	Sat Aug  7 13:40:15 2004
++++ tcl.m4	Sat Aug  7 13:44:10 2004
+@@ -1256,24 +1256,48 @@ dnl AC_CHECK_TOOL(AR, ar)
+ 	    TCL_LIB_VERSIONS_OK=nodots
  	    ;;
--	NetBSD-*|FreeBSD-[[1-2]].*|OpenBSD-*)
-+	NetBSD-*|FreeBSD-[[1-2]].*)
- 	    # Not available on all versions:  check for include file.
- 	    AC_CHECK_HEADER(dlfcn.h, [
- 		# NetBSD/SPARC needs -fPIC, -fpic will not do.
-@@ -1245,6 +1245,55 @@ dnl AC_CHECK_TOOL(AR, ar)
- 		LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
- 		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
- 	    ])
-+
-+	    # FreeBSD doesn't handle version numbers with dots.
-+
-+	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
-+	    TCL_LIB_VERSIONS_OK=nodots
-+	    ;;
-+	OpenBSD-*)
+ 	OpenBSD-*)
+-	    SHLIB_LD="${CC} -shared"
+-	    SHLIB_LD_LIBS='${LIBS}'
+-	    SHLIB_SUFFIX=".so"
+-	    DL_OBJS="tclLoadDl.o"
+-	    DL_LIBS=""
+-	    CC_SEARCH_FLAGS=""
+-	    LD_SEARCH_FLAGS=""
+-	    AC_MSG_CHECKING(for ELF)
+-	    AC_EGREP_CPP(yes, [
 +	    case `machine` in
 +	    luna88k|mvme88k|vax)
 +		SHLIB_CFLAGS=""
@@ -37,12 +31,12 @@
 +		# OpenBSD/SPARC[64] needs -fPIC, -fpic will not do.
 +		case `machine` in
 +		sparc|sparc64)
-+			SHLIB_CFLAGS="-fPIC";;
++		    SHLIB_CFLAGS="-fPIC";;
 +		*)
-+			SHLIB_CFLAGS="-fpic";;
++		    SHLIB_CFLAGS="-fpic";;
 +		esac
 +		SHLIB_LD="${CC} -shared ${SHLIB_CFLAGS}"
-+		SHLIB_LD_LIBS=""
++	        SHLIB_LD_LIBS=""
 +		SHLIB_SUFFIX=".so"
 +		DL_OBJS="tclLoadDl.o"
 +		DL_LIBS=""
@@ -51,17 +45,23 @@
 +		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
 +		AC_MSG_CHECKING(for ELF)
 +		AC_EGREP_CPP(yes, [
-+#ifdef __ELF__
-+	yes
-+#endif
-+		],
+ #ifdef __ELF__
+ 	yes
+ #endif
+-	    ],
+-		[AC_MSG_RESULT(yes)
+-		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'],
+-		[AC_MSG_RESULT(no)
+-		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0']
+-	    )
++	        ],
 +		    AC_MSG_RESULT(yes)
 +		    [ LDFLAGS=-Wl,-export-dynamic ],
 +		    AC_MSG_RESULT(no)
 +		    LDFLAGS=""
-+		)
++	        )
 +		;;
 +	    esac
  
- 	    # FreeBSD doesn't handle version numbers with dots.
- 
+ 	    # OpenBSD doesn't do version numbers with dots.
+ 	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
