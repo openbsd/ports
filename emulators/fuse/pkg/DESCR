@@ -1,0 +1,6 @@
+fuse is a free version of ZX Spectrum emulator. It emulates
+48K/128K/+2/+2A machine, supports loading from .tzx files,
+has sound and kempston joystick emulation, emulates various
+printers you could attach to the Spectrum.
+
+WWW: ${HOMEPAGE}
