@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2000/09/11 07:23:19 brad Exp $
+@comment $OpenBSD: PLIST,v 1.23 2000/09/12 00:11:35 brad Exp $
 @pkgcfl openmotif-*
 LessTif/Motif1.2/include/Mrm/MrmAppl.h
 LessTif/Motif1.2/include/Mrm/MrmDecls.h
@@ -272,7 +272,6 @@ share/LessTif/doc/html/web_button.html
 @dirrm LessTif/Motif1.2/lib
 @dirrm LessTif/Motif1.2
 @dirrm LessTif
-@dirrm lib/X11/lesstif
 @dirrm lib/X11/mwm
 @dirrm share/LessTif/doc/html/images
 @dirrm share/LessTif/doc/html
