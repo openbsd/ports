@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/11 00:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/24 00:40:24 pvalchev Exp $
 
 COMMENT=		"traceroute implementation using TCP packets"
 
-DISTNAME=		tcptraceroute-1.2
+DISTNAME=		tcptraceroute-1.3
 CATEGORIES=    		net
 NEED_VERSION=		1.427
 
