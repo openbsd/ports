@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2001/05/24 02:27:13 kevlo Exp $
+# $OpenBSD: Makefile,v 1.20 2001/06/15 15:27:36 brad Exp $
+
+BROKEN=		"Needs upgrade to newer version"
 
 COMMENT=	"open-source, cross-platform WYSIWYG word processor"
 
