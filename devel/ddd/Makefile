@@ -3,18 +3,16 @@
 # Date created:		December 29, 1997
 # Whom:			Peter Reich
 #
-# $OpenBSD: Makefile,v 1.2 1998/06/13 23:26:38 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/06/30 23:52:32 marc Exp $
 #
 
-DISTNAME=       	ddd-2.2.3
-DIST_SUBDIR=		ddd
+DISTNAME=       	ddd-3.0
 CATEGORIES=		devel
 
 MAINTAINER=		marc@openbsd.org
 
-MASTER_SITES=   	ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/
-PATCH_SITES=		ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/patches/ddd-2.2.3/
-PATCHFILES=		gdb-options
+MASTER_SITES=   	ftp://uiarchive.cso.uiuc.edu/pub/packages/ddd/ \
+			ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/
 
 # Library dependencies
 # Xpm is part of 2.3 and later
@@ -26,12 +24,15 @@ OS_HAS_XPM=		2.3
 LIB_DEPENDS+=		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 .endif
 
+USE_GMAKE=		yes
 USE_X11=		yes
 GNU_CONFIGURE=		yes
+CONFIGURE_ENV=		${SETENV} INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+			INSTALL_DATA="${INSTALL_DATA}"
 
 pre-build:
 	@echo ""
-	@echo "*** WARNING: you may see an error such as
+	@echo "*** WARNING: you may see an error such as"
 	@echo "***       virtual memory exhausted"
 	@echo "*** when building this package.  If you do you must increase"
 	@echo "*** your limits.  See the man page for your shell and look"
@@ -39,13 +40,10 @@ pre-build:
 	@echo ""
 
 check:	build
+.if defined(USE_GMAKE)
+	@cd ${WRKSRC} && ${GMAKE} check
+.else
 	@cd ${WRKSRC} && ${MAKE} check
+.endif
 
 .include <bsd.port.mk>
-
-# The distribution patch file does not name the file to patch nor is it
-# relative to ${WRKSRC}.  This hack will work since there is only one patch
-# file, but will break if a subsequent distribution patch file is needed.
-#
-PATCH_DIST_ARGS+=	ddd/ddd.C
-
