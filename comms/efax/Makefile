@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2002/09/17 23:18:34 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2002/09/19 03:28:58 brad Exp $
 
 COMMENT=	"small & simple FAX send/receive program"
 
-DISTNAME=       efax-0.9
-PKGNAME=        ${DISTNAME}p1
+DISTNAME=	efax-0.9
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	comms
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
@@ -13,9 +13,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/apps/serialcomm/fax/
+MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/serialcomm/fax/}
 
-MAKE_ENV=	CC="${CC}"
-FAKE_FLAGS=	BINDIR=${WRKINST}${PREFIX}/bin MANDIR=${WRKINST}${PREFIX}/man
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+
+do-install:
+	cd ${WRKBUILD}; \
+		${INSTALL_PROGRAM} efax efix ${PREFIX}/bin; \
+		${INSTALL_SCRIPT} fax ${PREFIX}/bin; \
+		${INSTALL_MAN} fax.1 efax.1 efix.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
