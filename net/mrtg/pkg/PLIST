@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.10 2001/01/08 19:09:15 brad Exp $
+@comment $OpenBSD: PLIST,v 1.11 2001/02/17 22:22:47 brad Exp $
 bin/cfgmaker
 bin/indexmaker
 bin/mrtg
 bin/rateup
-lib/mrtg/mrtg.cfg.sample
 libdata/perl5/site_perl/BER.pm
 libdata/perl5/site_perl/MRTG_lib.pm
 libdata/perl5/site_perl/Pod/InputObjects.pm
@@ -62,6 +61,7 @@ share/doc/mrtg/unix-guide.txt
 share/doc/mrtg/webserver.html
 share/doc/mrtg/webserver.pod
 share/doc/mrtg/webserver.txt
+share/examples/mrtg/mrtg.cfg.sample
 share/mrtg/mrtg-l.png
 share/mrtg/mrtg-m.png
 share/mrtg/mrtg-r.png

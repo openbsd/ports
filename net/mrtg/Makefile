@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.33 2001/01/08 19:09:15 brad Exp $
+# $OpenBSD: Makefile,v 1.34 2001/02/17 22:22:45 brad Exp $
 
-DISTNAME=	mrtg-2.9.7
+DISTNAME=	mrtg-2.9.8
 CATEGORIES=	net
 NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.ou.edu/mirrors/mrtg/ \
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--with-gd-inc="${LOCALBASE}/include" \
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -ljpeg"
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/mrtg
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mrtg
 	${INSTALL_DATA_DIR} ${PREFIX}/libdata/perl5/site_perl/Pod
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mrtg
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mrtg
@@ -42,7 +42,6 @@ do-install:
 	cd ${WRKSRC}/lib/mrtg2/Pod; ${INSTALL_DATA} *.pm \
 		${PREFIX}/libdata/perl5/site_perl/Pod
 	${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg \
-		${PREFIX}/lib/mrtg/mrtg.cfg.sample
-
+		${PREFIX}/share/examples/mrtg/mrtg.cfg.sample
 
 .include <bsd.port.mk>
