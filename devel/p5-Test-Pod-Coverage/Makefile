@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/10 01:35:04 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/21 02:03:25 msf Exp $
 
 COMMENT= 	"check for pod coverage in your distribution"
 
-DISTNAME=	Test-Pod-Coverage-1.04
+DISTNAME=	Test-Pod-Coverage-1.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
