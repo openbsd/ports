@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/06/27 11:37:23 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2003/07/07 06:46:38 jolan Exp $
 
 COMMENT=		"No-IP.com Dynamic DNS client"
 
@@ -19,11 +19,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}client/linux/
 
-MAKE_ENV=		SYSCONFDIR="${SYSCONFDIR}"
-
 NO_REGRESS=		Yes
 
 ALL_TARGET=		noip2
+
+do-configure:
+	@perl -pi -e 's|_SYSCONFDIR_|${SYSCONFDIR}|g' ${WRKSRC}/noip2.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/noip2 ${PREFIX}/sbin
