@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2002/01/28 03:24:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.126 2002/02/28 19:50:16 couderc Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -101,6 +101,7 @@
      SUBDIR += root-tail
      SUBDIR += rox-filer
      SUBDIR += rxvt
+     SUBDIR += ruby-gtk
      SUBDIR += sawfish
      SUBDIR += sliderule
 #    SUBDIR += slingshot
