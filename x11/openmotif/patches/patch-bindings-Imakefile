@@ -1,0 +1,21 @@
+--- bindings/Imakefile.orig	Wed May  3 05:12:34 2000
++++ bindings/Imakefile	Wed Aug  9 19:29:42 2000
+@@ -37,7 +37,6 @@
+ XCOMM HISTORY
+ XCOMM 
+ XCOMM   $TOG: Imakefile /main/8 1997/07/02 17:51:43 samborn $
+-INSTALLFLAGS = $(INSTINCFLAGS)
+ 
+ FILES = \
+ 	xmbind.alias \
+@@ -63,8 +62,8 @@
+ 	siemens_9733 \
+ 	siemens_wx200 \
+ 	sony \
+-	sun_mit \
+-	sun_news \
++	sun \
++	sun_at \
+ 	tek
+ 
+ 

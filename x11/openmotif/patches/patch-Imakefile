@@ -1,5 +1,5 @@
---- Imakefile.orig	Thu May  4 05:30:42 2000
-+++ Imakefile	Sat Jun 10 15:43:59 2000
+--- Imakefile.orig	Thu May  4 08:30:42 2000
++++ Imakefile	Wed Aug  9 19:29:42 2000
 @@ -57,7 +57,7 @@
  ImakeDependency(xmakefile)
  xmakefile:: Imakefile

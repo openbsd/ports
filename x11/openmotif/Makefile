@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2000/07/08 18:19:49 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/08/10 01:40:40 matt Exp $
 
 DISTNAME=	motif
 PKGNAME=	openmotif-2.1.30
+
 CATEGORIES=	x11
 NEED_VERSION=	1.310
-MASTER_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R2.1.30/tars/ \
-		ftp://ftp.opengroup.org/pub/openmotif/R2.1.30/tars/ \
-		ftp://ftp.isca.uiowa.edu/pub/mirrors/openmotif/tars
-DISTFILES=	openmotif2.1.30.tar.gz
 
 HOMEPAGE=	http://www.opengroup.org/openmotif/
 
@@ -18,8 +15,12 @@ PERMIT_DISTFILES_CDROM=	Unclear
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=	yes
+MASTER_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R2.1.30/tars/ \
+		ftp://ftp.opengroup.org/pub/openmotif/R2.1.30/tars/ \
+		ftp://ftp.isca.uiowa.edu/pub/mirrors/openmotif/tars
+DISTFILES=	openmotif2.1.30.tar.gz
 
+USE_X11=	yes
 ALL_TARGET=	World
 
 # This dialog has been copied off from lesstif port.
@@ -57,32 +58,33 @@ post-patch:
 	    mv -f site.def.new site.def && \
 	    sed -e "s|%%PREFIX%%|${PREFIX}|g" < Motif.tmpl > Motif.tmpl.new && \
 	    mv -f Motif.tmpl.new Motif.tmpl
-
-pre-build:
-	# Import from our current X installation.
-	@cp -f ${XCONFIGF} ${WRKDIR}/motif/config/cf
+# Import from our current X installation.
+	@cp -f `ls /usr/X11R6/lib/X11/config/* | grep -v '\(Motif\|cde\|\/site.def\)'` ${WRKDIR}/motif/config/cf
 	@mkdir -p ${WRKSRC}/imports/x11
 	@cd ${WRKSRC}/imports/x11 && for i in bin include lib ; do \
 	    if [ -f $$i ] ; then rm $$i; fi; \
 	    ln -s ${X11BASE}/$$i $$i; \
 	done
 
-# Install the manpages, because the Open Group doesn't think we need them.
-# Silly Open Group.
-post-install:
-	@echo -n "installing man pages:"
+post-build:
+# tblize the manpages.
 	@for i in man1 man3 man5 ; do cd ${WRKSRC}/doc/man/$$i; \
-	    echo -n " $$i"; \
+	    echo "building in doc/man/$$i"; \
 	    for m in *; do \
-		 mkdir -p ${PREFIX}/man/$$i; \
-		 $(INSTALL_MAN) $$m ${PREFIX}/man/$$i; \
+		tbl $$m > $$m.new && \
+		mv -f $$m.new $$m; \
 	    done; \
 	done
-	@echo "."
+
+# Install the manpages.
+post-install:
+	@for i in man1 man3 man5 ; do cd ${WRKSRC}/doc/man/$$i; \
+	    echo "installing in doc/man/$$i"; \
+	    for m in *; do \
+		mkdir -p ${PREFIX}/man/$$i; \
+		$(INSTALL_MAN) $$m ${PREFIX}/man/$$i; \
+	    done; \
+	done
 
 .include <bsd.port.mk>
 
-# This is your current XFree86 configuration files.
-# You don't want to use the vanilla configuration files in the DISTFILE.
-# The distributed config files do not know what OpenBSD is.
-XCONFIGF!= ls /usr/X11R6/lib/X11/config/* | grep -v '\(Motif\|cde\|\/site.def\)'

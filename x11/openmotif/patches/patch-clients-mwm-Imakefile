@@ -1,0 +1,11 @@
+--- clients/mwm/Imakefile.orig	Wed May  3 05:12:34 2000
++++ clients/mwm/Imakefile	Wed Aug  9 19:29:43 2000
+@@ -172,7 +172,7 @@
+ NormalLibraryObjectRule()
+ ComplexProgramTarget_1(mwm,$(LOCAL_LIBRARIES),$(SYSTEM_LIBRARIES))
+ 
+-SpecialObjectRule(WmResParse.o,NullParameter,-DLIBDIR='"'$(XPROJECTROOT)/lib/X11'"')
++SpecialObjectRule(WmResParse.o,NullParameter,-DLIBDIR='"'$(PROJECTROOT)/lib/X11'"')
+ SpecialObjectRule(WmResource.o,NullParameter,-DBITMAPDIR='"'$(XPROJECTROOT)/include/X11/bitmaps/'"')
+ 
+ /* This is added for 8.07 optimizer bug -see Keith Taylor.

@@ -1,5 +1,5 @@
 --- config/cf/site.def.orig	Fri Apr 28 11:03:58 2000
-+++ config/cf/site.def	Mon Jul 31 21:37:25 2000
++++ config/cf/site.def	Wed Aug  9 19:29:42 2000
 @@ -58,15 +58,94 @@
  #  define HasCplusplus		YES
  # endif
@@ -99,14 +99,3 @@
 +	done
 +#define ImakeSubCmdHelper $(IMAKE) -I$(IMAKEPREFIX)$(IRULESRC) $(IMAKE_DEFINES)
  #endif /* AfterVendorCF */
---- config/cf/Motif.rules.orig	Wed May  3 00:53:43 2000
-+++ config/cf/Motif.rules	Wed Jun 14 16:58:53 2000
-@@ -655,7 +655,7 @@
- #define Real_MessageCatalogRule(prefix)					@@\
- prefix.cat Concat(prefix,MsgCatI.h):					@@\
- 	$(RM) Concat(prefix,MsgCatI.h) prefix.cat $(MLOCSRC)/C/msg/prefix.msg	@@\
--	$(MKCATTOOL) Concat(prefix,MsgCatI.h) prefix.msg > $(MLOCSRC)/C/msg/prefix.msg	@@\
-+	$(MKCATTOOL) Concat(prefix,MsgCatI.h) prefix.msg | sed '/^[ 	]*$$/d' > $(MLOCSRC)/C/msg/prefix.msg	@@\
- 	$(GENCAT) prefix.cat $(MLOCSRC)/C/msg/prefix.msg		@@\
- 									@@\
- includes:: prefix.cat Concat(prefix,MsgCatI.h)				@@\

@@ -1,5 +1,5 @@
 --- config/imake/imake.c.orig	Tue May  2 12:18:40 2000
-+++ config/imake/imake.c	Fri Jul  7 23:23:33 2000
++++ config/imake/imake.c	Wed Aug  9 19:29:43 2000
 @@ -371,11 +371,21 @@
  
  	Imakefile = FindImakefile(Imakefile);

@@ -1,7 +1,5 @@
-	This patch should go away as soon as BSD systems implement
-	wide character support.
---- lib/Xm/TextF.c.orig	Wed May  3 02:12:42 2000
-+++ lib/Xm/TextF.c	Thu Jun  1 00:36:55 2000
+--- lib/Xm/TextF.c.orig	Wed May  3 05:12:42 2000
++++ lib/Xm/TextF.c	Wed Aug  9 19:29:43 2000
 @@ -1211,6 +1211,71 @@
    TextFieldPreferredValue,
  };
