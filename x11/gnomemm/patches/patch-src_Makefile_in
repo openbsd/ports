@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2001/11/01 13:31:13 wilfried Exp $
+--- src/Makefile.in.orig	Sun Aug  5 12:04:51 2001
++++ src/Makefile.in	Sat Oct 27 13:28:42 2001
+@@ -336,16 +336,16 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-hook: 
+-	if test "X$(gnomemm_includedir)" != "X" && test -w "$(DESTDIR)$(gnomemm_includedir)" ; then \
++	@if test "X$(gnomemm_includedir)" != "X" && test -w "$(DESTDIR)$(gnomemm_includedir)" ; then \
+ 	   $(INSTALL_DATA) $(srcdir)/gnome--.h $(DESTDIR)$(gnomemm_includedir); \
+ 	else \
+ 	   echo "WARNING : Couldn't install $(srcdir)/gnome--.h in $(DESTDIR)$(gnomemm_includedir) : can't write in $(DESTDIR)$(gnomemm_includedir)"; \
+ 	fi ; \
+         gnomedir=`gnome-config --libdir`;  \
+ 	if [ -w "$(DESTDIR)$$gnomedir" ]; then \
+-	   $(INSTALL_DATA) $(srcdir)/gnomemmConf.sh $(DESTDIR)$$gnomedir; \
++	   $(INSTALL_DATA) gnomemmConf.sh $(DESTDIR)$$gnomedir; \
+ 	else \
+-	   echo "WARNING : Couldn't install $(srcdir)/gnomemmConf.sh in $(DESTDIR)$$gnomedir : can't write in $(DESTDIR)$$gnomedir"; \
++	   echo "WARNING : Couldn't install gnomemmConf.sh in $(DESTDIR)$$gnomedir : can't write in $(DESTDIR)$$gnomedir"; \
+ 	fi
+ 
+ all-local:
