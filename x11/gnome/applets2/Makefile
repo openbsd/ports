@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/08/01 06:12:42 marcm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/08/10 10:56:42 xsa Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 COMMENT-battstat=	"GNOME applet for monitoring battery level"
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig \
 			:scrollkeeper-*:textproc/scrollkeeper

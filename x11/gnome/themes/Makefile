@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/06/23 03:26:19 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/08/10 10:56:43 xsa Exp $
 
 COMMENT=		"themes collection for GNOME"
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:gtk-engines2->=2.2.0:x11/gtk-engines2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/06/23 03:26:16 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/10 10:56:43 xsa Exp $
 
 COMMENT=		"user interface components for GNOME"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnomeui/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		bonoboui-2::x11/gnome/libbonoboui \

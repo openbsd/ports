@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/06/23 03:26:21 marcm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/08/10 10:56:43 xsa Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
@@ -12,7 +12,7 @@ MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-vfs/2.6/}
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 LIB_DEPENDS=		bonobo-2,bonobo-activation::x11/gnome/libbonobo \
 			bz2::archivers/bzip2 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/06/23 03:26:18 marcm Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/10 10:56:43 xsa Exp $
 
 COMMENT=		"GNOME panel"
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig \
 			:scrollkeeper->=0.3.12:textproc/scrollkeeper

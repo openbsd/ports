@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/28 04:56:32 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/10 10:56:43 xsa Exp $
 
 COMMENT=		"GNOME frontend for GhostScript"
 DISTNAME=		ggv-2.6.2	
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/ggv/2.6/}	
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:scrollkeeper-*:textproc/scrollkeeper \

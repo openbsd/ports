@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/07/28 05:19:12 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/10 10:56:43 xsa Exp $
 
 COMMENT=		"printing framework for GNOME"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnomeprint/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser

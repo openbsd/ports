@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/06/23 03:26:12 marcm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/08/10 10:56:42 xsa Exp $
 
 COMMENT=		"components for the GNOME desktop"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-desktop/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:scrollkeeper-*:textproc/scrollkeeper

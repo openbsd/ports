@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/06/23 03:26:13 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/08/10 10:56:42 xsa Exp $
 
 COMMENT=		"GNOME Accessibility Implementation Library"
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS= 		atk-1.0.300.0::devel/atk \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/08/21 23:09:31 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/10 10:56:42 xsa Exp $
 
 COMMENT=		"bonobo configuration system"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/bonobo-conf/0.16/}
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 LIB_DEPENDS=		bonobo.2,bonobox.2::x11/gnome/bonobo \
 			gconf-1.1,gconf-gtk-1.1::devel/gconf

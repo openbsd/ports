@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/07/28 05:19:12 marcm Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/10 10:56:43 xsa Exp $
 
 COMMENT=		"Boring window manager for the adult in you."
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/metacity/2.8/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser

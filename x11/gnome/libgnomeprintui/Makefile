@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/07/25 00:24:30 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/10 10:56:43 xsa Exp $
 
 COMMENT=		"user interface components for libgnomeprint"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnomeprintui/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig->=0.12.0p1:devel/pkgconfig \
 			:libglade2->=2.0.0:devel/libglade2 \

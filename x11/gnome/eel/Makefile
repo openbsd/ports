@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/06/23 03:26:12 marcm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/08/10 10:56:42 xsa Exp $
 
 COMMENT=		"Eazel Extensions Library"
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gnomeui-2.0::x11/gnome/libgnomeui \

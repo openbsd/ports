@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/25 00:31:56 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/10 10:56:42 xsa Exp $
 
 COMMENT=		"Eye of GNOME: an image viewing and cataloging program"
 DISTNAME=		eog-2.6.1	
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/eog/2.6/}	
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:scrollkeeper-*:textproc/scrollkeeper

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/06/23 03:26:12 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/08/10 10:56:42 xsa Exp $
 
 COMMENT=		"GNOME control center"
 
@@ -13,7 +13,7 @@ MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/control-center/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 LIB_DEPENDS=		xklavier::x11/gnome/libxklavier \
 			metacity-private::x11/gnome/metacity \
