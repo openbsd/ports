@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.i386,v 1.1.1.1 2005/01/25 21:59:00 naddy Exp $
+@comment lib/transcode/export_mpeg.la
+lib/transcode/export_mpeg.so
+@comment lib/transcode/filter_dilyuvmmx.la
+lib/transcode/filter_dilyuvmmx.so
+share/doc/transcode/export_mpeg.txt
