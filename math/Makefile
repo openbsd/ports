@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/01/12 16:09:14 reinhard Exp $
+# $OpenBSD: Makefile,v 1.15 2001/01/17 01:10:37 naddy Exp $
 #
 
 #    SUBDIR += Scilab
@@ -39,6 +39,7 @@
 #    SUBDIR += ss
 #    SUBDIR += umatrix
      SUBDIR += wingz
+     SUBDIR += wmcalc
 #    SUBDIR += xgfe
 #    SUBDIR += xgraph
 #    SUBDIR += xldlas
