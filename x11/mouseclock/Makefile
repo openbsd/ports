@@ -1,9 +1,9 @@
-# New ports collection makefile for:	mouseclock
+# OpenBSD makefile for:	mouseclock
 # Version required:	1.0
-# Date created:		26 August 1997
-# Whom:			FURUSAWA, Kazuhisa <furusawa@com.cs.osakafu-u.ac.jp>
+# Date created:		May 19 1998
+# Whom:			Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/19 06:18:58 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/05/19 06:22:26 angelos Exp $
 #
 
 DISTNAME=	mouseclock-1.0
@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/clocks
 
-MAINTAINER=	furusawa@com.cs.osakafu-u.ac.jp
+MAINTAINER=	angelos@openbsd.org
 
 USE_GMAKE=	yes
 USE_IMAKE=	yes
