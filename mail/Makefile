@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 1998/07/08 10:05:21 form Exp $
+# $OpenBSD: Makefile,v 1.17 1998/11/19 03:31:41 turan Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -22,7 +22,7 @@
      SUBDIR += mh
 #    SUBDIR += mmr
      SUBDIR += movemail
-#    SUBDIR += mutt
+     SUBDIR += mutt
 #    SUBDIR += mutt.with_pgp
      SUBDIR += nmh
 #    SUBDIR += p5-Mail-Folder
