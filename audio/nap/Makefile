@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/07/02 00:50:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2001/08/02 01:48:07 pvalchev Exp $
 
 COMMENT=	"gnu curses-based napster client"
 
@@ -16,7 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${HOMEPAGE} \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= nap
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
