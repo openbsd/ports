@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/03/31 13:07:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/01/24 23:06:35 naddy Exp $
 #
 
 COMMENT=	"side-view, fast-action, kill everything type of game"
@@ -21,7 +21,7 @@ USE_X11=	Yes
 WRKDIST=	${WRKDIR}
 
 ALL_TARGET=	freebsd
-MAKE_ENV=	CXX="${CXX}"
+MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 NO_REGRESS=	Yes
 
