@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/17 00:26:37 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/04 13:11:17 kevlo Exp $
 
 DISTNAME=	xripple
 PKGNAME=	xripple-1.0
@@ -19,7 +19,8 @@ PERMIT_PACKAGE_FTP=	"no license available"
 PERMIT_DISTFILES_CDROM=	"no license available"
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	yes
+FAKE=		Yes
+USE_IMAKE=	Yes
 ALL_TARGET=	xripple
 
 post-configure:
