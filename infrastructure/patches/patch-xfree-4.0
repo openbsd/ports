@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: patch-xfree-4.0,v 1.2 2000/08/01 06:21:53 angelos Exp $
+# $OpenBSD: patch-xfree-4.0,v 1.3 2000/12/15 08:05:45 angelos Exp $
 #
 X11BASE=${X11BASE:-/usr/X11R6}
 if [ -f ${X11BASE}/lib/X11/config/ports.cf ]; then
@@ -105,8 +105,7 @@ exit 0
 --- lib/X11/config/OpenBSD.cf.orig	Mon Jul 10 16:05:09 2000
 +++ lib/X11/config/OpenBSD.cf	Mon Jul 10 14:28:10 2000
 @@ -1,6 +1,10 @@
- XCOMM platform:  $XFree86: xc/config/cf/OpenBSD.cf,v 3.37 2000/06/24 17:43:44 
-dawes Exp $
+ XCOMM platform:  $XFree86: xc/config/cf/OpenBSD.cf,v 3.37 2000/06/24 17:43:44 dawes Exp $
  XCOMM
  
 +#ifdef Ports
