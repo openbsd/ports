@@ -3,7 +3,7 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/19 05:35:23 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/06/24 20:17:07 niklas Exp $
 #
 
 DISTNAME=      xfishtank-2.2
@@ -13,10 +13,10 @@ MASTER_SITES=  ftp://ftp.uni-koeln.de/windows/xcontrib/
 MAINTAINER=    angelos@openbsd.org
 
 USE_IMAKE=     yes
-WRKSRC=                ${WRKDIR}/xfishtank2.0
+WRKSRC=        ${WRKDIR}/xfishtank2.0
 NO_INSTALL_MANPAGES=yes
 
 post-patch:
-	cd  ${WRKDIR}/xfishtank2.0; make clean
+	cd  ${WRKSRC}; make clean
 
 .include <bsd.port.mk>
