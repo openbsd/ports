@@ -1,0 +1,55 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2000/09/21 16:07:22 espie Exp $
+--- Makefile.in.orig	Tue Sep 19 16:17:29 2000
++++ Makefile.in	Tue Sep 19 16:16:29 2000
+@@ -8,7 +8,7 @@ VPATH=@srcdir@
+ srcdir=@srcdir@
+ 
+ @SET_MAKE@
+-FLAGS=@TYPESIZES@ @CFLAGS@
++FLAGS=@GETOPT_LONG@ @TYPESIZES@ @CFLAGS@
+ OPT=@OPT@ $(FLAGS)
+ DEBUG=@DEBUG@ $(FLAGS)
+ CC=@CC@
+@@ -27,29 +27,27 @@ PWD = $(shell pwd)
+ 
+ OFILES = main.o report.o header.o buffering_write.o
+ 
+-export STATIC 
+-export VERSION
++STLIBS = interface/libcdda_interface.a paranoia/libcdda_paranoia.a -lm
++STLIBDEP = interface/libcdda_interface.a paranoia/libcdda_paranoia.a
+ 
+-ifeq ($(STATIC),TRUE)
+-	LIBS = interface/libcdda_interface.a paranoia/libcdda_paranoia.a \
+-		-static -lm
+-	LIBDEP = interface/libcdda_interface.a paranoia/libcdda_paranoia.a
+-else
+-	LIBS = -lcdda_interface -lcdda_paranoia -lm
+-	LIBDEP = interface/libcdda_interface.so paranoia/libcdda_paranoia.so
+-endif
++SHLIBS = -lcdda_interface -lcdda_paranoia -lm
++SHLIBDEP = interface/libcdda_interface.so paranoia/libcdda_paranoia.so
+ 
+ 
+-all: 	
++all:
+ 	cd interface && $(MAKE) all
+ 	cd paranoia && $(MAKE) all
+-	$(MAKE) cdparanoia CFLAGS="$(OPT)" 
+-	strip cdparanoia
++	$(MAKE) cdparanoia CFLAGS="$(OPT)" LIBS="$(SHLIBS)" LIBDEP="$(SHLIBDEP)"
+ 
+-debug:  
++static:
++	cd interface && $(MAKE) lib
++	cd paranoia && $(MAKE) lib
++	$(MAKE) cdparanoia CFLAGS="$(OPT)" LIBS="$(STLIBS)" LIBDEP="$(STLIBDEP)"
++
++debug:
+ 	cd interface && $(MAKE) debug
+ 	cd paranoia && $(MAKE) debug
+-	$(MAKE) cdparanoia CFLAGS="$(DEBUG)" STATIC=TRUE
++	$(MAKE) cdparanoia CFLAGS="$(DEBUG)" LIBS="$(STLIBS)" LIBDEP="$(STLIBDEP)"
+ 
+ test:	
+ 	cd interface && $(MAKE) all

@@ -1,0 +1,48 @@
+$OpenBSD: patch-utils_h,v 1.1.1.1 2000/09/21 16:07:22 espie Exp $
+--- utils.h.orig	Tue Sep 19 16:21:26 2000
++++ utils.h	Tue Sep 19 16:16:36 2000
+@@ -1,5 +1,16 @@
+ #include <stdlib.h>
++#ifdef __linux__
+ #include <endian.h>
++#endif
++#ifdef __NetBSD__
++#include <sys/param.h>
++#if __NetBSD_Version__ >= 104010000
++#include <sys/endian.h>
++#else
++#include <machine/endian.h>
++#include <machine/bswap.h>
++#endif
++#endif
+ #include <stdio.h>
+ #include <errno.h>
+ #include <string.h>
+@@ -18,17 +29,27 @@ static inline int bigendianp(void){
+   return(1);
+ }
+ 
++#if !defined(__OpenBSD__)
+ static inline size32 swap32(size32 x){
++#ifdef __NetBSD__
++  return bswap32(x);
++#else
+   return((((unsigned size32)x & 0x000000ffU) << 24) | 
+ 	 (((unsigned size32)x & 0x0000ff00U) <<  8) | 
+ 	 (((unsigned size32)x & 0x00ff0000U) >>  8) | 
+ 	 (((unsigned size32)x & 0xff000000U) >> 24));
++#endif
+ }
+ 
+ static inline size16 swap16(size16 x){
++#ifdef __NetBSD__
++  return bswap16(x);
++#else
+   return((((unsigned size16)x & 0x00ffU) <<  8) | 
+ 	 (((unsigned size16)x & 0xff00U) >>  8));
++#endif
+ }
++#endif /* !defined(__OpenBSD__) */
+ 
+ #if BYTE_ORDER == LITTLE_ENDIAN
+ 

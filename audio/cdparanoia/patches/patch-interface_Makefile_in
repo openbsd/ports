@@ -1,0 +1,21 @@
+$OpenBSD: patch-interface_Makefile_in,v 1.1.1.1 2000/09/21 16:07:20 espie Exp $
+--- interface/Makefile.in.orig	Tue Sep 19 16:18:33 2000
++++ interface/Makefile.in	Tue Sep 19 16:16:31 2000
+@@ -21,8 +21,6 @@ CPPFLAGS+=-D_REENTRANT
+ OFILES = scan_devices.o	common_interface.o cooked_interface.o interface.o\
+ 	scsi_interface.o smallft.o toc.o test_interface.o
+ 
+-export VERSION
+-
+ all: lib slib
+ 
+ debug: 
+@@ -33,7 +31,7 @@ lib:	
+ 
+ slib:	
+ 	$(MAKE) lessmessy
+-	$(MAKE) libcdda_interface.so CFLAGS="$(OPT) -fpic" 
++	$(MAKE) libcdda_interface.so VERSION=$(VERSION) CFLAGS="$(OPT) -fpic" 
+ 	[ -e libcdda_interface.so.0 ] || ln -s libcdda_interface.so libcdda_interface.so.0
+ 
+ test:	

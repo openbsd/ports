@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_guess,v 1.1.1.1 2000/09/21 16:07:22 espie Exp $
+--- configure.guess.orig	Tue Sep 19 16:17:51 2000
++++ configure.guess	Tue Sep 19 16:16:35 2000
+@@ -319,6 +319,9 @@ EOF
+     *:FreeBSD:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-freebsd`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
+ 	exit 0 ;;
++    *:OpenBSD:*:*)
++	echo ${UNAME_MACHINE}-unknown-openbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
++	exit 0 ;;
+     *:NetBSD:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-netbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
+ 	exit 0 ;;

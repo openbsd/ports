@@ -1,0 +1,110 @@
+$OpenBSD: patch-interface_cooked_interface_c,v 1.1.1.1 2000/09/21 16:07:20 espie Exp $
+--- interface/cooked_interface.c.orig	Tue Sep 19 16:19:14 2000
++++ interface/cooked_interface.c	Tue Sep 19 16:16:33 2000
+@@ -13,6 +13,7 @@
+ static int cooked_readtoc (cdrom_drive *d){
+   int i;
+   int tracks;
++#ifdef __linux__
+   struct cdrom_tochdr hdr;
+   struct cdrom_tocentry entry;
+ 
+@@ -52,6 +53,45 @@ static int cooked_readtoc (cdrom_drive *
+   d->disc_toc[i].dwStartSector = entry.cdte_addr.lba;
+ 
+   tracks=hdr.cdth_trk1+1;
++#endif
++
++#ifdef __NetBSD__
++  struct ioc_read_toc_entry hdr;
++  struct cd_toc_entry entries[MAXTRK + 1];	/* + 1 for leadout */
++
++  hdr.address_format = CD_LBA_FORMAT;
++  hdr.starting_track = 1;
++  hdr.data_len = sizeof entries;
++  hdr.data = entries;
++  memset(entries, 0, sizeof entries);
++
++  /* get all TOC entries at once */
++#ifndef CDIOREADTOCENTRIES
++#define CDIOREADTOCENTRIES CDIOREADTOCENTRYS
++#endif
++  if(ioctl(d->ioctl_fd, CDIOREADTOCENTRIES, &hdr))
++    switch(errno){
++    case EPERM:
++      cderror(d,"102: Permision denied on cdrom (ioctl) device\n");
++      return(-102);
++    default:
++      cderror(d,"004: Unable to read table of contents header\n");
++      return(-4);
++    }
++
++  for(i = 0; i < MAXTRK + 1; i++) {
++    d->disc_toc[i].bFlags = (entries[i].addr_type << 4) | (entries[i].control & 0x0f);
++    d->disc_toc[i].bTrack = entries[i].track;
++    d->disc_toc[i].dwStartSector = entries[i].addr.lba;
++    if (entries[i].track == 0) {
++      cderror(d,"005: Unable to read table of contents entry\n");
++      return(-5);
++    }
++    if (entries[i].track >= 100)
++      break;	/* leadout */
++  }
++  tracks = i;
++#endif
+   d->cd_extra=FixupTOC(d,tracks);
+   return(--tracks);  /* without lead-out */
+ }
+@@ -60,10 +100,15 @@ static int cooked_readtoc (cdrom_drive *
+ /* Set operating speed */
+ static int cooked_setspeed(cdrom_drive *d, int speed)
+ {
++#ifdef __linux__
+   if(d->ioctl_fd!=-1)
+     return ioctl(d->ioctl_fd, CDROM_SELECT_SPEED, speed);
+   else
+     return 0;
++#endif
++#ifdef __NetBSD__
++  errx(1, "cooked_setspeed: not implemented");
++#endif
+ }
+ 
+ 
+@@ -72,6 +117,7 @@ static int cooked_setspeed(cdrom_drive *
+  */
+ 
+ static long cooked_read (cdrom_drive *d, void *p, long begin, long sectors){
++#ifdef __linux__
+   int retry_count,err;
+   struct cdrom_read_audio arg;
+   char *buffer=(char *)p;
+@@ -127,6 +173,10 @@ static long cooked_read (cdrom_drive *d,
+   } while (err);
+   
+   return(sectors);
++#endif
++#ifdef __NetBSD__
++  errx(1, "cooked_read: not implemented");
++#endif
+ }
+ 
+ /* hook */
+@@ -191,6 +241,7 @@ static void check_exceptions(cdrom_drive
+ 
+ /* set function pointers to use the ioctl routines */
+ int cooked_init_drive (cdrom_drive *d){
++#ifdef __linux__
+   int ret;
+ 
+   switch(d->drive_type){
+@@ -255,5 +306,9 @@ int cooked_init_drive (cdrom_drive *d){
+   if((ret=verify_read_command(d)))return(ret);
+   d->error_retry=1;
+   return(0);
++#endif
++#ifdef __NetBSD__
++  errx(1, "cooked_init_drive: not implemented");
++#endif
+ }
+ 

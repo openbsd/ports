@@ -1,0 +1,88 @@
+$OpenBSD: patch-interface_common_interface_c,v 1.1.1.1 2000/09/21 16:07:20 espie Exp $
+--- interface/common_interface.c.orig	Tue Sep 19 16:18:59 2000
++++ interface/common_interface.c	Tue Sep 19 16:16:35 2000
+@@ -13,19 +13,29 @@
+ #include "utils.h"
+ #include "smallft.h"
+ 
++#ifdef __linux__
+ #include <linux/hdreg.h>
++#endif
+ 
+ /* Test for presence of a cdrom by pinging with the 'CDROMVOLREAD' ioctl() */
+ int ioctl_ping_cdrom(int fd){
++#ifdef __linux__
+   struct cdrom_volctrl volctl;
+   if (ioctl(fd, CDROMVOLREAD, &volctl)) 
+     return(1); /* failure */
++#endif
++#ifdef __NetBSD__
++  struct ioc_vol volctl;
++  if (ioctl(fd, CDIOCGETVOL, &volctl)) 
++    return(1); /* failure */
++#endif
+ 
+   return(0);
+   /* success! */
+ }
+ 
+ 
++#ifdef __linux__
+ /* Use the ioctl thingy above ping the cdrom; this will get model info */
+ char *atapi_drive_info(int fd){
+   /* Work around the fact that the struct grew without warning in
+@@ -46,6 +56,7 @@ char *atapi_drive_info(int fd){
+   free(id);
+   return(ret);
+ }
++#endif
+ 
+ int data_bigendianp(cdrom_drive *d){
+   float lsb_votes=0;
+@@ -171,7 +182,9 @@ int data_bigendianp(cdrom_drive *d){
+    knows the leasoud/leadin size. */
+ 
+ int FixupTOC(cdrom_drive *d,int tracks){
++#ifdef __linux__
+   struct cdrom_multisession ms_str;
++#endif
+   int j;
+   
+   /* First off, make sure the 'starting sector' is >=0 */
+@@ -209,13 +222,24 @@ int FixupTOC(cdrom_drive *d,int tracks){
+      CDROM device, not the generic device. */
+ 
+   if (d->ioctl_fd != -1) {
++#ifdef __linux__
+     int result;
+ 
+     ms_str.addr_format = CDROM_LBA;
+     result = ioctl(d->ioctl_fd, CDROMMULTISESSION, &ms_str);
+     if (result == -1) return -1;
++# define ms_addr	(ms_str.addr.lba)
++#endif
++
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++    int ms_addr;
++
++    ms_addr = 0;	/* last session */
++    if (ioctl(d->ioctl_fd, CDIOREADMSADDR, &ms_addr) == -1)
++      return -1;
++#endif
+ 
+-    if (ms_str.addr.lba > 100) {
++    if (ms_addr > 100) {
+ 
+       /* This is an odd little piece of code --Monty */
+ 
+@@ -223,8 +247,8 @@ int FixupTOC(cdrom_drive *d,int tracks){
+       /* adjust end of last audio track to be in the first session */
+       for (j = tracks-1; j >= 0; j--) {
+ 	if (j > 0 && !IS_AUDIO(d,j) && IS_AUDIO(d,j-1)) {
+-	  if (d->disc_toc[j].dwStartSector > ms_str.addr.lba - 11400) 
+-	    d->disc_toc[j].dwStartSector = ms_str.addr.lba - 11400;
++	  if (d->disc_toc[j].dwStartSector > ms_addr - 11400) 
++	    d->disc_toc[j].dwStartSector = ms_addr - 11400;
+ 	  break;
+ 	}
+       }

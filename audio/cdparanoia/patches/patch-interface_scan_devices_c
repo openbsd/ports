@@ -1,0 +1,207 @@
+$OpenBSD: patch-interface_scan_devices_c,v 1.1.1.1 2000/09/21 16:07:21 espie Exp $
+--- interface/scan_devices.c.orig	Tue Dec 14 08:30:23 1999
++++ interface/scan_devices.c	Thu Sep 21 17:19:18 2000
+@@ -17,6 +17,8 @@
+ #include "common_interface.h"
+ #include "utils.h"
+ 
++#ifdef __linux__
++
+ #define MAX_DEV_LEN 20 /* Safe because strings only come from below */
+ /* must be absolute paths! */
+ static char *scsi_cdrom_prefixes[3]={"/dev/scd","/dev/sr",NULL};
+@@ -28,10 +30,16 @@ static char *cdrom_devices[14]={"/dev/cd
+ 				/* "/dev/aztcd", timeout is too long */
+ 				"/dev/cm206cd",
+ 				"/dev/gscd","/dev/optcd",NULL};
++#endif
++#ifdef __OpenBSD__
++static char *cdrom_devices[]={"/dev/cdrom", "/dev/cd?c", "/dev/mcd?c",
++				"/dev/acd?c", NULL };
++#endif
+ 
+ /* Functions here look for a cdrom drive; full init of a drive type
+    happens in interface.c */
+ 
++#if defined(__linux__) /* not OpenBSD yet */
+ cdrom_drive *cdda_find_a_cdrom(int messagedest,char **messages){
+   /* Brute force... */
+   
+@@ -54,10 +62,12 @@ cdrom_drive *cdda_find_a_cdrom(int messa
+ 	if((d=cdda_identify(buffer,messagedest,messages)))
+ 	  return(d);
+ 	idmessage(messagedest,messages,"",NULL);
++#ifdef __linux__
+ 	buffer[pos-(cdrom_devices[i])]=j+97;
+ 	if((d=cdda_identify(buffer,messagedest,messages)))
+ 	  return(d);
+ 	idmessage(messagedest,messages,"",NULL);
++#endif
+       }
+     }else{
+       /* Name.  Go for it. */
+@@ -78,6 +88,15 @@ cdrom_drive *cdda_find_a_cdrom(int messa
+   }
+   return(NULL);
+ }
++#endif	/* __linux__ */
++
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++cdrom_drive *cdda_find_a_cdrom(int messagedest,char **messages)
++{
++  errx(1, "cdda_find_a_cdrom: not implemented");
++  /* NOTREACHED */
++}
++#endif	/* __NetBSD__ || __OpenBSD__ */
+ 
+ cdrom_drive *cdda_identify(const char *device, int messagedest,char **messages){
+   struct stat st;
+@@ -143,6 +162,7 @@ char *test_resolve_symlink(const char *f
+ cdrom_drive *cdda_identify_cooked(const char *dev, int messagedest,
+ 				  char **messages){
+ 
++#ifdef __linux__
+   cdrom_drive *d=NULL;
+   struct stat st;
+   int fd=-1;
+@@ -270,6 +290,12 @@ cdrom_drive *cdda_identify_cooked(const 
+   idmessage(messagedest,messages,"\t\tCDROM sensed: %s\n",description);
+   
+   return(d);
++#endif
++
++#ifdef __NetBSD__
++  /* no kernel support for CD-DA */
++  return NULL;
++#endif
+ }
+ 
+ struct  sg_id {
+@@ -289,12 +315,18 @@ typedef struct scsiid{
+ 
+ /* Even *this* isn't as simple as it bloody well should be :-P */
+ static int get_scsi_id(int fd, scsiid *id){
++#ifdef __linux__
+   struct sg_id argid;
++#endif
++#ifdef __NetBSD__
++  struct scsi_addr argid;
++#endif
+   int busarg;
+ 
+   /* get the host/id/lun */
+ 
+   if(fd==-1)return(-1);
++#ifdef __linux__
+   if(ioctl(fd,SCSI_IOCTL_GET_IDLUN,&argid))return(-1);
+   id->bus=argid.l2; /* for now */
+   id->id=argid.l1&0xff;
+@@ -302,6 +334,13 @@ static int get_scsi_id(int fd, scsiid *i
+ 
+   if(ioctl(fd,SCSI_IOCTL_GET_BUS_NUMBER,&busarg)==0)
+     id->bus=busarg;
++#endif
++#ifdef __NetBSD__
++  if(ioctl(fd,SCIOCIDENTIFY,&argid))return(-1);
++  id->bus=argid.addr.scsi.scbus;
++  id->id=argid.addr.scsi.target;
++  id->lun=argid.addr.scsi.lun;
++#endif
+   
+   return(0);
+ }
+@@ -410,6 +449,7 @@ cdrom_drive *cdda_identify_scsi(const ch
+ 	       generic_device);
+       return(NULL);
+     }
++#ifdef __linux__
+     if((int)(g_st.st_rdev>>8)!=SCSI_GENERIC_MAJOR){
+       if((int)(g_st.st_rdev>>8)!=SCSI_CDROM_MAJOR){
+ 	idmessage(messagedest,messages,"\t\t%s is not a SCSI device",
+@@ -421,6 +461,7 @@ cdrom_drive *cdda_identify_scsi(const ch
+ 	ioctl_device=temp;
+       }
+     }
++#endif
+   }
+   if(ioctl_device){
+     if(stat(ioctl_device,&i_st)){
+@@ -428,6 +469,7 @@ cdrom_drive *cdda_identify_scsi(const ch
+ 	       ioctl_device);
+       return(NULL);
+     }
++#ifdef __linux__
+     if((int)(i_st.st_rdev>>8)!=SCSI_CDROM_MAJOR){
+       if((int)(i_st.st_rdev>>8)!=SCSI_GENERIC_MAJOR){
+ 	idmessage(messagedest,messages,"\t\t%s is not a SCSI device",
+@@ -439,6 +481,7 @@ cdrom_drive *cdda_identify_scsi(const ch
+ 	ioctl_device=temp;
+       }
+     }
++#endif
+   }
+ 
+   /* we need to resolve any symlinks for the lookup code to work */
+@@ -455,6 +498,7 @@ cdrom_drive *cdda_identify_scsi(const ch
+   }
+ 
+   if(!generic_device || !ioctl_device){
++#ifdef __linux__
+     if(generic_device){
+       ioctl_device=scsi_match(generic_device,scsi_cdrom_prefixes,O_RDWR,
+ 			      O_RDONLY|O_NONBLOCK,
+@@ -468,6 +512,9 @@ cdrom_drive *cdda_identify_scsi(const ch
+       if(!generic_device)	
+ 	goto cdda_identify_scsi_fail;
+     }
++#else
++    goto cdda_identify_scsi_fail;
++#endif
+   }
+   
+   idmessage(messagedest,messages,"\t\tgeneric device: %s",generic_device);
+@@ -504,6 +551,7 @@ cdrom_drive *cdda_identify_scsi(const ch
+ 
+     type=(int)(i_st.st_rdev>>8);
+ 
++#ifdef __linux__
+     if(type==SCSI_CDROM_MAJOR){
+       if (!S_ISBLK(i_st.st_mode)) {
+ 	idmessage(messagedest,messages,"\t\tSCSI CDROM device %s not a "
+@@ -515,8 +563,10 @@ cdrom_drive *cdda_identify_scsi(const ch
+ 		"major number",ioctl_device);
+       goto cdda_identify_scsi_fail;
+     }
++#endif
+   }
+ 
++#ifdef __linux__
+   if((int)(g_st.st_rdev>>8)==SCSI_GENERIC_MAJOR){
+     if (!S_ISCHR(g_st.st_mode)) {
+       idmessage(messagedest,messages,"\t\tGeneric SCSI device %s not a "
+@@ -528,6 +578,7 @@ cdrom_drive *cdda_identify_scsi(const ch
+ 	      "major number",generic_device);
+     goto cdda_identify_scsi_fail;
+   }
++#endif
+   
+   d=calloc(1,sizeof(cdrom_drive));
+ 
+@@ -564,7 +615,16 @@ cdrom_drive *cdda_identify_scsi(const ch
+ 
+   /* It would seem some TOSHIBA CDROM gets things wrong */
+  
+-  if (!strncmp (p + 8, "TOSHIBA", 7) &&
++#ifndef TYPE_DISK
++#define TYPE_DISK	0	/* direct */
++#endif
++#ifndef TYPE_WORM
++#define TYPE_WORM	4	/* write once, read many */
++#endif
++#ifndef TYPE_ROM
++#define TYPE_ROM	5	/* CD-ROM */
++#endif
++  if (p && !strncmp (p + 8, "TOSHIBA", 7) &&
+       !strncmp (p + 16, "CD-ROM", 6) &&
+       p[0] == TYPE_DISK) {
+     p[0] = TYPE_ROM;

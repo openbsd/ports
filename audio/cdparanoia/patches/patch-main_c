@@ -1,0 +1,121 @@
+$OpenBSD: patch-main_c,v 1.1.1.1 2000/09/21 16:07:22 espie Exp $
+--- main.c.orig	Tue Dec 14 09:18:44 1999
++++ main.c	Tue Sep 19 16:45:23 2000
+@@ -49,7 +49,9 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <fcntl.h>
++#ifdef GETOPT_LONG
+ #include <getopt.h>
++#endif
+ #include <errno.h>
+ #include <math.h>
+ #include <sys/time.h>
+@@ -231,6 +233,7 @@ VERSION"\n"
+ "  cdparanoia [options] <span> [outfile]\n\n"
+ 
+ "OPTIONS:\n"
++#ifdef GETOPT_LONG
+ "  -v --verbose                    : extra verbose operation\n"
+ "  -q --quiet                      : quiet operation\n"
+ "  -e --stderr-progress            : force output of progress information to\n"
+@@ -274,6 +277,46 @@ VERSION"\n"
+ "  -Z --disable-paranoia           : disable all paranoia checking\n"
+ "  -Y --disable-extra-paranoia     : only do cdda2wav-style overlap checking\n"
+ "  -X --abort-on-skip              : abort on imperfect reads/skips\n\n"
++#else
++"  -v         : extra verbose operation\n"
++"  -q         : quiet operation\n"
++"  -e         : force output of progress information to\n"
++"               stderr (for wrapper scripts)\n"
++"  -V         : print version info and quit\n"
++"  -Q         : autosense drive, query disc and quit\n"
++"  -B         : 'batch' mode (saves each track to a seperate file.\n"
++"  -s         : do an exhaustive search for drive\n"
++"  -h         : print help\n\n"
++
++"  -p         : output raw 16 bit PCM in host byte order\n"
++"  -r         : output raw 16 bit little-endian PCM\n"
++"  -R         : output raw 16 bit big-endian PCM\n"
++"  -w         : output as WAV file (default)\n"
++"  -f         : output as AIFF file\n"
++"  -a         : output as AIFF-C file\n"
++"  -i <file>  : output human readable ripping info to file\n\n"
++
++"  -c         : force treating drive as little endian\n"
++"  -C         : force treating drive as big endian\n"
++"  -n <n>     : force default number of sectors in read to n sectors\n"
++"  -o <n>     : force minimum overlap search during\n"
++"               verification to n sectors\n"
++"  -d <dev>   : use specified device; disallow autosense\n"
++"  -g <dev>   : use specified generic scsi device\n"
++"  -S <n>     : read from device at specified speed\n"
++"  -t <n>     : Add <n> sectors to the values reported\n"
++"               when addressing tracks. May be negative\n"
++"  -T         : Assume that the beginning offset of\n"
++"               track 1 as reported in the TOC will be\n"
++"               addressed as LBA 0.  Necessary for some\n"
++"               Toshiba drives to get track boundaries\n"
++"               correct\n"
++"  -z         : never accept any less than perfect\n"
++"               data reconstruction (don't allow 'V's)\n"
++"  -Z         : disable all paranoia checking\n"
++"  -Y         : only do cdda2wav-style overlap checking\n"
++"  -X         : abort on imperfect reads/skips\n\n"
++#endif
+ 
+ "OUTPUT SMILIES:\n"
+ "  :-)   Normal operation, low/no jitter\n"
+@@ -374,7 +417,7 @@ static void callback(long inpos, int fun
+   int graph=30;
+   char buffer[256];
+   static long c_sector=0,v_sector=0;
+-  static char dispcache[30]="                              ";
++  static char dispcache[30 + 1]="                              ";
+   static int last=0;
+   static long lasttime=0;
+   long sector,osector=0;
+@@ -585,6 +628,7 @@ static void callback(long inpos, int fun
+ 
+ const char *optstring = "escCn:o:d:g:S:prRwafvqVQhZzYXWBi:Tt:";
+ 
++#ifdef GETOPT_LONG
+ struct option options [] = {
+ 	{"stderr-progress",no_argument,NULL,'e'},
+ 	{"search-for-drive",no_argument,NULL,'s'},
+@@ -618,6 +662,7 @@ struct option options [] = {
+ 
+ 	{NULL,0,NULL,0}
+ };
++#endif
+ 
+ long blocking_write(int outf, char *buffer, long num){
+   long words=0,temp;
+@@ -668,7 +713,12 @@ int main(int argc,char *argv[]){
+ 
+   atexit(cleanup);
+ 
+-  while((c=getopt_long(argc,argv,optstring,options,&long_option_index))!=EOF){
++#ifdef GETOPT_LONG
++  while((c=getopt_long(argc,argv,optstring,options,&long_option_index))!=EOF)
++#else
++  while((c=getopt(argc,argv,optstring))!=EOF)
++#endif
++  {
+     switch(c){
+     case 'B':
+       batch=1;
+@@ -797,6 +847,13 @@ int main(int argc,char *argv[]){
+   report(VERSION);
+ 
+   /* Query the cdrom/disc; we may need to override some settings */
++
++#if defined(__NetBSD__) || defined(__OpenBSD__)	/* XXX */
++  if (!force_generic_device)
++    force_generic_device = copystring("/dev/cd0c");
++  if (!force_cdrom_device)
++    force_cdrom_device=copystring(force_generic_device);
++#endif
+ 
+   if(force_generic_device)
+     d=cdda_identify_scsi(force_generic_device,force_cdrom_device,verbose,NULL);

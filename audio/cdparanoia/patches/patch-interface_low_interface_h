@@ -1,0 +1,36 @@
+$OpenBSD: patch-interface_low_interface_h,v 1.1.1.1 2000/09/21 16:07:21 espie Exp $
+--- interface/low_interface.h.orig	Tue Sep 19 16:19:33 2000
++++ interface/low_interface.h	Tue Sep 19 16:16:35 2000
+@@ -25,6 +25,7 @@
+ #include <sys/time.h>
+ #include <sys/types.h>
+ 
++#ifdef __linux__
+ #include <linux/major.h>
+ #include <linux/version.h>
+ 
+@@ -48,13 +49,24 @@
+ 
+ #include <linux/cdrom.h>
+ #include <linux/major.h>
++#endif
++
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++#include <sys/scsiio.h>
++#include <sys/cdio.h>
++#endif
+ 
+ #include "cdda_interface.h"
+ 
+ #define MAX_RETRIES 8
+ #define MAX_BIG_BUFF_SIZE 65536
+ #define MIN_BIG_BUFF_SIZE 4096
++#ifdef __linux__
+ #define SG_OFF sizeof(struct sg_header)
++#endif
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++#define SG_OFF sizeof(scsireq_t)
++#endif
+ 
+ #ifndef SG_EMULATED_HOST
+ /* old kernel version; the check for the ioctl is still runtime, this

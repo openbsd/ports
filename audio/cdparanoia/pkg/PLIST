@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/21 16:07:22 espie Exp $
+bin/cdparanoia
+man/man1/cdparanoia.1
+share/cdparanoia-FAQ

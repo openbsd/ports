@@ -1,0 +1,38 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2000/09/21 16:07:22 espie Exp $
+--- configure.in.orig	Mon Aug 16 00:29:43 1999
++++ configure.in	Tue Sep 19 16:29:30 2000
+@@ -14,15 +14,15 @@ AC_CHECK_PROG(INSTALL,install,install)
+ 
+ if test -z "$GCC"; then
+ 	DEBUG="-g"
+-	OPT="-O"
++	OPT="-O ${COPT}"
+ else
+ 	case $host in 
+-	i?86-*-linux*)
++	i?86-*-*)
+ 		DEBUG="-g -Wall -fsigned-char"
+-		OPT="-O20 -ffast-math -fsigned-char -finline-functions";;
++		OPT="-O20 -ffast-math -fsigned-char -finline-functions ${COPT}";;
+ 	*)
+ 		DEBUG="-g -Wall -fsigned-char"
+-		OPT="-O20 -fsigned-char";;
++		OPT="-O20 -fsigned-char ${COPT}";;
+         esac
+ fi
+ 
+@@ -63,11 +63,14 @@ fi
+ AC_CHECK_HEADERS(linux/sbpcd.h, SBPCD_H="-DSBPCD_H='1' ")
+ AC_CHECK_HEADERS(linux/ucdrom.h, UCDROM_H="-DUCDROM_H='1' ")
+ 
++AC_CHECK_FUNCS(getopt_long, GETOPT_LONG="-DGETOPT_LONG='1' ")
++
+ AC_PROG_MAKE_SET
+ AC_C_CONST
+ 
+ AC_SUBST(SBPCD_H)
+ AC_SUBST(UCDROM_H)
++AC_SUBST(GETOPT_LONG)
+ AC_SUBST(TYPESIZES)
+ AC_SUBST(OPT)
+ AC_SUBST(DEBUG)

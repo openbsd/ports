@@ -1,0 +1,20 @@
+$OpenBSD: patch-paranoia_Makefile_in,v 1.1.1.1 2000/09/21 16:07:22 espie Exp $
+--- paranoia/Makefile.in.orig	Tue Sep 19 16:21:11 2000
++++ paranoia/Makefile.in	Tue Sep 19 16:16:31 2000
+@@ -22,7 +22,6 @@ OFILES = paranoia.o p_block.o overlap.o 
+ #TFILES = isort.t gap.t p_block.t paranoia.t
+ 
+ LIBS = ../interface/libcdda_interface.a -lm
+-export VERSION
+ 
+ all: lib slib
+ 
+@@ -34,7 +33,7 @@ lib:	
+ 
+ slib:	
+ 	$(MAKE) lessmessy
+-	$(MAKE) libcdda_paranoia.so CFLAGS="$(OPT) -fpic" 
++	$(MAKE) libcdda_paranoia.so VERSION=$(VERSION) CFLAGS="$(OPT) -fpic" 
+ 
+ #test:	$(TFILES)
+ #

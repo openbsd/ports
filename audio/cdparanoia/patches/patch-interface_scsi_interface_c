@@ -1,0 +1,198 @@
+$OpenBSD: patch-interface_scsi_interface_c,v 1.1.1.1 2000/09/21 16:07:21 espie Exp $
+--- interface/scsi_interface.c.orig	Tue Sep 19 16:20:14 2000
++++ interface/scsi_interface.c	Tue Sep 19 16:16:36 2000
+@@ -32,6 +32,7 @@ static int Dummy (cdrom_drive *d,int s){
+ #endif
+ 
+ static int look_for_dougg(cdrom_drive *d){
++#ifdef __linux__
+   /* are we using the new SG driver by Doug Gilbert? If so, our memory
+      strategy will be different. */
+   int reserved,table;
+@@ -78,6 +79,9 @@ static int look_for_dougg(cdrom_drive *d
+   }
+ 
+   return(1);
++#else
++  return(0);
++#endif
+ }
+ 
+ static void find_bloody_big_buff_size(cdrom_drive *d){
+@@ -142,6 +146,7 @@ static void reset_scsi(cdrom_drive *d){
+ 
+ }
+ 
++#ifdef __linux__
+ static void clear_garbage(cdrom_drive *d){
+   fd_set fdset;
+   struct timeval tv;
+@@ -172,20 +177,28 @@ static void clear_garbage(cdrom_drive *d
+     flag=1;
+   }
+ }
++#endif
+ 
+ /* process a complete scsi command. */
+ static int handle_scsi_cmd(cdrom_drive *d,
+ 			   unsigned int cmd_len, 
+ 			   unsigned int in_size, 
+ 			   unsigned int out_size,
+-			   unsigned char bytefill,
++			   unsigned int bfill,
+ 			   int bytecheck){
++  unsigned char bytefill = bfill;
+   int status = 0;
++#ifdef __linux__
+   struct sg_header *sg_hd=(struct sg_header *)d->sg;
+   long writebytes=SG_OFF+cmd_len+in_size;
++#endif
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++  scsireq_t *sreq = (scsireq_t *)d->sg;
++#endif
+ 
+   /* generic scsi device services */
+ 
++#ifdef __linux__
+   /* clear out any possibly preexisting garbage */
+   clear_garbage(d);
+ 
+@@ -291,11 +304,53 @@ static int handle_scsi_cmd(cdrom_drive *
+     if(errno==0)errno=EIO;
+     return(TR_EREAD);
+   }
++#endif	/* __linux__ */
++
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++  if (in_size && out_size) {
++    warnx("handle_scsi_cmd: in and out is not supported");
++    abort();
++  }
++  memset(sreq, 0, sizeof(scsireq_t));
++  sreq->cmdlen = cmd_len;
++  memcpy(sreq->cmd, d->sg_buffer, cmd_len);
++  if (in_size) {
++    sreq->flags = SCCMD_WRITE;
++    sreq->databuf = d->sg_buffer + cmd_len;
++    sreq->datalen = in_size;
++  }
++  if (out_size) {
++    sreq->flags = SCCMD_READ;
++    sreq->databuf = d->sg_buffer;
++    sreq->datalen = out_size;
++    if(bytecheck)
++      memset(d->sg_buffer, bytefill, out_size); 
++  }
++  sreq->senselen = SENSEBUFLEN;
++  sreq->timeout = 10000;	/* 10s */
++
++  status = ioctl(d->cdda_fd, SCIOCCOMMAND, (void *) sreq);
++  if (status < 0)
++    return(TR_ILLEGAL);
++#endif
+ 
+-  if(sg_hd->sense_buffer[0]){
++#ifdef __linux__
++  if(sg_hd->sense_buffer[0])
++#endif
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++  if (sreq->sense[0])
++#endif
++  {
++#ifdef __linux__
+     char key=sg_hd->sense_buffer[2]&0xf;
+     char ASC=sg_hd->sense_buffer[12];
+     char ASCQ=sg_hd->sense_buffer[13];
++#endif
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++    char key = sreq->sense[2]&0xf;
++    char ASC = sreq->sense[12];
++    char ASCQ = sreq->sense[13];
++#endif
+     switch(key){
+     case 0:
+       if(errno==0)errno=EIO;
+@@ -333,9 +388,20 @@ static int handle_scsi_cmd(cdrom_drive *
+      commands still get through.  Perhaps no data comes back even
+      though the target reports success? */
+ 
+-  if(bytecheck && in_size+cmd_len<out_size){
++#ifdef __linux__
++  if(bytecheck && in_size+cmd_len<out_size)
++#endif
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++  if(bytecheck && out_size)
++#endif
++  {
+     long i,flag=0;
++#ifdef __linux__
+     for(i=in_size;i<out_size;i++)
++#endif
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++    for(i=0;i<out_size;i++)
++#endif
+       if(d->sg_buffer[i]!=bytefill){
+ 	flag=1;
+ 	break;
+@@ -840,16 +906,29 @@ static long scsi_read_map (cdrom_drive *
+   while(1) {
+     if((err=map(d,(p?buffer:NULL),begin,sectors))){
+       if(d->report_all){
++#ifdef __linux__
+ 	struct sg_header *sg_hd=(struct sg_header *)d->sg;
++#endif
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++	scsireq_t *sreq=(scsireq_t *)d->sg;
++#endif
+ 	char b[256];
+ 
+ 	sprintf(b,"scsi_read error: sector=%ld length=%ld retry=%d\n",
+ 		begin,sectors,retry_count);
+ 	cdmessage(d,b);
+ 	sprintf(b,"                 Sense key: %x ASC: %x ASCQ: %x\n",
++#ifdef __linux__
+ 		(int)(sg_hd->sense_buffer[2]&0xf),
+ 		(int)(sg_hd->sense_buffer[12]),
+-		(int)(sg_hd->sense_buffer[13]));
++		(int)(sg_hd->sense_buffer[13])
++#endif
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++		(int)(sreq->sense[2]&0xf),
++		(int)(sreq->sense[12]),
++		(int)(sreq->sense[13])
++#endif
++		);
+ 	cdmessage(d,b);
+ 	sprintf(b,"                 Transport error: %s\n",strerror_tr[err]);
+ 	cdmessage(d,b);
+@@ -859,9 +938,17 @@ static long scsi_read_map (cdrom_drive *
+ 	fprintf(stderr,"scsi_read error: sector=%ld length=%ld retry=%d\n",
+ 		begin,sectors,retry_count);
+ 	fprintf(stderr,"                 Sense key: %x ASC: %x ASCQ: %x\n",
++#ifdef __linux__
+ 		(int)(sg_hd->sense_buffer[2]&0xf),
+ 		(int)(sg_hd->sense_buffer[12]),
+-		(int)(sg_hd->sense_buffer[13]));
++		(int)(sg_hd->sense_buffer[13])
++#endif
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++		(int)(sreq->sense[2]&0xf),
++		(int)(sreq->sense[12]),
++		(int)(sreq->sense[13])
++#endif
++		);
+ 	fprintf(stderr,"                 Transport error: %s\n",strerror_tr[err]);
+ 	fprintf(stderr,"                 System error: %s\n",strerror(errno));
+       }
+@@ -1376,6 +1463,11 @@ static int guess_atapi(cdrom_drive *d,in
+     /* Mt Fuji */
+     if(reportp)
+       cdmessage(d,"\tDrive appears to be Mt. Fuji ATAPI C/DVD\n");
++    return(1);
++  case 0x32:
++    /* Toshiba DVD */
++    if(reportp)
++      cdmessage(d,"\tDrive appears to be Toshiba ATAPI C/DVD\n");
+     return(1);
+   default:
+     if(reportp)
