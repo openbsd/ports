@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/03/27 01:03:19 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2001/03/29 03:11:38 kevlo Exp $
 
 COMMENT=	"CAD drawing program for X11"
 
@@ -30,7 +30,7 @@ RUN_DEPENDS=	fig2dev::print/transfig \
 WRKDIST=	${WRKDIR}/xfig.${VERSION}
 
 CONFIGURE_STYLE= imake
-MAKE_FLAGS=	BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/man1" \
+MAKE_FLAGS=	BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/cat1" \
 		XAPPLOADDIR="${PREFIX}/lib/X11/app-defaults"  \
 		XFIGLIBDIR="${PREFIX}/lib/X11/xfig" \
 		LOCALBASE="${LOCALBASE}" X11BASE="${X11BASE}"
