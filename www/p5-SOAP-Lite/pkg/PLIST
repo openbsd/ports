@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/21 18:14:44 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/01/17 23:02:23 naddy Exp $
 bin/SOAPsh.pl
 bin/XMLRPCsh.pl
 bin/stubmaker.pl
@@ -24,6 +24,7 @@ ${P5SITE}/XMLRPC/Test.pm
 ${P5SITE}/XMLRPC/Transport/HTTP.pm
 ${P5SITE}/XMLRPC/Transport/POP3.pm
 ${P5SITE}/XMLRPC/Transport/TCP.pm
+@comment ${P5ARCH}/auto/SOAP/Lite/.packlist
 man/man1/SOAPsh.pl.1
 man/man1/XMLRPCsh.pl.1
 man/man3p/Apache::SOAP.3p
@@ -46,3 +47,14 @@ man/man3p/XMLRPC::Test.3p
 man/man3p/XMLRPC::Transport::HTTP.3p
 man/man3p/XMLRPC::Transport::POP3.3p
 man/man3p/XMLRPC::Transport::TCP.3p
+@comment @dirrm ${P5ARCH}/auto/SOAP/Lite
+@comment @dirrm ${P5ARCH}/auto/SOAP
+@dirrm ${P5SITE}/XMLRPC/Transport
+@dirrm ${P5SITE}/XMLRPC
+@dirrm ${P5SITE}/XML/Parser
+@dirrm ${P5SITE}/XML
+@dirrm ${P5SITE}/UDDI
+@dirrm ${P5SITE}/SOAP/Transport
+@dirrm ${P5SITE}/SOAP
+@dirrm ${P5SITE}/Apache/XMLRPC
+@dirrm ${P5SITE}/Apache
