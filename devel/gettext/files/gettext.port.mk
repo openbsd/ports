@@ -1,9 +1,10 @@
-# $OpenBSD: gettext.port.mk,v 1.6 2001/10/28 19:17:06 brad Exp $
+# $OpenBSD: gettext.port.mk,v 1.7 2001/10/31 20:27:12 brad Exp $
 
 # This dependency entry is to ensure libiconv is installed when using
 # the gettext module. This is necessary incase another program uses
 # the libintl libtool wrapper for linking.
-BUILD_DEPENDS+=	:libiconv-*:converters/libiconv
+LIB_DEPENDS+=	iconv.2:libiconv-*:converters/libiconv
+
 # The RUN_DEPENDS entry is to ensure gettext is installed. This is
 # necessary so that we have locale.alias installed on static archs.
 # Typically installed in PREFIX/share/locale.
