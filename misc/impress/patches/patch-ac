@@ -1,0 +1,89 @@
+--- src/Makefile.orig	Wed Nov 22 19:46:45 2000
++++ src/Makefile	Wed Nov 22 19:50:27 2000
+@@ -1,85 +1,8 @@
+-cmp=/usr/bin/cmp
+-cp=/bin/cp
+-mv=/bin/mv
+-ln=/bin/ln
+-
+-all: impress transeps
++all: impress
+ 
+ impress:	impress.tcl
+ 	cat impress.tcl >impress
+ 	chmod a+x impress
+-
+-../pstoedit/src/drvtk.cpp.orig:
+-	@-${mv} ../pstoedit/src/drvtk.cpp ../pstoedit/src/drvtk.cpp.orig
+-
+-../pstoedit/src/drvtk.h.orig:
+-	@-${mv} ../pstoedit/src/drvtk.h ../pstoedit/src/drvtk.h.orig
+-
+-installdrvtk:	../pstoedit/src/drvtk.cpp.orig ../pstoedit/src/drvtk.h.orig
+-	@-${cmp} drvtk.cpp ../pstoedit/src/drvtk.cpp 2>/dev/null || \
+-		echo "Updating drvtk.cpp" >&2 && ${cp} drvtk.cpp ../pstoedit/src
+-	@-${cmp} drvtk.h ../pstoedit/src/drvtk.h 2>/dev/null || \
+-		echo "Updating drvtk.h" >&2 && ${cp} drvtk.h ../pstoedit/src
+-
+-install: impress impress.tcl transeps COPYING CHANGES README installdrvtk
+-	@-mkdir ../bin
+-	@-${cmp} impress ../bin/impress 2>/dev/null || \
+-		echo "Updating impress" >&2 && ${cp} impress ../bin
+-	@-${cmp} transeps ../bin/transeps 2>/dev/null || \
+-		echo "Updating transeps" >&2 && ${cp} transeps ../bin
+-	@-${cmp} COPYING ../COPYING 2>/dev/null || \
+-		echo "Updating COPYING" >&2 && ${cp} COPYING ..
+-	@-${cmp} README ../README 2>/dev/null || \
+-		echo "Updating README" >&2 && ${cp} README ..
+-	@-${cmp} CHANGES ../CHANGES 2>/dev/null || \
+-		echo "Updating CHANGES" >&2 && ${cp} CHANGES ..
+-	@-mkdir ../doc
+-	@-${cmp} doc/arrows.gif ../doc/arrows.gif 2>/dev/null || \
+-		echo "Updating arrows.gif" >&2 && ${cp} doc/arrows.gif ../doc
+-	@-${cmp} doc/custcolor.gif ../doc/custcolor.gif 2>/dev/null || \
+-		echo "Updating custcolor.gif" >&2 && ${cp} doc/custcolor.gif ../doc
+-	@-${cmp} doc/file.gif ../doc/file.gif 2>/dev/null || \
+-		echo "Updating file.gif" >&2 && ${cp} doc/file.gif ../doc
+-	@-${cmp} doc/fonts.gif ../doc/fonts.gif 2>/dev/null || \
+-		echo "Updating fonts.gif" >&2 && ${cp} doc/fonts.gif ../doc
+-	@-${cmp} doc/grid.gif ../doc/grid.gif 2>/dev/null || \
+-		echo "Updating grid.gif" >&2 && ${cp} doc/grid.gif ../doc
+-	@-${cmp} doc/impdoc.html ../doc/impdoc.html 2>/dev/null || \
+-		echo "Updating impdoc.html" >&2 && ${cp} doc/impdoc.html ../doc
+-	@-${cmp} doc/implogo.gif ../doc/implogo.gif 2>/dev/null || \
+-		echo "Updating implogo.gif" >&2 && ${cp} doc/implogo.gif ../doc
+-	@-${cmp} doc/impressbuttons.gif ../doc/impressbuttons.gif 2>/dev/null || \
+-		echo "Updating impressbuttons.gif" >&2 && ${cp} doc/impressbuttons.gif ../doc
+-	@-${cmp} doc/impressmain2.gif ../doc/impressmain2.gif 2>/dev/null || \
+-		echo "Updating impressmain2.gif" >&2 && ${cp} doc/impressmain2.gif ../doc
+-	@-${cmp} doc/lgtoolbar.gif ../doc/lgtoolbar.gif 2>/dev/null || \
+-		echo "Updating lgtoolbar.gif" >&2 && ${cp} doc/lgtoolbar.gif ../doc
+-	@-${cmp} doc/openurldialog.gif ../doc/openurldialog.gif 2>/dev/null || \
+-		echo "Updating openurldialog.gif" >&2 && ${cp} doc/openurldialog.gif ../doc
+-	@-${cmp} doc/page.gif ../doc/page.gif 2>/dev/null || \
+-		echo "Updating page.gif" >&2 && ${cp} doc/page.gif ../doc
+-	@-${cmp} doc/palette.gif ../doc/palette.gif 2>/dev/null || \
+-		echo "Updating palette.gif" >&2 && ${cp} doc/palette.gif ../doc
+-	@-${cmp} doc/paper.gif ../doc/paper.gif 2>/dev/null || \
+-		echo "Updating paper.gif" >&2 && ${cp} doc/paper.gif ../doc
+-	@-${cmp} doc/print.gif ../doc/print.gif 2>/dev/null || \
+-		echo "Updating print.gif" >&2 && ${cp} doc/print.gif ../doc
+-	@-${cmp} doc/props.gif ../doc/props.gif 2>/dev/null || \
+-		echo "Updating props.gif" >&2 && ${cp} doc/props.gif ../doc
+-	@-${cmp} doc/pstoedit.gif ../doc/pstoedit.gif 2>/dev/null || \
+-		echo "Updating pstoedit.gif" >&2 && ${cp} doc/pstoedit.gif ../doc
+-	@-${cmp} doc/selection.gif ../doc/selection.gif 2>/dev/null || \
+-		echo "Updating selection.gif" >&2 && ${cp} doc/selection.gif ../doc
+-	@-${cmp} doc/slide.gif ../doc/slide.gif 2>/dev/null || \
+-		echo "Updating slide.gif" >&2 && ${cp} doc/slide.gif ../doc
+-	@-${cmp} doc/tclet.gif ../doc/tclet.gif 2>/dev/null || \
+-		echo "Updating tclet.gif" >&2 && ${cp} doc/tclet.gif ../doc
+-	@-${cmp} doc/toolbarpref.gif ../doc/toolbarpref.gif 2>/dev/null || \
+-		echo "Updating toolbarpref.gif" >&2 && ${cp} doc/toolbarpref.gif ../doc
+-	@-${cmp} doc/urldialog.gif ../doc/urldialog.gif 2>/dev/null || \
+-		echo "Updating urldialog.gif" >&2 && ${cp} doc/urldialog.gif ../doc
+-	@-${cmp} doc/miniview.gif ../doc/miniview.gif 2>/dev/null || \
+-		echo "Updating miniview.gif" >&2 && ${cp} doc/miniview.gif ../doc
+ 
+ clean:
+ 	rm -f impress transeps

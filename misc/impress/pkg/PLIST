@@ -1,2 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/23 14:45:03 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/11/22 12:03:54 kevlo Exp $
 bin/impress
+share/doc/impress/add.txt
+share/doc/impress/arrows.gif
+share/doc/impress/custcolor.gif
+share/doc/impress/file.gif
+share/doc/impress/fonts.gif
+share/doc/impress/grid.gif
+share/doc/impress/impdoc.html
+share/doc/impress/impdoc2.html
+share/doc/impress/implogo.gif
+share/doc/impress/impressbuttons.gif
+share/doc/impress/impressmain2.gif
+share/doc/impress/keys.gif
+share/doc/impress/lgtoolbar.gif
+share/doc/impress/miniview.gif
+share/doc/impress/openurldialog.gif
+share/doc/impress/page.gif
+share/doc/impress/palette.gif
+share/doc/impress/paper.gif
+share/doc/impress/print.gif
+share/doc/impress/props.gif
+share/doc/impress/pstoedit.gif
+share/doc/impress/selection.gif
+share/doc/impress/slide.gif
+share/doc/impress/tclet.gif
+share/doc/impress/toolbarpref.gif
+share/doc/impress/urldialog.gif
+@dirrm share/doc/impress

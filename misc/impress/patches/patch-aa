@@ -1,11 +1,13 @@
---- impress.tcl.orig	Thu Jul 20 21:23:05 2000
-+++ impress.tcl	Thu Jul 20 21:23:19 2000
-@@ -4,7 +4,7 @@
+--- src/impress.tcl.orig	Wed Nov 22 19:45:32 2000
++++ src/impress.tcl	Wed Nov 22 19:45:54 2000
+@@ -2,9 +2,8 @@
  #
- # $Header: /home/cvs/ports/misc/impress/patches/Attic/patch-aa,v 1.1.1.1 2000/07/23 14:45:03 kevlo Exp $
+ # Copyright © 1996,1997,1998,1999,2000 Christopher Jay Cox, All rights reserved.
+ #
+-# $Header: /home/cvs/ports/misc/impress/patches/Attic/patch-aa,v 1.2 2000/11/22 12:03:50 kevlo Exp $
  # restart trick \
 -exec wish "$0" "$@"
 +exec wish8.3 "$0" "$@"
+ 
  option add *Radiobutton*borderWidth 1
  option add *Button*borderWidth 1
- 
