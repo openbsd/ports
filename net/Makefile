@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.282 2003/06/22 22:37:08 jcs Exp $
+# $OpenBSD: Makefile,v 1.283 2003/06/27 14:57:39 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
+     SUBDIR += GeoIP
      SUBDIR += adns
      SUBDIR += aggregate
      SUBDIR += aguri
