@@ -1,0 +1,63 @@
+*** nat.1.orig	Mon Feb 17 09:18:04 1997
+--- nat.1	Thu May  7 14:10:17 1998
+***************
+*** 1,12 ****
+! .TH NAT 1
+  .SH NAME
+! nat - NetBIOS Auditing Tool
+  .SH SYNOPSIS
+! nat [-o <\fBoutput\fP>] [-u <\fBuserlist\fP>] [-p <\fBpasslist\fP>] \fB<address>\fP
+  .SH DESCRIPTION
+  .PP
+! \fBnat\fP is a tool written to perform various security checks on systems
+! offering the NetBIOS file sharing service.  \fBnat\fP will attempt to retrieve
+  all information availible from the remote server, and attempt to access any
+  services provided by the server.
+  .SH OPTIONS
+--- 1,12 ----
+! .TH NBAUDIT 1
+  .SH NAME
+! nbaudit - NetBIOS Auditing Tool
+  .SH SYNOPSIS
+! nbaudit [-o <\fBoutput\fP>] [-u <\fBuserlist\fP>] [-p <\fBpasslist\fP>] \fB<address>\fP
+  .SH DESCRIPTION
+  .PP
+! \fBnbaudit\fP is a tool written to perform various security checks on systems
+! offering the NetBIOS file sharing service.  \fBnbaudit\fP will attempt to retrieve
+  all information availible from the remote server, and attempt to access any
+  services provided by the server.
+  .SH OPTIONS
+***************
+*** 54,63 ****
+  and usernames, as the time required increases exponentially with the size of
+  these lists.
+  .SH SUPPORTED PLATFORMS
+! This version of \fBnat\fP has been tested against Windows NT 4.0 and various
+  versions of the Samba server written by Andrew Tridgell.
+  .PP
+! This version of \fBnat\fP has been tested and compiled on the following
+  operating systems:
+  \fBSolaris\fP 2.5,
+  \fBLinux\fP 2.0,
+--- 54,63 ----
+  and usernames, as the time required increases exponentially with the size of
+  these lists.
+  .SH SUPPORTED PLATFORMS
+! This version of \fBnbaudit\fP has been tested against Windows NT 4.0 and various
+  versions of the Samba server written by Andrew Tridgell.
+  .PP
+! This version of \fBnbaudit\fP has been tested and compiled on the following
+  operating systems:
+  \fBSolaris\fP 2.5,
+  \fBLinux\fP 2.0,
+***************
+*** 68,71 ****
+  \fBWindows 95\fP
+  
+  .SH FILES
+! \fBnat\fP, \fBuserlist.txt\fP, \fBpasslist.txt\fP
+--- 68,71 ----
+  \fBWindows 95\fP
+  
+  .SH FILES
+! \fBnbaudit\fP, \fBuserlist.txt\fP, \fBpasslist.txt\fP

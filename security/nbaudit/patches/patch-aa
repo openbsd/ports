@@ -1,0 +1,38 @@
+*** Makefile.orig	Mon Feb 17 09:18:04 1997
+--- Makefile	Thu May  7 13:50:18 1998
+***************
+*** 147,154 ****
+  #
+  # This is for OpenBSD.
+  #
+! # FLAGSM = -DOPENBSD -DSHADOW_PWD
+! # LIBSM = -lcrypt 
+  
+  # This is for NetBSD. Add -DNETBSD_1_0 if you are using 1.0
+  # contributed by noses@oink.rhein.de
+--- 147,154 ----
+  #
+  # This is for OpenBSD.
+  #
+! FLAGSM = -DOPENBSD -DSHADOW_PWD
+! LIBSM =
+  
+  # This is for NetBSD. Add -DNETBSD_1_0 if you are using 1.0
+  # contributed by noses@oink.rhein.de
+***************
+*** 366,372 ****
+  OBJS = nat.o client.o util.o system.o nmb.o charset.o parse_ip.o
+  CFLAGS1 = -DSTEPPING -DSCANNER -DVERBOSE
+  CFLAGS2 = -DWORKGROUP=\"$(WORKGROUP)\" -DGUEST_ACCOUNT=\"$(GUESTACCOUNT)\" 
+! CFLAGS = $(CFLAGS1) $(CFLAGS2) $(FLAGSM)
+  LIBS = $(LIBSM)
+  
+  all : nat
+--- 366,372 ----
+  OBJS = nat.o client.o util.o system.o nmb.o charset.o parse_ip.o
+  CFLAGS1 = -DSTEPPING -DSCANNER -DVERBOSE
+  CFLAGS2 = -DWORKGROUP=\"$(WORKGROUP)\" -DGUEST_ACCOUNT=\"$(GUESTACCOUNT)\" 
+! CFLAGS += $(CFLAGS1) $(CFLAGS2) $(FLAGSM)
+  LIBS = $(LIBSM)
+  
+  all : nat
