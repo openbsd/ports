@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/28 17:35:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2003/08/14 02:51:59 kevlo Exp $
 
 COMMENT=	"port scan detection and active defense"
 
 DISTNAME=	portsentry-1.1
 CATEGORIES=	security
-
-HOMEPAGE=	http://www.psionic.com/abacus/portsentry
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -14,7 +12,7 @@ PERMIT_PACKAGE_FTP=    	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP= 	Yes
 
-MASTER_SITES=	http://www.psionic.com/tools/
+MASTER_SITES=	http://packetstormsecurity.nl/UNIX/IDS/
 
 ALL_TARGET=	openbsd
 NO_REGRESS=	Yes
