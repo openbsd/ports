@@ -1,0 +1,4 @@
+lib/libslang.a
+@exec ranlib %D/%F
+include/slcurses.h
+include/slang.h
