@@ -1,0 +1,3 @@
+The stem function takes a scalar as a parameter and stems the word
+according to Martin Porters Danish stemming algorithm, which can be
+found at the Snowball website: <http://snowball.tartarus.org/>.
