@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2001/06/09 20:27:38 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2001/07/12 08:42:18 kevlo Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -18,6 +18,7 @@
      SUBDIR += elvis
      SUBDIR += elvis,no_x11
      SUBDIR += hexedit
+     SUBDIR += hnb 
      SUBDIR += jed
      SUBDIR += jed,no_x11
      SUBDIR += joe
