@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/19 17:15:17 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2004/12/30 00:43:15 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc
 
 COMMENT=	"TV viewing application for bktr(4) cards"
 
 DISTNAME=	xawtv-3.94
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -38,7 +39,7 @@ MAKE_FLAGS=	verbose=yes SYSCONFDIR="${SYSCONFDIR}"
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
-WRKDIST=	${WRKDIR}/${PKGNAME}
+WRKDIST=	${WRKDIR}/${DISTNAME}
 
 post-install:
 	@perl -pi -e "s,/etc/X11,${SYSCONFDIR}," ${PREFIX}/man/man5/xawtvrc.5
