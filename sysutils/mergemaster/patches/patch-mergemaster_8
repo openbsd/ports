@@ -1,0 +1,51 @@
+$OpenBSD: patch-mergemaster_8,v 1.1.1.1 2001/09/27 17:30:11 naddy Exp $
+--- mergemaster.8.orig	Thu Sep 27 16:31:45 2001
++++ mergemaster.8	Thu Sep 27 16:34:06 2001
+@@ -44,7 +44,7 @@
+ is a Bourne shell script which is designed to aid you
+ in updating the various configuration and other files
+ associated with
+-.Fx .
++.Ox .
+ It is
+ .Sy HIGHLY
+ recommended that you back up your
+@@ -81,13 +81,13 @@ By default it creates the temporary root
+ .Pa /var/tmp/temproot
+ and compares the
+ .Xr cvs 1
+-version $Id/$FreeBSD strings for files that have them, deleting
++version $OpenBSD strings for files that have them, deleting
+ the temporary file if the strings match.
+ If there is
+-no $Id string, or if the strings are different it
++no $OpenBSD string, or if the strings are different it
+ compares the files themselves.
+ You can
+-also specify that the script ignore the $Id strings and
++also specify that the script ignore the $OpenBSD strings and
+ compare every file.
+ .Pp
+ .Nm
+@@ -327,9 +327,9 @@ with all values commented out:
+ .Pp
+ .Pa /usr/src/etc/Makefile
+ .Rs
+-.%O http://www.FreeBSD.org/handbook/makeworld.html
+-.%T The Cutting Edge (using make world)
+-.%A Nik Clayton
++.%O http://www.openbsd.org/faq/upgrade-minifaq.html
++.%T Mini-FAQ: Upgrading OpenBSD
++.%A Kjell Wooding
+ .Re
+ .Sh DIAGNOSTICS
+ Exit status is 0 on successful completion, or if the user bails out
+@@ -350,7 +350,7 @@ web pages in a much simpler form under t
+ .Pa comproot
+ on 13 March 1998. The idea for creating the
+ temporary root environment comes from Nik Clayton's
+-make world tutorial which is referenced above.
++FreeBSD make world tutorial.
+ .Sh AUTHORS
+ This manual page and the script itself were written by
+ .An Douglas Barton Aq DougB@FreeBSD.org .
