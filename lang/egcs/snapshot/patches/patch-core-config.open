@@ -1,5 +1,5 @@
---- gcc/configure.in.orig	Mon Feb  8 21:22:09 1999
-+++ gcc/configure.in	Mon Feb  8 21:22:58 1999
+--- gcc/configure.in.orig	Wed Feb 10 00:02:22 1999
++++ gcc/configure.in	Wed Feb 10 00:17:19 1999
 @@ -502,11 +502,21 @@
  	tm_file=${cpu_type}/${cpu_type}.h
  	xm_file=${cpu_type}/xm-${cpu_type}.h
@@ -121,7 +121,7 @@
  	pyramid-*-*)
  		cpu_type=pyr
  		xmake_file=pyr/x-pyr
-@@ -2672,6 +2717,13 @@
+@@ -2672,6 +2717,14 @@
  		xmake_file=romp/x-mach
  		use_collect2=yes
  		;;
@@ -131,11 +131,12 @@
 +	powerpc-*-openbsd*)
 +		tmake_file="${tmake_file} rs6000/t-rs6000 rs6000/t-openbsd"
 +		xmake_file=none
++		xm_file=rs6000/xm-openbsd.h
 +		;;
  	powerpc-*-beos*)
  		cpu_type=rs6000
  		tm_file=rs6000/beos.h
-@@ -2966,6 +3018,10 @@
+@@ -2966,6 +3019,10 @@
  		fixincludes=fixinc.wrap
  		tmake_file=t-netbsd
  		;;
@@ -146,7 +147,7 @@
  	sparc-*-bsd*)
  		tm_file=sparc/bsd.h
  		;;
-@@ -3193,6 +3249,9 @@
+@@ -3193,6 +3250,9 @@
  		fixincludes=fixinc.wrap
  		tmake_file=t-netbsd
  		float_format=vax
