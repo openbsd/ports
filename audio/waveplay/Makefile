@@ -1,5 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2001/07/29 01:13:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2001/07/31 21:20:33 naddy Exp $
 # $FreeBSD: ports/audio/waveplay/Makefile,v 1.2 1999/08/25 04:36:16 obrien Exp $
+
+# assumes unaligned access, no struct padding, little endian
+ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"simple wav audio player"
 DISTNAME=	waveplay-20001210
