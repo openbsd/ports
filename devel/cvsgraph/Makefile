@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/25 22:37:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2003/04/10 09:52:45 jsyn Exp $
 
-COMMENT=		graphic representation of cvs repository
+COMMENT=		"graphical representation of CVS repository"
 
 DISTNAME=		cvsgraph-1.2.0
 CATEGORIES=		devel
