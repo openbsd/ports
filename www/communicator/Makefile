@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 1999/12/18 03:18:40 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/01/04 07:22:26 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -24,14 +24,14 @@ DISTNAME=	communicator-v${COMMUNICATOR_V2}-export.x86-bsdi-bsd2
 COMMUNICATORNAME=communicator-v${COMMUNICATOR_V2}.x86-bsdi-bsd2
 MAINDIR=	bsdi21/complete_install
 SUPDIR=		sunos413/complete_install
-SUPDISTFILES=	${NS_SPARC}
+SUPDISTFILES=	${NS_SPARC}:0
 .endif
 .if ${MACHINE_ARCH} == "sparc"
 DISTNAME=	communicator-v${COMMUNICATOR_V2}-export.sparc-sun-sunos4.1.3_U1
 COMMUNICATORNAME=communicator-v${COMMUNICATOR_V2}.sparc-sun-sunos4.1.3_U1
 MAINDIR=	sunos413/complete_install
 SUPDIR=		bsdi21/complete_install
-SUPDISTFILES=	${NS_I386}
+SUPDISTFILES=	${NS_I386}:0
 .endif
 
 SUBMAIN=communicator/english/${COMMUNICATOR_V}/unix/unsupported/${MAINDIR}
@@ -42,17 +42,6 @@ CATEGORIES=     www
 DIST_SUBDIR=	netscape
 
 MASTER_SITES= \
-	http://wuarchive.wustl.edu/packages/www/Netscape/${SUBSUP}/ \
-	ftp://netscape.Mirror.McGill.CA/pub/mirrors/ftp.netscape.com/pub/${SUBSUP}/ \
-	ftp://ftp.netscape.com/pub/${SUBSUP}/ \
-	ftp://uiarchive.uiuc.edu/pub/www/netscape/${SUBSUP}/ \
-	ftp://ftp.the.net/pub/mirrors/ftp.netscape.com/pub/${SUBSUP}/ \
-	ftp://sunsite.doc.ic.ac.uk/packages/netscape/pub/${SUBSUP}/ \
-	ftp://ftp-de.netscape.com/pub/${SUBSUP}/ \
-	ftp://ftp.heanet.ie/pub/netscape/${SUBSUP}/ \
-	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/pub/${SUBSUP}/ \
-	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/pub/${SUBSUP}/
-MASTER_SITES0= \
 	http://wuarchive.wustl.edu/packages/www/Netscape/${SUBMAIN}/ \
 	ftp://netscape.Mirror.McGill.CA/pub/mirrors/ftp.netscape.com/pub/${SUBMAIN}/ \
 	ftp://ftp.netscape.com/pub/${SUBMAIN}/ \
@@ -63,12 +52,23 @@ MASTER_SITES0= \
 	ftp://ftp.heanet.ie/pub/netscape/${SUBMAIN}/ \
 	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/pub/${SUBMAIN}/ \
 	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/pub/${SUBMAIN}/
+MASTER_SITES0= \
+	http://wuarchive.wustl.edu/packages/www/Netscape/${SUBSUP}/ \
+	ftp://netscape.Mirror.McGill.CA/pub/mirrors/ftp.netscape.com/pub/${SUBSUP}/ \
+	ftp://ftp.netscape.com/pub/${SUBSUP}/ \
+	ftp://uiarchive.uiuc.edu/pub/www/netscape/${SUBSUP}/ \
+	ftp://ftp.the.net/pub/mirrors/ftp.netscape.com/pub/${SUBSUP}/ \
+	ftp://sunsite.doc.ic.ac.uk/packages/netscape/pub/${SUBSUP}/ \
+	ftp://ftp-de.netscape.com/pub/${SUBSUP}/ \
+	ftp://ftp.heanet.ie/pub/netscape/${SUBSUP}/ \
+	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/pub/${SUBSUP}/ \
+	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/pub/${SUBSUP}/
 MASTER_SITES1=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/Fortify/ \
 		ftp://ftp.funet.fi/pub/crypt/mirrors/fortify/ \
 		ftp://ftp.replay.com/pub/crypto/apache/Fortify/ \
 		ftp://ftp.it.net.au/mirrors/Fortify/
-DISTFILES=	${DISTNAME}.tar.gz:0 \
+DISTFILES=	${DISTNAME}.tar.gz \
 		${FORTIFY}.tar.gz:1
 
 OBJMACHINE=	"yes"
