@@ -1,0 +1,12 @@
+$OpenBSD: patch-spamc_spamc_pod,v 1.1 2004/10/31 08:44:44 sturm Exp $
+--- spamc/spamc.pod.orig	Mon Sep 13 16:34:05 2004
++++ spamc/spamc.pod	Sun Oct  3 10:46:22 2004
+@@ -185,7 +185,7 @@ unmodified and an exit code of C<0> will
+ 
+ =head1 SEE ALSO
+ 
+-spamd(1)
++spamd(8)
+ spamassassin(1)
+ Mail::SpamAssassin(3)
+ 

@@ -46,3 +46,7 @@ for further installation instructions.
 
 Or if you are in a hurry you can read:
 ${PREFIX}/share/doc/SpamAssassin/OpenBSD-SpamAssassin-mini-howto.html
+
+The SpamAssassin Wiki is available at <http://wiki.apache.org/spamassassin>
+and contains up-to-date information on configuring SpamAssassin, and using
+some of the more advanced features of it.
