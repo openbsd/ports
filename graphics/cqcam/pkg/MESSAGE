@@ -1,6 +1,5 @@
-
-You will probably want to copy ${PREFIX}/share/examples/cqcam/dot.cqcrc
+You will probably want to copy
+    ${PREFIX}/share/examples/cqcam/dot.cqcrc
 to ~/.cqcrc and edit it to your liking.  Please read
-${PREFIX}/share/doc/cqcam/README.webcam if you are interested in installing
-webcam support.
-
+    ${PREFIX}/share/doc/cqcam/README.webcam
+if you are interested in installing webcam support.
