@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2004/07/05 13:20:03 espie Exp $
+# $OpenBSD: Makefile,v 1.125 2004/07/26 10:58:56 peter Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -24,6 +24,8 @@
      SUBDIR += exim,mysql
      SUBDIR += exim,mysql,no_x11
      SUBDIR += exim,mysql,postgresql,ldap,no_x11
+     SUBDIR += exim,no_exiscan
+     SUBDIR += exim,no_exiscan,no_x11
      SUBDIR += exim,no_x11
      SUBDIR += exim,postgresql
      SUBDIR += exim,postgresql,no_x11
