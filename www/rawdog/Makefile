@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/02/17 20:54:31 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/19 18:38:04 xsa Exp $
 
 COMMENT=	"RSS Aggregator Without Delusions Of Grandeur"
 
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://offog.org/files/
 
 MODULES=	python
+
+RUN_DEPENDS=	::lang/python/${MODPY_VERSION},-expat
 
 NO_REGRESS=	Yes
 
