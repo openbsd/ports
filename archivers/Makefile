@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/03/27 06:56:59 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/08/17 07:03:49 form Exp $
 # $FreeBSD: Makefile,v 1.19 1997/11/20 08:21:26 tg Exp $
 #
 
@@ -13,7 +13,7 @@
      SUBDIR += lha
      SUBDIR += nulib
      SUBDIR += p5-Compress-Zlib
-#    SUBDIR += rar
+     SUBDIR += rar
      SUBDIR += unarj
      SUBDIR += unrar
      SUBDIR += unzip
