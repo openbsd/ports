@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/12/01 00:40:15 ian Exp $
+# $OpenBSD: Makefile,v 1.3 2003/07/25 13:07:17 espie Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 #
 
@@ -73,23 +73,15 @@ JDKIMAGEDIR_G=  	${WRKSRC}/jdk-debug-image-${ARCH}
 JREIMAGEDIR=    	${WRKSRC}/jre-image-${ARCH}
 
 # Error message for distfile.
-FETCH_DISTFILE_MSG=	"\\nYou must manually fetch the source distribution"
-FETCH_DISTFILE_MSG+=	"and BSD patches:\\n\\n"
+FETCH_MANUALLY=	"You must manually fetch the source distribution"
+FETCH_MANUALLY+="and BSD patches:"
 .for file in ${DISTFILES}
-FETCH_DISTFILE_MSG+=	"    ${file}\\n"
+FETCH_MANUALLY+="    ${file}"
 .endfor
-FETCH_DISTFILE_MSG+=	"\\nfrom http://www.sun.com/software/java2/download.html"
-FETCH_DISTFILE_MSG+=	"and http://www.eyesbeyond.com/freebsddom/java/jdk.html,"
-FETCH_DISTFILE_MSG+=	"place it in ${DISTDIR} and then run make again.\\n"
+FETCH_MANUALLY+="from http://www.sun.com/software/java2/download.html"
+FETCH_MANUALLY+="and http://www.eyesbeyond.com/freebsddom/java/jdk.html,"
+FETCH_MANUALLY+="place it in ${DISTDIR} and then run make again."
 
-
-do-fetch:
-	@for file in ${DISTFILES}; do \
-		if [ ! -f ${DISTDIR}/$${file} ]; then \
-			echo "${FETCH_DISTFILE_MSG}"; \
-			exit 1; \
-		fi \
-	done
 
 #post-extract:
 pre-patch:

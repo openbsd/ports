@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/01/22 16:37:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/07/25 13:07:17 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 BROKEN=		"unusable, only eats cpu; probably thread emulation problem"
@@ -33,19 +33,14 @@ NO_REGRESS=	Yes
 
 WRKDIST=	${WRKDIR}/j2sdk${VERSION}
 
-do-fetch:
-	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
-	   echo "" ; \
-	   echo " You must fetch the distfile for this port manually" ; \
-	   echo " after agreeing to the license agreement at" ; \
-	   echo "" ; \
-	   echo "     http://java.sun.com/j2se/1.4.1/download.html" ; \
-	   echo "" ; \
-	   echo " Choose the 'Linux self-extracting file' option and place" ; \
-	   echo " ${DISTFILES} into ${DISTDIR}." ; \
-	   echo "" ; \
-           exit 1 ; \
-	fi
+FETCH_MANUALLY = " You must fetch the distfile for this port manually"
+FETCH_MANUALLY+= " after agreeing to the license agreement at"
+FETCH_MANUALLY+= ""
+FETCH_MANUALLY+= "     http://java.sun.com/j2se/1.4.1/download.html"
+FETCH_MANUALLY+= ""
+FETCH_MANUALLY+= " Choose the 'Linux self-extracting file' option and place"
+FETCH_MANUALLY+= " ${DISTFILES} into ${DISTDIR}."
+FETCH_MANUALLY+= ""
 
 JDK_HOME=	${PREFIX}/jdk1.4.1-linux
 
