@@ -1,0 +1,66 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1 2001/05/06 21:52:46 naddy Exp $
+#
+# star de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_FILE=${SYSCONFDIR}/srmt.conf
+
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package you need to perform"
+    echo "| these steps as root:"
+    echo "|"
+    echo "|       rm -f ${CONFIG_FILE}"
+    echo "|"
+    echo "| Do not do this if you plan on re-installing $1"
+    echo "| at some future time."
+    echo "+---------------"
+    echo
+}
+
+do_unlink()
+{
+    if [ X`readlink /etc/rmt` = X${PREFIX}/libexec/srmt ]; then
+	rm -f /etc/rmt
+	echo
+	echo "+---------------"
+	echo "| You should reset the /etc/rmt link to whatever it was
+	echo "| before star was installed, perhaps /usr/sbin/rmt
+	echo "| Try these steps as root:"
+	echo "|"
+	echo "|           cd /etc"
+	echo "|           ln -s /usr/sbin/rmt ."
+	echo "|"
+	echo "+---------------"
+	echo
+    fi
+}
+
+# Verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname DEINSTALL" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    DEINSTALL)
+	if [ -f ${CONFIG_FILE} ]; then
+	    do_notice "$1"
+	fi
+	do_unlink "$1"
+	;;
+    *)
+	echo "usage: $0 distname DEINSTALL" >&2
+	exit 1
+	;;
+esac
+
+exit 0

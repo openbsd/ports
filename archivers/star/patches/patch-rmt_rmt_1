@@ -1,0 +1,60 @@
+$OpenBSD: patch-rmt_rmt_1,v 1.1 2001/05/06 21:52:46 naddy Exp $
+--- rmt/rmt.1.orig	Tue Nov 14 22:53:56 2000
++++ rmt/rmt.1	Sun May  6 22:56:14 2001
+@@ -13,13 +13,11 @@
+ .if n .ds o oe
+ .if n .ds u ue
+ .if n .ds s sz
+-.TH RMT 1 "Release 1.1" "J\*org Schilling" "Schily\'s USER COMMANDS"
++.TH SRMT 8 "Release 1.1" "J\*org Schilling" "Schily\'s USER COMMANDS"
+ .SH NAME
+-rmt \- remote magnetic tape protocol server
++srmt \- remote magnetic tape protocol server
+ .SH SYNOPSIS
+-.B /opt/schily/sbin/rmt
+-.br
+-.B /etc/rmt
++.B srmt
+ 
+ .SH DESCRIPTION
+ .IX  "rmt command"  ""  "\fLrmt\fP \(em remote magnetic tape protocol server"
+@@ -31,10 +29,10 @@ version of the 
+ remote tape server program.
+ .B rmt
+ is a program used by programs like
+-.B star 
++.BR star (1)
+ and
+-.B ufsdump 
+-hat like to access remote magnetic tape drives and files
++.BR dump (8)
++that like to access remote magnetic tape drives and files
+ through an interprocess communication connection.
+ .B rmt
+ is normally started up with an
+@@ -441,8 +439,8 @@ Any other command causes
+ to exit.
+ .SH FILES
+ .TP
+-/etc/default/rmt
+-Default values can be set for the following options in /etc/default/rmt.
++%%SYSCONFDIR%%/srmt.conf
++Default values can be set for the following options in %%SYSCONFDIR%%/srmt.conf.
+ For example:
+ .SM USER=tape
+ .RS
+@@ -490,12 +488,12 @@ This implementation of
+ adds some security features to the server that make it behave
+ slightly different from older implementations.
+ Read the documentation about the file 
+-/etc/default/rmt
++%%SYSCONFDIR%%/srmt.conf
+ to make sure your local installation is configured for your needs.
+ .LP
+ To grant the same permissions as with the old
+ .B rmt
+-servers, create a file /etc/default/rmt and add the following lines
++servers, create a file %%SYSCONFDIR%%/rmt.conf and add the following lines
+ to this file:
+ .LP
+ .BR USER= *

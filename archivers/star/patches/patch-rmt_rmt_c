@@ -1,0 +1,15 @@
+$OpenBSD: patch-rmt_rmt_c,v 1.1 2001/05/06 21:52:46 naddy Exp $
+--- rmt/rmt.c.orig	Sun May  6 21:44:04 2001
++++ rmt/rmt.c	Sun May  6 21:47:40 2001
+@@ -133,9 +133,9 @@ main(argc, argv)
+ 	 * is required. If we are not root and there is no /etc/default/rmt
+ 	 * we will only allow to access files in /dev (see below).
+ 	 */
+-	if (defltopen("/etc/default/rmt") < 0) {
++	if (defltopen(SYSCONFDIR "/srmt.conf") < 0) {
+ 		if (geteuid() == 0) {
+-			rmterror("Remote configuration error: Cannot open /etc/default/rmt");
++			rmterror("Remote configuration error: Cannot open " SYSCONFDIR "/srmt.conf");
+ 			exit(EX_BAD);
+ 		}
+ 	} else {

@@ -15,6 +15,3 @@ Main advantages over other tar implementations:
     automatic format detect	- Automatically detects archive formats:
 				  old tar, GNU tar, ANSI tar, star.
     fully ansi compatible	- star is fully ANSI/POSIX 1003.1 compatible.
-
-Author: Joerg Schilling <schilling@fokus.gmd.de>
-Please mail bugs and suggestions to him.

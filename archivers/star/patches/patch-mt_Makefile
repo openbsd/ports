@@ -1,0 +1,12 @@
+$OpenBSD: patch-mt_Makefile,v 1.1 2001/05/06 21:52:46 naddy Exp $
+--- mt/Makefile.orig	Wed Nov 15 21:29:12 2000
++++ mt/Makefile	Wed Nov 15 21:29:31 2000
+@@ -8,7 +8,7 @@ include		$(SRCROOT)/$(RULESDIR)/rules.to
+ INSDIR=		bin
+ TARGET=		mt
+ HARDLINKS=	smt
+-CPPOPTS +=	-I../star/ -DUSE_REMOTE
++CPPOPTS +=	-I../star/ -DUSE_REMOTE -DDEFTAPE=\"/dev/rst0\"
+ CFILES=		mt.c remote.c
+ #HFILES=
+ LIBS=		-lschily $(LIB_SOCKET)
