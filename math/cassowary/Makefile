@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/19 16:45:03 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/09 10:11:18 reinhard Exp $
 
 DISTNAME=	cassowary-0.60
 CATEGORIES=	math
-NEED_VERSION=	1.351
+NEED_VERSION=	1.353
 
 MAINTAINER=	Peter Valchev <pvalchev@toxiclinux.org>
 
@@ -17,10 +17,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	bison::devel/bison
+BUILD_DEPENDS=	bison::devel/bison \
+		${LOCALBASE}/lib/libGTL.a::devel/gtl
 
-LIB_DEPENDS=	guile.9::lang/guile \
-		GTL.0.3::devel/gtl
+LIB_DEPENDS=	guile.9::lang/guile
 
 USE_GMAKE=	Yes
 
