@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/09 23:26:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2001/07/19 03:12:44 pvalchev Exp $
 
 COMMENT=	"simple gtk+ pool simulation game"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MAKE_FLAGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
-		LDFLAGS="-lossaudio"
+		LDFLAGS="${LDFLAGS} -lossaudio"
 
 USE_X11=	Yes
 
