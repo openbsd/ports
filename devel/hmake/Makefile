@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/23 11:22:02 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2005/02/14 02:04:36 dons Exp $
 
 COMMENT=	"compilation manager for Haskell programs"
  
-V=		3.08
+V=		3.09
 DISTNAME=	hmake-${V}
 CATEGORIES=	devel
 
