@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/17 13:35:06 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/07/05 05:43:35 kevlo Exp $
 bin/ktail
-share/applnk/Applications/ktail.desktop
+share/applnk/Utilities/ktail.desktop
 share/doc/HTML/en/ktail/index.html
 share/icons/locolor/16x16/apps/ktail.png
 share/icons/locolor/32x32/apps/ktail.png

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/29 10:59:48 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2002/07/05 05:43:33 kevlo Exp $
 
 COMMENT=	"file monitor"
 
-DISTNAME=	ktail-0.5.1
+DISTNAME=	ktail-0.6.1
 CATEGORIES=	misc
-NEED_VERSION=	1.487
+NEED_VERSION=	1.531
 
 HOMEPAGE=	http://www.franken.de/users/duffy1/rjakob/
 
@@ -16,18 +16,21 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}
+EXTRACT_SUFX=	.tar.bz2
 
-BUILD_DEPENDS=	::x11/qt2-designer
-LIB_DEPENDS=	kdecore.3,DCOP,kdeui,kdesu,kfile,kio,kssl,ksycoca::x11/kde/libs2
+LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3
 
-MODULES=	qt2
+MODULES=	qt3
 
 MAKE_ENV=	${CONFIGURE_ENV}
 MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 
+USE_X11=	Yes
+USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 CONFIGURE_ARGS=  ${MODQT_CONFIGURE_ARGS}
+CONFIGURE_ARGS+= --enable-final --disable-mt
 CONFIGURE_ARGS+= --with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ENV=  KDEDIR=${LOCALBASE} 
