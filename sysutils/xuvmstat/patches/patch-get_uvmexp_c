@@ -1,6 +1,6 @@
-$OpenBSD: patch-get_uvmexp_c,v 1.1.1.1 2001/06/16 17:05:25 pvalchev Exp $
+$OpenBSD: patch-get_uvmexp_c,v 1.2 2001/11/17 00:50:19 pvalchev Exp $
 --- get_uvmexp.c.orig	Mon Feb 19 07:23:55 2001
-+++ get_uvmexp.c	Thu Jun 14 21:06:51 2001
++++ get_uvmexp.c	Fri Nov 16 17:32:51 2001
 @@ -20,11 +20,12 @@
   * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
   * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -11,7 +11,7 @@ $OpenBSD: patch-get_uvmexp_c,v 1.1.1.1 2001/06/16 17:05:25 pvalchev Exp $
  #include <sys/sysctl.h>
  #include <uvm/uvm_extern.h>
 -
-+#include <vm/vm_param.h>
++#include <uvm/uvm_param.h>
  
  void get_uvmexp(uvmexp)
  
