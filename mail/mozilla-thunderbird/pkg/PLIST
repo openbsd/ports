@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/12/27 21:21:39 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/03/26 19:04:59 wilfried Exp $
 %%SHARED%%
 bin/mozilla-thunderbird
 bin/thunderbird
@@ -397,6 +397,11 @@ mozilla-thunderbird/defaults/wallet/SchemaConcat.tbl
 mozilla-thunderbird/defaults/wallet/SchemaStrings.tbl
 mozilla-thunderbird/defaults/wallet/StateSchema.tbl
 mozilla-thunderbird/defaults/wallet/VcardSchema.tbl
+mozilla-thunderbird/extensions/
+mozilla-thunderbird/extensions/Extensions.rdf
+mozilla-thunderbird/extensions/installed-extensions-processed.txt
+mozilla-thunderbird/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
+mozilla-thunderbird/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
 mozilla-thunderbird/greprefs/
 mozilla-thunderbird/greprefs/all.js
 mozilla-thunderbird/greprefs/security-prefs.js
@@ -404,6 +409,7 @@ mozilla-thunderbird/greprefs/xpinstall.js
 mozilla-thunderbird/mozicon16.xpm
 mozilla-thunderbird/mozicon50.xpm
 mozilla-thunderbird/mozilla-thunderbird-bin
+mozilla-thunderbird/mozilla-xremote-client
 mozilla-thunderbird/regchrome
 mozilla-thunderbird/regxpcom
 mozilla-thunderbird/res/

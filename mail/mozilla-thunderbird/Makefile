@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2005/01/13 15:52:07 wilfried Exp $
+# $OpenBSD: Makefile,v 1.19 2005/03/26 19:04:59 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64 amd64 powerpc
 
 COMMENT=	"redesign of the integrated Mozilla App-Suite mail component"
 
-VER=		1.0
+VER=		1.0.2
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}p1
+PKGNAME=	mozilla-thunderbird-${VER}
 
 CATEGORIES=	mail news
 
@@ -84,6 +84,7 @@ MAKE_ENV=	MOZ_THUNDERBIRD=1 \
 
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/mozilla-thunderbird
+MAGIC=		{972ce4c6-7e08-4474-a285-3208198ce6fd}
 
 post-extract:
 	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
@@ -108,7 +109,13 @@ do-install:
 	${INSTALL_SCRIPT} ${MOB}/thunderbird ${PREFIX}/bin/mozilla-thunderbird
 	ln -f ${PREFIX}/bin/mozilla-thunderbird ${PREFIX}/bin/thunderbird
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOB}/thunderbird-config ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/regchrome ${MOB}/regxpcom ${MOB}/thunderbird-bin ${MOZ}
+	${INSTALL_PROGRAM} ${MOB}/regchrome ${MOB}/regxpcom ${MOB}/thunderbird-bin ${MOB}/mozilla-xremote-client ${MOZ}
 	ln -f ${MOZ}/thunderbird-bin ${MOZ}/mozilla-thunderbird-bin
+
+	${INSTALL_DATA_DIR} ${MOZ}/extensions
+	${INSTALL_DATA} ${FILESDIR}/Extensions.rdf ${MOZ}/extensions/
+	${INSTALL_DATA_DIR} ${MOZ}/extensions/${MAGIC}
+	${INSTALL_DATA} ${MOZ}/defaults/profile/extensions/installed-extensions.txt ${MOZ}/extensions/installed-extensions-processed.txt
+	${INSTALL_DATA} ${MOZ}/defaults/profile/extensions/${MAGIC}/install.rdf ${MOZ}/extensions/${MAGIC}/
 
 .include <bsd.port.mk>
