@@ -1,6 +1,6 @@
---- conf/master.cf.orig	Tue Jan  8 16:08:32 2002
-+++ conf/master.cf	Tue Jan  8 16:18:38 2002
-@@ -68,22 +68,22 @@
+--- conf/master.cf.orig	Tue Dec 10 10:13:00 2002
++++ conf/master.cf	Tue Dec 10 10:15:01 2002
+@@ -69,24 +69,24 @@
  # service type	private	unpriv	chroot	wakeup	maxproc	command + args
  # 		(yes)	(yes)	(yes)	(never)	(50)
  # ==========================================================================
@@ -15,8 +15,7 @@
 -defer	  unix	-	-	n	-	0	bounce
 -flush	  unix	n	-	n	1000?	0	flush
 -smtp	  unix	-	-	n	-	-	smtp
--showq     unix	n	-	n	-	-	showq
--error     unix	-	-	n	-	-	error
+-relay	  unix	-	-	n	-	-	smtp
 +smtp	  inet	n	-	-	-	-	smtpd
 +#628	  inet	n	-	-	-	-	qmqpd
 +pickup	  fifo	n	-	-	60	1	pickup
@@ -28,6 +27,10 @@
 +defer	  unix	-	-	-	-	0	bounce
 +flush	  unix	n	-	-	1000?	0	flush
 +smtp	  unix	-	-	-	-	-	smtp
++relay	  unix	-	-	-	-	-	smtp
+ #	-o smtp_helo_timeout=5 -o smtp_connect_timeout=5
+-showq     unix	n	-	n	-	-	showq
+-error     unix	-	-	n	-	-	error
 +showq     unix	n	-	-	-	-	showq
 +error     unix	-	-	-	-	-	error
  local	  unix	-	n	n	-	-	local

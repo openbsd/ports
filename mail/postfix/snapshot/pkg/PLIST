@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2002/06/22 08:59:14 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.14 2002/12/15 22:10:41 jakob Exp $
 @pkgcfl postfix-*
 %%tls%%
 libexec/postfix/bounce
@@ -146,11 +146,13 @@ share/doc/postfix/readme/LDAP_README
 share/doc/postfix/readme/LINUX_README
 share/doc/postfix/readme/LMTP_README
 share/doc/postfix/readme/MACOSX_README
+share/doc/postfix/readme/MAILDROP_README
 share/doc/postfix/readme/MYSQL_README
 share/doc/postfix/readme/NFS_README
 share/doc/postfix/readme/PACKAGE_README
 share/doc/postfix/readme/PCRE_README
 share/doc/postfix/readme/QMQP_README
+share/doc/postfix/readme/RELEASE_NOTES
 share/doc/postfix/readme/RESTRICTION_CLASS_README
 share/doc/postfix/readme/SASL_README
 share/doc/postfix/readme/ULTRIX_README
