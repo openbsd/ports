@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/04/07 17:20:49 ian Exp $
+# $OpenBSD: Makefile,v 1.9 2004/06/22 00:18:07 naddy Exp $
 COMMENT="compile Java source into .class files (quickly!)"
 
 # Jikes, a fast Java compiler. As of OpenBSD 2.8, compilation needs
@@ -18,13 +18,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"commercial contributor must indemnify all others"
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	iconv::converters/libiconv
-
 VMEM_WARNING=	Yes
 
 SEPARATE_BUILD=	simple
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+=	--includedir=${LOCALBASE}/include
-CONFIGURE_ARGS+=	--libdir=${LOCALBASE}/lib
+CONFIGURE_STYLE=gnu
 
 .include <bsd.port.mk>
