@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/04/11 18:49:18 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/08 17:52:50 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -11,7 +11,7 @@ CATEGORIES=	devel java
 NEED_VERSION=	1.499
 
 HOMEPAGE=	http://java.sun.com/j2se/
-MAINTAINER=	Christian Gruber <christian.edward.gruber@gmx.net>
+MAINTAINER=	Christian Edward Gruber <cgruber@israfil.net>
 
 BUILD_DEPENDS=	:redhat_base->=6.2:emulators/redhat/base
 RUN_DEPENDS=	${BUILD_DEPENDS}
