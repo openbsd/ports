@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 1999/05/12 05:17:04 turan Exp $
+# $OpenBSD: Makefile,v 1.41 1999/05/14 15:46:54 dugsong Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -94,6 +94,7 @@
 #    SUBDIR += strobe
 #    SUBDIR += sup
 #    SUBDIR += tac_plus
+     SUBDIR += tcpreplay
      SUBDIR += tcpshow
 #    SUBDIR += tcptrace
 #    SUBDIR += telnetx
