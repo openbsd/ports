@@ -1,6 +1,7 @@
---- tcpflow.1.in.orig	Wed Apr 21 04:57:20 1999
-+++ tcpflow.1.in	Sun Oct 10 21:31:33 1999
-@@ -21,6 +21,9 @@
+$OpenBSD: patch-tcpflow_1_in,v 1.1 2002/10/16 21:27:50 pvalchev Exp $
+--- tcpflow.1.in.orig	Wed Apr 21 02:57:20 1999
++++ tcpflow.1.in	Wed Oct 16 15:19:23 2002
+@@ -21,6 +21,9 @@ tcpflow \- TCP flow recorder 
  .BI \-i \ iface\fR\c
  ]
  [\c
@@ -10,7 +11,7 @@
  .BI expression\fR\c
  ]
  .SH DESCRIPTION
-@@ -29,7 +32,7 @@
+@@ -29,7 +32,7 @@ tcpflow \- TCP flow recorder 
  is a program that captures data transmitted as part of TCP connections
  (flows), and stores it in a way that is convenient for protocol
  analysis or debugging.  A program like
@@ -19,7 +20,7 @@
  only shows a summary of packets seen on the wire, but usually doesn't
  store the data that's actually being transmitted.  In contrast,
  tcpflow reconstructs the actual data streams and stores each flow in a
-@@ -93,6 +96,13 @@
+@@ -93,6 +96,13 @@ named \fIiface\fP.  If no interface is s
  .B \-i
  , a reasonable default will be used by libpcap automatically.
  .TP
@@ -33,7 +34,7 @@
  .B \-p
  No promiscuous mode.  Normally, tcpflow attempts to put the network
  interface into promiscuous mode before capturing packets.  The
-@@ -118,7 +128,7 @@
+@@ -118,7 +128,7 @@ The
  specified on the command-line specifies which packets should be
  captured.  Because tcpflow uses the the libpcap library, tcpflow has
  the same powerful filtering language available as programs such as
@@ -42,7 +43,7 @@
  .LP
  .B The following part of the man page is excerpted from the tcpdump man page.
  .LP
-@@ -259,7 +269,7 @@
+@@ -259,7 +269,7 @@ which can be used with either names or n
  .IP "\fBdst net \fInet\fR"
  True if the IP destination address of the packet has a network
  number of \fInet\fP. \fINet\fP may be either a name from /etc/networks

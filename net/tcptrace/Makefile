@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2002/04/01 23:41:24 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/16 21:27:50 pvalchev Exp $
 
 COMMENT=	"TCP dump file analysis tool"
 
-DISTNAME=	tcptrace.5.2.1
-PKGNAME=	tcptrace-5.2.1
+VERSION=	5.2.1
+DISTNAME=	tcptrace.${VERSION}
+PKGNAME=	tcptrace-${VERSION}
 CATEGORIES=	net
-NEED_VERSION=	1.402
 MASTER_SITES=	http://jarok.cs.ohiou.edu/software/tcptrace/files/5.2.1/
 
 MAINTAINER=	Jeremy Jethro <jethro@dqc.org>
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=gnu
 
 ALL_TARGET=	tcptrace
-WRKDIST=	${WRKDIR}/tcptrace_5.2.1
+WRKDIST=	${WRKDIR}/tcptrace_${VERSION}
 
 DOCFILES=	ARGS BUGS CHANGES COPYRIGHT FAQ README README.mailing_list \
 		README.modules README.tput_graphs WWW dot_tcptracerc.sample
