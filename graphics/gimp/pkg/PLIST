@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2001/02/07 20:40:21 brad Exp $
+@comment $OpenBSD: PLIST,v 1.30 2001/03/29 14:47:19 wilfried Exp $
 bin/escputil
 bin/gimp
 bin/gimp-config
@@ -1211,6 +1211,7 @@ share/locale/uk/LC_MESSAGES/gimp.mo
 @dirrm lib/gimp/modules
 @dirrm lib/gimp/plug-ins
 @dirrm lib/gimp
+@dirrm share/examples/gimp
 @dirrm share/gimp/brushes
 @dirrm share/gimp/devel-docs/html/libgimp
 @dirrm share/gimp/devel-docs/html
