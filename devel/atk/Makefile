@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/07/25 09:17:41 nino Exp $
+# $OpenBSD: Makefile,v 1.2 2002/07/29 14:40:39 fgsch Exp $
 
 COMMENT=		"accessibility toolkit used by gtk+"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ftp.gtk.org/pub/gtk/v2.0/
 EXTRACT_SUFX=           .tar.bz2
 
-MODULES=		iconv gettext
+MODULES=		gettext
 LIB_DEPENDS=		glib-2.0.=0,gmodule-2.0.=0,gobject-2.0.=0::devel/glib2
 BUILD_DEPENDS=          :pkgconfig-*:devel/pkgconfig
 RUN_DEPENDS=		${BUILD_DEPENDS}
