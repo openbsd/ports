@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2002/07/21 20:47:44 lebel Exp $
+# $OpenBSD: Makefile,v 1.57 2002/07/31 15:52:33 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -103,9 +103,15 @@ WRKSRC=			${WRKDIST}/src
 
 SUBST_VARS=     	VERSION
 
+.include <bsd.own.mk>
+
 # don't try to regenerate the configure script. Works around the fact that
 # auto/configure.in is newer than auto/configure.
 post-patch:
 	touch ${WRKBUILD}/auto/configure
+# link.sh messes up the final executables when linking under ELF
+.if ${ELF_TOOLCHAIN} == yes
+	touch ${WRKBUILD}/auto/link.sed
+.endif
 
 .include <bsd.port.mk>
