@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2001/08/17 21:46:02 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/05 17:39:57 obecian Exp $
 
 COMMENT=	"SDL TrueType fonts library"
 
-VER=	2.0.3
-PROJ=	SDL_ttf
+VER=		2.0.3
+PROJ=		SDL_ttf
 DISTNAME=	${PROJ}-${VER}
 PKGNAME=	sdl-ttf-${VER}
 CATEGORIES=	devel graphics
@@ -27,5 +27,7 @@ SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${X11BASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh
 
 .include <bsd.port.mk>
