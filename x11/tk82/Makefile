@@ -1,5 +1,5 @@
 # $FreeBSD: Makefile,v 1.32 2000/01/05 07:12:09 jseger Exp $
-# $OpenBSD: Makefile,v 1.5 2000/03/20 19:25:13 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/20 20:16:38 espie Exp $
 
 DISTNAME=	tk8.2.3
 PKGNAME=	tk-8.2.3
@@ -27,6 +27,10 @@ CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
 FAKE=		Yes
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/unix
+
+# Sneaky
+post-install:
+	perl -pi.bak -e 's/\$$\{DESTDIR\}//;' ${PREFIX}/lib/tk8.2/tkConfig.sh 
 
 test:	build
 	@cd ${WRKSRC} && make test

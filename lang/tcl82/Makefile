@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/20 19:25:12 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/20 20:16:38 espie Exp $
 # $FreeBSD: Makefile,v 1.26 2000/01/05 07:11:48 jseger Exp $
 
 DISTNAME=	tcl8.2.3
@@ -29,6 +29,10 @@ CONFIGURE_ARGS+= --disable-load
 CONFIGURE_ENV=	PORTSDIR="${PORTSDIR}"
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/unix
+
+# Sneaky
+post-install:
+	perl -pi.bak -e 's/\$$\{DESTDIR\}//;' ${PREFIX}/lib/tcl8.2/tclConfig.sh 
 
 test:	build
 	@cd ${WRKSRC} && make test
