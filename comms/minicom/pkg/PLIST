@@ -2,11 +2,11 @@ bin/minicom
 bin/xminicom
 bin/runscript
 bin/ascii-xfr
-etc/minicom/minicom.users
-etc/minicom/htsalogin
-etc/minicom/saralogin
-etc/minicom/scriptdemo
-etc/minicom/unixlogin     
+lib/minicom/minicom.users
+lib/minicom/htsalogin
+lib/minicom/saralogin
+lib/minicom/scriptdemo
+lib/minicom/unixlogin     
 man/man1/minicom.1.gz
 man/man1/runscript.1.gz
 man/man1/ascii-xfr.1.gz

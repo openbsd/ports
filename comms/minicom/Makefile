@@ -3,7 +3,7 @@
 # Date created:         Fri Dec 01, 1995
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.1.1.1 1997/12/31 16:28:39 joey Exp $
+# $Id: Makefile,v 1.2 1998/03/04 22:47:44 marc Exp $
 #
 
 DISTNAME=	minicom-1.75
@@ -11,6 +11,8 @@ CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/software/
 
 MAINTAINER=     obrien@FreeBSD.org
+
+BROKEN=		"Run time requires package not yet ported to OpenBSD"
 
 RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz \
 		lsz:${PORTSDIR}/comms/lrzsz \

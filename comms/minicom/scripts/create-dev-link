@@ -1,9 +1,9 @@
 #!/bin/sh -
 #
-#	pre-install script for Minicom port to FreeBSD 2.x
+#	pre-install script for Minicom port to OpenBSD
 
 echo ""
-echo "Minicom will be installed mode 4511 (setuid) owner root, and group bin."
+echo "Minicom will be installed mode 4510 (setuid) owner uucp, group dialer."
 echo ""
 echo -n "Is this ok? [y] "
 	read fooz
@@ -39,15 +39,15 @@ else
 	if [ ${foo} = Y -o ${foo} = y -o ${foo} = yes ] ; then
 		echo "From the list below, what port number is your modem attached to?"
 		cd /dev
-		/bin/ls -C cuaa*
+		/bin/ls -C cua*
 		echo ""
-		echo -n "Enter the number X from cuaaX above : "
+		echo -n "Enter the numbers/letters (*) from cua* above : "
 		read bar
 		if [ ${bar} ] ; then
-			if [ -e /dev/cuaa${bar} ]; then
-				ln -s /dev/cuaa${bar} /dev/modem
+			if [ -e /dev/cua${bar} ]; then
+				ln -s /dev/cua${bar} /dev/modem
 			else
-				echo "Error: /dev/cuaa${bar} doesn't exist."
+				echo "Error: /dev/cua${bar} doesn't exist."
 				exit 1
 			fi
 		fi
