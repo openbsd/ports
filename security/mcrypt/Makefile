@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2004/10/20 18:28:17 avsm Exp $
+# $OpenBSD: Makefile,v 1.16 2004/11/14 13:53:00 espie Exp $
 
 COMMENT=	"extendable encryption program that supports many ciphers"
 
 DISTNAME=		mcrypt-2.6.4
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	security
 
 HOMEPAGE=		http://mcrypt.sf.net/
@@ -19,7 +20,7 @@ USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 MODULES=		devel/gettext
 LIB_DEPENDS=		mcrypt.6::security/libmcrypt \
-			ltdl.1::devel/libtool
+			ltdl.1::devel/libtool,-ltdl
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
