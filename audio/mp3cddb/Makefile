@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/24 23:28:02 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/08 15:07:00 espie Exp $
 
 DISTNAME=	mp3cddb
 CATEGORIES=	audio
@@ -17,8 +17,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-
-do-build:	# Nothing needed
+FAKE=			Yes
+NO_BUILD=		Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mp3cddb ${PREFIX}/bin
