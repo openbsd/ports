@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/09 11:07:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/02/13 17:39:54 espie Exp $
 bin/mlbt
 bin/mlbt+gui
 bin/mldc
@@ -14,13 +14,15 @@ bin/mlnet
 bin/mlnet+gui
 bin/mlslsk
 bin/mlslsk+gui
-share/mldonkey/distrib/AUTHORS
-share/mldonkey/distrib/BUGS
-share/mldonkey/distrib/COPYING
+share/mldonkey/distrib/Authors.txt
+share/mldonkey/distrib/Bugs.txt
 share/mldonkey/distrib/ChangeLog
+share/mldonkey/distrib/Copying.txt
+share/mldonkey/distrib/Developers.txt
 share/mldonkey/distrib/FAQ.html
-share/mldonkey/distrib/INSTALL
-share/mldonkey/distrib/TODO
+share/mldonkey/distrib/Install.txt
+share/mldonkey/distrib/Readme.txt
+share/mldonkey/distrib/Todo.txt
 share/mldonkey/distrib/directconnect.ini
 share/mldonkey/distrib/docs/mlchat
 share/mldonkey/distrib/docs/mldonkey
@@ -36,20 +38,50 @@ share/mldonkey/distrib/ed2k_submit/README.MLdonkeySubmit
 share/mldonkey/distrib/ed2k_submit/ed2k.protocol
 share/mldonkey/distrib/ed2k_submit/mldonkey
 share/mldonkey/distrib/ed2k_submit/mldonkey_submit
+share/mldonkey/distrib/html_themes/ease/commands.html
+share/mldonkey/distrib/html_themes/ease/dh.css
+share/mldonkey/distrib/html_themes/ease/dheader.html
+share/mldonkey/distrib/html_themes/ease/di.js
+share/mldonkey/distrib/html_themes/ease/frames.html
+share/mldonkey/distrib/html_themes/ease/h.css
+share/mldonkey/distrib/html_themes/ease/header.html
+share/mldonkey/distrib/html_themes/ease/i.js
+share/mldonkey/distrib/html_themes/old/commands.html
+share/mldonkey/distrib/html_themes/old/dh.css
+share/mldonkey/distrib/html_themes/old/dheader.html
+share/mldonkey/distrib/html_themes/old/di.js
+share/mldonkey/distrib/html_themes/old/frames.html
+share/mldonkey/distrib/html_themes/old/h.css
+share/mldonkey/distrib/html_themes/old/header.html
+share/mldonkey/distrib/html_themes/old/i.js
 share/mldonkey/distrib/i18n/gui_messages.ini.catalan
 share/mldonkey/distrib/i18n/gui_messages.ini.de
+share/mldonkey/distrib/i18n/gui_messages.ini.dutch
 share/mldonkey/distrib/i18n/gui_messages.ini.en
 share/mldonkey/distrib/i18n/gui_messages.ini.fr
 share/mldonkey/distrib/i18n/gui_messages.ini.fr.noaccents
+share/mldonkey/distrib/i18n/gui_messages.ini.ga
 share/mldonkey/distrib/i18n/gui_messages.ini.pt_BR
 share/mldonkey/distrib/i18n/gui_messages.ini.sp
 share/mldonkey/distrib/i18n/gui_messages.ini.sv
+share/mldonkey/distrib/i18n/mlnet_strings.catalan
+share/mldonkey/distrib/i18n/mlnet_strings.de
+share/mldonkey/distrib/i18n/mlnet_strings.dutch
+share/mldonkey/distrib/i18n/mlnet_strings.fr
+share/mldonkey/distrib/i18n/mlnet_strings.fr.noaccents
+share/mldonkey/distrib/i18n/mlnet_strings.ga
+share/mldonkey/distrib/i18n/mlnet_strings.pt_BR
+share/mldonkey/distrib/i18n/mlnet_strings.sp
+share/mldonkey/distrib/i18n/mlnet_strings.sv
 share/mldonkey/distrib/kill_mldonkey
+share/mldonkey/distrib/make_buginfo
 share/mldonkey/distrib/mldonkey_command
 share/mldonkey/distrib/mldonkey_gui_started_for_macosx
 share/mldonkey/distrib/mldonkey_previewer
-share/mldonkey/distrib/servers.ini
 @dirrm share/mldonkey/distrib/i18n
+@dirrm share/mldonkey/distrib/html_themes/old
+@dirrm share/mldonkey/distrib/html_themes/ease
+@dirrm share/mldonkey/distrib/html_themes
 @dirrm share/mldonkey/distrib/ed2k_submit
 @dirrm share/mldonkey/distrib/ed2k_mozilla/src
 @dirrm share/mldonkey/distrib/ed2k_mozilla
