@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2001/03/24 02:26:01 avsm Exp $
+# $OpenBSD: Makefile,v 1.65 2001/03/27 08:51:43 wilfried Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -91,7 +91,7 @@
      SUBDIR += p5-Curses-Widgets
 #    SUBDIR += p5-Data-Dumper
      SUBDIR += p5-Data-Flow
-#    SUBDIR += p5-Data-ShowTable
+     SUBDIR += p5-Data-ShowTable
      SUBDIR += p5-Date-Calc
 #    SUBDIR += p5-Date-Manip
 #    SUBDIR += p5-Devel-DProf
@@ -118,7 +118,8 @@
 #    SUBDIR += p5-Resources
 #    SUBDIR += p5-Sort-Versions
      SUBDIR += p5-Storable
-#    SUBDIR += p5-Term-ReadKey
+     SUBDIR += p5-Term-ReadKey
+     SUBDIR += p5-Term-ReadLine-Gnu
 #    SUBDIR += p5-Time
      SUBDIR += p5-Time-TimeDate
      SUBDIR += p5-Time-HiRes
