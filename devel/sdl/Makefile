@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/06/23 19:05:33 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2001/06/23 20:07:17 pvalchev Exp $
 
 COMMENT=	"cross-platform multimedia library"
 
@@ -22,6 +22,14 @@ MASTER_SITES=	${HOMEPAGE}/release/ \
 
 FLAVORS=	sun oss esd gl arts no_x11
 FLAVOR?=	sun
+
+.if empty(FLAVOR:L:Msun) && empty(FLAVOR:L:Moss) && empty(FLAVOR:L:Mesd)
+.BEGIN:
+	@echo "You must choose a flavor from: sun, oss, esd"
+	@echo "to select the appropriate sound system you want to use."
+	@echo "Additionally, you can append your other choices afterwards."
+	@exit 1
+.endif
 
 USE_GMAKE=	Yes
 
