@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2001/08/01 20:46:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2001/08/11 16:17:58 kevlo Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -37,6 +37,7 @@ SUBDIR += games
 #SUBDIR += german
 SUBDIR += graphics
 SUBDIR += japanese
+SUBDIR += java
 SUBDIR += korean
 SUBDIR += lang
 SUBDIR += mail
