@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/12 11:40:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/12 18:02:54 naddy Exp $
 
 COMMENT=	"earth as seen from the direction of the sun"
 
@@ -23,6 +23,7 @@ CONFIGURE_ENV=	CAT=cat \
 		INCLUDES="-I${X11BASE}/include" \
 		LDLIBS="-lm -L${X11BASE}/lib -lX11" \
 		MORELIBS=""
+INSTALL_STRIP=
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/xworld ${PREFIX}/bin
