@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/06/23 03:26:20 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/07/25 00:22:03 marcm Exp $
 
 COMMENT=		"GNOME utility programs"
 
-DISTNAME=		gnome-utils-2.6.1
+DISTNAME=		gnome-utils-2.6.2
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
