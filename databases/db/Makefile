@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2002/10/30 00:35:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2003/06/17 00:35:32 avsm Exp $
 
 COMMENT=	"Berkeley DB package, revision 3"
 
@@ -10,8 +10,6 @@ HOMEPAGE=	http://www.sleepycat.com/
 MASTER_SITES=	${HOMEPAGE}/update/snapshot/
 
 TCL_VERSION=	8.3
-
-MAINTAINER=	Heikki Korpela <heko@openbsd.org>
 
 # License: BSD+SleepyCat's additions.
 # Must purchase license to redistribute if not distributing the source.
