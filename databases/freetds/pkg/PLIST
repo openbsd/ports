@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/05/18 16:57:18 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/10/20 16:37:48 naddy Exp $
 bin/freebcp
 bin/tdspool
 bin/tsql
@@ -31,3 +31,5 @@ man/man1/tsql.1
 share/examples/freetds/freetds.conf-sample
 %%SHARED%%
 @dirrm share/examples/freetds
+@cwd ${SYSCONFDIR}
+@extra freetds.conf
