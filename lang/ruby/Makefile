@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/10/26 01:25:05 krw Exp $
+# $OpenBSD: Makefile,v 1.16 2001/10/29 23:01:07 krw Exp $
 
 COMMENT=	object oriented script language with threads
 VERSION=1.6.5
@@ -17,7 +17,7 @@ MANARCH=ruby-man-1.4.6.tar.gz
 DISTFILES=${BINARCH} ${MANARCH}:0
 EXTRACT_ONLY=${BINARCH}
 
-HOMEPAGE=http://www.netlab.co.jp/ruby/
+HOMEPAGE=http://www.ruby-lang.org/
 MAINTAINER=	Ken Westerback <krw@openbsd.org>
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_FTP=	Yes
