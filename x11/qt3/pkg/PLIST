@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/09/15 19:25:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2004/09/16 04:26:46 brad Exp $
 bin/assistant${MT_SUFX}
 bin/designer3${MT_SUFX}
 bin/findtr3${MT_SUFX}
@@ -26,9 +26,6 @@ lib/qt3/bin${MT_SUFX}/qt20fix
 lib/qt3/bin${MT_SUFX}/qtconfig
 lib/qt3/bin${MT_SUFX}/qtrename140
 lib/qt3/bin${MT_SUFX}/uic
-lib/qt3/mkspecs/macx-xlc/
-lib/qt3/mkspecs/macx-xlc/qmake.conf
-lib/qt3/mkspecs/macx-xlc/qplatformdefs.h
 lib/qt3/plugins${MT_SUFX}/
 lib/qt3/plugins${MT_SUFX}/designer/
 lib/qt3/plugins${MT_SUFX}/sqldrivers/

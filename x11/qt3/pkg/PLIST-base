@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-base,v 1.9 2004/09/15 19:25:12 espie Exp $
+@comment $OpenBSD: PLIST-base,v 1.10 2004/09/16 04:26:46 brad Exp $
 @pkgcfl qt3-0.*
 @pkgcfl qt3-1.0
 @pkgcfl qt3-1.1
@@ -1352,6 +1352,9 @@ lib/qt3/mkspecs/macx-pbuilder/
 lib/qt3/mkspecs/macx-pbuilder/Info.plist.app
 lib/qt3/mkspecs/macx-pbuilder/qmake.conf
 lib/qt3/mkspecs/macx-pbuilder/qplatformdefs.h
+lib/qt3/mkspecs/macx-xlc/
+lib/qt3/mkspecs/macx-xlc/qmake.conf
+lib/qt3/mkspecs/macx-xlc/qplatformdefs.h
 lib/qt3/mkspecs/netbsd-g++/
 lib/qt3/mkspecs/netbsd-g++/qmake.conf
 lib/qt3/mkspecs/netbsd-g++/qplatformdefs.h
