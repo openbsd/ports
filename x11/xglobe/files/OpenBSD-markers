@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.20 2002/01/16 13:04:29 mpech Exp $
+# $OpenBSD: OpenBSD-markers,v 1.21 2002/02/10 17:43:02 naddy Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -27.48		153.20		"Leonard"	# David
@@ -34,6 +34,7 @@
 48.3		15.7		"Sammer"	# Reinhard J.
 48.87		2.33		"Espie"		# Marc
 48.137970	11.542279	"Friedl"	# Markus
+49.48		8.42		"Weisgerber"	# Christian
 51.0333		-114.0500	"Valchev"	# Peter
 51.05		3.60		"Vandeputte"	# Wim
 51.6		-114.1		"de Raadt"	# Theo
@@ -42,10 +43,10 @@
 53.56		-113.51		"Beck"		# Bob
 53.56		-113.51		"Weingartner"	# Tobias
 55.02		82.54		"Safiullin"	# Oleg
+57.0		24.0		"Pechkin"	# Mike
 57.42		11.58		"Schlyter"	# Jakob
 57.717		11.967		"Hallqvist"	# Niklas
 59.33		18.08		"Grabowski"	# Art
 59.43		17.81		"Jansson"	# Mats O
 60.10		24.57		"Korpela"	# Heikki
 60.12399	24.52438	"Virtanen"	# Jukka
-57.0		24.0		"Pechkin"	# Mike
