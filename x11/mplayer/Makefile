@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/06/27 22:03:49 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2002/06/29 07:24:10 pvalchev Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -68,7 +68,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Msdl}
 CONFIGURE_ARGS+=--enable-sdl \
 		--with-sdl-config=${LOCALBASE}/bin/sdl-config
-LIB_DEPENDS+=	SDL:sdl>=1.2.4p1:devel/sdl
+LIB_DEPENDS+=	SDL:sdl-1.2.4p1,>=1.2.5-*:devel/sdl
 .else
 CONFIGURE_ARGS+=--disable-sdl
 .endif
