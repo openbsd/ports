@@ -1,23 +1,16 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2001/07/08 02:59:49 brad Exp $
---- Makefile.in.orig	Sun Jun  3 19:38:00 2001
-+++ Makefile.in	Sat Jul  7 22:49:39 2001
-@@ -16,8 +16,9 @@ mandir		= @mandir@
- includedir	= @includedir@
- 
+$OpenBSD: patch-Makefile_in,v 1.3 2001/07/11 13:24:21 brad Exp $
+--- Makefile.in.orig	Wed Jul 11 09:13:27 2001
++++ Makefile.in	Wed Jul 11 09:17:59 2001
+@@ -18,7 +18,7 @@ includedir	= @includedir@
  CC	= @CC@
-+RANLIB	= @RANLIB@
+ RANLIB	= @RANLIB@
  DEFS	= @DEFS@
 -CFLAGS	= @CFLAGS@ $(DEFS) -Wall -I/usr/include -I$(srcdir) -I$(srcdir)/missing
 +CFLAGS	= @CFLAGS@ $(DEFS) -Wall -I. -I$(srcdir) -I$(srcdir)/missing
  LDFLAGS	= @LDFLAGS@
  
  INSTALL	= @INSTALL@
-@@ -36,27 +37,27 @@ all: libevent.a
- libevent.a: $(OBJS)
- 	@echo "building $@"
- 	ar cru $@ $(OBJS)
--	@RANLIB@ $@
-+	$(RANLIB) $@
+@@ -41,23 +41,23 @@ libevent.a: $(OBJS)
  
  install:
  	$(INSTALL) -d $(install_prefix)$(libdir)
