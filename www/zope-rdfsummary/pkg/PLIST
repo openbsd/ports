@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/08 21:37:41 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/09 13:54:18 xsa Exp $
+lib/zope/lib/python/Products/RDFSummary/
 lib/zope/lib/python/Products/RDFSummary/RDFSummary.py
 lib/zope/lib/python/Products/RDFSummary/RDFSummary.pyc
 lib/zope/lib/python/Products/RDFSummary/README.txt
@@ -12,4 +13,3 @@ lib/zope/lib/python/Products/RDFSummary/refresh.txt
 lib/zope/lib/python/Products/RDFSummary/rss.gif
 lib/zope/lib/python/Products/RDFSummary/source.dtml
 lib/zope/lib/python/Products/RDFSummary/version.txt
-@dirrm lib/zope/lib/python/Products/RDFSummary
