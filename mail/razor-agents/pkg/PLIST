@@ -1,15 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/12/31 19:13:49 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/06/03 13:14:57 lebel Exp $
 bin/razor-check
 bin/razor-discover
 bin/razor-report
-libdata/perl5/site_perl/Razor/Agent.pm
-libdata/perl5/site_perl/Razor/Client.pm
-libdata/perl5/site_perl/Razor/Config.pm
-libdata/perl5/site_perl/Razor/Errorhandler.pm
-libdata/perl5/site_perl/Razor/String.pm
-libdata/perl5/site_perl/Razor/Version.pm
+${P5SITE}/Razor/Agent.pm
+${P5SITE}/Razor/Client.pm
+${P5SITE}/Razor/Config.pm
+${P5SITE}/Razor/Errorhandler.pm
+${P5SITE}/Razor/String.pm
+${P5SITE}/Razor/Version.pm
+${P5ARCH}/auto/razor-agents/.packlist
 man/man1/razor-check.1
 man/man1/razor-discover.1
 man/man1/razor-report.1
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/razor-agents
-@dirrm libdata/perl5/site_perl/Razor
+@dirrm ${P5ARCH}/auto/razor-agents
+@dirrm ${P5SITE}/Razor
