@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2001/04/14 03:57:00 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2001/07/20 22:48:10 brad Exp $
 
 COMMENT=	"Program for Internet E-mail and News, with editor"
 COMMENT-pico=	"small text editor"
@@ -7,9 +7,9 @@ COMMENT-pine=	"Program for Internet E-mail and News, without editor"
 VERSION=	4.33
 DISTNAME=	pine${VERSION}
 PKGNAME=	pine+pico-${VERSION}
-PKGNAME-pico=	pico-${VERSION}
+FULLPKGNAME-pico=pico-${VERSION}
 PKGNAME-pine=	pine-${VERSION}
-NEED_VERSION=	1.384
+NEED_VERSION=	1.413
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/
 
@@ -38,10 +38,13 @@ CATEGORIES=	mail news editors
 LIB_DEPENDS=	c-client.2.1::mail/c-client
 .endif
 
-.if ${FLAVOR:L:Mldap}
+.if ${FLAVOR:L} == "ldap" && ${SUBPACKAGE} != "-pico"
 LIB_DEPENDS+=	ldap.2::databases/openldap
+.endif
+
+.if ${FLAVOR:L} == "ldap"
 MAKE_FLAGS=	LDAPLIBS="-lldap -llber" \
-		LDAPCFLAGS="-DENABLE_LDAP -I${PREFIX}/include"
+		LDAPCFLAGS="-DENABLE_LDAP -I${LOCALBASE}/include"
 .endif
 
 post-patch:
