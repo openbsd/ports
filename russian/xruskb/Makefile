@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2003/08/15 08:25:24 grange Exp $
+# $OpenBSD: Makefile,v 1.33 2003/08/15 09:56:59 grange Exp $
 
 COMMENT=	"english-russian keyboard switcher for X11"
 
@@ -8,6 +8,7 @@ MASTER_SITES=	ftp://ftp.yars.free.net/unix/X11/
 
 MAINTAINER=	Alexander Yurchenko <grange@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
