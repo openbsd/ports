@@ -1,0 +1,8 @@
+@name rsync-2.2.1
+bin/rsync
+man/man1/rsync.1
+man/man5/rsyncd.conf.5
+share/doc/rsync/tech_report.tex
+share/doc/rsync/test.sh
+share/doc/rsync/rsyncstats
+@dirrm share/doc/rsync
