@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.435 2001/08/12 11:33:10 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.436 2001/08/16 14:49:31 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -201,6 +201,15 @@ ERRORS+= "Fatal: Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead."
 .include "${.CURDIR}/../Makefile.inc"
 .endif
 
+.if defined(show)
+VARNAME=${show}
+.MAIN: show
+.elif defined(clean)
+.MAIN: clean
+.else
+.MAIN: all
+.endif
+
 FAKE?=Yes
 TRUST_PACKAGES?=No
 BIN_PACKAGES?=No
@@ -232,6 +241,17 @@ CLEANDEPENDS?=No
 .else
 CLEANDEPENDS?=No
 .endif
+clean?=work
+.if ${CLEANDEPENDS:L} == "yes"
+clean+=depends
+.endif
+.if ${clean:L:Mwork}
+clean+=fake
+.endif
+.if ${clean:L:Mforce}
+clean+=-f
+.endif
+
 NOMANCOMPRESS?=	Yes
 DEF_UMASK?=		022
 
@@ -540,12 +560,12 @@ MAKE_ENV+=	EXTRA_SYS_MK_INCLUDES="<bsd.own.mk>"
 
 
 .if defined(OBJMACHINE)
-WRKDIR?=		${.CURDIR}/work${FLAVOR_EXT}.${MACHINE_ARCH}
+WRKDIR?=		${.CURDIR}/w-${PKGNAME}${FLAVOR_EXT}.${MACHINE_ARCH}
 .else
 .  if defined(SEPARATE_BUILD) && ${SEPARATE_BUILD:L:Mflavored}
-WRKDIR?=		${.CURDIR}/work
+WRKDIR?=		${.CURDIR}/w-${PKGNAME}
 .  else
-WRKDIR?=		${.CURDIR}/work${FLAVOR_EXT}
+WRKDIR?=		${.CURDIR}/w-${PKGNAME}${FLAVOR_EXT}
 .  endif
 .endif
 
@@ -555,11 +575,12 @@ WRKSRC?=	   ${WRKDIST}
 
 .if defined(SEPARATE_BUILD)
 WRKBUILD?=		${WRKDIR}/build-${MACHINE_ARCH}${FLAVOR_EXT}
+WRKPKG?=		${WRKBUILD}/pkg
 .else
 WRKBUILD?=		${WRKSRC}
+WRKPKG?=		${WRKDIR}/pkg
 .endif
 
-WRKPKG?=		${WRKBUILD}/pkg
 
 .if ${FAKE:L} == "yes"
 _PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
@@ -574,7 +595,7 @@ ${_PACKAGE_COOKIE}:
 .else
 ${_PACKAGE_COOKIE}: ${_PACKAGE_COOKIE_DEPS}
 .endif
-	@cd ${.CURDIR} && SUBPACKAGE='' FLAVOR='${FLAVOR}' PACKAGING=true exec ${MAKE} _package
+	@cd ${.CURDIR} && SUBPACKAGE='' FLAVOR='${FLAVOR}' PACKAGING='' exec ${MAKE} _package
 .if !defined(PACKAGE_NOINSTALL)
 	@${_MAKE_COOKIE} $@
 .endif
@@ -588,7 +609,7 @@ ${_PACKAGE_COOKIE${_s}}:
 .  else
 ${_PACKAGE_COOKIE${_s}}: ${_PACKAGE_COOKIE_DEPS}
 .  endif
-	@cd ${.CURDIR} && SUBPACKAGE='${_s}' FLAVOR='${FLAVOR}' PACKAGING=true exec ${MAKE} _package
+	@cd ${.CURDIR} && SUBPACKAGE='${_s}' FLAVOR='${FLAVOR}' PACKAGING='${_s}' exec ${MAKE} _package
 .endfor
 
 .PRECIOUS: ${_PACKAGE_COOKIES} ${_INSTALL_COOKIE}
@@ -1045,13 +1066,6 @@ _CATPAGES+=	${CAT${sect}:S%^%${CAT${sect}PREFIX}/man/${lang}/cat${sect:L}/%}
 .  endif
 .endif
 
-.if defined(show)
-VARNAME=${show}
-.MAIN: show
-.else
-.MAIN: all
-.endif
-
 ################################################################
 # Many ways to disable a port.
 #
@@ -1443,6 +1457,16 @@ package: ${_PACKAGE_COOKIES}
 
 .endif # IGNORECMD
 
+_create_wrkobjdir =	\
+	rm -rf ${WRKOBJDIR}/${PKGNAME}${FLAVOR_EXT}; \
+	mkdir -p ${WRKOBJDIR}/${PKGNAME}${FLAVOR_EXT}; \
+	if [ ! -L ${WRKDIR} ] || \
+	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PKGNAME}${FLAVOR_EXT} ]; then \
+		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PKGNAME}${FLAVOR_EXT}"; \
+		rm -f ${WRKDIR}; \
+		ln -sf ${WRKOBJDIR}/${PKGNAME}${FLAVOR_EXT} ${WRKDIR}; \
+	fi
+
 # The real targets. Note that some parts always get run, some parts can be
 # disabled, and there are hooks to override behavior.
 
@@ -1457,14 +1481,7 @@ ${_EXTRACT_COOKIE}:
 .else
 # What EXTRACT normally does:
 .  if defined(WRKOBJDIR)
-	@rm -rf ${WRKOBJDIR}/${FULLPKGPATH}
-	@mkdir -p ${WRKOBJDIR}/${FULLPKGPATH}
-	@if [ ! -L ${WRKDIR} ] || \
-	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${FULLPKGPATH} ]; then \
-		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${FULLPKGPATH}"; \
-		rm -f ${WRKDIR}; \
-		ln -sf ${WRKOBJDIR}/${FULLPKGPATH} ${WRKDIR}; \
-	fi
+	@${_create_wrkobjdir}
 .  else
 	@rm -rf ${WRKDIR}
 	@mkdir -p ${WRKDIR}
@@ -1889,14 +1906,7 @@ list-distfiles:
 .if !target(obj)
 obj:
 .  if defined(WRKOBJDIR)
-	@rm -rf ${WRKOBJDIR}/${FULLPKGPATH}
-	@mkdir -p ${WRKOBJDIR}/${FULLPKGPATH}
-	@if [ ! -L ${WRKDIR} ] || \
-	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${FULLPKGPATH} ]; then \
-		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${FULLPKGPATH}"; \
-		rm -f ${WRKDIR}; \
-		ln -sf ${WRKOBJDIR}/${FULLPKGPATH} ${WRKDIR}; \
-	fi
+	@${_create_wrkobjdir}
 .  else
 	@echo ">>"
 	@echo ">> Please set the WRKOBJDIR variable before using 'make obj'"
@@ -1978,13 +1988,41 @@ pre-clean:
 
 .if !target(clean)
 clean: pre-clean
-.  if ${CLEANDEPENDS:L} == "yes"
+.  if ${clean:L:Mdepends}
 	@cd ${.CURDIR} && exec ${MAKE} clean-depends
 .  endif
 	@${ECHO_MSG} "===>  Cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
+.  if ${clean:L:Mfake}
 	@if cd ${WRKINST} 2>/dev/null; then ${SUDO} rm -rf ${WRKINST}; fi
+.  endif
+.  if ${clean:L:Mwork}
+.    if ${clean:L:Mflavors}
+	@for i in ${.CURDIR}/w-*; do \
+		if [ -L $$i ]; then ${SUDO} rm -rf `readlink $$i`; fi; \
+		${SUDO} rm -rf $$i; \
+	done
+.    else
 	@if [ -L ${WRKDIR} ]; then rm -rf `readlink ${WRKDIR}`; fi
 	@rm -rf ${WRKDIR}
+.    endif 
+.  endif
+.  if ${clean:L:Mdist}
+	@exec ${MAKE} distclean
+.  endif
+.  if ${clean:L:Minstall}
+.    if ${clean:L:Msub}
+.	   for _s in ${MULTI_PACKAGES}
+	${SUDO} ${PKG_DELETE} ${clean:M-f} ${_FULLPKGNAME${_s}}
+.      endfor
+.    else
+	${SUDO} ${PKG_DELETE} ${clean:M-f} ${_FULLPKGNAME${SUBPACKAGE}}
+.    endif
+.  endif
+.  if ${clean:L:Mpackages} || ${clean:L:Mpackage} && ${clean:L:Msub}
+	rm -f ${_PACKAGE_COOKIES}
+.  elif ${clean:L:Mpackage}
+	rm -f ${_PKGFILE${SUBPACKAGE}}
+.  endif
 .endif
 
 .if !target(pre-distclean)
@@ -2180,7 +2218,7 @@ clean-depends:
 describe:
 .if !defined(NO_DESCRIBE) 
 .  if !defined(PACKAGING) && defined(MULTI_PACKAGES)
-	@cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' FLAVOR='${FLAVOR}' PACKAGING=true exec ${MAKE} describe
+	@cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' FLAVOR='${FLAVOR}' PACKAGING='${SUBPACKAGE}' exec ${MAKE} describe
 .  else
 	@echo -n "${FULLPKGNAME${SUBPACKAGE}}|${FULLPKGPATH}|"
 .    if ${PREFIX} == ${LOCALBASE}
@@ -2254,7 +2292,7 @@ describe:
 .    endif
 .    if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
 .      for _sub in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' PACKAGING=true exec ${MAKE} describe
+	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' PACKAGING='${_sub}' exec ${MAKE} describe
 .      endfor
 .    endif
 .  endif

@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.39 2001/07/30 14:13:17 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.40 2001/08/16 14:49:31 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -41,6 +41,8 @@
 
 .if defined(show)
 .MAIN: show
+.elif defined(clean)
+.MAIN: clean
 .else
 .MAIN: all
 .endif
