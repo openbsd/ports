@@ -1,6 +1,9 @@
-+---------------+
-| Extra documentation has been installed in ${PREFIX}/share/doc/rrdtool. 
++---------------
+| Extra documentation has been installed in plain text, html, and
+| pod formats.  It can be located in ${PREFIX}/share/doc/rrdtool. 
 |
-| Some examples and contributed programs have been installed in 
+| Some examples and contributed programs have also been installed.  
+| One particular program is log2rrd, which can convert MRTG log files 
+| to round robin format for use by rrdtool.  These can be found in 
 | ${PREFIX}/share/examples/rrdtool.
-+---------------+
++---------------

@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2000/06/14 05:57:49 jakob Exp $
---- src/Makefile.in.orig	Mon Jun 12 14:29:15 2000
-+++ src/Makefile.in	Tue Jun 13 22:11:11 2000
+$OpenBSD: patch-src_Makefile_in,v 1.2 2000/09/06 19:17:23 danh Exp $
+$NetBSD: patch-ah,v 1.4 2000/05/07 12:50:52 wulf Exp $
+--- src/Makefile.in.orig	Wed Jul 12 05:58:14 2000
++++ src/Makefile.in	Tue Aug 22 21:41:22 2000
 @@ -37,8 +37,6 @@ mandir = @mandir@
  includedir = @includedir@
  oldincludedir = /usr/include
@@ -10,3 +11,127 @@ $OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2000/06/14 05:57:49 jakob Exp $
  pkgdatadir = $(datadir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
+@@ -87,11 +85,8 @@ TCL_SHLIB_SUFFIX = @TCL_SHLIB_SUFFIX@
+ VERSION = @VERSION@
+ 
+ CGI_LIB_DIR = $(top_srcdir)/@CGI_LIB_DIR@
+-GD_LIB_DIR = $(top_srcdir)/@GD_LIB_DIR@
+-PNG_LIB_DIR = $(top_srcdir)/@PNG_LIB_DIR@
+-ZLIB_LIB_DIR = $(top_srcdir)/@ZLIB_LIB_DIR@
+ 
+-INCLUDES = -I$(CGI_LIB_DIR) -I$(GD_LIB_DIR) -I$(PNG_LIB_DIR) -I$(ZLIB_LIB_DIR)
++INCLUDES = -I$(CGI_LIB_DIR) -I$(LOCALBASE)/include
+ 
+ #COMPILE   = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(CFLAGS_EXTRA)
+ #LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(CFLAGS_EXTRA)
+@@ -107,7 +102,7 @@ RRD_C_FILES =  	gdpng.c			getopt.c		geto
+ # creates a ./.lib/*.al file that contains the PIC compiled object
+ # files.
+ 
+-RRD_LIBS =  	$(CGI_LIB_DIR)/librrd_cgi.la		$(GD_LIB_DIR)/librrd_gd.la		$(PNG_LIB_DIR)/librrd_png.la		$(ZLIB_LIB_DIR)/librrd_z.la
++RRD_LIBS = $(CGI_LIB_DIR)/librrd_cgi.la -lz -ljpeg -lpng -lgd
+ 
+ 
+ lib_LTLIBRARIES = librrd.la
+@@ -143,17 +138,13 @@ DEFS = @DEFS@ -I. -I$(srcdir) -I../confi
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-librrd_la_DEPENDENCIES =  $(CGI_LIB_DIR)/librrd_cgi.la \
+-$(GD_LIB_DIR)/librrd_gd.la $(PNG_LIB_DIR)/librrd_png.la \
+-$(ZLIB_LIB_DIR)/librrd_z.la
++librrd_la_DEPENDENCIES =  $(CGI_LIB_DIR)/librrd_cgi.la
+ librrd_la_OBJECTS =  gdpng.lo getopt.lo getopt1.lo gifsize.lo \
+ parsetime.lo pngsize.lo rrd_create.lo rrd_diff.lo rrd_dump.lo \
+ rrd_info.lo rrd_error.lo rrd_fetch.lo rrd_format.lo rrd_graph.lo \
+ rrd_last.lo rrd_open.lo rrd_resize.lo rrd_restore.lo rrd_tune.lo \
+ rrd_update.lo
+-librrd_private_la_DEPENDENCIES =  $(CGI_LIB_DIR)/librrd_cgi.la \
+-$(GD_LIB_DIR)/librrd_gd.la $(PNG_LIB_DIR)/librrd_png.la \
+-$(ZLIB_LIB_DIR)/librrd_z.la
++librrd_private_la_DEPENDENCIES =  $(CGI_LIB_DIR)/librrd_cgi.la 
+ librrd_private_la_OBJECTS =  gdpng.lo getopt.lo getopt1.lo gifsize.lo \
+ parsetime.lo pngsize.lo rrd_create.lo rrd_diff.lo rrd_dump.lo \
+ rrd_info.lo rrd_error.lo rrd_fetch.lo rrd_format.lo rrd_graph.lo \
+@@ -273,7 +264,7 @@ librrd.la: $(librrd_la_OBJECTS) $(librrd
+ 	$(LINK) -rpath $(libdir) $(librrd_la_LDFLAGS) $(librrd_la_OBJECTS) $(librrd_la_LIBADD) $(LIBS)
+ 
+ librrd_private.la: $(librrd_private_la_OBJECTS) $(librrd_private_la_DEPENDENCIES)
+-	$(LINK)  $(librrd_private_la_LDFLAGS) $(librrd_private_la_OBJECTS) $(librrd_private_la_LIBADD) $(LIBS)
++	$(LINK)  -rpath $(libdir) $(librrd_private_la_LDFLAGS) $(librrd_private_la_OBJECTS) $(librrd_private_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-binPROGRAMS:
+ 
+@@ -367,49 +358,49 @@ distdir: $(DISTFILES)
+ 	    || cp -p $$d/$$file $(distdir)/$$file || :; \
+ 	  fi; \
+ 	done
+-gdpng.lo gdpng.o : gdpng.c ../libpng-1.0.6/png.h ../zlib-1.1.3/zlib.h \
+-	../zlib-1.1.3/zconf.h ../libpng-1.0.6/pngconf.h ../gd1.3/gd.h
++gdpng.lo gdpng.o : gdpng.c $(LOCALBASE)/include/png.h /usr/include/zlib.h \
++	/usr/include/zconf.h $(LOCALBASE)/include/pngconf.h \
++	$(LOCALBASE)/include/gd.h
+ getopt.lo getopt.o : getopt.c ../config/config.h getopt.h
+ getopt1.lo getopt1.o : getopt1.c ../config/config.h getopt.h
+ gifsize.lo gifsize.o : gifsize.c
+ parsetime.lo parsetime.o : parsetime.c rrd_tool.h ../config/config.h \
+-	rrd.h getopt.h rrd_format.h ../gd1.3/gd.h
+-pngsize.lo pngsize.o : pngsize.c ../libpng-1.0.6/png.h \
+-	../zlib-1.1.3/zlib.h ../zlib-1.1.3/zconf.h \
+-	../libpng-1.0.6/pngconf.h
++	rrd.h getopt.h rrd_format.h $(LOCALBASE)/include/gd.h
++pngsize.lo pngsize.o : pngsize.c $(LOCALBASE)/include/png.h \
++	/usr/include/zlib.h /usr/include/zconf.h $(LOCALBASE)/include/pngconf.h
+ rrd_cgi.o: rrd_cgi.c rrd_tool.h ../config/config.h rrd.h getopt.h \
+-	rrd_format.h ../gd1.3/gd.h ../cgilib-0.4/cgi.h
++	rrd_format.h $(LOCALBASE)/include/gd.h ../cgilib-0.4/cgi.h
+ rrd_create.lo rrd_create.o : rrd_create.c rrd_tool.h ../config/config.h \
+-	rrd.h getopt.h rrd_format.h ../gd1.3/gd.h
++	rrd.h getopt.h rrd_format.h $(LOCALBASE)/include/gd.h
+ rrd_diff.lo rrd_diff.o : rrd_diff.c rrd_tool.h ../config/config.h rrd.h \
+-	getopt.h rrd_format.h ../gd1.3/gd.h
++	getopt.h rrd_format.h $(LOCALBASE)/include/gd.h
+ rrd_dump.lo rrd_dump.o : rrd_dump.c rrd_tool.h ../config/config.h rrd.h \
+-	getopt.h rrd_format.h ../gd1.3/gd.h
++	getopt.h rrd_format.h $(LOCALBASE)/include/gd.h
+ rrd_error.lo rrd_error.o : rrd_error.c rrd_tool.h ../config/config.h \
+-	rrd.h getopt.h rrd_format.h ../gd1.3/gd.h
++	rrd.h getopt.h rrd_format.h $(LOCALBASE)/include/gd.h
+ rrd_fetch.lo rrd_fetch.o : rrd_fetch.c rrd_tool.h ../config/config.h \
+-	rrd.h getopt.h rrd_format.h ../gd1.3/gd.h
++	rrd.h getopt.h rrd_format.h $(LOCALBASE)/include/gd.h
+ rrd_format.lo rrd_format.o : rrd_format.c rrd_tool.h ../config/config.h \
+-	rrd.h getopt.h rrd_format.h ../gd1.3/gd.h
++	rrd.h getopt.h rrd_format.h $(LOCALBASE)/include/gd.h
+ rrd_graph.lo rrd_graph.o : rrd_graph.c rrd_tool.h ../config/config.h \
+-	rrd.h getopt.h rrd_format.h ../gd1.3/gd.h \
+-	../gd1.3/gdlucidan10.h ../gd1.3/gdlucidab12.h
++	rrd.h getopt.h rrd_format.h $(LOCALBASE)/include/gd.h \
++	$(LOCALBASE)/include/gdfontt.h ${LOCALBASE}/include/gdfonts.h
+ rrd_info.lo rrd_info.o : rrd_info.c rrd_tool.h ../config/config.h rrd.h \
+-	getopt.h rrd_format.h ../gd1.3/gd.h
++	getopt.h rrd_format.h $(LOCALBASE)/include/gd.h
+ rrd_last.lo rrd_last.o : rrd_last.c rrd_tool.h ../config/config.h rrd.h \
+-	getopt.h rrd_format.h ../gd1.3/gd.h
++	getopt.h rrd_format.h $(LOCALBASE)/include/gd.h
+ rrd_open.lo rrd_open.o : rrd_open.c rrd_tool.h ../config/config.h rrd.h \
+-	getopt.h rrd_format.h ../gd1.3/gd.h
++	getopt.h rrd_format.h $(LOCALBASE)/include/gd.h
+ rrd_resize.lo rrd_resize.o : rrd_resize.c rrd_tool.h ../config/config.h \
+-	rrd.h getopt.h rrd_format.h ../gd1.3/gd.h
++	rrd.h getopt.h rrd_format.h $(LOCALBASE)/include/gd.h
+ rrd_restore.lo rrd_restore.o : rrd_restore.c rrd_tool.h \
+-	../config/config.h rrd.h getopt.h rrd_format.h ../gd1.3/gd.h
++	../config/config.h rrd.h getopt.h rrd_format.h $(LOCALBASE)/include/gd.h
+ rrd_tool.o: rrd_tool.c rrd_tool.h ../config/config.h rrd.h getopt.h \
+-	rrd_format.h ../gd1.3/gd.h
++	rrd_format.h $(LOCALBASE)/include/gd.h
+ rrd_tune.lo rrd_tune.o : rrd_tune.c rrd_tool.h ../config/config.h rrd.h \
+-	getopt.h rrd_format.h ../gd1.3/gd.h
++	getopt.h rrd_format.h $(LOCALBASE)/include/gd.h
+ rrd_update.lo rrd_update.o : rrd_update.c rrd_tool.h ../config/config.h \
+-	rrd.h getopt.h rrd_format.h ../gd1.3/gd.h
++	rrd.h getopt.h rrd_format.h $(LOCALBASE)/include/gd.h
+ 
+ info-am:
+ info: info-am

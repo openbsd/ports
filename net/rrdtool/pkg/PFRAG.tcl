@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.tcl,v 1.2 2000/06/29 21:12:25 jakob Exp $
-lib/tclrrd1.0.24.so
-lib/tclrrd1.0.24/pkgIndex.tcl
-@dirrm lib/tclrrd1.0.24
+@comment $OpenBSD: PFRAG.tcl,v 1.3 2000/09/06 19:17:23 danh Exp $
+lib/tclrrd${VERSION}.so
+lib/tclrrd${VERSION}/pkgIndex.tcl
+@dirrm lib/tclrrd${VERSION}

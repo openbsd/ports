@@ -1,0 +1,17 @@
+$OpenBSD: patch-perl-shared_Makefile_PL,v 1.1 2000/09/06 19:17:23 danh Exp $
+$NetBSD: patch-ak,v 1.2 2000/05/07 12:50:52 wulf Exp $
+--- perl-shared/Makefile.PL.orig	Mon May 22 13:26:36 2000
++++ perl-shared/Makefile.PL	Tue Aug 22 21:57:59 2000
+@@ -10,10 +10,10 @@ WriteMakefile(
+     'NAME'         => 'RRDs',
+     'VERSION_FROM' => 'RRDs.pm', # finds $VERSION
+     'DEFINE'	   => "-DPERLPATCHLEVEL=$Config{PATCHLEVEL}",
+-    'INC'          => '-I../src -I../gd1.3',
++    'INC'          => '-I../src -I${LOCALBASE}/include',
+     # where to look for the necessary libraries 
+     # Perl will figure out which one is valid
+     'depend'	   => {'RRDs.c' => "../src/.libs/librrd_private.a"},
+-    'dynamic_lib'  => {'OTHERLDFLAGS' => "$librrd -lm"},
++    'dynamic_lib'  => {'OTHERLDFLAGS' => "-L\${LOCALBASE}/lib $librrd -lm -lz -ljpeg -lpng -lgd"},
+     'realclean'    => {FILES => 't/demo?.rrd t/demo?.gif' }
+ );

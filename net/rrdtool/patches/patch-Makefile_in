@@ -1,6 +1,15 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2000/06/29 21:12:24 jakob Exp $
---- Makefile.in.orig	Tue Jun 13 06:44:44 2000
-+++ Makefile.in	Thu Jun 29 13:32:49 2000
+$OpenBSD: patch-Makefile_in,v 1.5 2000/09/06 19:17:22 danh Exp $
+--- Makefile.in.orig	Wed Jul 12 05:56:56 2000
++++ Makefile.in	Tue Aug 22 19:08:17 2000
+@@ -86,7 +86,7 @@ ZLIB_LIB_DIR = @ZLIB_LIB_DIR@
+ RSYNC = rsync --rsh=ssh
+ 
+ # build the following subdirectories
+-SUBDIRS = cgilib-0.4 config gd1.3 zlib-1.1.3 libpng-1.0.6           src doc examples contrib tcl
++SUBDIRS = cgilib-0.4 config src doc examples contrib tcl
+ 
+ 
+ # the following files are not mentioned in any other Makefile
 @@ -382,12 +382,12 @@ maintainer-clean
  
  
