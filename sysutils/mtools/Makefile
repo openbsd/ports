@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.29 2000/06/30 05:42:55 fgsch Exp $
+# $OpenBSD: Makefile,v 1.30 2000/07/03 14:56:47 fgsch Exp $
 
-DATE=		20000623
+DATE=		20000703
 DISTNAME=	mtools-3.9.7
 PKGNAME=	mtools-3.9.7.${DATE}
 CATEGORIES=	sysutils
