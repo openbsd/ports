@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_info_c_sh_in,v 1.1 2004/01/05 01:23:09 espie Exp $
+--- source/info.c.sh.in.orig	2004-01-05 02:19:12.000000000 +0100
++++ source/info.c.sh.in	2004-01-05 02:19:35.000000000 +0100
+@@ -20,7 +20,7 @@ cat > info.c << __E__O__F__
+  */
+ 
+ #ifdef __STDC__
+-#define my_paste(x, y, z) x ## y ## z
++#define my_paste(x, y, z) x y z
+ #else
+ #define my_paste(x, y, z) x/**/y/**/z
+ #endif
