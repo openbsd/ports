@@ -1,14 +1,17 @@
 #!/bin/sh
-#$OpenBSD: check-distfiles,v 1.1.1.1 1999/05/18 16:39:05 espie Exp $
+#$OpenBSD: check-distfiles,v 1.2 1999/05/28 19:21:42 rohee Exp $
+
+PATH=/bin:/usr/bin
+export PATH
 
 # This does a full-scale check of everything that lives under
 # /usr/ports/distfiles
 PORTS=/usr/ports
-ALLSUMS=`mktemp /usr/ports/checksums.XXXXXX` || exit 1
-GREP_RESULT=`mktemp /usr/ports/grep.XXXXXX` || exit 1
+ALLSUMS=`mktemp /tmp/checksums.XXXXXX` || exit 1
+GREP_RESULT=`mktemp /tmp/grep.XXXXXX` || exit 1
 # assume that INDEX is up-to-date
 touch $ALLSUMS
-cut -d\| -f2 <INDEX|while read i
+cut -d\| -f2 <$PORTS/INDEX|while read i
 do
 	if [ -f $i/files/md5 ] 
 	then
@@ -29,3 +32,5 @@ do
 		echo "no checksum recorded for $name"
 	fi
 done
+
+rm $ALLSUMS $GREP_RESULT
