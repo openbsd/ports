@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.3 2002/04/07 00:13:02 espie Exp $
+--- configure.in.orig	Thu Apr  4 05:06:27 2002
++++ configure.in	Thu Apr  4 05:12:18 2002
+@@ -830,7 +830,7 @@ if test "x$with_cdparanoia" = "xCHECK" ;
+ 	with_cdparanoia=FOUND
+ 	# a.out shared libs don't have .so files, but .so.*
+ 	if test $ext = a &&
+-	   ls $para_dir | grep "^libcdda_paranoia.so.*" 2>&1 >/dev/null; then
++	   ls $para_libdir | grep "^libcdda_paranoia.so.*" 2>&1 >/dev/null; then
+           ext=so
+         fi
+         break
