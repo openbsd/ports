@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/01/24 00:14:51 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/04/12 20:22:24 david Exp $
 lib/mod_perl.so
 ${P5ARCH}/Apache.pm
 ${P5ARCH}/Apache/Connection.pm
@@ -59,7 +59,6 @@ ${P5ARCH}/mod_perl_hooks.pm.PL
 ${P5ARCH}/mod_perl_method_handlers.pod
 ${P5ARCH}/mod_perl_traps.pod
 ${P5ARCH}/mod_perl_tuning.pod
-${P5ARCH}/perllocal.pod
 man/man3p/Apache.3p
 man/man3p/Apache::Constants.3p
 man/man3p/Apache::Debug.3p
