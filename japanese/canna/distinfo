@@ -10,3 +10,7 @@ SHA1 (Canna35b2-hack1.patch.gz) = 24ab2baf104ef9748f92bd5315d4100a7ee961ab
 SHA1 (Canna35b2-unoff1.patch.gz) = 19579591190f7ace7d3ec5f61a7d01ca3bc576c1
 SHA1 (Canna35b2-unoff2.patch.gz) = 16d578ed0558a632832194fffad8fcf24c9181fb
 SHA1 (Canna35b2.tar.gz) = 66742205272cbc6bd91f272596381f761feac0a2
+SIZE (Canna35b2-hack1.patch.gz) = 8384
+SIZE (Canna35b2-unoff1.patch.gz) = 21443
+SIZE (Canna35b2-unoff2.patch.gz) = 11375
+SIZE (Canna35b2.tar.gz) = 1333329

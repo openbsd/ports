@@ -4,3 +4,5 @@ RMD160 (ezm3-1.0-src.tar.bz2) = 42082f21bde660731e2f9e8f1c08007ec8b95d31
 RMD160 (ezm3-1.0b-OpenBSD_386-boot.tar.bz2) = 6844e7358ec3c5f0677abbbbc923f9af5a1b9641
 SHA1 (ezm3-1.0-src.tar.bz2) = ea9443f6dc5039b471fb1da554d954f18ef44d20
 SHA1 (ezm3-1.0b-OpenBSD_386-boot.tar.bz2) = c4bbfd1c48831f91cef86c2c4595313656c5938f
+SIZE (ezm3-1.0-src.tar.bz2) = 6128550
+SIZE (ezm3-1.0b-OpenBSD_386-boot.tar.bz2) = 1287753

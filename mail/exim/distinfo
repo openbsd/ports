@@ -4,3 +4,5 @@ RMD160 (exim-4.41.tar.gz) = 7353a794ef0a443d52362ee11bb43221b3edf06f
 RMD160 (exiscan-acl-4.41-24.patch) = 4cf67d67ea9544aedd51c02178dd5933edfde539
 SHA1 (exim-4.41.tar.gz) = 5771b1dbf5766c5a1a013ce4d1ba2accd8e94671
 SHA1 (exiscan-acl-4.41-24.patch) = c85531f9d4a4ef9323ef34d5e840f02beed5d65b
+SIZE (exim-4.41.tar.gz) = 1730082
+SIZE (exiscan-acl-4.41-24.patch) = 424790

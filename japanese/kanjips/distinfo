@@ -7,3 +7,6 @@ RMD160 (kanjips.tar.Z) = 70aed12f649a20a6d57a93d173da28329df3e37b
 SHA1 (jis32.Z) = 28cdae1ec5fadb2d043b1ab282bd02beb2673fda
 SHA1 (jis48.Z) = b0ca880e6876818536fc30a15a64303c557e1df2
 SHA1 (kanjips.tar.Z) = 595eb54629633f4a68b68e912f066a7dc980d8b4
+SIZE (jis32.Z) = 551524
+SIZE (jis48.Z) = 947571
+SIZE (kanjips.tar.Z) = 456135

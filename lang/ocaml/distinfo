@@ -4,3 +4,5 @@ RMD160 (ocaml-3.07-refman.html.tar.gz) = c16c88d4b53220778f302e3f50afa771dbaad42
 RMD160 (ocaml-3.07pl2.tar.gz) = 2c007d102915e7937a42953b610f3495fb6e126d
 SHA1 (ocaml-3.07-refman.html.tar.gz) = 888b62f7de6815a70e6fed7a44c1faaf4e1d8cf1
 SHA1 (ocaml-3.07pl2.tar.gz) = 4222d348eaf11203f6000012b576c05fa2550bae
+SIZE (ocaml-3.07-refman.html.tar.gz) = 475879
+SIZE (ocaml-3.07pl2.tar.gz) = 2538755

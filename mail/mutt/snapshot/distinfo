@@ -7,3 +7,6 @@ RMD160 (patch-1.5.6.tg.hcache.11) = 1a86b472ee8b8cb74264ebd47de8b6d68336cc70
 SHA1 (mutt-1.5.6i.tar.gz) = 5b3ea613abeff4007fadc38946806aee2f225f48
 SHA1 (patch-1.5.6.rr.compressed.1.gz) = f439f6b7dd45323f485327d576d360e4d4b71ac8
 SHA1 (patch-1.5.6.tg.hcache.11) = 3b816ccdd2bf0cb9d205df14038ab311659c5e68
+SIZE (mutt-1.5.6i.tar.gz) = 2910730
+SIZE (patch-1.5.6.rr.compressed.1.gz) = 14392
+SIZE (patch-1.5.6.tg.hcache.11) = 38888

@@ -4,3 +4,5 @@ RMD160 (postfix/postfix-2.1.5.tar.gz) = c0e078babbc3e76035fe4f502ea5fb3645e8ed92
 RMD160 (postfix/tls+ipv6-1.25-pf-2.1.5.patch.gz) = d442dc6f11ddf5aaeafcbe2cd600a340f5d730a7
 SHA1 (postfix/postfix-2.1.5.tar.gz) = bbc65c9fdc1cbd8e553816a5549b2685255cf69d
 SHA1 (postfix/tls+ipv6-1.25-pf-2.1.5.patch.gz) = 04431d177f67ad4091df4660b2318d9f7f85f75c
+SIZE (postfix/postfix-2.1.5.tar.gz) = 1971931
+SIZE (postfix/tls+ipv6-1.25-pf-2.1.5.patch.gz) = 251571

@@ -7,3 +7,6 @@ RMD160 (pm3-1.1.15a-OpenBSD_386-boot.tgz) = 3a675b93577365394c85d75d52e7acdcf0b6
 SHA1 (pm3-1.1.15-BSD.patch-v1.2.gz) = 519be5defffe7d1b928a5e6e2b046ef5b4f40258
 SHA1 (pm3-1.1.15-src.tgz) = c1accccf2af380cd631d55c0c9b31e7a5afad2e3
 SHA1 (pm3-1.1.15a-OpenBSD_386-boot.tgz) = 1c452d7ceedb18ac3f0f9b6c1493ceff7b008531
+SIZE (pm3-1.1.15-BSD.patch-v1.2.gz) = 118373
+SIZE (pm3-1.1.15-src.tgz) = 25352602
+SIZE (pm3-1.1.15a-OpenBSD_386-boot.tgz) = 1840617

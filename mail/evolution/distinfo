@@ -4,3 +4,5 @@ RMD160 (db-3.1.17.tar.gz) = 25db7f5910ecaec05c41d1280f7abbba041c3b9b
 RMD160 (evolution-1.2.4.tar.gz) = 915efdb8bf107093c44e626cb4c2ffdd4f349789
 SHA1 (db-3.1.17.tar.gz) = b84408a1422dc0dd90a8cb485257022a00451149
 SHA1 (evolution-1.2.4.tar.gz) = c66e3f1810d44247c35d168895c4e215b5e18dc6
+SIZE (db-3.1.17.tar.gz) = 1954117
+SIZE (evolution-1.2.4.tar.gz) = 16673251
