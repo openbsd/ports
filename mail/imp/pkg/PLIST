@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/04/03 10:38:35 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/08/30 05:04:41 avsm Exp $
 horde/imp/COPYING
 horde/imp/README
 horde/imp/compose.php
@@ -97,6 +97,8 @@ horde/imp/lib/base.php
 horde/imp/lib/constants.php
 horde/imp/lib/version.php
 horde/imp/locale/.htaccess
+horde/imp/locale/ar_OM/LC_MESSAGES/imp.mo
+horde/imp/locale/ar_SY/LC_MESSAGES/imp.mo
 horde/imp/locale/bg_BG/LC_MESSAGES/imp.mo
 horde/imp/locale/ca_ES/LC_MESSAGES/imp.mo
 horde/imp/locale/ca_ES/help.xml
@@ -119,6 +121,8 @@ horde/imp/locale/fi_FI/help.xml
 horde/imp/locale/fr_FR/LC_MESSAGES/imp.mo
 horde/imp/locale/fr_FR/help.xml
 horde/imp/locale/hu_HU/LC_MESSAGES/imp.mo
+horde/imp/locale/hu_HU/help.xml
+horde/imp/locale/is_IS/LC_MESSAGES/imp.mo
 horde/imp/locale/it_IT/LC_MESSAGES/imp.mo
 horde/imp/locale/it_IT/help.xml
 horde/imp/locale/ja_JP/LC_MESSAGES/imp.mo
@@ -126,6 +130,7 @@ horde/imp/locale/ko_KR/LC_MESSAGES/imp.mo
 horde/imp/locale/ko_KR/help.xml
 horde/imp/locale/lt_LT/LC_MESSAGES/imp.mo
 horde/imp/locale/lv_LV/LC_MESSAGES/imp.mo
+horde/imp/locale/mk_MK/LC_MESSAGES/imp.mo
 horde/imp/locale/nb_NO/LC_MESSAGES/imp.mo
 horde/imp/locale/nb_NO/help.xml
 horde/imp/locale/nl_NL/LC_MESSAGES/imp.mo
@@ -148,6 +153,7 @@ horde/imp/locale/sl_SI/LC_MESSAGES/imp.mo
 horde/imp/locale/sr_YU/LC_MESSAGES/imp.mo
 horde/imp/locale/sv_SE/LC_MESSAGES/imp.mo
 horde/imp/locale/sv_SE/help.xml
+horde/imp/locale/th_TH/LC_MESSAGES/imp.mo
 horde/imp/locale/uk_UA/LC_MESSAGES/imp.mo
 horde/imp/locale/uk_UA/help.xml
 horde/imp/locale/zh_CN/LC_MESSAGES/imp.mo
@@ -161,6 +167,8 @@ horde/imp/message.php
 horde/imp/po/.htaccess
 horde/imp/po/Makefile
 horde/imp/po/README
+horde/imp/po/ar_OM.po
+horde/imp/po/ar_SY.po
 horde/imp/po/bg_BG.po
 horde/imp/po/ca_ES.po
 horde/imp/po/cs_CZ.po
@@ -174,11 +182,13 @@ horde/imp/po/fi_FI.po
 horde/imp/po/fr_FR.po
 horde/imp/po/hu_HU.po
 horde/imp/po/imp.pot
+horde/imp/po/is_IS.po
 horde/imp/po/it_IT.po
 horde/imp/po/ja_JP.po
 horde/imp/po/ko_KR.po
 horde/imp/po/lt_LT.po
 horde/imp/po/lv_LV.po
+horde/imp/po/mk_MK.po
 horde/imp/po/nb_NO.po
 horde/imp/po/nl_NL.po
 horde/imp/po/nn_NO.po
@@ -193,6 +203,7 @@ horde/imp/po/sk_SK.po
 horde/imp/po/sl_SI.po
 horde/imp/po/sr_YU.po
 horde/imp/po/sv_SE.po
+horde/imp/po/th_TH.po
 horde/imp/po/uk_UA.po
 horde/imp/po/xgettext.sh
 horde/imp/po/zh_CN.po
@@ -286,6 +297,8 @@ horde/imp/view.php
 @dirrm horde/imp/locale/zh_CN
 @dirrm horde/imp/locale/uk_UA/LC_MESSAGES
 @dirrm horde/imp/locale/uk_UA
+@dirrm horde/imp/locale/th_TH/LC_MESSAGES
+@dirrm horde/imp/locale/th_TH
 @dirrm horde/imp/locale/sv_SE/LC_MESSAGES
 @dirrm horde/imp/locale/sv_SE
 @dirrm horde/imp/locale/sr_YU/LC_MESSAGES
@@ -312,6 +325,8 @@ horde/imp/view.php
 @dirrm horde/imp/locale/nl_NL
 @dirrm horde/imp/locale/nb_NO/LC_MESSAGES
 @dirrm horde/imp/locale/nb_NO
+@dirrm horde/imp/locale/mk_MK/LC_MESSAGES
+@dirrm horde/imp/locale/mk_MK
 @dirrm horde/imp/locale/lv_LV/LC_MESSAGES
 @dirrm horde/imp/locale/lv_LV
 @dirrm horde/imp/locale/lt_LT/LC_MESSAGES
@@ -322,6 +337,8 @@ horde/imp/view.php
 @dirrm horde/imp/locale/ja_JP
 @dirrm horde/imp/locale/it_IT/LC_MESSAGES
 @dirrm horde/imp/locale/it_IT
+@dirrm horde/imp/locale/is_IS/LC_MESSAGES
+@dirrm horde/imp/locale/is_IS
 @dirrm horde/imp/locale/hu_HU/LC_MESSAGES
 @dirrm horde/imp/locale/hu_HU
 @dirrm horde/imp/locale/fr_FR/LC_MESSAGES
@@ -346,6 +363,10 @@ horde/imp/view.php
 @dirrm horde/imp/locale/ca_ES
 @dirrm horde/imp/locale/bg_BG/LC_MESSAGES
 @dirrm horde/imp/locale/bg_BG
+@dirrm horde/imp/locale/ar_SY/LC_MESSAGES
+@dirrm horde/imp/locale/ar_SY
+@dirrm horde/imp/locale/ar_OM/LC_MESSAGES
+@dirrm horde/imp/locale/ar_OM
 @dirrm horde/imp/locale
 @dirrm horde/imp/lib/Maintenance/Task
 @dirrm horde/imp/lib/Maintenance
