@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/06/16 10:40:45 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2004/08/08 09:25:15 xsa Exp $
 
 COMMENT=	"Apache module for logging to an SQL database"
 
@@ -9,15 +9,16 @@ NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 DISTNAME=	mod_log_sql-1.18
 CATEGORIES=	www
 
-HOMEPAGE=	http://www.grubbybaby.com/mod_log_sql/
-MASTER_SITES=	${HOMEPAGE}
-EXTRACT_SUFX=	.tar.bz2
+HOMEPAGE=	http://www.outoforder.cc/projects/apache/mod_log_sql/
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	http://www.outoforder.cc/downloads/mod_log_sql/
+EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	lib/mysql/mysqlclient.10::databases/mysql
 
