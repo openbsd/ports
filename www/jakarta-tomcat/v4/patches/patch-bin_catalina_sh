@@ -1,0 +1,12 @@
+$OpenBSD: patch-bin_catalina_sh,v 1.1.1.1 2002/01/05 15:29:25 reinhard Exp $
+--- bin/catalina.sh.orig	Sun Oct 14 11:13:52 2001
++++ bin/catalina.sh	Fri Nov 30 12:42:17 2001
+@@ -109,7 +109,7 @@ fi
+ # ----- Set Up CATALINA_BASE If Necessary -------------------------------------
+ 
+ if [ -z "$CATALINA_BASE" ] ; then
+-  CATALINA_BASE=$CATALINA_HOME
++  CATALINA_BASE=/var/tomcat
+ fi
+ 
+ 

@@ -1,0 +1,89 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2002/01/05 15:29:25 reinhard Exp $
+#
+# Pre/post-installation setup of jakarta-tomcat
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=${CONFDIR}
+SAMPLE_CONFIG_DIR=$PREFIX/${DISTNAME}/conf
+CONF_FILES="catalina.policy server-noexamples.xml.config server.xml tomcat-users.xml web.xml"
+#TOMCATDIR=${TOMCATDIR}
+SAMPLE_WEBAPPS_DIR=$PREFIX/${DISTNAME}/webapps
+
+# Function: install configuration files
+#
+do_install_conf()
+{
+    install -d -o root -g wheel ${CONFIG_DIR}
+    cd ${SAMPLE_CONFIG_DIR}
+    for i in ${CONF_FILES}; do
+        install -o root -g wheel -m 0644 $i ${CONFIG_DIR}
+    done
+
+    install -d -o root -g wheel ${TOMCATDIR}
+    ln -sf ${CONFIG_DIR} ${TOMCATDIR}/conf
+    install -d -o root -g wheel ${TOMCATDIR}/logs
+    install -d -o root -g staff ${TOMCATDIR}/webapps
+    cd ${SAMPLE_WEBAPPS_DIR}
+    tar cf - . | (cd ${TOMCATDIR}/webapps && tar xf - )
+    install -d -o root -g staff ${TOMCATDIR}/work
+
+    echo
+    echo "+---------------"
+    echo "| The $1 configuration files have"
+    echo "| been installed in ${CONFIG_DIR}."
+    echo "| Please view these files and change the configuration"
+    echo "| to meet your needs."
+    echo "|"
+    echo "| \$CATALINA_HOME is ${TOMCATDIR}."
+    echo "+---------------"
+    echo
+}
+
+# Function: tell the user what they need to do to use the port just installed
+#
+do_notice_conf()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration files in ${CONFIG_DIR}"
+    echo "| have NOT been changed. You may want to compare them to the current samples"
+    echo "| in ${SAMPLE_CONFIG_DIR}, and update your configuration files"
+    echo "| as needed."
+    echo "| The existing $1 files in ${TOMCATDIR}"
+    echo "| have NOT been deleted."
+    echo "+---------------"
+    echo
+}
+
+# Verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+        : nothing to pre-install for this port
+        ;;
+    POST-INSTALL)
+        if [ ! -d ${CONFIG_DIR} ]; then
+            do_install_conf "$1"
+        else
+            do_notice_conf "$1"
+        fi
+        ;;
+    *)
+        echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+        exit 1
+        ;;
+esac
+
+exit 0
