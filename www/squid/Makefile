@@ -1,16 +1,21 @@
-# $OpenBSD: Makefile,v 1.49 2003/05/13 20:12:02 brad Exp $
+# $OpenBSD: Makefile,v 1.50 2003/07/07 17:44:43 brad Exp $
 
 COMMENT=	"WWW and FTP proxy cache and accelerator"
 
-DISTNAME=	squid-2.5.STABLE2
+DISTNAME=	squid-2.5.STABLE3
 CATEGORIES=	www
 MASTER_SITES=	http://www.squid-cache.org/Versions/v2/2.5/
+MASTER_SITES0=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
 DIST_SUBDIR=	squid
+
+PATCH_DIST_STRIP= -p1
+PATCHFILES=	squid-2.5.STABLE3-deny_info.patch:0
 
 HOMEPAGE=	http://www.squid-cache.org/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -27,6 +32,7 @@ CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/cfgaux
 CONFIGURE_ARGS=	--enable-removal-policies="lru heap" \
 		--enable-storeio="ufs diskd" \
+		--enable-ssl \
 		--datadir="${PREFIX}/share/squid" \
 		--localstatedir="${SQUIDDIR}"
 
