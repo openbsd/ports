@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2000/09/13 13:48:34 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2001/01/08 22:40:53 espie Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -8,6 +8,8 @@
      SUBDIR += beav
 #    SUBDIR += bpatch
      SUBDIR += bvi
+     SUBDIR += cooledit
+     SUBDIR += cooledit:python
 #    SUBDIR += e93
      SUBDIR += emacs
      SUBDIR += emacs:no_X11
