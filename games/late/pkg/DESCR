@@ -1,5 +1,5 @@
-late resembles the Commodore 64 game Quix.  The objective is to draw
-lines across the screen, filling it in, while being wary of moving
-shapes which will interfere with your efforts.
+late resembles the arcade game Qix.  The objective is to draw lines
+across the screen, filling it in, while being wary of moving shapes
+which will interfere with your efforts.
 
 Buttons can be configured via the in-game menu.
