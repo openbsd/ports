@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2001/11/10 20:45:48 brad Exp $
-lib/libImlib.so.19.11
-lib/libgdk_imlib.so.19.11
+@comment $OpenBSD: PFRAG.shared,v 1.5 2002/05/17 02:42:15 brad Exp $
+lib/libImlib.so.19.14
+lib/libgdk_imlib.so.19.14
 DYNLIBDIR(%B)

@@ -1,6 +1,6 @@
---- Imlib/load.c.orig	Tue Jul 31 18:15:16 2001
-+++ Imlib/load.c	Tue Oct 30 21:49:59 2001
-@@ -241,7 +241,8 @@ _LoadPNG(ImlibData * id, FILE * f, int *
+--- Imlib/load.c.orig	Fri Mar 22 09:43:04 2002
++++ Imlib/load.c	Thu May 16 22:12:55 2002
+@@ -254,7 +254,8 @@ _LoadPNG(ImlibData * id, FILE * f, int *
    png_read_image(png_ptr, lines);
    png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
    ptr = data;
@@ -10,7 +10,7 @@
      {
        for (y = 0; y < *h; y++)
  	{
-@@ -266,6 +267,7 @@ _LoadPNG(ImlibData * id, FILE * f, int *
+@@ -279,6 +280,7 @@ _LoadPNG(ImlibData * id, FILE * f, int *
  	    }
  	}
      }
@@ -18,7 +18,7 @@
    else if (color_type == PNG_COLOR_TYPE_GRAY)
      {
        for (y = 0; y < *h; y++)
-@@ -281,6 +283,7 @@ _LoadPNG(ImlibData * id, FILE * f, int *
+@@ -294,6 +296,7 @@ _LoadPNG(ImlibData * id, FILE * f, int *
  	    }
  	}
      }
@@ -26,7 +26,7 @@
    else
      {
        for (y = 0; y < *h; y++)
-@@ -623,9 +626,9 @@ _LoadBMP(ImlibData * id, FILE *file, int
+@@ -645,9 +648,9 @@ _LoadBMP(ImlibData * id, FILE *file, int
    planes = (int)word;
    fread(&word, 2, 1, file);
    bpp = (int)word;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-gdk_imlib_io-png_c,v 1.1 2001/11/10 20:45:48 brad Exp $
---- gdk_imlib/io-png.c.orig	Tue Oct 30 21:31:24 2001
-+++ gdk_imlib/io-png.c	Tue Oct 30 21:42:53 2001
-@@ -297,7 +297,8 @@ inline_png(unsigned char *data, int data
+$OpenBSD: patch-gdk_imlib_io-png_c,v 1.2 2002/05/17 02:42:15 brad Exp $
+--- gdk_imlib/io-png.c.orig	Mon Mar  4 12:06:29 2002
++++ gdk_imlib/io-png.c	Thu May 16 22:12:55 2002
+@@ -299,7 +299,8 @@ inline_png(unsigned char *data, int data
    im->rgb_width = ww;
    im->rgb_height = hh;  
    /* Setup Translators */

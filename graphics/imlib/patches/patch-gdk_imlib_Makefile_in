@@ -1,14 +1,14 @@
-$OpenBSD: patch-gdk_imlib_Makefile_in,v 1.1 2001/11/10 20:45:48 brad Exp $
---- gdk_imlib/Makefile.in.orig	Tue Jul 31 19:34:50 2001
-+++ gdk_imlib/Makefile.in	Tue Oct 30 22:39:49 2001
-@@ -175,8 +175,8 @@ libgdk_imlib_la_SOURCES = \
- 	modules.c
+$OpenBSD: patch-gdk_imlib_Makefile_in,v 1.2 2002/05/17 02:42:15 brad Exp $
+--- gdk_imlib/Makefile.in.orig	Mon Mar 25 11:50:24 2002
++++ gdk_imlib/Makefile.in	Thu May 16 22:11:45 2002
+@@ -147,8 +147,8 @@ lib_LTLIBRARIES =  	libgdk_imlib.la			$(
+ libgdk_imlib_la_SOURCES =  	cache.c      			colors.c     			globals.c    			load.c       			misc.c       			rend.c       			utils.c      			save.c				modules.c
  
  
--libgdk_imlib_la_LDFLAGS = -version-info 10:11:9
--libgdk_imlib_la_LIBADD = $(GMODULE_LIBS)
-+libgdk_imlib_la_LDFLAGS = -version-info 19:11:0
-+libgdk_imlib_la_LIBADD = $(GMODULE_LIBS) $(SUPPORT_LIBS)
+-libgdk_imlib_la_LDFLAGS = -version-info 10:14:9
+-libgdk_imlib_la_LIBADD = $(GMODULE_LIBS) $(X_PRE_LIBS) 			 $(X_LIBS) $(X_EXTRA_LIBS)
++libgdk_imlib_la_LDFLAGS = -version-info 19:14:0
++libgdk_imlib_la_LIBADD = $(GMODULE_LIBS) $(SUPPORT_LIBS) $(X_PRE_LIBS) $(X_LIBS) $(X_EXTRA_LIBS)
+ 
  
  include_HEADERS = gdk_imlib.h gdk_imlib_private.h gdk_imlib_types.h
- 
