@@ -1,12 +1,13 @@
-$OpenBSD: patch-configure_in,v 1.7 2002/12/21 21:53:02 naddy Exp $
---- configure.in.orig	Sun Mar 26 09:33:22 2000
-+++ configure.in	Sat Dec 21 22:39:30 2002
-@@ -1,34 +1,32 @@
+$OpenBSD: patch-configure_in,v 1.8 2004/02/25 23:24:35 espie Exp $
+--- configure.in.orig	2000-03-26 09:33:22.000000000 +0200
++++ configure.in	2004-02-26 00:18:11.000000000 +0100
+@@ -1,34 +1,33 @@
  AC_INIT(interface/interface.c)
- 
+-
 -cp $srcdir/configure.guess $srcdir/config.guess
 -cp $srcdir/configure.sub $srcdir/config.sub
--
++AC_CONFIG_HEADERS(config.h)
+ 
  AC_CANONICAL_HOST
  
 -if test -z "$CC"; then
@@ -45,7 +46,7 @@ $OpenBSD: patch-configure_in,v 1.7 2002/12/21 21:53:02 naddy Exp $
  
  TYPESIZES="" 
  
-@@ -48,10 +46,10 @@ case 4 in
+@@ -48,10 +47,10 @@ case 4 in
  	$ac_cv_sizeof_long) SIZE32="long";;
  esac
  
