@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2001/08/22 02:03:56 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2001/10/27 02:10:26 brad Exp $
 # $FreeBSD: Makefile,v 1.15 1998/01/25 20:40:00 torstenb Exp $
 
 COMMENT=	"Internet Relay Chat client"
 
-VERSION=	4.4Z
+VERSION=	20010612
 DISTNAME=	ircii-${VERSION}
 CATEGORIES=	net
-NEED_VERSION=	1.435
-MASTER_SITES=	ftp://ircftp.au.eterna.com.au/pub/ircII/old_releases/
+NEED_VERSION=	1.475
+MASTER_SITES=	ftp://ircftp.au.eterna.com.au/pub/ircII/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -20,6 +20,8 @@ SUBST_VARS=	VERSION
 
 FAKE_FLAGS=	DESTDIR="${WRKINST}" INSTALL_IRC='$${bindir}/ircII' \
 		INSTALL="${INSTALL_PROGRAM}" INSTALL_DATA="${INSTALL_DATA}"
+
+NO_REGRESS=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
