@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/28 06:02:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/06 07:27:34 pvalchev Exp $
 
 COMMENT=	"cross-platform high-level application framework"
 
@@ -31,5 +31,8 @@ CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LIBS=-pthread
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+		patch-*
 
 .include <bsd.port.mk>
