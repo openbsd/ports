@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2000/06/12 17:47:49 fgsch Exp $
+# $OpenBSD: Makefile,v 1.32 2000/06/15 10:09:50 fgsch Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -48,6 +48,7 @@
      SUBDIR += libIDL
 #    SUBDIR += libmalloc
      SUBDIR += libproplist
+     SUBDIR += libsigc++
      SUBDIR += libslang
      SUBDIR += libtool
 #    SUBDIR += linux_devel
