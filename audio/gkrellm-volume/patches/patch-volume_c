@@ -1,0 +1,12 @@
+$OpenBSD: patch-volume_c,v 1.1.1.1 2001/08/07 00:13:20 naddy Exp $
+--- volume.c.orig	Sat Aug  4 11:45:46 2001
++++ volume.c	Sat Aug  4 11:49:45 2001
+@@ -19,6 +19,8 @@
+ 
+ #ifdef __FreeBSD__
+ #include <machine/soundcard.h>
++#elif __OpenBSD__
++#include <soundcard.h>
+ #else
+ #include <sys/soundcard.h>
+ #endif
