@@ -1,6 +1,7 @@
---- stel/steld.c.orig	Fri Apr 26 12:29:24 1996
-+++ stel/steld.c	Tue Nov 17 13:13:14 1998
-@@ -664,6 +664,11 @@
+$OpenBSD: patch-stel_steld_c,v 1.1 2001/09/29 21:27:50 naddy Exp $
+--- stel/steld.c.orig	Fri Apr 26 18:29:24 1996
++++ stel/steld.c	Sat Sep 29 22:55:22 2001
+@@ -664,6 +664,11 @@ int	usepty, authfh;
  			break;
  		}
  unixauth:
@@ -12,7 +13,7 @@
  		if (!skeyaccess(username, line, fromhost, fromhost)) {
  			syslog(LOGPRI,
  				"UNIX PASSWORDS NOT PERMITTED for %s from %s",
-@@ -671,6 +676,7 @@
+@@ -671,6 +676,7 @@ unixauth:
  			puts("UNIX passwords NOT permitted.");
  			sleepexit(1);
  		}

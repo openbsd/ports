@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/07/13 11:24:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2001/09/29 21:27:50 naddy Exp $
 
 COMMENT=	"Secure Telnet, encrypted version of the telnet daemon"
 
@@ -16,9 +16,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
+LIB_DEPENDS=	gmp.::devel/gmp
+
 WRKDIST=	${WRKDIR}
 
 ALL_TARGET=	bsdi
+
+post-extract:
+	@rm ${WRKSRC}/stel/login.c.orig
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stel/stel ${PREFIX}/bin

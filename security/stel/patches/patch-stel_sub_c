@@ -1,6 +1,7 @@
---- stel/sub.c.orig	Fri Apr 26 12:29:26 1996
-+++ stel/sub.c	Mon Nov 16 23:27:07 1998
-@@ -515,10 +515,10 @@
+$OpenBSD: patch-stel_sub_c,v 1.1 2001/09/29 21:27:50 naddy Exp $
+--- stel/sub.c.orig	Fri Apr 26 18:29:26 1996
++++ stel/sub.c	Sat Sep 29 22:55:22 2001
+@@ -515,10 +515,10 @@ unsigned char	*rndstr;
  	memcpy(sessionkeyhash, digest2, 8);
  
  #ifdef DESCORE
@@ -13,7 +14,7 @@
  #endif
  	bzero(tmpsched, sizeof(tmpsched));
  
-@@ -984,17 +984,17 @@
+@@ -984,17 +984,17 @@ char	*authbuf;
  	/* build K_E(sessionkeyhash) */
  	memcpy(cookie, sessionkeyhash, 8);
  #ifdef DESCORE
@@ -35,7 +36,7 @@
  #endif
  
  	if (logging) {
-@@ -1053,17 +1053,17 @@
+@@ -1053,17 +1053,17 @@ char	*authbuf;
  
  	if (side == CLIENT_SIDE) /* decrypt it once */
  #ifdef DESCORE

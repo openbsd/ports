@@ -1,6 +1,7 @@
---- stel/makeio.c.orig	Fri Apr 26 12:29:27 1996
-+++ stel/makeio.c	Sun Nov 29 04:44:21 1998
-@@ -21,7 +21,8 @@
+$OpenBSD: patch-stel_makeio_c,v 1.1 2001/09/29 21:27:50 naddy Exp $
+--- stel/makeio.c.orig	Fri Apr 26 18:29:27 1996
++++ stel/makeio.c	Sat Sep 29 22:55:22 2001
+@@ -21,7 +21,8 @@ static char *rcsid = "@(#) $Id: makeio.c
  #include <sys/time.h>
  #include <netinet/in.h>
  #include <pwd.h>
@@ -10,7 +11,7 @@
  
  #ifdef HAS_SYS_PARAM_H
  #include <sys/param.h>
-@@ -33,7 +34,7 @@
+@@ -33,7 +34,7 @@ static char *rcsid = "@(#) $Id: makeio.c
  #endif
  #endif
  
@@ -19,7 +20,7 @@
  #include "defs.h"
  
  #define ESCAPE_CMD	"escape"
-@@ -74,7 +75,7 @@
+@@ -74,7 +75,7 @@ long	crc32val;
  #define CONTROL(x)	((x) & 0x1f)		/* CTRL(x) is not portable */
  static int		escape = CONTROL(']');
  static long		oldmask;
@@ -28,7 +29,7 @@
  static char		skeybuf[SKEYBUFSIZE];
  static unsigned long	userstrokes, traffic, xfertraffic;
  
-@@ -364,7 +365,15 @@
+@@ -364,7 +365,15 @@ int		*len;
  
  				p = (char *)strtok(line +
  						strlen(LOG_CMD), " \t");
@@ -45,7 +46,7 @@
  				if ((logfh = open(logfilename,
  					O_WRONLY | O_CREAT, 0600)) == -1) {
  					perror(logfilename);
-@@ -650,6 +659,9 @@
+@@ -650,6 +659,9 @@ int	automjr;
  	printf("\n");
  
  	if ((char *)getenv("SKEYPADFILE") != NULL) {
@@ -55,7 +56,7 @@
  		if (automjr) {
  			cprintf("(using mjr DES padding mode)\n");
  			cprintf("using skeypadfile %s\n",
-@@ -666,17 +678,18 @@
+@@ -666,17 +678,18 @@ int	automjr;
  			if (buf[0] == 'y')
  				desmode = 1;
  		}
