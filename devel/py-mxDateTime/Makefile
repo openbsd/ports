@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/02/15 19:53:43 matt Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/25 22:37:52 naddy Exp $
 
 COMMENT=	"Date and Time types for Python"
 
@@ -6,7 +6,6 @@ VERSION=	2.0.3
 DISTNAME=	egenix-mx-base-${VERSION}
 PKGNAME=	py-mxDateTime-${VERSION}
 CATEGORIES=	devel
-NEED_VERSION=	1.504
 
 MASTER_SITES=	http://www.lemburg.com/files/python/
 
@@ -24,6 +23,7 @@ PYTHON_VER=	2.1
 RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 
+NO_REGRESS=	Yes
 SUBST_VARS=	PYTHON_VER
 
 do-build:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/07/29 21:34:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/25 22:37:52 naddy Exp $
 
 COMMENT=		"indenter and formatter of C/C++/Java source files"
 
@@ -20,5 +20,7 @@ EXTRACT_SUFX=		.zip
 MAKE_ENV=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 WRKDIST=		${WRKDIR}
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2002/06/09 05:36:29 wilfried Exp $
+# $OpenBSD: Makefile,v 1.20 2002/10/25 22:37:52 naddy Exp $
 
 COMMENT=	"graphical frontend to CVS"
 DISTNAME=	tkcvs-6.0
 CATEGORIES=	devel
-NEED_VERSION=	1.496
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
@@ -18,6 +17,7 @@ BUILD_DEPENDS=	:tk-8.3.*:x11/tk/8.3
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	cd $(WRKSRC)/tkcvs; ./doinstall

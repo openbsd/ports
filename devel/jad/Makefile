@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2001/12/01 12:18:29 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/25 22:37:52 naddy Exp $
+
+ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"fast Java decompiler"
 
 DISTNAME=	jadob158
 PKGNAME=	jad-1.5.8c
 CATEGORIES=	devel
-NEED_VERSION=	1.500
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -19,6 +20,7 @@ EXTRACT_SUFX=	.zip
 
 WRKDIST=	${WRKDIR}
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jad

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/13 18:50:42 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/25 22:37:52 naddy Exp $
 
 COMMENT=	"tool to indent and reformat perl scripts"
 
 DISTNAME=	perltidy-20010328
 CATEGORIES=	devel
-NEED_VERSION=	1.515
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=perltidy/}
 EXTRACT_SUFX=	.tgz
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/perltidy ${PREFIX}/bin

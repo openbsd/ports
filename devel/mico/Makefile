@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2001/11/10 16:56:32 shell Exp $
+# $OpenBSD: Makefile,v 1.4 2002/10/25 22:37:52 naddy Exp $
 
 COMMENT=	"free and complete CORBA-compliant implementation"
 
 DISTNAME=	mico-2.3.6
 CATEGORIES=	devel
-NEED_VERSION=	1.482
 
 HOMEPAGE=	http://www.mico.org/
 MASTER_SITES=	${HOMEPAGE}
@@ -23,6 +22,7 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/admin
 
 FAKE_FLAGS=		prefix="${WRKINST}${PREFIX}"
 WRKDIST=        	${WRKDIR}/mico
+NO_REGRESS=		Yes
 
 FLAVORS=ssl qt gtk tcl
 FLAVOR?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/07/19 18:18:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/10/25 22:37:52 naddy Exp $
 
 COMMENT=		graphic representation of cvs repository
 
@@ -31,6 +31,8 @@ CONFIGURE_ARGS+=	--with-jpeg-inc=${LOCALBASE}/include \
 CONFIGURE_ARGS+=	--with-png-inc=${LOCALBASE}/include \
 			--with-png-lib=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-z-inc=/usr/include --with-z-lib=/usr/lib
+
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cvsgraph ${PREFIX}/bin	

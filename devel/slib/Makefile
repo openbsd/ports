@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 20:46:26 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/10/25 22:37:52 naddy Exp $
 
 COMMENT=	"scheme r5 library"
 
 CATEGORIES=	devel
-NEED_VERSION=	1.515
 
 V=2c9
 DISTNAME=	slib$V
@@ -23,9 +22,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-
-NO_BUILD=		Yes
-
+NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/slib

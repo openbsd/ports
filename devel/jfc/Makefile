@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/11/13 22:13:23 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/25 22:37:52 naddy Exp $
 
 COMMENT=	"java foundation classes (jfc)/swing"
 
@@ -8,7 +8,7 @@ JDK_VERSION=    1.1.8
 DISTNAME=	swing1_1_1
 PKGNAME=	jfc-1.1.1
 CATEGORIES=	devel
-NEED_VERSION=	1.496
+
 EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://java.sun.com/products/jfc/
@@ -23,6 +23,7 @@ PERMIT_DISTFILES_CDROM= No
 PERMIT_DISTFILES_FTP=   No                        
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 WRKDIST=	${WRKDIR}/swing-1.1.1fcs
 

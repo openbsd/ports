@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/09/14 11:35:03 avsm Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/25 22:37:52 naddy Exp $
 # $FreeBSD: ports/devel/cvs2cl/Makefile,v 1.8 2000/07/09 03:15:07 knu Exp $
 
 COMMENT=	"generate GNU-style ChangeLogs from CVS repositories"
@@ -20,8 +20,9 @@ DISTFILES=	${V}
 DIST_SUBDIR=	cvs2cl
 EXTRACT_CASES=	*) cp ${FULLDISTDIR}/$$archive cvs2cl ;;
 
-NO_BUILD=	Yes
 WRKDIST=	${WRKDIR}
+NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cvs2cl ${PREFIX}/bin

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2002/08/02 16:14:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/10/25 22:37:52 naddy Exp $
 
 COMMENT=        "java equivalent to make"
 
 DISTNAME=       jakarta-ant-1.3
 DISTFILES=	jakarta-ant-1.3-bin.tar.gz
 CATEGORIES=     devel
-NEED_VERSION=   1.496
+
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-ant/release/v1.3/bin/
 
 HOMEPAGE=       http://jakarta.apache.org/ant/
@@ -24,6 +24,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 ONLY_FOR_ARCHS= i386
 NO_BUILD=       Yes
+NO_REGRESS=	Yes
 
 # this will strip trailing-spaces off the file-names
 TAR=tar -s '/ $$//g' -xzf

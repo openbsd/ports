@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/23 22:13:33 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2002/10/25 22:37:52 naddy Exp $
 
 COMMENT=	Purdue Compiler Construction Tool Set 
 
@@ -23,6 +23,8 @@ MAKE_FLAGS=	CC="${CC}" COPT="${CFLAGS}"
 ALL_TARGET=
 
 WRKDIST=	${WRKDIR}/pccts
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/pccts

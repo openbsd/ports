@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/06/29 14:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/25 22:37:52 naddy Exp $
 
 COMMENT=		"CVS-managed project analyzer"
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=		Yes
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIST}/cvsplot.pl ${PREFIX}/bin/cvsplot
