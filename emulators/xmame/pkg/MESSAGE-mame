@@ -1,3 +1,0 @@
-xmame documentation files are in ${PREFIX}/share/xmame/doc
-rc file is in ${PREFIX}/share/xmame/xmamerc
-you should edit and copy it into ${SYSCONFDIR} or ${HOME}/.xmame

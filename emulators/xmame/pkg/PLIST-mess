@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mess,v 1.5 2004/09/18 12:39:37 espie Exp $
+@comment $OpenBSD: PLIST-mess,v 1.6 2004/11/20 20:41:00 alek Exp $
 @conflict xmame+xmess-*
 @conflict xmame-*
 bin/xmess
@@ -45,3 +45,4 @@ share/doc/xmame/xmame.css
 share/xmess/
 share/xmess/sysinfo.dat
 share/xmess/xmessrc
+@sample ${SYSCONFDIR}/xmessrc

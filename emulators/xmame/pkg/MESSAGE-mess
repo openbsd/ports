@@ -1,3 +1,0 @@
-xmess documentation files are in ${PREFIX}/share/xmame/doc
-rc file is in ${PREFIX}/share/xmess/xmessrc
-you should edit and copy it into ${SYSCONFDIR} or ${HOME}/.xmess

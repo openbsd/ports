@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mame-gl,v 1.5 2004/09/18 12:39:37 espie Exp $
+@comment $OpenBSD: PLIST-mame-gl,v 1.6 2004/11/20 20:41:00 alek Exp $
 @conflict xmame+xmess-*
 @conflict xmess-*
 bin/xmame
@@ -57,3 +57,4 @@ share/xmame/cheat.dat
 share/xmame/hiscore.dat
 share/xmame/history.dat
 share/xmame/xmamerc
+@sample ${SYSCONFDIR}/xmamerc
