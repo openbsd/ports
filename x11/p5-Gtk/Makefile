@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/17 15:18:34 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2004/12/19 17:36:31 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -62,6 +62,7 @@ CONFIGURE_ARGS+= --without-gtkglarea
 LIB_DEPENDS+=	zvt.5::x11/gnome/libs
 CONFIGURE_ARGS+= --with-gnome
 LIB_DEPENDS+=zvt::x11/gnome/libs
+WANTLIB+=	ICE SM art_lgpl audiofile esd gnome gnomesupport gnomeui util
 .else
 CONFIGURE_ARGS+= --without-gnome
 .endif

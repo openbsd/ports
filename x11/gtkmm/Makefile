@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/12/17 15:18:33 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2004/12/19 17:36:31 alek Exp $
 
 COMMENT=		"C++ interface for gtk+"
 COMMENT-docs=		"C++ interface for gtk+ documentation"
@@ -31,6 +31,7 @@ LIB_DEPENDS=		sigc.0::devel/libsigc++ \
 .endif
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
 PKG_ARCH=		*
+WANTLIB=
 .endif
 
 SEPARATE_BUILD=		concurrent

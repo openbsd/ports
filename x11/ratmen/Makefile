@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/10/03 18:41:36 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2004/12/19 17:36:32 alek Exp $
 
 DISTNAME=	ratmen-2.2.2
 CATEGORIES=	x11
@@ -8,6 +8,7 @@ PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
+WANTLIB=		X11 c
 
 COMMENT=	"launch commands with your keyboard"
 MASTER_SITES=	http://www.update.uu.se/~zrajm/programs/ratmen/

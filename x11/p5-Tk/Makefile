@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/12/17 15:18:34 alek Exp $
+# $OpenBSD: Makefile,v 1.22 2004/12/19 17:36:32 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 m
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Tk/}
 
@@ -40,6 +39,10 @@ MAKE_ENV=	XAUTHORITY=${HOME}/.Xauthority
 pre-regress:
 .ifndef DISPLAY
 	@echo requires access to X; exit 1
+.endif
+
+.if empty(SUBPACKAGE)
+WANTLIB=		X11 m
 .endif
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)

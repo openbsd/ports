@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/12/17 15:18:32 alek Exp $
+# $OpenBSD: Makefile,v 1.33 2004/12/19 17:36:31 alek Exp $
 
 COMMENT=	"multiple virtual desktop window manager, with icons"
 COMMENT-fvicons="multiple virtual desktop window manager icons"
@@ -58,6 +58,7 @@ CONFIGURE_ARGS+= --disable-multibyte
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-fvicons"
 PKG_ARCH=	*
+WANTLIB=
 .endif
 
 SUBST_VARS=	VERSION
