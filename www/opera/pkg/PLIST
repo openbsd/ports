@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2004/09/23 20:55:54 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.18 2004/12/19 21:15:13 sturm Exp $
 bin/opera
 lib/opera/
 lib/opera/plugins/
@@ -34,7 +34,6 @@ share/opera/help/fonts.html
 share/opera/help/glossary.html
 share/opera/help/help.css
 share/opera/help/history.html
-share/opera/help/hotlist.html
 share/opera/help/index.html
 share/opera/help/input.html
 share/opera/help/keyboard.html
@@ -62,6 +61,7 @@ share/opera/help/toc.html
 share/opera/help/toolbars.html
 share/opera/help/windows.html
 share/opera/hhd.ssr
+share/opera/html40_entities.dtd
 share/opera/images/
 share/opera/images/background.gif
 share/opera/images/blank.gif
