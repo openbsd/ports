@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 1999/10/01 17:01:52 espie Exp $
+# $OpenBSD: Makefile,v 1.14 1999/12/09 03:28:30 form Exp $
+#
+# Use make LRZSZ=yes to build minicom with lrzsz package support.
 
 PKGNAME=	minicom-1.82.1
 DISTNAME=	${PKGNAME}.src
@@ -11,18 +13,19 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
 
 MASTER_SITE_SUBDIR=     apps/serialcomm/dialout
 
+RUN_DEPENDS=	kermit:${PORTSDIR}/comms/kermit
+.if defined(USE_LRZSZ) && ${USE_LRZSZ:U} == "YES"
+RUN_DEPENDS+=	lrz:${PORTSDIR}/comms/lrzsz lsz:${PORTSDIR}/comms/lrzsz
+.else
+RUN_DEPENDS+=	rz:${PORTSDIR}/comms/rzsz sz:${PORTSDIR}/comms/rzsz
+.endif
+
 WRKSRC=		${WRKDIR}/${PKGNAME}/src
 
-pre-build:
-.if defined(USE_LRZSZ)
-	@cd ${WRKSRC}; /usr/bin/patch -p0 < ${FILESDIR}/patch-lrzsz; \
-	touch ${WRKDIR}/.with_lrzsz
-.else
-	@${ECHO} "***"
-	@${ECHO} "*** Building minicom with rzsz support."
-	@${ECHO} "*** If you wish to use lrzsz package instead of rzsz,"
-	@${ECHO} "*** do 'make USE_LRZSZ=yes'."
-	@${ECHO} "***"
+.if defined(USE_LRZSZ) && ${USE_LRZSZ:U} == "YES"
+post-patch:
+	@cd ${WRKSRC}; ${PATCH} ${PATCH_STRIP} < ${FILESDIR}/patch-lrzsz \
+		2>/dev/null
 .endif
 
 post-install:
@@ -32,11 +35,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/minicom.users /etc/minicom
 .endif
 
-RUN_DEPENDS=	kermit:${PORTSDIR}/comms/kermit
 .include <bsd.port.mk>
-
-.if exists(${WRKDIR}/.with_lrzsz)
-RUN_DEPENDS+=	lrz:${PORTSDIR}/comms/lrzsz lsz:${PORTSDIR}/comms/lrzsz
-.else
-RUN_DEPENDS+=	rz:${PORTSDIR}/comms/rzsz sz:${PORTSDIR}/comms/rzsz
-.endif
