@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2002/10/26 00:39:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2003/05/24 15:30:52 naddy Exp $
 
 
 COMMENT=	"X11 based RTF editor"
-V=2.11
+V=		2.14
 DISTNAME=	ted-$V
 CATEGORIES=	editors textproc print
-MASTER_SITES=ftp://ftp.nluug.nl/pub/editors/ted/
+HOMEPAGE=	http://www.nllgg.nl/Ted/
+MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/
 
 DISTFILES=	ted-$V.src.tar.gz
 # GPL

@@ -1,11 +1,11 @@
-$OpenBSD: patch-bitmap_configure,v 1.1 2002/07/20 00:21:22 pvalchev Exp $
---- bitmap/configure.orig	Fri Jul 19 17:55:13 2002
-+++ bitmap/configure	Fri Jul 19 17:55:01 2002
-@@ -1774,6 +1774,7 @@ fi
- 	/usr/pkg/include	\
- 	/usr/X11R6/include	\
- 	/usr/local/include/png	\
-+	/usr/local/include/libpng	\
- 	/usr/apps/include	\
- 	../libpng
-     do
+$OpenBSD: patch-bitmap_configure,v 1.2 2003/05/24 15:30:52 naddy Exp $
+--- bitmap/configure.orig	Thu Apr 24 01:53:12 2003
++++ bitmap/configure	Thu Apr 24 01:53:28 2003
+@@ -3159,6 +3159,7 @@ EOF
+ 	    /usr/pkg/include		\
+ 	    /usr/X11R6/include		\
+ 	    /usr/local/include/png	\
++	    /usr/local/include/libpng	\
+ 	    /usr/apps/include		\
+ 	    /usr/sfw/include		\
+ 	    /opt/sfw/include		\
