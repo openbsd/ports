@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2003/04/05 14:54:19 espie Exp $
+lib/libkdeeducore.so.1.0
+lib/libkiten.so.0.0
+DYNLIBDIR(%D/lib)
