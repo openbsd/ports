@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/09/13 08:41:44 camield Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/03 06:27:39 camield Exp $
 
-DISTNAME=	arping-0.91
+DISTNAME=	arping-0.94
 HOMEPAGE=	http://synscan.nss.nu/programs.php
 
 CATEGORIES=	net
 NEED_VERSION=	1.313
-MAINTAINER=	jcs@rt.fm
+MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 MASTER_SITES=	ftp://ftp.nss.nu/pub/synscan/ \
 		ftp://rt.fm/pub/arping/
