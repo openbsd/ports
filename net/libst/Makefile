@@ -1,21 +1,23 @@
-# $OpenBSD: Makefile,v 1.2 2001/10/01 02:20:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/01/25 16:33:51 naddy Exp $
 
 COMMENT=		"threaded library for writing Internet applications"
 
-DISTNAME=		st-1.2
+DISTNAME=		st-1.3
 PKGNAME=		lib${DISTNAME}
 CATEGORIES=		net devel
-NEED_VERSION=		1.402
-HOMEPAGE=		http://oss.sgi.com/projects/state-threads/
-MASTER_SITES=		${HOMEPAGE}download/
+NEED_VERSION=		1.504
+HOMEPAGE=		http://state-threads.sourceforge.net/
 
 MAINTAINER=		Patroklos Argyroudis <argp@bsd.gr>
 
-# MPL or GNU GPL
+# MPL or GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	state-threads
 
 MAKE_FLAGS=		CC='${CC}' CFLAGS='${CFLAGS} -fPIC -DOPENBSD' \
 			LD='${CC}' LDFLAGS='-shared -fPIC'
@@ -24,7 +26,7 @@ USE_GMAKE=		Yes
 ALL_TARGET=		openbsd-optimized
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/OPENBSD_${OPSYS_VER}_OPT/libst.so \
+	${INSTALL_PROGRAM} ${WRKSRC}/OPENBSD_${OPSYS_VER}_OPT/libst.so.1.3 \
 		${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/OPENBSD_${OPSYS_VER}_OPT/libst.a \
 		${PREFIX}/lib
