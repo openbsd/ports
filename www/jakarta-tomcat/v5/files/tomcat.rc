@@ -1,18 +1,17 @@
-# $OpenBSD: tomcat.rc,v 1.1.1.1 2004/11/04 21:46:04 naddy Exp $
+# $OpenBSD: tomcat.rc,v 1.2 2005/03/03 21:50:43 kurt Exp $
 #
-# sudo doesn't pass environment variables, so
-# define JAVA_HOME for _tomcat here
+# Define JAVA_HOME for _tomcat here
 # Start tomcat with following command:
-# $ sudo -u _tomcat %%PREFIX%%/%%PKGNAME%%/bin/startup.sh
+# $ sudo -u _tomcat %%PREFIX%%/%%DISTNAME%%/bin/startup.sh
 #
 
 JAVA_HOME=%%JAVA_HOME%%
 
 # override other environment options:
-#CATALINA_HOME=%%PREFIX%%/%%PKGNAME%%
-#CATALINA_BASE=/var/tomcat
+#CATALINA_HOME=%%PREFIX%%/%%DISTNAME%%
+#CATALINA_BASE=%%CATALINA_BASE%%
 #CATALINA_TMPDIR=$CATALINA_BASE/temp
-#JAVA_OPTS=-Djava.net.preferIPv4Stack=true
+#JAVA_OPTS="-server -Djava.net.preferIPv4Stack=true"
 #JPDA_TRANSPORT=
 #JPDA_ADDRESS=
 #JSSE_HOME=

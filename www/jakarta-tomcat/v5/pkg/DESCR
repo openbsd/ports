@@ -6,5 +6,5 @@ web services.  Tomcat can be run as a standalone web server with
 Servlet and JSP support, or using Apache HTTP Server as its web 
 server via the mod_jk Apache module (the www/mod_jk package).
 
-See ${PREFIX}/${DISTNAME}/conf/README.OpenBSD for
+See ${PREFIX}/${DISTNAME}/README.OpenBSD for
 information on running Jakarta Tomcat on OpenBSD.
