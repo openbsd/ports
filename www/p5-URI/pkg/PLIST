@@ -1,0 +1,46 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/29 10:44:09 avsm Exp $
+libdata/perl5/site_perl/URI.pm
+libdata/perl5/site_perl/URI/Escape.pm
+libdata/perl5/site_perl/URI/Heuristic.pm
+libdata/perl5/site_perl/URI/URL.pm
+libdata/perl5/site_perl/URI/WithBase.pm
+libdata/perl5/site_perl/URI/_foreign.pm
+libdata/perl5/site_perl/URI/_generic.pm
+libdata/perl5/site_perl/URI/_login.pm
+libdata/perl5/site_perl/URI/_query.pm
+libdata/perl5/site_perl/URI/_segment.pm
+libdata/perl5/site_perl/URI/_server.pm
+libdata/perl5/site_perl/URI/_userpass.pm
+libdata/perl5/site_perl/URI/data.pm
+libdata/perl5/site_perl/URI/file.pm
+libdata/perl5/site_perl/URI/file/Base.pm
+libdata/perl5/site_perl/URI/file/FAT.pm
+libdata/perl5/site_perl/URI/file/Mac.pm
+libdata/perl5/site_perl/URI/file/OS2.pm
+libdata/perl5/site_perl/URI/file/QNX.pm
+libdata/perl5/site_perl/URI/file/Unix.pm
+libdata/perl5/site_perl/URI/file/Win32.pm
+libdata/perl5/site_perl/URI/ftp.pm
+libdata/perl5/site_perl/URI/gopher.pm
+libdata/perl5/site_perl/URI/http.pm
+libdata/perl5/site_perl/URI/https.pm
+libdata/perl5/site_perl/URI/ldap.pm
+libdata/perl5/site_perl/URI/mailto.pm
+libdata/perl5/site_perl/URI/news.pm
+libdata/perl5/site_perl/URI/nntp.pm
+libdata/perl5/site_perl/URI/pop.pm
+libdata/perl5/site_perl/URI/rlogin.pm
+libdata/perl5/site_perl/URI/rsync.pm
+libdata/perl5/site_perl/URI/snews.pm
+libdata/perl5/site_perl/URI/telnet.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/URI/.packlist
+man/man3/URI.3p
+man/man3/URI::Escape.3p
+man/man3/URI::Heuristic.3p
+man/man3/URI::URL.3p
+man/man3/URI::WithBase.3p
+man/man3/URI::data.3p
+man/man3/URI::file.3p
+man/man3/URI::ldap.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/URI
+@dirrm libdata/perl5/site_perl/URI/file
