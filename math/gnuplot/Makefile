@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/09/23 19:59:52 danh Exp $
+# $OpenBSD: Makefile,v 1.15 2000/09/27 16:16:37 brad Exp $
 
 DISTNAME=	gnuplot-3.7.1
 CATEGORIES=	math graphics
@@ -23,8 +23,6 @@ PERMIT_DISTFILES_FTP=	Yes
 FLAVORS=	no_x11
 FLAVOR?=
 
-USE_GMAKE=	Yes
-SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--without-linux-vga --without-gd \
 		--with-png --with-gnu-readline --with-lasergnu
