@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2003/05/18 15:32:22 wilfried Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/07/01 08:49:46 wilfried Exp $
 #
 # De-installation setup of mozilla
 
@@ -21,7 +21,7 @@ fi
 #
 case $2 in
     DEINSTALL)
-	cd ${MOZ} && rm -f components/compreg.dat components/xpti.dat
+	cd ${MOZ} && rm -rf components/compreg.dat components/xpti.dat chrome/chrome.rdf chrome/overlayinfo
 	;;
     *)
 	echo "usage: $0 distname DEINSTALL" >&2
