@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/08 17:06:48 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/07/20 00:21:22 pvalchev Exp $
 
 COMMENT=			"3D image rendering package"
 
 PKGNAME=			povray-3.1g
-
 CATEGORIES=			graphics
-NEED_VERSION=			1.515
 
 HOMEPAGE=			http://www.povray.org
 

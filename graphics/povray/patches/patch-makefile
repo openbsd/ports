@@ -1,12 +1,20 @@
-$OpenBSD: patch-makefile,v 1.1.1.1 2001/08/09 22:28:00 rohee Exp $
+$OpenBSD: patch-makefile,v 1.2 2002/07/20 00:21:22 pvalchev Exp $
 
 Respects CFLAGS and CC.
 Use local zlib, not the supplied one.
 Use an external (and more recent) libpng, not the supplied one.
 
---- makefile.orig	Sat Jun 19 05:52:24 1999
-+++ makefile	Sat Jul 28 02:29:59 2001
-@@ -51,7 +51,10 @@
+--- makefile.orig	Sun Nov 21 18:12:37 1999
++++ makefile	Fri Jul 19 17:42:28 2002
+@@ -44,6 +44,7 @@
+ #
+ #
+ # CFLAGS      = -O2 -ansi -c -DCOMPILER_VER=\".`uname`.$(CC)\" $(SRCINC) $(LIBPNGINC) $(ZLIBINC) $(XLIBINC)
++CFLAGS += $(LIBPNGINC)
+ LFLAGS      = $(LIBPNGLIB) $(ZLIBLIB) -lm
+ 
+ # Linux compiler flags, generic
+@@ -53,7 +54,10 @@ LFLAGS      = $(LIBPNGLIB) $(ZLIBLIB) -l
  #CFLAGS      = -O6 -finline-functions -ffast-math -c -ansi -m386 -DCPU=586 -DCOMPILER_VER=\".`uname`.$(CC)\" -DPOV_LIB_DIR=\"$(POVLIBDIR)\" $(SRCINC) $(LIBPNGINC) $(ZLIBINC)
  
  # Linux compiler flags, Pentium II optimized
@@ -18,8 +26,8 @@ Use an external (and more recent) libpng, not the supplied one.
  
  # HPUX compiler flags
  #CFLAGS      = +O2 -finline-functions -c -Aa -D_HPUX_SOURCE -DCOMPILER_VER=\".`uname`.$(CC)\" $(SRCINC) $(LIBPNGINC) $(ZLIBINC)
-@@ -60,7 +63,7 @@
- #CFLAGS	     = -O2 -n32 -mips4 -r1000 -ansi -c -DCOMPILER_VER=\".`uname`.$(CC)\" $(SRCINC) $(LIBPNGINC) $(ZLIBINC) $(XLIBINC)	
+@@ -62,7 +66,7 @@ CFLAGS      = -O6 -finline-functions -ff
+ #CFLAGS	     = -O2 -n32 -mips4 -r10000 -ansi -c -DCOMPILER_VER=\".`uname`.$(CC)\" $(SRCINC) $(LIBPNGINC) $(ZLIBINC) $(XLIBINC)	
  
  # Your compiler
 -CC          = gcc
@@ -27,7 +35,7 @@ Use an external (and more recent) libpng, not the supplied one.
  
  # The X11 variable should point to the top-level directory where the X11
  #   libraries and include files are located.  It should really be set in
-@@ -76,7 +79,7 @@
+@@ -78,7 +82,7 @@ CC          = gcc
  # for some AIX systems:
  #X11 = /usr/lpp/X11
  
@@ -36,20 +44,20 @@ Use an external (and more recent) libpng, not the supplied one.
  
  # You probably won't need to change these if you have the X11 variable
  #   above set properly...
-@@ -88,10 +91,9 @@
+@@ -90,10 +94,9 @@ XLIBLIB = -L$(X11)/lib -lX11
  # Use libXXX.a if you want to force static linking of the libraries.
  #   Use -Llibdir -lXXX if you want to use shared libraries (if they are
  #   available).  It doesn't matter if you only have libXXX.a libraries.
 -PNGDIR = $(SRCDIR)/libpng
 -LIBPNGINC = -I$(PNGDIR)
-+LIBPNGINC = -I$(LOCALBASE)/include
++LIBPNGINC = -I$(LOCALBASE)/include/libpng
  #LIBPNGLIB = $(PNGDIR)/libpng.a
 -LIBPNGLIB = -L$(PNGDIR) -lpng
 +LIBPNGLIB = -L$(LOCALBASE)/lib -lpng
  #LIBPNGLIB = -L/usr/local/lib -lpng
  
  # The following options are added at the suggestion of Axel Hecht
-@@ -101,11 +103,7 @@
+@@ -103,11 +106,7 @@ LIBPNGLIB = -L$(PNGDIR) -lpng
  # LIBPNGINC = -I$(LIBPNGINCDIR)
  # LIBPNGLIB = -L$(PREFIX)/lib -lpng
  
@@ -62,7 +70,7 @@ Use an external (and more recent) libpng, not the supplied one.
  
  # The following options are added at the suggestion of Axel Hecht
  # PREFIX = $HOME
-@@ -127,12 +125,12 @@
+@@ -129,12 +128,12 @@ default: xwin
  #default: svga
  
  # Define the default POV-Ray library location
@@ -77,7 +85,7 @@ Use an external (and more recent) libpng, not the supplied one.
  
  #----------------------------------------------------------------------
  # There should be no compelling reason to customize the makefile beyond
-@@ -1011,22 +1009,6 @@
+@@ -1013,22 +1012,6 @@ planesDEP               = $(SRCDIR)/plan
                            $(SRCDIR)/povray.h   \
                            $(SRCDIR)/render.h   \
                            $(SRCDIR)/vector.h   \

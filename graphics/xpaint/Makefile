@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2002/03/21 20:57:09 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2002/07/20 00:21:22 pvalchev Exp $
 
 COMMENT=	"simple paint program"
 
 DISTNAME=	xpaint-2.6.1
 CATEGORIES=	graphics x11
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://home.worldonline.dk/~torsten/xpaint/
 
