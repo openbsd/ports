@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2000/08/25 03:30:01 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2000/08/25 04:17:44 brad Exp $
 
 VERSION=	3.9.5
 DISTNAME=	screen-${VERSION}
 PKGNAME=	screen-${VERSION}p1
 CATEGORIES=	misc
 NEED_VERSION=	1.320
-MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
-		${MASTER_SITE_GNU}
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= screen
 
 MAINTAINER=	brad@openbsd.org
