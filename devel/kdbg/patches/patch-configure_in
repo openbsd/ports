@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2002/07/24 15:34:59 naddy Exp $
+--- configure.in.orig	Tue Jul 23 19:15:19 2002
++++ configure.in	Tue Jul 23 19:15:34 2002
+@@ -28,7 +28,7 @@ dnl check for some more header files. Yo
+ dnl them, if you want to. But it doesn't hurt
+ AC_CHECK_HEADERS(fcntl.h sys/time.h unistd.h sys/cdefs.h)
+ AC_CHECK_HEADERS(fnmatch.h sysent.h strings.h sys/stat.h)
+-AC_CHECK_HEADERS(sys/ioctl.h pty.h libutil.h)
++AC_CHECK_HEADERS(sys/ioctl.h pty.h libutil.h util.h)
+ 
+ dnl Checks for libraries.
+ AC_CHECK_LIB(socket, socket, [LIBSOCKET="-lsocket -lnsl"]) dnl for Solaris' X11

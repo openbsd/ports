@@ -1,13 +1,13 @@
-$OpenBSD: patch-kdbg_ttywnd_cpp,v 1.1 2001/04/21 11:39:23 espie Exp $
---- kdbg/ttywnd.cpp.orig	Sat Apr 21 04:16:42 2001
-+++ kdbg/ttywnd.cpp	Sat Apr 21 04:17:06 2001
-@@ -30,6 +30,9 @@
- #include <pty.h>			/* openpty */
+$OpenBSD: patch-kdbg_ttywnd_cpp,v 1.2 2002/07/24 15:34:59 naddy Exp $
+--- kdbg/ttywnd.cpp.orig	Tue Jul 23 19:09:56 2002
++++ kdbg/ttywnd.cpp	Tue Jul 23 19:10:36 2002
+@@ -32,6 +32,9 @@
+ #ifdef HAVE_LIBUTIL_H
+ #include <libutil.h>			/* openpty on FreeBSD */
  #endif
- #include <errno.h>
-+#ifdef __OpenBSD__
++#ifdef HAVE_UTIL_H			/* openpty on NetBSD, OpenBSD */
 +#include <util.h>
 +#endif
+ #include <errno.h>
  
  #include "mydebug.h"
- 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/08/27 15:17:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/07/24 15:34:59 naddy Exp $
 bin/kdbg
 share/applnk/Development/kdbg.desktop
 share/apps/kdbg/pics/brkcond.xpm
@@ -29,6 +29,8 @@ share/apps/kdbg/types/kdecore.kdbgtt
 share/apps/kdbg/types/kdecore3.kdbgtt
 share/apps/kdbg/types/qt.kdbgtt
 share/apps/kdbg/types/qt2.kdbgtt
+share/apps/kdbg/types/qt3.kdbgtt
+share/apps/kdbg/types/stdc++.kdbgtt
 share/doc/HTML/de/kdbg/argspwdenv.html
 share/doc/HTML/de/kdbg/breakptlist.html
 share/doc/HTML/de/kdbg/globaloptions.html
@@ -101,27 +103,9 @@ share/locale/sr/LC_MESSAGES/kdbg.mo
 share/locale/sv/LC_MESSAGES/kdbg.mo
 share/locale/tr/LC_MESSAGES/kdbg.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kdbg.mo
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/doc/HTML/ru/kdbg
-@dirrm share/doc/HTML/ru
 @dirrm share/doc/HTML/en/kdbg
-@dirrm share/doc/HTML/en
 @dirrm share/doc/HTML/de/kdbg
-@dirrm share/doc/HTML/de
-@dirrm share/doc/HTML
 @dirrm share/apps/kdbg/types
 @dirrm share/apps/kdbg/pics
 @dirrm share/apps/kdbg
-@dirrm share/apps
-@dirrm share/applnk/Development
-@dirrm share/applnk
