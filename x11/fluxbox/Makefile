@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/04/28 18:10:34 robert Exp $
+# $OpenBSD: Makefile,v 1.30 2004/04/29 17:30:15 robert Exp $
 
 COMMENT=		"window manager based on the original Blackbox code"
 
@@ -18,8 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
-CONFIGURE_ARGS=		--enable-kde --enable-xinerama \
-			--enable-xinerama
+CONFIGURE_ARGS=		--enable-kde --enable-xinerama
 
 USE_GMAKE=		Yes
 USE_X11=		Yes
