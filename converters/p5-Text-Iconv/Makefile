@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2004/01/17 15:58:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/07/10 15:29:30 kevlo Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"interface to iconv() codeset conversion function"
 
-DISTNAME=	Text-Iconv-1.2
+DISTNAME=	Text-Iconv-1.3
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
 
@@ -20,7 +20,7 @@ MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=Text/}
 MODULES=	iconv
 
 CONFIGURE_STYLE= perl
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
