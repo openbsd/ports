@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/09/15 00:54:51 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2005/02/08 23:36:46 alek Exp $
 
 COMMENT= 	'canna (kana-kanji converter) libraries'
 COMMENT-dict=	'canna (kana-kanji converter) dictionaries'
@@ -37,6 +37,7 @@ SUBPACKAGE?=
 PREFIX=		/var/dict
 .  elif ${SUBPACKAGE:L} == "-server"
 LIB_DEPENDS=canna::japanese/canna
+WANTLIB=	c
 .  endif
 .endif
 
