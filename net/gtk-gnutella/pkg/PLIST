@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/06/19 13:49:22 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/12/15 17:40:57 naddy Exp $
 bin/gtk-gnutella
 man/man1/gtk-gnutella.1
 share/gtk-gnutella/gwcache.boot
@@ -26,10 +26,10 @@ share/gtk-gnutella/pixmaps/ultra.xpm
 share/gtk-gnutella/pixmaps/upload.xpm
 share/locale/es/LC_MESSAGES/gtk-gnutella.mo
 share/locale/nl/LC_MESSAGES/gtk-gnutella.mo
-@comment @dirrm share/locale/nl/LC_MESSAGES
-@comment @dirrm share/locale/nl
-@comment @dirrm share/locale/es/LC_MESSAGES
-@comment @dirrm share/locale/es
-@comment @dirrm share/locale
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale
 @dirrm share/gtk-gnutella/pixmaps
 @dirrm share/gtk-gnutella

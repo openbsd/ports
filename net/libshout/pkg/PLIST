@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/26 11:38:50 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/15 17:40:57 naddy Exp $
 bin/shout-config
 include/shout/shout.h
 lib/libshout.a
@@ -9,5 +9,5 @@ share/aclocal/shout.m4
 share/examples/libshout/example.c
 %%SHARED%%
 @dirrm share/examples/libshout
-@comment @dirrm share/aclocal
+@dirrm share/aclocal
 @dirrm include/shout

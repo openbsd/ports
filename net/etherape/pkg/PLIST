@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/30 17:18:37 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/15 17:40:57 naddy Exp $
 bin/etherape
 lib/locale/es/LC_MESSAGES/etherape.mo
 lib/locale/fr/LC_MESSAGES/etherape.mo
@@ -12,18 +12,18 @@ share/etherape/glade/play.xpm
 share/etherape/glade/stop.xpm
 share/gnome/apps/Applications/etherape.desktop
 share/pixmaps/etherape.png
-@comment @dirrm share/pixmaps
-@comment @dirrm share/gnome/apps/Applications
-@comment @dirrm share/gnome/apps
-@comment @dirrm share/gnome
+@dirrm share/pixmaps
+@dirrm share/gnome/apps/Applications
+@dirrm share/gnome/apps
+@dirrm share/gnome
 @dirrm share/etherape/glade
 @dirrm share/etherape
-@comment @dirrm lib/locale/tr/LC_MESSAGES
-@comment @dirrm lib/locale/tr
-@comment @dirrm lib/locale/nl/LC_MESSAGES
-@comment @dirrm lib/locale/nl
-@comment @dirrm lib/locale/fr/LC_MESSAGES
-@comment @dirrm lib/locale/fr
-@comment @dirrm lib/locale/es/LC_MESSAGES
-@comment @dirrm lib/locale/es
-@comment @dirrm lib/locale
+@dirrm lib/locale/tr/LC_MESSAGES
+@dirrm lib/locale/tr
+@dirrm lib/locale/nl/LC_MESSAGES
+@dirrm lib/locale/nl
+@dirrm lib/locale/fr/LC_MESSAGES
+@dirrm lib/locale/fr
+@dirrm lib/locale/es/LC_MESSAGES
+@dirrm lib/locale/es
+@dirrm lib/locale

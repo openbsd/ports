@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/06/30 12:27:09 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/12/15 17:40:57 naddy Exp $
 ${P5ARCH}/Net/DNS.pm
 ${P5ARCH}/Net/DNS/FAQ.pod
 ${P5ARCH}/Net/DNS/Header.pm
@@ -86,12 +86,12 @@ man/man3p/Net::DNS::RR::X25.3p
 man/man3p/Net::DNS::Resolver.3p
 man/man3p/Net::DNS::Resolver::Recurse.3p
 man/man3p/Net::DNS::Update.3p
-@comment @dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Net/DNS
-@comment @dirrm ${P5ARCH}/auto/Net
-@comment @dirrm ${P5ARCH}/auto
+@dirrm man/man3p
+@dirrm ${P5ARCH}/auto/Net/DNS
+@dirrm ${P5ARCH}/auto/Net
+@dirrm ${P5ARCH}/auto
 @dirrm ${P5ARCH}/Net/DNS/Resolver
 @dirrm ${P5ARCH}/Net/DNS/RR
 @dirrm ${P5ARCH}/Net/DNS
-@comment @dirrm ${P5ARCH}/Net
-@comment @dirrm ${P5ARCH}
+@dirrm ${P5ARCH}/Net
+@dirrm ${P5ARCH}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/08 03:32:02 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/12/15 17:40:57 naddy Exp $
 bin/xchat2
 bin/xchat2-text
 share/applications/xchat2.desktop
@@ -23,46 +23,46 @@ share/locale/sr/LC_MESSAGES/xchat2.mo
 share/locale/sv/LC_MESSAGES/xchat2.mo
 share/locale/zh_CN/LC_MESSAGES/xchat2.mo
 share/pixmaps/xchat2.png
-@comment @dirrm share/pixmaps
-@comment @dirrm share/locale/zh_CN/LC_MESSAGES
-@comment @dirrm share/locale/zh_CN
-@comment @dirrm share/locale/sv/LC_MESSAGES
-@comment @dirrm share/locale/sv
-@comment @dirrm share/locale/sr/LC_MESSAGES
-@comment @dirrm share/locale/sr
-@comment @dirrm share/locale/sl/LC_MESSAGES
-@comment @dirrm share/locale/sl
-@comment @dirrm share/locale/sk/LC_MESSAGES
-@comment @dirrm share/locale/sk
-@comment @dirrm share/locale/pt/LC_MESSAGES
-@comment @dirrm share/locale/pt
-@comment @dirrm share/locale/no/LC_MESSAGES
-@comment @dirrm share/locale/no
-@comment @dirrm share/locale/nl/LC_MESSAGES
-@comment @dirrm share/locale/nl
-@comment @dirrm share/locale/ms/LC_MESSAGES
-@comment @dirrm share/locale/ms
-@comment @dirrm share/locale/lv/LC_MESSAGES
-@comment @dirrm share/locale/lv
-@comment @dirrm share/locale/lt/LC_MESSAGES
-@comment @dirrm share/locale/lt
-@comment @dirrm share/locale/ja/LC_MESSAGES
-@comment @dirrm share/locale/ja
-@comment @dirrm share/locale/fr/LC_MESSAGES
-@comment @dirrm share/locale/fr
-@comment @dirrm share/locale/fi/LC_MESSAGES
-@comment @dirrm share/locale/fi
-@comment @dirrm share/locale/et/LC_MESSAGES
-@comment @dirrm share/locale/et
-@comment @dirrm share/locale/es/LC_MESSAGES
-@comment @dirrm share/locale/es
-@comment @dirrm share/locale/el/LC_MESSAGES
-@comment @dirrm share/locale/el
-@comment @dirrm share/locale/de/LC_MESSAGES
-@comment @dirrm share/locale/de
-@comment @dirrm share/locale/ca/LC_MESSAGES
-@comment @dirrm share/locale/ca
-@comment @dirrm share/locale/am/LC_MESSAGES
-@comment @dirrm share/locale/am
-@comment @dirrm share/locale
-@comment @dirrm share/applications
+@dirrm share/pixmaps
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/zh_CN
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/sr/LC_MESSAGES
+@dirrm share/locale/sr
+@dirrm share/locale/sl/LC_MESSAGES
+@dirrm share/locale/sl
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/ms/LC_MESSAGES
+@dirrm share/locale/ms
+@dirrm share/locale/lv/LC_MESSAGES
+@dirrm share/locale/lv
+@dirrm share/locale/lt/LC_MESSAGES
+@dirrm share/locale/lt
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@dirrm share/locale/et/LC_MESSAGES
+@dirrm share/locale/et
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/el/LC_MESSAGES
+@dirrm share/locale/el
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
+@dirrm share/locale/am/LC_MESSAGES
+@dirrm share/locale/am
+@dirrm share/locale
+@dirrm share/applications
