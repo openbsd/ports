@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/08/30 14:22:37 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/08/30 14:23:51 brad Exp $
 
 DISTNAME=	wterm-6.2.6
 CATEGORIES=	x11
@@ -6,7 +6,7 @@ MASTER_SITES=	http://wm.current.nu/files/
 
 MAINTAINER=	brad@openbsd.org
 
-#BUILD_DEPENDS=	wmaker:${PORTSDIR}/x11/windowmaker
+BUILD_DEPENDS=	wmaker:${PORTSDIR}/x11/windowmaker
 
 USE_X11=	yes
 GNU_CONFIGURE=	yes
