@@ -87,3 +87,8 @@ cd /dev
 
 - OpenBSD port by Oleg Safiullin
 (form@vs.itam.nsc.ru)
+
+OpenBSD port supersedes "dhcp-1.4.0p1.OpenBSD.patch" by KAMO Hiroyasu,
+so you don't need to use it.
+
+
