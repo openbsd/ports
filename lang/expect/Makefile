@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/03/04 06:50:41 todd Exp $
+# $OpenBSD: Makefile,v 1.11 1999/03/14 03:15:50 marc Exp $
 #
 
 DISTNAME=	expect
@@ -9,10 +9,9 @@ NEED_VERSION=	1.73
 
 MAINTAINER=	niklas@openbsd.org
 
-# Expect is now at 5.27, un-comment when port updated
 MASTER_SITES=	http://expect.nist.gov/
 
-LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11/tk80
 
 WRKSRC=		${WRKDIR}/expect-5.28
 
@@ -22,14 +21,6 @@ CONFIGURE_ARGS= --with-tclconfig=${PREFIX}/lib/tcl8.0 \
 		--with-tkconfig=${PREFIX}/lib/tk8.0 \
 		--with-tkinclude=${PREFIX}/include/tk8.0
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
-
-# needed for japanese/expect
-.if !defined(NO_MAN_INSTALL)
-MAN1=		autoexpect.1 cryptdir.1 decryptdir.1 dislocate.1 \
-		expect.1 expectk.1 kibitz.1 mkpasswd.1 passmass.1 \
-		tknewsbiff.1 unbuffer.1 xkibitz.1
-MAN3=		libexpect.3
-.endif
 
 test:
 	@(cd ${WRKSRC}; make test)
