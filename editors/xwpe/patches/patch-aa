@@ -1,13 +1,16 @@
---- Makefile.in	Wed May  6 14:03:13 1998
-+++ mk	Mon Aug 31 15:06:53 1998
-@@ -77,8 +77,8 @@
- 		model.h progr.h unixkeys.h unixmakr.h \
- 		Xwpe.h WeString.h WeXterm.h WeProg.h WeExpArr.h
+--- Makefile.in.orig	Tue May  4 20:17:45 1999
++++ Makefile.in	Fri May  7 11:57:28 1999
+@@ -12,10 +12,12 @@
+ LIBDIR=		$(prefix)/lib
+ XWPELIBDIR=	$(LIBDIR)/xwpe
+ MANDIR=		$(prefix)/man
++#INFODIR=	$(prefix)/info
  
--xwpe:		$(OFILES)
--		$(CC) $(CFLAGS) $(DEFS) $(OFILES) $(LIBS) -o xwpe
-+all:		$(OFILES)
-+		$(CC) $(CFLAGS) $(DEFS) $(OFILES) $(LIBS) -ltermlib -o xwpe
+ LIBS=@LIBS@
+ XLIBS=@X_LIBS@ @X_PRE_LIBS@ @X_EXTRA_LIBS@
+-DEFS=@DEFS@ -DLIBRARY_DIR=\"$(XWPELIBDIR)\"
++DEFS=@DEFS@ -DLIBRARY_DIR=\"$(XWPELIBDIR)\" -DX_INC=\"@X_INC@\"
++#DEFS=@DEFS@ -DLIBRARY_DIR=\"$(XWPELIBDIR)\" -DINFO_DIR=\"$(INFODIR)\" -DX_INC=\"@X_INC@\"
+ INSTALL=	cp
+ LN_S=	@LN_S@
  
- .c.o:		$(HFILES)
- 		$(CC) $(CFLAGS) $(DEFS) -c $<
