@@ -1,6 +1,7 @@
---- musicin.c.orig	Tue Jan  4 20:13:44 1994
-+++ musicin.c	Mon Nov 29 08:57:10 1999
-@@ -101,6 +101,8 @@
+$OpenBSD: patch-musicin_c,v 1.1 2003/04/14 09:46:06 avsm Exp $
+--- musicin.c.orig	Wed Jan  5 01:13:44 1994
++++ musicin.c	Mon Apr 14 10:41:07 2003
+@@ -101,6 +101,8 @@ musicin.c
  #include "common.h"
  #include "encoder.h"
  
@@ -9,7 +10,7 @@
  /* Global variable definitions for "musicin.c" */
  
  FILE               *musicin;
-@@ -144,7 +146,7 @@
+@@ -144,7 +146,7 @@ char            encoded_file_name[MAX_NA
   
      do  {
         printf("Enter PCM input file name <required>: ");
@@ -18,7 +19,7 @@
         if (original_file_name[0] == NULL_CHAR)
         printf("PCM input file name is required.\n");
      } while (original_file_name[0] == NULL_CHAR);
-@@ -163,7 +165,7 @@
+@@ -163,7 +165,7 @@ char            encoded_file_name[MAX_NA
             original_file_name, DFLT_EXT);
  #endif
   
@@ -27,7 +28,7 @@
      if (encoded_file_name[0] == NULL_CHAR) {
  #ifdef  MS_DOS
          /* replace old extension with new one, 92-08-19 shn */
-@@ -207,7 +209,7 @@
+@@ -207,7 +209,7 @@ char            encoded_file_name[MAX_NA
      else {    /* Not using Audio IFF sound file headers. */
  
         printf("What is the sampling frequency? <44100>[Hz]: ");
@@ -36,7 +37,7 @@
         freq = atol(t);
         switch (freq) {
            case 48000 : info->sampling_frequency = 1;
-@@ -236,7 +238,7 @@
+@@ -236,7 +238,7 @@ char            encoded_file_name[MAX_NA
  
      printf("Which layer do you want to use?\n");
      printf("Available: Layer (1), Layer (<2>): ");
@@ -45,7 +46,7 @@
      switch(*t){
         case '1': info->lay = 1; printf(">>> Using Layer %s\n",t); break;
         case '2': info->lay = 2; printf(">>> Using Layer %s\n",t); break;
-@@ -246,7 +248,7 @@
+@@ -246,7 +248,7 @@ char            encoded_file_name[MAX_NA
      printf("Which mode do you want?\n");
      printf("Available: (<s>)tereo, (j)oint stereo, ");
      printf("(d)ual channel, s(i)ngle Channel: ");
@@ -54,7 +55,7 @@
      switch(*t){
         case 's':
         case 'S':
-@@ -275,7 +277,7 @@
+@@ -275,7 +277,7 @@ char            encoded_file_name[MAX_NA
      }
  
      printf("Which psychoacoustic model do you want to use? <2>: ");
@@ -63,7 +64,7 @@
      model = atoi(t);
      if (model > 2 || model < 1) {
         printf(">>> Default model 2 selected\n");
-@@ -287,7 +289,7 @@
+@@ -287,7 +289,7 @@ char            encoded_file_name[MAX_NA
      }
   
      printf("What is the total bitrate? <%u>[kbps]: ", DFLT_BRT);
@@ -72,7 +73,7 @@
      brt = atoi(t);
      if (brt == 0) brt = -10;
      j=0;
-@@ -310,7 +312,7 @@
+@@ -310,7 +312,7 @@ char            encoded_file_name[MAX_NA
   
      printf("What type of de-emphasis should the decoder use?\n");
      printf("Available: (<n>)one, (5)0/15 microseconds, (c)citt j.17: ");
@@ -81,7 +82,7 @@
      if (*t != 'n' && *t != '5' && *t != 'c') {
         printf(">>> Using default no de-emphasis\n");
         info->emphasis = 0;
-@@ -325,7 +327,7 @@
+@@ -325,7 +327,7 @@ char            encoded_file_name[MAX_NA
  /*  Start 2. Part changes for CD Ver 3.2; jsp; 22-Aug-1991 */
   
      printf("Do you want to set the private bit? (y/<n>): ");
@@ -90,7 +91,7 @@
      if (*t == 'y' || *t == 'Y') info->extension = 1;
      else                        info->extension = 0;
      if(info->extension) printf(">>> Private bit set\n");
-@@ -334,28 +336,28 @@
+@@ -334,28 +336,28 @@ char            encoded_file_name[MAX_NA
  /*  End changes for CD Ver 3.2; jsp; 22-Aug-1991 */
   
      printf("Do you want error protection? (y/<n>): ");

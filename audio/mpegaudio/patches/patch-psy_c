@@ -1,0 +1,12 @@
+$OpenBSD: patch-psy_c,v 1.1 2003/04/14 09:46:06 avsm Exp $
+--- psy.c.orig	Mon Apr 14 10:41:19 2003
++++ psy.c	Mon Apr 14 10:41:48 2003
+@@ -428,7 +428,7 @@ int table;
+     printf("Please check %s table\n", ta);
+     exit(1);
+  }
+- fgets(t, 150, fp);
++ fgets(t, sizeof t, fp);
+  sscanf(t, "table %ld", &index);
+  if(index != table){
+     printf("error in absthr table %s",ta);

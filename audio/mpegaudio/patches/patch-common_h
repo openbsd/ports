@@ -1,5 +1,6 @@
---- common.h.orig	Wed Jan  5 02:42:00 1994
-+++ common.h	Mon Oct  8 00:08:30 2001
+$OpenBSD: patch-common_h,v 1.1 2003/04/14 09:46:06 avsm Exp $
+--- common.h.orig	Wed Jan  5 01:42:00 1994
++++ common.h	Mon Apr 14 10:41:07 2003
 @@ -73,7 +73,7 @@ common.h
  #endif
  
