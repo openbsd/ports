@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/09/12 06:20:32 pvalchev Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/scli.info
+bin/scli
+info/scli.info
+info/scli.info-1
+info/scli.info-2
+info/scli.info-3
+man/man1/scli.1
+@exec install-info --info-dir=%D/info %D/info/scli.info

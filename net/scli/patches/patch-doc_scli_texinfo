@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_scli_texinfo,v 1.1.1.1 2002/09/12 06:20:32 pvalchev Exp $
+--- doc/scli.texinfo.orig	Tue Sep 10 00:54:13 2002
++++ doc/scli.texinfo	Tue Sep 10 01:02:30 2002
+@@ -2,6 +2,10 @@
+ @c %**start of header
+ @setfilename scli.info
+ @settitle SNMP Command Line Interface
++@dircategory Net
++@direntry
++* scli: (scli).		SNMP command line interface
++@end direntry
+ @finalout
+ @setchapternewpage odd
+ @c %**end of header

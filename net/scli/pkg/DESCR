@@ -1,0 +1,19 @@
+scli - SNMP Command Line Interface
+
+The scli package was written to address the need for small and
+efficient command line utilities to monitor and configure network
+devices and host systems. The scli package is based on the SNMP
+management protocol. It utilizes a MIB compiler called smidump to
+generate C stub code.
+
+In fact, virtually no SNMP knowledge is required in order to extend
+the scli programs with new features.
+
+The programs contained in the scli package try to be very specific
+rather than generic. Generic SNMP tools such as MIB browsers or
+simple command line tools (e.g. snmpwalk) are hard to use since
+they expose too many protocol details. And in most cases, they fail
+to present the information in a format that is easy to read and
+understand.
+
+WWW: ${HOMEPAGE}
