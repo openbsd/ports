@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/09/08 17:32:50 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/07/10 15:32:23 lebel Exp $
 bin/neon-config
 include/neon/ne_207.h
 include/neon/ne_acl.h
@@ -17,18 +17,19 @@ include/neon/ne_redirect.h
 include/neon/ne_request.h
 include/neon/ne_session.h
 include/neon/ne_socket.h
+include/neon/ne_ssl.h
 include/neon/ne_string.h
 include/neon/ne_uri.h
 include/neon/ne_utils.h
 include/neon/ne_xml.h
 lib/libneon.a
+lib/pkgconfig/neon.pc
 man/man1/neon-config.1
 man/man3/ne_add_request_header.3
 man/man3/ne_addr_destroy.3
 man/man3/ne_addr_error.3
 man/man3/ne_addr_first.3
 man/man3/ne_addr_next.3
-man/man3/ne_addr_print.3
 man/man3/ne_addr_resolve.3
 man/man3/ne_addr_result.3
 man/man3/ne_buffer.3
@@ -47,6 +48,10 @@ man/man3/ne_close_connection.3
 man/man3/ne_forget_auth.3
 man/man3/ne_get_error.3
 man/man3/ne_get_status.3
+man/man3/ne_iaddr_cmp.3
+man/man3/ne_iaddr_free.3
+man/man3/ne_iaddr_make.3
+man/man3/ne_iaddr_print.3
 man/man3/ne_malloc.3
 man/man3/ne_oom_callback.3
 man/man3/ne_print_request_header.3
@@ -70,7 +75,14 @@ man/man3/ne_set_useragent.3
 man/man3/ne_shave.3
 man/man3/ne_sock_init.3
 man/man3/ne_ssl_certificate.3
+man/man3/ne_ssl_clicert_decrypt.3
+man/man3/ne_ssl_clicert_encrypted.3
+man/man3/ne_ssl_clicert_free.3
+man/man3/ne_ssl_clicert_name.3
+man/man3/ne_ssl_clicert_owner.3
+man/man3/ne_ssl_clicert_read.3
 man/man3/ne_ssl_dname.3
+man/man3/ne_ssl_dname_cmp.3
 man/man3/ne_ssl_load_ca.3
 man/man3/ne_ssl_load_default_ca.3
 man/man3/ne_ssl_readable_dname.3
@@ -87,6 +99,7 @@ share/doc/neon/NEWS
 share/doc/neon/README
 share/doc/neon/THANKS
 share/doc/neon/TODO
+share/doc/neon/html/apas01.html
 share/doc/neon/html/apas02.html
 share/doc/neon/html/apas03.html
 share/doc/neon/html/apas04.html
@@ -98,18 +111,12 @@ share/doc/neon/html/apas09.html
 share/doc/neon/html/apas10.html
 share/doc/neon/html/apas11.html
 share/doc/neon/html/apas12.html
-share/doc/neon/html/auth.html
-share/doc/neon/html/basic.html
-share/doc/neon/html/ch01s02.html
-share/doc/neon/html/ch01s03.html
-share/doc/neon/html/ch02.html
+share/doc/neon/html/api.html
 share/doc/neon/html/compliance.html
+share/doc/neon/html/features.html
 share/doc/neon/html/gfdl.html
 share/doc/neon/html/index.html
 share/doc/neon/html/intro.html
-share/doc/neon/html/locking.html
-share/doc/neon/html/lowlevel.html
-share/doc/neon/html/props.html
 share/doc/neon/html/ref.html
 share/doc/neon/html/refalloc.html
 share/doc/neon/html/refauth.html
@@ -118,9 +125,11 @@ share/doc/neon/html/refbufapp.html
 share/doc/neon/html/refbufcr.html
 share/doc/neon/html/refbufdest.html
 share/doc/neon/html/refbufutil.html
+share/doc/neon/html/refclicert.html
 share/doc/neon/html/refconfig.html
 share/doc/neon/html/referr.html
 share/doc/neon/html/refgetst.html
+share/doc/neon/html/refiaddr.html
 share/doc/neon/html/refneon.html
 share/doc/neon/html/refopts.html
 share/doc/neon/html/refreq.html
@@ -137,8 +146,7 @@ share/doc/neon/html/refsslvfy.html
 share/doc/neon/html/refstatus.html
 share/doc/neon/html/reftok.html
 share/doc/neon/html/refvers.html
-share/doc/neon/html/ssl.html
-share/doc/neon/html/utils.html
+share/doc/neon/html/using.html
 share/doc/neon/html/xml.html
 share/neon/macros/ChangeLog
 share/neon/macros/neon-test.m4
