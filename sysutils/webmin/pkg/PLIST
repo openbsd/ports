@@ -1,0 +1,93 @@
+lib/webmin/acl/config
+lib/webmin/apache/config
+lib/webmin/bind8/config
+lib/webmin/bsdexports/config
+lib/webmin/config
+lib/webmin/cron/config
+lib/webmin/custom/config
+lib/webmin/dfsadmin/config
+lib/webmin/dhcpd/config
+lib/webmin/dnsadmin/config
+lib/webmin/exports/config
+lib/webmin/fdisk/config
+lib/webmin/file/config
+lib/webmin/format/config
+lib/webmin/help/config
+lib/webmin/hpuxexports/config
+lib/webmin/inetd/config
+lib/webmin/init/config
+lib/webmin/inittab/config
+lib/webmin/lilo/config
+lib/webmin/lpadmin/config
+lib/webmin/man/config
+lib/webmin/majordomo/config
+lib/webmin/mysql/config
+lib/webmin/miniserv.conf
+lib/webmin/miniserv.pem
+lib/webmin/miniserv.users
+lib/webmin/mount/config
+lib/webmin/net/config
+lib/webmin/pap/config
+lib/webmin/perl-path
+lib/webmin/proc/config
+lib/webmin/quota/config
+lib/webmin/raid/config
+lib/webmin/samba/config
+lib/webmin/sendmail/config
+lib/webmin/servers/config
+lib/webmin/software/config
+lib/webmin/squid/config
+lib/webmin/syslog/config
+lib/webmin/start
+lib/webmin/stop
+lib/webmin/telnet/config
+lib/webmin/time/config
+lib/webmin/uninstall.sh
+lib/webmin/useradmin/config
+lib/webmin/var-path
+lib/webmin/version
+lib/webmin/webmin.acl
+lib/webmin/webmin/config
+lib/webmin/wuftpd/config
+@dirrm lib/webmin/acl
+@dirrm lib/webmin/apache
+@dirrm lib/webmin/bind8
+@dirrm lib/webmin/bsdexports
+@dirrm lib/webmin/cron
+@dirrm lib/webmin/custom
+@dirrm lib/webmin/dfsadmin
+@dirrm lib/webmin/dhcpd
+@dirrm lib/webmin/dnsadmin
+@dirrm lib/webmin/exports
+@dirrm lib/webmin/fdisk
+@dirrm lib/webmin/file
+@dirrm lib/webmin/format
+@dirrm lib/webmin/help
+@dirrm lib/webmin/hpuxexports
+@dirrm lib/webmin/inetd
+@dirrm lib/webmin/init
+@dirrm lib/webmin/inittab
+@dirrm lib/webmin/lilo
+@dirrm lib/webmin/lpadmin
+@dirrm lib/webmin/majordomo
+@dirrm lib/webmin/man
+@dirrm lib/webmin/mount
+@dirrm lib/webmin/mysql
+@dirrm lib/webmin/net
+@dirrm lib/webmin/pap
+@dirrm lib/webmin/proc
+@dirrm lib/webmin/quota
+@dirrm lib/webmin/raid
+@dirrm lib/webmin/samba
+@dirrm lib/webmin/sendmail
+@dirrm lib/webmin/servers
+@dirrm lib/webmin/software
+@dirrm lib/webmin/squid
+@dirrm lib/webmin/syslog
+@dirrm lib/webmin/telnet
+@dirrm lib/webmin/time
+@dirrm lib/webmin/useradmin
+@dirrm lib/webmin/webmin
+@dirrm lib/webmin/wuftpd
+@dirrm lib/webmin
+@unexec rm -rf /var/webmin

@@ -1,0 +1,17 @@
+--- setup.sh.orig	Mon Feb 28 10:45:36 2000
++++ setup.sh	Wed Mar  1 12:27:29 2000
+@@ -34,12 +34,12 @@
+ echo "Unless you want to run multiple versions of Webmin at the same time"
+ echo "you can just accept the defaults."
+ echo ""
+-printf "Config file directory [/etc/webmin]: "
++printf "Config file directory [/usr/local/lib/webmin]: "
+ if [ "$config_dir" = "" ]; then
+ 	read config_dir
+ fi
+ if [ "$config_dir" = "" ]; then
+-	config_dir=/etc/webmin
++	config_dir=/usr/local/lib/webmin
+ fi
+ abspath=`echo $config_dir | grep "^/"`
+ if [ "$abspath" = "" ]; then
