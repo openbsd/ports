@@ -1,23 +1,13 @@
-$OpenBSD: patch-CDDB_get_pm,v 1.1.1.1 2001/06/13 12:40:32 lebel Exp $
---- CDDB_get.pm.orig	Thu May 31 15:22:24 2001
-+++ CDDB_get.pm	Wed Jun 13 08:48:33 2001
-@@ -480,7 +480,7 @@ CDDB - Read the CDDB entry for an audio 
-  $config{CDDB_HOST}="freedb.freedb.org";	# set cddb host
-  $config{CDDB_PORT}=8880;			# set cddb port
-  $config{CDDB_MODE}="cddb";			# set cddb mode: cddb or http
-- $config{CD_DEVICE}="/dev/cdrom";		# set cd device
-+ $config{CD_DEVICE}="/dev/cd0c";		# set cd device
+$OpenBSD: patch-CDDB_get_pm,v 1.2 2002/11/10 12:14:44 wilfried Exp $
+
+--- CDDB_get.pm.orig	Sat Nov  9 08:57:53 2002
++++ CDDB_get.pm	Sat Nov  9 08:59:05 2002
+@@ -66,7 +66,7 @@ my $CDROM_MSF=0x02;
+ my $CDDB_HOST = "freedb.freedb.org";
+ my $CDDB_PORT = 888;
+ my $CDDB_MODE = "cddb";
+-my $CD_DEVICE = "/dev/cdrom";
++my $CD_DEVICE = "/dev/cd0c";
  
-  # user interaction welcome?
- 
-@@ -512,8 +512,8 @@ CDDB - Read the CDDB entry for an audio 
- =head1 DESCRIPTION
- 
- This module/script gets the CDDB info for an audio cd. You need
--LINUX, SUNOS or NETBSD, a cdrom drive and an active internet connection 
--in order to do that.
-+LINUX, SUNOS, NETBSD and OPENBSD, a cdrom drive and an active 
-+internet connection in order to do that.
- 
- =head1 INSTALLATION
+ my $HELLO_ID  = "root nowhere.com fastrip 0.77";
  

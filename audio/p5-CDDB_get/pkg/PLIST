@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/11/10 12:14:44 wilfried Exp $
 bin/cddb.pl
-libdata/perl5/site_perl/CDDB_get.pm
+${P5SITE}/CDDB_get.pm
 man/man3p/CDDB_get.3p
