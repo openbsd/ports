@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/31 14:53:58 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/01/29 05:01:11 dugsong Exp $
 
 DISTNAME=	john-1.6
 CATEGORIES=     security
@@ -40,7 +40,7 @@ WRKDIST=	${WRKDIR}/${DISTNAME}/src
 
 do-configure:
 	cd ${WRKDIST} && \
-	sed -e 's,@JOHNHOME@,${PREFIX}/share/john,' <params.h >params.h.new \
+	sed -e 's,@JOHN_HOME@,${PREFIX}/share/john,' <params.h >params.h.new \
 	    && mv -f params.h.new params.h
 
 do-install:
