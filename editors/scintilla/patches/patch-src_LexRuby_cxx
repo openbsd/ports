@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_LexRuby_cxx,v 1.1.1.1 2003/08/14 18:24:31 sturm Exp $
+--- src/LexRuby.cxx.orig	2003-08-13 17:38:22.000000000 +1000
++++ src/LexRuby.cxx	2003-08-13 17:43:34.000000000 +1000
+@@ -19,7 +19,7 @@
+ #include "Scintilla.h"
+ #include "SciLexer.h"
+ 
+-static void ClassifyWordRb(unsigned int start, unsigned int end, WordList &keywords, Accessor &styler, char *prevWord) {
++static void ClassifyWordRb(unsigned int start, unsigned int end, WordList &keywords, Accessor &styler, char *prevWord, size_t prevWord_len) {
+ 	char s[100];
+ 	bool wordIsNumber = isdigit(styler[start]) != 0;
+ 	for (unsigned int i = 0; i < end - start + 1 && i < 30; i++) {
+@@ -45,7 +45,7 @@ static void ClassifyWordRb(unsigned int 
+ 		}
+ 	}
+ 	styler.ColourTo(end, chAttr);
+-	strcpy(prevWord, s);
++	strlcpy(prevWord, s, prevWord_len);
+ }
+ 
+ static bool IsRbComment(Accessor &styler, int pos, int len) {
+@@ -224,7 +224,7 @@ static void ColouriseRbDoc(unsigned int 
+ 			}
+ 			} else if (state == SCE_P_WORD) {
+ 			if (!iswordchar(ch)) {
+-				ClassifyWordRb(styler.GetStartSegment(), i - 1, keywords, styler, prevWord);
++				ClassifyWordRb(styler.GetStartSegment(), i - 1, keywords, styler, prevWord, sizeof(prevWord));
+ 				state = SCE_P_DEFAULT;
+ 				if (ch == '#') {
+ 					state = chNext == '#' ? SCE_P_COMMENTBLOCK : SCE_P_COMMENTLINE;
+@@ -294,7 +294,7 @@ static void ColouriseRbDoc(unsigned int 
+ 		chPrev = ch;
+ 	}
+ 	if (state == SCE_P_WORD) {
+-		ClassifyWordRb(styler.GetStartSegment(), lengthDoc-1, keywords, styler, prevWord);
++		ClassifyWordRb(styler.GetStartSegment(), lengthDoc-1, keywords, styler, prevWord, sizeof(prevWord));
+ 	} else {
+ 		styler.ColourTo(lengthDoc-1, state);
+ 	}

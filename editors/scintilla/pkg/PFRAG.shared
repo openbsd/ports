@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
+lib/libscintilla.so.1.0
+lib/libscintilla_lexers.so.1.0
+DYNLIBDIR(%D/lib)

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_LexEScript_cxx,v 1.1.1.1 2003/08/14 18:24:31 sturm Exp $
+--- src/LexEScript.cxx.orig	2003-08-13 17:04:03.000000000 +1000
++++ src/LexEScript.cxx	2003-08-13 17:08:53.000000000 +1000
+@@ -231,7 +231,7 @@ static void FoldESCRIPTDoc(unsigned int 
+ 				}
+ 				s[j] = '\0';
+ 				levelCurrent += classifyFoldPointESCRIPT(s, prevWord);
+-				strcpy(prevWord, s);
++				strlcpy(prevWord, s, sizeof(prevWord));
+ 			}
+ 		}
+ 		if (atEOL) {
+@@ -246,7 +246,7 @@ static void FoldESCRIPTDoc(unsigned int 
+ 			lineCurrent++;
+ 			levelPrev = levelCurrent;
+ 			visibleChars = 0;
+-			strcpy(prevWord, "");
++			prevWord[0] = 0;
+ 		}
+ 
+ 		if (!isspacechar(ch))

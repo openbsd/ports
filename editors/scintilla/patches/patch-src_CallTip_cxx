@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_CallTip_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
+--- src/CallTip.cxx.orig	2003-08-13 17:04:03.000000000 +1000
++++ src/CallTip.cxx	2003-08-13 17:06:32.000000000 +1000
+@@ -214,10 +214,11 @@ PRectangle CallTip::CallTipStart(int pos
+ 	clickPlace = 0;
+ 	if (val)
+ 		delete []val;
+-	val = new char[strlen(defn) + 1];
++	size_t val_len = strlen(defn) + 1;
++	val = new char[val_len];
+ 	if (!val)
+ 		return PRectangle();
+-	strcpy(val, defn);
++	strlcpy(val, defn, val_len);
+ 	codePage = codePage_;
+ 	Surface *surfaceMeasure = Surface::Allocate();
+ 	if (!surfaceMeasure)

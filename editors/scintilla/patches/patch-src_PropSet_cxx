@@ -1,0 +1,55 @@
+$OpenBSD: patch-src_PropSet_cxx,v 1.1.1.1 2003/08/14 18:24:31 sturm Exp $
+--- src/PropSet.cxx.orig	2003-08-14 01:19:03.000000000 +1000
++++ src/PropSet.cxx	2003-08-14 01:19:03.000000000 +1000
+@@ -185,9 +185,10 @@ SString PropSet::Expand(const char *with
+ 			break;
+ 		size_t newlenbase = strlen(base) + val.length() - lenvar;
+ 		char *newbase = new char[newlenbase];
+-		strncpy(newbase, base, cpvar - base);
+-		strcpy(newbase + (cpvar - base), val.c_str());
+-		strcpy(newbase + (cpvar - base) + val.length(), cpendvar + 1);
++		*cpvar = 0;
++		strlcpy(newbase, base, newlenbase);
++		strlcat(newbase, val.c_str(), newlenbase);
++		strlcat(newbase, cpendvar + 1, newlenbase);
+ 		delete []var;
+ 		delete []base;
+ 		base = newbase;
+@@ -305,9 +306,10 @@ SString PropSet::GetNewExpand(const char
+ 			SString val = GetWild(var, filename);
+ 			size_t newlenbase = strlen(base) + val.length() - lenvar;
+ 			char *newbase = new char[newlenbase];
+-			strncpy(newbase, base, cpvar - base);
+-			strcpy(newbase + (cpvar - base), val.c_str());
+-			strcpy(newbase + (cpvar - base) + val.length(), cpendvar + 1);
++			*cpvar = 0;
++			strlcpy(newbase, base,         newlenbase);
++			strlcat(newbase, val.c_str(),  newlenbase);
++			strlcat(newbase, cpendvar + 1, newlenbase);
+ 			delete []var;
+ 			delete []base;
+ 			base = newbase;
+@@ -349,18 +351,15 @@ char *PropSet::ToString() {
+ 		len = 1;	// Return as empty string
+ 	char *ret = new char [len];
+ 	if (ret) {
+-		char *w = ret;
++		ret[0] = 0;
+ 		for (int root = 0; root < hashRoots; root++) {
+ 			for (Property *p = props[root]; p; p = p->next) {
+-				strcpy(w, p->key);
+-				w += strlen(p->key);
+-				*w++ = '=';
+-				strcpy(w, p->val);
+-				w += strlen(p->val);
+-				*w++ = '\n';
++				strlcat(ret, p->key, len);
++				strlcat(ret, "=", len);
++				strlcat(ret, p->val, len);
++				strlcat(ret, "\n", len);
+ 			}
+ 		}
+-		ret[len-1] = '\0';
+ 	}
+ 	return ret;
+ }

@@ -1,0 +1,40 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
+
+COMMENT=	"source code editing component for GTK+"
+
+VERSION=	1.54
+DISTNAME=	scintilla${VERSION:S/.//}
+PKGNAME=	scintilla-${VERSION}
+CATEGORIES=	editors x11
+
+HOMEPAGE=	http://www.scintilla.org/
+
+MAINTAINER=	Joerg Sonnenberger <joerg@bec.de>
+
+# old Python license
+PERMIT_PACKAGE_CDROM=	"may not sell"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"may not sell"
+PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scintilla/}
+EXTRACT_SUFX=	.tgz
+
+USE_X11=	Yes
+USE_GMAKE=	Yes
+NO_REGRESS=	Yes
+
+MAKE_FILE=	makefile
+MAKE_ENV=	CXX='${CXX}' CXXFLAGS='${CXXFLAGS}' \
+		NO_SHARED_LIBS='${NO_SHARED_LIBS}'
+
+WRKDIST=	${WRKDIR}/scintilla
+WRKSRC=		${WRKDIST}/gtk
+
+LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
+
+post-extract:
+	perl -pi -e 's|\x0d||' ${WRKDIST}/include/*.h ${WRKDIST}/gtk/*.cxx \
+	    ${WRKDIST}/src/*.cxx
+
+.include <bsd.port.mk>

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ViewStyle_cxx,v 1.1.1.1 2003/08/14 18:24:31 sturm Exp $
+--- src/ViewStyle.cxx.orig	2003-08-13 17:04:03.000000000 +1000
++++ src/ViewStyle.cxx	2003-08-13 17:27:33.000000000 +1000
+@@ -44,8 +44,9 @@ const char *FontNames::Save(const char *
+ 			return names[i];
+ 		}
+ 	}
+-	names[max] = new char[strlen(name) + 1];
+-	strcpy(names[max], name);
++	size_t name_len = strlen(name) + 1;
++	names[max] = new char[name_len];
++	strlcpy(names[max], name, name_len);
+ 	max++;
+ 	return names[max-1];
+ }
