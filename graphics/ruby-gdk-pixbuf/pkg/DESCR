@@ -1,0 +1,4 @@
+Ruby interface which provides access to the functions, macros, global
+variables and constants of the Gdk-pixbuf library.
+
+WWW: ${HOMEPAGE}
