@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/06/26 07:35:08 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/10/26 08:37:28 xsa Exp $
 
 COMMENT=		"module to interact with a Cisco router"
 
@@ -9,8 +9,6 @@ CATEGORIES=		net perl5
 HOMEPAGE=		http://nettelnetcisco.sourceforge.net/
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Net/}
-
-MAINTAINER=		Xavier Santolaria <xsa@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes	
