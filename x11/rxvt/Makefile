@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2002/12/29 20:31:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.28 2003/05/18 17:48:23 ish Exp $
 
 COMMENT=	"color, low memory usage, xterm replacement"
 
@@ -27,7 +27,8 @@ CONFIGURE_ARGS=		--enable-utmp \
 			--enable-transparency \
 			--enable-xgetdefault \
 			--enable-xim \
-			--enable-mousewheel
+			--enable-mousewheel \
+			--enable-ttygid
 
 NO_REGRESS=		Yes
 
