@@ -1,0 +1,29 @@
+$OpenBSD: patch-chess_cc,v 1.3 2003/01/28 20:52:37 fgsch Exp $
+--- chess.cc.orig	Tue Jan 28 14:01:37 2003
++++ chess.cc	Tue Jan 28 14:03:35 2003
+@@ -1092,14 +1092,21 @@ bool ChessGame::ParsePgnGame(zifstream &
+ 	    }
+ 
+ 	    if (alpha[0]=='$') {
++	      int i;
+               t.set((char *) alpha);
+               if (! gl.empty() ) {
+                 if (! global.annotator.isOpen() ) {
+-                  gl.back().addAnnotation( global.annotator.open() );
+-		  global.annotator.append(* (Glyphs[t.tokenvalue("$")]));
+-		  global.annotator.close();
++		  i = t.tokenvalue("$");
++		  if (i < Glyphs.size()) {
++                    gl.back().addAnnotation( global.annotator.open() );
++		    global.annotator.append(* (Glyphs[i]));
++		    global.annotator.close();
++		  }
+                 } else {
+-		  global.annotator.append(* (Glyphs[t.tokenvalue("$")]));
++		  i = t.tokenvalue("$");
++		  if (i < Glyphs.size()) {
++		    global.annotator.append(* (Glyphs[i]));
++                  }
+                 }
+               }
+ 
