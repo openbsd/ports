@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/03 20:07:17 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/28 00:30:03 jcs Exp $
 
 COMMENT=	"an open source client for Windows Terminal Server"
 
 DISTNAME=	rdesktop-1.0.0
-PATCHLEVEL=	19.6.4
+PATCHLEVEL=	19.7.2
 PKGNAME=	${DISTNAME}.p${PATCHLEVEL}
 CATEGORIES=	x11 net
-NEED_VERSION=	1.414
+NEED_VERSION=	1.447
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

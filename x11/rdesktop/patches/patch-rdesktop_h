@@ -1,31 +1,12 @@
-$OpenBSD: patch-rdesktop_h,v 1.1 2001/08/21 20:54:06 naddy Exp $
---- rdesktop.h.orig	Tue Aug 21 18:05:42 2001
-+++ rdesktop.h	Tue Aug 21 18:10:30 2001
-@@ -39,7 +39,16 @@
-  * check endianess
-  */
+$OpenBSD: patch-rdesktop_h,v 1.2 2001/08/28 00:30:04 jcs Exp $
+--- rdesktop.h.orig	Mon Aug 27 19:19:26 2001
++++ rdesktop.h	Mon Aug 27 19:20:21 2001
+@@ -32,7 +32,7 @@
+ #include <stdio.h>
+ #include <string.h>
  
--#if defined(__i386__) || defined(__alpha__) || defined(__vax__) || \
-+#if defined(__OpenBSD__)
-+
-+#include <machine/endian.h>
-+#if   BYTE_ORDER == LITTLE_ENDIAN
-+#define L_ENDIAN
-+#elif BYTE_ORDER == BIG_ENDIAN
-+#define B_ENDIAN
-+#endif
-+
-+#elif defined(__i386__) || defined(__alpha__) || defined(__vax__) || \
-       defined(_AIX)
- #define L_ENDIAN
- #elif defined(__sparc) || defined(__hppa) || defined(__mips) || \
-@@ -53,8 +62,7 @@
-  * check if we need to align data
-  */
+-#include <endian.h>
++#include <sys/endian.h>
  
--#if defined(__sparc) || defined(__alpha__) || defined(__hppa) || \
--    defined(_AIX) || defined(__PPC__) || defined(__mips)
-+#if !defined(__i386__)
- #define NEED_ALIGN
- #endif
  
+ #define VERSION "1.0.0-pl19-7-2"
