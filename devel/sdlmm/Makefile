@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2004/01/02 18:06:32 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2004/07/19 10:58:17 pvalchev Exp $
 
 COMMENT=	"C++ wrapper for the Simple DirectMedia Layer"
+COMMENT-docs=	"SDLmm documentation"
 
 VERSION=	0.1.8
 DISTNAME=	SDLmm-${VERSION}
 PKGNAME=	${DISTNAME:L}
+PKGNAME-docs=	${PKGNAME:S,-,-docs-,}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://sdlmm.sourceforge.net/
@@ -18,9 +20,22 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sdlmm/}
 
+MULTI_PACKAGES=	-docs
+SUBPACKAGE?=
+
+.if ${SUBPACKAGE} != "-docs"
 LIB_DEPENDS=	SDL::devel/sdl
+.elif defined(PACKAGING)
+PKG_ARCH=	*
+.endif
 
 USE_X11=	Yes
+
+post-install:
+	@(cd ${WRKSRC}/docs/html && \
+	    rm -f Makefile* htmlfiles && \
+	    ${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sdlmm && \
+	    for A in *; do ${INSTALL_DATA} $$A ${PREFIX}/share/doc/sdlmm/; done)
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
