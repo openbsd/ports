@@ -3,10 +3,8 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 1999/10/31 09:26:17 angelos Exp $
+# $OpenBSD: Makefile,v 1.5 1999/11/14 23:35:12 turan Exp $
 #
-
-BROKEN=		waiting for turans@ to verify
 
 DISTNAME=	explorer-0.72
 CATEGORIES=	x11
