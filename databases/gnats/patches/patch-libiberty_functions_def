@@ -1,0 +1,36 @@
+$OpenBSD: patch-libiberty_functions_def,v 1.1 2003/12/30 10:07:48 espie Exp $
+--- libiberty/functions.def.orig	2003-12-30 10:54:08.000000000 +0100
++++ libiberty/functions.def	2003-12-30 11:00:37.000000000 +0100
+@@ -27,26 +27,26 @@ DEF(memcpy, PTR, (s1, s2, length), PTR s
+ DEF(memmove, PTR, (s1, s2, length), PTR s1 AND CONST PTR s2 AND size_t length)
+ DEF(memset, PTR, (s, val, length), PTR s AND int val AND size_t length )
+ DEF(random, long int, (), NOTHING)
+-DEF(rename, int, (f, t), char *f AND char *t)
++DEF(rename, int, (f, t), CONST char *f AND CONST char *t)
+ DEF(rindex, char*, (s, c), char *s AND int c)
+ DEF(strcasecmp, int, (s1, s2), char *s1 AND char *s2)
+ DEF(strncasecmp, int, (s1, s2, n), char *s1 AND char *s2 AND int n)
+ DEF(strchr, char*, (s, c), CONST char *s AND int c)
+ DEF(strdup, char*, (s1), char * s1)
+ DEF(strrchr, char*, (s, c), CONST char *s AND int c)
+-DEF(strstr, char*, (), NOTHING)
++DEF(strstr, char*, (s1, s2), CONST char *s1 AND CONST char *s2)
+ DEF(strtod, double, (), NOTHING)
+ DEF(strtol, long, (), NOTHING)
+ DEF(strtoul, unsigned long, (), NOTHING)
+ DEF(tmpnam, char *, (s), char * s)
+ DEF(vfork, int, (), NOTHING)
+-DEF(vfprintf, int, (), NOTHING)
+-DEF(vprintf, int, (), NOTHING)
+-DEF(vsprintf, int, (), NOTHING)
++DEF(vfprintf, int, (f, fmt, ap), FILE *f AND CONST char *fmt AND va_list ap)
++DEF(vprintf, int, (fmt, ap), CONST char *fmt AND va_list ap)
++DEF(vsprintf, int, (s, fmt, ap), char *s AND CONST char *fmt AND va_list ap)
+ DEF(sigsetmask, int, (), NOTHING)
+ DEF(alloca, PTR, (size), size_t size)
+ DEF(waitpid, int, (pid, statp, opts), int pid AND int* statp AND int opts )
+-DEF(vasprintf, int, (), NOTHING)
++DEF(vasprintf, int, (p, fmt, ap), char **p AND CONST char *fmt AND va_list ap)
+ 
+ /* List of global variables that we want to look for in the host
+    environment, and to generate an entry NEED_<variable> in config.h
