@@ -1,20 +1,27 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/15 07:47:40 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/20 19:25:12 espie Exp $
 # $FreeBSD: Makefile,v 1.26 2000/01/05 07:11:48 jseger Exp $
 
 DISTNAME=	tcl8.2.3
 PKGNAME=	tcl-8.2.3
 CATEGORIES=	lang
+NEED_VERSION=	1.191
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR= tcl8_2
 
-NEED_VERSION=	1.191
-
 MAINTAINER=	angelos@openbsd.org
 
+LICENSE_TYPE=		BSD
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
 SEPARATE_BUILD=	concurrent
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	Yes
+CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+FAKE=		Yes
 
 .if (${MACHINE_ARCH} == "mips")
 CONFIGURE_ARGS+= --disable-load
@@ -22,9 +29,6 @@ CONFIGURE_ARGS+= --disable-load
 CONFIGURE_ENV=	PORTSDIR="${PORTSDIR}"
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/unix
-
-post-install:
-	@${LDCONFIG} -m ${PREFIX}/lib
 
 test:	build
 	@cd ${WRKSRC} && make test

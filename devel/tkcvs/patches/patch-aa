@@ -1,8 +1,8 @@
 --- tkcvs/doinstall.orig	Tue Jan  9 22:17:52 1996
-+++ tkcvs/doinstall	Sun Apr 26 19:03:11 1998
++++ tkcvs/doinstall	Mon Mar 20 20:18:00 2000
 @@ -2,10 +2,10 @@
  #
- # $Id: patch-aa,v 1.1.1.1 1998/06/15 05:35:00 todd Exp $
+ # $Id: patch-aa,v 1.2 2000/03/20 19:25:13 espie Exp $
  #
 -
 +PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin
@@ -24,7 +24,7 @@
   
 -WISH=`which wish4.0`
 -if [ ! -f $WISH ]; then
-+WISH=`which wish8.0`
++WISH=`which wish8.2`
 +if [ ! -f ${WISH} ]
 +then
 +  WISH=`which wish4.2`
@@ -51,12 +51,82 @@
  do
    if [ -d "$GDIR" ]; then
      break
-@@ -62,7 +72,7 @@
+@@ -46,15 +56,15 @@
+ 
+ # Find out where we want the system installed.
+ 
+-if [ ! -d "$INSTALLDIR" ]; then
++if [ ! -d "${DESTDIR}$INSTALLDIR" ]; then
+   echo "Enter the top level installation directory:"
+   INSTALLDIR=`line`
+-  mkdir -p $INSTALLDIR
+-  if [ ! -d $INSTALLDIR ]; then
++  mkdir -p ${DESTDIR}$INSTALLDIR
++  if [ ! -d ${DESTDIR}$INSTALLDIR ]; then
+     echo "I cant create that directory"
+     exit 1
+   fi
+-  if [ ! -w $INSTALLDIR ]; then
++  if [ ! -w ${DESTDIR}$INSTALLDIR ]; then
+     echo "I cant write to that directory"
+     exit 1
+   fi
+@@ -62,25 +72,25 @@
  
  # Some directories we have to create.
  
 -LDIR=${INSTALLDIR}/bitmaps
 +LDIR=${INSTALLDIR}/tkcvs/bitmaps
  TCDIR=${INSTALLDIR}/tkcvs
- mkdir -p $LDIR $TCDIR
+-mkdir -p $LDIR $TCDIR
++mkdir -p ${DESTDIR}$LDIR ${DESTDIR}$TCDIR
  for dir in $LDIR $TCDIR
+ do
+-  if [ ! -d $dir ]; then
++  if [ ! -d ${DESTDIR}$dir ]; then
+     echo "I cant create the directory $dir"
+     exit 1
+   fi
+ done
+ 
+-if [ ! -d "$BINDIR" ]; then
++if [ ! -d ${DESTDIR}"$BINDIR" ]; then
+   echo "Enter the directory where you want the programs to be stored:"
+   BINDIR=`line`
+-  if [ ! -d "$BINDIR" ]; then
++  if [ ! -d ${DESTDIR}"$BINDIR" ]; then
+     echo "I cant find that directory"
+     exit 1
+   fi
+-  if [ ! -w "$BINDIR" ]; then
++  if [ ! -w ${DESTDIR}"$BINDIR" ]; then
+     echo "I cant write to that directory" 
+     exit 1 
+   fi
+@@ -94,21 +104,21 @@
+       -e "/GDIR/ s;;$GDIR;g" \
+       -e "/EDITOR/ s;;$EDITOR;g" \
+       -e "/TCDIR/ s;;$TCDIR;g" ${file}.blank >$file
+-    $INSTALL_PROG -m 555 $file $BINDIR
++    $INSTALL_PROG -m 555 $file ${DESTDIR}$BINDIR
+     rm -f $file
+   fi
+ done
+ 
+ for f in *.n ../tkdiff/*.n
+ do
+-        $INSTALL_PROG -m 444 $f $MANDIR
++        $INSTALL_PROG -m 444 $f ${DESTDIR}$MANDIR
+ done
+ for f in *.tcl
+ do
+-        $INSTALL_PROG -m 444 $f $TCDIR
++        $INSTALL_PROG -m 444 $f ${DESTDIR}$TCDIR
+ done
+ for f in ../bitmaps/*.xbm
+ do
+-        $INSTALL_PROG -m 444 $f $LDIR
++        $INSTALL_PROG -m 444 $f ${DESTDIR}$LDIR
+ done
+-$INSTALL_PROG -m 444 tclIndex $TCDIR
++$INSTALL_PROG -m 444 tclIndex ${DESTDIR}$TCDIR

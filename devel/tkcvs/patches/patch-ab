@@ -4,7 +4,7 @@
  #!/bin/sh
  # \
 -	exec tclsh $0 ${1+"$@"}
-+	exec tclsh8.0 $0 ${1+"$@"}
++	exec tclsh8.2 $0 ${1+"$@"}
  
- # $Id: patch-ab,v 1.1.1.1 1998/06/15 05:35:00 todd Exp $
+ # $Id: patch-ab,v 1.2 2000/03/20 19:25:13 espie Exp $
  #
