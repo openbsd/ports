@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2001/01/02 19:48:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.76 2001/01/03 14:10:05 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -99,6 +99,7 @@
 #    SUBDIR += tycoon
      SUBDIR += viewfax
      SUBDIR += windowmaker
+     SUBDIR += wmcalclock
      SUBDIR += wmtime
      SUBDIR += wmx
      SUBDIR += wterm
