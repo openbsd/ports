@@ -5,13 +5,11 @@ Post-Install Notes for Majordomo
 Before you can use Majordomo, you will need to complete a few steps
 manually:
 
+	- add user daemon to group majordom (edit /etc/group)
+
 	- read README, FAQ and NEWLIST in /usr/local/share/doc/majordomo
 
 	- review /etc/majordomo/majordomo.cf
-
-	- run '/usr/local/lib/majordomo/wrapper config-test'
-	  as ordinary user (not root or majordom) to test your
-	  installation.
 
 	- make 'majordom' a trusted sendmail user so it can use 
 	  parameter -f (changing the from address) without causing
@@ -19,7 +17,7 @@ manually:
 	  'confTRUSTED_USERS' and 'use_ct_file' in
 	   /usr/share/sendmail/README.
 
-	- add majordomo aliases to /etc/aliases (or create a
+	- add majordomo aliases to /etc/mail/aliases (or create a
 	  separate aliases file for majordomo, see sendmail
 	  feature `ALIAS_FILE'). You will need at least the
 	  following aliases:
