@@ -1,9 +1,10 @@
-# $OpenBSD: OpenBSD-markers,v 1.46 2004/05/20 15:26:12 msf Exp $
+# $OpenBSD: OpenBSD-markers,v 1.47 2004/05/25 09:32:02 dtucker Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -37.457132	144.580589	"Miller"	# Damien
 -33.536466	151.093514	"Stewart"	# Don
 -34.67  	-58.50 		"Schwindt"	# Federico G.
+-33.81		151.15		"Tucker"	# Darren
 -27.48		153.20		"Leonard"	# David
 -22.88		-43.28		"Martelletto"	# Pedro
 25.0		121.400		"Lo"		# Kevin
