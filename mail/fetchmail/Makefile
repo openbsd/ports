@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.35 2000/01/18 21:09:35 fgsch Exp $
+# $OpenBSD: Makefile,v 1.36 2000/02/01 19:49:07 fgsch Exp $
 
-DISTNAME=       fetchmail-5.2.4
+DISTNAME=       fetchmail-5.2.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
 		ftp://ftp.ccil.org/pub/esr/fetchmail/ 
@@ -15,7 +15,7 @@ CONFIGURE_ARGS+= --with-kerberos
 .if defined(WITH_SSL) && ${WITH_SSL:U} == YES
 CONFIGURE_ARGS+= --with-ssl
 .endif
-.if defined(WITH_IPV6) && ${WITH_IPV6:U} == YES
+.if defined(WITH_INET6) && ${WITH_INET6:U} == YES
 CONFIGURE_ARGS+= --enable-inet6
 .endif
 
