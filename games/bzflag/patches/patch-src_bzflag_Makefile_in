@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_bzflag_Makefile_in,v 1.1 2004/02/20 06:49:11 jolan Exp $
+--- src/bzflag/Makefile.in.orig	2004-01-24 19:15:53.000000000 -0600
++++ src/bzflag/Makefile.in	2004-02-19 23:47:17.000000000 -0600
+@@ -265,7 +265,7 @@ bzflag_SOURCES = \
+ #	$(ALIBS)
+ AM_CPPFLAGS = $(X_CFLAGS)
+ 
+-bzflag_LDFLAGS = ../date/buildDate.o
++bzflag_LDFLAGS = ../date/buildDate.o -lz -lossaudio
+ subdir = src/bzflag
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/include/config.h
