@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2000/06/11 08:36:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2000/06/28 06:48:09 fgsch Exp $
 
 DISTNAME=	cgoban-1.9.10
 CATEGORIES=	games
-NEED_VERSION=	1.301
+NEED_VERSION=	1.308
+MASTER_SITES=	http://www.inetarena.com/~wms/comp/cgoban/
 
 MAINTAINER=	fgsch@openbsd.org
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	http://www.inetarena.com/~wms/comp/cgoban/
 
 CONFIGURE_STYLE=	gnu
 ALL_TARGET=
