@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2001/07/03 12:08:40 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2001/07/03 15:42:58 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt2
 COMMENT-html=		off-line html documentation for qt2
 
-VERSION=	3.0
+VERSION=	3.1
 DISTNAME=	qt-2.${VERSION}
 CATEGORIES=	x11
 NEED_VERSION=	1.419
@@ -107,9 +107,9 @@ do-install:
 	@if [ -f ${WRKBUILD}/lib/libqt.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.a ${PREFIX}/lib/qt2; \
 	fi
-	@if [ -f ${WRKBUILD}/lib/libqt.so.2.30 ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.30 ${PREFIX}/lib/qt2; \
-	 ln -sf qt2/libqt.so.2.30 ${PREFIX}/lib/libqt.so.2.30; \
+	@if [ -f ${WRKBUILD}/lib/libqt.so.2.31 ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.31 ${PREFIX}/lib/qt2; \
+	 ln -sf qt2/libqt.so.2.31 ${PREFIX}/lib/libqt.so.2.31; \
 	fi
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/moc ${QT_LIBDIR}/bin
 	${INSTALL_MAN} ${WRKSRC}/src/moc/moc.1 ${QT_MANDIR}/man1/moc2.1
