@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/05/10 02:46:54 marcm Exp $
+# $OpenBSD: Makefile,v 1.18 2004/08/02 12:30:45 espie Exp $
 
 COMMENT=		"portable library for obtaining system information"
 
@@ -43,14 +43,18 @@ CONFIGURE_ARGS+=	--with-libgtop-guile=no
 
 .include <bsd.port.mk>
 
-.if ${FLAVOR:L:Mguile} && !defined(NO_SHARED_LIBS)
-SED_PLIST+=-e '/%%SHARED-guile%%/r${PKGDIR}/PFRAG.shared.guile' -e '//d'
-.elif ${FLAVOR:L:Mguile}
+.if ${FLAVOR:L:Mguile}
+.  if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
 SED_PLIST+=-e '/%%SHARED-guile%%/d'
+.  else
+SED_PLIST+=-e '/%%SHARED-guile%%/r${PKGDIR}/PFRAG.shared.guile' -e '//d'
+.  endif
 .endif
 
-.if !${FLAVOR:L:Mgnome} && !defined(NO_SHARED_LIBS)
-SED_PLIST+=-e '/%%SHARED-no-gnome%%/r${PKGDIR}/PFRAG.shared.no-gnome' -e '//d'
-.elif !${FLAVOR:L:Mgnome}
+.if !${FLAVOR:L:Mgnome}
+.  if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
 SED_PLIST+=-e '/%%SHARED-no-gnome%%/d'
+.  else
+SED_PLIST+=-e '/%%SHARED-no-gnome%%/r${PKGDIR}/PFRAG.shared.no-gnome' -e '//d'
+.  endif
 .endif
