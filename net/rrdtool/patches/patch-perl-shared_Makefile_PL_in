@@ -1,13 +1,13 @@
-$OpenBSD: patch-perl-shared_Makefile_PL_in,v 1.2 2004/06/08 20:21:24 danh Exp $
---- perl-shared/Makefile.PL.in.orig	2004-04-03 09:33:13.000000000 -0500
-+++ perl-shared/Makefile.PL.in	2004-06-08 15:50:32.000000000 -0400
+$OpenBSD: patch-perl-shared_Makefile_PL_in,v 1.3 2004/10/13 13:43:26 danh Exp $
+--- perl-shared/Makefile.PL.in.orig	Wed Apr  7 17:04:53 2004
++++ perl-shared/Makefile.PL.in	Wed Oct 13 09:24:47 2004
 @@ -10,11 +10,11 @@ WriteMakefile(
      'NAME'         => 'RRDs',
      'VERSION_FROM' => '@top_srcdir@/perl-shared/RRDs.pm', # finds $VERSION
      'DEFINE'	   => "-DPERLPATCHLEVEL=$Config{PATCHLEVEL}",
 -    'INC'          => '-I@top_srcdir@ -I@top_srcdir@/src -I@top_srcdir@/gd1.3',
 +    'INC'          => '-I@top_srcdir@ -I@top_srcdir@/src -I$(LOCALBASE)/include',
-     'CCFLAGS'      => '-DHAVE_CONFIG_H',
+     'CCFLAGS'      => "$Config{ccflags} -DHAVE_CONFIG_H",
      # where to look for the necessary libraries 
      # Perl will figure out which one is valid
      'depend'	   => {'RRDs.c' => "@top_srcdir@/src/.libs/librrd_private.a"},

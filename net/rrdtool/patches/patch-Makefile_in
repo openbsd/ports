@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.11 2004/06/08 20:21:24 danh Exp $
---- Makefile.in.orig	2004-04-06 17:30:22.000000000 -0400
-+++ Makefile.in	2004-06-08 13:24:25.000000000 -0400
+$OpenBSD: patch-Makefile_in,v 1.12 2004/10/13 13:43:26 danh Exp $
+--- Makefile.in.orig	Sun Aug  8 06:40:15 2004
++++ Makefile.in	Wed Oct 13 09:32:41 2004
 @@ -171,7 +171,7 @@ RSYNC = rsync --rsh=ssh
  @USE_INSTALLED_LIBPNG_TRUE@SUBDIRS_2 = 
  
@@ -10,22 +10,28 @@ $OpenBSD: patch-Makefile_in,v 1.11 2004/06/08 20:21:24 danh Exp $
            src doc examples contrib tcl
  
  
-@@ -634,12 +634,12 @@ uninstall-info: uninstall-info-recursive
- # the special call to install-sh is because the -d switch is not portable
+@@ -635,18 +635,12 @@ uninstall-info: uninstall-info-recursive
  # mac os X has its perl module in bundles so it seems
  install-data-local:
--	$(top_srcdir)/config/mkinstalldirs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
--	$(INSTALL) -m 644 $(top_srcdir)/perl-piped/RRDp.pm $(DESTDIR)$(prefix)/lib/perl
--	$(INSTALL) -m 644 $(top_srcdir)/perl-shared/RRDs.pm $(DESTDIR)$(prefix)/lib/perl
--	$(INSTALL) -m 644 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
--	test -f $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@  && $(INSTALL) -m 755 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/lib/perl/auto/RRDs || true
--	test -f $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bundle  && $(INSTALL) -m 755 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bundle $(DESTDIR)$(prefix)/lib/perl/auto/RRDs || true
-+	$(top_srcdir)/config/mkinstalldirs $(DESTDIR)$(prefix)/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs
-+	$(INSTALL) -m 644 $(top_srcdir)/perl-piped/RRDp.pm $(DESTDIR)$(prefix)/libdata/perl5/site_perl/
-+	$(INSTALL) -m 644 $(top_srcdir)/perl-shared/RRDs.pm $(DESTDIR)$(prefix)/libdata/perl5/site_perl/
-+	$(INSTALL) -m 644 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bs $(DESTDIR)$(prefix)/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs
-+	test -f $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@  && $(INSTALL) -m 755 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs || true
-+	test -f $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bundle  && $(INSTALL) -m 755 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bundle $(DESTDIR)$(prefix)/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs || true
+ 	@if test "x$(PERL)" != "xno"; then \
+-	  echo "$(top_srcdir)/config/mkinstalldirs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs"; \
+-	  $(top_srcdir)/config/mkinstalldirs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs; \
+-	  echo "$(INSTALL) -m 644 $(top_srcdir)/perl-piped/RRDp.pm $(DESTDIR)$(prefix)/lib/perl"; \
+-	  $(INSTALL) -m 644 $(top_srcdir)/perl-piped/RRDp.pm $(DESTDIR)$(prefix)/lib/perl; \
+-	  echo "$(INSTALL) -m 644 $(top_srcdir)/perl-shared/RRDs.pm $(DESTDIR)$(prefix)/lib/perl"; \
+-	  $(INSTALL) -m 644 $(top_srcdir)/perl-shared/RRDs.pm $(DESTDIR)$(prefix)/lib/perl; \
+-	  echo "$(INSTALL) -m 644 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs"; \
+-	  $(INSTALL) -m 644 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs; \
+-	  echo "test -f $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@  && $(INSTALL) -m 755 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/lib/perl/auto/RRDs || true"; \
+-	  test -f $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@  && $(INSTALL) -m 755 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/lib/perl/auto/RRDs || true; \
+-	  echo "test -f $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bundle  && $(INSTALL) -m 755 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bundle $(DESTDIR)$(prefix)/lib/perl/auto/RRDs|| true"; \
+-	  test -f $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bundle  && $(INSTALL) -m 755 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bundle $(DESTDIR)$(prefix)/lib/perl/auto/RRDs|| true; \
++	  $(top_srcdir)/config/mkinstalldirs $(DESTDIR)$(prefix)/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs; \
++	  $(INSTALL) -m 644 $(top_srcdir)/perl-piped/RRDp.pm $(DESTDIR)$(prefix)/libdata/perl5/site_perl/; \
++	  $(INSTALL) -m 644 $(top_srcdir)/perl-shared/RRDs.pm $(DESTDIR)$(prefix)/libdata/perl5/site_perl/; \
++	  $(INSTALL) -m 644 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bs $(DESTDIR)$(prefix)/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs; \
++	  test -f $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@  && $(INSTALL) -m 755 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs || true; \
++	  test -f $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bundle  && $(INSTALL) -m 755 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bundle $(DESTDIR)$(prefix)/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs|| true; \
+ 	fi
  
  # rules for building the perl module
- 

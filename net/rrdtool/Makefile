@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2004/08/03 18:24:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2004/10/13 13:43:26 danh Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"system to store and display time-series data"
 
-RRDVERSION=	1.0.48
+RRDVERSION=	1.0.49
 DISTNAME=	rrdtool-${RRDVERSION}
 CATEGORIES=     net
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/ \
