@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2003/04/23 08:30:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2005/01/27 21:29:41 alek Exp $
 
 COMMENT=	"X11 animation player with support for lots of formats"
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	No Fee
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No Fee
+WANTLIB=		ICE SM X11 Xext Xt c m z
 
 BASEDISTFILE=xanim2801.tar.gz
 DISTFILES=${BASEDISTFILE}
