@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/12/09 05:06:01 jcs Exp $
+# $OpenBSD: Makefile,v 1.7 2002/04/19 14:57:03 jcs Exp $
 
 COMMENT=	"set of modules to use Gtk+ libraries from Perl"
 
@@ -7,8 +7,9 @@ DISTNAME=	Gtk-Perl-${VERSION}
 PKGNAME=	p5-Gtk-${VERSION}
 
 CATEGORIES=	x11 devel perl5
-NEED_VERSION=	1.500
+NEED_VERSION=	1.524
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -38,7 +39,7 @@ CONFIGURE_ARGS=	--without-gtkhtml --without-gtkxmhtml --without-gnome \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-MAKE_FLAGS=	INST_MAN3DIR="../blib/man3"
+MAKE_FLAGS=	INST_MAN3DIR="../blib/man3p"
 
 PERLDIR=	"${DESTDIR}/${PREFIX}/libdata/perl5/site_perl"
 FAKE_FLAGS=	${MAKE_FLAGS} \
@@ -46,7 +47,7 @@ FAKE_FLAGS=	${MAKE_FLAGS} \
 		INSTALLARCHLIB="${PERLDIR}/${MACHINE_ARCH}-openbsd" \
 		INSTALLSITELIB="${PERLDIR}" \
 		INSTALLSITEARCH="${PERLDIR}/${MACHINE_ARCH}-openbsd" \
-		INSTALLMAN3DIR="${DESTDIR}/${PREFIX}/man/man3" \
+		INSTALLMAN3DIR="${DESTDIR}/${PREFIX}/man/man3p" \
 
 FLAVORS=	gtkglarea
 FLAVOR?=	

@@ -1,61 +1,60 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/04/16 19:25:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/04/19 14:57:03 jcs Exp $
 !%%gtkglarea%%
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Atoms.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/CListModel.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/ColorSelectButton.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/ImlibImage.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/ImlibImage/Install/Files.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/ImlibImage/Install/GdkImlibTypes.h
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/ImlibImage/Install/pkg.typemap
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/Pixbuf.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/Pixbuf/Install/Files.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/Pixbuf/Install/GdkPixbufDefs.h
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/Pixbuf/Install/GdkPixbufTypemap
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/Pixbuf/Install/PerlGdkPixbufInt.h
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/Pixbuf/Install/pkg.typemap
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/Pixbuf/Types.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/Files.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/GdkTypes.h
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/GtkDefs.h
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/GtkTypemap
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/GtkTypes.h
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/MiscTypes.h
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/PerlGtkExt.h
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/PerlGtkInt.h
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gendefs.pl
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gendoc.pl
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/genext.pl
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gpdoc2pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-0.99.defs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-0.99.typemap
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-1.0.defs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-1.1.1.defs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-1.1.3.defs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-1.1.4.defs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-1.1.6.defs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-1.1.defs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-1.2.defs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/gtk-1.2.typemap
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install/ppport.h
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Keysyms.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/LWP.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/LWP/http.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/LogHandler.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Types.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/TypesLazy.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/io.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/lazy.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gdk/ImlibImage/ImlibImage.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gdk/ImlibImage/ImlibImage.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gdk/Pixbuf/Pixbuf.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gdk/Pixbuf/Pixbuf.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gdk/autosplit.ix
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gtk.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gtk.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/autosplit.ix
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/base/.packlist
+${P5ARCH}/Gtk.pm
+${P5ARCH}/Gtk/Atoms.pm
+${P5ARCH}/Gtk/CListModel.pm
+${P5ARCH}/Gtk/ColorSelectButton.pm
+${P5ARCH}/Gtk/Gdk.pm
+${P5ARCH}/Gtk/Gdk/ImlibImage.pm
+${P5ARCH}/Gtk/Gdk/ImlibImage/Install/Files.pm
+${P5ARCH}/Gtk/Gdk/ImlibImage/Install/GdkImlibTypes.h
+${P5ARCH}/Gtk/Gdk/ImlibImage/Install/pkg.typemap
+${P5ARCH}/Gtk/Gdk/Pixbuf.pm
+${P5ARCH}/Gtk/Gdk/Pixbuf/Install/Files.pm
+${P5ARCH}/Gtk/Gdk/Pixbuf/Install/GdkPixbufDefs.h
+${P5ARCH}/Gtk/Gdk/Pixbuf/Install/GdkPixbufTypemap
+${P5ARCH}/Gtk/Gdk/Pixbuf/Install/PerlGdkPixbufInt.h
+${P5ARCH}/Gtk/Gdk/Pixbuf/Install/pkg.typemap
+${P5ARCH}/Gtk/Gdk/Pixbuf/Types.pm
+${P5ARCH}/Gtk/Install/Files.pm
+${P5ARCH}/Gtk/Install/GdkTypes.h
+${P5ARCH}/Gtk/Install/GtkDefs.h
+${P5ARCH}/Gtk/Install/GtkTypemap
+${P5ARCH}/Gtk/Install/GtkTypes.h
+${P5ARCH}/Gtk/Install/MiscTypes.h
+${P5ARCH}/Gtk/Install/PerlGtkExt.h
+${P5ARCH}/Gtk/Install/PerlGtkInt.h
+${P5ARCH}/Gtk/Install/gendefs.pl
+${P5ARCH}/Gtk/Install/gendoc.pl
+${P5ARCH}/Gtk/Install/genext.pl
+${P5ARCH}/Gtk/Install/gpdoc2pod
+${P5ARCH}/Gtk/Install/gtk-0.99.defs
+${P5ARCH}/Gtk/Install/gtk-0.99.typemap
+${P5ARCH}/Gtk/Install/gtk-1.0.defs
+${P5ARCH}/Gtk/Install/gtk-1.1.1.defs
+${P5ARCH}/Gtk/Install/gtk-1.1.3.defs
+${P5ARCH}/Gtk/Install/gtk-1.1.4.defs
+${P5ARCH}/Gtk/Install/gtk-1.1.6.defs
+${P5ARCH}/Gtk/Install/gtk-1.1.defs
+${P5ARCH}/Gtk/Install/gtk-1.2.defs
+${P5ARCH}/Gtk/Install/gtk-1.2.typemap
+${P5ARCH}/Gtk/Install/ppport.h
+${P5ARCH}/Gtk/Keysyms.pm
+${P5ARCH}/Gtk/LWP.pm
+${P5ARCH}/Gtk/LWP/http.pm
+${P5ARCH}/Gtk/LogHandler.pm
+${P5ARCH}/Gtk/Types.pm
+${P5ARCH}/Gtk/TypesLazy.pm
+${P5ARCH}/Gtk/io.pm
+${P5ARCH}/Gtk/lazy.pm
+${P5ARCH}/auto/Gtk/Gdk/ImlibImage/ImlibImage.bs
+${P5ARCH}/auto/Gtk/Gdk/ImlibImage/ImlibImage.so
+${P5ARCH}/auto/Gtk/Gdk/Pixbuf/Pixbuf.bs
+${P5ARCH}/auto/Gtk/Gdk/Pixbuf/Pixbuf.so
+${P5ARCH}/auto/Gtk/Gdk/autosplit.ix
+${P5ARCH}/auto/Gtk/Gtk.bs
+${P5ARCH}/auto/Gtk/Gtk.so
+${P5ARCH}/auto/Gtk/autosplit.ix
 man/man3p/Gtk.3p
 man/man3p/Gtk::CListModel.3p
 man/man3p/Gtk::Gdk::ImlibImage::reference.3p
@@ -63,17 +62,15 @@ man/man3p/Gtk::Gdk::Pixbuf::reference.3p
 man/man3p/Gtk::cookbook.3p
 man/man3p/Gtk::objects.3p
 man/man3p/Gtk::reference.3p
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/base
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gdk/Pixbuf
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gdk/ImlibImage
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gdk
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/LWP
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/Pixbuf/Install
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/Pixbuf
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/ImlibImage/Install
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk/ImlibImage
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Gdk
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk
+@dirrm ${P5ARCH}/auto/Gtk/Gdk/Pixbuf
+@dirrm ${P5ARCH}/auto/Gtk/Gdk/ImlibImage
+@dirrm ${P5ARCH}/auto/Gtk/Gdk
+@dirrm ${P5ARCH}/auto/Gtk
+@dirrm ${P5ARCH}/Gtk/LWP
+@dirrm ${P5ARCH}/Gtk/Install
+@dirrm ${P5ARCH}/Gtk/Gdk/Pixbuf/Install
+@dirrm ${P5ARCH}/Gtk/Gdk/Pixbuf
+@dirrm ${P5ARCH}/Gtk/Gdk/ImlibImage/Install
+@dirrm ${P5ARCH}/Gtk/Gdk/ImlibImage
+@dirrm ${P5ARCH}/Gtk/Gdk
+@dirrm ${P5ARCH}/Gtk
