@@ -1,0 +1,16 @@
+$OpenBSD: patch-tcl_Makefile_in,v 1.5 2004/02/15 21:02:02 sturm Exp $
+--- tcl/Makefile.in.orig	2004-01-04 13:40:54.000000000 +0100
++++ tcl/Makefile.in	2004-02-13 20:12:31.000000000 +0100
+@@ -320,10 +320,10 @@ uninstall-am: uninstall-info-am
+ 
+ 
+ @COMP_TCL_TRUE@$(TCL_LIB_FILE): tclrrd.o
+-@COMP_TCL_TRUE@        $(TCL_SHLIB_LD) $(LIBDIRS) $< -o $@ @RRD_PRIVATE_LINK@ -lm $(TCL_LIB_SPEC)
++@COMP_TCL_TRUE@	$(TCL_SHLIB_LD) $(LIBDIRS) $< -o $@ @RRD_PRIVATE_LINK@ -lm $(TCL_LIB_SPEC)
+ 
+ @COMP_TCL_TRUE@tclrrd.o: tclrrd.c
+-@COMP_TCL_TRUE@	$(CC) $(CFLAGS) $(TCL_SHLIB_CFLAGS) $(INCLUDES) -c $< -DVERSION=\"$(VERSION)\"
++@COMP_TCL_TRUE@	$(CC) $(CFLAGS) $(AM_CPPFLAGS) $(TCL_SHLIB_CFLAGS) $(INCLUDES) -c $< -DVERSION=\"$(VERSION)\"
+ 
+ @COMP_TCL_TRUE@all-local: $(TCL_LIB_FILE)
+ 
