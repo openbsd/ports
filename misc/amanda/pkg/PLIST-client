@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST-client,v 1.1 2001/05/12 16:41:10 naddy Exp $
+libexec/amanda/amandad
+libexec/amanda/calcsize
+libexec/amanda/killpgrp
+libexec/amanda/patch-system
+libexec/amanda/rundump
+libexec/amanda/runtar
+libexec/amanda/selfcheck
+libexec/amanda/sendbackup
+libexec/amanda/sendsize
+libexec/amanda/versionsuffix
+man/man8/amanda.8
+man/man8/amrecover.8
+man/man8/amrestore.8
+sbin/amrecover
+sbin/amrestore
+share/doc/amanda/AUTHORS
+share/doc/amanda/COPYRIGHT
+share/doc/amanda/COPYRIGHT-REGEX
+share/doc/amanda/NEWS
+share/doc/amanda/README
+@dirrm share/doc/amanda
+@dirrm libexec/amanda

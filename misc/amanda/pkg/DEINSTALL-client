@@ -1,11 +1,10 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.2 2001/05/12 16:41:09 naddy Exp $
+# $OpenBSD: DEINSTALL-client,v 1.1 2001/05/12 16:41:09 naddy Exp $
 #
 # de-installation of amanda
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
-CONF_DIR=${SYSCONFDIR}/amanda
 
 if [ $# -ne 2 -o "$2" != "DEINSTALL" ]; then
     echo "usage: $0 distname DEINSTALL" >&2
@@ -19,12 +18,6 @@ fi
 # Don't actually do anything, but let the user know what can be
 # done to fully de-install the package
 #
-if [ -d $CONF_DIR ]; then
-   echo ""
-   echo "** The directory $CONF_DIR and any files within the directory"
-   echo "** have not been removed.  You MAY want to remove these files to"
-   echo "** completely remove the package."
-fi
 if grep -q -E ^amanda\|^amandaidx\|^amidxtape /etc/inetd.conf ; then
    echo ""
    echo "** Amanda should be removed from /etc/inetd.conf"

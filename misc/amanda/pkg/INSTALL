@@ -1,14 +1,13 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2000/03/07 01:58:07 kevlo Exp $
+# $OpenBSD: INSTALL,v 1.3 2001/05/12 16:41:09 naddy Exp $
 #
 # Pre/post-installation setup of amanda
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PREFIX:-/usr/local}
-EXAMPLE_DIR=${EXAMPLE_DIR:-${PREFIX}/share/examples/amanda}
-EXAMPLECONF_DIR=/usr/local/lib/amanda
-CONF_DIR=/etc/amanda
+EXAMPLE_DIR=$PREFIX/share/examples/amanda
+CONF_DIR=${SYSCONDFIR:-/etc}/amanda
 
 if [ $# -ne 2 ]; then
     echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
@@ -31,14 +30,13 @@ do_configuration()
 	echo "** The directory ${CONF_DIR} exists.  Your existing configuration"
 	echo "** files have not been changed.  You MAY need to update your"
 	echo "** configuration.  Please look at the directory"
-        echo "** ${EXAMPLECONF_DIR} and add any desired (but missing) entries into"
+        echo "** ${EXAMPLE_DIR} and add any desired (but missing) entries into"
         echo "** your current ${CONF_DIR}"
 
     else
-	mkdir -p ${EXAMPLECONF_DIR} ${CONF_DIR}
-	mkdir -p ${EXAMPLECONF_DIR}/csd ${CONF_DIR}/csd
-	cp ${EXAMPLE_DIR}/amanda.conf ${EXAMPLECONF_DIR}/csd
+	mkdir -p ${CONF_DIR}/csd
         cp ${EXAMPLE_DIR}/amanda.conf ${CONF_DIR}/csd
+        cp ${EXAMPLE_DIR}/disklist ${CONF_DIR}/csd
 	echo "** The directory ${CONF_DIR} has been created with a sample"
 	echo "** configuration.  You probably need to modify the files for"
 	echo "** your site."
@@ -52,33 +50,17 @@ do_configuration()
 #
 do_var()
 {
-    mkdir -p /var/amanda
+    mkdir -p /var/amanda/gnutar-lists
+    chown -R operator.operator /var/amanda
 }
 
-# Output sample crontab entries
+# create the needed /etc/amandates file if it does not exist 
+# note that it is hardwired to be in /etc, not ${SYSCONFDIR}
 #
-do_crontab()
+do_amandates()
 {
-    echo ""
-    echo "** See ${CONF_DIR}/crontab.sample for sample crontab entries"
-    cat >${EXAMPLECONF_DIR}/crontab.sample <<EOF
-0 16 * * 1-5 /usr/local/bin/amcheck -m csd
-45 0 * * 2-6 /usr/local/bin/amdump csd
-EOF
-    cp ${EXAMPLECONF_DIR}/crontab.sample ${CONF_DIR}
-}
-
-# Run the amanda "patch-system" command to update /etc/services and
-# /etc/inetd.conf
-#
-do_system()
-{
-    echo ""
-    echo "** udating /etc/services and /etc/inetd.  You should check"
-    echo "** both of these files, verifying proper installation.  Once"
-    echo "** verified issue the command:"
-    echo "**	kill -HUP `cat /var/run/inetd.pid`"
-    ${PREFIX}/libexec/patch-system
+    touch /etc/amandates
+    chown operator.operator /etc/amandates
 }
 
 case $2 in
@@ -87,11 +69,10 @@ case $2 in
 	;;
     POST-INSTALL)
 	do_configuration
-	do_crontab
-	do_system
+	do_var
+	do_amandates
 	echo ""
 	;;
 esac
 
 exit 0
-

@@ -1,0 +1,16 @@
+Release 2.4.0 addressed a number of security concerns with the assistance
+of Theo de Raadt, Ejovi Nuwere and David Sacerdote of the OpenBSD project.
+
+The backup data is transmitted across the network unencrypted unless you
+use kencrypt or IPSec.
+
+Kerberos support was present in 2.4.0, but is absent in 2.4.2.  Rumor is
+that the 2.4.0 code MAY work with 2.4.2, but the integration has proved
+to be difficult.
+Kerberos support should return in 2.5.0.
+
+There is work in progress to use gpg to encrypt the dump traffic:
+  NSC: Secure Backups with Amanda and GPG
+  http://security.uchicago.edu/tools/gpg-amanda/
+
+$OpenBSD: SECURITY,v 1.1 2001/05/12 16:41:10 naddy Exp $
