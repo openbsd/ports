@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/01/25 17:01:12 lebel Exp $
+# $OpenBSD: Makefile,v 1.16 2002/03/04 20:17:23 lebel Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
@@ -26,6 +26,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FLAVORS=	slang mixmaster compressed
 FLAVOR?=
+
+# XXX workaround sparc64 gcc optimization bug
+.if ${MACHINE_ARCH:Msparc64}
+PATCH_LIST=     gcc-* patch-*
+.endif
 
 SYSCONFDIR=	/etc/mutt
 CONFIGURE_ARGS=	--with-sharedir="${PREFIX}/share/mutt" \
