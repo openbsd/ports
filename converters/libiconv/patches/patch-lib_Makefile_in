@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.4 2001/09/23 03:08:50 brad Exp $
---- lib/Makefile.in.orig	Wed Jun 27 18:37:49 2001
-+++ lib/Makefile.in	Sat Sep 22 13:54:47 2001
+$OpenBSD: patch-lib_Makefile_in,v 1.5 2002/06/10 04:41:48 brad Exp $
+--- lib/Makefile.in.orig	Thu May 23 05:48:42 2002
++++ lib/Makefile.in	Fri Jun  7 17:55:20 2002
 @@ -22,7 +22,7 @@ LIBTOOL_COMPILE = $(LIBTOOL) --mode=comp
  LIBTOOL_LINK = $(LIBTOOL) --mode=link
  LIBTOOL_INSTALL = $(LIBTOOL) --mode=install
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_Makefile_in,v 1.4 2001/09/23 03:08:50 brad Exp $
  MV = mv
  LN = @LN@
  LN_S = @LN_S@
-@@ -84,7 +84,7 @@ iconv.lo : $(srcdir)/iconv.c $(srcdir)/c
+@@ -88,7 +88,7 @@ iconv.lo : $(srcdir)/iconv.c $(srcdir)/c
  # $(libdir) and $(includedir) - don't use $(prefix) and $(exec_prefix) here.
  install-lib : all force
  	if [ ! -d $(libdir) ] ; then mkdir $(libdir) ; fi
