@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/25 05:43:49 jsyn Exp $
+# $OpenBSD: Makefile,v 1.5 2001/08/04 07:42:04 jsyn Exp $
 
-COMMENT=		"c source code auditing tool"
+COMMENT=		"source code auditing tool"
 
-DISTNAME=		rats-1.0
+DISTNAME=		rats-1.1
 CATEGORIES=     	devel security
-NEED_VERSION=		1.425
+NEED_VERSION=		1.428
 
 HOMEPAGE=		http://www.securesw.com/rats/
 
