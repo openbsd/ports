@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/07/07 23:11:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2003/10/23 01:36:27 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=flac/}
 MASTER_SITES0=	ftp://ftp.debian.org/debian/pool/main/f/flac/ \
 		ftp://ftp.de.debian.org/debian/pool/main/f/flac/
-PATCHFILES=	flac_${VERSION}-4.diff.gz:0
+PATCHFILES=	flac_${VERSION}-10.diff.gz:0
 PATCH_DIST_STRIP= -p1
 
 LIB_DEPENDS=	xmms.3::audio/xmms \
