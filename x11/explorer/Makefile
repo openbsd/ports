@@ -1,16 +1,9 @@
-# OpenBSD makefile for:   explorer
-# Version required:    0.72
-# Date created:        May 19 1998
-# Whom:                Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.18 2001/10/28 13:05:50 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.19 2002/10/08 15:53:36 naddy Exp $
 
 COMMENT=	"file manager with same look and feel as Windows95(tm)"
 
 DISTNAME=	explorer-0.72
 CATEGORIES=	x11
-NEED_VERSION=	1.402
 MASTER_SITES=	ftp://jungfrau.ptf.hro.nl/pub/explorer/
 
 # License: GPL
@@ -19,12 +12,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	qt.1.::x11/qt
+MODULES=	qt
 
 CONFIGURE_STYLE=gnu dest
-CONFIGURE_ARGS+=	--datadir='$${DESTDIR}${PREFIX}/lib/X11/explorer' \
-			--with-qt-include=${PREFIX}/include/X11/qt \
-			--with-qt-lib=${PREFIX}/lib/qt \
+CONFIGURE_ARGS=	--datadir='$${DESTDIR}${PREFIX}/lib/X11/explorer' \
+		--with-qt-include=${MODQT_INCDIR} \
+		--with-qt-lib=${MODQT_LIBDIR}
 
 ALL_TARGET=	explorer
 USE_X11=	Yes
