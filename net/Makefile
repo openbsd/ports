@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 1998/07/17 10:31:58 form Exp $
+# $OpenBSD: Makefile,v 1.22 1998/08/17 05:20:53 form Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -54,6 +54,7 @@
 #    SUBDIR += netpipes
 #    SUBDIR += nettest
      SUBDIR += nfr
+     SUBDIR += ntop
 #    SUBDIR += p5-Archie
 #    SUBDIR += p5-Net
 #    SUBDIR += p5-Net-DNS
