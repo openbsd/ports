@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2001/05/06 00:13:07 lebel Exp $
+# $OpenBSD: Makefile,v 1.18 2001/11/01 18:42:11 wilfried Exp $
 
 COMMENT=	"GNUstep/OPENSTEP property lists compatibility library"
 
 DISTNAME=	libPropList-0.10.1
 PKGNAME=	libproplist-0.10.1
 CATEGORIES=	devel
-NEED_VERSION=	1.402
+NEED_VERSION=	1.475
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR= libs
 
@@ -17,6 +17,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
+		patch-*
 
 USE_GMAKE=	Yes
 SEPARATE_BUILD=	concurrent

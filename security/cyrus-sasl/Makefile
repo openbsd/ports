@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2001/10/01 13:28:43 jakob Exp $
+# $OpenBSD: Makefile,v 1.17 2001/11/01 18:34:51 wilfried Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
 DISTNAME=	cyrus-sasl-1.5.24
 CATEGORIES=     security
-NEED_VERSION=	1.454
+NEED_VERSION=	1.475
 
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/OLD-VERSIONS/sasl/
@@ -46,6 +46,13 @@ post-patch:
 .else
 CONFIGURE_ARGS+=	--with-dblib=ndbm
 .endif
+
+post-patch:
+	@cd ${WRKSRC}/config; \
+	${PATCH} --forward --quiet -E < \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig && \
+	${PATCH} --forward --quiet -E < \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sasl
