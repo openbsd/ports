@@ -1,6 +1,6 @@
-$OpenBSD: patch-radius_src_radiusd_c,v 1.1 2001/08/14 18:05:19 danh Exp $
---- radius/src/radiusd.c.orig	Tue Aug 14 13:20:45 2001
-+++ radius/src/radiusd.c	Tue Aug 14 13:20:46 2001
+$OpenBSD: patch-radius_src_radiusd_c,v 1.2 2003/06/29 04:48:39 avsm Exp $
+--- radius/src/radiusd.c.orig	Fri Jun 20 14:01:33 2003
++++ radius/src/radiusd.c	Fri Jun 20 14:03:24 2003
 @@ -72,7 +72,6 @@ static char sccsid[] =
  #include	<errno.h>
  #include	<sys/wait.h>
@@ -9,3 +9,15 @@ $OpenBSD: patch-radius_src_radiusd_c,v 1.1 2001/08/14 18:05:19 danh Exp $
  
  #include	"radius.h"
  #include	"users.h"
+@@ -2498,9 +2497,9 @@ const size_t    hostnm_len;
+ 
+ #define BUFFER_LEN 256
+ #define SECRET_LEN 64
+-#define SECRET_LEN_S "64"
++#define SECRET_LEN_S "63"
+ #define HOSTNM_LEN 128
+-#define HOSTNM_LEN_S "128"
++#define HOSTNM_LEN_S "127"
+ int
+ update_clients()
+ {
