@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2003/01/09 02:47:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2003/01/09 17:44:58 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -1202,6 +1202,7 @@ share/config/klipperrc
 share/config/konqsidebartng.rc
 share/config/konsolerc
 share/config/kshorturifilterrc
+share/config/ksysguarddrc.sample
 share/config/kuriikwsfilterrc
 share/config/kwritedrc
 share/doc/HTML/en/kaddressbook/common

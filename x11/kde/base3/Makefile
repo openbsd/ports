@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/01/07 15:36:35 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2003/01/09 17:44:58 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 CATEGORIES=		x11 x11/kde
@@ -16,5 +16,6 @@ SEPARATE_BUILD=	flavored
 post-install:
 	rm -rf ${PREFIX}/share/config/kdm
 	${INSTALL_PROGRAM} ${WRKBUILD}/kdm/kfrontend/genkdmconf ${PREFIX}/libexec
+	${INSTALL_DATA} ${PREFIX}/etc/ksysguarddrc ${PREFIX}/share/config/ksysguarddrc.sample
 
 .include <bsd.port.mk>
