@@ -1,4 +1,4 @@
-/* $OpenBSD: openbsd.h,v 1.7 1999/01/24 13:12:40 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.8 1999/01/25 20:33:45 espie Exp $ */
 /* vi:ts=8: 
  */
 
@@ -55,6 +55,13 @@
    default to using nm. */
 #undef OBJECT_FORMAT_COFF
 #undef EXTENDED_COFF
+
+/* all configurations that don't use elf must be explicit about not using
+ * dwarf unwind information. egcs doesn't try too hard to check internal
+ * configuration files...
+ */
+#undef DWARF2_UNWIND_INFO
+#define DWARF2_UNWIND_INFO 0
 
 /* taken from alpha/osf.h. This used to be common to all alpha
  * configurations, but elf has departed from it.
