@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2003/01/18 22:53:29 avsm Exp $
+# $OpenBSD: Makefile,v 1.14 2004/10/20 18:27:38 avsm Exp $
 
 COMMENT=	"interface to access block/stream encryption algorithms"
 
-DISTNAME=	libmcrypt-2.5.5
+DISTNAME=	libmcrypt-2.5.7
 CATEGORIES=	security
 MASTER_SITES=	ftp://mcrypt.hellug.gr/pub/mcrypt/libmcrypt/ \
 		ftp://argeas.cs-net.gr/pub/unix/mcrypt/libmcrypt/

@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2004/09/15 18:36:00 espie Exp $
-@lib lib/libmcrypt.so.8.5
+@comment $OpenBSD: PFRAG.shared,v 1.8 2004/10/20 18:27:38 avsm Exp $
+@lib lib/libmcrypt.so.8.7
