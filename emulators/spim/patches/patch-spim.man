@@ -1,0 +1,8 @@
+--- spim.man.orig	Mon Jul 23 12:03:34 2001
++++ spim.man	Mon Jul 23 12:03:38 2001
+@@ -1,5 +1,4 @@
+ .\" $Header: /home/cvs/ports/emulators/spim/patches/Attic/patch-spim.man,v 1.1.1.1 2001/07/23 14:54:28 kevlo Exp $
+-
+ .TH spim 1
+ .SH NAME
+ spim \- A MIPS R2000/R3000 Simulator
