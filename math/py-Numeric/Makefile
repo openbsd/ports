@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2002/08/18 15:51:44 shell Exp $
+# $OpenBSD: Makefile,v 1.8 2002/09/15 11:08:42 shell Exp $
 
 COMMENT=	"fast array facility to the Python language"
 
-VERSION=	21.0
+VERSION=	22.0
 DISTNAME=	Numeric-${VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	math
