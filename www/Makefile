@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2002/12/01 20:58:38 margarida Exp $
+# $OpenBSD: Makefile,v 1.100 2003/02/23 21:53:29 danh Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -15,6 +15,7 @@
      SUBDIR += cgiparse
 #    SUBDIR += chimera
 #    SUBDIR += comline
+     SUBDIR += cronolog
      SUBDIR += decss
      SUBDIR += dillo
      SUBDIR += flashplugin
