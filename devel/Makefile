@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2001/04/05 00:33:04 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2001/04/16 20:15:23 lebel Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -63,6 +63,7 @@
      SUBDIR += libproplist
      SUBDIR += libsigc++
      SUBDIR += libslang
+     SUBDIR += libtai
      SUBDIR += libtool
      SUBDIR += lincvs
 #    SUBDIR += linux_devel
