@@ -1,42 +1,42 @@
-*** Fortify-1.2.6-unix-x86/src/Makefile-orig	Thu Aug 20 10:46:11 1998
---- Fortify-1.2.6-unix-x86/src/Makefile	Thu Aug 20 10:46:47 1998
+*** Fortify-1.3.0-unix-x86/src/Makefile-orig	Tue Nov  3 12:02:51 1998
+--- Fortify-1.3.0-unix-x86/src/Makefile	Tue Nov  3 12:05:28 1998
 ***************
 *** 1,9 ****
   
 ! CC	= gcc # -Wall
   
-  # For GNU/Linux systems
-! CFLAGS	= -I. -O2	# -static
-! YACC	= bison -y
+  # Linux and BSD systems:
+! CFLAGS = -I. -O2       # -static
+! YACC   = bison -y
+  LDFLAGS = -static
+  LEX    = lex -l
   
-  # For the Cygnus Win32 environment
-  #CFLAGS	= -DL_ENDIAN -DGNU_WIN32 -I. -O
 --- 1,9 ----
   
-! CC	= cc
+! CC	= cc # -Wall
   
-  # For GNU/Linux systems
-! #CFLAGS	= -I. -O2	# -static
-! #YACC	= bison -y
+  # Linux and BSD systems:
+! #CFLAGS = -I. -O2       # -static
+! #YACC   = bison -y
+  LDFLAGS = -static
+  LEX    = lex -l
   
-  # For the Cygnus Win32 environment
-  #CFLAGS	= -DL_ENDIAN -DGNU_WIN32 -I. -O
 ***************
-*** 15,22 ****
-  #LEX	= flex -l
+*** 31,38 ****
+  #LDFLAGS = -non_shared
   
   # Everything else
 ! #CFLAGS	= -I. -O
 ! #YACC	= yacc
+  #LDFLAGS = # -static
   
-  # You will amost certainly need this flag if you are compiling under
-  # a BSD or Linux system:-
---- 15,22 ----
-  #LEX	= flex -l
+  # ----------------------------------------------------------------------
+--- 31,38 ----
+  #LDFLAGS = -non_shared
   
   # Everything else
 ! CFLAGS	= -I. -O2
 ! YACC	= yacc
+  #LDFLAGS = # -static
   
-  # You will amost certainly need this flag if you are compiling under
-  # a BSD or Linux system:-
+  # ----------------------------------------------------------------------
