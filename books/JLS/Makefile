@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/06 15:37:14 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2005/01/06 18:43:22 ian Exp $
 
 COMMENT=        "Sun's official Java Language Specification"
 
@@ -8,7 +8,7 @@ DISTNAME=	langspec-${VERSION}
 DISTFILES=	${DISTNAME}.pdf
 CATEGORIES=	books
 
-HOMEPAGE=	http://java.sun.com/
+HOMEPAGE=	http://java.sun.com/docs/books/jls/second_edition/
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
