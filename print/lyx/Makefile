@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2001/10/04 13:57:29 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2001/11/10 14:36:58 obecian Exp $
 
 COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
 
-BROKEN=		"does not build in any reproducible way"
 DISTNAME=	lyx-1.1.6fix3
 CATEGORIES=	print
 NEED_VERSION=	1.364
@@ -11,6 +10,8 @@ MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.lip6.fr/pub/lyx/stable/
 
 HOMEPAGE=	http://www.lyx.org/
+
+MODULES=	gettext
 
 MAINTAINER=	Mark Grimes <obecian@openbsd.org>
 
@@ -25,14 +26,15 @@ PERMIT_DISTFILES_FTP=	Yes
 BUILD_DEPENDS=	latex::print/teTeX/base
 RUN_DEPENDS=	latex::print/teTeX/base \
 		ispell::textproc/ispell
-LIB_DEPENDS=	xforms::x11/xforms
+LIB_DEPENDS=	xforms::x11/xforms \
+		intl.1::devel/gettext
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=		autoconf
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 STRIP=
-CONFIGURE_ARGS+=--with-extra-lib=${LOCALBASE}/lib \
-	--with-extra-inc="${LOCALBASE}/include \
-	${LOCALBASE}/include/X11"
+CONFIGURE_ARGS=		--with-extra-lib=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--with-extra-inc="${LOCALBASE}/include \
+			${LOCALBASE}/include/X11"
 
 post-install:
 	@strip ${PREFIX}/bin/lyx

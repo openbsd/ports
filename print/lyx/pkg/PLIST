@@ -1,24 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/07/27 02:38:27 obecian Exp $
-@dirrm share/lyx
-@dirrm share/lyx/bind
-@dirrm share/lyx/clipart
-@dirrm share/lyx/doc
-@dirrm share/lyx/examples
-@dirrm share/lyx/images
-@dirrm share/lyx/kbd
-@dirrm share/lyx/layouts
-@dirrm share/lyx/reLyX
-@dirrm share/lyx/reLyX/Text
-@dirrm share/lyx/scripts
-@dirrm share/lyx/templates
-@dirrm share/lyx/tex
-@dirrm share/lyx/ui
+@comment $OpenBSD: PLIST,v 1.6 2001/11/10 14:36:59 obecian Exp $
 bin/listerrors
 bin/lyx
 bin/noweb2lyx
 bin/reLyX
 man/man1/lyx.1
 man/man1/reLyX.1
+share/locale/ca/LC_MESSAGES/lyx.mo
+share/locale/cs/LC_MESSAGES/lyx.mo
+share/locale/da/LC_MESSAGES/lyx.mo
+share/locale/de/LC_MESSAGES/lyx.mo
+share/locale/es/LC_MESSAGES/lyx.mo
+share/locale/eu/LC_MESSAGES/lyx.mo
+share/locale/fi/LC_MESSAGES/lyx.mo
+share/locale/fr/LC_MESSAGES/lyx.mo
+share/locale/he/LC_MESSAGES/lyx.mo
+share/locale/hu/LC_MESSAGES/lyx.mo
+share/locale/it/LC_MESSAGES/lyx.mo
+share/locale/nl/LC_MESSAGES/lyx.mo
+share/locale/no/LC_MESSAGES/lyx.mo
+share/locale/pl/LC_MESSAGES/lyx.mo
+share/locale/pt/LC_MESSAGES/lyx.mo
+share/locale/ro/LC_MESSAGES/lyx.mo
+share/locale/ru/LC_MESSAGES/lyx.mo
+share/locale/sl/LC_MESSAGES/lyx.mo
+share/locale/sv/LC_MESSAGES/lyx.mo
+share/locale/tr/LC_MESSAGES/lyx.mo
+share/locale/wa/LC_MESSAGES/lyx.mo
 share/lyx/CREDITS
 share/lyx/bind/broadway.bind
 share/lyx/bind/cua.bind
@@ -375,3 +382,17 @@ share/lyx/tex/revtex.cls
 share/lyx/textclass.lst
 share/lyx/ui/default.ui
 share/lyx/ui/old-default.ui
+@dirrm share/lyx/ui
+@dirrm share/lyx/tex
+@dirrm share/lyx/templates
+@dirrm share/lyx/scripts
+@dirrm share/lyx/reLyX/Text
+@dirrm share/lyx/reLyX
+@dirrm share/lyx/layouts
+@dirrm share/lyx/kbd
+@dirrm share/lyx/images
+@dirrm share/lyx/examples
+@dirrm share/lyx/doc
+@dirrm share/lyx/clipart
+@dirrm share/lyx/bind
+@dirrm share/lyx
