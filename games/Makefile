@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2000/04/18 23:59:11 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2000/07/10 01:57:12 kevlo Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -60,6 +60,7 @@
      SUBDIR += xblast
      SUBDIR += xboard
      SUBDIR += xboing
+     SUBDIR += xbreaky
      SUBDIR += xchomp
      SUBDIR += xcubes
      SUBDIR += xdeblock
