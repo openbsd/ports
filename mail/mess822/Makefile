@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/24 23:28:16 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/28 07:40:33 camield Exp $
 
 DISTNAME=	mess822-0.58
 HOMEPAGE=	http://cr.yp.to/mess822.html
@@ -15,6 +15,11 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.jp.qmail.org/qmail/ \
 		http://ftp.rifkin.technion.ac.il/pub/qmail/ \
 		http://koobera.math.uic.edu/www/software/
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 QMAILDIR=	/var/qmail
 NO_CONFIGURE=	Yes
