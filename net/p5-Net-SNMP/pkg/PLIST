@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/17 15:34:07 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/01/17 01:55:05 naddy Exp $
 bin/snmpkey
 ${P5SITE}/Net/SNMP.pm
 ${P5SITE}/Net/SNMP/Dispatcher.pm
@@ -9,8 +9,12 @@ ${P5SITE}/Net/SNMP/Security.pm
 ${P5SITE}/Net/SNMP/Security/Community.pm
 ${P5SITE}/Net/SNMP/Security/USM.pm
 ${P5SITE}/Net/SNMP/Transport/UDP.pm
+@comment ${P5ARCH}/auto/Net/SNMP/.packlist
 man/man1/snmpkey.1
 man/man3p/Net::SNMP.3p
+@comment @dirrm ${P5ARCH}/auto/Net/SNMP
+@comment @dirrm ${P5ARCH}/auto/Net
 @dirrm ${P5SITE}/Net/SNMP/Transport
 @dirrm ${P5SITE}/Net/SNMP/Security
 @dirrm ${P5SITE}/Net/SNMP
+@dirrm ${P5SITE}/Net

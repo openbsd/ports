@@ -1,10 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/10/16 16:51:07 pvalchev Exp $
-libdata/perl5/site_perl/Net/IRC.pm
-libdata/perl5/site_perl/Net/IRC/Connection.pm
-libdata/perl5/site_perl/Net/IRC/DCC.pm
-libdata/perl5/site_perl/Net/IRC/Event.pm
+@comment $OpenBSD: PLIST,v 1.4 2004/01/17 01:55:05 naddy Exp $
+${P5SITE}/Net/IRC.pm
+${P5SITE}/Net/IRC/Connection.pm
+${P5SITE}/Net/IRC/DCC.pm
+${P5SITE}/Net/IRC/Event.pm
+@comment ${P5ARCH}/auto/Net/IRC/.packlist
 man/man3p/Net::Connection.3p
 man/man3p/Net::DCC.3p
 man/man3p/Net::Event.3p
 man/man3p/Net::IRC.3p
-@dirrm libdata/perl5/site_perl/Net/IRC
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Net/IRC
+@comment @dirrm ${P5ARCH}/auto/Net
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Net/IRC
+@dirrm ${P5SITE}/Net

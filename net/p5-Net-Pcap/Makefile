@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.6 2002/12/29 21:14:11 fgsch Exp $
+#   $OpenBSD: Makefile,v 1.7 2004/01/17 01:55:05 naddy Exp $
 
 COMMENT=	"module for pcap access"
 
@@ -6,6 +6,7 @@ DISTNAME=	Net-Pcap-0.04
 PKGNAME=	p5-Net-Pcap-0.04
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/}
+NOT_FOR_ARCHES=	${NO_SHARED_ARCHES}
 
 MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 

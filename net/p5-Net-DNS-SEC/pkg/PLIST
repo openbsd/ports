@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/01/11 19:13:09 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/01/17 01:55:05 naddy Exp $
 ${P5SITE}/Net/DNS/Keyset.pm
 ${P5SITE}/Net/DNS/RR/DNSKEY.pm
 ${P5SITE}/Net/DNS/RR/DS.pm
@@ -22,7 +22,7 @@ man/man3p/Net::DNS::RR::SIG.3p
 man/man3p/Net::DNS::RR::SIG::Private.3p
 man/man3p/Net::DNS::SEC.3p
 man/man3p/Net::DNS::SEC::Private.3p
-@dirrm ${P5ARCH}/auto/Net/DNS/SEC
+@comment @dirrm ${P5ARCH}/auto/Net/DNS/SEC
 @dirrm ${P5SITE}/Net/DNS/SEC
 @dirrm ${P5SITE}/Net/DNS/RR/SIG
 @dirrm ${P5SITE}/Net/DNS/RR

@@ -1,10 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:05 espie Exp $
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Net/RawIP.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Net/RawIP/libpcap.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/RawIP/RawIP.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/RawIP/RawIP.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/RawIP/autosplit.ix
+@comment $OpenBSD: PLIST,v 1.4 2004/01/17 01:55:05 naddy Exp $
+${P5ARCH}/Net/RawIP.pm
+${P5ARCH}/Net/RawIP/libpcap.pod
+@comment ${P5ARCH}/auto/Net/RawIP/.packlist
+${P5ARCH}/auto/Net/RawIP/RawIP.bs
+${P5ARCH}/auto/Net/RawIP/RawIP.so
+${P5ARCH}/auto/Net/RawIP/autosplit.ix
 man/man3p/Net::RawIP.3p
 man/man3p/Net::RawIP::libpcap.3p
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/RawIP
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Net/RawIP
+@dirrm man/man3p
+@dirrm ${P5ARCH}/auto/Net/RawIP
+@dirrm ${P5ARCH}/auto/Net
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}/Net/RawIP
+@dirrm ${P5ARCH}/Net
+@dirrm ${P5ARCH}

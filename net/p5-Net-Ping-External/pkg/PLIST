@@ -1,4 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:05 espie Exp $
-libdata/perl5/site_perl/Net/Ping/External.pm
+@comment $OpenBSD: PLIST,v 1.3 2004/01/17 01:55:05 naddy Exp $
+${P5SITE}/Net/Ping/External.pm
+@comment ${P5ARCH}/auto/Net/Ping/External/.packlist
 man/man3p/Net::Ping::External.3p
-@dirrm libdata/perl5/site_perl/Net/Ping
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Net/Ping/External
+@comment @dirrm ${P5ARCH}/auto/Net/Ping
+@comment @dirrm ${P5ARCH}/auto/Net
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Net/Ping
+@dirrm ${P5SITE}/Net
