@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/05/06 08:21:57 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/04/09 09:47:10 sturm Exp $
 bin/tgif
 @comment lib/X11/tgif/Copyright
 @comment lib/X11/tgif/LICENSE.QPL
 lib/X11/tgif/eq4-2x.sym
 lib/X11/tgif/eq4-epstool.sym
+lib/X11/tgif/eq4-lyx-ps2epsi.sym
 lib/X11/tgif/eq4-ps2epsi.sym
 lib/X11/tgif/eq4.sym
 lib/X11/tgif/eq4xpm.sym
