@@ -1,5 +1,7 @@
---- conf/master.cf.orig	Tue Jul 10 09:42:19 2001
-+++ conf/master.cf	Tue Jul 10 09:41:45 2001
+$Id: patch-master.cf,v 1.5 2001/08/09 07:37:38 jakob Exp $
+
+--- conf/master.cf.orig	Tue Aug  7 00:59:13 2001
++++ conf/master.cf	Thu Aug  9 09:27:53 2001
 @@ -68,22 +68,22 @@
  # service type	private	unpriv	chroot	wakeup	maxproc	command + args
  # 		(yes)	(yes)	(yes)	(never)	(50)
@@ -18,7 +20,7 @@
 -showq     unix	n	-	n	-	-	showq
 -error     unix	-	-	n	-	-	error
 +smtp	  inet	n	-	-	-	-	smtpd
-+#628      inet  n       -       -       -       -       qmqpd
++#628	  inet	n	-	-	-	-	qmqpd
 +pickup	  fifo	n	n	-	60	1	pickup
 +cleanup	  unix	-	-	-	-	0	cleanup
 +qmgr	  fifo	n	-	-	300	1	qmgr
@@ -34,6 +36,6 @@
  virtual	  unix	-	n	n	-	-	virtual
 -lmtp	  unix	-	-	n	-	-	lmtp
 +lmtp	  unix	-	-	-	-	-	lmtp
- cyrus	  unix	-	n	n	-	-	pipe
-   flags=R user=cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
- uucp	  unix	-	n	n	-	-	pipe
+ #
+ # Interfaces to non-Postfix software. Be sure to examine the manual
+ # pages of the non-Postfix software to find out what options it wants.
