@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.9 2004/06/21 23:25:07 xsa Exp $
+# $OpenBSD: python.port.mk,v 1.10 2004/08/06 07:33:19 xsa Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -11,6 +11,11 @@ _MODPY_BUILD_DEPENDS=	:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION}
 BUILD_DEPENDS+=		${_MODPY_BUILD_DEPENDS}
 .endif
 RUN_DEPENDS+=		${_MODPY_BUILD_DEPENDS}
+
+.if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
+MODPY_EXPAT_DEPENDS=	:python-expat-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-expat	
+MODPY_TKINTER_DEPENDS=	:python-tkinter-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-tkinter
+.endif
 
 MODPY_BIN=		${LOCALBASE}/bin/python${MODPY_VERSION}
 MODPY_INCDIR=		${LOCALBASE}/include/python${MODPY_VERSION}
