@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2000/03/07 22:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2000/03/12 20:37:22 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -20,7 +20,6 @@ FORTIFY=	Fortify-1.4.5-unix-src
 
 .if ${MACHINE_ARCH} == "i386"
 DISTNAME=	navigator-v${NAVIGATOR_V2}-export.x86-bsdi-bsd2
-FAKE=		Yes
 NAVIGATORNAME=	navigator-v${NAVIGATOR_V2}.x86-bsdi-bsd2
 MAINDIR=	bsdi21/navigator_standalone
 SUPDIR=		sunos413/navigator_standalone
@@ -34,14 +33,14 @@ SUPDIR=		bsdi21/navigator_standalone
 SUPDISTFILES=	${NS_I386}:0
 .endif
 
-FAKE?=	No
 SUBMAIN=communicator/english/${NAVIGATOR_V}/unix/unsupported/${MAINDIR}
 SUBSUP=	communicator/english/${NAVIGATOR_V}/unix/unsupported/${SUPDIR}
 
 PKGNAME=	navigator-${NAVIGATOR_V}
 CATEGORIES=     www
-NEED_VERSION=	1.218
 DIST_SUBDIR=	netscape
+
+NEED_VERSION=	1.218
 
 MASTER_SITES= \
 	http://wuarchive.wustl.edu/packages/www/Netscape/${SUBMAIN}/ \
@@ -73,18 +72,19 @@ MASTER_SITES1=	ftp://ftp.fortify.net/pub/Fortify/ \
 DISTFILES=	${DISTNAME}.tar.gz \
 		${FORTIFY}.tar.gz:1
 
-OBJMACHINE=	"yes"
-NO_CDROM=       "NOFEE: see http://www.fortify.net/copyright.txt"
-PERMIT_PACKAGE_CDROM=	No fee
-PERMIT_DISTFILES_CDROM=	No fee
+MAINTAINER=	brad@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_DISTFILES_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_FTP=	No
 
-NO_CONFIGURE=	"No configure scripts"
-WRKDIST=	${WRKDIR}
 FAKE=		Yes
 
-MAINTAINER=	brad@openbsd.org
+NO_CONFIGURE=	Yes
+OBJMACHINE=	Yes
+
+WRKDIST=	${WRKDIR}
 
 pre-fetch:
 .if !defined(NO_WARNINGS)
@@ -122,7 +122,7 @@ post-install:
 	@rm -f ${PREFIX}/netscape/netscape_dns
 .endif
 	@cd ${WRKDIR}/${FORTIFY} && \
-	ln -sf languages/English Messages && \
+	ln -fs languages/English Messages && \
 	{ echo yes ; echo no ; echo no; } \
 	| src/cmdline/fortify >/dev/null ${PREFIX}/netscape/netscape
 .if ${MACHINE_ARCH} == "sparc"
@@ -130,13 +130,8 @@ post-install:
 	{ echo yes ; echo no ; echo no; } \
 	| src/cmdline/fortify >/dev/null ${PREFIX}/netscape/netscape_nis
 .endif
-.if ${FAKE:L} == "yes"
 	@sed -e 's#@netscape_home@#${TRUEPREFIX}/netscape#' \
 	 ${FILESDIR}/netscape.${MACHINE_ARCH} > ${WRKDIR}/netscape
-.else
-	@sed -e 's#@netscape_home@#${PREFIX}/netscape#' \
-	 ${FILESDIR}/netscape.${MACHINE_ARCH} > ${WRKDIR}/netscape
-.endif
 	@if [ -f ${PREFIX}/bin/netscape ]; then \
 	 mv ${PREFIX}/bin/netscape ${PREFIX}/bin/netscape.old; \
 	fi
