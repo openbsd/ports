@@ -1,0 +1,26 @@
+$OpenBSD: patch-configure_in,v 1.1 2000/09/16 16:13:06 espie Exp $
+--- configure.in.orig	Sat Sep 16 01:30:59 2000
++++ configure.in	Sat Sep 16 01:40:29 2000
+@@ -738,16 +738,12 @@ case "$target" in
+ *-openbsd*)
+     DLL_SUFFIX=".so.1.0"
+     DSO_CFLAGS=''
+-    DSO_PIC_CFLAGS='-fPIC'
+-    DSO_LDOPTS='-shared -h $@'
+-    MKSHLIB='$(LD) $(DSO_LDOPTS) -o $@'
+-    MKCSHLIB='$(LD) $(DSO_LDOPTS) -o $@'
+-    if $CC -E - -dM </dev/null | grep -v __ELF__ >/dev/null; then
+-	DSO_LDOPTS="-Bshareable /usr/lib/c++rt0.o"
+-    fi
+-    if test "$LIBRUNPATH"; then
+-	DSO_LDOPTS="-R$LIBRUNPATH $DSO_LDOPTS"
+-    fi
++    CFLAGS="$CFLAGS -Dunix"
++    CXXFLAGS="$CXXFLAGS -Dunix"
++    DSO_PIC_CFLAGS='-fPIC -DPIC'
++    DSO_LDOPTS='-shared'
++    MKSHLIB='$(CXX) $(CXXFLAGS) $(DSO_LDOPTS) -o $@'
++    MKCSHLIB='$(CC) $(CFLAGS) $(DSO_LDOPTS) -o $@'
+     ;;
+ 
+ *-openvms*) 
