@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/07/23 11:52:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/07/26 15:12:17 naddy Exp $
 
 COMMENT=	"AFP file and print services for AppleTalk/IP networks"
 
@@ -25,6 +25,7 @@ SYSCONFDIR=	/etc/netatalk
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} 
+CONFIGURE_ARGS+=	--with-flock-locks
 CONFIGURE_ARGS+=	--with-ssl=/usr
 CONFIGURE_ARGS+=	--with-config-dir=${SYSCONFDIR}
 CONFIGURE_ARGS+=	--with-pkgconfdir=${SYSCONFDIR}

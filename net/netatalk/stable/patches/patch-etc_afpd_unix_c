@@ -1,0 +1,32 @@
+$OpenBSD: patch-etc_afpd_unix_c,v 1.1 2002/07/26 15:12:17 naddy Exp $
+--- etc/afpd/unix.c.orig	Wed Jul 24 16:22:55 2002
++++ etc/afpd/unix.c	Wed Jul 24 16:35:55 2002
+@@ -132,11 +132,11 @@ struct maccess	*ma;
+ 
+     if ( (uuid == stat->st_uid) || (uuid == 0)) {
+         ma->ma_user = ma->ma_owner | AR_UOWN;
+-    } else if ( gmem( stat->st_gid )) {
+-        ma->ma_user = ma->ma_group;
+-    } else {
+-        ma->ma_user = ma->ma_world;
+     }
++    if ( gmem( stat->st_gid )) {
++        ma->ma_user |= ma->ma_group;
++    }
++    ma->ma_user |= ma->ma_world;
+ 
+     /*
+      * There are certain things the mac won't try if you don't have
+@@ -202,10 +202,10 @@ struct maccess	*ma;
+     mode_t		mode;
+ 
+     mode = 0;
+-    mode |= mtoubits( ma->ma_owner );
++    mode |= mtoubits( ma->ma_owner | ma->ma_world);
+     mode = mode << 3;
+ 
+-    mode |= mtoubits( ma->ma_group );
++    mode |= mtoubits( ma->ma_group | ma->ma_world);
+     mode = mode << 3;
+ 
+     mode |= mtoubits( ma->ma_world );

@@ -1,0 +1,363 @@
+$OpenBSD: patch-etc_afpd_directory_c,v 1.1 2002/07/26 15:12:17 naddy Exp $
+--- etc/afpd/directory.c.orig	Thu Mar 14 07:50:23 2002
++++ etc/afpd/directory.c	Thu Jul 25 14:28:13 2002
+@@ -1,5 +1,5 @@
+ /*
+- * $Id: patch-etc_afpd_directory_c,v 1.1 2002/07/26 15:12:17 naddy Exp $
++ * $Id: patch-etc_afpd_directory_c,v 1.1 2002/07/26 15:12:17 naddy Exp $
+  *
+  * Copyright (c) 1990,1993 Regents of The University of Michigan.
+  * All Rights Reserved.  See COPYRIGHT.
+@@ -12,7 +12,6 @@
+ #include "config.h"
+ #endif /* HAVE_CONFIG_H */
+ 
+-#include <syslog.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <errno.h>
+@@ -28,6 +27,7 @@
+ #include <utime.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <syslog.h>
+ #include <dirent.h>
+ #ifdef HAVE_FCNTL_H
+ #include <fcntl.h>
+@@ -120,7 +120,67 @@ u_int32_t	did;
+     return NULL;
+ }
+ 
++/* -----------------------------------------
++ * if did is not in the cache resolve it with cnid 
++ * 
++ */
++struct dir *
++            dirlookup( vol, did )
++            const struct vol	*vol;
++u_int32_t	did;
++{
++#ifdef CNID_DB
++    struct dir *ret;
++    char		*upath;
++    u_int32_t	id;
++    static char		path[MAXPATHLEN + 1];
++    int len;
++    int pathlen;
++    char *ptr;
++    static char buffer[12 + MAXPATHLEN + 1];
++    int buflen = 12 + MAXPATHLEN + 1;
++
++    ret = dirsearch(vol, did);
++    if (ret != NULL)
++        return ret;
+ 
++    id = did;
++    if ((upath = cnid_resolve(vol->v_db, &id, buffer, buflen)) == NULL) {
++        return NULL;
++    }
++    ptr = path + MAXPATHLEN;
++    len = strlen(upath);
++    pathlen = len;          /* no 0 in the last part */
++    len++;
++    strcpy(ptr - len, upath);
++    ptr -= len;
++    while (1) {
++        ret = dirsearch(vol,id);
++        if (ret != NULL) {
++            break;
++        }
++        if ((upath = cnid_resolve(vol->v_db, &id, buffer, buflen)) == NULL)
++            return NULL;
++        len = strlen(upath) + 1;
++        pathlen += len;
++        if (pathlen > 255)
++            return NULL;
++        strcpy(ptr - len, upath);
++        ptr -= len;
++    }
++    /* fill the cache */
++    ptr--;
++    *ptr = (unsigned char)pathlen;
++    ptr--;
++    *ptr = 2;
++    /* cname is not efficient */
++    if (cname( vol, ret, &ptr ) == NULL )
++        return NULL;
++#endif
++    return dirsearch(vol, did);
++}
++
++/* --------------------------- */
+ /* rotate the tree to the left */
+ static void dir_leftrotate(vol, dir)
+ struct vol *vol;
+@@ -357,7 +417,31 @@ struct dir	*dir;
+ #endif /* ! REMOVE_NODES */
+ }
+ 
++/* ---------------------------------------
++ * remove the node and its childs from the tree
++ *
++ * FIXME what about opened forks with refs to it?
++ * it's an afp specs violation because you can't delete
++ * an opened forks. Now afpd doesn't care about forks opened by other 
++ * process. It's fixable within afpd if fnctl_lock, doable with smb and
++ * next to impossible for nfs and local filesystem access.
++ */
++ 
++static void dir_invalidate( vol, dir )
++const struct vol *vol;
++struct dir *dir;
++{
++	if (curdir == dir) {
++	    /* v_root can't be deleted */
++		if (movecwd(vol, vol->v_root) < 0) 
++			printf("Yuup cant change dir to v_root\n");
++	}
++	/* FIXME */
++    dirchildremove(dir->d_parent, dir);
++	dir_remove( vol, dir );
++}
+ 
++/* ------------------------------------ */
+ static struct dir *dir_insert(vol, dir)
+             const struct vol *vol;
+ struct dir *dir;
+@@ -683,9 +767,11 @@ char	**cpath;
+     struct dir		*cdir;
+     static char		path[ MAXPATHLEN + 1];
+     char		*data, *p;
++    char        *u;
+     int			extend = 0;
+     int			len;
+-
++	int			olen = 0;
++	
+     data = *cpath;
+     if ( *data++ != 2 ) {			/* path type */
+         return( NULL );
+@@ -693,11 +779,37 @@ char	**cpath;
+     len = (unsigned char) *data++;
+     *cpath += len + 2;
+     *path = '\0';
++    u = NULL;
+ 
+     for ( ;; ) {
+         if ( len == 0 ) {
+             if ( !extend && movecwd( vol, dir ) < 0 ) {
+-                return( NULL );
++            	/* it's tricky:
++            	   movecwd failed so dir is not there anymore.
++            	   FIXME Is it true with other errors?
++            	   if path == '\0' ==> the cpath parameter is that dir,
++            	   and maybe we are trying to recreate it! So we can't 
++            	   fail here.
++            	   
++            	*/
++    		    if ( dir->d_did == DIRDID_ROOT_PARENT) 
++			        return NULL;    		
++            	cdir = dir->d_parent;
++            	dir_invalidate(vol, dir);
++            	if (*path != '\0' || u == NULL) {
++            		/* FIXME: if path != '\0' then extend != 0 ?
++            		 * u == NUL ==> cpath is something like:
++            		 * toto\0\0\0
++            		*/
++            		return NULL;
++            	}
++            	if (movecwd(vol, cdir) < 0) {
++            		printf("can't change to parent\n");
++            		return NULL; /* give up the whole tree is out of synch*/
++            	}
++				/* restore the previous token */
++        		strncpy(path, u, olen);
++        		path[olen] = '\0';
+             }
+             return( path );
+         }
+@@ -706,6 +818,7 @@ char	**cpath;
+             data++;
+             len--;
+         }
++    	u = NULL;
+ 
+         while ( *data == '\0' && len > 0 ) {
+             if ( dir->d_parent == NULL ) {
+@@ -718,6 +831,10 @@ char	**cpath;
+ 
+         /* would this be faster with strlen + strncpy? */
+         p = path;
++        if (len > 0) {
++        	u = data;
++        	olen = len;
++		}        
+         while ( *data != '\0' && len > 0 ) {
+             *p++ = *data++;
+             len--;
+@@ -757,7 +874,15 @@ char	**cpath;
+                 }
+                 if ( cdir == NULL ) {
+                     ++extend;
++                    /* if dir == curdir it always succeed,
++                       even if curdir is deleted. 
++                       it's not a pb because it will failed in extenddir
++                    */
+                     if ( movecwd( vol, dir ) < 0 ) {
++                    	/* dir is not valid anymore 
++                    	   we delete dir from the cache and abort.
++                    	*/
++                    	dir_invalidate(vol, dir);
+                         return( NULL );
+                     }
+                     cdir = extenddir( vol, dir, path );
+@@ -773,7 +898,7 @@ char	**cpath;
+                 }
+ 
+             } else {
+-                dir = cdir;
++                dir = cdir;	
+                 *path = '\0';
+             }
+         }
+@@ -1228,8 +1353,8 @@ int setdirparams(const struct vol *vol,
+                     goto setdirparam_done;
+                     break;
+                 default :
+-                    syslog( LOG_ERR, "setdirparam: setdeskowner: %s",
+-                            strerror(errno) );
++                    syslog(LOG_ERR, "setdirparam: setdeskowner: %s",
++                        strerror(errno) );
+                     if (!isad) {
+                         err = AFPERR_PARAM;
+                         goto setdirparam_done;
+@@ -1249,8 +1374,8 @@ int setdirparams(const struct vol *vol,
+                     goto setdirparam_done;
+                     break;
+                 default :
+-                    syslog( LOG_ERR, "setdirparam: setdirowner: %s",
+-                            strerror(errno) );
++                    syslog(LOG_ERR, "setdirparam: setdirowner: %s",
++                        strerror(errno) );
+                     break;
+                 }
+             }
+@@ -1273,7 +1398,7 @@ int setdirparams(const struct vol *vol,
+                 goto setdirparam_done;
+                 break;
+             default :
+-                syslog( LOG_ERR, "setdirparam: setdeskowner: %m" );
++                syslog(LOG_ERR, "setdirparam: setdeskowner: %m" );
+                 if (!isad) {
+                     err = AFPERR_PARAM;
+                     goto setdirparam_done;
+@@ -1294,8 +1419,8 @@ int setdirparams(const struct vol *vol,
+                     goto setdirparam_done;
+                     break;
+                 default :
+-                    syslog( LOG_ERR, "setdirparam: setdirowner: %s",
+-                            strerror(errno) );
++                    syslog(LOG_ERR, "setdirparam: setdirowner: %s",
++                        strerror(errno) );
+                     break;
+                 }
+             }
+@@ -1319,8 +1444,8 @@ int setdirparams(const struct vol *vol,
+                 err = AFPERR_VLOCK;
+                 goto setdirparam_done;
+             default :
+-                syslog( LOG_ERR, "setdirparam: setdeskmode: %s",
+-                        strerror(errno) );
++                syslog(LOG_ERR, "setdirparam: setdeskmode: %s",
++                    strerror(errno) );
+                 break;
+                 err = AFPERR_PARAM;
+                 goto setdirparam_done;
+@@ -1339,8 +1464,8 @@ int setdirparams(const struct vol *vol,
+                 err = AFPERR_VLOCK;
+                 goto setdirparam_done;
+             default :
+-                syslog( LOG_ERR, "setdirparam: setdirmode: %s",
+-                        strerror(errno) );
++                syslog(LOG_ERR, "setdirparam: setdirmode: %s",
++                    strerror(errno) );
+                 err = AFPERR_PARAM;
+                 goto setdirparam_done;
+             }
+@@ -1417,28 +1542,22 @@ int		ibuflen, *rbuflen;
+         switch( errno ) {
+         case EACCES:
+             return( AFPERR_ACCESS );
+-        case EEXIST:
++        case EEXIST:				/* FIXME this on is impossible? */
+             return( AFPERR_EXIST );
+         default:
+             return( AFPERR_NOOBJ );
+         }
+     }
+-
+-    /* check for illegal bits */
+-    if (!wincheck(vol, path))
+-        return AFPERR_PARAM;
+-
++    /* FIXME check done elswhere? cname was able to move curdir to it! */
++	if (*path == '\0')
++		return AFPERR_EXIST;
+     upath = mtoupath(vol, path);
+-
+-    if ((vol->v_flags & AFPVOL_NOHEX) && strchr(upath, '/'))
+-        return AFPERR_PARAM;
+-
+-    if (!validupath(vol, upath))
+-        return AFPERR_EXIST;
+-
+-    /* check for vetoed filenames */
+-    if (veto_file(vol->v_veto, upath))
+-        return AFPERR_EXIST;
++    {
++    int ret;
++        if (0 != (ret = check_name(vol, upath))) {
++            return  ret;
++        }
++    }
+ 
+ #ifdef FORCE_UIDGID
+     save_uidgid ( &uidgid );
+@@ -1576,7 +1695,7 @@ const int noadouble;
+ 
+ renamedir_done:
+     if ((buf = (char *) realloc( dir->d_name, len + 1 )) == NULL ) {
+-        syslog( LOG_ERR, "renamedir: realloc: %s", strerror(errno) );
++        syslog(LOG_ERR, "renamedir: realloc: %s", strerror(errno) );
+         return AFPERR_MISC;
+     }
+     dir->d_name = buf;
+@@ -1607,6 +1726,8 @@ int pathlen;
+     struct stat st;
+     struct dir	*fdir;
+     DIR *dp;
++    struct adouble	ad;
++    u_int16_t		ashort;
+ #ifdef FORCE_UIDGID
+     uidgidset		*uidgid;
+ 
+@@ -1627,6 +1748,19 @@ int pathlen;
+     save_uidgid ( &uidgid );
+     set_uidgid  ( vol );
+ #endif /* FORCE_UIDGID */
++
++    if ( ad_open( ".", ADFLAGS_HF|ADFLAGS_DIR, O_RDONLY,
++                  DIRBITS | 0777, &ad) == 0 ) {
++
++        ad_getattr(&ad, &ashort);
++        ad_close( &ad, ADFLAGS_HF );
++        if ((ashort & htons(ATTRBIT_NODELETE))) {
++#ifdef FORCE_UIDGID
++            restore_uidgid ( &uidgid );
++#endif /* FORCE_UIDGID */
++            return  AFPERR_OLOCK;
++        }
++    }
+ 
+     /* delete stray .AppleDouble files. this happens to get .Parent files
+        as well. */

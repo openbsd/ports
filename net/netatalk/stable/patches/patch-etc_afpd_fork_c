@@ -1,0 +1,127 @@
+$OpenBSD: patch-etc_afpd_fork_c,v 1.1 2002/07/26 15:12:17 naddy Exp $
+--- etc/afpd/fork.c.orig	Thu Mar 14 07:50:24 2002
++++ etc/afpd/fork.c	Wed Jul 24 13:34:37 2002
+@@ -58,11 +58,6 @@ char		*buf;
+ int			*buflen;
+ const u_int16_t     attrbits;
+ {
+-#ifndef USE_LASTDID
+-    struct stat		hst, lst, *lstp;
+-#else /* USE_LASTDID */
+-    struct stat     hst;
+-#endif
+     struct stat		st;
+     struct extmap	*em;
+     char		*data, *nameoff = NULL, *upath;
+@@ -191,31 +186,10 @@ const u_int16_t     attrbits;
+             aint = cnid_add(ofork->of_vol->v_db, &st,
+                             ofork->of_dir->d_did,
+                             upath, strlen(upath), aint);
+-            if (aint == CNID_INVALID) {
+-                switch (errno) {
+-                case CNID_ERR_PARAM:
+-                    syslog(LOG_ERR, "getforkparams: Incorrect parameters passed to cnid_add");
+-                    return(AFPERR_PARAM);
+-                case CNID_ERR_PATH:
+-                    return(AFPERR_PARAM);
+-                case CNID_ERR_DB:
+-                case CNID_ERR_MAX:
+-                    return(AFPERR_MISC);
+-                }
+-            }
+ #endif /* CNID_DB */
+ 
+             if (aint == 0) {
+-#ifdef USE_LASTDID
+-                aint = htonl(( st.st_dev << 16 ) | ( st.st_ino & 0x0000ffff ));
+-#else /* USE_LASTDID */
+-                lstp = lstat(upath, &lst) < 0 ? &st : &lst;
+-#ifdef DID_MTAB
+-                aint = htonl( afpd_st_cnid ( lstp ) );
+-#else /* DID_MTAB */
+-                aint = htonl(CNID(lstp, 1));
+-#endif /* DID_MTAB */
+-#endif /* USE_LASTDID */
++		aint = (st.st_dev<<16)|(st.st_ino & 0x0000ffff);
+             }
+ 
+             memcpy(data, &aint, sizeof( aint ));
+@@ -790,14 +764,14 @@ int		ibuflen, *rbuflen;
+ {
+     struct ofork	*ofork;
+     off_t 		size;
+-    int32_t		offset, saveoff, reqcount, savereqcount;
++    int32_t		offset, saveoff, reqcount;
+     int			cc, err, saveerr, eid, xlate = 0;
+     u_int16_t		ofrefnum;
+     u_char		nlmask, nlchar;
+ 
+     ibuf += 2;
+     memcpy(&ofrefnum, ibuf, sizeof( ofrefnum ));
+-    ibuf += sizeof( u_short );
++    ibuf += sizeof( ofrefnum );
+ 
+     if (( ofork = of_find( ofrefnum )) == NULL ) {
+         syslog( LOG_ERR, "afp_read: of_find: %s", strerror(errno) );
+@@ -839,22 +813,19 @@ int		ibuflen, *rbuflen;
+     }
+ 
+     /* zero request count */
+-    err = AFP_OK;
+     if (!reqcount) {
++	err = AFP_OK;
+         goto afp_read_err;
+     }
+ 
+     /* reqcount isn't always truthful. we need to deal with that. */
+-    size = ad_size(ofork->of_ad, eid);
+-
+-    if (offset >= size) {
++    if ((size = ad_size(ofork->of_ad, eid)) == 0) {
+         err = AFPERR_EOF;
+         goto afp_read_err;
+     }
+ 
+     /* subtract off the offset */
+     size -= offset;
+-    savereqcount = reqcount;
+     if (reqcount > size) {
+     	reqcount = size;
+         err = AFPERR_EOF;
+@@ -862,7 +833,7 @@ int		ibuflen, *rbuflen;
+ 
+     saveoff = offset;
+     /* if EOF lock on the old reqcount, some prg may need it */
+-    if (ad_tmplock(ofork->of_ad, eid, ADLOCK_RD, saveoff, savereqcount) < 0) {
++    if (ad_tmplock(ofork->of_ad, eid, ADLOCK_RD, saveoff, reqcount) < 0) {
+         err = AFPERR_LOCK;
+         goto afp_read_err;
+     }
+@@ -882,12 +853,6 @@ int		ibuflen, *rbuflen;
+     if ((obj->proto == AFPPROTO_DSI) && (*rbuflen < reqcount) && !nlmask) {
+         DSI *dsi = obj->handle;
+ 
+-        if (obj->options.flags & OPTION_DEBUG) {
+-            printf( "(read) reply: %d/%d, %d\n", *rbuflen,
+-                    reqcount, dsi->clientID);
+-            bprint(rbuf, *rbuflen);
+-        }
+-
+         offset += *rbuflen;
+ 
+         /* dsi_readinit() returns size of next read buffer. by this point,
+@@ -942,12 +907,12 @@ afp_read_loop:
+ afp_read_exit:
+         syslog(LOG_ERR, "afp_read: %s", strerror(errno));
+         dsi_readdone(dsi);
+-        ad_tmplock(ofork->of_ad, eid, ADLOCK_CLR, saveoff, savereqcount);
++        ad_tmplock(ofork->of_ad, eid, ADLOCK_CLR, saveoff, reqcount);
+         obj->exit(1);
+     }
+ 
+ afp_read_done:
+-    ad_tmplock(ofork->of_ad, eid, ADLOCK_CLR, saveoff, savereqcount);
++    ad_tmplock(ofork->of_ad, eid, ADLOCK_CLR, saveoff, reqcount);
+     return err;
+ 
+ afp_read_err:

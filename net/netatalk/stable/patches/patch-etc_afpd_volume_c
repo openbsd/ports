@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_afpd_volume_c,v 1.1.1.1 2002/07/23 11:52:12 naddy Exp $
---- etc/afpd/volume.c.orig	Sat Jun 15 04:40:52 2002
-+++ etc/afpd/volume.c	Sat Jun 15 04:44:27 2002
+$OpenBSD: patch-etc_afpd_volume_c,v 1.2 2002/07/26 15:12:17 naddy Exp $
+--- etc/afpd/volume.c.orig	Sat Feb 16 09:09:31 2002
++++ etc/afpd/volume.c	Wed Jul 24 16:59:53 2002
 @@ -1050,7 +1050,7 @@ int 	ibuflen, *rbuflen;
      struct vol		*volume;
      char	*data;
@@ -24,3 +24,27 @@ $OpenBSD: patch-etc_afpd_volume_c,v 1.1.1.1 2002/07/23 11:52:12 naddy Exp $
      *data = vcnt;
      return( AFP_OK );
  }
+@@ -1177,11 +1178,11 @@ int		ibuflen, *rbuflen;
+     bitmap = htons( bitmap );
+     memcpy(rbuf, &bitmap, sizeof( bitmap ));
+ 
+-    curdir = volume->v_dir;
+     if ( chdir( volume->v_path ) < 0 ) {
+         ret = AFPERR_PARAM;
+         goto openvol_err;
+     }
++    curdir = volume->v_dir;
+ 
+ #ifdef CNID_DB
+     if (volume->v_dbpath)
+@@ -1231,9 +1232,8 @@ int		ibuflen, *rbuflen;
+         }
+     }
+     if ( ovol != NULL ) {
++	if (chdir(ovol->v_path) == 0) {
+         curdir = ovol->v_dir;
+-        if ( chdir( ovol->v_path ) < 0 ) {
+-            return( AFPERR_PARAM );
+         }
+     }
+ 

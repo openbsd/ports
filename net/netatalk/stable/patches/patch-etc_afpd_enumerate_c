@@ -1,0 +1,11 @@
+$OpenBSD: patch-etc_afpd_enumerate_c,v 1.1 2002/07/26 15:12:17 naddy Exp $
+--- etc/afpd/enumerate.c.orig	Thu Jul 25 13:40:39 2002
++++ etc/afpd/enumerate.c	Thu Jul 25 13:43:34 2002
+@@ -327,6 +327,7 @@ int		ibuflen, *rbuflen;
+         if ( stat( sd.sd_last, &st ) < 0 ) {
+             syslog( LOG_DEBUG, "afp_enumerate: stat %s: %s",
+                     sd.sd_last, strerror(errno) );
++	    *sd.sd_last = 0;
+             sd.sd_last += len + 1;
+             continue;
+         }

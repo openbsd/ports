@@ -1,0 +1,13 @@
+$OpenBSD: patch-libatalk_dsi_dsi_stream_c,v 1.1 2002/07/26 15:12:17 naddy Exp $
+--- libatalk/dsi/dsi_stream.c.orig	Tue Jul 23 17:00:48 2002
++++ libatalk/dsi/dsi_stream.c	Tue Jul 23 17:02:36 2002
+@@ -79,7 +79,8 @@ size_t dsi_stream_read(DSI *dsi, void *d
+     else if (len > 0)
+       stored += len;
+     else { /* eof or error */
+-      syslog(LOG_ERR, "dsi_stream_read(%d): %s", len, strerror(errno));
++	if (len !=0 ) /* error */ 
++      		syslog(LOG_ERR, "dsi_stream_read(%d): %s", len, strerror(errno));
+       break;
+     }
+   }

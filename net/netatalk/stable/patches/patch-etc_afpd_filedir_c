@@ -1,0 +1,607 @@
+$OpenBSD: patch-etc_afpd_filedir_c,v 1.1 2002/07/26 15:12:17 naddy Exp $
+--- etc/afpd/filedir.c.orig	Thu Mar 14 07:55:50 2002
++++ etc/afpd/filedir.c	Fri Jul 26 11:22:20 2002
+@@ -1,5 +1,5 @@
+ /*
+- * $Id: patch-etc_afpd_filedir_c,v 1.1 2002/07/26 15:12:17 naddy Exp $
++ * $Id: patch-etc_afpd_filedir_c,v 1.1 2002/07/26 15:12:17 naddy Exp $
+  *
+  * Copyright (c) 1990,1993 Regents of The University of Michigan.
+  * All Rights Reserved.  See COPYRIGHT.
+@@ -71,7 +71,7 @@ more information */
+     int		uid;
+ 
+ #ifdef DEBUG
+-    syslog (LOG_INFO, "begin matchfile2dirperms:");
++    syslog(LOG_INFO, "begin matchfile2dirperms:");
+ #endif /* DEBUG */
+ 
+     if (stat(upath, &st ) < 0)
+@@ -79,13 +79,13 @@ more information */
+     strcpy (adpath, "./.AppleDouble/");
+     strcat (adpath, upath);
+     if (( dir = dirsearch( vol, did )) == NULL ) {
+-        syslog (LOG_ERR, "matchfile2dirperms: Unable to get directory info.");
++        syslog(LOG_ERR, "matchfile2dirperms: Unable to get directory info.");
+         return( AFPERR_NOOBJ );
+     }
+     else if (stat(".", &sb) < 0) {
+-        syslog (LOG_ERR,
+-                "matchfile2dirperms: Error checking directory \"%s\": %s",
+-                dir->d_name, strerror(errno));
++        syslog(LOG_ERR,
++            "matchfile2dirperms: Error checking directory \"%s\": %s",
++            dir->d_name, strerror(errno));
+         return(AFPERR_NOOBJ );
+     }
+     else {
+@@ -95,54 +95,54 @@ more information */
+             seteuid(0);
+             if (lchown(upath, sb.st_uid, sb.st_gid) < 0)
+             {
+-                syslog (LOG_ERR,
+-                        "matchfile2dirperms: Error changing owner/gid of %s: %s",
+-                        upath, strerror(errno));
++                syslog(LOG_ERR,
++                    "matchfile2dirperms: Error changing owner/gid of %s: %s",
++                    upath, strerror(errno));
+                 return (AFPERR_ACCESS);
+             }
+             if (chmod(upath,(st.st_mode&~default_options.umask)| S_IRGRP| S_IROTH) < 0)
+             {
+-                syslog (LOG_ERR,
+-                        "matchfile2dirperms:  Error adding file read permissions: %s",
+-                        strerror(errno));
++                syslog(LOG_ERR,
++                    "matchfile2dirperms:  Error adding file read permissions: %s",
++                    strerror(errno));
+                 return (AFPERR_ACCESS);
+             }
+ #ifdef DEBUG
+             else
+-                syslog (LOG_INFO,
+-                        "matchfile2dirperms:  Added S_IRGRP and S_IROTH: %s",
+-                        strerror(errno));
++                syslog(LOG_ERR,
++                    "matchfile2dirperms:  Added S_IRGRP and S_IROTH: %s",
++                    strerror(errno));
+ #endif /* DEBUG */
+             if (lchown(adpath, sb.st_uid, sb.st_gid) < 0)
+             {
+-                syslog (LOG_ERR,
+-                        "matchfile2dirperms: Error changing AppleDouble owner/gid %s: %s",
+-                        adpath, strerror(errno));
++                syslog(LOG_ERR,
++                    "matchfile2dirperms: Error changing AppleDouble owner/gid %s: %s",
++                    adpath, strerror(errno));
+                 return (AFPERR_ACCESS);
+             }
+             if (chmod(adpath, (st.st_mode&~default_options.umask)| S_IRGRP| S_IROTH) < 0)
+             {
+-                syslog (LOG_ERR,
+-                        "matchfile2dirperms:  Error adding AD file read permissions: %s",
+-                        strerror(errno));
++                syslog(LOG_ERR,
++                    "matchfile2dirperms:  Error adding AD file read permissions: %s",
++                    strerror(errno));
+                 return (AFPERR_ACCESS);
+             }
+ #ifdef DEBUG
+             else
+-                syslog (LOG_INFO,
+-                        "matchfile2dirperms:  Added S_IRGRP and S_IROTH to AD: %s",
+-                        strerror(errno));
++                syslog(LOG_INFO,
++                    "matchfile2dirperms:  Added S_IRGRP and S_IROTH to AD: %s",
++                    strerror(errno));
+ #endif /* DEBUG */
+         }
+ #ifdef DEBUG
+         else
+-            syslog (LOG_INFO,
+-                    "matchfile2dirperms: No ownership change necessary.");
++            syslog(LOG_INFO,
++                "matchfile2dirperms: No ownership change necessary.");
+ #endif /* DEBUG */
+     } /* end else if stat success */
+     seteuid(uid); /* Restore process ownership to normal */
+ #ifdef DEBUG
+-    syslog (LOG_INFO, "end matchfile2dirperms:");
++    syslog(LOG_INFO, "end matchfile2dirperms:");
+ #endif /* DEBUG */
+ 
+     return (AFP_OK);
+@@ -179,7 +179,7 @@ int		ibuflen, *rbuflen;
+     memcpy( &did, ibuf, sizeof( did ));
+     ibuf += sizeof( did );
+ 
+-    if (( dir = dirsearch( vol, did )) == NULL ) {
++    if (( dir = dirlookup( vol, did )) == NULL ) {
+         return( AFPERR_NOOBJ );
+     }
+ 
+@@ -302,24 +302,145 @@ int		ibuflen, *rbuflen;
+     return( rc );
+ }
+ 
++/* -------------------------------------------- 
++   Factorise some check on a pathname
++*/
++int check_name(const struct vol *vol, char *name)
++{
++    /* check for illegal characters in the unix filename */
++    if (!wincheck(vol, name))
++        return AFPERR_PARAM;
++
++    if ((vol->v_flags & AFPVOL_NOHEX) && strchr(name, '/'))
++        return AFPERR_PARAM;
++
++    if (!validupath(vol, name))
++        return AFPERR_EXIST;
++
++    /* check for vetoed filenames */
++    if (veto_file(vol->v_veto, name))
++        return AFPERR_EXIST;
++    return 0;
++}
++
++/* ------------------------- 
++    move and rename sdir:oldname to curdir:newname in volume vol
++   
++    special care is needed for lock   
++*/
++static int moveandrename(vol, sdir, oldname, newname, isdir)
++const struct vol	*vol;
++struct dir	*sdir;
++char        *oldname;
++char        *newname;
++int         isdir;
++{
++    char            *p;
++    char            *upath;
++    int             rc;
++    struct stat     st;
++    int             adflags;
++    struct adouble	ad;
++    struct adouble	*adp;
++    struct ofork	*opened;
++
++#ifdef CNID_DB
++    cnid_t      id;
++#endif /* CNID_DB */
++
++    memset(&ad, 0, sizeof(ad));
++    adp = &ad;
++    adflags = 0;
++    
++    if (!isdir) {
++#ifdef CNID_DB
++        p = mtoupath(vol, oldname);
++        id = cnid_get(vol->v_db, sdir->d_did, p, strlen(p));
++#endif /* CNID_DB */
++        p = ctoupath( vol, sdir, oldname );
++        if ((opened = of_findname(vol, sdir, oldname))) {
++            /* reuse struct adouble so it won't break locks */
++            adp = opened->of_ad;
++        }
++    }
++    else {
++#ifdef CNID_DB
++        id = sdir->d_did; /* we already have the CNID */
++#endif /* CNID_DB */
++        p = ctoupath( vol, sdir->d_parent, oldname );
++        adflags = ADFLAGS_DIR;
++    }
++    /*
++     * p now points to the full pathname of the source fs object.
++     * 
++     * we are in the dest folder so we need to use p for ad_open
++    */
++    
++    if (!ad_open(p, ADFLAGS_HF |adflags, O_RDONLY, 0666, adp)) {
++    u_int16_t bshort;
++
++        ad_getattr(adp, &bshort);
++        ad_close( adp, ADFLAGS_HF );
++        if ((bshort & htons(ATTRBIT_NORENAME))) 
++            return(AFPERR_OLOCK);
++    }
++
++    upath = mtoupath(vol, newname);
++    if (0 != (rc = check_name(vol, upath))) {
++            return  rc;
++    }
++
++    /* source == destination. we just silently accept this. */
++    if (curdir == sdir) {
++        if (strcmp(oldname, newname) == 0)
++            return AFP_OK;
++
++        /* deal with case insensitive, case-preserving filesystems. */
++        if ((stat(upath, &st) == 0) && strdiacasecmp(oldname, newname))
++            return AFPERR_EXIST;
++
++    } else if (stat(upath, &st ) == 0)
++        return AFPERR_EXIST;
++
++    if ( !isdir ) {
++        if (of_findname(vol, curdir, newname)) {
++            rc = AFPERR_EXIST; /* was AFPERR_BUSY; */
++        } else if ((rc = renamefile( p, upath, newname,
++                                     vol_noadouble(vol), adp )) == AFP_OK) {
++            /* if it's still open, rename the ofork as well. */
++            rc = of_rename(vol, sdir, oldname, curdir, newname);
++        }
++    } else {
++        rc = renamedir(p, upath, sdir, curdir, newname, vol_noadouble(vol));
++    }
++    if ( rc == AFP_OK ) {
++#ifdef CNID_DB
++        /* renaming may have moved the file/dir across a filesystem */
++        if (stat(upath, &st) < 0)
++            return AFPERR_MISC;
++
++        /* fix up the catalog entry */
++        cnid_update(vol->v_db, id, &st, curdir->d_did, upath, strlen(upath));
++#endif /* CNID_DB */
++    }
++
++    return rc;
++}
++
++/* -------------------------------------------- */
+ int afp_rename(obj, ibuf, ibuflen, rbuf, rbuflen )
+ AFPObj      *obj;
+ char	*ibuf, *rbuf;
+ int		ibuflen, *rbuflen;
+ {
+-    struct adouble	ad;
+-    struct stat		st;
+-    struct vol		*vol;
+-    struct dir		*dir, *odir = NULL;
+-    char		*path, *buf, *upath, *newpath;
+-    char		*newadpath;
+-    u_int32_t		did;
++    struct vol	*vol;
++    struct dir	*sdir;
++    char		*path, *oldname, *newname;
++    u_int32_t	did;
+     int			plen;
+-    u_int16_t		vid;
+-#ifdef CNID_DB
+-    cnid_t              id;
+-#endif /* CNID_DB */
+-
++    u_int16_t	vid;
++    int         isdir = 0;
++    int         rc;
+ #ifdef DEBUG
+     syslog(LOG_INFO, "begin afp_rename:");
+ #endif /* DEBUG */
+@@ -338,153 +459,60 @@ int		ibuflen, *rbuflen;
+ 
+     memcpy( &did, ibuf, sizeof( did ));
+     ibuf += sizeof( did );
+-    if (( dir = dirsearch( vol, did )) == NULL ) {
++    if (( sdir = dirsearch( vol, did )) == NULL ) {
+         return( AFPERR_NOOBJ );
+     }
+ 
+-    if (( path = cname( vol, dir, &ibuf )) == NULL ) {
++    /* source pathname */
++    if (( path = cname( vol, sdir, &ibuf )) == NULL ) {
+         return( AFPERR_NOOBJ );
+     }
+ 
+-    /* another place where we know about the path type */
+-    if ( *ibuf++ != 2 ) {
+-        return( AFPERR_PARAM );
++    sdir = curdir;
++    newname = obj->newtmp;
++    oldname = obj->oldtmp;
++    if ( *path != '\0' ) {
++        strcpy(oldname, path); /* an extra copy for of_rename */
+     }
+-    plen = (unsigned char) *ibuf++;
+-    *( ibuf + plen ) = '\0';
+-
+-    if ( *path == '\0' ) {
+-        if ( curdir->d_parent == NULL ) { /* root directory */
++    else {
++        if ( sdir->d_parent == NULL ) { /* root directory */
+             return( AFPERR_NORENAME );
+         }
+-        odir = curdir;
+-        path = curdir->d_name;
+-        if ( movecwd( vol, curdir->d_parent ) < 0 ) {
++        /* move to destination dir */
++        if ( movecwd( vol, sdir->d_parent ) < 0 ) {
+             return( AFPERR_NOOBJ );
+         }
++        isdir = 1;
++        strcpy(oldname, sdir->d_name);
+     }
+ 
+-#ifdef notdef
+-    if ( strcasecmp( path, ibuf ) == 0 ) {
+-        return( AFP_OK );
+-    }
+-#endif /* notdef */
+-
+-    /* if a curdir/newname ofork exists, return busy */
+-    if (of_findname(vol, curdir, ibuf))
+-        return AFPERR_BUSY;
+-
+-    /* source == destination. just say okay. */
+-    if (strcmp(path, ibuf) == 0)
+-        return AFP_OK;
+-
+-    /* check for illegal characters */
+-    if (!wincheck(vol, ibuf))
+-        return AFPERR_PARAM;
+-
+-    newpath = obj->oldtmp;
+-    strcpy( newpath, mtoupath(vol, ibuf ));
+-
+-    if ((vol->v_flags & AFPVOL_NOHEX) && strchr(newpath, '/'))
+-        return AFPERR_PARAM;
+-
+-    if (!validupath(vol, newpath))
+-        return AFPERR_EXIST;
+-
+-    /* check for vetoed filenames */
+-    if (veto_file(vol->v_veto, newpath))
+-        return AFPERR_EXIST;
+-
+-    /* the strdiacasecmp deals with case-insensitive, case preserving
+-       filesystems */
+-    if (stat( newpath, &st ) == 0 && strdiacasecmp(path, ibuf))
+-        return( AFPERR_EXIST );
+-
+-    upath = mtoupath(vol, path);
+-
+-#ifdef CNID_DB
+-    id = cnid_get(vol->v_db, curdir->d_did, upath, strlen(upath));
+-#endif /* CNID_DB */
+-
+-    if ( rename( upath, newpath ) < 0 ) {
+-        switch ( errno ) {
+-        case ENOENT :
+-            return( AFPERR_NOOBJ );
+-        case EACCES :
+-            return( AFPERR_ACCESS );
+-        default :
+-            return( AFPERR_PARAM );
+-        }
++    /* another place where we know about the path type */
++    if ( *ibuf++ != 2 ) {
++        return( AFPERR_PARAM );
+     }
+ 
+-#ifdef CNID_DB
+-    if (stat(newpath, &st) < 0) /* this shouldn't fail */
+-        return AFPERR_MISC;
+-    cnid_update(vol->v_db, id, &st, curdir->d_did, newpath, strlen(newpath));
+-#endif /* CNID_DB */
+-
+-    if ( !odir ) {
+-        newadpath = obj->newtmp;
+-        strcpy( newadpath, ad_path( newpath, 0 ));
+-        if ( rename( ad_path( upath, 0 ), newadpath ) < 0 ) {
+-            if ( errno == ENOENT ) {	/* no adouble header file */
+-                if (( unlink( newadpath ) < 0 ) && ( errno != ENOENT )) {
+-                    return( AFPERR_PARAM );
+-                }
+-                goto out;
+-            }
+-            return( AFPERR_PARAM );
+-        }
+-
+-        memset(&ad, 0, sizeof(ad));
+-        if ( ad_open( newpath, ADFLAGS_HF, O_RDWR|O_CREAT, 0666,
+-                      &ad) < 0 ) {
+-            return( AFPERR_PARAM );
+-        }
+-    } else {
+-        int isad = 1;
++    if (( plen = (unsigned char)*ibuf++ ) != 0 ) {
++        strncpy( newname, ibuf, plen );
++        newname[ plen ] = '\0';
++    }
++    else {
++        return AFP_OK; /* newname == oldname same dir */
++    }
++    
++    rc = moveandrename(vol, sdir, oldname, newname, isdir);
+ 
+-        memset(&ad, 0, sizeof(ad));
+-        if ( ad_open( newpath, vol_noadouble(vol)|ADFLAGS_HF|ADFLAGS_DIR,
+-                      O_RDWR|O_CREAT, 0666, &ad) < 0 ) {
+-            if (!((errno == ENOENT) && vol_noadouble(vol)))
+-                return( AFPERR_PARAM );
+-            isad = 0;
+-        }
+-        if ((buf = realloc( odir->d_name, plen + 1 )) == NULL ) {
+-            syslog( LOG_ERR, "afp_rename: realloc: %s", strerror(errno) );
+-            if (isad) {
+-                ad_flush(&ad, ADFLAGS_HF); /* in case of create */
+-                ad_close(&ad, ADFLAGS_HF);
+-            }
+-            return AFPERR_MISC;
+-        }
+-        odir->d_name = buf;
+-        strcpy( odir->d_name, ibuf );
+-        if (!isad)
+-            goto out;
+-    }
+-
+-    ad_setentrylen( &ad, ADEID_NAME, plen );
+-    memcpy( ad_entry( &ad, ADEID_NAME ), ibuf, plen );
+-    ad_flush( &ad, ADFLAGS_HF );
+-    ad_close( &ad, ADFLAGS_HF );
+-
+-out:
+-    setvoltime(obj, vol );
+-
+-    /* if it's still open, rename the ofork as well. */
+-    if (of_rename(vol, curdir, path, curdir, ibuf) < 0)
+-        return AFPERR_MISC;
++    if ( rc == AFP_OK ) {
++        setvoltime(obj, vol );
++    }
+ 
+ #ifdef DEBUG
+     syslog(LOG_INFO, "end afp_rename:");
+ #endif /* DEBUG */
+ 
+-    return( AFP_OK );
++    return( rc );
+ }
+ 
+-
++/* ------------------------------- */
+ int afp_delete(obj, ibuf, ibuflen, rbuf, rbuflen )
+ AFPObj      *obj;
+ char	*ibuf, *rbuf;
+@@ -526,7 +554,7 @@ int		ibuflen, *rbuflen;
+         rc = deletecurdir( vol, obj->oldtmp, AFPOBJ_TMPSIZ);
+     } else if (of_findname(vol, curdir, path)) {
+         rc = AFPERR_BUSY;
+-    } else if ((rc = deletefile( upath = mtoupath(vol, path ))) == AFP_OK) {
++    } else if ((rc = deletefile( upath = mtoupath(vol, path ), 1)) == AFP_OK) {
+ #ifdef CNID_DB /* get rid of entry */
+         cnid_t id = cnid_get(vol->v_db, curdir->d_did, upath, strlen(upath));
+         cnid_delete(vol->v_db, id);
+@@ -574,23 +602,21 @@ char	*name;
+     return( p );
+ }
+ 
+-
++/* ------------------------- */
+ int afp_moveandrename(obj, ibuf, ibuflen, rbuf, rbuflen )
+ AFPObj      *obj;
+ char	*ibuf, *rbuf;
+ int		ibuflen, *rbuflen;
+ {
+     struct vol	*vol;
+-    struct dir	*sdir, *ddir, *odir = NULL;
+-    struct stat st;
+-    char	*oldname, *newname;
+-    char        *path, *p, *upath;
+-    int		did, rc;
++    struct dir	*sdir, *ddir;
++    int         isdir = 0;
++    char	    *oldname, *newname;
++    char        *path;
++    int		did;
+     int		plen;
+     u_int16_t	vid;
+-#ifdef CNID_DB
+-    cnid_t      id;
+-#endif /* CNID_DB */
++    int         rc;
+ #ifdef DROPKLUDGE
+     int		retvalue;
+ #endif /* DROPKLUDGE */
+@@ -631,25 +657,11 @@ int		ibuflen, *rbuflen;
+     oldname = obj->oldtmp;
+     if ( *path != '\0' ) {
+         /* not a directory */
+-        strcpy(newname, path);
+         strcpy(oldname, path); /* an extra copy for of_rename */
+-#ifdef CNID_DB
+-        p = mtoupath(vol, path);
+-        id = cnid_get(vol->v_db, sdir->d_did, p, strlen(p));
+-#endif /* CNID_DB */
+-        p = ctoupath( vol, sdir, newname );
+     } else {
+-        odir = curdir;
+-        strcpy( newname, odir->d_name );
+-        strcpy(oldname, odir->d_name);
+-        p = ctoupath( vol, odir->d_parent, newname );
+-#ifdef CNID_DB
+-        id = curdir->d_did; /* we already have the CNID */
+-#endif /* CNID_DB */
++        isdir = 1;
++        strcpy(oldname, sdir->d_name);
+     }
+-    /*
+-     * p now points to the full pathname of the source fs object.
+-     */
+ 
+     /* get the destination directory */
+     if (( ddir = dirsearch( vol, did )) == NULL ) {
+@@ -671,64 +683,20 @@ int		ibuflen, *rbuflen;
+         strncpy( newname, ibuf, plen );
+         newname[ plen ] = '\0';
+     }
+-
+-    /* check for illegal characters */
+-    if (!wincheck(vol, ibuf))
+-        return AFPERR_PARAM;
+-
+-    upath = mtoupath(vol, newname);
+-
+-    if ((vol->v_flags & AFPVOL_NOHEX) && strchr(upath, '/'))
+-        return AFPERR_PARAM;
+-
+-    if (!validupath(vol, upath))
+-        return AFPERR_EXIST;
+-
+-    /* check for vetoed filenames */
+-    if (veto_file(vol->v_veto, upath))
+-        return AFPERR_EXIST;
+-
+-    /* source == destination. we just silently accept this. */
+-    if (curdir == sdir) {
+-        if (strcmp(oldname, newname) == 0)
+-            return AFP_OK;
+-
+-        /* deal with case insensitive, case-preserving filesystems. */
+-        if ((stat(upath, &st) == 0) && strdiacasecmp(oldname, newname))
+-            return AFPERR_EXIST;
+-
+-    } else if (stat(upath, &st ) == 0)
+-        return( AFPERR_EXIST );
+-
+-    if ( !odir ) {
+-        if (of_findname(vol, curdir, newname)) {
+-            rc = AFPERR_BUSY;
+-        } else if ((rc = renamefile( p, upath, newname,
+-                                     vol_noadouble(vol) )) == AFP_OK) {
+-            /* if it's still open, rename the ofork as well. */
+-            rc = of_rename(vol, sdir, oldname, curdir, newname);
+-        }
+-    } else {
+-        rc = renamedir(p, upath, odir, curdir, newname, vol_noadouble(vol));
++    else {
++        strcpy(newname, oldname);
+     }
++    
++    rc = moveandrename(vol, sdir, oldname, newname, isdir);
+ 
++    if ( rc == AFP_OK ) {
+ #ifdef DROPKLUDGE
+-    if (vol->v_flags & AFPVOL_DROPBOX) {
+-        if (retvalue=matchfile2dirperms (newname, vol, did) != AFP_OK) {
+-            return retvalue;
++        if (vol->v_flags & AFPVOL_DROPBOX) {
++            if (retvalue=matchfile2dirperms (newname, vol, did) != AFP_OK) {
++                return retvalue;
++            }
+         }
+-    }
+ #endif /* DROPKLUDGE */
+-
+-    if ( rc == AFP_OK ) {
+-#ifdef CNID_DB
+-        /* renaming may have moved the file/dir across a filesystem */
+-        if (stat(upath, &st) < 0)
+-            return AFPERR_MISC;
+-
+-        /* fix up the catalog entry */
+-        cnid_update(vol->v_db, id, &st, curdir->d_did, upath, strlen(upath));
+-#endif /* CNID_DB */
+         setvoltime(obj, vol );
+     }
+ 
