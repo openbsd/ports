@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2002/10/17 00:27:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.143 2002/11/12 09:07:40 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -43,7 +43,6 @@
      SUBDIR += gmp
      SUBDIR += gperf
      SUBDIR += gsl
-     SUBDIR += gtl
      SUBDIR += guilib
      SUBDIR += help2man
      SUBDIR += horde
