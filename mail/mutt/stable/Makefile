@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/02/11 19:27:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/02/16 02:39:10 jolan Exp $
 
 COMMENT=	"tty-based e-mail client"
 
@@ -31,6 +31,8 @@ FLAVOR?=
 .if ${MACHINE_ARCH:Msparc64}
 PATCH_LIST=     gcc-* patch-*
 .endif
+
+BUILD_DEPENDS=	::devel/automake
 
 CONFIGURE_STYLE= autoconf old
 CONFIGURE_ARGS=	--with-sharedir="${PREFIX}/share/mutt" \
