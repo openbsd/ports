@@ -1,6 +1,15 @@
-$OpenBSD: patch-gemdropx_c,v 1.1.1.1 2001/09/02 05:01:53 pvalchev Exp $
+$OpenBSD: patch-gemdropx_c,v 1.2 2002/11/29 04:42:44 pvalchev Exp $
 --- gemdropx.c.orig	Tue Dec 28 02:54:17 1999
-+++ gemdropx.c	Sat Sep  1 22:46:35 2001
++++ gemdropx.c	Thu Nov 28 21:36:42 2002
+@@ -26,7 +26,7 @@
+ #include <sys/types.h>
+ #include <sys/time.h>
+ #include <unistd.h>
+-#include <SDL/SDL.h>
++#include <SDL.h>
+ 
+ #ifndef NOJOYSTICK
+ #include <sys/stat.h>
 @@ -36,7 +36,7 @@
  #endif
  
