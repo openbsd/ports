@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/12/17 15:56:28 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2001/12/17 20:33:34 brad Exp $
 
 COMMENT=	"small, easy to set up, fast and very secure FTP server"
 
@@ -22,6 +22,13 @@ CONFIGURE_ARGS+= --with-everything \
 		 --with-paranoidmsg \
 		 --without-ldap \
 		 --without-mysql
+
+FLAVORS=	no_banner
+FLAVOR?=
+
+.if ${FLAVOR:L:Mno_banner}
+CONFIGURE_ARGS+= --without-banner
+.endif
 
 DOCS=	README README.Configuration-File README.Contrib \
 	README.Virtual-Users poweredby.jpg
