@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2000/06/25 22:50:17 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2000/06/28 13:20:51 espie Exp $
 
 # use flavors for mule and compface support
 # e.g., make FLAVOR=mule
 
 DISTNAME=	xemacs-20.4
 CATEGORIES=	editors
-NEED_VERSION=	1.255
-FAKE=No
+NEED_VERSION=	1.302
+FAKE=		No
 MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/${DISTNAME}/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/${DISTNAME}/ \
                 ftp://ftp.usyd.edu.au:/pub/Xemacs/${DISTNAME}/ \

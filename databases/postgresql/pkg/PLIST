@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.11 2000/06/28 13:18:46 espie Exp $
 bin/pgwrap
 pgsql/bin/createdb
 pgsql/bin/createlang

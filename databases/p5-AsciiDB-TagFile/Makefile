@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/02 12:26:09 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/28 13:18:47 espie Exp $
 
 DISTNAME=	AsciiDB-TagFile-1.05
 PKGNAME=	p5-AsciiDB-TagFile-1.05
 CATEGORIES=	databases perl5
-NEED_VERSION=	 1.290
+NEED_VERSION=	1.302
 
 MAINTAINER=	espie@openbsd.org
 
