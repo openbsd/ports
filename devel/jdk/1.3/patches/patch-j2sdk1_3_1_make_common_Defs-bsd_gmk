@@ -1,0 +1,11 @@
+$OpenBSD: patch-j2sdk1_3_1_make_common_Defs-bsd_gmk,v 1.1 2004/01/30 13:52:27 wilfried Exp $
+--- j2sdk1.3.1/make/common/Defs-bsd.gmk.orig	2004-01-30 00:45:41.000000000 -0500
++++ j2sdk1.3.1/make/common/Defs-bsd.gmk	2004-01-30 00:46:37.000000000 -0500
+@@ -413,7 +413,6 @@ ifeq ($(TRUE_PLATFORM), NetBSD)
+ else
+   ifeq ($(TRUE_PLATFORM), OpenBSD)
+     MOTIF_DIR=/usr/local
+-    CPPFLAGS_COMMON += -I$(MOTIF_DIR)/include
+     LDFLAGS_COMMON += -L$(MOTIF_DIR)/lib -L/usr/X11R6/lib # for libXp
+   else
+     MOTIF_DIR=/usr/X11R6
