@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/13 06:26:51 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/10/14 15:37:16 jolan Exp $
 @newgroup _nostromo:536
 @newuser _nostromo:536:_nostromo:daemon:Nostromo Account:/nonexistent:/sbin/nologin
 @man man/man8/nhttpd.8
@@ -11,7 +11,9 @@ share/doc/nostromo/README
 @sample /var/nostromo/conf/
 @sample /var/nostromo/htdocs/
 @sample /var/nostromo/icons/
+@owner _nostromo
 @sample /var/nostromo/logs/
+@owner
 share/examples/nostromo/
 share/examples/nostromo/crypt
 @sample /var/nostromo/conf/crypt
