@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:05 espie Exp $
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Crypt/SSLeay.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Crypt/SSLeay/CTX.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Crypt/SSLeay/Conn.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Crypt/SSLeay/Err.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Crypt/SSLeay/MainContext.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Crypt/SSLeay/X509.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Net/SSL.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Crypt/SSLeay/SSLeay.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Crypt/SSLeay/SSLeay.so
+@comment $OpenBSD: PLIST,v 1.5 2002/07/05 17:15:28 avsm Exp $
+${P5ARCH}/Crypt/SSLeay.pm
+${P5ARCH}/Crypt/SSLeay/CTX.pm
+${P5ARCH}/Crypt/SSLeay/Conn.pm
+${P5ARCH}/Crypt/SSLeay/Err.pm
+${P5ARCH}/Crypt/SSLeay/MainContext.pm
+${P5ARCH}/Crypt/SSLeay/X509.pm
+${P5ARCH}/Net/SSL.pm
+${P5ARCH}/auto/Crypt/SSLeay/SSLeay.bs
+${P5ARCH}/auto/Crypt/SSLeay/SSLeay.so
 man/man3p/Crypt::SSLeay.3p
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Crypt/SSLeay
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Crypt/SSLeay
+@dirrm ${P5ARCH}/auto/Crypt/SSLeay
+@dirrm ${P5ARCH}/Crypt/SSLeay
