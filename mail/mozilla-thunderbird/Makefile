@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/02/25 02:35:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/29 20:51:32 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64
 
@@ -20,12 +20,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/${VER}/ \
 		http://ftp.mozilla.org/pub/thunderbird/releases/${VER}/
-DISTFILES=	thunderbird-${VER}-source.tar.bz2
+DISTFILES=	thunderbird-${VER}-source.tar.gz
 
 MODULES=	gcc3
 MODGCC3_ARCHES=	alpha
 MODGCC3_LANGS=	C++
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
+		:bzip2-*:archivers/bzip2 \
 		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
 		glib.1,gmodule.1::devel/glib \
@@ -75,13 +76,13 @@ MAKE_ENV=	MOZ_THUNDERBIRD=1 \
 MOB=		${WRKSRC}/dist
 MOZ=		${PREFIX}/mozilla-thunderbird
 
-post-extract:
-	# Hopefully an distfile without dos-text files will come soon
-	cd ${WRKSRC} && find . -type f -print0 | xargs -0 perl -pi -e 's/\r\n/\n/'
-	# Permissions are really screwy also
-	cd ${WRKSRC} && find . -type f -a ! -name \*.pl -print0 | xargs -0 chmod a-x,a+r
-	cd ${WRKSRC} && find . -type d -print0 | xargs -0 chmod 777 
+do-extract:
+	@PATH=${PORTPATH}; set -e; cd ${WRKDIR}; \
+	${GZIP_CMD} -dc ${FULLDISTDIR}/${DISTFILES} | tar xf - ; \
+	${BZIP2} -dc ${WRKDIR}/mozilla-thunderbird/archives/thunderbird-${VER}-source.tar.bz2 | tar xf -; \
+	rm -rf ${WRKDIR}/mozilla-thunderbird
 
+post-extract:
 	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
 
 pre-configure:
@@ -99,6 +100,7 @@ do-install:
 		${TAR} -xf - -C ${MOZ}
 	@chmod 444 ${MOZ}/*.so.1.0 ${MOZ}/components/*.so.1.0 ${MOZ}/components/*.js
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${MOZ}
+	${INSTALL_DATA} ${WRKSRC}/mail/app/mozicon16.xpm ${WRKSRC}/mail/app/mozicon50.xpm ${MOZ}
 	${INSTALL_SCRIPT} ${MOB}/bin/thunderbird ${PREFIX}/bin/mozilla-thunderbird
 	ln ${PREFIX}/bin/mozilla-thunderbird ${PREFIX}/bin/thunderbird
 	${INSTALL_SCRIPT} ${MOB}/bin/run-mozilla.sh ${MOZ}
