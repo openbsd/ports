@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/05/31 10:15:40 nino Exp $
+# $OpenBSD: Makefile,v 1.17 2002/07/22 20:08:05 nino Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+= 	--with-kde-datadir=${LOCALBASE}/share
 CONFIGURE_ARGS+= 	--disable-test-gnome
 CONFIGURE_ARGS+=	--disable-gtk-doc
 
-CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-build:
