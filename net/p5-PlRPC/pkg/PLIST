@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/19 03:05:37 kevlo Exp $
+libdata/perl5/site_perl/Bundle/PlRPC.pm
+libdata/perl5/site_perl/RPC/PlClient.pm
+libdata/perl5/site_perl/RPC/PlServer.pm
+libdata/perl5/site_perl/RPC/PlServer/Comm.pm
+libdata/perl5/site_perl/RPC/PlServer/Test.pm
+man/man3/Bundle::PlRPC.3p
+man/man3/RPC::PlClient.3p
+man/man3/RPC::PlServer.3p
+@dirrm libdata/perl5/site_perl/RPC/PlServer
