@@ -1,0 +1,64 @@
+*** build-prc.c.orig	Fri Jun 27 11:59:32 1997
+--- build-prc.c	Tue May  5 20:14:22 1998
+***************
+*** 9,14 ****
+--- 9,15 ----
+  #include <stdio.h>
+  #include <fcntl.h>
+  #include <stdlib.h>
++ #include <string.h>
+  #include "prc.h"
+  
+  #ifdef __CYGWIN32__
+***************
+*** 17,22 ****
+--- 18,38 ----
+  #define O_PLATFORM 0
+  #endif
+  
++ char *
++ basename(char *path)
++ {
++   char *name;
++ 
++   name = strrchr(path, '/');
++   if (name) {
++     name++;
++   } else {
++     name = path;
++   }
++ 
++   return name;
++ }
++ 
+  main(int argc, char *argv[])
+  {
+    pfd_t *pf;
+***************
+*** 64,69 ****
+--- 80,87 ----
+    /* the .prc write routines write the resources in reverse order! */
+  
+    for (i=argc-1; i > optind + 2; i--) {
++     char *name;
++ 
+      if ((fd = open(argv[i], O_PLATFORM | O_RDONLY)) < 1) {
+        fprintf(stderr, "Can't open resource file %s\n",argv[i]);
+        exit(3);
+***************
+*** 76,82 ****
+      read(fd, sd, slen);
+      close (fd);
+  
+!     add_section_pfd(pf, argv[i], strtoul(argv[i] + 4, (void *)0, 16),
+  		    sd, slen);
+    }
+  
+--- 94,101 ----
+      read(fd, sd, slen);
+      close (fd);
+  
+!     name = basename(argv[i]);
+!     add_section_pfd(pf, name, strtoul(name + 4, (void *)0, 16),
+  		    sd, slen);
+    }

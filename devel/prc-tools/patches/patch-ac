@@ -1,0 +1,11 @@
+--- ../gdb-4.16/Makefile.in.orig	Tue Nov 25 00:18:51 1997
++++ ../gdb-4.16/Makefile.in	Tue Nov 25 00:18:54 1997
+@@ -66,7 +66,7 @@
+ 
+ # We don't specify -g -O because many compilers don't support -g -O,
+ # and/or -O is broken in and of itself.
+-CFLAGS = -g
++# CFLAGS = -g
+ LIBCFLAGS = $(CFLAGS)
+ CFLAGS_FOR_TARGET = $(CFLAGS)
+ LIBCFLAGS_FOR_TARGET = $(CFLAGS_FOR_TARGET)
