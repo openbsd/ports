@@ -1,5 +1,5 @@
---- pty.c.orig	Fri Aug 27 06:00:12 1999
-+++ pty.c	Tue Nov  9 22:49:52 1999
+--- pty.c.orig	Sat Apr 28 09:26:43 2001
++++ pty.c	Fri Jul 27 23:11:16 2001
 @@ -32,6 +32,23 @@
  #include "config.h"
  #include "screen.h"
@@ -24,7 +24,7 @@
  #ifndef sun
  # include <sys/ioctl.h>
  #endif
-@@ -315,25 +332,25 @@
+@@ -316,25 +333,25 @@
  OpenPTY(ttyn)
  char **ttyn;
  {
@@ -63,7 +63,7 @@
  	  if (eff_uid && access(TtyName, R_OK | W_OK))
  	    {
  	      close(f);
-@@ -356,9 +373,11 @@
+@@ -357,9 +374,11 @@
  #endif
  	  initmaster(f);
  	  *ttyn = TtyName;

@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.14 2001/05/06 00:46:51 brad Exp $
+@comment $OpenBSD: PLIST,v 1.15 2001/07/28 04:00:36 brad Exp $
 bin/screen
 @mode 4755
 bin/screen-${VERSION}
 @mode
-man/man1/screen.1
-@unexec install-info --delete %D/info/screen.info %D/info/dir
+@unexec install-info --delete --info-dir=%D/info %D/info/screen.info
 info/screen.info
-@exec install-info %D/info/screen.info %D/info/dir
+@exec install-info --info-dir=%D/info %D/info/screen.info
+man/man1/screen.1
 share/examples/screen/screenrc-sample
 @dirrm share/examples/screen
