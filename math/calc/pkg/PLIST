@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/08/02 01:50:34 wcobb Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/01/04 23:05:11 wcobb Exp $
 bin/calc
 bin/cscript/4dsphere
 bin/cscript/fproduct
@@ -8,7 +8,6 @@ bin/cscript/plus
 bin/cscript/powerterm
 bin/cscript/simple
 bin/cscript/square
-include/calc/custom
 include/calc/blkcpy.h
 include/calc/alloc.h
 include/calc/byteswap.h
@@ -461,5 +460,6 @@ share/calc/intfile.cal
 @dirrm share/calc/help
 @dirrm share/calc/custom
 @dirrm share/calc
+@dirrm include/calc/custom
 @dirrm include/calc
 @dirrm bin/cscript
