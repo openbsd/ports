@@ -1,0 +1,20 @@
+$OpenBSD: patch-bsdiff_1,v 1.1.1.1 2004/04/10 21:21:27 jolan Exp $
+--- bsdiff.1.orig	2003-06-07 10:25:05.000000000 +0200
++++ bsdiff.1	2004-01-02 15:22:15.000000000 +0200
+@@ -1,12 +1,14 @@
+ .Dd May 18, 2003
+ .Dt BSDIFF 1
+-.Os FreeBSD
++.Os
+ .Sh NAME
+ .Nm bsdiff
+ .Nd generate a patch between two binary files
+ .Sh SYNOPSIS
+ .Nm
+-.Ao Ar oldfile Ac Ao Ar newfile Ac Ao Ar patchfile Ac
++.Ao Ar oldfile Ac
++.Ao Ar newfile Ac
++.Ao Ar patchfile Ac
+ .Sh DESCRIPTION
+ .Nm
+ compares

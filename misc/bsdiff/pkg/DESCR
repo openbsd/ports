@@ -1,0 +1,10 @@
+Tools for building and applying patches to binary files.
+
+The tools included are:
+
+ o bsdiff - Binary patch generation
+ o bspatch - Binary patch application
+
+These tools are analogous to diff(1) and patch(1) but deal specifically
+with binary files.  The binary diffs produced are significantly smaller
+than those produced by similar tools (free and commercial).
