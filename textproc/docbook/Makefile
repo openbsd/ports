@@ -1,46 +1,45 @@
-# OpenBSD makefile for:	docbook
-# Version required:	3.0
-# Date created:		May 17 1998
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.7 2000/06/16 23:06:14 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.8 2000/10/08 23:51:45 avsm Exp $
 
-DISTNAME=	docbook-3.0
+DISTNAME=	docbook-4.1
 CATEGORIES=	textproc
-NEED_VERSION=	 1.230
-MASTER_SITES=	ftp://ftp.ora.com/pub/davenport/
-DISTFILES=	docbk241.tar.Z docbk30.tar.Z
+NEED_VERSION= 	1.336
 
-MAINTAINER=	angelos@openbsd.org
+ROOT_SITE=	http://www.oasis-open.org/docbook/sgml
+MASTER_SITES0=	${ROOT_SITE}/2.4.1/
+MASTER_SITES1=	${ROOT_SITE}/3.0/
+MASTER_SITES2=	${ROOT_SITE}/3.1/
+MASTER_SITES3=	${ROOT_SITE}/4.0/
+MASTER_SITES4=	${ROOT_SITE}/4.1/
+DISTFILES=	docbk241.zip:0 docbk30.zip:1 docbk31.zip:2 docbk40.zip:3 docbk41.zip:4
 
-PERMIT_PACKAGE_CDROM=	"no explict license"
+MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
+
+# permission granted in dtd copyright notice
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no explict license"
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	${ISOCAT}::textproc/iso8879
-
-EXTRACT_ONLY=	# empty
 NO_BUILD=       Yes
-WRKDIST=	${WRKDIR}
+SEPARATE_BUILD=	concurrent
+DB_VERSIONS=	2.4.1 3.0 3.1 4.0 4.1
 
 INSTDIR=	${PREFIX}/share/sgml/docbook
-ISOCAT=		${PREFIX}/share/sgml/iso8879/catalog
+RUN_DEPENDS=	${PREFIX}/share/sgml/iso8879/catalog::textproc/iso8879 \
+		${INSTDIR}/dsssl/modular/catalog::textproc/docbook-modular
 
-pre-install:
-	@[ -d ${INSTDIR}/2.4.1 ] || mkdir -p ${INSTDIR}/2.4.1
-	@[ -d ${INSTDIR}/3.0 ] || mkdir -p ${INSTDIR}/3.0
+.for i in ${DB_VERSIONS}
+EXTRACT_CASES+=	*${i:S/.//g}.zip) unzip -qa ${DISTDIR}/$$archive -d ${WRKDIR}/$i;;
+.endfor
 
 do-install:
-	@zcat ${DISTDIR}/docbk241.tar.Z |(cd ${INSTDIR}/2.4.1; pax -r)
-	@${INSTALL_DATA} ${FILESDIR}/catalog241 ${INSTDIR}/2.4.1/catalog
-	@echo "CATALOG \"${ISOCAT}\"" >> ${INSTDIR}/2.4.1/catalog
-	@zcat ${DISTDIR}/docbk30.tar.Z |(cd ${INSTDIR}/3.0; pax -r)
-	@${INSTALL_DATA} ${FILESDIR}/catalog30 ${INSTDIR}/3.0/catalog
-	@echo "CATALOG \"${ISOCAT}\"" >> ${INSTDIR}/3.0/catalog
-	@chmod ${SHAREMODE} ${INSTDIR}/2.4.1/*
-	@chmod ${SHAREMODE} ${INSTDIR}/3.0/*
-	@/usr/sbin/chown -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
+	${INSTALL_DATA_DIR} ${INSTDIR}
+	${INSTALL_DATA} ${FILESDIR}/catalog ${PREFIX}/share/sgml
+	${INSTALL_DATA} ${FILESDIR}/db_catalog ${INSTDIR}/catalog
+.for i in ${DB_VERSIONS}
+	${INSTALL_DATA_DIR} ${INSTDIR}/$i
+	${INSTALL_DATA} ${WRKDIR}/$i/* ${INSTDIR}/$i
+	${INSTALL_DATA} ${FILESDIR}/db${i:S/.//g}_catalog ${INSTDIR}/$i/catalog
+.endfor
 
 .include <bsd.port.mk>

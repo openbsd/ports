@@ -1,13 +1,15 @@
-The DocBook DTD defines structural and content-based SGML markup
-for computer documentation, with a primary emphasis on software
-documentation and related classes of technical documents. Its
-main high-level hierarchical structures are for books, reference
-entries (for example, ``man pages''), and articles. It is
-maintained by the Davenport Group (about which see the Davenport
-archive at http://www.ora.com/davenport/ or
-ftp://ftp.ora.com/pub/davenport/).
+DocBook is a DTD maintained by the DocBook Technical Committee of
+OASIS. It is particularly well suited to books and papers about
+computer hardware and software (though it is by no means limited
+to these applications).
 
-This port contains DocBook versions 2.4.1 and 3.0.
+Because it is a large and robust DTD, and because its main structures
+correspond to the general notion of what constitutes a "book,"
+DocBook has been adopted by a large and growing community of authors
+writing books of all kinds.
 
-John Fieber
-jfieber@FreeBSD.org
+DocBook is supported "out of the box" by a number of commercial
+tools, and there is rapidly expanding support for it in a number
+of free software environments.
+
+WWW: ${HOMEPAGE}

@@ -1,23 +1,91 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/10/08 23:51:47 avsm Exp $
+share/sgml/catalog
 share/sgml/docbook/2.4.1/241chg.txt
+share/sgml/docbook/2.4.1/announce.txt
 share/sgml/docbook/2.4.1/calstbl.mod
+share/sgml/docbook/2.4.1/catalog
 share/sgml/docbook/2.4.1/dbgenent.mod
 share/sgml/docbook/2.4.1/dbhier.mod
 share/sgml/docbook/2.4.1/dbpool.mod
 share/sgml/docbook/2.4.1/docbook.cat
 share/sgml/docbook/2.4.1/docbook.dcl
 share/sgml/docbook/2.4.1/docbook.dtd
-share/sgml/docbook/2.4.1/catalog
+share/sgml/docbook/2.4.1/iso-amsa.gml
+share/sgml/docbook/2.4.1/iso-amsb.gml
+share/sgml/docbook/2.4.1/iso-amsc.gml
+share/sgml/docbook/2.4.1/iso-amsn.gml
+share/sgml/docbook/2.4.1/iso-amso.gml
+share/sgml/docbook/2.4.1/iso-amsr.gml
+share/sgml/docbook/2.4.1/iso-box.gml
+share/sgml/docbook/2.4.1/iso-cyr1.gml
+share/sgml/docbook/2.4.1/iso-cyr2.gml
+share/sgml/docbook/2.4.1/iso-dia.gml
+share/sgml/docbook/2.4.1/iso-grk1.gml
+share/sgml/docbook/2.4.1/iso-grk2.gml
+share/sgml/docbook/2.4.1/iso-grk3.gml
+share/sgml/docbook/2.4.1/iso-grk4.gml
+share/sgml/docbook/2.4.1/iso-lat1.gml
+share/sgml/docbook/2.4.1/iso-lat2.gml
+share/sgml/docbook/2.4.1/iso-num.gml
+share/sgml/docbook/2.4.1/iso-pub.gml
+share/sgml/docbook/2.4.1/iso-tech.gml
 share/sgml/docbook/3.0/30chg.txt
 share/sgml/docbook/3.0/40issues.txt
 share/sgml/docbook/3.0/announce.txt
 share/sgml/docbook/3.0/cals-tbl.dtd
+share/sgml/docbook/3.0/catalog
 share/sgml/docbook/3.0/dbgenent.mod
 share/sgml/docbook/3.0/dbhier.mod
 share/sgml/docbook/3.0/dbpool.mod
 share/sgml/docbook/3.0/docbook.cat
 share/sgml/docbook/3.0/docbook.dcl
 share/sgml/docbook/3.0/docbook.dtd
-share/sgml/docbook/3.0/catalog
-@dirrm share/sgml/docbook/2.4.1
+share/sgml/docbook/3.1/31chg.txt
+share/sgml/docbook/3.1/40issues.txt
+share/sgml/docbook/3.1/50issues.txt
+share/sgml/docbook/3.1/ChangeLog
+share/sgml/docbook/3.1/cals-tbl.dtd
+share/sgml/docbook/3.1/catalog
+share/sgml/docbook/3.1/dbcent.mod
+share/sgml/docbook/3.1/dbgenent.mod
+share/sgml/docbook/3.1/dbhier.mod
+share/sgml/docbook/3.1/dbnotn.mod
+share/sgml/docbook/3.1/dbpool.mod
+share/sgml/docbook/3.1/docbook.cat
+share/sgml/docbook/3.1/docbook.dcl
+share/sgml/docbook/3.1/docbook.dtd
+share/sgml/docbook/3.1/readme.txt
+share/sgml/docbook/4.0/40chg.txt
+share/sgml/docbook/4.0/50issues.txt
+share/sgml/docbook/4.0/cals-tbl.dtd
+share/sgml/docbook/4.0/catalog
+share/sgml/docbook/4.0/dbcent.mod
+share/sgml/docbook/4.0/dbgenent.mod
+share/sgml/docbook/4.0/dbhier.mod
+share/sgml/docbook/4.0/dbnotn.mod
+share/sgml/docbook/4.0/dbpool.mod
+share/sgml/docbook/4.0/docbook.cat
+share/sgml/docbook/4.0/docbook.dcl
+share/sgml/docbook/4.0/docbook.dtd
+share/sgml/docbook/4.0/readme.txt
+share/sgml/docbook/4.1/40chg.txt
+share/sgml/docbook/4.1/41chg.txt
+share/sgml/docbook/4.1/50issues.txt
+share/sgml/docbook/4.1/ChangeLog
+share/sgml/docbook/4.1/cals-tbl.dtd
+share/sgml/docbook/4.1/catalog
+share/sgml/docbook/4.1/dbcent.mod
+share/sgml/docbook/4.1/dbgenent.mod
+share/sgml/docbook/4.1/dbhier.mod
+share/sgml/docbook/4.1/dbnotn.mod
+share/sgml/docbook/4.1/dbpool.mod
+share/sgml/docbook/4.1/docbook.cat
+share/sgml/docbook/4.1/docbook.dcl
+share/sgml/docbook/4.1/docbook.dtd
+share/sgml/docbook/4.1/readme.txt
+share/sgml/docbook/catalog
+@dirrm share/sgml/docbook/4.1
+@dirrm share/sgml/docbook/4.0
+@dirrm share/sgml/docbook/3.1
 @dirrm share/sgml/docbook/3.0
-@dirrm share/sgml/docbook
+@dirrm share/sgml/docbook/2.4.1
