@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2003/01/05 19:59:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2003/01/05 20:52:23 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -2481,7 +2481,7 @@ share/wallpapers/triplegears.jpg
 @dirrm share/locale/en_US
 @comment @dirrm share/locale
 @dirrm share/fonts/override
-@dirrm share/fonts
+@comment @dirrm share/fonts
 @dirrm share/doc/HTML/en/kwrite
 @dirrm share/doc/HTML/en/ksysguard
 @dirrm share/doc/HTML/en/kpager
