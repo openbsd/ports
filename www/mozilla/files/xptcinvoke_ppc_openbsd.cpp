@@ -104,23 +104,13 @@ invoke_copy_to_stack(PRUint32* d,
                 if ((PRUint32) d & 4) d++; // doubles are 8-byte aligned on stack
                 *((double*) d) = s->val.d;
                 d += 2;
-#if 0
-		if (gpr < GPR_COUNT)
-		    gpr += 2;
-#endif
             }
         }
         else if (!s->IsPtrData() && s->type == nsXPTType::T_FLOAT) {
             if (fpr < FPR_COUNT)
                 fpregs[fpr++]   = s->val.f; // if passed in registers, floats are promoted to doubles
-            else {
-                *((float*) d) = s->val.f;
-		d += 1;
-#if 0
-		if (gpr < GPR_COUNT)
-		    gpr += 1;
-#endif
-	    }
+            else
+                *((float*) d++) = s->val.f;
         }
         else if (!s->IsPtrData() && (s->type == nsXPTType::T_I64
                                      || s->type == nsXPTType::T_U64)) {

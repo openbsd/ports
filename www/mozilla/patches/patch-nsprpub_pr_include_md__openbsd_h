@@ -1,6 +1,6 @@
-$OpenBSD: patch-nsprpub_pr_include_md__openbsd_h,v 1.1 2004/02/29 22:27:49 wilfried Exp $
---- nsprpub/pr/include/md/_openbsd.h.orig	2000-06-20 23:23:18.000000000 +0200
-+++ nsprpub/pr/include/md/_openbsd.h	2004-02-22 11:12:33.000000000 +0100
+$OpenBSD: patch-nsprpub_pr_include_md__openbsd_h,v 1.2 2004/03/01 23:51:58 drahn Exp $
+--- nsprpub/pr/include/md/_openbsd.h.orig	2004-03-01 17:54:03.000000000 -0500
++++ nsprpub/pr/include/md/_openbsd.h	2004-03-01 17:50:51.000000000 -0500
 @@ -71,6 +71,12 @@
  #define _PR_HAVE_SYSV_SEMAPHORES
  #define PR_HAVE_SYSV_NAMED_SHARED_MEMORY
@@ -14,3 +14,15 @@ $OpenBSD: patch-nsprpub_pr_include_md__openbsd_h,v 1.1 2004/02/29 22:27:49 wilfr
  #define USE_SETJMP
  
  #ifndef _PR_PTHREADS
+@@ -80,8 +86,10 @@
+ 
+ #define CONTEXT(_th) ((_th)->md.context)
+ 
+-#if defined(__i386__) || defined(__sparc__) || defined(__m68k__) || defined(__powerpc__)
++#if defined(__i386__) || defined(__sparc__) || defined(__m68k__)
+ #define JB_SP_INDEX 2
++#elif defined(__powerpc__)
++#define JB_SP_INDEX 1
+ #elif defined(__alpha__)
+ #define JB_SP_INDEX 34
+ #elif defined(__arm32__)
