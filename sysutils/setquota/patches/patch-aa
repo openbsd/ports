@@ -1,8 +1,8 @@
---- Makefile.orig	Wed Mar 12 01:32:55 1997
-+++ Makefile	Sat May 22 23:50:37 1999
+--- Makefile.orig	1997-03-12 09:32:55.000000000 +0100
++++ Makefile	2004-01-04 19:46:40.000000000 +0100
 @@ -1,10 +1,11 @@
--# $Id: patch-aa,v 1.2 1999/05/23 06:01:14 brad Exp $
-+# From: $Id: patch-aa,v 1.2 1999/05/23 06:01:14 brad Exp $
+-# $Id: patch-aa,v 1.3 2004/01/04 18:50:33 espie Exp $
++# From: $Id: patch-aa,v 1.3 2004/01/04 18:50:33 espie Exp $
  
  PROG=		setquota
  SRCS=		printquota.c setquota.c quotatool.c
