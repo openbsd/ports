@@ -1,3 +1,4 @@
+$OpenBSD: patch-Makefile.in,v 1.2 2002/09/11 05:49:59 pvalchev Exp $
 --- Makefile.in.orig	Sun Aug 27 02:26:50 2000
 +++ Makefile.in	Sun Aug 27 02:36:46 2000
 @@ -8,12 +8,12 @@

@@ -1,3 +1,4 @@
+$OpenBSD: patch-sn_data.h,v 1.4 2002/09/11 05:49:59 pvalchev Exp $
 --- sn_data.h.orig	Thu Jul 16 10:17:10 1998
 +++ sn_data.h	Tue Sep 10 23:02:18 2002
 @@ -43,6 +43,36 @@ char *NETDEV[]={"ed"};		
