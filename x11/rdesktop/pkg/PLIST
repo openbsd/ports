@@ -1,3 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/03 20:07:17 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/06/10 19:59:03 jolan Exp $
 bin/rdesktop
 man/man1/rdesktop.1
+share/rdesktop/keymaps/ar
+share/rdesktop/keymaps/common
+share/rdesktop/keymaps/da
+share/rdesktop/keymaps/de
+share/rdesktop/keymaps/en-gb
+share/rdesktop/keymaps/en-us
+share/rdesktop/keymaps/es
+share/rdesktop/keymaps/fi
+share/rdesktop/keymaps/fr
+share/rdesktop/keymaps/fr-be
+share/rdesktop/keymaps/hr
+share/rdesktop/keymaps/it
+share/rdesktop/keymaps/ja
+share/rdesktop/keymaps/lt
+share/rdesktop/keymaps/lv
+share/rdesktop/keymaps/mk
+share/rdesktop/keymaps/modifiers
+share/rdesktop/keymaps/no
+share/rdesktop/keymaps/pl
+share/rdesktop/keymaps/pt
+share/rdesktop/keymaps/pt-br
+share/rdesktop/keymaps/ru
+share/rdesktop/keymaps/sl
+share/rdesktop/keymaps/sv
+share/rdesktop/keymaps/th
+share/rdesktop/keymaps/tr
+@dirrm share/rdesktop/keymaps
+@dirrm share/rdesktop

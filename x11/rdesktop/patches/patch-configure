@@ -1,13 +1,33 @@
-$OpenBSD: patch-configure,v 1.1 2002/01/17 04:15:04 jcs Exp $
---- configure.orig	Wed Jan 16 22:01:32 2002
-+++ configure	Wed Jan 16 22:01:58 2002
-@@ -222,6 +222,9 @@
-   --with-debug-leaks*)
-     echo "CFLAGS  += -g -DWITH_DEBUG_LEAKS" >>Makeconf
+$OpenBSD: patch-configure,v 1.2 2003/06/10 19:59:03 jolan Exp $
+--- configure.orig	Thu Jan 30 04:54:48 2003
++++ configure	Sun Jun  8 03:27:24 2003
+@@ -55,6 +55,9 @@ case $arg in
+     ;;
+   --without-debug*)
      ;;
 +  --sysconfdir*)
 +    # ignore
 +    ;;
    *)
-     echo "rdesktop build configuration script"
-     echo
+     echo "Target directories:"
+     echo " --prefix=PREFIX         location for architecture-independent files"
+@@ -98,7 +101,7 @@ fi
+ echo "CC          = $cc" >>Makeconf
+ 
+ if $cc -v 2>&1 |grep '^gcc' >/dev/null; then
+-    cflags="$cflags -Wall -O2"
++    cflags="$cflags -Wall"
+ else
+     cflags="$cflags -O"
+ fi
+@@ -220,8 +223,8 @@ case `uname -s` in
+ esac
+ 
+ 
+-echo "CFLAGS      = $cflags" >>Makeconf
+-echo "LDFLAGS     = $ldflags" >>Makeconf
++echo "CFLAGS      += $cflags" >>Makeconf
++echo "LDFLAGS     += $ldflags" >>Makeconf
+ 
+ echo "configure complete - now run make"
+ 
