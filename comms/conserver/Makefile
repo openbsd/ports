@@ -1,27 +1,31 @@
-# OpenBSD  makefile for:    conserver
-# Version required:     5.21-Beta
-# Date created:         28 April 1998
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/04/29 03:31:56 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/07 05:24:18 marc Exp $
 #
 
 DISTNAME=	conserver-5.21-Beta
 PKGNAME=	conserver-5.21
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.uu.net/vendor/bitsko/config-mgmt/ \
-		ftp://unix.hensa.ac.uk/mirrors/uunet/vendor/bitsko/config-mgmt/
-EXTRACT_SUFX=	.shar.gz
+
+# If you want to distribute a package you must heed this part of
+# the copyright:
+#	distributions including binaries display the following
+#	acknowledgement:  ``This product includes software
+#	developed by The Ohio State University and its contributors''
+#	in the documentation or other materials provided with the
+#	distribution and in all advertising materials mentioning
+#	features or use of this software. 
+NO_PACKAGE=	"binary distribution requires explicit acknowledgement"
 
 MAINTAINER=	angelos@openbsd.org
 
+MASTER_SITES=	ftp://ftp.uu.net/vendor/bitsko/config-mgmt/ \
+		ftp://unix.hensa.ac.uk/mirrors/uunet/vendor/bitsko/config-mgmt/
+EXTRACT_SUFX=	.shar.gz
 EXTRACT_CMD=	zcat
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
+
 NO_WRKSUBDIR=	yes
 NO_CONFIGURE=	yes
-MAN5=		conserver.cf.5
-MAN8=		console.8 conserver.8
 
 # Set this to where you want console(8) to connect to by default
 # or use something like ``make DEFAULTHOST=myserver.mydomain.net''
@@ -33,12 +37,12 @@ post-extract:
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/conserver.sh ]; then \
-		echo "Installing ${PREFIX}/etc/rc.d/conserver.sh startup file."; \
-		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/conserver.sh; \
-		echo "if [ -x /usr/local/sbin/conserver -a -f /usr/local/etc/conserver.cf ]; then" >> ${PREFIX}/etc/rc.d/conserver.sh; \
-		echo "	/usr/local/sbin/conserver -d -n ; echo -n ' conserver'" >> ${PREFIX}/etc/rc.d/conserver.sh; \
-		echo "fi" >> ${PREFIX}/etc/rc.d/conserver.sh; \
-		chmod 751 ${PREFIX}/etc/rc.d/conserver.sh; \
+	  echo "Installing ${PREFIX}/etc/rc.d/conserver.sh startup file."; \
+	  echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/conserver.sh; \
+	  echo "if [ -x /usr/local/sbin/conserver -a -f /usr/local/etc/conserver.cf ]; then" >> ${PREFIX}/etc/rc.d/conserver.sh; \
+	  echo "	/usr/local/sbin/conserver -d -n ; echo -n ' conserver'" >> ${PREFIX}/etc/rc.d/conserver.sh; \
+	  echo "fi" >> ${PREFIX}/etc/rc.d/conserver.sh; \
+	  chmod 751 ${PREFIX}/etc/rc.d/conserver.sh; \
 	fi
 
 .include <bsd.port.mk>
