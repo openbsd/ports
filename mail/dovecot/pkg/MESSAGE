@@ -1,7 +1,16 @@
+Files to facilitate the generation of a self-signed
+certificate and key for Dovecot have been installed:
+/etc/ssl/dovecot-openssl.cnf (Edit this accordingly!)
+${PREFIX}/sbin/dovecot-mkcert.sh
+
+If this has been or will be accomplished by other means,
+use the following paths for the files:
+/etc/ssl/dovecotcert.pem
+/etc/ssl/private/dovecot.pem
+
 If you wish to have Dovecot started automatically at boot time,
 simply add the follow lines to /etc/rc.local:
 
 if [ -x ${PREFIX}/sbin/dovecot ]; then
 	echo -n ' dovecot';       ${PREFIX}/sbin/dovecot
 fi
-
