@@ -1,54 +1,18 @@
-$OpenBSD: patch-configure_in,v 1.1 2001/09/17 23:01:00 naddy Exp $
---- configure.in.orig	Mon Sep 17 23:42:00 2001
-+++ configure.in	Mon Sep 17 23:43:21 2001
-@@ -305,46 +305,6 @@ AC_CHECK_HEADERS(utime.h)
- AC_FUNC_MMAP
- AC_CHECK_TYPE(umode_t, int)
+$OpenBSD: patch-configure_in,v 1.2 2001/10/29 17:45:44 naddy Exp $
+--- configure.in.orig	Fri Mar 16 20:45:53 2001
++++ configure.in	Fri Oct 26 21:00:33 2001
+@@ -332,8 +332,8 @@ fi
  
--AC_ARG_ENABLE(prefer-db1, [  --enable-prefer-db1     Prefer Berkeley DB 1.x] [default=no]],[prefer_db1="$enableval"],[prefer_db1=no])
--dnl
--dnl Check for db stuff (gnome-metadata)
--dnl
--DB_LIB=
--AC_CHECK_FUNC(dbopen, [],
--if test "$prefer_db1" = "yes"; then
-- AC_CHECK_LIB(db1, dbopen, DB_LIB="-ldb1",
--  AC_CHECK_LIB(db, dbopen, DB_LIB="-ldb",
--   AC_CHECK_LIB(db-3, __db185_open, DB_LIB="-ldb-3",
--    AC_MSG_ERROR([Your db library is missing db 1.85 compatibility mode])
--   )
--  )
-- )
--else
-- AC_CHECK_LIB(db, dbopen, DB_LIB="-ldb",
--  AC_CHECK_LIB(db1, dbopen, DB_LIB="-ldb1",
--   AC_CHECK_LIB(db-3, __db185_open, DB_LIB="-ldb-3",
--    AC_MSG_ERROR([Your db library is missing db 1.85 compatibility mode])
--   )
--  )
-- )
--fi
--)
--
--dnl look for db headers
--if test "$prefer_db1" = "yes"; then
+ dnl look for db headers
+ if test "$prefer_db1" = "yes"; then
 -	AC_CHECK_HEADERS(db_185.h db1/db.h)
 -	if test "$ac_cv_header_db_185_h$ac_cv_header_db1_db_h" = nono; then
--	  AC_MSG_ERROR([Berkeley db library required for Gnome])
--	fi
--	AC_DEFINE(PREFER_DB1)
--else
--	AC_CHECK_HEADERS(db.h db_185.h db1/db.h)
--
--	if test "$ac_cv_header_db_h$ac_cv_header_db_185_h$ac_cv_header_db1_db_h" = nonono; then
--	  AC_MSG_ERROR([Berkeley db library required for Gnome])
--	fi
--fi
--
- dnl
- dnl This is needed for the gnome-moz-remote program.  It doesn't use GDK,
- dnl since some of the code in it was written before GDK existed.
-@@ -431,7 +391,7 @@ else
++	AC_CHECK_HEADERS(db.h db1/db.h)
++	if test "$ac_cv_header_db_h$ac_cv_header_db1_db_h" = nono; then
+ 	  AC_MSG_ERROR([Berkeley db library required for Gnome])
+ 	fi
+ 	AC_DEFINE(PREFER_DB1)
+@@ -431,7 +431,7 @@ else
    kde_datadir=$with_kde_datadir
  fi
  

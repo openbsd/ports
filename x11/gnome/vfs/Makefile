@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/10/24 12:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/29 17:45:44 naddy Exp $
 
 COMMENT=		"GNOME Virtual File System"
 V=			1.0.1
@@ -17,7 +17,7 @@ PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfi
 
 LIB_DEPENDS=		gnome.36::x11/gnome/libs \
 			xml.9::textproc/libxml1 \
-			gconf-1,gconf-gtk-1::devel/gconf,db3 \
+			gconf-1,gconf-gtk-1::devel/gconf \
 			cdda_paranoia,cdda_interface::audio/cdparanoia \
 			bz2::archivers/bzip2 \
 			gthread::devel/glib
