@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.287 2000/05/30 16:39:04 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.288 2000/05/31 22:37:42 marc Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1254,7 +1254,7 @@ package: ${_PACKAGE_COOKIE}
 
 uninstall deinstall:
 	@${ECHO_MSG} "===> Deinstalling for ${PKGNAME}"
-	@${PKG_DELETE} -f ${PKGNAME}
+	@${SUDO} ${PKG_DELETE} -f ${PKGNAME}
 	@rm -f ${_INSTALL_COOKIE} ${_PACKAGE_COOKIE} ${_SUBPACKAGE_COOKIES}
 
 .endif # IGNORECMD
