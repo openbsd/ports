@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2003/07/14 11:31:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2003/07/31 18:53:00 naddy Exp $
 
 COMMENT=	"Gtk-based scientific calculator"
 
-DISTNAME=	calcoo-1.3.14
+DISTNAME=	calcoo-1.3.15
 CATEGORIES=	math
 HOMEPAGE=	http://calcoo.sourceforge.net/
 
@@ -19,7 +19,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=calcoo/} \
 
 LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+
 
-SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
+SEPARATE_BUILD=	simple
+CONFIGURE_STYLE=gnu
 
 .include <bsd.port.mk>
