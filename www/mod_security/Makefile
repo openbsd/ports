@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/11/19 01:33:26 david Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/02 06:23:06 david Exp $
 
 COMMENT=	"Web intrusion detection and prevention engine"
 
@@ -25,7 +25,7 @@ NO_REGRESS=	Yes
 
 DOCS=	CHANGES INSTALL LICENSE README modsecurity-manual-1.7.pdf
 
-WRKSRC=		${WRKDIR}/mod_security_1.7.3
+WRKDIST=	${WRKDIR}/mod_security_1.7.3
 
 do-build:
 	cd ${WRKSRC}/apache1 && /usr/sbin/apxs -Wc,"${CFLAGS}" -c \
