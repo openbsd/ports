@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.6 2002/01/08 05:25:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2002/01/11 01:44:15 naddy Exp $
 
 COMMENT=	"tty-based e-mail client"
 
 VERSION=	1.2.5.1
 DISTNAME=	mutt-${VERSION}
-CATEGORIES=     mail
+CATEGORIES=	mail
 NEED_VERSION=	1.500
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
-                ftp://ftp.gbnet.net/pub/mutt-international/ \
-                ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
-                ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/ \
+		ftp://ftp.gbnet.net/pub/mutt-international/ \
+		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
+		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/ \
 		ftp://ftp.iks-jena.de/pub/mitarb/lutz/crypt/software/pgp/mutt/
+MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
 
 HOMEPAGE=	http://www.mutt.org/
 
@@ -23,7 +24,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	slang imap pop mixmaster compressed 
+FLAVORS=	slang imap pop mixmaster compressed
 FLAVOR?=
 
 SYSCONFDIR=	/etc/mutt
@@ -46,10 +47,11 @@ CONFIGURE_ARGS+= --with-curses
 # compressed folder support provided by
 # http://www.spinnaker.de/mutt/compressed/
 .if ${FLAVOR:L:Mcompressed}
-MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
 PATCHFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
 PATCH_DIST_STRIP=-p1
 CONFIGURE_ARGS+= --enable-compressed
+.else
+SUPDISTFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
 .endif
 
 # If you need IMAP or POP, you may want to enable those.
