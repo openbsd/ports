@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2000/08/15 14:31:54 jakob Exp $
+# $OpenBSD: Makefile,v 1.33 2000/08/15 14:32:55 jakob Exp $
 
 DISTNAME=	ethereal-0.8.11
 CATEGORIES=	net x11
@@ -25,6 +25,16 @@ USE_X11=		Yes
 SYSCONFDIR=		${PREFIX}/share/ethereal
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
+
+FLAVORS=	snmp
+
+FLAVOR?=
+.if ${FLAVOR:L} == "snmp"
+CONFIGURE_ARGS+=	--enable-snmp
+CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" LIBS="-lsnmp -lcrypto"
+BUILD_DEPENDS+=		${PREFIX}/lib/libsnmp.a::net/ucd-snmp
+.else
 CONFIGURE_ARGS+=	--disable-snmp
+.endif
 
 .include <bsd.port.mk>
