@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/12/28 19:34:51 todd Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/11/23 14:03:54 sturm Exp $
 bin/cube3d
 bin/ggiteleserver
 bin/monitest
@@ -244,3 +244,5 @@ share/examples/ggi/libggi.conf.example
 @dirrm lib/ggi/display
 @dirrm lib/ggi/default
 @dirrm include/ggi/display
+@cwd ${SYSCONFDIR}/ggi
+@extra libggi.conf
