@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2001/07/18 13:52:38 shell Exp $
+# $OpenBSD: Makefile,v 1.91 2001/07/18 21:53:56 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -95,7 +95,7 @@
      SUBDIR += py-Distutils
      SUBDIR += rats
      SUBDIR += sdl
-     SUBDIR += sdl,oss,esd
+     SUBDIR += sdl,esd
      SUBDIR += sdlmm
      SUBDIR += sdl-image
      SUBDIR += sdl-mixer
