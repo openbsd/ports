@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/04 22:47:50 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/12/05 12:10:15 espie Exp $
 
 CATEGORIES=	textproc devel print
 VERSION=3.64
@@ -26,8 +26,8 @@ DIST_SUBDIR=${DISTNAME}
 MAKE_FLAGS=BASEDIR=${PREFIX} DEFSFILE=${PREFIX}/share/texmf/tex/latex/lgrind/lgrindef VERSION=${VERSION}
 FAKE_FLAGS=BASEDIR=${WRKINST}${PREFIX}
 
-BUILD_DEPENDS=latex::print/teTeX_base
-RUN_DEPENDS=latex::print/teTeX_base
+BUILD_DEPENDS=latex::print/teTeX/base
+RUN_DEPENDS=latex::print/teTeX/base
 
 post-build:
 	cd ${WRKDIST} && latex lgrind.ins
