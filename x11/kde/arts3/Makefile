@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/23 14:57:58 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/25 19:56:45 espie Exp $
 
 COMMENT=		"X11 toolkit, multimedia hub"
 CATEGORIES=		x11 x11/kde
@@ -53,6 +53,15 @@ MAKE_ENV=		${CONFIGURE_ENV}
 # Ensure qt2 will always be at the front
 MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 
+pre-build:
+	@if pkg dependencies check kdelibs-\*; then \
+		if pkg dependencies check ${DISTNAME}; then \
+			:; \
+		else \
+			echo 1>&2 "Error: you must remove your old kdelibs first"; \
+			exit 1; \
+		fi; \
+    	fi
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
