@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2002/10/25 11:34:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2002/11/18 23:00:59 naddy Exp $
 
 COMMENT=	"serial and network communications package"
 
-PKGNAME=	kermit-8.0.201
-DISTNAME=	cku201
+PKGNAME=	kermit-8.0.206
+DISTNAME=	cku206
 CATEGORIES=	comms
 HOMEPAGE=	http://www.kermit-project.org/
 
