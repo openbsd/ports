@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2000/12/16 08:37:03 kevlo Exp $
+# $OpenBSD: Makefile,v 1.100 2000/12/19 15:30:47 espie Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -26,6 +26,7 @@
      SUBDIR += epic4
      SUBDIR += ethereal
      SUBDIR += firewalk
+     SUBDIR += flow-tools
      SUBDIR += fping
      SUBDIR += gaim
      SUBDIR += gated
