@@ -1,5 +1,5 @@
---- tcl.m4.orig	Mon Mar  1 17:58:59 2004
-+++ tcl.m4	Sat Jul  3 12:27:16 2004
+--- tcl.m4.orig	Mon Mar  1 18:58:59 2004
++++ tcl.m4	Sat Jul  3 22:51:24 2004
 @@ -1209,7 +1209,7 @@ dnl AC_CHECK_TOOL(AR, ar)
  	    CC_SEARCH_FLAGS=""
  	    LD_SEARCH_FLAGS=""
@@ -9,19 +9,17 @@
  	    # Not available on all versions:  check for include file.
  	    AC_CHECK_HEADER(dlfcn.h, [
  		# NetBSD/SPARC needs -fPIC, -fpic will not do.
-@@ -1245,6 +1245,55 @@ dnl AC_CHECK_TOOL(AR, ar)
- 		LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
- 		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
+@@ -1247,6 +1247,53 @@ dnl AC_CHECK_TOOL(AR, ar)
  	    ])
-+
-+	    # FreeBSD doesn't handle version numbers with dots.
+ 
+ 	    # FreeBSD doesn't handle version numbers with dots.
 +
 +	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
 +	    TCL_LIB_VERSIONS_OK=nodots
 +	    ;;
 +	OpenBSD-*)
-+	    case `machine` in
-+	    luna88k|mvme88k|vax)
++	    case `arch -s` in
++	    m88k|vax)
 +		SHLIB_CFLAGS=""
 +		SHLIB_LD="echo tclLdAout $CC \{$SHLIB_CFLAGS\} | `pwd`/tclsh -r"
 +		SHLIB_LD_LIBS='${LIBS}'
@@ -63,5 +61,5 @@
 +		;;
 +	    esac
  
- 	    # FreeBSD doesn't handle version numbers with dots.
- 
+ 	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
+ 	    TCL_LIB_VERSIONS_OK=nodots

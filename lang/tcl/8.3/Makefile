@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/12/04 21:06:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2004/07/04 03:18:59 brad Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	"Tool Command Language"
@@ -30,7 +30,6 @@ FAKE_FLAGS=	INSTALL="install -c" INSTALL_ROOT="${WRKINST}" \
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ENV=	PORTSDIR="${PORTSDIR}"
 
 WRKDIST=	${WRKDIR}/tcl${VERSION}/unix
