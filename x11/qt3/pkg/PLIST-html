@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.1.1.1 2002/03/04 16:13:05 espie Exp $
+@comment $OpenBSD: PLIST-html,v 1.2 2002/04/09 14:21:44 espie Exp $
 share/doc/qt3/html/aboutqt.html
 share/doc/qt3/html/abstract-connections.png
 share/doc/qt3/html/abstractwidgets.html
@@ -1737,3 +1737,4 @@ share/doc/qt3/html/xt-motif-examples.html
 share/doc/qt3/html/xt.html
 share/doc/qt3/html/y2k.html
 @dirrm share/doc/qt3/html
+@exec rmdir %D/share/doc/qt3 || true
