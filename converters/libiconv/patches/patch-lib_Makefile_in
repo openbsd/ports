@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.7 2004/06/13 06:47:32 pvalchev Exp $
+$OpenBSD: patch-lib_Makefile_in,v 1.8 2004/09/23 07:07:01 pvalchev Exp $
 --- lib/Makefile.in.orig	2003-05-18 08:19:16.000000000 -0600
 +++ lib/Makefile.in	2004-06-13 00:31:54.000000000 -0600
 @@ -26,7 +26,7 @@ LIBTOOL_COMPILE = $(LIBTOOL) --mode=comp
@@ -15,15 +15,15 @@ $OpenBSD: patch-lib_Makefile_in,v 1.7 2004/06/13 06:47:32 pvalchev Exp $
  
  iconv.lo : $(srcdir)/iconv.c $(srcdir)/converters.h $(srcdir)/encodings.def $(srcdir)/encodings_aix.def $(srcdir)/encodings_osf1.def $(srcdir)/encodings_dos.def $(srcdir)/encodings_local.def $(srcdir)/aliases.h $(srcdir)/aliases_aix.h $(srcdir)/aliases_osf1.h $(srcdir)/aliases_dos.h $(srcdir)/flags.h
 -	$(LIBTOOL_COMPILE) $(CC) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(DEFS) -c $(srcdir)/iconv.c
-+	$(LIBTOOL_COMPILE) $(CC) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(DEFS) -fPIC -DPIC -c $(srcdir)/iconv.c
++	$(LIBTOOL_COMPILE) $(CC) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(DEFS) $(LIBTOOL_FLAGS) -c $(srcdir)/iconv.c
  
  localcharset.lo : $(srcdir)/../libcharset/lib/localcharset.c $(srcdir)/relocatable.h
 -	$(LIBTOOL_COMPILE) $(CC) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(DEFS) -c $(srcdir)/../libcharset/lib/localcharset.c
-+	$(LIBTOOL_COMPILE) $(CC) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(DEFS) -fPIC -DPIC -c $(srcdir)/../libcharset/lib/localcharset.c
++	$(LIBTOOL_COMPILE) $(CC) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(DEFS) $(LIBTOOL_FLAGS) -c $(srcdir)/../libcharset/lib/localcharset.c
  
  relocatable.lo : $(srcdir)/relocatable.c $(srcdir)/relocatable.h
 -	$(LIBTOOL_COMPILE) $(CC) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(DEFS) -c $(srcdir)/relocatable.c
-+	$(LIBTOOL_COMPILE) $(CC) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(DEFS) -fPIC -DPIC -c $(srcdir)/relocatable.c
++	$(LIBTOOL_COMPILE) $(CC) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(DEFS) $(LIBTOOL_FLAGS) -c $(srcdir)/relocatable.c
  
  # Installs the library and include files only. Typically called with only
  # $(libdir) and $(includedir) - don't use $(prefix) and $(exec_prefix) here.

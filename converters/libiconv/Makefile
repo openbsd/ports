@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/12/24 00:08:02 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2004/09/23 07:07:01 pvalchev Exp $
 
 COMMENT=	"character set conversion library"
 
@@ -26,3 +26,7 @@ CONFIGURE_ARGS+= --enable-static \
 		 --mandir=${PREFIX}/man
 
 .include <bsd.port.mk>
+
+.if ${NO_SHARED_LIBS:L} == "no"
+CONFIGURE_ENV=	LIBTOOL_FLAGS="-fPIC -DPIC"
+.endif
