@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/10/04 18:10:09 danh Exp $
+# $OpenBSD: Makefile,v 1.17 2001/10/08 16:36:57 danh Exp $
 
 COMMENT=	"system to store and display time-series data"
 
@@ -41,5 +41,12 @@ CONFIGURE_ARGS+= --without-tcllib
 post-install:
 	cd ${WRKSRC} && ${MAKE} site-tcl-install
 .endif
+
+post-patch:
+	@cd ${WRKSRC}/config; \
+	${PATCH} --forward --quiet -E < \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig && \
+	${PATCH} --forward --quiet -E < \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh
 
 .include <bsd.port.mk>
