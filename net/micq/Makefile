@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 16:16:29 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 16:59:25 espie Exp $
 # $FreeBSD: Makefile,v 1.6 1999/06/03 08:31:06 ache Exp $
 
 DISTNAME=       micq-0.4.5
@@ -6,7 +6,7 @@ CATEGORIES=	net
 MASTER_SITES=   ftp://micq.chatzone.org/pub/micq/V0.4.5/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Olef Safiullin <form@openbsd.org>
+MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes

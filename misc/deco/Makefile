@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 16:16:27 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 16:59:24 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/03/27 11:56:44 tg Exp $
 
 DISTNAME=	deco383
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAINTAINER=	Olef Safiullin <form@openbsd.org>
+MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
