@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2000/03/27 03:05:57 kevlo Exp $
+# $OpenBSD: Makefile,v 1.49 2000/03/31 17:22:05 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -8,7 +8,18 @@
      SUBDIR += Xaw3d
      SUBDIR += afterstep
 #    SUBDIR += amiwm
-     SUBDIR += asclock
+     SUBDIR += asclock:english
+     SUBDIR += asclock:german
+     SUBDIR += asclock:portuguese
+     SUBDIR += asclock:dutch
+     SUBDIR += asclock:norwegian
+     SUBDIR += asclock:italian
+     SUBDIR += asclock:swedish
+     SUBDIR += asclock:spanish
+     SUBDIR += asclock:hungarian
+     SUBDIR += asclock:breton
+     SUBDIR += asclock:french
+     SUBDIR += asclock:czech
 #    SUBDIR += asfiles
      SUBDIR += aterm
 #    SUBDIR += auis
@@ -122,5 +133,6 @@
      SUBDIR += xview-config
      SUBDIR += xview-lib
      SUBDIR += xzoom
+
 
 .include <bsd.port.subdir.mk>

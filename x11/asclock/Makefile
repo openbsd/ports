@@ -3,12 +3,13 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 2000/03/23 20:14:19 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/31 17:22:05 espie Exp $
 #
 
 DISTNAME=	asclock
 PKGNAME=	asclock-1.0
 CATEGORIES=	x11
+NEED_VERSION=	1.240
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=		applications
 EXTRACT_SUFX=	.tgz
@@ -20,29 +21,46 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
+FAKE=		Yes
+
+FLAVORS=english german portuguese dutch norwegian italian swedish spanish \
+hungarian breton french czech
+
+FLAVOR?=english
+
+
+# Note we test whether FLAVOR contains english or german or...
+# there are some other options to asclock building, maybe we should extend
+# the flavor ?
+
+.if ${FLAVOR:L:Menglish}
+ASCLOCK_LANG=1
+.elif ${FLAVOR:L:Mgerman}
+ASCLOCK_LANG=2
+.elif ${FLAVOR:L:Mportuguese}
+ASCLOCK_LANG=3
+.elif ${FLAVOR:L:Mdutch}
+ASCLOCK_LANG=4
+.elif ${FLAVOR:L:Mnorwegian}
+ASCLOCK_LANG=5
+.elif ${FLAVOR:L:Mitalian}
+ASCLOCK_LANG=6
+.elif ${FLAVOR:L:Mswedish}
+ASCLOCK_LANG=7
+.elif ${FLAVOR:L:Mspanish}
+ASCLOCK_LANG=8
+.elif ${FLAVOR:L:Mhungarian}
+ASCLOCK_LANG=9
+.elif ${FLAVOR:L:Mbreton}
+ASCLOCK_LANG=0
+.elif ${FLAVOR:L:Mfrench}
+ASCLOCK_LANG=a
+.elif ${FLAVOR:L:Mczech}
+ASCLOCK_LANG=b
+.endif
 
 pre-configure:
-	(cd ${WRKSRC}; \
-	echo ${ASCLOCK_LANG} | ${WRKSRC}/configure > /dev/null)
-	@${ECHO_MSG} "*****************  NOTE  *****************"
-	@${ECHO_MSG} "*                                        *"
-	@${ECHO_MSG} "*  You can choose languages for asclock. *"
-	@${ECHO_MSG} "* 1) engligh [DEFAULT]                   *"
-	@${ECHO_MSG} "* 2) german                              *"
-	@${ECHO_MSG} "* 3) portuguese                          *"
-	@${ECHO_MSG} "* 4) dutch                               *"
-	@${ECHO_MSG} "* 5) norwegian                           *"
-	@${ECHO_MSG} "* 6) italian                             *"
-	@${ECHO_MSG} "* 7) swedish                             *"
-	@${ECHO_MSG} "* 8) spanish                             *"
-	@${ECHO_MSG} "* 9) hungarian                           *"
-	@${ECHO_MSG} "* 0) breton                              *"
-	@${ECHO_MSG} "* a) french                              *"
-	@${ECHO_MSG} "* b) czech                               *"
-	@${ECHO_MSG} "*                                        *"
-	@${ECHO_MSG} "* Specify the number you want when make. *"
-	@${ECHO_MSG} "* Example: \" make ASCLOCK_LANG=1 \"       *"
-	@${ECHO_MSG} "******************************************"
+	@cd ${WRKSRC} && echo ${ASCLOCK_LANG} | ./configure >/dev/null
 
 .include <bsd.port.mk>
