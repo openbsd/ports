@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1999/09/18 11:28:04 turan Exp $
-
-BROKEN=		"sources unavailable"
+# $OpenBSD: Makefile,v 1.14 1999/09/21 01:39:22 rohee Exp $
 
 DISTNAME=	blackbox-0.51.3.1
 CATEGORIES=	x11
