@@ -1,0 +1,14 @@
+$OpenBSD: patch-sh_func_c,v 1.1 2003/11/05 06:55:44 jolan Exp $
+--- sh.func.c.orig	2002-07-09 07:56:55.000000000 -0500
++++ sh.func.c	2003-11-04 20:08:42.000000000 -0600
+@@ -349,8 +349,8 @@ dologin(v, c)
+     islogin();
+     rechist(NULL, adrof(STRsavehist) != NULL);
+     (void) signal(SIGTERM, parterm);
+-    (void) execl(_PATH_BIN_LOGIN, "login", short2str(v[1]), NULL);
+-    (void) execl(_PATH_USRBIN_LOGIN, "login", short2str(v[1]), NULL);
++    (void) execl(_PATH_BIN_LOGIN, "login", short2str(v[1]), (void *)NULL);
++    (void) execl(_PATH_USRBIN_LOGIN, "login", short2str(v[1]), (void *)NULL);
+     untty();
+     xexit(1);
+ #endif /* !WINNT_NATIVE */
