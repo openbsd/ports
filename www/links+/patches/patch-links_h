@@ -1,6 +1,6 @@
-$OpenBSD: patch-links_h,v 1.5 2002/12/28 21:49:14 fgsch Exp $
---- links.h.orig	Sat Nov  2 14:22:41 2002
-+++ links.h	Sat Dec 28 17:19:38 2002
+$OpenBSD: patch-links_h,v 1.6 2003/04/07 19:30:21 fgsch Exp $
+--- links.h.orig	Wed Feb 26 05:00:08 2003
++++ links.h	Fri Apr  4 00:26:47 2003
 @@ -137,6 +137,8 @@ x #endif*/
  #define longlong long
  #endif
@@ -18,16 +18,7 @@ $OpenBSD: patch-links_h,v 1.5 2002/12/28 21:49:14 fgsch Exp $
  unsigned char *get_host_and_pass(unsigned char *);
  unsigned char *get_user_name(unsigned char *);
  unsigned char *get_pass(unsigned char *);
-@@ -1341,6 +1344,8 @@ struct graphics_driver{
- 		/* set window title. title is in utf-8 encoding -- you should recode it to device charset */
- 		/* if device doesn't support titles (svgalib, framebuffer), this should be NULL, not empty function ! */
- 
-+	void (*set_clipboard)(unsigned char *text);
-+
- 	int depth; /* Data layout 
- 		    * depth
- 		    *  8 7 6 5 4 3 2 1 0
-@@ -2961,7 +2966,8 @@ struct history {
+@@ -2974,7 +2977,8 @@ struct history {
  #define D_END		0
  #define D_CHECKBOX	1
  #define D_FIELD		2
@@ -37,7 +28,7 @@ $OpenBSD: patch-links_h,v 1.5 2002/12/28 21:49:14 fgsch Exp $
  
  #define B_ENTER		1
  #define B_ESC		2
-@@ -3806,6 +3812,7 @@ struct http_bugs {
+@@ -3821,6 +3825,7 @@ struct http_bugs {
  extern struct http_bugs http_bugs;
  
  extern unsigned char default_anon_pass[];
@@ -45,7 +36,7 @@ $OpenBSD: patch-links_h,v 1.5 2002/12/28 21:49:14 fgsch Exp $
  
  /* listedit.c */
  
-@@ -3876,5 +3883,30 @@ void save_bookmarks(void);
+@@ -3891,5 +3896,30 @@ void save_bookmarks(void);
  
  /* Launches bookmark manager */
  void menu_bookmark_manager(struct terminal *, void *, struct session *);

@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2002/12/11 08:07:17 fgsch Exp $
---- Makefile.in.orig	Fri Nov  8 09:41:06 2002
-+++ Makefile.in	Sat Nov 30 21:51:38 2002
-@@ -98,7 +98,7 @@ imgcache.o ipret.o javascr.o javascript.
- language.o links_icon.o listedit.o lru.o mailto.o main.o menu.o \
- memory.o md5.o md5hl.o ns.o objreq.o os_dep.o pmshell.o png.o pomocny.o \
- sched.o select.o session.o svgalib.o terminal.o tiff.o types.o url.o \
--view.o view_gr.o win32.o x.o xbm.o
-+view.o view_gr.o win32.o x.o xbm.o auth.o
- @ATHEOS_GR_TRUE@links_DEPENDENCIES =  atheos.o
- links_LDFLAGS = 
- CFLAGS = @CFLAGS@
+$OpenBSD: patch-Makefile_in,v 1.2 2003/04/07 19:30:21 fgsch Exp $
+--- Makefile.in.orig	Wed Feb 26 15:44:08 2003
++++ Makefile.in	Fri Apr  4 00:17:52 2003
+@@ -113,7 +113,7 @@ am_links_OBJECTS = af_unix.$(OBJEXT) beo
+ 	sched.$(OBJEXT) select.$(OBJEXT) session.$(OBJEXT) \
+ 	svgalib.$(OBJEXT) terminal.$(OBJEXT) tiff.$(OBJEXT) \
+ 	types.$(OBJEXT) url.$(OBJEXT) view.$(OBJEXT) view_gr.$(OBJEXT) \
+-	win32.$(OBJEXT) x.$(OBJEXT) xbm.$(OBJEXT)
++	win32.$(OBJEXT) x.$(OBJEXT) xbm.$(OBJEXT) auth.$(OBJEXT)
+ links_OBJECTS = $(am_links_OBJECTS)
+ @ATHEOS_GR_TRUE@links_DEPENDENCIES = atheos.o
+ @ATHEOS_GR_FALSE@links_DEPENDENCIES =

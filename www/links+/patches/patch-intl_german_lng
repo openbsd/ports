@@ -1,6 +1,6 @@
-$OpenBSD: patch-intl_german_lng,v 1.1 2002/12/24 17:05:55 reinhard Exp $
---- intl/german.lng.orig	Sat Nov  2 18:22:52 2002
-+++ intl/german.lng	Sun Dec 22 11:08:29 2002
+$OpenBSD: patch-intl_german_lng,v 1.2 2003/04/07 19:30:21 fgsch Exp $
+--- intl/german.lng.orig	Sat Dec 14 16:15:15 2002
++++ intl/german.lng	Fri Apr  4 00:16:18 2003
 @@ -13,7 +13,7 @@ T_LINKS__LYNX_LIKE, "Links " VERSION_STR
  T_OK, "OK",
  T_KEYS, "Tasten",
@@ -10,7 +10,7 @@ $OpenBSD: patch-intl_german_lng,v 1.1 2002/12/24 17:05:55 reinhard Exp $
  T_COPYING_DESC, "Links " VERSION_STRING "\n\n" LINKS_COPYRIGHT_8859_1 "\n\nDieses Programm ist freie Software; es kann unter den Bedingungen der GNU General Public License - wie von der Free Software Foundation veröffentlicht - verändert/weiter verbreitet werden; entweder Version 2 der GPL, oder (wie Sie möchten) jede neuere Version.",
  T_RESOURCES, "Ressourcen",
  T_HANDLES, "offene Dateien",
-@@ -316,7 +316,7 @@ T_NO_KEEPALIVE_AFTER_POST_REQUEST, "Verb
+@@ -319,7 +319,7 @@ T_NO_KEEPALIVE_AFTER_POST_REQUEST, "Verb
  T_PASSWORD_FOR_ANONYMOUS_LOGIN, "Passwort für anomyme Anmeldung",
  T_MANUAL, "Handbuch",
  T_HOMEPAGE, NULL,
@@ -19,11 +19,3 @@ $OpenBSD: patch-intl_german_lng,v 1.1 2002/12/24 17:05:55 reinhard Exp $
  T_MAILTO_PROG, "E-Mail-Programm",
  T_TELNET_PROG, "Telnet-Programm",
  T_TN3270_PROG, "TN3270-Programm",
-@@ -390,6 +390,7 @@ T_DISPLAY_OPTIMIZATION_LCD_BGR, NULL,
- T_ASPECT_RATIO, NULL,
- T_ASPECT_CORRECTION_ON, NULL,
- T_KEYBOARD_CODEPAGE, NULL,
-+T_COPY_TO_CLIPBOARD, "In Zwischenablage kopieren",
- T_HK_ADD_BOOKMARK, "f",
- T_HK_BOOKMARKS, "L",
- T_HK_GOTO_URL, "G",

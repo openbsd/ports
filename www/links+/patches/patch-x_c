@@ -1,100 +1,48 @@
-$OpenBSD: patch-x_c,v 1.5 2002/12/17 05:50:51 fgsch Exp $
---- x.c.orig	Sat Nov  2 14:22:42 2002
-+++ x.c	Tue Dec 17 02:21:56 2002
-@@ -82,6 +82,7 @@
- 
- #include <X11/Xlib.h>
- #include <X11/X.h>
-+#include <X11/Xatom.h>
- #include <X11/Xutil.h>
- #include <X11/Xlocale.h>
- 
-@@ -168,6 +169,20 @@ x_hash_table[X_HASH_TABLE_SIZE];
- 
- static int flush_in_progress=0;
- 
-+static void x_do_paste(struct graphics_device* gd)
-+{
-+	int num=0;
-+	unsigned char *buffer,*p;
-+				
-+	buffer=XFetchBytes(x_display,&num);
-+	for (p=buffer;num>0;num--,p++)
-+	{
-+		if (*p==10)gd->keyboard_handler(gd,KBD_ENTER,0);
-+		else
-+			if (*p>=32)gd->keyboard_handler(gd,*p,0);
-+	}
-+	if (buffer)XFree(buffer);
-+}
- 
- static void x_do_flush(void *ignore)
- {
-@@ -607,7 +622,15 @@ static void x_process_events(void *data)
+$OpenBSD: patch-x_c,v 1.6 2003/04/07 19:30:21 fgsch Exp $
+--- x.c.orig	Fri Jan 10 19:13:49 2003
++++ x.c	Fri Apr  4 01:10:31 2003
+@@ -611,7 +611,24 @@ static void x_process_events(void *data)
  				gd=x_find_gd(&(event.xkey.window));
  				if (!gd)break;
  				if (x_translate_key((XKeyEvent*)(&event),&k,&f))
 -					gd->keyboard_handler(gd,k,f);
 +				{
 + 					if (k == KBD_INS && event.xkey.state & ShiftMask)
-+ 					{
-+ 						x_do_paste(gd);
-+ 						return;
-+ 					}
-+					else
++					{
++						Atom pty;
++						if ((pty = XInternAtom(x_display, "XCLIP_OUT", False)))
++						{
++							XConvertSelection(
++								x_display,
++								XA_PRIMARY,
++								XA_STRING,
++								pty,
++								event.xbutton.window,
++								CurrentTime);
++						}
++					
++					} else
 +						gd->keyboard_handler(gd,k,f);
 +				}
  			}
  			break;
  	
-@@ -695,21 +718,8 @@ static void x_process_events(void *data)
- 
- 					case 2:
- 					a=B_MIDDLE;
--					if (event.xbutton.state & ShiftMask) /* paste */
--					{
--						int num=0;
--						unsigned char *buffer,*p;
--						
--						buffer=XFetchBytes(x_display,&num);
--						for (p=buffer;num>0;num--,p++)
--						{
--							if (*p==10)gd->keyboard_handler(gd,KBD_ENTER,0);
--							else
--								if (*p>=32)gd->keyboard_handler(gd,*p,0);
--						}
--						if (buffer)XFree(buffer);
--						return;
--					}
-+ 					x_do_paste(gd);
-+ 					return;
+@@ -659,8 +676,7 @@ static void x_process_events(void *data)
  					break;
  
- 					case 4:
-@@ -1844,6 +1854,18 @@ void x_set_window_title(struct graphics_
- 	mem_free(t);
- }
+ 					case 2:
+-					if (event.xbutton.state & ShiftMask) return; /* paste */
+-					a=B_MIDDLE;
++					return; /* paste */
+ 					break;
  
-+void x_set_clipboard(unsigned char *text)
-+{
-+	Atom cb0, prim;
-+
-+	cb0 = XInternAtom(x_display, "CUT_BUFFER0", True);
-+	XChangeProperty(x_display, x_root_window, cb0, XA_STRING, 8, PropModeReplace, text, strlen(text));
-+	XSetSelectionOwner(x_display, cb0, x_root_window, CurrentTime);
-+
-+	prim = XInternAtom(x_display, "PRIMARY", True);
-+	XSetSelectionOwner(x_display, prim, None, CurrentTime);
-+}
-+
- struct graphics_driver x_driver={
- 	"x",
- 	x_init_driver,
-@@ -1869,6 +1891,7 @@ struct graphics_driver x_driver={
- 	dummy_block,
- 	dummy_unblock,
- 	x_set_window_title,
-+	x_set_clipboard,
- 	0,				/* depth (filled in x_init_driver function) */
- 	0, 0,				/* size (in X is empty) */
- 	0,				/* flags */
+ 					default:
+@@ -699,8 +715,6 @@ static void x_process_events(void *data)
+ 					break;
+ 
+ 					case 2:
+-					a=B_MIDDLE;
+-					if (event.xbutton.state & ShiftMask) /* paste */
+ 					{
+ 						Atom pty;
+ 						if ((pty = XInternAtom(x_display, "XCLIP_OUT", False)))

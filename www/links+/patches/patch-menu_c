@@ -1,7 +1,7 @@
-$OpenBSD: patch-menu_c,v 1.2 2002/12/28 21:49:14 fgsch Exp $
---- menu.c.orig	Sat Oct 12 16:48:21 2002
-+++ menu.c	Sat Dec 28 18:26:00 2002
-@@ -324,7 +324,7 @@ void flush_caches(struct terminal *term,
+$OpenBSD: patch-menu_c,v 1.3 2003/04/07 19:30:21 fgsch Exp $
+--- menu.c.orig	Thu Feb 20 10:01:13 2003
++++ menu.c	Fri Apr  4 00:16:19 2003
+@@ -329,7 +329,7 @@ void flush_caches(struct terminal *term,
  /* jde v historii o psteps polozek dozadu */
  void go_backwards(struct terminal *term, void *psteps, struct session *ses)
  {
@@ -10,7 +10,7 @@ $OpenBSD: patch-menu_c,v 1.2 2002/12/28 21:49:14 fgsch Exp $
  
  	/*if (ses->tq_goto_position)
  		--steps;
-@@ -358,7 +358,7 @@ void history_menu(struct terminal *term,
+@@ -363,7 +363,7 @@ void history_menu(struct terminal *term,
  	foreach(l, ses->history) {
  		if (n/* || ses->tq_goto_position*/) {
  			if (!mi && !(mi = new_menu(3))) return;
@@ -19,7 +19,7 @@ $OpenBSD: patch-menu_c,v 1.2 2002/12/28 21:49:14 fgsch Exp $
  		}
  		n++;
  	}
-@@ -400,7 +400,7 @@ void menu_toggle(struct terminal *term, 
+@@ -405,7 +405,7 @@ void menu_toggle(struct terminal *term, 
  
  void display_codepage(struct terminal *term, void *pcp, struct session *ses)
  {
@@ -28,7 +28,7 @@ $OpenBSD: patch-menu_c,v 1.2 2002/12/28 21:49:14 fgsch Exp $
  	struct term_spec *t = new_term_spec(term->term);
  	if (t) t->charset = cp;
  	cls_redraw_all_terminals();
-@@ -408,7 +408,7 @@ void display_codepage(struct terminal *t
+@@ -413,7 +413,7 @@ void display_codepage(struct terminal *t
  
  void assumed_codepage(struct terminal *term, void *pcp, struct session *ses)
  {
@@ -37,7 +37,7 @@ $OpenBSD: patch-menu_c,v 1.2 2002/12/28 21:49:14 fgsch Exp $
  	ses->ds.assume_cp = cp;
  	redraw_terminal_cls(term);
  }
-@@ -421,7 +421,7 @@ void charset_list(struct terminal *term,
+@@ -426,7 +426,7 @@ void charset_list(struct terminal *term,
  	if (!(mi = new_menu(1))) return;
  	for (i = 0; (n = get_cp_name(i)); i++) {
  		if (is_cp_special(i)) continue;
@@ -46,7 +46,7 @@ $OpenBSD: patch-menu_c,v 1.2 2002/12/28 21:49:14 fgsch Exp $
  	}
  	sel = ses->term->spec->charset;
  	if (sel < 0) sel = 0;
-@@ -430,7 +430,7 @@ void charset_list(struct terminal *term,
+@@ -435,7 +435,7 @@ void charset_list(struct terminal *term,
  
  void set_val(struct terminal *term, void *ip, int *d)
  {
@@ -55,7 +55,7 @@ $OpenBSD: patch-menu_c,v 1.2 2002/12/28 21:49:14 fgsch Exp $
  }
  
  void charset_sel_list(struct terminal *term, struct session *ses, int *ptr)
-@@ -440,7 +440,7 @@ void charset_sel_list(struct terminal *t
+@@ -445,7 +445,7 @@ void charset_sel_list(struct terminal *t
  	struct menu_item *mi;
  	if (!(mi = new_menu(1))) return;
  	for (i = 0; (n = get_cp_name(i)); i++) {
@@ -64,7 +64,7 @@ $OpenBSD: patch-menu_c,v 1.2 2002/12/28 21:49:14 fgsch Exp $
  	}
  	sel = *ptr;
  	if (sel < 0) sel = 0;
-@@ -733,26 +733,68 @@ int dlg_http_options(struct dialog_data 
+@@ -738,26 +738,68 @@ int dlg_http_options(struct dialog_data 
  	return 0;
  }
  
@@ -148,7 +148,7 @@ $OpenBSD: patch-menu_c,v 1.2 2002/12/28 21:49:14 fgsch Exp $
   	do_dialog(dlg->win->term, d, getml(d, NULL));
  	return 0;
  }
-@@ -1729,7 +1771,7 @@ void miscelaneous_options(struct termina
+@@ -1739,7 +1781,7 @@ void miscelaneous_options(struct termina
  
  void menu_set_language(struct terminal *term, void *pcp, struct session *ses)
  {
@@ -157,7 +157,7 @@ $OpenBSD: patch-menu_c,v 1.2 2002/12/28 21:49:14 fgsch Exp $
  	cls_redraw_all_terminals();
  }
  
-@@ -1741,7 +1783,7 @@ void menu_language_list(struct terminal 
+@@ -1751,7 +1793,7 @@ void menu_language_list(struct terminal 
  	if (!(mi = new_menu(1))) return;
  	for (i = 0; i < n_languages(); i++) {
  		n = language_name(i);

@@ -1,7 +1,7 @@
-$OpenBSD: patch-html_r_c,v 1.1 2002/09/16 04:11:23 fgsch Exp $
---- html_r.c.orig	Sun Sep 15 10:29:21 2002
-+++ html_r.c	Sun Sep 15 10:29:53 2002
-@@ -904,7 +904,7 @@ void *html_special(struct part *p, int c
+$OpenBSD: patch-html_r_c,v 1.2 2003/04/07 19:30:21 fgsch Exp $
+--- html_r.c.orig	Thu Feb 20 10:01:12 2003
++++ html_r.c	Fri Apr  4 00:16:18 2003
+@@ -908,7 +908,7 @@ void *html_special(struct part *p, int c
  		case SP_TABLE:
  			return convert_table;
  		case SP_USED:

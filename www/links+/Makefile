@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2003/03/31 14:49:13 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2003/04/07 19:30:21 fgsch Exp $
 
 COMMENT=	"graphics and text browser with javascript support"
 
-VER=		2.1pre7
+VER=		2.1pre9
 DISTNAME=	links-${VER}
-PKGNAME=	links+-${VER}d
+PKGNAME=	links+-${VER}a
 CATEGORIES=	www
 MASTER_SITES=	http://atrey.karlin.mff.cuni.cz/~clock/twibright/links/download/
 
