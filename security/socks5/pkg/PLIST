@@ -27,9 +27,9 @@ lib/socks/socks5.conf.gssapi
 lib/socks/socks5.conf.multipleservers
 lib/socks/socks5.conf.server2server
 lib/socks/socks5.conf.singlehomed
-@dirrm lib/socks
 share/doc/socks/rfc1928.txt
 share/doc/socks/rfc1929.txt
 share/doc/socks/rfc1961.txt
 share/doc/socks/socks.faq
+@dirrm lib/socks
 @dirrm share/doc/socks
