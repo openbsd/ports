@@ -1,0 +1,56 @@
+$OpenBSD: patch-libs_xpdf_xpdf_XRef_cc,v 1.1 2004/11/27 14:15:04 sturm Exp $
+--- libs/xpdf/xpdf/XRef.cc.orig	Sun Nov  3 23:15:37 2002
++++ libs/xpdf/xpdf/XRef.cc	Sat Nov 27 14:51:17 2004
+@@ -28,6 +28,7 @@
+ #include "Error.h"
+ #include "ErrorCodes.h"
+ #include "XRef.h"
++#include <limits.h>
+ 
+ //------------------------------------------------------------------------
+ 
+@@ -76,6 +77,11 @@ XRef::XRef(BaseStream *strA, GString *ow
+ 
+   // trailer is ok - read the xref table
+   } else {
++    if ( size >= INT_MAX/sizeof(XRefEntry)) {
++      error(-1, "Invalid 'size' inside xref table.");
++      ok = gFalse;
++      return;
++    }
+     entries = (XRefEntry *)gmalloc(size * sizeof(XRefEntry));
+     for (i = 0; i < size; ++i) {
+       entries[i].offset = 0xffffffff;
+@@ -267,6 +273,10 @@ GBool XRef::readXRef(Guint *pos) {
+     // table size
+     if (first + n > size) {
+       newSize = size + 256;
++      if (newSize >= INT_MAX/sizeof(XRefEntry)) {
++	error(-1, "Invalid 'newSize'");
++	goto err2;
++      }
+       entries = (XRefEntry *)grealloc(entries, newSize * sizeof(XRefEntry));
+       for (i = size; i < newSize; ++i) {
+ 	entries[i].offset = 0xffffffff;
+@@ -410,6 +420,10 @@ GBool XRef::constructXRef() {
+ 	    if (!strncmp(p, "obj", 3)) {
+ 	      if (num >= size) {
+ 		newSize = (num + 1 + 255) & ~255;
++		if (newSize >= INT_MAX / sizeof(XRefEntry)) {
++		  error(-1, "Invalid 'obj' parameters.");
++		  return gFalse;
++		}
+ 		entries = (XRefEntry *)
+ 		            grealloc(entries, newSize * sizeof(XRefEntry));
+ 		for (i = size; i < newSize; ++i) {
+@@ -431,6 +445,10 @@ GBool XRef::constructXRef() {
+     } else if (!strncmp(p, "endstream", 9)) {
+       if (streamEndsLen == streamEndsSize) {
+ 	streamEndsSize += 64;
++  	if (streamEndsSize >= INT_MAX/sizeof(int)) {
++  	  error(-1, "Invalid 'endstream' parameter.");
++  	  return gFalse;
++  	}
+ 	streamEnds = (Guint *)grealloc(streamEnds,
+ 				       streamEndsSize * sizeof(int));
+       }
