@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2004/12/15 13:57:56 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2005/02/22 15:35:55 alek Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
 DISTNAME=		libgnome-2.8.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -28,8 +29,7 @@ BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		esd.2.26::audio/esound \
 			gnomevfs-2::x11/gnome/vfs2 \
-			audiofile::devel/libaudiofile \
-			xslt.1::textproc/libxslt
+			audiofile::devel/libaudiofile
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu old
