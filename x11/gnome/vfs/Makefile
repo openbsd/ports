@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/18 15:18:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/18 22:03:43 naddy Exp $
 
 COMMENT=		"GNOME Virtual File System"
 V=			1.0.1
@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR= 	stable/sources/gnome-vfs
 LIB_DEPENDS=		gnome.36::x11/gnome/libs \
 			xml.9::textproc/libxml1 \
 			gconf-1::devel/gconf,db3 \
-			cdda_paranoia.::audio/cdparanoia
+			cdda_paranoia.::audio/cdparanoia \
+			bz2.::archivers/bzip2
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -29,7 +30,7 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/gtk-1.2
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/gnome-vfs; \
-        cp -r ${PREFIX}/../../etc/* ${PREFIX}/share/gnome-vfs/
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-vfs; \
+	cp -rp ${PREFIX}/../../etc/* ${PREFIX}/share/examples/gnome-vfs/
 
 .include <bsd.port.mk>

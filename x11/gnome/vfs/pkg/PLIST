@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/09/18 15:18:52 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2001/09/18 22:03:43 naddy Exp $
 bin/gnome-vfs-config
 include/libgnomevfs/gnome-vfs-application-registry.h
 include/libgnomevfs/gnome-vfs-async-ops.h
@@ -90,9 +90,9 @@ lib/vfsConf.sh
 lib/vfspthreadConf.sh
 man/man5/gnome-vfs-mime.5
 share/application-registry/gnome-vfs.applications
-share/gnome-vfs/gnome-vfs-mime-magic
-share/gnome-vfs/vfs/modules/cdda-module.conf
-share/gnome-vfs/vfs/modules/default-modules.conf
+share/examples/gnome-vfs/gnome-vfs-mime-magic
+share/examples/gnome-vfs/vfs/modules/cdda-module.conf
+share/examples/gnome-vfs/vfs/modules/default-modules.conf
 share/gnome/html/gnome-vfs-decl.txt
 share/gnome/html/gnome-vfs-sections.txt
 share/locale/ca/LC_MESSAGES/gnome-vfs.mo
@@ -122,19 +122,11 @@ share/locale/wa/LC_MESSAGES/gnome-vfs.mo
 share/mime-info/gnome-vfs.keys
 share/mime-info/gnome-vfs.mime
 %%SHARED%%
-@dirrm share/mime-info
-@exec mkdir -p %D/share/gnome/html/gnome-vfs
-@dirrm share/gnome/html/gnome-vfs
-@dirrm share/gnome/html
-@dirrm share/gnome-vfs/vfs/modules
-@dirrm share/gnome-vfs/vfs
-@dirrm share/gnome-vfs
-@dirrm share/gnome
-@dirrm share/application-registry
+@dirrm share/examples/gnome-vfs/vfs/modules
+@dirrm share/examples/gnome-vfs/vfs
+@dirrm share/examples/gnome-vfs
 @dirrm lib/vfs/modules
 @dirrm lib/vfs/include
 @dirrm lib/vfs/extfs
 @dirrm lib/vfs
 @dirrm include/libgnomevfs
-@exec mkdir -p %D/doc
-@dirrm doc
