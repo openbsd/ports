@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2000/06/11 18:37:51 espie Exp $
+# $OpenBSD: Makefile,v 1.74 2000/06/14 06:00:27 jakob Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -99,6 +99,7 @@
 #    SUBDIR += rdist6
 #    SUBDIR += ripetools
 #    SUBDIR += rmsg
+     SUBDIR += rrdtool
 #    SUBDIR += rshell
      SUBDIR += rsync
 #    SUBDIR += rumba
