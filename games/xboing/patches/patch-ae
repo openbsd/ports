@@ -1,0 +1,12 @@
+*** ball.c.orig	Tue May 19 22:49:22 1998
+--- ball.c	Tue May 19 22:49:27 1998
+***************
+*** 50,56 ****
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include <math.h>
+- #include <values.h>
+  #include <xpm.h>
+  
+  #include "bitmaps/balls/ball1.xpm"
+--- 50,55 ----

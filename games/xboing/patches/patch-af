@@ -1,0 +1,20 @@
+*** editor.c.orig	Tue May 19 22:49:40 1998
+--- editor.c	Tue May 19 22:51:44 1998
+***************
+*** 654,660 ****
+  {
+  	EditState = EDIT_TEST;
+  
+! 	strcpy(tempName, tempnam("/tmp", "xboing-"));
+    	if (SaveLevelDataFile(display, tempName) == False)
+     		ShutDown(display, 1, "Sorry, cannot save test play level.");
+  
+--- 654,661 ----
+  {
+  	EditState = EDIT_TEST;
+  
+! 	sprintf(tempName, "/tmp/xboing-XXXXXXXX");
+! 	close(mkstemp(tempName));
+    	if (SaveLevelDataFile(display, tempName) == False)
+     		ShutDown(display, 1, "Sorry, cannot save test play level.");
+  
