@@ -1,0 +1,162 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/05 11:37:28 espie Exp $
+bin/wwwoffle
+bin/wwwoffle-ls
+bin/wwwoffle-mv
+bin/wwwoffle-read
+bin/wwwoffle-rm
+bin/wwwoffle-tools
+bin/wwwoffle-write
+man/man1/wwwoffle.1
+man/man5/wwwoffle.conf.5
+man/man8/wwwoffled.8
+sbin/wwwoffled
+share/doc/wwwoffle/CHANGES.CONF
+share/doc/wwwoffle/CONVERT
+share/doc/wwwoffle/COPYING
+share/doc/wwwoffle/FAQ
+share/doc/wwwoffle/INSTALL
+share/doc/wwwoffle/NEWS
+share/doc/wwwoffle/README
+share/doc/wwwoffle/README.1st
+share/doc/wwwoffle/README.CONF
+share/doc/wwwoffle/README.PWD
+share/doc/wwwoffle/README.htdig
+share/doc/wwwoffle/README.lang
+share/doc/wwwoffle/README.win32
+share/doc/wwwoffle/UPGRADE
+share/wwwoffle/html/FAQ.html
+share/wwwoffle/html/Welcome.html
+share/wwwoffle/html/htdig/button1.gif
+share/wwwoffle/html/htdig/button10.gif
+share/wwwoffle/html/htdig/button2.gif
+share/wwwoffle/html/htdig/button3.gif
+share/wwwoffle/html/htdig/button4.gif
+share/wwwoffle/html/htdig/button5.gif
+share/wwwoffle/html/htdig/button6.gif
+share/wwwoffle/html/htdig/button7.gif
+share/wwwoffle/html/htdig/button8.gif
+share/wwwoffle/html/htdig/button9.gif
+share/wwwoffle/html/htdig/buttonl.gif
+share/wwwoffle/html/htdig/buttonr.gif
+share/wwwoffle/html/htdig/conf/htdig-full.conf
+share/wwwoffle/html/htdig/conf/htdig-incr.conf
+share/wwwoffle/html/htdig/conf/htdig-lasttime.conf
+share/wwwoffle/html/htdig/conf/htfuzzy.conf
+share/wwwoffle/html/htdig/conf/htmerge.conf
+share/wwwoffle/html/htdig/conf/htsearch.conf
+share/wwwoffle/html/htdig/htdig.gif
+share/wwwoffle/html/htdig/index.html
+share/wwwoffle/html/htdig/scripts/wwwoffle-htdig-full
+share/wwwoffle/html/htdig/scripts/wwwoffle-htdig-incr
+share/wwwoffle/html/htdig/scripts/wwwoffle-htdig-lasttime
+share/wwwoffle/html/htdig/scripts/wwwoffle-htfuzzy
+share/wwwoffle/html/htdig/scripts/wwwoffle-htsearch
+share/wwwoffle/html/htdig/search.html
+share/wwwoffle/html/htdig/star.gif
+share/wwwoffle/html/htdig/star_blank.gif
+share/wwwoffle/html/htdig/start-lt2.html
+share/wwwoffle/html/htdig/start-lt3.html
+share/wwwoffle/html/htdig/start-lt4.html
+share/wwwoffle/html/htdig/start1.html
+share/wwwoffle/html/htdig/start2.html
+share/wwwoffle/html/htdig/start3.html
+share/wwwoffle/html/htdig/start4.html
+share/wwwoffle/html/index.html
+share/wwwoffle/html/local/images/trans-1x1.gif
+share/wwwoffle/html/messages/AddCacheInfo.html
+share/wwwoffle/html/messages/CantRefreshPosted.html
+share/wwwoffle/html/messages/ConfigEditPage-Body.html
+share/wwwoffle/html/messages/ConfigEditPage-Head.html
+share/wwwoffle/html/messages/ConfigEditPage-Tail.html
+share/wwwoffle/html/messages/ConfigError.html
+share/wwwoffle/html/messages/ConfigUpdate.html
+share/wwwoffle/html/messages/ConfirmRequest.html
+share/wwwoffle/html/messages/ControlAuthFail.html
+share/wwwoffle/html/messages/ControlDelete-Body.html
+share/wwwoffle/html/messages/ControlDelete-Head.html
+share/wwwoffle/html/messages/ControlDelete-Tail.html
+share/wwwoffle/html/messages/ControlIllegal.html
+share/wwwoffle/html/messages/ControlPage.html
+share/wwwoffle/html/messages/ControlWWWOFFLE-Head.html
+share/wwwoffle/html/messages/ControlWWWOFFLE-Tail.html
+share/wwwoffle/html/messages/FTPDir-Head.html
+share/wwwoffle/html/messages/FTPDir-Tail.html
+share/wwwoffle/html/messages/FTPDirRedirect.html
+share/wwwoffle/html/messages/FTPPut.html
+share/wwwoffle/html/messages/FileLocked.html
+share/wwwoffle/html/messages/HostNotGot.html
+share/wwwoffle/html/messages/IllegalProtocol.html
+share/wwwoffle/html/messages/Index-Head.html
+share/wwwoffle/html/messages/Index-Tail.html
+share/wwwoffle/html/messages/IndexError-Body.html
+share/wwwoffle/html/messages/IndexHost-Body.html
+share/wwwoffle/html/messages/IndexHost-Head.html
+share/wwwoffle/html/messages/IndexHost-Tail.html
+share/wwwoffle/html/messages/IndexIllegal.html
+share/wwwoffle/html/messages/IndexLastTime-Body.html
+share/wwwoffle/html/messages/IndexLastTime-Head.html
+share/wwwoffle/html/messages/IndexLastTime-Tail.html
+share/wwwoffle/html/messages/IndexLatest-Body.html
+share/wwwoffle/html/messages/IndexLatest-Head.html
+share/wwwoffle/html/messages/IndexLatest-Tail.html
+share/wwwoffle/html/messages/IndexMonitor-Body.html
+share/wwwoffle/html/messages/IndexMonitor-Head.html
+share/wwwoffle/html/messages/IndexMonitor-Tail.html
+share/wwwoffle/html/messages/IndexOutgoing-Body.html
+share/wwwoffle/html/messages/IndexOutgoing-Head.html
+share/wwwoffle/html/messages/IndexOutgoing-Tail.html
+share/wwwoffle/html/messages/IndexProtocol-Body.html
+share/wwwoffle/html/messages/IndexProtocol-Head.html
+share/wwwoffle/html/messages/IndexProtocol-Tail.html
+share/wwwoffle/html/messages/IndexRedirect.html
+share/wwwoffle/html/messages/IndexRoot-Body.html
+share/wwwoffle/html/messages/IndexSeparator-Body.html
+share/wwwoffle/html/messages/IndexURLRedirect.html
+share/wwwoffle/html/messages/LocalDirRedirect.html
+share/wwwoffle/html/messages/MethodUnsupported.html
+share/wwwoffle/html/messages/MonitorFormError.html
+share/wwwoffle/html/messages/MonitorIllegal.html
+share/wwwoffle/html/messages/MonitorPage.html
+share/wwwoffle/html/messages/MonitorWillGet.html
+share/wwwoffle/html/messages/PageNotFound.html
+share/wwwoffle/html/messages/ProxyAuthFail.html
+share/wwwoffle/html/messages/README
+share/wwwoffle/html/messages/RefreshFormError.html
+share/wwwoffle/html/messages/RefreshIllegal.html
+share/wwwoffle/html/messages/RefreshPage.html
+share/wwwoffle/html/messages/RefreshRedirect.html
+share/wwwoffle/html/messages/RefreshWillGet.html
+share/wwwoffle/html/messages/RefusedRequest.html
+share/wwwoffle/html/messages/RemoteHostError.html
+share/wwwoffle/html/messages/ServerError.html
+share/wwwoffle/html/messages/UserNeedsPass.html
+share/wwwoffle/html/messages/WillGet.html
+share/wwwoffle/html/robots.txt
+share/wwwoffle/html/wwwoffle.pac
+share/wwwoffle/outgoing/Owwwoffle-browser
+share/wwwoffle/outgoing/Owwwoffle-user
+share/wwwoffle/outgoing/Uwwwoffle-browser
+share/wwwoffle/outgoing/Uwwwoffle-user
+share/wwwoffle/wwwoffle.conf
+@exec mkdir -p %D/share/wwwoffle/prevtime1
+@dirrm share/wwwoffle/prevtime1
+@dirrm share/wwwoffle/outgoing
+@exec mkdir -p %D/share/wwwoffle/monitor
+@dirrm share/wwwoffle/monitor
+@exec mkdir -p %D/share/wwwoffle/lasttime
+@dirrm share/wwwoffle/lasttime
+@exec mkdir -p %D/share/wwwoffle/http
+@dirrm share/wwwoffle/http
+@dirrm share/wwwoffle/html/messages
+@dirrm share/wwwoffle/html/local/images
+@dirrm share/wwwoffle/html/local
+@dirrm share/wwwoffle/html/htdig/scripts
+@exec mkdir -p %D/share/wwwoffle/html/htdig/db-lasttime
+@dirrm share/wwwoffle/html/htdig/db-lasttime
+@exec mkdir -p %D/share/wwwoffle/html/htdig/db
+@dirrm share/wwwoffle/html/htdig/db
+@dirrm share/wwwoffle/html/htdig/conf
+@dirrm share/wwwoffle/html/htdig
+@dirrm share/wwwoffle/html
+@dirrm share/wwwoffle
+@dirrm share/doc/wwwoffle

@@ -1,0 +1,158 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2000/09/05 11:37:28 espie Exp $
+
+- use PREFIX instead of hardcoded INSTDIR
+- introduce COMPCONFDIR and COMPSPOOLDIR containing the defines for
+  gcc. SPOOLDIR and CONFDIR are now only being used for (fake) install.
+  The spool and htmldoc files now install into /usr/local/share/wwwoffle
+  and then get copied over to /var/spool/wwwoffle by pkg/INSTALL
+- use FLAVOR to choose language for documentation
+- set compiler/linker flags to FreeBSD's
+- change documentation dir to PREFIX/share/doc/
+
+
+--- Makefile.orig	Sun Apr  2 17:27:30 2000
++++ Makefile	Tue Aug  1 16:17:16 2000
+@@ -16,49 +16,58 @@
+ 
+ LOCALHOST=localhost:8080
+ 
+-INSTDIR=/usr/local
+-SPOOLDIR=/var/spool/wwwoffle
+-CONFDIR=/var/spool/wwwoffle
+-
+-# For Cygwin (win32).
+-#INSTDIR=/wwwoffle
+-#SPOOLDIR=/wwwoffle/spool
+-#CONFDIR=/wwwoffle
++INSTDIR="${PREFIX}"
++SPOOLDIR="${PREFIX}/share/wwwoffle"
++COMPSPOOLDIR=/var/spool/wwwoffle
++CONFDIR="${PREFIX}/share/wwwoffle"
++COMPCONFDIR=/var/spool/wwwoffle
+ 
+ # For German language web pages and documentation.
+-#LANG=de
++.if ${FLAVOR:L:Mde}
++LANG=de
++.endif
+ 
+ # For French language web pages and documentation.
+-#LANG=fr
++.if ${FLAVOR:L:Mfr}
++LANG=fr
++.endif
+ 
+ # For Spanish language web pages and documentation.
+-#LANG=es
++.if ${FLAVOR:L:Mes}
++LANG=es
++.endif
+ 
+ # For Russian language web pages and documentation.
+-#LANG=ru
++.if ${FLAVOR:L:Mru}
++LANG=ru
++.endif
+ 
+ # For Polish language web pages and documentation.
+-#LANG=pl
++.if ${FLAVOR:L:Mpl}
++LANG=pl
++.endif
+ 
+ # For Italian language web pages and documentation.
+-#LANG=it
++.if ${FLAVOR:L:Mit}
++LANG=it
++.endif
+ 
+ ########
+ 
+ CC=gcc
+-CFLAGS=-O2 -Wall -g
++#CFLAGS=-O2 -Wall -g
+ 
+ # This is used in the FreeBSD port (http://www.freebsd.org/ports/).
+-#CFLAGS=-O2 -Wall
++CFLAGS=-O2 -Wall
+ 
+ LD=gcc
+-LDFLAGS=-g
++#LDFLAGS=-g
+ 
+ # For HP/UX this is a good idea.
+ #LDFLAGS=
+ 
+ # This is used in the FreeBSD port (http://www.freebsd.org/ports/).
+-#LDFLAGS=-s
++LDFLAGS=-s
+ 
+ # Optimal flex options for a very fast but large HTML parser.
+ LEX=flex -i -L -pp -B -F -8
+@@ -174,7 +183,7 @@ wwwoffled.o  : wwwoffled.c  wwwoffle.h m
+ wwwoffles.o  : wwwoffles.c  wwwoffle.h misc.h config.h errors.h sockets.h proto.h document.h
+ 
+ wwwoffle-tools.o : wwwoffle-tools.c wwwoffle.h misc.h errors.h
+-	$(COMPILE) wwwoffle-tools.c -o $@ $(INCLUDE) -DSPOOL_DIR=\"$(SPOOLDIR)\"
++	$(COMPILE) wwwoffle-tools.c -o $@ $(INCLUDE) -DSPOOL_DIR=\"$(COMPSPOOLDIR)\"
+ 
+ upgrade-cache.o  : upgrade-cache.c  wwwoffle.h misc.h errors.h
+ 
+@@ -207,7 +216,7 @@ refresh.o    : refresh.c    wwwoffle.h m
+ spool.o      : spool.c      wwwoffle.h misc.h config.h errors.h
+ 
+ config.o     : config.c     wwwoffle.h misc.h config.h errors.h sockets.h proto.h
+-	$(COMPILE) config.c -o $@ $(INCLUDE) -DSPOOL_DIR=\"$(SPOOLDIR)\" -DCONF_DIR=\"$(CONFDIR)\"
++	$(COMPILE) config.c -o $@ $(INCLUDE) -DSPOOL_DIR=\"$(COMPSPOOLDIR)\" -DCONF_DIR=\"$(COMPCONFDIR)\"
+ errors.o     : errors.c                       config.h errors.h
+ io.o         : io.c         wwwoffle.h misc.h          errors.h
+ misc.o       : misc.c                  misc.h config.h                    proto.h
+@@ -217,7 +226,7 @@ sockets.o    : sockets.c                
+ md5.o        : md5.c md5.h
+ 
+ config-startup.o : config.c     wwwoffle.h misc.h config.h errors.h sockets.h proto.h
+-	$(COMPILE) config.c -o $@ $(INCLUDE) -DSPOOL_DIR=\"$(SPOOLDIR)\" -DCONF_DIR=\"$(CONFDIR)\" -DSTARTUP_ONLY
++	$(COMPILE) config.c -o $@ $(INCLUDE) -DSPOOL_DIR=\"$(COMPSPOOLDIR)\" -DCONF_DIR=\"$(COMPCONFDIR)\" -DSTARTUP_ONLY
+ proto-none.o     : proto.c                 misc.h                             proto.h
+ 	$(COMPILE) proto.c  -o $@ $(INCLUDE) -DNO_PROTOCOLS
+ 
+@@ -285,17 +294,17 @@ install_doc :
+ 	[ -x $(INSTDIR)/man/man1 ] || $(INSTALL) -d -m 755 $(INSTDIR)/man/man1
+ 	$(INSTALL) -c -m 644 wwwoffle.man $(INSTDIR)/man/man1/wwwoffle.1
+ 	[ -x $(INSTDIR)/man/man5 ] || $(INSTALL) -d -m 755 $(INSTDIR)/man/man5
+-	sed -e 's%SPOOLDIR%$(SPOOLDIR)%' -e 's%CONFDIR%$(CONFDIR)%' < wwwoffle.conf.man > wwwoffle.conf.man.install
++	sed -e 's%SPOOLDIR%$(COMPSPOOLDIR)%' -e 's%CONFDIR%$(COMPCONFDIR)%' < wwwoffle.conf.man > wwwoffle.conf.man.install
+ 	$(INSTALL) -c -m 644 wwwoffle.conf.man.install $(INSTDIR)/man/man5/wwwoffle.conf.5
+ 	[ -x $(INSTDIR)/man/man8 ] || $(INSTALL) -d -m 755 $(INSTDIR)/man/man8
+ 	$(INSTALL) -c -m 644 wwwoffled.man $(INSTDIR)/man/man8/wwwoffled.8
+-	[ -x $(INSTDIR)/doc/wwwoffle ] || $(INSTALL) -d -m 755 $(INSTDIR)/doc/wwwoffle
++	[ -x $(INSTDIR)/share/doc/wwwoffle ] || $(INSTALL) -d -m 755 $(INSTDIR)/share/doc/wwwoffle
+ 	for file in CHANGES.CONF CONVERT COPYING FAQ INSTALL NEWS README* UPGRADE ; do \
+-	  $(INSTALL) -c -m 644 $$file $(INSTDIR)/doc/wwwoffle/$$file ;\
++	  $(INSTALL) -c -m 644 $$file $(INSTDIR)/share/doc/wwwoffle/$$file ;\
+ 	done
+ 	[ "x$(LANG)" = "x" ] || [ ! -d lang-$(LANG) ] || ( cd lang-$(LANG) && \
+ 	  for file in CHANGES.CONF CONVERT COPYING FAQ INSTALL NEWS README* UPGRADE ; do \
+-	    [ ! -f $$file ] || $(INSTALL) -c -m 644 $$file $(INSTDIR)/doc/wwwoffle/$$file-$(LANG) ;\
++	    [ ! -f $$file ] || $(INSTALL) -c -m 644 $$file $(INSTDIR)/share/doc/wwwoffle/$$file-$(LANG) ;\
+ 	  done )
+ 
+ 
+@@ -307,7 +316,7 @@ install_doc-win32 :
+ 	$(INSTALL) -c -m 644 README.win32 $(CONFDIR)/README.win32
+ 	[ "x$(LANG)" = "x" ] || [ ! -d lang-$(LANG) ] || ( cd lang-$(LANG) && \
+ 	  for file in CHANGES.CONF COPYING FAQ INSTALL NEWS README* ; do \
+-	    [ ! -f $$file ] || $(INSTALL) -c -m 644 $$file $(INSTDIR)/doc/wwwoffle/$$file-$(LANG) ;\
++	    [ ! -f $$file ] || $(INSTALL) -c -m 644 $$file $(INSTDIR)/share/doc/wwwoffle/$$file-$(LANG) ;\
+ 	  done )
+ 
+ install_cache : endian-cache
+@@ -358,7 +367,7 @@ install_html : html
+ 	-chgrp -R 0 $(SPOOLDIR)/html > /dev/null 2>&1
+ 
+ install_config :
+-	sed -e 's%SPOOLDIR%$(SPOOLDIR)%' -e 's%CONFDIR%$(CONFDIR)%' < wwwoffle.conf > wwwoffle.conf.install
++	sed -e 's%SPOOLDIR%$(COMPSPOOLDIR)%' -e 's%CONFDIR%$(COMPCONFDIR)%' < wwwoffle.conf > wwwoffle.conf.install
+ 	[ -x $(CONFDIR) ] || $(INSTALL) -d -m 750 $(CONFDIR)
+ 	@[ ! -f $(CONFDIR)/wwwoffle.conf ] || \
+ 	 (echo "WWWOFFLE: " ;\

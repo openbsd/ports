@@ -1,0 +1,72 @@
+$OpenBSD: patch-wwwoffle_conf,v 1.1.1.1 2000/09/05 11:37:29 espie Exp $
+
+- enable running as user "daemon"
+- don't get recursive/cache gzip or compress archives
+- setup OpenBSD related aliases 
+
+--- wwwoffle.conf.orig	Sun Mar 12 15:00:41 2000
++++ wwwoffle.conf	Mon Jul 31 19:45:03 2000
+@@ -84,8 +84,8 @@ StartUp
+ 
+  spool-dir         = SPOOLDIR
+ 
+-#run-uid           = daemon
+-#run-gid           = daemon
++ run-uid           = daemon
++ run-gid           = daemon
+ 
+  use-syslog        = yes
+ 
+@@ -276,7 +276,7 @@ FetchOptions
+ 
+ ModifyHTML
+ {
+- enable-modify-html = no
++ enable-modify-html = yes
+ 
+  add-cache-info = no
+ 
+@@ -416,8 +416,10 @@ DontCache
+ # Don't cache any hosts in the barfoo.com domain.
+ # *://*.barfoo.com/
+ # Don't cache any gzipped or tar files.
+-# *://*/*.gz
+-# *://*/*.tar
++ *://*/*.gz
++ *://*/*.tar
++ *://*/*.tgz
++ *://*/*.Z
+ # Don't cache any files from /volatile in the foo.com domain.
+ # *://*.foo.com/volatile/*
+ }
+@@ -473,8 +475,10 @@ DontGetRecursive
+ 
+ #### Example ####
+ # Dont get any gzipped or tar files when getting recursively.
+-# *://*/*.gz
+-# *://*/*.tar
++ *://*/*.gz
++ *://*/*.tar
++ *://*/*.tgz
++ *://*/*.Z
+ }
+ 
+ 
+@@ -530,7 +534,7 @@ CensorHeader
+ # Don't send Cookies back
+ # Cookie =
+ # Lie about the Browser type.
+-# User-Agent = WWWOFFLE/2.5
++ User-Agent = WWWOFFLE/2.5
+ }
+ 
+ 
+@@ -736,6 +740,8 @@ Alias
+ # http://www.bar.com/ = http://www.bar-mirror.foo.com/
+ # The wwwoffle homepage can be aliased
+ # http://wwwoffle/ = http://www.gedanken.demon.co.uk/wwwoffle/
++  http://openbsd/ = http://www.openbsd.org/
++  http://deadly/ = http://www.deadly.org/
+ }
+ 
+ 

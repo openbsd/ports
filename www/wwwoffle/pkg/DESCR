@@ -1,0 +1,13 @@
+       WWWOFFLE - World Wide Web Offline Explorer - Version 2.5
+
+The WWWOFFLE server is a proxy web server with special features for use with
+dial-up internet links.  This means that it is possible to browse web pages and
+read them without having to remain connected. 
+
+Basic Features
+    - Caching of HTTP, FTP and finger protocols.
+    - Allows the 'GET', 'HEAD', 'POST' and 'PUT' HTTP methods.
+    - Interactive or command line control of online/offline/autodial status.
+    - Highly configurable.
+    - Low maintenance, start/stop and online/offline status can be automated.
+

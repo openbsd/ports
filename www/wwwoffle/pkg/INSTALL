@@ -1,0 +1,25 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2000/09/05 11:37:28 espie Exp $
+#
+#
+# post installation script for wwwoffle
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+FROMDIR=/usr/local/share/wwwoffle
+SPOOL=/var/spool
+PKGNAME=wwwoffle
+
+if [ $2 = POST-INSTALL ]; then
+	if [ -d ${SPOOL}/${PKGNAME}/ ]; then
+		echo "+---------------"
+		echo "|"
+		echo "| Seems like you are re-installing $1..."
+		echo "| NOT copying files from ${FROMDIR} to ${SPOOL}/${PKGNAME}"
+		echo "| If you like to re-install, then remove ${SPOOL}/${PKGNAME} and try again"
+		echo "|"
+		echo "+---------------"
+	else
+		cp -R -p ${FROMDIR} ${SPOOL}
+		chown -R daemon ${SPOOL}/${PKGNAME}
+	fi
+fi

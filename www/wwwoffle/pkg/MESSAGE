@@ -1,0 +1,23 @@
++---------------
+|
+| You may want to put the following into your /etc/rc.local:
+|
+| # start wwwoffle
+| if [ -x /usr/local/sbin/wwwoffled ]; then
+|         echo -n ' wwwoffled'
+|         /usr/local/sbin/wwwoffled -c /var/spool/wwwoffle/wwwoffle.conf \
+|         -p > /var/run/wwwoffled.pid
+| fi
+|
+| in /etc/ppp/ppp.linkup:
+|
+|    !bg /usr/local/bin/wwwoffle -online
+|
+| in /etc/ppp/ppp.linkdown:
+|
+|    !bg /usr/local/bin/wwwoffle -offline
+|
+|
+| Read /usr/local/share/doc/wwwoffle/* for further information.
+|
++---------------
