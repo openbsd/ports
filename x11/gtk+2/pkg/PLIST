@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/06/30 03:59:03 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/08/08 18:31:15 marcm Exp $
 bin/gdk-pixbuf-csource
 bin/gdk-pixbuf-query-loaders
 bin/gtk-demo
@@ -344,7 +344,7 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 @dirrm share/themes/Emacs
 @dirrm share/themes/Default/gtk-2.0-key
 @dirrm share/themes/Default/gtk-2.0
-@comment @dirrm share/themes/Default
+@unexec rmdir %D/share/themes/Default 2>/dev/null || true
 @comment @dirrm share/themes
 @comment @dirrm share/locale/zh_TW/LC_MESSAGES
 @comment @dirrm share/locale/zh_TW
