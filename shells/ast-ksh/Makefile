@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/21 01:17:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/13 22:19:44 pvalchev Exp $
 
 COMMENT=	"official AT&T release of KornShell 93"
 
@@ -32,9 +32,9 @@ do-build:
 	cd ${WRKBUILD} && SHELL=/bin/sh ./bin/package make ${MAKE_FLAGS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/arch/openbsd.${ARCH}/bin/ksh \
+	${INSTALL_PROGRAM} ${WRKBUILD}/arch/openbsd.${MACHINE_ARCH}/bin/ksh \
 		${PREFIX}/bin/ksh93
-	${INSTALL_MAN} ${WRKBUILD}/arch/openbsd.${ARCH}/man/man1/sh.1 \
+	${INSTALL_MAN} ${WRKBUILD}/arch/openbsd.${MACHINE_ARCH}/man/man1/sh.1 \
 		${PREFIX}/man/man1/ksh93.1
 
 .include <bsd.port.mk>
