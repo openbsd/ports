@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2003/12/31 17:05:28 sturm Exp $
-%%native%%
+@comment $OpenBSD: PLIST,v 1.12 2004/08/11 10:42:54 espie Exp $
 bin/camlp4
 bin/camlp4o
 bin/camlp4r
@@ -20,6 +19,7 @@ bin/ocamlprof
 bin/ocamlrun
 bin/ocamlyacc
 bin/ocpp
+lib/ocaml/
 lib/ocaml/addlabels
 lib/ocaml/arg.cmi
 lib/ocaml/arg.ml
@@ -43,6 +43,7 @@ lib/ocaml/buffer.mli
 lib/ocaml/callback.cmi
 lib/ocaml/callback.ml
 lib/ocaml/callback.mli
+lib/ocaml/caml/
 lib/ocaml/caml/alloc.h
 lib/ocaml/caml/bigarray.h
 lib/ocaml/caml/callback.h
@@ -59,6 +60,7 @@ lib/ocaml/camlheader_ur
 lib/ocaml/camlinternalOO.cmi
 lib/ocaml/camlinternalOO.ml
 lib/ocaml/camlinternalOO.mli
+lib/ocaml/camlp4/
 lib/ocaml/camlp4/ast2pt.cmi
 lib/ocaml/camlp4/ast2pt.mli
 lib/ocaml/camlp4/camlp4.cma
@@ -176,6 +178,7 @@ lib/ocaml/int32.mli
 lib/ocaml/int64.cmi
 lib/ocaml/int64.ml
 lib/ocaml/int64.mli
+lib/ocaml/labltk/
 lib/ocaml/labltk/balloon.cmi
 lib/ocaml/labltk/balloon.mli
 lib/ocaml/labltk/bell.cmi
@@ -441,6 +444,7 @@ lib/ocaml/nums.cma
 lib/ocaml/obj.cmi
 lib/ocaml/obj.ml
 lib/ocaml/obj.mli
+lib/ocaml/ocamldoc/
 lib/ocaml/ocamldoc/ocamldoc.hva
 lib/ocaml/ocamldoc/odoc.cmi
 lib/ocaml/ocamldoc/odoc_analyse.cmi
@@ -547,11 +551,13 @@ lib/ocaml/string.mli
 lib/ocaml/stringLabels.cmi
 lib/ocaml/stringLabels.ml
 lib/ocaml/stringLabels.mli
+lib/ocaml/stublibs/
 lib/ocaml/sys.cmi
 lib/ocaml/sys.ml
 lib/ocaml/sys.mli
 lib/ocaml/thread.mli
 lib/ocaml/threadUnix.mli
+lib/ocaml/threads/
 lib/ocaml/threads/condition.cmi
 lib/ocaml/threads/event.cmi
 lib/ocaml/threads/mutex.cmi
@@ -568,6 +574,7 @@ lib/ocaml/unix.cmi
 lib/ocaml/unix.mli
 lib/ocaml/unixLabels.cmi
 lib/ocaml/unixLabels.mli
+lib/ocaml/vmthreads/
 lib/ocaml/vmthreads/condition.cmi
 lib/ocaml/vmthreads/condition.mli
 lib/ocaml/vmthreads/event.cmi
@@ -585,21 +592,21 @@ lib/ocaml/vmthreads/unix.cma
 lib/ocaml/weak.cmi
 lib/ocaml/weak.ml
 lib/ocaml/weak.mli
-man/man1/camlp4.1
-man/man1/camlp4o.1
-man/man1/camlp4r.1
-man/man1/mkcamlp4.1
-man/man1/ocaml.1
-man/man1/ocamlc.1
-man/man1/ocamlcp.1
-man/man1/ocamldebug.1
-man/man1/ocamldep.1
-man/man1/ocamllex.1
-man/man1/ocamlmktop.1
-man/man1/ocamlprof.1
-man/man1/ocamlrun.1
-man/man1/ocamlyacc.1
-man/man1/ocpp.1
+@man man/man1/camlp4.1
+@man man/man1/camlp4o.1
+@man man/man1/camlp4r.1
+@man man/man1/mkcamlp4.1
+@man man/man1/ocaml.1
+@man man/man1/ocamlc.1
+@man man/man1/ocamlcp.1
+@man man/man1/ocamldebug.1
+@man man/man1/ocamldep.1
+@man man/man1/ocamllex.1
+@man man/man1/ocamlmktop.1
+@man man/man1/ocamlprof.1
+@man man/man1/ocamlrun.1
+@man man/man1/ocamlyacc.1
+@man man/man1/ocpp.1
 man/man3/Arg.3o
 man/man3/Array.3o
 man/man3/ArrayLabels.3o
@@ -680,10 +687,13 @@ man/man3/Unix.LargeFile.3o
 man/man3/Weak.3o
 man/man3/Weak.Make.3o
 man/man3/Weak.S.3o
+share/doc/ocaml/
 share/doc/ocaml/LICENSE
+share/doc/ocaml/html/
 share/doc/ocaml/html/contents_motif.gif
 share/doc/ocaml/html/index.html
 share/doc/ocaml/html/libgraph.gif
+share/doc/ocaml/html/libref/
 share/doc/ocaml/html/libref/Arg.html
 share/doc/ocaml/html/libref/Arith_status.html
 share/doc/ocaml/html/libref/Array.html
@@ -929,15 +939,5 @@ share/doc/ocaml/html/manual043.html
 share/doc/ocaml/html/manual044.html
 share/doc/ocaml/html/next_motif.gif
 share/doc/ocaml/html/previous_motif.gif
-@dirrm share/doc/ocaml/html/libref
-@dirrm share/doc/ocaml/html
-@dirrm share/doc/ocaml
-@dirrm lib/ocaml/vmthreads
-@dirrm lib/ocaml/threads
 @exec mkdir -p %D/lib/ocaml/stublibs
-@dirrm lib/ocaml/stublibs
-@dirrm lib/ocaml/ocamldoc
-@dirrm lib/ocaml/labltk
-@dirrm lib/ocaml/camlp4
-@dirrm lib/ocaml/caml
-@dirrm lib/ocaml
+%%native%%

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/20 01:11:39 naddy Exp $
-%%native%%
+@comment $OpenBSD: PLIST,v 1.2 2004/08/11 10:42:54 espie Exp $
 bin/lablgtk
+lib/ocaml/lablgtk/
 lib/ocaml/lablgtk/gBin.cmi
 lib/ocaml/lablgtk/gBin.ml
 lib/ocaml/lablgtk/gBin.mli
@@ -112,6 +112,7 @@ lib/ocaml/lablgtk/gtkThread.cmi
 lib/ocaml/lablgtk/gtkThread.cmo
 lib/ocaml/lablgtk/gtkThread.ml
 lib/ocaml/lablgtk/gtkThread.mli
+lib/ocaml/lablgtk/gtkThread.o
 lib/ocaml/lablgtk/gtkTree.cmi
 lib/ocaml/lablgtk/gtkTree.ml
 lib/ocaml/lablgtk/gtkWindow.cmi
@@ -128,6 +129,6 @@ lib/ocaml/lablgtk/ml_gtk.h
 lib/ocaml/lablgtk/varcc
 lib/ocaml/lablgtk/wrappers.h
 lib/ocaml/lablgtk/xml_lexer.mli
+share/doc/lablgtk/
 share/doc/lablgtk/README
-@dirrm share/doc/lablgtk
-@dirrm lib/ocaml/lablgtk
+%%native%%

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2004/04/14 18:39:58 brad Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.4 2004/08/11 10:42:54 espie Exp $
 lib/gphoto2/${VERSION}/libgphoto2_agfa_cl20.so
 lib/gphoto2/${VERSION}/libgphoto2_aox.so
 lib/gphoto2/${VERSION}/libgphoto2_barbie.so
@@ -49,6 +49,5 @@ lib/gphoto2/${VERSION}/libgphoto2_sx330z.so
 lib/gphoto2/${VERSION}/libgphoto2_toshiba.so
 lib/gphoto2_port/0.5.1/libgphoto2_port_serial.so
 lib/gphoto2_port/0.5.1/libgphoto2_port_usb.so
-lib/libgphoto2.so.2.3
-lib/libgphoto2_port.so.5.1
-DYNLIBDIR(%D/lib)
+@lib lib/libgphoto2.so.2.3
+@lib lib/libgphoto2_port.so.5.1

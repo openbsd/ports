@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.2 2003/12/31 17:05:28 sturm Exp $
+@comment $OpenBSD: PFRAG.native,v 1.3 2004/08/11 10:42:54 espie Exp $
 bin/camlp4o.opt
 bin/camlp4r.opt
 bin/ocamlc.opt
@@ -251,8 +251,8 @@ lib/ocaml/unix.cmxa
 lib/ocaml/unixLabels.cmx
 lib/ocaml/weak.cmx
 lib/ocaml/weak.p.cmx
-man/man1/camlp4o.opt.1
-man/man1/camlp4r.opt.1
-man/man1/ocamlc.opt.1
-man/man1/ocamlopt.1
-man/man1/ocamlopt.opt.1
+@man man/man1/camlp4o.opt.1
+@man man/man1/camlp4r.opt.1
+@man man/man1/ocamlc.opt.1
+@man man/man1/ocamlopt.1
+@man man/man1/ocamlopt.opt.1

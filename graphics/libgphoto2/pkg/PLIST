@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/04/14 18:39:58 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/11 10:42:54 espie Exp $
 bin/gphoto2-config
 bin/gphoto2-port-config
+include/gphoto2/
 include/gphoto2/gphoto2-abilities-list.h
 include/gphoto2/gphoto2-camera.h
 include/gphoto2/gphoto2-context.h
@@ -19,6 +20,8 @@ include/gphoto2/gphoto2-setting.h
 include/gphoto2/gphoto2-version.h
 include/gphoto2/gphoto2-widget.h
 include/gphoto2/gphoto2.h
+lib/gphoto2/
+lib/gphoto2/${VERSION}/
 lib/gphoto2/${VERSION}/libgphoto2_agfa_cl20.a
 lib/gphoto2/${VERSION}/libgphoto2_agfa_cl20.la
 lib/gphoto2/${VERSION}/libgphoto2_aox.a
@@ -115,6 +118,8 @@ lib/gphoto2/${VERSION}/libgphoto2_sx330z.a
 lib/gphoto2/${VERSION}/libgphoto2_sx330z.la
 lib/gphoto2/${VERSION}/libgphoto2_toshiba.a
 lib/gphoto2/${VERSION}/libgphoto2_toshiba.la
+lib/gphoto2_port/
+lib/gphoto2_port/0.5.1/
 lib/gphoto2_port/0.5.1/libgphoto2_port_serial.a
 lib/gphoto2_port/0.5.1/libgphoto2_port_serial.la
 lib/gphoto2_port/0.5.1/libgphoto2_port_usb.a
@@ -123,33 +128,28 @@ lib/libgphoto2.a
 lib/libgphoto2.la
 lib/libgphoto2_port.a
 lib/libgphoto2_port.la
-%%SHARED%%
+lib/pkgconfig/
 lib/pkgconfig/libgphoto2.pc
-man/man3/libgphoto2.3
-man/man3/libgphoto2_port.3
+@man man/man3/libgphoto2.3
+@man man/man3/libgphoto2_port.3
+share/doc/libgphoto2/
 @comment share/doc/libgphoto2/AUTHORS
 @comment share/doc/libgphoto2/CHANGES
 @comment share/doc/libgphoto2/COPYING
 @comment share/doc/libgphoto2/NEWS
 share/doc/libgphoto2/README
+share/doc/libgphoto2/linux-hotplug/
+share/doc/libgphoto2_port/
 @comment share/doc/libgphoto2_port/AUTHORS
 @comment share/doc/libgphoto2_port/NEWS
 share/doc/libgphoto2_port/README
+share/libgphoto2/
+share/libgphoto2/${VERSION}/
+share/libgphoto2/${VERSION}/konica/
 share/libgphoto2/${VERSION}/konica/english
 share/libgphoto2/${VERSION}/konica/french
 share/libgphoto2/${VERSION}/konica/german
 share/libgphoto2/${VERSION}/konica/japanese
 share/libgphoto2/${VERSION}/konica/korean
 share/libgphoto2/${VERSION}/konica/spanish
-@dirrm share/libgphoto2/${VERSION}/konica
-@dirrm share/libgphoto2/${VERSION}
-@dirrm share/libgphoto2
-@dirrm share/doc/libgphoto2_port
-@exec mkdir -p %D/share/doc/libgphoto2/linux-hotplug
-@dirrm share/doc/libgphoto2/linux-hotplug
-@dirrm share/doc/libgphoto2
-@dirrm lib/gphoto2_port/0.5.1
-@dirrm lib/gphoto2_port
-@dirrm lib/gphoto2/${VERSION}
-@dirrm lib/gphoto2
-@dirrm include/gphoto2
+%%SHARED%%

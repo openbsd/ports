@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2002/11/20 01:11:39 naddy Exp $
+@comment $OpenBSD: PFRAG.native,v 1.2 2004/08/11 10:42:54 espie Exp $
 lib/ocaml/lablgtk/gBin.cmx
 lib/ocaml/lablgtk/gButton.cmx
 lib/ocaml/lablgtk/gContainer.cmx
@@ -39,6 +39,7 @@ lib/ocaml/lablgtk/gtkNew.cmx
 lib/ocaml/lablgtk/gtkPack.cmx
 lib/ocaml/lablgtk/gtkRange.cmx
 lib/ocaml/lablgtk/gtkSignal.cmx
+lib/ocaml/lablgtk/gtkThread.cmx
 lib/ocaml/lablgtk/gtkTree.cmx
 lib/ocaml/lablgtk/gtkWindow.cmx
 lib/ocaml/lablgtk/lablgtk.a

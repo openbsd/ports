@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2003/04/04 21:19:23 sturm Exp $
+# $OpenBSD: INSTALL,v 1.3 2004/08/11 10:42:55 espie Exp $
 #
 # Pre/post-installation setup of tetex base
 
@@ -29,20 +29,6 @@ do_texmf_cnf_install()
     echo "|"
 }
 
-do_tetex_cfg_install()
-{
-    cp -p $PREFIX/share/examples/teTeX/tetex.cfg $CONFIG
-}
-
-do_tetex_cfg_notice()
-{
-    echo "| The existing configuration file $CONFIG has not been"
-    echo "| updated. You may want to compare it to the distribution's"
-    echo "| file $PREFIX/share/examples/teTeX/tetex.cfg and update"
-    echo "| your configuration as needed."
-    echo "|"
-}
-
 do_notice()
 {
     echo "| Run $PREFIX/bin/texconfig to adjust for your local"
@@ -69,11 +55,6 @@ case $2 in
 	do_prenotice
 	if [ -f $TEXMFCNF.old ]; then
 	    do_texmf_cnf_install $1
-	fi
-	if [ -f $CONFIG ]; then
-	    do_tetex_cfg_notice
-	else
-	    do_tetex_cfg_install
 	fi
 	do_notice
 	;;

@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-kamera,v 1.3 2004/07/24 12:47:14 espie Exp $
+@comment $OpenBSD: PLIST-kamera,v 1.4 2004/08/11 10:42:55 espie Exp $
 ${KDE}/kcm_kamera.la
+${KDE}/kcm_kamera.so
 ${KDE}/kio_kamera.la
+${KDE}/kio_kamera.so
 share/applnk/Settings/
 share/applnk/Settings/Peripherals/
 share/applnk/Settings/Peripherals/kamera.desktop
-%%SHARED%%

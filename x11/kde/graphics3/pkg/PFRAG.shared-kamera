@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-kamera,v 1.2 2004/02/01 14:59:23 espie Exp $
-${KDE}/kcm_kamera.so
-${KDE}/kio_kamera.so
