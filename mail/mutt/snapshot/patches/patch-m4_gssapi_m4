@@ -1,0 +1,29 @@
+$OpenBSD: patch-m4_gssapi_m4,v 1.1 2005/02/07 19:28:05 naddy Exp $
+--- m4/gssapi.m4.orig	Wed Feb  2 15:41:57 2005
++++ m4/gssapi.m4	Wed Feb  2 15:41:57 2005
+@@ -49,11 +49,20 @@ AC_DEFUN([MUTT_AM_PATH_GSSAPI],
+     dnl Heimdal kerberos V support
+     if test "$GSSAPI_IMPL" = "none"
+     then
+-      AC_CHECK_LIB(gssapi, gss_init_sec_context, [
+-          GSSAPI_IMPL="Heimdal"
+-          GSSAPI_LIBS="$GSSAPI_LDFLAGS -lgssapi -lkrb5 -ldes -lasn1 -lroken"
+-          GSSAPI_LIBS="$GSSAPI_LIBS -lcrypt -lcom_err"
+-          ],, -lkrb5 -ldes -lasn1 -lroken -lcrypt -lcom_err)
++      if test `uname -s` = "OpenBSD"
++      then
++	  AC_CHECK_LIB(gssapi, gss_init_sec_context, [
++	    GSSAPI_IMPL="Heimdal"
++	    GSSAPI_LIBS="$GSSAPI_LDFLAGS -lgssapi -lkrb5 -ldes -lcrypto"
++	    GSSAPI_CFLAGS="$CPPFLAGS -I/usr/include/kerberosV"
++	    ],, -lkrb5 -ldes -lcrypto)
++      else
++          AC_CHECK_LIB(gssapi, gss_init_sec_context, [
++            GSSAPI_IMPL="Heimdal"
++            GSSAPI_LIBS="$GSSAPI_LDFLAGS -lgssapi -lkrb5 -ldes -lasn1 -lroken"
++            GSSAPI_LIBS="$GSSAPI_LIBS -lcrypt -lcom_err"
++            ],, -lkrb5 -ldes -lasn1 -lroken -lcrypt -lcom_err)
++      fi
+     fi
+ 
+     dnl Old MIT Kerberos V
