@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/30 01:53:55 msf Exp $
+${P5SITE}/Bit/
+${P5SITE}/Bit/Vector/
+${P5SITE}/Bit/Vector/Minimal.pm
+@man man/man3p/Bit::Vector::Minimal.3p
