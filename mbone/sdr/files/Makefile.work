@@ -1,6 +1,12 @@
 #
-# Makefile for ${WRKSRC}.  This just decends into the freebsd subdirectory
-# and builds.
+# Makefile for ${WRKSRC}.
 #
-all install clean:
-	cd freebsd; $(MAKE) $@
+all:
+	cd common; $(MAKE) all
+	cd sdr/freebsd; $(MAKE)
+
+clean:
+	cd common; $(MAKE) $@
+	cd sdr/freebsd; $(MAKE) $@
+
+install:

@@ -1,16 +1,15 @@
-#   $OpenBSD: Makefile,v 1.2 1998/09/14 02:55:42 marc Exp $
+#   $OpenBSD: Makefile,v 1.3 1999/09/02 19:30:39 angelos Exp $
 #
 
-DISTNAME=	sdr.V2.4a7n
-PKGNAME=	sdr-2.4a7
+DISTNAME=	sdr-2.7e
+PKGNAME=	sdr-2.7e
 CATEGORIES=	mbone tk80
-MASTER_SITES=	http://north.east.isi.edu/sdr/
+MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/sdr/2.7e/
 
 MAINTAINER=	angelos@openbsd.org
 
 LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
 
-NO_WRKSUBDIR=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X11=	yes
@@ -24,5 +23,8 @@ post-extract:
 	@${CP} ${FILESDIR}/Makefile.work ${WRKSRC}/Makefile
 	@${CP} ${FILESDIR}/configure ${WRKSRC}
 	@chmod 755 ${WRKSRC}/configure
+
+post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/sdr/freebsd/sdr ${PREFIX}/bin
 
 .include <bsd.port.mk>

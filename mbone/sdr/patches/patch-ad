@@ -1,19 +1,19 @@
-*** src/Makefile.template.orig	Sat Nov 23 16:41:26 1996
---- src/Makefile.template	Sat Nov 23 16:41:35 1996
+*** common/Makefile.in.orig	Thu Sep  2 14:56:34 1999
+--- common/Makefile.in	Thu Sep  2 14:56:43 1999
 ***************
-*** 97,103 ****
-  $(SDR_UI_FILES): tcl2c
+*** 3,9 ****
+  # This probably requires GNU make.
+  #
   
-  parsed_plugins.tcl: ../src/plugin2tcl.tcl
-! 	tclsh7.6 ../src/plugin2tcl.tcl
+! CFLAGS = __WFLAGS__ __DEBUG__ __CHAR__ __PROFILE__ __OPTIMIZE__ __CHECK_FLAG__ __DEFS__ -D__OSTYPE__ 
+  INC    = __INCLUDE__
+  CC     = __CC__
+  AR     = __AR__
+--- 3,9 ----
+  # This probably requires GNU make.
+  #
   
-  libs.tcl: $(TK_LIBRARY_FILES)
-  	cat $(TK_LIBRARY_FILES) | sed '/^[      ]*source[       ]/d' > libs.tcl
---- 97,103 ----
-  $(SDR_UI_FILES): tcl2c
-  
-  parsed_plugins.tcl: ../src/plugin2tcl.tcl
-! 	tclsh8.0 ../src/plugin2tcl.tcl
-  
-  libs.tcl: $(TK_LIBRARY_FILES)
-  	cat $(TK_LIBRARY_FILES) | sed '/^[      ]*source[       ]/d' > libs.tcl
+! CFLAGS = __WFLAGS__ __DEBUG__ __CHAR__ __PROFILE__ __OPTIMIZE__ __CHECK_FLAG__ __DEFS__
+  INC    = __INCLUDE__
+  CC     = __CC__
+  AR     = __AR__

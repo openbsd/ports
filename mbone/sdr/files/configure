@@ -3,5 +3,7 @@
 # configure script for ${WRKSRC}.  It just decends into the
 # freebsd subdirectory and execs configure.
 #
-cd freebsd
+cd common
+./configure $@
+cd ../sdr/freebsd
 exec ./configure $@
