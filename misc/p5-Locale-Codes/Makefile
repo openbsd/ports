@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2002/02/20 05:32:14 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/14 09:17:02 kevlo Exp $
 
 COMMENT=	"module to provide access to ISO3166 and ISO639 codes"
 
-DISTNAME=	Locale-Codes-2.01
+DISTNAME=	Locale-Codes-2.02
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	misc perl5
 NEED_VERSION=	1.504
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= Locale
+MASTER_SITE_SUBDIR=	Locale
 
 CONFIGURE_STYLE= perl
 
