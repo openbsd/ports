@@ -1,0 +1,9 @@
+#! /bin/sh
+EXINIT0="set ${CANNA_OPT} autodetect=${AUTODETECT} fileencoding=${ENCODING} displayencoding=${ENCODING} inputencoding=${ENCODING} noskipdisplay"
+if [ -f ~/.exrc ]; then
+	EXINIT="$EXINIT0 `sed -e '/^set /!d' -e 's/^set //' < ~/.exrc | tr '\012' ' '`"
+else
+	EXINIT=$EXINIT0
+fi
+export EXINIT
+exec ${PREFIX}/bin/nvi "$@"
