@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.389 2001/04/08 16:50:13 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.390 2001/04/08 16:55:17 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -499,6 +499,13 @@ ${_PACKAGE_COOKIE${_sub}}: ${_INSTALL_COOKIE}
 _PORTSDIR!=	cd ${PORTSDIR} && pwd -P
 _CURDIR!=	cd ${.CURDIR} && pwd -P
 PKGPATH=${_CURDIR:S,${_PORTSDIR}/,,}
+.endif
+
+PKGDEPTH=${PKGPATH:C|[^./][^/]*|..|g}
+.if empty(SUBPACKAGE)
+FULLPKGPATH=${PKGPATH}${FLAVOR_EXT:S/-/,/}
+.else
+FULLPKGPATH=${PKGPATH},-${SUBPACKAGE}${FLAVOR_EXT:S/-/,/}
 .endif
 
 # A few aliases for *-install targets
@@ -1348,13 +1355,13 @@ ${_EXTRACT_COOKIE}:
 .else
 # What EXTRACT normally does:
 .  if defined(WRKOBJDIR)
-	@rm -rf ${WRKOBJDIR}/${PKGPATH}${FLAVOR_EXT}
-	@mkdir -p ${WRKOBJDIR}/${PKGPATH}${FLAVOR_EXT}
+	@rm -rf ${WRKOBJDIR}/${FULLPKGPATH}
+	@mkdir -p ${WRKOBJDIR}/${FULLPKGPATH}
 	@if [ ! -L ${WRKDIR} ] || \
-	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PKGPATH}${FLAVOR_EXT} ]; then \
-		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PKGPATH}${FLAVOR_EXT}"; \
+	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${FULLPKGPATH} ]; then \
+		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${FULLPKGPATH}"; \
 		rm -f ${WRKDIR}; \
-		ln -sf ${WRKOBJDIR}/${PKGPATH}${FLAVOR_EXT} ${WRKDIR}; \
+		ln -sf ${WRKOBJDIR}/${FULLPKGPATH} ${WRKDIR}; \
 	fi
 .  else
 	@rm -rf ${WRKDIR}
@@ -1773,13 +1780,13 @@ list-distfiles:
 .if !target(obj)
 obj:
 .  if defined(WRKOBJDIR)
-	@rm -rf ${WRKOBJDIR}/${PKGPATH}${FLAVOR_EXT}
-	@mkdir -p ${WRKOBJDIR}/${PKGPATH}${FLAVOR_EXT}
+	@rm -rf ${WRKOBJDIR}/${FULLPKGPATH}
+	@mkdir -p ${WRKOBJDIR}/${FULLPKGPATH}
 	@if [ ! -L ${WRKDIR} ] || \
-	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PKGPATH}${FLAVOR_EXT} ]; then \
-		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PKGPATH}${FLAVOR_EXT}"; \
+	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${FULLPKGPATH} ]; then \
+		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${FULLPKGPATH}"; \
 		rm -f ${WRKDIR}; \
-		ln -sf ${WRKOBJDIR}/${PKGPATH}${FLAVOR_EXT} ${WRKDIR}; \
+		ln -sf ${WRKOBJDIR}/${FULLPKGPATH} ${WRKDIR}; \
 	fi
 .  else
 	@echo ">>"
@@ -2334,19 +2341,13 @@ recurse-dir-depends:
 	done 
 .endif
 
-.if empty(SUBPACKAGE)
-_PKGPATH=${PKGPATH}${FLAVOR_EXT:S/-/,/}
-.else
-_PKGPATH=${PKGPATH},-${SUBPACKAGE}${FLAVOR_EXT:S/-/,/}
-.endif
-
 # recursively build a list of dirs to pass to tsort...
 dir-depends:
 .if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
 	@unset FLAVOR SUBPACKAGE || true; \
 	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
-		echo "${_PKGPATH} $$dir"; \
+		echo "${FULLPKGPATH} $$dir"; \
 		self2="$$dir"; \
 		${_flavor_fragment}; \
 		toset="$$toset self=\"$$self2\""; \
@@ -2361,7 +2362,7 @@ dir-depends:
 		fi; \
 	done 
 .else
-	@echo "${_PKGPATH} ${_PKGPATH}"
+	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
 .endif
 
 .for _i in RUN BUILD
@@ -2420,10 +2421,6 @@ readme:
 
 
 HTMLIFY=	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
-
-.if make(README.html) || make(readme) || make(readmes)
-PKGDEPTH!=echo ${PKGPATH}|sed -e 's|[^./][^/]*|..|g'
-.endif
 
 .if !target(print-depends)
 print-depends: 
