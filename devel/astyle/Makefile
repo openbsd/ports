@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/24 02:25:05 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/18 21:53:08 avsm Exp $
 
-COMMENT=		indenter and formatter of C/C++/Java source files
+COMMENT=		"indenter and formatter of C/C++/Java source files"
 
-DISTNAME=		astyle_1.13.6.1
-PKGNAME=		astyle-1.13.6.1
+DISTNAME=		astyle_1.13.8
+PKGNAME=		astyle-1.13.8
 CATEGORIES=     	devel
-NEED_VERSION=		1.363
+NEED_VERSION=		1.399
 
 HOMEPAGE=		http://astyle.sourceforge.net/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
