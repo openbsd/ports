@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_src_server_DoRequest_c,v 1.5 2002/10/11 12:34:20 todd Exp $
+--- base/src/server/DoRequest.c.orig	Fri Oct 11 06:48:32 2002
++++ base/src/server/DoRequest.c	Fri Oct 11 06:48:51 2002
+@@ -40,7 +40,7 @@
+ 
+ #include <opencm.h>
+ #include "opencmserver.h"
+-#include "../../gc6.1/include/gc_backptr.h"
++#include <gc_backptr.h>
+ 
+ char *storeReposURI = NULL;
+ extern Repository *localRepos;
