@@ -1,0 +1,83 @@
+--- config.sub.orig	Fri May  3 22:02:38 1996
++++ config.sub	Fri Jan 30 00:20:11 1998
+@@ -17,7 +17,8 @@
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with this program; if not, write to the Free Software
+-# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
++# Foundation, Inc., 59 Temple Place - Suite 330,
++# Boston, MA 02111-1307, USA.
+ 
+ # As a special exception to the GNU General Public License, if you
+ # distribute this file as part of a program that contains a
+@@ -128,8 +129,8 @@
+ case $basic_machine in
+ 	# Recognize the basic CPU types without company name.
+ 	# Some are omitted here because they have special meanings below.
+-	tahoe | i[345]86 | i860 | m68k | m68000 | m88k | ns32k | arm | armeb \
+-		| armel | pyramid \
++	tahoe | i[345]86 | i860 | m68k | m68000 | m88k | ns32k | arm \
++		| arme[lb] | pyramid \
+ 		| tron | a29k | 580 | i960 | h8300 | hppa1.0 | hppa1.1 \
+ 		| alpha | we32k | ns16k | clipper | sparclite | i370 | sh \
+ 		| powerpc | powerpcle | sparc64 | 1750a | dsp16xx | mips64 | mipsel \
+@@ -144,7 +145,7 @@
+ 		;;
+ 	# Recognize the basic CPU types with company name.
+ 	vax-* | tahoe-* | i[345]86-* | i860-* | m68k-* | m68000-* | m88k-* \
+-	      | sparc-* | ns32k-* | fx80-* | arm-* | arme[lb]-* | c[123]* \
++	      | sparc-* | ns32k-* | fx80-* | arm-* | c[123]* \
+ 	      | mips-* | pyramid-* | tron-* | a29k-* | romp-* | rs6000-* | power-* \
+ 	      | none-* | 580-* | cray2-* | h8300-* | i960-* | xmp-* | ymp-* \
+ 	      | hppa1.0-* | hppa1.1-* | alpha-* | we32k-* | cydra-* | ns16k-* \
+@@ -430,10 +431,13 @@
+ 		# We don't have specific support for AMD's K5 yet, so just call it a Pentium
+ 		basic_machine=i586-amd
+ 		;;
+-	nexgen)
++	nexen)
+ 		# We don't have specific support for Nexgen yet, so just call it a Pentium
+ 		basic_machine=i586-nexgen
+ 		;;
++	mips-arc-*)
++		basic_machine=mips-r4kle
++		;;
+ 	pn)
+ 		basic_machine=pn-gould
+ 		;;
+@@ -629,17 +633,20 @@
+ 		;;
+ 	# First accept the basic system types.
+ 	# The portable systems comes first.
+-	# Each alternative must end in a *, to match a version number.
++	# Each alternative MUST END IN A *, to match a version number.
+ 	# -sysv* is not here because it comes later, after sysvr4.
+-	-gnu* | -bsd* | -mach* | -lites* | -minix* | -genix* | -ultrix* | -irix* \
++	-gnu* | -bsd* | -mach* | -minix* | -genix* | -ultrix* | -irix* \
+ 	      | -vms* | -sco* | -esix* | -isc* | -aix* | -sunos | -sunos[345]* \
+ 	      | -hpux* | -unos* | -osf* | -luna* | -dgux* | -solaris* | -sym* \
+-	      | -amigados* | -msdos* | -moss* | -newsos* | -unicos* | -aos* \
++	      | -amigados* | -msdos* | -newsos* | -unicos* | -aos* \
+ 	      | -nindy* | -vxworks* | -ebmon* | -hms* | -mvs* | -clix* \
+ 	      | -riscos* | -linux* | -uniplus* | -iris* | -rtu* | -xenix* \
+-	      | -hiux* | -386bsd* | -netbsd* | -freebsd* | -riscix*  | -lites* \
++	      | -hiux* | -386bsd* | -netbsd* | -freebsd* | -openbsd* \
++	      |	-riscix* \
+ 	      | -lynxos* | -bosx* | -nextstep* | -cxux* | -aout* | -elf* \
+-	      | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta | -udi | -eabi*)
++	      | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
++	      | -udi* | -eabi* | -lites* )
++	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-sunos5*)
+ 		os=`echo $os | sed -e 's|sunos5|solaris2|'`
+@@ -717,6 +724,9 @@
+ case $basic_machine in
+ 	*-acorn)
+ 		os=-riscix1.2
++		;;
++	arm*-semi)
++		os=-aout
+ 		;;
+         pdp11-*)
+ 		os=-none
