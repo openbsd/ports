@@ -28,10 +28,5 @@ libdata/perl5/site_perl/auto/Class/MethodMaker/static_get_set.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/static_hash.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/struct.al
 libdata/perl5/site_perl/auto/Class/MethodMaker/tie_hash.al
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/Class/MethodMaker/.packlist
 man/man3/Class::MethodMaker.3p
-@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Class/MethodMaker
 @dirrm libdata/perl5/site_perl/auto/Class/MethodMaker
-@dirrm libdata/perl5/site_perl/auto/Class
-@dirrm libdata/perl5/site_perl/auto
-@dirrm libdata/perl5/site_perl/Class
