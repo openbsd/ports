@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2004/01/19 03:56:23 jolan Exp $
+--- src/Makefile.in.orig	2003-11-25 21:53:16.000000000 -0600
++++ src/Makefile.in	2004-01-17 23:07:10.000000000 -0600
+@@ -437,7 +437,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUD
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
+ 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+-CCLD = $(CC)
++CCLD = $(CXX)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ DIST_SOURCES = $(gaim_SOURCES) $(gaim_remote_SOURCES)
