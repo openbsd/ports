@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.3 2000/07/19 07:38:31 brad Exp $
+# $OpenBSD: INSTALL,v 1.4 2000/07/20 05:57:55 brad Exp $
 #
 # Pre/post-installation setup of squid
 
@@ -76,14 +76,14 @@ case $2 in
 	;;
     POST-INSTALL)
 	if [ -f $CONFIG_FILE ]; then
-	    do_notice_conf
+	    do_notice_conf $1
 	else
-	    do_install_conf
+	    do_install_conf $1
 	fi
 	if [ -f ${PREFIX}/share/squid/errors/ERR_TOO_BIG ]; then
-	    do_notice_errors_and_icons
+	    do_notice_errors_and_icons $1
 	else
-	    do_install_errors_and_icons
+	    do_install_errors_and_icons $1
 	fi
 	;;
     *)
