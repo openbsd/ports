@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2004/05/20 10:54:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.57 2004/05/26 13:39:43 sturm Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += MyCC
@@ -14,6 +14,17 @@
      SUBDIR += mysqlgui
      SUBDIR += openldap
      SUBDIR += p5-AsciiDB-TagFile
+     SUBDIR += p5-Class-DBI
+     SUBDIR += p5-Class-DBI-AbstractSearch
+     SUBDIR += p5-Class-DBI-AsForm
+     SUBDIR += p5-Class-DBI-FromCGI
+     SUBDIR += p5-Class-DBI-Loader
+     SUBDIR += p5-Class-DBI-Loader-Relationship
+     SUBDIR += p5-Class-DBI-Pager
+     SUBDIR += p5-Class-DBI-Plugin-RetrieveAll
+     SUBDIR += p5-Class-DBI-Plugin-Type
+     SUBDIR += p5-Class-DBI-SQLite
+     SUBDIR += p5-Class-DBI-mysql
      SUBDIR += p5-Data-Page
      SUBDIR += p5-DBD-CSV
      SUBDIR += p5-DBD-Pg
@@ -24,6 +35,7 @@
      SUBDIR += p5-DBI
      SUBDIR += p5-DBIx-ContextualFetch
      SUBDIR += p5-DBIx-XHTML_Table
+     SUBDIR += p5-Ima-DBI
      SUBDIR += p5-SQL-Abstract
      SUBDIR += p5-SQL-Statement
      SUBDIR += p5-Tie-DBI
