@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2001/03/04 14:51:46 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.22 2002/09/15 04:16:31 brad Exp $
 bin/Magick++-config
 bin/Magick-config
 bin/animate
@@ -49,6 +49,7 @@ include/magick/utility.h
 include/magick/version.h
 include/magick/widget.h
 include/magick/xwindows.h
+lib/ImageMagick/delegates.mgk
 lib/libMagick++.a
 lib/libMagick++.la
 lib/libMagick.a
@@ -161,10 +162,11 @@ share/ImageMagick/www/quantize.html
 share/ImageMagick/www/smile.c
 share/ImageMagick/www/sponsor.html
 share/ImageMagick/www/tools.html
-@dirrm include/Magick++
-@dirrm include/magick
-@dirrm share/ImageMagick/images
 @dirrm share/ImageMagick/www/api/types
 @dirrm share/ImageMagick/www/api
 @dirrm share/ImageMagick/www
+@dirrm share/ImageMagick/images
 @dirrm share/ImageMagick
+@dirrm lib/ImageMagick
+@dirrm include/magick
+@dirrm include/Magick++
