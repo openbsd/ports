@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/02/17 23:54:49 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/03/31 22:13:51 dhartmei Exp $
 @pkgcfl symon-*
 libexec/symon
 libexec/symux
 man/cat8/symon.0
 man/cat8/symux.0
+share/examples/symon/symon.conf
+share/examples/symon/symux.conf
 share/symon/c_smrrds.sh
-share/symon/symon.conf
-share/symon/symux.conf
 share/symon/web/class_cpu.inc        
 share/symon/web/class_graph.inc      
 share/symon/web/class_if.inc         

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-mon,v 1.4 2003/02/17 23:54:49 naddy Exp $
+@comment $OpenBSD: PLIST-mon,v 1.5 2003/03/31 22:13:51 dhartmei Exp $
 @pkgcfl symon-[0-9]*
 libexec/symon
 man/cat8/symon.0
-share/symon/symon.conf
+share/examples/symon/symon.conf
 share/symon/c_config.sh
 @dirrm share/symon
