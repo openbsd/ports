@@ -1,4 +1,4 @@
-# $OpenBSD: sparc,v 1.8 2004/08/14 00:23:35 pvalchev Exp $
+# $OpenBSD: sparc,v 1.9 2004/08/23 06:46:21 pvalchev Exp $
 # This is the master list of subdirs used to choose i386 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -26,15 +26,21 @@ net/curl
 #print/gv
 devel/id-utils
 x11/openmotif
-#www/mozilla-firefox
+www/mozilla-firefox
 #x11/qt3,-base
 #x11/kde/base3
 #x11/kde/office3
 #x11/kde/pim3
 #x11/kde/edu3
-#x11/windowmaker
-#x11/windowmaker-extra
+x11/windowmaker
+x11/windowmaker-extra
 textproc/xpdf
 graphics/gqview
+lang/python/2.3
+lang/python/2.3,-tools
 sysutils/pftop
 security/stunnel
+www/links
+net/snort
+www/squid
+www/transproxy
