@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2000/04/18 09:48:00 turan Exp $
+# $OpenBSD: Makefile,v 1.17 2000/05/31 14:31:20 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/28 11:55:25 rse Exp $
 
 DISTNAME=	mm-1.0.12
 CATEGORIES=	devel
 NEED_VERSION=	1.73
-FAKE=No
+FAKE=		Yes
 MASTER_SITES=	http://www.engelschall.com/sw/mm/ \
 		ftp://ftp.engelschall.com/sw/mm/
 
@@ -16,15 +16,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	Yes
+CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
 post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
-
-post-install:
-	@${LDCONFIG} -m ${PREFIX}/lib
 
 test:	build
 	@cd ${WRKSRC} && make test
