@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2002/05/13 13:43:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2002/07/20 15:10:17 naddy Exp $
 
 COMMENT=	"GNU Bourne Again Shell"
 
-DISTNAME=	bash-2.05a
+DISTNAME=	bash-2.05b
 CATEGORIES=	shells
-NEED_VERSION=	1.528
 HOMEPAGE=	http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
