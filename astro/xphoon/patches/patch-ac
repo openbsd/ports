@@ -1,36 +1,36 @@
-*** dtime.c.orig	Mon Dec  1 20:27:44 1997
---- dtime.c	Mon Dec  1 20:28:26 1997
-***************
-*** 26,32 ****
-  #include <sys/timeb.h>
-  #endif /*SYS5*/
-  
-! extern long time();
-  struct tm* localtime();
-  
-  struct tws*
---- 26,32 ----
-  #include <sys/timeb.h>
-  #endif /*SYS5*/
-  
-! extern time_t time(time_t *);
-  struct tm* localtime();
-  
-  struct tws*
-***************
-*** 40,46 ****
-  
-  struct tws*
-  dlocaltime( clock )
-!     long* clock;
-      {
-      register struct tm* tm;
-  #ifndef SYS5
---- 40,46 ----
-  
-  struct tws*
-  dlocaltime( clock )
-!     time_t* clock;
-      {
-      register struct tm* tm;
-  #ifndef SYS5
+--- dtime.c.orig	Fri Sep 13 22:15:25 1991
++++ dtime.c	Thu Feb 26 11:02:35 1998
+@@ -26,13 +26,13 @@
+ #include <sys/timeb.h>
+ #endif /*SYS5*/
+ 
+-extern long time();
++extern time_t time(time_t *);
+ struct tm* localtime();
+ 
+ struct tws*
+ dtwstime()
+     {
+-    long clock;
++    time_t clock;
+ 
+     (void) time( &clock );
+     return dlocaltime( &clock );
+@@ -40,7 +40,7 @@
+ 
+ struct tws*
+ dlocaltime( clock )
+-    long* clock;
++    time_t* clock;
+     {
+     register struct tm* tm;
+ #ifndef SYS5
+@@ -48,7 +48,7 @@
+ #endif not SYS5
+     static struct tws tw;
+ 
+-    if ( clock == (long*) 0 )
++    if ( clock == 0 )
+ 	return (struct tws*) 0;
+     tw.tw_flags = TW_NULL;
+ 

@@ -1,19 +1,20 @@
-*** xphoon.c.orig	Mon Dec  1 20:26:36 1997
---- xphoon.c	Mon Dec  1 20:26:54 1997
-***************
-*** 32,38 ****
-  /* Externals. */
-  
-  extern char* malloc();
-! extern long time();
-  extern long random();
-  
-  extern void getbits();
---- 32,38 ----
-  /* Externals. */
-  
-  extern char* malloc();
-! extern time_t time();
-  extern long random();
-  
-  extern void getbits();
+--- xphoon.c.orig	Wed Sep 18 12:57:37 1991
++++ xphoon.c	Thu Feb 26 11:06:34 1998
+@@ -32,7 +32,7 @@
+ /* Externals. */
+ 
+ extern char* malloc();
+-extern long time();
++extern time_t time();
+ extern long random();
+ 
+ extern void getbits();
+@@ -65,7 +65,7 @@
+     int blackflag, demoflag;
+     int printpid;
+     char* display_name;
+-    long clock;
++    time_t clock;
+     int pid, tty;
+     int size;
+     char* mooncopy;
