@@ -1,0 +1,57 @@
+--- man/pgp.1.orig	Sat Feb  7 17:08:26 1998
++++ man/pgp.1	Mon Jan 25 23:59:40 1999
+@@ -1,38 +1,38 @@
+ .\"
+-.\" pgp.1
++.\" pgp5.1
+ .\"
+ .\" Copyright (C) 1997 Pretty Good Privacy, Inc.  All rights reserved.
+ .\"
+ .\" $Id: patch-ad,v 1.1.1.1 1999/02/05 05:05:19 fgsch Exp $
+ .\"
+ .\" Process this file with
+ .\" groff -man -Tascii pgp.1
+ .\"
+-.TH PGP 1 "JULY 1997 (v5.0)" PGP "User Manual"
++.TH PGP5 1 "JULY 1997 (v5.0)" PGP "User Manual"
+ .SH NAME
+-PGP \- A suite of tools for encrypting, decrypting and verifying
++PGP5 \- A suite of tools for encrypting, decrypting and verifying
+ messages.
+ .SH DESCRIPTION
+ There are two files in this package, but several additional modes of
+ operation are available via symbolic links:
+ 
+ .RS
+-.BR pgp (1)
++.BR pgp5 (1)
+ is the main cryptographic engine of the PGP package.  However,
+ invoking it as itself merely prints a usage summary.
+ 
+ .BR pgpe (1)
+ is executed to encrypt, or encrypt and sign, files.  It is a link to
+-.BR pgp (1).
++.BR pgp5 (1).
+ 
+ .BR pgps (1)
+ is executed to only sign files.  It is a link to
+-.BR pgp (1).
++.BR pgp5 (1).
+ 
+ .BR pgpv (1)
+ is executed to only verify or decrypt signed or encrypted files.  It
+ is a link to
+-.BR pgp (1).
++.BR pgp5 (1).
+ 
+ .BR pgpk (1)
+ is the key management application, which is used to generate,
+@@ -167,7 +167,7 @@
+ There is currently no way to specify just a secret or public keyring
+ for an operation.
+ 
+-.B pgp --version
++.B pgp5 --version
+ doesn't work.  Use
+ .B pgpk --version
+ or one of the other commands, instead.

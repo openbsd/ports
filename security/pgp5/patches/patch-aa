@@ -1,0 +1,28 @@
+--- apps/pgp/Makefile.in.orig	Sat Feb  7 16:54:56 1998
++++ apps/pgp/Makefile.in	Sat Jan 23 01:54:35 1999
+@@ -6,7 +6,7 @@
+ # $Id: patch-aa,v 1.1.1.1 1999/02/05 05:05:19 fgsch Exp $
+ #
+ 
+-PROG = pgp
++PROG = pgp5
+ INSTALLPROGS = $(PROG)
+ 
+ COMMON=../common
+@@ -21,11 +21,11 @@
+ 
+ install:: $(PROG)
+ 	(						\
+-	    $(INSTALL) -m 755 pgp $(DESTDIR)$(bindir);	\
++	    $(INSTALL) -m 755 pgp5 $(DESTDIR)$(bindir);	\
+ 	    cd $(DESTDIR)$(bindir);			\
+ 	    $(RM) pgpe pgps pgpv pgp_old;		\
+-	    $(LN_S) pgp pgpe;				\
+-	    $(LN_S) pgp pgps;				\
+-	    $(LN_S) pgp pgpv;				\
+-	    $(LN_S) pgp pgp_old				\
++	    $(LN_S) pgp5 pgpe;				\
++	    $(LN_S) pgp5 pgps;				\
++	    $(LN_S) pgp5 pgpv;				\
++	    $(LN_S) pgp5 pgp_old			\
+ 	)

@@ -1,0 +1,11 @@
+--- man/Makefile.in.orig	Sat Feb  7 16:54:57 1998
++++ man/Makefile.in	Mon Jan 25 23:33:58 1999
+@@ -6,7 +6,7 @@
+ # $Id: patch-ac,v 1.1.1.1 1999/02/05 05:05:19 fgsch Exp $
+ #
+ 
+-MAN1=pgp.1 pgpe.1 pgpk.1 pgps.1 pgpv.1
++MAN1=pgp5.1 pgpe.1 pgpk.1 pgps.1 pgpv.1
+ MAN5=pgp.cfg.5
+ MAN7=pgp-integration.7 pgp-intro.7
+ 

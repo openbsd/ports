@@ -1,0 +1,20 @@
+bin/pgp5
+bin/pgpe
+bin/pgps
+bin/pgpv
+bin/pgp_old
+bin/pgpk
+man/man1/pgp5.1
+man/man1/pgpe.1
+man/man1/pgps.1
+man/man1/pgpv.1
+man/man1/pgpk.1
+man/man5/pgp.cfg.5
+man/man7/pgp-intro.7
+man/man7/pgp-integration.7
+lib/libbn.a
+lib/libpgp.a
+lib/libpgptty.a
+lib/libsimple.a
+lib/pgp5/language50.txt
+@dirrm lib/pgp5

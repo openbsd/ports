@@ -1,0 +1,23 @@
+--- man/pgp.cfg.5.orig	Sat Feb  7 16:54:57 1998
++++ man/pgp.cfg.5	Tue Jan 26 00:09:25 1999
+@@ -11,7 +11,7 @@
+ .TH PGP 5.0 "JULY 1997 (v5.0)" PGP "User Manual"
+ .SH NAME
+ pgp.cfg \- Format of the configuration file used by
+-.BR pgp (1).
++.BR pgp5 (1).
+ .SH DESCRIPTION
+ The default location for this file is ~/.pgp.  You may specify another
+ location by setting the environment variable
+@@ -125,9 +125,9 @@
+ 
+ .SH BUGS
+ See
+-.BR pgp (1).
++.BR pgp5 (1).
+ .SH "SEE ALSO"
+-.BR pgp (1),
++.BR pgp5 (1),
+ .BR pgpe (1),
+ .BR pgpv (1),
+ .BR pgps (1),

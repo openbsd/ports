@@ -1,0 +1,91 @@
+$NetBSD: patch-ag,v 1.1 1999/01/05 14:31:01 frueauf Exp $
+
+From Julian Coleman <J.D.Coleman@newcastle.ac.uk> posted to
+netbsd-bugs@netbsd.org:
+
+The memory alignment strategy for PGP 5.0i causes bus errors on NetBSD/Sparc
+because 8 byte variables are not aligned on an 8 byte boundary.
+
+In src/lib/pgp/helper/pgpMem.c:PGP_INTERNAL_ALLOC(), a header is added to
+all malloc()'ed memory and the pointer returned is incremented by the size
+of the header.  However, there are no constraints to see if this increment
+is correctly aligned.
+
+The problem might also occur on other OS's running on the Sparc.  A patch
+is appended (based on one used for the Chimera web browser).
+
+J
+
+PS.  The exact problem is that 'off_t' is an 8 byte value, but the header
+length is only a mulitple of 4.  Pgpe crashes at pgpFileMod.c:333, when it
+tries to modify 'context->filesize'.
+
+PPS.  Maybe 'long long' should also be in the union (e.g. for Solaris 2).
+
+--- lib/pgp/helper/pgpMem.c.orig	Mon Aug 11 02:05:32 1997
++++ lib/pgp/helper/pgpMem.c	Tue Jan  5 15:03:27 1999
+@@ -19,6 +19,20 @@
+ #include "pgpDebug.h"
+ #include "pgpLeaks.h"
+ 
++/*
++ * Make sure any memory chunks are correctly aligned.
++ * This can be forced by defining ALIGNSIZE (in bytes).
++ */
++#ifndef ALIGNSIZE
++typedef struct Alignment
++{
++  union { int a; char *b; size_t c; off_t d; long e; } Align;
++} Alignment;
++#define MEMALIGN(x) ((x / sizeof(Alignment) + 1) * sizeof(Alignment))
++#else
++#define MEMALIGN(x) ((x / ALIGNSIZE + 1) * ALIGNSIZE)
++#endif
++
+ /* Fills allocated/deallocated memory with 0xDD's */
+ #ifndef DEBUG_FILL_MEM
+ #define DEBUG_FILL_MEM			DEBUG
+@@ -69,11 +83,11 @@
+ };
+ 
+ #define UserPtrToMemHeader(userPtr)		\
+-		((MemHeader *)((char *)(userPtr) - sizeof(MemHeader)))
++		((MemHeader *)((char *)(userPtr) - MEMALIGN(sizeof(MemHeader))))
+ #define MemHeaderToUserPtr(hdrPtr)		\
+- 	((void *)((char *)(hdrPtr) + sizeof(MemHeader)))
++ 	((void *)((char *)(hdrPtr) + MEMALIGN(sizeof(MemHeader))))
+ #define FullBlockSize(userSize)			\
+-		(sizeof(MemHeader) + (userSize) + DEBUG_MEM_TAIL_MAGIC)
++		(MEMALIGN(sizeof(MemHeader)) + (userSize) + DEBUG_MEM_TAIL_MAGIC)
+ 
+ /*
+ * Defines the sequence of tail magic bytes. We want every byte to be
+@@ -269,7 +283,7 @@
+ 	MemHeader *	header)
+ {
+ #if DEBUG_MEM_TAIL_MAGIC
+-	char *		tailMagic = (char *)header + sizeof(MemHeader) + header->size;
++	char *		tailMagic = (char *)header + MEMALIGN(sizeof(MemHeader)) + header->size;
+ 	int			i;
+ 	
+ 	for (i = 0; i < DEBUG_MEM_TAIL_MAGIC; i++)
+@@ -287,8 +301,9 @@
+ 	MemHeader *		header;
+ 	void *			userPtr;
+ 	
++	size += (MEMALIGN(sizeof(MemHeader)) - (sizeof(MemHeader)));
+ 	header = (MemHeader *)pgpPlatformAlloc(FullBlockSize(size));
+-if (header == NULL)
++	if (header == NULL)
+ 		return NULL;
+ 
+ 	MaybeFillMem(header, FullBlockSize(size));
+@@ -352,7 +367,7 @@
+ 		if (newHeader == NULL)
+ 			return PGPERR_NOMEM;
+ 		pgpCopyMemory((void *)oldHeader, (void *)newHeader,
+-					sizeof(MemHeader) + oldSize);
++					MEMALIGN(sizeof(MemHeader)) + oldSize);
+ 		MaybeFillMem(oldHeader, FullBlockSize(oldSize));
+ 		pgpPlatformFree(oldHeader);
+ 	}

@@ -1,0 +1,15 @@
+--- man/pgpe.1.orig	Sat Feb  7 16:54:57 1998
++++ man/pgpe.1	Tue Jan 26 00:18:12 1999
+@@ -108,10 +108,10 @@
+ .SH BUGS
+ .RS
+ See
+-.BR pgp (1).
++.BR pgp5 (1).
+ .BE
+ .SH "SEE ALSO"
+-.BR pgp (1),
++.BR pgp5 (1),
+ .BR pgpv (1),
+ .BR pgps (1),
+ .BR pgpk (1),
