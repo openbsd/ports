@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2001/01/04 06:53:10 dugsong Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/06 04:22:48 lebel Exp $
+
+COMMENT=	"text browser, displays while downloading"
 
 CATEGORIES=		www
-NEED_VERSION=		1.317
+NEED_VERSION=	1.402
 
 HOMEPAGE=	http://artax.karlin.mff.cuni.cz/%7Emikulas/links/
 MAINTAINER=	Marc Espie <espie@openbsd.org>

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/21 19:16:54 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 04:22:59 lebel Exp $
+
+COMMENT=	"utility to mirror web pages"
 
 DISTNAME=		w3mir-1.0.10
 CATEGORIES=     	www
-NEED_VERSION=		1.340
+NEED_VERSION=	1.402
 
 HOMEPAGE=		http://langfeldt.net/w3mir/
 MAINTAINER=		Jeff Bachtel <jeff@cepheid.org>

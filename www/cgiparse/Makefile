@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2000/07/03 22:49:31 krw Exp $
+# $OpenBSD: Makefile,v 1.14 2001/05/06 04:22:47 lebel Exp $
+
+COMMENT=	"C library to parse CGI Forms"
 
 DISTNAME=	cgiparse-0.8e
 CATEGORIES=	www
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 
 MAINTAINER=	ports@openbsd.org
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/23 12:40:15 peter Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/06 04:22:52 lebel Exp $
 
 COMMENT=	"DBI persistent connection, authentication and authorization"
 
 DISTNAME=	ApacheDBI-0.87
 PKGNAME=	p5-Apache-DBI-0.87
 CATEGORIES=	www databases perl5
-NEED_VERSION=	1.405
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Apache
 

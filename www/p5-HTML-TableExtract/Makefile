@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/19 12:41:01 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 04:22:55 lebel Exp $
+
+COMMENT=	"module to extract text contained within HTML tables"
 
 DISTNAME=	HTML-TableExtract-1.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
-NEED_VERSION=	1.351
+NEED_VERSION=	1.402
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= HTML

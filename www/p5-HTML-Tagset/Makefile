@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2000/11/18 23:39:27 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 04:22:55 lebel Exp $
+
+COMMENT=	"data tables useful for parsing HTML"
 
 DISTNAME=	HTML-Tagset-3.03
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
-NEED_VERSION=	1.340
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= HTML
 

@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2001/04/18 15:01:22 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/06 04:22:45 lebel Exp $
 # Original from: Bruno Rohee <rohee@OpenBSD.ORG>
 #
 # Many variables moved to ../Makefile.inc
 #
-AMAYA_VERSION=		3.2.1
 
+COMMENT=		"test-bed browser/authoring tool of the W3C"
+
+AMAYA_VERSION=		3.2.1
 DISTNAME=		amaya-src-${AMAYA_VERSION}
 PKGNAME=		amaya-${AMAYA_VERSION}
 
-NEED_VERSION=		1.400
+NEED_VERSION=		1.402
 
 USE_MOTIF=		any
 

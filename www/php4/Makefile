@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.37 2001/04/23 23:58:52 avsm Exp $
+# $OpenBSD: Makefile,v 1.38 2001/05/06 04:22:57 lebel Exp $
+
+COMMENT=	"server-side HTML-embedded scripting language"
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
@@ -6,7 +8,7 @@ ONLY_FOR_ARCHS=	i386 m68k sparc
 DISTNAME=	php-4.0.4pl1
 PKGNAME=	php4-4.0.4pl1
 CATEGORIES=	www lang
-NEED_VERSION=	1.346
+NEED_VERSION=	1.402
 
 MAINTAINER=     Anil Madhavapeddy <avsm@openbsd.org>, Jakob Schlyter <jakob@openbsd.org>
 

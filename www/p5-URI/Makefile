@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/28 03:28:46 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/06 04:22:56 lebel Exp $
+
+COMMENT=	"library to parse Uniform Resource Identifiers"
 
 DISTNAME=	URI-1.11
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
-NEED_VERSION=	1.351
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= URI
 

@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2001/02/13 01:18:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 04:22:58 lebel Exp $
 # Original from: Bruno Rohee <rohee@OpenBSD.ORG>
+
+COMMENT=	"validate, correct, and pretty-print HTML files"
 
 TIDYDATE=	4aug00
 DISTNAME=	tidy${TIDYDATE}
 PKGNAME=	tidy-${TIDYDATE}
 
 CATEGORIES=     www
-NEED_VERSION=	1.195
+NEED_VERSION=	1.402
 
 MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 

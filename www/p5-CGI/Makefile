@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/04 13:17:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 04:22:52 lebel Exp $
+
+COMMENT=	"modules for use in writing cgi scripts"
 
 VERSION=	2.76
 DISTNAME=	CGI-modules-${VERSION}
 PKGNAME=	p5-CGI-${VERSION}
 CATEGORIES=	www perl5
-NEED_VERSION=	1.348
+NEED_VERSION=	1.402
 
 HOMEPAGE=	http://stein.cshl.org/WWW/software/CGI::modules/
 

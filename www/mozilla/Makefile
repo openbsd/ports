@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2001/04/18 15:01:23 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/05/06 04:22:49 lebel Exp $
 #
 # From: $NetBSD: Makefile,v 1.13 1998/08/04 13:09:21 fvdl Exp $
 #	but modified to use lesstif 0.86.0...
+
+COMMENT=	"free version of the Netscape browser"
 
 DISTNAME=	mozilla
 M=		17
@@ -11,7 +13,7 @@ DISTFILES=	mozilla-source-M$M.tar.bz2
 BROKEN=		core dumps in dynamic library constructor
 
 CATEGORIES=	www
-NEED_VERSION=	1.400
+NEED_VERSION=	1.402
 
 MAINTAINER=	ports@openbsd.org
 

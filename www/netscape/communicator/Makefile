@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/12/18 14:19:27 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 04:22:49 lebel Exp $
+
+COMMENT=	"Netscape Communicator WWW browser with 128-bit encryption"
 
 ONLY_FOR_ARCHS=	i386
-NEED_VERSION=	1.322
+NEED_VERSION=	1.402
 
 PROGRAM_V=	4.75
 V2:=		${PROGRAM_V:S/.//}

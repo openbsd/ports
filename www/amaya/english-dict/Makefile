@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/19 10:41:19 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/06 04:22:45 lebel Exp $
 # Original from: Bruno Rohee <rohee@OpenBSD.ORG>
 #
 # Many variables moved to ../Makefile.inc
 #
-DISTNAME=		English
+
+COMMENT=	"English dictionary for the Amaya browser/page composer"
+
 PKGNAME=		amaya-english-dict-20000321
-NEED_VERSION=		1.223
+DISTNAME=		English
+NEED_VERSION=		1.402
 
 RUN_DEPENDS=		${PREFIX}/bin/amaya:www/amaya/browser
 
