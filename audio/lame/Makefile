@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/04/13 03:24:04 obecian Exp $
+# $OpenBSD: Makefile,v 1.8 2001/07/22 13:48:56 jakob Exp $
 
 COMMENT=	"Lame Ain't an MP3 Encoder"
-DISTNAME=	lame3.87beta
-PKGNAME=	lame-3.87beta
+
+VERSION=	3.89
+
+DISTNAME=	lame${VERSION}beta
+PKGNAME=	lame-${VERSION}beta
 CATEGORIES=	audio
 NEED_VERSION=	1.364
 
@@ -17,25 +20,28 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html
 PERMIT_DISTFILES_FTP=	Yes
 
-WRKDIST=	${WRKDIR}/lame3.87
+WRKDIST=	${WRKDIR}/lame-${VERSION}
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=	gnu
+ALL_TARGET=		all
 
 FLAVORS=	no_x11
 FLAVOR?=
 
-ALL_TARGET=	all
+CONFIGURE_ARGS+=	--enable-mp3rtp
 
-.if ${FLAVOR:L} == "no_x11"
-CONFIGURE_ARGS+=	--enable-analyzer=no
-.else
-CONFIGURE_ARGS+=	--enable-analyzer=yes
-LIB_DEPENDS=	gtk.1.2::x11/gtk+
+.if ${FLAVOR:L} != "no_x11"
+CONFIGURE_ARGS+=	--enable-mp3x
+LIB_DEPENDS+=		gtk.1.2::x11/gtk+
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/lame ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/frontend/lame ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/frontend/mp3rtp ${PREFIX}/bin
+.if ${FLAVOR:L} != "no_x11"
+	${INSTALL_PROGRAM} ${WRKBUILD}/frontend/mp3x ${PREFIX}/bin
+.endif
 	${INSTALL_MAN} ${WRKBUILD}/doc/man/lame.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lame
 	${INSTALL_DATA} ${WRKBUILD}/doc/html/*.html ${PREFIX}/share/doc/lame
