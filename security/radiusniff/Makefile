@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/06 03:46:16 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2001/07/28 20:13:08 pvalchev Exp $
 # Original from: FreeLSD <freelsd@freelsd.net>
 
 COMMENT=		"radius sniffer"
@@ -19,9 +19,15 @@ MASTER_SITES=		http://adm.freelsd.net/ADM/
 WRKSRC=			${WRKDIR}/radiusniff-0.2
 
 do-build:
-			cd ${WRKSRC} ; ${CC} -DOPENBSD -DDICTIONARY_FILENAME='"dictionary"' -I/usr/local/include -L/usr/local/lib -o radiusniff radiusniff.c md5.c -lpcap -lresolv
+	cd ${WRKSRC} && ${CC} -DOPENBSD \
+	-DDICTIONARY_FILENAME=\"${PREFIX}/share/radiusniff/dictionary\" \
+	-DCLIENTS_FILENAME=\"${PREFIX}/share/radiusniff/clients\" \
+	-I${LOCALBASE}/include -L${LOCALBASE}/lib -o radiusniff \
+	radiusniff.c md5.c -lpcap -lresolv
 
 do-install:
-			${INSTALL_PROGRAM} ${WRKSRC}/radiusniff ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/radiusniff ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/radiusniff/
+	${INSTALL_DATA} ${WRKSRC}/{dictionary,clients} ${PREFIX}/share/radiusniff
 
 .include <bsd.port.mk>

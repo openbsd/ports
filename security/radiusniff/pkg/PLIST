@@ -1,1 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.2 2001/07/28 20:13:08 pvalchev Exp $
 bin/radiusniff
+share/radiusniff/clients
+share/radiusniff/dictionary
+@dirrm share/radiusniff
