@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/02/15 19:55:56 matt Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/03/26 02:50:23 matt Exp $
 bin/zope-instance
 lib/zope/Extensions/README.txt
 lib/zope/ZServer/DebugLogger.py
@@ -2509,6 +2509,7 @@ lib/zope/lib/python/Zope/__init__.pyo
 lib/zope/lib/python/dcdb.py
 lib/zope/lib/python/dcdb.pyc
 lib/zope/lib/python/dcdb.pyo
+lib/zope/lib/python/initgroups.so
 lib/zope/lib/python/intSet.so
 lib/zope/lib/python/tempfile.py
 lib/zope/lib/python/tempfile.pyc

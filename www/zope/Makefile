@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2002/02/15 19:55:56 matt Exp $
+# $OpenBSD: Makefile,v 1.8 2002/03/26 02:50:23 matt Exp $
 
 COMMENT=	"object-oriented web application server"
 
-VERSION=	2.5.0
+VERSION=	2.5.1b1
+PORT_VERSION=	${VERSION}
+
 DISTNAME=	Zope-${VERSION}-src
-PKGNAME=	zope-${VERSION}
+PKGNAME=	zope-${PORT_VERSION}
 CATEGORIES=     www
-NEED_VERSION=	1.504
+NEED_VERSION=	1.516
 
 HOMEPAGE=	http://www.zope.org/
 
@@ -21,9 +23,13 @@ MASTER_SITES=	http://www.zope.org/Products/Zope/${VERSION}/
 EXTRACT_SUFX=	.tgz
 EXTRACT_CASES=	*.tgz) gtar zxf ${FULLDISTDIR}/$$archive ;;
 
-BUILD_DEPENDS=	:python-2.1*:lang/python/2.1 \
+MASTER_SITES0=	http://www.zope.org/Members/zigg/UnixSecurityPatch/
+PATCHFILES=	Zope-${VERSION}-unix-security.patch:0
+PATCH_DIST_STRIP=-p1
+
+BUILD_DEPENDS=	:python->=2.1.2:lang/python/2.1 \
 		:gtar-*:archivers/gtar					
-RUN_DEPENDS=	:python-2.1*:lang/python/2.1
+RUN_DEPENDS=	:python->=2.1.2:lang/python/2.1
 
 # Note that the configure script is really just for pcgi, but it's
 # the only one in the package.
@@ -69,6 +75,8 @@ do-install:
 		${PREFIX}/share/doc/zope
 	${INSTALL_DATA} ${WRKSRC}/doc/changenotes/* \
 		${PREFIX}/share/doc/zope/changenotes
+	echo "Zope ${VERSION} (OpenBSD package zope-${PORT_VERSION})" \
+		> ${PREFIX}/lib/zope/lib/python/version.txt
 
 do-regress:
 	cd ${WRKSRC} && python2.1 utilities/testrunner.py -a
