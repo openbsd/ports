@@ -1,0 +1,21 @@
+$OpenBSD: patch-save_c,v 1.1 2001/10/07 21:37:57 lebel Exp $
+--- save.c.orig	Sat Jan  2 05:00:10 1999
++++ save.c	Sun Oct  7 23:24:29 2001
+@@ -302,7 +302,7 @@ plv level;
+       }
+       mask >>= 1;
+       if (level->site[i][j].lstatus&SEEN)
+-	mask |= (1<<(sizeof(long int)*8 - 1));
++	mask |= ((long int)1<<(sizeof(long int)*8 - 1));
+       run--;
+     }
+   if (run < 8*sizeof(long int))
+@@ -442,7 +442,7 @@ FILE *fd;
+       }
+       mask >>= 1;
+       if (c_statusp(i, j, SEEN))
+-	mask |= (1<<(sizeof(long int)*8 - 1));
++	mask |= ((long int)1<<(sizeof(long int)*8 - 1));
+       run--;
+     }
+   if (run < 8*sizeof(long int))
