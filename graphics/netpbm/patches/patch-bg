@@ -1,0 +1,19 @@
+--- pbm/xbmtopbm.c.orig	Tue Jun  1 09:01:56 1999
++++ pbm/xbmtopbm.c	Tue Jun  1 09:03:57 1999
+@@ -116,6 +116,16 @@
+ 	    version10 = 0;
+ 	    break;
+ 	    }
++	if ( sscanf( line, "static unsigned short %s = {", name_and_type ) == 1 ) /* } */
++	    {
++	    version10 = 1;
++	    break;
++	    }
++	if ( sscanf( line, "static unsigned char %s = {", name_and_type ) == 1 ) /* } */
++	    {
++	    version10 = 0;
++	    break;
++	    }
+ 	}
+  
+     if ( *widthP == -1 )

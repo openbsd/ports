@@ -1,0 +1,18 @@
+--- ppm/libppm4.c.orig	Tue Jun  1 08:58:17 1999
++++ ppm/libppm4.c	Tue Jun  1 09:00:08 1999
+@@ -217,6 +217,7 @@
+ #endif /* A_RGBENV */
+         canonstr( colorname );
+         while ( fgets( buf1, sizeof(buf1), f ) != NULL )
++	 if (buf1[0] != '!')
+             {
+             if ( sscanf( buf1, "%ld %ld %ld %[^\n]", &r, &g, &b, buf2 ) != 4 )
+                 {
+@@ -298,6 +299,7 @@
+ #endif /* A_RGBENV */
+     best_diff = 32767;
+     while ( fgets( buf, sizeof(buf), f ) != NULL )
++    if (buf[0] != '!')
+         {
+         if ( sscanf( buf, "%d %d %d %[^\n]", &this_r, &this_g, &this_b,
+                      this_colorname ) != 4 )
