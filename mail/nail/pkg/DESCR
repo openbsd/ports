@@ -1,0 +1,7 @@
+Nail is a mail user agent derived from Berkeley Mail 8.1 and contains
+builtin support for MIME messages.  This means it can handle international
+character sets as well as attachments.  In recent system environments, nail
+is Unicode/UTF-8 capable.  It further contains some minor enhancements like
+the ability to set a From: Address.
+
+WWW: ${HOMEPAGE}

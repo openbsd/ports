@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2002/07/23 19:13:09 naddy Exp $
+--- configure.in.orig	Tue Jul 23 02:08:06 2002
++++ configure.in	Tue Jul 23 02:15:59 2002
+@@ -190,7 +190,8 @@ AC_CHECK_FUNC(gethostent, AC_DEFINE(HAVE
+ )
+ if test "x$enable_all_chars" != xyes
+ then	AC_CHECK_HEADERS(iconv.h, AC_CHECK_FUNCS(iconv, ,
+-		echo "*** Character set conversion not available ***" >&2),
++		[AC_CHECK_FUNCS(libiconv, , AC_DEFINE(HAVE_ICONV),
++		echo "*** Character set conversion not available ***" >&2)]),
+ 		echo "*** Character set conversion not available ***" >&2)
+ 	AC_CHECK_HEADERS(locale.h, AC_CHECK_FUNCS(setlocale, ,
+ 		echo "*** Locale support not available ***" >&2),
