@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2002/07/14 20:02:16 nino Exp $
---- configure.orig	Tue Jul  9 08:52:20 2002
-+++ configure	Tue Jul  9 09:05:04 2002
-@@ -2867,7 +2867,7 @@ fi
+$OpenBSD: patch-configure,v 1.3 2003/01/03 21:44:30 marcm Exp $
+--- configure.orig	Mon Oct  7 14:16:40 2002
++++ configure	Tue Oct 15 11:02:41 2002
+@@ -3345,7 +3345,7 @@ fi
    XML_I18N_MERGE_DESKTOP_RULE='%.desktop:   %.desktop.in   $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< $@ -d          -p '
  XML_I18N_MERGE_DIRECTORY_RULE='%.directory: %.directory.in $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< $@ -d          -p '
       XML_I18N_MERGE_KEYS_RULE='%.keys:      %.keys.in      $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< $@ -k  $(XML_I18N_KEYS_KIND) '
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.2 2002/07/14 20:02:16 nino Exp $
       XML_I18N_MERGE_PONG_RULE='%.pong:      %.pong.in      $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< $@ -x          -p '
     XML_I18N_MERGE_SERVER_RULE='%.server:    %.server.in    $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< $@ -o -u'
      XML_I18N_MERGE_SHEET_RULE='%.sheet:     %.sheet.in     $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< $@ -x -u'
-@@ -5115,8 +5115,8 @@ else
+@@ -5770,8 +5770,8 @@ else
      hardcode_direct=yes
      hardcode_shlibpath_var=no
      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
@@ -21,7 +21,7 @@ $OpenBSD: patch-configure,v 1.2 2002/07/14 20:02:16 nino Exp $
        export_dynamic_flag_spec='${wl}-E'
      else
        case "$host_os" in
-@@ -5125,8 +5125,8 @@ else
+@@ -5780,8 +5780,8 @@ else
  	hardcode_libdir_flag_spec='-R$libdir'
          ;;
        *)
@@ -32,7 +32,7 @@ $OpenBSD: patch-configure,v 1.2 2002/07/14 20:02:16 nino Exp $
          ;;
        esac
      fi
-@@ -5642,6 +5642,8 @@ openbsd*)
+@@ -6297,6 +6297,8 @@ openbsd*)
    version_type=sunos
    need_lib_prefix=no
    need_version=no
@@ -41,7 +41,7 @@ $OpenBSD: patch-configure,v 1.2 2002/07/14 20:02:16 nino Exp $
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case "$host_os" in
      openbsd2.[89] | openbsd2.[89].*)
-@@ -8586,6 +8588,10 @@ echo "$as_me:8585: result: $gt_cv_func_g
+@@ -9369,6 +9371,10 @@ echo "$as_me:$LINENO: result: $gt_cv_fun
  echo "${ECHO_T}$gt_cv_func_gettext_libintl" >&6
  fi
  

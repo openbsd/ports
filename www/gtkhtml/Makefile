@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2002/11/21 02:33:59 margarida Exp $
+# $OpenBSD: Makefile,v 1.5 2003/01/03 21:44:30 marcm Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
-DISTNAME=		gtkhtml-1.0.4
+DISTNAME=		gtkhtml-1.1.7
 CATEGORIES=    		www
 HOMEPAGE=		http://www.gnome.org/
 
@@ -14,14 +14,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtkhtml/1.0/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtkhtml/1.1/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		gettext
 
 LIB_DEPENDS=		bonobo.2,bonobox.2::x11/gnome/bonobo \
 			capplet::x11/gnome/controlcenter \
-			gal.16::devel/gal \
+			gal.22::devel/gal \
 			ghttp.1::www/libghttp \
 			glade.5,glade-gnome.5::devel/libglade,gnome
 
@@ -35,9 +35,5 @@ CONFIGURE_ARGS+= 	--with-gconf
 CONFIGURE_ARGS+= 	--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gtkhtml; \
-	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/gtkhtml/
 
 .include <bsd.port.mk>
