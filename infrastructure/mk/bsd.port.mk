@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.167 2000/01/13 17:40:20 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.168 2000/01/26 21:15:05 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1220,8 +1220,10 @@ do-fetch: ${ALLFILES:S@^@${FULLDISTDIR}/@}
 
 .  for _F in ${_DISTFILES:S@^@${FULLDISTDIR}/@}
 ${_F}:
-	@mkdir -p ${_F:H}
-	@cd ${_F:H}; \
+# Bug-fix for make/ftp interaction in 2.6
+	@if [ -e ${_F} ]; then touch ${_F}; exit 0; fi; \
+	mkdir -p ${_F:H}; \
+	cd ${_F:H}; \
 	select=${DISTFILES:M*${_F:S@^${FULLDISTDIR}/@@}\:[0-9]}; \
 	f=${_F:S@^${FULLDISTDIR}/@@}; \
 	${ECHO_MSG} ">> $$f doesn't seem to exist on this system."; \
@@ -1250,8 +1252,10 @@ ${_F}:
 .  if defined(PATCHFILES)
 .    for _F in ${_PATCHFILES:S@^@${FULLDISTDIR}/@}
 ${_F}:
-	@mkdir -p ${_F:H}
-	@cd ${_F:H}; \
+# Bug-fix for make/ftp interaction in 2.6
+	@if [ -e ${_F} ]; then touch ${_F}; exit 0; fi; \
+	mkdir -p ${_F:H}; \
+	cd ${_F:H}; \
 	${_CDROM_OVERRIDE}; \
 	select=${PATCHFILES:M*${_F:S@^${FULLDISTDIR}/@@}\:[0-9]}; \
 	f=${_F:S@^${FULLDISTDIR}/@@}; \
