@@ -1,0 +1,542 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 18:42:05 todd Exp $
+@pkgcfl gnome-applets-1*
+bin/gkb_xmmap
+lib/bonobo/servers/GNOME_CharpickerApplet.server
+lib/bonobo/servers/GNOME_DriveMountApplet.server
+lib/bonobo/servers/GNOME_GWeatherApplet_Factory.server
+lib/bonobo/servers/GNOME_GeyesApplet.server
+lib/bonobo/servers/GNOME_GtikApplet.server
+lib/bonobo/servers/GNOME_KeyboardApplet_Factory.server
+lib/bonobo/servers/GNOME_MiniCommanderApplet.server
+lib/bonobo/servers/GNOME_MixerApplet.server
+lib/bonobo/servers/GNOME_ModemLightsApplet.server
+lib/bonobo/servers/GNOME_MultiLoadApplet_Factory.server
+libexec/charpick_applet2
+libexec/drivemount_applet2
+libexec/geyes_applet2
+libexec/gkb-applet-2
+libexec/gtik2_applet2
+libexec/gweather-applet-2
+libexec/mini_commander_applet
+libexec/mixer_applet2
+libexec/modemlights_applet2
+libexec/multiload-applet-2
+share/geyes/Bizarre/Bizarre-eye.png
+share/geyes/Bizarre/Bizarre-pupil.png
+share/geyes/Bizarre/config
+share/geyes/Bloodshot/Bloodshot-eye.png
+share/geyes/Bloodshot/Bloodshot-pupil.png
+share/geyes/Bloodshot/config
+share/geyes/Default-tiny/Default-tiny-eye.png
+share/geyes/Default-tiny/Default-tiny-pupil.png
+share/geyes/Default-tiny/config
+share/geyes/Default/Default-eye.png
+share/geyes/Default/Default-pupil.png
+share/geyes/Default/config
+share/geyes/Horrid/config
+share/geyes/Horrid/horrid_eye.png
+share/geyes/Horrid/horrid_pupil.png
+share/gnome-2.0/ui/GNOME_CharpickerApplet.xml
+share/gnome-2.0/ui/GNOME_DriveMountApplet.xml
+share/gnome-2.0/ui/GNOME_GWeatherApplet.xml
+share/gnome-2.0/ui/GNOME_GeyesApplet.xml
+share/gnome-2.0/ui/GNOME_GtikApplet.xml
+share/gnome-2.0/ui/GNOME_KeyboardApplet.xml
+share/gnome-2.0/ui/GNOME_MiniCommanderApplet.xml
+share/gnome-2.0/ui/GNOME_MixerApplet.xml
+share/gnome-2.0/ui/GNOME_ModemlightsApplet.xml
+share/gnome-2.0/ui/GNOME_MultiloadApplet.xml
+share/gnome/gkb/AM_Armenian.keyprop
+share/gnome/gkb/AR_Arabic.keyprop
+share/gnome/gkb/AZ_Azerbaidjani_Turkic.keyprop
+share/gnome/gkb/Armenian.keyprop
+share/gnome/gkb/BE_Dutch.keyprop
+share/gnome/gkb/BG_Bulgarian.keyprop
+share/gnome/gkb/BG_Bulgarian_x.keyprop
+share/gnome/gkb/BR_Portuguese.keyprop
+share/gnome/gkb/BR_Portuguese_x.keyprop
+share/gnome/gkb/BY_Belarussian.keyprop
+share/gnome/gkb/Basque.keyprop
+share/gnome/gkb/Belgian.keyprop
+share/gnome/gkb/BulgarianCyril.keyprop
+share/gnome/gkb/CA_English.keyprop
+share/gnome/gkb/CH_German_x.keyprop
+share/gnome/gkb/CS_Czech.keyprop
+share/gnome/gkb/CZ_Czech_Slovak.keyprop
+share/gnome/gkb/CZ_Czech_x.keyprop
+share/gnome/gkb/DE_German.keyprop
+share/gnome/gkb/DE_German_x.keyprop
+share/gnome/gkb/DK_Danish.keyprop
+share/gnome/gkb/DK_Danish_x.keyprop
+share/gnome/gkb/Default.keyprop
+share/gnome/gkb/Dvorak.keyprop
+share/gnome/gkb/EE_Estonian.keyprop
+share/gnome/gkb/EE_Estonian_x.keyprop
+share/gnome/gkb/ES_Spanish.keyprop
+share/gnome/gkb/ES_Spanish_x.keyprop
+share/gnome/gkb/FI_Finnish.keyprop
+share/gnome/gkb/FI_Finnish_x.keyprop
+share/gnome/gkb/FR_French.keyprop
+share/gnome/gkb/FR_French_x.keyprop
+share/gnome/gkb/FrenchCanadian.keyprop
+share/gnome/gkb/FrenchCanadian2.keyprop
+share/gnome/gkb/FrenchSwiss.keyprop
+share/gnome/gkb/GB-102.keyprop
+share/gnome/gkb/GB.keyprop
+share/gnome/gkb/GB_English.keyprop
+share/gnome/gkb/GB_English_x.keyprop
+share/gnome/gkb/GE_Georgian_x.keyprop
+share/gnome/gkb/GR_Greek.keyprop
+share/gnome/gkb/GR_Greek_x.keyprop
+share/gnome/gkb/GeorgianLatin.keyprop
+share/gnome/gkb/GeorgianRussian.keyprop
+share/gnome/gkb/German.keyprop
+share/gnome/gkb/GermanSwiss.keyprop
+share/gnome/gkb/HU_Hungarian.keyprop
+share/gnome/gkb/Hungarian-101.keyprop
+share/gnome/gkb/Hungarian-lat1.keyprop
+share/gnome/gkb/Hungarian-sun.keyprop
+share/gnome/gkb/Hungarian.keyprop
+share/gnome/gkb/Hungarian101-1.keyprop
+share/gnome/gkb/Hungarian101.keyprop
+share/gnome/gkb/IL_Hebrew.keyprop
+share/gnome/gkb/IL_Hebrew_x.keyprop
+share/gnome/gkb/IS_Icelandic.keyprop
+share/gnome/gkb/IS_Icelandic_x.keyprop
+share/gnome/gkb/IT_Italian.keyprop
+share/gnome/gkb/IT_Italian_x.keyprop
+share/gnome/gkb/JP_Japanese.keyprop
+share/gnome/gkb/JP_Japanese_x.keyprop
+share/gnome/gkb/LA_Lao_x.keyprop
+share/gnome/gkb/LT_Lithuanian.keyprop
+share/gnome/gkb/LT_Lithuanian_x.keyprop
+share/gnome/gkb/LT_Prog.keyprop
+share/gnome/gkb/LT_Standard.keyprop
+share/gnome/gkb/MK_Macedonian.keyprop
+share/gnome/gkb/Macedonian.keyprop
+share/gnome/gkb/NL_Dutch_x.keyprop
+share/gnome/gkb/NO_Norwegian.keyprop
+share/gnome/gkb/Norwegian.keyprop
+share/gnome/gkb/PL_Polish.keyprop
+share/gnome/gkb/PT_Portuguese.keyprop
+share/gnome/gkb/PT_Portuguese_x.keyprop
+share/gnome/gkb/Polish.keyprop
+share/gnome/gkb/PolishDeadkeys.keyprop
+share/gnome/gkb/Portugal.keyprop
+share/gnome/gkb/PortugalDeadkeys.keyprop
+share/gnome/gkb/RO_Romanian.keyprop
+share/gnome/gkb/RU_Russian.keyprop
+share/gnome/gkb/RU_Russian_x.keyprop
+share/gnome/gkb/RU_Russian_x_rev.keyprop
+share/gnome/gkb/RussianCyril.keyprop
+share/gnome/gkb/SE_Swedish.keyprop
+share/gnome/gkb/SI_Slovenian.keyprop
+share/gnome/gkb/SR_Dutch.keyprop
+share/gnome/gkb/Slovak.keyprop
+share/gnome/gkb/Slovenian.keyprop
+share/gnome/gkb/Swedish.keyprop
+share/gnome/gkb/TH_Thai.keyprop
+share/gnome/gkb/TH_Thai_x.keyprop
+share/gnome/gkb/TR-f.keyprop
+share/gnome/gkb/TR-q.keyprop
+share/gnome/gkb/TR_Turkish.keyprop
+share/gnome/gkb/TR_Turkish_x.keyprop
+share/gnome/gkb/Thai.keyprop
+share/gnome/gkb/Thai2.keyprop
+share/gnome/gkb/UA_Ukrainian.keyprop
+share/gnome/gkb/UK.keyprop
+share/gnome/gkb/US-101.keyprop
+share/gnome/gkb/US-84.keyprop
+share/gnome/gkb/US-dec.keyprop
+share/gnome/gkb/US-ibm.keyprop
+share/gnome/gkb/US-int.keyprop
+share/gnome/gkb/US-mac.keyprop
+share/gnome/gkb/US-sgi-101.keyprop
+share/gnome/gkb/US-sun.keyprop
+share/gnome/gkb/US.keyprop
+share/gnome/gkb/US_English.keyprop
+share/gnome/gkb/US_international.keyprop
+share/gnome/gkb/VN_Vietnamese.keyprop
+share/gnome/gkb/YU_Serbo-Croatian_x.keyprop
+share/gnome/gkb/Yugoslav.keyprop
+share/gnome/help/char-palette/C/char-palette.xml
+share/gnome/help/char-palette/C/figures/charpick_applet.png
+share/gnome/help/char-palette/C/figures/charpick_characters.png
+share/gnome/help/char-palette/C/figures/charpick_chargroup.png
+share/gnome/help/char-palette/C/legal.xml
+share/gnome/help/command-line/C/command-line.xml
+share/gnome/help/command-line/C/figures/command-line.png
+share/gnome/help/command-line/C/legal.xml
+share/gnome/help/geyes/C/figures/geyes_applet.png
+share/gnome/help/geyes/C/geyes.xml
+share/gnome/help/geyes/C/legal.xml
+share/gnome/help/geyes/C/topic.dat
+share/gnome/help/gkb/C/figures/gkb_applet.png
+share/gnome/help/gkb/C/gkb.xml
+share/gnome/help/gkb/C/legal.xml
+share/gnome/help/gtik2_applet2/C/figures/gtik_applet.png
+share/gnome/help/gtik2_applet2/C/gtik2_applet2.xml
+share/gnome/help/gtik2_applet2/C/legal.xml
+share/gnome/help/gweather/C/figures/gweather_applet.png
+share/gnome/help/gweather/C/gweather.xml
+share/gnome/help/gweather/C/legal.xml
+share/gnome/help/gweather/C/topic.dat
+share/gnome/help/mixer_applet2/C/figures/volumecontrol_applet.png
+share/gnome/help/mixer_applet2/C/legal.xml
+share/gnome/help/mixer_applet2/C/mixer_applet2.xml
+share/gnome/help/mixer_applet2/C/topic.dat
+share/gweather/Locations
+share/locale/am/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/ar/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/az/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/be/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/bg/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/ca/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/cs/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/da/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/de/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/el/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/en_GB/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/es/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/et/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/eu/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/fi/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/fr/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/ga/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/gl/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/hu/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/it/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/ja/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/ko/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/lt/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/lv/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/ms/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/nl/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/nn/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/no/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/pl/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/pt/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/ro/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/ru/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/sk/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/sl/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/sv/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/ta/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/tr/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/uk/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/vi/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/wa/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
+share/omf/gnome-applets/char-palette-C.omf
+share/omf/gnome-applets/command-line-C.omf
+share/omf/gnome-applets/geyes-C.omf
+share/omf/gnome-applets/gkb-C.omf
+share/omf/gnome-applets/gtik2_applet2-C.omf
+share/omf/gnome-applets/gweather-C.omf
+share/omf/gnome-applets/mixer_applet2-C.omf
+share/pixmaps/charpick.png
+share/pixmaps/drivemount-applet.png
+share/pixmaps/gkb-icon.png
+share/pixmaps/gkb.png
+share/pixmaps/gkb/ae.png
+share/pixmaps/gkb/am.png
+share/pixmaps/gkb/ar.png
+share/pixmaps/gkb/at.png
+share/pixmaps/gkb/az.png
+share/pixmaps/gkb/be.png
+share/pixmaps/gkb/bg.png
+share/pixmaps/gkb/bh.png
+share/pixmaps/gkb/br.png
+share/pixmaps/gkb/by.png
+share/pixmaps/gkb/ca.png
+share/pixmaps/gkb/ch.png
+share/pixmaps/gkb/cs.png
+share/pixmaps/gkb/cu.png
+share/pixmaps/gkb/cz.png
+share/pixmaps/gkb/de.png
+share/pixmaps/gkb/dj.png
+share/pixmaps/gkb/dk.png
+share/pixmaps/gkb/dz.png
+share/pixmaps/gkb/ee.png
+share/pixmaps/gkb/eg.png
+share/pixmaps/gkb/es.png
+share/pixmaps/gkb/eu.png
+share/pixmaps/gkb/fi.png
+share/pixmaps/gkb/fr.png
+share/pixmaps/gkb/gb.png
+share/pixmaps/gkb/ge.png
+share/pixmaps/gkb/gkb.png
+share/pixmaps/gkb/gr.png
+share/pixmaps/gkb/hr.png
+share/pixmaps/gkb/hu.png
+share/pixmaps/gkb/il.png
+share/pixmaps/gkb/iq.png
+share/pixmaps/gkb/is.png
+share/pixmaps/gkb/it.png
+share/pixmaps/gkb/jo.png
+share/pixmaps/gkb/jp.png
+share/pixmaps/gkb/km.png
+share/pixmaps/gkb/kw.png
+share/pixmaps/gkb/la.png
+share/pixmaps/gkb/lb.png
+share/pixmaps/gkb/lt.png
+share/pixmaps/gkb/ly.png
+share/pixmaps/gkb/ma.png
+share/pixmaps/gkb/mk.png
+share/pixmaps/gkb/mx.png
+share/pixmaps/gkb/nl.png
+share/pixmaps/gkb/no.png
+share/pixmaps/gkb/om.png
+share/pixmaps/gkb/pl.png
+share/pixmaps/gkb/ps.png
+share/pixmaps/gkb/pt.png
+share/pixmaps/gkb/qa.png
+share/pixmaps/gkb/qc.png
+share/pixmaps/gkb/ro.png
+share/pixmaps/gkb/ru.png
+share/pixmaps/gkb/sa.png
+share/pixmaps/gkb/se.png
+share/pixmaps/gkb/si.png
+share/pixmaps/gkb/sk.png
+share/pixmaps/gkb/so.png
+share/pixmaps/gkb/su.png
+share/pixmaps/gkb/sv.png
+share/pixmaps/gkb/sy.png
+share/pixmaps/gkb/th.png
+share/pixmaps/gkb/tn.png
+share/pixmaps/gkb/tr.png
+share/pixmaps/gkb/ua.png
+share/pixmaps/gkb/uk.png
+share/pixmaps/gkb/un.png
+share/pixmaps/gkb/us.png
+share/pixmaps/gkb/uy.png
+share/pixmaps/gkb/vn.png
+share/pixmaps/gkb/ye.png
+share/pixmaps/gkb/yu.png
+share/pixmaps/gnome-cpu.png
+share/pixmaps/gnome-eyes.png
+share/pixmaps/gnome-mini-commander.png
+share/pixmaps/gweather/tstorm.xpm
+share/pixmaps/mini-commander/browser-mini.xpm
+share/pixmaps/mini-commander/history-mini.xpm
+share/pixmaps/mixer/gnome-mixer-applet.png
+share/pixmaps/mixer/volume-max.png
+share/pixmaps/mixer/volume-medium.png
+share/pixmaps/mixer/volume-min.png
+share/pixmaps/mixer/volume-mute.png
+share/pixmaps/mixer/volume-zero.png
+share/schemas/gnome-applets2/charpick.schemas
+share/schemas/gnome-applets2/drivemount.schemas
+share/schemas/gnome-applets2/geyes.schemas
+share/schemas/gnome-applets2/gkb.schemas
+share/schemas/gnome-applets2/gtik.schemas
+share/schemas/gnome-applets2/gweather.schemas
+share/schemas/gnome-applets2/mini-commander.schemas
+share/schemas/gnome-applets2/modemlights.schemas
+share/schemas/gnome-applets2/multiload.schemas
+share/xmodmap/xmodmap.am
+share/xmodmap/xmodmap.be
+share/xmodmap/xmodmap.bg
+share/xmodmap/xmodmap.br
+share/xmodmap/xmodmap.ch
+share/xmodmap/xmodmap.ch_de
+share/xmodmap/xmodmap.ch_fr
+share/xmodmap/xmodmap.cz
+share/xmodmap/xmodmap.de
+share/xmodmap/xmodmap.de-apple
+share/xmodmap/xmodmap.dk
+share/xmodmap/xmodmap.dvorak
+share/xmodmap/xmodmap.ee
+share/xmodmap/xmodmap.es
+share/xmodmap/xmodmap.fi
+share/xmodmap/xmodmap.fr
+share/xmodmap/xmodmap.fr-2
+share/xmodmap/xmodmap.gb
+share/xmodmap/xmodmap.gb-102
+share/xmodmap/xmodmap.gb-105
+share/xmodmap/xmodmap.ge_la
+share/xmodmap/xmodmap.ge_ru
+share/xmodmap/xmodmap.gr
+share/xmodmap/xmodmap.hu
+share/xmodmap/xmodmap.hu-101-lat1
+share/xmodmap/xmodmap.hu-101-lat2
+share/xmodmap/xmodmap.hu-ibm
+share/xmodmap/xmodmap.hu-lat1
+share/xmodmap/xmodmap.hu-sun-lat2
+share/xmodmap/xmodmap.hu.old
+share/xmodmap/xmodmap.hu_latin1
+share/xmodmap/xmodmap.il
+share/xmodmap/xmodmap.il_phonetic
+share/xmodmap/xmodmap.is
+share/xmodmap/xmodmap.it
+share/xmodmap/xmodmap.jp
+share/xmodmap/xmodmap.la
+share/xmodmap/xmodmap.lt
+share/xmodmap/xmodmap.lt_b
+share/xmodmap/xmodmap.lt_p
+share/xmodmap/xmodmap.mk
+share/xmodmap/xmodmap.nl
+share/xmodmap/xmodmap.no
+share/xmodmap/xmodmap.pl
+share/xmodmap/xmodmap.pl2
+share/xmodmap/xmodmap.pt
+share/xmodmap/xmodmap.pt-dead
+share/xmodmap/xmodmap.qc
+share/xmodmap/xmodmap.qc-2
+share/xmodmap/xmodmap.ro
+share/xmodmap/xmodmap.ru
+share/xmodmap/xmodmap.ru-rev
+share/xmodmap/xmodmap.ru_yawerty
+share/xmodmap/xmodmap.se
+share/xmodmap/xmodmap.sf
+share/xmodmap/xmodmap.sg
+share/xmodmap/xmodmap.si
+share/xmodmap/xmodmap.sk
+share/xmodmap/xmodmap.th
+share/xmodmap/xmodmap.tr_f
+share/xmodmap/xmodmap.tr_q
+share/xmodmap/xmodmap.uk
+share/xmodmap/xmodmap.us
+share/xmodmap/xmodmap.us-101
+share/xmodmap/xmodmap.us-84
+share/xmodmap/xmodmap.us-dec
+share/xmodmap/xmodmap.us-ibm
+share/xmodmap/xmodmap.us-int
+share/xmodmap/xmodmap.us-mac
+share/xmodmap/xmodmap.us-sgi-101
+share/xmodmap/xmodmap.us-sun
+share/xmodmap/xmodmap.us.old
+share/xmodmap/xmodmap.us_intl
+share/xmodmap/xmodmap.yu
+@comment @dirrm share/xmodmap
+@dirrm share/schemas/gnome-applets2
+@dirrm share/pixmaps/mixer
+@dirrm share/pixmaps/mini-commander
+@dirrm share/pixmaps/gweather
+@dirrm share/pixmaps/gkb
+@comment @dirrm share/pixmaps
+@dirrm share/omf/gnome-applets
+@comment @dirrm share/locale/zh_TW/LC_MESSAGES
+@comment @dirrm share/locale/zh_TW
+@comment @dirrm share/locale/zh_CN/LC_MESSAGES
+@comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/wa/LC_MESSAGES
+@comment @dirrm share/locale/wa
+@comment @dirrm share/locale/vi/LC_MESSAGES
+@comment @dirrm share/locale/vi
+@comment @dirrm share/locale/uk/LC_MESSAGES
+@comment @dirrm share/locale/uk
+@comment @dirrm share/locale/tr/LC_MESSAGES
+@comment @dirrm share/locale/tr
+@comment @dirrm share/locale/ta/LC_MESSAGES
+@comment @dirrm share/locale/ta
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sl/LC_MESSAGES
+@comment @dirrm share/locale/sl
+@comment @dirrm share/locale/sk/LC_MESSAGES
+@comment @dirrm share/locale/sk
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/ro/LC_MESSAGES
+@comment @dirrm share/locale/ro
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/pt/LC_MESSAGES
+@comment @dirrm share/locale/pt
+@comment @dirrm share/locale/pl/LC_MESSAGES
+@comment @dirrm share/locale/pl
+@comment @dirrm share/locale/no/LC_MESSAGES
+@comment @dirrm share/locale/no
+@comment @dirrm share/locale/nn/LC_MESSAGES
+@comment @dirrm share/locale/nn
+@comment @dirrm share/locale/nl/LC_MESSAGES
+@comment @dirrm share/locale/nl
+@comment @dirrm share/locale/ms/LC_MESSAGES
+@comment @dirrm share/locale/ms
+@comment @dirrm share/locale/lv/LC_MESSAGES
+@comment @dirrm share/locale/lv
+@comment @dirrm share/locale/lt/LC_MESSAGES
+@comment @dirrm share/locale/lt
+@comment @dirrm share/locale/ko/LC_MESSAGES
+@comment @dirrm share/locale/ko
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/hu/LC_MESSAGES
+@comment @dirrm share/locale/hu
+@comment @dirrm share/locale/gl/LC_MESSAGES
+@comment @dirrm share/locale/gl
+@comment @dirrm share/locale/ga/LC_MESSAGES
+@comment @dirrm share/locale/ga
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/fi/LC_MESSAGES
+@comment @dirrm share/locale/fi
+@comment @dirrm share/locale/eu/LC_MESSAGES
+@comment @dirrm share/locale/eu
+@comment @dirrm share/locale/et/LC_MESSAGES
+@comment @dirrm share/locale/et
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/en_GB/LC_MESSAGES
+@comment @dirrm share/locale/en_GB
+@comment @dirrm share/locale/el/LC_MESSAGES
+@comment @dirrm share/locale/el
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale/cs/LC_MESSAGES
+@comment @dirrm share/locale/cs
+@comment @dirrm share/locale/ca/LC_MESSAGES
+@comment @dirrm share/locale/ca
+@comment @dirrm share/locale/bg/LC_MESSAGES
+@comment @dirrm share/locale/bg
+@comment @dirrm share/locale/be/LC_MESSAGES
+@comment @dirrm share/locale/be
+@comment @dirrm share/locale/az/LC_MESSAGES
+@comment @dirrm share/locale/az
+@comment @dirrm share/locale/ar/LC_MESSAGES
+@comment @dirrm share/locale/ar
+@comment @dirrm share/locale/am/LC_MESSAGES
+@comment @dirrm share/locale/am
+@comment @dirrm share/locale
+@dirrm share/gweather
+@dirrm share/gnome/help/mixer_applet2/C/figures
+@dirrm share/gnome/help/mixer_applet2/C
+@dirrm share/gnome/help/mixer_applet2
+@dirrm share/gnome/help/gweather/C/figures
+@dirrm share/gnome/help/gweather/C
+@dirrm share/gnome/help/gweather
+@dirrm share/gnome/help/gtik2_applet2/C/figures
+@dirrm share/gnome/help/gtik2_applet2/C
+@dirrm share/gnome/help/gtik2_applet2
+@dirrm share/gnome/help/gkb/C/figures
+@dirrm share/gnome/help/gkb/C
+@dirrm share/gnome/help/gkb
+@dirrm share/gnome/help/geyes/C/figures
+@dirrm share/gnome/help/geyes/C
+@dirrm share/gnome/help/geyes
+@dirrm share/gnome/help/command-line/C/figures
+@dirrm share/gnome/help/command-line/C
+@dirrm share/gnome/help/command-line
+@dirrm share/gnome/help/char-palette/C/figures
+@dirrm share/gnome/help/char-palette/C
+@dirrm share/gnome/help/char-palette
+@comment @dirrm share/gnome/help
+@dirrm share/gnome/gkb
+@comment @dirrm share/gnome
+@dirrm share/geyes/Horrid
+@dirrm share/geyes/Default-tiny
+@dirrm share/geyes/Default
+@dirrm share/geyes/Bloodshot
+@dirrm share/geyes/Bizarre
+@dirrm share/geyes
+@comment @dirrm lib/bonobo
+@exec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q
+@unexec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-applets2/*.schemas > /dev/null

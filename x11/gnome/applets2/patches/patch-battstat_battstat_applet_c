@@ -1,0 +1,19 @@
+$OpenBSD: patch-battstat_battstat_applet_c,v 1.1.1.1 2003/01/31 18:42:04 todd Exp $
+--- battstat/battstat_applet.c.orig	Tue Oct  1 17:23:39 2002
++++ battstat/battstat_applet.c	Tue Oct  1 17:24:00 2002
+@@ -28,7 +28,6 @@
+ #include <sys/file.h>
+ #include <sys/ioctl.h>
+ #include <sys/types.h>
+-#include <sys/sysctl.h>
+ 
+ #ifdef __FreeBSD__
+ #include <machine/apm_bios.h>
+@@ -39,6 +38,7 @@
+ #include <apm.h>
+ #endif
+ 
++#include <sys/sysctl.h>
+ #include <err.h>
+ #include <stdio.h>
+ #include <stdlib.h>

@@ -1,0 +1,37 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/01/31 18:42:04 todd Exp $
+--- configure.orig	Mon Nov 18 15:04:37 2002
++++ configure	Tue Dec 31 09:30:29 2002
+@@ -3845,7 +3845,7 @@ else
+     hardcode_shlibpath_var=no
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+       archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+-      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
+       case "$host_os" in
+@@ -3855,7 +3855,7 @@ else
+         ;;
+       *)
+         archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+-        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++        hardcode_libdir_flag_spec='${wl}-R$libdir'
+         ;;
+       esac
+     fi
+@@ -8889,6 +8889,15 @@ fi
+   *solaris*)
+ 	build_battstat_applet=no
+ 	;;
++  *openbsd*)
++	case $host_cpu in
++	  i386 | powerpc)
++	  build_battstat_applet=yes
++	  ;;
++	*)
++	  build_battstat_applet=no
++	  ;;
++	esac
+ esac
+ 
+ 
