@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2001/05/18 00:57:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2001/05/27 21:30:29 lebel Exp $
 
 COMMENT=	"tty-based e-mail client"
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	slang imap pop
+FLAVORS=	slang imap pop compressed
 FLAVOR?=
 
 SYSCONFDIR=	/etc/mutt
@@ -42,6 +42,15 @@ CONFIGURE_ARGS+= --with-slang="${PREFIX}"
 CONFIGURE_ARGS+= --with-curses
 .endif
 
+# compressed folder support provided by
+# http://www.spinnaker.de/mutt/compressed/patch-1.2.5.rr.compressed.1.gz
+.if ${FLAVOR:L:Mcompressed}
+MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
+PATCHFILES+=	patch-1.2.5.rr.compressed.1.gz:0
+PATCH_DIST_STRIP=-p1
+CONFIGURE_ARGS+= --enable-compressed
+.endif
+
 # If you need IMAP or POP, you may want to enable those.
 .if ${FLAVOR:L:Mimap}
 CONFIGURE_ARGS+= --enable-imap --with-ssl
@@ -56,6 +65,10 @@ CONFIGURE_ARGS+= --enable-pop
 
 .if defined(HOMESPOOL)
 CONFIGURE_ARGS+= --with-homespool="${HOMESPOOL}"
+.endif
+
+.if defined(DOMAIN)
+CONFIGURE_ARGS+= --with-domain="${DOMAIN}"
 .endif
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/i$//}
