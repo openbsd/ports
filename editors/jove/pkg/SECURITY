@@ -1,0 +1,5 @@
+$OpenBSD: SECURITY,v 1.1 1999/01/17 04:24:10 pjanzen Exp $
+
+${WRKDIR}/Makefile
+	used to create and delete predictably named files in /tmp during man
+page install.  Now it does not.

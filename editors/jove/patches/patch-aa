@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Mar 18 20:44:33 1996
-+++ Makefile	Fri Jul 24 21:01:06 1998
+--- Makefile.orig	Mon Mar 18 23:44:33 1996
++++ Makefile	Sat Jan 16 07:37:40 1999
 @@ -27,16 +27,16 @@
  # LIBDIR and SHAREDIR.  All others must already exist.
  
@@ -57,6 +57,15 @@
  
  # for SCO Xenix, set
  #	MEMFLAGS = -Mle
+@@ -213,7 +213,7 @@
+ TROFF = troff -Tpost
+ TROFFPOST = | /usr/lib/lp/postscript/dpost - >troff.out.ps
+ 
+-MANUALS = $(JOVEM) $(TEACHJOVEM) $(XJOVEM) $(JOVETOOLM)
++MANUALS = $(JOVEM) $(TEACHJOVEM) # $(XJOVEM) $(JOVETOOLM)
+ 
+ C_SRC = commands.c commands.tab abbrev.c argcount.c ask.c buf.c c.c case.c jctype.c \
+ 	delete.c disp.c extend.c fp.c fmt.c insert.c io.c iproc.c \
 @@ -329,8 +329,12 @@
  	 $(TEACH-JOVE) $(CMDS.DOC) $(TERMSDIR)docs \
  	 $(PORTSRVINST) $(RECOVER) $(JOVE) $(TEACHJOVE) $(MANUALS)
@@ -72,3 +81,46 @@
  
  $(LIBDIR)::
  	test -d $(LIBDIR) || mkdir $(LIBDIR)
+@@ -375,9 +379,8 @@
+ 	@sed -e 's;<TMPDIR>;$(TMPDIR);' \
+ 	     -e 's;<LIBDIR>;$(LIBDIR);' \
+ 	     -e 's;<SHAREDIR>;$(SHAREDIR);' \
+-	     -e 's;<SHELL>;$(DFLTSHELL);' doc/jove.nr > /tmp/jove.nr
+-	$(TINSTALL) /tmp/jove.nr $(JOVEM)
+-	rm /tmp/jove.nr
++	     -e 's;<SHELL>;$(DFLTSHELL);' doc/jove.nr > jove.$(MANEXT)
++	$(TINSTALL) jove.$(MANEXT) $(JOVEM)
+ 
+ # doc/jove.doc is the formatted manpage (only needed by DOS)
+ # Building it should be like building $(JOVEM) except that we
+@@ -391,18 +394,16 @@
+ 	@sed -e 's;<TMPDIR>;$(TMPDIR);' \
+ 	     -e 's;<LIBDIR>;$(LIBDIR);' \
+ 	     -e 's;<SHAREDIR>;$(SHAREDIR);' \
+-	     -e 's;<SHELL>;$(DFLTSHELL);' doc/teachjove.nr > /tmp/teachjove.nr
+-	$(TINSTALL) /tmp/teachjove.nr $(TEACHJOVEM)
+-	rm /tmp/teachjove.nr
++	     -e 's;<SHELL>;$(DFLTSHELL);' doc/teachjove.nr > teachjove.$(MANEXT)
++	$(TINSTALL) teachjove.$(MANEXT) $(TEACHJOVEM)
+ 
+ $(XJOVEM): doc/xjove.nr
+ 	$(TINSTALL) doc/xjove.nr $(XJOVEM)
+ 
+ $(JOVETOOLM): doc/jovetool.nr
+ 	@sed -e 's;<MANDIR>;$(MANDIR);' \
+-	     -e 's;<MANEXT>;$(MANEXT);' doc/jovetool.nr > /tmp/jovetool.nr
+-	$(TINSTALL) /tmp/jovetool.nr $(JOVETOOLM)
+-	rm /tmp/jovetool.nr
++	     -e 's;<MANEXT>;$(MANEXT);' doc/jovetool.nr > jovetool.$(MANEXT)
++	$(TINSTALL) jovetool.$(MANEXT) $(JOVETOOLM)
+ 
+ echo:
+ 	@echo $(C-FILES) $(HEADERS)
+@@ -500,6 +501,7 @@
+ 	rm -f a.out core *.o keys.c jjove portsrv recover setmaps \
+ 		teachjove paths.h \#* *~ make.log *.map jjove.ico \
+ 		doc/cmds.doc doc/jove.man doc/jove.doc doc/troff.out.ps \
++		jove.$(MANEXT) teachjove.$(MANEXT) jovetool.$(MANEXT) \
+ 		jjove.pure_* tags ID .filelist
+ 
+ cleanall: clean
