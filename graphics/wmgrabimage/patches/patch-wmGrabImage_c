@@ -1,0 +1,69 @@
+--- wmGrabImage/wmGrabImage.c.orig	Sun Mar 28 17:26:53 1999
++++ wmGrabImage/wmGrabImage.c	Wed Jan  3 13:27:02 2001
+@@ -150,7 +150,7 @@ int		n, s, m, dt1, dt2, dt3, len;
+ int 		Year, Month, Day;
+ int		Hours, Mins, Secs;
+ int		i, j, Width, Height, yoff, fd, Flag;
+-long		CurrentLocalTime;
++time_t		CurrentLocalTime;
+ double		UT, hour24(), jd(), CurrentJD, OldFileUT, FileUT;
+ char		command[1040], ImageName[256];
+ 
+@@ -175,9 +175,9 @@ char		command[1040], ImageName[256];
+      */
+     len = strlen(ImageURL);
+     for (j = 0, i=0; i<len; ++i){ if (ImageURL[i] == '/') j = i; }
+-    strcpy(ImageName, ImageURL+j+1);
+-    sprintf(XpmFileName, "%s/.wmGrabImage/%s.xpm", getenv("HOME"), ImageName);
+-    sprintf(ImageFileName, "%s/.wmGrabImage/%s", getenv("HOME"), ImageName);
++    strlcpy(ImageName, ImageURL+j+1, sizeof(ImageName));
++    snprintf(XpmFileName, sizeof(XpmFileName), "%s/.wmGrabImage/%s.xpm", getenv("HOME"), ImageName);
++    snprintf(ImageFileName, sizeof(ImageFileName), "%s/.wmGrabImage/%s", getenv("HOME"), ImageName);
+ 
+ 	   
+     openXwindow(argc, argv, wmGrabImage_master, wmGrabImage_mask_bits, wmGrabImage_mask_width, wmGrabImage_mask_height);
+@@ -410,7 +410,7 @@ char		command[1040], ImageName[256];
+ 	    /*
+ 	     *  Execute Perl script to grab the Latest METAR Report
+ 	     */
+-	    sprintf(command, "GrabImage %s &", ImageURL);
++	    snprintf(command, sizeof(command), "GrabImage %s &", ImageURL);
+ 	    system(command);
+ 
+ 	    ForceUpdate = 1;
+@@ -452,7 +452,7 @@ void ParseCMDLine(int argc, char *argv[]
+ 
+         } else if ((!strcmp(argv[i], "-url"))||(!strcmp(argv[i], "-u"))){
+ 
+-            strcpy(ImageURL, argv[++i]);
++            strlcpy(ImageURL, argv[++i], sizeof(ImageURL));
+ 
+         } else if (!strcmp(argv[i], "-delay")){
+ 
+@@ -464,7 +464,7 @@ void ParseCMDLine(int argc, char *argv[]
+ 
+         } else if (!strcmp(argv[i], "-http")){
+ 
+-            strcpy(HttpURL, argv[++i]);
++            strlcpy(HttpURL, argv[++i], sizeof(HttpURL));
+ 
+         } else if (!strcmp(argv[i], "-c")){
+ 
+@@ -580,7 +580,7 @@ void pressEvent(XButtonEvent *xev){
+     if (GotDoubleClick1) {
+ 	GotFirstClick1 = 0;
+ 	GotDoubleClick1 = 0;
+-	sprintf(Command, "xv %s &", ImageFileName);
++	snprintf(Command, sizeof(Command), "xv %s &", ImageFileName);
+ 	system(Command);
+     }
+ 
+@@ -591,7 +591,7 @@ void pressEvent(XButtonEvent *xev){
+     if (GotDoubleClick2) {
+ 	GotFirstClick2 = 0;
+ 	GotDoubleClick2 = 0;
+-	sprintf(Command, "netscape -remote 'openURL(%s)' || netscape '%s' &", HttpURL, HttpURL);
++	snprintf(Command, sizeof(Command), "netscape -remote 'openURL(%s)' || netscape '%s' &", HttpURL, HttpURL);
+ 	system(Command);
+     }
+ 

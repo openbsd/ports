@@ -1,0 +1,4 @@
+wmGrabImage is a WindowMaker DockApp that maintains a small thumbnail copy of
+your favorite image from the WWW.
+
+WWW: ${HOMEPAGE}
