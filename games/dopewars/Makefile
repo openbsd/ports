@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2003/07/07 12:47:58 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2003/12/24 04:00:38 brad Exp $
 
 COMMENT=	"game where you deal drugs on the streets of NY"
 
 DISTNAME=	dopewars-1.5.7
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dopewars/}
 
@@ -29,8 +29,7 @@ CONFIGURE_ARGS+= --enable-nls \
 		 --disable-esd \
 		 --disable-gui-server \
 		 --disable-plugins \
-		 --disable-sdl \
-		 --datadir="/var/games"
+		 --disable-sdl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

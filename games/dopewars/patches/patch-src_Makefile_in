@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2003/07/07 12:40:14 brad Exp $
---- src/Makefile.in.orig	Tue Jun 25 13:08:23 2002
-+++ src/Makefile.in	Sun Jul  6 22:06:48 2003
+$OpenBSD: patch-src_Makefile_in,v 1.2 2003/12/24 04:00:38 brad Exp $
+--- src/Makefile.in.orig	2002-06-25 13:08:23.000000000 -0400
++++ src/Makefile.in	2003-12-23 22:46:35.000000000 -0500
 @@ -133,7 +133,7 @@ plugindir = @plugindir@
  @CURSESPORT_TRUE@CURSESPORTSUBDIR = @CURSESPORT_TRUE@cursesport
  
@@ -10,12 +10,14 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2003/07/07 12:40:14 brad Exp $
  dopewars_DEPENDENCIES = @GUILIB@ @CURSESLIB@ @GTKPORTLIB@ @CURSESPORTLIB@ @INTLLIBS@ @WNDRES@ @PLUGOBJS@
  
  bin_PROGRAMS = dopewars
-@@ -144,7 +144,7 @@ dopewars_SOURCES = admin.c admin.h AIPla
+@@ -144,8 +144,8 @@ dopewars_SOURCES = admin.c admin.h AIPla
                     serverside.c serverside.h sound.c sound.h \
                     tstring.c tstring.h winmain.c winmain.h
  
 -INCLUDES = -I../intl -I${srcdir} -I.. @GTK_CFLAGS@
+-DEFS = @DEFS@
 +INCLUDES = -I../intl -I${srcdir} -I.. @GLIB_CFLAGS@ @GTK_CFLAGS@
- DEFS = @DEFS@
++DEFS = @DEFS@ -DDATADIR="\"/var/games\""
  PIXDIR = ${DESTDIR}${datadir}/pixmaps
  DOPEDIR = ${DESTDIR}${bindir}
+ DOPEBIN = ${DOPEDIR}/dopewars
