@@ -1,13 +1,7 @@
-@comment $OpenBSD: PLIST.no-no_x11,v 1.1 2001/05/16 15:20:22 jakob Exp $
+@comment $OpenBSD: PLIST.no-no_x11,v 1.2 2001/09/08 09:04:30 jakob Exp $
 bin/kx
 bin/rxtelnet
 bin/rxterm
 bin/tenletxr
 bin/xnlock
 libexec/kxd
-man/man1/kx.1
-man/man1/rxtelnet.1
-man/man1/rxterm.1
-man/man1/tenletxr.1
-man/man1/xnlock.1
-man/man8/kxd.8
