@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/11/30 15:44:32 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/21 19:16:54 avsm Exp $
 
-DISTNAME=		w3mir-1.0.9
+DISTNAME=		w3mir-1.0.10
 CATEGORIES=     	www
 NEED_VERSION=		1.340
 
