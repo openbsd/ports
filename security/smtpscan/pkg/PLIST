@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/19 20:31:55 sturm Exp $
+bin/smtpscan
+man/man1/smtpscan.1
+share/smtpscan/fingerprints
+share/smtpscan/tests
+@dirrm share/smtpscan

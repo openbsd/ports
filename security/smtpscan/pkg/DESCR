@@ -1,0 +1,11 @@
+smtpscan is a remote SMTP server version detector. It can be used to
+guess which mail software is used on a remote server, that may hide its
+SMTP banner.
+
+smtpscan works by testing the remote SMTP server's reaction on different
+tests defined in ${PREFIX}/share/smtpscan/tests. Almost all of these tests
+consist of weird SMTP requests, whose answer is not precisely defined in
+the corresponding RFCs. Some other times, they check whether the remote
+SMTP server is simply RFC compliant. After each test, the remote server
+returns an SMTP Error Message. Fingerprints are made of SMTP Error Messages
+corresponding to the tests.
