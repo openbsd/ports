@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2000/09/12 15:58:53 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/05 03:16:12 kevlo Exp $
 
-DISTNAME=	swig1.3a4
-PKGNAME=	swig-1.3a4
+DISTNAME=	swig1.3a5
+PKGNAME=	swig-1.3a5
 CATEGORIES=	devel
-NEED_VERSION=	1.319
+NEED_VERSION=	1.338
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -21,7 +21,7 @@ BUILD_DEPENDS+=	python::lang/python \
 		guile::lang/guile \
 		ruby::lang/ruby
 
-WRKDIST=	${WRKDIR}/SWIG1.3a4
+WRKDIST=	${WRKDIR}/SWIG1.3a5
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu 
