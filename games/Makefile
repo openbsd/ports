@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2003/04/17 10:27:48 wilfried Exp $
+# $OpenBSD: Makefile,v 1.93 2003/04/23 05:14:14 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -62,6 +62,7 @@
      SUBDIR += kobodeluxe,harder
      SUBDIR += lbreakout2
      SUBDIR += lgeneral
+     SUBDIR += life
      SUBDIR += lincity
      SUBDIR += moon-buggy
      SUBDIR += moonlander
