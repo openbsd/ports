@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/09/18 22:48:16 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/09/23 15:59:53 marc Exp $
 #
 
 #    SUBDIR += Scilab
@@ -37,6 +37,6 @@
 #    SUBDIR += xlispstat
 #    SUBDIR += xmgr
 #    SUBDIR += xplot
-#    SUBDIR += xspread
+     SUBDIR += xspread
 #
 .include <bsd.port.subdir.mk>
