@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/05/31 07:29:36 jakob Exp $
+# $OpenBSD: Makefile,v 1.8 2000/06/05 08:45:09 jakob Exp $
 
 DISTNAME=	imap-4.7c2
 PKGNAME=	imap-uw-4.7c2
@@ -25,5 +25,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop3d ${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/src/imapd/imapd.8c ${PREFIX}/man/man8/imapd.8
 	${INSTALL_MAN} ${WRKSRC}/src/ipopd/ipopd.8c ${PREFIX}/man/man8/ipopd.8
+	${INSTALL_DATA_DIR} ${PREFIX}/include/imap
+	${INSTALL_DATA} ${WRKSRC}/c-client/linkage.h  ${PREFIX}/include/imap
+	${INSTALL_DATA} ${WRKSRC}/c-client/mail.h     ${PREFIX}/include/imap
+	${INSTALL_DATA} ${WRKSRC}/c-client/rfc822.h   ${PREFIX}/include/imap
+	${INSTALL_DATA} ${WRKSRC}/c-client/c-client.a ${PREFIX}/lib/libimap.a
 
 .include <bsd.port.mk>
