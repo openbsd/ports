@@ -1,14 +1,10 @@
-# OpenBSD makefile for: 	  icmpinfo
-# Version required:     	  1.11
-# Date created:			  Mon June 23, 1997
-# Whom:				  Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.5 2000/04/21 14:58:20 kevlo Exp $
-#
+# $OpenBSD: Makefile,v 1.6 2000/09/23 04:05:30 brad Exp $
 
 DISTNAME=	icmpinfo-1.11
 CATEGORIES=	net sysutils
-MASTER_SITES=	ftp://hplyot.obspm.fr/net/
+NEED_VERSION=	1.330
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR= system/network/admin
 
 MAINTAINER=     angelos@openbsd.org
 
@@ -18,18 +14,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 ALL_TARGET=
-MAN1=           icmpinfo.1
-FAKE=		Yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/icmpinfo ${PREFIX}/bin
-	/usr/sbin/chown root ${PREFIX}/bin/icmpinfo
-	/bin/chmod 4555 ${PREFIX}/bin/icmpinfo
-	${INSTALL_MAN} ${WRKSRC}/icmpinfo.man ${PREFIX}/man/man1/${MAN1}
-.if !defined(NOPORTDOCS)
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/icmpinfo
+	${INSTALL_PROGRAM} ${WRKSRC}/icmpinfo ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/icmpinfo.man ${PREFIX}/man/man1/icmpinfo.1
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/icmpinfo
-.endif
-
 
 .include <bsd.port.mk>
