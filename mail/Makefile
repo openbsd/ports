@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2002/07/11 09:23:38 shell Exp $
+# $OpenBSD: Makefile,v 1.94 2002/07/23 19:14:30 naddy Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -44,6 +44,7 @@
      SUBDIR += mixmaster
      SUBDIR += movemail
      SUBDIR += mutt
+     SUBDIR += nail
      SUBDIR += nmh
      SUBDIR += openwebmail
      SUBDIR += p5-MIME-Types
