@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 1999/09/21 02:17:02 brad Exp $
+# $OpenBSD: Makefile,v 1.20 1999/10/05 19:20:52 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -11,7 +11,7 @@
 #	 'option COMPAT_SUNOS'
 
 ONLY_FOR_ARCHS=	i386 sparc
-NEED_VERSION=	1.89
+NEED_VERSION=	1.121
 
 NAVIGATOR_V=	4.61
 NAVIGATOR_V2=	461
@@ -34,23 +34,37 @@ SUPDIR=		bsdi21/navigator_standalone
 SUPDISTFILES=	${NS_I386}
 .endif
 
-PKGNAME=	navigator-${NAVIGATOR_V}
-CATEGORIES=     www
-DIST_SUBDIR=	netscape
-NO_CDROM=       "NOFEE: see http://www.fortify.net/copyright.txt"
-
 SUBMAIN=pub/communicator/english/${NAVIGATOR_V}/unix/unsupported/${MAINDIR}
 SUBSUP=	pub/communicator/english/${NAVIGATOR_V}/unix/unsupported/${SUPDIR}
 
-SITE_LIST= \
-	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/ \
-	ftp://netscape.Mirror.McGill.CA/pub/mirrors/ftp.netscape.com/ \
-	ftp://ftp.netscape.com/ \
-	ftp://ftp.the.net/pub/mirrors/ftp.netscape.com/ \
-	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/
+PKGNAME=	navigator-${NAVIGATOR_V}
+CATEGORIES=     www
+DIST_SUBDIR=	netscape
 
-DISTFILES=	${DISTNAME}.tar.gz \
-		${FORTIFY}.tar.gz
+NO_CDROM=       "NOFEE: see http://www.fortify.net/copyright.txt"
+
+MASTER_SITES= \
+	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/${SUBSUP}/ \
+	ftp://netscape.Mirror.McGill.CA/pub/mirrors/ftp.netscape.com/${SUBSUP}/ \
+	ftp://ftp.netscape.com/${SUBSUP}/ \
+	ftp://ftp.the.net/pub/mirrors/ftp.netscape.com/${SUBSUP}/ \
+	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/${SUBSUP}/
+
+MASTER_SITES0= \
+	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/${SUBMAIN}/ \
+	ftp://netscape.Mirror.McGill.CA/pub/mirrors/ftp.netscape.com/${SUBMAIN}/ \
+	ftp://ftp.netscape.com/${SUBMAIN}/ \
+	ftp://ftp.the.net/pub/mirrors/ftp.netscape.com/${SUBMAIN}/ \
+	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/${SUBMAIN}/
+
+MASTER_SITES1=	ftp://ftp.fortify.net/pub/Fortify/ \
+		ftp://ftp.sunet.se/pub/security/tools/net/Fortify/ \
+		ftp://ftp.funet.fi/pub/crypt/mirrors/fortify/ \
+		ftp://ftp.replay.com/pub/crypto/apache/Fortify/ \
+		ftp://ftp.it.net.au/mirrors/Fortify/
+
+DISTFILES=	${DISTNAME}.tar.gz:0 \
+		${FORTIFY}.tar.gz:1
 
 OBJMACHINE=	"yes"
 NO_WRKSUBDIR=	"No work subdirectory"
@@ -110,18 +124,3 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/netscape ${PREFIX}/bin
 
 .include <bsd.port.mk>
-
-# You can find a large mirror list at
-# http://home.netscape.com/download/mirror_site.html
-
-MASTER_SITES=	ftp://ftp.fortify.net/pub/Fortify/
-.for _SITE in ${SITE_LIST}
-MASTER_SITES+=	${_SITE}${SUBMAIN}/
-.if make(makesum) || make(addsum) || defined(__FETCH_ALL)
-MASTER_SITES+=	${_SITE}${SUBSUP}/
-.endif
-.endfor
-MASTER_SITES+=	ftp://ftp.sunet.se/pub/security/tools/net/Fortify/ \
-		ftp://ftp.funet.fi/pub/crypt/mirrors/fortify/ \
-		ftp://ftp.replay.com/pub/crypto/apache/Fortify/ \
-		ftp://ftp.it.net.au/mirrors/Fortify/
