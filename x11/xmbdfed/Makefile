@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/29 19:49:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2003/04/19 13:30:47 espie Exp $
 
 COMMENT=	"Motif tool for editing X11 bitmap fonts"
 
@@ -24,7 +24,7 @@ USE_MOTIF=	any
 MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS}' STATIC='' \
 		FTYPE_LIBS='-L${LOCALBASE}/lib -lttf' \
 		FTYPE_DEFS='-DHAVE_FREETYPE' \
-		FTYPE_INCS='-I${LOCALBASE}/include/freetype' \
+		FTYPE_INCS='-I${LOCALBASE}/include/freetype1/freetype' \
 		HBFDEFS='-Dunix -DIN_MEMORY -DGUNZIP_CMD="\"/usr/bin/gunzip -c\""' \
 		INCS='-I${X11BASE}/include -I${LOCALBASE}/include $$(FTYPE_INCS)' \
 		LIBS='-L${X11BASE}/lib -L${LOCALBASE}/lib ${MOTIFLIB} -lXpm -lXmu -lXt -lX11 -lSM -lICE -lXext $$(FTYPE_LIBS)'

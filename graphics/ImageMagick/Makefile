@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2003/01/04 17:01:08 lebel Exp $
+# $OpenBSD: Makefile,v 1.58 2003/04/19 13:30:47 espie Exp $
 
 COMMENT=	"display and manipulate images under X11"
 
@@ -39,7 +39,7 @@ CONFIGURE_ARGS+= --enable-static --enable-lzw --enable-16bit-pixel \
 		 --without-perl --without-modules --without-dps \
 		 --without-fpx --without-hdf --without-lcms \
 		 --without-ttf --without-wmf --without-threads
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/freetype -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/freetype1/freetype -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

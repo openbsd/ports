@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/29 19:48:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2003/04/19 13:30:47 espie Exp $
 
 COMMENT=		"create fonts.scale file for the TrueType font server"
 
@@ -21,7 +21,7 @@ NO_REGRESS=		Yes
 
 do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} ttmkfdir.c \
-	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype \
+	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype1/freetype \
 	-L${LOCALBASE}/lib -o ttmkfdir -lttf
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2002/12/29 20:31:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.31 2003/04/19 13:30:47 espie Exp $
 
 COMMENT=	"themed window manager"
 
@@ -27,7 +27,7 @@ USE_GMAKE=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-fsstd
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype" \
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype1/freetype" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

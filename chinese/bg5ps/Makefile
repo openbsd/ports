@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/10/24 23:52:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2003/04/19 13:30:47 espie Exp $
 
 COMMENT=	"convert Big5/GB encoded files to postscript"
 
@@ -28,7 +28,11 @@ post-patch:
 		"s|/usr/bin/python|${LOCALBASE}/bin/python${PYTHON_VER}|" \
 		${WRKSRC}/bg5ps
 
-post-install:
+MAKE_FLAGS=CFLAGS="${CFLAGS} -I${LOCALBASE}/include/freetype1" LDFLAGS=-L${LOCALBASE}/lib
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/bg5ps ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/ttf2psm ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/bg5ps
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bg5ps
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/bg5ps

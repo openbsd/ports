@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/01/05 03:47:18 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2003/04/19 13:30:47 espie Exp $
 
 COMMENT=	"cross-platform high-level application framework"
 
@@ -21,8 +21,7 @@ BUILD_DEPENDS=	:zip-*:archivers/zip
 
 LIB_DEPENDS=	SDL::devel/sdl \
 		SDL_ttf::devel/sdl-ttf \
-		SDL_image::devel/sdl-image \
-		ttf::print/freetype
+		SDL_image::devel/sdl-image 
 
 # gcc3
 MODULES=	gcc3

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2003/04/19 13:30:47 espie Exp $
+--- configure.in.orig	Sun Apr  6 16:18:59 2003
++++ configure.in	Sun Apr  6 16:19:25 2003
+@@ -103,6 +103,8 @@ if test "$mgp_use_freetype" = "yes"; the
+  			ac_cv_ft_include="$dir/include"
+  		elif test -d $dir/include/freetype -a -f $dir/include/freetype/freetype.h; then
+  			ac_cv_ft_include="$dir/include/freetype"
++ 		elif test -d $dir/include/freetype1/freetype -a -f $dir/include/freetype1/freetype/freetype.h; then
++ 			ac_cv_ft_include="$dir/include/freetype1/freetype"
+ 		fi
+  		if test "$ac_cv_ft_lib" != "no" -a "$ac_cv_ft_include" != "no"; then
+  			LIBS="-L$ac_cv_ft_lib $LIBS"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2002/12/29 20:08:46 fgsch Exp $
+# $OpenBSD: Makefile,v 1.37 2003/04/19 13:30:47 espie Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
 COMMENT=	"graphics library for fast PNG creation"
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	COMPILER="${CC}" prefix="${PREFIX}" \
 		CFLAGS="${CFLAGS} -DHAVE_JPEG -DHAVE_LIBTTF" \
-		INCLUDEDIRS="-I. -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/freetype -I${LOCALBASE}/include" \
+		INCLUDEDIRS="-I. -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/freetype1/freetype -I${LOCALBASE}/include" \
 		LIBS="-lgd -lm -lpng -lz -ljpeg -lttf" \
 		LIBDIRS="-L. -L${LOCALBASE}/lib"
 FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR="${WRKINST}"

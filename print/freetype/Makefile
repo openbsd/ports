@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2003/03/18 00:48:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.28 2003/04/19 13:30:47 espie Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 COMMENT=	"free and portable TrueType font rendering engine"
@@ -42,5 +42,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${FT_DOC}/image
 	${INSTALL_DATA} ${SFT_DOC}/image/* ${FT_DOC}/image
 	cd ${SFT_DOC}; ${INSTALL_DATA} ${SRCTYPE} ${FT_DOC}
+	${INSTALL_DATA_DIR} ${PREFIX}/include/freetype1
+	mv ${PREFIX}/include/freetype ${PREFIX}/include/freetype1
 
 .include <bsd.port.mk>
