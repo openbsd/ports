@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/03/05 18:30:40 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/15 14:48:48 espie Exp $
 
 CATEGORIES=	print
 NEED_VERSION=	1.223
@@ -17,10 +17,10 @@ PERMIT_DISTFILES_CDROM=	No
 NO_BUILD=Yes
 
 .if defined(ALADDIN)
-# Todo
 DISTNAME=	aladdin-ghostscript-encrypt
-GSDIR=${PREFIX}/share/ghostscript/6.0
+GSDIR=${PREFIX}/share/ghostscript/6.0/lib
 RUN_DEPENDS=${GSDIR}:print/ghostscript/aladdin
+PLIST=${PKGDIR}/PLIST.aladdin
 .else
 # Gnu ghostscript, default
 DISTNAME=	ghostscript-encrypt
@@ -28,10 +28,14 @@ GSDIR=${PREFIX}/share/ghostscript/5.50
 RUN_DEPENDS=${GSDIR}:print/ghostscript/gnu
 .endif
 
+FAKE=	Yes
+
+pre-fake:
+	mkdir -p ${GSDIR}
+
 do-install:
-	# needed, since pkg_create is fucked up
+	# needed to keep dumb pkg_create quiet
 	touch ${GSDIR}/.gs-encrypt
-	mv ${GSDIR}/pdf_sec.ps ${GSDIR}/pdf_sec.stub
 	${INSTALL_DATA} ${FULLDISTDIR}/${DISTFILES} ${GSDIR}
 	
 .include <bsd.port.mk>
