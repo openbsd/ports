@@ -105,6 +105,7 @@ gperf-2.7-19981006|/usr/ports/devel/gperf|/usr/local|perfect hash functions, to 
 gsl-0.3b|/usr/ports/devel/gsl|/usr/local|GNU Scientific Library|/usr/ports/devel/gsl/pkg/DESCR|rohee@OpenBSD.ORG|devel|||any
 id-utils-3.2d|/usr/ports/devel/id-utils|/usr/local|gid/lid tools for looking up variables in code|/usr/ports/devel/id-utils/pkg/DESCR|ports@OpenBSD.ORG|devel|gmake-3.77 emacs-20.3||any
 lclint-2.4b|/usr/ports/devel/lclint|/usr/local|advanced lint: statically check C programs|/usr/ports/devel/lclint/pkg/DESCR|espie@cvs.openbsd.org|devel|bison-1.27 gmake-3.77||any
+libIDL-0.6.3|/usr/ports/devel/libIDL|/usr/local|Library to create CORBA v2.2 IDL files|/usr/ports/devel/libIDL/pkg/DESCR|mah@everybody.org|devel|m4-1.4 autoconf-2.13 glib-1.2.4|glib-1.2.4|any
 libaudiofile-0.1.7|/usr/ports/devel/libaudiofile|/usr/local|SGI audiofile library GPLed clone|/usr/ports/devel/libaudiofile/pkg/DESCR|rohee@openbsd.org|devel|||any
 libicq-0.33|/usr/ports/devel/libicq|/usr/local|library to add ICQ support to your software|/usr/ports/devel/libicq/pkg/DESCR|brad@openbsd.org|devel|glib-1.2.4|glib-1.2.4|any
 libPropList-0.8.3|/usr/ports/devel/libproplist|/usr/local|GNUstep/OPENSTEP property lists compatibility library|/usr/ports/devel/libproplist/pkg/DESCR|jasoni@openbsd.org|devel|||any
@@ -143,6 +144,7 @@ adom-g14|/usr/ports/games/adom|/usr/local|Ancient Domains of Mystery - roguelike
 agm-1.3.1|/usr/ports/games/agm|/usr/local|AnaGram search utility|/usr/ports/games/agm/pkg/DESCR|angelos@openbsd.org|games|||any
 an-0.93|/usr/ports/games/an|/usr/local|fast anagram generator|/usr/ports/games/an/pkg/DESCR|angelos@openbsd.org|games|||any
 bnetd-0.4.1|/usr/ports/games/bnetd|/usr/local|Battle.net(r) server emulator|/usr/ports/games/bnetd/pkg/DESCR|brad@openbsd.org|games|||any
+cgoban-1.9.8|/usr/ports/games/cgoban|/usr/local|X11 Go Toolset|/usr/ports/games/cgoban/pkg/DESCR|ports@openbsd.org|games|||any
 connect4-3.2|/usr/ports/games/connect4|/usr/local|curses version of the classic game|/usr/ports/games/connect4/pkg/DESCR|angelos@openbsd.org|games|sharutils-4.2||any
 dopewars-1.4.2|/usr/ports/games/dopewars|/usr/local|game where you deal drugs on the streets of NY|/usr/ports/games/dopewars/pkg/DESCR|ports@openbsd.org|games|||any
 freeciv-1.8.1|/usr/ports/games/freeciv|/usr/local|Civilization clone for X; multiplayer|/usr/ports/games/freeciv/pkg/DESCR|israfil@gmx.net|games|jpeg-6b png-1.0.3 tiff-3.4b37 unzip-5.40 gmake-3.77 bzip2-0.9.5c jbigkit-1.0 mpeg_lib-1.2.1 netpbm-19940301 freetype-1.2 ghostscript-5.10 transfig-3.2.1 gettext-0.10.35 glib-1.2.4 ImageMagick-4.2.8 giflib-4.1.0 gtk+-1.2.4 imlib-1.9.4|gettext-0.10.35 glib-1.2.4 giflib-4.1.0 jpeg-6b png-1.0.3 tiff-3.4b37 gtk+-1.2.4 imlib-1.9.4|any
@@ -448,7 +450,7 @@ stat-1.3|/usr/ports/sysutils/stat|/usr/local|print inode contents|/usr/ports/sys
 tcplist-2.2|/usr/ports/sysutils/tcplist|/usr/local|list tcp connections to/from the local machine|/usr/ports/sysutils/tcplist/pkg/DESCR|ports@OpenBSD.ORG|sysutils net||lsof-4.45|any
 xbatt-1.2|/usr/ports/sysutils/xbatt|/usr/X11R6|laptop battery status display for X11|/usr/ports/sysutils/xbatt/pkg/DESCR|niklas@openbsd.org|sysutils x11|||i386
 xntp3-5.93e-export|/usr/ports/sysutils/xntpd|/usr/local|Network Time Protocol implementation|/usr/ports/sysutils/xntpd/pkg/DESCR|jason@openbsd.org|sysutils|||any
-xosview-1.7.2|/usr/ports/sysutils/xosview|/usr/X11R6|X11 graphical display of OS statistics|/usr/ports/sysutils/xosview/pkg/DESCR|form@openbsd.org|sysutils|||any
+xosview-1.7.2|/usr/ports/sysutils/xosview|/usr/X11R6|a graphical performance meter|/usr/ports/sysutils/xosview/pkg/DESCR|form@openbsd.org|sysutils|||any
 zap-1.1|/usr/ports/sysutils/zap|/usr/local|interactive process killer|/usr/ports/sysutils/zap/pkg/DESCR|ian@openbsd.org|sysutils|||any
 TclXML-1.1.1|/usr/ports/textproc/TclXML|/usr/local|a pure-Tcl implementation of a XML parser|/usr/ports/textproc/TclXML/pkg/DESCR|jakob@openbsd.org|textproc||tcl-8.0.5|any
 agrep-2.04|/usr/ports/textproc/agrep|/usr/local|approximate grep (fast approximate pattern-matching tool)|/usr/ports/textproc/agrep/pkg/DESCR|angelos@openbsd.org|textproc|||any
@@ -478,11 +480,11 @@ spiff-1.0|/usr/ports/textproc/spiff|/usr/local|very flexible diff-like program|/
 texi2html-1.52|/usr/ports/textproc/texi2html|/usr/local|texinfo to HTML converter|/usr/ports/textproc/texi2html/pkg/DESCR|angelos@openbsd.org|textproc|||any
 wdiff-0.5|/usr/ports/textproc/wdiff|/usr/local|word differences between text files|/usr/ports/textproc/wdiff/pkg/DESCR|angelos@openbsd.org|textproc|||any
 xml2rfc|/usr/ports/textproc/xml2rfc|/usr/local|convert memos written in XML to the RFC format|/usr/ports/textproc/xml2rfc/pkg/DESCR|jakob@openbsd.org|textproc||tcl-8.0.5 TclXML-1.1.1 tk-8.0.5|any
-xpdf-0.80|/usr/ports/textproc/xpdf|/usr/X11R6|PDF viewer for X|/usr/ports/textproc/xpdf/pkg/DESCR|apollo@slcnet.net|textproc|||any
+xpdf-0.90|/usr/ports/textproc/xpdf|/usr/X11R6|PDF viewer for X|/usr/ports/textproc/xpdf/pkg/DESCR|apollo@slcnet.net|textproc|||any
 amaya-2.1|/usr/ports/www/amaya|/usr/local|test-bed browser/authoring tool of the W3C|/usr/ports/www/amaya/pkg/DESCR|rohee@OpenBSD.ORG|www|gmake-3.77 lesstif-0.89.0|lesstif-0.89.0|any
 amaya-english-dict|/usr/ports/www/amaya-english-dict|/usr/local|English dictionary for the Amaya browser/page composer|/usr/ports/www/amaya-english-dict/pkg/DESCR|rohee@openbsd.org|www||lesstif-0.89.0 amaya-2.1|any
 amaya-french-dict|/usr/ports/www/amaya-french-dict|/usr/local|French dictionary for the Amaya browser/page composer|/usr/ports/www/amaya-french-dict/pkg/DESCR|rohee@openbsd.org|www||lesstif-0.89.0 amaya-2.1|any
-analog-3.31|/usr/ports/www/analog|/usr/local|extremely fast program for analysing WWW logfiles|/usr/ports/www/analog/pkg/DESCR|form@OpenBSD.ORG|www|||any
+analog-3.32|/usr/ports/www/analog|/usr/local|extremely fast program for analysing WWW logfiles|/usr/ports/www/analog/pkg/DESCR|form@OpenBSD.ORG|www|||any
 apache|/usr/ports/www/apache|/usr/local|** No Description|/dev/null|ports@openbsd.org|www|||any
 cgiparse-0.8e|/usr/ports/www/cgiparse|/usr/local|C library to parse CGI Forms|/usr/ports/www/cgiparse/pkg/DESCR|ports@openbsd.org|www|||any
 communicator-4.61-fortified|/usr/ports/www/communicator|/usr/local|Netscape Communicator WWW browser with 128-bit encryption|/usr/ports/www/communicator/pkg/DESCR|brad@openbsd.org|www|||i386 sparc
@@ -498,7 +500,7 @@ afterstep-1.0|/usr/ports/x11/afterstep|/usr/X11R6|Window manager, continuation o
 asclock-1.0|/usr/ports/x11/asclock|/usr/X11R6|Afterstep clock with some language extensions|/usr/ports/x11/asclock/pkg/DESCR|angelos@openbsd.org|x11|||any
 aterm-0.3.6|/usr/ports/x11/aterm|/usr/X11R6|color vt102 terminal emulator with transparency support|/usr/ports/x11/aterm/pkg/DESCR|brad@openbsd.org|x11|jpeg-6b|jpeg-6b|any
 bclock-1.0|/usr/ports/x11/bclock|/usr/X11R6|round, analog X11 clock with bezier curve hands|/usr/ports/x11/bclock/pkg/DESCR|don@OpenBSD.ORG|x11|||any
-blackbox-0.51.2|/usr/ports/x11/blackbox|/usr/X11R6|small & pretty window manager for 8 and more bits displays|/usr/ports/x11/blackbox/pkg/DESCR|rohee@OpenBSD.ORG|x11|||any
+blackbox-0.51.3.1|/usr/ports/x11/blackbox|/usr/X11R6|small & pretty window manager for 8 and more bits displays|/usr/ports/x11/blackbox/pkg/DESCR|ports@openbsd.org|x11|||any
 blast-1.0|/usr/ports/x11/blast|/usr/X11R6|blow holes through windows|/usr/ports/x11/blast/pkg/DESCR|don@OpenBSD.ORG|x11|||any
 bricons-3.0|/usr/ports/x11/bricons|/usr/X11R6|quick start-up utility for applications on an X11 display|/usr/ports/x11/bricons/pkg/DESCR|angelos@openbsd.org|x11|||any
 ctwm-3.5|/usr/ports/x11/ctwm|/usr/X11R6|twm, plus support for multiple virtual screens, etc|/usr/ports/x11/ctwm/pkg/DESCR|don@OpenBSD.ORG|x11|||any
