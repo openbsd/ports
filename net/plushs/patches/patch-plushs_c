@@ -1,0 +1,12 @@
+$OpenBSD: patch-plushs_c,v 1.1 2002/07/07 07:07:02 pvalchev Exp $
+--- plushs.c.orig	Tue Jul  2 21:54:12 2002
++++ plushs.c	Sun Jul  7 00:49:59 2002
+@@ -372,7 +372,7 @@ main(argc, argv)
+ 		
+ 	progname = argv[0];
+ 
+-	while ((opts = getopt(argc, argv, "cho:s:al:Dt:w:x:vmf:TP:")) != EOF) {
++	while ((opts = getopt(argc, argv, "cho:s:al:Dt:w:x:vmf:TP:")) != -1) {
+ 		switch (opts) {
+ 		case 'c':
+ 			pv.cflag = 1;
