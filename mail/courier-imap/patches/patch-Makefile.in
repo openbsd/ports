@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Wed Nov  1 19:08:50 2000
++++ Makefile.in	Wed Nov  1 19:09:09 2000
+@@ -763,9 +763,6 @@ install-exec-local:
+ 	test ! -x tcpd/couriertls || $(INSTALL_PROGRAM) $(INSTALL_STRIP_FLAG) \
+ 		tcpd/couriertls $(DESTDIR)$(bindir)/couriertls
+ 	$(mkinstalldirs) $(DESTDIR)$(sbindir)
+-	for f in mkimapdcert vchkpw2userdb makeuserdb pw2userdb userdb ; \
+-		do rm -f $(DESTDIR)$(sbindir)/$$f ; \
+-		$(LN_S) $(datadir)/$$f $(DESTDIR)$(sbindir)/$$f ; done
+ 
+ # If authlib built authpam, install the PAM configuration file
+ 
