@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 1999/01/12 05:07:16 turan Exp $
+# $OpenBSD: Makefile,v 1.9 1999/02/16 07:09:38 turan Exp $
 
-DISTNAME=		mutt-0.95.1i
+DISTNAME=		mutt-0.95.3i
 CATEGORIES=     	mail
-WRKSRC=			${WRKDIR}/mutt-0.95.1
+WRKSRC=			${WRKDIR}/mutt-0.95.3
 
 #MIRROR_DISTFILE=	no
 
