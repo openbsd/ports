@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.4 2002/05/17 15:41:30 danh Exp $
---- doc/Makefile.in.orig	Fri May 17 11:08:05 2002
-+++ doc/Makefile.in	Fri May 17 11:08:51 2002
-@@ -110,9 +110,9 @@ PDF = $(MAN:.1=.pdf)
+$OpenBSD: patch-doc_Makefile_in,v 1.5 2004/02/09 17:39:09 sturm Exp $
+--- doc/Makefile.in.orig	2004-01-04 13:40:52.000000000 +0100
++++ doc/Makefile.in	2004-02-04 20:04:21.000000000 +0100
+@@ -187,9 +187,9 @@ PDF = $(MAN:.1=.pdf)
  EXTRA_DIST = $(POD) $(HTML) $(TXT)
  
  # some install rules

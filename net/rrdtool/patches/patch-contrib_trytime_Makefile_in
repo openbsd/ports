@@ -1,9 +1,9 @@
-$OpenBSD: patch-contrib_trytime_Makefile_in,v 1.5 2002/05/17 15:41:30 danh Exp $
---- contrib/trytime/Makefile.in.orig	Fri May 17 11:07:05 2002
-+++ contrib/trytime/Makefile.in	Fri May 17 11:07:34 2002
-@@ -89,7 +89,7 @@ ZLIB_LIB_DIR = @ZLIB_LIB_DIR@
- 
- INCLUDES = -I$(top_srcdir)/src -I$(top_srcdir)/gd1.3
+$OpenBSD: patch-contrib_trytime_Makefile_in,v 1.6 2004/02/09 17:39:09 sturm Exp $
+--- contrib/trytime/Makefile.in.orig	2004-01-04 13:40:52.000000000 +0100
++++ contrib/trytime/Makefile.in	2004-02-04 20:04:21.000000000 +0100
+@@ -162,7 +162,7 @@ target_os = @target_os@
+ target_vendor = @target_vendor@
+ AM_CPPFLAGS = -I$(top_srcdir)/src -I$(top_srcdir)/gd1.3
  EXTRA_DIST = trytime.c
 -contribdir = $(prefix)/contrib/trytime
 +contribdir = $(prefix)/share/examples/rrdtool/contrib/trytime

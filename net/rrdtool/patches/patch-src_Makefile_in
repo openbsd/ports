@@ -1,52 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.6 2002/12/27 15:26:07 danh Exp $
---- src/Makefile.in.orig	Fri Oct 11 14:42:53 2002
-+++ src/Makefile.in	Thu Dec 26 16:11:42 2002
-@@ -86,19 +86,16 @@ TCL_SHLIB_LD = @TCL_SHLIB_LD@
- TCL_SHLIB_SUFFIX = @TCL_SHLIB_SUFFIX@
- TROFF = @TROFF@
- VERSION = @VERSION@
--ZLIB_CFLAGS = @ZLIB_CFLAGS@
+$OpenBSD: patch-src_Makefile_in,v 1.7 2004/02/09 17:39:09 sturm Exp $
+--- src/Makefile.in.orig	2004-02-06 20:11:24.000000000 +0100
++++ src/Makefile.in	2004-02-06 20:11:35.000000000 +0100
+@@ -240,7 +240,7 @@ librrd_la_LDFLAGS = -version-info 0:0:0
+ include_HEADERS = rrd.h
  
- CGI_INC_DIR = $(top_srcdir)/@CGI_LIB_DIR@
- GD_INC_DIR = $(top_srcdir)/@GD_LIB_DIR@
- PNG_INC_DIR = $(top_srcdir)/@PNG_LIB_DIR@
--ZLIB_INC_DIR = $(top_srcdir)/@ZLIB_LIB_DIR@
+ librrd_private_la_LIBADD = $(RRD_LIBS)
+-librrd_private_la_LDFLAGS = -static
++librrd_private_la_LDFLAGS = -prefer-pic
  
- CGI_LIB_DIR = $(top_builddir)/@CGI_LIB_DIR@
- GD_LIB_DIR = $(top_builddir)/@GD_LIB_DIR@
- PNG_LIB_DIR = $(top_builddir)/@PNG_LIB_DIR@
--ZLIB_LIB_DIR = $(top_builddir)/@ZLIB_LIB_DIR@
+ bin_PROGRAMS = rrdcgi rrdtool rrdupdate
  
--INCLUDES = -I$(CGI_INC_DIR) -I$(GD_INC_DIR) -I$(PNG_INC_DIR) -I$(ZLIB_INC_DIR)
-+INCLUDES = -I$(CGI_INC_DIR) -I$(GD_INC_DIR) -I$(PNG_INC_DIR)
- 
- #COMPILE   = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(CFLAGS_EXTRA)
- #LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(CFLAGS_EXTRA)
-@@ -114,7 +111,7 @@ RRD_C_FILES =  	gdpng.c			getopt.c		geto
- # creates a ./.lib/*.al file that contains the PIC compiled object
- # files.
- 
--RRD_LIBS =  	$(CGI_LIB_DIR)/librrd_cgi.la		$(GD_LIB_DIR)/librrd_gd.la		$(PNG_LIB_DIR)/librrd_png.la		$(ZLIB_LIB_DIR)/librrd_z.la
-+RRD_LIBS =  	$(CGI_LIB_DIR)/librrd_cgi.la		$(GD_LIB_DIR)/librrd_gd.la		$(PNG_LIB_DIR)/librrd_png.la		-lz
- 
- 
- lib_LTLIBRARIES = librrd.la
-@@ -154,16 +151,14 @@ CPPFLAGS = @CPPFLAGS@
- LDFLAGS = @LDFLAGS@
- LIBS = @LIBS@
- librrd_la_DEPENDENCIES =  $(CGI_LIB_DIR)/librrd_cgi.la \
--$(GD_LIB_DIR)/librrd_gd.la $(PNG_LIB_DIR)/librrd_png.la \
--$(ZLIB_LIB_DIR)/librrd_z.la
-+$(GD_LIB_DIR)/librrd_gd.la $(PNG_LIB_DIR)/librrd_png.la
- librrd_la_OBJECTS =  gdpng.lo getopt.lo getopt1.lo gifsize.lo \
- parsetime.lo pngsize.lo rrd_create.lo rrd_diff.lo rrd_dump.lo \
- rrd_info.lo rrd_error.lo rrd_fetch.lo rrd_format.lo rrd_graph.lo \
- rrd_last.lo rrd_open.lo rrd_resize.lo rrd_restore.lo rrd_tune.lo \
- rrd_update.lo rrd_xport.lo
- librrd_private_la_DEPENDENCIES =  $(CGI_LIB_DIR)/librrd_cgi.la \
--$(GD_LIB_DIR)/librrd_gd.la $(PNG_LIB_DIR)/librrd_png.la \
--$(ZLIB_LIB_DIR)/librrd_z.la
-+$(GD_LIB_DIR)/librrd_gd.la $(PNG_LIB_DIR)/librrd_png.la
- librrd_private_la_OBJECTS =  gdpng.lo getopt.lo getopt1.lo gifsize.lo \
- parsetime.lo pngsize.lo rrd_create.lo rrd_diff.lo rrd_dump.lo \
- rrd_info.lo rrd_error.lo rrd_fetch.lo rrd_format.lo rrd_graph.lo \

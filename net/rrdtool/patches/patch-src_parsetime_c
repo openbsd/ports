@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_parsetime_c,v 1.1 2004/02/09 17:39:09 sturm Exp $
+--- src/parsetime.c.orig	2004-02-06 22:15:45.000000000 +0100
++++ src/parsetime.c	2004-02-06 22:17:08.000000000 +0100
+@@ -658,7 +658,8 @@ assign_date(struct rrd_time_value *ptv, 
+ static char *
+ day(struct rrd_time_value *ptv)
+ {
+-    long mday=0, wday, mon, year = ptv->tm.tm_year;
++    long mday=0, wday, year = ptv->tm.tm_year;
++    time_t mon;
+     int tlen;
+ 
+     switch (sc_tokid) {
