@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/21 01:33:12 matt Exp $
+# $OpenBSD: Makefile,v 1.7 2002/02/15 19:55:56 matt Exp $
 
 COMMENT=	"object-oriented web application server"
 
-VERSION=	2.4.3
+VERSION=	2.5.0
 DISTNAME=	Zope-${VERSION}-src
 PKGNAME=	zope-${VERSION}
 CATEGORIES=     www
-NEED_VERSION=	1.498
+NEED_VERSION=	1.504
 
 HOMEPAGE=	http://www.zope.org/
 
@@ -21,9 +21,9 @@ MASTER_SITES=	http://www.zope.org/Products/Zope/${VERSION}/
 EXTRACT_SUFX=	.tgz
 EXTRACT_CASES=	*.tgz) gtar zxf ${FULLDISTDIR}/$$archive ;;
 
-BUILD_DEPENDS=	:python-2.1*-threads:lang/python \
+BUILD_DEPENDS=	:python-2.1*:lang/python/2.1 \
 		:gtar-*:archivers/gtar					
-RUN_DEPENDS=	:python-2.1*-threads:lang/python
+RUN_DEPENDS=	:python-2.1*:lang/python/2.1
 
 # Note that the configure script is really just for pcgi, but it's
 # the only one in the package.
@@ -38,8 +38,8 @@ PRODUCTSDIR=	${ZOPEHOME}/lib/python/Products
 
 do-build:
 	cd ${WRKSRC} && \
-		ZDIR=${ZOPEHOME} python w_pcgi.py && \
-		ZDIR=${ZOPEHOME} python -O inst/compilezpy.py
+		ZDIR=${ZOPEHOME} python2.1 w_pcgi.py && \
+		ZDIR=${ZOPEHOME} python2.1 -O inst/compilezpy.py
 	sed -e "s%@@PREFIX@@%${PREFIX}%g" \
 		-e "s%@@LOCALBASE@@%${LOCALBASE}%g" \
 		< ${FILESDIR}/zope-instance > ${WRKSRC}/zope-instance
@@ -71,7 +71,7 @@ do-install:
 		${PREFIX}/share/doc/zope/changenotes
 
 do-regress:
-	cd ${WRKSRC} && python utilities/testrunner.py -a
+	cd ${WRKSRC} && python2.1 utilities/testrunner.py -a
 
 .include <bsd.port.mk>
 
