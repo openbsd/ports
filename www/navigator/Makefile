@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 1999/08/21 14:35:04 brad Exp $
+# $OpenBSD: Makefile,v 1.16 1999/09/05 01:09:45 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -65,7 +65,7 @@ pre-fetch:
 	@${ECHO} "           'option COMPAT_SUNOS' and SunOS shared librarys"
 	@${ECHO} "           for proper operation, see compat_sunos(8) for"
 	@${ECHO} "           further details. The GENERIC kernel contains"
-	@#{ECHO} "           this option."
+	@${ECHO} "           this option."
 	@${ECHO} ""
 .endif
 .endif
