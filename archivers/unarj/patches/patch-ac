@@ -1,0 +1,10 @@
+--- environ.c.orig	Sun Nov 16 12:19:05 1997
++++ environ.c	Sun Nov 16 12:21:17 1997
+@@ -436,7 +436,6 @@
+ #endif
+ 
+ extern struct tm *localtime();
+-extern time_t time();
+ extern char   *strcpy();
+ extern voidp  *malloc();
+ 

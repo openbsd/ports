@@ -1,0 +1,10 @@
+--- unarj.h.orig	Sun Nov 16 12:15:54 1997
++++ unarj.h	Sun Nov 16 12:16:23 1997
+@@ -110,7 +110,6 @@
+ #else
+ #  include <sys/types.h>
+ #endif
+-typedef unsigned long  ulong;   /* 32 bits or more */
+ 
+ #define USHRT_BIT   (CHAR_BIT * sizeof(ushort))
+ 
