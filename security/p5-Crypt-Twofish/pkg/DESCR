@@ -1,0 +1,4 @@
+Crypt::Twofish is a perl module implementing the Twofish cipher.
+Twofish is a 128-bit block cipher.
+
+Please see 'perldoc Crypt::Twofish' for more information.
