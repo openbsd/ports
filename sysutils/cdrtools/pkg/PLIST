@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/02/17 15:32:58 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/02/13 17:25:51 sturm Exp $
 @pkgcfl cdrecord-*
 bin/cdda2wav
 bin/cdrecord
@@ -22,6 +22,7 @@ bin/readcd
 @comment lib/libscg.a
 @comment lib/libschily.a
 @comment lib/libunls.a
+@comment man/man1/cdda2ogg.1
 man/man1/cdda2wav.1
 man/man1/cdrecord.1
 man/man1/devdump.1
