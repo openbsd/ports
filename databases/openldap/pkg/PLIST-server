@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.6 2004/10/18 06:44:18 jakob Exp $
+@comment $OpenBSD: PLIST-server,v 1.7 2004/11/08 20:27:34 biorn Exp $
 libexec/slapd
 libexec/slurpd
 @man man/man5/slapd-bdb.5
@@ -31,15 +31,19 @@ sbin/slapdn
 sbin/slapindex
 sbin/slappasswd
 sbin/slaptest
+share/examples/openldap/schema/
 share/examples/openldap/schema/corba.schema
 share/examples/openldap/schema/core.schema
 share/examples/openldap/schema/cosine.schema
+share/examples/openldap/schema/dyngroup.schema
 share/examples/openldap/schema/inetorgperson.schema
 share/examples/openldap/schema/java.schema
 share/examples/openldap/schema/misc.schema
 share/examples/openldap/schema/nis.schema
 share/examples/openldap/schema/openldap.schema
 share/examples/openldap/slapd.conf
+share/openldap/
+share/openldap/ucdata/
 share/openldap/ucdata/case.dat
 share/openldap/ucdata/cmbcl.dat
 share/openldap/ucdata/comp.dat

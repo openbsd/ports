@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/10/18 06:44:18 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/11/08 20:27:34 biorn Exp $
 bin/ldapadd
 bin/ldapcompare
 bin/ldapdelete
@@ -182,6 +182,6 @@ lib/libldap_r.la
 @man man/man3/ldap_value_free_len.3
 @man man/man5/ldap.conf.5
 @man man/man5/ldif.5
+share/examples/openldap/
 share/examples/openldap/ldap.conf
-share/examples/openldap/schema/dyngroup.schema
 %%SHARED%%
