@@ -1,0 +1,11 @@
+--- Cable.h.orig	Tue Nov 30 19:57:29 1999
++++ Cable.h	Tue Nov 30 19:57:39 1999
+@@ -13,7 +13,7 @@
+ 	void setup();
+ 	void draw();
+ 	void update();
+-	onspark (int locx, int locy);
++	int onspark (int locx, int locy);
+ 
+ };
+ 
