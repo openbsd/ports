@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.14 2003/07/28 17:17:05 sturm Exp $
+# $OpenBSD: gnu.port.mk,v 1.15 2004/02/25 21:50:26 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -62,17 +62,39 @@ CONFIGURE_ARGS+=	--sysconfdir='${SYSCONFDIR}'
 
 REGRESS_TARGET?=	check
 
+# Files to touch in order...
+MODGNU_AUTOCONF_FILES?= /Makefile.am configure.files configure.in configure.ac \
+	acinclude.m4 aclocal.m4 acconfig.h stamp-h.in \
+	config.h.in /Makefile.in configure
+
+# internal stuff to run on each directory.
+MODGNU_post-patch= for d in ${AUTOCONF_DIR}; do cd $$d; ${_MODGNU_loop} done;
+_MODGNU_loop=
+
 PATCH_CHECK_ONLY?=	No
 .if ${PATCH_CHECK_ONLY:L} != "yes"
 .  if ${CONFIGURE_STYLE:L:Mautoupdate}
-MODGNU_post-patch+= cd ${AUTOCONF_DIR} && ${_SYSTRACE_CMD} ${SETENV} ${AUTOCONF_ENV} ${AUTOUPDATE};
+_MODGNU_loop+= echo "Running autoupdate-${AUTOCONF_VERSION} in $$d";
+_MODGNU_loop+= ${_SYSTRACE_CMD} ${SETENV} ${AUTOCONF_ENV} ${AUTOUPDATE};
 .  endif
 .  if ${CONFIGURE_STYLE:L:Mautoconf}
-MODGNU_post-patch+= cd ${AUTOCONF_DIR} && ${_SYSTRACE_CMD} ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF};
+_MODGNU_loop+= echo "Running autoconf-${AUTOCONF_VERSION} in $$d";
+_MODGNU_loop+= ${_SYSTRACE_CMD} ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF};
+_MODGNU_loop+= echo "Running autoheader-${AUTOCONF_VERSION} in $$d";
+_MODGNU_loop+= ${_SYSTRACE_CMD} ${SETENV} ${AUTOCONF_ENV} ${AUTOHEADER};
+.    if !${CONFIGURE_STYLE:L:Mautomake}
+_MODGNU_loop+= for f in ${MODGNU_AUTOCONF_FILES}; do \
+		case $$f in \
+		/*) \
+			find . -name $${f\#/} -print| while read i; \
+				do echo "Touching $$i"; touch $$i; done \
+			;; \
+		*) \
+			if test -e $$f ; then \
+				echo "Touching $$f"; touch $$f; \
+			fi \
+			;; \
+		esac; done; 
+.    endif
 .  endif
-.  if !${CONFIGURE_STYLE:L:Mautomake}
-MODGNU_post-patch+= ln -s /usr/bin/false ${WRKDIR}/bin/automake;
-MODGNU_post-patch+= ln -s /usr/bin/false ${WRKDIR}/bin/aclocal;
 .  endif
-.endif
-
