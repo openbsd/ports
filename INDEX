@@ -25,7 +25,7 @@ ac3dec-0.5.6|audio/ac3dec||ac3 audio (as used on DVDs) decoding tools|audio/ac3d
 amp-0.7.6|audio/amp||MP3 player|audio/amp/pkg/DESCR|angelos@openbsd.org|audio|gmake-3.78.1||any|y|y|y|y
 bladeenc-0.92|audio/bladeenc||MP3 encoder|audio/bladeenc/pkg/DESCR|brad@openbsd.org|audio|||any|y|y|y|y
 esound-0.2.16|audio/esound||sound library for enlightenment|audio/esound/pkg/DESCR|brad@openbsd.org|audio|libaudiofile-0.1.9|libaudiofile-0.1.9|any|y|y|y|y
-gogo-2.26a|audio/gogo||686 class CPU optimized mp3 encoder|audio/gogo/pkg/DESCR|beck@openbsd.org|audio|gmake-3.78.1 nasm-0.98||i386|?|?|?|?
+gogo-2.26a|audio/gogo||686 class CPU optimized mp3 encoder|audio/gogo/pkg/DESCR|beck@openbsd.org|audio|gmake-3.78.1 nasm-0.98||i386|n|y|n|y
 gom-0.29.103|audio/gom||generic audio mixer|audio/gom/pkg/DESCR|scott@tranzoa.com|audio|xview-config-3.2.1 autoconf-2.13 xview-lib-3.2.1|xview-lib-3.2.1|any|y|y|y|y
 gqmpeg-0.6.3|audio/gqmpeg||mpg123 front-end with skin support|audio/gqmpeg/pkg/DESCR|rohee@openbsd.org|audio|jpeg-6b png-1.0.3 tiff-3.5.4 unzip-5.40 gmake-3.78.1 bzip2-0.9.5d jbigkit-1.1 mpeg_lib-1.3.1 netpbm-19940301 freetype-1.3 ghostscript-5.50 transfig-3.2.3 glib-1.2.7 gettext-0.10.35 ImageMagick-4.2.9 giflib-4.1.0 gtk+-1.2.7 mpg123-0.59r imlib-1.9.8|jpeg-6b png-1.0.3 tiff-3.5.4 bzip2-0.9.5d jbigkit-1.1 mpeg_lib-1.3.1 netpbm-19940301 freetype-1.3 ghostscript-5.50 transfig-3.2.3 glib-1.2.7 gettext-0.10.35 ImageMagick-4.2.9 giflib-4.1.0 gtk+-1.2.7 mpg123-0.59r imlib-1.9.8|any|y|y|y|y
 gsm-1.0.10|audio/gsm||u-law to gsm encoding audio converter and library|audio/gsm/pkg/DESCR|angelos@openbsd.org|audio|||any|y|y|y|y
@@ -143,7 +143,7 @@ joe-2.8|editors/joe||Joe's own editor|editors/joe/pkg/DESCR|ports@openbsd.org|ed
 jove-4.16|editors/jove||Jonathan's Own Version of Emacs|editors/jove/pkg/DESCR|ports@openbsd.org|editors|||any|n|y|n|y
 nedit-5.0.2|editors/nedit||X11/Motif GUI text editor|editors/nedit/pkg/DESCR|ports@openbsd.org|editors x11|lesstif-0.89.9|lesstif-0.89.9|any|y|y|y|y
 nvi-m17n-1.79.19991117|editors/nvi-m17n||multilingual clone of vi/ex|editors/nvi-m17n/pkg/DESCR|itojun@itojun.org|editors|||any|y|y|y|y
-nvi-m17n-1.79.19991117-canna|editors/nvi-m17n,canna||multilingual clone of vi/ex|editors/nvi-m17n/pkg/DESCR|itojun@itojun.org|editors|cannalib-3.5b2|cannalib-3.5b2|any|y|y|y|y
+nvi-m17n-1.79.19991117-canna|editors/nvi-m17n,canna||multilingual clone of vi/ex|editors/nvi-m17n/pkg/DESCR|itojun@itojun.org|editors|ja-groff-1.10_0.99 cannalib-3.5b2|cannalib-3.5b2|any|y|y|y|y
 textedit-1.0|editors/textedit||standard OpenLook text editor for X11|editors/textedit/pkg/DESCR|ian@OpenBSD.ORG|editors|xview-config-3.2.1 xview-lib-3.2.1|xview-lib-3.2.1|any|n|n|n|n
 uemacs-4.0|editors/uemacs||full screen simple editor|editors/uemacs/pkg/DESCR|ports@openbsd.org|editors|unzip-5.40||any|n|y|n|y
 vim-5.6-gtk|editors/vim,gtk||vi clone, many additional features|editors/vim/pkg/DESCR|jasoni@openbsd.org|editors|gettext-0.10.35 glib-1.2.7 gtk+-1.2.7|gettext-0.10.35 glib-1.2.7 gtk+-1.2.7|any|n|y|n|y
@@ -253,33 +253,37 @@ xpaint-2.5.5|graphics/xpaint||simple paint program|graphics/xpaint/pkg/DESCR|ang
 xpm|graphics/xpm||** No Description|/dev/null|ports@openbsd.org|graphics x11|||any|y|y|y|y
 xv-3.10a|graphics/xv||X11 image display and modification tool|graphics/xv/pkg/DESCR|rohee@OpenBSD.ORG|graphics x11|jpeg-6b png-1.0.3 tiff-3.5.4|jpeg-6b png-1.0.3 tiff-3.5.4|any|n|y|n|y
 ja-Wnn-4.2|japanese/Wnn||Japanese input method|japanese/Wnn/pkg/DESCR|espie@openbsd.org|japanese|ja-groff-1.10_0.99|Wnn-data-4.2|any|y|y|y|y
-ja-Wnn-dict-4.2|japanese/Wnn|/var/dict/Wnn|dictionaries for Japanese Wnn|japanese/Wnn/pkg/DESCR-dict|espie@openbsd.org|japanese|ja-groff-1.10_0.99|Wnn-data-4.2|any|y|y|y|y
+ja-Wnndict-4.2|japanese/Wnn|/var/dict/Wnn|dictionaries for Japanese Wnn|japanese/Wnn/pkg/DESCR-dict|espie@openbsd.org|japanese|ja-groff-1.10_0.99|Wnn-data-4.2|any|y|y|y|y
 zh-Wnn-4.2|japanese/Wnn||Chinese input method|japanese/Wnn/pkg/DESCR-zh|espie@openbsd.org|chinese|ja-groff-1.10_0.99|Wnn-data-4.2|any|y|y|y|y
-zh-Wnn-dict-4.2|japanese/Wnn|/var/dict/Wnn|dictionaries for Chinese Wnn|japanese/Wnn/pkg/DESCR-zhdict|espie@openbsd.org|chinese|ja-groff-1.10_0.99|Wnn-data-4.2|any|y|y|y|y
+zh-Wnndict-4.2|japanese/Wnn|/var/dict/Wnn|dictionaries for Chinese Wnn|japanese/Wnn/pkg/DESCR-zhdict|espie@openbsd.org|chinese|ja-groff-1.10_0.99|Wnn-data-4.2|any|y|y|y|y
 ko-Wnn-4.2|japanese/Wnn||Korean input method|japanese/Wnn/pkg/DESCR-ko|espie@openbsd.org|korean|ja-groff-1.10_0.99|Wnn-data-4.2|any|y|y|y|y
-ko-Wnn-dict-4.2|japanese/Wnn|/var/dict/Wnn|dictionaries for Korean Wnn|japanese/Wnn/pkg/DESCR-kodict|espie@openbsd.org|korean|ja-groff-1.10_0.99|Wnn-data-4.2|any|y|y|y|y
+ko-Wnndict-4.2|japanese/Wnn|/var/dict/Wnn|dictionaries for Korean Wnn|japanese/Wnn/pkg/DESCR-kodict|espie@openbsd.org|korean|ja-groff-1.10_0.99|Wnn-data-4.2|any|y|y|y|y
 Wnn-xwnmo-4.2|japanese/Wnn||X11 input method for Wnn|japanese/Wnn/pkg/DESCR-xwnmo|espie@openbsd.org|japanese chinese korean|ja-groff-1.10_0.99|Wnn-data-4.2|any|y|y|y|y
 Wnn-data-4.2|japanese/Wnn-data||common files to all languages of Wnn|japanese/Wnn-data/pkg/DESCR|espie@cvs.openbsd.org|japanese chinese korean|||any|y|y|y|y
-cannalib-3.5b2|japanese/canna||canna (kana-kanji converter) libraries|japanese/canna/pkg/DESCR|ports@openbsd.org|japanese|||any|n|y|n|y
-cannadict-3.5b2|japanese/canna|/var/dict|canna (kana-kanji converter) dictionnaries|japanese/canna/pkg/DESCR-dict|ports@openbsd.org|japanese|||any|n|y|n|y
-cannaserver-3.5b2|japanese/canna||canna (kana-kanji converter) server|japanese/canna/pkg/DESCR-server|ports@openbsd.org|japanese|||any|n|y|n|y
+cannalib-3.5b2|japanese/canna||canna (kana-kanji converter) libraries|japanese/canna/pkg/DESCR|ports@openbsd.org|japanese|ja-groff-1.10_0.99||any|n|y|n|y
+cannadict-3.5b2|japanese/canna|/var/dict|canna (kana-kanji converter) dictionnaries|japanese/canna/pkg/DESCR-dict|ports@openbsd.org|japanese|ja-groff-1.10_0.99||any|n|y|n|y
+cannaserver-3.5b2|japanese/canna||canna (kana-kanji converter) server|japanese/canna/pkg/DESCR-server|ports@openbsd.org|japanese|ja-groff-1.10_0.99||any|n|y|n|y
 ja-kinput2-3.0-wnn|japanese/kinput2,wnn||X input method for Japanese, wnn support|japanese/kinput2/pkg/DESCR|sigh@kuzirabekon.econ.nagasaki-u.ac.jp|japanese x11|Wnn-data-4.2 ja-groff-1.10_0.99 ja-Wnn-4.2||any|y|y|y|y
-ja-kinput2-3.0-canna|japanese/kinput2,canna||X input method for Japanese, canna support|japanese/kinput2/pkg/DESCR|sigh@kuzirabekon.econ.nagasaki-u.ac.jp|japanese x11|cannalib-3.5b2|cannalib-3.5b2|any|y|y|y|y
+ja-kinput2-3.0-canna|japanese/kinput2,canna||X input method for Japanese, canna support|japanese/kinput2/pkg/DESCR|sigh@kuzirabekon.econ.nagasaki-u.ac.jp|japanese x11|ja-groff-1.10_0.99 cannalib-3.5b2|cannalib-3.5b2|any|y|y|y|y
 ja-kinput2-3.0-canna-wnn|japanese/kinput2,canna,wnn||X input method for Japanese, canna and wnn support|japanese/kinput2/pkg/DESCR|sigh@kuzirabekon.econ.nagasaki-u.ac.jp|japanese x11|Wnn-data-4.2 ja-groff-1.10_0.99 ja-Wnn-4.2 cannalib-3.5b2|cannalib-3.5b2|any|y|y|y|y
+ja-onew-wnn4-2.2.10|japanese/onew-wnn4||library for Japanese Input Method Wnn4|japanese/onew-wnn4/pkg/DESCR|espie@cvs.openbsd.org|japanese|Wnn-data-4.2 ja-groff-1.10_0.99 ja-Wnn-4.2||any|y|y|y|y
+ja-onew-canna-2.2.10|japanese/onew-canna||library for Japanese Input Method canna|japanese/onew-canna/pkg/DESCR|espie@cvs.openbsd.org|japanese|ja-groff-1.10_0.99 cannalib-3.5b2|cannalib-3.5b2|any|y|y|y|y
+ja-onew-wnn4-canna-2.2.10|japanese/onew-wnn4-canna||library for Japanese Input Method canna or wnn4|japanese/onew-wnn4-canna/pkg/DESCR|espie@cvs.openbsd.org|japanese|Wnn-data-4.2 ja-groff-1.10_0.99 ja-Wnn-4.2 cannalib-3.5b2|cannalib-3.5b2|any|y|y|y|y
 kakasi-2.3.1|japanese/kakasi||Kanji -> kana converter|japanese/kakasi/pkg/DESCR|espie@cvs.openbsd.org|japanese|||any|y|y|y|y
 ja-fonts-gnu-1.2|japanese/intlfonts||extra japanese fonts|japanese/intlfonts/pkg/DESCR|espie@cvs.openbsd.org|japanese x11|||any|y|y|y|y
 ja-fonts-funet|japanese/funetfonts||extra japanese fonts, marumoji|japanese/funetfonts/pkg/DESCR|espie@cvs.openbsd.org|japanese x11|||any|n|y|n|y
 ja-groff-1.10_0.99|japanese/groff||japanese groff|japanese/groff/pkg/DESCR|espie@cvs.openbsd.org|japanese textproc print|||any|y|y|y|y
 ja-jvim-2.0r|japanese/jvim||Japanized Vim|japanese/jvim/pkg/DESCR|espie@openbsd.org|japanese editors|||any|y|y|y|y
-ja-jvim-wnn4-2.0r|japanese/jvim-wnn4||Japanized Vim (with Wnn4)|japanese/jvim-wnn4/pkg/DESCR|espie@openbsd.org|japanese editors|Wnn-data-4.2 ja-groff-1.10_0.99 ja-Wnn-4.2 ja-onew-wnn4-2.2.10||any|y|y|y|y
+ja-jvim-2.0r-wnn|japanese/jvim,wnn||Japanized Vim, wnn input method|japanese/jvim/pkg/DESCR|espie@openbsd.org|japanese editors|Wnn-data-4.2 ja-groff-1.10_0.99 ja-Wnn-4.2 ja-onew-wnn4-2.2.10||any|y|y|y|y
+ja-jvim-2.0r-canna|japanese/jvim,canna||Japanized Vim, canna input method|japanese/jvim/pkg/DESCR|espie@openbsd.org|japanese editors|ja-groff-1.10_0.99 cannalib-3.5b2 ja-onew-canna-2.2.10|cannalib-3.5b2|any|y|y|y|y
+ja-jvim-2.0r-wnn-canna|japanese/jvim,wnn,canna||Japanized Vim, canna or wnn input method|japanese/jvim/pkg/DESCR|espie@openbsd.org|japanese editors|Wnn-data-4.2 ja-groff-1.10_0.99 ja-Wnn-4.2 cannalib-3.5b2 ja-onew-wnn4-canna-2.2.10|cannalib-3.5b2|any|y|y|y|y
 kanjips|japanese/kanjips||converts Japanese fonts in PostScript documents|japanese/kanjips/pkg/DESCR|espie@openbsd.org|japanese print|||any|y|y|y|y
 ja-kterm-6.2.0|japanese/kterm||Japanese-capable xterm|japanese/kterm/pkg/DESCR|ports@openbsd.org|japanese x11|||any|y|y|y|y
 ja-kterm-6.2.0-xaw3d|japanese/kterm,xaw3d||Japanese-capable xterm|japanese/kterm/pkg/DESCR|ports@openbsd.org|japanese x11|Xaw3d-1.5|Xaw3d-1.5|any|y|y|y|y
 ja-less-3.32p2.48|japanese/less||less + zcat + ISO-2022 - a pager similar to more and pg|japanese/less/pkg/DESCR|espie@openbsd.org|japanese|||any|y|y|y|y
 ja-nkf-1.62|japanese/nkf||Network Kanji code conversion Filter|japanese/nkf/pkg/DESCR|espie@openbsd.org|japanese textproc|||any|y|y|y|y
-ja-onew-wnn4-2.2.10|japanese/onew-wnn4||library for Japanese Input Method Wnn4|japanese/onew-wnn4/pkg/DESCR|taoka@infonets.hiroshima-u.ac.jp|japanese|Wnn-data-4.2 ja-groff-1.10_0.99 ja-Wnn-4.2||any|y|y|y|y
 gofer-2.30a|lang/Gofer||lazy functional language|lang/Gofer/pkg/DESCR|ports@OpenBSD.ORG|lang|||any|y|y|y|y
-STk-3.1.1|lang/STk||scheme interpreter with Tk interface|lang/STk/pkg/DESCR|ports@openbsd.org|lang|||any|?|?|?|?
+STk-3.1.1|lang/STk||scheme interpreter with Tk interface|lang/STk/pkg/DESCR|ports@openbsd.org|lang|||any|y|y|y|y
 camlp4-2.04|lang/camlp4||Pre-Processor-Pretty-Printer for Objective Caml|lang/camlp4/pkg/DESCR|angelos@openbsd.org|lang|gmake-3.78.1 ocaml-2.04||any|?|?|?|?
 gcc-2.95.1|lang/egcs/stable||experimental GNU C, C++, f77..., release flavor|lang/egcs/stable/pkg/DESCR|espie@openbsd.org|lang|bzip2-0.9.5d autoconf-2.13||any|y|y|y|y
 egcs-20000313-core|lang/egcs/snapshot||GNU compiler collection (experimental): core C compiler|lang/egcs/snapshot/pkg/DESCR|Marc.Espie@openbsd.org|lang|autoconf-2.13||any|n|y|n|y
@@ -311,13 +315,13 @@ checkpassword-0.81|mail/checkpassword||simple, uniform password-checking interfa
 cucipop-1.31|mail/cucipop||Cubic Circle's POP3 daemon (fully RFC1939 compliant)|mail/cucipop/pkg/DESCR|ports@openbsd.org|mail|||any|n|y|n|y
 dot-forward-0.71|mail/dot-forward|/var/qmail|sendmail-style .forward support for qmail|mail/dot-forward/pkg/DESCR|cd@sentia.nl|mail||ucspi-tcp-0.88 qmail-1.03|any|y|y|y|y
 elm-2.4ME+66|mail/elm||a once-popular mail user agent|mail/elm/pkg/DESCR|pjanzen@openbsd.org|mail|||any|y|y|y|y
-exim-3.13|mail/exim||MTA for systems connected to the Internet|mail/exim/pkg/DESCR|peter.galbavy@knowledge.com|mail|||any|y|y|y|y
+exim-3.14|mail/exim||MTA for systems connected to the Internet|mail/exim/pkg/DESCR|peter.galbavy@knowledge.com|mail|||any|y|y|y|y
 exmh-1.6.9|mail/exmh||** No Description|/dev/null|ports@openbsd.org|mail tk80|||any|y|y|y|y
 exmh-2.0.2|mail/exmh2||X11/Tk-based mail reader front end to MH|mail/exmh2/pkg/DESCR|angelos@openbsd.org|mail tk80|tcl-8.0.5|tcl-8.0.5 metamail-2.7 nmh-1.0.4 tk-8.0.5|any|y|y|y|y
 ezmlm-0.53|mail/ezmlm||easy-to-use, high-speed mailing list manager for qmail|mail/ezmlm/pkg/DESCR|cd@sentia.nl|mail||ucspi-tcp-0.88 qmail-1.03|any|y|y|y|y
 faces-1.6.1|mail/faces||visual mail, user and print face server|mail/faces/pkg/DESCR|angelos@openbsd.org|mail|||any|n|y|n|y
 fastforward-0.51|mail/fastforward|/var/qmail|qmail forwarding, including sendmail-style /etc/aliases|mail/fastforward/pkg/DESCR|cd@sentia.nl|mail||ucspi-tcp-0.88 qmail-1.03|any|y|y|y|y
-fetchmail-5.2.5|mail/fetchmail||Mail retrieval utility for POP2, POP3, KPOP, IMAP and more|mail/fetchmail/pkg/DESCR|fgsch@openbsd.org|mail|||any|y|y|y|y
+fetchmail-5.3.8|mail/fetchmail||mail retrieval utility for POP2, POP3, KPOP, IMAP and more|mail/fetchmail/pkg/DESCR|fgsch@openbsd.org|mail|||any|y|y|y|y
 imap-uw-4.7b|mail/imap-uw||University of Washington IMAP4rev1/POP2/POP3 mail servers|mail/imap-uw/pkg/DESCR|jakob@openbsd.org|mail|||any|n|y|n|y
 mess822-0.58|mail/mess822||library for parsing Internet mail messages|mail/mess822/pkg/DESCR|cd@sentia.nl|mail||ucspi-tcp-0.88 qmail-1.03|any|y|y|y|y
 metamail-2.7|mail/metamail||MIME implementation|mail/metamail/pkg/DESCR|ports@openbsd.org|mail|||any|y|y|y|y
@@ -523,7 +527,7 @@ gnupg-1.0.1|security/gnupg||GNU privacy guard - a free PGP replacement.|security
 isic-0.05|security/isic||IP stack integrity checker|security/isic/pkg/DESCR|dugsong@monkey.org|security|libnet-1.0||any|y|y|y|y
 its4-1.0.1|security/its4||scan C/C++ source code for security problems|security/its4/pkg/DESCR|dugsong@monkey.org|security|||any|n|n|n|n
 john-1.6|security/john||extremely fast password cracker|security/john/pkg/DESCR|dugsong@monkey.org|security|||any|y|y|y|y
-l0phtcrack-2.52|security/l0phtcrack||Microsoft LANMAN & NT password sniffer/cracker|security/l0phtcrack/pkg/DESCR|dugsong@monkey.org|security|unzip-5.40||any|?|?|?|?
+l0phtcrack-2.52|security/l0phtcrack||Microsoft LANMAN & NT password sniffer/cracker|security/l0phtcrack/pkg/DESCR|dugsong@monkey.org|security|unzip-5.40||any|y|y|y|y
 libident-0.22|security/libident||library to interface the ident protocol server (rfc1413)|security/libident/pkg/DESCR|angelos@openbsd.org|devel net security|||any|y|y|y|y
 logsurfer-1.5|security/logsurfer||processes logfiles and perform certain actions|security/logsurfer/pkg/DESCR|jakob@openbsd.org|security|||any|y|y|y|y
 lxnb-0.4|security/lxnb||NetBus client|security/lxnb/pkg/DESCR|dugsong@monkey.org|security|||any|n|y|n|y
@@ -531,7 +535,7 @@ nbaudit-1.0|security/nbaudit||NetBIOS Auditing Tool / Security Kit|security/nbau
 nessus-0.98.3|security/nessus||free network security scanner|security/nessus/pkg/DESCR|dugsong@monkey.org|security|gettext-0.10.35 glib-1.2.7 gtk+-1.2.7|gettext-0.10.35 glib-1.2.7 gtk+-1.2.7|any|y|y|y|y
 nfsshell-1.0|security/nfsshell||NFS auditing tool|security/nfsshell/pkg/DESCR|dugsong@monkey.org|security|||any|n|y|n|y
 outguess-0.13b|security/outguess||universal steganography tool|security/outguess/pkg/DESCR|dugsong@monkey.org|security|||any|?|?|?|?
-parse-1.0|security/parse||watch a tcpdump trace in real-time|security/parse/pkg/DESCR|dugsong@monkey.org|security|||any|?|?|?|?
+parse-1.0|security/parse||watch a tcpdump trace in real-time|security/parse/pkg/DESCR|dugsong@monkey.org|security|||any|n|y|n|y
 pgp-2.6.3-usa|security/pgp,usa||Intl and US versions of Pretty Good Privacy 2.6.3[i]a|security/pgp/pkg/DESCR|ports@openbsd.org|security|rsaref-2.0|rsaref-2.0|any|n|y|n|y
 pgp-2.6.3-intl|security/pgp,intl||Intl and US versions of Pretty Good Privacy 2.6.3[i]a|security/pgp/pkg/DESCR|ports@openbsd.org|security|||any|n|y|n|y
 pgp-5.0i-usa|security/pgp5,usa||Pretty Good Privacy 5.0i (international)|security/pgp5/pkg/DESCR|fgsch@openbsd.org|security|autoconf-2.13 rsaref-2.0|rsaref-2.0|any|n|y|n|y
