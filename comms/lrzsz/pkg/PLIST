@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/06/15 00:50:06 brad Exp $
 bin/lrb
 bin/lrx
 bin/lrz

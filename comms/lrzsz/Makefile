@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2000/06/14 22:08:38 angelos Exp $
+# $OpenBSD: Makefile,v 1.12 2000/06/15 00:50:06 brad Exp $
 
 DISTNAME=	lrzsz-0.12.20
 CATEGORIES=	comms
+NEED_VERSION=	1.301
 MASTER_SITES=	ftp://tirka.ohse.de/uwe/releases/ \
 		ftp://ftp.netsw.org/netsw/Network/Modem/Protocols/ZModem/lrzsz/ \
 		http://www.nrw.net/uwe/archive/ \
@@ -11,14 +12,13 @@ MASTER_SITES=	ftp://tirka.ohse.de/uwe/releases/ \
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	"possible copyright issue with rzsz"
-PERMIT_PACKAGE_FTP=	YES
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"possible copyright issue with rzsz"
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
-GNU_CONFIGURE=	yes
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-nls
 
 ALL_TARGET=	all # vcheck
