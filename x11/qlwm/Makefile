@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/09/26 23:59:12 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/20 12:27:06 espie Exp $
 
 DISTNAME=	qlwm-1.7
 CATEGORIES=	x11
@@ -36,7 +36,7 @@ do-install:
 	button_right.xpm defaults menu.xpm menuconfig winlist.xpm
 	${INSTALL_DATA} ${WRKBUILD}/files/$i ${LIBDIR}/files
 .endfor
-	sed -e s,%PREFIX%,${TRUEPREFIX},g <${FILESDIR}/qlwm >${WKRBUILD}/qlwm
+	sed -e s,%PREFIX%,${TRUEPREFIX},g <${FILESDIR}/qlwm >${WRKBUILD}/qlwm
 	${INSTALL_SCRIPT} ${WRKBUILD}/qlwm ${PREFIX}/bin
 
 .include <bsd.port.mk>
