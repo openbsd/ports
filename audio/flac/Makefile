@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/11/02 23:23:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2003/02/25 00:02:38 naddy Exp $
 
 COMMENT=	"free lossless audio codec"
 
@@ -27,7 +27,7 @@ CONFIGURE_STYLE= gnu
 
 # id3lib is only used by the XMMS plugin
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-sse --enable-3dnow \
+		--enable-3dnow \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}"
 CONFIGURE_ENV=	XMMS_CONFIG=/usr/bin/false \
