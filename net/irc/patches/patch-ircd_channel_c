@@ -1,0 +1,53 @@
+$OpenBSD: patch-ircd_channel_c,v 1.1 2003/11/11 15:17:34 margarida Exp $
+--- ircd/channel.c.orig	2000-06-06 23:34:27.000000000 +0100
++++ ircd/channel.c	2003-11-09 00:03:46.000000000 +0000
+@@ -1966,7 +1966,7 @@ char	*parv[];
+ 	Reg	Link	*lp;
+ 	Reg	aChannel *chptr;
+ 	Reg	char	*name, *key = NULL;
+-	int	i, flags = 0;
++	int	i, tmplen, flags = 0;
+ 	char	*p = NULL, *p2 = NULL, *s, chop[5];
+ 
+ 	if (parc < 2 || *parv[1] == '\0')
+@@ -2115,10 +2115,20 @@ char	*parv[];
+ 					   parv[0]), name);
+ 			continue;
+ 		    }
++		tmplen = strlen(name);
++		if (i + tmplen + 2 /* comma and \0 */
++			>= sizeof(jbuf) )
++		{
++
++			break;
++
++		}
+ 		if (*jbuf)
+-			(void)strcat(jbuf, ",");
+-		(void)strncat(jbuf, name, sizeof(jbuf) - i - 1);
+-		i += strlen(name)+1;
++		{
++			jbuf[i++] = ',';
++		}
++		(void)strcpy(jbuf + i, name);
++		i += tmplen;
+ 	    }
+ 
+ 	p = NULL;
+@@ -2270,6 +2280,16 @@ char	*parv[];
+ 					   parv[0], name, chop);
+ 		else if (*chptr->chname != '&')
+ 		    {
++			/* ":" (1) "nick" (NICKLEN) " JOIN :" (7), comma (1)
++			** possible chop (4), ending \r\n\0 (3) = 16
++			** must fit in the cbuf as well! --B. */
++			if (strlen(cbuf) + strlen(name) + NICKLEN + 16
++				 >= sizeof(cbuf))
++			{
++				sendto_serv_butone(cptr, ":%s JOIN :%s",
++					parv[0], cbuf);
++				cbuf[0] = '\0';
++			}
+ 			if (*cbuf)
+ 				strcat(cbuf, ",");
+ 			strcat(cbuf, name);

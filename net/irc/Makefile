@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2003/05/12 18:02:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.24 2003/11/11 15:17:34 margarida Exp $
 # $FreeBSD: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
 
 COMMENT=	"internet relay chat (irc) server"
 
 DISTNAME=       irc2.10.3p1
-PKGNAME=        irc-2.10.3p1
+PKGNAME=        irc-2.10.3p1p1
 CATEGORIES=	net
 
-MASTER_SITES=   ftp://ftp.irc.org/irc/server/ \
+MASTER_SITES=   ftp://ftp.irc.org/irc/server/Old/ \
                 ftp://ftp.ntua.gr/pub/net/irc/server/
 EXTRACT_SUFX=	.tgz
 
