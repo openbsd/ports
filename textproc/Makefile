@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2004/02/16 21:14:54 djm Exp $
+# $OpenBSD: Makefile,v 1.109 2004/04/24 08:18:51 peter Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -40,6 +40,7 @@
      SUBDIR += mgdiff
      SUBDIR += openjade
      SUBDIR += p5-Blatte
+     SUBDIR += p5-Email-Find
      SUBDIR += p5-Font-AFM
      SUBDIR += p5-Font-TTF
      SUBDIR += p5-LibXML-Common
