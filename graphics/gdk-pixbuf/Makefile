@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/13 20:35:34 todd Exp $
+# $OpenBSD: Makefile,v 1.7 2001/09/14 03:41:29 heko Exp $
 
 COMMENT=	"replacement library for Imlib"
 
@@ -32,13 +32,9 @@ CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if ${FLAVOR:L:Mgnome}
 LIB_DEPENDS+=	gnome.36::x11/gnome/libs
-.endif 
-
-FLAVORS= gnome
-FLAVOR?=
-
-.if ${FLAVOR:L} == "gnome"
 CONFIGURE_ARGS+= --with-gnome
+.else
+CONFIGURE_ARGS+= --without-gnome
 .endif
 
 pre-patch:
@@ -47,3 +43,13 @@ pre-patch:
 		 s|\$$\(datadir\)/aclocal|\$$\(prefix\)/share/aclocal|g'
 
 .include <bsd.port.mk>
+
+# From PostgreSQL port Makefile.
+.if ${FLAVOR:L:Mgnome} && !defined(NO_SHARED_LIBS)
+SED_PLIST+=-e '/%%SHARED-gnome%%/r${PKGDIR}/PFRAG.gnome.shared' -e '//d'
+.elif ${FLAVOR:L:Mgnome} && defined(NO_SHARED_LIBS) && \
+	${NO_SHARED_LIBS:L} == "yes"
+SED_PLIST+=-e '/%%SHARED-gnome%%/d'
+.endif
+
+
