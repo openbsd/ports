@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2002/09/01 10:00:48 couderc Exp $
+--- Makefile.orig	Sun Sep  1 10:30:01 2002
++++ Makefile	Sun Sep  1 10:34:07 2002
+@@ -1,9 +1,7 @@
+-CC	=	gcc
+-INC	=	
+-LIBS	=	-L/usr/X11R6/lib -lX11 -lXpm -lXext
++LIBS	=	-L${X11BASE}/lib -lX11 -lXpm -lXext
+ SRCS	=	wampager.c
+ OBJS	=	wampager.o
+-CFLAGS	=	-Wall
++CFLAGS	+=	-I${X11BASE}/include
+ 
+ all: wampager
+ 
+@@ -14,4 +12,4 @@ wampager : $(SRCS)
+ 		$(CC) $(CFLAGS) $(SRCS) $(INC) -o wampager $(LIBS)
+ 
+ install : all
+-		install -c -s wampager /usr/local/bin
++		install -c -s wampager ${PREFIX}/bin
