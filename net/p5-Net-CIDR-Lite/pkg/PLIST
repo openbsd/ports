@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/01 11:24:22 xsa Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/CIDR/
+${P5SITE}/Net/CIDR/Lite.pm
+@man man/man3p/Net::CIDR::Lite.3p
