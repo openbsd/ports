@@ -1,6 +1,8 @@
 bin/automake
 bin/aclocal
+@unexec install-info --delete %D/info/automake.info %D/info/dir
 info/automake.info
+@exec install-info %D/info/automake.info %D/info/dir
 share/automake/COPYING
 share/automake/INSTALL
 share/automake/texinfo.tex
