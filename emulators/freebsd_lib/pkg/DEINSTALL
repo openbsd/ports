@@ -1,0 +1,13 @@
+# $OpenBSD: DEINSTALL,v 1.1 2000/06/20 18:33:15 brad Exp $
+#
+# freebsd_lib de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local/emul/freebsd}
+
+if [ -L /emul/freebsd ]; then
+    rm -f /emul/freebsd
+fi
+
+exit 0
