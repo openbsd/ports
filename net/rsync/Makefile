@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 1999/02/21 04:26:15 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1999/02/23 10:42:08 espie Exp $
 #
 
 DISTNAME= rsync-2.2.1
 CATEGORIES=net
 
-NEED_VERSION=		1.64
+
 
 MAINTAINER=		espie@openbsd.org
 
@@ -12,10 +12,6 @@ MAINTAINER=		espie@openbsd.org
 MASTER_SITES=		ftp://rsync.samba.org/pub/rsync/
 
 GNU_CONFIGURE=		yes
-
-.if !defined(NO_SHARED_LIBS)
-CONFIGURE_ARGS+=	--enable-shared
-.endif
 
 # not MESSAGE, explains the build warning
 post-build:
