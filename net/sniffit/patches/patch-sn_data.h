@@ -1,12 +1,12 @@
-$OpenBSD: patch-sn_data.h,v 1.5 2002/09/24 08:06:58 pvalchev Exp $
---- sn_data.h.orig	Thu Jul 16 10:17:10 1998
-+++ sn_data.h	Tue Sep 24 01:57:01 2002
+$OpenBSD: patch-sn_data.h,v 1.6 2004/02/29 19:22:13 pvalchev Exp $
+--- sn_data.h.orig	1998-07-16 10:17:10.000000000 -0600
++++ sn_data.h	2004-02-29 12:20:46.000000000 -0700
 @@ -43,6 +43,40 @@ char *NETDEV[]={"ed"};		
  int HEADSIZE[]={14}; 
  #endif
  
 +#ifdef OPENBSD
-+#ifdef __i386__
++#if defined(__i386__) || defined(__amd64__)
 +#define NETDEV_NR     33
 +char *NETDEV[]={"ppp","cnw","dc","de","ec","ef","eg","el","ep","ex","fea","fpa","fx","ie","le","ne","ray","rl","sf","sis","sk","sm","ste","ti","tl","tx","vr","wb","we","wi","wx","xe","xl"};
 +int HEADSIZE[]={4,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14};
