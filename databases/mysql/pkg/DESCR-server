@@ -5,6 +5,6 @@ This is the server portion of MySQL, it provides the MySQL server as well
 as various administrative binaries.
 
 Flavors:
-	max - Build with transaction support using BerkeleyDB & InnoDB.
+	bdb - Build with transaction support using BerkeleyDB
 
 WWW: ${HOMEPAGE}

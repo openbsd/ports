@@ -1,11 +1,6 @@
-# $OpenBSD: Makefile,v 1.62 2001/12/29 17:56:56 brad Exp $
+# $OpenBSD: Makefile,v 1.63 2002/01/06 07:06:25 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
-
-# More architectures need testing of MySQL+native threads
-.if ${MACHINE_ARCH} != "i386"
-BROKEN=		"Support for ${MACHINE_ARCH} threads is currently broken and/or untested with MySQL"
-.endif
 
 COMMENT=	"multithreaded SQL database (client)"
 COMMENT-server=	"multithreaded SQL database (server)"
@@ -36,6 +31,7 @@ SUBST_VARS=	DB_DIR VERSION
 
 # Suggested flags to the C++ compiler, needed for
 # high load servers otherwise MySQL will crash.
+CXX=		${CC}
 CXXFLAGS=	${CFLAGS} -felide-constructors -fno-exceptions -fno-rtti
 
 CONFIGURE_STYLE= gnu
@@ -43,7 +39,10 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/mit-pthreads/config
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
 		 --localstatedir="${DB_DIR}" \
+		 --with-innodb \
+		 --with-comment='OpenBSD port: ${FULLPKGNAME-server}' \
 		 --with-libwrap="/usr" \
+		 --with-mysqld-ldflags=--static \
 		 --with-mysqld-user="mysql" \
 		 --with-unix-socket-path="${DB_DIR}/mysql.sock" \
 		 --without-perl \
@@ -57,20 +56,29 @@ PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
 		patch-*
 
-FLAVORS=	max
+FLAVORS=	bdb
 FLAVOR?=
 
 MULTI_PACKAGES=	-server -tests
 SUBPACKAGE?=
 
-.if ${FLAVOR:L:Mmax}
-CONFIGURE_ARGS+= --with-berkeley-db --with-innodb
+.if ${FLAVOR:L:Mbdb}
+. if ${MACHINE_ARCH} != "i386"
+BROKEN=	"The BerkeleyDB transaction support has not been tested on your architecture yet"
+. else
+CONFIGURE_ARGS+= --with-berkeley-db
+. endif
 .else
-CONFIGURE_ARGS+= --without-berkeley-db --without-innodb
+CONFIGURE_ARGS+= --without-berkeley-db
 .endif
 
+# More architectures need testing of MySQL+native threads
 .if ${SUBPACKAGE} == "-server"
-RUN_DEPENDS=	:mysql-client-3.23.*:databases/mysql
+. if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "sparc"
+BROKEN=		"Support for ${MACHINE_ARCH} threads is currently broken and/or untested with MySQL"
+. endif
+RUN_DEPENDS=	:mysql-client-3.23.*:databases/mysql \
+		::databases/p5-DBD-Msql-Mysql
 .endif
 
 VMEM_WARNING=	Yes

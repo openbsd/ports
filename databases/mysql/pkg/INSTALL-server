@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL-server,v 1.1 2001/06/02 20:18:45 brad Exp $
+# $OpenBSD: INSTALL-server,v 1.2 2002/01/06 07:06:25 brad Exp $
 #
 # Pre/post-installation setup of MySQL
 
@@ -39,7 +39,7 @@ do_pre_install()
         echo "===> Using mysql user for MySQL"
     else
 	echo "===> Creating mysql user"
-	useradd -g mysql -d /nonexistent -c 'MySQL Account' -s /sbin/nologin mysql
+	useradd -g mysql -d /nonexistent -L daemon -c 'MySQL Account' -s /sbin/nologin mysql
     fi
 }
 
