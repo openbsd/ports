@@ -1,11 +1,11 @@
---- Makefile.in.orig	Mon May  4 10:42:08 1998
-+++ Makefile.in	Mon May  4 10:42:34 1998
-@@ -204,7 +204,7 @@
- .texi.info:
- 	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
- 	cd $(srcdir) \
--	  && $(MAKEINFO) `echo $< | sed 's,.*/,,'`
-+	  && $(MAKEINFO) --no-split `echo $< | sed 's,.*/,,'`
- 
- .texi.dvi:
- 	TEXINPUTS=$(srcdir):$$TEXINPUTS \
+--- Makefile.in.orig	Mon Mar 29 15:32:50 1999
++++ Makefile.in	Mon Mar 29 15:33:00 1999
+@@ -57,7 +57,7 @@
+ NORMAL_UNINSTALL = :
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ PACKAGE = @PACKAGE@
+ PERL = @PERL@
+ TAR = @TAR@

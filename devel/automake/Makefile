@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/03/07 00:14:40 brad Exp $
-#
+# $OpenBSD: Makefile,v 1.7 1999/03/29 20:46:17 brad Exp $
 
 DISTNAME=	automake-1.4
 CATEGORIES=	devel
@@ -13,6 +12,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=/usr/bin/perl
 USE_PERL5=	YES
 STRIP=		# none
+
+pre-configure:
+	${RM} ${WRKSRC}/automake.info*
 
 post-install:
 	@if [ ! -f ${PREFIX}/info/dir ]; then \

@@ -1,9 +1,6 @@
 bin/automake
 bin/aclocal
 info/automake.info
-info/automake.info-1
-info/automake.info-2
-info/automake.info-3
 share/automake/COPYING
 share/automake/INSTALL
 share/automake/texinfo.tex
