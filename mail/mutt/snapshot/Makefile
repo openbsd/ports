@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2001/12/13 03:25:32 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2002/01/03 02:45:01 lebel Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
-VERSION=	1.3.24
+VERSION=	1.3.25
 DISTNAME=	mutt-${VERSION}i
 CATEGORIES=     mail
 NEED_VERSION=	1.460
@@ -23,7 +23,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	slang imap pop compressed mixmaster
+# disable compressed FLAVOR for the time being, until the author of the patch
+# provide a new patch fro 1.3.25 (or a later version).
+FLAVORS=	slang imap pop mixmaster # compressed
 FLAVOR?=
 
 SYSCONFDIR=	/etc/mutt
