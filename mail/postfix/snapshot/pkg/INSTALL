@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.6 2002/06/22 08:59:13 jakob Exp $
+# $OpenBSD: INSTALL,v 1.7 2002/10/29 08:25:13 jakob Exp $
 #
 # Pre/post-installation setup of postfix
 
@@ -120,7 +120,7 @@ do_configs()
 
     $CONFIG_DIR/post-install command_directory=${PREFIX}/sbin set-permissions
 
-    grep syslogd_flags /etc/rc.conf /etc/rc.conf.local | grep postfix >/dev/null
+    grep syslogd_flags /etc/rc.conf{,.local} 2>/dev/null | grep -q postfix
     if [ $? -eq 1 ]; then
         echo ""
 	echo "+---------------"
