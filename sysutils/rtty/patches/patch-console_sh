@@ -1,0 +1,12 @@
+$OpenBSD: patch-console_sh,v 1.1 2002/05/08 18:42:10 millert Exp $
+--- console.sh.orig	Wed May  8 12:30:37 2002
++++ console.sh	Wed May  8 12:30:37 2002
+@@ -24,7 +24,7 @@ while [ $# -gt 0 ]; do
+ 	case $1 in
+ 	-r) cmdopts="$opts -r"; shift ;;
+ 	-*) shift ;;
+-	*) break 2 ;;
++	*) break ;;
+ 	esac
+ done
+ 

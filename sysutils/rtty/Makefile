@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2002/03/21 21:25:52 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/05/08 18:42:10 millert Exp $
 #
 
 COMMENT=	"multiuser "tip"/"cu" replacement with logging"
 
-DISTNAME=       rtty-3.2
+DISTNAME=       rtty-4.0
 CATEGORIES=	sysutils
 NEED_VERSION=	1.515
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=   ftp://ftp.vix.com/pub/vixie/
+EXTRACT_SUFX=	.shar.gz
 
 WRKDIST=	${WRKDIR}
 

@@ -1,0 +1,47 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2002/05/08 18:42:10 millert Exp $
+#
+# Pre/post-installation setup of rtty
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+# Function: tell the user what s/he needs to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| Please see $PREFIX/rtty for setup instructions."
+    echo "| You will probably want to run $PREFIX/rtty/bin/Startup"
+    echo "| from /etc/rc.local."
+    echo "+---------------"
+    echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	do_notice
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

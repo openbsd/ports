@@ -1,0 +1,16 @@
+$OpenBSD: patch-locbrok_c,v 1.1 2002/05/08 18:42:10 millert Exp $
+--- locbrok.c.orig	Wed May  8 12:30:37 2002
++++ locbrok.c	Wed May  8 12:30:37 2002
+@@ -76,10 +76,10 @@ static	reg_db		*RegDB = NULL;
+ 
+ main(int argc, char *argv[]) {
+ 	struct servent *serv;
+-	char ch;
++	int ch;
+ 
+ 	ProgName = argv[0];
+-	while ((ch = getopt(argc, argv, "s:x:")) != EOF) {
++	while ((ch = getopt(argc, argv, "s:x:")) != -1) {
+ 		switch (ch) {
+ 		case 's':
+ 			Service = optarg;

@@ -1,21 +1,21 @@
-$OpenBSD: patch-rtty_c,v 1.1 2002/02/20 21:17:52 naddy Exp $
---- rtty.c.orig	Wed Feb 20 22:06:40 2002
-+++ rtty.c	Wed Feb 20 22:07:18 2002
-@@ -101,7 +101,7 @@ main(argc, argv)
- 	int argc;
- 	char *argv[];
- {
+$OpenBSD: patch-rtty_c,v 1.2 2002/05/08 18:42:10 millert Exp $
+--- rtty.c.orig	Wed May  8 12:30:37 2002
++++ rtty.c	Wed May  8 12:30:37 2002
+@@ -89,7 +89,7 @@ int Debug = 0;
+ 
+ int
+ main(int argc, char *argv[]) {
 -	char ch;
 +	int ch;
  
  	ProgName = argv[0];
  
-@@ -118,7 +118,7 @@ main(argc, argv)
+@@ -106,7 +106,7 @@ main(int argc, char *argv[]) {
  		TtyName = "/dev/null";
  	}
  
--	while ((ch = getopt(argc, argv, "s:x:l:7")) != EOF) {
-+	while ((ch = getopt(argc, argv, "s:x:l:7")) != -1) {
+-	while ((ch = getopt(argc, argv, "s:x:l:7r")) != EOF) {
++	while ((ch = getopt(argc, argv, "s:x:l:7r")) != -1) {
  		switch (ch) {
  		case 's':
  			ServSpec = optarg;
