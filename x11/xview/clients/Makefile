@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/04/02 22:43:11 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/04/02 23:54:00 espie Exp $
 
 PKGNAME=	xview-clients-${XVIEW_VERSION}
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -7,7 +7,7 @@ CATEGORIES=	x11
 NEED_VERSION=	1.230
 
 EXTRACT_ONLY=
-BUILD_DEPENDS=	${LOCALBASE}/lib/X11/config/XView.cf::x11/xview/config \
+BUILD_DEPENDS=	${X11BASE}/lib/X11/config/XView.cf::x11/xview/config \
 		/nonexistent::x11/xview/lib:configure
 LIB_DEPENDS=	xview.3.::x11/xview/lib
 
