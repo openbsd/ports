@@ -1,0 +1,12 @@
+# $OpenBSD: patch-Makefile_PL,v 1.1 2003/02/02 19:14:25 jcs Exp $
+--- Makefile.PL.orig	Sun Feb  2 11:55:47 2003
++++ Makefile.PL	Sun Feb  2 11:57:03 2003
+@@ -22,7 +22,7 @@
+ 		check => sub {ccompile('#include <gtkgl/gtkglarea.h>', "", `gtk-config --cflags`,
+ 					"-lgtkgl  -lGL -lGLU " . `gtk-config --libs`)}},
+ 	gdkpixbuf => {order => 2, dir => 'GdkPixbuf', depends => [qw(gtk)],
+-		check => sub {cconfig('gdk-pixbuf-config --version', '0\.(8|9|1\d)\.?')}},
++		check => sub {cconfig('gdk-pixbuf-config --version', '0\.(8|9|1\d|2\d)\.?')}},
+ 	gtkhtml => {order => 2, dir => 'GtkHTML', depends => [qw(gtk)],
+ 		check => sub {cconfig('gnome-config --modversion gtkhtml', 'gtkhtml-0\.[89]')}},
+ 	gtkxmhtml => {order => 2, dir => 'GtkXmHTML', depends => [qw(gtk)],

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/12/29 20:31:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2003/02/02 19:14:24 jcs Exp $
 
 COMMENT=	"set of modules to use Gtk+ libraries from Perl"
 
@@ -44,6 +44,7 @@ FAKE_FLAGS=	${MAKE_FLAGS} \
 		INSTALLSITELIB="${PERLDIR}" \
 		INSTALLSITEARCH="${PERLDIR}/${MACHINE_ARCH}-openbsd" \
 		INSTALLMAN3DIR="${DESTDIR}/${PREFIX}/man/man3p" \
+		INSTALLSITEMAN3DIR="${DESTDIR}/${PREFIX}/man/man3p"
 
 FLAVORS=	gtkglarea
 FLAVOR?=	
