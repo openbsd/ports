@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_in,v 1.1 2003/12/18 03:32:20 naddy Exp $
+--- configure.in.orig	2003-12-17 19:48:14.000000000 -0700
++++ configure.in	2003-12-17 19:48:55.000000000 -0700
+@@ -685,7 +685,8 @@ AC_ARG_WITH(pnglib,
+     dnl Make sure libpng sits in front of libz
+     AC_CHECK_LIB(png, png_create_read_struct,
+ 	[EXTERNALLIBS="-lpng $EXTERNALLIBS"],
+-	AC_MSG_ERROR([No usable pnglib library found.]))
++	AC_MSG_ERROR([No usable pnglib library found.]),
++	$EXTERNALLIBS)
+ 
+     AC_CHECK_HEADER(png.h, , 
+ 	AC_MSG_ERROR([No usable pnglib include file found.]))
