@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 00:46:11 espie Exp $
-@pkgcfl cmail-*
+@comment $OpenBSD: PLIST,v 1.7 2004/09/18 12:43:28 espie Exp $
+@conflict cmail-*
 bin/cmail
 bin/pxboard
 bin/xboard

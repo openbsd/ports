@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 19:08:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/18 12:43:28 espie Exp $
 @option no-default-conflict
-@pkgcfl nethack-${V}
-@pkgcfl nethack-${V}-no_x11
-@pkgcfl nethack-${V}-qt
+@conflict nethack-${V}
 @comment bin/nethack
 @group games
 bin/nethack-${V}
