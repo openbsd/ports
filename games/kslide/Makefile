@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/29 15:10:08 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2003/01/19 02:50:32 brad Exp $
 
 COMMENT=	"puzzle game for KDE"
 
@@ -14,12 +14,14 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
-MASTER_SITES=	http://www.web-xs.de/users/ecoquelle/taquin/
+MASTER_SITES=	http://david.bieder.free.fr/eric/taquin/ \
+		http://perso.wanadoo.fr/coquelle/taquin/
 EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3
 
 MODULES=	qt3
+MODQT_MT=	Yes
 
 MAKE_ENV=	${CONFIGURE_ENV}
 # Ensure qt2 will always be at the front
@@ -30,8 +32,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --with-extra-libs=${LOCALBASE}/lib
-CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include
-CONFIGURE_ARGS+= --disable-mt
+CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include/libpng:${LOCALBASE}/include
 CONFIGURE_ENV=	KDEDIR=${LOCALBASE} 
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
