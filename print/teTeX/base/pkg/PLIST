@@ -358,7 +358,6 @@ share/texmf/web2c/tex.log
 @exec mv %D/share/texmf/web2c/texmf.cnf %D/share/texmf/web2c/texmf.cnf.old
 share/texmf/web2c/texmf.cnf
 @unexec mv %D/share/texmf/web2c/texmf.cnf.old %D/share/texmf/web2c/texmf.cnf
-@unexec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
 bin/mktexlsr
 @exec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
 @dirrm include/kpathsea
