@@ -3,7 +3,7 @@
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.15 1998/04/03 01:24:49 marc Exp $
+# $OpenBSD: Makefile,v 1.16 1998/04/03 02:33:02 marc Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -70,26 +70,29 @@ MAN8=		sshd.8
 
 pre-patch:
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-	@cp ${FILESDIR}/patch-rsaref2 ${PATCHDIR}
+	@${CP} ${FILESDIR}/patch-rsaref2 ${PATCHDIR}
 .endif
 	@${MV} -f ${WRKSRC}/make-ssh-known-hosts.pl \
 	    ${WRKSRC}/make-ssh-known-hosts.pl.in
 
 post-patch:
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-	@rm ${PATCHDIR}/patch-rsaref2
+	@${RM} ${PATCHDIR}/patch-rsaref2
 .endif
 
 fetch-depends:
 .if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
 	@${ECHO}
 	@${ECHO} You must set variable USA_RESIDENT to YES if you are a USA
-	@${ECHO} resident or NO otherwise.
-	@${ECHO} If you are a USA resident you have to get the RSAREF2
-	@${ECHO} library \(RSA Inc. holds a patent on RSA and public key
-	@${ECHO} cypto in general - using RSA implementations other than
-	@${ECHO} RSAREF will violate the US patent law\)
-	@${ECHO} and extract it to ${WRKSRC}.
+	@${ECHO} resident or NO otherwise.  USA residents must obtain the
+	@${ECHO} RSAREF2 library to generate this program.  \(RSA Inc. holds
+	@${ECHO} a patent on RSA and public key cypto in general - using RSA
+	@${ECHO} implementations other than RSAREF will violate the US patent
+	@${ECHO} law\).
+	@${ECHO} ""
+	@${ECHO} RSAREF2 will be automatically obtained and used to generate
+	@${ECHO} this program when given the command \"make USA_RESIDENT=YES\"
+	@${ECHO} ""
 	@${FALSE}
 .endif
 
