@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 1998/05/19 04:38:38 angelos Exp $
+# $OpenBSD: Makefile,v 1.16 1998/05/19 06:19:50 angelos Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -8,22 +8,22 @@
      SUBDIR += Xaw3d
      SUBDIR += afterstep
 #    SUBDIR += amiwm
-#    SUBDIR += asclock
+     SUBDIR += asclock
 #    SUBDIR += asfiles
 #    SUBDIR += auis
      SUBDIR += bclock
      SUBDIR += blast
 #    SUBDIR += blt
-#    SUBDIR += bricons
+     SUBDIR += bricons
 #    SUBDIR += camltk41
      SUBDIR += ctwm
 #    SUBDIR += dclock
-#    SUBDIR += emiclock
+     SUBDIR += emiclock
 #    SUBDIR += emu
 #    SUBDIR += enlightenment
 #    SUBDIR += eterm
 #    SUBDIR += etlfonts
-#    SUBDIR += explorer
+     SUBDIR += explorer
 #    SUBDIR += fbsd-icons
 #    SUBDIR += filerunner
      SUBDIR += freefonts
@@ -42,9 +42,9 @@
      SUBDIR += lesstif
 #    SUBDIR += libdnd
 #    SUBDIR += libsx
-#    SUBDIR += lupe
+     SUBDIR += lupe
 #    SUBDIR += mlvwm
-#    SUBDIR += mouseclock
+     SUBDIR += mouseclock
 #    SUBDIR += neXtaw
 #    SUBDIR += olvwm
 #    SUBDIR += p5-Tcl-Tk
@@ -53,8 +53,8 @@
 #    SUBDIR += pythonqt
      SUBDIR += qt
 #    SUBDIR += qvwm
-#    SUBDIR += rclock
-#    SUBDIR += rxvt
+     SUBDIR += rclock
+     SUBDIR += rxvt
      SUBDIR += sliderule
 #    SUBDIR += slingshot
      SUBDIR += swisswatch
@@ -73,7 +73,7 @@
      SUBDIR += wm2
 #    SUBDIR += x3270
 #    SUBDIR += xalarm
-#    SUBDIR += xaniroc
+     SUBDIR += xaniroc
      SUBDIR += xantfarm
      SUBDIR += xautolock
 #    SUBDIR += xbuffy
@@ -82,11 +82,11 @@
 #    SUBDIR += xcoloredit
 #    SUBDIR += xcolors
      SUBDIR += xdaliclock
-#    SUBDIR += xdtm
+     SUBDIR += xdtm
 #    SUBDIR += xfce
      SUBDIR += xfed
-#    SUBDIR += xfedor
-#    SUBDIR += xfishtank
+     SUBDIR += xfedor
+     SUBDIR += xfishtank
      SUBDIR += xfm
 #    SUBDIR += xforms
      SUBDIR += xgrab
