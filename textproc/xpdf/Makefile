@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2003/02/12 08:28:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.33 2003/05/20 00:37:10 brad Exp $
 
 COMMENT=	"PDF viewer for X"
 
-DISTNAME=	xpdf-2.01
+DISTNAME=	xpdf-2.02
 CATEGORIES=	textproc x11
 
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
