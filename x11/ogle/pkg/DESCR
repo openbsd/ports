@@ -14,11 +14,19 @@ and a sound card with 48KHz output (ATI card owners
 may wish to use the ATI-4.1.0.i386.tgz package)
 You can check your display Xvideo capabilities with
 xdpyinfo (presence of the Xvideo extension) and
-xvinfo (presence of an adapter with YUV capabilities).
-
+xvinfo (presence of an adapter with correct YUV 
+capabilities).
+A positive test will usually look like:
+xvinfo
+    Number of image formats: 4
+	...
+      id: 0x32315659 (YV12)
+        guid: 59563132-0000-0010-8000-00aa00389b71
+	...
+which is the encoding that ogle is looking for.
 
 Alternately, at the expense of more cpu power,
-ogle can also use systemV shared memory, but the
+ogle can also use SystemV shared memory, but the
 shared memory requirements exceed GENERIC parameters.
 You will need to crank them up. Configure a kernel with
 option 	SHMMAXPGS=4096
@@ -33,7 +41,12 @@ Overall, ogle needs about 50% cpu for full-framerate decoding
 on a PIII700 with an ATI Mach64 Mobility and an ESS 
 Maestro 2.
 
-If Xvideo YUV is not available, ogle roughly needs 100% cpu
-on the same machine, and full screen rescale is not available.
+If Xvideo YV12 is not available, ogle roughly needs 120% cpu
+on the same machine in 24 bits mode, and full screen rescale 
+is not available.  On i386, it's highly recommended to go 
+to a 16 bits mode, where MMX acceleration code exists (requirements
+go down to 70% cpu). 
+If you can, you may also wish to add several `non-standard' 
+modes to your XF86Config. The most useful being 720x576.
 
 WWW: ${HOMEPAGE}
