@@ -12,11 +12,9 @@ ${PREFIX}/lib/X11/fonts/hack to your fontpath, see xset(1) and Xserver(1), also
 - the tty with colors mode expects a black background and white foreground to 
 run properly, e.g., xterm -fg white -bg black
 
-- nethack and slash actually share fonts, so be careful while installing or
-removing the package. Sorry about that.
-
-- Marc
-espie@cvs.openbsd.org
+Flavors:
+no_x11
+	includes only the tty interface
 
 P.S. This is a very addictive game, with its whole wacky culture. And even
    a newsgroup dedicated to it (rec.games.roguelike.nethack). Don't say we

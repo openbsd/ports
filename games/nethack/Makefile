@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/10 00:40:32 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/12/26 23:29:26 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 DISTNAME=	nethack-3.3.0
@@ -23,19 +23,19 @@ FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
 NHDIR=	${DESTDIR}${PREFIX}/lib/nethackdir
 MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
 
-FLAVORS=X11 qt
+FLAVORS=no_x11 qt
 # Old text interface
 FLAVOR?=
 
-.if ${FLAVOR:U} == "X11"
-NETHACKCONFIG=${FILESDIR}/x-config
-USE_X11=	Yes
-.elif ${FLAVOR:U} == "QT"
+.if ${FLAVOR:L} == "no_x11"
+NETHACKCONFIG=${FILESDIR}/simple-config
+.elif ${FLAVOR:L} == "qt"
 NETHACKCONFIG=${FILESDIR}/qt-config
 PORTPATH=${LOCALBASE}/lib/qt2/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin
 LIB_DEPENDS=qt.2.::x11/qt2
 .else
-NETHACKCONFIG=${FILESDIR}/simple-config
+NETHACKCONFIG=${FILESDIR}/x-config
+USE_X11=	Yes
 .endif
 
 RUN_DEPENDS=${LOCALBASE}/share/doc/nethack/Guidebook.txt::games/hackdata

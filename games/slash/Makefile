@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/10/10 00:40:33 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/12/26 23:29:26 espie Exp $
 
 DISTNAME=	slash-e8
 PKGNAME=	slash-3.2.2-e8
@@ -29,15 +29,15 @@ FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
 NHDIR=	${DESTDIR}${PREFIX}/lib/slashdir
 MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
 
-FLAVORS=X11
+FLAVORS=no_x11
 # Old text interface
 FLAVOR?=
 
-.if ${FLAVOR:U} == "X11"
+.if ${FLAVOR:L} == "no_x11"
+NETHACKCONFIG=${FILESDIR}/simple-config
+.else
 NETHACKCONFIG=${FILESDIR}/x-config
 USE_X11=	Yes
-.else
-NETHACKCONFIG=${FILESDIR}/simple-config
 .endif
 
 RUN_DEPENDS=${LOCALBASE}/share/doc/nethack/Guidebook.txt::games/hackdata
