@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/08 06:15:37 dugsong Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 12:08:58 espie Exp $
+@fontdir lib/X11/fonts/korean/
 lib/X11/fonts/korean/batang10.pcf.gz
 lib/X11/fonts/korean/batang10b.pcf.gz
 lib/X11/fonts/korean/batang12.pcf.gz
@@ -42,9 +43,3 @@ lib/X11/fonts/korean/hline16.pcf.gz
 lib/X11/fonts/korean/hline18.pcf.gz
 lib/X11/fonts/korean/hline20.pcf.gz
 lib/X11/fonts/korean/hline24.pcf.gz
-@exec cat %B/fonts.alias-* >%B/fonts.alias
-@exec echo "Remember to add %B to your font path."
-@exec /usr/X11R6/bin/mkfontdir %B || true
-@unexec cat %B/fonts.alias-* >%B/fonts.alias
-@unexec /usr/X11R6/bin/mkfontdir %B || true
-@unexec echo "Remove %B manually if it's now empty"
