@@ -13,14 +13,14 @@ manipulation procedures and other functionality to be easily added
 without requiring any change to the application core.  A plug-in can
 provide functionality as simple as rotating an image, or as
 complicated as rendering iterated function system fractals.  There are
-nearly 150 plug-ins available in version 1.0, and more are sure to
+nearly 140 plug-ins available in version 1.1, and more are sure to
 follow.
 
 The plug-in architecture also allows the GIMP to support a wide
 variety of file formats.  File operations are implemented by special
 file plug-ins, allowing additional file formats to be added
 without modification to the core.  File formats supported in version
-1.0 include the popular GIF and JPEG standards, as well as PNG, TIFF,
+1.1 include the popular GIF and JPEG standards, as well as PNG, TIFF,
 XPM, SGI, PCX, and Windows BMP.
 
 The GIMP's home page is at 

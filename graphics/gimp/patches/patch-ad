@@ -1,0 +1,11 @@
+--- docs/Makefile.in.orig	Wed Mar 17 02:15:50 1999
++++ docs/Makefile.in	Wed Mar 17 02:15:33 1999
+@@ -130,7 +130,7 @@
+ LT_REVISION = @LT_REVISION@
+ MAILER = @MAILER@
+ MAINT = @MAINT@
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+ MPEG = @MPEG@
+ MSGFMT = @MSGFMT@

@@ -1,47 +1,16 @@
---- configure.~1~	Tue Jun  2 16:42:47 1998
-+++ configure	Thu Jun 25 17:25:45 1998
-@@ -4218,7 +4218,7 @@
-   ;;
-   *)
-   IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS="${IFS}:"
--  for ac_dir in $PATH:/usr/lib:/usr/sbin$ac_dummy; do
-+  for ac_dir in $PATH /usr/lib /usr/sbin $ac_dummy; do
-     test -z "$ac_dir" && ac_dir=.
-     if test -f $ac_dir/$ac_word; then
-       ac_cv_path_SENDMAIL="$ac_dir/$ac_word"
-@@ -4264,7 +4264,7 @@
-   ;;
-   *)
-   IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS="${IFS}:"
--  for ac_dir in $PATH:/usr/bin:/usr/sbin:/usr/ucb:/usr/bsd$ac_dummy; do
-+  for ac_dir in $PATH /usr/bin /usr/sbin /usr/ucb /usr/bsd $ac_dummy; do
-     test -z "$ac_dir" && ac_dir=.
-     if test -f $ac_dir/$ac_word; then
-       ac_cv_path_LP_COMMAND="$ac_dir/$ac_word"
-@@ -4310,7 +4310,7 @@
-   ;;
-   *)
-   IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS="${IFS}:"
--  for ac_dir in $PATH:/usr/bin:/usr/sbin:/usr/ucb:/usr/bsd$ac_dummy; do
-+  for ac_dir in $PATH /usr/bin /usr/sbin /usr/ucb /usr/bsd $ac_dummy; do
-     test -z "$ac_dir" && ac_dir=.
-     if test -f $ac_dir/$ac_word; then
-       ac_cv_path_LPSTAT_COMMAND="$ac_dir/$ac_word"
-@@ -4356,7 +4355,7 @@
-   ;;
-   *)
-   IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS="${IFS}:"
--  for ac_dir in $PATH:/usr/bin:/usr/sbin:/usr/ucb:/usr/bsd$ac_dummy; do
-+  for ac_dir in $PATH /usr/bin /usr/sbin /usr/ucb /usr/bsd $ac_dummy; do
-     test -z "$ac_dir" && ac_dir=.
-     if test -f $ac_dir/$ac_word; then
-       ac_cv_path_LPR_COMMAND="$ac_dir/$ac_word"
-@@ -4402,7 +4401,7 @@
-   ;;
-   *)
-   IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS="${IFS}:"
--  for ac_dir in $PATH:/usr/bin:/usr/sbin:/usr/ucb:/usr/bsd$ac_dummy; do
-+  for ac_dir in $PATH /usr/bin /usr/sbin /usr/ucb /usr/bsd $ac_dummy; do
-     test -z "$ac_dir" && ac_dir=.
-     if test -f $ac_dir/$ac_word; then
-       ac_cv_path_LPC_COMMAND="$ac_dir/$ac_word"
+--- libgimp/Makefile.in.orig	Wed Mar 17 02:44:25 1999
++++ libgimp/Makefile.in	Wed Mar 17 02:45:24 1999
+@@ -188,11 +188,11 @@
+ gimpinclude_HEADERS =  	color_selector.h		gimp.h				gimpchainbutton.h		gimpenums.h			gimpenv.h			gimpfeatures.h			gimpmatrix.h			gimpmenu.h			gimpmodule.h			gimpsizeentry.h			gimpui.h			gimpunit.h              	gimpunitmenu.h          	gimpintl.h			gserialize.h			parasite.h			parasiteF.h			parasiteP.h
+ 
+ 
+-libgimp_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE)
++libgimp_la_LDFLAGS =  	-version-info 1:3:0
+ 
+ libgimp_la_LIBADD = $(GLIB_LIBS) -lm
+ 
+-libgimpui_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE)
++libgimpui_la_LDFLAGS =  	-version-info 1:3:0
+ 
+ libgimpui_la_LIBADD = $(GTK_LIBS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
