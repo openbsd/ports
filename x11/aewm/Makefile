@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/10/08 17:13:15 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/10/03 18:13:00 jcs Exp $
 
 DISTNAME=	aewm-1.2.0
 CATEGORIES=	x11
@@ -13,8 +13,6 @@ COMMENT=	"minimalistic window manager for X11"
 HOMEPAGE=	http://www.red-bean.com/~decklin/aewm/
 MASTER_SITES=	${HOMEPAGE} \
 		ftp://rt.fm/pub/aewm/
-
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 USE_GMAKE=	Yes
 USE_X11=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/09/15 19:26:30 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2004/10/03 18:13:00 jcs Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -19,8 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 HOMEPAGE=	http://www.gtkperl.org/
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Gtk/}
-
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 USE_X11=	Yes
 
