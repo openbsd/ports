@@ -1,0 +1,36 @@
+$OpenBSD: patch-cfg_configure,v 1.1.1.1 2001/04/16 21:33:10 jakob Exp $
+
+--- cfg/configure.orig	Fri Feb 18 21:45:03 2000
++++ cfg/configure	Mon Apr 16 23:22:01 2001
+@@ -581,6 +581,7 @@ fi
+ 
+ OLD_CFLAGS="$CFLAGS"
+ 
++ac_cv_prog_CC=gcc
+ if test -n "$ac_cv_prog_CC"; then
+   echo "Using cached C compiler $ac_cv_prog_CC"
+   echo "To change compilers, use \"make distclean\" then rerun configure"
+@@ -793,6 +794,7 @@ fi
+ 
+ OLD_CXXFLAGS="$CXXFLAGS"
+ 
++ac_cv_prog_CXX=g++
+ if test -n "$ac_cv_prog_CXX"; then
+   echo "Using cached C++ compiler $ac_cv_prog_CXX"
+   echo "To change compilers, use \"make distclean\" then rerun configure"
+@@ -998,14 +1000,7 @@ fi
+ echo
+ 
+ 
+-if test -z "$ac_cv_use_pthread"; then
+-  ac_cv_use_pthread="yes"
+-fi
+-echo "Make iperf multi-threaded (using pthreads)? [$ac_cv_use_pthread] "
+-read tmp
+-if test -n "$tmp"; then  
+-  ac_cv_use_pthread="$tmp"
+-fi
++ac_cv_use_pthread="no"
+ 
+ 
+ if test "$ac_cv_use_pthread" = yes ; then
