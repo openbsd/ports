@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/05/29 11:12:16 sturm Exp $
+$OpenBSD: patch-configure,v 1.2 2003/05/29 16:02:32 sturm Exp $
 --- configure.orig	Wed Feb  5 00:10:32 2003
-+++ configure	Thu May 29 12:57:37 2003
++++ configure	Thu May 29 13:45:13 2003
 @@ -3360,7 +3360,7 @@ done
  
  
@@ -10,6 +10,17 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/05/29 11:12:16 sturm Exp $
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  if eval "test \"\${$as_ac_Header+set}\" = set"; then
+@@ -3956,8 +3956,8 @@ fi;
+       echo "$as_me:$LINENO: result: debug" >&5
+ echo "${ECHO_T}debug" >&6
+    else
+-      CFLAGS="-O2 -Wall"
+-      CXXFLAGS="-O2 -Wall"
++      # CFLAGS="-O2 -Wall"
++      # CXXFLAGS="-O2 -Wall"
+       echo "$as_me:$LINENO: result: release" >&5
+ echo "${ECHO_T}release" >&6
+    fi
 @@ -4101,7 +4101,6 @@ EOF
  echo "${ECHO_T}\"using Default platform.h\"" >&6
        cat >platform.h <<EOF
