@@ -1,21 +1,16 @@
-$OpenBSD: patch-Make_rules_in,v 1.1.1.1 2005/01/17 00:25:38 jcs Exp $
+$OpenBSD: patch-Make_rules_in,v 1.2 2005/03/11 19:47:50 jcs Exp $
 --- Make.rules.in.orig	Wed Feb 25 05:40:29 2004
-+++ Make.rules.in	Sun Jan 16 18:16:16 2005
-@@ -17,7 +17,7 @@ PACKAGE =	@PACKAGE@
++++ Make.rules.in	Fri Mar 11 11:36:39 2005
+@@ -17,10 +17,10 @@
  VERSION =	@VERSION@
  
  # Various directories gleaned from `configure'
 -PREFIX =	@prefix@
-+#PREFIX =	@prefix@
++# PREFIX =	@prefix@
  # Grrr... Freakin' capitalization!
  prefix =	${PREFIX}
- PERL_PREFIX =	@PERL_PREFIX@
-@@ -29,7 +29,7 @@ LIBEXECDIR =	@libexecdir@
- CONDUITDIR =	@CONDUITDIR@
- DATADIR =	@datadir@
- LOCALEDIR =	${DATADIR}/locale
--SYSCONFDIR =	@sysconfdir@
-+#SYSCONFDIR =	@sysconfdir@
- LIBDIR =	@libdir@
- INCLUDEDIR =	@includedir@
- INFODIR =	@infodir@
+-PERL_PREFIX =	@PERL_PREFIX@
++PERL_PREFIX =	${TRUEPREFIX}
+ # GNU 'configure'-ism
+ exec_prefix =	@exec_prefix@
+ BINDIR =	@bindir@

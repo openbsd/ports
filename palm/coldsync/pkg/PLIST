@@ -1,6 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/17 00:25:38 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/03/11 19:47:50 jcs Exp $
 bin/coldsync
 @info info/conduits.info
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.6/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.6/perllocal.pod
+libdata/perl5/site_perl/ColdSync/
+libdata/perl5/site_perl/ColdSync.pm
+libdata/perl5/site_perl/ColdSync/PDB.pm
+libdata/perl5/site_perl/ColdSync/SPC/
+libdata/perl5/site_perl/ColdSync/SPC.pm
+libdata/perl5/site_perl/ColdSync/SPC/ExpSlot.pm
+libdata/perl5/site_perl/ColdSync/SPC/VFS.pm
 libexec/coldsync/
 libexec/coldsync/copy-appinfo
 libexec/coldsync/mbox-inbox
@@ -88,6 +98,11 @@ libexec/coldsync/todo-text
 @man man/man3/time_dlp2time_t.3
 @man man/man3/time_palmtime2dlp.3
 @man man/man3/time_time_t2dlp.3
+@man man/man3p/ColdSync.3p
+@man man/man3p/ColdSync::PDB.3p
+@man man/man3p/ColdSync::SPC.3p
+@man man/man3p/ColdSync::SPC::ExpSlot.3p
+@man man/man3p/ColdSync::SPC::VFS.3p
 @man man/man8/coldsync.8
 sbin/coldnamed
 share/examples/coldsync/
