@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/11/12 08:07:52 grange Exp $
+# $OpenBSD: Makefile,v 1.28 2005/01/14 18:04:40 todd Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR += birda
@@ -21,6 +21,7 @@
      SUBDIR += p5-Device-Gsm
      SUBDIR += p5-Device-Modem
      SUBDIR += p5-Device-SerialPort
+     SUBDIR += p5-SendPage
      SUBDIR += qpage
      SUBDIR += scmxx
      SUBDIR += seyon
