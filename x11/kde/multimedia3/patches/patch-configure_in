@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.2 2002/05/23 14:37:22 espie Exp $
---- configure.in.orig	Mon Mar 25 00:12:29 2002
-+++ configure.in	Sat Apr 20 14:57:26 2002
+$OpenBSD: patch-configure_in,v 1.3 2002/06/04 09:52:45 espie Exp $
+--- configure.in.orig	Tue May 14 02:52:35 2002
++++ configure.in	Thu May 30 17:30:44 2002
 @@ -1070,7 +1070,7 @@ dnl    else
  dnl      lib_xaw_opt=-lXaw
  dnl    fi
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.2 2002/05/23 14:37:22 espie Exp $
  dnl    if test "x$have_xext" = xyes; then
  dnl      a_so_libs="-lXext -lX11"
  dnl    else
-@@ -1222,7 +1223,7 @@ dnl this does not work, but to have no e
+@@ -1223,7 +1223,7 @@ dnl this does not work, but to have no e
  
  dnl Checks for header files.
  AC_CHECK_HEADERS(pthread.h pthread/mit/pthread.h)
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_in,v 1.2 2002/05/23 14:37:22 espie Exp $
  
  
  AC_C_BIGENDIAN
-@@ -1400,8 +1401,13 @@ AC_MSG_RESULT($OS_TYPE)
+@@ -1401,8 +1401,13 @@ AC_MSG_RESULT($OS_TYPE)
  
  case "$ARCH_TYPE" in
    i?86)
@@ -35,7 +35,7 @@ $OpenBSD: patch-configure_in,v 1.2 2002/05/23 14:37:22 espie Exp $
      ;; 
  
    *)
-@@ -1416,6 +1422,9 @@ case "$OS_TYPE" in
+@@ -1417,6 +1422,9 @@ case "$OS_TYPE" in
    FreeBSD)
      kde_mpeglib_compiles=yes
      ;;
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure_in,v 1.2 2002/05/23 14:37:22 espie Exp $
    Linux)
      kde_mpeglib_compiles=yes
      ;;
-@@ -1443,6 +1452,12 @@ case "$OS_TYPE" in
+@@ -1444,6 +1452,12 @@ case "$OS_TYPE" in
    Linux)
      AC_CHECK_LIB(pthread, pthread_create, [LIBPTHREAD="-lpthread"])
      AC_DEFINE(OS_Linux,1,[Define if you have linux pthread])
