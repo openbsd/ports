@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2001/05/11 01:16:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.101 2001/05/18 12:44:44 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -99,6 +99,7 @@
      SUBDIR += ttmkfdir
      SUBDIR += tvtwm
 #    SUBDIR += tycoon
+     SUBDIR += unclutter
      SUBDIR += viewfax
      SUBDIR += windowmaker
      SUBDIR += windowmaker-extra
