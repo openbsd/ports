@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_ltmain_sh,v 1.1 2004/02/16 11:08:48 kevlo Exp $
---- config/ltmain.sh.orig	2002-09-03 14:59:59.000000000 +0000
-+++ config/ltmain.sh	2004-02-16 18:26:29.000000000 +0000
+$OpenBSD: patch-config_ltmain_sh,v 1.2 2004/07/09 15:07:07 kevlo Exp $
+--- config/ltmain.sh.orig	Fri Jul  9 17:17:16 2004
++++ config/ltmain.sh	Fri Jul  9 17:21:00 2004
 @@ -1093,6 +1093,17 @@ compiler."
  	    deplibs="$deplibs -framework System"
  	    continue
@@ -9,8 +9,8 @@ $OpenBSD: patch-config_ltmain_sh,v 1.1 2004/02/16 11:08:48 kevlo Exp $
 +	    # Do not include libc due to us having libc/libc_r.
 +	    continue
 +	    ;;
-+	  esac
-+	elif test "$arg" = "-lc_r"; then
++          esac
++        elif test "$arg" = "-lc_r"; then
 +	  case "$host" in
 +	  *-*-openbsd*)
 +	    # Do not include libc_r directly, use -pthread flag.
@@ -28,10 +28,10 @@ $OpenBSD: patch-config_ltmain_sh,v 1.1 2004/02/16 11:08:48 kevlo Exp $
 +	*-*-openbsd*)
 +	  deplibs="$deplibs $arg"
 +	  ;;
-+	*)
++        *)
 +	  continue
 +	  ;;
-+	esac
++        esac
 +	;;
 +
        -module)
@@ -41,13 +41,13 @@ $OpenBSD: patch-config_ltmain_sh,v 1.1 2004/02/16 11:08:48 kevlo Exp $
  	  # Rhapsody C library is in the System framework
  	  deplibs="$deplibs -framework System"
  	  ;;
-+	*-*-openbsd*)
++        *-*-openbsd*)
 +	  # Do not include libc due to us having libc/libc_r.
 +	  ;;
  	*)
  	  # Add libc to deplibs on all other systems.
  	  deplibs="$deplibs -lc"
-@@ -3596,40 +3621,6 @@ libdir='$install_libdir'\
+@@ -3601,40 +3626,6 @@ libdir='$install_libdir'\
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  

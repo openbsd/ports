@@ -1,104 +1,57 @@
-$OpenBSD: patch-saslauthd_configure,v 1.6 2003/06/26 18:20:20 jakob Exp $
---- saslauthd/configure.orig	Mon Apr 14 20:07:50 2003
-+++ saslauthd/configure	Thu Jun 26 00:07:37 2003
-@@ -1603,7 +1603,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lresolv  $LIBS"
-+#LIBS="-lresolv  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 1609 "configure"
- #include "confdefs.h"
-@@ -2329,7 +2329,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lresolv  $LIBS"
-+#LIBS="-lresolv  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 2335 "configure"
- #include "confdefs.h"
-@@ -2363,7 +2363,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
- #define $ac_tr_lib 1
- EOF
+$OpenBSD: patch-saslauthd_configure,v 1.7 2004/07/09 15:07:07 kevlo Exp $
+--- saslauthd/configure.orig	Wed Mar 10 15:56:16 2004
++++ saslauthd/configure	Fri Jul  9 16:30:17 2004
+@@ -753,10 +753,10 @@ ac_env_CC_set=${CC+set}
+ ac_env_CC_value=$CC
+ ac_cv_env_CC_set=${CC+set}
+ ac_cv_env_CC_value=$CC
+-ac_env_CFLAGS_set=${CFLAGS+set}
+-ac_env_CFLAGS_value=$CFLAGS
+-ac_cv_env_CFLAGS_set=${CFLAGS+set}
+-ac_cv_env_CFLAGS_value=$CFLAGS
++# ac_env_CFLAGS_set=${CFLAGS+set}
++# ac_env_CFLAGS_value=$CFLAGS
++# ac_cv_env_CFLAGS_set=${CFLAGS+set}
++# ac_cv_env_CFLAGS_value=$CFLAGS
+ ac_env_LDFLAGS_set=${LDFLAGS+set}
+ ac_env_LDFLAGS_value=$LDFLAGS
+ ac_cv_env_LDFLAGS_set=${LDFLAGS+set}
+@@ -5995,6 +5995,9 @@ fi;
+       *-*-aix*)
+         platform=__aix
+         ;;
++      *-*-openbsd*)
++	platform=__openbsd
++	;;
+       *)
+         { echo "$as_me:$LINENO: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&5
+ echo "$as_me: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&2;}
+@@ -6004,7 +6007,7 @@ echo "$as_me: WARNING: The system type i
+     cmu_saved_CPPFLAGS=$CPPFLAGS
  
--  LIBS="-lresolv $LIBS"
-+  #LIBS="-lresolv $LIBS"
- 
+     if test -d ${gssapi}; then
+-       CPPFLAGS="$CPPFLAGS -I$gssapi/include"
++       CPPFLAGS="$CPPFLAGS -I$gssapi/include/kerberosV"
+ # We want to keep -I in our CPPFLAGS, but only if we succeed
+        cmu_saved_CPPFLAGS=$CPPFLAGS
+        LDFLAGS="$LDFLAGS -L$gssapi/lib"
+@@ -6385,7 +6388,7 @@ if test "${ac_cv_lib_gssapi_gss_unwrap+s
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   echo "$ac_t""no" 1>&6
-@@ -2926,7 +2926,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lresolv  $LIBS"
-+#LIBS="-lresolv  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 2932 "configure"
- #include "confdefs.h"
-@@ -2960,7 +2960,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
- #define $ac_tr_lib 1
- EOF
- 
--  LIBS="-lresolv $LIBS"
-+  #LIBS="-lresolv $LIBS"
- 
- else
-   echo "$ac_t""no" 1>&6
-@@ -2988,7 +2988,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} -lcom_err $LIBS"
-+LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} -lcom_err $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 2994 "configure"
- #include "confdefs.h"
-@@ -3026,8 +3026,8 @@ fi
-      GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
-      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
++LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -6734,8 +6737,8 @@ fi
+     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
+     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
    elif test "$gss_impl" = "heimdal"; then
--     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} -lcom_err"
--     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
-+     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} -lcom_err"
-+     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
-   else
-      gssapi="no"
-      echo "configure: warning: Disabling GSSAPI" 1>&2
-@@ -3080,7 +3080,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lresolv  $LIBS"
-+#LIBS="-lresolv  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 3086 "configure"
- #include "confdefs.h"
-@@ -3108,7 +3108,7 @@ LIBS="$ac_save_LIBS"
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lresolv"
-+  #GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lresolv"
- else
-   echo "$ac_t""no" 1>&6
- fi
-@@ -4352,7 +4352,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lresolv  $LIBS"
-+#LIBS="-lresolv  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 4358 "configure"
- #include "confdefs.h"
-@@ -4386,7 +4386,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
- #define $ac_tr_lib 1
- EOF
- 
--  LIBS="-lresolv $LIBS"
-+  #LIBS="-lresolv $LIBS"
- 
- else
-   echo "$ac_t""no" 1>&6
+-    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err"
+-    GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
++    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} ${LIB_DES} -lcom_err"
++    GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libcrypto.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
+   elif test "$gss_impl" = "cybersafe03"; then
+ # Version of CyberSafe with two libraries
+     CPPFLAGS="$CPPFLAGS -D$platform -I${gssapi}/appsec-sdk/include"

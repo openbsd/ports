@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_ltconfig,v 1.2 2004/06/01 22:00:47 brad Exp $
---- config/ltconfig.orig	2002-09-05 19:21:12.000000000 +0000
-+++ config/ltconfig	2004-02-16 18:26:29.000000000 +0000
+$OpenBSD: patch-config_ltconfig,v 1.3 2004/07/09 15:07:07 kevlo Exp $
+--- config/ltconfig.orig	Thu Jun 12 00:32:43 2003
++++ config/ltconfig	Fri Jul  9 18:01:14 2004
 @@ -501,7 +501,14 @@ fi
  
  if test -n "$RANLIB"; then
@@ -28,7 +28,7 @@ $OpenBSD: patch-config_ltconfig,v 1.2 2004/06/01 22:00:47 brad Exp $
  esac
  
  ld_shlibs=yes
-@@ -1417,10 +1426,31 @@ else
+@@ -1428,10 +1437,31 @@ else
      ;;
  
    openbsd*)
@@ -53,18 +53,18 @@ $OpenBSD: patch-config_ltconfig,v 1.2 2004/06/01 22:00:47 brad Exp $
 +	  archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
 +	  hardcode_libdir_flag_spec='-R$libdir'
 +	  ;;
-+	*)
++        *)
 +	  archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
 +	  hardcode_libdir_flag_spec='${wl}-R$libdir'
 +	  ;;
-+	esac
++        esac
 +      fi
 +      ;;
 +    esac
      ;;
  
    os2*)
-@@ -2051,9 +2081,25 @@ netbsd*)
+@@ -2062,9 +2092,25 @@ netbsd*)
  
  openbsd*)
    version_type=sunos

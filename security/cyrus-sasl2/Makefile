@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2004/02/17 03:26:02 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2004/07/09 15:07:04 kevlo Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
-DISTNAME=	cyrus-sasl-2.1.13
+DISTNAME=	cyrus-sasl-2.1.18
 CATEGORIES=     security
 
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -17,31 +17,41 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config ${WRKSRC}/saslauthd/config
-
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS='${LDFLAGS}'
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
-CONFIGURE_ARGS+=	--with-saslauthd="/var/sasl2" \
-			--with-staticsasl \
-			--enable-login \
-			--enable-gssapi="/usr" \
-			--disable-sample
-CFLAGS+=		-I/usr/include/kerberosV
+CONFIGURE_ARGS+= --with-saslauthd="/var/sasl2" \
+		 --enable-gssapi="/usr" \
+		 --with-gss_impl="heimdal" \
+		 --enable-login \
+		 --enable-static \
+		 --disable-sample
 
-FLAVORS=	db4
+FLAVORS=	db4 sql ldap
 FLAVOR?=
 
-.if ${FLAVOR:L} == "db4"
-CONFIGURE_ARGS+=	--with-dblib=berkeley \
-			--with-bdb-libdir="${LOCALBASE}/lib/db4" \
-			--with-bdb-incdir="${LOCALBASE}/include/db4"
-LIB_DEPENDS=		lib/db4/db.4::databases/db/v4
+.if ${FLAVOR:L:Mdb4}
+CONFIGURE_ARGS+=        --with-dblib=berkeley \
+                        --with-bdb-libdir="${LOCALBASE}/lib/db4" \
+                        --with-bdb-incdir="${LOCALBASE}/include/db4"
+LIB_DEPENDS=            lib/db4/db.4::databases/db/v4
 .else
 CONFIGURE_ARGS+=	--with-dblib=ndbm \
-			--without-bdb-libdir \
-			--without-bdb-incdir
+                        --without-bdb-libdir \
+                        --without-bdb-incdir
+.endif
+
+.if ${FLAVOR:L:Msql}
+LIB_DEPENDS+=	lib/mysql/mysqlclient.10::databases/mysql
+CONFIGURE_ARGS+=        --with-mysql \
+			--without-pgsql \
+			--enable-sql
+.endif
+ 
+.if ${FLAVOR:L:Mldap}
+LIB_DEPENDS+=           ldap.2,lber:openldap-client-2.*:databases/openldap
+CONFIGURE_ARGS+=        --with-ldap
 .endif
 
 post-build:
@@ -55,3 +65,9 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/saslauthd/testsaslauthd ${PREFIX}/sbin
 
 .include <bsd.port.mk>
+
+.if ${FLAVOR:L:Msql} && !defined(NO_SHARED_LIBS)
+SED_PLIST+=-e '/%%SHARED-sql%%/r${PKGDIR}/PFRAG.sql.shared' -e '//d'
+.elif ${FLAVOR:L:Msql}
+SED_PLIST+=-e '/%%SHARED-sql%%/d'
+.endif

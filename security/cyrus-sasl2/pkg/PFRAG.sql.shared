@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.sql.shared,v 1.1 2004/07/09 15:07:11 kevlo Exp $
+lib/sasl2/libsql.so.2.18

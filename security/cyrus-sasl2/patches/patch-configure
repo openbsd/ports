@@ -1,122 +1,123 @@
-$OpenBSD: patch-configure,v 1.5 2003/06/26 18:20:20 jakob Exp $
---- configure.orig	Mon Apr 14 20:07:48 2003
-+++ configure	Wed Jun 25 23:50:09 2003
-@@ -2442,7 +2442,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
-   echo $ac_n "(cached) $ac_c" 1>&6
+$OpenBSD: patch-configure,v 1.6 2004/07/09 15:07:07 kevlo Exp $
+--- configure.orig	Wed Mar 10 15:56:10 2004
++++ configure	Fri Jul  9 16:30:17 2004
+@@ -4524,7 +4524,7 @@ if test "${ac_cv_lib_resolv_res_search+s
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lresolv  $LIBS"
-+#LIBS="-lresolv  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 2448 "configure"
- #include "confdefs.h"
-@@ -4797,7 +4797,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
-   echo $ac_n "(cached) $ac_c" 1>&6
++ #LIBS="-lresolv  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -9010,7 +9010,7 @@ if test "${ac_cv_lib_resolv_res_search+s
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lresolv  $LIBS"
-+#LIBS="-lresolv  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 4803 "configure"
- #include "confdefs.h"
-@@ -4831,7 +4831,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
- #define $ac_tr_lib 1
- EOF
++ #LIBS="-lresolv  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -9063,7 +9063,7 @@ if test $ac_cv_lib_resolv_res_search = y
+ #define HAVE_LIBRESOLV 1
+ _ACEOF
  
 -  LIBS="-lresolv $LIBS"
 +  #LIBS="-lresolv $LIBS"
  
- else
-   echo "$ac_t""no" 1>&6
-@@ -5149,7 +5149,7 @@ EOF
- #define HAVE_KRB 1
- EOF
+ fi
  
--    SASL_KRB_LIB="$SASL_KRB_LIB $LIB_DES $COM_ERR"
-+    SASL_KRB_LIB="$SASL_KRB_LIB $LIB_DES"
-   else
-     echo "$ac_t""disabled" 1>&6
-   fi
-@@ -5261,7 +5261,7 @@ fi
+@@ -9777,6 +9777,9 @@ fi;
+       *-*-aix*)
+         platform=__aix
+         ;;
++      *-*-openbsd*)
++	platform=__openbsd
++	;;
+       *)
+         { echo "$as_me:$LINENO: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&5
+ echo "$as_me: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&2;}
+@@ -9786,7 +9789,7 @@ echo "$as_me: WARNING: The system type i
+     cmu_saved_CPPFLAGS=$CPPFLAGS
  
-  if test "$gssapi" != no; then
      if test -d ${gssapi}; then
 -       CPPFLAGS="$CPPFLAGS -I$gssapi/include"
 +       CPPFLAGS="$CPPFLAGS -I$gssapi/include/kerberosV"
+ # We want to keep -I in our CPPFLAGS, but only if we succeed
+        cmu_saved_CPPFLAGS=$CPPFLAGS
         LDFLAGS="$LDFLAGS -L$gssapi/lib"
-     fi
-     ac_safe=`echo "gssapi.h" | sed 'y%./+-%__p_%'`
-@@ -5394,7 +5394,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
-   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -10089,7 +10092,7 @@ if test "${ac_cv_lib_resolv_res_search+s
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lresolv  $LIBS"
-+#LIBS="-lresolv  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 5400 "configure"
- #include "confdefs.h"
-@@ -5428,7 +5428,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
- #define $ac_tr_lib 1
- EOF
++ #LIBS="-lresolv  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -10142,7 +10145,7 @@ if test $ac_cv_lib_resolv_res_search = y
+ #define HAVE_LIBRESOLV 1
+ _ACEOF
  
 -  LIBS="-lresolv $LIBS"
 +  #LIBS="-lresolv $LIBS"
  
+ fi
+ 
+@@ -10167,7 +10170,7 @@ if test "${ac_cv_lib_gssapi_gss_unwrap+s
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   echo "$ac_t""no" 1>&6
-@@ -5456,7 +5456,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} -lcom_err $LIBS"
-+LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} -lcom_err $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 5462 "configure"
- #include "confdefs.h"
-@@ -5494,8 +5494,8 @@ fi
-      GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
-      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
++LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -10516,8 +10519,8 @@ fi
+     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
+     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
    elif test "$gss_impl" = "heimdal"; then
--     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} -lcom_err"
--     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
-+     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 ${LIB_CRYPT} -lcom_err"
-+     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
-   else
-      gssapi="no"
-      echo "configure: warning: Disabling GSSAPI" 1>&2
-@@ -5548,7 +5548,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
-   echo $ac_n "(cached) $ac_c" 1>&6
+-    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err"
+-    GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
++    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} ${LIB_DES} -lcom_err"
++    GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libcrypto.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
+   elif test "$gss_impl" = "cybersafe03"; then
+ # Version of CyberSafe with two libraries
+     CPPFLAGS="$CPPFLAGS -D$platform -I${gssapi}/appsec-sdk/include"
+@@ -10709,7 +10712,7 @@ if test "${ac_cv_lib_resolv_res_search+s
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lresolv  $LIBS"
-+#LIBS="-lresolv  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 5554 "configure"
- #include "confdefs.h"
-@@ -5576,7 +5576,7 @@ LIBS="$ac_save_LIBS"
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
++ #LIBS="-lresolv  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -10758,7 +10761,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_resolv_res_search" >&5
+ echo "${ECHO_T}$ac_cv_lib_resolv_res_search" >&6
+ if test $ac_cv_lib_resolv_res_search = yes; then
 -  GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lresolv"
-+#  GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lresolv"
- else
-   echo "$ac_t""no" 1>&6
++ GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS"
  fi
-@@ -6256,7 +6256,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
-   echo $ac_n "(cached) $ac_c" 1>&6
+ 
+   SASL_MECHS="$SASL_MECHS libgssapiv2.la"
+@@ -11756,7 +11759,7 @@ if test "${ac_cv_lib_resolv_inet_aton+se
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lresolv  $LIBS"
-+#LIBS="-lresolv  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 6262 "configure"
- #include "confdefs.h"
-@@ -6290,7 +6290,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
- #define $ac_tr_lib 1
- EOF
++ #LIBS="-lresolv  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -11809,7 +11812,7 @@ if test $ac_cv_lib_resolv_inet_aton = ye
+ #define HAVE_LIBRESOLV 1
+ _ACEOF
  
 -  LIBS="-lresolv $LIBS"
 +  #LIBS="-lresolv $LIBS"
  
- else
-   echo "$ac_t""no" 1>&6
+ fi
+ 
