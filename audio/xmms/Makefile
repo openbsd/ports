@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/07/27 17:37:38 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/08/18 13:25:09 espie Exp $
 
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
@@ -30,7 +30,8 @@ MASTER_SITES=		http://www.xmms.org/files/%SUBDIR%/ \
 			ftp://ftp.sunet.se/pub/multimedia/xmms/%SUBDIR%/ \
 			ftp://ftp.stealth.net/xmms/%SUBDIR%/
 
-MASTER_SITES0=		http://vedge.com.ar/hack/
+MASTER_SITES0=		http://vedge.com.ar/hack/ \
+			ftp://vedge.com/ar/pub/xmms/
 
 FLAVORS=		no_esd no_vorbis
 FLAVOR?=
