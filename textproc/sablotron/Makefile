@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/04/17 15:53:38 avsm Exp $
+# $OpenBSD: Makefile,v 1.8 2001/06/18 21:35:27 avsm Exp $
 
 COMMENT=		"fast, compact and portable XSL/XSLT processor"
 
-DISTNAME=		Sablot-0.52
-PKGNAME=		sablotron-0.52
+V=			0.60
+DISTNAME=		Sablot-${V}
+PKGNAME=		sablotron-${V}
 CATEGORIES=     	textproc
 NEED_VERSION=		1.391
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.gingerall.cz/download/
+MASTER_SITES=		http://www.gingerall.cz/download/archive_GA/sablot/${V}/
 
 LIB_DEPENDS=		expat.2::textproc/expat \
 			iconv.2::converters/libiconv
