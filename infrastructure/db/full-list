@@ -1,0 +1,85 @@
+# This is a full list of everything that should currently build okay,
+# and be built routinely by ports/packages people
+archivers/bzip2
+archivers/gshar+gunshar
+archivers/gtar
+archivers/unzip
+astro/xphoon
+audio/mpg123
+benchmarks/iozone
+devel/autoconf
+devel/bison
+devel/ddd
+devel/dejagnu
+devel/gettext
+devel/glib
+devel/gmake
+devel/id-utils
+devel/libslang
+devel/m4
+editors/emacs
+editors/jove
+editors/vim
+graphics/ImageMagick
+graphics/aalib
+graphics/compface
+graphics/gimp
+graphics/jpeg
+graphics/mpeg-lib
+graphics/mpeg_play
+graphics/netpbm
+graphics/png
+graphics/tiff34
+graphics/xfig
+graphics/xpaint
+graphics/xv
+lang/egcs-stable
+lang/expect
+lang/tcl80
+mail/cucipop
+mail/fetchmail
+mail/metamail
+mail/mutt
+mail/nmh
+mail/pine
+math/gnuplot
+math/xspread
+misc/screen
+misc/gnuls
+net/dxpc
+net/ethereal
+net/ircii-epic
+net/netpipe
+net/rsync
+net/wget
+print/a2ps PAPERSIZE=A4
+print/a2ps PAPERSIZE=Letter
+print/afm
+print/enscript
+print/freetype
+print/ghostscript5
+print/gv
+print/psutils
+print/teTeX
+print/transfig
+security/pgp USA_RESIDENT=YES
+security/pgp USA_RESIDENT=NO
+security/ssh USA_RESIDENT=YES
+security/ssh USA_RESIDENT=NO
+shells/bash2
+shells/tcsh
+shells/zsh
+sysutils/idled
+sysutils/xntpd
+textproc/catdoc
+textproc/glimpse
+textproc/ispell
+textproc/latex2html
+textproc/xpdf
+x11/Xaw3d
+x11/gtk+
+x11/lesstif
+x11/rxvt
+x11/tk81
+x11/viewfax
+x11/xcolors

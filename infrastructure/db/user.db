@@ -1,0 +1,39 @@
+#!/usr/bin/perl
+
+# $OpenBSD: user.db,v 1.1.1.1 1999/05/18 16:39:03 espie Exp $
+
+# Used by install/createuser
+# fields for a user:
+# user: user name (default: key value)
+# fullname: description of the id (mandatory, include port path along)
+# group: group name (default: same as user)
+# uid: user id (mandatory)
+# gid: group id (default: uid)
+# mandatory: do we want THIS uid/gid, or the first one available ?
+# shell: (default: /sbin/nologin)
+# home: (default: /root)
+
+%users =
+	( pgsql => 
+		{ 	
+		fullname => 'PostgresQL pseudo user (created by postgresql port)',
+		uid      => 70,
+		home     => "$ENV{'PREFIX'}/pgsql",
+		shell    => '/bin/sh'
+		},
+	  nfr =>
+	   {
+		fullname => 'Network Flight Recorder (created by nfr port)',
+		uid		=> 42,
+		home 		=> $ENV{'NFRHOME'}
+		},
+	  wnn => 
+	   {
+		fullname => 'Wnn4 (created by ja-Wnn4)',
+		uid		=> 69,
+		group    => 'bin',
+		mandatory=> 'uid' 
+		}
+	);
+
+1;

@@ -1,0 +1,9 @@
+<H1>OpenBSD ports collection</H1>
+
+<h2>Description</h2>
+%%DESCR%%
+
+<h2>Sub directories</h2>
+<dl COMPACT>
+%%SUBDIR%%
+</dl>

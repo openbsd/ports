@@ -1,0 +1,22 @@
+<H1>The %%PORT%% port</H1>
+
+<H2>
+%%PKG%%
+--
+%%COMMENT%%
+</H2>
+<H2>Description</H2>
+
+<pre>
+%%DESCR%%
+</pre>
+
+<H2>Build dependencies</H2>
+<ul>
+%%BUILD_DEPENDS%%
+</ul>
+
+<H2>Run dependencies</H2>
+<ul>
+%%RUN_DEPENDS%%
+</ul>

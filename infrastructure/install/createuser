@@ -1,0 +1,94 @@
+#!/usr/bin/perl 
+# $OpenBSD: createuser,v 1.1.1.1 1999/05/18 16:39:02 espie Exp $
+
+# user creation script.
+# All ports that need to create new users should defer to this script
+# If specific capabilities are needed they should be added HERE as well.
+
+require '/usr/ports/infrastructure/db/user.db';
+
+use Fcntl ':flock'; # import LOCK_* constants
+
+sub check_root
+	{
+	if ($>) 
+		{ die "Only root can run this script\n"; } 
+	if ($<)
+		{ die "There is something fishy going on, I'd better quit\n"; }
+	}
+
+sub fill_user
+	{
+	my ($key) = shift;
+	unless (defined $users{$key})
+		{die "Sorry, no such user: $key, maybe you need to upgrade your createuser database ?\n"; }
+	my ($r) = $users{$key};
+	unless (defined $r->{fullname} && defined $r->{uid})
+		{ die "Incompletely defined user: $key\n"; }
+	$r->{user} = $key unless defined $r->{user};
+	$r->{group} = $r->{user} unless defined $r->{group};
+	$r->{gid} = $r->{uid} unless defined $r->{gid};
+	$r->{shell} = '/sbin/nologin' unless defined $r->{shell};
+	$r->{home} = '/root' unless defined $r->{home};
+		# avoid characters such as + or : in password entries...
+
+	my $k;
+	local $_;
+	while (($k, $_) = each %$r)
+		{ die "Bad chpass field $_\n" unless m/^[\d\w ()\-/.]+$/; }
+	return $r;
+	}
+
+sub atomic_append 
+	{
+	my ($file,@list) = @_;
+
+	open F, ">> $file"  or die "$file: $!\n";
+	unless (flock(F, LOCK_EX | LOCK_NB))
+		{ die "Cannot lock $file\n"; }
+		# prevent the rare case where someone is already appending to that file
+	seek F, 0, 2;
+	print F join( "\n", @list) . "\n";
+	close F;
+	flock  F, LOCK_UN ;
+	}
+
+
+# the main routine
+
+check_root();
+if ($#ARGV < 0)
+	{ die "Must supply one argument\n"; }
+
+
+my $r = fill_user($ARGV[0]);
+
+my ($uid, $gid);
+
+# find matching uid/gids.
+unless ( $uid = (getpwnam $r->{user})[2])
+	{
+	$uid = $r->{uid};
+	$uid++ while getpwuid $uid;
+	}
+
+unless ( $gid = (getgrnam $r->{group})[2])
+	{
+	$gid = $r->{gid};
+	$gid++ while getgrgid $gid;
+	}
+
+# check mandatory ids
+if ($r->{mandatory} =~ m/uid/ && $uid != $r->{uid})
+	{ die "Uid mismatch for $r->{user}\n"; }
+if ($r->{mandatory} =~ m/gid/ && $gid != $r->{gid})
+	{ die "Gid mismatch for $r->{user}\n"; }
+
+atomic_append( '/etc/group', "$r->{group}:*:$gid:" );
+
+print "$r->{user} with uid $uid, of group $r->{group} with gid $gid\n";
+
+$passargs = join(':', 
+	($r->{user}, '*', $uid, $gid, '', '', '', $r->{fullname}, $r->{home}, $r->{shell}));
+print "/usr/bin/chpass -a $passargs\n";
+system('/usr/bin/chpass', '-a', $passargs);

@@ -1,0 +1,9 @@
+<H1>Ports in Category %%CATEGORY%%</H1>
+
+<h2>Description</h2>
+%%DESCR%%
+
+<h2>Sub directories</h2>
+<dl>
+%%SUBDIR%%
+</dl>

@@ -1,0 +1,31 @@
+#!/bin/sh
+#$OpenBSD: check-distfiles,v 1.1.1.1 1999/05/18 16:39:05 espie Exp $
+
+# This does a full-scale check of everything that lives under
+# /usr/ports/distfiles
+PORTS=/usr/ports
+ALLSUMS=`mktemp /usr/ports/checksums.XXXXXX` || exit 1
+GREP_RESULT=`mktemp /usr/ports/grep.XXXXXX` || exit 1
+# assume that INDEX is up-to-date
+touch $ALLSUMS
+cut -d\| -f2 <INDEX|while read i
+do
+	if [ -f $i/files/md5 ] 
+	then
+		cat $i/files/md5 >>$ALLSUMS
+	else
+		echo "Port $i does not seem to have a checksum file"
+	fi
+done
+
+cd $PORTS/distfiles 
+find . -type f|sed -e 's|^\./||'|while read name
+do
+	if grep "^SHA1 ($name) = " $ALLSUMS >$GREP_RESULT
+	then
+		sha1 $name >>$GREP_RESULT
+		uniq -u <$GREP_RESULT
+	else
+		echo "no checksum recorded for $name"
+	fi
+done
