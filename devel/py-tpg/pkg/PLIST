@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/16 13:11:49 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/02/01 10:33:23 xsa Exp $
 bin/tpg
 lib/python${MODPY_VERSION}/site-packages/tpg.py
 lib/python${MODPY_VERSION}/site-packages/tpg.pyc
 share/doc/py-tpg/CSL.tex
-share/doc/py-tpg/ChangeLog
 share/doc/py-tpg/calc.tex
 share/doc/py-tpg/cmmi10-19.png
 share/doc/py-tpg/cmsy10-21.png
