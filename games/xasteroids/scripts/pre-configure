@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cp -f ${CURDIR}/files/Imakefile ${WRKSRC}
+cp -f ${WRKSRC}/xast.man ${WRKSRC}/xasteroids.man
+
+exit 0
