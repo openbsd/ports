@@ -1,0 +1,23 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2004/12/21 21:56:20 sturm Exp $
+
+COMMENT=	"figure out when to fetch RSS Feeds"
+
+DISTNAME=	XML-RSS-Timing-1.07
+PKGNAME=	p5-${DISTNAME}
+CATEGORIES=	textproc perl5
+
+MAINTAINER=	Sam Smith <s@msmith.net>
+
+# GPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
+
+CONFIGURE_STYLE=perl
+
+PKG_ARCH=	*
+
+.include <bsd.port.mk>
