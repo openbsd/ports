@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/07/03 02:29:50 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2003/07/11 07:54:43 jolan Exp $
 
 COMMENT=	"flash rendering library"
 DISTNAME=	swfdec-0.2.2
-CATEGORIES=	graphics www
+CATEGORIES=	graphics www/mozilla
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=swfdec/}
 
 HOMEPAGE=	http://swfdec.sourceforge.net/
