@@ -10,6 +10,9 @@
 <pre>
 %%DESCR%%
 </pre>
+<p>
+%%HOMEPAGE%%
+</p>
 
 <H2>Build dependencies</H2>
 <ul>

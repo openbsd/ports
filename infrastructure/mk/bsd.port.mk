@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.200 2000/02/15 17:58:32 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.201 2000/02/15 18:19:12 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1979,6 +1979,11 @@ README.html:
 .if defined(_ALWAYS_DEP) || defined(_RUN_DEP) || target(package-depends)
 	@cd ${.CURDIR} && make package-depends FULL_PACKAGE_NAME=Yes | ${_SORT_DEPENDS} >$@.tmp2
 .endif
+.if defined(HOMEPAGE)
+	@echo 'See <a href="${HOMEPAGE}">${HOMEPAGE}</a> for details.' >$@.tmp4
+.else
+	@echo "" >$@.tmp4
+.endif
 .for I in 1 2
 	@if [ -s $@.tmp$I ]; then \
 		{ cat $@.tmp$I | while read n; do \
@@ -1997,6 +2002,8 @@ README.html:
 			-e '/%%COMMENT%%/d' \
 			-e '/%%DESCR%%/r${PKGDIR}/DESCR' \
 			-e '/%%DESCR%%/d' \
+			-e '/%%HOMEPAGE%%/r$@.tmp4' \
+			-e '/%%HOMEPAGE%%/d' \
 			-e '/%%BUILD_DEPENDS%%/r$@.tmp1a' \
 			-e '/%%BUILD_DEPENDS%%/d' \
 			-e '/%%RUN_DEPENDS%%/r$@.tmp2a' \
