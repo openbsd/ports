@@ -1,4 +1,4 @@
-Move your mail box to annother location.
+Move your mail box to another location.
 
 Example:
 
@@ -7,4 +7,3 @@ Example:
 Move the mail box of the user `rammstein' to  `~/backup/rammstein.970905'.
 
 Movemail is part of the GNU Emacs distribution (version 19.34). 
-This port works only for FreeBSD.
