@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2001/12/26 19:15:09 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/02/05 09:07:13 dhartmei Exp $
 bin/convert_smbpasswd
 bin/make_printerdef
 bin/make_smbcodepage
@@ -28,6 +28,7 @@ lib/samba/codepages/codepage.932
 lib/samba/codepages/codepage.936
 lib/samba/codepages/codepage.949
 lib/samba/codepages/codepage.950
+lib/samba/codepages/unicode_map.1251
 lib/samba/codepages/unicode_map.437
 lib/samba/codepages/unicode_map.737
 lib/samba/codepages/unicode_map.775
@@ -59,7 +60,6 @@ man/man1/rpcclient.1
 man/man1/smbcacls.1
 man/man1/smbclient.1
 man/man1/smbcontrol.1
-man/man1/smbrun.1
 man/man1/smbsh.1
 man/man1/smbstatus.1
 man/man1/smbtar.1
@@ -71,6 +71,7 @@ man/man5/smb.conf.5
 man/man5/smbpasswd.5
 man/man7/samba.7
 man/man8/nmbd.8
+man/man8/pdbedit.8
 man/man8/smbd.8
 man/man8/smbmnt.8
 man/man8/smbmount.8
@@ -89,6 +90,7 @@ share/doc/samba/Win95_PlainPassword.reg
 share/doc/samba/Win98_PlainPassword.reg
 share/doc/samba/Win9X-CacheHandling.reg
 share/doc/samba/WinME_PlainPassword.reg
+share/doc/samba/WinXP_SignOrSeal.reg
 share/doc/samba/WindowsTerminalServer.reg
 share/doc/samba/announce
 share/doc/samba/faq/Samba-Server-FAQ-1.html
@@ -131,12 +133,14 @@ share/doc/samba/textdocs/PROFILES.txt
 share/doc/samba/textdocs/Passwords.txt
 share/doc/samba/textdocs/Printing.txt
 share/doc/samba/textdocs/README.DCEDFS
+share/doc/samba/textdocs/README.NOW
 share/doc/samba/textdocs/README.jis
 share/doc/samba/textdocs/README.sambatar
 share/doc/samba/textdocs/Recent-FAQs.txt
 share/doc/samba/textdocs/RoutedNetworks.txt
 share/doc/samba/textdocs/SCO.txt
 share/doc/samba/textdocs/SMBTAR.notes
+share/doc/samba/textdocs/Samba-OpenSSL.txt
 share/doc/samba/textdocs/Speed.txt
 share/doc/samba/textdocs/Speed2.txt
 share/doc/samba/textdocs/Tracing.txt
@@ -149,11 +153,23 @@ share/doc/samba/textdocs/kurs.pdf
 share/doc/samba/textdocs/kurs.tex
 share/doc/samba/textdocs/logo.ps
 share/doc/samba/textdocs/security_level.txt
+share/examples/samba/LDAP/README
+share/examples/samba/LDAP/export2_smbpasswd.pl
+share/examples/samba/LDAP/export_smbpasswd.pl
+share/examples/samba/LDAP/import2_smbpasswd.pl
+share/examples/samba/LDAP/import_smbpasswd.pl
+share/examples/samba/LDAP/ldapchpasswd
+share/examples/samba/LDAP/ldapsync.pl
+share/examples/samba/LDAP/samba.schema
 share/examples/samba/README
 share/examples/samba/VFS/.cvsignore
 share/examples/samba/VFS/Makefile
 share/examples/samba/VFS/README
 share/examples/samba/VFS/audit.c
+share/examples/samba/VFS/block/Makefile
+share/examples/samba/VFS/block/block.c
+share/examples/samba/VFS/block/samba-block.conf
+share/examples/samba/VFS/block/smb.conf
 share/examples/samba/VFS/skel.c
 share/examples/samba/appliance/Makefile
 share/examples/samba/appliance/README
@@ -163,7 +179,10 @@ share/examples/samba/appliance/smb.conf-appliance
 share/examples/samba/autofs/auto.a
 share/examples/samba/dce-dfs/README
 share/examples/samba/dce-dfs/smb.conf
+share/examples/samba/libsmbclient/testsmbc.c
+share/examples/samba/libsmbclient/tree.c
 share/examples/samba/misc/extra_smbstatus
+share/examples/samba/misc/modify_samba_config.pl
 share/examples/samba/misc/swat.pl
 share/examples/samba/misc/wall.perl
 share/examples/samba/printer-accounting/README
@@ -173,6 +192,7 @@ share/examples/samba/printer-accounting/hp5-redir
 share/examples/samba/printer-accounting/lp-acct
 share/examples/samba/printer-accounting/printcap
 share/examples/samba/printing/smbprint
+share/examples/samba/printing/smbprint-new.sh
 share/examples/samba/printing/smbprint.newer
 share/examples/samba/printing/smbprint.sysv
 share/examples/samba/simple/README
@@ -192,23 +212,28 @@ share/examples/samba/validchars/nwdos70.out
 share/examples/samba/validchars/readme
 share/examples/samba/validchars/validchr.c
 share/examples/samba/validchars/validchr.com
+share/swat/help/CVS-Access.html
 share/swat/help/DOMAIN_MEMBER.html
 share/swat/help/ENCRYPTION.html
+share/swat/help/Integrating-with-Windows.html
 share/swat/help/NT_Security.html
 share/swat/help/OS2-Client-HOWTO.html
+share/swat/help/PAM-Authentication-And-Samba.html
+share/swat/help/Samba-BDC-HOWTO.html
 share/swat/help/Samba-HOWTO-Collection.html
+share/swat/help/Samba-LDAP-HOWTO.html
 share/swat/help/Samba-PDC-HOWTO.html
 share/swat/help/UNIX_INSTALL.html
 share/swat/help/findsmb.1.html
 share/swat/help/lmhosts.5.html
 share/swat/help/make_smbcodepage.1.html
+share/swat/help/make_unicodemap.1.html
 share/swat/help/msdfs_setup.html
 share/swat/help/nmbd.8.html
 share/swat/help/nmblookup.1.html
+share/swat/help/pdbedit.8.html
 share/swat/help/printer_driver2.html
 share/swat/help/rpcclient.1.html
-share/swat/help/samba-pdc-faq.html
-share/swat/help/samba-pdc-howto.html
 share/swat/help/samba.7.html
 share/swat/help/smb.conf.5.html
 share/swat/help/smbcacls.1.html
@@ -219,7 +244,6 @@ share/swat/help/smbmnt.8.html
 share/swat/help/smbmount.8.html
 share/swat/help/smbpasswd.5.html
 share/swat/help/smbpasswd.8.html
-share/swat/help/smbrun.1.html
 share/swat/help/smbsh.1.html
 share/swat/help/smbspool.8.html
 share/swat/help/smbstatus.1.html
@@ -416,10 +440,13 @@ share/swat/using_samba/this_edition.html
 @dirrm share/examples/samba/printing
 @dirrm share/examples/samba/printer-accounting
 @dirrm share/examples/samba/misc
+@dirrm share/examples/samba/libsmbclient
 @dirrm share/examples/samba/dce-dfs
 @dirrm share/examples/samba/autofs
 @dirrm share/examples/samba/appliance
+@dirrm share/examples/samba/VFS/block
 @dirrm share/examples/samba/VFS
+@dirrm share/examples/samba/LDAP
 @dirrm share/examples/samba
 @dirrm share/doc/samba/textdocs
 @dirrm share/doc/samba/faq
