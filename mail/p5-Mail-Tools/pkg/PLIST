@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/01/08 21:10:45 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/02/21 01:53:45 kevlo Exp $
 libdata/perl5/site_perl/Mail/Address.pm
 libdata/perl5/site_perl/Mail/Cap.pm
 libdata/perl5/site_perl/Mail/Field.pm
@@ -46,7 +46,5 @@ share/examples/p5-MailTools/send_demo
 @dirrm share/examples/p5-MailTools
 @dirrm libdata/perl5/site_perl/auto/Mail/Util
 @dirrm libdata/perl5/site_perl/auto/Mail/Internet
-@dirrm libdata/perl5/site_perl/auto/Mail
 @dirrm libdata/perl5/site_perl/Mail/Mailer
 @dirrm libdata/perl5/site_perl/Mail/Field
-@dirrm libdata/perl5/site_perl/Mail
