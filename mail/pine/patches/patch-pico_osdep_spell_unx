@@ -1,6 +1,6 @@
-$OpenBSD: patch-pico_osdep_spell_unx,v 1.1 2002/12/01 20:57:10 jakob Exp $
---- pico/osdep/spell.unx.orig	Wed Apr  3 22:10:57 2002
-+++ pico/osdep/spell.unx	Sun Dec  1 15:17:46 2002
+$OpenBSD: patch-pico_osdep_spell_unx,v 1.2 2003/05/27 23:38:33 brad Exp $
+--- pico/osdep/spell.unx.orig	Thu Dec 12 17:18:52 2002
++++ pico/osdep/spell.unx	Tue May 27 10:30:15 2003
 @@ -84,6 +84,14 @@ spell(f, n)
      setimark(0, 1);
      emlwrite("Checking spelling...", NULL); 	/* greetings */
@@ -24,5 +24,5 @@ $OpenBSD: patch-pico_osdep_spell_unx,v 1.1 2002/12/01 20:57:10 jakob Exp $
 -    if((sp = (char *)getenv("SPELL")) == NULL)
 -      sp = SPELLER;
  
-     sprintf(cb, "( %s ) < %s", sp, fn);		/* pre-use buffer! */
-     if((p = P_open(cb)) == NULL){ 		/* read output from command */
+     if(fexist(sp, "x", (off_t *)NULL) != FIOSUC){
+         emlwrite("\007Spell-checking file \"%s\" not found", sp);

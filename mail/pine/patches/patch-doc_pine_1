@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_pine_1,v 1.1 2002/12/01 20:57:10 jakob Exp $
---- doc/pine.1.orig	Mon Nov 18 22:22:27 2002
-+++ doc/pine.1	Sun Dec  1 15:17:46 2002
-@@ -305,7 +305,7 @@ uses the following environment variables
+$OpenBSD: patch-doc_pine_1,v 1.2 2003/05/27 23:38:33 brad Exp $
+--- doc/pine.1.orig	Wed Apr 16 13:47:13 2003
++++ doc/pine.1	Tue May 27 10:30:11 2003
+@@ -309,7 +309,7 @@ uses the following environment variables
  .if n .ta 2.8i
  .if t .ta 2.1i
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-doc_pine_1,v 1.1 2002/12/01 20:57:10 jakob Exp $
  .br
  ~/mail	Default directory for mail folders.
  .br
-@@ -329,13 +329,13 @@ uses the following environment variables
+@@ -333,13 +333,13 @@ uses the following environment variables
  .br
  /etc/mime.types	System-wide file ext. to MIME type mapping
  .br
