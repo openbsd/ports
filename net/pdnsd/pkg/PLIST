@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/14 14:46:07 camield Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/19 09:43:50 xsa Exp $
 man/man8/pdnsd-ctl.8
 sbin/pdnsd
 sbin/pdnsd-ctl
@@ -8,3 +8,8 @@ share/doc/pdnsd/manual.txt
 share/examples/pdnsd/pdnsd.conf
 @dirrm share/examples/pdnsd
 @dirrm share/doc/pdnsd
+@cwd ${SYSCONFDIR}
+@extra pdnsd.conf
+@extraunexec rm -rf /var/pdnsd
+@extraunexec userdel _pdnsd
+@extraunexec groupdel _pdnsd
