@@ -1,0 +1,16 @@
+Yorick is an interpreded language for scientific computing
+and numerical analysis, very similar to Matlab.
+
+Yorick's array syntax, interpreted programs are compact,
+nearly free of explicit loops, and can run at speeds up to
+20% of optimized compiled speed.
+
+It can do interactive graphics via the X Window System,
+including x-y plots, quadrilateral meshes and cell arrays.
+Includes tools to assist making animated and simple 3d
+graphs.
+
+Supports output directly to your screen, in PostScript and
+binary CGM format.
+
+WWW: ${HOMEPAGE}
