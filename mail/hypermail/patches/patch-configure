@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1 2002/03/21 10:36:54 form Exp $
+--- configure.orig	Thu Mar 21 16:27:46 2002
++++ configure	Thu Mar 21 16:28:10 2002
+@@ -1993,11 +1993,8 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+   GDBM_LIB="-lgdbm"
+ else
+   echo "$ac_t""no" 1>&6
+-fi
+-
+-    
+   LDFLAGS="$old_LDFLAGS"
+-
++fi
+ 
+     if test "$THIS_PREFIX" != "" && test "$THIS_PREFIX" != "/usr"; then
+       THIS_LFLAGS="$THIS_PREFIX/lib"
