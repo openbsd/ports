@@ -1,9 +1,9 @@
-$OpenBSD: gcc-kfile-plugins_jpeg_Makefile_in,v 1.1 2004/03/21 19:43:47 sturm Exp $
---- kfile-plugins/jpeg/Makefile.in.orig	2004-02-29 22:44:41.000000000 +0100
-+++ kfile-plugins/jpeg/Makefile.in	2004-03-21 11:43:38.000000000 +0100
-@@ -510,6 +510,9 @@ distclean-depend:
- @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
- @am__fastdepCXX_FALSE@	$(LTCXXCOMPILE) -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
+$OpenBSD: gcc-kfile-plugins_jpeg_Makefile_in,v 1.2 2005/02/27 08:20:34 brad Exp $
+--- kfile-plugins/jpeg/Makefile.in.orig	Mon Nov 29 10:18:19 2004
++++ kfile-plugins/jpeg/Makefile.in	Sun Feb 27 02:52:27 2005
+@@ -543,6 +543,9 @@ distclean-compile:
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCXX_FALSE@	$(LTCXXCOMPILE) -c -o $@ $<
  
 +kfile_jpeg_la.all_cpp.lo: kfile_jpeg_la.all_cpp.cpp
 +	$(LTCXXCOMPILE) -O0 -c -o kfile_jpeg_la.all_cpp.lo `test -f '$<' || echo '$(srcdir)/'`kfile_jpeg_la.all_cpp.cpp

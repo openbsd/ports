@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2005/01/31 10:16:45 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2005/02/27 08:20:34 brad Exp $
 
 COMMENT=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
@@ -11,7 +11,7 @@ MODKDE_VERSION=		3.3.0
 FLAVORS=debug
 SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-kpov -kamera
-PKGNAME=${DISTNAME}p1
+PKGNAME=${DISTNAME}p2
 FULLPKGNAME-kamera=kamera-${VERSION}p0
 FULLPKGNAME-kpov=kpovmodeller-${VERSION}p0
 SUBPACKAGE?=
