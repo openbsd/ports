@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/01/18 12:30:57 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2005/01/28 11:36:04 alek Exp $
 
 COMMENT=		"Image viewer and browser for GNOME"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	IIOP ORBit ORBitCosNaming ORBitutil SM X11 Xext Xi art_lgpl \
 		audiofile c esd freetype gconf-1 gconf-gtk-1 gdk gdk_imlib \
-		gdk_pixbuf glib gmodule gnome gnomecanvaspixbuf gnomesupport \
+		gdk_pixbuf glib gmodule gnome gnomesupport \
 		gnomeui gthread gtk iconv intl jpeg m oaf png pthread tiff \
 		ungif wrap xml z ICE
 
