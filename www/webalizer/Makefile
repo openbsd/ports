@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/08/29 16:54:46 danh Exp $
+# $OpenBSD: Makefile,v 1.5 2000/08/30 17:36:25 danh Exp $
 
 DISTNAME=	webalizer-2.00-12-src
 PKGNAME=	webalizer-2.00_12
@@ -20,8 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/webalizer-2.00-12
 
-CONFIGURE_STYLE= 	gnu dest
-CONFIGURE_ARGS+= 	--enable-dns --with-png=${LOCALBASE}/lib
+CONFIGURE_STYLE= gnu dest
+CONFIGURE_ARGS=	--enable-dns --with-png=${LOCALBASE}/lib
 
 post-install:
 	cd ${PREFIX}/bin && ln -s webalizer webazolver
