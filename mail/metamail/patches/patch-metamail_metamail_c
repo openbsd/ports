@@ -1,6 +1,6 @@
-$OpenBSD: patch-metamail_metamail_c,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
---- metamail/metamail.c.orig	Wed Feb 20 14:06:43 2002
-+++ metamail/metamail.c	Wed Feb 20 14:06:43 2002
+$OpenBSD: patch-metamail_metamail_c,v 1.2 2004/02/28 20:19:48 naddy Exp $
+--- metamail/metamail.c.orig	1994-02-17 02:57:19.000000000 +0100
++++ metamail/metamail.c	2004-02-28 18:37:27.000000000 +0100
 @@ -29,7 +29,7 @@ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIE
  #ifdef BORLAND
  #define F_OK 0
@@ -35,6 +35,36 @@ $OpenBSD: patch-metamail_metamail_c,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
      tmproot = getenv("METAMAIL_TMPDIR");
      if (!tmproot) tmproot="/tmp";
      mailheaders = getenv("MM_HEADERS");
+@@ -1202,9 +1184,9 @@ char *SquirrelFile;
+     fprintf(outfp, "Content-type: %s", ContentType);
+     for (j=0; j<CParamsUsed; ++j) {
+         fprintf(outfp, " ; ");
+-        fprintf(outfp, CParams[j]);
++        fprintf(outfp, "%s", CParams[j]);
+         fprintf(outfp, " = ");
+-        fprintf(outfp, CParamValues[j]);
++        fprintf(outfp, "%s", CParamValues[j]);
+     }
+     fprintf(outfp, "\n\n"); 
+     TranslateInputToOutput(InputFP, outfp, EncodingCode, ContentType);
+@@ -2022,7 +2004,7 @@ int ShowLeadingWhitespace;
+     if (lc2strcmp(charset, PrevCharset)) {
+         char *s2, *charsetinuse;
+ 
+-        strcpy(PrevCharset, charset);
++        strlcpy(PrevCharset, charset, sizeof(PrevCharset));
+         for (s2=PrevCharset; *s2; ++s2) {
+             if (isupper((unsigned char) *s2)) *s2 = tolower((unsigned char) *s2);
+         }
+@@ -2032,7 +2014,7 @@ int ShowLeadingWhitespace;
+         }
+     }
+     if (ecode == ENCODING_NONE) {
+-        printf(txt+1);
++        printf("%s", txt+1);
+     } else {
+         /* What follows is REALLY bogus, but all my encoding stuff is pipe-oriented right now... */
+         MkTmpFileName(TmpFile);
 @@ -2489,14 +2471,14 @@ char *name;
  {
  #ifdef AMIGA

@@ -1,6 +1,6 @@
-$OpenBSD: patch-metamail_splitmail_c,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
---- metamail/splitmail.c.orig	Mon Jan 31 15:23:14 1994
-+++ metamail/splitmail.c	Wed Feb 20 14:06:43 2002
+$OpenBSD: patch-metamail_splitmail_c,v 1.2 2004/02/28 20:19:48 naddy Exp $
+--- metamail/splitmail.c.orig	1994-01-31 23:23:14.000000000 +0100
++++ metamail/splitmail.c	2004-02-28 19:01:14.000000000 +0100
 @@ -41,8 +41,8 @@ extern char *malloc(), *index(), *getmyn
  #define VERBOSEDELIVERYCMD VerboseDeliveryCmd
  #else
@@ -12,3 +12,33 @@ $OpenBSD: patch-metamail_splitmail_c,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
  #endif
  
  usageexit() {
+@@ -194,7 +194,7 @@ char **argv;
+ 	s = endofheader(from);  /* would be index(from, '\n'),
+ 				 but need to check for continuation lines */
+         *s = '\0';
+-	if (ShareThisHeader(from, SubjectBuf, &OrigID)) {
++	if (ShareThisHeader(from, SubjectBuf, sizeof(SubjectBuf), &OrigID)) {
+ 	    strcat(SharedHeaders, from);
+ 	    strcat(SharedHeaders, "\n");
+ 	}
+@@ -339,9 +339,10 @@ static char *SharedHeads[] = {
+     NULL
+ };
+ 
+-ShareThisHeader(s, SubjectBuf, OrigID)
++ShareThisHeader(s, SubjectBuf, size, OrigID)
+ char *s;
+ char *SubjectBuf;
++size_t size;
+ char **OrigID;
+ {
+     int i;
+@@ -361,7 +362,7 @@ char **OrigID;
+     }
+     if (!ULstrcmp(s, "subject")) {
+         *colon = ':';
+-        strcpy(SubjectBuf, ++colon);
++        strlcpy(SubjectBuf, ++colon, size);
+         return(0);
+     }
+     if (!ULstrcmp(s, "content-type")) {

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2003/04/26 14:55:32 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/02/28 20:19:48 naddy Exp $
 
 COMMENT=	"MIME implementation"
 
 DISTNAME=	mm2.7
-PKGNAME=	metamail-2.7
+PKGNAME=	metamail-2.7p0
 CATEGORIES=	mail
 
 MASTER_SITES=	ftp://thumper.bellcore.com/pub/nsb/
@@ -18,7 +18,7 @@ WRKDIST=	${WRKDIR}/${DISTNAME}/src
 
 NO_REGRESS=	Yes
 
-post-patch:
+post-configure:
 	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/config.h
 
 pre-install:
