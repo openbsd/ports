@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2002/03/01 00:18:11 brad Exp $
+# $OpenBSD: Makefile,v 1.34 2002/03/03 13:12:29 naddy Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 COMMENT=	"alternative ircII color client"
@@ -33,6 +33,6 @@ pre-build:
 
 post-install:
 	@cd ${PREFIX}/bin && ln -sf BitchX-${VERSION} BitchX
-	@chown -R root.wheel ${PREFIX}/share/bitchx
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/bitchx
 
 .include <bsd.port.mk>
