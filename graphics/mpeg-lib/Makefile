@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.13 2000/02/15 05:04:33 turan Exp $
+# $OpenBSD: Makefile,v 1.14 2000/03/08 01:13:13 espie Exp $
 
 DISTNAME=	mpeg_lib-1.3.1
 CATEGORIES=	graphics
+NEED_VERSION=	1.218
 MASTER_SITES=	ftp://ftp.bic.mni.mcgill.ca/pub/mpeg/ \
 		http://starship.python.net/~gward/mpeglib/
 
-NEED_VERSION=	1.73
 
 MAINTAINER=	brad@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-GNU_CONFIGURE=	yes
-
-post-install:
-	@${LDCONFIG} -m ${PREFIX}/lib
+FAKE=		Yes
+HAS_CONFIGURE=	Yes
+CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='${DESTDIR}/etc'
 
 .include <bsd.port.mk>
 

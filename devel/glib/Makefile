@@ -1,22 +1,23 @@
-# $OpenBSD: Makefile,v 1.21 2000/02/15 05:04:12 turan Exp $
+# $OpenBSD: Makefile,v 1.22 2000/03/08 01:13:13 espie Exp $
 
 DISTNAME=	glib-1.2.6
 CATEGORIES=	devel
+NEED_VERSION=	1.218
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
 		http://www.ameth.org/gimp/gtk/v1.2/
 
-NEED_VERSION=	1.73
 
 MAINTAINER=	brad@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-GNU_CONFIGURE=	yes
+FAKE=		Yes
+GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-threads \
 		--includedir="${PREFIX}/include/glib"
@@ -47,7 +48,5 @@ post-extract:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal
 	${INSTALL_DATA} ${WRKSRC}/glib.m4 ${PREFIX}/share/aclocal/
-	@install-info ${PREFIX}/info/glib.info ${PREFIX}/info/dir
-	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

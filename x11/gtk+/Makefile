@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2000/03/05 18:30:46 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2000/03/08 01:13:13 espie Exp $
 
 DISTNAME=	gtk+-1.2.6
 CATEGORIES=     x11
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 LIB_DEPENDS=	intl:devel/gettext \
 		glib.1.2:devel/glib
 
-USE_X11=	Yes
+FAKE=		Yes
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
@@ -53,8 +53,5 @@ post-extract:
 post-install:
 	${INSTALL_DATA_DIR} ${LOCALBASE}/share/aclocal
 	${INSTALL_DATA} ${WRKSRC}/gtk.m4 ${LOCALBASE}/share/aclocal/
-	@install-info ${PREFIX}/info/gtk.info ${PREFIX}/info/dir
-	@install-info ${PREFIX}/info/gdk.info ${PREFIX}/info/dir
-	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
