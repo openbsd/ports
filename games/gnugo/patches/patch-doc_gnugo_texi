@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_gnugo_texi,v 1.1 2001/08/06 10:08:27 fgsch Exp $
+--- doc/gnugo.texi.orig	Sun Feb 13 11:27:42 2000
++++ doc/gnugo.texi	Mon Aug  6 06:57:28 2001
+@@ -2,6 +2,10 @@
+ @c %**start of header
+ @setfilename gnugo.info
+ @settitle GNU Go Documentation
++@dircategory Games
++@direntry
++* GNU go: (gnugo)		A Go program.
++@end direntry
+ @c %**end of header
+ 
+ @set EDITION 1.0
