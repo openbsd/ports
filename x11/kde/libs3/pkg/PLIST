@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/05/23 14:37:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/09/13 20:45:53 brad Exp $
 bin/artsmessage
 bin/checkXML
 bin/dcop
@@ -3110,7 +3110,6 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/mimelnk/application
 @dirrm share/mimelnk/all
 @dirrm share/mimelnk
-@exec mkdir -p %D/share/locale
 @exec mkdir -p %D/share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
