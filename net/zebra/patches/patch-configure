@@ -1,11 +1,12 @@
---- configure.orig	Sun Aug 19 09:24:16 2001
-+++ configure	Mon Aug 20 10:20:38 2001
-@@ -4397,7 +4397,7 @@ EOF
+$OpenBSD: patch-configure,v 1.5 2002/07/10 20:14:46 mickey Exp $
+--- configure.orig	Fri Jun 21 17:04:21 2002
++++ configure	Wed Jul 10 13:11:33 2002
+@@ -7004,7 +7004,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_htonl_works" >&5
+ echo "${ECHO_T}$ac_cv_htonl_works" >&6
  
- cat >> $CONFIG_STATUS <<EOF
- 
--CONFIG_FILES=\${CONFIG_FILES-"Makefile lib/Makefile zebra/Makefile ripd/Makefile ripngd/Makefile bgpd/Makefile ospfd/Makefile ospf6d/Makefile vtysh/Makefile doc/Makefile"}
-+CONFIG_FILES=\${CONFIG_FILES-"Makefile lib/Makefile zebra/Makefile ripd/Makefile ripngd/Makefile bgpd/Makefile ospfd/Makefile ospf6d/Makefile vtysh/Makefile doc/Makefile doc/vtysh.1 doc/bgpd.8 doc/ospf6d.8 doc/ospfd.8 doc/ripd.8 doc/ripngd.8 doc/zebra.8"}
- EOF
- cat >> $CONFIG_STATUS <<\EOF
- for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
+-ac_config_files="$ac_config_files Makefile lib/Makefile zebra/Makefile ripd/Makefile ripngd/Makefile bgpd/Makefile ospfd/Makefile ospf6d/Makefile vtysh/Makefile doc/Makefile"
++ac_config_files="$ac_config_files Makefile lib/Makefile zebra/Makefile ripd/Makefile ripngd/Makefile bgpd/Makefile ospfd/Makefile ospf6d/Makefile vtysh/Makefile doc/Makefile doc/bgpd.8 doc/ospf6d.8 doc/ospfd.8 doc/ripd.8 doc/ripngd.8 doc/vtysh.1 doc/zebra.8"
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+ # tests run on this system so they can be shared between configure

@@ -1,14 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.10 2001/08/16 07:30:39 peter Exp $
+@comment $OpenBSD: PLIST,v 1.11 2002/07/10 20:14:46 mickey Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/zebra.info
 bin/vtysh
-sbin/bgpd
-sbin/ospfd
-sbin/ospf6d
-sbin/ripd
-sbin/ripngd
-sbin/zebra
-@unexec /usr/bin/install-info --delete %D/info/zebra.info %D/info/dir
 info/zebra.info
-@exec /usr/bin/install-info %D/info/zebra.info %D/info/dir
 man/man1/vtysh.1
 man/man8/bgpd.8
 man/man8/ospf6d.8
@@ -16,14 +9,21 @@ man/man8/ospfd.8
 man/man8/ripd.8
 man/man8/ripngd.8
 man/man8/zebra.8
+sbin/bgpd
+sbin/ospf6d
+sbin/ospfd
+sbin/ripd
+sbin/ripngd
+sbin/zebra
 share/doc/zebra/README
 share/examples/zebra/bgpd.conf.sample
 share/examples/zebra/bgpd.conf.sample2
+share/examples/zebra/ospf6d.conf.sample
+share/examples/zebra/ospfd.conf.sample
 share/examples/zebra/ripd.conf.sample
 share/examples/zebra/ripngd.conf.sample
-share/examples/zebra/zebra.conf.sample
-share/examples/zebra/ospfd.conf.sample
-share/examples/zebra/ospf6d.conf.sample
 share/examples/zebra/vtysh.conf.sample
-@dirrm share/doc/zebra
+share/examples/zebra/zebra.conf.sample
 @dirrm share/examples/zebra
+@dirrm share/doc/zebra
+@exec install-info --info-dir=%D/info %D/info/zebra.info

@@ -1,14 +1,19 @@
-# $OpenBSD: Makefile,v 1.22 2001/08/21 10:10:20 peter Exp $
+# $OpenBSD: Makefile,v 1.23 2002/07/10 20:14:45 mickey Exp $
 # KAME Id: Makefile,v 1.5 1999/09/13 16:27:41 itojun Exp
 # Originally by: peter.galbavy@knowledge.com
 
 COMMENT=	"multi-threaded routing daemon"
 
-DISTNAME=	zebra-0.92a
+DISTNAME=	zebra-0.93a
 CATEGORIES=	net
-NEED_VERSION=	1.435
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
-		ftp://ftp.knowledge.com/pub/mirrors/zebra/
+		ftp://ftp.knowledge.com/pub/mirrors/zebra/ \
+		ftp://ftp.ripe.net/mirrors/sites/ftp.zebra.org/pub/zebra/ \
+		ftp://ftp.pop-pr.rnp.br/pub/GNU/ftp.zebra.org/zebra/ \
+		ftp://ftp.clear.net.nz/pub/zebra/ \
+		ftp://ftp.crc.ca/pub/packages/network/zebra/ \
+		ftp://ftp.sunet.se/pub/network/zebra/ \
+		ftp://ftp.styx.net/mirrors/zebra/
 
 HOMEPAGE=	http://www.zebra.org/
 
@@ -22,6 +27,7 @@ PERMIT_DISTFILES_FTP=	Yes
 # you might need debugging, it's a developer release !
 #CFLAGS+=	-g
 
+USE_GMAKE=	Yes
 SYSCONFDIR=	/etc/zebra
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
@@ -39,7 +45,7 @@ CONFIGURE_ARGS+= --disable-snmp
 .endif
 
 post-extract:
-.for f in vtysh.1 bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
+.for f in vtysh.1 bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8 zebra.info
 	@cd ${WRKSRC}/doc; sed \
 		-e s#/usr/local/etc#@sysconfdir@#g \
 		-e s#/usr/local/sbin#@prefix@/sbin#g \
