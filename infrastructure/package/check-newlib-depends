@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.7 2005/03/06 12:05:11 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.8 2005/03/07 11:15:33 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -179,13 +179,35 @@ sub report_lib_issue
 	}
 
 	my @r = OpenBSD::SharedLibs::lookup_libspec('/usr/local', $libspec);
-	for my $p (@r) {
-		if (defined $dependencies->{$plist->pkgname()}->{$p}) {
-			print "Missing: $want from $p ($binary) (probably LIB_DEPENDS)\n";
-			return;
+	if (@r > 0) {
+		for my $p (@r) {
+			if (defined $dependencies->{$plist->pkgname()}->{$p}) {
+				print "Missing: $want from $p ($binary) (probably LIB_DEPENDS)\n";
+				return;
+			}
 		}
 	}
-	print "Missing: $want ($binary)\n";
+	# okay, let's walk for WANTLIB
+	my @todo = (keys %{$dependencies->{$plist->pkgname()}});
+	my $done = {};
+	while (my $dep = pop @todo) {
+		next if $done->{$dep};
+		$done->{$dep} = 1;
+		get_plist($dep);
+		push(@todo, keys %{$dependencies->{$dep}});
+	}
+	@r = OpenBSD::SharedLibs::lookup_libspec('/usr/local', $libspec);
+	if (@r > 0) {
+		for my $p (@r) {
+			if (defined $done->{$p}) {
+				print "Missing: $want from $p ($binary) (reachable through dependencies: WANTLIB)\n";
+				return;
+			}
+		}
+		print "Missing $want (coming from ", join(',', @r), " ($binary) (NOT REACHABLE)\n";
+		return;
+	}
+	print "Missing: $want ($binary): NOT REACHABLE\n";
 }
 
 sub analyze 
