@@ -1,17 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/06/25 00:50:39 brad Exp $
-sbin/nemesis-arp
-sbin/nemesis-dns
-sbin/nemesis-icmp
-sbin/nemesis-igmp
-sbin/nemesis-ospf
-sbin/nemesis-rip
-sbin/nemesis-tcp
-sbin/nemesis-udp
+@comment $OpenBSD: PLIST,v 1.3 2003/09/26 06:01:13 jolan Exp $
 man/man1/nemesis-arp.1
 man/man1/nemesis-dns.1
+man/man1/nemesis-ethernet.1
 man/man1/nemesis-icmp.1
 man/man1/nemesis-igmp.1
+man/man1/nemesis-ip.1
 man/man1/nemesis-ospf.1
 man/man1/nemesis-rip.1
 man/man1/nemesis-tcp.1
 man/man1/nemesis-udp.1
+man/man1/nemesis.1
+sbin/nemesis
