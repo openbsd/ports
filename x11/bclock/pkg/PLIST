@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/07/05 02:09:20 kevlo Exp $
 bin/bclock
 man/cat1/bclock.0
 lib/X11/app-defaults/Clock-color
