@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 1999/04/20 03:10:40 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/07/07 03:18:38 kevlo Exp $
 # $FreeBSD: Makefile,v 1.19 1997/11/20 08:21:26 tg Exp $
 #
 
      SUBDIR += arc
      SUBDIR += bzip
      SUBDIR += bzip2
+     SUBDIR += fastjar
      SUBDIR += freeze
      SUBDIR += gshar+gunshar
      SUBDIR += gtar
