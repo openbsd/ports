@@ -1,0 +1,20 @@
+--- nessus-core/nessus.tmpl.in.orig	Mon May 29 19:34:42 2000
++++ nessus-core/nessus.tmpl.in	Wed Jul 19 23:00:14 2000
+@@ -37,7 +37,7 @@
+ make_bindir=${rootdir}/bin
+ libsdir=${rootdir}/libs
+ top_builddir = @PWDD@
+-include= -I. -I$(rootdir)/include -I@includedir@ -I$(rootdir)/src/libpcap
++include= -I. -I$(rootdir)/include -I$(rootdir)/src/libpcap
+ INSTALL=@INSTALL@
+ INSTALL_DIR=@INSTALL_DIR@
+ installuser=root
+@@ -137,7 +137,7 @@
+ # C compiler options
+ NESSCFLAGS=@NESSCFLAGS@
+ NASLCFLAGS=@NASLCFLAGS@
+-NESSUS_CFLAGS=$(CWARN) $(include) $(NESSCFLAGS) $(NASLCFLAGS) $(NESSUS_DIRECTORIES)
++NESSUS_CFLAGS=$(CWARN) $(include) $(NESSCFLAGS) $(NASLCFLAGS) $(NESSUS_DIRECTORIES) -I@includedir@
+ CFLAGS=@CFLAGS@ 
+ 
+ LIBS=@LIBS@

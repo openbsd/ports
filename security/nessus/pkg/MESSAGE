@@ -1,0 +1,7 @@
+
++---------------
+| If you have not already installed nmap 2.3BETA or a newer version
+| in ${PREFIX}/bin, you may wish to do so in order to enable some
+| checks which will otherwise return false negatives.
++---------------
+

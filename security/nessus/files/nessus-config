@@ -9,8 +9,8 @@
 VERSION=@@VERS@@
 LIBDIR=w00w00nessus-libraries
 COREDIR=w00w00nessus-core
-CIPHER="-L$LIBDIR/libpeks -lpeks -lgmp"
-CIPHER_CFLAGS="-DENABLE_CRYPTO_LAYER -I$COREDIR/include -I$LIBDIR/include -I$LIBDIR/libpeks"
+CIPHER="-L$LIBDIR/libpeks/.libs -lpeks -lgmp -lz"
+CIPHER_CFLAGS="-DENABLE_CRYPTO_LAYER -I$LIBDIR/libpeks"
 EXTRA="-lresolv  "
 
 usage()
@@ -37,11 +37,10 @@ while test $# -gt 0; do
 		exit 0
 		;;
 	--libs)
-	
 		echo $Xn "-L$LIBDIR/libnessus/.libs -lnessus -L$LIBDIR/libhosts_gatherer/.libs -lhosts_gatherer -lpcap $CIPHER $EXTRA $Xc"
 		;;
 	--cflags)
-		echo $Xn "-I$INCLUDEDIR -I$INCLUDEDIR/nessus $CIPHER_CFLAGS $Xc"
+		echo $Xn "-I$COREDIR/include -I$LIBDIR/include $CIPHER_CFLAGS $Xc"
 		;;
 	--help | -h)
 		usage 0

@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2000/07/07 21:25:10 matt Exp $
+# $OpenBSD: Makefile,v 1.14 2000/07/27 00:24:43 matt Exp $
 
 PKGNAME=	nessus-${VERS}
 
 CATEGORIES=	security
-NEED_VERSION=	1.310
-FAKE=		Yes
+NEED_VERSION=	1.316
 
-VERS=		1.0.0
+VERS=		1.0.3
 
-DIST_SUBDIR=	${PKGNAME}
+DIST_SUBDIR=	nessus-${VERS}
 
 DISTFILES=	nessus-libraries-${VERS}${EXTRACT_SUFX} \
 		libnasl-${VERS}${EXTRACT_SUFX} \
@@ -24,17 +23,26 @@ MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${VERS}/ \
 		ftp://ftp.sekure.net/pub/nessus/nessus-${VERS}/ \
 		ftp://ftp.nectec.or.th/pub/mirrors/nessus/nessus-${VERS}/
 
-MAINTAINER=	matt@zigg.com
+MAINTAINER=	matt@openbsd.org
 
-LICENSE_TYPE=		GPL
+HOMEPAGE=	http://www.nessus.org/
+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+
+FLAVORS=no_x11
+FLAVOR?=
 
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS+=--localstatedir=/var
+
+.if empty(FLAVOR:L:Mno_x11)
+LIB_DEPENDS=	gtk.1.2::x11/gtk+
+.else
+CONFIGURE_ARGS+=--disable-gtk
+.endif
 
 post-extract:
 	@sed "s%y0y0y0%${NESSUS_DIRS}%g" \
@@ -51,7 +59,13 @@ post-extract:
 	@(cd ${WRKSRC}nessus-libraries/libpcap-nessus ; ln -s . nessus)
 	@(cd ${WRKSRC}libnasl/include ; ln -s . nessus)
 
+# Convince nmap_wrapper.nes to build regardless of nmap's presence.
+post-configure:
+	@cp ${FILESDIR}/nmap.h ${WRKSRC}nessus-plugins/plugins/nmap_wrapper/
+	@touch ${WRKSRC}nessus-plugins/plugins/nmap_wrapper/nmap_installed
+
 pre-install:
 	mkdir -p -m 755 ${PREFIX}/include/nessus
 
 .include <bsd.port.mk>
+

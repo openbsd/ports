@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# $OpenBSD: DEINSTALL,v 1.1 2000/07/27 00:23:34 matt Exp $
+#
+# Nessus de-installation
+
+set -e
+PATH=/bin
+
+cat <<EOT
+
++---------------
+| To completely deinstall the $1 package, you need to manually
+| delete /etc/nessus and /var/nessus.
++---------------
+
+EOT
+
+exit 0
+
