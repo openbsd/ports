@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 1999/05/21 00:51:52 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/06/14 02:48:46 brad Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1999/04/02 04:19:20 steve Exp $
 
-DISTNAME=	ace12b
+DISTNAME=	unacepub
 PKGNAME=	unace-1.2b
 CATEGORIES=	archivers
 MASTER_SITES=	http://members.aol.com/mlemke6413/
