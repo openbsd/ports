@@ -1,0 +1,10 @@
+--- screen.C.orig	Wed Mar 13 17:34:38 1996
++++ screen.C	Mon Mar 13 01:46:23 2000
+@@ -103,7 +103,6 @@
+     wchip.string_back(85+pos, 205+pos, "'q' to quit");
+     wchip.set_position(0, 0);
+     map.init();
+-    radar.prepare();
+ }
+ 
+ void _screen::init_scene(int sc)
