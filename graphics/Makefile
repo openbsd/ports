@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2001/06/19 03:27:02 angelos Exp $
+# $OpenBSD: Makefile,v 1.69 2001/06/20 18:58:43 lebel Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -31,6 +31,8 @@
      SUBDIR += gifsicle
      SUBDIR += gii
      SUBDIR += gimp
+     SUBDIR += gle
+     SUBDIR += glut
      SUBDIR += gphoto
      SUBDIR += gqview
      SUBDIR += gtksee
