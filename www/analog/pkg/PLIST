@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2002/06/26 04:07:16 form Exp $
+@comment $OpenBSD: PLIST,v 1.19 2003/06/22 21:29:25 naddy Exp $
 bin/analog
 share/analog/anlgform.html
 share/analog/anlgform.pl
@@ -192,9 +192,9 @@ share/analog/lang/gra.lng
 share/analog/lang/hr.lng
 share/analog/lang/hu.cfg
 share/analog/lang/hu.lng
-share/analog/lang/hua.lng
-share/analog/lang/huadom.tab
 share/analog/lang/hudom.tab
+share/analog/lang/id.lng
+share/analog/lang/ida.lng
 share/analog/lang/is.lng
 share/analog/lang/isa.lng
 share/analog/lang/it.lng
@@ -269,9 +269,18 @@ share/analog/lang/sedom.tab
 share/analog/lang/si.lng
 share/analog/lang/si1.lng
 share/analog/lang/sk.lng
+share/analog/lang/sk1.lng
+share/analog/lang/sk1a.lng
+share/analog/lang/sk1adesc.txt
+share/analog/lang/sk1adom.tab
+share/analog/lang/sk1desc.txt
+share/analog/lang/sk1dom.tab
 share/analog/lang/ska.lng
+share/analog/lang/skadesc.txt
+share/analog/lang/skadom.tab
+share/analog/lang/skdesc.txt
+share/analog/lang/skdom.tab
 share/analog/lang/tr.lng
-share/analog/lang/tra.lng
 share/analog/lang/tw.lng
 share/analog/lang/twdesc.txt
 share/analog/lang/twdom.tab
@@ -357,9 +366,11 @@ share/doc/analog/webworks.html
 share/doc/analog/whatsnew.html
 share/examples/analog/big.cfg
 share/examples/analog/bigbyrep.cfg
-share/examples/analog/realmedia.cfg
+share/examples/analog/misclogs.cfg
+share/examples/analog/robotinc.cfg
 share/examples/analog/searchen.cfg
 share/examples/analog/statslab.cfg
+share/examples/analog/typealias.cfg
 share/examples/analog/virtdoms.cfg
 share/examples/analog/xferlog.cfg
 @dirrm share/examples/analog
