@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2001/02/06 11:59:37 wilfried Exp $
+# $OpenBSD: Makefile,v 1.45 2001/03/16 15:33:25 wilfried Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -54,6 +54,9 @@
      SUBDIR += waveplay
      SUBDIR += wmmixer
      SUBDIR += wmmp3
+     SUBDIR += wmtune
+     SUBDIR += wmtune:radiotrack
+     SUBDIR += wmtune:zoltrix
      SUBDIR += workman
      SUBDIR += wsoundprefs
      SUBDIR += wsoundserver
