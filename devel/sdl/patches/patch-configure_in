@@ -1,58 +1,40 @@
-$OpenBSD: patch-configure_in,v 1.10 2001/07/20 03:07:07 pvalchev Exp $
---- configure.in.orig	Mon Jun 18 09:21:38 2001
-+++ configure.in	Thu Jul 19 20:38:01 2001
-@@ -14,9 +14,9 @@ dnl Set various version strings - taken 
+$OpenBSD: patch-configure_in,v 1.11 2001/07/25 07:58:32 pvalchev Exp $
+--- configure.in.orig	Mon Jul 23 13:54:03 2001
++++ configure.in	Tue Jul 24 23:05:55 2001
+@@ -13,10 +13,10 @@ dnl Set various version strings - taken 
+ # set SDL_BINARY_AGE and SDL_INTERFACE_AGE to 0.
  #
  SDL_MAJOR_VERSION=1
- SDL_MINOR_VERSION=2
--SDL_MICRO_VERSION=1
--SDL_INTERFACE_AGE=1
--SDL_BINARY_AGE=1
-+SDL_MICRO_VERSION=2
-+SDL_INTERFACE_AGE=2
-+SDL_BINARY_AGE=2
+-SDL_MINOR_VERSION=2
+-SDL_MICRO_VERSION=2
+-SDL_INTERFACE_AGE=2
+-SDL_BINARY_AGE=2
++SDL_MINOR_VERSION=3
++SDL_MICRO_VERSION=3
++SDL_INTERFACE_AGE=3
++SDL_BINARY_AGE=3
  SDL_VERSION=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION.$SDL_MICRO_VERSION
  
  AC_SUBST(SDL_MAJOR_VERSION)
-@@ -246,7 +246,11 @@ CheckOSS()
-         AC_MSG_CHECKING(for OSS audio support)
-         have_oss=no
-         AC_TRY_COMPILE([
-+          #ifdef __OpenBSD__
-+          #include <soundcard.h>
-+          #else
-           #include <sys/soundcard.h>
-+          #endif
-         ],[
-           int arg = SNDCTL_DSP_SETFRAGMENT;
-         ],[
-@@ -289,6 +293,7 @@ CheckOPENBSDAUDIO()
- [  --enable-openbsdaudio   OpenBSD native audio support [default=no]],
-                   , enable_openbsdaudio=no)
-     if test x$enable_audio = xyes -a x$enable_openbsdaudio = xyes; then
-+	CFLAGS="$CFLAGS -DOPENBSD_SUPPORT"
-         SYSTEM_LIBS="$SYSTEM_LIBS $ESD_LIBS"
-         AUDIO_SUBDIRS="$AUDIO_SUBDIRS openbsd"
-         AUDIO_DRIVERS="$AUDIO_DRIVERS openbsd/libaudio_openbsd.la"
-@@ -1385,8 +1390,10 @@ case "$target" in
+@@ -1450,8 +1450,6 @@ case "$target" in
          if test x$enable_timers = xyes; then
              COPY_ARCH_SRC(src/timer, linux, SDL_systimer.c)
          fi
 -        # OpenBSD does not define "unix"
 -        CFLAGS="$CFLAGS -Dunix"
-+	# OpenBSD needs linking with ossaudio emulation library
-+	if test x$enable_oss = xyes; then
-+	    LIBS="$LIBS -lossaudio"
-+	fi
          ;;
      *-*-sysv5*)
          ARCH=sysv5
-@@ -1959,7 +1966,7 @@ if test $ARCH = solaris; then
+@@ -2024,7 +2022,11 @@ if test $ARCH = solaris; then
  fi
  
  if test $ARCH = openbsd; then
--  SDL_RLD_FLAGS="-L${X11BASE}/lib -Wl,-rpath,\${exec_prefix}/lib -Wl,-rpath,${X11BASE}/lib"
-+  SDL_RLD_FLAGS="-Wl,-rpath,${X11BASE}/lib"
+-  SDL_RLD_FLAGS="-Wl,-rpath,\${exec_prefix}/lib $SYSTEM_LIBS"
++	if test x$have_x = xyes; then
++	    SDL_RLD_FLAGS="-Wl,-rpath,\${exec_prefix}/lib -Wl,-rpath,${X11BASE}/lib $SYSTEM_LIBS"
++	else
++	    SDL_RLD_FLAGS="-Wl,-rpath,\${exec_prefix}/lib $SYSTEM_LIBS"
++	fi
  fi
  
  dnl Output the video drivers we use
