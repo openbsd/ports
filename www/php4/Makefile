@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2000/10/05 21:25:36 jakob Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/12 16:23:08 jakob Exp $
 
-DISTNAME=	php-4.0.2
-PKGNAME=	php4-4.0.2
+DISTNAME=	php-4.0.3
+PKGNAME=	php4-4.0.3
 CATEGORIES=	www lang
 NEED_VERSION=	1.319
 
