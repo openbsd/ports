@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/10 14:49:48 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/03 13:38:43 lebel Exp $
 
 COMMENT=	"tty-based mail and news client"
 
-VERSION=	0.4.7
+VERSION=	0.4.8
 DISTNAME=	tty-grin-${VERSION}
 PKGNAME=	ttygrin-${VERSION}
 CATEGORIES=	mail
