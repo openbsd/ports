@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/02/07 02:16:15 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2001/02/18 15:24:39 jakob Exp $
 
 DISTNAME=	imap-2000c
 PKGNAME=	c-client-2000c
@@ -23,9 +23,9 @@ MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" SHLIB="${SHLIB}" \
 
 ALL_TARGET=	bso
 
-HEADERS=	dummy.h env.h env_unix.h fdstring.h flstring.h fs.h ftl.h \
-		imap4r1.h linkage.c linkage.h mail.h misc.h nl.h nntp.h \
-		osdep.h pop3.h rfc822.h smtp.h tcp.h utf8.h
+HEADERS=	c-client.h env.h env_unix.h fs.h ftl.h imap4r1.h \
+		linkage.c linkage.h mail.h misc.h nl.h nntp.h osdep.h \
+		pop3.h rfc822.h smtp.h tcp.h utf8.h
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/c-client

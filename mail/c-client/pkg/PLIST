@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/11/11 16:32:46 brad Exp $
-include/c-client/dummy.h
+@comment $OpenBSD: PLIST,v 1.4 2001/02/18 15:24:40 jakob Exp $
+include/c-client/c-client.h
 include/c-client/env.h
 include/c-client/env_unix.h
-include/c-client/fdstring.h
-include/c-client/flstring.h
 include/c-client/fs.h
 include/c-client/ftl.h
 include/c-client/imap4r1.h
