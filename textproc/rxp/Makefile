@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/29 09:24:03 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/04 21:50:12 jakob Exp $
 
-DISTNAME=	rxp-1.1
+DISTNAME=	rxp-1.2
 CATEGORIES=	textproc
 
-MAINTAINER=     jakob@openbsd.org
+MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
