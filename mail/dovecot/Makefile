@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2005/02/13 18:37:32 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2005/02/13 18:42:46 brad Exp $
 
 COMMENT= 	"compact IMAP/POP3 server"
 
@@ -19,6 +19,15 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto ssl
 
 MODULES=	converters/libiconv
+
+FLAVORS+=      mysql
+FLAVOR?=
+
+.if ${FLAVOR:L:Mmysql}
+CONFIGURE_ARGS+=	--with-mysql
+LIB_DEPENDS+=		lib/mysql/mysqlclient.10::databases/mysql
+WANTLIB+=		m z
+.endif
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59
