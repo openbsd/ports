@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.318 2000/07/19 22:36:32 naddy Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.319 2000/07/21 02:38:33 miod Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -994,9 +994,9 @@ CDROM_OPT=		-f
 
 .if defined(CDROM_SITE)
 .  if defined(FETCH_SYMLINK_DISTFILES)
-_CDROM_OVERRIDE=if ln -s ${CDROM_SITE}/$$f .; then exit 0; fi;
+_CDROM_OVERRIDE=if ln -s ${CDROM_SITE}/$$f .; then exit 0; fi
 .  else
-_CDROM_OVERRIDE=if cp -f ${CDROM_SITE}/$$f .; then exit 0; fi;
+_CDROM_OVERRIDE=if cp -f ${CDROM_SITE}/$$f .; then exit 0; fi
 .  endif
 .else
 _CDROM_OVERRIDE=:
