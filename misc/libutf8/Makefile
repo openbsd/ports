@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/08 20:05:21 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/22 00:34:29 avsm Exp $
 
 DISTNAME=	libutf8-0.7.3
-CATEGORIES=     devel
+CATEGORIES=     devel misc
 NEED_VERSION=	1.352
 MASTER_SITES=	ftp://ftp.shellhung.org/pub/OpenBSD/packages/devel/
 
