@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.464 2001/09/30 11:27:05 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.465 2001/09/30 12:26:57 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -201,6 +201,18 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 
 .if exists(${.CURDIR}/../Makefile.inc)
 .include "${.CURDIR}/../Makefile.inc"
+.endif
+
+.if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
+  !defined(PERMIT_DISTFILES_CDROM) || !defined(PERMIT_DISTFILES_FTP)
+ERRORS+="The licensing info for ${FULLPKGNAME} is incomplete."
+ERRORS+="Please notify the OpenBSD port maintainer:"
+ERRORS+="    ${MAINTAINER}"
+_BAD_LICENSING=Yes
+PERMIT_PACKAGE_CDROM = No
+PERMIT_DISTFILES_CDROM = No
+PERMIT_PACKAGE_FTP = No
+PERMIT_DISTFILES_FTP = No
 .endif
 
 # MODULES support
@@ -1328,14 +1340,8 @@ uninstall deinstall fake package:
 # can be run several times in a row.
 
 fetch: fetch-depends
-# You need to define PERMIT_* to make the warning go away.
 # See ports/infrastructure/templates/Makefile.template
 	@${ECHO_MSG} "===>  Checking files for ${FULLPKGNAME}"
-.  if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
-    !defined(PERMIT_DISTFILES_CDROM) || !defined(PERMIT_DISTFILES_FTP)
-	@echo >&2 "*** The licensing info for this port is incomplete."
-	@echo >&2 "*** Please notify the OpenBSD port maintainer: ${MAINTAINER}"
-.  endif
 .  if target(pre-fetch)
 	@cd ${.CURDIR} && exec ${MAKE} pre-fetch
 .  endif
@@ -1807,55 +1813,39 @@ ${_F}:
 
 bulk-packages:
 	@${MAKE} package BATCH=Yes && exec ${SUDO} ${MAKE} clean CLEANDEPENDS=Yes
-
-all-packages: ${PKGFILE${SUBPACKAGE}}
-.if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
-.  for _sub in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' exec ${MAKE} ${.TARGET}
-.  endfor
-.endif
+	@exec ${MAKE} ftp-packages cdrom-packages
 
 # Invoke "make cdrom-packages CDROM_PACKAGES=/cdrom/snapshots/packages"
-.if defined(PERMIT_PACKAGE_CDROM) && ${PERMIT_PACKAGE_CDROM:L} == "yes"
-cdrom-packages: ${CDROM_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
-.else
-cdrom-packages:
-.endif
-.if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
-.  for _sub in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' exec ${MAKE} ${.TARGET}
-.  endfor
-.endif
-
 # Invoke "make ftp-packages FTP_PACKAGES=/pub/OpenBSD/snapshots/packages"
-.if defined(PERMIT_PACKAGE_FTP) && ${PERMIT_PACKAGE_FTP:L} == "yes"
-ftp-packages: ${FTP_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
-.else
-ftp-packages:
-.endif
-.if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
-.  for _sub in ${MULTI_PACKAGES}
+
+.for _l in FTP CDROM
+
+.  if ${PERMIT_PACKAGE_${_l}:L} == "yes" && !defined(IGNORE)
+${_l:L}-packages: ${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
+.  else
+${_l:L}-packages:
+.  endif
+.  if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
+.    for _sub in ${MULTI_PACKAGES}
 	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' exec ${MAKE} ${.TARGET}
-.  endfor
-.endif
+.    endfor
+.  endif
 
+${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}: ${_PACKAGE_COOKIE${SUBPACKAGE}}
+.    if ${PERMIT_PACKAGE_${_l}:L} == "yes"
+	@mkdir -p ${${_l}_PACKAGES}
+	@rm -f ${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
+	@ln ${PKGFILE${SUBPACKAGE}} \
+	  ${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX} 2>/dev/null || \
+	  cp -p ${PKGFILE${SUBPACKAGE}} \
+	  ${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
+.    else
+	@echo 1>&2 "Internal error: ${_l:L}-packages for a forbidden file ?"
+	@false
+.    endif
 
-${PKGFILE${SUBPACKAGE}}:
-	@mkdir -p ${PORTSDIR}/logs/${MACHINE_ARCH}
-	@cd ${.CURDIR} && exec ${MAKE} package ALWAYS_PACKAGE=Yes 2>&1 | \
-		tee ${PORTSDIR}/logs/${MACHINE_ARCH}/${FULLPKGNAME}.log
+.endfor
 
-${FTP_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}: ${PKGFILE${SUBPACKAGE}}
-	@mkdir -p ${FTP_PACKAGES}
-	@rm -f ${FTP_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
-	@ln ${PKGFILE${SUBPACKAGE}} ${FTP_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX} 2>/dev/null || \
-	cp -p ${PKGFILE${SUBPACKAGE}} ${FTP_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
-
-${CDROM_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}: ${PKGFILE${SUBPACKAGE}}
-	@mkdir -p ${CDROM_PACKAGES}
-	@rm -f ${CDROM_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
-	@ln ${PKGFILE${SUBPACKAGE}} ${CDROM_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX} 2>/dev/null || \
-	cp -p ${PKGFILE${SUBPACKAGE}} ${CDROM_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
 
 # list the distribution and patch files used by a port.  Typical
 # use is		make ECHO_MSG=: list-distfiles | tee some-file
@@ -2059,10 +2049,10 @@ _ALLFILES=${ALLFILES}
 fetch-makefile:
 .if !defined(COMES_WITH)
 	@echo -n "all"
-.  if defined(PERMIT_DISTFILES_FTP) && ${PERMIT_DISTFILES_FTP:L} == "yes"
+.  if ${PERMIT_DISTFILES_FTP:L} == "yes"
 	@echo -n " ftp"
 .  endif
-.  if defined(PERMIT_DISTFILES_CDROM) && ${PERMIT_DISTFILES_CDROM:L} == "yes"
+.  if ${PERMIT_DISTFILES_CDROM:L} == "yes"
 	@echo -n " cdrom"
 .  endif
 	@echo ":: ${PKGPATH}/${FULLPKGNAME}"
@@ -2222,46 +2212,29 @@ describe:
 	 *) echo -n "${ONLY_FOR_ARCHS}|";; \
 	 esac
 
-.    if defined(PERMIT_PACKAGE_CDROM)
+.    if defined(_BAD_LICENSING)
+	@echo "?|?|?|?"
+.    else
 .      if ${PERMIT_PACKAGE_CDROM:L} == "yes"
 	@echo -n "y|"
 .      else
 	@echo -n "n|"
 .      endif
-.  	 else
-	@echo -n "?|"
-.	 endif	
-
-.	 if defined(PERMIT_PACKAGE_FTP)
 .      if ${PERMIT_PACKAGE_FTP:L} == "yes"
 	@echo -n "y|"
 .      else
 	@echo -n "n|"
 .      endif
-.	 else
-	@echo -n "?|"
-.	 endif	
-
-
-.	 if defined(PERMIT_DISTFILES_CDROM)
 .	   if ${PERMIT_DISTFILES_CDROM:L} == "yes"
 	@echo -n "y|"
 .      else
 	@echo -n "n|"
 .      endif
-.	 else
-		@echo -n "?|"
-.	 endif	
-
-
-.	 if defined(PERMIT_DISTFILES_FTP)
 .	   if ${PERMIT_DISTFILES_FTP:L} == "yes"
 	@echo "y"
 .      else
 	@echo "n"
 .      endif
-.	 else
-	@echo "?"
 .    endif
 .    if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
 .      for _sub in ${MULTI_PACKAGES}
