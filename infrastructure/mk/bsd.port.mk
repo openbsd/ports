@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.247 2000/04/02 16:42:27 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.248 2000/04/02 17:55:45 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2117,7 +2117,7 @@ lib-depends:
 
 misc-depends:
 .  if defined(DEPENDS) && !defined(NO_DEPENDS)
-	@{unset DEPENDS_TARGET || true; } ; \
+	@{ unset DEPENDS_TARGET || true; } ; \
 	for dir in ${DEPENDS:S,::,:,}; do \
 		cd ${PORTSDIR}; \
 		if expr "$$dir" : '.*:' > /dev/null; then \
