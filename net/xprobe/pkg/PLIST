@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/26 02:09:47 obecian Exp $
+bin/xprobe
+man/man1/xprobe.1
