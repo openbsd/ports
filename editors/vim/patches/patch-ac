@@ -1,6 +1,6 @@
---- fileio.c.orig	Thu Dec  9 13:19:36 1999
-+++ fileio.c	Thu Dec  9 13:20:15 1999
-@@ -3028,7 +3028,7 @@
+--- fileio.c.orig	Sat Dec 25 19:48:50 1999
++++ fileio.c	Sat Dec 25 19:49:25 1999
+@@ -3032,7 +3032,7 @@
  	    STRCAT(itmp, TEMPNAME);
  	    if ((p = vim_strchr(itmp, '?')) != NULL)
  		*p = extra_char;
@@ -9,7 +9,7 @@
  		continue;
  	    return vim_strsave(itmp);
  	}
-@@ -3066,7 +3066,7 @@
+@@ -3070,7 +3070,7 @@
      STRCPY(itmp, TEMPNAME);
      if ((p = vim_strchr(itmp, '?')) != NULL)
  	*p = extra_char;

@@ -1,0 +1,15 @@
+--- Makefile.orig	Sat Dec 25 19:47:08 1999
++++ Makefile	Sat Dec 25 19:50:23 1999
+@@ -1625,6 +1625,12 @@
+ 		-I$(PYTHON_CONFDIR) -DHAVE_CONFIG_H -DNO_MAIN \
+ 		$(ALL_CFLAGS)
+ 
++eval.o:
++	$(CC) -c -I$(srcdir) $(ALL_CFLAGS) -O1 $<
++
++tag.o:
++	$(CC) -c -I$(srcdir) $(ALL_CFLAGS) -O1 $<
++
+ osdef.h: osdef.sh config.h osdef1.h.in osdef2.h.in
+ 	CC="$(CC) $(ALL_CFLAGS)" srcdir=$(srcdir) sh $(srcdir)/osdef.sh
+ 
