@@ -1,14 +1,22 @@
-
+==========================================================================
 To activate the new printing system do the following:
 
-- save your old printcap (`cp /etc/printcap /etc/printcap.save')
-- update the files /etc/lpd.conf and /etc/lpd.perms
-  You can find samples in /usr/local/lib
+- Copy these config files from ${PREFIX}/share/examples/LPRng
+  to your /etc/LPRng/ directory: lpd.conf, lpd.perms and printcap
+
 - set `lpd_enable=NO' in /etc/rc.conf
-- reboot or kill the old lpd (`killall lpd') and
-  start the new one (`/usr/local/libexec/lpd')
+
+- add the following lines to /etc/rc.local:
+
+if [ -x /usr/local/sbin/lpd ]; then
+       echo -n ' LPRng';       /usr/local/sbin/lpd
+fi
+
+- reboot or kill the old lpd and start the new one 
+  (`${PREFIX}/sbin/lpd')
+
 - remember to adjust your aliases or your PATH to use the new programs
 
 For further information, have a look at:
-  /usr/local/share/doc/LPRng
-
+  ${PREFIX}/share/doc/LPRng
+==========================================================================

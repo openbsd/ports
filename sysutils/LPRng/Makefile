@@ -1,49 +1,57 @@
-# $OpenBSD: Makefile,v 1.18 2001/05/06 03:58:56 lebel Exp $
+# $OpenBSD: Makefile,v 1.19 2001/06/19 17:26:42 avsm Exp $
 
 COMMENT=	"enhanced printer spooler"
 
-BROKEN=		"installs files directly into /etc"
+DISTNAME=	LPRng-3.7.4
+CATEGORIES=	sysutils print
+NEED_VERSION=	1.403
+MASTER_SITES=	ftp://ftp.astart.com/pub/LPRng/LPRng/
+EXTRACT_SUFX=	.tgz
 
-DISTNAME=		LPRng-3.6.12
-CATEGORIES=		sysutils print
-NEED_VERSION=		1.402
-MASTER_SITES=		ftp://ftp.astart.com/pub/LPRng/LPRng/
-EXTRACT_SUFX=		.tgz
-
-MAINTAINER=		ports@openbsd.org
+MAINTAINER=	Jeff Bachtel <jeff@cepheid.org>
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	gnu dest
-CONFIGURE_ARGS=	--with-sbindir='$${DESTDIR}${PREFIX}/sbin' \
-		--with-filterdir='$${DESTDIR}${PREFIX}/libexec/filters' \
-		--with-lpd_conf_path='$${DESTDIR}${SYSCONFDIR}/lpd.conf' \
-		--with-lpd_perms_path='$${DESTDIR}${SYSCONFDIR}/lpd.perms' \
-		--with-printcap_path='$${DESTDIR}${SYSCONFDIR}/printcap'
+LIB_DEPENDS=	gdbm.2::databases/gdbm
 
-MAKE_FILE=		Makefile.bsd
+CONFIGURE_STYLE= gnu dest
+CONFIGURE_ARGS=	--with-sbindir=${PREFIX}/sbin \
+		--with-filterdir=${PREFIX}/libexec/filters \
+		--with-lpd_conf_path=${SYSCONFDIR}/LPRng/lpd.conf \
+		--with-lpd_perms_path=${SYSCONFDIR}/LPRng/lpd.perms \
+		--with-printcap_path=${SYSCONFDIR}/printcap \
+		--with-cppopts=-I${LOCALBASE}/include \
+		--with-ldopts=-L${LOCALBASE}/lib
 
-HTMLFILES=		LPRng-HOWTO-1.html LPRng-HOWTO-2.html \
-			LPRng-HOWTO-3.html LPRng-HOWTO-4.html \
-			LPRng-HOWTO-5.html LPRng-HOWTO-6.html \
-			LPRng-HOWTO-7.html LPRng-HOWTO-8.html \
-			LPRng-HOWTO-9.html LPRng-HOWTO-10.html \
-			LPRng-HOWTO-11.html LPRng-HOWTO-12.html \
-			LPRng-HOWTO-13.html LPRng-HOWTO-14.html \
-			LPRng-HOWTO-15.html LPRng-HOWTO.html \
-			LPRng.html bg.gif star1.gif
+FAKE_FLAGS=	DESTDIR=${WRKINST} POSTINSTALL=NO prefix=${TRUEPREFIX} \
+		FILTER_DIR=${TRUEPREFIX}/libexec/filters \
+		LPD_PERMS_PATH=${TRUEPREFIX}/etc/LPRng/lpd.perms \
+		LPD_CONF_PATH=${TRUEPREFIX}/etc/LPRng/lpd.conf \
+		PRINTCAP_PATH=${TRUEPREFIX}/etc/LPRng/printcap
+
+HTMLFILES=	LPRng-HOWTO.html REDIRECT.LPRng.html \
+		LPRng.html links.html LPRng.jpg LPRngT-S.jpg \
+		lprng-small.png LPRngLOGO100x30.gif \
+		LPRng_20logo.gif lprngtool.png \
+		LPRngLOGO2.gif bg.gif star1.gif LPRngLOGO334x100.gif \
+		linkbanner.gif topbanner.gif LPRngT-L.jpg lisa2000.jpg
+
+# we don't trust LPRng's (pre|post)install scripts
+pre-fake:
+	mkdir -p ${WRKINST}/etc && mkdir -p ${WRKINST}/etc/LPRng; \
+	cp ${WRKSRC}/lpd.conf ${WRKSRC}/lpd.perms ${WRKINST}/etc/LPRng; \
+	cp ${WRKSRC}/printcap.in ${WRKINST}/etc/LPRng/printcap
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/lpd.conf ${PREFIX}/lib/lpd.conf-sample
-	${INSTALL_DATA} ${WRKSRC}/lpd.perms ${PREFIX}/lib/lpd.perms-sample
-	test -f /etc/lpd.conf || ${INSTALL_DATA} ${WRKSRC}/lpd.conf /etc
-	test -f /etc/lpd.perms || ${INSTALL_DATA} ${WRKSRC}/lpd.perms /etc
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/LPRng
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/LPRng
 	cd ${WRKSRC}/HOWTO && ${INSTALL_DATA} ${HTMLFILES} \
 		${PREFIX}/share/doc/LPRng
-	@cat ${PKGDIR}/MESSAGE
+.for i in lpd.conf lpd.perms printcap
+	${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/LPRng/$i ${PREFIX}/share/examples/LPRng
+.endfor
 
 .include <bsd.port.mk>
