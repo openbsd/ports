@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_kernel_qthread_unix_cpp,v 1.1 2004/01/08 01:23:57 brad Exp $
+--- src/kernel/qthread_unix.cpp.orig	2003-11-11 20:24:45.000000000 -0500
++++ src/kernel/qthread_unix.cpp	2003-11-11 20:26:47.000000000 -0500
+@@ -306,7 +306,7 @@ void QThread::start(Priority priority)
+     pthread_attr_init(&attr);
+     pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
+ 
+-#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING-0 >= 0)
++#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING-0 >= 0) && !defined(Q_OS_OPENBSD)
+     switch (priority) {
+     case InheritPriority:
+ 	{

@@ -6,8 +6,7 @@ or on the web (${HOMEPAGE}).
 There is also a qt3-examples package, that contains a tutorial and 
 simple example programs (source + binaries).
 
-On most architectures, you can find database plugins: qt3-mysql and
-qt3-postgresql.
+There are database plugins: qt3-mysql and qt3-postgresql.
 
 People who want to use qt3 to compile applications outside the ports tree
 should note that qt3's installation conforms to OpenBSD habits, not
@@ -29,6 +28,5 @@ will override the Makefile contents.
 
 Warning: the qt3 library also appears under ${PREFIX}/lib, but you
 *must* make sure your application sees ${PREFIX}/lib/qt3 *first*, because
-${PREFIX}/lib may also contain a later incarnation of qt, in which case 
+${PREFIX}/lib may also contain a later incarnation of Qt, in which case 
 the linker will pick up the most recent library.
-

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mt,v 1.8 2003/06/26 15:46:03 sturm Exp $
+@comment $OpenBSD: PLIST-mt,v 1.9 2004/01/08 01:20:13 brad Exp $
 bin/assistant${FLAVOR_EXT}
 bin/designer3${FLAVOR_EXT}
 bin/findtr3${FLAVOR_EXT}
@@ -25,13 +25,8 @@ lib/qt3/bin${FLAVOR_EXT}/qt20fix
 lib/qt3/bin${FLAVOR_EXT}/qtconfig
 lib/qt3/bin${FLAVOR_EXT}/qtrename140
 lib/qt3/bin${FLAVOR_EXT}/uic
-lib/qt3/plugins${FLAVOR_EXT}/designer/libcppeditor.so
-lib/qt3/plugins${FLAVOR_EXT}/designer/libdlgplugin.so
-lib/qt3/plugins${FLAVOR_EXT}/designer/librcplugin.so
-lib/qt3/plugins${FLAVOR_EXT}/designer/libwizards.so
-lib/qt3/plugins${FLAVOR_EXT}/imageformats/libqjpeg.so
-lib/qt3/plugins${FLAVOR_EXT}/imageformats/libqmng.so
 %%SHARED%%
+@exec mkdir -p %D/lib/qt3/plugins${FLAVOR_EXT}/imageformats
 @exec mkdir -p %D/lib/qt3/plugins${FLAVOR_EXT}/styles
 @exec mkdir -p %D/lib/qt3/plugins${FLAVOR_EXT}/sqldrivers
 @dirrm lib/qt3/plugins${FLAVOR_EXT}/styles

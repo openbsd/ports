@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_kernel_qt_gfx_pri,v 1.1 2004/01/08 01:23:57 brad Exp $
+--- src/kernel/qt_gfx.pri.orig	2003-12-28 02:48:17.000000000 -0500
++++ src/kernel/qt_gfx.pri	2003-12-28 02:48:47.000000000 -0500
+@@ -6,7 +6,7 @@ SOURCES += $$KERNEL_CPP/qmngio.cpp
+ mng {
+         system-mng {
+ 	    win32:LIBS += libmng.lib
+-            unix:LIBS  += -lmng
++            unix:LIBS  += -lmng -llcms -ljpeg
+         } else {
+ 	   INCLUDEPATH        += 3rdparty/libmng
+ 	   SOURCES += 3rdparty/libmng/libmng_callback_xs.c \
+@@ -102,7 +102,7 @@ HEADERS+=$$KERNEL_H/qpngio.h
+ SOURCES+=$$KERNEL_CPP/qpngio.cpp
+ png {
+         system-png {
+-	    unix:LIBS  += -lpng
++	    unix:LIBS  += -lpng -lz
+ 	    win32:LIBS += libpng.lib
+ 	} else {
+ 	    INCLUDEPATH  += 3rdparty/libpng
