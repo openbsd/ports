@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2001/06/20 11:10:16 shell Exp $
+# $OpenBSD: Makefile,v 1.7 2001/07/21 04:22:53 shell Exp $
 
 COMMENT=	"perl modules for creating and manipulating PDF"
 
-DISTNAME=	Text-PDF-0.15
+DISTNAME=	Text-PDF-0.16
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
-NEED_VERSION=	1.378
+NEED_VERSION=	1.427
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
@@ -25,17 +25,11 @@ CONFIGURE_STYLE= perl
 
 EXAMPLE_DIR=	${PREFIX}/share/examples/p5-Text-PDF
 EXAMPLE_LOC=	${WRKSRC}/examples
-SCRIPT_FILES=	graph.pl hello.pl pdfaddobj.pl pdfaddpg.pl \
-		pdfcrop.pl pdfgetobj.pl
-DATA_FILES=	CD.CFG test.pdf
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
-.for i in ${SCRIPT_FILES}
-	${INSTALL_SCRIPT} ${EXAMPLE_LOC}/$i ${EXAMPLE_DIR}/$i
-.endfor
-.for i in ${DATA_FILES}
-	${INSTALL_DATA} ${EXAMPLE_LOC}/$i ${EXAMPLE_DIR}/$i
-.endfor
+	${INSTALL_SCRIPT} ${EXAMPLE_LOC}/*.pl ${EXAMPLE_DIR}/
+	${INSTALL_DATA} ${EXAMPLE_LOC}/*.CFG ${EXAMPLE_DIR}/
+	${INSTALL_DATA} ${EXAMPLE_LOC}/*.pdf ${EXAMPLE_DIR}/
 
 .include <bsd.port.mk>
