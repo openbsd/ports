@@ -1,5 +1,5 @@
---- texk/web2c/Makefile.in.orig	Sat Jun 26 14:12:25 1999
-+++ texk/web2c/Makefile.in	Tue Jul 27 15:26:56 1999
+--- texk/web2c/Makefile.in.orig	Sat Jun 26 06:12:25 1999
++++ texk/web2c/Makefile.in	Tue Aug 24 08:49:10 1999
 @@ -341,7 +341,7 @@
  # which we use to make the other programs.
  tangle.p: tangleboot tangle.web tangle.ch
@@ -18,9 +18,15 @@
  	$(shared_env) ./tangle $(srcdir)/tangle.web $(srcdir)/tangle.ch
  	mv tangle.p tangleboot.p
  	date >stamp-tangle
-@@ -1062,3 +1062,5 @@
+@@ -1062,3 +1062,11 @@
  # Local variables:
  # page-delimiter: "^# \f"
  # End:
++
++# pre-2.95.1 work-around
 +gftopk.o: gftopk.c
 +	$(compile) -O0 gftopk.c
++
++# sparc bug work-around
++mfini.o: mfini.c
++	$(compile) -O0 mfini.c
