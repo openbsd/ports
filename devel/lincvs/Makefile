@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/12/13 18:01:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2002/03/09 02:15:37 pvalchev Exp $
 
 COMMENT=	"graphical CVS front-end using QT2"
 
@@ -32,5 +32,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${MODQT_CONFIGURE_ARGS} \
 		--datadir=${LOCALBASE}/share/doc
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/auxdir
 
 .include <bsd.port.mk>
