@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/28 01:50:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2003/08/18 02:02:53 brad Exp $
 # Original from: Curtiss Howard, cereal@schizo.com
 #
 
@@ -17,10 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.grolier.fr/pub/mirrors/ftp.debian.org/debian/dists/potato/main/source/news/ \
-			ftp://ftp.cs.wisc.edu/pub/mirrors/linux/debian/dists/potato/main/source/news/ \
-			ftp://ftp.gigabell.net/pub/unix/linux/debian/dists/potato/main/source/news/ \
-         		ftp://ftp.funet.fi/pub/mirrors/ftp.debian.org/debian/dists/potato/main/source/news/
+MASTER_SITES=		ftp://ftp.funet.fi/pub/mirrors/ftp.debian.org/debian/dists/potato/main/source/news/ \                                          
+			http://people.montana.com/~drrom/
 
 LIB_DEPENDS=    	slang.::devel/libslang
 WRKDIST=		${WRKDIR}/linleech-2.2.1.orig
