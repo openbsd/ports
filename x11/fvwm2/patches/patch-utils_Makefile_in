@@ -1,17 +1,16 @@
-$OpenBSD: patch-utils_Makefile_in,v 1.2 2003/01/18 19:49:16 pvalchev Exp $
---- utils/Makefile.in.orig	Fri Nov 29 13:11:26 2002
-+++ utils/Makefile.in	Sat Jan 18 12:12:12 2003
-@@ -369,11 +369,10 @@ check-am: all-am
- check: check-am
- installcheck-am:
- installcheck: installcheck-am
--install-exec-am: install-binPROGRAMS install-binSCRIPTS \
--		install-exec-local
-+install-exec-am: install-binPROGRAMS install-binSCRIPTS
- install-exec: install-exec-am
+$OpenBSD: patch-utils_Makefile_in,v 1.3 2003/06/16 04:58:16 pvalchev Exp $
+--- utils/Makefile.in.orig	Fri May 30 10:06:16 2003
++++ utils/Makefile.in	Sun Jun 15 16:52:10 2003
+@@ -449,10 +449,9 @@ info: info-am
  
--install-data-am: install-man install-data-local
+ info-am:
+ 
+-install-data-am: install-data-local install-man
 +install-data-am: install-man
- install-data: install-data-am
  
- install-am: all-am
+-install-exec-am: install-binPROGRAMS install-binSCRIPTS \
+-	install-exec-local
++install-exec-am: install-binPROGRAMS install-binSCRIPTS
+ 
+ install-info: install-info-am
+ 
