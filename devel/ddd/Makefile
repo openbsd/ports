@@ -1,14 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 1999/12/03 14:24:38 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/01/01 00:15:50 brad Exp $
 
 DISTNAME=	ddd-3.1.90
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/src/  \
-		ftp://uiarchive.cso.uiuc.edu/pub/packages/ddd/src/  \
-		ftp://ftp.gre.ac.uk/pub/tools/debuggers/ddd/src/  \
-		ftp://richb-pc.acc.qc.edu/pub/ddd/src/  \
-		ftp://ftp.th-darmstadt.de/pub/programming/tools/ddd/src/
+MASTER_SITES=	ftp://ftp.th-darmstadt.de/pub/programming/tools/ddd/src/
 
-MAINTAINER=	marc@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 USE_MOTIF=	yes
 USE_GMAKE=	yes
@@ -26,7 +22,19 @@ pre-build:
 	@echo "*** for the 'limit' or 'ulimit' command."
 	@echo ""
 
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ddd
+	${INSTALL_DATA} ${WRKSRC}/PROBLEMS ${PREFIX}/share/doc/ddd
+	${INSTALL_DATA} ${WRKSRC}/doc/README ${PREFIX}/share/doc/ddd
+	${INSTALL_DATA} ${WRKSRC}/doc/ddd-paper.ps ${PREFIX}/share/doc/ddd
+	${INSTALL_DATA} ${WRKSRC}/doc/ddd.ps ${PREFIX}/share/doc/ddd
+	${INSTALL_DATA} ${WRKSRC}/doc/sample.c ${PREFIX}/share/doc/ddd
+	${INSTALL_DATA} ${WRKSRC}/doc/sample.dddinit ${PREFIX}/share/doc/ddd
+	@${GZIP_CMD} ${PREFIX}/share/doc/ddd/ddd-paper.ps
+	@${GZIP_CMD} ${PREFIX}/share/doc/ddd/ddd.ps
+	@install-info ${PREFIX}/info/ddd.info ${PREFIX}/info/dir
+
 check:	build
-	@cd ${WRKSRC}; ${GMAKE} check
+	@cd ${WRKSRC}; ${MAKE_PROGRAM} check
 
 .include <bsd.port.mk>
