@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2000/02/03 04:00:06 kevlo Exp $
+# $OpenBSD: Makefile,v 1.64 2000/02/06 15:16:58 kevlo Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -121,6 +121,7 @@
      SUBDIR += ucd-snmp
      SUBDIR += ucspi-tcp
      SUBDIR += vnc
+     SUBDIR += vtun
 #    SUBDIR += wais
      SUBDIR += wget
      SUBDIR += wide-dhcp
