@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/07 00:22:52 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/10/10 13:43:04 espie Exp $
 #
 
 DISTNAME=       tracker-5.3
@@ -32,5 +32,12 @@ post-install:
 	rm -f tracker.info *.orig
 	-${MKDIR} ${PREFIX}/share/doc/tracker
 	cp -R ${WRKSRC}/Docs/* ${PREFIX}/share/doc/tracker
+
+# there is a small test module included. This target tests that
+# - tracker correctly handles compressed files (only after install),
+# - tracker doesn't crash on random files,
+# - tracker plays some music.
+test:
+	cd ${WRKSRC} && /bin/sh ${FILESDIR}/test.uu && tracker *
 
 .include <bsd.port.mk>
