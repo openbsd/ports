@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/09/15 20:32:06 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/09/16 07:56:14 espie Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -15,7 +15,7 @@ NEED_VERSION=	1.89
 
 COMMUNICATOR_V=	4.61
 COMMUNICATOR_V2=461
-NS_i386=	communicator-v${COMMUNICATOR_V2}-export.x86-bsdi-bsd2.tar.gz
+NS_I386=	communicator-v${COMMUNICATOR_V2}-export.x86-bsdi-bsd2.tar.gz
 NS_SPARC=	communicator-v${COMMUNICATOR_V2}-export.sparc-sun-sunos4.1.3_U1.tar.gz
 FORTIFY=	Fortify-1.4.4-unix-src
 
