@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2003/02/03 15:13:10 couderc Exp $
+# $OpenBSD: Makefile,v 1.26 2003/02/11 18:50:22 marcm Exp $
 
 COMMENT=	"open-source, cross-platform WYSIWYG word processor"
 
@@ -12,7 +12,6 @@ MAINTAINER=	Damien Couderc <couderc@openbsd.org>
 
 LIB_DEPENDS=	png.2::graphics/png \
 		jpeg.62::graphics/jpeg \
-		xml2::textproc/libxml \
 		gtk.1.2,gdk.1.2::x11/gtk+
 RUN_DEPENDS=	ispell::textproc/ispell
 
@@ -27,7 +26,6 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-libpng=${LOCALBASE}/lib \
-			--with-libxml2 \
 			--disable-debug
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib"
@@ -52,14 +50,16 @@ LIB_DEPENDS+=		bonobo.2,bonobo-print.2,bonobox.2::x11/gnome/bonobo \
 			gnomevfs::x11/gnome/vfs
 .else
 CONFIGURE_ARGS+=	--disable-gnome
+CONFIGURE_ARGS+=	--with-libxml2
+LIB_DEPENDS+=		xml2::textproc/libxml
 .endif
 
 post-patch:
 	@mv ${PFILE} ${PFILE}.orig
 	@sed -e s/tmpnam/mkstemp/ ${PFILE}.orig > ${PFILE}
 	@cd ${WRKDIR}/abiword-${VERSION}; \
-	patch < ${FILESDIR}/patch-wv_libole2_Makefile_in; \
-	patch < ${FILESDIR}/patch-psiconf_configure
+	patch -s < ${FILESDIR}/patch-wv_libole2_Makefile_in; \
+	patch -s < ${FILESDIR}/patch-psiconf_configure
 
 .if ${FLAVOR:L:Mgnome}
 post-install:
