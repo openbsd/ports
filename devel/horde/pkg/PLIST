@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/05/03 09:38:21 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/11/23 19:04:47 avsm Exp $
 horde/COPYING
 horde/README
 horde/config/.htaccess
@@ -17,6 +17,7 @@ horde/docs/CONTRIBUTING
 horde/docs/CREDITS
 horde/docs/HACKING
 horde/docs/INSTALL
+horde/docs/SECURITY
 horde/docs/TRANSLATIONS
 horde/graphics/alerts/error.gif
 horde/graphics/alerts/message.gif
@@ -169,6 +170,7 @@ horde/lib/VFS/sql_file.php
 horde/lib/base.php
 horde/lib/version.php
 horde/locale/.htaccess
+horde/locale/ar_SY/LC_MESSAGES/horde.mo
 horde/locale/bg_BG/LC_MESSAGES/horde.mo
 horde/locale/ca_ES/LC_MESSAGES/horde.mo
 horde/locale/cs_CZ/LC_MESSAGES/horde.mo
@@ -187,6 +189,7 @@ horde/locale/ja_JP/LC_MESSAGES/horde.mo
 horde/locale/ko_KR/LC_MESSAGES/horde.mo
 horde/locale/lt_LT/LC_MESSAGES/horde.mo
 horde/locale/lv_LV/LC_MESSAGES/horde.mo
+horde/locale/mk_MK/LC_MESSAGES/horde.mo
 horde/locale/nb_NO/LC_MESSAGES/horde.mo
 horde/locale/nl_NL/LC_MESSAGES/horde.mo
 horde/locale/nn_NO/LC_MESSAGES/horde.mo
@@ -210,6 +213,7 @@ horde/navbar.php
 horde/po/.htaccess
 horde/po/Makefile
 horde/po/README
+horde/po/ar_SY.po
 horde/po/bg_BG.po
 horde/po/ca_ES.po
 horde/po/cs_CZ.po
@@ -228,6 +232,7 @@ horde/po/ja_JP.po
 horde/po/ko_KR.po
 horde/po/lt_LT.po
 horde/po/lv_LV.po
+horde/po/mk_MK.po
 horde/po/nb_NO.po
 horde/po/nl_NL.po
 horde/po/nn_NO.po
@@ -268,6 +273,7 @@ horde/scripts/ldap/horde.schema
 horde/scripts/mime_mapping/Makefile
 horde/scripts/mime_mapping/convert.pl
 horde/scripts/mime_mapping/mime.types
+horde/scripts/mime_mapping/mime.types.horde
 horde/scripts/set_perms.sh
 horde/status.php
 horde/templates/.htaccess
@@ -316,6 +322,7 @@ horde/templates/wml/login/login.inc
 horde/templates/wml/login/user.inc
 horde/test.php
 horde/util/css2horde.php
+horde/util/go.php
 horde/util/special_characters.php
 @dirrm horde/util
 @dirrm horde/templates/wml/login
@@ -367,6 +374,8 @@ horde/util/special_characters.php
 @dirrm horde/locale/nl_NL
 @dirrm horde/locale/nb_NO/LC_MESSAGES
 @dirrm horde/locale/nb_NO
+@dirrm horde/locale/mk_MK/LC_MESSAGES
+@dirrm horde/locale/mk_MK
 @dirrm horde/locale/lv_LV/LC_MESSAGES
 @dirrm horde/locale/lv_LV
 @dirrm horde/locale/lt_LT/LC_MESSAGES
@@ -400,6 +409,8 @@ horde/util/special_characters.php
 @dirrm horde/locale/ca_ES
 @dirrm horde/locale/bg_BG/LC_MESSAGES
 @dirrm horde/locale/bg_BG
+@dirrm horde/locale/ar_SY/LC_MESSAGES
+@dirrm horde/locale/ar_SY
 @dirrm horde/locale
 @dirrm horde/lib/VFS
 @dirrm horde/lib/Token
