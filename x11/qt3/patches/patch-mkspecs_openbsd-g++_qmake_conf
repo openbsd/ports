@@ -1,6 +1,6 @@
-$OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.10 2002/12/29 16:13:28 espie Exp $
---- mkspecs/openbsd-g++/qmake.conf.orig	Thu Nov  7 14:08:00 2002
-+++ mkspecs/openbsd-g++/qmake.conf	Mon Dec  2 17:27:06 2002
+$OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.11 2003/01/19 17:36:51 espie Exp $
+--- mkspecs/openbsd-g++/qmake.conf.orig	Mon Dec  9 10:41:32 2002
++++ mkspecs/openbsd-g++/qmake.conf	Sun Jan 19 15:55:15 2003
 @@ -8,6 +8,7 @@ MAKEFILE_GENERATOR	= UNIX
  TEMPLATE		= app
  CONFIG			+= qt warn_on release
@@ -20,3 +20,10 @@ $OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.10 2002/12/29 16:13:28 espie 
  QMAKE_INCDIR_X11	= /usr/X11R6/include
  QMAKE_LIBDIR_X11	= /usr/X11R6/lib
  QMAKE_INCDIR_QT		= $(QTDIR)/include
+@@ -80,4 +81,4 @@ QMAKE_MOVE		= mv -f
+ QMAKE_DEL_FILE		= rm -f
+ QMAKE_DEL_DIR		= rmdir
+ QMAKE_CHK_DIR_EXISTS	= test -d
+-QMAKE_MKDIR		= mkdir -p
+\ No newline at end of file
++QMAKE_MKDIR		= mkdir -p

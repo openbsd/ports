@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_kernel_qdnd_x11_cpp,v 1.1 2003/01/19 17:36:51 espie Exp $
+--- src/kernel/qdnd_x11.cpp.orig	Mon Dec  9 10:40:44 2002
++++ src/kernel/qdnd_x11.cpp	Sun Jan 19 16:00:29 2003
+@@ -567,6 +567,13 @@ void qt_handle_xdnd_enter( QWidget *, co
+ 
+ void qt_handle_xdnd_position( QWidget *w, const XEvent * xe, bool passive )
+ {
++    if (qt_xdnd_deco)
++    {
++	qt_xdnd_deco->raise();
++    }
++
++
++
+     const unsigned long *l = (const unsigned long *)xe->xclient.data.l;
+ 
+     QPoint p( (l[2] & 0xffff0000) >> 16, l[2] & 0x0000ffff );

@@ -1,0 +1,66 @@
+$OpenBSD: patch-src_kernel_qwidget_x11_cpp,v 1.3 2003/01/19 17:36:51 espie Exp $
+--- src/kernel/qwidget_x11.cpp.orig	Mon Dec  9 10:40:44 2002
++++ src/kernel/qwidget_x11.cpp	Sun Jan 19 16:00:29 2003
+@@ -164,22 +164,21 @@ Window qt_XCreateSimpleWindow( const QWi
+ void qt_XDestroyWindow( const QWidget *destroyer,
+ 			Display *display, Window window );
+ 
+-Q_EXPORT void qt_x11_enforce_cursor( QWidget * w, bool unset )
++Q_EXPORT void qt_x11_enforce_cursor( QWidget * w )
+ {
+-    QCursor * oc = QApplication::overrideCursor();
+-    if ( oc ) {
+-	XDefineCursor( w->x11Display(), w->winId(), oc->handle() );
+-    } else if ( unset ) {
+-	XDefineCursor( w->x11Display(), w->winId(), None );
+-    } else if ( w->isEnabled() ) {
+-	XDefineCursor( w->x11Display(), w->winId(), w->cursor().handle() );
+-    } else {
+-	QWidget *parent = w->parentWidget();
+-	while ( parent && !parent->isEnabled() )
+-		parent = parent->parentWidget();
+-	if ( parent ) {
+-	    XDefineCursor( w->x11Display(), w->winId(), parent->cursor().handle() );
++    if ( w->testWState( Qt::WState_OwnCursor ) ) {
++	QCursor * oc = QApplication::overrideCursor();
++	if ( oc ) {
++	    XDefineCursor( w->x11Display(), w->winId(), oc->handle() );
++	} else if ( w->isEnabled() ) {
++	    XDefineCursor( w->x11Display(), w->winId(), w->cursor().handle() );
++	} else {
++	    // enforce the windows behavior of clearing the cursor on
++	    // disabled widgets
++	    XDefineCursor( w->x11Display(), w->winId(), None );
+ 	}
++    } else {
++	XDefineCursor( w->x11Display(), w->winId(), None );
+     }
+ }
+ 
+@@ -554,7 +553,7 @@ void QWidget::create( WId window, bool i
+ 	setWState( WState_Visible );
+     } else if ( topLevel ) {			// set X cursor
+ 	if ( initializeWindow )
+-	    qt_x11_enforce_cursor( this, FALSE );
++	    qt_x11_enforce_cursor( this );
+ 	setWState( WState_OwnCursor );
+     }
+ 
+@@ -915,7 +914,7 @@ void QWidget::setCursor( const QCursor &
+ 	extra->curs = new QCursor(cursor);
+     }
+     setWState( WState_OwnCursor );
+-    qt_x11_enforce_cursor( this, FALSE );
++    qt_x11_enforce_cursor( this );
+     XFlush( x11Display() );
+ }
+ 
+@@ -927,7 +926,7 @@ void QWidget::unsetCursor()
+ 	    extra->curs = 0;
+ 	}
+ 	clearWState( WState_OwnCursor );
+-	qt_x11_enforce_cursor( this, TRUE );
++	qt_x11_enforce_cursor( this );
+ 	XFlush( x11Display() );
+     }
+ }

@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_designer_designer_designer_pro,v 1.1 2003/01/19 17:36:51 espie Exp $
+--- tools/designer/designer/designer.pro.orig	Tue Nov 26 15:39:41 2002
++++ tools/designer/designer/designer.pro	Sun Jan 19 16:00:29 2003
+@@ -16,6 +16,11 @@ DEFINES += QT_INTERNAL_ICONVIEW
+ DEFINES += QT_INTERNAL_TABLE
+ table:win32-msvc:DEFINES+=QM_TEMPLATE_EXTERN_TABLE=extern
+ 
++unix {
++	QMAKE_CFLAGS += $$QMAKE_CFLAGS_SHLIB
++	QMAKE_CXXFLAGS += $$QMAKE_CXXFLAGS_SHLIB
++}
++
+ include( ../../../src/qt_professional.pri )
+ 
+ SOURCES	+= command.cpp \

@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_kernel_qwidget_cpp,v 1.1 2003/01/19 17:36:51 espie Exp $
+--- src/kernel/qwidget.cpp.orig	Mon Dec  9 10:40:44 2002
++++ src/kernel/qwidget.cpp	Sun Jan 19 16:00:29 2003
+@@ -1473,8 +1473,13 @@ void QWidget::setEnabled( bool enable )
+ 	}
+     }
+ #if defined(Q_WS_X11)
+-    extern void qt_x11_enforce_cursor( QWidget * w, bool unset );
+-    qt_x11_enforce_cursor( this, FALSE );
++    if ( testWState( WState_OwnCursor ) ) {
++	// enforce the windows behavior of clearing the cursor on
++	// disabled widgets
++
++	extern void qt_x11_enforce_cursor( QWidget * w ); // defined in qwidget_x11.cpp
++	qt_x11_enforce_cursor( this );
++    }
+ #endif
+ }
+ 

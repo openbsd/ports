@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2002/11/23 18:52:22 espie Exp $
---- configure.orig	Mon Nov  4 04:42:44 2002
-+++ configure	Thu Nov 14 10:53:21 2002
-@@ -829,7 +829,7 @@ while [ "$#" -gt 0 ]; do
+$OpenBSD: patch-configure,v 1.6 2003/01/19 17:36:51 espie Exp $
+--- configure.orig	Fri Nov 29 15:26:24 2002
++++ configure	Sun Jan 19 15:55:15 2003
+@@ -828,7 +828,7 @@ while [ "$#" -gt 0 ]; do
      v|verbose)
  	if [ "$VAL" = "yes" ]; then
  	    if [ "$OPT_VERBOSE" = "$VAL" ]; then 	    # takes two verboses to turn on qmake debugs
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.5 2002/11/23 18:52:22 espie Exp $
              else
  		OPT_VERBOSE=yes
  	    fi
-@@ -1432,7 +1432,7 @@ if echo $MODULES | grep sql >/dev/null; 
+@@ -1438,7 +1438,7 @@ if echo $MODULES | grep sql >/dev/null; 
      MYSQL_REQ="-lmysqlclient mysql.h"
      OCI_REQ="-lclntsh -lwtc8 oci.h"
      PSQL_REQ="-lpq postgres.h libpq/libpq-fs.h catalog/pg_type.h libpq-fe.h"
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.5 2002/11/23 18:52:22 espie Exp $
      TDS_REQ="-lsybdb sybfront.h sybdb.h"
      for _SQLDR in $CFG_SQL_AVAILABLE; do
  	case $_SQLDR in
-@@ -1993,7 +1993,7 @@ if [ "$Edition" = "free" ]; then
+@@ -1999,7 +1999,7 @@ if [ "$Edition" = "free" ]; then
  	else
  	    echo "Do you accept the terms of $affix license? \c"
  	fi
