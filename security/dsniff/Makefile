@@ -3,9 +3,9 @@
 # Date created:		17 Dec 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.4 2000/01/28 21:13:15 dugsong Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/17 03:59:38 dugsong Exp $
 
-DISTNAME=	dsniff-1.4
+DISTNAME=	dsniff-1.5
 
 CATEGORIES=	security
 
@@ -17,5 +17,7 @@ BUILD_DEPENDS=	${PREFIX}/lib/libnet.a:${PORTSDIR}/net/libnet \
 		${PREFIX}/lib/libnids.a:${PORTSDIR}/net/libnids
 
 GNU_CONFIGURE=	yes
+
+NO_PATCH=	yes
 
 .include <bsd.port.mk>
