@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2004/03/02 07:57:21 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2004/04/08 00:05:48 brad Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
 COMMENT=	"sound library for Enlightenment"
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static --with-libwrap
+CONFIGURE_ARGS+= --with-libwrap
 
 post-extract:
 	@cp -f ${FILESDIR}/audio_sun.c ${WRKSRC}
