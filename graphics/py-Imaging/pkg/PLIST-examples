@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.1 2002/03/23 04:46:19 matt Exp $
-@option no-default-conflict
+@comment $OpenBSD: PLIST-examples,v 1.2 2004/05/23 15:58:01 xsa Exp $
 share/examples/py-Imaging/README
 share/examples/py-Imaging/bdf2pil.py
 share/examples/py-Imaging/enhancer.py

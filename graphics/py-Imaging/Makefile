@@ -1,14 +1,18 @@
-# $OpenBSD: Makefile,v 1.19 2004/02/04 07:39:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2004/05/23 15:58:01 xsa Exp $
+
+NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
 COMMENT=		"python imaging library"
 COMMENT-examples=	"examples for python imaging library"
 
-VERSION=		1.1.3
+VERSION=		1.1.4
 DISTNAME=		Imaging-${VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://www.pythonware.com/products/pil/
+
+MAINTAINER=	Aleksander Piotrowski <aleksander.piotrowski@nic.com.pl>
 
 # PIL Software License
 # Permission to use, copy, modify and distribute freely.
@@ -17,70 +21,56 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.pythonware.com/downloads/
+MASTER_SITES=		http://www.pythonware.net/storage/
 
-NO_REGRESS=		Yes
-FLAVORS=		python2.1
-FLAVOR?=
-
-.if ${FLAVOR:L} == "python2.1"
-PYTHON_VER=		2.1
-.else
-PYTHON_VER=		2.2
-.endif
+MODULES=		python
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:python-tkinter-${PYTHON_VER}*:lang/python/${PYTHON_VER},-tkinter 
+RUN_DEPENDS=		:python-tkinter-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-tkinter
 LIB_DEPENDS=		jpeg.62::graphics/jpeg \
 			tk84::x11/tk/8.4
 
 MULTI_PACKAGES=		-examples
 SUBPACKAGE?=
 
-# The examples subpackage is not flavored.
-FULLPKGNAME-examples=	py-Imaging-examples-${VERSION}
+PKGNAME-examples=	py-Imaging-examples-${VERSION}
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"
 RUN_DEPENDS=		:py-Imaging-*:graphics/py-Imaging
 LIB_DEPENDS=
 PKG_ARCH=		*
 .endif
 
-SUBST_VARS=		PYTHON_VER
-
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-jpeg=${LOCALBASE}/lib
-ALL_TARGET=
 
 LIB_IMAGING=		${WRKSRC}/libImaging
-SITE_PACKAGES=		${PREFIX}/lib/python${PYTHON_VER}/site-packages
 PIL_INCLUDES=		ImConfig.h ImPlatform.h Imaging.h
-PYTHON_INCLUDE_DIR=	${PREFIX}/include/python${PYTHON_VER}
 
 do-configure:
-	@sed -e "s|@LOCALBASE@|${LOCALBASE}|g" -e "s|@X11BASE@|${X11BASE}|g" \
-		${FILESDIR}/Setup >${WRKSRC}/Setup
-	@cd ${LIB_IMAGING}; \
-		${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS}
-	@cd ${WRKSRC}; ${MAKE_PROGRAM} -f Makefile.pre.in \
-		PYTHON=python${PYTHON_VER} boot
+	@perl -pi -e "s|!LOCALBASE!|${LOCALBASE}|g; s|!X11BASE!|${X11BASE}|g" \
+		${WRKSRC}/setup.py
+	@cd ${LIB_IMAGING}; ${SETENV} ${CONFIGURE_ENV} \
+		./configure ${CONFIGURE_ARGS}
 
 pre-build:
 	@cd ${LIB_IMAGING} && \
 		${MAKE_ENV} ${MAKE_PROGRAM} CC="${CC}" OPT="${CFLAGS}"
 
-do-install:
-# put all files in a subdir and just put a .pth file in ${SITE_PACKAGES}
-	${INSTALL_DATA_DIR} ${SITE_PACKAGES}/PIL
-	for a in ${WRKSRC}/*.so ${WRKSRC}/PIL/*; do \
-		${INSTALL_DATA} $$a ${SITE_PACKAGES}/PIL; done
-	${INSTALL_DATA} ${WRKSRC}/PIL.pth ${SITE_PACKAGES}/PIL.pth
-	${INSTALL_DATA_DIR} ${PYTHON_INCLUDE_DIR}
-.for a in ${PIL_INCLUDES}
-	${INSTALL_DATA} ${LIB_IMAGING}/$a ${PYTHON_INCLUDE_DIR}
-.endfor
+post-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/examples/py-Imaging
-	for a in ${WRKSRC}/Scripts/*; do \
-		${INSTALL_SCRIPT} $$a ${PREFIX}/share/examples/py-Imaging; done
+	for file in ${WRKSRC}/Scripts/*; do \
+		${INSTALL_SCRIPT} $$file \
+			${PREFIX}/share/examples/py-Imaging; \
+	done
+	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_INCDIR}
+.for a in ${PIL_INCLUDES}
+	${INSTALL_DATA} ${LIB_IMAGING}/$a ${WRKINST}${MODPY_INCDIR}
+.endfor
+
+do-regress: fake
+	@cd ${LIB_IMAGING} && ./coretest
+	@cd ${WRKSRC} && \
+		${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG}/PIL \
+		${MODPY_BIN} ./selftest.py
 
 .include <bsd.port.mk>
-
