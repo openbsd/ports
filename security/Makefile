@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2005/01/09 17:15:43 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.146 2005/01/30 20:37:15 djm Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -96,6 +96,7 @@
      SUBDIR += p5-PGP-Sign,pgp
      SUBDIR += p5-PGP-Sign,pgp5
      SUBDIR += parse
+     SUBDIR += passwdqc
      SUBDIR += pcsc-lite
      SUBDIR += pgp
      SUBDIR += pgp5
