@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/05/23 20:06:22 avsm Exp $
+# $OpenBSD: Makefile,v 1.12 2003/05/27 22:10:59 avsm Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -46,8 +46,8 @@ CONFIGURE_ARGS+= --with-recode=${LOCALBASE}
 .endif
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
-PREFIX=${CHROOT_DIR}
-RUN_DEPENDS=  # pear doesnt need anything to run
+PREFIX=		${CHROOT_DIR}
+RUN_DEPENDS=	:php4-core-${V}:www/php4/core 
 .endif
 
 pre-fake:
