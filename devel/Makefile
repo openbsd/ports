@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2001/03/27 08:51:43 wilfried Exp $
+# $OpenBSD: Makefile,v 1.66 2001/03/30 21:14:30 danh Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -126,6 +126,7 @@
 #    SUBDIR += p5-TraceFuncs
      SUBDIR += pccts
      SUBDIR += pcre
+     SUBDIR += perltidy
      SUBDIR += popt
 #    SUBDIR += portlint
      SUBDIR += prc-tools
