@@ -1,6 +1,6 @@
-$OpenBSD: patch-ab,v 1.2 2001/02/27 22:32:26 naddy Exp $
---- Makefile.orig	Tue Feb 27 23:14:13 2001
-+++ Makefile	Tue Feb 27 23:17:01 2001
+$OpenBSD: patch-Makefile,v 1.1 2002/12/23 19:11:48 pvalchev Exp $
+--- Makefile.orig	Mon Dec 23 14:09:24 2002
++++ Makefile	Mon Dec 23 14:09:24 2002
 @@ -3,8 +3,11 @@ all:	mmv mmv.1
  mmv:	mmv.c
  	$(CC) -o mmv $(CFLAGS) mmv.c
