@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/06/19 21:06:55 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2002/07/20 17:45:57 fgsch Exp $
 
 COMMENT=	"tool to mirror contents of HTTP and FTP servers"
 
@@ -25,7 +25,8 @@ FLAVORS=	no_x11
 FLAVOR?=
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --disable-debug --disable-tree --disable-nls --disable-gnome
+CONFIGURE_ARGS+= --disable-debug --disable-tree --disable-nls \
+		 --disable-gnome --with-regex=posix
 
 .if !${FLAVOR:L:Mno_x11}
 LIB_DEPENDS+=	gtk.1.2::x11/gtk+
