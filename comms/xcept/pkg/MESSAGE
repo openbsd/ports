@@ -3,14 +3,16 @@ ${SYSCONFDIR}/cept.init ${SYSCONFDIR}/cept.users files.
 
 Samples exist in ${PREFIX}/share/cept.
 
-
 You must also add
 
 xcept		20005/tcp #XCEPT
 
-to /etc/services, and
+to /etc/services, add a 'xcept' user in your system
+and put the user in group 'dialer', then put the line
 
-xcept	stream	tcp	nowait	root	/usr/local/libexec/ceptd ceptd
+xcept	stream	tcp	nowait	xcept	${PREFIX}/libexec/ceptd ceptd
 
-to /etc/inetd.conf on your server host,
-and restart inetd on the server host.
+in /etc/inetd.conf on your server host, and restart inetd.
+
+Note that running this software as root as advised in the
+distribution can present a serious security risk to your system.
