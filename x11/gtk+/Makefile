@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.51 2002/05/14 09:21:35 mark Exp $
+# $OpenBSD: Makefile,v 1.52 2002/05/19 17:01:55 brad Exp $
 
 COMMENT=	"General Toolkit for X11 GUI"
 
 DISTNAME=	gtk+-1.2.10
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11 devel
-NEED_VERSION=	1.475
+NEED_VERSION=	1.525
 MASTER_SITES=   ${MASTER_SITE_GNOME:=stable/sources/gtk+/}
 
 HOMEPAGE=	http://www.gtk.org/
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static
+CONFIGURE_ARGS+= --enable-static --with-xinput="xfree"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
