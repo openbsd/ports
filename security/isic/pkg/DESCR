@@ -1,5 +1,3 @@
-from http://expert.cc.purdue.edu/~frantzen/:
-
 IP Stack Integrity Checker
 
 Its purpose is to test the stability of an IP Stack and its component
@@ -9,4 +7,4 @@ by default all packets have a 50% chance of having IP Options. The
 packets are then sent against the target machine to either penetrate
 its firewall rules or find bugs in the IP stack.
 
--d.
+WWW: ${HOMEPAGE}
