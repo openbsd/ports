@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 1998/12/18 10:49:20 form Exp $
+# $OpenBSD: Makefile,v 1.9 1999/02/17 03:42:35 marc Exp $
 #
 
 PKGNAME=	minicom-1.82
 DISTNAME=	${PKGNAME}.src
 CATEGORIES=	comms
 
+BROKEN=		"can't find this version as of 16feb99"
 MAINTAINER=     form@OpenBSD.ORG
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
