@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/31 18:38:37 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2003/12/09 17:32:57 marcm Exp $
 
 COMMENT=		"library for handling pseudo terminals"
 
@@ -6,8 +6,6 @@ DISTNAME=		libzvt-2.0.1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

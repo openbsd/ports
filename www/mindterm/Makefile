@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/10/18 19:44:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2003/12/09 17:29:45 marcm Exp $
 
 COMMENT=	"web-based java SSH client"
 
@@ -10,8 +10,6 @@ MASTER_SITES=	http://support.appgate.com/mindterm/personal/
 EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://www.appgate.com/ag.asp?template=products&level1=product_mindterm
-
-MAINTAINER=	Marc Matteo <marcm@openbsd.org>
 
 # custom
 PERMIT_PACKAGE_CDROM=	"may not sell"
