@@ -1,9 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2002/09/14 03:21:29 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2002/09/16 18:54:37 lebel Exp $
 
 COMMENT=	"ML language based on complete class-based objective system"
-
-# for the time being
-NOT_FOR_ARCHS=	sparc64 macppc
 
 DISTNAME=	ocaml-3.06
 CATEGORIES=	lang
@@ -34,7 +31,15 @@ LIB_DEPENDS=	tcl83.1.3::lang/tcl/8.3 \
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 USE_GMAKE=	Yes
+
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "sparc" || \
+	${MACHINE_ARCH} == "alpha"
 ALL_TARGET=	world bootstrap opt opt.opt
+SED_PLIST=	|sed -e '/^%%native%%$$/r${PKGDIR}/PFRAG.native' -e '//d'
+.else
+ALL_TARGET=	world bootstrap
+SED_PLIST=	|sed -e '/^%%native%%$$/d'
+.endif
 
 NO_REGRESS=	Yes
 
