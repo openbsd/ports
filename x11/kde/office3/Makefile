@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/09/18 21:25:24 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2004/10/08 05:20:41 sturm Exp $
 
 COMMENT=		"office suite for KDE"
 
@@ -15,7 +15,7 @@ SEPARATE_BUILD=	flavored
 
 MODKDE_VERSION=
 AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
-AUTOCONF_VERSION=2.59
+AUTOCONF_VERSION=2.58
 
 LIB_DEPENDS=	kdecore.4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjava,kparts,kspell,kabc,kjs,kresources,kutils,kwalletclient,vcard::x11/kde/libs3 \
 		python2.3.0.0::lang/python/2.3 \
