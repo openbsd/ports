@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.336 2004/11/11 19:47:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.337 2004/11/14 12:16:24 sturm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -166,6 +166,7 @@
      SUBDIR += p5-Net-ParseWhois
      SUBDIR += p5-Net-Pcap
      SUBDIR += p5-Net-Ping-External
+     SUBDIR += p5-Net-Radius
      SUBDIR += p5-Net-RawIP
      SUBDIR += p5-Net-SNMP
      SUBDIR += p5-Net-Snort-Parser
