@@ -1,7 +1,7 @@
 #!/bin/sh
-# $OpenBSD: netscape.i386,v 1.1.1.1 2000/04/09 15:50:16 espie Exp $
+# $OpenBSD: netscape.i386,v 1.2 2000/08/31 10:04:46 brad Exp $
 #
-# Wrapper for the fortified Netscape navigator program.
+# Wrapper for Netscape Navigator.
 
 MOZILLA_HOME=@netscape_home@
 export MOZILLA_HOME
