@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2000/02/11 03:01:54 turan Exp $
+# $OpenBSD: Makefile,v 1.17 2000/02/11 05:50:24 kevlo Exp $
 
-BROKEN=		sources moved
-
-DISTNAME=	ddd-3.1.90
+DISTNAME=	ddd-3.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.th-darmstadt.de/pub/programming/tools/ddd/src/
+MASTER_SITES=   ${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= ddd
 
 MAINTAINER=	ports@openbsd.org
 
