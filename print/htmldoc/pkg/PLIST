@@ -1,8 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/08/10 20:12:36 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/12/16 17:01:23 wilfried Exp $
 bin/htmldoc
 man/man1/htmldoc.1
 share/doc/htmldoc/help.html
 share/doc/htmldoc/htmldoc.pdf
+share/htmldoc/data/cp-1250
+share/htmldoc/data/cp-1251
+share/htmldoc/data/cp-1252
+share/htmldoc/data/cp-1253
+share/htmldoc/data/cp-1254
+share/htmldoc/data/cp-1255
+share/htmldoc/data/cp-1256
+share/htmldoc/data/cp-1257
+share/htmldoc/data/cp-1258
+share/htmldoc/data/cp-874
 share/htmldoc/data/iso-8859-1
 share/htmldoc/data/iso-8859-14
 share/htmldoc/data/iso-8859-15
