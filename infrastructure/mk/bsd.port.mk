@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.443 2001/08/24 14:43:28 todd Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.444 2001/08/25 11:23:46 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -200,6 +200,10 @@ ERRORS+= "Fatal: Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead."
 .if exists(${.CURDIR}/../Makefile.inc)
 .include "${.CURDIR}/../Makefile.inc"
 .endif
+
+# MODULES support
+# reserved name spaces: for module=NAME, modname*, _modname* variables and
+# targets.
 
 .if defined(show)
 VARNAME=${show}
@@ -480,9 +484,6 @@ _MAKE_COOKIE=touch -f
 # Miscellaneous overridable commands:
 GMAKE?=			gmake
 AUTOCONF?=		autoconf
-XMKMF?=			xmkmf -a
-XMKMF+=			-DPorts
-
 
 # Compatibility game
 MD5_FILE?=		${FILESDIR}/md5
@@ -578,6 +579,26 @@ WRKBUILD?=		${WRKSRC}
 WRKPKG?=		${WRKDIR}/pkg
 .endif
 
+ALL_TARGET?=		all
+INSTALL_TARGET?=	install
+
+FAKE_TARGET ?= ${INSTALL_TARGET}
+
+.for _i in perl imake gnu
+.  if ${CONFIGURE_STYLE:L:M${_i}}
+MODULES+=${_i}
+.  endif
+.endfor
+
+.for _m in ${MODULES:L}
+.  if exists(${FILESDIR}/${_m}.port.mk)
+.    include "${FILESDIR}/${_m}.port.mk"
+.  elif exists(${LOCALBASE}/share/mk/${_m}.port.mk)
+.    include "${LOCALBASE}/share/mk/${_m}.port.mk"
+.  elif exists(${PORTSDIR}/infrastructure/mk/${_m}.port.mk)
+.    include "${PORTSDIR}/infrastructure/mk/${_m}.port.mk"
+.  endif
+.endfor
 
 .if ${FAKE:L} == "yes"
 _PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
@@ -815,15 +836,6 @@ ECHO_MSG?=		echo
 # XXX
 _DEPEND_ECHO?=		echo
 
-ALL_TARGET?=		all
-INSTALL_TARGET?=	install
-
-.if ${CONFIGURE_STYLE:L:Mimake} && empty(CONFIGURE_STYLE:L:Mnoman)
-INSTALL_TARGET+=	install.man
-.endif
-
-FAKE_TARGET ?= ${INSTALL_TARGET}
-
 # basic master sites configuration
 
 .if exists(${PORTSDIR}/infrastructure/db/network.conf)
@@ -988,21 +1000,6 @@ _CONFIGURE_SCRIPT=./${CONFIGURE_SCRIPT}
 .endif
 CONFIGURE_ENV+=		PATH=${PORTPATH}
 
-.if ${CONFIGURE_STYLE:L:Mgnu}
-.  if ${CONFIGURE_STYLE:L:Mdest}
-CONFIGURE_ARGS+=	--prefix='$${${DESTDIRNAME}}${PREFIX}'
-.  else
-CONFIGURE_ARGS+=	--prefix='${PREFIX}'
-.  endif
-.  if empty(CONFIGURE_STYLE:L:Mold)
-.    if ${CONFIGURE_STYLE:L:Mdest}
-CONFIGURE_ARGS+=	--sysconfdir='$${${DESTDIRNAME}}${SYSCONFDIR}'
-.    else
-CONFIGURE_ARGS+=	--sysconfdir='${SYSCONFDIR}'
-.    endif
-.  endif
-.endif
-
 .if defined(NO_SHARED_LIBS)
 CONFIGURE_SHARED?=	--disable-shared
 .else
@@ -1082,7 +1079,7 @@ IGNORE=	"is an interactive port"
 IGNORE=	"is not an interactive port"
 .  elif (defined(RESTRICTED) && defined(NO_RESTRICTED))
 IGNORE=	"is restricted: ${RESTRICTED}"
-.  elif (!empty(CONFIGURE_STYLE:L:Mimake) || defined(USE_X11)) && !exists(${X11BASE})
+.  elif defined(USE_X11) && !exists(${X11BASE})
 IGNORE=	"uses X11, but ${X11BASE} not found"
 .  elif defined(BROKEN)
 IGNORE=	"is marked as broken: ${BROKEN}"
@@ -1601,20 +1598,11 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 		  ${SCRIPTDIR}/configure; \
 	fi
-.  if ${CONFIGURE_STYLE:L:Mperl}
-	@arch=`/usr/bin/perl -e 'use Config; print $$Config{archname}, "\n";'`; \
-     cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} \
-     /usr/bin/perl Makefile.PL \
-     	PREFIX='$${${DESTDIRNAME}}${PREFIX}' \
-		INSTALLSITELIB='$${${DESTDIRNAME}}${PREFIX}/libdata/perl5/site_perl' \
-		INSTALLSITEARCH="\$${INSTALLSITELIB}/$$arch" \
-		INSTALLPRIVLIB='$${${DESTDIRNAME}}/usr/./libdata/perl5' \
-		INSTALLARCHLIB="\$${INSTALLPRIVLIB}/$$arch" \
-		INSTALLMAN1DIR='$${${DESTDIRNAME}}${PREFIX}/man/man1' \
-		INSTALLMAN3DIR='$${${DESTDIRNAME}}${PREFIX}/man/man3' \
-		INSTALLBIN='$${PREFIX}/bin' \
-		INSTALLSCRIPT='$${INSTALLBIN}' ${CONFIGURE_ARGS}
-.  endif
+.  for _m in ${MODULES}
+.    if ${CONFIGURE_STYLE:L:M${_m:L}} && defined(MOD${_m:U}_configure)
+	@${MOD${_m:U}_configure}
+.    endif
+.  endfor
 .  if ${CONFIGURE_STYLE:L:Msimple} || ${CONFIGURE_STYLE:L:Mgnu}
 	@cd ${WRKBUILD} && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
 		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
@@ -1624,18 +1612,6 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}" \
 		YACC="${YACC}" \
 		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
-.  endif
-.  if ${CONFIGURE_STYLE:L:Mimake}
-	@if [ -e ${X11BASE}/lib/X11/config/ports.cf ] || \
-		fgrep >/dev/null 2>/dev/null Ports \
-			${X11BASE}/lib/X11/config/OpenBSD.cf; then \
-		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF}; \
-	else \
-		echo >&2 "Error: your X installation is not recent enough"; \
-		echo >&2 "Update to a more recent version, or use a ports tree"; \
-		echo >&2 "that predates March 18, 2000"; \
-		exit 1; \
-	fi
 .  endif
 # End of CONFIGURE.
 .endif
@@ -1678,11 +1654,13 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 	@${SUDO} install -d -m 755 -o root -g wheel ${WRKINST}
 	@${SUDO} /usr/sbin/mtree -U -e -d -n -p ${WRKINST} \
 		-f ${WRKPKG}/mtree.spec  >/dev/null
-.  if ${CONFIGURE_STYLE:L} == "perl"
-	@${SUDO} mkdir -p ${WRKINST}`/usr/bin/perl -e 'use Config; print $$Config{installarchlib}, "\n";'`
+.for _m in ${MODULES}
+.  if defined(MOD${_m:U}_pre-fake)
+	@${MOD${_m:U}_pre-fake}
 .  endif
+.endfor
 
-.  if target(pre-fake)
+.  if target(pre_fake)
 	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} pre-fake ${_FAKE_SETUP}
 .  endif
 	@${SUDO} ${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
@@ -1730,13 +1708,11 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
 	@cd ${.CURDIR} && DEPENDS_TARGET=package _EARLY_EXIT=true exec ${MAKE} run-depends lib-depends
 	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${SUBPACKAGE}} from ${PKGFILE${SUBPACKAGE}}"
-# Kludge
-.  if ${CONFIGURE_STYLE:Mimake}
-	@${SUDO} mkdir -p /usr/local/lib/X11
-	@if [ ! -e /usr/local/lib/X11/app-defaults ]; then \
-		${SUDO} ln -sf /var/X11/app-defaults /usr/local/lib/X11/app-defaults; \
-	fi
-.  endif
+.  for _m in ${MODULES}
+.    if defined(MOD${_m:U}_pre_install)
+	@${MOD${_m:U}_pre_install}
+.    endif
+.  endfor
 .  if ${TRUST_PACKAGES:L} == "yes"
 	@if pkg dependencies check ${FULLPKGNAME${SUBPACKAGE}}; then \
 		echo "Package ${FULLPKGNAME${SUBPACKAGE}} is already installed"; \
