@@ -1,0 +1,336 @@
+*** ./src/bat_include.h.orig	Fri Sep  3 12:46:37 1999
+--- ./src/bat_include.h	Fri Sep  3 12:47:53 1999
+***************
+*** 44,50 ****
+  
+  #include "config.h"
+  
+! #ifndef __FreeBSD__
+  #include <malloc.h>
+  #endif
+  #include <stdio.h>
+--- 44,50 ----
+  
+  #include "config.h"
+  
+! #if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+  #include <malloc.h>
+  #endif
+  #include <stdio.h>
+***************
+*** 71,77 ****
+  #include <netdb.h>
+  #include <arpa/inet.h>
+  extern int h_errno;
+! #if !defined(HPUX) && !defined(Linux) && !defined(__FreeBSD__)
+  #include <stropts.h>
+  #include <sys/filio.h>  
+  #endif /* HPUX */
+--- 71,77 ----
+  #include <netdb.h>
+  #include <arpa/inet.h>
+  extern int h_errno;
+! #if !defined(HPUX) && !defined(Linux) && !defined(__FreeBSD__) && !defined(__OpenBSD__)
+  #include <stropts.h>
+  #include <sys/filio.h>  
+  #endif /* HPUX */
+*** ./src/rtcp_pckt.c.orig	Fri Sep  3 12:48:16 1999
+--- ./src/rtcp_pckt.c	Fri Sep  3 14:52:10 1999
+***************
+*** 348,356 ****
+--- 348,362 ----
+  			  	   break;
+  			 	 }
+  			case 3 : if (sp->mode == TRANSCODER) {
++ #if !defined(__OpenBSD__)
+  				 	len += rtcp_add_sdes_item(&ptr[len], RTCP_SDES_TOOL, RAT_VERSION " " OSNAME " [Transcoder]");
+  				 } else {
+  				 	len += rtcp_add_sdes_item(&ptr[len], RTCP_SDES_TOOL, RAT_VERSION " " OSNAME);
++ #else
++ 				 	len += rtcp_add_sdes_item(&ptr[len], RTCP_SDES_TOOL, RAT_VERSION " OpenBSD" " [Transcoder]");
++ 				 } else {
++ 				 	len += rtcp_add_sdes_item(&ptr[len], RTCP_SDES_TOOL, RAT_VERSION " OpenBSD");
++ #endif
+  				 }
+  			  	 break;
+  			default: printf("ERROR: sdes_ter_count has strange value! %ld\n", sp->db.sdes_ter_count);
+*** ./src/qfDES.c.orig	Fri Sep  3 12:49:50 1999
+--- ./src/qfDES.c	Fri Sep  3 12:50:08 1999
+***************
+*** 23,29 ****
+  #include <string.h>
+  #include <stdio.h>
+  #include <memory.h>
+! #ifndef  FreeBSD
+  #include <malloc.h>
+  #endif
+  #include <ctype.h>
+--- 23,29 ----
+  #include <string.h>
+  #include <stdio.h>
+  #include <memory.h>
+! #if !defined(FreeBSD) && !defined(__OpenBSD__)
+  #include <malloc.h>
+  #endif
+  #include <ctype.h>
+*** ./src/gsm_create.c.orig	Fri Sep  3 12:50:29 1999
+--- ./src/gsm_create.c	Fri Sep  3 12:50:43 1999
+***************
+*** 11,17 ****
+  #include "assert.h"
+  #include "gsm.h"
+  
+! #ifndef FreeBSD
+  #include <malloc.h>
+  #endif
+  
+--- 11,17 ----
+  #include "assert.h"
+  #include "gsm.h"
+  
+! #if !defined(FreeBSD) && !defined(__OpenBSD__)
+  #include <malloc.h>
+  #endif
+  
+*** ./src/gsm_destroy.c.orig	Fri Sep  3 12:50:59 1999
+--- ./src/gsm_destroy.c	Fri Sep  3 12:51:13 1999
+***************
+*** 6,12 ****
+  
+  /* $Header: /home/cvs/ports/mbone/rat/patches/Attic/patch-rat,v 1.1.1.1 1999/09/04 01:54:34 angelos Exp $ */
+  
+! #ifndef FreeBSD
+  #include <malloc.h>
+  #endif
+  
+--- 6,12 ----
+  
+  /* $Header: /home/cvs/ports/mbone/rat/patches/Attic/patch-rat,v 1.1.1.1 1999/09/04 01:54:34 angelos Exp $ */
+  
+! #if !defined(FreeBSD) && !defined(__OpenBSD__)
+  #include <malloc.h>
+  #endif
+  
+*** ./src/ui.c.orig	Fri Sep  3 12:51:51 1999
+--- ./src/ui.c	Fri Sep  3 12:52:58 1999
+***************
+*** 42,47 ****
+--- 42,51 ----
+  
+  #include <ctype.h> 	/* for toupper() [csp] */
+  #include <math.h>
++ #if defined(__OpenBSD__)
++ #include <sys/types.h>
++ #include <sys/audioio.h>
++ #endif
+  #include "version.h"
+  #include "bat_include.h"
+  #include "crypt.h"
+***************
+*** 203,209 ****
+  	eval_check(interp, comm);
+  }
+  
+! static us_active = 0;
+  
+  void
+  ui_info_activate_us(void)
+--- 207,213 ----
+  	eval_check(interp, comm);
+  }
+  
+! static int us_active = 0;
+  
+  void
+  ui_info_activate_us(void)
+*** /dev/null	Fri Sep  3 14:47:02 1999
+--- Makefile_OpenBSD_2	Fri Sep  3 12:53:32 1999
+***************
+*** 0 ****
+--- 1,5 ----
++ INCS   = -I/usr/X11R6/include -I/usr/local/include/tcl8.0\
++          -I/usr/local/include/tcl8.0/generic -I/usr/local/include/tk8.0 \
++ 	 -I/usr/local/include/tk8.0/generic
++ LDLIBS = -L/usr/local/lib -L/usr/X11R6/lib -ltk80 -ltcl80 -lXext -lX11 -lm \
++ 	 -lossaudio
+*** Makefile.orig	Mon Mar  1 12:23:47 1999
+--- Makefile	Fri Sep  3 19:42:24 1999
+***************
+*** 9,15 ****
+  # -DNDEBUG -DDEBUG -DTEST -DGSM -DDEBUG_MIX -DDEBUG_MEM
+  # -DDEBUG_RTP -DREPEAT
+  
+- DEFS += -D$(OSTYPE) -D$(OSTYPE)_$(OSMVER) -D$(USER)
+  CC     = gcc
+  CFLAGS = -Wall -Werror $(INCS) $(DEFS) -g -O -fsigned-char
+  LDFLAGS= 
+--- 9,14 ----
+***************
+*** 21,29 ****
+  
+  include Makefile_$(OSTYPE)_$(OSMVER)
+  
+! BINDIR = bin/$(USER)
+  SRCDIR = src
+! OBJDIR = objs/$(USER)/$(OSTYPE)_$(OSVERS)
+  OBJS   = $(OBJDIR)/codec_encoder.o \
+           $(OBJDIR)/codec_decoder.o \
+           $(OBJDIR)/codec_lpc.o \
+--- 20,28 ----
+  
+  include Makefile_$(OSTYPE)_$(OSMVER)
+  
+! BINDIR = bin
+  SRCDIR = src
+! OBJDIR = objs/$(OSTYPE)_$(OSVERS)
+  OBJS   = $(OBJDIR)/codec_encoder.o \
+           $(OBJDIR)/codec_decoder.o \
+           $(OBJDIR)/codec_lpc.o \
+*** Build.orig	Mon Mar  1 12:23:47 1999
+--- Build	Fri Sep  3 19:43:42 1999
+***************
+*** 54,60 ****
+  case $OSTYPE in
+    Linux                  ) OSMVER=`echo $OSVERS | awk -F. '{printf("%d_%d", $1, $2)}'`
+                             ;;
+!   SunOS | IRIX | FreeBSD ) OSMVER=`echo $OSVERS | awk -F. '{print $1}'`
+                             ;;
+    HP-UX                  ) OSTYPE=HPUX
+                             OSMVER=`echo $OSVERS | awk -F. '{print $2}'`
+--- 54,60 ----
+  case $OSTYPE in
+    Linux                  ) OSMVER=`echo $OSVERS | awk -F. '{printf("%d_%d", $1, $2)}'`
+                             ;;
+!   SunOS | IRIX | FreeBSD | OpenBSD ) OSMVER=`echo $OSVERS | awk -F. '{print $1}'`
+                             ;;
+    HP-UX                  ) OSTYPE=HPUX
+                             OSMVER=`echo $OSVERS | awk -F. '{print $2}'`
+***************
+*** 69,88 ****
+  echo "OSMVER=$OSMVER"
+  
+  # Create a directory for the .o files, if it doesn't exist...
+! if [ ! -d objs/${USER:=`whoami`}/${OSTYPE}_${OSVERS} ]; then
+!   echo "Creating object directory objs/${USER}/${OSTYPE}_${OSVERS}..."
+!   mkdir -p bin/${USER}
+!   mkdir -p objs/${USER}
+!   mkdir -p objs/${USER}/${OSTYPE}_${OSVERS}
+!   chmod 775 bin/${USER}
+!   chmod 775 objs/${USER}
+!   chmod 775 objs/${USER}/${OSTYPE}_${OSVERS}
+  fi
+  
+! cmd="${MAKE:=make} OSTYPE=$OSTYPE OSMVER=$OSMVER OSVERS=$OSVERS USER=`whoami`"
+  case $1 in
+!   rat   ) echo "Running: $cmd bin/${USER}/rat-${OSTYPE}-${OSVERS}"
+!           eval $cmd bin/${USER}/rat-${OSTYPE}-${OSVERS}
+            exit
+            ;;
+    depend|tags|tar|clean) echo "Running: $cmd $1"
+--- 69,87 ----
+  echo "OSMVER=$OSMVER"
+  
+  # Create a directory for the .o files, if it doesn't exist...
+! if [ ! -d objs/${OSTYPE}_${OSVERS} ]; then
+!   echo "Creating object directory objs/${OSTYPE}_${OSVERS}..."
+!   mkdir -p objs/${OSTYPE}_${OSVERS}
+!   mkdir -p bin
+!   chmod 775 bin
+!   chmod 775 objs
+!   chmod 775 objs/${OSTYPE}_${OSVERS}
+  fi
+  
+! cmd="${MAKE:=make} OSTYPE=$OSTYPE OSMVER=$OSMVER OSVERS=$OSVERS"
+  case $1 in
+!   rat   ) echo "Running: $cmd bin/rat-${OSTYPE}-${OSVERS}"
+!           eval $cmd bin/rat-${OSTYPE}-${OSVERS}
+            exit
+            ;;
+    depend|tags|tar|clean) echo "Running: $cmd $1"
+***************
+*** 94,103 ****
+  	  cd dist
+  	  cp ../man/man1/rat.1 man/man1/rat.1
+  	  cp ../README ../MODS ../COPYRIGHT .
+! 	  for i in `ls ../bin/${USER}/`
+  	  do
+  	    echo "Making distribution $i"
+! 	    cp ../bin/${USER}/$i bin/rat
+  	    tar chf $i.tar README MODS COPYRIGHT bin man
+  	    gzip $i.tar
+  	  done
+--- 93,102 ----
+  	  cd dist
+  	  cp ../man/man1/rat.1 man/man1/rat.1
+  	  cp ../README ../MODS ../COPYRIGHT .
+! 	  for i in `ls ../bin/`
+  	  do
+  	    echo "Making distribution $i"
+! 	    cp ../bin/$i bin/rat
+  	    tar chf $i.tar README MODS COPYRIGHT bin man
+  	    gzip $i.tar
+  	  done
+*** src/auddev_sparc.c.orig	Fri Sep  3 21:42:45 1999
+--- src/auddev_sparc.c	Fri Sep  3 21:47:05 1999
+***************
+*** 45,55 ****
+  
+  #include "assert.h"
+  #include "bat_include.h"
+! #ifdef SunOS
+  
+  #include <multimedia/audio_hdr.h>
+  
+  typedef Audio_hdr* audio_header_pointer;
+  
+  static audio_info_t	dev_info;
+  static int 		mulaw_device = FALSE;	/* TRUE if the hardware can only do 8bit mulaw sampling */
+--- 45,63 ----
+  
+  #include "assert.h"
+  #include "bat_include.h"
+! #if defined(SunOS) || defined(__OpenBSD__)
+  
++ #if defined(SunOS)
+  #include <multimedia/audio_hdr.h>
++ #else
++ #include <sys/types.h>
++ #include <sys/ioctl.h>
++ #include <sys/audioio.h>
++ #endif
+  
++ #if !defined(__OpenBSD__)
+  typedef Audio_hdr* audio_header_pointer;
++ #endif
+  
+  static audio_info_t	dev_info;
+  static int 		mulaw_device = FALSE;	/* TRUE if the hardware can only do 8bit mulaw sampling */
+***************
+*** 69,75 ****
+--- 77,85 ----
+  	if (audio_fd > 0) {
+  		AUDIO_INITINFO(&dev_info);
+  		dev_info.monitor_gain       = 0;
++ #if !defined(__OpenBSD__)
+  		dev_info.output_muted       = 0; /* 0==not muted */
++ #endif
+  		dev_info.play.sample_rate   = format.sample_rate;
+  		dev_info.record.sample_rate = format.sample_rate;
+  		dev_info.play.channels      = format.num_channels;
+***************
+*** 157,163 ****
+  void
+  audio_drain(int audio_fd)
+  {
+! 	ioctl(audio_fd, I_FLUSH, (caddr_t)FLUSHR);
+  }
+  
+  /* Gain and volume values are in the range 0 - MAX_AMP */
+--- 167,173 ----
+  void
+  audio_drain(int audio_fd)
+  {
+! 	ioctl(audio_fd, AUDIO_FLUSH, NULL);
+  }
+  
+  /* Gain and volume values are in the range 0 - MAX_AMP */
