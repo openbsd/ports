@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2000/12/26 22:33:29 reinhard Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2000/12/26 23:46:05 reinhard Exp $
 lib/irssi/modules/libfe_common_irc_dcc.so.0.0
 lib/irssi/modules/libfe_common_irc_flood.so.0.0
 lib/irssi/modules/libfe_common_irc_notifylist.so.0.0

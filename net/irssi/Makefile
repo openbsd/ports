@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/26 22:33:28 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2000/12/26 23:46:05 reinhard Exp $
 
 DISTNAME=	irssi-0.7.97.2
 CATEGORIES=	net
@@ -20,7 +20,7 @@ LIB_DEPENDS=		glib.1.2::devel/glib
 
 SEPARATE_BUILD=		Concurrent
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS+=	--enable-ipv6 
 CONFIGURE_ARGS+=	--with-proxy --with-socks 
