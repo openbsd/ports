@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Nov 25 08:31:41 1997
-+++ Makefile.in	Thu Jun 25 22:41:43 1998
+--- ./unix/Makefile.in.orig	Mon Aug 31 15:57:19 1998
++++ ./unix/Makefile.in	Fri Jan  1 16:50:59 1999
 @@ -55,7 +55,9 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
@@ -11,7 +11,7 @@
  
  # Top-level directory in which to install manual entries:
  MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
-@@ -133,7 +135,7 @@
+@@ -146,7 +148,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.
  
@@ -20,7 +20,7 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -310,7 +312,7 @@
+@@ -329,7 +331,7 @@
  
  SRCS = $(GENERIC_SRCS) $(UNIX_SRCS)
  
@@ -29,7 +29,7 @@
  
  # The following target is configured by autoconf to generate either
  # a shared library or non-shared library for Tcl.
-@@ -319,6 +321,11 @@
+@@ -338,6 +340,11 @@
  	@MAKE_LIB@
  	$(RANLIB) ${TCL_LIB_FILE}
  
@@ -41,7 +41,7 @@
  # Make target which outputs the list of the .o contained in the Tcl lib
  # usefull to build a single big shared library containing Tcl and other
  # extensions.  used for the Tcl Plugin.  -- dl
-@@ -410,7 +417,7 @@
+@@ -431,7 +438,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -50,7 +50,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -424,18 +431,23 @@
+@@ -445,18 +452,23 @@
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
@@ -78,7 +78,7 @@
  		chmod 755 $$i; \
  		else true; \
  		fi; \
-@@ -449,8 +461,15 @@
+@@ -470,8 +482,15 @@
  		else true; \
  		fi; \
  	    done;
@@ -96,7 +96,7 @@
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -478,7 +497,7 @@
+@@ -499,7 +518,7 @@
  	@cd $(TOP_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
@@ -105,7 +105,7 @@
  	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
  		    $$i > $(MAN1_INSTALL_DIR)/$$i; \
  	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
-@@ -487,7 +506,7 @@
+@@ -508,7 +527,7 @@
  	@cd $(TOP_DIR)/doc; for i in *.3; \
  	    do \
  	    echo "Installing doc/$$i"; \
@@ -114,7 +114,7 @@
  	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
  		    $$i > $(MAN3_INSTALL_DIR)/$$i; \
  	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
-@@ -496,12 +515,19 @@
+@@ -517,12 +536,19 @@
  	@cd $(TOP_DIR)/doc; for i in *.n; \
  	    do \
  	    echo "Installing doc/$$i"; \
@@ -130,8 +130,8 @@
 +	@echo "**********"
 +	@echo "tclConfig.sh in $(SCRIPT_INSTALL_DIR)/tclConfig.sh"
 +	@echo "tcl.h        in $(INCLUDE_INSTALL_DIR)/tcl.h"
-+	@echo "There are NOT default place, but good place to avoid"
-+	@echo "conflicting with another version of Tcl/Tks."
++	@echo "These are NOT in the default place, but in a good place to avoid"
++	@echo "conflicting with another version of Tcl/Tk."
  
  Makefile: $(UNIX_DIR)/Makefile.in
  	$(SHELL) config.status

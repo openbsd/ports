@@ -1,5 +1,5 @@
---- configure.orig	Mon Aug 31 22:57:20 1998
-+++ configure	Tue Nov  3 16:26:35 1998
+--- ./unix/configure.orig	Mon Aug 31 15:57:20 1998
++++ ./unix/configure	Fri Jan  1 16:46:54 1999
 @@ -4049,8 +4049,13 @@
  fi
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
