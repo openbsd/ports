@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2002/08/26 14:39:29 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2002/11/23 21:02:14 brad Exp $
 
 COMMENT=	"small, easy to set up, fast and very secure FTP server"
 
-DISTNAME=	pure-ftpd-1.0.12
+DISTNAME=	pure-ftpd-1.0.13
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp2.fr.pureftpd.org/pub/mirrors/ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp3.fr.pureftpd.org/pure-ftpd/releases/ \
 		ftp://ftp.dk.pureftpd.org/mirrors/pure-ftpd/releases/ \
 		ftp://ftp.es.pureftpd.org/mirror/pureftpd/latest/releases/ \
+		ftp://ftp.nl.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.cn.pureftpd.org/pub/pureftpd/pure-ftpd/releases/ \
 		${MASTER_SITE_SOURCEFORGE:=pureftpd/}
@@ -58,7 +59,7 @@ CONFIGURE_ARGS+= --without-banner
 DOCS+=	README README.Configuration-File README.Contrib \
 	README.Virtual-Users README.Authentication-Modules pure-ftpd.png
 
-CONTRIB= xml_python_processors.txt sfv-crc-check.pl
+CONTRIB= xml_python_processors.txt pure-vpopauth.pl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pure-ftpd

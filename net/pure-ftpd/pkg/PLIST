@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/03/29 03:30:00 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/11/23 21:02:14 brad Exp $
 bin/pure-pw
 bin/pure-pwconvert
 bin/pure-statsdecode
@@ -26,7 +26,7 @@ share/doc/pure-ftpd/README.Authentication-Modules
 share/doc/pure-ftpd/pure-ftpd.png
 share/examples/pure-ftpd/pure-ftpd.conf.sample
 share/examples/pure-ftpd/xml_python_processors.txt
-share/examples/pure-ftpd/sfv-crc-check.pl
+share/examples/pure-ftpd/pure-vpopauth.pl
 %%ldap%%
 %%mysql%%
 %%postgresql%%
