@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2003/06/18 14:19:09 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2004/07/12 13:32:11 danh Exp $
 
 COMMENT=	"Cistron RADIUS server"
 
-VERSION=	1.6.6
+VERSION=	1.6.7
 DISTNAME=	radiusd-cistron-${VERSION}
-PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.radius.cistron.nl/pub/radius/ \
 		ftp://ftp.freeradius.org/pub/radius/ \
@@ -40,6 +39,13 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/radiusd-cistron
 	@for file in ${WRKDIST}/doc/README* ; do \
 		${INSTALL_DATA} $$file ${PREFIX}/share/doc/radiusd-cistron; \
+	done
+	@perl -pi -e "s#[ ]SHAREDIR# ${SYSCONFDIR}/raddb#g" \
+	    ${WRKDIST}/raddb/dictionary
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/radiusd-cistron
+	@for file in ${WRKDIST}/raddb/* ; do \
+		${INSTALL_DATA} $$file \
+		    ${PREFIX}/share/examples/radiusd-cistron; \
 	done
 
 .include <bsd.port.mk>
