@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/30 22:30:19 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/12/26 21:57:31 shell Exp $
 
 COMMENT=	"expand template text with embedded perl"
 
-DISTNAME=	Text-Template-1.31
+DISTNAME=	Text-Template-1.42
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
-NEED_VERSION=	1.377
+NEED_VERSION=	1.503
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Text
