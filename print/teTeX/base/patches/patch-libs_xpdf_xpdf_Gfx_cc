@@ -1,0 +1,14 @@
+$OpenBSD: patch-libs_xpdf_xpdf_Gfx_cc,v 1.1 2004/12/25 23:14:29 sturm Exp $
+--- libs/xpdf/xpdf/Gfx.cc.orig	Fri Dec  6 00:44:32 2002
++++ libs/xpdf/xpdf/Gfx.cc	Sat Dec 25 23:48:18 2004
+@@ -2381,7 +2381,9 @@ void Gfx::doImage(Object *ref, Stream *s
+     haveMask = gFalse;
+     dict->lookup("Mask", &maskObj);
+     if (maskObj.isArray()) {
+-      for (i = 0; i < maskObj.arrayGetLength(); ++i) {
++      for (i = 0;
++	  i < maskObj.arrayGetLength() && i < 2*gfxColorMaxComps;
++	  ++i) {
+ 	maskObj.arrayGet(i, &obj1);
+ 	maskColors[i] = obj1.getInt();
+ 	obj1.free();
