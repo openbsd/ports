@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/10 23:32:23 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/08 17:55:29 espie Exp $
 bin/fribidi
 bin/fribidi-config
+include/fribidi/
 include/fribidi/fribidi.h
 include/fribidi/fribidi_char_sets.h
 include/fribidi/fribidi_char_sets_cap_rtl.h
@@ -16,7 +17,6 @@ include/fribidi/fribidi_types.h
 include/fribidi/fribidi_unicode.h
 lib/libfribidi.a
 lib/libfribidi.la
+lib/pkgconfig/
 lib/pkgconfig/fribidi.pc
 %%SHARED%%
-@comment @dirrm lib/pkgconfig
-@dirrm include/fribidi

@@ -1,23 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/28 07:19:28 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/08 17:55:29 espie Exp $
 bin/atlas-config
+include/Atlas/
 include/Atlas/Bridge.h
 include/Atlas/Codec.h
 include/Atlas/Codec_impl.h
+include/Atlas/Codecs/
 include/Atlas/Codecs/Packed.h
 include/Atlas/Codecs/Utility.h
 include/Atlas/Codecs/XML.h
 include/Atlas/EncoderBase.h
+include/Atlas/Funky/
 include/Atlas/Funky/Encoder.h
+include/Atlas/Message/
 include/Atlas/Message/DecoderBase.h
 include/Atlas/Message/Encoder.h
 include/Atlas/Message/Layer.h
 include/Atlas/Message/Object.h
 include/Atlas/Message/QueuedDecoder.h
 include/Atlas/Negotiate.h
+include/Atlas/Net/
 include/Atlas/Net/Loopback.h
 include/Atlas/Net/Stream.h
+include/Atlas/Objects/
 include/Atlas/Objects/Decoder.h
 include/Atlas/Objects/Encoder.h
+include/Atlas/Objects/Entity/
 include/Atlas/Objects/Entity/Account.h
 include/Atlas/Objects/Entity/Admin.h
 include/Atlas/Objects/Entity/AdminEntity.h
@@ -25,6 +32,7 @@ include/Atlas/Objects/Entity/Game.h
 include/Atlas/Objects/Entity/GameEntity.h
 include/Atlas/Objects/Entity/Player.h
 include/Atlas/Objects/Entity/RootEntity.h
+include/Atlas/Objects/Operation/
 include/Atlas/Objects/Operation/Action.h
 include/Atlas/Objects/Operation/Appearance.h
 include/Atlas/Objects/Operation/Combine.h
@@ -71,13 +79,6 @@ lib/libAtlasObjectsEntity.a
 lib/libAtlasObjectsEntity.la
 lib/libAtlasObjectsOperation.a
 lib/libAtlasObjectsOperation.la
-%%SHARED%%
+share/aclocal/
 share/aclocal/atlas.m4
-@dirrm include/Atlas/Objects/Operation
-@dirrm include/Atlas/Objects/Entity
-@dirrm include/Atlas/Objects
-@dirrm include/Atlas/Net
-@dirrm include/Atlas/Message
-@dirrm include/Atlas/Funky
-@dirrm include/Atlas/Codecs
-@dirrm include/Atlas
+%%SHARED%%

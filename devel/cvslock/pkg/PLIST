@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/20 00:26:21 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/08 17:55:29 espie Exp $
 bin/cvslock
-man/man1/cvslock.1
+@man man/man1/cvslock.1
