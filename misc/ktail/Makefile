@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/04/17 13:35:06 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/02 13:54:57 kevlo Exp $
 
 COMMENT=	"file monitor"
 
@@ -27,6 +27,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=         --with-qt-includes=${LOCALBASE}/include/X11/qt2
 CONFIGURE_ARGS+=        --with-qt-libraries=${LOCALBASE}/lib/qt2
 CONFIGURE_ARGS+=        --with-extra-libs=${LOCALBASE}/lib
-CONFIGURE_ENV=  	MOC=${LOCALBASE}/bin/moc2  KDEDIR=/usr/local
+CONFIGURE_ENV=  	MOC=${LOCALBASE}/bin/moc2  KDEDIR=${LOCALBASE}
 
 .include <bsd.port.mk>
