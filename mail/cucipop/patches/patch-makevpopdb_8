@@ -1,11 +1,12 @@
+$OpenBSD: patch-makevpopdb_8,v 1.1 2001/02/19 15:00:59 danh Exp $
 --- makevpopdb.8.orig	Sun May 10 08:57:40 1998
-+++ makevpopdb.8	Mon Dec 25 01:40:23 2000
++++ makevpopdb.8	Tue Jan 30 12:43:56 2001
 @@ -48,7 +48,7 @@
  .SH NAME
  makevpopdb \- Creates the vpop database for cucipop
  .SH SYNOPSIS
 -.B /usr/sbin/makevpopdb
-+.B !!PREFIX!!/libexec/makevpopdb
++.B /usr/local/libexec/makevpopdb
  .I dbasefile
  .ad
  .SH DESCRIPTION

@@ -1,0 +1,23 @@
+$OpenBSD: patch-cucipop_c,v 1.1 2001/02/19 15:00:58 danh Exp $
+--- cucipop.c.orig	Tue Jan 30 13:37:01 2001
++++ cucipop.c	Tue Jan 30 13:40:20 2001
+@@ -741,7 +741,7 @@ usg:	      default:printusg();
+       !debug&&(errno==ENOTSOCK||errno==EINVAL))
+       { int serverfd,curfd;
+ 	signal(SIGHUP,SIG_IGN);signal(SIGPIPE,SIG_IGN);fclose(stdin);
+-	fclose(stdout);serverfd=socket(PF_INET,SOCK_STREAM,TCP_PROT);
++	fclose(stdout);serverfd=socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
+ #ifdef INET6
+ 	/* XXX assumes INET */
+ 	memset(&peername, 0, sizeof(peername));
+@@ -754,8 +754,8 @@ usg:	      default:printusg();
+ 	curfd=-1;
+ 	setsockopt(serverfd,SOL_SOCKET,SO_REUSEADDR,&curfd,sizeof curfd);
+ 	if(bind(serverfd,(struct sockaddr*)&peername,sizeof peername))
+-	 { syslog(LOG_CRIT,"unable to bind socket %d",POP3_PORT);
+-	   fprintf(stderr,"%s: Can't bind socket %d\n",cucipopn,POP3_PORT);
++	 { syslog(LOG_CRIT,"unable to bind socket %d",port);
++	   fprintf(stderr,"%s: Can't bind socket %d\n",cucipopn,port);
+ 	   return EX_OSFILE;
+ 	 }
+ 	fclose(stderr);

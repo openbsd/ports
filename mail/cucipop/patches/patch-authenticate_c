@@ -1,6 +1,7 @@
---- authenticate.c.orig	Mon Dec 25 01:20:36 2000
-+++ authenticate.c	Mon Dec 25 01:25:08 2000
-@@ -28,7 +28,7 @@
+$OpenBSD: patch-authenticate_c,v 1.1 2001/02/19 15:00:55 danh Exp $
+--- authenticate.c.orig	Tue Jan 30 12:43:55 2001
++++ authenticate.c	Tue Jan 30 12:43:55 2001
+@@ -28,7 +28,7 @@ static /*const*/char rcsid[]=
  #else
  #include "config.h"
  
@@ -9,7 +10,7 @@
  
  #include <sys/types.h>
  #include <unistd.h>
-@@ -50,7 +50,7 @@
+@@ -50,7 +50,7 @@ static /*const*/char rcsid[]=
  #define VIRTUALUSER	"vpop"
  
  #ifndef MAILSPOOLDIR
@@ -18,7 +19,7 @@
  #endif
  #ifndef MAILSPOOLHASH
  #define MAILSPOOLHASH	0      /* 2 would deliver to /var/spool/mail/b/a/bar */
-@@ -100,6 +100,7 @@
+@@ -100,6 +100,7 @@ static void getlogname(user,sock)const c
    struct sockaddr_in sockname;
  #endif
    int namelen=sizeof sockname;const char*retval="";
@@ -26,7 +27,7 @@
    if(!getsockname(sock,(struct sockaddr*)&sockname,&namelen))
     {
  #ifdef INET6
-@@ -115,16 +116,17 @@
+@@ -115,16 +116,17 @@ static void getlogname(user,sock)const c
  	retval=hent->h_name;
  #endif
     }
@@ -48,7 +49,7 @@
  #ifdef VIRTUALSERVER
    DB_ENV dbenv;DB*db;
    memset(&dbenv,0,sizeof dbenv);
-@@ -155,14 +157,18 @@
+@@ -155,14 +157,18 @@ freesec:       { free(authi.usersecret);
  novirt:	      strcpy(auth_logname,user);
  	 }
  	db->close(db,0);

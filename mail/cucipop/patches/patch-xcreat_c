@@ -1,5 +1,6 @@
+$OpenBSD: patch-xcreat_c,v 1.1 2001/02/19 15:00:59 danh Exp $
 --- xcreat.c.orig	Fri May  1 20:56:54 1998
-+++ xcreat.c	Mon Mar 27 15:12:54 2000
++++ xcreat.c	Tue Jan 30 12:43:55 2001
 @@ -22,7 +22,7 @@
  /*#define NOuname		      /* uncomment if uname is not available */
  /*#define NOstrpbrk		    /* uncomment if strpbrk is not available */

@@ -1,21 +1,22 @@
+$OpenBSD: patch-cucipop_8,v 1.1 2001/02/19 15:00:58 danh Exp $
 --- cucipop.8.orig	Mon May 11 12:35:19 1998
-+++ cucipop.8	Mon Dec 25 01:41:59 2000
++++ cucipop.8	Tue Jan 30 12:43:56 2001
 @@ -48,12 +48,12 @@
  .SH NAME
  cucipop \- Cubic Circle POP3 daemon
  .SH SYNOPSIS
 -.B /usr/sbin/cucipop
-+.B !!PREFIX!!/libexec/cucipop
++.B /usr/local/libexec/cucipop
  .RB [ \-qaYdPUSDAT ]
  .RB [ "\-E \fIage\fP" ]
  .RB [ "\-p \fIport\fP" ]
  .br
 -.B /usr/sbin/cucipop
-+.B !!PREFIX!!/libexec/cucipop
++.B /usr/local/libexec/cucipop
  .B \-v
  .ad
  .SH DESCRIPTION
-@@ -132,12 +132,12 @@
+@@ -132,12 +132,12 @@ Bind to a different
  .IR port .
  .SH EXAMPLES
  Typically
@@ -30,23 +31,23 @@
  .Ex
  In order to start cucipop from within
  .BR inetd (8),
-@@ -145,20 +145,20 @@
+@@ -145,20 +145,20 @@ the following entry in
  .BR inetd.conf (5)
  would be suitable:
  .Sx 1
 -pop-3   stream  tcp     nowait  root    /usr/sbin/cucipop cucipop -Y
-+pop3   stream  tcp     nowait  root    !!PREFIX!!/libexec/cucipop cucipop -Y
++pop3   stream  tcp     nowait  root    /usr/local/libexec/cucipop cucipop -Y
  .Ex
  If your site gets many hits from popclients, it would be preferable
  to start cucipop standalone as in:
  .Sx 1
 -/usr/sbin/cucipop -Y
-+!!PREFIX!!/libexec/cucipop -Y
++/usr/local/libexec/cucipop -Y
  .Ex
  Your typical BOFH setting would be:
  .Sx 1
 -/usr/sbin/cucipop -YaSE 6w
-+!!PREFIX!!/libexec/cucipop -YaSE 6w
++/usr/local/libexec/cucipop -YaSE 6w
  .Ex
  .SH FILES
  .TP 2.3i
@@ -55,7 +56,7 @@
  the default authentication
  .TP
  .B /etc/mail/vpop.db
-@@ -166,25 +166,25 @@
+@@ -166,25 +166,25 @@ virtual host authentication, see the
  .BR makevpopdb (8)
  man page on how this file is created
  .TP
