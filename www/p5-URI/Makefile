@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/15 17:58:51 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/16 04:10:48 avsm Exp $
 
 COMMENT=	"library to parse Uniform Resource Identifiers"
 
-DISTNAME=	URI-1.17
+DISTNAME=	URI-1.19
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
-NEED_VERSION=	1.515
+NEED_VERSION=	1.526
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=URI/}
 
 BUILD_DEPENDS=	::converters/p5-MIME-Base64
