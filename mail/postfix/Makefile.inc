@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.8 2001/09/28 23:35:18 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2001/10/24 12:22:45 espie Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
 CATEGORIES=	mail
-NEED_VERSION=	1.363
+NEED_VERSION=	1.474
 
 MASTER_SITES=	ftp://ftp.merit.edu/postfix/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/unix/mail/postfix/%SUBDIR%/ \
@@ -41,7 +41,7 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl -lkrb
 .endif
 
 .if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=	ldap.2:openldap-client-2.*:databases/openldap
+LIB_DEPENDS+=	ldap.2,lber:openldap-client-2.*:databases/openldap
 MAKE_CCARGS+=	-I${LOCALBASE}/include -DHAS_LDAP
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
 .endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/10/06 22:55:48 naddy Exp $ 
+# $OpenBSD: Makefile,v 1.23 2001/10/24 12:22:45 espie Exp $ 
 
 MULTI_PACKAGES=	-pop3
 
@@ -10,7 +10,7 @@ DISTNAME=	courier-imap-${COURIERVER}
 PKGNAME-pop3=	courier-pop3-${COURIERVER}
 
 CATEGORIES=	mail
-NEED_VERSION=	1.463
+NEED_VERSION=	1.474
 
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= courier
@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=	--without-authmysql
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--with-authldap
-LIB_DEPENDS+=		ldap.2:openldap-client-2.*:databases/openldap
+LIB_DEPENDS+=		ldap.2,lber.2:openldap-client-2.*:databases/openldap
 .else
 CONFIGURE_ARGS+=	--without-authldap
 .endif

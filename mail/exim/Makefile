@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2001/09/28 19:06:30 jakob Exp $
+# $OpenBSD: Makefile,v 1.29 2001/10/24 12:22:45 espie Exp $
 
 COMMENT=	"MTA for systems connected to the Internet"
 
@@ -6,7 +6,7 @@ VERSION=	3.33
 VERSION_DOC=	3.30
 DISTNAME=	exim-${VERSION}
 CATEGORIES=	mail
-NEED_VERSION=	1.405
+NEED_VERSION=	1.474
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/ \
 		ftp://ftp.exim.org/pub/exim/ \
 		ftp://ftp.fu-berlin.de/unix/mail/exim/
@@ -41,7 +41,7 @@ EXIM_MAKECAT+=	"EXIM_PERL=perl.o\n"
 .endif
 
 .if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=	ldap.2:openldap-client-2.*:databases/openldap
+LIB_DEPENDS+=	ldap.2,lber:openldap-client-2.*:databases/openldap
 EXIM_MAKECAT+=	"LOOKUP_LDAP=yes\nLDAP_LIB_TYPE=OPENLDAP2\n"
 EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib -lldap -llber
