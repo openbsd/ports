@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/03/30 12:31:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/06/08 13:24:21 lebel Exp $
 bin/artsc-config
 bin/artscat
 bin/artsd
@@ -16,6 +16,7 @@ bin/kdb2html
 bin/kde-config
 bin/kded
 bin/kdeinit
+bin/kdeinit_shutdown
 bin/kdeinit_wrapper
 bin/kdesu_stub
 bin/kio_http_cache_cleaner
@@ -1846,6 +1847,7 @@ share/icons/locolor/16x16/actions/eraser.png
 share/icons/locolor/16x16/actions/exec.png
 share/icons/locolor/16x16/actions/exit.png
 share/icons/locolor/16x16/actions/fileclose.png
+share/icons/locolor/16x16/actions/filefind.png
 share/icons/locolor/16x16/actions/filenew.png
 share/icons/locolor/16x16/actions/fileopen.png
 share/icons/locolor/16x16/actions/fileprint.png
@@ -1858,10 +1860,12 @@ share/icons/locolor/16x16/actions/finish.png
 share/icons/locolor/16x16/actions/flag.png
 share/icons/locolor/16x16/actions/folder_new.png
 share/icons/locolor/16x16/actions/forward.png
+share/icons/locolor/16x16/actions/frameprint.png
 share/icons/locolor/16x16/actions/gear.png
 share/icons/locolor/16x16/actions/gohome.png
 share/icons/locolor/16x16/actions/goto.png
 share/icons/locolor/16x16/actions/help.png
+share/icons/locolor/16x16/actions/history.png
 share/icons/locolor/16x16/actions/idea.png
 share/icons/locolor/16x16/actions/identity.png
 share/icons/locolor/16x16/actions/kde/0001.png
@@ -2202,6 +2206,7 @@ share/mimelnk/application/x-tzo.desktop
 share/mimelnk/application/x-zip.desktop
 share/mimelnk/application/x-zoo.desktop
 share/mimelnk/audio/basic.desktop
+share/mimelnk/audio/mpegurl.desktop
 share/mimelnk/audio/vnd.rn-realaudio.desktop
 share/mimelnk/audio/x-adpcm.desktop
 share/mimelnk/audio/x-aiff.desktop

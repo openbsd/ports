@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2001/05/24 02:28:30 kevlo Exp $
+# $OpenBSD: Makefile,v 1.16 2001/06/08 13:24:19 lebel Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.363
-VERSION=		2.1.1
+VERSION=		2.1.2
 DISTNAME=		kdelibs-${VERSION}
 DIST_SUBDIR=		kde
 
 HOMEPAGE=		http://www.kde.org
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${VERSION}/distribution/tar/generic/src/
+MASTER_SITE_SUBDIR=	stable/${VERSION}/distribution/src
 EXTRACT_SUFX=		.tar.bz2
 
 # Parts of kde want shared libraries to work, as some symbols are
