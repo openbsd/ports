@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/10/31 17:41:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2004/11/21 18:03:29 espie Exp $
 
 COMMENT=	"record what you eat and analyze your meals for nutrient composition"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 MASTER_SITES=	${HOMEPAGE}
 
