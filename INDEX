@@ -1124,7 +1124,7 @@ ipfm-0.11.4|net/ipfm||IP bandwidth analysis tool|net/ipfm/pkg/DESCR|The OpenBSD 
 iplog-2.2.3|net/iplog||TCP/IP traffic logging tool|net/iplog/pkg/DESCR|Brian Caswell <bmc@openbsd.org>|net security||:devel/gmake||any|y|y|y|y
 ipv6calc-0.45|net/ipv6calc||tool for manipulating IPv6 addresses|net/ipv6calc/pkg/DESCR|Vladimir Kotal <vlada@openbsd.cz>|net||||any|y|y|y|y
 irc-2.10.3p1|net/irc||internet relay chat (irc) server|net/irc/pkg/DESCR|Brian Caswell <bmc@openbsd.org>|net||||any|y|y|y|y
-ircII-20021103|net/ircII||Internet Relay Chat client|net/ircII/pkg/DESCR|Brad Smith <brad@openbsd.org>|net||||any|y|y|y|y
+ircII-20030314|net/ircII||Internet Relay Chat client|net/ircII/pkg/DESCR|Brad Smith <brad@openbsd.org>|net||||any|y|y|y|y
 irssi-0.8.6|net/irssi||modular IRC client with many features (ipv6,socks,proxy)|net/irssi/pkg/DESCR|Reinhard J. Sammer <reinhard@openbsd.org>|net|glib.1.2,gmodule::devel/glib|||any|y|y|y|y
 irssi-0.8.6-socks|net/irssi,socks||modular IRC client with many features (ipv6,socks,proxy)|net/irssi/pkg/DESCR|Reinhard J. Sammer <reinhard@openbsd.org>|net|glib.1.2,gmodule::devel/glib|:security/dante||any|y|y|y|y
 irssi-icb-0.14|net/irssi-icb||ICB plugin for irssi|net/irssi-icb/pkg/DESCR|David Lebel <lebel@openbsd.org>|net||:net/irssi|irssi-*:net/irssi|!hppa m88k vax|y|y|y|y
