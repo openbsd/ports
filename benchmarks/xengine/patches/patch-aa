@@ -1,26 +1,68 @@
-*** xengine.c~	Wed Oct  3 10:58:17 1990
---- xengine.c	Sun Dec  8 22:17:43 1996
-***************
-*** 180,191 ****
-  
-  	Arg             args[10];
-  
-! 	XtSetArg(args[0], XtNwidth, 0);
-! 	XtSetArg(args[1], XtNheight, 0);
-  	XtGetValues(w, args, 2);
-- 
-- 	width = args[0].value;
-- 	height = args[1].value;
-  
-  	XFreePixmap(XtDisplay(engine), enginePixmap);
-  	enginePixmap = XCreatePixmap(XtDisplay(engine), XtWindow(engine), width, height, DefaultDepthOfScreen(XtScreen(engine)));
---- 180,188 ----
-  
-  	Arg             args[10];
-  
-! 	XtSetArg(args[0], XtNwidth, &width);
-! 	XtSetArg(args[1], XtNheight, &height);
-  	XtGetValues(w, args, 2);
-  
-  	XFreePixmap(XtDisplay(engine), enginePixmap);
-  	enginePixmap = XCreatePixmap(XtDisplay(engine), XtWindow(engine), width, height, DefaultDepthOfScreen(XtScreen(engine)));
+--- xengine.c.orig	Sun Mar  1 15:12:37 1998
++++ xengine.c	Sun Mar  1 15:40:55 1998
+@@ -29,8 +29,8 @@
+ 
+ #define	PI	3.141592654
+ 
+-XtCallbackProc  redraw_callback();
+-XtTimerCallbackProc Cylcle();
++void redraw_callback( Widget, XEvent*, String*, Cardinal*);
++void Cycle( XtPointer, XtIntervalId* );
+ 
+ Widget          toplevel, base, rpm_info, engine;
+ GC              gcPiston, gcShaft, gcCylinder, gcRoter, gcBack, gcDep, gcPre, gcEngine;
+@@ -47,7 +47,7 @@
+ 	Arg             args[10];
+ 	XtTranslations  newTranslations;
+ 	static XtActionsRec redrawActions[] = {
+-		{"expose", (XtCallbackProc) redraw_callback},
++		{"expose", redraw_callback},
+ 	};
+ 
+ 	static char    *overrideTranslations =
+@@ -59,8 +59,6 @@
+ 	int             i;
+ 	int             count;
+ 
+-	XtTimerCallbackProc Cycle();
+-
+ 	toplevel = XtInitialize("xengine", "XEngine", NULL, 0, &argc, argv);
+ 
+ 	for (count = 1; count < argc; count++) {
+@@ -170,7 +168,7 @@
+ 	XtMainLoop();
+ }
+ 
+-XtCallbackProc
++void
+ redraw_callback(w, event, params, nparams)
+ 	Widget          w;
+ 	XEvent         *event;
+@@ -180,22 +178,19 @@
+ 
+ 	Arg             args[10];
+ 
+-	XtSetArg(args[0], XtNwidth, 0);
+-	XtSetArg(args[1], XtNheight, 0);
++	XtSetArg(args[0], XtNwidth, &width);
++	XtSetArg(args[1], XtNheight, &height);
+ 	XtGetValues(w, args, 2);
+ 
+-	width = args[0].value;
+-	height = args[1].value;
+-
+ 	XFreePixmap(XtDisplay(engine), enginePixmap);
+ 	enginePixmap = XCreatePixmap(XtDisplay(engine), XtWindow(engine), width, height, DefaultDepthOfScreen(XtScreen(engine)));
+ 
+ }
+ 
+-XtTimerCallbackProc
++void
+ Cycle(client_data, id)
+-	caddr_t         client_data;
+-	XtIntervalId    id;
++	XtPointer       client_data;
++	XtIntervalId*   id;
+ {
+ 
+ 	Arg             args[10];

@@ -1,3 +1,4 @@
 bin/xengine
+man/cat1/xengine.0
 share/doc/xengine/README
-man/man1/xengine.1
+@dirrm share/doc/xengine
