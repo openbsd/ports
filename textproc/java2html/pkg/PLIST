@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/19 03:16:49 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/03/18 15:17:16 kevlo Exp $
 bin/java2html
-share/java2html/tags.j2h
 share/doc/java2html/COPYING
 share/doc/java2html/ChangeLog
 share/doc/java2html/Hello.css
@@ -26,5 +25,6 @@ share/doc/java2html/mails.txt
 share/doc/java2html/mono-alt.css
 share/doc/java2html/mono.css
 share/doc/java2html/old-changes.html
-@dirrm share/doc/java2html
+share/java2html/tags.j2h
 @dirrm share/java2html
+@dirrm share/doc/java2html
