@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2001/08/06 02:00:35 brad Exp $
+# $OpenBSD: Makefile,v 1.63 2001/08/08 19:04:48 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -46,6 +46,7 @@
      SUBDIR += nscache
      SUBDIR += opera
      SUBDIR += p5-Apache-DBI
+     SUBDIR += p5-Apache-MP3
      SUBDIR += p5-Blatte-HTML
      SUBDIR += p5-CGI
 #    SUBDIR += p5-CGI_Lite
