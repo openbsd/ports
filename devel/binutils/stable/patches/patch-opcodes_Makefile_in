@@ -1,0 +1,11 @@
+$OpenBSD: patch-opcodes_Makefile_in,v 1.1 2002/04/30 18:12:43 fgsch Exp $
+--- opcodes/Makefile.in.orig	Tue Apr 30 01:48:00 2002
++++ opcodes/Makefile.in	Tue Apr 30 01:48:07 2002
+@@ -532,6 +532,7 @@ maintainer-clean-recursive:
+ 	rev=''; list='$(SUBDIRS)'; for subdir in $$list; do \
+ 	  rev="$$subdir $$rev"; \
+ 	  test "$$subdir" = "." && dot_seen=yes; \
++	  true; \
+ 	done; \
+ 	test "$$dot_seen" = "no" && rev=". $$rev"; \
+ 	target=`echo $@ | sed s/-recursive//`; \
