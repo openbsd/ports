@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2001/04/09 10:59:40 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2001/08/27 09:46:31 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Piece of cake"
 DISTNAME=	nethack-3.3.1
 CATEGORIES=	games
-NEED_VERSION=	1.363
+NEED_VERSION=	1.447
 MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh331/src/ \
 		ftp://ftp.uu.net/pub/games/nethack/sources/ \
 		${MASTER_SITE_GNU}
@@ -35,8 +35,8 @@ NETHACKCONFIG=${FILESDIR}/simple-config
 .elif ${FLAVOR:L} == "qt"
 SED_PLIST=|sed -e '/^!%%no_x11%%/d'
 NETHACKCONFIG=${FILESDIR}/qt-config
-PORTPATH=${LOCALBASE}/lib/qt2/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin
-LIB_DEPENDS=qt.2.::x11/qt2
+MODULES=	qt2
+MAKE_ENV+=MODQT_INCDIR=${MODQT_INCDIR} MODQT_LIBDIR=${MODQT_LIBDIR}
 .else
 NETHACKCONFIG=${FILESDIR}/x-config
 USE_X11=	Yes
