@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2001/10/25 21:35:38 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2001/10/26 18:40:23 jakob Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -55,6 +55,8 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .if ${FLAVOR:L:Mtls}
 MASTER_SITES0=	ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/old/
+
+TLSHOMEPAGE=	http://www.aet.tu-cottbus.de/personen/jaenicke/pfixtls/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${TLSDISTNAME}${EXTRACT_SUFX}:0
