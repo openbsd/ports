@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2002/03/29 03:41:08 brad Exp $
+# $OpenBSD: Makefile,v 1.41 2002/05/12 15:54:20 danh Exp $
 
 COMMENT=	"multi-router traffic grapher"
 
@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.ou.edu/mirrors/mrtg/ \
 HOMEPAGE=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/mrtg.html
 
 LIB_DEPENDS=	gd.18::graphics/gd
+
+RUN_DEPENDS=	::net/p5-SNMP_Session
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -39,8 +41,8 @@ do-install:
 		${PREFIX}/share/doc/mrtg
 	cd ${WRKSRC}/bin; ${INSTALL_SCRIPT} cfgmaker indexmaker mrtg \
 		${PREFIX}/bin
-	cd ${WRKSRC}/lib/mrtg2; ${INSTALL_DATA} *.pm \
-		${PREFIX}/libdata/perl5/site_perl
+	cd ${WRKSRC}/lib/mrtg2; ${INSTALL_DATA} MRTG_lib.pm locales_mrtg.pm \
+		${PREFIX}/libdata/perl5/site_perl/
 	cd ${WRKSRC}/lib/mrtg2/Pod; ${INSTALL_DATA} *.pm \
 		${PREFIX}/libdata/perl5/site_perl/Pod
 	${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg \

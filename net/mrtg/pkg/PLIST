@@ -1,17 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.13 2001/06/02 02:40:10 brad Exp $
+@comment $OpenBSD: PLIST,v 1.14 2002/05/12 15:54:20 danh Exp $
 bin/cfgmaker
 bin/indexmaker
 bin/mrtg
 bin/rateup
-libdata/perl5/site_perl/BER.pm
 libdata/perl5/site_perl/MRTG_lib.pm
 libdata/perl5/site_perl/Pod/InputObjects.pm
 libdata/perl5/site_perl/Pod/Parser.pm
 libdata/perl5/site_perl/Pod/PlainText.pm
 libdata/perl5/site_perl/Pod/Select.pm
 libdata/perl5/site_perl/Pod/Usage.pm
-libdata/perl5/site_perl/SNMP_Session.pm
-libdata/perl5/site_perl/SNMP_util.pm
 libdata/perl5/site_perl/locales_mrtg.pm
 man/man1/cfgmaker.1
 man/man1/indexmaker.1
