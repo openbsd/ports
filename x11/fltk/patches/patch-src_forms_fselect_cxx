@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_forms_fselect_cxx,v 1.1 2003/04/14 13:30:02 avsm Exp $
+--- src/forms_fselect.cxx.orig	Mon Apr 14 13:41:45 2003
++++ src/forms_fselect.cxx	Mon Apr 14 13:42:13 2003
+@@ -48,7 +48,7 @@ char* fl_show_file_selector(const char *
+   if (!q) return 0;
+   strlcpy(fl_directory, q, sizeof(fl_directory));
+   p = (char *)fl_filename_name(fl_directory);
+-  strlcpy(fl_filename, p, sizeof(fl_directory));
++  strlcpy(fl_filename, p, sizeof(fl_filename));
+   if (p > fl_directory+1) p--;
+   *p = 0;
+   return (char *)q;
