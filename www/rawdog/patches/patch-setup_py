@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1 2005/02/17 14:02:15 xsa Exp $
+--- setup.py.orig	Thu Feb 17 01:26:37 2005
++++ setup.py	Thu Feb 17 14:14:44 2005
+@@ -10,7 +10,7 @@ setup(name = "rawdog",
+ 	url = "http://offog.org/code/rawdog.html",
+ 	license = "GNU GPL v2 or later",
+ 	scripts = ['rawdog'],
+-	data_files = [('share/man/man1', ['rawdog.1'])],
++	data_files = [('man/man1', ['rawdog.1'])],
+ 	packages = ['rawdoglib'])
+ 
+ 
