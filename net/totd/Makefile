@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2000/04/18 10:34:09 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/23 09:34:46 kevlo Exp $
 # $NetBSD: Makefile,v 1.3 2000/01/21 10:01:23 itojun Exp $
 #
+
+BROKEN=		"getpwnam error"
 
 DISTNAME=	totd-1.1p2
 CATEGORIES=	net
