@@ -49,6 +49,7 @@
 	native-getgid: permit
 	native-getgroups: permit
 	native-getlogin: permit
+	native-getpeername: permit
 	native-getpgid: permit
 	native-getpgrp: permit
 	native-getpid: permit
