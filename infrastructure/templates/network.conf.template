@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.22 2001/07/22 20:02:07 brad Exp $
+# $OpenBSD: network.conf.template,v 1.23 2001/07/29 12:26:40 espie Exp $
 
 #
 # NEVER EDIT THAT FILE DIRECTLY !!!! ALWAYS COPY IT TO ../db FIRST.
@@ -76,7 +76,7 @@ MASTER_SITE_XCONTRIB+=	\
 	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.is.co.za/x/contrib/%SUBDIR%/ \
 	ftp://ftp.huji.ac.il/mirror/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.uvsq.fr/pub/gnu/%SUBDIR%/
+	ftp://ftp.uvsq.fr/pub/X11/contrib/%SUBDIR%/
 
 MASTER_SITE_SUNSITE+=	\
 	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
