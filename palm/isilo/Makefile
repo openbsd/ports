@@ -1,0 +1,31 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2001/06/02 23:57:58 pvalchev Exp $
+
+ONLY_FOR_ARCHS=	i386
+
+COMMENT=	"converts documents from text/html to isilo format"
+
+VER=		2.58
+DISTNAME=	iSiloBSD
+PKGNAME=	isilo-${VER}
+CATEGORIES=	palm textproc
+NEED_VERSION=	1.413
+EXTRACT_SUFX=	.zip
+
+HOMEPAGE=	http://www.iSilo.com/
+
+MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+
+PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_FTP=     Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=   Yes
+
+MASTER_SITES=	ftp://ftp.iSilo.com/pub/
+
+WRKDIST=        ${WRKDIR}
+NO_BUILD=	Yes
+
+post-extract:
+	@cp ${FILESDIR}/Makefile ${FILESDIR}/iSiloBSD.1 ${WRKDIR}
+
+.include <bsd.port.mk>
