@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/08/17 12:15:35 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/09/06 18:05:03 brad Exp $
 
 DISTNAME=	bladeenc-085-src-unstable
 PKGNAME=	bladeenc-0.85
@@ -15,6 +15,5 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/doc/bladeenc
 	${INSTALL_PROGRAM} ${WRKSRC}/bladeenc ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/bladeenc.html ${PREFIX}/share/doc/bladeenc
-
 
 .include <bsd.port.mk>
