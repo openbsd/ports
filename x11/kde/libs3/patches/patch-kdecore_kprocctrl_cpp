@@ -1,18 +1,27 @@
-$OpenBSD: patch-kdecore_kprocctrl_cpp,v 1.1 2005/01/28 09:40:30 espie Exp $
---- kdecore/kprocctrl.cpp.orig	Fri Jan 28 02:37:56 2005
-+++ kdecore/kprocctrl.cpp	Fri Jan 28 02:39:25 2005
-@@ -39,7 +39,10 @@ int KProcessController::refCount;
+$OpenBSD: patch-kdecore_kprocctrl_cpp,v 1.2 2005/02/27 07:25:51 brad Exp $
+--- kdecore/kprocctrl.cpp.orig	Sun Nov 30 04:46:44 2003
++++ kdecore/kprocctrl.cpp	Sun Feb 27 02:13:52 2005
+@@ -38,8 +38,10 @@ int KProcessController::refCount;
+ 
  void KProcessController::ref()
  {
-   if( !refCount )
-+  {
+-  if( !refCount )
++  if( !refCount ) {
      theKProcessController = new KProcessController;
 +    setupHandlers();
 +  }
    refCount++;
  }
  
-@@ -71,7 +74,6 @@ KProcessController::KProcessController()
+@@ -47,6 +49,7 @@ void KProcessController::deref()
+ {
+   refCount--;
+   if( !refCount ) {
++    resetHandlers();
+     delete theKProcessController;
+     theKProcessController = 0;
+   }
+@@ -71,13 +74,10 @@ KProcessController::KProcessController()
    QObject::connect( notifier, SIGNAL(activated(int)),
                      SLOT(slotDoHousekeeping()));
  
@@ -20,3 +29,9 @@ $OpenBSD: patch-kdecore_kprocctrl_cpp,v 1.1 2005/01/28 09:40:30 espie Exp $
  }
  
  KProcessController::~KProcessController()
+ {
+-  resetHandlers();
+-
+   delete notifier;
+ 
+   close( fd[0] );
