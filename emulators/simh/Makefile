@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/03/26 07:37:21 form Exp $
+# $OpenBSD: Makefile,v 1.19 2002/03/26 08:20:19 form Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 COMMENT=		"PDP, IBM 1401, Nova and other CPUs simulator"
@@ -6,9 +6,8 @@ COMMENT=		"PDP, IBM 1401, Nova and other CPUs simulator"
 DISTNAME=		simh-2.9.3
 CATEGORIES=		emulators
 NEED_VERSION=		1.515
-MASTER_SITES=		ftp://ftp.openbsd.ru/pub/PDP-11/Emulators/SIMH/2.9.2/ \
-			http://simh.trailing-edge.com/sources/
-DISTFILES=		simhv29.zip
+MASTER_SITES=		http://simh.trailing-edge.com/sources/
+DISTFILES=		simhv29.zip vaxpre.zip
 
 HOMEPAGE=		http://simh.trailing-edge.com/
 
@@ -21,6 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=		${WRKDIR}
 
+UNZIP=			unzip -a
+
 COPTS=			-DUSE_SOCKLEN_T
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "sparc64"
@@ -28,12 +29,10 @@ COPTS+=			-O0
 .endif
 
 SIMS=			altair altairz80 eclipse h316 hp2100 i1401 nova pdp1 \
-			pdp10 pdp11 pdp15 pdp4 pdp7 pdp8 pdp9 s3
+			pdp10 pdp11 pdp15 pdp4 pdp7 pdp8 pdp9 s3 vax
 
-post-extract:
-	@cd ${WRKDIST} && mkdir BIN && \
-		find . -type f -exec \
-		sh -c 'tr -d \\015 < {} > {}.TMP && mv -f {}.TMP {}' \;
+pre-build:
+	@mkdir ${WRKDIST}/BIN
 
 do-install:
 .for f in ${SIMS}
