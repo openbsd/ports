@@ -1,0 +1,256 @@
+@cwd /usr/local
+@name kdelibs-1.0
+lib/libkdecore.so.1.0
+lib/libkdecore.la
+lib/libkdeui.so.1.0
+lib/libkdeui.la
+lib/libjscript.so.0.90
+lib/libjscript.la
+lib/libkhtmlw.so.1.0
+lib/libkhtmlw.la
+lib/libkfm.so.1.0
+lib/libkfm.la
+lib/libkfile.so.1.0
+lib/libkfile.la
+lib/libmediatool.so.1.0
+lib/libmediatool.la
+include/kconfig.h
+include/kconfigdata.h
+include/ksimpleconfig.h
+include/kconfigbase.h
+include/kcolorgroup.h
+include/kapp.h
+include/kcharsets.h
+include/kurl.h
+include/ksock.h
+include/drag.h
+include/kkeyconf.h
+include/kkeydata.h
+include/ckey.h
+include/kmisc.h
+include/kprocess.h
+include/kprocctrl.h
+include/klocale.h
+include/kiconloader.h
+include/kdebug.h
+include/kstdaccel.h
+include/kwm.h
+include/krootprop.h
+include/kstring.h
+include/kpixmap.h
+include/dither.h
+include/kledlamp.h
+include/kprogress.h
+include/kpanner.h
+include/kcolordlg.h
+include/kselect.h
+include/kdatepik.h
+include/kdatetbl.h
+include/kfontdialog.h
+include/kmsgbox.h
+include/kpopmenu.h
+include/ktabctl.h
+include/ktreelist.h
+include/kstatusbar.h
+include/ktopwidget.h
+include/ktoolbar.h
+include/ktmainwindow.h
+include/kmenubar.h
+include/kbutton.h
+include/kslider.h
+include/kseparator.h
+include/klined.h
+include/kcombo.h
+include/krestrictedline.h
+include/kintegerline.h
+include/kspinbox.h
+include/kcolorbtn.h
+include/kiconloaderdialog.h
+include/kwmmapp.h
+include/kbuttonbox.h
+include/ktablistbox.h
+include/kcontainer.h
+include/knewpanner.h
+include/kcontrol.h
+include/keditcl.h
+include/ktoolboxmgr.h
+include/kled.h
+include/kdbtn.h
+include/knotebook.h
+include/ktabbar.h
+include/kwizard.h
+include/bison2cpp.h
+include/jstree.h
+include/jsexec.h
+include/jserror.h
+include/builtin.h
+include/jscript.h
+include/html.h
+include/htmlobj.h
+include/htmlfont.h
+include/formats.h
+include/htmlform.h
+include/htmltoken.h
+include/htmlframe.h
+include/htmlview.h
+include/htmlclue.h
+include/htmldata.h
+include/kfm.h
+include/kfmclient_ipc.h
+include/kfmipc.h
+include/kfiledialog.h
+include/kfileinfo.h
+include/bookmark.h
+include/kremotefile.h
+include/kdir.h
+include/kdirlistbox.h
+include/kfileinfocontents.h
+include/booktoken.h
+include/kfiledetaillist.h
+include/kcombiview.h
+include/kpreview.h
+include/kfilepreview.h
+include/xview.h
+include/kfilesimpleview.h
+include/mediatool.h
+include/kaudio.h
+include/kde.pot
+share/doc/HTML/en/kfiledialog/back.gif
+share/doc/HTML/en/kfiledialog/bottom.gif
+share/doc/HTML/en/kfiledialog/exec.gif
+share/doc/HTML/en/kfiledialog/flag.gif
+share/doc/HTML/en/kfiledialog/forward.gif
+share/doc/HTML/en/kfiledialog/home.gif
+share/doc/HTML/en/kfiledialog/idea.gif
+share/doc/HTML/en/kfiledialog/index.html
+share/doc/HTML/en/kfiledialog/reload.gif
+share/doc/HTML/en/kfiledialog/toolbar-h.gif
+share/doc/HTML/en/kfiledialog/toolbar.gif
+share/doc/HTML/en/kfiledialog/up.gif
+share/doc/HTML/en/kfiledialog/viewmag.gif
+share/doc/HTML/en/kdelibs/kdebug.html
+share/config/charsets
+share/apps/kde/pics/error.xpm
+share/apps/kde/pics/exclamation.xpm
+share/apps/kde/pics/info.xpm
+share/apps/kde/pics/stopsign.xpm
+share/apps/kde/pics/question.xpm
+share/apps/kde/pics/arrow_up.xbm
+share/apps/kde/pics/arrow_down.xbm
+share/apps/kde/pics/arrow_left.xbm
+share/apps/kde/pics/arrow_right.xbm
+share/apps/khtmlw/pics/khtmlw_dnd.xpm
+share/toolbar/configure.xpm
+share/toolbar/back.xpm
+share/toolbar/bottom.xpm
+share/toolbar/contents.xpm
+share/toolbar/down.xpm
+share/toolbar/editcopy.xpm
+share/toolbar/editcut.xpm
+share/toolbar/editpaste.xpm
+share/toolbar/exclamation.xpm
+share/toolbar/exit.xpm
+share/toolbar/filefloppy.xpm
+share/toolbar/filemail.xpm
+share/toolbar/filenew.xpm
+share/toolbar/filenew2.xpm
+share/toolbar/fileopen.xpm
+share/toolbar/fileprint.xpm
+share/toolbar/finish.xpm
+share/toolbar/flag.xpm
+share/toolbar/forward.xpm
+share/toolbar/help.xpm
+share/toolbar/home.xpm
+share/toolbar/idea.xpm
+share/toolbar/lock.xpm
+share/toolbar/next.xpm
+share/toolbar/page.xpm
+share/toolbar/paintbucket.xpm
+share/toolbar/prev.xpm
+share/toolbar/reload.xpm
+share/toolbar/send.xpm
+share/toolbar/openbook.xpm
+share/toolbar/tick.xpm
+share/toolbar/rightjust.xpm
+share/toolbar/start.xpm
+share/toolbar/top.xpm
+share/toolbar/up.xpm
+share/toolbar/viewmag+.xpm
+share/toolbar/viewmag-.xpm
+share/toolbar/viewmag.xpm
+share/toolbar/viewzoom.xpm
+share/toolbar/stop.xpm
+share/locale/de/LC_MESSAGES/kde.mo
+share/locale/de/charset
+share/locale/fr/LC_MESSAGES/kde.mo
+share/locale/fr/charset
+share/locale/sv/LC_MESSAGES/kde.mo
+share/locale/sv/charset
+share/locale/cs/LC_MESSAGES/kde.mo
+share/locale/cs/charset
+share/locale/es/LC_MESSAGES/kde.mo
+share/locale/es/charset
+share/locale/ru/LC_MESSAGES/kde.mo
+share/locale/ru/charset
+share/locale/hu/LC_MESSAGES/kde.mo
+share/locale/hu/charset
+share/locale/da/LC_MESSAGES/kde.mo
+share/locale/da/charset
+share/locale/it/LC_MESSAGES/kde.mo
+share/locale/nl/LC_MESSAGES/kde.mo
+share/locale/pt/LC_MESSAGES/kde.mo
+share/locale/pt/charset
+share/locale/no/LC_MESSAGES/kde.mo
+share/locale/pl/LC_MESSAGES/kde.mo
+share/locale/pl/charset
+share/locale/el/LC_MESSAGES/kde.mo
+share/locale/fi/LC_MESSAGES/kde.mo
+share/locale/fi/charset
+share/locale/hr/LC_MESSAGES/kde.mo
+share/locale/ro/LC_MESSAGES/kde.mo
+share/locale/ro/charset
+share/locale/zh_TW.Big5/LC_MESSAGES/kde.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kde.mo
+share/locale/sk/LC_MESSAGES/kde.mo
+share/locale/sk/charset
+share/locale/ca/LC_MESSAGES/kde.mo
+share/locale/sl/LC_MESSAGES/kde.mo
+share/locale/en_UK/LC_MESSAGES/kde.mo
+share/locale/mk/LC_MESSAGES/kde.mo
+share/locale/pt_BR/LC_MESSAGES/kde.mo
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/mk/LC_MESSAGES
+@dirrm share/locale/en_UK/LC_MESSAGES
+@dirrm share/locale/sl/LC_MESSAGES
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
+@dirrm share/locale/zh_TW.Big5/LC_MESSAGES
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/hr/LC_MESSAGES
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/el/LC_MESSAGES
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/toolbar
+@dirrm share/apps/khtmlw/pics
+@dirrm share/apps/kde/pics
+@dirrm share/config
+@dirrm share/doc/HTML/default
+@dirrm share/doc/HTML/en/kdelibs
+@dirrm share/doc/HTML/en/kfiledialog
+@dirrm share/doc/HTML
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib
