@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile.in,v 1.1.1.1 2000/11/27 15:56:03 avsm Exp $
+--- Makefile.in.orig	Mon Oct  2 16:23:35 2000
++++ Makefile.in	Mon Nov 20 15:57:31 2000
+@@ -378,8 +378,7 @@ clean-generic maintainer-clean-generic c
+ maintainer-clean
+ 
+ install-exec-hook:
+-	-$(RM) -f $(bindir)/mdecrypt
+-	$(LN_S) mcrypt $(bindir)/mdecrypt
++	$(LN_S) mcrypt ${DESTDIR}$(bindir)/mdecrypt
+ uninstall-local:
+ 	-$(RM) -f $(bindir)/mdecrypt
+ 

@@ -1,0 +1,23 @@
+mcrypt is intended to be a replacement of the old unix crypt(1)
+under the GNU General Public License. Unix crypt(1) was a popular
+file encryption program in unix boxes.
+
+It was based on the Enigma encryption algorithm but it was considerable
+trivialized. Since this was not adequate, even for individual privacy
+needs, mcrypt was created as a similar program using some modern
+block encryption algorithms.
+
+Mcrypt also has a compatibility mode with unix crypt(1) and with
+Solaris des(1). It supports all the algorithms and modes found in
+libmcrypt and it is very extendable.
+
+At the time writing this, it supports the algorithms: BLOWFISH,
+TWOFISH, DES, TripleDES, 3-WAY, SAFER, LOKI97, GOST, RC2, RC6, MARS,
+IDEA, RIJNDAEL, SERPENT, CAST, ARCFOUR and WAKE.
+
+Block algorithms are implemented in modes: CFB, CBC, ECB, OFB (8
+bit and n bit, where n is the size of the algorithm's block length).
+For a brief description of the algorithms and the modes look at the
+mcrypt manpage (this may be out of date).  In mcrypt it is on the
+user to decide which algorithm he considers best for encrypting his
+data.
