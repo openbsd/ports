@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2000/10/22 14:03:38 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2001/01/01 18:45:56 jakob Exp $
 
-DISTNAME=	slrn-0.9.6.2
+DISTNAME=	slrn-0.9.6.3
 CATEGORIES=	news
 NEED_VERSION=	1.310
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/slrn/
 
 MAINTAINER=	Christopher Turan <turan@openbsd.org>
+
+HOMEPAGE=	http://www.slrn.org/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
