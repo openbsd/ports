@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2004/04/02 19:07:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2004/04/10 18:48:30 couderc Exp $
 
 COMMENT=	"GTK+2 IRC client"
 
 MAJOR=		2.0
-VERSION=	${MAJOR}.7
+VERSION=	${MAJOR}.8
 DISTNAME=	xchat-${VERSION}
 PKGNAME=	xchat2-${VERSION}
 CATEGORIES=	net x11

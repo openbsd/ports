@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_common_outbound_c,v 1.1 2003/10/26 02:08:51 pvalchev Exp $
---- src/common/outbound.c.orig	2003-10-25 13:03:33.000000000 -0600
-+++ src/common/outbound.c	2003-10-25 13:03:49.000000000 -0600
-@@ -1393,7 +1393,7 @@ cmd_exec (struct session *sess, char *tb
+$OpenBSD: patch-src_common_outbound_c,v 1.2 2004/04/10 18:48:30 couderc Exp $
+--- src/common/outbound.c.orig	2004-03-16 06:17:42.000000000 +0100
++++ src/common/outbound.c	2004-04-09 18:18:47.000000000 +0200
+@@ -1396,7 +1396,7 @@ cmd_exec (struct session *sess, char *tb
  			/* Now we call /bin/sh to run our cmd ; made it more friendly -DC1 */
  			if (shell)
  			{
