@@ -1,0 +1,27 @@
+--- pico/osdep/spell.unx.orig	Thu Aug 27 18:57:49 1998
++++ pico/osdep/spell.unx	Tue Jan  4 23:53:04 2000
+@@ -85,6 +85,14 @@
+     setimark(0, 1);
+     emlwrite("Checking spelling...", NULL); 	/* greetings */
+ 
++    if((sp = (char *)getenv("SPELL")) == NULL)
++      sp = SPELLER;
++
++    /* This code only works with "spell", which doesn't exist, and
++       alt_speller is only set via command line -s argument. */
++    if (strstr(sp, "ispell") != NULL)
++      alt_speller = sp;
++
+     if(alt_speller)
+       return(alt_editor(1, 0));			/* f == 1 means fork speller */
+ 
+@@ -92,9 +100,6 @@
+ 	emlwrite("Can't write temp file for spell checker", NULL);
+ 	return(-1);
+     }
+-
+-    if((sp = (char *)getenv("SPELL")) == NULL)
+-      sp = SPELLER;
+ 
+     sprintf(cb, "( %s ) < %s", sp, fn);		/* pre-use buffer! */
+     if((p = P_open(cb)) == NULL){ 		/* read output from command */
