@@ -1,11 +1,17 @@
---- src/builtin.c.orig	Mon Dec 29 14:04:03 1997
-+++ src/builtin.c	Mon Dec 29 14:04:14 1997
-@@ -1078,7 +1078,7 @@
+--- src/builtin.c.orig	Wed Aug 31 09:45:12 1994
++++ src/builtin.c	Sat Jul 25 14:30:35 1998
+@@ -1076,9 +1076,13 @@
+ static void
+ m4_maketemp (struct obstack *obs, int argc, token_data **argv)
  {
++  int fd;
    if (bad_argc (argv[0], argc, 2, 2))
      return;
 -  mktemp (ARG (1));
-+  mkstemp (ARG (1));
++  fd = mkstemp (ARG (1));
++  if ( fd == -1 )
++    err( 1, "can't create temp file %s", ARG (1) );
++  close( fd );
    obstack_grow (obs, ARG (1), strlen (ARG (1)));
  }
  
