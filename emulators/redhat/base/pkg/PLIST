@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/05/11 05:24:10 ish Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/09/02 18:49:50 pvalchev Exp $
 @pkgcfl linux_lib-*
 @exec mkdir -p %D/dev
 @exec ln -sf /dev/console %D/dev/tty0
@@ -120,8 +120,12 @@ lib/libBrokenLocale.so.1
 lib/libNoVersion-2.3.2.so
 lib/libNoVersion.so.1
 lib/libSegFault.so
+lib/libacl.so.1
+lib/libacl.so.1.0.0
 lib/libanl-2.3.2.so
 lib/libanl.so.1
+lib/libattr.so.1
+lib/libattr.so.1.0.0
 lib/libc-2.3.2.so
 lib/libc.so.6
 lib/libcrypt-2.3.2.so

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2003/08/26 22:49:43 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2003/09/02 18:49:50 pvalchev Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 8.0"
 
-PKGNAME=	redhat_base-8.0p1
+PKGNAME=	redhat_base-8.0p2
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
@@ -15,6 +15,8 @@ RPMDIR=		${FULLDISTDIR}
 
 RPMS=		glibc-2.3.2-4.80.6.i386.rpm:0 \
 		glibc-common-2.3.2-4.80.6.i386.rpm:0 \
+		libattr-2.0.8-3.i386.rpm \
+		libacl-2.0.11-2.i386.rpm \
 		termcap-11.0.1-13.noarch.rpm \
 		libtermcap-2.0.8-31.i386.rpm \
 		bash-2.05b-5.1.i386.rpm:0 \
