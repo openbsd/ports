@@ -1,6 +1,6 @@
 +---------------
 | Enable this module in php.ini using the following command:
 |
-|       ${PREFIX}/sbin/phpxs -a ${MODULE_NAME}
+|       ${LOCALBASE}/sbin/phpxs -a ${MODULE_NAME}
 +---------------
 

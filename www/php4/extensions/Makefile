@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2003/04/03 14:04:25 avsm Exp $
+# $OpenBSD: Makefile,v 1.20 2003/05/02 19:49:36 avsm Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
 
-PATCH_LIST=	${PORTSDIR}/www/php4/core/patches/patch-* \
-		patch-*
-
 MULTI_PACKAGES=
 SUBPACKAGE?=
+
+# extensions get installed under the apache chroot
+PREFIX?=	${CHROOT_DIR}
 
 FLAVORS=	no_x11
 FLAVOR?= 
@@ -306,7 +306,7 @@ FULLPKGNAME${i}=	php4${i}-${V}
 MODULE_NAME=		${SUBPACKAGE:S/-//g}
 LIB_DEPENDS=		${${MODULE_NAME:U}_DEPENDS}
 MESSAGE=		${PKGDIR}/MESSAGE
-SUBST_VARS=		MODULE_NAME PHP_CONFIG_FILE
+SUBST_VARS=		MODULE_NAME PHP_CONFIG_FILE LOCALBASE
 .elif defined(PACKAGING) && empty(SUBPACKAGE)
 LIB_DEPENDS=
 MESSAGE=		${PKGDIR}/DESCR
