@@ -1,0 +1,22 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2003/07/21 02:39:46 avsm Exp $
+--- Makefile.orig	Thu Jul 10 10:47:17 2003
++++ Makefile	Fri Jul 18 15:26:53 2003
+@@ -14,9 +14,6 @@ ZLIB_LIBDIR=/usr/lib
+ # The directory containing the Zlib header file (zlib.h)
+ ZLIB_INCLUDE=/usr/include
+ 
+-# Where to install the library. By default: OCaml's standard library directory.
+-INSTALLDIR=`$(OCAMLC) -where`
+-
+ # Flags for the C compiler.
+ CFLAGS=-O -I$(ZLIB_INCLUDE) $(ZLIB)
+ 
+@@ -55,7 +52,7 @@ cryptokit.cmxa: $(CAML_OBJS:.cmo=.cmx)
+ 	$(MKLIB) -o cryptokit $(CAML_OBJS:.cmo=.cmx) -L$(ZLIB_LIBDIR) $(ZLIB_LIB)
+ 
+ test: test.byt
+-	$(OCAMLRUN) -I . ./test.byt
++	./test.byt
+ 
+ test.byt: libcryptokit.a cryptokit.cma test.ml
+ 	$(OCAMLC) -o test.byt unix.cma nums.cma cryptokit.cma test.ml
