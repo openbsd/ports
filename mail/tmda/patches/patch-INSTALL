@@ -1,0 +1,12 @@
+$OpenBSD: patch-INSTALL,v 1.1 2002/12/06 17:48:14 naddy Exp $
+--- INSTALL.orig	Tue Dec  3 22:25:07 2002
++++ INSTALL	Tue Dec  3 22:25:36 2002
+@@ -4,7 +4,7 @@ found on the TMDA homepage:
+     <URL:http://tmda.net/>
+ 
+ A local copy of the HTML documentation matching this release is
+-included in the "htdocs" directory.
++included in the "%%PREFIX%%/share/doc/tmda" directory.
+ 
+ If you are upgrading from an earlier release of TMDA, make sure to
+ consult the `UPGRADE' file.
