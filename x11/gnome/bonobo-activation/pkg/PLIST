@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/03/30 06:33:18 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/06/12 19:50:10 marcm Exp $
 bin/activation-client
 bin/bonobo-activation-empty-server
 bin/bonobo-activation-run-query
@@ -31,11 +31,12 @@ share/gtk-doc/html/bonobo-activation/api-reference.html
 share/gtk-doc/html/bonobo-activation/architecture.html
 share/gtk-doc/html/bonobo-activation/async-activation.html
 share/gtk-doc/html/bonobo-activation/attribute-tag.html
-share/gtk-doc/html/bonobo-activation/bonobo-activation-debugging.html
-share/gtk-doc/html/bonobo-activation/bonobo-activation-initialization.html
-share/gtk-doc/html/bonobo-activation/bonobo-activation-query-and-activation.html
-share/gtk-doc/html/bonobo-activation/bonobo-activation-registration.html
-share/gtk-doc/html/bonobo-activation/bonobo-activation-utilities.html
+share/gtk-doc/html/bonobo-activation/bonobo-activation-Debugging.html
+share/gtk-doc/html/bonobo-activation/bonobo-activation-Initialization.html
+share/gtk-doc/html/bonobo-activation/bonobo-activation-Query-and-Activation.html
+share/gtk-doc/html/bonobo-activation/bonobo-activation-Registration.html
+share/gtk-doc/html/bonobo-activation/bonobo-activation-Utilities.html
+share/gtk-doc/html/bonobo-activation/bonobo-activation.devhelp
 share/gtk-doc/html/bonobo-activation/bonobo-activation.png
 share/gtk-doc/html/bonobo-activation/checklist.html
 share/gtk-doc/html/bonobo-activation/configuring.html
@@ -51,21 +52,27 @@ share/gtk-doc/html/bonobo-activation/fdl-section8.html
 share/gtk-doc/html/bonobo-activation/fdl-section9.html
 share/gtk-doc/html/bonobo-activation/fdl-using.html
 share/gtk-doc/html/bonobo-activation/fdl.html
+share/gtk-doc/html/bonobo-activation/home.png
 share/gtk-doc/html/bonobo-activation/index.html
 share/gtk-doc/html/bonobo-activation/index.sgml
+share/gtk-doc/html/bonobo-activation/left.png
 share/gtk-doc/html/bonobo-activation/migrating.html
 share/gtk-doc/html/bonobo-activation/query-langage.html
 share/gtk-doc/html/bonobo-activation/query-syntax.html
+share/gtk-doc/html/bonobo-activation/right.png
 share/gtk-doc/html/bonobo-activation/server-arch.html
 share/gtk-doc/html/bonobo-activation/server-xml-reference.html
 share/gtk-doc/html/bonobo-activation/tutorial.html
+share/gtk-doc/html/bonobo-activation/up.png
 share/idl/bonobo-activation-2.0/Bonobo_ActivationContext.idl
 share/idl/bonobo-activation-2.0/Bonobo_Activation_types.idl
 share/idl/bonobo-activation-2.0/Bonobo_GenericFactory.idl
 share/idl/bonobo-activation-2.0/Bonobo_ObjectDirectory.idl
 share/idl/bonobo-activation-2.0/Bonobo_Unknown.idl
+share/locale/am/LC_MESSAGES/bonobo-activation.mo
 share/locale/ar/LC_MESSAGES/bonobo-activation.mo
 share/locale/az/LC_MESSAGES/bonobo-activation.mo
+share/locale/be/LC_MESSAGES/bonobo-activation.mo
 share/locale/bg/LC_MESSAGES/bonobo-activation.mo
 share/locale/ca/LC_MESSAGES/bonobo-activation.mo
 share/locale/cs/LC_MESSAGES/bonobo-activation.mo
@@ -73,16 +80,21 @@ share/locale/da/LC_MESSAGES/bonobo-activation.mo
 share/locale/de/LC_MESSAGES/bonobo-activation.mo
 share/locale/el/LC_MESSAGES/bonobo-activation.mo
 share/locale/es/LC_MESSAGES/bonobo-activation.mo
+share/locale/fa/LC_MESSAGES/bonobo-activation.mo
 share/locale/fi/LC_MESSAGES/bonobo-activation.mo
 share/locale/fr/LC_MESSAGES/bonobo-activation.mo
 share/locale/ga/LC_MESSAGES/bonobo-activation.mo
 share/locale/gl/LC_MESSAGES/bonobo-activation.mo
+share/locale/he/LC_MESSAGES/bonobo-activation.mo
 share/locale/hi/LC_MESSAGES/bonobo-activation.mo
 share/locale/hu/LC_MESSAGES/bonobo-activation.mo
+share/locale/id/LC_MESSAGES/bonobo-activation.mo
 share/locale/it/LC_MESSAGES/bonobo-activation.mo
 share/locale/ja/LC_MESSAGES/bonobo-activation.mo
 share/locale/ko/LC_MESSAGES/bonobo-activation.mo
 share/locale/lv/LC_MESSAGES/bonobo-activation.mo
+share/locale/mk/LC_MESSAGES/bonobo-activation.mo
+share/locale/mn/LC_MESSAGES/bonobo-activation.mo
 share/locale/ms/LC_MESSAGES/bonobo-activation.mo
 share/locale/nl/LC_MESSAGES/bonobo-activation.mo
 share/locale/nn/LC_MESSAGES/bonobo-activation.mo
@@ -100,6 +112,7 @@ share/locale/ta/LC_MESSAGES/bonobo-activation.mo
 share/locale/tr/LC_MESSAGES/bonobo-activation.mo
 share/locale/uk/LC_MESSAGES/bonobo-activation.mo
 share/locale/vi/LC_MESSAGES/bonobo-activation.mo
+share/locale/wa/LC_MESSAGES/bonobo-activation.mo
 share/locale/zh_CN/LC_MESSAGES/bonobo-activation.mo
 share/locale/zh_TW/LC_MESSAGES/bonobo-activation.mo
 %%SHARED%%
@@ -107,6 +120,8 @@ share/locale/zh_TW/LC_MESSAGES/bonobo-activation.mo
 @comment @dirrm share/locale/zh_TW
 @comment @dirrm share/locale/zh_CN/LC_MESSAGES
 @comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/wa/LC_MESSAGES
+@comment @dirrm share/locale/wa
 @comment @dirrm share/locale/vi/LC_MESSAGES
 @comment @dirrm share/locale/vi
 @comment @dirrm share/locale/uk/LC_MESSAGES
@@ -141,6 +156,10 @@ share/locale/zh_TW/LC_MESSAGES/bonobo-activation.mo
 @comment @dirrm share/locale/nl
 @comment @dirrm share/locale/ms/LC_MESSAGES
 @comment @dirrm share/locale/ms
+@comment @dirrm share/locale/mn/LC_MESSAGES
+@comment @dirrm share/locale/mn
+@comment @dirrm share/locale/mk/LC_MESSAGES
+@comment @dirrm share/locale/mk
 @comment @dirrm share/locale/lv/LC_MESSAGES
 @comment @dirrm share/locale/lv
 @comment @dirrm share/locale/ko/LC_MESSAGES
@@ -149,10 +168,14 @@ share/locale/zh_TW/LC_MESSAGES/bonobo-activation.mo
 @comment @dirrm share/locale/ja
 @comment @dirrm share/locale/it/LC_MESSAGES
 @comment @dirrm share/locale/it
+@comment @dirrm share/locale/id/LC_MESSAGES
+@comment @dirrm share/locale/id
 @comment @dirrm share/locale/hu/LC_MESSAGES
 @comment @dirrm share/locale/hu
 @comment @dirrm share/locale/hi/LC_MESSAGES
 @comment @dirrm share/locale/hi
+@comment @dirrm share/locale/he/LC_MESSAGES
+@comment @dirrm share/locale/he
 @comment @dirrm share/locale/gl/LC_MESSAGES
 @comment @dirrm share/locale/gl
 @comment @dirrm share/locale/ga/LC_MESSAGES
@@ -161,6 +184,8 @@ share/locale/zh_TW/LC_MESSAGES/bonobo-activation.mo
 @comment @dirrm share/locale/fr
 @comment @dirrm share/locale/fi/LC_MESSAGES
 @comment @dirrm share/locale/fi
+@comment @dirrm share/locale/fa/LC_MESSAGES
+@comment @dirrm share/locale/fa
 @comment @dirrm share/locale/es/LC_MESSAGES
 @comment @dirrm share/locale/es
 @comment @dirrm share/locale/el/LC_MESSAGES
@@ -175,10 +200,14 @@ share/locale/zh_TW/LC_MESSAGES/bonobo-activation.mo
 @comment @dirrm share/locale/ca
 @comment @dirrm share/locale/bg/LC_MESSAGES
 @comment @dirrm share/locale/bg
+@comment @dirrm share/locale/be/LC_MESSAGES
+@comment @dirrm share/locale/be
 @comment @dirrm share/locale/az/LC_MESSAGES
 @comment @dirrm share/locale/az
 @comment @dirrm share/locale/ar/LC_MESSAGES
 @comment @dirrm share/locale/ar
+@comment @dirrm share/locale/am/LC_MESSAGES
+@comment @dirrm share/locale/am
 @comment @dirrm share/locale
 @dirrm share/idl/bonobo-activation-2.0
 @comment @dirrm share/idl
@@ -189,6 +218,7 @@ share/locale/zh_TW/LC_MESSAGES/bonobo-activation.mo
 @dirrm share/examples/bonobo-activation
 @comment @dirrm lib/pkgconfig
 @dirrm lib/bonobo/servers
-@dirrm lib/bonobo
+@comment x11/gnome/bonobo also claims lib/bonobo
+@unexec rmdir %D/lib/bonobo 2>/dev/null || true
 @dirrm include/bonobo-activation-2.0/bonobo-activation
 @dirrm include/bonobo-activation-2.0

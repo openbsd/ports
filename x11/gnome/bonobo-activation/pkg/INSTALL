@@ -1,14 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.2 2003/02/26 15:13:04 david Exp $
+# $OpenBSD: INSTALL,v 1.3 2003/06/12 19:50:10 marcm Exp $
 
 P_NAME=bonobo-activation
-
-set -e
-PREFIX=${PKG_PREFIX:-/usr/local}
-PATH=/bin:/usr/bin:/sbin:/usr/sbin
-DEST_PFX=${SYSCONFDIR}
-SOURCE_PFX=${PREFIX}/share/examples/${P_NAME}
 
 DIRS='
 bonobo-activation
@@ -18,7 +12,14 @@ FILES='
 bonobo-activation/bonobo-activation-config.xml
 '
 
+set -e
+PREFIX=${PKG_PREFIX:-/usr/local}
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+
 do_post() {
+
+	DEST_PFX=${CONFDIR}
+	SOURCE_PFX=${PREFIX}/share/examples/${P_NAME}
 
 	echo 
 	echo "+--------------- ${P_NAME}"
@@ -29,7 +30,6 @@ do_post() {
 			install -d ${DEST_PFX}/$d
 		fi
 	done
-
 
 	# install or take note of existing config files
 	for f in ${FILES}; do
