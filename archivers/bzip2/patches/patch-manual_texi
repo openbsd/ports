@@ -1,0 +1,34 @@
+$OpenBSD: patch-manual_texi,v 1.1 2001/09/26 18:38:43 heko Exp $
+--- manual.texi.orig	Fri Mar 24 01:43:33 2000
++++ manual.texi	Wed Sep 26 19:59:40 2001
+@@ -35,12 +35,12 @@ END-INFO-DIR-ENTRY
+ @author Julian Seward
+ 
+ @end titlepage
+-
+ @parindent 0mm
+ @parskip 2mm
+-
+ @end iftex
++
+ @node Top, Overview, (dir), (dir)
++@top
+ 
+ This program, @code{bzip2}, 
+ and associated library @code{libbzip2}, are
+@@ -97,11 +97,12 @@ above statement.
+ 
+ 
+ 
++@menu 
++* Overview::	Overview.
++@end menu
+ 
+ 
+-
+-
+-@node Overview, Implementation, Top, Top
++@node Overview, , Top, Top
+ @chapter Introduction
+ 
+ @code{bzip2}  compresses  files  using the Burrows-Wheeler 

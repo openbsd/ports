@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2001/08/26 21:23:42 heko Exp $
+# $OpenBSD: Makefile,v 1.36 2001/09/26 18:38:43 heko Exp $
 
 COMMENT=	"block-sorting file compressor, unencumbered"
 
@@ -24,6 +24,12 @@ test:   build
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
 		LD_LIBRARY_PATH="${WRKBUILD}" ${MAKE} ${MAKE_FLAGS} -f \
 			${MAKE_FILE} test
+
+post-install:
+	@cd ${WRKBUILD} && makeinfo --no-split manual.texi
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bzip2
+	${INSTALL_DATA} ${WRKBUILD}/*.html ${PREFIX}/share/doc/bzip2
+	${INSTALL_DATA} ${WRKBUILD}/bzip2.info ${PREFIX}/info
 
 .include <bsd.port.mk>
 
