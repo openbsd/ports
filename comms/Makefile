@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/01/05 23:40:48 dugsong Exp $
+# $OpenBSD: Makefile,v 1.15 2000/01/31 22:42:23 espie Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 #
 
@@ -15,7 +15,6 @@
      SUBDIR += minicom
      SUBDIR += pilot-link
      SUBDIR += qpage
-     SUBDIR += rzsz
      SUBDIR += seyon
 #    SUBDIR += snooper
      SUBDIR += tkhylafax
