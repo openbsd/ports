@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1 2004/02/18 21:10:16 djm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/24 08:43:46 xsa Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"SQLite adapter for Python"
 
@@ -18,8 +20,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-
-NOT_FOR_ARCHS=		${NO_SHARE_ARCHS}
 
 LIB_DEPENDS+=	sqlite::databases/sqlite
 
