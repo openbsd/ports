@@ -1,6 +1,0 @@
-$OpenBSD: SECURITY,v 1.1 1999/12/01 17:07:47 espie Exp $
-
-autoconf scripts create quite a few temporary files in public
-directories.
-
-The OpenBSD version has been patched to use mktemp(1).
