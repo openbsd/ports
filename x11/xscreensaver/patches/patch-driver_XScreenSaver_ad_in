@@ -1,0 +1,12 @@
+$OpenBSD: patch-driver_XScreenSaver_ad_in,v 1.1 2002/03/27 01:28:58 lebel Exp $
+--- driver/XScreenSaver.ad.in.orig	Tue Mar 26 20:10:42 2002
++++ driver/XScreenSaver.ad.in	Tue Mar 26 20:11:02 2002
+@@ -181,7 +181,7 @@
+ 				noseguy -root				    \n\
+ 				flame -root				    \n\
+ 				lmorph -root				    \n\
+-				deco -root				    \n\
++				xdeco -root				    \n\
+ 				moire -root				    \n\
+ 				moire2 -root				    \n\
+ 				lightning -root				    \n\
