@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/03/24 01:20:39 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/03/27 17:02:18 nino Exp $
 bin/CDE2Xfcepal
 bin/glob
 bin/startxfce
@@ -659,6 +659,3 @@ share/xfce/textures/stripe.xpm
 @dirrm share/xfce/backdrops
 @dirrm share/xfce
 @dirrm lib/xfce
-@dirrm lib/gtk/themes/engines
-@dirrm lib/gtk/themes
-@dirrm lib/gtk
