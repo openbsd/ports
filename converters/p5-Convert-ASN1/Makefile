@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/25 09:24:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2002/02/06 02:53:44 kevlo Exp $
 
 COMMENT=	"module to encode and decode ASN.1 data structures"
 
-DISTNAME=	Convert-ASN1-0.14
+DISTNAME=	Convert-ASN1-0.15
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
-NEED_VERSION=	1.402
+NEED_VERSION=	1.504
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -18,5 +18,7 @@ MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Convert
 
 CONFIGURE_STYLE= perl
+
+REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>
