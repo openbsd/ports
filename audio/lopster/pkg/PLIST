@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/09/20 16:45:50 brad Exp $
+@comment $OpenBSD: PLIST,v 1.3 2000/10/03 14:05:10 kevlo Exp $
 bin/lopster
 share/lopster/pixmaps/arrowd.xpm
 share/lopster/pixmaps/arrowl.xpm
 share/lopster/pixmaps/arrowr.xpm
 share/lopster/pixmaps/arrowu.xpm
+share/lopster/pixmaps/bug16b.xpm
 share/lopster/pixmaps/chat.xpm
 share/lopster/pixmaps/d16x16.xpm
 share/lopster/pixmaps/enemy.xpm
@@ -12,19 +13,18 @@ share/lopster/pixmaps/folder.xpm
 share/lopster/pixmaps/folder_blue.xpm
 share/lopster/pixmaps/folder_open.xpm
 share/lopster/pixmaps/friend.xpm
+share/lopster/pixmaps/home16b.xpm
 share/lopster/pixmaps/ignore.xpm
 share/lopster/pixmaps/kfind.xpm
 share/lopster/pixmaps/logo.jpg
 share/lopster/pixmaps/logo.xpm
-share/lopster/pixmaps/logo_alt.xpm
+share/lopster/pixmaps/mail16b.xpm
 share/lopster/pixmaps/mini-folder.xpm
-share/lopster/pixmaps/pause.xpm
-share/lopster/pixmaps/play.xpm
+share/lopster/pixmaps/notes16.xpm
 share/lopster/pixmaps/speedgray.xpm
 share/lopster/pixmaps/speedgreen.xpm
 share/lopster/pixmaps/speedred.xpm
 share/lopster/pixmaps/speedyellow.xpm
-share/lopster/pixmaps/stop.xpm
 share/lopster/pixmaps/transfer.xpm
 share/lopster/pixmaps/user.xpm
 share/lopster/pixmaps/user1.xpm
