@@ -3,16 +3,16 @@
 # Date created:         22 Nov 1999
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.9 2000/06/27 08:15:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/09 07:49:13 kevlo Exp $
 #
 
 DISTNAME=	upsd-2.0.1.6
 PKGNAME=	upsd-2.0
 CATEGORIES=	sysutils
 NEED_VERSION=	1.307
-MASTER_SITES=	http://www.cre8tivegroup.com/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 
-MAINTAINER=	kevlo@openbsd.org
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"missing license"
 PERMIT_PACKAGE_FTP=	"missing license"

@@ -2,7 +2,7 @@
 # Date created:         28 Dec 1999
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.8 2000/06/27 06:17:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/09 07:49:09 kevlo Exp $
 #
 
 DISTNAME=       apc-upsd
@@ -10,7 +10,7 @@ CATEGORIES=     sysutils
 NEED_VERSION=	1.307
 MASTER_SITES=   http://www.knienieder.com/software/
 
-MAINTAINER=     kevlo@openbsd.org
+MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
