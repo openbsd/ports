@@ -1,11 +1,4 @@
-# OpenBSD Makefile for: mp3encode
-# Version required:	1.10
-# Date created:		May 22, 1999
-# Whom:			Angelos D. Keromytis
-#
-# $Id: Makefile,v 1.1.1.1 1999/05/23 01:42:34 angelos Exp $
-# $OpenBSD: Makefile,v 1.1.1.1 1999/05/23 01:42:34 angelos Exp $
-#
+# $OpenBSD: Makefile,v 1.2 1999/09/06 18:13:21 brad Exp $
 
 DISTNAME=	dist10
 PKGNAME=	mp3encode-1.10
@@ -14,13 +7,13 @@ MASTER_SITES=	ftp://ftp.sunet.se/pub/multimedia/Berkeley/mpeg2/conformance-bitst
 
 MAINTAINER=	angelos@openbsd.org
 
+USE_GMAKE=	yes
+HAS_CONFIGURE=	yes
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/lsf/encoder
 ALL_TARGET=	encode
-HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 # Directories and extra files
-#
 TABLE_LIB=	${PREFIX}/lib/mp3encode
 TABLE_LIB_SED=	${TABLE_LIB:S/\//\\\//g}
 TABLE_FILES=	1cb0 1cb1 1cb2 1cb4 1cb5 1cb6 1th0 1th1 1th2 1th4 1th5 1th6 \
@@ -29,18 +22,18 @@ TABLE_FILES=	1cb0 1cb1 1cb2 1cb4 1cb5 1cb6 1th0 1th1 1th2 1th4 1th5 1th6 \
 		alloc_4 dewindow enwindow huffcode huffdec psy_data
 
 post-patch:
-	@${ECHO} "===>  Specifing table path "
-	${RM} -f ${WRKSRC}/common.h.sed
-	${SED} "s/ZAP/${TABLE_LIB_SED}/g" < ${WRKSRC}/common.h >${WRKSRC}/common.h.sed
-	${RM} -f ${WRKSRC}/common.h
-	${CP} -f ${WRKSRC}/common.h.sed ${WRKSRC}/common.h
+	@${ECHO} "===>  Specifing table path"
+	@${RM} -f ${WRKSRC}/common.h.sed
+	@${SED} "s/ZAP/${TABLE_LIB_SED}/g" < ${WRKSRC}/common.h > ${WRKSRC}/common.h.sed
+	@${RM} -f ${WRKSRC}/common.h
+	@${CP} -f ${WRKSRC}/common.h.sed ${WRKSRC}/common.h
 
 do-install:
 	@${ECHO} "===>  Installing binaries"
 	${INSTALL_PROGRAM} ${WRKSRC}/encode ${PREFIX}/bin/mp3encode
 	@${ECHO} "===>  Installing table files"
 	-${MKDIR} ${TABLE_LIB}
-	for file in ${TABLE_FILES} ; do \
+	@for file in ${TABLE_FILES} ; do \
 		${INSTALL_DATA} ${WRKSRC}/tables/$$file ${TABLE_LIB}/ ;\
 	done
 
