@@ -1,0 +1,12 @@
+$OpenBSD: patch-scp_c,v 1.1 2002/02/04 05:12:06 form Exp $
+--- scp.c.orig	Mon Feb  4 10:48:51 2002
++++ scp.c	Mon Feb  4 10:49:30 2002
+@@ -1495,7 +1495,7 @@ for (i = 1; (dptr = sim_devices[i]) != N
+ 		    (UNIT_ATT + UNIT_SEQ))
+ 			fseek (uptr -> fileref, uptr -> pos, SEEK_SET);  }  }
+ stop_cpu = 0;
+-if ((int) signal (SIGINT, int_handler) == -1) {		/* set WRU */
++if (signal (SIGINT, int_handler) == (void *)-1) {		/* set WRU */
+ 	return SCPE_SIGERR;  }
+ if (ttrunstate () != SCPE_OK) {				/* set console */
+ 	ttcmdstate ();
