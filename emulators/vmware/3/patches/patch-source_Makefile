@@ -1,8 +1,0 @@
-$OpenBSD: patch-source_Makefile,v 1.1.1.1 2004/10/05 18:32:28 todd Exp $
---- source/Makefile.orig	2003-09-13 22:55:33.000000000 -0500
-+++ source/Makefile	2003-09-13 22:56:28.000000000 -0500
-@@ -0,0 +1,4 @@
-+SUBDIR+=linuxrtc
-+SUBDIR+=vmmon
-+SUBDIR+=vmnet
-+.include <bsd.subdir.mk>

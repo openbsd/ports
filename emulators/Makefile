@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2005/03/07 17:10:47 todd Exp $
+# $OpenBSD: Makefile,v 1.31 2005/03/07 17:54:49 todd Exp $
 
     SUBDIR += BasiliskII
     SUBDIR += bochs
@@ -19,7 +19,6 @@
     SUBDIR += spim
     SUBDIR += uae
     SUBDIR += vgb
-    SUBDIR += vmware/3
     SUBDIR += wine
     SUBDIR += x48
     SUBDIR += xcopilot
