@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2000/09/21 08:15:52 camield Exp $
+# $OpenBSD: Makefile,v 1.94 2000/09/23 00:00:39 danh Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -67,6 +67,7 @@
      SUBDIR += radiusd-cistron
      SUBDIR += radiusd-lucent
      SUBDIR += rrdtool
+     SUBDIR += rrdtool:tcl
      SUBDIR += rsync
      SUBDIR += samba
      SUBDIR += sharity-light
