@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.545 2003/05/18 23:11:21 sturm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.546 2003/07/08 21:51:26 pvalchev Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -712,7 +712,7 @@ SCRIPTS_ENV+=	${_INSTALL_MACROS}
 
 
 # Create the generic variable substitution list, from subst vars
-SUBST_VARS+=MACHINE_ARCH ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT
+SUBST_VARS+=MACHINE_ARCH ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT MAINTAINER
 _SED_SUBST=sed
 .for _v in ${SUBST_VARS}
 _SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
@@ -801,6 +801,7 @@ MTREE_FILE+=${PORTSDIR}/infrastructure/db/fake.mtree
 
 ${WRKPKG}/DESCR${SUBPACKAGE}: ${DESCR}
 	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
+	@echo "\nMaintainer: ${MAINTAINER}" >>$@
 .if defined(HOMEPAGE)
 	@fgrep -q '$${HOMEPAGE}' $? || echo "\nWWW: ${HOMEPAGE}" >>$@
 .endif
