@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.tcl,v 1.1 2001/09/07 16:06:08 heko Exp $
+@comment $OpenBSD: PFRAG.tcl,v 1.2 2001/09/07 20:37:11 heko Exp $
 share/doc/db/api_tcl/db_close.html
 share/doc/db/api_tcl/db_count.html
 share/doc/db/api_tcl/db_cursor.html
@@ -35,8 +35,6 @@ share/doc/db/ref/tcl/program.html
 share/doc/db/ref/tcl/using.html
 share/doc/db/ref/upgrade.3.1/tcl.html
 lib/libdb_tcl.la
-lib/libdb_tcl.so
-lib/libdb_tcl.so.3
 lib/libdb_tcl.so.3.1
 @dirrm share/doc/db/ref/tcl
 @dirrm share/doc/db/api_tcl
