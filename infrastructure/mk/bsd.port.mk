@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.215 2000/03/03 20:59:16 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.216 2000/03/03 21:24:51 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -99,6 +99,8 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # WRKBUILD		- The directory where the port is actually built, useful for 
 #                 ports that need a separate directory (default: ${WRKSRC}).
 #				  This is intended for GNU configure.
+# WRKINST       - The directory where new ports get installed (default:
+#				  ${WRKDIR}/fake-${ARCH}
 # SEPARATE_BUILD
 #               - define if the port can build in directory separate from
 #                 WRKSRC. This redefines WRKBUILD to be arch-dependent,
@@ -153,6 +155,12 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #				  standard OpenBSD distribution.  If the current OpenBSD
 #				  version is >= this version then a notice will be
 #				  displayed instead the port being generated.
+# FAKE		    - Install first into ${WRKINST}, build the package from there,
+#				  and perform the real install from the package (default: No)
+# FAKE_FLAGS	- Flags to pass to make for the fake install, used to
+# 				  override the default install directory (Defaults:
+# 				  something relevant for gnu configure and imake)
+#
 #
 # NO_BUILD		- Use a dummy (do-nothing) build target.
 # NO_CONFIGURE	- Use a dummy (do-nothing) configure target.
@@ -337,13 +345,21 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # configure		- Runs either GNU configure, one or more local configure
 #				  scripts or nothing, depending on what's available.
 # build			- Actually compile the sources.
+#
+# If ${FAKE} == Yes
+# fake			- Perform a fake installation into ${WRKINST}.
+# package	    - Build package from the fake installation.
+# install       - Install the resulting package.
+#
+# If ${FAKE} == No
 # install		- Install the results of a build.
 # reinstall		- Install the results of a build, ignoring "already installed"
 #				  flag.
 # deinstall		- Remove the installation.  Alias: uninstall
+# package		- Create a package from an _installed_ port.
+#
 # plist			- create a file suitable for use as a packing list.  This
 #				  is for port maintainers.
-# package		- Create a package from an _installed_ port.
 # describe		- Try to generate a one-line description for each port for
 #				  use in INDEX files and the like.
 # checkpatch	- Do a "patch -C" instead of a "patch".  Note that it may
@@ -379,6 +395,11 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # pre-patch `real distpatch' post-distpatch `real patch' post-patch
 # NEVER override the "regular" targets unless you want to open
 # a major can of worms.
+
+FAKE?=No
+.if ${FAKE:U} == "YES"
+WRKINST?=${WRKDIR}/fake-${ARCH}
+.endif
 
 # Get the architecture
 ARCH!=	uname -m
@@ -495,22 +516,28 @@ _EXTRACT_COOKIE=	${WRKDIR}/.extract_done
 _PATCH_COOKIE=		${WRKDIR}/.patch_done
 _DISTPATCH_COOKIE=	${WRKDIR}/.distpatch_done
 _PREPATCH_COOKIE=	${WRKDIR}/.prepatch_done
+_FAKE_COOKIE=		${WRKINST}/.fake_done
+.if defined(WRKINST)
+_INSTALL_PRE_COOKIE=${WRKINST}/.install_started
+.elif defined(SEPARATE_BUILD)
+_INSTALL_PRE_COOKIE=${WRKBUILD}/.install_started
+.else
+_INSTALL_PRE_COOKIE=${WRKDIR}/.install_started
+.endif
 .if defined(SEPARATE_BUILD)
 _CONFIGURE_COOKIE=	${WRKBUILD}/.configure_done
-_INSTALL_PRE_COOKIE=${WRKBUILD}/.install_started
 _INSTALL_COOKIE=	${WRKBUILD}/.install_done
 _BUILD_COOKIE=		${WRKBUILD}/.build_done
 _PACKAGE_COOKIE=	${WRKBUILD}/.package_done
 .else
 _CONFIGURE_COOKIE=	${WRKDIR}/.configure_done
-_INSTALL_PRE_COOKIE=${WRKDIR}/.install_started
 _INSTALL_COOKIE=	${WRKDIR}/.install_done
 _BUILD_COOKIE=		${WRKDIR}/.build_done
 _PACKAGE_COOKIE=	${WRKDIR}/.package_done
 .endif
 _ALL_COOKIES=${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
 ${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_PACKAGE_COOKIE} \
-${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE}
+${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE}
 
 _MAKE_COOKIE=touch -f
 
@@ -538,6 +565,13 @@ PORTPATH?= /usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${X11BASE}/bin
 CFLAGS+=		${COPTS}
 
 MAKE_FLAGS?=	
+.if !defined(FAKE_FLAGS)
+FAKE_FLAGS=DESTDIR=${WRKINST}
+.  if defined(GNU_CONFIGURE)
+FAKE_FLAGS+=	AM_MAKEFLAGS='DESTDIR=${WRKINST}'
+.  endif
+.endif
+
 MAKE_FILE?=		Makefile
 MAKE_ENV+=		PATH=${PORTPATH} PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MOTIFLIB="${MOTIFLIB}" CFLAGS="${CFLAGS}"
 
@@ -697,6 +731,10 @@ PKG_ARGS+=		-r ${PKGDIR}/REQ
 PKG_ARGS+=		-D ${PKGDIR}/MESSAGE
 .  endif
 .endif
+.if ${FAKE:U} == "YES"
+PKG_ARGS+=		-s ${WRKINST}${PREFIX}
+.endif
+
 PKG_SUFX?=		.tgz
 # where pkg_add records its dirty deeds.
 PKG_DBDIR?=		/var/db/pkg
@@ -739,6 +777,8 @@ INSTALL_TARGET?=	install
 .if defined(USE_IMAKE) && !defined(NO_INSTALL_MANPAGES)
 INSTALL_TARGET+=	install.man
 .endif
+
+FAKE_TARGET ?= ${INSTALL_TARGET}
 
 # basic master sites configuration
 
@@ -907,8 +947,13 @@ SCRIPTS_ENV+= CURDIR=${.CURDIR} DISTDIR=${DISTDIR} \
 SCRIPTS_ENV+=	BATCH=yes
 .endif
 
+.if defined(WRKINST)
+MANPREFIX?=  ${WRKINST}${PREFIX}
+CATPREFIX?=  ${WRKINST}${PREFIX}
+.else
 MANPREFIX?=	${PREFIX}
 CATPREFIX?=	${PREFIX}
+.endif
 
 .for sect in 1 2 3 4 5 6 7 8 9 L N
 MAN${sect}PREFIX?=	${MANPREFIX}
@@ -1095,6 +1140,7 @@ distpatch: ${_DISTPATCH_COOKIE}
 configure: ${_CONFIGURE_COOKIE}
 all build: ${_BUILD_COOKIE}
 install: ${_INSTALL_COOKIE}
+fake: ${_FAKE_COOKIE}
 package: ${_PACKAGE_COOKIE}
 
 
@@ -1363,41 +1409,29 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 	@${_MAKE_COOKIE} ${_BUILD_COOKIE}
 
 
-# The real install
-
-${_INSTALL_COOKIE}: ${_BUILD_COOKIE} 
-	@cd ${.CURDIR} && make run-depends lib-depends 
-.if !defined(NO_INSTALL)
-	@${ECHO_MSG} "===>  Installing for ${PKGNAME}"
-.  if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
-	@if [ -d ${PKG_DBDIR}/${PKGNAME} -o "X$$(ls -d ${PKG_DBDIR}/${PKGNAME:C/-[0-9].*//g}-* 2> /dev/null)" != "X" ]; then \
-		echo "===>  ${PKGNAME} is already installed - perhaps an older version?"; \
-		echo "      If so, you may wish to \`\`make deinstall'' and install"; \
-		echo "      this port again by \`\`make reinstall'' to upgrade it properly."; \
-		echo "      If you really wish to overwrite the old port of ${PKGNAME}"; \
-		echo "      without deleting it first, set the variable \"FORCE_PKG_REGISTER\""; \
-		echo "      in your environment or the \"make install\" command line."; \
+.if ${FAKE:U} == "YES"
+${_FAKE_COOKIE}: ${_BUILD_COOKIE} 
+	@${ECHO_MSG} "===>  Faking installation for ${PKGNAME}"
+	@if [ `${SH} -c umask` != ${DEF_UMASK} ]; then \
+		echo >&2 "Error: your umask is \"`${SH} -c umask`"\".; \
 		exit 1; \
 	fi
-.  endif
-	@if [ `${SH} -c umask` != ${DEF_UMASK} ]; then \
-		${ECHO_MSG} "===>  Warning: your umask is \"`${SH} -c umask`"\".; \
-		${ECHO_MSG} "      If this is not desired, set it to an appropriate value"; \
-		${ECHO_MSG} "      and install this port again by \`\`make reinstall''."; \
-	fi
+	@install -d -m 755 -o root -g wheel ${WRKINST}
+	@mtree -U -e -d -n -p ${WRKINST} \
+		-f ${PORTSDIR}/infrastructure/db/fake.mtree  >/dev/null
 	@${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
 .  if target(pre-install)
-	@cd ${.CURDIR} && make pre-install
+	@cd ${.CURDIR} && make pre-install PREFIX=${WRKINST}${PREFIX}
 .  endif
 .  if target(do-install)
-	@cd ${.CURDIR} && make do-install
+	@cd ${.CURDIR} && make do-install PREFIX=${WRKINST}${PREFIX}
 .  else
-# What INSTALL normally does:
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${INSTALL_TARGET}
-# End of INSTALL.
+# What FAKE normally does:
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} PREFIX=${WRKINST}${PREFIX} DESTDIR=${WRKINST} ${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
+# End of FAKE.
 .  endif
 .  if target(post-install)
-	@cd ${.CURDIR} && make post-install
+	@cd ${.CURDIR} && make post-install PREFIX=${WRKINST}${PREFIX}
 .  endif
 .  if defined(_MANPAGES) || defined(_CATPAGES)
 .    if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
@@ -1422,14 +1456,91 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 .  if exists(${PKGDIR}/MESSAGE)
 	@cat	${PKGDIR}/MESSAGE
 .  endif
-.  if !defined(NO_PKG_REGISTER)
-	@cd ${.CURDIR} && make fake-pkg
-.  endif
-.endif
+	@${_MAKE_COOKIE} ${_FAKE_COOKIE}
+
+${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIE}
+	@cd ${.CURDIR} && make run-depends lib-depends
+	@${ECHO_MSG} "===>  Installing ${PKGNAME} from ${PKGFILE}"
+	pkg_add ${PKGFILE}
 	@${_MAKE_COOKIE} ${_INSTALL_COOKIE}
 
+.else
 
-${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE}
+${_FAKE_COOKIE}: ${_BUILD_COOKIE}
+	@echo 1>&2 "*** ${PKGNAME} does not use fake installation yet"
+
+# The real install, old version
+${_INSTALL_COOKIE}: ${_BUILD_COOKIE} 
+	@cd ${.CURDIR} && make run-depends lib-depends 
+.  if !defined(NO_INSTALL)
+	@${ECHO_MSG} "===>  Installing for ${PKGNAME}"
+.    if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
+	@if [ -d ${PKG_DBDIR}/${PKGNAME} -o "X$$(ls -d ${PKG_DBDIR}/${PKGNAME:C/-[0-9].*//g}-* 2> /dev/null)" != "X" ]; then \
+		echo "===>  ${PKGNAME} is already installed - perhaps an older version?"; \
+		echo "      If so, you may wish to \`\`make deinstall'' and install"; \
+		echo "      this port again by \`\`make reinstall'' to upgrade it properly."; \
+		echo "      If you really wish to overwrite the old port of ${PKGNAME}"; \
+		echo "      without deleting it first, set the variable \"FORCE_PKG_REGISTER\""; \
+		echo "      in your environment or the \"make install\" command line."; \
+		exit 1; \
+	fi
+.    endif
+	@if [ `${SH} -c umask` != ${DEF_UMASK} ]; then \
+		${ECHO_MSG} "===>  Warning: your umask is \"`${SH} -c umask`"\".; \
+		${ECHO_MSG} "      If this is not desired, set it to an appropriate value"; \
+		${ECHO_MSG} "      and install this port again by \`\`make reinstall''."; \
+	fi
+	@${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
+.    if target(pre-install)
+	@cd ${.CURDIR} && make pre-install
+.    endif
+.    if target(do-install)
+	@cd ${.CURDIR} && make do-install
+.    else
+# What INSTALL normally does:
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${INSTALL_TARGET}
+# End of INSTALL.
+.    endif
+.    if target(post-install)
+	@cd ${.CURDIR} && make post-install
+.    endif
+.    if defined(_MANPAGES) || defined(_CATPAGES)
+.      if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
+	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
+.        for manpage in ${_MANPAGES} ${_CATPAGES}
+	@${GUNZIP_CMD} ${manpage}.gz
+.        endfor
+.      elif !defined(MANCOMPRESSED) && !defined(NOMANCOMPRESS)
+	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
+.        for manpage in ${_MANPAGES} ${_CATPAGES}
+	@if [ -L ${manpage} ]; then \
+		set - `file ${manpage}`; \
+		shift `expr $$# - 1`; \
+		ln -sf $${1}.gz ${manpage}.gz; \
+		rm ${manpage}; \
+	else \
+		${GZIP_CMD} ${manpage}; \
+	fi
+.          endfor
+.      endif
+.    endif
+.    if exists(${PKGDIR}/MESSAGE)
+	@cat	${PKGDIR}/MESSAGE
+.    endif
+.    if !defined(NO_PKG_REGISTER)
+	@cd ${.CURDIR} && make fake-pkg
+.    endif
+.  endif
+	@${_MAKE_COOKIE} ${_INSTALL_COOKIE}
+
+.endif 
+
+
+.if ${FAKE:U} == "YES"
+${_PACKAGE_COOKIE}: ${_FAKE_COOKIE} ${PLIST}
+.else
+${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE} ${PLIST}
+.endif
 .if !defined(NO_PACKAGE)
 .  if target(pre-package)
 	@cd ${.CURDIR} && make pre-package
@@ -1438,25 +1549,24 @@ ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE}
 	@cd ${.CURDIR} && make do-package
 .  else
 # What PACKAGE normally does:
-	@cd ${.CURDIR} && if [ -e ${PLIST} ]; then \
-		${ECHO_MSG} "===>  Building package for ${PKGNAME}"; \
-		if [ -d ${PACKAGES} ]; then \
-			if [ ! -d ${PKGREPOSITORY} ]; then \
-				if ! mkdir -p ${PKGREPOSITORY}; then \
-					echo ">> Can't create directory ${PKGREPOSITORY}."; \
-					exit 1; \
-				fi; \
-			fi; \
+	@${ECHO_MSG} "===>  Building package for ${PKGNAME}"
+	@if [ -d ${PACKAGES} ]; then \
+	  if [ ! -d ${PKGREPOSITORY} ]; then \
+	    if ! mkdir -p ${PKGREPOSITORY}; then \
+	      echo ">> Can't create directory ${PKGREPOSITORY}."; \
+		  exit 1; \
 		fi; \
-		if ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
-			if [ -d ${PACKAGES} ]; then \
-				make package-links; \
-			fi; \
-		else \
-			make delete-package; \
-			exit 1; \
-		fi; \
+	  fi; \
 	fi
+	@cd ${.CURDIR} && \
+	  if ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
+	    if [ -d ${PACKAGES} ]; then \
+	      make package-links; \
+	    fi; \
+	  else \
+	    make delete-package; \
+	    exit 1; \
+	  fi
 # End of PACKAGE.
 .  endif
 .  if target(post-package)
@@ -1685,19 +1795,26 @@ fetch-list-one-pkg:
 # Note: add @comment PACKAGE(arch=${ARCH}, opsys=${OPSYS}, vers=${OPSYS_VER})
 # when port is installed or package created.
 #
-
-# Figure out where the local mtree file is
-.if !defined(MTREE_FILE)
-.  if ${PREFIX} == "/usr/local"
-MTREE_FILE=	/etc/mtree/BSD.local.dist
-.  else
-MTREE_FILE=	/etc/mtree/BSD.x11.dist
-.  endif
-.endif
-plist: install
-	@PREFIX=${PREFIX} LDCONFIG="${LDCONFIG}" MTREE_FILE=${MTREE_FILE} \
+.if ${FAKE:U} == "YES"
+plist: fake
+	DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} LDCONFIG="${LDCONFIG}" \
+	MTREE_FILE=${PORTSDIR}/infrastructure/db/fake.mtree \
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
 	perl ${PORTSDIR}/infrastructure/install/make-plist > ${PLIST}-auto
+.else
+
+# Figure out where the local mtree file is
+.  if ${PREFIX} == "/usr/local"
+MTREE_FILE?=	/etc/mtree/BSD.local.dist
+.  else
+MTREE_FILE?=	/etc/mtree/BSD.x11.dist
+.  endif
+
+plist: install
+	@DESTDIR=${PREFIX} PREFIX=${PREFIX} LDCONFIG="${LDCONFIG}" MTREE_FILE=${_MTREE_FILE} \
+	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
+	perl ${PORTSDIR}/infrastructure/install/make-plist > ${PLIST}-auto
+.endif
 
 ################################################################
 # The special package-building targets

@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.2 1999/07/29 14:01:12 espie Exp $
+# $OpenBSD: make-plist,v 1.3 2000/03/03 21:24:51 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -47,10 +47,11 @@ my $date = (stat $ENV{INSTALL_PRE_COOKIE})[10];
 # prefix to remove from everything
 my $base = $ENV{PREFIX};
 
+my $destdir = $ENV{DESTDIR};
 
 # read an mtree file, and produce the corresponding directory hierarchy
 sub parse_mtree {
-		# start under current PREFIX, usually
+		# start under current DESTDIR, usually
 	my $current = shift;
 	local(*FILE);
 	my %mtree;
@@ -128,7 +129,7 @@ for my $d (keys %occupied) {
 }
 
 # make sure mtree is removed 
-my $mtree = parse_mtree($base);
+my $mtree = parse_mtree($destdir);
 for my $d (keys %$mtree) {
 	undef $newdir{$d}
 }
