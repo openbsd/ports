@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/01/14 09:06:46 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/01/15 04:48:02 kevlo Exp $
 
 DISTNAME=	php-3.0.14
 CATEGORIES=	www lang
@@ -16,10 +16,12 @@ ONLY_FOR_ARCHS=	i386 m68k sparc mips
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=		--with-apxs=/usr/sbin/apxs
-CONFIGURE_ARGS+=	--without-pcre-regex
+CONFIGURE_ARGS+=	--without-pcre-regex \
+			--with-config-file-path=/var/www/conf
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/php3
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/php3
+	${CP} ${WRKSRC}/php3.ini-dist /var/www/conf/php3.ini
 
 .include <bsd.port.mk>
