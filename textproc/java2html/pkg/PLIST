@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/19 03:16:49 kevlo Exp $
+bin/java2html
+share/java2html/tags.j2h
+share/doc/java2html/COPYING
+share/doc/java2html/ChangeLog
+share/doc/java2html/Hello.css
+share/doc/java2html/Hello.java
+share/doc/java2html/Hello.java.html
+share/doc/java2html/Hello1.html
+share/doc/java2html/Hello2.css
+share/doc/java2html/Hello2.html
+share/doc/java2html/Hello3.html
+share/doc/java2html/Hello4.html
+share/doc/java2html/Hello5.html
+share/doc/java2html/Hello_h_f.html
+share/doc/java2html/INSTALL
+share/doc/java2html/NEWS
+share/doc/java2html/README
+share/doc/java2html/THANKS
+share/doc/java2html/TODO.txt
+share/doc/java2html/colors.html
+share/doc/java2html/footer.html
+share/doc/java2html/header.html
+share/doc/java2html/java2html.html
+share/doc/java2html/mails.txt
+share/doc/java2html/mono-alt.css
+share/doc/java2html/mono.css
+share/doc/java2html/old-changes.html
+@dirrm share/doc/java2html
+@dirrm share/java2html
