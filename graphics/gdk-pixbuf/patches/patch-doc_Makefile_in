@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.4 2002/05/31 00:03:35 brad Exp $
---- doc/Makefile.in.orig	Wed Mar 14 09:52:24 2001
-+++ doc/Makefile.in	Wed Mar 14 09:52:37 2001
-@@ -300,8 +300,6 @@ install-data-local:
- 	    echo '-- Installing '$$i ; \
- 	    $(INSTALL_DATA) $$i $(DESTDIR)$(TARGET_DIR); \
- 	  done; \
--	  echo '-- Installing $(srcdir)/html/index.sgml' ; \
--	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR); \
- 	  echo '-- Fixing Crossreferences' ; \
- 	  gtkdoc-fixxref --module=$(DOC_MODULE) --html-dir=$(HTML_DIR)|| true; \
- 	fi)
+$OpenBSD: patch-doc_Makefile_in,v 1.5 2002/05/31 02:41:44 brad Exp $
+--- doc/Makefile.in.orig	Thu Apr 18 21:25:44 2002
++++ doc/Makefile.in	Sun May 26 12:11:19 2002
+@@ -231,7 +231,7 @@ install-am: all-am
+ install: install-am
+ uninstall-am:
+ uninstall: uninstall-am
+-all-am: Makefile all-local
++all-am: Makefile $(DATA)
+ all-redirect: all-am
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install

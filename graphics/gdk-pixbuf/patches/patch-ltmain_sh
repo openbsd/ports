@@ -1,0 +1,15 @@
+$OpenBSD: patch-ltmain_sh,v 1.3 2002/05/31 02:41:44 brad Exp $
+--- ltmain.sh.orig	Thu May 30 22:04:26 2002
++++ ltmain.sh	Thu May 30 22:04:51 2002
+@@ -1725,11 +1725,6 @@ compiler."
+ 	    continue
+ 	  fi
+ 
+-	  if test "$installed" = no; then
+-	    notinst_deplibs="$notinst_deplibs $lib"
+-	    need_relink=yes
+-	  fi
+-
+ 	  if test -n "$old_archive_from_expsyms_cmds"; then
+ 	    # figure out the soname
+ 	    set dummy $library_names

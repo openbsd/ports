@@ -1,0 +1,11 @@
+--- configure.in.orig	Thu Apr 18 18:48:40 2002
++++ configure.in	Sun May 26 12:11:19 2002
+@@ -231,7 +231,7 @@ AM_CONDITIONAL(HAVE_PNG, test "x$LIBPNG"
+ AM_CONDITIONAL(HAVE_JPEG, test "x$LIBJPEG" != x)
+ 
+ GDK_PIXBUF_LIBDIR='-L${libdir}'
+-GDK_PIXBUF_INCLUDEDIR="-I${includedir}/gdk-pixbuf-1.0 $GTK_CFLAGS"
++GDK_PIXBUF_INCLUDEDIR="-I${includedir} $GTK_CFLAGS"
+ GDK_PIXBUF_LIBS="$GLIB_LIBS -lgdk_pixbuf $GTK_LIBS"
+ AC_SUBST(STATIC_LIB_DEPS)
+ STATIC_LIB_DEPS="$deps"
