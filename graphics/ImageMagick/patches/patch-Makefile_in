@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2005/03/31 04:23:42 pvalchev Exp $
+--- Makefile.in.orig	Sat Jan 22 16:41:08 2005
++++ Makefile.in	Sat Jan 22 16:41:08 2005
+@@ -1888,7 +1888,7 @@ EXTRA_DIST = \
+ 	$(UTILITIES_EXTRA_DIST) \
+ 	$(WAND_EXTRA_DIST)
+ 
+-lib_LTLIBRARIES = $(LIBLTDL) $(LIBMAGICK) $(LIBWAND) $(LIBMAGICKPP)
++lib_LTLIBRARIES = $(LIBMAGICK) $(LIBWAND) $(LIBMAGICKPP)
+ 
+ # Where architecture-independent configuration files get installed
+ # (share/ImageMagick-version)

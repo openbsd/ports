@@ -1,7 +1,7 @@
-$OpenBSD: patch-magick_signature_c,v 1.1 2004/11/13 20:14:18 marc Exp $
---- magick/signature.c.orig	Sat Mar 20 08:25:06 2004
-+++ magick/signature.c	Thu Nov 11 13:13:09 2004
-@@ -367,8 +367,19 @@ static void TransformSignature(Signature
+$OpenBSD: patch-magick_signature_c,v 1.2 2005/03/31 04:23:42 pvalchev Exp $
+--- magick/signature.c.orig	Tue Jan 18 14:07:40 2005
++++ magick/signature.c	Tue Jan 18 14:12:25 2005
+@@ -368,8 +368,19 @@ static void TransformSignature(Signature
      T2,
      W[64];
  
@@ -18,10 +18,10 @@ $OpenBSD: patch-magick_signature_c,v 1.1 2004/11/13 20:14:18 marc Exp $
 +   * on sparc64.   This code is not much better and assumes that an
 +   * unsigned int is 4 bytes long.  At least it doesn't get a bus error.
 +   */
-   if (signature_info->lsb_first == False)
+   if (signature_info->lsb_first == MagickFalse)
      {
        if (sizeof(unsigned long) <= 4)
-@@ -379,12 +390,11 @@ static void TransformSignature(Signature
+@@ -380,12 +391,11 @@ static void TransformSignature(Signature
            W[i]=Trunc32(T);
          }
        else
@@ -32,13 +32,13 @@ $OpenBSD: patch-magick_signature_c,v 1.1 2004/11/13 20:14:18 marc Exp $
 -          p+=8;
 -          W[i]=Trunc32(T >> shift);
 -          W[i+1]=Trunc32(T);
-+          uT=(*((unsigned int *) p));
-+          p+=4;
-+          W[i]=uT;
++	  uT=(*((unsigned int *) p));
++	  p+=4;
++	  W[i]=uT;
          }
      }
    else
-@@ -397,15 +407,12 @@ static void TransformSignature(Signature
+@@ -398,15 +408,12 @@ static void TransformSignature(Signature
            ((T >> 8) & 0x0000ff00) | ((T >> 24) & 0x000000ff);
        }
      else
@@ -52,10 +52,10 @@ $OpenBSD: patch-magick_signature_c,v 1.1 2004/11/13 20:14:18 marc Exp $
 -        T>>=shift;
 -        W[i+1]=((T << 24) & 0xff000000) | ((T << 8) & 0x00ff0000) |
 -          ((T >> 8) & 0x0000ff00) | ((T >> 24) & 0x000000ff);
-+        uT=(*((unsigned int *) p));
-+        p+=4;
-+        W[i]=((uT << 24) & 0xff000000) | ((uT << 8) & 0x00ff0000) |
-+          ((uT >> 8) & 0x0000ff00) | ((uT >> 24) & 0x000000ff);
++	uT=(*((unsigned int *) p));
++	p+=4;
++	W[i]=((uT << 24) & 0xff000000) | ((uT << 8) & 0x00ff0000) |
++	  ((uT >> 8) & 0x0000ff00) | ((uT >> 24) & 0x000000ff);
        }
    /*
      Copy digest to registers.
