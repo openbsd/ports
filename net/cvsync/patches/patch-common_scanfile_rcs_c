@@ -1,0 +1,12 @@
+$OpenBSD: patch-common_scanfile_rcs_c,v 1.1 2003/05/14 04:23:37 naddy Exp $
+--- common/scanfile_rcs.c.orig	Tue May 13 22:12:55 2003
++++ common/scanfile_rcs.c	Tue May 13 22:13:11 2003
+@@ -80,7 +80,7 @@ scanfile_rcs_init(struct scanfile_create
+ 		return (NULL);
+ 
+ 	scanfile_init(&sra->sra_scanfile);
+-	if (sca->sca_distfile != NULL) {
++	if (sca->sca_distfile[0] != '\0') {
+ 		sra->sra_distfile = distfile_open(sca->sca_distfile);
+ 		if (sra->sra_distfile == NULL) {
+ 			free(sra);
