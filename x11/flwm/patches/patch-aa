@@ -1,0 +1,20 @@
+--- makeinclude.in.orig	Sun Sep 12 16:04:44 1999
++++ makeinclude.in	Sun Sep 12 16:04:47 1999
+@@ -15,12 +15,12 @@
+ MAKEDEPEND =@MAKEDEPEND@
+ 
+ # flags for C++ compiler:
+-CFLAGS		=@CFLAGS@
+-CFLAGS_D	=@CFLAGS_D@
+-CXXFLAGS	=@CXXFLAGS@
+-CXXFLAGS_D	=@CXXFLAGS_D@
++CFLAGS		=-I$(includedir) @CFLAGS@
++CFLAGS_D	=-I$(includedir) @CFLAGS_D@
++CXXFLAGS	=-I$(includedir) @CXXFLAGS@
++CXXFLAGS_D	=-I$(includedir) @CXXFLAGS_D@
+ 
+ # libraries to link with:
+-LDLIBS	=@LIBS@ -lX11 -lXext @X_EXTRA_LIBS@ -lm
++LDLIBS	=-L$(libdir) @LIBS@ -lX11 -lXext @X_EXTRA_LIBS@ -lm
+ 
+ INSTALL	=@INSTALL@
