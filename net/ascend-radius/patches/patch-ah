@@ -1,0 +1,11 @@
+--- Makefile.orig	Mon Nov 10 17:06:23 1997
++++ Makefile	Mon Nov 10 17:06:38 1997
+@@ -152,7 +152,7 @@
+ #LIBS= $(AUTH_LIBS)			# use this for Linux, BSDI and friends
+ #LIBS= -lnsl $(AUTH_LIBS)		# use this for SunOS
+ #LIBS= -lnsl -lsocket $(AUTH_LIBS)	# use this for Solaris 2.x
+-LIBS= -lcrypt $(AUTH_LIBS)		# use this for FreeBSD
++#LIBS= -lcrypt $(AUTH_LIBS)		# use this for FreeBSD
+ 
+ #       use this for SunOs. Linux, BSDI, FreeBSD
+ #DBMLIBS= -ldbm

@@ -1,0 +1,54 @@
+--- metamail/metamail.c.orig	Mon Nov 10 13:00:24 1997
++++ metamail/metamail.c	Mon Nov 10 13:01:06 1997
+@@ -29,7 +29,7 @@
+ #ifdef BORLAND
+ #define F_OK 0
+ extern unsigned _stklen = 16384;
+-extern char *mktemp(char *);
++extern char *mkstemp(char *);
+ #define WRITE_BINARY	"w"
+ #else /* BORLAND */
+ #ifdef MICROSOFT
+@@ -302,24 +302,6 @@
+     int retcode;
+ 
+     modpath(AUXPATH);
+-#ifndef MSDOS
+-    signal(SIGINT, cleanup);
+-#ifndef AMIGA
+-    signal(SIGILL, cleanup);
+-    signal(SIGTRAP, cleanup);
+-    signal(SIGIOT, cleanup);
+-    signal(SIGFPE, cleanup);
+-#ifndef LINUX
+-    signal(SIGEMT, cleanup);
+-    signal(SIGBUS, cleanup);
+-#endif
+-    signal(SIGSEGV, cleanup);
+-    signal(SIGTERM, cleanup);
+-#endif
+-#endif
+-#ifdef SIGXCPU
+-    signal(SIGXCPU, cleanup);
+-#endif
+     tmproot = getenv("METAMAIL_TMPDIR");
+     if (!tmproot) tmproot="/tmp";
+     mailheaders = getenv("MM_HEADERS");
+@@ -2489,14 +2471,14 @@
+ {
+ #ifdef AMIGA
+     strcpy(name, "T:mmXXXXXX");
+-    mktemp(name);
++    mkstemp(name);
+ #else
+ #ifndef MSDOS
+     sprintf(name, "%s/mm.XXXXXX", tmproot);
+-    mktemp(name);
++    mkstemp(name);
+ #else
+      strcpy(name, "TXXXXXX");
+-     if (!mktemp(name))
++     if (!mkstemp(name))
+          name[0] = 0;
+      else
+          if (DoDebug) printf("temp name = \"%s\"\n", name);

@@ -1,0 +1,53 @@
+*** Makefile.in.orig	Wed Oct  1 19:10:58 1997
+--- Makefile.in	Tue Oct  7 15:48:12 1997
+***************
+*** 35,41 ****
+  defines =  -DRELEASE_ID=\"$(VERS)\" $(DEFS)
+  
+  # If your system needs extra libraries loaded in, define them here.
+! LOADLIBS = @LIBS@ @LEXLIB@
+  # LOADLIBS = -lsocket3r -lunix3r	# QNX
+  
+  # Any extra object files your system needs.
+--- 35,41 ----
+  defines =  -DRELEASE_ID=\"$(VERS)\" $(DEFS)
+  
+  # If your system needs extra libraries loaded in, define them here.
+! LOADLIBS = @LIBS@ @LEXLIB@ -lmd
+  # LOADLIBS = -lsocket3r -lunix3r	# QNX
+  
+  # Any extra object files your system needs.
+***************
+*** 81,87 ****
+  
+  protobjs = rcfile_y.o rcfile_l.o socket.o getpass.o pop2.o pop3.o imap.o \
+         etrn.o fetchmail.o env.o options.o daemon.o driver.o rfc822.o smtp.o \
+!        xmalloc.o uid.o mxget.o md5c.o md5ify.o rpa.o interface.o netrc.o \
+         base64.o error.o
+  
+  objs = $(protobjs) $(extras) $(EXTRAOBJ)
+--- 81,87 ----
+  
+  protobjs = rcfile_y.o rcfile_l.o socket.o getpass.o pop2.o pop3.o imap.o \
+         etrn.o fetchmail.o env.o options.o daemon.o driver.o rfc822.o smtp.o \
+!        xmalloc.o uid.o mxget.o md5ify.o rpa.o interface.o netrc.o \
+         base64.o error.o
+  
+  objs = $(protobjs) $(extras) $(EXTRAOBJ)
+***************
+*** 92,98 ****
+         $(srcdir)/options.c $(srcdir)/daemon.c 				\
+         $(srcdir)/driver.c $(srcdir)/rfc822.c $(srcdir)/smtp.c		\
+         $(srcdir)/xmalloc.c $(srcdir)/uid.c $(srcdir)/mxget.c 		\
+!        $(srcdir)/md5c.c $(srcdir)/md5ify.c $(srcdir)/rpa.c	  	\
+         $(srcdir)/interface.c $(srcdir)/netrc.c $(srcdir)/base64.c	\
+         $(srcdir)/error.c
+  
+--- 92,98 ----
+         $(srcdir)/options.c $(srcdir)/daemon.c 				\
+         $(srcdir)/driver.c $(srcdir)/rfc822.c $(srcdir)/smtp.c		\
+         $(srcdir)/xmalloc.c $(srcdir)/uid.c $(srcdir)/mxget.c 		\
+!        $(srcdir)/md5ify.c $(srcdir)/rpa.c              \
+         $(srcdir)/interface.c $(srcdir)/netrc.c $(srcdir)/base64.c	\
+         $(srcdir)/error.c
+  

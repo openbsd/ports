@@ -1,0 +1,11 @@
+--- orig/options.c	Mon Apr  1 13:49:19 1996
++++ ./options.c	Mon Apr  1 13:49:24 1996
+@@ -233,7 +233,7 @@
+       case LA_PASSWORD:
+         strncpy(options->password,optarg,sizeof(options->password)-1);
+ 	for (i = strlen(options->password)-1;  i >= 0;  i--) 
+-          argv[optind-1][i] = '*';
++          argv[optind-1][i] = '\0';
+         break;
+       case 'o':
+       case LA_LOCALFILE:

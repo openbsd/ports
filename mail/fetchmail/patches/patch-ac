@@ -1,0 +1,11 @@
+--- configure.orig	Sat Nov  8 17:15:52 1997
++++ configure	Sat Nov  8 16:54:27 1997
+@@ -32,7 +32,7 @@
+ build=NONE
+ cache_file=./config.cache
+ exec_prefix=NONE
+-host=NONE
++host=hostname
+ no_create=
+ nonopt=NONE
+ no_recursion=

@@ -1,0 +1,17 @@
+# OpenBSD makefile for:    arc
+# Version required:     5.21e
+# Date created:         06 November 1997
+# Whom:                 ejovi
+
+DISTNAME=       arc521e.pl8
+PKGNAME=        arc-5.21e
+CATEGORIES=	archivers
+MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
+EXTRACT_SUFX=   .tar.Z
+
+MAINTAINER=     joey@openbsd.org
+
+NO_WRKSUBDIR=	yes
+MAN1=		arc.1
+
+.include <bsd.port.mk>

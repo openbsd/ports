@@ -1,0 +1,11 @@
+--- ./configure.org	Tue Jan 16 03:25:58 1996
++++ ./configure	Tue Jan 16 03:31:11 1996
+@@ -1215,7 +1215,7 @@
+ if test -z "$LEXLIB"
+ then
+   case "$LEX" in
+-  flex*) ac_lib=fl ;;
++  flex*) ac_lib=l ;;
+   *) ac_lib=l ;;
+   esac
+   echo $ac_n "checking for -l$ac_lib""... $ac_c" 1>&4

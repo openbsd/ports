@@ -1,0 +1,4 @@
+bin/beav
+man/man1/beav.1.gz
+share/doc/beav/beav.txt
+@dirrm share/doc/beav

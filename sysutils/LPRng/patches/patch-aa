@@ -1,0 +1,154 @@
+--- src/Makefile.bsd.in.orig	Wed Apr  9 00:15:54 1997
++++ src/Makefile.bsd.in	Mon Jun  2 19:32:23 1997
+@@ -64,8 +64,8 @@
+ localedir = $(prefix)/@DATADIRNAME@/locale
+ INSTALL_BIN =     ${exec_prefix}/bin
+ # where daemons are installed: lpd
+-#INSTALL_LIB =     ${prefix}/lib
+-INSTALL_LIB =     ${prefix}/bin
++INSTALL_LIBEXEC =     ${prefix}/libexec
++INSTALL_LIB =     ${prefix}/lib
+ # where maintenance commands are installed: checkpc, setstatus
+ INSTALL_MAINT =   ${exec_prefix}/bin
+ 
+@@ -161,9 +161,12 @@
+ #**********************  End of Configurable Part ****************************
+ #**************************** SYSTEM DEPENDENCIES **************************
+ 
++LIB =	liblpr.a
++SLIB =	liblpr.so.3.21
++
+ TARGET= \
+ 		authenticate_pgp readfilecount removeoneline setupauth \
+-		liblpr.a checkpc lpr lpd lpq lprm lpc lpbanner \
++		$(LIB) $(SLIB) checkpc lpr lpd lpq lprm lpc lpbanner \
+ 		lpf lpraccnt monitor lp cancel lpstat
+ NONTARGET = sserver sclient testauth
+ 
+@@ -174,6 +177,11 @@
+ INCLUDE=.. ${SRC}/include
+ EXTRA=${SRC}/TESTSUPPORT ${SRC}/UTILS
+ 
++.SUFFIXES: .c .so .o
++
++.c.so:
++	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
++
+ .PATH: $(INCLUDE) $(SRCDIRS)
+ INCS= $(INCLUDE:S/^/-I/g)
+ 
+@@ -238,30 +246,33 @@
+ # This appears to cover all cases for portability
+ #
+ 
+-liblpr.a: $(LIBLPR_OBJS)
++$(LIB): $(LIBLPR_OBJS)
+ 	ar ruv $@ $(LIBLPR_ORDER)
+ 	$(RANLIB) $@
+ 
+-lpr: $(LPR_OBJS) liblpr.a
+-	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS)
+-lpd: $(LPD_OBJS) liblpr.a
+-	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS)
+-lpq: $(LPQ_OBJS) liblpr.a
+-	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS)
+-lprm: $(LPRM_OBJS) liblpr.a
+-	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS)
+-lpc: $(LPC_OBJS) liblpr.a
+-	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS)
+-checkpc: $(CHECKPC_OBJS) liblpr.a
+-	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS)
++$(SLIB): $(LIBLPR_OBJS:S/o$/so/g)
++	ld -Bshareable -o $(SLIB) $(LIBLPR_OBJS:S/o$/so/g)
++
++lpr: $(LPR_OBJS)
++	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS)  -L. -llpr
++lpd: $(LPD_OBJS)
++	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS) -L. -llpr
++lpq: $(LPQ_OBJS)
++	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS) -L. -llpr
++lprm: $(LPRM_OBJS)
++	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS) -L. -llpr
++lpc: $(LPC_OBJS)
++	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS) -L. -llpr
++checkpc: $(CHECKPC_OBJS)
++	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS) -L. -llpr
+ lpbanner: $(LPBANNER_OBJS)
+-	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS)
++	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS) -L. -llpr
+ lpf: $(LPF_OBJS)
+-	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS)
+-lpraccnt: $(LPRACCNT_OBJS) liblpr.a
+-	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS)
++	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS) -L. -llpr
++lpraccnt: $(LPRACCNT_OBJS)
++	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS) -L. -llpr
+ monitor: $(MONITOR_OBJS)
+-	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS)
++	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS) -L. -llpr
+ readfilecount: readfilecount.o
+ 	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS)
+ removeoneline: removeoneline.o
+@@ -275,10 +286,10 @@
+ #ptest: common/snprintf.c
+ #	$(LDCC) $(CFLAGS) -DTEST -o ptest common/snprintf.c
+ 
+-sserver: sserver.o liblpr.a
+-	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS)
+-sclient: sclient.o liblpr.a
+-	$(LDCC) $(LDFLAGS) -o $@ $> $(LIBS)
++sserver: sserver.o $(SLIB)
++	$(LDCC) $(LDFLAGS) -L. -llpr -o $@ $> $(LIBS)
++sclient: sclient.o $(SLIB)
++	$(LDCC) $(LDFLAGS) -L. -llpr -o $@ $> $(LIBS)
+ 
+ cancel:
+ 	rm -f $@; ln -s lprm $@ 
+@@ -295,26 +306,30 @@
+ #PERMS=$(SUID_ROOT_PERMS)
+ ###########################################################################
+ 
+-install: all ${INSTALL_LIB} ${INSTALL_BIN} ${INSTALL_MAINT}
++install: all ${INSTALL_LIB} ${INSTALL_LIBEXEC} ${INSTALL_BIN} ${INSTALL_MAINT}
+ 	${INSTALLCMD} -m $(PERMS) lpq ${INSTALL_BIN}
+ 	${INSTALLCMD} -m $(PERMS) lprm ${INSTALL_BIN}
+ 	${INSTALLCMD} -m $(PERMS) lpr ${INSTALL_BIN}
+ 	${INSTALLCMD} -m $(PERMS) lpc ${INSTALL_MAINT}
+-	${INSTALLCMD} -m $(NORM_PERMS) lpd ${INSTALL_LIB}
+-	${INSTALLCMD} -m $(NORM_PERMS) lpf ${INSTALL_LIB}
+-	${INSTALLCMD} -m $(NORM_PERMS) lpbanner ${INSTALL_LIB}
++	${INSTALLCMD} -m $(NORM_PERMS) lpd ${INSTALL_LIBEXEC}
++	${INSTALLCMD} -m $(NORM_PERMS) lpf ${INSTALL_LIBEXEC}
++	${INSTALLCMD} -m $(NORM_PERMS) lpbanner ${INSTALL_LIBEXEC}
+ 	${INSTALLCMD} -m $(NORM_PERMS) checkpc ${INSTALL_MAINT}
+ 	${INSTALLCMD} -m $(NORM_PERMS) lpraccnt ${INSTALL_MAINT}
+-	${INSTALLCMD} -m $(NORM_PERMS) readfilecount ${INSTALL_LIB}
+-	${INSTALLCMD} -m $(NORM_PERMS) removeoneline ${INSTALL_LIB}
+-	${INSTALLCMD} -m $(NORM_PERMS) authenticate_pgp ${INSTALL_LIB}
+-	${INSTALLCMD} -m $(NORM_PERMS) setupauth ${INSTALL_LIB}
++	${INSTALLCMD} -m $(NORM_PERMS) readfilecount ${INSTALL_LIBEXEC}
++	${INSTALLCMD} -m $(NORM_PERMS) removeoneline ${INSTALL_LIBEXEC}
++	${INSTALLCMD} -m $(NORM_PERMS) authenticate_pgp ${INSTALL_LIBEXEC}
++	${INSTALLCMD} -m $(NORM_PERMS) setupauth ${INSTALL_LIBEXEC}
++	${INSTALLCMD} -m $(NORM_PERMS) $(LIB) ${INSTALL_LIB}
++	${INSTALLCMD} -m $(NORM_PERMS) $(SLIB) ${INSTALL_LIB}
+ 	rm -f ${INSTALL_BIN}/lp;     ln -s lpr  ${INSTALL_BIN}/lp;
+ 	rm -f ${INSTALL_BIN}/lpstat; ln -s lpq  ${INSTALL_BIN}/lpstat;
+ 	rm -f ${INSTALL_BIN}/cancel; ln -s lprm ${INSTALL_BIN}/cancel;
+ 
+ ${INSTALL_LIB}::
+ 	${SRC}/mkinstalldirs $@
++${INSTALL_LIBEXEC}::
++	${SRC}/mkinstalldirs $@
+ ${INSTALL_BIN}::
+ 	${SRC}/mkinstalldirs $@
+ ${INSTALL_MAINT}::
+@@ -336,7 +351,7 @@
+ 
+ 
+ clean::
+-	-rm -f *.o *.core ? core $(TARGET) $(NONTARGET)
++	-rm -f *.o *.so *.core ? core $(TARGET) $(NONTARGET)
+ 
+ realclean mostlyclean distclean:: clean
+ 	-rm -f Makefile Makefile.bsd tags

@@ -1,0 +1,20 @@
+*** md5ify.c.orig	Fri Nov  8 20:13:11 1996
+--- md5ify.c	Wed Jun 11 06:34:20 1997
+***************
+*** 16,22 ****
+  #include <string.h>
+  #endif
+  
+! #include "md5.h"
+  
+  char *
+  MD5Digest (s)
+--- 16,23 ----
+  #include <string.h>
+  #endif
+  
+! #include <sys/types.h>
+! #include <md5.h>
+  
+  char *
+  MD5Digest (s)
