@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
+bin/rsnapshot
+@man man/man1/rsnapshot.1
+share/examples/rsnapshot/
+share/examples/rsnapshot/README
+share/examples/rsnapshot/rsnapshot.conf.default
+@sample ${SYSCONFDIR}/rsnapshot.conf
+share/examples/rsnapshot/utils/
+share/examples/rsnapshot/utils/README
+share/examples/rsnapshot/utils/backup_dpkg.sh
+share/examples/rsnapshot/utils/backup_mysql.sh
+share/examples/rsnapshot/utils/backup_pgsql.sh
+share/examples/rsnapshot/utils/backup_rsnapshot_cvsroot.sh
+share/examples/rsnapshot/utils/backup_smb_share.sh
+share/examples/rsnapshot/utils/debug_moving_files.sh
+share/examples/rsnapshot/utils/make_cvs_snapshot.sh
+share/examples/rsnapshot/utils/rsnapshot_if_mounted.sh
+share/examples/rsnapshot/utils/rsnaptar
+share/examples/rsnapshot/utils/sign_packages.sh

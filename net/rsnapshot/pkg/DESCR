@@ -1,0 +1,13 @@
+rsnapshot is a filesystem snapshot utility. It can take incremental
+snapshots of local and remote filesystems for any number of machines.
+
+Local filesystem snapshots are handled with rsync(1). Secure remote
+connections are handled with rsync over ssh(1), while anonymous rsync
+connections simply use an rsync server. Both remote and local transfers
+depend on rsync.
+
+rsnapshot saves much more disk space than you might imagine. The amount
+of space required is roughly the size of one full backup, plus a copy of
+each additional file that is changed. rsnapshot makes extensive use of
+hard links, so if the file doesn't change, the next snapshot is simply a
+hard link to the exact same file.

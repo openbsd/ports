@@ -1,0 +1,11 @@
+$OpenBSD: patch-rsnapshot_conf_default_in,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
+--- rsnapshot.conf.default.in.orig	Wed Feb  2 05:17:47 2005
++++ rsnapshot.conf.default.in	Tue Feb 15 19:29:19 2005
+@@ -123,7 +123,6 @@ loglevel	3
+ #ssh_args	-p 22
+ 
+ # Default arguments for the "du" program (for disk space reporting).
+-# The GNU version of "du" is preferred. See the man page for more details.
+ #
+ #du_args	-csh
+ 

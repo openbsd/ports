@@ -1,0 +1,21 @@
+$OpenBSD: patch-README,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
+--- README.orig	Wed Feb  2 05:17:47 2005
++++ README	Tue Feb 15 19:36:50 2005
+@@ -72,13 +72,13 @@ COMPATIBILITY NOTICE (Please read)
+ ------------------------------------------------------------------------------
+ 
+ Once you have installed rsnapshot, you will need to configure it.
+-The default configuration file is /etc/rsnapshot.conf, although the exact path
++The default configuration file is !!SYSCONFDIR!!/rsnapshot.conf, although the exact path
+ may be different depending on how the program was installed. If this
+-file does not exist, copy /etc/rsnapshot.conf.default over to
+-/etc/rsnapshot.conf and edit it to suit your tastes. See the man page for
++file does not exist, copy !!SAMPLES_DIR!!/rsnapshot.conf.default over to
++!!SYSCONFDIR!!/rsnapshot.conf and edit it to suit your tastes. See the man page for
+ the full list of configuration options.
+ 
+-When /etc/rsnapshot.conf contains your chosen settings, do a quick sanity
++When !!SYSCONFDIR!!/rsnapshot.conf contains your chosen settings, do a quick sanity
+ check to make sure everything is ready to go:
+ 
+     rsnapshot configtest
