@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.8 2001/01/29 21:31:30 rohee Exp $
-# Original from: Bruno Rohée <rohee@OpenBSD.ORG>
+# $OpenBSD: Makefile,v 1.9 2001/02/13 01:18:50 naddy Exp $
+# Original from: Bruno Rohee <rohee@OpenBSD.ORG>
 
 TIDYDATE=	4aug00
 DISTNAME=	tidy${TIDYDATE}
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 # override program own Makefile (bad) settings
-MAKE_FLAGS=	CC=${CC} CFLAGS=${CFLAGS}
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
