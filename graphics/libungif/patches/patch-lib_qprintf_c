@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_qprintf_c,v 1.1 2002/02/01 18:15:15 naddy Exp $
+--- lib/qprintf.c.orig	Sun Feb  6 17:45:07 2000
++++ lib/qprintf.c	Fri Feb  1 14:31:17 2002
+@@ -34,7 +34,8 @@ int GifQuietPrint = TRUE;
+ * Same as fprintf to stderr but with optional print.			     *
+ *****************************************************************************/
+ #ifdef HAVE_VARARGS_H
+-void GifQprintf(int va_alist)
++void GifQprintf(va_alist)
++va_dcl
+ {
+     char *Format, Line[128];
+     va_list ArgPtr;
