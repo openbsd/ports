@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/28 11:33:43 camield Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/28 12:26:31 camield Exp $
 
-DISTNAME=	ucspi-tcp-0.86
+DISTNAME=	ucspi-tcp-0.88
 HOMEPAGE=	http://cr.yp.to/ucspi-tcp.html
 CATEGORIES=	net
 MAINTAINER=	cd@sentia.nl
@@ -13,8 +13,7 @@ MASTER_SITES=	http://cr.yp.to/ucspi-tcp/ \
 		ftp://mirror.uk.uu.net/pub/qmail/ \
 		ftp://ftp.jp.qmail.org/qmail/ \
 		ftp://ftp.rifkin.technion.ac.il/pub/qmail/ \
-		http://koobera.math.uic.edu/www/software/ \
-		http://pobox.com/~djb/software/ 
+		http://koobera.math.uic.edu/www/software/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
