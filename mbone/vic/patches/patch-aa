@@ -27,7 +27,7 @@
   #ifndef vic_config_h
   #define vic_config_h
   
-! #if defined(sgi) || defined(__bsdi__) || defined(__FreeBSD__) || defined(__FreeBSD__)
+! #if defined(sgi) || defined(__bsdi__) || defined(__FreeBSD__) || defined(__OpenBSD__)
   # include <sys/types.h>
   #elif defined(sun)
   #include <sys/types.h>

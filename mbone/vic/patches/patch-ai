@@ -1,0 +1,50 @@
+--- qfDES.c.orig	Sat Oct 30 17:36:06 1999
++++ qfDES.c	Sat Oct 30 17:36:37 1999
+@@ -128,7 +128,7 @@
+ }
+ 
+ 
+-#define LITTLE_ENDIAN(t, s) \
++#define LITTLE_ENDIAN_ENC(t, s) \
+ { \
+     register unsigned int z, l = s/4; \
+     register Word *tp = (Word *) t; \
+@@ -204,8 +204,8 @@
+ 
+ #if defined(__i386__)
+     unsigned int origSize = size;
+-    LITTLE_ENDIAN(key, 8);
+-    LITTLE_ENDIAN(data, origSize);
++    LITTLE_ENDIAN_ENC(key, 8);
++    LITTLE_ENDIAN_ENC(data, origSize);
+ #endif
+ 
+     /*
+@@ -258,7 +258,7 @@
+             cb[0] = cb[1] = 0;
+ 
+ #if defined(__i386__)
+-        LITTLE_ENDIAN(cb, 8);
++        LITTLE_ENDIAN_ENC(cb, 8);
+ #endif
+     }
+ 
+@@ -401,15 +401,15 @@
+         ((Word *) initVec)[1] = cb[1];
+ 
+ #if defined(__i386__)
+-        LITTLE_ENDIAN(initVec, 8);
++        LITTLE_ENDIAN_ENC(initVec, 8);
+ #endif
+     }
+ 
+ _exit_qfDES_:
+ 
+ #if defined(__i386__)
+-    LITTLE_ENDIAN(key, 8);
+-    LITTLE_ENDIAN(data, origSize);
++    LITTLE_ENDIAN_ENC(key, 8);
++    LITTLE_ENDIAN_ENC(data, origSize);
+ #endif
+ 
+     return 0;

@@ -1,0 +1,13 @@
+--- h263/Util.h.orig	Sat Oct 30 17:24:44 1999
++++ h263/Util.h	Sat Oct 30 17:44:05 1999
+@@ -6,7 +6,10 @@
+ #ifndef _UTIL_
+ #define _UTIL_
+ 
++#ifndef __OpenBSD__
+ #include <malloc.h>
++#endif
++
+ #include "error.h"
+ #include <stdlib.h>
+ #include <stdio.h>

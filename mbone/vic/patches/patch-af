@@ -1,0 +1,13 @@
+--- h263/defs.h.orig	Sat Oct 30 17:23:58 1999
++++ h263/defs.h	Sat Oct 30 17:24:10 1999
+@@ -8,8 +8,10 @@
+ 
+ #define NUM_LAYERS 4
+ 
++#ifndef __OpenBSD__
+ #ifndef RAND_MAX
+ # define RAND_MAX 32767		/* sos4 has it not */
++#endif
+ #endif
+ 
+ #ifdef FALSE

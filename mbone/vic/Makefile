@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 1999/10/30 11:34:25 turan Exp $
+# $OpenBSD: Makefile,v 1.8 1999/10/30 21:54:52 angelos Exp $
 
-BROKEN=		lots and lots of compiler warnigs, considered too unsafe.
+BROKEN=		waiting for turans@ to verify
 
 DISTNAME=	vic-2.8ucl4
 CATEGORIES=	mbone
@@ -19,6 +19,5 @@ WRKSRC=		${WRKDIR}/vic
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vic ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/histtolut ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/vic.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

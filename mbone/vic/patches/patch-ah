@@ -1,0 +1,11 @@
+--- ntp-time.h.orig	Sat Oct 30 17:27:06 1999
++++ ntp-time.h	Sat Oct 30 17:30:38 1999
+@@ -55,7 +55,7 @@
+ /*
+  * Number of seconds between 1-Jan-1900 and 1-Jan-1970
+  */
+-#define GETTIMEOFDAY_TO_NTP_OFFSET 2208988800
++#define GETTIMEOFDAY_TO_NTP_OFFSET (22089888 * 100)
+ 
+ /*
+  * Return a 64-bit ntp timestamp (UTC time relative to Jan 1, 1970).
