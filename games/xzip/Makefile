@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/26 20:44:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2003/03/31 13:07:46 sturm Exp $
 # $NetBSD: Makefile,v 1.4 1999/01/30 23:18:49 agc Exp $
 # Original from: Andrew Plotkin, Mark Howell
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
+
+USE_X11=	Yes
 
 MASTER_SITES=	http://www.eblong.com/zarf/ftp/
 EXTRACT_SUFX=	.tar.Z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2002/07/17 21:08:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2003/03/31 13:07:46 sturm Exp $
 
 COMMENT=	"Civilization clone for X11; multiplayer"
 
@@ -41,6 +41,8 @@ CONFIGURE_ARGS+=	--with-esd-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--disable-esd
 .endif
+
+USE_X11=	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

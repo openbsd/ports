@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/02/28 03:42:34 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2003/03/31 13:07:46 sturm Exp $
 
 COMMENT=		"interpreter for old Sierra AGI games"
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
 USE_GMAKE=		Yes
+USE_X11=		Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sarien/}
 
