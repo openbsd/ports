@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/02/01 14:59:23 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2004/02/01 23:55:49 espie Exp $
 
 COMMENT=		"X11 toolkit, graphic applications"
 COMMENT-kamera=		"kde interface to digital cameras"
@@ -16,24 +16,21 @@ FULLPKGNAME-kpov=kpovmodeller-${VERSION}
 SUBPACKAGE?=
 
 LIB_DEPENDS= \
-	kdecore.4,DCOP,kdefx,kdeprint,kdesu,kdeui,kio,kparts::x11/kde/libs3
+	kdecore.6,DCOP,kdefx,kdeprint,kdesu,kdeui,kio,kparts,kutils::x11/kde/libs3
 
 .if defined(PACKAGING)
 .  if ${SUBPACKAGE} == "-kamera"
 LIB_DEPENDS+=	gphoto2,gphoto2_port::graphics/libgphoto2
 .  elif ${SUBPACKAGE} == "-kpov"
-LIB_DEPENDS+=	glut::graphics/glut
 RUN_DEPENDS+=	::graphics/povray
 .  elif ${SUBPACKAGE} == ""
 RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
 LIB_DEPENDS+=	Imlib::graphics/imlib \
 		ungif::graphics/libungif \
-		glut::graphics/glut
 .  endif
 .else
 LIB_DEPENDS+=Imlib::graphics/imlib \
 	ungif::graphics/libungif \
-	glut::graphics/glut \
 	gphoto2,gphoto2_port::graphics/libgphoto2
 .endif
 BUILD_DEPENDS+=::print/teTeX/base
