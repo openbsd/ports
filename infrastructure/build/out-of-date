@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: out-of-date,v 1.7 2003/09/28 10:59:42 espie Exp $
+# $OpenBSD: out-of-date,v 1.8 2003/11/05 17:35:45 sturm Exp $
 # Copyright (c) 1999
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -32,7 +32,7 @@ echo "Make sure your ports tree is up-to-date"
 TMPDIR=`mktemp -d /tmp/outdated.XXXXXXXXX`
 trap "rm -r $TMPDIR" 0 1 2 3 15
 echo "Generate specs"
-pkg_info -f -a|sed -n -e 's/.*Comment: subdir=//p'|sed -e 's/ cdrom=.*//' >$TMPDIR/specs
+pkg_info -f -a|sed -n -e 's/.*[Cc]omment:* subdir=//p'|sed -e 's/ cdrom=.*//' >$TMPDIR/specs
 echo "Check new package names"
 cd $PORTSDIR && make SUBDIRLIST=$TMPDIR/specs show=FULLPKGNAME\${SUBPACKAGE} ECHO_MSG=: REPORT_PROBLEM=true|sort >$TMPDIR/new
 echo "Record old package names"
