@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/07 14:33:23 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/26 07:49:54 kevlo Exp $
 
 DISTNAME=	doc++-3.4.6
 CATEGORIES=	devel
 NEED_VERSION=	1.341
-
-HOMEPAGE=	http://www.linuxsupportline.com/~doc++/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -13,7 +11,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE} 
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR= apps/doctools
 
 RUN_DEPENDS=	tex::print/teTeX/base
 
