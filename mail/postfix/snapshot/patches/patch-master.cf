@@ -1,10 +1,11 @@
---- conf/master.cf.orig	Sun Jan 28 21:54:01 2001
-+++ conf/master.cf	Thu Feb  1 08:22:24 2001
-@@ -67,21 +67,21 @@
+--- conf/master.cf.orig	Tue Jul 10 09:42:19 2001
++++ conf/master.cf	Tue Jul 10 09:41:45 2001
+@@ -68,22 +68,22 @@
  # service type	private	unpriv	chroot	wakeup	maxproc	command + args
  # 		(yes)	(yes)	(yes)	(never)	(50)
  # ==========================================================================
 -smtp	  inet	n	-	n	-	-	smtpd
+-#628	  inet	n	-	n	-	-	qmqpd
 -pickup	  fifo	n	n	n	60	1	pickup
 -cleanup	  unix	-	-	n	-	0	cleanup
 -qmgr	  fifo	n	-	n	300	1	qmgr
@@ -17,6 +18,7 @@
 -showq     unix	n	-	n	-	-	showq
 -error     unix	-	-	n	-	-	error
 +smtp	  inet	n	-	-	-	-	smtpd
++#628      inet  n       -       -       -       -       qmqpd
 +pickup	  fifo	n	n	-	60	1	pickup
 +cleanup	  unix	-	-	-	-	0	cleanup
 +qmgr	  fifo	n	-	-	300	1	qmgr
@@ -33,5 +35,5 @@
 -lmtp	  unix	-	-	n	-	-	lmtp
 +lmtp	  unix	-	-	-	-	-	lmtp
  cyrus	  unix	-	n	n	-	-	pipe
-     flags=R user=cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
+   flags=R user=cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
  uucp	  unix	-	n	n	-	-	pipe
