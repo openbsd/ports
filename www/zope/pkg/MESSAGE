@@ -4,11 +4,6 @@
 | to install the Zope package once and create as many sites as you
 | want without changing your core Zope installation.
 |
-| To create a Zope site, create a user and group to own it, create a
-| directory for the site, and run
-|
-|	${PREFIX}/bin/zope-instance /path/to/site
-|
-| as the user who will own the site.
+| Have a look at ${ZOPEHOME}/doc/README.OpenBSD
+| to see how to create your instance and have it start at boot time.
 +---------------
-

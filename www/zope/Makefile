@@ -1,94 +1,62 @@
-# $OpenBSD: Makefile,v 1.17 2003/06/21 07:49:24 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2004/08/03 10:16:36 xsa Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"object-oriented web application server"
 
-VERSION=	2.6.1
-PORT_VERSION=	${VERSION}
-
-DISTNAME=	Zope-${VERSION}-src
-PKGNAME=	zope-${PORT_VERSION}
+VERSION=	2.7.2
+DISTNAME=	Zope-${VERSION}-0
+PKGNAME=	${DISTNAME:S/-0//g:L}
 CATEGORIES=     www
 
 HOMEPAGE=	http://www.zope.org/
 
-# Zope Public License (ZPL) 2.0 <http://www.zope.org/Resources/ZPL>
+MAINTAINER=	Marc Balmer <marc@msys.ch>
+
+# Zope Public License
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAINTAINER=	Maurice Nonnekes <maurice@amaze.nl>
-
-MASTER_SITES=	http://www.zope.org/Products/Zope/${VERSION}/
+MASTER_SITES=	${HOMEPAGE}Products/Zope/${VERSION}/
 EXTRACT_SUFX=	.tgz
 
-DIST_SUBDIR=	zope
+PYTHON_VER=	2.3
+PYTHON_BIN=	${LOCALBASE}/bin/python${PYTHON_VER}
 
-#MASTER_SITES0=	http://www.zope.org/Members/zigg/UnixSecurityPatch/
-#PATCHFILES=	Zope-${VERSION}-unix-security.patch:0
-#PATCH_DIST_STRIP=-p1
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	::lang/python/${PYTHON_VER} \
+		::lang/python/${PYTHON_VER},-expat
 
-#HOTFIX_DATE1= 	2002-06-14
-#MASTER_SITES1=	http://www.zope.org/Products/Zope/Hotfix_${HOTFIX_DATE1}/
+CONFIGURE_STYLE=simple
+CONFIGURE_ARGS=	--with-python=${LOCALBASE}/bin/python${PYTHON_VER} \
+		--prefix=${WRKINST}/${ZOPEHOME} \
+		--build-base=${WRKSRC}
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-
-BUILD_DEPENDS=	:python->=2.1.3,<2.2:lang/python/2.1
-RUN_DEPENDS=	:python->=2.1.3,<2.2:lang/python/2.1
-
-# Note that the configure script is really just for pcgi, but it's
-# the only one in the package.
-
-CONFIGURE_STYLE=gnu
-
-WRKBUILD=			${WRKSRC}/pcgi
-MODGNU_CONFIG_GUESS_DIRS=	${WRKBUILD}
+MAKE_FILE=	makefile
+ALL_TARGET=	build
 
 ZOPEHOME=	${PREFIX}/lib/zope
-PRODUCTSDIR=	${ZOPEHOME}/lib/python/Products
+ZOPELIBDIR=	${ZOPEHOME}/lib/python
+ZOPEPRODUCTSDIR=${ZOPELIBDIR}/Products
+ZOPEUSER=	_zope
+ZOPEGROUP=	_zope
 
-do-build:
-	cd ${WRKSRC} && \
-		ZDIR=${ZOPEHOME} ${LOCALBASE}/bin/python2.1 w_pcgi.py && \
-		ZDIR=${ZOPEHOME} ${LOCALBASE}/bin/python2.1 \
-			-O inst/compilezpy.py
-	sed -e "s%@@PREFIX@@%${PREFIX}%g" \
-		-e "s%@@LOCALBASE@@%${LOCALBASE}%g" \
-		< ${FILESDIR}/zope-instance > ${WRKSRC}/zope-instance
+SUBST_VARS+=	PYTHON_VER ZOPEHOME ZOPEUSER ZOPEGROUP
 
-# All this should give us what closely resembles a zope.org binary
-# installation and allow us to rely as much as possible on make
-# plist to update to newer versions.
+pre-configure:
+	@perl -pi -e 's,%%ZOPEPRODUCTSDIR%%,${ZOPEPRODUCTSDIR},g;' \
+		-e 's,%%ZOPEUSER%%,${ZOPEUSER},g' \
+			${WRKSRC}/skel/etc/zope.conf.in
+	@sed -e 's,%%ZOPEHOME%%,${ZOPEHOME},g' \
+		< ${FILESDIR}/README.OpenBSD > ${WRKSRC}/README.OpenBSD
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/zope-instance ${PREFIX}/bin
-	${INSTALL_PROGRAM_DIR} ${ZOPEHOME}
-	cp -Rp ${WRKSRC}/* ${ZOPEHOME}
-	chown -R ${BINOWN}:${BINGRP} ${ZOPEHOME}
-	cd ${ZOPEHOME}/lib && ln -fs ../../python2.1
-	rm -r ${ZOPEHOME}/*.txt ${ZOPEHOME}/doc ${ZOPEHOME}/lib/Components \
-		${ZOPEHOME}/pcgi/Win32
-	find ${ZOPEHOME} -name \*.orig -or -name \*.o -or -name .cvsignore \
-		-or -name sedscript -or -name \*.old | xargs rm
-	find ${ZOPEHOME}/lib/python -name config.c -or -name Makefile \
-		-or -name Makefile.pre -or -name Makefile.pre.in | xargs rm
-	rm ${ZOPEHOME}/pcgi/Makefile \
-		${ZOPEHOME}/pcgi/config.log ${ZOPEHOME}/pcgi/config.status \
-		${ZOPEHOME}/pcgi/config.cache ${ZOPEHOME}/zope-instance \
-		${ZOPEHOME}/w*_pcgi.py*
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zope/changenotes 
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${WRKSRC}/doc/*.txt \
-		${PREFIX}/share/doc/zope
-	${INSTALL_DATA} ${WRKSRC}/doc/changenotes/* \
-		${PREFIX}/share/doc/zope/changenotes
-	echo "Zope ${VERSION} (OpenBSD package zope-${PORT_VERSION})" \
-		> ${PREFIX}/lib/zope/lib/python/version.txt
-#	${INSTALL_DATA_DIR} ${PRODUCTSDIR}/Hotfix_${HOTFIX_DATE1}
-#	${INSTALL_DATA} \
-#		${WRKDIR}/lib/python/Products/Hotfix_${HOTFIX_DATE1}/* \
-#		${PRODUCTSDIR}/Hotfix_${HOTFIX_DATE1}
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/README.OpenBSD ${ZOPEHOME}/doc
 
-do-regress:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/python2.1 utilities/testrunner.py -a
+do-regress: fake
+	${PYTHON_BIN} ${WRKINST}/${ZOPEHOME}/bin/test.py \
+		--all -vv -p --libdir ${WRKINST}/${ZOPELIBDIR}
 
 .include <bsd.port.mk>

@@ -1,0 +1,51 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2004/08/03 10:16:37 xsa Exp $
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+ZOPEUSER=${ZOPEUSER}
+ZOPEGROUP=${ZOPEGROUP}
+ID=534
+
+do_usergroup_install()
+{
+  if groupinfo -e $ZOPEGROUP; then
+    echo "===> Using $ZOPEGROUP group for Zope"
+  else
+    echo "===> Creating $ZOPEGROUP group for Zope"
+    groupadd -g $ID $ZOPEGROUP
+  fi
+  if userinfo -e $ZOPEUSER; then
+    echo "===> Using $ZOPEUSER user for Zope"
+  else
+    echo "===> Creating $ZOPEUSER user for Zope"
+    useradd -g $ZOPEGROUP \
+	-d /nonexistent \
+	-L daemon \
+	-c 'Zope Account' \
+	-s /sbin/nologin \
+	-u $ID $ZOPEUSER
+  fi
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	do_usergroup_install
+	;;
+    POST-INSTALL)
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

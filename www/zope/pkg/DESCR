@@ -6,6 +6,6 @@ personalization, and e-commerce into your web applications.
 
 Zope consists of a number of components which work together to
 provide a complete yet flexible application server package. Zope
-includes an internet server, a transactional object database, a
+includes an Internet server, a transactional object database, a
 search engine, a web page templating system, a through the web
 development and management tool, and comprehensive extension support.

@@ -1,11 +1,11 @@
-# $OpenBSD: zope.port.mk,v 1.2 2003/07/31 07:01:22 jolan Exp $
+# $OpenBSD: zope.port.mk,v 1.3 2004/08/03 10:16:36 xsa Exp $
 #
 #	zope.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
 
-MODZOPE_PYTHON_VERSION=	2.1
+MODZOPE_PYTHON_VERSION=	2.3
 
-BUILD_DEPENDS+= :python->=${MODZOPE_PYTHON_VERSION},<2.2:lang/python/${MODZOPE_PYTHON_VERSION}
+BUILD_DEPENDS+= ::lang/python/${MODZOPE_PYTHON_VERSION}
 RUN_DEPENDS+=	::www/zope
 
 MODZOPE_HOME=		${PREFIX}/lib/zope
@@ -17,8 +17,11 @@ PYTHON_INCLUDEDIR=	${LOCALBASE}/include/python${MODZOPE_PYTHON_VERSION}
 
 NO_REGRESS=	Yes
 
+# dirty way to do it with no modifications in bsd.port.mk
+.if !target(do-build)
 do-build:
 	${PYTHON_BIN} ${PYTHON_LIBDIR}/compileall.py ${WRKDIST}
+.endif
 
 post-install:
 	${CHOWN} -R ${LIBOWN}:${LIBGRP} ${MODZOPE_PRODUCTSDIR}

@@ -1,0 +1,20 @@
+$OpenBSD: patch-skel_etc_zope_conf_in,v 1.1 2004/08/03 10:16:36 xsa Exp $
+--- skel/etc/zope.conf.in.orig	2004-01-09 00:34:08.000000000 +0100
++++ skel/etc/zope.conf.in	2004-04-28 16:43:24.000000000 +0200
+@@ -80,6 +80,8 @@ instancehome $INSTANCE
+ #
+ #    products /home/chrism/projects/myproducts
+ 
++products %%ZOPEPRODUCTSDIR%%
++products $INSTANCE/Products
+ 
+ # Directive: environment
+ #
+@@ -138,6 +140,7 @@ instancehome $INSTANCE
+ #
+ #    effective-user chrism
+ 
++effective-user %%ZOPEUSER%%
+ 
+ # Directive: enable-product-installation
+ #
