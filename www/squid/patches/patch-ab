@@ -1,27 +1,6 @@
---- configure.orig	Fri Apr 28 16:17:12 2000
-+++ configure	Sun Jul  9 19:32:00 2000
-@@ -673,12 +673,6 @@
- REGEXLIB=''	# -lregex
- LIBREGEX=''	# libregex.a
- 
--if test "$libexecdir" = '${exec_prefix}/libexec'; then
--	libexecdir='${bindir}'
--	localstatedir='${prefix}'
--
--fi
--
- case "$host_os" in
- cygwin32|os2)
- 	exec_suffix=".exe"
-@@ -2301,6 +2295,7 @@
- 	netinet/tcp.h \
- 	netinet/ip_compat.h \
- 	netinet/ip_fil.h \
-+	netinet/ip_fil_compat.h \
- 	netinet/ip_nat.h \
- 	poll.h \
- 	pwd.h \
-@@ -4064,18 +4059,6 @@
+--- configure.orig	Wed Jul 19 20:38:22 2000
++++ configure	Wed Jul 19 20:41:03 2000
+@@ -4191,18 +4191,6 @@
  		;;
  esac
  
@@ -40,18 +19,3 @@
  # Recommended by Balint Nagy Endre <bne@CareNet.hu>
  case "$host" in
  	*-univel-sysv4.2MP)
-@@ -4338,6 +4321,14 @@
- EOF
- 
-     elif test "$ac_cv_header_netinet_ip_compat_h" = "yes" &&
-+         test "$ac_cv_header_netinet_ip_fil_h" = "yes" &&
-+         test "$ac_cv_header_netinet_ip_nat_h" = "yes" ; then
-+        IPF_TRANSPARENT="yes"
-+        cat >> confdefs.h <<\EOF
-+#define IPF_TRANSPARENT 1
-+EOF
-+
-+    elif test "$ac_cv_header_netinet_ip_fil_compat_h" = "yes" &&
-          test "$ac_cv_header_netinet_ip_fil_h" = "yes" &&
-          test "$ac_cv_header_netinet_ip_nat_h" = "yes" ; then
-         IPF_TRANSPARENT="yes"
