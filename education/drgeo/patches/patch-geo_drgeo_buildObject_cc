@@ -1,0 +1,12 @@
+$OpenBSD: patch-geo_drgeo_buildObject_cc,v 1.1 2004/06/24 06:21:50 naddy Exp $
+--- geo/drgeo_buildObject.cc.orig	2004-06-23 23:57:05.000000000 -0600
++++ geo/drgeo_buildObject.cc	2004-06-23 23:57:21.000000000 -0600
+@@ -675,7 +675,7 @@ buildNumeric (int cas, drgeoPoint & at, 
+     {
+     case 0:
+       // segment's length
+-      item = new numeric (at, *selection, (numericType) SEGMENT_LENGTH,
++      item = new numeric (at, *selection, (numericType) SEGMENT_LEN,
+ 			  FALSE, figure->getFigureList ());
+       break;
+     case 1:

@@ -1,0 +1,57 @@
+$OpenBSD: patch-geo_drgeo_numeric_cc,v 1.1 2004/06/24 06:21:50 naddy Exp $
+--- geo/drgeo_numeric.cc.orig	2004-06-23 23:57:41.000000000 -0600
++++ geo/drgeo_numeric.cc	2004-06-23 23:58:07.000000000 -0600
+@@ -45,7 +45,7 @@ value (p, createdFromMacro, figureList)
+   parents.init_lire ();
+   switch (type)
+     {
+-    case SEGMENT_LENGTH:
++    case SEGMENT_LEN:
+       /* SEGMENT */
+     case VECTOR_NORM:
+       /* VECTOR */
+@@ -123,7 +123,7 @@ value (tree, figureList)
+     {
+       category = NUMERIC;
+       if (!strcmp (attr, "segment_length"))
+-	type = SEGMENT_LENGTH;
++	type = SEGMENT_LEN;
+       else if (!strcmp (attr, "vector_norm"))
+ 	type = VECTOR_NORM;
+       else if (!strcmp (attr, "distance_2pts"))
+@@ -181,7 +181,7 @@ numeric::update (drgeoDrawable & area)
+     return;
+   switch (type)
+     {
+-    case SEGMENT_LENGTH:
++    case SEGMENT_LEN:
+     case VECTOR_NORM:
+       setValue (((direction *) getFirst)->getDirection ().norm ());
+       break;
+@@ -270,7 +270,7 @@ numeric::initName ()
+   switch (type)
+     {
+     case ARC_CIRCLE_LENGTH:
+-    case SEGMENT_LENGTH:
++    case SEGMENT_LEN:
+       item0 = (geometricObject *) getFirst;
+       l += strlen (_("%1's length"));
+       if (item0->getName ()? strlen (item0->getName ()) : 0)
+@@ -381,7 +381,7 @@ numeric::save (xmlNodePtr tree, liste_el
+   item = xmlNewChild (tree, NULL, BAD_CAST "numeric", NULL);
+   switch (type)
+     {
+-    case SEGMENT_LENGTH:
++    case SEGMENT_LEN:
+       save_attribute (item, this, "segment_length");
+       break;
+     case VECTOR_NORM:
+@@ -450,7 +450,7 @@ numeric::updateDescription ()
+       description = new gchar *[1];
+       description[0] = g_strdup_printf (_("Free value:: %s"), name);
+       break;
+-    case SEGMENT_LENGTH:
++    case SEGMENT_LEN:
+       description = new gchar *[2];
+       description[0] = g_strdup_printf (_("Segment's length:: %s"), name);
+       description[1] = g_strdup_printf (_("Segment %s"), getNthName (0));

@@ -1,0 +1,12 @@
+$OpenBSD: patch-geo_drgeo_scm_interface_cc,v 1.1 2004/06/24 06:21:50 naddy Exp $
+--- geo/drgeo_scm_interface.cc.orig	2004-06-23 23:58:28.000000000 -0600
++++ geo/drgeo_scm_interface.cc	2004-06-23 23:58:40.000000000 -0600
+@@ -590,7 +590,7 @@ ScmInterface::make_segmentLength (SCM na
+   parents->ajoute ((void *) gh_scm2ulong (s));
+ 
+   item = (geometricObject *) new numeric (scmCoord2drgeoPoint (x, y), *parents,
+-					  (numericType) SEGMENT_LENGTH, false,
++					  (numericType) SEGMENT_LEN, false,
+ 					  figure->getFigureList ());
+   setObjectName (name, item);
+   figure->addToFigureListNoRedraw (item, TRUE);
