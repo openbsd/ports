@@ -27,6 +27,8 @@ lib/libMesaGL.so.3.0
 lib/libMesaGLU.a
 lib/libMesaGLU.so
 lib/libMesaGLU.so.3.0
+@unexec /sbin/ldconfig -R
+@exec /sbin/ldconfig -m %B
 lib/libglut.a
 lib/libglut.so
 lib/libglut.so.3.7
