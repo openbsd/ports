@@ -1,6 +1,15 @@
---- ltmain.sh.orig	Sat Aug 28 00:28:13 1999
-+++ ltmain.sh	Sat Aug 28 00:28:45 1999
-@@ -3522,40 +3522,6 @@
+--- ltmain.sh.orig	Sat Jul  1 18:11:37 2000
++++ ltmain.sh	Sat Jul  1 18:11:51 2000
+@@ -2623,7 +2623,7 @@
+ 	  # linked before any other PIC object.  But we must not use
+ 	  # pic_flag when linking with -static.  The problem exists in
+ 	  # FreeBSD 2.2.6 and is fixed in FreeBSD 3.1.
+-	  *-*-freebsd2*|*-*-freebsd3.0*|*-*-freebsdelf3.0*)
++	  *-*-freebsd2*|*-*-freebsd3.0*|*-*-freebsdelf3.0*)
+ 	    case "$compile_command " in
+ 	    *" -static "*) ;;
+ 	    *) pic_flag_for_symtable=" $pic_flag -DPIC -DFREEBSD_WORKAROUND";;
+@@ -3567,40 +3567,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  

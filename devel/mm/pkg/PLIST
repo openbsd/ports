@@ -1,8 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.13 2000/07/01 22:30:12 brad Exp $
 bin/mm-config
 include/mm.h
 lib/libmm.a
 lib/libmm.la
-lib/libmm.so.10.12
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 man/man1/mm-config.1
 man/man3/mm.3

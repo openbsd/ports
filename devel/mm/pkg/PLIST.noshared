@@ -1,6 +1,0 @@
-bin/mm-config
-include/mm.h
-lib/libmm.a
-lib/libmm.la
-man/man1/mm-config.1
-man/man3/mm.3
