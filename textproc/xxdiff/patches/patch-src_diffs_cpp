@@ -1,50 +1,22 @@
-$OpenBSD: patch-src_diffs_cpp,v 1.2 2001/05/25 17:02:03 lebel Exp $
-
-fixes multiple strcpy and sprintf instances to potentially
-prevent buffer overruns
-
---- src/diffs.cpp.orig	Thu May 24 00:40:20 2001
-+++ src/diffs.cpp	Thu May 24 14:38:50 2001
-@@ -76,26 +76,26 @@ std::string buildTag( 
+--- src/diffs.cpp.orig	Wed Jun 20 14:41:57 2001
++++ src/diffs.cpp	Wed Jun 20 14:47:37 2001
+@@ -79,16 +79,16 @@ std::string buildTag( 
  {
     char buf[ 1024 ];
     char buf2[ 1024 ];
--   ::strcpy( buf, tag );
+-   ::strncpy( buf, tag, sizeof(buf) );
 +   ::strlcpy( buf, tag, sizeof(buf) );
     
     // FIXME this could lead to a bug.
  
     if ( useNumber ) {
--      ::strcpy( buf2, buf );
--      ::sprintf( buf, buf2, number );
-+      ::strlcpy( buf2, buf, sizeof(buf2));
-+      ::snprintf( buf, sizeof(buf), buf2, number );
+-      ::strncpy( buf2, buf, sizeof(buf2) );
++      ::strlcpy( buf2, buf, sizeof(buf2) );
+       ::snprintf( buf, sizeof(buf), buf2, number );
     }
     if ( useString ) {
--      ::strcpy( buf2, buf );
+-      ::strncpy( buf2, buf, sizeof(buf2) );
 +      ::strlcpy( buf2, buf, sizeof(buf2) );
        if ( useConditionals ) {
           if ( nbFiles == 3 && ( number == 1 || number == 2 ) ) {
--            ::sprintf( buf, buf2, conditional2.c_str() );
-+            ::snprintf( buf, sizeof(buf), buf2, conditional2.c_str() );
-          }
-          else {
--            ::sprintf( buf, buf2, conditional1.c_str() );
-+            ::snprintf( buf, sizeof(buf), buf2, conditional1.c_str() );
-          }
-       }
-       else {
--         ::sprintf( buf, buf2, file->getDisplayName() );
-+         ::snprintf( buf, sizeof(buf), buf2, file->getDisplayName() );
-       }
-    }
- 
-@@ -727,7 +727,7 @@ bool XxDiffs::save( 
-       std::string::size_type pos = tags[ii].find( "%d" );
-       if ( pos != std::string::npos ) {
-          char buf[12];
--         ::sprintf( buf, "%d", ii+1 );
-+         ::snprintf( buf, sizeof(buf), "%d", ii+1 );
-          tags[ii].replace( pos, 2, buf );
-       }
- 
+             ::snprintf( buf, sizeof(buf), buf2, conditional2.c_str() );

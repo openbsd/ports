@@ -1,32 +1,20 @@
-$OpenBSD: patch-src_buffer_cpp,v 1.2 2001/05/25 17:02:03 lebel Exp $
-
-fixes multiple strcpy/strncpy/sprintf uses that could lead
-to buffer overruns.
-
---- src/buffer.cpp.orig	Thu May 24 00:40:20 2001
-+++ src/buffer.cpp	Thu May 24 14:33:11 2001
-@@ -398,13 +398,13 @@ uint XxBuffer::computeLineNumbersWidth( 
- {
-    QFontMetrics fm( font );
-    char lnFormat[32];
--   sprintf( lnFormat, "%%%dd", getNbDigits() );
-+   snprintf( lnFormat, sizeof(lnFormat), "%%%dd", getNbDigits() );
+--- src/buffer.cpp.orig	Wed Jun 20 14:41:45 2001
++++ src/buffer.cpp	Wed Jun 20 14:51:13 2001
+@@ -248,7 +248,7 @@ void XxBuffer::loadDirectory( struct sta
+       }
+          
+       char* newString = new char[ d_size + 1 ];
+-      ::strncpy( newString, d_name, d_size );
++      ::strlcpy( newString, d_name, d_size );
+       newString[ d_size ] = 0;
  
-    uint longest = 0;
-    int nbLines = getNbLines();
-    char buffer[12];
-    for ( int ii = 1; ii <= nbLines; ++ii ) {
--      sprintf( buffer, lnFormat, ii );
-+      snprintf( buffer, sizeof(buffer), lnFormat, ii );
-       QString str( buffer );
- 
-       QRect rect = fm.boundingRect( str, str.length() );
-@@ -504,7 +504,7 @@ const char* XxBuffer::renderLineNumber( 
-    const char* format
- )
- {
--   sprintf( _lnBuffer, format, lineNumber );
-+   snprintf( _lnBuffer, sizeof(_lnBuffer), format, lineNumber );
-    return _lnBuffer;
- }
- 
+       XX_CHECK( newString != 0 && d_name != 0 && d_size > 0 );
+@@ -297,7 +297,7 @@ void XxBuffer::setDirectoryEntries( 
+    char* bufferPtr = _buffer;
+    for ( uint ii = 0; ii < _directoryEntries.size(); ++ii ) {
+       int len = ::strlen( _directoryEntries[ii] );
+-      ::strncpy( bufferPtr, _directoryEntries[ii], len );
++      ::strlcpy( bufferPtr, _directoryEntries[ii], len );
+       bufferPtr[len] = '\n';
+       bufferPtr += len + 1;
+    }
