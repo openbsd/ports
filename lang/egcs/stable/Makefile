@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2002/09/30 20:52:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.69 2002/10/05 09:40:58 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
 
@@ -29,7 +29,7 @@ COMMENT-ada=	${COM}: Ada compiler
 
 PKGNAME=	gcc-$V
 PKGNAME-c++ =	g++-$V
-PKGNAME-estdc =	libestdc-$V
+PKGNAME-estdc =	libstdc++-$V
 PKGNAME-chill=	gchill-$V
 PKGNAME-g77=	g77-$V
 PKGNAME-java=	gcj-$V
