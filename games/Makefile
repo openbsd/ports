@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2001/07/26 19:14:46 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.53 2001/07/28 16:35:07 lebel Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -53,6 +53,7 @@
      SUBDIR += slash-em
      SUBDIR += slash-em,no_x11
      SUBDIR += netris
+     SUBDIR += omega
 #    SUBDIR += oneko
 #    SUBDIR += oonsoo
 #    SUBDIR += qcc
@@ -131,6 +132,8 @@
      SUBDIR += xzip
 #    SUBDIR += yahtzee
 #    SUBDIR += yamsweeper
+     SUBDIR += zangband
+     SUBDIR += zangband,no_x11
 #    SUBDIR += ztrack
 
 .include <bsd.port.subdir.mk>
