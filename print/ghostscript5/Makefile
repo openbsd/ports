@@ -3,7 +3,7 @@
 # Date created:		December 2, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 1998/05/06 02:50:59 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1998/06/02 21:49:32 marc Exp $
 #
 
 DISTNAME=	ghostscript-5.10
@@ -58,7 +58,7 @@ post-extract:
 	${TOUCH} ${WRKSRC}/trees.o
 	ln -s ${PORTSDIR}/graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg-6b
 	ln -s ${PORTSDIR}/graphics/png/work/libpng-1.0.1 ${WRKSRC}/libpng
-	cd ${WRKSRC} && unzip -La ${DISTDIR}/${HP850_DRV}
+	cd ${WRKSRC} && ${SETENV} unzip -La ${DISTDIR}/${HP850_DRV}
 
 do-configure:
 .if defined(BATCH)
