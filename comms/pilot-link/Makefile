@@ -1,12 +1,12 @@
 # OpenBSD makefile for: pilot-link
-# Version required:     0.8.13
-# Date created:         June 25, 1998
+# Version required:     0.9.0
+# Date created:         August 31, 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/06/26 02:05:00 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/09/01 00:08:59 angelos Exp $
 
-DISTNAME=	pilot-link.0.8.13
-PKGNAME=	pilot-link-0.8.13
+DISTNAME=	pilot-link.0.9.0
+PKGNAME=	pilot-link-0.9.0
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ryeham.ee.ryerson.ca/pub/PalmOS/
 
