@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2002/09/10 10:14:24 fgsch Exp $
---- Makefile.in.orig	Tue Sep 10 06:29:19 2002
-+++ Makefile.in	Tue Sep 10 06:29:54 2002
-@@ -133,16 +133,16 @@ dummy:
+$OpenBSD: patch-Makefile_in,v 1.5 2005/02/19 21:27:35 alek Exp $
+--- Makefile.in.orig	Thu Oct 16 00:38:18 2003
++++ Makefile.in	Sat Feb 19 22:10:08 2005
+@@ -133,19 +133,19 @@ dummy:
  
  # Tester for address parsing
  rfc822: rfc822.c
@@ -20,4 +20,8 @@ $OpenBSD: patch-Makefile_in,v 1.4 2002/09/10 10:14:24 fgsch Exp $
 +	$(CC) -DSTANDALONE -DHAVE_CONFIG_H -I. -g -o $@ $?
  
  .c.o:
- 	$(CC) $(defines) -c $(CPFLAGS) -I. -I$(srcdir) -I$(top_builddir)/intl -I$(top_srcdir)/intl $(CEFLAGS) $(CFLAGS) $<
+-	$(CC) $(defines) -c $(CPFLAGS) -I. -I$(srcdir) -I$(top_builddir)/intl -I$(top_srcdir)/intl $(CEFLAGS) $(CFLAGS) $<
++	$(CC) $(defines) -c $(CPFLAGS) -I. -I$(srcdir) $(CEFLAGS) $(CFLAGS) $<
+ 
+ # For some losing Unix makes.
+ SHELL = /bin/sh

@@ -1,6 +1,24 @@
-$OpenBSD: patch-configure,v 1.6 2003/08/13 23:28:24 fgsch Exp $
---- configure.orig	2003-07-17 16:14:21.000000000 -0300
-+++ configure	2003-08-13 20:01:47.000000000 -0300
+$OpenBSD: patch-configure,v 1.7 2005/02/19 21:27:35 alek Exp $
+--- configure.orig	Fri Oct 10 10:39:54 2003
++++ configure	Sat Feb 19 14:04:10 2005
+@@ -8735,7 +8735,7 @@ if test "${ac_cv_lib_intl_gettext+set}" 
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -8784,7 +8784,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_intl_gettext" >&5
+ echo "${ECHO_T}$ac_cv_lib_intl_gettext" >&6
+ if test $ac_cv_lib_intl_gettext = yes; then
+-  LIBS="$LIBS -lintl"
++  LIBS="$LIBS -lintl -liconv"
+ fi
+ 
+ 
 @@ -12795,7 +12795,7 @@ _ACEOF
  _ACEOF
  
