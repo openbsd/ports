@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/10/14 15:35:04 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2001/10/28 13:23:21 espie Exp $
 lib/ogle/libdvdcontrol.so.4.0
 lib/ogle/libmsgevents.so.3.1
-NEWDYNLIBDIR(%D/lib/ogle)
