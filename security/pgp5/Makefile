@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/07/25 10:13:39 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2000/09/06 18:14:04 marc Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
@@ -26,34 +26,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no commercial use"
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	usa intl
-
-# No default flavor, error.
-FLAVOR?=
-.if empty(FLAVOR)
-.BEGIN:
-	@echo ""
-	@echo "The variable USA_RESIDENT must be set to either Yes or No"
-	@echo "in order to build this package.  USA residents that are"
-	@echo "not licensees of the RSA algorithm MUST set this variable"
-	@echo "to Yes.  Users outside the USA MUST set this variable to"
-	@echo "No.  Licensees may choose -- No is faster."
-	@echo ""
-	@echo "RSAREF2 will be automatically obtained and used to generate"
-	@echo "this program when given the command \"make USA_RESIDENT=Yes\""
-	@echo ""
-	@echo "The new port flavor system also allows you to use "
-	@echo "FLAVOR=usa or FLAVOR=intl"
-	@false
-.endif
-
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
-
-.if ${FLAVOR:L} == "usa"
-LIB_DEPENDS=	rsaref.2::security/rsaref
-CONFIGURE_ARGS=	--with-rsaref
-.endif
 
 WRKDIST=	${WRKDIR}/pgp50i/src
 
