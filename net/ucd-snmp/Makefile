@@ -1,14 +1,13 @@
 # 
-# $OpenBSD: Makefile,v 1.10 2000/06/02 19:47:07 hugh Exp $
+# $OpenBSD: Makefile,v 1.11 2000/06/22 15:36:26 jakob Exp $
 # 
 
 DISTNAME=		ucd-snmp-4.1.2
 CATEGORIES=     	net
-NEED_VERSION=		1.283
+NEED_VERSION=		1.302
 HOMEPAGE=		http://ucd-snmp.ucdavis.edu/
 MAINTAINER=		danh@nfol.com
 
-LICENCE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes 
@@ -17,15 +16,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ucd-snmp.ucdavis.edu/	\
 		        ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/
 
-HAS_CONFIGURE=		Yes 
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--prefix='$${DESTDIR}${PREFIX}'
 CONFIGURE_ARGS+=	--sysconfdir='/etc'
 CONFIGURE_ARGS+=	--with-persistent-directory='/var/ucd-snmp'
 CONFIGURE_ARGS+=	--with-sys-contact='<change_me>'
 CONFIGURE_ARGS+=	--with-sys-location='<change_me>'
 CONFIGURE_ARGS+=	--with-logfile='/var/log/snmpd'
-
-FAKE=			Yes
 
 BIN=		encode_keychange snmpbulkget snmpbulkwalk snmpdelta \
 		snmpget snmpgetnext snmpnetstat snmpset snmpstatus  \
