@@ -1,0 +1,23 @@
+$OpenBSD: patch-gcc_Makefile_in,v 1.1.1.1 2005/01/03 15:21:27 espie Exp $
+--- gcc/Makefile.in.orig	Mon Jan  3 12:27:24 2005
++++ gcc/Makefile.in	Mon Jan  3 12:28:10 2005
+@@ -742,7 +742,8 @@ CXX_TARGET_OBJS=@cxx_target_objs@
+ 
+ # Language-specific object files for C and Objective C.
+ C_AND_OBJC_OBJS = attribs.o c-errors.o c-lex.o c-pragma.o c-decl.o c-typeck.o \
+-  c-convert.o c-aux-info.o c-common.o c-opts.o c-format.o c-semantics.o \
++  c-convert.o c-aux-info.o c-common.o c-opts.o c-format.o c-bounded.o \
++  c-semantics.o \
+   c-objc-common.o c-dump.o libcpp.a $(C_TARGET_OBJS)
+ 
+ # Language-specific object files for C.
+@@ -1269,6 +1270,9 @@ attribs.o : attribs.c $(CONFIG_H) $(SYST
+ 	builtin-types.def $(TARGET_H) langhooks.h
+ 
+ c-format.o : c-format.c $(CONFIG_H) $(SYSTEM_H) $(TREE_H) langhooks.h \
++	$(C_COMMON_H) flags.h toplev.h intl.h diagnostic.h
++
++c-bounded.o : c-bounded.c $(CONFIG_H) $(SYSTEM_H) $(TREE_H) langhooks.h \
+ 	$(C_COMMON_H) flags.h toplev.h intl.h diagnostic.h
+ 
+ c-semantics.o : c-semantics.c $(CONFIG_H) $(SYSTEM_H) $(TREE_H) $(C_TREE_H) \

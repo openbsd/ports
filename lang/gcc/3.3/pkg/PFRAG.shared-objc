@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared-objc,v 1.1.1.1 2005/01/03 15:21:30 espie Exp $
+@lib lib/libobjc.so.1.0
+@comment @lib lib/fpic/libobjc.so.1.0

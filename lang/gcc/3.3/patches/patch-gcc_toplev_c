@@ -1,0 +1,45 @@
+$OpenBSD: patch-gcc_toplev_c,v 1.1.1.1 2005/01/03 15:21:27 espie Exp $
+--- gcc/toplev.c.orig	Mon Jan  3 12:24:48 2005
++++ gcc/toplev.c	Mon Jan  3 12:27:08 2005
+@@ -852,7 +852,11 @@ int flag_instrument_function_entry_exit 
+    On SVR4 targets, it also controls whether or not to emit a
+    string identifying the compiler.  */
+ 
++#ifdef OPENBSD_NATIVE
++int flag_no_ident = 1;
++#else
+ int flag_no_ident = 0;
++#endif
+ 
+ /* This will perform a peephole pass before sched2.  */
+ int flag_peephole2 = 0;
+@@ -1362,6 +1366,9 @@ documented_lang_options[] =
+   { "-Wwrite-strings",
+     N_("Mark strings as 'const char *'") },
+   { "-Wno-write-strings", "" },
++  { "-Wbounded",
++    N_("Fake bounds checking option") },
++  { "-Wno-bounded", "" },
+ 
+ #define DEFINE_LANG_NAME(NAME) { NULL, NAME },
+ 
+@@ -4910,14 +4917,19 @@ parse_options_and_default_flags (argc, a
+       flag_schedule_insns_after_reload = 1;
+ #endif
+       flag_regmove = 1;
++#ifndef OPENBSD_NATIVE
+       flag_strict_aliasing = 1;
+       flag_delete_null_pointer_checks = 1;
++#endif
+       flag_reorder_blocks = 1;
+       flag_reorder_functions = 1;
+     }
+ 
+   if (optimize >= 3)
+     {
++#ifdef OPENBSD_NATIVE
++      flag_strict_aliasing = 1;
++#endif
+       flag_inline_functions = 1;
+       flag_rename_registers = 1;
+     }

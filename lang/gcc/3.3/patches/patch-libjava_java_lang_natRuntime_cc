@@ -1,0 +1,12 @@
+$OpenBSD: patch-libjava_java_lang_natRuntime_cc,v 1.1.1.1 2005/01/03 15:21:27 espie Exp $
+--- libjava/java/lang/natRuntime.cc.orig	2003-11-11 18:17:19.000000000 +0100
++++ libjava/java/lang/natRuntime.cc	2003-11-11 18:17:42.000000000 +0100
+@@ -341,7 +341,7 @@ java::lang::Runtime::traceMethodCalls (j
+ }
+ 
+ #if ! defined (DEFAULT_FILE_ENCODING) && defined (HAVE_ICONV) \
+-    && defined (HAVE_NL_LANGINFO)
++    && defined (HAVE_LANGINFO_CODESET)
+ 
+ static char *
+ file_encoding ()

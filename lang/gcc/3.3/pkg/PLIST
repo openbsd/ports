@@ -1,0 +1,42 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/03 15:21:30 espie Exp $
+@conflict egcs-*-core
+bin/ecpp
+bin/egcc
+bin/egccbug
+bin/egcov
+bin/${CONFIG}-egcc
+bin/${CONFIG}-gcc-${V}
+@info info/cpp.info
+@info info/cppinternals.info
+@info info/gcc.info
+@info info/gccint.info
+lib/fpic/
+lib/gcc-lib/
+lib/gcc-lib/${CONFIG}/
+lib/gcc-lib/${CONFIG}/${V}/
+lib/gcc-lib/${CONFIG}/${V}/cc1
+lib/gcc-lib/${CONFIG}/${V}/collect2
+lib/gcc-lib/${CONFIG}/${V}/include/
+lib/gcc-lib/${CONFIG}/${V}/include/README
+lib/gcc-lib/${CONFIG}/${V}/include/limits.h
+lib/gcc-lib/${CONFIG}/${V}/include/math.h
+lib/gcc-lib/${CONFIG}/${V}/include/syslimits.h
+lib/gcc-lib/${CONFIG}/${V}/install-tools/
+lib/gcc-lib/${CONFIG}/${V}/install-tools/fixinc.sh
+lib/gcc-lib/${CONFIG}/${V}/install-tools/gsyslimits.h
+lib/gcc-lib/${CONFIG}/${V}/install-tools/include/
+lib/gcc-lib/${CONFIG}/${V}/install-tools/include/README
+lib/gcc-lib/${CONFIG}/${V}/install-tools/include/limits.h
+lib/gcc-lib/${CONFIG}/${V}/install-tools/mkheaders
+lib/gcc-lib/${CONFIG}/${V}/install-tools/mkheaders.conf
+lib/gcc-lib/${CONFIG}/${V}/libgcc.a
+lib/gcc-lib/${CONFIG}/${V}/specs
+@comment lib/libiberty.a
+@man man/man1/cpp.1
+@man man/man1/egcc.1
+@man man/man1/gcov.1
+%%PIC%%
+%%PPC%%
+@comment @man man/man7/fsf-funding.7
+@comment @man man/man7/gfdl.7
+@comment @man man/man7/gpl.7

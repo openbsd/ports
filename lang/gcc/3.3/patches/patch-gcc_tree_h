@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_tree_h,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
+--- gcc/tree.h.orig	Mon Jan  3 12:24:09 2005
++++ gcc/tree.h	Mon Jan  3 12:24:21 2005
+@@ -698,6 +698,10 @@ extern void tree_vec_elt_check_failed PA
+ #define TREE_LANG_FLAG_4(NODE) ((NODE)->common.lang_flag_4)
+ #define TREE_LANG_FLAG_5(NODE) ((NODE)->common.lang_flag_5)
+ #define TREE_LANG_FLAG_6(NODE) ((NODE)->common.lang_flag_6)
++
++/* Used to track constants derived from sizeof(pointer) operations */
++#define SIZEOF_PTR_DERIVED(NODE) (TREE_LANG_FLAG_6((NODE)))
++
+ 
+ /* Define additional fields and accessors for nodes representing constants.  */
+ 

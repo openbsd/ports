@@ -1,0 +1,47 @@
+$OpenBSD: patch-gcc_config_sparc_openbsd_h,v 1.1.1.1 2005/01/03 15:21:27 espie Exp $
+--- gcc/config/sparc/openbsd.h.orig	Mon Oct 21 00:37:13 2002
++++ gcc/config/sparc/openbsd.h	Mon Jan  3 10:17:43 2005
+@@ -19,11 +19,17 @@ the Free Software Foundation, 59 Temple 
+ Boston, MA 02111-1307, USA.  */
+ 
+ /* Get generic OpenBSD definitions.  */
+-#define OBSD_OLD_GAS
+ #include <openbsd.h>
+ 
+ /* Run-time target specifications.  */
+-#define CPP_PREDEFINES "-D__unix__ -D__sparc__ -D__OpenBSD__ -Asystem=unix -Asystem=OpenBSD -Acpu=sparc -Amachine=sparc"
++#define TARGET_OS_CPP_BUILTINS()			\
++  do							\
++    {							\
++      OPENBSD_OS_CPP_BUILTINS_ELF();			\
++      builtin_define ("__sparc");			\
++      builtin_define ("__sparc__");			\
++    }							\
++  while (0)
+ 
+ /* Layout of source language data types */
+ 
+@@ -39,6 +45,23 @@ Boston, MA 02111-1307, USA.  */
+ 
+ #undef WCHAR_TYPE_SIZE
+ #define WCHAR_TYPE_SIZE 32
++
++#undef LINK_SPEC
++#define LINK_SPEC \
++  "%{!shared:%{!nostdlib:%{!r*:%{!e*:-e __start}}}} \
++   %{shared:-shared} %{R*} \
++   %{static:-Bstatic} \
++   %{!static:-Bdynamic} \
++   %{assert*} \
++   %{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so}"
++
++/* As an elf system, we need crtbegin/crtend stuff.  */
++#undef STARTFILE_SPEC
++#define STARTFILE_SPEC "\
++        %{!shared: %{pg:gcrt0%O%s} %{!pg:%{p:gcrt0%O%s} %{!p:crt0%O%s}} \
++        crtbegin%O%s} %{shared:crtbeginS%O%s}"
++#undef ENDFILE_SPEC
++#define ENDFILE_SPEC "%{!shared:crtend%O%s} %{shared:crtendS%O%s}"
+ 
+ /* Specific options for DBX Output.  */
+ 
