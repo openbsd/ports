@@ -1,12 +1,12 @@
-$OpenBSD: patch-odbc_unittests_Makefile_in,v 1.1 2003/02/08 17:21:41 jcs Exp $
---- src/odbc/unittests/Makefile.in.orig	Sat Feb  8 11:10:26 2003
-+++ src/odbc/unittests/Makefile.in	Sat Feb  8 11:10:35 2003
-@@ -295,7 +295,7 @@
+$OpenBSD: patch-odbc_unittests_Makefile_in,v 1.2 2003/05/18 16:57:18 jcs Exp $
+--- src/odbc/unittests/Makefile.in.orig	Sun May 18 11:24:19 2003
++++ src/odbc/unittests/Makefile.in	Sun May 18 11:24:21 2003
+@@ -472,7 +472,7 @@
  
- install-am: all-am
- 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+ installdirs:
+ 
 -install: install-am
 +install:
- uninstall-am: uninstall-includeHEADERS
+ install-exec: install-exec-am
+ install-data: install-data-am
  uninstall: uninstall-am
- all-am: Makefile $(HEADERS)

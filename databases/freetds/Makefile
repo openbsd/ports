@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2003/02/08 17:21:41 jcs Exp $
+# $OpenBSD: Makefile,v 1.12 2003/05/18 16:57:18 jcs Exp $
 
-DISTNAME=	freetds-0.60
+DISTNAME=	freetds-0.61
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=	databases
 
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 COMMENT=	"project to document and implement the TDS protocol"
 HOMEPAGE=	http://www.freetds.org/
-MASTER_SITES=	${MASTER_SITE_SUNSITE:=ALPHA/freetds/}
+MASTER_SITES=	http://ibiblio.org/pub/Linux/ALPHA/freetds/stable/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
@@ -24,8 +24,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 MAKE_ENV=	RM=rm
 MODULES=	gettext
 
-post-configure:
-	@chmod 644 ${WRKSRC}/include/tds_configs.h
+#post-configure:
+#	@chmod 644 ${WRKSRC}/include/tds_configs.h
 
 post-install:
 	@sed -e "s:@sysconfdir@:${SYSCONFDIR}:g" ${WRKSRC}/freetds.conf > \

@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_tds_unittests_Makefile_in,v 1.1 2003/02/08 17:21:41 jcs Exp $
---- src/tds/unittests/Makefile.in.orig	Sat Feb  8 11:08:00 2003
-+++ src/tds/unittests/Makefile.in	Sat Feb  8 11:08:29 2003
-@@ -360,7 +360,7 @@
+$OpenBSD: patch-src_tds_unittests_Makefile_in,v 1.2 2003/05/18 16:57:18 jcs Exp $
+--- src/tds/unittests/Makefile.in.orig	Sun May 18 11:29:00 2003
++++ src/tds/unittests/Makefile.in	Sun May 18 11:29:05 2003
+@@ -497,7 +497,7 @@
  
- install-am: all-am
- 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+ installdirs:
+ 
 -install: install-am
 +install:
- uninstall-am: uninstall-includeHEADERS
+ install-exec: install-exec-am
+ install-data: install-data-am
  uninstall: uninstall-am
- all-am: Makefile $(HEADERS)

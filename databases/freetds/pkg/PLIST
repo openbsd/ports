@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/02/08 17:21:41 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/05/18 16:57:18 jcs Exp $
 bin/freebcp
+bin/tdspool
 bin/tsql
 include/bkpublic.h
 include/cspublic.h
@@ -7,17 +8,15 @@ include/cstypes.h
 include/ctlib.h
 include/ctpublic.h
 include/dblib.h
-include/freebcp.h
 include/sqldb.h
 include/sqlfront.h
 include/sybdb.h
 include/syberror.h
 include/sybfront.h
 include/tds.h
-include/tds_configs.h
+include/tds_sysdep_public.h
 include/tdsconvert.h
-include/tdsodbc.h
-include/tdsutil.h
+include/tdssrv.h
 include/tdsver.h
 lib/libct.a
 lib/libct.la
