@@ -1,31 +1,31 @@
---- xbatt.c.orig	Tue Jan 21 15:21:27 1997
-+++ xbatt.c	Tue Jul 21 15:24:07 1998
-@@ -64,6 +64,11 @@
+--- xbatt.c.orig	Wed Jun 21 18:58:25 2000
++++ xbatt.c	Wed Jun 21 19:02:20 2000
+@@ -65,6 +65,11 @@
  # define APMDEV22	"/dev/apm"
  #endif
  
 +#ifdef __OpenBSD__
 +# include <machine/apmvar.h>
-+# define APMDEV		"/dev/apm"
++# define APMDEV                "/dev/apm"
 +#endif /* __OpenBSD__ */
 +
  #include "pixmaps/battery.xpm"
  #include "pixmaps/unknown.xpm"
  #include "bitmaps/full.xbm"
-@@ -193,6 +198,12 @@
+@@ -195,6 +200,12 @@
      }
  #endif
  
 +#ifdef __OpenBSD__
-+    /* initialize APM Interface */
-+    if ((apmfd = open(APMDEV, O_RDONLY)) == -1)
++     /* initialize APM Interface */
++     if ((apmfd = open(APMDEV, O_RDONLY)) == -1)
 +	err(1, "cannot open apm device");
 +#endif /* __OpenBSD__ */
 +
      /* start X-Window session */
      XtSetLanguageProc( NULL, NULL, NULL );
      toplevel = XtOpenApplication(&appContext, "XBatt",
-@@ -369,6 +380,50 @@
+@@ -371,6 +382,50 @@
  						/* chrging or not.	*/
      }
  #endif	/* FreeBSD */
@@ -38,39 +38,39 @@
 +
 +    /* get current status */
 +    if (info.battery_life == APM_BATT_LIFE_UNKNOWN) {
-+	switch (info.battery_state) {
-+	  case APM_BATT_HIGH:
-+	    ret.remain = 100;
-+	    break;
-+	  case APM_BATT_LOW:
-+	    ret.remain = 40;
-+	    break;
-+	  case APM_BATT_CRITICAL:
-+	    ret.remain = 10;
-+	    break;
-+	  default:        /* expected to be APM_STAT_UNKNOWN */
-+	    ret.remain = APM_STAT_UNKNOWN;
-+	}
++       switch (info.battery_state) {
++         case APM_BATT_HIGH:
++           ret.remain = 100;
++           break;
++         case APM_BATT_LOW:
++           ret.remain = 40;
++           break;
++         case APM_BATT_CRITICAL:
++           ret.remain = 10;
++           break;
++         default:        /* expected to be APM_STAT_UNKNOWN */
++           ret.remain = APM_STAT_UNKNOWN;
++       }
 +    } else if (info.battery_life > 100) {
-+	/* some APM BIOSes return values slightly > 100 */
-+	ret.remain = 100;
++       /* some APM BIOSes return values slightly > 100 */
++       ret.remain = 100;
 +    } else {
-+	ret.remain = info.battery_life;
++       ret.remain = info.battery_life;
 +    }
 +
 +    /* get AC-line status */
 +    if (info.ac_state == APM_AC_ON) {
-+	ret.acline = APM_STAT_LINE_ON;
++       ret.acline = APM_STAT_LINE_ON;
 +    } else {
-+	ret.acline = APM_STAT_LINE_OFF;
++       ret.acline = APM_STAT_LINE_OFF;
 +    }
 +
 +    /* get charging status */
 +    if (info.battery_state == APM_BATT_CHARGING) {
-+	ret.charge = APM_STAT_BATT_CHARGING;
++       ret.charge = APM_STAT_BATT_CHARGING;
 +    } else {
-+	ret.charge = APM_STAT_BATT_HIGH;	/* I only want to know,	*/
-+						/* chrging or not.	*/
++       ret.charge = APM_STAT_BATT_HIGH;        /* I only want to know, */
++                                               /* chrging or not.      */
 +    }
 +#endif /* __OpenBSD__ */
  
