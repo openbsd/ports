@@ -1,0 +1,33 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2001/10/27 09:39:00 shell Exp $
+
+COMMENT=	"perl interface to SSL sockets"
+
+VERSION=	0.80
+DISTNAME=	IO-Socket-SSL-${VERSION}
+PKGNAME=	p5-${DISTNAME}
+CATEGORIES=	security perl5
+NEED_VERSION=	1.484
+
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR= IO
+
+MAINTAINER=	Shell Hung <shell@openbsd.org>
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+BUILD_DEPENDS=	::security/p5-Net_SSLeay
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+CONFIGURE_STYLE= perl
+
+EXDIR=		${PREFIX}/share/examples/p5-IO-Socket-SSL/
+
+post-install:
+	${INSTALL_DATA_DIR} ${DOCDIR} ${EXDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.jpg ${EXDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/demo/*.pl ${EXDIR}
+
+.include <bsd.port.mk>

@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/10/27 09:39:00 shell Exp $
+libdata/perl5/site_perl/IO/Socket/SSL.pm
+man/man3/IO::Socket::SSL.3p
+share/examples/p5-IO-Socket-SSL/ClassDiagram-HTTP.jpg
+share/examples/p5-IO-Socket-SSL/ClassDiagram-LWP.jpg
+share/examples/p5-IO-Socket-SSL/ClassDiagram-io-socket-ssl.jpg
+share/examples/p5-IO-Socket-SSL/ClassDiagram-utils.jpg
+share/examples/p5-IO-Socket-SSL/daemon.pl
+share/examples/p5-IO-Socket-SSL/ssl_client.pl
+share/examples/p5-IO-Socket-SSL/ssl_server.pl
+@dirrm share/examples/p5-IO-Socket-SSL
