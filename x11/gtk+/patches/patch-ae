@@ -1,11 +1,11 @@
 --- configure.orig	Wed May 24 20:31:48 2000
-+++ configure	Wed Jun 21 06:05:15 2000
-@@ -4099,7 +4099,7 @@
- 
- # AM_GTK_GNU_GETTEXT above substs $DATADIRNAME
- # this is the directory where the *.{mo,gmo} files are installed
--gtklocaledir='${prefix}/${DATADIRNAME}/locale'
-+gtklocaledir='${prefix}/share/locale'
- 
- 
- echo $ac_n "checking for extra flags to get ANSI library prototypes""... $ac_c" 1>&6
++++ configure	Sun Aug 27 00:25:22 2000
+@@ -3726,7 +3726,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo

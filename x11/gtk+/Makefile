@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2000/07/12 17:55:58 brad Exp $
+# $OpenBSD: Makefile,v 1.39 2000/08/27 17:36:12 brad Exp $
 
 DISTNAME=	gtk+-1.2.8
 CATEGORIES=	x11 devel
-NEED_VERSION=	1.310
+NEED_VERSION=	1.320
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
 		http://www.ameth.org/gimp/gtk/v1.2/
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
