@@ -1,3 +1,4 @@
 bin/gom
-bin/gomconfig
+sbin/gomconfig
 man/man1/gom.1
+man/man8/gomconfig.8

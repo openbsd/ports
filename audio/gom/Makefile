@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 1999/09/17 09:22:51 turan Exp $
+# $OpenBSD: Makefile,v 1.3 1999/11/05 11:27:35 kevlo Exp $
 
-BROKEN=		"sources no longer availible"
-
-DISTNAME=	gom-0.29.99
+DISTNAME=	gom-0.29.103
 CATEGORIES=     audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/sound/mixers

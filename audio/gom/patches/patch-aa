@@ -1,6 +1,6 @@
---- configure.in~	Fri Jan 22 18:12:21 1999
-+++ configure.in	Sun Jul 11 03:24:40 1999
-@@ -36,9 +36,14 @@
+--- configure.in.orig	Fri Nov  5 17:32:54 1999
++++ configure.in	Fri Nov  5 17:35:01 1999
+@@ -39,9 +39,14 @@
  
  dnl Checks for libraries.
  
@@ -14,18 +14,18 @@
 +
 +AC_CHECK_LIB(ossaudio, _oss_ioctl)
 +if [[ "$ac_cv_lib_ossaudio__oss_ioctl" != "yes" ]]
-+    then AC_MSG_ERROR("Need ossaudio library!")
++    then AC_MSG_ERROR("Need ossaudio library!")   
  fi
  
  
-@@ -68,8 +73,8 @@
+@@ -71,8 +76,8 @@
      AC_MSG_WARN([Not a POSIX.1 system; this may cause problems.])
  fi
  
 -AC_CHECK_HEADERS(sys/soundcard.h)
 -if [[ "$ac_cv_header_sys_soundcard_h" != "yes" ]]; then
 +AC_CHECK_HEADERS(soundcard.h)
-+if [[ "$ac_cv_header_soundcard_h" != "yes" ]]; then
++if [[ "$ac_cv_header_soundcard_h" != "yes" ]]; then   
      AC_MSG_ERROR([No sound card header file.])
  fi
  
