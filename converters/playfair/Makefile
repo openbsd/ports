@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.2 2004/04/12 07:22:23 jolan Exp $
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS} sparc64
+# $OpenBSD: Makefile,v 1.3 2004/06/14 22:58:29 naddy Exp $
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"strips DRM from iTMS protected AAC audio files"
 DISTNAME=	playfair-0.5.0
