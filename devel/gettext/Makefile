@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 1999/03/29 22:44:23 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/04/18 20:30:05 brad Exp $
 # $FreeBSD: Makefile,v 1.4 1998/11/18 15:09:35 vanilla Exp $
 
 DISTNAME=	gettext-0.10.35
 CATEGORIES=	devel
 MASTER_SITES=	ftp://alpha.gnu.ai.mit.edu/gnu/ \
-		ftp://alpha.gnu.org/pub/gnu
+		ftp://alpha.gnu.org/pub/gnu/
 
 NEED_VERSION=	1.73
 
