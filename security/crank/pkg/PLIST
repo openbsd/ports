@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/06 08:07:48 obecian Exp $
+bin/crank
+share/crank/bift.dat
+share/crank/slft.dat
+share/crank/trift.dat
+share/doc/crank/BUGS
+share/doc/crank/HISTORY
+share/doc/crank/LICENSE
+share/doc/crank/README
+share/doc/crank/ciphertext.txt
+@dirrm share/crank
+@dirrm share/doc/crank

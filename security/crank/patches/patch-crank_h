@@ -1,0 +1,15 @@
+--- crank.h.orig	Mon Jan 29 23:44:56 2001
++++ crank.h	Mon Jan 29 23:47:29 2001
+@@ -67,9 +67,9 @@ typedef struct {
+ 
+ #define GLOBAL_TRANSFORMED_TEXT (gtk_editable_get_chars(GTK_EDITABLE(textarea), 0, -1))
+ 
+-#define DEFAULT_SLFT "data/slft.dat"
+-#define DEFAULT_BIFT "data/bift.dat"
+-#define DEFAULT_TRIFT "data/trift.dat"
++#define DEFAULT_SLFT "!!LOCALBASE!!/share/crank/slft.dat"
++#define DEFAULT_BIFT "!!LOCALBASE!!/share/crank/bift.dat"
++#define DEFAULT_TRIFT "!!LOCALBASE!!/share/crank/trift.dat"
+ 
+ #define STR_FREQUENCY "Frequency"
+ #define STR_STANDARD_FREQUENCY "Standard Frequency"
