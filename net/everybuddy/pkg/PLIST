@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/17 13:35:32 aaron Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/08/27 14:18:07 todd Exp $
 bin/contact-update.pl
 bin/everybuddy
 bin/update.pl
