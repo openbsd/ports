@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/19 00:21:00 lebel Exp $
+bin/gcd
+bin/grip
+man/man1/grip.1
