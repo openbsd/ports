@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/11 06:03:47 marcm Exp $
+# $OpenBSD: Makefile,v 1.10 2005/02/20 13:12:21 alek Exp $
 
 COMMENT=		"GNOME Application Libs"
 
@@ -25,7 +25,7 @@ WANTLIB=		ICE ORBit-2.0.0 SM X11 Xext Xft Xinerama Xrender \
 			gnomeprint-2-2.0.0 gnomevfs-2.0.0 gobject-2.0.0.0 \
 			gthread-2.0.0.0 gtk-x11-2.0.0.0 m pango-1.0.0.0 \
 			pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
-			popt xml2 z
+			popt xml2 z Xcursor
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gal/2.2/}
 EXTRACT_SUFX=		.tar.bz2
