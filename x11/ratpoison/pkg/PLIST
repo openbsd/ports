@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/11/10 18:31:38 heko Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/05/08 02:13:34 lebel Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/ratpoison.info
 bin/ratpoison
 info/ratpoison.info
@@ -8,5 +8,9 @@ share/doc/ratpoison/COPYING
 share/doc/ratpoison/ChangeLog
 share/doc/ratpoison/NEWS
 share/doc/ratpoison/README
+share/ratpoison/genrpbindings
+share/ratpoison/ratpoison.el
+share/ratpoison/split.sh
+@dirrm share/ratpoison
 @dirrm share/doc/ratpoison
 @exec install-info --info-dir=%D/info %D/info/ratpoison.info

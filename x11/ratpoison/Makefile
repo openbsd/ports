@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/11/10 18:31:38 heko Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/08 02:13:34 lebel Exp $
 
 COMMENT=	"minimal wm based on GNU screen"
-DISTNAME=	ratpoison-1.0.0
+DISTNAME=	ratpoison-1.1.0
 CATEGORIES=	x11
-NEED_VERSION=	1.489
+NEED_VERSION=	1.525
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://openbsd.rutgers.edu/
 
