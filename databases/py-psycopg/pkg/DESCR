@@ -20,5 +20,5 @@ unstable. It just does not support the Python DBAPI-2.0 completely
 and is missing some of the more esoteric features we want it to
 have.
 
-Flavors:
-   no_zope - do not build package that contains Zope database adapter
+Note that you need to install the -zope subpackage if you want to
+use psycopg as a PostgreSQL database adapter for Zope.
