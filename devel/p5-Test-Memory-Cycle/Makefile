@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/10 02:30:39 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/27 20:23:21 msf Exp $
 
 COMMENT= 	"Perl extension for emulating troublesome interfaces"
 
-DISTNAME=	Test-Memory-Cycle-0.02
+DISTNAME=	Test-Memory-Cycle-1.00
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
