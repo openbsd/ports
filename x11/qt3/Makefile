@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/11/23 18:52:22 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/11/23 22:00:20 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -250,6 +250,7 @@ do-install:
 	    ${QT_PLUGINSDIR}/designer
 	${INSTALL_DATA} ${WRKBUILD}/plugins/designer/librcplugin.so \
 	    ${QT_PLUGINSDIR}/designer
+	cp -R ${WRKSRC}/mkspecs ${QT_LIBDIR}/mkspecs
 .endif
 
 PKGNAME=		qt3-${VERSION}

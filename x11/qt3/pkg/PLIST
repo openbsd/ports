@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/11/23 18:52:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/11/23 22:00:20 espie Exp $
 bin/assistant
 bin/designer3
 bin/findtr3
@@ -1193,6 +1193,117 @@ lib/qt3/man/man3/qxmlparseexception.3
 lib/qt3/man/man3/qxmlreader.3
 lib/qt3/man/man3/qxmlsimplereader.3
 lib/qt3/man/man3/qxtwidget.3
+lib/qt3/mkspecs/aix-g++/qmake.conf
+lib/qt3/mkspecs/aix-g++/qplatformdefs.h
+lib/qt3/mkspecs/aix-xlc-64/qmake.conf
+lib/qt3/mkspecs/aix-xlc-64/qplatformdefs.h
+lib/qt3/mkspecs/aix-xlc/qmake.conf
+lib/qt3/mkspecs/aix-xlc/qplatformdefs.h
+lib/qt3/mkspecs/bsdi-g++/qmake.conf
+lib/qt3/mkspecs/bsdi-g++/qplatformdefs.h
+lib/qt3/mkspecs/cygwin-g++/qmake.conf
+lib/qt3/mkspecs/cygwin-g++/qplatformdefs.h
+lib/qt3/mkspecs/darwin-g++/qmake.conf
+lib/qt3/mkspecs/darwin-g++/qplatformdefs.h
+lib/qt3/mkspecs/default
+lib/qt3/mkspecs/dgux-g++/qmake.conf
+lib/qt3/mkspecs/dgux-g++/qplatformdefs.h
+lib/qt3/mkspecs/freebsd-g++/qmake.conf
+lib/qt3/mkspecs/freebsd-g++/qplatformdefs.h
+lib/qt3/mkspecs/hpux-acc-64/qmake.conf
+lib/qt3/mkspecs/hpux-acc-64/qplatformdefs.h
+lib/qt3/mkspecs/hpux-acc-o64/qmake.conf
+lib/qt3/mkspecs/hpux-acc-o64/qplatformdefs.h
+lib/qt3/mkspecs/hpux-acc/qmake.conf
+lib/qt3/mkspecs/hpux-acc/qplatformdefs.h
+lib/qt3/mkspecs/hpux-cc/qmake.conf
+lib/qt3/mkspecs/hpux-cc/qplatformdefs.h
+lib/qt3/mkspecs/hpux-g++/qmake.conf
+lib/qt3/mkspecs/hpux-g++/qplatformdefs.h
+lib/qt3/mkspecs/hurd-g++/qmake.conf
+lib/qt3/mkspecs/hurd-g++/qplatformdefs.h
+lib/qt3/mkspecs/irix-cc-64/qmake.conf
+lib/qt3/mkspecs/irix-cc-64/qplatformdefs.h
+lib/qt3/mkspecs/irix-cc-o32/qmake.conf
+lib/qt3/mkspecs/irix-cc-o32/qplatformdefs.h
+lib/qt3/mkspecs/irix-cc/qmake.conf
+lib/qt3/mkspecs/irix-cc/qplatformdefs.h
+lib/qt3/mkspecs/irix-g++/qmake.conf
+lib/qt3/mkspecs/irix-g++/qplatformdefs.h
+lib/qt3/mkspecs/linux-cxx/qmake.conf
+lib/qt3/mkspecs/linux-cxx/qplatformdefs.h
+lib/qt3/mkspecs/linux-g++/qmake.conf
+lib/qt3/mkspecs/linux-g++/qplatformdefs.h
+lib/qt3/mkspecs/linux-icc/qmake.conf
+lib/qt3/mkspecs/linux-icc/qplatformdefs.h
+lib/qt3/mkspecs/linux-kcc/qmake.conf
+lib/qt3/mkspecs/linux-kcc/qplatformdefs.h
+lib/qt3/mkspecs/linux-pgcc/qmake.conf
+lib/qt3/mkspecs/linux-pgcc/qplatformdefs.h
+lib/qt3/mkspecs/mac9-mwerks/mwerksapp.xml
+lib/qt3/mkspecs/mac9-mwerks/mwerkslib.xml
+lib/qt3/mkspecs/mac9-mwerks/qmake.conf
+lib/qt3/mkspecs/mac9-mwerks/qplatformdefs.h
+lib/qt3/mkspecs/macx-g++/Info.plist.app
+lib/qt3/mkspecs/macx-g++/qmake.conf
+lib/qt3/mkspecs/macx-g++/qplatformdefs.h
+lib/qt3/mkspecs/macx-mwerks/mwerkstmpl.xml
+lib/qt3/mkspecs/macx-mwerks/qmake.conf
+lib/qt3/mkspecs/macx-mwerks/qplatformdefs.h
+lib/qt3/mkspecs/macx-pbuilder/Info.plist.app
+lib/qt3/mkspecs/macx-pbuilder/qmake.conf
+lib/qt3/mkspecs/macx-pbuilder/qplatformdefs.h
+lib/qt3/mkspecs/netbsd-g++/qmake.conf
+lib/qt3/mkspecs/netbsd-g++/qplatformdefs.h
+lib/qt3/mkspecs/openbsd-g++/qmake.conf
+@comment lib/qt3/mkspecs/openbsd-g++/qmake.conf.orig
+lib/qt3/mkspecs/openbsd-g++/qplatformdefs.h
+lib/qt3/mkspecs/qnx-g++/qmake.conf
+lib/qt3/mkspecs/qnx-g++/qplatformdefs.h
+lib/qt3/mkspecs/reliant-cds-64/qmake.conf
+lib/qt3/mkspecs/reliant-cds-64/qplatformdefs.h
+lib/qt3/mkspecs/reliant-cds/qmake.conf
+lib/qt3/mkspecs/reliant-cds/qplatformdefs.h
+lib/qt3/mkspecs/sco-cc/qmake.conf
+lib/qt3/mkspecs/sco-cc/qplatformdefs.h
+lib/qt3/mkspecs/sco-g++/qmake.conf
+lib/qt3/mkspecs/sco-g++/qplatformdefs.h
+lib/qt3/mkspecs/solaris-cc-64/qmake.conf
+lib/qt3/mkspecs/solaris-cc-64/qplatformdefs.h
+lib/qt3/mkspecs/solaris-cc/qmake.conf
+lib/qt3/mkspecs/solaris-cc/qplatformdefs.h
+lib/qt3/mkspecs/solaris-g++-64/qmake.conf
+lib/qt3/mkspecs/solaris-g++-64/qplatformdefs.h
+lib/qt3/mkspecs/solaris-g++/qmake.conf
+lib/qt3/mkspecs/solaris-g++/qplatformdefs.h
+lib/qt3/mkspecs/solaris-kcc/qmake.conf
+lib/qt3/mkspecs/solaris-kcc/qplatformdefs.h
+lib/qt3/mkspecs/tru64-cxx/qmake.conf
+lib/qt3/mkspecs/tru64-cxx/qplatformdefs.h
+lib/qt3/mkspecs/tru64-g++/qmake.conf
+lib/qt3/mkspecs/tru64-g++/qplatformdefs.h
+lib/qt3/mkspecs/ultrix-g++/qmake.conf
+lib/qt3/mkspecs/unixware-cc/qmake.conf
+lib/qt3/mkspecs/unixware-cc/qplatformdefs.h
+lib/qt3/mkspecs/unixware-g++/qmake.conf
+lib/qt3/mkspecs/unixware-g++/qplatformdefs.h
+lib/qt3/mkspecs/win32-borland/qmake.conf
+lib/qt3/mkspecs/win32-borland/qplatformdefs.h
+lib/qt3/mkspecs/win32-g++/qmake.conf
+lib/qt3/mkspecs/win32-icc/qmake.conf
+lib/qt3/mkspecs/win32-icc/qplatformdefs.h
+lib/qt3/mkspecs/win32-icc/win32app.dsp
+lib/qt3/mkspecs/win32-icc/win32dll.dsp
+lib/qt3/mkspecs/win32-icc/win32lib.dsp
+lib/qt3/mkspecs/win32-msvc.net/qmake.conf
+lib/qt3/mkspecs/win32-msvc.net/qplatformdefs.h
+lib/qt3/mkspecs/win32-msvc/qmake.conf
+lib/qt3/mkspecs/win32-msvc/qplatformdefs.h
+lib/qt3/mkspecs/win32-msvc/win32app.dsp
+lib/qt3/mkspecs/win32-msvc/win32dll.dsp
+lib/qt3/mkspecs/win32-msvc/win32lib.dsp
+lib/qt3/mkspecs/win32-visage/qmake.conf
+lib/qt3/mkspecs/win32-watcom/qmake.conf
 lib/qt3/plugins/designer/libcppeditor.so
 lib/qt3/plugins/designer/libdlgplugin.so
 lib/qt3/plugins/designer/librcplugin.so
@@ -1215,6 +1326,58 @@ share/doc/qt3/changes-3.${VERSION}-b2
 @dirrm lib/qt3/plugins/imageformats
 @dirrm lib/qt3/plugins/designer
 @dirrm lib/qt3/plugins
+@dirrm lib/qt3/mkspecs/win32-watcom
+@dirrm lib/qt3/mkspecs/win32-visage
+@dirrm lib/qt3/mkspecs/win32-msvc.net
+@dirrm lib/qt3/mkspecs/win32-msvc
+@dirrm lib/qt3/mkspecs/win32-icc
+@dirrm lib/qt3/mkspecs/win32-g++
+@dirrm lib/qt3/mkspecs/win32-borland
+@dirrm lib/qt3/mkspecs/unixware-g++
+@dirrm lib/qt3/mkspecs/unixware-cc
+@dirrm lib/qt3/mkspecs/ultrix-g++
+@dirrm lib/qt3/mkspecs/tru64-g++
+@dirrm lib/qt3/mkspecs/tru64-cxx
+@dirrm lib/qt3/mkspecs/solaris-kcc
+@dirrm lib/qt3/mkspecs/solaris-g++-64
+@dirrm lib/qt3/mkspecs/solaris-g++
+@dirrm lib/qt3/mkspecs/solaris-cc-64
+@dirrm lib/qt3/mkspecs/solaris-cc
+@dirrm lib/qt3/mkspecs/sco-g++
+@dirrm lib/qt3/mkspecs/sco-cc
+@dirrm lib/qt3/mkspecs/reliant-cds-64
+@dirrm lib/qt3/mkspecs/reliant-cds
+@dirrm lib/qt3/mkspecs/qnx-g++
+@dirrm lib/qt3/mkspecs/openbsd-g++
+@dirrm lib/qt3/mkspecs/netbsd-g++
+@dirrm lib/qt3/mkspecs/macx-pbuilder
+@dirrm lib/qt3/mkspecs/macx-mwerks
+@dirrm lib/qt3/mkspecs/macx-g++
+@dirrm lib/qt3/mkspecs/mac9-mwerks
+@dirrm lib/qt3/mkspecs/linux-pgcc
+@dirrm lib/qt3/mkspecs/linux-kcc
+@dirrm lib/qt3/mkspecs/linux-icc
+@dirrm lib/qt3/mkspecs/linux-g++
+@dirrm lib/qt3/mkspecs/linux-cxx
+@dirrm lib/qt3/mkspecs/irix-g++
+@dirrm lib/qt3/mkspecs/irix-cc-o32
+@dirrm lib/qt3/mkspecs/irix-cc-64
+@dirrm lib/qt3/mkspecs/irix-cc
+@dirrm lib/qt3/mkspecs/hurd-g++
+@dirrm lib/qt3/mkspecs/hpux-g++
+@dirrm lib/qt3/mkspecs/hpux-cc
+@dirrm lib/qt3/mkspecs/hpux-acc-o64
+@dirrm lib/qt3/mkspecs/hpux-acc-64
+@dirrm lib/qt3/mkspecs/hpux-acc
+@dirrm lib/qt3/mkspecs/freebsd-g++
+@dirrm lib/qt3/mkspecs/dgux-g++
+@dirrm lib/qt3/mkspecs/darwin-g++
+@dirrm lib/qt3/mkspecs/cygwin-g++
+@dirrm lib/qt3/mkspecs/bsdi-g++
+@dirrm lib/qt3/mkspecs/aix-xlc-64
+@dirrm lib/qt3/mkspecs/aix-xlc
+@dirrm lib/qt3/mkspecs/aix-g++
+@dirrm lib/qt3/mkspecs
 @dirrm lib/qt3/man/man3
 @dirrm lib/qt3/man/man1
 @dirrm lib/qt3/man
