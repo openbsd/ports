@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:04:35 espie Exp $
-@pkgcfl mplex-*
+@comment $OpenBSD: PLIST,v 1.3 2004/09/18 12:57:32 espie Exp $
+@conflict mplex-*
 bin/glav
 bin/jpeg2yuv
 bin/lav2avi.sh
