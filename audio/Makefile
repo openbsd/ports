@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2004/12/22 06:19:23 marcm Exp $
+# $OpenBSD: Makefile,v 1.117 2005/01/21 06:50:45 jolan Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -13,6 +13,7 @@
      SUBDIR += cdparanoia
 #    SUBDIR += cdplay
      SUBDIR += cplay
+     SUBDIR += daapd
      SUBDIR += disc-cover
      SUBDIR += easytag
      SUBDIR += esound
