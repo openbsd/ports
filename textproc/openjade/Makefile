@@ -1,27 +1,29 @@
-# $OpenBSD: Makefile,v 1.3 2000/09/26 02:26:47 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/05 11:51:55 avsm Exp $
 
 DISTNAME=	openjade-1.3
 CATEGORIES=	textproc
-NEED_VERSION=	1.320
+NEED_VERSION=	1.338
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= openjade
 
 HOMEPAGE=	http://openjade.sourceforge.net/
-
-MAINTAINER=	matthieu@openbsd.org
+MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FLAGS=	RANLIB="${RANLIB}"
+MAKE_FLAGS=	RANLIB="${RANLIB}" XDEFINES='-DJADE_MIF -DJADE_HTML -DSGML_CATALOG_FILES_DEFAULT=\"${PREFIX}/share/sgml/catalog\"' CFLAGS="${CFLAGS}" CC="${CC}"
+
 FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}" INSTALL="${INSTALL_PROGRAM}"
 
 USE_GMAKE=	Yes
 
-DOCDIR= ${PREFIX}/share/doc/openjade
-
+DOCDIR=		${PREFIX}/share/doc/openjade
+SGMLDIR=	${PREFIX}/share/sgml/openjade
+SGMLFILES= 	fot.dtd catalog dsssl.dtd style-sheet.dtd builtins.dsl demo.sgm demo.dsl
+	
 pre-build:      
 	@echo ""
 	@echo "*** WARNING: you may see an error such as"
@@ -38,5 +40,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${DOCDIR}/sp
 	${INSTALL_DATA} ${WRKSRC}/jadedoc/*.htm ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/jadedoc/images/*.gif ${DOCDIR}/images
+	${INSTALL_DATA_DIR} ${SGMLDIR}
+.for i in ${SGMLFILES}
+	${INSTALL_DATA}	${WRKSRC}/dsssl/$i ${SGMLDIR}
+.endfor
 
 .include <bsd.port.mk>
