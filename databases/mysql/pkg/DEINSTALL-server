@@ -1,4 +1,5 @@
-# $OpenBSD: DEINSTALL-server,v 1.4 2002/02/20 18:03:33 brad Exp $
+#!/bin/sh
+# $OpenBSD: DEINSTALL-server,v 1.5 2003/01/20 19:15:31 brad Exp $
 #
 # MySQL de-installation
 
