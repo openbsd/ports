@@ -1,20 +1,21 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.3 2001/02/13 00:40:46 danh Exp $
+# $OpenBSD: DEINSTALL,v 1.4 2001/03/20 15:53:40 brad Exp $
 #
 # ntp de-installation
 
 set -e
 PATH="/bin:/usr/bin:/sbin:/usr/sbin"
 PREFIX="${PKG_PREFIX:-/usr/local}"
-CONFIG_FILE="${SYSCONFDIR}/ntp.conf"
+CONFIG_DIR="${SYSCONFDIR}"
+CONFIG_FILE="$CONFIG_DIR/ntp.conf"
 
-if [ -f "${CONFIG_FILE}" ]; then
+if [ -f "$CONFIG_FILE" ]; then
     echo
     echo "+---------------"
     echo "| To completely deinstall the $1 package you need to"
     echo "| perform this step as root:"
     echo "|"
-    echo "|           rm -f ${CONFIG_FILE}"
+    echo "|           rm -f $CONFIG_DIR/ntp.*"
     echo "|"
     echo "| Do not do this if you plan on re-installing $1 at"
     echo "| some future time.  You may also want to remove any"
