@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/20 10:35:35 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/01/30 18:35:22 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"interface to the UNIX system logger"
 
-DISTNAME=	Syslog-0.97
-PKGNAME=	p5-Unix-${DISTNAME}
+DISTNAME=	Unix-Syslog-0.100
+PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	sysutils perl5
 
 MAINTAINER=	Ibrahim Khalifa <ibo@toontown.org>
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c 
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Unix/}
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Unix/MHARNISCH/}
 
 CONFIGURE_STYLE= perl
 
