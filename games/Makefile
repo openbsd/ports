@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2003/06/01 10:39:21 jolan Exp $
+# $OpenBSD: Makefile,v 1.97 2003/07/07 12:41:43 brad Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -32,6 +32,7 @@
 #    SUBDIR += dontspace
 #    SUBDIR += doom
      SUBDIR += dopewars
+     SUBDIR += dopewars,no_x11
      SUBDIR += eboard
      SUBDIR += eboard-extras
 #    SUBDIR += empire
