@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2000/10/22 15:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/11/18 15:30:50 jasoni Exp $
 
-DISTNAME=	TekNap-1.0
-PKGNAME=	teknap-1.0
+VERSION=	1.2
+DISTNAME=	TekNap-${VERSION}
+PKGNAME=	teknap-${VERSION}
 CATEGORIES=	audio
 NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.teknap.com/pub/TekNap/
@@ -20,6 +21,6 @@ CONFIGURE_STYLE=	gnu dest
 WRKDIST=	${WRKDIR}/TekNap
 
 post-install:
-	@ln -s TekNap-1.0 ${PREFIX}/bin/teknap
+	@ln -s TekNap-${VERSION} ${PREFIX}/bin/teknap
 
 .include <bsd.port.mk>

@@ -1,10 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/08/28 18:11:40 jasoni Exp $
-bin/TekNap-1.0
+@comment $OpenBSD: PLIST,v 1.2 2000/11/18 15:30:51 jasoni Exp $
+bin/TekNap-1.2
 bin/teknap
 share/TekNap/help/1_General/1_General
-share/TekNap/help/1_General/CVS/Entries
-share/TekNap/help/1_General/CVS/Repository
-share/TekNap/help/1_General/CVS/Root
 share/TekNap/help/1_General/close
 share/TekNap/help/1_General/disconnect
 share/TekNap/help/1_General/help
@@ -38,9 +35,6 @@ share/TekNap/help/1_General/version
 share/TekNap/help/1_General/w
 share/TekNap/help/1_General/whois
 share/TekNap/help/2_Napster/2_Napster
-share/TekNap/help/2_Napster/CVS/Entries
-share/TekNap/help/2_Napster/CVS/Repository
-share/TekNap/help/2_Napster/CVS/Root
 share/TekNap/help/2_Napster/browse
 share/TekNap/help/2_Napster/cignore
 share/TekNap/help/2_Napster/dbsearch
@@ -63,9 +57,6 @@ share/TekNap/help/2_Napster/share
 share/TekNap/help/2_Napster/signore
 share/TekNap/help/2_Napster/soundex
 share/TekNap/help/3_Admin/3_Admin
-share/TekNap/help/3_Admin/CVS/Entries
-share/TekNap/help/3_Admin/CVS/Repository
-share/TekNap/help/3_Admin/CVS/Root
 share/TekNap/help/3_Admin/admin
 share/TekNap/help/3_Admin/announce
 share/TekNap/help/3_Admin/ban
@@ -122,13 +113,7 @@ share/TekNap/help/3_Admin/version
 share/TekNap/help/3_Admin/voice
 share/TekNap/help/3_Admin/wallop
 share/TekNap/help/4_Misc/4_Misc
-share/TekNap/help/4_Misc/CVS/Entries
-share/TekNap/help/4_Misc/CVS/Repository
-share/TekNap/help/4_Misc/CVS/Root
 share/TekNap/help/4_Misc/beep
-share/TekNap/help/4_Misc/bind/CVS/Entries
-share/TekNap/help/4_Misc/bind/CVS/Repository
-share/TekNap/help/4_Misc/bind/CVS/Root
 share/TekNap/help/4_Misc/bind/altcharset
 share/TekNap/help/4_Misc/bind/backspace
 share/TekNap/help/4_Misc/bind/backward_character
@@ -153,8 +138,6 @@ share/TekNap/help/4_Misc/bind/forward_character
 share/TekNap/help/4_Misc/bind/forward_history
 share/TekNap/help/4_Misc/bind/forward_word
 share/TekNap/help/4_Misc/bind/highlight_off
-share/TekNap/help/4_Misc/bind/meta1_character
-share/TekNap/help/4_Misc/bind/meta4_character
 share/TekNap/help/4_Misc/bind/new_beginning_of_line
 share/TekNap/help/4_Misc/bind/new_scroll_backward
 share/TekNap/help/4_Misc/bind/new_scroll_end
@@ -163,7 +146,6 @@ share/TekNap/help/4_Misc/bind/next_window
 share/TekNap/help/4_Misc/bind/nothing
 share/TekNap/help/4_Misc/bind/parse_command
 share/TekNap/help/4_Misc/bind/previous_window
-share/TekNap/help/4_Misc/bind/quit_irc
 share/TekNap/help/4_Misc/bind/quote_character
 share/TekNap/help/4_Misc/bind/refresh_inputline
 share/TekNap/help/4_Misc/bind/refresh_screen
@@ -176,7 +158,6 @@ share/TekNap/help/4_Misc/bind/scroll_start
 share/TekNap/help/4_Misc/bind/self_insert
 share/TekNap/help/4_Misc/bind/send_line
 share/TekNap/help/4_Misc/bind/shove_to_history
-share/TekNap/help/4_Misc/bind/stop_irc
 share/TekNap/help/4_Misc/bind/swap_last_window
 share/TekNap/help/4_Misc/bind/swap_next_window
 share/TekNap/help/4_Misc/bind/swap_previous_window
@@ -215,9 +196,6 @@ share/TekNap/help/4_Misc/history
 share/TekNap/help/4_Misc/ls
 share/TekNap/help/4_Misc/ps
 share/TekNap/help/4_Misc/rbind
-share/TekNap/help/4_Misc/set/CVS/Entries
-share/TekNap/help/4_Misc/set/CVS/Repository
-share/TekNap/help/4_Misc/set/CVS/Root
 share/TekNap/help/4_Misc/set/beep
 share/TekNap/help/4_Misc/set/beep_max
 share/TekNap/help/4_Misc/set/beep_on_msg
@@ -226,7 +204,6 @@ share/TekNap/help/4_Misc/set/blink_video
 share/TekNap/help/4_Misc/set/bold_video
 share/TekNap/help/4_Misc/set/clock
 share/TekNap/help/4_Misc/set/clock_24hour
-share/TekNap/help/4_Misc/set/clock_alarm
 share/TekNap/help/4_Misc/set/clock_format
 share/TekNap/help/4_Misc/set/command_mode
 share/TekNap/help/4_Misc/set/display
@@ -249,9 +226,6 @@ share/TekNap/help/4_Misc/set/lastlog
 share/TekNap/help/4_Misc/set/lastlog_level
 share/TekNap/help/4_Misc/set/load_path
 share/TekNap/help/4_Misc/set/nd_space_max
-share/TekNap/help/4_Misc/set/reverse_status_line
-share/TekNap/help/4_Misc/set/reverse_video
-share/TekNap/help/4_Misc/set/scroll
 share/TekNap/help/4_Misc/set/scroll_lines
 share/TekNap/help/4_Misc/set/scrollback
 share/TekNap/help/4_Misc/set/scrollback_ratio
@@ -263,45 +237,31 @@ share/TekNap/help/4_Misc/set/show_channel_names
 share/TekNap/help/4_Misc/set/show_end_of_msgs
 share/TekNap/help/4_Misc/set/show_numerics
 share/TekNap/help/4_Misc/set/show_status_all
-share/TekNap/help/4_Misc/set/status_away
 share/TekNap/help/4_Misc/set/status_channel
-share/TekNap/help/4_Misc/set/status_chanop
 share/TekNap/help/4_Misc/set/status_clock
-share/TekNap/help/4_Misc/set/status_does_expandos
-share/TekNap/help/4_Misc/set/status_format
 share/TekNap/help/4_Misc/set/status_hold
 share/TekNap/help/4_Misc/set/status_hold_lines
 share/TekNap/help/4_Misc/set/status_insert
-share/TekNap/help/4_Misc/set/status_mail
-share/TekNap/help/4_Misc/set/status_mode
 share/TekNap/help/4_Misc/set/status_nick
 share/TekNap/help/4_Misc/set/status_no_repeat
 share/TekNap/help/4_Misc/set/status_notify
-share/TekNap/help/4_Misc/set/status_oper
 share/TekNap/help/4_Misc/set/status_overwrite
 share/TekNap/help/4_Misc/set/status_query
 share/TekNap/help/4_Misc/set/status_scrollback
 share/TekNap/help/4_Misc/set/status_server
-share/TekNap/help/4_Misc/set/status_truncate_rhs
-share/TekNap/help/4_Misc/set/status_umode
 share/TekNap/help/4_Misc/set/status_user
-share/TekNap/help/4_Misc/set/status_voice
 share/TekNap/help/4_Misc/set/status_window
 share/TekNap/help/4_Misc/set/suppress_server_motd
 share/TekNap/help/4_Misc/set/tab
 share/TekNap/help/4_Misc/set/tab_max
 share/TekNap/help/4_Misc/set/underline_video
 share/TekNap/help/4_Misc/url
-share/TekNap/help/4_Misc/window/CVS/Entries
-share/TekNap/help/4_Misc/window/CVS/Repository
-share/TekNap/help/4_Misc/window/CVS/Root
 share/TekNap/help/4_Misc/window/add
 share/TekNap/help/4_Misc/window/back
 share/TekNap/help/4_Misc/window/balance
 share/TekNap/help/4_Misc/window/beep_always
 share/TekNap/help/4_Misc/window/bind
 share/TekNap/help/4_Misc/window/channel
-share/TekNap/help/4_Misc/window/create
 share/TekNap/help/4_Misc/window/describe
 share/TekNap/help/4_Misc/window/discon
 share/TekNap/help/4_Misc/window/double
@@ -350,16 +310,11 @@ share/TekNap/help/4_Misc/window/size
 share/TekNap/help/4_Misc/window/skip
 share/TekNap/help/4_Misc/window/split
 share/TekNap/help/4_Misc/window/stack
-share/TekNap/help/4_Misc/window/status_special
 share/TekNap/help/4_Misc/window/swap
 share/TekNap/help/4_Misc/window/unbind
 share/TekNap/help/4_Misc/window/update
 share/TekNap/help/4_Misc/window/window
 share/TekNap/help/5_Programming/5_Programming
-share/TekNap/help/5_Programming/:
-share/TekNap/help/5_Programming/CVS/Entries
-share/TekNap/help/5_Programming/CVS/Repository
-share/TekNap/help/5_Programming/CVS/Root
 share/TekNap/help/5_Programming/alias
 share/TekNap/help/5_Programming/assign
 share/TekNap/help/5_Programming/break
@@ -379,14 +334,10 @@ share/TekNap/help/5_Programming/input
 share/TekNap/help/5_Programming/input_char
 share/TekNap/help/5_Programming/load
 share/TekNap/help/5_Programming/local
-share/TekNap/help/5_Programming/on/CVS/Entries
-share/TekNap/help/5_Programming/on/CVS/Repository
-share/TekNap/help/5_Programming/on/CVS/Root
 share/TekNap/help/5_Programming/on/action
 share/TekNap/help/5_Programming/on/browse_begin
 share/TekNap/help/5_Programming/on/browse_end
 share/TekNap/help/5_Programming/on/channel_join
-share/TekNap/help/5_Programming/on/channel_nick
 share/TekNap/help/5_Programming/on/connect
 share/TekNap/help/5_Programming/on/disconnect
 share/TekNap/help/5_Programming/on/exec
@@ -408,7 +359,6 @@ share/TekNap/help/5_Programming/on/msg
 share/TekNap/help/5_Programming/on/names
 share/TekNap/help/5_Programming/on/naperror
 share/TekNap/help/5_Programming/on/napfinish
-share/TekNap/help/5_Programming/on/napget
 share/TekNap/help/5_Programming/on/naprequest
 share/TekNap/help/5_Programming/on/napsend
 share/TekNap/help/5_Programming/on/on
@@ -416,7 +366,6 @@ share/TekNap/help/5_Programming/on/pong
 share/TekNap/help/5_Programming/on/public
 share/TekNap/help/5_Programming/on/public_other
 share/TekNap/help/5_Programming/on/raw_nap
-share/TekNap/help/5_Programming/on/redirect
 share/TekNap/help/5_Programming/on/search_begin
 share/TekNap/help/5_Programming/on/search_end
 share/TekNap/help/5_Programming/on/send_msg
@@ -453,9 +402,6 @@ share/TekNap/help/5_Programming/wait
 share/TekNap/help/5_Programming/while
 share/TekNap/help/5_Programming/xecho
 share/TekNap/help/6_Functions/6_Functions
-share/TekNap/help/6_Functions/CVS/Entries
-share/TekNap/help/6_Functions/CVS/Repository
-share/TekNap/help/6_Functions/CVS/Root
 share/TekNap/help/6_Functions/after
 share/TekNap/help/6_Functions/afterw
 share/TekNap/help/6_Functions/aliasctl
@@ -547,9 +493,6 @@ share/TekNap/help/6_Functions/word
 share/TekNap/help/6_Functions/write
 share/TekNap/help/7_Docs/7_Docs
 share/TekNap/help/7_Docs/Arrays
-share/TekNap/help/7_Docs/CVS/Entries
-share/TekNap/help/7_Docs/CVS/Repository
-share/TekNap/help/7_Docs/CVS/Root
 share/TekNap/help/7_Docs/Command_Line
 share/TekNap/help/7_Docs/Environment
 share/TekNap/help/7_Docs/Expressions
@@ -563,31 +506,16 @@ share/TekNap/help/7_Docs/Signals
 share/TekNap/help/7_Docs/Special_Vars
 share/TekNap/help/7_Docs/Status_Line
 share/TekNap/help/7_Docs/Text_Highlight
-share/TekNap/help/CVS/Entries
-share/TekNap/help/CVS/Repository
-share/TekNap/help/CVS/Root
-@dirrm share/TekNap/help/CVS
-@dirrm share/TekNap/help/7_Docs/CVS
 @dirrm share/TekNap/help/7_Docs
-@dirrm share/TekNap/help/6_Functions/CVS
 @dirrm share/TekNap/help/6_Functions
-@dirrm share/TekNap/help/5_Programming/on/CVS
 @dirrm share/TekNap/help/5_Programming/on
-@dirrm share/TekNap/help/5_Programming/CVS
 @dirrm share/TekNap/help/5_Programming
-@dirrm share/TekNap/help/4_Misc/window/CVS
 @dirrm share/TekNap/help/4_Misc/window
-@dirrm share/TekNap/help/4_Misc/set/CVS
 @dirrm share/TekNap/help/4_Misc/set
-@dirrm share/TekNap/help/4_Misc/bind/CVS
 @dirrm share/TekNap/help/4_Misc/bind
-@dirrm share/TekNap/help/4_Misc/CVS
 @dirrm share/TekNap/help/4_Misc
-@dirrm share/TekNap/help/3_Admin/CVS
 @dirrm share/TekNap/help/3_Admin
-@dirrm share/TekNap/help/2_Napster/CVS
 @dirrm share/TekNap/help/2_Napster
-@dirrm share/TekNap/help/1_General/CVS
 @dirrm share/TekNap/help/1_General
 @dirrm share/TekNap/help
 @dirrm share/TekNap
