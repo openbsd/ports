@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/02/25 02:35:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2004/07/19 11:06:33 pvalchev Exp $
 
 COMMENT=	"C++ reference implementation of the Atlas protocol"
 
@@ -20,9 +20,6 @@ MASTER_SITES=	ftp://ftp.ecs.soton.ac.uk/pub/worldforge/acorn/0.4/src/ \
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
 		patch-*
-
-LIB_DEPENDS=	SDL::devel/sdl \
-		sigc.0.0:libsigc++-*:devel/libsigc++
 
 USE_X11=	Yes
 
