@@ -1,6 +1,6 @@
 +---------------+
-| Extra doumentation has been installed in /usr/local/share/doc/rrdtool. 
+| Extra documentation has been installed in ${PREFIX}/share/doc/rrdtool. 
 |
 | Some examples and contributed programs have been installed in 
-| /usr/local/share/examples/rrdtool.
+| ${PREFIX}/share/examples/rrdtool.
 +---------------+
