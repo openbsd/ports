@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/24 14:16:13 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/29 02:23:30 lebel Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
 VERSION=		3.33
 DISTNAME=		xscreensaver-${VERSION}
 CATEGORIES=     	x11
-NEED_VERSION=		1.474
+NEED_VERSION=		1.487
 
 HOMEPAGE=		http://www.jwz.org/xscreensaver/
 
@@ -38,7 +38,7 @@ FLAVOR?=		gtk
 
 .if ${FLAVOR:L} == "gtk"
 CONFIGURE_ARGS+=	--with-gtk --without-motif
-LIB_DEPENDS+=		gtk.1.2,gdk::x11/gtk+
+MODULES+=		gtk
 .elif ${FLAVOR:L} == "motif"
 CONFIGURE_ENV+= 	MOTIFHOME=${X11BASE}
 CONFIGURE_ARGS+=	--with-motif --without-gtk
