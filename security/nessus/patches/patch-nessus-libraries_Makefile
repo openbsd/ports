@@ -1,7 +1,6 @@
-$OpenBSD: patch-nessus-libraries_Makefile,v 1.4 2003/11/27 19:53:24 sturm Exp $
---- nessus-libraries/Makefile.orig	2003-04-04 02:40:37.000000000 -0600
-+++ nessus-libraries/Makefile	2003-09-29 14:26:05.000000000 -0500
-@@ -47,8 +47,8 @@ pcap-distclean:
+--- nessus-libraries/Makefile.orig	Thu Jan  8 10:55:13 2004
++++ nessus-libraries/Makefile	Thu Dec  9 21:07:44 2004
+@@ -47,8 +47,8 @@
  install : $(PCAP_INSTALL)
  	test -d $(DESTDIR)${prefix} || ${INSTALL_DIR} -m 755 $(DESTDIR)${prefix}
  	test -d $(DESTDIR)${includedir}/nessus || ${INSTALL_DIR} -m 755 $(DESTDIR)${includedir}/nessus

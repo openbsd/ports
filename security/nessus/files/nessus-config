@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: nessus-config,v 1.5 2002/05/25 10:38:58 reinhard Exp $
+# $OpenBSD: nessus-config,v 1.6 2005/02/06 17:13:26 sturm Exp $
 #
 #   Nessus libraries configuration script
 #
@@ -11,6 +11,7 @@
 VERSION=@@VERS@@
 LIBDIR=@@WRKSRC@@/nessus-libraries
 COREDIR=@@WRKSRC@@/nessus-core
+NASLDIR=@@WRKSRC@@/libnasl
 DEFS="-DSYSTEM_PCAP"
 CIPHER_CFLAGS="-DNESSUS_ON_SSL"
 SSL_CFLAGS="-DHAVE_SSL -I/usr/include/openssl"
@@ -46,7 +47,7 @@ while test $# -gt 0; do
 		echo $Xn "-lc -L$LIBDIR/libnessus/.libs -lnessus -L$LIBDIR/libhosts_gatherer/.libs -lhosts_gatherer -lpcap $EXTRA $Xc"
 		;;
 	--cflags)
-		echo $Xn "-I$COREDIR/include -I$LIBDIR/include $DEFS $CIPHER_CFLAGS $SSL_CFLAGS $Xc"
+		echo $Xn "-I$COREDIR/include -I$NASLDIR/include -I$LIBDIR/include $DEFS $CIPHER_CFLAGS $SSL_CFLAGS $Xc"
 		;;
 	--egd)
 		echo $Xn "$EGDPATH" $Xc
