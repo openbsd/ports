@@ -1,0 +1,8 @@
+$OpenBSD: patch-kdesu_configure_in_in,v 1.1 2002/04/08 23:12:26 espie Exp $
+--- kdesu/configure.in.in.orig	Tue Mar 14 15:42:46 2000
++++ kdesu/configure.in.in	Tue Apr  9 00:01:55 2002
+@@ -23,3 +23,4 @@ AC_TRY_RUN([
+ ], nogroup=nogroup, nogroup=65534, nogroup=65534)
+ AC_MSG_RESULT($nogroup)
+ AC_SUBST(nogroup)
++AC_CHECK_FUNCS(getpeereid)
