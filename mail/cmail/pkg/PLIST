@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/28 03:26:55 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/03/05 23:07:31 naddy Exp $
+@pkgcfl xboard-*
 bin/cmail
 man/man1/cmail.1
 share/examples/cmail/cmailrc.sample
