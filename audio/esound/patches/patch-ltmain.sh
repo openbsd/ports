@@ -1,5 +1,14 @@
 --- ltmain.sh.orig	Fri Apr  9 02:12:58 1999
-+++ ltmain.sh	Sun Aug  6 03:02:13 2000
++++ ltmain.sh	Sun Aug  6 04:56:59 2000
+@@ -3227,7 +3227,7 @@
+ 	  outputname=
+ 	  if test "$fast_install" = no && test -n "$relink_command"; then
+ 	    if test "$finalize" = yes; then
+-	      outputname="/tmp/$$-$file"
++	      outputname=$(mktemp "${TMPDIR:-/tmp}/$file.XXXXXX") || exit $?
+ 	      # Replace the output file specification.
+ 	      relink_command=`$echo "X$relink_command" | $Xsed -e 's%@OUTPUT@%'"$outputname"'%g'`
+ 
 @@ -3326,40 +3326,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
