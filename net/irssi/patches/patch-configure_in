@@ -1,0 +1,37 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2000/12/26 22:33:28 reinhard Exp $
+--- configure.in.orig	Sun Dec  3 08:23:18 2000
++++ configure.in	Mon Dec 25 15:33:10 2000
+@@ -179,9 +179,9 @@ AC_CHECK_LIB(socket, socket, [
+ 	PROG_LIBS="$PROG_LIBS -lsocket"
+ ])
+ 
+-AC_CHECK_LIB(nsl, inet_addr, [
+-	PROG_LIBS="$PROG_LIBS -lnsl"
+-], -lsocket)
++dnl AC_CHECK_LIB(nsl, inet_addr, [
++dnl	PROG_LIBS="$PROG_LIBS -lnsl"
++dnl ], -lsocket)
+ 
+ dnl * gcc specific options
+ if test "x$ac_cv_prog_gcc" = "xyes"; then
+@@ -263,16 +263,16 @@ if test "x$want_textui" = "xyes"; then
+ 	AC_CHECK_CURSES
+ 
+ 	if test "x$has_ncurses" != "x"; then
+-		AC_CHECK_LIB(ncurses, use_default_colors, [
++		AC_CHECK_LIB(curses, use_default_colors, [
+ 			AC_DEFINE(HAVE_NCURSES_USE_DEFAULT_COLORS)
+ 		],, $CURSES_LIBS)
+-		AC_CHECK_LIB(ncurses, idcok, [
++		AC_CHECK_LIB(curses, idcok, [
+ 			AC_DEFINE(HAVE_CURSES_IDCOK)
+ 		],, $CURSES_LIBS)
+-		AC_CHECK_LIB(ncurses, resizeterm, [
++		AC_CHECK_LIB(curses, resizeterm, [
+ 			AC_DEFINE(HAVE_CURSES_RESIZETERM)
+ 		],, $CURSES_LIBS)
+-		AC_CHECK_LIB(ncurses, wresize, [
++		AC_CHECK_LIB(curses, wresize, [
+ 			AC_DEFINE(HAVE_CURSES_WRESIZE)
+ 		],, $CURSES_LIBS)
+ 	elif test "x$has_curses" = "xtrue"; then
