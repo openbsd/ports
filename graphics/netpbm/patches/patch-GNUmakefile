@@ -1,0 +1,30 @@
+$OpenBSD: patch-GNUmakefile,v 1.1 2001/10/03 03:09:31 brad Exp $
+--- GNUmakefile.orig	Mon Sep 10 22:12:09 2001
++++ GNUmakefile	Mon Sep 10 22:13:36 2001
+@@ -69,7 +69,7 @@ SUBDIRS = pbm pgm ppm pnm
+ 
+ default: $(DEFAULT_TARGET)
+ 
+-all: nonmerge
++all: default
+ 
+ .PHONY: nonmerge
+ nonmerge: $(SUBDIRS)
+@@ -160,10 +160,10 @@ $(INSTALLHDRS):
+ 
+ .PHONY: install.hdr
+ install.hdr: $(INSTALLHDRS) $(SRCDIR)/pm_config.h
+-	$(INSTALL) -c -m$(INSTALL_PERM_HDR) \
++	${BSD_INSTALL_DATA} \
+ 	    $(SRCDIR)/pm_config.h $(INSTALLHDRS)
+-	$(INSTALL) -c -m$(INSTALL_PERM_HDR) \
+-	    $(SRCDIR)/shhopt/shhopt.h $(INSTALLHDRS)
++	${BSD_INSTALL_DATA} \
++	    $(SRCDIR)/shhopt/pm_shhopt.h $(INSTALLHDRS)
+ 	for i in $(SUBDIRS) ; do \
+ 	    $(MAKE) -C $$i -f $(SRCDIR)/$$i/Makefile install.hdr ; \
+ 	done
+@@ -210,4 +210,4 @@ dep:
+ 	done
+ # The following endif is for the else block that contains virtually the
+ # whole file, for the test of the existence of CURDIR.

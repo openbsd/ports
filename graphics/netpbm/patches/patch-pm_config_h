@@ -1,0 +1,36 @@
+$OpenBSD: patch-pm_config_h,v 1.1 2001/10/03 03:09:31 brad Exp $
+--- pm_config.h.orig	Sun Jun 10 19:37:08 2001
++++ pm_config.h	Wed Sep  5 21:13:36 2001
+@@ -19,6 +19,10 @@
+ 
+ **************************************************************************/
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
++
+ #if defined(USG) || defined(SVR4) || defined(VMS) || defined(__SVR4)
+ #define SYSV
+ #endif
+@@ -28,7 +32,7 @@
+ ** and if you run on an Amiga, set AMIGA. If your compiler is ANSI C, you're
+ ** probably better off setting SYSV - all it affects is string handling.
+ */
+-#define BSD
++/* #define BSD */
+ /* #define SYSV */
+ /* #define MSDOS */
+ /* #define AMIGA */
+@@ -48,9 +52,9 @@
+ #define RGB_DB2 "PBMplus_Dir:RGB.TXT"
+ #define RGB_DB3 "PBMplus_Dir:RGB.TXT"
+ #else
+-#define RGB_DB1 "/usr/lib/X11/rgb.txt"
+-#define RGB_DB2 "/usr/openwin/lib/rgb.txt"
+-#define RGB_DB3 "/usr/X11R6/lib/X11/rgb.txt"
++#define RGB_DB1 "!!X11R6!!/lib/X11/rgb.txt"
++#define RGB_DB2 "!!X11R6!!/lib/X11/rgb.txt"
++#define RGB_DB3 "!!X11R6!!/lib/X11/rgb.txt"
+ #endif
+ 
+ /* CONFIGURE: This is the name of an environment variable that tells

@@ -1,0 +1,107 @@
+$OpenBSD: patch-Makefile_common,v 1.1 2001/10/03 03:09:31 brad Exp $
+--- Makefile.common.orig	Sat Sep  8 15:31:28 2001
++++ Makefile.common	Tue Oct  2 21:19:52 2001
+@@ -174,25 +174,21 @@ $(MERGENAME): $(MERGENAME).o $(MERGE_OBJ
+ 
+ $(LIBOBJECTS): %.o: $(SRCSUBDIR)/%.c $(HEADERLINKS)
+ # Note that the user may have configured -I options into CFLAGS.
++	$(CC) -c $(INCLUDE) $(CFLAGS) $(CDEBUG) -o $@ $<
++
++$(SHLIBOBJECTS): %.lo: $(SRCSUBDIR)/%.c $(HEADERLINKS)
+ 	$(CC) -c $(INCLUDE) $(CFLAGS) $(CFLAGS_SHLIB) $(CDEBUG) -o $@ $<
+ 
+ SONAME = lib$(LIBROOT).so.$(MAJ)
+ 
+ ifeq ($(NETPBMLIBTYPE),unixshared)
+ # The libxxx.so link is needed to link the executables.
+-lib$(LIBROOT).$(NETPBMLIBSUFFIX): $(SONAME)
+-	rm -f $@
+-	$(SYMLINK) $< $@
+-# The $(SONAME) link is only needed to test the programs without
+-# installing the libraries (in that case, you also need to direct the 
+-# dynamic linker to the source directories, e.g. set LD_LIBRARY_PATH).
+-$(SONAME): lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ).$(MIN)
+-	rm -f $@
+-	$(SYMLINK) $< $@
+-lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ).$(MIN): \
+-    $(LIBOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) $(LIBOPT)
+-	$(LD) $(LDSHLIB) -o $@ $(LIBOBJECTS) $(LIBOBJECTS_X) \
+-          `$(LIBOPT) $(LIBLIBS)` -lc $(CDEBUG)
++lib$(LIBROOT).$(NETPBMLIBSUFFIX): lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(SOVER)
++
++lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(SOVER): \
++    $(SHLIBOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) $(LIBOPT)
++	$(LD) $(LDSHLIB) -o $@ $(SHLIBOBJECTS) $(LIBOBJECTS_X) \
++          `$(LIBOPT) $(LIBLIBS)` $(LDFLAGS) $(CDEBUG)
+ endif
+ 
+ ifeq ($(NETPBMLIBTYPE),dll)
+@@ -281,7 +277,7 @@ endif
+ install.merge.common: $(MERGENAME) $(NOMERGEBINARIES) install.script
+ 	cd $(INSTALLBINARIES) ; rm -f $(BINARIES) $(MERGE_ALIASES)
+ ifneq ($(MERGENAME)x,x)
+-	$(INSTALL) -c $(STRIPFLAG) -m $(INSTALL_PERM_BIN) \
++	${BSD_INSTALL_PROGRAM} \
+             $(MERGENAME) $(INSTALLBINARIES)
+ 	cd $(INSTALLBINARIES) ; \
+ 	   for i in $(MERGEBINARIES) $(MERGE_ALIASES) ; \
+@@ -291,7 +287,7 @@ endif
+ ifneq ($(NOMERGEBINARIES)x,x)
+ 	for x in $(NOMERGEBINARIES); \
+         do \
+-           $(INSTALL) -c $(STRIPFLAG) -m $(INSTALL_PERM_BIN) \
++           ${BSD_INSTALL_PROGRAM} \
+                $$x $(INSTALLBINARIES); \
+ 	done
+ endif
+@@ -302,7 +298,7 @@ install.bin.common: $(BINARIES) install.
+ # Make and Install know that pbmmake.exe counts as pbmmake.
+ 	for x in $(BINARIES); \
+ 	do \
+-	   $(INSTALL) -c $(STRIPFLAG) -m $(INSTALL_PERM_BIN) \
++	   ${BSD_INSTALL_PROGRAM} \
+                $$x $(INSTALLBINARIES); \
+ 	done
+ 
+@@ -311,7 +307,7 @@ install.script: $(SCRIPTS)
+ ifneq ($(SCRIPTS)x,x)
+ 	for x in $(SCRIPTS); \
+ 	do \
+-	   $(INSTALL) -c -m $(INSTALL_PERM_BIN) $(SRCSUBDIR)/$$x \
++	   ${BSD_INSTALL_SCRIPT} $(SRCSUBDIR)/$$x \
+                $(INSTALLSCRIPTS); \
+ 	done
+ endif
+@@ -348,7 +344,7 @@ install.hdr:
+ # directory when you compile your programs.
+ 	for x in $(INTERFACE_HEADERS); \
+ 	do \
+-	   $(INSTALL) -c -m $(INSTALL_PERM_HDR) $(SRCSUBDIR)/$$x \
++	   ${BSD_INSTALL_DATA} $(SRCSUBDIR)/$$x \
+                $(INSTALLHDRS); \
+ 	done
+ 
+@@ -356,19 +352,16 @@ install.hdr:
+ #
+ .PHONY: install.staticlib
+ install.staticlib: lib$(LIBROOT).$(STATICLIBSUFFIX) 
+-	$(INSTALL) -c -m $(INSTALL_PERM_LIBS) $< $(INSTALLSTATICLIBS)/$<
++	${BSD_INSTALL_DATA} $< $(INSTALLSTATICLIBS)/$<
+ 
+ # Install a shared library
+ #
+ .PHONY: install.lib.common
+ ifeq ($(NETPBMLIBTYPE),unixshared)
+ # install a Unix-style shared library
+-install.lib.common: lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ).$(MIN) 
+-	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ).*
+-	$(INSTALL) -c -m $(INSTALL_PERM_LIBD) $< $(INSTALLLIBS)
+-	cd $(INSTALLLIBS) ; \
+-          rm -f lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ); \
+-          $(SYMLINK) $< lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ)
++install.lib.common: lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(SOVER)
++	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).$(NETPBMLIBSUFFIX).*
++	${BSD_INSTALL_DATA} $< $(INSTALLLIBS)
+ endif
+ ifeq ($(NETPBMLIBTYPE),dll)
+ #install a Windows DLL shared library

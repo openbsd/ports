@@ -1,0 +1,12 @@
+$OpenBSD: patch-pnm_pnmtopalm_Makefile,v 1.1 2001/10/03 03:09:31 brad Exp $
+--- pnm/pnmtopalm/Makefile.orig	Tue Jul 31 21:53:09 2001
++++ pnm/pnmtopalm/Makefile	Tue Jul 31 21:53:40 2001
+@@ -47,7 +47,7 @@ install.bin: install.bin.common
+ 	$(SRCDIR)/mkinstalldirs $(INSTALLDATA)
+ 	for x in palmcolor8.map palmgray1.map palmgray2.map palmgray4.map ;\
+ 	do \
+-	   $(INSTALL) -c -m $(INSTALL_PERM_DATA) $(SRCSUBDIR)/$$x \
++	   $(BSD_INSTALL_DATA) $(SRCSUBDIR)/$$x \
+                $(INSTALLDATA); \
+ 	done
+ 

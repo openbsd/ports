@@ -1,0 +1,19 @@
+--- pgm/Makefile.orig	Mon Sep 10 22:35:08 2001
++++ pgm/Makefile	Mon Sep 10 22:40:52 2001
+@@ -33,6 +33,7 @@ MERGEBINARIES = $(BINARIES)
+ MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
+ 
+ LIBOBJECTS = libpgm1.o libpgm2.o
++SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
+ 
+ MANUALS1 =	$(BINARIES)
+ MANUALS3 =	libpgm
+@@ -45,7 +46,7 @@ INTERFACE_HEADERS = pgm.h
+ .PHONY: all
+ all:	$(PGMLIB) $(BINARIES) $(EXTRA_STATICLIB)
+ .PHONY: merge
+-merge: $(MERGENAME)
++merge: $(MERGENAME) $(EXTRA_STATICLIB)
+ 
+ # LIBRARIES
+ 
