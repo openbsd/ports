@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 1999/02/23 16:54:48 espie Exp $
+# $OpenBSD: Makefile,v 1.36 1999/02/28 18:17:06 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -46,7 +46,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1999-02-21
+LATEST_DATE=1999-02-28
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -55,7 +55,7 @@ LATEST_DATE=1999-02-21
 
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
-#NEXT_DATE=1999-02-14
+#NEXT_DATE=1999-02-28
 #PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
@@ -226,6 +226,10 @@ post-patch:
 	do \
 		[ -f $$f ] && touch $$f; \
 	done 
+# rebuild configure files after patching, then move source around !!!
+# XXX: don't try to autoconf the main configure file, it's not autoconf.
+	cd ${WRKSRC}/gcc && PATH=${PORTPATH} autoreconf
+	cd ${WRKSRC}/libiberty && PATH=${PORTPATH} autoreconf
 
 
 
@@ -283,13 +287,9 @@ CONFIGURE_ARGS += --with-gnu-ld
 CONFIGURE_ARGS+=--enable-shared
 .endif
 
+SEPARATE_BUILD=yes
 WRKBUILD=${WRKDIR}/build-${MACHINE_ARCH}
 
-# rebuild configure files after patching, then move source around !!!
-# XXX: don't try to autoconf the main configure file, it's not autoconf.
-pre-configure:
-	cd ${WRKSRC}/gcc && PATH=${PORTPATH} autoreconf
-	cd ${WRKSRC}/libiberty && PATH=${PORTPATH} autoreconf
 
 
 ####
@@ -313,8 +313,7 @@ do-build:
 .if defined(MAKE_TESTS)
 post-build:
 	@(cd ${WRKBUILD}; \
-	${MAKE_ENV} LD_LIBRARY_PATH=${PREFIX}/lib \
-	${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} check)
+	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} check)
 .endif
 
 ####

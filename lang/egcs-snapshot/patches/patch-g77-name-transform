@@ -1,5 +1,5 @@
---- gcc/f/Make-lang.in.orig	Thu Nov 19 07:49:46 1998
-+++ gcc/f/Make-lang.in	Wed Nov 25 00:39:08 1998
+--- gcc/f/Make-lang.in.orig	Mon Feb 22 09:49:36 1999
++++ gcc/f/Make-lang.in	Sun Feb 28 18:04:52 1999
 @@ -251,7 +251,7 @@
  	esac
  	if [ -f lang-f77 ]; then \
@@ -9,25 +9,25 @@
  	else true; fi
  
  f/g77.dvi: $(srcdir)/f/g77.texi $(srcdir)/f/bugs.texi \
-@@ -364,16 +364,17 @@
+@@ -365,16 +365,17 @@
  	esac
- 	if [ -f lang-f77 -a -f f/g77.info ] ; then \
+ 	if [ -f $(prefix)/lang-f77 -a -f f/g77.info ] ; then \
  	  rm -f $(infodir)/g77.info*; \
 -	  for f in f/g77.info*; do \
-+	  rm -f $(infodir)/$(G77_INSTALL_NAME).info*; \
-+	  for f in f/$(G77_INSTALL_NAME).info*; do \
++ 	  rm -f $(infodir)/$(G77_INSTALL_NAME).info*; \
++ 	  for f in f/$(G77_INSTALL_NAME).info*; do \
  	      realfile=`echo $$f | sed -e 's|.*/\([^/]*\)$$|\1|'`; \
  	      $(INSTALL_DATA) $$f $(infodir)/$$realfile; \
  	  done; \
 -	  chmod a-x $(infodir)/g77.info*; \
-+	  chmod a-x $(infodir)/$(G77_INSTALL_NAME).info*; \
++ 	  chmod a-x $(infodir)/$(G77_INSTALL_NAME).info*; \
  	else true; fi
- 	@if [ -f lang-f77 -a -f $(srcdir)/f/g77.info ] ; then \
+ 	@if [ -f $(prefix)/lang-f77 -a -f $(srcdir)/f/g77.info ] ; then \
  	  if $(SHELL) -c 'install-info --version | sed 1q | fgrep -s -v -i debian' >/dev/null 2>&1; then \
 -	    echo " install-info --info-dir=$(infodir) $(infodir)/g77.info"; \
 -	    install-info --info-dir=$(infodir) $(infodir)/g77.info || : ; \
-+	    echo " install-info --info-dir=$(infodir) $(infodir)/$(G77_INSTALL_NAME).info"; \
-+	    install-info --info-dir=$(infodir) $(infodir)/$(G77_INSTALL_NAME).info || : ; \
++ 	    echo " install-info --info-dir=$(infodir) $(infodir)/$(G77_INSTALL_NAME).info"; \
++ 	    install-info --info-dir=$(infodir) $(infodir)/$(G77_INSTALL_NAME).info || : ; \
  	  else : ; fi; \
  	else : ; fi
- 
+ 	rm -f $(prefix)/lang-f77
