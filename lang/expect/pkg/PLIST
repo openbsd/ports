@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.16 2003/02/27 12:49:16 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.17 2003/09/23 23:08:44 jolan Exp $
+!%%no_tk%%
 bin/autoexpect
 bin/autopasswd
 bin/cryptdir
@@ -16,14 +17,12 @@ bin/timed-read
 bin/timed-run
 bin/unbuffer
 bin/weather
-bin/xpstat
 include/expect.h
 include/expect_comm.h
 include/expect_tcl.h
 include/tcldbg.h
-lib/expect5.38/libexpect538.a
-lib/libexpect538.a
-%%SHARED%%
+lib/expect5.39/libexpect539.a
+lib/libexpect539.a
 man/man1/autoexpect.1
 man/man1/cryptdir.1
 man/man1/decryptdir.1
@@ -34,5 +33,5 @@ man/man1/kibitz.1
 man/man1/passmass.1
 man/man1/unbuffer.1
 man/man3/libexpect.3
-!%%no_tk%%
-@dirrm lib/expect5.38
+%%SHARED%%
+@dirrm lib/expect5.39

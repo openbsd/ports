@@ -6,5 +6,3 @@ by programs that refuse to read from stdin or pipes. (eg: passwd(1) etc).
 
 Flavors:
 	no_tk - Do not build with Tk support.
-
-WWW: ${HOMEPAGE}
