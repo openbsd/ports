@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/13 20:52:08 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/09/18 14:22:14 naddy Exp $
 bin/gconf-config
 bin/gconf-config-1
 bin/gconfd-1
@@ -24,6 +24,30 @@ lib/pkgconfig/gconfgtk.pc
 share/aclocal/gconf-1.m4
 share/gconf/gconf/1/path
 share/gconf/gconf/schemas/desktop.schemas
+share/locale/az/LC_MESSAGES/GConf.mo
+share/locale/ca/LC_MESSAGES/GConf.mo
+share/locale/cs/LC_MESSAGES/GConf.mo
+share/locale/da/LC_MESSAGES/GConf.mo
+share/locale/de/LC_MESSAGES/GConf.mo
+share/locale/el/LC_MESSAGES/GConf.mo
+share/locale/es/LC_MESSAGES/GConf.mo
+share/locale/fi/LC_MESSAGES/GConf.mo
+share/locale/fr/LC_MESSAGES/GConf.mo
+share/locale/ga/LC_MESSAGES/GConf.mo
+share/locale/hu/LC_MESSAGES/GConf.mo
+share/locale/it/LC_MESSAGES/GConf.mo
+share/locale/ja/LC_MESSAGES/GConf.mo
+share/locale/ko/LC_MESSAGES/GConf.mo
+share/locale/nl/LC_MESSAGES/GConf.mo
+share/locale/no/LC_MESSAGES/GConf.mo
+share/locale/pt_BR/LC_MESSAGES/GConf.mo
+share/locale/ru/LC_MESSAGES/GConf.mo
+share/locale/sk/LC_MESSAGES/GConf.mo
+share/locale/sl/LC_MESSAGES/GConf.mo
+share/locale/sv/LC_MESSAGES/GConf.mo
+share/locale/tr/LC_MESSAGES/GConf.mo
+share/locale/uk/LC_MESSAGES/GConf.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/GConf.mo
 share/oaf/gconfd-1.oafinfo
 %%SHARED%%
 @dirrm share/gconf/gconf/1

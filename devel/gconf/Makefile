@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/14 14:41:29 todd Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/18 14:22:14 naddy Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 V=			1.0.1
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
-CONFIGURE_STYLE= 	gnu
+CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
@@ -38,11 +38,11 @@ CONFIGURE_ENV+= 	GUILE_CONFIG=/usr/bin/false
 
 .if ${FLAVOR:L:Mdb3}
 LIB_DEPENDS+= 		db::databases/db
-CONFIGURE_ENV+= 	BDB_LIBS="-ldb"
+CONFIGURE_ARGS+=	--enable-db3
 .endif
 
 post-install:
-	install -d ${PREFIX}/share/gconf; \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/gconf; \
 	cp -r ${PREFIX}/../../etc/* ${PREFIX}/share/gconf; \
 	mv ${PREFIX}/share/gconf/gconf/1/path.example ${PREFIX}/share/gconf/gconf/1/path
 

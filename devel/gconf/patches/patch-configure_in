@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/09/18 14:22:14 naddy Exp $
+--- configure.in.orig	Tue Sep 18 15:28:19 2001
++++ configure.in	Tue Sep 18 15:37:25 2001
+@@ -167,11 +167,14 @@ AC_SUBST(GNOME_CFLAGS)
+ BDB_LIBS=
+ BDB_CFLAGS=
+ 
+-AC_CHECK_LIB(db-3, db_env_create, BDB_LIBS=-ldb-3)
+-
+-if test "x$BDB_LIBS" = x; then
+-  AC_MSG_WARN(No db3 library found. Not building bdb backend.)
+-fi
++AC_ARG_ENABLE(db3,
++  [  --enable-db3=[no/yes]   build bdb backend],[
++  AC_CHECK_LIB(db, db_env_create, BDB_LIBS=-ldb,
++    AC_CHECK_LIB(db-3, db_env_create, BDB_LIBS=-ldb-3))
++  if test "x$BDB_LIBS" = x; then
++    AC_MSG_WARN(No db3 library found. Not building bdb backend.)
++  fi
++  ],)
+ 
+ AM_CONDITIONAL(BDB, test -n "$BDB_LIBS")
+ 
