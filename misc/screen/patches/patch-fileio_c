@@ -1,0 +1,12 @@
+$OpenBSD: patch-fileio_c,v 1.1 2003/10/14 23:05:28 jolan Exp $
+--- fileio.c.orig	2003-09-08 09:25:28.000000000 -0500
++++ fileio.c	2003-10-14 14:09:39.000000000 -0500
+@@ -779,7 +779,7 @@ char *cmd;
+ #ifdef SIGPIPE
+       signal(SIGPIPE, SIG_DFL);
+ #endif
+-      execl("/bin/sh", "sh", "-c", cmd, 0);
++      execl("/bin/sh", "sh", "-c", cmd, (void*)NULL);
+       Panic(errno, "/bin/sh");
+     default:
+       break;

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2003/10/10 01:27:38 brad Exp $
+# $OpenBSD: Makefile,v 1.48 2003/10/14 23:05:28 jolan Exp $
 
 COMMENT=	"multi-screen window manager"
 
@@ -12,6 +12,7 @@ HOMEPAGE=	http://www.gnu.org/software/screen/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

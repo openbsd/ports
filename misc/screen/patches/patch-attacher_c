@@ -1,0 +1,12 @@
+$OpenBSD: patch-attacher_c,v 1.1 2003/10/14 23:05:28 jolan Exp $
+--- attacher.c.orig	2003-09-08 09:24:48.000000000 -0500
++++ attacher.c	2003-10-14 14:10:14.000000000 -0500
+@@ -676,7 +676,7 @@ LockTerminal()
+           setuid(real_uid);	/* this should be done already */
+ #endif
+           closeallfiles(0);	/* important: /etc/shadow may be open */
+-          execl(prg, "SCREEN-LOCK", NULL);
++          execl(prg, "SCREEN-LOCK", (void*)NULL);
+           exit(errno);
+         }
+       if (pid == -1)

@@ -1,7 +1,13 @@
-$OpenBSD: patch-pty_c,v 1.1 2003/09/26 23:50:55 brad Exp $
---- pty.c.orig	2003-09-08 10:26:18.000000000 -0400
-+++ pty.c	2003-09-13 04:18:35.000000000 -0400
-@@ -29,6 +29,23 @@
+$OpenBSD: patch-pty_c,v 1.2 2003/10/14 23:05:28 jolan Exp $
+--- pty.c.orig	2003-09-08 09:26:18.000000000 -0500
++++ pty.c	2003-10-14 14:31:29.000000000 -0500
+@@ -25,10 +25,29 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ #include <signal.h>
++#include <termios.h>
++#include <util.h>
+ 
  #include "config.h"
  #include "screen.h"
  
@@ -25,7 +31,7 @@ $OpenBSD: patch-pty_c,v 1.1 2003/09/26 23:50:55 brad Exp $
  #ifndef sun
  # include <sys/ioctl.h>
  #endif
-@@ -337,25 +354,25 @@ int
+@@ -337,25 +356,25 @@ int
  OpenPTY(ttyn)
  char **ttyn;
  {
@@ -64,7 +70,7 @@ $OpenBSD: patch-pty_c,v 1.1 2003/09/26 23:50:55 brad Exp $
  	  if (eff_uid && access(TtyName, R_OK | W_OK))
  	    {
  	      close(f);
-@@ -378,9 +395,11 @@ char **ttyn;
+@@ -378,9 +397,11 @@ char **ttyn;
  #endif
  	  initmaster(f);
  	  *ttyn = TtyName;
