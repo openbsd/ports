@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 1999/04/18 20:24:41 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/04/28 00:31:59 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1998/08/11 09:57:51 andreas Exp $
 
-DISTNAME=	ntop-1.1.src
+DISTNAME=	ntop-1.1pre1
 PKGNAME=	ntop-1.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.unipi.it/pub/local/ntop/snapshots/ \
 		ftp://ftp.ee.lbl.gov/
 EXTRACT_SUFX=	.tgz
-DISTFILES=	libpcap-0.4.tar.Z ${DISTNAME}.tgz
+DISTFILES=	${DISTNAME}.tar.gz libpcap-0.4.tar.Z
 
 MAINTAINER=	brad@OpenBSD.ORG
-
-WRKSRC=		${WRKDIR}/ntop-1.1
 
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS= --enable-lsof=no --enable-threads=no
