@@ -10,6 +10,8 @@ Features:
 - background thumbnail generation
 - center images in view
 - zooming (including fit-to-window)
+- support for IO slaves
+- multi-selection support
 - advanced keyboard navigation, Opera-like next / previous mouse nagiation
 				and customizable mouse-wheel navigation
 
