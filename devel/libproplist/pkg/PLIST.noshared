@@ -1,5 +1,0 @@
-include/proplist.h
-lib/libPropList.a
-lib/libPropList.la
-share/doc/libproplist/README
-@dirrm share/doc/libproplist

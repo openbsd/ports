@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/04/07 18:45:06 jasoni Exp $
+# $OpenBSD: Makefile,v 1.14 2000/07/20 03:48:38 jasoni Exp $
 
 DISTNAME=	libPropList-0.10.1
 PKGNAME=	libproplist-0.10.1
@@ -16,8 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes
 SEPARATE_BUILD=	concurrent
-GNU_CONFIGURE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 

@@ -1,7 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.8 2000/07/20 03:48:38 jasoni Exp $
 include/proplist.h
 lib/libPropList.a
 lib/libPropList.la
-lib/libPropList.so.2.2
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 share/doc/libproplist/README
 @dirrm share/doc/libproplist
