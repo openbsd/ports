@@ -1,0 +1,81 @@
+$OpenBSD: patch-wmnet_h,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
+--- wmnet.h.orig	Fri May  5 07:02:26 2000
++++ wmnet.h	Thu Sep 12 04:12:27 2002
+@@ -12,6 +12,8 @@
+  *
+  */
+ 
++#ifndef WMNET_H__
++#define WMNET_H__
+ 
+ #define TOPBOX_X             4
+ #define TOPBOX_Y             4
+@@ -40,7 +42,6 @@
+ #define GRAPH_Y_UPPER            (GRAPH_Y) 
+ #define GRAPH_Y_BOTTOM           (GRAPH_Y + GRAPH_HEIGHT - 1)
+ 
+-
+ /* Label area box */
+ #define LABEL_X              (GRAPHBOX_X_LEFT)
+ #define LABEL_Y              (GRAPHBOX_Y_BOTTOM + 1)
+@@ -52,39 +53,26 @@
+ #define LABEL_Y_TOP          (LABEL_Y)
+ #define LABEL_Y_BOTTOM       (LABEL_Y + LABEL_HEIGHT - 1)
+ 
+-
+ #define LOW_INTENSITY		0
+ #define NORMAL_INTENSITY	1
+ #define HIGH_INTENSITY		2
+ 
++struct if_data_t {
++	char *device;
++	Bool rx;
++	Bool tx;
++	Bool current_rx;
++	Bool current_tx;
++	unsigned int db_in;
++	unsigned int db_out;
++};
+ 
++typedef int (*parser_func)(struct if_data_t *);
++typedef void (*setup_func)(char *, struct if_data_t *);
+ 
++setup_func setup_driver(char *, struct if_data_t *);
+ 
+-
+-/* X Stuff */
+-Display *dpy;
+-Window root_window, main_window, icon_window, *visible_window;
+-Font thefont;
+-Pixmap arrow;
+-Atom delete_atom;
+-int screen, specified_state = -1;
+-GC graphics_context;
+-unsigned long tx_pixel[3], rx_pixel[3], labelfg_pixel, labelbg_pixel,  black_pixel, white_pixel, darkgrey_pixel, grey_pixel;
+-typedef int (*parser_func)(void);
+-
+-/* I know statically declared buffers are against GNU coding standards, so sue me */
+-char buffer[256], *click_command = NULL, *label = NULL;
+-struct timeval timenow, timelast;
+-unsigned long totalbytes_in, totalbytes_out, lastbytes_in, lastbytes_out;
+-unsigned long totalpackets_in, totalpackets_out, lastpackets_in, lastpackets_out;
+-unsigned int diffpackets_in, diffpackets_out, diffbytes_in, diffbytes_out;
+-unsigned int delayTime = 25000, displayDelay = 55000, maxRate = 6000;
+-unsigned int out_rule = 2, in_rule = 1, graphbox_height = 44;  /* number of rule in /proc/net/ip_acct to use */
+-char *in_rule_string = NULL, *out_rule_string = NULL, *device=NULL;
+-Bool current_tx = False, current_rx = False, rx, tx, logscale = False;
+-parser_func stat_gather;
+-	
+-
++char *available_drivers(void);
+ 
+ void exit_func(void);
+ void got_signal(int x); 
+@@ -98,6 +86,4 @@ int updateSpeedometer(int rxRate, int tx
+ void drawColoredLine(int y1, int y2, unsigned long *shadecolor); 
+ void shadesOf(XColor *shade, unsigned long *returnarray);
+ 
+-extern parser_func setup_driver(char *parser);
+-extern char * available_drivers(void);
+-
++#endif /* WMNET_H__ */

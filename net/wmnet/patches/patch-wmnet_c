@@ -1,0 +1,133 @@
+$OpenBSD: patch-wmnet_c,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
+--- wmnet.c.orig	Fri May  5 07:01:14 2000
++++ wmnet.c	Thu Sep 12 03:42:25 2002
+@@ -76,6 +76,24 @@
+ #include "XPM/arrow.xbm"
+ #include "wmnet.h"
+ 
++/* X Stuff */
++static Display *dpy;
++static Window root_window, main_window, icon_window, *visible_window;
++static Pixmap arrow;
++static Atom delete_atom;
++static int screen, specified_state = -1;
++static GC graphics_context;
++static unsigned long tx_pixel[3], rx_pixel[3], labelfg_pixel, labelbg_pixel,  black_pixel, white_pixel, darkgrey_pixel, grey_pixel;
++
++static char *click_command = NULL, *label = NULL;
++static struct timeval timenow, timelast;
++static unsigned int delayTime = 25000, displayDelay = 55000, maxRate = 6000;
++static unsigned int graphbox_height = 44;  /* number of rule in /proc/net/ip_acct to use */
++static Bool logscale = False;
++
++parser_func stat_gather;
++
++struct if_data_t id;
+ 
+ /* Called on exit() from atexit() */
+ void exit_func(void) {
+@@ -90,8 +108,6 @@ void got_signal(int x) {
+ 	} else exit(7);
+ }
+ 
+-
+-
+ /* Does generic setting up of wmnet, (option parsing) and calls setupX() */
+ void setup_wmnet(int argc, char **argv) {
+ 	int c;
+@@ -143,7 +159,7 @@ void setup_wmnet(int argc, char **argv) 
+ 				exit(14);
+ 				break;
+ 			case 'W':
+-				device = strdup(optarg);
++				id.device = strdup(optarg);
+ 				break;
+ 			case 'D':
+ 				parser = strdup(optarg);
+@@ -313,8 +329,7 @@ void setup_wmnet(int argc, char **argv) 
+ 	/* Relinquish suid privileges if there */
+ 	seteuid(getuid());
+ 
+-	stat_gather = setup_driver(parser);
+-
++	stat_gather = (parser_func)setup_driver(parser, &id);
+ 
+ 	if (txcolorString == NULL) txcolorString = "white";
+ 	if (rxcolorString == NULL) rxcolorString = "red";
+@@ -393,7 +408,7 @@ void setup_wmnet(int argc, char **argv) 
+ 	XSetCommand(dpy, main_window, argv, argc);
+ 
+ 	/* Get the initial stats for startup */
+-	stat_gather();
++	stat_gather(&id);
+ 	
+ 
+ 	/* Rock n Roll */
+@@ -543,8 +558,8 @@ void tock(void) {
+ 	}
+ 	since = (timenow.tv_sec * 1000000L + timenow.tv_usec) - (timelast.tv_sec * 1000000L + timelast.tv_usec); 
+ 	if (since > displayDelay) {
+-		lifo_in[t] = diffbytes_in * (1000000L / since);
+-		lifo_out[t] = diffbytes_out * (1000000L / since);
++		lifo_in[t] = id.db_in * (1000000L / since);
++		lifo_out[t] = id.db_out * (1000000L / since);
+ 		t = (t + 1) % 8;
+ 
+ 
+@@ -568,33 +583,33 @@ void tock(void) {
+ 		if (t == 7) updateSpeedometer(rate_rx, rate_tx);
+ 		
+ 		/* blank var is just for stopping executing the X* funcs when the disp is all black */
+-		if ((y == GRAPH_Y_BOTTOM && yy == GRAPH_Y_UPPER) && (diffbytes_in + diffbytes_out) == 0) blank++; else blank = 0;
++		if ((y == GRAPH_Y_BOTTOM && yy == GRAPH_Y_UPPER) && (id.db_in + id.db_out) == 0) blank++; else blank = 0;
+ 		if (blank < (GRAPH_WIDTH + 1) ) {
+ 			XCopyArea(dpy, *visible_window, *visible_window, graphics_context, GRAPH_X + 1,
+ 			   GRAPH_Y, GRAPH_WIDTH - 1, GRAPH_HEIGHT, GRAPH_X, GRAPH_Y);
+ 			XSetForeground(dpy, graphics_context, darkgrey_pixel);
+ 			XDrawLine(dpy, *visible_window, graphics_context, GRAPH_X_RIGHT, y, GRAPH_X_RIGHT, yy);
+-			if (( (yy == GRAPH_Y_UPPER && diffbytes_out > 0 && rate_rx > rate_tx) || (rate_rx >= rate_tx && yy != GRAPH_Y_UPPER)) ) {
++			if (( (yy == GRAPH_Y_UPPER && id.db_out > 0 && rate_rx > rate_tx) || (rate_rx >= rate_tx && yy != GRAPH_Y_UPPER)) ) {
+ 				drawColoredLine(GRAPH_Y_UPPER, yy, tx_pixel);				
+ 			}
+-			if ( y != GRAPH_Y_BOTTOM || diffbytes_in > 0) {
++			if ( y != GRAPH_Y_BOTTOM || id.db_in > 0) {
+ 				drawColoredLine(GRAPH_Y_BOTTOM, y, rx_pixel);
+ 			}
+-			if (( (yy == GRAPH_Y_UPPER && diffbytes_out > 0) || (rate_rx < rate_tx && yy != GRAPH_Y_UPPER)) ) {
++			if (( (yy == GRAPH_Y_UPPER && id.db_out > 0) || (rate_rx < rate_tx && yy != GRAPH_Y_UPPER)) ) {
+ 				drawColoredLine(GRAPH_Y_UPPER, yy, tx_pixel);				
+ 			}
+ 		}
+ 
+ 
+-		diffbytes_in = diffbytes_out = 0;
++		id.db_in = id.db_out = 0;
+ 		timelast = timenow;
+ 	}	
+ 
+-	if (!stat_gather()) {  /* Anything change? */
+-		current_rx = rx;
+-		current_tx = tx;
++	if (!stat_gather(&id)) {  /* Anything change? */
++		id.current_rx = id.rx;
++		id.current_tx = id.tx;
+ 		XSetBackground(dpy, graphics_context, black_pixel);
+-		if(current_tx == True) {
++		if(id.current_tx == True) {
+ 			XSetForeground(dpy, graphics_context, tx_pixel[HIGH_INTENSITY]);
+ 			XCopyPlane(dpy, arrow, *visible_window, graphics_context, 7, 0, 7, 9, 53, 5, 1);
+ 			/* XFillRectangle(dpy, *visible_window, graphics_context, 55, 5, 4, 4);  */
+@@ -603,7 +618,7 @@ void tock(void) {
+ 			XSetForeground(dpy, graphics_context, grey_pixel);
+ 			XCopyPlane(dpy, arrow, *visible_window, graphics_context, 7, 0, 7, 9, 53, 5, 1);
+ 		}
+-		if(current_rx == True) {
++		if(id.current_rx == True) {
+ 			XSetForeground(dpy, graphics_context, rx_pixel[HIGH_INTENSITY]);
+ 			XCopyPlane(dpy, arrow, *visible_window, graphics_context, 0, 0, 7, 9, 46, 5, 1);
+ 			/* XFillRectangle(dpy, *visible_window, graphics_context, 55, 12, 4, 4);  */
+@@ -747,4 +762,3 @@ int main(int argc, char ** argv) {
+ 	}
+ 	return 0;
+ }
+-

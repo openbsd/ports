@@ -1,0 +1,216 @@
+$OpenBSD: patch-drivers_c,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
+--- drivers.c.orig	Fri May  5 06:34:29 2000
++++ drivers.c	Thu Sep 12 04:18:38 2002
+@@ -20,12 +20,15 @@
+ #include<unistd.h>
+ #include"config.h"
+ 
++#include "wmnet.h"
++
++char buffer[256];
+ 
+ /* For FreeBSD */
+ #ifdef USE_KVM
+-#include<net/if.h>
+-#include<kvm.h>
+-#include<nlist.h>
++#include <net/if.h>
++#include <kvm.h>
++#include <nlist.h>
+ 
+ kvm_t *kvmfd;
+ struct nlist symbols[] = {
+@@ -33,11 +36,10 @@ struct nlist symbols[] = {
+  { NULL }
+ };
+ unsigned long ifnet_savedaddr;
+-int kvm_test(void);
+-int kvm_updateStats(void);
++int kvm_test(struct if_data_t *);
++int kvm_updateStats(struct if_data_t *);
+ #endif /* USE_KVM */
+ 
+-
+ #ifdef USE_LINUX_PPP
+ #include<net/ppp_defs.h>
+ 
+@@ -57,18 +59,6 @@ static struct ifpppstatsreq ppp_stats_re
+ #define ACCOUNT_IN_FOUND        1
+ #define ACCOUNT_OUT_FOUND       2
+ 
+-extern char buffer[256];
+-extern char *in_rule_string, *out_rule_string, *device;
+-extern unsigned long totalbytes_in, totalbytes_out, lastbytes_in, lastbytes_out;
+-extern unsigned long totalpackets_in, totalpackets_out, lastpackets_in, lastpackets_out;
+-extern unsigned int diffpackets_in, diffpackets_out, diffbytes_in, diffbytes_out;
+-extern unsigned int out_rule, in_rule;  /* number of rule in /proc/net/ip_acct to use */
+-extern Bool current_tx, current_rx, rx, tx;
+-
+-
+-
+-char *available_drivers(void);
+-
+ #ifdef USE_IPFWADM
+ int updateStats_ipfwadm(void);
+ int ipfwadm_test(void);
+@@ -82,10 +72,8 @@ int updateStats_dev(void);
+ int dev_test(void);
+ #endif
+ 
+-
+-typedef int (*parser_func)(void);
+ static struct drivers_struct {
+- char * name;
++ char *name;
+  parser_func function;
+  parser_func test;
+ } drivers[] = {
+@@ -102,12 +90,13 @@ static struct drivers_struct {
+  {"pppstats",updateStats_ppp, ppp_test},
+ #endif
+ #ifdef USE_KVM
+- {"kmem",kvm_updateStats, kvm_test},
++ {"kmem", kvm_updateStats, kvm_test},
+ #endif
+  {NULL, NULL}
+ };
+ 
+-char* available_drivers(void) {
++char *
++available_drivers(void) {
+  int ind = 0;
+  int len = 0;
+  char *string, *ptr;
+@@ -127,14 +116,12 @@ char* available_drivers(void) {
+  *(--string) = '\0';
+  return ptr; 
+ } 
+-   
+ 
+-
+-parser_func find_driver(void) {
++parser_func find_driver(struct if_data_t *id) {
+  int ind = 0;
+  while(drivers[ind].name != NULL) {
+-  if(drivers[ind].test()) {
+-   return drivers[ind].function;
++  if(drivers[ind].test(id)) {
++   return (parser_func)drivers[ind].function;
+   }
+   ind++;
+  }
+@@ -143,12 +130,13 @@ parser_func find_driver(void) {
+ }
+ 
+ 
+-parser_func setup_driver(char * parser_name) {
++setup_func
++setup_driver(char *parser_name, struct if_data_t *id) {
+  int ind = 0;
+- if (parser_name == NULL) return find_driver(); 
++ if (parser_name == NULL) return (void *)find_driver(id); 
+  while(drivers[ind].name != NULL) {
+   if(!strcmp(parser_name, drivers[ind].name)) {
+-    if (drivers[ind].test()) return drivers[ind].function;
++    if (drivers[ind].test(id)) return (void *)drivers[ind].function;
+     fprintf(stderr, "wmnet: driver %s not appropriate for this machine\n", parser_name);
+     exit(18);
+   }
+@@ -157,9 +145,6 @@ parser_func setup_driver(char * parser_n
+  fprintf(stderr, "wmnet: no driver %s\n", parser_name);
+  exit(18);
+ }
+-  
+-
+-
+ 
+ #ifdef linux
+ /* All the data gathering is done in here. 
+@@ -441,20 +426,24 @@ int updateStats_ppp(void) {
+ #endif /* linux */
+ 
+ #ifdef USE_KVM
+-int kvm_test(void) {
++int kvm_test(struct if_data_t *id) {
+   if (((kvmfd = kvm_open(NULL, NULL, NULL, O_RDONLY, buffer)) == NULL) ||
+       (kvm_nlist(kvmfd, symbols) < 0) ||
+       kvm_read(kvmfd, (unsigned long)symbols[0].n_value, &ifnet_savedaddr, sizeof(unsigned long)) == -1 ) return False;
+-  if(device == NULL) device = "ec0";
+-  fprintf(stderr, "wmnet: using kmem driver to monitor %s\n", device);
++  if(id->device == NULL) id->device = "ec0";
++  fprintf(stderr, "wmnet: using kmem driver to monitor %s\n", id->device);
+   return True;
+ }
+ 
+-int kvm_updateStats(void) {
++int kvm_updateStats(struct if_data_t *id) {
+  struct ifnet * ifnet = (struct ifnet *)buffer;
+  unsigned long ifnet_addr = ifnet_savedaddr;
+  char devname[16];
+  int flag = 0;
++ unsigned long tp_in, tp_out, tb_in, tb_out;
++ static unsigned long lp_in, lp_out, lb_in, lb_out;
++ //static unsigned int dp_in, dp_out;
++
+  while (ifnet_addr && flag != (ACCOUNT_IN_FOUND|ACCOUNT_OUT_FOUND)) {
+   kvm_read(kvmfd, ifnet_addr, buffer, sizeof(struct ifnet));
+ #ifdef __OpenBSD__
+@@ -463,26 +452,27 @@ int kvm_updateStats(void) {
+   kvm_read(kvmfd, (unsigned long)ifnet->if_name, devname, 15);
+   snprintf(devname, 15, "%s%d", devname, ifnet->if_unit);
+ #endif
+-  if(!strncmp(devname, device, strlen(device))) { /* we found our struct */
+-        totalpackets_in =ifnet->if_ipackets;
+-        if (totalpackets_in != lastpackets_in) {
+-                totalbytes_in = ifnet->if_ibytes;
+-                diffpackets_in += totalpackets_in - lastpackets_in;
+-                diffbytes_in += totalbytes_in - lastbytes_in;
+-                lastpackets_in = totalpackets_in;
+-                lastbytes_in = totalbytes_in;
+-                rx = True;
++   /* we found our struct */
++  if(!strncmp(devname, id->device, strlen(id->device))) {
++        tp_in =ifnet->if_ipackets;
++        if (tp_in != lp_in) {
++                tb_in = ifnet->if_ibytes;
++                //dp_in += tp_in - lp_in;
++                id->db_in += tb_in - lb_in;
++                lp_in = tp_in;
++                lb_in = tb_in;
++                id->rx = True;
+         }
+ 
+ 
+-        totalpackets_out = ifnet->if_opackets;
+-        if (totalpackets_out != lastpackets_out) {
+-                totalbytes_out =ifnet->if_obytes;
+-                diffpackets_out += totalpackets_out - lastpackets_out;
+-                diffbytes_out += totalbytes_out - lastbytes_out;
+-                lastpackets_out = totalpackets_out;
+-                lastbytes_out = totalbytes_out;
+-                tx = True;
++        tp_out =ifnet->if_opackets;
++        if (tp_out != lp_out) {
++                tb_out = ifnet->if_obytes;
++                //dp_out += tp_out - lp_out;
++                id->db_out += tb_out - lb_out;
++                lp_out = tp_out;
++                lb_out = tb_out;
++                id->tx = True;
+         }
+         flag = (ACCOUNT_IN_FOUND|ACCOUNT_OUT_FOUND);
+ 
+@@ -498,12 +488,8 @@ int kvm_updateStats(void) {
+ /* return True if no change to tx/rx
+  * return False if display will need to be updated
+  */	 
+- return((rx == current_rx) && (tx == current_tx));
++ return((id->rx == id->current_rx) && (id->tx == id->current_tx));
+ }
+ 
+ 
+ #endif
+-  
+-
+-   
+-  
