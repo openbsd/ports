@@ -1,0 +1,4 @@
+qiv is an image viewer developed with gdk/imlib. As a result, qiv
+is faster than traditional image viewers such as xv or xli.
+
+WWW: ${HOMEPAGE}
