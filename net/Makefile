@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 1998/07/16 17:30:29 downsj Exp $
+# $OpenBSD: Makefile,v 1.21 1998/07/17 10:31:58 form Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -9,7 +9,7 @@
      SUBDIR += bing
 #    SUBDIR += cap
 #    SUBDIR += choparp
-#    SUBDIR += clog
+     SUBDIR += clog
 #    SUBDIR += cvsup
 #    SUBDIR += cvsup-bin
 #    SUBDIR += cvsup-mirror
