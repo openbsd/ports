@@ -1,0 +1,19 @@
+The XawM Widget set is based on the widely-distributed Xaw3d widget set.
+XawM makes a few changes required to give Athena the "modern"
+look-and-feel. It borrows a few features from neXtaw and other widgets
+sets as required to obtain a modern look and feel, although the actual
+source code is entirely based on Xaw3d.
+
+When XawM is installed, and symlinked as libXaw, most applications that
+formerly used Xaw will seamlessly adopt the new look-and-feel. A few
+applications which use widgets which were subclassed from Xaw widgets,
+such as gv(1), will not work and need to be linked to the original Xaw
+or Xaw3d library. Instructions for doing this are included in the
+release notes for XawM.
+
+NOTE:
+This is Ed Falk's XawM (M for Modern), hacked for use with Siag Office
+and adapted for autoconf and libtool. This release is called 1.5u; 1.5
+because it is based on Xaw3d 1.5, and u because Ulric messed with it.
+
+WWW: ${HOMEPAGE}
