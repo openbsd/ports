@@ -3,25 +3,25 @@
 # Date created:		May 20 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.6 2000/03/24 23:28:23 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/27 05:05:21 kevlo Exp $
 #
 
 DISTNAME=	tkcron-2.12
-CATEGORIES=	misc tk80
+CATEGORIES=	misc 
 NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.neosoft.com/languages/tcl/alcatel/code/
 EXTRACT_SUFX=	.tcl.gz
 
 MAINTAINER=	angelos@openbsd.org
 
-LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	wish8.0::x11/tk80
+RUN_DEPENDS=	wish8.3::x11/tk/8.3
 
+FAKE=		Yes
 EXTRACT_CMD=	${GZIP_CMD}
 EXTRACT_BEFORE_ARGS= -cd
 EXTRACT_AFTER_ARGS= > tkcron.tcl
