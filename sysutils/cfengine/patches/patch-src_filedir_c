@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_filedir_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
+--- src/filedir.c.orig	2004-06-10 10:50:03.000000000 -0400
++++ src/filedir.c	2004-06-10 11:21:14.000000000 -0400
+@@ -169,7 +169,7 @@ for (dirp = readdir(dirh); dirp != NULL;
+       continue;
+       }
+    
+-   strcpy(pcwd,name);                                   /* Assemble pathname */
++   (void)strlcpy(pcwd,name,sizeof(pcwd));                                   /* Assemble pathname */
+    AddSlash(pcwd);
+ 
+    if (BufferOverflow(pcwd,dirp->d_name))
+@@ -178,7 +178,7 @@ for (dirp = readdir(dirh); dirp != NULL;
+       return true;
+       }
+ 
+-   strcat(pcwd,dirp->d_name);
++   (void)strlcat(pcwd,dirp->d_name,sizeof(pcwd));
+ 
+    if (lstat(dirp->d_name,&statbuf) == -1)
+       {
+@@ -1168,7 +1168,7 @@ int CheckHomeSubDir(char *testpath,char 
+ 
+ if (strncmp(tidypath,"home/",5) == 0)
+    {
+-   strcpy(buffer,testpath);
++   (void)strlcpy(buffer,testpath,sizeof(buffer));
+ 
+    for (ChopLastNode(buffer); strlen(buffer) != 0; ChopLastNode(buffer))
+      {
+@@ -1189,7 +1189,7 @@ if (strncmp(tidypath,"home/",5) == 0)
+ 
+    subdirstart = tidypath + 4;                                   /* Ptr to start of subdir */
+ 
+-   strcpy(buffer,testpath);
++   (void)strlcpy(buffer,testpath,sizeof(buffer));
+ 
+    ChopLastNode(buffer);                                         /* Filename only */
+ 
+@@ -1259,7 +1259,7 @@ if (name == NULL || strlen(name) == 0)
+  
+ strncpy(VBUFF,pathto,CF_BUFSIZE-1);
+ AddSlash(VBUFF);
+-strcat(VBUFF,name);
++(void)strlcat(VBUFF,name,sizeof(VBUFF));
+ 
+ if (ignores != NULL)
+    {

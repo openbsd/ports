@@ -1,0 +1,128 @@
+$OpenBSD: patch-src_cfexecd_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
+--- src/cfexecd.c.orig	Sat Apr 17 16:11:14 2004
++++ src/cfexecd.c	Thu Jun 17 12:54:38 2004
+@@ -143,7 +143,7 @@ Banner("Check options");
+ 
+ NOSPLAY = false; 
+ 
+-sprintf(VPREFIX, "cfexecd"); 
++(void)snprintf(VPREFIX, 40, "cfexecd"); 
+ openlog(VPREFIX,LOG_PID|LOG_NOWAIT|LOG_ODELAY,LOG_DAEMON);
+ 
+ while ((c=getopt_long(argc,argv,"L:d:vhpFV1g",CFDOPTIONS,&optindex)) != EOF)
+@@ -224,7 +224,7 @@ strncpy(VLOGDIR,WORKDIR,CF_BUFSIZE-1);
+ VCANONICALFILE = strdup(CanonifyName(VINPUTFILE));
+ GetNameInfo();
+ 
+-strcpy(VUQNAME,VSYSNAME.nodename);
++(void)strlcpy(VUQNAME,VSYSNAME.nodename,CF_MAXVARSIZE);
+ }
+ 
+ 
+@@ -408,7 +408,7 @@ if (strstr(line,"No SMTP"))
+    CfLog(cferror,"Need: smtpserver = ( ?? ) in control ","");
+    }
+ 
+-strcpy(VMAILSERVER,line); 
++(void)strlcpy(VMAILSERVER,line,sizeof(VMAILSERVER)); 
+  
+ Debug("Got cfengine SMTP server as (%s)\n",VMAILSERVER); 
+ 
+@@ -422,19 +422,19 @@ if (strlen(line) == 0)
+    CfLog(cferror,"Need: sysadm = ( ??@?? ) in control ","");
+    }
+ 
+-strcpy(MAILTO,line); 
++(void)strlcpy(MAILTO,line,sizeof(MAILTO)); 
+ Debug("Got cfengine sysadm variable (%s)\n",MAILTO); 
+ 
+ line[0] = '\0'; 
+ fgets(line,CF_BUFSIZE,pp); 
+ Chop(line); 
+-strcpy(VFQNAME,line); 
++(void)strlcpy(VFQNAME,line,CF_MAXVARSIZE); 
+ Debug("Got fully qualified name (%s)\n",VFQNAME); 
+ 
+ line[0] = '\0'; 
+ fgets(line,CF_BUFSIZE,pp); 
+ Chop(line); 
+-strcpy(VIPADDRESS,line); 
++(void)strlcpy(VIPADDRESS,line,18); 
+ Debug("Got IP (%s)\n",VIPADDRESS); 
+ 
+ if ((ungetc(fgetc(pp), pp)) != '[')
+@@ -909,7 +909,7 @@ if (!Dialogue(sd,NULL))
+    goto mail_err;
+    }
+  
+-sprintf(VBUFF,"HELO %s\r\n",VFQNAME); 
++(void)snprintf(VBUFF,sizeof(VBUFF),"HELO %s\r\n",VFQNAME); 
+ 
+  if (!Dialogue(sd,VBUFF))
+      {
+@@ -916,7 +916,7 @@ sprintf(VBUFF,"HELO %s\r\n",VFQNAME); 
+      goto mail_err;
+      }
+  
+-sprintf(VBUFF,"MAIL FROM: <cfengine@%s>\r\n",VFQNAME);
++(void)snprintf(VBUFF,sizeof(VBUFF),"MAIL FROM: <cfengine@%s>\r\n",VFQNAME);
+ 
+ if (!Dialogue(sd,VBUFF))
+    {
+@@ -923,7 +923,7 @@ if (!Dialogue(sd,VBUFF))
+    goto mail_err;
+    }
+  
+-sprintf(VBUFF,"RCPT TO: <%s>\r\n",to);
++(void)snprintf(VBUFF,sizeof(VBUFF),"RCPT TO: <%s>\r\n",to);
+  
+ if (!Dialogue(sd,VBUFF))
+     {
+@@ -937,18 +937,18 @@ if (!Dialogue(sd,"DATA\r\n"))
+ 
+ if (anomaly)
+    {
+-   sprintf(VBUFF,"Subject: **!! (%s/%s)\r\n",VFQNAME,VIPADDRESS);
++   (void)snprintf(VBUFF,sizeof(VBUFF),"Subject: **!! (%s/%s)\r\n",VFQNAME,VIPADDRESS);
+    }
+ else
+    {
+-   sprintf(VBUFF,"Subject: (%s/%s)\r\n",VFQNAME,VIPADDRESS);
++   (void)snprintf(VBUFF,sizeof(VBUFF),"Subject: (%s/%s)\r\n",VFQNAME,VIPADDRESS);
+    }
+  
+ sent=send(sd,VBUFF,strlen(VBUFF),0);
+ 
+-sprintf(VBUFF,"From: cfengine@%s\r\n",VFQNAME); 
++(void)snprintf(VBUFF,sizeof(VBUFF),"From: cfengine@%s\r\n",VFQNAME); 
+ sent=send(sd,VBUFF,strlen(VBUFF),0);
+-sprintf(VBUFF,"To: %s\r\n\r\n",to); 
++(void)snprintf(VBUFF,sizeof(VBUFF),"To: %s\r\n\r\n",to); 
+ sent=send(sd,VBUFF,strlen(VBUFF),0);
+ 
+ while(!feof(fp))
+@@ -958,13 +958,13 @@ while(!feof(fp))
+    if (strlen(VBUFF) > 0)
+       {
+       VBUFF[strlen(VBUFF)-1] = '\r';
+-      strcat(VBUFF, "\n");
++      (void)strlcat(VBUFF, "\n",sizeof(VBUFF));
+       count++;
+       sent=send(sd,VBUFF,strlen(VBUFF),0);
+       }
+    if ((MAXLINES != INF_LINES) && (count > MAXLINES))
+       {
+-      sprintf(VBUFF,"\r\n[Mail truncated by cfengine. File is at %s on %s]\r\n",file,VFQNAME);
++      (void)snprintf(VBUFF,sizeof(VBUFF),"\r\n[Mail truncated by cfengine. File is at %s on %s]\r\n",file,VFQNAME);
+       sent=send(sd,VBUFF,strlen(VBUFF),0);
+       break;
+       }
+@@ -985,7 +985,7 @@ mail_err: 
+ 
+ fclose(fp);
+ close(sd); 
+-sprintf(VBUFF, "Cannot mail to %s.", to);
++(void)snprintf(VBUFF, sizeof(VBUFF), "Cannot mail to %s.", to);
+ CfLog(cferror,VBUFF,"");
+ }
+ 

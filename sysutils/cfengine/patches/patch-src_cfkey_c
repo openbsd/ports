@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_cfkey_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
+--- src/cfkey.c.orig	2004-06-10 23:26:34.000000000 -0400
++++ src/cfkey.c	2004-06-10 22:30:18.000000000 -0400
+@@ -147,8 +147,8 @@ void Initialize()
+ 
+ {
+ umask(077);
+-strcpy(VLOCKDIR,WORKDIR);
+-strcpy(VLOGDIR,WORKDIR); 
++(void)strlcpy(VLOCKDIR,WORKDIR,CF_BUFSIZE);
++(void)strlcpy(VLOGDIR,WORKDIR,CF_BUFSIZE); 
+ 
+ OpenSSL_add_all_algorithms();
+ ERR_load_crypto_strings();

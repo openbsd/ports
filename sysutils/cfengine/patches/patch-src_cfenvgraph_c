@@ -1,0 +1,282 @@
+$OpenBSD: patch-src_cfenvgraph_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
+--- src/cfenvgraph.c.orig	Mon Apr 19 12:00:16 2004
++++ src/cfenvgraph.c	Thu Jun 17 12:54:38 2004
+@@ -171,7 +171,7 @@ fgets(line,CF_BUFSIZE,pp); 
+ fgets(line,CF_BUFSIZE,pp); 
+ line[0] = '\0'; 
+ fgets(line,CF_BUFSIZE,pp);  
+-strcpy(VFQNAME,line);
++(void)strlcpy(VFQNAME,line,CF_MAXVARSIZE);
+ 
+ if (strlen(VFQNAME) == 0)
+    {
+@@ -181,7 +181,7 @@ if (strlen(VFQNAME) == 0)
+       perror("uname ");
+       exit(0);
+       }
+-   strcpy(VFQNAME,sys.sysname);
++   (void)strlcpy(VFQNAME,sys.sysname,CF_MAXVARSIZE);
+    } 
+ else
+    {
+@@ -279,7 +279,7 @@ for (NOW = CF_MONDAY_MORNING; NOW < CF_M
+    memset(&value,0,sizeof(value));
+    memset(&ENTRY,0,sizeof(ENTRY));
+ 
+-   strcpy(TIMEKEY,GenTimeKey(NOW));
++   (void)strlcpy(TIMEKEY,GenTimeKey(NOW),sizeof(TIMEKEY));
+ 
+    key.data = TIMEKEY;
+    key.size = strlen(TIMEKEY)+1;
+@@ -548,7 +548,7 @@ if (TIMESTAMPS)
+       printf("Couldn't read system clock\n");
+       }
+      
+-   sprintf(FLNAME,"cfenvgraphs-%s-%s",VFQNAME,ctime(&NOW));
++   (void)snprintf(FLNAME,sizeof(FLNAME),"cfenvgraphs-%s-%s",VFQNAME,ctime(&NOW));
+ 
+    for (sp = FLNAME; *sp != '\0'; sp++)
+       {
+@@ -560,7 +560,7 @@ if (TIMESTAMPS)
+    }
+  else
+    {
+-   sprintf(FLNAME,"cfenvgraphs-snapshot-%s",VFQNAME);
++   (void)snprintf(FLNAME,sizeof(FLNAME),"cfenvgraphs-snapshot-%s",VFQNAME);
+    }
+ 
+ printf("Creating sub-directory %s\n",FLNAME);
+@@ -582,7 +582,7 @@ if (chdir(FLNAME))
+ printf("Writing data to sub-directory %s: \n   x,y1,y2,y3...\n ",FLNAME);
+ 
+ 
+-sprintf(FLNAME,"cfenv-average");
++(void)snprintf(FLNAME,sizeof(FLNAME),"cfenv-average");
+ 
+ if ((FPAV = fopen(FLNAME,"w")) == NULL)
+    {
+@@ -590,7 +590,7 @@ if ((FPAV = fopen(FLNAME,"w")) == NULL)
+    exit(1);
+    }
+ 
+-sprintf(FLNAME,"cfenv-stddev"); 
++(void)snprintf(FLNAME,sizeof(FLNAME),"cfenv-stddev"); 
+ 
+ if ((FPVAR = fopen(FLNAME,"w")) == NULL)
+    {
+@@ -603,31 +603,31 @@ if ((FPVAR = fopen(FLNAME,"w")) == NULL)
+ 
+ if (SEPARATE)
+    {
+-   sprintf(FLNAME,"users.cfenv"); 
++   (void)snprintf(FLNAME,sizeof(FLNAME),"users.cfenv"); 
+    if ((FPUSER = fopen(FLNAME,"w")) == NULL)
+       {
+       perror("fopen");
+       exit(1);
+       }
+-   sprintf(FLNAME,"rootprocs.cfenv"); 
++   (void)snprintf(FLNAME,sizeof(FLNAME),"rootprocs.cfenv"); 
+    if ((FPROOT = fopen(FLNAME,"w")) == NULL)
+       {
+       perror("fopen");
+       exit(1);
+       }
+-   sprintf(FLNAME,"otherprocs.cfenv"); 
++   (void)snprintf(FLNAME,sizeof(FLNAME),"otherprocs.cfenv"); 
+    if ((FPOTHER = fopen(FLNAME,"w")) == NULL)
+       {
+       perror("fopen");
+       exit(1);
+       }
+-   sprintf(FLNAME,"freedisk.cfenv"); 
++   (void)snprintf(FLNAME,sizeof(FLNAME),"freedisk.cfenv"); 
+    if ((FPDISK = fopen(FLNAME,"w")) == NULL)
+       {
+       perror("fopen");
+       exit(1);
+       }
+-   sprintf(FLNAME,"loadavg.cfenv"); 
++   (void)snprintf(FLNAME,sizeof(FLNAME),"loadavg.cfenv"); 
+    if ((FPLOAD = fopen(FLNAME,"w")) == NULL)
+       {
+       perror("fopen");
+@@ -636,7 +636,7 @@ if (SEPARATE)
+ 
+    for (i = 0; i < ATTR; i++)
+       {
+-      sprintf(FLNAME,"%s-in.cfenv",ECGSOCKS[i][1]); 
++      (void)snprintf(FLNAME,sizeof(FLNAME),"%s-in.cfenv",ECGSOCKS[i][1]); 
+       if ((FPIN[i] = fopen(FLNAME,"w")) == NULL)
+          {
+          perror("fopen");
+@@ -643,7 +643,7 @@ if (SEPARATE)
+          exit(1);
+          }
+ 
+-      sprintf(FLNAME,"%s-out.cfenv",ECGSOCKS[i][1]); 
++      (void)snprintf(FLNAME,sizeof(FLNAME),"%s-out.cfenv",ECGSOCKS[i][1]); 
+       if ((FPOUT[i] = fopen(FLNAME,"w")) == NULL)
+          {
+          perror("fopen");
+@@ -653,7 +653,7 @@ if (SEPARATE)
+ 
+    for (i = 0; i < CF_NETATTR; i++)
+       {
+-      sprintf(FLNAME,"%s-in.cfenv",TCPNAMES[i]); 
++      (void)snprintf(FLNAME,sizeof(FLNAME),"%s-in.cfenv",TCPNAMES[i]); 
+       if ((FPNETIN[i] = fopen(FLNAME,"w")) == NULL)
+          {
+          perror("fopen");
+@@ -660,7 +660,7 @@ if (SEPARATE)
+          exit(1);
+          }
+ 
+-      sprintf(FLNAME,"%s-out.cfenv",TCPNAMES[i]); 
++      (void)snprintf(FLNAME,sizeof(FLNAME),"%s-out.cfenv",TCPNAMES[i]); 
+       if ((FPNETOUT[i] = fopen(FLNAME,"w")) == NULL)
+          {
+          perror("fopen");
+@@ -675,7 +675,7 @@ if (SEPARATE)
+   continue;
+   }
+       
+-      sprintf(FLNAME,"%s.cfenv",CanonifyName(PH_BINARIES[i])); 
++      (void)snprintf(FLNAME,sizeof(FLNAME),"%s.cfenv",CanonifyName(PH_BINARIES[i])); 
+       if ((FPPH[i] = fopen(FLNAME,"w")) == NULL)
+          {
+          perror("fopen");
+@@ -765,7 +765,7 @@ while (NOW < CF_MONDAY_MORNING+CF_WEEK)
+       memset(&key,0,sizeof(key));       
+       memset(&value,0,sizeof(value));
+       
+-      strcpy(TIMEKEY,GenTimeKey(NOW));
++      (void)strlcpy(TIMEKEY,GenTimeKey(NOW),sizeof(TIMEKEY));
+       key.data = TIMEKEY;
+       key.size = strlen(TIMEKEY)+1;
+       
+@@ -1017,7 +1017,7 @@ for (i = 0; i < 7; i++)
+     int position,day;
+     int weekly[CF_NETATTR*2+ATTR*2+5+PH_LIMIT][CF_GRAINS];
+     
+-    snprintf(FLNAME,CF_BUFSIZE,"%s/state/histograms",WORKDIR);
++    snprintf(FLNAME,sizeof(FLNAME),"%s/state/histograms",WORKDIR);
+     
+     if ((fp = fopen(FLNAME,"r")) == NULL)
+        {
+@@ -1074,31 +1074,31 @@ for (i = 0; i < 7; i++)
+           }
+        }
+     
+-    sprintf(FLNAME,"users.distr"); 
++    (void)snprintf(FLNAME,sizeof(FLNAME),"users.distr"); 
+     if ((FPUSER = fopen(FLNAME,"w")) == NULL)
+        {
+        perror("fopen");
+        exit(1);
+        }
+-    sprintf(FLNAME,"rootprocs.distr"); 
++    (void)snprintf(FLNAME,sizeof(FLNAME),"rootprocs.distr"); 
+     if ((FPROOT = fopen(FLNAME,"w")) == NULL)
+        {
+        perror("fopen");
+        exit(1);
+        }
+-    sprintf(FLNAME,"otherprocs.distr"); 
++    (void)snprintf(FLNAME,sizeof(FLNAME),"otherprocs.distr"); 
+     if ((FPOTHER = fopen(FLNAME,"w")) == NULL)
+        {
+        perror("fopen");
+        exit(1);
+        }
+-    sprintf(FLNAME,"freedisk.distr"); 
++    (void)snprintf(FLNAME,sizeof(FLNAME),"freedisk.distr"); 
+     if ((FPDISK = fopen(FLNAME,"w")) == NULL)
+        {
+        perror("fopen");
+        exit(1);
+        }
+-    sprintf(FLNAME,"loadavg.distr"); 
++    (void)snprintf(FLNAME,sizeof(FLNAME),"loadavg.distr"); 
+     if ((FPLOAD = fopen(FLNAME,"w")) == NULL)
+        {
+        perror("fopen");
+@@ -1107,7 +1107,7 @@ for (i = 0; i < 7; i++)
+     
+     for (i = 0; i < ATTR; i++)
+        {
+-       sprintf(FLNAME,"%s-in.distr",ECGSOCKS[i][1]); 
++       (void)snprintf(FLNAME,sizeof(FLNAME),"%s-in.distr",ECGSOCKS[i][1]); 
+        if ((FPIN[i] = fopen(FLNAME,"w")) == NULL)
+           {
+           perror("fopen");
+@@ -1114,7 +1114,7 @@ for (i = 0; i < 7; i++)
+           exit(1);
+           }
+ 
+-       sprintf(FLNAME,"%s-out.distr",ECGSOCKS[i][1]); 
++       (void)snprintf(FLNAME,sizeof(FLNAME),"%s-out.distr",ECGSOCKS[i][1]); 
+        if ((FPOUT[i] = fopen(FLNAME,"w")) == NULL)
+           {
+           perror("fopen");
+@@ -1124,13 +1124,13 @@ for (i = 0; i < 7; i++)
+     
+        for (i = 0; i < CF_NETATTR; i++)
+           {
+-          sprintf(FLNAME,"%s-in.distr",TCPNAMES[i]); 
++          (void)snprintf(FLNAME,sizeof(FLNAME),"%s-in.distr",TCPNAMES[i]); 
+           if ((FPNETIN[i] = fopen(FLNAME,"w")) == NULL)
+              {
+              perror("fopen");
+              exit(1);
+              }
+-          sprintf(FLNAME,"%s-out.distr",TCPNAMES[i]); 
++          (void)snprintf(FLNAME,sizeof(FLNAME),"%s-out.distr",TCPNAMES[i]); 
+ 
+           if ((FPNETOUT[i] = fopen(FLNAME,"w")) == NULL)
+              {
+@@ -1146,7 +1146,7 @@ for (i = 0; i < 7; i++)
+           continue;
+           }
+        
+-       sprintf(FLNAME,"%s.distr",CanonifyName(PH_BINARIES[i])); 
++       (void)snprintf(FLNAME,sizeof(FLNAME),"%s.distr",CanonifyName(PH_BINARIES[i])); 
+        if ((FPPH[i] = fopen(FLNAME,"w")) == NULL)
+           {
+           perror("fopen");
+@@ -1378,7 +1378,7 @@ for (dirp = readdir(dirh); dirp != NULL;
+          memset(&key,0,sizeof(key));       
+          memset(&value,0,sizeof(value));
+          
+-         strcpy(TIMEKEY,GenTimeKey(now));
++         (void)strlcpy(TIMEKEY,GenTimeKey(now),sizeof(TIMEKEY));
+          
+          key.data = TIMEKEY;
+          key.size = strlen(TIMEKEY)+1;
+@@ -1481,7 +1481,7 @@ while ((c=getopt_long(argc,argv,"Thtf:rs
+       case 't': TITLES = true;
+                 break;
+ 
+-      case 'f': strcpy(FILENAME,optarg);
++      case 'f': (void)strlcpy(FILENAME,optarg,CF_BUFSIZE);
+          break;
+ 
+       case 'T': TIMESTAMPS = true;
+@@ -1535,7 +1535,7 @@ char *CanonifyName(char *str)
+   char *sp;
+ 
+ memset(buffer,0,CF_BUFSIZE);
+-strcpy(buffer,str);
++(void)strlcpy(buffer,str,sizeof(buffer));
+ 
+ for (sp = buffer; *sp != '\0'; sp++)
+     {
+@@ -1607,7 +1607,7 @@ for (NOW = CF_MONDAY_MORNING; NOW < CF_M
+    memset(&value,0,sizeof(value));
+    memset(&ENTRY,0,sizeof(ENTRY));
+ 
+-   strcpy(TIMEKEY,GenTimeKey(NOW));
++   (void)strlcpy(TIMEKEY,GenTimeKey(NOW),sizeof(TIMEKEY));
+ 
+    key.data = TIMEKEY;
+    key.size = strlen(TIMEKEY)+1;

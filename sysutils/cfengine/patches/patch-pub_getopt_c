@@ -1,0 +1,14 @@
+$OpenBSD: patch-pub_getopt_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
+--- pub/getopt.c.orig	2004-06-12 23:37:42.000000000 -0400
++++ pub/getopt.c	2004-06-12 23:38:17.000000000 -0400
+@@ -60,6 +60,10 @@ Cambridge, MA 02139, USA.  */
+ #include <stdlib.h>
+ #endif	/* GNU C library.  */
+ 
++#ifdef __OpenBSD__
++#include <unistd.h>
++#endif
++
+ /* This version of `getopt' appears to the caller like standard Unix `getopt'
+    but it behaves differently for the user, since it allows the user
+    to intersperse the options with the other arguments.

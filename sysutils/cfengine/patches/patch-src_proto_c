@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_proto_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
+--- src/proto.c.orig	Sat Apr 17 16:11:10 2004
++++ src/proto.c	Thu Jun 17 12:54:40 2004
+@@ -131,8 +131,8 @@ if (strcmp(VDOMAIN,CF_START_DOMAIN) == 0
+  
+  if ((strstr(hp->h_name,".") == 0) && (strlen(VDOMAIN) > 0))
+     {
+-    strcat(dnsname,".");
+-    strcat(dnsname,VDOMAIN);
++    (void)strlcat(dnsname,".",sizeof(dnsname));
++    (void)strlcat(dnsname,VDOMAIN,sizeof(dnsname));
+     } 
+ #endif 
+  
+@@ -144,7 +144,7 @@ uname = user_ptr ? user_ptr->pw_name : "
+ if ((strlen(VDOMAIN) > 0) && !IsIPV6Address(dnsname) && !strchr(dnsname,'.'))
+    {
+    Debug("Appending domain %s to %s\n",VDOMAIN,dnsname);
+-   strcat(dnsname,".");
++   (void)strlcat(dnsname,".",sizeof(dnsname));
+    strncat(dnsname,VDOMAIN,CF_MAXVARSIZE/2);
+    }  
+ 
+@@ -151,7 +151,7 @@ if ((strlen(VDOMAIN) > 0) && !IsIPV6Addr
+ if (strncmp(dnsname,localip,strlen(localip)) == 0)
+    {
+    /* Seems to be a bug in some resolvers that adds garbage, when it just returns the input */
+-   strcpy(dnsname,localip);
++   (void)strlcpy(dnsname,localip,sizeof(dnsname));
+    }
+ 
+  snprintf(sendbuff,CF_BUFSIZE-1,"CAUTH %s %s %s %d",localip,dnsname,uname,CFSIGNATURE);

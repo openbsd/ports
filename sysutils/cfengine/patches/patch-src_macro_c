@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_macro_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
+--- src/macro.c.orig	2004-04-17 10:11:08.000000000 -0400
++++ src/macro.c	2004-06-10 15:38:36.000000000 -0400
+@@ -130,6 +130,7 @@ void AddMacroValue(char *scope,char *nam
+ { char *sp, buffer[CF_BUFSIZE],exp[CF_EXPANDSIZE];
+   struct cfObject *ptr; 
+   int slot;
++  size_t buflen;
+ 
+ Debug("AddMacroValue(%s.%s=%s)\n",scope,name,value);
+ 
+@@ -151,13 +152,14 @@ ptr = ObjectContext(scope);
+  
+ snprintf(buffer,CF_BUFSIZE,"%s=%s",name,exp);
+ 
+-if ((sp = malloc(strlen(buffer)+1)) == NULL)
++buflen = strlen(buffer) + 1;
++if ((sp = malloc(buflen)) == NULL)
+    {
+    perror("malloc");
+    FatalError("aborting");
+    }
+ 
+-strcpy(sp,buffer);
++(void)strlcpy(sp,buffer,buflen);
+ 
+ slot = Hash(name);
+  
+@@ -271,7 +273,7 @@ if (strstr(name,"."))
+  
+ if (ptr == NULL)
+    {
+-   strcpy(vname,name);
++   (void)strlcpy(vname,name,sizeof(vname));
+    ptr = ObjectContext(scope);
+    }
+  

@@ -1,0 +1,64 @@
+@comment $OpenBSD: PLIST,v 1.4 2004/06/17 11:21:43 sturm Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/cfengine-Anomalies.info
+@unexec install-info --delete --info-dir=%D/info %D/info/cfengine-Reference.info
+@unexec install-info --delete --info-dir=%D/info %D/info/cfengine-Tutorial.info
+info/cfengine-Anomalies.info
+info/cfengine-Reference.info
+info/cfengine-Reference.info-1
+info/cfengine-Reference.info-2
+info/cfengine-Reference.info-3
+info/cfengine-Reference.info-4
+info/cfengine-Reference.info-5
+info/cfengine-Reference.info-6
+info/cfengine-Reference.info-7
+info/cfengine-Reference.info-8
+info/cfengine-Tutorial.info
+info/cfengine-Tutorial.info-1
+info/cfengine-Tutorial.info-2
+info/cfengine-Tutorial.info-3
+info/cfengine-Tutorial.info-4
+info/cfengine-Tutorial.info-5
+info/cfengine-Tutorial.info-6
+man/man8/cfagent.8
+man/man8/cfengine.8
+man/man8/cfenvd.8
+man/man8/cfenvgraph.8
+man/man8/cfexecd.8
+man/man8/cfkey.8
+man/man8/cfrun.8
+man/man8/cfservd.8
+sbin/cfagent
+sbin/cfdoc
+sbin/cfenvd
+sbin/cfenvgraph
+sbin/cfexecd
+sbin/cfkey
+sbin/cfrun
+sbin/cfservd
+sbin/vicf
+share/cfengine/cfengine.el
+share/examples/cfengine/cf.chflags.example
+share/examples/cfengine/cf.freebsd.example
+share/examples/cfengine/cf.ftp.example
+share/examples/cfengine/cf.groups.example
+share/examples/cfengine/cf.linux.example
+share/examples/cfengine/cf.main.example
+share/examples/cfengine/cf.motd.example
+share/examples/cfengine/cf.preconf.example
+share/examples/cfengine/cf.services.example
+share/examples/cfengine/cf.site.example
+share/examples/cfengine/cf.solaris.example
+share/examples/cfengine/cf.sun4.example
+share/examples/cfengine/cf.users.example
+share/examples/cfengine/cfagent.conf-advanced.example
+share/examples/cfengine/cfagent.conf.example
+share/examples/cfengine/cfrc.example
+share/examples/cfengine/cfrun.hosts.example
+share/examples/cfengine/cfservd.conf.example
+share/examples/cfengine/update.conf.example
+@dirrm share/examples/cfengine
+@dirrm share/cfengine
+@exec install-info --info-dir=%D/info %D/info/cfengine-Anomalies.info
+@exec install-info --info-dir=%D/info %D/info/cfengine-Reference.info
+@exec install-info --info-dir=%D/info %D/info/cfengine-Tutorial.info
+@extraunexec rm -fr /var/cfengine

@@ -1,0 +1,52 @@
+$OpenBSD: patch-src_methods_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
+--- src/methods.c.orig	2004-05-04 07:22:50.000000000 -0400
++++ src/methods.c	2004-06-10 16:11:06.000000000 -0400
+@@ -238,24 +238,24 @@ options[0] = '\0';
+ 
+ if (INFORM)
+    {
+-   strcat(options,"-I ");
++   (void)strlcat(options,"-I ",sizeof(options));
+    }
+ 
+ if (VERBOSE)
+    {
+-   strcat(options,"-v ");
++   (void)strlcat(options,"-v ",sizeof(options));
+    }
+ 
+ if (DEBUG || D2)
+    {
+-   strcat(options,"-d2 ");
++   (void)strlcat(options,"-d2 ",sizeof(options));
+    }
+ 
+ ptr = IsDefinedMethod(name,digeststring);
+ 
+-strcat(options,"-Z ");
+-strcat(options,digeststring);
+-strcat(options," ");
++(void)strlcat(options,"-Z ",sizeof(options));
++(void)strlcat(options,digeststring,sizeof(options));
++(void)strlcat(options," ",sizeof(options));
+  
+ snprintf(execstr,CF_BUFSIZE-1,"%s/bin/cfagent -f %s %s",WORKDIR,GetMethodFilename(ptr),options);
+ 
+@@ -693,7 +693,7 @@ while (!feof(fp))
+           
+       case cfmeth_sendclass:
+           Debug("Defining class: %s\n",arg);
+-          strncpy(METHODRETURNCLASSES,arg,CF_BUFSIZE-1);
++          strlcpy(METHODRETURNCLASSES,arg,sizeof(METHODRETURNCLASSES));
+           break;
+           
+       case cfmeth_attacharg:
+@@ -998,7 +998,7 @@ for (dirp = readdir(dirh); dirp != NULL;
+    SplitMethodName(dirp->d_name,client,server,name,digeststring,extra);
+ 
+    Verbose("This request came from %s - our reply should be sent there!\n",client);
+-   strcpy(METHODREPLYTO,client);
++   (void)strlcpy(METHODREPLYTO,client,sizeof(METHODREPLYTO));
+    
+    if (strcmp(methodname,name) == 0)
+       {

@@ -1,0 +1,372 @@
+$OpenBSD: patch-src_varstring_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
+--- src/varstring.c.orig	Tue Apr 20 07:49:29 2004
++++ src/varstring.c	Thu Jun 17 12:54:41 2004
+@@ -354,7 +354,7 @@ for (sp = string; /* No exit */ ; sp++) 
+       FatalError("Can't expand varstring");
+       }
+    
+-   strcat(buffer,currentitem);
++   (void)strlcat(buffer,currentitem,CF_EXPANDSIZE);
+    sp += strlen(currentitem);
+ 
+    if (*sp == '$')
+@@ -368,7 +368,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                    varstring = '}';
+                    break;
+          default: 
+-                   strcat(buffer,"$");
++                   (void)strlcat(buffer,"$",CF_EXPANDSIZE);
+                    continue;
+          }
+       sp++;
+@@ -403,7 +403,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expand varstring");
+                 }
+-             strcat(buffer,VERSION);
++             (void)strlcat(buffer,VERSION,CF_EXPANDSIZE);
+ 	     break;
+              
+          case cffaculty:
+@@ -417,7 +417,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expand varstring");
+                 }
+-             strcat(buffer,VFACULTY);
++             (void)strlcat(buffer,VFACULTY,CF_EXPANDSIZE);
+              break;
+              
+              
+@@ -428,7 +428,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                    {
+                    FatalError("Can't expand varstring");
+                    }
+-                strcat(buffer,VDEFAULTBINSERVER.name);
++                (void)strlcat(buffer,VDEFAULTBINSERVER.name,CF_EXPANDSIZE);
+                 }
+              else
+                 {
+@@ -436,7 +436,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                    {
+                    FatalError("Can't expand varstring");
+                    }
+-                strcat(buffer,VUQNAME);
++                (void)strlcat(buffer,VUQNAME,CF_EXPANDSIZE);
+                 }
+              break;
+              
+@@ -445,7 +445,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expand varstring");
+                 }
+-             strcat(buffer,VFQNAME);
++             (void)strlcat(buffer,VFQNAME,CF_EXPANDSIZE);
+              break;
+              
+          case cfnetmask:
+@@ -453,7 +453,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expand varstring");
+                 }
+-             strcat(buffer,VNETMASK);
++             (void)strlcat(buffer,VNETMASK,CF_EXPANDSIZE);
+              break;
+              
+              
+@@ -462,7 +462,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expand varstring");
+                 }
+-             strcat(buffer,VIPADDRESS);
++             (void)strlcat(buffer,VIPADDRESS,CF_EXPANDSIZE);
+              break;
+              
+          case cfbinserver:
+@@ -476,7 +476,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expand varstring");
+                 }
+-             strcat(buffer,"$(binserver)");
++             (void)strlcat(buffer,"$(binserver)",CF_EXPANDSIZE);
+              break;
+              
+          case cfsysadm:
+@@ -489,7 +489,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expand varstring");
+                 }
+-             strcat(buffer,VSYSADM);
++             (void)strlcat(buffer,VSYSADM,CF_EXPANDSIZE);
+              break;
+              
+          case cfdomain:
+@@ -502,7 +502,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expandvarstring");
+                 }
+-             strcat(buffer,ToLowerStr(VDOMAIN));
++             (void)strlcat(buffer,ToLowerStr(VDOMAIN),CF_EXPANDSIZE);
+              break;
+              
+          case cfnfstype:
+@@ -510,7 +510,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expandvarstring");
+                 }
+-             strcat(buffer,VNFSTYPE);
++             (void)strlcat(buffer,VNFSTYPE,CF_EXPANDSIZE);
+              break;
+              
+          case cftimezone:
+@@ -523,7 +523,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expandvarstring");
+                 }
+-             strcat(buffer,VTIMEZONE->name);
++             (void)strlcat(buffer,VTIMEZONE->name,CF_EXPANDSIZE);
+              break;
+              
+          case cfclass:
+@@ -531,7 +531,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expandvarstring");
+                 }
+-             strcat(buffer,CLASSTEXT[VSYSTEMHARDCLASS]);
++             (void)strlcat(buffer,CLASSTEXT[VSYSTEMHARDCLASS],CF_EXPANDSIZE);
+              break;
+              
+          case cfarch:
+@@ -539,7 +539,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expandvarstring");
+                 }
+-             strcat(buffer,VARCH);
++             (void)strlcat(buffer,VARCH,CF_EXPANDSIZE);
+              break;
+              
+          case cfarch2:
+@@ -547,7 +547,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expandvarstring");
+                 }
+-             strcat(buffer,VARCH2);
++             (void)strlcat(buffer,VARCH2,CF_EXPANDSIZE);
+              break;
+              
+              
+@@ -565,7 +565,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 }
+              else
+                 {
+-                strcat(buffer,Space2Score(ctime(&tloc)));
++                (void)strlcat(buffer,Space2Score(ctime(&tloc)),CF_EXPANDSIZE);
+                 Chop(buffer);
+                 }
+              
+@@ -578,7 +578,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 }
+              else
+                 {
+-                strcat(buffer,VYEAR);
++                (void)strlcat(buffer,VYEAR,CF_EXPANDSIZE);
+                 }
+              break;
+              
+@@ -589,7 +589,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 }
+              else
+                 {
+-                strcat(buffer,VMONTH);
++                (void)strlcat(buffer,VMONTH,CF_EXPANDSIZE);
+                 }
+              break;
+              
+@@ -600,7 +600,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 }
+              else
+                 {
+-                strcat(buffer,VDAY);
++                (void)strlcat(buffer,VDAY,CF_EXPANDSIZE);
+                 }
+              break;
+          case cfhr:
+@@ -610,7 +610,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 }
+              else
+                 {
+-                strcat(buffer,VHR);
++                (void)strlcat(buffer,VHR,CF_EXPANDSIZE);
+                 }
+              break;
+              
+@@ -621,7 +621,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 }
+              else
+                 {
+-                strcat(buffer,VMINUTE);
++                (void)strlcat(buffer,VMINUTE,CF_EXPANDSIZE);
+                 }
+              break;
+              
+@@ -629,7 +629,7 @@ for (sp = string; /* No exit */ ; sp++) 
+              if (strlen(ALLCLASSBUFFER) == 0)
+                 {
+                 snprintf(name,CF_MAXVARSIZE,"$(%s)",currentitem);
+-                strcat(buffer,name);
++                (void)strlcat(buffer,name,CF_EXPANDSIZE);
+                 }
+              
+              if (ExpandOverflow(buffer,ALLCLASSBUFFER))
+@@ -636,7 +636,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expandvarstring");
+                 }
+-             strcat(buffer,ALLCLASSBUFFER);
++             (void)strlcat(buffer,ALLCLASSBUFFER,CF_EXPANDSIZE);
+              break;
+              
+          case cfspc:
+@@ -644,7 +644,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expandvarstring");
+                 }
+-             strcat(buffer," ");
++             (void)strlcat(buffer," ",CF_EXPANDSIZE);
+              break;
+              
+          case cftab:
+@@ -652,7 +652,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expandvarstring");
+                 }
+-             strcat(buffer,"\t");
++             (void)strlcat(buffer,"\t",CF_EXPANDSIZE);
+              break;
+              
+          case cflf:
+@@ -660,7 +660,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expandvarstring");
+                 }
+-             strcat(buffer,"\012");
++             (void)strlcat(buffer,"\012",CF_EXPANDSIZE);
+              break;
+              
+          case cfcr:
+@@ -668,7 +668,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 { 
+                 FatalError("Can't expandvarstring");
+                 }
+-             strcat(buffer,"\015");
++             (void)strlcat(buffer,"\015",CF_EXPANDSIZE);
+              break;
+              
+          case cfn:
+@@ -676,7 +676,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 { 
+                 FatalError("Can't expandvarstring");
+                 }
+-             strcat(buffer,"\n");
++             (void)strlcat(buffer,"\n",CF_EXPANDSIZE);
+              break;
+              
+          case cfdblquote:
+@@ -684,7 +684,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 { 
+                 FatalError("Can't expandvarstring");
+                 }
+-             strcat(buffer,"\"");
++             (void)strlcat(buffer,"\"",CF_EXPANDSIZE);
+              break;
+          case cfquote:
+              if (ExpandOverflow(buffer," "))
+@@ -691,7 +691,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 { 
+                 FatalError("Can't expandvarstring");
+                 }
+-             strcat(buffer,"\'");
++             (void)strlcat(buffer,"\'",CF_EXPANDSIZE);
+              break;
+              
+          case cfdollar:
+@@ -702,7 +702,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                    { 
+                    FatalError("Can't expandvarstring");
+                    }
+-                strcat(buffer,"$");
++                (void)strlcat(buffer,"$",CF_EXPANDSIZE);
+                 }
+              else
+                 {
+@@ -710,7 +710,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                    { 
+                    FatalError("Can't expandvarstring");
+                    }
+-                strcat(buffer,"$(dollar)");
++                (void)strlcat(buffer,"$(dollar)",CF_EXPANDSIZE);
+                 }
+              break;
+              
+@@ -743,7 +743,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                    {
+                    FatalError("Can't expandvarstring");
+                    }
+-                strcat(buffer,env);
++                (void)strlcat(buffer,env,CF_EXPANDSIZE);
+                 break;
+                 }
+              
+@@ -757,7 +757,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 snprintf(name,CF_MAXVARSIZE,"$(%s)",currentitem);
+                 }
+-             strcat(buffer,name);
++             (void)strlcat(buffer,name,CF_EXPANDSIZE);
+          }
+       
+       sp += strlen(currentitem);
+@@ -791,7 +791,7 @@ for (sp = string; /* No exit */ ; sp++) 
+ 
+    sscanf(sp,"%[^$]",currentitem);
+ 
+-   strcat(buffer,currentitem);
++   (void)strlcat(buffer,currentitem,CF_EXPANDSIZE);
+    sp += strlen(currentitem);
+ 
+    if (*sp == '$')
+@@ -805,7 +805,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                    varstring = '}';
+                    break;
+          default: 
+-                   strcat(buffer,"$");
++                   (void)strlcat(buffer,"$",CF_EXPANDSIZE);
+                    continue;
+          }
+       sp++;
+@@ -819,7 +819,7 @@ for (sp = string; /* No exit */ ; sp++) 
+       }
+    else
+       {
+-      sprintf(scanstr,"%%[^%c]",varstring);   /* select the correct terminator */
++      (void)snprintf(scanstr,sizeof(scanstr),"%%[^%c]",varstring);   /* select the correct terminator */
+       sscanf(++sp,scanstr,currentitem);               /* reduce item */
+       
+       switch (ScanVariable(currentitem))
+@@ -829,7 +829,7 @@ for (sp = string; /* No exit */ ; sp++) 
+                 {
+                 FatalError("Can't expand varstring");
+                 }
+-             strcat(buffer,bserver);
++             (void)strlcat(buffer,bserver,CF_EXPANDSIZE);
+              break;
+          }
+       
+@@ -890,7 +890,7 @@ if (!IsVarString(varstring))
+    return liststart;   
+    }
+ 
+-sprintf(format,"%%[^%c]",sep);   /* set format string to search */
++(void)snprintf(format,sizeof(format),"%%[^%c]",sep);   /* set format string to search */
+ 
+ i = 0; /* extract variable */
+ 

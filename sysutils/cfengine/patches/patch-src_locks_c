@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_locks_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
+--- src/locks.c.orig	2004-06-10 10:50:04.000000000 -0400
++++ src/locks.c	2004-06-10 12:17:40.000000000 -0400
+@@ -80,7 +80,7 @@ struct LockData
+ void PreLockState()
+ 
+ {
+- strcpy(CFLOCK,"pre-lock-state");
++ (void)strlcpy(CFLOCK,"pre-lock-state",CF_BUFSIZE);
+ }
+ 
+ /********************************************************************/
+@@ -88,7 +88,7 @@ void PreLockState()
+ void SaveExecLock()
+ 
+ {
+- strcpy(SAVELOCK,CFLOCK);
++ (void)strlcpy(SAVELOCK,CFLOCK,CF_BUFSIZE);
+ }
+ 
+ 
+@@ -97,7 +97,7 @@ void SaveExecLock()
+ void RestoreExecLock()
+ 
+ {
+- strcpy(CFLOCK,SAVELOCK);
++ (void)strlcpy(CFLOCK,SAVELOCK,CF_BUFSIZE);
+ }
+ 
+ /********************************************************************/
+@@ -341,7 +341,7 @@ if (PutLock(CFLAST) == -1)
+ 
+  
+ LockLog(getpid(),"Lock removed normally ",CFLOCK,"");
+-strcpy(CFLOCK,"no_active_lock");
++(void)strlcpy(CFLOCK,"no_active_lock",CF_BUFSIZE);
+ }
+ 
+ 
+@@ -666,7 +666,7 @@ if ((tim = time((time_t *)NULL)) == -1)
+    Debug("Cfengine: couldn't read system clock\n");
+    }
+ 
+-sprintf(buffer,"%s",ctime(&tim));
++(void)snprintf(buffer,sizeof(buffer),"%s",ctime(&tim));
+ 
+ Chop(buffer);
+ 

@@ -1,0 +1,183 @@
+$OpenBSD: patch-src_image_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
+--- src/image.c.orig	Fri Apr 30 17:20:19 2004
++++ src/image.c	Thu Jun 17 12:54:39 2004
+@@ -57,8 +57,8 @@ Banner("Looking for remote method collab
+        }
+     else
+        {
+-       strcat(client,".");
+-       strcat(client,VDOMAIN);
++       (void)strlcat(client,".",sizeof(client));
++       (void)strlcat(client,VDOMAIN,sizeof(client));
+        }
+ 
+     Verbose(" Hailing remote peer %s\n",client);
+@@ -81,8 +81,8 @@ Banner("Looking for remote method collab
+     MINUSMASK = 0377;
+     IMAGEBACKUP = 'n';
+     ENCRYPT = 'y';
+-    strcpy(IMAGEACTION,"fix");
+-    strcpy(CLASSBUFF,"any");
++    (void)strlcpy(IMAGEACTION,"fix",CF_BUFSIZE);
++    (void)strlcpy(CLASSBUFF,"any",CF_BUFSIZE);
+     snprintf(VUIDNAME,CF_MAXVARSIZE,"%d",getuid());
+     snprintf(VGIDNAME,CF_MAXVARSIZE,"%d",getgid());
+     IMGCOMP = '>';
+@@ -189,7 +189,7 @@ for (dirp = cfreaddir(dirh,ip); dirp != 
+       return;
+       }
+ 
+-   strcat(newto,dirp->d_name);
++   (void)strlcat(newto,dirp->d_name,sizeof(newto));
+ 
+    if (TRAVLINKS || ip->linktype == 'n')
+       {
+@@ -360,9 +360,9 @@ for (itp = VMOUNTLIST; itp != NULL; itp=
+          continue;
+          }
+ 
+-      strcpy(homedir,itp->name);
++      (void)strlcpy(homedir,itp->name,sizeof(homedir));
+       AddSlash(homedir);
+-      strcat(homedir,dirp->d_name);
++      (void)strlcat(homedir,dirp->d_name,sizeof(homedir));
+ 
+       if (! IsHomeDir(homedir))
+          {
+@@ -383,10 +383,10 @@ for (itp = VMOUNTLIST; itp != NULL; itp=
+             continue;
+             }
+ 
+-         strcpy(username,dirp2->d_name);
+-         strcpy(dest,homedir);
++         (void)strlcpy(username,dirp2->d_name,sizeof(username));
++         (void)strlcpy(dest,homedir,sizeof(dest));
+          AddSlash(dest);
+-         strcat(dest,dirp2->d_name);
++         (void)strlcat(dest,dirp2->d_name,sizeof(dest));
+          
+          if (strlen(ip->destination) > 4)
+             {
+@@ -399,7 +399,7 @@ for (itp = VMOUNTLIST; itp != NULL; itp=
+                }
+             else
+                {
+-               strcat(dest,(ip->destination)+strlen("home/"));
++               (void)strlcat(dest,(ip->destination)+strlen("home/"),sizeof(dest));
+                }
+             }
+          
+@@ -501,9 +501,9 @@ if ((ip->gid)->gid == (gid_t)-1)
+ 
+ if (S_ISDIR(sourcestatbuf.st_mode))
+    {
+-   strcpy(sourcedir,source);
++   (void)strlcpy(sourcedir,source,sizeof(sourcedir));
+    AddSlash(sourcedir);
+-   strcpy(destdir,destination);
++   (void)strlcpy(destdir,destination,sizeof(destdir));
+    AddSlash(destdir);
+ 
+    if ((dirh = cfopendir(sourcedir,ip)) == NULL)
+@@ -535,7 +535,7 @@ if (S_ISDIR(sourcestatbuf.st_mode))
+          continue;
+          }
+ 
+-      strcpy(sourcefile, sourcedir);
++      (void)strlcpy(sourcefile, sourcedir, sizeof(sourcefile));
+       
+       if (BufferOverflow(sourcefile,dirp->d_name))
+          {
+@@ -542,8 +542,8 @@ if (S_ISDIR(sourcestatbuf.st_mode))
+          FatalError("Culprit: CheckImage");
+          }
+       
+-      strcat(sourcefile, dirp->d_name);
+-      strcpy(destfile, destdir);
++      (void)strlcat(sourcefile, dirp->d_name, sizeof(sourcefile));
++      (void)strlcpy(destfile, destdir, sizeof(destfile));
+       
+       if (BufferOverflow(destfile,dirp->d_name))
+          {
+@@ -550,7 +550,7 @@ if (S_ISDIR(sourcestatbuf.st_mode))
+          FatalError("Culprit: CheckImage");
+          }
+       
+-      strcat(destfile, dirp->d_name);
++      (void)strlcat(destfile, dirp->d_name, sizeof(destfile));
+       
+       if (cflstat(sourcefile,&sourcestatbuf,ip) == -1)
+          {
+@@ -571,8 +571,8 @@ if (S_ISDIR(sourcestatbuf.st_mode))
+    return;
+    }
+  
+- strcpy(sourcefile,source);
+- strcpy(destfile,destination);
++ (void)strlcpy(sourcefile,source,sizeof(sourcefile));
++ (void)strlcpy(destfile,destination,sizeof(destfile));
+  
+  ImageCopy(sourcefile,destfile,sourcestatbuf,ip);
+  (ip->uid)->uid = save_uid;
+@@ -1005,7 +1005,7 @@ if (ip->linktype != 'n')
+       
+       if (ip->linktype == 'a' && linkbuf[0] != '/')      /* Not absolute path - must fix */
+          {
+-         strcpy(VBUFF,sourcefile);
++         (void)strlcpy(VBUFF,sourcefile,sizeof(VBUFF));
+          ChopLastNode(VBUFF);
+          AddSlash(VBUFF);
+          strncat(VBUFF,linkbuf,CF_BUFSIZE-1);
+@@ -1381,7 +1381,7 @@ for (sp = ip->cache; sp != NULL; sp=sp->
+   else
+      {
+      memset(linkbuf,0,buffsize);
+-     strcpy(linkbuf,sp->cf_readlink);
++     (void)strlcpy(linkbuf,sp->cf_readlink,buffsize);
+      return 0;
+      }
+   }
+@@ -1569,13 +1569,13 @@ if (BufferOverflow(dest,CF_NEW))
+    printf(" culprit: CopyReg\n");
+    return false;
+    }
+-strcpy(new,dest);
++(void)strlcpy(new,dest,sizeof(new));
+ 
+ #ifdef DARWIN
+    }
+ #endif
+ 
+-strcat(new,CF_NEW);
++(void)strlcat(new,CF_NEW,sizeof(new));
+ 
+ if (remote)
+    {
+@@ -1614,7 +1614,7 @@ if (IMAGEBACKUP != 'n')
+    time_t STAMPNOW;
+    STAMPNOW = time((time_t *)NULL);
+    
+-   sprintf(stamp, "_%d_%s", CFSTARTTIME, CanonifyName(ctime(&STAMPNOW)));
++   (void)snprintf(stamp, sizeof(stamp), "_%d_%s", CFSTARTTIME, CanonifyName(ctime(&STAMPNOW)));
+ 
+    if (BufferOverflow(dest,stamp))
+       {
+@@ -1621,15 +1621,15 @@ if (IMAGEBACKUP != 'n')
+       printf(" culprit: CopyReg\n");
+       return false;
+       }
+-   strcpy(backup,dest);
++   (void)strlcpy(backup,dest,sizeof(backup));
+ 
+    if (IMAGEBACKUP == 's')
+       {
+-      strcat(backup,stamp);
++      (void)strlcat(backup,stamp,sizeof(backup));
+       }
+ 
+    /* rely on prior BufferOverflow() and on strlen(CF_SAVED) < CF_BUFFERMARGIN */
+-   strcat(backup,CF_SAVED);
++   (void)strlcat(backup,CF_SAVED,sizeof(backup));
+ 
+    if (IsItemIn(VREPOSLIST,backup))
+       {

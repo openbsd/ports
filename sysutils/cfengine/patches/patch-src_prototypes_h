@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_prototypes_h,v 1.1 2004/06/17 11:21:43 sturm Exp $
+--- src/prototypes.h.orig	2004-06-10 16:17:24.000000000 -0400
++++ src/prototypes.h	2004-06-10 16:17:35.000000000 -0400
+@@ -198,8 +198,8 @@ int EmbeddedWrite ARGLIST((char *new,int
+ 
+ /* dce_acl.c */
+ 
+-/*struct CFACE;
+-  int CheckDFSACE ARGLIST((struct CFACE *aces, char method, char *filename, enum fileactions action));*/
++/*struct CFACE; */
++  int CheckDFSACE ARGLIST((struct CFACE *aces, char method, char *filename, enum fileactions action));
+ 
+ /* df.c */
+ 

@@ -1,0 +1,32 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2004/06/17 11:21:42 sturm Exp $
+--- doc/Makefile.in.orig	2004-05-05 17:20:31.000000000 +0200
++++ doc/Makefile.in	2004-06-15 16:25:20.000000000 +0200
+@@ -70,7 +70,7 @@ MANS = $(man_MANS)
+ docDATA_INSTALL = $(INSTALL_DATA)
+ htmlDATA_INSTALL = $(INSTALL_DATA)
+ psDATA_INSTALL = $(INSTALL_DATA)
+-DATA = $(doc_DATA) $(html_DATA) $(ps_DATA)
++DATA = 
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ ACLOCAL = @ACLOCAL@
+ AMDEP_FALSE = @AMDEP_FALSE@
+@@ -708,8 +708,8 @@ info: info-am
+ 
+ info-am: $(INFO_DEPS)
+ 
+-install-data-am: install-docDATA install-htmlDATA install-info-am \
+-	install-man install-psDATA
++install-data-am: install-docDATA install-info-am \
++	install-man
+ 
+ install-exec-am:
+ 
+@@ -774,7 +774,7 @@ uninstall-am: uninstall-docDATA uninstal
+ uninstall-man: uninstall-man8
+ 
+ .PHONY: all all-am check check-am clean clean-generic dist-info \
+-	distclean distclean-generic distdir dvi dvi-am html html-am \
++	distclean distclean-generic distdir dvi dvi-am \
+ 	info info-am install install-am install-data install-data-am \
+ 	install-docDATA install-exec install-exec-am install-htmlDATA \
+ 	install-info install-info-am install-man install-man8 \

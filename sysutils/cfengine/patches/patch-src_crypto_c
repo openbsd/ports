@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_crypto_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
+--- src/crypto.c.orig	2004-04-17 10:11:17.000000000 -0400
++++ src/crypto.c	2004-06-10 15:47:30.000000000 -0400
+@@ -49,11 +49,11 @@ snprintf(VBUFF,CF_BUFSIZE,"%s/randseed",
+ 
+  if (stat(VBUFF,&statbuf) == -1)
+     {
+-    snprintf(AVDB,CF_BUFSIZE,"%s/%s",WORKDIR,CF_AVDB_FILE);
++    snprintf(AVDB,sizeof(AVDB),"%s/%s",WORKDIR,CF_AVDB_FILE);
+     }
+  else
+     {
+-    strcpy(AVDB,VBUFF);
++    (void)strlcpy(AVDB,VBUFF,sizeof(AVDB));
+     }
+ 
+ Verbose("Looking for a source of entropy in %s\n",AVDB);
+@@ -291,7 +291,7 @@ snprintf(buffer,CF_BUFSIZE,"%d%d%25s",(i
+ 
+ EVP_DigestUpdate(&context,buffer,CF_BUFSIZE);
+ 
+-snprintf(pscomm,CF_BUFSIZE,"%s %s",VPSCOMM[VSYSTEMHARDCLASS],VPSOPTS[VSYSTEMHARDCLASS]);
++snprintf(pscomm,CF_MAXLINKSIZE,"%s %s",VPSCOMM[VSYSTEMHARDCLASS],VPSOPTS[VSYSTEMHARDCLASS]);
+ 
+ if ((pp = cfpopen(pscomm,"r")) == NULL)
+    {

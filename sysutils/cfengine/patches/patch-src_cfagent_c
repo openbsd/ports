@@ -1,0 +1,132 @@
+$OpenBSD: patch-src_cfagent_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
+--- src/cfagent.c.orig	Sat Apr 17 16:10:58 2004
++++ src/cfagent.c	Thu Jun 17 12:54:38 2004
+@@ -214,7 +214,7 @@ void Initialize(int argc,char *argv[])
+   unsigned char s[16];
+   char ebuff[CF_EXPANDSIZE];
+   
+-strcpy(VDOMAIN,CF_START_DOMAIN);
++(void)strlcpy(VDOMAIN,CF_START_DOMAIN,sizeof(VDOMAIN));
+ 
+ PreLockState();
+ SetSignals(); 
+@@ -229,7 +229,7 @@ VDEFAULTROUTE[0] = '\0';
+ ALLCLASSBUFFER[0] = '\0';
+ VREPOSITORY = strdup("\0");
+ 
+-strcpy(METHODNAME,"cf-nomethod"); 
++(void)strlcpy(METHODNAME,"cf-nomethod",sizeof(METHODNAME)); 
+ METHODREPLYTO[0] = '\0';
+ METHODRETURNVARS[0] = '\0';
+ METHODRETURNCLASSES[0] = '\0';
+@@ -238,8 +238,8 @@ METHODRETURNCLASSES[0] = '\0';
+ re_syntax_options |= RE_INTERVALS;
+ #endif
+  
+-strcpy(VINPUTFILE,"cfagent.conf");
+-strcpy(VNFSTYPE,"nfs");
++(void)strlcpy(VINPUTFILE,"cfagent.conf",CF_BUFSIZE);
++(void)strlcpy(VNFSTYPE,"nfs",sizeof(VNFSTYPE));
+ 
+ IDClasses();
+  
+@@ -280,7 +280,7 @@ for (i = 1; i < argc; i++)
+  VIFELAPSED = VDEFAULTIFELAPSED;
+  TRAVLINKS = false;
+  
+- sprintf(ebuff,"%s/state/cf_procs",WORKDIR);
++ (void)snprintf(ebuff,sizeof(ebuff),"%s/state/cf_procs",WORKDIR);
+  
+  if (stat(ebuff,&statbuf) == -1)
+     {
+@@ -287,8 +287,8 @@ for (i = 1; i < argc; i++)
+     CreateEmptyFile(ebuff);
+     }
+  
+- strcpy(VLOGDIR,WORKDIR); 
+- strcpy(VLOCKDIR,VLOGDIR);  /* Same since 2.0.a8 */
++ (void)strlcpy(VLOGDIR,WORKDIR,CF_BUFSIZE); 
++ (void)strlcpy(VLOCKDIR,VLOGDIR,CF_BUFSIZE);  /* Same since 2.0.a8 */
+  
+  OpenSSL_add_all_algorithms();
+  ERR_load_crypto_strings();
+@@ -317,8 +317,8 @@ if (NOPRECONFIG)
+    return;
+    }
+ 
+-strcpy(VPREFIX,"cfengine:");
+-strcat(VPREFIX,VUQNAME);
++(void)strlcpy(VPREFIX,"cfengine:",40);
++(void)strlcat(VPREFIX,VUQNAME, 40);
+  
+ if ((sp=getenv(CF_INPUTSVAR)) != NULL)
+    {
+@@ -605,8 +605,8 @@ if (strlen(ebuff) != 0)
+    }
+ else
+    {
+-   strcpy(VPREFIX,"cfengine:");
+-   strcat(VPREFIX,VUQNAME);
++   (void)strlcpy(VPREFIX,"cfengine:",40);
++   (void)strlcat(VPREFIX,VUQNAME,40);
+    }
+ 
+ 
+@@ -744,7 +744,7 @@ if (VACTIONSEQ == NULL)
+    Warning("perhaps cfagent.conf/update.conf have not yet been set up?");
+    }
+ 
+-sprintf(id,"%d",geteuid());   /* get effective user id */
++(void)snprintf(id,sizeof(id),"%d",geteuid());   /* get effective user id */
+ 
+ if (VACCESSLIST != NULL && !IsItemIn(VACCESSLIST,id))
+    {
+@@ -888,7 +888,7 @@ if (OptionIs(CONTEXTID,"DryRun",true))
+ 
+ if (GetMacroValue(CONTEXTID,"BinaryPaddingChar"))
+    {
+-   strcpy(ebuff,GetMacroValue(CONTEXTID,"BinaryPaddingChar"));
++   (void)strlcpy(ebuff,GetMacroValue(CONTEXTID,"BinaryPaddingChar"),sizeof(ebuff));
+    
+    if (ebuff[0] == '\\')
+       {
+@@ -1066,7 +1066,7 @@ if ((tloc = time((time_t *)NULL)) == -1)
+ 
+ CFSTARTTIME = tloc;
+ 
+-snprintf(vbuff,CF_BUFSIZE,"%s",ctime(&tloc));
++snprintf(vbuff,CF_MAXVARSIZE,"%s",ctime(&tloc));
+ 
+ Verbose("Reference time set to %s\n",ctime(&tloc));
+ 
+@@ -1429,7 +1429,7 @@ while (*sp != '\0')
+       {
+       VIFELAPSED = VDEFAULTIFELAPSED;
+       VEXPIREAFTER = VDEFAULTEXPIREAFTER;
+-      strcpy(actiontxt,cbuff);
++      (void)strlcpy(actiontxt,cbuff,sizeof(actiontxt));
+       continue;
+       }
+    else
+@@ -1828,8 +1828,8 @@ for (ip = VHEAP; ip != NULL; ip=ip->next
+          {
+          size++; /* Allow for : separator */
+          }
+-      strcat(ALLCLASSBUFFER,ip->name);
+-      strcat(ALLCLASSBUFFER,":");
++      (void)strlcat(ALLCLASSBUFFER,ip->name,sizeof(ALLCLASSBUFFER));
++      (void)strlcat(ALLCLASSBUFFER,":",sizeof(ALLCLASSBUFFER));
+       }
+    }
+  
+@@ -1848,8 +1848,8 @@ for (ip = VHEAP; ip != NULL; ip=ip->next
+          size++; /* Allow for : separator */
+          }
+       
+-      strcat(ALLCLASSBUFFER,ip->name);
+-      strcat(ALLCLASSBUFFER,":");
++      (void)strlcat(ALLCLASSBUFFER,ip->name,sizeof(ALLCLASSBUFFER));
++      (void)strlcat(ALLCLASSBUFFER,":",sizeof(ALLCLASSBUFFER));
+       }
+     }
+  

@@ -1,0 +1,541 @@
+$OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
+--- src/install.c.orig	2004-05-01 15:53:44.000000000 +0200
++++ src/install.c	2004-06-15 10:36:49.000000000 +0200
+@@ -106,7 +106,7 @@ else
+            FatalError("Redefinition of basic system variable");
+            }
+         
+-        strcpy(VFACULTY,value);
++        (void)strlcpy(VFACULTY,value,sizeof(VFACULTY));
+         break;
+         
+     case cfdomain:
+@@ -117,7 +117,7 @@ else
+         
+         if (strlen(value) > 0)
+            {
+-           strcpy(VDOMAIN,value);
++           (void)strlcpy(VDOMAIN,value,sizeof(VDOMAIN));
+            }
+         else
+            {
+@@ -127,12 +127,12 @@ else
+         if (!StrStr(VSYSNAME.nodename,VDOMAIN))
+            {
+            snprintf(VFQNAME,CF_BUFSIZE,"%s.%s",VSYSNAME.nodename,ToLowerStr(VDOMAIN));
+-           strcpy(VUQNAME,VSYSNAME.nodename);
++           (void)strlcpy(VUQNAME,VSYSNAME.nodename,CF_MAXVARSIZE);
+            }
+         else
+            {
+            int n = 0;
+-           strcpy(VFQNAME,VSYSNAME.nodename);
++           (void)strlcpy(VFQNAME,VSYSNAME.nodename,CF_BUFSIZE);
+            
+            while(VSYSNAME.nodename[n++] != '.')
+               {
+@@ -148,7 +148,7 @@ else
+               FatalError("The fully qualified name is longer than CF_MAXVARSIZE!!");
+               }
+            
+-           strcpy(buffer,VFQNAME);
++           (void)strlcpy(buffer,VFQNAME,sizeof(buffer));
+            
+            AddClassToHeap(CanonifyName(buffer));
+            }
+@@ -161,7 +161,7 @@ else
+            break;
+            }
+         
+-        strcpy(VSYSADM,value);
++        (void)strlcpy(VSYSADM,value,sizeof(VSYSADM));
+                   break;
+                   
+     case cfnetmask:
+@@ -175,7 +175,7 @@ else
+            yyerror("Multiple declaration of variable netmask");
+            FatalError("Redefinition of basic system variable");
+            }
+-        strcpy(VNETMASK,value);
++        (void)strlcpy(VNETMASK,value,sizeof(VNETMASK));
+         AddNetworkClass(VNETMASK);
+         break;
+         
+@@ -337,7 +337,7 @@ else
+         break;
+         
+     case cfnfstype:
+-        strcpy(VNFSTYPE,value); 
++        (void)strlcpy(VNFSTYPE,value,sizeof(VNFSTYPE)); 
+         break;
+         
+     case cfmethodname:
+@@ -417,7 +417,7 @@ else
+               {
+               }
+            
+-           sprintf(rename,"_%s",CLASSTEXT[VSYSTEMHARDCLASS]);
++           (void)snprintf(rename,sizeof(rename),"_%s",CLASSTEXT[VSYSTEMHARDCLASS]);
+            
+            AddClassToHeap(rename);
+            break;
+@@ -438,7 +438,7 @@ else
+            yyerror("Silly interface name, (should be something link eth0)");
+            }
+         
+-        strcpy(VIFNAMEOVERRIDE,value);
++        (void)strlcpy(VIFNAMEOVERRIDE,value,sizeof(VIFNAMEOVERRIDE));
+         VIFDEV[VSYSTEMHARDCLASS] = VIFNAMEOVERRIDE; /* override */
+         Debug("Overriding interface with %s\n",VIFDEV[VSYSTEMHARDCLASS]);
+         break;
+@@ -538,7 +538,7 @@ switch(GetCommAttribute(item))
+    case cfowner:
+        if (strlen(value) < CF_BUFSIZE)
+           {
+-          strcpy(VUIDNAME,value);
++          (void)strlcpy(VUIDNAME,value,CF_BUFSIZE);
+           }
+        else
+           {
+@@ -549,7 +549,7 @@ switch(GetCommAttribute(item))
+    case cfgroup:
+        if (strlen(value) < CF_BUFSIZE)
+           {
+-          strcpy(VGIDNAME,value);
++          (void)strlcpy(VGIDNAME,value,CF_MAXVARSIZE);
+           }
+        else
+           {
+@@ -631,13 +631,13 @@ switch(GetCommAttribute(item))
+                    break;
+    case cfflags:   ParseFlagString(value,&PLUSFLAG,&MINUSFLAG);
+                    break;
+-   case cfowner:   strcpy(VUIDNAME,value);
++   case cfowner:   (void)strlcpy(VUIDNAME,value,CF_BUFSIZE);
+                    break;
+-   case cfgroup:   strcpy(VGIDNAME,value);
++   case cfgroup:   (void)strlcpy(VGIDNAME,value,CF_BUFSIZE);
+                    break;
+-   case cfdest:    strcpy(DESTINATION,value);
++   case cfdest:    (void)strlcpy(DESTINATION,value,CF_BUFSIZE);
+                    break;
+-   case cfaction:  strcpy(IMAGEACTION,value);
++   case cfaction:  (void)strlcpy(IMAGEACTION,value,CF_BUFSIZE);
+                    break;
+    case cfcompat:  HandleCharSwitch("oldserver",value,&COMPATIBILITY);
+                    break;
+@@ -810,7 +810,7 @@ Debug1("HandleOptionalMountItem(%s)\n",v
+ switch(GetCommAttribute(item))
+    {
+    case cfmountoptions: 
+-      strcpy(MOUNTOPTS, value);
++      (void)strlcpy(MOUNTOPTS, value, CF_BUFSIZE);
+       break; 
+ 
+    case cfreadonly: 
+@@ -997,7 +997,7 @@ switch(GetCommAttribute(item))
+    case cfinclude: 
+    case cfpattern:
+ 
+-       strcpy(CURRENTITEM,value);
++       (void)strlcpy(CURRENTITEM,value,CF_BUFSIZE);
+        if (*value == '/')
+           {
+           yyerror("search pattern begins with / must be a relative name");
+@@ -1073,9 +1073,9 @@ switch(GetCommAttribute(item))
+                    break;
+    case cfflags:   ParseFlagString(value,&PLUSFLAG,&MINUSFLAG);
+                    break;
+-   case cfowner:   strcpy(VUIDNAME,value);
++   case cfowner:   (void)strlcpy(VUIDNAME,value,CF_BUFSIZE);
+                    break;
+-   case cfgroup:   strcpy(VGIDNAME,value);
++   case cfgroup:   (void)strlcpy(VGIDNAME,value,CF_BUFSIZE);
+                    break;
+    case cfdefine:  HandleDefine(value);
+                    break;
+@@ -1281,9 +1281,9 @@ switch(GetCommAttribute(item))
+                    break;
+    case cffilter:  PrependItem(&VFILTERBUILD,value,CF_ANYCLASS);
+                    break;
+-   case cfowner:   strcpy(VUIDNAME,value);
++   case cfowner:   (void)strlcpy(VUIDNAME,value,CF_BUFSIZE);
+      break;
+-   case cfgroup:   strcpy(VGIDNAME,value);
++   case cfgroup:   (void)strlcpy(VGIDNAME,value,CF_BUFSIZE);
+                    break;
+    case cfchdir:   HandleChDir(value);
+                    break;
+@@ -1323,7 +1323,7 @@ Debug1("HandleOptionalPackagesAttribute(
+ 
+ switch(GetCommAttribute(item))
+    {
+-   case cfversion: strcpy(PKGVER,value);
++   case cfversion: (void)strlcpy(PKGVER,value,CF_BUFSIZE);
+                    break;
+    case cfcmp:     CMPSENSE = (enum cmpsense) GetCmpSense(value);
+                    break;
+@@ -1378,11 +1378,11 @@ if (value[0] == '\0')
+         break;
+         
+     case cfretclasses:
+-        strncpy(METHODRETURNCLASSES,value,CF_BUFSIZE-1);
++        strlcpy(METHODRETURNCLASSES,value,sizeof(METHODRETURNCLASSES));
+         break;
+         
+     case cfforcereplyto:
+-        strncpy(METHODFORCE,value,CF_BUFSIZE-1);
++        strlcpy(METHODFORCE,value,sizeof(METHODFORCE));
+         break;
+ 
+     case cfsendclasses:
+@@ -1445,9 +1445,9 @@ switch(GetCommAttribute(item))
+                      break;
+    case cfsetinform: HandleCharSwitch("inform",value,&INFORMP);
+                      break;
+-   case cfowner:     strcpy(VUIDNAME,value);
++   case cfowner:     (void)strlcpy(VUIDNAME,value,CF_BUFSIZE);
+        break;
+-   case cfgroup:     strcpy(VGIDNAME,value);
++   case cfgroup:     (void)strlcpy(VGIDNAME,value,CF_BUFSIZE);
+                      break;
+    case cfdefine:    HandleDefine(value);
+                      break;
+@@ -1513,7 +1513,7 @@ if (!IsAbsoluteFileName(value))
+    yyerror("chdir is not an absolute directory name");
+    }
+ 
+-strcpy(CHDIR,value); 
++(void)strlcpy(CHDIR,value,CF_BUFSIZE); 
+ }
+ 
+ /*******************************************************************/
+@@ -1526,7 +1526,7 @@ if (!IsAbsoluteFileName(value))
+    yyerror("chdir is not an absolute directory name");
+    }
+  
+-strcpy(CHROOT,value);  
++(void)strlcpy(CHROOT,value,sizeof(CHROOT));  
+ }
+ 
+ /*******************************************************************/
+@@ -1537,7 +1537,7 @@ void HandleFileItem(char *item)
+ if (strcmp(item,"home") == 0)
+    {
+    ACTIONPENDING=true;
+-   strcpy(CURRENTOBJECT,"home");
++   (void)strlcpy(CURRENTOBJECT,"home",CF_BUFSIZE);
+    return;
+    }
+ 
+@@ -1567,19 +1567,19 @@ if (VBROADCAST[0] != '\0')
+ 
+ if (strcmp("ones",item) == 0)
+    {
+-   strcpy(VBROADCAST,"one");
++   (void)strlcpy(VBROADCAST,"one",sizeof(VBROADCAST));
+    return;
+    }
+ 
+ if (strcmp("zeroes",item) == 0)
+    {
+-   strcpy(VBROADCAST,"zero");
++   (void)strlcpy(VBROADCAST,"zero",sizeof(VBROADCAST));
+    return;
+    }
+ 
+ if (strcmp("zeros",item) == 0)
+    {
+-   strcpy(VBROADCAST,"zero");
++   (void)strlcpy(VBROADCAST,"zero",sizeof(VBROADCAST));
+    return;
+    }
+ 
+@@ -1622,12 +1622,12 @@ ExpandVarstring(item,ebuff,NULL);
+    else
+       {
+       memcpy(&inaddr,hp->h_addr, hp->h_length);
+-      strcpy(VDEFAULTROUTE,inet_ntoa(inaddr));
++      (void)strlcpy(VDEFAULTROUTE,inet_ntoa(inaddr),sizeof(VDEFAULTROUTE));
+       }
+    }
+ else
+    {
+-   strcpy(VDEFAULTROUTE,ebuff);
++   (void)strlcpy(VDEFAULTROUTE,ebuff,sizeof(VDEFAULTROUTE));
+    }
+ }
+ 
+@@ -1905,7 +1905,7 @@ if (VMAILSERVER[0] != '\0')
+    FatalError("Redefinition of mailserver");
+    }
+ 
+-strcpy(VMAILSERVER,path);
++(void)strlcpy(VMAILSERVER,path,sizeof(VMAILSERVER));
+ 
+ Debug1("Installing mailserver (%s) for group (%s)",path,GROUPBUFF);
+ }
+@@ -2621,9 +2621,9 @@ switch (action)
+           {
+           switch (MOUNTMODE)
+              {
+-             case 'o': strcpy(MOUNTOPTS,"ro");
++             case 'o': (void)strlcpy(MOUNTOPTS,"ro",CF_BUFSIZE);
+                  break;
+-             case 'w': strcpy(MOUNTOPTS,"rw");
++             case 'w': (void)strlcpy(MOUNTOPTS,"rw",CF_BUFSIZE);
+                  break;
+              default:  printf("Install pending, miscmount, shouldn't happen\n");
+                  MOUNTOPTS[0] = '\0'; /* no mount mode set! */
+@@ -2639,8 +2639,8 @@ switch (action)
+                           MOUNTFROM, MOUNTONTO);
+                    return;
+                    }
+-                strcat(MOUNTOPTS,",");
+-                strcat(MOUNTOPTS,op->name);
++                (void)strlcat(MOUNTOPTS,",",CF_BUFSIZE);
++                (void)strlcat(MOUNTOPTS,op->name,CF_BUFSIZE);
+                 }
+              AppendMiscMount(MOUNTFROM,MOUNTONTO,MOUNTOPTS);
+              }
+@@ -2857,7 +2857,7 @@ if (data == NULL)
+    }
+ else
+    {
+-   Debug1("InstallEditFile(%s,%s,%s) with classes\n",file,edit,data,CLASSBUFF);
++   Debug1("InstallEditFile(%s,%s,%s) with classes %s\n",file,edit,data,CLASSBUFF);
+    }
+ 
+ if (!IsInstallable(CLASSBUFF))
+@@ -3479,11 +3479,11 @@ for (sp = Get2DListEnt(tp); sp != NULL; 
+    
+    if (strlen(type) == 0)
+       {
+-      sprintf(ebuff,"all");
++      (void)snprintf(ebuff,sizeof(ebuff),"all");
+       }
+    else
+       {
+-      sprintf(ebuff,"%s",type);
++      (void)snprintf(ebuff,sizeof(ebuff),"%s",type);
+       }
+    
+    if ((ptr->type = strdup(ebuff)) == NULL)
+@@ -3606,7 +3606,7 @@ if (!strstr(function,"("))
+    }
+ 
+ /* First look at bare args to cache an arg fingerprint */ 
+-strcpy(work,function);
++(void)strlcpy(work,function,sizeof(work));
+ 
+ if (work[strlen(work)-1] != ')')
+    {
+@@ -4800,12 +4800,12 @@ Debug1("InstallImageItem (%s) (+%o)(-%o)
+ 
+ if (strlen(action) == 0)   /* default action */
+    {
+-   strcat(action,"fix");
++   (void)strlcat(action,"fix",CF_BUFSIZE);
+    }
+ 
+ if (!(strcmp(action,"silent") == 0 || strcmp(action,"warn") == 0 || strcmp(action,"fix") == 0))
+    {
+-   sprintf(VBUFF,"Illegal action in image/copy item: %s",action);
++   (void)snprintf(VBUFF,sizeof(VBUFF),"Illegal action in image/copy item: %s",action);
+    yyerror(VBUFF);
+    return;
+    }
+@@ -4821,7 +4821,7 @@ if (strlen(buf1) > 1)
+ if (!FORCENETCOPY && ((strcmp(buf3,VFQNAME) == 0) || (strcmp(buf3,VUQNAME) == 0) || (strcmp(buf3,VSYSNAME.nodename) == 0)))
+    {
+    Debug("Swapping %s for localhost\n",server);
+-   strcpy(buf3,"localhost");
++   (void)strlcpy(buf3,"localhost",sizeof(buf3));
+    }
+ 
+ Build2DListFromVarstring(&tp,path,'/');  /* Must split on space in comm string */
+@@ -4880,7 +4880,7 @@ for (spl = Get2DListEnt(tp); spl != NULL
+ 
+    if (strlen(destination) == 0)
+       {
+-      strcpy(buf2,spl);
++      (void)strlcpy(buf2,spl,sizeof(buf2));
+       }
+    else
+       {
+@@ -5211,11 +5211,11 @@ if (strlen(CURRENTITEM) != 0)
+ 
+ if (strcmp(value,"link") == 0 || strcmp(value,"links") == 0)
+    {
+-   strcpy(CURRENTITEM,"link");
++   (void)strlcpy(CURRENTITEM,"link",CF_BUFSIZE);
+    }
+ else if (strcmp(value,"plain") == 0 || strcmp(value,"file") == 0)
+    {
+-   strcpy(CURRENTITEM,"file");
++   (void)strlcpy(CURRENTITEM,"file",CF_BUFSIZE);
+    }
+ else
+    {
+@@ -5334,7 +5334,7 @@ void HandleNetmask(char *value)
+ {
+  if (strlen(DESTINATION) == 0)
+     {
+-    strcpy(DESTINATION,value);
++    (void)strlcpy(DESTINATION,value,CF_BUFSIZE);
+     }
+  else
+     {
+@@ -5349,7 +5349,7 @@ void HandleIPAddress(char *value)
+ {
+  if (strlen(LINKTO) == 0)
+     {
+-    strcpy(LINKTO,value);
++    (void)strlcpy(LINKTO,value,CF_BUFSIZE);
+     }
+  else
+     {
+@@ -5370,19 +5370,19 @@ if (strlen(CURRENTOBJECT) != 0)
+  
+ if (strcmp("ones",value) == 0)
+    {
+-   strcpy(CURRENTOBJECT,"one");
++   (void)strlcpy(CURRENTOBJECT,"one",CF_BUFSIZE);
+    return;
+    }
+ 
+ if (strcmp("zeroes",value) == 0)
+    {
+-   strcpy(CURRENTOBJECT,"zero");
++   (void)strlcpy(CURRENTOBJECT,"zero",CF_BUFSIZE);
+    return;
+    }
+ 
+ if (strcmp("zeros",value) == 0)
+    {
+-   strcpy(CURRENTOBJECT,"zero");
++   (void)strlcpy(CURRENTOBJECT,"zero",CF_BUFSIZE);
+    return;
+    }
+ 
+@@ -5395,6 +5395,7 @@ void AppendToActionSequence (char *actio
+ 
+ { int j = 0;
+   char *sp,cbuff[CF_BUFSIZE],actiontxt[CF_BUFSIZE];
++  size_t tmplen;
+ 
+ Debug1("Installing item (%s) in the action sequence list\n",action);
+ 
+@@ -5426,8 +5427,10 @@ while (*sp != '\0')
+  
+    if (IsHardClass(cbuff))
+       {
+-      char *tmp = malloc(strlen(action)+30);
+-      sprintf(tmp,"Error in action sequence: %s\n",action);
++      char *tmp;
++      tmplen = strlen(action)+30;
++      tmp = malloc(tmplen);
++      (void)snprintf(tmp,tmplen,"Error in action sequence: %s\n",action);
+       yyerror(tmp);
+       free(tmp);
+       yyerror("You cannot add a reserved class!");
+@@ -5436,7 +5439,7 @@ while (*sp != '\0')
+  
+    if (j == 1)
+       {
+-      strcpy(actiontxt,cbuff);
++      (void)strlcpy(actiontxt,cbuff,sizeof(actiontxt));
+       continue;
+       }
+    else if (!IsSpecialClass(cbuff))
+@@ -5463,7 +5466,7 @@ if (isalpha((int)user[0]))
+       return;
+       }
+ 
+-   sprintf(id,"%d",pw->pw_uid);
++   (void)snprintf(id,sizeof(id),"%d",pw->pw_uid);
+    AppendItem(&VACCESSLIST,id,NULL);
+    }
+ else
+@@ -5561,7 +5564,7 @@ void HandleServer(char *value)
+ 
+ {
+ Debug("Server in copy set to : %s\n",value);
+-strcpy(CFSERVER,value);
++(void)strlcpy(CFSERVER,value,CF_MAXVARSIZE);
+ }
+ 
+ /*******************************************************************/
+@@ -5583,7 +5586,7 @@ if (strlen(value) > CF_BUFSIZE)
+    yyerror(OUTPUT);
+    }
+ */
+-strcpy(ALLCLASSBUFFER,value);
++(void)strlcpy(ALLCLASSBUFFER,value,sizeof(ALLCLASSBUFFER));
+ 
+ for (sp = value; *sp != '\0'; sp++)
+    {
+@@ -5613,7 +5616,7 @@ if (strlen(value) > CF_BUFSIZE)
+    yyerror("class list too long - can't handle it!");
+    }
+ 
+-strcpy(ELSECLASSBUFFER,value);
++(void)strlcpy(ELSECLASSBUFFER,value,sizeof(ELSECLASSBUFFER));
+ 
+ for (sp = value; *sp != '\0'; sp++)
+    {
+@@ -5643,7 +5646,7 @@ if (strlen(value) > CF_BUFSIZE)
+    yyerror("class list too long - can't handle it!");
+    }
+ 
+-strcpy(FAILOVERBUFFER,value);
++(void)strlcpy(FAILOVERBUFFER,value,sizeof(FAILOVERBUFFER));
+ 
+ for (sp = value; *sp != '\0'; sp++)
+    {
+@@ -6256,8 +6259,8 @@ switch(GetCommAttribute(attribute))
+                 {
+                 if (strlen(copyhost)+strlen(VDOMAIN) < CF_MAXVARSIZE-2)
+                    {
+-                   strcat(copyhost,".");
+-                   strcat(copyhost,VDOMAIN);
++                   (void)strlcat(copyhost,".",sizeof(copyhost));
++                   (void)strlcat(copyhost,VDOMAIN,sizeof(copyhost));
+                    }
+                 else
+                    {
+@@ -6290,6 +6293,7 @@ void PrependTidy(struct TidyPattern **li
+ 
+ { struct TidyPattern *tp;
+   char *spe = NULL,*sp, buffer[CF_EXPANDSIZE];
++  size_t spelen = 0;
+ 
+ if ((tp = (struct TidyPattern *)malloc(sizeof(struct TidyPattern))) == NULL)
+    {
+@@ -6319,10 +6323,14 @@ if ((tp->elsedef = strdup(buffer)) == NU
+ AddInstallable(tp->defines);
+ AddInstallable(tp->elsedef); 
+  
+-if ((classes!= NULL) && (spe = malloc(strlen(classes)+2)) == NULL)
++if (classes!= NULL)
+    {
+-   perror("Can't allocate memory in PrependItem()");
+-   FatalError("");
++   spelen = strlen(classes)+2;
++   if ((spe = malloc(spelen)) == NULL)
++      {
++      perror("Can't allocate memory in PrependItem()");
++      FatalError("");
++      }
+    }
+ 
+ if (travlinks == '?')
+@@ -6348,7 +6356,7 @@ tp->rmdirs =tidydirs;
+ 
+ if (classes != NULL)
+    {
+-   strcpy(spe,classes);
++   (void)strlcpy(spe,classes,spelen);
+    tp->classes = spe;
+    }
+ else

@@ -1,0 +1,59 @@
+$OpenBSD: patch-src_tidy_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
+--- src/tidy.c.orig	2004-04-17 10:11:07.000000000 -0400
++++ src/tidy.c	2004-06-10 23:51:23.000000000 -0400
+@@ -76,8 +76,8 @@ if (level == 2)
+    if (LOGTIDYHOMEFILES)
+       {
+       int tempfd;
+-      strcpy(VLOGFILE,name);
+-      strcat(VLOGFILE,"/.cfengine.rm");
++      (void)strlcpy(VLOGFILE,name,CF_BUFSIZE);
++      (void)strlcat(VLOGFILE,"/.cfengine.rm",CF_BUFSIZE);
+       
+       /* Unlink here to avoid an exploit which could be used to
+          overwrite a system file with root privileges. */
+@@ -95,7 +95,7 @@ if (level == 2)
+          }
+       else if ((VLOGFP = fdopen(tempfd,"w")) == NULL)   
+          {
+-         sprintf(OUTPUT,"Couldn't open a file %s\n",VLOGFILE);
++         (void)snprintf(OUTPUT,sizeof(OUTPUT),"Couldn't open a file %s\n",VLOGFILE);
+          CfLog(cferror,OUTPUT,"fdopen");
+          VLOGFP = stderr;
+          }
+@@ -123,7 +123,7 @@ for (dirp = readdir(dirh); dirp != NULL;
+       continue;
+       }
+ 
+-   strcpy(pcwd,name);                                 /* Assemble pathname */
++   (void)strlcpy(pcwd,name,sizeof(pcwd));                                 /* Assemble pathname */
+    AddSlash(pcwd);
+ 
+    if (BufferOverflow(pcwd,dirp->d_name))
+@@ -131,7 +131,7 @@ for (dirp = readdir(dirh); dirp != NULL;
+       return true;
+       }
+ 
+-   strcat(pcwd,dirp->d_name);
++   (void)strlcat(pcwd,dirp->d_name,sizeof(pcwd));
+ 
+    if (TRAVLINKS)
+       {
+@@ -399,7 +399,7 @@ for (dirp = readdir(dirh); dirp != NULL;
+       continue;
+       }
+ 
+-   strcpy(pcwd,name);                                   /* Assemble pathname */
++   (void)strlcpy(pcwd,name,sizeof(pcwd));                                   /* Assemble pathname */
+    AddSlash(pcwd);
+ 
+    if (BufferOverflow(pcwd,dirp->d_name))
+@@ -407,7 +407,7 @@ for (dirp = readdir(dirh); dirp != NULL;
+       return true;
+       }
+ 
+-   strcat(pcwd,dirp->d_name);
++   (void)strlcat(pcwd,dirp->d_name,sizeof(pcwd));
+ 
+    if (lstat(dirp->d_name,&statbuf) == -1)          /* Check for links first */
+       {

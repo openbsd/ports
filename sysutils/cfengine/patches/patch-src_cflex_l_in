@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_cflex_l_in,v 1.1 2004/06/17 11:21:43 sturm Exp $
+--- src/cflex.l.in.orig	2004-06-12 22:55:29.000000000 -0400
++++ src/cflex.l.in	2004-06-12 22:56:13.000000000 -0400
+@@ -224,7 +224,7 @@ editfiles:             {
+ 
+ {lforcearrow}          {
+                        Debug1("LFARROW %s\n",yytext);
+-                       strcpy(LINKFROM,CURRENTOBJECT);
++                       (void)strlcpy(LINKFROM,CURRENTOBJECT,CF_BUFSIZE);
+                        ACTION_IS_LINKCHILDREN = true;
+                        FORCELINK='y';
+                        return LARROW;
+@@ -233,7 +233,7 @@ editfiles:             {
+ 
+ {forcearrow}           {
+                        Debug1("FARROW %s\n",yytext);
+-                       strcpy(LINKFROM,CURRENTOBJECT);
++                       (void)strlcpy(LINKFROM,CURRENTOBJECT,CF_BUFSIZE);
+                        ACTION_IS_LINK = true;
+                        FORCELINK='y';
+                        return ARROW;
+@@ -241,7 +241,7 @@ editfiles:             {
+ 
+ {arrow}                {
+                        Debug1("ARROW %s\n",yytext);
+-                       strcpy(LINKFROM,CURRENTOBJECT);
++                       (void)strlcpy(LINKFROM,CURRENTOBJECT,CF_BUFSIZE);
+                        ACTION_IS_LINK = true;
+                        FORCELINK='n';
+                        return ARROW;
+@@ -250,7 +250,7 @@ editfiles:             {
+ 
+ {larrow}               {
+                        Debug1("LARROW %s\n",yytext);
+-                       strcpy(LINKFROM,CURRENTOBJECT);
++                       (void)strlcpy(LINKFROM,CURRENTOBJECT,CF_BUFSIZE);
+                        ACTION_IS_LINKCHILDREN = true;
+                        FORCELINK='n';
+                        return LARROW;

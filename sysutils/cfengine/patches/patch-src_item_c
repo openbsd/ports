@@ -1,0 +1,166 @@
+$OpenBSD: patch-src_item_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
+--- src/item.c.orig	Sat Apr 17 16:11:01 2004
++++ src/item.c	Thu Jun 17 12:54:40 2004
+@@ -212,6 +212,7 @@ void PrependItem (struct Item **liststar
+ 
+ { struct Item *ip;
+   char *sp,*spe = NULL;
++  size_t splen, spelen = 0;
+ 
+ if (!PARSING && (ACTION == editfiles))
+    {
+@@ -229,19 +230,24 @@ if ((ip = (struct Item *)malloc(sizeof(s
+    FatalError("");
+    }
+ 
+-if ((sp = malloc(strlen(itemstring)+2)) == NULL)
++splen = strlen(itemstring) + 2;
++if ((sp = malloc(splen)) == NULL)
+    {
+    CfLog(cferror,"","malloc");
+    FatalError("");
+    }
+ 
+-if ((classes != NULL) && (spe = malloc(strlen(classes)+2)) == NULL)
++if (classes != NULL)
+    {
+-   CfLog(cferror,"","malloc");
+-   FatalError("");
++   spelen = strlen(classes) + 2;
++   if ((spe = malloc(spelen)) == NULL)
++      {
++      CfLog(cferror,"","malloc");
++      FatalError("");
++      }
+    }
+ 
+-strcpy(sp,itemstring);
++(void)strlcpy(sp,itemstring,splen);
+ ip->name = sp;
+ ip->next = *liststart;
+ ip->counter = 0;
+@@ -249,7 +255,7 @@ ip->counter = 0;
+ 
+ if (classes != NULL)
+    {
+-   strcpy(spe,classes);
++   (void)strlcpy(spe,classes,spelen);
+    ip->classes = spe;
+    }
+ else
+@@ -303,6 +309,7 @@ void AppendItem (struct Item **liststart
+ 
+ { struct Item *ip, *lp;
+   char *sp,*spe = NULL;
++  size_t splen, spelen = 0;
+ 
+ if (!PARSING && (ACTION == editfiles))
+    {
+@@ -320,7 +327,8 @@ if ((ip = (struct Item *)malloc(sizeof(s
+    FatalError("");
+    }
+ 
+-if ((sp = malloc(strlen(itemstring)+CF_EXTRASPC)) == NULL)
++splen = strlen(itemstring) + CF_EXTRASPC;
++if ((sp = malloc(splen)) == NULL)
+    {
+    CfLog(cferror,"","malloc");
+    FatalError("");
+@@ -339,13 +347,17 @@ else
+    lp->next = ip;
+    }
+ 
+-if ((classes != NULL) && (spe = malloc(strlen(classes)+2)) == NULL)
++if (classes != NULL)
+    {
+-   CfLog(cferror,"","malloc");
+-   FatalError("");
++   spelen = strlen(classes) + 2;
++   if ((spe = malloc(spelen)) == NULL)
++      {
++      CfLog(cferror,"","malloc");
++      FatalError("");
++      }
+    }
+ 
+-strcpy(sp,itemstring);
++(void)strlcpy(sp,itemstring,splen);
+ ip->name = sp;
+ ip->next = NULL;
+ ip->counter = 0;
+@@ -352,7 +364,7 @@ ip->counter = 0;
+  
+ if (classes != NULL)
+    {
+-   strcpy(spe,classes);
++   (void)strlcpy(spe,classes,spelen);
+    ip->classes = spe;
+    }
+ else
+@@ -370,6 +382,7 @@ void InstallItem (struct Item **liststar
+ 
+ { struct Item *ip, *lp;
+   char *sp,*spe = NULL;
++  size_t splen, spelen = 0;
+ 
+ if (!PARSING && (ACTION == editfiles))
+    {
+@@ -388,7 +401,8 @@ if ((ip = (struct Item *)malloc(sizeof(s
+    FatalError("");
+    }
+ 
+-if ((sp = malloc(strlen(itemstring)+CF_EXTRASPC)) == NULL)
++splen = strlen(itemstring) + CF_EXTRASPC;
++if ((sp = malloc(splen)) == NULL)
+    {
+    CfLog(cferror,"","malloc");
+    FatalError("");
+@@ -407,13 +421,17 @@ else
+    lp->next = ip;
+    }
+ 
+-if ((classes!= NULL) && (spe = malloc(strlen(classes)+2)) == NULL)
++if (classes!= NULL)
+    {
+-   CfLog(cferror,"","malloc");
+-   FatalError("");
++   spelen = strlen(classes) + 2;
++   if ((spe = malloc(spelen)) == NULL)
++      {
++      CfLog(cferror,"","malloc");
++      FatalError("");
++      }
+    }
+ 
+-strcpy(sp,itemstring);
++(void)strlcpy(sp,itemstring,splen);
+ 
+ if (PIFELAPSED != -1)
+    {
+@@ -438,7 +456,7 @@ ip->next = NULL;
+ 
+ if (classes != NULL)
+    {
+-   strcpy(spe,classes);
++   (void)strlcpy(spe,classes,spelen);
+    ip->classes = spe;
+    }
+ else
+@@ -1061,7 +1079,7 @@ char *s1, *s2;
+      return 1;
+      }
+   sscanf(sp,"%ld",&cmp);
+-  Debug("SRDEBUG extracted int %d\n",cmp,sp);
++  Debug("SRDEBUG extracted int %d from %s\n",cmp,sp);
+   
+   if ( cmp < 0 )
+      { 
+@@ -1116,7 +1134,7 @@ struct Item *SplitStringAsItemList(char 
+   
+ Debug("SplitStringAsItemList(%s,%c)\n",string,sep);
+ 
+-sprintf(format,"%%255[^%c]",sep);   /* set format string to search */
++(void)snprintf(format,sizeof(format),"%%255[^%c]",sep);   /* set format string to search */
+ 
+ for (sp = string; *sp != '\0'; sp++)
+    {

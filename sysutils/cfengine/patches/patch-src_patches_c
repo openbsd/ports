@@ -1,0 +1,72 @@
+$OpenBSD: patch-src_patches_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
+--- src/patches.c.orig	2004-06-10 10:50:04.000000000 -0400
++++ src/patches.c	2004-06-10 11:32:49.000000000 -0400
+@@ -134,7 +134,7 @@ if (gethostname(buffer,CF_BUFSIZE) == -1
+    exit(1);
+    }
+ 
+-strcpy(sys->nodename,buffer);
++(void)strlcpy(sys->nodename,buffer,sizeof(sys->nodename));
+ 
+ if (strcmp(buffer,AUTOCONF_HOSTNAME) != 0)
+    {
+@@ -142,10 +142,10 @@ if (strcmp(buffer,AUTOCONF_HOSTNAME) != 
+    Verbose("This host does not have uname, so I can't tell if it is the exact same OS\n");
+    }
+ 
+-strcpy(sys->sysname,AUTOCONF_SYSNAME);
+-strcpy(sys->release,"cfengine-had-to-guess");
+-strcpy(sys->machine,"missing-uname(2)");
+-strcpy(sys->version,"unknown");
++(void)strlcpy(sys->sysname,AUTOCONF_SYSNAME,sizeof(sys->sysname));
++(void)strlcpy(sys->release,"cfengine-had-to-guess",sizeof(sys->release));
++(void)strlcpy(sys->machine,"missing-uname(2)",sizeof(sys->machine));
++(void)strlcpy(sys->version,"unknown",sizeof(sys->version));
+ 
+ 
+   /* Extract a version number if possible */
+@@ -154,8 +154,8 @@ for (sp = sys->sysname; *sp != '\0'; sp+
+    {
+    if (isdigit(*sp))
+       {
+-      strcpy(sys->release,sp);
+-      strcpy(sys->version,sp);
++      (void)strlcpy(sys->release,sp,sizeof(sys->release));
++      (void)strlcpy(sys->version,sp,sizeof(sys->version));
+       *sp = '\0';
+       break;
+       }
+@@ -204,6 +204,7 @@ return NULL;
+ #ifndef HAVE_STRDUP
+ 
+ char *strdup(char *str)
++size_t buflen;
+ 
+ { char *sp;
+  
+@@ -212,13 +213,14 @@ if (str == NULL)
+    return NULL;
+    }
+ 
+-if ((sp = malloc(strlen(str)+1)) == NULL)
++buflen = strlen(str) + 1;
++if ((sp = malloc(buflen)) == NULL)
+    {
+    perror("malloc");
+    return NULL;
+    }
+ 
+-strcpy(sp,str);
++(void)strlcpy(sp,str,buflen);
+ return sp; 
+ }
+ 
+@@ -270,7 +272,7 @@ char *strerror(int err)
+ 
+ { static char buffer[20];
+ 
+-sprintf(buffer,"Error number %d\n",err);
++(void)snprintf(buffer,sizeof(buffer),"Error number %d\n",err);
+ return buffer; 
+ }
+ 

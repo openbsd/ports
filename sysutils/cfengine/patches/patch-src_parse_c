@@ -1,0 +1,238 @@
+$OpenBSD: patch-src_parse_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
+--- src/parse.c.orig	Thu Apr 29 18:30:18 2004
++++ src/parse.c	Thu Jun 17 12:54:40 2004
+@@ -245,7 +245,7 @@ SetStrategies(); 
+ Debug1("\n\n==============================BEGIN NEW ACTION %s=============\n\n",ACTIONTEXT[action]);
+ 
+ ACTION = action;
+-strcpy(ACTIONBUFF,ACTIONTEXT[action]);
++(void)strlcpy(ACTIONBUFF,ACTIONTEXT[action],CF_BUFSIZE);
+ 
+ switch (ACTION)
+    {
+@@ -271,7 +271,7 @@ switch (ACTION)
+    }
+ 
+ Debug1("\nResetting CLASS to ANY\n\n"); 
+-strcpy(CLASSBUFF,CF_ANYCLASS);    /* default class */
++(void)strlcpy(CLASSBUFF,CF_ANYCLASS,CF_BUFSIZE);    /* default class */
+ }
+ 
+ /*******************************************************************/
+@@ -287,7 +287,7 @@ Debug1("HandleLVALUE(%s) in action %s\n"
+         
+         if ((CONTROLVAR = ScanVariable(id)) != nonexistentvar)
+            {
+-           strcpy(CURRENTITEM,id);
++           (void)strlcpy(CURRENTITEM,id,CF_BUFSIZE);
+            return;
+            }
+         else
+@@ -328,7 +328,7 @@ Debug1("HandleLVALUE(%s) in action %s\n"
+            yyerror("Reserved class name (choose a different name)");
+            }
+         
+-        strcpy(GROUPBUFF,id);
++        (void)strlcpy(GROUPBUFF,id,CF_BUFSIZE);
+         }
+         
+     break;
+@@ -347,7 +347,7 @@ Debug1("HandleBraceObjectID(%s) in actio
+ switch (ACTION)
+    {
+    case acls:
+-       strcpy(CURRENTOBJECT,id);
++       (void)strlcpy(CURRENTOBJECT,id,CF_BUFSIZE);
+        InstallACL(id,CLASSBUFF);
+        break;
+        
+@@ -354,7 +354,7 @@ switch (ACTION)
+    case strategies:
+        if (strlen(STRATEGYNAME) == 0)
+           {
+-          strcpy(STRATEGYNAME,id);
++          (void)strlcpy(STRATEGYNAME,id,CF_BUFSIZE);
+           InstallStrategy(id,CLASSBUFF);
+           }
+        else
+@@ -366,7 +366,7 @@ switch (ACTION)
+    case editfiles:
+        if (strlen(CURRENTOBJECT) == 0)
+           {
+-          strcpy(CURRENTOBJECT,id);
++          (void)strlcpy(CURRENTOBJECT,id,CF_BUFSIZE);
+           EDITGROUPLEVEL = 0;
+           FOREACHLEVEL = 0;
+           SEARCHREPLACELEVEL = 0;
+@@ -380,7 +380,7 @@ switch (ACTION)
+    case filters:
+        if (strlen(FILTERNAME)==0)
+           {
+-          strcpy(FILTERNAME,id);
++          (void)strlcpy(FILTERNAME,id,CF_BUFSIZE);
+           InstallFilter(id);
+           }
+        else
+@@ -406,7 +406,7 @@ switch (ACTION)
+ 
+    case filters:
+    case strategies:
+-                 strcpy(CURRENTITEM,id);
++                 (void)strlcpy(CURRENTITEM,id,CF_BUFSIZE);
+    break;
+ 
+    case editfiles:
+@@ -420,7 +420,7 @@ switch (ACTION)
+                         HandleEdit(CURRENTOBJECT,id,NULL);
+                         }
+ 
+-   strcpy(CURRENTITEM,id);
++   (void)strlcpy(CURRENTITEM,id,CF_BUFSIZE);
+        break;
+    }
+ }
+@@ -456,7 +456,7 @@ else
+    Debug1("Simple class = (%s)\n",id);
+    }
+ 
+-strcpy(CLASSBUFF,id); 
++(void)strlcpy(CLASSBUFF,id,CF_BUFSIZE); 
+ }
+ 
+ /*******************************************************************/
+@@ -473,13 +473,13 @@ switch (ACTION)
+         break;
+         
+     case filters:
+-        strcpy(FILTERDATA,qstring);
++        (void)strlcpy(FILTERDATA,qstring,CF_BUFSIZE);
+         ACTIONPENDING = true;
+         InstallPending(ACTION); 
+         break;
+         
+     case strategies:
+-        strcpy(STRATEGYDATA,qstring);
++        (void)strlcpy(STRATEGYDATA,qstring,CF_BUFSIZE);
+         ACTIONPENDING = true;
+         InstallPending(ACTION); 
+         break;
+@@ -493,7 +493,7 @@ switch (ACTION)
+               {
+               yyerror("Processes syntax error");
+               }
+-           strcpy(RESTART,qstring);
++           (void)strlcpy(RESTART,qstring,CF_BUFSIZE);
+            ACTIONPENDING = true;
+            InstallPending(ACTION);
+            
+@@ -517,7 +517,7 @@ switch (ACTION)
+               yyerror("Missing process search expression");
+               }
+            Debug1("Installing expression %s\n",qstring);
+-           strcpy(EXPR,qstring);
++           (void)strlcpy(EXPR,qstring,CF_BUFSIZE);
+            HAVE_RESTART = false;
+            }
+         else if (HAVE_RESTART)
+@@ -612,7 +612,7 @@ if (ACTION == methods)
+ if (IsBuiltinFunction(fn))
+    {
+    local[0] = '\0';
+-   strcpy(local,EvaluateFunction(fn,local));
++   (void)strlcpy(local,EvaluateFunction(fn,local),sizeof(local));
+    
+    switch (ACTION)
+       {
+@@ -819,8 +819,8 @@ switch (ACTION)
+           InstallPending(ACTION);
+           InitializeAction();
+           Debug1("\nFound SetOptionString\n");
+-          strcpy(CURRENTOBJECT,"SetOptionString");
+-          strcpy(EXPR,"SetOptionString");
++          (void)strlcpy(CURRENTOBJECT,"SetOptionString",CF_BUFSIZE);
++          (void)strlcpy(EXPR,"SetOptionString",CF_BUFSIZE);
+           }
+        else if (HAVE_RESTART)
+           {
+@@ -865,7 +865,7 @@ Debug("HandleServerRule(%s=%s)\n",object
+  if (*buffer == '/')
+     {
+     Debug("\n\nNew admit/deny object=%s\n",buffer);
+-    strcpy(CURRENTAUTHPATH,object);
++    (void)strlcpy(CURRENTAUTHPATH,object,CF_BUFSIZE);
+     }
+  else
+     {
+@@ -1005,7 +1005,7 @@ if ((yyin = fopen(filename,"r")) == NULL
+    exit (1);
+    }
+  
+-strcpy(VCURRENTFILE,filename);
++(void)strlcpy(VCURRENTFILE,filename,CF_BUFSIZE);
+ 
+ Debug("\n##########################################################################\n"); 
+ Debug("# BEGIN PARSING %s\n",VCURRENTFILE);
+@@ -1086,7 +1086,7 @@ void RecordMacroId(char *name)
+ 
+ {
+ Debug("RecordMacroId(%s)\n",name);
+-strcpy(CURRENTITEM,name); 
++(void)strlcpy(CURRENTITEM,name,CF_BUFSIZE); 
+ 
+ if (strcmp(name,"this") == 0)
+    {
+@@ -1116,7 +1116,7 @@ if ((sp=getenv(CF_INPUTSVAR)) != NULL)
+    {
+    if (!IsAbsoluteFileName(filename))     /* Don't prepend to absolute names */
+       { 
+-      strcpy(result,sp);
++      (void)strlcpy(result,sp,CF_BUFSIZE);
+       
+       if (! IsAbsoluteFileName(result))
+          {
+@@ -1131,13 +1131,13 @@ if ((sp=getenv(CF_INPUTSVAR)) != NULL)
+     {
+     if (!IsAbsoluteFileName(filename))     /* Don't prepend to absolute names */
+        { 
+-       strcpy(result,WORKDIR);
++       (void)strlcpy(result,WORKDIR,CF_BUFSIZE);
+        AddSlash(result);
+-       strcat(result,"inputs/");
++       (void)strlcat(result,"inputs/",CF_BUFSIZE);
+        }
+     }
+  
+-strcat(result,filename);
++(void)strlcat(result,filename,CF_BUFSIZE);
+ return result;
+ }
+ 
+@@ -1161,8 +1161,8 @@ void InitializeAction()                 
+  HAVE_RESTART = false;
+  VAGE = 99999;
+  strncpy(FINDERTYPE,"*",CF_BUFSIZE);
+- strcpy(VUIDNAME,"*");
+- strcpy(VGIDNAME,"*");
++ (void)strlcpy(VUIDNAME,"*",CF_MAXVARSIZE);
++ (void)strlcpy(VGIDNAME,"*",CF_MAXVARSIZE);
+  HAVE_RESTART = 0;
+  FILEACTION=warnall;
+  PIFELAPSED=-1;
+@@ -1184,7 +1184,7 @@ void InitializeAction()                 
+  METHODREPLYTO[0] = '\0';
+  METHODFORCE[0] = '\0';
+  CHROOT[0] = '\0';
+- strcpy(VIFNAME,"");
++ (void)strlcpy(VIFNAME,"",sizeof(VIFNAME));
+  PTRAVLINKS = (short) '?';
+  IMAGEBACKUP = 'y';
+  ENCRYPT = 'n';
+@@ -1226,7 +1226,7 @@ void InitializeAction()                 
+  memset(ALLCLASSBUFFER,0,CF_BUFSIZE);
+  memset(ELSECLASSBUFFER,0,CF_BUFSIZE);
+  
+- strcpy(CFSERVER,"localhost");
++ (void)strlcpy(CFSERVER,"localhost",CF_MAXVARSIZE);
+  
+  IMGCOMP = DISCOMP='>';
+  IMGSIZE = DISABLESIZE=CF_NOSIZE;
