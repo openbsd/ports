@@ -1,3 +1,8 @@
+@pkgdep giflib-4.1.0
+@pkgdep jpeg-6b
+@pkgdep libPropList-0.8.3
+@pkgdep png-1.0.3
+@pkgdep tiff-3.4
 bin/get-wraster-flags
 bin/wmaker
 bin/wxcopy
@@ -219,11 +224,6 @@ share/WindowMaker/plmenu.fr
 share/WindowMaker/plmenu.hr
 share/WindowMaker/wmmacros
 share/WindowMaker/xtree.dat
-etc/WindowMaker/WMRootMenu
-etc/WindowMaker/WMWindowAttributes
-etc/WindowMaker/WindowMaker
-etc/WindowMaker/WMState
-etc/WindowMaker/WMGLOBAL
 include/wraster.h
 include/WINGs.h
 include/WUtil.h
@@ -363,7 +363,6 @@ GNUstep/Apps/WPrefs.app/WPrefs.xpm
 @dirrm GNUstep/Apps/WPrefs.app
 @dirrm GNUstep/Apps
 @dirrm GNUstep
-@dirrm etc/WindowMaker
 @dirrm share/WindowMaker/Themes/STEP2000.themed
 @dirrm share/WindowMaker/Themes/LeetWM.themed
 @dirrm share/WindowMaker/Themes/Checker.themed
