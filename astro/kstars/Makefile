@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/28 12:30:13 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/31 08:11:06 kevlo Exp $
 
 COMMENT=	"desktop planetarium"
 
-DISTNAME=	kstars-0.6
+DISTNAME=	kstars-0.7
 CATEGORIES=	astro
 NEED_VERSION=	1.483
 
@@ -21,7 +21,7 @@ MASTER_SITE_SUBDIR=	kstars
 BUILD_DEPENDS=	::devel/automake \
 		::x11/qt2-designer
 
-LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
+LIB_DEPENDS=	kdecore.3,DCOP,kio,kfile,kdeui,kdesu,kssl,ksycoca::x11/kde/libs2
 
 MODULES=	qt2
 
@@ -35,7 +35,6 @@ CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ENV=	KDEDIR=${LOCALBASE} 
-
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 
 .include <bsd.port.mk>
