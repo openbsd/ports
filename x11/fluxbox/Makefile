@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2005/01/23 12:44:10 matthieu Exp $
+# $OpenBSD: Makefile,v 1.33 2005/02/07 18:20:12 david Exp $
 
 COMMENT=		"window manager based on the original Blackbox code"
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xft Xinerama Xpm Xrandr Xrender \
-			fontconfig Imlib2 ltdl freetype stdc++ m c expat
+			fontconfig Imlib2 ltdl freetype stdc++ m c
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
