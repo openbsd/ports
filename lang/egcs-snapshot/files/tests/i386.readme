@@ -1,32 +1,84 @@
-Here are the test results on i386 for
-the 980921 snapshot:
+As of 981122 snapshot *EVERYTHING* is configured for openbsd:
+
+		=== libio Summary ===
+
+# of expected passes		40
+
+		=== libstdc++ Summary ===
+
+# of expected passes		27
+# of unexpected failures	1
+# of expected failures		2
+FAIL: tcomplex.cc -O compilation
+
+		=== gcc Summary ===
+
+# of expected passes		7785
+# of unexpected failures	22
+# of expected failures		13
+# of unsupported tests		12
+
+FAIL: gcc.c-torture/execute/980526-1.c execution,  -O2 -fomit-frame-pointer -finline-functions 
+FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O1 
+FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O2 
+FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O2 -fomit-frame-pointer -finline-functions 
+FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-loops 
+FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-all-loops 
+FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O2 -g 
+FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -Os 
+FAIL: gcc.c-torture/execute/ieee/rbug.c execution,  -O0 
+FAIL: gcc.c-torture/execute/ieee/rbug.c execution,  -O1 
+FAIL: gcc.c-torture/execute/ieee/rbug.c execution,  -O2 
+FAIL: gcc.c-torture/execute/ieee/rbug.c execution,  -O2 -g 
+FAIL: gcc.c-torture/execute/ieee/rbug.c execution,  -Os 
+FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -O0 
+FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -O1 
+FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -O2 
+FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -O2 -fomit-frame-pointer -finline-functions 
+FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -O2 -g 
+FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -Os 
+FAIL: gcc.c-torture/special/981006-1.c  (test for bogus messages, line 11)
+FAIL: gcc.c-torture/special/981006-1.c  (test for bogus messages, line 12)
+FAIL: gcc.dg/980414-1.c (test for excess errors)
+
+		=== g++ Summary ===
+
+# of expected passes		4670
+# of unexpected failures	16
+# of expected failures		78
+# of untested testcases		7
+
+FAIL: g++.law/profile1.C (test for excess errors)
+FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 21)
+FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 22)
+FAIL: g++.other/null1.C NULL used in arithmetic (test for warnings, line 25)
+FAIL: g++.other/null1.C NULL used in arithmetic (test for warnings, line 26)
+FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 29)
+FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 30)
+FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 31)
+FAIL: g++.other/null1.C converting NULL to non-pointer-type (test for warnings, line 32)
+FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 33)
+FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 34)
+FAIL: g++.other/null1.C converting NULL to int (test for warnings, line 35)
+FAIL: g++.other/null1.C converting NULL to int (test for warnings, line 36)
+FAIL: g++.other/null1.C NULL bound to integer template parameter (test for warnings, line 37)
+FAIL: g++.other/null1.C converting NULL to int (test for warnings, line 38)
+FAIL: g++.pt/instantiate4.C (test for excess errors)
 
 
-                === libio Summary ===
+		=== g77 Summary ===
 
-# of expected passes            40
+# of expected passes		444
+# of unexpected failures	7
+FAIL: g77.f-torture/execute/u77-test.f execution,  -O0 
+FAIL: g77.f-torture/execute/u77-test.f execution,  -O1 
+FAIL: g77.f-torture/execute/u77-test.f execution,  -O2 
+FAIL: g77.f-torture/execute/u77-test.f execution,  -O2 -fomit-frame-pointer -finline-functions 
+FAIL: g77.f-torture/execute/u77-test.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-loops 
+FAIL: g77.f-torture/execute/u77-test.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-all-loops 
+FAIL: g77.f-torture/execute/u77-test.f execution,  -Os 
 
-                === libstdc++ Summary ===
+		=== objc Summary ===
 
-# of expected passes            27
-# of unexpected failures        1
-# of expected failures          2
+# of expected passes		38
 
-                === gcc Summary ===
-
-# of expected passes            7573
-# of unexpected failures        15
-# of expected failures          7
-# of unsupported tests          12
-
-                === g++ Summary ===
-
-# of expected passes            4459
-# of unexpected failures        22
-# of unexpected successes       1
-# of expected failures          88
-# of untested testcases         7
-
-
-Some more thorough analysis will be needed, compared to 1.1b, since 
-there are more results, hence everything is not that easy to interpret.

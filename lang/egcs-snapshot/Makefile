@@ -1,9 +1,9 @@
 # OpenBSD makefile for:	egcs
-# Version required:	snapshot 1998-11-09
+# Version required:	snapshot 1998-11-22
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.4 1998/11/17 17:39:33 espie Exp $
+# $OpenBSD: Makefile,v 1.5 1998/11/25 00:54:02 espie Exp $
 #
 # This is a configuration file for egcs, recent snapshot
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -18,32 +18,38 @@ CATEGORIES=	lang
 MAINTAINER=	Marc.Espie@openbsd.org
 
 # this will improve over time as more and more architectures are handled
-ONLY_FOR_ARCHS = i386
+# with some help from Jason L. Wright for sparc...
+ONLY_FOR_ARCHS = i386 sparc
 
 # user configuration section
 
 # see files/tests for precise testing procedure
 
+
+# as of 19981122, cygnus snapshot packaging scheme is BROKEN.
+# YOU MUST USE THE MAMMOTH ARCHIVE !!!
 MAKE_TESTS=yes
 MAKE_GXX=yes
 MAKE_FORTRAN=yes
-
-
-# these are broken, as of 1998-11-09
 MAKE_CHILL=yes
+MAKE_OBJC=yes
+MAKE_JAVA=yes
 
-# java archive is truncated, objc too
-#MAKE_OBJC=yes
-#MAKE_JAVA=yes
+.if defined(MAKE_TESTS)
+BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
+.endif
+
+# if you want/need to use the mammoth archive
+ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1998-11-09
+LATEST_DATE=1998-11-22
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
 # define NEXT_DATE to the next snapshot... you lose the ability to check
 # md5 sums, though.
-# NEXT_DATE=1998-11-20
+#NEXT_DATE=1998-11-22
 #PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
@@ -63,6 +69,10 @@ DIST_SUBDIR=egcs
 
 PATCH_SITES = ${MASTER_SITES}
 PATCH_DIST_STRIP=-p1
+
+.if defined(ONE_ARCHIVE)
+DISTFILES=  egcs-${LATEST}${EXTRACT_SUFX}
+.else
 
 DISTFILES=	egcs-core-${LATEST}${EXTRACT_SUFX}
 .if defined(MAKE_TESTS)
@@ -95,6 +105,8 @@ DISTFILES+=egcs-objc-${LATEST}${EXTRACT_SUFX}
 DISTFILES+=egcs-chill-${LATEST}${EXTRACT_SUFX}
 .endif
 
+.endif
+
 # to do: check egcs-stable mirror list for sites which carry snapshots
 
 MASTER_SITES=	ftp://egcs.cygnus.com/pub/${DIRECTORY} \
@@ -104,6 +116,10 @@ MASTER_SITES=	ftp://egcs.cygnus.com/pub/${DIRECTORY} \
 # add a possible next snapshot
 
 .if defined(NEXT)
+.if defined(ONE_ARCHIVE)
+PATCHFILES=egcs-${LATEST}-${NEXT}.diff.gz
+
+.else
 PATCHFILES=egcs-core-${LATEST}-${NEXT}.diff.gz
 .if defined(MAKE_TESTS)
 PATCHFILES+=egcs-tests-${LATEST}-${NEXT}.diff.gz
@@ -129,6 +145,7 @@ PATCHFILES+=egcs-objc-${LATEST}-${NEXT}.diff.gz
 .if defined(MAKE_CHILL)
 PATCHFILES+=egcs-chill-${LATEST}-${NEXT}.diff.gz
 .endif
+.endif
 
 .endif
 
@@ -141,35 +158,46 @@ post-extract:
 
 #### 
 # Patch section
-# this rigmarole is needed as all patches DON'T necessarily apply 
-# to every configuration
 
-pre-patch:
-	-${RM} -f ${PATCHDIR}/*
-	-${MKDIR} ${PATCHDIR}
-	${CP} ${FILESDIR}/patches/patch-core-* ${PATCHDIR}
+PATCH_LIST=patch-core-*
 .if defined(MAKE_GXX)
-	${CP} ${FILESDIR}/patches/patch-g++-* ${PATCHDIR}
+PATCH_LIST+=patch-g++-*
 .endif
+.if defined(MAKE_OBJC)
+PATCH_LIST+=patch-objc-*
+.endif
+.if defined(MAKE_CHILL)
+PATCH_LIST+=patch-chill-*
+.endif
+.if defined(MAKE_FORTRAN)
+PATCH_LIST+=patch-g77-*
+.endif
+.if defined(MAKE_JAVA)
+PATCH_LIST+=patch-java-*
+.endif
+
+PATCH_LIST+=
 
 # get openbsd configuration files where they should be
 post-patch:
 	${CP} -R ${FILESDIR}/config/* ${WRKSRC}
 	-${RM} -rf ${WRKSRC}/texinfo 
 .if !defined(MAKE_CHILL)
-	-${RM} -rf ${WRKSRC}/gcc/ch
+	-${RM} -rf ${WRKSRC}/gcc/ch ${WRKSRC}/libchill
 .endif
 
 
 
-GNU_CONFIGURE=	yes
 
 ####
 # configure section
 #
 # define AS_PATH/LD_PATH is you don't want to use the default as/ld.
-# This should not be used for regular releases, but if you're on this
+# This should not be used for regular releases, but if you're using this
 # snapshot, you know what you're doing, don't you ?
+
+GNU_CONFIGURE=	yes
+
 CONFIGURE_SCRIPT=../source/configure
 
 CONFIGURE_ENV=CFLAGS=-O2
@@ -193,42 +221,54 @@ CONFIGURE_ARGS += --with-gnu-ld
 CONFIGURE_ARGS+=--enable-shared
 .endif
 
-# rebuild configure file after patching, then move file around !!!
+# rebuild configure file after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
-# + kludge to build in a separate directory.
 pre-configure:
-#	cd ${WRKSRC}/gcc && autoconf
+	cd ${WRKSRC}/gcc && autoconf
 	-${MV} ${WRKSRC} ${WRKDIR}/source
 	${MKDIR} ${WRKSRC}
 
 
 ####
 # build section
-# should work without gmake. If it turns out to be needed, this is a bug
+# should work without gmake. If it turns out to be needed, this must be 
+# reported to the egcs folks
 #USE_GMAKE= yes
 
 # you shouldn't skip bootstrap unless you know what you're doing
-# use bootstrap-lean if you don't have room.
+# use bootstrap-lean if you're pressed for space
 ALL_TARGET=bootstrap
 # ALL_TARGET=bootstrap-lean
+.if defined(MAKE_TESTS)
+ALL_TARGET+=check
+.endif
+
+# XXX we need to override do-build to get the warnings from within make
+do-build:
+	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET} 2>warnings)
 
 
 
 ####
 # Install section
 
+PLIST=${WRKDIR}/PLIST
+
 M4FLAGS=-Uinclude -DDISTNAME=${DISTNAME}
 .if defined(MAKE_GXX)
 M4FLAGS+= -DGXX
 .endif
-.if defined(MAKE_G77)
-M4FLAGS+= -DG77
+.if defined(MAKE_FORTRAN)
+M4FLAGS+= -DFORTRAN
 .endif
 .if defined(MAKE_CHILL)
 M4FLAGS+= -DCHILL
 .endif
-.if defined(OBJC)
+.if defined(MAKE_OBJC)
 M4FLAGS+= -DOBJC
+.endif
+.if defined(MAKE_JAVA)
+M4FLAGS+= -DJAVA
 .endif
 .if (${MACHINE_ARCH}) != "alpha")
 M4FLAGS+= -DDYNAMIC
@@ -237,9 +277,6 @@ M4FLAGS+= -DDYNAMIC
 pre-install:
 	m4 ${M4FLAGS} -DARCH=`${WRKDIR}/source/config.guess` \
 	-DVERSION=`${SED} -e 's/.*\(egcs-[0-9.]*\) .*/\1/' <${WRKDIR}/source/gcc/version.c` \
-	<${FILESDIR}/PLIST.template >${PKGDIR}/PLIST
-
-pre-clean:
-	-${RM} ${PKGDIR}/PLIST ${PATCHDIR}/*
+	<${FILESDIR}/PLIST.template >${PLIST}
 
 .include <bsd.port.mk>

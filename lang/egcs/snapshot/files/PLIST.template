@@ -11,6 +11,14 @@ lib/gcc-lib/ARCH/VERSION/cc1
 lib/gcc-lib/ARCH/VERSION/cpp
 lib/gcc-lib/ARCH/VERSION/libgcc.a
 lib/gcc-lib/ARCH/VERSION/specs
+lib/gcc-lib/ARCH/VERSION/include/syslimits.h
+lib/gcc-lib/ARCH/VERSION/include/typeinfo
+lib/gcc-lib/ARCH/VERSION/include/exception
+lib/gcc-lib/ARCH/VERSION/include/new
+lib/gcc-lib/ARCH/VERSION/include/new.h
+lib/gcc-lib/ARCH/VERSION/include/limits.h
+lib/gcc-lib/ARCH/VERSION/include/float.h
+lib/gcc-lib/ARCH/VERSION/include/README
 lib/libiberty.a
 info/ecpp.info
 info/ecpp.info-1
@@ -47,12 +55,14 @@ info/egcc.info-6
 info/egcc.info-7
 info/egcc.info-8
 info/egcc.info-9
-man/ecccp.1
-man/egcc.1
+man/man1/ecccp.1
+man/man1/egcc.1
 ifdef(`CHILL',
 bin/chill
 info/chill.info
 lib/gcc-lib/ARCH/VERSION/cc1chill
+lib/gcc-lib/ARCH/VERSION/chillrt0.o
+lib/gcc-lib/ARCH/VERSION/libchill.a
 )ifdef(`GXX',
 bin/ec++
 bin/ec++filt
@@ -200,37 +210,62 @@ lib/libstdc++.so.2.9.0
 lib/gcc-lib/ARCH/VERSION/libstdc++.so
 )lib/gcc-lib/ARCH/VERSION/cc1plus
 lib/gcc-lib/ARCH/VERSION/collect2
-man/eg++.1
-)ifdef(`G77',
+man/man1/eg++.1
+)ifdef(`FORTRAN',
 bin/eg77
-info/g77.info
-info/g77.info-1
-info/g77.info-10
-info/g77.info-11
-info/g77.info-12
-info/g77.info-13
-info/g77.info-14
-info/g77.info-15
-info/g77.info-16
-info/g77.info-17
-info/g77.info-18
-info/g77.info-19
-info/g77.info-2
-info/g77.info-20
-info/g77.info-3
-info/g77.info-4
-info/g77.info-5
-info/g77.info-6
-info/g77.info-7
-info/g77.info-8
-info/g77.info-9
+info/eg77.info
+info/eg77.info-1
+info/eg77.info-10
+info/eg77.info-11
+info/eg77.info-12
+info/eg77.info-13
+info/eg77.info-14
+info/eg77.info-15
+info/eg77.info-16
+info/eg77.info-17
+info/eg77.info-18
+info/eg77.info-19
+info/eg77.info-2
+info/eg77.info-20
+info/eg77.info-3
+info/eg77.info-4
+info/eg77.info-5
+info/eg77.info-6
+info/eg77.info-7
+info/eg77.info-8
+info/eg77.info-9
 lib/gcc-lib/ARCH/VERSION/f771
 lib/gcc-lib/ARCH/VERSION/include/g2c.h
 lib/gcc-lib/ARCH/VERSION/libg2c.a
-man/eg77.1
+man/man1/eg77.1
 )ifdef(`OBJC',
 lib/gcc-lib/ARCH/VERSION/cc1obj
-)@dirrm include/g++-2/std
+lib/gcc-lib/ARCH/VERSION/libobjc.a
+lib/gcc-lib/ARCH/VERSION/include/objc/NXConstStr.h
+lib/gcc-lib/ARCH/VERSION/include/objc/Object.h
+lib/gcc-lib/ARCH/VERSION/include/objc/Protocol.h
+lib/gcc-lib/ARCH/VERSION/include/objc/encoding.h
+lib/gcc-lib/ARCH/VERSION/include/objc/hash.h
+lib/gcc-lib/ARCH/VERSION/include/objc/objc-api.h
+lib/gcc-lib/ARCH/VERSION/include/objc/objc-list.h
+lib/gcc-lib/ARCH/VERSION/include/objc/objc.h
+lib/gcc-lib/ARCH/VERSION/include/objc/sarray.h
+lib/gcc-lib/ARCH/VERSION/include/objc/thr.h
+lib/gcc-lib/ARCH/VERSION/include/objc/typedstream.h
+)ifdef(`JAVA',
+bin/egcj
+bin/gcjh
+bin/jcf-dump
+bin/jv-scan
+lib/gcc-lib/ARCH/VERSION/jc1
+lib/gcc-lib/ARCH/VERSION/jvgenmain
+)ifdef(`GXX',
+@dirrm include/g++-2/std
 @dirrm include/g++-2
+)ifdef(`OBJC',
+@dirrm lib/gcc-lib/ARCH/VERSION/include/objc)
+@dirrm lib/gcc-lib/ARCH/VERSION/include
 @dirrm lib/gcc-lib/ARCH/VERSION
+@dirrm lib/gcc-lib/ARCH
+@dirrm lib/gcc-lib
 @exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib

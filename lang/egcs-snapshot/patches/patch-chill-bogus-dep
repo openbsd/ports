@@ -1,0 +1,11 @@
+--- gcc/ch/Makefile.in.orig	Tue Nov 24 02:29:46 1998
++++ gcc/ch/Makefile.in	Tue Nov 24 02:29:58 1998
+@@ -293,7 +293,7 @@
+ 	$(srcdir)/../input.h $(srcdir)/parse.h $(srcdir)/../system.h \
+ 	$(srcdir)/../toplev.h $(srcdir)/../../include/obstack.h lex.h \
+ 	$(srcdir)/../dwarfout.h
+-lex.c: hash.h
++lex.o: hash.h
+ loop.o : loop.c $(CONFIG_H) $(RTL_H) $(CHILL_TREE_H) lex.h \
+ 	$(srcdir)/../flags.h $(srcdir)/../input.h \
+ 	$(srcdir)/../../include/obstack.h $(srcdir)/../tree.h \
