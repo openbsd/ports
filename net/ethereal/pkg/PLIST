@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2002/06/29 15:41:01 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.23 2002/08/28 06:46:16 wilfried Exp $
 bin/editcap
 bin/idl2eth
 bin/mergecap
@@ -17,6 +17,7 @@ share/ethereal/diameter/dictionary.xml
 share/ethereal/diameter/mobileipv4.xml
 share/ethereal/diameter/nasreq.xml
 share/ethereal/diameter/sunping.xml
+@dirrm share/ethereal/diameter
 @dirrm share/ethereal
 @dirrm lib/ethereal/plugins/${VERSION}
 @dirrm lib/ethereal/plugins
