@@ -1,0 +1,30 @@
+$OpenBSD: patch-Imakefile,v 1.1.1.1 2001/02/06 11:52:44 wilfried Exp $
+--- Imakefile.orig	Sun Sep  5 01:24:23 1999
++++ Imakefile	Sat Feb  3 16:27:57 2001
+@@ -5,11 +5,9 @@ NAME 		= ascd
+ BINDIR		= CBINDIR
+ MANDIR		= CMANDIR
+ THEMESDIR	= CTHDIR
+-MOREFLAGS	= -I/usr/local/include -I/usr/X11R6/include -I.
+-CCOPTIONS	= $(MOREFLAGS)
+ SYS_LIBRARIES	= $(XLIB) -lXpm
+ 
+-LOCAL_LIBRARIES = -L../libworkman -lworkman -L/usr/local/lib
++LOCAL_LIBRARIES = -lworkman
+ 
+ SRCS_OPT1 =
+ SRCS_OPT2 =
+@@ -51,13 +49,3 @@ NormalProgramTarget($(NAME),$(OBJS),Null
+ InstallProgram($(NAME),$(BINDIR))
+ InstallManPage($(NAME),$(MANDIR))
+ InstallMultiple(themes/themes-manual.ps.gz,$(THEMESDIR))
+-
+-install::
+-	@echo "Installing themes..."
+-	@cp themes/themes.tar $(THEMESDIR)
+-	@cp themes/default.tar $(THEMESDIR)
+-	@cd $(THEMESDIR) ; tar xf themes.tar
+-	@cd $(THEMESDIR) ; tar xf default.tar
+-	@cd $(THEMESDIR) ; rm themes.tar
+-	@cd $(THEMESDIR) ; rm default.tar
+-	@echo "Done."

@@ -1,0 +1,19 @@
+ascd is a CD player that can be "docked" on the Afterstep Wharf or the
+Window Maker dock.
+
+* installation for AfterStep
+  --------------------------
+
+  Add a line in your ~/.steprc file:
+
+  *Wharf - - Swallow "ascd" /usr/local/bin/ascd -device /dev/cd0c &
+
+  (customized to your system settings of course!)
+  
+* installation for Window Maker
+  -----------------------------
+
+  Launch ascd with the "+w" option.
+  Dock ascd by dragging it to the dock.
+
+WWW: ${HOMEPAGE}

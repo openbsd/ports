@@ -1,0 +1,11 @@
+$OpenBSD: patch-misc_config_h_default,v 1.1.1.1 2001/02/06 11:52:44 wilfried Exp $
+--- misc/config.h.default.orig	Mon Apr 19 19:25:01 1999
++++ misc/config.h.default	Sat Feb  3 16:16:19 2001
+@@ -1,5 +1,5 @@
+ #define PACKAGE "ascd"
+ #define DEFAULT_COLOR "#2FAFAF"
+ #define DEFAULT_BGCOLOR "#000000"
+-#define DEFAULTDEVICE "/dev/cdrom"
+-#define THDIR "/usr/local/share/AScd"
++#define DEFAULTDEVICE "/dev/cd0c"
++#define THDIR "%%PREFIX%%/share/AScd"

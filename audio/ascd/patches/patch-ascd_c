@@ -1,0 +1,33 @@
+$OpenBSD: patch-ascd_c,v 1.1.1.1 2001/02/06 11:52:44 wilfried Exp $
+--- ascd.c.orig	Mon Jul  5 18:58:51 1999
++++ ascd.c	Mon Feb  5 15:07:49 2001
+@@ -572,7 +572,8 @@ void main_loop() 
+ 
+ 		if (autoplay || autoprobe) {
+ 		    dodo = RDTIME2;
+-		    wm_cd_status();
++		    if(wm_cd_status() < 1)
++		    	goto quick_and_dirty;
+ 		}
+ 
+ 		if (cur_cdmode != WM_CDM_EJECTED) no_disk = 0;
+@@ -606,7 +607,7 @@ void main_loop() 
+ 	if ((slow_down == 1) || (slow_down == 6)) {
+ 	    if ((show_db) && (cur_cdmode == WM_CDM_PLAYING)) show_db_f();
+ 	}
+-
++quick_and_dirty:
+ 	/* Check events */
+ 	
+ 	while (XPending(Disp))
+@@ -635,8 +636,8 @@ void main_loop() 
+ 		    
+ 		case ButtonPress:
+ 		    
+-		    wm_cd_status();
+-		    mouse_events(Event);
++		    if(wm_cd_status() > 0)
++			mouse_events(Event);
+ 		    break;
+ 		    
+ 		    /* ------------------------ Destroy Window ------------------- */
