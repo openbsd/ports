@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.588 2003/09/28 10:57:01 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.589 2003/11/22 12:03:44 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1674,10 +1674,6 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 .  for _p in ${PROTECT_MOUNT_POINTS}
 	@${SUDO} mount -u -w ${_p}
 .  endfor
-	@if ${SUDO} find ${WRKINST} -type l -ls|fgrep -- '-> ${WRKINST}'; then \
-		echo >&2 "*** bad links in ${WRKINST}"; \
-		exit 1; \
-	fi
 	@${SUDO} ${_MAKE_COOKIE} $@
 
 # The real install
@@ -1719,13 +1715,6 @@ _package: ${_PKG_PREREQ}
 		  exit 1; \
 	   fi; \
 	fi
-# PLIST should normally hold no duplicates.
-# This is left as a warning, because stuff such as @exec %F/%D
-# completion may cause legitimate dups.
-	@duplicates=`sort <${WRKPKG}/PLIST${SUBPACKAGE}|egrep -v '@(comment|mode|owner)'|uniq -d`; \
-	case "$${duplicates}" in "");; \
-		*) echo "\n*** WARNING *** Duplicates in PLIST:\n$$duplicates\n";; \
-	esac
 	@cd ${.CURDIR} && \
 	  if ${SUDO} ${PKG_CMD} ${PKG_ARGS} ${PKGFILE${SUBPACKAGE}}; then \
 	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${PKGFILE${SUBPACKAGE}}; \
