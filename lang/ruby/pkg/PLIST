@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/02/21 17:17:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/03/23 01:57:10 espie Exp $
 bin/irb
 bin/ruby
 @exec mkdir -p %D/lib/ruby/site_ruby/${REV}/${SUB}
@@ -62,10 +62,10 @@ lib/ruby/${REV}/matrix.rb
 lib/ruby/${REV}/mkmf.rb
 lib/ruby/${REV}/monitor.rb
 lib/ruby/${REV}/mutex_m.rb
-lib/ruby/${REV}/net/pop.rb
 lib/ruby/${REV}/net/ftp.rb
 lib/ruby/${REV}/net/http.rb
 lib/ruby/${REV}/net/imap.rb
+lib/ruby/${REV}/net/pop.rb
 lib/ruby/${REV}/net/protocol.rb
 lib/ruby/${REV}/net/smtp.rb
 lib/ruby/${REV}/net/telnet.rb
