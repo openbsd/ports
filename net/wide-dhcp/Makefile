@@ -3,11 +3,11 @@
 # Date created:         29 April 1998
 # Whom:                 Oleg Safiullin <form@vs.itam.nsc.ru>
 #
-# $OpenBSD: Makefile,v 1.2 1998/08/17 11:43:23 form Exp $
+# $OpenBSD: Makefile,v 1.3 1998/09/15 02:50:58 form Exp $
 #
 
-DISTNAME=       dhcp-1.4.0p2
-PKGNAME=        wide-dhcp-1.4.0.2
+DISTNAME=       dhcp-1.4.0p3
+PKGNAME=        wide-dhcp-1.4.0.3
 CATEGORIES=     net
 MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/
 DISTFILES=	${DISTNAME}.tar.gz
