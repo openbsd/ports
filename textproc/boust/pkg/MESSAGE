@@ -12,4 +12,4 @@ started, add
 
   FontPath "${FONTDIR}"
 
-in the "Files" section of your XF86Config file.
+in the "Files" section of your xorg.conf file.

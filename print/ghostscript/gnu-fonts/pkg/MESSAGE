@@ -3,8 +3,7 @@ lists the 75dpi or 100dpi bitmap fonts before the ghostscript fonts,
 and make sure you have the string ":unscaled" appended to the bitmap
 font's fontpath. This way, the bitmap fonts will be used if they
 match, and the Type 1 versions will be used if the font needs to be
-scaled. Below is the relevant section from a typical XF86Config-4
-file.
+scaled. Below is the relevant section from a typical xorg.conf file.
 
    FontPath   "/usr/X11R6/lib/X11/fonts/misc/"
    FontPath   "/usr/X11R6/lib/X11/fonts/75dpi/:unscaled"

@@ -31,7 +31,7 @@ something like:
 
 you probably need them.
 
-Once the package is installed, just edit your XF86Config file, to add
+Once the package is installed, just edit your xorg.conf file, to add
 ${PREFIX}/lib/X11/modules, e.g.,
 
      ModulePath "${PREFIX}/lib/X11/modules"

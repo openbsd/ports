@@ -22,7 +22,7 @@ The ogle_gui, okle, and goggles yield alternative
 GUI interfaces.
 
 To run ogle, you need a graphics card well supported 
-by XFree, including the Xvideo extension in YUV mode,
+by Xorg, including the Xvideo extension in YUV mode,
 and a sound card with 48KHz output (ATI card owners
 may wish to use the ATI-4.1.0.i386.tgz package)
 You can check your display Xvideo capabilities with
@@ -61,7 +61,7 @@ is not available.  On i386, it's highly recommended to go
 to a 16 bits mode, where MMX acceleration code exists (requirements
 go down to 70% cpu). 
 If you can, you may also wish to add several `non-standard' 
-modes to your XF86Config. The most useful being 720x576.
+modes to your xorg.conf. The most useful being 720x576.
 
 FLAVORS: altivec (ppc only)
 Uses altivec vector unit for a huge speed-up.  Only works on
