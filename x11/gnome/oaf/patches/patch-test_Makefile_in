@@ -1,6 +1,15 @@
-$OpenBSD: patch-test_Makefile_in,v 1.1 2001/09/20 18:39:13 naddy Exp $
---- test/Makefile.in.orig	Thu Sep 20 17:21:30 2001
-+++ test/Makefile.in	Thu Sep 20 17:21:40 2001
+$OpenBSD: patch-test_Makefile_in,v 1.2 2001/09/29 04:18:16 pvalchev Exp $
+--- test/Makefile.in.orig	Thu Mar  1 20:16:48 2001
++++ test/Makefile.in	Fri Sep 28 22:06:27 2001
+@@ -139,7 +139,7 @@ CLEANFILES = empty_built
+ 
+ INCLUDES = -I$(top_srcdir) -I$(top_builddir) -I$(top_builddir)/liboaf -DOAFINFODIR=\"$(pkgdatadir)\" 	@ORBIT_CFLAGS@ @XML_CFLAGS@ @GLIB_CFLAGS@
+ 
+-LDADD = ../liboaf/liboaf.la @ORBIT_LIBS@ @GLIB_LIBS@
++LDADD = ../liboaf/liboaf.la @ORBIT_LIBS@ @GLIB_LIBS@ @INTLLIBS@
+ 
+ oaffiles = empty.oafinfo
+ 
 @@ -468,7 +468,7 @@ empty_built: empty.idl $(ORBIT_IDL)
  	touch empty_built
  
