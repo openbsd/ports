@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2002/11/25 21:10:17 margarida Exp $
+# $OpenBSD: Makefile,v 1.59 2002/11/29 23:26:54 margarida Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -18,6 +18,7 @@
      SUBDIR += mac-robber
      SUBDIR += mencal
      SUBDIR += mergemaster
+     SUBDIR += monit
      SUBDIR += mtools
      SUBDIR += nut
      SUBDIR += nut,no_cgi
