@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/12/31 12:30:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/04/02 16:45:05 espie Exp $
 bin/kabalone
 bin/kasteroids
 bin/katomic
@@ -2018,10 +2018,3 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/apps/carddecks/cards-default
 @dirrm share/apps/carddecks/cards-aisleriot
 @dirrm share/apps/carddecks
-@dirrm share/applnk/Toys
-@dirrm share/applnk/Games/TacticStrategy
-@dirrm share/applnk/Games/Card
-@dirrm share/applnk/Games/Board
-@dirrm share/applnk/Games/Arcade
-@dirrm share/applnk/Games
-@dirrm share/applnk

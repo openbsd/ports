@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/12/31 13:39:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/04/02 16:45:06 espie Exp $
 bin/amor
 bin/kmoon
 bin/kodo
@@ -553,7 +553,3 @@ share/icons/locolor/32x32/apps/ktux.png
 @dirrm share/apps/amor/blob
 @dirrm share/apps/amor/b
 @dirrm share/apps/amor
-@dirrm share/applnk/Toys
-@dirrm share/applnk/System/ScreenSavers
-@dirrm share/applnk/System
-@dirrm share/applnk

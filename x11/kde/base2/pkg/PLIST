@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2002/01/21 08:14:16 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.24 2002/04/02 16:45:05 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -2558,41 +2558,21 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/clockapplet
 @dirrm share/applnk/ksysguard
 @dirrm share/applnk/WordProcessing
-@dirrm share/applnk/Utilities
-@dirrm share/applnk/Toys
 @dirrm share/applnk/System/Terminal
-@dirrm share/applnk/System/ScreenSavers
-@dirrm share/applnk/System
 @dirrm share/applnk/Settings/WebBrowsing
-@dirrm share/applnk/Settings/System
 @dirrm share/applnk/Settings/Sound
 @dirrm share/applnk/Settings/PowerControl
-@dirrm share/applnk/Settings/Personalization
 @dirrm share/applnk/Settings/Peripherals
-@dirrm share/applnk/Settings/Network
 @dirrm share/applnk/Settings/LookNFeel/Windows
 @dirrm share/applnk/Settings/LookNFeel/Themes
 @dirrm share/applnk/Settings/LookNFeel/Desktop
-@dirrm share/applnk/Settings/LookNFeel
 @dirrm share/applnk/Settings/Information
 @dirrm share/applnk/Settings/Help
-@dirrm share/applnk/Settings/FileBrowsing
 @dirrm share/applnk/Settings/Databases
-@dirrm share/applnk/Settings
-@dirrm share/applnk/Office
 @dirrm share/applnk/Multimedia
 @dirrm share/applnk/Internet/Terminal
-@dirrm share/applnk/Internet
-@dirrm share/applnk/Graphics
-@dirrm share/applnk/Games/TacticStrategy
-@dirrm share/applnk/Games/Card
-@dirrm share/applnk/Games/Board
-@dirrm share/applnk/Games/Arcade
-@dirrm share/applnk/Games
 @dirrm share/applnk/Editors
 @dirrm share/applnk/Development
 @dirrm share/applnk/Applications
-@dirrm share/applnk/.hidden
-@dirrm share/applnk
 @dirrm include/kwin
 @dirrm include/kate

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/23 15:04:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/02 16:45:05 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -2548,6 +2548,5 @@ share/wallpapers/triplegears.jpg
 @dirrm share/applnk/Settings/Peripherals
 @dirrm share/applnk/Settings/LookNFeel/Windows
 @dirrm share/applnk/.hidden
-@dirrm lib/kde3
 @dirrm include/kwin
 @dirrm include/ksgrd

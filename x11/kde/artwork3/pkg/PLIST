@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/23 15:09:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/02 16:45:05 espie Exp $
 bin/kbanner.kss
 bin/kblob.kss
 bin/kbouboule.kss
@@ -2881,6 +2881,3 @@ share/wallpapers/winter_theme_1.jpg
 @dirrm share/applnk/System/ScreenSavers
 @dirrm share/applnk/System
 @dirrm share/applnk
-@dirrm lib/kde3/plugins/styles
-@dirrm lib/kde3/plugins
-@dirrm lib/kde3

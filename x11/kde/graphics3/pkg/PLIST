@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/23 17:00:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/02 16:45:05 espie Exp $
 bin/kcolorchooser
 bin/kcoloredit
 bin/kdvi
@@ -259,4 +259,3 @@ share/services/kfile_ps.desktop
 @dirrm share/apps
 @dirrm share/applnk/Graphics
 @dirrm share/applnk
-@dirrm lib/kde3

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2002/03/20 14:32:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2002/04/02 16:45:05 espie Exp $
 @pkgcfl arts-*
 bin/artsc-config
 bin/artscat
@@ -2661,6 +2661,46 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/apps/kab
 @dirrm share/apps/LICENSES
 @dirrm share/apps
+@exec mkdir -p %D/share/applnk/.hidden
+@dirrm %D/share/applnk/.hidden
+@exec mkdir -p %D/share/applnk/Games/Arcade
+@dirrm %D/share/applnk/Games/Arcade
+@exec mkdir -p %D/share/applnk/Games/Board
+@dirrm %D/share/applnk/Games/Board
+@exec mkdir -p %D/share/applnk/Games/Card
+@dirrm %D/share/applnk/Games/Card
+@exec mkdir -p %D/share/applnk/Games/TacticStrategy
+@dirrm %D/share/applnk/Games/TacticStrategy
+@exec mkdir -p %D/share/applnk/Games
+@dirrm %D/share/applnk/Games
+@exec mkdir -p %D/share/applnk/Graphics
+@dirrm %D/share/applnk/Graphics
+@exec mkdir -p %D/share/applnk/Internet
+@dirrm %D/share/applnk/Internet
+@exec mkdir -p %D/share/applnk/Office
+@dirrm %D/share/applnk/Office
+@exec mkdir -p %D/share/applnk/Settings/FileBrowsing
+@dirrm %D/share/applnk/Settings/FileBrowsing
+@exec mkdir -p %D/share/applnk/Settings/LookNFeel
+@dirrm %D/share/applnk/Settings/LookNFeel
+@exec mkdir -p %D/share/applnk/Settings/Network
+@dirrm %D/share/applnk/Settings/Network
+@exec mkdir -p %D/share/applnk/Settings/Personalization
+@dirrm %D/share/applnk/Settings/Personalization
+@exec mkdir -p %D/share/applnk/Settings/System
+@dirrm %D/share/applnk/Settings/System
+@exec mkdir -p %D/share/applnk/Settings
+@dirrm %D/share/applnk/Settings
+@exec mkdir -p %D/share/applnk/System/ScreenSavers
+@dirrm %D/share/applnk/System/ScreenSavers
+@exec mkdir -p %D/share/applnk/System
+@dirrm %D/share/applnk/System
+@exec mkdir -p %D/share/applnk/Toys
+@dirrm %D/share/applnk/Toys
+@exec mkdir -p %D/share/applnk/Utilities
+@dirrm %D/share/applnk/Utilities
+@exec mkdir -p %D/share/applnk
+@dirrm share/applnk
 @dirrm lib/mcop/Arts
 @dirrm lib/mcop
 @dirrm lib/kde2
