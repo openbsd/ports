@@ -1,12 +1,52 @@
-@comment $OpenBSD: PLIST-doc,v 1.1.1.1 2003/02/23 21:27:28 danh Exp $
-@pkgcfl xntp3-*
+@comment $OpenBSD: PLIST-doc,v 1.6 2004/06/05 04:54:53 danh Exp $
 share/doc/ntp/accopt.html
 share/doc/ntp/assoc.html
 share/doc/ntp/audio.html
 share/doc/ntp/authopt.html
-share/doc/ntp/build.html
+share/doc/ntp/build/build.html
+share/doc/ntp/build/config.html
+share/doc/ntp/build/hints.html
+share/doc/ntp/build/hints/a-ux
+share/doc/ntp/build/hints/aix
+share/doc/ntp/build/hints/bsdi
+share/doc/ntp/build/hints/changes
+share/doc/ntp/build/hints/decosf1
+share/doc/ntp/build/hints/decosf2
+share/doc/ntp/build/hints/freebsd
+share/doc/ntp/build/hints/hpux
+share/doc/ntp/build/hints/linux
+share/doc/ntp/build/hints/mpeix
+share/doc/ntp/build/hints/netbsd
+share/doc/ntp/build/hints/notes-xntp-v3
+share/doc/ntp/build/hints/parse
+share/doc/ntp/build/hints/refclocks
+share/doc/ntp/build/hints/rs6000
+share/doc/ntp/build/hints/sco.html
+share/doc/ntp/build/hints/sgi
+share/doc/ntp/build/hints/solaris-dosynctodr.html
+share/doc/ntp/build/hints/solaris.html
+share/doc/ntp/build/hints/solaris.xtra.4023118
+share/doc/ntp/build/hints/solaris.xtra.4095849
+share/doc/ntp/build/hints/solaris.xtra.S99ntpd
+share/doc/ntp/build/hints/solaris.xtra.patchfreq
+share/doc/ntp/build/hints/sun4
+share/doc/ntp/build/hints/svr4-dell
+share/doc/ntp/build/hints/svr4_package
+share/doc/ntp/build/hints/todo
+share/doc/ntp/build/hints/vxworks.html
+share/doc/ntp/build/hints/winnt.html
+share/doc/ntp/build/patches.html
+share/doc/ntp/build/porting.html
+share/doc/ntp/build/quick.html
+share/doc/ntp/build/scripts/footer.txt
+share/doc/ntp/build/scripts/links10.txt
+share/doc/ntp/build/scripts/links11.txt
+share/doc/ntp/build/scripts/links12.txt
+share/doc/ntp/build/scripts/links7.txt
+share/doc/ntp/build/scripts/links8.txt
+share/doc/ntp/build/scripts/links9.txt
+share/doc/ntp/build/scripts/style.css
 share/doc/ntp/clockopt.html
-share/doc/ntp/config.html
 share/doc/ntp/confopt.html
 share/doc/ntp/copyright.html
 share/doc/ntp/debug.html
@@ -28,6 +68,7 @@ share/doc/ntp/drivers/driver28.html
 share/doc/ntp/drivers/driver29.html
 share/doc/ntp/drivers/driver3.html
 share/doc/ntp/drivers/driver30.html
+share/doc/ntp/drivers/driver31.html
 share/doc/ntp/drivers/driver32.html
 share/doc/ntp/drivers/driver33.html
 share/doc/ntp/drivers/driver34.html
@@ -49,37 +90,9 @@ share/doc/ntp/drivers/driver9.html
 share/doc/ntp/drivers/icons/home.gif
 share/doc/ntp/drivers/icons/mail2.gif
 share/doc/ntp/drivers/oncore-shmem.html
+share/doc/ntp/drivers/scripts/footer.txt
+share/doc/ntp/drivers/scripts/style.css
 share/doc/ntp/extern.html
-share/doc/ntp/hints.html
-share/doc/ntp/hints/a-ux
-share/doc/ntp/hints/aix
-share/doc/ntp/hints/bsdi
-share/doc/ntp/hints/changes
-share/doc/ntp/hints/decosf1
-share/doc/ntp/hints/decosf2
-share/doc/ntp/hints/freebsd
-share/doc/ntp/hints/hpux
-share/doc/ntp/hints/linux
-share/doc/ntp/hints/mpeix
-share/doc/ntp/hints/netbsd
-share/doc/ntp/hints/notes-xntp-v3
-share/doc/ntp/hints/parse
-share/doc/ntp/hints/refclocks
-share/doc/ntp/hints/rs6000
-share/doc/ntp/hints/sco.html
-share/doc/ntp/hints/sgi
-share/doc/ntp/hints/solaris-dosynctodr.html
-share/doc/ntp/hints/solaris.html
-share/doc/ntp/hints/solaris.xtra.4023118
-share/doc/ntp/hints/solaris.xtra.4095849
-share/doc/ntp/hints/solaris.xtra.S99ntpd
-share/doc/ntp/hints/solaris.xtra.patchfreq
-share/doc/ntp/hints/sun4
-share/doc/ntp/hints/svr4-dell
-share/doc/ntp/hints/svr4_package
-share/doc/ntp/hints/todo
-share/doc/ntp/hints/vxworks.html
-share/doc/ntp/hints/winnt.html
 share/doc/ntp/howto.html
 share/doc/ntp/icons/home.gif
 share/doc/ntp/icons/mail2.gif
@@ -103,7 +116,6 @@ share/doc/ntp/ntptime.html
 share/doc/ntp/ntptrace.html
 share/doc/ntp/parsedata.html
 share/doc/ntp/parsenew.html
-share/doc/ntp/patches.html
 share/doc/ntp/pic/9400n.jpg
 share/doc/ntp/pic/alice11.gif
 share/doc/ntp/pic/alice13.gif
@@ -154,10 +166,8 @@ share/doc/ntp/pic/sheepb.jpg
 share/doc/ntp/pic/stack1a.jpg
 share/doc/ntp/pic/tonea.gif
 share/doc/ntp/pic/wingdorothy.gif
-share/doc/ntp/porting.html
 share/doc/ntp/pps.html
 share/doc/ntp/prefer.html
-share/doc/ntp/quick.html
 share/doc/ntp/rdebug.html
 share/doc/ntp/refclock.html
 share/doc/ntp/release.html
@@ -174,7 +184,10 @@ share/doc/ntp/tickadj.html
 @dirrm share/doc/ntp/scripts
 @dirrm share/doc/ntp/pic
 @dirrm share/doc/ntp/icons
-@dirrm share/doc/ntp/hints
+@dirrm share/doc/ntp/drivers/scripts
 @dirrm share/doc/ntp/drivers/icons
 @dirrm share/doc/ntp/drivers
+@dirrm share/doc/ntp/build/scripts
+@dirrm share/doc/ntp/build/hints
+@dirrm share/doc/ntp/build
 @dirrm share/doc/ntp
