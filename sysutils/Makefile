@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2001/12/14 01:39:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2002/04/21 12:08:29 hugh Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -28,6 +28,7 @@
      SUBDIR += skill
      SUBDIR += socket
      SUBDIR += stat
+     SUBDIR += sysgen
      SUBDIR += tcplist
      SUBDIR += upsd
      SUBDIR += usbutil
