@@ -1,6 +1,6 @@
---- support/configure.orig	Thu Jan 11 13:26:00 2001
-+++ support/configure	Thu Jan 11 13:26:19 2001
-@@ -246,7 +246,7 @@
+--- support/configure.orig	Tue Jun  6 18:35:29 2000
++++ support/configure	Fri Apr 20 02:51:20 2001
+@@ -246,7 +246,7 @@ EOF
    -logdir | --logdir | --logdi | --logd)
      ac_prev=logdir ;;
    -logdir=* | --logdir=* | --logdi=* | --logd=*)

@@ -1,6 +1,6 @@
-$OpenBSD: patch-ircd_s_user_c,v 1.1 2001/04/10 16:18:03 bmc Exp $
---- ircd/s_user.c.orig	Fri Feb  9 09:05:55 2001
-+++ ircd/s_user.c	Fri Feb  9 09:05:59 2001
+$OpenBSD: patch-ircd_s_user_c,v 1.2 2001/04/20 07:31:36 bmc Exp $
+--- ircd/s_user.c.orig	Tue Jun  6 18:35:12 2000
++++ ircd/s_user.c	Fri Apr 20 02:52:27 2001
 @@ -2376,7 +2376,7 @@ char	*parv[];
  		       parv[0], sptr->user->username, sptr->user->host,
  		       sptr->auth, IsUnixSocket(sptr) ? sptr->sockhost :
@@ -10,7 +10,7 @@ $OpenBSD: patch-ircd_s_user_c,v 1.1 2001/04/10 16:18:03 bmc Exp $
  #else
                         inetntoa((char *)&sptr->ip));
  #endif
-@@ -2403,10 +2403,10 @@ char	*parv[];
+@@ -2403,7 +2403,7 @@ char	*parv[];
  			  parv[0], sptr->user->username, sptr->user->host,
  			  sptr->auth, IsUnixSocket(sptr) ? sptr->sockhost :
  #ifdef INET6
@@ -18,8 +18,4 @@ $OpenBSD: patch-ircd_s_user_c,v 1.1 2001/04/10 16:18:03 bmc Exp $
 +			  inet_ntop(AF_INET6, (char *)&sptr->ip, mydummy,
  				   MYDUMMY_SIZE));
  #else
--			  inetntoa((char *)&sptr->ip));
-+			  inet_ntoa((char *)&sptr->ip));
- #endif
- 		  (void)alarm(3);
- 		  (void)write(logfile, buf, strlen(buf));
+ 			  inetntoa((char *)&sptr->ip));

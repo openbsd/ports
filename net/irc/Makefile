@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/04/10 16:18:02 bmc Exp $
+# $OpenBSD: Makefile,v 1.19 2001/04/20 07:31:35 bmc Exp $
 # $FreeBSD: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
 
 COMMENT=	"internet relay chat (irc) server"
@@ -22,7 +22,13 @@ SYSCONFDIR=	/etc/ircd
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--logdir="/var/log/ircd" \
 		--localstatedir="/var/run" \
-		--enable-ip6
+
+FLAVORS=	ipv6
+FLAVOR?=	
+
+.if ${FLAVOR:L:Mipv6}
+CONFIGURE_ARGS+=	--enable-ip6
+.endif
 
 # syslog facility to use for logging
 SYSLOG_FACILITY=	LOG_LOCAL5
@@ -38,9 +44,8 @@ post-patch:
 
 do-install:	
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ircd
-	${INSTALL_PROGRAM} ${WRKSRC}/support/ircd ${PREFIX}/libexec/ircd
 	cd ${WRKBUILD}; ${INSTALL_PROGRAM} \
-		iauth chkconf ircdwatch ircd-mkpasswd \
+		iauth chkconf ircdwatch ircd-mkpasswd ircd \
 			${PREFIX}/sbin
 	cd ${WRKSRC}/doc; ${INSTALL_MAN} ircd.8 iauth.8 \
 		${PREFIX}/man/man8
