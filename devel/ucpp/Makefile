@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/07/24 12:16:24 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2002/11/28 18:54:33 espie Exp $
 
 DISTNAME=	ucpp-1.2
 COMMENT=	C preprocessor and lexer
 CATEGORIES=	devel
-HOMEPAGE=	http://www.di.ens.fr/~pornin/ucpp/
+HOMEPAGE=	http://pornin.nerim.net/ucpp/
 MASTER_SITES=	${HOMEPAGE}
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
