@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/10/28 13:05:49 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2001/11/19 21:48:37 jsyn Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	'"Sensible" Unix Password Cracker'
@@ -6,9 +6,13 @@ COMMENT=	'"Sensible" Unix Password Cracker'
 DISTNAME=	crack5.0
 PKGNAME=	crack-5.0
 CATEGORIES=	security
-NEED_VERSION=	1.402
-MASTER_SITES=	ftp://ftp.ox.ac.uk/pub/comp/security/software/crackers/  \
-		ftp://ftp.auscert.org.au/pub/coast/mirrors/cert.org/tools/crack/ \
+NEED_VERSION=	1.499
+
+HOMEPAGE=	http://www.users.dircon.co.uk/~crypto/
+
+MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/unix/pwdutils/crack/ \
+		http://www.packetstormsecurity.org/Crackers/crack/
+		
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
@@ -36,6 +40,8 @@ do-build:
 .if !defined(USE_DES)
 	@#(cd ${WRKSRC} ; ./Crack -fgnd -fmt bsd ${FILESDIR}/pw-md5.test)
 .endif
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/crack

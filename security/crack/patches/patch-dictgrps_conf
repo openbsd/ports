@@ -1,3 +1,4 @@
+$OpenBSD: patch-dictgrps_conf,v 1.1 2001/11/19 21:48:37 jsyn Exp $
 --- conf/dictgrps.conf.orig	Fri Dec 13 10:32:34 1996
 +++ conf/dictgrps.conf	Fri Jan 31 11:16:16 1997
 @@ -16,7 +16,7 @@
