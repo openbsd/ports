@@ -1,32 +1,7 @@
---- ltmain.sh.orig	Fri Nov 22 16:36:27 2002
-+++ ltmain.sh	Mon Dec  2 11:36:14 2002
-@@ -1046,15 +1046,18 @@ compiler."
- 	;;
- 
-       -l*)
--	if test "X$arg" = "X-lc" || test "X$arg" = "X-lm"; then
--	  case $host in
--	  *-*-cygwin* | *-*-pw32* | *-*-beos*)
--	    # These systems don't actually have a C or math library (as such)
-+	if test "$arg" = "-lc"; then
-+	  case "$host" in
-+	  *-*-openbsd*)
-+	    # Do not include libc due to us having libc/libc_r.
- 	    continue
- 	    ;;
--	  *-*-mingw* | *-*-os2*)
--	    # These systems don't actually have a C library (as such)
--	    test "X$arg" = "X-lc" && continue
-+          esac
-+	elif test "$arg" = "-lc_r"; then
-+	  case "$host" in
-+	  *-*-openbsd*)
-+	    # Do not include libc_r directly, use -pthread flag.
-+	    continue
- 	    ;;
- 	  *-*-openbsd*)
- 	    # Do not include libc due to us having libc/libc_r.
-@@ -1073,6 +1076,17 @@ compiler."
+$OpenBSD: patch-ltmain_sh,v 1.1 2003/06/13 21:51:09 marcm Exp $
+--- ltmain.sh.orig	Tue Jun  3 15:41:21 2003
++++ ltmain.sh	Tue Jun  3 15:44:15 2003
+@@ -1085,6 +1085,17 @@ compiler."
  	continue
  	;;
  
@@ -44,19 +19,19 @@
        -module)
  	module=yes
  	continue
-@@ -2496,6 +2510,9 @@ compiler."
- 	    # Rhapsody C library is in the System framework
- 	    deplibs="$deplibs -framework System"
- 	    ;;
-+          *-*-openbsd*)
-+	    # Do not include libc due to us having libc/libc_r.
-+	    ;;
- 	  *-*-netbsd*)
- 	    # Don't link with libc until the a.out ld.so is fixed.
- 	    ;;
-@@ -4526,40 +4543,6 @@ relink_command=\"$relink_command\""
+@@ -1525,6 +1536,9 @@ compiler."
+ 	  fi
+ 	  continue
+ 	  ;;
++	-pthread)
++	  continue
++	  ;;
+ 	%DEPLIBS%)
+ 	  alldeplibs=yes
+ 	  continue
+@@ -4580,40 +4594,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
-     test "$show" = : && exit 0
+     test "$show" = ":" && exit 0
  
 -    echo "----------------------------------------------------------------------"
 -    echo "Libraries have been installed in:"
