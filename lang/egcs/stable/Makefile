@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2002/09/14 10:14:50 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2002/09/14 10:59:44 avsm Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
 
@@ -80,7 +80,7 @@ DISTFILES=  gcc-3.2.tar.bz2
 
 SITES=	
 
-SITES+= ftp://ftp.uvsq.fr/pub/egcs/${DIRECTORY}
+SITES+= ftp://ftp.uvsq.fr/pub/gcc/${DIRECTORY}
 SITES+= ftp://ftp.grolier.fr/pub/egcs/${DIRECTORY}
 SITES+= ftp://gd.tuwien.ac.at/gnu/gcc/${DIRECTORY}
 SITES+= ftp://chardonnay.elis.rug.ac.be/pub/mirrors/gcc.cygnus.com/pub/gcc/${DIRECTORY}
