@@ -1,5 +1,5 @@
 # $FreeBSD: ports/russian/cyrproxy/Makefile,v 1.4 1999/08/31 01:46:57 peter Exp $
-# $OpenBSD: Makefile,v 1.15 2003/05/22 09:27:04 jolan Exp $
+# $OpenBSD: Makefile,v 1.16 2004/12/02 21:14:45 alek Exp $
 
 COMMENT=	"cyrillic proxy for network protocols"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c 
 
 NO_REGRESS=	Yes
 
