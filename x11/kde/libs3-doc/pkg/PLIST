@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/11 00:35:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/05/23 15:11:47 espie Exp $
 share/doc/html/kdelibs/dcop/DCOPClient.html
 share/doc/html/kdelibs/dcop/DCOPConnection.html
 share/doc/html/kdelibs/dcop/DCOPMsg.html
@@ -137,25 +137,72 @@ share/doc/html/kdelibs/interfaces/undointerface_h.html
 share/doc/html/kdelibs/interfaces/view_h.html
 share/doc/html/kdelibs/interfaces/viewcursorinterface_h.html
 share/doc/html/kdelibs/interfaces/wordwrapinterface_h.html
-share/doc/html/kdelibs/kab/AddressBook.html
-share/doc/html/kdelibs/kab/AddressBook__Entry.html
-share/doc/html/kdelibs/kab/AddressBook__Entry__Address.html
-share/doc/html/kdelibs/kab/CategoriesMap.html
-share/doc/html/kdelibs/kab/KabAPI.html
-share/doc/html/kdelibs/kab/KabKey.html
-share/doc/html/kdelibs/kab/addressbook_h.html
-share/doc/html/kdelibs/kab/all-globals.html
-share/doc/html/kdelibs/kab/full-list-AddressBook.html
-share/doc/html/kdelibs/kab/full-list-AddressBook__Entry.html
-share/doc/html/kdelibs/kab/full-list-AddressBook__Entry__Address.html
-share/doc/html/kdelibs/kab/full-list-CategoriesMap.html
-share/doc/html/kdelibs/kab/full-list-KabAPI.html
-share/doc/html/kdelibs/kab/full-list-KabKey.html
-share/doc/html/kdelibs/kab/header-list.html
-share/doc/html/kdelibs/kab/hier.html
-share/doc/html/kdelibs/kab/index-long.html
-share/doc/html/kdelibs/kab/index.html
-share/doc/html/kdelibs/kab/kabapi_h.html
+share/doc/html/kdelibs/kabc/KABC.html
+share/doc/html/kdelibs/kabc/KABC__Address.html
+share/doc/html/kdelibs/kabc/KABC__AddressBook.html
+share/doc/html/kdelibs/kabc/KABC__AddressBook__ConstIterator.html
+share/doc/html/kdelibs/kabc/KABC__AddressBook__Iterator.html
+share/doc/html/kdelibs/kabc/KABC__Addressee.html
+share/doc/html/kdelibs/kabc/KABC__AddresseeDialog.html
+share/doc/html/kdelibs/kabc/KABC__AddresseeItem.html
+share/doc/html/kdelibs/kabc/KABC__DistributionList.html
+share/doc/html/kdelibs/kabc/KABC__DistributionListEditor.html
+share/doc/html/kdelibs/kabc/KABC__DistributionListManager.html
+share/doc/html/kdelibs/kabc/KABC__DistributionList__Entry.html
+share/doc/html/kdelibs/kabc/KABC__EmailSelectDialog.html
+share/doc/html/kdelibs/kabc/KABC__Format.html
+share/doc/html/kdelibs/kabc/KABC__Geo.html
+share/doc/html/kdelibs/kabc/KABC__PhoneNumber.html
+share/doc/html/kdelibs/kabc/KABC__Resource.html
+share/doc/html/kdelibs/kabc/KABC__ResourceFile.html
+share/doc/html/kdelibs/kabc/KABC__SimpleFormat.html
+share/doc/html/kdelibs/kabc/KABC__StdAddressBook.html
+share/doc/html/kdelibs/kabc/KABC__Ticket.html
+share/doc/html/kdelibs/kabc/KABC__TimeZone.html
+share/doc/html/kdelibs/kabc/KABC__VCardFormat.html
+share/doc/html/kdelibs/kabc/address_h.html
+share/doc/html/kdelibs/kabc/addressbook_h.html
+share/doc/html/kdelibs/kabc/addressee_h.html
+share/doc/html/kdelibs/kabc/addresseedialog_h.html
+share/doc/html/kdelibs/kabc/all-globals.html
+share/doc/html/kdelibs/kabc/distributionlist_h.html
+share/doc/html/kdelibs/kabc/distributionlisteditor_h.html
+share/doc/html/kdelibs/kabc/format_h.html
+share/doc/html/kdelibs/kabc/full-list-KABC.html
+share/doc/html/kdelibs/kabc/full-list-KABC__Address.html
+share/doc/html/kdelibs/kabc/full-list-KABC__AddressBook.html
+share/doc/html/kdelibs/kabc/full-list-KABC__AddressBook__ConstIterator.html
+share/doc/html/kdelibs/kabc/full-list-KABC__AddressBook__Iterator.html
+share/doc/html/kdelibs/kabc/full-list-KABC__Addressee.html
+share/doc/html/kdelibs/kabc/full-list-KABC__AddresseeDialog.html
+share/doc/html/kdelibs/kabc/full-list-KABC__AddresseeItem.html
+share/doc/html/kdelibs/kabc/full-list-KABC__DistributionList.html
+share/doc/html/kdelibs/kabc/full-list-KABC__DistributionListEditor.html
+share/doc/html/kdelibs/kabc/full-list-KABC__DistributionListManager.html
+share/doc/html/kdelibs/kabc/full-list-KABC__DistributionList__Entry.html
+share/doc/html/kdelibs/kabc/full-list-KABC__EmailSelectDialog.html
+share/doc/html/kdelibs/kabc/full-list-KABC__Format.html
+share/doc/html/kdelibs/kabc/full-list-KABC__Geo.html
+share/doc/html/kdelibs/kabc/full-list-KABC__PhoneNumber.html
+share/doc/html/kdelibs/kabc/full-list-KABC__Resource.html
+share/doc/html/kdelibs/kabc/full-list-KABC__ResourceFile.html
+share/doc/html/kdelibs/kabc/full-list-KABC__SimpleFormat.html
+share/doc/html/kdelibs/kabc/full-list-KABC__StdAddressBook.html
+share/doc/html/kdelibs/kabc/full-list-KABC__Ticket.html
+share/doc/html/kdelibs/kabc/full-list-KABC__TimeZone.html
+share/doc/html/kdelibs/kabc/full-list-KABC__VCardFormat.html
+share/doc/html/kdelibs/kabc/geo_h.html
+share/doc/html/kdelibs/kabc/header-list.html
+share/doc/html/kdelibs/kabc/hier.html
+share/doc/html/kdelibs/kabc/index-long.html
+share/doc/html/kdelibs/kabc/index.html
+share/doc/html/kdelibs/kabc/phonenumber_h.html
+share/doc/html/kdelibs/kabc/resource_h.html
+share/doc/html/kdelibs/kabc/resourcefile_h.html
+share/doc/html/kdelibs/kabc/simpleformat_h.html
+share/doc/html/kdelibs/kabc/stdaddressbook_h.html
+share/doc/html/kdelibs/kabc/timezone_h.html
+share/doc/html/kdelibs/kabc/vcardformat_h.html
 share/doc/html/kdelibs/kdecore/CodeMod.html
 share/doc/html/kdelibs/kdecore/KAboutData.html
 share/doc/html/kdelibs/kdecore/KAboutPerson.html
@@ -1079,9 +1126,6 @@ share/doc/html/kdelibs/kfile/KDirSelectDialog.html
 share/doc/html/kdelibs/kfile/KDirSize.html
 share/doc/html/kdelibs/kfile/KDiskFreeSp.html
 share/doc/html/kdelibs/kfile/KExecPropsPlugin.html
-share/doc/html/kdelibs/kfile/KFILE.html
-share/doc/html/kdelibs/kfile/KFILE__BMToken.html
-share/doc/html/kdelibs/kfile/KFILE__BookmarkTokenizer.html
 share/doc/html/kdelibs/kfile/KFile.html
 share/doc/html/kdelibs/kfile/KFileBookmarkHandler.html
 share/doc/html/kdelibs/kfile/KFileDetailView.html
@@ -1125,7 +1169,6 @@ share/doc/html/kdelibs/kfile/KURLPropsPlugin.html
 share/doc/html/kdelibs/kfile/KURLRequester.html
 share/doc/html/kdelibs/kfile/KURLRequesterDlg.html
 share/doc/html/kdelibs/kfile/all-globals.html
-share/doc/html/kdelibs/kfile/booktoken_h.html
 share/doc/html/kdelibs/kfile/config-kfile_h.html
 share/doc/html/kdelibs/kfile/full-list-KAppTreeListItem.html
 share/doc/html/kdelibs/kfile/full-list-KApplicationPropsPlugin.html
@@ -1138,9 +1181,6 @@ share/doc/html/kdelibs/kfile/full-list-KDirSelectDialog.html
 share/doc/html/kdelibs/kfile/full-list-KDirSize.html
 share/doc/html/kdelibs/kfile/full-list-KDiskFreeSp.html
 share/doc/html/kdelibs/kfile/full-list-KExecPropsPlugin.html
-share/doc/html/kdelibs/kfile/full-list-KFILE.html
-share/doc/html/kdelibs/kfile/full-list-KFILE__BMToken.html
-share/doc/html/kdelibs/kfile/full-list-KFILE__BookmarkTokenizer.html
 share/doc/html/kdelibs/kfile/full-list-KFile.html
 share/doc/html/kdelibs/kfile/full-list-KFileBookmarkHandler.html
 share/doc/html/kdelibs/kfile/full-list-KFileDetailView.html
@@ -2242,7 +2282,7 @@ share/doc/html/kdelibs/libkmid/voiceman_h.html
 @dirrm share/doc/html/kdelibs/kdefx
 @dirrm share/doc/html/kdelibs/kded
 @dirrm share/doc/html/kdelibs/kdecore
-@dirrm share/doc/html/kdelibs/kab
+@dirrm share/doc/html/kdelibs/kabc
 @dirrm share/doc/html/kdelibs/interfaces
 @dirrm share/doc/html/kdelibs/dcop
 @dirrm share/doc/html/kdelibs
