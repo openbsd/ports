@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2003/06/29 23:14:35 avsm Exp $
+# $OpenBSD: Makefile,v 1.17 2004/02/29 00:18:19 avsm Exp $
 
 COMMENT=	"fast, compact and portable XSL/XSLT processor"
 
-V=		0.98
+V=		1.0.1
 DISTNAME=	Sablot-${V}
 PKGNAME=	sablotron-${V}
 CATEGORIES=    	textproc
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://download-2.gingerall.cz/download/sablot/
+MASTER_SITES=	http://download-1.gingerall.cz/download/sablot/
 
 MODULES=	iconv
 LIB_DEPENDS=	expat.2::textproc/expat
@@ -24,7 +24,7 @@ BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser
 
 USE_GMAKE=	Yes
 AUTOCONF_VERSION= 2.57
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/tools
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/autocfg
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	SABLOT_GPL=1
