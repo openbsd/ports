@@ -5,6 +5,6 @@
 #	make D=Debug
 #
 D=NOTHING
-CFLAGS+= -D$D -I/usr/X11R6/include -Wall
+CFLAGS+= -D$D -I/usr/X11R6/include 
 SHELL=/bin/sh
 RSWITCH=rswitch.c

@@ -1,5 +1,5 @@
 # Simple Icon port, does not yet support variant translators
-# $OpenBSD: Makefile,v 1.1.1.1 1998/10/02 17:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/13 14:58:39 espie Exp $
 
 DISTNAME=icon-9.3.1
 DIST_SUBDIR=icon
@@ -18,12 +18,17 @@ WRKSRC=${WRKDIR}
 SCRIPTS_ENV=ARCH="${ARCH}"
 MAKE_ENV=ARCH="${ARCH}"
 
+CONF_DIR=${WRKSRC}/config/unix/openbsd
 
 ALL_TARGET=Icon-icont
 
 pre-configure:
 	cp -R ${FILESDIR}/openbsd ${WRKSRC}/config/unix
-	ln ${WRKSRC}/config/unix/openbsd/${ARCH}_rswitch.c ${WRKSRC}/config/unix/openbsd/rswitch.c
+	if [ -f ${CONF_DIR}/${ARCH}_rswitch.c ] ; then \
+		ln -f ${CONF_DIR}/${ARCH}_rswitch.c ${CONF_DIR}/rswitch.c ;\
+	else \
+		touch ${CONF_DIR}/rswitch.c ;\
+	fi 
 
 
 # We put a wrapper around icont for finding the library files when

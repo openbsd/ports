@@ -5,5 +5,5 @@
 #	make D=Debug
 #
 D=NOTHING
-CFLAGS+= -D$D -Wall -I/usr/X11R6/include
+CFLAGS+= -D$D -I/usr/X11R6/include
 SHELL=/bin/sh
