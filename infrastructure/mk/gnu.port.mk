@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.7 2002/03/16 01:09:23 espie Exp $
+# $OpenBSD: gnu.port.mk,v 1.8 2002/03/18 03:18:24 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -60,10 +60,10 @@ REGRESS_TARGET?=	check
 
 .if ${PATCH_CHECK_ONLY:L} != "yes"
 .  if ${CONFIGURE_STYLE:L:Mautoupdate}
-MODGNU_post-patch+= cd ${AUTOCONF_DIR} && exec ${SETENV} ${AUTOCONF_ENV} ${AUTOUPDATE};
+MODGNU_post-patch+= cd ${AUTOCONF_DIR} && ${SETENV} ${AUTOCONF_ENV} ${AUTOUPDATE};
 .  endif
 .  if ${CONFIGURE_STYLE:L:Mautoconf}
-MODGNU_post-patch+= cd ${AUTOCONF_DIR} && exec ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF};
+MODGNU_post-patch+= cd ${AUTOCONF_DIR} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF};
 .  endif
 .  if !${CONFIGURE_STYLE:L:Mautomake}
 MODGNU_post-patch+= ln -s /usr/bin/false ${WRKDIR}/bin/automake;
