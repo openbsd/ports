@@ -1,22 +1,39 @@
 --- config/Makefile.in.orig	Mon Oct 18 20:43:55 1999
-+++ config/Makefile.in	Sun Jan  2 02:10:20 2000
-@@ -108,14 +108,14 @@
++++ config/Makefile.in	Thu Jun 15 14:31:21 2000
+@@ -108,21 +108,21 @@
  
  install-sysconfDATA: $(sysconf_DATA)
  	@$(NORMAL_INSTALL)
 -	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
-+	$(mkinstalldirs) $(PREFIX)/lib/fnlib
++	$(mkinstalldirs) $(DESTDIR)$(PREFIX)/lib/fnlib
  	@list='$(sysconf_DATA)'; for p in $$list; do \
  	  if test -f $(srcdir)/$$p; then \
 -	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p"; \
 -	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p; \
-+	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(PREFIX)/lib/fnlib/$$p.sample"; \
-+	    $(INSTALL_DATA) $(srcdir)/$$p $(PREFIX)/lib/fnlib/$$p.sample; \
++	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(PREFIX)/lib/fnlib/$$p.sample"; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(PREFIX)/lib/fnlib/$$p.sample; \
  	  else if test -f $$p; then \
 -	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p"; \
 -	    $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p; \
-+	    echo " $(INSTALL_DATA) $$p $(PREFIX)/lib/fnlib/$$p.sample"; \
-+	    $(INSTALL_DATA) $$p $(PREFIX)/lib/fnlib/$$p.sample; \
++	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(PREFIX)/lib/fnlib/$$p.sample"; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(PREFIX)/lib/fnlib/$$p.sample; \
  	  fi; fi; \
  	done
  
+ uninstall-sysconfDATA:
+ 	@$(NORMAL_UNINSTALL)
+ 	list='$(sysconf_DATA)'; for p in $$list; do \
+-	  rm -f $(DESTDIR)$(sysconfdir)/$$p; \
++	  rm -f $(DESTDIR)$(PREFIX)/lib/fnlib/$$p; \
+ 	done
+ tags: TAGS
+ TAGS:
+@@ -167,7 +167,7 @@
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+ installdirs:
+-	$(mkinstalldirs)  $(DESTDIR)$(sysconfdir)
++	$(mkinstalldirs)  $(DESTDIR)$(PREFIX)/lib/fnlib
+ 
+ 
+ mostlyclean-generic:
