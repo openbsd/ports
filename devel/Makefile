@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1998/05/22 01:41:41 angelos Exp $
+# $OpenBSD: Makefile,v 1.9 1998/07/01 05:39:29 marc Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -20,7 +20,7 @@
 #    SUBDIR += cs
 #    SUBDIR += cutils
 #    SUBDIR += cxref
-#    SUBDIR += ddd
+     SUBDIR += ddd
      SUBDIR += dejagnu
 #    SUBDIR += dmake
 #    SUBDIR += f77flow
