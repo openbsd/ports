@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2001/09/08 00:40:48 lebel Exp $
+# $OpenBSD: Makefile,v 1.169 2001/09/09 21:45:04 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -27,8 +27,6 @@
      SUBDIR += cvsup,no_x11
      SUBDIR += cvsup,static
      SUBDIR += cvsup,static,no_x11
-     SUBDIR += cvsup-bin-old
-     SUBDIR += cvsup-bin-old,no_x11
 #    SUBDIR += cvsup-mirror
      SUBDIR += dlint
      SUBDIR += doc
