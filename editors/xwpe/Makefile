@@ -1,22 +1,18 @@
-# OpenBSD makefile for:	Xwpe - Windows Programming Environment
-# Version required:	1.5.9a
-# Date created:		August 31, 1998
-# Whom:			Yannick Cote
-#
-# $OpenBSD: Makefile,v 1.2 1998/09/06 01:29:21 smurph Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/09 00:00:52 marc Exp $
 #
 
-DISTNAME=		xwpe-1.5.9a
-EXTRACT_SUFX=		.tgz
-CATEGORIES=		editors
+DISTNAME=	xwpe-1.5.9a
+CATEGORIES=	editors
 
-MAINTAINER=		yanick@fries.net
+BROKEN=		"newer version available"
+MAINTAINER=	yanick@fries.net
 
-MASTER_SITES=		ftp://sunsite.unc.edu/pub/Linux/apps/editors/X/ \
-			ftp://ftp.ds14.agh.edu.pl/Linux/edytory/
+MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/apps/editors/X/ \
+		ftp://ftp.ds14.agh.edu.pl/Linux/edytory/
+EXTRACT_SUFX=	.tgz
 
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=	yes
 
-MAKEFILE=		${WRKSRC}/Makefile
+MAKEFILE=	${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
