@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/01 02:16:40 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/04/18 23:25:50 brad Exp $
 
-DISTNAME=       unrar-2.01
+DISTNAME=       unrar-2.50
 CATEGORIES=	archivers
 NO_CDROM=	"NOFEE: can not sell"
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
-EXTRACT_SUFX=   .tgz
 
 MAINTAINER=     ports@openbsd.org
 
