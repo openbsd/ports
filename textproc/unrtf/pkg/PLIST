@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/08/21 15:43:37 espie Exp $
+bin/unrtf
+man/man1/unrtf.1
+share/doc/unrtf/unrtf.html
+@dirrm share/doc/unrtf
