@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/27 07:16:44 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2005/03/14 15:27:13 alek Exp $
 
 
 COMMENT=	"graph drawing software"
 
 DISTNAME=	graphviz-1.16
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	math devel graphics
 
 HOMEPAGE=	http://www.graphviz.org/
@@ -20,18 +20,19 @@ WANTLIB=		ICE SM X11 Xaw Xext Xmu Xpm Xt c fontconfig freetype m z
 
 MASTER_SITES=	${HOMEPAGE}pub/graphviz/ARCHIVE/
 
-MODULES=	gettext
+MODULES=	converters/libiconv
 LIB_DEPENDS=	expat.4::textproc/expat \
 		jpeg.62::graphics/jpeg \
-                png.2::graphics/png \
-		tk84.1:tk-8.4.*:x11/tk/8.4
+		png.2::graphics/png
+BUILD_DEPENDS=	:tk-8.4.*:x11/tk/8.4
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static \
 		--with-mylibgd
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 DOCBASE=	${PREFIX}/share/doc/graphviz
 EXBASE=		${PREFIX}/share/examples/graphviz
