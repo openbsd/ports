@@ -1,15 +1,15 @@
---- version.c.orig	Mon Sep  6 19:19:29 1999
-+++ version.c	Mon Sep  6 19:20:30 1999
-@@ -6,10 +6,10 @@
- 
+--- version.c.orig	Mon Sep 20 16:13:46 1999
++++ version.c	Mon Sep 20 16:14:07 1999
+@@ -9,10 +9,10 @@
+ #include "png.h"
  
  #ifndef PNGLIB
--#define PNGLIB "pnglib (unknown version)"
-+#define PNGLIB "pnglib (as installed)"
+-#  define PNGLIB "pnglib (unknown version)"
++#  define PNGLIB "pnglib (as installed)"
  #endif
  #ifndef ZLIB
--#define ZLIB "zlib (unknown version)"
-+#define ZLIB "zlib (as installed)"
+-#  define ZLIB "zlib (unknown version)"
++#  define ZLIB "zlib (as installed)"
  #endif
  
- const char version[]="gif2png 0.6 (beta)";
+ const char version[]="gif2png 0.7,";

@@ -1,30 +1,42 @@
---- Makefile.orig	Mon Sep  6 19:13:42 1999
-+++ Makefile	Mon Sep  6 19:15:22 1999
-@@ -1,17 +1,17 @@
+--- Makefile.orig	Mon Sep 20 16:15:44 1999
++++ Makefile	Mon Sep 20 16:19:10 1999
+@@ -1,5 +1,5 @@
  
 -CC=gcc
 +#CC=gcc
  
  #required for djgpp, you can also use copy /b go32.exe+gif2png gif2png.exe
  #COFF2EXE=coff2exe
- COFF2EXE=@echo >/dev/null
+@@ -7,22 +7,22 @@
  
--PNGLIB=libpng-0.81
--ZLIB=zlib-0.95
-+#PNGLIB=libpng-0.81
-+#ZLIB=zlib-0.95
+ #PNGINC=libpng-0.81
+ #PNGLIB=libpng-0.81
+-PNGINC=/usr/include
+-PNGLIB=/usr/lib
++PNGINC=${LOCALBASE}/include
++PNGLIB=${LOCALBASE}/lib
  
+ #ZINC=zlib-0.95
+ #ZLIB=zlib-0.95
+ ZINC=/usr/include
+ ZLIB=/usr/lib
+ 
+-INCLUDE=-I$(PNGINC) -I$(ZINC)
 -LIBS=$(PNGLIB)/libpng.a $(ZLIB)/libz.a
--INCLUDE=-I$(PNGLIB) -I$(ZLIB)
-+LIBS=-L${LOCALBASE}/lib -lpng -lz
 +INCLUDE=-I${LOCALBASE}/include
++LIBS=-L${LOCALBASE}/lib -lpng -lz
  
--CFLAGS=$(INCLUDE) -g -O -Wall
+ #CFLAGS=$(INCLUDE) -g -O -Wall
+ #LDFLAGS=-g
+ 
+-CFLAGS=$(INCLUDE) -O3 -Wall
+-LDFLAGS=-s
 +CFLAGS+=$(INCLUDE) -Wall
- LDFLAGS=-g
++#LDFLAGS=-s
  
- #CFLAGS=$(INCLUDE) -O -Wall
-@@ -23,7 +23,7 @@
+ OBJS=gif2png.o gifread.o version.o 437_l1.o memory.o
+ 
+@@ -30,7 +30,7 @@
  
  all-lib: libpng zlib all
  
