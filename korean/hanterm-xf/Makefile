@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/08/10 09:14:47 xsa Exp $
+# $OpenBSD: Makefile,v 1.8 2005/02/21 20:06:54 alek Exp $
 
 COMMENT=	"XFree86-based xterm with Korean language support"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
+WANTLIB=		c Xt SM Xmu Xaw termcap X11 Xext ICE
 
 MODULES=	converters/libiconv
 
