@@ -1,0 +1,61 @@
+$OpenBSD: patch-defendguin_c,v 1.1.1.1 2003/08/08 21:15:06 jolan Exp $
+--- defendguin.c.orig	2002-07-28 12:04:16.000000000 +0200
++++ defendguin.c	2003-08-08 22:28:35.000000000 +0200
+@@ -3803,40 +3803,48 @@ int option_screen(void)
+ 	        {
+ 		  if (option_line == 3)
+ 		  {
++#ifndef NOSOUND
+ 		    if (vol_effects > 0)
+ 		    {
+ 		      vol_effects--;
+ 		      Mix_Volume(-1, vol_effects * (MIX_MAX_VOLUME / 5));
+ 	              playsound(SND_SELECT, -1, 0);
+ 		    }
++#endif
+ 		  }
+ 		  else if (option_line == 4)
+ 		  {
++#ifndef NOSOUND
+ 		    if (vol_music > 0)
+ 		    {
+ 		      vol_music--;
+ 		      Mix_VolumeMusic(vol_music * (MIX_MAX_VOLUME / 5));
+ 		    }
++#endif
+ 		  }
+ 	        }
+ 	      else if (key == SDLK_RIGHT)
+ 	        {
+ 		  if (option_line == 3)
+ 		  {
++#ifndef NOSOUND
+ 		    if (vol_effects < 5)
+ 		    {
+ 		      vol_effects++;
+ 		      Mix_Volume(-1, vol_effects * (MIX_MAX_VOLUME / 5));
+ 	              playsound(SND_SELECT, -1, 0);
+ 		    }
++#endif
+ 		  }
+ 		  else if (option_line == 4)
+ 		  {
++#ifndef NOSOUND
+ 		    if (vol_music < 5)
+ 		    {
+ 		      vol_music++;
+ 		      Mix_VolumeMusic(vol_music * (MIX_MAX_VOLUME / 5));
+ 		    }
++#endif
+ 		  }
+ 	        }
+ 	      else if (key == SDLK_SPACE || key == SDLK_RETURN)
+@@ -5812,7 +5820,7 @@ void load_options(void)
+   char fname[512], str[128];
+   
+   vol_effects = 5;
+-  vol_music = 5;
++  vol_music = 0;
+ 
+   if (getenv("HOME") != NULL)
+     {

@@ -1,0 +1,29 @@
+--- Makefile.orig	2002-01-06 02:09:37.000000000 +0100
++++ Makefile	2003-08-06 09:55:23.000000000 +0200
+@@ -9,9 +9,9 @@
+ 
+ # User-definable stuff:
+ 
+-CFLAGS=-Wall -O2
++#CFLAGS=-Wall -O2
+ #DATA_PREFIX=$(PWD)/data/
+-PREFIX=/usr/local
++#PREFIX=/usr/local
+ MAN_PREFIX=$(PREFIX)
+ BIN_PREFIX=$(PREFIX)/bin
+ DATA_PREFIX=$(PREFIX)/share/defendguin/
+@@ -20,11 +20,11 @@ JOY=YES
+ 
+ # Other definitions:
+ 
+-SDL_CFLAGS := $(shell sdl-config --cflags)
+-SDL_LDFLAGS := $(shell sdl-config --libs) -L/usr/X11R6/lib
++SDL_CFLAGS := `sdl-config --cflags`
++SDL_LDFLAGS := `sdl-config --libs` -L${X11BASE}/lib
+ MIXER=-lSDL_mixer
+ NOSOUNDFLAG=__SOUND
+-CFLAGS=-Wall $(SDL_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" -D$(NOSOUNDFLAG) \
++CFLAGS+=$(SDL_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" -D$(NOSOUNDFLAG) \
+ 	-DJOY_$(JOY)
+ SDL_LIB=$(SDL_LDFLAGS) $(MIXER)
+ 
