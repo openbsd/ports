@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2000/07/22 23:51:20 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2000/08/04 17:55:26 brad Exp $
 #
 # mutt de-installation
 
@@ -8,13 +8,13 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=/etc/mutt
 
-if [ -d ${CONFIG_DIR} ]; then
+if [ -d $CONFIG_DIR ]; then
     echo
     echo "+---------------"
     echo "| To completely deinstall the $1 package you need to perform"
     echo "| this step as root:"
     echo "|"
-    echo "|           rm -rf ${CONFIG_DIR}"
+    echo "|           rm -rf $CONFIG_DIR"
     echo "|"
     echo "| Do not do this if you plan on re-installing $1"
     echo "| at some future time."

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2000/07/29 11:15:24 brad Exp $
+# $OpenBSD: Makefile,v 1.39 2000/08/04 17:55:26 brad Exp $
 
 DISTNAME=	mutt-1.2.5i
 CATEGORIES=     mail
@@ -73,8 +73,10 @@ pre-fetch:
 
 post-install:
 	@strip ${PREFIX}/bin/mutt
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/mutt
-	${INSTALL_DATA} ${WRKSRC}/Muttrc ${PREFIX}/lib/mutt/Muttrc.sample
-	${INSTALL_DATA} ${WRKSRC}/mime.types ${PREFIX}/lib/mutt/mime.types.sample
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mutt
+	${INSTALL_DATA} ${WRKSRC}/Muttrc \
+	 ${PREFIX}/share/examples/mutt/Muttrc.sample
+	${INSTALL_DATA} ${WRKSRC}/mime.types \
+	 ${PREFIX}/share/examples/mutt/mime.types.sample
 
 .include <bsd.port.mk>
