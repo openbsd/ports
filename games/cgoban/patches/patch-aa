@@ -1,6 +1,6 @@
---- configure.orig	Sun Sep 12 01:52:27 1999
-+++ configure	Thu Sep 16 11:25:32 1999
-@@ -2476,6 +2476,7 @@
+--- configure.orig	Fri Apr  7 05:58:31 2000
++++ configure	Fri Apr  7 05:58:48 2000
+@@ -2566,6 +2566,7 @@
  s%@DATE@%$DATE%g
  s%@RANLIB@%$RANLIB%g
  s%@OBJS@%$OBJS%g

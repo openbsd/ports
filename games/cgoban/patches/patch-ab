@@ -1,11 +1,13 @@
---- Makefile.in.orig	Wed May 28 22:34:54 1997
-+++ Makefile.in	Thu Sep 16 11:26:11 1999
-@@ -36,7 +36,7 @@
+--- Makefile.in.orig	Tue Jan 25 12:40:18 2000
++++ Makefile.in	Fri Apr  7 06:19:07 2000
+@@ -59,9 +59,7 @@
+ OBJS = @OBJS@
  
- # Change these values to tell make where to put the binary and the man page
- #   when it's done compiling.
--PREFIX = /usr/games
-+PREFIX = @PREFIX@
- BINDIR = $(PREFIX)/bin
- MANDIR = $(PREFIX)/man
+ cgoban-$(SYSTEM_TYPE): $(OBJS) $(OBJLIBS) wmslib/libwms-$(SYSTEM_TYPE).a
+-	$(CC) $(LFLAGS) -o cgoban-$(SYSTEM_TYPE) $(OBJS) $(LIBS)
+-	rm -f cgoban
+-	ln -s cgoban-$(SYSTEM_TYPE) cgoban
++	$(CC) $(LFLAGS) -o cgoban $(OBJS) $(LIBS)
  
+ install:	cgoban-$(SYSTEM_TYPE) man6/cgoban.6
+ 	$(INSTALL_PROGRAM) cgoban-$(SYSTEM_TYPE) $(BINDIR)/cgoban
