@@ -1,0 +1,5 @@
+tphdisk creates a save2dsk.bin hibernation file necessary for laptops
+with a Phoenix BIOS.  It has been tested on at least IBM Thinkpad T20
+and X40 laptops.
+
+For usage information, run 'tphdisk -h'.
