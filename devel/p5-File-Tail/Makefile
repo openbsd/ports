@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2001/05/10 22:11:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2001/05/23 13:19:29 naddy Exp $
 
-COMMENT=	"library for reading from continously updated files"
+COMMENT=	"library for reading from continuously updated files"
 
 DISTNAME=	File-Tail-0.98
 PKGNAME=	p5-${DISTNAME}
