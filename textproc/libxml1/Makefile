@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/16 16:49:45 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/01 00:43:20 brad Exp $
 
 COMMENT=	"XML parsing library for GNOME"
 
@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR= stable/sources/libxml
 
 HOMEPAGE=	http://xmlsoft.org/
 
-MAINTAINER=	David Lebel <lebel@openbsd.org>
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
