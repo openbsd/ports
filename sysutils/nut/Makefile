@@ -1,57 +1,72 @@
-# $OpenBSD: Makefile,v 1.6 2002/04/09 16:20:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/14 16:14:33 marcm Exp $
 
-COMMENT=	"UPS monitoring program supporting many brands"
+COMMENT=		"UPS monitoring program supporting many brands"
+COMMENT-cgi=		"CGIs for monitoring Nut-based UPSs"
 
-DISTNAME=	nut-0.44.2
-CATEGORIES=	sysutils
-NEED_VERSION=	1.402
-HOMEPAGE=	http://www.exploits.org/nut/
-MASTER_SITES=	${HOMEPAGE}release/
+VERSION=		1.0.0
+DISTNAME=		nut-${VERSION}
+PKGNAME-cgi=		nut-cgi-${VERSION}
+CATEGORIES=		sysutils
 
-MAINTAINER=	Nathan Binkert <nate@openbsd.org>
+HOMEPAGE=		http://www.exploits.org/nut/
 
+MAINTAINER=		Marc Matteo <marcm@openbsd.org>
+
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	cgi
+MASTER_SITES=		${HOMEPAGE}release/
+
+FAKE_FLAGS=		INSTALLROOT="${WRKINST}"
+
+CGI_CFG=		hosts.conf multimon.conf upsset.conf
+WEB_ROOT=		/var/www
+SYSCONFDIR=		/etc/nut
+CONFIGURE_STYLE=	autoconf
+CONFIGURE_ARGS+=	--with-statepath="/var/db/nut"
+CONFIGURE_ARGS+=	--with-user=uucp
+CONFIGURE_ARGS+=	--with-group=dialer
+
+PSEUDO_FLAVORS=		no_cgi
 FLAVOR?=
-
-.if ${FLAVOR:L} == "cgi"
-LIB_DEPENDS=	gd.18::graphics/gd
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
+MULTI_PACKAGES=
+.if !${FLAVOR:L:Mno_cgi}
+MULTI_PACKAGES+=	-cgi
 .endif
+SUBPACKAGE?=
 
-CONFIGURE_STYLE= gnu old
-CONFIGURE_ARGS= --sysconfdir="${SYSCONFDIR}/nut" \
-		--mandir="${PREFIX}/man" \
-		--with-modelpath="${PREFIX}/sbin" \
-		--with-statepath="/var/db"
-.if ${FLAVOR:L} == "cgi"
-CONFIGURE_ARGS+= --with-cgipath="${PREFIX}/libexec/nut"
-.endif
+.if defined(PACKAGING)
+. if ${SUBPACKAGE} == "-cgi"
+PREFIX=			${WEB_ROOT}
+. endif
+.else
+. if ${MULTI_PACKAGES:M-cgi}
+BUILD_DEPENDS=		:gd->=1.8.3:graphics/gd
 
-FAKE_FLAGS=	INSTALLROOT="${WRKINST}"
+CONFIGURE_ARGS+=	--with-cgi
+CONFIGURE_ARGS+=	--with-cgipath="${WEB_ROOT}/cgi-bin/nut"
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
-.if ${FLAVOR:L} == "cgi"
-ALL_TARGET=	all cgi
-INSTALL_TARGET=	install install-cgi
+ALL_TARGET=		all cgi
+INSTALL_TARGET=		install install-cgi
+. endif
 .endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nut
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nut/cables
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/nut
-	@for i in ${WRKSRC}/docs/* ; do \
-		if [ -f "$$i" ]; then \
-			${INSTALL_DATA} $$i ${PREFIX}/share/doc/nut ; \
-		fi \
-	done
-	@for i in ${WRKSRC}/docs/cables/* ; do \
-		${INSTALL_DATA} $$i ${PREFIX}/share/doc/nut/cables ; \
-	done
+	cp -R ${WRKSRC}/docs/* ${PREFIX}/share/doc/nut/
+# Yes, we install the CGI config files even if we're not building CGI support,
+# it will get properly handled by the packaging.
+	${INSTALL_DATA_DIR} ${WRKINST}${WEB_ROOT}/conf/nut
+.for file in ${CGI_CFG}
+	mv ${WRKINST}/${SYSCONFDIR}/${file}.sample ${WRKINST}${WEB_ROOT}/conf/nut/
+.endfor
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nut; \
+	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/nut/
 
 .include <bsd.port.mk>

@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST-cgi,v 1.1 2002/10/14 16:14:33 marcm Exp $
+cgi-bin/nut/multimon.cgi
+cgi-bin/nut/upsimage.cgi
+cgi-bin/nut/upsset.cgi
+cgi-bin/nut/upsstats.cgi
+conf/nut/hosts.conf.sample
+conf/nut/multimon.conf.sample
+conf/nut/upsset.conf.sample
+@dirrm cgi-bin/nut

@@ -1,0 +1,21 @@
+$OpenBSD: patch-clients_upsset_c,v 1.1 2002/10/14 16:14:33 marcm Exp $
+--- clients/upsset.c.orig	Mon Sep 30 10:39:06 2002
++++ clients/upsset.c	Mon Sep 30 10:40:09 2002
+@@ -290,7 +290,7 @@ void do_pickups(char *currfunc)
+ 	char	hostfn[SMALLBUF];
+ 	int	ret;
+ 
+-	snprintf(hostfn, sizeof(hostfn), "%s/hosts.conf", CONFPATH);
++	snprintf(hostfn, sizeof(hostfn), "%s/hosts.conf", CGICONFPATH);
+ 
+ 	printf("<FORM METHOD=\"POST\" ACTION=\"upsset.cgi\">\n");
+ 
+@@ -1042,7 +1042,7 @@ static void check_conf(void)
+ 	char	fn[SMALLBUF];
+ 	int	ret;
+ 
+-	snprintf(fn, sizeof(fn), "%s/upsset.conf", CONFPATH);
++	snprintf(fn, sizeof(fn), "%s/upsset.conf", CGICONFPATH);
+ 
+ 	ret = parseconf(fn, upsset_conf_arg, upsset_conf_err);
+ 

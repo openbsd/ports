@@ -1,26 +1,24 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.2 2002/10/14 16:14:33 marcm Exp $
+# $OpenBSD: DEINSTALL-cgi,v 1.1 2002/10/14 16:14:33 marcm Exp $
 #
 
 set -e
+PREFIX=${PKG_PREFIX:-/usr/local}
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 
 FILES='
 hosts.conf
 multimon.conf
-ups.conf
-upssched.conf
 upsset.conf
-upsmon.conf
-upsd.conf
-upsd.users
 '
+
+WEBCONFDIR=${PREFIX}/conf/nut
 
 echo
 echo "+--------------- $1"
 echo "| To fully remove $1 from your system you should also"
-echo "| remove the configuration files from the ${SYSCONFDIR} directory."
+echo "| remove the configuration files from the ${WEBCONFDIR} directory."
 echo "| Remove the directories in which the files reside as well if empty."
 echo "|"
 echo "| If you are planning on installing $1 again in the future"
@@ -29,7 +27,7 @@ echo "|"
 echo "| FYI, the following configuration files belong to this package:"
 echo "|"
 for f in ${FILES}; do
-	echo "| ${SYSCONFDIR}/$f"
+	echo "| ${WEBCONFDIR}/$f"
 done
 echo "+--------------- $1"
 echo

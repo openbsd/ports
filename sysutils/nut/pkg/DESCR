@@ -8,7 +8,4 @@ has a network communications layer that allows other machines to
 coordinate shutdowns with the machine that is physically attached to
 the UPS.
 
-The 'cgi' flavor adds CGI support so that one may put up web
-statistics about the power status.
-
 WWW: ${HOMEPAGE}

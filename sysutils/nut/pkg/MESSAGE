@@ -1,0 +1,16 @@
++--------------- nut
+| Using the Nut package in OpenBSD environment:
+|
+| Once you have the config files under /etc/nut set up properly, the
+| following block can be added to your /etc/rc.local file to start nut.
+|
+| # Start Nut
+| if [ -x /usr/local/bin/upsdrvctl ]; then
+|     echo -n ' nut'
+|     /usr/local/bin/upsdrvctl start > /dev/null
+|     /usr/local/sbin/upsd > /dev/null 2>&1
+|     /usr/local/sbin/upsmon > /dev/null
+| fi
+|
+| You may also be interested in the "-i" flag to upsd, see upsd(8).
++--------------- nut
