@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2001/07/06 00:06:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.47 2001/07/06 16:00:13 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -45,6 +45,7 @@
      SUBDIR += nethack
      SUBDIR += nethack,no_x11
      SUBDIR += nethack,qt
+     SUBDIR += newvox
      SUBDIR += slash
      SUBDIR += slash,no_x11
      SUBDIR += slash-em
