@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2004/01/17 15:58:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2004/04/18 19:08:55 robert Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"perl module to validate function/method parameters"
 
-DISTNAME=	Params-Validate-0.58
+DISTNAME=	Params-Validate-0.74
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
-MAINTAINER=	Jim Geovedi <jim@corebsd.or.id>
+MAINTAINER=	Michael Coulter <mjc@bitz.ca>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=   Yes
