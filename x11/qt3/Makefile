@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/01/06 06:22:52 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2003/01/07 01:23:20 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -67,13 +67,14 @@ MULTI_PACKAGES+=	-examples
 
 # This is needed to find plugins
 CONFIGURE_ARGS+=	-prefix ${QT_LIBDIR}
+CONFIGURE_ARGS+=	-plugindir ${QT_PLUGINSDIR}
 #CONFIGURE_ARGS+=-static -debug
 #CONFIGURE_ARGS+=-debug
 #CONFIGURE_ARGS+=-static
 
 # For XFree 4
 #CONFIGURE_ARGS+=-xft
-CONFIGURE_ENV=	QTDIR="${WRKSRC}" QT_INSTALL_PLUGINS="${QT_PLUGINSDIR}"
+CONFIGURE_ENV=	QTDIR="${WRKSRC}" 
 
 SUBPACKAGE?=
 
