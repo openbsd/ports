@@ -1,0 +1,24 @@
+$OpenBSD: patch-kdecore_kapp_cpp,v 1.1 2001/03/30 12:31:11 espie Exp $
+--- kdecore/kapp.cpp.orig	Thu Mar 29 03:22:54 2001
++++ kdecore/kapp.cpp	Thu Mar 29 03:28:30 2001
+@@ -618,10 +618,19 @@ public:
+   }
+ };
+ 
++#include <sys/types.h>
++#include <grp.h>
++
++gid_t getgroupid(const char *n)
++{
++  struct group *g = getgrnam(n);
++  return g ? g->gr_gid : -1;
++}
++
+ void KApplication::init(bool GUIenabled)
+ {
+   if ((getuid() != geteuid()) ||
+-      (getgid() != getegid()))
++      (getgid() != getegid() && getegid() != getgroupid("utmp")))
+   {
+      fprintf(stderr, "The KDE libraries are not designed to run with suid privileges.\n");
+      ::exit(127);
