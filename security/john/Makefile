@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 14:03:44 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/31 14:53:58 espie Exp $
 
 DISTNAME=	john-1.6
 CATEGORIES=     security
@@ -15,23 +15,33 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	CC="${CC}" LD="${CC}" \
-		CFLAGS="-c -Wall ${CFLAGS} -fomit-frame-pointer \
-			-DJOHN_HOME=\\\"${PREFIX}/share/john\\\""
+		CFLAGS="-c -Wall ${CFLAGS} -fomit-frame-pointer"
 
-.if (${MACHINE_ARCH} == "i386")
-PTYPE!=		uname -p | cut -f2 -d' '
-.if (${PTYPE} == "K6")
-ALL_TARGET=	openbsd-x86-k6
-.else
-ALL_TARGET=	openbsd-x86-any
+FLAVORS=k6
+FLAVOR?=
+
+.if ${FLAVOR:L} == "k6"
+ONLY_FOR_ARCHS=i386
 .endif
-.elif (${MACHINE_ARCH} == "alpha")
+
+.if ${MACHINE_ARCH} == "i386"
+.  if ${FLAVOR:L} == "k6"
+ALL_TARGET=	openbsd-x86-k6
+.  else
+ALL_TARGET=	openbsd-x86-any
+.  endif
+.elif ${MACHINE_ARCH} == "alpha"
 ALL_TARGET=	linux-alpha
 .else
 ALL_TARGET=	generic
 .endif
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/src
+
+do-configure:
+	cd ${WRKDIST} && \
+	sed -e 's,@JOHNHOME@,${PREFIX}/share/john,' <params.h >params.h.new \
+	    && mv -f params.h.new params.h
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/john
