@@ -3,7 +3,7 @@
 # Date created:		3 January 1999
 # Whom:			Hans Guenter Weigand
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/01/18 04:42:41 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1999/01/31 04:37:03 marc Exp $
 
 # If MULE extensions are desired use
 #
@@ -29,6 +29,9 @@ IS_INTERACTIVE= yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+# Put generated PLIST into WRKDIR to avoid collisions in a shared ports tree.
+PLIST=		${WRKDIR}/PLIST
+
 # Figure out our '${arch}-unknown-openbsd${vers}' string as xemacs
 # expects it to be.  Call it GCCARCH.
 #
@@ -53,8 +56,6 @@ CONFIGURE_ARGS= ${GCCARCH} \
 		--site-libraries=/usr/lib:${PREFIX}/lib \
 		--infopath="${PREFIX}/info:/usr/share/info:${PREFIX}/lib/${DISTNAME}/info" \
 		--rel-alloc
-
-#		--site-runtime-libraries=/usr/lib:${PREFIX}/lib \
 
 #
 # handle MULE extensions here
@@ -86,13 +87,11 @@ pre-fetch:
 	@${ECHO} ""
 .endif
 
-pre-clean:
-	@${RM} -f ${PKGDIR}/PLIST
-
+# Generate platform specific PLIST from template
 pre-install pre-package:
-	@${RM} -f ${PKGDIR}/PLIST
+	@${RM} -f ${WRKDIR}/PLIST
 	@${SED} -e 's/||GCCARCH||/${GCCARCH}/' \
-		${PLIST_TEMPLATE} >${PKGDIR}/PLIST
+		${PLIST_TEMPLATE} >${WRKDIR}/PLIST
 
 post-install:
 .for file in ${STRIP_PROGS}
