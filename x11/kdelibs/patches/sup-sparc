@@ -1,0 +1,34 @@
+--- kdecore/Makefile.in.orig	Wed Apr 28 11:24:06 1999
++++ kdecore/Makefile.in	Mon May 31 16:37:37 1999
+@@ -500,6 +500,11 @@
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
+ 
++krootprop.lo:
++	$(LTCXXCOMPILE) -O0 -c $(srcdir)/krootprop.cpp
++
++kclipboard.lo: kclipboard.moc
++	$(LTCXXCOMPILE) -O0 -c $(srcdir)/kclipboard.cpp
+ 
+ $(srcdir)/drag.cpp: drag.moc
+ drag.moc: $(srcdir)/drag.h
+--- khtmlw/Makefile.in.orig	Wed Apr 28 11:24:11 1999
++++ khtmlw/Makefile.in	Mon May 31 17:58:33 1999
+@@ -471,6 +471,17 @@
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
+ 
++jscript.lo:
++	$(LTCXXCOMPILE) -O0 -c $(srcdir)/jscript.cpp
++
++html.lo: html.moc
++	$(LTCXXCOMPILE) -O0 -c $(srcdir)/html.cpp
++
++htmlobj.lo: htmlobj.moc
++	$(LTCXXCOMPILE) -O0 -c $(srcdir)/htmlobj.cpp
++
++htmltable.lo:
++	$(LTCXXCOMPILE) -O0 -c $(srcdir)/htmltable.cpp
+ 
+ $(srcdir)/html.cpp: html.moc
+ html.moc: $(srcdir)/html.h

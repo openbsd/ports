@@ -125,34 +125,24 @@ include/stl_headers.h
 include/xview.h
 lib/libjscript.a
 lib/libjscript.la
-lib/libjscript.so.1.1
 lib/libkab.a
 lib/libkab.la
-lib/libkab.so.1.1
 lib/libkdecore.a
 lib/libkdecore.la
-lib/libkdecore.so.1.1
 lib/libkdeui.a
 lib/libkdeui.la
-lib/libkdeui.so.1.1
 lib/libkfile.a
 lib/libkfile.la
-lib/libkfile.so.1.1
 lib/libkfm.a
 lib/libkfm.la
-lib/libkfm.so.1.1
 lib/libkhtmlw.a
 lib/libkhtmlw.la
-lib/libkhtmlw.so.1.1
 lib/libkimgio.a
 lib/libkimgio.la
-lib/libkimgio.so.1.1
 lib/libkspell.a
 lib/libkspell.la
-lib/libkspell.so.1.1
 lib/libmediatool.a
 lib/libmediatool.la
-lib/libmediatool.so.1.1
 share/apps/kab/pics/background_1.jpg
 share/apps/kab/pics/dialog_background.jpg
 share/apps/kde/pics/arrow_down.xbm
@@ -254,7 +244,6 @@ share/toolbar/viewmag.xpm
 share/toolbar/viewzoom.xpm
 @exec ln -sf en %D/share/doc/HTML/default
 @unexec rm -f %D/share/doc/HTML/default
-@exec /sbin/ldconfig -m %B
 @dirrm share/toolbar
 @dirrm share/doc/HTML/en/kspell
 @dirrm share/doc/HTML/en/kfiledialog
