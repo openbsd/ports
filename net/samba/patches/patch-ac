@@ -1,6 +1,6 @@
---- configure.orig	Sat Feb 27 17:08:58 1999
-+++ configure	Fri Mar 19 02:33:39 1999
-@@ -4160,7 +4160,7 @@
+--- configure.orig	Sun May 16 08:13:38 1999
++++ configure	Mon May 24 23:10:28 1999
+@@ -4204,7 +4204,7 @@
  fi
  done
  
@@ -8,4 +8,4 @@
 +for ac_func in initgroups select rdchk getgrnam pathconf seteuid setegid
  do
  echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
- echo "configure:4167: checking for $ac_func" >&5
+ echo "configure:4211: checking for $ac_func" >&5

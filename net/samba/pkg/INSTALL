@@ -1,0 +1,76 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 1999/05/30 23:03:00 brad Exp $
+#
+# Pre/post-installation setup of samba
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=/etc/samba
+CONFIG_FILE=/etc/samba/smb.conf
+SAMBA_SPOOL=/var/spool/samba
+
+mkdir -p ${SAMBA_SPOOL}
+chmod 1777 ${SAMBA_SPOOL}
+
+# Function: tell the user what s/he needs to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration files in ${CONFIG_DIR},"
+    echo "| have NOT been changed.  You may want to compare them to the"
+    echo "| current sample files, ${PREFIX}/lib/samba,"
+    echo "| and update your configuration as needed."
+    echo "+---------------"
+    echo
+}
+
+# Function: install the samba configuration files from the samples
+#
+do_install()
+{
+    mkdir -p ${CONFIG_DIR}
+    cat /etc/passwd | ${PREFIX}/bin/mksmbpasswd.sh > ${CONFIG_DIR}/smbpasswd; \
+    chmod 600 ${CONFIG_DIR}/smbpasswd
+    cp ${PREFIX}/lib/samba/smb.conf.sample ${CONFIG_FILE}
+    echo
+    echo "+---------------"
+    echo "| The $1 configuration files in ${CONFIG_DIR},"
+    echo "| have been installed.  Please view these files and change"
+    echo "| the configuration to meet your needs"
+    echo "+---------------"
+    echo
+
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if [ -d $CONFIG_DIR ]; then
+	    do_notice $1
+	else
+	    do_install $1
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
