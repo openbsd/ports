@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/04/04 04:06:37 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/27 03:03:23 brad Exp $
 
 COMMENT=		"C library to produce PDF files"
 
 DISTNAME=		pdflib-4.0.1
 CATEGORIES=     	print
-NEED_VERSION=		1.454
+NEED_VERSION=		1.525
 
 HOMEPAGE=		http://www.pdflib.com/pdflib/
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=		jpeg.62::graphics/jpeg \
 			tiff.35::graphics/tiff
 
 CONFIGURE_STYLE=	gnu dest
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/config
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/config
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-tifflib \
 			--with-pnglib \
@@ -33,7 +33,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--without-tcl
 
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+			CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 			LIBS="-lm"
 MAKE_ENV=		${CONFIGURE_ENV}
 
