@@ -1,0 +1,7 @@
+$OpenBSD: patch-scripts_ion-edit,v 1.1.1.1 2001/01/02 14:50:35 naddy Exp $
+--- scripts/ion-edit.orig	Tue Aug 29 00:03:43 2000
++++ scripts/ion-edit	Sat Dec 30 20:18:19 2000
+@@ -1,2 +1,2 @@
+ #!/bin/sh
+-exec run-mailcap --action=edit "$1" > /dev/null
++exec ion-runinxterm -T "$1" ${EDITOR-${VISUAL-vi}} "$1"

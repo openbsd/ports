@@ -1,0 +1,44 @@
+$OpenBSD: patch-man_ion_1x_in,v 1.1.1.1 2001/01/02 14:50:36 naddy Exp $
+--- man/ion.1x.in.orig	Thu Dec 21 21:21:23 2000
++++ man/ion.1x.in	Sat Dec 30 17:40:43 2000
+@@ -57,10 +57,10 @@ Call a function (query).
+ Start new SSH session (query, uses ion-ssh).
+ .TP
+ .B F5
+-Open a file for editing (query). Uses ion-edit which by default uses run-mailcap.
++Open a file for editing (query). Uses ion-edit which by default uses vi(1).
+ .TP
+ .B F6
+-Open a file for viewing (query). Uses ion-view which by default uses run-mailcap.
++Open a file for viewing (query). Uses ion-view which by default uses vi(1)/lynx(1).
+ .TP
+ .B F9
+ Goto existing workspace or create new (query).
+@@ -246,13 +246,13 @@ Drag border: resize.
+ 
+ .SH FILES
+ .TP
+-.B PREFIX/etc/ion/ion.conf
++.B ETCDIR/ion/ion.conf
+ System default configuration file
+ .TP
+-.B PREFIX/etc/ion/look-*.conf
++.B ETCDIR/ion/look-*.conf
+ Color scheme configuration files
+ .TP
+-.B PREFIX/etc/ion/bindings-*.conf
++.B ETCDIR/ion/bindings-*.conf
+ Keyboard and pointer binding configuration files
+ .TP
+ .B ~/.ion/ion.conf
+@@ -261,8 +261,8 @@ User default configuration file (overrid
+ .SH SEE ALSO
+ The Ion home page, \fIhttp://www.students.tut.fi/~tuomov/ion/\fP
+ .PP
+-.I PREFIX/doc/ion/
++.I DOCDIR/ion/
+ .PP
+-.I X(1x)
++.I X(1)
+ .SH AUTHOR
+ Ion was written by Tuomo Valkonen <tuomov@cc.tut.fi>.

@@ -1,0 +1,45 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/01/02 14:50:36 naddy Exp $
+--- Makefile.orig	Fri Dec 29 18:09:23 2000
++++ Makefile	Sat Dec 30 22:29:23 2000
+@@ -19,7 +19,7 @@ ETC=	etc/bindings-default.conf etc/bindi
+ 	etc/look-brownsteel.conf etc/look-greyviolet.conf \
+ 	etc/look-simpleblue.conf etc/look-wheat.conf etc/sample.conf
+ 
+-DOCS=	README LICENSE ChangeLog doc/config.txt doc/functions.txt
++DOCS=	doc/config.txt doc/functions.txt
+ 
+ ######################################
+ 
+@@ -28,7 +28,7 @@ include rules.mk
+ ######################################
+ 
+ man/ion.1x: man/ion.1x.in
+-	sed 's#PREFIX#$(PREFIX)#g' man/ion.1x.in > man/ion.1x
++	sed -e 's#DOCDIR#$(DOCDIR)#g' -e 's#ETCDIR#$(ETCDIR)#g' man/ion.1x.in > man/ion.1x
+ 
+ _install:
+ 	$(INSTALLDIR) $(BINDIR)
+@@ -44,21 +44,8 @@ _install:
+ 		$(INSTALL) -m $(DATA_MODE) $$i $(DOCDIR)/ion; \
+ 	done
+ 
+-	$(INSTALLDIR) $(ETCDIR)/ion
++	$(INSTALLDIR) $(EXAMPLEDIR)/ion
+ 	for i in $(ETC); do \
+-		$(INSTALL) -m $(DATA_MODE) $$i $(ETCDIR)/ion; \
++		$(INSTALL) -m $(DATA_MODE) $$i $(EXAMPLEDIR)/ion; \
+ 	done
+-
+-	@ if test -f $(ETCDIR)/ion/ion.conf ; then \
+-		echo "$(ETCDIR)/ion/ion.conf already exists. Not installing one."; \
+-	else \
+-		echo "Installing configuration file $(ETCDIR)/ion/ion.conf"; \
+-		if uname -s -p|grep "SunOS sparc" > /dev/null; then \
+-			sed s/bindings-default/bindings-sun/ \
+-			$(ETCDIR)/ion/sample.conf > $(ETCDIR)/ion/ion.conf; \
+-			chmod $(DATA_MODE) $(ETCDIR)/ion/ion.conf; \
+-		else \
+-			cp $(ETCDIR)/ion/sample.conf $(ETCDIR)/ion/ion.conf; \
+-		fi; \
+-	fi
+ 

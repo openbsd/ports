@@ -1,0 +1,14 @@
+$OpenBSD: patch-scripts_ion-view,v 1.1.1.1 2001/01/02 14:50:35 naddy Exp $
+--- scripts/ion-view.orig	Tue Aug 29 00:03:43 2000
++++ scripts/ion-view	Sat Dec 30 22:59:58 2000
+@@ -1,7 +1,7 @@
+ #!/bin/sh
+-if echo "$1"|grep -E '^([a-zA-Z]+://|www.)' > /dev/null; then
+-	exec netscape-remote "$1"
++if expr "$1" : '[a-zA-Z][a-zA-Z]*://' > /dev/null; then
++	exec ion-runinxterm -T "$1" lynx "$1"
+ else
+-	exec run-mailcap --action=view "$1" > /dev/null
++	exec ion-runinxterm -T "$1" ${PAGER-less} "$1"
+ fi
+ 

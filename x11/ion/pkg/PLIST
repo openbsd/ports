@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/02 14:50:35 naddy Exp $
+bin/ion
+bin/ion-edit
+bin/ion-man
+bin/ion-runinxterm
+bin/ion-ssh
+bin/ion-view
+man/man1/ion.1x
+share/doc/ion/config.txt
+share/doc/ion/functions.txt
+share/examples/ion/bindings-default.conf
+share/examples/ion/bindings-sun.conf
+share/examples/ion/kludges.conf
+share/examples/ion/look-brownsteel.conf
+share/examples/ion/look-greyviolet.conf
+share/examples/ion/look-simpleblue.conf
+share/examples/ion/look-wheat.conf
+share/examples/ion/sample.conf
+@dirrm share/doc/ion
+@dirrm share/examples/ion
