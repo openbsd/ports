@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/09/15 11:51:35 espie Exp $
-@option no-default-conflict
+@comment $OpenBSD: PLIST,v 1.8 2001/10/31 18:46:29 espie Exp $
 @pkgcfl egcs-*-core
-@pkgcfl gcc-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/cpp.info
 @unexec install-info --delete --info-dir=%D/info %D/info/cppinternals.info
 @unexec install-info --delete --info-dir=%D/info %D/info/gcc.info
@@ -66,6 +64,7 @@ lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/float.h
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/limits.h
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/machine/ansi.h
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/stdarg.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/stdbool.h
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/syslimits.h
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/varargs.h
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/libgcc.a

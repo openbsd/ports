@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2001/10/08 19:10:03 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2001/10/31 18:46:28 espie Exp $
 
 # This is a configuration file for egcs
 
@@ -10,19 +10,19 @@ COMMENT-g77=	${COM}: f77 compiler
 COMMENT-java=	${COM}: java compiler
 COMMENT-objc=	${COM}: obj C compiler
 
-PKGNAME=	${DISTNAME}-core
-PKGNAME-c++ =	${DISTNAME}-c++
-PKGNAME-chill=	${DISTNAME}-chill
-PKGNAME-g77=	${DISTNAME}-g77
-PKGNAME-java=	${DISTNAME}-java
-PKGNAME-objc=	${DISTNAME}-objc
+PKGNAME=	gcc-$V
+PKGNAME-c++ =	g++-$V
+PKGNAME-chill=	gchill-$V
+PKGNAME-g77=	g77-$V
+PKGNAME-java=	gcj-$V
+PKGNAME-objc=	gobjc-$V
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
 BUILD_DEPENDS=	::devel/autoconf
 
 # This should be patched out later.
-BUILD_DEPENDS+= bison:bison-*:devel/bison
+BUILD_DEPENDS+= :bison-*:devel/bison
 
 CATEGORIES=	lang 
 NEED_VERSION=	1.474
@@ -63,7 +63,7 @@ BUILD_DEPENDS+=:bison-*:devel/bison
 
 #### fetch section
 
-V=3.0.1
+V=3.0.2
 DIRECTORY=releases/${DISTNAME}/
 DISTNAME=   gcc-$V
 
@@ -283,7 +283,7 @@ TEST_RESULT=${WRKBUILD}/test.result
 
 do-regress:
 	@cd ${WRKBUILD}; ulimit -c 0; \
-	${MAKE_ENV} make -f ${MAKE_FILE} check && \
+	${MAKE_ENV} ${MAKE_PROGRAM} -k -f ${MAKE_FILE} check && \
 	${WRKSRC}/contrib/test_summary >${TEST_RESULT}
 	@echo "Please send the tests results to the gcc project"
 	@echo "By invoking make send-results"
@@ -300,7 +300,7 @@ GCC_NAME=${WRKBUILD}/gcc/xgcc
 
 .if defined(PACKAGING) && defined(SUBPACKAGE)
 .  if !empty(SUBPACKAGE)
-RUN_DEPENDS+=egcc::lang/egcs/stable
+RUN_DEPENDS+=::lang/egcs/stable
 .  endif
 .endif
 

@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared-c++,v 1.1 2001/09/15 11:51:35 espie Exp $
-lib/libstdc++.so.3.1
+@comment $OpenBSD: PFRAG.shared-c++,v 1.2 2001/10/31 18:46:29 espie Exp $
+lib/libstdc++.so.3.2

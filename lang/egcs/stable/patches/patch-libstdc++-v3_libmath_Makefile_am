@@ -1,6 +1,6 @@
-$OpenBSD: patch-libstdc++-v3_libmath_Makefile_am,v 1.1 2001/09/15 11:51:35 espie Exp $
+$OpenBSD: patch-libstdc++-v3_libmath_Makefile_am,v 1.2 2001/10/31 18:46:29 espie Exp $
 --- libstdc++-v3/libmath/Makefile.am.orig	Thu Jul 26 20:25:42 2001
-+++ libstdc++-v3/libmath/Makefile.am	Fri Sep 14 23:13:05 2001
++++ libstdc++-v3/libmath/Makefile.am	Sat Sep 15 15:15:28 2001
 @@ -39,7 +39,11 @@ libmath_la_DEPENDENCIES = $(libmath_la_L
  
  libmath_la_SOURCES = signbit.c signbitf.c stubs.c
