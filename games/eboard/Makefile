@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD: Makefile,v 1.2 2001/10/06 03:37:13 kevlo Exp $
 
 COMMENT=	"gtk+ chess board interface"
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD
+@comment $OpenBSD: PLIST,v 1.2 2001/10/06 03:35:19 kevlo Exp $
 bin/eboard
 bin/eboard-addtheme
 bin/eboard-config
