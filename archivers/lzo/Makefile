@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2000/11/17 21:33:43 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2001/03/24 22:37:58 brad Exp $
+
+COMMENT=	"portable speedy lossless data compression library"
 
 DISTNAME=	lzo-1.07
 CATEGORIES=	archivers devel
-NEED_VERSION=	1.336
+NEED_VERSION=	1.363
 MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/lzo/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= libs/compression
@@ -22,7 +24,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
 test:	build
-	@cd ${WRKBUILD} && ${MAKE} test
+	@cd ${WRKBUILD} && ${MAKE_PROGRAM} test
 
 post-patch:
 	@chmod +x ${WRKSRC}/acconfig/*
