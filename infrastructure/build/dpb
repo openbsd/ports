@@ -55,7 +55,7 @@ our $MAKEFLAGS = "BATCH=Yes BIN_PACKAGES=Yes BULK=Yes TRUST_PACKAGES=Yes";
 our $PORTSDIR = $ENV{'PORTSDIR'} || "/usr/ports";
 our $TMPDIR = $ENV{'PKG_TMPDIR'} || '/var/tmp';
 our $TIMEOUT = 10;
-our $SSH = "/usr/bin/ssh -n -o ConnectTimeout=$TIMEOUT";
+our @SSH = ("/usr/bin/ssh", "-n", "-o ConnectTimeout=$TIMEOUT");
 
 # -A <Arch>: specify architecture of build hosts
 # -b: build dependency file
@@ -65,8 +65,9 @@ our $SSH = "/usr/bin/ssh -n -o ConnectTimeout=$TIMEOUT";
 # -L <Logdir>: use <Logdir> instead of $PORTSDIR/logs/$ARCH
 # -S <SUBDIRLIST>: use <SUBDIRLIST> instead of all ports
 # -T <Dependency File>: use <Dependency File> instead of a temporary one
-our ($opt_A, $opt_b, $opt_d, $opt_e, $opt_F, $opt_L, $opt_S, $opt_T);
-getopts('A:bdeF:L:S:T:');
+# -t <Timeout>: use this timeout instead of the default
+our ($opt_A, $opt_b, $opt_d, $opt_e, $opt_F, $opt_L, $opt_S, $opt_T, $opt_t);
+getopts('A:bdeF:L:S:T:t:');
 
 $ARCH = $opt_A if defined $opt_A;
 
@@ -80,6 +81,8 @@ unless (defined $opt_T) {
 				 DIR => $TMPDIR,
 				 UNLINK => 0 );
 }
+
+$TIMEOUT = $opt_t if defined $opt_t;
 
 our @dead_children = ();
 
@@ -95,6 +98,19 @@ sub child_handler()
 	}
 }
 
+sub term_handler()
+{
+	local $SIG{CHLD} = "IGNORE";
+	local $SIG{INT}  = "IGNORE";
+	local $SIG{TERM} = "IGNORE";
+
+	foreach my $h (keys %{$CHECK_HOSTS}, keys %{$CHILD}) {
+		kill INT => $h;
+	}
+	
+	clean_up(1);
+}
+
 sub reap_children()
 {
 	while (my $c = pop @dead_children) {
@@ -104,7 +120,9 @@ sub reap_children()
 
 sub mark_as_down($)
 {
-	push(@DOWN_HOSTS, shift);
+	my $host = shift;
+	print "*** lost $host\n";
+	push(@DOWN_HOSTS, $host);
 }
 
 sub mark_as_free($)
@@ -122,25 +140,26 @@ sub check_host($)
 		# parent
 		my $begin = time();
 		$CHECK_HOSTS->{$pid} = undef;
+		child_handler();
 		while (not defined $CHECK_HOSTS->{$pid}) {
 			# give ssh a chance to timeout by itself
 			if ($begin + $TIMEOUT + 2 > time()) {
 				sleep(1);
 			} else {
 				# ssh did not terminate in time, kill it
-				kill('TERM', $pid);
+				kill INT => $pid;
 				return -1;
 			}
+			child_handler();
 		}
 		return $CHECK_HOSTS->{$pid};
 	} else {
 		# child
-		$SIG{CHLD} = "DEFAULT";
 		$SIG{INT}  = "DEFAULT";
 		$SIG{TERM} = "DEFAULT";
 
-		exec("$SSH $host exit 0 > /dev/null 2>&1");
-		die("exec(): $!");
+		exec @SSH, $host, "exit 0";
+		die "exec(): $!";
 	}
 }
 
@@ -167,7 +186,6 @@ sub check_hosts()
 		my $host = $FREE_HOSTS[$i];
 		my $retval = check_host($host);
 		if ($retval != 0) {
-			print "*** lost $host\n";
 			mark_as_down($host);
 			splice(@FREE_HOSTS, $i, 1);
 			$i--;
@@ -181,7 +199,6 @@ sub check_hosts()
 
 		if ($retval != 0) {
 			my $port = $CHILD->{$pid}[PORT];
-			print "*** lost $host\n";
 			mark_as_down($host);
 			delete $childpid{$port};
 			delete $CHILD->{$pid};
@@ -192,6 +209,8 @@ sub check_hosts()
 sub update_after_child($)
 {
 	my $pid = shift;
+	return unless defined $CHILD->{$pid};
+	
 	my $host = $CHILD->{$pid}[HOST];
 	my $port = $CHILD->{$pid}[PORT];
 	my $retval = $CHILD->{$pid}[RETVAL];
@@ -208,8 +227,6 @@ sub update_after_child($)
 
 		remove_port($port);
 	} elsif ($retval == 255) {
-		print "<== host $host is down\n";
-
 		delete $childpid{$port};
 		mark_as_down($host);
 
@@ -226,11 +243,14 @@ sub update_after_child($)
 
 sub find_free_host()
 {
+	child_handler();
 	reap_children();
 	check_hosts();
 
 	while (@FREE_HOSTS == 0) {
 		sleep(1);
+
+		child_handler();
 		reap_children();
 		check_hosts();
 	}
@@ -345,7 +365,6 @@ sub build_package($$$$)
 		return;
 	} else {
 		# child
-		$SIG{CHLD} = "DEFAULT";
 		$SIG{INT}  = "DEFAULT";
 		$SIG{TERM} = "DEFAULT";
 		$0 = "dpb [slave] - $port";
@@ -357,14 +376,18 @@ sub build_package($$$$)
 		if (defined $opt_d) {
 			sleep(1);
 		} else {
-			my $arg = "$SSH $host 'cd $PORTSDIR/$port && ";
+			my $arg = "cd $PORTSDIR/$port && ";
 			$arg .= "FLAVOR=\"$flavor\" " if defined $flavor;
-			$arg .= "$MAKE $MAKEFLAGS package' > $FIFO{$host} 2>&1";
+			$arg .= "$MAKE $MAKEFLAGS package";
+			open STDOUT, '>', "$FIFO{$host}" or
+			  die "Cannot redirect STDOUT: $!";
+			open STDERR, ">&STDOUT" or
+			  die "Cannot redirect STDERR: $!";
 
 			start_logger($host);
 
-			exec($arg);
-			die("exec(): $!");
+			exec @SSH, $host, $arg;
+			die "exec(): $!";
 		}
 		exit 0;
 	}
@@ -401,11 +424,11 @@ sub start_logger()
 
 	unless (-p $FIFO{$host}) {
 		system("mkfifo $FIFO{$host}") and
-		  die("Cannot create $FIFO{$host}: $!");
+		  die "Cannot create $FIFO{$host}: $!";
 	}
 	
 	my $pid = fork();
-	die("fork: $!") unless defined $pid;
+	die "fork: $!" unless defined $pid;
 
 	if ($pid > 0) {
 		# parent
@@ -413,42 +436,37 @@ sub start_logger()
 		return;
 	} else {
 		# child
-		$SIG{CHLD} = "DEFAULT";
+		# dies on its own on EOF
 		$SIG{INT}  = "DEFAULT";
 		$SIG{TERM} = "DEFAULT";
 
 		exec("$LOGGER < $FIFO{$host} > /dev/null 2>&1");
-		die("Failed to start logger: $!");
+		die "Failed to start logger: $!";
 	}
 }
 
-sub clean_up()
+sub clean_up($)
 {
-	$SIG{INT}  = "IGNORE";
-	$SIG{TERM} = "IGNORE";
-
-	kill('TERM', -$$);
-
 	# only remove self generated dependency file
 	unlink($opt_T) if ref $opt_T;
 	foreach my $h (keys %FIFO) {
 		unlink($FIFO{$h});
 	}
 
-	exit(0);
+	exit(shift);
 }
 
 # MAIN
-# collect dependency data
-$SIG{INT}  = \&clean_up;
-$SIG{TERM} = \&clean_up;
+$SIG{INT}  = \&term_handler;
+$SIG{TERM} = \&term_handler;
 $0 = "dpb [master]";
 
+# collect dependency data
 if (defined $opt_b) {
 	my $arg = "cd $PORTSDIR && $MAKE ";
 
 	if (defined $opt_S) {
-		die("SUBDIRLIST $opt_S not found!") unless (-f $opt_S);
+		die "SUBDIRLIST $opt_S not found!" unless (-f $opt_S);
 		$arg .= "SUBDIRLIST=$opt_S ";
 	}
 
@@ -463,7 +481,6 @@ if (defined $opt_b) {
 parse_dependency_file();
 parse_hosts_file();
 
-$SIG{CHLD} = \&child_handler;	
 check_hosts();
 
 my @keys_prereqs = (keys %prereqs_of);
@@ -509,8 +526,10 @@ do {
 		}
 	}
 
-	reap_children();
 	check_hosts();
+
+	child_handler();
+	reap_children();
 
 	# create new key set, taking currently building ports into account
 	@keys_childpid = (keys %childpid);
@@ -523,5 +542,6 @@ do {
 	
 } while ($#keys_prereqs >= 0 or $#keys_childpid >= 0);
 
-clean_up();
+print "==> done, cleaning up\n";
+clean_up(0);
 
