@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/09/06 17:17:52 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/12/15 22:13:13 brad Exp $
 
 DISTNAME=	tar-1.13
 CATEGORIES=	archivers
@@ -12,15 +12,9 @@ MAINTAINER=	niklas@openbsd.org
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 
-post-extract:
-	@${RM} -f ${WRKSRC}/doc/*.info*
-
 post-install:
-	@${STRIP} ${PREFIX}/bin/gtar
-	@${STRIP} ${PREFIX}/libexec/grmt
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
+	@strip ${PREFIX}/bin/gtar
+	@strip ${PREFIX}/libexec/grmt
 	@install-info ${PREFIX}/info/tar.info ${PREFIX}/info/dir
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
