@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_.java-wrapper,v 1.1 2001/05/08 00:54:39 matt Exp $
---- bin/.java_wrapper.orig	Thu Dec 28 01:44:45 2000
-+++ bin/.java_wrapper	Thu Dec 28 01:44:56 2000
-@@ -31,8 +31,8 @@
+$OpenBSD: patch-bin_.java-wrapper,v 1.2 2001/08/28 22:16:51 matt Exp $
+--- bin/.java_wrapper.orig	Wed Jun  2 12:14:34 1999
++++ bin/.java_wrapper	Tue Aug 28 17:44:30 2001
+@@ -31,8 +31,8 @@ esac
  # Resolve symlinks. See 4152645.
  while [ -h "$PRG" ]; do
      ls=`/bin/ls -ld "$PRG"`
@@ -12,7 +12,20 @@ $OpenBSD: patch-bin_.java-wrapper,v 1.1 2001/05/08 00:54:39 matt Exp $
  	PRG="$link"
      else
  	PRG="`/usr/bin/dirname $PRG`/$link"
-@@ -63,7 +63,7 @@
+@@ -43,7 +43,11 @@ PPC_JAVA_HOME=/usr/local/jdk/cvs_1.2/jdk
+ export PPC_JAVA_HOME
+ 
+ APPHOME=`dirname "$PRG"`
+-APPHOME=`dirname "$APPHOME"`
++if [ x`echo $APPHOME | cut -b 1` = x. ]; then
++    APPHOME=`pwd`/$APPHOME/..
++else
++    APPHOME=`dirname "$APPHOME"`
++fi
+ export APPHOME
+ JREHOME=$APPHOME/jre
+ 
+@@ -63,7 +67,7 @@ fi
  # Select vm type (if classic vm, also select thread type).
  unset vmtype
  unset ttype
