@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_transports_appendfile_c,v 1.1 2000/08/02 15:44:12 naddy Exp $
---- src/transports/appendfile.c.orig	Wed Apr 12 11:44:59 2000
-+++ src/transports/appendfile.c	Mon Jun  5 00:14:52 2000
-@@ -2330,9 +2330,16 @@ opened, so that it goes away on closure.
+$OpenBSD: patch-src_transports_appendfile_c,v 1.2 2000/08/12 23:57:45 naddy Exp $
+--- src/transports/appendfile.c.orig	Thu Jul 20 13:08:51 2000
++++ src/transports/appendfile.c	Wed Aug  9 02:11:10 2000
+@@ -2343,9 +2343,16 @@ opened, so that it goes away on closure.
  #ifdef SUPPORT_MBX
  if (yield == OK && ob->mbx_format)
    {

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2000/08/02 15:44:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2000/08/12 23:57:45 naddy Exp $
 
-DISTNAME=	exim-3.14
+DISTNAME=	exim-3.16
 CATEGORIES=	mail
 NEED_VERSION=	1.319
 
 HOMEPAGE=	http://www.exim.org/
 
-MAINTAINER=	peter.galbavy@knowledge.com
+MAINTAINER=	seb@gosh.todesplanet.de
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -16,14 +16,16 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/ \
 		ftp://ftp.exim.org/pub/exim/ \
 		ftp://ftp.fu-berlin.de/unix/mail/exim/
-DISTFILES=	exim-3.14.tar.gz exim-texinfo-3.10.tar.gz
+DISTFILES=	exim-3.16.tar.gz exim-texinfo-3.10.tar.gz
 
 FLAVORS=	no_x11
 FLAVOR?=
+
+MAKE_ENV=	FLAVOR="${FLAVOR}"
+SUBST_VARS=	SYSCONFDIR
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=	Yes
 .endif
-MAKE_ENV=	FLAVOR="${FLAVOR}"
 
 do-configure:
 	@mkdir -p ${WRKSRC}/Local
@@ -35,11 +37,10 @@ do-configure:
 	done
 
 pre-install:
-	${INSTALL} -d ${DESTDIR}/etc/exim
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/exim
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/exim
-	${INSTALL_DATA} ${WRKSRC}/src/configure.default \
-		${PREFIX}/share/examples/exim/configure.sample
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/exim
+	${INSTALL_DATA} ${WRKSRC}/doc/spec.txt ${PREFIX}/share/doc/exim/spec.txt
 
 .include <bsd.port.mk>

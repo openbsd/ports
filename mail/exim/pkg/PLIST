@@ -1,4 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/08/02 15:44:12 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2000/08/12 23:57:46 naddy Exp $
+info/exim.info
+info/exim_filter.info
+info/exim_overview.info
+@exec install-info --section="Exim" --entry "* Overview: (exim_overview).    Overview of the Exim system" %D/info/exim_overview.info %D/info/dir
+@exec install-info --section="Exim" --entry "* User guide: (exim).           Exim manual" %D/info/exim.info %D/info/dir
+@exec install-info --section="Exim" --entry "* Filtering: (exim_filter).     Filtering mail with Exim" %D/info/exim_filter.info %D/info/dir
+@unexec install-info --delete %D/info/exim_overview.info %D/info/dir
+@unexec install-info --delete %D/info/exim.info %D/info/dir
+@unexec install-info --delete %D/info/exim_filter.info %D/info/dir
 sbin/exim
 !%%no_x11%%
 sbin/exim_dumpdb
@@ -12,17 +21,7 @@ sbin/exigrep
 sbin/eximstats
 sbin/exiqsumm
 sbin/exim_lock
-info/exim_overview.info
-info/exim.info
-info/exim_filter.info
-@exec install-info --section="Exim" --entry "* Overview: (exim_overview).    Overview of the Exim system" %D/info/exim_overview.info %D/info/dir
-@exec install-info --section="Exim" --entry "* User guide: (exim).           Exim manual" %D/info/exim.info %D/info/dir
-@exec install-info --section="Exim" --entry "* Filtering: (exim_filter).     Filtering mail with Exim" %D/info/exim_filter.info %D/info/dir
-@unexec install-info --delete %D/info/exim_overview.info %D/info/dir
-@unexec install-info --delete %D/info/exim.info %D/info/dir
-@unexec install-info --delete %D/info/exim_filter.info %D/info/dir
-share/examples/exim/configure.sample
-@exec [ -d /etc/exim ] || mkdir /etc/exim
-@exec [ -f /etc/exim/configure ] || install -m 644 %D/%F /etc/exim/configure
+share/doc/exim/spec.txt
+@dirrm share/doc/exim
+share/examples/exim/configure
 @dirrm share/examples/exim
-@unexec echo "Please remove the /etc/exim directory manually"
