@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/11/15 15:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/04/11 19:12:24 sturm Exp $
 
 COMMENT=	"LaTeX vgrind(1) look-alike"
 
@@ -28,13 +28,15 @@ MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=support/lgrind/}
 DIST_SUBDIR=	${DISTNAME}
 
 MAKE_FLAGS=	BASEDIR=${PREFIX} \
-		DEFSFILE=${PREFIX}/share/texmf/tex/latex/lgrind/lgrindef \
+		DEFSFILE=${TEXMF}/tex/latex/lgrind/lgrindef \
 		VERSION=${VERSION} \
 		CC='${CC}' CFLAGS='${CFLAGS}'
 FAKE_FLAGS=	BASEDIR=${WRKINST}${PREFIX}
 
 BUILD_DEPENDS=	:teTeX_base-*:print/teTeX/base
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+TEXMF=		${PREFIX}/share/texmf-local
 
 post-build:
 	cd ${WRKDIST} && latex lgrind.ins
@@ -44,10 +46,10 @@ post-build:
 NO_REGRESS=	Yes
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf/tex/latex/lgrind
-	${INSTALL_DATA} ${WRKDIST}/lgrindef ${PREFIX}/share/texmf/tex/latex/lgrind
-	${INSTALL_DATA} ${WRKDIST}/lgrind.sty ${PREFIX}/share/texmf/tex/latex/lgrind
-	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf/doc/latex/lgrind
-	${INSTALL_DATA} ${WRKDIST}/lgrind.dvi ${PREFIX}/share/texmf/doc/latex/lgrind
+	${INSTALL_DATA_DIR} ${TEXMF}/tex/latex/lgrind
+	${INSTALL_DATA} ${WRKDIST}/lgrindef ${TEXMF}/tex/latex/lgrind
+	${INSTALL_DATA} ${WRKDIST}/lgrind.sty ${TEXMF}/tex/latex/lgrind
+	${INSTALL_DATA_DIR} ${TEXMF}/doc/latex/lgrind
+	${INSTALL_DATA} ${WRKDIST}/lgrind.dvi ${TEXMF}/doc/latex/lgrind
 
 .include <bsd.port.mk>

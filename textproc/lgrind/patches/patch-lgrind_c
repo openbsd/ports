@@ -1,0 +1,13 @@
+$OpenBSD: patch-lgrind_c,v 1.1 2004/04/11 19:12:24 sturm Exp $
+--- lgrind.c.orig	2004-04-11 20:39:57.000000000 +0200
++++ lgrind.c	2004-04-11 20:40:28.000000000 +0200
+@@ -516,7 +516,8 @@ int main(int argc, char **argv)
+ 		 printf("\\File{");
+ 		 putstr(fname);
+ 		 printf("}{%d}{%d}{%d}{%d:%02d}{%ld}\n", modtime.tm_year+1900, modtime.tm_mon+1,
+-				 modtime.tm_mday, modtime.tm_hour, modtime.tm_min, stbuf.st_size);
++				 modtime.tm_mday, modtime.tm_hour, modtime.tm_min,
++				 (long)stbuf.st_size);
+       }
+ 
+       code = FALSE;
