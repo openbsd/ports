@@ -3,7 +3,7 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:43:47 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/12/23 15:32:00 kevlo Exp $
 #
 
 DISTNAME=	freefonts-0.10
@@ -11,6 +11,8 @@ CATEGORIES=	x11
 NEED_VERSION=	1.191
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/
 
+HOMEPAGE=	http://www.gimp.org/fonts.html
+		
 MAINTAINER=	ports@OpenBSD.ORG
 
 PERMIT_PACKAGE_CDROM=	Yes
