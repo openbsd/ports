@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 1999/06/03 14:11:10 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/01/19 10:23:03 kevlo Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
-DISTNAME=	freetype-1.2
+DISTNAME=	freetype-1.3
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tux.org/pub/devel/freetype/ \
 		ftp://ftp.lerc.nasa.gov/ImageMagick/delegates/ \

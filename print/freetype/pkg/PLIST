@@ -16,5 +16,5 @@ include/ftxpost.h
 include/ftxwidth.h
 lib/libttf.a
 lib/libttf.la
-lib/libttf.so.1.2
+lib/libttf.so.1.3
 @exec /sbin/ldconfig -m %B
