@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/13 09:54:14 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2001/06/09 05:22:22 angelos Exp $
 
 COMMENT=	"banner-ad blocking proxy server"
-
-BROKEN=		"patches need review"
 
 PKGNAME=	junkbuster-2.0.2
 DISTNAME=	ijb20
