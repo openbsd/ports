@@ -1,7 +1,8 @@
-# $OpenBSD: OpenBSD-markers,v 1.44 2004/05/13 18:55:11 pedro Exp $
+# $OpenBSD: OpenBSD-markers,v 1.45 2004/05/18 23:06:55 dons Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -37.457132	144.580589	"Miller"	# Damien
+-33.536466	151.093514	"Stewart"	# Don
 -34.67  	-58.50 		"Schwindt"	# Federico G.
 -27.48		153.20		"Leonard"	# David
 -22.88		-43.28		"Martelletto"	# Pedro
