@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/23 21:52:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/24 04:43:46 jasoni Exp $
 # Supported FLAVORS : mule | compface | no_x11 | clashdetect
 # TODO : add flavours for Wnn, Canna, XFontSet and maybe kerberos
 # Tested on : i386 sparc (thanks to Free&ALter Soft for the sparc)
@@ -24,7 +24,7 @@ MASTER_SITES= 	ftp://ftp.xemacs.org/pub/xemacs/xemacs-21.1/ \
 		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/xemacs-21.1/
 
 SEPARATE_BUILD=	flavored
-CONFIGURE_STYLE=gnu dest
+CONFIGURE_STYLE=gnu old dest
 USE_GMAKE= Yes
 
 CONFIGURE_ARGS=	--with-gnu-make \
