@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/08/04 16:22:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/08/04 16:36:11 espie Exp $
 ${P5ARCH}/
 ${P5ARCH}/Compress/
 ${P5ARCH}/Compress/LZO.pm
@@ -9,5 +9,4 @@ ${P5ARCH}/auto/Compress/LZO/
 ${P5ARCH}/auto/Compress/LZO/LZO.bs
 ${P5ARCH}/auto/Compress/LZO/LZO.so
 ${P5ARCH}/auto/Compress/LZO/autosplit.ix
-man/man3p/
 @man man/man3p/Compress::LZO.3p
