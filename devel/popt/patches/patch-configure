@@ -1,11 +1,21 @@
---- configure.orig	Sun Sep 10 04:18:57 2000
-+++ configure	Sun Sep 10 04:19:19 2000
-@@ -3678,7 +3678,7 @@
-   cat conftest.$ac_ext >&5
-   rm -rf conftest*
-   CATOBJEXT=.mo
--		   DATADIRNAME=lib
-+		   DATADIRNAME=share
- fi
- rm -f conftest*
- 		INSTOBJEXT=.mo
+$OpenBSD: patch-configure,v 1.2 2003/07/15 16:50:22 jolan Exp $
+--- configure.orig	Sat Jun 21 22:38:13 2003
++++ configure	Sat Jun 21 22:38:17 2003
+@@ -6382,7 +6382,7 @@ else
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+       hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
+@@ -6392,7 +6392,7 @@ else
+ 	hardcode_libdir_flag_spec='-R$libdir'
+         ;;
+       *)
+-        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
++        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+         hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
+         ;;
+       esac
