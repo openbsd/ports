@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules__tkinter_c,v 1.1 2004/01/03 17:32:57 sturm Exp $
---- Modules/_tkinter.c.orig	2003-12-29 19:00:17.000000000 -0500
-+++ Modules/_tkinter.c	2003-12-29 20:52:08.000000000 -0500
+$OpenBSD: patch-Modules__tkinter_c,v 1.2 2004/06/25 18:34:57 xsa Exp $
+--- Modules/_tkinter.c.orig	Thu May 29 12:58:23 2003
++++ Modules/_tkinter.c	Fri Jun 25 14:50:53 2004
 @@ -294,8 +294,8 @@ static char *
  Merge(PyObject *args)
  {
@@ -88,7 +88,7 @@ $OpenBSD: patch-Modules__tkinter_c,v 1.1 2004/01/03 17:32:57 sturm Exp $
  	PyObject *v;
  	int i;
  
-@@ -1333,7 +1335,7 @@ static PyObject *
+@@ -1340,7 +1342,7 @@ static PyObject *
  Tkapp_CreateCommand(PyObject *self, PyObject *args)
  {
  	PythonCmd_ClientData *data;
@@ -97,7 +97,7 @@ $OpenBSD: patch-Modules__tkinter_c,v 1.1 2004/01/03 17:32:57 sturm Exp $
  	PyObject *func;
  	Tcl_Command err;
  
-@@ -1353,7 +1355,7 @@ Tkapp_CreateCommand(PyObject *self, PyOb
+@@ -1360,7 +1362,7 @@ Tkapp_CreateCommand(PyObject *self, PyOb
  	data->func = func;
  
  	ENTER_TCL
