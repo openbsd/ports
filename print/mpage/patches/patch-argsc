@@ -1,0 +1,56 @@
+--- args.c.orig	Wed Nov 26 10:14:22 1997
++++ args.c	Mon Dec 13 19:32:26 1999
+@@ -45,6 +45,7 @@
+     int consumed;
+     int currarg;
+     int opterrors;
++    size_t	len;
+ 
+ #define OPTARG()  \
+     { consumed = 1; if(*++optstr == '\0') optstr = argv[++currarg]; }
+@@ -146,18 +147,17 @@
+                         break;
+                 case 'C':    /* select character definitions */
+                         consumed = 1;
++			len = (strlen(libdir) + strlen(optstr) + 2);
+                         if (*++optstr) { /* did we get a encoding name ? */
+-                            if ((charvec_file = (char *) malloc(strlen(libdir) +
+-                                                                strlen(optstr) +
+-                                                                2)) == NULL) {
++                            if ((charvec_file = (char *) malloc(len)) == NULL) {
+                                 perror(optstr);
+                                 fprintf(stderr,
+                                     "ignoring character encoding definition\n");
+                             }
+                             else {
+-                                (void) strcpy(charvec_file, libdir);
+-                                (void) strcat(charvec_file, "/");
+-                                (void) strcat(charvec_file, optstr);
++                                (void) strlcpy(charvec_file, libdir, len);
++                                (void) strlcat(charvec_file, "/", len);
++                                (void) strlcat(charvec_file, optstr, len);
+                                 opt_encoding = 1;
+                             }
+                         }
+@@ -341,10 +341,10 @@
+                 case 'P':    /* Printer */
+                         consumed = 1;
+                         doprint = 1;
+-                        if (*++optstr)
++                        if (*++optstr) {
+                             if (!strcmp(optstr, "-"))
+                                 doprint = 0; /* kill MPAGE envvar que setting*/
+-                            else {
++                           } else {
+                                 printque = optstr;
+                             }
+                         break;
+@@ -429,7 +429,7 @@
+         libdir = env;
+ 
+     if ((env = getenv("MPAGE")) != NULL) {
+-        strcpy(copy, env);
++        (void)strlcpy(copy, env, sizeof(copy));
+         argv = slice(copy, &argc);
+         if (do_args(argc, argv, 1) < 0) {
+             fprintf(stderr, "%s: error in environment \"%s\"\n", MPAGE, env);

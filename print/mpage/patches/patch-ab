@@ -1,5 +1,27 @@
 --- file.c.orig	Wed Nov 26 10:14:31 1997
-+++ file.c	Mon Aug 16 20:40:45 1999
++++ file.c	Mon Dec 13 19:30:33 1999
+@@ -24,7 +24,7 @@
+  *
+  */
+ 
+-
++#include <string.h>
+ #include "mpage.h"
+ 
+ 
+@@ -108,10 +108,10 @@
+      * header or not
+      */
+     if (opt_header != NULL)
+-        (void)sprintf(command, "%s -l%d -w%d -h \"%s\" %s", prprog,
++        (void)snprintf(command, sizeof(command), "%s -l%d -w%d -h \"%s\" %s", prprog,
+                   asheet->sh_plength, asheet->sh_cwidth, opt_header, fname);
+     else
+-        (void)sprintf(command, "%s -l%d -w%d %s", prprog,
++        (void)snprintf(command, sizeof(command), "%s -l%d -w%d %s", prprog,
+                   asheet->sh_plength, asheet->sh_cwidth, fname);
+     /*
+      * open a pipe to the proper pr(1) command, and pr provides
 @@ -145,6 +145,7 @@
      char tmpfile[LINESIZE];
      char buffer[LINESIZE];
@@ -8,19 +30,27 @@
  
      if (opt_pr) {
          Debug(DB_STDIN, "%%do_stdin: pr option selects text\n", 0);
-@@ -154,8 +155,10 @@
+@@ -154,14 +155,16 @@
           * a temporary file; this temporary file will then
           * be used as input to the do_doc routine
           */
 -        (void)strcpy(tmpfile, "/usr/tmp/mpageXXXXXX");
 -        (void)mktemp(tmpfile);
-+        (void)strcpy(tmpfile, "/tmp/mpage.XXXXXX");
++        (void)strlcpy(tmpfile, "/tmp/mpage.XXXXXX", sizeof(tmpfile));
 +
 +           fdd = mkstemp(tmpfile); 
 +
          if (opt_header != NULL)
-             (void)sprintf(command, "pr -l%d -w%d -h \"%s\"> %s",
+-            (void)sprintf(command, "pr -l%d -w%d -h \"%s\"> %s",
++            (void)snprintf(command, sizeof(command), "pr -l%d -w%d -h \"%s\"> %s",
                        asheet->sh_plength, asheet->sh_cwidth,
+                       opt_header, tmpfile);
+         else
+-            (void)sprintf(command, "pr -l%d -w%d > %s",
++            (void)snprintf(command, sizeof(command), "pr -l%d -w%d > %s",
+                       asheet->sh_plength, asheet->sh_cwidth, tmpfile);
+         /*
+          * open a pipe to the pr(1) command which will create a
 @@ -194,8 +197,11 @@
           * now open the temporary file and use do_doc to
           * convert it to PS

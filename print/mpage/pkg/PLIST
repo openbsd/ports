@@ -5,3 +5,4 @@ lib/mpage/ISO-8859.1
 lib/mpage/ISO+STD+OTH
 lib/mpage/CP850.PC
 man/man1/mpage.1
+@dirrm lib/mpage
