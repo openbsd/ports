@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/08/05 03:03:29 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/09/10 22:20:21 brad Exp $
 
 DISTNAME=       zsh-3.1.6
 CATEGORIES=	shells
@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free --enable-dynamic
 
 # If you want to build a static binary, uncomment the following line
-#LDFLAGS+=-static
+#CONFIGURE_ENV+=	"LDFLAGS=-static"
 
 post-install:
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
