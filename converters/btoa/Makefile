@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/05 23:11:17 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/07 15:34:10 espie Exp $
 
 COMMENT=	"encode/decode binary to printable ASCII"
 
@@ -23,5 +23,7 @@ FAKE_FLAGS=	DESTDIR=${WRKINST}${PREFIX}
 
 # Turn off the default from bsd.port.mk (-p0), which screws things up
 PATCH_DIST_STRIP=  
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

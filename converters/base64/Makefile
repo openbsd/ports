@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/06/20 01:43:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2001/10/07 15:34:10 espie Exp $
 
 COMMENT=	"converter to/from base64 encoding"
 
@@ -20,5 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/base64 ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/base64.1 ${PREFIX}/man/man1
+
+REGRESS_TARGET=	wringer
+REGRESS_FLAGS=PATH=${WRKBUILD}:${PORTPATH}
 
 .include <bsd.port.mk>

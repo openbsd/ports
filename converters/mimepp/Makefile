@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/05/05 23:11:26 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/07 15:34:10 espie Exp $
 
 COMMENT=	"C++ class library for MIME messages"
 
@@ -49,5 +49,7 @@ do-install:
 .for file in ${EXAMPLES}
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/examples/mimepp
 .endfor
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

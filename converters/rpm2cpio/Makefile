@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/06/02 12:45:39 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/07 15:34:10 espie Exp $
 
 COMMENT=	"rpm2cpio, simple perl converter"
 
@@ -24,6 +24,7 @@ PERMIT_PACKAGE_FTP=	Yes
 # don't extract, don't build. Install the script directly
 EXTRACT_ONLY=	
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${FULLDISTDIR}/rpm2cpio ${PREFIX}/bin

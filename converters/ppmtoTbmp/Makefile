@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/01 05:41:32 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/07 15:34:10 espie Exp $
 
 COMMENT=	"PPM to Pilot bitmap converter"
 
 DISTNAME=	ppmtoTbmp-1.1
 CATEGORIES=	converters graphics
-NEED_VERSION=	1.413
+NEED_VERSION=	1.474
 MASTER_SITES=	http://www.isaac.cs.berkeley.edu/pilot/
 HOMEPAGE=	http://www.isaac.cs.berkeley.edu/pilot/
 
@@ -19,6 +19,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Tbmptopnm ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/ppmtoTbmp ${PREFIX}/bin
 
-BUILD_DEPENDS=		xbmtopbm::graphics/netpbm
+LIB_DEPENDS=	pnm,ppm,pgm,pbm::graphics/netpbm
+
+REGRESS_TARGET=	test
 
 .include <bsd.port.mk>

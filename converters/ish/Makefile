@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/05 23:11:20 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/07 15:34:10 espie Exp $
 
 COMMENT=	"binary-to-text file converter"
 
@@ -21,5 +21,6 @@ MASTER_SITES=	\
 MAKE_FILE=	makefile
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"
 ALL_TARGET=	ish
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/24 18:16:28 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/07 15:34:10 espie Exp $
 
 COMMENT=	"convert various Microsoft formats into HTML/PNG"
 
@@ -28,5 +28,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static
 CONFIGURE_ARGS+= --with-png=${LOCALBASE} --with-exporter \
 		--with-libiconv=${LOCALBASE} \
 		--with-Magick=${LOCALBASE} --with-libwmf=${LOCALBASE}
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/06/20 01:43:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/07 15:34:10 espie Exp $
 
 COMMENT=	"external MIME packer/unpacker"
 
@@ -22,5 +22,6 @@ WRKDIST=         ${WRKDIR}/mpack
 MAKE_FLAGS=      DESTDIR=${PREFIX}
 FAKE_FLAGS=	 DESTDIR=${WRKINST}${PREFIX}
 
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

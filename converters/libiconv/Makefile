@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/09/28 06:02:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/07 15:34:10 espie Exp $
 
 COMMENT=	"character set conversion library"
 
@@ -22,8 +22,5 @@ CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autoconf ${WRKSRC}/libcharset/autoconf
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
-
-test:	build
-	@cd ${WRKBUILD} && ${MAKE_PROGRAM} check
 
 .include <bsd.port.mk>
