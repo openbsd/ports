@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 1999/09/28 17:45:32 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/10/02 17:33:11 brad Exp $
 
 DISTNAME=	abuse-2.0
 CATEGORIES=	games x11
-MASTER_SITES0=	${MASTER_SITE_GNU}
-MASTER_SITES1=	ftp://ftp.NetBSD.ORG/pub/NetBSD/packages/distfiles/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES0=	ftp://ftp.NetBSD.ORG/pub/NetBSD/packages/distfiles/
 MASTER_SITE_SUBDIR= abuse
-DISTFILES=	${DISTNAME}.tar.gz:0 abuse_data.tar.gz:1
+DISTFILES=	${DISTNAME}.tar.gz abuse_data.tar.gz:0
 
 NEED_VERSION=	1.121
 
