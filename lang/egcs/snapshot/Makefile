@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 1999/08/22 16:53:37 espie Exp $
+# $OpenBSD: Makefile,v 1.53 1999/08/24 22:52:38 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -31,7 +31,7 @@ MIRROR_DISTFILE=no
 # cygnus packaging scheme is now working, though it is weird.
 # namely, testsuite holds all the tests. g++-tests no longer exists,
 # and g77-tests only holds duplicates from the main testsuite archive.
-#MAKE_TESTS=yes
+MAKE_TESTS=yes
 MAKE_GXX=yes
 MAKE_FORTRAN=yes
 MAKE_CHILL=yes
@@ -46,7 +46,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1999-08-08
+LATEST_DATE=1999-08-24
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -338,8 +338,7 @@ SEPARATE_BUILD=concurrent
 
 # you shouldn't skip bootstrap unless you know what you're doing
 # use bootstrap-lean if you're pressed for space
-#ALL_TARGET=bootstrap
-ALL_TARGET=bootstrap3
+ALL_TARGET=bootstrap
 # ALL_TARGET=bootstrap-lean
 
 # desactivate the fixincludes mechanism by supplying a script which does
