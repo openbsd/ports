@@ -4,6 +4,3 @@ portal sites.  As packaged, the CMF generates a site much like the
 Zope.org site.  The CMF is intended to be easily customizable, in
 terms of both the types of content used and the policies and services
 it provides.
-
-WWW: ${HOMEPAGE}
-
