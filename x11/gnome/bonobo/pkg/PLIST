@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/06/02 17:34:46 nino Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/06/13 11:26:43 nino Exp $
 bin/bonobo-application-x-mines
 bin/bonobo-audio-ulaw
 bin/bonobo-echo
@@ -239,8 +239,8 @@ share/oaf/Bonobo_Selector.oaf
 @comment @dirrm share/locale
 @comment @exec mkdir -p %D/share/libefs/html/libefs
 @comment @dirrm share/libefs/html/libefs
-@dirrm share/libefs/html
-@dirrm share/libefs
+@comment @dirrm share/libefs/html
+@comment @dirrm share/libefs
 @comment @dirrm share/gnome/ui
 @comment @exec mkdir -p %D/share/gnome/bonobo/docs/audio_ulaw/C/images
 @comment @dirrm share/gnome/bonobo/docs/audio_ulaw/C/images
