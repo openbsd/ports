@@ -5,9 +5,9 @@
  
  DEFINCDIRS=	$(SRCROOT)/include
 -LDPATH=		-L/opt/schily/lib
--#RUNPATH=	-R /opt/schily/lib -R $(OLIBSDIR)	Will probably not work
+-#RUNPATH=	-R $(INS_BASE)/lib -R /opt/schily/lib -R $(OLIBSDIR)	Will probably not work
 +LDPATH=		-L/usr/local/lib
-+#RUNPATH=	-R /usr/local/lib -R $(OLIBSDIR)	Will probably not work
++#RUNPATH=	-R $(INS_BASE)/lib -R /usr/local/lib -R $(OLIBSDIR)	Will probably not work
  
  ###########################################################################
  #

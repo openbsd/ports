@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2000/07/04 04:20:44 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2000/09/18 22:19:52 mickey Exp $
 
-DISTNAME=	cdrecord-1.6.1
+DISTNAME=	cdrecord-1.9
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/
 
