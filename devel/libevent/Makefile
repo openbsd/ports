@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2002/06/13 03:58:11 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/16 09:51:06 naddy Exp $
+
+COMES_WITH=	3.2
 
 COMMENT=	"asynchronous event library"
 
