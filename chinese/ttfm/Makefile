@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/02/11 08:42:14 kevlo Exp $ 
+# $OpenBSD: Makefile,v 1.14 2004/02/15 17:28:09 naddy Exp $ 
 
 COMMENT=	"big5/gb enhanced truetype font manager"
 
@@ -15,8 +15,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/ttfm/
 
-MAKE_FLAGS=	CC="${CC}" CFLAGS='${CFLAGS} -Wall -I$$(FREETYPE_INCL)' \
-	FREETYPE_INCL=${X11BASE}/include/freetype2
+MAKE_FLAGS=	CC="${CC}" CFLAGS='${CFLAGS} `freetype-config --cflags`'
 
 NO_REGRESS=	Yes
 
