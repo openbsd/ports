@@ -1,6 +1,21 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 04:41:15 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 05:15:13 lebel Exp $
 
-COMMENT=	"games for KDE"
+COMMENT=		"games for KDE"
+COMMENT-kabalone=	"board game for kde"
+COMMENT-kasteroids=	"Asteroids clone for KDE"
+COMMENT-kblackbox=	"graphical logic game for kde"
+COMMENT-kmahjongg=	"mahjongg game for kde"
+COMMENT-kmines=		"minesweeper game for kde"
+COMMENT-konquest=	"game of galactic conquest for kde"
+COMMENT-kpat=		"solitaire games for kde"
+COMMENT-kpoker=		"video poker for kde"
+COMMENT-kreversi=	"strategy boardgame for kde"
+COMMENT-ksame=		"ball-matching game for kde"
+COMMENT-kshisen=	"tile matching game for kde"
+COMMENT-ksirtet=	"tetris clone for kde"
+COMMENT-ksmiletris=	"tetris-like game for kde"
+COMMENT-ksnake=		"snake racing game for kde"
+COMMENT-ksokoban=	"japanese strategy game for kde"
 
 DISTNAME=	kdegames-1.1.2	
 CATEGORIES=	x11 games

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/06 01:06:11 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2001/05/06 05:15:12 lebel Exp $
 # Original from: Ben Harrison, Robert Ruehlmann
 
 COMMENT=	"rogue-like game with X11 support"
+COMMENT-no_x11=	"rogue-like game"
 
 DISTNAME=	angband-291-src
 PKGNAME=	angband-2.9.1

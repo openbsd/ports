@@ -1,10 +1,14 @@
 # Date created: 26 Apr. 2000
 # Whom:		SUZUKI Hitoshi <sigh@kuzirabekon.econ.nagasaki-u.ac.jp>
 
+COMMENT-canna=		X input method for Japanese, canna support
+COMMENT-canna-wnn=	X input method for Japanese, canna and wnn support
+COMMENT-wnn=		X input method for Japanese, wnn support
+
 DISTNAME=	kinput2-v3
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
 CATEGORIES=	japanese x11
-NEED_VERSION=   1.305
+NEED_VERSION=   1.402
 
 LICENSE_TYPE=	NOFEE
 PERMIT_PACKAGE_CDROM=	Yes
