@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2002/11/27 02:23:28 lebel Exp $
-lib/libneon.so.23.5
+@comment $OpenBSD: PFRAG.shared,v 1.7 2003/05/27 14:09:38 lebel Exp $
+lib/libneon.so.23.9
 DYNLIBDIR(%D/lib)
