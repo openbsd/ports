@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/06/03 23:02:24 marc Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/26 11:52:18 naddy Exp $
 #
 
 EXAMPLES=	bjtnoise.cir    ltra_1.cir      mos6inv.cir     pz2.cir \
@@ -9,7 +9,7 @@ EXAMPLES=	bjtnoise.cir    ltra_1.cir      mos6inv.cir     pz2.cir \
 		mixdisto.cir    process.pro     resnoise.cir
 
 all:
-	util/build OpenBSD default
+	util/build OpenBSD default CC_OPT="${CFLAGS}"
 
 install:
 	util/build OpenBSD install

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 15:41:34 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/02/26 11:52:17 naddy Exp $
 
 DISTNAME=		sp3f4.kit
 PKGNAME=		spice-3f5
@@ -23,15 +23,19 @@ WRKDIST=		${WRKDIR}
 pre-patch:
 	@${ECHO_MSG} "===>  Applying distribution patches";
 .if defined(PATCH_DEBUG)
-	@(cd ${WRKDIR}/3f4patches; \
+	@cd ${WRKDIR}/3f4patches; \
 	  ${PATCH} -d ${WRKSRC}/src/lib/fte -E -p1 < grid.patch; \
 	  ${PATCH} -d ${WRKSRC}/src/lib/fte -E -p1 < newcoms.patch; \
-	  ${PATCH} -d ${WRKSRC}/src/lib/sparse -E -p1 < spsmp.patch)
+	  ${PATCH} -d ${WRKSRC}/src/lib/sparse -E -p1 < spsmp.patch
 .else
-	@(cd ${WRKDIR}/3f4patches; \
+	@cd ${WRKDIR}/3f4patches; \
 	  ${PATCH} -d ${WRKSRC}/src/lib/fte -N -s -E -p1 < grid.patch; \
 	  ${PATCH} -d ${WRKSRC}/src/lib/fte -N -s -E -p1 < newcoms.patch; \
-	  ${PATCH} -d ${WRKSRC}/src/lib/sparse -N -s -E -p1 < spsmp.patch)
+	  ${PATCH} -d ${WRKSRC}/src/lib/sparse -N -s -E -p1 < spsmp.patch
 .endif
+
+do-configure:
+	@cp ${FILESDIR}/Makefile ${WRKSRC}
+	@cp ${FILESDIR}/OpenBSD ${WRKSRC}/conf
 
 .include <bsd.port.mk>

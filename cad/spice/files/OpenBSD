@@ -1,11 +1,10 @@
-# $OpenBSD: OpenBSD,v 1.1.1.1 1998/06/03 23:02:24 marc Exp $
+# $OpenBSD: OpenBSD,v 1.2 2001/02/26 11:52:19 naddy Exp $
 #
 # Spice configuration file for OpenBSD
 
 MAKE		= /usr/bin/make
 DEFAULT_EDITOR	= /usr/bin/vi
 X_DIR		= /usr/X11R6
-CC_OPT		= -O2
 LDFLAGS		= -lm -ltermlib -lcompat
 SYS_CFLAGS	= -Dbsd -DHAS_STDLIB
 SYS_DIR		= ${DIST_DIR}/OpenBSD

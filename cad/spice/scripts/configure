@@ -1,6 +1,0 @@
-#! /bin/sh
-#
-# $OpenBSD: configure,v 1.1.1.1 1998/06/03 23:02:25 marc Exp $
-
-cp -f ${FILESDIR}/Makefile ${WRKSRC}
-cp -f ${FILESDIR}/OpenBSD ${WRKSRC}/conf
