@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2001/09/28 06:02:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.50 2001/10/08 19:10:03 espie Exp $
 
 # This is a configuration file for egcs
 
-COM=		'GNU compiler collection (experimental)'
+COM=		'GNU compiler collection'
 COMMENT=	${COM}: core C compiler
 COMMENT-c++ =	${COM}: C++ compiler
 COMMENT-chill=	${COM}: Chill compiler
@@ -19,30 +19,20 @@ PKGNAME-objc=	${DISTNAME}-objc
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
-BUILD_DEPENDS=	autoconf::devel/autoconf
+BUILD_DEPENDS=	::devel/autoconf
 
 # This should be patched out later.
 BUILD_DEPENDS+= bison:bison-*:devel/bison
 
 CATEGORIES=	lang 
-NEED_VERSION=	1.420
+NEED_VERSION=	1.474
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-
-# experimental port, changes once a week, don't bother remirroring distfiles.
 
 PERMIT_PACKAGE_FTP=Yes
 PERMIT_DISTFILES_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
 PERMIT_DISTFILES_CDROM=Yes
-
-# Testers for the new configurations:
-# Jason L.Wright & Marco S.Hyman for sparc,
-# Michael Shalayeff for hppa,
-# Wim Van Deputte for alpha,
-# Steve Murphree for m88k,
-# Per Fogelstrom and Todd Miller for mips,
-# Dale Rahn for rs6000.
 
 # user configuration section
 
@@ -64,13 +54,11 @@ MULTI_PACKAGES=
 # No sub packages description
 DESCR=${PKGDIR}/DESCR
 
-.if defined(MAKE_TESTS) && ${MAKE_TESTS:L} == "yes"
-BUILD_DEPENDS+=	runtest::lang/egcs/dejagnu
-.endif
+REGRESS_DEPENDS=::lang/egcs/dejagnu
 
 # No way around it, java wants a pure parser
 .if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
-BUILD_DEPENDS+=bison:bison-*:devel/bison
+BUILD_DEPENDS+=:bison-*:devel/bison
 .endif
 
 #### fetch section
@@ -180,8 +168,6 @@ post-patch:
 CONFIGURE_STYLE=	gnu dest
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gcc
 
-#CONFIGURE_SCRIPT=../source/configure
-
 LANGS=c
 .if defined(MAKE_GXX)
 LANGS:=${LANGS},c++
@@ -273,21 +259,37 @@ post-build:
 	mkdir -p ${WRKBUILD}/gcc/include/machine
 	cp ${FILESDIR}/include/machine/ansi.h ${WRKBUILD}/gcc/include/machine
 
+
 # Tests still need to be performed at the end of install, I don't know why.
-.if defined(MAKE_TESTS)
+
+REGRESS_DEPENDS+=::lang/egcs/stable
+.if defined(MAKE_GXX)
+REGRESS_DEPENDS+=::lang/egcs/stable,-c++
+.endif
+.if defined(MAKE_FORTRAN)
+REGRESS_DEPENDS+=::lang/egcs/stable,-g77
+.endif
+.if defined(MAKE_OBJC)
+REGRESS_DEPENDS+=::lang/egcs/stable,-objc
+.endif
+.if defined(MAKE_JAVA)
+REGRESS_DEPENDS+=::lang/egcs/stable,-java
+.endif
+.if defined(MAKE_CHILL)
+REGRESS_DEPENDS+=::lang/egcs/stable,-chill
+.endif
+
 TEST_RESULT=${WRKBUILD}/test.result
 
-post-install:
-	@(cd ${WRKBUILD}; ulimit -c 0; \
+do-regress:
+	@cd ${WRKBUILD}; ulimit -c 0; \
 	${MAKE_ENV} make -f ${MAKE_FILE} check && \
-	${WRKSRC}/contrib/test_summary >${TEST_RESULT})
+	${WRKSRC}/contrib/test_summary >${TEST_RESULT}
 	@echo "Please send the tests results to the gcc project"
 	@echo "By invoking make send-results"
 
 send-results: 
 	[ -f ${TEST_RESULT} ] && sh ${TEST_RESULT}
-.else
-.endif
 
 #USE_GMAKE=Yes
 #SED_PLIST=|sed -e s/@GCCARCH@/`${GCC_NAME} -dumpmachine`/ \
