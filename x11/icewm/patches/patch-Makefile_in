@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2004/05/21 17:00:09 naddy Exp $
---- Makefile.in.orig	2003-09-27 02:54:45.000000000 -0500
-+++ Makefile.in	2004-02-15 16:12:50.000000000 -0600
-@@ -112,12 +112,9 @@ install-base: base
+$OpenBSD: patch-Makefile_in,v 1.5 2004/05/25 16:36:35 naddy Exp $
+--- Makefile.in.orig	Sun May 23 16:19:47 2004
++++ Makefile.in	Sun May 23 16:19:35 2004
+@@ -116,12 +116,9 @@
  
  install-docs: docs
  	@echo ------------------------------------------

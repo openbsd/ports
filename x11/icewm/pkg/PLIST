@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/05/21 17:00:09 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/05/25 16:36:35 naddy Exp $
 bin/icehelp
 bin/icesh
 bin/icewm
@@ -64,6 +64,7 @@ share/icewm/icons/pdf_16x16.xpm
 share/icewm/icons/pdf_32x32.xpm
 share/icewm/icons/vim_16x16.xpm
 share/icewm/icons/vim_32x32.xpm
+share/icewm/icons/vim_48x48.xpm
 share/icewm/icons/xisp_16x16.xpm
 share/icewm/icons/xisp_32x32.xpm
 share/icewm/icons/xload_16x16.xpm
@@ -98,8 +99,16 @@ share/icewm/mailbox/nomail.xpm
 share/icewm/mailbox/unreadmail.xpm
 share/icewm/menu
 share/icewm/preferences
+share/icewm/taskbar/debian.xpm
+share/icewm/taskbar/desktop.xpm
 share/icewm/taskbar/icewm.xpm
+share/icewm/taskbar/linux.xpm
+share/icewm/taskbar/linux1.xpm
+share/icewm/taskbar/linux2.xpm
+share/icewm/taskbar/linux20.xpm
+share/icewm/taskbar/start.xpm
 share/icewm/taskbar/windows.xpm
+share/icewm/taskbar/xfreeos2.xpm
 share/icewm/themes/Infadel2/Ergonomic.theme
 share/icewm/themes/Infadel2/Overloaded.theme
 share/icewm/themes/Infadel2/closeA.xpm
@@ -173,15 +182,20 @@ share/icewm/themes/gtk2/restoreA.xpm
 share/icewm/themes/gtk2/restoreI.xpm
 share/icewm/themes/icedesert/closeA.xpm
 share/icewm/themes/icedesert/closeI.xpm
+share/icewm/themes/icedesert/closeO.xpm
 share/icewm/themes/icedesert/default.theme
 share/icewm/themes/icedesert/maximizeA.xpm
 share/icewm/themes/icedesert/maximizeI.xpm
+share/icewm/themes/icedesert/maximizeO.xpm
 share/icewm/themes/icedesert/menuButtonA.xpm
 share/icewm/themes/icedesert/menuButtonI.xpm
+share/icewm/themes/icedesert/menuButtonO.xpm
 share/icewm/themes/icedesert/minimizeA.xpm
 share/icewm/themes/icedesert/minimizeI.xpm
+share/icewm/themes/icedesert/minimizeO.xpm
 share/icewm/themes/icedesert/restoreA.xpm
 share/icewm/themes/icedesert/restoreI.xpm
+share/icewm/themes/icedesert/restoreO.xpm
 share/icewm/themes/icedesert/titleAB.xpm
 share/icewm/themes/icedesert/titleAT.xpm
 share/icewm/themes/icedesert/titleIB.xpm
@@ -300,6 +314,12 @@ share/icewm/themes/win95/default.theme
 share/icewm/themes/win95/maximize.xpm
 share/icewm/themes/win95/minimize.xpm
 share/icewm/themes/win95/restore.xpm
+share/icewm/themes/yellowmotif/close.xpm
+share/icewm/themes/yellowmotif/default.theme
+share/icewm/themes/yellowmotif/maximize.xpm
+share/icewm/themes/yellowmotif/menu.xpm
+share/icewm/themes/yellowmotif/minimize.xpm
+share/icewm/themes/yellowmotif/restore.xpm
 share/icewm/toolbar
 share/icewm/winoptions
 share/locale/be/LC_MESSAGES/icewm.mo
@@ -307,6 +327,7 @@ share/locale/bg/LC_MESSAGES/icewm.mo
 share/locale/ca/LC_MESSAGES/icewm.mo
 share/locale/cs/LC_MESSAGES/icewm.mo
 share/locale/de/LC_MESSAGES/icewm.mo
+share/locale/el/LC_MESSAGES/icewm.mo
 share/locale/en/LC_MESSAGES/icewm.mo
 share/locale/es/LC_MESSAGES/icewm.mo
 share/locale/fi/LC_MESSAGES/icewm.mo
@@ -325,9 +346,19 @@ share/locale/ro/LC_MESSAGES/icewm.mo
 share/locale/ru/LC_MESSAGES/icewm.mo
 share/locale/sl/LC_MESSAGES/icewm.mo
 share/locale/sv/LC_MESSAGES/icewm.mo
+share/locale/tr/LC_MESSAGES/icewm.mo
 share/locale/uk/LC_MESSAGES/icewm.mo
 share/locale/zh_CN/LC_MESSAGES/icewm.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/icewm.mo
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/zh_CN
+@dirrm share/locale/en/LC_MESSAGES
+@dirrm share/locale/en
+@dirrm share/locale/bg/LC_MESSAGES
+@dirrm share/locale/bg
+@dirrm share/locale/be/LC_MESSAGES
+@dirrm share/locale/be
+@dirrm share/icewm/themes/yellowmotif
 @dirrm share/icewm/themes/win95
 @dirrm share/icewm/themes/warp4
 @dirrm share/icewm/themes/warp3
@@ -342,8 +373,10 @@ share/locale/zh_TW.Big5/LC_MESSAGES/icewm.mo
 @dirrm share/icewm/themes/Infadel2/icons
 @dirrm share/icewm/themes/Infadel2/cursors
 @dirrm share/icewm/themes/Infadel2
+@dirrm share/icewm/themes
 @dirrm share/icewm/taskbar
 @dirrm share/icewm/mailbox
 @dirrm share/icewm/ledclock
 @dirrm share/icewm/icons
+@dirrm share/icewm
 @dirrm share/doc/icewm

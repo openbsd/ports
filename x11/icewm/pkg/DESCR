@@ -1,12 +1,4 @@
-IceWM is a window manager for the X11 Window System. It has been
-coded from scratch in C++ for performance and size and attempts to
-achieve the following goals:
-
-      Feel good and fast to use, be simple and don't get in the way 
-      Default configuration should be fully usable without tweaking 
-      Mouse is optional 
-      Combine the best features of other window managers and GUIs 
-
-IceWM allows reasonably configurable look using themes and is fully
-GNOME and partially KDE compliant, but can also be used as a full
-featured standalone environment.
+A lightweight window manager for the X Window System. Optimized for
+"feel" and speed, not looks. Features multiple workspaces, opaque
+move/resize, task bar, window list, clock, mailbox, CPU, Network,
+APM status.
