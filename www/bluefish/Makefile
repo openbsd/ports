@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/04/02 07:09:21 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/06/19 03:14:04 kevlo Exp $
 
 DISTNAME=	bluefish-0.3.6
 CATEGORIES=	www 
 NEED_VERSION=	1.234
-MASTER_SITES=	http://bluefish.linuxbox.com/download/ \
-		http://student.wau.nl/~olivier/bluefish/download/ \
-		http://ha-pc.cheque.uq.edu.au/download/
+MASTER_SITES=	http://bluefish.openoffice.nl/download/ \
+		http://www.student.wau.nl/~olivier/bluefish/download/
 
 RUN_DEPENDS=	weblint::www/weblint
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
