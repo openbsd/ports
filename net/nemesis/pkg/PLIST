@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/06/25 00:50:39 brad Exp $
 sbin/nemesis-arp
 sbin/nemesis-dns
 sbin/nemesis-icmp
