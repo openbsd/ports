@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.14 2000/10/10 00:40:42 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/03/28 15:22:03 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 
+COMMENT=	"Japanized Vim"
+COMMENT-canna=	"Japanized Vim, canna input method"
+COMMENT-wnn=	"Japanized Vim, wnn input method"
+COMMENT-wnn-canna="Japanized Vim, canna or wnn input method"
 DISTNAME=	jvim2.0r+onew2.2.10
 PKGNAME=	ja-jvim-2.0r
 CATEGORIES=	japanese editors
-NEED_VERSION=	1.230
+NEED_VERSION=	1.377
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
 
@@ -20,6 +24,7 @@ FLAVOR?=
 
 
 .if ${FLAVOR:L:Mwnn}
+CHOICE=wnn4
 INPUT_METHOD=wnn4
 BUILD_DEPENDS+=	jserver::japanese/Wnn
 JPDEF+=		-DWNN_ISDIR
@@ -29,8 +34,10 @@ JPLIB+=		-ljd
 .if ${FLAVOR:L:Mcanna}
 .  if ${FLAVOR:L:Mwnn}
 INPUT_METHOD=	wnn4-canna
+CHOICE=wnn4,canna
 .  else
 INPUT_METHOD=	canna
+CHOICE=canna
 .endif
 LIB_DEPENDS+= canna.1.::japanese/canna
 JPLIB+=			-lcanna
@@ -38,7 +45,7 @@ JPLIB+=			-lcanna
 
 
 .if defined(INPUT_METHOD) && !empty(INPUT_METHOD)
-BUILD_DEPENDS+= ${PREFIX}/lib/libonew-${INPUT_METHOD}.a::japanese/onew-${INPUT_METHOD}
+BUILD_DEPENDS+= ${LOCALBASE}/lib/libonew-${INPUT_METHOD}.a::japanese/onew,${CHOICE}
 JPDEF+=		-DONEW
 JPLIB:=-lonew-${INPUT_METHOD} ${JPLIB}
 .endif
