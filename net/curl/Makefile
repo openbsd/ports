@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2000/09/06 20:50:13 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/09/28 17:29:47 brad Exp $
 
-DISTNAME=	curl-7.2.1
+DISTNAME=	curl-7.3
 CATEGORIES=	net
-NEED_VERSION=	1.324
+NEED_VERSION=	1.330
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
 		ftp://ftp.win.or.jp/pub/network/www/misc/ \
@@ -20,6 +20,13 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-thread
+
+FLAVORS=	kerberos
+FLAVOR?=
+
+.if ${FLAVOR:L:Mkerberos}
+CONFIGURE_ARGS+= --with-krb4-includes="/usr/include/kerberosIV"
+.endif
 
 DOCS=	CHANGES LEGAL MPL-1.0.txt README
 
