@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/03/25 11:57:45 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/03/25 17:49:26 matt Exp $
+@pkgcfl vnc-*
 @pkgcfl tightvnc-viewer-*
 bin/Xvnc
 bin/vncconnect
