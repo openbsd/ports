@@ -1,0 +1,5 @@
+To completely deinstall the jserv package you need to edit
+/var/www/conf/httpd.conf and remove the lines
+        LoadModule jserv_module
+and
+        include ${SYSCONFDIR}/tomcat/tomcat-apache.conf

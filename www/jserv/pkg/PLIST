@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/17 12:22:17 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/11/30 18:33:14 alek Exp $
 lib/mod_jserv.so
 sbin/jserv-enable
+share/examples/jserv/
 share/examples/jserv/server.xml
-@dirrm share/examples/jserv
+@unexec rm -f /usr/lib/apache/modules/mod_jserv.so

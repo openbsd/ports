@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/01/13 21:32:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2004/11/30 18:33:14 alek Exp $
 
 BROKEN=	"HANDLER THREAD PROBLEM: java.net.SocketException: Resource temporarily unavailable"
 
@@ -11,7 +11,7 @@ COMMENT=	"Tomcat (Servlet/JSP) - Apache Connector"
 ONLY_FOR_ARCHS=	i386
 
 V=		3.2.4
-PKGNAME=	jserv-${V}
+PKGNAME=	jserv-${V}p0
 DISTNAME=	jakarta-tomcat-${V}-src
 CATEGORIES=	www
 MASTER_SITES=	http://archive.apache.org/dist/jakarta/tomcat-3/archive/v${V}/src/

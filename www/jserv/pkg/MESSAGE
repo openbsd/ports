@@ -1,0 +1,4 @@
+To finish the install, you need to enable the jserv module using the
+following command:
+
+      ${PREFIX}/sbin/jserv-enable

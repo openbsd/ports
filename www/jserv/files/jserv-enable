@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: jserv-enable,v 1.1.1.1 2001/06/17 12:22:17 reinhard Exp $
+# $OpenBSD: jserv-enable,v 1.2 2004/11/30 18:33:14 alek Exp $
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
@@ -18,10 +18,10 @@ else
     apxs -i -a -n jserv ${MODULE}
     echo "" >> $HTTPD_CONF
     echo "# jserv (Apache-Tomcat connector)" >> $HTTPD_CONF
-    echo "include /etc/tomcat/tomcat-apache.conf" >> $HTTPD_CONF
+    echo "include ${SYSCONFDIR}/tomcat/tomcat-apache.conf" >> $HTTPD_CONF
     echo ""
     echo "You may want to disable the 'HttpConnectionHandler' on port 8080"
-    echo "in /etc/tomcat/server.xml if jakarta-tomcat should only serve"
+    echo "in ${SYSCONFDIR}/tomcat/server.xml if jakarta-tomcat should only serve"
     echo "requests for Apache."
     echo "See ${XML} for an example."
 fi
