@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2003/12/31 12:05:22 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2003/12/31 17:40:20 sturm Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -34,7 +34,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	no_expat no_gdbm no_idle no_mpz no_tkinter
+FLAVORS+=	no_expat no_gdbm no_idle no_mpz no_tkinter
 FLAVOR?=
 
 MULTI_PACKAGES=	-tests -tools
@@ -50,6 +50,23 @@ RUN_DEPENDS=		::lang/python/${VERSION}
 # way to avoid pulling in dependencies, and don't actually show up
 # in the final package names.  On architectures without shared libs,
 # no_xxx flavors dictate what gets linked into the Python binary.
+
+# this cannot be put into 2.3/Makefile due to NO_SHARED_LIBS being
+# only defined in bsd.port.mk but MULTI_PACKAGES being already used
+# in there, too
+.if ${VERSION} == "2.3" &&  empty(FLAVOR:L:Mno_bsddb)
+BUILD_DEPENDS+=		::databases/db/v4
+SETUP_LOCAL+=		Setup.bsddb
+.  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
+MULTI_PACKAGES+=	-bsddb
+.  else
+LIB_DEPENDS+=		db.4::databases/db/v4
+.  endif
+.endif
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-bsddb"
+LIB_DEPENDS+=		db.4:db->=4.1.25p0:databases/db/v4
+.endif
 
 .if empty(FLAVOR:L:Mno_gdbm)
 BUILD_DEPENDS+=		::databases/gdbm
@@ -126,7 +143,7 @@ LIB_DEPENDS+=		expat.4.0:expat->=1.95.6:textproc/expat
 # building the "monster" Python for platforms without shared libraries.
 
 .if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
-FULLPKGNAME=${PKGNAME}${FLAVOR_EXT:S/-no_expat//:S/-no_gdbm//:S/-no_idle//:S/-no_mpz//:S/-no_tkinter//}
+FULLPKGNAME=${PKGNAME}${FLAVOR_EXT:S/-no_bsddb//:S/-no_expat//:S/-no_gdbm//:S/-no_idle//:S/-no_mpz//:S/-no_tkinter//}
 .endif
 
 FULLPKGNAME-expat=	python-expat-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
@@ -137,7 +154,7 @@ FULLPKGNAME-tests=	python-tests-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-tkinter=	python-tkinter-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-tools=	python-tools-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 
-CONFIGURE_STYLE=	autoconf dest
+CONFIGURE_STYLE?=	autoconf dest
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-fpectl --with-threads
 
