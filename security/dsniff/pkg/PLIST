@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.7 2000/08/11 08:59:56 brad Exp $
 sbin/arpredirect
 sbin/dsniff
 sbin/filesnarf
