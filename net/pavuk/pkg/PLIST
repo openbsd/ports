@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/01/26 20:50:17 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/12/16 19:24:41 naddy Exp $
 bin/pavuk
 man/man1/pavuk.1
 share/doc/pavuk/COPYING
@@ -21,5 +21,7 @@ share/pavuk/icons/pavuk_as_icon.xpm
 share/pavuk/icons/pavuk_prg_icon.xpm
 @dirrm share/pavuk/icons
 @dirrm share/pavuk
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
 @dirrm share/examples/pavuk
 @dirrm share/doc/pavuk

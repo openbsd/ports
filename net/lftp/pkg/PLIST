@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2001/10/26 09:03:13 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/12/16 19:24:40 naddy Exp $
 bin/lftp
 bin/lftpget
 man/man1/lftp.1
@@ -16,5 +16,9 @@ share/locale/pt_BR/LC_MESSAGES/lftp.mo
 share/locale/ru/LC_MESSAGES/lftp.mo
 share/locale/zh_CN/LC_MESSAGES/lftp.mo
 share/locale/zh_TW/LC_MESSAGES/lftp.mo
+@dirrm share/locale/zh_TW/LC_MESSAGES
+@dirrm share/locale/zh_TW
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/zh_CN
 @dirrm share/lftp
 @dirrm share/examples/lftp
