@@ -1,12 +1,14 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2001/12/14 02:00:53 naddy Exp $
---- src/Makefile.in.orig	Sun Dec  9 14:11:30 2001
-+++ src/Makefile.in	Sun Dec  9 14:11:43 2001
-@@ -38,7 +38,7 @@ gnulocaledir = $(prefix)/share/locale
- aliaspath = $(localedir):.
+$OpenBSD: patch-src_Makefile_in,v 1.2 2003/03/29 15:22:14 couderc Exp $
+--- src/Makefile.in.orig	Fri Feb  7 18:53:10 2003
++++ src/Makefile.in	Thu Feb 20 23:13:22 2003
+@@ -89,8 +89,8 @@ distclean: patchclean
+ 	rm -f config.h Makefile *~ *.bak core
  
- CC = @CC@
--CFLAGS = @CFLAGS@
-+CFLAGS = @CPPFLAGS@ @CFLAGS@
- LDFLAGS = @LDFLAGS@
- LIBS = @INTLLIBS@ @LIBS@
- INSTALL = @INSTALL@
+ install: all
+-	$(INSTALL_DIR) $(bindir)
+-	$(INSTALL_PROGRAM) ./bluefish $(bindir)/bluefish
++	$(INSTALL_DIR) $(DESTDIR)/$(bindir)
++	$(INSTALL_PROGRAM) ./bluefish $(DESTDIR)/$(bindir)/bluefish
+ 
+ uninstall:
+ 	/bin/rm -f $(bindir)/bluefish

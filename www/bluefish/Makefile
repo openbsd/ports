@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2002/11/24 18:28:24 couderc Exp $
+# $OpenBSD: Makefile,v 1.24 2003/03/29 15:22:14 couderc Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
-DISTNAME=	bluefish-0.7
+VERSION=	0.9
+DISTNAME=	bluefish-${VERSION}
 CATEGORIES=	www 
 HOMEPAGE=	http://bluefish.openoffice.nl/
 
@@ -19,38 +20,16 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
-		ungif.5::graphics/libungif
+LIB_DEPENDS=	gtk-x11-2.0.=0,gdk-x11-2.0.=0::x11/gtk+2 \
+		pcre::devel/pcre \
+		aspell::textproc/aspell
 
-FLAVORS=        imlib
-FLAVOR?=
-
-.if ${FLAVOR:L:Mimlib}
-LIB_DEPENDS+=   gdk_imlib.19::graphics/imlib
-CONFIGURE_ARGS+= --disable-gdk-pixbuf
-.else
-LIB_DEPENDS+=   gdk_pixbuf.2::graphics/gdk-pixbuf
-CONFIGURE_ARGS+= --disable-imlib
-.endif
-
-CONFIGURE_STYLE= autoconf dest
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-# default locations
-CONFIGURE_ENV+=	WEBLINT=${LOCALBASE}/bin/weblint \
-		NETSCAPE=${LOCALBASE}/bin/netscape \
-		TIDY=${LOCALBASE}/bin/tidy \
-		RXVT=${LOCALBASE}/bin/rxvt \
-		MIDNIGHT_COMMANDER=${LOCALBASE}/bin/mc
+
+USE_GMAKE=	Yes
 
 NO_REGRESS=	Yes
-
-MANUAL=		${PREFIX}/share/doc/bluefish
-
-post-install:
-	${INSTALL_DATA_DIR} ${MANUAL}
-	cd ${WRKSRC}/manual && \
-	    find . -type d -exec ${INSTALL_DATA_DIR} ${MANUAL}/{} \; && \
-	    find . -type f -exec ${INSTALL_DATA} {} ${MANUAL}/{} \;
 
 .include <bsd.port.mk>

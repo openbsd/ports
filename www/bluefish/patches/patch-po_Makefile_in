@@ -1,0 +1,16 @@
+$OpenBSD: patch-po_Makefile_in,v 1.1 2003/03/29 15:22:14 couderc Exp $
+--- po/Makefile.in.orig	Sat Feb 22 01:18:45 2003
++++ po/Makefile.in	Sat Feb 22 01:19:39 2003
+@@ -40,9 +40,9 @@ all-no:
+ install:
+ 	@for file in $(FINISHED_CATALOGS) ; do \
+ 		lang=`echo $${file} | sed -e 's/\.gmo$$//'`;\
+-		$(INSTALL_DIR) $(localedir)/$${lang}/ ;\
+-		$(INSTALL_DIR) $(localedir)/$${lang}/LC_MESSAGES/ ;\
+-		$(INSTALL_DATA) $${lang}.gmo $(localedir)/$${lang}/LC_MESSAGES/${PACKAGE}.mo;\
++		$(INSTALL_DIR) $(DESTDIR)$(localedir)/$${lang}/ ;\
++		$(INSTALL_DIR) $(DESTDIR)$(localedir)/$${lang}/LC_MESSAGES/ ;\
++		$(INSTALL_DATA) $${lang}.gmo $(DESTDIR)$(localedir)/$${lang}/LC_MESSAGES/${PACKAGE}.mo;\
+ 	done
+ 
+ uninstall:

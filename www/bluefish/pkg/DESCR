@@ -1,7 +1,5 @@
-Bluefish is an advanced HTML editor that contains functionality for
-PHP, SSI, and RXML.  It is designed for the experienced web designer.
+Bluefish is a web development application for experienced web designers
+and programmers. Bluefish has extended support for programming dynamic
+and interactive websites.
 
 WWW: ${HOMEPAGE}
-
-Flavors:
-        * imlib: use imlib instead of gdk_pixbuf as graphic library

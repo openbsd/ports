@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile_in,v 1.4 2003/03/29 15:22:14 couderc Exp $
+--- Makefile.in.orig	Sun Feb 16 12:16:29 2003
++++ Makefile.in	Fri Feb 21 21:52:02 2003
+@@ -65,12 +65,10 @@ distclean:
+ 
+ install: src/bluefish
+ 	pkgdatadir=@pkgdatadir@
+-	$(INSTALL_DIR) $(pkgdatadir)
+-	$(INSTALL_DATA) images/bluefish_splash.png $(pkgdatadir)
++	$(INSTALL_DIR) $(DESTDIR)$(pkgdatadir)
++	$(INSTALL_DATA) images/bluefish_splash.png $(DESTDIR)$(pkgdatadir)
+ 	@cd icons/ && $(MAKE) install
+-	if [ -d /usr/share/pixmaps ]; then \
+-		$(INSTALL_DATA) inline_images/bluefish_icon1.png /usr/share/pixmaps/bluefish-icon.png ;\
+-	fi
++	$(INSTALL_DATA) inline_images/bluefish_icon1.png $(DESTDIR)$(pkgdatadir)
+ 	@cd src/ && $(MAKE) install
+ 	@cd po/ && $(MAKE) install
+ 	@cd data/ && $(MAKE) install

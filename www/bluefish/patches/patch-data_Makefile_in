@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_Makefile_in,v 1.1 2003/03/29 15:22:14 couderc Exp $
+--- data/Makefile.in.orig	Sat Feb 22 01:16:01 2003
++++ data/Makefile.in	Sat Feb 22 01:17:16 2003
+@@ -30,7 +30,7 @@ all: $(DEFAULTFILES)
+ install: all
+ 	$(INSTALL_DIR) $(pkgdatadir)
+ 	@for file in $(DEFAULTFILES) ; do \
+-		$(INSTALL_DATA) $$file $(pkgdatadir)/$$file ;\
++		$(INSTALL_DATA) $$file $(DESTDIR)$(pkgdatadir)/$$file ;\
+ 	done
+ 	if [ -d /usr/share/applications ] ; then \
+ 		$(INSTALL_DATA) bluefish.desktop /usr/share/applications/ ;\

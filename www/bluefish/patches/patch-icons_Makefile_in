@@ -1,0 +1,15 @@
+$OpenBSD: patch-icons_Makefile_in,v 1.1 2003/03/29 15:22:14 couderc Exp $
+--- icons/Makefile.in.orig	Fri Dec 27 23:42:52 2002
++++ icons/Makefile.in	Thu Feb 20 23:13:22 2003
+@@ -49,9 +49,9 @@ all: bluefish
+ bluefish:
+ 
+ install: all
+-	$(INSTALL_DIR) $(pkgdatadir)
++	$(INSTALL_DIR) $(DESTDIR)$(pkgdatadir)
+ 	for file in $(OBJS) ; \
+-		do $(INSTALL_DATA) $$file $(pkgdatadir) ; \
++		do $(INSTALL_DATA) $$file $(DESTDIR)$(pkgdatadir) ; \
+ 	done
+ 
+ uninstall:
