@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.50 2003/07/18 18:18:15 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.51 2003/07/29 22:27:09 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -146,7 +146,7 @@ ${SUBDIR}::
 	${MAKE} all
 
 .for __target in all fetch fetch-list package fake extract configure \
-		 build clean describe distclean deinstall \
+		 build clean describe distclean deinstall install \
 		 reinstall tags checksum mirror-distfiles list-distfiles \
 		 show fetch-makefile all-packages cdrom-packages \
 		 dir-depends package-dir-depends \
