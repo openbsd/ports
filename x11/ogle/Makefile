@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/08/18 09:38:26 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/08/28 01:34:37 drahn Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64
 
@@ -39,6 +39,9 @@ MAKE_ENV=GAS_DIR=${TRUEPREFIX}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin
 
 .if ${FLAVOR:L} == "altivec"
 ONLY_FOR_ARCHS=	powerpc
+CONFIGURE_ARGS+=--enable-altivec
+.else
+CONFIGURE_ARGS+=--disable-altivec
 .endif
 
 .include <bsd.port.mk>
