@@ -1,0 +1,15 @@
+$OpenBSD: patch-gd_gdft_c,v 1.1 2004/11/10 14:07:33 naddy Exp $
+--- gd/gdft.c.orig	Wed Nov 10 14:36:55 2004
++++ gd/gdft.c	Wed Nov 10 14:38:12 2004
+@@ -32,8 +32,9 @@ char * gdImageStringFT(gdImage *im, int 
+ #else
+ 
+ #include "gdcache.h"
+-#include "freetype/freetype.h"
+-#include "freetype/ftglyph.h"
++#include <ft2build.h>
++#include FT_FREETYPE_H
++#include FT_GLYPH_H
+ 
+ /* number of fonts cached before least recently used is replaced */
+ #define FONTCACHESIZE 6
