@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/08/21 13:16:22 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2001/08/25 13:08:33 shell Exp $
 
 
 COMMENT=		"python codes checker"
@@ -24,7 +24,7 @@ MASTER_SITE_SUBDIR=	pychecker
 
 PYTHON_VER=	2.1
 
-RUN_DEPENDS+=	python${PYTHON_VER}::lang/python${PYTHON_EXT}
+RUN_DEPENDS+=	python${PYTHON_VER}::lang/python
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 SUBST_VARS=	PYTHON_VER
