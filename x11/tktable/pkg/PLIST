@@ -1,17 +1,17 @@
-lib/Tktable/pkgIndex.tcl
-lib/Tktable/tkTable.tcl
-lib/Tktable/Tktable.so.2.5
-lib/Tktable/demos/basic.tcl
-lib/Tktable/demos/buttons.tcl
-lib/Tktable/demos/command.tcl
-lib/Tktable/demos/debug.tcl
-lib/Tktable/demos/dynarows.tcl
-lib/Tktable/demos/loadtable.tcl
-lib/Tktable/demos/maxsize.tcl
-lib/Tktable/demos/spreadsheet.tcl
-lib/Tktable/demos/tcllogo.gif
-lib/Tktable/demos/valid.tcl
-@exec /sbin/ldconfig -m %B
+@comment $OpenBSD: PLIST,v 1.2 2000/08/26 14:18:24 kevlo Exp $
+lib/Tktable2.6/pkgIndex.tcl
+lib/Tktable2.6/tkTable.tcl
 man/mann/tkTable.n
-@dirrm lib/Tktable/demos
-@dirrm lib/Tktable
+share/examples/Tktable/basic.tcl
+share/examples/Tktable/buttons.tcl
+share/examples/Tktable/command.tcl
+share/examples/Tktable/debug.tcl
+share/examples/Tktable/dynarows.tcl
+share/examples/Tktable/loadtable.tcl
+share/examples/Tktable/maxsize.tcl
+share/examples/Tktable/spreadsheet.tcl
+share/examples/Tktable/tcllogo.gif
+share/examples/Tktable/valid.tcl
+%%SHARED%%
+@dirrm share/examples/Tktable
+@dirrm lib/Tktable2.6

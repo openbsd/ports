@@ -19,3 +19,4 @@ The basic features of the widget are:
  * Works everywhere Tk does (including Windows and Mac!)
  * Unicode support (Tk8.1+)
 
+WWW: ${HOMEPAGE}

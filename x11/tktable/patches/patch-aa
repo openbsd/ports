@@ -1,20 +1,11 @@
---- Makefile.in.orig	Tue Jun  1 23:31:36 1999
-+++ Makefile.in	Wed Jun  7 16:14:56 2000
-@@ -82,7 +82,7 @@
- 		  -I$(TCL_SRC_DIR)/generic\
- 		  -I$(TK_SRC_DIR)/generic
+--- Makefile.in.orig	Sat Aug 26 04:02:43 2000
++++ Makefile.in	Sat Aug 26 04:03:43 2000
+@@ -144,7 +144,7 @@
+ all: $(DLL) pkgIndex.tcl
  
--DLL		= $(PACKAGE)$(SHLIB_SUFFIX)
-+DLL		= $(PACKAGE)$(SHLIB_SUFFIX).$(TBL_VERSION)
- STATIC_LIB	= $(PACKAGE).a
- PACKAGEDIR	= $(PACKAGE)$(TBL_VERSION)
- STATIC_EXEC	= tablewish
-@@ -126,7 +126,7 @@
- 	echo 'if {[catch {package require Tcl $(TCL_VERSION)}]} return';\
- 	echo 'package ifneeded $(PACKAGE) $(TBL_VERSION)\
- 	    "package require Tk $(TK_VERSION);\
--	     [list load [file join $$dir $(DLL).$(TBL_VERSION)] $(PACKAGE)]"'\
-+	     [list load [file join $$dir $(DLL)] $(PACKAGE)]"'\
- 	) > pkgIndex.tcl
+ $(DLL): $(OBJS)
+-	$(SHLIB_LD) -o $@ $(OBJS) $(SHLIB_CFLAGS) $(SHLIB_LD_LIBS)
++	$(SHLIB_LD) -o $@ $(OBJS) $(SHLIB_LD_LIBS)
  
- install: all
+ # The megawish builds may not work anymore - I don't use anything but
+ # extensions nowadays.
