@@ -1,12 +1,12 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.2 2004/08/09 06:15:27 marcm Exp $
---- tests/Makefile.in.orig	Mon Jul 19 05:58:38 2004
-+++ tests/Makefile.in	Sun Aug  1 14:43:03 2004
-@@ -119,7 +119,7 @@ INCLUDES = \
- 	$(GLIB_CFLAGS)
- 
- 
+$OpenBSD: patch-tests_Makefile_in,v 1.3 2004/09/15 04:20:24 marcm Exp $
+--- tests/Makefile.in.orig	Thu Aug 26 13:33:27 2004
++++ tests/Makefile.in	Sun Sep  5 20:07:08 2004
+@@ -154,7 +154,7 @@ LIBGNUTLS_CONFIG = @LIBGNUTLS_CONFIG@
+ LIBGNUTLS_LIBS = @LIBGNUTLS_LIBS@
+ LIBGNUTLS_LIBS_STATIC = @LIBGNUTLS_LIBS_STATIC@
+ LIBOBJS = @LIBOBJS@
 -LIBS = $(top_builddir)/libsoup/libsoup-$(SOUP_API_VERSION).la
 +LIBS = $(top_builddir)/libsoup/libsoup-$(SOUP_API_VERSION).la $(GLIB_LIBS)
- 
- noinst_PROGRAMS = \
- 	auth-test	\
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@

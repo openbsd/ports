@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2004/08/09 06:15:27 marcm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/09/15 04:20:24 marcm Exp $
 
-COMMENT=		"a SOAP (Simple Object Access Protocol) implementation in C"
+COMMENT=		"a SOAP implementation in C"
 
-DISTNAME=		libsoup-2.1.12
+DISTNAME=		libsoup-2.2.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libsoup/2.1/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libsoup/2.2/}
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		glib-2.0.0.0,gobject-2.0.0.0,gthread-2.0.0.0::devel/glib2 \
@@ -27,12 +27,20 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--disable-gtk-doc
-# Uses GnuTLS now...
-CONFIGURE_ARGS+=	--disable-ssl
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 API_VERSION=		2.2
 SUBST_VARS=		API_VERSION
+
+FLAVORS=		ssl
+FLAVOR?=
+
+.if ${FLAVOR:L:Mssl}
+CONFIGURE_ARGS+=	--enable-ssl
+LIB_DEPENDS+=		gnutls.12::security/gnutls
+.else
+CONFIGURE_ARGS+=	--disable-ssl
+.endif
 
 .include <bsd.port.mk>

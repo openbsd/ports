@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.2 2004/06/25 16:16:51 marcm Exp $
---- ltmain.sh.orig	2004-02-12 03:45:26.000000000 -0800
-+++ ltmain.sh	2004-05-02 10:11:56.000000000 -0700
-@@ -1847,9 +1847,12 @@ EOF
+$OpenBSD: patch-ltmain_sh,v 1.3 2004/09/15 04:20:24 marcm Exp $
+--- ltmain.sh.orig	Mon Jul 26 02:48:07 2004
++++ ltmain.sh	Sun Sep  5 20:05:23 2004
+@@ -1844,9 +1844,12 @@ EOF
  	  if test "$linkmode,$pass" = "prog,link"; then
  	    compile_deplibs="$deplib $compile_deplibs"
  	    finalize_deplibs="$deplib $finalize_deplibs"
@@ -16,7 +16,7 @@ $OpenBSD: patch-ltmain_sh,v 1.2 2004/06/25 16:16:51 marcm Exp $
  	  continue
  	  ;;
  	-l*)
-@@ -2262,10 +2265,6 @@ EOF
+@@ -2259,10 +2262,6 @@ EOF
  	link_static=no # Whether the deplib will be linked statically
  	if test -n "$library_names" &&
  	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
