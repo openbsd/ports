@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/01/26 13:06:51 jakob Exp $
+# $OpenBSD: Makefile,v 1.21 2003/05/26 03:20:29 pvalchev Exp $
 
 COMMENT=	"lame ain't an MP3 encoder"
 
@@ -29,6 +29,14 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--enable-mp3rtp
 MAKE_FLAGS=	pkghtmldir=${TRUEPREFIX}/share/doc/lame
 FAKE_FLAGS=	${MAKE_FLAGS}
+
+# XXX gcc3/nasm issue
+.if (${MACHINE_ARCH} == "i386") && (${CC} != "egcc")
+BUILD_DEPENDS=	nasm::devel/nasm
+CONFIGURE_ARGS+= --enable-nasm
+.else
+CONFIGURE_ARGS+= --disable-nasm
+.endif
 
 .if ${FLAVOR:L} != "no_x11"
 CONFIGURE_ARGS+=	--enable-mp3x \
