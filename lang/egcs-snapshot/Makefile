@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 1999/06/01 20:59:34 espie Exp $
+# $OpenBSD: Makefile,v 1.49 1999/06/02 23:32:47 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -46,7 +46,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1999-05-24
+LATEST_DATE=1999-06-02
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -54,7 +54,7 @@ LATEST_DATE=1999-05-24
 
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
-#NEXT_DATE=1999-05-24
+#NEXT_DATE=1999-06-02
 #PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
@@ -369,7 +369,7 @@ post-build:
 	@${ECHO} "By invoking make send-results"
 
 send-results: 
-	[ -f ${TEST_RESULT}] && sh ${TEST_RESULT}
+	[ -f ${TEST_RESULT} ] && sh ${TEST_RESULT}
 .endif
 
 PLIST=${WRKBUILD}/PLIST
