@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.652 2004/10/23 09:58:13 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.653 2004/10/23 10:02:51 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1034,6 +1034,11 @@ _lib_depends_fragment = \
 		esac; \
 	done; $$bad || found=true
 
+_build_depends_target=${DEPENDS_TARGET}
+_run_depends_target=${DEPENDS_TARGET}
+_lib_depends_target=${DEPENDS_TARGET}
+_regress_depends_target=${DEPENDS_TARGET}
+
 _FULL_PACKAGE_NAME?=No
 
 .for _DEP in build run lib regress
@@ -1271,7 +1276,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 	echo '${_i}'|{ \
 		IFS=:; read dep pkg dir target; \
 		${_flavor_fragment}; defaulted=false; \
-		case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
+		case "X$$target" in X) target=${_${_DEP}_depends_target};; esac; \
 		toset="$$toset _MASTER_LOCK=${_LOCKNAME}"; \
 		case "X$$target" in \
 		Xinstall|Xreinstall) early_exit=false;; \
