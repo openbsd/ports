@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2004/08/10 09:26:14 xsa Exp $
+# $OpenBSD: Makefile,v 1.29 2004/10/09 19:25:38 naddy Exp $
 
 COMMENT=	"GNU Bourne Again Shell"
 
@@ -16,6 +16,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.cwru.edu/pub/bash/ \
 		${MASTER_SITE_GNU:=bash/}
+MASTER_SITES0=	ftp://ftp.cwru.edu/pub/bash/bash-3.0-patches/
+DIST_SUBDIR=	bash
+.for i in 001 002 003 004 005 006 007 008 009 010 011 012 013
+PATCHFILES+=	bash30-$i:0
+.endfor
 
 MODULES=	devel/gettext
 
