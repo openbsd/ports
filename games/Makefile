@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1998/03/18 19:49:42 mickey Exp $
+# $OpenBSD: Makefile,v 1.8 1998/05/20 00:04:21 angelos Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -18,7 +18,7 @@
 #    SUBDIR += doom
 #    SUBDIR += empire
 #    SUBDIR += flying
-#    SUBDIR += freeciv
+     SUBDIR += freeciv
 #    SUBDIR += galaxis
 #    SUBDIR += gnuchess
 #    SUBDIR += gnugo
@@ -43,12 +43,12 @@
 #    SUBDIR += tvp
 #    SUBDIR += xasteroids
 #    SUBDIR += xbat
-#    SUBDIR += xbattle
+     SUBDIR += xbattle
      SUBDIR += xbill
 #    SUBDIR += xbl
 #    SUBDIR += xblackjack
 #    SUBDIR += xblast
-#    SUBDIR += xboard
+     SUBDIR += xboard
 #    SUBDIR += xboing
 #    SUBDIR += xchomp
 #    SUBDIR += xcubes
@@ -64,15 +64,15 @@
 #    SUBDIR += xinvaders
 #    SUBDIR += xjewel
 #    SUBDIR += xjig
-#    SUBDIR += xkobo
-#    SUBDIR += xlife
+     SUBDIR += xkobo
+     SUBDIR += xlife
 #    SUBDIR += xmahjongg
 #    SUBDIR += xmame
 #    SUBDIR += xmille
 #    SUBDIR += xmine
 #    SUBDIR += xminehunter
 #    SUBDIR += xminesweep
-#    SUBDIR += xmj
+     SUBDIR += xmj
      SUBDIR += xmris
 #    SUBDIR += xneko
 #    SUBDIR += xonix
