@@ -1,0 +1,12 @@
+$OpenBSD: patch-rxvt_Makefile_in,v 1.1 2005/02/13 14:18:07 alek Exp $
+--- rxvt/Makefile.in.orig	Fri Feb 11 15:37:38 2005
++++ rxvt/Makefile.in	Fri Feb 11 15:37:47 2005
+@@ -147,7 +147,7 @@ librxvt_a_SOURCES = _rxvtlib.h grkelot.c
+ 	rxvtlib_xdefaults.c rxvtlib_xpm.c rxvtlibproto.h rxvtlibtypedef.h 
+ 
+ 
+-INCLUDES = -I$(top_srcdir)/widget -I$(top_srcdir) -I$(top_srcdir)/intl
++INCLUDES = -I$(top_srcdir)/widget -I$(top_srcdir)
+ 
+ DEFS = -DLOCALEDIR=\"$(localedir)\" -DLIBDIR=\"${exec_prefix}/lib/cooledit\" @DEFS@ 
+ subdir = rxvt

@@ -1,0 +1,12 @@
+$OpenBSD: patch-icon_Makefile_in,v 1.1 2005/02/13 14:18:07 alek Exp $
+--- icon/Makefile.in.orig	Fri Feb 11 15:42:16 2005
++++ icon/Makefile.in	Fri Feb 11 15:42:24 2005
+@@ -141,7 +141,7 @@ rxvt_u_int64_typedef = @rxvt_u_int64_typ
+ rxvt_u_intp_define = @rxvt_u_intp_define@
+ bin_PROGRAMS = coolicon coolbrowse coolmessage coollistbox coolquery coolinput
+ 
+-INCLUDES = -I$(top_srcdir)/widget -I$(top_srcdir) -I$(top_srcdir)/intl
++INCLUDES = -I$(top_srcdir)/widget -I$(top_srcdir)
+ 
+ coolicon_SOURCES = icon.c coolicon.c iconmanager.c percentsubs.c trivoptions.c
+ coolbrowse_SOURCES = coolbrowse.c trivoptions.c
