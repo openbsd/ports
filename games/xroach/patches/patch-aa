@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Jun  8 22:12:04 1993
-+++ Makefile	Wed Sep 22 18:16:29 1999
+--- Makefile.orig	Tue Jun  8 20:00:00 1993
++++ Makefile	Fri Mar 31 15:51:26 2000
 @@ -1,9 +1,17 @@
 -#	@(#)Makefile	8.1 (Berkeley) 6/8/93
 +#	@(#)Makefile	8.1 (Berkeley) 5/31/93
@@ -14,12 +14,12 @@
 +DPADD+=		${X11BASE}/lib/libX11.a ${LIBM}
 +CFLAGS+=	-I${X11BASE}/include -I${.CURDIR}/bitmaps
 +LDDESTDIR+=	-L${X11BASE}/lib
-+LDADD+=	${LDDESTDIR}	-lX11 -lm
++LDADD+=		${LDDESTDIR}	-lX11 -lm
 +
-+MANDIR=        ${X11BASE}/man/cat
++MANDIR=	${PREFIX}/man/cat
 +
-+BINOWN=        bin
-+BINDIR=        ${X11BASE}/bin
-+BINMODE=       755
++BINOWN=	root
++BINDIR=	${PREFIX}/bin
++BINMODE=755
  
  .include <bsd.prog.mk>
