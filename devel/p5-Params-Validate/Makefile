@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/10/16 12:39:16 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2002/10/30 04:48:20 pvalchev Exp $
 
 COMMENT=	"perl module to validate function/method parameters"
 
@@ -15,9 +15,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Attribute/}
-
-BUILD_DEPENDS=	:p5-Attribute-Handlers-*:devel/p5-Attribute-Handlers
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl
 
