@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/01/13 11:17:07 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2001/02/02 19:34:51 camield Exp $
 bin/axfr-get
 bin/axfrdns
 bin/axfrdns-conf
@@ -55,4 +55,6 @@ man/man8/tinydns.8
 man/man8/walldns-conf.8
 man/man8/walldns.8
 share/djbdns/dnsroots.global
+@exec if [ -f /etc/%f ]; then echo "\n!! WARNING !!\t/etc/%f exists\n\t\tPlease verify with %D/%F" ; else /bin/cp %D/%F /etc; fi
 @dirrm share/djbdns
+@unexec echo "Please remove /etc/dnsroots.global manually"

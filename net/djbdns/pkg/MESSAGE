@@ -1,12 +1,6 @@
 
 Help on configuration: ${HOMEPAGE}
 
-=> _Before_ running dnscache-conf you need to install the 'dnsroots'
-   file into /etc. This port deliberately does not touch /etc.
-   dnscache-conf tries /etc/dnsroots.local first, then /etc/dnsroots.global.
-
-cp ${PREFIX}/share/djbdns/dnsroots.global /etc
-
 => _After_ running dnscache-conf, do the following in your new
    dnscache directory to get a strong(er) random seed:
 
