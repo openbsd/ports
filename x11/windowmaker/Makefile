@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.53 2002/05/13 08:18:20 wilfried Exp $
+# $OpenBSD: Makefile,v 1.54 2002/07/23 07:58:04 wilfried Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
+COMMENT-lang=		"language subpackage for Window Maker"
 
-DISTNAME=		WindowMaker-0.80.0
+V=			0.80.1
+DISTNAME=		WindowMaker-${V}
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.528
 
 HOMEPAGE=		http://www.windowmaker.org/
 
@@ -20,11 +21,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_WINDOWMAKER:=source/release/}
 EXTRACT_SUFX=		.tar.bz2
 
-LIB_DEPENDS=		jpeg.62::graphics/jpeg \
-			tiff.35::graphics/tiff \
-			png.2::graphics/png \
-			ungif.5::graphics/libungif
-
 NO_REGRESS=		Yes
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
@@ -36,18 +32,28 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-dependency-tracking \
 			--enable-gnome \
 			--enable-kde
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng"
-
-FLAVORS=		i18n
-FLAVOR?=
-
-.if ${FLAVOR:L:Mi18n}
-MODULES=		gettext
-CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ENV+=		LINGUAS='bg cs da de el es et fi fr gl hr hu it ja ko nl no pl pt ro ru sk sv tr zh_CN zh_TW.Big5'
-.endif
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng" LIBS="-L${LOCALBASE}/lib" \
+			LINGUAS='bg cs da de el es et fi fr gl hr hu it ja ko ms nl no pl pt ro ru sk sv tr zh_CN zh_TW.Big5'
 
 SYSCONFDIR=		${PREFIX}/share/WindowMaker/Defaults
+
+MULTI_PACKAGES= 	-lang
+
+.for i in ${MULTI_PACKAGES}
+PKGNAME$i=      	windowmaker${i}-${V}
+.endfor
+
+SUBPACKAGE?=
+
+.if defined(PACKAGING) && !empty(SUBPACKAGE)
+RUN_DEPENDS=		:windowmaker->=0.80.1:x11/windowmaker
+.else
+MODULES=		gettext
+LIB_DEPENDS=		jpeg.62::graphics/jpeg \
+			tiff.35::graphics/tiff \
+			png.2::graphics/png \
+			ungif.5::graphics/libungif
+.endif
 
 post-patch:
 	@perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" \
