@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2001/05/08 00:09:40 matt Exp $
 bin/pdmenu
 man/man1/pdmenu.1
 man/man5/pdmenurc.5
