@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/07/09 20:37:11 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/04/03 10:37:40 avsm Exp $
 horde/COPYING
 horde/README
 horde/config/.htaccess
@@ -17,6 +17,7 @@ horde/docs/CONTRIBUTING
 horde/docs/CREDITS
 horde/docs/HACKING
 horde/docs/INSTALL
+horde/docs/TRANSLATIONS
 horde/graphics/alerts/error.gif
 horde/graphics/alerts/message.gif
 horde/graphics/alerts/success.gif
@@ -60,6 +61,7 @@ horde/graphics/mime/source-java.gif
 horde/graphics/mime/text.gif
 horde/graphics/mime/unknown.gif
 horde/graphics/mime/vcard.gif
+horde/graphics/mime/video.gif
 horde/graphics/mime/xml.gif
 horde/graphics/prefs.gif
 horde/graphics/problem.gif
@@ -80,8 +82,10 @@ horde/index.php
 horde/javascript.php
 horde/lib/.htaccess
 horde/lib/Auth.php
+horde/lib/Auth/auto.php
 horde/lib/Auth/ftp.php
 horde/lib/Auth/imap.php
+horde/lib/Auth/krb5.php
 horde/lib/Auth/ldap.php
 horde/lib/Auth/mcal.php
 horde/lib/Auth/sql.php
@@ -91,6 +95,15 @@ horde/lib/Cache/file.php
 horde/lib/Category.php
 horde/lib/Category/sql.php
 horde/lib/CategoryTree.php
+horde/lib/Cipher.php
+horde/lib/Cipher/BlockMode.php
+horde/lib/Cipher/BlockMode/cbc.php
+horde/lib/Cipher/BlockMode/cfb64.php
+horde/lib/Cipher/BlockMode/ecb.php
+horde/lib/Cipher/BlockMode/ofb64.php
+horde/lib/Cipher/blowfish.php
+horde/lib/Cipher/cast128.php
+horde/lib/Cipher/rc2.php
 horde/lib/Data.php
 horde/lib/Group.php
 horde/lib/Help.php
@@ -107,6 +120,7 @@ horde/lib/MIME/Viewer/deb.php
 horde/lib/MIME/Viewer/default.php
 horde/lib/MIME/Viewer/enriched.php
 horde/lib/MIME/Viewer/enscript.php
+horde/lib/MIME/Viewer/images.php
 horde/lib/MIME/Viewer/msexcel.php
 horde/lib/MIME/Viewer/mspowerpoint.php
 horde/lib/MIME/Viewer/msword.php
@@ -127,16 +141,32 @@ horde/lib/Prefs/session.php
 horde/lib/Prefs/sql.php
 horde/lib/PrefsUI.php
 horde/lib/Registry.php
+horde/lib/SQL.php
 horde/lib/Secret.php
 horde/lib/Serialize.php
 horde/lib/SessionCache.php
+horde/lib/SessionHandler.php
+horde/lib/SessionHandler/dbm.php
+horde/lib/SessionHandler/mysql.php
+horde/lib/SessionHandler/pgsql.php
+horde/lib/SessionHandler/sapdb.php
+horde/lib/SessionHandler/sql.php
 horde/lib/Text.php
 horde/lib/Token.php
 horde/lib/Token/file.php
 horde/lib/Token/sql.php
+horde/lib/VFS.php
+horde/lib/VFS/ListItem.php
+horde/lib/VFS/Object.php
+horde/lib/VFS/file.php
+horde/lib/VFS/ftp.php
+horde/lib/VFS/musql.php
+horde/lib/VFS/sql.php
+horde/lib/VFS/sql_file.php
 horde/lib/base.php
 horde/lib/version.php
 horde/locale/.htaccess
+horde/locale/bg_BG/LC_MESSAGES/horde.mo
 horde/locale/cs_CZ/LC_MESSAGES/horde.mo
 horde/locale/da_DK/LC_MESSAGES/horde.mo
 horde/locale/de_DE/LC_MESSAGES/horde.mo
@@ -145,17 +175,21 @@ horde/locale/en_US/help.xml
 horde/locale/es_ES/LC_MESSAGES/horde.mo
 horde/locale/et_EE/LC_MESSAGES/horde.mo
 horde/locale/fi_FI/LC_MESSAGES/horde.mo
+horde/locale/fi_FI/help.xml
 horde/locale/fr_FR/LC_MESSAGES/horde.mo
 horde/locale/hu_HU/LC_MESSAGES/horde.mo
 horde/locale/it_IT/LC_MESSAGES/horde.mo
 horde/locale/ja_JP/LC_MESSAGES/horde.mo
 horde/locale/ko_KR/LC_MESSAGES/horde.mo
+horde/locale/lt_LT/LC_MESSAGES/horde.mo
+horde/locale/lv_LV/LC_MESSAGES/horde.mo
 horde/locale/nb_NO/LC_MESSAGES/horde.mo
 horde/locale/nl_NL/LC_MESSAGES/horde.mo
 horde/locale/nn_NO/LC_MESSAGES/horde.mo
 horde/locale/pl_PL/LC_MESSAGES/horde.mo
 horde/locale/pt_BR/LC_MESSAGES/horde.mo
 horde/locale/pt_PT/LC_MESSAGES/horde.mo
+horde/locale/ro_RO/LC_MESSAGES/horde.mo
 horde/locale/ru_RU.KOI8-R/LC_MESSAGES/horde.mo
 horde/locale/ru_RU/LC_MESSAGES/horde.mo
 horde/locale/sk_SK/LC_MESSAGES/horde.mo
@@ -170,6 +204,7 @@ horde/menu.php
 horde/po/.htaccess
 horde/po/Makefile
 horde/po/README
+horde/po/bg_BG.po
 horde/po/cs_CZ.po
 horde/po/da_DK.po
 horde/po/de_DE.po
@@ -179,22 +214,27 @@ horde/po/et_EE.po
 horde/po/extract.pl
 horde/po/fi_FI.po
 horde/po/fr_FR.po
+horde/po/horde.pot
 horde/po/hu_HU.po
 horde/po/it_IT.po
 horde/po/ja_JP.po
 horde/po/ko_KR.po
+horde/po/lt_LT.po
+horde/po/lv_LV.po
 horde/po/nb_NO.po
 horde/po/nl_NL.po
 horde/po/nn_NO.po
 horde/po/pl_PL.po
 horde/po/pt_BR.po
 horde/po/pt_PT.po
+horde/po/ro_RO.po
 horde/po/ru_RU.KOI8-R.po
 horde/po/ru_RU.po
 horde/po/shtool
 horde/po/sk_SK.po
 horde/po/sl_SI.po
 horde/po/sv_SE.po
+horde/po/translation.php
 horde/po/uk_UA.po
 horde/po/wintokoi.pl
 horde/po/xgettext.sh
@@ -213,6 +253,8 @@ horde/scripts/db/mysql_drop.sql
 horde/scripts/db/pgsql_create.sql
 horde/scripts/db/pgsql_drop.sql
 horde/scripts/db/prefs.sql
+horde/scripts/db/sessionhandler.sql
+horde/scripts/db/sessionhandler_sapdb.sql
 horde/scripts/horde-rsync.sh
 horde/scripts/ldap/horde.schema
 horde/scripts/mime_mapping/Makefile
@@ -301,6 +343,8 @@ horde/util/special_characters.php
 @dirrm horde/locale/ru_RU.KOI8-R/LC_MESSAGES
 @dirrm horde/locale/ru_RU.KOI8-R
 @dirrm horde/locale/ru_RU
+@dirrm horde/locale/ro_RO/LC_MESSAGES
+@dirrm horde/locale/ro_RO
 @dirrm horde/locale/pt_PT/LC_MESSAGES
 @dirrm horde/locale/pt_PT
 @dirrm horde/locale/pt_BR/LC_MESSAGES
@@ -313,6 +357,10 @@ horde/util/special_characters.php
 @dirrm horde/locale/nl_NL
 @dirrm horde/locale/nb_NO/LC_MESSAGES
 @dirrm horde/locale/nb_NO
+@dirrm horde/locale/lv_LV/LC_MESSAGES
+@dirrm horde/locale/lv_LV
+@dirrm horde/locale/lt_LT/LC_MESSAGES
+@dirrm horde/locale/lt_LT
 @dirrm horde/locale/ko_KR/LC_MESSAGES
 @dirrm horde/locale/ko_KR
 @dirrm horde/locale/ja_JP/LC_MESSAGES
@@ -338,12 +386,18 @@ horde/util/special_characters.php
 @dirrm horde/locale/da_DK
 @dirrm horde/locale/cs_CZ/LC_MESSAGES
 @dirrm horde/locale/cs_CZ
+@dirrm horde/locale/bg_BG/LC_MESSAGES
+@dirrm horde/locale/bg_BG
 @dirrm horde/locale
+@dirrm horde/lib/VFS
 @dirrm horde/lib/Token
+@dirrm horde/lib/SessionHandler
 @dirrm horde/lib/Prefs
 @dirrm horde/lib/Notification
 @dirrm horde/lib/MIME/Viewer
 @dirrm horde/lib/MIME
+@dirrm horde/lib/Cipher/BlockMode
+@dirrm horde/lib/Cipher
 @dirrm horde/lib/Category
 @dirrm horde/lib/Cache
 @dirrm horde/lib/Auth
