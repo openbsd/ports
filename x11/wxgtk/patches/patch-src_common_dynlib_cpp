@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_common_dynlib_cpp,v 1.1.1.1 2002/11/16 04:34:48 todd Exp $
+--- src/common/dynlib.cpp.orig	Tue Oct 29 17:01:59 2002
++++ src/common/dynlib.cpp	Tue Oct 29 17:04:06 2002
+@@ -54,7 +54,7 @@
+     // behaviour (Win won't let you load a library with missing symbols) and
+     // RTLD_GLOBAL because it is needed sometimes and probably doesn't hurt
+     // otherwise
+-#   if defined( __osf__ )
++#   if defined( __osf__ ) || defined(__OpenBSD__)
+ #       define wxDllOpen(lib)                dlopen(lib.fn_str(), RTLD_LAZY )
+ #   else
+ #       define wxDllOpen(lib)                dlopen(lib.fn_str(), RTLD_LAZY | RTLD_GLOBAL)
+@@ -202,6 +202,9 @@ wxDllLoader::GetProgramHandle(void)
+ {
+ #if defined( HAVE_DLOPEN ) && !defined(__EMX__)
+    // optain handle for main program
++#ifndef RTLD_NOW
++#define RTLD_NOW RTLD_LAZY
++#endif
+    return dlopen(NULL, RTLD_NOW/*RTLD_LAZY*/); 
+ #elif defined (HAVE_SHL_LOAD)
+    // shl_findsymbol with NULL handle looks up in main program

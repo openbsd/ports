@@ -1,0 +1,7 @@
+wxWindows is a C++ cross-platform GUI toolkit which was started as a one man
+project by Julian Smart. More information about wxWindows can be found at his
+Julian Smart's homepage. Today, wxWindows is being developed by a core team
+of handful of people from many countries and gets input in the form of user
+request and bug reports from its many users worldwide. 
+
+WWW: ${HOMEPAGE}
