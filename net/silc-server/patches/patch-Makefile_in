@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2002/12/16 03:40:02 brad Exp $
---- Makefile.in.orig	Thu Dec  5 15:44:04 2002
-+++ Makefile.in	Sat Dec 14 21:37:10 2002
-@@ -707,20 +707,12 @@ install-dirs-client: install-dirs
+$OpenBSD: patch-Makefile_in,v 1.2 2003/01/22 03:34:59 brad Exp $
+--- Makefile.in.orig	Wed Jan  8 10:25:40 2003
++++ Makefile.in	Sat Jan 11 08:20:57 2003
+@@ -709,20 +709,12 @@ install-dirs-client: install-dirs
  	-mkdir -p $(mandir)/man1
  
  install-dirs-server: install-dirs
@@ -23,7 +23,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2002/12/16 03:40:02 brad Exp $
  
  doc-install-client: doc-install
  	$(INSTALL_DATA) $(srcdir)/irssi/silc.conf $(docdir)/example_silc.conf
-@@ -729,13 +721,8 @@ doc-install-client: doc-install
+@@ -731,13 +723,8 @@ doc-install-client: doc-install
  	fi
  
  doc-install-server: doc-install
@@ -39,7 +39,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2002/12/16 03:40:02 brad Exp $
  
  etc-install-client:
  	-@if test '!' -d $(srcdir)/irssi ; then \
-@@ -766,7 +753,7 @@ toolkit-install:
+@@ -768,7 +755,7 @@ toolkit-install:
  examples-install:
  	-mkdir -p $(docdir)/examples/
  	-$(INSTALL_DATA) $(srcdir)/doc/examples/README $(docdir)/examples/
@@ -48,7 +48,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2002/12/16 03:40:02 brad Exp $
  
  generate-server-key:
  	-@if test '!' -f $(etcdir)/silcd.pub ; then \
-@@ -775,7 +762,7 @@ generate-server-key:
+@@ -777,7 +764,7 @@ generate-server-key:
  
  @SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs-client sim-install doc-install-client etc-install-client
  @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs-client install-dirs-server sim-install doc-install-client doc-install-server toolkit-install examples-install etc-install-client etc-install-server generate-server-key
