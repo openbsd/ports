@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/03/24 23:28:11 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/04/02 19:50:17 rohee Exp $
 # Original from: Marco S Hyman <marc@OpenBSD.ORG>
 
 DISTNAME=	xv-3.10a
@@ -29,8 +29,8 @@ PATCHFILES=     xv-3.10a.JPEG-patch xv-3.10a.TIFF-patch
 # (xpm.patch is integrated in xvpng.diff that is in xv-3.10a-png-1.2d.tar.gz)
 # longname.patch is integrated in patches/patch-aj
 
-MASTER_SITES1=	ftp://ftp.trilon.com/pub/xv/patches/
-PATCHFILES+=	deepcolor.patch:1 exceed_grab_patch.txt:1 gifpatch:1 \
+MASTER_SITES1=	http://ftp.trilon.com/pub/xv/patches/
+PATCHFILES+=	deepcolor.patch:1 exceed_grab.patch:1 gifpatch:1 \
 		grabpatch:1 mp-tiff-patch:1 pdf.patch:1 vispatch:1 \
 		xvpng-fix2.patch:1
 
