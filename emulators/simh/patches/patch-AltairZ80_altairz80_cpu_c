@@ -1,0 +1,12 @@
+$OpenBSD: patch-AltairZ80_altairz80_cpu_c,v 1.1 2002/04/08 02:47:42 form Exp $
+--- AltairZ80/altairz80_cpu.c.orig	Mon Apr  8 10:33:51 2002
++++ AltairZ80/altairz80_cpu.c	Mon Apr  8 10:34:19 2002
+@@ -5,7 +5,7 @@
+ */
+ 
+ #include <stdio.h>
+-#include "altairZ80_defs.h"
++#include "altairz80_defs.h"
+ 
+ #define PCQ_SIZE	64				/* must be 2**n */
+ #define PCQ_MASK	(PCQ_SIZE - 1)

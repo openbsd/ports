@@ -1,0 +1,12 @@
+$OpenBSD: patch-AltairZ80_altairz80_sio_c,v 1.1 2002/04/08 02:47:42 form Exp $
+--- AltairZ80/altairz80_sio.c.orig	Mon Apr  8 10:34:54 2002
++++ AltairZ80/altairz80_sio.c	Mon Apr  8 10:34:57 2002
+@@ -29,7 +29,7 @@
+ #include <stdio.h>
+ #include <ctype.h>
+ 
+-#include "altairZ80_defs.h"
++#include "altairz80_defs.h"
+ #include "sim_sock.h"
+ #include "sim_tmxr.h"
+ #include <time.h>

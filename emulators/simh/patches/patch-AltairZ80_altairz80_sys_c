@@ -1,0 +1,12 @@
+$OpenBSD: patch-AltairZ80_altairz80_sys_c,v 1.1 2002/04/08 02:47:42 form Exp $
+--- AltairZ80/altairz80_sys.c.orig	Mon Apr  8 10:35:06 2002
++++ AltairZ80/altairz80_sys.c	Mon Apr  8 10:35:10 2002
+@@ -5,7 +5,7 @@
+ */
+ 
+ #include <ctype.h>
+-#include "altairZ80_defs.h"
++#include "altairz80_defs.h"
+ 
+ extern DEVICE cpu_dev;
+ extern DEVICE dsk_dev;
