@@ -1,6 +1,26 @@
-$OpenBSD: patch-aclocal_m4,v 1.1 2004/02/01 14:55:03 espie Exp $
---- aclocal.m4.orig	2004-01-18 18:32:48.000000000 +0100
-+++ aclocal.m4	2004-01-22 14:45:34.000000000 +0100
+$OpenBSD: patch-aclocal_m4,v 1.2 2004/02/03 22:06:41 espie Exp $
+--- aclocal.m4.orig	2004-01-18 14:00:28.000000000 +0100
++++ aclocal.m4	2004-02-03 22:49:17.000000000 +0100
+@@ -4023,8 +4023,8 @@ fi
+ 
+ AC_CACHE_VAL(kde_cv_try_link_python_$1,
+ [
+-kde_save_cflags="$CFLAGS"
+-CFLAGS="$CFLAGS $PYTHONINC"
++kde_save_cppflags="$CPPFLAGS"
++CPPFLAGS="$CPPFLAGS $PYTHONINC"
+ kde_save_libs="$LIBS"
+ LIBS="$LIBS $LIBPYTHON $2 $LIBDL $LIBSOCKET"
+ kde_save_ldflags="$LDFLAGS"
+@@ -4039,7 +4039,7 @@ AC_TRY_LINK(
+ 	[kde_cv_try_link_python_$1=yes],
+ 	[kde_cv_try_link_python_$1=no]
+ )
+-CFLAGS="$kde_save_cflags"
++CPPFLAGS="$kde_save_cppflags"
+ LIBS="$kde_save_libs"
+ LDFLAGS="$kde_save_ldflags"
+ ])
 @@ -6448,6 +6448,7 @@ AC_DEFUN([AC_LIBTOOL_SYS_DYNAMIC_LINKER]
  [AC_MSG_CHECKING([dynamic linker characteristics])
  library_names_spec=
