@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_safe_mysqld.sh,v 1.6 2001/09/10 02:59:35 brad Exp $
---- scripts/safe_mysqld.sh.orig	Sat Sep  8 15:08:13 2001
-+++ scripts/safe_mysqld.sh	Sun Sep  9 20:12:02 2001
-@@ -68,30 +68,9 @@ parse_arguments() {
+$OpenBSD: patch-scripts_safe_mysqld.sh,v 1.7 2002/03/19 19:11:39 brad Exp $
+--- scripts/safe_mysqld.sh.orig	Thu Feb 14 12:30:15 2002
++++ scripts/safe_mysqld.sh	Tue Mar 19 13:01:45 2002
+@@ -68,34 +68,16 @@ parse_arguments() {
    done
  }
  
@@ -35,7 +35,15 @@ $OpenBSD: patch-scripts_safe_mysqld.sh,v 1.6 2001/09/10 02:59:35 brad Exp $
  
  MYSQL_UNIX_PORT=${MYSQL_UNIX_PORT:-@MYSQL_UNIX_ADDR@}
  MYSQL_TCP_PORT=${MYSQL_TCP_PORT:-@MYSQL_TCP_PORT@}
-@@ -221,10 +200,10 @@ fi
+-user=@MYSQLD_USER@
++user=mysql
++group=mysql
++
++socket_dir=`dirname $MYSQL_UNIX_PORT`
+ 
+ # Use the mysqld-max binary by default if the user doesn't specify a binary
+ if test -x $ledir/mysqld-max
+@@ -221,10 +203,17 @@ fi
  echo "Starting $MYSQLD daemon with databases from $DATADIR"
  
  # Does this work on all systems?
@@ -47,10 +55,17 @@ $OpenBSD: patch-scripts_safe_mysqld.sh,v 1.6 2001/09/10 02:59:35 brad Exp $
 +then
 +  ulimit -n 256 > /dev/null 2>&1		# Fix for BSD and FreeBSD systems
 +fi
++
++if test ! -d $socket_dir
++then
++   mkdir -p $socket_dir
++   chown $user:$group $socket_dir
++   chmod 711 $socket_dir
++fi
  
  echo "`date +'%y%m%d %H:%M:%S  mysqld started'`" >> $err_log
  while true
-@@ -239,34 +218,6 @@ do
+@@ -239,34 +228,6 @@ do
    if test ! -f $pid_file		# This is removed if normal shutdown
    then
      break

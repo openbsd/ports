@@ -1,12 +1,11 @@
 #!/bin/sh
-# $OpenBSD: INSTALL-server,v 1.6 2002/02/26 03:42:06 brad Exp $
+# $OpenBSD: INSTALL-server,v 1.7 2002/03/19 19:11:39 brad Exp $
 #
 # Pre/post-installation setup of MySQL
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 DB_DIR=${DB_DIR}
-SOCKET_DIR=${SOCKET_DIR}
 MYSQLUSER=mysql
 MYSQLGROUP=mysql
 
@@ -51,11 +50,6 @@ do_database_install()
   $PREFIX/bin/mysql_install_db
 }
 
-do_socket_install()
-{
-  install -d -o $MYSQLUSER -g $MYSQLGROUP -m 711 $SOCKET_DIR
-}
-
 # Verify/process the command
 #
 case $2 in 
@@ -69,9 +63,6 @@ case $2 in
 	if [ ! -d $DB_DIR ]; then
 	  do_database_install
 	fi
-        if [ ! -d $SOCKET_DIR ]; then
-	  do_socket_install
-        fi
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
