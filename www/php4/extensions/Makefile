@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/09/12 14:39:28 avsm Exp $
+# $OpenBSD: Makefile,v 1.16 2002/09/14 00:46:02 avsm Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -233,7 +233,7 @@ CONFIGURE_ARGS+=	--without-snmp
 MULTI_PACKAGES+=	-snmp
 COMMENT-snmp=		"snmp protocol extensions for php4"
 CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
-LIB_DEPENDS+=		snmp.42::net/ucd-snmp
+SNMP_DEPENDS=		snmp.42::net/ucd-snmp
 .endif
 
 # pspell
