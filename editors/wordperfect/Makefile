@@ -1,9 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/10 23:14:30 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/25 21:17:15 turan Exp $
 
 PKGNAME=	wordperfect-8.0
 CATEGORIES=     editors
 
 MAINTAINER=	dugsong@monkey.org
+
+LICENSE_TYPE=		COMM
+PERMIT_PACKAGE_CDROM=	commercial
+PERMIT_PACKAGE_FTP=	commercial
+PERMIT_DISTFILES_CDROM=	commercial
+PERMIT_DISTFILES_FTP=	commercial
 
 MASTER_SITES=	see_do-fetch_target
 
