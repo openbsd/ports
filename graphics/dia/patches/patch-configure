@@ -1,5 +1,5 @@
---- configure.orig	Sun Sep 10 07:22:52 2000
-+++ configure	Sun Sep 10 07:23:19 2000
+--- configure.orig	Sun Aug  6 05:47:04 2000
++++ configure	Sun Mar  4 22:19:38 2001
 @@ -4835,7 +4835,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
@@ -9,3 +9,21 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
+@@ -5390,7 +5390,7 @@
+ 
+ 
+ # Extract the first word of "xml-config", so it can be a program name with args.
+-set dummy xml-config; ac_word=$2
++set dummy xml2-config; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+ echo "configure:5396: checking for $ac_word" >&5
+ if eval "test \"`echo '$''{'ac_cv_prog_XML_CONFIG'+set}'`\" = set"; then
+@@ -5404,7 +5404,7 @@
+   for ac_dir in $ac_dummy; do
+     test -z "$ac_dir" && ac_dir=.
+     if test -f $ac_dir/$ac_word; then
+-      ac_cv_prog_XML_CONFIG="xml-config"
++      ac_cv_prog_XML_CONFIG="xml2-config"
+       break
+     fi
+   done

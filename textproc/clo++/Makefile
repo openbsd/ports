@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/31 10:02:48 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/04 14:44:12 kevlo Exp $
 
 DISTNAME=	clo++-0.3.0
 CATEGORIES=	textproc
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/
 
-LIB_DEPENDS=	xml.4::textproc/libxml
+LIB_DEPENDS=	xml2.5::textproc/libxml
 
 CONFIGURE_STYLE= gnu
 

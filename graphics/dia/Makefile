@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/11/20 15:15:40 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/03/04 14:48:44 kevlo Exp $
 
 DISTNAME=	dia-0.86
 # patch in -stable
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.lysator.liu.se/~alla/dia/
 LIB_DEPENDS=	gdk_imlib.19::graphics/imlib \
 		art_lgpl.5::graphics/libart \
 		popt::devel/popt \
-		xml.4::textproc/libxml
+		xml2.5::textproc/libxml
 
 MAINTAINER=	Mark Grimes <obecian@openbsd.org>
 
