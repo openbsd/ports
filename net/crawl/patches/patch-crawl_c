@@ -1,0 +1,11 @@
+--- crawl.c~	Sat Feb 23 17:20:54 2002
++++ crawl.c	Sun Feb 24 02:51:36 2002
+@@ -408,7 +408,7 @@ main(int argc, char **argv)
+ 	char *state = "crawl.state";
+ 	char *external = NULL;
+ 	char *resume = NULL; 
+-	char ch;
++	int ch;
+ 
+ 	progname = argv[0];
+ 	saveimgdir = ".";
