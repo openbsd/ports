@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.601 2004/01/20 17:42:12 sturm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.602 2004/01/22 21:28:49 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -107,6 +107,11 @@ FETCH_CMD?=		/usr/bin/ftp -V -m
 PKG_TMPDIR?=	/var/tmp
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
+.if ${MACHINE_ARCH} != ${ARCH}
+PKG_ARCH?=${MACHINE_ARCH},${ARCH}
+.else
+PKG_ARCH?=${MACHINE_ARCH}
+.endif
 
 # remount those mount points ro before fake.
 # XXX tends to panic the OS
@@ -663,6 +668,7 @@ _PKG_PREREQ+=${WRKPKG}/MESSAGE${SUBPACKAGE}
 .if ${FAKE:L} == "yes"
 PKG_ARGS+=		-S ${WRKINST}
 .endif
+PKG_ARGS+=-A'${PKG_ARCH}'
 .if !defined(_COMMENT)
 ERRORS+="Fatal: Missing comment."
 .endif
