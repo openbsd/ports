@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2003/07/16 16:41:24 jason Exp $
+# $OpenBSD: Makefile,v 1.56 2003/07/17 08:24:24 wilfried Exp $
 
 NOT_FOR_ARCHS=	vax m68k hppa
 
@@ -70,6 +70,9 @@ MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin"
 
 MOB=		${WRKSRC}/dist
 MOZ=		${PREFIX}/mozilla
+
+post-extract:
+	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
 
 pre-configure:
 	@cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/07/16 16:52:24 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2003/07/17 08:24:25 wilfried Exp $
 
 NOT_FOR_ARCHS=	vax m68k hppa
 
@@ -62,6 +62,9 @@ MAKE_ENV=	MOZ_PHOENIX=1 \
 
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/mozilla-firebird
+
+post-extract:
+	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
 
 pre-configure:
 	@cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
