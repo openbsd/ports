@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/01/02 05:11:08 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2004/01/30 18:05:35 sturm Exp $
 
 COMMENT=		"GUI client for MySQL"
 
@@ -39,7 +39,6 @@ CONFIGURE_ENV=		QTDIR=${LOCALBASE} \
 			LOCALBASE=${LOCALBASE}
 
 NO_REGRESS=		Yes
-NO_SYSTRACE=		"test -d '' succeeds"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/mysqlcc ${PREFIX}/bin
