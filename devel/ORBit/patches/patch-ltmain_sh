@@ -1,5 +1,6 @@
---- popt/ltmain.sh.orig	Tue Jul 25 18:28:41 2000
-+++ popt/ltmain.sh	Tue Feb 20 15:59:16 2001
+$OpenBSD: patch-ltmain_sh,v 1.1 2001/03/08 15:01:17 brad Exp $
+--- ltmain.sh.orig	Tue Jan 30 17:50:17 2001
++++ ltmain.sh	Tue Mar  6 23:08:49 2001
 @@ -1079,7 +1079,18 @@ compiler."
  	    # These systems don't actually have c library (as such)
  	    continue
@@ -30,9 +31,9 @@
        -module)
  	module=yes
  	continue
-@@ -1795,6 +1810,9 @@ compiler."
- 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
- 	  # these systems don't actually have a c library (as such)!
+@@ -1799,6 +1814,9 @@ compiler."
+ 	  # rhapsody is a little odd...
+ 	  deplibs="$deplibs -framework System"
  	  ;;
 +        *-*-openbsd*)
 +          # Do not include libc due to us having libc/libc_r.
@@ -40,7 +41,7 @@
  	*)
  	  # Add libc to deplibs on all other systems.
  	  deplibs="$deplibs -lc"
-@@ -3555,40 +3573,6 @@ libdir='$install_libdir'\
+@@ -3571,40 +3589,6 @@ libdir='$install_libdir'\
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2000/09/24 01:23:43 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2001/03/08 15:01:14 brad Exp $
 
-DISTNAME=	ORBit-0.5.3
+DISTNAME=	ORBit-0.5.7
 CATEGORIES=	devel
-NEED_VERSION=	1.310
+NEED_VERSION=	1.336
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/ORBit
 
@@ -27,6 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/orbit
-	${INSTALL_DATA} ${FILESDIR}/orbitrc-sample ${PREFIX}/share/examples/orbit
+	${INSTALL_DATA} ${FILESDIR}/orbitrc-sample \
+	    ${PREFIX}/share/examples/orbit
 
 .include <bsd.port.mk>

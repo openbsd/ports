@@ -1,7 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2000/08/21 12:20:23 brad Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2001/03/08 15:01:20 brad Exp $
 lib/libIDL.so.4.4
-lib/libIIOP.so.5.3
-lib/libORBit.so.5.3
-lib/libORBitCosNaming.so.5.3
-lib/libORBitutil.so.5.3
+lib/libIIOP.so.5.7
+lib/libORBit.so.5.7
+lib/libORBitCosNaming.so.5.7
+lib/libORBitutil.so.5.7
 DYNLIBDIR(%B)

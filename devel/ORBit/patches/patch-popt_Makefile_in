@@ -1,11 +1,12 @@
---- popt/Makefile.in.orig	Mon Aug 21 05:52:25 2000
-+++ popt/Makefile.in	Mon Aug 21 05:52:46 2000
-@@ -160,7 +160,7 @@
+$OpenBSD: patch-popt_Makefile_in,v 1.1 2001/03/08 15:01:17 brad Exp $
+--- popt/Makefile.in.orig	Tue Mar  6 23:02:03 2001
++++ popt/Makefile.in	Tue Mar  6 23:05:00 2001
+@@ -152,7 +152,7 @@ CFLAGS = @CFLAGS@
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
--LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+-LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
 +LINK = $(LIBTOOL) --mode=link $(CCLD) -rpath $(libdir) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
- DIST_SOURCES =  $(libpopt_la_SOURCES) $(test1_SOURCES) $(test2_SOURCES)
  HEADERS =  $(noinst_HEADERS)
  
+ DIST_COMMON =  README ./stamp-h.in COPYING Makefile.am Makefile.in \

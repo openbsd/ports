@@ -1,0 +1,21 @@
+$OpenBSD: patch-libIDL_Makefile_in,v 1.1 2001/03/08 15:01:16 brad Exp $
+--- libIDL/Makefile.in.orig	Tue Jan 30 17:55:59 2001
++++ libIDL/Makefile.in	Tue Mar  6 23:03:52 2001
+@@ -90,7 +90,7 @@ LT_CURRENT = @LT_CURRENT@
+ LT_RELEASE = @LT_RELEASE@
+ LT_REVISION = @LT_REVISION@
+ MAINT = @MAINT@
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ OBJDUMP = @OBJDUMP@
+ PACKAGE = @PACKAGE@
+ RANLIB = @RANLIB@
+@@ -120,7 +120,7 @@ BUILT_SOURCES = lexer.c parser.c parser.
+ 
+ libIDL_la_SOURCES = parser.c parser.h lexer.c 			  ns.c util.c util.h rename.h
+ 
+-libIDL_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)				  -release $(LT_RELEASE)
++libIDL_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ 
+ m4datadir = $(datadir)/aclocal
