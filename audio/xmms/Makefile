@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/25 12:52:24 espie Exp $
-# $Id: Makefile,v 1.2 2001/07/25 12:52:24 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/07/25 13:01:19 espie Exp $
+# $Id: Makefile,v 1.3 2001/07/25 13:01:19 espie Exp $
 
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
@@ -35,10 +35,14 @@ MASTER_SITES0=		http://vedge.com.ar/hack/
 FLAVORS=		no_esd no_vorbis
 FLAVOR?=
 MULTI_PACKAGES=
-.if ${FLAVOR:L:Nno_esd}
+.if ${FLAVOR:L:Mno_esd}
+FLAVOR:=${FLAVOR:L:Nno_esd}
+.else
 MULTI_PACKAGES+=	-esd
 .endif
-.if ${FLAVOR:L:Nno_vorbis}
+.if ${FLAVOR:L:Mno_vorbis}
+FLAVOR:=${FLAVOR:L:Nno_vorbis}
+.else
 MULTI_PACKAGES+=	-vorbis
 .endif
 
