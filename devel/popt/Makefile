@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/12/04 16:00:29 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/12/07 14:14:21 brad Exp $
 
 DISTNAME=	popt-1.5.1
 CATEGORIES=	devel
@@ -15,6 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/popt-1.5
+
+MAKE_FLAGS=	libpopt_la_LDFLAGS="-version-info 0:1:0"
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
