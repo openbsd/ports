@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/04 00:52:35 naddy Exp $
+include/dockapp.h
+lib/libdockapp.a
+lib/libdockapp.la
+share/doc/libdockapp/COPYING
+%%SHARED%%
+@dirrm share/doc/libdockapp

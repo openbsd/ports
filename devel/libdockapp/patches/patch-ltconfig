@@ -1,0 +1,49 @@
+$OpenBSD: patch-ltconfig,v 1.1.1.1 2001/01/04 00:52:35 naddy Exp $
+--- ltconfig.orig	Thu Dec 30 12:37:48 1999
++++ ltconfig	Thu Dec 21 10:01:21 2000
+@@ -1061,6 +1061,9 @@
+     with_gnu_ld=no
+   fi
+   ;;
++openbsd*)
++  with_gnu_ld=no
++  ;;
+ 
+ esac
+ 
+@@ -1317,10 +1320,18 @@
+     ;;
+ 
+   openbsd*)
+-    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
+-    hardcode_libdir_flag_spec='-R$libdir'
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
++    case "$host_os" in
++      openbsd2.[01234567])
++       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
++       hardcode_libdir_flag_spec='-R$libdir'
++      ;;
++      *)
++       archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
++       hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      ;;
++    esac
+     ;;
+ 
+   os2*)
+@@ -1857,13 +1868,10 @@
+ 
+ openbsd*)
+   version_type=sunos
+-  if test "$with_gnu_ld" = yes; then
+-    need_lib_prefix=no
+-    need_version=no
+-  fi
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
++  deplibs_check_method='pass_all'
+   ;;
+ 
+ os2*)
