@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.2 2001/11/10 15:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/01/31 20:41:38 pvalchev Exp $
 
 COMMENT=		"proof assistant based on a typed lambda calculus"
 
 DISTNAME=		coq-7.0
 CATEGORIES=		math
-NEED_VERSION=		1.457
+NEED_VERSION=		1.504
 HOMEPAGE=		http://coq.inria.fr/
 
-MAINTAINER=		Yozo Toda <yozo@imit.chiba-u.ac.jp>
+MAINTAINER=		Yozo Toda <yozo@v007.vaio.ne.jp>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.inria.fr/INRIA/coq/V7.0/ \
-			ftp://ftp.imit.chiba-u.ac.jp/pub/pub.yozo/tmp/ftp.inria.fr/INRIA/Projects/coq/coq/V7.0/
+MASTER_SITES=		ftp://ftp.inria.fr/INRIA/coq/V7.0/
 MASTER_SITES0=		${MASTER_SITES:S@$@doc/@}
 DISTFILES=		${DISTNAME}.tar.gz \
 			doc-html.tar.gz:0 \
