@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.187 2000/02/09 00:23:26 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.188 2000/02/09 00:26:32 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -654,14 +654,18 @@ INSTALL_DATA= \
 	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE}
 INSTALL_MAN= \
 	${INSTALL} ${INSTALL_COPY} -o ${MANOWN} -g ${MANGRP} -m ${MANMODE}
+
+# DIRMODE lives in bsd.own.mk, but only starting from OpenBSD 2.7 !
+DIRMODE?=755
+
 INSTALL_PROGRAM_DIR= \
-	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
+	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${DIRMODE}
 INSTALL_SCRIPT_DIR= \
 	${INSTALL_PROGRAM_DIR}
 INSTALL_DATA_DIR= \
-	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m ${BINMODE}
+	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m ${DIRMODE}
 INSTALL_MAN_DIR= \
-	${INSTALL} -d -o ${MANOWN} -g ${MANGRP} -m ${BINMODE}
+	${INSTALL} -d -o ${MANOWN} -g ${MANGRP} -m ${DIRMODE}
 
 INSTALL_MACROS=	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			BSD_INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
