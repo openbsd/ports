@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/12/17 11:27:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/01/18 02:30:48 espie Exp $
 
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.305
@@ -32,6 +32,9 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
 USE_GMAKE=		Yes
 CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2
+
+# Ensure qt2 will always be at the front
+MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${LOCALBASE}/lib/qt2'
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
