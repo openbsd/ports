@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$OpenBSD: bind9-enable,v 1.8 2001/10/08 23:01:51 jakob Exp $
+#	$OpenBSD: bind9-enable,v 1.9 2001/11/26 23:25:18 jakob Exp $
 #
 #	this script replaces OpenBSD named files with the corresponding
 #	files from BIND v9.
@@ -82,7 +82,8 @@ done
 for file in \
     named rndc lwresd \
     dnssec-keygen dnssec-makekeyset dnssec-signkey dnssec-signzone \
-    named-checkconf named-checkzone
+    named-checkconf named-checkzone \
+    rndc-confgen
 do
     echo " $BINDIR/$file -> $PREFIX/sbin/$file"
     rm -f $BINDIR/$file

@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# $OpenBSD: DEINSTALL,v 1.1 2001/11/26 23:25:18 jakob Exp $
+
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+[ -e /usr/sbin/lwresd ] && $PREFIX/sbin/bind9-disable

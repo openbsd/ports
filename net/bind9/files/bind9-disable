@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$OpenBSD: bind9-disable,v 1.2 2001/10/08 23:01:51 jakob Exp $
+#	$OpenBSD: bind9-disable,v 1.3 2001/11/26 23:25:18 jakob Exp $
 #
 #	this script disables BIND v9 by removing links created by
 #	bind9-enable.
@@ -37,7 +37,8 @@ for link in \
     dig host nslookup nsupdate \
     named rndc lwresd \
     dnssec-keygen dnssec-makekeyset dnssec-signkey dnssec-signzone \
-    named-checkconf named-checkzone
+    named-checkconf named-checkzone \
+    rndc-confgen
 do
     if [ -L $BINDIR/$link ]; then
         echo " $link"
