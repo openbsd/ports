@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.1 1997/12/03 04:12:11 angelos Exp $
+# $Id: Makefile,v 1.2 1997/12/03 04:14:02 angelos Exp $
 #
 
 #   SUBDIR += a2ps
@@ -38,7 +38,7 @@
 #   SUBDIR += tex
 #   SUBDIR += texinfo
 #   SUBDIR += tr2latex
-#   SUBDIR += transfig
+    SUBDIR += transfig
 #   SUBDIR += virtualpaper
 #   SUBDIR += xdvi
 #   SUBDIR += xmbibtex
