@@ -1,17 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/07/14 17:11:05 todd Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/08/03 13:22:01 todd Exp $
 bin/mhub
 bin/xsendbut
+include/ggi/
 include/ggi/errors.h
 include/ggi/events.h
 include/ggi/gg.h
 include/ggi/gii-unix.h
 include/ggi/gii.h
+include/ggi/input/
 include/ggi/input/lin_kbd.h
 include/ggi/input/xwin.h
+include/ggi/internal/
 include/ggi/internal/gii-dl.h
 include/ggi/internal/gii.h
 include/ggi/keyboard.h
 include/ggi/system.h
+lib/ggi/
+lib/ggi/filter/
 lib/ggi/filter/keytrans.a
 lib/ggi/filter/keytrans.la
 lib/ggi/filter/mouse.a
@@ -20,6 +25,7 @@ lib/ggi/filter/save.a
 lib/ggi/filter/save.la
 lib/ggi/filter/tcp.a
 lib/ggi/filter/tcp.la
+lib/ggi/input/
 lib/ggi/input/file.a
 lib/ggi/input/file.la
 lib/ggi/input/linux_mouse.a
@@ -42,67 +48,67 @@ lib/libgg.a
 lib/libgg.la
 lib/libgii.a
 lib/libgii.la
-man/man1/mhub.1
-man/man3/giiAddEventMask.3
-man/man3/giiClose.3
-man/man3/giiEventPoll.3
-man/man3/giiEventRead.3
-man/man3/giiEventSelect.3
-man/man3/giiEventSend.3
-man/man3/giiEventsQueued.3
-man/man3/giiExit.3
-man/man3/giiGetEventMask.3
-man/man3/giiInit.3
-man/man3/giiJoinInputs.3
-man/man3/giiMTInit.3
-man/man3/giiOpen.3
-man/man3/giiPanic.3
-man/man3/giiQueryDeviceInfo.3
-man/man3/giiQueryDeviceInfoByNumber.3
-man/man3/giiQueryValInfo.3
-man/man3/giiRemoveEventMask.3
-man/man3/giiSetEventMask.3
-man/man3/giiSplitInputs.3
-man/man3/gii_any_event.3
-man/man3/gii_cmd_event.3
-man/man3/gii_cmd_nodata_event.3
-man/man3/gii_cmddata_getdevinfo.3
-man/man3/gii_cmddata_getvalinfo.3
-man/man3/gii_event.3
-man/man3/gii_event_mask.3
-man/man3/gii_event_type.3
-man/man3/gii_expose_event.3
-man/man3/gii_key_event.3
-man/man3/gii_pbutton_event.3
-man/man3/gii_phystype.3
-man/man3/gii_pmove_event.3
-man/man3/gii_val_event.3
-man/man3/gii_valrange.3
-man/man7/filter-key.7
-man/man7/filter-keytrans.7
-man/man7/filter-mouse.7
-man/man7/filter-save.7
-man/man7/filter-tcp.7
-man/man7/input-directx.7
-man/man7/input-file.7
-man/man7/input-linux-evdev.7
-man/man7/input-linux-kbd.7
-man/man7/input-linux-mouse.7
-man/man7/input-lk201.7
-man/man7/input-mouse.7
-man/man7/input-tcp.7
-man/man7/libgii.7
+@man man/man1/mhub.1
+@man man/man3/giiAddEventMask.3
+@man man/man3/giiClose.3
+@man man/man3/giiEventPoll.3
+@man man/man3/giiEventRead.3
+@man man/man3/giiEventSelect.3
+@man man/man3/giiEventSend.3
+@man man/man3/giiEventsQueued.3
+@man man/man3/giiExit.3
+@man man/man3/giiGetEventMask.3
+@man man/man3/giiInit.3
+@man man/man3/giiJoinInputs.3
+@man man/man3/giiMTInit.3
+@man man/man3/giiOpen.3
+@man man/man3/giiPanic.3
+@man man/man3/giiQueryDeviceInfo.3
+@man man/man3/giiQueryDeviceInfoByNumber.3
+@man man/man3/giiQueryValInfo.3
+@man man/man3/giiRemoveEventMask.3
+@man man/man3/giiSetEventMask.3
+@man man/man3/giiSplitInputs.3
+@man man/man3/gii_any_event.3
+@man man/man3/gii_cmd_event.3
+@man man/man3/gii_cmd_nodata_event.3
+@man man/man3/gii_cmddata_getdevinfo.3
+@man man/man3/gii_cmddata_getvalinfo.3
+@man man/man3/gii_event.3
+@man man/man3/gii_event_mask.3
+@man man/man3/gii_event_type.3
+@man man/man3/gii_expose_event.3
+@man man/man3/gii_key_event.3
+@man man/man3/gii_pbutton_event.3
+@man man/man3/gii_phystype.3
+@man man/man3/gii_pmove_event.3
+@man man/man3/gii_val_event.3
+@man man/man3/gii_valrange.3
+@man man/man7/filter-key.7
+@man man/man7/filter-keytrans.7
+@man man/man7/filter-mouse.7
+@man man/man7/filter-save.7
+@man man/man7/filter-tcp.7
+@man man/man7/input-directx.7
+@man man/man7/input-file.7
+@man man/man7/input-linux-evdev.7
+@man man/man7/input-linux-kbd.7
+@man man/man7/input-linux-mouse.7
+@man man/man7/input-lk201.7
+@man man/man7/input-mouse.7
+@man man/man7/input-tcp.7
+@man man/man7/libgii.7
+share/doc/gii/
 share/doc/gii/README
+@cwd ${SYSCONFDIR}
+ggi/
+ggi/filter/
+@cwd ${PREFIX}
+share/examples/gii/
 share/examples/gii/filter_keytrans.example
+@sample ${CONFDIR}/filter/keytrans
 share/examples/gii/filter_mouse.example
+@sample ${CONFDIR}/filter/mouse
 share/examples/gii/libgii.conf.example
+@sample ${CONFDIR}/libgii.conf
 %%SHARED%%
-@dir share/examples/gii
-@dir share/doc/gii
-@dir lib/ggi/input
-@dir lib/ggi/filter
-@dir lib/ggi
-@dir include/ggi/internal
-@dir include/ggi/input
-@dir include/ggi
-@extraunexec rm -rf ${CONFDIR}
