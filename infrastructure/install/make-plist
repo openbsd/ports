@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.38 2004/07/21 11:00:38 espie Exp $
+# $OpenBSD: make-plist,v 1.39 2004/07/22 22:24:51 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -134,16 +134,16 @@ sub annotate
 			next;
 		} elsif (m/^\@comment\s+/) {
 			$_ = $';
-			if (m/^\@dirrm\s+/ || m/^\@dir\s+/) {
-				$_ = $';
+			if (m/^\@dirrm\s+(\S.*)/ || m/^\@dir\s+(\S.*)/ || m/^([^@].*)\/$/) {
+				$_ = $1;
 				$annotated_dir->add($_,  [ $name, $newfh, $is_shared, 'comment']);
 				next;
 			} else {
 				$annotated->add($_, [ $name, $newfh, $is_shared, 'comment' ] );
 			}
 			next;
-		} elsif (m/^\@dirrm\s+/ || m/^\@dir\s+/) {
-			$_=$';
+		} elsif (m/^\@dirrm\s+(\S.*)/ || m/^\@dir\s+(\S.*)/ || m/^([^@].*)\/$/) {
+			$_=$1;
 			$annotated_dir->add($_, [ $name, $newfh, $is_shared ]);
 			next;
 		} elsif (m/^\@extra\b/ || m/^\@extraunexec\b/) {
@@ -248,8 +248,8 @@ sub augment_mtree
 	}
 	while (<FILE>) {
 		chomp;
-		if (m/^\@dirrm\s+/ || m/^\@dir\s+/) {
-			my $filename= File::Spec->catfile($dst, $basepath, $');
+		if (m/^\@dirrm\s+(\S.*)/ || m/^\@dir\s+(\S.*)/ || m/^([^@].*)\/$/) {
+			my $filename= File::Spec->catfile($dst, $basepath, $1);
 			$mtree->{$filename} = $pkg;
 		}
 	}
@@ -270,13 +270,13 @@ sub handle_file
 	if (defined $annotated_dir->{$fname}) {
 		for my $l (@{$annotated_dir->{$fname}}) {
 		    if (@$l == 4) {
-			    $l->[1]->print("\@comment \@dir $fname\n");
+			    $l->[1]->print("\@comment $fname/\n");
 		    } else {
-			    $l->[1]->print("\@dir $fname\n");
+			    $l->[1]->print("$fname/\n");
 		    }
 		}
 	} else {
-		$out{$plist}->print("\@dir $fname\n");
+		$out{$plist}->print("$fname/\n");
 	}
     } else {
     	my $reported = 0;
