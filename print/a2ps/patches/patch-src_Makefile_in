@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2005/02/11 19:45:04 alek Exp $
+--- src/Makefile.in.orig	Tue Feb  8 23:25:34 2005
++++ src/Makefile.in	Tue Feb  8 23:25:58 2005
+@@ -158,7 +158,7 @@ LEX = @LEX@
+ # I don't really understand why I have to put srcdir here, but
+ # it is needed for yacc and lex files (seems related to #line, but
+ # I really don't understand why)...
+-INCLUDES = -I.. -I$(srcdir) -I$(top_srcdir)/lib -I$(top_builddir)/intl
++INCLUDES = -I.. -I$(srcdir) -I$(top_srcdir)/lib
+ 
+ a2ps_LDADD = $(top_builddir)/lib/liba2ps.la @INTLLIBS@ @LEXLIB@  -lm
+ 

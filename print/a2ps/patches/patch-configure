@@ -1,0 +1,57 @@
+$OpenBSD: patch-configure,v 1.1 2005/02/11 19:45:04 alek Exp $
+--- configure.orig	Wed Mar  8 18:43:57 2000
++++ configure	Tue Feb  8 23:27:52 2005
+@@ -892,7 +892,7 @@ if test -z "install_sh"; then
+ fi
+ 
+ # Specify the liba2ps version number
+-LIBVERSION=1:0:0
++LIBVERSION=2:0:0
+ 
+ GNU_PACKAGE="GNU $PACKAGE"
+ cat >>confdefs.h <<EOF
+@@ -4937,7 +4937,7 @@ if test "${ac_cv_lib_intl_strftime+set}"
+   echo $ECHO_N "(cached) $ECHO_C" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat >conftest.$ac_ext <<EOF
+ #line 4943 "configure"
+ #include "confdefs.h"
+@@ -4973,7 +4973,7 @@ if test $ac_cv_lib_intl_strftime = yes; 
+ #define HAVE_STRFTIME 1
+ EOF
+ 
+-LIBS="-lintl $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ fi
+ 
+ fi
+@@ -7447,7 +7447,7 @@ if test "${ac_cv_lib_intl_bindtextdomain
+   echo $ECHO_N "(cached) $ECHO_C" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat >conftest.$ac_ext <<EOF
+ #line 7453 "configure"
+ #include "confdefs.h"
+@@ -7485,7 +7485,7 @@ if test "${ac_cv_lib_intl_gettext+set}" 
+   echo $ECHO_N "(cached) $ECHO_C" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv  $LIBS"
+ cat >conftest.$ac_ext <<EOF
+ #line 7491 "configure"
+ #include "confdefs.h"
+@@ -7521,7 +7521,7 @@ if test $ac_cv_lib_intl_gettext = yes; t
+ #define HAVE_LIBINTL 1
+ EOF
+ 
+-  LIBS="-lintl $LIBS"
++  LIBS="-lintl -liconv $LIBS"
+ 
+ fi
+ 
