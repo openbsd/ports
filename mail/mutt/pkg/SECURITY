@@ -1,5 +1,17 @@
-$OpenBSD: SECURITY,v 1.1 1999/01/09 15:24:25 espie Exp $
+$OpenBSD: SECURITY,v 1.2 1999/01/11 02:40:06 marc Exp $
 
-mutt port is NOT secure right now !!!
+Note: in ${WRKDIR}/rfc1524.c the function mutt_adv_mktemp
+uses mktemp, but the resulting name is used much later in
+a procedure that does an open with O_CREAT | O_EXCL.  If the
+open fails an error is reported and the user can try again.
+If the open succeeds the fd is used in fdopen to get a FILE.
+No security hole that I saw.
 
-	${WRKDIR}/rfc1524.c:   call to mktemp that MUST go.
+If the mktemp is replaced with mkstemp the open will fail as
+the named file will exist.  In order to use mkstemp the interface
+to several functions will have to change so the fd returned by
+mkstemp is eventually passed to the function that currently does
+the open.
+
+Remember s/mktemp/mkstemp/g does NOT work as the two functions have
+different semantics.
