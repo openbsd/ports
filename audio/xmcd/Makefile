@@ -3,15 +3,15 @@
 # Date created:		May 20 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/21 01:38:30 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/07/24 03:38:12 form Exp $
 #
 
-DISTNAME=	xmcd-2.2
+DISTNAME=	xmcd-2.3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/xmcd
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	form@vs.itam.nsc.ru
 
 REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes
