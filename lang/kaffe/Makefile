@@ -5,22 +5,17 @@
 #
 # Relevant URLs:	ftp://ftp.kaffe.org/pub/kaffe/
 
-DISTNAME=	kaffe-0.8.4
+DISTNAME=	kaffe-1.0.b2
 CATEGORIES=     lang
 DIST_SUBDIR=	${PKGNAME}
 
-MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/ \
-		ftp://ftp.cs.columbia.edu/pub/kaffe/
-
-EXTRACT_SUFX=	.tgz
-
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${DISTNAME}-package-biss-net.com${EXTRACT_SUFX} \
-		${DISTNAME}-package-epfl.ch${EXTRACT_SUFX} \
-		${DISTNAME}-package-javasoft.com${EXTRACT_SUFX}
+MASTER_SITES=	ftp://ftp.transvirtual.com/pub/kaffe/
 
 MAINTAINER=	ports@OpenBSD.ORG
 
 GNU_CONFIGURE=	yes
+
+post-install:
+		@${INSTALL_DATA} ${WRKSRC}/FAQ/* ${PREFIX}/share/kaffe
 
 .include <bsd.port.mk>

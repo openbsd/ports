@@ -1,39 +1,62 @@
-@exec mkdir -p %D/include/kaffe
-@exec mkdir -p %D/share/kaffe
-@exec mkdir -p %D/share/kaffe/lib
-bin/kaffe
+@cwd /usr/local
+@name kaffe-1.0.b2
+bin/Kaffe
 bin/kaffeh
+bin/pizza
+bin/pizzadoc
+bin/appletviewer
+bin/jar
 bin/javac
 bin/javadoc
-bin/appletviewer
+bin/javakey
+bin/javap
+bin/jdb
+bin/native2ascii
+bin/rmic
+bin/rmiregistry
+bin/serialver
 bin/report-kaffe-bug
-lib/libkaffe_native.so.0.84
-@exec ln -sf %B/%f %B/libkaffe_native.so
-lib/libkaffe_net.so.0.84
-@exec ln -sf %B/%f %B/libkaffe_net.so
-lib/libkaffe_agent.so.0.84
-@exec ln -sf %B/%f %B/libkaffe_agent.so
-lib/libkaffe_bissawt.so.0.87
-@exec ln -sf %B/%f %B/libkaffe_bissawt.so
-lib/libkaffe_vm.so.0.84
-@exec ln -sf %B/%f %B/libkaffe_vm.so
+bin/install-jar
+bin/kaffe
+bin/java
+lib/libkaffevm.so.1.00
+lib/libkaffevm.so
+man/man1/kaffe.1
 include/kaffe/jtypes.h
 include/kaffe/native.h
-include/kaffe/StubPreamble.h
+include/kaffe/jmalloc.h
+include/kaffe/jsyscall.h
+include/kaffe/jni.h
+include/kaffe/Arrays.h
+include/kaffe/java_lang_Object.h
 include/kaffe/java_lang_String.h
-share/kaffe/lib/javac.properties
-share/kaffe/lib/appletviewer.properties
-share/kaffe/lib/biss
-share/kaffe/lib/biss.awt
-share/kaffe/lib/biss.awt.kernel
-share/kaffe/classes.zip
-share/kaffe/biss.zip
-man/man1/kaffe.1
-@unexec rm -f %B/libkaffe_native.so
-@unexec rm -f %B/libkaffe_net.so
-@unexec rm -f %B/libkaffe_agent.so
-@unexec rm -f %B/libkaffe_bissawt.so
-@unexec rm -f %B/libkaffe_vm.so
+include/kaffe/java_lang_Throwable.h
+include/kaffe/java_lang_Thread.h
+include/kaffe/java_lang_ThreadGroup.h
+share/kaffe/lib/i386-openbsd2/libnative.so.1.00
+share/kaffe/lib/i386-openbsd2/libnative.so
+share/kaffe/lib/i386-openbsd2/libnet.so.1.00
+share/kaffe/lib/i386-openbsd2/libnet.so
+share/kaffe/lib/i386-openbsd2/libzip.so.1.00
+share/kaffe/lib/i386-openbsd2/libzip.so
+share/kaffe/lib/i386-openbsd2/libmath.so.1.00
+share/kaffe/lib/i386-openbsd2/libmath.so
+share/kaffe/lib/i386-openbsd2/libmanagement.so.1.00
+share/kaffe/lib/i386-openbsd2/libmanagement.so
+share/kaffe/lib/i386-openbsd2/libawt.so.1.00
+share/kaffe/lib/i386-openbsd2/libawt.so
+share/kaffe/Klasses.jar
+share/kaffe/pizza.jar
+share/kaffe/FAQ.Known-Bugs
+share/kaffe/FAQ.amigaos
+share/kaffe/FAQ.awt
+share/kaffe/FAQ.depend
+share/kaffe/FAQ.install-root
+share/kaffe/FAQ.linux
+share/kaffe/FAQ.nativemethods
+share/kaffe/FAQ.win32
+@dirrm share/kaffe/lib/i386-openbsd2
 @dirrm share/kaffe/lib
 @dirrm share/kaffe
 @dirrm include/kaffe
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/share/kaffe/lib/i386-openbsd2
