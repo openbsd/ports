@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2004/02/17 01:23:03 kevlo Exp $
+# $OpenBSD: Makefile,v 1.37 2004/02/17 07:22:17 kevlo Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
@@ -71,7 +71,7 @@ FLAVOR?=
 MULTI_PACKAGES=	-server
 SUBPACKAGE?=
 
-.if ${FLAVOR:L} == "sasl"
+.if ${FLAVOR:L:Msasl}
 CONFIGURE_ARGS+=	--with-cyrus-sasl \
 			--enable-spasswd
 LIB_DEPENDS+=		sasl2::security/cyrus-sasl2
@@ -81,11 +81,12 @@ CONFIGURE_ARGS+=	--without-cyrus-sasl \
 			--disable-spasswd
 .endif
 
-.if ${FLAVOR:L} == "bdb"
+.if ${FLAVOR:L:Mbdb}
 CONFIGURE_ARGS+=	--enable-bdb
 BUILD_DEPENDS+=   	:db-4.*:databases/db/v4
 CPPFLAGS+=		-I${LOCALBASE}/include/db4
 LDFLAGS+=		-L${LOCALBASE}/lib/db4
+LIBS+=			-ldb
 .else
 CONFIGURE_ARGS+=	--disable-bdb
 .endif
