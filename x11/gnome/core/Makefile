@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/09/20 08:15:16 nino Exp $
+# $OpenBSD: Makefile,v 1.18 2002/11/30 04:51:38 marcm Exp $
 
 COMMENT=		"core GNOME system"
 
@@ -18,8 +18,8 @@ LIB_DEPENDS=		glade.4,glade-gnome::devel/libglade,gnome \
 			gnomecanvaspixbuf::graphics/gdk-pixbuf,-gnome \
 			capplet::x11/gnome/controlcenter
 
-BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
-RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
+BUILD_DEPENDS=		:scrollkeeper->=0.3.11:textproc/scrollkeeper
+RUN_DEPENDS=		${BUILD_DEPENDS}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
