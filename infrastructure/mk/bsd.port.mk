@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.258 2000/04/09 15:24:13 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.259 2000/04/09 23:57:58 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1709,7 +1709,7 @@ all-packages:
 # Invoke "make cdrom-packages CDROM_PACKAGES=/cdrom/snapshots/packages"
 cdrom-packages:
 .if defined(PERMIT_PACKAGE_CDROM) && (${PERMIT_PACKAGE_CDROM:L} == "yes") && \
-    !exists(${CDROM_PACKAGES/${PKGNAME}${PKG_SUFX}})
+    !exists(${CDROM_PACKAGES}/${PKGNAME}${PKG_SUFX}})
 	@if [ ! -f ${PKGFILE} ]; then \
 	   mkdir -p ${PORTSDIR}/logs ;\
 	   cd ${.CURDIR} && make package DEPENDS_TARGET=packageinstall \
@@ -1725,7 +1725,7 @@ cdrom-packages:
 # Invoke "make ftp-packages FTP_PACKAGES=/pub/OpenBSD/snapshots/packages"
 ftp-packages:
 .if defined(PERMIT_PACKAGE_FTP) && (${PERMIT_PACKAGE_FTP:L} == "yes") && \
-    !exists(${FTP_PACKAGES/${PKGNAME}${PKG_SUFX}})
+    !exists(${FTP_PACKAGES}/${PKGNAME}${PKG_SUFX}})
 	@if [ ! -f ${PKGFILE} ]; then \
 	   mkdir -p ${PORTSDIR}/logs ;\
 	   cd ${.CURDIR} && make package DEPENDS_TARGET=packageinstall \
