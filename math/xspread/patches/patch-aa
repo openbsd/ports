@@ -1,19 +1,11 @@
-*** ../xspread.orig/Imakefile	Fri May 26 23:29:48 1995
---- Imakefile	Fri May 26 23:30:24 1995
-***************
-*** 16,22 ****
-  #  Define -DRE_COMP for BSD/SUN regular expression handler 
-  
-  # If you have problems you might want to call this DEFINES = 
-! EXTRA_DEFINES = -DDOBACKUPS -DSIGVOID -DRINT -DRE_COMP \
-                  -DDFLT_PAGER=\"more\" -DSAVENAME=\"SC.SAVE\" \
-  		-DDOINGX -DSC_FONT=\"9x15\" -DCRYPT_PATH \
-  		-DBSD43
---- 16,22 ----
-  #  Define -DRE_COMP for BSD/SUN regular expression handler 
-  
-  # If you have problems you might want to call this DEFINES = 
-! EXTRA_DEFINES = -DDOBACKUPS -DSIGVOID -DRINT \
-                  -DDFLT_PAGER=\"more\" -DSAVENAME=\"SC.SAVE\" \
-  		-DDOINGX -DSC_FONT=\"9x15\" -DCRYPT_PATH \
-  		-DBSD43
+--- interp.c.orig	Fri Aug 18 07:06:29 2000
++++ interp.c	Fri Aug 18 07:06:40 2000
+@@ -516,7 +516,7 @@
+     mdays[1] = 28 + (yr%4 == 0);
+ 
+     if (mo < 1 || mo > 12 || day < 1 || day > mdays[--mo] ||
+-		yr > 1999 || yr < 1970) {
++		yr > 2099 || yr < 1970) {
+ 	scerror("@dts: invalid argument");
+ 	cellerror = CELLERROR;
+ 	return(0.0);

@@ -1,0 +1,40 @@
+--- Makefile.in.orig	Fri Aug 18 07:18:30 2000
++++ Makefile.in	Fri Aug 18 07:50:48 2000
+@@ -19,11 +19,11 @@
+ CFLAGS	= @CFLAGS@
+ DEFS	= @DEFS@
+ LIBS	= @LIBS@
+-INCLUDEDIR = -I. -I$(srcdir)
++INCLUDEDIR = -I. -I$(srcdir) @CPPFLAGS@
+ LN	= @LN_S@
+ RM	= rm -f
+ SHELL	= /bin/sh
+-INSTALL	= install
++INSTALL	= /usr/bin/install
+ INSTALL_PROGRAM	= $(INSTALL)
+ INSTALL_DATA	= $(INSTALL)
+ INSTALLFLAGS	= -c
+@@ -81,10 +81,10 @@
+ 	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJS) gram.o lex.o $(LOCAL_LIBRARIES) $(LIBS) $(EXTRA_LOAD_FLAGS)
+ 
+ install:: xspread
+-	$(INSTALL_PROGRAM) $(INSTALLFLAGS) $(INSTPGMFLAGS) xspread $(bindir)/xspread
++	$(INSTALL_PROGRAM) $(INSTALLFLAGS) $(INSTPGMFLAGS) xspread $(DESTDIR)$(bindir)/xspread
+ 
+ install:: pxspread
+-	$(INSTALL_PROGRAM) $(INSTALLFLAGS) $(INSTPGMFLAGS) pxspread $(bindir)/pxspread
++	$(INSTALL_PROGRAM) $(INSTALLFLAGS) $(INSTPGMFLAGS) pxspread $(DESTDIR)$(bindir)/pxspread
+ 
+ uninstall::
+ 	-$(RM) $(bindir)/xspread
+@@ -92,8 +92,8 @@
+ 
+ 
+ install.man:: xspread.man
+-	$(INSTALL_DATA) $(INSTALLFLAGS) $(INSTMANFLAGS) xspread.man $(mandir)/xspread.$(manext)
+-	$(INSTALL_DATA) $(INSTALLFLAGS) $(INSTMANFLAGS) pxspread.man $(mandir)/pxspread.$(manext)
++	$(INSTALL_DATA) $(INSTALLFLAGS) $(INSTMANFLAGS) xspread.man $(DESTDIR)$(mandir)/xspread.$(manext)
++	$(INSTALL_DATA) $(INSTALLFLAGS) $(INSTMANFLAGS) pxspread.man $(DESTDIR)$(mandir)/pxspread.$(manext)
+ 
+ uninstall::
+ 	-$(RM) $(mandir)/xspread.$(manext)
