@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2002/05/30 11:00:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2002/06/06 07:26:28 couderc Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -6,6 +6,7 @@
 #    SUBDIR += asedit
      SUBDIR += axe
      SUBDIR += beav
+     SUBDIR += beaver
 #    SUBDIR += bpatch
      SUBDIR += bvi
      SUBDIR += cooledit
