@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2000/04/01 20:51:26 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/07/18 08:25:56 brad Exp $
 # $FreeBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 
 DISTNAME=	tcl8.0.5
 PKGNAME=	tcl-8.0.5
 CATEGORIES=	lang
-NEED_VERSION=	1.234
+NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR= tcl8_0
+
+HOMEPAGE=	http://dev.scriptics.com/software/tcltk/
 
 MAINTAINER=	niklas@openbsd.org
 
@@ -15,7 +17,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=	Yes
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"
 FAKE_FLAGS=	INSTALL="install -c" INSTALL_ROOT="${WRKINST}" \
 		BASE_INCLUDE_DIR='$$(prefix)/include/tcl$$(VERSION)' \
@@ -25,7 +26,7 @@ FAKE_FLAGS=	INSTALL="install -c" INSTALL_ROOT="${WRKINST}" \
 		MAN_INSTALL_DIR='$${INSTALL_ROOT}$$(TCL_LIBRARY)/man'
 
 SEPARATE_BUILD=	concurrent
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
