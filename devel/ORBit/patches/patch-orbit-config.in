@@ -1,0 +1,11 @@
+--- orbit-config.in.orig	Mon Aug 21 06:26:09 2000
++++ orbit-config.in	Mon Aug 21 06:26:34 2000
+@@ -87,7 +87,7 @@
+        	;;
+ 
+     client|server)
+-	the_libs="$the_libs -L$libdir -lORBit -lIIOP -lORBitutil `glib-config --libs` @LIBS@ -lm"
++	the_libs="$the_libs -L$libdir -lORBit -lIIOP -lwrap -lORBitutil `glib-config --libs` @LIBS@ -lm"
+ 	the_flags="$the_flags `glib-config --cflags` -I$includedir "
+ 	;;
+ 

@@ -1,0 +1,31 @@
+--- src/IIOP/Makefile.in.orig	Mon Aug 21 06:21:54 2000
++++ src/IIOP/Makefile.in	Mon Aug 21 06:20:15 2000
+@@ -96,14 +96,9 @@
+ pkglibdir = @pkglibdir@
+ 
+ 
+-LIBWRAP_PATH = @LIBWRAP_PATH@
+ LIB_WRAP = @LIB_WRAP@
+-@HAVE_HOSTS_ACCESS_TRUE@libwrap_files = \
+-@HAVE_HOSTS_ACCESS_TRUE@$(addsuffix .lo, $(basename $(filter %.o, $(shell ar t $(LIBWRAP_PATH)))))
+-@HAVE_HOSTS_ACCESS_FALSE@libwrap_files = \
+-@HAVE_HOSTS_ACCESS_TRUE@libwrap_deps = \
+-@HAVE_HOSTS_ACCESS_FALSE@libwrap_deps = \
+-@HAVE_HOSTS_ACCESS_FALSE@$(LIB_WRAP)
++libwrap_files = 
++libwrap_deps = $(LIB_WRAP)
+ 
+ libIIOPincludedir = $(includedir)/IIOP
+ 
+@@ -154,10 +149,7 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-@HAVE_HOSTS_ACCESS_FALSE@libIIOP_la_DEPENDENCIES = 
+-@HAVE_HOSTS_ACCESS_TRUE@libIIOP_la_DEPENDENCIES =  $(addsuffix .lo, \
+-@HAVE_HOSTS_ACCESS_TRUE@$(basename $(filter %.o, $(shell ar t \
+-@HAVE_HOSTS_ACCESS_TRUE@$(LIBWRAP_PATH)))))
++libIIOP_la_DEPENDENCIES = 
+ am_libIIOP_la_OBJECTS =  connection.lo encoders.lo giop-msg-buffer.lo \
+ iiop-endian.lo
+ libIIOP_la_OBJECTS =  $(am_libIIOP_la_OBJECTS)

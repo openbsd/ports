@@ -1,0 +1,11 @@
+--- src/daemons/interface_repository/Makefile.in.orig	Mon Aug 21 06:29:25 2000
++++ src/daemons/interface_repository/Makefile.in	Mon Aug 21 06:29:35 2000
+@@ -113,7 +113,7 @@
+ 	$(top_builddir)/src/IIOP/libIIOP.la \
+ 	$(top_builddir)/src/ORBitutil/libORBitutil.la \
+ 	@GLIB_LIBS@ \
+-	-lm
++	-lm -lwrap
+ 
+ 
+ orbit_ird_SOURCES = \

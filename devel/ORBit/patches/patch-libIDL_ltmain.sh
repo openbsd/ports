@@ -1,6 +1,6 @@
---- popt/ltmain.sh.orig	Tue Sep 28 12:11:51 1999
-+++ popt/ltmain.sh	Sat Oct 16 19:32:45 1999
-@@ -3326,40 +3326,6 @@
+--- libIDL/ltmain.sh.orig	Tue Jul 25 18:28:39 2000
++++ libIDL/ltmain.sh	Sun Aug 20 17:20:54 2000
+@@ -3555,40 +3555,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  

@@ -1,0 +1,11 @@
+--- popt/Makefile.in.orig	Mon Aug 21 05:52:25 2000
++++ popt/Makefile.in	Mon Aug 21 05:52:46 2000
+@@ -160,7 +160,7 @@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+-LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
++LINK = $(LIBTOOL) --mode=link $(CCLD) -rpath $(libdir) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+ DIST_SOURCES =  $(libpopt_la_SOURCES) $(test1_SOURCES) $(test2_SOURCES)
+ HEADERS =  $(noinst_HEADERS)
+ 

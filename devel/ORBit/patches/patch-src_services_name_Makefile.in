@@ -1,0 +1,11 @@
+--- src/services/name/Makefile.in.orig	Mon Aug 21 06:01:35 2000
++++ src/services/name/Makefile.in	Mon Aug 21 06:02:02 2000
+@@ -147,7 +147,7 @@
+ 	$(top_builddir)/src/ORBitutil/libORBitutil.la 		\
+ 	libORBitCosNaming.la					\
+ 	@GLIB_LIBS@ 						\
+-	-lm
++	-lm -lwrap
+ 
+ 
+ #name-client.c boot.c orbit-name-server.c new-name-server.c: CosNaming.h

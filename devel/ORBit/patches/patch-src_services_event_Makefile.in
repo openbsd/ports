@@ -1,0 +1,11 @@
+--- src/services/event/Makefile.in.orig	Mon Aug 21 06:30:58 2000
++++ src/services/event/Makefile.in	Mon Aug 21 06:31:08 2000
+@@ -138,7 +138,7 @@
+ 	$(top_builddir)/src/IIOP/libIIOP.la				\
+ 	$(top_builddir)/src/ORBitutil/libORBitutil.la			\
+ 	@GLIB_LIBS@ 							\
+-	-lm
++	-lm -lwrap
+ 
+ 
+ event_consumer_SOURCES = event-consumer.c				\
