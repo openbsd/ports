@@ -1,17 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/05/15 08:02:52 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/04/02 08:37:48 wilfried Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/gawk.info
+@unexec install-info --delete --info-dir=%D/info %D/info/gawkinet.info
 bin/gawk
 bin/igawk
 bin/pgawk
-@unexec install-info --delete --info-dir=%D/info %D/info/gawk.info
-@unexec install-info --delete --info-dir=%D/info %D/info/gawkinet.info
 info/gawk.info
 info/gawkinet.info
-@exec install-info --info-dir=%D/info %D/info/gawkinet.info
-@exec install-info --info-dir=%D/info %D/info/gawk.info
 libexec/awk/grcat
 libexec/awk/pwcat
 man/man1/gawk.1
 man/man1/igawk.1
+man/man1/pgawk.1
 share/awk/assert.awk
 share/awk/bits2str.awk
 share/awk/cliff_rand.awk
@@ -29,12 +28,35 @@ share/awk/passwd.awk
 share/awk/readable.awk
 share/awk/rewind.awk
 share/awk/round.awk
+share/locale/da/LC_MESSAGES/gawk.mo
 share/locale/de/LC_MESSAGES/gawk.mo
 share/locale/es/LC_MESSAGES/gawk.mo
 share/locale/fr/LC_MESSAGES/gawk.mo
 share/locale/he/LC_MESSAGES/gawk.mo
 share/locale/it/LC_MESSAGES/gawk.mo
+share/locale/pt_BR/LC_MESSAGES/gawk.mo
 share/locale/sv/LC_MESSAGES/gawk.mo
 share/locale/tr/LC_MESSAGES/gawk.mo
+@comment @dirrm share/locale/tr/LC_MESSAGES
+@comment @dirrm share/locale/tr
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/he/LC_MESSAGES
+@comment @dirrm share/locale/he
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale
 @dirrm share/awk
 @dirrm libexec/awk
+@exec install-info --info-dir=%D/info %D/info/gawk.info
+@exec install-info --info-dir=%D/info %D/info/gawkinet.info
