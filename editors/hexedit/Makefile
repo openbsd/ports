@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 1998/12/05 21:59:15 jasoni Exp $
-# FreeBSD: Makefile,v 1.1.1.1 1998/08/10 00:31:40 steve Exp
-#
+# $OpenBSD: Makefile,v 1.6 1999/03/28 20:25:15 brad Exp $
+# $FreeBSD: Makefile,v 1.1.1.1 1998/08/10 00:31:40 steve Exp $
 
-DISTNAME=	hexedit-1.0.0
+DISTNAME=	hexedit-1.1.0
 CATEGORIES=	editors
 
-MAINTAINER=	form@OpenBSD.ORG
+MAINTAINER=	brad@openbsd.org
 
 MASTER_SITES=	http://www.chez.com/prigaux/
 EXTRACT_SUFX=	.src.tgz
