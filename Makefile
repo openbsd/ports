@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 1998/09/24 20:31:28 marc Exp $
+# $OpenBSD: Makefile,v 1.16 1999/07/27 21:56:35 espie Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -46,9 +46,9 @@ index:
 	@make ${.CURDIR}/INDEX
 
 ${.CURDIR}/INDEX:
-	@echo -n "Generating INDEX - please wait.."
-	@make describe ECHO_MSG="echo > /dev/null" > ${.CURDIR}/INDEX
-	@echo " Done."
+	@echo "Generating INDEX..."
+	@make describe ECHO_MSG="echo 1>&2" > ${.CURDIR}/INDEX
+	@echo "Done."
 
 print-index:	${.CURDIR}/INDEX
 	@awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9); }' < ${.CURDIR}/INDEX
