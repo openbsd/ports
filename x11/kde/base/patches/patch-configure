@@ -1,6 +1,6 @@
---- configure.orig	Tue Sep  7 17:21:06 1999
-+++ configure	Fri Jun 30 22:43:24 2000
-@@ -1783,7 +1783,7 @@ case "$host_os" in
+--- configure.orig	Tue Sep  7 10:21:06 1999
++++ configure	Thu Sep  7 13:33:07 2000
+@@ -1783,7 +1783,7 @@
  aix*)
    ac_symcode='[BCDTU]'
    ;;
@@ -9,7 +9,7 @@
    ac_sympat='_\([_A-Za-z][_A-Za-z0-9]*\)'
    ac_symxfrm='_\1 \1'
    ;;
-@@ -3868,13 +3868,13 @@ do
+@@ -3868,13 +3868,13 @@
    done
  done
  
@@ -24,3 +24,12 @@
  
  if test "$ac_kde_includes" = NO || test "$ac_kde_libraries" = NO; then
    ac_cv_have_kde="have_kde=no"
+@@ -6000,7 +6000,7 @@
+ for ac_hdr in fcntl.h sys/time.h unistd.h crypt.h sys/select.h \
+ 	sys/ioctl.h sys/stropts.h termio.h termios.h lastlog.h malloc.h \
+ 	sys/sockio.h krb5/krb5.h rpc/rpc.h rpc/key_prot.h sys/m_wait.h \
+-	sys/param.h ncurses.h paths.h login_cap.h syslog.h
++	sys/param.h ncurses.h paths.h syslog.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
