@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2002/02/07 06:57:31 kevlo Exp $
+# $OpenBSD: Makefile,v 1.60 2002/03/30 20:55:28 drahn Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -35,6 +35,7 @@
      SUBDIR += gkrellm-reminder
      SUBDIR += gkrellstock
      SUBDIR += gone
+     SUBDIR += hfsplus
 #    SUBDIR += ical
      SUBDIR += impress
      SUBDIR += jive
