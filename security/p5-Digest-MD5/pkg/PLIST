@@ -1,26 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/17 14:17:16 espie Exp $
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/Digest/SHA1/SHA1.so
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/Digest/SHA1/SHA1.bs
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/Digest/MD2/MD2.so
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/Digest/MD2/MD2.bs
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/Digest/MD5/MD5.so
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/Digest/MD5/MD5.bs
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/Digest/MD5/.packlist
-libdata/perl5/site_perl/${ARCH}-openbsd/MD5.pm
+@comment $OpenBSD: PLIST,v 1.2 2000/09/28 22:19:02 brad Exp $
 libdata/perl5/site_perl/${ARCH}-openbsd/Digest.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/SHA.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Digest/HMAC.pm
 libdata/perl5/site_perl/${ARCH}-openbsd/Digest/HMAC_MD5.pm
 libdata/perl5/site_perl/${ARCH}-openbsd/Digest/HMAC_SHA1.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/Digest/HMAC.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/Digest/MD5.pm
 libdata/perl5/site_perl/${ARCH}-openbsd/Digest/MD2.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Digest/MD5.pm
 libdata/perl5/site_perl/${ARCH}-openbsd/Digest/SHA1.pm
-man/man3/Digest::MD2.3p
-man/man3/SHA.3p
-man/man3/Digest::SHA1.3p
-man/man3/MD5.3p
+libdata/perl5/site_perl/${ARCH}-openbsd/MD5.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/SHA.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Digest/MD2/MD2.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Digest/MD2/MD2.so
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Digest/MD5/.packlist
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Digest/MD5/MD5.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Digest/MD5/MD5.so
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Digest/SHA1/SHA1.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Digest/SHA1/SHA1.so
+man/man3/Digest.3p
+man/man3/Digest::HMAC.3p
 man/man3/Digest::HMAC_MD5.3p
 man/man3/Digest::HMAC_SHA1.3p
-man/man3/Digest::HMAC.3p
+man/man3/Digest::MD2.3p
 man/man3/Digest::MD5.3p
-man/man3/Digest.3p
+man/man3/Digest::SHA1.3p
+man/man3/MD5.3p
+man/man3/SHA.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Digest/MD2
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Digest/MD5
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Digest/SHA1
