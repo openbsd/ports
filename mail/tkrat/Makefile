@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/02/04 10:07:35 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 05:17:17 turan Exp $
+
+BROKEN=			sources missing
 
 DISTNAME=		tkrat-2.0b7
 DIST_SUBDIR=		tkrat
