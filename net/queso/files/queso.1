@@ -1,9 +1,9 @@
-.\"	$OpenBSD: queso.1,v 1.1 1999/12/01 03:04:04 brad Exp $
+.\"	$OpenBSD: queso.1,v 1.2 2000/11/20 10:32:35 espie Exp $
 .\"	From the Debian Linux queso package
 .TH QUESO 1
 .SH NAME
 queso \- guess the operating system of a remote host
-.Sh SYNOPSIS
+.SH SYNOPSIS
 .B queso
 .I "[-v] [-d] [-w] [-f srcIP] [-c file] [-t seconds] host[:port]"
 .br
@@ -18,25 +18,25 @@ Instead, it has documentation as a text file in /usr/local/share/doc/queso.
 .SH OPTIONS
 A summary of options are included below.
 .TP
-.B \-v         
+.B \-v
 Version
 .TP
-.B \-d         
+.B \-d
 Debug mode, print received PKTs.
 .TP
-.B \-w         
+.B \-w
 Update /etc/queso.conf when new OS is found.
 .TP
-.B \-f 
+.B \-f
 srcIP   Select correct In/Out IP.
 .TP
-.B \-c file    
+.B \-c file
 Alternate config file.
 .TP
-.B \-t seconds 
+.B \-t seconds
 Set reception timeout. (default=3)
 .TP
-.B \-n times   
+.B \-n times
 How many times PKTs are sent. (default=1)
 .SH "SEE ALSO"
 Full documentation in /usr/local/share/doc/queso.
