@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/27 15:23:39 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/12 22:07:49 espie Exp $
 
 COMMENT=	"xml editor for KDE"
 
@@ -21,7 +21,7 @@ MASTER_SITE_SUBDIR= kxmleditor
 BUILD_DEPENDS=	::x11/qt2-designer
 LIB_DEPENDS=	kdecore.3,DCOP,kfile,kdeui,kparts,ksycoca,kio,kdesu,kssl::x11/kde/libs2
 
-PATCH_LIST=${PORTSDIR}/x11/kde/libs2/patches/p-*
+PATCH_LIST=${PORTSDIR}/x11/kde/libs2/patches/p-* patch-*
 
 MODULES=	qt2
 
