@@ -1,0 +1,27 @@
+*** ctl_serv.c.orig	Sun May 17 01:16:44 1998
+--- ctl_serv.c	Sun May 17 01:17:47 1998
+***************
+*** 307,317 ****
+        bp->macrofile = (char *)XtMalloc(strlen(tempName)+1);
+        strcpy(bp->macrofile,tempName);
+  #else
+!       bp->macrofile = (char *)tempnam(NULL, NULL);
+  #endif
+        if (bp->macrofile == NULL)
+  	 return(ERR_NOMALLOC);
+!       if ((fh = creat(bp->macrofile, 0700)) == -1)
+  	 return(ERR_NO_OPEN_TMP);
+        close(fh);
+     }
+--- 307,317 ----
+        bp->macrofile = (char *)XtMalloc(strlen(tempName)+1);
+        strcpy(bp->macrofile,tempName);
+  #else
+!       bp->macrofile = strdup("/tmp/aa.XXXXXXXX");
+  #endif
+        if (bp->macrofile == NULL)
+  	 return(ERR_NOMALLOC);
+!       if ((fh = mkstemp(bp->macrofile)) == -1)
+  	 return(ERR_NO_OPEN_TMP);
+        close(fh);
+     }

@@ -1,0 +1,23 @@
+*** ctl_open.c.orig	Sun May 17 01:13:56 1998
+--- ctl_open.c	Sun May 17 01:18:00 1998
+***************
+*** 112,120 ****
+     bp->tempfile = (char *)XtMalloc(strlen(tempName)+1);
+     strcpy(bp->tempfile,tempName);
+  #else
+!    bp->tempfile = (char *)tempnam(NULL, NULL);
+  #endif
+!    tempFile = fopen(bp->tempfile, "w" );
+     fclose(tempFile);
+  
+     /* display window for bib */
+--- 112,120 ----
+     bp->tempfile = (char *)XtMalloc(strlen(tempName)+1);
+     strcpy(bp->tempfile,tempName);
+  #else
+!    bp->tempfile = strdup("/tmp/aa.XXXXXXXX");
+  #endif
+!    tempFile = fdopen(mkstemp(bp->tempfile), "w" );
+     fclose(tempFile);
+  
+     /* display window for bib */
