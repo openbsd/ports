@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2005/03/02 14:07:49 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.182 2005/03/09 07:47:26 kevlo Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -167,6 +167,7 @@
      SUBDIR += w3m,japanese,image
      SUBDIR += w3mir
      SUBDIR += webalizer
+     SUBDIR += webcollab
 #    SUBDIR += webcopy
      SUBDIR += weblint
      SUBDIR += wordpress
