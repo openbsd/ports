@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.28 2001/03/16 15:34:13 espie Exp $
+# $OpenBSD: Makefile.template,v 1.29 2001/04/13 15:52:16 espie Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -31,8 +31,10 @@ CATEGORIES=     	???
 #HOMEPAGE=		???	URL
 
 # where to send bitches about this port
-
-MAINTAINER=		ports@openbsd.org
+# Put a full-fledged email address, like
+# MAINTAINER=	John Doe <doe57@machine.somewhere.org>
+# Default value is ports.openbsd.org, no need to fill in
+#MAINTAINER=		???
 
 # Licensing:  This determines what we can distribute.
 # When you determine the license type, make sure to look at ALL distfiles.
@@ -41,6 +43,9 @@ MAINTAINER=		ports@openbsd.org
 # that are in conflict, set PERMIT_* based on the most restrictive one.
 # Make SURE you get these values right.
 
+# Put a comment there to state what's going on. 
+# Can be as brief as `BSD' or `GPL', but it'd better be easy to check,
+# if someone wants to double-check licensing.
 #PERMIT_PACKAGE_CDROM=	Yes | "Reason if No"
 #PERMIT_PACKAGE_FTP=	Yes | "Reason if No"
 #PERMIT_DISTFILES_CDROM=Yes | "Reason if No"
