@@ -1,6 +1,6 @@
---- cgi-bin/openwebmail/etc/openwebmail.conf.orig	Tue Feb  5 11:31:37 2002
-+++ cgi-bin/openwebmail/etc/openwebmail.conf	Tue Feb  5 11:34:10 2002
-@@ -123,7 +123,7 @@
+--- cgi-bin/openwebmail/etc/openwebmail.conf.default.orig	Fri Mar 22 15:21:21 2002
++++ cgi-bin/openwebmail/etc/openwebmail.conf.default	Fri Mar 22 15:23:30 2002
+@@ -161,7 +161,7 @@
  #
  # ow_cgidir : the directory for openwebmail cgi programs
  #
@@ -9,7 +9,7 @@
  
  #
  # ow_cgiurl : the url for ow_cgidir
-@@ -133,7 +133,7 @@
+@@ -171,7 +171,7 @@
  #
  # ow_htmldir : the directory for openwebmail webpage/image/sound files
  #
@@ -18,7 +18,7 @@
  
  #
  # ow_htmlurl : the url for ow_htmldir
-@@ -156,7 +156,7 @@
+@@ -194,7 +194,7 @@
  #     user that openwebmail script will be running as (root in many cases) for
  #     better security.
  #
@@ -27,7 +27,16 @@
  
  #
  # logo_url : This graphic that appears at the top of openwebmail login pages.
-@@ -233,8 +233,8 @@
+@@ -226,7 +226,7 @@
+ # logfile : This should be set either to 'no' or the filename of a file
+ # you'd like to log actions to.
+ #
+-logfile			%ow_cgidir%/openwebmail.log
++logfile			/var/log/openwebmail.log
+ 
+ #
+ # global_addressbook : addressbook shared by all user
+@@ -274,8 +274,8 @@
  #
  # these 2 converter will be required only if lang is 'tw' or 'cn'
  #
@@ -37,4 +46,4 @@
 +b2g_converter		/usr/local/bin/hc -mode b2g -t /usr/local/share/hc/hc.tab
  
  #
- # enable_rootlogin : Set this to 'yes' if you want to allow root login
+ # allowed_clientip : This limits the clients that can access the openwebmail
