@@ -1,9 +1,9 @@
 # New ports collection makefile for: xruskb
 # Version required:     1.5.3
 # Date created:         21 Jul 1998
-# Whom:                 Oleg Safiullin <form@vs.itam.nsc.ru>
+# Whom:                 Oleg Safiullin <form@OpenBSD.ORG>
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/07/21 08:28:24 form Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/20 08:39:48 form Exp $
 #
 
 DISTNAME=	xruskb-1.5.3
@@ -11,7 +11,7 @@ CATEGORIES=	russian x11
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/cyrillic/x11/ \
 		ftp://vs.itam.nsc.ru/pub/Unix/cyrillic/x11/
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 USE_X11=	yes
 GNU_CONFIGURE=	yes

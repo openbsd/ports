@@ -1,9 +1,9 @@
 # New ports collection makefile for:	proftpd
 # Version required:	1.0.3pl1
 # Date created:		16 Jun 1998
-# Whom:			Oleg Safiullin <form@vs.itam.nsc.ru>
+# Whom:			Oleg Safiullin <form@OpenBSD.ORG>
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/06/16 07:05:33 form Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/20 08:39:47 form Exp $
 # FreeBSD: Makefile,v 1.3 1998/06/14 15:56:40 steve Exp
 #
 
@@ -12,7 +12,7 @@ PKGNAME=	proftpd-1.0.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 MAN1=	ftpwho.1 ftpcount.1
 MAN8=	proftpd.8 ftpshut.8

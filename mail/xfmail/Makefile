@@ -1,9 +1,9 @@
 # New ports collection makefile for:	xfmail
 # Version required:			1.3
 # Date created:				08 July 1998
-# Whom:					form@vs.itam.nsc.ru
+# Whom:					form@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.2 1998/07/09 07:12:02 form Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/20 08:39:46 form Exp $
 # NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp
 #
 
@@ -11,7 +11,7 @@ DISTNAME=       xfmail-1.3
 CATEGORIES=     mail x11
 MASTER_SITES=	ftp://burka.netvision.net.il/pub/xfmail/
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 OS_RELEASE!=    uname -r
 OS_HAS_XPM=     2.3

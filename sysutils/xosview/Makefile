@@ -3,7 +3,7 @@
 # Date created:		7 May 1998
 # Whom:			form
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/07 05:22:37 form Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/20 08:39:48 form Exp $
 # NetBSD: Makefile,v 1.9 1998/04/15 10:38:50 agc Exp
 #
 
@@ -11,7 +11,7 @@ DISTNAME=       xosview-1.5.1
 CATEGORIES=	sysutils
 MASTER_SITES=   http://www.ece.utexas.edu/~bgrayson/xosview/
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 GNU_CONFIGURE=	yes
 USE_X11=	yes

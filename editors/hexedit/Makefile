@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/18 05:02:06 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/10/20 08:39:45 form Exp $
 # FreeBSD: Makefile,v 1.1.1.1 1998/08/10 00:31:40 steve Exp
 #
 
@@ -7,7 +7,7 @@ CATEGORIES=	editors
 
 #BROKEN=	"newer version available"
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 MASTER_SITES=	http://www.chez.com/prigaux/
 EXTRACT_SUFX=	.src.tgz

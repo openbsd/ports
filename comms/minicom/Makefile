@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1998/10/18 05:01:59 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1998/10/20 08:39:44 form Exp $
 #
 
 PKGNAME=	minicom-1.78
@@ -7,7 +7,7 @@ CATEGORIES=	comms
 
 #BROKEN=	"newer version available"
 
-MAINTAINER=     form@vs.itam.nsc.ru
+MAINTAINER=     form@OpenBSD.ORG
 
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/software/
 

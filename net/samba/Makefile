@@ -3,7 +3,7 @@
 # Date created:				22 Apr 1998
 # Whom:					form
 #
-# $OpenBSD: Makefile,v 1.14 1998/09/10 06:49:25 marc Exp $
+# $OpenBSD: Makefile,v 1.15 1998/10/20 08:39:47 form Exp $
 #
 
 DISTNAME=	samba-1.9.18p10
@@ -11,7 +11,7 @@ PKGNAME=	samba-1.9.18.10
 CATEGORIES=	net
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/samba/
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 MAN1=		smbstatus.1 smbclient.1 smbrun.1 smbtar.1 testparm.1 testprns.1 make_smbcodepage.1

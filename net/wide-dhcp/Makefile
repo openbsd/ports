@@ -1,9 +1,9 @@
 # OpenBSD makefile for: dhcp
 # Version required:     1.4.0.1
 # Date created:         29 April 1998
-# Whom:                 Oleg Safiullin <form@vs.itam.nsc.ru>
+# Whom:                 Oleg Safiullin <form@OpenBSD.ORG>
 #
-# $OpenBSD: Makefile,v 1.3 1998/09/15 02:50:58 form Exp $
+# $OpenBSD: Makefile,v 1.4 1998/10/20 08:39:48 form Exp $
 #
 
 DISTNAME=       dhcp-1.4.0p3
@@ -12,7 +12,7 @@ CATEGORIES=     net
 MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/
 DISTFILES=	${DISTNAME}.tar.gz
 
-MAINTAINER=     form@vs.itam.nsc.ru
+MAINTAINER=     form@OpenBSD.ORG
 
 MAKE_ENV=	OSTYPE=`uname`
 

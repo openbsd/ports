@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 1998/10/15 05:10:54 form Exp $
+# $OpenBSD: Makefile,v 1.8 1998/10/20 08:39:45 form Exp $
 #
 
 DISTNAME=	joe2.8
 PKGNAME=	joe-2.8
 CATEGORIES=	editors
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 MASTER_SITES=	ftp://ftp.std.com/src/editors/
 EXTRACT_SUFX=	.tar.Z

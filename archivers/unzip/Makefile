@@ -3,7 +3,7 @@
 # Date created:         22 Jun 1998
 # Whom:                 form
 #
-# $OpenBSD: Makefile,v 1.4 1998/06/24 16:39:19 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/10/20 08:39:43 form Exp $
 # FreeBSD: Makefile,v 1.18 1998/01/24 07:11:16 jkh Exp
 #
 
@@ -12,7 +12,7 @@ PKGNAME=	unzip-5.3.2
 CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.cdrom.com/pub/infozip/src/
 
-MAINTAINER=     form@vs.itam.nsc.ru
+MAINTAINER=     form@OpenBSD.ORG
 
 WRKSRC=		${WRKDIR}/unzip-5.32
 MAKEFILE=       unix/Makefile

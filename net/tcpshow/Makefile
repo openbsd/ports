@@ -1,9 +1,9 @@
 # Ports collection makefile for:  tcpshow
 # Version required:     	  1.0
 # Date created:			  17 Jul 1998
-# Whom:				  Oleg Safiullin <form@vs.itam.nsc.ru>
+# Whom:				  Oleg Safiullin <form@OpenBSD.ORG>
 #
-# $OpenBSD: Makefile,v 1.3 1998/07/20 05:03:03 form Exp $
+# $OpenBSD: Makefile,v 1.4 1998/10/20 08:39:47 form Exp $
 # FreeBSD: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp
 #
 
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.freebsd.org/~obrien/ \
 
 DISTFILES=	tcpshow.c tcpshow.1
 
-MAINTAINER=     form@vs.itam.nsc.ru
+MAINTAINER=     form@OpenBSD.ORG
 
 NO_WRKSUBDIR=	yes
 MAN1=		tcpshow.1

@@ -3,7 +3,7 @@
 # Date created:		7 May 1998
 # Whom:			form
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/07 08:31:49 form Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/20 08:39:47 form Exp $
 # FreeBSD: Makefile,v 1.1.1.1 1998/04/04 04:58:25 obrien Exp
 #
 
@@ -14,7 +14,7 @@ MASTER_SITES=	http://reptile.rug.ac.be/~coder/sniffit/files/ \
 		ftp://ftphost.manawatu.gen.nz/pub/unix/net/security/sniffers/sniffit/ \
 		ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=

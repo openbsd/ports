@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/18 05:02:07 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/10/20 08:39:45 form Exp $
 # NetBSD: Makefile,v 1.10 1998/04/24 09:07:55 agc Exp
 # FreeBSD Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp
 #
@@ -12,7 +12,7 @@ NO_CDROM=		"GPL: must distribute with source"
 MIRROR_DISTFILE=	no
 
 
-MAINTAINER=		form@vs.itam.nsc.ru
+MAINTAINER=		form@OpenBSD.ORG
 
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 

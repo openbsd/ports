@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1998/10/19 09:52:49 form Exp $
+# $OpenBSD: Makefile,v 1.12 1998/10/20 08:39:44 form Exp $
 # FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp
 #
 
@@ -7,7 +7,7 @@ CATEGORIES=	databases
 
 NO_PACKAGE=	"Requires pgsql uid"
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/
 

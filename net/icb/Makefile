@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1998/07/15 22:38:20 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1998/10/20 08:39:47 form Exp $
 # NetBSD: Makefile,v 1.6 1998/04/15 11:15:34 frueauf Exp
 #
 
@@ -12,7 +12,7 @@ MASTER_SITES=		ftp://ftp.swcp.com/pub/icb/clients/unix/  \
 
 EXTRACT_SUFX=		.tar.Z
 
-MAINTAINER=		form@vs.itam.nsc.ru
+MAINTAINER=		form@OpenBSD.ORG
 
 do-configure:
 	@cd ${WRKSRC}; \

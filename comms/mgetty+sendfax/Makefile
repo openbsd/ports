@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1998/10/18 05:01:59 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1998/10/20 08:39:44 form Exp $
 # $FreeBSD: Makefile,v 1.25 1998/07/16 06:44:37 vanilla Exp $
 #
 
@@ -8,7 +8,7 @@ CATEGORIES=	comms
 
 #BROKEN=	"newer version available"
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 MASTER_SITES=	ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
 

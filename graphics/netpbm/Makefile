@@ -1,9 +1,9 @@
 # New ports collection makefile for:	netpbm
 # Version required:	netpbm-94.3.1
 # Date created:		14 May 1998
-# Whom:			Oleg Safiullin <form@vs.itam.nsc.ru>
+# Whom:			Oleg Safiullin <form@OpenBSD.ORG>
 #
-# $OpenBSD: Makefile,v 1.2 1998/06/14 08:10:29 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/20 08:39:46 form Exp $
 # NetBSD: Makefile,v 1.14 1998/04/22 14:22:43 agc Exp
 #
 
@@ -18,7 +18,7 @@ DISTFILES=	netpbm-1mar1994.tar.gz \
 		rletopnm.tar.gz \
 		pnmtopng-2.36.tar.gz
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 LIB_DEPENDS=    jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
 		tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34 \

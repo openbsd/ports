@@ -3,7 +3,7 @@
 # Date created:         8 Jul 1998
 # Whom:                 form
 #
-# $OpenBSD: Makefile,v 1.7 1998/10/06 22:41:30 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1998/10/20 08:39:43 form Exp $
 #
 
 DISTNAME=       rarbsd
@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"NOFEE: Can not charge for distribution"
 NO_PACKAGE=     Only unmodified original package can be distributed
 
-MAINTAINER=     form@vs.itam.nsc.ru
+MAINTAINER=     form@OpenBSD.ORG
 
 MASTER_SITES=	ftp://ftp.creabel.com/pub/rar/
 EXTRACT_SUFX=

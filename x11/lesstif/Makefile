@@ -1,16 +1,16 @@
 # New ports collection makefile for:	lesstif
 # Version required:	0.86.0
 # Date created:		December 10, 1996
-# Whom:			form@vs.itam.nsc.ru
+# Whom:			form@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.13 1998/08/22 17:59:53 marc Exp $
+# $OpenBSD: Makefile,v 1.14 1998/10/20 08:39:49 form Exp $
 # FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp
 #
 
 DISTNAME=	lesstif-0.86.0
 CATEGORIES=	x11
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \

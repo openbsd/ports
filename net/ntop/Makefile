@@ -1,9 +1,9 @@
 # Ports makefile for:	ntop
 # Version required:	0.2.2
 # Date created:		17 August 1998
-# Whom:			Oleg Safiullin <form@vs.itam.nsc.ru>
+# Whom:			Oleg Safiullin <form@OpenBSD.ORG>
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/08/17 05:17:33 form Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/20 08:39:47 form Exp $
 # FreeBSD: Makefile,v 1.2 1998/08/11 09:57:51 andreas Exp
 #
 
@@ -12,7 +12,7 @@ PKGNAME=	ntop-0.4
 CATEGORIES=	net
 MASTER_SITES=	http://jake.unipi.it/~deri/ntop/
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 GNU_CONFIGURE=	yes

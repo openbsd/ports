@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/10/08 23:15:42 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/10/20 08:39:45 form Exp $
 # FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp
 #
 
@@ -7,7 +7,7 @@ CATEGORIES=	editors x11
 
 NO_CDROM=	"NOFEE: can not charge for distribution"
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 MASTER_SITES=	ftp://ftp.fnal.gov/KITS/pub/nedit/v5_0_2/ \
 		ftp://ftp.fnal.gov/KITS/pub/nedit/v5_0_2/contrib/

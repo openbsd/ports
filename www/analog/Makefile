@@ -1,9 +1,9 @@
 # Ports makefile for:	analog
 # Version required:	3.0
 # Date created:		11 Aug 1998
-# Whom:			Oleg Safiullin <form@vs.itam.nsc.ru>
+# Whom:			Oleg Safiullin <form@OpenBSD.ORG>
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/08/11 09:14:46 form Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/20 08:39:49 form Exp $
 #
 
 DISTNAME=	analog3.0
@@ -17,7 +17,7 @@ MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		ftp://download.netvision.net.il/pub/mirrors/analog/ \
 		ftp://mabuse.phil.uni-passau.de/pub/mirrors/analog/
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 ETCDIR=		/etc
 ANALOGDIR=	${PREFIX}/lib/analog

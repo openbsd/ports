@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/18 05:02:06 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/10/20 08:39:45 form Exp $
 # FreeBSD: Makefile,v 1.9 1998/05/18 23:49:17 alex Exp
 #
 
@@ -16,7 +16,7 @@ NO_CDROM=	${RESTRICTED}
 NO_PACKAGE=	${RESTRICTED}
 
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 MASTER_SITES= 	ftp://ftp.std.com/pub/bochs/
 

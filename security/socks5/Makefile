@@ -1,9 +1,9 @@
 # New ports collection makefile for:	socks5
 # Version required:			v1.0r3
 # Date created:				21 Apr 1998
-# Whom:					form@vs.itam.nsc.ru
+# Whom:					form@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.4 1998/08/05 21:59:31 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/10/20 08:39:48 form Exp $
 #
 
 DISTNAME=	socks5-v1.0r6
@@ -11,7 +11,7 @@ PKGNAME=	socks5-1.0.6
 CATEGORIES=	net security
 #EXTRACT_SUFX=	.tar.gz
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 NO_CDROM=	"NEC has a funky license for this software"
 RESTRICTED=	"no commercial use"

@@ -1,9 +1,9 @@
 # New ports collection makefile for:   giftrans
 # Version required:    v1.12
 # Date created:        20 May 1998
-# Whom:                Oleg Safiullin <form@vs.itam.nsc.ru>
+# Whom:                Oleg Safiullin <form@OpenBSD.ORG>
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/20 10:03:16 form Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/20 08:39:45 form Exp $
 # FreeBSD: Makefile,v 1.2 1996/11/18 11:27:58 asami Exp
 #
 

@@ -1,9 +1,9 @@
 # New ports collection makefile for:	xforms library
 # Version required:			0.88.1
 # Date created:				08 July 1998
-# Whom:					form@vs.itam.nsc.ru
+# Whom:					form@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.2 1998/07/09 07:07:57 form Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/20 08:39:50 form Exp $
 #
 DISTNAME=		bxform-088
 PKGNAME=		xforms-0.88
@@ -20,7 +20,7 @@ XFORMS_ARCH=		${MACHINE_ARCH}
 MASTER_SITE_SUBDIR=	openBSD-${XFORMS_ARCH}
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		form@vs.itam.nsc.ru
+MAINTAINER=		form@OpenBSD.ORG
 
 ONLY_FOR_ARCHS=		i386 sparc m68k hp300
 

@@ -3,7 +3,7 @@
 # Date created:		17 Nov 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.5 1998/08/12 04:50:36 form Exp $
+# $OpenBSD: Makefile,v 1.6 1998/10/20 08:39:49 form Exp $
 #
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html
@@ -15,7 +15,7 @@ PKGNAME=	wwwcount-2.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.fccc.edu/users/muquit/src/wwwcount2.4/
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 GNU_CONFIGURE=	yes
 IS_INTERACTIVE=	yes

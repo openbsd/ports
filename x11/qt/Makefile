@@ -3,7 +3,7 @@
 # Date created:		9 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.5 1998/07/23 03:57:51 form Exp $
+# $OpenBSD: Makefile,v 1.6 1998/10/20 08:39:50 form Exp $
 # FreeBSD: Makefile,v 1.18 1998/07/20 16:51:14 andreas Exp
 #
 
@@ -13,7 +13,7 @@ DISTNAME=	qt-${MAJ}.${MIN}
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
-MAINTAINER=	form@vs.itam.nsc.ru
+MAINTAINER=	form@OpenBSD.ORG
 
 #
 # MesaGL library support is currently in progress...
