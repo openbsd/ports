@@ -1,6 +1,6 @@
---- conf/master.cf-orig	Fri Jun 11 11:35:45 1999
-+++ conf/master.cf	Fri Jun 11 11:39:08 1999
-@@ -53,16 +53,16 @@
+--- conf/master.cf.orig	Sun Jan 28 21:54:01 2001
++++ conf/master.cf	Thu Feb  1 08:22:24 2001
+@@ -67,21 +67,21 @@
  # service type	private	unpriv	chroot	wakeup	maxproc	command + args
  # 		(yes)	(yes)	(yes)	(never)	(50)
  # ==========================================================================
@@ -8,9 +8,11 @@
 -pickup	  fifo	n	n	n	60	1	pickup
 -cleanup	  unix	-	-	n	-	0	cleanup
 -qmgr	  fifo	n	-	n	300	1	qmgr
+-#qmgr	  fifo	n	-	n	300	1	nqmgr
 -rewrite	  unix	-	-	n	-	-	trivial-rewrite
 -bounce	  unix	-	-	n	-	0	bounce
 -defer	  unix	-	-	n	-	0	bounce
+-flush	  unix	-	-	n	1000?	0	flush
 -smtp	  unix	-	-	n	-	-	smtp
 -showq     unix	n	-	n	-	-	showq
 -error     unix	-	-	n	-	-	error
@@ -18,12 +20,18 @@
 +pickup	  fifo	n	n	-	60	1	pickup
 +cleanup	  unix	-	-	-	-	0	cleanup
 +qmgr	  fifo	n	-	-	300	1	qmgr
++#qmgr	  fifo	n	-	-	300	1	nqmgr
 +rewrite	  unix	-	-	-	-	-	trivial-rewrite
 +bounce	  unix	-	-	-	-	0	bounce
 +defer	  unix	-	-	-	-	0	bounce
++flush	  unix	-	-	-	1000?	0	flush
 +smtp	  unix	-	-	-	-	-	smtp
 +showq     unix	n	-	-	-	-	showq
 +error     unix	-	-	-	-	-	error
  local	  unix	-	n	n	-	-	local
+ virtual	  unix	-	n	n	-	-	virtual
+-lmtp	  unix	-	-	n	-	-	lmtp
++lmtp	  unix	-	-	-	-	-	lmtp
  cyrus	  unix	-	n	n	-	-	pipe
-     flags=R user=cyrus argv=/cyrus/bin/deliver -e -q -m ${extension} ${user}
+     flags=R user=cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
+ uucp	  unix	-	n	n	-	-	pipe

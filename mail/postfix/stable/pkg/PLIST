@@ -1,22 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1 2000/09/25 21:02:35 jakob Exp $
-sbin/postalias
-sbin/postcat
-sbin/postconf
-sbin/postdrop
-sbin/postfix
-sbin/postfix-enable
-sbin/postfix-disable
-sbin/postkick
-sbin/postlock
-sbin/postlog
-sbin/postmap
-sbin/postsuper
-sbin/sendmail
-sbin/smtp-sink
-sbin/smtp-source
+@comment $OpenBSD: PLIST,v 1.2 2001/03/01 07:57:56 jakob Exp $
+@pkgcfl postfix-*
 libexec/postfix/bounce
 libexec/postfix/cleanup
 libexec/postfix/error
+libexec/postfix/flush
+libexec/postfix/lmtp
 libexec/postfix/local
 libexec/postfix/master
 libexec/postfix/pickup
@@ -25,8 +13,8 @@ libexec/postfix/qmgr
 libexec/postfix/showq
 libexec/postfix/smtp
 libexec/postfix/smtpd
+libexec/postfix/spawn
 libexec/postfix/trivial-rewrite
-@dirrm libexec/postfix
 man/man1/mailq.1
 man/man1/newaliases.1
 man/man1/postalias.1
@@ -43,6 +31,8 @@ man/man1/sendmail.1
 man/man5/access.5
 man/man5/aliases.5
 man/man5/canonical.5
+man/man5/pcre_table.5
+man/man5/regexp_table.5
 man/man5/relocated.5
 man/man5/transport.5
 man/man5/virtual.5
@@ -50,6 +40,8 @@ man/man8/bounce.8
 man/man8/cleanup.8
 man/man8/defer.8
 man/man8/error.8
+man/man8/flush.8
+man/man8/lmtp.8
 man/man8/local.8
 man/man8/master.8
 man/man8/pickup.8
@@ -58,7 +50,23 @@ man/man8/qmgr.8
 man/man8/showq.8
 man/man8/smtp.8
 man/man8/smtpd.8
+man/man8/spawn.8
 man/man8/trivial-rewrite.8
+sbin/postalias
+sbin/postcat
+sbin/postconf
+sbin/postdrop
+sbin/postfix
+sbin/postfix-disable
+sbin/postfix-enable
+sbin/postkick
+sbin/postlock
+sbin/postlog
+sbin/postmap
+sbin/postsuper
+sbin/sendmail
+sbin/smtp-sink
+sbin/smtp-source
 share/doc/postfix/access.5.html
 share/doc/postfix/aliases.5.html
 share/doc/postfix/architecture.html
@@ -74,15 +82,18 @@ share/doc/postfix/defer.8.html
 share/doc/postfix/delivering.html
 share/doc/postfix/error.8.html
 share/doc/postfix/faq.html
+share/doc/postfix/flush.8.html
 share/doc/postfix/goals.html
 share/doc/postfix/inbound.gif
 share/doc/postfix/index.html
+share/doc/postfix/lmtp.8.html
 share/doc/postfix/local.8.html
 share/doc/postfix/mailq.1.html
 share/doc/postfix/master.8.html
 share/doc/postfix/motivation.html
 share/doc/postfix/newaliases.1.html
 share/doc/postfix/outbound.gif
+share/doc/postfix/pcre_table.5.html
 share/doc/postfix/pickup.8.html
 share/doc/postfix/pipe.8.html
 share/doc/postfix/postalias.1.html
@@ -99,6 +110,7 @@ share/doc/postfix/qmgr.8.html
 share/doc/postfix/queuing.html
 share/doc/postfix/rate.html
 share/doc/postfix/receiving.html
+share/doc/postfix/regexp_table.5.html
 share/doc/postfix/relocated.5.html
 share/doc/postfix/resource.html
 share/doc/postfix/rewrite.html
@@ -108,11 +120,11 @@ share/doc/postfix/showq.8.html
 share/doc/postfix/small-picture.gif
 share/doc/postfix/smtp.8.html
 share/doc/postfix/smtpd.8.html
+share/doc/postfix/spawn.8.html
 share/doc/postfix/transport.5.html
 share/doc/postfix/trivial-rewrite.8.html
 share/doc/postfix/uce.html
 share/doc/postfix/virtual.5.html
-@dirrm share/doc/postfix
 share/examples/postfix/LICENSE
 share/examples/postfix/access
 share/examples/postfix/aliases
@@ -122,15 +134,22 @@ share/examples/postfix/main.cf.default
 share/examples/postfix/main.cf.orig
 share/examples/postfix/master.cf
 share/examples/postfix/master.cf.orig
+share/examples/postfix/pcre_table
 share/examples/postfix/postfix-script
 share/examples/postfix/postfix-script-diff
 share/examples/postfix/postfix-script-nosgid
 share/examples/postfix/postfix-script-sgid
+share/examples/postfix/regexp_table
 share/examples/postfix/relocated
 share/examples/postfix/sample-aliases.cf
+share/examples/postfix/sample-auth.cf
 share/examples/postfix/sample-canonical.cf
+share/examples/postfix/sample-compatibility.cf
 share/examples/postfix/sample-debug.cf
+share/examples/postfix/sample-filter.cf
+share/examples/postfix/sample-flush.cf
 share/examples/postfix/sample-ldap.cf
+share/examples/postfix/sample-lmtp.cf
 share/examples/postfix/sample-local.cf
 share/examples/postfix/sample-misc.cf
 share/examples/postfix/sample-pcre.cf
@@ -146,3 +165,5 @@ share/examples/postfix/sample-virtual.cf
 share/examples/postfix/transport
 share/examples/postfix/virtual
 @dirrm share/examples/postfix
+@dirrm share/doc/postfix
+@dirrm libexec/postfix
