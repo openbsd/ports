@@ -1,6 +1,6 @@
-$OpenBSD: patch-gas_config_tc-arm_c,v 1.1 2003/06/27 02:47:16 kevlo Exp $
---- gas/config/tc-arm.c.orig	Mon Jun 23 16:20:45 2003
-+++ gas/config/tc-arm.c	Mon Jun 23 16:19:37 2003
+$OpenBSD: patch-gas_config_tc-arm_c,v 1.2 2003/06/27 13:33:17 brad Exp $
+--- gas/config/tc-arm.c.orig	Sat Jul 13 21:14:24 2002
++++ gas/config/tc-arm.c	Fri Jun 27 08:47:26 2003
 @@ -132,6 +132,18 @@
  #endif
  #endif
@@ -20,7 +20,7 @@ $OpenBSD: patch-gas_config_tc-arm_c,v 1.1 2003/06/27 02:47:16 kevlo Exp $
  /* For backwards compatibility we default to the FPA.  */
  #ifndef FPU_DEFAULT
  #define FPU_DEFAULT FPU_ARCH_FPA
-@@ -9208,10 +9220,16 @@
+@@ -9208,10 +9220,16 @@ md_begin ()
      }
    else if (mfpu_opt == -1)
      {
