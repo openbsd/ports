@@ -1,0 +1,4 @@
+PySNMP is a Python implementation of SNMP v.1/v.2c engine. Its general
+functionality is to assemble/disassemble SNMP messages from/into given
+SNMP Object IDs along with associated values. PySNMP also provides a few
+transport methods specific to TCP/IP networking.

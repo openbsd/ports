@@ -1,0 +1,238 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/22 15:31:26 xsa Exp $
+lib/python${MODPY_VERSION}/site-packages/pysnmp/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/base.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/base.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/encoding/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/encoding/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/encoding/ber/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/encoding/ber/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/encoding/ber/base.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/encoding/ber/base.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/encoding/ber/error.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/encoding/ber/error.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/encoding/ber/univ.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/encoding/ber/univ.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/encoding/error.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/encoding/error.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/error.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/error.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/oidtree.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/oidtree.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/univ.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/univ.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp1x/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp1x/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp1x/asynsnmp.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp1x/asynsnmp.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp1x/ber.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp1x/ber.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp1x/error.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp1x/error.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp1x/message.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp1x/message.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp1x/msession.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp1x/msession.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp1x/session.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp1x/session.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp1x/wrapexp.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp1x/wrapexp.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp2x/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp2x/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp2x/asn1.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp2x/asn1.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp2x/asynrole.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp2x/asynrole.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp2x/error.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp2x/error.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp2x/role.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp2x/role.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp2x/v1.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp2x/v1.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp2x/v2c.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp2x/v2c.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/snmpy/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/snmpy/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/snmpy/snmpy.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/snmpy/snmpy.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/error.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/error.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/mapping/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/mapping/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/mapping/error.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/mapping/error.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/mapping/udp/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/mapping/udp/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/mapping/udp/asynrole.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/mapping/udp/asynrole.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/mapping/udp/error.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/mapping/udp/error.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/mapping/udp/role.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/mapping/udp/role.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/alpha/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/alpha/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/alpha/pdutypes.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/alpha/pdutypes.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/alpha/rfc1155.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/alpha/rfc1155.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/alpha/rfc1157.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/alpha/rfc1157.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/alpha/rfc1905.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/alpha/rfc1905.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/alpha/v1.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/alpha/v1.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/alpha/v2c.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/alpha/v2c.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/alpha/versions.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/alpha/versions.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/error.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/error.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/generic/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/generic/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/generic/rfc1157.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/generic/rfc1157.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/generic/rfc1905.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/generic/rfc1905.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/error.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/error.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/rfc1155.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/rfc1155.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/rfc1157.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/rfc1157.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/rfc1902.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/rfc1902.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/rfc1905.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/rfc1905.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/v1.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/v1.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/v2c.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/v2c.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/test/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/test/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/test/base.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/test/base.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/test/getset.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/test/getset.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/test/suite.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/test/suite.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/test/trap.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/test/trap.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/test/walk.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/test/walk.pyc
+lib/python${MODPY_VERSION}/site-packages/pysnmp/version.py
+lib/python${MODPY_VERSION}/site-packages/pysnmp/version.pyc
+share/doc/py-snmp/asn1/base-asn1-objects.html
+share/doc/py-snmp/asn1/base-choicetypeasn1-objects.html
+share/doc/py-snmp/asn1/base-recordtypeasn1-objects.html
+share/doc/py-snmp/asn1/base-simpleasn1-objects.html
+share/doc/py-snmp/asn1/base-variabletypeasn1-objects.html
+share/doc/py-snmp/asn1/base.html
+share/doc/py-snmp/asn1/encoding/ber/base-fixed-objects.html
+share/doc/py-snmp/asn1/encoding/ber/base-simple-objects.html
+share/doc/py-snmp/asn1/encoding/ber/base-variable-objects.html
+share/doc/py-snmp/asn1/encoding/ber/base.html
+share/doc/py-snmp/asn1/encoding/ber/error.html
+share/doc/py-snmp/asn1/encoding/ber/index.html
+share/doc/py-snmp/asn1/encoding/ber/univ.html
+share/doc/py-snmp/asn1/encoding/error.html
+share/doc/py-snmp/asn1/encoding/index.html
+share/doc/py-snmp/asn1/error.html
+share/doc/py-snmp/asn1/index.html
+share/doc/py-snmp/asn1/univ-boolean-objects.html
+share/doc/py-snmp/asn1/univ-choice-example.html
+share/doc/py-snmp/asn1/univ-integer-example.html
+share/doc/py-snmp/asn1/univ-integer-objects.html
+share/doc/py-snmp/asn1/univ-oid-example.html
+share/doc/py-snmp/asn1/univ-oid-objects.html
+share/doc/py-snmp/asn1/univ-sequence-example.html
+share/doc/py-snmp/asn1/univ-sequenceof-example.html
+share/doc/py-snmp/asn1/univ-string-example.html
+share/doc/py-snmp/asn1/univ-string-objects.html
+share/doc/py-snmp/asn1/univ.html
+share/doc/py-snmp/compat/index.html
+share/doc/py-snmp/compat/snmpy/index.html
+share/doc/py-snmp/error-objects.html
+share/doc/py-snmp/error.html
+share/doc/py-snmp/index.html
+share/doc/py-snmp/mapping/error.html
+share/doc/py-snmp/mapping/index.html
+share/doc/py-snmp/mapping/udp/asynrole-objects-agent.html
+share/doc/py-snmp/mapping/udp/asynrole-objects-manager.html
+share/doc/py-snmp/mapping/udp/asynrole.html
+share/doc/py-snmp/mapping/udp/error.html
+share/doc/py-snmp/mapping/udp/index.html
+share/doc/py-snmp/mapping/udp/role-agent-objects.html
+share/doc/py-snmp/mapping/udp/role-manager-objects.html
+share/doc/py-snmp/mapping/udp/role.html
+share/doc/py-snmp/proto/api/alpha/index.html
+share/doc/py-snmp/proto/api/alpha/pdutypes-pdutypes-objects.html
+share/doc/py-snmp/proto/api/alpha/pdutypes.html
+share/doc/py-snmp/proto/api/alpha/rfc1155-rfc1902-choice-objects.html
+share/doc/py-snmp/proto/api/alpha/rfc1155-rfc1902-objects.html
+share/doc/py-snmp/proto/api/alpha/rfc1155-rfc1902.html
+share/doc/py-snmp/proto/api/alpha/rfc1157-rfc1905-message-objects.html
+share/doc/py-snmp/proto/api/alpha/rfc1157-rfc1905-request-objects.html
+share/doc/py-snmp/proto/api/alpha/rfc1157-rfc1905-response-objects.html
+share/doc/py-snmp/proto/api/alpha/rfc1157-rfc1905-varbind-objects.html
+share/doc/py-snmp/proto/api/alpha/rfc1157-rfc1905.html
+share/doc/py-snmp/proto/api/alpha/rfc1157-trap-objects.html
+share/doc/py-snmp/proto/api/alpha/rfc1905-getbulkrequest-objects.html
+share/doc/py-snmp/proto/api/alpha/v1-v2c.html
+share/doc/py-snmp/proto/api/alpha/versions-protoid-objects.html
+share/doc/py-snmp/proto/api/alpha/versions.html
+share/doc/py-snmp/proto/api/error.html
+share/doc/py-snmp/proto/api/index.html
+share/doc/py-snmp/proto/error.html
+share/doc/py-snmp/proto/index.html
+share/doc/py-snmp/proto/rfc1155-example.html
+share/doc/py-snmp/proto/rfc1155.html
+share/doc/py-snmp/proto/rfc1157-errorstatus-objects.html
+share/doc/py-snmp/proto/rfc1157-generictrap-objects.html
+share/doc/py-snmp/proto/rfc1157.html
+share/doc/py-snmp/proto/rfc1902-example.html
+share/doc/py-snmp/proto/rfc1902.html
+share/doc/py-snmp/proto/rfc1905-errorstatus-objects.html
+share/doc/py-snmp/proto/rfc1905.html
+share/examples/py-snmp/agent/getrsp.py
+share/examples/py-snmp/agent/nextrsp.py
+share/examples/py-snmp/agent/traporig.py
+share/examples/py-snmp/manager/getgen.py
+share/examples/py-snmp/manager/nextgen.py
+share/examples/py-snmp/manager/traprecv.py
+@dirrm share/examples/py-snmp/manager
+@dirrm share/examples/py-snmp/agent
+@dirrm share/examples/py-snmp
+@dirrm share/doc/py-snmp/proto/api/alpha
+@dirrm share/doc/py-snmp/proto/api
+@dirrm share/doc/py-snmp/proto
+@dirrm share/doc/py-snmp/mapping/udp
+@dirrm share/doc/py-snmp/mapping
+@dirrm share/doc/py-snmp/compat/snmpy
+@dirrm share/doc/py-snmp/compat
+@dirrm share/doc/py-snmp/asn1/encoding/ber
+@dirrm share/doc/py-snmp/asn1/encoding
+@dirrm share/doc/py-snmp/asn1
+@dirrm share/doc/py-snmp
+@dirrm lib/python${MODPY_VERSION}/site-packages/pysnmp/test
+@dirrm lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/generic
+@dirrm lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api/alpha
+@dirrm lib/python${MODPY_VERSION}/site-packages/pysnmp/proto/api
+@dirrm lib/python${MODPY_VERSION}/site-packages/pysnmp/proto
+@dirrm lib/python${MODPY_VERSION}/site-packages/pysnmp/mapping/udp
+@dirrm lib/python${MODPY_VERSION}/site-packages/pysnmp/mapping
+@dirrm lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/snmpy
+@dirrm lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp2x
+@dirrm lib/python${MODPY_VERSION}/site-packages/pysnmp/compat/pysnmp1x
+@dirrm lib/python${MODPY_VERSION}/site-packages/pysnmp/compat
+@dirrm lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/encoding/ber
+@dirrm lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1/encoding
+@dirrm lib/python${MODPY_VERSION}/site-packages/pysnmp/asn1
+@dirrm lib/python${MODPY_VERSION}/site-packages/pysnmp
