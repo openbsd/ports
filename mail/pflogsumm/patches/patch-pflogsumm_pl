@@ -1,4 +1,4 @@
-$OpenBSD: patch-pflogsumm_pl,v 1.1.1.1 2002/12/30 19:36:39 jakob Exp $
+$OpenBSD: patch-pflogsumm_pl,v 1.2 2002/12/31 18:46:43 jakob Exp $
 --- pflogsumm.pl.orig	Mon Dec 30 20:20:40 2002
 +++ pflogsumm.pl	Mon Dec 30 20:21:25 2002
 @@ -4,20 +4,20 @@ eval 'exec perl -S $0 "$@"'
@@ -8,7 +8,7 @@ $OpenBSD: patch-pflogsumm_pl,v 1.1.1.1 2002/12/30 19:36:39 jakob Exp $
 -pflogsumm.pl - Produce Postfix MTA logfile summary
 +pflogsumm - Produce Postfix MTA logfile summary
  
- Copyright (C) 1998-2002 by James S. Seymour, Release 1.0.6.
+ Copyright (C) 1998-2002 by James S. Seymour, Release 1.0.7.
  
  =head1 SYNOPSIS
  
