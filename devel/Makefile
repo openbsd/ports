@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.310 2005/03/30 07:30:23 jolan Exp $
+# $OpenBSD: Makefile,v 1.311 2005/04/01 21:47:53 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -265,6 +265,7 @@
      SUBDIR += p5-Time-Period
      SUBDIR += p5-Time-Piece
      SUBDIR += p5-Time-TimeDate
+     SUBDIR += p5-Time-modules
      SUBDIR += p5-Tree-DAG_Node
      SUBDIR += p5-Tree-Simple
      SUBDIR += p5-Universal-exports
