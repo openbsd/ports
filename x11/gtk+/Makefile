@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 1999/09/05 04:17:42 brad Exp $
+# $OpenBSD: Makefile,v 1.25 1999/10/27 01:21:56 brad Exp $
 
-DISTNAME=	gtk+-1.2.4
+DISTNAME=	gtk+-1.2.6
 CATEGORIES=     x11
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
@@ -10,14 +10,13 @@ NEED_VERSION=	1.79
 
 MAINTAINER=	brad@openbsd.org
 
-LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib \
-		intl:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
+		glib.1.2:${PORTSDIR}/devel/glib
 
 USE_X11=	yes
-SYSCONFDIR=	${PREFIX}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static --sysconfdir=${SYSCONFDIR}
+CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -42,13 +41,17 @@ pre-extract:
 	fi
 
 post-extract:
-	@${RM} ${WRKSRC}/docs/*.info
+	@${RM} -f ${WRKSRC}/docs/gtk.info*
+	@${RM} -f ${WRKSRC}/docs/gdk.info*
 
 post-install:
 	@${MKDIR} ${LOCALBASE}/share/aclocal
 	@${INSTALL_DATA} ${WRKSRC}/gtk.m4 ${LOCALBASE}/share/aclocal/
+	@if [ ! -f ${PREFIX}/info/dir ]; then \
+	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	fi
 	@install-info ${PREFIX}/info/gtk.info ${PREFIX}/info/dir
 	@install-info ${PREFIX}/info/gdk.info ${PREFIX}/info/dir
-	${LDCONFIG} -m ${PREFIX}/lib
+	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
