@@ -1,0 +1,42 @@
+$OpenBSD: patch-hgrep_c,v 1.1 2002/10/14 14:55:53 naddy Exp $
+--- hgrep.c.orig	Tue Oct  5 04:43:49 1999
++++ hgrep.c	Mon Oct 14 12:09:23 2002
+@@ -26,6 +26,10 @@
+ */
+ 
+ #include <stdio.h>
++#include <unistd.h>
++#include <stdlib.h>
++#include <curses.h>
++#include <term.h>
+ #ifdef SYSV
+ #include <string.h>
+ #define index strchr
+@@ -37,10 +41,8 @@
+ #define TBUFSIZE 1024
+ #define BIGBUFSIZE 10000
+ 
+-extern char* getenv();
+-extern char* tgetstr();
+-
+-void putch();
++int putch(int);
++int cistrncmp( char* s1, char* s2, int n);
+ 
+ int
+ main( argc, argv )
+@@ -225,11 +227,11 @@ char* argv[];
+     exit( 0 );
+     }
+ 
+-void
++int
+ putch( ch )
+-char ch;
++int ch;
+     {
+-    putchar( ch );
++    return ( putchar( ch ) );
+     }
+ 
+ 
