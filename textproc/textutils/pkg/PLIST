@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/03/11 22:10:02 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/12/16 19:52:23 naddy Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/textutils.info
 bin/gcat
 bin/gcksum
@@ -8,13 +8,13 @@ bin/gcut
 bin/gexpand
 bin/gfmt
 bin/gfold
+bin/ggpr
 bin/ghead
 bin/gjoin
 bin/gmd5sum
 bin/gnl
 bin/god
 bin/gpaste
-bin/ggpr
 bin/gptx
 bin/gsort
 bin/gsplit
@@ -35,13 +35,13 @@ man/man1/gcut.1
 man/man1/gexpand.1
 man/man1/gfmt.1
 man/man1/gfold.1
+man/man1/ggpr.1
 man/man1/ghead.1
 man/man1/gjoin.1
 man/man1/gmd5sum.1
 man/man1/gnl.1
 man/man1/god.1
 man/man1/gpaste.1
-man/man1/ggpr.1
 man/man1/gptx.1
 man/man1/gsort.1
 man/man1/gsplit.1
@@ -66,4 +66,6 @@ share/locale/ru/LC_MESSAGES/textutils.mo
 share/locale/sk/LC_MESSAGES/textutils.mo
 share/locale/sv/LC_MESSAGES/textutils.mo
 share/locale/zh/LC_MESSAGES/textutils.mo
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
 @exec install-info --info-dir=%D/info %D/info/textutils.info

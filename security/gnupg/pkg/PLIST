@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2002/11/16 05:02:21 mark Exp $
+@comment $OpenBSD: PLIST,v 1.14 2003/12/16 19:52:23 naddy Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/gpg.info
 @unexec install-info --delete --info-dir=%D/info %D/info/gpgv.info
 bin/gpg
@@ -30,8 +30,10 @@ share/locale/el/LC_MESSAGES/gnupg.mo
 share/locale/eo/LC_MESSAGES/gnupg.mo
 share/locale/es/LC_MESSAGES/gnupg.mo
 share/locale/et/LC_MESSAGES/gnupg.mo
+share/locale/fi/LC_MESSAGES/gnupg.mo
 share/locale/fr/LC_MESSAGES/gnupg.mo
 share/locale/gl/LC_MESSAGES/gnupg.mo
+share/locale/hu/LC_MESSAGES/gnupg.mo
 share/locale/id/LC_MESSAGES/gnupg.mo
 share/locale/it/LC_MESSAGES/gnupg.mo
 share/locale/ja/LC_MESSAGES/gnupg.mo
@@ -39,8 +41,22 @@ share/locale/nl/LC_MESSAGES/gnupg.mo
 share/locale/pl/LC_MESSAGES/gnupg.mo
 share/locale/pt/LC_MESSAGES/gnupg.mo
 share/locale/pt_BR/LC_MESSAGES/gnupg.mo
+share/locale/sk/LC_MESSAGES/gnupg.mo
 share/locale/sv/LC_MESSAGES/gnupg.mo
 share/locale/tr/LC_MESSAGES/gnupg.mo
+share/locale/zh_TW/LC_MESSAGES/gnupg.mo
+@dirrm share/locale/zh_TW/LC_MESSAGES
+@dirrm share/locale/zh_TW
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@dirrm share/locale/eo/LC_MESSAGES
+@dirrm share/locale/eo
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
 @dirrm share/gnupg
 @dirrm share/doc/gnupg
 @dirrm libexec/gnupg
