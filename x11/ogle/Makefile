@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/03/28 18:16:44 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2003/03/31 14:59:29 sturm Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64
 
@@ -26,6 +26,8 @@ LIB_DEPENDS=	dvdread.3.0::devel/libdvdread \
 		xml2.6.19:libxml>=2.4.19:textproc/libxml \
 		jpeg.62::graphics/jpeg \
 		mad::audio/mad
+
+USE_X11=	Yes
 
 FLAVORS=	altivec
 FLAVOR?=
