@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2001/10/04 12:57:12 jakob Exp $
+# $OpenBSD: Makefile,v 1.16 2001/11/30 13:21:04 jakob Exp $
 # $NetBSD: Makefile,v 1.2 2000/06/19 14:30:02 rh Exp $
 
 COMMENT=	AntiVirus DAT file for uvscan
 
-VERSION=	4164
+VERSION=	4173
 DISTNAME=	dat-${VERSION}
 PKGNAME=	uvscan_${DISTNAME}
 CATEGORIES=	security
-NEED_VERSION=	1.363
+NEED_VERSION=	1.499
 
 HOMEPAGE=	http://www.nai.com/asp_set/download/dats/mcafee_4x.asp
 
