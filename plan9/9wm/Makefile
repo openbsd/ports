@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/10/26 04:56:38 turan Exp $
-
-BROKEN=		bad packing lists
+# $OpenBSD: Makefile,v 1.5 1999/10/26 20:22:47 markus Exp $
 
 DISTNAME=	9wm-1.1
 CATEGORIES=	plan9
