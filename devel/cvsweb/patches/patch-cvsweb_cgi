@@ -1,7 +1,7 @@
-$OpenBSD: patch-cvsweb_cgi,v 1.7 2001/01/12 00:13:09 naddy Exp $
---- cvsweb.cgi.orig	Thu Jan 11 03:00:55 2001
-+++ cvsweb.cgi	Thu Jan 11 18:16:07 2001
-@@ -146,7 +146,7 @@ use File::Basename;
+$OpenBSD: patch-cvsweb_cgi,v 1.8 2001/03/24 22:39:04 naddy Exp $
+--- cvsweb.cgi.orig	Sat Jan 13 08:48:09 2001
++++ cvsweb.cgi	Sun Jan 14 15:13:01 2001
+@@ -151,7 +151,7 @@ use File::Basename;
  # Locations to search for user configuration, in order:
  for (
       "$mydir/cvsweb.conf",

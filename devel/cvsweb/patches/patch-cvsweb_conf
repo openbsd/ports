@@ -1,6 +1,6 @@
-$OpenBSD: patch-cvsweb_conf,v 1.5 2001/01/12 00:13:09 naddy Exp $
---- cvsweb.conf.orig	Thu Jan 11 03:00:55 2001
-+++ cvsweb.conf	Thu Jan 11 18:14:54 2001
+$OpenBSD: patch-cvsweb_conf,v 1.6 2001/03/24 22:39:04 naddy Exp $
+--- cvsweb.conf.orig	Sun Jan 14 10:04:04 2001
++++ cvsweb.conf	Sat Mar 24 23:14:31 2001
 @@ -15,7 +15,7 @@
  #   uname, cvs, rlog, rcsdiff
  #   gzip (if you enable $allow_compress)
@@ -10,7 +10,7 @@ $OpenBSD: patch-cvsweb_conf,v 1.5 2001/01/12 00:13:09 naddy Exp $
  
  # Search the above directories for each command
  for (qw(uname cvs rlog rcsdiff gzip tar rm)) {
-@@ -206,7 +206,7 @@ EOT
+@@ -209,7 +209,7 @@ EOT
  # These default icons are coming with apache.
  # If these icons are too large, check out the miniicons in the
  # icons/ directory; they have a width/height of 16/16
@@ -19,7 +19,7 @@ $OpenBSD: patch-cvsweb_conf,v 1.5 2001/01/12 00:13:09 naddy Exp $
  # format:             TEXT      ICON-URL              width height
  %ICONS  = (
  	   back => [ ("[BACK]", "$iconsdir/back.gif", 20,   22) ],
-@@ -326,7 +326,7 @@ $inputTextSize = 12;
+@@ -329,7 +329,7 @@ $inputTextSize = 12;
  # cvsweb to guess the correct mime-type on
  # checkout; you can use the mime.types from
  # apache here:

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2001/01/12 00:13:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2001/03/24 22:39:04 naddy Exp $
 # $FreeBSD: ports/devel/cvsweb/Makefile,v 1.28 2000/09/23 20:48:45 knu Exp $
 
-DISTNAME=	cvsweb-1.104.1.62
+DISTNAME=	cvsweb-1.106.1.68
 CATEGORIES=	devel www
 NEED_VERSION=	1.340
 HOMEPAGE=	http://stud.fh-heilbronn.de/~zeller/cgi/cvsweb.cgi/
@@ -15,7 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
 		ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
-		ftp://ftp7.de.FreeBSD.org/pub/FreeBSD/%SUBDIR%/
+		ftp://ftp7.de.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
+		http://www.iDaemons.org/distfiles/
 MASTER_SITE_SUBDIR=	ports/local-distfiles/knu
 
 NO_BUILD=	Yes
