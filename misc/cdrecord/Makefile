@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/08/27 01:58:28 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/09/27 02:56:52 niklas Exp $
 
 DISTNAME=	cdrecord-1.6.1
 CATEGORIES=	misc
@@ -17,7 +17,7 @@ MAKE_ENV=	MAKEPROG=gmake
 # we instead explicitly install what we want.
 OBJDIR=		OBJ/${MACHINE}-openbsd-$(CC)
 do-install:
-	@{MKDIR} ${PREFIX}/share/doc/cdrecord
+	@${MKDIR} ${PREFIX}/share/doc/cdrecord
 	${INSTALL_PROGRAM} ${WRKSRC}/cdrecord/${OBJDIR}/cdrecord ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/cdrecord
