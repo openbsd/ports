@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2002/05/12 22:13:09 brad Exp $
+# $OpenBSD: Makefile,v 1.85 2002/05/22 22:49:16 naddy Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -34,6 +34,7 @@
      SUBDIR += libmikmod
      SUBDIR += libmikmod,esd
      SUBDIR += libogg
+     SUBDIR += libsidplay
      SUBDIR += libvorbis
      SUBDIR += libworkman
      SUBDIR += lopster
@@ -69,6 +70,7 @@
      SUBDIR += rsynth
 #    SUBDIR += s3mod
      SUBDIR += shorten
+     SUBDIR += sidplay
      SUBDIR += sox
      SUBDIR += soundtracker
      SUBDIR += soundtracker,gnome,sun
@@ -101,6 +103,7 @@
      SUBDIR += xmms-flac
      SUBDIR += xmms-fmradio
      SUBDIR += xmms-shn
+     SUBDIR += xmms-sid
      SUBDIR += xmp
 
 .include <bsd.port.subdir.mk>
