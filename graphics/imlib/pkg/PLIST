@@ -12,10 +12,10 @@ lib/imlib/im_palette.pal
 lib/imlib/imrc
 lib/libImlib.a
 lib/libImlib.la
-lib/libImlib.so.19.7
+lib/libImlib.so.19.8
 lib/libgdk_imlib.a
 lib/libgdk_imlib.la
-lib/libgdk_imlib.so.19.7
+lib/libgdk_imlib.so.19.8
 lib/libimlib-bmp.a
 lib/libimlib-bmp.la
 lib/libimlib-bmp.so.0.0
