@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2002/05/29 05:24:12 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.22 2002/10/22 06:09:36 kevlo Exp $
 bin/xml2-config
 bin/xmlcatalog
 bin/xmllint
@@ -55,6 +55,8 @@ share/libxml2/examples/testXPath.c
 share/libxml2/examples/xmllint.c
 share/libxml2/html/DOM.gif
 share/libxml2/html/FAQ.html
+share/libxml2/html/Libxml2-Logo-180x168.gif
+share/libxml2/html/Libxml2-Logo-90x34.gif
 share/libxml2/html/book1.html
 share/libxml2/html/encoding.html
 share/libxml2/html/index.sgml
@@ -75,14 +77,20 @@ share/libxml2/html/libxml-notes.html
 share/libxml2/html/libxml-parser.html
 share/libxml2/html/libxml-parserinternals.html
 share/libxml2/html/libxml-sax.html
+share/libxml2/html/libxml-schemasinternals.html
 share/libxml2/html/libxml-threads.html
 share/libxml2/html/libxml-tree.html
 share/libxml2/html/libxml-uri.html
 share/libxml2/html/libxml-valid.html
 share/libxml2/html/libxml-xinclude.html
+share/libxml2/html/libxml-xmlautomata.html
 share/libxml2/html/libxml-xmlerror.html
 share/libxml2/html/libxml-xmlio.html
 share/libxml2/html/libxml-xmlmemory.html
+share/libxml2/html/libxml-xmlregexp.html
+share/libxml2/html/libxml-xmlschemas.html
+share/libxml2/html/libxml-xmlschemastypes.html
+share/libxml2/html/libxml-xmlunicode.html
 share/libxml2/html/libxml-xpath.html
 share/libxml2/html/libxml-xpathinternals.html
 share/libxml2/html/libxml-xpointer.html
@@ -92,26 +100,6 @@ share/libxml2/html/smallfootonly.gif
 share/libxml2/html/structure.gif
 share/libxml2/html/w3c.png
 share/libxml2/html/xml.html
-share/libxml2-python/examples/attribs.py
-share/libxml2-python/examples/build.py
-share/libxml2-python/examples/cutnpaste.py
-share/libxml2-python/examples/error.py
-share/libxml2-python/examples/invalid.xml
-share/libxml2-python/examples/push.py
-share/libxml2-python/examples/pushSAX.py
-share/libxml2-python/examples/pushSAXhtml.py
-share/libxml2-python/examples/serialize.py
-share/libxml2-python/examples/tst.py
-share/libxml2-python/examples/tst.xml
-share/libxml2-python/examples/tstURI.py
-share/libxml2-python/examples/tstxpath.py
-share/libxml2-python/examples/valid.xml
-share/libxml2-python/examples/validate.py
-share/libxml2-python/examples/xpath.py
-share/libxml2-python/examples/xpathext.py
-share/libxml2-python/examples/xpathret.py
-@dirrm share/libxml2-python/examples
-@dirrm share/libxml2-python
 @dirrm share/libxml2/html
 @dirrm share/libxml2/examples
 @dirrm share/libxml2
