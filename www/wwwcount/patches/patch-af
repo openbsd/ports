@@ -1,0 +1,19 @@
+*** main.c.bak	Fri May  3 07:15:48 1996
+--- main.c	Thu Dec 12 04:45:17 1996
+***************
+*** 1111,1117 ****
+      if (Gdebug == False)
+      {
+          (void) fprintf (stdout,
+!             "Content-type: image/gif%c%c",LF,LF);
+          (void) fflush (stdout);
+      }
+      return;
+--- 1111,1117 ----
+      if (Gdebug == False)
+      {
+          (void) fprintf (stdout,
+! 	    "Content-type: image/gif%cCache-control: no-store%c%c",LF,LF,LF);
+          (void) fflush (stdout);
+      }
+      return;
