@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2003/08/13 01:39:17 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2003/08/13 01:41:16 espie Exp $
 
 COMMENT=	"X11-based presentation tool"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
 HOMEPAGE=	http://www.mew.org/mgp/
 
-PERMIT_PACKAGE_CDROM=	"Patents on freetype1""
+PERMIT_PACKAGE_CDROM=	"Patents on freetype1"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
