@@ -1,3 +1,5 @@
+# $OpenBSD: Makefile,v 1.2 1999/02/02 19:22:11 rohee Exp $
+#
 # Ports collection makefile for:  mtr
 # Version required:     	  0.28
 # Date created:			  6 Dec 1998
