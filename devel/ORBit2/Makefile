@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2004/05/06 06:02:30 marcm Exp $
+# $OpenBSD: Makefile,v 1.11 2004/06/22 04:23:40 marcm Exp $
 
 COMMENT=		"high-performance CORBA Object Request Broker"
 
-DISTNAME=		ORBit2-2.10.1
+DISTNAME=		ORBit2-2.10.2
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.labs.redhat.com/orbit/
