@@ -1,7 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.21 2004/10/18 06:44:18 jakob Exp $
-@lib lib/liblber-2.2.so.7.10
-@lib lib/liblber.so.7.10
-@lib lib/libldap-2.2.so.7.10
-@lib lib/libldap.so.7.10
-@lib lib/libldap_r-2.2.so.7.10
-@lib lib/libldap_r.so.7.10
+@comment $OpenBSD: PFRAG.shared,v 1.22 2005/01/04 18:35:49 jakob Exp $
+@lib lib/liblber-2.2.so.7.13
+@lib lib/liblber.so.7.13
+@lib lib/libldap-2.2.so.7.13
+@lib lib/libldap.so.7.13
+@lib lib/libldap_r-2.2.so.7.13
+@lib lib/libldap_r.so.7.13
