@@ -1,0 +1,19 @@
+*** acroread.orig	Mon Jul 12 17:43:51 1999
+--- acroread	Mon Jul 12 17:45:23 1999
+***************
+*** 205,211 ****
+      ACRO_CONFIG=intelbsdi
+      export ACRO_CONFIG
+      ;;
+!   Linux)
+      ACRO_CONFIG=intellinux
+      export ACRO_CONFIG
+      ;;
+--- 205,211 ----
+      ACRO_CONFIG=intelbsdi
+      export ACRO_CONFIG
+      ;;
+!   Linux|OpenBSD)
+      ACRO_CONFIG=intellinux
+      export ACRO_CONFIG
+      ;;
