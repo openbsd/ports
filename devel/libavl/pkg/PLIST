@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/08 06:50:36 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/07/19 02:04:05 kevlo Exp $
 include/avl.h
 include/avlt.h
 include/avltr.h
@@ -7,5 +7,3 @@ include/rb.h
 info/avl.info
 @exec install-info --info-dir=%D/info %D/info/avl.info
 lib/libavl.a
-share/doc/libavl/avl.html
-@dirrm share/doc/libavl
