@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2004/01/02 08:19:54 sturm Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2004/10/12 20:53:06 naddy Exp $
 
                           OpenBSD mod_jk Package
                        Apache-Tomcat AJP Connector
@@ -16,7 +16,8 @@ server (local or remote) where Tomcat serves both the static and dynamic
 content for the default installed Tomcat contexts. If this is your first time
 using mod_jk, start here and get this working first. This section assumes
 that you have installed Tomcat and can access the examples context directly
-(i.e. http://your.tomcat.host:8080/examples/).
+(i.e. http://your.tomcat.host:8080/examples/ for Tomcat 4 or 
+http://your.tomcat.host:8080/jsp-examples/ for Tomcat 5).
 
 1) Enable the module by executing /usr/local/sbin/mod_jk-enable with root
 privileges (using sudo).
@@ -37,7 +38,8 @@ the file:
 
 5) Stop and start Apache using apachectl(1)
 
-6) Test mod_jk by accessing the url http://your.apache.host/examples/.
+6) Test mod_jk by accessing the url http://your.apache.host/examples/ for 
+Tomcat 4 or http://your.apache.host/jsp-examples/.
 
 mod_jk Resources:
 

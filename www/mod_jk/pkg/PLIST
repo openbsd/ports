@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/10/12 20:53:06 naddy Exp $
 lib/mod_jk.so
 sbin/mod_jk-enable
 share/doc/mod_jk/
@@ -8,6 +8,11 @@ share/doc/mod_jk/common/
 share/doc/mod_jk/common/AJPv13-extensions-proposal.html
 share/doc/mod_jk/common/AJPv13.html
 share/doc/mod_jk/common/doccontrib.html
+share/doc/mod_jk/common/printer/
+share/doc/mod_jk/common/printer/AJPv13-extensions-proposal.html
+share/doc/mod_jk/common/printer/AJPv13.html
+share/doc/mod_jk/common/printer/doccontrib.html
+share/doc/mod_jk/common/printer/tools.html
 share/doc/mod_jk/common/tools.html
 share/doc/mod_jk/faq.html
 share/doc/mod_jk/images/
@@ -24,18 +29,30 @@ share/doc/mod_jk/jk/aphowto.html
 share/doc/mod_jk/jk/domhowto.html
 share/doc/mod_jk/jk/iishowto.html
 share/doc/mod_jk/jk/neshowto.html
+share/doc/mod_jk/jk/printer/
+share/doc/mod_jk/jk/printer/aphowto.html
+share/doc/mod_jk/jk/printer/domhowto.html
+share/doc/mod_jk/jk/printer/iishowto.html
+share/doc/mod_jk/jk/printer/neshowto.html
+share/doc/mod_jk/jk/printer/quickhowto.html
+share/doc/mod_jk/jk/printer/workershowto.html
 share/doc/mod_jk/jk/quickhowto.html
 share/doc/mod_jk/jk/workershowto.html
 share/doc/mod_jk/jk2/
-share/doc/mod_jk/jk2/confighowto.html
-share/doc/mod_jk/jk2/configtc.html
-share/doc/mod_jk/jk2/configtccom.html
-share/doc/mod_jk/jk2/configtcex.html
-share/doc/mod_jk/jk2/configweb.html
-share/doc/mod_jk/jk2/configwebcom.html
-share/doc/mod_jk/jk2/configwebex.html
-share/doc/mod_jk/jk2/installhowto.html
-share/doc/mod_jk/jk2/vhosthowto.html
+share/doc/mod_jk/jk2/printer/
+share/doc/mod_jk/jk2/printer/confighowto.html
+share/doc/mod_jk/jk2/printer/configtc.html
+share/doc/mod_jk/jk2/printer/configtccom.html
+share/doc/mod_jk/jk2/printer/configtcex.html
+share/doc/mod_jk/jk2/printer/configweb.html
+share/doc/mod_jk/jk2/printer/configwebcom.html
+share/doc/mod_jk/jk2/printer/configwebex.html
+share/doc/mod_jk/jk2/printer/davhowto.html
+share/doc/mod_jk/jk2/printer/installhowto.html
+share/doc/mod_jk/jk2/printer/vhosthowto.html
+share/doc/mod_jk/printer/
+share/doc/mod_jk/printer/faq.html
+share/doc/mod_jk/printer/index.html
 share/doc/mod_jk/style.css
 share/examples/mod_jk/
 share/examples/mod_jk/mod_jk.conf
