@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/02 19:02:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/07/06 09:23:30 pvalchev Exp $
 
 COMMENT=		"front-end to ssh-agent"
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.ibiblio.org/gentoo/distfiles/
+MASTER_SITES=		http://www.ibiblio.org/pub/Linux/distributions/gentoo/distfiles/
 EXTRACT_SUFX=		.tar.bz2
 
 NO_BUILD=		Yes
