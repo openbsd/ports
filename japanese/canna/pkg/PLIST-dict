@@ -1,15 +1,32 @@
-@comment $OpenBSD: PLIST-dict,v 1.3 2004/08/03 11:47:10 espie Exp $
-@group daemon
-@owner daemon
+@comment $OpenBSD: PLIST-dict,v 1.4 2004/09/15 00:54:51 espie Exp $
 @mode 0755
+@owner daemon
+@group daemon
 canna/
-@owner
 @mode
+@owner
 canna/canna/
+@mode u+w,g+w
+@owner daemon
+canna/canna/bushu.cld
+@mode
+@owner
 canna/canna/chimei.ctd
 canna/canna/dics.dir
+@mode u+w,g+w
+@owner daemon
+canna/canna/fuzokugo.cbd
+canna/canna/fuzokugo.cld
+@mode
+@owner
 canna/canna/hojomwd.ctd
 canna/canna/hojoswd.ctd
+@mode u+w,g+w
+@owner daemon
+canna/canna/iroha.cbd
+canna/canna/iroha.cld
+@mode
+@owner
 canna/canna/kanasmpl.ctd
 canna/canna/katakana.ctd
 canna/canna/keishiki.ctd
@@ -17,13 +34,6 @@ canna/canna/necgaiji.ctd
 canna/canna/number.ctd
 canna/canna/software.ctd
 canna/canna/suffix.ctd
-@owner daemon
-@mode u+w,g+w
-canna/canna/fuzokugo.cbd
-canna/canna/fuzokugo.cld
-canna/canna/iroha.cbd
-canna/canna/iroha.cld
-canna/canna/bushu.cld
 canna/group/
 canna/user/
 @unexec echo "Remove /var/spool/canna manually"
