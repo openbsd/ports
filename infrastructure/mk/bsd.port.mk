@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.467 2001/10/03 08:41:16 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.468 2001/10/03 08:53:18 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -283,6 +283,7 @@ DEF_UMASK?=		022
 
 NO_DEPENDS?= No
 NO_BUILD?= No
+NO_REGRESS?= No
 
 # These need to be absolute since we don't know how deep in the ports
 # tree we are and thus can't go relative.  They can, of course, be overridden
@@ -387,6 +388,11 @@ MAKE_FLAGS+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 
 SUBPACKAGE?=
 FLAVOR?=
+FLAVORS?=
+
+.if !empty(FLAVORS:L:Mregress) && empty(FLAVOR:L:Mregress)
+NO_REGRESS= Yes
+.endif
 
 USE_MOTIF?=No
 HAVE_MOTIF?=No
@@ -426,7 +432,7 @@ FLAVOR_EXT:=
 
 # Create the basic sed substitution pipeline for fragments
 # (applies only to PLIST for now)
-.if defined(FLAVORS)
+.if !empty(FLAVORS)
 .  for _i in ${FLAVORS:L}
 .    if empty(FLAVOR:L:M${_i})
 SED_PLIST+=|sed -e '/^!%%${_i}%%$$/r${PKGDIR}/PFRAG.no-${_i}' -e '//d' -e '/^%%${_i}%%$$/d'
@@ -438,7 +444,7 @@ SED_PLIST+=|sed -e '/^!%%${_i}%%$$/d' -e '/^%%${_i}%%$$/r${PKGDIR}/PFRAG.${_i}' 
 .endif
 
 .if !empty(FLAVOR)
-.  if defined(FLAVORS)
+.  if !empty(FLAVORS)
 .    for _i in ${FLAVOR:L}
 .      if empty(FLAVORS:L:M${_i})
 ERRORS+=	"Fatal: Unknown flavor: ${_i}"
@@ -492,16 +498,20 @@ _PACKAGE_COOKIE=	${PKGFILE}
 .if defined(SEPARATE_BUILD)
 _CONFIGURE_COOKIE=	${WRKBUILD}/.configure_done
 _BUILD_COOKIE=		${WRKBUILD}/.build_done
+_REGRESS_COOKIE=	${WRKBUILD}/.regress_done
 .else
 _CONFIGURE_COOKIE=	${WRKDIR}/.configure_done
 _BUILD_COOKIE=		${WRKDIR}/.build_done
+_REGRESS_COOKIE=	${WRKDIR}/.regress_done
 .endif
 
 _ALL_COOKIES=${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
-${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_PACKAGE_COOKIES} \
+${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_REGRESS_COOKIE} \
+${_PACKAGE_COOKIES} \
 ${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
 ${_WRKDIR_COOKIE} ${_DEPlib_COOKIES} ${_DEPmisc_COOKIES} \
-${_DEPfetch_COOKIES} ${_DEPbuild_COOKIES} ${_DEPrun_COOKIES}
+${_DEPfetch_COOKIES} ${_DEPbuild_COOKIES} ${_DEPrun_COOKIES} \
+${_DEPregress_COOKIES}
 
 _MAKE_COOKIE=touch -f
 
@@ -616,6 +626,8 @@ MODULES+=${_i}
 ERRORS+="Missing support for modules ${_m}."
 .  endif
 .endfor
+
+_REGRESS_TARGET ?= regress
 
 .if ${FAKE:L} == "yes"
 _PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
@@ -1206,6 +1218,7 @@ _fetch_depends_fragment= \
 
 _build_depends_fragment=${_fetch_depends_fragment}
 _run_depends_fragment=${_fetch_depends_fragment}
+_regress_depends_fragment=${_fetch_depends_fragment}
 
 .if ${TRUST_PACKAGES:L} == "yes"
 _lib_depends_fragment=${_fetch_depends_fragment}
@@ -1233,7 +1246,8 @@ _lib_depends_fragment = \
 
 _misc_depends_fragment = :
 
-depends: lib-depends misc-depends fetch-depends build-depends run-depends
+depends: lib-depends misc-depends fetch-depends build-depends run-depends\
+	regress-depends
 
 # Let DEPENDS behave like the others
 .if defined(DEPENDS)
@@ -1245,7 +1259,7 @@ MISC_DEPENDS=${DEPENDS:S/^/nonexistent::/}
 _print-packagename:
 	@echo ${FULLPKGNAME${SUBPACKAGE}}
 
-.for _DEP in fetch build run lib misc
+.for _DEP in fetch build run lib misc regress
 _DEP${_DEP}_COOKIES=
 .  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
 .    for _i in ${${_DEP:U}_DEPENDS}
@@ -1308,7 +1322,7 @@ ${_DEP}-depends: ${_DEP${_DEP}_COOKIES}
 
 
 .if defined(IGNORE) && !defined(NO_IGNORE)
-fetch checksum extract patch configure all build install \
+fetch checksum extract patch configure all build install regress \
 uninstall deinstall fake package:
 .  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} ${IGNORE}."
@@ -1434,11 +1448,12 @@ configure: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPmisc_COOKIES} \
 	${_CONFIGURE_COOKIE}
 all build: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPmisc_COOKIES} \
 	${_BUILD_COOKIE}
-.if defined(ALWAYS_PACKAGE)
+regress: ${_DEPregress_COOKIES} ${_REGRESS_COOKIE}
+.  if defined(ALWAYS_PACKAGE)
 install: ${_INSTALL_COOKIE} ${_PACKAGE_COOKIES}
-.else
+.  else
 install: ${_INSTALL_COOKIE}
-.endif
+.  endif
 fake: ${_FAKE_COOKIE}
 package: ${_PACKAGE_COOKIES}
 
@@ -1647,6 +1662,27 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 .  if target(post-build)
 	@cd ${.CURDIR} && exec ${MAKE} post-build
 .  endif
+.endif
+	@${_MAKE_COOKIE} $@
+
+${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
+.if ${NO_REGRESS:L} == "no"
+	@${ECHO_MSG} "===>  Regression check for ${FULLPKGNAME}"
+.  if target(pre-regress)
+	@cd ${.CURDIR} && exec ${MAKE} pre-regress
+.  endif
+.  if target(do-regress)
+	@cd ${.CURDIR} && exec ${MAKE} do-regress
+.  else
+# What REGRESS normally does:
+	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET}
+# End of REGRESS
+.  endif
+.  if target(post-regress)
+	@cd ${.CURDIR} && exec ${MAKE} post-regress
+.  endif
+.else
+	@echo 1>&2 "No regression check for ${FULLPKGNAME}"
 .endif
 	@${_MAKE_COOKIE} $@
 
@@ -2586,7 +2622,7 @@ unlink-categories:
 .endif
 
 .PHONY: \
-   addsum all build build-depends checkpatch \
+   addsum all build build-depends regress regress-depends checkpatch \
    checksum clean clean-depends configure deinstall \
    delete-package delete-package-links depend depends depends-list \
    describe distclean do-build do-configure do-extract \

@@ -1,9 +1,10 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.1 2001/08/25 11:23:46 espie Exp $
+# $OpenBSD: perl.port.mk,v 1.2 2001/10/03 08:53:18 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
+REGRESS_TARGET ?=	test
 MODPERL_configure= \
 	arch=`/usr/bin/perl -e 'use Config; print $$Config{archname}, "\n";'`; \
      cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} \
