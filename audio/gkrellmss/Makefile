@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2003/03/01 00:14:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2003/03/01 00:50:29 sturm Exp $
 
 COMMENT=	"GKrellM Sound Scope"
 
-DISTNAME=	gkrellmss-0.5
+DISTNAME=	gkrellmss-0.4
 CATEGORIES=	audio
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -11,7 +11,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 HOMEPAGE=	http://web.wt.net/~billw/gkrellmss/gkrellmss.html
-MASTER_SITES=	http://web.wt.net/~billw/gkrellmss/
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	David Lebel <lebel@openbsd.org>
 
