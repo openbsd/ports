@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.3 2002/06/29 13:39:26 couderc Exp $
---- configure.in.orig	Wed Feb  6 10:13:15 2002
-+++ configure.in	Sat Jun 29 15:26:26 2002
+$OpenBSD: patch-configure_in,v 1.4 2002/07/15 21:38:07 brad Exp $
+--- configure.in.orig	Wed Feb  6 04:13:15 2002
++++ configure.in	Mon Jul 15 14:37:05 2002
 @@ -477,7 +477,7 @@ case "$target_os" in
    else
      LDFLAGS="-rdynamic"
@@ -10,16 +10,19 @@ $OpenBSD: patch-configure_in,v 1.3 2002/06/29 13:39:26 couderc Exp $
      if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
      then
  	netbsd_elf=yes
-@@ -566,7 +566,7 @@ if test "$with_dln_a_out" != yes; then
+@@ -566,7 +566,10 @@ if test "$with_dln_a_out" != yes; then
  			    LDFLAGS="-Wl,-export-dynamic"
  			fi
  			rb_cv_dlopen=yes ;;
 -	openbsd*) 	LDSHARED="ld -Bforcearchive -Bshareable"
-+	openbsd*) 	LDSHARED='$(CC) -shared -fPIC'
++	openbsd*) 	LDSHARED="\$(CC) -shared ${CCDLFLAGS}"
++			if test "$rb_cv_binary_elf" = yes; then
++			    LDFLAGS="-Wl,-E"
++			fi
  			rb_cv_dlopen=yes ;;
  	bsdi3*) 	case "$CC" in
  			*shlicc*)	LDSHARED="$CC -r"
-@@ -842,7 +842,8 @@ if test "$enable_shared" = 'yes'; then
+@@ -842,7 +845,8 @@ if test "$enable_shared" = 'yes'; then
   	;;
      openbsd*)
  	SOLIBS='$(LIBS)'
