@@ -1,9 +1,5 @@
-# OpenBSD Makefile for:	XEmacs
-# Version required:	20.4
-# Date created:		3 January 1999
-# Whom:			Hans Guenter Weigand
+# $OpenBSD: Makefile,v 1.3 1999/03/30 03:59:52 fgsch Exp $
 #
-# $OpenBSD: Makefile,v 1.2 1999/01/31 04:37:03 marc Exp $
 
 # If MULE extensions are desired use
 #
@@ -26,7 +22,7 @@ BUILD_DEPENDS=	${PREFIX}/lib/libcompface.a:${PORTSDIR}/graphics/compface
 #RUN_DEPENDS=	pgmtopbm:${PORTSDIR}/graphics/netpbm
 
 IS_INTERACTIVE= yes
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 # Put generated PLIST into WRKDIR to avoid collisions in a shared ports tree.
@@ -50,6 +46,7 @@ GCCARCH=	${M_ARCH}-unknown-openbsd${SYS_REL}
 #
 CONFIGURE_ARGS= ${GCCARCH} \
 		${CONFIG_MULE} \
+		--prefix=${PREFIX} \
 		--with-gnu-make \
 		--statedir=/var/run \
 		--site-includes=/usr/include:${PREFIX}/include \
