@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/09/15 19:26:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2004/09/25 13:01:48 espie Exp $
 bin/findtr
 bin/moc2
 bin/qt20fix
@@ -288,7 +288,7 @@ include/X11/qt2/qxml.h
 include/X11/qt2/qxt.h
 lib/qt2/bin/
 lib/qt2/bin/moc
-lib/qt2/man/
+@mandir lib/qt2/man/
 lib/qt2/man/man1/
 @man lib/qt2/man/man1/moc2.1
 lib/qt2/man/man3/
