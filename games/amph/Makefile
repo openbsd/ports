@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/25 08:15:37 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2001/07/25 17:23:50 pvalchev Exp $
 
 COMMENT=	"jump'n run game with unique video effects"
 
@@ -7,7 +7,7 @@ DVERSION=	0.8.6
 DISTNAME=	amphetamine-${VERSION}
 PKGNAME=	amph-${VERSION}
 CATEGORIES=	games x11
-NEED_VERSION=	1.419
+NEED_VERSION=	1.427
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.dataway.ch/~lukasl/amph/amph.html
@@ -28,11 +28,14 @@ LIB_DEPENDS=	SDL.0.3:sdl-*-!no_x11:devel/sdl
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
-MAKE_ENV=	PREFIX="${PREFIX}" X11BASE="${X11BASE}"
+MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}" PREFIX="${PREFIX}" X11BASE="${X11BASE}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/amph ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/amph
 	${INSTALL_DATA_DIR} ${PREFIX}/share/amph
 	@cp -Rp ${WRKDIR}/amph/* ${PREFIX}/share/amph/
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/amph
 
 .include <bsd.port.mk>

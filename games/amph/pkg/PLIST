@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/13 04:28:27 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/07/25 17:23:50 pvalchev Exp $
 bin/amph
 share/amph/amph.conf
 share/amph/amph.xpm
@@ -60,5 +60,7 @@ share/amph/sounds/warg1l.wav
 share/amph/sounds/warg2h.wav
 share/amph/sounds/warg2l.wav
 share/amph/user.conf
+share/doc/amph/README
+@dirrm share/doc/amph
 @dirrm share/amph/sounds
 @dirrm share/amph
