@@ -1,6 +1,7 @@
---- ltcf-c.sh.orig	Sun Feb  4 20:19:31 2001
-+++ ltcf-c.sh	Sun Feb  4 20:54:25 2001
-@@ -47,6 +47,9 @@
+$OpenBSD: patch-ltcf-c.sh,v 1.2 2002/09/15 03:52:04 brad Exp $
+--- ltcf-c.sh.orig	Wed Nov 15 22:29:29 2000
++++ ltcf-c.sh	Sat Sep 14 23:34:44 2002
+@@ -47,6 +47,9 @@ cygwin* | mingw*)
      with_gnu_ld=no
    fi
    ;;
@@ -10,7 +11,7 @@
  
  esac
  
-@@ -378,10 +381,21 @@
+@@ -378,10 +381,21 @@ else
      ;;
  
    openbsd*)

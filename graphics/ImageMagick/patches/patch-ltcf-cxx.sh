@@ -1,6 +1,7 @@
+$OpenBSD: patch-ltcf-cxx.sh,v 1.2 2002/09/15 03:52:04 brad Exp $
 --- ltcf-cxx.sh.orig	Fri Nov  3 19:51:15 2000
-+++ ltcf-cxx.sh	Sun Feb  4 22:43:40 2001
-@@ -54,6 +54,13 @@
++++ ltcf-cxx.sh	Sat Sep 14 23:34:44 2002
+@@ -54,6 +54,13 @@ set dummy $CC
  compiler=$2
  cc_basename=`$echo X"$compiler" | $Xsed -e 's%^.*/%%'`
  
@@ -14,7 +15,7 @@
  # Check if we are using GNU gcc  (taken/adapted from configure script)
  # We need to check here since "--with-gcc" is set at configure time,
  # not ltconfig time!
-@@ -67,6 +74,7 @@
+@@ -67,6 +74,7 @@ if { ac_try='${CC-c++} -E conftest.$ac_e
  
    # Set up default GNU C++ configuration
  
@@ -22,7 +23,7 @@
    # Check if GNU C++ uses GNU ld as the underlying linker, since the
    # archiving commands below assume that GNU ld is being used.
    if eval "`$CC -print-prog-name=ld` --version 2>&1" | \
-@@ -91,6 +99,7 @@
+@@ -91,6 +99,7 @@ if { ac_try='${CC-c++} -E conftest.$ac_e
      else
        whole_archive_flag_spec=
      fi
@@ -30,7 +31,7 @@
    else
      with_gnu_ld=no
      wlarc=
-@@ -300,6 +309,22 @@
+@@ -300,6 +309,22 @@ case "$host_os" in
    netbsd*)
      # NetBSD uses g++ - do we need to do anything?
      ;;
@@ -53,7 +54,7 @@
    osf3*)
      if test "$with_gcc" = yes && test "$with_gnu_ld" = no; then
        allow_undefined_flag=' ${wl}-expect_unresolved ${wl}\*'
-@@ -695,6 +720,8 @@
+@@ -695,6 +720,8 @@ else
        esac   
        ;;
      netbsd*)

@@ -1,3 +1,4 @@
+$OpenBSD: patch-ltmain_sh,v 1.6 2002/09/15 03:52:04 brad Exp $
 --- ltmain.sh.orig	Sun Dec 10 19:02:22 2000
 +++ ltmain.sh	Wed Feb 21 09:59:59 2001
 @@ -1097,7 +1097,18 @@ EOF
