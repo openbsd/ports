@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1 2000/07/02 16:57:48 millert Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/22 16:17:40 espie Exp $
 
 DISTNAME=	libapm-linux-1.0beta5
 PKGNAME=	libretto-config-1.0b5
 CATEGORIES=	sysutils
 NEED_VERSION=	1.310
 
-MAINTAINER=	millert@openbsd.org
+MAINTAINER=	Todd Miller <millert@openbsd.org>
 
 ONLY_FOR_ARCHS=	i386
 
