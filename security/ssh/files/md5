@@ -1,2 +1,6 @@
-MD5 (ssh-1.2.26.tar.gz) = 2ee46d454015dd01c5e8f074eabf0245
 MD5 (rsaref2.tar.gz) = 0b474c97bf1f1c0d27e5a95f1239c08d
+MD5 (ssh-1.2.26.tar.gz) = 2ee46d454015dd01c5e8f074eabf0245
+RMD160 (rsaref2.tar.gz) = 282d62321c50ddc3cefb8bab924200594d24af0c
+RMD160 (ssh-1.2.26.tar.gz) = d825e10c715db03d73f4626203408616bc2f412a
+SHA1 (rsaref2.tar.gz) = 0b1e58ed2dd82bed07fe80c01c3cfa8558dc745f
+SHA1 (ssh-1.2.26.tar.gz) = 816045e0a9bde95f6f733479693302b7d0415422
