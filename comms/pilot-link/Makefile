@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2004/08/17 22:36:02 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2004/08/17 23:44:30 naddy Exp $
 
 COMMENT=	"PalmPilot communication utilities"
 
@@ -29,13 +29,12 @@ CONFIGURE_ARGS= --enable-static \
 		--with-perl5="/usr/bin/perl" \
 		--without-itcl \
 		--without-python \
-		--without-java \
-		--without-tcl
+		--without-java
 
 .if ${FLAVOR:L:Mdebug} 
 LIB_DEPENDS=	tk83::x11/tk/8.3
 .else
-CONFIGURE_ARGS+= --without-tk
+CONFIGURE_ARGS+= --without-tcl --without-tk
 .endif
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/scripts
