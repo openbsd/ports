@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2001/08/14 14:33:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.162 2001/08/14 21:28:17 camield Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -30,7 +30,6 @@
      SUBDIR += cvsup-bin-old
      SUBDIR += cvsup-bin-old,no_x11
 #    SUBDIR += cvsup-mirror
-     SUBDIR += djbdns
      SUBDIR += dlint
      SUBDIR += doc
      SUBDIR += dxpc
@@ -107,8 +106,6 @@
      SUBDIR += popa3d,apop
      SUBDIR += proxy-suite
      SUBDIR += pptp
-     SUBDIR += publicfile
-     SUBDIR += publicfile,compat
      SUBDIR += queso
      SUBDIR += quirc
      SUBDIR += radiusd-cistron
@@ -144,7 +141,6 @@
      SUBDIR += trafshow
      SUBDIR += ttcp
      SUBDIR += ucd-snmp
-     SUBDIR += ucspi-tcp
      SUBDIR += ucspi-unix
      SUBDIR += uucp
      SUBDIR += vnc
