@@ -3,12 +3,13 @@
 # Date created:		December 1, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 1998/07/18 17:46:12 marc Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/10 23:14:36 espie Exp $
 #
 
 DISTNAME=	html-4.0b
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://fallout.campusview.indiana.edu/pub/sgml/
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -17,12 +18,12 @@ EXTRACT_ONLY=	# empty
 NO_BUILD=       yes
 NO_PATCH=	yes
 NO_CONFIGURE=	yes
-NO_WRKSUBDIR=	yes
+WRKDIST=	${WRKDIR}
 
 INSTDIR=	${PREFIX}/share/sgml/html
 
 pre-install:
-	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}
+	@[ -d ${INSTDIR} ] || mkdir -p ${INSTDIR}
 
 do-install:
 	@zcat ${DISTDIR}/${DISTFILES} |(cd ${INSTDIR}; pax -r)

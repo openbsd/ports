@@ -3,16 +3,17 @@
 # Date created:		May 16 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1999/10/30 11:25:16 turan Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/10 23:14:32 espie Exp $
 #
 
 DISTNAME=	bulk_mailer-1.5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://cs.utk.edu/pub/moore/bulk_mailer/
 EXTRACT_SUFX=	.tar
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
-NO_WRKSUBDIR=	YES
+WRKDIST=	${WRKDIR}
 
 .include <bsd.port.mk>

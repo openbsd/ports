@@ -3,13 +3,14 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/17 04:55:04 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/10 23:14:36 espie Exp $
 #
 
 DISTNAME=	docbook-3.0
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.ora.com/pub/davenport/
 DISTFILES=	docbk241.tar.Z docbk30.tar.Z
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -20,14 +21,14 @@ EXTRACT_ONLY=	# empty
 NO_BUILD=       yes
 NO_PATCH=	yes
 NO_CONFIGURE=	yes
-NO_WRKSUBDIR=	yes
+WRKDIST=	${WRKDIR}
 
 INSTDIR=	${PREFIX}/share/sgml/docbook
 ISOCAT=		${PREFIX}/share/sgml/iso8879/catalog
 
 pre-install:
-	@[ -d ${INSTDIR}/2.4.1 ] || ${MKDIR} ${INSTDIR}/2.4.1
-	@[ -d ${INSTDIR}/3.0 ] || ${MKDIR} ${INSTDIR}/3.0
+	@[ -d ${INSTDIR}/2.4.1 ] || mkdir -p ${INSTDIR}/2.4.1
+	@[ -d ${INSTDIR}/3.0 ] || mkdir -p ${INSTDIR}/3.0
 
 do-install:
 	@zcat ${DISTDIR}/docbk241.tar.Z |(cd ${INSTDIR}/2.4.1; pax -r)

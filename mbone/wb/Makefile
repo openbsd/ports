@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/12/16 20:09:35 marc Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/10 23:14:32 espie Exp $
 #
 
 DISTNAME=       wb-1.59
@@ -6,10 +6,11 @@ CATEGORIES=	mbone
 MASTER_SITES=   ftp://ftp.ee.lbl.gov/conferencing/wb/
 DISTFILES=      i386-wb-1.59.tar.Z
 ONLY_FOR_ARCHS=	i386
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
-NO_WRKSUBDIR=	yes
+WRKDIST=	${WRKDIR}
 NO_BUILD=	yes
 USE_X11=	yes
 
@@ -18,18 +19,18 @@ RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
 
 .if !defined(NO_WARNINGS)
 pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "  WARNING: This application requires a kernel compiled with"
-	@${ECHO} "           'option COMPAT_BSDOS' and 'option COMPAT_43'"
-	@${ECHO} "           for proper operation.  The GENERIC kernel contains"
-	@${ECHO} "           these options."
-	@${ECHO} ""
+	@echo ""
+	@echo "  WARNING: This application requires a kernel compiled with"
+	@echo "           'option COMPAT_BSDOS' and 'option COMPAT_43'"
+	@echo "           for proper operation.  The GENERIC kernel contains"
+	@echo "           these options."
+	@echo ""
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wb ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/wb
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/wb
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/wb
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/wb
 	${INSTALL_DATA} ${WRKSRC}/NOTES ${PREFIX}/share/doc/wb

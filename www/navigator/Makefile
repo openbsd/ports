@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2000/01/04 07:22:26 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2000/02/10 23:14:37 espie Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -11,7 +11,7 @@
 #	 'option COMPAT_SUNOS'
 
 ONLY_FOR_ARCHS=	i386 sparc
-NEED_VERSION=	1.121
+NEED_VERSION=	1.191
 
 NAVIGATOR_V=	4.61
 NAVIGATOR_V2=	461
@@ -74,7 +74,7 @@ DISTFILES=	${DISTNAME}.tar.gz \
 OBJMACHINE=	"yes"
 NO_CDROM=       "NOFEE: see http://www.fortify.net/copyright.txt"
 NO_CONFIGURE=	"No configure scripts"
-NO_WRKSUBDIR=	"No work subdirectory"
+WRKDIST=	${WRKDIR}
 
 MAINTAINER=	brad@openbsd.org
 

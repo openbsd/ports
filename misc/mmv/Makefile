@@ -3,10 +3,10 @@
 # Date created:		June 6 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/02 17:02:39 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/10 23:14:33 espie Exp $
 #
 
-NEED_VERSION=	1.175
+NEED_VERSION=	1.191
 DISTNAME=	mmv
 PKGNAME=	mmv-1.01b
 CATEGORIES=	misc
@@ -21,29 +21,29 @@ MAINTAINER=	angelos@openbsd.org
 NO_CDROM=	"No redistribution for charge"
 NO_PACKAGE=	"No modification"
 DIST_SUBDIR=	${DISTNAME}
-NO_WRKSUBDIR=	yes
+WRKDIST=	${WRKDIR}
 PATCH_DIST_ARGS= -d ${WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP} mmv.c
 MAN1=		mmv.1
 
 do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}/tmp
-	@(for file in ${DISTFILES}; do \
-		${CP} ${FULLDISTDIR}/$$file ${WRKDIR}/tmp; \
+	@rm -rf ${WRKDIR}
+	@mkdir -p ${WRKDIR}/tmp
+	@for file in ${DISTFILES}; do \
+		cp ${FULLDISTDIR}/$$file ${WRKDIR}/tmp; \
 	 done ; \
 	 uncompress ${WRKDIR}/tmp/*; \
 	 cd ${WRKDIR}; \
 	 for file in tmp/part0* ; do \
 	     ${SH} ${SCRIPTDIR}/unshar $$file; \
 	 done ; \
-	 ${CAT} mmv.c.? >mmv.c ; ${RM} mmv.c.? )
+	 cat mmv.c.? >mmv.c ; rm mmv.c.? 
 
 do-install:
-	(cd ${PREFIX}/bin ; ${RM} -f mmv mad mcp mln ; \
+	cd ${PREFIX}/bin ; rm -f mmv mad mcp mln ; \
 	 ${INSTALL_PROGRAM} ${WRKSRC}/mmv ${PREFIX}/bin ; \
 	 ln -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mad ; \
 	 ln -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mcp ; \
 	 ln -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mln ; \
-	 ${INSTALL_MAN} ${WRKSRC}/mmv.1 ${PREFIX}/man/man1 ; )
+	 ${INSTALL_MAN} ${WRKSRC}/mmv.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1999/09/22 10:44:21 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/10 23:14:36 espie Exp $
 #
 
 NEED_VERSION=	1.116
@@ -11,6 +11,7 @@ DISTNAME=	iso12083-1993
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://info.ex.ac.uk/pub/SGML/ISO-12083/
 DISTFILES=	article.dtd book.dtd maths.dtd serial.dtd
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -20,13 +21,13 @@ NO_MTREE=	yes
 NO_BUILD=	yes
 NO_PATCH=	yes
 NO_CONFIGURE=	yes
-NO_WRKSUBDIR=	yes
+WRKDIST=	${WRKDIR}
 EXTRACT_ONLY=	# empty
 
 INSTDIR=	${PREFIX}/share/sgml/iso12083
 
 pre-install:
-	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}
+	@[ -d ${INSTDIR} ] || mkdir -p ${INSTDIR}
 
 do-install:
 	@for i in ${DISTFILES}; do \

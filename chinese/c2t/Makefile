@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/11/04 01:55:24 kevlo Exp $	
+# $OpenBSD: Makefile,v 1.6 2000/02/10 23:14:29 espie Exp $	
 
 DISTNAME=	zh-c2t-1.0
 CATEGORIES=	chinese
@@ -13,11 +13,12 @@ MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/dict/gb/
 DISTFILES=	c2t.tar.gz TONEPY.tit
 EXTRACT_ONLY=	c2t.tar.gz
+NEED_VERSION=	1.191
 
-NO_WRKSUBDIR=	yes
+WRKDIST=	${WRKDIR}
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/chinese/gb
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/chinese/gb
 	${INSTALL_PROGRAM} ${WRKSRC}/c2t ${PREFIX}/bin
 	${INSTALL_DATA} ${DISTDIR}/TONEPY.tit ${PREFIX}/share/chinese/gb
 	${INSTALL_MAN} ${WRKSRC}/c2t.1 ${PREFIX}/man/man1

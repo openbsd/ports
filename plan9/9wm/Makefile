@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 1999/10/26 20:22:47 markus Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/10 23:14:34 espie Exp $
 
 DISTNAME=	9wm-1.1
 CATEGORIES=	plan9
 MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
 EXTRACT_SUFX=	.shar.gz
+NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
 
-NO_WRKSUBDIR=	yes
-EXTRACT_CMD=	${GZCAT}
+WRKDIST=	${WRKDIR}
+EXTRACT_CMD=	gzcat
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS= | ${SH}
 USE_IMAKE=	yes

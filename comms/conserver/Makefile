@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/01 02:57:55 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/10 23:14:29 espie Exp $
 
 DISTNAME=	conserver-5.21-Beta
 PKGNAME=	conserver-5.21
@@ -18,12 +18,13 @@ MAINTAINER=	angelos@openbsd.org
 
 MASTER_SITES=	ftp://ftp.uu.net/vendor/bitsko/config-mgmt/ \
 		ftp://unix.hensa.ac.uk/mirrors/uunet/vendor/bitsko/config-mgmt/
+NEED_VERSION=	1.191
+WRKDIST=	${WRKDIR}
 EXTRACT_SUFX=	.shar.gz
 EXTRACT_CMD=	zcat
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
 
-NO_WRKSUBDIR=	yes
 NO_CONFIGURE=	yes
 
 # Set this to where you want console(8) to connect to by default

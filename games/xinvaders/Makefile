@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 1998/11/09 01:49:58 marc Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/10 23:14:31 espie Exp $
 #
 
 DISTNAME=       xinvaders
 DIST_SUBDIR=	xinvaders
 PKGNAME=	xinvaders-2.0
 CATEGORIES=	games
+NEED_VERSION=	1.191
 
 NO_CDROM=	"don't sell for profit"
 
@@ -21,7 +22,7 @@ BUILD_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar
 
 USE_IMAKE=	yes
 
-NO_WRKSUBDIR=	yes
+WRKDIST=	${WRKDIR}
 
 pre-patch:
 	@cd $(WRKSRC) ; mv xinvaders.ma xinvaders.man

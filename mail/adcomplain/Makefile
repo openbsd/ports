@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/11/14 21:36:11 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/10 23:14:32 espie Exp $
 
 DISTNAME=       adcomplain-3.49
 CATEGORIES=     mail news
@@ -8,7 +8,8 @@ MAINTAINER=     ports@openbsd.org
 MASTER_SITES=   http://www.rdrop.com/users/billmc/
 DISTFILES=      adcomplain.pl.uu
 
-NO_WRKSUBDIR=	YES
+NEED_VERSION=	1.191
+WRKDIST=	${WRKDIR}
 NO_CONFIGURE=   YES
 NO_BUILD=       YES
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/12/15 22:32:10 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/10 23:14:27 espie Exp $
 
 DISTNAME=	ha0999
 PKGNAME=	ha-0.999b
@@ -12,7 +12,8 @@ USE_GMAKE=	yes
 
 ALL_TARGET=	ha
 MAKEFILE=	makefile.nix
-NO_WRKSUBDIR=	yes
+NEED_VERSION=	1.191
+WRKDIST=	${WRKDIR}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ha ${PREFIX}/bin

@@ -3,10 +3,10 @@
 # Date created:			  December 1, 1997
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 1999/09/22 10:44:22 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/10 23:14:33 espie Exp $
 #
 
-NEED_VERSION=	1.116
+NEED_VERSION=	1.191
 DISTNAME=	aub
 PKGNAME=	aub-2.0.5
 CATEGORIES=	news
@@ -18,24 +18,24 @@ DISTFILES=	aub aub.1 BUG_FIXES
 MAINTAINER=	angelos@openbsd.org
 
 DIST_SUBDIR=	aub
-NO_WRKSUBDIR=	yes
+WRKDIST=	${WRKDIR}
 NO_BUILD=	yes
 MAN1=		aub.1
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
+	@mkdir -p ${WRKDIR}
 
 pre-configure:
-	@${SED} -e '1,1s:/usr/local/bin/perl:!/usr/bin/perl:' \
+	@sed -e '1,1s:/usr/local/bin/perl:!/usr/bin/perl:' \
 		-e 's:$SUM = "/bin/sum":$SUM = "/usr/bin/sum":' \
 		-e 's:/usr/tmp:/var/tmp:' \
 		${FULLDISTDIR}/aub > ${WRKDIR}/aub
 
 do-install:
-	(cd ${WRKDIR}; ${PATCH} < ../files/aub-perl5.diff)
+	cd ${WRKDIR}; ${PATCH} < ../files/aub-perl5.diff
 	${INSTALL_SCRIPT} ${WRKDIR}/aub ${PREFIX}/bin
 	${INSTALL_MAN} ${FULLDISTDIR}/aub.1 ${PREFIX}/man/man1
-	${MKDIR} ${PREFIX}/share/doc/aub
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/aub
 	${INSTALL_MAN} ${FULLDISTDIR}/BUG_FIXES ${PREFIX}/share/doc/aub
 
 #

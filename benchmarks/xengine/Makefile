@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 1999/06/02 03:56:31 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/10 23:14:28 espie Exp $
 
 PKGNAME=	xengine-1.0.1
 CATEGORIES=	benchmarks x11
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/comp.sources.x/volume09/xengine/
 DISTFILES=	part01.z patch1.z
+NEED_VERSION=	1.191
 
 NO_CDROM=	"NOFEE:	Can not sell"
 
@@ -17,18 +18,18 @@ PATCH_DIST_STRIP=	-p1	# no ${PATCHFILES} but used below
 
 BUILD_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar
 
-NO_WRKSUBDIR=	yes
+WRKDIST=	${WRKDIR}
 USE_IMAKE=	yes
 
 pre-patch:
 	@cd $(WRKSRC) ; ${PATCH} ${PATCH_DIST_ARGS} < xengine.patch1
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/xengine
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xengine
 	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/xengine
-	@${ECHO} ""
-	@${ECHO} "Example value:"
-	@${ECHO} "   1067 RPMs with P100, Winner 2000PRO/X, resolution: 1152x900"
-	@${ECHO} ""
+	@echo ""
+	@echo "Example value:"
+	@echo "   1067 RPMs with P100, Winner 2000PRO/X, resolution: 1152x900"
+	@echo ""
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/12/08 05:06:33 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/10 23:14:34 espie Exp $
 
 DISTNAME=	tcs
 PKGNAME=	tcs-19950325
@@ -6,6 +6,7 @@ CATEGORIES=	plan9
 MASTER_SITES= 	ftp://plan9.bell-labs.com/plan9/unixsrc/ \
 		ftp://ftp.gwdg.de/pub/gnu2/plan9/unixsrc/
 EXTRACT_SUFX=	.shar.Z
+NEED_VERSION=	1.191
 
 EXTRACT_CMD=	gzcat
 EXTRACT_BEFORE_ARGS=	# empty
@@ -13,7 +14,7 @@ EXTRACT_AFTER_ARGS= | sh
 
 MAINTAINER=	markus@openbsd.org
 
-NO_WRKSUBDIR=	yes
+WRKDIST=	${WRKDIR}
 
 ALL_TARGET= tcs
 

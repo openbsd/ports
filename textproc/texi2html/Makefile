@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.2 1999/06/03 01:39:53 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/10 23:14:37 espie Exp $
 
 DISTNAME=	texi2html
 PKGNAME=	texi2html-1.52
 CATEGORIES=	textproc
 MASTER_SITES=	http://wwwcn.cern.ch/dci/texi2html/ \
 		ftp://ftp.scc.ru/pub/unix/
+NEED_VERSION=	1.191
 EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	angelos@openbsd.org
 
-NO_WRKSUBDIR=	yes
-EXTRACT_CMD=	${GZCAT}
+WRKDIST=	${WRKDIR}
+EXTRACT_CMD=	gzcat
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS= | ${SH}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 1999/10/30 20:51:34 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/02/10 23:14:28 espie Exp $
 
 DISTNAME=	rarbsd
 PKGNAME=	rar-2.02
@@ -20,17 +20,18 @@ NO_PACKAGE=	"Only unmodified original package can be distributed"
 
 MAINTAINER=	ports@openbsd.org
 
+NEED_VERSION=	1.191
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+WRKDIST=	${WRKDIR}
 
 pre-extract:
-	@${CHMOD} a+x ${DISTDIR}/${DISTFILES}
+	@chmod a+x ${DISTDIR}/${DISTFILES}
 
 post-extract:
-	@${CHMOD} a-x ${DISTDIR}/${DISTFILES}
+	@chmod a-x ${DISTDIR}/${DISTFILES}
 
 do-install:
-	@install -d -m 755 -o ${SHAREOWN} -g ${SHAREGRP} \
+	@${INSTALL_DATA_DIR} \
 		${PREFIX}/share/doc/rar ${PREFIX}/share/rar
 	@cd ${WRKSRC} && \
 		${INSTALL_PROGRAM} rar ${PREFIX}/bin/rar && \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/10/26 11:31:12 downsj Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/10 23:14:30 espie Exp $
 
 DISTNAME=	uemacs
 PKGNAME=	uemacs-4.0
@@ -8,16 +8,16 @@ DISTFILES=	ue400dev.zip
 
 NO_CDROM=	"NOFEE: may not charge for distribution"
 
-NEED_VERSION=	1.91
+NEED_VERSION=	1.191
 
 MAINTAINER=	ports@openbsd.org
 
 EXTRACT_BEFORE_ARGS=	-Laq
 
-NO_WRKSUBDIR=	yes
+WRKDIST=	${WRKDIR}
 USE_ZIP=	yes
 
 pre-patch:
-	(cd ${WRKDIR}; cp -pR freebsd openbsd)
+	cd ${WRKDIR} && cp -pR freebsd openbsd
 
 .include <bsd.port.mk>

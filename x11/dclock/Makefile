@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/12/31 22:23:17 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/10 23:14:37 espie Exp $
 # $FreeBSD: Makefile,v 1.9 1999/08/31 06:52:30 mharo Exp $
 
 PKGNAME=	dclock-pl4
@@ -7,6 +7,7 @@ CATEGORIES=	x11
 
 DISTNAME=	dclock
 EXTRACT_SUFX=	.shar.Z
+NEED_VERSION=	1.191
 
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 
@@ -20,7 +21,7 @@ EXTRACT_AFTER_ARGS=	|sh -
 
 NO_CONFIGURE=	yes
 
-NO_WRKSUBDIR=	yes
+WRKDIST=	${WRKDIR}
 
 ALL_TARGET=	dclock
 

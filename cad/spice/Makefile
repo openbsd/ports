@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/01 02:57:54 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/10 23:14:29 espie Exp $
 
 DISTNAME=		sp3f4.kit
 PKGNAME=		spice-3f5
@@ -8,9 +8,10 @@ MAINTAINER=		marc@openbsd.org
 
 MASTER_SITES=		ftp://ic.eecs.berkeley.edu/pub/Spice3/
 DISTFILES=		sp3f4.kit.tar.Z sp3f4.patch.tar.Z
+NEED_VERSION=		1.191
 
 USE_X11=		yes
-NO_WRKSUBDIR=		yes
+WRKDIST=		${WRKDIR}
 
 # Apply the patches that make this 3f5
 #

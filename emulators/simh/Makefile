@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2000/01/26 13:52:39 form Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/10 23:14:30 espie Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 DISTNAME=	sim_2.3d
 PKGNAME=	simh-2.3d
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://minnie.cs.adfa.oz.au/pub/PDP-11/Sims/Supnik_2.3/sources/
+NEED_VERSION=	1.191
 
 MAINTAINER=	form@openbsd.org
 
-NO_WRKSUBDIR=	yes
+WRKDIST=	${WRKDIR}
 
 MAKEFILE=	${FILESDIR}/Makefile
 

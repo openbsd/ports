@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/04/01 06:20:11 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/10 23:14:29 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 DISTNAME=	nedit-5.0.2
@@ -12,16 +12,17 @@ MASTER_SITES=	ftp://ftp.fnal.gov/KITS/pub/nedit/v5_0_2/ \
 		ftp://ftp.fnal.gov/KITS/pub/nedit/v5_0_2/contrib/
 DISTFILES=	nedit_source.tar.gz nedit.app-defaults
 EXTRACT_ONLY=	nedit_source.tar.gz
+NEED_VERSION=	1.191
+WRKDIST=	${WRKDIR}
 
 LIB_DEPENDS=	Xm.1.:${PORTSDIR}/x11/lesstif
 
 USE_X11=	yes
-NO_WRKSUBDIR=	yes
 
 ALL_TARGET=	openbsd_nedit
 
 post-extract:
-	@${CP} ${DISTDIR}/nedit.app-defaults ${WRKSRC}/NEdit.ad
+	@cp ${DISTDIR}/nedit.app-defaults ${WRKSRC}/NEdit.ad
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/source/nedit ${PREFIX}/bin
@@ -29,7 +30,7 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/nedit.man ${PREFIX}/man/man1/nedit.1
 	@${INSTALL_MAN} ${WRKSRC}/nc.man ${PREFIX}/man/man1/ncl.1
 	@${INSTALL_DATA} ${WRKSRC}/NEdit.ad ${PREFIX}/lib/X11/app-defaults/NEdit
-	@${INSTALL} -d ${PREFIX}/share/doc/nedit
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nedit
 	@${INSTALL_DATA} ${WRKSRC}/nedit.doc ${PREFIX}/share/doc/nedit
 
 .include <bsd.port.mk>

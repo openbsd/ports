@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1998/10/07 18:33:11 marc Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/10 23:14:29 espie Exp $
 #
 
 DISTNAME=	cku192src
@@ -13,11 +13,12 @@ MAINTAINER=	ports@OpenBSD.ORG
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 		ftp://ftp.th-darmstadt.de/pub/networking/kermit/ \
 		ftp://ftp.std.com/customers2/src/telcom/
+NEED_VERSION=	1.191
 
-NO_WRKSUBDIR=	yes
+WRKDIST=	${WRKDIR}
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/kermit
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/kermit
 	${INSTALL_DATA} ${FILESDIR}/dot.kermrc ${PREFIX}/share/examples/kermit
 
 .include <bsd.port.mk>

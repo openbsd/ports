@@ -3,7 +3,7 @@
 # Date created:		25 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/12/05 18:20:48 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/10 23:14:35 espie Exp $
 
 PKGNAME=	rdp-1.0
 
@@ -14,10 +14,11 @@ MAINTAINER=	dugsong@monkey.org
 DISTNAME=	rdp
 
 MASTER_SITES=	http://www.l0pht.com/advisories/
+NEED_VERSION=	1.191
 
 BUILD_DEPENDS=	${PREFIX}/lib/libnet.a:${PORTSDIR}/net/libnet
 
-NO_WRKSUBDIR=	yes
+WRKDIST=	${WRKDIR}
 
 NO_CONFIGURE=	yes
 

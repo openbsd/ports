@@ -3,23 +3,24 @@
 # Date created:				April 27 1998
 # Whom:					Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/04/27 23:24:37 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/10 23:14:36 espie Exp $
 #
 
 PKGNAME=	pilot_makedoc-0.7
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.concentric.net/~rbram/
 DISTFILES=	makedoc7.cpp
+NEED_VERSION=	1.191
+EXTRACT_ONLY=
 
 MAINTAINER=	angelos@openbsd.org
 
-NO_WRKSUBDIR=	YES
+WRKDIST=	${WRKDIR}
 ALL_TARGET=	pilot_makedoc
 
-do-extract:
-		@${MKDIR} ${WRKDIR}
-		@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
-		@${CP} ${FILESDIR}/Makefile ${WRKDIR}
+post-extract:
+		@cp ${DISTDIR}/${DISTFILES} ${WRKDIR}
+		@cp ${FILESDIR}/Makefile ${WRKDIR}
 
 do-install:
 		@${INSTALL_PROGRAM} ${WRKDIR}/pilot_makedoc ${PREFIX}/bin
