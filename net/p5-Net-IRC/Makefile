@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2002/12/29 21:14:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2004/06/15 06:27:03 kevlo Exp $
 
 COMMENT=	"modules to implement the irc protocol"
 
-DISTNAME=	Net-IRC-0.73
+DISTNAME=	Net-IRC-0.75
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
 
-HOMEPAGE=	http://theoryx5.uwinnipeg.ca/CPAN/data/Net-IRC/Connection.html
+HOMEPAGE=	http://theoryx5.uwinnipeg.ca/CPAN/data/Net-IRC/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
