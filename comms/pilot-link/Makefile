@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2003/10/07 17:17:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.32 2004/07/31 19:29:35 naddy Exp $
 
 COMMENT=	"PalmPilot communication utilities"
 
@@ -37,6 +37,6 @@ LIB_DEPENDS=	tk83::x11/tk/8.3
 CONFIGURE_ARGS+= --without-tk
 .endif
 
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/scripts
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/scripts
 
 .include <bsd.port.mk>

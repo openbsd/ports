@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/10/30 01:00:54 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2004/07/31 19:29:35 naddy Exp $
 
 COMMENT=	"descramble scrambled DVDs"
 
@@ -17,5 +17,6 @@ PERMIT_PACKAGE_CDROM=	"Free speech issue"
 PERMIT_PACKAGE_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
 .include <bsd.port.mk>
