@@ -1,72 +1,11 @@
-*** Makefile.orig	Wed Nov  5 02:39:24 1997
---- Makefile	Tue May 19 02:43:44 1998
-***************
-*** 55,61 ****
-  # files with a ".gz" extension.  If you don't care about HBF fonts, just
-  # comment this line out.
-  #
-! HBFDEFS = -Dunix -DIN_MEMORY -DGUNZIP_CMD="\"/usr/local/bin/gunzip -c\""
-  
-  #
-  # Set the defines used for all files except the HBF support.
---- 55,61 ----
-  # files with a ".gz" extension.  If you don't care about HBF fonts, just
-  # comment this line out.
-  #
-! HBFDEFS = -Dunix -DIN_MEMORY -DGUNZIP_CMD="\"/usr/bin/gunzip -c\""
-  
-  #
-  # Set the defines used for all files except the HBF support.
-***************
-*** 65,72 ****
-  #
-  # Uncomment these for SunOS.
-  #
-! INCS = -I/usr/local/include/X11R5 $(FTYPE_INCS)
-! LIBS = -L/usr/local/lib/X11R5 -lXm -lXmu -lXt -lX11 $(FTYPE_LIBS)
-  
-  #
-  # Uncomment these for Solaris.
---- 65,72 ----
-  #
-  # Uncomment these for SunOS.
-  #
-! #INCS = -I/usr/local/include/X11R5 $(FTYPE_INCS)
-! #LIBS = -L/usr/local/lib/X11R5 -lXm -lXmu -lXt -lX11 $(FTYPE_LIBS)
-  
-  #
-  # Uncomment these for Solaris.
-***************
-*** 80,90 ****
-  #INCS = -I/usr/X11/include -I/usr/Motif-2.0.1/include $(FTYPE_INCS)
-  #LIBS = -L/usr/Motif-2.0.1/lib -lXm -L/usr/X11/lib -lXpm -lXmu -lXt -lX11 -lSM -lICE $(FTYPE_LIBS)
-  
-  
-  all: xmbdfed
-  
-  xmbdfed: $(OBJS)
-! 	$(PURIFY) $(CC) $(STATIC) $(CFLAGS) -o xmbdfed $(OBJS) $(LIBS)
-  
-  hbf.o: hbf.c
-  	$(CC) $(CFLAGS) $(DEFS) $(HBFDEFS) $(INCS) -c $< -o $@
---- 80,99 ----
-  #INCS = -I/usr/X11/include -I/usr/Motif-2.0.1/include $(FTYPE_INCS)
-  #LIBS = -L/usr/Motif-2.0.1/lib -lXm -L/usr/X11/lib -lXpm -lXmu -lXt -lX11 -lSM -lICE $(FTYPE_LIBS)
-  
-+ INCS = -I${X11BASE}/include
-+ LIBS = -L${X11BASE}/lib ${MOTIFLIB} -lXpm -lXmu -lXt -lX11 -lSM -lICE -lXext
-+ 
-  
-  all: xmbdfed
-  
-+ install: xmbdfed
-+ 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-+ 		xmbdfed ${X11BASE}/bin/xmbdfed
-+ 	${INSTALL} ${COPY} -o ${MANOWN} -g ${MANGRP} -m ${MANMODE} \
-+ 		xmbdfed.man ${X11BASE}/man/man1/xmbdfed.1
-+ 
-  xmbdfed: $(OBJS)
-! 	$(PURIFY) $(CC) $(CFLAGS) -o xmbdfed $(OBJS) $(LIBS)
-  
-  hbf.o: hbf.c
-  	$(CC) $(CFLAGS) $(DEFS) $(HBFDEFS) $(INCS) -c $< -o $@
+--- bdf.h.orig	Tue Apr  4 01:16:17 2000
++++ bdf.h	Tue Apr  4 01:16:37 2000
+@@ -41,7 +41,7 @@
+ 
+ #ifdef HAVE_FREETYPE
+ #include <freetype.h>
+-#include <extend/ftxsbit.h>
++#include <freetype/ftxsbit.h>
+ #endif /* HAVE_FREETYPE */
+ 
+ #ifdef __cplusplus
