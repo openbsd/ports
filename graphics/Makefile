@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2001/02/13 18:52:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.54 2001/02/19 18:56:15 brad Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -40,6 +40,7 @@
      SUBDIR += jbigkit
      SUBDIR += jpeg
      SUBDIR += libart
+     SUBDIR += libmng
      SUBDIR += mpeg-lib
 #    SUBDIR += mpeg2codec
 #    SUBDIR += mpeg2play
