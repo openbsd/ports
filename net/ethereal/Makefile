@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2000/11/20 22:18:50 jakob Exp $
+# $OpenBSD: Makefile,v 1.41 2000/12/19 16:20:59 jakob Exp $
 
 DISTNAME=	ethereal-0.8.14
 CATEGORIES=	net x11
@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.ethereal.com/distribution/ \
 		http://ethereal.zing.org/distribution/old-versions/ \
 		http://ethereal.boehm.org/distribution/old-versions/
 
-HOMEPAGE=	http://ethereal.zing.org/
+HOMEPAGE=	http://www.ethereal.com/
 
 LIB_DEPENDS=	gtk.1.2::x11/gtk+
 BUILD_DEPENDS=	python::lang/python

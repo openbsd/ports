@@ -4,4 +4,4 @@ of the project is to have an application that is similar in functionality
 to Network Associates' NetXRay or the AG Group's EtherPeek. Although these
 are both excellent products, neither of them runs under Unix.
 
-More information is available at http://ethereal.zing.org/.
+WWW: ${HOMEPAGE}
