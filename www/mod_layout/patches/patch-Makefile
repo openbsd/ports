@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1 2004/06/13 03:22:34 pvalchev Exp $
+--- Makefile.orig	2004-06-12 21:19:59.000000000 -0600
++++ Makefile	2004-06-12 21:20:06.000000000 -0600
+@@ -6,7 +6,7 @@
+ APXS=apxs
+ APACHECTL=apachectl
+ CC=`apxs -q CC`
+-INC=-I`apxs -q INCLUDEDIR` `$(APXS) -q CFLAGS`  #-DLAYOUT_FILEOWNER_NAME
++INC=-I`apxs -q INCLUDEDIR` `$(APXS) -q CFLAGS CFLAGS_SHLIB`  #-DLAYOUT_FILEOWNER_NAME
+ LD_SHLIB=`apxs -q LDFLAGS_SHLIB`
+ VERSION = 3.2
+ DISTNAME = mod_layout
