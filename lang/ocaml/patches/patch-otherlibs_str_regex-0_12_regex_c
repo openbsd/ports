@@ -1,0 +1,12 @@
+$OpenBSD: patch-otherlibs_str_regex-0_12_regex_c,v 1.1 2002/12/15 17:52:44 sturm Exp $
+--- otherlibs/str/regex-0.12/regex.c.orig	Sat Dec 14 01:53:58 2002
++++ otherlibs/str/regex-0.12/regex.c	Sat Dec 14 02:06:22 2002
+@@ -3776,7 +3776,7 @@ re_match_2 (bufp, string1, size1, string
+                           regstart[r] = old_regstart[r];
+ 
+                           /* xx why this test?  */
+-                          if ((int) old_regend[r] >= (int) regstart[r])
++                          if (old_regend[r] >= regstart[r])
+                             regend[r] = old_regend[r];
+                         }     
+                     }
