@@ -3,3 +3,5 @@ bin/xview
 bin/xsetbg
 lib/X11/app-defaults/Xloadimage
 man/cat1/xloadimage.0
+man/cat1/xview.0
+man/cat1/xsetbg.0

@@ -3,7 +3,7 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.3 2000/03/23 21:41:24 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/04/03 20:34:52 espie Exp $
 #
 
 DISTNAME=	swisswatch-0.06
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
+FAKE=		Yes
 
 .include <bsd.port.mk>

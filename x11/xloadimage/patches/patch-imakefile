@@ -1,0 +1,30 @@
+--- Imakefile.orig	Mon Nov 16 23:02:51 1992
++++ Imakefile	Mon Apr  3 22:32:03 2000
+@@ -18,18 +18,19 @@
+ 
+ ComplexProgramTarget(xloadimage)
+ 
+-install:: $(SYSPATHFILE)
+-	$(RM) $(BINDIR)/xview $(BINDIR)/xsetbg
+-	$(LN) $(BINDIR)/xloadimage $(BINDIR)/xview
+-	$(LN) $(BINDIR)/xloadimage $(BINDIR)/xsetbg
++install::
++	$(RM) $(DESTDIR)$(BINDIR)/xview $(DESTDIR)$(BINDIR)/xsetbg
++	cd $(DESTDIR)$(BINDIR) && $(LN) xloadimage xview
++	cd $(DESTDIR)$(BINDIR) && $(LN) xloadimage xsetbg
+ 
+-$(SYSPATHFILE):
++InstallManPageAliases(xloadimage,$(MANDIR),xview xsetbg)
++
++install::
+ 	@echo "*** Creating default $(SYSPATHFILE) since you"
+ 	@echo "*** don't have one. This file is used to set up default places"
+ 	@echo "*** and names to look for images.  You probably want to edit"
+ 	@echo "*** it for your site.  See the xloadimage manual page for"
+ 	@echo "*** details on the contents of this file."
+-	cp /dev/null $(SYSPATHFILE)
+-	echo "path=$(INCDIR)/bitmaps $(INCDIR)/images" 		>> $(SYSPATHFILE)
+-	echo "extension=.csun .msun .sun .face .xbm .bm .gif" 		>>$(SYSPATHFILE)
++	echo "path=$(INCDIR)/bitmaps $(INCDIR)/images" >$(DESTDIR)$(SYSPATHFILE)
++	echo "extension=.csun .msun .sun .face .xbm .bm .gif" >$(DESTDIR)$(SYSPATHFILE)
+ 
