@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/08/20 21:53:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2001/10/08 14:57:55 naddy Exp $
 
 COMMENT=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
@@ -23,6 +23,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}files/rc2/unix/
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+		patch-*
 
 FLAVORS=	no_arts no_esd
 FLAVOR?=	no_arts
