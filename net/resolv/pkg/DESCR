@@ -1,0 +1,3 @@
+Resolv allows a user to resolve the names of a single IP address or
+entire network of addresses to maintain a "map" of the names that 
+comprise a certain network.

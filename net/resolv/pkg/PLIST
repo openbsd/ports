@@ -1,0 +1,4 @@
+bin/resolv
+share/doc/resolv/README
+share/doc/resolv/LEEME
+@dirrm share/doc/resolv
