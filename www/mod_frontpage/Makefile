@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/08/13 15:50:22 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2001/08/21 20:44:12 danh Exp $
 
 COMMENT=	"Microsoft FrontPage 2000 Server extensions for Apache"
 
@@ -43,7 +43,7 @@ do-build:
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/mod_frontpage.so ${PREFIX}/lib
-	${INSTALL_SCRIPT} ${WRKSRC}/frontpage-enable ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/mod_frontpage-enable ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/fpexec ${PREFIX}/sbin
 	@cd ${WRKDIR} && pax -rw frontpage ${PREFIX}
 	@chown -R bin:bin ${PREFIX}/frontpage
