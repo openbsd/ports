@@ -1,18 +1,23 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.32 2001/03/28 09:22:57 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2001/03/28 15:13:03 espie Exp $
 
-COMMENT= 	Japanese input method
-COMMENT-dict=	dictionaries for Japanese Wnn
-COMMENT-ko= 	Korean input method
-COMMENT-kodict=	dictionaries for Korean Wnn
-COMMENT-xwnmo=	X11 input method for Wnn
-COMMENT-zh=	Chinese input method
-COMMENT-zhdict=	dictionaries for Chinese Wnn
+COMMENT= 	"Japanese input method"
+COMMENT-dict=	"dictionaries for Japanese Wnn"
+COMMENT-ko= 	"Korean input method"
+COMMENT-kodict= "dictionaries for Korean Wnn"
+COMMENT-zh=	"Chinese input method"
+COMMENT-zhdict= "dictionaries for Chinese Wnn"
+COMMENT-data= 	"common files to all languages of Wnn"
+
 DISTNAME=	Wnn4.2
 
-MULTI_PACKAGES=-dict -zh -zhdict -ko -kodict -xwnmo
+# If you are building this manually, you can override MULTI_PACKAGES
+# on the command line, and thus avoid building all three languages
+
+MULTI_PACKAGES=-dict -zh -zhdict -ko -kodict -xwnmo -data
+NEED_VERSION=	1.377
 NEED_VERSION=	1.361
 PKGNAME=	ja-Wnn-4.2
 PKGNAME-dict=	ja-Wnndict-4.2
@@ -21,6 +26,7 @@ PKGNAME-zhdict=	zh-Wnndict-4.2
 PKGNAME-ko=	ko-Wnn-4.2
 PKGNAME-kodict=	ko-Wnndict-4.2
 PKGNAME-xwnmo=	Wnn-xwnmo-4.2
+PKGNAME-data=	Wnn-data-4.2
 
 SUBPACKAGE?=
 
@@ -41,6 +47,8 @@ CATEGORIES=	korean
 CATEGORIES=	korean
 PREFIX=${WNNDICDIR}
 .elif ${SUBPACKAGE} == "-xwnmo"
+CATEGORIES=	japanese chinese korean
+.elif ${SUBPACKAGE} == "-data"
 CATEGORIES=	japanese chinese korean
 .else
 CATEGORIES=	japanese
@@ -73,8 +81,10 @@ CDOC_FROM=	${WRKSRC}/cWnn
 BUILD_DEPENDS=	jgroff::japanese/groff
 # Run depends ensure this does not turn into infinite recursion, since
 # this is not needed before package build time.
-# I'm grateful to having `real' cookies, which means this is possible.
-RUN_DEPENDS=	${LOCALBASE}/lib/wnn/install-script::japanese/Wnn-data
+
+.if ${SUBPACKAGE} != "-data"
+RUN_DEPENDS=	${LOCALBASE}/lib/wnn/install-script::japanese/Wnn,-data
+.endif
 
 do-distpatch:
 	cd ${WRKDIR} && tar zxf ${FULLDISTDIR}/Wnn4.2.patch.tar.gz
@@ -117,6 +127,7 @@ do-configure:
 .endif
 	@cd ${WRKSRC}/config && ln -sf Project.tmpl X11.tmpl
 
+
 # Xfree4 believes it can build html documentation, fat chance...
 MAKE_FLAGS=IMAKE='imake -DBuildHtmlManPages=0 -DPorts' WNNOWNER_INDIRECT=wnn
 FAKE_FLAGS=DESTDIR=${WRKINST} WNNOWNER_INDIRECT=bin
@@ -141,5 +152,9 @@ post-install:
 		(cd ${PORT_CDOCDIR}; tar xf -))
 	@chown -R ${SHAREOWN}.${SHAREGRP} ${PORT_CDOCDIR}
 .endif
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/wnn
+	${INSTALL_DATA} ${WRKDIST}/Wnn/jd/sysV/cvt_key* ${PREFIX}/lib/wnn
+	${INSTALL_DATA} ${WRKDIST}/Wnn/jd/serverdefs ${PREFIX}/lib/wnn
+	${INSTALL_SCRIPT} ${FILESDIR}/install-script ${PREFIX}/lib/wnn
 
 .include <bsd.port.mk>
