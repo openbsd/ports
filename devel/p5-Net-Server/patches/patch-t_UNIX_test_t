@@ -1,0 +1,11 @@
+$OpenBSD: patch-t_UNIX_test_t,v 1.1 2002/07/23 18:09:10 avsm Exp $
+--- t/UNIX_test.t.orig	Tue Jul 23 19:06:11 2002
++++ t/UNIX_test.t	Tue Jul 23 19:06:22 2002
+@@ -65,6 +65,7 @@ my @ports      = ();
+ for my $i (0..99){
+   my $sock = IO::Socket::INET->new(PeerAddr => 'localhost',
+ 				   PeerPort => ($start_port + $i),
++				   Timeout  => 2,
+ 				   Proto    => 'tcp');
+   push @ports, ($start_port + $i) if ! defined $sock;
+   last if $num_ports == @ports;

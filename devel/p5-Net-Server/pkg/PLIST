@@ -1,23 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:03 espie Exp $
-libdata/perl5/site_perl/Net/Server.pm
-libdata/perl5/site_perl/Net/Server/Daemonize.pm
-libdata/perl5/site_perl/Net/Server/Fork.pm
-libdata/perl5/site_perl/Net/Server/INET.pm
-libdata/perl5/site_perl/Net/Server/MultiType.pm
-libdata/perl5/site_perl/Net/Server/PreFork.pm
-libdata/perl5/site_perl/Net/Server/PreForkSimple.pm
-libdata/perl5/site_perl/Net/Server/Proto.pm
-libdata/perl5/site_perl/Net/Server/Proto/SSL.pm
-libdata/perl5/site_perl/Net/Server/Proto/TCP.pm
-libdata/perl5/site_perl/Net/Server/Proto/UDP.pm
-libdata/perl5/site_perl/Net/Server/Proto/UNIX.pm
-libdata/perl5/site_perl/Net/Server/SIG.pm
-libdata/perl5/site_perl/Net/Server/Single.pm
+@comment $OpenBSD: PLIST,v 1.3 2002/07/23 18:09:10 avsm Exp $
+${P5SITE}/Net/Server.pm
+${P5SITE}/Net/Server/Daemonize.pm
+${P5SITE}/Net/Server/Fork.pm
+${P5SITE}/Net/Server/INET.pm
+${P5SITE}/Net/Server/MultiType.pm
+${P5SITE}/Net/Server/Multiplex.pm
+${P5SITE}/Net/Server/PreFork.pm
+${P5SITE}/Net/Server/PreForkSimple.pm
+${P5SITE}/Net/Server/Proto.pm
+${P5SITE}/Net/Server/Proto/SSL.pm
+${P5SITE}/Net/Server/Proto/TCP.pm
+${P5SITE}/Net/Server/Proto/UDP.pm
+${P5SITE}/Net/Server/Proto/UNIX.pm
+${P5SITE}/Net/Server/SIG.pm
+${P5SITE}/Net/Server/Single.pm
 man/man3p/Net::Server.3p
 man/man3p/Net::Server::Daemonize.3p
 man/man3p/Net::Server::Fork.3p
 man/man3p/Net::Server::INET.3p
 man/man3p/Net::Server::MultiType.3p
+man/man3p/Net::Server::Multiplex.3p
 man/man3p/Net::Server::PreFork.3p
 man/man3p/Net::Server::PreForkSimple.3p
 man/man3p/Net::Server::Proto.3p
@@ -27,5 +29,5 @@ man/man3p/Net::Server::Proto::UDP.3p
 man/man3p/Net::Server::Proto::UNIX.3p
 man/man3p/Net::Server::SIG.3p
 man/man3p/Net::Server::Single.3p
-@dirrm libdata/perl5/site_perl/Net/Server/Proto
-@dirrm libdata/perl5/site_perl/Net/Server
+@dirrm ${P5SITE}/Net/Server/Proto
+@dirrm ${P5SITE}/Net/Server
