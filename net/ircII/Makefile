@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/26 09:55:32 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/21 20:03:39 brad Exp $
 # $FreeBSD: Makefile,v 1.15 1998/01/25 20:40:00 torstenb Exp $
 
 DISTNAME=	ircii-4.4S
@@ -15,11 +15,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE=	Yes
 
-SEPARATE_BUILD=	Yes
+SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--enable-ipv6
 
 FAKE_FLAGS=	DESTDIR="${WRKINST}" \
 		INSTALL="${INSTALL_PROGRAM}" INSTALL_DATA="${INSTALL_DATA}"
+
+post-extract:
+	@cd ${WRKSRC}/doc; mv ircII.1 irc.1
 
 .include <bsd.port.mk>

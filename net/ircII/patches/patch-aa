@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Thu Mar 16 06:32:18 2000
-+++ Makefile.in	Sun Mar 26 04:21:30 2000
++++ Makefile.in	Fri Apr 21 09:46:00 2000
 @@ -61,7 +61,7 @@
  
  DESTDIR =
@@ -18,3 +18,12 @@
  
  installscript: installdirs
  	(								\
+@@ -245,7 +245,7 @@
+ 	find $(HELP_DIR) -type f -print | xargs chmod a+r
+ 
+ installman:
+-	cd $(topdir)/doc; for i in ircII.1 ircbug.1; do $(INSTALL_DATA) $$i $(mandir); done
++	cd $(topdir)/doc; for i in irc.1 ircbug.1; do $(INSTALL_DATA) $$i $(mandir); done
+ 
+ # not sure about installing this one yet.
+ #	$(INSTALL_DATA) $(topdir)/doc/query-pr.1 $(mandir)

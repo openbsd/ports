@@ -4,7 +4,7 @@ bin/ircbug
 bin/ircflush
 bin/ircio
 bin/wserv
-man/man1/ircII.1
+man/man1/irc.1
 man/man1/ircbug.1
 share/irc/help/!
 share/irc/help/.date
