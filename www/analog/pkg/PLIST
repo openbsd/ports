@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2000/12/22 10:55:03 form Exp $
+@comment $OpenBSD: PLIST,v 1.11 2001/01/27 10:26:38 form Exp $
 bin/analog
 share/analog/analog.cfg
 share/analog/anlgform.html
@@ -63,15 +63,17 @@ share/analog/lang/bgh.lng
 share/analog/lang/bghdom.tab
 share/analog/lang/br.lng
 share/analog/lang/bra.lng
+share/analog/lang/bradom.tab
+share/analog/lang/brdom.tab
 share/analog/lang/brh.lng
+share/analog/lang/brhdom.tab
 share/analog/lang/cat.lng
 share/analog/lang/cata.lng
 share/analog/lang/catadom.tab
 share/analog/lang/catdom.tab
 share/analog/lang/cath.lng
 share/analog/lang/cathdom.tab
-share/analog/lang/cns.lng
-share/analog/lang/cnt.lng
+share/analog/lang/cn.lng
 share/analog/lang/cz.lng
 share/analog/lang/cz1250.lng
 share/analog/lang/cza.lng
@@ -143,7 +145,10 @@ share/analog/lang/pladom.tab
 share/analog/lang/pldom.tab
 share/analog/lang/pt.lng
 share/analog/lang/pta.lng
+share/analog/lang/ptadom.tab
+share/analog/lang/ptdom.tab
 share/analog/lang/pth.lng
+share/analog/lang/pthdom.tab
 share/analog/lang/ro.lng
 share/analog/lang/rodom.tab
 share/analog/lang/ru.lng
@@ -164,12 +169,15 @@ share/analog/lang/sk.lng
 share/analog/lang/ska.lng
 share/analog/lang/tr.lng
 share/analog/lang/tra.lng
+share/analog/lang/tw.lng
+share/analog/lang/twdom.tab
 share/analog/lang/ua.lng
 share/analog/lang/uk.lng
 share/analog/lang/uka.lng
 share/analog/lang/ukdom.tab
 share/analog/lang/us.lng
 share/analog/lang/usa.lng
+share/analog/lang/usdom.tab
 share/analog/lang/usform.html
 share/analog/lang/yu.lng
 share/analog/lang/yua.lng
