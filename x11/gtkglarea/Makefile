@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/06/20 23:54:28 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/10/31 23:15:03 brad Exp $
 
 DISTNAME=	gtkglarea-1.2.1
 CATEGORIES=	x11 graphics
@@ -10,8 +10,9 @@ HOMEPAGE=	http://www.student.oulu.fi/~jlof/gtkglarea/
 
 MAINTAINER=	brad@openbsd.org
 
-LIB_DEPENDS=	MesaGL.3.0:${PORTSDIR}/graphics/Mesa \
-		MesaGLU.3.0:${PORTSDIR}/graphics/Mesa \
+LIB_DEPENDS=	MesaGL.3:${PORTSDIR}/graphics/Mesa \
+		MesaGLU.3:${PORTSDIR}/graphics/Mesa \
+		glib.1.2:${PORTSDIR}/devel/glib \
 		gtk.1.2:${PORTSDIR}/x11/gtk+
 
 USE_X11=	yes
@@ -22,9 +23,10 @@ CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk-config"
 
 post-install:
-	${INSTALL_MAN_DIR} ${PREFIX}/share/doc/gtkglarea/
+	@mkdir -p ${PREFIX}/share/doc/gtkglarea
 	${INSTALL_MAN} ${WRKSRC}/docs/HOWTO.txt ${PREFIX}/share/doc/gtkglarea ; \
 	${INSTALL_MAN} ${WRKSRC}/docs/gdkgl.txt ${PREFIX}/share/doc/gtkglarea ; \
 	${INSTALL_MAN} ${WRKSRC}/docs/gtkglarea.txt ${PREFIX}/share/doc/gtkglarea
+	@${LDCONFIG} -m ${PREFIX}/lib
 	
 .include <bsd.port.mk>
