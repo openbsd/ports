@@ -1,19 +1,14 @@
---- Makefile	Mon May  1 01:54:09 2000
-+++ Makefile.orig	Sun Aug 23 00:03:00 1998
-@@ -2,15 +2,11 @@
- 
+--- Makefile.orig	Sat Aug 22 09:03:00 1998
++++ Makefile	Fri Jul 14 03:53:38 2000
+@@ -3,10 +3,10 @@
  CC = gcc -Wall -O3
  OBJEKTFILER = lxnetbus.o lxnbfunc.o lxnbmenu.o
--PREFIX = /usr/local
-+
  
+-
  all:   ${OBJEKTFILER} lxnetbus
  
  lxnetbus: ${OBJEKTFILER}  
--	${CC} -o $@ ${OBJEKTFILER}
--
--install:
--	install -c -m 755 lxnetbus ${DESTDIR}${PREFIX}/bin/lxnb
++	${CC} -o $@ ${OBJEKTFILER}
  
  clean:
  	rm -f *.o *~ diskdump.txt screendump.jpg
