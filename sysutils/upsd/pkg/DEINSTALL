@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2002/08/05 02:25:36 kevlo Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2004/04/14 19:07:38 xsa Exp $
 #
 # upsd de-installation
 
@@ -8,7 +8,7 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=${SYSCONFDIR}/upsd.conf
 
-if [ -e $CONFIG_FILE ]; then
+if [ ${PKG_DELETE_EXTRA} != Yes -a -f $CONFIG_FILE ]; then
     echo
     echo "+---------------"
     echo "| To completely deinstall the $1 package you need to perform"
