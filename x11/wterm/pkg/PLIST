@@ -1,3 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/07/05 01:02:30 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/04/19 11:18:17 wilfried Exp $
 @mode 4755
 bin/wterm
+@mode
+man/man1/wterm.1
+share/doc/wterm/wtermRef.txt
+share/examples/wterm/example.menu
+share/examples/wterm/jedmenu.sl
+share/examples/wterm/menu
+share/examples/wterm/terminal.menu
+share/examples/wterm/wterm.menu
+@dirrm share/examples/wterm
+@dirrm share/doc/wterm
