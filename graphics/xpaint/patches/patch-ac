@@ -1,19 +1,15 @@
-*** Local.config.orig	Wed May 20 16:11:55 1998
---- Local.config	Wed May 20 16:13:04 1998
-***************
-*** 140,146 ****
-  XPM_INCLUDE = -I/usr/X11R6/include/X11
-  #endif
-  
-! #if defined(FreeBSDArchitecture)
-  ARCH_DEFINES = -DHAVE_PARAM_H
-  TIFF_INCLUDE = -I/usr/local/include/tiff34
-  TIFF_LIB     = -L/usr/local/lib -ltiff34
---- 140,146 ----
-  XPM_INCLUDE = -I/usr/X11R6/include/X11
-  #endif
-  
-! #if defined(FreeBSDArchitecture) || defined(OpenBSDArchitecture)
-  ARCH_DEFINES = -DHAVE_PARAM_H
-  TIFF_INCLUDE = -I/usr/local/include/tiff34
-  TIFF_LIB     = -L/usr/local/lib -ltiff34
+--- Local.config.~1~	Mon Mar 23 13:39:44 1998
++++ Local.config	Fri Jul  3 19:11:27 1998
+@@ -148,3 +148,12 @@
+ JPEG_LIB     = -L/usr/local/lib -ljpeg
+ XPM_INCLUDE = -I/usr/X11R6/include/X11
+ #endif
++
++#if defined(OpenBSDArchitecture)
++ARCH_DEFINES = -DHAVE_PARAM_H
++TIFF_INCLUDE = -I/usr/local/include
++TIFF_LIB     = -L/usr/local/lib -ltiff
++JPEG_INCLUDE = -I/usr/local/include
++JPEG_LIB     = -L/usr/local/lib -ljpeg
++XPM_INCLUDE = -I/usr/X11R6/include/X11
++#endif
