@@ -9,4 +9,7 @@ stay on the user machine, never passing through the server.
 The server has the ability to search for particular files,
 initializing direct transfer between the clients.
 
+The original author of nap is Kevin Sullivan, the 'ps'
+releases are managed by Peter Selinger.
+
 WWW: ${HOMEPAGE}
