@@ -10,3 +10,11 @@ the location of many major developpers and other people from the OpenBSD
 community.
 
 ${HOMEPAGE} points to a fairly extensive collection of maps.
+
+Available flavors:
+no_map
+	does not include the default map
+gfx
+	needed to be able to read jpeg or png maps (under qt 1)
+qt2
+	uses qt2 instead of qt1
