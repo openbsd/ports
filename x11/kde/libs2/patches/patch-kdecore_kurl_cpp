@@ -1,0 +1,14 @@
+$OpenBSD: patch-kdecore_kurl_cpp,v 1.1 2002/02/21 20:56:33 pvalchev Exp $
+--- kdecore/kurl.cpp.orig	Sat Jul 28 22:54:51 2001
++++ kdecore/kurl.cpp	Mon Feb 18 21:27:37 2002
+@@ -190,8 +190,8 @@ static QString decode( const QString& se
+        bKeepEncoded = false;
+     if (character == '%' ) 
+     {
+-      char a = i+1 < old_length ? hex2int( segment[i].latin1() ) : -1;
+-      char b = i+1 < old_length ? hex2int( segment[i+1].latin1() ) : -1;
++      signed char a = i+1 < old_length ? hex2int( segment[i].latin1() ) : -1;
++      signed char b = i+1 < old_length ? hex2int( segment[i+1].latin1() ) : -1;
+       if ((a == -1) || (b == -1)) // Only replace if sequence is valid
+       {
+          // Contains stray %, make sure to re-encode!
