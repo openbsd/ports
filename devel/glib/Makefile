@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2001/07/13 11:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2001/07/31 23:48:18 brad Exp $
 
 COMMENT=	"useful routines for C programming"
 
 DISTNAME=	glib-1.2.10
 CATEGORIES=	devel
-NEED_VERSION=	1.402
+NEED_VERSION=	1.413
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
 		http://www.ameth.org/gimp/gtk/v1.2/ \
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 
 HOMEPAGE=	http://www.gtk.org/
 
-LIB_DEPENDS=	pthread.14::devel/pth
+LIB_DEPENDS=	pthread.14:pth-1.4.*:devel/pth
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
