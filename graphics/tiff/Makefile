@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2000/09/24 07:04:09 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2001/04/13 23:53:27 brad Exp $
+
+COMMENT=	"Tools and library routines for working with TIFF images"
 
 DISTNAME=	tiff-v3.5.5
 PKGNAME=	tiff-3.5.5
 CATEGORIES=	graphics
-NEED_VERSION=	1.330
+NEED_VERSION=	1.384
 MASTER_SITES=	http://www.libtiff.org/
 
 HOMEPAGE=	http://www.libtiff.org/
