@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1 2000/04/13 16:35:48 beck Exp $
+# $OpenBSD: Makefile,v 1.2 2000/05/19 16:49:48 beck Exp $
 
 
 PKGNAME=	ssl-2.7-intl
 PREFIX=		/usr/local/lib
 CATEGORIES=	security
 DISTNAME=	ssl27
-FAKE=No
+FAKE=		Yes
 MASTER_SITES=	ftp://sunsite.ualberta.ca/pub/Local/People/beck/
 NO_CDROM=	"CRYPTO: Patent Issues until Sep 21 2000"
 RESTRICTED=	"Crypto; export-controlled"
@@ -16,6 +16,30 @@ PERMIT_PACKAGE_CDROM=   No
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= No
 PERMIT_DISTFILES_FTP=   Yes
+
+WRKSRC=${WRKDIST}/libssl
+MAKE_FLAGS=NOMAN=Yes
+
+post-extract:
+	@test -d /usr/src/lib/libssl || \
+	{ echo "You must have /usr/src/lib/libssl checked out from cvs to build this port"; exit 1; }
+	/usr/bin/lndir -s -e obj -e obj.${MACHINE_ARCH} /usr/src/lib/libssl ${WRKSRC}
+
+post-patch:
+	@cd ${WRKSRC} && mv src src-patent && \
+		cd src-patent && cat ${WRKDIST}/src-patent.patch | patch -p0
+
+
+MAKE_FILE=Makefile.bsd-wrapper
+
+do-configure:
+	@cd ${WRKSRC} && ${MAKE} -f ${MAKE_FILE} obj
+	@cd ${WRKSRC} && ${MAKE} -f ${MAKE_FILE} depend
+	
+do-install: 
+	@for file in ${WRKSRC}/obj/crypto-patent/libcrypto* ${WRKSRC}/obj/ssl-patent/libssl*; do \
+		${INSTALL} $$file ${PREFIX}; \
+	done; \
 
 fetch-depends:
 .if !defined(NO_WARNINGS)
