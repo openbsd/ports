@@ -1,0 +1,31 @@
+$OpenBSD: operops-patch-silcd_silcd_c,v 1.1 2003/08/19 03:52:27 jolan Exp $
+--- silcd/silcd.c.orig	2003-08-18 17:47:02.000000000 -0500
++++ silcd/silcd.c	2003-08-18 17:47:29.000000000 -0500
+@@ -255,6 +255,14 @@ SILC_TASK_CALLBACK(stop_server)
+   silc_schedule_stop(silcd->schedule);
+ }
+ 
++extern bool silc_debug;
++SILC_TASK_CALLBACK(toggle_debug)
++{
++	if(silc_debug)
++		silc_debug = FALSE;
++	else silc_debug = TRUE;
++}
++
+ /* Dump server statistics into a file into /tmp directory */
+ 
+ SILC_TASK_CALLBACK(dump_stats)
+@@ -728,10 +736,12 @@ int main(int argc, char **argv)
+   sigaction(SIGTERM, &sa, NULL);
+   sigaction(SIGINT, &sa, NULL);
+   sigaction(SIGUSR1, &sa, NULL);
++  sigaction(SIGUSR2, &sa, NULL);
+   silc_schedule_signal_register(silcd->schedule, SIGHUP, got_hup, NULL);
+   silc_schedule_signal_register(silcd->schedule, SIGTERM, stop_server, NULL);
+   silc_schedule_signal_register(silcd->schedule, SIGINT, stop_server, NULL);
+   silc_schedule_signal_register(silcd->schedule, SIGUSR1, dump_stats, NULL);
++  silc_schedule_signal_register(silcd->schedule, SIGUSR2, toggle_debug, NULL);
+ 
+   if (!foreground) {
+     /* Before running the server, fork to background. */

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/07/30 00:26:26 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2003/08/19 03:52:27 jolan Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN= "config file parser bug on ${MACHINE_ARCH}"
@@ -31,13 +31,24 @@ MASTER_SITES=	http://ftp.silcnet.org/server/sources/ \
 MODULES=	iconv
 
 # XXX workaround gcc bugs on sparc64
-.if ${MACHINE_ARCH:Msparc64}
+.if ${MACHINE_ARCH} == "sparc64" 
 PATCH_LIST=	gcc-* patch-*
 .endif
 
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.54
-MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/lib/silcmath/mpi
+FLAVORS=	operops
+FLAVOR?=
+
+.if ${FLAVOR:L:Moperops}
+.if ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=	gcc-* operops-* patch-*
+.else
+PATCH_LIST=	operops-* patch-*
+.endif
+.endif
+
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.54
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/lib/silcmath/mpi
 CONFIGURE_ARGS=	\
 	--enable-ipv6 \
 	--without-irssi \
