@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/02/22 14:55:51 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/12/27 04:17:01 brad Exp $
 bin/sa-learn
 bin/spamassassin
 bin/spamc
@@ -22,11 +22,13 @@ ${P5SITE}/Mail/SpamAssassin/Locales.pm
 ${P5SITE}/Mail/SpamAssassin/Locker.pm
 ${P5SITE}/Mail/SpamAssassin/MailingList.pm
 ${P5SITE}/Mail/SpamAssassin/Message.pm
+${P5SITE}/Mail/SpamAssassin/NetSet.pm
 ${P5SITE}/Mail/SpamAssassin/NoMailAudit.pm
 ${P5SITE}/Mail/SpamAssassin/PerMsgLearner.pm
 ${P5SITE}/Mail/SpamAssassin/PerMsgStatus.pm
 ${P5SITE}/Mail/SpamAssassin/PersistentAddrList.pm
 ${P5SITE}/Mail/SpamAssassin/PhraseFreqs.pm
+${P5SITE}/Mail/SpamAssassin/Received.pm
 ${P5SITE}/Mail/SpamAssassin/Replier.pm
 ${P5SITE}/Mail/SpamAssassin/Reporter.pm
 ${P5SITE}/Mail/SpamAssassin/SHA1.pm
@@ -34,6 +36,7 @@ ${P5SITE}/Mail/SpamAssassin/TextCat.pm
 ${P5SITE}/Mail/SpamAssassin/UnixLocker.pm
 ${P5SITE}/Mail/SpamAssassin/Util.pm
 ${P5SITE}/Mail/SpamAssassin/Win32Locker.pm
+@comment ${P5ARCH}/auto/Mail/SpamAssassin/.packlist
 man/man1/sa-learn.1
 man/man1/spamassassin.1
 man/man1/spamc.1
@@ -57,6 +60,8 @@ share/spamassassin/10_misc.cf
 share/spamassassin/20_anti_ratware.cf
 share/spamassassin/20_body_tests.cf
 share/spamassassin/20_compensate.cf
+share/spamassassin/20_dnsbl_tests.cf
+share/spamassassin/20_fake_helo_tests.cf
 share/spamassassin/20_head_tests.cf
 share/spamassassin/20_html_tests.cf
 share/spamassassin/20_meta_tests.cf
@@ -74,6 +79,7 @@ share/spamassassin/30_text_es.cf
 share/spamassassin/30_text_fr.cf
 share/spamassassin/30_text_it.cf
 share/spamassassin/30_text_pl.cf
+share/spamassassin/30_text_sk.cf
 share/spamassassin/50_scores.cf
 share/spamassassin/60_whitelist.cf
 share/spamassassin/languages
@@ -82,4 +88,8 @@ share/spamassassin/user_prefs.template
 @dirrm share/spamassassin
 @dirrm share/examples/SpamAssassin
 @dirrm share/doc/SpamAssassin
+@comment @dirrm ${P5ARCH}/auto/Mail/SpamAssassin
+@comment @dirrm ${P5ARCH}/auto/Mail
 @dirrm ${P5SITE}/Mail/SpamAssassin
+@dirrm ${P5SITE}/Mail
+@extraunexec rm -rf ${CONFDIR}

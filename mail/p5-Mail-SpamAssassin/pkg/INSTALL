@@ -1,15 +1,12 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2002/10/06 23:34:26 lebel Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/12/27 04:17:01 brad Exp $
 #
 # Pre/post-installation setup of SpamAssassin
 
-# exit on errors, use a sane path and install prefix
-#
-set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${SYSCONFDIR}/mail/spamassassin
-SAMPLE_CONFIG_DIR=$PREFIX/share/examples/SpamAssassin
+CONFIG_DIR=${CONFDIR}
+SAMPLE_CONFIG_DIR=${SAMPLE_CONFDIR}
 
 do_notice()
 {
@@ -37,15 +34,11 @@ do_install()
     echo
 }
 
-# verify proper execution
-#
 if [ $# -ne 2 ]; then
     echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
     exit 1
 fi
 
-# Verify/process the command
-#
 case $2 in
     PRE-INSTALL)
 	: nothing to pre-install for this port

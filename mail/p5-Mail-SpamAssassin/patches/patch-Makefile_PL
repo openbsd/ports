@@ -1,0 +1,24 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2003/12/27 04:17:01 brad Exp $
+--- Makefile.PL.orig	Thu Nov 13 11:55:46 2003
++++ Makefile.PL	Thu Nov 13 11:55:55 2003
+@@ -760,7 +760,7 @@
+ 
+   foreach (@code) {
+     # Add our install targets as a dependency to all top-level install targets
+-    s/^(install(?:_[a-z]+)?\s*::?\s*.*)$/$1 conf__install data__install/;
++    s/^(install(?:_[a-z]+)?\s*::?\s*.*)$/$1 data__install/;
+ 
+     # Now do the DESTDIR hack, if necessary.
+     next if !$mm_needs_destdir;
+@@ -962,11 +962,6 @@
+ 
+ spamd/binaries.mk: spamd/configure
+ 	cd spamd; ./configure --prefix="$(I_PREFIX)" --sysconfdir="$(I_SYSCONFDIR)" --datadir="$(I_DATADIR)" --enable-ssl="$(ENABLE_SSL)"
+-
+-conf__install:
+-	-$(MKPATH) $(B_CONFDIR)
+-	$(PERL) -MFile::Spec -MFile::Copy \
+-	  -e "copy(q{rules/local.cf}, q{$(B_CONFDIR)/local.cf}) unless -f q{$(B_CONFDIR)/local.cf};"
+ 
+ data__install:
+ 	-$(MKPATH) $(B_DATADIR)

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.26 2003/12/07 23:15:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2003/12/27 04:17:01 brad Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
-DISTNAME=		Mail-SpamAssassin-2.55
-PKGNAME=		p5-${DISTNAME}p2
+DISTNAME=		Mail-SpamAssassin-2.61
+PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
+
+MAINTAINER=		Ben Lovett <ben@tilderoot.com>
 
 HOMEPAGE=		http://spamassassin.org/
 
@@ -21,15 +23,19 @@ RUN_DEPENDS=		:p5-Net-DNS-*:net/p5-Net-DNS \
 			:p5-HTML-Parser-*:www/p5-HTML-Parser
 
 CONFIGURE_STYLE=	perl
-CONFIGURE_ARGS=		RUN_RAZOR1_TESTS=n RUN_RAZOR2_TESTS=n
+CONFIGURE_ARGS+=	RUN_RAZOR_TESTS="no" \
+			SYSCONFDIR=${SYSCONFDIR} \
+			CONTACT_ADDRESS="the administrator of that system"
 
-SAMPLE_CONFIG_DIR=	${PREFIX}/share/examples/SpamAssassin
-CONFIG_DIR=		${SYSCONFDIR}/mail/spamassassin
+CONFDIR=		${SYSCONFDIR}/mail/spamassassin
 RULES_DIR=		${PREFIX}/share/spamassassin
+SAMPLE_CONFDIR=		${PREFIX}/share/examples/SpamAssassin
+
+SUBST_VARS=		CONFDIR SAMPLE_CONFDIR
 
 FAKE_FLAGS=		${DESTDIRNAME}=${WRKINST} \
 			PKG_DEF_RULES_DIR=${WRKINST}${RULES_DIR} \
-			PKG_LOCAL_RULES_DIR=${WRKINST}${SAMPLE_CONFIG_DIR}
+			PKG_LOCAL_RULES_DIR=${WRKINST}${SAMPLE_CONFDIR}
 
 # regress insists on creating files in $HOME
 PORTHOME=		${WRKDIR}/temp-home
@@ -37,13 +43,16 @@ PORTHOME=		${WRKDIR}/temp-home
 FAQS=	${FILESDIR}/OpenBSD-SpamAssassin-mini-howto.html
 DOCS=	README procmailrc.example \
 	sample-nonspam.txt sample-spam.txt
+LOCALCF=	rules/local.cf
 
 post-patch:
-	perl -pi -e "s#\@\@LOCAL_RULES_DIR\@\@#${CONFIG_DIR}#" ${WRKSRC}/rules/*
+	perl -pi -e "s#\@\@LOCAL_RULES_DIR\@\@#${CONFDIR}#" ${WRKSRC}/rules/*
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/SpamAssassin
+	${INSTALL_DATA_DIR} ${SAMPLE_CONFDIR}
 	${INSTALL_DATA} ${FAQS} ${PREFIX}/share/doc/SpamAssassin
+	cd ${WRKSRC} && ${INSTALL_DATA} ${LOCALCF} ${SAMPLE_CONFDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/SpamAssassin
 	cd ${WRKSRC} && pod2man --section=1 spamd/spamc.pod > \
 	    ${PREFIX}/man/man1/spamc.1
