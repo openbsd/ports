@@ -1,0 +1,35 @@
+$OpenBSD: patch-miscutil_c,v 1.1 2003/07/26 13:24:08 sturm Exp $
+--- miscutil.c.orig	Wed Jul 23 09:05:30 2003
++++ miscutil.c	Wed Jul 23 09:06:01 2003
+@@ -106,9 +106,9 @@ initvars(char *progname)
+     }
+ 
+ #ifndef TESTMODE
+-    pw = getpwnam("news");
++    pw = getpwnam("_news");
+     if (!pw) {
+-	fprintf(stderr, "no such user: news\n");
++	fprintf(stderr, "no such user: _news\n");
+ 	return FALSE;
+     }
+ #endif
+@@ -129,7 +129,7 @@ initvars(char *progname)
+ 		    || st.st_uid != pw->pw_uid
+ #endif
+ 	       ) {
+-		fprintf(stderr, "Warning: cannot create %s with proper ownership: %s\nMake sure you run this program as user root or news.\n", s, strerror(e));
++		fprintf(stderr, "Warning: cannot create %s with proper ownership: %s\nMake sure you run this program as user root or _news.\n", s, strerror(e));
+ 		syslog(LOG_WARNING, "Warning: cannot create %s with proper ownership: %s", s, strerror(e));
+ 		suicide();
+ 	    }
+@@ -152,8 +152,8 @@ initvars(char *progname)
+ 	setreuid(pw->pw_uid, pw->pw_uid);
+ #endif
+ 	if (getuid() != pw->pw_uid || getgid() != pw->pw_gid) {
+-	    syslog(LOG_ERR, "%s: must be run as news or root\n", progname);
+-	    fprintf(stderr, "%s: must be run as news or root\n", progname);
++	    syslog(LOG_ERR, "%s: must be run as _news or root\n", progname);
++	    fprintf(stderr, "%s: must be run as _news or root\n", progname);
+ 	    endpwent();
+ 	    return FALSE;
+ 	}
