@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/01 15:17:53 wilfried Exp $
+bin/wmmenu
+share/doc/wmmenu/README
+share/examples/wmmenu/apps
+share/examples/wmmenu/defaults
+@dirrm share/examples/wmmenu
+@dirrm share/doc/wmmenu

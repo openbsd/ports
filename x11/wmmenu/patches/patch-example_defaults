@@ -1,0 +1,14 @@
+$OpenBSD: patch-example_defaults,v 1.1.1.1 2001/04/01 15:17:53 wilfried Exp $
+--- example/defaults.orig	Sat Aug  5 09:40:06 2000
++++ example/defaults	Thu Mar  8 14:57:13 2001
+@@ -10,6 +10,8 @@
+ #  or
+ # tile /SOME/PATH/TO/FILE.XPM
+ 
+-xpmpath	/usr/local/share/WindowMaker/Icons
+-xpmpath /usr/local/share/pixmaps
++xpmpath %%PREFIX%%/share/WindowMaker/Backgrounds
++xpmpath %%PREFIX%%/share/WindowMaker/Icons
++xpmpath %%PREFIX%%/share/WindowMaker/Pixmaps
++xpmpath %%PREFIX%%/include/pixmaps
+ tile	tile2.xpm
