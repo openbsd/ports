@@ -1,5 +1,5 @@
 --- stel/makeio.c.orig	Fri Apr 26 12:29:27 1996
-+++ stel/makeio.c	Wed Nov 18 02:36:56 1998
++++ stel/makeio.c	Sun Nov 29 04:44:21 1998
 @@ -21,7 +21,8 @@
  #include <sys/time.h>
  #include <netinet/in.h>
@@ -45,7 +45,21 @@
  				if ((logfh = open(logfilename,
  					O_WRONLY | O_CREAT, 0600)) == -1) {
  					perror(logfilename);
-@@ -669,14 +678,14 @@
+@@ -650,6 +659,9 @@
+ 	printf("\n");
+ 
+ 	if ((char *)getenv("SKEYPADFILE") != NULL) {
++/* 
++ * We are not using mjr's des mode.  Don't bother asking.
++ *
+ 		if (automjr) {
+ 			cprintf("(using mjr DES padding mode)\n");
+ 			cprintf("using skeypadfile %s\n",
+@@ -666,17 +678,18 @@
+ 			if (buf[0] == 'y')
+ 				desmode = 1;
+ 		}
++*/
  	}
  
  	/* Crunch seed and password into starting key */
