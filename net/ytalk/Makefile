@@ -1,20 +1,29 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/10 19:04:00 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/04 01:58:39 espie Exp $
 
 DISTNAME=	ytalk-3.1.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.iagora.com/~espel/ytalk/
 
-NEED_VERSION=	1.79
+NEED_VERSION=	1.216
 
 MAINTAINER=	espie@openbsd.org
 
-GNU_CONFIGURE=	yes
+PERMIT_PACKAGE_CDROM=Yes
+PERMIT_PACKAGE_FTP=Yes
+PERMIT_DISTFILES_CDROM=Yes
+PERMIT_DISTFILES_FTP=Yes
+
+FAKE=Yes
+# No gnu-configure for now, need to set up DESTDIR in prefix/etc for fake
+# to work.
+HAS_CONFIGURE=Yes
+CONFIGURE_ARGS= --prefix='$${DESTDIR}${PREFIX}' \
+	--sysconfdir='$${DESTDIR}/etc'
 
 INSTALL_TARGET=	install.bin install.man
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/ytalk
 	${INSTALL_DATA} ${WRKBUILD}/ytalkrc ${PREFIX}/lib/ytalk/ytalkrc.sample
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
