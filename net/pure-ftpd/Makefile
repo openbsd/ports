@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/12/14 16:31:32 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2001/12/17 15:56:28 brad Exp $
 
 COMMENT=	"small, easy to set up, fast and very secure FTP server"
 
-DISTNAME=	pure-ftpd-1.0.4
+DISTNAME=	pure-ftpd-1.0.5
 CATEGORIES=	net
+NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= pureftpd
 
