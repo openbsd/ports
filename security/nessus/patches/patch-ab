@@ -1,0 +1,30 @@
+*** src/plugins/land/land.c.orig	Mon Jan 18 11:36:30 1999
+--- src/plugins/land/land.c	Mon Jan 18 11:43:00 1999
+***************
+*** 11,23 ****
+  
+  #include <includes.h>
+  
+- #include <netinet/ip.h>
+- #include <netinet/udp.h>
+- #ifdef BSD
+- #include <netinet/tcp.h>
+- #endif
+- 
+- 
+  /* Minor portability tweaks. --KGB */
+  #if (!defined(BSD) && (!defined(__GLIBC__) || __GLIBC__ < 2 || defined(__powerpc__)))
+  #include <netinet/ip_tcp.h>
+--- 11,16 ----
+***************
+*** 43,51 ****
+  #endif /* BSD */
+  #endif /* GLIBC */
+  
+- #ifdef HAVE_NETINET_IN_SYSTM_H
+- #include <netinet/in_systm.h>
+- #endif
+  #ifdef HAVE_NETINET_TCPIP_H
+  #define n_long long
+  #include <netinet/ip_var.h>
+--- 36,41 ----

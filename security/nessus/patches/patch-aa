@@ -1,0 +1,47 @@
+*** nessus.tmpl.in.orig	Mon Jan 18 11:16:12 1999
+--- nessus.tmpl.in	Mon Jan 18 11:17:24 1999
+***************
+*** 18,29 ****
+  
+  # Very important ! These are the modes of Nessus
+  
+! # The server is suid root and can only be launched by people
+! # who are in the same group as root (root under Linux, wheel under
+! # FreeBSD)
+! # Server mode : (rwsr-x---)
+  
+! SERVERMODE=4750
+  
+  # Client mode  (rwxr-xr-x)
+  
+--- 18,26 ----
+  
+  # Very important ! These are the modes of Nessus
+  
+! # Server mode : (rwxr-xr-x)
+  
+! SERVERMODE=755
+  
+  # Client mode  (rwxr-xr-x)
+  
+***************
+*** 37,45 ****
+  
+  PLUGINSDIRMODE=755
+  
+! # Reports directory mode (rwxrwx---)
+  
+! REPORTSDIRMODE=770
+  
+  # C compiler options
+  CFLAGS=@CFLAGS@
+--- 34,42 ----
+  
+  PLUGINSDIRMODE=755
+  
+! # Reports directory mode (rwxr-x--)
+  
+! REPORTSDIRMODE=750
+  
+  # C compiler options
+  CFLAGS=@CFLAGS@
