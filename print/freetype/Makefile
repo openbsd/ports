@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/15 05:05:06 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/04 23:07:20 brad Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 DISTNAME=	freetype-1.3
@@ -10,19 +10,21 @@ MASTER_SITES=	ftp://ftp.tux.org/pub/devel/freetype/ \
 		ftp://ring.aist.go.jp/pub/graphics/freetype/ \
 		ftp://ftp.unina.it/pub/Unix/pkgs/font/freetype/
 
-NEED_VERSION=	1.73
+NEED_VERSION=	1.218
 
 MAINTAINER=	jasoni@openbsd.org
 
-LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-USE_GMAKE=	yes
+FAKE=	Yes
+
+USE_GMAKE=	Yes
 SEPARATE_BUILD=	concurrent
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	Yes
+CONFIGURE_ARGS+= --prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-nls
 
@@ -46,9 +48,8 @@ pre-extract:
 	fi
 
 # Older versions of freetype installed include files in ${PREFIX}/include
-# this is a compatibility hack for now
-
+# this is a compatibility hack for now.
 post-install:
-	@ln -fs ${PREFIX}/include/freetype/*.h ${PREFIX}/include
+	@cd ${PREFIX}/include; ln -fs freetype/*.h .
 
 .include <bsd.port.mk>
