@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2003/10/12 02:18:49 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2004/05/08 06:43:40 sturm Exp $
 
 COMMENT=		"GNU Transport Layer Security library"
 
-VERSION=		0.8.6
+VERSION=		1.0.13
 DISTNAME=		gnutls-${VERSION}
-PKGNAME=		${DISTNAME}p1
 CATEGORIES=		security
 
 HOMEPAGE=		http://www.gnutls.org/
@@ -16,17 +15,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gnutls/ \
-		ftp://gd.tuwien.ac.at/privacy/gnupg/alpha/gnutls/ \
-		http://ftp.planetmirror.com/pub/gnupg/alpha/gnutls/ \
-		http://sunsite.dk/pub/security/gcrypt/alpha/gnutls/ \
-		http://ftp.linux.it/pub/mirrors/gnupg/alpha/gnutls/
+MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/gnutls/ \
+		ftp://gd.tuwien.ac.at/privacy/gnupg/gnutls/ \
+		http://sunsite.dk/pub/security/gcrypt/gnutls/ \
+		http://ftp.linux.it/pub/mirrors/gnupg/gnutls/
 
-LIB_DEPENDS=	gcrypt.6::security/libgcrypt \
-		opencdk.6::security/opencdk
+LIB_DEPENDS=	gcrypt.12::security/libgcrypt \
+		opencdk.8::security/opencdk
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} --with-included-libtasn1
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--with-included-libtasn1 \
+			--with-included-libcfg
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

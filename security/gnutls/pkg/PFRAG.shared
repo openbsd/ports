@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/05/02 04:04:31 margarida Exp $
-lib/libgnutls-extra.so.8.6
-lib/libgnutls.so.8.6
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/05/08 06:43:40 sturm Exp $
+lib/libgnutls-extra.so.12.13
+lib/libgnutls-openssl.so.12.13
+lib/libgnutls.so.12.13
 DYNLIBDIR(%D/lib)

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2004/05/08 06:43:40 sturm Exp $
+--- src/Makefile.in.orig	2004-04-25 10:09:04.000000000 +0200
++++ src/Makefile.in	2004-04-25 10:09:52.000000000 +0200
+@@ -48,7 +48,7 @@ AUTOMAKE = @AUTOMAKE@
+ AWK = @AWK@
+ CC = @CC@
+ CCDEPMODE = @CCDEPMODE@
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ -I./cfg
+ CPP = @CPP@
+ CPPFLAGS = @CPPFLAGS@
+ CXX = @CXX@
