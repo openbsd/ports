@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2002/04/07 14:02:42 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2002/04/15 16:16:42 naddy Exp $
 
 COMMENT=	"extremely fast password cracker"
 
 DISTNAME=	john-1.6
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=     security
 NEED_VERSION=	1.515
 MASTER_SITES=	http://www.openwall.com/john/ \
@@ -54,7 +55,7 @@ do-install:
 		ln -sf john unafs && \
 		ln -sf john unique
 	${INSTALL_DATA} ${WRKSRC}/../run/* ${PREFIX}/share/john
-	@sed -e s#~/#${PREFIX}/share/john/#g ${WRKSRC}/../run/john.ini > \
+	@sed -e s#~/#${TRUEPREFIX}/share/john/#g ${WRKSRC}/../run/john.ini > \
 		${PREFIX}/share/john/john.ini
 	${INSTALL_DATA} ${WRKSRC}/../doc/* ${PREFIX}/share/doc/john
 
