@@ -1,0 +1,14 @@
+$OpenBSD: patch-example_cf,v 1.1 2002/02/23 23:16:02 pvalchev Exp $
+--- example.cf.orig	Thu Jun 11 23:37:08 1998
++++ example.cf	Sat Feb 23 16:09:58 2002
+@@ -67,8 +67,8 @@ queuedir=/var/spool/qpage
+ identtimeout=5
+ snpptimeout=60
+ 
+-modem=ttya device=/dev/cua/a
+-modem=ttyb device=/dev/cua/b
++modem=ttya device=/dev/cua00
++modem=ttyb device=/dev/cua01
+ 
+ service=default
+ 	device=ttya,ttyb
