@@ -1,0 +1,37 @@
+$OpenBSD: patch-ircomm_ircomm_1,v 1.1.1.1 2003/08/21 12:58:01 grange Exp $
+$RuOBSD: patch-ircomm_ircomm_1,v 1.1 2002/05/17 17:42:27 pvk Exp $
+--- ircomm/ircomm.1.orig	Sun Jan 13 03:45:27 2002
++++ ircomm/ircomm.1	Fri May 17 21:26:20 2002
+@@ -64,6 +64,22 @@ Redirect stdin/stdout to pty.
+ .It Fl Y
+ Fork and run as daemon.
+ .El
++.Sh EXAMPLES
++Make a data connection using cellular phone built-in modem:
++.Bd -literal
++ircomm -Y -d /dev/tty01 -y /dev/ptyqf
++.Ed
++.Pp
++After IrDA connection is established, you can make a call using terminal program or
++.Xr ppp 8
++to make data calls.
++.Pp
++You should setup your communication program to use the slave end of selected pty, in our case /dev/ttyqf.
++.Pp
++Also, make sure that you have appropriate files in your /dev directory. If you don't have it, you should create it using
++.Xr MAKEDEV 8
++script.
++.fi
+ .Sh SEE ALSO
+ .Xr irobex 1 ,
+ .Xr irs 1 ,
+@@ -71,6 +87,8 @@ Fork and run as daemon.
+ .Xr mkobexmemo 1 ,
+ .Xr mkobexpdb 1 ,
+ .Xr mkobextel 1 ,
+-.Xr mkobextodo 1
++.Xr mkobextodo 1 ,
++.Xr MAKEDEV 8 ,
++.Xr ppp 8
+ .Sh AUTHOR
+ .An Tommy Bohlin Aq tommy@gatespace.com
