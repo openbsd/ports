@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2000/03/26 07:47:14 brad Exp $
+# $OpenBSD: Makefile,v 1.68 2000/04/01 03:04:28 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -60,6 +60,7 @@
      SUBDIR += mrtg
      SUBDIR += mtr
 #    SUBDIR += nam
+     SUBDIR += nemesis
      SUBDIR += ncftp
 #    SUBDIR += ncftp2
      SUBDIR += netatalk
