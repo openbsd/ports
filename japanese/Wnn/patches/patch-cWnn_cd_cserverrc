@@ -1,0 +1,12 @@
+$OpenBSD: patch-cWnn_cd_cserverrc,v 1.1 2000/04/21 00:09:49 espie Exp $
+--- cWnn/cd/cserverrc.orig	Fri Apr 21 02:07:26 2000
++++ cWnn/cd/cserverrc	Fri Apr 21 02:07:35 2000
+@@ -1,7 +1,7 @@
+ ;
+ ; $Id: patch-cWnn_cd_cserverrc,v 1.1 2000/04/21 00:09:49 espie Exp $
+ ;
+-jserver_dir	@LIBDIR/@LANG/dic
++jserver_dir	/var/dict/@LANG
+ readfile	sys/basic.dic	
+ readfile	sys/level_1.dic
+ readfile	sys/level_2.dic

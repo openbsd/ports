@@ -1,0 +1,12 @@
+$OpenBSD: patch-kWnn_kd_kserverrc,v 1.1 2000/04/21 00:09:49 espie Exp $
+--- kWnn/kd/kserverrc.orig	Fri Apr 21 02:07:51 2000
++++ kWnn/kd/kserverrc	Fri Apr 21 02:07:59 2000
+@@ -3,7 +3,7 @@
+ ;
+ max_client 64
+ 
+-jserver_dir	@LIBDIR/@LANG/dic
++jserver_dir	/var/dict/@LANG
+ readfile	sys/hword.dic
+ readfile	sys/single.dic
+ 

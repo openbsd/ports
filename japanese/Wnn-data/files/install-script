@@ -46,8 +46,8 @@ else
     fi
 fi
 
-sys_dirs="/var/dict/ja_JP/dic/pubdic var/dict/ja_JP/dic/wnncons"
-usr_dirs=/var/dict/ja_JP/dic/usr
+sys_dirs="/var/dict/ja_JP/pubdic var/dict/ja_JP/wnncons"
+usr_dirs=/var/dict/ja_JP/usr
 wnntouch=/usr/local/bin/wnntouch
 wnnserver=/usr/local/bin/jserver
 
@@ -59,7 +59,7 @@ chmod u+s $wnnserver
 
 # japanese directories not yet present, bail out
 
-[ -d /var/dict/ja_JP/dic ] || exit 0
+[ -d /var/dict/ja_JP ] || exit 0
 
 for dir in $sys_dirs; do
   $wnntouch $dir/*
