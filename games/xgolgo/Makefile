@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:58 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/01/14 02:28:33 angelos Exp $
 #
 
 DISTNAME=	xeyes-g
 PKGNAME=	xgolgo-1.0
 CATEGORIES=	games
 
-#BROKEN=	"source no longer available at MASTER_SITES"
-
 MAINTAINER=	angelos@openbsd.org
 
-MASTER_SITES=	ftp://ftp.cc.saga-u.ac.jp/pub/X/xeyes/
+MASTER_SITES=	ftp://ftp.netlab.is.tsukuba.ac.jp/pub/X/our_collections/misc/
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
