@@ -1,16 +1,19 @@
-# $OpenBSD: Makefile,v 1.10 1999/04/06 00:09:52 brad Exp $
+# $OpenBSD: Makefile,v 1.11 1999/04/18 20:58:41 brad Exp $
 
-DISTNAME=	ImageMagick-4.2.0
+DISTNAME=	ImageMagick-4.2.2
 CATEGORIES=     graphics x11
+MASTER_SITES=	ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
+		ftp://ftp.cci.fr/pub/unix/gfx/ImageMagick/ \
+		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/ \
+		ftp://ftp.fifi.org/pub/ImageMagick/ \
+		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
+		ftp://ftp.ms.mff.cuni.cz/MIRRORS/ftp.wizards.dupont.com/pub/ImageMagick/ \
+		ftp://ftp.oce.nl/pub/Internet/audio+video/ImageMagick/
 
 NEED_VERSION=	1.73
 
 MAINTAINER=	marc@openbsd.org
 
-MASTER_SITES=	ftp://ftp.courtesan.com/pub/OpenBSD/distfiles/
-
-# Future: add FlashPix, NCSA HDF, JBIG, scanimage, etc.
-#
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig \
 		gs:${PORTSDIR}/print/ghostscript5 \
 		picttoppm:${PORTSDIR}/graphics/netpbm
@@ -24,7 +27,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 USE_X11=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static
+CONFIGURE_ARGS+= --enable-static --enable-lzw
 CONFIGURE_ENV=	CPPFLAGS="-I/usr/local/include" \
 		LDFLAGS="-L/usr/local/lib"
 
