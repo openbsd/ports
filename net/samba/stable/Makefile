@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2003/06/28 22:14:45 jolan Exp $
+# $OpenBSD: Makefile,v 1.20 2003/08/21 14:46:52 naddy Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
@@ -76,7 +76,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/samba/textdocs
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/samba
 	@cp -R ${WRKSRC}/../examples/* ${PREFIX}/share/examples/samba
-	@chown -R root:bin ${PREFIX}/share/examples/samba
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/samba
 	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/samba
 	@for i in ${SAMBA_DOCS}; do \
 	 ${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba ;	\
@@ -94,7 +94,7 @@ post-install:
 	 ${WRKSRC}/../examples/smb.conf.default > ${SAMPLE_CONFIG}
 	${INSTALL_SCRIPT} ${WRKSRC}/script/mksmbpasswd.sh ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/script/convert_smbpasswd ${PREFIX}/bin
-	@chown root:bin ${PREFIX}/bin/smbpasswd
+	@chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/smbpasswd
 	@chmod 111 ${PREFIX}/bin/smbpasswd
 
 .include <bsd.port.mk>

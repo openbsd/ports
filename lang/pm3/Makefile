@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/05/11 22:42:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2003/08/21 14:46:52 naddy Exp $
 
 CATEGORIES=	lang
 ONLY_FOR_ARCHS=	i386
@@ -37,7 +37,7 @@ PATCH_DIST_STRIP=-p1
 WRKINST=${WRKDIST}/binaries/OpenBSD_386
 
 do-install:
-	chown -R root:bin ${WRKINST}
+	chown -R ${LIBOWN}:${LIBGRP} ${WRKINST}
 	-cd ${PREFIX}/pm3/bin && strip *
 
 M3ARCH=OpenBSD_386
