@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1998/08/22 18:43:58 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1998/09/14 01:38:56 marc Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -42,6 +42,7 @@
 #    SUBDIR += p5-HTTPD-Tools
 #    SUBDIR += p5-WWW-Search
 #    SUBDIR += p5-libwww
+     SUBDIR += squid
 #    SUBDIR += squid11
 #    SUBDIR += squid11-novm
      SUBDIR += transproxy
