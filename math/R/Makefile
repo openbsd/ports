@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/05 13:00:21 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/14 23:34:23 espie Exp $
 
 # R, a clone of the S-Plus (based on AT&T S) statistical package 
 
@@ -22,6 +22,8 @@ MASTER_SITES=		http://cran.r-project.org/src/base/ \
 			http://cran.us.r-project.org/src/base/ \
 			http://cran.dk.r-project.org/src/base/
 EXTRACT_SUFX=		.tgz
+
+LIB_DEPENDS=	jpeg.62::graphics/jpeg png.2::graphics/png
 
 FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
 
