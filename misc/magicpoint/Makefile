@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/11/26 16:09:59 kevlo Exp $
+# $OpenBSD: Makefile,v 1.24 2002/06/16 13:33:49 kevlo Exp $
 
 COMMENT=	"X11-based presentation tool"
 
@@ -8,8 +8,6 @@ NEED_VERSION=	1.499
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
 HOMEPAGE=	http://www.mew.org/mgp/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -21,6 +19,7 @@ LIB_DEPENDS+=	ttf.1::print/freetype \
 		png.2::graphics/png \
 		mng::graphics/libmng \
 		ungif.5::graphics/libungif
+RUN_DEPENDS+=	pnmscale::graphics/netpbm
 
 MODULES=	gettext
 
@@ -67,13 +66,13 @@ post-install:
 		 ${INSTALL_DATA} ${WRKSRC}/contrib/mgp-el/$$i \
 			 ${PREFIX}/share/mgp/emacs; \
 	done
-	${INSTALL_PROGRAM} ${WRKSRC}/contrib/eqn2eps.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/eqn2eps.sh \
 		 ${PREFIX}/bin/eqn2eps
-	${INSTALL_PROGRAM} ${WRKSRC}/contrib/mgp2html.pl \
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/mgp2html.pl \
 		${PREFIX}/bin/mgp2html
-	${INSTALL_PROGRAM} ${WRKSRC}/contrib/mgp2latex.pl \
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/mgp2latex.pl \
 		${PREFIX}/bin/mgp2latex
-	${INSTALL_PROGRAM} ${WRKSRC}/contrib/tex2eps.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/tex2eps.sh \
 		${PREFIX}/bin/tex2eps
 	
 .include <bsd.port.mk>
