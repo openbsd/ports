@@ -1,6 +1,7 @@
---- doc/Makefile.in.orig	Wed Jan 17 17:18:12 2001
-+++ doc/Makefile.in	Wed Jan 17 17:18:30 2001
-@@ -68,7 +68,7 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2002/09/29 16:10:09 naddy Exp $
+--- doc/Makefile.in.orig	Wed Jul 25 04:17:40 2001
++++ doc/Makefile.in	Sun Sep 29 18:08:05 2002
+@@ -68,7 +68,7 @@ TK_HEADER = @TK_HEADER@
  VERSION = @VERSION@
  WISH = @WISH@
  

@@ -1,6 +1,7 @@
---- Makefile.in.orig	Wed Aug  2 10:24:59 2000
-+++ Makefile.in	Wed Jan 17 17:17:46 2001
-@@ -93,7 +93,7 @@
+$OpenBSD: patch-Makefile.in,v 1.2 2002/09/29 16:10:09 naddy Exp $
+--- Makefile.in.orig	Wed Jul 25 04:17:39 2001
++++ Makefile.in	Sun Sep 29 18:08:05 2002
+@@ -93,7 +93,7 @@ generate_tags_SOURCES = generate_tags.cc
  
  # Documentation
  
