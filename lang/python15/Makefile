@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/13 05:09:46 jasoni Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/19 06:53:13 jasoni Exp $
 #
 # This port should remain Python 1.5.2.  Please do not upgrade.
 
@@ -36,6 +36,8 @@ CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-fpectl --enable-debug
 MAKE_FLAGS+=	OPT="${CFLAGS}"
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a::devel/gmp
 
 WRKDIST=	${WRKDIR}/Python-1.5.2
 

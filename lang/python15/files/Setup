@@ -218,7 +218,7 @@ sha shamodule.c
 
 #GMP=/usr/src/gnu/lib/libgmp
 #mpz mpzmodule.c -I$(GMP) $(GMP)/libgmp.a
-mpz mpzmodule.c /usr/lib/libgmp.a
+mpz mpzmodule.c -I${LOCALBASE}/include -L${LOCALBASE}/lib -lgmp
 
 
 # SGI IRIX specific modules -- off by default.

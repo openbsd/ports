@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/13 05:09:50 jasoni Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/01/19 06:53:13 jasoni Exp $
+@option no-default-conflict
+@pkgcfl python-1.5*
 bin/python1.5
 include/python1.5/Python.h
 include/python1.5/abstract.h
