@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2001/04/08 21:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/09 23:26:26 pvalchev Exp $
 
-COMMENT=	'solving toolkit for linear equalities and inequalities'
+COMMENT=	"solving toolkit for linear equalities and inequalities"
 
 DISTNAME=	cassowary-0.60
 CATEGORIES=	math
 NEED_VERSION=	1.363
 HOMEPAGE=	http://www.cs.washington.edu/research/constraints/cassowary/
 
-MAINTAINER=	Peter Valchev <pvalchev@home.com>
+MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"unclear due to GTL dependency"
 PERMIT_PACKAGE_FTP=	"unclear due to GTL dependency"

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/21 15:33:01 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/09 23:26:19 pvalchev Exp $
 
-COMMENT=	'cross-platform multimedia library'
+COMMENT=	"cross-platform multimedia library"
 
 VER=		1.2.0
 DISTNAME=	SDL-${VER}
@@ -10,7 +10,7 @@ NEED_VERSION=	1.378
 
 HOMEPAGE=	http://www.libsdl.org
 
-MAINTAINER=	Peter Valchev <pvalchev@home.com>
+MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/08 01:07:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/09 23:26:25 pvalchev Exp $
 
-COMMENT=	'module for generating images'
+COMMENT=	"module for generating images"
 
 DISTNAME=	Imager-0.37
 PKGNAME=	p5-${DISTNAME}
@@ -9,7 +9,7 @@ NEED_VERSION=	1.407
 
 HOMEPAGE=	http://www.eecs.umich.edu/~addi/perl/Imager/
 
-MAINTAINER=	Peter Valchev <pvalchev@home.com>
+MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/24 12:51:52 reinhard Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/09 23:26:30 pvalchev Exp $
 
-COMMENT=	'monte carlo simulation software'
+COMMENT=	"monte carlo simulation software"
 
 DISTNAME=	mcsim-4.2.0
 CATEGORIES=	math
@@ -8,7 +8,7 @@ NEED_VERSION=	1.363
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= mcsim
 
-MAINTAINER=	Peter Valchev <pvalchev@home.com>
+MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
 FAKE_FLAGS=	PREFIX="${WRKINST}${PREFIX}"
 WRKDIST=	${WRKDIR}/mcsim

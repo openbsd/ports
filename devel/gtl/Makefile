@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2001/04/08 17:41:43 naddy Exp $ 
+# $OpenBSD: Makefile,v 1.7 2001/05/09 23:26:18 pvalchev Exp $ 
 
-COMMENT=	'c++ graph data template library based on the stl'
+COMMENT=	"c++ graph data template library based on the stl"
 
 PKGNAME=	${DISTNAME:L}
 DISTNAME=	GTL-1.0.0
 CATEGORIES=	devel
 NEED_VERSION=	1.363
 
-MAINTAINER=	Peter Valchev <pvalchev@home.com>
+MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"use requires written permission"
 PERMIT_PACKAGE_FTP=	"use requires written permission"
