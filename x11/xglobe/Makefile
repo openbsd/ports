@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/10/29 19:49:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2003/02/25 10:34:02 espie Exp $
 
 COMMENT=	"display the Earth on X11"
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
 MODULES=		qt3
+MODQT_MT=Yes
 
 MAKE_FLAGS=	XGLOBE_DIR=${PREFIX}
 
@@ -40,7 +41,9 @@ MAKE_FLAGS+=	QT_INCLUDE_DIR=${MODQT_INCDIR}
 MAKE_FLAGS+=	QT_LIB_DIR=${MODQT_LIBDIR}
 
 MAKE_FLAGS+=	CPP="${CXX}" LINK="${CXX}"
-MAKE_FLAGS+=	OPTIONS="${CXXFLAGS} -fno-exceptions -funroll-loops"
+MAKE_FLAGS+=	OPTIONS="${CXXFLAGS} -pthread -fno-exceptions -funroll-loops"
+MAKE_FLAGS+=	LFLAGS='-pthread'
+MAKE_FLAGS+=	LIBS='-lX11 -lqt-mt -lm'
 
 # for linking against libpng
 MAKE_FLAGS+=	'LIB_DIRS=-L$$(QT_LIB_DIR) -L$$(X11_LIB_DIR) -L$(LOCALBASE)/lib'
