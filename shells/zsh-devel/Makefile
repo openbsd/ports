@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/03/14 07:55:31 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/06/23 16:51:10 brad Exp $
 
 DISTNAME=       zsh-3.1.5
 CATEGORIES=	shells
@@ -17,16 +17,13 @@ MAINTAINER=	brad@openbsd.org
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free --enable-dynamic
 
-MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshexpn.1 zshmisc.1 \
-		zshoptions.1 zshall.1 zshparam.1 zshzle.1 zshmodules.1
-
 # If you want to build a static binary, uncomment the following line
 #LDFLAGS+=-static
 
 post-install:
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
+	fi
 	@install-info ${PREFIX}/info/zsh.info ${PREFIX}/info/dir
 	@$(ECHO)
 	@$(ECHO) "Finished installing $(DISTNAME)"
