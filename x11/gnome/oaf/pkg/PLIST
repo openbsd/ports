@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/02/15 19:20:07 nino Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/03/26 18:39:12 nino Exp $
 bin/oaf-client
 bin/oaf-config
 bin/oaf-empty-server
@@ -24,7 +24,6 @@ lib/oafConf.sh
 man/man1/oafd.1
 share/aclocal/oaf.m4
 share/examples/oaf/oaf/oaf-config.xml
-share/examples/oaf/oaf/oaf-config.xml.sample
 share/idl/oaf-factory.idl
 share/idl/oaf.idl
 share/locale/az/LC_MESSAGES/oaf.mo
