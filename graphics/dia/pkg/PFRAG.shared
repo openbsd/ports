@@ -1,0 +1,19 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2000/09/10 21:56:05 obecian Exp $
+lib/dia/libcgm_filter.so.0.0
+lib/dia/libchronogram_objects.so.0.0
+lib/dia/libcustom_objects.so.0.0
+lib/dia/libdxf_filter.so.0.0
+lib/dia/liber_objects.so.0.0
+lib/dia/libflowchart_objects.so.0.0
+lib/dia/libfs_objects.so.0.0
+lib/dia/libgrafcet_objects.so.0.0
+lib/dia/libhpgl_filter.so.0.0
+lib/dia/libnetwork_objects.so.0.0
+lib/dia/libpstricks_filter.so.0.0
+lib/dia/libsadt_objects.so.0.0
+lib/dia/libstandard_objects.so.0.0
+lib/dia/libsvg_filter.so.0.0
+lib/dia/libsybase_objects.so.0.0
+lib/dia/libuml_objects.so.0.0
+lib/dia/libwpg_filter.so.0.0
+NEWDYNLIBDIR(%B)
