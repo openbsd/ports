@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2003/07/25 06:42:05 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2003/08/01 03:03:16 jolan Exp $
 
 COMMENT=	"simple network library"
-DISTNAME=	gnet-2.0.3
+DISTNAME=	gnet-2.0.4
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}src/
 
@@ -24,8 +24,7 @@ LIB_DEPENDS=	glib-2.0.0.0,gthread-2.0.0.0::devel/glib2
 PATCH_LIST=     gcc-* patch-*
 .endif
 
-AUTOCONF_VERSION=2.52
-CONFIGURE_STYLE=autoconf
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 	--enable-threadsafe-getaddrinfo --enable-threadsafe-gethostbyname
 
