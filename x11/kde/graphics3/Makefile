@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/29 01:46:57 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2002/12/02 16:27:21 espie Exp $
 
 COMMENT=		"X11 toolkit, graphic applications"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.0.4
+VERSION=		3.0.5
 DISTNAME=		kdegraphics-${VERSION}
 
 LIB_DEPENDS=Imlib::graphics/imlib \

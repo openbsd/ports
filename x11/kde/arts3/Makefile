@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/28 21:44:32 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/12/02 16:27:21 espie Exp $
 
 COMMENT=		"X11 toolkit, multimedia hub"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.0.4
-DISTNAME=		arts-1.0.4
-#PKGNAME=		${DISTNAME}p1
+VERSION=		3.0.5
+DISTNAME=		arts-1.0.5
 
 NOT_FOR_ARCHS=
 LIB_DEPENDS= 	audiofile::devel/libaudiofile

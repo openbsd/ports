@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/05/23 14:37:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/12/02 16:27:21 espie Exp $
 bin/dsirc
 bin/kdict
 bin/kit
@@ -289,6 +289,8 @@ share/apps/kppp/Provider/Taiwan/HiNet
 share/apps/kppp/Provider/Taiwan/SeedNet
 share/apps/kppp/Provider/Ukraine/.directory
 share/apps/kppp/Provider/Ukraine/Adamant
+share/apps/kppp/Provider/Ukraine/IPTelecom
+share/apps/kppp/Provider/Ukraine/NuVse
 share/apps/kppp/Provider/United_Kingdom/.directory
 share/apps/kppp/Provider/United_Kingdom/Demon%032Green%0322120666
 share/apps/kppp/Provider/United_Kingdom/Demon%032Purple%0322121666
@@ -569,6 +571,8 @@ share/apps/kppp/Rules/Switzerland/Swisscom_Remote.rst
 share/apps/kppp/Rules/Switzerland/Swisscom_Surf.rst
 share/apps/kppp/Rules/TEMPLATE
 share/apps/kppp/Rules/Turkey/Turk_Telekom_Internet.rst
+share/apps/kppp/Rules/Ukraine/IPTelecom_hourly.rst
+share/apps/kppp/Rules/Ukraine/NuVse_hourly.rst
 share/apps/kppp/Rules/Ukraine/TEMPLATE.uk
 share/apps/kppp/Rules/Ukraine/Utel_Unet.rst
 share/apps/kppp/Rules/United_Kingdom/BirminghamCable_Local.rst
