@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/11/26 00:26:48 shell Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/11/26 16:34:51 shell Exp $
 bin/ptked
 bin/ptksh
-bin/widget
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tie/Watch.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk.pod
