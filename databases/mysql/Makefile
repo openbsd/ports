@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2000/08/15 13:24:00 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2000/08/15 18:24:24 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 DISTNAME=	mysql-3.22.32
@@ -47,8 +47,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 . if ${MACHINE_ARCH} == "sparc"
 BROKEN=		"pthreads are currently not working on the SPARC architecture"
 . endif
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -pthread" \
-		CXXFLAGS="${CXXFLAGS} -pthread"
 .endif
 
 pre-build:      
