@@ -15,7 +15,6 @@ The end result is that the file ends up with superior playback quality
 compared to a non-VorbisGain'ed file.
 
 It needs player support to work. Non-supporting players will play back
-the files without problems, but you'll miss out on the
-benefits. Nowadays most good players such as Winamp or Foobar2K are
-already compatible. If your player isn't, consider upgrading to one that
-is.
+the files without problems, but you'll miss out on the benefits.
+Nowadays, most good players such as Winamp or Foobar2K are already
+compatible. If your player isn't, consider upgrading to one that is.
