@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1997/12/03 03:51:17 angelos Exp $
+# $OpenBSD: Makefile,v 1.4 1997/12/03 04:18:28 angelos Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -57,7 +57,7 @@
 #    SUBDIR += xaos
 #    SUBDIR += xbmbrowser
 #    SUBDIR += xdl
-#    SUBDIR += xfig
+     SUBDIR += xfig
 #    SUBDIR += xfractint
 #    SUBDIR += xgrasp
 #    SUBDIR += xli
