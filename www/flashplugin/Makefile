@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/23 15:26:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/28 21:19:23 naddy Exp $
 # $FreeBSD: ports/www/linux-flashplugin/Makefile,v 1.9 2001/07/21 14:27:22 okazaki Exp $
 
 ONLY_FOR_ARCHS=	i386
@@ -22,6 +22,8 @@ PERMIT_DISTFILES_FTP=	"redistribution not allowed"
 
 MASTER_SITES=	http://download.macromedia.com/pub/shockwave/flash/english/linux/${VERSION}/
 DIST_SUBDIR=	flashplugin-${VERSION}
+
+RUN_DEPENDS=	:redhat_base->=6.2p1:emulators/redhat/base
 
 NO_BUILD=	Yes
 
