@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-pear,v 1.2 2004/12/20 20:59:44 robert Exp $
+@comment $OpenBSD: PLIST-pear,v 1.3 2004/12/29 21:53:14 espie Exp $
+@conflict php4-pear-*
 pear/
 pear/build/
 pear/build/Makefile.global
