@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2001/11/15 19:30:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.123 2001/11/17 01:48:50 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -99,6 +99,7 @@
      SUBDIR += rdesktop
      SUBDIR += rep-gtk
      SUBDIR += root-tail
+     SUBDIR += rox-filer
      SUBDIR += rxvt
      SUBDIR += sawfish
      SUBDIR += sliderule
