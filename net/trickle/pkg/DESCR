@@ -1,0 +1,10 @@
+trickle is a portable lightweight userspace bandwidth shaper.  It can
+run in collaborative mode (together with trickled) or in stand alone
+mode.  trickle works by taking advantage of the unix loader preloading.
+Essentially it provides, to the application, a new version of the
+functionality that is required to send and receive data through sockets.
+It then limits traffic based on delaying the sending and receiving of
+data over a socket.  trickle runs entirely in userspace and does not
+require root privileges.
+
+WWW: ${HOMEPAGE}

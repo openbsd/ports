@@ -1,0 +1,24 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2003/04/13 08:07:50 pvalchev Exp $
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFFILE=${SYSCONFDIR}/trickled.conf
+
+if [ -f ${CONFFILE} ];
+then
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package you need to perform"
+    echo "| this step as root:"
+    echo "|"
+    echo "|         rm -f ${CONFFILE}"
+    echo "|"
+    echo "| Do not do this if you plan on re-installing $1"
+    echo "| at some future time."
+    echo "+---------------"
+    echo
+fi
+
+exit 0
