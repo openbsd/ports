@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/29 19:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2003/10/08 17:13:16 sturm Exp $
 
 COMMENT=	"fast-light window manager"
 
@@ -21,6 +21,7 @@ USE_X11=	Yes
 NO_SHARED_LIBS= Yes
 LIB_DEPENDS=	fltk.1::x11/fltk
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

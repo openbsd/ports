@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/02/03 03:19:37 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2003/10/08 17:13:15 sturm Exp $
 
 COMMENT=		"modern look Athena widgets"
 
@@ -13,7 +13,7 @@ MASTER_SITES=		http://siag.nu/pub/widgets/
 
 MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
-# GPL
+# X11/badly worded
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

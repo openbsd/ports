@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/02/18 15:20:14 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2003/10/08 17:13:16 sturm Exp $
 
 
 COMMENT='front-end/embeddable kpart for mplayer'
@@ -25,6 +25,8 @@ CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}
 MAKE_ENV=		${CONFIGURE_ENV}
 
 MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
+
+# GPL
 PERMIT_PACKAGE_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
 PERMIT_DISTFILES_FTP=Yes

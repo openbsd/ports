@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/06/20 09:37:52 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2003/10/08 17:13:16 sturm Exp $
 
 COMMENT=	"graphical disk usage utility for KDE"
 
@@ -9,6 +9,7 @@ HOMEPAGE=	http://kdirstat.sourceforge.net/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=  Yes
 PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes

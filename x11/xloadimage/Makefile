@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/08/22 18:49:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2003/10/08 17:13:18 sturm Exp $
 
 COMMENT=	"graphics file viewer for X11"
 
@@ -11,6 +11,7 @@ CATEGORIES=	x11 graphics
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

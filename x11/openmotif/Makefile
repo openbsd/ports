@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/09/02 22:07:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2003/10/08 17:13:17 sturm Exp $
 
 .if ${MACHINE_ARCH} == "sparc64"
 BROKEN=		"programs compiled with this miss menus, fonts, etc."
@@ -34,6 +34,8 @@ HOMEPAGE=	http://www.opengroup.org/openmotif/
 
 MAINTAINER=	Sungman Cho <smcho@tsp.korea.ac.kr>
 
+# license only available on webpage
+# http://www.opengroup.org/openmotif/license
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

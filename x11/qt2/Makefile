@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2003/04/10 18:08:57 jsyn Exp $
+# $OpenBSD: Makefile,v 1.42 2003/10/08 17:13:17 sturm Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples and tutorial for qt2"
@@ -15,6 +15,7 @@ HOMEPAGE=	http://www.trolltech.com/qt/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
+# QPL/GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

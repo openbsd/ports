@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/08/26 19:46:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2003/10/08 17:13:16 sturm Exp $
 
 COMMENT=	"window manager based on the original Blackbox code"
 
@@ -16,6 +16,7 @@ HOMEPAGE=		http://fluxbox.org/
 
 MAINTAINER=		Han Boetes <han@linux-mandrake.com>
 
+# X11
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

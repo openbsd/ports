@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/29 19:49:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2003/10/08 17:13:19 sturm Exp $
 
 COMMENT=	"X11 trippy color-cycling toy"
 
@@ -11,6 +11,7 @@ MASTER_SITES=	ftp://sidehack.gweep.net/pub/software/ \
 
 HOMEPAGE=	http://sidehack.gweep.net/~jer/xtacy.html
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

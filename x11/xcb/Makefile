@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/02/08 12:27:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2003/10/08 17:13:18 sturm Exp $
 
 COMMENT=	"tool for managing X11 cut-buffers"
 
@@ -9,6 +9,7 @@ MASTER_SITES=	http://www.goof.com/pcg/marc/data/
 
 HOMEPAGE=	http://www.goof.com/pcg/marc/xcb.html
 
+# BSD-like, badly worded
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

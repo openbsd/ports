@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/29 20:31:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2003/10/08 17:13:17 sturm Exp $
 
 COMMENT=	"Tk 8.0 bindings for Perl"
 COMMENT-demo=	"demonstrate the features of ptk"
@@ -16,6 +16,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Tk/}
 BUILD_DEPENDS=	:p5-HTML-Parser-*:www/p5-HTML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+# GPL + custom
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/01/17 04:02:26 jcs Exp $
+# $OpenBSD: Makefile,v 1.13 2003/10/08 17:13:16 sturm Exp $
 
 COMMENT=	"light, keyboard friendly window manager"
 
@@ -9,6 +9,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://modeemi.cs.tut.fi/~tuomov/dl/ \
 		ftp://rt.fm/pub/ion/
 
+# custom
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

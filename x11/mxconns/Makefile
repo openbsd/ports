@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/29 19:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2003/10/08 17:13:17 sturm Exp $
 
 COMMENT=	"interactive X11 proxy with selective X request replacement"
 
@@ -10,9 +10,10 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	David Terrell <dbt@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"no fee"
+# custom
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes

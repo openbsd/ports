@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/01 19:59:31 marcm Exp $
+# $OpenBSD: Makefile,v 1.9 2003/10/08 17:13:16 sturm Exp $
 
 COMMENT=		"sample theme engines for GTK+ provided with GNOME"
 
@@ -16,6 +16,7 @@ PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfi
 
 LIB_DEPENDS=		gdk_imlib.19::graphics/imlib
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

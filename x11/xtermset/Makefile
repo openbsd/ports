@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/06/11 07:35:03 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2003/10/08 17:13:19 sturm Exp $
 
 COMMENT=	"dynamically change some settings of an xterm"
 
@@ -9,6 +9,7 @@ HOMEPAGE=	http://www.bje.nu/apps/xtermset/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

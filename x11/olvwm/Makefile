@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2002/10/29 19:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2003/10/08 17:13:17 sturm Exp $
 
 COMMENT=	"OpenLook Virtual Window manager"
 
@@ -11,10 +11,10 @@ DISTFILES=	olvwm4.tar.Z
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	"no license"
+PERMIT_PACKAGE_FTP=	"no license"
+PERMIT_DISTFILES_CDROM=	"no license"
+PERMIT_DISTFILES_FTP=	"no license"
 
 # The Patch01 and Patch02 patches are included in the patches directory.
 #

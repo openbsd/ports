@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/29 19:48:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2003/10/08 17:13:18 sturm Exp $
 
 COMMENT=	"graphic disk usage viewer"
 
@@ -7,6 +7,7 @@ CATEGORIES=     	x11
 
 MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
 
+# custom
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

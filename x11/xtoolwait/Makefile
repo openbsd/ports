@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/10/29 19:49:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2003/10/08 17:13:19 sturm Exp $
 
 COMMENT=	"tool startup utility for X11"
 
@@ -10,6 +10,7 @@ MASTER_SITES=	ftp://ftp.x.org/contrib/utilities/ \
 
 HOMEPAGE=	http://www.hacom.nl/~richard/software/xtoolwait.html
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/10/29 19:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2003/10/08 17:13:17 sturm Exp $
 
 COMMENT=	"tails a given file anywhere on your X11 root window"
 
@@ -10,6 +10,7 @@ HOMEPAGE=	${HOMESITE}/root-tail.html
 
 MAINTAINER=	Lurene Grenier <lurene@daemonkitty.net>
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/12/03 22:45:33 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2003/10/08 17:13:16 sturm Exp $
 
 COMMENT=		"GNOME version of top"
 
@@ -17,6 +17,7 @@ PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfi
 LIB_DEPENDS=		gnome.36,art_lgpl,gnomeui::x11/gnome/libs \
 			gtop,gtop_common,gtop_sysdeps::devel/libgtop,gnome
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

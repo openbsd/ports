@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/04/10 18:08:57 jsyn Exp $
+# $OpenBSD: Makefile,v 1.14 2003/10/08 17:13:18 sturm Exp $
 
 COMMENT=	"one keyboard and/or mouse, multiple X and VNC displays"
 
@@ -7,6 +7,7 @@ CATEGORIES=     x11
 
 MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

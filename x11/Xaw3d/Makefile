@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/10/29 19:48:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2003/10/08 17:13:14 sturm Exp $
 
 COMMENT=	"3D Athena Widget set that looks like Motif"
 
@@ -7,6 +7,7 @@ CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=widgets/Xaw3d/R6.3/}
 
+# X11/badly worded
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

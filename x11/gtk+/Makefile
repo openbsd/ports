@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2002/11/13 16:46:39 brad Exp $
+# $OpenBSD: Makefile,v 1.54 2003/10/08 17:13:16 sturm Exp $
 
 COMMENT=	"General Toolkit for X11 GUI"
 
@@ -14,6 +14,7 @@ LIB_DEPENDS=	glib.1.2,gmodule.1.2::devel/glib
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2002/10/29 19:48:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2003/10/08 17:13:15 sturm Exp $
 
 DISTNAME=	aterm-0.4.2
 CATEGORIES=	x11
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

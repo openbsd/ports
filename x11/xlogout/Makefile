@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/12/29 20:31:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2003/10/08 17:13:19 sturm Exp $
 
 COMMENT=	"simple logout button"
 
@@ -7,6 +7,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
+# BSD-like, badly worded
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

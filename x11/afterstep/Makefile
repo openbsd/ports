@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/05/14 00:04:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.24 2003/10/08 17:13:15 sturm Exp $
 
 COMMENT=	"Window manager, continuation of the Bowman NeXTSTEP clone"
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	png.2::graphics/png \
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# GPL/LGPL/X11
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

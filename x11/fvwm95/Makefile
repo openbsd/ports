@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/29 20:31:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2003/10/08 17:13:16 sturm Exp $
 
 COMMENT=	"win95-like window manager based on fvwm 2.x"
 
@@ -15,10 +15,10 @@ LIB_DEPENDS=	rplay::audio/rplay
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes 
-PERMIT_PACKAGE_FTP=	Yes 
-PERMIT_DISTFILES_CDROM=	Yes 
-PERMIT_DISTFILES_FTP=	Yes 
+PERMIT_PACKAGE_CDROM=	"no license"
+PERMIT_PACKAGE_FTP=	"no license"
+PERMIT_DISTFILES_CDROM=	"no license"
+PERMIT_DISTFILES_FTP=	"no license"
 
 USE_X11=	Yes
 

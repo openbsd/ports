@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/29 19:48:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2003/10/08 17:13:18 sturm Exp $
 
 COMMENT=	"ant hill simulation on X11 root window"
 
@@ -9,7 +9,7 @@ CATEGORIES=	x11
 MASTER_SITES=   ftp://ftp.kuis.kyoto-u.ac.jp/Linux/JG/other-sources/
 DISTFILES=	xantfarm23oct91.tar.gz
 
-# License: BSD
+# BSD-like, badly worded
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

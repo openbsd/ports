@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/29 19:48:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2003/10/08 17:13:18 sturm Exp $
 # ATTENTION: It does not work in > 256 color modes, please fix
 # it if you can.
 
@@ -9,6 +9,7 @@ CATEGORIES=	x11
 
 MASTER_SITES= 	${MASTER_SITE_SUNSITE:=X11/fonts/}
 
+# BSD-like, badly worded
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

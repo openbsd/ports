@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/29 19:48:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2003/10/08 17:13:18 sturm Exp $
 
 COMMENT=	"time/date applet for WindowMaker"
 
@@ -9,6 +9,7 @@ HOMEPAGE=	http://windowmaker.mezaway.org
 
 MAINTAINER= 	Arthur H. Johnson II <arthur@linuxbox.nu>	
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

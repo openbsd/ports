@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/29 19:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2003/10/08 17:13:16 sturm Exp $
 
 COMMENT=	"collection of ATM fonts from the CICA archives"
 
@@ -9,11 +9,12 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/ \
    		ftp://ftp.funet.fi/pub/mirrors/ftp.gimp.org/gimp/fonts/
 
 HOMEPAGE=	http://www.gimp.org/fonts.html
-		
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+
+# lots of different custom licenses, the worst one wins
+PERMIT_PACKAGE_CDROM=	"may not sell"
+PERMIT_PACKAGE_FTP=	"no license"
+PERMIT_DISTFILES_CDROM=	"may not sell"
+PERMIT_DISTFILES_FTP=	"no license"
 
 WRKDIST=	${WRKDIR}
 USE_X11=	Yes

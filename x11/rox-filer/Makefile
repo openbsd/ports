@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/08/02 14:00:52 couderc Exp $
+# $OpenBSD: Makefile,v 1.17 2003/10/08 17:13:17 sturm Exp $
 
 COMMENT=		"gtk file manager with desktop features"
 
@@ -11,6 +11,7 @@ HOMEPAGE=		http://rox.sourceforge.net/
 
 MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

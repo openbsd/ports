@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/29 19:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2003/10/08 17:13:15 sturm Exp $
 # $FreeBSD: Makefile,v 1.9 1999/08/31 06:52:30 mharo Exp $
 
 COMMENT=	"digital clock with optional military time and alarm"
@@ -12,10 +12,10 @@ MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
-PERMIT_PACKAGE_CDROM=	"no obvious license"
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no obvious license"
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	"no license"
+PERMIT_PACKAGE_FTP=	"no license"
+PERMIT_DISTFILES_CDROM=	"no license"
+PERMIT_DISTFILES_FTP=	"no license"
 
 USE_X11=	Yes
 

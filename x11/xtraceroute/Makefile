@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/01/18 22:55:17 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2003/10/08 17:13:19 sturm Exp $
 # $NetBSD: Makefile,v 1.4 1999/03/04 08:58:42 tron Exp $
 
 COMMENT=	"graphical version of traceroute"
@@ -14,6 +14,7 @@ LIB_DEPENDS=	gtkgl.1.2::x11/gtkglarea \
 		png::graphics/png \
 		gdk_pixbuf.2::graphics/gdk-pixbuf
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

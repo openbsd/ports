@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/11/27 07:50:28 ish Exp $
+# $OpenBSD: Makefile,v 1.21 2003/10/08 17:13:18 sturm Exp $
 # $FreeBSD Id: Makefile,v 1.2 1999/06/28 02:22:43 billf Exp $
 
 COMMENT=	"TrueType font server for X11"
@@ -9,6 +9,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE:=X11/fonts/}
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
+# LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

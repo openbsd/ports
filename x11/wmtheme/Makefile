@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/12/29 20:31:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2003/10/08 17:13:18 sturm Exp $
 
 COMMENT=		"window manager theme utility"
 
@@ -9,6 +9,7 @@ HOMEPAGE=		http://wmtheme.sourceforge.net/
 
 MAINTAINER=		David Lebel <lebel@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/06/20 05:24:19 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2003/10/08 17:13:18 sturm Exp $
 
 COMMENT=	"tk extension"
 
@@ -10,6 +10,7 @@ HOMEPAGE= 	http://tktable.sourceforge.net/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

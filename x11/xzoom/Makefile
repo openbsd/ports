@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/10/29 19:49:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2003/10/08 17:13:20 sturm Exp $
 
 COMMENT=	"magnify, rotate, mirror the image on the X11 screen"
 
@@ -8,9 +8,10 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=libs/X/}
 EXTRACT_SUFX=	.tgz
 
-PERMIT_PACKAGE_CDROM=	Yes
+# custom
+PERMIT_PACKAGE_CDROM=	"may not sell"
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_CDROM=	"may not sell"
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes

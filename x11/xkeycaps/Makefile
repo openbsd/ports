@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/29 19:49:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2003/10/08 17:13:18 sturm Exp $
 
 COMMENT=	"keymap editor for the X window system"
 
@@ -11,6 +11,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER= 	Hans Insulander <hin@stacken.kth.se>
 HOMEPAGE=http://www.jwz.org/xkeycaps/
 
+# BSD
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

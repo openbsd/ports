@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/04/10 18:08:57 jsyn Exp $
+# $OpenBSD: Makefile,v 1.15 2003/10/08 17:13:17 sturm Exp $
 
 COMMENT=	"designer for qt2"
 
@@ -18,6 +18,7 @@ HOMEPAGE=	http://www.trolltech.com/qt/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

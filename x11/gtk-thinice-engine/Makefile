@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/06/12 19:29:56 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/10/08 17:13:16 sturm Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
@@ -12,6 +12,7 @@ HOMEPAGE=		http://thinice.sourceforge.net/
 
 MAINTAINER=		Marc Matteo <marcm@lectroid.net>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

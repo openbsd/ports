@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/04/19 13:30:47 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2003/10/08 17:13:18 sturm Exp $
 
 COMMENT=		"create fonts.scale file for the TrueType font server"
 
@@ -11,6 +11,7 @@ MASTER_SITES=		http://www.joerg-pommnitz.de/TrueType/
 
 LIB_DEPENDS=		ttf.1.::print/freetype
 
+# X11
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

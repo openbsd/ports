@@ -12,7 +12,7 @@ MAINTAINER=		Steve Shockley <steve.shockley@shockley.net>
 # Font source files have a restrictive license
 PERMIT_PACKAGE_CDROM=	"Restrictive license, can't distribute modified files"
 PERMIT_PACKAGE_FTP=	"Restrictive license, can't distribute modified files"
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_CDROM=	"may not sell"
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=corefonts/}

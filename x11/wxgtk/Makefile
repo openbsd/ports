@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/03/06 01:33:18 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2003/10/08 17:13:18 sturm Exp $
 
 COMMENT=	"C++ cross-platform GUI toolkit"
 
@@ -22,6 +22,7 @@ CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=		Yes
 
+# LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2003/05/30 11:18:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2003/10/08 17:13:17 sturm Exp $
 
 COMMENT=	"color, low memory usage, xterm replacement"
 COMMENT-clock=	"analog clock for X11 w/appoint. reminder and mail notif"
@@ -15,6 +15,7 @@ HOMEPAGE=	http://www.rxvt.org/
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2003/04/19 13:30:47 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2003/10/08 17:13:16 sturm Exp $
 
 COMMENT=	"themed window manager"
 
@@ -17,6 +17,7 @@ LIB_DEPENDS=	esd.2::audio/esound \
 
 MAINTAINER=	Paul Wang <op21@squish.org>
 
+# X11
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

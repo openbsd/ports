@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2003/05/13 00:26:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2003/10/08 17:13:17 sturm Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -22,6 +22,7 @@ FLAVORS=mt
 PSEUDO_FLAVORS=	no_mysql no_postgresql
 FLAVOR?=
 
+# GPL/QPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
