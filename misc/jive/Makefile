@@ -3,13 +3,12 @@
 # Date created:			  29 April 1998
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.7 2000/04/09 17:37:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/20 03:26:53 kevlo Exp $
 #
 
 DISTNAME=	jive-1.1
 CATEGORIES=	misc
 NEED_VERSION=	1.191
-FAKE=No
 MASTER_SITES=	ftp://ftp.nuxi.com/pub/misc/
 
 MASTER_SITE_SUBDIR= games/amusements
@@ -17,13 +16,14 @@ MASTER_SITE_SUBDIR= games/amusements
 MAINTAINER=     angelos@openbsd.org
 
 LICENSE_TYPE=		NONE
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
+FAKE=			Yes
 WRKDIST=		${WRKDIR}/jive
-MAN1=		jive.1
+MAN1=			jive.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jive ${PREFIX}/bin
