@@ -1,0 +1,12 @@
+$OpenBSD: patch-gameheader_h,v 1.1 2002/02/20 22:50:51 pvalchev Exp $
+--- gameheader.h.orig	Fri Nov 15 20:52:39 1996
++++ gameheader.h	Wed Feb 20 15:45:01 2002
+@@ -130,7 +130,7 @@ typedef struct maps
+ 	       	nowBlockNum,
+ 	       	canBreakBlockNum,
+ 	       	allBlockNum;
+-  char		PicOrPat,
++  signed char	PicOrPat,
+        		continueCount,
+        		mapNum,
+        		itemNum,

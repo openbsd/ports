@@ -1,6 +1,7 @@
---- main.c.orig	Wed Apr  5 02:38:58 2000
-+++ main.c	Wed Apr  5 02:39:12 2000
-@@ -66,7 +66,7 @@
+$OpenBSD: patch-main_c,v 1.1 2002/02/20 22:50:51 pvalchev Exp $
+--- main.c.orig	Fri Nov 15 22:37:16 1996
++++ main.c	Wed Feb 20 15:44:17 2002
+@@ -66,7 +66,7 @@ int checkOption(argc,argv)
    /***  set s_map  ***/
    gameMainFlg.s_map = False;
    nowDataRec.nowMap.gameSpeed = 90;
