@@ -1,6 +1,6 @@
-$OpenBSD: patch-misc_c,v 1.1 2004/03/05 22:56:42 naddy Exp $
+$OpenBSD: patch-misc_c,v 1.2 2004/03/06 02:41:00 naddy Exp $
 --- misc.c.orig	1996-11-22 02:28:46.000000000 +0100
-+++ misc.c	2004-03-05 23:30:39.000000000 +0100
++++ misc.c	2004-03-06 02:03:24.000000000 +0100
 @@ -89,8 +89,8 @@ void usleep(usec)
  #ifdef SYSV
  #ifdef __clipper__
@@ -182,3 +182,21 @@ $OpenBSD: patch-misc_c,v 1.1 2004/03/05 22:56:42 naddy Exp $
  }
  
  #if NeedFunctionPrototypes
+@@ -427,7 +547,7 @@ char *GetHomeDir()
+      */
+ 
+     if ((ptr = getenv("HOME")) != NULL)
+-        (void) strcpy(dest, ptr);
++        (void) strlcpy(dest, ptr, sizeof(dest));
+     else
+     {
+         /* HOME variable is not present so get USER var */
+@@ -441,7 +561,7 @@ char *GetHomeDir()
+         }
+ 
+         if (pw)
+-            (void) strcpy(dest, pw->pw_dir);
++            (void) strlcpy(dest, pw->pw_dir, sizeof(dest));
+         else
+             *dest = '\0';
+     }

@@ -1,6 +1,6 @@
-$OpenBSD: patch-highscore.c,v 1.2 2004/03/05 22:56:42 naddy Exp $
+$OpenBSD: patch-highscore.c,v 1.3 2004/03/06 02:41:00 naddy Exp $
 --- highscore.c.orig	1996-11-22 02:28:46.000000000 +0100
-+++ highscore.c	2004-03-05 23:30:39.000000000 +0100
++++ highscore.c	2004-03-06 02:01:05.000000000 +0100
 @@ -55,6 +55,7 @@
  #include <time.h>
  #include <file.h>
@@ -58,6 +58,15 @@ $OpenBSD: patch-highscore.c,v 1.2 2004/03/05 22:56:42 naddy Exp $
  
  		/* Not even a highscore - loser! */
  		return False;
+@@ -1023,7 +1025,7 @@ int ReadHighScoreTable(type)
+ 	{
+ 		/* Use the environment variable if it exists */
+ 		if ((str = getenv("XBOING_SCORE_FILE")) != NULL)
+-			strcpy(filename, str);
++			strlcpy(filename, str, sizeof(filename));
+ 		else
+ 			strcpy(filename, HIGH_SCORE_FILE);
+ 	}
 @@ -1185,10 +1187,10 @@ void ResetHighScore(type)
  }
  
@@ -71,7 +80,15 @@ $OpenBSD: patch-highscore.c,v 1.2 2004/03/05 22:56:42 naddy Exp $
  #endif
  {
  	static int 	inter = -1;
-@@ -1225,6 +1227,9 @@ static int LockUnlock(cmd)
+@@ -1218,13 +1220,16 @@ static int LockUnlock(cmd)
+ 
+ 	/* Use the environment variable if it exists */
+ 	if ((str = getenv("XBOING_SCORE_FILE")) != NULL)
+-		strcpy(filename, str);
++		strlcpy(filename, str, sizeof(filename));
+ 	else
+ 		strcpy(filename, HIGH_SCORE_FILE);
+ 
  	/* Open the highscore file for both read & write */
  	if (cmd == LOCK_FILE)
  		inter = open(filename, O_CREAT | O_RDWR, 0666);

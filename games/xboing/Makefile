@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/06/18 21:43:40 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2004/03/06 02:41:00 naddy Exp $
 
 COMMENT=	"blockout style game for X11"
 
@@ -14,8 +14,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
 
 CONFIGURE_STYLE=imake
-WRKDIST= ${WRKDIR}/xboing
+WRKDIST=	${WRKDIR}/xboing
 
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

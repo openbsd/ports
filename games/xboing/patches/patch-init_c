@@ -1,0 +1,12 @@
+$OpenBSD: patch-init_c,v 1.1 2004/03/06 02:41:00 naddy Exp $
+--- init.c.orig	2004-03-06 00:49:08.000000000 +0100
++++ init.c	2004-03-06 02:02:14.000000000 +0100
+@@ -438,7 +438,7 @@ static void HandleDisplayErrors(displayN
+ 		WarningMessage("Your X Window system display variable is not set.");
+ 	else
+ 	{
+-		sprintf(string, "Cannot connect to display called <%s>.", displayName);
++		snprintf(string, sizeof(string), "Cannot connect to display called <%s>.", displayName);
+ 		WarningMessage(string);
+ 	}
+ }
