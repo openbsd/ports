@@ -1,0 +1,27 @@
+--- Makefile.orig	Thu Jan 27 14:49:45 2000
++++ Makefile	Thu Jan 27 15:27:25 2000
+@@ -1,11 +1,12 @@
+ CC=gcc
+-CFLAGS=-g -Ilibpcap -Ilibpcap/bpf
++
++PREFIX?=/usr/local
+ 
+ all: parse
+ 
+ OBJS=comment.o summarize.o parse_input.o display.o
+ 
+-LIBS=-Llibpcap -lpcap
++LIBS= -lpcap
+ 
+ parse: $(OBJS)
+ 	$(CC) -o parse $(OBJS) $(LIBS)
+@@ -13,6 +14,9 @@
+ display.o: parse.h
+ 
+ summarize.o: parse.h
++
++install: parse
++	install -c -m 755 parse $(PREFIX)/bin
+ 
+ clean:
+ 	rm -f *.o parse

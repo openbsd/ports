@@ -1,0 +1,20 @@
+--- comment.c.orig	Thu Jan 27 14:50:26 2000
++++ comment.c	Thu Jan 27 14:56:52 2000
+@@ -28,8 +28,8 @@
+  */
+ 
+ #include <stdio.h>
++#include <string.h>
+ #include <syslog.h>
+-#include <alloca.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/time.h>
+@@ -42,6 +42,7 @@
+ #include <netinet/ip_icmp.h>
+ #include <netinet/tcp.h>
+ #include <netinet/udp.h>
++#include <arpa/inet.h>
+ 
+ #include <sgtty.h>
+ 

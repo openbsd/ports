@@ -1,0 +1,33 @@
+--- parse_input.c.orig	Thu Jan 27 14:57:40 2000
++++ parse_input.c	Thu Jan 27 15:14:22 2000
+@@ -32,6 +32,8 @@
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
++#include <unistd.h>
+ #include <fcntl.h>
+ #include <sys/signal.h>
+ 
+@@ -48,6 +50,12 @@
+ 
+ extern int reverseFlag;
+ 
++extern void summarize_logfile(char *filename);
++extern void display_connection(char *input_filename, int con_id);
++extern void dump_connection(char *input_filename, int con_id);
++extern void parse_stdin(char *output_filename);
++
++int
+ main(argc, argv)
+ int argc;
+ char *argv[];
+@@ -55,8 +63,6 @@
+   int dump=0;
+   char *input_filename=NULL, *output_filename=NULL;
+   int con_id=-1, c;
+-  extern int optind, opterr;
+-  extern char *optarg;
+   extern void cleanup_output();
+   struct tm tm_offset;
+ 
