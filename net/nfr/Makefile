@@ -3,7 +3,7 @@
 # Date created:		1998-Jul-4
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/07/04 20:52:53 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1998/09/14 17:44:21 marc Exp $
 #
 
 DISTNAME=		nfr-1.6.2-src
@@ -23,10 +23,8 @@ WRKSRC=			${WRKDIR}/nfr-1.6/nfr
 
 MAKE_ENV+=		NFRHOME=${PREFIX}/nfr
 
-pre-fetch:
-	@if [ -f ${DISTDIR}/${DISTFILES} ]; then \
-	 true; \
-	else \
+do-fetch:
+	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
 	 ${ECHO} "";\
 	 ${ECHO} "  The source to this port may not be automatically fetched";\
 	 ${ECHO} "  due to licensing restrictions. You MUST fetch the sources";\
@@ -38,7 +36,7 @@ pre-fetch:
 	 ${ECHO} "  for details. Once ${DISTFILES} has been downloaded,";\
 	 ${ECHO} "  move it to ${DISTDIR} and then restart this build.";\
 	 ${ECHO} "";\
-	 false;\
+	 exit 1;\
 	fi
 
 pre-install:
