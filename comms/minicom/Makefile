@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2002/09/01 18:49:00 mpech Exp $
+# $OpenBSD: Makefile,v 1.38 2002/09/28 00:46:11 pvalchev Exp $
 
 COMMENT=		"MS-DOS Telix-like serial communication program"
 
-DISTNAME=		${PKGNAME}.src
-PKGNAME=		minicom-2.00.0
+VER=			2.00.0
+DISTNAME=		minicom-${VER}.src
+PKGNAME=		minicom-${VER}p1
 CATEGORIES=		comms
-NEED_VERSION=		1.528
 MASTER_SITES=		${MASTER_SITE_BACKUP} \
 			${MASTER_SITE_SUNSITE:=apps/serialcomm/dialout/}
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WRKDIST=		${WRKDIR}/${PKGNAME}
+WRKDIST=		${WRKDIR}/minicom-${VER}
 
 COPTS=			-DHAS_EUID
 CONFIGURE_STYLE=	autoconf
@@ -34,8 +34,6 @@ post-patch:
 
 
 post-install:
-	@chown uucp:dialer ${PREFIX}/bin/minicom
-	@chmod 4111 ${PREFIX}/bin/minicom
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/minicom
 	${INSTALL_DATA} ${WRKDIST}/doc/minicom.users \
 		${PREFIX}/share/examples/minicom/minicom.users.sample

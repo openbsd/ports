@@ -1,0 +1,12 @@
++-------------------
+|
+|  minicom is installed with permissions set at 555.
+|
+|  To allow users to run minicom, you should put them in group dialer.
+|
+|  If you wish to use ${SYSCONFDIR}/minicom/minicom.users to restrict
+|  user behaviour to specific configurations or ports, then you
+|  must change the permissions on ${PREFIX}/bin/minicom to be mode 4551
+|  owned by uucp:dialer and *not* put users in group dialer.
+|
++-------------------
