@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2003/04/13 19:32:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.70 2003/06/05 19:32:45 naddy Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -30,6 +30,7 @@
      SUBDIR += ftdi-eeprom
      SUBDIR += gacc
      SUBDIR += garmin-utils
+     SUBDIR += geekcode
 #    SUBDIR += git
      SUBDIR += gkrellaclock
      SUBDIR += gkrellm-reminder
