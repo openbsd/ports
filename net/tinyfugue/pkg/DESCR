@@ -1,4 +1,5 @@
 TinyFugue is a powerful, programmable MUD client with macro support
-and multi-worlding support and much more.
+and multi-worlding support and much more. This version includes
+support for the Mud Client Compression Protocol (mccp) as well.
 
 WWW: ${HOMEPAGE}
