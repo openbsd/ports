@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/12/27 15:26:07 danh Exp $
+# $OpenBSD: Makefile,v 1.21 2003/12/27 23:32:06 jose Exp $
 
 COMMENT=	"system to store and display time-series data"
 
@@ -28,10 +28,10 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/config ${WRKSRC}/contrib/php4
 
 .if ${FLAVOR:L:Mtcl}
-LIB_DEPENDS+=	tcl83::lang/tcl/8.3
+LIB_DEPENDS+=	tcl84::lang/tcl/8.4
 USE_GMAKE=	Yes
-CONFIGURE_ARGS+= --with-tcllib="${LOCALBASE}/lib/tcl8.3"
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/tcl8.3"
+CONFIGURE_ARGS+= --with-tcllib="${LOCALBASE}/lib/tcl8.4"
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/tcl8.4"
 .else
 CONFIGURE_ARGS+= --without-tcllib
 .endif
