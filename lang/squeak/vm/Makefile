@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2004/07/21 11:19:30 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/21 15:42:09 espie Exp $
 
 
 COMMENT=	"smalltalk system, vm"
@@ -15,6 +15,7 @@ WRKSRC=${WRKDIST}/platforms/unix/config
 SEPARATE_BUILD=simple
 
 CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=2.57
 DESTDIRNAME=ROOT
 CONFIGURE_ENV=RANLIB=ranlib
 USE_GMAKE=yes
@@ -26,6 +27,10 @@ MAKE_FLAGS+=INTERP=gnu-interp
 
 MAKE_FLAGS+=docdir=${PREFIX}/share/doc/squeak
 FAKE_FLAGS=${MAKE_FLAGS} ROOT=${WRKINST}
+
+post-extract:
+	mkdir ${WRKDIST}/platforms/unix/vm-sound-OpenBSD
+	cp ${FILESDIR}/vm-sound-OpenBSD/{acinclude.m4,sqUnixSoundOpenBSD.c} ${WRKDIST}/platforms/unix/vm-sound-OpenBSD
 
 RUN_DEPENDS=	:squeak-image-$V.*:lang/squeak/image \
 		:squeak-sources-${MAJOR}:lang/squeak/sources

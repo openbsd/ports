@@ -1,0 +1,11 @@
+$OpenBSD: patch-platforms_unix_plugins_SoundPlugin_sqUnixSound_c,v 1.1 2004/07/21 15:42:09 espie Exp $
+--- platforms/unix/plugins/SoundPlugin/sqUnixSound.c.orig	Wed Jul 21 16:50:27 2004
++++ platforms/unix/plugins/SoundPlugin/sqUnixSound.c	Wed Jul 21 16:50:43 2004
+@@ -73,6 +73,7 @@ int soundInit(void)
+       && !(soundModule= loadModule("sound", "OSS"))
+       && !(soundModule= loadModule("sound", "Sun"))
+       && !(soundModule= loadModule("sound", "MacOSX"))
++      && !(soundModule= loadModule("sound", "OpenBSD"))
+       && !(soundModule= loadModule("sound", "null"))
+ #    endif
+       )
