@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2000/03/01 11:48:48 angelos Exp $
+# $OpenBSD: Makefile,v 1.27 2000/04/11 06:23:20 jakob Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -13,6 +13,7 @@
      SUBDIR += gom
      SUBDIR += gqmpeg
      SUBDIR += gsm
+     SUBDIR += knapster
 #    SUBDIR += maplay
 #    SUBDIR += mikmod
      SUBDIR += mp3cddb
