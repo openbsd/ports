@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/08/10 12:42:22 xsa Exp $
+# $OpenBSD: Makefile,v 1.20 2004/09/15 19:38:49 espie Exp $
 
 COMMENT=		"portable library for obtaining system information"
 
@@ -42,19 +42,3 @@ CONFIGURE_ARGS+=	--with-libgtop-guile=no
 .endif
 
 .include <bsd.port.mk>
-
-.if ${FLAVOR:L:Mguile}
-.  if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-SED_PLIST+=-e '/%%SHARED-guile%%/d'
-.  else
-SED_PLIST+=-e '/%%SHARED-guile%%/r${PKGDIR}/PFRAG.shared.guile' -e '//d'
-.  endif
-.endif
-
-.if !${FLAVOR:L:Mgnome}
-.  if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-SED_PLIST+=-e '/%%SHARED-no-gnome%%/d'
-.  else
-SED_PLIST+=-e '/%%SHARED-no-gnome%%/r${PKGDIR}/PFRAG.shared.no-gnome' -e '//d'
-.  endif
-.endif
