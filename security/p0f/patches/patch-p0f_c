@@ -1,6 +1,15 @@
-$OpenBSD: patch-p0f_c,v 1.6 2004/05/03 15:59:36 naddy Exp $
+$OpenBSD: patch-p0f_c,v 1.7 2004/05/03 19:50:12 naddy Exp $
 --- p0f.c.orig	2002-05-13 18:59:40.000000000 +0200
-+++ p0f.c	2004-05-03 17:53:51.000000000 +0200
++++ p0f.c	2004-05-03 21:41:00.000000000 +0200
+@@ -165,7 +165,7 @@ void set_header_len(int type){
+       break;
+ #ifdef DLT_PFLOG
+     case DLT_PFLOG:
+-      header_len=28;
++      header_len=48;
+       break;
+ #endif
+ #ifdef DLT_LINUX_SLL
 @@ -397,7 +397,7 @@ void load_fprints(char *filename) {
    char *p;
    //bzero(fips,120000);
