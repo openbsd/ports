@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.64 2003/06/15 21:10:45 avsm Exp $
+# $OpenBSD: network.conf.template,v 1.65 2003/07/24 14:48:07 brad Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -119,7 +119,6 @@ MASTER_SITE_SOURCEFORGE+=	\
 	http://unc.dl.sourceforge.net/sourceforge/ \
 	http://flow.dl.sourceforge.net/sourceforge/ \
 	http://belnet.dl.sourceforge.net/sourceforge/ \
-	http://switch.dl.sourceforge.net/sourceforge/ \
 	http://aleron.dl.sourceforge.net/sourceforge/ \
 	http://easynews.dl.sourceforge.net/sourceforge/ \
 	http://twtelecom.dl.sourceforge.net/sourceforge/ \
