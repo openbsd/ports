@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/20 14:01:29 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/12 17:01:34 brad Exp $
 
-DISTNAME=	scanssh-1.4
+DISTNAME=	scanssh-1.5
 CATEGORIES=	security
-NEED_VERSION=	1.352
+NEED_VERSION=	1.336
 MASTER_SITES=	http://www.monkey.org/~provos/
 
 HOMEPAGE=	http://www.monkey.org/~provos/scanssh/
