@@ -1,7 +1,7 @@
-$OpenBSD: patch-lock_c,v 1.1.1.1 2001/04/04 20:29:30 naddy Exp $
---- lock.c.orig	Mon Mar 19 20:12:39 2001
-+++ lock.c	Mon Mar 19 20:13:18 2001
-@@ -88,7 +88,7 @@ draw_message(const char *message)
+$OpenBSD: patch-lock_c,v 1.2 2002/05/10 11:16:03 naddy Exp $
+--- lock.c.orig	Wed May  8 18:55:02 2002
++++ lock.c	Wed May  8 19:00:23 2002
+@@ -103,7 +103,7 @@ draw_message(const char *message)
  
    if (!redraw) {
      if (message)
@@ -10,7 +10,7 @@ $OpenBSD: patch-lock_c,v 1.1.1.1 2001/04/04 20:29:30 naddy Exp $
      else
        cur_message[0] = 0;
    }
-@@ -123,7 +123,7 @@ check_password(XKeyEvent *xkey)
+@@ -138,7 +138,7 @@ check_password(XKeyEvent *xkey)
      draw_message("Incorrect password! Try again");
    else {
      char message[MAX_MESSAGE_SIZE];

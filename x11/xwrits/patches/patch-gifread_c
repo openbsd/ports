@@ -1,6 +1,6 @@
-$OpenBSD: patch-gifread_c,v 1.1.1.1 2001/04/04 20:29:31 naddy Exp $
---- gifread.c.orig	Mon Mar 19 20:29:27 2001
-+++ gifread.c	Mon Mar 19 20:29:29 2001
+$OpenBSD: patch-gifread_c,v 1.2 2002/05/10 11:16:03 naddy Exp $
+--- gifread.c.orig	Wed May  8 18:51:08 2002
++++ gifread.c	Wed May  8 18:52:01 2002
 @@ -828,7 +828,7 @@ read_gif(Gif_Reader *grr, int read_flags
       default:
         if (!unknown_block_type) {

@@ -1,6 +1,6 @@
-$OpenBSD: patch-pictures_c,v 1.1.1.1 2001/04/04 20:29:31 naddy Exp $
---- pictures.c.orig	Mon Mar 19 20:10:40 2001
-+++ pictures.c	Mon Mar 19 20:11:42 2001
+$OpenBSD: patch-pictures_c,v 1.2 2002/05/10 11:16:03 naddy Exp $
+--- pictures.c.orig	Wed May  8 18:56:00 2002
++++ pictures.c	Wed May  8 18:59:43 2002
 @@ -223,7 +223,7 @@ parse_slideshow(const char *slideshowtex
    int i;
    
