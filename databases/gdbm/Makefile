@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/06/22 14:04:06 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/10/06 20:47:02 rohee Exp $
 
 DISTNAME=	gdbm-1.8.0
 CATEGORIES=	databases
@@ -7,7 +7,7 @@ MASTER_SITE_SUBDIR= gdbm
 
 NEED_VERSION=	1.73
 
-MAINTAINER=	felix@mamba.pond.sub.org
+MAINTAINER=	hannah@mamba.pond.sub.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

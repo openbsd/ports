@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/09/27 14:19:02 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/10/06 20:47:02 rohee Exp $
 
 DISTNAME=	xteddy-1.0
 CATEGORIES=	games
@@ -8,7 +8,7 @@ NO_CDROM=	"Can only be distributed for free"
 
 NEED_VERSION=	1.114
 
-MAINTAINER=	felix@mamba.pond.sub.org
+MAINTAINER=	hannah@mamba.pond.sub.org
 
 USE_IMAKE=	yes
 
