@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2003/05/13 11:37:25 jolan Exp $
+# $OpenBSD: Makefile,v 1.18 2003/06/18 09:24:42 jolan Exp $
 
 COMMENT=	"SDL multi-channel audio mixer library"
 
 DISTNAME=	SDL_mixer-1.2.5
-PKGNAME=	${DISTNAME:L:S/_/-/}p1
+PKGNAME=	${DISTNAME:L:S/_/-/}p2
 CATEGORIES=	devel audio
 
 MASTER_SITES=	${HOMEPAGE}release/
@@ -33,5 +33,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
 		patch-*
+
+post-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/.libs/play{mus,wave} ${PREFIX}/bin
 
 .include <bsd.port.mk>
