@@ -1,26 +1,20 @@
-# OpenBSD makefile for:	popclient
-# Version required:	3.0b6
-# Date created:		10 Nov 1997
-# Whom:			ejovi
-#
-# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:32 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1999/02/23 03:47:15 marc Exp $
 #
 
 DISTNAME=	popclient-3.0b6
 CATEGORIES=	mail
-MASTER_SITES=	http://www.freebsd.org/~wosch/src/
 
 MAINTAINER=	ejovi@OpenBSD.ORG
 
-WRKSRC=		${WRKDIR}/popclient-3.0b6
+MASTER_SITES=	http://www.freebsd.org/~wosch/src/
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	i386-unknown-freebsd2.1.0
+
+WRKSRC=		${WRKDIR}/popclient-3.0b6
 ALL_TARGET=
-MAN1=		popclient.1
 
 pre-install:
 	${CP} ${WRKSRC}/popclient.man ${WRKSRC}/popclient.1
-	[ -f ${PREFIX}/info/dir ] || \
-		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
