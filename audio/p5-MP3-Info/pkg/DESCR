@@ -1,0 +1,16 @@
+NAME
+    MP3::Info - Manipulate / fetch info from MP3 audio files
+
+SYNOPSIS
+            #!perl -w
+            use MP3::Info;
+            my $file = 'Pearls_Before_Swine.mp3';
+            set_mp3tag($file, 'Pearls Before Swine', q"77's",
+                    'Sticks and Stones', '1990', q"(c) 1990 77's LTD.", 'rock & roll');
+
+            my $tag = get_mp3tag($file) or die "No TAG info";
+            $tag->{GENRE} = 'rock';
+            set_mp3tag($file, $tag);
+
+            my $info = get_mp3info($file);
+            printf "$file length is %d:%d", $info->{MM}, $info->{SS};
