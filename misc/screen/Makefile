@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2002/03/23 23:54:05 brad Exp $
+# $OpenBSD: Makefile,v 1.41 2002/08/21 20:12:02 brad Exp $
 
 COMMENT=	"multi-screen window manager"
 
 VERSION=	3.9.11
 DISTNAME=	screen-${VERSION}
 CATEGORIES=	misc
-NEED_VERSION=	1.500
 MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/
 
 HOMEPAGE=	http://www.gnu.org/software/screen/
@@ -36,6 +35,11 @@ ALL_TARGET=	screen screen.info
 
 post-extract:
 	@rm -f ${WRKSRC}/doc/screen.info*
+
+pre-build:
+	@mv -f ${WRKSRC}/doc/screen.1 ${WRKSRC}/doc/screen.1.new
+	@sed -e s#!!sysconfdir!!#${SYSCONFDIR}#g \
+		${WRKSRC}/doc/screen.1.new > ${WRKSRC}/doc/screen.1
 
 post-install:
 	@chmod 755 ${PREFIX}/bin/screen-${VERSION}
