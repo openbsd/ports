@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/12/09 15:37:23 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2003/01/17 21:04:41 drahn Exp $
 # Original from A B <obsdfaq30@yahoo.com>
 
 COMMENT=	"GNU editor: extensible, customizable, self documenting"
@@ -17,12 +17,20 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SUBST_VARS=	GCCARCH VERSION
 
+.include <bsd.own.mk>
+
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${GCCARCH}
+.if (${ELF_TOOLCHAIN} == "yes")
+CONFIGURE_ENV= CPPFLAGS="-I${LOCALBASE}/include \
+			 -I${LOCALBASE}/include/libpng" \
+	       LDFLAGS="-Z -L${LOCALBASE}/lib"
+.else
 CONFIGURE_ENV= CPPFLAGS="-I${LOCALBASE}/include \
 			 -I${LOCALBASE}/include/libpng" \
 	       LDFLAGS="-L${LOCALBASE}/lib"
+.endif
 
 # X11 flavors
 FLAVORS=	no_x11 no_tiff no_png no_jpeg
