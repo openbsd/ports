@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 1999/03/12 19:22:55 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/09/27 21:01:01 brad Exp $
 
 DISTNAME=	xminehunter-0.4
 CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR= games
 
 MAINTAINER=	angelos@openbsd.org
-
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	games
 
 USE_X11=	yes
 USE_MOTIF=	yes
