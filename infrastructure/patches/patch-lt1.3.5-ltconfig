@@ -1,4 +1,4 @@
-$OpenBSD: patch-lt1.3.5-ltconfig,v 1.3 2002/04/03 14:44:14 miod Exp $
+$OpenBSD: patch-lt1.3.5-ltconfig,v 1.4 2004/06/01 21:43:09 brad Exp $
 --- ltconfig.orig	Wed Apr  3 07:47:42 2002
 +++ ltconfig	Wed Apr  3 07:57:21 2002
 @@ -501,7 +501,14 @@
@@ -37,7 +37,7 @@ $OpenBSD: patch-lt1.3.5-ltconfig,v 1.3 2002/04/03 14:44:14 miod Exp $
 -    hardcode_direct=yes
 -    hardcode_shlibpath_var=no
 +    case "$host_cpu" in
-+    m88k|hppa|vax)
++    m88k|vax)
 +      ld_shlibs=no
 +      ;;
 +    *)
