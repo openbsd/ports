@@ -83,7 +83,7 @@ CONFIGURE_STYLE= simple
 CONFIGURE_ENV=	POSTGRESDIR="${PREFIX}"
 CONFIGURE_ARGS= --prefix="${PREFIX}" \
 	--enable-locale --enable-multibyte --enable-recode \
-	--with-template="openbsd" --with-libraries="${PREFIX}/lib"
+	--with-template="openbsd" --with-libraries="${LOCALBASE}/lib"
 
 .if ${FLAVOR:L:Mtcl}
 TCL_INCDIR=	${LOCALBASE}/include/tcl8.3
