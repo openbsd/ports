@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/08 17:07:48 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/13 16:51:56 couderc Exp $
 
 COMMENT=		"Ruby extension library for GTK Toolkit"
 
@@ -19,8 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SUBST_VARS=	OPSYS_VER
 
-MASTER_SITES=           ${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ruby-gnome
+MASTER_SITES=           ${MASTER_SITE_SOURCEFORGE:=ruby-gnome/}
 
 RUN_DEPENDS=		::lang/ruby
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \

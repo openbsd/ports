@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/02/28 20:06:27 couderc Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/13 16:51:56 couderc Exp $
 
 COMMENT=		"gtk file manager with desktop features"
 
@@ -18,8 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	rox
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=rox/}
 
 DISTFILES=		${DISTNAME}.tgz ${ROXBASE}.tgz
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/03 10:41:12 couderc Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/13 16:51:56 couderc Exp $
 
 COMMENT=		"Fast and light gtk-based web browser"
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}download/
-MASTER_SITE_SUBDIR=	dillo
 
 LIB_DEPENDS=    jpeg.62::graphics/jpeg \
                 png.2::graphics/png \
