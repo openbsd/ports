@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.216 2000/03/03 21:24:51 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.217 2000/03/04 08:35:47 turan Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1060,6 +1060,14 @@ uninstall deinstall package:
 # can be run several times in a row.
 
 fetch: fetch-depends
+# You need to define LICENCE_TYPE and PERMIT_* to make the warning go away.
+# See ports/infrastructure/templates/Makefile.template
+.if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
+    !defined(PERMIT_DISTFILES_CDROM) || !defined(PERMIT_DISTFILES_FTP)
+	@echo >&2 "*** The licensing info for this port is incomplete."
+	@echo >&2 "*** Please notify the OpenBSD port maintainer <${MAINTAINER}>"
+.endif
+
 .  if target(pre-fetch)
 	@cd ${.CURDIR} && make pre-fetch
 .  endif
@@ -1232,14 +1240,6 @@ ${_EXTRACT_COOKIE}:
 .  if target(post-extract)
 	@cd ${.CURDIR} && make post-extract
 .  endif
-.endif
-
-# You need to define LICENCE_TYPE and PERMIT_* to make the warning go away.
-# See ports/infrastructure/templates/Makefile.template
-.if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
-    !defined(PERMIT_DISTFILES_CDROM) || !defined(PERMIT_DISTFILES_FTP)
-	@echo >&2 "*** The licensing info for this port is incomplete."
-	@echo >&2 "*** Please notify the OpenBSD port maintainer <${MAINTAINER}>"
 .endif
 
 	@${_MAKE_COOKIE} ${_EXTRACT_COOKIE}
