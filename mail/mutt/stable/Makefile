@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/01/16 01:59:08 fgsch Exp $
+# $OpenBSD: Makefile,v 1.16 2004/01/16 14:26:27 fgsch Exp $
 
 COMMENT=	"tty-based e-mail client"
 
@@ -30,7 +30,7 @@ FLAVOR?=
 PATCH_LIST=     gcc-* patch-*
 .endif
 
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= autoconf old
 CONFIGURE_ARGS=	--with-sharedir="${PREFIX}/share/mutt" \
 		--with-docdir="${PREFIX}/share/doc/mutt" \
 		--enable-flock --disable-fcntl \
@@ -54,10 +54,9 @@ CONFIGURE_ARGS+= --with-curses
 PATCHFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
 PATCH_DIST_STRIP=-p1
 CONFIGURE_ARGS+= --enable-compressed
-CONFIGURE_STYLE+= automake old
+CONFIGURE_STYLE+= automake
 .else
 SUPDISTFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
-CONFIGURE_STYLE+= old
 .endif
 
 .if ${FLAVOR:L:Mmixmaster}
