@@ -1,21 +1,22 @@
-# OpenBSD makefile for:   unzip
-# Version required:     5.3.1
-# Date created:         24 Nov 1997
-# Whom:                 angelos
+# New ports collection makefile for:    unzip
+# Version required:     5.3.2
+# Date created:         22 Jun 1998
+# Whom:                 form
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/27 22:22:03 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 1998/06/22 10:05:57 form Exp $
+# FreeBSD: Makefile,v 1.18 1998/01/24 07:11:16 jkh Exp
 #
 
-DISTNAME=       unzip-5.3.1
+DISTNAME=	unzip532
+PKGNAME=	unzip-5.3.2
 CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.cdrom.com/pub/infozip/src/
-DISTFILES=      unzip531.tar.gz
 
-MAINTAINER=     angelos@openbsd.org
+MAINTAINER=     form@vs.itam.nsc.ru
 
-NO_WRKSUBDIR=   YES
+WRKSRC=		${WRKDIR}/unzip-5.32
 MAKEFILE=       unix/Makefile
-ALL_TARGET=     bsd
+ALL_TARGET=     freebsd
 MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK" -f
 MAN1=           funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 
@@ -27,8 +28,8 @@ do-install:
 		${INSTALL_SCRIPT} zipgrep ${PREFIX}/bin
 	cd ${WRKSRC}/unix && \
 		${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
-	install -d -m 555 -o ${SHAREOWN} -g ${SHAREGRP} ${PREFIX}/share/doc/unzip
+	${INSTALL} -d -m 555 -o ${SHAREOWN} -g ${SHAREGRP} ${PREFIX}/share/doc/unzip
 	cd ${WRKSRC} && \
-		${INSTALL_DATA} README Where COPYING ${PREFIX}/share/doc/unzip
+		${INSTALL_DATA} README COPYING WHERE ${PREFIX}/share/doc/unzip
 
 .include <bsd.port.mk>
