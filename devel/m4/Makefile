@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/02/15 17:18:41 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/06 03:51:34 espie Exp $
 # $FreeBSD: Makefile,v 1.7 1997/06/16 08:22:35 max Exp $
 
 DISTNAME=	m4-1.4
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 # GNU_CONFIGURE would do less the parts that its outdated configure
 # doesn't like.
 HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS= --prefix=${PREFIX} --program-prefix=g
+CONFIGURE_ARGS= --prefix='$${DESTDIR}${PREFIX}' --program-prefix=g
+FAKE=Yes
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gm4

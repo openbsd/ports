@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/03/05 18:30:25 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/03/06 03:56:07 espie Exp $
 
 DISTNAME=	autoconf-2.13
 CATEGORIES=	devel
@@ -20,11 +20,10 @@ PERMIT_DISTFILES_FTP=	Yes
 BUILD_DEPENDS=	gm4:devel/m4
 RUN_DEPENDS=	gm4:devel/m4
 
+FAKE= Yes
 SEPARATE_BUILD=	concurrent
-GNU_CONFIGURE=	Yes
+HAS_CONFIGURE=	Yes
+CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
 
-post-install:
-	@install-info ${PREFIX}/info/autoconf.info ${PREFIX}/info/dir
-	@install-info ${PREFIX}/info/standards.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
