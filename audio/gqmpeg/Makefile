@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2003/05/14 13:09:52 margarida Exp $
+# $OpenBSD: Makefile,v 1.34 2004/08/10 08:04:02 xsa Exp $
 
 COMMENT=		"front-end to various audio players"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gqmpeg/}
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 RUN_DEPENDS+=		:mpg321-*:audio/mpg321
 

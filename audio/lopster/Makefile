@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2004/05/22 19:54:10 jolan Exp $
+# $OpenBSD: Makefile,v 1.26 2004/08/10 08:04:02 xsa Exp $
 
 COMMENT=	"full featured GTK Napster client"
 DISTNAME=	lopster-1.2.0
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 LIB_DEPENDS=    gtk.1.2,gdk.1.2::x11/gtk+ \
 		ogg.4::audio/libogg

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/04/18 00:28:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2004/08/10 08:04:01 xsa Exp $
 
 COMMENT=	"free lossless audio codec"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=flac/}
 
-MODULES=	iconv
+MODULES=	converters/libiconv
 LIB_DEPENDS=	ogg.4::audio/libogg
 
 .if ${MACHINE_ARCH} == "i386"

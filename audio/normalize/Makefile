@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/07/31 18:54:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/10 08:04:02 xsa Exp $
 
 COMMENT=	"audio file volume normalizer"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PATCH_LIST=	patch-* gcc-*
 .endif
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/04/13 18:36:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2004/08/10 08:04:01 xsa Exp $
 
 COMMENT=	"full-screen ncurses or GTK-based audio mixer"
 
@@ -19,7 +19,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aumix/} \
 		http://jpj.net/~trevor/aumix/old/
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 FLAVORS=	no_x11 no_curses dummy
 FLAVOR?=
