@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/09/23 19:59:53 danh Exp $
+# $OpenBSD: Makefile,v 1.8 2001/02/05 18:12:02 danh Exp $
 
-VERSION=	1.6.4
-DISTNAME=	radiusd-cistron-${VERSION}
+DISTNAME=	radiusd-cistron-1.6.4
 CATEGORIES=	net
-NEED_VERSION=	1.334
+NEED_VERSION=	1.352
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/ \
 		ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.mma.com.br/pub/cistron-radius/
@@ -19,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WRKSRC=		${WRKDIST}/src
 MAKE_FILE=	Makefile.BSD
-MAKE_FLAGS+=	CFLAGS="-O2 -DNOSHADOW -DNDBM" LCRYPT="" 
+MAKE_FLAGS+=	CC="${CC}" CFLAGS="${CFLAGS} -DNOSHADOW -DNDBM" LCRYPT="" 
 FAKE_FLAGS+=	BINDIR='${WRKINST}${PREFIX}/bin' \
 		SBINDIR='${WRKINST}${PREFIX}/sbin' \
 		RADIUS_DIR='${WRKINST}${PREFIX}/share/examples/radiusd-cistron'
