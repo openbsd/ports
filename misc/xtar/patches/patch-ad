@@ -1,9 +1,16 @@
---- XTar.ad.orig	Mon Jul 17 08:00:59 1995
-+++ XTar.ad	Thu Oct 21 17:18:02 1999
-@@ -1,5 +1,5 @@
- !!!! Help document !!!!
--XTar*helpDoc:			/usr/local/lib/X11/xtar/xtar.doc
-+XTar*helpDoc:			/usr/X11R6/lib/X11/xtar/xtar.doc
+--- common/tmpfile.c.orig	Tue May  9 04:06:46 1995
++++ common/tmpfile.c	Thu Oct 21 20:43:13 1999
+@@ -90,7 +90,12 @@
+ char *tmpfile_create()
+ {
+     TMP_FILE *ptr, *tf;
+-    char *filename = strdup(tmpnam(NULL));
++    char xxx[40];
++    char *filename;
++
++   sprintf(xxx, "/tmp/tmpf.XXXXXXXX");
++   close(mkstemp(xxx));
++   filename = strdup(xxx);
  
- !!! Set this to true if you want push buttons !!!
- XTar*showPB:			False
+     if(filename == NULL)
+         return(NULL);
