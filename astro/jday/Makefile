@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/12 04:17:52 obecian Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/24 12:06:21 espie Exp $
 
 COMMENT=	"convert calendar dates to/from astronomical julian dates"
 DISTNAME=	jday-1.2
@@ -22,4 +22,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jday
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/jday
 
+NO_REGRESS=	Yes
 .include <bsd.port.mk>
