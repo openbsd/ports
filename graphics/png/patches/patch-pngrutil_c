@@ -1,0 +1,103 @@
+$OpenBSD: patch-pngrutil_c,v 1.1 2004/08/05 19:17:14 brad Exp $
+--- pngrutil.c.orig	Thu Oct  3 07:32:30 2002
++++ pngrutil.c	Thu Aug  5 14:29:45 2004
+@@ -38,6 +38,14 @@ __inline double strtod(const char *nptr,
+ #  endif
+ #endif
+ 
++png_uint_32 /* PRIVATE */
++png_get_uint_31(png_structp png_ptr, png_bytep buf)
++{
++   png_uint_32 i = png_get_uint_32(buf);
++   if (i > PNG_UINT_31_MAX)
++     png_error(png_ptr, "PNG unsigned integer out of range.\n");
++   return (i);
++}
+ #ifndef PNG_READ_BIG_ENDIAN_SUPPORTED
+ /* Grab an unsigned 32-bit integer from a buffer in big-endian format. */
+ png_uint_32 /* PRIVATE */
+@@ -579,7 +587,7 @@ png_handle_gAMA(png_structp png_ptr, png
+       /* Should be an error, but we can cope with it */
+       png_warning(png_ptr, "Out of place gAMA chunk");
+ 
+-   else if (info_ptr != NULL && (info_ptr->valid & PNG_INFO_gAMA)
++   if (info_ptr != NULL && (info_ptr->valid & PNG_INFO_gAMA)
+ #if defined(PNG_READ_sRGB_SUPPORTED)
+       && !(info_ptr->valid & PNG_INFO_sRGB)
+ #endif
+@@ -660,7 +668,7 @@ png_handle_sBIT(png_structp png_ptr, png
+       /* Should be an error, but we can cope with it */
+       png_warning(png_ptr, "Out of place sBIT chunk");
+    }
+-   else if (info_ptr != NULL && (info_ptr->valid & PNG_INFO_sBIT))
++   if (info_ptr != NULL && (info_ptr->valid & PNG_INFO_sBIT))
+    {
+       png_warning(png_ptr, "Duplicate sBIT chunk");
+       png_crc_finish(png_ptr, length);
+@@ -729,7 +737,7 @@ png_handle_cHRM(png_structp png_ptr, png
+       /* Should be an error, but we can cope with it */
+       png_warning(png_ptr, "Missing PLTE before cHRM");
+ 
+-   else if (info_ptr != NULL && (info_ptr->valid & PNG_INFO_cHRM)
++   if (info_ptr != NULL && (info_ptr->valid & PNG_INFO_cHRM)
+ #if defined(PNG_READ_sRGB_SUPPORTED)
+       && !(info_ptr->valid & PNG_INFO_sRGB)
+ #endif
+@@ -891,7 +899,7 @@ png_handle_sRGB(png_structp png_ptr, png
+       /* Should be an error, but we can cope with it */
+       png_warning(png_ptr, "Out of place sRGB chunk");
+ 
+-   else if (info_ptr != NULL && (info_ptr->valid & PNG_INFO_sRGB))
++   if (info_ptr != NULL && (info_ptr->valid & PNG_INFO_sRGB))
+    {
+       png_warning(png_ptr, "Duplicate sRGB chunk");
+       png_crc_finish(png_ptr, length);
+@@ -977,8 +985,7 @@ png_handle_iCCP(png_structp png_ptr, png
+    png_bytep pC;
+    png_charp profile;
+    png_uint_32 skip = 0;
+-   png_uint_32 profile_size = 0;
+-   png_uint_32 profile_length = 0;
++   png_uint_32 profile_size, profile_length;
+    png_size_t slength, prefix_length, data_length;
+ 
+    png_debug(1, "in png_handle_iCCP\n");
+@@ -995,7 +1002,7 @@ png_handle_iCCP(png_structp png_ptr, png
+       /* Should be an error, but we can cope with it */
+       png_warning(png_ptr, "Out of place iCCP chunk");
+ 
+-   else if (info_ptr != NULL && (info_ptr->valid & PNG_INFO_iCCP))
++   if (info_ptr != NULL && (info_ptr->valid & PNG_INFO_iCCP))
+    {
+       png_warning(png_ptr, "Duplicate iCCP chunk");
+       png_crc_finish(png_ptr, length);
+@@ -1154,8 +1161,18 @@ png_handle_sPLT(png_structp png_ptr, png
+    }
+ 
+    new_palette.nentries = data_length / entry_size;
+-   new_palette.entries = (png_sPLT_entryp)png_malloc(
++   if (new_palette.nentries > PNG_SIZE_MAX / sizeof(png_sPLT_entry))
++   {
++       png_warning(png_ptr, "sPLT chunk too long");
++       return;
++   }
++   new_palette.entries = (png_sPLT_entryp)png_malloc_warn(
+        png_ptr, new_palette.nentries * sizeof(png_sPLT_entry));
++   if (new_palette.entries == NULL)
++   {
++       png_warning(png_ptr, "sPLT chunk requires too much memory");
++       return;
++   }
+ 
+ #ifndef PNG_NO_POINTER_INDEXING
+    for (i = 0; i < new_palette.nentries; i++)
+@@ -1241,7 +1258,8 @@ png_handle_tRNS(png_structp png_ptr, png
+          /* Should be an error, but we can cope with it */
+          png_warning(png_ptr, "Missing PLTE before tRNS");
+       }
+-      else if (length > (png_uint_32)png_ptr->num_palette)
++      if (length > (png_uint_32)png_ptr->num_palette ||
++          length > PNG_MAX_PALETTE_LENGTH)
+       {
+          png_warning(png_ptr, "Incorrect tRNS chunk length");
+          png_crc_finish(png_ptr, length);

@@ -1,0 +1,34 @@
+$OpenBSD: patch-pngpread_c,v 1.1 2004/08/05 19:17:14 brad Exp $
+--- pngpread.c.orig	Thu Oct  3 07:32:28 2002
++++ pngpread.c	Thu Aug  5 14:29:45 2004
+@@ -208,7 +208,7 @@ png_push_read_chunk(png_structp png_ptr,
+       }
+ 
+       png_push_fill_buffer(png_ptr, chunk_length, 4);
+-      png_ptr->push_length = png_get_uint_32(chunk_length);
++      png_ptr->push_length = png_get_uint_31(png_ptr,chunk_length);
+       png_reset_crc(png_ptr);
+       png_crc_read(png_ptr, png_ptr->chunk_name, 4);
+       png_ptr->mode |= PNG_HAVE_CHUNK_HEADER;
+@@ -591,6 +591,11 @@ png_push_save_buffer(png_structp png_ptr
+       png_size_t new_max;
+       png_bytep old_buffer;
+ 
++      if (png_ptr->save_buffer_size > PNG_SIZE_MAX - 
++         (png_ptr->current_buffer_size + 256))
++      {
++        png_error(png_ptr, "Potential overflow of save_buffer");
++      }
+       new_max = png_ptr->save_buffer_size + png_ptr->current_buffer_size + 256;
+       old_buffer = png_ptr->save_buffer;
+       png_ptr->save_buffer = (png_bytep)png_malloc(png_ptr,
+@@ -637,8 +642,7 @@ png_push_read_IDAT(png_structp png_ptr)
+       }
+ 
+       png_push_fill_buffer(png_ptr, chunk_length, 4);
+-      png_ptr->push_length = png_get_uint_32(chunk_length);
+-
++      png_ptr->push_length = png_get_uint_31(png_ptr,chunk_length);
+       png_reset_crc(png_ptr);
+       png_crc_read(png_ptr, png_ptr->chunk_name, 4);
+       png_ptr->mode |= PNG_HAVE_CHUNK_HEADER;
