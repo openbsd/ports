@@ -1,5 +1,5 @@
---- configure.orig	Tue Mar  9 00:51:26 1999
-+++ configure	Thu Nov  2 09:56:59 2000
+--- configure.orig	Tue Mar  9 01:51:26 1999
++++ configure	Wed Mar  7 20:55:25 2001
 @@ -4095,16 +4095,26 @@
  fi
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
@@ -14,7 +14,7 @@
 +	    *)
 +		SHLIB_CFLAGS="-fpic";;
 +	    esac
-+	    SHLIB_LD="cc -shared ${SHLIB_CFLAGS}"
++	    SHLIB_LD="${CC} -shared ${SHLIB_CFLAGS}"
  	    SHLIB_LD_LIBS=""
  	    SHLIB_SUFFIX=".so"
  	    DL_OBJS="tclLoadDl.o"
