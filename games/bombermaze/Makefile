@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/26 18:36:53 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/22 08:00:17 pvalchev Exp $
 
 COMMENT=		"Bomberman clone for GNOME"
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	gdk_pixbuf.2::graphics/gdk-pixbuf \
 		audiofile.0::devel/libaudiofile \
 		glib.1,gmodule.1::devel/glib \
 	 	gif.5::graphics/libungif \
-		art_lgpl.so.4,gnome.36,gnomeui.46,gnomesupport.0::x11/gnome/libs
+		art_lgpl.4,gnome.36,gnomeui.46,gnomesupport.0::x11/gnome/libs
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
