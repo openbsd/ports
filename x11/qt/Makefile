@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2000/03/26 21:36:09 brad Exp $
+# $OpenBSD: Makefile,v 1.35 2000/05/19 13:36:21 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.45
@@ -42,7 +42,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/moc ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/X11/qt
 	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/man3/* ${PREFIX}/man/man3
+	@for i in ${WRKSRC}/man/man3/*; do \
+	  j=$${i%qt}; \
+	  sed -e 's,\.3qt,\.3,g' <$$i >$$j && \
+	  	${INSTALL_MAN} $$j ${PREFIX}/man/man3; \
+	done
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/qt
 	${INSTALL_DATA} ${WRKSRC}/README.QT ${PREFIX}/share/doc/qt
 	@echo -n "Installing tutorials:"
