@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2003/10/29 05:04:25 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2004/04/04 22:02:52 matthieu Exp $
 
 COMMENT=	"X11 Cursors themes"
 
-DISTNAME=	xcursorgen-4.3.99.2
+DISTNAME=	xcursorgen-4.4
 WRKDIST=	${WRKDIR}/${DISTNAME:C/-.*//}
 CATEGORIES=	x11
 HOMEPAGE=	http://www.xfree86.org/
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES= 		http://open.bsdcow.net/~jolan/
+MASTER_SITES= 		http://users.codefusionis.com/~jolan/
 
 
 USE_X11=		Yes
