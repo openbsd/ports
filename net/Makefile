@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 1999/04/18 21:11:55 brad Exp $
+# $OpenBSD: Makefile,v 1.39 1999/05/08 02:03:02 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -30,6 +30,7 @@
 #    SUBDIR += ftpsearch
 #    SUBDIR += ftptool
      SUBDIR += gated
+     SUBDIR += gicq
 #    SUBDIR += gnu-finger
 #    SUBDIR += gopher
      SUBDIR += icb
