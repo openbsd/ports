@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2001/07/20 02:12:05 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.52 2001/07/26 19:14:46 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -58,6 +58,7 @@
 #    SUBDIR += qcc
 #    SUBDIR += quakeserver
      SUBDIR += sdlroids
+     SUBDIR += sdlzombies
 #    SUBDIR += sokoban
      SUBDIR += speyes
      SUBDIR += spider
