@@ -10,7 +10,7 @@ virtual domains, built-in 'ls', anti-warez system, bounded ports for
 passive downloads, FXP protocol, bandwidth throttling, ratios,
 LDAP / MySQL / PostgreSQL-based authentication, fortune files, Apache-like
 log files, fast standalone mode, text / HTML / XML real-time status report,
-virtual users, virtual quotas and more.
+virtual users, virtual quotas, privilege separation and more.
 
 Flavors:
 	     ldap - Build with LDAP support as an authentication source
