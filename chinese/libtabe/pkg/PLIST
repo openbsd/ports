@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/14 05:56:23 kevlo Exp $
+bin/tsiadd
+bin/tsidel
+bin/tsidump
+bin/tsiyincheck
+bin/tsiyindump
+include/bims.h
+include/tabe.h
+lib/libbims.a
+lib/libbims.la
+lib/libtabe.a
+lib/libtabe.la
+lib/tabe/tsi.db
+lib/tabe/yin.db
+%%SHARED%%
+@dirrm lib/tabe

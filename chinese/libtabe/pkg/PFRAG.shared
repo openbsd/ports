@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/01/14 05:56:23 kevlo Exp $
+lib/libbims.so.2.1
+lib/libtabe.so.2.1
+DYNLIBDIR(%D/lib)
