@@ -4,3 +4,5 @@ RMD160 (ndg_files.tar.gz) = a86ab4ab5c981f8f53910dd816e4dcac9896628f
 RMD160 (xtraceroute-0.9.0.tar.gz) = b595dd4f59b16fae7b81ba17428212113edac50b
 SHA1 (ndg_files.tar.gz) = 994aeb804dd063f6fd2bf499addd4b5e8aca81cc
 SHA1 (xtraceroute-0.9.0.tar.gz) = 59b49b783121050946b7a27da49a5f756916d79f
+SIZE (ndg_files.tar.gz) = 90437
+SIZE (xtraceroute-0.9.0.tar.gz) = 773265

@@ -7,3 +7,6 @@ RMD160 (belt/menu.conf.EXAMPLE) = ea1d23fa0d3b71a20c36dfff4889cb2fc1c7dc7d
 SHA1 (belt/belt-1.18) = 61e3a395410910122c10d0ea92596e7110588f69
 SHA1 (belt/belticons.tar.gz) = 9c374c64c8016cb1c64da0661a2eb74a4b124331
 SHA1 (belt/menu.conf.EXAMPLE) = 2d2a70a43102ab03f08587ad2273983b5e5cd34b
+SIZE (belt/belt-1.18) = 28126
+SIZE (belt/belticons.tar.gz) = 805
+SIZE (belt/menu.conf.EXAMPLE) = 897

@@ -4,3 +4,5 @@ RMD160 (xloadimage.4.1.tar.gz) = 000271b40f58601cd1057b4e99c31a30da6e10af
 RMD160 (xloadimage_4.1-14.diff.gz) = 686b00764406d9082bba130feef7f957dd529b03
 SHA1 (xloadimage.4.1.tar.gz) = 0a8ee9b185702750706f68e4a34e086873f17690
 SHA1 (xloadimage_4.1-14.diff.gz) = a349298f070752dedac79f24331da23a9e4c0975
+SIZE (xloadimage.4.1.tar.gz) = 596021
+SIZE (xloadimage_4.1-14.diff.gz) = 64893
