@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2003/06/27 14:55:35 naddy Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/11/23 10:21:00 sturm Exp $
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
@@ -33,7 +33,8 @@ fi
 #
 case $2 in
     DEINSTALL)
-	if [ -f ${CONFFILE} -o -e ${DB_DIR} ]; then
+	if [ "$PKG_DELETE_EXTRA" != Yes -a \
+	    \( -f ${CONFFILE} -o -e ${DB_DIR} \) ]; then
 	    do_notice "$1"
 	fi
 	;;
