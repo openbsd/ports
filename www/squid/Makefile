@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/07/23 18:21:20 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2000/08/11 06:30:34 brad Exp $
 
 DISTNAME=	squid-2.3.STABLE4
 PKGNAME=	squid-2.3
@@ -10,7 +10,9 @@ EXTRACT_SUFX=	-src.tar.gz
 DIST_SUBDIR=	squid
 
 PATCHFILES=	squid-2.3.stable4-ftp_icon_not_found.patch:0 \
-		squid-2.3.stable4-internal_dns_rcode_table_formatting.patch:0
+		squid-2.3.stable4-internal_dns_rcode_table_formatting.patch:0 \
+		squid-2.3.stable4-ipfw_configure.patch:0 \
+		squid-2.3.stable4-invalid_ip_acl_entry.patch:0
 
 HOMEPAGE=	http://www.squid-cache.org/
 
