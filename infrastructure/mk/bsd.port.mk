@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.302 2000/06/12 02:09:22 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.303 2000/06/13 01:48:17 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -191,12 +191,12 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # USE_IMAKE		- Port uses imake.
 # HAS_CONFIGURE	- Says that the port has its own configure script.
 # GNU_CONFIGURE	- Set if you are using GNU configure (optional).
+# NO_INSTALL_MANPAGES - For imake ports that don't like the install.man
+#						target.
 #
 #
 # AUTOCONF_DIR  - Where to apply autoconf (default: ${WRKSRC}).
 # USE_X11		- Port uses X11.
-# NO_INSTALL_MANPAGES - For imake ports that don't like the install.man
-#						target.
 #
 # CONFIGURE_STYLE
 #               - Set to value corresponding to some standard configuration
@@ -206,7 +206,8 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #				  (autoconf: needed by port, implies gnu)
 # 				XXX: cygnus products do NOT use autoconf for making the main 
 #      			configure from configure.in
-#				  imake: port uses imake for configuration.
+#				  imake [noman]: port uses imake for configuration.
+#                 (noman: no man page installation)
 #			      simple: port has its own configure script
 #
 # YACC          - yacc program to pass to configure script (default: yacc)
@@ -512,6 +513,9 @@ CONFIGURE_STYLE+=gnu
 .endif
 .if defined(USE_IMAKE)
 CONFIGURE_STYLE+=imake
+.endif
+.if defined(NO_INSTALL_MANPAGES)
+CONFIGURE_STYLE+=noman
 .endif
 
 # where configuration files should go
@@ -913,7 +917,7 @@ _DEPEND_ECHO?=		echo
 ALL_TARGET?=		all
 INSTALL_TARGET?=	install
 
-.if ${CONFIGURE_STYLE:L:Mimake} && !defined(NO_INSTALL_MANPAGES)
+.if ${CONFIGURE_STYLE:L:Mimake} && empty(CONFIGURE_STYLE:L:Mnoman)
 INSTALL_TARGET+=	install.man
 .endif
 
