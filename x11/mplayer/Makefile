@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2002/08/18 13:17:50 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2002/09/04 05:40:21 pvalchev Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -25,7 +25,8 @@ MASTER_SITES0=		http://www.sightly.net/mplayer/
 MAINTAINER=     Björn Sandell <biorn@dce.chalmers.se>
 
 SKIN=		default
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKIN}${EXTRACT_SUFX}:0
+SKINVER=	1.1
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKIN}-${SKINVER}${EXTRACT_SUFX}:0
 
 .include <bsd.own.mk>
 
