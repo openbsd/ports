@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.152 1999/12/03 14:57:12 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.153 1999/12/03 16:54:42 brad Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1929,7 +1929,7 @@ checksum: fetch
 		cd ${DISTDIR}; OK="true"; \
 		  for file in ${_CKSUMFILES}; do \
 			for cipher in ${PREFERRED_CIPHERS}; do \
-				CKSUM2=`grep -i "^$$cipher ($$file)" ${CHECKSUM_FILE} | awk'{print $$4}'`; \
+				CKSUM2=`grep -i "^$$cipher ($$file)" ${CHECKSUM_FILE} | awk '{print $$4}'`; \
 				if [ "$$CKSUM2" = "" ]; then \
 					${ECHO_MSG} ">> No $$cipher checksum recorded for $$file."; \
 				else \
