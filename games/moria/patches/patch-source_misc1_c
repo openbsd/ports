@@ -1,0 +1,32 @@
+$OpenBSD: patch-source_misc1_c,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
+--- source/misc1.c.orig	Wed Jul  4 11:39:07 2001
++++ source/misc1.c	Wed Jul  4 11:40:17 2001
+@@ -29,7 +29,6 @@
+ #endif
+ 
+ #if !defined(ATARIST_MWC) && !defined(MAC) && !defined(VMS) && !defined(AMIGA)
+-long time();
+ #endif
+ struct tm *localtime();
+ 
+@@ -48,7 +47,7 @@ int32u seed;
+ #ifdef MAC
+     clock_var = time((time_t *)0);
+ #else
+-    clock_var = time((long *)0);
++    clock_var = time((time_t *)0);
+ #endif
+   else
+     clock_var = seed;
+@@ -95,9 +94,9 @@ int check_time()
+ #ifdef MAC
+   clock_var = time((time_t *)0);
+ #else
+-  clock_var = time((long *)0);
++  clock_var = time((time_t *)0);
+ #endif
+-  tp = localtime(&clock_var);
++  tp = localtime((time_t *)&clock_var);
+   if (days[tp->tm_wday][tp->tm_hour+4] == 'X')
+     return TRUE;
+   else

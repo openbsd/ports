@@ -1,0 +1,21 @@
+$OpenBSD: patch-source_main_c,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
+--- source/main.c.orig	Thu Jul 21 21:47:08 1994
++++ source/main.c	Tue Jul  3 13:02:35 2001
+@@ -92,7 +92,7 @@
+ #ifndef MAC
+ #ifndef GEMDOS
+ #ifndef AMIGA
+-long time();
++//long time();
+ #endif
+ #endif
+ char *getenv();
+@@ -363,7 +363,7 @@ char *argv[];
+ #ifdef MAC
+       birth_date = time ((time_t *)0);
+ #else
+-      birth_date = time ((long *)0);
++      birth_date = time ((time_t *)0);
+ #endif
+       char_inven_init();
+       py.flags.food = 7500;

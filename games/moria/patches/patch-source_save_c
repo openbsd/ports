@@ -1,0 +1,38 @@
+$OpenBSD: patch-source_save_c,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
+--- source/save.c.orig	Wed Jul  4 11:31:30 2001
++++ source/save.c	Wed Jul  4 11:32:25 2001
+@@ -105,7 +105,6 @@ static void rd_monster();
+ #ifdef MAC
+ #include <time.h>
+ #else
+-long time();
+ #endif
+ #else
+ char *malloc();
+@@ -334,7 +333,7 @@ static int sv_write()
+ #ifdef MAC
+   l = time((time_t *)0);
+ #else
+-  l = time((long *)0);
++  l = time((time_t *)0);
+ #endif
+   if (l < start_time)
+     {
+@@ -1032,7 +1031,7 @@ int *generate;
+ #ifdef MAC
+ 	    birth_date = time((time_t *)0);
+ #else
+-	    birth_date = time((long *)0);
++	    birth_date = time((time_t *)0);
+ #endif
+ 	}
+       if ((c = getc(fileptr)) == EOF || (l & 0x80000000L))
+@@ -1256,7 +1255,7 @@ scoreboard; it will not be scored again.
+ #ifdef MAC
+ 	      start_time = time((time_t *)0);
+ #else
+-	      start_time = time((long *)0);
++	      start_time = time((time_t *)0);
+ #endif
+ 	      /* check for reasonable values of time here ... */
+ 	      if (start_time < time_saved)

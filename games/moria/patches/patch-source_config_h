@@ -1,0 +1,49 @@
+$OpenBSD: patch-source_config_h,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
+--- source/config.h.orig	Wed Jul  4 12:42:19 2001
++++ source/config.h	Wed Jul  4 12:42:21 2001
+@@ -6,6 +6,19 @@
+    not for profit purposes provided that this copyright and statement are
+    included in all such copies. */
+ 
++/* OpenBSD includes */
++#include <string.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <unistd.h>
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <fcntl.h>
++
++/* OpenBSD prototypes */
++int check_input(int);
++void user_name(char *);
++
+ #define CONFIG_H_INCLUDED
+ #ifdef CONSTANT_H_INCLUDED
+ Constant.h should always be included after config.h, because it uses
+@@ -200,16 +213,15 @@ some of the system defines set up here.
+ 
+ /* This must be unix; change MORIA_LIB as appropriate.  */
+ #define MORIA_SAV	"moria.save"
+-#define MORIA_LIB(xxx)  "/home/math/grabiner/moria/files/xxx"
+-#define MORIA_HOU	MORIA_LIB(hours)
+-#define MORIA_MOR	MORIA_LIB(news)
+-#define MORIA_TOP	MORIA_LIB(scores)
+-#define MORIA_HELP	MORIA_LIB(roglcmds.hlp)
+-#define MORIA_ORIG_HELP	MORIA_LIB(origcmds.hlp)
+-#define MORIA_WIZ_HELP	MORIA_LIB(rwizcmds.hlp)
+-#define MORIA_OWIZ_HELP	MORIA_LIB(owizcmds.hlp)
+-#define MORIA_WELCOME	MORIA_LIB(welcome.hlp)
+-#define MORIA_VER	MORIA_LIB(version.hlp)
++#define MORIA_HOU	PREFIX "/share/moria/hours"
++#define MORIA_MOR	PREFIX "/share/moria/news"
++#define MORIA_TOP	PREFIX "/share/moria/scores"
++#define MORIA_HELP	PREFIX "/share/moria/roglcmds.hlp"
++#define MORIA_ORIG_HELP	PREFIX "/share/moria/origcmds.hlp"
++#define MORIA_WIZ_HELP	PREFIX "/share/moria/rwizcmds.hlp"
++#define MORIA_OWIZ_HELP	PREFIX "/share/moria/owizcmds.hlp"
++#define MORIA_WELCOME	PREFIX "/share/moria/welcome.hlp"
++#define MORIA_VER	PREFIX "/share/moria/version.hlp"
+ 
+ #endif
+ #endif

@@ -1,0 +1,23 @@
+$OpenBSD: patch-source_death_c,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
+--- source/death.c.orig	Wed Jul  4 11:34:09 2001
++++ source/death.c	Wed Jul  4 11:35:09 2001
+@@ -126,7 +126,6 @@ static void kingly(void);
+ #ifndef VMS
+ #ifndef MAC
+ #if !defined(ATARIST_MWC) && !defined(AMIGA)
+-long time();
+ #endif
+ #endif
+ #endif
+@@ -144,9 +143,9 @@ char *day;
+ #ifdef MAC
+   clockvar = time((time_t *) 0);
+ #else
+-  clockvar = time((long *) 0);
++  clockvar = time((time_t *) 0);
+ #endif
+-  tmp = ctime(&clockvar);
++  tmp = ctime((time_t *)&clockvar);
+   tmp[10] = '\0';
+   (void) strcpy(day, tmp);
+ }

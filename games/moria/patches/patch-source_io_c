@@ -1,0 +1,48 @@
+$OpenBSD: patch-source_io_c,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
+--- source/io.c.orig	Wed Jul  4 12:25:44 2001
++++ source/io.c	Wed Jul  4 12:25:53 2001
+@@ -60,7 +60,8 @@ long wgetch();
+ char *getenv();
+ #endif
+ 
+-
++#include <sys/ioctl_compat.h>
++#include <curses.h>
+ #include <ctype.h>
+ 
+ #if defined(SYS_V) && defined(lint)
+@@ -245,7 +246,6 @@ int suspend()
+   struct ltchars lcbuf;
+   struct tchars cbuf;
+   int lbuf;
+-  long time();
+ 
+   py.misc.male |= 2;
+   (void) ioctl(0, TIOCGETP, (char *)&tbuf);
+@@ -316,7 +316,7 @@ void init_curses()
+ #if defined(USG) && !defined(PC_CURSES) && !defined(AMIGA)
+   if (initscr() == NULL)
+ #else
+-  if (initscr() == ERR)
++  if (initscr() == NULL)
+ #endif
+     {
+       (void) printf("Error allocating screen in curses package.\n");
+@@ -334,7 +334,7 @@ void init_curses()
+ #ifdef  __386BSD__
+   (void) signal (SIGTSTP, (sig_t)suspend);
+ #else
+-  (void) signal (SIGTSTP, suspend);
++  (void) signal (SIGTSTP, (sig_t)suspend);
+ #endif
+ #endif
+ #endif
+@@ -760,7 +760,7 @@ void shell_out()
+ #if defined(USG) || defined(__386BSD__)
+   (void) wait((int *) 0);
+ #else
+-  (void) wait((union wait *) 0);
++  (void) wait((int *) 0);
+ #endif
+ #endif /* ATARI_ST */
+ #endif		 /* MSDOS }*/

@@ -1,0 +1,38 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
+
+COMMENT=	"The Dungeons of Moria"
+
+V=		5.5.2
+DISTNAME=	um$V
+PKGNAME=	moria-$V
+CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.greyhelm.com/pub/Games/Moria/source/
+EXTRACT_SUFX=	.tar.Z
+NEED_VERSION=	1.402
+
+HOMEPAGE=	http://www-math.bgsu.edu/~grabine/moria.html
+
+MAINTAINER=	David Lebel <lebel@openbsd.org>
+
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_FTP=	Yes
+
+WRKDIST=	${WRKDIR}/umoria
+WRKSRC=		${WRKDIST}
+
+SEPARATE_BUILD= concurrent
+MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
+
+do-build:
+	@cd ${WRKBUILD}; for i in ${WRKSRC}/source/*; do ln -sf $$i; done; \
+	 for i in ${WRKSRC}/unix/*; do ln -sf $$i; done; \
+	 ln -sf ${WRKSRC}/files; \
+	 ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} PREFIX="${PREFIX}"
+
+do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/moria
+	@cd ${WRKBUILD}; ${MAKE_PROGRAM} ${FAKE_FLAGS} install
+
+.include <bsd.port.mk>

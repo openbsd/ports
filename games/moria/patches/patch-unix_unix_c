@@ -1,0 +1,49 @@
+$OpenBSD: patch-unix_unix_c,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
+--- unix/unix.c.orig	Thu Jul 21 18:36:49 1994
++++ unix/unix.c	Tue Jul  3 13:02:35 2001
+@@ -18,7 +18,7 @@
+ #include "constant.h"
+ #include "types.h"
+ 
+-#ifdef unix
++#ifdef __OpenBSD__
+ 
+ #if defined(SYS_V) && defined(lint)
+ /* for AIX, prevent hundreds of unnecessary lint errors, must define before
+@@ -43,7 +43,7 @@ typedef struct { int stuff; } fpvmach;
+ #include <sys/param.h>
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __OpenBSD__
+ #include <sys/time.h>
+ #include <sys/types.h>
+ #include <unistd.h>
+@@ -121,12 +121,12 @@ static Ioctl(i, l, p) char *p; { return 
+ int check_input(microsec)
+ int microsec;
+ {
+-#if defined(USG) && !defined(M_XENIX) && !defined(__linux__)
++#if defined(USG) && !defined(M_XENIX) && !defined(__OpenBSD__)
+   int arg, result;
+ #else
+   struct timeval tbuf;
+   int ch;
+-#if defined(BSD4_3) || defined(M_XENIX) || defined(__linux__)
++#if defined(BSD4_3) || defined(M_XENIX) || defined(__OpenBSD__)
+   fd_set smask;
+ #else
+   int smask;
+@@ -134,10 +134,10 @@ int microsec;
+ #endif
+ 
+   /* Return true if a read on descriptor 1 will not block. */
+-#if !defined(USG) || defined(M_XENIX) || defined(__linux__)
++#if !defined(USG) || defined(M_XENIX) || defined(__OpenBSD__)
+   tbuf.tv_sec = 0;
+   tbuf.tv_usec = microsec;
+-#if defined(BSD4_3) || defined(M_XENIX) || defined(__linux__)
++#if defined(BSD4_3) || defined(M_XENIX) || defined(__OpenBSD__)
+   FD_ZERO(&smask);
+   FD_SET(fileno(stdin), &smask);
+   if (select(1, &smask, (fd_set *)0, (fd_set *)0, &tbuf) == 1)
