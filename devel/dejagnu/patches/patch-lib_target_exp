@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_target_exp,v 1.1 2005/03/25 15:42:15 kettenis Exp $
+--- lib/target.exp.orig	Fri Aug 30 05:54:28 2002
++++ lib/target.exp	Fri Mar 25 15:42:20 2005
+@@ -265,6 +265,10 @@ proc prune_warnings { text } {
+     regsub -all "(^|\n)(\[^\n\]*:\[0-9\]+: warning: \[^\n\]* possibly used unsafely, use \[^\n\]*\n?)" $text "\\1" text
+     regsub -all "(^|\n)(\[^\n\]*: warning: reference to compatibility glob\[^\n\]*\n?)" $text "\\1" text
+ 
++    # Or the OpenBSD ones.
++    regsub -all "(^|\n)(\[^\n\]*: In function\[^\n\]*\n\[^\n\]\[^\n\]*warning: \[^\n\]* is often misused, please use \[^\n\]*\n?)" $text "\\1" text
++    regsub -all "(^|\n)(\[^\n\]*: warning: \[^\n\]* is often misused, please use \[^\n\]*\n?)" $text "\\1" text
++
+     # GNU ld warns about functions marked as dangerous in GNU libc.
+     regsub -all "(^|\n)\[^\n\]*: In function\[^\n\]*\n\[^\n\]\[^\n\]*function is dangerous\[^\n\]*" $text "" text
+ 

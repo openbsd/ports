@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2005/02/13 16:20:38 alek Exp $
+# $OpenBSD: Makefile,v 1.25 2005/03/25 15:42:15 kettenis Exp $
 
 COMMENT=	"framework to test programs"
 
 DISTNAME=	dejagnu-1.4.3
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=dejagnu/}
 
