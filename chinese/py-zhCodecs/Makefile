@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/01/07 15:48:00 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2002/01/31 17:40:44 shell Exp $
 
 COMMENT=	"Python Unicode codecs for Chinese charsets"
 
@@ -8,7 +8,7 @@ PKGNAME=	py-zhCodecs-${VERSION}
 CATEGORIES=    	chinese devel
 NEED_VERSION=	1.504
 
-HOMEPAGE=	http://www.sf.net/python-codecs/
+HOMEPAGE=	http://www.sf.net/projects/python-codecs/
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
