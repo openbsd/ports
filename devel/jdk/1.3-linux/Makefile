@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/12/25 19:23:25 sturm Exp $
+# $OpenBSD: Makefile,v 1.28 2004/12/28 16:23:59 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -31,7 +31,8 @@ NO_REGRESS=	Yes
 FETCH_MANUALLY = " You must fetch the distfile for this port manually"
 FETCH_MANUALLY+= " after agreeing to the license agreement at"
 FETCH_MANUALLY+= ""
-FETCH_MANUALLY+= "     http://java.sun.com/j2se/1.3/download.html"
+FETCH_MANUALLY+= "     http://java.sun.com/j2se/1.3/download.html or"
+FETCH_MANUALLY+= "     http://java.sun.com/products/archive/"
 FETCH_MANUALLY+= ""
 FETCH_MANUALLY+= " Choose the '* Linux self-extracting file' option and place"
 FETCH_MANUALLY+= " ${DISTFILES} into ${FULLDISTDIR}."
