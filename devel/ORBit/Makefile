@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2000/08/21 12:20:20 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/09/04 07:28:16 brad Exp $
 
 DISTNAME=	ORBit-0.5.3
 CATEGORIES=	devel
 NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/ORBit
+
+HOMEPAGE=	http://www.labs.redhat.com/orbit/
 
 LIB_DEPENDS=	intl.1::devel/gettext \
 		glib.1.2::devel/glib
