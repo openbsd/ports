@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/02/05 01:22:37 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1999/02/15 19:12:56 marc Exp $
 #
 
 DISTNAME=       autoconf-2.13
@@ -7,6 +7,7 @@ CATEGORIES=	devel
 MAINTAINER=	marc@OpenBSD.ORG
 
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= autoconf
 
 # Both are needed for now as bsd.port.mk does not cause RUN_DEPENDS to
 # be created before running configure, which causes the build to do the
