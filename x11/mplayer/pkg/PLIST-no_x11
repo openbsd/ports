@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST-no_x11,v 1.1 2002/06/29 11:51:23 espie Exp $
+bin/mencoder
+bin/mplayer
+lib/mplayer/vidix/genfb_vid.so
+lib/mplayer/vidix/mach64_vid.so
+lib/mplayer/vidix/mga_crtc2_vid.so
+lib/mplayer/vidix/mga_vid.so
+lib/mplayer/vidix/nvidia_vid.so
+lib/mplayer/vidix/radeon_vid.so
+lib/mplayer/vidix/rage128_vid.so
+%%SHARED%%
+man/man1/mencoder.1
+man/man1/mplayer.1
+share/mplayer/codecs.conf
+@dirrm share/mplayer
+@dirrm lib/mplayer/vidix
+@dirrm lib/mplayer

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2002/06/29 11:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2002/06/29 11:51:22 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -33,7 +33,6 @@ BUILD_DEPENDS=	:binutils->=2.11.2:devel/binutils/stable
 .endif
 LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
-		gtk,gdk::x11/gtk+ \
 		dvdread.::devel/libdvdread \
 		mp3lame::audio/lame \
 		ungif::graphics/libungif
@@ -42,7 +41,6 @@ LIB_DEPENDS=	png::graphics/png \
 MAKE_ENV=	AR=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/ar
 .endif
 
-USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/as \
@@ -52,8 +50,6 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 		--disable-ossaudio \
 		--disable-arts \
 		--enable-select \
-		--enable-gl \
-		--enable-gui \
 		--enable-vidix \
 		--with-extraincdir="${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		--with-extralibdir=${LOCALBASE}/lib
@@ -62,9 +58,25 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 CONFIGURE_ARGS+=--target=ppc-openbsd
 .endif
 
-FLAVORS=	sdl ggi debug mad win32 iconv
+FLAVORS=	sdl ggi debug mad win32 iconv no_x11
 FLAVOR?=
 
+.if ${FLAVOR:L:Mno_x11}
+.  if ${FLAVOR:L:Msdl} || ${FLAVOR:L:Mggi} || ${FLAVOR:L:Mmad}
+ERRORS+="Fatal: nonsense combination of flavors"
+.  else
+CONFIGURE_ARGS+=--disable-gui \
+	--disable-gl \
+	--disable-xv \
+	--disable-x11 \
+	--disable-sunaudio
+.  endif
+.else
+CONFIGURE_ARGS+=--enable-gui \
+	--enable-gl
+USE_X11=	Yes
+LIB_DEPENDS+= 	gtk,gdk::x11/gtk+
+.endif
 .if ${FLAVOR:L:Msdl}
 CONFIGURE_ARGS+=--enable-sdl \
 		--with-sdl-config=${LOCALBASE}/bin/sdl-config

@@ -28,6 +28,8 @@ Flavors:
 
   mad: enables mad, requires audio/mad
 
+  no_x11: disable audio/video output.
+
   win32: enables win32 codecs (i386-only)  To use this flavor, your
          kernel must be rebuilt with option USER_LDT
 
