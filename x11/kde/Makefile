@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2003/01/27 20:25:27 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2003/01/28 12:42:47 espie Exp $
 
      SUBDIR+= arts3
      SUBDIR+= libs3
@@ -17,6 +17,7 @@
      SUBDIR+= bindings3
      SUBDIR+= quanta
      SUBDIR+= office3
+     SUBDIR+= umbrello
      SUBDIR+= i18n3,af
      SUBDIR+= i18n3,ar
      SUBDIR+= i18n3,bg
