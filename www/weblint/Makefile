@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2002/10/29 01:21:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2003/08/21 14:35:29 naddy Exp $
 
 COMMENT=	"perl lint program for html"
 
 DISTNAME=	weblint-1.020	
 CATEGORIES=	www
 
-MASTER_SITES=	ftp://ftp.weblint.org/pub/weblint/ \
-		http://www.perl.com/CPAN/authors/id/NEILB/ 
-
-HOMEPAGE=	http://www.weblint.org/
+MASTER_SITES=	http://www.perl.com/CPAN/authors/id/NEILB/
 
 MAINTAINER=	Sean Cavanaugh <seanc@cginfo.sk.ca>
 
