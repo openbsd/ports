@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/09 23:26:31 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/18 07:41:46 pvalchev Exp $
 
 COMMENT=	"curses spreadsheet-calculator program"
 
@@ -19,5 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MAN1=		sc.1 psc.1
 
 WRKDIST=	${WRKDIR}
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

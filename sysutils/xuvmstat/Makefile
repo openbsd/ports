@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/06/27 19:57:20 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/18 07:41:46 pvalchev Exp $
 
 COMMENT=	"graphical display for the current uvm status"
 
@@ -19,6 +19,7 @@ MASTER_SITES=	http://www.netbsd.org/~chuck/gz/
 WRKDIST=	${WRKDIR}/xuvmstat
 MAKE_ENV=	X11BASE="${X11BASE}"
 
+NO_REGRESS=	Yes
 USE_X11=	Yes
 
 do-install:
