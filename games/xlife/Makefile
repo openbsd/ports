@@ -1,20 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 1999/01/14 02:34:05 angelos Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/09/28 17:17:10 brad Exp $
 
 DISTNAME=       xlife
 PKGNAME=	xlife-3.0
 CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.cdrom.com/pub/X11/R5contrib/ \
+		ftp://ftp.kddlabs.co.jp/pub/X11/R5contrib/
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	angelos@openbsd.org
-
-MASTER_SITES=	ftp://ftp.cdrom.com/pub/X11/R5contrib/	\
-		ftp://ftp.iij.ad.jp/X/R5contrib/
-MASTER_SITE_SUBDIR=	../../R5contrib
-EXTRACT_SUFX=	.tar.Z
 
 USE_IMAKE=      yes
 
 pre-install:
-	@(cd ${WRKSRC}; make install.patterns)
+	@(cd ${WRKSRC}; ${MAKE} install.patterns)
 
 .include <bsd.port.mk>
