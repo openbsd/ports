@@ -1,7 +1,17 @@
-$OpenBSD: patch-wmtz_wmtz_c,v 1.1.1.1 2001/03/09 08:43:39 wilfried Exp $
---- wmtz/wmtz.c.orig	Sun Sep 24 15:45:17 2000
-+++ wmtz/wmtz.c	Thu Mar  8 13:27:08 2001
-@@ -173,7 +173,7 @@ int main(int argc, char *argv[]) {
+$OpenBSD: patch-wmtz_wmtz_c,v 1.2 2004/01/14 22:42:52 wilfried Exp $
+--- wmtz/wmtz.c.orig	2001-04-16 21:26:34.000000000 +0200
++++ wmtz/wmtz.c	2004-01-14 23:39:10.000000000 +0100
+@@ -51,8 +51,7 @@
+ #define STRSIZE 10
+ #define LMST 1
+ #define GMST 0
+-#define ABOUT "xmessage -center -buttons \"Close\" \"WMTZ - Window Maker Time Zone dockapp v0.7
+-http://www.geocities.com/jl1n/wmtz/wmtz.html\""
++#define ABOUT "xmessage -center -buttons \"Close\" \"WMTZ - Window Maker Time Zone dockapp v0.7\nhttp://www.geocities.com/jl1n/wmtz/wmtz.html\""
+ 
+ 
+ /*
+@@ -196,7 +195,7 @@ int main(int argc, char *argv[]) {
    month[0] = "JAN";  month[1] = "FEB";  month[2] = "MAR";
    month[3] = "APR";  month[4] = "MAY";  month[5] = "JUN";
    month[6] = "JUL";  month[7] = "AUG";  month[8] = "SEP";
