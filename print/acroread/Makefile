@@ -3,17 +3,17 @@
 # Date created:		June 7 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.16 2002/06/09 05:37:07 wilfried Exp $
+# $OpenBSD: Makefile,v 1.17 2002/06/19 14:11:56 lebel Exp $
 #
 
 COMMENT=	"view, distribute and print PDF documents"
 
-DISTNAME=	linux-ar-405
-PKGNAME=	acroread-4.05
+DISTNAME=	linux-505
+PKGNAME=	acroread-5.05
 CATEGORIES=	print
-NEED_VERSION=	1.496
+NEED_VERSION=	1.531
 
-MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/4.x/
+MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
 ONLY_FOR_ARCHS=	i386
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
@@ -25,22 +25,18 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	:redhat_base-*:emulators/redhat/base
 
-WRKDIST=	${WRKDIR}/ILINXR.install
-
-do-build:
-	@${ECHO_MSG} "Do a \`make install' as root."
+WRKDIST=	${WRKDIR}
+NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/Acrobat4
-	@ReadInstallDir=${PREFIX}/Acrobat4 ${WRKSRC}/INSTALL
+	@${INSTALL_DATA_DIR} ${PREFIX}/Acrobat5
+	@ReadInstallDir=${PREFIX}/Acrobat5 ${WRKSRC}/INSTALL
 
 post-install:
-	@cd ${PREFIX}/Acrobat4/bin && \
+	@cd ${PREFIX}/Acrobat5/bin && \
 	  patch --quiet < ${FILESDIR}/acroread.diff && \
-	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat4/bin/acroread \
+	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat5/bin/acroread \
 	     ${PREFIX}/bin/acroread && rm acroread.orig
-#	@chmod +x ${PREFIX}/bin/acroread
-	@echo "Be sure to read the license agreement in"
-	@echo "${PREFIX}/Acrobat4/Reader/License.pdf"
 
 .include <bsd.port.mk>
