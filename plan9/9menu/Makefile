@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 03:04:57 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/08/02 18:54:04 angelos Exp $
 
 COMMENT=	"simple menu patterned after plan9"
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -I/usr/X11R6/include" \
-		LIBS="-L/usr/X11R6/lib -lX11"
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
+		LIBS="-L${X11BASE}/lib -lX11"
 
 ALL_TARGET=	9menu
 
