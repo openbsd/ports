@@ -1,0 +1,10 @@
+$OpenBSD: patch-gas_config_te-obsd_h,v 1.1.1.1 2002/04/21 21:39:52 fgsch Exp $
+--- gas/config/te-obsd.h.orig	Thu Feb 14 18:37:15 2002
++++ gas/config/te-obsd.h	Thu Feb 14 18:38:15 2002
+@@ -0,0 +1,6 @@
++#define TE_OpenBSD	1
++
++/* We want [0-9][bf] style local temporary labels.  */
++#define LOCAL_LABELS_FB	1
++
++#include "obj-format.h"

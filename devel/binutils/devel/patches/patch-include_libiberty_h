@@ -1,0 +1,14 @@
+--- include/libiberty.h.orig	Thu Jun  7 00:21:38 2001
++++ include/libiberty.h	Sun Mar 10 02:28:37 2002
+@@ -48,6 +48,11 @@ extern "C" {
+ #include <stdarg.h>
+ #endif
+ 
++/* Make temporary file name */
++
++extern int mkstemp PARAMS ((char *));
++extern char *mkdtemp PARAMS ((char *));
++
+ /* Build an argument vector from a string.  Allocates memory using
+    malloc.  Use freeargv to free the vector.  */
+ 

@@ -1,0 +1,9 @@
+$OpenBSD: patch-ld_emulparams_sparcobsd_sh,v 1.1.1.1 2002/04/21 21:39:56 fgsch Exp $
+--- ld/emulparams/sparcobsd.sh.orig	Wed Feb 13 23:19:25 2002
++++ ld/emulparams/sparcobsd.sh	Wed Feb 13 23:19:25 2002
+@@ -0,0 +1,5 @@
++SCRIPT_NAME=aout
++TEXT_START_ADDR=0x1020
++OUTPUT_FORMAT="a.out-sparc-netbsd"
++TARGET_PAGE_SIZE=0x1000
++ARCH=sparc

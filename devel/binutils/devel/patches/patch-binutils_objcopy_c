@@ -1,0 +1,38 @@
+--- binutils/objcopy.c.orig	Sun Feb 10 23:57:17 2002
++++ binutils/objcopy.c	Sat Apr  6 22:09:52 2002
+@@ -1292,7 +1292,7 @@ copy_archive (ibfd, obfd, output_target)
+     } *list, *l;
+   bfd **ptr = &obfd->archive_head;
+   bfd *this_element;
+-  char *dir = make_tempname (bfd_get_filename (obfd));
++  char *dir = make_tempname (bfd_get_filename (obfd), 1);
+ 
+   /* Make a temp directory to hold the contents.  */
+   if (MKDIR (dir, 0700) != 0)
+@@ -1324,7 +1324,7 @@ copy_archive (ibfd, obfd, output_target)
+       /* If the file already exists, make another temp dir.  */
+       if (stat (output_name, &buf) >= 0)
+ 	{
+-	  output_name = make_tempname (output_name);
++	  output_name = make_tempname (output_name, 1);
+ 	  if (MKDIR (output_name, 0700) != 0)
+ 	    {
+ 	      fatal (_("cannot mkdir %s for archive copying (error: %s)"),
+@@ -2078,7 +2078,7 @@ strip_main (argc, argv)
+       if (output_file != NULL)
+ 	tmpname = output_file;
+       else
+-	tmpname = make_tempname (argv[i]);
++	tmpname = make_tempname (argv[i], 0);
+       status = 0;
+ 
+       copy_file (argv[i], tmpname, input_target, output_target);
+@@ -2587,7 +2587,7 @@ copy_main (argc, argv)
+ 
+   if (output_filename == (char *) NULL)
+     {
+-      char *tmpname = make_tempname (input_filename);
++      char *tmpname = make_tempname (input_filename, 0);
+ 
+       copy_file (input_filename, tmpname, input_target, output_target);
+       if (status == 0)

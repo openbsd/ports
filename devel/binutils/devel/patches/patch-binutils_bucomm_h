@@ -1,0 +1,11 @@
+--- binutils/bucomm.h.orig	Sun Jul 29 02:31:43 2001
++++ binutils/bucomm.h	Sat Apr  6 22:09:51 2002
+@@ -168,7 +168,7 @@ void list_supported_architectures PARAMS
+ 
+ void print_arelt_descr PARAMS ((FILE *file, bfd *abfd, boolean verbose));
+ 
+-char *make_tempname PARAMS ((char *));
++char *make_tempname PARAMS ((char *, int));
+ 
+ bfd_vma parse_vma PARAMS ((const char *, const char *));
+ 

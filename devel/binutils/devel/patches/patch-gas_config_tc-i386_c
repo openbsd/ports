@@ -1,0 +1,23 @@
+$OpenBSD: patch-gas_config_tc-i386_c,v 1.1.1.1 2002/04/21 21:39:52 fgsch Exp $
+--- gas/config/tc-i386.c.orig	Fri Feb 15 11:21:07 2002
++++ gas/config/tc-i386.c	Sat Apr  6 22:09:55 2002
+@@ -271,6 +271,9 @@ static char stackop_size = '\0';
+ /* Non-zero to quieten some warnings.  */
+ static int quiet_warnings = 0;
+ 
++/* Non-zero if we are generating PIC code.  */
++static int i386_pic_code = 0;
++
+ /* CPU name.  */
+ static const char *cpu_arch_name = NULL;
+ 
+@@ -4595,6 +4598,9 @@ md_parse_option (c, arg)
+ 
+       /* -k: Ignore for FreeBSD compatibility.  */
+     case 'k':
++#ifdef OBJ_AOUT
++      i386_pic_code = 1;
++#endif
+       break;
+ 
+     case 's':

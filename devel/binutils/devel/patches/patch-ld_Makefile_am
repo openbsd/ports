@@ -1,0 +1,76 @@
+$OpenBSD: patch-ld_Makefile_am,v 1.1.1.1 2002/04/21 21:39:56 fgsch Exp $
+--- ld/Makefile.am.orig	Wed Feb 20 03:56:00 2002
++++ ld/Makefile.am	Sat Apr  6 22:09:59 2002
+@@ -188,6 +188,7 @@ ALL_EMULATIONS = \
+ 	ehppaelf.o \
+ 	ehppalinux.o \
+ 	ehppanbsd.o \
++ 	ehppaobsd.o \
+ 	ei386aout.o \
+ 	ei386beos.o \
+ 	ei386bsd.o \
+@@ -199,6 +200,7 @@ ALL_EMULATIONS = \
+ 	ei386moss.o \
+ 	ei386msdos.o \
+ 	ei386nbsd.o \
++	ei386obsd.o \
+ 	ei386nw.o \
+ 	ei386pe.o \
+ 	ei386pe_posix.o \
+@@ -216,6 +218,7 @@ ALL_EMULATIONS = \
+ 	em68klinux.o \
+ 	em68klynx.o \
+ 	em68knbsd.o \
++	em68kobsd.o \
+ 	em68kpsos.o \
+ 	em88kbcs.o \
+ 	emcorepe.o \
+@@ -254,6 +257,7 @@ ALL_EMULATIONS = \
+ 	esparclinux.o \
+ 	esparclynx.o \
+ 	esparcnbsd.o \
++	esparcobsd.o \
+ 	est2000.o \
+ 	esun3.o \
+ 	esun4.o \
+@@ -709,6 +713,10 @@ ehppanbsd.c: $(srcdir)/emulparams/hppanb
+   $(srcdir)/emultempl/elf32.em $(srcdir)/emultempl/hppaelf.em \
+   $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+ 	${GENSCRIPTS} hppanbsd "$(tdir_hppanbsd)"
++ehppaobsd.c: $(srcdir)/emulparams/hppaobsd.sh \
++  $(srcdir)/emultempl/elf32.em $(srcdir)/emultempl/hppaelf.em \
++  $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
++	${GENSCRIPTS} hppaobsd "$(tdir_hppaobsd)"
+ ehppa64linux.c: $(srcdir)/emulparams/hppa64linux.sh \
+   $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+ 	${GENSCRIPTS} hppa64linux "$(tdir_hppa64linux)"
+@@ -745,6 +753,9 @@ ei386msdos.c: $(srcdir)/emulparams/i386m
+ ei386nbsd.c:	$(srcdir)/emulparams/i386nbsd.sh \
+   $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/aout.sc ${GEN_DEPENDS}
+ 	${GENSCRIPTS} i386nbsd "$(tdir_i386nbsd)"
++ei386obsd.c:	$(srcdir)/emulparams/i386obsd.sh \
++  $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/aout.sc ${GEN_DEPENDS}
++	${GENSCRIPTS} i386obsd "$(tdir_i386obsd)"
+ ei386nw.c:	$(srcdir)/emulparams/i386nw.sh \
+   $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/nw.sc ${GEN_DEPENDS}
+ 	${GENSCRIPTS} i386nw "$(tdir_i386nw)"
+@@ -799,6 +810,9 @@ em68klynx.c: $(srcdir)/emulparams/m68kly
+ em68knbsd.c:	$(srcdir)/emulparams/m68knbsd.sh \
+   $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/aout.sc ${GEN_DEPENDS}
+ 	${GENSCRIPTS} m68knbsd "$(tdir_m68knbsd)"
++em68kobsd.c:	$(srcdir)/emulparams/m68kobsd.sh \
++  $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/aout.sc ${GEN_DEPENDS}
++	${GENSCRIPTS} m68kobsd "$(tdir_m68kobsd)"
+ em68kpsos.c:	$(srcdir)/emulparams/m68kpsos.sh \
+   $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/psos.sc ${GEN_DEPENDS}
+ 	${GENSCRIPTS} m68kpsos "$(tdir_m68kpsos)"
+@@ -937,6 +951,9 @@ esparclynx.c: $(srcdir)/emulparams/sparc
+ esparcnbsd.c:	$(srcdir)/emulparams/sparcnbsd.sh \
+   $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/aout.sc ${GEN_DEPENDS}
+ 	${GENSCRIPTS} sparcnbsd "$(tdir_sparcnbsd)"
++esparcobsd.c:	$(srcdir)/emulparams/sparcobsd.sh \
++  $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/aout.sc ${GEN_DEPENDS}
++	${GENSCRIPTS} sparcobsd "$(tdir_sparcobsd)"
+ est2000.c: $(srcdir)/emulparams/st2000.sh \
+   $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/st2000.sc ${GEN_DEPENDS}
+ 	${GENSCRIPTS} st2000 "$(tdir_st2000)"

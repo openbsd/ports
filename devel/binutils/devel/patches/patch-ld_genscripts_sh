@@ -1,0 +1,20 @@
+$OpenBSD: patch-ld_genscripts_sh,v 1.1.1.1 2002/04/21 21:39:56 fgsch Exp $
+--- ld/genscripts.sh.orig	Sun Apr 21 06:01:29 2002
++++ ld/genscripts.sh	Sun Apr 21 06:01:47 2002
+@@ -52,15 +52,12 @@ if [ "x${LIB_PATH}" = "x" ] ; then
+     case " $EMULATION_LIBPATH " in
+       *" ${EMULATION_NAME} "*)
+         # Native, and default or emulation requesting LIB_PATH.
+-        LIB_PATH=/lib:/usr/lib
++        LIB_PATH=/usr/lib
+         if [ -n "${NATIVE_LIB_DIRS}" ]; then
+ 	  LIB_PATH=${LIB_PATH}:${NATIVE_LIB_DIRS}
+         fi
+         if [ "${libdir}" != /usr/lib ]; then
+ 	  LIB_PATH=${LIB_PATH}:${libdir}
+-        fi
+-        if [ "${libdir}" != /usr/local/lib ] ; then
+-	  LIB_PATH=${LIB_PATH}:/usr/local/lib
+         fi
+     esac
+   fi

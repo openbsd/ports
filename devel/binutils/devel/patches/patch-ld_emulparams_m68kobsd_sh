@@ -1,0 +1,11 @@
+$OpenBSD: patch-ld_emulparams_m68kobsd_sh,v 1.1.1.1 2002/04/21 21:39:56 fgsch Exp $
+--- ld/emulparams/m68kobsd.sh.orig	Wed Feb 13 23:19:25 2002
++++ ld/emulparams/m68kobsd.sh	Wed Feb 13 23:19:25 2002
+@@ -0,0 +1,7 @@
++SCRIPT_NAME=aout
++TEXT_START_ADDR=0x2020
++NONPAGED_TEXT_START_ADDR=0x2000
++OUTPUT_FORMAT="a.out-m68k-netbsd"
++TARGET_PAGE_SIZE=0x2000
++ARCH=m68k
++EXECUTABLE_SYMBOLS='__DYNAMIC = 0;'

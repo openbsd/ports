@@ -1,0 +1,10 @@
+$OpenBSD: patch-ld_emulparams_i386obsd_sh,v 1.1.1.1 2002/04/21 21:39:56 fgsch Exp $
+--- ld/emulparams/i386obsd.sh.orig	Wed Feb 13 23:19:25 2002
++++ ld/emulparams/i386obsd.sh	Wed Feb 13 23:19:25 2002
+@@ -0,0 +1,6 @@
++SCRIPT_NAME=aout
++TEXT_START_ADDR=0x1020
++OUTPUT_FORMAT="a.out-i386-netbsd"
++TARGET_PAGE_SIZE=0x1000
++ARCH=i386
++EXECUTABLE_SYMBOLS='__DYNAMIC = 0;'

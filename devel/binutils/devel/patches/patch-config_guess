@@ -1,0 +1,21 @@
+$OpenBSD: patch-config_guess,v 1.1.1.1 2002/04/21 21:39:52 fgsch Exp $
+--- config.guess.orig	Sat Feb 23 21:02:46 2002
++++ config.guess	Sat Apr  6 22:09:52 2002
+@@ -187,11 +187,17 @@ case "${UNAME_MACHINE}:${UNAME_SYSTEM}:$
+     macppc:OpenBSD:*:*)
+ 	echo powerpc-unknown-openbsd${UNAME_RELEASE}
+ 	exit 0 ;;
++    macppc:OpenBSD:*:*)
++	echo powerpc-unknown-openbsd${UNAME_RELEASE}
++	exit 0 ;;
+     mvme68k:OpenBSD:*:*)
+ 	echo m68k-unknown-openbsd${UNAME_RELEASE}
+ 	exit 0 ;;
+     mvme88k:OpenBSD:*:*)
+ 	echo m88k-unknown-openbsd${UNAME_RELEASE}
++	exit 0 ;;
++    mvmeppc:OpenBSD:*:*)
++	echo powerpc-unknown-openbsd${UNAME_RELEASE}
+ 	exit 0 ;;
+     mvmeppc:OpenBSD:*:*)
+ 	echo powerpc-unknown-openbsd${UNAME_RELEASE}

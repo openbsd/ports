@@ -1,0 +1,37 @@
+$OpenBSD: patch-gas_configure_in,v 1.1.1.1 2002/04/21 21:39:52 fgsch Exp $
+--- gas/configure.in.orig	Tue Feb 26 07:35:27 2002
++++ gas/configure.in	Sat Apr  6 22:09:58 2002
+@@ -180,7 +180,7 @@ changequote([,])dnl
+ 
+       alpha*-*-*vms*)	    fmt=evax ;;
+       alpha*-*-netware*)    fmt=ecoff ;;
+-      alpha*-*-openbsd*)    fmt=ecoff ;;
++      alpha*-*-openbsd*)    fmt=elf em=obsd ;;
+       alpha*-*-osf*)        fmt=ecoff ;;
+       alpha*-*-linuxecoff*) fmt=ecoff ;;
+       alpha*-*-linux-gnu*)  fmt=elf em=linux ;;
+@@ -224,6 +224,7 @@ changequote([,])dnl
+       hppa-*-*elf*)         fmt=elf em=hppa ;;
+       hppa-*-lites*)        fmt=elf em=hppa ;;
+       hppa-*-netbsd*)       fmt=elf em=nbsd ;;
++      hppa-*-openbsd*)      fmt=elf em=hppa ;;
+       hppa-*-osf*)          fmt=som em=hppa ;;
+       hppa-*-rtems*)        fmt=elf em=hppa ;;
+       hppa-*-hpux11*)	    case ${cpu} in
+@@ -453,7 +454,15 @@ changequote([,])dnl
+                                 sparc64) fmt=elf ;;
+                             esac
+                             ;;
+-      sparc-*-openbsd*)     fmt=aout em=nbsd ;;
++      sparc-*-openbsd*)     em=nbsd bfd_gas=yes
++                            case ${cpu} in
++                                sparc) case ${os} in
++                                           *elf*) fmt=elf ;;
++                                           *)     fmt=aout ;;
++                                       esac ;;
++                                sparc64) fmt=elf ;;
++                            esac
++                            ;;
+ 
+       strongarm-*-coff)     fmt=coff ;;
+       strongarm-*-elf)      fmt=elf ;;

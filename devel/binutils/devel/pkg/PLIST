@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/21 21:39:52 fgsch Exp $
+${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/ar
+${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/as
+${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/gprof
+${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/ld
+${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/nm
+${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/objdump
+${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/ranlib
+${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/size
+${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/strings
+${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/strip
+${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/ar.1
+${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/as.1
+${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/gprof.1
+${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/ld.1
+${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/nm.1
+${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/objdump.1
+${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/ranlib.1
+${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/size.1
+${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/strings.1
+${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/strip.1
+@dirrm ${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1
+@dirrm ${TARGET_ARCH}-unknown-openbsd${OSREV}/man
+@dirrm ${TARGET_ARCH}-unknown-openbsd${OSREV}/bin
+@dirrm ${TARGET_ARCH}-unknown-openbsd${OSREV}
