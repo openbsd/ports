@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2000/09/19 13:18:50 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2000/10/22 17:02:41 espie Exp $
 
 DISTNAME=	gnupg-1.0.3
 CATEGORIES=	security
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 
 HOMEPAGE=	http://www.gnupg.org/
 
-MAINTAINER=	markus@openbsd.org
+MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/08/19 02:05:41 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 17:02:40 espie Exp $
 
 DISTNAME=	sam
 PKGNAME=	sam-4.3-19980506
@@ -12,7 +12,7 @@ EXTRACT_CMD=	gzcat
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS= | sh
 
-MAINTAINER=	markus@openbsd.org
+MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

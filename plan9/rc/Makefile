@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/08/19 01:47:54 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 17:02:40 espie Exp $
 
 DISTNAME=	rc-1.6
 CATEGORIES=	plan9 shells
@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.star.le.ac.uk/~tjg/rc/release/ \
 MASTER_SITES0=	http://www.star.le.ac.uk/~tjg/rc/misc/
 SUPDISTFILES=	editline-1.5.tar.gz:0
 
-MAINTAINER=	markus@openbsd.org
+MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

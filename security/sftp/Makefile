@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2000/10/22 15:43:26 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/22 17:02:41 espie Exp $
 DISTNAME=	sftp-0.8.1
 CATEGORIES=	net security
 NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.xbill.org/pub/sftp/
 HOMEPAGE=	http://www.xbill.org/sftp/
 
-MAINTAINER=	markus@openbsd.org
+MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
