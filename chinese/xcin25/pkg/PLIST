@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/24 03:18:45 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/10/29 03:05:03 kevlo Exp $
 @exec ln -sf %D/usr/X11R6/bin/xcin /usr/local/bin/xcin25
 @unexec rm -rf /usr/local/bin/xcin25
+@exec ln -sf %D/usr/X11R6/lib/libxcin.so.0.0.0 %D/usr/X11R6/lib/libxcin.so.0
+@unexec rm -rf %D/usr/X11R6/lib/libxcin.so.0
 etc/chinese/xcin/xcinrc
 lib/libdb-4.0.so
 usr/X11R6/bin/cin2tab
@@ -64,8 +66,6 @@ usr/share/icons/xcin.xpm
 usr/share/locale/zh_TW/LC_MESSAGES/xcin.mo
 usr/share/tabe/tsi.db
 usr/share/tabe/yin.db
-@exec chroot %D /sbin/ldconfig
-@unexec chroot %D /sbin/ldconfig
 @dirrm usr/share/tabe
 @dirrm usr/share/icons
 @dirrm usr/X11R6/lib/X11/xcin/tab/gbk
