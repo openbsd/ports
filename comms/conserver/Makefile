@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/12/14 13:22:59 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/02/27 23:36:18 naddy Exp $
 
 PKGNAME=	conserver-5.21
 DISTFILES=	conserver-5.21-Beta.shar.gz
@@ -20,7 +20,7 @@ WRKDIST=	${WRKDIR}
 # Set this to where you want console(8) to connect to by default
 # or use something like ``make DEFAULTHOST=myserver.mydomain.net''
 DEFAULTHOST?=	localhost
-MAKE_ENV+=	DEFAULTHOST="${DEFAULTHOST}"
+MAKE_ENV+=	CC="${CC}" DEFAULTHOST="${DEFAULTHOST}"
 
 post-extract:
 	cp ${FILESDIR}/Makefile ${WRKSRC}
