@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2002/10/25 16:21:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2003/05/11 18:46:33 brad Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
@@ -94,10 +94,10 @@ pre-build:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openldap
-	${INSTALL_DATA} ${DESTDIR}/etc/openldap/*.conf \
+	${INSTALL_DATA} ${DESTDIR}${SYSCONFDIR}/openldap/*.conf \
 		${PREFIX}/share/examples/openldap
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openldap/schema
-	${INSTALL_DATA} ${DESTDIR}/etc/openldap/schema/*.schema \
+	${INSTALL_DATA} ${DESTDIR}${SYSCONFDIR}/openldap/schema/*.schema \
 		 ${PREFIX}/share/examples/openldap/schema
 
 .include <bsd.port.mk>
