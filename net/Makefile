@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.206 2002/04/17 15:47:37 jcs Exp $
+# $OpenBSD: Makefile,v 1.207 2002/04/19 15:13:45 wilfried Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -110,6 +110,7 @@
      SUBDIR += p5-Net-ICQ2000
      SUBDIR += p5-Net-IPv4Addr
      SUBDIR += p5-Net-IRC
+     SUBDIR += p5-Net-MySQL
      SUBDIR += p5-Net-ParseWhois
      SUBDIR += p5-Net-Pcap
      SUBDIR += p5-Net-Ping-External
