@@ -1,6 +1,24 @@
-$OpenBSD: patch-mpg321_c,v 1.1 2002/08/27 20:00:30 naddy Exp $
---- mpg321.c.orig	Tue Aug 27 21:31:05 2002
-+++ mpg321.c	Tue Aug 27 21:31:45 2002
+$OpenBSD: patch-mpg321_c,v 1.2 2002/09/02 23:25:02 naddy Exp $
+--- mpg321.c.orig	Sun Mar 24 06:49:20 2002
++++ mpg321.c	Tue Sep  3 00:07:46 2002
+@@ -188,7 +188,7 @@ static int show_id3(struct id3_tag const
+             
+             else
+             {
+-                printf(names[i]);
++                printf("%s", names[i]);
+                 free(names[i]);
+             }
+         }
+@@ -203,7 +203,7 @@ static int show_id3(struct id3_tag const
+             if (!names[i])  {
+                 fprintf (stderr, emptystring);
+             }   else    {
+-                fprintf (stderr, names[i]);
++                fprintf (stderr, "%s", names[i]);
+                 free (names[i]);
+             }
+             if (i%2) fprintf (stderr, "\n");
 @@ -509,9 +509,6 @@ int main(int argc, char *argv[])
  
          mad_decoder_finish(&decoder);
