@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 1999/04/01 06:20:06 brad Exp $
+# $OpenBSD: Makefile,v 1.15 1999/08/18 02:43:45 angelos Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 DISTNAME=	postgresql-6.3.2
 CATEGORIES=	databases
+
+BROKEN=		"Version 6.5.1 is out, time someone updated this"
 
 NEED_VERSION=	1.64
 NO_PACKAGE=	"Requires pgsql uid"
