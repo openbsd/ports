@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/12/31 01:48:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2001/04/08 21:10:34 naddy Exp $
 
-DISTNAME=	xterm-150
+COMMENT=	"newer version of xterm"
+
+DISTNAME=	xterm-153
 CATEGORIES=	x11
-NEED_VERSION=	1.341
-
+NEED_VERSION=	1.378
 HOMEPAGE=	http://dickey.his.com/xterm/xterm.html
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -13,11 +14,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	col256 no_tek xaw3d
-FLAVOR?=
-
 MASTER_SITES=	ftp://dickey.his.com/xterm/
 EXTRACT_SUFX=	.tgz
+
+FLAVORS=	col256 no_tek xaw3d
+FLAVOR?=
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
