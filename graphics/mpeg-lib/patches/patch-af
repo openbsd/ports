@@ -1,0 +1,12 @@
+--- wrapper.c.orig	Tue Oct 10 14:08:39 1995
++++ wrapper.c	Tue Jun 30 15:07:27 1998
+@@ -390,7 +390,8 @@
+ 
+    dprintf ("\nGetMPEGFrame: just received a finished frame: "
+ 	    "copying from %08X to %08X\n", CurrentImage, Frame);
+-   memcpy (Frame, CurrentImage, ImageInfo.Size);
++   if (!MovieDone)
++      memcpy (Frame, CurrentImage, ImageInfo.Size);
+    return (!MovieDone);
+ 
+ }     /* GetMPEGFrame () */

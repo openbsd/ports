@@ -1,12 +1,15 @@
---- wrapper.c.orig	Tue Oct 10 16:08:39 1995
-+++ wrapper.c	Tue Oct 14 14:25:17 1997
-@@ -390,7 +390,8 @@
- 
-    dprintf ("\nGetMPEGFrame: just received a finished frame: "
- 	    "copying from %08X to %08X\n", CurrentImage, Frame);
--   memcpy (Frame, CurrentImage, ImageInfo.Size);
-+   if (!MovieDone)
-+      memcpy (Frame, CurrentImage, ImageInfo.Size);
-    return (!MovieDone);
- 
- }     /* GetMPEGFrame () */
+--- config.sub.orig	Tue Oct 10 09:38:00 1995
++++ config.sub	Tue Jun 30 15:07:26 1998
+@@ -637,9 +637,9 @@
+ 	      | -amigados* | -msdos* | -newsos* | -unicos* | -aos* \
+ 	      | -nindy* | -vxworks* | -ebmon* | -hms* | -mvs* | -clix* \
+ 	      | -riscos* | -linux* | -uniplus* | -iris* | -rtu* | -xenix* \
+-	      | -hiux* | -386bsd* | -netbsd* | -freebsd* | -riscix* \
+-	      | -lynxos* | -bosx* | -nextstep* | -cxux* | -aout* | -elf* \
+-	      | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
++	      | -hiux* | -386bsd* | -netbsd* | -openbsd* | -freebsd* \
++	      |	-riscix* | -lynxos* | -bosx* | -nextstep* | -cxux* | -aout* \
++	      | -elf* | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
+ 	      | -udi* | -eabi* | -lites* )
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;

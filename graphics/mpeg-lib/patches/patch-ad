@@ -1,0 +1,26 @@
+--- configure.orig	Mon Feb 26 09:58:27 1996
++++ configure	Tue Jun 30 15:07:28 1998
+@@ -817,6 +817,7 @@
+ if test $dither = yes; then
+   libsrc='$(DECODER_SRC) $(DITHER_SRC)'
+   libobj='$(DECODER_SRC:.c=.o) $(DITHER_SRC:.c=.o)'
++  shlibobj='$(DECODER_SRC:.c=.so) $(DITHER_SRC:.c=.so)'
+   cat >> confdefs.h <<\EOF
+ #define ENABLE_DITHER 1
+ EOF
+@@ -825,6 +826,7 @@
+ else
+   libsrc='$(DECODER_SRC)'
+   libobj='$(DECODER_SRC:.c=.o)'
++  shlibobj='$(DECODER_SRC:.c=.so)'
+   cat >> confdefs.h <<\EOF
+ #define ENABLE_DITHER 0
+ EOF
+@@ -1459,6 +1461,7 @@
+ s%@AR@%$AR%g
+ s%@libsrc@%$libsrc%g
+ s%@libobj@%$libobj%g
++s%@shlibobj@%$shlibobj%g
+ s%@jrevdct@%$jrevdct%g
+ s%@extras@%$extras%g
+ /@Makefile_extras@/r $Makefile_extras
