@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2002/03/04 00:58:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2002/05/06 13:42:52 form Exp $
 
+    SUBDIR += BasiliskII
     SUBDIR += bochs
     SUBDIR += bochs,debug
     SUBDIR += freebsd_lib
