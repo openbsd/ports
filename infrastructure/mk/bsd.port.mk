@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.561 2003/07/23 22:24:24 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.562 2003/07/24 12:50:38 naddy Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2054,8 +2054,8 @@ _clean-depends:
 .if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
 	@unset FLAVOR SUBPACKAGE || true; \
 	for dir in ${_ALWAYS_DEP} ${_RUN_DEP} ${_BUILD_DEP}; do \
-		if fgrep -q $$dir $${_DEPENDS_FILE}; then :; else \
-			echo $$dir >>$${_DEPENDS_FILE}; \
+		if fgrep -q "|$$dir|" $${_DEPENDS_FILE}; then :; else \
+			echo "|$$dir|" >>$${_DEPENDS_FILE}; \
 			${_flavor_fragment}; \
 			eval $$toset ${MAKE} CLEANDEPENDS=No ${_DEPEND_THRU} clean _clean-depends; \
 		fi; \
