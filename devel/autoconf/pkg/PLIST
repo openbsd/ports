@@ -1,3 +1,6 @@
+@cwd /usr/local
+@name autoconf-2.13
+@pkgdep m4-1.4
 bin/autoconf
 bin/autoheader
 bin/autoreconf
@@ -11,19 +14,17 @@ info/standards.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/autoconf.info %D/info/dir
 @exec install-info %D/info/standards.info %D/info/dir
+share/autoconf/autoconf.m4f
+share/autoconf/autoheader.m4f
+share/autoconf/autoconf.m4
+share/autoconf/acgeneral.m4
+share/autoconf/acoldnames.m4
+share/autoconf/acspecific.m4
+share/autoconf/autoheader.m4
 share/autoconf/acconfig.h
 share/autoconf/acfunctions
-share/autoconf/acgeneral.m4
 share/autoconf/acheaders
 share/autoconf/acidentifiers
-share/autoconf/acmakevars
-share/autoconf/acoldnames.m4
 share/autoconf/acprograms
-share/autoconf/acspecific.m4
-share/autoconf/autoconf.m4
-share/autoconf/autoconf.m4f
-share/autoconf/autoheader.m4
-share/autoconf/autoheader.m4f
-share/autoconf/config.guess
-share/autoconf/config.sub
+share/autoconf/acmakevars
 @dirrm share/autoconf

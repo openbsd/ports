@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/08 18:21:00 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/01/06 21:29:51 marc Exp $
 #
 
-DISTNAME=       autoconf-2.12
+DISTNAME=       autoconf-2.13
 CATEGORIES=	devel
 
-MAINTAINER=	joey@OpenBSD.ORG
+MAINTAINER=	marc@OpenBSD.ORG
 
 MASTER_SITES=	${MASTER_SITE_GNU}
 
