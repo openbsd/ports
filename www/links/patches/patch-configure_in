@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure_in,v 1.1 2004/02/23 15:44:43 espie Exp $
+--- configure.in.orig	Thu Feb 12 23:04:49 2004
++++ configure.in	Thu Feb 12 23:05:41 2004
+@@ -147,17 +147,7 @@
+ LIBS_X="$LIBS"
+ cf_result=no
+ if test -z "$disable_ssl"; then
+-	PKG_CHECK_MODULES(OPENSSL,openssl,pkgconfig_openssl=yes,pkgconfig_openssl=no)
+-	if test "$pkgconfig_openssl" = "yes"; then
+ 		AC_MSG_CHECKING([for OpenSSL])
+-		CPPFLAGS="$CPPFLAGS `pkg-config openssl --cflags-only-I`"
+-		LIBS="$LIBS `pkg-config openssl --libs`"
+-		AC_TRY_LINK([#include <openssl/ssl.h>], [OpenSSL_add_all_algorithms()], cf_result=yes, cf_result=no)
+-		if test "$cf_result" != yes; then
+-			AC_TRY_LINK([#include <openssl/ssl.h>], [SSLeay_add_ssl_algorithms()], cf_result=yes, cf_result=no)
+-	   	fi
+-	else
+-		AC_MSG_CHECKING([for OpenSSL])
+ 		for ssldir in "" /usr /usr/local/openssl /usr/lib/openssl /usr/local/ssl /usr/local/www /usr/lib/ssl /usr/local /usr/pkg /opt /opt/openssl; do
+ 			if test "$cf_result" = no; then
+ 				if test ! -z "$ssldir" && test "$ssldir" != /usr; then
+@@ -172,7 +162,6 @@
+ 				fi
+ 			fi
+ 		done
+-	fi
+ 
+ 	AC_MSG_RESULT($cf_result)
+ 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/03 00:01:19 margarida Exp $
+# $OpenBSD: Makefile,v 1.9 2004/02/23 15:44:43 espie Exp $
 
 COMMENT=	"text browser, displays while downloading"
 
-VERSION=	0.98
+VERSION=	0.99
 DISTNAME=	links-${VERSION}
 CATEGORIES=	www
 
@@ -18,6 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://artax.karlin.mff.cuni.cz/%7Emikulas/links/download/ \
 		http://links.sourceforge.net/download/
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
 
 .include <bsd.port.mk>
