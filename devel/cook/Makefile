@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/22 19:14:13 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/11/22 12:12:43 kevlo Exp $
 # $FreeBSD: Makefile,v 1.5 2000/05/30 23:19:09 jasone Exp $
 
-DISTNAME=	cook-2.15
+DISTNAME=	cook-2.16
 CATEGORIES=	devel
-NEED_VERSION=	1.307
-MASTER_SITES=	http://www.canb.auug.org.au/~millerp/cook/
+NEED_VERSION=	1.340
+MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=       http://www.canb.auug.org.au/~millerp/cook/
 
