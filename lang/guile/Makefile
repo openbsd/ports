@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/08/09 21:41:19 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/08/10 02:38:50 brad Exp $
 
 DISTNAME=	guile-1.3
 CATEGORIES=	lang
@@ -21,8 +21,8 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
 post-install:
-	${INSTALL_DATA_DIR} ${LOCALBASE}/share/aclocal
-	${INSTALL_DATA} ${WRKSRC}/guile.m4 ${LOCALBASE}/share/aclocal
-	${INSTALL_DATA} ${WRKSRC}/qthreads.m4 ${LOCALBASE}/share/aclocal
+	${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal
+	${INSTALL_DATA} ${WRKSRC}/guile.m4 ${PREFIX}/share/aclocal
+	${INSTALL_DATA} ${WRKSRC}/qthreads.m4 ${PREFIX}/share/aclocal
 
 .include <bsd.port.mk>
