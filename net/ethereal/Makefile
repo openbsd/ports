@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.79 2003/11/20 03:17:11 brad Exp $
+# $OpenBSD: Makefile,v 1.80 2004/01/26 21:18:41 jakob Exp $
 
 COMMENT=	"network protocol analyzer"
+COMMENT-x11=	"network protocol analyzer (X11 GUI)"
 
-VERSION=	0.9.16
+VERSION=	0.10.0a
 DISTNAME=	ethereal-${VERSION}
 CATEGORIES=	net x11
+
+FULLPKGNAME=		tethereal-${VERSION}${FLAVOR_EXT}
+FULLPKGNAME-x11=	ethereal-${VERSION}${FLAVOR_EXT}
 
 MASTER_SITES=	http://www.ethereal.com/distribution/all-versions/ \
 		http://ethereal.zing.org/distribution/all-versions/ \
@@ -26,20 +30,23 @@ USE_LIBTOOL=		Yes
 SUBST_VARS+=		VERSION
 SEPARATE_BUILD=		concurrent
 
-FLAVORS=	no_x11 snmp adns
+FLAVORS=	snmp adns
 FLAVOR?=
+SUBPACKAGE?=
 
 CONFIGURE_ARGS+=	--enable-gtk2 \
 			--with-glib-prefix=${LOCALBASE}
 LIB_DEPENDS+=		glib-2.0.0.0,gthread-2.0.0.0::devel/glib2
 
-.if ${FLAVOR:L:Mno_x11}
-CONFIGURE_ARGS+=	--disable-ethereal
-.else
 USE_X11=		Yes
+MULTI_PACKAGES+=	-x11
 CONFIGURE_ARGS+=	--enable-ethereal \
 			--with-gtk-prefix=${LOCALBASE}
-LIB_DEPENDS+=		gdk_pixbuf-2.0.0.0,gdk-x11-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+BUILD_DEPENDS+=		gdk_pixbuf-2.0.0.0,gdk-x11-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+
+.if ${SUBPACKAGE} == "-x11"
+RUN_DEPENDS+=		gdk_pixbuf-2.0.0.0,gdk-x11-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
+			:ethereal-${VERSION}:net/ethereal
 .endif
 
 .if ${FLAVOR:L:Msnmp}

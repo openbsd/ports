@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2001/10/24 15:07:10 jakob Exp $
-bin/ethereal
-man/man1/ethereal.1

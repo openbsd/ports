@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST-x11,v 1.1 2004/01/26 21:18:41 jakob Exp $
+bin/ethereal
+man/man1/ethereal.1
