@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_Makefile_am,v 1.1 2001/06/30 17:34:14 pvalchev Exp $
---- src/Makefile.am.orig	Fri Jun 29 22:53:41 2001
-+++ src/Makefile.am	Fri Jun 29 22:54:14 2001
+$OpenBSD: patch-src_Makefile_am,v 1.2 2001/06/30 20:17:38 pvalchev Exp $
+--- src/Makefile.am.orig	Sat Jun 30 13:42:30 2001
++++ src/Makefile.am	Sat Jun 30 13:42:49 2001
 @@ -3,6 +3,6 @@ INCLUDES = -I$(top_srcdir)/kkstrtext-0.1
  bin_PROGRAMS = centericq
  centericq_SOURCES = centericq.cc centermain.cc icqconf.cc icqcontact.cc icqcontacts.cc icqdialogs.cc icqface.cc icqhist.cc icqhook.cc icqmlist.cc icqoffline.cc
  centericq_LDFLAGS = -L$(top_srcdir)/kkstrtext-0.1 -L$(top_srcdir)/kkconsui-0.1 -L$(top_srcdir)/kksystr-0.1 -L$(top_srcdir)/icqlib-1.2
--centericq_LDADD = -lkkstrtext -lkkconsui -lkksystr -licqlib -lncurses @LIBS@
-+centericq_LDADD = -lkkstrtext -lkkconsui -lkksystr -licqlib -lcurses @LIBS@
+-centericq_LDADD = -lkkstrtext -lkkconsui -lkksystr -licqlib -lncurses @LIBS@ @INTLLIBS@
++centericq_LDADD = -lkkstrtext -lkkconsui -lkksystr -licqlib -lcurses @LIBS@ @INTLLIBS@
  EXTRA_DIST = centericq.cc centermain.cc icqconf.cc icqcontact.cc icqcontacts.cc icqdialogs.cc icqface.cc icqhist.cc icqhook.cc icqmlist.cc icqoffline.cc centericq.h icqconf.h icqcontact.h icqcontacts.h icqface.h icqhist.h icqhook.h icqmlist.h icqoffline.h
  AUTOMAKE_OPTIONS = foreign
