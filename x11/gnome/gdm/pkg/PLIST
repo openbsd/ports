@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/10/08 15:57:01 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/01 04:13:06 marcm Exp $
 bin/gdm
 bin/gdm-binary
 bin/gdmXnest
@@ -93,6 +93,7 @@ share/locale/he/LC_MESSAGES/gdm-2.4.mo
 share/locale/hi/LC_MESSAGES/gdm-2.4.mo
 share/locale/hu/LC_MESSAGES/gdm-2.4.mo
 share/locale/id/LC_MESSAGES/gdm-2.4.mo
+share/locale/is/LC_MESSAGES/gdm-2.4.mo
 share/locale/it/LC_MESSAGES/gdm-2.4.mo
 share/locale/ja/LC_MESSAGES/gdm-2.4.mo
 share/locale/ko/LC_MESSAGES/gdm-2.4.mo
@@ -196,6 +197,8 @@ share/xsessions/gnome.desktop
 @comment @dirrm share/locale/ja
 @comment @dirrm share/locale/it/LC_MESSAGES
 @comment @dirrm share/locale/it
+@comment @dirrm share/locale/is/LC_MESSAGES
+@comment @dirrm share/locale/is
 @comment @dirrm share/locale/id/LC_MESSAGES
 @comment @dirrm share/locale/id
 @comment @dirrm share/locale/hu/LC_MESSAGES

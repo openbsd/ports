@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/10/07 05:48:54 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/01 04:13:06 marcm Exp $
 bin/gnome-about
 include/gnome-desktop-2.0/libgnome/gnome-desktop-item.h
 include/gnome-desktop-2.0/libgnomeui/gnome-ditem-edit.h
@@ -40,6 +40,7 @@ share/locale/az/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/bn/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/br/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/bs/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -72,6 +73,7 @@ share/locale/lv/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ml/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/mn/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/mr/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ne/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -233,6 +235,8 @@ share/pixmaps/vnterm.xpm
 @comment @dirrm share/locale/ne
 @comment @dirrm share/locale/ms/LC_MESSAGES
 @comment @dirrm share/locale/ms
+@comment @dirrm share/locale/mr/LC_MESSAGES
+@comment @dirrm share/locale/mr
 @comment @dirrm share/locale/mn/LC_MESSAGES
 @comment @dirrm share/locale/mn
 @comment @dirrm share/locale/ml/LC_MESSAGES
@@ -297,6 +301,8 @@ share/pixmaps/vnterm.xpm
 @comment @dirrm share/locale/ca
 @comment @dirrm share/locale/bs/LC_MESSAGES
 @comment @dirrm share/locale/bs
+@comment @dirrm share/locale/br/LC_MESSAGES
+@comment @dirrm share/locale/br
 @comment @dirrm share/locale/bn/LC_MESSAGES
 @comment @dirrm share/locale/bn
 @comment @dirrm share/locale/bg/LC_MESSAGES

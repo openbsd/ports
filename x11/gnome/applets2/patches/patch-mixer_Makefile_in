@@ -1,0 +1,11 @@
+$OpenBSD: patch-mixer_Makefile_in,v 1.1 2003/12/01 04:13:05 marcm Exp $
+--- mixer/Makefile.in.orig	2003-11-29 23:15:25.000000000 -0800
++++ mixer/Makefile.in	2003-11-29 23:15:30.000000000 -0800
+@@ -604,7 +604,6 @@ $(server_in_files): $(server_in_files:.s
+ @INTLTOOL_SCHEMAS_RULE@
+ 
+ install-data-local:
+-	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schemas_DATA) ;
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -1,0 +1,13 @@
+$OpenBSD: patch-stickynotes_Makefile_in,v 1.1 2003/12/01 04:13:05 marcm Exp $
+--- stickynotes/Makefile.in.orig	2003-11-29 23:15:51.000000000 -0800
++++ stickynotes/Makefile.in	2003-11-29 23:16:11.000000000 -0800
+@@ -615,9 +615,6 @@ $(server_in_files): $(server_in_files:.s
+ @INTLTOOL_SERVER_RULE@
+ 
+ install-data-local:
+-	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
+-	$(GCONFTOOL) --makefile-install-rule $(schemas_DATA)
+-	$(GCONFTOOL) --shutdown
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

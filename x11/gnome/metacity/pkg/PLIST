@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/10/07 05:48:55 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/12/01 04:13:06 marcm Exp $
 bin/metacity
 bin/metacity-message
 bin/metacity-theme-viewer
@@ -43,6 +43,7 @@ share/locale/is/LC_MESSAGES/metacity.mo
 share/locale/it/LC_MESSAGES/metacity.mo
 share/locale/ja/LC_MESSAGES/metacity.mo
 share/locale/ko/LC_MESSAGES/metacity.mo
+share/locale/lt/LC_MESSAGES/metacity.mo
 share/locale/lv/LC_MESSAGES/metacity.mo
 share/locale/mk/LC_MESSAGES/metacity.mo
 share/locale/ml/LC_MESSAGES/metacity.mo
@@ -234,6 +235,8 @@ share/themes/Simple/metacity-1/minimize.png
 @comment @dirrm share/locale/mk
 @comment @dirrm share/locale/lv/LC_MESSAGES
 @comment @dirrm share/locale/lv
+@comment @dirrm share/locale/lt/LC_MESSAGES
+@comment @dirrm share/locale/lt
 @comment @dirrm share/locale/ko/LC_MESSAGES
 @comment @dirrm share/locale/ko
 @comment @dirrm share/locale/ja/LC_MESSAGES

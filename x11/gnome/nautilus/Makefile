@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2003/10/07 05:48:55 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/12/01 04:13:06 marcm Exp $
 
 COMMENT=		"GNOME shell and file manager"
 
-DISTNAME=		nautilus-2.4.0
+DISTNAME=		nautilus-2.4.1
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/projects/nautilus/
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		gettext
 
 BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=		eel-2.2::x11/gnome/eel \
+LIB_DEPENDS=		eel-2.6.1::x11/gnome/eel \
 			gnome-desktop-2.0::x11/gnome/desktop \
 			rsvg-2.2::x11/gnome/librsvg
 RUN_DEPENDS=		:gnome-icon-theme-*:x11/gnome/icon-theme

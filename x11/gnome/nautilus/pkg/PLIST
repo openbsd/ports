@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/10/07 05:48:55 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/01 04:13:06 marcm Exp $
 bin/nautilus
 bin/nautilus-file-management-properties
 bin/nautilus-server-connect
@@ -105,6 +105,7 @@ share/locale/sq/LC_MESSAGES/nautilus.mo
 share/locale/sr/LC_MESSAGES/nautilus.mo
 share/locale/sr@Latn/LC_MESSAGES/nautilus.mo
 share/locale/sv/LC_MESSAGES/nautilus.mo
+share/locale/ta/LC_MESSAGES/nautilus.mo
 share/locale/th/LC_MESSAGES/nautilus.mo
 share/locale/tr/LC_MESSAGES/nautilus.mo
 share/locale/uk/LC_MESSAGES/nautilus.mo
@@ -223,6 +224,8 @@ share/schemas/nautilus/apps_nautilus_preferences.schemas
 @comment @dirrm share/locale/tr
 @comment @dirrm share/locale/th/LC_MESSAGES
 @comment @dirrm share/locale/th
+@comment @dirrm share/locale/ta/LC_MESSAGES
+@comment @dirrm share/locale/ta
 @comment @dirrm share/locale/sv/LC_MESSAGES
 @comment @dirrm share/locale/sv
 @comment @dirrm share/locale/sr@Latn/LC_MESSAGES
@@ -334,8 +337,10 @@ share/schemas/nautilus/apps_nautilus_preferences.schemas
 @dirrm share/examples/nautilus/X11/serverconfig
 @dirrm share/examples/nautilus/X11
 @dirrm share/examples/nautilus
-@dirrm share/control-center-2.0/capplets
-@dirrm share/control-center-2.0
+@comment Note: several ports will install capplets w/o depending on
+@comment       nautilus or controlcenter2 so we control the dir deletion
+@unexec rmdir %D/share/control-center-2.0/capplets 2>/dev/null || true
+@unexec rmdir %D/share/control-center-2.0 2>/dev/null || true
 @comment @dirrm share/applications
 @comment @dirrm lib/pkgconfig
 @comment @dirrm lib/bonobo

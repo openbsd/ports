@@ -1,7 +1,7 @@
-$OpenBSD: patch-gfloppy_Makefile_in,v 1.1.1.1 2003/08/07 02:15:50 marcm Exp $
---- gfloppy/Makefile.in.orig	Sun Jul 13 23:05:52 2003
-+++ gfloppy/Makefile.in	Sun Jul 13 23:06:14 2003
-@@ -134,7 +134,7 @@ gfloppyapp_DATA = $(gfloppyapp_in_files:
+$OpenBSD: patch-gfloppy_Makefile_in,v 1.2 2003/12/01 04:13:07 marcm Exp $
+--- gfloppy/Makefile.in.orig	2003-10-19 12:46:34.000000000 -0700
++++ gfloppy/Makefile.in	2003-11-29 23:05:45.000000000 -0800
+@@ -135,7 +135,7 @@ gfloppyapp_DATA = $(gfloppyapp_in_files:
  
  Mimedir = $(datadir)/mime-info
  
@@ -10,3 +10,11 @@ $OpenBSD: patch-gfloppy_Makefile_in,v 1.1.1.1 2003/08/07 02:15:50 marcm Exp $
  schemas_in_file = gfloppy.schemas.in
  schema_DATA = $(schemas_in_file:.schemas.in=.schemas)
  schema_source_data = $(foreach file, $(schema_DATA), $(srcdir)/$(file))
+@@ -415,7 +415,6 @@ install-data-local: gfloppy.desktop gflo
+ 	$(INSTALL_DATA) $(srcdir)/gfloppy.mime $(DESTDIR)$(Mimedir)/
+ 	$(INSTALL_DATA) $(srcdir)/gfloppy.keys $(DESTDIR)$(Mimedir)/
+ 
+-	-GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(schema_source_data)
+ 
+ dist-hook:
+ 	if test -d pixmaps; then \

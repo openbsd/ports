@@ -1,7 +1,7 @@
-$OpenBSD: patch-logview_logrtns_c,v 1.1.1.1 2003/08/07 02:15:50 marcm Exp $
---- logview/logrtns.c.orig	Sun Jul 13 22:52:24 2003
-+++ logview/logrtns.c	Sun Jul 13 22:53:16 2003
-@@ -790,7 +790,7 @@ ReadLogStats (Log * log)
+$OpenBSD: patch-logview_logrtns_c,v 1.2 2003/12/01 04:13:07 marcm Exp $
+--- logview/logrtns.c.orig	2003-05-30 23:38:32.000000000 -0700
++++ logview/logrtns.c	2003-11-29 23:02:02.000000000 -0800
+@@ -789,7 +789,7 @@ ReadLogStats (Log * log)
        if (IsLeapYear (curmark->year - lastyear + thisyear))
  	 curmark->time += 24 * 60 * 60;		/*  Add one day */
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-logview_logrtns_c,v 1.1.1.1 2003/08/07 02:15:50 marcm Exp $
        curmark->time += correction - tmptm->tm_gmtoff;
  #else
        curmark->time += correction - timezone;
-@@ -816,7 +816,7 @@ ReadLogStats (Log * log)
+@@ -815,7 +815,7 @@ ReadLogStats (Log * log)
     if (IsLeapYear (thisyear))
        log->lstats.enddate += 24 * 60 * 60;	/*  Add one day */
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-logview_logrtns_c,v 1.1.1.1 2003/08/07 02:15:50 marcm Exp $
     log->lstats.enddate += correction - tmptm->tm_gmtoff;
  #else
     log->lstats.enddate += correction - timezone;
-@@ -827,7 +827,7 @@ ReadLogStats (Log * log)
+@@ -826,7 +826,7 @@ ReadLogStats (Log * log)
     if (IsLeapYear (thisyear - lastyear))
        log->lstats.startdate += 24 * 60 * 60;	/*  Add one day */
  

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-battstat,v 1.6 2003/10/19 06:43:07 marcm Exp $
-libexec/battstat-applet-2
+@comment $OpenBSD: PLIST-battstat,v 1.7 2003/12/01 04:13:06 marcm Exp $
 lib/bonobo/servers/GNOME_BattstatApplet.server
+libexec/battstat-applet-2
 share/battstat_applet/battstat_applet.glade
 share/examples/gnome-applets2/sound/events/battstat_applet.soundlist
 share/gnome-2.0/ui/GNOME_BattstatApplet.xml

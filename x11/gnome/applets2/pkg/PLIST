@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/10/19 06:43:06 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/12/01 04:13:05 marcm Exp $
 bin/gkb_xmmap
 bin/gnome-keyboard-layout
 lib/bonobo/servers/GNOME_AccessxStatusApplet.server
@@ -1266,3 +1266,8 @@ share/xmodmap/xmodmap.yu
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-applets2/*.schemas > /dev/null
+@cwd ${SYSCONFDIR}
+@extra gnome/sound/events/mailcheck.soundlist
+@extraunexec rmdir %D/gnome/sound/events 2>/dev/null || true
+@extraunexec rmdir %D/gnome/sound 2>/dev/null || true
+@extraunexec rmdir %D/gnome 2>/dev/null || true

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/10/08 15:57:01 marcm Exp $
---- configure.orig	2003-09-25 11:31:22.000000000 -0700
-+++ configure	2003-09-26 13:38:24.000000000 -0700
-@@ -25163,7 +25163,7 @@ cat >>confdefs.h <<_ACEOF
+$OpenBSD: patch-configure,v 1.2 2003/12/01 04:13:06 marcm Exp $
+--- configure.orig	2003-10-16 09:53:36.000000000 -0700
++++ configure	2003-10-16 22:03:54.000000000 -0700
+@@ -25297,7 +25297,7 @@ cat >>confdefs.h <<_ACEOF
  _ACEOF
  
  

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2003/10/07 08:59:42 marcm Exp $
+# $OpenBSD: Makefile,v 1.10 2003/12/01 04:13:07 marcm Exp $
 
 COMMENT=		"General GNOME User Documentation"
 
-VERSION=		2.4.0
+VERSION=		2.4.1
 DISTNAME=		gnome2-user-docs-${VERSION}
 CATEGORIES=		x11/gnome
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/10/07 05:48:54 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/01 04:13:06 marcm Exp $
 @pkgcfl bonobo-activation-*
 bin/activation-client
 bin/bonobo-activation-run-query
@@ -82,28 +82,18 @@ share/gtk-doc/html/bonobo-activation/bonobo-activation.devhelp
 share/gtk-doc/html/bonobo-activation/bonobo-activation.png
 share/gtk-doc/html/bonobo-activation/checklist.html
 share/gtk-doc/html/bonobo-activation/configuring.html
-share/gtk-doc/html/bonobo-activation/fdl-section1.html
-share/gtk-doc/html/bonobo-activation/fdl-section10.html
-share/gtk-doc/html/bonobo-activation/fdl-section2.html
-share/gtk-doc/html/bonobo-activation/fdl-section3.html
-share/gtk-doc/html/bonobo-activation/fdl-section4.html
-share/gtk-doc/html/bonobo-activation/fdl-section5.html
-share/gtk-doc/html/bonobo-activation/fdl-section6.html
-share/gtk-doc/html/bonobo-activation/fdl-section7.html
-share/gtk-doc/html/bonobo-activation/fdl-section8.html
-share/gtk-doc/html/bonobo-activation/fdl-section9.html
-share/gtk-doc/html/bonobo-activation/fdl-using.html
-share/gtk-doc/html/bonobo-activation/fdl.html
 share/gtk-doc/html/bonobo-activation/home.png
 share/gtk-doc/html/bonobo-activation/index.html
 share/gtk-doc/html/bonobo-activation/index.sgml
 share/gtk-doc/html/bonobo-activation/left.png
+share/gtk-doc/html/bonobo-activation/lgpl.html
 share/gtk-doc/html/bonobo-activation/migrating.html
 share/gtk-doc/html/bonobo-activation/query-langage.html
 share/gtk-doc/html/bonobo-activation/query-syntax.html
 share/gtk-doc/html/bonobo-activation/right.png
 share/gtk-doc/html/bonobo-activation/server-arch.html
 share/gtk-doc/html/bonobo-activation/server-xml-reference.html
+share/gtk-doc/html/bonobo-activation/terms.html
 share/gtk-doc/html/bonobo-activation/tutorial.html
 share/gtk-doc/html/bonobo-activation/up.png
 share/gtk-doc/html/libbonobo/debugging.html
@@ -215,6 +205,7 @@ share/locale/it/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/ja/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/ko/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/li/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/lt/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/lv/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/mk/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/ml/LC_MESSAGES/libbonobo-2.0.mo
@@ -297,6 +288,8 @@ share/locale/zh_TW/LC_MESSAGES/libbonobo-2.0.mo
 @comment @dirrm share/locale/mk
 @comment @dirrm share/locale/lv/LC_MESSAGES
 @comment @dirrm share/locale/lv
+@comment @dirrm share/locale/lt/LC_MESSAGES
+@comment @dirrm share/locale/lt
 @comment @dirrm share/locale/li/LC_MESSAGES
 @comment @dirrm share/locale/li
 @comment @dirrm share/locale/ko/LC_MESSAGES

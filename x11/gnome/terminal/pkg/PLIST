@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/10/07 05:48:56 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/12/01 04:13:07 marcm Exp $
 bin/gnome-terminal
 lib/bonobo/servers/gnome-terminal.server
 share/application-registry/gnome-terminal.applications
@@ -105,6 +105,7 @@ share/locale/sq/LC_MESSAGES/gnome-terminal.mo
 share/locale/sr/LC_MESSAGES/gnome-terminal.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-terminal.mo
 share/locale/sv/LC_MESSAGES/gnome-terminal.mo
+share/locale/ta/LC_MESSAGES/gnome-terminal.mo
 share/locale/tr/LC_MESSAGES/gnome-terminal.mo
 share/locale/uk/LC_MESSAGES/gnome-terminal.mo
 share/locale/vi/LC_MESSAGES/gnome-terminal.mo
@@ -139,6 +140,8 @@ share/schemas/gnome-terminal/gnome-terminal.schemas
 @comment @dirrm share/locale/uk
 @comment @dirrm share/locale/tr/LC_MESSAGES
 @comment @dirrm share/locale/tr
+@comment @dirrm share/locale/ta/LC_MESSAGES
+@comment @dirrm share/locale/ta
 @comment @dirrm share/locale/sv/LC_MESSAGES
 @comment @dirrm share/locale/sv
 @comment @dirrm share/locale/sr@Latn/LC_MESSAGES

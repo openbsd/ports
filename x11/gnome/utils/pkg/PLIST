@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/10/07 05:48:56 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/12/01 04:13:07 marcm Exp $
 bin/gnome-dictionary
 bin/gnome-search-tool
 bin/gnome-system-log
@@ -159,6 +159,7 @@ share/pixmaps/gdict.png
 share/pixmaps/gnome-search-tool/gnome-search-tool-animation.png
 share/pixmaps/gnome-searchtool.png
 share/schemas/gnome-utils/gdict.schemas
+share/schemas/gnome-utils/gnome-search-tool.schemas
 share/schemas/gnome-utils/logview.schemas
 @dirrm share/schemas/gnome-utils
 @dirrm share/pixmaps/gnome-search-tool

@@ -1,7 +1,7 @@
-$OpenBSD: patch-daemon_slave_c,v 1.1.1.1 2003/10/08 15:57:01 marcm Exp $
---- daemon/slave.c.orig	2003-09-25 11:20:26.000000000 -0700
-+++ daemon/slave.c	2003-09-26 13:38:25.000000000 -0700
-@@ -2495,7 +2495,7 @@ gdm_slave_greeter (void)
+$OpenBSD: patch-daemon_slave_c,v 1.2 2003/12/01 04:13:06 marcm Exp $
+--- daemon/slave.c.orig	2003-10-16 09:38:45.000000000 -0700
++++ daemon/slave.c	2003-10-16 22:03:54.000000000 -0700
+@@ -2604,7 +2604,7 @@ gdm_slave_greeter (void)
  
  	exec_command (EXPANDED_BINDIR "/gdmlogin", NULL);
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-daemon_slave_c,v 1.1.1.1 2003/10/08 15:57:01 marcm Exp $
  
  	gdm_error_box (d,
  		       GTK_MESSAGE_ERROR,
-@@ -3287,8 +3287,7 @@ session_child_run (struct passwd *pwent,
+@@ -3396,8 +3396,7 @@ session_child_run (struct passwd *pwent,
  	if (setusercontext (NULL, pwent, pwent->pw_uid,
  			    LOGIN_SETLOGIN | LOGIN_SETPATH |
  			    LOGIN_SETPRIORITY | LOGIN_SETRESOURCES |
