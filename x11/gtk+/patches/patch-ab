@@ -1,0 +1,11 @@
+--- gdk/Makefile.in.orig	Tue Mar 16 16:28:30 1999
++++ gdk/Makefile.in	Tue Mar 16 16:29:02 1999
+@@ -139,7 +139,7 @@
+ LDADDS =  	@x_ldflags@		@x_libs@		@GLIB_LIBS@		-lm
+ 
+ 
+-libgdk_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE)          @GLIB_DEPLIBS@	         @x_ldflags@	         @x_libs@	         -lm
++libgdk_la_LDFLAGS =  	-version-info 1:2:0		@GLIB_DEPLIBS@		@x_ldflags@	         @x_libs@	         -lm
+ 
+ 
+ EXTRA_PROGRAMS = gxid

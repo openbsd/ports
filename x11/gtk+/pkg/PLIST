@@ -133,13 +133,12 @@ lib/locale/pl/LC_MESSAGES/gtk+.mo
 lib/locale/pt/LC_MESSAGES/gtk+.mo
 lib/locale/ru/LC_MESSAGES/gtk+.mo
 lib/locale/sv/LC_MESSAGES/gtk+.mo
-lib/libgdk-1.2.so.0.0
+lib/libgdk.so.1.2
 lib/libgdk.la
 lib/libgdk.a
-lib/libgtk-1.2.so.0.0
+lib/libgtk.so.1.2
 lib/libgtk.la
 lib/libgtk.a
-@unexec /sbin/ldconfig -R
 @exec /sbin/ldconfig -m %B
 man/man1/gtk-config.1
 @unexec install-info --delete %D/info/gdk.info %D/info/dir

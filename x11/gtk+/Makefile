@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/03/14 23:44:01 brad Exp $
+# $OpenBSD: Makefile,v 1.11 1999/03/16 22:59:32 brad Exp $
 
 DISTNAME=		gtk+-1.2.0
 CATEGORIES=     	x11
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 
 BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=    glib:${PORTSDIR}/devel/glib
+LIB_DEPENDS=    glib\\.1\\.2:${PORTSDIR}/devel/glib
 
 USE_X11=		yes
 USE_PERL5=		yes
