@@ -1,0 +1,29 @@
+--- dialog.man.orig	Mon Nov  8 14:49:01 1999
++++ dialog.man	Mon Nov  8 14:49:52 1999
+@@ -41,7 +41,7 @@
+ .BR yes/no " box," " menu" " box," " input" " box,"
+ .BR message " box," " text" " box," " info" " box,"
+ '\" NOHAVEGUAGE
+-.BR guage " box,"
++.BR gauge " box,"
+ '\" NOHAVEGUAGE
+ .BR checklist " box, and" " radiolist" " box."
+ .SH OPTIONS
+@@ -189,14 +189,14 @@
+ .IR status " to " on "."
+ 
+ '\" NOHAVEGUAGE
+-.IP "\fB\-\-guage \fItext height width percent\fR"
+-.RB "A " guage " box displays a meter along the bottom of the box.
++.IP "\fB\-\-gauge \fItext height width percent\fR"
++.RB "A " gauge " box displays a meter along the bottom of the box.
+ The meter indicates the percentage.  New percentages are read from
+ standard input, one integer per line.  The meter is updated
+ to reflect each new percentage.  If stdin is XXX, then the first
+ line following is taken as an integer percentage, then subsequent
+ lines up to another XXX are used for a new prompt.
+-The guage exits when EOF is reached on stdin.
++The gauge exits when EOF is reached on stdin.
+ 
+ '\" NOHAVEGUAGE
+ '\" NOHAVERC
