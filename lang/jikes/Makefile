@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/02 07:51:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2002/09/18 15:39:57 ian Exp $
 COMMENT="compile Java source into .class files (quickly!)"
 
 # Jikes, a fast Java compiler. As of OpenBSD 2.8, compilation needs
@@ -13,10 +13,10 @@ MASTER_SITES=	http://oss.software.ibm.com/pub/jikes/
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
 # IBM Public License
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=   "commercial contributor must indemnify all others"
+PERMIT_PACKAGE_FTP=     Yes
+PERMIT_DISTFILES_CDROM= "commercial contributor must indemnify all others"
+PERMIT_DISTFILES_FTP=   Yes
 
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= gnu
