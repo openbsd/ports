@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/07/14 06:52:04 kevlo Exp $
 bin/nam
 man/man1/nam.1
 share/examples/nam/README

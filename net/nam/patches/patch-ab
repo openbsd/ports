@@ -1,6 +1,6 @@
---- main.cc.orig	Sun Nov 28 17:24:15 1999
-+++ main.cc	Sun Nov 28 17:25:10 1999
-@@ -52,6 +52,7 @@
+--- main.cc.orig	Fri Jul 14 07:17:51 2000
++++ main.cc	Fri Jul 14 07:19:09 2000
+@@ -48,6 +48,7 @@
  
  extern "C" {
  #include <tk.h>

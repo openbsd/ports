@@ -1,5 +1,5 @@
---- nam_stream.cc.orig	Wed Jan  5 21:48:04 2000
-+++ nam_stream.cc	Wed Jan  5 22:00:35 2000
+--- nam_stream.cc.orig	Fri Jul 14 07:19:41 2000
++++ nam_stream.cc	Fri Jul 14 07:21:01 2000
 @@ -23,8 +23,10 @@
  #ifdef WIN32
  #include <limits.h>
@@ -11,7 +11,7 @@
  
  #include <assert.h>
  
-@@ -408,6 +410,8 @@
+@@ -418,6 +420,8 @@
  	insure_backing(tell() + 1);
  	return getc(back_);
  }
