@@ -1,0 +1,11 @@
+--- audio_oss.c.orig	Sun Mar 14 23:15:22 1999
++++ audio_oss.c	Sun Mar 14 23:16:16 1999
+@@ -34,7 +34,7 @@
+         mode = O_RDWR;
+ 
+     /* open the sound device */
+-    device = esd_audio_device ? esd_audio_device : "/dev/dsp";
++    device = esd_audio_device ? esd_audio_device : "/dev/sound";
+     if ((afd = open(device, mode, 0)) == -1)
+     {   /* Opening device failed */
+         perror(device);

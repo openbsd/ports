@@ -1,0 +1,10 @@
+--- configure.orig	Sun Mar 21 21:58:40 1999
++++ configure	Sun Mar 21 21:59:13 1999
+@@ -3493,6 +3493,7 @@
+    cat > conftest.$ac_ext <<EOF
+ #line 3495 "configure"
+ #include "confdefs.h"
++#include <stdio.h>
+ #include <tcpd.h>
+ #include <syslog.h>
+ int allow_severity = LOG_INFO;
