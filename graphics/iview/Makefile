@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/08 00:01:43 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/12/28 23:25:49 pvalchev Exp $
 
 COMMENT=	"image viewer for X"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	http://math.smsu.edu/~erik/files/
 
-LIB_DEPENDS=	SDL_image.0.0:sdl-image-*:devel/sdl-image
+LIB_DEPENDS=	SDL_image::devel/sdl-image
 
 USE_X11=	Yes
 

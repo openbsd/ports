@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/12/28 22:11:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2001/12/28 23:25:49 pvalchev Exp $
 
 COMMENT=	"X11 game engine library"
 
@@ -22,7 +22,7 @@ PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
 
 BUILD_DEPENDS=	automake::devel/automake
 LIB_DEPENDS=	SDL::devel/sdl \
-		SDL_image.0.0:sdl-image-*:devel/sdl-image
+		SDL_image::devel/sdl-image
 
 USE_X11=	Yes
 

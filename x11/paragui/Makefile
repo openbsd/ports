@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/12/28 22:11:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2001/12/28 23:25:50 pvalchev Exp $
 
 COMMENT=	"cross-platform high-level application framework"
 
@@ -21,8 +21,8 @@ MASTER_SITES=	ftp://ftp.bms-austria.com/pub/paragui/release/
 BUILD_DEPENDS=	:zip-*:archivers/zip
 
 LIB_DEPENDS=	SDL::devel/sdl \
-		SDL_ttf.0.3:sdl-ttf-*:devel/sdl-ttf \
-		SDL_image.0.0:sdl-image-*:devel/sdl-image \
+		SDL_ttf::devel/sdl-ttf \
+		SDL_image::devel/sdl-image \
 		ttf::print/freetype
 
 USE_X11=	Yes
