@@ -42,13 +42,10 @@ pgsql/include/utils/palloc.h
 pgsql/lib/global1.bki.source
 pgsql/lib/global1.description
 pgsql/lib/libecpg.a
-pgsql/lib/libecpg.so
 @comment this is bogus: if a package is created it will not contain
 @comment the libpgtcl libraries
 @unexec rm -f %D/pgsql/lib/libpgtcl.a
-@unexec rm -f %D/pgsql/lib/libpgtcl.so
 pgsql/lib/libpq.a
-pgsql/lib/libpq.so
 pgsql/lib/local1_template1.bki.source
 pgsql/lib/local1_template1.description
 pgsql/lib/pg_geqo.sample
