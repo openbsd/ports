@@ -1,0 +1,13 @@
+$OpenBSD: patch-config_h_in,v 1.1 2004/01/18 00:07:07 brad Exp $
+--- config.h.in.orig	2004-01-10 01:08:46.000000000 -0500
++++ config.h.in	2004-01-17 14:45:46.000000000 -0500
+@@ -116,6 +116,9 @@
+ /* Define to 1 if you have the <gnutls/gnutls.h> header file. */
+ #undef HAVE_GNUTLS_GNUTLS_H
+ 
++/* Define if you have OpenSSL */
++#undef HAVE_OPENSSL
++
+ /* Define if you have the iconv() function. */
+ #undef HAVE_ICONV
+ 
