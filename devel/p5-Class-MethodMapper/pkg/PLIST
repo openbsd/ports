@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/11 11:52:43 sturm Exp $
+${P5SITE}/Class/MethodMapper.pm
+${P5SITE}/auto/Class/MethodMapper/autosplit.ix
+@comment ${P5ARCH}/auto/Class/MethodMapper/.packlist
+man/man3p/Class::MethodMapper.3p
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Class/MethodMapper
+@comment @dirrm ${P5ARCH}/auto/Class
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/auto/Class/MethodMapper
+@dirrm ${P5SITE}/auto/Class
+@dirrm ${P5SITE}/auto
+@dirrm ${P5SITE}/Class
