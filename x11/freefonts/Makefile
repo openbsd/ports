@@ -3,13 +3,12 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.6 2000/04/18 10:34:10 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/05/17 15:37:55 espie Exp $
 #
 
 DISTNAME=	freefonts-0.10
 CATEGORIES=	x11
 NEED_VERSION=	1.191
-FAKE=No
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/
 
 MAINTAINER=	ports@OpenBSD.ORG
@@ -20,9 +19,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}
-USE_X11=	yes
+USE_X11=	Yes
+FAKE=		Yes
+NO_BUILD=	Yes
+FREEFONTDIR=	${PREFIX}/lib/X11/fonts
 
-post-install:
-	@cat ${PKGDIR}/DESCR
+do-install:
+	${INSTALL_DATA_DIR} ${FREEFONTDIR}
+	cd ${WRKDIST} && tar cf - freefont | (cd ${FREEFONTDIR} && tar -xf -)
 
 .include <bsd.port.mk>

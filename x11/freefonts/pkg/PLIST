@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/05/17 15:37:55 espie Exp $
 lib/X11/fonts/freefont/fonts.dir
 lib/X11/fonts/freefont/agate.pfb
 lib/X11/fonts/freefont/agateb.pfb
@@ -110,3 +111,5 @@ lib/X11/fonts/freefont/cheq.license
 lib/X11/fonts/freefont/zalescap.license
 lib/X11/fonts/freefont/dabkc____.license
 @dirrm lib/X11/fonts/freefont
+@exec echo "Add %B to your font path"
+@exec echo "e.g., with xset fp+ %B; xset fp rehash"
