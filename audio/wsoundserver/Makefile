@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/02/18 21:09:06 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2001/02/27 07:49:05 avsm Exp $
 
 DISTNAME=	WSoundServer-0.4.0
 PKGNAME=	${DISTNAME:L}
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 LIB_DEPENDS=	wraster.2::x11/windowmaker \
 		PropList.2::devel/libproplist \
 		audiofile::devel/libaudiofile \
-		dockapp:devel/libdockapp
+		dockapp::devel/libdockapp
 RUN_DEPENDS=	wmaker::x11/windowmaker
 
 USE_X11=	Yes
