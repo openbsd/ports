@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.575 2003/08/02 09:53:27 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.576 2003/08/04 13:25:36 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1842,6 +1842,12 @@ clean:
 	@cd ${.CURDIR} && exec ${MAKE} _delete-package-links
 	rm -f ${PKGFILE${SUBPACKAGE}}
 .  endif
+.  if ${_clean:L:Mreadmes}
+	rm -f ${.CURDIR}/${FULLPKGNAME}.html
+.      for _s in ${MULTI_PACKAGES}
+	rm -f ${.CURDIR}/${FULLPKGNAME${_s}}.html
+.      endfor
+.  endif
 .  if ${_clean:L:Mbulk}
 	rm -f ${_BULK_COOKIE}
 .  endif
@@ -2062,7 +2068,7 @@ describe:
 
 README_NAME?=	${TEMPLATES}/README.port
 
-readme readmes:
+readmes:
 .if defined(MULTI_PACKAGES) && !defined(PACKAGING)
 	@cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' FLAVOR='${FLAVOR}' PACKAGING='${SUBPACKAGE}' exec ${MAKE} readme
 .  if empty(SUBPACKAGE)
@@ -2445,7 +2451,7 @@ uninstall deinstall:
 	pre-extract pre-fake pre-fetch \
 	pre-install pre-package pre-patch \
 	pre-regress print-build-depends print-run-depends \
-	readme readmes rebuild \
+	readmes rebuild \
 	regress regress-depends \
 	reinstall repackage run-depends \
 	run-depends-list run-dir-depends show \

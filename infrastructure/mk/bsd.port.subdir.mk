@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.53 2003/08/02 09:58:11 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.54 2003/08/04 13:25:36 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -90,7 +90,7 @@ _SUBDIRUSE: .USE
 .endfor
 
 .for __target in all fetch fetch-list package fake extract configure \
-		 build clean describe distclean deinstall install \
+		 build describe distclean deinstall install \
 		 reinstall tags checksum mirror-distfiles list-distfiles \
 		 show fetch-makefile all-packages cdrom-packages \
 		 dir-depends package-dir-depends \
@@ -101,10 +101,13 @@ _SUBDIRUSE: .USE
 ${__target}: _SUBDIRUSE
 .endfor
 
-readmes: readme _SUBDIRUSE
+clean: _SUBDIRUSE
+.if ${clean:L:Mreadmes}
+	rm -f ${.CURDIR}/README.html
+.endif
 
-readme:
-	@rm -f README.html
+readmes: _SUBDIRUSE
+	@rm -f ${.CURDIR}/README.html
 	@cd ${.CURDIR} && exec ${MAKE} README.html
 
 TEMPLATES ?= ${PORTSDIR}/infrastructure/templates
@@ -138,7 +141,7 @@ _print-packagename:
 
 .PHONY: all fetch fetch-list package extract configure build clean \
 	describe distclean deinstall reinstall checksum mirror-distfiles \
-	list-distfiles show readmes readme \
+	list-distfiles show readmes \
 	install fake \
 	all-packages cdrom-packages ftp-packages packageinstall \
 	link-categories unlink-categories dir-depends package-dir-depends \
