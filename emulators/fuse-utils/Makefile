@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2003/10/17 06:28:07 grange Exp $
+# $OpenBSD: Makefile,v 1.3 2004/05/08 06:48:08 sturm Exp $
 
 COMMENT=		"Free Unix Spectrum Emulator utilities"
 
-DISTNAME=		fuse-utils-0.6.1
+DISTNAME=		fuse-utils-0.6.2
 CATEGORIES=		emulators
 
-HOMEPAGE=		http://www.srcf.ucam.org/~pak21/spectrum/fuse.html
+HOMEPAGE=		http://fuse-emulator.sourceforge.net/
 
 MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
 
@@ -15,10 +15,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://www.srcf.ucam.org/~pak21/spectrum/ \
-		ftp://ftp.worldofspectrum.org/pub/sinclair/emulators/unix/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 
-LIB_DEPENDS=		glib.1.2::devel/glib spectrum.2::devel/libspectrum
+MODULES=	gettext
+
+LIB_DEPENDS=	spectrum.3::devel/libspectrum
 
 CONFIGURE_STYLE=	gnu
 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2004/05/08 06:48:08 sturm Exp $
+--- configure.orig	2004-04-25 12:18:29.000000000 +0200
++++ configure	2004-04-25 12:18:42.000000000 +0200
+@@ -1238,7 +1238,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lgcrypt  $LIBS"
++LIBS="-lgcrypt -lgpg-error -lintl $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1244 "configure"
+ #include "confdefs.h"
