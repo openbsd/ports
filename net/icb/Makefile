@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 1998/10/22 06:31:47 form Exp $
-# NetBSD: Makefile,v 1.6 1998/04/15 11:15:34 frueauf Exp
-#
+# $OpenBSD: Makefile,v 1.9 1999/04/09 04:11:49 brad Exp $
+# $NetBSD: Makefile,v 1.6 1998/04/15 11:15:34 frueauf Exp $
 
-DISTNAME=		icb-5.0.9
-CATEGORIES=		net
+DISTNAME=	icb-5.0.9
+CATEGORIES=	net
+MASTER_SITES=	ftp://ftp.swcp.com/pub/icb/clients/unix/  \
+		ftp://ftp.swcp.com/pub/icb/clients/  \
+		ftp://ftp.empire.net/pub/icb/clients/  \
+		ftp://ftp.cs.unm.edu/pub/armijo/icb.src/clients/
 
-MASTER_SITES=		ftp://ftp.swcp.com/pub/icb/clients/unix/  \
-			ftp://ftp.swcp.com/pub/icb/clients/  \
-			ftp://ftp.empire.net/pub/icb/clients/  \
-			ftp://ftp.cs.unm.edu/pub/armijo/icb.src/clients/
+EXTRACT_SUFX=	.tar.Z
 
-EXTRACT_SUFX=		.tar.Z
-
-MAINTAINER=		form@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 do-configure:
 	@cd ${WRKSRC}; \

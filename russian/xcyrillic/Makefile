@@ -1,10 +1,4 @@
-# New ports collection makefile for: xrus
-# Version required:     1.0
-# Date created:         21 Jul 1998
-# Whom:                 Oleg Safiullin <form@OpenBSD.ORG>
-#
-# $OpenBSD: Makefile,v 1.6 1998/12/17 04:36:19 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.7 1999/04/09 04:11:53 brad Exp $
 
 DISTNAME=	xcyrillic-1.1
 CATEGORIES=	russian x11
@@ -14,7 +8,7 @@ ALL_TARGET=	X11R6
 INSTALL_TARGET=	X11R6_install
 USE_X11=	yes
 
-MAINTAINER=	form@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 post-install:
 	@${ECHO} "***"

@@ -1,10 +1,4 @@
-# OpenBSD makefile for:	wwwcount
-# Version required:	2.3
-# Date created:		17 Nov 1997
-# Whom:			ejovi
-#
-# $OpenBSD: Makefile,v 1.6 1998/10/20 08:39:49 form Exp $
-#
+# $OpenBSD: Makefile,v 1.7 1999/04/09 04:12:00 brad Exp $
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html
 # For digit images look at:
@@ -15,11 +9,10 @@ PKGNAME=	wwwcount-2.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.fccc.edu/users/muquit/src/wwwcount2.4/
 
-MAINTAINER=	form@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 GNU_CONFIGURE=	yes
 IS_INTERACTIVE=	yes
-MAN1=		mkstrip.1
 
 .if defined(USE_RELOAD)
 MAKE_FLAGS+=	COUNT_RELOAD=-DCOUNT_RELOAD=1

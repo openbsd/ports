@@ -1,24 +1,18 @@
-# New ports collection makefile for: xruskb
-# Version required:     1.5.3
-# Date created:         21 Jul 1998
-# Whom:                 Oleg Safiullin <form@OpenBSD.ORG>
-#
-# $OpenBSD: Makefile,v 1.2 1998/10/20 08:39:48 form Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/09 04:11:54 brad Exp $
 
 DISTNAME=	xruskb-1.5.3
 CATEGORIES=	russian x11
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/cyrillic/x11/ \
 		ftp://vs.itam.nsc.ru/pub/Unix/cyrillic/x11/
 
-MAINTAINER=	form@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 USE_X11=	yes
 GNU_CONFIGURE=	yes
 
 .if defined(USE_MOTIF)
 CONFIGURE_ARGS=	--with-motif --without-Xaw
-LIB_DEPENDS=	Xm\\.1\\.:${PORTSDIR}/x11/lesstif
+LIB_DEPENDS=	Xm:${PORTSDIR}/x11/lesstif
 .else
 CONFIGURE_ARGS=	--without-motif --with-Xaw
 .endif

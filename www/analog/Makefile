@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/02/24 06:07:26 fgsch Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/04/09 04:11:58 brad Exp $
 
 DISTNAME=	analog3.11
 PKGNAME=	analog-3.11
@@ -15,7 +14,7 @@ MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://analog.wizard.net/ \
 		ftp://ftp.netcasting.net/pub/packages/analog/
 
-MAINTAINER=	form@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 ETCDIR=		/etc
 ANALOGDIR=	${PREFIX}/lib/analog

@@ -1,10 +1,4 @@
-# OpenBSD makefile for: dhcp
-# Version required:     1.4.0.1
-# Date created:         29 April 1998
-# Whom:                 Oleg Safiullin <form@OpenBSD.ORG>
-#
-# $OpenBSD: Makefile,v 1.4 1998/10/20 08:39:48 form Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/04/09 04:11:52 brad Exp $
 
 DISTNAME=       dhcp-1.4.0p3
 PKGNAME=        wide-dhcp-1.4.0.3
@@ -12,12 +6,9 @@ CATEGORIES=     net
 MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/
 DISTFILES=	${DISTNAME}.tar.gz
 
-MAINTAINER=     form@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 MAKE_ENV=	OSTYPE=`uname`
-
-MAN5=	dhcpdb.server.5 dhcpdb.pool.5 dhcpdb.relay.5
-MAN8=	dhcpc.8 dhcps.8 relay.8 dhcpm.8
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/03/27 17:15:26 niklas Exp $
+# $OpenBSD: Makefile,v 1.7 1999/04/09 04:11:51 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp $
 
 DISTNAME=	tcpshow-1.74
@@ -7,10 +7,9 @@ MASTER_SITES=	http://www.freebsd.org/~obrien/
 
 DISTFILES=	tcpshow.c tcpshow.1
 
-MAINTAINER=     form@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 NO_WRKSUBDIR=	yes
-MAN1=		tcpshow.1
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
