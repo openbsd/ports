@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2001/07/03 16:10:14 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.15 2001/07/13 19:28:28 lebel Exp $
 bin/ex
 bin/rview
 bin/rvim
@@ -25,6 +25,7 @@ share/vim/vim60${V}/colors/peachpuff.vim
 share/vim/vim60${V}/colors/shine.vim
 share/vim/vim60${V}/compiler/README.txt
 share/vim/vim60${V}/compiler/msvc.vim
+share/vim/vim60${V}/compiler/tidy.vim
 share/vim/vim60${V}/doc/autocmd.txt
 share/vim/vim60${V}/doc/change.txt
 share/vim/vim60${V}/doc/cmdline.txt
@@ -51,6 +52,7 @@ share/vim/vim60${V}/doc/if_python.txt
 share/vim/vim60${V}/doc/if_ruby.txt
 share/vim/vim60${V}/doc/if_sniff.txt
 share/vim/vim60${V}/doc/if_tcl.txt
+share/vim/vim60${V}/doc/indent.txt
 share/vim/vim60${V}/doc/index.txt
 share/vim/vim60${V}/doc/insert.txt
 share/vim/vim60${V}/doc/intro.txt
@@ -168,6 +170,7 @@ share/vim/vim60${V}/indent/java.vim
 share/vim/vim60${V}/indent/make.vim
 share/vim/vim60${V}/indent/matlab.vim
 share/vim/vim60${V}/indent/perl.vim
+share/vim/vim60${V}/indent/postscr.vim
 share/vim/vim60${V}/indent/python.vim
 share/vim/vim60${V}/indent/ruby.vim
 share/vim/vim60${V}/indent/sdl.vim
@@ -178,12 +181,10 @@ share/vim/vim60${V}/indent/vim.vim
 share/vim/vim60${V}/indent/xml.vim
 share/vim/vim60${V}/indoff.vim
 share/vim/vim60${V}/macros/README.txt
-share/vim/vim60${V}/macros/diffwin.vim
 share/vim/vim60${V}/macros/dvorak
 share/vim/vim60${V}/macros/hanoi/click.me
 share/vim/vim60${V}/macros/hanoi/hanoi.vim
 share/vim/vim60${V}/macros/hanoi/poster
-share/vim/vim60${V}/macros/hdiffwin.vim
 share/vim/vim60${V}/macros/justify.vim
 share/vim/vim60${V}/macros/less.sh
 share/vim/vim60${V}/macros/less.vim
@@ -238,6 +239,7 @@ share/vim/vim60${V}/syntax/ayacc.vim
 share/vim/vim60${V}/syntax/b.vim
 share/vim/vim60${V}/syntax/basic.vim
 share/vim/vim60${V}/syntax/bc.vim
+share/vim/vim60${V}/syntax/bdf.vim
 share/vim/vim60${V}/syntax/bib.vim
 share/vim/vim60${V}/syntax/bindzone.vim
 share/vim/vim60${V}/syntax/blank.vim
@@ -398,6 +400,7 @@ share/vim/vim60${V}/syntax/phtml.vim
 share/vim/vim60${V}/syntax/pic.vim
 share/vim/vim60${V}/syntax/pike.vim
 share/vim/vim60${V}/syntax/pine.vim
+share/vim/vim60${V}/syntax/plm.vim
 share/vim/vim60${V}/syntax/plsql.vim
 share/vim/vim60${V}/syntax/po.vim
 share/vim/vim60${V}/syntax/pod.vim
@@ -453,6 +456,7 @@ share/vim/vim60${V}/syntax/snnspat.vim
 share/vim/vim60${V}/syntax/snnsres.vim
 share/vim/vim60${V}/syntax/snobol4.vim
 share/vim/vim60${V}/syntax/spec.vim
+share/vim/vim60${V}/syntax/specman.vim
 share/vim/vim60${V}/syntax/spice.vim
 share/vim/vim60${V}/syntax/spup.vim
 share/vim/vim60${V}/syntax/sql.vim
