@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2005/01/09 07:49:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.35 2005/03/23 20:20:40 alek Exp $
 
 COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
 
@@ -40,6 +40,7 @@ CONFIGURE_ARGS=	--with-frontend=qt ${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ENV=	LIBS=-pthread
 # A hack until LyX developers apply the patch to qt.m4 to respect $MOC and $UIC
 CONFIGURE_ENV+=	ac_moc1=${MODQT_MOC} ac_uic=${MODQT_UIC}
+WANTLIB=	ICE stdc++ c X11 m SM pthread
 .elif ${FLAVOR:L} == "xforms"
 LIB_DEPENDS+=	forms.1::x11/xforms
 .else
