@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1998/09/03 18:28:37 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1998/09/09 15:05:09 ian Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -25,7 +25,10 @@
 #    SUBDIR += itcl
 #    SUBDIR += javac_netscape
 #    SUBDIR += jdk
+#	kaffe is Kaffe 0.8, the JDK 1.0 version.
+#	kaffe1 is Kaffe 1.0, the JDK 1.1 version.
      SUBDIR += kaffe
+     SUBDIR += kaffe1
 #    SUBDIR += lcc
 #    SUBDIR += logo
 #    SUBDIR += mit-scheme
