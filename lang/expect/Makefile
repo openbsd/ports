@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2004/11/17 17:41:26 xsa Exp $
+# $OpenBSD: Makefile,v 1.44 2005/02/13 19:31:19 alek Exp $
 
 COMMENT=	"sophisticated scripter based on Tcl/Tk"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c util m
 
 LIB_DEPENDS+=	tcl84:tcl-8.4.*:lang/tcl/8.4
 
@@ -30,6 +31,7 @@ CONFIGURE_ARGS+=--with-tclconfig="${LOCALBASE}/lib/tcl8.4"\
 LIB_DEPENDS+=	tk84:tk-8.4.*:x11/tk/8.4
 CONFIGURE_ARGS+=--with-tkconfig="${LOCALBASE}/lib/tk8.4" \
 		--with-tkinclude="${LOCALBASE}/include/tk8.4"
+WANTLIB+=	X11
 .endif
 
 REGRESS_TARGET=	test
