@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 1998/06/26 02:05:06 angelos Exp $
+# $OpenBSD: Makefile,v 1.11 1998/09/06 23:09:11 ian Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 #
 
      SUBDIR += bpl+
      SUBDIR += conserver
 #    SUBDIR += ecu
+     SUBDIR += efax
      SUBDIR += hylafax
      SUBDIR += kermit
 #    SUBDIR += lrzsz
