@@ -1,6 +1,6 @@
-diff -u ../timidity-0.2i/linux_a.c ./linux_a.c
---- ../timidity-0.2i/linux_a.c	Mon May 20 08:09:46 1996
-+++ ./linux_a.c	Fri Feb  5 11:54:12 1999
+$OpenBSD: patch-linux_a_c,v 1.1 2001/07/05 10:48:22 espie Exp $
+--- linux_a.c.orig	Mon May 20 15:09:46 1996
++++ linux_a.c	Fri Apr 27 08:01:39 2001
 @@ -37,6 +37,11 @@
  #include <machine/soundcard.h>
  #endif
@@ -13,7 +13,7 @@ diff -u ../timidity-0.2i/linux_a.c ./linux_a.c
  #include "config.h"
  #include "output.h"
  #include "controls.h"
-@@ -71,12 +76,15 @@
+@@ -71,12 +76,15 @@ PlayMode dpm = {
     then 8-bit unsigned if it fails. If you have a sound device that
     can't handle either, let me know. */
  
@@ -30,7 +30,7 @@ diff -u ../timidity-0.2i/linux_a.c ./linux_a.c
    if (fd<0)
      {
        ctl->cmsg(CMSG_ERROR, VERB_NORMAL, "%s: %s",
-@@ -84,6 +92,23 @@
+@@ -84,6 +92,23 @@ static int open_output(void)
        return -1;
      }
  
@@ -54,7 +54,7 @@ diff -u ../timidity-0.2i/linux_a.c ./linux_a.c
    /* They can't mean these */
    dpm.encoding &= ~(PE_ULAW|PE_BYTESWAP);
  
-@@ -92,6 +117,29 @@
+@@ -92,6 +117,29 @@ static int open_output(void)
       the other one. */
  
    i=tmp=(dpm.encoding & PE_16BIT) ? 16 : 8;
@@ -84,7 +84,7 @@ diff -u ../timidity-0.2i/linux_a.c ./linux_a.c
    if (ioctl(fd, SNDCTL_DSP_SAMPLESIZE, &tmp)<0 || tmp!=i)
      {
        /* Try the other one */
-@@ -109,6 +157,7 @@
+@@ -109,6 +157,7 @@ static int open_output(void)
        dpm.encoding ^= PE_16BIT;
        warnings=1;
      }
@@ -92,7 +92,7 @@ diff -u ../timidity-0.2i/linux_a.c ./linux_a.c
    if (dpm.encoding & PE_16BIT)
      dpm.encoding |= PE_SIGNED;
    else
-@@ -163,6 +212,8 @@
+@@ -163,6 +212,8 @@ static int open_output(void)
    /* Set buffer fragments (in extra_param[0]) */
    
    tmp=AUDIO_BUFFER_BITS;
@@ -101,7 +101,7 @@ diff -u ../timidity-0.2i/linux_a.c ./linux_a.c
    if (!(dpm.encoding & PE_MONO)) tmp++;
    if (dpm.encoding & PE_16BIT) tmp++;
    tmp |= (dpm.extra_param[0]<<16);
-@@ -189,28 +240,35 @@
+@@ -189,28 +240,35 @@ static int open_output(void)
    return warnings;
  }
  
@@ -150,7 +150,7 @@ diff -u ../timidity-0.2i/linux_a.c ./linux_a.c
  }
  
  static void close_output(void)
-@@ -220,10 +278,10 @@
+@@ -220,10 +278,10 @@ static void close_output(void)
  
  static void flush_output(void)
  {

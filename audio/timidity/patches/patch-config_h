@@ -1,6 +1,6 @@
-diff -u ../timidity-0.2i/config.h ./config.h
---- ../timidity-0.2i/config.h	Sat Jun  1 07:54:49 1996
-+++ ./config.h	Fri Feb  5 12:01:15 1999
+$OpenBSD: patch-config_h,v 1.1 2001/07/05 10:48:21 espie Exp $
+--- config.h.orig	Sat Jun  1 14:54:49 1996
++++ config.h	Fri Apr 27 08:01:39 2001
 @@ -121,7 +121,7 @@
  /* Make envelopes twice as fast. Saves ~20% CPU time (notes decay
     faster) and sounds more like a GUS. There is now a command line
@@ -23,7 +23,7 @@ diff -u ../timidity-0.2i/config.h ./config.h
  /* Win32 on Intel machines */
  #ifdef __WIN32__
  #  define LITTLE_ENDIAN
-@@ -267,7 +273,7 @@
+@@ -267,7 +273,7 @@ typedef char int8;
  
  /* You could specify a complete path, e.g. "/etc/timidity.cfg", and
     then specify the library directory in the configuration file. */

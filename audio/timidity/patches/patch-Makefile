@@ -1,6 +1,6 @@
-diff -u ../timidity-0.2i/Makefile ./Makefile
---- ../timidity-0.2i/Makefile	Sun May 26 04:26:46 1996
-+++ ./Makefile	Fri Feb  5 11:59:22 1999
+$OpenBSD: patch-Makefile,v 1.1 2001/07/05 10:48:12 espie Exp $
+--- Makefile.orig	Sun May 26 11:26:46 1996
++++ Makefile	Fri Apr 27 08:01:39 2001
 @@ -24,22 +24,22 @@
  # But where to change without revealing my secret identity?
  
@@ -30,7 +30,7 @@ diff -u ../timidity-0.2i/Makefile ./Makefile
  
  # Where to install the Tcl code, if you use the Tcl code that is.
  TCL_DIR = $(TIMID_DIR)
-@@ -59,6 +59,10 @@
+@@ -59,6 +59,10 @@ SYSEXTRAS += linux_a.c
  #EXTRAINCS +=
  #EXTRALIBS += 
  
@@ -41,7 +41,7 @@ diff -u ../timidity-0.2i/Makefile ./Makefile
  ## Select the HP-UX network audio server
  #SYSTEM += -DHPUX -DAU_HPUX
  #SYSEXTRAS += hpux_a.c
-@@ -91,10 +95,10 @@
+@@ -91,10 +95,10 @@ SYSEXTRAS += linux_a.c
  # messages.
  
  # Select the ncurses full-screen interface
@@ -56,7 +56,7 @@ diff -u ../timidity-0.2i/Makefile ./Makefile
  
  ## Select the S-Lang full-screen interface
  #SYSTEM += -DIA_SLANG
-@@ -102,19 +106,19 @@
+@@ -102,19 +106,19 @@ EXTRALIBS += -lncurses
  #EXTRAINCS += -I/usr/include/slang
  #EXTRALIBS += -lslang
  
@@ -86,7 +86,7 @@ diff -u ../timidity-0.2i/Makefile ./Makefile
  #EXTRAINCS +=
  #EXTRALIBS +=
  
-@@ -136,7 +140,7 @@
+@@ -136,7 +140,7 @@ DISTZIP = timid$(FNVERSION).zip
  SDIST = timidity-lib-$(SUPPVERSION).tar.gz
  SDISTZIP = tilib$(FNSUPPVERSION).zip
  
@@ -95,7 +95,7 @@ diff -u ../timidity-0.2i/Makefile ./Makefile
  	-DTIMID_VERSION=\"$(VERSION)\" $(SYSTEM) $(EXTRAINCS)
  
  ########### All relevant files.. Anybody know autoconf?
-@@ -228,10 +232,10 @@
+@@ -228,10 +232,10 @@ bag: bag.c
  wav2pat: wav2pat.c
  	$(CC) $(CFLAGS) -o wav2pat wav2pat.c
  
@@ -110,7 +110,7 @@ diff -u ../timidity-0.2i/Makefile ./Makefile
  
  ########### Installation targets
  
-@@ -262,9 +266,9 @@
+@@ -262,9 +266,9 @@ install.config: $(CONFIGF)
  	mkdir -p $(TIMID_DIR)
  	$(INSTALL) -m 644 $(CONFIGF) $(TIMID_DIR)
  
