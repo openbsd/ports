@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/16 20:48:56 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/16 21:09:55 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 DISTNAME=	nethack-3.3.0
@@ -35,7 +35,7 @@ USE_X11=	Yes
 NETHACKCONFIG=${FILESDIR}/simple-config
 .endif
 
-RUN_DEPENDS=${LOCALBASE}/share/doc/Guidebook.txt::games/hackdata
+RUN_DEPENDS=${LOCALBASE}/share/doc/nethack/Guidebook.txt::games/hackdata
 
 do-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh symlinks
