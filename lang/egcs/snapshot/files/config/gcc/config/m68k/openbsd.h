@@ -1,4 +1,4 @@
-/* $OpenBSD: openbsd.h,v 1.3 1999/01/11 21:23:27 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.4 1999/01/22 22:35:06 espie Exp $ */
 /* vi:ts=8: 
  */
 
@@ -63,6 +63,10 @@
    correctly */
 #define DWARF2_UNWIND_INFO 0
 
+/* TODO: MI_THUNK is busted. I need to figure out what bra func@PLTPC means
+ * under linux, and find the corresponding construction for our gas/pic
+ * setup. */
+#if 0
 /* taken from linux.h. Processor dependent optimized code to handle C++
  * multiple inheritance vtable lookup
  */
@@ -90,3 +94,4 @@ do {									\
       fprintf (FILE, "\n");						\
     }									\
 } while (0)
+#endif
