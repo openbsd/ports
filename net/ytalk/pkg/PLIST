@@ -1,2 +1,3 @@
 bin/ytalk
 man/man1/ytalk.1
+share/ytalkrc.sample
