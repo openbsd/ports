@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.36 2001/04/17 16:48:07 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.37 2001/04/18 14:43:55 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -39,7 +39,11 @@
 .  include <bsd.own.mk>
 .endif
 
+.if defined(show)
+.MAIN: show
+.else
 .MAIN: all
+.endif
 
 .if !defined(DEBUG_FLAGS)
 STRIP?=	-s
@@ -117,7 +121,7 @@ _SUBDIRUSE: .USE
 	    elif cd ${.CURDIR}/$${dir} 2>/dev/null; then \
 		edir=$${dir}; \
 	    else \
-		${ECHO_MSG} "===> ${PKGPATH}${_SEP}$${entry} non-existent"; \
+		${ECHO_MSG} "===> ${PKGPATH}${_SEP}$${dir} non-existent"; \
 		continue; \
 	    fi; \
 	    ${ECHO_MSG} "===> ${PKGPATH}${_SEP}$${edir}$$display"; \
@@ -142,7 +146,7 @@ ${SUBDIR}::
 		 build clean depend describe distclean deinstall \
 		 reinstall tags checksum mirror-distfiles list-distfiles \
 		 show obj fetch-makefile all-packages cdrom-packages \
-		 dir-depends \
+		 dir-depends package-dir-depends \
 		 ftp-packages packageinstall link-categories unlink-categories
 
 .if !target(${__target})
@@ -207,4 +211,4 @@ README.html:
 	list-distfiles obj show readmes readme \
 	beforeinstall afterinstall install realinstall fake \
 	all-packages cdrom-packages ftp-packages packageinstall \
-	link-categories unlink-categories dir-depends
+	link-categories unlink-categories dir-depends package-dir-depends

@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.399 2001/04/17 21:40:36 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.400 2001/04/18 14:43:55 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -96,25 +96,18 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # NO_IGNORE     - Set this to Yes (most probably in a "make fetch" in
 #                 ${PORTSDIR}) if you want to fetch all distfiles,
 #                 even for packages not built due to limitation by
-#                 absent X or Motif or ONLY_FOR_ARCHS...
+#                 absent X or ONLY_FOR_ARCHS...
 # NO_WARNINGS	- Set this to Yes to disable warnings regarding variables
 #				  to define to control the build.  Automatically set
 #				  from the "mirror-distfiles" target.
 #
 # Motif support:
 #
-# USE_MOTIF		- Set this in your port if it requires Motif or Lesstif.
-#				  It will be built using Lesstif port unless Motif libraries
-#				  found or HAVE_MOTIF is defined. See also REQUIRES_MOTIF.
-#
-# HAVE_MOTIF	- If set, means system has Motif.  Typically set in /etc/mk.conf.
-# MOTIF_STATIC	- If set, link libXm statically; otherwise, link it
-#				  dynamically.  Typically set in /etc/mk.conf.
-# MOTIFLIB		- Set automatically to appropriate value depending on
-#				  ${MOTIF_STATIC}.  Substitute references to -lXm with 
-#				  patches to make your port conform to our standards.
-# MOTIF_ONLY	- If set, build Motif ports only.  (Not much use except for
-#				  building packages.)
+# USE_MOTIF		- Set this to "any" for ports that work with lesstif or
+#				  openmotif (automatic flavoring), "openmotif" for ports
+#				  that require openmotif, "lesstif" for ports that require
+#				  lesstif. "any" will create an extra hidden lesstif
+#				  FLAVOR, beware in flavor tests.
 #
 # Variables to change if you want a special behavior:
 #
@@ -322,9 +315,6 @@ BUILD_DEPENDS+=		${LIBTOOL}::devel/libtool
 CONFIGURE_ENV+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 MAKE_ENV+=			LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 .endif
-.if defined(USE_MOTIF) && !defined(HAVE_MOTIF) && !defined(REQUIRES_MOTIF)
-LIB_DEPENDS+=		Xm.::x11/lesstif
-.endif
 
 .if exists(${PORTSDIR}/../Makefile.inc)
 .include "${PORTSDIR}/../Makefile.inc"
@@ -332,6 +322,29 @@ LIB_DEPENDS+=		Xm.::x11/lesstif
 
 SUBPACKAGE?=
 FLAVOR?=
+
+USE_MOTIF?=No
+HAVE_MOTIF?=No
+
+.if ${USE_MOTIF:L} != "no"
+.  if ${USE_MOTIF:L} == "lesstif"
+LIB_DEPENDS+=		Xm.1.::x11/lesstif
+.  elif ${USE_MOTIF:L} == "openmotif"
+LIB_DEPENDS+=		Xm.2.::x11/openmotif
+.  elif ${USE_MOTIF:L} == "any" || ${USE_MOTIF:L} == "yes"
+FLAVORS+=lesstif
+.    if ${FLAVOR:L:Mlesstif}
+LIB_DEPENDS+=		Xm.1.::x11/lesstif
+.    else
+LIB_DEPENDS+=		Xm.2.::x11/openmotif
+.    endif
+.  else
+.BEGIN:
+	@echo >&2 "Unknown USE_MOTIF=${USE_MOTIF} settings"
+	@exit 1
+.  endif
+MOTIF_LIB=-L${LOCALBASE}/lib -lXm
+.endif
 
 .if !empty(SUBPACKAGE)
 .  for _i in ${SUBPACKAGE}
@@ -697,14 +710,6 @@ PKG_ARGS+=		-s ${WRKINST}${PREFIX}
 
 PKG_SUFX?=		.tgz
 
-# shared/dynamic motif libs
-.if defined(USE_MOTIF) || defined(HAVE_MOTIF)
-.  if defined(MOTIF_STATIC)
-MOTIFLIB?=	${X11BASE}/lib/libXm.a
-.  else
-MOTIFLIB?=	-L${X11BASE}/lib -lXm
-.  endif
-.endif
 
 CHMOD?=		/bin/chmod
 CHOWN?=		/usr/sbin/chown
@@ -973,7 +978,12 @@ _CATPAGES+=	${CAT${sect}:S%^%${CAT${sect}PREFIX}/man/${lang}/cat${sect:L}/%}
 .  endfor
 .endfor
 
+.if defined(show)
+VARNAME=${show}
+.MAIN: show
+.else
 .MAIN: all
+.endif
 
 ################################################################
 # Many ways to disable a port.
@@ -984,9 +994,6 @@ _CATPAGES+=	${CAT${sect}:S%^%${CAT${sect}PREFIX}/man/${lang}/cat${sect:L}/%}
 # one might want to leave a build in BATCH mode running
 # overnight, then come back in the morning and do _only_ the
 # interactive ones that required your intervention.
-#
-# Don't attempt to build ports that require Motif if you don't
-# have Motif.
 #
 # Ignore ports that can't be resold if building for a CDROM.
 #
@@ -1003,10 +1010,6 @@ _CATPAGES+=	${CAT${sect}:S%^%${CAT${sect}PREFIX}/man/${lang}/cat${sect:L}/%}
 IGNORE=	"is an interactive port"
 .  elif (!defined(IS_INTERACTIVE) && defined(INTERACTIVE))
 IGNORE=	"is not an interactive port"
-.  elif (defined(REQUIRES_MOTIF) && !defined(HAVE_MOTIF))
-IGNORE=	"requires Motif"
-.  elif (defined(MOTIF_ONLY) && !defined(REQUIRES_MOTIF))
-IGNORE=	"does not require Motif"
 .  elif (defined(RESTRICTED) && defined(NO_RESTRICTED))
 IGNORE=	"is restricted: ${RESTRICTED}"
 .  elif (!empty(CONFIGURE_STYLE:L:Mimake) || defined(USE_X11)) && !exists(${X11BASE})
@@ -2340,7 +2343,7 @@ package-depends:
 .endif
 
 # recursively build a list of dirs to pass to tsort...
-recurse-dir-depends:
+_recurse-dir-depends:
 .if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
 	@unset FLAVOR SUBPACKAGE || true; \
 	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
@@ -2372,7 +2375,7 @@ dir-depends:
 		${_flavor_fragment}; \
 		toset="$$toset self=\"$$self2\""; \
 		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! eval $$toset ${MAKE} recurse-dir-depends ${_DEPEND_THRU}; then  \
+			if ! eval $$toset ${MAKE} _recurse-dir-depends ${_DEPEND_THRU}; then  \
 				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 				exit 1; \
 			fi; \
@@ -2403,6 +2406,52 @@ ${_i:L}-depends-list:
 	done; eval $${_FINAL_ECHO}
 .  endif
 .endfor
+
+# recursively build a list of dirs to pass to tsort...
+_package-recurse-dir-depends:
+.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
+	@unset FLAVOR SUBPACKAGE || true; \
+	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
+		| tr '\040' '\012' | sort -u`; do \
+		echo "$$self $$dir"; \
+		self2="$$dir"; \
+		${_flavor_fragment}; \
+		toset="$$toset self=\"$$self2\""; \
+		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
+			if ! eval $$toset ${MAKE} _package-recurse-dir-depends ${_DEPEND_THRU}; then  \
+				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
+				exit 1; \
+			fi; \
+		else \
+			echo 1>&2  "*** Run dependencies bogus: \"$$dir\" non-existent"; \
+			exit 1; \
+		fi; \
+	done 
+.endif
+
+# recursively build a list of dirs to pass to tsort...
+package-dir-depends:
+.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
+	@unset FLAVOR SUBPACKAGE || true; \
+	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
+		| tr '\040' '\012' | sort -u`; do \
+		echo "${FULLPKGPATH} $$dir"; \
+		self2="$$dir"; \
+		${_flavor_fragment}; \
+		toset="$$toset self=\"$$self2\""; \
+		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
+			if ! eval $$toset ${MAKE} _package-recurse-dir-depends ${_DEPEND_THRU}; then  \
+				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
+				exit 1; \
+			fi; \
+		else \
+			echo 1>&2  "*** Run dependencies bogus: \"$$dir\" non-existent"; \
+			exit 1; \
+		fi; \
+	done 
+.else
+	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
+.endif
 
 new-depends:
 .if !empty(_ALWAYS_DEP2) || !empty(_RUN_DEP2)
@@ -2510,4 +2559,5 @@ unlink-categories:
    recurse-build-depends recurse-package-depends \
    distpatch real-distpatch do-distpatch post-distpatch show \
    link-categories unlink-categories _package new-depends \
-   dir-depends dir-depends-recursive build-depends-list run-depends-list
+   dir-depends _recurse-dir-depends package-dir-depends \
+   _package-recurse-dir-depends recursebuild-depends-list run-depends-list
