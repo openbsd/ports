@@ -1,0 +1,76 @@
+--- ltconfig.orig	Thu Sep 25 08:22:04 1997
++++ ltconfig	Sat Oct 21 13:17:57 2000
+@@ -451,12 +451,13 @@
+   esac
+ fi
+ 
+-case "$host_cpu" in
+-rs6000 | powerpc | powerpcle)
+-  # Yippee! All RS/6000 and PowerPC code is position-independent.
+-  pic_flag=
+-  ;;
+-esac
++# Bogus
++#case "$host_cpu" in
++#rs6000 | powerpc | powerpcle)
++#  # Yippee! All RS/6000 and PowerPC code is position-independent.
++#  pic_flag=
++#  ;;
++#esac
+ 
+ if test -n "$pic_flag"; then
+   echo $ac_t "$pic_flag" 1>&6
+@@ -575,6 +576,12 @@
+ hardcode_shlibpath_var=unsupported
+ runpath_var=
+ 
++case "$host_os" in
++openbsd*)
++   with_gnu_ld=no
++   ;;
++esac
++
+ ld_shlibs=yes
+ if test "$with_gnu_ld" = yes; then
+   # See if GNU ld supports shared libraries.
+@@ -666,7 +673,7 @@
+     hardcode_libdir_flag_spec='${wl}-rpath ${wl}$libdir'
+     ;;
+ 
+-  netbsd* | openbsd*)
++  netbsd*)
+     # Tested with NetBSD 1.2 ld
+     archive_cmds='$LD -Bshareable -o $lib$libobjs$deplibs'
+     hardcode_libdir_flag_spec='-R$libdir'
+@@ -674,6 +681,21 @@
+     hardcode_shlibpath_var=no
+     ;;
+ 
++   openbsd*)
++    hardcode_direct=yes
++    hardcode_shlibpath_var=no
++    case "$host_os" in
++      openbsd2.[01234567])
++	archive_cmds='$LD -Bshareable -o $lib$libobjs$deplibs'
++	hardcode_libdir_flag_spec='-R$libdir'
++      ;;
++      *)
++	archive_cmds='$CC -shared $pic_flag -o $lib$libobjs$deplibs'
++        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      ;;
++    esac
++    ;;
++
+   osf3* | osf4*)
+     allow_undefined_flag=' -expect_unresolved'
+     archive_cmds='$LD -shared${allow_undefined_flag} -o $lib -soname $soname -set_version $verstring$libobjs -lc$deplibs'
+@@ -946,6 +968,9 @@
+ 
+ # The archiver.
+ AR='$AR'
++
++# The default C compiler.
++CC=$CC
+ 
+ # The linker used to build libraries.
+ LD='$LD'
