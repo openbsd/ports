@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 1999/12/26 04:25:30 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2000/01/20 22:17:35 jakob Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -21,6 +21,7 @@
 #    SUBDIR += gifmerge
 #    SUBDIR += giftool
      SUBDIR += giftrans
+     SUBDIR += gifsicle
      SUBDIR += gii
      SUBDIR += gimp
      SUBDIR += gphoto
