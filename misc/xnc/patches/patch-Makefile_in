@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2000/12/31 12:54:27 reinhard Exp $
+--- Makefile.in.orig	Fri Dec 22 07:12:28 2000
++++ Makefile.in	Sun Dec 31 12:49:38 2000
+@@ -179,6 +179,9 @@ config:	FORCE
+ #	$(INSOWN) -m 0600 ./.xlaunch/* $(HOME)/.xlaunch
+ #	$(INSOWN) -m 0600 ./.xlaunch/.*a* $(HOME)/.xlaunch
+ 
++INSTDIR=${PREFIX}/bin 		# for faking
++INSTMAN=${PREFIX}/man		# for faking
++INSTPLUG=${PREFIX}/lib		# for faking
+ install:
+ 	#Installing X Northern Captain...
+ 	$(INS) ./users.xnc $(INSTDIR)

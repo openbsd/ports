@@ -1,0 +1,12 @@
+$OpenBSD: patch-xh_cxx,v 1.1.1.1 2000/12/31 12:54:27 reinhard Exp $
+--- xh.cxx.orig	Thu Dec  7 09:12:00 2000
++++ xh.cxx	Sun Dec 31 13:34:51 2000
+@@ -40,7 +40,7 @@ int        init_starts=0, xnc_starts=0;
+ int        wm_y_correction=21;      //Correction for Window manager title window
+ 
+ 
+-char       magic_file_location[256]="/usr/share/magic";
++char       magic_file_location[256]="/etc/magic";
+ 
+ extern int detect_tar_output(char *path);
+ 

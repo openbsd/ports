@@ -1,0 +1,12 @@
+$OpenBSD: patch-_xlaunch__launch_menu,v 1.1.1.1 2000/12/31 12:54:27 reinhard Exp $
+--- .xlaunch/.launch.menu.orig	Fri Nov 10 09:19:22 2000
++++ .xlaunch/.launch.menu	Sun Dec 31 12:19:10 2000
+@@ -4,7 +4,7 @@
+ # "Key name" : pixmap_name : execute string
+ #Attension Key name must be in "" but other names without it.
+ #Key name or pixmap_name may be empty but ':' must be otherwise.
+-: kill.gif : /usr/X11/bin/xkill
++: kill.gif : /usr/X11R6/bin/xkill
+ : term.gif: xterm -ls -sb -fn 10x20 -title "XTerminal"
+ : ives.gif : /usr/local/bin/ives
+ "XNC" :: /usr/local/bin/xnc

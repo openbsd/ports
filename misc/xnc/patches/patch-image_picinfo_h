@@ -1,0 +1,13 @@
+$OpenBSD: patch-image_picinfo_h,v 1.1.1.1 2000/12/31 12:54:27 reinhard Exp $
+--- image/picinfo.h.orig	Thu Dec 28 12:26:51 2000
++++ image/picinfo.h	Fri Dec 29 15:01:11 2000
+@@ -11,7 +11,8 @@
+ #include <string.h>
+ #include <sys/param.h>
+ #include <sys/types.h>
+-#ifndef __FreeBSD__
++#ifndef __FreeBSD__ 
++#elif ! defined __OpenBSD__
+ #include <malloc.h>
+ #endif
+ #include <fcntl.h>

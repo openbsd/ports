@@ -1,0 +1,4 @@
+NB: All new users have to run ${PREFIX}/bin/xncsetup first before 
+using X Northern Captain.
+Example configuration files for xnlaunch have been installed in 
+${PREFIX}/share/examples/xnc.

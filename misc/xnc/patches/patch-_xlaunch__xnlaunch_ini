@@ -1,0 +1,12 @@
+$OpenBSD: patch-_xlaunch__xnlaunch_ini,v 1.1.1.1 2000/12/31 12:54:27 reinhard Exp $
+--- .xlaunch/.xnlaunch.ini.orig	Fri Nov 10 09:19:22 2000
++++ .xlaunch/.xnlaunch.ini	Sun Dec 31 12:19:49 2000
+@@ -15,7 +15,7 @@ xnc.sysfiles.path:   /xnctmp
+ 
+ #Path for pixmaps search. First of all launch search for pixmaps in current
+ #directory, then in $HOME/.xlaunch and then in searchpath...
+-xnlaunch.pixmaps.searchpath:  /usr/X11/include/X11/pixmaps
++xnlaunch.pixmaps.searchpath:  /usr/X11R6/include/X11/pixmaps
+ 
+ #Width and Height for one button and X,Y for launch pad.
+ xnlaunch.geometry: 42x42+978+5

@@ -1,0 +1,22 @@
+X Northern Captain (XNC) - filemanager for X Window.
+XNC - uses conception of two panels. These panels with highlighted directory
+listings give You simple and easy way to manipulate files on Your system.
+Bookmark feature allow You to remember Hot Directories and quick changing
+to it. Virtual File System can manipulate files in popular archieve formats 
+as easy as files on normal Disk FS (copy/delete/view/edit/execute inside 
+archive).
+MultiWindow Editing and Viewing System (IVES) edit text files and view 
+ASCII/HEX and many image formats ; built in xterminal (rxvt 2.20) shows 
+output from applications; 
+configurable User menu do quick execute for usefull commands;
+exention association and execution list allow execute application by 
+associated extension;
+processes information shows list of processes and can send signal to its; 
+disk and memory summary information; QuickScan Directories and files info;
+Drag 'n' Drop for files manipulation - easy way to work for Mouse Fans;
+built in archive support for TAR, TARGZ, TRABZ2, GZIP, BZIP2, ARJ, ZIP, 
+RAR, RPM, DEB, LHA;
+Hot keys, colors, sizes, fonts and panels layout easy customization
+with XNCSetup make XNC very usefull tool.
+
+WWW: ${HOMEPAGE}

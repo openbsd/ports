@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/31 12:54:27 reinhard Exp $
+bin/bzip.xnc
+bin/es
+bin/groups.xnc
+bin/gzip.xnc
+bin/ives
+bin/rpm.xnc
+bin/users.xnc
+bin/vs
+bin/xjpegroot
+bin/xnc
+bin/xncsetup
+bin/xnlaunch
+bin/zips.xnc
+man/man1/es.1
+man/man1/ives.1
+man/man1/vs.1
+man/man1/xjpegroot.1
+man/man1/xnc.1
+man/man1/xnlaunch.1
+share/examples/xnc/.launch.menu
+share/examples/xnc/.xnlaunch.ini
+share/examples/xnc/graphs.gif
+share/examples/xnc/ives.gif
+share/examples/xnc/kill.gif
+share/examples/xnc/map.gif
+share/examples/xnc/netscape.gif
+share/examples/xnc/term.gif
+share/examples/xnc/tnet.gif
+@dirrm share/examples/xnc
