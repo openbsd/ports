@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/19 22:24:48 jsyn Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/20 19:30:39 jsyn Exp $
 
 COMMENT=		"HTTP tunneling utility for SSH"
 
@@ -10,6 +10,7 @@ HOMEPAGE=		http://www.agroman.net/corkscrew/
 
 MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes

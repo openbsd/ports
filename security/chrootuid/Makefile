@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/11/15 18:14:32 jsyn Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/20 19:30:39 jsyn Exp $
 
 COMMENT=		"control chroot and su access rights by application"
 
@@ -12,6 +12,7 @@ HOMEPAGE=		http://www.porcupine.org/
 
 MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
+# BSD-style
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
