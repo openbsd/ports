@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/20 10:35:36 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2005/03/12 03:41:30 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.4 1997/03/10 12:07:35 asami Exp $
 
 COMMENT=	"laptop battery status display for X11"
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xaw Xext Xmu Xpm Xt c 
 
 CONFIGURE_STYLE=	imake noman
-ONLY_FOR_ARCHS=	i386 macppc
+ONLY_FOR_ARCHS=	i386 macppc zaurus
 
 NO_REGRESS=	Yes
 
