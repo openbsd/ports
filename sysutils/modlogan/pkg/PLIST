@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/14 18:12:23 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/12/16 21:16:52 naddy Exp $
 bin/modlogan
-lib/modlogan/charset.alias
+@comment lib/modlogan/charset.alias
 lib/modlogan/libmla_input_bsdftpd.la
 lib/modlogan/libmla_input_clf.la
 lib/modlogan/libmla_input_flowraw.la
@@ -56,6 +56,8 @@ lib/modlogan/libmla_processor_null.la
 lib/modlogan/libmla_processor_telecom.la
 lib/modlogan/libmla_processor_web.la
 man/man1/modlogan.1
+@comment share/doc/modlogan/Changes-0.7.0.txt
+@comment share/doc/modlogan/Changes-0.8.0.txt
 share/doc/modlogan/faq.txt
 share/doc/modlogan/manual.txt
 share/doc/modlogan/translations.txt
@@ -81,9 +83,27 @@ share/locale/es/LC_MESSAGES/modlogan.mo
 share/locale/fr/LC_MESSAGES/modlogan.mo
 share/locale/hu/LC_MESSAGES/modlogan.mo
 share/locale/it/LC_MESSAGES/modlogan.mo
+@comment share/locale/locale.alias
 share/locale/pl/LC_MESSAGES/modlogan.mo
 share/locale/ru/LC_MESSAGES/modlogan.mo
 %%SHARED%%
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/locale
 @dirrm share/examples/modlogan
 @dirrm share/doc/modlogan
 @dirrm lib/modlogan
