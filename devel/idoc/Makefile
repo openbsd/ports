@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/16 03:21:34 dons Exp $
+# $OpenBSD: Makefile,v 1.2 2004/05/19 06:15:57 dons Exp $
 
 COMMENT=		"minimalist documentation tool for Haskell"
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.cse.unsw.edu.au/~chak/haskell/idoc/
 MASTER_SITES=		${HOMEPAGE}
 
 # pure Haskell 98
-.if ${MACHINE} == "i386" || ${MACHINE} == "sparc" || ${MACHINE} == "amd64"
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "amd64"
 MODULES=		ghc
 .else
 BUILD_DEPENDS+=		bin/nhc98::lang/nhc98
