@@ -1,36 +1,25 @@
 bin/mhub
 bin/xsendbut
-lib/libgg.so.0.1
 lib/libgg.la
 lib/libgg.a
-lib/libgii.so.0.1
 lib/libgii.la
 lib/libgii.a
-lib/ggi/input/null.so
 lib/ggi/input/null.la
 lib/ggi/input/null.a
-lib/ggi/input/stdin.so
 lib/ggi/input/stdin.la
 lib/ggi/input/stdin.a
-lib/ggi/input/x.so
 lib/ggi/input/x.la
 lib/ggi/input/x.a
-lib/ggi/input/xwin.so
 lib/ggi/input/xwin.la
 lib/ggi/input/xwin.a
-lib/ggi/input/mouse.so
 lib/ggi/input/mouse.la
 lib/ggi/input/mouse.a
-lib/ggi/input/linux_mouse.so
 lib/ggi/input/linux_mouse.la
 lib/ggi/input/linux_mouse.a
-lib/ggi/input/spaceorb.so
 lib/ggi/input/spaceorb.la
 lib/ggi/input/spaceorb.a
-lib/ggi/filter/mouse.so
 lib/ggi/filter/mouse.la
 lib/ggi/filter/mouse.a
-lib/ggi/filter/save.so
 lib/ggi/filter/save.la
 lib/ggi/filter/save.a
 man/man1/mhub.1
@@ -70,5 +59,4 @@ share/doc/gii/libgii.conf.example
 @unexec echo "*** gii configuation files stored in /etc/ggi have not been"
 @unexec echo "*** removed.  You may wish to remove them manually."
 @unexec echo "***"
-@exec /sbin/ldconfig -m %B
 @exec [ -f /etc/ggi/libgii.conf ] || cp share/doc/gii/libgii.conf.example /etc/ggi/libgii.conf
