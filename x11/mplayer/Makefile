@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.69 2004/05/06 07:27:36 biorn Exp $
+# $OpenBSD: Makefile,v 1.70 2004/06/15 02:19:56 brad Exp $
 
 # May not be hard to add more.
-ONLY_FOR_ARCHS=		i386 macppc amd64
+ONLY_FOR_ARCHS=		amd64 i386 powerpc
 
 COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
@@ -54,7 +54,6 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-nas \
 		--disable-liblzo \
 		--disable-caca \
-		--enable-runtime-cpudetection \
 		--enable-select \
 		--enable-vidix \
 		--enable-vorbis \
@@ -66,8 +65,13 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--confdir=${CONFDIR}
 CONFIGURE_ENV+="TMPDIR=${WRKBUILD}"
 
+.if ${MACHINE_ARCH:Mi386}
+CONFIGURE_ARGS+=--enable-runtime-cpudetection
+.endif
+
 .if ${MACHINE_ARCH:Mpowerpc}
-CONFIGURE_ARGS+=--target=ppc-openbsd
+CONFIGURE_ARGS+=--target=ppc-openbsd \
+		--disable-altivec
 .endif
 
 FLAVORS=	arts esd sdl ggi debug mad win32 no_x11 aa
