@@ -1,26 +1,22 @@
---- rfc1524.c.orig	Mon Jun  8 05:16:03 1998
-+++ rfc1524.c	Sat Oct 10 03:25:02 1998
-@@ -431,7 +431,11 @@
-   if (s[0] == '\0')
-   {
-     sprintf (s, "%s/muttXXXXXX", buf);
-+#ifdef HAVE_MKSTEMP
-+    mkstemp (s);
-+#elif
-     mktemp (s);
-+#endif
-   }
-   else
-   {
-@@ -442,7 +446,11 @@
-     if ((period = strrchr (tmp, '.')) != NULL)
-       *period = 0;
-     sprintf (s, "%s/%s.XXXXXX", buf, tmp);
-+#ifdef HAVE_MKSTEMP
-+    mkstemp (s);
-+#elif
-     mktemp (s);
-+#endif
-     if (period != NULL)
-     {
-       *period = '.';
+--- Makefile.in.orig	Sat Jan  2 20:05:12 1999
++++ Makefile.in	Sat Jan  2 20:08:59 1999
+@@ -651,17 +651,8 @@
+ 
+ install-data-local:
+ 	$(srcdir)/mkinstalldirs $(DESTDIR)$(sharedir)
+-	$(srcdir)/mkinstalldirs $(DESTDIR)$(sysconfdir)
+-	-if [ -f $(DESTDIR)$(sharedir)/Muttrc ] ; then \
+-		mv $(DESTDIR)$(sharedir)/Muttrc $(DESTDIR)$(sysconfdir) ; \
+-	elif [ -f $(DESTDIR)$(sharedir)/../Muttrc ] ; then \
+-	 	mv $(DESTDIR)$(sharedir)/../Muttrc $(DESTDIR)$(sysconfdir) ; \
+-	elif [ ! -f $(DESTDIR)$(sysconfdir)/Muttrc ] ; then \
+-		$(INSTALL) -m 644 $(srcdir)/Muttrc $(DESTDIR)$(sysconfdir) ; \
+-	fi
+-	-if [ ! -f $(DESTDIR)$(sysconfdir)/mime.types ]; then \
+-		$(INSTALL) -m 644 $(srcdir)/mime.types $(DESTDIR)$(sysconfdir); \
+-	fi
++	$(INSTALL_DATA) $(srcdir)/Muttrc $(DESTDIR)$(sharedir)/Muttrc.sample
++	$(INSTALL_DATA) $(srcdir)/mime.types $(DESTDIR)$(sharedir)/mime.types.sample
+ 
+ # Don't make this one ChangeLog - it's intended to be
+ # used manually.

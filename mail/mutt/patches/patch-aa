@@ -1,21 +1,23 @@
---- Makefile.in.orig	Thu Jun 25 18:16:03 1998
-+++ Makefile.in	Sat Oct 10 03:20:05 1998
-@@ -33,7 +33,7 @@
- INSTALL=@INSTALL@
- CC=@CC@
- XCPPFLAGS=-I. @CPPFLAGS@
--CFLAGS=@CFLAGS@ -DSHAREDIR=\"$(sharedir)\" $(XCPPFLAGS)
-+CFLAGS=@CFLAGS@ -DSHAREDIR=\"$(sharedir)\" -DHAVE_MKSTEMP $(XCPPFLAGS)
- LDFLAGS=@LDFLAGS@
- LIBS=@LIBS@
- OPS=@OPS@
-@@ -67,8 +67,7 @@
+--- Makefile.am.orig	Sat Dec 12 03:25:59 1998
++++ Makefile.am	Sat Jan  2 20:02:09 1999
+@@ -74,18 +74,8 @@
  
- install: mutt install.doc
- 	$(srcdir)/mkinstalldirs $(bindir)
--	-mv -f $(bindir)/mutt $(bindir)/mutt.old
--	$(INSTALL) @MUTT_GROUP@ -m @MUTT_PERMISSION@ mutt $(bindir)
-+	$(INSTALL) -m @MUTT_PERMISSION@ mutt $(bindir)
- 	-if [ ! -f $(sharedir)/Muttrc ]; then \
- 		$(srcdir)/mkinstalldirs $(sharedir); \
- 		$(INSTALL) -m 644 $(srcdir)/Muttrc $(sharedir); \
+ install-data-local:
+ 	$(srcdir)/mkinstalldirs $(DESTDIR)$(sharedir)
+-	$(srcdir)/mkinstalldirs $(DESTDIR)$(sysconfdir)
+-	-if [ -f $(DESTDIR)$(sharedir)/Muttrc ] ; then \
+-		mv $(DESTDIR)$(sharedir)/Muttrc $(DESTDIR)$(sysconfdir) ; \
+-	elif [ -f $(DESTDIR)$(sharedir)/../Muttrc ] ; then \
+-	 	mv $(DESTDIR)$(sharedir)/../Muttrc $(DESTDIR)$(sysconfdir) ; \
+-	elif [ ! -f $(DESTDIR)$(sysconfdir)/Muttrc ] ; then \
+-		$(INSTALL) -m 644 $(srcdir)/Muttrc $(DESTDIR)$(sysconfdir) ; \
+-	fi
+-	-if [ ! -f $(DESTDIR)$(sysconfdir)/mime.types ]; then \
+-		$(INSTALL) -m 644 $(srcdir)/mime.types $(DESTDIR)$(sysconfdir); \
+-	fi
+-
++	$(INSTALL_DATA) $(srcdir)/Muttrc $(DESTDIR)$(sharedir)/Muttrc.sample
++	$(INSTALL_DATA) $(srcdir)/mime.types $(DESTDIR)$(sharedir)/mime.types.sample
+ 
+ # Don't make this one ChangeLog - it's intended to be
+ # used manually.
