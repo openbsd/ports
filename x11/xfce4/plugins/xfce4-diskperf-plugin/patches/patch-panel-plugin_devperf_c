@@ -1,0 +1,128 @@
+$OpenBSD: patch-panel-plugin_devperf_c,v 1.1.1.1 2004/01/31 03:32:03 jolan Exp $
+--- panel-plugin/devperf.c.orig	2003-11-30 09:01:44.000000000 -0200
++++ panel-plugin/devperf.c	2004-01-30 23:37:45.000000000 -0200
+@@ -310,6 +310,124 @@ int DevGetPerfData (const void *p_pvDevi
+ /* *INDENT-ON* */
+ 	/**************************	NetBSD End	***************/
+ 
++#elif defined(__OpenBSD__)
++/*
++ * OpenBSD support. As of the moment of this writing OpenBSD didn't separate
++ * read and write disk statistics, they were assumed to have the same value.
++ */
++
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#include <sys/disk.h>
++
++#include <string.h>
++
++static char **disks = NULL;
++static int diskn = 0;
++
++int DevPerfInit ()
++{
++        return (0);
++}
++
++int DevCheckStatAvailability(char const **strptr)
++{
++        return (0);
++}
++
++int DevGetPerfData (const void *p_pvDevice, struct devperf_t *perf)
++{
++	int mib[3], cur_diskn, x;
++	size_t len;
++	void *r;
++	char **tok, *names, *devname = (char *)p_pvDevice;
++	struct diskstats *diskstats;
++	struct timeval tv;
++
++	mib[0] = CTL_HW;
++	mib[1] = HW_DISKCOUNT;
++	len = sizeof(cur_diskn);
++
++	if (sysctl(mib, 2, &cur_diskn, &len, NULL, 0) < 0)
++		return (-1);
++
++	if (cur_diskn != diskn) {
++		if (disks != NULL)
++			free(disks[0]);
++		r = realloc(disks, cur_diskn * sizeof(char *));
++		if (r == NULL) {
++error:			free(disks);
++			disks = NULL;
++			diskn = 0;
++			return (-1);
++		} else
++			disks = (char **)r;
++
++		mib[0] = CTL_HW;
++		mib[1] = HW_DISKNAMES;
++		len = 0;
++
++		if (sysctl(mib, 2, NULL, &len, NULL, 0) < 0)
++			goto error;
++
++		names = malloc(len);
++		if (names == NULL)
++			goto error;
++
++		if (sysctl(mib, 2, names, &len, NULL, 0) < 0) {
++			free(names);
++			goto error;
++		}
++
++		diskn = cur_diskn;
++
++		for (tok = disks; tok <= &disks[cur_diskn - 1] &&
++		    (*tok = strsep(&names, ",")) != NULL;)
++		    	if (**tok != '\0')
++				tok++;
++	}
++
++	for (x = 0; x < diskn; x++)
++		if (!strcmp(disks[x], devname))
++			break;
++
++	if (x == diskn)
++		return (-1);
++
++	mib[0] = CTL_HW;
++	mib[1] = HW_DISKSTATS;
++	len = diskn * sizeof(struct diskstats);
++
++	diskstats = malloc(len);
++	if (diskstats == NULL)
++		return (-1);
++
++	if (sysctl(mib, 2, diskstats, &len, NULL, 0) < 0) {
++		free(diskstats);
++		return (-1);
++	}
++
++	if (gettimeofday(&tv, NULL)) {
++		free(diskstats);
++		return (-1);
++	}
++
++	perf->timestamp_ns = (uint64_t)1000ull * 1000ull * 1000ull * tv.tv_sec
++	    + 1000ull * tv.tv_usec; 
++        perf->rbusy_ns = ((uint64_t)1000ull * 1000ull * 1000ull *
++	    diskstats[x].ds_time.tv_sec + 1000ull *
++	    diskstats[x].ds_time.tv_usec) / 2ull;
++
++	perf->wbusy_ns = perf->rbusy_ns / 2ull;
++	perf->rbytes = diskstats[x].ds_bytes;
++	perf->wbytes = perf->rbytes;
++	perf->qlen = diskstats[x].ds_xfer;
++
++	free(diskstats);
++
++	return (0);
++}
++
+ #else
+ 	/**************************************************************/
+ 	/********************	Unsupported platform	***************/
