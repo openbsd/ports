@@ -1,0 +1,54 @@
+$OpenBSD: patch-src_bsd_hpi_src_linker_md_c,v 1.1 2003/08/17 01:06:57 naddy Exp $
+--- src/bsd/hpi/src/linker_md.c.orig	Sun Jun  8 10:43:23 2003
++++ src/bsd/hpi/src/linker_md.c	Sun Jun  8 10:50:44 2003
+@@ -251,6 +251,42 @@ char *
+ dlfname(const void *addr)
+ {
+ #if defined(__OpenBSD__) || (defined(__FreeBSD__) && (__FreeBSD__ < 3))
++#ifdef __ELF__
++    int tag;
++    Elf_Dyn *dp;
++    struct link_map *lm;
++    Elf_Ehdr *ehdr;
++    Elf_Phdr *phdr;
++    char *s;
++    int i;
++
++    for (dp = _DYNAMIC; (tag = dp->d_tag) != 0; dp++) {
++        if (tag == DT_DEBUG) {
++            lm = ((struct r_debug *)(dp->d_un.d_ptr))->r_map;
++        }
++    }
++
++    for (; lm != NULL; lm = lm->l_next) {
++        ehdr = (Elf_Ehdr *)lm->l_addr;
++        if (ehdr == NULL)
++                continue;
++
++        phdr = (Elf_Phdr *)((char *)lm->l_addr + ehdr->e_phoff);
++
++        for (i = 0; i < ehdr->e_phnum; i++) {
++                switch (phdr[i].p_type) {
++                case PT_LOAD:
++                        s = (char *)phdr[i].p_vaddr + (int)lm->l_addr;
++                        if (addr >= s && addr < s + phdr[i].p_memsz)
++                                return lm->l_name;
++                        break;
++                default:
++                }
++        }
++    }
++
++    return NULL;
++#else
+     struct so_map *so_map;
+ 
+     so_map = (struct so_map *)dlopen(0, RTLD_LAZY);
+@@ -262,6 +298,7 @@ dlfname(const void *addr)
+ 	}
+     }
+     return so_map ? so_map->som_path : NULL;
++#endif
+ #else
+     Obj_Entry * so_map;
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_bsd_sun_audio_GNUmakefile,v 1.1 2003/08/17 01:06:57 naddy Exp $
+--- build/bsd/sun/audio/GNUmakefile.orig	Fri Jul 11 07:50:22 2003
++++ build/bsd/sun/audio/GNUmakefile	Fri Jul 11 07:51:01 2003
+@@ -51,7 +51,7 @@ include $(BUILDDIR)/makefiles/Defs.gmk
+ # make sure we link the math.h with the floor() funciton
+ #
+ ifdef LIBRARY
+-    LDLIBS_COMMON += -lc
++    LDLIBS_COMMON += -lc -lossaudio
+ endif
+ 
+ # These are used below by the AudioEnvironment class.
