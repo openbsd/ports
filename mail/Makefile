@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2001/04/05 12:12:13 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2001/04/16 16:47:28 lebel Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -35,6 +35,7 @@
      SUBDIR += imap-uw
      SUBDIR += imaputils-uw
      SUBDIR += isync
+     SUBDIR += kbiff
      SUBDIR += mailcrypt
      SUBDIR += maildrop
      SUBDIR += majordomo
