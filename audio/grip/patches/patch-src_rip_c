@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_rip_c,v 1.1 2002/05/07 21:05:33 lebel Exp $
---- src/rip.c.orig	Thu Feb 21 12:14:33 2002
-+++ src/rip.c	Thu Feb 21 12:14:44 2002
+$OpenBSD: patch-src_rip_c,v 1.2 2003/01/18 06:36:31 pvalchev Exp $
+--- src/rip.c.orig	Fri Apr 12 09:53:29 2002
++++ src/rip.c	Mon Jan 13 00:19:01 2003
 @@ -27,7 +27,7 @@
  #elif defined (HAVE_SYS_VFS_H)
  #include <sys/vfs.h>
@@ -10,3 +10,21 @@ $OpenBSD: patch-src_rip_c,v 1.1 2002/05/07 21:05:33 lebel Exp $
  #include <sys/param.h>
  #include <sys/mount.h>
  #endif
+@@ -343,7 +343,7 @@ static void AddSQLEntry(GripInfo *ginfo,
+ 	    "-t",enc_track->song_name,"-d",enc_track->disc_name,
+ 	    "-g",ID3GenreString(enc_track->id3_genre),"-y",year_str,
+ 	    "-n",track_str,
+-	    "-f",frame_str,"-l",length_str,"-m",playtime_str,NULL);
++	    "-f",frame_str,"-l",length_str,"-m",playtime_str,(void *)NULL);
+     else
+       execlp("mp3insert","mp3insert",
+ 	    "-p",enc_track->mp3_filename,
+@@ -351,7 +351,7 @@ static void AddSQLEntry(GripInfo *ginfo,
+ 	    "-t",enc_track->song_name,"-d",enc_track->disc_name,
+ 	    "-g",ID3GenreString(enc_track->id3_genre),"-y",year_str,
+ 	    "-n",track_str,
+-	    "-f",frame_str,"-l",length_str,"-m",playtime_str,NULL);
++	    "-f",frame_str,"-l",length_str,"-m",playtime_str,(void *)NULL);
+     
+     _exit(0);
+   }
