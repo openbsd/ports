@@ -1,5 +1,6 @@
---- Dclock.h.orig	Fri Dec 31 20:09:22 1999
-+++ Dclock.h	Fri Dec 31 20:09:44 1999
+$OpenBSD: patch-Dclock_h,v 1.1 2004/05/21 10:48:48 xsa Exp $
+--- Dclock.h.orig	2004-05-19 15:28:49.000000000 +0200
++++ Dclock.h	2004-05-19 15:29:11.000000000 +0200
 @@ -51,7 +51,7 @@
  #define XtNfadeRate	"fadeRate"
  #define XtNtails	"tails"
