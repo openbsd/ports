@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_IO_http_c,v 1.7 2003/05/04 18:33:59 couderc Exp $
---- src/IO/http.c.orig	Wed Apr 30 13:34:47 2003
-+++ src/IO/http.c	Wed Apr 30 13:36:01 2003
-@@ -278,6 +278,7 @@ static int Http_connect_socket(ChainLink
+$OpenBSD: patch-src_IO_http_c,v 1.8 2004/02/21 01:37:19 couderc Exp $
+--- src/IO/http.c.orig	2004-01-05 20:25:46.000000000 +0100
++++ src/IO/http.c	2004-02-21 02:11:12.000000000 +0100
+@@ -288,6 +288,7 @@ static int Http_connect_socket(ChainLink
        struct sockaddr_in *sin = (struct sockaddr_in *)&name;
        socket_len = sizeof(struct sockaddr_in);
        sin->sin_family = dh->af;
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_IO_http_c,v 1.7 2003/05/04 18:33:59 couderc Exp $
        sin->sin_port = S->port ? htons(S->port) : htons(DILLO_URL_HTTP_PORT);
        memcpy(&sin->sin_addr, dh->data, dh->alen);
        if (a_Web_valid(S->web) && (S->web->flags & WEB_RootUrl))
-@@ -292,6 +293,7 @@ static int Http_connect_socket(ChainLink
+@@ -302,6 +303,7 @@ static int Http_connect_socket(ChainLink
        socket_len = sizeof(struct sockaddr_in6);
        sin6->sin6_family = dh->af;
        sin6->sin6_port = S->port ? htons(S->port) : htons(DILLO_URL_HTTP_PORT);

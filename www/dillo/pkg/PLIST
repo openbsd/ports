@@ -1,5 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/02/18 15:53:18 couderc Exp $
-bin/bm_srv12
+@comment $OpenBSD: PLIST,v 1.3 2004/02/21 01:37:19 couderc Exp $
 bin/dillo
+bin/dpid
+bin/dpidc
+lib/dillo/dpi/bookmarks/bookmarks.dpi
+lib/dillo/dpi/downloads/downloads.dpi
+lib/dillo/dpi/ftp/ftp.filter.dpi
+lib/dillo/dpi/hello/hello.filter.dpi
+lib/dillo/dpi/https/https.filter.dpi
 share/examples/dillo/dillorc
 @dirrm share/examples/dillo
+@dirrm lib/dillo/dpi/https
+@dirrm lib/dillo/dpi/hello
+@dirrm lib/dillo/dpi/ftp
+@dirrm lib/dillo/dpi/downloads
+@dirrm lib/dillo/dpi/bookmarks
+@dirrm lib/dillo/dpi
+@dirrm lib/dillo

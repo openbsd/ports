@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dillo_c,v 1.4 2003/05/04 18:33:59 couderc Exp $
---- src/dillo.c.orig	Thu Apr 24 18:15:19 2003
-+++ src/dillo.c	Sun May  4 20:26:23 2003
-@@ -47,6 +47,7 @@
+$OpenBSD: patch-src_dillo_c,v 1.5 2004/02/21 01:37:19 couderc Exp $
+--- src/dillo.c.orig	2004-02-06 16:53:59.000000000 +0100
++++ src/dillo.c	2004-02-21 02:11:12.000000000 +0100
+@@ -48,6 +48,7 @@
  #include "interface.h"
  #include "dw.h"
  #include "cookies.h"
@@ -9,30 +9,3 @@ $OpenBSD: patch-src_dillo_c,v 1.4 2003/05/04 18:33:59 couderc Exp $
  
  
  /*
-@@ -234,7 +235,7 @@ gint main(int argc, char *argv[])
-    }
- 
-    /* Send a delayed locale-related message */
--   g_print("Setting locale to %s...\n", curr_locale);
-+   DEBUG_MSG(3, "Setting locale to %s...\n", curr_locale);
-    g_free(curr_locale);
- 
-    /* This lets threads in the file module end peacefully when aborted
-@@ -305,7 +306,7 @@ gint main(int argc, char *argv[])
-    a_Dw_freeall();
-    a_History_free();
- 
--   g_print("Dillo: normal exit!\n");
-+   DEBUG_MSG(3, "Dillo: normal exit!\n");
-    return 0;
- }
- 
-@@ -349,7 +350,7 @@ static void Dillo_check_bm_srv12(char *d
-          /* kill any running bm_srv12 */
-          cmd = g_strdup_printf(
-                   "kill `ps -U %s | grep [b]m_srv12 | "
--                  "sed 's/^ *//g' | cut -d' ' -f1`", usr);
-+                  "sed 's/^ *//g' | cut -d' ' -f1` >/dev/null 2>&1", usr);
-          system(cmd);
-          g_free(cmd);
- 

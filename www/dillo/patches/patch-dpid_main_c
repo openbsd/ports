@@ -1,0 +1,21 @@
+$OpenBSD: patch-dpid_main_c,v 1.1 2004/02/21 01:37:19 couderc Exp $
+--- dpid/main.c.orig	2004-02-21 01:50:12.000000000 +0100
++++ dpid/main.c	2004-02-21 01:51:00.000000000 +0100
+@@ -67,7 +67,7 @@ int start_filter_plugin(struct dp dpi_at
+    }
+    if ( pid == 0) { 
+       /* Child, start plugin */
+-      if (execl(dpi_attr.path, dpi_attr.path, NULL) == -1) {
++      if (execl(dpi_attr.path, dpi_attr.path, (void *)NULL) == -1) {
+          ERRMSG("start_plugin", "execl", errno);
+          fprintf(stderr, "ERROR in child proc for %s\n", dpi_attr.path);
+          exit(1);
+@@ -99,7 +99,7 @@ void start_server_plugin(struct dp dpi_a
+       fprintf(stderr, "ERROR in child proc for %s\n", dpi_attr.path);
+       exit(1);
+    }
+-   if (execl(dpi_attr.path, dpi_attr.path, NULL) == -1) {
++   if (execl(dpi_attr.path, dpi_attr.path, (void *)NULL) == -1) {
+       ERRMSG("start_plugin", "execl", errno);
+       fprintf(stderr, "ERROR in child proc for %s\n", dpi_attr.path);
+       exit(1);

@@ -1,24 +1,15 @@
-$OpenBSD: patch-src_IO_dpi_c,v 1.4 2003/05/04 18:33:59 couderc Exp $
---- src/IO/dpi.c.orig	Wed Apr 30 13:37:08 2003
-+++ src/IO/dpi.c	Wed Apr 30 13:37:42 2003
-@@ -305,9 +305,9 @@ static gint Dpi_launch_server()
-    if (pid == 0) {
+$OpenBSD: patch-src_IO_dpi_c,v 1.5 2004/02/21 01:37:19 couderc Exp $
+--- src/IO/dpi.c.orig	2004-02-21 01:46:30.000000000 +0100
++++ src/IO/dpi.c	2004-02-21 01:46:42.000000000 +0100
+@@ -334,9 +334,9 @@ static gint Dpi_start_dpid()
        /* This is the child process.  Execute the command. */
-       gchar *path1 = a_Misc_prepend_user_home(".dillo/bm_srv12");
--      if (execl(path1, "bm_srv12", NULL) == -1) {
-+      if (execl(path1, "bm_srv12", (void *)NULL) == -1) {
+       gchar *path1 = a_Misc_prepend_user_home(".dillo/dpid");
+       close(st_pipe[0]);
+-      if (execl(path1, "dpid", NULL) == -1) {
++      if (execl(path1, "dpid", (void *)NULL) == -1) {
           g_free(path1);
--         if (execlp("bm_srv12", "bm_srv12", NULL) == -1)
-+         if (execlp("bm_srv12", "bm_srv12", (void *)NULL) == -1)
-             exit (EXIT_FAILURE);
-       }
-    } else if (pid < 0) {
-@@ -358,7 +358,7 @@ static gint Dpi_connect_socket(gint retr
- 
-    if ((SockFD = socket(AF_LOCAL, SOCK_STREAM, 0)) == -1)
-       perror("[dpi::socket]");
--   else if (connect(SockFD, (void*)&pun, D_SUN_LEN(&pun)) == -1) {
-+   else if (connect(SockFD, (void*)&pun, SUN_LEN(&pun)) == -1) {
-       err = errno;
-       SockFD = -1;
-       g_print("[dpi::connect] errno:%d %s\n", errno, g_strerror(errno));
+-         if (execlp("dpid", "dpid", NULL) == -1) {
++         if (execlp("dpid", "dpid", (void *)NULL) == -1) {
+             DEBUG_MSG(4, "Dpi_start_dpid (child): %s\n", g_strerror(errno));
+             write(st_pipe[1], "ERROR", 5);
+             close(st_pipe[1]);
