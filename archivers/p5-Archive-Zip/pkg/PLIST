@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/07/24 14:20:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/03 11:30:02 espie Exp $
 bin/crc32
 ${P5SITE}/Archive/
 ${P5SITE}/Archive/Zip/
@@ -12,7 +12,7 @@ ${P5SITE}/Archive/Zip/Tree.pm
 @comment ${P5ARCH}/auto/Archive/
 @comment ${P5ARCH}/auto/Archive/Zip/
 @comment ${P5ARCH}/auto/Archive/Zip/.packlist
-man/man3p/Archive::Zip.3p
-man/man3p/Archive::Zip::FAQ.3p
-man/man3p/Archive::Zip::MemberRead.3p
-man/man3p/Archive::Zip::Tree.3p
+@man man/man3p/Archive::Zip.3p
+@man man/man3p/Archive::Zip::FAQ.3p
+@man man/man3p/Archive::Zip::MemberRead.3p
+@man man/man3p/Archive::Zip::Tree.3p

@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/07/24 14:20:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/08/03 11:30:02 espie Exp $
 bin/funzip
 bin/unzip
 bin/unzipsfx
 bin/zipgrep
 bin/zipinfo
-man/man1/funzip.1
-man/man1/unzip.1
-man/man1/unzipsfx.1
-man/man1/zipgrep.1
-man/man1/zipinfo.1
+@man man/man1/funzip.1
+@man man/man1/unzip.1
+@man man/man1/unzipsfx.1
+@man man/man1/zipgrep.1
+@man man/man1/zipinfo.1
 share/doc/unzip/
 share/doc/unzip/COPYING.OLD
 share/doc/unzip/LICENSE

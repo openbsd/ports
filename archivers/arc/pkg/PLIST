@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/07/24 14:20:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/08/03 11:30:01 espie Exp $
 bin/arc
 bin/marc
-man/man1/arc.1
+@man man/man1/arc.1
 share/doc/arc/
 share/doc/arc/Arc521.doc
 share/doc/arc/Arcinfo

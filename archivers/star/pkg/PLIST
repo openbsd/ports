@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/07/24 14:20:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/08/03 11:30:02 espie Exp $
 bin/smt
 bin/star
 bin/tartest
 bin/ustar
 libexec/srmt
-man/man1/star.1
-man/man1/tartest.1
-man/man1/ustar.1
-man/man8/srmt.8
+@man man/man1/star.1
+@man man/man1/tartest.1
+@man man/man1/ustar.1
+@man man/man8/srmt.8
 share/examples/star/
 share/examples/star/srmt.conf.sample
 @cwd ${SYSCONFDIR}

@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/12/07 06:12:58 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/03 11:30:01 espie Exp $
 bin/cabextract
-man/man1/cabextract.1
+@man man/man1/cabextract.1

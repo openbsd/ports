@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/07/24 14:20:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/08/03 11:30:02 espie Exp $
 bin/binhex
 bin/frommac
 bin/hexbin
@@ -6,13 +6,13 @@ bin/macsave
 bin/macstream
 bin/macunpack
 bin/tomac
-man/man1/binhex.1
-man/man1/frommac.1
-man/man1/hexbin.1
-man/man1/macsave.1
-man/man1/macstream.1
-man/man1/macunpack.1
-man/man1/macutil.1
-man/man1/tomac.1
+@man man/man1/binhex.1
+@man man/man1/frommac.1
+@man man/man1/hexbin.1
+@man man/man1/macsave.1
+@man man/man1/macstream.1
+@man man/man1/macunpack.1
+@man man/man1/macutil.1
+@man man/man1/tomac.1
 share/doc/macutil/
 share/doc/macutil/README

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/07/24 14:20:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/08/03 11:30:02 espie Exp $
 ${P5SITE}/Archive/
 ${P5SITE}/Archive/Tar/
 ${P5SITE}/Archive/Tar.pm
@@ -7,5 +7,5 @@ ${P5SITE}/Archive/Tar/File.pm
 @comment ${P5ARCH}/auto/Archive/
 @comment ${P5ARCH}/auto/Archive/Tar/
 @comment ${P5ARCH}/auto/Archive/Tar/.packlist
-man/man3p/Archive::Tar.3p
-man/man3p/Archive::Tar::File.3p
+@man man/man3p/Archive::Tar.3p
+@man man/man3p/Archive::Tar::File.3p

@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/08/02 01:41:43 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/03 11:30:01 espie Exp $
 bin/fcat
 bin/freeze
 bin/melt
 bin/statist
 bin/unfreeze
-man/man1/fcat.1
-man/man1/freeze.1
-man/man1/melt.1
-man/man1/statist.1
-man/man1/unfreeze.1
+@man man/man1/fcat.1
+@man man/man1/freeze.1
+@man man/man1/melt.1
+@man man/man1/statist.1
+@man man/man1/unfreeze.1

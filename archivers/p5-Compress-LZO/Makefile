@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2004/01/17 15:58:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2004/08/03 11:30:02 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"interface to lzo compression library"
 
