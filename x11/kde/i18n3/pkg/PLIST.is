@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.is,v 1.10 2003/12/15 20:56:39 naddy Exp $
+@comment $OpenBSD: PLIST.is,v 1.11 2003/12/30 02:08:19 naddy Exp $
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
@@ -206,7 +206,6 @@ ${LOC}kfontviewpart.mo
 ${LOC}kfortune.mo
 ${LOC}kfouleggs.mo
 ${LOC}kgantt.mo
-${LOC}kgeo.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
 ${LOC}kgpgcertmanager.mo
@@ -236,14 +235,12 @@ ${LOC}kio_smb.mo
 ${LOC}kio_smbro.mo
 ${LOC}kio_smtp.mo
 ${LOC}kit.mo
-${LOC}kiten.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
 ${LOC}kjumpingcube.mo
 ${LOC}klaptopdaemon.mo
 ${LOC}klegacyimport.mo
 ${LOC}kless.mo
-${LOC}klettres.mo
 ${LOC}klickety.mo
 ${LOC}klines.mo
 ${LOC}klipper.mo
@@ -255,18 +252,15 @@ ${LOC}kmailcvt.mo
 ${LOC}kmathtool.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuedit.mo
-${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmidi.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
 ${LOC}kmoon.mo
-${LOC}kmplot.mo
 ${LOC}kmrml.mo
 ${LOC}knewsticker.mo
 ${LOC}knode.mo
-${LOC}knorskverbs.mo
 ${LOC}knotes.mo
 ${LOC}knotify.mo
 ${LOC}kodo.mo
@@ -286,14 +280,12 @@ ${LOC}kpaint.mo
 ${LOC}kpartapp.mo
 ${LOC}kpartsaver.mo
 ${LOC}kpat.mo
-${LOC}kpercentage.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kpf.mo
 ${LOC}kpilot.mo
 ${LOC}kpixmap2bitmap.mo
 ${LOC}kpm.mo
 ${LOC}kpoker.mo
-${LOC}kpovmodeler.mo
 ${LOC}kppp.mo
 ${LOC}kppplogview.mo
 ${LOC}kprinter.mo
@@ -337,14 +329,11 @@ ${LOC}ktexteditor_kdatatool.mo
 ${LOC}ktimemon.mo
 ${LOC}ktimer.mo
 ${LOC}ktip.mo
-${LOC}ktouch.mo
 ${LOC}ktron.mo
 ${LOC}ktuberling.mo
 ${LOC}ktux.mo
 ${LOC}kuick_plugin.mo
-${LOC}kuickshow.mo
 ${LOC}kuser.mo
-${LOC}kverbos.mo
 ${LOC}kview.mo
 ${LOC}kview_scale.mo
 ${LOC}kviewbrowserplugin.mo
@@ -352,7 +341,6 @@ ${LOC}kviewpresenterplugin.mo
 ${LOC}kviewscannerplugin.mo
 ${LOC}kviewshell.mo
 ${LOC}kviewtemplateplugin.mo
-${LOC}kvoctrain.mo
 ${LOC}kweather.mo
 ${LOC}kwin.mo
 ${LOC}kwin4.mo
