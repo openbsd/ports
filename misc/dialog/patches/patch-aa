@@ -1,0 +1,34 @@
+--- Makefile.orig	Thu Nov 12 18:02:34 1998
++++ Makefile	Thu Nov 12 18:05:31 1998
+@@ -17,8 +17,8 @@
+ # can be disabled to make dialog a bit smaller (could be done for more things)
+ HAVE_GUAGE=true
+ 
+-BINDIR = /usr/bin
+-MANDIR = /usr/man/man1/
++BINDIR = ${PREFIX}/bin
++MANDIR = ${PREFIX}/man/man1/
+ 
+ CC = gcc
+ CPP = gcc -E
+@@ -42,8 +42,8 @@
+ OBJS+=mouse.o
+ endif
+ ifeq ($(HAVE_NCURSES), true)
+-CFLAGS+=-DHAVE_NCURSES -I/usr/include/ncurses
+-LDLIBS+=-lncurses
++CFLAGS+=-DHAVE_NCURSES -I/usr/include/curses
++LDLIBS+=-lcurses
+ endif
+ ifeq ($(HAVE_RC_FILE), true)
+ CFLAGS+=-DHAVE_RC_FILE
+@@ -59,7 +59,8 @@
+ all: libdialog.a dialog
+ 
+ libdialog.a: $(OBJS)
+-	ar rcs libdialog.a $(OBJS)
++	ar rc libdialog.a $(OBJS)
++	ranlib libdialog.a
+ 
+ dialog: dialog.o
+ 
