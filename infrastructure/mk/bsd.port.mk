@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.279 2000/05/17 00:22:39 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.280 2000/05/17 12:14:53 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1136,19 +1136,19 @@ fetch: fetch-depends
 	@echo >&2 "*** Please notify the OpenBSD port maintainer <${MAINTAINER}>"
 .  endif
 .  if target(pre-fetch)
-	@cd ${.CURDIR} && ${MAKE} pre-fetch
+	@cd ${.CURDIR} && exec ${MAKE} pre-fetch
 .  endif
 .  if target(do-fetch)
-	@cd ${.CURDIR} && ${MAKE} do-fetch
+	@cd ${.CURDIR} && exec ${MAKE} do-fetch
 .  else
 # What FETCH normally does:
 .    if !empty(ALLFILES)
-	@cd ${.CURDIR} && ${MAKE} ${ALLFILES:S@^@${FULLDISTDIR}/@}
+	@cd ${.CURDIR} && exec ${MAKE} ${ALLFILES:S@^@${FULLDISTDIR}/@}
 .    endif
 # End of FETCH
 .  endif
 .  if target(post-fetch)
-	@cd ${.CURDIR} && ${MAKE} post-fetch
+	@cd ${.CURDIR} && exec ${MAKE} post-fetch
 .  endif
 
 
@@ -1278,14 +1278,14 @@ addsum: fetch-all
 # disabled, and there are hooks to override behavior.
 
 ${_EXTRACT_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} checksum build-depends lib-depends misc-depends
+	@cd ${.CURDIR} && exec ${MAKE} checksum build-depends lib-depends misc-depends
 .if !defined(NO_EXTRACT)
 	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
 .  if target(pre-extract)
-	@cd ${.CURDIR} && ${MAKE} pre-extract
+	@cd ${.CURDIR} && exec ${MAKE} pre-extract
 .  endif
 .  if target(do-extract)
-	@cd ${.CURDIR} && ${MAKE} do-extract
+	@cd ${.CURDIR} && exec ${MAKE} do-extract
 .  else
 # What EXTRACT normally does:
 .    if defined(WRKOBJDIR)
@@ -1311,7 +1311,7 @@ ${_EXTRACT_COOKIE}:
 # End of EXTRACT
 .  endif
 .  if target(post-extract)
-	@cd ${.CURDIR} && ${MAKE} post-extract
+	@cd ${.CURDIR} && exec ${MAKE} post-extract
 .  endif
 .endif
 
@@ -1323,7 +1323,7 @@ ${_EXTRACT_COOKIE}:
 # Hence it needs special treatment (a specific cookie).
 .if target(pre-patch)
 ${_PREPATCH_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} pre-patch
+	@cd ${.CURDIR} && exec ${MAKE} pre-patch
 	@${_MAKE_COOKIE} ${_PREPATCH_COOKIE}
 .endif
 
@@ -1334,10 +1334,10 @@ ${_PREPATCH_COOKIE}:
 ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .if !defined(NO_PATCH)
 .  if target(pre-patch)
-	@cd ${.CURDIR} && ${MAKE} ${_PREPATCH_COOKIE}
+	@cd ${.CURDIR} && exec ${MAKE} ${_PREPATCH_COOKIE}
 .  endif
 .  if target(do-distpatch)
-	@cd ${.CURDIR} && ${MAKE} do-distpatch
+	@cd ${.CURDIR} && exec ${MAKE} do-distpatch
 .  else
 # What DISTPATCH normally does
 .    if defined(_PATCHFILES)
@@ -1360,7 +1360,7 @@ ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 # End of DISTPATCH.
 .  endif
 .  if target(post-distpatch)
-	@cd ${.CURDIR} && ${MAKE} post-distpatch
+	@cd ${.CURDIR} && exec ${MAKE} post-distpatch
 .  endif
 .endif
 	@${_MAKE_COOKIE} ${_DISTPATCH_COOKIE}
@@ -1372,15 +1372,15 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .if !defined(NO_PATCH)
 	@${ECHO_MSG} "===>  Patching for ${PKGNAME}"
 .  if target(pre-patch)
-	@cd ${.CURDIR} && ${MAKE} ${_PREPATCH_COOKIE}
+	@cd ${.CURDIR} && exec ${MAKE} ${_PREPATCH_COOKIE}
 .  endif
 .  if target(do-patch)
-	@cd ${.CURDIR} && ${MAKE} do-patch
+	@cd ${.CURDIR} && exec ${MAKE} do-patch
 .  else
 # What PATCH normally does:
 # XXX test for efficiency, don't bother with distpatch if it's not needed
 .    if target(do-distpatch) || target(post-distpatch) || defined(PATCHFILES) 
-	@cd ${.CURDIR} && ${MAKE} distpatch
+	@cd ${.CURDIR} && exec ${MAKE} distpatch
 .    endif 
 	@if cd ${PATCHDIR} 2>/dev/null; then \
 		error=0; \
@@ -1413,11 +1413,11 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 # End of PATCH.
 .  endif
 .  if target(post-patch)
-	@cd ${.CURDIR} && ${MAKE} post-patch
+	@cd ${.CURDIR} && exec ${MAKE} post-patch
 .  endif
 .endif
 .if !defined(PATCH_CHECK_ONLY) && defined(USE_AUTOCONF)
-	@cd ${AUTOCONF_DIR} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
+	@cd ${AUTOCONF_DIR} && exec ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 .endif
 	@${_MAKE_COOKIE} ${_PATCH_COOKIE}
 
@@ -1429,10 +1429,10 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 	@${ECHO_MSG} "===>  Configuring for ${PKGNAME}"
 	@mkdir -p ${WRKBUILD}
 .  if target(pre-configure)
-	@cd ${.CURDIR} && ${MAKE} pre-configure
+	@cd ${.CURDIR} && exec ${MAKE} pre-configure
 .  endif
 .  if target(do-configure)
-	@cd ${.CURDIR} && ${MAKE} do-configure
+	@cd ${.CURDIR} && exec ${MAKE} do-configure
 .  else
 # What CONFIGURE normally does
 	@if [ -f ${SCRIPTDIR}/configure ]; then \
@@ -1461,7 +1461,7 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 # End of CONFIGURE.
 .  endif
 .  if target(post-configure)
-	@cd ${.CURDIR} && ${MAKE} post-configure
+	@cd ${.CURDIR} && exec ${MAKE} post-configure
 .  endif
 .endif
 	@${_MAKE_COOKIE} ${_CONFIGURE_COOKIE}
@@ -1473,17 +1473,17 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 .if !defined(NO_BUILD) 
 	@${ECHO_MSG} "===>  Building for ${PKGNAME}"
 .  if target(pre-build)
-	@cd ${.CURDIR} && ${MAKE} pre-build
+	@cd ${.CURDIR} && exec ${MAKE} pre-build
 .  endif
 .  if target(do-build)
-	@cd ${.CURDIR} && ${MAKE} do-build
+	@cd ${.CURDIR} && exec ${MAKE} do-build
 .  else
 # What BUILD normally does:
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
+	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
 # End of BUILD
 .  endif
 .  if target(post-build)
-	@cd ${.CURDIR} && ${MAKE} post-build
+	@cd ${.CURDIR} && exec ${MAKE} post-build
 .  endif
 .endif
 	@${_MAKE_COOKIE} ${_BUILD_COOKIE}
@@ -1501,21 +1501,21 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${SUDO} mtree -U -e -d -n -p ${WRKINST} \
 		-f ${PORTSDIR}/infrastructure/db/fake.mtree  >/dev/null
 .  if target(pre-fake)
-	@cd ${.CURDIR} && ${SUDO} ${MAKE} pre-fake ${_FAKE_SETUP}
+	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} pre-fake ${_FAKE_SETUP}
 .  endif
 	@${SUDO} ${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
 .  if target(pre-install)
-	@cd ${.CURDIR} && ${SUDO} ${MAKE} pre-install ${_FAKE_SETUP}
+	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} pre-install ${_FAKE_SETUP}
 .  endif
 .  if target(do-install)
-	@cd ${.CURDIR} && ${SUDO} ${MAKE} do-install ${_FAKE_SETUP}
+	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} do-install ${_FAKE_SETUP}
 .  else
 # What FAKE normally does:
-	@cd ${WRKBUILD} && ${SUDO} ${SETENV} ${MAKE_ENV} ${_FAKE_SETUP} ${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
+	@cd ${WRKBUILD} && exec ${SUDO} ${SETENV} ${MAKE_ENV} ${_FAKE_SETUP} ${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 # End of FAKE.
 .  endif
 .  if target(post-install)
-	@cd ${.CURDIR} && ${SUDO} ${MAKE} post-install ${_FAKE_SETUP}
+	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} post-install ${_FAKE_SETUP}
 .  endif
 .  if defined(_MANPAGES) || defined(_CATPAGES)
 .    if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
@@ -1544,7 +1544,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${SUDO} ${_MAKE_COOKIE} ${_FAKE_COOKIE}
 
 ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIE}
-	@cd ${.CURDIR} && ${MAKE} run-depends lib-depends DEPENDS_TARGET=package
+	@cd ${.CURDIR} && exec ${MAKE} run-depends lib-depends DEPENDS_TARGET=package
 	@${ECHO_MSG} "===>  Installing ${PKGNAME} from ${PKGFILE}"
 # Kludge
 .if defined(USE_IMAKE)
@@ -1563,7 +1563,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 
 # The real install, old version
 ${_INSTALL_COOKIE}: ${_BUILD_COOKIE} 
-	@cd ${.CURDIR} && ${MAKE} run-depends lib-depends 
+	@cd ${.CURDIR} && exec ${MAKE} run-depends lib-depends 
 .  if !defined(NO_INSTALL)
 	@${ECHO_MSG} "===>  Installing for ${PKGNAME}"
 # Kludge
@@ -1591,17 +1591,17 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 	fi
 	@${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
 .    if target(pre-install)
-	@cd ${.CURDIR} && ${MAKE} pre-install
+	@cd ${.CURDIR} && exec ${MAKE} pre-install
 .    endif
 .    if target(do-install)
-	@cd ${.CURDIR} && ${MAKE} do-install
+	@cd ${.CURDIR} && exec ${MAKE} do-install
 .    else
 # What INSTALL normally does:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${INSTALL_TARGET}
 # End of INSTALL.
 .    endif
 .    if target(post-install)
-	@cd ${.CURDIR} && ${MAKE} post-install
+	@cd ${.CURDIR} && exec ${MAKE} post-install
 .    endif
 .    if defined(_MANPAGES) || defined(_CATPAGES)
 .      if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
@@ -1627,7 +1627,7 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 	@cat	${PKGDIR}/MESSAGE
 .    endif
 .    if !defined(NO_PKG_REGISTER)
-	@cd ${.CURDIR} && ${MAKE} fake-pkg
+	@cd ${.CURDIR} && exec ${MAKE} fake-pkg
 .    endif
 .  endif
 	@${_MAKE_COOKIE} ${_INSTALL_COOKIE}
@@ -1644,7 +1644,7 @@ ${_PACKAGE_COOKIE}${_sub}: ${_FAKE_COOKIE}
 .    else
 ${_PACKAGE_COOKIE}${_sub}: ${_INSTALL_COOKIE}
 .    endif
-	@cd ${.CURDIR} && ${MAKE} package SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
+	@cd ${.CURDIR} && exec ${MAKE} package SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
 
 .  endfor
 .endif
@@ -1657,10 +1657,10 @@ ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE} ${_SUBPACKAGE_COOKIES} ${PLIST}
 .endif
 .if !defined(NO_PACKAGE)
 .  if target(pre-package)
-	@cd ${.CURDIR} && ${MAKE} pre-package
+	@cd ${.CURDIR} && exec ${MAKE} pre-package
 .  endif
 .  if target(do-package)
-	@cd ${.CURDIR} && ${MAKE} do-package
+	@cd ${.CURDIR} && exec ${MAKE} do-package
 .  else
 # What PACKAGE normally does:
 	@${ECHO_MSG} "===>  Building package for ${PKGNAME}"
@@ -1680,7 +1680,7 @@ ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE} ${_SUBPACKAGE_COOKIES} ${PLIST}
 # End of PACKAGE.
 .  endif
 .  if target(post-package)
-	@cd ${.CURDIR} && ${MAKE} post-package
+	@cd ${.CURDIR} && exec ${MAKE} post-package
 .  endif
 .else
 .  if !defined(IGNORE_SILENT)
@@ -1693,7 +1693,7 @@ ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE} ${_SUBPACKAGE_COOKIES} ${PLIST}
 
 .if !target(fetch-all)
 fetch-all:
-	@cd ${.CURDIR} && ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes fetch
+	@cd ${.CURDIR} && exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes fetch
 .endif
 
 # Separate target for each file fetch will retrieve
@@ -1722,13 +1722,13 @@ ${_F}:
 # re-distributed freely
 mirror-distfiles:
 .if (${MIRROR_DISTFILE:L} == "yes")
-	@cd ${.CURDIR} && ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes fetch
+	@cd ${.CURDIR} && exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes fetch
 .endif
 
 all-package: ${PKGFILE}
 .if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
 .  for _sub in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && ${MAKE} ${.TARGET} SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
+	@cd ${.CURDIR} && exec ${MAKE} ${.TARGET} SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
 .  endfor
 .endif
 
@@ -1740,7 +1740,7 @@ cdrom-packages:
 .endif
 .if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
 .  for _sub in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && ${MAKE} ${.TARGET} SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
+	@cd ${.CURDIR} && exec ${MAKE} ${.TARGET} SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
 .  endfor
 .endif
 
@@ -1752,14 +1752,14 @@ ftp-packages:
 .endif
 .if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
 .  for _sub in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && ${MAKE} ${.TARGET} SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
+	@cd ${.CURDIR} && exec ${MAKE} ${.TARGET} SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
 .  endfor
 .endif
 
 
 ${PKGFILE}:
 	@mkdir -p ${PORTSDIR}/logs/${ARCH}
-	@cd ${.CURDIR} && ${MAKE} package ALWAYS_PACKAGE=Yes 2>&1 | \
+	@cd ${.CURDIR} && exec ${MAKE} package ALWAYS_PACKAGE=Yes 2>&1 | \
 		tee ${PORTSDIR}/logs/${ARCH}/${PKGNAME}.log
 
 ${FTP_PACKAGES}/${PKGNAME}${PKG_SUFX}: ${PKGFILE}
@@ -1816,7 +1816,7 @@ obj:
 
 .if !target(package-links)
 package-links:
-	@cd ${.CURDIR} && ${MAKE} delete-package-links
+	@cd ${.CURDIR} && exec ${MAKE} delete-package-links
 	@for cat in ${CATEGORIES}; do \
 		if [ ! -d ${PACKAGES}/$$cat ]; then \
 			if ! mkdir -p ${PACKAGES}/$$cat; then \
@@ -1835,7 +1835,7 @@ delete-package-links:
 
 .if !target(delete-package)
 delete-package:
-	@cd ${.CURDIR} && ${MAKE} delete-package-links
+	@cd ${.CURDIR} && exec ${MAKE} delete-package-links
 	@rm -f ${PKGFILE}
 .endif
 
@@ -1845,7 +1845,7 @@ delete-package:
 
 .if !target(checkpatch)
 checkpatch:
-	@cd ${.CURDIR} && ${MAKE} PATCH_CHECK_ONLY=Yes patch
+	@cd ${.CURDIR} && exec ${MAKE} PATCH_CHECK_ONLY=Yes patch
 .endif
 
 # Reinstall
@@ -1855,7 +1855,7 @@ checkpatch:
 .if !target(reinstall)
 reinstall:
 	@rm -f ${_INSTALL_PRE_COOKIE} ${_INSTALL_COOKIE} ${_PACKAGE_COOKIE}
-	@cd ${.CURDIR} && DEPENDS_TARGET=${DEPENDS_TARGET} ${MAKE} install
+	@cd ${.CURDIR} && DEPENDS_TARGET=${DEPENDS_TARGET} exec ${MAKE} install
 .endif
 
 # Deinstall
@@ -1883,7 +1883,7 @@ pre-clean:
 .if !target(clean)
 clean: pre-clean
 .  if ${CLEANDEPENDS:L}=="yes"
-	@cd ${.CURDIR} && ${MAKE} clean-depends
+	@cd ${.CURDIR} && exec ${MAKE} clean-depends
 .  endif
 .if defined(WRKINST)
 	@if cd ${WRKINST} 2>/dev/null; then ${SUDO} rm -rf ${WRKINST}; fi
@@ -1919,7 +1919,7 @@ fetch-list:
 
 .if !target(fetch-list-recursive)
 fetch-list-recursive:
-	@cd ${.CURDIR} && ${MAKE} fetch-list-one-pkg 
+	@cd ${.CURDIR} && exec ${MAKE} fetch-list-one-pkg 
 .  if ${RECURSIVE_FETCH_LIST:L} != "no"
 	@for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
 	| tr '\040' '\012' | sort -u`; do \
@@ -2002,7 +2002,7 @@ fetch-makefile:
 	@echo -n " cdrom"
 .endif
 	@echo ":: "`${MAKE} package-name FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}`
-	@cd ${.CURDIR} && ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes _fetch-makefile-helper
+	@cd ${.CURDIR} && exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes _fetch-makefile-helper
 
 _fetch-makefile-helper:
 # write generic package dependencies
@@ -2090,7 +2090,7 @@ pre-repackage:
 .if !target(package-noinstall)
 package-noinstall:
 	@rm -f ${_PACKAGE_COOKIE}
-	@cd ${.CURDIR} && ${MAKE} PACKAGE_NOINSTALL=Yes ${_PACKAGE_COOKIE}
+	@cd ${.CURDIR} && exec ${MAKE} PACKAGE_NOINSTALL=Yes ${_PACKAGE_COOKIE}
 .endif
 
 ################################################################
@@ -2356,7 +2356,7 @@ describe:
 .endif
 .if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
 .  for _sub in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && ${MAKE} SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' describe
+	@cd ${.CURDIR} && exec ${MAKE} SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' describe
 .  endfor
 .endif	
 
@@ -2502,7 +2502,7 @@ readmes:	readme
 .if !target(readme)
 readme:
 	@rm -f README.html
-	@cd ${.CURDIR} && ${MAKE} README_NAME=${README_NAME} README.html
+	@cd ${.CURDIR} && exec ${MAKE} README_NAME=${README_NAME} README.html
 .endif
 
 
@@ -2514,7 +2514,7 @@ PKGDEPTH!=${MAKE} package-path|sed -e 's|[^./][^/]*|..|g'
 
 .if !target(print-depends)
 print-depends: 
-	@cd ${.CURDIR} && ${MAKE} FULL_PACKAGE_NAME=Yes print-depends-list print-package-depends
+	@cd ${.CURDIR} && exec ${MAKE} FULL_PACKAGE_NAME=Yes print-depends-list print-package-depends
 .endif
 
 # Fake installation of package so that user can pkg_delete it later.
