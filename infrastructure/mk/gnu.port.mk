@@ -1,24 +1,29 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.10 2003/02/15 14:06:58 espie Exp $
+# $OpenBSD: gnu.port.mk,v 1.11 2003/02/15 16:38:48 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
 AUTOCONF_NEW?=	No
+
+MODGNU_AUTOCONF_DEPENDS=	::devel/metaauto \
+							::devel/autoconf/${AUTOCONF_VERSION}
+MODGNU_AUTOMAKE_DEPENDS=	::devel/automake
+
 .if ${CONFIGURE_STYLE:L:Mautomake}
-BUILD_DEPENDS+=		::devel/automake
+BUILD_DEPENDS+=		${MODGNU_AUTOMAKE_DEPENDS}
 .endif
 .if ${CONFIGURE_STYLE:L:Mautoupdate}
 CONFIGURE_STYLE+=autoconf
 .endif
+
 .if ${CONFIGURE_STYLE:L:Mautoconf}
-BUILD_DEPENDS+=		::devel/metaauto
 .  if ${AUTOCONF_NEW:L} == "yes"
 AUTOCONF_VERSION=2.52
 .  else
 AUTOCONF_VERSION?=2.13
 .  endif
-BUILD_DEPENDS+=::devel/autoconf/${AUTOCONF_VERSION}
+BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS}
 AUTOCONF?=			autoconf
 AUTOUPDATE?=		autoupdate
 AUTOHEADER?=		autoheader
