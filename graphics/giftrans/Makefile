@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/10/27 00:03:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2003/07/28 21:03:01 jolan Exp $
 # $FreeBSD: Makefile,v 1.2 1996/11/18 11:27:58 asami Exp $
 
 COMMENT=	"handle GIF89a transparent option and interlace mode"
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 
 do-build:
-	cd ${WRKSRC} && cc ${CFLAGS} giftrans.c -o giftrans
+	cd ${WRKSRC} && ${CC} ${CFLAGS} giftrans.c -o giftrans
 
 NO_REGRESS=	Yes
 
