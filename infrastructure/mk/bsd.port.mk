@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.348 2000/12/23 12:27:17 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.349 2001/01/08 22:09:24 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -67,14 +67,10 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #				  some distfiles must be fetched from elsewhere.
 # MASTER_SITE_SUBDIR - Directory that "%SUBDIR%" in MASTER_SITES is
 #				  replaced by.
-# CATEGORIES	- A list of descriptive categories into which this port falls.
 #
 # Variables that typically apply to an individual port.  Non-Boolean
 # variables without defaults are *mandatory*.
 #
-# DISTNAME		- Name of port or distribution.
-# IGNOREFILES	- If some of the ${ALLFILES} are not checksum-able, set
-#				  this variable to their names.
 # PKG_DBDIR		- Where package installation is recorded (default: /var/db/pkg)
 # FORCE_PKG_REGISTER - If set, it will overwrite any existing package
 #				  registration information in ${PKG_DBDIR}/${PKGNAME}.
