@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/29 15:40:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/16 17:02:02 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -12,7 +12,7 @@ NEED_VERSION=	1.407
 HOMEPAGE=	http://java.sun.com/j2se/
 MAINTAINER=	Christian Gruber <christian.edward.gruber@gmx.net>
 
-BUILD_DEPENDS=	/emul/linux/usr/X11R6/lib/libXp.so.6:redhat_base->=6.2:emulators/redhat_base
+BUILD_DEPENDS=	/emul/linux/usr/X11R6/lib/libXp.so.6:redhat_base->=6.2:emulators/redhat/base
 RUN_DEPENDS=	${BUILD_DEPENDS}
 DISTFILES=	j2sdk-1_3_1-linux-i386.bin
 EXTRACT_CASES+=	*.bin) \

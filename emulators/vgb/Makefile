@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/12 09:54:08 aaron Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/16 17:02:02 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tar.Z
 
-RUN_DEPENDS=	/emul/linux/lib/libc.so.6::emulators/redhat_base
+RUN_DEPENDS=	/emul/linux/lib/libc.so.6::emulators/redhat/base
 
 USE_X11=	Yes
 NO_BUILD=	Yes

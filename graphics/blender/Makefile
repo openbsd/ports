@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/15 09:06:47 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/16 17:02:02 naddy Exp $
 
 COMMENT=	"3D creation software"
 ONLY_FOR_ARCHS=	i386
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	"no commercial use"
 
 MASTER_SITES=	ftp://ftp.blender.nl/pub/
 
-RUN_DEPENDS=	/emul/linux/lib/libc.so.6::emulators/redhat_base
+RUN_DEPENDS=	/emul/linux/lib/libc.so.6::emulators/redhat/base
 
 NO_BUILD=	Yes
 

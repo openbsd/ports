@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/08/02 03:27:31 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2001/09/16 17:02:02 naddy Exp $
 #
 
 COMMENT=	"commercial spreadsheet"
@@ -31,7 +31,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/Wingz/Wingz.Xdefs ${PREFIX}/lib/X11/app-defaults/Wingz
 	@install -m 666 /dev/null ${PREFIX}/lib/X11/Wingz/.wingz
 	
-RUN_DEPENDS=    /emul/linux/lib/libc.so.6::emulators/redhat_base
+RUN_DEPENDS=    /emul/linux/lib/libc.so.6::emulators/redhat/base
 
 WRKDIST=	${WRKDIR}
 
