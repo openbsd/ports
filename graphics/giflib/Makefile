@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/05/25 13:04:08 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/06/09 20:20:15 brad Exp $
 
 DISTNAME=	giflib-4.1.0
 CATEGORIES=	graphics
@@ -20,7 +20,7 @@ MAINTAINER=	yanick@fries.net
 
 USE_GMAKE=	yes
 SYSCONFDIR=	${PREFIX}/lib
-SEPARATE_BUILD=	yes
+SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --sysconfdir=${SYSCONFDIR}
