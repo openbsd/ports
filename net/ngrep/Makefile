@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/04/09 10:11:36 sturm Exp $
+# $OpenBSD: Makefile,v 1.21 2004/05/04 10:02:37 espie Exp $
 
 COMMENT=	"network grep"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
 
-CONFIGURE_STYLE=autoconf
+CONFIGURE_STYLE=autoconf no-autoheader
 AUTOCONF_VERSION=2.57
 
 ALL_TARGET=	ngrep
