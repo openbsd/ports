@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2001/11/22 11:10:39 form Exp $
+@comment $OpenBSD: PLIST,v 1.16 2002/03/01 10:07:25 form Exp $
 bin/analog
 share/analog/anlgform.html
 share/analog/anlgform.pl
@@ -100,6 +100,30 @@ share/analog/images/barh4.gif
 share/analog/images/barh4.png
 share/analog/images/barh8.gif
 share/analog/images/barh8.png
+share/analog/images/bari1.gif
+share/analog/images/bari1.png
+share/analog/images/bari16.gif
+share/analog/images/bari16.png
+share/analog/images/bari2.gif
+share/analog/images/bari2.png
+share/analog/images/bari32.gif
+share/analog/images/bari32.png
+share/analog/images/bari4.gif
+share/analog/images/bari4.png
+share/analog/images/bari8.gif
+share/analog/images/bari8.png
+share/analog/images/barj1.gif
+share/analog/images/barj1.png
+share/analog/images/barj16.gif
+share/analog/images/barj16.png
+share/analog/images/barj2.gif
+share/analog/images/barj2.png
+share/analog/images/barj32.gif
+share/analog/images/barj32.png
+share/analog/images/barj4.gif
+share/analog/images/barj4.png
+share/analog/images/barj8.gif
+share/analog/images/barj8.png
 share/analog/images/html2.gif
 share/analog/images/html2.png
 share/analog/images/sq0.png
@@ -258,6 +282,8 @@ share/analog/lang/usform.html
 share/analog/lang/yu.lng
 share/analog/lang/yua.lng
 share/analog/lang/yudom.tab
+share/doc/analog/LicBSD.txt
+share/doc/analog/Licapach.txt
 share/doc/analog/Licence.txt
 share/doc/analog/Licgd.txt
 share/doc/analog/Licpcre.txt
@@ -279,6 +305,8 @@ share/doc/analog/bare8.gif
 share/doc/analog/barf8.gif
 share/doc/analog/barg8.gif
 share/doc/analog/barh8.gif
+share/doc/analog/bari8.gif
+share/doc/analog/barj8.gif
 share/doc/analog/basiccmd.html
 share/doc/analog/cache.html
 share/doc/analog/compout.html
@@ -321,6 +349,7 @@ share/doc/analog/whatsnew.html
 share/examples/analog/big.cfg
 share/examples/analog/bigbyrep.cfg
 share/examples/analog/realmedia.cfg
+share/examples/analog/searchen.cfg
 share/examples/analog/statslab.cfg
 share/examples/analog/virtdoms.cfg
 share/examples/analog/xferlog.cfg
