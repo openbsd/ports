@@ -1,0 +1,98 @@
+$OpenBSD: patch-configure_in,v 1.1 2002/12/27 18:07:00 danh Exp $
+--- configure.in.orig	Wed Apr 18 07:11:08 2001
++++ configure.in	Fri Dec 27 12:48:53 2002
+@@ -7,20 +7,11 @@ AC_INIT(sing.c)
+ 
+ AM_CONFIG_HEADER(config.h)
+ 
+-libpcapdir=libpcap-0.4
+-libnetdir=Libnet-1.0.1b
+-
+-AC_SUBST(libpcapdir)
+-AC_SUBST(libnetdir)
+-
+ AC_CANONICAL_SYSTEM
+ 
+ AM_INIT_AUTOMAKE(SING, 1.1)
+ 
+ AC_PROG_CC
+-if test -n "$GCC"; then
+-      CFLAGS="-O3 -Wall"
+-fi
+ 
+ AC_STDC_HEADERS
+ 
+@@ -46,42 +37,21 @@ AC_CHECK_LIB(net, libnet_open_raw_sock, 
+ dnl
+ dnl libpcap...
+ dnl
+-PCAP_CLEAN="pcap_clean"
+-PCAP_DISTCLEAN="pcap_distclean"
+-CFLAGS="$CFLAGS -I$libpcapdir"
+-
+ if test $have_libpcap = yes; then
+   PCAP_COMPILE=""
+-  LIBS="-L/usr/local/lib $LIBS"
+ else
+   PCAP_COMPILE="pcap_compile"
+-  LIBS="-L/usr/local/lib -L$libpcapdir $LIBS"
+ fi
+ 
+-AC_SUBST(PCAP_CLEAN)
+-AC_SUBST(PCAP_DISTCLEAN)
+-AC_SUBST(PCAP_COMPILE)
+-
+ dnl
+ dnl libnet...
+ dnl
+-LIBNET_CLEAN="libnet_clean"
+-LIBNET_DISTCLEAN="libnet_distclean"
+-CFLAGS="$CFLAGS -I$libnetdir"
+-
+ if test $have_libnet = yes; then
+   LIBNET_COMPILE=""
+-  LIBS="-L/usr/local/lib $LIBS"
+ else
+   LIBNET_COMPILE="libnet_compile"
+-  LIBS="-L/usr/local/lib -L$libnetdir/lib $LIBS"
+ fi
+ 
+-AC_SUBST(LIBNET_CLEAN)
+-AC_SUBST(LIBNET_DISTCLEAN)
+-AC_SUBST(LIBNET_COMPILE)
+-
+-
+ dnl
+ dnl Check headers
+ dnl
+@@ -90,8 +60,6 @@ AC_CHECK_HEADERS(sys/time.h sys/param.h 
+ AC_CHECK_HEADERS(net/if.h unistd.h)
+ AC_HEADER_TIME
+ 
+-AC_C_BIGENDIAN
+-
+ dnl
+ dnl Check structs
+ dnl
+@@ -144,7 +112,7 @@ case "$target_os" in
+            case "`uname -r`" in
+                 2.4*)
+                    AC_DEFINE(LINUX_24)
+-                ;
++                ;;
+                 2.2*)
+                    AC_DEFINE(LINUX_22)
+                 ;;
+@@ -197,11 +165,8 @@ case "$target_os" in
+                 2.0*)
+                    AC_DEFINE(STRANGE_BSD_BYTE)
+                 ;;
+-                2.*)
+-
+-                ;;
+                 *)
+-                  AC_DEFINE(STRANGE_BSD_BYTE)
++
+                 ;;
+            esac
+            ;;

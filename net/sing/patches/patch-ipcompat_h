@@ -1,0 +1,20 @@
+$OpenBSD: patch-ipcompat_h,v 1.1 2002/12/27 18:07:00 danh Exp $
+--- ipcompat.h.orig	Wed Apr 18 07:11:08 2001
++++ ipcompat.h	Fri Dec 27 11:34:55 2002
+@@ -8,12 +8,12 @@
+ 
+                      /* IPv4 packet header */
+ struct ip2 {
+-#ifdef WORDS_BIGENDIAN
+-              u_char ip_v:4,   /* Version de IP                          */ 
+-                    ip_hl:4;   /* Longitud cabecera en grupos de 32 bits */
+-#else
++#ifdef LIBNET_LIL_ENDIAN
+              u_char ip_hl:4,   /* Longitud cabecera en grupos de 32 bits */
+                      ip_v:4;   /* Version de IP                          */
++#else
++              u_char ip_v:4,   /* Version de IP                          */ 
++                    ip_hl:4;   /* Longitud cabecera en grupos de 32 bits */
+ #endif  
+              u_char  ip_tos;   /* Tipo de servicio                       */
+               short  ip_len;   /* Longitud total incluyendo datos        */
