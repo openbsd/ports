@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/12 23:21:06 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/12 03:43:51 avsm Exp $
 
-DISTNAME=		dvipdfm-0.13.2
+DISTNAME=		dvipdfm-0.13.2b
 CATEGORIES=     	print
 NEED_VERSION=		1.348
 
@@ -14,11 +14,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://gaspra.kettering.edu/dvipdfm/
 
-BUILD_DEPENDS=		${PREFIX}/lib/libkpathsea.a::print/teTeX
+BUILD_DEPENDS=		${LOCALBASE}/lib/libkpathsea.a::print/teTeX/base
 LIB_DEPENDS=		png.1::graphics/png
 
 CONFIGURE_STYLE=	gnu dest
-CONFIGURE_ARGS=		--with-kpathsea=${PREFIX} --with-png=${PREFIX}
+CONFIGURE_ARGS=		--with-kpathsea=${LOCALBASE} --with-png=${LOCALBASE}
 WRKDIST=		${WRKDIR}/dvipdfm
 
 pre-fake:
