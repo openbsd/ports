@@ -1,0 +1,15 @@
+libiconv provides an iconv() implementation, for use on systems which
+don't have one, or whose implementation cannot convert from/to Unicode.
+
+It can convert from any of supported encodings to any other, through Unicode
+conversion.
+
+It has also some limited support for transliteration, i.e. when a character
+cannot be represented in the target character set, it can be approximated
+through one or several similarly looking characters. Transliteration is
+activated when "//TRANSLIT" is appended to the target encoding name.
+
+libiconv is for you if your application needs to support multiple character
+encodings, but that support lacks from your system.
+
+WWW: ${HOMEPAGE}

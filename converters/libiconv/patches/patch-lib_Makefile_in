@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1.1.1 2001/03/12 01:32:04 naddy Exp $
+--- lib/Makefile.in.orig	Tue Mar  6 22:25:06 2001
++++ lib/Makefile.in	Wed Mar  7 15:14:43 2001
+@@ -79,7 +79,7 @@ iconv.lo : $(srcdir)/iconv.c $(srcdir)/c
+ # $(libdir) and $(includedir) - don't use $(prefix) and $(exec_prefix) here.
+ install-lib : all force
+ 	if [ ! -d $(libdir) ] ; then mkdir $(libdir) ; fi
+-	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libiconv.la $(libdir)/libiconv.la
++	$(LIBTOOL_INSTALL) $(CP) libiconv.la $(libdir)/libiconv.la
+ 
+ install : all force
+ 	if [ ! -d $(DESTDIR)$(prefix) ] ; then mkdir $(DESTDIR)$(prefix) ; fi

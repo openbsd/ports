@@ -1,0 +1,12 @@
+$OpenBSD: patch-libcharset_lib_config_charset,v 1.1.1.1 2001/03/12 01:32:04 naddy Exp $
+--- libcharset/lib/config.charset.orig	Tue Mar  6 18:35:16 2001
++++ libcharset/lib/config.charset	Wed Mar  7 15:14:43 2001
+@@ -235,7 +235,7 @@ case "$os" in
+ 	#echo "sun_eu_greek ?" # what is this?
+ 	echo "UTF-8 UTF-8"
+ 	;;
+-    freebsd*)
++    *bsd*)
+ 	# FreeBSD 4.2 doesn't have nl_langinfo(CODESET); therefore
+ 	# localcharset.c falls back to using the full locale name
+ 	# from the environment variables.

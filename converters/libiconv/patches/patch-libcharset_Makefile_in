@@ -1,0 +1,12 @@
+$OpenBSD: patch-libcharset_Makefile_in,v 1.1.1.1 2001/03/12 01:32:04 naddy Exp $
+--- libcharset/Makefile.in.orig	Wed Feb 21 00:42:12 2001
++++ libcharset/Makefile.in	Wed Mar  7 15:14:43 2001
+@@ -38,7 +38,7 @@ all : force
+ install-lib : all force
+ 	cd lib && $(MAKE) install-lib libdir='$(libdir)' includedir='$(includedir)'
+ 	$(MKINSTALLDIRS) $(includedir)
+-	$(INSTALL_DATA) include/libcharset.h $(includedir)/libcharset.h
++	$(CP) include/libcharset.h $(includedir)/libcharset.h
+ 
+ install : force
+ 	cd lib && $(MAKE) install prefix='$(prefix)' exec_prefix='$(exec_prefix)' libdir='$(libdir)'

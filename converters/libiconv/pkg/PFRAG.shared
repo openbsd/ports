@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/03/12 01:32:04 naddy Exp $
+lib/libcharset.so.1.0
+lib/libiconv.so.2.3
+DYNLIBDIR(%B)

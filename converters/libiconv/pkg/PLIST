@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/12 01:32:04 naddy Exp $
+bin/iconv
+include/iconv.h
+include/libcharset.h
+lib/charset.alias
+lib/libcharset.a
+lib/libcharset.la
+lib/libiconv.a
+lib/libiconv.la
+%%SHARED%%
+man/man1/iconv.1
+man/man3/iconv.3
+man/man3/iconv_close.3
+man/man3/iconv_open.3
