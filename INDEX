@@ -20,7 +20,7 @@ unrar-2.50|archivers/unrar||extract, list & test RAR archives|archivers/unrar/pk
 unzip-5.41|archivers/unzip||extract, list & test files in a ZIP archive|archivers/unzip/pkg/DESCR|ports@openbsd.org|archivers|||any|y|y|y|y
 zip-2.3|archivers/zip||create/update ZIP files compatible with pkzip|archivers/zip/pkg/DESCR|ports@openbsd.org|archivers|unzip-5.41||any|y|y|y|y
 zoo-2.10.1|archivers/zoo||handle the old .zoo archive format|archivers/zoo/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|archivers|||any|y|y|y|y
-dgpsip-1.32|astro/dgpsip||Differential GPS over IP communication device|astro/dgpsip/pkg/DESCR|wsr+dgpsip@wsrcc.com|astro|||any|y|y|y|y
+dgpsip-1.32|astro/dgpsip||Differential GPS over IP communication device|astro/dgpsip/pkg/DESCR|Wolfgang Rupprecht <wsr+dgpsip@wsrcc.com>|astro|||any|y|y|y|y
 sattrack-3.1.6|astro/sattrack||real-time satellite tracking and orbit propagation program|astro/sattrack/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|astro|||any|n|y|n|y
 xearth-1.1|astro/xearth||set the root window to the image of earth|astro/xearth/pkg/DESCR|Paul Janzen <pjanzen@openbsd.org>|astro x11|||any|n|y|n|y
 xephem-3.2.3|astro/xephem||interactive astronomical ephemeris|astro/xephem/pkg/DESCR|ports@openbsd.org|astro|lesstif-0.91.8|lesstif-0.91.8|any|y|y|y|y
@@ -31,7 +31,7 @@ bladeenc-0.93.7|audio/bladeenc||MP3 encoder|audio/bladeenc/pkg/DESCR|Brad Smith 
 cdparanoia-3.a9.7|audio/cdparanoia||CDDA reading utility with extra data verification features|audio/cdparanoia/pkg/DESCR|ports@openbsd.org|audio|autoconf-2.13||any|y|y|y|y
 esound-0.2.20|audio/esound||sound library for Enlightenment|audio/esound/pkg/DESCR|Brad Smith <brad@openbsd.org>|audio|libaudiofile-0.1.10|libaudiofile-0.1.10|any|y|y|y|y
 gogo-2.26a|audio/gogo||686 class CPU optimized mp3 encoder|audio/gogo/pkg/DESCR|Bob Beck <beck@openbsd.org>|audio|gettext-0.10.35 gmake-3.79.1 nasm-0.98||i386|n|y|n|y
-gom-0.29.103|audio/gom||generic audio mixer|audio/gom/pkg/DESCR|scott@tranzoa.com|audio|xview-config-3.2.1 autoconf-2.13 xview-lib-3.2.1|xview-lib-3.2.1|any|y|y|y|y
+gom-0.29.103|audio/gom||generic audio mixer|audio/gom/pkg/DESCR|Scott Robinson <scott@tranzoa.com>|audio|xview-config-3.2.1 autoconf-2.13 xview-lib-3.2.1|xview-lib-3.2.1|any|y|y|y|y
 gqmpeg-0.6.3|audio/gqmpeg||mpg123 front-end with skin support|audio/gqmpeg/pkg/DESCR|Bruno Rohee <rohee@openbsd.org>|audio|gettext-0.10.35 jpeg-6b glib-1.2.8 gmake-3.79.1 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8 mpg123-0.59r imlib-1.9.8.1|jpeg-6b gettext-0.10.35 glib-1.2.8 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8 mpg123-0.59r imlib-1.9.8.1|any|y|y|y|y
 gsm-1.0.10|audio/gsm||u-law to gsm encoding audio converter and library|audio/gsm/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|audio|||any|y|y|y|y
 knapster-0.12|audio/knapster||a clone of napster|audio/knapster/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|audio|gettext-0.10.35 gmake-3.79.1 bzip2-1.0.1 giflib-4.1.0 jpeg-6b png-1.0.8 tiff-3.5.5 qt-1.45 kdelibs-1.1.2|giflib-4.1.0 jpeg-6b png-1.0.8 tiff-3.5.5 qt-1.45 kdelibs-1.1.2|any|y|y|y|y
@@ -110,14 +110,14 @@ gdbm-1.8.0|databases/gdbm||GNU dbm|databases/gdbm/pkg/DESCR|ports@openbsd.org|da
 mysql-3.22.32|databases/mysql||multithreaded SQL database|databases/mysql/pkg/DESCR|Brad Smith <brad@openbsd.org>|databases|||any|y|y|y|y
 mysql-3.22.32-pth|databases/mysql,pth||multithreaded SQL database|databases/mysql/pkg/DESCR|Brad Smith <brad@openbsd.org>|databases|pth-1.3.7|pth-1.3.7|any|y|y|y|y
 openldap-2.0.6|databases/openldap||Open source LDAP client and server software|databases/openldap/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|databases net|libtool-1.3.5||any|y|y|y|y
-openldap-client-2.0.6|databases/openldap||Open source LDAP client software|databases/openldap/pkg/DESCR-client|Jakob Schlyter <jakob@openbsd.org>|databases net|libtool-1.3.5||any|y|y|y|y
+openldapclient-2.0.6|databases/openldap||Open source LDAP client software|databases/openldap/pkg/DESCR-client|Jakob Schlyter <jakob@openbsd.org>|databases net|libtool-1.3.5||any|y|y|y|y
 p5-AsciiDB-TagFile-1.05|databases/p5-AsciiDB-TagFile||tie class for a simple ASCII database|databases/p5-AsciiDB-TagFile/pkg/DESCR|Marc Espie <espie@openbsd.org>|databases perl5|||any|y|y|y|y
 p5-DBD-Pg-0.95|databases/p5-DBD-Pg||access to PostgreSQL databases through the DBI|databases/p5-DBD-Pg/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|databases perl5|gettext-0.10.35 gmake-3.79.1 p5-DBI-1.14 postgresql-7.0.2|postgresql-7.0.2|any|y|y|y|y
 p5-DBI-1.14|databases/p5-DBI||perl5 Database Interface, required for DBD::* modules|databases/p5-DBI/pkg/DESCR|ports@openbsd.org|databases perl5|||any|y|y|y|y
-postgresql-7.0.2|databases/postgresql||robust, next generation, object-relational DBMS|databases/postgresql/pkg/DESCR|pvk@openbsd.ru|databases|gettext-0.10.35 gmake-3.79.1||any|y|y|y|y
-postgresql-docs-7.0.2|databases/postgresql||documentation for PostgreSQL|databases/postgresql/pkg/DESCR-docs|pvk@openbsd.ru|databases|gettext-0.10.35 gmake-3.79.1||any|y|y|y|y
-postgresql-7.0.2-tcl|databases/postgresql,tcl||robust, next generation, object-relational DBMS|databases/postgresql/pkg/DESCR|pvk@openbsd.ru|databases|gettext-0.10.35 gmake-3.79.1 tcl-8.3.2 tk-8.3.2|tcl-8.3.2 tk-8.3.2|any|y|y|y|y
-postgresql-docs-7.0.2|databases/postgresql,tcl||documentation for PostgreSQL|databases/postgresql/pkg/DESCR-docs|pvk@openbsd.ru|databases|gettext-0.10.35 gmake-3.79.1 tcl-8.3.2 tk-8.3.2|tcl-8.3.2 tk-8.3.2|any|y|y|y|y
+postgresql-7.0.2|databases/postgresql||robust, next generation, object-relational DBMS|databases/postgresql/pkg/DESCR|Pavel Korovin <pvk@openbsd.ru>|databases|gettext-0.10.35 gmake-3.79.1||any|y|y|y|y
+postgresql-docs-7.0.2|databases/postgresql||documentation for PostgreSQL|databases/postgresql/pkg/DESCR-docs|Pavel Korovin <pvk@openbsd.ru>|databases|gettext-0.10.35 gmake-3.79.1||any|y|y|y|y
+postgresql-7.0.2-tcl|databases/postgresql,tcl||robust, next generation, object-relational DBMS|databases/postgresql/pkg/DESCR|Pavel Korovin <pvk@openbsd.ru>|databases|gettext-0.10.35 gmake-3.79.1 tcl-8.3.2 tk-8.3.2|tcl-8.3.2 tk-8.3.2|any|y|y|y|y
+postgresql-docs-7.0.2|databases/postgresql,tcl||documentation for PostgreSQL|databases/postgresql/pkg/DESCR-docs|Pavel Korovin <pvk@openbsd.ru>|databases|gettext-0.10.35 gmake-3.79.1 tcl-8.3.2 tk-8.3.2|tcl-8.3.2 tk-8.3.2|any|y|y|y|y
 xmysql-1.9|databases/xmysql||X11 front end to the MySQL database engine|databases/xmysql/pkg/DESCR|ports@openbsd.org|databases|mysql-3.22.32 xforms-0.88|mysql-3.22.32 xforms-0.88|any|y|y|y|y
 xmysqladmin-1.0|databases/xmysqladmin||X11 front end to the mysqladmin command of the MySQL|databases/xmysqladmin/pkg/DESCR|ports@openbsd.org|databases|mysql-3.22.32 xforms-0.88|mysql-3.22.32 xforms-0.88|any|y|y|y|y
 electricfence-2.0.5|devel/ElectricFence||library providing malloc debugging via VM protection|devel/ElectricFence/pkg/DESCR|Niklas Hallqvist <niklas@openbsd.org>|devel|||any|y|y|y|y
@@ -126,7 +126,7 @@ autoconf-2.13|devel/autoconf||automatically configure source code on many Un*x p
 automake-1.4|devel/automake||GNU Standards-compliant Makefile generator|devel/automake/pkg/DESCR|Jason Ish <jasoni@openbsd.org>|devel|||any|y|y|y|y
 bison-1.27|devel/bison||GNU parser generator|devel/bison/pkg/DESCR|David Leonard <d@openbsd.org>|devel|||any|y|y|y|y
 boehm-gc-4.12|devel/boehm-gc||garbage collection and memory leak detection for C and C++|devel/boehm-gc/pkg/DESCR|Niklas Hallqvist <niklas@openbsd.org>|devel|||i386 m68k sparc|y|y|y|y
-cook-2.15|devel/cook||like make(1), but more powerful and clean|devel/cook/pkg/DESCR|greg@nest.cx|devel|gettext-0.10.35|gettext-0.10.35|any|y|y|y|y
+cook-2.15|devel/cook||like make(1), but more powerful and clean|devel/cook/pkg/DESCR|Gregory Steuck <greg@nest.cx>|devel|gettext-0.10.35|gettext-0.10.35|any|y|y|y|y
 ctm|devel/ctm||directory synchronization over mail|devel/ctm/pkg/DESCR|ports@openbsd.org|net devel|||any|y|y|y|y
 cvs2cl-2.29|devel/cvs2cl||generate GNU-style ChangeLogs from CVS repositories|devel/cvs2cl/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|devel|||any|y|y|y|y
 cvsweb-1.103.1.33|devel/cvsweb|/var/www|WWW CGI script to browse CVS repository trees|devel/cvsweb/pkg/DESCR|Christian Weisgerber <naddy@openbsd.org>|devel www|||any|y|y|y|y
@@ -319,9 +319,9 @@ Wnn-data-4.2|japanese/Wnn-data||common files to all languages of Wnn|japanese/Wn
 cannalib-3.5b2p1|japanese/canna||canna (kana-kanji converter) libraries|japanese/canna/pkg/DESCR|Marc Espie <espie@openbsd.org>|japanese|ja-groff-1.10_0.99||any|n|y|n|y
 cannadict-3.5b2|japanese/canna|/var/dict|canna (kana-kanji converter) dictionnaries|japanese/canna/pkg/DESCR-dict|Marc Espie <espie@openbsd.org>|japanese|ja-groff-1.10_0.99||any|n|y|n|y
 cannaserver-3.5b2|japanese/canna||canna (kana-kanji converter) server|japanese/canna/pkg/DESCR-server|Marc Espie <espie@openbsd.org>|japanese|ja-groff-1.10_0.99||any|n|y|n|y
-ja-kinput2-3.0-wnn|japanese/kinput2,wnn||X input method for Japanese, wnn support|japanese/kinput2/pkg/DESCR|sigh@kuzirabekon.econ.nagasaki-u.ac.jp|japanese x11|Wnn-data-4.2 ja-groff-1.10_0.99 ja-Wnn-4.2||any|y|y|y|y
-ja-kinput2-3.0-canna|japanese/kinput2,canna||X input method for Japanese, canna support|japanese/kinput2/pkg/DESCR|sigh@kuzirabekon.econ.nagasaki-u.ac.jp|japanese x11|ja-groff-1.10_0.99 cannalib-3.5b2p1|cannalib-3.5b2p1|any|y|y|y|y
-ja-kinput2-3.0-canna-wnn|japanese/kinput2,canna,wnn||X input method for Japanese, canna and wnn support|japanese/kinput2/pkg/DESCR|sigh@kuzirabekon.econ.nagasaki-u.ac.jp|japanese x11|Wnn-data-4.2 ja-groff-1.10_0.99 ja-Wnn-4.2 cannalib-3.5b2p1|cannalib-3.5b2p1|any|y|y|y|y
+ja-kinput2-3.0-wnn|japanese/kinput2,wnn||X input method for Japanese, wnn support|japanese/kinput2/pkg/DESCR|SUZUKI Hitoshi <sigh@kuzirabekon.econ.nagasaki-u.ac.jp>|japanese x11|Wnn-data-4.2 ja-groff-1.10_0.99 ja-Wnn-4.2||any|y|y|y|y
+ja-kinput2-3.0-canna|japanese/kinput2,canna||X input method for Japanese, canna support|japanese/kinput2/pkg/DESCR|SUZUKI Hitoshi <sigh@kuzirabekon.econ.nagasaki-u.ac.jp>|japanese x11|ja-groff-1.10_0.99 cannalib-3.5b2p1|cannalib-3.5b2p1|any|y|y|y|y
+ja-kinput2-3.0-canna-wnn|japanese/kinput2,canna,wnn||X input method for Japanese, canna and wnn support|japanese/kinput2/pkg/DESCR|SUZUKI Hitoshi <sigh@kuzirabekon.econ.nagasaki-u.ac.jp>|japanese x11|Wnn-data-4.2 ja-groff-1.10_0.99 ja-Wnn-4.2 cannalib-3.5b2p1|cannalib-3.5b2p1|any|y|y|y|y
 ja-onew-wnn4-2.2.10|japanese/onew-wnn4||library for Japanese Input Method Wnn4|japanese/onew-wnn4/pkg/DESCR|Marc Espie <espie@openbsd.org>|japanese|Wnn-data-4.2 ja-groff-1.10_0.99 ja-Wnn-4.2||any|y|y|y|y
 ja-onew-canna-2.2.10|japanese/onew-canna||library for Japanese Input Method canna|japanese/onew-canna/pkg/DESCR|Marc Espie <espie@openbsd.org>|japanese|ja-groff-1.10_0.99 cannalib-3.5b2p1|cannalib-3.5b2p1|any|y|y|y|y
 ja-onew-wnn4-canna-2.2.10|japanese/onew-wnn4-canna||library for Japanese Input Method canna or wnn4|japanese/onew-wnn4-canna/pkg/DESCR|Marc Espie <espie@openbsd.org>|japanese|Wnn-data-4.2 ja-groff-1.10_0.99 ja-Wnn-4.2 cannalib-3.5b2p1|cannalib-3.5b2p1|any|y|y|y|y
@@ -469,7 +469,7 @@ pdmenu-1.2.61|misc/pdmenu||a simple slang-based menu program|misc/pdmenu/pkg/DES
 pi-address-0.4.0|misc/pi-address||PalmPilot address database editor|misc/pi-address/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|misc x11|tcl-8.0.5 gettext-0.10.35 tk-8.0.5 gmake-3.79.1 jpeg-6b png-1.0.8 pilot-link-0.9.3 qt-1.45|tcl-8.0.5 tk-8.0.5 pilot-link-0.9.3 qt-1.45|any|y|y|y|y
 plan-1.6.1|misc/plan||X11/Motif schedule planner with calendar|misc/plan/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|misc|lesstif-0.91.8|lesstif-0.91.8|any|n|y|n|y
 remind-3.0.22|misc/remind||scripting language for reminders, with a Tk front end|misc/remind/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|misc||tcl-8.3.2 tk-8.3.2|any|y|y|y|y
-rpm-3.0.4|misc/rpm||redhat package manager|misc/rpm/pkg/DESCR|Marc Espie <espie@openbsd.org>|misc archivers emulators|bzip2-1.0.1 gettext-0.10.35|bzip2-1.0.1 gettext-0.10.35|any|y|y|y|y
+rpm-3.0.4|misc/rpm||redhat package manager|misc/rpm/pkg/DESCR|Marc Espie <espie@openbsd.org>|misc archivers emulators|bzip2-1.0.1 gettext-0.10.35 popt-1.5|bzip2-1.0.1 gettext-0.10.35 popt-1.5|any|y|y|y|y
 screen-3.9.8|misc/screen||multi-screen window manager|misc/screen/pkg/DESCR|Brad Smith <brad@openbsd.org>|misc|||any|y|y|y|y
 splitvt-1.6.3|misc/splitvt||run two shells in a split window/terminal|misc/splitvt/pkg/DESCR|ports@OpenBSD.ORG|misc|||any|y|y|y|y
 tkcron-2.12|misc/tkcron||frontend to crontab|misc/tkcron/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|misc||tcl-8.3.2 tk-8.3.2|any|y|y|y|y
@@ -553,10 +553,10 @@ sharity-light-1.2|net/sharity-light||userland smbfs --- SMB to NFS protocols con
 slirp-1.0c|net/slirp||SLIP/CSLIP emulator for users with shell accounts|net/slirp/pkg/DESCR|A.C.P.M.Kalker@student.utwente.nl|net|||any|y|y|y|y
 sniffit-0.3.7b|net/sniffit||packet sniffer program; for educational use|net/sniffit/pkg/DESCR|ports@openbsd.org|net security|||any|n|y|n|y
 snort-1.6.3|net/snort||Highly flexible sniffer/basic NIDS|net/snort/pkg/DESCR|halogen@nol.net|net security|||any|y|y|y|y
-tcpflow-0.12|net/tcpflow||tool for capturing data from TCP connections|net/tcpflow/pkg/DESCR|jethro@dqc.org|net|||any|y|y|y|y
+tcpflow-0.12|net/tcpflow||tool for capturing data from TCP connections|net/tcpflow/pkg/DESCR|Jeremy Jethro <jethro@dqc.org>|net|||any|y|y|y|y
 tcpreplay-1.0.1|net/tcpreplay||resend network traffic saved by tcpdump|net/tcpreplay/pkg/DESCR|Dug Song <dugsong@monkey.org>|net|libnet-1.0.1b||any|y|y|y|y
 tcpshow-1.74|net/tcpshow||decode tcpdump(1) output|net/tcpshow/pkg/DESCR|ports@openbsd.org|net security|||any|n|y|n|y
-tcptrace-5.2.1|net/tcptrace||A TCP dump file analysis tool|net/tcptrace/pkg/DESCR|jethro@dqc.org|net|||any|y|y|y|y
+tcptrace-5.2.1|net/tcptrace||A TCP dump file analysis tool|net/tcptrace/pkg/DESCR|Jeremy Jethro <jethro@dqc.org>|net|||any|y|y|y|y
 tintin-1.5.6|net/tintin++||client program to help playing muds|net/tintin++/pkg/DESCR|ports@OpenBSD.ORG|net games|||any|y|y|y|y
 tinyfugue-4.0s1|net/tinyfugue||programmable MUD client, with macro support and more|net/tinyfugue/pkg/DESCR|ports@openbsd.org|net games|||any|y|y|y|y
 tircproxy-0.4.5|net/tircproxy||transparent irc proxy|net/tircproxy/pkg/DESCR|garath@ntplx.net|net|||any|y|y|y|y
@@ -768,14 +768,14 @@ hotjava-3.0|www/hotjava||Sun's Hotjava web browser|www/hotjava/pkg/DESCR|Chris C
 libghttp-1.0.7|www/libghttp||GNOME http client library|www/libghttp/pkg/DESCR|Brad Smith <brad@openbsd.org>|www|||any|y|y|y|y
 links-0.92|www/links||text browser, displays while downloading|www/links/pkg/DESCR|Marc Espie <espie@openbsd.org>|www|||any|y|y|y|y
 mhonarc-2.4.6|www/mhonarc||very customizable e-mail to HTML converter|www/mhonarc/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|www mail|p5-Digest-MD5-2.12|p5-Digest-MD5-2.12|any|y|y|y|y
-mod_perl-1.24|www/mod_perl||module that embeds a Perl interpreter into Apache|www/mod_perl/pkg/DESCR|pvk@openbsd.ru|www perl5|||i386 m68k sparc|y|y|y|y
+mod_perl-1.24|www/mod_perl||module that embeds a Perl interpreter into Apache|www/mod_perl/pkg/DESCR|Pavel Korovin <pvk@openbsd.ru>|www perl5|||i386 m68k sparc|y|y|y|y
 mozilla-17|www/mozilla||free version of the Netscape browser|www/mozilla/pkg/DESCR|ports@openbsd.org|www|gettext-0.10.35 glib-1.2.8 gmake-3.79.1 bzip2-1.0.1 ORBit-0.5.3 autoconf-2.13 lesstif-0.91.8|gettext-0.10.35 glib-1.2.8 ORBit-0.5.3 lesstif-0.91.8|any|?|?|?|?
 navigator-4.61|www/netscape/navigator-old||Netscape Navigator WWW browser with 128-bit encryption|www/netscape/navigator-old/pkg/DESCR|Brad Smith <brad@openbsd.org>|www|||sparc|n|n|n|n
 communicator-4.61|www/netscape/communicator-old||Netscape Communicator WWW browser with 128-bit encryption|www/netscape/communicator-old/pkg/DESCR|Brad Smith <brad@openbsd.org>|www|||sparc|n|n|n|n
 navigator-4.75|www/netscape/navigator||Netscape Navigator WWW browser with 128-bit encryption|www/netscape/navigator/pkg/DESCR|Brad Smith <brad@openbsd.org>|www|||i386|n|n|n|n
 communicator-4.75|www/netscape/communicator||Netscape Communicator WWW browser with 128-bit encryption|www/netscape/communicator/pkg/DESCR|Brad Smith <brad@openbsd.org>|www|||i386|n|n|n|n
 nscache-0.2p1|www/nscache||Netscape cache browser|www/nscache/pkg/DESCR|Dug Song <dugsong@monkey.org>|www|gettext-0.10.35 glib-1.2.8 autoconf-2.13 gtk+-1.2.8|gettext-0.10.35 glib-1.2.8 gtk+-1.2.8|any|?|?|?|?
-p5-Apache-DBI-0.87|www/p5-Apache-DBI||DBI persistent connection, authentication and authorization|www/p5-Apache-DBI/pkg/DESCR|pvk@openbsd.ru|www databases perl5||p5-DBI-1.14 mod_perl-1.24|any|y|y|y|y
+p5-Apache-DBI-0.87|www/p5-Apache-DBI||DBI persistent connection, authentication and authorization|www/p5-Apache-DBI/pkg/DESCR|Pavel Korovin <pvk@openbsd.ru>|www databases perl5||p5-DBI-1.14 mod_perl-1.24|any|y|y|y|y
 p5-HTML-Base-0.6|www/p5-HTML-Base||base HTML library|www/p5-HTML-Base/pkg/DESCR|ports@openbsd.org|www perl5|||any|y|y|y|y
 p5-HTML-Parser-3.13|www/p5-HTML-Parser||modules to parse and extract information from HTML|www/p5-HTML-Parser/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|www perl5|p5-HTML-Tagset-3.02|p5-HTML-Tagset-3.02|any|y|y|y|y
 p5-HTML-Tagset-3.02|www/p5-HTML-Tagset||data tables useful for parsing HTML|www/p5-HTML-Tagset/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|www perl5|||any|y|y|y|y
