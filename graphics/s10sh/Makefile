@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/11/15 13:28:52 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2002/01/01 22:12:00 pvalchev Exp $
 
 COMMENT=	"S10sh - a Canon PowerShot digital camera driver"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 DOCDIR=		${PREFIX}/share/doc/s10sh
 
-LIB_DEPENDS=	usb.3::devel/libusb
+LIB_DEPENDS=	usb::devel/libusb
 
 CONFIGURE_STYLE= simple
 
