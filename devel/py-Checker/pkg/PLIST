@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/10/24 12:53:55 shell Exp $
-bin/pychecker.sh
+@comment $OpenBSD: PLIST,v 1.5 2001/11/17 08:52:27 shell Exp $
+bin/pychecker
 lib/python${PYTHON_VER}/site-packages/pychecker/CodeChecks.py
 lib/python${PYTHON_VER}/site-packages/pychecker/CodeChecks.pyc
 lib/python${PYTHON_VER}/site-packages/pychecker/Config.py
