@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2002/02/05 03:53:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.79 2002/02/05 18:05:59 espie Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -69,6 +69,9 @@
 #    SUBDIR += s3mod
      SUBDIR += shorten
      SUBDIR += sox
+     SUBDIR += soundtracker
+     SUBDIR += soundtracker,gnome,sun
+     SUBDIR += soundtracker,esd
 #    SUBDIR += splay
      SUBDIR += teknap
      SUBDIR += tempest
