@@ -295,7 +295,7 @@ irc-2.10.1|/usr/ports/net/irc|/usr/local|The 'Internet Relay Chat' Server.|/usr/
 ircII-4.4|/usr/ports/net/ircII|/usr/local|The 'Internet Relay Chat' Client.|/usr/ports/net/ircII/pkg/DESCR|brad@openbsd.org|net|||any
 ircii-2.8.2-epic3.004|/usr/ports/net/ircii-epic|/usr/local|An enhanced version of ircII (internet relay chat)|/usr/ports/net/ircii-epic/pkg/DESCR|brad@openbsd.org|net|||any
 libnet-0.10a|/usr/ports/net/libnet|/usr/local|Raw IP packet construction library.|/usr/ports/net/libnet/pkg/DESCR|dugsong@monkey.org|net|||any
-licq-0.61|/usr/ports/net/licq|/usr/local|An ICQ clone for UNIX-like OS's.|/usr/ports/net/licq/pkg/DESCR|ports@openbsd.org|net|gmake-3.77 qt-1.42|qt-1.42|any
+licq-0.61|/usr/ports/net/licq|/usr/local|An ICQ clone for UNIX-like OS's.|/usr/ports/net/licq/pkg/DESCR|ports@openbsd.org|net|autoconf-2.13 egcs-1.1.2 gmake-3.77 m4-1.4 qt-1.42|qt-1.42|any
 mirror-2.9|/usr/ports/net/mirror|/usr/local|Mirror packages on remote sites.|/usr/ports/net/mirror/pkg/DESCR|ports@openbsd.org|net|||any
 mrtg-2.7.2|/usr/ports/net/mrtg|/usr/local|the multi-router traffic grapher|/usr/ports/net/mrtg/pkg/DESCR|brad@openbsd.org|net|gd-1.3||any
 mtr-0.33|/usr/ports/net/mtr|/usr/local|Matt's traceroute - a network diagnostic tool|/usr/ports/net/mtr/pkg/DESCR|jakob@crt.se|net|||any
@@ -438,20 +438,20 @@ blast-1.0|/usr/ports/x11/blast|/usr/X11R6|Blows holes through windows|/usr/ports
 bricons-3.0|/usr/ports/x11/bricons|/usr/X11R6|Quick start up utility for applications on an X display|/usr/ports/x11/bricons/pkg/DESCR|angelos@openbsd.org|x11|||any
 ctwm-3.5|/usr/ports/x11/ctwm|/usr/X11R6|Twm plus support for multiple virtual screens, etc|/usr/ports/x11/ctwm/pkg/DESCR|don@OpenBSD.ORG|x11|||any
 emiclock-1.0.2|/usr/ports/x11/emiclock|/usr/X11R6|Hyper-animated face analog clock for X11|/usr/ports/x11/emiclock/pkg/DESCR|angelos@openbsd.org|x11|||any
-explorer-0.72|/usr/ports/x11/explorer|/usr/X11R6|File manager with same look and feel as Windows95(tm)|/usr/ports/x11/explorer/pkg/DESCR|angelos@openbsd.org|x11|gmake-3.77 qt-1.42|qt-1.42|any
+explorer-0.72|/usr/ports/x11/explorer|/usr/X11R6|File manager with same look and feel as Windows95(tm)|/usr/ports/x11/explorer/pkg/DESCR|angelos@openbsd.org|x11|autoconf-2.13 egcs-1.1.2 gmake-3.77 m4-1.4 qt-1.42|qt-1.42|any
 freefonts-0.10|/usr/ports/x11/freefonts|/usr/X11R6|Collection of ATM fonts from the CICA archives|/usr/ports/x11/freefonts/pkg/DESCR|don@OpenBSD.ORG|x11|||any
 fvwm-2.0.46|/usr/ports/x11/fvwm2|/usr/X11R6|Internationalized (not japanised) fvwm version 2|/usr/ports/x11/fvwm2/pkg/DESCR|don@OpenBSD.ORG|x11|||any
 getbdf-1.0|/usr/ports/x11/getbdf|/usr/X11R6|Convert any X server font to .bdf format|/usr/ports/x11/getbdf/pkg/DESCR|angelos@openbsd.org|x11|||any
 gtk+-1.2.1|/usr/ports/x11/gtk+|/usr/X11R6|General Toolkit for X11 GUI|/usr/ports/x11/gtk+/pkg/DESCR|marc@openbsd.org|x11|gettext-0.10.35 glib-1.2.1|gettext-0.10.35 glib-1.2.1|any
 gtkglarea-1.2.1|/usr/ports/x11/gtkglarea|/usr/X11R6|OpenGL/Mesa widget for GTK+ GUI toolkit|/usr/ports/x11/gtkglarea/pkg/DESCR|brad@openbsd.org|x11 graphics|MesaGL-3.0 gettext-0.10.35 glib-1.2.1 gtk+-1.2.1|MesaGL-3.0 gettext-0.10.35 glib-1.2.1 gtk+-1.2.1|any
-kdebase-1.0|/usr/ports/x11/kdebase|/usr/local|Powerful x11 libraries + a windows manager and much more|/usr/ports/x11/kdebase/pkg/DESCR|yanick@fries.net|x11|giflib-4.1.0 gmake-3.77 jpeg-6b kdelibs-1.0 qt-1.42|giflib-4.1.0 jpeg-6b kdelibs-1.0 qt-1.42|any
+kdebase-1.0|/usr/ports/x11/kdebase|/usr/local|Powerful x11 libraries + a windows manager and much more|/usr/ports/x11/kdebase/pkg/DESCR|yanick@fries.net|x11|autoconf-2.13 egcs-1.1.2 giflib-4.1.0 gmake-3.77 jpeg-6b kdelibs-1.0 m4-1.4 qt-1.42|giflib-4.1.0 jpeg-6b kdelibs-1.0 qt-1.42|any
 kdelibs-1.0|/usr/ports/x11/kdelibs|/usr/local|Powerful x11 libraries + a windows manager and much more|/usr/ports/x11/kdelibs/pkg/DESCR|yanick@fries.net|x11|giflib-4.1.0 gmake-3.77 jpeg-6b|giflib-4.1.0 jpeg-6b|any
 lesstif-0.88.0|/usr/ports/x11/lesstif|/usr/X11R6|API compatible clone of the Motif toolkit|/usr/ports/x11/lesstif/pkg/DESCR|brad@openbsd.org|x11|||any
 lupe-0.07|/usr/ports/x11/lupe|/usr/X11R6|Real-time magnifying glass for X11|/usr/ports/x11/lupe/pkg/DESCR|angelos@openbsd.org|x11|gmake-3.77||any
 mouseclock-1.0|/usr/ports/x11/mouseclock|/usr/X11R6|Display the current time using the X root cursor|/usr/ports/x11/mouseclock/pkg/DESCR|angelos@openbsd.org|x11|gmake-3.77||any
 olvwm-4.1|/usr/ports/x11/olvwm|/usr/X11R6|OpenLook Virtual Window manager |/usr/ports/x11/olvwm/pkg/DESCR|ian@openbsd.org|x11-wm|xview-config-3.2.1 xview-lib-3.2.1|xview-config-3.2.1 xview-lib-3.2.1|any
 piewm-1.0|/usr/ports/x11/piewm|/usr/X11R6|Tvtwm with pie (circular) menus|/usr/ports/x11/piewm/pkg/DESCR|don@OpenBSD.ORG|x11|||any
-qt-1.42|/usr/ports/x11/qt|/usr/X11R6|C++ X GUI toolkit|/usr/ports/x11/qt/pkg/DESCR|brad@openbsd.org|x11|gmake-3.77||any
+qt-1.42|/usr/ports/x11/qt|/usr/X11R6|C++ X GUI toolkit|/usr/ports/x11/qt/pkg/DESCR|brad@openbsd.org|x11|autoconf-2.13 egcs-1.1.2 gmake-3.77 m4-1.4||any
 rclock-2.20|/usr/ports/x11/rclock|/usr/X11R6|Analog clock for X w/appoint. reminder and mail notif|/usr/ports/x11/rclock/pkg/DESCR|angelos@openbsd.org|x11|||any
 rxvt-2.4.5|/usr/ports/x11/rxvt|/usr/X11R6|Color, low memory usage, xterm replacement|/usr/ports/x11/rxvt/pkg/DESCR|jasoni@openbsd.org|x11|||any
 sliderule-1.0|/usr/ports/x11/sliderule|/usr/X11R6|The part of X11R3's xcalc featuring a slide rule|/usr/ports/x11/sliderule/pkg/DESCR|don@OpenBSD.ORG|x11|||any
