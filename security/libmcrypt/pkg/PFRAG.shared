@@ -1,8 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2000/12/14 17:37:41 brad Exp $
-lib/libmcrypt.so.4.4
-DYNLIBDIR(%B)
-lib/libmcrypt/libarcfour-iv.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.3 2001/02/05 08:18:26 avsm Exp $
+lib/libmcrypt.so.5.5
 lib/libmcrypt/libarcfour.so.0.0
+lib/libmcrypt/libblowfish-compat.so.0.0
 lib/libmcrypt/libblowfish.so.0.0
 lib/libmcrypt/libcast-128.so.0.0
 lib/libmcrypt/libcast-256.so.0.0
@@ -30,4 +29,5 @@ lib/libmcrypt/libtripledes.so.0.0
 lib/libmcrypt/libtwofish.so.0.0
 lib/libmcrypt/libwake.so.0.0
 lib/libmcrypt/libxtea.so.0.0
-NEWDYNLIBDIR(%B)
+DYNLIBDIR(%B)
+NEWDYNLIBDIR(%D/lib/libmcrypt)

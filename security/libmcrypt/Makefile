@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/01/06 11:17:36 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2001/02/05 08:18:26 avsm Exp $
 
-DISTNAME=	libmcrypt-2.4.8
+DISTNAME=	libmcrypt-2.4.9
 CATEGORIES=	security
-NEED_VERSION=	1.348
+NEED_VERSION=	1.351
 MASTER_SITES=	ftp://mcrypt.hellug.gr/pub/mcrypt/libmcrypt/ \
 		ftp://argeas.cs-net.gr/pub/unix/mcrypt
 

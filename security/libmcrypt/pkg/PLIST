@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/12/14 17:37:41 brad Exp $
+@comment $OpenBSD: PLIST,v 1.3 2001/02/05 08:18:27 avsm Exp $
 include/mcrypt.h
 lib/libmcrypt.a
 lib/libmcrypt.la
-lib/libmcrypt/arcfour-iv.la
 lib/libmcrypt/arcfour.la
+lib/libmcrypt/blowfish-compat.la
 lib/libmcrypt/blowfish.la
 lib/libmcrypt/cast-128.la
 lib/libmcrypt/cast-256.la
@@ -13,8 +13,8 @@ lib/libmcrypt/des.la
 lib/libmcrypt/ecb.la
 lib/libmcrypt/enigma.la
 lib/libmcrypt/gost.la
-lib/libmcrypt/libarcfour-iv.a
 lib/libmcrypt/libarcfour.a
+lib/libmcrypt/libblowfish-compat.a
 lib/libmcrypt/libblowfish.a
 lib/libmcrypt/libcast-128.a
 lib/libmcrypt/libcast-256.a
@@ -60,6 +60,6 @@ lib/libmcrypt/tripledes.la
 lib/libmcrypt/twofish.la
 lib/libmcrypt/wake.la
 lib/libmcrypt/xtea.la
-%%SHARED%%
 man/man3/mcrypt.3
+%%SHARED%%
 @dirrm lib/libmcrypt
