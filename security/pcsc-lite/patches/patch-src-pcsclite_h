@@ -1,4 +1,4 @@
-$OpenBSD: patch-src-pcsclite_h,v 1.2 2001/12/11 19:11:59 shell Exp $
+$OpenBSD: patch-src-pcsclite_h,v 1.3 2002/04/10 05:00:48 shell Exp $
 --- src/pcsclite.h.orig	Thu Nov  8 06:54:30 2001
 +++ src/pcsclite.h	Wed Dec 12 03:01:26 2001
 @@ -143,11 +143,13 @@
@@ -13,7 +13,7 @@ $OpenBSD: patch-src-pcsclite_h,v 1.2 2001/12/11 19:11:59 shell Exp $
 +#define PCSCLITE_CONFIG_DIR		"/etc/pcscd"
 +#define PCSCLITE_READER_CONFIG		PCSCLITE_CONFIG_DIR "/reader.conf"
 +#define PCSCLITE_CARD_CONFIG		PCSCLITE_CONFIG_DIR "/card.conf"
-+#define PCSCLITE_IPC_DIR		"/tmp/pcsc"
++#define PCSCLITE_IPC_DIR		"/var/run/pcsc"
 +#define PCSCLITE_SHM_FILE               PCSCLITE_IPC_DIR "/.pcsctmp"
 +#define PCSCLITE_PUBSHM_FILE            PCSCLITE_IPC_DIR "/.pcscpub"
 +#define PCSCLITE_CSOCK_NAME             PCSCLITE_IPC_DIR "/.pcscomm"
