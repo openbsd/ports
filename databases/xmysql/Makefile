@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/25 16:23:30 naddy Exp $
-# $FreeBSD: ports/databases/xmysql/Makefile,v 1.22 1999/08/31 06:41:26 mharo Exp $
+# $OpenBSD: Makefile,v 1.19 2002/12/29 18:28:25 margarida Exp $
 
 COMMENT=	"X11 front end to the MySQL database engine"
 
-DISTNAME=	xmysql-1.9
+DISTNAME=	xmysql-1.10
 CATEGORIES=	databases
+
+MASTER_SITES=	http://linux.tucows.thenewsmonsters.com/files/x11/office/
+
+MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	http://www.tcx.se/Contrib/ \
-		http://www.buoy.com/mysql/Contrib/ \
-		http://web.tryc.on.ca/mysql/Downloads/Contrib/
 
 LIB_DEPENDS=	forms.0::x11/xforms \
 		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql \

@@ -1,19 +1,19 @@
-$OpenBSD: patch-Makefile,v 1.4 2002/07/19 18:26:18 pvalchev Exp $
---- Makefile.orig	Thu Oct 22 19:35:51 1998
-+++ Makefile	Fri Jul 19 12:04:35 2002
+$OpenBSD: patch-Makefile,v 1.5 2002/12/29 18:28:25 margarida Exp $
+--- Makefile.orig	Wed Nov 18 04:19:06 1998
++++ Makefile	Wed Dec 25 10:53:17 2002
 @@ -31,24 +31,23 @@
  PROGRAM = 	xmysql
  
  # PROGRAM install path
--INSTALLPATH = /usr/local/xmysql-1.9
+-INSTALLPATH = /usr/local/xmysql-1.10
 +INSTALLPATH = ${PREFIX}/bin
  
  # pixmap location
--XMYSQL_XPMPATH = /usr/local/xmysql-1.9
+-XMYSQL_XPMPATH = /usr/local/xmysql-1.10
 +XMYSQL_XPMPATH = ${PREFIX}/include/X11/pixmaps
  
  # help path
--XMYSQL_HELPPATH = /usr/local/xmysql-1.9
+-XMYSQL_HELPPATH = /usr/local/xmysql-1.10
 +XMYSQL_HELPPATH = ${PREFIX}/lib/X11/xmysql
  
  # Compilation Details
@@ -31,17 +31,18 @@ $OpenBSD: patch-Makefile,v 1.4 2002/07/19 18:26:18 pvalchev Exp $
 +MYSQLLOAD = -L${LOCALBASE}/lib/mysql -lmysqlclient
 +XFORMLIBDIR = -L${LOCALBASE}/lib
 +XFORMINCDIR = -I${LOCALBASE}/include/X11
-+XINC = -I${X11BASE}/include
-+XLOAD = -L${X11BASE}/lib -lX11 -lGL -lXext
++XINC = -I${X11BASE}/include 
++XLOAD = -L${X11BASE}/lib  -lX11 -lGL -lXext
  
  # objects needed for the program
  OBJS =  Xmysql.o \
-@@ -57,20 +56,23 @@ OBJS =  Xmysql.o \
+@@ -56,21 +55,24 @@ OBJS =  Xmysql.o \
+ 	Xmysql_cb.o \
  	XmysqlDB.o \
  	XmysqlErr.o
-  
-+all: ${PROGRAM}
 +
++all: ${PROGRAM}
+  
  ${PROGRAM}: $(OBJS)
  	$(CC) -o ${PROGRAM} $(OBJS) $(MYSQLINC) $(XFORMINCDIR) \
  	$(XINC) $(STDLFLAGS) $(MYSQLLOAD) \
@@ -62,6 +63,6 @@ $OpenBSD: patch-Makefile,v 1.4 2002/07/19 18:26:18 pvalchev Exp $
 -	install --mode=744 sqlhelp.txt $(XMYSQL_HELPPATH) 
 +	install -s -m ${BINMODE} $(PROGRAM) $(INSTALLPATH)
 +	install -m 444 mysql.xpm $(XMYSQL_XPMPATH)
-+	install -d -m 755 $(XMYSQL_HELPPATH)
-+	install -m 444 sqlhelp.txt $(XMYSQL_HELPPATH)
++	install -d -m 755 $(XMYSQL_HELPPATH) 
++	install -m 444 sqlhelp.txt $(XMYSQL_HELPPATH) 
  
