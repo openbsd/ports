@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/02/20 00:09:53 dons Exp $
+# $OpenBSD: Makefile,v 1.5 2005/02/24 13:20:41 alek Exp $
 # $NetBSD: Makefile,v 1.29 2004/03/26 21:19:53 wiz Exp $
 
 COMMENT=	"portable Haskell compiler"
@@ -47,5 +47,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		gmp c m ncurses readline
 
 .include <bsd.port.mk>

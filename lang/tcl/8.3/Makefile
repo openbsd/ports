@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/07/04 03:18:59 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2005/02/24 13:20:41 alek Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	"Tool Command Language"
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"
 FAKE_FLAGS=	INSTALL="install -c" INSTALL_ROOT="${WRKINST}" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/08/18 14:56:08 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2005/02/24 13:20:41 alek Exp $
 
 COMMENT=	"TenDRA: advanced BSD-licensed C compiler"
 
@@ -29,6 +29,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 pre-build:
 	(cd ${WRKSRC} && make openbsd)

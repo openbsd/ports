@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2005/01/12 21:31:06 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2005/02/24 13:20:41 alek Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=			"compiler hangs on py-Checker for example"
@@ -21,6 +21,8 @@ THREAD_STACK_SIZE=	0x100000
 AUTOCONF_VERSION=	2.57
 
 LIB_DEPENDS=		bz2::archivers/bzip2
+
+WANTLIB-extra=		ncurses
 
 FLAVORS=		no_bsddb
 

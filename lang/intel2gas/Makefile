@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/08/22 16:04:03 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2005/02/24 13:20:41 alek Exp $
 
 COMMENT=	"convert Intel assembly language (nasm) to AT&T syntax (gas)"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c stdc++ m
 
 NO_REGRESS=	Yes
 CONFIGURE_STYLE=gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/10/27 14:12:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2005/02/24 13:20:41 alek Exp $
 
 COMMENT=	"small, Lisp-like interpreted language"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 WRKDIST=	${WRKDIR}/Klone
 

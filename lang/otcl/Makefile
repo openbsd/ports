@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/03/13 15:48:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2005/02/24 13:20:41 alek Exp $
 # $FreeBSD: ports/lang/otcl/Makefile,v 1.6 1999/11/28 18:31:28 steve Exp $
 
 COMMENT=	"MIT Object Tcl"
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m X11 Xext tcl83
 
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/08/23 08:43:16 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2005/02/24 13:20:41 alek Exp $
 
 COMMENT=		"object oriented script language with threads"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ssl termcap m ncurses crypto c util z readline
 
 MASTER_SITES=	ftp://www.ruby-lang.org/pub/ruby/1.8/ \
                 ftp://mirror.nucba.ac.jp/pub/ruby/1.8/ \

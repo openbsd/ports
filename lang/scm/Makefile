@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/09/15 19:12:09 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2005/02/24 13:20:41 alek Exp $
 # losely based on the FreeBSD port
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || \
@@ -28,6 +28,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c curses termcap m readline
 
 FLAVORS=no_x11
 
@@ -54,6 +55,7 @@ FEATURES+=x
 OPTIONS+=--compiler-options=-I${X11BASE}/include --compiler-options=-O2
 OPTIONS+=--linker-options=-L${X11BASE}/lib
 SCM_DATA+=	x11.scm xevent.scm
+WANTLIB+=	X11
 .endif
 
 BUILD_DEPENDS=::devel/slib
