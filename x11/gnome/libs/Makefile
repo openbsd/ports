@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/10/11 21:47:12 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/17 13:17:00 espie Exp $
 
 COMMENT=		"libraries for the GNOME project"
 V=			1.2.13
@@ -15,7 +15,7 @@ PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfi
                         ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
                         patch-*
 
-LIB_DEPENDS=		gdk_imlib.19::graphics/imlib \
+LIB_DEPENDS=		Imlib,gdk_imlib.19::graphics/imlib \
 			esd.2::audio/esound \
 			db::databases/db \
 			ORBit.5,ORBitutil.5,IIOP.5,ORBitCosNaming.5::devel/ORBit
