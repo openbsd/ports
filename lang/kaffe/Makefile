@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/05 18:30:31 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/17 02:07:28 turan Exp $
 #
 # Relevant URLs:	http://www.transvirtual.com/kaffe/
 
@@ -6,6 +6,8 @@
 #	Undefined symbol `_postOutOfMemory' referenced from text segment
 #	Undefined symbol `_PtrClass' referenced from text segment
 # please read the file pkg/COMPILATION
+
+#BROKEN=		bad packing lists
 
 DISTNAME=	kaffe-1.0.5
 CATEGORIES=	lang
@@ -29,6 +31,11 @@ LIB_DEPENDS=	jpeg.62.:graphics/jpeg \
 ONLY_FOR_ARCHS = i386 # sparc m68k
 
 MAINTAINER=	ian@OpenBSD.ORG
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 # build/configuration variables
 GNU_CONFIGURE=		Yes
