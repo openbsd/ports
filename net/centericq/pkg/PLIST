@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/07/10 08:21:31 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/05/11 10:23:55 pvalchev Exp $
 bin/centericq
 bin/cicqconv
 bin/cicqsync

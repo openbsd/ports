@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2003/05/11 10:23:55 pvalchev Exp $
+--- configure.in.orig	Sat May  3 07:17:35 2003
++++ configure.in	Sat May  3 07:17:50 2003
+@@ -108,7 +108,7 @@ AC_CHECK_HEADERS(sstream,,
+ 
+ AC_CHECK_HEADERS(iconv.h)
+ 
+-AC_CHECK_LIB(iconv, iconv,,
++AC_CHECK_LIB(iconv, libiconv,,
+     [AC_CHECK_LIB(c, iconv,, AC_MSG_WARN(libiconv not found - Russian codepages translation in MSN and Jabber will not work))])
+ 
+ AC_CHECK_LIB(socket, socket)
