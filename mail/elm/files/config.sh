@@ -1,14 +1,3 @@
-#!/bin/sh -
-#
-#	#OpenBSD$
-#	pre-configure script for Elm port to FreeBSD 2.0
-# $FreeBSD: ports/mail/elm/scripts/pre-configure,v 1.20 1999/09/08 18:10:47 ache Exp $
-
-PortsDir=$PORTSDIR
-  CurDir=$CURDIR
-  WrkSrc=$WRKSRC
-
-	cat > ${WrkSrc}/config.sh << 'EOF'
 #!/bin/sh
 # config.sh
 # This file was produced by running the Configure script.
@@ -307,7 +296,3 @@ pgp5_dir="${PREFIX}/bin"
 gpg_path="${PREFIX}/bin/gpg"
 special_path='/usr/bin'
 CONFIG=true
-EOF
-
-exit 0
-# END

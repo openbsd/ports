@@ -1,27 +1,28 @@
-# $OpenBSD: Makefile,v 1.3 2000/01/05 09:06:12 pjanzen Exp $
-#
+# $OpenBSD: Makefile,v 1.4 2000/01/23 07:06:15 brad Exp $
 
-DISTNAME=       elm-2.4ME+66
+DISTNAME=	elm-2.4ME+66
 CATEGORIES=	mail
-MASTER_SITES=   ftp://ftp.ozone.fmi.fi/KEH/
+MASTER_SITES=	ftp://ftp.ozone.fmi.fi/KEH/
 
-MAINTAINER=	pjanzen@OpenBSD.ORG
+MAINTAINER=	pjanzen@openbsd.org
 
-WRKSRC=         ${WRKDIR}/elm2.4.ME+.66
-
-HAS_CONFIGURE=  Yes
+HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT= Configure
-CONFIGURE_ENV+= PREFIX="${PREFIX}"
 CONFIGURE_ARGS+= -S -d
-SCRIPTS_ENV= OPSYS=${OPSYS}
+CONFIGURE_ENV+=	PREFIX="${PREFIX}"
+SCRIPTS_ENV=	OPSYS="${OPSYS}"
 
-post-configure:
-	${CP} ${FILESDIR}/elm.mimecharsets ${WRKSRC}/bin
+WRKSRC=	${WRKDIR}/elm2.4.ME+.66
+
+pre-configure:
+	@cp ${FILESDIR}/config.sh ${WRKSRC}
+	@cp ${FILESDIR}/elm.mimecharsets ${WRKSRC}/bin
+	@sed -e s,/usr/local,${PREFIX}, ${WRKSRC}/nls/LANGS > ${WRKSRC}/nls/LANGS.new
+	@mv ${WRKSRC}/nls/LANGS.new ${WRKSRC}/nls/LANGS
 
 post-install:
-	perl -pi -e 's,/usr/local,${PREFIX},' ${WRKSRC}/nls/LANGS
-	cd ${WRKSRC}/nls; ${MAKE} install
-	if [ -f ${PREFIX}/lib/elm.mimetypes ] ; then \
+	@cd ${WRKSRC}/nls; make install
+	if [ -f ${PREFIX}/lib/elm.mimetypes ]; then \
 		${INSTALL_DATA} \
 			${FILESDIR}/elm.mimetypes ${PREFIX}/lib/elm.mimetypes-dist; \
 	else \
