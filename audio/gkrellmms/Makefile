@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/12 14:43:47 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/02 17:52:59 jcs Exp $
 
 DISTNAME=	gkrellmms-0.5.5
 CATEGORIES=	audio
@@ -16,6 +16,7 @@ MASTER_SITES=	http://gkrellm.luon.net/files/
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 USE_X11=	Yes
+NO_REGRESS=	Yes
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 

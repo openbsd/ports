@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/16 13:03:54 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/02 17:52:59 jcs Exp $
 
 DISTNAME=	xscavenger-142
 EXTRACT_SUFX=	.tgz
@@ -18,6 +18,7 @@ MASTER_SITES=	http://www.xdr.com/dash/
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 USE_X11=	Yes
+NO_REGRESS=	Yes
 
 CONFIGURE_STYLE= imake
 WRKSRC=		${WRKDIST}/src

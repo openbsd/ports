@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/04 15:02:27 jcs Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/02 17:52:59 jcs Exp $
 
 DISTNAME=	reminder-0.3.1
 PKGNAME=	gkrellm-${DISTNAME}
@@ -17,6 +17,7 @@ MASTER_SITES=	${HOMEPAGE}
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 USE_X11=	Yes
+NO_REGRESS=	Yes
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 

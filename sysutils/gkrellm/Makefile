@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/11/01 02:28:53 jcs Exp $
+# $OpenBSD: Makefile,v 1.13 2001/11/02 17:52:59 jcs Exp $
 
 DISTNAME=	gkrellm-1.2.4
 HOMEPAGE=	http://www.gkrellm.net/
@@ -21,6 +21,7 @@ LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
+NO_REGRESS=	Yes
 
 ALL_TARGET=	openbsd
 INSTALL_TARGET=	install_openbsd

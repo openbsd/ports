@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/15 23:26:38 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2001/11/02 17:52:59 jcs Exp $
 
 DISTNAME=	gkrellstock-0.2
 CATEGORIES=	misc
@@ -16,6 +16,7 @@ MASTER_SITES=	http://www.geocities.com/m_muthukumar/
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 USE_X11=	Yes
+NO_REGRESS=	Yes
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 

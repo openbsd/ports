@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/25 01:49:23 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/02 17:52:59 jcs Exp $
 
 DISTNAME=	sqsh-1.7
 CATEGORIES=	databases shells
@@ -26,6 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		SYBASE="${LOCALBASE}"
 CONFIGURE_ARGS=	--with-readline
 ALL_TARGET=	
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sqsh ${PREFIX}/bin/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/09 17:56:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/02 17:52:59 jcs Exp $
 
 COMMENT=	"Advanced Power Management monitor utility for X Windows"
 
@@ -30,6 +30,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 MAKE_FLAGS=		LIBS_JPEG="-ljpeg -L${LOCALBASE}/lib"
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/asapm ${PREFIX}/bin

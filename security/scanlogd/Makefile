@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/15 21:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/11/02 17:52:59 jcs Exp $
 
 DISTNAME=	scanlogd-2.2
 CATEGORIES=	security
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${PREFIX}/lib/libnids.a::net/libnids
 LIB_DEPENDS=	net::net/libnet
 
 ALL_TARGET=	libnids
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scanlogd ${PREFIX}/sbin/scanlogd

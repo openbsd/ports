@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/12 15:07:30 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/02 17:52:59 jcs Exp $
 
 DISTNAME=	cqcam-0.91
 CATEGORIES=	graphics
@@ -23,6 +23,8 @@ LIB_DEPENDS=	jpeg.62::graphics/jpeg
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--enable-jpeg --enable-asm
+
+NO_REGRESS=	Yes
 
 FLAVORS=	no_x11
 FLAVOR?=	

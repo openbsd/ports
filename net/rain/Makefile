@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/15 23:26:38 jcs Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/02 17:52:59 jcs Exp $
 
 DISTNAME=	rain-1.2.8
 CATEGORIES=	net security
@@ -16,6 +16,7 @@ MASTER_SITES=	${HOMEPAGE}files/
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 CONFIGURE_STYLE= gnu
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rain ${PREFIX}/bin

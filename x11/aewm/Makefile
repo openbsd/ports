@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/24 12:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/02 17:52:58 jcs Exp $
 
 DISTNAME=	aewm-1.1.2
 CATEGORIES=	x11
@@ -20,5 +20,6 @@ USE_GMAKE=	Yes
 USE_X11=	Yes
 LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
 		Xaw3d.6::x11/Xaw3d
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
