@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2003/06/18 04:50:58 fgsch Exp $
+# $OpenBSD: Makefile,v 1.44 2003/07/21 17:33:07 fgsch Exp $
 
 COMMENT=	"read/write/list/format DOS disks under Unix"
 
-DATE=		20030609
+DATE=		20030718
 DISTNAME=	mtools-3.9.9
 PKGNAME=	${DISTNAME}.${DATE}
 CATEGORIES=	sysutils
