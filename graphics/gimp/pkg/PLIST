@@ -15,6 +15,8 @@ include/libgimp/gimpchainbutton.h
 include/libgimp/gimpenums.h
 include/libgimp/gimpenv.h
 include/libgimp/gimpfeatures.h
+include/libgimp/gimpfileselection.h
+include/libgimp/gimppatheditor.h
 include/libgimp/gimpmatrix.h
 include/libgimp/gimpmenu.h
 include/libgimp/gimpmodule.h
@@ -35,10 +37,12 @@ lib/gimp/1.1/plug-ins/mpeg
 lib/gimp/1.1/plug-ins/png
 lib/gimp/1.1/plug-ins/tiff
 lib/gimp/1.1/plug-ins/webbrowser
+lib/gimp/1.1/plug-ins/xjt
 lib/gimp/1.1/plug-ins/xpm
 lib/gimp/1.1/plug-ins/AlienMap
 lib/gimp/1.1/plug-ins/CEL
 lib/gimp/1.1/plug-ins/CML_explorer
+lib/gimp/1.1/plug-ins/FractalExplorer
 lib/gimp/1.1/plug-ins/Lighting
 lib/gimp/1.1/plug-ins/MapObject
 lib/gimp/1.1/plug-ins/align_layers
@@ -77,6 +81,8 @@ lib/gimp/1.1/plug-ins/flame
 lib/gimp/1.1/plug-ins/flarefx
 lib/gimp/1.1/plug-ins/fp
 lib/gimp/1.1/plug-ins/fractaltrace
+lib/gimp/1.1/plug-ins/gap_filter
+lib/gimp/1.1/plug-ins/gap_plugins
 lib/gimp/1.1/plug-ins/gauss_iir
 lib/gimp/1.1/plug-ins/gauss_rle
 lib/gimp/1.1/plug-ins/gbr
@@ -85,6 +91,7 @@ lib/gimp/1.1/plug-ins/gfig
 lib/gimp/1.1/plug-ins/gfli
 lib/gimp/1.1/plug-ins/gicon
 lib/gimp/1.1/plug-ins/gif
+lib/gimp/1.1/plug-ins/gifload
 lib/gimp/1.1/plug-ins/glasstile
 lib/gimp/1.1/plug-ins/gqbist
 lib/gimp/1.1/plug-ins/gradmap
@@ -161,18 +168,19 @@ lib/gimp/1.1/plug-ins/whirlpinch
 lib/gimp/1.1/plug-ins/wind
 lib/gimp/1.1/plug-ins/xbm
 lib/gimp/1.1/plug-ins/xwd
+lib/gimp/1.1/plug-ins/wmf
 lib/gimp/1.1/plug-ins/zealouscrop
 lib/gimp/1.1/modules/libcolorsel_gtk.la
 lib/gimp/1.1/modules/libcolorsel_gtk.a
 lib/gimp/1.1/modules/libcolorsel_triangle.la
 lib/gimp/1.1/modules/libcolorsel_triangle.a
-lib/libgimp.so.1.3
+lib/libgimp.so.1.4
 lib/libgimp.la
 lib/libgimp.a
-lib/libgimpui.so.1.3
+lib/libgimpui.so.1.4
 lib/libgimpui.la
 lib/libgimpui.a
-lib/libgck.so.1.3
+lib/libgck.so.1.4
 lib/libgck.la
 lib/libgck.a
 lib/libmegawidget.a
@@ -262,6 +270,7 @@ share/gimp/scripts/pupi-button.scm
 share/gimp/scripts/rendermap.scm
 share/gimp/scripts/ripply-anim.scm
 share/gimp/scripts/round-corners.scm
+share/gimp/scripts/sel-to-anim-img.scm
 share/gimp/scripts/select_to_brush.scm
 share/gimp/scripts/select_to_image.scm
 share/gimp/scripts/selection-round.scm
@@ -513,23 +522,58 @@ share/gimp/patterns/wood2.pat
 share/gimp/patterns/wood3.pat
 share/gimp/patterns/wood4.pat
 share/gimp/patterns/wood5.pat
-share/gimp/user_install
-share/gimp/gimprc
-share/gimp/gimprc_user
+share/gimp/fractalexplorer/Asteroid_Field
+share/gimp/fractalexplorer/Bar_Code_Label
+share/gimp/fractalexplorer/Beauty_of_Nature
+share/gimp/fractalexplorer/Blue_Curtain
+share/gimp/fractalexplorer/Car_Track
+share/gimp/fractalexplorer/Energetic_Diamond
+share/gimp/fractalexplorer/Explosive
+share/gimp/fractalexplorer/Flower
+share/gimp/fractalexplorer/Fragments
+share/gimp/fractalexplorer/Hemp
+share/gimp/fractalexplorer/High_Voltage
+share/gimp/fractalexplorer/Hoops
+share/gimp/fractalexplorer/Ice_Crystal
+share/gimp/fractalexplorer/Leaves
+share/gimp/fractalexplorer/Lightning
+share/gimp/fractalexplorer/Mandelbrot
+share/gimp/fractalexplorer/Marble
+share/gimp/fractalexplorer/Marble2
+share/gimp/fractalexplorer/Medusa
+share/gimp/fractalexplorer/Nautilus
+share/gimp/fractalexplorer/Nebula
+share/gimp/fractalexplorer/Plant
+share/gimp/fractalexplorer/Rose
+share/gimp/fractalexplorer/Saturn
+share/gimp/fractalexplorer/Snow_Crystal
+share/gimp/fractalexplorer/Soma
+share/gimp/fractalexplorer/Spark
+share/gimp/fractalexplorer/Suns
+share/gimp/fractalexplorer/Tentacles
+share/gimp/fractalexplorer/The_Green_Place
+share/gimp/fractalexplorer/Wave
+share/gimp/fractalexplorer/Wood
+share/gimp/fractalexplorer/Zooming_Circle
 share/gimp/gimprc.5
-share/gimp/gtkrc
 share/gimp/gimp_logo.ppm
 share/gimp/gimp_splash.ppm
 share/gimp/gimp1_1_splash.ppm
 share/gimp/gimp_tips.txt
-share/gimp/ps-menurc
-share/gimp/gtkrc.forest2
+@unexec rm -f %D/share/gimp/gimprc
+@unexec rm -f %D/share/gimp/gimprc_user
+@unexec rm -f %D/share/gimp/gtkrc
+@unexec rm -f %D/share/gimp/gtkrc.forest2
+@unexec rm -f %D/share/gimp/ps-menurc
+@unexec rm -f %D/share/gimp/unitrc
+@unexec rm -f %D/share/gimp/user_install
 @dirrm include/gck
 @dirrm include/libgimp
 @dirrm lib/gimp/1.1/modules
 @dirrm lib/gimp/1.1/plug-ins
 @dirrm lib/gimp/1.1
 @dirrm lib/gimp
+@dirrm share/gimp/fractalexplorer
 @dirrm share/gimp/scripts
 @dirrm share/gimp/patterns
 @dirrm share/gimp/palettes
