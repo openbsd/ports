@@ -1,0 +1,65 @@
+$OpenBSD: patch-src_mresolver_c,v 1.1 2003/05/05 03:37:09 margarida Exp $
+--- src/mresolver.c.orig	Sun Nov 10 13:49:54 2002
++++ src/mresolver.c	Mon May  5 04:18:04 2003
+@@ -80,12 +80,12 @@ int resolver_start(mconfig *conf, mlogre
+ 		const char *conv_ip;
+ 
+ 		/* start the resolver for the IP */
+-		conv_ip = resolver_reverse_ip(recweb->req_host_ip);
++		conv_ip = resolver_reverse_ip(recweb->req_host_ip->ptr);
+ 
+ 		if (conv_ip) {
+ 			mdata *data = NULL;
+ 
+-			if (!mhash_in_hash(conf->query_hash, recweb->req_host_ip)) {
++			if (!mhash_in_hash(conf->query_hash, recweb->req_host_ip->ptr)) {
+ 				adns_query *query = malloc(sizeof(adns_query));
+ 
+ 				adns_submit(*(conf->adns),
+@@ -98,7 +98,7 @@ int resolver_start(mconfig *conf, mlogre
+ 
+ 				/* put ip and query into a hash */
+ 
+-				data = mdata_Query_create(recweb->req_host_ip, query);
++				data = mdata_Query_create(recweb->req_host_ip->ptr, query);
+ 				mhash_insert_sorted(conf->query_hash, data);
+ 			}
+ 			/* don't free query !! it will be removed by mhash_free */
+@@ -115,16 +115,16 @@ int resolver_finish(mconfig *conf, mlogr
+ 	    rec->ext_type == M_RECORD_TYPE_WEB) {
+ 		mlogrec_web * recweb = rec->ext;
+ 
+-		if (!recweb->req_host_name && recweb->req_host_ip) {
++		if (!recweb->req_host_name->ptr && recweb->req_host_ip->ptr) {
+ 			/* resolve the name if neccesary */
+ 
+ 			adns_answer *answer = NULL;
+ 			mdata *query;
+ 
+ 			if (conf->debug_resolver)
+-				fprintf(stderr, "%s.%d: resolve %-15s -- ", __FILE__, __LINE__, recweb->req_host_ip);
++				fprintf(stderr, "%s.%d: resolve %-15s -- ", __FILE__, __LINE__, recweb->req_host_ip->ptr);
+ 
+-			if ((query = mhash_get_data(conf->query_hash, recweb->req_host_ip))) {
++			if ((query = mhash_get_data(conf->query_hash, recweb->req_host_ip->ptr))) {
+ 				if (!query->data.query.hostname) {
+ 					adns_wait(*(conf->adns), query->data.query.query, &answer, NULL);
+ 
+@@ -137,7 +137,7 @@ int resolver_finish(mconfig *conf, mlogr
+ 						if (conf->debug_resolver)
+ 							fprintf(stderr, "error      ");
+ 
+-						query->data.query.hostname = strdup(recweb->req_host_ip);
++						query->data.query.hostname = strdup(recweb->req_host_ip->ptr);
+ 					}
+ 					free(answer);
+ 				} else {
+@@ -149,7 +149,7 @@ int resolver_finish(mconfig *conf, mlogr
+ 					fprintf(stderr, "--> %s\n", query->data.query.hostname);
+ 
+ 				if (!is_ip(query->data.query.hostname)) {
+-					recweb->req_host_name = strdup(query->data.query.hostname);
++					buffer_strcpy_len(recweb->req_host_name,query->data.query.hostname,strlen(query->data.query.hostname));
+ 				}
+ 			}
+ 		}

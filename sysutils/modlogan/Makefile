@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/02 02:53:05 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/05 03:37:09 margarida Exp $
 
 COMMENT=		"modular log analyzer"
 
@@ -19,7 +19,8 @@ MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/
 
 LIB_DEPENDS=	expat.3::textproc/expat \
 		gd.18::graphics/gd \
-		pcre::devel/pcre
+		pcre::devel/pcre \
+		adns.1::net/adns
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --libdir=${PREFIX}/lib/modlogan
