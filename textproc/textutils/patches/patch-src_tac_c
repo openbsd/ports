@@ -1,0 +1,47 @@
+$OpenBSD: patch-src_tac_c,v 1.1.1.1 2001/04/14 00:46:07 lebel Exp $
+--- src/tac.c.orig	Sun Jul  4 05:59:25 1999
++++ src/tac.c	Wed Apr  4 09:34:31 2001
+@@ -426,22 +426,19 @@ save_stdin (FILE **g_tmp, char **g_tempf
+       template = xmalloc (strlen (tempdir) + 11);
+     }
+   sprintf (template, "%s/tacXXXXXX", tempdir);
+-  tempfile = mktemp (template);
++  fd = mkstemp (template);
+ 
+-  /*  Open temporary file exclusively, to foil a common
+-      denial-of-service attack.  */
+-  fd = open (tempfile, O_RDWR | O_CREAT | O_TRUNC | O_EXCL, 0600);
+   if (fd == -1)
+-    error (EXIT_FAILURE, errno, "%s", tempfile);
++    error (EXIT_FAILURE, errno, "%s", template);
+ 
+   tmp = fdopen (fd, "w+");
+   if (tmp == NULL)
+-    error (EXIT_FAILURE, errno, "%s", tempfile);
++    error (EXIT_FAILURE, errno, "%s", template);
+ 
+ #if DONT_UNLINK_WHILE_OPEN
+-  record_tempfile (tempfile, tmp);
++  record_tempfile (template, tmp);
+ #else
+-  unlink (tempfile);
++  unlink (template);
+ #endif
+ 
+   while (1)
+@@ -457,13 +454,13 @@ save_stdin (FILE **g_tmp, char **g_tempf
+     }
+ 
+   if (ferror (tmp) || fflush (tmp) == EOF)
+-    error (EXIT_FAILURE, errno, "%s", tempfile);
++    error (EXIT_FAILURE, errno, "%s", template);
+ 
+   rewind (tmp);
+ 
+   SET_BINARY (fileno (tmp));
+   *g_tmp = tmp;
+-  *g_tempfile = tempfile;
++  *g_tempfile = template;
+ }
+ 
+ /* Print the standard input in reverse, saving it to temporary

@@ -1,0 +1,12 @@
+The Free Software Foundation's text processing utilities, for rearranging,
+reformatting and generally mangling text.
+ 
+Many of the utilities exist in the OpenBSD base collection, but the GNU
+versions have added functionality, which is sometimes useful.
+
+All the binaries are prefixed by the letter g to differentiate them
+with the standard applications with the same name.
+
+Note that this port will install these utilities with a 'g' prefix,
+e.g. gtar, but the texinfo documentation will refer to them without
+the 'g' prefix.
