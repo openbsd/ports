@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/03/19 06:09:14 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/07/08 20:07:04 jakob Exp $
 # $FreeBSD: Makefile,v 1.4 1997/02/16 13:32:59 andreas Exp $
 #
 
@@ -6,7 +6,7 @@
      SUBDIR += bytebench
      SUBDIR += iozone
      SUBDIR += lmbench
-#    SUBDIR += netperf
+     SUBDIR += netperf
      SUBDIR += netpipe
      SUBDIR += tcpblast
      SUBDIR += xengine
