@@ -16,6 +16,6 @@ Flavors:
 	     ldap - Build with LDAP support as an authentication source
 	    mysql - Build with MySQL support as an authentication source
        postgresql - Build with PostgreSQL support as an authentication source
-	no_banner - Build pufe-ftpd to not display a banner on connection
+	no_banner - Build Pure-FTPd to not display a banner on connection
 
 WWW: ${HOMEPAGE}
