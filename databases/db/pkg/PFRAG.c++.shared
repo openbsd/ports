@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.c++.shared,v 1.1 2001/09/07 16:06:08 heko Exp $
+lib/libdb_cxx.so
+lib/libdb_cxx.so.3
+lib/libdb_cxx.so.3.1

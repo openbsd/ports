@@ -1,7 +1,23 @@
-$OpenBSD: patch-dist_ltconfig,v 1.1 2001/02/19 19:41:14 danh Exp $
---- dist/ltconfig.orig	Mon Feb 19 14:33:00 2001
-+++ dist/ltconfig	Mon Feb 19 14:35:27 2001
-@@ -1105,6 +1105,9 @@ cygwin* | mingw*)
+$OpenBSD: patch-dist_ltconfig,v 1.2 2001/09/07 16:06:08 heko Exp $
+--- dist/ltconfig.orig	Tue May  2 19:03:13 2000
++++ dist/ltconfig	Thu Aug 30 21:10:07 2001
+@@ -501,7 +501,14 @@ fi
+ 
+ if test -n "$RANLIB"; then
+   old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
+-  old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
++  case "$host_os" in 
++  openbsd*) 
++    old_postinstall_cmds="\$RANLIB -t \$oldlib~$old_postinstall_cmds"
++  ;;
++  *)
++    old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
++  ;;
++  esac
+ fi
+ 
+ # Set sane defaults for `DLLTOOL', `OBJDUMP', and `AS', used on cygwin.
+@@ -1105,6 +1112,9 @@ cygwin* | mingw*)
      with_gnu_ld=no
    fi
    ;;
@@ -11,7 +27,7 @@ $OpenBSD: patch-dist_ltconfig,v 1.1 2001/02/19 19:41:14 danh Exp $
  
  esac
  
-@@ -1400,10 +1403,21 @@ else
+@@ -1400,10 +1410,21 @@ else
      ;;
  
    openbsd*)
@@ -27,7 +43,7 @@ $OpenBSD: patch-dist_ltconfig,v 1.1 2001/02/19 19:41:14 danh Exp $
 +      *)
 +       archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
 +       hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-+       if [ "`/usr/bin/file /usr/lib/libc.so.* | grep ELF`" != "" ]; then
++	if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
 +         export_dynamic_flag_spec='${wl}-E'
 +       fi
 +      ;;
@@ -35,18 +51,30 @@ $OpenBSD: patch-dist_ltconfig,v 1.1 2001/02/19 19:41:14 danh Exp $
      ;;
  
    os2*)
-@@ -2009,13 +2023,10 @@ netbsd*)
+@@ -2009,9 +2030,23 @@ netbsd*)
  
  openbsd*)
    version_type=sunos
 -  if test "$with_gnu_ld" = yes; then
 -    need_lib_prefix=no
 -    need_version=no
--  fi
++  need_lib_prefix=no
++  need_version=no
++  file_magic_cmd=/usr/bin/file
++  file_magic_test_file=`echo /usr/lib/libc.so.*`
++  if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++    deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
++    case "$host_os" in
++    openbsd2.[89] | openbsd2.[89].*)
++      shlibpath_overrides_runpath=no
++    ;;
++    *)
++      shlibpath_overrides_runpath=yes
++    ;;
++    esac
++  else
++    deplibs_check_method='file_magic OpenBSD.* shared library'
++    shlibpath_overrides_runpath=yes
+   fi
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-   shlibpath_var=LD_LIBRARY_PATH
-+  deplibs_check_method='pass_all'
-   ;;
- 
- os2*)

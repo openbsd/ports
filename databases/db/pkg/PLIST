@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2000/12/28 17:14:10 matt Exp $
+@comment $OpenBSD: PLIST,v 1.11 2001/09/07 16:06:08 heko Exp $
 bin/db_archive
 bin/db_checkpoint
 bin/db_deadlock
@@ -10,11 +10,6 @@ bin/db_recover
 bin/db_stat
 bin/db_upgrade
 bin/db_verify
-include/db3.h
-include/db_185.h
-include/db_cxx.h
-lib/libdb3.a
-lib/libdb3_cxx.a
 share/doc/db/api_c/c_index.html
 share/doc/db/api_c/c_pindex.html
 share/doc/db/api_c/db_close.html
@@ -153,161 +148,6 @@ share/doc/db/api_c/txn_commit.html
 share/doc/db/api_c/txn_id.html
 share/doc/db/api_c/txn_prepare.html
 share/doc/db/api_c/txn_stat.html
-share/doc/db/api_cxx/cxx_index.html
-share/doc/db/api_cxx/cxx_pindex.html
-share/doc/db/api_cxx/db_class.html
-share/doc/db/api_cxx/db_close.html
-share/doc/db/api_cxx/db_cursor.html
-share/doc/db/api_cxx/db_del.html
-share/doc/db/api_cxx/db_err.html
-share/doc/db/api_cxx/db_fd.html
-share/doc/db/api_cxx/db_get.html
-share/doc/db/api_cxx/db_get_byteswapped.html
-share/doc/db/api_cxx/db_get_type.html
-share/doc/db/api_cxx/db_join.html
-share/doc/db/api_cxx/db_key_range.html
-share/doc/db/api_cxx/db_open.html
-share/doc/db/api_cxx/db_put.html
-share/doc/db/api_cxx/db_remove.html
-share/doc/db/api_cxx/db_rename.html
-share/doc/db/api_cxx/db_set_bt_compare.html
-share/doc/db/api_cxx/db_set_bt_minkey.html
-share/doc/db/api_cxx/db_set_bt_prefix.html
-share/doc/db/api_cxx/db_set_cachesize.html
-share/doc/db/api_cxx/db_set_dup_compare.html
-share/doc/db/api_cxx/db_set_errcall.html
-share/doc/db/api_cxx/db_set_errfile.html
-share/doc/db/api_cxx/db_set_errpfx.html
-share/doc/db/api_cxx/db_set_feedback.html
-share/doc/db/api_cxx/db_set_flags.html
-share/doc/db/api_cxx/db_set_h_ffactor.html
-share/doc/db/api_cxx/db_set_h_hash.html
-share/doc/db/api_cxx/db_set_h_nelem.html
-share/doc/db/api_cxx/db_set_lorder.html
-share/doc/db/api_cxx/db_set_malloc.html
-share/doc/db/api_cxx/db_set_pagesize.html
-share/doc/db/api_cxx/db_set_paniccall.html
-share/doc/db/api_cxx/db_set_re_delim.html
-share/doc/db/api_cxx/db_set_re_len.html
-share/doc/db/api_cxx/db_set_re_pad.html
-share/doc/db/api_cxx/db_set_re_source.html
-share/doc/db/api_cxx/db_set_realloc.html
-share/doc/db/api_cxx/db_stat.html
-share/doc/db/api_cxx/db_sync.html
-share/doc/db/api_cxx/db_upgrade.html
-share/doc/db/api_cxx/db_verify.html
-share/doc/db/api_cxx/dbc_class.html
-share/doc/db/api_cxx/dbc_close.html
-share/doc/db/api_cxx/dbc_count.html
-share/doc/db/api_cxx/dbc_del.html
-share/doc/db/api_cxx/dbc_dup.html
-share/doc/db/api_cxx/dbc_get.html
-share/doc/db/api_cxx/dbc_put.html
-share/doc/db/api_cxx/dbenv_class.html
-share/doc/db/api_cxx/dbt_class.html
-share/doc/db/api_cxx/env_close.html
-share/doc/db/api_cxx/env_open.html
-share/doc/db/api_cxx/env_remove.html
-share/doc/db/api_cxx/env_set_cachesize.html
-share/doc/db/api_cxx/env_set_data_dir.html
-share/doc/db/api_cxx/env_set_errcall.html
-share/doc/db/api_cxx/env_set_errfile.html
-share/doc/db/api_cxx/env_set_error_stream.html
-share/doc/db/api_cxx/env_set_errpfx.html
-share/doc/db/api_cxx/env_set_feedback.html
-share/doc/db/api_cxx/env_set_lg_bsize.html
-share/doc/db/api_cxx/env_set_lg_dir.html
-share/doc/db/api_cxx/env_set_lg_max.html
-share/doc/db/api_cxx/env_set_lk_conflicts.html
-share/doc/db/api_cxx/env_set_lk_detect.html
-share/doc/db/api_cxx/env_set_lk_max.html
-share/doc/db/api_cxx/env_set_mp_mmapsize.html
-share/doc/db/api_cxx/env_set_mutexlocks.html
-share/doc/db/api_cxx/env_set_pageyield.html
-share/doc/db/api_cxx/env_set_paniccall.html
-share/doc/db/api_cxx/env_set_panicstate.html
-share/doc/db/api_cxx/env_set_rec_init.html
-share/doc/db/api_cxx/env_set_region_init.html
-share/doc/db/api_cxx/env_set_server.html
-share/doc/db/api_cxx/env_set_shm_key.html
-share/doc/db/api_cxx/env_set_tas_spins.html
-share/doc/db/api_cxx/env_set_tmp_dir.html
-share/doc/db/api_cxx/env_set_tx_max.html
-share/doc/db/api_cxx/env_set_tx_recover.html
-share/doc/db/api_cxx/env_set_tx_timestamp.html
-share/doc/db/api_cxx/env_set_verbose.html
-share/doc/db/api_cxx/env_strerror.html
-share/doc/db/api_cxx/env_version.html
-share/doc/db/api_cxx/except_class.html
-share/doc/db/api_cxx/get_errno.html
-share/doc/db/api_cxx/lock_class.html
-share/doc/db/api_cxx/lock_detect.html
-share/doc/db/api_cxx/lock_get.html
-share/doc/db/api_cxx/lock_id.html
-share/doc/db/api_cxx/lock_put.html
-share/doc/db/api_cxx/lock_stat.html
-share/doc/db/api_cxx/lock_vec.html
-share/doc/db/api_cxx/log_archive.html
-share/doc/db/api_cxx/log_compare.html
-share/doc/db/api_cxx/log_file.html
-share/doc/db/api_cxx/log_flush.html
-share/doc/db/api_cxx/log_get.html
-share/doc/db/api_cxx/log_put.html
-share/doc/db/api_cxx/log_register.html
-share/doc/db/api_cxx/log_stat.html
-share/doc/db/api_cxx/log_unregister.html
-share/doc/db/api_cxx/lsn_class.html
-share/doc/db/api_cxx/memp_fclose.html
-share/doc/db/api_cxx/memp_fget.html
-share/doc/db/api_cxx/memp_fopen.html
-share/doc/db/api_cxx/memp_fput.html
-share/doc/db/api_cxx/memp_fset.html
-share/doc/db/api_cxx/memp_fsync.html
-share/doc/db/api_cxx/memp_register.html
-share/doc/db/api_cxx/memp_stat.html
-share/doc/db/api_cxx/memp_sync.html
-share/doc/db/api_cxx/memp_trickle.html
-share/doc/db/api_cxx/mempfile_class.html
-share/doc/db/api_cxx/pindex.src
-share/doc/db/api_cxx/txn_abort.html
-share/doc/db/api_cxx/txn_begin.html
-share/doc/db/api_cxx/txn_checkpoint.html
-share/doc/db/api_cxx/txn_class.html
-share/doc/db/api_cxx/txn_commit.html
-share/doc/db/api_cxx/txn_id.html
-share/doc/db/api_cxx/txn_prepare.html
-share/doc/db/api_cxx/txn_stat.html
-share/doc/db/api_cxx/what.html
-share/doc/db/api_tcl/db_close.html
-share/doc/db/api_tcl/db_count.html
-share/doc/db/api_tcl/db_cursor.html
-share/doc/db/api_tcl/db_del.html
-share/doc/db/api_tcl/db_get.html
-share/doc/db/api_tcl/db_get_join.html
-share/doc/db/api_tcl/db_get_type.html
-share/doc/db/api_tcl/db_is_byteswapped.html
-share/doc/db/api_tcl/db_join.html
-share/doc/db/api_tcl/db_open.html
-share/doc/db/api_tcl/db_put.html
-share/doc/db/api_tcl/db_remove.html
-share/doc/db/api_tcl/db_rename.html
-share/doc/db/api_tcl/db_stat.html
-share/doc/db/api_tcl/db_sync.html
-share/doc/db/api_tcl/dbc_close.html
-share/doc/db/api_tcl/dbc_del.html
-share/doc/db/api_tcl/dbc_dup.html
-share/doc/db/api_tcl/dbc_get.html
-share/doc/db/api_tcl/dbc_put.html
-share/doc/db/api_tcl/env_close.html
-share/doc/db/api_tcl/env_open.html
-share/doc/db/api_tcl/env_remove.html
-share/doc/db/api_tcl/pindex.src
-share/doc/db/api_tcl/tcl_index.html
-share/doc/db/api_tcl/tcl_pindex.html
-share/doc/db/api_tcl/txn.html
-share/doc/db/api_tcl/txn_abort.html
-share/doc/db/api_tcl/txn_commit.html
-share/doc/db/api_tcl/version.html
 share/doc/db/images/api.gif
 share/doc/db/images/next.gif
 share/doc/db/images/prev.gif
@@ -464,10 +304,6 @@ share/doc/db/ref/simple_tut/intro.html
 share/doc/db/ref/simple_tut/keydata.html
 share/doc/db/ref/simple_tut/open.html
 share/doc/db/ref/simple_tut/put.html
-share/doc/db/ref/tcl/error.html
-share/doc/db/ref/tcl/intro.html
-share/doc/db/ref/tcl/program.html
-share/doc/db/ref/tcl/using.html
 share/doc/db/ref/test/run.html
 share/doc/db/ref/toc.html
 share/doc/db/ref/transapp/admin.html
@@ -495,11 +331,8 @@ share/doc/db/ref/upgrade.2.0/disk.html
 share/doc/db/ref/upgrade.2.0/intro.html
 share/doc/db/ref/upgrade.2.0/system.html
 share/doc/db/ref/upgrade.3.0/close.html
-share/doc/db/ref/upgrade.3.0/cxx.html
 share/doc/db/ref/upgrade.3.0/db.html
-share/doc/db/ref/upgrade.3.0/db_cxx.html
 share/doc/db/ref/upgrade.3.0/dbenv.html
-share/doc/db/ref/upgrade.3.0/dbenv_cxx.html
 share/doc/db/ref/upgrade.3.0/dbinfo.html
 share/doc/db/ref/upgrade.3.0/disk.html
 share/doc/db/ref/upgrade.3.0/eacces.html
@@ -507,7 +340,6 @@ share/doc/db/ref/upgrade.3.0/eagain.html
 share/doc/db/ref/upgrade.3.0/envopen.html
 share/doc/db/ref/upgrade.3.0/func.html
 share/doc/db/ref/upgrade.3.0/intro.html
-share/doc/db/ref/upgrade.3.0/java.html
 share/doc/db/ref/upgrade.3.0/join.html
 share/doc/db/ref/upgrade.3.0/jump_set.html
 share/doc/db/ref/upgrade.3.0/lock_detect.html
@@ -539,7 +371,6 @@ share/doc/db/ref/upgrade.3.1/set_feedback.html
 share/doc/db/ref/upgrade.3.1/set_paniccall.html
 share/doc/db/ref/upgrade.3.1/set_tx_recover.html
 share/doc/db/ref/upgrade.3.1/sysmem.html
-share/doc/db/ref/upgrade.3.1/tcl.html
 share/doc/db/ref/upgrade.3.1/tmp.html
 share/doc/db/ref/upgrade.3.1/txn_check.html
 share/doc/db/ref/xa/config.html
@@ -560,12 +391,10 @@ share/doc/db/utility/db_stat.html
 share/doc/db/utility/db_upgrade.html
 share/doc/db/utility/db_verify.html
 share/doc/db/utility/index.html
-share/examples/db/AccessExample.cpp
-share/examples/db/BtRecExample.cpp
-share/examples/db/EnvExample.cpp
-share/examples/db/LockExample.cpp
-share/examples/db/MpoolExample.cpp
-share/examples/db/TpcbExample.cpp
+include/db3.h
+include/db_185.h
+lib/libdb.a
+lib/libdb.la
 share/examples/db/ex_access.c
 share/examples/db/ex_btrec.c
 share/examples/db/ex_dbclient.c
@@ -575,6 +404,9 @@ share/examples/db/ex_mpool.c
 share/examples/db/ex_thread.c
 share/examples/db/ex_tpcb.c
 %%SHARED%%
+%%tcl%%
+%%java%%
+%%c++%%
 @dirrm share/examples/db
 @dirrm share/doc/db/utility
 @dirrm share/doc/db/sleepycat
@@ -585,7 +417,6 @@ share/examples/db/ex_tpcb.c
 @dirrm share/doc/db/ref/txn
 @dirrm share/doc/db/ref/transapp
 @dirrm share/doc/db/ref/test
-@dirrm share/doc/db/ref/tcl
 @dirrm share/doc/db/ref/simple_tut
 @dirrm share/doc/db/ref/sendmail
 @dirrm share/doc/db/ref/rpc
@@ -610,7 +441,5 @@ share/examples/db/ex_tpcb.c
 @dirrm share/doc/db/ref/am
 @dirrm share/doc/db/ref
 @dirrm share/doc/db/images
-@dirrm share/doc/db/api_tcl
-@dirrm share/doc/db/api_cxx
 @dirrm share/doc/db/api_c
 @dirrm share/doc/db

@@ -1,7 +1,7 @@
-$OpenBSD: patch-dist_ltmain_sh,v 1.1 2001/02/19 19:41:14 danh Exp $
---- dist/ltmain.sh.orig	Mon Feb 19 14:33:05 2001
-+++ dist/ltmain.sh	Mon Feb 19 14:37:46 2001
-@@ -1079,7 +1079,18 @@ compiler."
+$OpenBSD: patch-dist_ltmain_sh,v 1.2 2001/09/07 16:06:08 heko Exp $
+--- dist/ltmain.sh.orig	Sun Jul 30 20:45:53 2000
++++ dist/ltmain.sh	Thu Aug 30 21:12:05 2001
+@@ -1079,6 +1079,17 @@ compiler."
  	    # These systems don't actually have c library (as such)
  	    continue
  	    ;;
@@ -9,17 +9,16 @@ $OpenBSD: patch-dist_ltmain_sh,v 1.1 2001/02/19 19:41:14 danh Exp $
 +            # Do not include libc due to us having libc/libc_r.
 +            continue
 +            ;;
- 	  esac
++	  esac
 +        elif test "$arg" = "-lc_r"; then
 +          case "$host" in
 +          *-*-openbsd*)
 +            # Do not include libc_r directly, use -pthread flag.
 +            continue
 +            ;;
-+          esac
+ 	  esac
  	elif test "$arg" = "-lm"; then
  	  case "$host" in
- 	  *-*-cygwin* | *-*-beos*)
 @@ -1091,6 +1102,10 @@ compiler."
  	deplibs="$deplibs $arg"
  	;;
@@ -31,17 +30,17 @@ $OpenBSD: patch-dist_ltmain_sh,v 1.1 2001/02/19 19:41:14 danh Exp $
        -module)
  	module=yes
  	continue
-@@ -1803,6 +1818,10 @@ compiler."
- 	  # defer to whether the user wants -lc, or -lc_r
+@@ -1796,6 +1811,10 @@ compiler."
+ 	  # these systems don't actually have a c library (as such)!
  	  ;;
  
 +	*-*-openbsd*)
 +	  # Do not include libc due to us having libc/libc_r.
 +	  ;;
 +
- 	*)
- 	  # Add libc to deplibs on all other systems.
- 	  deplibs="$deplibs -lc"
+         #### local change for Sleepycat DB: [#2380]
+         # The following case is added, since the linker's -pthread
+         # option implicitly controls use of -lc or -lc_r.
 @@ -3563,40 +3582,6 @@ libdir='$install_libdir'\
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
