@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2003/01/19 01:02:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/01/28 12:57:35 sturm Exp $
 
 COMMENT=	"POP3 mail retriever"
 
-DISTNAME=	getmail-2.3.10
+DISTNAME=	getmail-2.3.11
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.qcc.ca/~charlesc/software/getmail-2.0/
@@ -24,20 +24,21 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 DOCDIR=		${PREFIX}/share/doc/getmail
+EXDIR=		${PREFIX}/share/examples/getmail
 
 post-patch:
-	@perl -i -p -e "s#/usr/lib/getmail#${PREFIX}/share/getmail#" ${WRKDIST}/getmail
+	@perl -i -p -e "s#/usr/lib/getmail#${PREFIX}/share/getmail#" \
+		${WRKDIST}/getmail
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/getmail
 	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/getmail
+	${INSTALL_DATA_DIR} ${EXDIR}
 	${INSTALL_SCRIPT} ${WRKDIST}/getmail ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIST}/*.py ${PREFIX}/share/getmail
 	${INSTALL_DATA} ${WRKDIST}/docs.txt ${DOCDIR}
 	${INSTALL_DATA} ${WRKDIST}/faq.txt ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/getmailrc-example \
-		${PREFIX}/share/examples/getmail/getmailrc
+	${INSTALL_DATA} ${WRKDIST}/getmailrc-example ${EXDIR}/getmailrc
 	${INSTALL_DATA} ${WRKDIST}/getmail.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
