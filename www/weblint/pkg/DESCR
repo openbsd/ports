@@ -2,4 +2,4 @@ Weblint is a syntax and style checker for HTML.  It is a perl program
 that scans through web pages and "picks off fluff" much the way lint 
 handles C programs.
 
-Author's web page is ${HOMEPAGE}
+WWW: ${HOMEPAGE}

@@ -1,26 +1,26 @@
-# $OpenBSD: Makefile,v 1.4 2000/07/11 15:39:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2000/08/17 17:37:21 brad Exp $
 
-DISTNAME=	  	weblint-1.020	
-CATEGORIES=     	www
-NEED_VERSION=		1.312
+DISTNAME=	weblint-1.020	
+CATEGORIES=	www
+NEED_VERSION=	1.312
+MASTER_SITES=	ftp://ftp.weblint.org/pub/weblint/ \
+		http://www.perl.com/CPAN/authors/id/NEILB/ 
 
-HOMEPAGE=		http://www.weblint.org/
+HOMEPAGE=	http://www.weblint.org/
 
-MAINTAINER=		seanc@cginfo.sk.ca
-
-MASTER_SITES=		ftp://ftp.weblint.org/pub/weblint/ \
-			http://www.perl.com/CPAN/authors/id/NEILB/ 
+MAINTAINER=	seanc@cginfo.sk.ca
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-NO_BUILD=		Yes
+NO_BUILD=	Yes
 
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/weblint
 	${INSTALL_SCRIPT} ${WRKSRC}/weblint ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/weblint.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/weblintrc ${PREFIX}/share/examples
+	${INSTALL_DATA} ${WRKSRC}/weblintrc ${PREFIX}/share/examples/weblint
 
 .include <bsd.port.mk>
