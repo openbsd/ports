@@ -1,40 +1,53 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/12/01 19:14:21 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/05/24 21:57:32 marcm Exp $
 bin/razor-admin
 bin/razor-check
 bin/razor-client
 bin/razor-report
 bin/razor-revoke
-${P5SITE}/Razor2/Client/Agent.pm
-@comment ${P5SITE}/Razor2/Client/Agent.pm.orig
-${P5SITE}/Razor2/Client/Config.pm
-${P5SITE}/Razor2/Client/Core.pm
-${P5SITE}/Razor2/Client/Engine.pm
-${P5SITE}/Razor2/Client/Version.pm
-${P5SITE}/Razor2/Errorhandler.pm
-${P5SITE}/Razor2/Logger.pm
-${P5SITE}/Razor2/Preproc/Manager.pm
-${P5SITE}/Razor2/Preproc/VR1.pm
-${P5SITE}/Razor2/Preproc/deBase64.pm
-${P5SITE}/Razor2/Preproc/deHTML.pm
-${P5SITE}/Razor2/Preproc/deNewline.pm
-${P5SITE}/Razor2/Preproc/deQP.pm
-${P5SITE}/Razor2/Preproc/enBase64.pm
-${P5SITE}/Razor2/Signature/Ephemeral.pm
-${P5SITE}/Razor2/String.pm
+${P5ARCH}/Razor2/Client/Agent.pm
+@comment ${P5ARCH}/Razor2/Client/Agent.pm.orig
+${P5ARCH}/Razor2/Client/Config.pm
+${P5ARCH}/Razor2/Client/Core.pm
+${P5ARCH}/Razor2/Client/Engine.pm
+${P5ARCH}/Razor2/Client/Version.pm
+${P5ARCH}/Razor2/Errorhandler.pm
+${P5ARCH}/Razor2/Logger.pm
+${P5ARCH}/Razor2/Preproc/Manager.pm
+${P5ARCH}/Razor2/Preproc/VR1.pm
+${P5ARCH}/Razor2/Preproc/deBase64.pm
+${P5ARCH}/Razor2/Preproc/deHTML.pm
+${P5ARCH}/Razor2/Preproc/deHTMLxs.pm
+${P5ARCH}/Razor2/Preproc/deNewline.pm
+${P5ARCH}/Razor2/Preproc/deQP.pm
+${P5ARCH}/Razor2/Preproc/enBase64.pm
+${P5ARCH}/Razor2/Signature/Ephemeral.pm
+${P5ARCH}/Razor2/String.pm
+${P5ARCH}/Razor2/Syslog.pm
+${P5ARCH}/auto/Razor2/Preproc/deHTMLxs/autosplit.ix
+${P5ARCH}/auto/Razor2/Preproc/deHTMLxs/deHTMLxs.bs
+${P5ARCH}/auto/Razor2/Preproc/deHTMLxs/deHTMLxs.so
+${P5ARCH}/auto/Razor2/Syslog/autosplit.ix
 @comment ${P5ARCH}/auto/razor-agents/.packlist
+@comment ${P5ARCH}/perllocal.pod
 man/man1/razor-admin.1
 man/man1/razor-check.1
 man/man1/razor-report.1
 man/man1/razor-revoke.1
 man/man3p/Razor2::Errorhandler.3p
+man/man3p/Razor2::Preproc::deHTMLxs.3p
+man/man3p/Razor2::Syslog.3p
 man/man5/razor-agent.conf.5
 man/man5/razor-agents.5
 man/man5/razor-whitelist.5
 @comment @dirrm man/man3p
 @comment @dirrm ${P5ARCH}/auto/razor-agents
+@dirrm ${P5ARCH}/auto/Razor2/Syslog
+@dirrm ${P5ARCH}/auto/Razor2/Preproc/deHTMLxs
+@dirrm ${P5ARCH}/auto/Razor2/Preproc
+@dirrm ${P5ARCH}/auto/Razor2
 @comment @dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}/Razor2/Signature
+@dirrm ${P5ARCH}/Razor2/Preproc
+@dirrm ${P5ARCH}/Razor2/Client
+@dirrm ${P5ARCH}/Razor2
 @comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Razor2/Signature
-@dirrm ${P5SITE}/Razor2/Preproc
-@dirrm ${P5SITE}/Razor2/Client
-@dirrm ${P5SITE}/Razor2
