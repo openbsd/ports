@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2000/03/10 07:45:14 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2000/03/10 17:44:15 brad Exp $
 
 DISTNAME=	glib-1.2.7
 CATEGORIES=	devel
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE=	Yes
 
+SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-threads \
