@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.220 2000/03/04 18:16:02 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.221 2000/03/05 16:00:30 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -167,6 +167,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # NO_CDROM		- Port may not go on CDROM.  Set this string to reason.
 # NO_DESCRIBE	- Use a dummy (do-nothing) describe target.
 # NO_EXTRACT	- Use a dummy (do-nothing) extract target.
+# NO_PATCH		- Use a dummy (do-nothing) patch target.
 # NO_INSTALL	- Use a dummy (do-nothing) install target.
 # NO_PACKAGE	- Use a dummy (do-nothing) package target.
 # NO_PKG_REGISTER - Don't register a port install as a package.
@@ -1062,12 +1063,11 @@ uninstall deinstall package:
 fetch: fetch-depends
 # You need to define LICENCE_TYPE and PERMIT_* to make the warning go away.
 # See ports/infrastructure/templates/Makefile.template
-.if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
+.  if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
     !defined(PERMIT_DISTFILES_CDROM) || !defined(PERMIT_DISTFILES_FTP)
 	@echo >&2 "*** The licensing info for this port is incomplete."
 	@echo >&2 "*** Please notify the OpenBSD port maintainer <${MAINTAINER}>"
-.endif
-
+.  endif
 .  if target(pre-fetch)
 	@cd ${.CURDIR} && make pre-fetch
 .  endif
