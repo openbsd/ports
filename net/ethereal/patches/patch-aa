@@ -1,6 +1,6 @@
---- packet.c.orig	Sat Jan  2 22:22:32 1999
-+++ packet.c	Wed Jan 20 01:09:46 1999
-@@ -401,7 +401,7 @@
+--- packet.c.orig	Wed May 19 19:05:21 1999
++++ packet.c	Tue May 25 14:53:13 1999
+@@ -625,7 +625,7 @@
  		case DLT_PPP :
  			dissect_ppp(pd, fd, tree);
  			break;

@@ -1,6 +1,6 @@
---- ethereal.c.orig	Tue Dec 29 05:08:17 1998
-+++ ethereal.c	Wed Jan 20 01:10:24 1999
-@@ -163,8 +163,21 @@
+--- ethereal.c.orig	Wed May 19 19:05:11 1999
++++ ethereal.c	Tue May 25 14:53:13 1999
+@@ -194,8 +194,21 @@
      /* reload so it goes in effect. Also we set data_out_file which 
         tells the tcp code to output the data */
      close_cap_file( &cf, info_bar, file_ctx);

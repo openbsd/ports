@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 1999/05/02 11:10:27 jakob Exp $
+# $OpenBSD: Makefile,v 1.8 1999/05/25 23:10:50 brad Exp $
 
-DISTNAME=	ethereal-0.6.1
+DISTNAME=	ethereal-0.6.2
 CATEGORIES=	net x11
-
-MAINTAINER=     jakob@crt.se
-
 MASTER_SITES=	http://ethereal.zing.org/distribution/ \
 		http://ethereal.boehm.org/distribution/ \
 		http://ethereal.zing.org/distribution/old-versions/ \
 		http://ethereal.boehm.org/distribution/old-versions/
 
-LIB_DEPENDS=	gtk.1.2:${PORTSDIR}/x11/gtk+
+MAINTAINER=     jakob@crt.se
+
+LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib \
+		gtk.1.2:${PORTSDIR}/x11/gtk+
 
 USE_X11=	yes
 SYSCONFDIR=	${PREFIX}/share/ethereal
