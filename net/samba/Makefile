@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 1999/12/29 07:19:38 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2000/01/29 23:22:32 brad Exp $
 
-DISTNAME=	samba-2.0.5a
+DISTNAME=	samba-2.0.6
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_BACKUP}
+MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
+		http://us1.samba.org/samba/ftp/ \
+		ftp://ca.samba.org/pub/samba/ \
+		ftp://ftp.uni-trier.de/pub/unix/network/samba/ \
+		ftp://ring.asahi-net.or.jp/pub/net/samba/
 
 MAINTAINER=	Peter.Galbavy@knowledge.com
 
