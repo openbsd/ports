@@ -1,0 +1,33 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/01/18 13:45:39 naddy Exp $
+--- Makefile.orig	Mon Nov  8 20:26:54 1999
++++ Makefile	Tue Jan 16 22:38:36 2001
+@@ -1,12 +1,12 @@
+-INC	=	-I/usr/X11R6/include
+-LIBS	=	-lXext -lX11 -lm -L/usr/X11R6/lib \
+-		-ltiff  -lXpm -lpng -lz -ljpeg -lungif -lwraster
++INC	=	-I$(X11BASE)/include -I$(LOCALBASE)/include
++LIBS	=	-lXext -lX11 -lm -L$(X11BASE)/lib -L$(LOCALBASE)/lib \
++		-ltiff  -lXpm -lpng -lz -ljpeg -lgif -lwraster
+ OBJS	=	src/wmglobe.o src/rend.o src/wmgutil.o \
+ 		src/sunpos.o src/myconvert.o src/mycontext.o 
+ 
+ 
+ .c.o :
+-	gcc -c -O2 -Wall $(INC) $< -o $*.o
++	$(CC) -c $(CFLAGS) $(INC) $< -o $*.o
+ 
+ all:  wmglobe
+ 
+@@ -14,9 +14,8 @@ clean:
+ 	rm -f src/*.o wmglobe
+ 	
+ wmglobe :	$(OBJS)
+-		gcc -O2 -Wall $(OBJS) -o wmglobe $(LIBS)
+-		strip wmglobe 
++		$(CC) $(OBJS) -o wmglobe $(LIBS)
+ 
+ install :	
+-		install wmglobe /usr/local/bin
+-		install wmglobe.1 /usr/local/man/man1
++		$(BSD_INSTALL_PROGRAM) wmglobe $(PREFIX)/bin
++		$(BSD_INSTALL_MAN) wmglobe.1 $(PREFIX)/man/man1
