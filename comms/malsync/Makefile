@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2001/06/02 23:41:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2001/10/16 12:34:22 naddy Exp $
 
-COMMENT=		command line tool to synchronize Palm pilot to AvantGo
+COMMENT=		"command line tool to synchronize Palm pilot to AvantGo"
 
 VERSION=		2.0.6
 DISTNAME=		malsync_${VERSION}.src
@@ -12,19 +12,18 @@ HOMEPAGE=		http://www.tomw.org/malsync/
 
 MAINTAINER=		Xiao Hui LOO <71@becile.com>
 
-PERMIT_PACKAGE_CDROM=	Yes	#MPL
-PERMIT_PACKAGE_FTP=	Yes	#MPL
-PERMIT_DISTFILES_CDROM= Yes	#MPL
-PERMIT_DISTFILES_FTP=	Yes	#MPL
+# MPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.tomw.org/malsync/
+MASTER_SITES=		${HOMEPAGE}
 
 LIB_DEPENDS=		pisock.3::comms/pilot-link
 
 USE_GMAKE=		Yes
-WRKDIST=		${WRKDIR}/malsync/mal/client/unix
-
-post-extract:
-	(cd ${WRKDIST}; ${GMAKE} clean)
+WRKDIST=		${WRKDIR}/malsync
+WRKSRC=			${WRKDIST}/mal/client/unix
 
 .include <bsd.port.mk>

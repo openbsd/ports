@@ -1,7 +1,6 @@
-$OpenBSD: patch-AGNet.h,v 1.1 2001/05/23 20:45:02 jakob Exp $
-
---- ../../common/AGNet.h	Fri Jan  5 16:50:07 2001
-+++ ../../common/AGNet.h	Sat May 19 20:02:16 2001
+$OpenBSD: patch-mal_common_AGNet_h,v 1.1 2001/10/16 12:34:23 naddy Exp $
+--- mal/common/AGNet.h.orig	Fri Jan  5 17:50:07 2001
++++ mal/common/AGNet.h	Mon Oct 15 17:01:05 2001
 @@ -53,6 +53,9 @@
  #           endif /* if (!defined(__palmos__)) */
  #       else /* defined(macintosh) */
