@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/08/10 20:10:24 wilfried Exp $
+# $OpenBSD: Makefile,v 1.13 2002/09/13 22:18:28 naddy Exp $
 
 COMMENT=		"graphical sql client for MySQL"
 
@@ -25,7 +25,7 @@ PATCHFILES=		single.cc:0
 MODULES=		gettext
 BUILD_DEPENDS=		:flvw->=1.0:x11/flvw
 LIB_DEPENDS=		jpeg.62::graphics/jpeg \
-			fltk.1::x11/fltk \
+			fltk.1,fltk_images.1::x11/fltk \
 			fleditor.2::x11/fleditor \
 			lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql \
 			sqlplus.1::devel/mysql++
