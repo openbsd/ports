@@ -1,5 +1,16 @@
 --- unix/Makefile.orig	Thu Nov 19 16:59:08 1998
-+++ unix/Makefile	Sun Mar 26 17:25:48 2000
++++ unix/Makefile	Thu Jul 20 19:09:37 2000
+@@ -61,8 +61,8 @@
+ 
+ # general-purpose stuff
+ #CP = cp
+-CP = ln
+-LN = ln
++CP = ln -s
++LN = ln -fs
+ RM = rm -f
+ CHMOD = chmod
+ BINPERMS = 755
 @@ -412,18 +412,16 @@
  
  install:	$(MANS)
@@ -26,3 +37,14 @@
  
  uninstall:
  	$(RM) $(INSTALLEDBIN) $(INSTALLEDMAN)
+@@ -531,8 +529,8 @@
+ 	$(MAKE) objsdll CC=gcc CF="-O3 -Wall -I. -fPIC -DDLL $(LOC)"
+ 	gcc -shared -Wl,-soname,libunzip.so.0 -o libunzip.so.0.4 $(OBJSDLL)
+ 	$(RM) libunzip.so.0 libunzip.so
+-	$(LN) -s libunzip.so.0.4 libunzip.so.0
+-	$(LN) -s libunzip.so.0 libunzip.so
++	$(LN) libunzip.so.0.4 libunzip.so.0
++	$(LN) libunzip.so.0 libunzip.so
+ 	gcc -c -O unzipstb.c
+ 	gcc -o unzip_shlib unzipstb.o -L. -lunzip
+ 
