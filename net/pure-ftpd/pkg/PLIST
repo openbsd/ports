@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/12/14 16:31:32 brad Exp $
+bin/pure-pw
+bin/pure-pwconvert
+bin/pure-statsdecode
+man/man8/pure-ftpd.8
+man/man8/pure-ftpwho.8
+man/man8/pure-mrtginfo.8
+man/man8/pure-pw.8
+man/man8/pure-pwconvert.8
+man/man8/pure-quotacheck.8
+man/man8/pure-statsdecode.8
+man/man8/pure-uploadscript.8
+sbin/pure-config.pl
+sbin/pure-ftpd
+sbin/pure-ftpwho
+sbin/pure-mrtginfo
+sbin/pure-quotacheck
+sbin/pure-uploadscript
+share/doc/pure-ftpd/README
+share/doc/pure-ftpd/README.Configuration-File
+share/doc/pure-ftpd/README.Contrib
+share/doc/pure-ftpd/README.Virtual-Users
+share/doc/pure-ftpd/poweredby.jpg
+share/examples/pure-ftpd/pure-ftpd.conf.sample
+share/examples/pure-ftpd/xml_python_processors.txt
+@dirrm share/examples/pure-ftpd
+@dirrm share/doc/pure-ftpd
