@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/28 01:11:45 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/30 04:13:36 pvalchev Exp $
 
 COMMENT=	"highly configurable webmail client"
 
 DISTNAME=	openwebmail-1.65
 CATEGORIES=	mail
-NEED_VERSION=	1.504
 
 HOMEPAGE=	http://www.openwebmail.org/
 
@@ -21,8 +20,7 @@ MASTER_SITES=	http://turtle.ee.ncku.edu.tw/openwebmail/download/ \
 EXTRACT_SUFX=	.tgz
 EXTRACT_CASES=  *.tgz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xpf -;;
 
-RUN_DEPENDS=	::net/p5-libnet \
-		::www/p5-CGI \
+RUN_DEPENDS=	::www/p5-CGI \
 		::converters/p5-MIME-Base64 \
 		::databases/p5-ldap \
 		::textproc/ispell

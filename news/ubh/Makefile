@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/28 01:50:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/30 04:13:36 pvalchev Exp $
 
 COMMENT=	"download and decode binaries posted to Usenet"
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}/download/
 
 RUN_DEPENDS=	::mail/p5-MIME-tools \
-		::net/p5-libnet \
 		::news/p5-News-Newsrc \
 		::devel/p5-String-CRC32
 

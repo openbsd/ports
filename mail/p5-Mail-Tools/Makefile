@@ -1,15 +1,12 @@
-#   $OpenBSD: Makefile,v 1.11 2002/06/09 05:31:47 wilfried Exp $
+#   $OpenBSD: Makefile,v 1.12 2002/10/30 04:13:36 pvalchev Exp $
 
 COMMENT=	"modules for handling mail with perl"
 
 DISTNAME=	MailTools-1.15
 PKGNAME=	p5-Mail-Tools-1.15
 CATEGORIES=	mail devel perl5
-NEED_VERSION=	1.496
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Mail/}
 
-BUILD_DEPENDS=	:p5-libnet-*:net/p5-libnet
-RUN_DEPENDS=	${BUILD_DEPENDS}
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
