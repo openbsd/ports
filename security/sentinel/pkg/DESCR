@@ -1,8 +1,7 @@
-The Sentinel project is designed to be a portable, accurate
-implementation of all publicly known promiscuous detection
-techniques.
+The sentinel project is an implementation of effective promiscuous
+detection techniques.
 
 These include:
-   DNS Test - Etherping Test - ARP Test - ICMP Ping Latency Test
+   DNS Test - ICMP Etherping Test - ARP Test
 
 WWW: ${HOMEPAGE}

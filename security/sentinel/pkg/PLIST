@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/11 14:43:57 lebel Exp $
-sbin/sentinel
-share/doc/sentinel/Changelog
+@comment $OpenBSD: PLIST,v 1.2 2001/11/19 05:11:26 jsyn Exp $
+bin/sentinel
 share/doc/sentinel/README
 @dirrm share/doc/sentinel
