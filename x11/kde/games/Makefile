@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/11/01 15:44:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2001/01/22 21:55:28 naddy Exp $
 
 DISTNAME=	kdegames-1.1.2	
 CATEGORIES=	x11 games
@@ -11,7 +11,7 @@ DIST_SUBDIR=	kde
 LIB_DEPENDS=	kdecore.1.::x11/kde/libs \
 		qt.1.45::x11/qt	
 
-MAINTAINER=		Sean Cavanaugh <seanc@cginfo.sk.ca>
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/22 14:03:06 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/01/22 21:55:27 naddy Exp $
 
 DISTNAME=	kdbg-1.0.2
 CATEGORIES=     devel
 NEED_VERSION=	1.312	
 HOMEPAGE=	http://members.nextra.at/johsixt/kdbg.html
 
-MAINTAINER=	Sean Cavanaugh <seanc@cginfo.sk.ca>
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

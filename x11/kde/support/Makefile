@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/11/01 15:44:26 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2001/01/22 21:55:28 naddy Exp $
 
 DISTNAME=	kdesupport-1.1.2	
 CATEGORIES=	x11 converters	
@@ -14,7 +14,7 @@ LIB_DEPENDS=	qt.1.45::x11/qt
 #		jpeg.62::graphics/jpeg 
 #		gif.4.1::graphics/giflib 
 
-MAINTAINER=	Sean Cavanaugh <seanc@cginfo.sk.ca>
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

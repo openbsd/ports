@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2000/11/29 12:33:17 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2001/01/22 21:55:28 naddy Exp $
 
 DISTNAME=		icewm-1.0.4
 CATEGORIES=     	x11	
 NEED_VERSION=		1.309
 
-MAINTAINER=		Sean Cavanaugh <seanc@cginfo.sk.ca>
+MAINTAINER=		ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"Yes"
 PERMIT_PACKAGE_FTP=	"Yes"
