@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/05 18:30:37 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/07 22:24:23 espie Exp $
 
 VERSION=	3.8.0
 DISTNAME=	dxpc-${VERSION}
@@ -20,7 +20,9 @@ MASTER_SITES=	http://www.vigor.nu/dxpc/${VERSION}/ \
 LIB_DEPENDS=	lzo:archivers/lzo
 HOMEPAGE=	http://www.vigor.nu/dxpc/
 
-GNU_CONFIGURE=Yes
-CONFIGURE_ARGS=--with-lzo-lib=${PREFIX}
+FAKE=	Yes
+HAS_CONFIGURE=Yes
+CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
+CONFIGURE_ARGS+=--with-lzo-lib=${PREFIX}
 
 .include <bsd.port.mk>
