@@ -1,0 +1,16 @@
+$OpenBSD: patch-4stattack,v 1.1.1.1 2003/10/10 16:10:13 sturm Exp $
+--- 4stattack.orig	2002-10-01 16:38:03.000000000 +0200
++++ 4stattack	2003-08-20 09:47:42.000000000 +0200
+@@ -1,9 +1,10 @@
+ #!/bin/sh
+-FAHOME=/usr/share/forcedattack2
++FAHOME=%%LOCALBASE%%/share/forcedattack
+ if [ ! -f ~/.4stattackrc ]; then
+ 	cp $FAHOME/settings.ini ~/.4stattackrc
++	chmod 600 ~/.4stattackrc
+ fi
+ if [ -x $FAHOME/4stattack.py ]; then
+-	$FAHOME/4stattack.py -ini ~/.4stattackrc
++	cd $FAHOME && %%PYTHON%% ./4stattack.py -ini ~/.4stattackrc
+ fi
+ 
