@@ -9,7 +9,16 @@ access, request taking) to concentrate on that feature set, instead of
 worrying about how server communication works.
 
 Please refer to the api reference and example code to start learning
-how to use libshout in your own code. See
-${PREFIX}/include/shout/shout.h and
-${PREFIX}/share/examples/libshout/example.c
-for details.
+how to use libshout in your own code. Exhaustive documentation doesn't
+exist, yet, but the following files should be helpful enough for
+starters:
+
+    ${PREFIX}/share/examples/libshout/example.c
+    ${PREFIX}/share/examples/libshout/nonblocking.c
+and of course
+    ${PREFIX}/include/shout/shout.h
+
+New in libshout 2.1 is nonblocking I/O and Ogg Theora support, as well
+as several bug fixes. However, Ogg Theora support will stay disabled
+on OpenBSD until an official Theora release makes it into the ports
+tree.
