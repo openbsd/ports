@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/11/12 03:45:05 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2003/11/12 03:50:22 brad Exp $
 
 COMMENT=	"small, fast & usable window manager"
 
@@ -6,7 +6,7 @@ DISTNAME=	openbox-3.0
 CATEGORIES=	x11
 MASTER_SITES=	http://icculus.org/openbox/releases/
 
-HOMEPAGE=	http://icculus.org/openbox/
+HOMEPAGE=	http://www.openbox.org/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -15,7 +15,7 @@ LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 		xml2.6::textproc/libxml
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 
-# BSD
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
