@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/10/26 00:16:28 jolan Exp $
+--- configure.orig	2003-09-12 21:29:31.000000000 -0500
++++ configure	2003-10-21 02:25:31.000000000 -0500
+@@ -7420,7 +7420,7 @@ cat >>confdefs.h <<\EOF
+ EOF
+ 
+ else
+-  PHYSFSCFLAGS="-O2"
++  PHYSFSCFLAGS=""
+ 
+ cat >>confdefs.h <<\EOF
+ #define NDEBUG 1
