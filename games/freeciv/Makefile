@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2004/06/10 06:54:48 sturm Exp $
+# $OpenBSD: Makefile,v 1.37 2004/06/10 07:41:18 sturm Exp $
 
 COMMENT=	"Civilization clone for X11; multiplayer; game server"
 COMMENT-client=	"Freeciv client"
@@ -37,7 +37,6 @@ SUBPACKAGE?=
 .if !defined(PACKAGING) || ${SUBPACKAGE} != "-share"
 # -client and -server
 MODULES=	gettext
-RUN_DEPENDS+=	:freeciv-share-${VERSION}:games/freeciv
 
 .  if !${FLAVOR:L:Mno_x11}
 # -client
@@ -74,6 +73,10 @@ CONFIGURE_ARGS+=--enable-client=no
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-share"
 PKG_ARCH=		*
+.endif
+
+.if defined(PACKAGING) && ${SUBPACKAGE} != "-share"
+RUN_DEPENDS+=	:freeciv-share-${VERSION}:games/freeciv,-share
 .endif
 
 FULLPKGNAME=		${PKGNAME}
