@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_core_servers_c,v 1.1 2003/06/04 16:00:55 jolan Exp $
---- src/core/servers.c.orig	Sat Sep 14 18:00:06 2002
-+++ src/core/servers.c	Sun Jun  1 11:59:59 2003
-@@ -665,7 +665,7 @@ static void sig_chat_protocol_deinit(CHA
+$OpenBSD: patch-src_core_servers_c,v 1.2 2003/12/14 03:25:19 margarida Exp $
+--- src/core/servers.c.orig	Wed Dec 10 10:07:18 2003
++++ src/core/servers.c	Wed Dec 10 10:05:43 2003
+@@ -690,7 +690,7 @@
  
  void servers_init(void)
  {
 -	settings_add_bool("server", "resolve_prefer_ipv6", FALSE);
 +	settings_add_bool("server", "resolve_prefer_ipv6", TRUE);
+ 	settings_add_bool("server", "resolve_reverse_lookup", FALSE);
  	lookup_servers = servers = NULL;
  
- 	signal_add("chat protocol deinit", (SIGNAL_FUNC) sig_chat_protocol_deinit);

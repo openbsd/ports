@@ -4,6 +4,4 @@ be created pretty easily. Also, Irssi isn't really even IRC specific anymore,
 there's already a working SILC module available. Support for other protocols
 like ICQ could be created some day too.
 
-Flavor:	socks	support for dante socks firewall implementation
-
-WWW: ${HOMEPAGE}
+Flavor:	socks support for dante socks firewall implementation

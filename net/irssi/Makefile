@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2003/12/08 00:44:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2003/12/14 03:25:19 margarida Exp $
 # Original from: Timo Sirainen <tss@iki.fi>
 
 COMMENT=	"modular IRC client with many features (ipv6,socks,proxy)"
 
-DISTNAME=	irssi-0.8.6
+DISTNAME=	irssi-0.8.9
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}/files/ \
@@ -15,10 +15,11 @@ MASTER_SITES=	${HOMEPAGE}/files/ \
 		http://pl.irssi.org/files/ \
 		http://us.irssi.org/files/
 
-HOMEPAGE=	http://www.irssi.org
+HOMEPAGE=	http://www.irssi.org/
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
