@@ -3,7 +3,7 @@
 # Date created:				7 Jun 1998
 # Whom:					niklas
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/06/07 16:20:37 niklas Exp $
+# $OpenBSD: Makefile,v 1.2 1998/11/23 04:00:49 downsj Exp $
 #
 
 DISTNAME=	cdrecord-1.6
@@ -16,8 +16,7 @@ WRKSRC=		${WRKDIR}/cdrecord-1.6
 
 # It's pretty easy to add other architectures,
 # mail me if you miss a particular one.
-ONLY_FOR_ARCHS=	alpha amiga arc hp300 i386 mac68k mvme68k \
-		pmax powerpc sparc sun3
+ONLY_FOR_ARCHS=	alpha amiga arc i386 mac68k mvme68k powerpc sparc sun3
 
 USE_GMAKE=	yes
 GMAKE=		./Gmake
