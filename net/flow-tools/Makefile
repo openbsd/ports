@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/08/26 06:58:20 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2000/09/01 10:10:55 jakob Exp $
 
 DISTNAME=	flow-tools-0.34
 CATEGORIES=	net
@@ -22,7 +22,8 @@ BIN=	flow-capture flow-cat flow-dscan flow-expire \
 
 MAN1=	flow-capture.1 flow-cat.1 flow-dscan.1 flow-expire.1 \
 	flow-export.1 flow-fanout.1 flow-filter.1 flow-gen.1 \
-	flow-print.1 flow-profile.1 flow-stat.1
+	flow-print.1 flow-profile.1 flow-stat.1 \
+	flow-tools.1
 
 do-install:
 .for file in ${BIN}

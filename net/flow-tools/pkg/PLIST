@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/08/26 06:58:20 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/09/01 10:10:56 jakob Exp $
 bin/flow-capture
 bin/flow-cat
 bin/flow-dscan
@@ -23,3 +23,4 @@ man/man1/flow-gen.1
 man/man1/flow-print.1
 man/man1/flow-profile.1
 man/man1/flow-stat.1
+man/man1/flow-tools.1
