@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2001/08/24 01:59:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2001/10/24 12:17:08 espie Exp $
 
 COMMENT=	"Civilization clone for X11; multiplayer"
 
 DISTNAME=	freeciv-1.12.0
 CATEGORIES=	games
-NEED_VERSION=	1.441
+NEED_VERSION=	1.474
 HOMEPAGE=	http://www.freeciv.org/
 
 # GPL
@@ -21,7 +21,7 @@ FLAVOR?=
 LIB_DEPENDS=	intl.1::devel/gettext
 
 .if ${FLAVOR:L:Mgtk}
-LIB_DEPENDS+=	Imlib.19::graphics/imlib
+LIB_DEPENDS+=	Imlib.19,gdk_imlib::graphics/imlib
 .else
 CONFIGURE_ARGS=	--with-xaw
 .endif

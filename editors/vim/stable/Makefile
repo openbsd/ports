@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2001/09/30 18:59:40 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/24 12:14:50 espie Exp $
 
 COMMENT=	"vi clone, many additional features"
 
 DISTNAME=	vim-6.0
 PKGNAME=	${DISTNAME}.11
 CATEGORIES=	editors
-NEED_VERSION=	1.460
+NEED_VERSION=	1.474
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
 		ftp://ftp.home.vim.org/pub/vim/unix/ \
@@ -65,7 +65,7 @@ USE_MOTIF=any
 CONFIGURE_ARGS+=--enable-gui="athena" --with-x --enable-fontset --enable-xim
 .elif ${FLAVOR:L:Mgtk} && \
 	!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena}
-LIB_DEPENDS=	gtk.1.2::x11/gtk+
+LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 CONFIGURE_ARGS+=--enable-gui="gtk" --with-x --enable-fontset --enable-xim
 .else
 ERRORS+="Fatal: Conflicting flavor: ${FLAVOR}"

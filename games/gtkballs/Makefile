@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2001/08/11 17:22:11 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/24 12:17:08 espie Exp $
 
 COMMENT=	"gtk+ clone of the lines ball logic game"
 
 DISTNAME=	gtkballs-1.04	
 CATEGORIES=	games x11
-NEED_VERSION=	1.363
+NEED_VERSION=	1.474
 MASTER_SITES=	${HOMEPAGE}dist/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= games/strategy
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MAKE_ENV=	CC="${CC}"
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+
+LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 
 USE_X11=	Yes
 

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2001/07/19 17:13:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/24 12:17:08 espie Exp $
 
 COMMENT=	"simple gtk+ pool simulation game"
 
 DISTNAME=	gtkpool-0.3.4
 CATEGORIES=	games x11
-NEED_VERSION=	1.363
+NEED_VERSION=	1.474
 MASTER_SITES=	${HOMEPAGE}	
 
 HOMEPAGE=	http://gtkpool.seul.org/
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+
+LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
