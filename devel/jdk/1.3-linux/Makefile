@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/10 15:00:47 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/22 05:38:32 matt Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -7,7 +7,7 @@ COMMENT=	"Java Development Kit for Java 2 Standard Edition 1.3"
 DISTNAME=	jdk1.3.1_01
 PKGNAME=	jdk-linux-1.3.1
 CATEGORIES=	devel java
-NEED_VERSION=	1.457
+NEED_VERSION=	1.499
 
 HOMEPAGE=	http://java.sun.com/j2se/
 MAINTAINER=	Christian Gruber <christian.edward.gruber@gmx.net>
@@ -26,6 +26,7 @@ PERMIT_DISTFILES_CDROM=	"Redistribution not permitted"
 PERMIT_DISTFILES_FTP=	"Redistribution not permitted"
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \

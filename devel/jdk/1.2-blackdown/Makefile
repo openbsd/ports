@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/10 15:00:47 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/22 05:38:32 matt Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -6,7 +6,7 @@ COMMENT=	"Blackdown Java Development Kit for Java 2 platform"
 
 DISTNAME=	jdk-blackdown-1.2pre2
 CATEGORIES=	devel
-NEED_VERSION=	1.489
+NEED_VERSION=	1.499
 
 HOMEPAGE=	http://www.blackdown.org/
 MAINTAINER=	Matt Behrens <matt@openbsd.org>
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	:redhat_base->=6.2:emulators/redhat/base
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 WRKDIST=	${WRKDIR}/jdk1.2
 JDK_HOME=	${PREFIX}/jdk1.2-blackdown

@@ -5,5 +5,8 @@ interface.  This version includes improvements in functionality,
 performance, and quality over version 1.0.2 of the Java platform,
 including bug fixes since the previous release of the 1.1 platform.
 
+This software has restrictive licensing terms which prohibit its
+redistribution; see ${PREFIX}/jdk1.1.8/LICENSE for more information.
+
 WWW: ${HOMEPAGE}
 
