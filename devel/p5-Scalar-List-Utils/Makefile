@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/10/16 13:06:16 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2003/04/30 19:19:16 wilfried Exp $
 
 COMMENT=	"selection of subroutines package"
 
-DISTNAME=	Scalar-List-Utils-1.0701
+DISTNAME=	Scalar-List-Utils-1.11
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
