@@ -1,0 +1,22 @@
+$OpenBSD: patch-xteddy_test,v 1.1 2004/01/31 21:32:19 pvalchev Exp $
+--- xteddy_test.orig	1999-03-29 16:04:35.000000000 +0200
++++ xteddy_test	2004-01-30 23:54:52.000000000 +0100
+@@ -1,15 +1,9 @@
+ #!/bin/sh
+ i=0
+-if [ -d /usr/share/xteddy ] ; then
+-  for img in `ls /usr/share/xteddy` ; do
++if [ -d !!PREFIX!!/share/xteddy ] ; then
++  for img in `ls !!PREFIX!!/share/xteddy` ; do
+     i=`expr $i + 50`
+-    xteddy -F/usr/share/xteddy/$img -geometry +$i+$i &
+-  done
+-fi
+-if [ -d /usr/local/share/xteddy ] ; then
+-  for img in `ls /usr/local/share/xteddy` ; do
+-    i=`expr $i + 50`
+-    xteddy -F/usr/local/share/xteddy/$img -geometry +$i+$i &
++    xteddy -F!!PREFIX!!/share/xteddy/$img -geometry +$i+$i &
+   done
+ fi
+ 
