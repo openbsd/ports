@@ -1,8 +1,17 @@
 
-scanlogd requires a separate user and group named 'scanlogd' to
+scanlogd requires a separate user and group named '_scanlogd' to
 run. You will need to create these manually. For example:
 
-groupadd scanlogd
-useradd -c SCANLOGD -d /nonexistent -g scanlogd -s /sbin/nologin scanlogd
+groupadd -g 514 _scanlogd
+useradd -c SCANLOGD -d /nonexistent -g _scanlogd -s /sbin/nologin \
+	-u 514 _scanlogd
 
 The scanlogd program will automatically switch to this user upon startup.
+
+*********************
+* WARNING!
+*
+* This port has changed its user/group from 'scanlogd' to '_scanlogd'. If you
+* installed this port before, ensure all permissions are set correctly and
+* then "rmuser scanlogd".
+*********************
