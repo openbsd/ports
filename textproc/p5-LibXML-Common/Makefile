@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/06/14 10:22:42 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2003/06/18 15:57:43 shell Exp $
 
 COMMENT=	"perl interface for several perl XML modules"
 
@@ -10,8 +10,6 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 LIB_DEPENDS=	xml2.7::textproc/libxml
-RUN_DEPENDS=	:p5-XML-LibXML->=1.54:textproc/p5-XML-LibXML
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
