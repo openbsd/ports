@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/11/29 16:42:41 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2001/12/13 03:26:28 kevlo Exp $
 
 COMMENT=	"PDF viewer for X"
 
@@ -24,6 +24,9 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-gzip \
+		--enable-japanese \
+		--enable-chinese-cns \
+		--enable-chinese-gb \
 		--with-t1-library="${LOCALBASE}/lib" \
 		--with-t1-includes="${LOCALBASE}/include" \
 		--with-freetype-library="${LOCALBASE}/lib" \
