@@ -2,10 +2,8 @@
 # Date created:         May 18 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 1999/10/31 09:42:43 angelos Exp $
+# $OpenBSD: Makefile,v 1.6 1999/11/15 01:55:17 turan Exp $
 #
-
-BROKEN=		waiting for turans@ to verify
 
 DISTNAME=	xfed
 PKGNAME=	xfed-1.0
