@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/09 05:56:57 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2001/08/09 06:06:24 pvalchev Exp $
 
 COMMENT=	"curses-based mp3 player"
 
@@ -22,7 +22,7 @@ MASTER_SITES=	http://www.xanadunet.net/ksmp3play/
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS} -liberty"
+CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="-liberty"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ksmp3play
