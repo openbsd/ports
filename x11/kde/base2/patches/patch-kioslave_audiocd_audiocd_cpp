@@ -1,6 +1,6 @@
-$OpenBSD: patch-kioslave_audiocd_audiocd_cpp,v 1.1 2001/08/23 22:25:49 espie Exp $
---- kioslave/audiocd/audiocd.cpp.orig	Thu Aug 23 21:46:28 2001
-+++ kioslave/audiocd/audiocd.cpp	Thu Aug 23 22:08:18 2001
+$OpenBSD: patch-kioslave_audiocd_audiocd_cpp,v 1.2 2001/08/26 14:05:05 espie Exp $
+--- kioslave/audiocd/audiocd.cpp.orig	Sun Jul 29 06:56:35 2001
++++ kioslave/audiocd/audiocd.cpp	Sun Aug 26 14:48:51 2001
 @@ -41,8 +41,13 @@ extern "C"
  
  /* This is in support for the Mega Hack, if cdparanoia ever is fixed, or we
@@ -51,3 +51,223 @@ $OpenBSD: patch-kioslave_audiocd_audiocd_cpp,v 1.1 2001/08/23 22:25:49 espie Exp
            }
            break;
          }
+@@ -273,11 +288,13 @@ AudioCDProtocol::initRequest(const KURL 
+ {
+ 
+ #ifdef HAVE_LAME
+-  if (NULL == (d->gf = lame_init())) { // init the lame_global_flags structure with defaults
+-    error(KIO::ERR_DOES_NOT_EXIST, url.path());
+-    return 0;
+-  }
+-  id3tag_init (d->gf);
++  d->gf = lame_init();  // init the lame_global_flags structure with defaults
++  if (d->gf != NULL)
++    id3tag_init (d->gf);
++//  if (NULL == (d->gf = lame_init())) { 
++ //   error(KIO::ERR_DOES_NOT_EXIST, url.path());
++  //  return 0;
++//  }
+ #endif
+ 
+ #ifdef HAVE_VORBIS
+@@ -429,7 +446,7 @@ AudioCDProtocol::get(const KURL & url)
+  QString filetype = determineFiletype(d->fname);
+ 
+ #ifdef HAVE_LAME
+-  if (filetype == "mp3" && d->based_on_cddb && d->write_id3) {
++  if (filetype == "mp3" && d->gf != NULL && d->based_on_cddb && d->write_id3) {
+     /* If CDDB is used to determine the filenames, tell lame to append ID3v1 TAG to MP3 Files */
+     const char *tname =   d->titles[trackNumber-1].latin1();    // set trackname
+     id3tag_set_album(d->gf, d->cd_title.latin1());
+@@ -746,8 +763,11 @@ AudioCDProtocol::listDir(const KURL & ur
+       listEntry(entry, false);
+ 
+ #ifdef HAVE_LAME
+-      app_dir(entry, d->s_mp3, d->tracks);
+-      listEntry(entry, false);
++      if (d->gf != NULL)
++        {
++          app_dir(entry, d->s_mp3, d->tracks);
++          listEntry(entry, false);
++        }
+ #endif
+ 
+ #ifdef HAVE_VORBIS
+@@ -1075,7 +1095,7 @@ static char mp3buffer[mp3buffer_size];
+       ++currentSector;
+ 
+ #ifdef HAVE_LAME
+-      if ( filetype == "mp3" ) {
++      if ( filetype == "mp3" && d->gf != NULL) {
+          int mp3bytes =
+            lame_encode_buffer_interleaved(d->gf,buf,CD_FRAMESAMPLES,(unsigned char *)mp3buffer,(int)mp3buffer_size);
+ 
+@@ -1158,7 +1178,7 @@ static char mp3buffer[mp3buffer_size];
+     }
+   }
+ #ifdef HAVE_LAME
+-  if (filetype == "mp3") {
++  if (filetype == "mp3" && d->gf != NULL) {
+      int mp3bytes = lame_encode_finish(d->gf,(unsigned char *)mp3buffer,(int)mp3buffer_size);
+ 
+      if (mp3bytes < 0 ) {
+@@ -1224,94 +1244,96 @@ void AudioCDProtocol::getParameters() {
+ 
+ #ifdef HAVE_LAME
+ 
+-  config->setGroup("MP3");
++  if (d->gf != NULL)
++    {
++    config->setGroup("MP3");
+ 
+-  int quality = config->readNumEntry("quality",2);
++    int quality = config->readNumEntry("quality",2);
+ 
+-  if (quality < 0 ) quality = 0;
+-  if (quality > 9) quality = 9;
++    if (quality < 0 ) quality = 0;
++    if (quality > 9) quality = 9;
+ 
+-  int method = config->readNumEntry("encmethod",0);
++    int method = config->readNumEntry("encmethod",0);
+ 
+-  if (method == 0) { 
+-    
+-    // Constant Bitrate Encoding
+-    lame_set_VBR(d->gf, vbr_off);
+-    lame_set_brate(d->gf,config->readNumEntry("cbrbitrate",160));
+-    d->bitrate = lame_get_brate(d->gf);
+-    lame_set_quality(d->gf, quality);
++    if (method == 0) { 
++      
++      // Constant Bitrate Encoding
++      lame_set_VBR(d->gf, vbr_off);
++      lame_set_brate(d->gf,config->readNumEntry("cbrbitrate",160));
++      d->bitrate = lame_get_brate(d->gf);
++      lame_set_quality(d->gf, quality);
+ 
+-  } else {
+-    
+-    // Variable Bitrate Encoding
+-    
+-    if (config->readBoolEntry("set_vbr_avr",true)) {
++    } else {
++      
++      // Variable Bitrate Encoding
++      
++      if (config->readBoolEntry("set_vbr_avr",true)) {
+ 
+-      lame_set_VBR(d->gf,vbr_abr);
+-      lame_set_VBR_mean_bitrate_kbps(d->gf, config->readNumEntry("vbr_average_bitrate",0));
++        lame_set_VBR(d->gf,vbr_abr);
++        lame_set_VBR_mean_bitrate_kbps(d->gf, config->readNumEntry("vbr_average_bitrate",0));
+ 
+-      d->bitrate = lame_get_VBR_mean_bitrate_kbps(d->gf);
++        d->bitrate = lame_get_VBR_mean_bitrate_kbps(d->gf);
+ 
+-    } else {
++      } else {
+ 
+-      if (lame_get_VBR(d->gf) == vbr_off) lame_set_VBR(d->gf, vbr_default);
++        if (lame_get_VBR(d->gf) == vbr_off) lame_set_VBR(d->gf, vbr_default);
+ 
+-      if (config->readBoolEntry("set_vbr_min",true)) 
+-	lame_set_VBR_min_bitrate_kbps(d->gf, config->readNumEntry("vbr_min_bitrate",0));
+-      if (config->readBoolEntry("vbr_min_hard",true))
+-	lame_set_VBR_hard_min(d->gf, 1);
+-      if (config->readBoolEntry("set_vbr_max",true)) 
+-	lame_set_VBR_max_bitrate_kbps(d->gf, config->readNumEntry("vbr_max_bitrate",0));
++        if (config->readBoolEntry("set_vbr_min",true)) 
++    lame_set_VBR_min_bitrate_kbps(d->gf, config->readNumEntry("vbr_min_bitrate",0));
++        if (config->readBoolEntry("vbr_min_hard",true))
++    lame_set_VBR_hard_min(d->gf, 1);
++        if (config->readBoolEntry("set_vbr_max",true)) 
++    lame_set_VBR_max_bitrate_kbps(d->gf, config->readNumEntry("vbr_max_bitrate",0));
+ 
+-      d->bitrate = 128;
+-      lame_set_VBR_q(d->gf, quality);
+-      
+-    }
++        d->bitrate = 128;
++        lame_set_VBR_q(d->gf, quality);
++        
++      }
+ 
+-    if ( config->readBoolEntry("write_xing_tag",true) ) lame_set_bWriteVbrTag(d->gf, 1);
++      if ( config->readBoolEntry("write_xing_tag",true) ) lame_set_bWriteVbrTag(d->gf, 1);
+ 
+-  }
++    }
+ 
+-  switch (   config->readNumEntry("mode",0) ) {
++    switch (   config->readNumEntry("mode",0) ) {
+ 
+-    case 0: lame_set_mode(d->gf, STEREO);
+-                break;
+-    case 1: lame_set_mode(d->gf, JOINT_STEREO);
+-                break;
+-    case 2: lame_set_mode(d->gf,DUAL_CHANNEL);
+-                break;
+-    case 3: lame_set_mode(d->gf,MONO);
+-                break;
+-    default: lame_set_mode(d->gf,STEREO);
+-                break;
+-  }
++      case 0: lame_set_mode(d->gf, STEREO);
++                  break;
++      case 1: lame_set_mode(d->gf, JOINT_STEREO);
++                  break;
++      case 2: lame_set_mode(d->gf,DUAL_CHANNEL);
++                  break;
++      case 3: lame_set_mode(d->gf,MONO);
++                  break;
++      default: lame_set_mode(d->gf,STEREO);
++                  break;
++    }
+ 
+-  lame_set_copyright(d->gf, config->readBoolEntry("copyright",false));
+-  lame_set_original(d->gf, config->readBoolEntry("original",true));
+-  lame_set_strict_ISO(d->gf, config->readBoolEntry("iso",false));
+-  lame_set_error_protection(d->gf, config->readBoolEntry("crc",false));
++    lame_set_copyright(d->gf, config->readBoolEntry("copyright",false));
++    lame_set_original(d->gf, config->readBoolEntry("original",true));
++    lame_set_strict_ISO(d->gf, config->readBoolEntry("iso",false));
++    lame_set_error_protection(d->gf, config->readBoolEntry("crc",false));
+ 
+-  d->write_id3 = config->readBoolEntry("id3",true);
++    d->write_id3 = config->readBoolEntry("id3",true);
+ 
+-  if ( config->readBoolEntry("enable_lowpassfilter",false) ) {
++    if ( config->readBoolEntry("enable_lowpassfilter",false) ) {
+ 
+-    lame_set_lowpassfreq(d->gf, config->readNumEntry("lowpassfilter_freq",0));
++      lame_set_lowpassfreq(d->gf, config->readNumEntry("lowpassfilter_freq",0));
+ 
+-    if (config->readBoolEntry("set_lowpassfilter_width",false)) {
+-      lame_set_lowpasswidth(d->gf, config->readNumEntry("lowpassfilter_width",0));
+-    }
++      if (config->readBoolEntry("set_lowpassfilter_width",false)) {
++        lame_set_lowpasswidth(d->gf, config->readNumEntry("lowpassfilter_width",0));
++      }
+ 
+-  }
++    }
+ 
+-  if ( config->readBoolEntry("enable_highpassfilter",false) ) {
++    if ( config->readBoolEntry("enable_highpassfilter",false) ) {
+ 
+-    lame_set_highpassfreq(d->gf, config->readNumEntry("highpassfilter_freq",0));
++      lame_set_highpassfreq(d->gf, config->readNumEntry("highpassfilter_freq",0));
+ 
+-    if (config->readBoolEntry("set_highpassfilter_width",false)) {
+-      lame_set_highpasswidth(d->gf, config->readNumEntry("highpassfilter_width",0));
++      if (config->readBoolEntry("set_highpassfilter_width",false)) {
++        lame_set_highpasswidth(d->gf, config->readNumEntry("highpassfilter_width",0));
++      }
++    }
+     }
+-
+-  }
+ #endif // HAVE_LAME
+ 
+ #ifdef HAVE_VORBIS
