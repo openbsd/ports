@@ -1,63 +1,65 @@
-# $OpenBSD: Makefile,v 1.18 2005/03/13 05:06:18 kurt Exp $
+# $OpenBSD: Makefile,v 1.19 2005/03/29 19:33:40 wilfried Exp $
 
-BROKEN="requires upgrade to sync with mozilla"
+COMMENT=	"GNOME web browser based on gecko"
 
-COMMENT=		"GNOME web browser based on gecko"
+V=		1.3.20
+DISTNAME=	galeon-${V}
+PKGNAME=	${DISTNAME}
+CATEGORIES=	www
 
-V=			1.2.13
-DISTNAME=		galeon-${V}
-PKGNAME=		${DISTNAME}p1
-CATEGORIES=		www
-MOZ=			1.7.5
-
-HOMEPAGE=		http://galeon.sourceforge.net/
+HOMEPAGE=	http://galeon.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE IIOP ORBit ORBitCosNaming ORBitutil SM X11 Xext \
-			Xi Xinerama audiofile c esd gconf-1 gconf-gtk-1 gdk \
-			gdk_imlib glib gmodule gnome gthread gtk \
-			jpeg m oaf png popt \
-			pthread stdc++ tiff ungif wrap xml z \
+WANTLIB= ORBit-2.0.0 ORBitCosNaming-2.0.0 art_lgpl_2.0.0 atk-1.0.0.0 \
+        audiofile bonobo-2.0.0 bonobo-activation bonoboui-2.0.0 \
+        eel-2.0.0 esd gailutil gconf-2.0.0 gdk-x11-2.0.0.0 \
+        gdk_pixbuf-2.0.0.0 glade-2.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
+        gnome-2.0.0 gnome-keyring gnomecanvas-2.0.0 gnomevfs-2.0.0 \
+        gobject-2.0.0.0 gthread-2.0.0.0 gtk-x11-2.0.0.0 jpeg \
+        pango-1.0.0.0 pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
+        popt xml2.0.0 ICE SM X11 Xcursor Xext Xft Xinerama Xrender \
+        c crypto fontconfig freetype m pthread ssl stdc++ z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=galeon/}
 
-MODULES=		devel/gettext gcc3
-MODGCC3_ARCHES=		alpha
-MODGCC3_LANGS=		C++
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=galeon/}
 
-BUILD_DEPENDS=		:mozilla-${MOZ}-!gtk2:www/mozilla \
-			:mozilla-devel-${MOZ}-!gtk2:www/mozilla,-devel \
-			:scrollkeeper->=0.3.12:textproc/scrollkeeper
-RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper
-LIB_DEPENDS=		art_lgpl,gnomesupport,gnomeui::x11/gnome/libs \
-			gdk_pixbuf::graphics/gdk-pixbuf \
-			glade,glade-gnome:libglade-*-gnome:devel/libglade,gnome \
-			gnomevfs::x11/gnome/vfs
-LIB_DEPENDS+= 		mozilla/gtkembedmoz,mozilla/gtksuperwin,mozilla/xpcom,mozilla/nspr4,mozilla/plc4,mozilla/plds4:mozilla-${MOZ}-!gtk2:www/mozilla
+MODULES=	devel/gettext gcc3
+MODGCC3_ARCHES=	alpha
+MODGCC3_LANGS=	C++
 
-CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-			MOZILLA_CONFIG=/usr/local/mozilla/mozilla-config
+BUILD_DEPENDS=	:mozilla-*-gtk2:www/mozilla,gtk2 \
+		:mozilla-devel-*-gtk2:www/mozilla,-devel,gtk2 \
+ 		:pkgconfig-*:devel/pkgconfig \
+		:p5-XML-Parser-*:textproc/p5-XML-Parser \
+		:scrollkeeper->=0.3.12:textproc/scrollkeeper
+LIB_DEPENDS= 	gnomeui-2.0::x11/gnome/libgnomeui \
+		nautilus::x11/gnome/nautilus \
+		mozilla/gtkembedmoz,mozilla/xpcom,mozilla/plds4,mozilla/plc4,mozilla/nspr4:mozilla-*-gtk2:www/mozilla,gtk2
 
-USE_X11=		Yes
-USE_GMAKE=		Yes
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-werror \
-			--disable-scrollkeeper-update \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/galeon \
-			--with-mozilla-snapshot=${MOZ} \
-			--with-mozilla-home=${LOCALBASE}/mozilla \
-			--with-mozilla-libs=${LOCALBASE}/mozilla/lib \
-			--with-mozilla-includes=${LOCALBASE}/mozilla/include
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		MOZILLA_CONFIG=/usr/local/mozilla/mozilla-config
 
-WRKDIST=		${WRKDIR}/galeon-${V}/
+USE_X11=	Yes
+USE_GMAKE=	Yes
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/galeon \
+		--disable-schemas-install \
+		--enable-nautilus-view \
+		--disable-gtkhtml
+
+WRKDIST=	${WRKDIR}/galeon-${V}/
+
+post-patch:
+	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/schemas/galeon
-	${INSTALL_DATA} ${WRKSRC}/galeon.schemas ${PREFIX}/share/schemas/galeon/
+	@mv -f ${PREFIX}/bin/galeon ${PREFIX}/bin/galeon-bin
+	${INSTALL_SCRIPT} ${FILESDIR}/galeon ${PREFIX}/bin
+	@perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g;' ${PREFIX}/bin/galeon
 
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+$OpenBSD: patch-sounds_Makefile_in,v 1.1 2005/03/29 19:33:40 wilfried Exp $
+--- sounds/Makefile.in.orig	Sun Aug  8 22:12:13 2004
++++ sounds/Makefile.in	Tue Jan 18 23:22:08 2005
+@@ -232,7 +232,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ galeon_SOUNDS = clicked.wav
+-soundlistdir = $(sysconfdir)/sound/events
++soundlistdir = $(prefix)/share/examples/galeon/sound/events
+ soundlist_in_files = galeon.soundlist.in
+ soundlist_DATA = $(soundlist_in_files:.soundlist.in=.soundlist)
+ EXTRA_DIST = $(galeon_SOUNDS) $(soundlist_in_files)
