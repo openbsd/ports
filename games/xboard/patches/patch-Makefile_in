@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2002/03/07 18:37:17 fgsch Exp $
---- Makefile.in.orig	Sat Feb  2 04:57:38 2002
-+++ Makefile.in	Thu Mar  7 15:15:15 2002
+$OpenBSD: patch-Makefile_in,v 1.3 2003/12/03 21:23:59 naddy Exp $
+--- Makefile.in.orig	2003-12-03 22:07:53.000000000 +0100
++++ Makefile.in	2003-12-03 22:10:22.000000000 +0100
 @@ -21,7 +21,7 @@ man6ext = .6
  # Yuck; the autoconf generated configure script sets an infodir variable
  # and provides a command-line flag to change it, but the default is 
@@ -10,26 +10,24 @@ $OpenBSD: patch-Makefile_in,v 1.2 2002/03/07 18:37:17 fgsch Exp $
  
  CC = @CC@
  CFLAGS = @CFLAGS@ @CPPFLAGS@ -DINFODIR=\"$(infodir)\"
-@@ -67,16 +67,14 @@ more: all pseudo-source info FAQ html dv
+@@ -63,15 +63,13 @@ default: xboard zic2xpm
+ all: default pseudosource info FAQ html dvi ps
  
- install: installdirs xboard zic2xpm cmail pxboard xboard.man cmail.man \
- 		zic2xpm.man
+ install: installdirs default
 -	$(INSTALL_PROGRAM) -s xboard $(bindir)/xboard
 -	$(INSTALL_PROGRAM) -s zic2xpm $(bindir)/zic2xpm
 -	$(INSTALL_PROGRAM) cmail $(bindir)/cmail
 -	$(INSTALL_PROGRAM) $(srcdir)/pxboard $(bindir)/pxboard
 -	$(INSTALL_DATA) $(srcdir)/xboard.man $(man6dir)/xboard$(man6ext)
--	$(INSTALL_DATA) $(srcdir)/cmail.man $(man6dir)/cmail$(man6ext)
 -	$(INSTALL_DATA) $(srcdir)/zic2xpm.man $(man6dir)/zic2xpm$(man6ext)
 -	$(INSTALL_DATA) xboard.info $(infodir)/xboard.info
 -	-PATH=$$PATH:/sbin:/usr/sbin install-info \
 -		$(infodir)/xboard.info $(infodir)/dir
-+	$(INSTALL_PROGRAM) xboard $(DESTDIR)$(bindir)/xboard
-+	$(INSTALL_PROGRAM) zic2xpm $(DESTDIR)$(bindir)/zic2xpm
-+	$(INSTALL) cmail $(DESTDIR)$(bindir)/cmail
-+	$(INSTALL) $(srcdir)/pxboard $(DESTDIR)$(bindir)/pxboard
++	$(INSTALL_PROGRAM) -s xboard $(DESTDIR)$(bindir)/xboard
++	$(INSTALL_PROGRAM) -s zic2xpm $(DESTDIR)$(bindir)/zic2xpm
++	$(INSTALL_PROGRAM) cmail $(DESTDIR)$(bindir)/cmail
++	$(INSTALL_PROGRAM) $(srcdir)/pxboard $(DESTDIR)$(bindir)/pxboard
 +	$(INSTALL_DATA) $(srcdir)/xboard.man $(DESTDIR)$(man6dir)/xboard$(man6ext)
-+	$(INSTALL_DATA) $(srcdir)/cmail.man $(DESTDIR)$(man6dir)/cmail$(man6ext)
 +	$(INSTALL_DATA) $(srcdir)/zic2xpm.man $(DESTDIR)$(man6dir)/zic2xpm$(man6ext)
 +	$(INSTALL_DATA) xboard.info $(DESTDIR)$(infodir)/xboard.info
  
