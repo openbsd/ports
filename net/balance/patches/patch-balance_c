@@ -1,0 +1,43 @@
+$OpenBSD: patch-balance_c,v 1.1.1.1 2001/06/25 23:05:45 lebel Exp $
+--- balance.c.orig	Sun Jan  7 05:56:58 2001
++++ balance.c	Mon Jun 25 19:03:00 2001
+@@ -27,7 +27,7 @@
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <signal.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ 
+ #ifdef __FreeBSD__
+ #define MYBSD 1
+@@ -638,7 +638,7 @@ static usage() {
+   if((revision_copy=(char*) malloc(strlen(revision)+1))==NULL) {
+     fprintf(stderr,"malloc problem in usage()\n");
+   } else {
+-    strcpy(revision_copy, revision);
++    strlcpy(revision_copy, revision, sizeof(revision_copy));
+     token=strtok(revision_copy," ");
+     token=strtok(NULL," ");
+     version=token!=NULL?token:"*undefined*";
+@@ -1083,10 +1083,10 @@ char	*argv[];
+   serv_addr.sin_family      = AF_INET;
+   if(bindhost != NULL) {
+     setipaddress(&serv_addr.sin_addr, bindhost);
+-    sprintf(bindhost_address, inet_ntoa(serv_addr.sin_addr));
++    snprintf(bindhost_address, sizeof(bindhost_address), inet_ntoa(serv_addr.sin_addr));
+   } else {
+     serv_addr.sin_addr.s_addr=htonl(INADDR_ANY);
+-    sprintf(bindhost_address,"0.0.0.0");
++    snprintf(bindhost_address, sizeof(bindhost_address), "0.0.0.0");
+   }
+   serv_addr.sin_port=htons(source_port);
+ 
+@@ -1096,7 +1096,7 @@ char	*argv[];
+      struct stat buffer;
+      int fd;
+ 
+-     sprintf(rendezvousfile,"%sbalance.%d.%s",SHMDIR,source_port,bindhost_address);
++     snprintf(rendezvousfile, sizeof(rendezvousfile), "%sbalance.%d.%s",SHMDIR,source_port,bindhost_address);
+ 
+      if(stat(rendezvousfile, &buffer) == -1) {
+        // File existiert (noch) nicht ...

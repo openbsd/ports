@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/25 23:05:45 lebel Exp $
+bin/balance
+man/man1/balance.1
