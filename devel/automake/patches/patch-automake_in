@@ -1,6 +1,5 @@
-$OpenBSD: patch-automake_in,v 1.1 2000/12/15 17:37:58 espie Exp $
---- automake.in.orig	Fri Dec 15 04:02:29 2000
-+++ automake.in	Fri Dec 15 04:02:47 2000
+--- automake.in.orig	Fri Jan 15 07:42:36 1999
++++ automake.in	Fri Dec 29 23:46:31 2000
 @@ -1957,7 +1957,7 @@ sub handle_texinfo
  	# dependency list.
  	@texi_deps = ();
@@ -10,3 +9,12 @@ $OpenBSD: patch-automake_in,v 1.1 2000/12/15 17:37:58 espie Exp $
  
  	# Canonicalize name first.
  	($canonical = $infobase) =~ tr/A-Za-z0-9_/_/c;
+@@ -2367,7 +2367,7 @@ sub handle_dist_worker
+ 	$output_rules .= "\t  d=\$(srcdir); \\\n";
+     }
+     $output_rules .= ("\t  if test -d \$\$d/\$\$file; then \\\n"
+-		      . "\t    cp -pr \$\$/\$\$file \$(distdir)/\$\$file; \\\n"
++		      . "\t    cp -pr \$\$d/\$\$file \$(distdir)/\$\$file; \\\n"
+ 		      . "\t  else \\\n"
+ 		      . "\t    test -f \$(distdir)/\$\$file \\\n"
+ 		      . "\t    || ln \$\$d/\$\$file \$(distdir)/\$\$file 2> /dev/null \\\n"
