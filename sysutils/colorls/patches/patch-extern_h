@@ -1,7 +1,7 @@
-$OpenBSD: patch-extern_h,v 1.3 2003/01/20 01:45:14 naddy Exp $
---- extern.h.orig	Mon Jan 20 00:08:15 2003
-+++ extern.h	Mon Jan 20 00:36:43 2003
-@@ -56,3 +56,13 @@ void	 printlong(DISPLAY *);
+$OpenBSD: patch-extern_h,v 1.4 2003/08/27 00:41:51 naddy Exp $
+--- extern.h.orig	2003-06-03 01:32:08.000000000 +0200
++++ extern.h	2003-08-27 00:28:16.000000000 +0200
+@@ -52,3 +52,13 @@ void	 printlong(DISPLAY *);
  void	 printscol(DISPLAY *);
  void	 printstream(DISPLAY *);
  void	 usage(void);
