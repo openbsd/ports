@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/10/09 21:58:26 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/10/29 02:24:28 brad Exp $
 
 DISTNAME=	fnlib-0.4
 CATEGORIES=    	graphics
@@ -11,7 +11,7 @@ NEED_VERSION=	1.73
 
 MAINTAINER=	op21@squish.org
 
-LIB_DEPENDS=	Imlib.1.9:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	Imlib.19:${PORTSDIR}/graphics/imlib
 
 USE_X11=	yes
 USE_GMAKE=	yes
@@ -23,7 +23,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	@${LDCONFIG} -m ${PREFIX}/lib
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
