@@ -1,6 +1,6 @@
-$OpenBSD: patch-chess_c,v 1.1.1.1 2001/02/09 12:58:08 wilfried Exp $
+$OpenBSD: patch-chess_c,v 1.2 2002/02/26 13:26:21 wilfried Exp $
 --- chess.c.orig	Mon Sep 13 19:15:50 1999
-+++ chess.c	Thu Feb  8 22:40:27 2001
++++ chess.c	Tue Feb 26 14:20:47 2002
 @@ -1864,7 +1864,8 @@ void textGame
          /* get the move from stdin */
          bzero(move, 10);
@@ -20,3 +20,12 @@ $OpenBSD: patch-chess_c,v 1.1.1.1 2001/02/09 12:58:08 wilfried Exp $
      {
      int toChild[2];
      int fromChild[2];
+@@ -1986,7 +1987,7 @@ void main(int argc, char* argv[])
+     char * timer;
+     char ** valid;
+     char * pTemp;
+-    char ch;
++    int ch;
+     char * color;
+ 
+     /* set up the default colors in the xpm */
