@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/05/27 12:26:40 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2003/06/02 07:07:42 pvalchev Exp $
 
 COMMENT=	"redesign of Mozilla's browser component"
 
@@ -18,8 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://ftp.mozilla.org/pub/firebird/releases/${VER}/
 DISTFILES=	MozillaFirebird-${VER}-source.tar.bz2
 
-MODULES=	iconv
-MODULES+=	gcc3
+MODULES=	gcc3
 MODGCC3_ARCHES=	sparc64
 MODGCC3_LANGS=	C++
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip
@@ -51,8 +50,7 @@ CONFIGURE_ARGS=					\
 		--disable-ldap
 
 CFLAGS+=	-fno-stack-protector
-CONFIGURE_ENV=	MOZ_PHOENIX=1 \
-		CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	MOZ_PHOENIX=1
 MAKE_ENV=	MOZ_PHOENIX=1 \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 		
