@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/10/13 02:08:59 danh Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/12/26 12:33:17 sturm Exp $
 bin/encode_keychange
 bin/fixproc
 @comment bin/ipf-mod.pl
@@ -386,7 +386,7 @@ share/snmp/snmpconf-data/snmptrapd-data/
 share/snmp/snmpconf-data/snmptrapd-data/formatting
 share/snmp/snmpconf-data/snmptrapd-data/snmpconf-config
 share/snmp/snmpconf-data/snmptrapd-data/traphandle
+@extraunexec rm -rf /var/net-snmp/*
 @sample /var/net-snmp/
 @extra ${SYSCONFDIR}/snmp/snmp.conf
 @extra ${SYSCONFDIR}/snmp/snmptrapd.conf
-@extraunexec rm -rf /var/net-snmp/
