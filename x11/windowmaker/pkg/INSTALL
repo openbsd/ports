@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: INSTALL,v 1.1 1999/10/26 21:48:16 jasoni Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/08/18 21:46:00 brad Exp $
 #
 # Pre/port-installation setup of WindowMaker
 
@@ -13,7 +13,7 @@ do_notice()
 {
 	echo
 	echo "***"
-	echo "Each user must run /usr/local/bin/wmaker.inst before running Window Maker."
+	echo "Each user must run $PREFIX/bin/wmaker.inst before running Window Maker."
 	echo "***"
 	echo
 	if [ -d /etc/WindowMaker ]; then
