@@ -1,18 +1,11 @@
-$OpenBSD: patch-af,v 1.1.1.1 1999/03/23 19:24:32 rohee Exp $
-$NetBSD: patch-af,v 1.3 1999/03/05 00:25:10 tron Exp $
-
---- src/idl-compiler/orbit-c-backend.c.orig	Mon Feb 22 17:27:40 1999
-+++ src/idl-compiler/orbit-c-backend.c	Thu Mar  4 23:05:25 1999
-@@ -16,10 +16,10 @@
-    Output: (in files) header, skeletons, stubs, and common code.
- */
- #ifdef HAVE_INDENT_KR
--#  define INDENT "indent -npro -kr -i8 -bad -fca -sc -sob"
-+#  define INDENT "gindent -npro -kr -i8 -bad -fca -sc -sob"
- #else
- #  ifdef HAVE_INDENT
--#    define INDENT "indent -npro -bad -bap -bc -sob -br -ce -cli2 -npcs -di1 -psl -i3 -lp"
-+#    define INDENT "gindent -npro -bad -bap -bc -sob -br -ce -cli2 -npcs -di1 -psl -i3 -lp"
- #  else
- #    define INDENT "cat"
- #  endif
+--- src/ORBitutil/Makefile.in.orig	Thu May  6 10:59:34 1999
++++ src/ORBitutil/Makefile.in	Thu May  6 10:59:53 1999
+@@ -103,7 +103,7 @@
+ libORBitutilinclude_HEADERS =  	basic_types.h 	thread-safety.h 	trace.h 	util.h 	compat.h
+ 
+ 
+-libORBitutil_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libORBitutil_la_LDFLAGS = -version-info 0:4:0
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
+ CONFIG_CLEAN_FILES = 

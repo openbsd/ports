@@ -1,28 +1,11 @@
-$OpenBSD: patch-aj,v 1.1.1.1 1999/03/23 19:24:32 rohee Exp $
-$NetBSD: patch-aj,v 1.2 1999/03/11 20:07:57 tron Exp $
-
---- src/IIOP/Makefile.in.orig	Thu Feb 25 16:17:16 1999
-+++ src/IIOP/Makefile.in	Thu Mar 11 21:02:03 1999
-@@ -90,9 +90,7 @@
- VERSION = @VERSION@
- YACC = @YACC@
+--- src/daemons/interface_repository/Makefile.in.orig	Wed Apr  7 14:49:43 1999
++++ src/daemons/interface_repository/Makefile.in	Thu May  6 10:49:55 1999
+@@ -100,7 +100,7 @@
  
--LIBWRAP_PATH = @LIBWRAP_PATH@
--@HAVE_HOSTS_ACCESS_TRUE@libwrap_files = $(addsuffix .lo, $(basename $(filter %.o, $(shell ar t $(LIBWRAP_PATH)))))
--@HAVE_HOSTS_ACCESS_FALSE@libwrap_files = 
-+libwrap_files = 
  
- libIIOPincludedir = $(includedir)/IIOP
+ orbit_ird_LDFLAGS = -static
+-orbit_ird_LDADD =  	$(top_builddir)/src/orb/libORBit.la 	$(top_builddir)/src/IIOP/libIIOP.la 	$(top_builddir)/src/ORBitutil/libORBitutil.la 	@GLIB_LIBS@ 	-lm
++orbit_ird_LDADD =  	$(top_builddir)/src/orb/libORBit.la 	$(top_builddir)/src/IIOP/libIIOP.la 	$(top_builddir)/src/ORBitutil/libORBitutil.la 	@GLIB_LIBS@ 	-lm -lwrap
  
-@@ -123,10 +121,7 @@
- CPPFLAGS = @CPPFLAGS@
- LDFLAGS = @LDFLAGS@
- LIBS = @LIBS@
--@HAVE_HOSTS_ACCESS_TRUE@libIIOP_la_DEPENDENCIES =  $(addsuffix .lo, \
--@HAVE_HOSTS_ACCESS_TRUE@$(basename $(filter %.o, $(shell ar t \
--@HAVE_HOSTS_ACCESS_TRUE@$(LIBWRAP_PATH)))))
--@HAVE_HOSTS_ACCESS_FALSE@libIIOP_la_DEPENDENCIES = 
-+libIIOP_la_DEPENDENCIES = 
- libIIOP_la_OBJECTS =  connection.lo encoders.lo giop-msg-buffer.lo \
- iiop-endian.lo
- CFLAGS = @CFLAGS@
+ 
+ orbit_ird_SOURCES =  	interface_repository-skels.c 	interface_repository-impl.c

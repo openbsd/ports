@@ -1,16 +1,15 @@
-$OpenBSD: patch-ae,v 1.1.1.1 1999/03/23 19:24:32 rohee Exp $
-$NetBSD: patch-ae,v 1.2 1998/12/19 12:31:47 tron Exp $
-
---- src/services/name/Makefile.in.orig	Wed Dec 16 03:41:47 1998
-+++ src/services/name/Makefile.in	Sat Dec 19 12:55:42 1998
-@@ -1,3 +1,6 @@
-+# NetBSD
-+#
-+# There might as well be something here.
- # Makefile.in generated automatically by automake 1.3 from Makefile.am
+--- src/services/name/Makefile.in.orig	Wed Apr  7 14:49:39 1999
++++ src/services/name/Makefile.in	Thu May  6 11:07:44 1999
+@@ -105,7 +105,7 @@
+ libORBitservicesinclude_HEADERS =  	CosNaming.h								CosNaming_impl.h							CosNaming.idl								LName.pidl
  
- # Copyright (C) 1994, 1995, 1996, 1997, 1998 Free Software Foundation, Inc.
-@@ -768,7 +771,7 @@
+ 
+-libORBitCosNaming_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libORBitCosNaming_la_LDFLAGS =  	-version-info 0:4:0
+ 
+ 
+ INCLUDES = -I. -I$(top_builddir)/src -I$(top_srcdir)/src  @GLIB_CFLAGS@
+@@ -781,7 +781,7 @@
  
  
  $(CosNaming_built): CosNaming.idl $(srcdir)/LName.h $(IDL)
@@ -18,4 +17,4 @@ $NetBSD: patch-ae,v 1.2 1998/12/19 12:31:47 tron Exp $
 +	$(IDL) CosNaming.idl
  	cat $(srcdir)/LName.h >>CosNaming.h
  
- dist-hook:
+ $(srcdir)/name-client.c $(srcdir)/orbit-name-server.c $(srcdir)/new-name-server.c: CosNaming.h

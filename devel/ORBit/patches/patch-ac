@@ -1,28 +1,6 @@
-$OpenBSD: patch-ac,v 1.1.1.1 1999/03/23 19:24:32 rohee Exp $
-$NetBSD: patch-ac,v 1.1 1998/08/20 22:07:25 agc Exp $
-
-Use NetBSD's libtool package
-Comment out erroneous setting of INSTALL variable.
-
---- configure	1998/08/19 10:37:24	1.1
-+++ configure	1998/08/19 10:38:11
-@@ -1236,6 +1236,7 @@
-   echo "$ac_t""no" 1>&6
- fi
- 
-+if false; then
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
- 
-@@ -1281,6 +1282,7 @@
- ${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
- $libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
- || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
-+fi
- 
- # Redirect the config.log output again, so that the ltconfig log is not
- # clobbered by the next message.
-@@ -3261,10 +3263,10 @@
+--- configure.orig	Wed Apr  7 13:16:18 1999
++++ configure	Thu May  6 10:49:51 1999
+@@ -5424,10 +5424,10 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac

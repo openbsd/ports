@@ -6,7 +6,10 @@ bin/old-name-server
 bin/orbit-event-server
 bin/orbit-ird
 bin/orbit-config
+@unexec install-info --delete %D/info/libIDL.info %D/info/dir
 info/libIDL.info
+@exec [ -f %D/info/dir -o ! -f /usr/share/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/libIDL.info %D/info/dir
 share/aclocal/libIDL.m4
 include/libIDL/IDL.h
 include/orb/allocator-defs.h
@@ -66,21 +69,21 @@ include/ORBitservices/CosEventComm.idl
 include/ORBitservices/CosEventChannel.idl
 include/ORBitservices/CosTypedEventComm.idl
 include/ORBitservices/CosTypedEventChannel.idl
-lib/libIIOP.a
-lib/libIDL-0.6.so.0.0
+lib/libIDL.so.0.4
 lib/libIDL.la
 lib/libIDL.a
 lib/libIDLConf.sh
-lib/libORBit.so.4.0
+lib/libORBit.so.0.4
 lib/libORBit.la
 lib/libORBit.a
-lib/libORBitutil.so.4.0
+lib/libORBitutil.so.0.4
 lib/libORBitutil.la
 lib/libORBitutil.a
-lib/libIIOP.so.4.0
+lib/libIIOP.so.0.4
 lib/libIIOP.la
+lib/libIIOP.a
 lib/libname-server.a
-lib/libORBitCosNaming.so.4.0
+lib/libORBitCosNaming.so.0.4
 @exec /sbin/ldconfig -m %B
 lib/libORBitCosNaming.la
 lib/libORBitCosNaming.a

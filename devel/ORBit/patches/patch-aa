@@ -1,21 +1,34 @@
-$OpenBSD: patch-aa,v 1.1.1.1 1999/03/23 19:24:31 rohee Exp $
-$NetBSD: patch-aa,v 1.3 1999/03/05 00:25:10 tron Exp $
-
---- popt/configure.orig	Wed Feb 24 20:54:33 1999
-+++ popt/configure	Thu Mar  4 23:23:12 1999
-@@ -1895,6 +1895,7 @@
- fi
+--- src/IIOP/Makefile.in.orig	Wed Apr  7 14:49:37 1999
++++ src/IIOP/Makefile.in	Thu May  6 11:16:31 1999
+@@ -90,9 +90,7 @@
+ VERSION = @VERSION@
+ YACC = @YACC@
  
- # Always use our own libtool.
-+if false; then
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+-LIBWRAP_PATH = @LIBWRAP_PATH@
+-@HAVE_HOSTS_ACCESS_TRUE@libwrap_files = $(addsuffix .lo, $(basename $(filter %.o, $(shell ar t $(LIBWRAP_PATH)))))
+-@HAVE_HOSTS_ACCESS_FALSE@libwrap_files = 
++libwrap_files = 
  
- # Check for any special flags to pass to ltconfig.
-@@ -2126,6 +2127,7 @@
- ${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
- $libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
- || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
-+fi
+ libIIOPincludedir = $(includedir)/IIOP
  
- # Redirect the config.log output again, so that the ltconfig log is not
- # clobbered by the next message.
+@@ -110,7 +108,7 @@
+ 
+ BUILT_SOURCES = $(libwrap_files)
+ 
+-libIIOP_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libIIOP_la_LDFLAGS = -version-info 0:4:0
+ 
+ EXTRA_DIST = IIOP-design.txt
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -123,10 +121,7 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-@HAVE_HOSTS_ACCESS_TRUE@libIIOP_la_DEPENDENCIES =  $(addsuffix .lo, \
+-@HAVE_HOSTS_ACCESS_TRUE@$(basename $(filter %.o, $(shell ar t \
+-@HAVE_HOSTS_ACCESS_TRUE@$(LIBWRAP_PATH)))))
+-@HAVE_HOSTS_ACCESS_FALSE@libIIOP_la_DEPENDENCIES = 
++libIIOP_la_DEPENDENCIES = 
+ libIIOP_la_OBJECTS =  connection.lo encoders.lo giop-msg-buffer.lo \
+ iiop-endian.lo
+ CFLAGS = @CFLAGS@

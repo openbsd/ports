@@ -1,21 +1,11 @@
-$OpenBSD: patch-ah,v 1.1.1.1 1999/03/23 19:24:32 rohee Exp $
-$NetBSD: patch-ah,v 1.1 1999/03/05 00:25:10 tron Exp $
-
---- libIDL/configure.orig	Wed Feb 24 20:54:31 1999
-+++ libIDL/configure	Fri Mar  5 00:18:15 1999
-@@ -2185,6 +2185,7 @@
- fi
+--- src/orb/Makefile.in.orig	Thu May  6 11:06:19 1999
++++ src/orb/Makefile.in	Thu May  6 11:06:33 1999
+@@ -107,7 +107,7 @@
+ IDL = $(top_builddir)/src/idl-compiler/orbit-idl
+ IRIDL = $(top_srcdir)/src/daemons/interface_repository/interface_repository.idl
  
- # Always use our own libtool.
-+if false; then
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+-libORBit_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libORBit_la_LDFLAGS = -version-info 0:4:0
+ libORBit_la_LIBADD = $(GLIB_LIBS) -lm
  
- # Check for any special flags to pass to ltconfig.
-@@ -2416,6 +2417,7 @@
- ${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
- $libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
- || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
-+fi
- 
- # Redirect the config.log output again, so that the ltconfig log is not
- # clobbered by the next message.
+ BUILT_SOURCES =  	interface_repository.h 	interface_repository-common.c 	interface_repository-stubs.c
