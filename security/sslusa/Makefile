@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2000/04/06 00:40:22 marc Exp $
+# $OpenBSD: Makefile,v 1.3 2000/04/08 23:14:13 marc Exp $
 
-DISTNAME=		sslUSA-2.6a
-PKGNAME=		ssl-2.6-USA
+DISTNAME=		sslUSA-2.7
+PKGNAME=		ssl-2.7-USA
 CATEGORIES=     	security
 
 MAINTAINER=		ports@openbsd.org
@@ -30,12 +30,9 @@ pre-build:
 	@false
 .endif
 
-# Note: if the obj dir (which points somewhere in /usr/obj/...) is not
-# cleaned up it can/will cause problems the next time a make build is done
-# in /usr/src
+# Clean up the rsaref sources, too.
 #
 pre-clean:
-	@rm -rf ${WRKSRC}/libssl/${OBJDIR}/*
 	@cd ${PORTSDIR}/security/rsaref && \
 	 OBJMACHINE= WRKOBJDIR= unset OBJMACHINE WRKOBJDIR && make clean
 
