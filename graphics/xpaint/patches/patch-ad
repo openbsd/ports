@@ -1,0 +1,19 @@
+*** Local.config.orig	Tue Dec  2 22:39:58 1997
+--- Local.config	Tue Dec  2 22:40:43 1997
+***************
+*** 80,86 ****
+  
+  #ifdef HavePNG
+  PNG_LIB     = -L/usr/local/lib -lpng -lz
+! PNG_INCLUDE = -I/usr/local/include/png
+  #endif
+  
+  XCOMM  If you are running SunOS and get an error with the following undefined
+--- 80,86 ----
+  
+  #ifdef HavePNG
+  PNG_LIB     = -L/usr/local/lib -lpng -lz
+! PNG_INCLUDE = -I/usr/local/include -I/usr/local/include/png
+  #endif
+  
+  XCOMM  If you are running SunOS and get an error with the following undefined

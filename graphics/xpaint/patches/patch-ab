@@ -1,0 +1,14 @@
+--- dynPenOp.c.orig	Wed Aug 13 16:10:00 1997
++++ dynPenOp.c	Fri Aug 29 14:08:48 1997
+@@ -28,6 +28,11 @@
+ #include "misc.h"
+ #include "Paint.h"
+ 
++#ifndef HZ
++#include <time.h>
++#define HZ CLK_TCK
++#endif
++
+ #define XTIMEOUT ((unsigned long)(1.5*1000/HZ)) /* ms, should be larger than 1000/HZ */
+ 
+ typedef struct {

@@ -1,0 +1,3 @@
+bin/xpaint
+man/man1/xpaint.1
+lib/X11/app-defaults/XPaint

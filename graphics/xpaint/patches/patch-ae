@@ -1,0 +1,44 @@
+*** readRC.c.orig	Tue Dec  2 22:45:27 1997
+--- readRC.c	Tue Dec  2 22:47:59 1997
+***************
+*** 66,82 ****
+  {
+      char *n;
+      char xx[256];
+  
+      if ((n = getenv("TMPDIR")) == NULL)
+  	n = "/tmp";
+  
+      strcpy(xx, n);
+      strcat(xx, "/XPaintXXXXXXX");
+!     n = mktemp(xx);
+      tempName[++tempIndex] = XtNewString(n);
+      if (np != NULL)
+  	*np = tempName[tempIndex];
+!     return fopen(tempName[tempIndex], "w");
+  }
+  
+  static void 
+--- 66,87 ----
+  {
+      char *n;
+      char xx[256];
++     int fd;
+  
+      if ((n = getenv("TMPDIR")) == NULL)
+  	n = "/tmp";
+  
+      strcpy(xx, n);
+      strcat(xx, "/XPaintXXXXXXX");
+!     fd = mkstemp(xx);
+!     if (fd == -1)
+!       return NULL;
+! 
+!     n = strdup(xx);
+      tempName[++tempIndex] = XtNewString(n);
+      if (np != NULL)
+  	*np = tempName[tempIndex];
+!     return fdopen(fd, "w");
+  }
+  
+  static void 

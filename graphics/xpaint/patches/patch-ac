@@ -1,0 +1,25 @@
+*** misc.h.orig	Tue Dec  2 22:17:09 1997
+--- misc.h	Tue Dec  2 22:18:41 1997
+***************
+*** 23,31 ****
+  
+  #ifndef linux
+  #if defined(BSD4_4) || defined(HPArchitecture) || defined(SGIArchitecture) || defined(_AIX)
+! void srandom(unsigned int);
+  #else
+  int srandom(unsigned int);
+  #endif	/* BSD4_4 */
+  #endif	/* linux */
+  #endif
+--- 23,33 ----
+  
+  #ifndef linux
+  #if defined(BSD4_4) || defined(HPArchitecture) || defined(SGIArchitecture) || defined(_AIX)
+! #endif
+  #else
++ #if !defined(__OpenBSD__)
+  int srandom(unsigned int);
++ void srandom(unsigned int);
+  #endif	/* BSD4_4 */
+  #endif	/* linux */
+  #endif
