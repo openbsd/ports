@@ -1,12 +1,12 @@
 # OpenBSD makefile for:	fetchmail
-# Version required:     4.5.4
+# Version required:     4.7.2
 # Date created:		10 Nov 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.6 1998/08/01 02:01:55 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1998/12/28 05:12:46 fgsch Exp $
 #
 
-DISTNAME=       fetchmail-4.5.4
+DISTNAME=       fetchmail-4.7.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/fetchmail/
 

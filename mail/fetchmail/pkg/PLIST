@@ -1,5 +1,5 @@
 @cwd /usr/local
-@name fetchmail-4.5.4
+@name fetchmail-4.7.2
 bin/fetchmail
 bin/fetchmailconf
 man/man1/fetchmail.1
