@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2001/03/22 00:01:03 espie Exp $
+# $OpenBSD: Makefile,v 1.93 2001/04/01 15:19:40 wilfried Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -102,6 +102,8 @@
      SUBDIR += wmdate
      SUBDIR += wminfo
      SUBDIR += wmitime
+     SUBDIR += wmmenu
+     SUBDIR += wmmenu:gdk_pixbuf
      SUBDIR += wmpinboard
      SUBDIR += wmthemeinstall
      SUBDIR += wmtime
