@@ -1,0 +1,5 @@
+ike-scan discovers IKE hosts and can also fingerprint them by their
+retransmission backoff pattern.  Consult the installed documentation
+for more detailed information.
+
+WWW: ${HOMEPAGE}

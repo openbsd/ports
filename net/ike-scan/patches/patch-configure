@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/06/06 22:09:52 jolan Exp $
+--- configure.orig	Fri Jan 17 08:28:26 2003
++++ configure	Mon Jun  2 12:21:33 2003
+@@ -36,7 +36,7 @@ x_libraries=NONE
+ bindir='${exec_prefix}/bin'
+ sbindir='${exec_prefix}/sbin'
+ libexecdir='${exec_prefix}/libexec'
+-datadir='${prefix}/share'
++datadir='${prefix}/share/ike-scan'
+ sysconfdir='${prefix}/etc'
+ sharedstatedir='${prefix}/com'
+ localstatedir='${prefix}/var'
