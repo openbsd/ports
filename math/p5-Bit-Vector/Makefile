@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2004/01/17 15:58:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/01 03:40:12 kevlo Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"library of advanced math functions"
 
-DISTNAME=	Bit-Vector-6.3
+DISTNAME=	Bit-Vector-6.4
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	math perl5
 
