@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/10 12:08:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2001/05/22 00:31:54 pvalchev Exp $
 
-COMMENT=	"module for generating images"
+COMMENT=	"module for generating and manipulating images"
 
-DISTNAME=	Imager-0.37
+DISTNAME=	Imager-0.38
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	graphics perl5
 NEED_VERSION=	1.407
@@ -27,17 +27,18 @@ FLAVOR?=
 LIB_DEPENDS=	t1.::devel/t1lib \
 		ttf.::print/freetype \
 		png.::graphics/png \
-		gif.::graphics/giflib \
 		jpeg.::graphics/jpeg \
 		tiff.::graphics/tiff
 CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib:${X11BASE}/lib" \
 		IM_INCPATH="${LOCALBASE}/include:${X11BASE}/include"
-PATCH_LIST=
+PATCH_LIST=	patch-no_gif
 USE_X11=	Yes
 .else
 # Don't use the libs although they might be installed.
 PATCH_LIST=	patch-no_libs
 .endif
+
+USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= perl
 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-no_gif,v 1.1 2001/05/22 00:31:55 pvalchev Exp $
+--- Makefile.PL.orig	Mon May 21 16:55:10 2001
++++ Makefile.PL	Mon May 21 16:57:04 2001
+@@ -149,9 +149,9 @@ bugs.  Imager can crash or display other
+ reading or writing gif images.  Some of the gif tests can even fail
+ since they stress some parts of the buggy code.
+ 
+-Do you want to remove gif support? [Y/n]
++I am deleting gif support.
+ EOFF
+-    my $resp = <STDIN>;
++    my $resp = "y";
+     chomp($resp);
+     if ($resp ne "n") {
+       delete $formats{'gif'};

@@ -1,19 +1,23 @@
-$OpenBSD: patch-no_libs,v 1.1 2001/04/17 10:07:13 reinhard Exp $
---- Makefile.PL.orig	Thu Apr  5 22:14:10 2001
-+++ Makefile.PL	Thu Apr  5 22:15:05 2001
-@@ -194,103 +194,9 @@ sub pathcheck {
+$OpenBSD: patch-no_libs,v 1.2 2001/05/22 00:31:55 pvalchev Exp $
+--- Makefile.PL.orig	Mon May 21 17:15:55 2001
++++ Makefile.PL	Mon May 21 17:16:48 2001
+@@ -261,107 +261,13 @@ sub pathcheck {
  sub init {
  
    @definc{'/usr/include'}=();
 -  @incs=(qw(/usr/include /usr/local/include /usr/include/freetype /usr/local/include/freetype), split /:/, $INCPATH );
-+  @incs=(qw(/usr/include /usr/local/include), split /:/, $INCPATH );
++  @incs=(qw(/usr/include /usr/local/include/freetype), split /:/, $INCPATH );
    @libs=(split(/ /, $Config{'libpth'}), split(/:/, $LIBPATH) );
+   if ($^O =~ /win32/i && $Config{cc} =~ /\bcl\b/i) {
+     push(@incs, split /;/, $ENV{INCLUDE}) if exists $ENV{INCLUDE};
+     push(@libs, split /;/, $ENV{LIB}) if exists $ENV{LIB};
+   }
  
 -  $formats{'jpeg'}={
 -		    order=>'21',
 -		    def=>'HAVE_LIBJPEG',
 -		    inccheck=>sub { $_[0] eq 'jpeglib.h' },
--		    libcheck=>sub { $_[0] eq 'libjpeg.a' or $_ eq "libjpeg.$lext" },
+-		    libcheck=>sub { $_[0] eq "libjpeg$aext" or $_ eq "libjpeg.$lext" },
 -		    libfiles=>'-ljpeg',
 -		    objfiles=>'jpeg.o',
 -		    docs=>q{
@@ -25,7 +29,7 @@ $OpenBSD: patch-no_libs,v 1.1 2001/04/17 10:07:13 reinhard Exp $
 -		    order=>'23',
 -		    def=>'HAVE_LIBTIFF',
 -		    inccheck=>sub { $_[0] eq 'tiffio.h' },
--		    libcheck=>sub { $_[0] eq 'libtiff.a' or $_ eq "libtiff.$lext" },
+-		    libcheck=>sub { $_[0] eq "libtiff$aext" or $_ eq "libtiff.$lext" },
 -		    libfiles=>'-ltiff',
 -		    objfiles=>'tiff.o',
 -		    docs=>q{
@@ -37,7 +41,7 @@ $OpenBSD: patch-no_libs,v 1.1 2001/04/17 10:07:13 reinhard Exp $
 -		   order=>'22',
 -		   def=>'HAVE_LIBPNG',
 -		   inccheck=>sub { $_[0] eq 'png.h' },
--		   libcheck=>sub { $_[0] eq 'libpng.a' or $_[0] eq "libpng.$lext" },
+-		   libcheck=>sub { $_[0] eq "libpng$aext" or $_[0] eq "libpng.$lext" },
 -		   libfiles=>'-lpng -lz',
 -		   objfiles=>'png.o',
 -		   docs=>q{
@@ -50,7 +54,7 @@ $OpenBSD: patch-no_libs,v 1.1 2001/04/17 10:07:13 reinhard Exp $
 -		   order=>'20',
 -		   def=>'HAVE_LIBGIF',
 -		   inccheck=>sub { $_[0] eq 'gif_lib.h' },
--		   libcheck=>sub { $_[0] eq 'libgif.a' or $_[0] eq "libgif.$lext" },
+-		   libcheck=>sub { $_[0] eq "libgif$aext" or $_[0] eq "libgif.$lext" },
 -		   libfiles=>'-lgif',
 -		   objfiles=>'gif.o',
 -		   docs=>q{
@@ -65,7 +69,7 @@ $OpenBSD: patch-no_libs,v 1.1 2001/04/17 10:07:13 reinhard Exp $
 -		     order=>'21',
 -		     def=>'HAVE_LIBGIF',
 -		     inccheck=>sub { $_[0] eq 'gif_lib.h' },
--		     libcheck=>sub { $_[0] eq 'libungif.a' or $_[0] eq "libungif.$lext" },
+-		     libcheck=>sub { $_[0] eq "libungif$aext" or $_[0] eq "libungif.$lext" },
 -		     libfiles=>'-lungif',
 -		     objfiles=>'gif.o',
 -		     docs=>q{
