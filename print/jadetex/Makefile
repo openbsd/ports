@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/03/01 15:39:00 avsm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/04/18 09:22:53 sturm Exp $
 
 COMMENT=		"macros for the OpenJade DSSSL TeX backend"
 
@@ -23,7 +23,7 @@ BUILD_DEPENDS=		:teTeX_base-*:print/teTeX/base \
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
 ALL_TARGET=		jadetex.fmt pdfjadetex.fmt
-TEXMFLOC=		${PREFIX}/share/texmf
+TEXMFLOC=		${PREFIX}/share/texmf-local
 
 NO_REGRESS=		Yes
 
