@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2001/06/20 17:54:47 reinhard Exp $
+# $OpenBSD: Makefile,v 1.13 2001/11/20 10:36:02 reinhard Exp $
 # Original from: Jaakko Heinonen <jheinonen@bigfoot.com>
 
 COMMENT=	"addressbook program with mutt support"
 
-DISTNAME=	abook-0.4.13
+DISTNAME=	abook-0.4.15
 CATEGORIES=	mail
-NEED_VERSION=	1.414
+NEED_VERSION=	1.499
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=abook
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=	gnu
 
 WHITELIST=README abook2whitelist.sh mutt.whitelist whitelist.rc
 
