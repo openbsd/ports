@@ -1,7 +1,7 @@
-$OpenBSD: patch-makefile_unix,v 1.2 2004/01/17 18:44:18 sturm Exp $
---- makefile.unix.orig	2003-09-15 13:22:18.000000000 +0200
-+++ makefile.unix	2004-01-17 19:28:46.000000000 +0100
-@@ -58,6 +58,8 @@ OBJECTS=rar.o strlist.o strfn.o pathfn.o
+$OpenBSD: patch-makefile_unix,v 1.3 2004/11/17 19:14:00 naddy Exp $
+--- makefile.unix.orig	Mon Jul 26 09:57:26 2004
++++ makefile.unix	Wed Nov 17 19:44:55 2004
+@@ -93,6 +93,8 @@ OBJECTS=rar.o strlist.o strfn.o pathfn.o
  	resource.o match.o timefn.o rdwrfn.o consio.o options.o ulinks.o errhnd.o rarvm.o \
  	rijndael.o getbits.o sha1.o extinfo.o extract.o volume.o list.o find.o unpack.o cmddata.o
  
@@ -10,12 +10,12 @@ $OpenBSD: patch-makefile_unix,v 1.2 2004/01/17 18:44:18 sturm Exp $
  .cpp.o:
  	$(COMPILE) -D$(WHAT) -c $<
  
-@@ -66,7 +68,7 @@ all:	unrar
+@@ -101,7 +103,7 @@ all:	unrar
  clean:
  	@rm -f *.o *.bak *~
  
 -unrar:	WHAT=UNRAR
 +WHAT=UNRAR
  unrar:	$(OBJECTS) $(UNRAR_OBJ)
- 	@rm -f makeunrar
+ 	@rm -f unrar
  	$(LINK) -o unrar $(LDFLAGS) $(OBJECTS) $(UNRAR_OBJ) $(LIBS)	
