@@ -1,10 +1,17 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2002/05/23 14:37:22 espie Exp $
-${KDE}/libkcharselectapplet.so.1.0
+@comment $OpenBSD: PFRAG.shared,v 1.6 2003/01/27 20:05:50 espie Exp $
+${KDE}/libkcharselect_panelapplet.so.0.0
 ${KDE}/libkcm_kdf.so.0.0
 ${KDE}/libkcm_laptop.so.0.0
 ${KDE}/libkregexpeditorgui.so.0.0
-lib/libark.so.1.0
+${KDE}/libksim_cpu.so.0.0
+${KDE}/libksim_disk.so.0.0
+${KDE}/libksim_filesystem.so.0.0
+${KDE}/libksim_net.so.0.0
+${KDE}/libksim_sensors.so.0.0
+lib/libarkpart.so.0.0
 lib/libkcalc.so.0.0
 lib/libkedit.so.0.0
 lib/libklaptopdaemon.so.0.0
+lib/libksim.so.0.0
+lib/libksimcore.so.1.0
 DYNLIBDIR(%D/lib)

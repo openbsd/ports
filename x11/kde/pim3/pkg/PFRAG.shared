@@ -1,17 +1,27 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/12/23 16:11:48 espie Exp $
-${KDE}/libabbrowserconduit.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.2 2003/01/27 20:05:50 espie Exp $
+${KDE}/libaddressconduit.so.0.0
 ${KDE}/libexpenseconduit.so.0.0
-${KDE}/libkcm_alarmdaemonctrl.so.0.0
+${KDE}/libkaddressbookpart.so.0.0
+${KDE}/libkfile_vcf.so.0.0
 ${KDE}/libknotesconduit.so.0.0
+${KDE}/libkorg_birthdays.so.0.0
 ${KDE}/libkorg_datenums.so.0.0
+${KDE}/libkorg_exchange.so.0.0
 ${KDE}/libkorg_holidays.so.0.0
 ${KDE}/libkorg_projectview.so.0.0
 ${KDE}/libkorg_webexport.so.0.0
 ${KDE}/libnullconduit.so.0.0
 ${KDE}/libpopmailconduit.so.0.0
+${KDE}/libtimeconduit.so.0.0
 ${KDE}/libtodoconduit.so.0.0
 ${KDE}/libvcalconduit.so.0.0
 lib/libkalarmd.so.0.0
 lib/libkcal.so.2.0
+lib/libkcalsystem.so.0.1
+lib/libkdepim.so.1.0
 lib/libkgantt.so.0.2
+lib/libknewstuff.so.1.0
 lib/libkorganizer.so.1.0
+lib/libkpimexchange.so.1.0
+lib/libksync.so.1.0
+DYNLIBDIR(%D/lib)

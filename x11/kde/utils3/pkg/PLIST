@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/01/06 13:40:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/01/27 20:05:50 espie Exp $
 bin/ark
 bin/kcalc
 bin/kcharselect
@@ -10,57 +10,73 @@ bin/kfloppy
 bin/khexedit
 bin/kjots
 bin/klaptopdaemon
-bin/kljettool
-bin/klpq
-bin/klprfax
-bin/klprfax_filter
-bin/klprfax_lpd
+bin/ksim
 bin/ktimer
 bin/kwikdisk
 include/kmultiformlistbox.h
 include/kmultiformlistboxentry.h
 include/kmultiformlistboxfactory.h
+include/ksim/chart.h
+include/ksim/common.h
+include/ksim/label.h
+include/ksim/led.h
+include/ksim/pluginglobal.h
+include/ksim/pluginloader.h
+include/ksim/pluginmodule.h
+include/ksim/progress.h
+include/ksim/themeloader.h
+include/ksim/themetypes.h
 include/kwidgetstreamer.h
 lib/kcalc.la
-${KDE}/kcharselectapplet.la
+${KDE}/kcharselect_panelapplet.la
 ${KDE}/kcm_kdf.la
 ${KDE}/kcm_laptop.la
+${KDE}/ksim_cpu.la
+${KDE}/ksim_disk.la
+${KDE}/ksim_filesystem.la
+${KDE}/ksim_net.la
+${KDE}/ksim_sensors.la
 ${KDE}/libkregexpeditorgui.la
 lib/kedit.la
 lib/klaptopdaemon.la
-lib/libark.la
+lib/ksim.la
+lib/libarkpart.la
+lib/libksimcore.la
 share/applnk/Editors/KEdit.desktop
 share/applnk/Settings/Information/kcmdf.desktop
 share/applnk/Settings/Information/pcmcia.desktop
-share/applnk/Settings/PowerControl/battery.desktop
-share/applnk/Settings/PowerControl/bwarning.desktop
-share/applnk/Settings/PowerControl/cwarning.desktop
-share/applnk/Settings/PowerControl/power.desktop
+share/applnk/Settings/PowerControl/laptop.desktop
+share/applnk/Settingsmenu/kdepasswd.desktop
+share/applnk/System/More/kdf.desktop
+share/applnk/System/More/ksim.desktop
+share/applnk/System/More/kwikdisk.desktop
 share/applnk/System/kdf.desktop
 share/applnk/System/kwikdisk.desktop
 share/applnk/Utilities/KCharSelect.desktop
 share/applnk/Utilities/KFloppy.desktop
-share/applnk/Utilities/KLJetTool.desktop
-share/applnk/Utilities/KLpq.desktop
 share/applnk/Utilities/Kjots.desktop
+share/applnk/Utilities/More/KCharSelect.desktop
+share/applnk/Utilities/More/Kjots.desktop
+share/applnk/Utilities/More/khexedit.desktop
+share/applnk/Utilities/More/ktimer.desktop
 share/applnk/Utilities/ark.desktop
 share/applnk/Utilities/kcalc.desktop
 share/applnk/Utilities/kdepasswd.desktop
 share/applnk/Utilities/khexedit.desktop
-share/applnk/Utilities/klprfax.desktop
 share/applnk/Utilities/ktimer.desktop
 share/apps/ark/ark_part.rc
+share/apps/ark/ark_part_readonly.rc
 share/apps/ark/arkui.rc
-share/apps/ark/icons/hicolor/22x22/actions/ark_adddir.png
-share/apps/ark/icons/hicolor/22x22/actions/ark_addfile.png
-share/apps/ark/icons/hicolor/22x22/actions/ark_delete.png
-share/apps/ark/icons/hicolor/22x22/actions/ark_extract.png
-share/apps/ark/icons/hicolor/22x22/actions/ark_help.png
-share/apps/ark/icons/hicolor/22x22/actions/ark_new.png
-share/apps/ark/icons/hicolor/22x22/actions/ark_open.png
-share/apps/ark/icons/hicolor/22x22/actions/ark_options.png
-share/apps/ark/icons/hicolor/22x22/actions/ark_selectall.png
-share/apps/ark/icons/hicolor/22x22/actions/ark_view.png
+share/apps/ark/icons/crystalsvg/22x22/actions/ark_adddir.png
+share/apps/ark/icons/crystalsvg/22x22/actions/ark_addfile.png
+share/apps/ark/icons/crystalsvg/22x22/actions/ark_delete.png
+share/apps/ark/icons/crystalsvg/22x22/actions/ark_extract.png
+share/apps/ark/icons/crystalsvg/22x22/actions/ark_help.png
+share/apps/ark/icons/crystalsvg/22x22/actions/ark_new.png
+share/apps/ark/icons/crystalsvg/22x22/actions/ark_open.png
+share/apps/ark/icons/crystalsvg/22x22/actions/ark_options.png
+share/apps/ark/icons/crystalsvg/22x22/actions/ark_selectall.png
+share/apps/ark/icons/crystalsvg/22x22/actions/ark_view.png
 share/apps/kdf/pics/delete.png
 share/apps/kdf/pics/tick.png
 share/apps/kedit/keditui.rc
@@ -69,12 +85,11 @@ share/apps/khexedit/toolbar/hexmask.png
 share/apps/khexedit/toolbar/hexwrite.png
 share/apps/kicker/applets/kcharselectapplet.desktop
 share/apps/kjots/pics/filedel.png
-share/apps/klaptopdaemon/icons/hicolor/16x16/actions/laptop_charge.png
-share/apps/klaptopdaemon/icons/hicolor/16x16/actions/laptop_nobattery.png
-share/apps/klaptopdaemon/icons/hicolor/16x16/actions/laptop_nocharge.png
-share/apps/klaptopdaemon/icons/hicolor/16x16/actions/power.png
-share/apps/klaptopdaemon/icons/hicolor/32x32/actions/power.png
-share/apps/kljettool/pics/kljetlogo.png
+share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/laptop_charge.png
+share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/laptop_nobattery.png
+share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/laptop_nocharge.png
+share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/power.png
+share/apps/klaptopdaemon/icons/crystalsvg/32x32/actions/power.png
 share/apps/konqueror/servicemenus/arkservicemenu.desktop
 share/apps/kregexpeditor/pics/altn.png
 share/apps/kregexpeditor/pics/anychar.png
@@ -92,6 +107,32 @@ share/apps/kregexpeditor/pics/text.png
 share/apps/kregexpeditor/pics/wordboundary.png
 share/apps/kregexpeditor/predefined/general/anything.regexp
 share/apps/kregexpeditor/predefined/general/spaces.regexp
+share/apps/ksim/monitors/DFree.desktop
+share/apps/ksim/monitors/Lm_sensors.desktop
+share/apps/ksim/monitors/Net.desktop
+share/apps/ksim/monitors/cpu.desktop
+share/apps/ksim/monitors/disk.desktop
+share/apps/ksim/pics/clock.png
+share/apps/ksim/pics/uptime.png
+share/apps/ksim/themes/ksim/bg_chart.png
+share/apps/ksim/themes/ksim/bg_grid.png
+share/apps/ksim/themes/ksim/bg_meter.png
+share/apps/ksim/themes/ksim/bg_panel.png
+share/apps/ksim/themes/ksim/frame_bottom.png
+share/apps/ksim/themes/ksim/frame_left.png
+share/apps/ksim/themes/ksim/frame_right.png
+share/apps/ksim/themes/ksim/frame_top.png
+share/apps/ksim/themes/ksim/gkrellmrc
+share/apps/ksim/themes/ksim/gkrellmrc_ksim
+share/apps/ksim/themes/ksim/host/bg_meter.png
+share/apps/ksim/themes/ksim/krell_meter.png
+share/apps/ksim/themes/ksim/krell_panel.png
+share/apps/ksim/themes/ksim/krell_slider.png
+share/apps/ksim/themes/ksim/mail/decal_mail.png
+share/apps/ksim/themes/ksim/mail/krell_mail.png
+share/apps/ksim/themes/ksim/mail/krell_mail_daemon.png
+share/apps/ksim/themes/ksim/net/decal_net_leds.png
+share/config/ksimrc
 share/doc/HTML/en/KRegExpEditor/altn.png
 share/doc/HTML/en/KRegExpEditor/altntool.png
 share/doc/HTML/en/KRegExpEditor/anychar.png
@@ -121,16 +162,26 @@ share/doc/HTML/en/KRegExpEditor/wordboundary.png
 share/doc/HTML/en/ark/common
 share/doc/HTML/en/ark/index.cache.bz2
 share/doc/HTML/en/ark/index.docbook
-share/doc/HTML/en/kab/common
-share/doc/HTML/en/kab/index.cache.bz2
-share/doc/HTML/en/kab/index.docbook
-share/doc/HTML/en/kab/kab-edit.png
-share/doc/HTML/en/kab/kab-using.png
 share/doc/HTML/en/kcalc/common
 share/doc/HTML/en/kcalc/index.cache.bz2
 share/doc/HTML/en/kcalc/index.docbook
 share/doc/HTML/en/kcalc/kcalc_on_Aix.txt
 share/doc/HTML/en/kcalc/kcalc_on_OSF.txt
+share/doc/HTML/en/kcharselect/common
+share/doc/HTML/en/kcharselect/index.cache.bz2
+share/doc/HTML/en/kcharselect/index.docbook
+share/doc/HTML/en/kcontrol/kcmlowbatcrit/common
+share/doc/HTML/en/kcontrol/kcmlowbatcrit/index.cache.bz2
+share/doc/HTML/en/kcontrol/kcmlowbatcrit/index.docbook
+share/doc/HTML/en/kcontrol/kcmlowbatwarn/common
+share/doc/HTML/en/kcontrol/kcmlowbatwarn/index.cache.bz2
+share/doc/HTML/en/kcontrol/kcmlowbatwarn/index.docbook
+share/doc/HTML/en/kcontrol/laptop/common
+share/doc/HTML/en/kcontrol/laptop/index.cache.bz2
+share/doc/HTML/en/kcontrol/laptop/index.docbook
+share/doc/HTML/en/kcontrol/powerctrl/common
+share/doc/HTML/en/kcontrol/powerctrl/index.cache.bz2
+share/doc/HTML/en/kcontrol/powerctrl/index.docbook
 share/doc/HTML/en/kdf/common
 share/doc/HTML/en/kdf/index.cache.bz2
 share/doc/HTML/en/kdf/index.docbook
@@ -146,96 +197,105 @@ share/doc/HTML/en/khexedit/common
 share/doc/HTML/en/khexedit/index.cache.bz2
 share/doc/HTML/en/khexedit/index.docbook
 share/doc/HTML/en/khexedit/khexedit1.png
+share/doc/HTML/en/kinfocenter/blockdevices/common
+share/doc/HTML/en/kinfocenter/blockdevices/index.cache.bz2
+share/doc/HTML/en/kinfocenter/blockdevices/index.docbook
 share/doc/HTML/en/kjots/common
 share/doc/HTML/en/kjots/index.cache.bz2
 share/doc/HTML/en/kjots/index.docbook
-share/doc/HTML/en/kljettool/README
-share/doc/HTML/en/kljettool/common
-share/doc/HTML/en/kljettool/djcdoscommands.txt
-share/doc/HTML/en/kljettool/filter
-share/doc/HTML/en/kljettool/hp690c.zip
-share/doc/HTML/en/kljettool/index.cache.bz2
-share/doc/HTML/en/kljettool/index.docbook
-share/doc/HTML/en/kljettool/magic
-share/doc/HTML/en/kljettool/screenshot.png
-share/doc/HTML/en/klpq/common
-share/doc/HTML/en/klpq/index.cache.bz2
-share/doc/HTML/en/klpq/index.docbook
-share/doc/HTML/en/klprfax/common
-share/doc/HTML/en/klprfax/index.cache.bz2
-share/doc/HTML/en/klprfax/index.docbook
-share/icons/hicolor/16x16/apps/ark.png
-share/icons/hicolor/16x16/apps/kcalc.png
-share/icons/hicolor/16x16/apps/kcharselect.png
-share/icons/hicolor/16x16/apps/kcmdf.png
-share/icons/hicolor/16x16/apps/kdf.png
-share/icons/hicolor/16x16/apps/kedit.png
-share/icons/hicolor/16x16/apps/kfloppy.png
-share/icons/hicolor/16x16/apps/khexedit.png
-share/icons/hicolor/16x16/apps/kjots.png
-share/icons/hicolor/16x16/apps/klaptopdaemon.png
-share/icons/hicolor/16x16/apps/kljettool.png
-share/icons/hicolor/16x16/apps/klpq.png
-share/icons/hicolor/16x16/apps/klprfax.png
-share/icons/hicolor/16x16/apps/kwikdisk.png
-share/icons/hicolor/16x16/apps/laptop_battery.png
-share/icons/hicolor/16x16/apps/laptop_pcmcia.png
-share/icons/hicolor/32x32/apps/ark.png
-share/icons/hicolor/32x32/apps/kcalc.png
-share/icons/hicolor/32x32/apps/kcmdf.png
-share/icons/hicolor/32x32/apps/kdf.png
-share/icons/hicolor/32x32/apps/kedit.png
-share/icons/hicolor/32x32/apps/kfloppy.png
-share/icons/hicolor/32x32/apps/khexedit.png
-share/icons/hicolor/32x32/apps/kjots.png
-share/icons/hicolor/32x32/apps/kljettool.png
-share/icons/hicolor/32x32/apps/klpq.png
-share/icons/hicolor/32x32/apps/klprfax.png
-share/icons/hicolor/32x32/apps/kwikdisk.png
-share/icons/hicolor/32x32/apps/laptop_battery.png
-share/icons/hicolor/32x32/apps/laptop_pcmcia.png
-share/icons/hicolor/48x48/apps/ark.png
-share/icons/hicolor/48x48/apps/kcalc.png
-share/icons/hicolor/48x48/apps/kcharselect.png
-share/icons/hicolor/48x48/apps/kedit.png
-share/icons/hicolor/48x48/apps/kfloppy.png
-share/icons/hicolor/48x48/apps/khexedit.png
-share/icons/hicolor/48x48/apps/kjots.png
-share/icons/hicolor/48x48/apps/kljettool.png
-share/icons/hicolor/48x48/apps/klpq.png
-share/icons/hicolor/48x48/apps/laptop_battery.png
-share/icons/hicolor/48x48/apps/laptop_pcmcia.png
-share/icons/locolor/16x16/apps/klprfax.png
-share/icons/locolor/32x32/apps/klprfax.png
-share/services/arkpart.desktop
+share/doc/HTML/en/ksim/common
+share/doc/HTML/en/ksim/index.cache.bz2
+share/doc/HTML/en/ksim/index.docbook
+share/doc/HTML/en/ktimer/common
+share/doc/HTML/en/ktimer/index.cache.bz2
+share/doc/HTML/en/ktimer/index.docbook
+share/icons/crystalsvg/128x128/apps/ark.png
+share/icons/crystalsvg/128x128/apps/kdf.png
+share/icons/crystalsvg/128x128/apps/kfloppy.png
+share/icons/crystalsvg/128x128/apps/laptop_battery.png
+share/icons/crystalsvg/16x16/apps/ark.png
+share/icons/crystalsvg/16x16/apps/kcalc.png
+share/icons/crystalsvg/16x16/apps/kcharselect.png
+share/icons/crystalsvg/16x16/apps/kcmdf.png
+share/icons/crystalsvg/16x16/apps/kdf.png
+share/icons/crystalsvg/16x16/apps/kedit.png
+share/icons/crystalsvg/16x16/apps/kfloppy.png
+share/icons/crystalsvg/16x16/apps/khexedit.png
+share/icons/crystalsvg/16x16/apps/kjots.png
+share/icons/crystalsvg/16x16/apps/klaptopdaemon.png
+share/icons/crystalsvg/16x16/apps/ksim.png
+share/icons/crystalsvg/16x16/apps/kwikdisk.png
+share/icons/crystalsvg/16x16/apps/laptop_battery.png
+share/icons/crystalsvg/16x16/apps/laptop_pcmcia.png
+share/icons/crystalsvg/16x16/devices/ksim_cpu.png
+share/icons/crystalsvg/32x32/apps/ark.png
+share/icons/crystalsvg/32x32/apps/kcalc.png
+share/icons/crystalsvg/32x32/apps/kcmdf.png
+share/icons/crystalsvg/32x32/apps/kdf.png
+share/icons/crystalsvg/32x32/apps/kedit.png
+share/icons/crystalsvg/32x32/apps/kfloppy.png
+share/icons/crystalsvg/32x32/apps/khexedit.png
+share/icons/crystalsvg/32x32/apps/kjots.png
+share/icons/crystalsvg/32x32/apps/ksim.png
+share/icons/crystalsvg/32x32/apps/kwikdisk.png
+share/icons/crystalsvg/32x32/apps/laptop_battery.png
+share/icons/crystalsvg/32x32/apps/laptop_pcmcia.png
+share/icons/crystalsvg/48x48/apps/ark.png
+share/icons/crystalsvg/48x48/apps/kcalc.png
+share/icons/crystalsvg/48x48/apps/kcharselect.png
+share/icons/crystalsvg/48x48/apps/kdf.png
+share/icons/crystalsvg/48x48/apps/kedit.png
+share/icons/crystalsvg/48x48/apps/kfloppy.png
+share/icons/crystalsvg/48x48/apps/khexedit.png
+share/icons/crystalsvg/48x48/apps/kjots.png
+share/icons/crystalsvg/48x48/apps/ksim.png
+share/icons/crystalsvg/48x48/apps/laptop_battery.png
+share/icons/crystalsvg/48x48/apps/laptop_pcmcia.png
+share/icons/crystalsvg/64x64/apps/ark.png
+share/icons/crystalsvg/64x64/apps/kdf.png
+share/icons/crystalsvg/64x64/apps/kfloppy.png
+share/icons/crystalsvg/64x64/apps/laptop_battery.png
+share/services/ark_part.desktop
 share/services/klaptopdaemon.desktop
 share/services/kregexpeditorgui.desktop
 %%SHARED%%
-@dirrm share/doc/HTML/en/klprfax
-@dirrm share/doc/HTML/en/klpq
-@dirrm share/doc/HTML/en/kljettool
+@dirrm share/doc/HTML/en/ktimer
+@dirrm share/doc/HTML/en/ksim
 @dirrm share/doc/HTML/en/kjots
+@dirrm share/doc/HTML/en/kinfocenter/blockdevices
+@dirrm share/doc/HTML/en/kinfocenter
 @dirrm share/doc/HTML/en/khexedit
 @dirrm share/doc/HTML/en/kfloppy
 @dirrm share/doc/HTML/en/kedit
 @dirrm share/doc/HTML/en/kdf
+@dirrm share/doc/HTML/en/kcontrol/powerctrl
+@dirrm share/doc/HTML/en/kcontrol/laptop
+@dirrm share/doc/HTML/en/kcontrol/kcmlowbatwarn
+@dirrm share/doc/HTML/en/kcontrol/kcmlowbatcrit
+@dirrm share/doc/HTML/en/kcontrol
+@dirrm share/doc/HTML/en/kcharselect
 @dirrm share/doc/HTML/en/kcalc
-@dirrm share/doc/HTML/en/kab
 @dirrm share/doc/HTML/en/ark
 @dirrm share/doc/HTML/en/KRegExpEditor
 @comment @dirrm share/doc/HTML
+@dirrm share/config
+@dirrm share/apps/ksim/themes/ksim/net
+@dirrm share/apps/ksim/themes/ksim/mail
+@dirrm share/apps/ksim/themes/ksim/host
+@dirrm share/apps/ksim/themes/ksim
+@dirrm share/apps/ksim/themes
+@dirrm share/apps/ksim/pics
+@dirrm share/apps/ksim/monitors
+@dirrm share/apps/ksim
 @dirrm share/apps/kregexpeditor/predefined/general
 @dirrm share/apps/kregexpeditor/predefined
 @dirrm share/apps/kregexpeditor/pics
 @dirrm share/apps/kregexpeditor
-@dirrm share/apps/konqueror/servicemenus
-@dirrm share/apps/kljettool/pics
-@dirrm share/apps/kljettool
-@dirrm share/apps/klaptopdaemon/icons/hicolor/32x32/actions
-@dirrm share/apps/klaptopdaemon/icons/hicolor/32x32
-@dirrm share/apps/klaptopdaemon/icons/hicolor/16x16/actions
-@dirrm share/apps/klaptopdaemon/icons/hicolor/16x16
-@dirrm share/apps/klaptopdaemon/icons/hicolor
+@dirrm share/apps/klaptopdaemon/icons/crystalsvg/32x32/actions
+@dirrm share/apps/klaptopdaemon/icons/crystalsvg/32x32
+@dirrm share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions
+@dirrm share/apps/klaptopdaemon/icons/crystalsvg/16x16
+@dirrm share/apps/klaptopdaemon/icons/crystalsvg
 @dirrm share/apps/klaptopdaemon/icons
 @dirrm share/apps/klaptopdaemon
 @dirrm share/apps/kjots/pics
@@ -248,9 +308,13 @@ share/services/kregexpeditorgui.desktop
 @exec mkdir -p %D/share/apps/kcalc/pics
 @dirrm share/apps/kcalc/pics
 @dirrm share/apps/kcalc
-@dirrm share/apps/ark/icons/hicolor/22x22/actions
-@dirrm share/apps/ark/icons/hicolor/22x22
-@dirrm share/apps/ark/icons/hicolor
+@dirrm share/apps/ark/icons/crystalsvg/22x22/actions
+@dirrm share/apps/ark/icons/crystalsvg/22x22
+@dirrm share/apps/ark/icons/crystalsvg
 @dirrm share/apps/ark/icons
 @dirrm share/apps/ark
 @comment @dirrm share/apps
+@dirrm share/applnk/Utilities/More
+@dirrm share/applnk/System/More
+@dirrm share/applnk/Settingsmenu
+@dirrm include/ksim

@@ -1,0 +1,249 @@
+$OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.1 2003/01/27 20:05:50 espie Exp $
+--- klaptopdaemon/portable.cpp.orig	Sun Oct 27 00:23:22 2002
++++ klaptopdaemon/portable.cpp	Wed Jan  1 15:36:18 2003
+@@ -1321,6 +1321,245 @@ int laptop_portable::poll_activity()
+ {
+        return(1);
+ }
++
++#elif	(__OpenBSD__ && (__i386__ || __macppc__))
++
++/*
++ * OpenBSD support for klaptopdaemon by Ian Darwin
++ * based on my KDE2 "kapm" program; some error handling
++ * patterned on the FreeBSD code above.
++ *
++ * Note that you must NOT run apmd as this code uses the
++ * APM control device directly; maybe a later version
++ * will talk to apmd instead.
++ */
++
++#include <errno.h>
++#include <stdlib.h>
++#include <unistd.h>
++#include <fcntl.h>
++#include <err.h>
++#include <sys/types.h>
++#include <sys/ioctl.h>
++#include <machine/apmvar.h>
++
++#define _PATH_APM_NORMAL        "/dev/apm"
++#define _PATH_APM_CTLDEV        "/dev/apmctl"
++
++static struct apm_power_info bsdAPM;
++
++//
++//	returns 1 if we support power management
++//
++int
++laptop_portable::has_power_management()
++{
++	int fdd = open(_PATH_APM_NORMAL, O_RDONLY),
++		fdc = open(_PATH_APM_CTLDEV, O_RDWR);
++	if (fdd == -1) {
++		perror(_PATH_APM_NORMAL);	// debug only
++	} 
++	if (fdc == -1) {
++		perror(_PATH_APM_CTLDEV);	// debug only
++	} 
++	close(fdd);
++	close(fdc);
++	return fdd != -1 && fdc != -1;
++}
++//
++//	returns 1 if the BIOS returns time left in battery rather than % of full
++//	This version always uses % as IMHO it is more reliable than time.
++int laptop_portable::has_battery_time()
++{
++	return false;
++}
++
++//	returns 1 if we can perform a change-to-suspend-mode operation for the user
++//	(has_power_management() has already returned 1)
++//
++int laptop_portable::has_suspend()
++{
++	int fd = open(_PATH_APM_CTLDEV, O_RDWR);
++	close(fd);
++	return fd != -1;
++}
++
++//	returns 1 if we can perform a change-to-standby-mode operation for the user
++//	(has_power_management() has already returned 1)
++//
++int laptop_portable::has_standby()
++{
++	int fd = open(_PATH_APM_CTLDEV, O_RDWR);
++	close(fd);
++	return fd != -1;
++}
++
++//	returns 1 if we can perform a change-to-hibernate-mode for a user
++//      (has_power_management() has already returned 1)
++//		[hibernate is the save-to-disk mode -- not supported by linux]
++//
++int laptop_portable::has_hibernation()
++{
++	return false;
++}
++
++//
++//	explain what user needs to do if has_power_management() returned 0
++//	to get any software they lack
++//
++KActiveLabel *laptop_portable::no_power_management_explanation(QWidget *parent)
++{
++	int fdd, fdc;
++	KActiveLabel* explain = NULL;
++
++	if ((fdd = open(_PATH_APM_NORMAL, O_RDONLY)) == -1) {
++		switch (errno) {
++		case ENOENT:
++			explain = new KActiveLabel(i18n("There is no " _PATH_APM_NORMAL 
++			" file on this system. Use MAKEDEV or mknod to create one."), parent);
++			break;
++		case EPERM:
++			explain = new KActiveLabel(i18n("Your system has support for apm, but "
++			"you don't have permission to access it.  Check permissions on "
++			 _PATH_APM_NORMAL), parent);
++			break;
++		case ENXIO:
++			explain = new KActiveLabel(i18n("Your kernel lacks support for Advanced Power Managment."), parent);
++			break;
++		default:
++			explain = new KActiveLabel(i18n("There was an unknown error opening "
++			_PATH_APM_NORMAL), parent);
++			break;
++		}
++	}
++	if (explain != NULL)
++		goto out;
++
++	if ((fdc = open(_PATH_APM_CTLDEV, O_RDONLY)) == -1)
++	switch(errno) {
++	case EPERM:
++			explain = new KActiveLabel(i18n("Your system has support for apm, but "
++			"you don't have permission to access it. Check permissions " 
++			"on " _PATH_APM_CTLDEV), parent);
++			break;
++	case EBUSY:
++		explain = new KActiveLabel(i18n("Your system has APM but you cannot open the "
++		"control device " _PATH_APM_CTLDEV " as it is in use "
++		"(possibly by apmd?)"), parent);
++		break;
++	default:
++		explain = new KActiveLabel(i18n("Other error opening "
++			"APM control device " _PATH_APM_CTLDEV), parent);
++		break;
++	}
++out:
++	close(fdd);
++	close(fdc);
++	if (explain == NULL)
++		explain = new KActiveLabel(i18n("Not sure why APM is not functioning??"), parent);
++	explain->setMinimumSize(explain->sizeHint());
++	return(explain);
++}
++
++//
++//	explain to the user what they need to do to get suspend/resume to work from user mode
++//
++QLabel *laptop_portable::how_to_do_suspend_resume(QWidget *parent)
++{
++	QLabel* note = new QLabel(i18n(" "), parent);
++
++	note->setMinimumSize(note->sizeHint());
++	return(note);
++}
++
++//	pcmcia support - this will be replaced by better - pcmcia support being worked on by
++//	others
++//
++QLabel *laptop_portable::pcmcia_info(int x, QWidget *parent)
++{
++	if (x == 0)
++		return(new QLabel(i18n("No PCMCIA controller detected"), parent));
++	else
++		return 0;
++}
++
++//	puts the system into standby mode
++//
++void laptop_portable::invoke_standby()
++{
++	int fd = open(_PATH_APM_CTLDEV, O_RDWR);
++
++	if (ioctl(fd, APM_IOC_STANDBY) != 0) {
++		perror("APM_IOC_STANDBY");
++		close(fd);
++	} 
++	close(fd);
++}
++
++//	puts the system into suspend mode
++//
++void laptop_portable::invoke_suspend()
++{
++	int fd = open(_PATH_APM_CTLDEV, O_RDWR);
++
++	if (ioctl(fd, APM_IOC_SUSPEND) != 0) {
++		perror("APM_IOC_SUSPEND");
++		close(fd);
++	}
++	close(fd);
++}
++
++//	puts the system into hibernate mode
++//
++void laptop_portable::invoke_hibernation()
++{
++	// ???
++}
++
++
++//	return current battery state
++//
++struct power_result laptop_portable::poll_battery_state()
++{
++	int fd;
++	static struct power_result p;
++
++	p.powered = 0;
++	p.percentage = 0;
++	p.time = 0;
++	if ((fd = open(_PATH_APM_CTLDEV, O_RDWR)) == -1)
++		return(p);
++	if (ioctl(fd, APM_IOC_GETPOWER, &bsdAPM) != 0) {
++		close(fd);
++		return p;
++	}
++	p.powered =    bsdAPM.ac_state == APM_AC_ON;
++	p.percentage = bsdAPM.battery_life;
++	p.time =       bsdAPM.minutes_left;
++	close(fd);
++
++	return p;
++}
++
++//
++//	returns true if any mouse or kdb activity has been detected
++//	
++
++int laptop_portable::poll_activity()
++{
++	return(1);
++}
++
++//
++//	adds extra widgets to the battery panel
++//
++void
++laptop_portable::extra_config(QWidget *parent, KConfig *config, QVBoxLayout *layout)
++{
++}
++
++
++
+ #else
+ 
+ /*
