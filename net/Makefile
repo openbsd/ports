@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 1999/05/14 15:46:54 dugsong Exp $
+# $OpenBSD: Makefile,v 1.42 1999/06/14 03:11:35 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -110,6 +110,7 @@
      SUBDIR += wide-dhcp
 #    SUBDIR += wu-ftpd
      SUBDIR += xarchie
+     SUBDIR += xchat
 #    SUBDIR += xicq
 #    SUBDIR += xipmsg
 #    SUBDIR += yale-tftpd
