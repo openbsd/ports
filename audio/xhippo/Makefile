@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/04/02 19:07:04 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/08/03 10:57:44 espie Exp $
 
 COMMENT=	"generic playlist manager for UNIX"
 
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--with-gtk2
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 DOCS=	ChangeLog gnu-xhippo.html screenshot.jpeg xhippo.html.gz \
 	xhippo.info.gz xhippo.ps.gz xhippo.sgml xhippo.txt.gz xhippo_toc.html
