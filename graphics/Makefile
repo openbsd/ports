@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2001/05/25 19:51:22 shell Exp $
+# $OpenBSD: Makefile,v 1.64 2001/05/26 01:47:53 obecian Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -76,6 +76,7 @@
 #    SUBDIR += sced
 #    SUBDIR += spigot
 #    SUBDIR += splitmpg
+     SUBDIR += synaesthesia
      SUBDIR += tgif
      SUBDIR += tiff
      SUBDIR += tiff2png
