@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/13 18:50:37 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/29 06:33:15 kevlo Exp $
 
 COMMENT=	"Perl5 module for reading MPEG1-Layer3 tags"
-DISTNAME=	MP3-Info-0.91
+DISTNAME=	MP3-Info-1.01
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	audio perl5
 NEED_VERSION=	1.515
