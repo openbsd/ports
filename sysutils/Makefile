@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2003/02/05 21:14:15 jcs Exp $
+# $OpenBSD: Makefile,v 1.62 2003/02/21 20:57:18 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -14,6 +14,7 @@
      SUBDIR += gkrellm
      SUBDIR += idled
      SUBDIR += libretto-config
+     SUBDIR += login_ldap
      SUBDIR += lsof
      SUBDIR += mac-robber
      SUBDIR += mencal
