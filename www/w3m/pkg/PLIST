@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.9 2001/11/16 21:35:45 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2001/12/20 22:36:10 naddy Exp $
 %%japanese%%
 !%%japanese%%
 bin/w3m
+bin/w3mman
 libexec/w3m/dirlist.cgi
+libexec/w3m/inflate
+libexec/w3m/multipart.cgi
 libexec/w3m/w3mbookmark
+libexec/w3m/w3mhelp.cgi
 libexec/w3m/w3mhelperpanel
+libexec/w3m/w3mman2html.cgi
 man/man1/w3m.1
 share/doc/w3m/FAQ.html
 share/doc/w3m/HISTORY
@@ -17,11 +22,10 @@ share/doc/w3m/keymap.default
 share/doc/w3m/keymap.lynx
 share/doc/w3m/menu.default
 share/doc/w3m/menu.submenu
-share/w3m/w3mhelp-lynx_en.html
-share/w3m/w3mhelp-lynx_ja.html
-share/w3m/w3mhelp-w3m_en.html
-share/w3m/w3mhelp-w3m_ja.html
+share/w3m/w3mhelp-funcdesc.en.pl
+share/w3m/w3mhelp-funcdesc.ja.pl
+share/w3m/w3mhelp-funcname.pl
 share/w3m/w3mhelp.html
-@dirrm libexec/w3m
-@dirrm share/doc/w3m
 @dirrm share/w3m
+@dirrm share/doc/w3m
+@dirrm libexec/w3m
