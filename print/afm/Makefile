@@ -3,7 +3,7 @@
 # Date created:         25 Jan 1998
 # Whom:                 d
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/02/08 05:25:06 niklas Exp $
+# $OpenBSD: Makefile,v 1.2 1999/04/06 22:43:54 d Exp $
 #
 
 DISTNAME=	afm
@@ -13,7 +13,7 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://sgi.com/sgi/fax/source/
 EXTRACT_SUFX=   -tar.Z
 
-MAINTAINER=	david.leonard@dstc.edu.au
+MAINTAINER=	d@openbsd.org
 
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}"
 
