@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/13 18:50:41 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/06/09 05:31:40 wilfried Exp $
 
 COMMENT=	"store multi-level hash structure in single-level tied hash"
 
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=MLDBM/}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
-BUILD_DEPENDS=	::devel/p5-FreezeThaw
+BUILD_DEPENDS=	:p5-FreezeThaw->=0.3:devel/p5-FreezeThaw
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes

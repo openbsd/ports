@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/13 23:31:24 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/06/09 05:36:43 wilfried Exp $
 
 COMMENT=	"image and webcam display plugin for gkrellm"
 
@@ -24,9 +24,9 @@ USE_GMAKE=	Yes
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 WRKDIST=	${WRKDIR}/gkrellkam-0.3.4
-BUILD_DEPENDS=	::sysutils/gkrellm
-RUN_DEPENDS=	::sysutils/gkrellm \
-		::net/wget
+BUILD_DEPENDS=	:gkrellm-*:sysutils/gkrellm
+RUN_DEPENDS=	:gkrellm-*:sysutils/gkrellm \
+		:wget-*:net/wget
 
 ALL_TARGET=	
 

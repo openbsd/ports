@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:19 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/06/09 05:36:59 wilfried Exp $
 
 DISTNAME=	gkrellstock-0.2
 CATEGORIES=	misc
@@ -21,9 +21,9 @@ NO_REGRESS=	Yes
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 WRKDIST=	${WRKDIR}/gkrellStock-0.2
-BUILD_DEPENDS=	::sysutils/gkrellm
-RUN_DEPENDS=	::sysutils/gkrellm \
-		::misc/p5-Finance-Quote
+BUILD_DEPENDS=	:gkrellm-*:sysutils/gkrellm
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+		:p5-Finance-Quote-*:misc/p5-Finance-Quote
 ALL_TARGET=	
 
 do-install:

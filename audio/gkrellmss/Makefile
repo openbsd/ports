@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/04/19 18:18:50 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/09 05:36:21 wilfried Exp $
 
 COMMENT=	"GKrellM Sound Scope"
 
@@ -21,10 +21,8 @@ NO_REGRESS=	Yes
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-BUILD_DEPENDS=	::sysutils/gkrellm \
-		::audio/esound
-RUN_DEPENDS=	::sysutils/gkrellm \
-		::audio/esound
+BUILD_DEPENDS=	:gkrellm->=1.2.2:sysutils/gkrellm
+RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	esd::audio/esound \
 		fftw,rfftw::math/fftw
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/15 17:58:50 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/06/09 05:32:03 wilfried Exp $
 
 COMMENT=	"perl interface to SSL sockets"
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	::security/p5-Net_SSLeay
+BUILD_DEPENDS=	:p5-Net-SSLeay->=1.03:security/p5-Net_SSLeay
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl

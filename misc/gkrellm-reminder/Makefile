@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/02/12 02:19:36 jcs Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/09 05:36:59 wilfried Exp $
 
 DISTNAME=	reminder-0.3.5
 PKGNAME=	gkrellm-${DISTNAME}
@@ -21,8 +21,8 @@ NO_REGRESS=	Yes
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-BUILD_DEPENDS=	::sysutils/gkrellm
-RUN_DEPENDS=	::sysutils/gkrellm
+BUILD_DEPENDS=	:gkrellm-*:sysutils/gkrellm
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 do-install:
 	@mkdir -p ${PREFIX}/lib/gkrellm/plugins

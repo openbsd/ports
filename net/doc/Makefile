@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/11/13 22:13:24 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/06/09 05:37:04 wilfried Exp $
 
 COMMENT=	automated domain testing tool
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.shub-internet.org/pub/shub/brad/dns/
 
-RUN_DEPENDS=		::net/bind9
+RUN_DEPENDS=		:bind-9.*:net/bind9
 
 do-build:
 	mv ${WRKSRC}/doc ${WRKSRC}/doc.dist

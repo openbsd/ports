@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/13 12:31:07 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2002/06/09 05:36:39 wilfried Exp $
 
 COMMENT=	"eboard extra piece sets and sounds"
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=eboard/}
 
-RUN_DEPENDS=	::games/eboard
+RUN_DEPENDS=	:eboard->=0.3.1:games/eboard
 
 NO_BUILD=	Yes
 

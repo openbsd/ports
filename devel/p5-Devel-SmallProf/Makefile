@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/13 18:50:41 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/06/09 05:31:40 wilfried Exp $
 
 COMMENT=		"per-line Perl profiler"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Devel/}
 
-BUILD_DEPENDS=  	::devel/p5-Time-HiRes
+BUILD_DEPENDS=  	:p5-Time-HiRes->=1.20:devel/p5-Time-HiRes
 RUN_DEPENDS=    	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE=	perl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/01/14 18:23:41 shell Exp $
+# $OpenBSD: Makefile,v 1.10 2002/06/09 05:37:10 wilfried Exp $
 
 COMMENT=	"graphical interface for GnuPG"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gpa/
 
-BUILD_DEPENDS=	::security/gnupg
+BUILD_DEPENDS=	:gnupg-*:security/gnupg
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/11 00:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/06/09 05:36:21 wilfried Exp $
 
 COMMENT=	"creates cover for audio cds using cddb and latex"
 
@@ -18,10 +18,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/unstable/
 
-RUN_DEPENDS=	::print/teTeX/base \
-		::graphics/ImageMagick \
-		::www/p5-libwww \
-		::audio/p5-Audio-CD
+RUN_DEPENDS=	:teTeX_base-*:print/teTeX/base \
+		:ImageMagick-*:graphics/ImageMagick \
+		:p5-libwww-*:www/p5-libwww \
+		:p5-Audio-CD-*:audio/p5-Audio-CD
 
 NO_REGRESS=	Yes
 

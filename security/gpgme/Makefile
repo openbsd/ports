@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/17 21:33:08 couderc Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/09 05:37:10 wilfried Exp $
 
 COMMENT=		"GnuPG Made Easy"
 
@@ -22,8 +22,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-gpgsm
 CONFIGURE_ENV=		MAKEINFO="makeinfo --no-split"
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::security/gnupg
+BUILD_DEPENDS=		:gnupg-*:security/gnupg
+RUN_DEPENDS=		${BUILD_DEPENDS}
 
 pre-build:
 	@rm -f ${WRKSRC}/doc/gpgme.info*

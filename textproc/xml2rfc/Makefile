@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/01/24 08:42:22 jakob Exp $
+# $OpenBSD: Makefile,v 1.23 2002/06/09 05:37:15 wilfried Exp $
 
 COMMENT=	convert memos written in XML to the RFC format
 
@@ -17,8 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::lang/tcl/8.3 \
-		::textproc/TclXML \
+RUN_DEPENDS=	:tcl-8.3.*:lang/tcl/8.3 \
+		:TclXML-*:textproc/TclXML \
 
 FLAVORS=	no_x11
 FLAVOR?=
@@ -27,7 +27,7 @@ FLAVOR?=
 USE_X11=	No
 .else
 USE_X11=	Yes
-RUN_DEPENDS+=	::x11/tk/8.3
+RUN_DEPENDS+=	:tk-8.3.*:x11/tk/8.3
 .endif
 
 do-build:

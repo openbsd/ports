@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/04/19 07:43:41 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2002/06/09 05:37:04 wilfried Exp $
 
 COMMENT=	"tcl/tk irc client"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/
 
-RUN_DEPENDS=	::x11/tk/8.3
+RUN_DEPENDS=	:tk-8.3.*:x11/tk/8.3
 
 NO_BUILD=	Yes
 

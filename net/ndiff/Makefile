@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.3 2001/11/13 22:13:24 espie Exp $
+#   $OpenBSD: Makefile,v 1.4 2002/06/09 05:31:54 wilfried Exp $
 
 COMMENT=	"compare two nmap scans and outputs the differences"
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::net/nmap
+RUN_DEPENDS=	:nmap-*:net/nmap
 
 CONFIGURE_STYLE= perl
 

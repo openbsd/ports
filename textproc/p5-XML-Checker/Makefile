@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/14 12:07:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/06/09 05:32:07 wilfried Exp $
 
 COMMENT=	"perl module for validating XML"
 
@@ -8,7 +8,7 @@ CATEGORIES=	textproc perl5
 NEED_VERSION=	1.504
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
-RUN_DEPENDS=	::textproc/p5-XML-DOM
+RUN_DEPENDS=	:p5-XML-DOM->=1.29:textproc/p5-XML-DOM
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/02 01:41:33 jcs Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/09 05:36:21 wilfried Exp $
 
 DISTNAME=	gkrellmms-0.5.5
 CATEGORIES=	audio
@@ -24,10 +24,9 @@ NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 PATCHFILES=	gkrellmms-patch-0.5.5:0
 
 WRKDIST=	${WRKDIR}/gkrellmms
-BUILD_DEPENDS=	::sysutils/gkrellm \
-		::audio/xmms
-RUN_DEPENDS=	::sysutils/gkrellm \
-		::audio/xmms
+BUILD_DEPENDS=	:gkrellm-*:sysutils/gkrellm \
+		:xmms-*:audio/xmms
+RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS+=	xmms::audio/xmms
 ALL_TARGET=	
 

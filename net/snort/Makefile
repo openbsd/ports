@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2002/04/26 12:51:39 bmc Exp $
+# $OpenBSD: Makefile,v 1.24 2002/06/09 05:37:04 wilfried Exp $
 
 COMMENT=	"highly flexible sniffer/NIDS"
 
@@ -40,8 +40,8 @@ CONFIGURE_ARGS+= --with-mysql="${LOCALBASE}"
 .endif
 
 .if ${FLAVOR:L:Msmbalert}
-BUILD_DEPENDS+=	smbclient::net/samba
-RUN_DEPENDS+=	smbclient::net/samba
+BUILD_DEPENDS+=	:samba-*:net/samba
+RUN_DEPENDS+=	:samba-*:net/samba
 CONFIGURE_ARGS+= --enable-smbalerts
 .endif
 

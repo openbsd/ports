@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/15 17:42:24 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/06/09 05:37:04 wilfried Exp $
 
 COMMENT=	"download manager for KDE"
 
@@ -37,7 +37,7 @@ FLAVORS=	wget
 FLAVOR?=
 
 .if ${FLAVOR:L} == "wget"
-RUN_DEPENDS=	::net/wget
+RUN_DEPENDS=	:wget-*:net/wget
 .else
 CONFIGURE_ARGS+= --disable-wget
 .endif

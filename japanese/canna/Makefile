@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/21 20:57:09 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/06/09 05:36:46 wilfried Exp $
 
 COMMENT= 	'canna (kana-kanji converter) libraries'
 COMMENT-dict=	'canna (kana-kanji converter) dictionaries'
@@ -23,7 +23,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # Will turn into a RUN_DEPENDS when we install non-formatted manpages
-BUILD_DEPENDS=	::japanese/groff
+BUILD_DEPENDS=	:ja-groff-*:japanese/groff
 HOMEPAGE=	http://www.nec.co.jp/japanese/product/computer/soft/canna/
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes

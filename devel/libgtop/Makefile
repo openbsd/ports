@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/05/13 18:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/06/09 05:36:28 wilfried Exp $
 
 COMMENT=		"portable library for obtaining system information"
 V=			1.0.13
@@ -33,8 +33,8 @@ CONFIGURE_ARGS+= 	--without-gnome
 .endif
 
 .if ${FLAVOR:L:Mguile}
-BUILD_DEPENDS+= 	::lang/guile
-RUN_DEPENDS+= 		::lang/guile
+BUILD_DEPENDS+= 	:guile-*:lang/guile
+RUN_DEPENDS+= 		:guile-*:lang/guile
 CONFIGURE_ARGS+=	--with-libgtop-guile=yes
 .else
 CONFIGURE_ARGS+=	--with-libgtop-guile=no

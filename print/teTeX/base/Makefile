@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/05/14 11:49:22 fgsch Exp $
+# $OpenBSD: Makefile,v 1.19 2002/06/09 05:37:07 wilfried Exp $
 
 COMMENT=	"TeX distribution, executables"
 
@@ -28,7 +28,7 @@ TETEX_SRC=teTeX-src-1.0.7.tar.gz
 RUN_DEPENDS=:teTeX_texmf-1.0.*:print/teTeX/texmf
 RUN_DEPENDS+=:texi2html->=1.56:textproc/texi2html
 
-BUILD_DEPENDS=::print/teTeX/texmf
+BUILD_DEPENDS=:teTeX_texmf-1.0.*:print/teTeX/texmf
 LIB_DEPENDS= png.2::graphics/png 
 
 PNGDIR=${PREFIX}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/13 22:13:23 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/06/09 05:36:53 wilfried Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -66,7 +66,7 @@ do-fetch:
 		fi\
 	done
 
-RUN_DEPENDS=::math/maple
+RUN_DEPENDS=:maple-*:math/maple
 NO_BUILD=Yes 
 
 pre-fake:

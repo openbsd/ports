@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/05/26 19:22:48 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2002/06/09 05:36:43 wilfried Exp $
 
 COMMENT=	"image viewer similar to ACDSee for Windows"
 
@@ -20,8 +20,8 @@ LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
 		jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff \
 		png.2::graphics/png
-RUN_DEPENDS=	::archivers/bzip \
-		::archivers/bzip2
+RUN_DEPENDS=	:bzip-*:archivers/bzip \
+		:bzip2-*:archivers/bzip2
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2002/04/26 11:37:10 wcobb Exp $
+# $OpenBSD: Makefile,v 1.26 2002/06/09 05:36:43 wilfried Exp $
 
 COMMENT=	"Display and capture for Brooktree-based cards"
 DISTNAME=	fxtv-1.03
@@ -15,11 +15,11 @@ LIB_DEPENDS=	tiff.35::graphics/tiff \
 		jpeg.62::graphics/jpeg \
 		Xaw3d.6.1::x11/Xaw3d
 
-RUN_DEPENDS=	::audio/sox \
-		::audio/mpg321 \
-		::audio/mp3encode \
-		::graphics/mpeg_encode \
-		::graphics/mplex
+RUN_DEPENDS=	:sox->=12.12:audio/sox \
+		:mpg321-*:audio/mpg321 \
+		:mp3encode-*:audio/mp3encode \
+		:mpeg_encode->=1.5:graphics/mpeg_encode \
+		:mplex->=1.1:graphics/mplex
 
 MAINTAINER=	Wilbern Cobb <wcobb@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/04/19 07:17:23 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2002/06/09 05:31:55 wilfried Exp $
 
 COMMENT=	"text-based ICQ implementation"
 
@@ -16,13 +16,11 @@ PERMIT_PACKAGE_FTP= 	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes 
 
-RUN_DEPENDS=	::devel/p5-Term-ReadLine-Gnu
+RUN_DEPENDS=	:p5-Term-ReadLine-Gnu-*:devel/p5-Term-ReadLine-Gnu
 
 CONFIGURE_STYLE= perl
 
 WRKDIST=	${WRKDIR}/vicq
-
-NO_REGRESS=	Yes
 
 post-extract:
 	@mv ${WRKSRC}/Net/vICQ/* ${WRKSRC}

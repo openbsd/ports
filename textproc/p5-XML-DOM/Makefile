@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/14 12:07:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/09 05:32:07 wilfried Exp $
 
 COMMENT=	"perl module to build DOM Level 1 structures"
 
@@ -10,10 +10,10 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
-BUILD_DEPENDS=  ::textproc/p5-XML-Parser	\
-		::textproc/p5-Libxml		\
-		::textproc/p5-XML-RegExp	\
-		::www/p5-libwww
+BUILD_DEPENDS=  :p5-XML-Parser->=2.30:textproc/p5-XML-Parser	\
+		:p5-Libxml-*:textproc/p5-Libxml		\
+		:p5-XML-RegExp-*:textproc/p5-XML-RegExp	\
+		:p5-libwww-*:www/p5-libwww
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes

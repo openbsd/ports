@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.40 2002/03/21 20:57:09 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2002/06/09 05:36:46 wilfried Exp $
 
 COMMENT= 	"Japanese input method"
 COMMENT-dict=	"dictionaries for Japanese Wnn"
@@ -85,7 +85,7 @@ PORT_CDOCDIR=	${PREFIX}/share/doc/zh-cWnn
 CDOC_FROM=	${WRKSRC}/cWnn
 
 # Will turn into a RUN_DEPENDS when we install non-formatted manpages
-BUILD_DEPENDS=	::japanese/groff
+BUILD_DEPENDS=	:ja-groff-*:japanese/groff
 # Run depends ensure this does not turn into infinite recursion, since
 # this is not needed before package build time.
 

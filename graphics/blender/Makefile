@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/20 10:33:11 reinhard Exp $
+# $OpenBSD: Makefile,v 1.8 2002/06/09 05:36:43 wilfried Exp $
 
 COMMENT=	"3D creation software"
 ONLY_FOR_ARCHS=	i386
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	"no commercial use"
 MASTER_SITES=	ftp://ftp.cs.umn.edu/pub/blender/pub/ \
 		http://www.download.blender.pl/mirror/
 
-RUN_DEPENDS=	::emulators/redhat/base
+RUN_DEPENDS=	:redhat_base-*:emulators/redhat/base
 
 INSTALL_STRIP=
 NO_BUILD=	Yes

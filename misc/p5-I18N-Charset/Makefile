@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/05/29 05:43:46 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2002/06/09 05:31:51 wilfried Exp $
 
 COMMENT=	"module to map charset names registered with IANA"
 
@@ -16,11 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=I18N/}
 
-BUILD_DEPENDS=	::devel/p5-Test-Simple
+BUILD_DEPENDS=	:p5-Test-Simple-*:devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl
-
-REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/11/13 22:13:24 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/06/09 05:37:15 wilfried Exp $
 
 COMMENT=	"pure-Tcl implementation of XML parser"
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::lang/tcl/8.3
+RUN_DEPENDS=	:tcl-8.3.*:lang/tcl/8.3
 
 NO_BUILD=       Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/14 12:07:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/09 05:32:08 wilfried Exp $
 
 COMMENT=	"trivial perl API for reading/writing XML"
 
@@ -11,8 +11,8 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 HOMEPAGE=	http://www.web.co.nz/~grantm/cpan/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
-BUILD_DEPENDS=  ::textproc/p5-XML-Parser \
-		::devel/p5-Storable
+BUILD_DEPENDS=  :p5-XML-Parser->=2:textproc/p5-XML-Parser \
+		:p5-Storable-*:devel/p5-Storable
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes

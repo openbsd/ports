@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/04/17 15:55:19 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2002/06/09 05:37:04 wilfried Exp $
 
 DISTNAME=	gkrellmwireless-0.2.2
 PKGNAME=	gkrellm-wireless-0.2.2
@@ -22,8 +22,8 @@ NO_REGRESS=	Yes
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-BUILD_DEPENDS=	::sysutils/gkrellm
-RUN_DEPENDS=	::sysutils/gkrellm
+BUILD_DEPENDS=	:gkrellm-*:sysutils/gkrellm
+RUN_DEPENDS=	${BUILD_DEPENDS}
 ALL_TARGET=	
 
 do-install:

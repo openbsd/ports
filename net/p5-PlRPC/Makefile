@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/06/07 21:37:11 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2002/06/09 05:31:55 wilfried Exp $
 
 COMMENT=	"module for writing rpc servers and clients"
 
@@ -16,8 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=RPC/}
 
-BUILD_DEPENDS=	::net/p5-Net-Daemon \
-		::devel/p5-Storable
+BUILD_DEPENDS=	:p5-Net-Daemon->=0.13:net/p5-Net-Daemon \
+		:p5-Storable-*:devel/p5-Storable
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl
 

@@ -1,6 +1,6 @@
 #
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
-# $OpenBSD: Makefile,v 1.18 2001/10/15 15:20:09 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/06/09 05:37:04 wilfried Exp $
 #
 
 COMMENT=	"UCB/LBNL Network Simulator Version 2"
@@ -26,8 +26,8 @@ HOMEPAGE=	http://www.isi.edu/nsnam/ns/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-BUILD_DEPENDS=	::devel/tclcl
-RUN_DEPENDS=	::lang/tcl/8.3
+BUILD_DEPENDS=	:tclcl-*:devel/tclcl
+RUN_DEPENDS=	:tcl-8.3.*:lang/tcl/8.3
 LIB_DEPENDS=	otcl::lang/otcl \
 		tcl83::lang/tcl/8.3 \
 		tk83::x11/tk/8.3

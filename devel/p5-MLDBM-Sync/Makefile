@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/06/08 17:18:13 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2002/06/09 05:31:40 wilfried Exp $
 
 COMMENT=	"safe concurrent access to MLDBM databases"
 
@@ -12,8 +12,8 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=MLDBM/}
 
 MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 
-BUILD_DEPENDS=	::devel/p5-MLDBM \
-		::security/p5-Digest-MD5
+BUILD_DEPENDS=	:p5-MLDBM-*:devel/p5-MLDBM \
+		:p5-Digest-MD5-*:security/p5-Digest-MD5
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2002/06/09 04:32:55 wilfried Exp $
+# $OpenBSD: Makefile,v 1.25 2002/06/09 05:36:32 wilfried Exp $
 
 COMMENT=	"extensible, customizable real-time display editor"
 
@@ -28,7 +28,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mcompface}
 PERMIT_PACKAGE_CDROM=	No
-BUILD_DEPENDS=	${PREFIX}/lib/libcompface.a::graphics/compface
+BUILD_DEPENDS=	${PREFIX}/lib/libcompface.a:compface-*:graphics/compface
 CONFIGURE_ARGS+=--with-xface
 .else
 PERMIT_PACKAGE_CDROM=	Yes

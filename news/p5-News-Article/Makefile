@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/15 17:58:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/09 05:31:59 wilfried Exp $
 
 COMMENT=	"perl module for accessing NNTP articles"
 
@@ -10,8 +10,8 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=News/}
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
-BUILD_DEPENDS=	::security/p5-PGP-Sign \
-		::net/p5-libnet
+BUILD_DEPENDS=	:p5-PGP-Sign-*:security/p5-PGP-Sign \
+		:p5-libnet-*:net/p5-libnet
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,6 +20,5 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
-NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

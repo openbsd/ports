@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/06/07 21:37:11 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/09 05:31:40 wilfried Exp $
 
 COMMENT=	"module to scan C language files"
 
@@ -16,7 +16,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=C/}
 
-BUILD_DEPENDS=	::devel/p5-Data-Flow
+BUILD_DEPENDS=	:p5-Data-Flow->=0.05:devel/p5-Data-Flow
+RUN_DEPEDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/14 16:52:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/09 05:36:59 wilfried Exp $
 
 COMMENT=		"Qt-based CD creation tool"
 
@@ -22,7 +22,7 @@ MASTER_SITES=		http://www.drahthaar.clara.net/ \
 
 MODULES=		qt2
 
-RUN_DEPENDS=		::sysutils/cdrtools
+RUN_DEPENDS=		:cdrtools-*:sysutils/cdrtools
 
 SEPARATE_BUILD=		concurrent
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/13 23:31:24 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/06/09 05:31:44 wilfried Exp $
 
 COMMENT=	"perl module for getting image information"
 
@@ -12,7 +12,8 @@ MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=Image/}
 
-BUILD_DEPENDS=  ::devel/p5-IO-String
+BUILD_DEPENDS=  :p5-IO-String->=1:devel/p5-IO-String
+RUN_DEPENDS=    ${BUILD_DEPENDS
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

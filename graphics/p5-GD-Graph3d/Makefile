@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/13 23:31:24 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/06/09 05:31:44 wilfried Exp $
 
 COMMENT=	"module for 3D graph plotting"
 
@@ -8,8 +8,8 @@ CATEGORIES=	graphics perl5
 NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=GD/}
 
-BUILD_DEPENDS=	::graphics/p5-GD-Graph
-RUN_DEPENDS=	::graphics/p5-GD-Graph
+BUILD_DEPENDS=	:p5-GD-Graph->=1.30:graphics/p5-GD-Graph
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
@@ -21,4 +21,3 @@ PERMIT_DISTFILES_FTP=   Yes
 CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>
-

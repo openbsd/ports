@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/11/13 22:13:23 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2002/06/09 05:36:53 wilfried Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -19,7 +19,7 @@ DISTNAME=	maple-5.5
 CATEGORIES=     math
 NEED_VERSION=	1.496
 
-RUN_DEPENDS=	::emulators/redhat/base
+RUN_DEPENDS=	:redhat_base-*:emulators/redhat/base
 
 # if someone wants to buy the sparc version and check it, be my guest...
 

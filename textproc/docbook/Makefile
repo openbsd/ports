@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/11/13 22:13:24 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/06/09 05:37:15 wilfried Exp $
 
 COMMENT=	"technical documentation XML/SGML definitions"
 
@@ -40,7 +40,7 @@ SGML_INSTDIR=	${PREFIX}/share/sgml/docbook
 XML_INSTDIR=	${PREFIX}/share/xml/docbook
 
 RUN_DEPENDS=	::textproc/iso8879 \
-		::textproc/docbook-dsssl
+		:docbook-dsssl-*:textproc/docbook-dsssl
 
 .for i in ${SGML_VERSIONS} ${XML_VERSIONS:C/(.+)/x\1/g}
 EXTRACT_CASES+=	*docbk${i:S/.//g}.zip) unzip -qa ${FULLDISTDIR}/$$archive -d ${WRKDIR}/$i;;

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2002/05/20 00:15:23 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2002/06/09 05:36:21 wilfried Exp $
 
 COMMENT=		"mpg123 front-end with skin support"
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gqmpeg/}
 
 MODULES=		gettext
-BUILD_DEPENDS=		::audio/mpg123
-RUN_DEPENDS=		::audio/mpg123
+BUILD_DEPENDS=		:mpg123-*:audio/mpg123
+RUN_DEPENDS=		${BUILD_DEPENDS}
 LIB_DEPENDS=		gdk_pixbuf.2::graphics/gdk-pixbuf
 
 CONFIGURE_STYLE=	gnu

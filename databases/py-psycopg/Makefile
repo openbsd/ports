@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/02/15 19:53:43 matt Exp $
+# $OpenBSD: Makefile,v 1.6 2002/06/09 05:36:25 wilfried Exp $
 
 COMMENT=	"PostgreSQL database adapter for Python"
 
@@ -26,11 +26,11 @@ DATETIME_PATH=	${LOCALBASE}/lib/python${PYTHON_VER}/site-packages/mx/DateTime
 
 LIB_DEPENDS+=	pq.2::databases/postgresql
 RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
-		::devel/py-mxDateTime
+		:py-mxDateTime->=2.0.0:devel/py-mxDateTime
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 .if ${FLAVOR:L:Mzope}
-RUN_DEPENDS+=	::www/zope
+RUN_DEPENDS+=	:zope-*:www/zope
 .endif
 
 CONFIGURE_STYLE=gnu

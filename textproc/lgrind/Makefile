@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/14 12:07:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2002/06/09 05:37:15 wilfried Exp $
 
 COMMENT=	"LaTeX vgrind(1) look-alike"
 
@@ -30,8 +30,8 @@ DIST_SUBDIR=${DISTNAME}
 MAKE_FLAGS=BASEDIR=${PREFIX} DEFSFILE=${PREFIX}/share/texmf/tex/latex/lgrind/lgrindef VERSION=${VERSION} CFLAGS='${CFLAGS}'
 FAKE_FLAGS=BASEDIR=${WRKINST}${PREFIX}
 
-BUILD_DEPENDS=::print/teTeX/base
-RUN_DEPENDS=::print/teTeX/base
+BUILD_DEPENDS=:teTeX_base-*:print/teTeX/base
+RUN_DEPENDS=${BUILD_DEPENDS}
 
 post-build:
 	cd ${WRKDIST} && latex lgrind.ins

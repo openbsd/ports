@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/06/07 21:37:11 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/09 05:31:59 wilfried Exp $
 
 COMMENT=	"module for managing newsrc files"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=News/}
 
-BUILD_DEPENDS=	::math/p5-Set-IntSpan
+BUILD_DEPENDS=	:p5-Set-IntSpan->=1.07:math/p5-Set-IntSpan
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl

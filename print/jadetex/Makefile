@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/14 11:49:22 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2002/06/09 05:37:07 wilfried Exp $
 
 COMMENT=		"macros for the OpenJade DSSSL TeX backend"
 
@@ -19,8 +19,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=jadetex/}
 WRKDIST=		${WRKDIR}/jadetex
 
 LIB_DEPENDS=		png.2::graphics/png
-BUILD_DEPENDS=		::print/teTeX/base \
-			::print/teTeX/texmf
+BUILD_DEPENDS=		:teTeX_base-*:print/teTeX/base \
+			:teTeX_texmf-*:print/teTeX/texmf
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
 ALL_TARGET=		jadetex.fmt pdfjadetex.fmt

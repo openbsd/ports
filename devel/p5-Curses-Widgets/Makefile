@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/13 18:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/09 05:31:40 wilfried Exp $
 
 COMMENT=	"curses(3) based terminal widgets"
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=  ::devel/p5-Curses
+BUILD_DEPENDS=  :p5-Curses-*:devel/p5-Curses
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/06/07 21:37:11 wilfried Exp $
+# $OpenBSD: Makefile,v 1.13 2002/06/09 05:31:40 wilfried Exp $
 
 COMMENT=	"library for reading from continuously updated files"
 
@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=File/}
 
-BUILD_DEPENDS=	::devel/p5-Time-HiRes
+BUILD_DEPENDS=	:p5-Time-HiRes->=1.12:devel/p5-Time-HiRes
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

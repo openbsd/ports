@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/11/13 22:13:24 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/06/09 05:37:15 wilfried Exp $
 
 COMMENT=	"LaTeX to HTML converter"
 
@@ -16,9 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.tex.ac.uk/ctan/tex-archive/support/latex2html/sources/ \
    		ftp://ftp.funet.fi/pub/mirrors/ftp.tex.ac.uk/ctan/tex-archive/support/latex2html/sources/
 
-RUN_DEPENDS=	::graphics/netpbm \
-		::graphics/netpbm \
-		::print/ghostscript/gnu
+RUN_DEPENDS=	:netpbm-*:graphics/netpbm \
+		:ghostscript-*:print/ghostscript/gnu
 
 NO_BUILD=	Yes
 

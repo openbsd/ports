@@ -3,7 +3,7 @@
 # Date created:		June 7 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.15 2001/11/13 22:13:24 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/06/09 05:37:07 wilfried Exp $
 #
 
 COMMENT=	"view, distribute and print PDF documents"
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_FTP=	"commercial software"
 PERMIT_DISTFILES_CDROM=	"commercial software"
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::emulators/redhat/base
+RUN_DEPENDS=	:redhat_base-*:emulators/redhat/base
 
 WRKDIST=	${WRKDIR}/ILINXR.install
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/15 17:42:25 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/09 05:37:04 wilfried Exp $
 
 COMMENT=	"libpcap bindings for Python"
 
@@ -23,7 +23,7 @@ PYTHON_VER=	2.1
 SUBST_VARS=	PYTHON_VER
 MAKE_ENV=	PYTHON_VER=${PYTHON_VER}
 
-BUILD_DEPENDS+=	::devel/swig
+BUILD_DEPENDS+=	:swig-*:devel/swig
 RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 
 WRKDIST=	${WRKDIR}/pylibpcap

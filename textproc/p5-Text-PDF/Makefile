@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/06/06 00:52:18 shell Exp $
+# $OpenBSD: Makefile,v 1.13 2002/06/09 05:32:07 wilfried Exp $
 
 COMMENT=	"perl modules for creating and manipulating PDF"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Text/}
 
-BUILD_DEPENDS=	::archivers/p5-Compress-Zlib
+BUILD_DEPENDS=	:p5-Compress-Zlib-*:archivers/p5-Compress-Zlib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl

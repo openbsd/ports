@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/04/24 21:34:48 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/06/09 05:37:04 wilfried Exp $
 
 NOT_FOR_ARCHS=  ${NO_SHARED_ARCHS}
 
@@ -20,7 +20,7 @@ NEED_VERSION=   1.525
 MAINTAINER=	David Lebel <lebel@openbsd.org>
 
 BUILD_DEPENDS=  ::net/irssi:configure
-RUN_DEPENDS=  	::net/irssi
+RUN_DEPENDS=  	:irssi-*:net/irssi
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

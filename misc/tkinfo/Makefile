@@ -3,7 +3,7 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.12 2001/11/13 22:13:24 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/06/09 05:36:59 wilfried Exp $
 #
 
 COMMENT=	"Tk script to read GNU info files and display them"
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::x11/tk/8.3
+RUN_DEPENDS=	:tk-8.3.*:x11/tk/8.3
 
 NO_BUILD=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/03/26 08:13:22 jakob Exp $
+# $OpenBSD: Makefile,v 1.11 2002/06/09 05:37:10 wilfried Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/06/05 12:01:24 rh Exp $
 
 COMMENT=	evaluation version of a DOS/Windows file virus scanner
@@ -22,8 +22,8 @@ PERMIT_PACKAGE_FTP=	"Commercial software"
 PERMIT_DISTFILES_CDROM=	"Commercial software"
 PERMIT_DISTFILES_FTP=	"Commercial software"
 
-RUN_DEPENDS=	::emulators/redhat/base \
-		::security/uvscan_dat
+RUN_DEPENDS=	:redhat_base-*:emulators/redhat/base \
+		:uvscan_dat-*:security/uvscan_dat
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	Yes
