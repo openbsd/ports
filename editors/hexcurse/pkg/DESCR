@@ -1,0 +1,7 @@
+Hexcurse is a user-friendly, ncurses-based hex editor that contains
+many useful features.  Some of its features include hex and decimal
+address output, ASCII/EBCDIC output, searching, jumping to specified
+locations in the file, bolded modifications, an undo feature, and
+quick keyboard shortcuts to commands.
+
+WWW: ${HOMEPAGE}
