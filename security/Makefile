@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2001/12/13 10:29:29 reinhard Exp $
+# $OpenBSD: Makefile,v 1.96 2001/12/31 18:18:50 shell Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -63,6 +63,7 @@
      SUBDIR += p5-Crypt-SSLeay
      SUBDIR += p5-Crypt-Twofish
      SUBDIR += p5-Digest-MD5
+     SUBDIR += p5-Digest-SHA1
      SUBDIR += p5-GnuPG
      SUBDIR += p5-GnuPG-Interface
      SUBDIR += p5-GPG
