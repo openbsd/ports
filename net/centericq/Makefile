@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2003/10/14 17:02:37 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2003/12/23 21:08:28 pvalchev Exp $
 
 COMMENT=	"curses-based icq client implementation"
 
-DISTNAME=	centericq-4.9.7
+DISTNAME=	centericq-4.9.9
 CATEGORIES=	net	
 MASTER_SITES=	http://konst.org.ua/download/ \
 		http://konst.home.welcomehome.org/ \
@@ -38,5 +38,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/centericq
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/centericq
 	${INSTALL_DATA} ${WRKSRC}/FAQ ${PREFIX}/share/doc/centericq
+	${INSTALL_DATA} ${WRKSRC}/centericq.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

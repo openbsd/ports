@@ -1,16 +1,15 @@
-$OpenBSD: patch-configure,v 1.1 2003/10/14 17:02:37 pvalchev Exp $
---- configure.orig	2003-10-02 15:04:29.000000000 -0600
-+++ configure	2003-10-14 04:53:07.000000000 -0600
-@@ -2019,7 +2019,7 @@ else
+--- configure.orig	2003-11-23 06:09:30.000000000 -0700
++++ configure	2003-12-23 01:58:05.000000000 -0700
+@@ -2017,7 +2017,7 @@ else
  #include "confdefs.h"
  #include <$ac_hdr>
  EOF
 -ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
 +ac_try="$ac_cpp ${CXXFLAGS} conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:2024: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+ { (eval echo configure:2022: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
  ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
  if test -z "$ac_err"; then
-@@ -2064,10 +2064,10 @@ extern "C"
+@@ -2062,10 +2062,10 @@ extern "C"
  #endif
  /* We use char because int might match the return type of a gcc2
      builtin and then its argument prototype would still apply.  */
@@ -22,4 +21,4 @@ $OpenBSD: patch-configure,v 1.1 2003/10/14 17:02:37 pvalchev Exp $
 +libiconv()
  ; return 0; }
  EOF
- if { (eval echo configure:2074: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+ if { (eval echo configure:2072: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then

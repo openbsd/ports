@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2003/12/16 19:24:40 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2003/12/23 21:08:29 pvalchev Exp $
 bin/centericq
 bin/cicqconv
 bin/cicqsync
@@ -36,18 +36,20 @@ share/locale/sv/LC_MESSAGES/centericq.mo
 share/locale/uk/LC_MESSAGES/centericq.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/centericq.mo
 @dirrm share/locale/zh_TW.Big5/LC_MESSAGES
-@dirrm share/locale/zh_TW.Big5
 @dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/ru/LC_MESSAGES
 @dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/nl/LC_MESSAGES
 @dirrm share/locale/ms/LC_MESSAGES
-@dirrm share/locale/ms
+@dirrm share/locale/it/LC_MESSAGES
 @dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/cs/LC_MESSAGES
 @dirrm share/locale/bg/LC_MESSAGES
-@dirrm share/locale/bg
 @dirrm share/doc/centericq
 @dirrm share/centericq/contrib/spanish
-@dirrm share/centericq/contrib
-@dirrm share/centericq

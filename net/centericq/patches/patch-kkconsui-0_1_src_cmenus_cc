@@ -1,7 +1,7 @@
-$OpenBSD: patch-kkconsui-0_1_src_cmenus_cc,v 1.5 2003/05/11 10:23:55 pvalchev Exp $
---- kkconsui-0.1/src/cmenus.cc.orig	Sun Oct  6 06:15:12 2002
-+++ kkconsui-0.1/src/cmenus.cc	Sat May  3 06:37:41 2003
-@@ -250,6 +250,7 @@ int verticalmenu::open() {
+$OpenBSD: patch-kkconsui-0_1_src_cmenus_cc,v 1.6 2003/12/23 21:08:29 pvalchev Exp $
+--- kkconsui-0.1/src/cmenus.cc.orig	2003-11-05 02:10:27.000000000 -0700
++++ kkconsui-0.1/src/cmenus.cc	2003-12-23 01:58:05.000000000 -0700
+@@ -252,6 +252,7 @@ int verticalmenu::open() {
  		    return 0;
  		    break;
  	
@@ -9,7 +9,7 @@ $OpenBSD: patch-kkconsui-0_1_src_cmenus_cc,v 1.5 2003/05/11 10:23:55 pvalchev Ex
  		case KEY_UP:
  		    if(curelem > 0) {
  			shownelem(curelem, 0);
-@@ -275,6 +276,7 @@ int verticalmenu::open() {
+@@ -277,6 +278,7 @@ int verticalmenu::open() {
  		    }
  		    break;
  
