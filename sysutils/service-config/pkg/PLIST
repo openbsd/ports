@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/09 18:39:44 lebel Exp $
-bin/ipc-config
-bin/ipcx-config
-bin/rules-config
-bin/service-config
-bin/svscan-config
-bin/tcp-config
-bin/tcpx-config
