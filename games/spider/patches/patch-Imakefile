@@ -1,5 +1,6 @@
---- Imakefile.orig	Sat Sep 28 13:46:02 1991
-+++ Imakefile	Tue Sep 28 16:01:52 1999
+$OpenBSD: patch-Imakefile,v 1.1 2002/02/21 00:32:07 naddy Exp $
+--- Imakefile.orig	Sat Sep 28 19:46:02 1991
++++ Imakefile	Thu Feb 21 00:50:49 2002
 @@ -8,7 +8,7 @@
          SPLIT = split
          CAT = cat
@@ -18,7 +19,7 @@
  #endif
  
  #if OverrideDefs
-@@ -235,7 +235,7 @@
+@@ -235,7 +235,7 @@ DEFINES = $(TKDEFINES) -DHELPDIR="\"$(HE
  # endif
  #endif
  
