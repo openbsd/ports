@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.48 2004/12/26 11:34:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.49 2005/02/08 21:47:00 alek Exp $
 
 COMMENT= 	"Japanese input method"
 COMMENT-dict=	"dictionaries for Japanese Wnn"
@@ -40,19 +40,23 @@ CATEGORIES=	japanese
 PREFIX=${WNNDICBASE}
 .  elif ${SUBPACKAGE} == "-zh"
 CATEGORIES=	chinese
+WANTLIB=	c curses
 .  elif ${SUBPACKAGE} == "-zhdict"
 CATEGORIES=	chinese
 PREFIX=${WNNDICBASE}
 .  elif ${SUBPACKAGE} == "-ko"
 CATEGORIES=	korean
+WANTLIB=	c curses
 .  elif ${SUBPACKAGE} == "-kodict"
 CATEGORIES=	korean
 PREFIX=${WNNDICBASE}
 .  elif ${SUBPACKAGE} == "-xwnmo"
 CATEGORIES=	japanese chinese korean
+WANTLIB=	c Xt SM Xmu X11 Xext ICE
 .  elif ${SUBPACKAGE} == "-data"
 CATEGORIES=	japanese chinese korean
 .  else
+WANTLIB=	c curses
 CATEGORIES=	japanese
 .  endif
 .  if ${SUBPACKAGE} != "-data"
