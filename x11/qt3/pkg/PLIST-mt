@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mt,v 1.4 2002/12/31 02:09:52 espie Exp $
+@comment $OpenBSD: PLIST-mt,v 1.5 2003/01/06 06:22:53 espie Exp $
 bin/assistant-mt
 bin/designer3-mt
 bin/findtr3-mt
@@ -12,8 +12,6 @@ bin/qt20fix3-mt
 bin/qtconfig-mt
 bin/qtrename1403-mt
 bin/uic3-mt
-lib/libqt-mt.so.3.11
-lib/qt3/libqt-mt.so.3.11
 lib/qt3/bin-mt/assistant
 lib/qt3/bin-mt/designer
 lib/qt3/bin-mt/findtr
@@ -27,5 +25,20 @@ lib/qt3/bin-mt/qt20fix
 lib/qt3/bin-mt/qtconfig
 lib/qt3/bin-mt/qtrename140
 lib/qt3/bin-mt/uic
-@dirrm lib/qt3/bin-mt
+lib/libqt-mt.so.3.11
+lib/qt3/libqt-mt.so.3.11
+lib/qt3/plugins-mt/designer/libcppeditor.so
+lib/qt3/plugins-mt/designer/libdlgplugin.so
+lib/qt3/plugins-mt/designer/librcplugin.so
+lib/qt3/plugins-mt/designer/libwizards.so
+lib/qt3/plugins-mt/imageformats/libqjpeg.so
+lib/qt3/plugins-mt/imageformats/libqmng.so
 DYNLIBDIR(%D/lib)
+@exec mkdir -p %D/lib/qt3/plugins-mt/styles
+@exec mkdir -p %D/lib/qt3/plugins-mt/sqldrivers
+@dirrm lib/qt3/plugins-mt/styles
+@dirrm lib/qt3/plugins-mt/sqldrivers
+@dirrm lib/qt3/plugins-mt/imageformats
+@dirrm lib/qt3/plugins-mt/designer
+@dirrm lib/qt3/plugins-mt
+@dirrm lib/qt3/bin-mt

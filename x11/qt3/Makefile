@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/12/31 02:09:51 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2003/01/06 06:22:52 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -6,6 +6,7 @@ COMMENT-examples=	examples and tutorial for qt3
 COMMENT-html=		off-line html documentation for qt3
 COMMENT-postgresql=	PostgresSQL plugin for qt3
 COMMENT-mysql=		MySQL plugin for qt3
+COMMENT-base=		include and docs for qt3
 
 VERSION=	1.1
 DISTNAME=	qt-x11-free-3.${VERSION}
@@ -53,14 +54,15 @@ CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg \
 		-L${WRKSRC}/lib \
 		-L${LOCALBASE}/lib
 
+MULTI_PACKAGES+=-base -html
+
 .if ${FLAVOR:L:Mmt}
 FULLPKGNAME=		qt3-mt-${VERSION}
 CONFIGURE_ARGS+=-thread
-FLAVOR+=no_mysql no_postgresql
 ALL_TARGET=sub-src sub-tools
 .else
 CONFIGURE_ARGS+=-no-thread
-MULTI_PACKAGES=	-examples -html
+MULTI_PACKAGES+=	-examples
 .endif
 
 # This is needed to find plugins
@@ -71,14 +73,9 @@ CONFIGURE_ARGS+=	-prefix ${QT_LIBDIR}
 
 # For XFree 4
 #CONFIGURE_ARGS+=-xft
-CONFIGURE_ENV=	QTDIR="${WRKSRC}" KDEDIR="${LOCALBASE}"
+CONFIGURE_ENV=	QTDIR="${WRKSRC}" QT_INSTALL_PLUGINS="${QT_PLUGINSDIR}"
 
 SUBPACKAGE?=
-
-QTMODULES=	styles tools kernel widgets dialogs \
-		iconview workspace network canvas table xml opengl sql
-
-#EXTRA_SAMPLES+=box gear glpixmap overlay overlay_x11 sharedbox
 
 LIB_DEPENDS=
 BUILD_DEPENDS=::graphics/jpeg
@@ -89,6 +86,9 @@ e:=$e,no_mysql
 .endif
 .if ${FLAVOR:L:Mno_postgresql}
 e:=$e,no_postgresql
+.endif
+.if ${FLAVOR:L:Mmt}
+e:=$e,mt
 .endif
 
 .if !empty(FLAVOR:L:Mno_mysql)
@@ -118,22 +118,28 @@ CONFIGURE_ARGS+= -I${LOCALBASE}/include/postgresql \
 	    -I${LOCALBASE}/include -plugin-sql-psql
 .endif
 
-.if !defined(PACKAGING) || ${SUBPACKAGE} != "-html"
+.if defined(PACKAGING) && ${SUBPACKAGE} != "-html" && ${SUBPACKAGE} != "-base"
+RUN_DEPENDS+=::x11/qt3,-base
+.endif
+
+.if !defined(PACKAGING) || ${SUBPACKAGE} != "-html" && ${SUBPACKAGE} != "-base"
 LIB_DEPENDS+=	png.2::graphics/png \
 		mng.1::graphics/libmng
 .endif
-.if defined(PACKAGING) && ${SUBPACKAGE} != "-html" && ${SUBPACKAGE} != ""
-LIB_DEPENDS+=	qt.3::x11/qt3$e
+
+.if defined(PACKAGING) && ${SUBPACKAGE} != "-html" && ${SUBPACKAGE} != "" && ${SUBPACKAGE} != "-base"
+LIB_DEPENDS+=	qt${MT_SUFX}.3::x11/qt3$e
 .endif
 
 QT_INCDIR=	${PREFIX}/include/X11/qt3
 TRUEDIR=	${TRUEPREFIX}/lib/qt3
 QT_LIBDIR=	${PREFIX}/lib/qt3
-QT_PLUGINSDIR=	${QT_LIBDIR}/plugins
 QT_MANDIR=	${QT_LIBDIR}/man
 QT_EXAMPLES=	${QT_LIBDIR}/examples
 QT_TUTORIAL=	${QT_LIBDIR}/tutorial
 QT_DOC=		${PREFIX}/share/doc/qt3
+QT_PLUGINSDIR=	${QT_LIBDIR}/plugins${MT_SUFX}
+QT_BINDIR=	${QT_LIBDIR}/bin${MT_SUFX}
 
 # for manpages in MESSAGE
 SUBST_VARS=	VERSION QT_LIBDIR QT_DOC
@@ -148,25 +154,17 @@ PROGRAMS3=designer findtr moc qt20fix qtrename140 uic
 PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig 
 
 .if ${FLAVOR:L:Mmt}
+MT_SUFX=-mt
+LIBRARIES=qt${MT_SUFX}.so.3.11
+
 post-patch:
 	-rm -rf ${WRKSRC}/examples
 	-rm -rf ${WRKSRC}/tutorial
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/qt3
-	${INSTALL_DATA} ${WRKBUILD}/lib/libqt-mt.so.3.11 ${PREFIX}/lib/qt3
-	ln -sf qt3/libqt-mt.so.3.11 ${PREFIX}/lib
-	${INSTALL_DATA_DIR} ${QT_LIBDIR}/bin-mt
-.  for p in ${PROGRAMS3}
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/$p ${QT_LIBDIR}/bin-mt/$p
-	@ln -sf ${TRUEPREFIX}/lib/qt3/bin-mt/$p ${PREFIX}/bin/$p3-mt
-.  endfor
-.  for p in ${PROGRAMS}
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/$p ${QT_LIBDIR}/bin-mt/$p
-	@ln -sf ${TRUEPREFIX}/lib/qt3/bin-mt/$p ${PREFIX}/bin/$p-mt
-.  endfor
-
 .else
+MT_SUFX=
+LIBRARIES=qt.so.3.11 editor.so.1.0 qui.so.1.0
+
 post-configure:
 	@cd ${WRKSRC} && cp -R examples examples-src
 	@find ${WRKSRC}/examples-src -name '*.orig' |xargs rm
@@ -177,39 +175,9 @@ post-configure:
 	@find ${WRKSRC}/tutorial-src -name '.moc' |xargs rm -r
 	@find ${WRKSRC}/tutorial-src -name '.obj' |xargs rm -r
 
-LIBRARIES=qt.so.3.11 editor.so.1.0 qui.so.1.0
-
-do-install:
-	${INSTALL_DATA_DIR} ${QT_INCDIR}
-	${INSTALL_MAN_DIR} ${QT_MANDIR}/man1
-	${INSTALL_MAN_DIR} ${QT_MANDIR}/man3
-	${INSTALL_DATA_DIR} ${QT_LIBDIR}/bin ${QT_PLUGINSDIR}
+pre-install:
 	${INSTALL_DATA_DIR} ${QT_EXAMPLES}
 	${INSTALL_DATA_DIR} ${QT_TUTORIAL}
-	${INSTALL_DATA_DIR} ${QT_DOC}/html
-	# libraries
-.  for l in ${LIBRARIES}
-	@if [ -f ${WRKBUILD}/lib/lib${l:C/\.so\..*/.a/} ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/lib${l:C/\.so\..*/.a/} ${PREFIX}/lib/qt3; \
-	fi
-	@if [ -f ${WRKBUILD}/lib/lib$l ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/lib$l ${PREFIX}/lib/qt3; \
-	 ln -sf qt3/lib$l ${PREFIX}/lib; \
-	fi
-.  endfor
-	# programs
-.  for p in ${PROGRAMS3}
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/$p ${QT_LIBDIR}/bin
-	@ln -sf ${TRUEPREFIX}/lib/qt3/bin/$p ${PREFIX}/bin/$p3
-.  endfor
-.  for p in ${PROGRAMS}
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/$p ${PREFIX}/bin
-.  endfor
-	# includes
-	@rm -f ${WRKSRC}/include/qt_{mac,windows}.h
-	${INSTALL_DATA_DIR} ${QT_INCDIR}/private
-	${INSTALL_DATA} ${WRKSRC}/include/*.h ${QT_INCDIR}
-	${INSTALL_DATA} ${WRKSRC}/include/private/*.h ${QT_INCDIR}/private
 	# examples
 	cp -R ${WRKSRC}/examples-src/* ${QT_EXAMPLES}
 	@cd ${WRKSRC}/examples; for i in *; do \
@@ -225,6 +193,19 @@ do-install:
 	if [ -x $$i/$$i ]; then \
 	    ${INSTALL_PROGRAM} $$i/$$i ${QT_TUTORIAL}/$$i; \
 	fi; done
+.endif
+
+do-install:
+	${INSTALL_DATA_DIR} ${QT_INCDIR}
+	${INSTALL_MAN_DIR} ${QT_MANDIR}/man1
+	${INSTALL_MAN_DIR} ${QT_MANDIR}/man3
+	${INSTALL_DATA_DIR} ${QT_DOC}/html
+	# includes
+	@rm -f ${WRKSRC}/include/qt_{mac,windows}.h
+	${INSTALL_DATA_DIR} ${QT_INCDIR}/private
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${QT_INCDIR}
+	${INSTALL_DATA} ${WRKSRC}/include/private/*.h ${QT_INCDIR}/private
+	${INSTALL_DATA_DIR} ${QT_BINDIR} ${QT_PLUGINSDIR}
 	# documentation
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/lrelease.1 ${QT_MANDIR}/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/lupdate.1 ${QT_MANDIR}/man1
@@ -237,6 +218,25 @@ do-install:
 	done
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${QT_DOC}
 	cp -R ${WRKSRC}/doc/html/* ${QT_DOC}/html
+	cp -R ${WRKSRC}/mkspecs ${QT_LIBDIR}/mkspecs
+	# libraries
+.for l in ${LIBRARIES}
+	@if [ -f ${WRKBUILD}/lib/lib${l:C/\.so\..*/.a/} ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/lib${l:C/\.so\..*/.a/} ${PREFIX}/lib/qt3; \
+	fi
+	@if [ -f ${WRKBUILD}/lib/lib$l ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/lib$l ${PREFIX}/lib/qt3; \
+	 ln -sf qt3/lib$l ${PREFIX}/lib; \
+	fi
+.endfor
+.for p in ${PROGRAMS3}
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/$p ${QT_BINDIR}/$p
+	@ln -sf ${TRUEPREFIX}/lib/qt3/bin${MT_SUFX}/$p ${PREFIX}/bin/$p3${MT_SUFX}
+.endfor
+.for p in ${PROGRAMS}
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/$p ${QT_BINDIR}/$p
+	@ln -sf ${TRUEPREFIX}/lib/qt3/bin${MT_SUFX}/$p ${PREFIX}/bin/$p${MT_SUFX}
+.endfor
 	# plugins
 	${INSTALL_DATA_DIR} ${QT_PLUGINSDIR}/imageformats \
 		${QT_PLUGINSDIR}/sqldrivers ${QT_PLUGINSDIR}/styles \
@@ -245,14 +245,14 @@ do-install:
 	    ${QT_PLUGINSDIR}/imageformats
 	${INSTALL_DATA} ${WRKBUILD}/plugins/imageformats/libqmng.so \
 	    ${QT_PLUGINSDIR}/imageformats
-.  if empty(FLAVOR:L:Mno_postgresql)
+.if empty(FLAVOR:L:Mno_postgresql)
 	${INSTALL_DATA} ${WRKBUILD}/plugins/sqldrivers/libqsqlpsql.so \
 	    ${QT_PLUGINSDIR}/sqldrivers
-.  endif
-.  if empty(FLAVOR:L:Mno_mysql)
+.endif
+.if empty(FLAVOR:L:Mno_mysql)
 	${INSTALL_DATA} ${WRKBUILD}/plugins/sqldrivers/libqsqlmysql.so \
 	    ${QT_PLUGINSDIR}/sqldrivers
-.  endif
+.endif
 	${INSTALL_DATA} ${WRKBUILD}/plugins/designer/libwizards.so \
 	    ${QT_PLUGINSDIR}/designer
 	${INSTALL_DATA} ${WRKBUILD}/plugins/designer/libcppeditor.so \
@@ -261,13 +261,13 @@ do-install:
 	    ${QT_PLUGINSDIR}/designer
 	${INSTALL_DATA} ${WRKBUILD}/plugins/designer/librcplugin.so \
 	    ${QT_PLUGINSDIR}/designer
-	cp -R ${WRKSRC}/mkspecs ${QT_LIBDIR}/mkspecs
-.endif
+
 
 PKGNAME=		qt3-${VERSION}
-PKGNAME-examples=	qt3-examples-${VERSION}
-PKGNAME-html=	qt3-html-${VERSION}
-PKGNAME-mysql=	qt3-mysql-${VERSION}
+PKGNAME-mysql=		qt3-mysql-${VERSION}
 PKGNAME-postgresql=	qt3-postgresql-${VERSION}
+PKGNAME-examples=	qt3-examples-${VERSION}
+FULLPKGNAME-base=	qt3-base-${VERSION}
+FULLPKGNAME-html=	qt3-html-${VERSION}
 
 .include <bsd.port.mk>
