@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.659 2004/11/15 16:31:28 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.660 2004/11/16 02:08:59 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -623,7 +623,6 @@ _SYSTRACE_SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
 
 # Create the generic variable substitution list, from subst vars
 SUBST_VARS+=MACHINE_ARCH ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT MAINTAINER
-SUBST_VARS+=FULLPKGPATH PERMIT_PACKAGE_CDROM PERMIT_PACKAGE_FTP
 _tmpvars=
 _SED_SUBST=sed
 
@@ -638,6 +637,9 @@ PKG_ARGS+=-D${_v}='${${_v}}'
 _tmpvars += ${_v}='${${_v}}'
 .endfor
 PKG_ARGS+=-DFLAVORS='${FLAVOR_EXT}'
+PKG_ARGS+=-DFULLPKGPATH=${FULLPKGPATH}
+PKG_ARGS+=-DPERMIT_PACKAGE_CDROM=${PERMIT_PACKAGE_CDROM:Q}
+PKG_ARGS+=-DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE_FTP:Q}
 _tmpvars += FLAVORS='${FLAVOR_EXT}'
 _SED_SUBST+=-e 's,$${FLAVORS},${FLAVOR_EXT},g' -e 's,$$\\,$$,g'
 
