@@ -1,0 +1,51 @@
+--- pftop.c.orig	Tue Sep 10 20:58:15 2002
++++ pftop.c	Mon Nov 25 16:03:29 2002
+@@ -1439,8 +1439,8 @@
+ 	    PF_AZERO(&src->addr, AF_INET6) &&
+ 	    PF_AZERO(&dst->addr, AF_INET6) &&
+ #endif
+-	    PF_AZERO(&src->mask, AF_INET6) &&
+-	    PF_AZERO(&dst->mask, AF_INET6) &&
++	    PF_AZERO(&src->addr.mask, AF_INET6) &&
++	    PF_AZERO(&dst->addr.mask, AF_INET6) &&
+ 	    !src->port_op && !dst->port_op)
+ 		tbprintf("all ");
+ 	else {
+@@ -1456,15 +1456,15 @@
+ #else
+ 		if (PF_AZERO(&src->addr, AF_INET6) &&
+ #endif
+-		    PF_AZERO(&src->mask, AF_INET6))
++		    PF_AZERO(&src->addr.mask, AF_INET6))
+ 			tbprintf("any ");
+ 		else {
+ 			if (src->not)
+ 				tbprintf("! ");
+ #if OS_LEVEL > 31
+-			tb_print_addrw(&src->addr, &src->mask, af);
++			tb_print_addrw(&src->addr, &src->addr.mask, af);
+ #else
+-			tb_print_addr(&src->addr, &src->mask, af);
++			tb_print_addr(&src->addr, &src->addr.mask, af);
+ #endif
+ 			tbprintf(" ");
+ 		}
+@@ -1485,15 +1485,15 @@
+ #else
+ 		if (PF_AZERO(&dst->addr, AF_INET6) &&
+ #endif
+-		    PF_AZERO(&dst->mask, AF_INET6))
++		    PF_AZERO(&dst->addr.mask, AF_INET6))
+ 			tbprintf("any ");
+ 		else {
+ 			if (dst->not)
+ 				tbprintf("! ");
+ #if OS_LEVEL > 31
+-			tb_print_addrw(&dst->addr, &dst->mask, af);
++			tb_print_addrw(&dst->addr, &dst->addr.mask, af);
+ #else
+-			tb_print_addr(&dst->addr, &dst->mask, af);
++			tb_print_addr(&dst->addr, &dst->addr.mask, af);
+ #endif
+ 			tbprintf(" ");
+ 		}
