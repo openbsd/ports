@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/28 16:31:47 lebel Exp $
-bin/omega
+@comment $OpenBSD: PLIST,v 1.2 2001/07/28 17:05:01 lebel Exp $
+bin/Omega
 share/omega/abyss.dat
 share/omega/abyss.txt
 share/omega/arena.dat
