@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.42 2004/04/18 19:55:47 jolan Exp $
+# $OpenBSD: Makefile,v 1.43 2004/11/17 17:41:26 xsa Exp $
 
 COMMENT=	"sophisticated scripter based on Tcl/Tk"
 
 DISTNAME=	expect-5.39.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	lang
 MASTER_SITES=	http://expect.nist.gov/old/
 
 HOMEPAGE=	http://expect.nist.gov/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # PD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS+=	tcl84::lang/tcl/8.4
+LIB_DEPENDS+=	tcl84:tcl-8.4.*:lang/tcl/8.4
 
 FLAVORS=	no_tk
 FLAVOR?=
@@ -28,7 +27,7 @@ CONFIGURE_ARGS+=--with-tclconfig="${LOCALBASE}/lib/tcl8.4"\
 		--with-tclinclude="${LOCALBASE}/include/tcl8.4"
 
 .if !${FLAVOR:L:Mno_tk}
-LIB_DEPENDS+=	tk84::x11/tk/8.4
+LIB_DEPENDS+=	tk84:tk-8.4.*:x11/tk/8.4
 CONFIGURE_ARGS+=--with-tkconfig="${LOCALBASE}/lib/tk8.4" \
 		--with-tkinclude="${LOCALBASE}/include/tk8.4"
 .endif
