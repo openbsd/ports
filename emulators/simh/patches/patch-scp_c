@@ -1,7 +1,7 @@
-$OpenBSD: patch-scp_c,v 1.4 2002/03/07 05:40:45 form Exp $
---- scp.c.orig	Thu Mar  7 11:22:34 2002
-+++ scp.c	Thu Mar  7 11:30:28 2002
-@@ -417,7 +417,10 @@ if ((argc > 1) && argv[1]) {				/* cmd f
+$OpenBSD: patch-scp_c,v 1.5 2002/06/10 02:37:10 form Exp $
+--- scp.c.orig	Sat May 18 13:26:12 2002
++++ scp.c	Mon Jun 10 09:25:40 2002
+@@ -423,7 +423,10 @@ if ((argc > 1) && argv[1]) {				/* cmd f
  do {	printf ("sim> ");				/* prompt */
  	cptr = read_line (cbuf, CBUFSIZE, stdin);	/* read command line */
  	stat = SCPE_UNK;
@@ -13,7 +13,7 @@ $OpenBSD: patch-scp_c,v 1.4 2002/03/07 05:40:45 form Exp $
  	if (*cptr == 0) continue;			/* ignore blank */
  	if (sim_log) fprintf (sim_log, "sim> %s\n", cbuf); /* log cmd */
  	cptr = get_glyph (cptr, gbuf, 0);		/* get command glyph */
-@@ -1439,7 +1442,7 @@ for (i = 1; (dptr = sim_devices[i]) != N
+@@ -1478,7 +1481,7 @@ for (i = 1; (dptr = sim_devices[i]) != N
  		    (UNIT_ATT + UNIT_SEQ))
  			fseek (uptr -> fileref, uptr -> pos, SEEK_SET);  }  }
  stop_cpu = 0;
