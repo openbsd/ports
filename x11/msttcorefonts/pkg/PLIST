@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/06/17 21:05:03 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/02/22 16:05:28 marcm Exp $
 lib/X11/fonts/mscorefonts/andalemo.ttf
 lib/X11/fonts/mscorefonts/arial.ttf
 lib/X11/fonts/mscorefonts/arialbd.ttf
@@ -34,4 +34,5 @@ lib/X11/fonts/mscorefonts/verdanaz.ttf
 lib/X11/fonts/mscorefonts/webdings.ttf
 @unexec /bin/rm %D/lib/X11/fonts/mscorefonts/fonts.cache-1 2>/dev/null || /usr/bin/true
 @dirrm lib/X11/fonts/mscorefonts
+@dirrm lib/X11/fonts
 @exec HOME=/tmp fc-cache -f %D/lib/X11/fonts/mscorefonts
