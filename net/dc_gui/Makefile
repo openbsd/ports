@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/02/01 02:40:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/03 19:29:08 nino Exp $
 
 COMMENT=		"GUI for dctc (Direct Connect Text Clone)"
 
 DISTNAME=		dc_gui-0.42
 CATEGORIES=		net x11
-NEED_VERSION=   	1.504
 HOMEPAGE=		http://ac2i.tzo.com/dctc/
-
-MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
