@@ -1,7 +1,7 @@
-$OpenBSD: operops-patch-silcd_command_c,v 1.1 2003/08/19 03:52:27 jolan Exp $
---- silcd/command.c.orig	2003-03-17 11:01:53.000000000 -0600
-+++ silcd/command.c	2003-08-18 17:45:58.000000000 -0500
-@@ -3154,6 +3154,8 @@ SILC_SERVER_CMD_FUNC(cumode)
+$OpenBSD: operops-patch-silcd_command_c,v 1.2 2003/10/29 04:12:47 brad Exp $
+--- silcd/command.c.orig	2003-10-08 14:03:56.000000000 -0400
++++ silcd/command.c	2003-10-27 12:27:12.000000000 -0500
+@@ -3326,6 +3326,8 @@ SILC_SERVER_CMD_FUNC(cumode)
    }
  
    if (target_client != client &&
@@ -9,26 +9,26 @@ $OpenBSD: operops-patch-silcd_command_c,v 1.1 2003/08/19 03:52:27 jolan Exp $
 +      !(client->mode & SILC_UMODE_ROUTER_OPERATOR) &&
        !(sender_mask & SILC_CHANNEL_UMODE_CHANFO) &&
        !(sender_mask & SILC_CHANNEL_UMODE_CHANOP)) {
-     silc_server_command_send_status_reply(cmd, SILC_COMMAND_CUMODE,
-@@ -3261,7 +3263,9 @@ SILC_SERVER_CMD_FUNC(cumode)
+     silc_server_command_send_status_data(cmd, SILC_COMMAND_CUMODE,
+@@ -3437,7 +3439,9 @@ SILC_SERVER_CMD_FUNC(cumode)
      /* Promote to operator */
      if (!(chl->mode & SILC_CHANNEL_UMODE_CHANOP)) {
-       if (!(sender_mask & SILC_CHANNEL_UMODE_CHANOP) && 
+       if (!(sender_mask & SILC_CHANNEL_UMODE_CHANOP) &&
 -          !(sender_mask & SILC_CHANNEL_UMODE_CHANFO)) {
 +          !(sender_mask & SILC_CHANNEL_UMODE_CHANFO) &&
 +          !(client->mode & SILC_UMODE_SERVER_OPERATOR) &&
-+          !(client->mode & SILC_UMODE_ROUTER_OPERATOR)) { 
-         silc_server_command_send_status_reply(cmd, SILC_COMMAND_CUMODE,
-                                               SILC_STATUS_ERR_NO_CHANNEL_PRIV,
-                                               0);
-@@ -3274,7 +3278,9 @@ SILC_SERVER_CMD_FUNC(cumode)
++          !(client->mode & SILC_UMODE_ROUTER_OPERATOR)) {
+         silc_server_command_send_status_data(cmd, SILC_COMMAND_CUMODE,
+ 					     SILC_STATUS_ERR_NO_CHANNEL_PRIV,
+ 					     0, 2, tmp_ch_id, tmp_ch_len);
+@@ -3450,7 +3454,9 @@ SILC_SERVER_CMD_FUNC(cumode)
    } else {
      if (chl->mode & SILC_CHANNEL_UMODE_CHANOP) {
        if (!(sender_mask & SILC_CHANNEL_UMODE_CHANOP) &&
 -          !(sender_mask & SILC_CHANNEL_UMODE_CHANFO)) {
 +          !(sender_mask & SILC_CHANNEL_UMODE_CHANFO) &&
 +          !(client->mode & SILC_UMODE_SERVER_OPERATOR) &&
-+          !(client->mode & SILC_UMODE_ROUTER_OPERATOR)) { 
-         silc_server_command_send_status_reply(cmd, SILC_COMMAND_CUMODE,   
-                                               SILC_STATUS_ERR_NO_CHANNEL_PRIV,
-                                               0);
++          !(client->mode & SILC_UMODE_ROUTER_OPERATOR)) {
+         silc_server_command_send_status_data(cmd, SILC_COMMAND_CUMODE,
+ 					     SILC_STATUS_ERR_NO_CHANNEL_PRIV,
+ 					     0, 2, tmp_ch_id, tmp_ch_len);

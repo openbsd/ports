@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/09/24 05:50:39 jolan Exp $
+# $OpenBSD: Makefile,v 1.10 2003/10/29 04:12:47 brad Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN= "config file parser bug on ${MACHINE_ARCH}"
@@ -6,12 +6,11 @@ BROKEN= "config file parser bug on ${MACHINE_ARCH}"
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) server"
 
-DISTNAME=	silc-server-0.9.13.1
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	silc-server-0.9.14
 CATEGORIES=	net
 HOMEPAGE=	http://www.silcnet.org/
 
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,19 +29,12 @@ MASTER_SITES=	http://ftp.silcnet.org/server/sources/ \
 
 MODULES=	iconv
 
-# XXX workaround gcc bugs on sparc64
-.if ${MACHINE_ARCH} == "sparc64" 
-PATCH_LIST+=	gcc-*
-.endif
-
 FLAVORS=	operops
 FLAVOR?=
 
 .if ${FLAVOR:L:Moperops}
-PATCH_LIST+=	operops-*
+PATCH_LIST+=	operops-* patch-*
 .endif
-
-PATCH_LIST+=	patch-*
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.54
@@ -63,7 +55,9 @@ CONFIGURE_ARGS+= --disable-asm
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/silcd
-	mv -f ${PREFIX}/share/doc/silcd/example_silcd.conf \
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/silcd
+	${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${PREFIX}/share/doc/silcd
+	${INSTALL_DATA} ${WRKSRC}/doc/example_silcd.conf \
 		${PREFIX}/share/examples/silcd/silcd.conf
 	${INSTALL_DATA} ${WRKSRC}/doc/examples/cell_*.conf \
 		${PREFIX}/share/examples/silcd

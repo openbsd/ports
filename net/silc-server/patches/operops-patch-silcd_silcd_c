@@ -1,6 +1,6 @@
-$OpenBSD: operops-patch-silcd_silcd_c,v 1.1 2003/08/19 03:52:27 jolan Exp $
---- silcd/silcd.c.orig	2003-08-18 17:47:02.000000000 -0500
-+++ silcd/silcd.c	2003-08-18 17:47:29.000000000 -0500
+$OpenBSD: operops-patch-silcd_silcd_c,v 1.2 2003/10/29 04:12:47 brad Exp $
+--- silcd/silcd.c.orig	2003-07-23 05:18:14.000000000 -0400
++++ silcd/silcd.c	2003-10-27 12:28:49.000000000 -0500
 @@ -255,6 +255,14 @@ SILC_TASK_CALLBACK(stop_server)
    silc_schedule_stop(silcd->schedule);
  }
@@ -16,7 +16,7 @@ $OpenBSD: operops-patch-silcd_silcd_c,v 1.1 2003/08/19 03:52:27 jolan Exp $
  /* Dump server statistics into a file into /tmp directory */
  
  SILC_TASK_CALLBACK(dump_stats)
-@@ -728,10 +736,12 @@ int main(int argc, char **argv)
+@@ -738,10 +746,12 @@ int main(int argc, char **argv)
    sigaction(SIGTERM, &sa, NULL);
    sigaction(SIGINT, &sa, NULL);
    sigaction(SIGUSR1, &sa, NULL);
