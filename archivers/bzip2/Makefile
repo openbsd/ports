@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2000/09/16 11:44:22 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2000/09/24 01:23:42 brad Exp $
 
 DISTNAME=	bzip2-1.0.1
 CATEGORIES=	archivers
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://sourceware.cygnus.com/pub/bzip2/v100/ \
 
 HOMEPAGE=	http://sourceware.cygnus.com/bzip2/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

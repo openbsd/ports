@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/09/16 20:01:30 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2000/09/24 01:23:43 brad Exp $
 
 DISTNAME=	ORBit-0.5.3
 CATEGORIES=	devel
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.labs.redhat.com/orbit/
 LIB_DEPENDS=	intl.1::devel/gettext \
 		glib.1.2::devel/glib
 
-MAINTAINER=	rohee@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

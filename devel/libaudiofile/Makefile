@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/09/21 04:33:04 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/09/24 01:23:44 brad Exp $
 
 DISTNAME=	audiofile-0.1.10
 PKGNAME=	libaudiofile-0.1.10
@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR= stable/sources/audiofile
 
 HOMEPAGE=	http://www.68k.org./~michael/audiofile/
 
-MAINTAINER=	rohee@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
