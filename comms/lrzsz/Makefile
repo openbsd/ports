@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/01 06:20:03 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/05/24 01:22:43 brad Exp $
 
-DISTNAME=	lrzsz-0.12.19
+DISTNAME=	lrzsz-0.12.20
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.ihg.uni-duisburg.de/uwe/ \
-		ftp://ftp.ohse.de/comp/unix/comm/ \
-		ftp://ftp.uven.ru/pub/unix/comms/
+MASTER_SITES=	ftp://ftp.ohse.de/comp/unix/comm/lrzsz/ \
 
 MAINTAINER=	ports@openbsd.org
 
+SEPARATE_BUILD=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+CONFIGURE_ARGS=	--disable-nls
+
 ALL_TARGET=	all # vcheck
 
 .include <bsd.port.mk>
