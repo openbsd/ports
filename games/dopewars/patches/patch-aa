@@ -1,20 +1,18 @@
---- Makefile.orig	Mon Apr 26 21:14:56 1999
-+++ Makefile	Fri Apr 30 17:02:21 1999
-@@ -1,10 +1,10 @@
+--- Makefile.orig	Mon Sep 20 14:21:39 1999
++++ Makefile	Mon Sep 20 14:23:32 1999
+@@ -1,8 +1,8 @@
 -CFLAGS = -Wall
 -CC = gcc
-+#CFLAGS = -Wall
++CFLAGS += -Wall
 +#CC = gcc
  HEADERS = message.h dopewars.h serverside.h clientside.h AIPlayer.h
  OBJS = message.o dopewars.o serverside.o clientside.o AIPlayer.o
+-LIBS = -lncurses
++LIBS = -lcurses
  
  dopewars : $(OBJS)
--	$(CC) $(CFLAGS) -o dopewars $(OBJS) -lncurses
-+	$(CC) $(CFLAGS) -o dopewars $(OBJS) -lcurses
- 
- message.o : message.c $(HEADERS)
- 	$(CC) $(CFLAGS) -c message.c
-@@ -22,10 +22,10 @@
+ 	$(CC) $(CFLAGS) -o dopewars $(OBJS) $(LIBS)
+@@ -23,10 +23,10 @@
  	$(CC) $(CFLAGS) -c AIPlayer.c
  
  install :
@@ -22,7 +20,7 @@
 -	touch /var/lib/games/dopewars.sco
 -	chown root.games /var/lib/games/dopewars.sco
 -	chmod 0660 /var/lib/games/dopewars.sco
-+	install -o root -g games -m 2755 dopewars /usr/local/bin
++	install -o root -g games -m 2755 dopewars $(PREFIX)/bin/dopewars
 +	touch /var/games/dopewars.sco
 +	chown root.games /var/games/dopewars.sco
 +	chmod 664 /var/games/dopewars.sco

@@ -1,11 +1,11 @@
---- dopewars.h.orig	Fri Apr 30 17:04:55 1999
-+++ dopewars.h	Fri Apr 30 17:05:04 1999
+--- dopewars.h.orig	Mon Sep 20 14:25:34 1999
++++ dopewars.h	Mon Sep 20 14:25:46 1999
 @@ -23,7 +23,7 @@
  #define __DOPEWARS_H__
  
  #include <stdio.h>
 -#include <ncurses.h>
 +#include <curses.h>
+ #include <time.h>
  
- extern int ClientSock,ListenSock;
- extern char Network,Client,Server,AIPlayer;
+ typedef long price_t;
