@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2005/01/04 08:32:00 kevlo Exp $
+# $OpenBSD: Makefile,v 1.169 2005/01/08 18:10:25 xsa Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -171,6 +171,7 @@
      SUBDIR += zope-btreefolder2
      SUBDIR += zope-cmf
      SUBDIR += zope-cmfquickinstaller
+     SUBDIR += zope-coreblog
      SUBDIR += zope-externaleditor
      SUBDIR += zope-formulator
      SUBDIR += zope-fortune
