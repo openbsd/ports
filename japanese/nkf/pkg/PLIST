@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:56:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/02/28 01:22:25 espie Exp $
 bin/nkf
 ${P5ARCH}/
 ${P5ARCH}/NKF.pm
@@ -6,6 +6,5 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/NKF/
 ${P5ARCH}/auto/NKF/NKF.bs
 ${P5ARCH}/auto/NKF/NKF.so
-@man man/ja_JP.EUC/cat1/nkf.0
 @man man/man1/nkf.1
 @man man/man3p/NKF.3p
