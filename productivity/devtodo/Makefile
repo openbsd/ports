@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/23 04:57:47 margarida Exp $
+# $OpenBSD: Makefile,v 1.4 2002/12/29 15:12:14 margarida Exp $
 
 COMMENT=		"a reminder/task program aimed at developers"
 
-VERSION=		0.1.16
+VERSION=		0.1.17
 DISTNAME=		devtodo-${VERSION}
 CATEGORIES=		productivity devel
 
 HOMEPAGE=		http://devtodo.sourceforge.net/
 
-MASTER_SITES=		http://devtodo.sourceforge.net/?0.1.16/
+MASTER_SITES=		http://devtodo.sourceforge.net/?${VERSION}/
 
 MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
