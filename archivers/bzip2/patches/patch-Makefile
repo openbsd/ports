@@ -1,8 +1,10 @@
 --- Makefile.orig	Fri Jun 23 16:34:47 2000
-+++ Makefile	Sat Jun 24 23:29:25 2000
-@@ -4,94 +4,83 @@
++++ Makefile	Mon Aug  7 06:25:37 2000
+@@ -3,95 +3,85 @@
+ CC=gcc
  BIGFILES=-D_FILE_OFFSET_BITS=64
  CFLAGS=-Wall -Winline -O2 -fomit-frame-pointer -fno-strength-reduce $(BIGFILES)
++LIBTOOL=libtool --quiet
  
 -OBJS= blocksort.o  \
 -      huffman.o    \
@@ -25,12 +27,12 @@
 -bzip2: libbz2.a bzip2.o
 -	$(CC) $(CFLAGS) -o bzip2 bzip2.o -L. -lbz2
 +bzip2: libbz2.a bzip2.lo
-+	libtool --mode=link $(CC) $(CFLAGS) -o bzip2 bzip2.lo libbz2.la
++	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o bzip2 bzip2.lo libbz2.la
  
 -bzip2recover: bzip2recover.o
 -	$(CC) $(CFLAGS) -o bzip2recover bzip2recover.o
 +bzip2recover: bzip2recover.lo
-+	libtool --mode=link $(CC) $(CFLAGS) -o bzip2recover bzip2recover.lo
++	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o bzip2recover bzip2recover.lo
  
  libbz2.a: $(OBJS)
 -	rm -f libbz2.a
@@ -40,7 +42,7 @@
 -		echo ranlib libbz2.a ; \
 -		ranlib libbz2.a ; \
 -	fi
-+	libtool --mode=link $(CC) $(CFLAGS) -o libbz2.la $(OBJS) \
++	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libbz2.la $(OBJS) \
 +	 -version-info 10:1:0 -rpath $(PREFIX)/lib
  
  test: bzip2
@@ -98,16 +100,16 @@
 +	if ( test ! -d $(DESTDIR)$(PREFIX)/man ) ; then $(BSD_INSTALL_MAN_DIR) $(DESTDIR)$(PREFIX)/man ; fi
 +	if ( test ! -d $(DESTDIR)$(PREFIX)/man/man1 ) ; then $(BSD_INSTALL_MAN_DIR) $(DESTDIR)$(PREFIX)/man/man1 ; fi
 +	if ( test ! -d $(DESTDIR)$(PREFIX)/include ) ; then $(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(PREFIX)/include ; fi
-+	libtool --mode=install $(BSD_INSTALL_PROGRAM) bzip2 $(DESTDIR)$(PREFIX)/bin
++	$(LIBTOOL) --mode=install $(BSD_INSTALL_PROGRAM) bzip2 $(DESTDIR)$(PREFIX)/bin
 +	@cd $(DESTDIR)$(PREFIX)/bin; ln -fs bzip2 bunzip2; \
 +			ln -fs bzip2 bzcat
-+	libtool --mode=install $(BSD_INSTALL_PROGRAM) bzip2recover $(DESTDIR)$(PREFIX)/bin
++	$(LIBTOOL) --mode=install $(BSD_INSTALL_PROGRAM) bzip2recover $(DESTDIR)$(PREFIX)/bin
 +	$(BSD_INSTALL_MAN) bzip2.1 $(DESTDIR)$(PREFIX)/man/man1
 +	$(BSD_INSTALL_MAN) bzip2.1 $(DESTDIR)$(PREFIX)/man/man1/bunzip2.1
 +	$(BSD_INSTALL_MAN) bzip2.1 $(DESTDIR)$(PREFIX)/man/man1/bzcat.1
 +	$(BSD_INSTALL_MAN) bzip2.1 $(DESTDIR)$(PREFIX)/man/man1/bzip2recover.1
 +	$(BSD_INSTALL_DATA) bzlib.h $(DESTDIR)$(PREFIX)/include
-+	libtool --mode=install $(BSD_INSTALL_DATA) libbz2.la $(DESTDIR)$(PREFIX)/lib
++	$(LIBTOOL) --mode=install $(BSD_INSTALL_DATA) libbz2.la $(DESTDIR)$(PREFIX)/lib
  
  clean: 
 -	rm -f *.o libbz2.a bzip2 bzip2recover \
@@ -135,23 +137,23 @@
 -	$(CC) $(CFLAGS) -c bzip2.c
 -bzip2recover.o: bzip2recover.c
 -	$(CC) $(CFLAGS) -c bzip2recover.c
-+	libtool --mode=compile $(CC) $(CFLAGS) -c blocksort.c
++	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c blocksort.c
 +huffman.lo: huffman.c
-+	libtool --mode=compile $(CC) $(CFLAGS) -c huffman.c
++	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c huffman.c
 +crctable.lo: crctable.c
-+	libtool --mode=compile $(CC) $(CFLAGS) -c crctable.c
++	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c crctable.c
 +randtable.lo: randtable.c
-+	libtool --mode=compile $(CC) $(CFLAGS) -c randtable.c
++	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c randtable.c
 +compress.lo: compress.c
-+	libtool --mode=compile $(CC) $(CFLAGS) -c compress.c
++	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c compress.c
 +decompress.lo: decompress.c
-+	libtool --mode=compile $(CC) $(CFLAGS) -c decompress.c
++	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c decompress.c
 +bzlib.lo: bzlib.c
-+	libtool --mode=compile $(CC) $(CFLAGS) -c bzlib.c
++	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c bzlib.c
 +bzip2.lo: bzip2.c
-+	libtool --mode=compile $(CC) $(CFLAGS) -c bzip2.c
++	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c bzip2.c
 +bzip2recover.lo: bzip2recover.c
-+	libtool --mode=compile $(CC) $(CFLAGS) -c bzip2recover.c
++	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c bzip2recover.c
  
  DISTNAME=bzip2-1.0.1
  tarfile:
