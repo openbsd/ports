@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_resume_c,v 1.1 2001/03/05 04:49:12 obecian Exp $
+--- src/resume.c.orig	Tue Feb 13 13:03:14 2001
++++ src/resume.c	Sun Mar  4 19:01:41 2001
+@@ -391,7 +391,7 @@ void resume_list_update(resume_t* resume
+   if (stat(resume->filename, &st) < 0) {
+     strcpy(text, _("not existent"));
+   } else {
+-    sprintf(text, "%lu", st.st_size);
++    sprintf(text, "%Ld", st.st_size);
+   }
+   gtk_ctree_node_set_text(ctree, node, 2, text);
+ 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2000/12/23 13:04:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/03/05 04:49:12 obecian Exp $
 
-DISTNAME=	lopster-0.9.7.2
+DISTNAME=	lopster-0.9.8
 CATEGORIES=	audio
-NEED_VERSION=	1.346
-MASTER_SITES=	http://lopster.sourceforge.net/ \
+NEED_VERSION=	1.358
+MASTER_SITES=	http://lopster.sourceforge.net/download/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= lopster
 

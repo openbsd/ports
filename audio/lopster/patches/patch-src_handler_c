@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_handler_c,v 1.1 2001/03/05 04:49:12 obecian Exp $
+--- src/handler.c.orig	Tue Feb 13 08:14:20 2001
++++ src/handler.c	Sun Mar  4 17:58:36 2001
+@@ -1,5 +1,3 @@
+-#include <sys/socket.h>
+-#include <netinet/in.h>
+ #include <stdlib.h>
+ #include <ctype.h>
+ #include <stdio.h>
+@@ -7,6 +5,8 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <time.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+ 
+ #include <gtk/gtk.h>
+ 
+@@ -1029,7 +1029,7 @@ HANDLER(cmd_banlist_entry) {
+   pos[0] = 0;
+   strcpy(tstr[3], data);
+   data = pos + 2;
+-  sscanf(data, "%ld\n", &l1);
++  sscanf(data, "%d\n", &l1);
+   sprintf(tstr[2], "%s", ctime(&l1));
+   gtk_clist_append(GTK_CLIST(temp), list);
+ }
+@@ -1884,7 +1884,7 @@ HANDLER(cmd_usage_stats) {
+   server_message(_("Channels"), pos);
+   
+   pos = arg(NULL, 0);
+-  sscanf(pos, "%ld", &stime);
++  sscanf(pos, "%d", &stime);
+   strcpy(str, ctime(&stime));
+   str[strlen(str)-1] = 0;
+   server_message(_("Boot Time"), str);
