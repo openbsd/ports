@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/10/08 16:36:57 danh Exp $
+# $OpenBSD: Makefile,v 1.18 2001/11/21 13:57:38 danh Exp $
 
 COMMENT=	"system to store and display time-series data"
 
@@ -6,11 +6,11 @@ VERSION=	1.0.33
 DISTNAME=	rrdtool-${VERSION}
 CATEGORIES=     net
 NEED_VERSION=	1.468
-MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/rrdtool/pub/ \
+MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/ \
 		ftp://ftp.sunet.se/pub/network/monitoring/rrdtool/ \
 		http://ftp.sunet.se/pub/network/monitoring/rrdtool/
 
-HOMEPAGE=	http://ee-staff.ethz.ch/~oetiker/webtools/rrdtool/
+HOMEPAGE=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
