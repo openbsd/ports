@@ -249,7 +249,7 @@ Files Summary
 	missing.
 /usr/ports/infrastructure:
 	paraphernalia around the ports tree
-/usr/ports/db/network.conf:
+/usr/ports/infrastructure/db/network.conf:
 	your local network configuration (ftp sites)
 /var/db/pkg:
 	installed ports, see pkg_add(1).
@@ -290,4 +290,4 @@ ports@openbsd.org.  Why create a brand new shiny port to discover that
 someone was already working on it, and they committed their new version
 ten minutes before you announced yours ?
 
-$OpenBSD: README,v 1.14 2003/03/01 09:09:16 david Exp $
+$OpenBSD: README,v 1.15 2003/06/15 21:09:31 avsm Exp $
