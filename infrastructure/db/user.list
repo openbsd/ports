@@ -1,0 +1,33 @@
+$OpenBSD: user.list,v 1.1 2003/06/22 09:59:35 sturm Exp $
+
+This file lists all users and groups that are created by ports or that
+users are encouraged to create after installing a port (these are marked
+'noauto'). All ports' users/groups have to start with an underscore. If a
+user/group pair is created, they share the same uid/gid. If a user is
+member of a system group, leave the group entry empty. If only a group is
+created, leave the user entry empty.
+
+id  user		group		port options
+----------------------------------------------------
+500 _opennap		_opennap	audio/opennap
+501 _gnats				databases/gnats
+502 _mysql		_mysql		databases/mysql,-server
+503 _postgresql		_postgresql	databases/postgresql noauto
+504 _mailman		_mailman	mail/mailman
+505 _mixmaster		_mixmaster	mail/mixmaster
+506 _spamdaemon		_spamdaemon	mail/p5-Mail-SpamAssassin noauto
+507 _postfix		_postfix	mail/postfix/{snapshot,stable}
+508			_postdrop	mail/postfix/{snapshot,stable}
+509 _bitlbee		_bitlbee	net/bitlbee
+510 _pdnsd		_pdnsd		net/pdnsd
+511 _tacacs		_tacacs		net/tacacs+
+512 _silcd		_silcd		net/silc-server
+513 _vsftpd		_vsftpd		net/vsftpd
+514 _scanlogd		_scanlogd	security/scanlogd noauto
+515 _squid		_squid		www/squid
+516 _privoxy		_privoxy	www/privoxyy
+517 _wnn				japanese/Wnn
+519 _news				news/leafnode
+520 _majordomo		_majordomo	mail/majordomo
+521 _exim		_exim		mail/exim noauto
+522 _xcept				comms/xcept noauto
