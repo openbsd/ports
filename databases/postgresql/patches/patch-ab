@@ -1,7 +1,0 @@
---- bin/initdb/initdb.sh.~1~	Wed Feb 25 05:09:02 1998
-+++ bin/initdb/initdb.sh	Mon Mar  9 14:33:43 1998
-@@ -386,3 +386,4 @@
- echo "vacuum analyze" | postgres -F -Q -D$PGDATA template1 2>&1 > /dev/null |\
- 	grep -v "^DEBUG:"
- 
-+exit 0
