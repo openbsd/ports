@@ -1,22 +1,42 @@
---- Makefile.in.orig	Thu Mar  2 03:00:14 2000
-+++ Makefile.in	Sat Apr  8 12:32:01 2000
-@@ -10,7 +10,7 @@
+--- Makefile.in.orig	Tue Feb  6 12:31:05 2001
++++ Makefile.in	Sun May 27 17:15:52 2001
+@@ -10,7 +10,7 @@ top_builddir = @top_srcdir@
  SUBDIRS = @INTLSUB@ @POSUB@
  
  # Install variables
 -prefix=@prefix@
-+prefix=${PREFIX}
- 
- datadir = $(prefix)/@DATADIRNAME@
- localedir = $(datadir)/locale
---- po/Makefile.in.in.orig	Thu Jun 24 08:07:56 1999
-+++ po/Makefile.in.in	Sat Apr  8 12:32:21 2000
-@@ -16,7 +16,7 @@
- top_srcdir = @top_srcdir@
- VPATH = @srcdir@
- 
--prefix = @prefix@
 +prefix = ${PREFIX}
- exec_prefix = @exec_prefix@
+ 
  datadir = $(prefix)/@DATADIRNAME@
  localedir = $(datadir)/locale
+@@ -43,7 +43,7 @@ GTKLIBS = @GTK_LIBS@
+ INTLLIBS = @INTLLIBS@
+ 
+ # Targets
+-all: po_dir intl_dir jpilot jpilot-sync jpilot-dump
++all: po_dir intl_dir jpilot jpilot-sync jpilot-dump synctime expense
+ 
+ jpilot: jpilot.o datebook.o address.o todo.o memo.o \
+ 	utils.o sync.o prefs.o log.o plugins.o \
+@@ -215,6 +215,12 @@ po_dir:
+ intl_dir:
+ 	cd intl; $(MAKE)
+ 
++synctime:
++	cd SyncTime; $(MAKE)
++
++expense:
++	cd Expense; $(MAKE)
++
+ clean:
+ 	rm -f *.o *~ config.cache
+ 
+@@ -256,6 +262,8 @@ install:
+ 	./install-sh -c -m 755 empty/MemoDB.pdb $(prefix)/share/jpilot/
+ 	cd intl; $(MAKE) install
+ 	cd po; $(MAKE) install
++	cd SyncTime; $(MAKE) install
++	cd Expense; $(MAKE) install
+ 
+ uninstall:
+ 	rm -f $(prefix)/share/jpilot/*

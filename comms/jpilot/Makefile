@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/05 22:39:51 jakob Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/29 01:00:45 pvalchev Exp $
 
-COMMENT=	"desktop organizer software for the Palm Pilot"
+COMMENT=	"desktop organizer software for the palm pilot"
 
-DISTNAME=	jpilot-0.99
+DISTNAME=	jpilot-0.99p1
 CATEGORIES=	comms
 NEED_VERSION=	1.406
 
-MASTER_SITES=	http://www.jpilot.org/
+MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://www.jpilot.org/
 
-MAINTAINER=	Hakan Olsson <ho@openbsd.org>
+MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -20,11 +20,12 @@ PERMIT_DISTFILES_FTP=	Yes
 LIB_DEPENDS=	pisock.3::comms/pilot-link \
 		gtk.1.2::x11/gtk+
 
-USE_X11=		yes
+USE_X11=		Yes
 CONFIGURE_STYLE=	autoconf
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jpilot
 	${INSTALL_DATA} ${WRKSRC}/docs/plugin.html ${PREFIX}/share/doc/jpilot
+	${INSTALL_DATA} ${WRKSRC}/docs/manual.html ${PREFIX}/share/doc/jpilot
 
 .include <bsd.port.mk>
