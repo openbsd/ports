@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2001/07/01 15:33:56 brad Exp $
+# $OpenBSD: Makefile,v 1.53 2001/07/20 16:22:30 kevlo Exp $
 
 COMMENT=	"display and manipulate images under X11"
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	bz2.10::archivers/bzip2 \
 		png.2::graphics/png \
 		tiff.35::graphics/tiff \
 		ttf.1.3::print/freetype \
-		xml2.5::textproc/libxml
+		xml2.6::textproc/libxml
 BUILD_DEPENDS=	fig2dev:transfig-*:print/transfig \
 		picttoppm:netpbm-*:graphics/netpbm
 RUN_DEPENDS=	${BUILD_DEPENDS}

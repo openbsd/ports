@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 04:11:40 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/07/20 16:22:36 kevlo Exp $
 
 COMMENT=	"command line parser generator"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/
 
-LIB_DEPENDS=	xml2.5::textproc/libxml
+LIB_DEPENDS=	xml2.6::textproc/libxml
 
 CONFIGURE_STYLE= gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/12 08:41:31 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/20 16:22:39 kevlo Exp $
 
 COMMENT=	"hierarchical notebook"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= hnb
 
-LIB_DEPENDS=	xml2.5::textproc/libxml
+LIB_DEPENDS=	xml2.6::textproc/libxml
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
