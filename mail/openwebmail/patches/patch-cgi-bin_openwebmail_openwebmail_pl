@@ -1,6 +1,6 @@
-$OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.10 2005/01/27 06:01:17 kevlo Exp $
---- cgi-bin/openwebmail/openwebmail.pl.orig	Wed Jan  5 18:26:24 2005
-+++ cgi-bin/openwebmail/openwebmail.pl	Thu Jan 27 10:59:17 2005
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.11 2005/03/01 03:52:45 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail.pl.orig	Mon Feb 28 08:58:27 2005
++++ cgi-bin/openwebmail/openwebmail.pl	Tue Mar  1 10:56:06 2005
 @@ -1,4 +1,4 @@
 -#!/usr/bin/suidperl -T
 +#!/usr/bin/perl
@@ -20,7 +20,7 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.10 2005/01/27 06:01:17 ke
  push (@INC, $SCRIPT_DIR);
  
  foreach (qw(ENV BASH_ENV CDPATH IFS TERM)) {delete $ENV{$_}}; $ENV{PATH}='/bin:/usr/bin'; # secure ENV
-@@ -76,8 +76,8 @@
+@@ -80,8 +80,8 @@
  ########## MAIN ##################################################
  openwebmail_requestbegin();
  
@@ -31,7 +31,7 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.10 2005/01/27 06:01:17 ke
  loadlang($config{'default_language'});	# so %lang... can be used in error msg
  
  # check & create mapping table for solar/lunar, b2g, g2b convertion
-@@ -90,7 +90,7 @@
+@@ -94,7 +94,7 @@
  }
  
  if ($config{'logfile'}) {
@@ -40,7 +40,7 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.10 2005/01/27 06:01:17 ke
     my ($fmode, $fuid, $fgid) = (stat($config{'logfile'}))[2,4,5];
     if ( !($fmode & 0100000) ) {
        open (LOGFILE,">>$config{'logfile'}") or
-@@ -273,7 +273,7 @@
+@@ -285,7 +285,7 @@
  
     # create domain logfile
     if ($config{'logfile'}) {
@@ -49,25 +49,7 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.10 2005/01/27 06:01:17 ke
        my ($fmode, $fuid, $fgid) = (stat($config{'logfile'}))[2,4,5];
        if ( !($fmode & 0100000) ) {
           open (LOGFILE,">>$config{'logfile'}") or
-@@ -345,7 +345,7 @@
-          if (!-d $domainhome) {
-             mkdir($domainhome, 0750);
-             openwebmailerror(__FILE__, __LINE__, "Couldn't create domain homedir $domainhome") if (! -d $domainhome);
--            my $mailgid=getgrnam('mail');
-+            my $mailgid=getgrnam('_mail');
-             chown($uuid, $mailgid, $domainhome);
-          }
-       }
-@@ -408,7 +408,7 @@
- 
-       umask(0077);
-       if ( $>==0 ) {			# switch to uuid:mailgid if script is setuid root.
--         my $mailgid=getgrnam('mail');	# for better compatibility with other mail progs
-+         my $mailgid=getgrnam('_mail');	# for better compatibility with other mail progs
-          ow::suid::set_euid_egids($uuid, $mailgid, split(/\s+/,$ugid));
-          if ( $)!~/\b$mailgid\b/) {	# group mail doesn't exist?
-             openwebmailerror(__FILE__, __LINE__, "Set effective gid to mail($mailgid) failed!");
-@@ -623,7 +623,7 @@
+@@ -363,7 +363,7 @@
        writelog("login error - $config{'auth_module'}, ret $errorcode, $errormsg");
        umask(0077);
        if ( $>==0 ) {	# switch to uuid:mailgid if script is setuid root.
@@ -76,3 +58,21 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.10 2005/01/27 06:01:17 ke
           ow::suid::set_euid_egids($uuid, $mailgid, split(/\s+/,$ugid));
        }
        my $historyfile=ow::tool::untaint(dotpath('history.log'));
+@@ -402,7 +402,7 @@
+          if (!-d $domainhome) {
+             mkdir($domainhome, 0750);
+             openwebmailerror(__FILE__, __LINE__, "Couldn't create domain homedir $domainhome") if (! -d $domainhome);
+-            my $mailgid=getgrnam('mail');
++            my $mailgid=getgrnam('_mail');
+             chown($uuid, $mailgid, $domainhome);
+          }
+       }
+@@ -451,7 +451,7 @@
+    # set umask, switch to uuid:mailgid if script is setuid root.
+    umask(0077);
+    if ( $>==0 ) {
+-      my $mailgid=getgrnam('mail');	# for better compatibility with other mail progs
++      my $mailgid=getgrnam('_mail');	# for better compatibility with other mail progs
+       ow::suid::set_euid_egids($uuid, $mailgid, split(/\s+/,$ugid));
+       if ( $)!~/\b$mailgid\b/) {	# group mail doesn't exist?
+          openwebmailerror(__FILE__, __LINE__, "Set effective gid to mail($mailgid) failed!");

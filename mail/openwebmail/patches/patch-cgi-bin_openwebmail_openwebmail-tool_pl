@@ -1,6 +1,6 @@
-$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.10 2005/02/17 01:46:33 kevlo Exp $
---- cgi-bin/openwebmail/openwebmail-tool.pl.orig	Wed Jan  5 18:26:24 2005
-+++ cgi-bin/openwebmail/openwebmail-tool.pl	Thu Jan 27 10:52:44 2005
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.11 2005/03/01 03:52:45 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail-tool.pl.orig	Mon Feb 28 08:58:27 2005
++++ cgi-bin/openwebmail/openwebmail-tool.pl	Tue Mar  1 10:53:51 2005
 @@ -1,4 +1,4 @@
 -#!/usr/bin/suidperl -T
 +#!/usr/bin/perl
@@ -29,22 +29,22 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.10 2005/02/17 01:46:
     exit 0;
  }
  push (@INC, $SCRIPT_DIR);
-@@ -177,10 +177,10 @@
-    $retval=makethumbnail(\@list);
- } else {
-    if ($opt{'convert_addressbooks'} && $>==0) {	# only allow root to convert globalbook
--      load_owconf(\%config_raw, "$SCRIPT_DIR/etc/defaults/openwebmail.conf");
--      if ( -f "$SCRIPT_DIR/etc/openwebmail.conf") {
--         read_owconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf");
--         print "D readconf $SCRIPT_DIR/etc/openwebmail.conf\n" if ($opt{'debug'});
-+      load_owconf(\%config_raw, "%%SYSCONFDIR%%/openwebmail/defaults/openwebmail.conf");
-+      if ( -f "%%SYSCONFDIR%%/openwebmail/openwebmail.conf") {
-+         read_owconf(\%config, \%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf");
-+         print "D readconf %%SYSCONFDIR%%/openwebmail/openwebmail.conf\n" if ($opt{'debug'});
-       }
+@@ -170,10 +170,10 @@
  
-       my %prefs = readprefs();
-@@ -261,7 +261,7 @@
+ $>=$euid_to_use;
+ 
+-load_owconf(\%config_raw, "$SCRIPT_DIR/etc/defaults/openwebmail.conf");
+-if ( -f "$SCRIPT_DIR/etc/openwebmail.conf") {
+-   read_owconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf");
+-   print "D readconf $SCRIPT_DIR/etc/openwebmail.conf\n" if ($opt{'debug'});
++load_owconf(\%config_raw, "%%SYSCONFDIR%%/openwebmail/defaults/openwebmail.conf");
++if ( -f "%%SYSCONFDIR%%/openwebmail/openwebmail.conf") {
++   read_owconf(\%config, \%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf");
++   print "D readconf %%SYSCONFDIR%%/openwebmail/openwebmail.conf\n" if ($opt{'debug'});
+ }
+ 
+ $logindomain=$default_logindomain||ow::tool::hostname();
+@@ -280,7 +280,7 @@
  
     my $err=do_test(1);
     if ($err<0) {
@@ -53,22 +53,7 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.10 2005/02/17 01:46:
              qq|ps: If you are running openwebmail in persistent mode,\n|.
              qq|    don't forget to 'touch openwebmail*.pl', so speedycgi\n|.
              qq|    will reload all scripts, modules and conf files in --init.\n\n|;
-@@ -342,10 +342,10 @@
-    my $err=0;
-    print "\n";
- 
--   load_owconf(\%config_raw, "$SCRIPT_DIR/etc/defaults/openwebmail.conf");
--   if ( -f "$SCRIPT_DIR/etc/openwebmail.conf") {
--      read_owconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf");
--      print "D readconf $SCRIPT_DIR/etc/openwebmail.conf\n" if ($opt{'debug'});
-+   load_owconf(\%config_raw, "%%SYSCONFDIR%%/openwebmail/defaults/openwebmail.conf");
-+   if ( -f "%%SYSCONFDIR%%/openwebmail/openwebmail.conf") {
-+      read_owconf(\%config, \%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf");
-+      print "D readconf %%SYSCONFDIR%%/openwebmail/openwebmail.conf\n" if ($opt{'debug'});
-    }
- 
-    $logindomain=$default_logindomain||ow::tool::hostname();
-@@ -445,7 +445,7 @@
+@@ -457,7 +457,7 @@
     }
  
     if ($in_init && $err) {
@@ -77,7 +62,7 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.10 2005/02/17 01:46:
              qq|dbm_ext         \t$str{conf_dbm_ext}\n|.
              qq|dbmopen_ext     \t$str{conf_dbmopen_ext}\n|.
              qq|dbmopen_haslock \t$str{conf_dbmopen_haslock}\n|.
-@@ -455,7 +455,7 @@
+@@ -467,7 +467,7 @@
              qq|dbmopen_haslock \t$str{dbmopen_haslock}\n\n\n|;
     }
     if (!$in_init) {
@@ -86,7 +71,7 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.10 2005/02/17 01:46:
              qq|dbm_ext         \t$str{dbm_ext}\n|.
              qq|dbmopen_ext     \t$str{dbmopen_ext}\n|.
              qq|dbmopen_haslock \t$str{dbmopen_haslock}\n\n\n|;
-@@ -472,7 +472,7 @@
+@@ -484,7 +484,7 @@
     $>=0;
     if ($>!=0) {
        print qq|Your system didn't have saved suid support,\n|.
@@ -95,39 +80,9 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.10 2005/02/17 01:46:
              qq|\thas_savedsuid_support no\n\n\n|;
        return -1;
     }
-@@ -483,10 +483,10 @@
- sub do_langconv {
-    my ($srclang, $dstlang)=@_;
+@@ -698,10 +698,10 @@
+       # REINIT %config for auth_module as each domain may use different auth_module!
  
--   load_owconf(\%config_raw, "$SCRIPT_DIR/etc/defaults/openwebmail.conf");
--   if ( -f "$SCRIPT_DIR/etc/openwebmail.conf") {
--      read_owconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf");
--      print "D readconf $SCRIPT_DIR/etc/openwebmail.conf\n" if ($opt{'debug'});
-+   load_owconf(\%config_raw, "%%SYSCONFDIR%%/openwebmail/defaults/openwebmail.conf");
-+   if ( -f "%%SYSCONFDIR%%/openwebmail/openwebmail.conf") {
-+      read_owconf(\%config, \%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf");
-+      print "D readconf %%SYSCONFDIR%%/openwebmail/openwebmail.conf\n" if ($opt{'debug'});
-    }
- 
-    langconv($srclang, $dstlang);
-@@ -669,10 +669,10 @@
-    my $loaded_domain=0;
-    my %userhash=();
- 
--   load_owconf(\%config_raw, "$SCRIPT_DIR/etc/defaults/openwebmail.conf");
--   if ( -f "$SCRIPT_DIR/etc/openwebmail.conf") {
--      read_owconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf");
--      print "D readconf $SCRIPT_DIR/etc/openwebmail.conf\n" if ($opt{'debug'});
-+   load_owconf(\%config_raw, "%%SYSCONFDIR%%/openwebmail/defaults/openwebmail.conf");
-+   if ( -f "%%SYSCONFDIR%%/openwebmail/openwebmail.conf") {
-+      read_owconf(\%config, \%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf");
-+      print "D readconf %%SYSCONFDIR%%/openwebmail/openwebmail.conf\n" if ($opt{'debug'});
-    }
- 
-    # trap this once now.  Let usertool() test it at the domain level later
-@@ -704,10 +704,10 @@
- 
-    foreach $logindomain (@domains) {
        %config_raw=();
 -      load_owconf(\%config_raw, "$SCRIPT_DIR/etc/defaults/openwebmail.conf");
 -      if ( -f "$SCRIPT_DIR/etc/openwebmail.conf") {
@@ -140,7 +95,7 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.10 2005/02/17 01:46:
        }
  
        if ( -f "$config{'ow_sitesconfdir'}/$logindomain") {
-@@ -779,16 +779,16 @@
+@@ -773,16 +773,16 @@
        $>=$euid_to_use;
  
        %config_raw=();
@@ -163,7 +118,7 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.10 2005/02/17 01:46:
           }
        }
  
-@@ -887,7 +887,7 @@ sub usertool {
+@@ -883,7 +883,7 @@
              my $domainhome=ow::tool::untaint("$config{'ow_usersdir'}/$domain");
              if (!-d $domainhome) {
                 mkdir($domainhome, 0750) or die("Couldn't create domain homedir $domainhome");
@@ -172,7 +127,7 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail-tool_pl,v 1.10 2005/02/17 01:46:
                 chown($uuid, $mailgid, $domainhome);
              }
           }
-@@ -909,7 +909,7 @@ sub usertool {
+@@ -905,7 +905,7 @@
  
        umask(0077);
        if ( $>==0 ) { # switch to uuid:mailgid if process is setuid to root
