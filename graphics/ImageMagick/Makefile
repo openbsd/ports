@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.75 2004/11/07 05:08:16 brad Exp $
+# $OpenBSD: Makefile,v 1.76 2004/11/13 20:14:18 marc Exp $
 
 COMMENT=	"image processing tools"
-
-.if ${MACHINE_ARCH} == "sparc64"
-BROKEN=		${MACHINE_ARCH} run-time issues, crashing
-.endif
 
 VER=		6.0.0
 DASHVER=	2
 DISTNAME=	ImageMagick-${VER}-${DASHVER}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=imagemagick/}
 
