@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2002/01/08 03:20:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2002/01/08 04:24:55 fgsch Exp $
 
 COMMENT=	"tty-based e-mail client"
 
-DISTNAME=	mutt-1.2.5.1
+VERS=		1.2.5.1
+DISTNAME=	mutt-${VERS}
 CATEGORIES=     mail
 NEED_VERSION=	1.500
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
@@ -22,9 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-# disable compressed FLAVOR for the time being, until the author of the patch
-# provide a new patch fro 1.2.5.1 (or a later version).
-FLAVORS=	slang imap pop mixmaster # compressed 
+FLAVORS=	slang imap pop mixmaster compressed 
 FLAVOR?=
 
 SYSCONFDIR=	/etc/mutt
@@ -48,7 +47,7 @@ CONFIGURE_ARGS+= --with-curses
 # http://www.spinnaker.de/mutt/compressed/patch-1.2.5.rr.compressed.1.gz
 .if ${FLAVOR:L:Mcompressed}
 MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
-PATCHFILES+=	patch-1.2.5.rr.compressed.1.gz:0
+PATCHFILES+=	patch-${VERS}.rr.compressed.1.gz:0
 PATCH_DIST_STRIP=-p1
 CONFIGURE_ARGS+= --enable-compressed
 .endif
