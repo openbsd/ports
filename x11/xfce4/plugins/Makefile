@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/12/15 06:11:44 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/14 05:51:08 jolan Exp $
 
+     SUBDIR+= xfce4-battery-plugin
      SUBDIR+= xfce4-clipman-plugin 
      SUBDIR+= xfce4-datetime-plugin
      SUBDIR+= xfce4-fsguard-plugin
