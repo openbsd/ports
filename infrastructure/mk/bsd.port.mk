@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.210 2000/02/22 17:08:31 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.211 2000/02/28 18:13:18 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2053,18 +2053,12 @@ README.html:
 .endfor
 	@cat ${README_NAME} | \
 		sed -e 's|%%PORT%%|'"`make package-path | ${HTMLIFY}`"'|g' \
-			-e '/%%PKG%%/r$@.tmp3' \
-			-e '/%%PKG%%/d' \
-			-e '/%%COMMENT%%/r${PKGDIR}/COMMENT' \
-			-e '/%%COMMENT%%/d' \
-			-e '/%%DESCR%%/r${PKGDIR}/DESCR' \
-			-e '/%%DESCR%%/d' \
-			-e '/%%HOMEPAGE%%/r$@.tmp4' \
-			-e '/%%HOMEPAGE%%/d' \
-			-e '/%%BUILD_DEPENDS%%/r$@.tmp1a' \
-			-e '/%%BUILD_DEPENDS%%/d' \
-			-e '/%%RUN_DEPENDS%%/r$@.tmp2a' \
-			-e '/%%RUN_DEPENDS%%/d' \
+			-e '/%%PKG%%/r$@.tmp3' -e '//d' \
+			-e '/%%COMMENT%%/r${PKGDIR}/COMMENT' -e '//d' \
+			-e '/%%DESCR%%/r${PKGDIR}/DESCR' -e '//d' \
+			-e '/%%HOMEPAGE%%/r$@.tmp4' -e '//d' \
+			-e '/%%BUILD_DEPENDS%%/r$@.tmp1a' -e '//d' \
+			-e '/%%RUN_DEPENDS%%/r$@.tmp2a' -e '//d' \
 		>> $@
 	@rm -f $@.tmp*
 
