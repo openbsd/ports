@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2000/01/14 08:44:28 form Exp $
+# $OpenBSD: Makefile,v 1.9 2000/01/26 12:38:52 form Exp $
 
-DISTNAME=	xruskb-1.10.0
+DISTNAME=	xruskb-1.11.0
 CATEGORIES=	russian x11
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/X11/
 
@@ -18,12 +18,12 @@ CONFIGURE_ARGS=	--without-motif --with-Xaw
 
 pre-configure:
 .if !defined(USE_MOTIF)
-	@${ECHO} "***"
-	@${ECHO} "*** You are building Xaw version of xruskb."
-	@${ECHO} "*** Some features are not available in Xaw version."
-	@${ECHO} "*** If you wish to build full-featured Motif version,"
-	@${ECHO} "*** just type 'make USE_MOTIF=yes'."
-	@${ECHO} "***"
+	@${ECHO_MSG} "***"
+	@${ECHO_MSG} "*** You are building Xaw version of xruskb."
+	@${ECHO_MSG} "*** Some features are not available in Xaw version."
+	@${ECHO_MSG} "*** If you wish to build full-featured Motif version,"
+	@${ECHO_MSG} "*** just type 'make USE_MOTIF=yes'."
+	@${ECHO_MSG} "***"
 .endif
 
 post-install:
