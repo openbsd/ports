@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/11/13 17:15:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2002/11/13 17:20:41 naddy Exp $
 
 COMMENT=	"print multiple pages per sheet on PostScript printer"
 
@@ -36,7 +36,6 @@ NO_REGRESS=	Yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/mpage ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/mpage.1 ${PREFIX}/man/man1
-	perl -pi -e 's!%%PREFIX%%!${TRUEPREFIX}!' ${PREFIX}/man/man1/mpage.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mpage
 	${INSTALL_DATA} ${WRKSRC}/Encodings/* ${PREFIX}/share/mpage
 
