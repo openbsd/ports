@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.444 2001/08/25 11:23:46 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.445 2001/08/26 21:42:18 brad Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -335,6 +335,12 @@ TRUEPREFIX?=	${PREFIX}
 DESTDIRNAME?=	DESTDIR
 DESTDIR?=		${WRKINST}
 
+MAKE_FLAGS?=
+LIBTOOL_FLAGS?=
+.if !defined(FAKE_FLAGS)
+FAKE_FLAGS=${DESTDIRNAME}=${WRKINST}
+.endif
+
 CONFIGURE_STYLE?=
 
 # where configuration files should go
@@ -358,6 +364,7 @@ LIBTOOL?=			${LOCALBASE}/bin/libtool
 BUILD_DEPENDS+=		${LIBTOOL}::devel/libtool
 CONFIGURE_ENV+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 MAKE_ENV+=			LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
+MAKE_FLAGS+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 .endif
 
 .if exists(${PORTSDIR}/../Makefile.inc)
@@ -513,11 +520,6 @@ CFLAGS+=		${CDIAGFLAGS}
 .  if defined(CXXDIAGFLAGS)
 CXXFLAGS+=		${CXXDIAGFLAGS}
 .  endif
-.endif
-
-MAKE_FLAGS?=	
-.if !defined(FAKE_FLAGS)
-FAKE_FLAGS=${DESTDIRNAME}=${WRKINST}
 .endif
 
 MAKE_FILE?=		Makefile
