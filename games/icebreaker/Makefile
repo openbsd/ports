@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/12/28 22:40:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/15 00:29:08 pvalchev Exp $
 
 COMMENT=	"jezzball-style, penguin puzzle game"
 
@@ -30,7 +30,7 @@ MAKE_ENV=	prefix="${PREFIX}" \
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icebreaker
 	${INSTALL_DATA} ${WRKSRC}/*.{wav,bmp} ${PREFIX}/share/icebreaker
-	${INSTALL_PROGRAM} ${WRKSRC}/icebreaker ${PREFIX}/bin
+	${INSTALL_PROGRAM} -g games -m 2755 ${WRKSRC}/icebreaker ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/icebreaker.6 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
