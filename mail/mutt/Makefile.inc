@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2004/09/25 02:10:07 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2004/10/20 20:15:20 xsa Exp $
 
 DISTNAME=	mutt-${VERSION}i
 CATEGORIES=	mail
@@ -57,13 +57,13 @@ RUN_DEPENDS+=		::mail/mixmaster
 .endif
 
 .if ${FLAVOR:L:Mhcache}
-PATCHFILES+=		mutt-cvs-maildir-header-cache.18:1
+PATCHFILES+=		patch-1.5.6.tg.hcache.9:1
 PATCH_DIST_STRIP=	-p1
 AUTOCONF_VERSION=	2.52
 CONFIGURE_ARGS+=	--enable-hcache
 LIB_DEPENDS+=		gdbm.2::databases/gdbm
 .else
-SUPDISTFILES+=		mutt-cvs-maildir-header-cache.18:1
+SUPDISTFILES+=		patch-1.5.6.tg.hcache.9:1
 .endif
 
 .if defined(HOMESPOOL)
