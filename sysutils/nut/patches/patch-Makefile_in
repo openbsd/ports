@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2004/02/09 06:48:48 marcm Exp $
---- Makefile.in.orig	2003-10-17 14:00:06.000000000 -0700
-+++ Makefile.in	2004-01-03 10:08:46.000000000 -0800
-@@ -49,6 +49,7 @@ install-bin:
+$OpenBSD: patch-Makefile_in,v 1.4 2004/09/27 03:10:24 marcm Exp $
+--- Makefile.in.orig	Mon Mar  8 02:00:02 2004
++++ Makefile.in	Thu Sep 16 08:51:48 2004
+@@ -50,6 +50,7 @@ install-bin:
  
  install-man:
  	@cd man; $(MAKE) install; cd ..;
@@ -9,12 +9,3 @@ $OpenBSD: patch-Makefile_in,v 1.3 2004/02/09 06:48:48 marcm Exp $
  
  install-conf:
  	cd conf; $(MAKE) install; cd ..
-@@ -74,7 +75,7 @@ build-cgi:
- 	@cd clients; $(MAKE) cgi; cd ..;
- 
- install-cgi: cgi install-cgi-dir install-dirs install-cgi-bin \
--	install-cgi-man install-cgi-conf
-+	install-cgi-conf
- 
- install-cgi-dir:
- 	if (test ! -d $(CGIPATH)) then \

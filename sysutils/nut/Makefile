@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2004/02/21 06:16:58 marcm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/09/27 03:10:24 marcm Exp $
 
 COMMENT=		"UPS monitoring program supporting many brands"
 COMMENT-cgi=		"CGIs for monitoring Nut-based UPSs"
 
-VERSION=		1.4.1
+VERSION=		2.0.0
 DISTNAME=		nut-${VERSION}
 PKGNAME-cgi=		nut-cgi-${VERSION}
 CATEGORIES=		sysutils
@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.networkupstools.org/
 
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		http://random.networkupstools.org/source/1.4/
+MASTER_SITES=		http://random.networkupstools.org/source/2.0/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,10 +24,11 @@ NUT_USER=		_ups
 NUT_ID=			529
 NUT_STATEDIR=		/var/db/nut
 CONFDIR=		${SYSCONFDIR}/nut
-SUBST_VARS=		NUT_USER NUT_ID NUT_STATEDIR CONFDIR
+SUBST_VARS=		WEB_ROOT NUT_USER NUT_ID NUT_STATEDIR CONFDIR
 
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS+=	--sysconfdir=${CONFDIR}
+CONFIGURE_ARGS+=	--datadir=${LOCALBASE}/share/ups
 CONFIGURE_ARGS+=	--with-statepath=${NUT_STATEDIR}
 CONFIGURE_ARGS+=	--with-user=${NUT_USER}
 CONFIGURE_ARGS+=	--with-ssl
@@ -61,15 +62,17 @@ INSTALL_TARGET=		install install-cgi
 NO_REGRESS=		Yes
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nut
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nut/
 	cp -R ${WRKSRC}/docs/* ${PREFIX}/share/doc/nut/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nut/
+.for file in upsmon.conf upsd.conf upsd.users upssched.conf ups.conf
+	${INSTALL_DATA} ${WRKBUILD}/conf/${file} ${PREFIX}/share/examples/nut/
+.endfor
 # Yes, we install the CGI config files even if we're not building CGI support,
 # it will get properly handled by packaging.
-	${INSTALL_DATA_DIR} ${WRKINST}${WEB_ROOT}/conf/nut
+	${INSTALL_DATA_DIR} ${WRKINST}${WEB_ROOT}/conf/nut/
 .for file in hosts.conf upsset.conf upsstats.html upsstats-single.html
-	mv ${WRKINST}/${CONFDIR}/${file}.sample ${WRKINST}${WEB_ROOT}/conf/nut/
+	${INSTALL_DATA} ${WRKBUILD}/conf/${file} ${WRKINST}${WEB_ROOT}/conf/nut/${file}.sample
 .endfor
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nut; \
-	${INSTALL_DATA} ${WRKINST}/${CONFDIR}/* ${PREFIX}/share/examples/nut/
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
-$OpenBSD: patch-clients_Makefile_in,v 1.3 2004/02/09 06:48:48 marcm Exp $
---- clients/Makefile.in.orig	2004-01-03 13:49:46.000000000 -0800
-+++ clients/Makefile.in	2004-01-03 13:51:23.000000000 -0800
-@@ -54,13 +54,13 @@ upslog: upslog.c $(UPSCLI_OBJ) $(LIBDEP)
+$OpenBSD: patch-clients_Makefile_in,v 1.4 2004/09/27 03:10:24 marcm Exp $
+--- clients/Makefile.in.orig	Tue Sep  2 13:25:54 2003
++++ clients/Makefile.in	Thu Sep 16 08:48:42 2004
+@@ -57,13 +57,13 @@ upslog: upslog.c $(UPSCLI_OBJ) $(LIBDEP)
  	$(CC) $(NET_CFLAGS) -o upslog upslog.c $(UPSCLI_OBJ) $(LIBOBJ) $(NET_LDFLAGS)
  
  upsstats.cgi: upsstats.c $(UPSCLI_OBJ) cgilib.o $(LIBDEP)

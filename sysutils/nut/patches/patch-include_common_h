@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_common_h,v 1.1 2004/02/09 06:48:48 marcm Exp $
---- include/common.h.orig	2004-01-03 14:59:38.000000000 -0800
-+++ include/common.h	2004-01-03 14:59:40.000000000 -0800
-@@ -80,6 +80,9 @@ void syslogbit_set(void);
+$OpenBSD: patch-include_common_h,v 1.2 2004/09/27 03:10:24 marcm Exp $
+--- include/common.h.orig	Tue Nov 25 18:07:02 2003
++++ include/common.h	Thu Sep 16 08:48:43 2004
+@@ -72,6 +72,9 @@ void syslogbit_set(void);
  /* Return the default path for the directory containing configuration files */
  const char * confpath(void);
  
