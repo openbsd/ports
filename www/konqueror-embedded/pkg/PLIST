@@ -1,15 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/03/25 00:35:41 brad Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/05/19 18:21:34 brad Exp $
 bin/konq-e
 lib/konq-e/apps/Applications/konqueror.desktop
 lib/konq-e/pics/konqueror.png
 lib/konq-e/share/apps/khtml/css/html4.css
+lib/konq-e/share/apps/kplaintextpart/kplaintextpart.rc
 lib/konq-e/share/apps/kssl/caroot/ca-bundle.crt
 lib/konq-e/share/config/charsets
 lib/konq-e/share/config/khtmlrc
+lib/konq-e/share/services/kplaintextpart.desktop
 libexec/konq-e
+@dirrm lib/konq-e/share/services
 @dirrm lib/konq-e/share/config
 @dirrm lib/konq-e/share/apps/kssl/caroot
 @dirrm lib/konq-e/share/apps/kssl
+@dirrm lib/konq-e/share/apps/kplaintextpart
 @dirrm lib/konq-e/share/apps/khtml/css
 @dirrm lib/konq-e/share/apps/khtml
 @dirrm lib/konq-e/share/apps
@@ -17,3 +21,4 @@ libexec/konq-e
 @dirrm lib/konq-e/pics
 @dirrm lib/konq-e/apps/Applications
 @dirrm lib/konq-e/apps
+@dirrm lib/konq-e

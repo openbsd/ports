@@ -1,26 +1,31 @@
-# $OpenBSD: Makefile,v 1.6 2002/09/14 02:14:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2003/05/19 18:21:34 brad Exp $
 
-COMMENT='stand-alone web browser'
+COMMENT='stand-alone Qt-based web browser'
 CATEGORIES=www x11
 
 MODULES=	qt2
 
-DATE=	20020311
+DATE=	20030516
 DISTNAME=konqueror-embedded-snapshot-${DATE}
-PKGNAME=konqueror-${DATE}p1
+PKGNAME=konqueror-${DATE}
 HOMEPAGE=http://www.konqueror.org/embedded.html
 MASTER_SITES= http://devel-home.kde.org/~hausmann/snapshots/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_NEW=		Yes
+AUTOCONF_VERSION=	2.52
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include:${LOCALBASE}/include/libpng
+CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include/libpng:${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-threading
+CONFIGURE_ARGS+=	--enable-add-ons=kplaintext
+CONFIGURE_ARGS+=	--enable-ftp
 CONFIGURE_ARGS+=	--enable-mitshm
+CONFIGURE_ARGS+=	--enable-readwrite
+CONFIGURE_ARGS+=	--enable-sortdir
+CONFIGURE_ARGS+=	--disable-dlopen
 CONFIGURE_ARGS+=	--disable-debug
 #CONFIGURE_ARGS+=	--enable-debug=full
 #CONFIGURE_ARGS+=	--enable-final
@@ -33,33 +38,29 @@ LIB_DEPENDS=	png.2::graphics/png \
 		pcreposix,pcre::devel/pcre \
 		lcms::graphics/lcms
 
-# you don't want to know...
-CONFIGURE_ENV+=		ac_aux_files=''
-MAKE_ENV=		${CONFIGURE_ENV}
-
-
 MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
-#MAKE_FLAGS+=AM_CXXFLAGS=-g AM_CFLAGS=-g
 
-# ensures configure does not pick up automake
+KONQ=	${PREFIX}/lib/konq-e
 
-KONQ=${PREFIX}/lib/konq-e
 post-build:
-	sed -e s,%PREFIX%,${TRUEPREFIX}, <${FILESDIR}/konq-e >${WRKDIR}/konq-e
+	@sed -e s,%PREFIX%,${TRUEPREFIX}, <${FILESDIR}/konq-e >${WRKDIR}/konq-e
 
 post-install:
 	${INSTALL_DATA_DIR} ${KONQ}/share/apps/khtml/css \
+		${KONQ}/share/apps/kplaintextpart \
 		${KONQ}/share/apps/kssl/caroot \
 		${KONQ}/pics ${KONQ}/apps/Applications \
-		${KONQ}/share/config
+		${KONQ}/share/config ${KONQ}/share/services
 	@mv ${PREFIX}/bin/konqueror ${PREFIX}/libexec/konq-e
 .for i in apps/Applications/konqueror.desktop pics/konqueror.png \
-share/apps/khtml/css/html4.css share/apps/kssl/caroot/ca-bundle.crt \
-share/config/charsets share/config/khtmlrc
+share/apps/khtml/css/html4.css share/apps/kplaintextpart/kplaintextpart.rc \
+share/apps/kssl/caroot/ca-bundle.crt share/config/charsets \
+share/config/khtmlrc share/services/kplaintextpart.desktop
 	@mv ${PREFIX}/$i ${KONQ}/$i
 .endfor
-	${INSTALL_PROGRAM} ${WRKDIR}/konq-e ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/konq-e ${PREFIX}/bin
 
+# GPL
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes

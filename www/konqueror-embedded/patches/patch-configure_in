@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.1 2002/05/28 15:51:02 todd Exp $
---- configure.in.orig	Tue May 28 10:23:34 2002
-+++ configure.in	Tue May 28 10:22:41 2002
-@@ -451,6 +451,7 @@ AC_CHECK_FUNC(getaddrinfo,
+$OpenBSD: patch-configure_in,v 1.2 2003/05/19 18:21:34 brad Exp $
+--- configure.in.orig	Fri May 16 14:54:03 2003
++++ configure.in	Fri May 16 20:56:27 2003
+@@ -531,6 +531,7 @@ AC_CHECK_FUNC(getaddrinfo,
  	{
  	  struct addrinfo hint, *res;
  	  int err;
