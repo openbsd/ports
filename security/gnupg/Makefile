@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2001/03/23 13:10:20 reinhard Exp $
+# $OpenBSD: Makefile,v 1.27 2001/03/23 16:32:15 reinhard Exp $
+
+COMMENT=	'GNU privacy guard - a free PGP replacement'
 
 DISTNAME=	gnupg-1.0.4
 PKGNAME=	${DISTNAME}p2
