@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2003/04/10 00:00:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2003/04/22 11:16:02 espie Exp $
 bin/kcolorchooser
 bin/kcoloredit
 bin/kdvi
@@ -13,7 +13,6 @@ bin/kview
 bin/kviewshell
 bin/mrmlsearch
 include/kmultipageInterface.h
-${KDE}/kcm_kamera.la
 ${KDE}/kcm_kmrml.la
 ${KDE}/kded_daemonwatcher.la
 ${KDE}/kdvipart.la
@@ -27,7 +26,6 @@ ${KDE}/kfile_ps.la
 ${KDE}/kfile_tga.la
 ${KDE}/kfile_tiff.la
 ${KDE}/kfile_xbm.la
-${KDE}/kio_kamera.la
 ${KDE}/kio_mrml.la
 ${KDE}/kview_browserplugin.la
 ${KDE}/kview_presenterplugin.la
@@ -59,7 +57,6 @@ share/applnk/Graphics/kruler.desktop
 share/applnk/Graphics/ksnapshot.desktop
 share/applnk/Graphics/kuickshow.desktop
 share/applnk/Graphics/kview.desktop
-share/applnk/Settings/Peripherals/kamera.desktop
 share/applnk/Settings/System/kcmkmrml.desktop
 share/apps/kcoloredit/kcoloreditui.rc
 share/apps/kdvi/kdvi_part.rc
@@ -255,8 +252,6 @@ share/doc/HTML/en/kview/snapshot7.png
 share/doc/HTML/en/kview/snapshot8.png
 share/doc/HTML/en/kview/snapshot9.png
 share/icons/crystalsvg/128x128/apps/kghostview.png
-share/icons/crystalsvg/16x16/actions/camera_test.png
-share/icons/crystalsvg/16x16/apps/camera.png
 share/icons/crystalsvg/16x16/apps/kcoloredit.png
 share/icons/crystalsvg/16x16/apps/kdvi.png
 share/icons/crystalsvg/16x16/apps/kfax.png
@@ -268,7 +263,6 @@ share/icons/crystalsvg/16x16/apps/ksnapshot.png
 share/icons/crystalsvg/16x16/apps/kuickshow.png
 share/icons/crystalsvg/16x16/apps/kview.png
 share/icons/crystalsvg/16x16/apps/kviewshell.png
-share/icons/crystalsvg/16x16/devices/camera.png
 share/icons/crystalsvg/32x32/apps/kcoloredit.png
 share/icons/crystalsvg/32x32/apps/kdvi.png
 share/icons/crystalsvg/32x32/apps/kfax.png
@@ -280,8 +274,6 @@ share/icons/crystalsvg/32x32/apps/ksnapshot.png
 share/icons/crystalsvg/32x32/apps/kuickshow.png
 share/icons/crystalsvg/32x32/apps/kview.png
 share/icons/crystalsvg/32x32/apps/kviewshell.png
-share/icons/crystalsvg/32x32/devices/camera.png
-share/icons/crystalsvg/32x32/filesystems/camera.png
 share/icons/crystalsvg/48x48/apps/kdvi.png
 share/icons/crystalsvg/48x48/apps/kfax.png
 share/icons/crystalsvg/48x48/apps/kghostview.png
@@ -297,7 +289,6 @@ share/icons/locolor/16x16/apps/kuickshow.png
 share/icons/locolor/32x32/apps/kcoloredit.png
 share/icons/locolor/32x32/apps/kuickshow.png
 share/mimelnk/text/mrml.desktop
-share/services/kamera.protocol
 share/services/kded/daemonwatcher.desktop
 share/services/kfile_bmp.desktop
 share/services/kfile_ico.desktop
