@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.436 2001/08/16 14:49:31 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.437 2001/08/16 15:13:17 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1423,18 +1423,12 @@ checksum: fetch
 .  endif
 
 refetch:
-	@set -- ${PROBLEMS}; \
-	 while [ $$# -gt 0 ]; do \
-		file=$$1; \
-		cipher=$$2; \
-		value=$$3; \
-		shift; shift; shift; \
-		rm ${FULLDISTDIR}/$$file; \
-		cd ${.CURDIR} && ${MAKE} ${FULLDISTDIR}/$$file \
-			MASTER_SITE_OVERRIDE="ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/$$cipher/$$value/"; \
-	done;
+.  for file cipher value in ${PROBLEMS}
+		@rm ${FULLDISTDIR}/${file}
+		@cd ${.CURDIR} && ${MAKE} ${FULLDISTDIR}/${file} \
+			MASTER_SITE_OVERRIDE="ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/${cipher}/${value}/"
+.  endfor
 	cd ${.CURDIR} && exec ${MAKE} checksum REFETCH=false
-
 
 
 # Normal user-mode targets are PHONY targets, e.g., don't create the
