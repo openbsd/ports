@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/06/01 17:46:31 xsa Exp $
+# $OpenBSD: Makefile,v 1.15 2004/08/03 14:14:57 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=linkchecker/}
 
-MODULES=	python
+MODULES=	lang/python
 
 MODPY_DISTUTILS_INSTALLARGS=	--no-compile
 
