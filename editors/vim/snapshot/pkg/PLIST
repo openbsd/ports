@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/04/09 18:19:45 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2001/04/17 13:20:26 lebel Exp $
+bin/eview
+bin/evim
 bin/ex
 bin/rview
 bin/rvim
@@ -8,6 +10,7 @@ bin/vimdiff
 bin/vimtutor
 bin/xxd
 !%%no_x11%%
+man/man1/eview.1
 man/man1/ex.1
 man/man1/rview.1
 man/man1/rvim.1
@@ -106,6 +109,7 @@ share/vim/vim60${V}/doc/vim2html.pl
 share/vim/vim60${V}/doc/visual.txt
 share/vim/vim60${V}/doc/windows.txt
 share/vim/vim60${V}/doc/workshop.txt
+share/vim/vim60${V}/evim.vim
 share/vim/vim60${V}/filetype.vim
 share/vim/vim60${V}/ftoff.vim
 share/vim/vim60${V}/ftplugin.vim
@@ -164,6 +168,7 @@ share/vim/vim60${V}/macros/urm/examples
 share/vim/vim60${V}/macros/urm/urm
 share/vim/vim60${V}/macros/urm/urm.vim
 share/vim/vim60${V}/menu.vim
+share/vim/vim60${V}/mswin.vim
 share/vim/vim60${V}/optwin.vim
 share/vim/vim60${V}/plugin/README.txt
 share/vim/vim60${V}/plugin/explorer.vim
@@ -236,6 +241,7 @@ share/vim/vim60${V}/syntax/debcontrol.vim
 share/vim/vim60${V}/syntax/def.vim
 share/vim/vim60${V}/syntax/diff.vim
 share/vim/vim60${V}/syntax/diva.vim
+share/vim/vim60${V}/syntax/dns.vim
 share/vim/vim60${V}/syntax/docbk.vim
 share/vim/vim60${V}/syntax/dosbatch.vim
 share/vim/vim60${V}/syntax/dosini.vim
@@ -273,6 +279,8 @@ share/vim/vim60${V}/syntax/hercules.vim
 share/vim/vim60${V}/syntax/hitest.vim
 share/vim/vim60${V}/syntax/html.vim
 share/vim/vim60${V}/syntax/htmlm4.vim
+share/vim/vim60${V}/syntax/htmlos.vim
+share/vim/vim60${V}/syntax/ia64.vim
 share/vim/vim60${V}/syntax/icon.vim
 share/vim/vim60${V}/syntax/idl.vim
 share/vim/vim60${V}/syntax/idlang.vim
@@ -463,6 +471,7 @@ share/vim/vim60${V}/tools/ccfilter.c
 share/vim/vim60${V}/tools/ccfilter_README.txt
 share/vim/vim60${V}/tools/efm_filter.pl
 share/vim/vim60${V}/tools/efm_filter.txt
+share/vim/vim60${V}/tools/efm_perl.pl
 share/vim/vim60${V}/tools/gvimdiff
 share/vim/vim60${V}/tools/mve.awk
 share/vim/vim60${V}/tools/mve.txt
