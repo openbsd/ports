@@ -1,7 +1,7 @@
-$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.4 2001/08/11 03:41:22 drahn Exp $
---- gdk-pixbuf/Makefile.in.orig	Fri Aug 10 21:26:54 2001
-+++ gdk-pixbuf/Makefile.in	Fri Aug 10 22:12:23 2001
-@@ -247,7 +247,7 @@
+$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.5 2001/12/10 21:29:17 naddy Exp $
+--- gdk-pixbuf/Makefile.in.orig	Sun Dec  9 19:39:10 2001
++++ gdk-pixbuf/Makefile.in	Sun Dec  9 19:39:11 2001
+@@ -247,7 +247,7 @@ libgdk_pixbufincludedir = $(includedir)/
  libgdk_pixbuf_la_SOURCES =  	gdk-pixbuf.c				gdk-pixbuf-animation.c			gdk-pixbuf-data.c			gdk-pixbuf-drawable.c			gdk-pixbuf-io.c				gdk-pixbuf-loader.c			gdk-pixbuf-render.c			gdk-pixbuf-scale.c			gdk-pixbuf-util.c			gdk-pixbuf-parse-color.c		$(extra_sources)
  
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.4 2001/08/11 03:41:22 drahn Exp $
  libgdk_pixbuf_la_LIBADD = pixops/libpixops.la
  
  #
-@@ -257,7 +257,7 @@
+@@ -257,7 +257,7 @@ libgdk_pixbuf_la_LIBADD = pixops/libpixo
  libgdk_pixbuf_xlib_la_SOURCES =  	gdk-pixbuf.c				gdk-pixbuf-xlib.c			gdk-pixbuf-animation.c			gdk-pixbuf-data.c			gdk-pixbuf-io.c				gdk-pixbuf-xlib-render.c		gdk-pixbuf-xlib-drawable.c		gdk-pixbuf-scale.c			gdk-pixbuf-util.c			gdk-pixbuf-xlibrgb.c			gdk-pixbuf-parse-color.c		$(extra_sources)
  
  

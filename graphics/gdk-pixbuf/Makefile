@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2001/10/24 12:19:22 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/12/10 21:29:16 naddy Exp $
 
 COMMENT=	"replacement library for Imlib"
 
+PKGNAME=	${DISTNAME}p1
 DISTNAME=	gdk-pixbuf-0.10.1
 CATEGORIES=	graphics
 NEED_VERSION=	1.475
@@ -24,6 +25,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
+		patch-*
+
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} --enable-static --disable-modules
@@ -44,12 +49,9 @@ pre-patch:
 
 .include <bsd.port.mk>
 
-# From PostgreSQL port Makefile.
 .if ${FLAVOR:L:Mgnome} && !defined(NO_SHARED_LIBS)
 SED_PLIST+=-e '/%%SHARED-gnome%%/r${PKGDIR}/PFRAG.gnome.shared' -e '//d'
 .elif ${FLAVOR:L:Mgnome} && defined(NO_SHARED_LIBS) && \
 	${NO_SHARED_LIBS:L} == "yes"
 SED_PLIST+=-e '/%%SHARED-gnome%%/d'
 .endif
-
-

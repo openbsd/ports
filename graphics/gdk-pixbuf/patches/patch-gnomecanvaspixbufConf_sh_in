@@ -1,0 +1,11 @@
+$OpenBSD: patch-gnomecanvaspixbufConf_sh_in,v 1.1 2001/12/10 21:29:17 naddy Exp $
+--- gnomecanvaspixbufConf.sh.in.orig	Sun Dec  9 20:10:23 2001
++++ gnomecanvaspixbufConf.sh.in	Sun Dec  9 20:10:53 2001
+@@ -2,6 +2,6 @@
+ # Configuration file for using the gnomecanvaspixbuf library in GNOME applications
+ #
+ GNOMECANVASPIXBUF_LIBDIR="@GNOMECANVASPIXBUF_LIBDIR@"
+-GNOMECANVASPIXBUF_LIBS="@GNOMECANVASPIXBUF_LIBS@"
++GNOMECANVASPIXBUF_LIBS="@GNOMECANVASPIXBUF_LIBS@ @LIBTIFF@ @LIBJPEG@ @LIBPNG@ "
+ GNOMECANVASPIXBUF_INCLUDEDIR="@GNOMECANVASPIXBUF_INCLUDEDIR@"
+ MODULE_VERSION="gnomecanvaspixbuf-@VERSION@"

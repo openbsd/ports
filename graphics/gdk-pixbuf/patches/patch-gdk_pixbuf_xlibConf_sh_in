@@ -1,0 +1,11 @@
+$OpenBSD: patch-gdk_pixbuf_xlibConf_sh_in,v 1.1 2001/12/10 21:29:17 naddy Exp $
+--- gdk_pixbuf_xlibConf.sh.in.orig	Sun Dec  9 20:11:21 2001
++++ gdk_pixbuf_xlibConf.sh.in	Sun Dec  9 20:11:40 2001
+@@ -2,6 +2,6 @@
+ # Configuration file for using the gdk-pixbuf library in Xlib applications
+ #
+ GDK_PIXBUF_XLIB_LIBDIR="@GDK_PIXBUF_XLIB_LIBDIR@"
+-GDK_PIXBUF_XLIB_LIBS="@GDK_PIXBUF_XLIB_LIBS@"
++GDK_PIXBUF_XLIB_LIBS="@GDK_PIXBUF_XLIB_LIBS@ @LIBTIFF@ @LIBJPEG@ @LIBPNG@ "
+ GDK_PIXBUF_XLIB_INCLUDEDIR="@GDK_PIXBUF_XLIB_INCLUDEDIR@"
+ MODULE_VERSION="gdk-pixbuf-@VERSION@"
