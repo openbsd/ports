@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/06/11 01:13:43 weingart Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/04/26 14:55:32 sturm Exp $
 #
 # Pre/post-installation setup of a2ps
 
@@ -8,8 +8,8 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-A2PSCFG=/etc/a2ps.cfg
-A2PSSITECFG=/etc/a2ps-site.cfg
+A2PSCFG=${SYSCONFDIR}/a2ps.cfg
+A2PSSITECFG=${SYSCONFDIR}/a2ps-site.cfg
 
 # Function: tell the user what s/he needs to do to use the port just installed
 #
@@ -30,8 +30,8 @@ do_notice()
 #
 do_install()
 {
-    cp ${PREFIX}/share/a2ps/etc/a2ps.cfg /etc
-    cp ${PREFIX}/share/a2ps/etc/a2ps-site.cfg /etc
+    cp ${PREFIX}/share/a2ps/etc/a2ps.cfg ${SYSCONFDIR}
+    cp ${PREFIX}/share/a2ps/etc/a2ps-site.cfg ${SYSCONFDIR}
     echo
     echo "+---------------"
     echo "| The files ${A2PSCFG} and ${A2PSSITECFG} have been created"

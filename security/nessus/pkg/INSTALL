@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.3 2002/05/25 10:38:58 reinhard Exp $
+# $OpenBSD: INSTALL,v 1.4 2003/04/26 14:55:32 sturm Exp $
 #
 # Post-installation script for nessus port
 #
@@ -8,25 +8,26 @@
 set -e
 PATH=/bin
 PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIGDIR=${SYSCONFDIR}/nessus
 
 umask 022
 
 if [ x$2 = xPOST-INSTALL ]
 then
-	# See if /etc/nessus exists; if it doesn't, create and populate.
-	if [ -d /etc/nessus ]
+	# See if ${CONFIGDIR} exists; if it doesn't, create and populate.
+	if [ -d ${CONFIGDIR} ]
 	then
 		cat <<EOT
 
 +---------------
 | Example configuration files have been copied to
-| $PREFIX/share/examples/nessus.  Your existing /etc/nessus has
+| $PREFIX/share/examples/nessus.  Your existing ${CONFIGDIR} has
 | been left untouched.
 +---------------
 EOT
 	else
-		mkdir -p /etc/nessus
-		cp -R $PREFIX/share/examples/nessus/* /etc/nessus/
+		mkdir -p ${CONFIGDIR}
+		cp -R $PREFIX/share/examples/nessus/* ${CONFIGDIR}
 	fi
 
 	# Make /var/nessus directory for logs and pidfile and etc.

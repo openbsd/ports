@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 1999/04/08 22:41:17 marc Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/04/26 14:55:32 sturm Exp $
 #
 # Pre/post-installation setup for metamail
 
@@ -8,7 +8,7 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-MAILCAP=/etc/mailcap
+MAILCAP=${SYSCONFDIR}/mailcap
 
 
 # Function: tell the user what s/he needs to do to use the port just installed
@@ -25,11 +25,11 @@ do_notice()
     echo
 }
 
-# Function: copy the metamail mailcap to /etc
+# Function: copy the metamail mailcap to ${SYSCONFDIR}
 #
 do_install()
 {
-    cp ${PREFIX}/lib/metamail/mailcap /etc
+    cp ${PREFIX}/lib/metamail/mailcap ${SYSCONFDIR}
     echo
     echo "+---------------"
     echo "| The file ${MAILCAP} has been created on your system."

@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/06/11 01:15:53 fgsch Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/04/26 14:55:32 sturm Exp $
 #
 # Post-installation setup of totd - based on majordomo INSTALL script
 # from daniel@reichardt.ch
@@ -7,11 +7,12 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_FILE=${SYSCONFDIR}/totd.conf
 
 do_install_configuration()
 {
   echo -n "Let's see if there is already a configuration file... "
-  if [ -f /etc/totd.conf ]; then
+  if [ -f ${CONFIG_FILE} ]; then
     echo "yes"
     echo "Please compare your existing configuration with"
     echo "${PREFIX}/share/totd/totd.conf.sample"
@@ -19,9 +20,9 @@ do_install_configuration()
     echo "no"
     echo -n "Copying sample configuration file... "
     install -o root -g wheel -m 644 ${PREFIX}/share/totd/totd.conf.sample \
-      /etc/totd.conf
+      ${CONFIG_FILE}
     echo "ok"
-    echo "Please review new configuration /etc/totd.conf"
+    echo "Please review new configuration ${CONFIG_FILE}"
   fi
 }
 

@@ -1,11 +1,12 @@
 #! /bin/sh
-# $OpenBSD: INSTALL,v 1.4 2003/04/14 15:02:09 wilfried Exp $
+# $OpenBSD: INSTALL,v 1.5 2003/04/26 14:55:32 sturm Exp $
 #
 # Pre/post-installation setup of majordomo
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIGDIR=${SYSCONFDIR}/majordomo
 
 do_create_user()
 {
@@ -58,18 +59,18 @@ do_set_file_permissions()
 do_install_configuration()
 {
   echo -n "Let's see if there is already a configuration file... "
-  if [ -d /etc/majordomo -a -f /etc/majordomo/majordomo.cf ]; then
+  if [ -d ${CONFIGDIR} -a -f ${CONFIGDIR}/majordomo.cf ]; then
     echo "yes"
     echo "Please compare your existing configuration with"
     echo "${PREFIX}/lib/majordomo/sample.cf"
   else
     echo "no"
     echo -n "Copying sample configuration file... "
-    mkdir /etc/majordomo
-    chmod 755 /etc/majordomo 
-    sed -e "s/example.com/$(hostname)/" ${PREFIX}/lib/majordomo/sample.cf > /etc/majordomo/majordomo.cf
+    mkdir ${CONFIGDIR}
+    chmod 755 ${CONFIGDIR}
+    sed -e "s/example.com/$(hostname)/" ${PREFIX}/lib/majordomo/sample.cf > ${CONFIGDIR}/majordomo.cf
     echo "ok"
-    echo "Please review new configuration /etc/majordomo/majordomo.cf"
+    echo "Please review new configuration ${CONFIGDIR}/majordomo.cf"
   fi
 }
 

@@ -1,5 +1,5 @@
 # $FreeBSD: ports/russian/cyrproxy/Makefile,v 1.4 1999/08/31 01:46:57 peter Exp $
-# $OpenBSD: Makefile,v 1.13 2002/10/28 14:26:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2003/04/26 14:55:32 sturm Exp $
 
 COMMENT=	"cyrillic proxy for network protocols"
 
@@ -14,6 +14,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
+
+post-patch:
+	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/cyrproxy

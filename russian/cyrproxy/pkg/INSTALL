@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2000/01/26 07:35:50 form Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/04/26 14:55:32 sturm Exp $
 #
 # Pre/post-installation setup of cyrproxy
 
@@ -8,7 +8,7 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_FILE=/etc/cyrproxy.conf
+CONFIG_FILE=${SYSCONFDIR}/cyrproxy.conf
 SAMPLE_CONFIG_FILE=${PREFIX}/share/cyrproxy/cyrproxy.conf.sample
 CGIDIR=/var/www/cgi-bin
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/02/06 20:47:48 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2003/04/26 14:55:32 sturm Exp $
 
 COMMENT=	"mailing list manager"
 
@@ -25,7 +25,7 @@ EXTRACT_SUFX=	.tgz
 ALL_TARGET=	wrapper
 MAKE_FLAGS+=	W_HOME=${PREFIX}/lib/majordomo \
 		W_PATH=/bin:/usr/bin \
-		W_MAJORDOMO_CFDIR=/etc/majordomo \
+		W_MAJORDOMO_CFDIR=${SYSCONFDIR}/majordomo \
 		W_MAJORDOMO_CF=majordomo.cf \
 		POSIX=""
 
@@ -58,5 +58,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/Doc/majordomo.lisa6.ps ${DOCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/Doc/majordomo.ora ${DOCDIR}
 	@${INSTALL_DATA} ${FILESDIR}/post-install-notes	${DOCDIR}
+	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," \
+		${DOCDIR}/post-install-notes
 
 .include <bsd.port.mk>

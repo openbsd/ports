@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.2 2002/05/25 10:38:58 reinhard Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2003/04/26 14:55:32 sturm Exp $
 #
 # Nessus de-installation
 
@@ -11,7 +11,7 @@ cat <<EOT
 
 +---------------
 | To completely deinstall the $1 package, you need to manually
-| delete /etc/nessus and /var/nessus.
+| delete ${SYSCONFDIR}/nessus and /var/nessus.
 |
 | Do not do this if you plan on re-installing $1
 | at some future time.

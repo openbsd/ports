@@ -1,12 +1,12 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.2 2000/07/19 09:31:21 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2003/04/26 14:55:32 sturm Exp $
 #
 # ipfm de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_FILE=/etc/ipfm.conf
+CONFIG_FILE=${SYSCONFDIR}/ipfm.conf
 LOG_DIR=/var/log/ipfm
 
 if [ -f ${CONFIG_FILE} -o -d ${LOG_DIR} ]; then

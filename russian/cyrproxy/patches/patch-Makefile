@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1 2001/11/27 10:06:50 form Exp $
---- Makefile.orig	Fri Feb  9 04:33:53 2001
-+++ Makefile	Tue Nov 27 15:53:47 2001
+$OpenBSD: patch-Makefile,v 1.2 2003/04/26 14:55:32 sturm Exp $
+--- Makefile.orig	Thu Feb  8 23:33:53 2001
++++ Makefile	Sat Apr 26 14:10:35 2003
 @@ -6,9 +6,9 @@
  
  CHMOD=/bin/chmod
@@ -14,6 +14,15 @@ $OpenBSD: patch-Makefile,v 1.1 2001/11/27 10:06:50 form Exp $
  # Some systems contains resolver routines in libresolv
  # EXTRALIBS=lresolv
  EXTRALIBS=
+@@ -34,7 +34,7 @@ SPY=tcpspy
+ TBLDIR=/usr/local/share/proxy
+ 
+ # config file location
+-CONF_FILE=/etc/cyrproxy.conf
++CONF_FILE=%%SYSCONFDIR%%/cyrproxy.conf
+ 
+ # Subdirs for make
+ # cyrcoder - filter-like cyrillic recoder
 @@ -65,7 +65,7 @@ all: ${CYRPROXY} ${SPY} subdirmake confi
  
  

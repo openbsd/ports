@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/10/27 17:21:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2003/04/26 14:55:32 sturm Exp $
 
 COMMENT=	"MIME implementation"
 
@@ -17,6 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 WRKDIST=	${WRKDIR}/${DISTNAME}/src
 
 NO_REGRESS=	Yes
+
+post-patch:
+	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/config.h
 
 pre-install:
 	@cd ${WRKSRC}/bin && rm -f *.orig

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2002/04/26 03:35:34 pvalchev Exp $
+# $OpenBSD: INSTALL,v 1.3 2003/04/26 14:55:32 sturm Exp $
 #
 # Pre/post-installation setup of queso
 
@@ -8,7 +8,7 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_FILE=/etc/queso.conf
+CONFIG_FILE=${SYSCONFDIR}/queso.conf
 
 # Function: tell the user what s/he needs to do to use the port just installed
 #

@@ -1,12 +1,12 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.3 2002/04/26 03:35:34 pvalchev Exp $
+# $OpenBSD: INSTALL,v 1.4 2003/04/26 14:55:32 sturm Exp $
 #
 # Pre/post-installation setup of proxy-suite
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PREFIX:-/usr/local}
-CONFIG_DIR=/etc/proxy-suite
+CONFIG_DIR=${SYSCONFDIR}/proxy-suite
 CONFIG_FILE=${CONFIG_DIR}/ftp-proxy.conf
 SAMPLE_FILE=${PREFIX}/share/proxy-suite/ftp-proxy.conf.sample
 

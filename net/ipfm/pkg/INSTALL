@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2000/06/23 18:44:42 form Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/04/26 14:55:32 sturm Exp $
 #
 # Pre/post-installation setup of ipfm
 
@@ -8,7 +8,7 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_FILE=/etc/ipfm.conf
+CONFIG_FILE=${SYSCONFDIR}/ipfm.conf
 SAMPLE_CONFIG_FILE=${PREFIX}/share/examples/ipfm/ipfm.conf.sample
 
 # Function: tell the user what s/he needs to do to use the port just installed

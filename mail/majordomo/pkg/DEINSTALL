@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2001/01/21 23:35:01 danh Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/04/26 14:55:32 sturm Exp $
 #
 # De-installation setup of majordomo
 
@@ -18,7 +18,7 @@ do_notice()
     echo "| To completely deinstall the $1 package you need to perform"
     echo "| these steps as root:"
     echo "|"
-    echo "|       rm -rf /etc/majordomo/"
+    echo "|       rm -rf ${SYSCONFDIR}/majordomo/"
     echo "|       rm -rf /var/spool/majordomo/"
     echo "|       rmuser majordom"
     echo "|       rmgroup majordom"

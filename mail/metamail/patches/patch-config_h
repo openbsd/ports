@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_h,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
---- config.h.orig	Wed Nov 24 08:36:07 1993
-+++ config.h	Wed Feb 20 14:06:43 2002
+$OpenBSD: patch-config_h,v 1.2 2003/04/26 14:55:32 sturm Exp $
+--- config.h.orig	Wed Nov 24 16:36:07 1993
++++ config.h	Thu Apr 24 22:06:39 2003
 @@ -73,7 +73,7 @@ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIE
  #ifdef SYSV
  #define RESET_PROGRAM "tput clear"
@@ -10,7 +10,7 @@ $OpenBSD: patch-config_h,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
  #define RESET_PROGRAM "/usr/bin/reset"
  #else
  #define RESET_PROGRAM "/usr/ucb/reset"
-@@ -155,7 +155,11 @@ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIE
+@@ -155,9 +155,13 @@ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIE
  #ifdef NeXT
  #define sigtype void
  #else
@@ -18,7 +18,18 @@ $OpenBSD: patch-config_h,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
 +#define sigtype void
 +#else
  #define sigtype int
+ #endif
+ #endif
 +#endif
- #endif
- #endif
  
+ #ifdef MSDOS
+ #define PATH_SEPARATOR ';'
+@@ -173,7 +177,7 @@ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIE
+ #else
+ #define PATH_SEPARATOR ':'
+ #ifndef STDPATH
+-#define STDPATH "/.mailcap:/usr/local/etc/mailcap:/usr/etc/mailcap:/etc/mailcap:/etc/mail/mailcap:/usr/public/lib/mailcap"
++#define STDPATH "/.mailcap:%%SYSCONFDIR%%/mailcap:/etc/mail/mailcap"
+ #endif
+ #endif
+ #endif
