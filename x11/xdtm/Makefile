@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 1999/11/14 23:51:02 turan Exp $
+# $OpenBSD: Makefile,v 1.7 1999/11/19 04:33:04 kevlo Exp $
 
-BROKEN=		packing list problems, can not make instal 2nd time as well
 
-DISTNAME=		xdtm-2.5.5
+DISTNAME=		xdtm-2.5.8
 CATEGORIES=		x11
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	applications/xdtm
+MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=		angelos@openbsd.org
 
