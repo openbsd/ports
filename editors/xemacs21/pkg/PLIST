@@ -1,20 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/06/24 17:21:49 sturm Exp $
-@unexec install-info --delete --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/cl.info
-@unexec install-info --delete --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/custom.info
-@unexec install-info --delete --entry='* Emacs Modules: (emodules).' --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/emodules.info
-@unexec install-info --delete --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/external-widget.info
-@unexec install-info --delete --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/info.info
-@unexec install-info --delete --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/internals.info
-@unexec install-info --delete --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/lispref.info
-@unexec install-info --delete --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/new-users-guide.info
-@unexec install-info --delete --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/standards.info
-@unexec install-info --delete --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/term.info
-@unexec install-info --delete --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/termcap.info
-@unexec install-info --delete --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/texinfo.info
-@unexec install-info --delete --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/widget.info
-@unexec install-info --delete --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/xemacs-faq.info
-@unexec install-info --delete --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/xemacs.info
-@unexec rm %D/info/xemacs-${VERSION}/dir
+@comment $OpenBSD: PLIST,v 1.10 2004/09/15 18:01:07 espie Exp $
 bin/ellcc
 bin/gnuattach
 bin/gnuclient
@@ -27,38 +11,25 @@ bin/xemacs-b2m
 bin/xemacs-ctags
 bin/xemacs-etags
 bin/xemacs-rcs-checkin
-info/xemacs-${VERSION}/cl.info
-info/xemacs-${VERSION}/custom.info
-info/xemacs-${VERSION}/emodules.info
+info/xemacs-${VERSION}/
+@info info/xemacs-${VERSION}/cl.info
+@info info/xemacs-${VERSION}/custom.info
+info/xemacs-${VERSION}/dir
+@info info/xemacs-${VERSION}/emodules.info
 info/xemacs-${VERSION}/external-widget.info
-info/xemacs-${VERSION}/info.info
-info/xemacs-${VERSION}/internals.info
-info/xemacs-${VERSION}/internals.info-1
-info/xemacs-${VERSION}/internals.info-2
-info/xemacs-${VERSION}/lispref.info
-info/xemacs-${VERSION}/lispref.info-1
-info/xemacs-${VERSION}/lispref.info-2
-info/xemacs-${VERSION}/lispref.info-3
-info/xemacs-${VERSION}/lispref.info-4
-info/xemacs-${VERSION}/lispref.info-5
-info/xemacs-${VERSION}/lispref.info-6
-info/xemacs-${VERSION}/lispref.info-7
-info/xemacs-${VERSION}/lispref.info-8
-info/xemacs-${VERSION}/lispref.info-9
+@info info/xemacs-${VERSION}/info.info
+@info info/xemacs-${VERSION}/internals.info
+@info info/xemacs-${VERSION}/lispref.info
 info/xemacs-${VERSION}/new-users-guide.info
-info/xemacs-${VERSION}/standards.info
-info/xemacs-${VERSION}/term.info
-info/xemacs-${VERSION}/termcap.info
-info/xemacs-${VERSION}/texinfo.info
-info/xemacs-${VERSION}/texinfo.info-1
-info/xemacs-${VERSION}/texinfo.info-2
-info/xemacs-${VERSION}/widget.info
-info/xemacs-${VERSION}/xemacs-faq.info
-info/xemacs-${VERSION}/xemacs.info
-info/xemacs-${VERSION}/xemacs.info-1
-info/xemacs-${VERSION}/xemacs.info-2
-info/xemacs-${VERSION}/xemacs.info-3
-info/xemacs-${VERSION}/xemacs.info-4
+@info info/xemacs-${VERSION}/standards.info
+@info info/xemacs-${VERSION}/term.info
+@info info/xemacs-${VERSION}/termcap.info
+@info info/xemacs-${VERSION}/texinfo.info
+@info info/xemacs-${VERSION}/widget.info
+@info info/xemacs-${VERSION}/xemacs-faq.info
+@info info/xemacs-${VERSION}/xemacs.info
+lib/xemacs-${VERSION}/
+lib/xemacs-${VERSION}/etc/
 lib/xemacs-${VERSION}/etc/BETA
 lib/xemacs-${VERSION}/etc/CHARSETS
 lib/xemacs-${VERSION}/etc/CODING-STANDARDS
@@ -109,6 +80,7 @@ lib/xemacs-${VERSION}/etc/check_cygwin_setup.sh
 lib/xemacs-${VERSION}/etc/chr.png
 lib/xemacs-${VERSION}/etc/chrm.png
 lib/xemacs-${VERSION}/etc/ctags.1
+lib/xemacs-${VERSION}/etc/custom/
 lib/xemacs-${VERSION}/etc/custom/check0.xpm
 lib/xemacs-${VERSION}/etc/custom/check1.xpm
 lib/xemacs-${VERSION}/etc/custom/choose-down.png
@@ -117,6 +89,7 @@ lib/xemacs-${VERSION}/etc/custom/done-down.png
 lib/xemacs-${VERSION}/etc/custom/done-up.png
 lib/xemacs-${VERSION}/etc/custom/down-pushed.xpm
 lib/xemacs-${VERSION}/etc/custom/down.xpm
+lib/xemacs-${VERSION}/etc/custom/example-themes/
 lib/xemacs-${VERSION}/etc/custom/example-themes/europe-theme.el
 lib/xemacs-${VERSION}/etc/custom/example-themes/ex-custom-file
 lib/xemacs-${VERSION}/etc/custom/example-themes/example-theme.el
@@ -144,6 +117,7 @@ lib/xemacs-${VERSION}/etc/custom/toggle-on-up.png
 lib/xemacs-${VERSION}/etc/editclient.sh
 lib/xemacs-${VERSION}/etc/emacskeys.sco
 lib/xemacs-${VERSION}/etc/emacsstrs.sco
+lib/xemacs-${VERSION}/etc/eos/
 lib/xemacs-${VERSION}/etc/eos/eos-build.xbm
 lib/xemacs-${VERSION}/etc/eos/eos-clear-at.xbm
 lib/xemacs-${VERSION}/etc/eos/eos-cont.xbm
@@ -173,11 +147,13 @@ lib/xemacs-${VERSION}/etc/gnudoit.1
 lib/xemacs-${VERSION}/etc/gnuserv.1
 lib/xemacs-${VERSION}/etc/gnuserv.README
 lib/xemacs-${VERSION}/etc/gray1.xbm
+lib/xemacs-${VERSION}/etc/idd/
 lib/xemacs-${VERSION}/etc/idd/drop
 lib/xemacs-${VERSION}/etc/idd/dropmsk
 lib/xemacs-${VERSION}/etc/ms-kermit
 lib/xemacs-${VERSION}/etc/ms-kermit-7bit
 lib/xemacs-${VERSION}/etc/package-index.LATEST.gpg
+lib/xemacs-${VERSION}/etc/photos/
 lib/xemacs-${VERSION}/etc/photos/adrian.png
 lib/xemacs-${VERSION}/etc/photos/adrianm.png
 lib/xemacs-${VERSION}/etc/photos/ajc.png
@@ -260,11 +236,15 @@ lib/xemacs-${VERSION}/etc/refcard.tex
 lib/xemacs-${VERSION}/etc/sample.Xdefaults
 lib/xemacs-${VERSION}/etc/sample.init.el
 lib/xemacs-${VERSION}/etc/sink.xbm
+lib/xemacs-${VERSION}/etc/sparcworks/
 lib/xemacs-${VERSION}/etc/sparcworks/SW.Editor.xpm
 lib/xemacs-${VERSION}/etc/sparcworks/sunpro-mailcap
+lib/xemacs-${VERSION}/etc/tests/
+lib/xemacs-${VERSION}/etc/tests/external-widget/
 lib/xemacs-${VERSION}/etc/tests/external-widget/Makefile
 lib/xemacs-${VERSION}/etc/tests/external-widget/test-ew-motif.c
 lib/xemacs-${VERSION}/etc/tests/external-widget/test-ew-xlib.c
+lib/xemacs-${VERSION}/etc/toolbar/
 lib/xemacs-${VERSION}/etc/toolbar/compile-cap-up.xpm
 lib/xemacs-${VERSION}/etc/toolbar/compile-cap-xx.xpm
 lib/xemacs-${VERSION}/etc/toolbar/compile-dn.xbm
@@ -436,6 +416,7 @@ lib/xemacs-${VERSION}/etc/xemacs-ja.1
 lib/xemacs-${VERSION}/etc/xemacs.1
 lib/xemacs-${VERSION}/etc/xemacs.xbm
 lib/xemacs-${VERSION}/etc/xemacs.xpm
+lib/xemacs-${VERSION}/${GCCARCH}/
 lib/xemacs-${VERSION}/${GCCARCH}/DOC
 lib/xemacs-${VERSION}/${GCCARCH}/add-big-package.sh
 lib/xemacs-${VERSION}/${GCCARCH}/config.values
@@ -445,6 +426,7 @@ lib/xemacs-${VERSION}/${GCCARCH}/fakemail
 lib/xemacs-${VERSION}/${GCCARCH}/gnuserv
 lib/xemacs-${VERSION}/${GCCARCH}/gzip-el.sh
 lib/xemacs-${VERSION}/${GCCARCH}/hexl
+lib/xemacs-${VERSION}/${GCCARCH}/include/
 lib/xemacs-${VERSION}/${GCCARCH}/include/Emacs.ad.h
 lib/xemacs-${VERSION}/${GCCARCH}/include/EmacsFrame.h
 lib/xemacs-${VERSION}/${GCCARCH}/include/EmacsFrameP.h
@@ -520,6 +502,7 @@ lib/xemacs-${VERSION}/${GCCARCH}/include/lisp-union.h
 lib/xemacs-${VERSION}/${GCCARCH}/include/lisp.h
 lib/xemacs-${VERSION}/${GCCARCH}/include/lrecord.h
 lib/xemacs-${VERSION}/${GCCARCH}/include/lstream.h
+lib/xemacs-${VERSION}/${GCCARCH}/include/m/
 lib/xemacs-${VERSION}/${GCCARCH}/include/m/7300.h
 lib/xemacs-${VERSION}/${GCCARCH}/include/m/README
 lib/xemacs-${VERSION}/${GCCARCH}/include/m/acorn.h
@@ -647,6 +630,7 @@ lib/xemacs-${VERSION}/${GCCARCH}/include/procimpl.h
 lib/xemacs-${VERSION}/${GCCARCH}/include/rangetab.h
 lib/xemacs-${VERSION}/${GCCARCH}/include/redisplay.h
 lib/xemacs-${VERSION}/${GCCARCH}/include/regex.h
+lib/xemacs-${VERSION}/${GCCARCH}/include/s/
 lib/xemacs-${VERSION}/${GCCARCH}/include/s/3700.h
 lib/xemacs-${VERSION}/${GCCARCH}/include/s/386-ix.h
 lib/xemacs-${VERSION}/${GCCARCH}/include/s/386bsd.h
@@ -794,6 +778,7 @@ lib/xemacs-${VERSION}/${GCCARCH}/include/xmprimitivep.h
 lib/xemacs-${VERSION}/${GCCARCH}/include/xmu.h
 lib/xemacs-${VERSION}/${GCCARCH}/make-docfile
 lib/xemacs-${VERSION}/${GCCARCH}/mmencode
+lib/xemacs-${VERSION}/${GCCARCH}/modules/
 lib/xemacs-${VERSION}/${GCCARCH}/movemail
 lib/xemacs-${VERSION}/${GCCARCH}/profile
 lib/xemacs-${VERSION}/${GCCARCH}/rcs2log
@@ -801,6 +786,7 @@ lib/xemacs-${VERSION}/${GCCARCH}/sorted-doc
 lib/xemacs-${VERSION}/${GCCARCH}/vcdiff
 lib/xemacs-${VERSION}/${GCCARCH}/wakeup
 lib/xemacs-${VERSION}/${GCCARCH}/yow
+lib/xemacs-${VERSION}/lisp/
 lib/xemacs-${VERSION}/lisp/ChangeLog
 lib/xemacs-${VERSION}/lisp/ChangeLog.1
 lib/xemacs-${VERSION}/lisp/ChangeLog.GTK
@@ -1068,6 +1054,7 @@ lib/xemacs-${VERSION}/lisp/msw-mouse.el
 lib/xemacs-${VERSION}/lisp/msw-mouse.elc
 lib/xemacs-${VERSION}/lisp/msw-select.el
 lib/xemacs-${VERSION}/lisp/msw-select.elc
+lib/xemacs-${VERSION}/lisp/mule/
 lib/xemacs-${VERSION}/lisp/mule/arabic.el
 lib/xemacs-${VERSION}/lisp/mule/arabic.elc
 lib/xemacs-${VERSION}/lisp/mule/auto-autoloads.el
@@ -1191,6 +1178,7 @@ lib/xemacs-${VERSION}/lisp/symbols.el
 lib/xemacs-${VERSION}/lisp/symbols.elc
 lib/xemacs-${VERSION}/lisp/syntax.el
 lib/xemacs-${VERSION}/lisp/syntax.elc
+lib/xemacs-${VERSION}/lisp/term/
 lib/xemacs-${VERSION}/lisp/term/AT386.el
 lib/xemacs-${VERSION}/lisp/term/README
 lib/xemacs-${VERSION}/lisp/term/apollo.el
@@ -1280,46 +1268,10 @@ lib/xemacs-${VERSION}/lisp/x-win-sun.el
 lib/xemacs-${VERSION}/lisp/x-win-sun.elc
 lib/xemacs-${VERSION}/lisp/x-win-xfree86.el
 lib/xemacs-${VERSION}/lisp/x-win-xfree86.elc
-man/man1/gnuattach.1
-man/man1/gnuclient.1
-man/man1/gnudoit.1
-man/man1/gnuserv.1
-man/man1/xemacs-ctags.1
-man/man1/xemacs-etags.1
-man/man1/xemacs.1
-@dirrm lib/xemacs-${VERSION}/lisp/term
-@dirrm lib/xemacs-${VERSION}/lisp/mule
-@dirrm lib/xemacs-${VERSION}/lisp
-@exec mkdir -p %D/lib/xemacs-${VERSION}/${GCCARCH}/modules
-@dirrm lib/xemacs-${VERSION}/${GCCARCH}/modules
-@dirrm lib/xemacs-${VERSION}/${GCCARCH}/include/s
-@dirrm lib/xemacs-${VERSION}/${GCCARCH}/include/m
-@dirrm lib/xemacs-${VERSION}/${GCCARCH}/include
-@dirrm lib/xemacs-${VERSION}/${GCCARCH}
-@dirrm lib/xemacs-${VERSION}/etc/toolbar
-@dirrm lib/xemacs-${VERSION}/etc/tests/external-widget
-@dirrm lib/xemacs-${VERSION}/etc/tests
-@dirrm lib/xemacs-${VERSION}/etc/sparcworks
-@dirrm lib/xemacs-${VERSION}/etc/photos
-@dirrm lib/xemacs-${VERSION}/etc/idd
-@dirrm lib/xemacs-${VERSION}/etc/eos
-@dirrm lib/xemacs-${VERSION}/etc/custom/example-themes
-@dirrm lib/xemacs-${VERSION}/etc/custom
-@dirrm lib/xemacs-${VERSION}/etc
-@dirrm lib/xemacs-${VERSION}
-@dirrm info/xemacs-${VERSION}
-@exec install-info --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/cl.info
-@exec install-info --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/custom.info
-@exec install-info --entry='* Emacs Modules: (emodules).' --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/emodules.info
-@exec install-info --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/external-widget.info
-@exec install-info --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/info.info
-@exec install-info --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/internals.info
-@exec install-info --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/lispref.info
-@exec install-info --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/new-users-guide.info
-@exec install-info --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/standards.info
-@exec install-info --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/term.info
-@exec install-info --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/termcap.info
-@exec install-info --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/texinfo.info
-@exec install-info --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/widget.info
-@exec install-info --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/xemacs-faq.info
-@exec install-info --info-dir=%D/info/xemacs-${VERSION} %D/info/xemacs-${VERSION}/xemacs.info
+@man man/man1/gnuattach.1
+@man man/man1/gnuclient.1
+@man man/man1/gnudoit.1
+@man man/man1/gnuserv.1
+@man man/man1/xemacs-ctags.1
+@man man/man1/xemacs-etags.1
+@man man/man1/xemacs.1

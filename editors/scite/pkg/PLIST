@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/08/14 18:27:28 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:01:07 espie Exp $
 bin/SciTE
+share/doc/scite/
 share/doc/scite/PrintHi.png
 share/doc/scite/SciTE.html
 share/doc/scite/SciTEDirector.html
@@ -12,6 +13,7 @@ share/doc/scite/SciTEImage.html
 share/doc/scite/SciTELexer.html
 share/doc/scite/SciTERegEx.html
 share/doc/scite/SciTETranslation.html
+share/scite/
 share/scite/Embedded.properties
 share/scite/SciTE.properties
 share/scite/SciTEGlobal.properties
@@ -47,5 +49,3 @@ share/scite/scriptol.properties
 share/scite/sql.properties
 share/scite/tcl.properties
 share/scite/vb.properties
-@dirrm share/scite
-@dirrm share/doc/scite

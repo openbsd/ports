@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/06/25 06:14:08 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/09/15 18:01:05 espie Exp $
 bin/AbiWord-2.0
 bin/abiword
 bin/ttfadmin.sh
 bin/ttftool
+lib/bonobo/
+lib/bonobo/servers/
 lib/bonobo/servers/GNOME_AbiWord_Control_2_0.server
+share/AbiSuite-2.0/
+share/AbiSuite-2.0/AbiWord/
 share/AbiSuite-2.0/AbiWord.exe.MANIFEST
+share/AbiSuite-2.0/AbiWord/glade/
 share/AbiSuite-2.0/AbiWord/glade/ap_UnixDialog_Break.glade
 share/AbiSuite-2.0/AbiWord/glade/ap_UnixDialog_Field.glade
 share/AbiSuite-2.0/AbiWord/glade/ap_UnixDialog_FormatFootnotes.glade
@@ -27,7 +32,9 @@ share/AbiSuite-2.0/AbiWord/glade/xap_UnixDlg_PluginManager.glade
 share/AbiSuite-2.0/AbiWord/glade/xap_UnixDlg_WindowMore.glade
 share/AbiSuite-2.0/AbiWord/glade/xap_UnixDlg_Zoom.glade
 share/AbiSuite-2.0/AbiWord/readme.txt
+share/AbiSuite-2.0/AbiWord/scripts/
 share/AbiSuite-2.0/AbiWord/scripts/abw2html.pl
+share/AbiSuite-2.0/AbiWord/strings/
 share/AbiSuite-2.0/AbiWord/strings/am-ET.strings
 share/AbiSuite-2.0/AbiWord/strings/ar.strings
 share/AbiSuite-2.0/AbiWord/strings/be-BY.strings
@@ -152,6 +159,7 @@ share/AbiSuite-2.0/AbiWord/system.profile-zh-CN
 share/AbiSuite-2.0/AbiWord/system.profile-zh-TW
 share/AbiSuite-2.0/README
 share/AbiSuite-2.0/abi-nautilus-view-file.xml
+share/AbiSuite-2.0/clipart/
 share/AbiSuite-2.0/clipart/book.png
 share/AbiSuite-2.0/clipart/chip.png
 share/AbiSuite-2.0/clipart/fun.png
@@ -179,12 +187,15 @@ share/AbiSuite-2.0/clipart/tree.png
 share/AbiSuite-2.0/clipart/tux_bordelais.png
 share/AbiSuite-2.0/clipart/weather.png
 share/AbiSuite-2.0/clipart/write.png
+share/AbiSuite-2.0/dictionary/
 share/AbiSuite-2.0/dictionary/american.hash
 share/AbiSuite-2.0/dictionary/ispell_dictionary_list.xml
+share/AbiSuite-2.0/icons/
 share/AbiSuite-2.0/icons/abiword_16.xpm
 share/AbiSuite-2.0/icons/abiword_48.png
 share/AbiSuite-2.0/icons/abiword_48.tif
 share/AbiSuite-2.0/icons/abiword_48.xpm
+share/AbiSuite-2.0/templates/
 share/AbiSuite-2.0/templates/A4.awt
 share/AbiSuite-2.0/templates/Business-Report.awt
 share/AbiSuite-2.0/templates/Employee-Directory.awt
@@ -254,18 +265,7 @@ share/AbiSuite-2.0/templates/normal.awt-ur_PK
 share/AbiSuite-2.0/templates/normal.awt-yi
 share/AbiSuite-2.0/templates/normal.awt-zh_CN
 share/AbiSuite-2.0/templates/normal.awt-zh_TW
+share/applications/
 share/applications/abiword.desktop
+share/icons/
 share/icons/abiword_48.png
-@dirrm share/icons
-@dirrm share/applications
-@dirrm share/AbiSuite-2.0/templates
-@dirrm share/AbiSuite-2.0/icons
-@dirrm share/AbiSuite-2.0/dictionary
-@dirrm share/AbiSuite-2.0/clipart
-@dirrm share/AbiSuite-2.0/AbiWord/strings
-@dirrm share/AbiSuite-2.0/AbiWord/scripts
-@dirrm share/AbiSuite-2.0/AbiWord/glade
-@dirrm share/AbiSuite-2.0/AbiWord
-@dirrm share/AbiSuite-2.0
-@dirrm lib/bonobo/servers
-@dirrm lib/bonobo

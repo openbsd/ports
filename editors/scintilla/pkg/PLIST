@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:01:07 espie Exp $
+include/scintilla/
 include/scintilla/Accessor.h
 include/scintilla/KeyWords.h
 include/scintilla/Platform.h
@@ -11,4 +12,3 @@ include/scintilla/WindowAccessor.h
 lib/libscintilla.a
 lib/libscintilla_lexers.a
 %%SHARED%%
-@dirrm include/scintilla

@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:48 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:01:07 espie Exp $
 bin/textedit
-man/cat1/textedit.0
+@man man/cat1/textedit.0

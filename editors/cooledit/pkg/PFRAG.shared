@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2003/12/15 17:00:13 naddy Exp $
-lib/libCw.so.1.0
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/15 18:01:06 espie Exp $
+@lib lib/libCw.so.1.0

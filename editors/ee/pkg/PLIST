@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/11/13 15:23:15 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:01:06 espie Exp $
 bin/ee
-man/man1/ee.1
+@man man/man1/ee.1

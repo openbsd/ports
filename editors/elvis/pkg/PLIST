@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/06/20 13:30:56 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:01:06 espie Exp $
 bin/elvis
 bin/elvtags
 bin/ref
-man/man1/elvis.1
-man/man1/elvtags.1
-man/man1/ref.1
+@man man/man1/elvis.1
+@man man/man1/elvtags.1
+@man man/man1/ref.1
+share/elvis/
 share/elvis/ctags.man
 share/elvis/doexec.txt
 share/elvis/elvis.ali
@@ -44,4 +45,3 @@ share/elvis/howto.html
 share/elvis/license
 share/elvis/printdoc.bat
 share/elvis/ref.man
-@dirrm share/elvis

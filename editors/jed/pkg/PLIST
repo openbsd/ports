@@ -1,15 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.12 2003/05/14 01:08:05 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/09/15 18:01:06 espie Exp $
 bin/jed
 bin/jed-script
 bin/rgrep
-!%%no_x11%%
-@unexec install-info --delete --info-dir=%D/info %D/info/jed.info
-info/jed.1in
-info/jed.2in
-info/jed.3in
-info/jed.info
-@exec install-info --info-dir=%D/info %D/info/jed.info
+@comment info/dir.info
+@comment info/info.info
+@info info/jed.info
+lib/jed/
+lib/jed/bin/
 lib/jed/bin/getmail
+lib/jed/lib/
 lib/jed/lib/abbrev.sl
 lib/jed/lib/abbrmisc.sl
 lib/jed/lib/aboutjed.hlp
@@ -28,7 +27,9 @@ lib/jed/lib/cal.sl
 lib/jed/lib/chglog.sl
 lib/jed/lib/cmisc.sl
 lib/jed/lib/cmode.sl
+lib/jed/lib/colors/
 lib/jed/lib/colors/README
+lib/jed/lib/colors/Xjed/
 lib/jed/lib/colors/Xjed/elegant.sl
 lib/jed/lib/colors/Xjed/pastel0.sl
 lib/jed/lib/colors/black1.sl
@@ -153,6 +154,7 @@ lib/jed/lib/tex.sl
 lib/jed/lib/texcom.sl
 lib/jed/lib/textmode.sl
 lib/jed/lib/tiasm.sl
+lib/jed/lib/tm/
 lib/jed/lib/tmisc.sl
 lib/jed/lib/tmmode.sl
 lib/jed/lib/tpascal.sl
@@ -167,10 +169,13 @@ lib/jed/lib/wmenu.sl
 lib/jed/lib/wordstar.hlp
 lib/jed/lib/wordstar.sl
 lib/jed/lib/yankpop.sl
-man/man1/jed.1
-man/man1/rgrep.1
+@man man/man1/jed.1
+@man man/man1/rgrep.1
+share/doc/jed/
 share/doc/jed/README
+share/doc/jed/manual/
 share/doc/jed/manual/jed.tex
+share/doc/jed/txt/
 share/doc/jed/txt/abbrev.txt
 share/doc/jed/txt/color.txt
 share/doc/jed/txt/compile.txt
@@ -199,11 +204,4 @@ share/doc/jed/txt/wordstar.txt
 share/doc/jed/txt/xjed.txt
 share/doc/jed/txt/xrenderfont.txt
 share/doc/jed/txt/yankpop.txt
-@dirrm share/doc/jed/txt
-@dirrm share/doc/jed/manual
-@dirrm share/doc/jed
-@dirrm lib/jed/lib/colors/Xjed
-@dirrm lib/jed/lib/colors
-@dirrm lib/jed/lib
-@dirrm lib/jed/bin
-@dirrm lib/jed
+!%%no_x11%%

@@ -1,32 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/04/07 01:54:48 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:01:06 espie Exp $
 bin/jove
 bin/teachjove
+libexec/jove/
 libexec/jove/portsrv
 libexec/jove/recover
-man/man1/jove.1
-man/man1/teachjove.1
-share/jove/teach-jove
-share/jove/cmds.doc
-share/jove/jove.rc.sun
-share/jove/keychart.sun
-share/jove/jove.rc.sun-cmd
-share/jove/keychart.sun-cmd
-share/jove/jove.rc.vt100
-share/jove/keychart.vt100
-share/jove/jove.rc.wyse
-share/jove/keychart.wyse
-share/jove/jove.rc.xterm
-share/jove/keychart.xterm
-share/jove/jove.rc.z29
-share/jove/keychart.z29
-share/jove/jove.rc.3022
-share/jove/keychart.3022
-share/jove/keychart.
-share/jove/XTermresource
-share/jove/jove.rc
+@man man/man1/jove.1
+@man man/man1/teachjove.1
+share/jove/
 share/jove/README
-@dirrm share/jove
-@dirrm libexec/jove
 @exec echo ""
 @exec echo "*** See %D/share/jove/README about changes to /etc/rc or"
 @exec echo "*** /etc/rc.local so that the system recovers jove files"
@@ -37,3 +18,22 @@ share/jove/README
 @unexec echo "*** to recover jove files on reboot after a system crash"
 @unexec echo "*** you should back out those changes now."
 @unexec echo ""
+share/jove/XTermresource
+share/jove/cmds.doc
+share/jove/jove.rc
+share/jove/jove.rc.3022
+share/jove/jove.rc.sun
+share/jove/jove.rc.sun-cmd
+share/jove/jove.rc.vt100
+share/jove/jove.rc.wyse
+share/jove/jove.rc.xterm
+share/jove/jove.rc.z29
+share/jove/keychart.
+share/jove/keychart.3022
+share/jove/keychart.sun
+share/jove/keychart.sun-cmd
+share/jove/keychart.vt100
+share/jove/keychart.wyse
+share/jove/keychart.xterm
+share/jove/keychart.z29
+share/jove/teach-jove

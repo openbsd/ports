@@ -1,21 +1,28 @@
-@unexec install-info --delete --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/mule-packages/info/latin-unity.info
-@unexec install-info --delete --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/mule-packages/info/lookup.info
-@unexec install-info --delete --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/mule-packages/info/mule-ucs.info
-@unexec install-info --delete --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/mule-packages/info/skk.info
-@unexec rm %D/lib/xemacs/mule-packages/info/dir
+@comment $OpenBSD: PFRAG.mule,v 1.7 2004/09/15 18:01:07 espie Exp $
+lib/xemacs/mule-packages/
+lib/xemacs/mule-packages/etc/
+lib/xemacs/mule-packages/etc/app-defaults/
+lib/xemacs/mule-packages/etc/app-defaults/de/
 lib/xemacs/mule-packages/etc/app-defaults/de/Emacs
+lib/xemacs/mule-packages/etc/app-defaults/fr/
 lib/xemacs/mule-packages/etc/app-defaults/fr/Emacs
+lib/xemacs/mule-packages/etc/app-defaults/ja/
 lib/xemacs/mule-packages/etc/app-defaults/ja/Emacs
+lib/xemacs/mule-packages/etc/app-defaults/ro/
 lib/xemacs/mule-packages/etc/app-defaults/ro/Emacs
+lib/xemacs/mule-packages/etc/edict/
 lib/xemacs/mule-packages/etc/edict/ChangeLog.096
 lib/xemacs/mule-packages/etc/edict/README
 lib/xemacs/mule-packages/etc/edict/README.096
 lib/xemacs/mule-packages/etc/edict/edict.doc.096
 lib/xemacs/mule-packages/etc/edict/edictj.demo
+lib/xemacs/mule-packages/etc/latin-unity/
 lib/xemacs/mule-packages/etc/latin-unity/BLURB
 lib/xemacs/mule-packages/etc/latin-unity/ChangeLog
 lib/xemacs/mule-packages/etc/latin-unity/Makefile
 lib/xemacs/mule-packages/etc/latin-unity/README
+lib/xemacs/mule-packages/etc/mule/
+lib/xemacs/mule-packages/etc/mule-doc/
 lib/xemacs/mule-packages/etc/mule-doc/ChangeLog.Mule
 lib/xemacs/mule-packages/etc/mule-doc/ChangeLog.Mule-Wnn6
 lib/xemacs/mule-packages/etc/mule-doc/ChinesePoem.cn
@@ -26,15 +33,18 @@ lib/xemacs/mule-packages/etc/mule-doc/NeXT.ja
 lib/xemacs/mule-packages/etc/mule-doc/README.Mule
 lib/xemacs/mule-packages/etc/mule-doc/README.SJ3.ja
 lib/xemacs/mule-packages/etc/mule-doc/TAB.ja
+lib/xemacs/mule-packages/etc/mule-doc/Thai/
 lib/xemacs/mule-packages/etc/mule-doc/Thai/README.Mule
 lib/xemacs/mule-packages/etc/mule-doc/Thai/sample.Thai
 lib/xemacs/mule-packages/etc/mule-doc/X11.ja
 lib/xemacs/mule-packages/etc/mule-doc/arabic.txt
 lib/xemacs/mule-packages/etc/mule-doc/sample.ks
+lib/xemacs/mule-packages/etc/mule-doc/viet/
 lib/xemacs/mule-packages/etc/mule-doc/viet/FAQ.VISCII
 lib/xemacs/mule-packages/etc/mule-doc/viet/QUAIL
 lib/xemacs/mule-packages/etc/mule-doc/viet/README.Mule
 lib/xemacs/mule-packages/etc/mule-doc/viet/TERMINOLOGY
+lib/xemacs/mule-packages/etc/mule-ucs/
 lib/xemacs/mule-packages/etc/mule-ucs/ChangeLog
 lib/xemacs/mule-packages/etc/mule-ucs/Makefile
 lib/xemacs/mule-packages/etc/mule-ucs/MuleUni.txt
@@ -44,6 +54,7 @@ lib/xemacs/mule-packages/etc/mule-ucs/README.XEmacs
 lib/xemacs/mule-packages/etc/mule-ucs/mucs-comp.el
 lib/xemacs/mule-packages/etc/mule-ucs/mule-ucs.sgml
 lib/xemacs/mule-packages/etc/mule-ucs/mule-ucs.texi
+lib/xemacs/mule-packages/etc/mule-ucs/reldata/
 lib/xemacs/mule-packages/etc/mule-ucs/reldata/u-cns-1.el
 lib/xemacs/mule-packages/etc/mule-ucs/reldata/u-cns-2.el
 lib/xemacs/mule-packages/etc/mule-ucs/reldata/u-cns-3.el
@@ -95,6 +106,7 @@ lib/xemacs/mule-packages/etc/mule/mule-refcard.tex
 lib/xemacs/mule-packages/etc/mule/mule.1
 lib/xemacs/mule-packages/etc/mule/mule.xbm
 lib/xemacs/mule-packages/etc/mule/tom.xbm
+lib/xemacs/mule-packages/etc/skk/
 lib/xemacs/mule-packages/etc/skk/ReadMe
 lib/xemacs/mule-packages/etc/skk/ReadMe.10
 lib/xemacs/mule-packages/etc/skk/ReadMe.English
@@ -103,22 +115,29 @@ lib/xemacs/mule-packages/etc/skk/SKK-JISYO.M
 lib/xemacs/mule-packages/etc/skk/SKK-JISYO.S
 lib/xemacs/mule-packages/etc/skk/SKK.tut
 lib/xemacs/mule-packages/etc/skk/SKK.tut.E
+lib/xemacs/mule-packages/etc/start-files/
+lib/xemacs/mule-packages/etc/start-files/fr/
 lib/xemacs/mule-packages/etc/start-files/fr/locale-start.el
 lib/xemacs/mule-packages/etc/start-files/fr/locale-start.elc
+lib/xemacs/mule-packages/etc/start-files/ja/
 lib/xemacs/mule-packages/etc/start-files/ja/locale-start.el
 lib/xemacs/mule-packages/etc/start-files/ja/locale-start.elc
+lib/xemacs/mule-packages/etc/start-files/ro/
 lib/xemacs/mule-packages/etc/start-files/ro/locale-start.el
 lib/xemacs/mule-packages/etc/start-files/ro/locale-start.elc
-lib/xemacs/mule-packages/info/latin-unity.info
+lib/xemacs/mule-packages/info/
+@info lib/xemacs/mule-packages/info/latin-unity.info
 lib/xemacs/mule-packages/info/lookup.info
 lib/xemacs/mule-packages/info/lookup.info-1
 lib/xemacs/mule-packages/info/lookup.info-2
-lib/xemacs/mule-packages/info/mule-ucs.info
+@info lib/xemacs/mule-packages/info/mule-ucs.info
 lib/xemacs/mule-packages/info/skk.info
 lib/xemacs/mule-packages/info/skk.info-1
 lib/xemacs/mule-packages/info/skk.info-2
 lib/xemacs/mule-packages/info/skk.info-3
 lib/xemacs/mule-packages/info/skk.info-4
+lib/xemacs/mule-packages/lisp/
+lib/xemacs/mule-packages/lisp/edict/
 lib/xemacs/mule-packages/lisp/edict/ChangeLog
 lib/xemacs/mule-packages/lisp/edict/Makefile.GNU
 lib/xemacs/mule-packages/lisp/edict/_pkg.el
@@ -145,6 +164,7 @@ lib/xemacs/mule-packages/lisp/edict/edict-update.elc
 lib/xemacs/mule-packages/lisp/edict/edict.el
 lib/xemacs/mule-packages/lisp/edict/edict.elc
 lib/xemacs/mule-packages/lisp/edict/ts-mode.el
+lib/xemacs/mule-packages/lisp/egg-its/
 lib/xemacs/mule-packages/lisp/egg-its/ChangeLog
 lib/xemacs/mule-packages/lisp/egg-its/_pkg.el
 lib/xemacs/mule-packages/lisp/egg-its/auto-autoloads.el
@@ -195,6 +215,7 @@ lib/xemacs/mule-packages/lisp/egg-its/its-zenkaku.el
 lib/xemacs/mule-packages/lisp/egg-its/its-zenkaku.elc
 lib/xemacs/mule-packages/lisp/egg-its/its-zhuyin.el
 lib/xemacs/mule-packages/lisp/egg-its/its-zhuyin.elc
+lib/xemacs/mule-packages/lisp/latin-unity/
 lib/xemacs/mule-packages/lisp/latin-unity/ChangeLog
 lib/xemacs/mule-packages/lisp/latin-unity/_pkg.el
 lib/xemacs/mule-packages/lisp/latin-unity/auto-autoloads.el
@@ -213,12 +234,14 @@ lib/xemacs/mule-packages/lisp/latin-unity/latin-unity-vars.el
 lib/xemacs/mule-packages/lisp/latin-unity/latin-unity-vars.elc
 lib/xemacs/mule-packages/lisp/latin-unity/latin-unity.el
 lib/xemacs/mule-packages/lisp/latin-unity/latin-unity.elc
+lib/xemacs/mule-packages/lisp/leim/
 lib/xemacs/mule-packages/lisp/leim/ChangeLog
 lib/xemacs/mule-packages/lisp/leim/_pkg.el
 lib/xemacs/mule-packages/lisp/leim/auto-autoloads.el
 lib/xemacs/mule-packages/lisp/leim/auto-autoloads.elc
 lib/xemacs/mule-packages/lisp/leim/leim-list.el
 lib/xemacs/mule-packages/lisp/leim/leim-list.elc
+lib/xemacs/mule-packages/lisp/leim/quail/
 lib/xemacs/mule-packages/lisp/leim/quail.el
 lib/xemacs/mule-packages/lisp/leim/quail.elc
 lib/xemacs/mule-packages/lisp/leim/quail/4Corner.el
@@ -297,20 +320,22 @@ lib/xemacs/mule-packages/lisp/leim/quail/tsang-b5.el
 lib/xemacs/mule-packages/lisp/leim/quail/tsang-b5.elc
 lib/xemacs/mule-packages/lisp/leim/quail/tsang-cns.el
 lib/xemacs/mule-packages/lisp/leim/quail/tsang-cns.elc
+lib/xemacs/mule-packages/lisp/locale/
 lib/xemacs/mule-packages/lisp/locale/ChangeLog
 lib/xemacs/mule-packages/lisp/locale/_pkg.el
 lib/xemacs/mule-packages/lisp/locale/auto-autoloads.el
 lib/xemacs/mule-packages/lisp/locale/auto-autoloads.elc
 lib/xemacs/mule-packages/lisp/locale/locale-start.el
 lib/xemacs/mule-packages/lisp/locale/locale-start.elc
+lib/xemacs/mule-packages/lisp/lookup/
 lib/xemacs/mule-packages/lisp/lookup/ChangeLog
 lib/xemacs/mule-packages/lisp/lookup/_pkg.el
 lib/xemacs/mule-packages/lisp/lookup/auto-autoloads.el
 lib/xemacs/mule-packages/lisp/lookup/auto-autoloads.elc
 lib/xemacs/mule-packages/lisp/lookup/custom-load.el
 lib/xemacs/mule-packages/lisp/lookup/custom-load.elc
-lib/xemacs/mule-packages/lisp/lookup/evi-mule.el
-lib/xemacs/mule-packages/lisp/lookup/evi-mule.elc
+lib/xemacs/mule-packages/lisp/lookup/evi${FLAVOR_EXT}.el
+lib/xemacs/mule-packages/lisp/lookup/evi${FLAVOR_EXT}.elc
 lib/xemacs/mule-packages/lisp/lookup/evi.el
 lib/xemacs/mule-packages/lisp/lookup/evi.elc
 lib/xemacs/mule-packages/lisp/lookup/lookup-compile.el
@@ -361,6 +386,7 @@ lib/xemacs/mule-packages/lisp/lookup/sdicf.el
 lib/xemacs/mule-packages/lisp/lookup/sdicf.elc
 lib/xemacs/mule-packages/lisp/lookup/stem-english.el
 lib/xemacs/mule-packages/lisp/lookup/stem-english.elc
+lib/xemacs/mule-packages/lisp/mule-base/
 lib/xemacs/mule-packages/lisp/mule-base/ChangeLog
 lib/xemacs/mule-packages/lisp/mule-base/_pkg.el
 lib/xemacs/mule-packages/lisp/mule-base/auto-autoloads.el
@@ -377,8 +403,8 @@ lib/xemacs/mule-packages/lisp/mule-base/cyril-util.el
 lib/xemacs/mule-packages/lisp/mule-base/cyril-util.elc
 lib/xemacs/mule-packages/lisp/mule-base/ethio-util.el
 lib/xemacs/mule-packages/lisp/mule-base/ethio-util.elc
-lib/xemacs/mule-packages/lisp/mule-base/isearch-mule.el
-lib/xemacs/mule-packages/lisp/mule-base/isearch-mule.elc
+lib/xemacs/mule-packages/lisp/mule-base/isearch${FLAVOR_EXT}.el
+lib/xemacs/mule-packages/lisp/mule-base/isearch${FLAVOR_EXT}.elc
 lib/xemacs/mule-packages/lisp/mule-base/japan-util.el
 lib/xemacs/mule-packages/lisp/mule-base/japan-util.elc
 lib/xemacs/mule-packages/lisp/mule-base/kana-keyboard.el
@@ -399,6 +425,7 @@ lib/xemacs/mule-packages/lisp/mule-base/thai-xtis-util.el
 lib/xemacs/mule-packages/lisp/mule-base/thai-xtis-util.elc
 lib/xemacs/mule-packages/lisp/mule-base/viet-util.el
 lib/xemacs/mule-packages/lisp/mule-base/viet-util.elc
+lib/xemacs/mule-packages/lisp/mule-ucs/
 lib/xemacs/mule-packages/lisp/mule-ucs/ChangeLog
 lib/xemacs/mule-packages/lisp/mule-ucs/_pkg.el
 lib/xemacs/mule-packages/lisp/mule-ucs/auto-autoloads.el
@@ -438,6 +465,7 @@ lib/xemacs/mule-packages/lisp/mule-ucs/unidata.el
 lib/xemacs/mule-packages/lisp/mule-ucs/unidata.elc
 lib/xemacs/mule-packages/lisp/mule-ucs/utf.el
 lib/xemacs/mule-packages/lisp/mule-ucs/utf.elc
+lib/xemacs/mule-packages/lisp/skk/
 lib/xemacs/mule-packages/lisp/skk/ChangeLog
 lib/xemacs/mule-packages/lisp/skk/_pkg.el
 lib/xemacs/mule-packages/lisp/skk/auto-autoloads.el
@@ -480,13 +508,19 @@ lib/xemacs/mule-packages/lisp/skk/skk-viper.el
 lib/xemacs/mule-packages/lisp/skk/skk-viper.elc
 lib/xemacs/mule-packages/lisp/skk/skk.el
 lib/xemacs/mule-packages/lisp/skk/skk.elc
+lib/xemacs/mule-packages/man/
+lib/xemacs/mule-packages/man/latin-unity/
 lib/xemacs/mule-packages/man/latin-unity/latin-unity.texi
+lib/xemacs/mule-packages/man/lookup/
 lib/xemacs/mule-packages/man/lookup/lookup-guide.texi
 lib/xemacs/mule-packages/man/lookup/lookup.texi
+lib/xemacs/mule-packages/man/mule-ucs/
 lib/xemacs/mule-packages/man/mule-ucs/mule-ucs.texi
+lib/xemacs/mule-packages/man/skk/
 lib/xemacs/mule-packages/man/skk/gpl.texi
 lib/xemacs/mule-packages/man/skk/skk-faq.texi
 lib/xemacs/mule-packages/man/skk/skk.texi
+lib/xemacs/mule-packages/pkginfo/
 lib/xemacs/mule-packages/pkginfo/MANIFEST.edict
 lib/xemacs/mule-packages/pkginfo/MANIFEST.egg-its
 lib/xemacs/mule-packages/pkginfo/MANIFEST.latin-unity
@@ -496,45 +530,3 @@ lib/xemacs/mule-packages/pkginfo/MANIFEST.lookup
 lib/xemacs/mule-packages/pkginfo/MANIFEST.mule-base
 lib/xemacs/mule-packages/pkginfo/MANIFEST.mule-ucs
 lib/xemacs/mule-packages/pkginfo/MANIFEST.skk
-@dirrm lib/xemacs/mule-packages/pkginfo
-@dirrm lib/xemacs/mule-packages/man/skk
-@dirrm lib/xemacs/mule-packages/man/mule-ucs
-@dirrm lib/xemacs/mule-packages/man/lookup
-@dirrm lib/xemacs/mule-packages/man/latin-unity
-@dirrm lib/xemacs/mule-packages/man
-@dirrm lib/xemacs/mule-packages/lisp/skk
-@dirrm lib/xemacs/mule-packages/lisp/mule-ucs
-@dirrm lib/xemacs/mule-packages/lisp/mule-base
-@dirrm lib/xemacs/mule-packages/lisp/lookup
-@dirrm lib/xemacs/mule-packages/lisp/locale
-@dirrm lib/xemacs/mule-packages/lisp/leim/quail
-@dirrm lib/xemacs/mule-packages/lisp/leim
-@dirrm lib/xemacs/mule-packages/lisp/latin-unity
-@dirrm lib/xemacs/mule-packages/lisp/egg-its
-@dirrm lib/xemacs/mule-packages/lisp/edict
-@dirrm lib/xemacs/mule-packages/lisp
-@dirrm lib/xemacs/mule-packages/info
-@dirrm lib/xemacs/mule-packages/etc/start-files/ro
-@dirrm lib/xemacs/mule-packages/etc/start-files/ja
-@dirrm lib/xemacs/mule-packages/etc/start-files/fr
-@dirrm lib/xemacs/mule-packages/etc/start-files
-@dirrm lib/xemacs/mule-packages/etc/skk
-@dirrm lib/xemacs/mule-packages/etc/mule-ucs/reldata
-@dirrm lib/xemacs/mule-packages/etc/mule-ucs
-@dirrm lib/xemacs/mule-packages/etc/mule-doc/viet
-@dirrm lib/xemacs/mule-packages/etc/mule-doc/Thai
-@dirrm lib/xemacs/mule-packages/etc/mule-doc
-@dirrm lib/xemacs/mule-packages/etc/mule
-@dirrm lib/xemacs/mule-packages/etc/latin-unity
-@dirrm lib/xemacs/mule-packages/etc/edict
-@dirrm lib/xemacs/mule-packages/etc/app-defaults/ro
-@dirrm lib/xemacs/mule-packages/etc/app-defaults/ja
-@dirrm lib/xemacs/mule-packages/etc/app-defaults/fr
-@dirrm lib/xemacs/mule-packages/etc/app-defaults/de
-@dirrm lib/xemacs/mule-packages/etc/app-defaults
-@dirrm lib/xemacs/mule-packages/etc
-@dirrm lib/xemacs/mule-packages
-@exec install-info --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/mule-packages/info/latin-unity.info
-@exec install-info --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/mule-packages/info/lookup.info
-@exec install-info --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/mule-packages/info/mule-ucs.info
-@exec install-info --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/mule-packages/info/skk.info

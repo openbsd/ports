@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/15 17:00:13 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:01:06 espie Exp $
 bin/coolbrowse
 bin/cooledit
 bin/cooledit-gdb
@@ -13,13 +13,15 @@ bin/smalledit
 @comment lib/charset.alias
 lib/libCw.a
 lib/libCw.la
-man/man1/cooledit.1
-man/man1/coolicon.1
-man/man1/coolman.1
-man/man1/smalledit.1
+@man man/man1/cooledit.1
+@man man/man1/coolicon.1
+@man man/man1/coolman.1
+@man man/man1/smalledit.1
+share/cooledit/
 share/cooledit/c_utils.py
 share/cooledit/global.py
 share/cooledit/sh_utils.py
+share/cooledit/syntax/
 share/cooledit/syntax/ada95.syntax
 share/cooledit/syntax/bapc.syntax
 share/cooledit/syntax/c.syntax
@@ -51,6 +53,7 @@ share/cooledit/syntax/swig.syntax
 share/cooledit/syntax/texinfo.syntax
 share/cooledit/syntax/unknown.syntax
 share/cooledit/syntax/xml.syntax
+share/coolicon/
 share/coolicon/browse.xpm
 share/coolicon/cdrom_eject.xpm
 share/coolicon/cdrom_view.xpm
@@ -71,57 +74,54 @@ share/coolicon/printer.xpm
 share/coolicon/spanner.xpm
 share/coolicon/xterm.xpm
 share/coolicon/xv.xpm
+share/locale/
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/cooledit.mo
+share/locale/da/
+share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/cooledit.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/cooledit.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/cooledit.mo
+share/locale/fi/
+share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/cooledit.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/cooledit.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/cooledit.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/cooledit.mo
+share/locale/ko/
+share/locale/ko/LC_MESSAGES/
 share/locale/ko/LC_MESSAGES/cooledit.mo
 @comment share/locale/locale.alias
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/cooledit.mo
+share/locale/no/
+share/locale/no/LC_MESSAGES/
 share/locale/no/LC_MESSAGES/cooledit.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/cooledit.mo
+share/locale/pt/
+share/locale/pt/LC_MESSAGES/
 share/locale/pt/LC_MESSAGES/cooledit.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/cooledit.mo
+share/locale/sl/
+share/locale/sl/LC_MESSAGES/
 share/locale/sl/LC_MESSAGES/cooledit.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/cooledit.mo
 %%SHARED%%
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale
-@dirrm share/coolicon
-@dirrm share/cooledit/syntax
-@dirrm share/cooledit

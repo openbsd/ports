@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:48 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:01:07 espie Exp $
 bin/we
+bin/wpe
 bin/xwe
 bin/xwpe
-bin/wpe
-lib/xwpe/help.xwpe
+lib/xwpe/
 lib/xwpe/help.key
+lib/xwpe/help.xwpe
 lib/xwpe/syntax_def
-man/man1/we.1
-man/man1/wpe.1
-man/man1/xwe.1
-man/man1/xwpe.1
-@dirrm lib/xwpe
+@man man/man1/we.1
+@man man/man1/wpe.1
+@man man/man1/xwe.1
+@man man/man1/xwpe.1

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2004/08/10 08:32:36 xsa Exp $
+# $OpenBSD: Makefile,v 1.19 2004/09/15 18:01:07 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"XML editor for KDE"
 

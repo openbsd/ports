@@ -1,15 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/02/20 21:30:38 naddy Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/nano.info
+@comment $OpenBSD: PLIST,v 1.16 2004/09/15 18:01:07 espie Exp $
 bin/nano
-info/nano.info
-man/man1/nano.1
-man/man5/nanorc.5
+@info info/nano.info
+@man man/man1/nano.1
+@man man/man5/nanorc.5
+share/examples/nano/
 share/examples/nano/nanorc.sample
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/nano.mo
 share/locale/cs/LC_MESSAGES/nano.mo
 share/locale/da/LC_MESSAGES/nano.mo
 share/locale/de/LC_MESSAGES/nano.mo
 share/locale/es/LC_MESSAGES/nano.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/nano.mo
 share/locale/fi/LC_MESSAGES/nano.mo
 share/locale/fr/LC_MESSAGES/nano.mo
@@ -17,6 +21,8 @@ share/locale/gl/LC_MESSAGES/nano.mo
 share/locale/hu/LC_MESSAGES/nano.mo
 share/locale/id/LC_MESSAGES/nano.mo
 share/locale/it/LC_MESSAGES/nano.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/nano.mo
 share/locale/nb/LC_MESSAGES/nano.mo
 share/locale/nl/LC_MESSAGES/nano.mo
@@ -25,27 +31,9 @@ share/locale/pl/LC_MESSAGES/nano.mo
 share/locale/pt_BR/LC_MESSAGES/nano.mo
 share/locale/ro/LC_MESSAGES/nano.mo
 share/locale/ru/LC_MESSAGES/nano.mo
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/nano.mo
 share/locale/sv/LC_MESSAGES/nano.mo
 share/locale/tr/LC_MESSAGES/nano.mo
 share/locale/uk/LC_MESSAGES/nano.mo
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/sr/LC_MESSAGES
-@dirrm share/locale/sr
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/nb/LC_MESSAGES
-@dirrm share/locale/nb
-@dirrm share/locale/ms/LC_MESSAGES
-@dirrm share/locale/ms
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/eu/LC_MESSAGES
-@dirrm share/locale/eu
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/examples/nano
-@exec install-info --info-dir=%D/info %D/info/nano.info

@@ -1,18 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/04/12 11:55:24 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/09/15 18:01:06 espie Exp $
 bin/jmacs
 bin/joe
 bin/jpico
 bin/jstar
 bin/rjoe
 bin/termidx
-man/man1/joe.1
+@man man/man1/joe.1
+share/doc/joe/
 share/doc/joe/INFO
 share/doc/joe/README
+@sample ${SYSCONFDIR}/joe/
+share/examples/joe/
 share/examples/joe/jmacsrc
+@sample ${SYSCONFDIR}/joe/jmacsrc
 share/examples/joe/joerc
+@sample ${SYSCONFDIR}/joe/joerc
 share/examples/joe/jpicorc
+@sample ${SYSCONFDIR}/joe/jpicorc
 share/examples/joe/jstarrc
+@sample ${SYSCONFDIR}/joe/jstarrc
 share/examples/joe/rjoerc
-@dirrm share/examples/joe
-@dirrm share/doc/joe
-@extraunexec rm -rf ${SYSCONFDIR}/joe
+@sample ${SYSCONFDIR}/joe/rjoerc

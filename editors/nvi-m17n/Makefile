@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/05/12 18:02:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/09/15 18:01:07 espie Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
@@ -72,6 +72,9 @@ post-build:
 		-e 's|$${PREFIX}|${PREFIX}|'				\
 		${FILESDIR}/nvi-m17n > ${WRKDIR}/nvi-${encoding}
 .endfor
+
+post-configure: 
+	${MAKE} ${PLIST}
 
 NO_REGRESS=	Yes
 
