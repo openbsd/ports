@@ -1,0 +1,20 @@
+$OpenBSD: patch-xxdiff_pro,v 1.1 2003/02/02 16:37:56 sturm Exp $
+--- xxdiff.pro.orig	Fri Jan 31 10:53:37 2003
++++ xxdiff.pro	Fri Jan 31 10:54:04 2003
+@@ -174,7 +174,6 @@ HEADERS = \
+ 	lineNumbers.h \
+ 	util.h \
+ 	markers.h \
+-	getopt.h \
+ 	diffutils.h \
+ 	diffutils_hack.h \
+ 	doc.qml \
+@@ -211,8 +210,6 @@ SOURCES = \
+ 	accelUtil.cpp \
+ 	resParser.cpp \
+ 	markers.cpp \
+-	getopt.c \
+-	getopt1.c \
+ 	version.c
+ 
+ #	diffutils.cpp \
