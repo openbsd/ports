@@ -1,0 +1,13 @@
+$OpenBSD: patch-bin_tmake,v 1.1.1.1 2002/02/28 14:15:31 naddy Exp $
+
+--- bin/tmake.orig	Mon Jan 21 10:35:27 2002
++++ bin/tmake	Mon Jan 21 10:51:36 2002
+@@ -66,7 +66,7 @@ $outfile	= "";
+ %project	= ();
+ $eval_quit	= 0;
+ 
+-$project{"TMAKEPATH"} = $ENV{"TMAKEPATH"} . ";" . $ENV{"HOME"} . "/.tmake/";
++$project{"TMAKEPATH"} = $ENV{"TMAKEPATH"} . ";%%PREFIX%%/share/tmake/openbsd-g++/;" . $ENV{"HOME"} . "/.tmake/";
+ 
+ while ( @ARGV ) {				# parse command line args
+     $_ = shift @ARGV;
