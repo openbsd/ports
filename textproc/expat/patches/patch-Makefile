@@ -1,0 +1,56 @@
+--- Makefile.orig	Mon Mar  8 08:20:38 1999
++++ Makefile	Wed Sep 27 10:23:50 2000
+@@ -10,21 +10,26 @@
+ #FILEMAP_OBJ=xmlwf/readfilemap.o
+ OBJS=xmltok/xmltok.o \
+   xmltok/xmlrole.o \
+-  xmlwf/xmlwf.o \
+-  xmlwf/xmlfile.o \
+-  xmlwf/codepage.o \
+   xmlparse/xmlparse.o \
+   xmlparse/hashtable.o \
+   $(FILEMAP_OBJ)
++SHOBJS=$(OBJS:.o=.so)
++XOBJS=xmlwf/xmlwf.o \
++  xmlwf/xmlfile.o \
++  xmlwf/codepage.o
+ EXE=
+ 
+-all: xmlwf/xmlwf$(EXE)
+-
+-xmlwf/xmlwf$(EXE): $(OBJS)
+-	$(CC) $(CFLAGS) -o $@ $(OBJS)
++.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
++all: xmlwf/xmlwf$(EXE) libexpat.a
++xmlwf/xmlwf$(EXE): $(XOBJS) libexpat.a
++.else
++all: xmlwf/xmlwf$(EXE) libexpat.a $(SHLIB)
++xmlwf/xmlwf$(EXE): $(XOBJS) libexpat.a $(SHLIB)
++.endif
++	$(CC) $(CFLAGS) -o $@ $(XOBJS) -L. -lexpat
+ 
+ clean:
+-	rm -f $(OBJS) xmlwf/xmlwf$(EXE)
++	rm -f $(OBJS) $(SHOBJS) $(XOBJS) xmlwf/xmlwf$(EXE)
+ 
+ xmltok/nametab.h: gennmtab/gennmtab$(EXE)
+ 	rm -f $@
+@@ -35,5 +40,18 @@
+ 
+ xmltok/xmltok.o: xmltok/nametab.h
+ 
++libexpat.a: $(OBJS)
++	ar -rc $@ $(OBJS)
++	ranlib $@
++
++$(SHLIB): $(SHOBJS)
++	$(CC) -shared -o $(SHLIB) $(SHOBJS)
++
++.SUFFIXES: .o .so
++
+ .c.o:
+ 	$(CC) $(CFLAGS) -c -o $@ $<
++
++.c.so:
++	$(CC) $(CFLAGS) -fpic -DPIC -c -o $@ $<
++
