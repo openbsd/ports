@@ -1,0 +1,63 @@
+$OpenBSD: patch-sys_unix_Makefile_src,v 1.1.1.1 2001/07/05 13:29:05 espie Exp $
+--- sys/unix/Makefile.src.orig	Sun Jun 24 18:57:24 2001
++++ sys/unix/Makefile.src	Wed Jul  4 23:38:00 2001
+@@ -1,6 +1,7 @@
+ #	NetHack Makefile.
+ #	SCCS Id: @(#)Makefile.src	3.3	97/04/17
+ 
++include ${NETHACKCONFIG}
+ # newer makes predefine $(MAKE) to 'make' and do smarter processing of
+ # recursive make calls if $(MAKE) is used
+ # these makes allow $(MAKE) to be overridden by the environment if someone
+@@ -117,7 +118,7 @@ SYSOBJ = ioctl.o unixmain.o unixtty.o un
+ 
+ # flags for Linux
+ #   compile normally
+-CFLAGS = -O2 -fomit-frame-pointer -I../include -I/usr/X11/include
++CFLAGS = -O2 -fomit-frame-pointer -I../include -I/usr/X11/include -DHACKDIR=\"${NHDIR}\" -DHAVE_SYS_PARAM_H
+ LFLAGS = -L/usr/X11/lib
+ #   OR compile backwards compatible a.out format
+ # CFLAGS = -O2 -b i486-linuxaout -fomit-frame-pointer -I../include -I/usr/X11/include
+@@ -232,9 +233,9 @@ WINOBJ = $(WINTTYOBJ) $(WINJTPOBJ)
+ #
+ # libraries for tty ports
+ # WINTTYLIB = -ltermcap
+-# WINTTYLIB = -lcurses
++WINTTYLIB = -lcurses
+ # WINTTYLIB = -lcurses16
+-WINTTYLIB = -lncurses
++# WINTTYLIB = -lncurses
+ # WINTTYLIB = -ltermlib
+ #
+ 
+@@ -244,7 +245,7 @@ WINJTPLIB = $(shell sdl-config --libs)
+ #
+ # libraries for X11
+ # If USE_XPM is defined in config.h, you will also need -lXpm here.
+-WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11
++WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11 -lXpm
+ # WINX11LIB = -lXaw -lXmu -lXt -lX11
+ # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
+ # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
+@@ -294,7 +295,7 @@ WINLIB = $(WINTTYLIB) $(WINJTPLIB)
+ LIBS =
+ 
+ # make NetHack
+-GAME     = nethack
++GAME     = falconseye
+ # GAME     = nethack.prg
+ 
+ # if you defined RANDOM in unixconf.h/tosconf.h since your system did not come
+@@ -467,10 +468,10 @@ objects.o:
+ 
+ # Qt windowport meta-object-compiler output
+ qt_kde0.moc: ../include/qt_kde0.h
+-	$(QTDIR)/bin/moc ../include/qt_kde0.h > qt_kde0.moc
++	moc2 ../include/qt_kde0.h > qt_kde0.moc
+ 
+ qt_win.moc: ../include/qt_win.h
+-	$(QTDIR)/bin/moc ../include/qt_win.h > qt_win.moc
++	moc2 ../include/qt_win.h > qt_win.moc
+ 
+ $(MAKEDEFS): ../util/makedefs.c  $(CONFIG_H) ../include/permonst.h \
+ 		../include/objclass.h ../include/monsym.h \
