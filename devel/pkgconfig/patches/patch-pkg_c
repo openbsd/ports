@@ -1,0 +1,67 @@
+$OpenBSD: patch-pkg_c,v 1.3 2003/01/02 19:23:05 marcm Exp $
+--- pkg.c.orig	Thu Oct 10 14:14:59 2002
++++ pkg.c	Wed Jan  1 19:07:15 2003
+@@ -334,6 +334,54 @@ get_package (const char *name)
+   return internal_get_package (name, TRUE, TRUE);
+ }
+ 
++/*
++  If certain directories are present, move them to the end of the list
++  to avoid conflicts.
++*/
++static GSList*
++string_list_fix_local_I_dirs (GSList *list)
++{
++  GSList *iter;
++  GSList *local_I_dirs = NULL;
++  GSList *local_I_dir_iter = NULL;
++  GSList *found_dirs = NULL;
++
++  iter = list;
++
++  local_I_dirs = g_slist_append (local_I_dirs, g_strdup_printf ("-I%s/include", LOCALBASE));
++  local_I_dirs = g_slist_append (local_I_dirs, g_strdup_printf ("-I%s/include", X11BASE));
++
++  while (iter != NULL)
++    {
++      local_I_dir_iter = local_I_dirs;
++      while (local_I_dir_iter != NULL)
++        {
++          if (strcmp (local_I_dir_iter->data, iter->data) == 0)
++            {
++              debug_spew ("List contains \"%s\" - moving it to the end\n", (gchar *)iter->data);
++              found_dirs = g_slist_append (found_dirs, iter->data);
++              iter->data = NULL;
++              break;
++            }
++          local_I_dir_iter = local_I_dir_iter->next;
++        }
++      iter = iter->next;
++    }
++
++  g_slist_free (local_I_dirs);
++
++  while (found_dirs != NULL)
++    {
++      list = g_slist_remove (list, NULL);
++      list = g_slist_append (list, found_dirs->data);
++      found_dirs = found_dirs->next;
++    }
++
++  g_slist_free (found_dirs);
++
++  return list;
++}
++
+ static GSList*
+ string_list_strip_duplicates (GSList *list)
+ {
+@@ -923,6 +971,8 @@ get_multi_merged (GSList *pkgs, GetListF
+ 
+   g_slist_free (dups_list);
+   
++  list = string_list_fix_local_I_dirs (list);
++
+   retval = string_list_to_string (list);
+ 
+   g_slist_free (list);

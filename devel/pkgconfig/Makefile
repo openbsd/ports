@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2002/12/11 17:17:08 marcm Exp $
+# $OpenBSD: Makefile,v 1.11 2003/01/02 19:23:05 marcm Exp $
 
 COMMENT=		"tool for managing library compile/link flags"
 
 VERSION=		0.14.0
 DISTNAME=		pkgconfig-${VERSION}
+PKGNAME=		pkgconfig-${VERSION}p1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.freedesktop.org/software/pkgconfig/

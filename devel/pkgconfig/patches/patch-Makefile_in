@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2003/01/02 19:23:05 marcm Exp $
+--- Makefile.in.orig	Wed Jan  1 19:03:18 2003
++++ Makefile.in	Wed Jan  1 19:05:03 2003
+@@ -117,7 +117,7 @@ bin_PROGRAMS =  pkg-config$(EXEEXT)
+ PROGRAMS =  $(bin_PROGRAMS)
+ 
+ 
+-DEFS = @DEFS@ -I. -I$(srcdir) -I.
++DEFS = @DEFS@ -I. -I$(srcdir) -I. -DLOCALBASE="\"${LOCALBASE}\"" -DX11BASE="\"${X11BASE}\""
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
