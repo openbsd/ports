@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ro,v 1.12 2004/02/06 23:07:35 espie Exp $
+@comment $OpenBSD: PLIST.ro,v 1.13 2004/02/07 12:29:13 espie Exp $
 share/apps/ktuberling/sounds/ro/ceas.wav
 share/apps/ktuberling/sounds/ro/cercel.wav
 share/apps/ktuberling/sounds/ro/gura.wav
@@ -616,16 +616,11 @@ ${LOC}webarchiver.mo
 share/locale/ro/charset
 share/locale/ro/entry.desktop
 share/locale/ro/flag.png
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale
 @dirrm ${DOC}kioslave
 @dirrm ${DOC}khelpcenter/visualdict
 @dirrm ${DOC}khelpcenter
 @dirrm ${DOC}common
 @dirrm share/doc/HTML/ro
-@dirrm share/doc/HTML
 @dirrm share/apps/ktuberling/sounds/ro
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
-@dirrm share/apps

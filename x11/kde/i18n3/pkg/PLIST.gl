@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.gl,v 1.1 2004/02/02 18:26:56 espie Exp $
+@comment $OpenBSD: PLIST.gl,v 1.2 2004/02/07 12:29:13 espie Exp $
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -324,6 +324,3 @@ ${LOC}webarchiver.mo
 share/locale/gl/charset
 share/locale/gl/entry.desktop
 share/locale/gl/flag.png
-@dirrm share/locale/gl/LC_MESSAGES
-@dirrm share/locale/gl
-@dirrm share/locale

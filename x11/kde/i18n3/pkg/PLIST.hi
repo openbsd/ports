@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.hi,v 1.1 2004/02/02 18:26:56 espie Exp $
+@comment $OpenBSD: PLIST.hi,v 1.2 2004/02/07 12:29:13 espie Exp $
 ${LOC}appletproxy.mo
 ${LOC}atlantik.mo
 ${LOC}cupsdconf.mo
@@ -160,6 +160,3 @@ ${LOC}taskbarextension.mo
 ${LOC}timezones.mo
 share/locale/hi/charset
 share/locale/hi/entry.desktop
-@dirrm share/locale/hi/LC_MESSAGES
-@dirrm share/locale/hi
-@dirrm share/locale

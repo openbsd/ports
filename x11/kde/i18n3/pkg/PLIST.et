@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.et,v 1.12 2004/02/06 23:07:35 espie Exp $
+@comment $OpenBSD: PLIST.et,v 1.13 2004/02/07 12:29:13 espie Exp $
 ${DOC}KRegExpEditor/common
 ${DOC}KRegExpEditor/${C}
 ${DOC}KRegExpEditor/${I}
@@ -1493,9 +1493,6 @@ ${LOC}webarchiver.mo
 share/locale/et/charset
 share/locale/et/entry.desktop
 share/locale/et/flag.png
-@dirrm share/locale/et/LC_MESSAGES
-@dirrm share/locale/et
-@dirrm share/locale
 @dirrm ${DOC}umbrello
 @dirrm ${DOC}quanta
 @dirrm ${DOC}lskat
@@ -1716,4 +1713,3 @@ share/locale/et/flag.png
 @dirrm ${DOC}amor
 @dirrm ${DOC}KRegExpEditor
 @dirrm share/doc/HTML/et
-@dirrm share/doc/HTML

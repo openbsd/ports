@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.it,v 1.12 2004/02/06 23:07:35 espie Exp $
+@comment $OpenBSD: PLIST.it,v 1.13 2004/02/07 12:29:13 espie Exp $
 share/apps/ktuberling/sounds/it/baffi.wav
 share/apps/ktuberling/sounds/it/bocca.wav
 share/apps/ktuberling/sounds/it/capelli.wav
@@ -1242,9 +1242,6 @@ ${LOC}webarchiver.mo
 share/locale/it/charset
 share/locale/it/entry.desktop
 share/locale/it/flag.png
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale
 @dirrm ${DOC}noatun
 @dirrm ${DOC}megami
 @dirrm ${DOC}lskat
@@ -1389,8 +1386,6 @@ share/locale/it/flag.png
 @dirrm ${DOC}artsbuilder
 @dirrm ${DOC}amor
 @dirrm share/doc/HTML/it
-@dirrm share/doc/HTML
 @dirrm share/apps/ktuberling/sounds/it
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
-@dirrm share/apps

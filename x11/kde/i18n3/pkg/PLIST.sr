@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sr,v 1.5 2004/02/06 23:07:35 espie Exp $
+@comment $OpenBSD: PLIST.sr,v 1.6 2004/02/07 12:29:13 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -560,10 +560,6 @@ ${LOC}webarchiver.mo
 share/locale/sr/charset
 share/locale/sr/entry.desktop
 share/locale/sr/flag.png
-@dirrm share/locale/sr/LC_MESSAGES
-@dirrm share/locale/sr
-@dirrm share/locale
 @dirrm ${DOC}khelpcenter
 @dirrm ${DOC}common
 @dirrm share/doc/HTML/sr
-@dirrm share/doc/HTML

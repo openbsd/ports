@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.cy,v 1.1 2004/02/02 18:26:56 espie Exp $
+@comment $OpenBSD: PLIST.cy,v 1.2 2004/02/07 12:29:12 espie Exp $
 ${LOC}alarmdaemonctrl.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -258,6 +258,3 @@ ${LOC}timezones.mo
 share/locale/cy/charset
 share/locale/cy/entry.desktop
 share/locale/cy/flag.png
-@dirrm share/locale/cy/LC_MESSAGES
-@dirrm share/locale/cy
-@dirrm share/locale

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ru,v 1.13 2004/02/06 23:07:35 espie Exp $
+@comment $OpenBSD: PLIST.ru,v 1.14 2004/02/07 12:29:13 espie Exp $
 ${DOC}KRegExpEditor/common
 ${DOC}KRegExpEditor/${C}
 ${DOC}KRegExpEditor/${I}
@@ -1044,9 +1044,6 @@ ${LOC}webarchiver.mo
 share/locale/ru/charset
 share/locale/ru/entry.desktop
 share/locale/ru/flag.png
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale
 @dirrm ${DOC}umbrello
 @dirrm ${DOC}quanta
 @dirrm ${DOC}noatun
@@ -1155,4 +1152,3 @@ share/locale/ru/flag.png
 @dirrm ${DOC}aktion
 @dirrm ${DOC}KRegExpEditor
 @dirrm share/doc/HTML/ru
-@dirrm share/doc/HTML

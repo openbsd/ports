@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ca,v 1.12 2004/02/06 23:07:35 espie Exp $
+@comment $OpenBSD: PLIST.ca,v 1.13 2004/02/07 12:29:12 espie Exp $
 ${DOC}katomic/common
 ${DOC}katomic/${C}
 ${DOC}katomic/${I}
@@ -750,9 +750,6 @@ ${LOC}webarchiver.mo
 share/locale/ca/charset
 share/locale/ca/entry.desktop
 share/locale/ca/flag.png
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale
 @dirrm ${DOC}kworldclock
 @dirrm ${DOC}kweather
 @dirrm ${DOC}kwallet
@@ -791,4 +788,3 @@ share/locale/ca/flag.png
 @dirrm ${DOC}kbugbuster
 @dirrm ${DOC}katomic
 @dirrm share/doc/HTML/ca
-@dirrm share/doc/HTML

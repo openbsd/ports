@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ms,v 1.1 2004/02/02 18:26:56 espie Exp $
+@comment $OpenBSD: PLIST.ms,v 1.2 2004/02/07 12:29:13 espie Exp $
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
 ${LOC}childpanelextension.mo
@@ -196,6 +196,3 @@ ${LOC}taskbarextension.mo
 ${LOC}timezones.mo
 share/locale/ms/charset
 share/locale/ms/entry.desktop
-@dirrm share/locale/ms/LC_MESSAGES
-@dirrm share/locale/ms
-@dirrm share/locale

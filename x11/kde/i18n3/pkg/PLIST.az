@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.az,v 1.8 2004/02/02 18:26:56 espie Exp $
+@comment $OpenBSD: PLIST.az,v 1.9 2004/02/07 12:29:12 espie Exp $
 ${LOC}aktion.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -140,6 +140,7 @@ ${LOC}kdesktop.mo
 ${LOC}kdessh.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
+${LOC}kdevelop.mo
 ${LOC}kdevtipofday.mo
 ${LOC}kdf.mo
 ${LOC}kdialog.mo
@@ -326,6 +327,3 @@ ${LOC}webarchiver.mo
 share/locale/az/charset
 share/locale/az/entry.desktop
 share/locale/az/flag.png
-@dirrm share/locale/az/LC_MESSAGES
-@dirrm share/locale/az
-@dirrm share/locale

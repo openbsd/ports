@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.se,v 1.4 2004/02/06 23:07:35 espie Exp $
+@comment $OpenBSD: PLIST.se,v 1.5 2004/02/07 12:29:13 espie Exp $
 ${LOC}aktion.mo
 ${LOC}appletproxy.mo
 ${LOC}childpanelextension.mo
@@ -234,4 +234,3 @@ share/locale/se/entry.desktop
 share/locale/se/flag.png
 @dirrm share/locale/se/LC_MESSAGES
 @dirrm share/locale/se
-@dirrm share/locale

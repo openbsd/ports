@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.hu,v 1.12 2004/02/06 23:07:35 espie Exp $
+@comment $OpenBSD: PLIST.hu,v 1.13 2004/02/07 12:29:13 espie Exp $
 ${DOC}amor/common
 ${DOC}amor/${C}
 ${DOC}amor/${I}
@@ -889,7 +889,6 @@ share/locale/hu/entry.desktop
 share/locale/hu/flag.png
 @dirrm share/locale/hu/LC_MESSAGES
 @dirrm share/locale/hu
-@dirrm share/locale
 @dirrm ${DOC}kxconfig
 @dirrm ${DOC}kworldclock
 @dirrm ${DOC}kweather
@@ -982,4 +981,3 @@ share/locale/hu/flag.png
 @dirrm ${DOC}ark
 @dirrm ${DOC}amor
 @dirrm share/doc/HTML/hu
-@dirrm share/doc/HTML

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.pt_BR,v 1.12 2004/02/06 23:07:35 espie Exp $
+@comment $OpenBSD: PLIST.pt_BR,v 1.13 2004/02/07 12:29:13 espie Exp $
 ${DOC}artsbuilder/digitalaudio.docbook
 ${DOC}artsbuilder/midiintro.docbook
 ${DOC}artsbuilder/porting.docbook
@@ -940,9 +940,6 @@ ${LOC}webarchiver.mo
 share/locale/pt_BR/charset
 share/locale/pt_BR/entry.desktop
 share/locale/pt_BR/flag.png
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale
 @dirrm ${DOC}umbrello
 @dirrm ${DOC}quanta
 @dirrm ${DOC}kstars
@@ -1040,4 +1037,3 @@ share/locale/pt_BR/flag.png
 @dirrm ${DOC}cervisia
 @dirrm ${DOC}artsbuilder
 @dirrm share/doc/HTML/pt_BR
-@dirrm share/doc/HTML

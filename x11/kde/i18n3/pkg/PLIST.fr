@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.fr,v 1.13 2004/02/06 23:07:35 espie Exp $
+@comment $OpenBSD: PLIST.fr,v 1.14 2004/02/07 12:29:13 espie Exp $
 share/apps/ktuberling/sounds/fr/bouche.wav
 share/apps/ktuberling/sounds/fr/boucle-d-oreille.wav
 share/apps/ktuberling/sounds/fr/chapeau.wav
@@ -1907,9 +1907,6 @@ share/locale/fr/flag.png
 share/locale/fr/nbsp_gui_fr.txt
 share/locale/fr/relecture_docs
 share/locale/fr/relecture_gui
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale
 @dirrm ${DOC}noatun
 @dirrm ${DOC}lskat
 @dirrm ${DOC}lisa
@@ -2140,8 +2137,6 @@ share/locale/fr/relecture_gui
 @dirrm ${DOC}ark
 @dirrm ${DOC}KRegExpEditor
 @dirrm share/doc/HTML/fr
-@dirrm share/doc/HTML
 @dirrm share/apps/ktuberling/sounds/fr
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
-@dirrm share/apps

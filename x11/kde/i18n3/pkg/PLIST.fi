@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.fi,v 1.12 2004/02/06 23:07:35 espie Exp $
+@comment $OpenBSD: PLIST.fi,v 1.13 2004/02/07 12:29:13 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -529,9 +529,5 @@ ${LOC}webarchiver.mo
 share/locale/fi/charset
 share/locale/fi/entry.desktop
 share/locale/fi/flag.png
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale
 @dirrm ${DOC}common
 @dirrm share/doc/HTML/fi
-@dirrm share/doc/HTML

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.en_GB,v 1.12 2004/02/06 23:07:35 espie Exp $
+@comment $OpenBSD: PLIST.en_GB,v 1.13 2004/02/07 12:29:13 espie Exp $
 ${DOC}kaddressbook/common
 ${DOC}kaddressbook/${C}
 ${DOC}kaddressbook/${I}
@@ -923,7 +923,6 @@ share/locale/en_GB/entry.desktop
 share/locale/en_GB/flag.png
 @dirrm share/locale/en_GB/LC_MESSAGES
 @dirrm share/locale/en_GB
-@dirrm share/locale
 @dirrm ${DOC}umbrello
 @dirrm ${DOC}kxkb
 @dirrm ${DOC}kwrite
@@ -1022,4 +1021,3 @@ share/locale/en_GB/flag.png
 @dirrm ${DOC}kate
 @dirrm ${DOC}kaddressbook
 @dirrm share/doc/HTML/en_GB
-@dirrm share/doc/HTML

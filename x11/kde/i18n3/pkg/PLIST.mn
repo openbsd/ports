@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.mn,v 1.1 2004/02/02 18:26:56 espie Exp $
+@comment $OpenBSD: PLIST.mn,v 1.2 2004/02/07 12:29:13 espie Exp $
 share/locale/mn/30x16.png
 share/locale/mn/60x40.png
 ${LOC}appletproxy.mo
@@ -231,6 +231,3 @@ ${LOC}timezones.mo
 share/locale/mn/charset
 share/locale/mn/entry.desktop
 share/locale/mn/flag_new_30x16.png
-@dirrm share/locale/mn/LC_MESSAGES
-@dirrm share/locale/mn
-@dirrm share/locale

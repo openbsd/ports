@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.pl,v 1.12 2004/02/06 23:07:35 espie Exp $
+@comment $OpenBSD: PLIST.pl,v 1.13 2004/02/07 12:29:13 espie Exp $
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
@@ -474,6 +474,3 @@ ${LOC}webarchiver.mo
 share/locale/pl/charset
 share/locale/pl/entry.desktop
 share/locale/pl/flag.png
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2004/02/02 10:53:21 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2004/02/07 12:30:50 espie Exp $
 
 COMMENT= 		"X11 toolkit, utilities"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.1.95
+VERSION=		3.2.0
 DISTNAME=		kdeutils-${VERSION}
 MODKDE_VERSION=		3.2
 

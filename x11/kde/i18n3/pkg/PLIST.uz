@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.uz,v 1.1 2004/02/02 18:26:57 espie Exp $
+@comment $OpenBSD: PLIST.uz,v 1.2 2004/02/07 12:29:13 espie Exp $
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}childpanelextension.mo
@@ -191,4 +191,3 @@ share/locale/uz/entry.desktop
 share/locale/uz/flag.png
 @dirrm share/locale/uz/LC_MESSAGES
 @dirrm share/locale/uz
-@dirrm share/locale
