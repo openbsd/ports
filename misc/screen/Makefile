@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2003/10/14 23:05:28 jolan Exp $
+# $OpenBSD: Makefile,v 1.49 2003/10/19 03:59:27 brad Exp $
 
 COMMENT=	"multi-screen window manager"
 
@@ -39,7 +39,6 @@ pre-build:
 	@perl -pi -e s#!!sysconfdir!!#${SYSCONFDIR}#g ${WRKSRC}/doc/screen.1
 
 post-install:
-	@rm -f ${PREFIX}/bin/screen
 	@cd ${PREFIX}/bin && mv -f screen-${VERSION} screen
 	@chmod 755 ${PREFIX}/bin/screen
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/screen
