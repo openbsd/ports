@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.36 2004/07/18 22:47:44 espie Exp $
+# $OpenBSD: make-plist,v 1.37 2004/07/20 19:01:22 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -40,6 +40,51 @@ my %out;
 my @has_shared;
 my ($plist, $pshared);
 
+
+sub is_library
+{
+	my $filename = shift;
+
+	return 0 unless $filename =~ m/\.so(?:\.\d+\.\d+)?$/;
+	my $check=`/usr/bin/file $filename`;
+	chomp $check;
+	if ($check =~m/\: ELF (32|64)-bit (MSB|LSB) shared object\,/ ||
+	    $check =~m/OpenBSD\/.* demand paged shared library/) {
+	    	return 1;
+	} else {
+		return 0;
+	}
+}
+		
+sub is_info
+{
+	my $filename = shift;
+	return 0 unless $filename =~ m/\.info$/;
+	open my $fh, '<', $filename or return 0;
+	my $tag = <$fh>;
+	chomp $tag;
+	close $fh;
+	if ($tag =~ /^This is .*, produced by makeinfo version .* from /) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+sub is_dir
+{
+	my $filename = shift;
+	return 0 unless $filename =~ m/\/dir$/;
+	return 1;
+}
+
+sub is_subinfo
+{
+	my $filename = shift;
+	return 0 unless $filename =~ m/^(.*\.info)\-\d+$/;
+	return is_info($1);
+}
+
 {
 package Annotation;
 
@@ -60,13 +105,10 @@ sub add {
 
 my $annotated = new Annotation;
 my $annotated_dir = new Annotation;
-my $info_file = new Annotation;
 
 sub annotate
 {
-	my $oldfh = shift;
-	my $name = shift;
-	my $newfh = shift;
+	my ($oldfh, $name, $newfh, $is_shared) = @_;
 	my $comment_printed = 0;
 	my ($mode, $owner, $group, $nocheck) = ('', '', '', '');
 	while(<$oldfh>) {
@@ -94,20 +136,23 @@ sub annotate
 			$_ = $';
 			if (m/^\@dirrm\s+/ || m/^\@dir\s+/) {
 				$_ = $';
-				$annotated_dir->add($_,  [ $name, $newfh, 'comment']);
+				$annotated_dir->add($_,  [ $name, $newfh, $is_shared, 'comment']);
 				next;
 			} else {
-				$annotated->add($_, [ $name, $newfh, 'comment'] );
+				$annotated->add($_, [ $name, $newfh, $is_shared, 'comment' ] );
 			}
 			next;
 		} elsif (m/^\@dirrm\s+/ || m/^\@dir\s+/) {
 			$_=$';
-			$annotated_dir->add($_, [ $name, $newfh ]);
+			$annotated_dir->add($_, [ $name, $newfh, $is_shared ]);
 			next;
 		} elsif (m/^\@extra\b/ || m/^\@extraunexec\b/) {
 			$manual = 1;
 			next;
+		} elsif (m/^\@info\s+/) {
+			$_=$';
 		} elsif (m/^\@/) {
+			$manual = 1;
 			next;
 		} elsif (m/^\!?\%\%(.*)\%\%/) {
 			my $frag = $1;
@@ -120,13 +165,10 @@ sub annotate
 		}
 
 		if ("$mode$owner$group$nocheck" ne '') {
-			$annotated->add($_, [ $name, $newfh, $mode, $owner, $group, $nocheck ]);
+			$annotated->add($_, [ $name, $newfh, $is_shared, $mode, $owner, $group, $nocheck ]);
 			$nocheck = '';
-		} elsif (not /\.so(?:\.\d+\.\d+)?$/) {
-			$annotated->add($_, [ $name, $newfh ]);
-		}
-		if (m/\.info$/) {
-			$info_file->add($_, [ $name, $newfh ]);
+		} else {
+			$annotated->add($_, [ $name, $newfh, $is_shared ]);
 		}
 	}
 	print $newfh "\@comment \$OpenBSD\$\n" unless $comment_printed;
@@ -182,24 +224,6 @@ sub strip
 	return $_;
 }
 
-sub add_info 
-{
-	my ($header, $info_dir) = @_;
-	for my $d (sort (keys %$info_dir) ) {
-	    for my $f (sort @{$info_dir->{$d}}) {
-		my $d2 = strip($d);
-		my $f2 = "$d2/$f";
-		if (defined $info_file->{$f2}) {
-		    for my $l (@{$info_file->{$f2}}) {
-			$l->[1]->print("$header --info-dir=\%D/$d2 \%D/$f2\n");
-		    }
-		} else {
-		    $out{$plist}->print("$header --info-dir=\%D/$d2 \%D/$f2\n");
-		}
-	    }
-	}
-}
-
 sub augment_mtree
 {
 	my ($mtree, $dst, $pkg) = @_;
@@ -235,14 +259,17 @@ sub augment_mtree
 
 sub handle_file
 {
-    my ($newdir, $item, $out) = @_;
+    my ($newdir, $item, $out, $is_lib) = @_;
     my $fname = strip($item);
     my $string = "$fname\n";
+    if (is_info $item) {
+    	$string= "\@info $string";
+    }
 
     if (defined $newdir->{$item}) {
 	if (defined $annotated_dir->{$fname}) {
 		for my $l (@{$annotated_dir->{$fname}}) {
-		    if (@$l == 3) {
+		    if (@$l == 4) {
 			    $l->[1]->print("\@comment \@dir $fname\n");
 		    } else {
 			    $l->[1]->print("\@dir $fname\n");
@@ -252,14 +279,16 @@ sub handle_file
 		$out{$plist}->print("\@dir $fname\n");
 	}
     } else {
+    	my $reported = 0;
 	if (defined $annotated->{$fname}) {
 	    for my $l (@{$annotated->{$fname}}) {
-		if (@$l == 3) {
+	    	next if $is_lib && !$l->[2];
+		if (@$l == 4) {
 			$l->[1]->print("\@comment $string");
-		} elsif (@$l == 2) {
+		} elsif (@$l == 3) {
 			$l->[1]->print($string);
 		} else {
-		    my ($outname, $fh, $mode, $owner, $group, $nocheck) = @$l;
+		    my ($outname, $fh, $is_shared, $mode, $owner, $group, $nocheck) = @$l;
 		    if ($mode ne '') {
 			    $string="\@mode $mode\n$string\@mode\n";
 		    }
@@ -274,16 +303,16 @@ sub handle_file
 		    }
 		    print $fh $string;
 		}
+		$reported = 1;
 	    }
-	} else {
-	    print $out $string;
 	}
+	print $out $string unless $reported;
     }
 }
 
 sub may_annotate_and_move
 {
-	my $p = shift;
+	my ($p, $is_shared) = @_;
 
 	if (-e $p) {
 	    if (defined $out{$p}) {
@@ -292,7 +321,7 @@ sub may_annotate_and_move
 	    my $fh = new IO::File "<$p";
 	    rename($p, "$p.orig") or die "Can't rename $p to $p.orig";
 	    my $newfh = new IO::File ">$p";
-	    annotate($fh, $p, $newfh);
+	    annotate($fh, $p, $newfh, $is_shared);
 	    close $fh;
 	    $out{$p} = $newfh;
 	    return 1;
@@ -302,7 +331,7 @@ sub may_annotate_and_move
 }
 
 
-my (%newdir, %occupied, %ldconfig, %has_stuff, %info_dir, @files, @libfiles);
+my (%newdir, %occupied, %ldconfig, %has_stuff, @files, @libfiles);
 die "Update bsd.port.mk" if @ARGV == 0;
 my $plistdir = shift;
 die "Update bsd.port.mk" if -f $plistdir;
@@ -327,8 +356,8 @@ for my $pkg (split(/\s+/, $ENV{'DEPS'})) {
 	augment_mtree($mtree, $destdir, $ENV{'PKGREPOSITORY'}."/$pkg.tgz");
 }
 
-may_annotate_and_move($plist);
-may_annotate_and_move($pshared) and push(@has_shared, $out{$plist});
+may_annotate_and_move($plist, 0);
+may_annotate_and_move($pshared, 1) and push(@has_shared, $out{$plist});
 
 
 # Subpackage rules... better way would be to ask bsd.port.mk directly
@@ -341,9 +370,9 @@ $multi =~ s/^\s+//;
 $multi =~ s/\s+$//;
 unless ($multi eq '') {
 	for my $sub (split(/\s+/, $multi)) {
-		may_annotate_and_move("$plist$sub") or 
-		    may_annotate_and_move("$plist2$sub");
-		may_annotate_and_move("$pshared$sub") and push(@has_shared, $out{"$plist$sub"});
+		may_annotate_and_move("$plist$sub", 0) or 
+		    may_annotate_and_move("$plist2$sub", 0);
+		may_annotate_and_move("$pshared$sub", 1) and push(@has_shared, $out{"$plist$sub"});
 	}
 }
 
@@ -396,18 +425,14 @@ find(
 			if (-d _) {
 				$newdir{$File::Find::name} = 1;
 			} else {
-				if (/\.so\.\d+\.\d+$/ || /\.so$/) {
+				if (is_dir($File::Find::name) || is_subinfo($File::Find::name)) {
+					return;
+				}
+				if (is_library($File::Find::name)) {
 					$ldconfig{$File::Find::dir} = 1;
-					push(@libfiles, $File::Find::name);
-				} elsif (/\.so$/) {
 					push(@libfiles, $File::Find::name);
 				} else {
 					push(@files, $File::Find::name);
-					if (/\.info$/) {
-						my $d = $File::Find::dir;
-						$info_dir{$d} = [] unless defined $info_dir{$d};
-						push(@{$info_dir{$d}}, $_);
-					}
 				}
 			}
 		} else {
@@ -435,14 +460,12 @@ unless (defined $out{$plist}) {
 	$out{$plist}->print("\@comment \$OpenBSD\$\n");
 }
 
-add_info('@unexec install-info --delete', \%info_dir);
-
 for my $d (keys %newdir) {
 	push @files, $d;
 }
 
 for my $f (sort @files) {
-	handle_file(\%newdir, $f, $out{$plist}) unless ($f =~ m|/dir$|) && (defined $info_dir{$`});
+	handle_file(\%newdir, $f, $out{$plist}, 0);
 }
 
 for my $fh (@has_shared) {
@@ -458,7 +481,7 @@ if (@libfiles > 0) {
 
     	$out{$plist}->print("\%\%SHARED\%\%\n") if @has_shared == 0;
 	for my $f (sort @libfiles) {
-	    handle_file(\%newdir, strip($f), $out{$pshared});
+	    handle_file(\%newdir, $f, $out{$pshared}, 1);
 	}
 	for my $d (sort (keys %ldconfig)) {
 		if (defined $newdir{$d}) {
@@ -468,8 +491,6 @@ if (@libfiles > 0) {
 		}
 	}
 }
-
-add_info('@exec install-info', \%info_dir);
 
 if ($manual) {
 	print STDERR "make plist: subst/frag/exec/unexec spotted in original file\n";
