@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.1 2003/12/30 05:58:51 brad Exp $
---- scripts/mysqld_safe.sh.orig	2003-12-14 16:23:47.000000000 -0500
-+++ scripts/mysqld_safe.sh	2003-12-21 18:51:10.000000000 -0500
-@@ -89,33 +89,15 @@ parse_arguments() {
+$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.2 2004/02/22 01:20:11 brad Exp $
+--- scripts/mysqld_safe.sh.orig	2004-02-10 13:15:48.000000000 -0500
++++ scripts/mysqld_safe.sh	2004-02-12 21:33:38.000000000 -0500
+@@ -90,32 +90,12 @@ parse_arguments() {
  }
  
  
@@ -33,16 +33,21 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.1 2003/12/30 05:58:51 brad Exp $
 +ledir=@libexecdir@
 +DATADIR=@localstatedir@
  
- safe_mysql_unix_port=${mysql_unix_port:-${MYSQL_UNIX_PORT:-@MYSQL_UNIX_ADDR@}}
 -user=@MYSQLD_USER@
 +user=_mysql
 +group=_mysql
-+
-+socket_dir=`dirname $safe_mysql_unix_port`
  niceness=0
  
  # Use the mysqld-max binary by default if the user doesn't specify a binary
-@@ -292,10 +274,17 @@ fi
+@@ -155,6 +135,7 @@ fi
+ parse_arguments `$print_defaults --loose-verbose $defaults mysqld_safe safe_mysqld`
+ parse_arguments PICK-ARGS-FROM-ARGV "$@"
+ safe_mysql_unix_port=${mysql_unix_port:-${MYSQL_UNIX_PORT:-@MYSQL_UNIX_ADDR@}}
++socket_dir=`dirname $safe_mysql_unix_port`
+ 
+ if test ! -x $ledir/$MYSQLD
+ then
+@@ -298,10 +279,17 @@ fi
  echo "Starting $MYSQLD daemon with databases from $DATADIR"
  
  # Does this work on all systems?
@@ -64,7 +69,7 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.1 2003/12/30 05:58:51 brad Exp $
  
  echo "`date +'%y%m%d %H:%M:%S  mysqld started'`" >> $err_log
  while true
-@@ -312,33 +301,6 @@ do
+@@ -318,33 +306,6 @@ do
      break
    fi
  

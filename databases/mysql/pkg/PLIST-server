@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST-server,v 1.9 2004/01/31 03:08:49 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.10 2004/02/22 01:20:11 brad Exp $
 bin/comp_err
 bin/isamchk
 bin/isamlog
 @comment bin/make_win_src_distribution
 bin/msql2mysql
 bin/my_print_defaults
+bin/myisam_ftdump
 bin/myisamchk
 bin/myisamlog
 bin/myisampack
@@ -79,8 +80,8 @@ share/doc/mysql/Flags/italy.gif
 share/doc/mysql/Flags/japan.gif
 share/doc/mysql/Flags/latvia.gif
 share/doc/mysql/Flags/mexico.gif
-share/doc/mysql/Flags/new-zealand.gif
 share/doc/mysql/Flags/netherlands.gif
+share/doc/mysql/Flags/new-zealand.gif
 share/doc/mysql/Flags/norway.gif
 share/doc/mysql/Flags/philippines.gif
 share/doc/mysql/Flags/poland.gif
@@ -173,9 +174,9 @@ share/mysql/norwegian/errmsg.sys
 share/mysql/norwegian/errmsg.txt
 share/mysql/polish/errmsg.sys
 share/mysql/polish/errmsg.txt
-@comment share/mysql/postinstall
 share/mysql/portuguese/errmsg.sys
 share/mysql/portuguese/errmsg.txt
+@comment share/mysql/postinstall
 @comment share/mysql/preinstall
 share/mysql/romanian/errmsg.sys
 share/mysql/romanian/errmsg.txt
