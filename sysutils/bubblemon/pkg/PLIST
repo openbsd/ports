@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/09/23 21:24:52 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/15 19:01:14 naddy Exp $
 lib/bonobo/servers/GNOME_BubblemonApplet.server
 libexec/bubblemon-gnome2
 @comment man/hu/man1/bubblemon-gnome2.1
@@ -22,22 +22,22 @@ share/locale/ru/LC_MESSAGES/bubblemon.mo
 share/locale/sh/LC_MESSAGES/bubblemon.mo
 share/locale/sv/LC_MESSAGES/bubblemon.mo
 share/pixmaps/bubblemon.png
-@comment @dirrm share/pixmaps
-@comment @dirrm share/locale/sv/LC_MESSAGES
-@comment @dirrm share/locale/sh/LC_MESSAGES
-@comment @dirrm share/locale/ru/LC_MESSAGES
-@comment @dirrm share/locale/ro/LC_MESSAGES
-@comment @dirrm share/locale/pt/LC_MESSAGES
-@comment @dirrm share/locale/pl/LC_MESSAGES
-@comment @dirrm share/locale/no/LC_MESSAGES
-@comment @dirrm share/locale/ko/LC_MESSAGES
-@comment @dirrm share/locale/it/LC_MESSAGES
-@comment @dirrm share/locale/is/LC_MESSAGES
-@comment @dirrm share/locale/hu/LC_MESSAGES
-@comment @dirrm share/locale/fr/LC_MESSAGES
-@comment @dirrm share/locale/fi/LC_MESSAGES
-@comment @dirrm share/locale/es/LC_MESSAGES
-@comment @dirrm share/locale/de/LC_MESSAGES
-@comment @dirrm share/locale/da/LC_MESSAGES
+@dirrm share/pixmaps
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sh/LC_MESSAGES
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/ko/LC_MESSAGES
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/is/LC_MESSAGES
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/da/LC_MESSAGES
 @comment @dirrm man/sv/man1
 @comment @dirrm man/hu/man1

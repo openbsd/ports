@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/17 09:18:56 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/15 19:01:15 naddy Exp $
 bin/knutclient
 share/applnk/Applications/knutclient.desktop
 share/apps/knutclient/knutclientui.rc
@@ -31,21 +31,21 @@ share/locale/cs/LC_MESSAGES/knutclient.mo
 share/locale/de/LC_MESSAGES/knutclient.mo
 share/locale/fr/LC_MESSAGES/knutclient.mo
 share/locale/it/LC_MESSAGES/knutclient.mo
-@comment @dirrm share/locale/it/LC_MESSAGES
-@comment @dirrm share/locale/it
-@comment @dirrm share/locale/fr/LC_MESSAGES
-@comment @dirrm share/locale/fr
-@comment @dirrm share/locale/de/LC_MESSAGES
-@comment @dirrm share/locale/de
-@comment @dirrm share/locale/cs/LC_MESSAGES
-@comment @dirrm share/locale/cs
-@comment @dirrm share/locale
-@comment @dirrm share/icons/hicolor/16x16/apps
-@comment @dirrm share/icons/hicolor/16x16
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/locale
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
 @dirrm share/doc/HTML/en/knutclient
 @dirrm share/doc/HTML/cs/knutclient
-@comment @dirrm share/doc/HTML/cs
-@comment @dirrm share/doc/HTML
+@dirrm share/doc/HTML/cs
+@dirrm share/doc/HTML
 @dirrm share/apps/knutclient
-@comment @dirrm share/apps
-@comment @dirrm share/applnk/Applications
+@dirrm share/apps
+@dirrm share/applnk/Applications
