@@ -1,4 +1,0 @@
-See qpage.cf in ${PREFIX}/share/examples/qpage for a sample
-configuration file.
-
-Make sure you have the qpage.cf file in the /etc directory

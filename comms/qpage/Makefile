@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/10/23 00:33:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2004/11/11 20:56:39 alek Exp $
 
 COMMENT=	"SNPP client/server (alphanum pager software)"
 
@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tar.Z
 CONFIGURE_STYLE=gnu
 
 NO_REGRESS=	Yes
+
+pre-build:
+	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' ${WRKSRC}/qpage.man
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/qpage ${PREFIX}/bin
