@@ -1,0 +1,4 @@
+include/gc.h
+include/gc_cpp.h
+lib/libgc.a
+lib/libleak.a
