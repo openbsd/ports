@@ -1,0 +1,4 @@
+String::Approx lets you match and substitute strings approximately.
+With this you can emulate errors: typing errorrs, speling errors,
+closely related vocabularies (colour color), genetic mutations (GAG ACT),
+abbreviations (McScot, MacScot).
