@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-dutch,v 1.1.1.1 2001/05/23 21:25:43 lebel Exp $
+@pkgdep aspell-*
+lib/aspell/dutch
+share/aspell/dutch.dat
+share/pspell/nl-aspell.pwli
