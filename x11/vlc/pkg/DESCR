@@ -1,0 +1,11 @@
+VLC (VideoLAN Client) is a highly portable multimedia player for various
+audio and video formats (MPEG-1, MPEG-2, MPEG-4, DivX, mp3, ogg, ...) as
+well as DVDs, and various streaming protocols.
+
+As shipped, vlc cannot descramble DVDs.  There are a few DVDs out there
+with no scramble protection.  However, vlc will recognize and use an
+installed descrambling library.
+
+FLAVORs:
+
+	no_dvd - disable dvd playing code
