@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.16 2000/06/25 22:30:07 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/08/07 10:05:05 brad Exp $
 # $NetBSD: Makefile,v 1.25 1999/03/04 14:18:54 tron Exp $
 
 DISTNAME=	netpbm-1mar1994
 PKGNAME=	netpbm-19940301
 CATEGORIES=	graphics
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.informatik.uni-oldenburg.de/pub/netpbm/
 MASTER_SITES0=	ftp://ftp.informatik.uni-oldenburg.de/pub/netpbm/ \
 		ftp://ftp.x.org/contrib/utilities/
 MASTER_SITES1=	ftp://swrinde.nde.swri.edu/pub/png/applications/
 DISTFILES=	${DISTNAME}.tar.gz:0 pcxtoppm.tar.gz rletopnm.tar.gz \
-		pnmtopng-2.37.3.tar.gz:1
+		pnmtopng-2.37.4.tar.gz:1
+DIST_SUBDIR=	netpbm
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff \
@@ -25,15 +26,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_PACKAGE_CDROM=	No
 
-MAKE_ENV=	PREFIX=${PREFIX} MANCP="${INSTALL_MAN}"
-FAKE_FLAGS= 	PREFIX=${WRKINST}${PREFIX} MANCP="${INSTALL_MAN}"
+MAKE_ENV=	PREFIX="${PREFIX}" MANCP="${INSTALL_MAN}"
+FAKE_FLAGS= 	PREFIX="${WRKINST}${PREFIX}" MANCP="${INSTALL_MAN}"
 
 WRKDIST=	${WRKDIR}/netpbm
 
 post-extract:
 	@cd ${WRKSRC} && \
-	  mv ../pnmtopng-2.37.3/* .. && \
+	  mv ../pnmtopng-2.37.4/* .. && \
 	  mv ../*pcx*.? ppm && \
-	  mv ../*rle*.? ../*png*.? pnm
+	  mv ../*rle*.? ../*png*.? pnm && \
+	  mv ../version.h pnm
 
 .include <bsd.port.mk>
