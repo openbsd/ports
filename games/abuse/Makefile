@@ -1,19 +1,19 @@
-# OpenBSD makefile for:    abuse
-# Version required:	pd
-# Date created:         Nov  18 1997
-# Whom:                 todd@OpenBSD.org
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/18 09:19:01 todd Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/15 17:02:46 marc Exp $
 #
 
 DISTNAME=	abuse_pd
+PKGNAME=	${DISTNAME}-1.0
 CATEGORIES=	games
+
+BROKEN=		"newer version available"
+
+MAINTAINER=	todd@OpenBSD.org
+
 MASTER_SITES=	http://www.crack.com/games/abuse/
-DISTFILES=	abuse_pd.tar.gz
+#The newer version changed names
+#DISTFILES=	abuse_pd.tgz
 
-GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
-
-MANINAINER=	todd@OpenBSD.org
+GNU_CONFIGURE=	YES
 
 .include <bsd.port.mk>
