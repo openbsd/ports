@@ -1,0 +1,3 @@
+bin/connect4
+man/man6/connect4.6
+lib/connect4/scores
