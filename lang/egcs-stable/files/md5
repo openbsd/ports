@@ -1,6 +1,2 @@
 MD5 (egcs/egcs-1.1.1.tar.gz) = 0b3f0e856dcbb2241c183081fc7271af
-MD5 (egcs/egcs-core-1.1.1.tar.gz) = 90322ffebad7d4384e07990451ddd524
-MD5 (egcs/egcs-g++-1.1.1.tar.gz) = 13a4825e5fe65acf98694007f6779057
-MD5 (egcs/egcs-g77-1.1.1.tar.gz) = 20422ba1f5cf12786f01b637080dcd6e
-MD5 (egcs/egcs-objc-1.1.1.tar.gz) = e08bac78dd4f1c042aedf5ad0f65b16d
-MD5 (egcs/egcs-tests-1.1.1.tar.gz) = 33090a914ec5092067fb642acce327da
+MD5 (egcs/egcs-1.1.2-pre2.tar.gz) = 9b56d81f9fd921d973ff58600496b201

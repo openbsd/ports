@@ -1,21 +1,28 @@
 # OpenBSD makefile for:	egcs
-# Version required:	release 1.1b, plus pre-rel 1.1.1 patch 1/2
+# Version required:	release 1.1.1, preparing for 1.1.2
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.11 1999/02/21 04:26:13 marc Exp $
+# $OpenBSD: Makefile,v 1.12 1999/02/26 16:18:43 espie Exp $
 #
 
 # This is a configuration file for egcs, stable release.
 
+# it only works right with a recent bsd.port.mk.
+NEED_VERSION=1.64
+
+# we could remove this dependency by patching configure, but this is not
+# reasonable...
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+
 CATEGORIES=	lang 
 MAINTAINER=	Marc.Espie@openbsd.org
 
-NEED_VERSION=	1.64
+# These are the only archs that don't exhibit problems right out of the
+# box right now. see egcs-snapshot for credits
+# If you use another platform, go to egcs-snapshot instead
 
-# this will improve over time as more and more architectures are handled
-# with some help from Jason L. Wright for sparc...
-ONLY_FOR_ARCHS = i386 sparc m68k
+ONLY_FOR_ARCHS = i386 sparc m68k alpha
 
 # user configuration section
 
@@ -24,8 +31,7 @@ MAKE_TESTS=no
 MAKE_GXX=yes
 MAKE_FORTRAN=yes
 MAKE_OBJC=yes
-
-# not yet in 1.1.1
+# not in the 1.1.x releases
 #MAKE_CHILL=yes
 #MAKE_JAVA=yes
 
@@ -33,14 +39,28 @@ MAKE_OBJC=yes
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 .endif
 
-# if you want/need to use the mammoth archive
+# if you want/need to use the mammoth archive. 
+# XXX: I'm not sure partial archives work
 ONE_ARCHIVE=yes
 
-VERSION=1.1.1
-DISTNAME=	egcs-${VERSION}
-DIRECTORY=egcs/releases/%SUBDIR%/
+#### fetch section
+VERSION= 1.1.2-pre2
+#PREPATCH= 1.1.2-pre1
+
+DIRECTORY=egcs/%SUBDIR%/
+
+# getting the right archives where they should be
+MASTER_SITE_SUBDIR=releases/egcs-${VERSION}
+PATCH_SITE_SUBDIR=snapshots/egcs-1.1.2-prerelease
+.if defined(PREPATCH)
+DISTNAME= egcs-${PREPATCH}
+.else
+DISTNAME= egcs-${VERSION}
+.endif
+
 DIST_SUBDIR=egcs
-MASTER_SITE_SUBDIR=${DISTNAME}
+
+PATCH_DIST_STRIP=-p1
 
 .if defined(ONE_ARCHIVE)
 DISTFILES= egcs-${VERSION}${EXTRACT_SUFX}
@@ -53,7 +73,6 @@ DISTFILES+=     egcs-g++-${VERSION}${EXTRACT_SUFX}
 .if defined(MAKE_TESTS)
 DISTFILES+=egcs-tests-${VERSION}${EXTRACT_SUFX}
 .endif
-# to be added...
 .if defined(MAKE_FORTRAN)
 DISTFILES+=egcs-g77-${VERSION}${EXTRACT_SUFX}
 .endif
@@ -61,8 +80,6 @@ DISTFILES+=egcs-g77-${VERSION}${EXTRACT_SUFX}
 DISTFILES+=egcs-objc-${VERSION}${EXTRACT_SUFX}
 .endif
 .endif
-
-MAKE_ENV+=LANGUAGES="c proto gcov objc"
 
 MASTER_SITES=	ftp://egcs.cygnus.com/pub/${DIRECTORY} 
 MASTER_SITES+=	ftp://ftp.lip6.fr/pub/${DIRECTORY}
@@ -108,7 +125,35 @@ MASTER_SITES+= ftp://linux.ihep.su/pub/cygnus/${DIRECTORY}
 MASTER_SITES+= ftp://linux.cis.nctu.edu.tw/pub/packages/pcg/${DIRECTORY}
 
 PATCH_SITES= ${MASTER_SITES}
-PATCH_DIST_STRIP=-p1
+
+# prepare for new release
+.if defined(PREPATCH)
+.if defined(ONE_ARCHIVE)
+PATCHFILES+= egcs-${VERSION}-${PREPATCH}.diff.gz
+.else
+
+PATCHFILES+= egcs-core-${VERSION}-${PREPATCH}.diff.gz
+.if defined(MAKE_GXX)
+PATCHFILES+= egcs-g++-${VERSION}-${PREPATCH}.diff.gz
+.endif
+.if defined(MAKE_TESTS)
+PATCHFILES+= egcs-tests-${VERSION}-${PREPATCH}.diff.gz
+.endif
+.if defined(MAKE_FORTRAN)
+PATCHFILES+= egcs-g77-${VERSION}-${PREPATCH}.diff.gz
+.endif
+.if defined(MAKE_OBJC)
+PATCHFILES+= egcs-objc-${VERSION}-${PREPATCH}.diff.gz
+.endif
+.endif
+
+.endif
+
+# synch the date
+.if defined(PREPATCH)
+post-extract:
+	${MV} ${WRKDIR}/egcs-${VERSION} ${WRKSRC}
+.endif
 
 #### 
 # Patch section
@@ -148,17 +193,9 @@ post-patch:
 # configure section
 #
 
-# we could remove the dependency on autoconf by patching configure, 
-# but this is not reasonable...
-
-USE_AUTOCONF=yes
-AUTOCONF_DIR=${WRKDIR}/source/gcc
-
 GNU_CONFIGURE=	yes
 
-CONFIGURE_SCRIPT=../source/configure
-
-#CONFIGURE_ENV=CFLAGS=-O2
+CONFIGURE_ENV=CFLAGS=-O2
 CONFIGURE_ARGS= --prefix=${PREFIX} \
 --verbose --with-gnu-ld --with-gnu-as \
 --program-transform-name=s,^,e,
@@ -167,32 +204,39 @@ CONFIGURE_ARGS= --prefix=${PREFIX} \
 CONFIGURE_ARGS+=--enable-shared
 .endif
 
-# move source around after rebuilding configure file.
+WRKBUILD=${WRKDIR}/build-${MACHINE_ARCH}
+
+# rebuild configure files after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
 pre-configure:
-	-${MV} ${WRKSRC} ${WRKDIR}/source
-	${MKDIR} ${WRKSRC}
+	cd ${WRKSRC}/gcc && PATH=${PORTPATH} autoreconf
+	cd ${WRKSRC}/libiberty && PATH=${PORTPATH} autoreconf
 
 ####
 # build section
 # should work without gmake. If it turns out to be needed, this must be 
-# reported to the egcs folks
+# reported to MAINTAINER.
 #USE_GMAKE= yes
 
+# you shouldn't skip bootstrap unless you know what you're doing
+# use bootstrap-lean if you're pressed for space
 ALL_TARGET=bootstrap
+# ALL_TARGET=bootstrap-lean
 .if defined(MAKE_TESTS)
 ALL_TARGET+=check
 .endif
 
 # XXX we need to override do-build to get the warnings from within make
 do-build:
-	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET} 2>warnings)
-
+	@(cd ${WRKBUILD}; \
+	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET} 2>warnings) || \
+	(echo "Make bootstrap failed."; \
+	echo "Don't forget to look at ${WRKBUILD}/warnings"; ${FALSE})
 
 ####
 # Install section
 
-PLIST=${WRKDIR}/PLIST
+PLIST=${WRKBUILD}/PLIST
 
 M4FLAGS=-Uinclude -DDISTNAME=${DISTNAME}
 .if defined(MAKE_GXX)
@@ -210,13 +254,13 @@ M4FLAGS+= -DOBJC
 .if defined(MAKE_JAVA)
 M4FLAGS+= -DJAVA
 .endif
-.if (${MACHINE_ARCH}) != "alpha")
+.if !defined(NO_SHARED_LIBS)
 M4FLAGS+= -DDYNAMIC
 .endif
 
 pre-install:
-	${M4} ${M4FLAGS} -DARCH=`${WRKDIR}/source/config.guess` \
-	-DVERSION=`${SED} -e 's/.*\"\(egcs-[0-9.]*\) .*/\1/' <${WRKDIR}/source/gcc/version.c` \
+	${M4} ${M4FLAGS} -DARCH=`${WRKSRC}/config.guess` \
+	-DVERSION=`${SED} -e 's/.*\"\(egcs-[0-9.]*\) .*/\1/' <${WRKSRC}/gcc/version.c` \
 	<${FILESDIR}/PLIST.template >${PLIST}
 
 .include <bsd.port.mk>
