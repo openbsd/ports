@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2002/02/18 03:45:18 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2002/05/05 15:07:18 espie Exp $
 
 COMMENT=	"Web-based interface for system administration for Unix"
+BROKEN=		"Serious security concerns"
 
 DISTNAME=       webmin-0.81
 CATEGORIES=     sysutils
