@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/08 16:41:54 fgsch Exp $
+# $OpenBSD: Makefile,v 1.18 2002/04/03 14:22:02 fgsch Exp $
 # Uses pthreads
+
+BROKEN=		"security problem"
 
 COMMENT=	"Internet based broadcasting system"
 
