@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2004/12/16 00:31:22 alek Exp $
+# $OpenBSD: Makefile,v 1.28 2005/01/21 16:03:14 naddy Exp $
 
 COMMENT=	"Internet Relay Chat client"
 
-VERSION=	20040216
+VERSION=	20040820
 DISTNAME=	ircii-${VERSION}
 PKGNAME=	ircII-${VERSION}
 CATEGORIES=	net
