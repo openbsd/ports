@@ -1,25 +1,109 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/01/31 18:56:47 todd Exp $
---- configure.orig	Mon Nov 18 14:05:25 2002
-+++ configure	Wed Nov 27 23:21:46 2002
-@@ -5211,8 +5211,8 @@ else
+$OpenBSD: patch-configure,v 1.2 2003/06/12 20:21:06 marcm Exp $
+--- configure.orig	Sat May 31 06:26:55 2003
++++ configure	Sat May 31 06:34:04 2003
+@@ -3250,6 +3250,16 @@ newos6*)
+   lt_cv_file_magic_test_file=/usr/lib/libnls.so
+   ;;
+ 
++openbsd*)
++  lt_cv_file_magic_cmd=/usr/bin/file
++  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
++  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++    lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
++  else
++    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
++  fi
++  ;;
++
+ osf3* | osf4* | osf5*)
+   # this will be overridden with pass_all, but let us keep it just in case
+   lt_cv_deplibs_check_method='file_magic COFF format alpha shared library'
+@@ -4151,8 +4161,15 @@ old_postinstall_cmds='chmod 644 $oldlib'
+ old_postuninstall_cmds=
+ 
+ if test -n "$RANLIB"; then
++  case $host_os in
++  openbsd*)
++    old_postinstall_cmds="\$RANLIB -t \$oldlib~$old_postinstall_cmds"
++    ;;
++  *)
++    old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
++    ;;
++  esac
+   old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
+-  old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
+ fi
+ 
+ # Allow CC to be a program name with arguments.
+@@ -4732,7 +4749,7 @@ exclude_expsyms="_GLOBAL_OFFSET_TABLE_"
+ extract_expsyms_cmds=
+ 
+ case $host_os in
+-cygwin* | mingw* | pw32* )
++cygwin* | mingw* | pw32*)
+   # FIXME: the MSVC++ port hasn't been tested in a loooong time
+   # When not using gcc, we currently assume that we are using
+   # Microsoft Visual C++.
+@@ -4740,7 +4757,9 @@ cygwin* | mingw* | pw32* )
+     with_gnu_ld=no
+   fi
+   ;;
+-
++openbsd*)
++  with_gnu_ld=no
++  ;;
+ esac
+ 
+ ld_shlibs=yes
+@@ -5144,10 +5163,24 @@ else
+     ;;
+ 
+   openbsd*)
+-    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+-    hardcode_libdir_flag_spec='-R$libdir'
      hardcode_direct=yes
      hardcode_shlibpath_var=no
-     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
--      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
--      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
 +      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
 +      hardcode_libdir_flag_spec='${wl}-R$libdir'
-       export_dynamic_flag_spec='${wl}-E'
-     else
-       case "$host_os" in
-@@ -5221,8 +5221,8 @@ else
- 	hardcode_libdir_flag_spec='-R$libdir'
-         ;;
-       *)
--        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
--        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      export_dynamic_flag_spec='${wl}-E'
++    else
++      case "$host_os" in
++      openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
++	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
++	hardcode_libdir_flag_spec='-R$libdir'
++        ;;
++      *)
 +        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
 +        hardcode_libdir_flag_spec='${wl}-R$libdir'
-         ;;
-       esac
-     fi
++        ;;
++      esac
++    fi
+     ;;
+ 
+   os2*)
+@@ -5628,9 +5661,21 @@ newsos6)
+ 
+ openbsd*)
+   version_type=sunos
+-  if test "$with_gnu_ld" = yes; then
+-    need_lib_prefix=no
+-    need_version=no
++  need_lib_prefix=no
++  need_version=no
++  sys_lib_search_path_spec="/usr/lib"
++  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
++  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++    case "$host_os" in
++    openbsd2.[89] | openbsd2.[89].*)
++      shlibpath_overrides_runpath=no
++      ;;
++    *)
++      shlibpath_overrides_runpath=yes
++      ;;
++    esac
++  else
++    shlibpath_overrides_runpath=yes
+   fi
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
