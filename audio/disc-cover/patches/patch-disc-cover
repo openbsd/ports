@@ -1,9 +1,12 @@
-$OpenBSD: patch-disc-cover,v 1.2 2002/12/18 09:36:21 sturm Exp $
---- disc-cover.orig	Tue Dec 10 22:21:28 2002
-+++ disc-cover	Tue Dec 10 22:24:53 2002
-@@ -39,7 +39,7 @@ my ($config_homedir) = "";
+$OpenBSD: patch-disc-cover,v 1.3 2003/04/18 21:27:12 sturm Exp $
+--- disc-cover.orig	Thu Mar 13 15:17:05 2003
++++ disc-cover	Fri Apr 18 21:57:11 2003
+@@ -38,9 +38,9 @@
+ my ($config_homedir) = "";
  $config_homedir = "$ENV{HOME}" if (defined $ENV{HOME});
  my ($config_tmp_dir) = '/tmp';
+-my (@config_template_dirs) = ('/usr/share/disc-cover/templates','/usr/lib/disc-cover/templates','templates');
++my (@config_template_dirs) = ('%%PREFIX%%/share/disc-cover','templates');
  my ($config_output_format) = 'ps';
 -my ($config_device) = "/dev/cdrom";
 +my ($config_device) = "/dev/cd0c";

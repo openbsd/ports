@@ -1,6 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/02/02 06:10:37 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/04/18 21:27:12 sturm Exp $
 bin/disc-cover
 man/man1/disc-cover.1
-share/examples/disc-cover/README
+share/disc-cover/jewel
+share/disc-cover/letter-slim
+share/disc-cover/sleeve
+share/disc-cover/slim
+share/disc-cover/tape
+share/disc-cover/tevion-slim
+share/disc-cover/x-slim
+share/examples/disc-cover/busy.png
 share/examples/disc-cover/index.cgi
+share/examples/disc-cover/offline.png
+share/examples/disc-cover/online.cgi
+share/examples/disc-cover/online.png
 @dirrm share/examples/disc-cover
+@dirrm share/disc-cover
