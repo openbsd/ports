@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/14 00:44:14 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2004/12/21 02:58:13 msf Exp $
 
 COMMENT=		"use other catalog formats in Locale::Maketext"
 
-DISTNAME=		Locale-Maketext-Lexicon-0.45
-PKGNAME=		p5-${DISTNAME}p0
+DISTNAME=		Locale-Maketext-Lexicon-0.46
+PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
 
 MAINTAINER=		Mathieu Sauve-Frankel <msf@openbsd.org>
