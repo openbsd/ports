@@ -1,19 +1,10 @@
-*** pcmplay.c.orig	Wed May 20 21:17:48 1998
---- pcmplay.c	Wed May 20 21:17:54 1998
-***************
-*** 41,47 ****
-  #include <sys/types.h>
-  #include <sys/uio.h>
-  #include <unistd.h>
-! #include <machine/soundcard.h>
-  
-  #include "utils.h"
-  #include "getlopt.h"
---- 41,47 ----
-  #include <sys/types.h>
-  #include <sys/uio.h>
-  #include <unistd.h>
-! #include <soundcard.h>
-  
-  #include "utils.h"
-  #include "getlopt.h"
+--- global.h.orig	Sat Jan  2 11:41:42 1999
++++ global.h	Sat Jan  2 12:38:15 1999
+@@ -48,7 +48,6 @@
+ #include <unistd.h>
+ 
+ typedef unsigned char byte;
+-typedef unsigned long ulong;
+ 
+ /*
+  *   Uncommenting this define will cause a LOT of output.

@@ -1,6 +1,11 @@
+@cwd /usr/local
+@name tosha-0.6
 bin/tosha
 bin/pcmplay
 bin/pcmfade
+lib/tosha/tosharc.sample
+@exec if [ ! -f /etc/tosharc ]; then cp %D/%F /etc/tosharc; fi
 man/man1/tosha.1
 man/man1/pcmplay.1
 man/man1/pcmfade.1
+@dirrm lib/tosha
