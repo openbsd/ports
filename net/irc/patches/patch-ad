@@ -1,0 +1,53 @@
+--- support/configure.orig	Fri Jan 30 00:28:34 1998
++++ support/configure	Fri Jan 30 00:28:21 1998
+@@ -820,50 +820,6 @@
+ test -n "$SUM" || SUM="true"
+ 
+ 
+-echo $ac_n "checking for -lcrypt""... $ac_c" 1>&6
+-ac_lib_var=`echo crypt'_'crypt | tr './+\055' '__p_'`
+-if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  ac_save_LIBS="$LIBS"
+-LIBS="-lcrypt  $LIBS"
+-cat > conftest.$ac_ext <<EOF
+-#line 832 "configure"
+-#include "confdefs.h"
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char crypt();
+-
+-int main() { return 0; }
+-int t() {
+-crypt()
+-; return 0; }
+-EOF
+-if { (eval echo configure:844: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; }; then
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=yes"
+-else
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=no"
+-fi
+-rm -f conftest*
+-LIBS="$ac_save_LIBS"
+-
+-fi
+-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-    ac_tr_lib=HAVE_LIB`echo crypt | tr 'abcdefghijklmnopqrstuvwxyz' 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'`
+-  cat >> confdefs.h <<EOF
+-#define $ac_tr_lib 1
+-EOF
+-
+-  LIBS="-lcrypt $LIBS"
+-
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
+-
+ echo $ac_n "checking for -lsocket""... $ac_c" 1>&6
+ ac_lib_var=`echo socket'_'socket | tr './+\055' '__p_'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
