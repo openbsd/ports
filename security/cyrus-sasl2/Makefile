@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/09/15 18:35:59 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2004/09/26 10:01:01 sturm Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
@@ -57,8 +57,10 @@ CONFIGURE_ARGS+=        --with-ldap
 .endif
 
 post-build:
+	rm ${WRKBUILD}/saslauthd/saslauthd.8
 	(cd ${WRKBUILD}/saslauthd; \
-	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} testsaslauthd)
+	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} testsaslauthd \
+	saslauthd.8)
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sasl2
