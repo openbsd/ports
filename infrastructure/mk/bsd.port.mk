@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.645 2004/09/15 18:57:31 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.646 2004/09/15 18:58:49 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -525,6 +525,7 @@ WRKPKG?=		${WRKBUILD}/pkg
 WRKBUILD?=		${WRKSRC}
 WRKPKG?=		${WRKDIR}/pkg
 .endif
+WRKCONF?=		${WRKBUILD}
 
 ALL_TARGET?=		all
 INSTALL_TARGET?=	install
@@ -1046,7 +1047,7 @@ _PACKAGE_DEPS+=${_BULK_COOKIE}
 .endif
 
 MODSIMPLE_configure= \
-	cd ${WRKBUILD} && ${_SYSTRACE_CMD} ${SETENV} \
+	cd ${WRKCONF} && ${_SYSTRACE_CMD} ${SETENV} \
 		CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
 		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
