@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1999/05/08 04:51:25 brad Exp $
+# $OpenBSD: Makefile,v 1.14 1999/05/09 07:23:25 brad Exp $
 
 DISTNAME=	ImageMagick-4.2.4
 CATEGORIES=     graphics x11
@@ -21,7 +21,9 @@ BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig \
 		gs:${PORTSDIR}/print/ghostscript5 \
 		picttoppm:${PORTSDIR}/graphics/netpbm
 
-LIB_DEPENDS=	jpeg.62:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	bz2.0.9:${PORTSDIR}/archivers/bzip2 \
+		jbig.1.0:${PORTSDIR}/graphics/jbigkit \
+		jpeg.62:${PORTSDIR}/graphics/jpeg \
 		mpeg.1.2:${PORTSDIR}/graphics/mpeg-lib \
 		png.1.3:${PORTSDIR}/graphics/png \
 		tiff.3.4:${PORTSDIR}/graphics/tiff34 \
@@ -32,19 +34,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
 		--enable-lzw \
-		--without-bzlib \
 		--without-perl
 
 CONFIGURE_ENV=	CPPFLAGS="-I/usr/local/include" \
 		LDFLAGS="-L/usr/local/lib"
-
-pre-build:
-	@echo ""
-	@echo "*** WARNING: you may see an error such as"
-	@echo "***       virtual memory exhausted"
-	@echo "*** when building this package.  If you do you must increase"
-	@echo "*** your limits.  See the man page for your shell and look"
-	@echo "*** for the 'limit' or 'ulimit' command."
-	@echo ""
 
 .include <bsd.port.mk>
