@@ -1,0 +1,4 @@
+This module exports a single function, align(), which is used to
+justify strings to various alignment styles. The alignment specification
+is the first argument, followed by any number of scalars which are
+subject to alignment.
