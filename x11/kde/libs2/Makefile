@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/03/30 12:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/04/22 13:20:45 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -12,6 +12,10 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${VERSION}/distribution/tar/generic/src/
 EXTRACT_SUFX=		.tar.bz2
 
+# Parts of kde want shared libraries to work, as some symbols are
+# duplicated over the place.
+NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
+
 LIB_DEPENDS= 	qt.2.::x11/qt2 \
 		png.1.::graphics/png \
 		jpeg.62.::graphics/jpeg \
@@ -19,6 +23,7 @@ LIB_DEPENDS= 	qt.2.::x11/qt2 \
 		audiofile.::devel/libaudiofile \
 		pcreposix.::devel/pcre
 
+BUILD_DEPENDS=	zsh:zsh-*:shells/zsh
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
@@ -27,6 +32,7 @@ CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-threading
 CONFIGURE_ARGS+=	--enable-mitshm
+CONFIGURE_ARGS+=	--disable-debug
 #CONFIGURE_ARGS+=--enable-static --enable-debug --disable-shared
 
 #CONFIGURE_ARGS+=	--enable-static --disable-shared
@@ -37,8 +43,13 @@ USE_GMAKE=		Yes
 CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2
 MAKE_ENV=		${CONFIGURE_ENV}
 
+pre-build:
+	# Let zsh act as an sh replacement
+	ln -sf $(LOCALBASE)/bin/zsh ${WRKBUILD}/sh
+
 # Ensure qt2 will always be at the front
 MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${LOCALBASE}/lib/qt2'
+MAKE_FLAGS+=LIBTOOL='$(WRKBUILD)/sh $(WRKBUILD)/libtool'
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
