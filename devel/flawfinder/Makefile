@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/03/02 14:15:39 xsa Exp $
+# $OpenBSD: Makefile,v 1.23 2004/05/28 15:38:23 sturm Exp $
 
 COMMENT=		"C/C++ source code auditing tool"
 
@@ -26,12 +26,14 @@ PKG_ARCH=		*
 
 DOC_DIR=		${PREFIX}/share/doc/flawfinder
 
-pre-build:
+do-configure:
 	@perl -pi -e \
 		"s|/usr/bin/env python|${LOCALBASE}/bin/python${MODPY_VERSION}|" \
 		${WRKSRC}/flawfinder
 
-post-install:
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/flawfinder ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/flawfinder.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${DOC_DIR}
 	${INSTALL_DATA} ${WRKSRC}/flawfinder.{pdf,ps} ${DOC_DIR}
 
