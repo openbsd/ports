@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2003/04/16 11:39:10 wilfried Exp $
+# $OpenBSD: Makefile,v 1.164 2003/04/24 21:43:28 matthieu Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -189,6 +189,7 @@
      SUBDIR += xco
      SUBDIR += xcoloredit
      SUBDIR += xcolors
+     SUBDIR += xcursorgen
      SUBDIR += xdaliclock
      SUBDIR += xdmchoose
      SUBDIR += xdtm
