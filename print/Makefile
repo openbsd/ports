@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.2 1997/12/03 04:14:02 angelos Exp $
+# $Id: Makefile,v 1.3 1997/12/03 04:50:40 angelos Exp $
 #
 
 #   SUBDIR += a2ps
@@ -20,8 +20,8 @@
 #   SUBDIR += ghostscript
 #   SUBDIR += ghostscript3
 #   SUBDIR += ghostscript4
-#   SUBDIR += ghostscript5
-#   SUBDIR += ghostview
+    SUBDIR += ghostscript5
+    SUBDIR += ghostview
 #   SUBDIR += gv
 #   SUBDIR += html2latex
 #   SUBDIR += latex
