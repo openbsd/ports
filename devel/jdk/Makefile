@@ -1,54 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/06 00:13:05 lebel Exp $
-#
-# See http://www.freebsd.org/java/ for software updates, etc.
+# $OpenBSD: Makefile,v 1.10 2001/05/08 00:54:38 matt Exp $
 
-COMMENT=	"Sun's Java Developers Kit"
+SUBDIR+= 1.1
+SUBDIR+= 1.2-blackdown
+SUBDIR+= 1.3-linux
 
-DISTNAME=	jdk-${JDK_VERSION}
-CATEGORIES=	devel
-NEED_VERSION=	1.402
-MASTER_SITES=	ftp://ftp.nuxi.com/pub/FreeBSD/JDK/ \
-		http://ftp7.de.freebsd.org/pub/FreeBSD/JDK/
-
-HOMEPAGE=	http://www.freebsd.org/java/
-
-JDK_VERSION=	1.1.8
-JDK_PATH=	${PREFIX}/jdk${JDK_VERSION}
-
-MAINTAINER=	Chris Cappuccio <chris@openbsd.org>
-
-RUN_DEPENDS=	/emul/freebsd/usr/lib/compat/aout/libc.so.3.1::emulators/freebsd_lib
-
-LICENSE_TYPE=		NOFEE
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	No
-
-ONLY_FOR_ARCHS=	i386
-
-NO_BUILD=	Yes
-EXTRACT_ONLY=
-
-DISTFILES=	jdk${JDK_VERSION}_AOUT.V1999-11-9.tar.gz
-
-pre-install:
-	@${INSTALL_DATA_DIR} ${JDK_PATH}
-
-do-install:
-.for JDKFILE in ${DISTFILES}
-	@tar -C ${PREFIX} -xzf ${DISTDIR}/${JDKFILE}
-.endfor
-#
-# For loop not needed currently.  However, not having it would be incorrect,
-# as additional distfiles could be added.
-
-post-install:
-	@echo
-	@echo "This software has restrictive licensing terms which prohibit" 
-	@echo "its redistribution."
-	@echo 
-	@echo "Read ${JDK_PATH}/LICENSE for more information."
-	@echo
-
-.include <bsd.port.mk>
+.include <bsd.port.subdir.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/06 00:13:06 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/08 00:54:36 matt Exp $
 
 COMMENT=	"java foundation classes (jfc)/swing"
 
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://java.sun.com/products/jfc/
 
-RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java::devel/jdk
+RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java::devel/jdk/1.1
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

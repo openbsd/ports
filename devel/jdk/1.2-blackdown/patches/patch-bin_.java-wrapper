@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_.java-wrapper,v 1.1.1.1 2001/02/26 23:50:26 matt Exp $
+$OpenBSD: patch-bin_.java-wrapper,v 1.1 2001/05/08 00:54:39 matt Exp $
 --- bin/.java_wrapper.orig	Thu Dec 28 01:44:45 2000
 +++ bin/.java_wrapper	Thu Dec 28 01:44:56 2000
 @@ -31,8 +31,8 @@

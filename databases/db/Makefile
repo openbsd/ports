@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/05/05 23:24:50 lebel Exp $
+# $OpenBSD: Makefile,v 1.23 2001/05/08 00:54:36 matt Exp $
 
 COMMENT=	"Berkeley DB package, revision 3"
 
@@ -29,7 +29,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mjava}
 ONLY_FOR_ARCHS=		i386
-BUILD_DEPENDS=		${LOCALBASE}/jdk${JDK_VERSION}/bin/java::devel/jdk
+BUILD_DEPENDS=		${LOCALBASE}/jdk${JDK_VERSION}/bin/java::devel/jdk/1.1
 CONFIGURE_ARGS+=	--enable-java
 PORTPATH=		/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/jdk${JDK_VERSION}/bin
 .endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 04:22:48 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/08 00:54:37 matt Exp $
 # $FreeBSD: ports/www/hotjava/Makefile,v 1.4 2000/02/16 00:19:45 mharo Exp $
 
 COMMENT=	"Sun's Hotjava web browser"
@@ -15,8 +15,8 @@ EXTRACT_CASES=*.sfx) uudecode ${FULLDISTDIR}/$$archive;;
 
 HOMEPAGE=	http://java.sun.com/products/hotjava/
 
-BUILD_DEPENDS=	${LOCALBASE}/${JAR}::devel/jdk
-RUN_DEPENDS=	${LOCALBASE}/${JAVA}::devel/jdk
+BUILD_DEPENDS=	${LOCALBASE}/${JAR}::devel/jdk/1.1
+RUN_DEPENDS=	${LOCALBASE}/${JAVA}::devel/jdk/1.1
 
 MAINTAINER=	Chris Cappuccio <chris@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/06 04:11:57 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2001/05/08 00:54:36 matt Exp $
 
 COMMENT=	"xml parser for Java"
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	http://xml.apache.org/dist/xerces-j/
 
-RUN_DEPENDS=    ${LOCALBASE}/jdk${JDK_VERSION}/bin/java::devel/jdk
+RUN_DEPENDS=    ${LOCALBASE}/jdk${JDK_VERSION}/bin/java::devel/jdk/1.1
 
 NO_BUILD=	Yes
 
