@@ -1,0 +1,60 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/11 16:06:04 jakob Exp $
+@newgroup _dspam:540
+@newuser _dspam:540:540:daemon:DSPAM Account:/var/dspam:/sbin/nologin
+%%SHARED%%
+bin/dspam
+bin/dspam_2sql
+bin/dspam_admin
+bin/dspam_clean
+bin/dspam_corpus
+bin/dspam_crc
+bin/dspam_dump
+bin/dspam_genaliases
+bin/dspam_merge
+bin/dspam_stats
+include/dspam/
+include/dspam/buffer.h
+include/dspam/config.h
+include/dspam/decode.h
+include/dspam/error.h
+include/dspam/lht.h
+include/dspam/libdspam.h
+include/dspam/libdspam_objects.h
+include/dspam/nodetree.h
+include/dspam/storage_driver.h
+include/dspam/tbt.h
+lib/libdspam.a
+lib/libdspam.la
+lib/pkgconfig/
+lib/pkgconfig/dspam.pc
+@man man/man1/dspam.1
+@man man/man1/dspam_clean.1
+@man man/man1/dspam_corpus.1
+@man man/man1/dspam_dump.1
+@man man/man1/dspam_merge.1
+@man man/man1/dspam_stats.1
+@man man/man3/dspam_addattribute.3
+@man man/man3/dspam_attach.3
+@man man/man3/dspam_create.3
+@man man/man3/dspam_destroy.3
+@man man/man3/dspam_detach.3
+@man man/man3/dspam_getsource.3
+@man man/man3/dspam_init.3
+@man man/man3/dspam_process.3
+@man man/man3/libdspam.3
+share/doc/dspam/
+share/doc/dspam/README
+share/doc/dspam/README.courier
+share/doc/dspam/README.exim
+share/doc/dspam/README.pop3filter
+share/doc/dspam/README.postfix
+share/doc/dspam/README.qmail
+share/doc/dspam/README.sendmail
+share/examples/dspam/
+share/examples/dspam/dspam.conf
+%%sqlite%%
+%%mysql%%
+%%pgsql%%
+@extraunexec rm -rf /var/dspam
+@extra /etc/dspam.conf
+@exec install -o _dspam -g _dspam -m 755 -d /var/dspam

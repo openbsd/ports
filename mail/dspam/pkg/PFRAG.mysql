@@ -1,0 +1,9 @@
+@comment $OpenBSD: PFRAG.mysql,v 1.1.1.1 2005/01/11 16:06:04 jakob Exp $
+share/examples/dspam/README.mysql
+share/examples/dspam/mysql_objects-4.1.sql
+share/examples/dspam/mysql_objects-space.sql
+share/examples/dspam/mysql_objects-speed.sql
+share/examples/dspam/neural.sql
+share/examples/dspam/purge-4.1.sql
+share/examples/dspam/purge.sql
+share/examples/dspam/virtual_users.sql
