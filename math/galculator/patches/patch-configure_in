@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2004/11/08 17:13:29 naddy Exp $
+--- configure.in.orig	Mon Nov  8 18:08:30 2004
++++ configure.in	Mon Nov  8 18:08:46 2004
+@@ -7,7 +7,7 @@ AM_MAINTAINER_MODE
+ AM_CONFIG_HEADER(config.h)
+ 
+ AC_PROG_CC
+-AC_PROG_INTLTOOL
++AC_PROG_INTLTOOL(, no-xml)
+ AC_ISC_POSIX
+ 
+ AC_HEADER_STDC

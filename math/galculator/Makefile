@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/10/24 14:52:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2004/11/08 17:13:29 naddy Exp $
 
 COMMENT=	"GTK2-based scientific calculator"
 
@@ -21,7 +21,8 @@ BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 SEPARATE_BUILD=	simple
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=2.59
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
