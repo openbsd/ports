@@ -1,5 +1,7 @@
-@comment $OpenBSD: PFRAG.gnome,v 1.1 2004/06/26 23:09:15 jcs Exp $
+@comment $OpenBSD: PFRAG.gnome,v 1.2 2004/09/18 10:24:15 espie Exp $
+${P5ARCH}/Gnome/
 ${P5ARCH}/Gnome.pm
+${P5ARCH}/Gnome/Install/
 ${P5ARCH}/Gnome/Install/Files.pm
 ${P5ARCH}/Gnome/Install/GnomeDefs.h
 ${P5ARCH}/Gnome/Install/GnomeTypemap
@@ -8,12 +10,8 @@ ${P5ARCH}/Gnome/Install/PerlGnomeInt.h
 ${P5ARCH}/Gnome/Install/pkg.typemap
 ${P5ARCH}/Gnome/Types.pm
 ${P5ARCH}/Gnome/TypesLazy.pm
-@comment ${P5ARCH}/auto/Gnome/.packlist
+${P5ARCH}/auto/Gnome/
 ${P5ARCH}/auto/Gnome/Gnome.bs
 ${P5ARCH}/auto/Gnome/Gnome.so
-man/man3p/Gnome.3pm
-man/man3p/Gnome::reference.3pm
-@dirrm ${P5ARCH}/auto/Gtk/base
-@dirrm ${P5ARCH}/auto/Gnome
-@dirrm ${P5ARCH}/Gnome/Install
-@dirrm ${P5ARCH}/Gnome
+@man man/man3p/Gnome.3pm
+@man man/man3p/Gnome::reference.3pm
