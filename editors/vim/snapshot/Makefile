@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.37 2002/02/24 22:15:12 lebel Exp $
+# $OpenBSD: Makefile,v 1.38 2002/02/27 15:17:59 lebel Exp $
 
 COMMENT=	"vi clone, many additional features, snapshot version"
 COMMENT-lang=	"vi clone, NLS subpackage, snapshot version"
 
 DISTNAME=	vim-6.1
-REVISION=	a
-VERSION=	6.1${REVISION}
+REVISION=	8
+VERSION=	6.1a.${REVISION}
 PKGNAME=	vim-${VERSION}
-DIR_VERSION=	${PKGNAME:C/[-\.]//g}
+DISTNAME=	vim-6.1a
+DIR_VERSION=	${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
 NEED_VERSION=	1.500
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unstable/unix/ \
@@ -15,15 +16,21 @@ MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unstable/unix/ \
 		ftp://ftp.berlin.de.vim.org/misc/editors/vim/unstable/unix/ \
 		ftp://ftp.is.co.za/applications/editors/vim/unstable/unix/ \
 		ftp://ftp.progsoc.uts.edu.au/pub/vim/unstable/unix/
+MASTER_SITES0=  ${MASTER_SITES:S/unix/patches/}
 MASTER_SITES1=	${MASTER_SITES:S/unix/extra/}
-DISTFILES=	${PKGNAME}.tar.bz2 \
-	        ${PKGNAME}-extra.tar.gz:1 \
-		${PKGNAME}-lang.tar.gz:1 
+DISTFILES=	${DISTNAME}.tar.bz2 \
+	        ${DISTNAME}-extra.tar.gz:1 \
+		${DISTNAME}-lang.tar.gz:1 
 DIST_SUBDIR=	vim6
 
 HOMEPAGE=	http://www.vim.org/
 
 MAINTAINER=	David Lebel <lebel@openbsd.org>
+
+_patches!=	jot -w%03d - 1 ${REVISION} 1
+.for p in ${_patches}
+PATCHFILES+=	6.1a.${p}:0
+.endfor
 
 # allow vim to build on m68k and vax
 .if (${MACHINE_ARCH} == "m68k")
