@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2001/05/06 05:00:07 lebel Exp $
+# $OpenBSD: Makefile,v 1.37 2001/06/02 02:40:09 brad Exp $
 
 COMMENT=	"multi-router traffic grapher"
 
-DISTNAME=	mrtg-2.9.10
+DISTNAME=	mrtg-2.9.12a
 CATEGORIES=	net
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.ou.edu/mirrors/mrtg/ \

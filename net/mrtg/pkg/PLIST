@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2001/02/21 14:44:58 brad Exp $
+@comment $OpenBSD: PLIST,v 1.13 2001/06/02 02:40:10 brad Exp $
 bin/cfgmaker
 bin/indexmaker
 bin/mrtg
@@ -17,6 +17,7 @@ man/man1/cfgmaker.1
 man/man1/indexmaker.1
 man/man1/mrtg-rrd.1
 man/man1/mrtg.1
+man/man1/mrtglib.1
 share/doc/mrtg/cfgmaker.html
 share/doc/mrtg/cfgmaker.pod
 share/doc/mrtg/cfgmaker.txt
@@ -46,6 +47,9 @@ share/doc/mrtg/mrtg-rrd.txt
 share/doc/mrtg/mrtg.html
 share/doc/mrtg/mrtg.pod
 share/doc/mrtg/mrtg.txt
+share/doc/mrtg/mrtglib.html
+share/doc/mrtg/mrtglib.pod
+share/doc/mrtg/mrtglib.txt
 share/doc/mrtg/nt-guide.html
 share/doc/mrtg/nt-guide.pod
 share/doc/mrtg/nt-guide.txt
@@ -66,7 +70,7 @@ share/mrtg/mrtg-l.png
 share/mrtg/mrtg-m.png
 share/mrtg/mrtg-r.png
 share/mrtg/mrtg-ti.png
-@dirrm libdata/perl5/site_perl/Pod
-@dirrm share/doc/mrtg
-@dirrm share/examples/mrtg
 @dirrm share/mrtg
+@dirrm share/examples/mrtg
+@dirrm share/doc/mrtg
+@dirrm libdata/perl5/site_perl/Pod
