@@ -1,4 +1,4 @@
-# $OpenBSD: openbsd-hints,v 1.2 2001/05/05 20:25:18 espie Exp $
+# $OpenBSD: openbsd-hints,v 1.3 2001/10/15 16:25:48 espie Exp $
 orgname="/etc/organization"
 d_nntp='define'
 d_local='undef'
@@ -7,5 +7,5 @@ phost='.'
 # get ready to use ispell, don't depend on it being installed
 ispell_prg='ispell'
 ispell_options='x'
-set `echo " $libswanted " | sed "s/ net / /"`
+set `echo " $libswanted " | sed -e "s/ net / /" -e "s/ intl / /"`
 libswanted="$*"
