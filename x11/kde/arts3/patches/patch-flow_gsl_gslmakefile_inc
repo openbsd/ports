@@ -1,0 +1,17 @@
+$OpenBSD: patch-flow_gsl_gslmakefile_inc,v 1.1 2004/02/02 00:53:26 espie Exp $
+--- flow/gsl/gslmakefile.inc.orig	2004-01-19 13:00:27.000000000 +0100
++++ flow/gsl/gslmakefile.inc	2004-01-19 13:05:34.000000000 +0100
+@@ -34,10 +34,13 @@ EXTRA_DIST   +=	$(GSL_H_SRC) $(GSL_EXTRA
+ GSL_NOINST_PROGS = gslwchunk gsltests gslffttest
+ gslwchunk_SOURCES = gslwchunk.c
+ gslwchunk_LDADD = $(GSL_progs_ldadd)
++gslwchunk_LINK = $(CXXLINK)
+ gsltests_SOURCES = gsltests.c
+ gsltests_LDADD = $(GSL_progs_ldadd)
++gsltests_LINK = $(CXXLINK)
+ gslffttest_SOURCES = gslffttest.c
+ gslffttest_LDADD = $(GSL_progs_ldadd)
++gslffttest_LINK = $(CXXLINK)
+ 
+ $(srcdir)/gslfft.c: $(srcdir)/gsl-fftgen.pl $(srcdir)/gsl-fftconf.sh
+ 	cd $(srcdir) && ./gsl-fftconf.sh 'perl ./gsl-fftgen.pl' \"gslfft.h\" >gslfft.c
