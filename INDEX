@@ -1,122 +1,127 @@
-arc-5.21e|/usr/ports/archivers/arc|/usr/local|Create & extract files from DOS .ARC files.|/usr/ports/archivers/arc/pkg/DESCR|joey@OpenBSD.ORG|archivers||
-bzip-0.21|/usr/ports/archivers/bzip|/usr/local|A block-sorting file compressor.|/usr/ports/archivers/bzip/pkg/DESCR|joey@OpenBSD.ORG|archivers||
-bzip2-0.1p2|/usr/ports/archivers/bzip2|/usr/local|A block-sorting file compressor|/usr/ports/archivers/bzip2/pkg/DESCR|angelos@openbsd.org|archivers||
-freeze-2.5|/usr/ports/archivers/freeze|/usr/local|FREEZE / MELT compression program - often used in QNX|/usr/ports/archivers/freeze/pkg/DESCR|joey@OpenBSD.ORG|archivers||
-sharutils-4.2|/usr/ports/archivers/gshar+gunshar|/usr/local|Allow packing and unpacking of shell archives.|/usr/ports/archivers/gshar+gunshar/pkg/DESCR|ports@FreeBSD.ORG|archivers||
-ha-0.999b|/usr/ports/archivers/ha|/usr/local|The HA archiver using the HSC compression method.|/usr/ports/archivers/ha/pkg/DESCR|angelos@openbsd.org|archivers|gmake-3.76.1|
-lha-1.14c|/usr/ports/archivers/lha|/usr/local|Archive files using LZW compression (.lzh files).|/usr/ports/archivers/lha/pkg/DESCR|angelos@openbsd.org|archivers||
-nulib-3.25|/usr/ports/archivers/nulib|/usr/local|NuFX archive utility|/usr/ports/archivers/nulib/pkg/DESCR|angelos@openbsd.org|archivers||
-p5-Compress-Zlib-0.50|/usr/ports/archivers/p5-Compress-Zlib|/usr/local|perl5 interface to zlib compression library.|/usr/ports/archivers/p5-Compress-Zlib/pkg/DESCR|angelos@openbsd.org|archivers perl5|CVS Makefile files patches pkg Error code 1 Stop.|
-This port is only for i386,
-and you are running mac68k.
-unarj-2.41|/usr/ports/archivers/unarj|/usr/local|Allows files to be extracted from ARJ archives.|/usr/ports/archivers/unarj/pkg/DESCR|joey@OpenBSD.ORG|archivers||
-unrar-2.01|/usr/ports/archivers/unrar|/usr/local|Extract, view & test RAR archives.|/usr/ports/archivers/unrar/pkg/DESCR|joey@OpenBSD.ORG|archivers||
-unzip-5.3.1|/usr/ports/archivers/unzip|/usr/local|List, test and extract compressed files in a ZIP archive.|/usr/ports/archivers/unzip/pkg/DESCR|angelos@openbsd.org|archivers||
-zip-2.1|/usr/ports/archivers/zip|/usr/local|Create/update ZIP files compatabile with pkzip.|/usr/ports/archivers/zip/pkg/DESCR|joey@OpenBSD.ORG|archivers|unzip-5.3.1|
-zip+crypt-2.2s|/usr/ports/archivers/zip.with_encryption|/usr/local|Create/update ZIP files compatible with pkzip, passwords enabled|/usr/ports/archivers/zip.with_encryption/pkg/DESCR|joey@OpenBSD.ORG|archivers|unzip-5.3.1|
-zoo-2.10.1|/usr/ports/archivers/zoo|/usr/local|Manipulate archives of files in compressed form.|/usr/ports/archivers/zoo/pkg/DESCR|angelos@openbsd.org|archivers||
-xearth-1.0|/usr/ports/astro/xearth|/usr/X11R6|Set the root window to the image of earth.|/usr/ports/astro/xearth/pkg/DESCR|ports@FreeBSD.ORG|astro x11||
-xephem-3.0|/usr/ports/astro/xephem|/usr/X11R6|an interactive astronomical ephemeris program|/usr/ports/astro/xephem/pkg/DESCR|angelos@openbsd.org|astro||
-xphoon-91.9.18|/usr/ports/astro/xphoon|/usr/X11R6|Set the root window to the moon in its current phase|/usr/ports/astro/xphoon/pkg/DESCR|angelos@openbsd.org|astro x11||
-xcd-1.6|/usr/ports/audio/xcd|/usr/local|A Tcl/Tk CD player.|/usr/ports/audio/xcd/pkg/DESCR|angelos@openbsd.org|audio tk80||tcl-8.0.2 tk-8.0.2
-bonnie-1.0|/usr/ports/benchmarks/bonnie|/usr/local|Performance Test of Filesystem I/O.|/usr/ports/benchmarks/bonnie/pkg/DESCR|niklas@openbsd.org|benchmarks||
-bytebench-3.1|/usr/ports/benchmarks/bytebench|/usr/local|The BYTE magazine benchmark suite.|/usr/ports/benchmarks/bytebench/pkg/DESCR|angelos@openbsd.org|benchmarks||
-iozone-2.01|/usr/ports/benchmarks/iozone|/usr/local|Performance Test of Sequential File I/O.|/usr/ports/benchmarks/iozone/pkg/DESCR|niklas@openbsd.org|benchmarks||
-lmbench-1.1|/usr/ports/benchmarks/lmbench|/usr/local|A system performance measurement tool|/usr/ports/benchmarks/lmbench/pkg/DESCR|joey@OpenBSD.ORG|benchmarks||
-tcpblast-1.0|/usr/ports/benchmarks/tcpblast|/usr/local|Measures the throughput of a tcp connection.|/usr/ports/benchmarks/tcpblast/pkg/DESCR|ports@FreeBSD.ORG|net benchmarks||
-xengine-1.0.1|/usr/ports/benchmarks/xengine|/usr/X11R6|reciprocating engine for X|/usr/ports/benchmarks/xengine/pkg/DESCR|joey@OpenBSD.ORG|benchmarks x11|sharutils-4.2|
-zh-c2t-1.0|/usr/ports/chinese/c2t|/usr/local|translates GB/Big5 encoding to tone pinyin|/usr/ports/chinese/c2t/pkg/DESCR|joey@OpenBSD.ORG|chinese||
-zh-lunar-2.1|/usr/ports/chinese/lunar|/usr/local|convert between the Gregorian Solar Calendar (SC) and the Lunar Calendar (LC).|/usr/ports/chinese/lunar/pkg/DESCR|joey@OpenBSD.ORG|chinese||
-rzsz-3.47|/usr/ports/comms/rzsz|/usr/local|Receive/Send files via X/Y/ZMODEM protocol.|/usr/ports/comms/rzsz/pkg/DESCR|gene@OpenBSD.ORG|comms|unzip-5.3.1|
-db-2.3.12|/usr/ports/databases/db|/usr/local|the Berkeley DB package, revision 2|/usr/ports/databases/db/pkg/DESCR|tacho@openbsd.org|databases||
-postgresql-6.2.1|/usr/ports/databases/postgresql|/usr/local|a robust, next generation, object-relational DBMS|/usr/ports/databases/postgresql/pkg/DESCR|mickey@openbsd.org|databases|gmake-3.76.1|
-autoconf-2.12|/usr/ports/devel/autoconf|/usr/local|Automatically configure source code on many Un*x platforms|/usr/ports/devel/autoconf/pkg/DESCR|joey@OpenBSD.ORG|devel||m4-1.4
-automake-1.2|/usr/ports/devel/automake|/usr/local|GNU Standards-compliant Makefile generator|/usr/ports/devel/automake/pkg/DESCR|joey@OpenBSD.ORG|devel||
-indent-1.9.1|/usr/ports/devel/gindent|/usr/local|GNU indent.|/usr/ports/devel/gindent/pkg/DESCR|joey@OpenBSD.ORG|devel||
-gmake-3.76.1|/usr/ports/devel/gmake|/usr/local|GNU version of 'make' utility|/usr/ports/devel/gmake/pkg/DESCR|todd@OpenBSD.org|devel||
-id-utils-3.2|/usr/ports/devel/id-utils|/usr/local|The classic Berkeley gid/lid tools for looking up variables in code.|/usr/ports/devel/id-utils/pkg/DESCR|joey@OpenBSD.ORG|devel|emacs-20.2 gmake-3.76.1|
-libslang-0.99.38|/usr/ports/devel/libslang|/usr/local|Routines for rapid alpha-numeric terminal applications development|/usr/ports/devel/libslang/pkg/DESCR|todd@OpenBSD.org|devel||
-m4-1.4|/usr/ports/devel/m4|/usr/local|GNU's m4.|/usr/ports/devel/m4/pkg/DESCR|niklas@openbsd.org|devel||
-makedepend-95.07.05|/usr/ports/devel/makedepend|/usr/local|A dependency generator for makefiles.|/usr/ports/devel/makedepend/pkg/DESCR|joey@OpenBSD.ORG|devel||
-swig-1.1|/usr/ports/devel/swig|/usr/local|Simplified Wrapper and Interface Generator.|/usr/ports/devel/swig/pkg/DESCR|joey@OpenBSD.ORG|devel||
-xmake-1.01|/usr/ports/devel/xmake|/usr/local|A powerful make utility|/usr/ports/devel/xmake/pkg/DESCR|joey@OpenBSD.ORG|devel||
-aXe-6.1.2|/usr/ports/editors/axe|/usr/X11R6|Simple to use text editor for X.|/usr/ports/editors/axe/pkg/DESCR|ports@FreeBSD.ORG|editors||
-beav-1.40.7|/usr/ports/editors/beav|/usr/local|Binary Editor And Viewer, a full featured binary file editor.|/usr/ports/editors/beav/pkg/DESCR|joey@OpenBSD.org|editors||
-emacs-20.2|/usr/ports/editors/emacs|/usr/local|GNU editing macros.|/usr/ports/editors/emacs/pkg/DESCR|joey@OpenBSD.ORG|editors|gmake-3.76.1|
-jed-0.98.4|/usr/ports/editors/jed|/usr/local|The JED text editor|/usr/ports/editors/jed/pkg/DESCR|joey@OpenBSD.ORG|editors|libslang-0.99.38|libslang-0.99.38
-joe-2.8|/usr/ports/editors/joe|/usr/local|Joe's own editor.|/usr/ports/editors/joe/pkg/DESCR|ports@FreeBSD.ORG|editors||
-jove-4.16|/usr/ports/editors/jove|/usr/local|Jonathan's Own Version of Emacs.|/usr/ports/editors/jove/pkg/DESCR|joey@OpenBSD.org|editors||
-This port is only for i386,
-and you are running mac68k.
-x48-0.4.0|/usr/ports/emulators/x48|/usr/X11R6|an HP48sx emulator|/usr/ports/emulators/x48/pkg/DESCR|todd@OpenBSD.org|emulators||
-abuse_pd|/usr/ports/games/abuse|/usr/local|Crack.Com public domain release of Abuse|/usr/ports/games/abuse/pkg/DESCR|ports@FreeBSD.ORG|games|gmake-3.76.1|
-xscrabble-1.0|/usr/ports/games/xscrabble|/usr/X11R6|X version of the popular board game|/usr/ports/games/xscrabble/pkg/DESCR|angelos@openbsd.org|games|xpm-3.4j|xpm-3.4j
-jpeg-6a|/usr/ports/graphics/jpeg|/usr/local|IJG's jpeg compression utilities.|/usr/ports/graphics/jpeg/pkg/DESCR|angelos@openbsd.org|graphics||
-png-0.96|/usr/ports/graphics/png|/usr/local|Library for manipulating PNG images.|/usr/ports/graphics/png/pkg/DESCR|angelos@openbsd.org|graphics||
-tiff-3.3|/usr/ports/graphics/tiff|/usr/local|A library for reading and writing TIFF data files.|/usr/ports/graphics/tiff/pkg/DESCR|ports@FreeBSD.ORG|graphics||
-xfig-3.2|/usr/ports/graphics/xfig|/usr/X11R6|A drawing program for X11|/usr/ports/graphics/xfig/pkg/DESCR|angelos@openbsd.org|graphics x11|Xaw3d-1.3 jpeg-6a xpm-3.4j|Xaw3d-1.3 ghostscript-5.03 jpeg-6a transfig-3.2 xpm-3.4j
-xpaint-2.5|/usr/ports/graphics/xpaint|/usr/X11R6|A simple paint program.|/usr/ports/graphics/xpaint/pkg/DESCR|angelos@openbsd.org|graphics x11|jpeg-6a png-0.96 tiff-3.3 xpm-3.4j|jpeg-6a png-0.96 tiff-3.3 xpm-3.4j
-xpdf-0.7|/usr/ports/graphics/xpdf|/usr/X11R6|Display tool for PDF files|/usr/ports/graphics/xpdf/pkg/DESCR|angelos@openbsd.org|graphics print||
-xpm-3.4j|/usr/ports/graphics/xpm|/usr/X11R6|The X Pixmap library.|/usr/ports/graphics/xpm/pkg/DESCR|ports@FreeBSD.ORG|graphics x11||
-tcl-8.0.2|/usr/ports/lang/tcl80|/usr/local|Tool Command Language.|/usr/ports/lang/tcl80/pkg/DESCR|niklas@openbsd.org|lang tcl80||
-elm-2.4ME+32|/usr/ports/mail/elm|/usr/local|ELM Mail User Agent|/usr/ports/mail/elm/pkg/DESCR|gene@OpenBSD.ORG|mail||
-exim-1.71|/usr/ports/mail/exim|/usr/local|High performance MTA for Unix systems on the Internet.|/usr/ports/mail/exim/pkg/DESCR|joey@OpenBSD.ORG|mail||
-fetchmail-4.3.0|/usr/ports/mail/fetchmail|/usr/local|batch mail retrieval/forwarding utility for pop2, pop3, apop, imap|/usr/ports/mail/fetchmail/pkg/DESCR|joey@OpenBSD.ORG|mail||
-mm-2.7|/usr/ports/mail/metamail|/usr/local|Implementation of MIME, the Multipurpose Internet Mail Extensions.|/usr/ports/mail/metamail/pkg/DESCR|joey@OpenBSD.ORG|mail||
-pgpsendmail-1.4|/usr/ports/mail/pgpsendmail|/usr/local|PGP sign/encrypt/decrypt messages automatically.|/usr/ports/mail/pgpsendmail/pkg/DESCR|joey@OpenBSD.ORG|mail|CVS Makefile files patches pkg Error code 1 Stop.|
-pine-3.96|/usr/ports/mail/pine|/usr/local|Program for Internet E-mail and News|/usr/ports/mail/pine/pkg/DESCR|joey@OpenBSD.ORG|mail news||
-popclient-3.0b6|/usr/ports/mail/popclient|/usr/local|client for pop2, pop3, apop, rpop|/usr/ports/mail/popclient/pkg/DESCR|ejovi@OpenBSD.ORG|mail||
-procmail-3.11p7|/usr/ports/mail/procmail|/usr/local|A local mail delivery agent.|/usr/ports/mail/procmail/pkg/DESCR|joey@OpenBSD.ORG|mail||
-screen-3.7.4|/usr/ports/misc/screen|/usr/local|A multi-screen window manager.|/usr/ports/misc/screen/pkg/DESCR|gene@OpenBSD.ORG|misc||
-archie-1.4.1|/usr/ports/net/archie|/usr/local|Prospero client for the archie service.|/usr/ports/net/archie/pkg/DESCR|joey@OpenBSD.ORG|net||
-ascend-radius-970424|/usr/ports/net/ascend-radius|/usr/local|The Ascend modified Radius Daemon|/usr/ports/net/ascend-radius/pkg/DESCR|joey@OpenBSD.ORG|net||
-bing-1.0.4|/usr/ports/net/bing|/usr/local|Bing is a point-to-point bandwith measurement tool.|/usr/ports/net/bing/pkg/DESCR|joey@OpenBSD.ORG|net||
-gated-3.5.7|/usr/ports/net/gated|/usr/local|Routing protocol daemon.|/usr/ports/net/gated/pkg/DESCR|joey@OpenBSD.ORG|net||
-irc-2.9.2.3|/usr/ports/net/irc|/usr/local|The 'Internet Relay Chat' Server.|/usr/ports/net/irc/pkg/DESCR|joey@OpenBSD.ORG|net||
-ircii-2.8.2-epic3.004|/usr/ports/net/ircii-epic|/usr/local|An enhanced version of ircII, the Internet Relay Chat client.|/usr/ports/net/ircii-epic/pkg/DESCR|joey@OpenBSD.ORG|net||
-netpipes-3.2|/usr/ports/net/netpipe|/usr/local|A group of shell utilities to connect programs to sockets|/usr/ports/net/netpipe/pkg/DESCR|joey@OpenBSD.ORG|net||
-samba-1.9.17p4|/usr/ports/net/samba|/usr/local|A LanManager(R)-compatible server suite for Unix|/usr/ports/net/samba/pkg/DESCR|joey@OpenBSD.ORG|net||
-strobe-1.03|/usr/ports/net/strobe|/usr/local|Fast scatter/gather TCP port scanner|/usr/ports/net/strobe/pkg/DESCR|joey@OpenBSD.ORG|net security||
-tintin-1.5.6|/usr/ports/net/tintin++|/usr/local|A client program to help playing muds.|/usr/ports/net/tintin++/pkg/DESCR|joey@OpenBSD.ORG|net games||
-ytalk-3.0.2|/usr/ports/net/ytalk|/usr/local|A new "talk" that can talk to multiple parties at once|/usr/ports/net/ytalk/pkg/DESCR|joey@OpenBSD.ORG|net||
-aub-2.0.5|/usr/ports/news/aub|/usr/local|assemble usenet binaries|/usr/ports/news/aub/pkg/DESCR|angelos@openbsd.org|news||
-tin-1.3.970930|/usr/ports/news/tin|/usr/local|TIN newsreader (termcap based)|/usr/ports/news/tin/pkg/DESCR|gene@OpenBSD.ORG|news||
-9menu-1.5|/usr/ports/plan9/9menu|/usr/local|A simple menu patterened after plan9|/usr/ports/plan9/9menu/pkg/DESCR|angelos@openbsd.org|plan9||
-ghostscript-5.03|/usr/ports/print/ghostscript5|/usr/local|Aladdin Postscript interpreter.|/usr/ports/print/ghostscript5/pkg/DESCR|angelos@openbsd.org|print|jpeg-6a png-0.96 unzip-5.3.1|
-ghostview-1.5|/usr/ports/print/ghostview|/usr/X11R6|An X11 front-end for ghostscript, the GNU postscript previewer.|/usr/ports/print/ghostview/pkg/DESCR|angelos@openbsd.org|print||
-gv-3.5.8|/usr/ports/print/gv|/usr/X11R6|A PostScript and PDF previewer.|/usr/ports/print/gv/pkg/DESCR|angelos@openbsd.org|print|Xaw3d-1.3|Xaw3d-1.3
-transfig-3.2|/usr/ports/print/transfig|/usr/X11R6|Tools to convert Xfig's .fig files.|/usr/ports/print/transfig/pkg/DESCR|angelos@openbsd.org|print|jpeg-6a xpm-3.4j|ghostscript-5.03 jpeg-6a xpm-3.4j
-cfs-1.3.3|/usr/ports/security/cfs|/usr/local|A cryptographic file system implemented as a user-space NFS server.|/usr/ports/security/cfs/pkg/DESCR|angelos@openbsd.org|security||
-cops-1.04|/usr/ports/security/cops|/usr/local|A system secureness checker.|/usr/ports/security/cops/pkg/DESCR|joey@OpenBSD.ORG|security||
-crack-5.0|/usr/ports/security/crack|/usr/local|the "Sensible" Unix Password Cracker.|/usr/ports/security/crack/pkg/DESCR|joey@OpenBSD.ORG|security||
-rsaref-2.0|/usr/ports/security/rsaref|/usr/local|encryption/authentication library, RSA/MDX/DES|/usr/ports/security/rsaref/pkg/DESCR|niklas@openbsd.org|security||
-ssh-1.2.21|/usr/ports/security/ssh|/usr/local|Secure shell client and server (remote login program).|/usr/ports/security/ssh/pkg/DESCR|todd@OpenBSD.ORG|security net||
-swatch-2.2|/usr/ports/security/swatch|/usr/local|The Simple WATCHer and filter|/usr/ports/security/swatch/pkg/DESCR|joey@OpenBSD.ORG|security sysutils||
-bash-1.14.7|/usr/ports/shells/bash|/usr/local|The GNU Borne Again Shell.|/usr/ports/shells/bash/pkg/DESCR|gene@OpenBSD.ORG|shells||
-bash-2.01|/usr/ports/shells/bash2|/usr/local|The GNU Borne Again Shell.|/usr/ports/shells/bash2/pkg/DESCR|gene@OpenBSD.ORG|shells||
-es-0.9a1|/usr/ports/shells/es|/usr/local|An extensible shell, derived from plan9's rc|/usr/ports/shells/es/pkg/DESCR|gene@OpenBSD.ORG|shells||
-pdksh-5.2.12|/usr/ports/shells/pdksh|/usr/local|The Public Domain Korn Shell.|/usr/ports/shells/pdksh/pkg/DESCR|gene@OpenBSD.ORG|shells||
-scsh-0.5.1|/usr/ports/shells/scsh|/usr/local|A Unix shell embedded into Scheme, with access to all Posix calls|/usr/ports/shells/scsh/pkg/DESCR|gene@OpenBSD.ORG|shells lang||
-tcsh-6.07.02|/usr/ports/shells/tcsh|/usr/local|An extended C-shell with many useful features.|/usr/ports/shells/tcsh/pkg/DESCR|gene@OpenBSD.ORG|shells||
-zsh-3.0.5|/usr/ports/shells/zsh|/usr/local|The Z shell.|/usr/ports/shells/zsh/pkg/DESCR|gene@OpenBSD.ORG|shells||
-LPRng-3.2.3|/usr/ports/sysutils/LPRng|/usr/local|An Enhanced Printer Spooler|/usr/ports/sysutils/LPRng/pkg/DESCR|joey@openbsd.org|sysutils print||
-idled-1.16|/usr/ports/sysutils/idled|/usr/local|A daemon that logs out idle users and those users hogging resources.|/usr/ports/sysutils/idled/pkg/DESCR|joey@openbsd.org|sysutils||
-lsof-4.15|/usr/ports/sysutils/lsof|/usr/local|Lists information about open files.|/usr/ports/sysutils/lsof/pkg/DESCR|angelos@openbsd.org|sysutils||
-rtty-3.2|/usr/ports/sysutils/rtty|/usr/local|multiuser "tip"/"cu" replacement with logging|/usr/ports/sysutils/rtty/pkg/DESCR|ports@FreeBSD.ORG|sysutils||
-setquota-0.1|/usr/ports/sysutils/setquota|/usr/local|Command line quota tools.|/usr/ports/sysutils/setquota/pkg/DESCR|joey@openbsd.org|sysutils||
-socket-1.1|/usr/ports/sysutils/socket|/usr/local|create tcp socket and connect to stdin/out|/usr/ports/sysutils/socket/pkg/DESCR|joey@OpenBSD.ORG|sysutils net||
-stat-1.3|/usr/ports/sysutils/stat|/usr/local|Print inode contents.|/usr/ports/sysutils/stat/pkg/DESCR|joey@openbsd.org|sysutils||
-tcplist-2.2|/usr/ports/sysutils/tcplist|/usr/local|lists tcp connections to/from the local machine (+username on both sides)|/usr/ports/sysutils/tcplist/pkg/DESCR|joey@openbsd.org|sysutils net||lsof-4.15
-xntp3-5.90-export|/usr/ports/sysutils/xntpd|/usr/local|Network Time Protocol Implementation.|/usr/ports/sysutils/xntpd/pkg/DESCR|mickey@openbsd.org|sysutils||
-agrep-2.04|/usr/ports/textproc/agrep|/usr/local|Approximate grep (fast approximate pattern-matching tool)|/usr/ports/textproc/agrep/pkg/DESCR|angelos@openbsd.org|textproc||
-c2html-0.1|/usr/ports/textproc/c2html|/usr/local|C-language sources to HTML converter|/usr/ports/textproc/c2html/pkg/DESCR|angelos@openbsd.org|textproc www||
-html-4.0|/usr/ports/textproc/html|/usr/local|All W3C published SGML DTDs for HTML|/usr/ports/textproc/html/pkg/DESCR|angelos@openbsd.org|textproc||
-isearch-1.14|/usr/ports/textproc/isearch|/usr/local|Text Search Engine by CNIDR|/usr/ports/textproc/isearch/pkg/DESCR|joey@OpenBSD.ORG|textproc databases||
-ispell-3.1.20|/usr/ports/textproc/ispell|/usr/local|An interactive spelling checker.|/usr/ports/textproc/ispell/pkg/DESCR|joey@OpenBSD.ORG|textproc||
-rman-3.0.3a12|/usr/ports/textproc/rman|/usr/local|Reverse compile man pages from formatted form.|/usr/ports/textproc/rman/pkg/DESCR|joey@OpenBSD.ORG|textproc||
-apache-1.3a1|/usr/ports/www/apache|/usr/local|The extremely popular Apache http server.  Very fast, very clean.|/usr/ports/www/apache/pkg/DESCR|joey@OpenBSD.ORG|www||
-lynx-2.7.1ac-0.97|/usr/ports/www/lynx|/usr/local|An alphanumeric display oriented World-Wide Web Client.|/usr/ports/www/lynx/pkg/DESCR|gene@OpenBSD.ORG|www||
-wwwcount-2.3|/usr/ports/www/wwwcount|/usr/local|Access counter, clock and date for WWW pages|/usr/ports/www/wwwcount/pkg/DESCR|joey@OpenBSD.ORG|www||
-Xaw3d-1.3|/usr/ports/x11/Xaw3d|/usr/X11R6|A 3-D Athena Widget set that looks like Motif|/usr/ports/x11/Xaw3d/pkg/DESCR|angelos@openbsd.org|x11||
-lesstif-0.82|/usr/ports/x11/lesstif|/usr/X11R6|API compatible clone of the Motif toolkit.|/usr/ports/x11/lesstif/pkg/DESCR|angelos@openbsd.org|x11||
-tk-8.0.2|/usr/ports/x11/tk80|/usr/local|Graphical toolkit for TCL.|/usr/ports/x11/tk80/pkg/DESCR|niklas@openbsd.org|x11 tk80|tcl-8.0.2|tcl-8.0.2
+arc-5.21e|/amd/petra/u1/r/ports/archivers/arc|/usr/local|Create & extract files from DOS .ARC files.|/amd/petra/u1/r/ports/archivers/arc/pkg/DESCR|joey@OpenBSD.ORG|archivers||
+bzip-0.21|/amd/petra/u1/r/ports/archivers/bzip|/usr/local|A block-sorting file compressor.|/amd/petra/u1/r/ports/archivers/bzip/pkg/DESCR|joey@OpenBSD.ORG|archivers||
+bzip2-0.1p2|/amd/petra/u1/r/ports/archivers/bzip2|/usr/local|A block-sorting file compressor|/amd/petra/u1/r/ports/archivers/bzip2/pkg/DESCR|angelos@openbsd.org|archivers||
+freeze-2.5|/amd/petra/u1/r/ports/archivers/freeze|/usr/local|FREEZE / MELT compression program - often used in QNX|/amd/petra/u1/r/ports/archivers/freeze/pkg/DESCR|joey@OpenBSD.ORG|archivers||
+sharutils-4.2|/amd/petra/u1/r/ports/archivers/gshar+gunshar|/usr/local|Allow packing and unpacking of shell archives.|/amd/petra/u1/r/ports/archivers/gshar+gunshar/pkg/DESCR|ports@FreeBSD.ORG|archivers||
+ha-0.999b|/amd/petra/u1/r/ports/archivers/ha|/usr/local|The HA archiver using the HSC compression method.|/amd/petra/u1/r/ports/archivers/ha/pkg/DESCR|angelos@openbsd.org|archivers|gmake-3.76.1|
+lha-1.14c|/amd/petra/u1/r/ports/archivers/lha|/usr/local|Archive files using LZW compression (.lzh files).|/amd/petra/u1/r/ports/archivers/lha/pkg/DESCR|angelos@openbsd.org|archivers||
+nulib-3.25|/amd/petra/u1/r/ports/archivers/nulib|/usr/local|NuFX archive utility|/amd/petra/u1/r/ports/archivers/nulib/pkg/DESCR|angelos@openbsd.org|archivers||
+p5-Compress-Zlib-0.50|/amd/petra/u1/r/ports/archivers/p5-Compress-Zlib|/usr/local|perl5 interface to zlib compression library.|/amd/petra/u1/r/ports/archivers/p5-Compress-Zlib/pkg/DESCR|angelos@openbsd.org|archivers perl5||
+rar-2.01|/amd/petra/u1/r/ports/archivers/rar|/usr/local|File archiver (binary port)|/amd/petra/u1/r/ports/archivers/rar/pkg/DESCR|angelos@openbsd.org|archivers||
+unarj-2.41|/amd/petra/u1/r/ports/archivers/unarj|/usr/local|Allows files to be extracted from ARJ archives.|/amd/petra/u1/r/ports/archivers/unarj/pkg/DESCR|joey@OpenBSD.ORG|archivers||
+unrar-2.01|/amd/petra/u1/r/ports/archivers/unrar|/usr/local|Extract, view & test RAR archives.|/amd/petra/u1/r/ports/archivers/unrar/pkg/DESCR|joey@OpenBSD.ORG|archivers||
+unzip-5.3.1|/amd/petra/u1/r/ports/archivers/unzip|/usr/local|List, test and extract compressed files in a ZIP archive.|/amd/petra/u1/r/ports/archivers/unzip/pkg/DESCR|angelos@openbsd.org|archivers||
+zip-2.1|/amd/petra/u1/r/ports/archivers/zip|/usr/local|Create/update ZIP files compatabile with pkzip.|/amd/petra/u1/r/ports/archivers/zip/pkg/DESCR|joey@OpenBSD.ORG|archivers|unzip-5.3.1|
+zip+crypt-2.2s|/amd/petra/u1/r/ports/archivers/zip.with_encryption|/usr/local|Create/update ZIP files compatible with pkzip, passwords enabled|/amd/petra/u1/r/ports/archivers/zip.with_encryption/pkg/DESCR|joey@OpenBSD.ORG|archivers|unzip-5.3.1|
+zoo-2.10.1|/amd/petra/u1/r/ports/archivers/zoo|/usr/local|Manipulate archives of files in compressed form.|/amd/petra/u1/r/ports/archivers/zoo/pkg/DESCR|angelos@openbsd.org|archivers||
+xearth-1.0|/amd/petra/u1/r/ports/astro/xearth|/usr/X11R6|Set the root window to the image of earth.|/amd/petra/u1/r/ports/astro/xearth/pkg/DESCR|ports@FreeBSD.ORG|astro x11||
+xephem-3.0|/amd/petra/u1/r/ports/astro/xephem|/usr/X11R6|an interactive astronomical ephemeris program|/amd/petra/u1/r/ports/astro/xephem/pkg/DESCR|angelos@openbsd.org|astro||
+xphoon-91.9.18|/amd/petra/u1/r/ports/astro/xphoon|/usr/X11R6|Set the root window to the moon in its current phase|/amd/petra/u1/r/ports/astro/xphoon/pkg/DESCR|angelos@openbsd.org|astro x11||
+gsm-1.0.10|/amd/petra/u1/r/ports/audio/gsm|/usr/local|Audio converter and library for converting u-law to gsm encoding.|/amd/petra/u1/r/ports/audio/gsm/pkg/DESCR|angelos@openbsd.org|audio||
+rplay-3.2.0b6|/amd/petra/u1/r/ports/audio/rplay|/usr/local|Network audio player.|/amd/petra/u1/r/ports/audio/rplay/pkg/DESCR|angelos@openbsd.org|audio|gmake-3.76.1 gsm-1.0.10|gsm-1.0.10
+xcd-1.6|/amd/petra/u1/r/ports/audio/xcd|/usr/local|A Tcl/Tk CD player.|/amd/petra/u1/r/ports/audio/xcd/pkg/DESCR|angelos@openbsd.org|audio tk80||tcl-8.0.2 tk-8.0.2
+bonnie-1.0|/amd/petra/u1/r/ports/benchmarks/bonnie|/usr/local|Performance Test of Filesystem I/O.|/amd/petra/u1/r/ports/benchmarks/bonnie/pkg/DESCR|niklas@openbsd.org|benchmarks||
+bytebench-3.1|/amd/petra/u1/r/ports/benchmarks/bytebench|/usr/local|The BYTE magazine benchmark suite.|/amd/petra/u1/r/ports/benchmarks/bytebench/pkg/DESCR|angelos@openbsd.org|benchmarks||
+iozone-2.01|/amd/petra/u1/r/ports/benchmarks/iozone|/usr/local|Performance Test of Sequential File I/O.|/amd/petra/u1/r/ports/benchmarks/iozone/pkg/DESCR|niklas@openbsd.org|benchmarks||
+lmbench-1.1|/amd/petra/u1/r/ports/benchmarks/lmbench|/usr/local|A system performance measurement tool|/amd/petra/u1/r/ports/benchmarks/lmbench/pkg/DESCR|joey@OpenBSD.ORG|benchmarks||
+tcpblast-1.0|/amd/petra/u1/r/ports/benchmarks/tcpblast|/usr/local|Measures the throughput of a tcp connection.|/amd/petra/u1/r/ports/benchmarks/tcpblast/pkg/DESCR|ports@FreeBSD.ORG|net benchmarks||
+xengine-1.0.1|/amd/petra/u1/r/ports/benchmarks/xengine|/usr/X11R6|reciprocating engine for X|/amd/petra/u1/r/ports/benchmarks/xengine/pkg/DESCR|joey@OpenBSD.ORG|benchmarks x11|sharutils-4.2|
+zh-c2t-1.0|/amd/petra/u1/r/ports/chinese/c2t|/usr/local|translates GB/Big5 encoding to tone pinyin|/amd/petra/u1/r/ports/chinese/c2t/pkg/DESCR|joey@OpenBSD.ORG|chinese||
+zh-lunar-2.1|/amd/petra/u1/r/ports/chinese/lunar|/usr/local|convert between the Gregorian Solar Calendar (SC) and the Lunar Calendar (LC).|/amd/petra/u1/r/ports/chinese/lunar/pkg/DESCR|joey@OpenBSD.ORG|chinese||
+rzsz-3.47|/amd/petra/u1/r/ports/comms/rzsz|/usr/local|Receive/Send files via X/Y/ZMODEM protocol.|/amd/petra/u1/r/ports/comms/rzsz/pkg/DESCR|gene@OpenBSD.ORG|comms|unzip-5.3.1|
+db-2.3.12|/amd/petra/u1/r/ports/databases/db|/usr/local|the Berkeley DB package, revision 2|/amd/petra/u1/r/ports/databases/db/pkg/DESCR|tacho@openbsd.org|databases||
+postgresql-6.2.1|/amd/petra/u1/r/ports/databases/postgresql|/usr/local|a robust, next generation, object-relational DBMS|/amd/petra/u1/r/ports/databases/postgresql/pkg/DESCR|mickey@openbsd.org|databases|gmake-3.76.1|
+autoconf-2.12|/amd/petra/u1/r/ports/devel/autoconf|/usr/local|Automatically configure source code on many Un*x platforms|/amd/petra/u1/r/ports/devel/autoconf/pkg/DESCR|joey@OpenBSD.ORG|devel||m4-1.4
+automake-1.2|/amd/petra/u1/r/ports/devel/automake|/usr/local|GNU Standards-compliant Makefile generator|/amd/petra/u1/r/ports/devel/automake/pkg/DESCR|joey@OpenBSD.ORG|devel||
+indent-1.9.1|/amd/petra/u1/r/ports/devel/gindent|/usr/local|GNU indent.|/amd/petra/u1/r/ports/devel/gindent/pkg/DESCR|joey@OpenBSD.ORG|devel||
+gmake-3.76.1|/amd/petra/u1/r/ports/devel/gmake|/usr/local|GNU version of 'make' utility|/amd/petra/u1/r/ports/devel/gmake/pkg/DESCR|todd@OpenBSD.org|devel||
+id-utils-3.2|/amd/petra/u1/r/ports/devel/id-utils|/usr/local|The classic Berkeley gid/lid tools for looking up variables in code.|/amd/petra/u1/r/ports/devel/id-utils/pkg/DESCR|joey@OpenBSD.ORG|devel|emacs-20.2 gmake-3.76.1|
+libslang-0.99.38|/amd/petra/u1/r/ports/devel/libslang|/usr/local|Routines for rapid alpha-numeric terminal applications development|/amd/petra/u1/r/ports/devel/libslang/pkg/DESCR|todd@OpenBSD.org|devel||
+m4-1.4|/amd/petra/u1/r/ports/devel/m4|/usr/local|GNU's m4.|/amd/petra/u1/r/ports/devel/m4/pkg/DESCR|niklas@openbsd.org|devel||
+makedepend-95.07.05|/amd/petra/u1/r/ports/devel/makedepend|/usr/local|A dependency generator for makefiles.|/amd/petra/u1/r/ports/devel/makedepend/pkg/DESCR|joey@OpenBSD.ORG|devel||
+swig-1.1|/amd/petra/u1/r/ports/devel/swig|/usr/local|Simplified Wrapper and Interface Generator.|/amd/petra/u1/r/ports/devel/swig/pkg/DESCR|joey@OpenBSD.ORG|devel||
+xmake-1.01|/amd/petra/u1/r/ports/devel/xmake|/usr/local|A powerful make utility|/amd/petra/u1/r/ports/devel/xmake/pkg/DESCR|joey@OpenBSD.ORG|devel||
+aXe-6.1.2|/amd/petra/u1/r/ports/editors/axe|/usr/X11R6|Simple to use text editor for X.|/amd/petra/u1/r/ports/editors/axe/pkg/DESCR|ports@FreeBSD.ORG|editors||
+beav-1.40.7|/amd/petra/u1/r/ports/editors/beav|/usr/local|Binary Editor And Viewer, a full featured binary file editor.|/amd/petra/u1/r/ports/editors/beav/pkg/DESCR|joey@OpenBSD.org|editors||
+emacs-20.2|/amd/petra/u1/r/ports/editors/emacs|/usr/local|GNU editing macros.|/amd/petra/u1/r/ports/editors/emacs/pkg/DESCR|joey@OpenBSD.ORG|editors|gmake-3.76.1|
+jed-0.98.4|/amd/petra/u1/r/ports/editors/jed|/usr/local|The JED text editor|/amd/petra/u1/r/ports/editors/jed/pkg/DESCR|joey@OpenBSD.ORG|editors|libslang-0.99.38|libslang-0.99.38
+joe-2.8|/amd/petra/u1/r/ports/editors/joe|/usr/local|Joe's own editor.|/amd/petra/u1/r/ports/editors/joe/pkg/DESCR|ports@FreeBSD.ORG|editors||
+jove-4.16|/amd/petra/u1/r/ports/editors/jove|/usr/local|Jonathan's Own Version of Emacs.|/amd/petra/u1/r/ports/editors/jove/pkg/DESCR|joey@OpenBSD.org|editors||
+wine-97.11.16|/amd/petra/u1/r/ports/emulators/wine|/usr/local|MS-Windows 3.1/95/NT emulator for Unix (Alpha release).|/amd/petra/u1/r/ports/emulators/wine/pkg/DESCR|todd@OpenBSD.ORG|emulators x11|xpm-3.4j|xpm-3.4j
+x48-0.4.0|/amd/petra/u1/r/ports/emulators/x48|/usr/X11R6|an HP48sx emulator|/amd/petra/u1/r/ports/emulators/x48/pkg/DESCR|todd@OpenBSD.org|emulators||
+abuse_pd|/amd/petra/u1/r/ports/games/abuse|/usr/local|Crack.Com public domain release of Abuse|/amd/petra/u1/r/ports/games/abuse/pkg/DESCR|ports@FreeBSD.ORG|games|gmake-3.76.1|
+xscrabble-1.0|/amd/petra/u1/r/ports/games/xscrabble|/usr/X11R6|X version of the popular board game|/amd/petra/u1/r/ports/games/xscrabble/pkg/DESCR|angelos@openbsd.org|games|xpm-3.4j|xpm-3.4j
+xsoldier-0.96|/amd/petra/u1/r/ports/games/xsoldier|/usr/X11R6|shooting game for x11|/amd/petra/u1/r/ports/games/xsoldier/pkg/DESCR|angelos@openbsd.org|games x11|xpm-3.4j|xpm-3.4j
+gimp-0.54.1|/amd/petra/u1/r/ports/graphics/gimp|/usr/X11R6|General Image Manipulation Program|/amd/petra/u1/r/ports/graphics/gimp/pkg/DESCR|angelos@openbsd.org|graphics|jpeg-6a png-0.96 tiff-3.3 xpm-3.4j|jpeg-6a png-0.96 tiff-3.3 xpm-3.4j
+jpeg-6a|/amd/petra/u1/r/ports/graphics/jpeg|/usr/local|IJG's jpeg compression utilities.|/amd/petra/u1/r/ports/graphics/jpeg/pkg/DESCR|angelos@openbsd.org|graphics||
+png-0.96|/amd/petra/u1/r/ports/graphics/png|/usr/local|Library for manipulating PNG images.|/amd/petra/u1/r/ports/graphics/png/pkg/DESCR|angelos@openbsd.org|graphics||
+tiff-3.3|/amd/petra/u1/r/ports/graphics/tiff|/usr/local|A library for reading and writing TIFF data files.|/amd/petra/u1/r/ports/graphics/tiff/pkg/DESCR|ports@FreeBSD.ORG|graphics||
+xfig-3.2|/amd/petra/u1/r/ports/graphics/xfig|/usr/X11R6|A drawing program for X11|/amd/petra/u1/r/ports/graphics/xfig/pkg/DESCR|angelos@openbsd.org|graphics x11|Xaw3d-1.3 jpeg-6a xpm-3.4j|Xaw3d-1.3 ghostscript-5.03 jpeg-6a transfig-3.2 xpm-3.4j
+xpaint-2.5|/amd/petra/u1/r/ports/graphics/xpaint|/usr/X11R6|A simple paint program.|/amd/petra/u1/r/ports/graphics/xpaint/pkg/DESCR|angelos@openbsd.org|graphics x11|jpeg-6a png-0.96 tiff-3.3 xpm-3.4j|jpeg-6a png-0.96 tiff-3.3 xpm-3.4j
+xpdf-0.7|/amd/petra/u1/r/ports/graphics/xpdf|/usr/X11R6|Display tool for PDF files|/amd/petra/u1/r/ports/graphics/xpdf/pkg/DESCR|angelos@openbsd.org|graphics print||
+xpm-3.4j|/amd/petra/u1/r/ports/graphics/xpm|/usr/X11R6|The X Pixmap library.|/amd/petra/u1/r/ports/graphics/xpm/pkg/DESCR|ports@FreeBSD.ORG|graphics x11||
+tcl-8.0.2|/amd/petra/u1/r/ports/lang/tcl80|/usr/local|Tool Command Language.|/amd/petra/u1/r/ports/lang/tcl80/pkg/DESCR|niklas@openbsd.org|lang tcl80||
+elm-2.4ME+32|/amd/petra/u1/r/ports/mail/elm|/usr/local|ELM Mail User Agent|/amd/petra/u1/r/ports/mail/elm/pkg/DESCR|gene@OpenBSD.ORG|mail||
+exim-1.71|/amd/petra/u1/r/ports/mail/exim|/usr/local|High performance MTA for Unix systems on the Internet.|/amd/petra/u1/r/ports/mail/exim/pkg/DESCR|joey@OpenBSD.ORG|mail||
+faces-1.6.1|/amd/petra/u1/r/ports/mail/faces|/usr/local|visual mail, user and print face server|/amd/petra/u1/r/ports/mail/faces/pkg/DESCR|angelos@openbsd.org|mail||
+fetchmail-4.3.0|/amd/petra/u1/r/ports/mail/fetchmail|/usr/local|batch mail retrieval/forwarding utility for pop2, pop3, apop, imap|/amd/petra/u1/r/ports/mail/fetchmail/pkg/DESCR|joey@OpenBSD.ORG|mail||
+mm-2.7|/amd/petra/u1/r/ports/mail/metamail|/usr/local|Implementation of MIME, the Multipurpose Internet Mail Extensions.|/amd/petra/u1/r/ports/mail/metamail/pkg/DESCR|joey@OpenBSD.ORG|mail||
+pgpsendmail-1.4|/amd/petra/u1/r/ports/mail/pgpsendmail|/usr/local|PGP sign/encrypt/decrypt messages automatically.|/amd/petra/u1/r/ports/mail/pgpsendmail/pkg/DESCR|joey@OpenBSD.ORG|mail|CVS Makefile files patches pkg Error code 1 Stop.|
+pine-3.96|/amd/petra/u1/r/ports/mail/pine|/usr/local|Program for Internet E-mail and News|/amd/petra/u1/r/ports/mail/pine/pkg/DESCR|joey@OpenBSD.ORG|mail news||
+popclient-3.0b6|/amd/petra/u1/r/ports/mail/popclient|/usr/local|client for pop2, pop3, apop, rpop|/amd/petra/u1/r/ports/mail/popclient/pkg/DESCR|ejovi@OpenBSD.ORG|mail||
+procmail-3.11p7|/amd/petra/u1/r/ports/mail/procmail|/usr/local|A local mail delivery agent.|/amd/petra/u1/r/ports/mail/procmail/pkg/DESCR|joey@OpenBSD.ORG|mail||
+xfaces-3.3|/amd/petra/u1/r/ports/mail/xfaces|/usr/X11R6|mail image display for X|/amd/petra/u1/r/ports/mail/xfaces/pkg/DESCR|angelos@openbsd.org|mail|faces-1.6.1 xpm-3.4j|faces-1.6.1 xpm-3.4j
+cdrecord-1.6a7|/amd/petra/u1/r/ports/misc/cdrecord-current|/usr/local|A commandline-driven CD recording utility - the development branch.|/amd/petra/u1/r/ports/misc/cdrecord-current/pkg/DESCR|niklas@openbsd.org|misc|gmake-3.76.1|
+screen-3.7.4|/amd/petra/u1/r/ports/misc/screen|/usr/local|A multi-screen window manager.|/amd/petra/u1/r/ports/misc/screen/pkg/DESCR|gene@OpenBSD.ORG|misc||
+archie-1.4.1|/amd/petra/u1/r/ports/net/archie|/usr/local|Prospero client for the archie service.|/amd/petra/u1/r/ports/net/archie/pkg/DESCR|joey@OpenBSD.ORG|net||
+ascend-radius-970424|/amd/petra/u1/r/ports/net/ascend-radius|/usr/local|The Ascend modified Radius Daemon|/amd/petra/u1/r/ports/net/ascend-radius/pkg/DESCR|joey@OpenBSD.ORG|net||
+bing-1.0.4|/amd/petra/u1/r/ports/net/bing|/usr/local|Bing is a point-to-point bandwith measurement tool.|/amd/petra/u1/r/ports/net/bing/pkg/DESCR|joey@OpenBSD.ORG|net||
+gated-3.5.7|/amd/petra/u1/r/ports/net/gated|/usr/local|Routing protocol daemon.|/amd/petra/u1/r/ports/net/gated/pkg/DESCR|joey@OpenBSD.ORG|net||
+irc-2.9.2.3|/amd/petra/u1/r/ports/net/irc|/usr/local|The 'Internet Relay Chat' Server.|/amd/petra/u1/r/ports/net/irc/pkg/DESCR|joey@OpenBSD.ORG|net||
+ircii-2.8.2-epic3.004|/amd/petra/u1/r/ports/net/ircii-epic|/usr/local|An enhanced version of ircII, the Internet Relay Chat client.|/amd/petra/u1/r/ports/net/ircii-epic/pkg/DESCR|joey@OpenBSD.ORG|net||
+netpipes-3.2|/amd/petra/u1/r/ports/net/netpipe|/usr/local|A group of shell utilities to connect programs to sockets|/amd/petra/u1/r/ports/net/netpipe/pkg/DESCR|joey@OpenBSD.ORG|net||
+samba-1.9.17p4|/amd/petra/u1/r/ports/net/samba|/usr/local|A LanManager(R)-compatible server suite for Unix|/amd/petra/u1/r/ports/net/samba/pkg/DESCR|joey@OpenBSD.ORG|net||
+strobe-1.03|/amd/petra/u1/r/ports/net/strobe|/usr/local|Fast scatter/gather TCP port scanner|/amd/petra/u1/r/ports/net/strobe/pkg/DESCR|joey@OpenBSD.ORG|net security||
+tintin-1.5.6|/amd/petra/u1/r/ports/net/tintin++|/usr/local|A client program to help playing muds.|/amd/petra/u1/r/ports/net/tintin++/pkg/DESCR|joey@OpenBSD.ORG|net games||
+wget-1.4.5|/amd/petra/u1/r/ports/net/wget|/usr/local|Retrieve files from the 'net via HTTP and FTP.|/amd/petra/u1/r/ports/net/wget/pkg/DESCR|angelos@openbsd.org|net||
+ytalk-3.0.2|/amd/petra/u1/r/ports/net/ytalk|/usr/local|A new "talk" that can talk to multiple parties at once|/amd/petra/u1/r/ports/net/ytalk/pkg/DESCR|joey@OpenBSD.ORG|net||
+aub-2.0.5|/amd/petra/u1/r/ports/news/aub|/usr/local|assemble usenet binaries|/amd/petra/u1/r/ports/news/aub/pkg/DESCR|angelos@openbsd.org|news||
+tin-1.3.970930|/amd/petra/u1/r/ports/news/tin|/usr/local|TIN newsreader (termcap based)|/amd/petra/u1/r/ports/news/tin/pkg/DESCR|gene@OpenBSD.ORG|news||
+9menu-1.5|/amd/petra/u1/r/ports/plan9/9menu|/usr/local|A simple menu patterened after plan9|/amd/petra/u1/r/ports/plan9/9menu/pkg/DESCR|angelos@openbsd.org|plan9||
+ghostscript-5.03|/amd/petra/u1/r/ports/print/ghostscript5|/usr/local|Aladdin Postscript interpreter.|/amd/petra/u1/r/ports/print/ghostscript5/pkg/DESCR|angelos@openbsd.org|print|jpeg-6a png-0.96 unzip-5.3.1|
+ghostview-1.5|/amd/petra/u1/r/ports/print/ghostview|/usr/X11R6|An X11 front-end for ghostscript, the GNU postscript previewer.|/amd/petra/u1/r/ports/print/ghostview/pkg/DESCR|angelos@openbsd.org|print||
+gv-3.5.8|/amd/petra/u1/r/ports/print/gv|/usr/X11R6|A PostScript and PDF previewer.|/amd/petra/u1/r/ports/print/gv/pkg/DESCR|angelos@openbsd.org|print|Xaw3d-1.3|Xaw3d-1.3
+transfig-3.2|/amd/petra/u1/r/ports/print/transfig|/usr/X11R6|Tools to convert Xfig's .fig files.|/amd/petra/u1/r/ports/print/transfig/pkg/DESCR|angelos@openbsd.org|print|jpeg-6a xpm-3.4j|ghostscript-5.03 jpeg-6a xpm-3.4j
+cfs-1.3.3|/amd/petra/u1/r/ports/security/cfs|/usr/local|A cryptographic file system implemented as a user-space NFS server.|/amd/petra/u1/r/ports/security/cfs/pkg/DESCR|angelos@openbsd.org|security||
+cops-1.04|/amd/petra/u1/r/ports/security/cops|/usr/local|A system secureness checker.|/amd/petra/u1/r/ports/security/cops/pkg/DESCR|joey@OpenBSD.ORG|security||
+crack-5.0|/amd/petra/u1/r/ports/security/crack|/usr/local|the "Sensible" Unix Password Cracker.|/amd/petra/u1/r/ports/security/crack/pkg/DESCR|joey@OpenBSD.ORG|security||
+rsaref-2.0|/amd/petra/u1/r/ports/security/rsaref|/usr/local|encryption/authentication library, RSA/MDX/DES|/amd/petra/u1/r/ports/security/rsaref/pkg/DESCR|niklas@openbsd.org|security||
+ssh-1.2.21|/amd/petra/u1/r/ports/security/ssh|/usr/local|Secure shell client and server (remote login program).|/amd/petra/u1/r/ports/security/ssh/pkg/DESCR|todd@OpenBSD.ORG|security net||
+swatch-2.2|/amd/petra/u1/r/ports/security/swatch|/usr/local|The Simple WATCHer and filter|/amd/petra/u1/r/ports/security/swatch/pkg/DESCR|joey@OpenBSD.ORG|security sysutils||
+bash-1.14.7|/amd/petra/u1/r/ports/shells/bash|/usr/local|The GNU Borne Again Shell.|/amd/petra/u1/r/ports/shells/bash/pkg/DESCR|gene@OpenBSD.ORG|shells||
+bash-2.01|/amd/petra/u1/r/ports/shells/bash2|/usr/local|The GNU Borne Again Shell.|/amd/petra/u1/r/ports/shells/bash2/pkg/DESCR|gene@OpenBSD.ORG|shells||
+es-0.9a1|/amd/petra/u1/r/ports/shells/es|/usr/local|An extensible shell, derived from plan9's rc|/amd/petra/u1/r/ports/shells/es/pkg/DESCR|gene@OpenBSD.ORG|shells||
+scsh-0.5.1|/amd/petra/u1/r/ports/shells/scsh|/usr/local|A Unix shell embedded into Scheme, with access to all Posix calls|/amd/petra/u1/r/ports/shells/scsh/pkg/DESCR|gene@OpenBSD.ORG|shells lang||
+tcsh-6.07.02|/amd/petra/u1/r/ports/shells/tcsh|/usr/local|An extended C-shell with many useful features.|/amd/petra/u1/r/ports/shells/tcsh/pkg/DESCR|gene@OpenBSD.ORG|shells||
+zsh-3.0.5|/amd/petra/u1/r/ports/shells/zsh|/usr/local|The Z shell.|/amd/petra/u1/r/ports/shells/zsh/pkg/DESCR|gene@OpenBSD.ORG|shells||
+LPRng-3.2.3|/amd/petra/u1/r/ports/sysutils/LPRng|/usr/local|An Enhanced Printer Spooler|/amd/petra/u1/r/ports/sysutils/LPRng/pkg/DESCR|joey@openbsd.org|sysutils print||
+idled-1.16|/amd/petra/u1/r/ports/sysutils/idled|/usr/local|A daemon that logs out idle users and those users hogging resources.|/amd/petra/u1/r/ports/sysutils/idled/pkg/DESCR|joey@openbsd.org|sysutils||
+lsof-4.15|/amd/petra/u1/r/ports/sysutils/lsof|/usr/local|Lists information about open files.|/amd/petra/u1/r/ports/sysutils/lsof/pkg/DESCR|angelos@openbsd.org|sysutils||
+rtty-3.2|/amd/petra/u1/r/ports/sysutils/rtty|/usr/local|multiuser "tip"/"cu" replacement with logging|/amd/petra/u1/r/ports/sysutils/rtty/pkg/DESCR|ports@FreeBSD.ORG|sysutils||
+setquota-0.1|/amd/petra/u1/r/ports/sysutils/setquota|/usr/local|Command line quota tools.|/amd/petra/u1/r/ports/sysutils/setquota/pkg/DESCR|joey@openbsd.org|sysutils||
+socket-1.1|/amd/petra/u1/r/ports/sysutils/socket|/usr/local|create tcp socket and connect to stdin/out|/amd/petra/u1/r/ports/sysutils/socket/pkg/DESCR|joey@OpenBSD.ORG|sysutils net||
+stat-1.3|/amd/petra/u1/r/ports/sysutils/stat|/usr/local|Print inode contents.|/amd/petra/u1/r/ports/sysutils/stat/pkg/DESCR|joey@openbsd.org|sysutils||
+tcplist-2.2|/amd/petra/u1/r/ports/sysutils/tcplist|/usr/local|lists tcp connections to/from the local machine (+username on both sides)|/amd/petra/u1/r/ports/sysutils/tcplist/pkg/DESCR|joey@openbsd.org|sysutils net||lsof-4.15
+xntp3-5.90-export|/amd/petra/u1/r/ports/sysutils/xntpd|/usr/local|Network Time Protocol Implementation.|/amd/petra/u1/r/ports/sysutils/xntpd/pkg/DESCR|mickey@openbsd.org|sysutils||
+agrep-2.04|/amd/petra/u1/r/ports/textproc/agrep|/usr/local|Approximate grep (fast approximate pattern-matching tool)|/amd/petra/u1/r/ports/textproc/agrep/pkg/DESCR|angelos@openbsd.org|textproc||
+c2html-0.1|/amd/petra/u1/r/ports/textproc/c2html|/usr/local|C-language sources to HTML converter|/amd/petra/u1/r/ports/textproc/c2html/pkg/DESCR|angelos@openbsd.org|textproc www||
+html-4.0|/amd/petra/u1/r/ports/textproc/html|/usr/local|All W3C published SGML DTDs for HTML|/amd/petra/u1/r/ports/textproc/html/pkg/DESCR|angelos@openbsd.org|textproc||
+isearch-1.14|/amd/petra/u1/r/ports/textproc/isearch|/usr/local|Text Search Engine by CNIDR|/amd/petra/u1/r/ports/textproc/isearch/pkg/DESCR|joey@OpenBSD.ORG|textproc databases||
+ispell-3.1.20|/amd/petra/u1/r/ports/textproc/ispell|/usr/local|An interactive spelling checker.|/amd/petra/u1/r/ports/textproc/ispell/pkg/DESCR|joey@OpenBSD.ORG|textproc||
+rman-3.0.3a12|/amd/petra/u1/r/ports/textproc/rman|/usr/local|Reverse compile man pages from formatted form.|/amd/petra/u1/r/ports/textproc/rman/pkg/DESCR|joey@OpenBSD.ORG|textproc||
+apache-1.3a1|/amd/petra/u1/r/ports/www/apache|/usr/local|The extremely popular Apache http server.  Very fast, very clean.|/amd/petra/u1/r/ports/www/apache/pkg/DESCR|joey@OpenBSD.ORG|www||
+lynx-2.7.1ac-0.97|/amd/petra/u1/r/ports/www/lynx|/usr/local|An alphanumeric display oriented World-Wide Web Client.|/amd/petra/u1/r/ports/www/lynx/pkg/DESCR|gene@OpenBSD.ORG|www||
+wwwcount-2.3|/amd/petra/u1/r/ports/www/wwwcount|/usr/local|Access counter, clock and date for WWW pages|/amd/petra/u1/r/ports/www/wwwcount/pkg/DESCR|joey@OpenBSD.ORG|www||
+Xaw3d-1.3|/amd/petra/u1/r/ports/x11/Xaw3d|/usr/X11R6|A 3-D Athena Widget set that looks like Motif|/amd/petra/u1/r/ports/x11/Xaw3d/pkg/DESCR|angelos@openbsd.org|x11||
+lesstif-0.82|/amd/petra/u1/r/ports/x11/lesstif|/usr/X11R6|API compatible clone of the Motif toolkit.|/amd/petra/u1/r/ports/x11/lesstif/pkg/DESCR|angelos@openbsd.org|x11||
+tk-8.0.2|/amd/petra/u1/r/ports/x11/tk80|/usr/local|Graphical toolkit for TCL.|/amd/petra/u1/r/ports/x11/tk80/pkg/DESCR|niklas@openbsd.org|x11 tk80|tcl-8.0.2|tcl-8.0.2
