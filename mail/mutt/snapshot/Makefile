@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/20 19:51:53 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/29 03:30:02 lebel Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
-VERSION=	1.3.20
+VERSION=	1.3.21
 DISTNAME=	mutt-${VERSION}i
 CATEGORIES=     mail
 NEED_VERSION=	1.384
@@ -44,10 +44,10 @@ CONFIGURE_ARGS+= --with-curses
 .endif
 
 # compressed folder support provided by
-# http://www.spinnaker.de/mutt/compressed/patch-1.2.5.rr.compressed.1.gz
+# http://www.spinnaker.de/mutt/compressed/
 .if ${FLAVOR:L:Mcompressed}
 MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
-PATCHFILES+=	patch-${VERSION}.rr.compressed.2.gz:0
+PATCHFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
 PATCH_DIST_STRIP=-p1
 CONFIGURE_ARGS+= --enable-compressed
 .endif
