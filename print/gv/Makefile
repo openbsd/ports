@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2002/10/28 13:40:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2003/06/04 01:32:06 margarida Exp $
 
 COMMENT= 	"PostScript and PDF previewer"
 
 DISTNAME=	gv-3.5.8
 PKGNAME=	${DISTNAME}p3
 CATEGORIES=	print
+
+HOMEPAGE=	http://wwwthep.physik.uni-mainz.de/~plass/gv/
+
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/gv/unix/
 
 # GPL
