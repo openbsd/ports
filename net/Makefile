@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2001/03/14 14:11:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.130 2001/03/22 23:06:06 avsm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -63,7 +63,7 @@
      SUBDIR += ndiff
      SUBDIR += nemesis
      SUBDIR += netatalk
-     SUBDIR += netpipe
+     SUBDIR += netpipes
      SUBDIR += ngrep
      SUBDIR += nmap
      SUBDIR += nmap:no_x11
