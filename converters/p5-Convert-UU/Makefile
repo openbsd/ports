@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2000/04/08 14:00:22 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/04/08 14:11:09 espie Exp $
 
 DISTNAME=	Convert-UU-0.40
 PKGNAME=	Convert-UU-0.40
 CATEGORIES=	converters perl5
+NEED_VERSION=	1.251
 
 MAINTAINER=	angelos@openbsd.org
 
