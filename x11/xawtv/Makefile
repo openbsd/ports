@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/04/09 07:10:27 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2004/04/18 06:41:11 robert Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc
 
@@ -8,7 +8,7 @@ DISTNAME=	xawtv_3.91
 PKGNAME=	${DISTNAME:S,_,-,}
 CATEGORIES=	x11
 
-MAINTAINER=	Robert Nagy <thuglife@bsd.hu>
+MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://bytesex.org/xawtv/
 

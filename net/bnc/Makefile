@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/04/04 14:19:01 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2004/04/18 06:41:11 robert Exp $
 
 COMMENT=	"simple IRC relay proxy with support for virtual hosting"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	${HOMEPAGE}files/
 
 HOMEPAGE=	http://gotbnc.com/
 
-MAINTAINER=	Robert Nagy <thuglife@bsd.hu>
+MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

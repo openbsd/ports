@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/04/08 21:02:33 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2004/04/18 06:41:11 robert Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
@@ -8,7 +8,7 @@ DISTNAME=		DBD-SQLite-0.31
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		databases perl5
 
-MAINTAINER=		Robert Nagy <thuglife@bsd.hu>
+MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 # artistic
 PERMIT_PACKAGE_CDROM=	Yes

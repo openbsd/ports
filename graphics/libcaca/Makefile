@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/04/18 02:03:38 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/04/18 06:41:11 robert Exp $
 
 COMMENT=		"color ascii art library"
 DISTNAME=		libcaca-0.9
 CATEGORIES=		graphics
 
-MAINTAINER=		Robert Nagy <thuglife@bsd.hu>
+MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=   Yes

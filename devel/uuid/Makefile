@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/04/17 16:42:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/04/18 06:41:11 robert Exp $
 
 COMMENT=	"ISO-C API and CLI for generating Universally Unique Identifiers"
 
 DISTNAME=	uuid-1.0.0
 CATEGORIES=	devel
 
-MAINTAINER=	Robert Nagy <thuglife@bsd.hu>
+MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://www.ossp.org/pkg/lib/uuid/
 

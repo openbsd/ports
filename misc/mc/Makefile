@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/04/11 10:06:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/04/18 06:41:11 robert Exp $
 
 COMMENT=		"free Norton Commander clone with many useful features"
 
@@ -8,7 +8,7 @@ CATEGORIES=		misc
 
 HOMEPAGE=		http://www.ibiblio.org/mc/
 MASTER_SITES=		http://www.ibiblio.org/pub/Linux/utils/file/managers/mc/
-MAINTAINER=		Robert Nagy <thuglife@bsd.hu>
+MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

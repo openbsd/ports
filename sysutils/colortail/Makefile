@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/04/05 19:42:18 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2004/04/18 06:41:11 robert Exp $
 
 COMMENT=		"color-able replacement for tail(1)"
 
@@ -6,7 +6,7 @@ DISTNAME=		colortail-0.3.0
 CATEGORIES=		sysutils
 
 MASTER_SITES=           http://www.beastie.hu/colortail/
-MAINTAINER=		Robert Nagy <thuglife@bsd.hu>
+MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
