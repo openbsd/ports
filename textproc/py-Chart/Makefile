@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/01 07:19:08 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/08 10:03:42 shell Exp $
 
 
 COMMENT=		"python library for creating postscript or PDF charts"
@@ -7,7 +7,7 @@ VERSION=		1.10
 DISTNAME=		PyChart-${VERSION}
 PKGNAME=		py-Chart-${VERSION}
 CATEGORIES=     	textproc devel
-NEED_VERSION=		1.417
+NEED_VERSION=		1.434
 
 HOMEPAGE=		http://www.cs.washington.edu/homes/yasushi/pychart/
 
@@ -36,7 +36,6 @@ RUN_DEPENDS+=	python${PYTHON_VER}::lang/python${PYTHON_EXT}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 SUBST_VARS=	PYTHON_VER
-NO_CONFIGURE=	Yes
 
 do-build:
 	cd ${WRKSRC}; python${PYTHON_VER} ./setup.py build \
