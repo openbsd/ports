@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/08/07 23:41:27 brad Exp $
-@lib lib/libintl.so.1.1
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/10/24 19:54:46 brad Exp $
+@lib lib/libintl.so.2.0
