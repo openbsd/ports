@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.gtk2,v 1.2 2003/02/25 00:56:50 marcm Exp $
+@comment $OpenBSD: PFRAG.gtk2,v 1.3 2003/06/14 04:19:37 marcm Exp $
 share/control-center-2.0/capplets/screensaver-properties.desktop
-@dirrm share/control-center-2.0/capplets
-@dirrm share/control-center-2.0
+@unexec rmdir %D/share/control-center-2.0/capplets 2>/dev/null || true
+@unexec rmdir %D/share/control-center-2.0 2>/dev/null || true
