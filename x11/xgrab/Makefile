@@ -1,9 +1,9 @@
-# New ports collection makefile for:    xgrab
+# OpenBSD makefile for:    xgrab
 # Version required:     2.41
-# Date created:         27 February 1995
-# Whom:                 jmz
+# Date created:         25 January 1998
+# Whom:                 Angelos
 #
-# $Id: Makefile,v 1.1.1.1 1998/01/25 21:59:19 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/01/25 22:01:44 angelos Exp $
 #
 
 DISTNAME=	xgrabsc.2_41
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	angelos@openbsd.org
 
 USE_IMAKE=	yes
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
