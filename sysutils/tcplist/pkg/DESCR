@@ -4,4 +4,3 @@ Ident services if available to determine the "user" at the other end.
 
 Tcplist uses LSOF to do its low level work on 4.4BSD machines.
 
--- David	(obrien@FreeBSD.org)
