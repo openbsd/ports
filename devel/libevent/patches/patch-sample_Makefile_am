@@ -1,6 +1,6 @@
-$OpenBSD: patch-sample_Makefile_am,v 1.1 2002/04/17 15:17:54 brad Exp $
---- sample/Makefile.am.orig	Tue Apr  9 15:29:32 2002
-+++ sample/Makefile.am	Wed Apr 17 10:14:30 2002
+$OpenBSD: patch-sample_Makefile_am,v 1.2 2002/06/13 03:58:11 brad Exp $
+--- sample/Makefile.am.orig	Tue Apr  9 20:31:31 2002
++++ sample/Makefile.am	Wed Jun 12 23:55:20 2002
 @@ -1,7 +1,7 @@
  AUTOMAKE_OPTIONS = foreign no-dependencies
  
@@ -8,5 +8,5 @@ $OpenBSD: patch-sample_Makefile_am,v 1.1 2002/04/17 15:17:54 brad Exp $
 -CPPFPLAGS = -I..
 +CPPFLAGS = -I$(top_srcdir)
  
- noinst_PROGRAMS = event-test time-test
+ noinst_PROGRAMS = event-test time-test signal-test
  

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/04/17 15:17:54 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2002/06/13 03:58:11 brad Exp $
 
 COMMENT=	"asynchronous event library"
 
-DISTNAME=	libevent-0.4
+DISTNAME=	libevent-0.5
 CATEGORIES=	devel
-NEED_VERSION=	1.522
+NEED_VERSION=	1.528
 MASTER_SITES=	http://www.monkey.org/~provos/
 
 HOMEPAGE=	http://www.monkey.org/~provos/libevent/
