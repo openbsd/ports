@@ -1,0 +1,6 @@
+sbin/l0phtcrack
+sbin/readsmb
+share/l0phtcrack/wfile.txt
+share/doc/l0phtcrack/readme.txt
+@dirrm share/doc/l0phtcrack
+@dirrm share/l0phtcrack
