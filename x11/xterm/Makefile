@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2001/09/20 11:25:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2001/10/24 12:13:36 naddy Exp $
 
 COMMENT=	"newer version of xterm"
 
-DISTNAME=	xterm-159
+DISTNAME=	xterm-162
 CATEGORIES=	x11
 NEED_VERSION=	1.405
 HOMEPAGE=	http://dickey.his.com/xterm/xterm.html

@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/10/27 13:57:43 naddy Exp $
-bin/xterm
+@comment $OpenBSD: PLIST,v 1.4 2001/10/24 12:13:36 naddy Exp $
 bin/resize
+bin/uxterm
+bin/xterm
+lib/X11/app-defaults/UXTerm
 lib/X11/app-defaults/XTerm
 lib/X11/app-defaults/XTerm-color
-man/man1/xterm.1
 man/man1/resize.1
+man/man1/xterm.1
