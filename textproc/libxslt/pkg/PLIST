@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2004/10/02 17:59:52 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.22 2004/10/22 22:06:57 naddy Exp $
 bin/xslt-config
 bin/xsltproc
 include/libexslt/
@@ -112,6 +112,10 @@ share/doc/libxslt/html/tutorial/
 share/doc/libxslt/html/tutorial/libxslt_tutorial.c
 share/doc/libxslt/html/tutorial/libxslttutorial.html
 share/doc/libxslt/html/tutorial/libxslttutorial.xml
+share/doc/libxslt/html/tutorial2/
+share/doc/libxslt/html/tutorial2/libxslt_pipes.c
+share/doc/libxslt/html/tutorial2/libxslt_pipes.html
+share/doc/libxslt/html/tutorial2/libxslt_pipes.xml
 share/doc/libxslt/html/xslt.html
 share/doc/libxslt/html/xsltproc.html
 share/doc/libxslt/html/xsltproc2.html

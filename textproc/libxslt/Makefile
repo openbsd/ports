@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.38 2004/10/02 17:59:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2004/10/22 22:06:57 naddy Exp $
 
 COMMENT=		"XSLT C Library for GNOME"
 
-DISTNAME=		libxslt-1.1.9
+DISTNAME=		libxslt-1.1.11
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://xmlsoft.org/XSLT/
 
 MASTER_SITES=		ftp://xmlsoft.org/ \
-			${MASTER_SITE_GNOME:=sources/libxslt/1.0/}
+			${MASTER_SITE_GNOME:=sources/libxslt/1.1/}
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
