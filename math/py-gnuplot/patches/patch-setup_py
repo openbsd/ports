@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2004/02/05 23:37:27 xsa Exp $
+--- setup.py.orig	2003-10-17 16:52:28.000000000 +0200
++++ setup.py	2004-02-04 15:14:33.000000000 +0100
+@@ -31,7 +31,7 @@ setup (
+     author_email='mhagger@alum.mit.edu',
+     url='http://gnuplot-py.sourceforge.net',
+     license='LGPL',
+-    licence='LGPL', # Spelling error in distutils
++    #licence='LGPL', # Spelling error in distutils
+ 
+     # Description of the package in the distribution
+     package_dir={'Gnuplot' : '.'},
