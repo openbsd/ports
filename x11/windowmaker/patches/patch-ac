@@ -1,64 +1,41 @@
---- libPropList/filehandling.c.orig	Fri Dec 18 01:58:03 1998
-+++ libPropList/filehandling.c	Fri Dec 18 01:58:16 1998
+--- libPropList/filehandling.c.orig	Sat Oct 17 15:58:37 1998
++++ libPropList/filehandling.c	Sat Dec 19 23:04:09 1998
 @@ -16,6 +16,7 @@
  #include <stdlib.h>
  #include <string.h>
  #include <unistd.h>
-+#include <dirent.h>
++#include <limits.h>
  
  #define pl_scan_string(c) yy_scan_string(c)
  #define plparse() yyparse()
-@@ -350,45 +351,80 @@
-   char tmp_fileName[255];
-   char tmp_realFileName[255];
-   char dirname[255];
-+  char dirbase[50]={"/tmp"};
-+  char mkstmpname[20]={"/tmp/wmaker.XXXXXX"};
-   char *tmp_dirname, *tmp2_dirname;
-   char *basename, *tmp_basename;
-   FILE *theFile;
+@@ -345,58 +346,30 @@
+ 
+ BOOL PLSave(proplist_t pl, BOOL atomically)
+ {
+-  const char *theFileName;
++  char theFileName[ PATH_MAX+1 ] = "\0";
++  const char *tempmask = ".XXXXXXXXXX";
+   const char *theRealFileName = NULL;
+-  char tmp_fileName[255];
+-  char tmp_realFileName[255];
+-  char dirname[255];
+-  char *tmp_dirname, *tmp2_dirname;
+-  char *basename, *tmp_basename;
+-  FILE *theFile;
++  FILE *theFile = NULL;
    int c;
    char *desc = NULL;
--  
-+  int i,temp_safe; 
-+  DIR *diro; 
-+  struct dirent *dire;
-+  struct stat safe_stat;
-+
+   
    theRealFileName = PLGetString(PLGetFilename(pl));
++
    if(!theRealFileName) return NO;
    
++  /* Open the file (whether temp or real) for writing. */
    if (atomically)
      {
 -      theFileName = tmpnam(NULL);
 -      strcpy(tmp_fileName, theFileName);
-+#ifdef HAVE_MKSTEMP /* THIS IS THE MKSTEMP STUFF. FOR OPENBSD, ETC. */
-+	/* im an idiot. this made wmaker crash. */ 
-+	temp_safe = mkstemp(mkstmpname);
-+	if((fstat(temp_safe,&safe_stat))!=0)
-+		goto failure;
-+	desc=PLGetDescriptionIndent(pl,0);
-+	theFile=fdopen(temp_safe,"r+");
-+	c=fwrite(desc,sizeof(char),strlen(desc),theFile);
-+	if(c<strlen(desc))
-+		goto failure;
-+	fwrite("\n",sizeof(char),strlen("\n"),theFile);
-+	diro=opendir(dirbase);
-+	dire=readdir(diro);
-+	while(safe_stat.st_ino!=dire->d_ino)
-+		dire=readdir(diro);
-+	fclose(theFile);
-+	strncpy(tmp_fileName,dirbase,4);
-+	tmp_fileName[5]='\0';
-+	strncat(tmp_fileName,"/",1);
-+	strncat(tmp_fileName,dire->d_name,15); /* should normally be under 15 */
-+	c=rename(tmp_fileName,theRealFileName);
-+	closedir(diro);
-+	if(c!=0)
-+		goto failure;
-+	else
-+		goto success;
- 
+-
 -      if((tmp_basename=strtok(tmp_fileName, "/")))
 -	do
 -	  basename=tmp_basename;
@@ -84,48 +61,21 @@
 -	} 
 -      
 -      theFileName = strcat(dirname, basename);
-+#else /* the old code for the tmp file */ 
-+
-+  theFileName = tmpnam(NULL);
-+  strcpy(tmp_fileName, theFileName);
-+	      
-+   if((tmp_basename=strtok(tmp_fileName, "/")))
-+    do
-+      basename=tmp_basename;
-+    while((tmp_basename=strtok(NULL, "/")));
-+   else
-+    basename=(char *)theFileName;
-+				      
-+  strcpy(tmp_realFileName, theRealFileName);
-+  dirname[0]='\0';
-+						    
-+  if((tmp_dirname=strtok(tmp_realFileName, "/")))
-+  {
-+	if(theRealFileName[0]=='/')
-+	  strcat(dirname, "/");
-+	tmp2_dirname = strtok(NULL, "/");
-+    while((tmp2_dirname))
-+	{
-+	strcat(dirname, tmp_dirname);
-+    	strcat(dirname, "/");
-+  	tmp_dirname = tmp2_dirname;
-+	tmp2_dirname = strtok(NULL, "/");
-+	}
-+    }
-+   theFileName = strcat(dirname, basename);
-+#endif
++       if (strlen( theRealFileName )+strlen( tempmask ) > PATH_MAX)
++         goto failure;  /* path too long to create temporary file */
++       strncpy( theFileName, theRealFileName, PATH_MAX );
++       strncpy( theFileName, tempmask, PATH_MAX - strlen( theRealFileName ) );
++       theFile = fdopen( mkstemp( theFileName ), "w" );	
      } 
    else
      { 
-@@ -436,9 +472,10 @@
- 	goto failure;
-     }
+-      theFileName = theRealFileName;
++       theFile = fopen( theRealFileName, "w" );
+     } 
+-
+-  /* Open the file (whether temp or real) for writing. */
+-  theFile = fopen(theFileName, "w");
  
--  /* success: */
-+ success:
-   MyFree(__FILE__, __LINE__, desc);
-   return YES;
-+
- 
-   /* Just in case the failure action needs to be changed. */
-  failure:
+   if (theFile == NULL)          /* Something went wrong; we weren't
+                                  * even able to open the file. */
+
