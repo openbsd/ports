@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/21 03:34:25 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/27 20:14:39 msf Exp $
 
 COMMENT=	"a lightweight cache with timed expiration"
 
-DISTNAME=	Cache-Simple-TimedExpiry-0.22
+DISTNAME=	Cache-Simple-TimedExpiry-0.23
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
