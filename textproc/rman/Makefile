@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/28 22:43:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2003/06/23 02:29:34 kevlo Exp $
 
 COMMENT=	"reverse compile man pages from formatted form"
 
-DISTNAME=	rman-3.0.9
+DISTNAME=	rman-3.1
 CATEGORIES=	textproc
 HOMEPAGE=	http://polyglotman.sourceforge.net/
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM="conflicting no fee/free license"
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=polyglotman/}
 
 NO_REGRESS=	Yes
 
