@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/18 03:48:06 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/01 00:39:07 brad Exp $
 
 COMMENT=	"high-performance 2D graphics library"
 
-DISTNAME=	libart-2.3.3
+VERSION=	2.3.3
+DISTNAME=	libart-${VERSION}
 CATEGORIES=	graphics
-NEED_VERSION=	1.402
+NEED_VERSION=	1.435
 MASTER_SITES=	http://www.artofcode.com/libart/
 
 HOMEPAGE=	http://www.artofcode.com/libart.html
@@ -21,9 +22,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
-WRKDIST=	${WRKDIR}/libart_lgpl-2.3.3
-
-pre-build:
-	@chmod -R ugo-w ${WRKSRC}
+WRKDIST=	${WRKDIR}/libart_lgpl-${VERSION}
 
 .include <bsd.port.mk>
