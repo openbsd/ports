@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/07/25 13:07:17 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2003/08/02 01:53:48 naddy Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 #
 
@@ -63,7 +63,7 @@ MAKE_ENV+=		RELEASE_NAME="${RELEASE_NAME}"
 #MAKE_ENV+=		ALT_ODBCDIR="${LOCALBASE}" 
 
 ALL_TARGET=     	release-images
-PATCH_CMD=      	${PATCH} -p1 -b .orig.bsd -s <
+PATCH_CMD=      	${PATCH} -p1 -z .orig.bsd -s <
 
 # Deal with Sun's internal build structure
 WRKDIST=		${WRKDIR}
@@ -88,11 +88,11 @@ pre-patch:
 	@for dir in build src ext/i18n/build ext/i18n/src ext/iiimp/build; do \
 		cd ${WRKDIST}/$${dir} && rm -rf bsd && cp -R solaris bsd ; \
 	done
-	@cd ${WRKDIST}/build/bsd	&& patch -p1 -b .orig.bsd -s < ${WRKDIST}/build.patches && \
-	 cd ${WRKDIST}/build/share	&& patch -p1 -b .orig.bsd -s < ${WRKDIST}/buildshare.patches && \
-	 cd ${WRKDIST}/src/bsd		&& patch -p1 -b .orig.bsd -s < ${WRKDIST}/src.patches && \
-	 cd ${WRKDIST}/src/share	&& patch -p1 -b .orig.bsd -s < ${WRKDIST}/srcshare.patches && \
-	 cd ${WRKDIST}/ext		&& patch -p0 -b .orig.bsd -s < ${WRKDIST}/ext.patches
+	@cd ${WRKDIST}/build/bsd	&& patch -p1 -z .orig.bsd -s < ${WRKDIST}/build.patches && \
+	 cd ${WRKDIST}/build/share	&& patch -p1 -z .orig.bsd -s < ${WRKDIST}/buildshare.patches && \
+	 cd ${WRKDIST}/src/bsd		&& patch -p1 -z .orig.bsd -s < ${WRKDIST}/src.patches && \
+	 cd ${WRKDIST}/src/share	&& patch -p1 -z .orig.bsd -s < ${WRKDIST}/srcshare.patches && \
+	 cd ${WRKDIST}/ext		&& patch -p0 -z .orig.bsd -s < ${WRKDIST}/ext.patches
 
 do-install:
 	@mkdir -p ${PREFIX}/${FULLPKGNAME} && \
