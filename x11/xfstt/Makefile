@@ -1,4 +1,4 @@
-# $OpenBSD#
+# $OpenBSD: Makefile,v 1.2 1999/07/12 08:53:39 jasoni Exp $
 # $FreeBSD Id: Makefile,v 1.2 1999/06/28 02:22:43 billf Exp $
 #
 
