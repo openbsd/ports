@@ -1,0 +1,12 @@
+$OpenBSD: patch-main_c,v 1.1.1.1 2001/02/06 11:56:54 wilfried Exp $
+--- main.c.orig	Mon Apr  3 02:11:46 2000
++++ main.c	Mon Feb  5 20:17:37 2001
+@@ -230,7 +230,7 @@ int check_options(int argc, char *argv[]
+     return option_entered;
+ }
+ 
+-void main(int argc, char *argv[])
++int main(int argc, char *argv[])
+ {
+     struct coord pos[] = {
+ 	{35, 34, 12, 11},	/* stop */

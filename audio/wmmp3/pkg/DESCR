@@ -1,0 +1,7 @@
+wmmp3 is an mpg123 frontend.  It is a small X application
+that will also work as a Window Maker dockapp.
+
+You configure wmmp3 by using a ~/.wmmp3 file,
+copy a sample from ${SAMPLE_DIR}.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/06 11:56:54 wilfried Exp $
+bin/wmmp3
+share/examples/wmmp3/dot.wmmp3.sample
+@dirrm share/examples/wmmp3

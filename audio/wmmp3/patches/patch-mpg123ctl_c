@@ -1,0 +1,68 @@
+$OpenBSD: patch-mpg123ctl_c,v 1.1.1.1 2001/02/06 11:56:54 wilfried Exp $
+--- mpg123ctl.c.orig	Mon Apr  3 02:18:43 2000
++++ mpg123ctl.c	Mon Feb  5 20:28:00 2001
+@@ -97,12 +97,12 @@ void set_playlist()
+ 	dp = opendir(new_directory);
+ 	while (new_directory && (strcmp(new_directory, directory) != 0) &&
+ 	       (dp == NULL)) {
+-	    strcpy(directory, new_directory);
++	    strlcpy(directory, new_directory, sizeof(directory));
+ 	    new_directory = (char *) next_mp3dir();
+ 	    dp = opendir(new_directory);
+ 	}
+ 	if (new_directory)
+-	    strcpy(directory, new_directory);
++	    strlcpy(directory, new_directory, sizeof(directory));
+     }
+     if (dp != NULL) {
+ 	show_directory_name();
+@@ -111,7 +111,7 @@ void set_playlist()
+ 	entry = readdir(dp);
+ 	while (entry != NULL) {
+ 	    if (strstr(entry->d_name, mp3ext)) {
+-		sprintf(filename, "%s/%s", directory, entry->d_name);
++		snprintf(filename, sizeof(filename), "%s/%s", directory, entry->d_name);
+ 		insert_song(num_songs, entry->d_name, filename);
+ 		num_songs++;
+ 	    }
+@@ -178,8 +178,8 @@ void play_next() 
+ 	song = get_song(rand_song_num[next_song]);
+     }
+     if (song) {
+-	strcpy(title, song->title);
+-	strcat(title, " ");
++	strlcpy(title, song->title, sizeof(title));
++	strlcat(title, " ", sizeof(title));
+ 	scroll_pos = 0;
+ 	do_scroll = 1;
+ 	scroll_title();
+@@ -255,17 +255,17 @@ void init_ctl() 
+ void set_mpg123(char *s)
+ {
+ 
+-    strcpy(mpg123_cmd, s);
++    strlcpy(mpg123_cmd, s, sizeof(mpg123_cmd));
+ }
+ 
+ void set_mp3ext(char *s)
+ {
+-    strcpy(mp3ext, s);
++    strlcpy(mp3ext, s, sizeof(mp3ext));
+ }
+ 
+ void set_playlistext(char *s)
+ {
+-    strcpy(playlistext, s);
++    strlcpy(playlistext, s, sizeof(playlistext));
+ }
+ 
+ void set_alwaysscroll(char *s) {
+@@ -348,7 +348,7 @@ void show_directory_name()
+ {
+     if (dirnames[current_dir] != NULL) {
+ 	while (strlen(dirnames[current_dir]) < 9) {
+-	    strcat(dirnames[current_dir], " ");
++	    strlcat(dirnames[current_dir], " ", sizeof(dirnames[0]));
+ 	}
+ 	draw_string(dirnames[current_dir], 5, 5);
+     } else {
