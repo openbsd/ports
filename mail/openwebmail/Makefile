@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2003/07/16 10:32:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.15 2003/07/17 02:09:17 kevlo Exp $
 
 COMMENT=	"highly configurable webmail client"
 
 DISTNAME=	openwebmail-2.10
-CATEGORIES=	mail
+CATEGORIES=	mail www
 
 HOMEPAGE=	http://www.openwebmail.org/
 
