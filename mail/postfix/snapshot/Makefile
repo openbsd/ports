@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/05 21:16:50 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/06 23:10:43 jakob Exp $
 
 DISTNAME=	snapshot-20001005
 PKGNAME=	postfix-${DISTNAME}
 
 MASTER_SITE_SUBDIR=	experimental
 
-FLAVORS=	pcre sasl
+FLAVORS=	pcre sasl ldap
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpcre}
@@ -20,6 +20,12 @@ LIB_DEPENDS+=	sasl::security/cyrus-sasl
 
 MAKE_CCARGS+=	-I${PREFIX}/include -I${PREFIX}/include/sasl -DUSE_SASL_AUTH 
 MAKE_AUXLIBS+=	-L${PREFIX}/lib -lsasl -lkrb
+.endif
+
+.if ${FLAVOR:L:Mldap}
+LIB_DEPENDS+=	ldap::databases/openldap
+MAKE_CCARGS+=	-I${PREFIX}/include -DHAS_LDAP
+MAKE_AUXLIBS+=	-L${PREFIX}/lib -lldap -llber
 .endif
 
 .include <bsd.port.mk>
