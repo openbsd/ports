@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/09/12 00:12:48 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/02/08 17:21:41 jcs Exp $
 bin/freebcp
 bin/tsql
 include/bkpublic.h
-include/common.h
 include/cspublic.h
 include/cstypes.h
 include/ctlib.h

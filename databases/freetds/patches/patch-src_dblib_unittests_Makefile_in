@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_dblib_unittests_Makefile_in,v 1.1 2003/02/08 17:21:41 jcs Exp $
+--- src/dblib/unittests/Makefile.in.orig	Sat Feb  8 11:09:31 2003
++++ src/dblib/unittests/Makefile.in	Sat Feb  8 11:09:49 2003
+@@ -467,7 +467,7 @@
+ 
+ install-am: all-am
+ 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+-install: install-am
++install:
+ uninstall-am: uninstall-includeHEADERS
+ uninstall: uninstall-am
+ all-am: Makefile $(HEADERS)
