@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/06/05 21:30:40 danh Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/11 10:08:51 espie Exp $
 
 COMMENT=		"fixed width fonts especially for long hacking sessions"
 
@@ -28,6 +28,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${FONTDIR}
 	cd ${FONTDIR} && ${X11BASE}/bin/mkfontdir ;\
-	sed -e 's/.pcf.gz//' fonts.dir|grep terminus > fonts.alias
+	sed -e 's/.pcf.gz//' fonts.dir|grep terminus > fonts.alias-terminus
 
 .include <bsd.port.mk>

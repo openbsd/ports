@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/06/05 21:30:40 danh Exp $
-lib/X11/fonts/terminus/fonts.alias
-lib/X11/fonts/terminus/fonts.dir
+@comment $OpenBSD: PLIST,v 1.5 2004/08/11 10:08:52 espie Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/terminus/
+lib/X11/fonts/terminus/fonts.alias-terminus
+@comment lib/X11/fonts/terminus/fonts.dir
 lib/X11/fonts/terminus/ter-114b.pcf.gz
 lib/X11/fonts/terminus/ter-114n.pcf.gz
 lib/X11/fonts/terminus/ter-116b.pcf.gz
@@ -133,6 +135,3 @@ lib/X11/fonts/terminus/ter-x28b.pcf.gz
 lib/X11/fonts/terminus/ter-x28n.pcf.gz
 lib/X11/fonts/terminus/ter-x32b.pcf.gz
 lib/X11/fonts/terminus/ter-x32n.pcf.gz
-@dirrm lib/X11/fonts/terminus
-@exec echo "Add %B to your font path"
-@exec echo "e.g., with xset fp+ %B; xset fp rehash"
