@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/01/24 20:00:30 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2005/03/10 07:51:17 jakob Exp $
 
 COMMENT=	"postfix greylist daemon"
 
-VERSION=	1.17
+VERSION=	1.18
 DISTNAME=	postgrey-${VERSION}
 CATEGORIES=	mail
 
