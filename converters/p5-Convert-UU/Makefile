@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2002/12/23 00:37:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2003/05/23 08:01:56 kevlo Exp $
 
 COMMENT=	"Perl5 module for uuencode and uudecode"
 
-DISTNAME=	Convert-UU-0.40
-PKGNAME=	p5-Convert-UU-0.40
+DISTNAME=	Convert-UU-0.52
+PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Convert/}
 
