@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/10/31 08:44:44 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/12/28 21:03:51 sturm Exp $
 bin/sa-learn
 bin/spamassassin
 bin/spamc
@@ -83,8 +83,8 @@ ${P5SITE}/Mail/SpamAssassin/Util/RegistrarBoundaries.pm
 @man man/man3p/Mail::SpamAssassin::SQLBasedAddrList.3p
 @man man/man8/spamd.8
 share/doc/SpamAssassin/
-share/doc/SpamAssassin/OpenBSD-SpamAssassin-mini-howto.html
 share/doc/SpamAssassin/LICENSE
+share/doc/SpamAssassin/OpenBSD-SpamAssassin-mini-howto.html
 share/doc/SpamAssassin/README
 share/doc/SpamAssassin/UPGRADE
 share/doc/SpamAssassin/procmailrc.example

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2004/10/31 08:44:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.32 2004/12/28 21:03:51 sturm Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
-DISTNAME=		Mail-SpamAssassin-3.0.1
+DISTNAME=		Mail-SpamAssassin-3.0.2
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
 
@@ -43,7 +43,7 @@ FAKE_FLAGS=		${DESTDIRNAME}=${WRKINST} \
 # regress insists on creating files in $HOME
 PORTHOME=		${WRKDIR}/temp-home
 
-FAQS=	${FILESDIR}/OpenBSD-SpamAssassin-mini-howto.html
+FAQ=	OpenBSD-SpamAssassin-mini-howto.html
 DOCS=	README UPGRADE LICENSE procmailrc.example \
 	sample-nonspam.txt sample-spam.txt
 LOCALCF=	rules/local.cf
@@ -54,7 +54,10 @@ post-patch:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/SpamAssassin
 	${INSTALL_DATA_DIR} ${SAMPLE_CONFDIR}
-	${INSTALL_DATA} ${FAQS} ${PREFIX}/share/doc/SpamAssassin
+	@sed -e "s|@SYSCONFDIR@|${SYSCONFDIR}|" \
+	    -e "s|@PREFIX@|${TRUEPREFIX}|" \
+	    ${FILESDIR}/${FAQ} > ${WRKSRC}/${FAQ}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${FAQ} ${PREFIX}/share/doc/SpamAssassin
 	cd ${WRKSRC} && ${INSTALL_DATA} ${LOCALCF} ${SAMPLE_CONFDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/SpamAssassin
 	cd ${WRKSRC} && pod2man --section=1 spamc/spamc.pod > \
