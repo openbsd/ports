@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/26 12:52:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/07/11 06:22:48 pvalchev Exp $
 
 COMMENT=	"UAE amiga emulator"
 DISTNAME=	uae-0.8.21
@@ -17,6 +17,10 @@ USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-dga --enable-vidmode --disable-ui
+
+.if ${MACHINE_ARCH} == "hppa"
+CFLAGS+=	-O0
+.endif
 
 MODULES=	gettext
 LIB_DEPENDS+=	glib.1.2,gmodule.1.2::devel/glib \
