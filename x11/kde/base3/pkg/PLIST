@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2002/09/01 08:25:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2003/01/05 19:59:22 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -2479,6 +2479,7 @@ share/wallpapers/triplegears.jpg
 @dirrm share/locale/l10n/C
 @dirrm share/locale/l10n
 @dirrm share/locale/en_US
+@comment @dirrm share/locale
 @dirrm share/fonts/override
 @dirrm share/fonts
 @dirrm share/doc/HTML/en/kwrite
@@ -2504,6 +2505,8 @@ share/wallpapers/triplegears.jpg
 @dirrm share/doc/HTML/en/kcontrol
 @dirrm share/doc/HTML/en/kate
 @dirrm share/doc/HTML/en/kaddressbook
+@comment @dirrm share/doc/HTML
+@comment @dirrm share/config
 @dirrm share/apps/naughtyapplet/pics
 @dirrm share/apps/naughtyapplet
 @dirrm share/apps/kwrite
@@ -2656,6 +2659,7 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/drkonqi
 @dirrm share/apps/clockapplet/pics
 @dirrm share/apps/clockapplet
+@comment @dirrm share/apps
 @dirrm share/applnk/WordProcessing
 @dirrm share/applnk/System/Terminal
 @dirrm share/applnk/Settings/WebBrowsing
