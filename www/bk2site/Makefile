@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/10/22 15:43:39 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/16 10:27:00 wilfried Exp $
 
 DISTNAME=	bk2site-1.1.5
 CATEGORIES=	www
@@ -12,11 +12,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu destdir
 
 post-install:
-	${INSTALL_MAN} ${WRKBUILD}/bk2site.1 ${PREFIX}/man/man1/
-	${INSTALL_DATA} ${WRKBUILD}/indexbase.html ${WRKBUILD}/otherbase.html \
+	${INSTALL_MAN} ${WRKSRC}/bk2site.1 ${PREFIX}/man/man1/
+	${INSTALL_DATA} ${WRKSRC}/indexbase.html ${WRKSRC}/otherbase.html \
 			${PREFIX}/share/bk2site/
 
 .include <bsd.port.mk>
