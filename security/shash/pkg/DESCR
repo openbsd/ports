@@ -1,0 +1,7 @@
+shash is a program intended to produce message digests for files, or it
+can check with the output of a former run whether the message digests are
+still the same (i.e. whether the files changed). shash uses several hash
+algorithms.  Since everyone can generate the message digest, it may not
+be suitable for some security related applications.
+
+WWW: ${HOMEPAGE}
