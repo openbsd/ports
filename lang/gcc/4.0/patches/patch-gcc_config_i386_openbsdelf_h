@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_config_i386_openbsdelf_h,v 1.4 2005/01/31 09:47:34 espie Exp $
+--- gcc/config/i386/openbsdelf.h.orig	Sun Jan 30 13:29:53 2005
++++ gcc/config/i386/openbsdelf.h	Sun Jan 30 13:30:22 2005
+@@ -27,6 +27,8 @@ Boston, MA 02111-1307, USA.  */
+ #undef ASM_COMMENT_START
+ #define ASM_COMMENT_START "#"
+ 
++#undef DBX_REGISTER_NUMBER
++#define DBX_REGISTER_NUMBER(n)  svr4_dbx_register_map[n]
+ 
+ /* This goes away when the math-emulator is fixed */
+ #undef TARGET_DEFAULT
