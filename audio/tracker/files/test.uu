@@ -1,0 +1,35 @@
+#!/bin/sh
+cat <<EOBLURB
+This is a very small test module, excerpted from Gryzor\'s \`Mod Anthology',
+written by Diesel, aka David Marchevet.
+
+Mod Anthology, 4 CD-Roms full of modules, available from
+Schatztruhe, Veronikastrasse 33, D-45131 Essen, Deutschland.
+mailto:stefano@schatztruhe.de      http://www.schatztruhe.de/
+
+Nicolas \`Gryzor' Franck: gryzor@club-internet.fr
+
+Hit <Return> to proceed
+
+EOBLURB
+read i
+uudecode $0
+exit 0
+--
+begin 755 dodo_time.gz
+M'XL("'E`'38``T1O9&]?5&EM92YM;V0`[53/:Q-!%)[9*2&'N%FH!@_9.,=X
+M,`1_8!$/\5R$@G^`&;L+7=SM0GXA0FBE0M&"A9YZ*GL0#T'$NR!X\.(?L!=/
+M]B""_@4BP3<SNS.;,>Y1//3!D'GSO??V>]^\B1=[,1T%D8^TM4,_WKY,#4,4
+M]0`TCW-4&N;[@3_Q@S#T'U^)XN"6@7IL$G@T8H/-+0@;&>CUFW0P]JDWIL,1
+M\WRS\M4;:]TNG;#08UOQMHF6LQJR<#RB;/R(LB@8=G2[&)79&7J&_G<HWBG%
+M_X'=[:S#$UIAL)[(57<0LOO8;5@(52SLMOKHL(GX'IWR,VX5BMY+//,EGC:T
+M?_HG+FN")<3"TZS^M(#?T_FX5Y+/_7F6WQ,^-OAAR:62?Z\F]H*SS>"7R%KU
+M*G;M/F!$QF;Q@"_4R_TBKOJWOR@\_4M\<H$LZ#%;@A?[,W'.5^FEOZ?T6L)/
+MZU>(=TOX%?4\7,Y/Z6'B,\`7]%Z"*_T7<"+OHX;TO/'Y@_D2O3:JZKXA5VH`
+M_?#Y</-]O:;F8]J$O/J*GJ=F5Z2G<MZX)G@JZDN\I^L++=-"_:)^/+8#?E)S
+M9+R]F?&7KG@S8@9A=;ZBI.F(_'F#6+LM/E_*Q[\<-=_0`\&OP=\A5:X_G$&\
+MH]\3Z"/B$Q6/1/R,$,%WOKIJO7(T?UU?]LOK?VP]`+[?8(_A_C#$&?])YW(?
+M5^R+E]K7[FS<?S@81FSC=OL\^IY^>'-R=+#_=&__^;.#%T?')R]G;]]]^OSC
+,9Z'(;XKWD0M\"```
+`
+end
