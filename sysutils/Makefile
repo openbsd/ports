@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1998/10/01 01:44:06 ian Exp $
+# $OpenBSD: Makefile,v 1.8 1999/02/28 11:24:59 fgsch Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -14,6 +14,7 @@
 #    SUBDIR += manck
 #    SUBDIR += mei
 #    SUBDIR += mkisofs
+     SUBDIR += mtools
 #    SUBDIR += pib
      SUBDIR += rtty
      SUBDIR += setquota
