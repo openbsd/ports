@@ -1,0 +1,13 @@
+$OpenBSD: patch-kdbg_ttywnd_cpp,v 1.1 2001/04/21 11:39:23 espie Exp $
+--- kdbg/ttywnd.cpp.orig	Sat Apr 21 04:16:42 2001
++++ kdbg/ttywnd.cpp	Sat Apr 21 04:17:06 2001
+@@ -30,6 +30,9 @@
+ #include <pty.h>			/* openpty */
+ #endif
+ #include <errno.h>
++#ifdef __OpenBSD__
++#include <util.h>
++#endif
+ 
+ #include "mydebug.h"
+ 
