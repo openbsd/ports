@@ -1,8 +1,6 @@
 #!/bin/sh
 # installation script for Japanese Wnn 4.2
 
-PKG_PREFIX=${PREFIX:-/usr/local}
-
 yesno() {
     local question answer
 
@@ -42,17 +40,26 @@ else
     if yesno "Would you like to create it automatically now"; then
 	create_wnn
     else
-	echo "You still need to run $PKG_PREFIX/lib/wnn/install-script"
-	echo "to finish ja-Wnn installation later"
+	echo "You still need to run /usr/local/lib/wnn/install-script"
+	echo "to finish Wnn installation later"
 	exit 0
     fi
 fi
 
 sys_dirs="/var/dict/ja_JP/dic/pubdic var/dict/ja_JP/dic/wnncons"
 usr_dirs=/var/dict/ja_JP/dic/usr
-wnntouch=${PKG_PREFIX}/bin/wnntouch
-wnnserver=${PKG_PREFIX}/bin/jserver
-wnnname=Wnn
+wnntouch=/usr/local/bin/wnntouch
+wnnserver=/usr/local/bin/jserver
+
+# installation not yet complete, bail out
+[ -e $wnntouch ] || exit 0
+
+chown wnn $wnnserver
+chmod u+s $wnnserver
+
+# japanese directories not yet present, bail out
+
+[ -d /var/dict/ja_JP/dic ] || exit 0
 
 for dir in $sys_dirs; do
   $wnntouch $dir/*
@@ -65,5 +72,3 @@ for dir in $usr_dirs; do
   chown wnn $dir
 done
 chmod -R u+w $dir
-chown wnn $wnnserver
-chmod u+s $wnnserver
