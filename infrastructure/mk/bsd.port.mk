@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.672 2004/12/21 20:56:54 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.673 2004/12/29 14:30:53 naddy Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2146,7 +2146,7 @@ _fetch-onefile:
 .  if !defined(NO_CHECKSUM) && !empty(_CKSUMFILES:M${_F})
 	@checksum_file=${CHECKSUM_FILE}; \
 	if [ ! -f $$checksum_file ]; then \
-	  echo >&2 'Missing checksum file: $$checksum_file'; \
+	  echo >&2 "Missing checksum file: $$checksum_file"; \
 	  echo '\t ERROR="no checksum file" \\'; \
 	else \
 	  for c in ${PREFERRED_CIPHERS}; do \
