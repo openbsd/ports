@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/02/01 14:59:24 espie Exp $
-@unexec install-info --delete --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/TemplateMagic.pl.info
-@unexec install-info --delete --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/dwt.info
-@unexec install-info --delete --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/htmlquickstart.info
-@unexec install-info --delete --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/tidy.info
+@comment $OpenBSD: PLIST,v 1.6 2004/02/02 00:02:22 espie Exp $
+@comment @unexec install-info --delete --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/TemplateMagic.pl.info
+@comment @unexec install-info --delete --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/dwt.info
+@comment @unexec install-info --delete --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/htmlquickstart.info
+@comment @unexec install-info --delete --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/tidy.info
 bin/kmdr-editor
 bin/kmdr-executor
 bin/kxsldbg
@@ -1468,7 +1468,7 @@ share/services/kxsldbg_part.desktop
 @dirrm share/applnk/Development
 @dirrm share/applnk/Applications
 @dirrm share/applnk
-@exec install-info --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/TemplateMagic.pl.info
-@exec install-info --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/dwt.info
-@exec install-info --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/htmlquickstart.info
-@exec install-info --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/tidy.info
+@comment @exec install-info --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/TemplateMagic.pl.info
+@comment @exec install-info --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/dwt.info
+@comment @exec install-info --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/htmlquickstart.info
+@comment @exec install-info --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/tidy.info
