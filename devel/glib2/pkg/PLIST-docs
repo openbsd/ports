@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-docs,v 1.6 2004/08/08 17:12:55 marcm Exp $
+@comment $OpenBSD: PLIST-docs,v 1.7 2004/09/16 04:13:56 marcm Exp $
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/glib/
+share/gtk-doc/html/glib/file-name-encodings.png
 share/gtk-doc/html/glib/glib-Arrays.html
 share/gtk-doc/html/glib/glib-Asynchronous-Queues.html
 share/gtk-doc/html/glib/glib-Atomic-Operations.html

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/08/08 17:12:55 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/09/16 04:13:56 marcm Exp $
 bin/glib-genmarshal
 bin/glib-gettextize
 bin/glib-mkenums
@@ -101,7 +101,6 @@ share/glib-2.0/gettext/
 share/glib-2.0/gettext/mkinstalldirs
 share/glib-2.0/gettext/po/
 share/glib-2.0/gettext/po/Makefile.in.in
-share/gtk-doc/html/glib/file-name-encodings.png
 share/locale/am/
 share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/glib20.mo
@@ -177,6 +176,7 @@ share/locale/mn/LC_MESSAGES/glib20.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/glib20.mo
+share/locale/nb/LC_MESSAGES/glib20.mo
 share/locale/ne/
 share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/glib20.mo
