@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2003/10/21 18:18:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.24 2003/11/17 21:02:25 sturm Exp $
 
 COMMENT=		"reduce the amount of SPAM/UCE (junk-mail)"
 
-VERSION=		0.87
+VERSION=		0.89
 DISTNAME=		tmda-${VERSION}
 CATEGORIES=		mail
 
@@ -47,10 +47,12 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tmda
 	${INSTALL_DATA} ${WRKSRC}/contrib/sample.config \
 		${PREFIX}/share/examples/tmda
+	${INSTALL_DATA} ${WRKSRC}/htdocs/*.html ${PREFIX}/share/doc/tmda
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tmda/img
+	${INSTALL_DATA} ${WRKSRC}/htdocs/img/*.png ${PREFIX}/share/doc/tmda/img
 .for f in ${CONTRIB_FILES}
 	${INSTALL_DATA} ${WRKSRC}/contrib/$f ${PREFIX}/share/doc/tmda/contrib
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/htdocs/*.html ${PREFIX}/share/doc/tmda
 .for f in CRYPTO INSTALL README UPGRADE
 	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/tmda
 .endfor

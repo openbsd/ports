@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2003/10/21 18:18:32 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2003/11/17 21:02:25 sturm Exp $
 bin/tmda-address
 bin/tmda-check-address
 bin/tmda-filter
@@ -111,9 +111,16 @@ share/doc/tmda/filter-sources.html
 share/doc/tmda/history.html
 share/doc/tmda/howto-template.html
 share/doc/tmda/howtos.html
+share/doc/tmda/img/tmda-186x253.png
+share/doc/tmda/img/tmda-47x64.png
+share/doc/tmda/img/tmda-562x765.png
+share/doc/tmda/img/tmda-70x95.png
+share/doc/tmda/img/tmda-93x127.png
+share/doc/tmda/img/tmda-nt-616x616.png
 share/doc/tmda/index.html
 share/doc/tmda/install.html
 share/doc/tmda/inuse.html
+share/doc/tmda/logos.html
 share/doc/tmda/mirrors.html
 share/doc/tmda/press.html
 share/doc/tmda/requirements.html
@@ -130,6 +137,7 @@ share/tmda/confirm_accept.txt
 share/tmda/confirm_request.txt
 @dirrm share/tmda
 @dirrm share/examples/tmda
+@dirrm share/doc/tmda/img
 @dirrm share/doc/tmda/contrib
 @dirrm share/doc/tmda
 @dirrm lib/python${PYTHON_VER}/site-packages/TMDA/pythonlib/email
