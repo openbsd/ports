@@ -1,5 +1,5 @@
 --- src/osdep/unix/Makefile.orig	Tue Nov 16 21:05:48 1999
-+++ src/osdep/unix/Makefile	Sun Sep 17 08:22:35 2000
++++ src/osdep/unix/Makefile	Mon Oct 16 18:27:36 2000
 @@ -96,6 +96,7 @@
  DEFAULTAUTHENTICATORS=md5 $(SPECIALAUTHENTICATORS) log
  DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf unix news phile
@@ -8,7 +8,7 @@
  
  # Normally no need to change any of these
  
-@@ -104,6 +105,7 @@
+@@ -104,12 +105,14 @@
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
@@ -16,16 +16,23 @@
  CFLAGS=$(BASECFLAGS) $(EXTRACFLAGS)
  MAKE=make
  MV=mv
-@@ -209,7 +211,7 @@
+ RM=rm -rf
+ SH=sh
+ 
++PICFLAG= -fpic
+ 
+ # Primary build command
+ 
+@@ -209,7 +212,7 @@
  	 SPOOLDIR=/var \
  	 ACTIVEFILE=/usr/local/news/lib/active \
  	 RSHPATH=/usr/bin/rsh \
 -	 BASECFLAGS="-O2 -pipe -DNFSKLUDGE"
-+	 BASECFLAGS="-O2 -pipe -DNFSKLUDGE -DIGNORE_LOCK_EACCES_ERRORS=1"
++	 BASECFLAGS="-pipe -DNFSKLUDGE -DIGNORE_LOCK_EACCES_ERRORS=1"
  
  cvx:	# Convex
  	$(BUILD) `cat EXTRASPECIALS` OS=$@ \
-@@ -627,20 +629,27 @@
+@@ -627,19 +630,26 @@
  
  # Build it!
  
@@ -44,18 +51,17 @@
  	@$(SH) ARCHIVE
  
 +$(SHLIB): $(SOBINARIES)
-+	$(CC) -shared -o $(SHLIB) $(SOBINARIES)
++	$(CC) -shared $(PICFLAG) -o $(SHLIB) $(SOBINARIES)
 +
  # Cleanup
  
  clean:
- 	sh -c '$(RM) auths.c flockbsd.c linkage.[ch] siglocal.c osdep*.[ch] *.o ARCHIVE *FLAGS *TYPE $(ARCHIVE) || true'
--
-+	$(RM) *.so $(SHLIB)
+-	sh -c '$(RM) auths.c flockbsd.c linkage.[ch] siglocal.c osdep*.[ch] *.o ARCHIVE *FLAGS *TYPE $(ARCHIVE) || true'
++	sh -c '$(RM) auths.c flockbsd.c linkage.[ch] siglocal.c osdep*.[ch] *.o *.so ARCHIVE *FLAGS *TYPE $(ARCHIVE) $(SHLIB) || true'
+ 
  
  # Dependencies
- 
-@@ -673,7 +682,7 @@
+@@ -673,7 +683,7 @@
  
  # OS-dependent
  
@@ -64,7 +70,7 @@
  	osdep.h env_unix.h tcp_unix.h \
  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
  	auths.c flock.c flockbsd.c flcksafe.c fsync.c gethstid.c \
-@@ -685,10 +694,18 @@
+@@ -685,10 +695,18 @@
  	write.c \
  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
  	OSCFLAGS
@@ -73,13 +79,13 @@
  	$(CC) $(CFLAGS) `cat OSCFLAGS` -c osdep.c
  
 +osdep.so: $(OSDEPS)
-+	$(CC) $(CFLAGS) `cat OSCFLAGS` -fpic -DPIC -c osdep.c -o $@
++	$(CC) $(CFLAGS) `cat OSCFLAGS` $(PICFLAG) -DPIC -c osdep.c -o $@
 +
  osdep.c: osdepbas.c osdepckp.c osdeplog.c
  	cat osdepbas.c osdepckp.c osdeplog.c > osdep.c
 +
 +.c.so: osdep.h
-+	$(CC) $(CFLAGS) -fpic -DPIC -c $(@:.so=.c) -o $@
++	$(CC) $(CFLAGS) $(PICFLAG) -DPIC -c $(@:.so=.c) -o $@
  
  flockbsd.c:	# cretin Linux
  

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/04 21:54:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/16 23:23:10 brad Exp $
 
 DISTNAME=	imap-4.7c2
 PKGNAME=	c-client-4.7c2
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 SHLIB=	libc-client.so.1.0
 SUBST_VARS=	SHLIB
 
-MAKE_FLAGS=	SHLIB="${SHLIB}"
+MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" SHLIB="${SHLIB}"
 
 ALL_TARGET=	bso
 
