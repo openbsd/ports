@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 09:11:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/10/08 18:50:17 sturm Exp $
 bin/R
 lib/R/
 lib/R/AUTHORS
@@ -3729,29 +3729,18 @@ lib/R/library/grid/R/grid
 lib/R/library/grid/doc/
 lib/R/library/grid/doc/changes.txt
 lib/R/library/grid/doc/displaylist.Snw
-lib/R/library/grid/doc/displaylist.pdf
 lib/R/library/grid/doc/frame.Snw
-lib/R/library/grid/doc/frame.pdf
 lib/R/library/grid/doc/grid.Snw
 lib/R/library/grid/doc/grid.bib
-lib/R/library/grid/doc/grid.pdf
 lib/R/library/grid/doc/grobs.Snw
-lib/R/library/grid/doc/grobs.pdf
 lib/R/library/grid/doc/index.html
 lib/R/library/grid/doc/interactive.Snw
-lib/R/library/grid/doc/interactive.pdf
 lib/R/library/grid/doc/locndimn.Snw
-lib/R/library/grid/doc/locndimn.pdf
 lib/R/library/grid/doc/moveline.Snw
-lib/R/library/grid/doc/moveline.pdf
 lib/R/library/grid/doc/plotexample.Snw
-lib/R/library/grid/doc/plotexample.pdf
 lib/R/library/grid/doc/rotated.Snw
-lib/R/library/grid/doc/rotated.pdf
 lib/R/library/grid/doc/saveload.Snw
-lib/R/library/grid/doc/saveload.pdf
 lib/R/library/grid/doc/viewports.Snw
-lib/R/library/grid/doc/viewports.pdf
 lib/R/library/grid/help/
 lib/R/library/grid/help/AnIndex
 lib/R/library/grid/help/Grid
