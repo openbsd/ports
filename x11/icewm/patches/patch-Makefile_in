@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2004/06/13 12:25:08 sturm Exp $
---- Makefile.in.orig	2004-05-23 08:18:18.000000000 +0200
-+++ Makefile.in	2004-06-13 13:38:31.000000000 +0200
-@@ -116,12 +116,9 @@ install-base: base
+$OpenBSD: patch-Makefile_in,v 1.7 2004/12/04 17:25:19 sturm Exp $
+--- Makefile.in.orig	Tue Nov 23 10:43:24 2004
++++ Makefile.in	Tue Nov 23 10:46:27 2004
+@@ -116,12 +116,9 @@
  
  install-docs: docs
  	@echo ------------------------------------------
@@ -12,7 +12,7 @@ $OpenBSD: patch-Makefile_in,v 1.6 2004/06/13 12:25:08 sturm Exp $
 -	@$(INSTALLLIB) $(DOCFILES) "$(DESTDIR)$(DOCDIR)/icewm-$(VERSION)"
 -	@$(INSTALLLIB) "$(top_srcdir)/doc/"*.sgml "$(DESTDIR)$(DOCDIR)/icewm-$(VERSION)"
 -	@$(INSTALLLIB) "$(top_srcdir)/doc/"*.html "$(DESTDIR)$(DOCDIR)/icewm-$(VERSION)"
-+	${BSD_INSTALL_DATA} "$(top_srcdir)/doc/"*.html "$(DESTDIR)$(DOCDIR)/icewm"
++	$(BSD_INSTALL_DATA) "$(top_srcdir)/doc/"*.html "$(DESTDIR)$(DOCDIR)/icewm"
  	@echo ------------------------------------------
  
  install-nls: nls

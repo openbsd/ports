@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/15 19:26:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/12/04 17:25:19 sturm Exp $
 bin/icehelp
 bin/icesh
 bin/icewm
@@ -19,6 +19,7 @@ share/doc/icewm/icewm-17.html
 share/doc/icewm/icewm-18.html
 share/doc/icewm/icewm-19.html
 share/doc/icewm/icewm-2.html
+share/doc/icewm/icewm-20.html
 share/doc/icewm/icewm-3.html
 share/doc/icewm/icewm-4.html
 share/doc/icewm/icewm-5.html
@@ -411,6 +412,9 @@ share/locale/ro/LC_MESSAGES/icewm.mo
 share/locale/ru/
 share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/icewm.mo
+share/locale/sk/
+share/locale/sk/LC_MESSAGES/
+share/locale/sk/LC_MESSAGES/icewm.mo
 share/locale/sl/
 share/locale/sl/LC_MESSAGES/
 share/locale/sl/LC_MESSAGES/icewm.mo

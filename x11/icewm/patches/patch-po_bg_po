@@ -1,7 +1,7 @@
-$OpenBSD: patch-po_bg_po,v 1.1 2004/05/21 17:00:09 naddy Exp $
---- po/bg.po.orig	2004-05-21 17:39:06.000000000 +0200
-+++ po/bg.po	2004-05-21 17:39:15.000000000 +0200
-@@ -11,7 +11,7 @@ msgstr 	"Project-Id-Version: IceWM 1.2.1
+$OpenBSD: patch-po_bg_po,v 1.2 2004/12/04 17:25:19 sturm Exp $
+--- po/bg.po.orig	Tue Nov 23 14:54:30 2004
++++ po/bg.po	Tue Nov 23 14:55:51 2004
+@@ -11,7 +11,7 @@
  	"Last-Translator: Pavel Pyuter <pavel@unix-bg.org>\n"
  	"Language-Team: Bulgarian\n"
  	"MIME-Version: 1.0\n"

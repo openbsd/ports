@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2004/08/11 22:48:26 naddy Exp $
---- configure.orig	Sun May 23 08:18:27 2004
-+++ configure	Thu Aug 12 00:15:48 2004
-@@ -1438,7 +1438,7 @@ test -n "$target_alias" &&
+$OpenBSD: patch-configure,v 1.5 2004/12/04 17:25:19 sturm Exp $
+--- configure.orig	Wed Nov 24 11:37:14 2004
++++ configure	Wed Nov 24 11:38:55 2004
+@@ -1461,7 +1461,7 @@
      NONENONEs,x,x, &&
    program_prefix=${target_alias}-
  
@@ -10,24 +10,16 @@ $OpenBSD: patch-configure,v 1.4 2004/08/11 22:48:26 naddy Exp $
  APPLICATIONS='icewm icewm-session icesh icewmhint icewmbg icewmtray'
  TESTCASES=`echo src/test*.cc | sed 's%src/\([^ ]*\)\.cc%\1%g'`
  TESTCASES="$TESTCASES iceview icesame iceicon icerun icelist" # iceclock
-@@ -2330,7 +2330,6 @@ if { ac_try='rm conftest; $CC -o conftes
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; } >/dev/null 2>&1; then
-   ice_prog_gxx=yes
--  CXX=$CC
- else
-   ice_prog_gxx=no
- fi
-@@ -10077,7 +10076,7 @@ if test "${ac_cv_lib_intl_bindtextdomain
+@@ -9796,7 +9796,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
 +LIBS="-lintl -liconv  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -10126,7 +10125,7 @@ fi
+ _ACEOF
+@@ -9855,7 +9855,7 @@
  echo "$as_me:$LINENO: result: $ac_cv_lib_intl_bindtextdomain" >&5
  echo "${ECHO_T}$ac_cv_lib_intl_bindtextdomain" >&6
  if test $ac_cv_lib_intl_bindtextdomain = yes; then

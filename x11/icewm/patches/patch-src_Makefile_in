@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2004/06/13 12:25:08 sturm Exp $
---- src/Makefile.in.orig	2004-05-23 08:18:19.000000000 +0200
-+++ src/Makefile.in	2004-06-13 13:38:32.000000000 +0200
-@@ -31,7 +31,7 @@ DEFS =          @DEFS@ \
+$OpenBSD: patch-src_Makefile_in,v 1.4 2004/12/04 17:25:19 sturm Exp $
+--- src/Makefile.in.orig	Tue Nov 23 15:19:18 2004
++++ src/Makefile.in	Tue Nov 23 15:21:41 2004
+@@ -31,7 +31,7 @@
                  -DICEWMBGEXE='"icewmbg$(EXEEXT)"' \
                  -DICESMEXE='"icewm-session$(EXEEXT)"' \
                  -DICEHELPEXE='"icehelp$(EXEEXT)"' \
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2004/06/13 12:25:08 sturm Exp $
  
  CXXFLAGS =      @CXXFLAGS@ $(DEBUG) $(DEFS) \
  	        @CORE_CFLAGS@ @IMAGE_CFLAGS@ @AUDIO_CFLAGS@ # `fc-config --cflags`
-@@ -205,11 +205,11 @@ clean:
+@@ -205,11 +205,11 @@
  
  %.o: %.cc
  	@echo "  CXX   " $@
@@ -24,3 +24,4 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2004/06/13 12:25:08 sturm Exp $
  
  ################################################################################
  
+$OpenBSD: patch-src_Makefile_in,v 1.4 2004/12/04 17:25:19 sturm Exp $
