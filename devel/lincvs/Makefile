@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/08/10 12:42:22 xsa Exp $
+# $OpenBSD: Makefile,v 1.16 2004/11/23 21:40:35 espie Exp $
 
 COMMENT=	"graphical CVS front-end using QT2"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xext c m pthread stdc++
 
 MASTER_SITES=	http://lincvs.sunsite.dk/download/${DISTNAME}/
 EXTRACT_SUFX=	-0-generic-src.tgz
