@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2000/10/22 15:43:47 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 16:23:02 espie Exp $
 
 DISTNAME=	flwm-0.25
 PKGNAME=	flwm-0.25
 CATEGORIES=	x11
 NEED_VERSION=	1.305
 MASTER_SITES=	http://www.cinenet.net/users/spitzak/flwm/
-MAINTAINER=	jason@OpenBSD.ORG
+MAINTAINER=	Jason Wright <jason@openbsd.org>
 
 EXTRACT_SUFX=	.tgz
 CONFIGURE_STYLE=gnu dest

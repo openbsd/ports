@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/09/12 15:12:53 todd Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 16:23:01 espie Exp $
 
 #
 # From:
@@ -13,7 +13,7 @@ DISTFILES=	hjb3_0-linux.sfx
 
 EXTRACT_CASES=*.sfx) uudecode ${FULLDISTDIR}/$$archive;;
 
-MAINTAINER=	chris@OpenBSD.org
+MAINTAINER=	Chris Cappuccio <chris@openbsd.org>
 
 JDK=	jdk1.1.8
 JAR=	${JDK}/bin/jar

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/09/02 15:21:53 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/10/22 16:23:02 espie Exp $
 
 DISTNAME=	xntp3-5.93e-export
 PKGNAME=	xntp3-5.93e
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.hawaii.edu/mirrors/ntp/ \
 
 HOMEPAGE=	http://www.eecis.udel.edu/~mills/ntp/html/
 
-MAINTAINER=     jason@openbsd.org
+MAINTAINER=     Jason Wright <jason@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
