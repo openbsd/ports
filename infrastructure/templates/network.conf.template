@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.59 2003/03/12 18:04:37 jsyn Exp $
+# $OpenBSD: network.conf.template,v 1.60 2003/03/27 07:51:42 pvalchev Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -115,6 +115,15 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://ftp.chg.ru/pub/Linux/sunsite/
 
 MASTER_SITE_SOURCEFORGE+=	\
+	http://unc.dl.sourceforge.net/sourceforge/ \
+	http://flow.dl.sourceforge.net/sourceforge/ \
+	http://belnet.dl.sourceforge.net/sourceforge/ \
+	http://switch.dl.sourceforge.net/sourceforge/ \
+	http://aleron.dl.sourceforge.net/sourceforge/ \
+	http://easynews.dl.sourceforge.net/sourceforge/ \
+	http://twtelecom.dl.sourceforge.net/sourceforge/ \
+	http://umn.dl.sourceforge.net/sourceforge/ \
+	http://cesnet.dl.sourceforge.net/sourceforge/ \
 	http://us.dl.sourceforge.net/ \
 	http://eu.dl.sourceforge.net/ \
 	ftp://us.dl.sourceforge.net/pub/sourceforge/ \
