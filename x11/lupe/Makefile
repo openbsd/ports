@@ -3,8 +3,10 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/19 05:19:27 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/10/31 07:43:28 turan Exp $
 #
+
+BROKEN=		bad packing lists, man/man1/lupe.1
 
 DISTNAME=	lupe007
 PKGNAME=	lupe-0.07
