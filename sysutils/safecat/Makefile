@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/04 17:37:02 danh Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/09 14:08:21 danh Exp $
 
-DISTNAME=	safecat-1.4
+DISTNAME=	safecat-1.5
 CATEGORIES=	sysutils
 NEED_VERSION=	1.358
 MASTER_SITES=	http://www.nb.net/~lbudney/linux/software/safecat/ \
