@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1999/05/30 06:27:41 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/02/10 10:18:17 espie Exp $
 
 VER=		20.3
 DISTNAME=	emacs-${VER}
@@ -39,8 +39,8 @@ STRIP_EXECS=	cvtmail digest-doc emacsserver fakemail hexl movemail \
 PLIST=		${WRKDIR}/PLIST
 
 pre-install pre-package:
-	@${RM} -f ${WRKDIR}/PLIST
-	@${SED} -e 's/||CONFIG||/${GCCARCH}/' \
+	@rm -f ${WRKDIR}/PLIST
+	@sed -e 's/||CONFIG||/${GCCARCH}/' \
 		${FILESDIR}/PLIST.template >${WRKDIR}/PLIST
 
 post-install:
