@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/28 11:24:04 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2002/07/19 07:04:41 espie Exp $
 
-DISTNAME=mplayer-fontmaker-0.90pre4
+DISTNAME=mplayer-fontmaker-0.90pre5
 CATEGORIES=x11
 COMMENT='subtitle fonts generator for mplayer'
 
