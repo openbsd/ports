@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/11/27 15:56:03 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/06 11:18:33 avsm Exp $
 
 DISTNAME=		mcrypt-2.5.5
 CATEGORIES=     	security
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://mcrypt.hellug.gr/mcrypt/ \
+MASTER_SITES=		ftp://mcrypt.hellug.gr/pub/mcrypt/ \
 			ftp://argeas.cs-net.gr/pub/unix/mcrypt
 
 USE_LIBTOOL=		Yes
