@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2005/01/12 21:31:05 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2005/01/23 10:28:07 espie Exp $
 
 COMMENT=	"Berkeley DB package, revision ${REVISION}"
 COMMENT-tcl=	"TCL bindings for Berkeley DB, revision ${REVISION}"
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=--enable-tcl \
 
 .  if defined(PACKAGING)
 .    if ${SUBPACKAGE} == "-tcl"
-LIB_DEPENDS+=	db.=${REVISION}:db-${REVISION}.*:databases/db/v${REVISION}
+LIB_DEPENDS+=	${DBLIBDIR}/db.=${REVISION}:db-${REVISION}.*:databases/db/v${REVISION}
 .    else
 LIB_DEPENDS=
 .    endif
