@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/10/18 15:36:34 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/04/14 05:23:57 pvalchev Exp $
 bin/convert_smbpasswd
 bin/make_printerdef
 bin/make_smbcodepage
@@ -64,26 +64,26 @@ man/man1/rpcclient.1
 man/man1/smbcacls.1
 man/man1/smbclient.1
 man/man1/smbcontrol.1
-man/man1/smbsh.1
+@comment man/man1/smbsh.1
 man/man1/smbstatus.1
 man/man1/smbtar.1
 man/man1/testparm.1
 man/man1/testprns.1
-man/man1/wbinfo.1
+@comment man/man1/wbinfo.1
 man/man5/lmhosts.5
 man/man5/smb.conf.5
 man/man5/smbpasswd.5
 man/man7/samba.7
 man/man8/nmbd.8
-man/man8/pdbedit.8
+@comment man/man8/pdbedit.8
 man/man8/smbd.8
-man/man8/smbmnt.8
-man/man8/smbmount.8
+@comment man/man8/smbmnt.8
+@comment man/man8/smbmount.8
 man/man8/smbpasswd.8
 man/man8/smbspool.8
-man/man8/smbumount.8
+@comment man/man8/smbumount.8
 man/man8/swat.8
-man/man8/winbindd.8
+@comment man/man8/winbindd.8
 share/doc/samba/NT4-Locking.reg
 share/doc/samba/NT4_PlainPassword.reg
 share/doc/samba/README
@@ -280,7 +280,7 @@ share/swat/help/make_unicodemap.1.html
 share/swat/help/msdfs_setup.html
 share/swat/help/nmbd.8.html
 share/swat/help/nmblookup.1.html
-share/swat/help/pdbedit.8.html
+@comment share/swat/help/pdbedit.8.html
 share/swat/help/printer_driver2.html
 share/swat/help/rpcclient.1.html
 share/swat/help/samba.7.html
@@ -289,22 +289,22 @@ share/swat/help/smbcacls.1.html
 share/swat/help/smbclient.1.html
 share/swat/help/smbcontrol.1.html
 share/swat/help/smbd.8.html
-share/swat/help/smbmnt.8.html
-share/swat/help/smbmount.8.html
+@comment share/swat/help/smbmnt.8.html
+@comment share/swat/help/smbmount.8.html
 share/swat/help/smbpasswd.5.html
 share/swat/help/smbpasswd.8.html
-share/swat/help/smbsh.1.html
+@comment share/swat/help/smbsh.1.html
 share/swat/help/smbspool.8.html
 share/swat/help/smbstatus.1.html
 share/swat/help/smbtar.1.html
-share/swat/help/smbumount.8.html
+@comment share/swat/help/smbumount.8.html
 share/swat/help/swat.8.html
 share/swat/help/testparm.1.html
 share/swat/help/testprns.1.html
-share/swat/help/wbinfo.1.html
+@comment share/swat/help/wbinfo.1.html
 share/swat/help/welcome.html
 share/swat/help/winbind.html
-share/swat/help/winbindd.8.html
+@comment share/swat/help/winbindd.8.html
 share/swat/images/globals.gif
 share/swat/images/home.gif
 share/swat/images/passwd.gif
