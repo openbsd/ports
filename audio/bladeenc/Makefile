@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.6 1999/10/28 15:24:54 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 1999/12/11 01:41:03 brad Exp $
 
-DISTNAME=	bladeenc-085-src-unstable
-PKGNAME=	bladeenc-0.85
+DISTNAME=	bladeenc-0.90-src-stable
+PKGNAME=	bladeenc-0.90
 CATEGORIES=	audio
-MASTER_SITES=	http://home.swipnet.se/~w-82625/source/
+MASTER_SITES=	http://bladeenc.mp3.no/source/ \
+		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
 MAINTAINER=	brad@openbsd.org
-HOMEPAGE=	http://bladeenc.cjb.net/
 
-post-extract:
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
+HOMEPAGE=	http://bladeenc.mp3.no/
 
-do-install:
-	@${MKDIR} ${PREFIX}/share/doc/bladeenc
-	${INSTALL_PROGRAM} ${WRKSRC}/bladeenc ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/bladeenc.html ${PREFIX}/share/doc/bladeenc
+GNU_CONFIGURE=	yes
+
+WRKSRC=	${WRKDIR}/${PKGNAME}.0
 
 .include <bsd.port.mk>
