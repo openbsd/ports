@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.4 2003/08/02 01:53:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2003/08/20 00:08:31 brad Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
-#
 
 COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-debug=		"Java2(TM) Standard Edition Dev Kit Debug Binaries v${V}"
@@ -42,10 +41,10 @@ NO_REGRESS=		yes
 ONLY_FOR_ARCHS= 	i386
 
 VMEM_WARNING=		Yes
-BUILD_DEPENDS=		:zip-2.*:archivers/zip \
-			:jdk-blackdown-1.2pre2:devel/jdk/1.2-blackdown
-RUN_DEPENDS=		:zip-2.*:archivers/zip
-LIB_DEPENDS=		Xm.2.1:openmotif-2.1.*:x11/openmotif
+BUILD_DEPENDS=		:zip-*:archivers/zip \
+			::devel/jdk/1.2-blackdown
+RUN_DEPENDS=		:zip-*:archivers/zip
+USE_MOTIF=		openmotif
 
 USE_GMAKE=		Yes
 MAKE_FILE=		GNUmakefile
@@ -104,8 +103,4 @@ do-install:
 	@cd ${PREFIX}/${FULLPKGNAME}/include-old && ln -s openbsd/* .
 #	@cd ${PREFIX}/${FULLPKGNAME}/jre/lib && ln -s ../../lib/tools.jar 
 	
-
-test:
-	@echo "${SHOW} = \"${${SHOW}}\""
-
 .include <bsd.port.mk>
