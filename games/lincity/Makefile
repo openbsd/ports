@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/08/07 18:31:33 wcobb Exp $
+# $OpenBSD: Makefile,v 1.5 2002/09/28 21:25:05 naddy Exp $
 
 COMMENT=		"Rich city simulation game for X"
 
@@ -19,8 +19,11 @@ MASTER_SITES=		ftp://ftp.demon.co.uk/pub/unix/linux/games/ \
 
 USE_X11=		Yes
 
-MAKE_FLAGS=		CXXFLAGS="${CXXFLAGS}"
+MAKE_FLAGS=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 ALL_TARGET=		xlincity
 NO_REGRESS=		Yes
+
+post-extract:
+	@cd ${WRKSRC}; ln -s lincity.man xlincity.man
 
 .include <bsd.port.mk>
