@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/24 22:11:36 espie Exp $	
+# $OpenBSD: Makefile,v 1.11 2000/03/30 15:24:29 kevlo Exp $	
 
 DISTNAME=	zh-c2t-1.0
 CATEGORIES=	chinese
@@ -6,21 +6,17 @@ NEED_VERSION=	1.191
 
 MAINTAINER=     kevlo@openbsd.org
 
-LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
-		ftp://ftp.ifcss.org/pub/software/x-win/cxterm/dict/gb/  \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/convert/  \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/x-win/cxterm/dict/gb/ \
-		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/  \
+MASTER_SITES=   ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/dict/gb/
 DISTFILES=	c2t.tar.gz TONEPY.tit
 EXTRACT_ONLY=	c2t.tar.gz
 
+FAKE=		Yes
 WRKDIST=	${WRKDIR}
 
 do-install:
