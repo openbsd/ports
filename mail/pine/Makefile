@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/01/18 18:51:36 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2001/01/21 19:19:59 jakob Exp $
 
 VERSION=	4.32
 DISTNAME=	pine${VERSION}
@@ -29,6 +29,15 @@ CATEGORIES=	editors
 PKGNAME=	pine+pico-${VERSION}
 CATEGORIES=	mail news editors
 LIB_DEPENDS=	c-client.2.1::mail/c-client
+.endif
+
+FLAVORS=        ldap
+FLAVOR?=
+
+.if ${FLAVOR:L:Mldap}
+LIB_DEPENDS+=	ldap.2::databases/openldap
+MAKE_FLAGS+=	LDAPLIBS="-lldap -llber" \
+		LDAPCFLAGS="-DENABLE_LDAP -I${PREFIX}/include"
 .endif
 
 post-patch:
