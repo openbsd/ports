@@ -1,0 +1,21 @@
+$OpenBSD: patch-t_Test-Setup_pl,v 1.1 2002/06/07 19:47:56 wilfried Exp $
+--- t/Test-Setup.pl.orig	Sat Jan 25 13:38:43 1997
++++ t/Test-Setup.pl	Fri Jun  7 13:46:09 2002
+@@ -19,7 +19,7 @@ $testdir = -d 't' ? 't' : '.';
+ 
+ sub talk { print STDERR @_; }
+ 
+-sub start_tests {
++sub start_tests($) {
+     my $count = shift;		# how many tests?
+     mkdir("$testdir/out",0755)  unless -d "$testdir/out";
+     print "1..$count\n";	# tell harness how many tests
+@@ -50,7 +50,7 @@ sub showDataRowOnce {
+ 
+ # run_test $num, \&sub;
+ 
+-sub run_test {
++sub run_test($&) {
+     my $num = shift;
+     my $sub = shift;
+ 
