@@ -1,0 +1,12 @@
+$OpenBSD: patch-FL_editor_h,v 1.1 2002/08/10 20:10:24 wilfried Exp $
+--- FL/editor.h.orig	Wed Apr 11 21:12:19 2001
++++ FL/editor.h	Fri Aug  9 16:38:48 2002
+@@ -8,7 +8,7 @@
+ #include <stdio.h>
+ #include <FL/vartypes.h>
+ #include <FL/wstrings.h>
+-
++#undef Status
+ 
+ //
+ //  Here are the commands that the editor engine understands.  Most

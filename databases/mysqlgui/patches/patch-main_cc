@@ -1,7 +1,42 @@
-$OpenBSD: patch-main_cc,v 1.1 2001/06/08 08:55:21 wilfried Exp $
+$OpenBSD: patch-main_cc,v 1.2 2002/08/10 20:10:24 wilfried Exp $
 --- main.cc.orig	Wed Apr 11 21:12:20 2001
-+++ main.cc	Fri Jun  8 10:29:21 2001
-@@ -461,7 +461,7 @@ void if_disconn (void) { 
++++ main.cc	Fri Aug  9 16:20:56 2002
+@@ -15,6 +15,7 @@
+ #define koliko 1
+ #endif
+ #include <sys/stat.h>
++#include <FL/filename.H>
+ extern "C" {
+ 	char *intern_filename(char *,const char *); extern char *home_dir;
+ 	char *fn_format(char *to,const char *name,const char *dsk,const char *form,int flag);
+@@ -134,7 +135,7 @@ static void recurse (string &s, Fl_Menu_
+ 			path += (string)de->d_name;
+ 			if ( !stat ( path.c_str(), &sb ) ) {
+ 				if (sb.st_mode & S_IRUSR){
+-					if ((filename_isdir(path.c_str()) && ( sb.st_mode & S_IXUSR)) || (!strcmp(filename_ext(path.c_str()),".sql")))
++					if ((fl_filename_isdir(path.c_str()) && ( sb.st_mode & S_IXUSR)) || (!strcmp(fl_filename_ext(path.c_str()),".sql")))
+ 						total_menu_length++; 
+ 				}
+ 			}
+@@ -148,7 +149,7 @@ static void recurse (string &s, Fl_Menu_
+ 			if (((string)de->d_name == (string)".") || ((string)de->d_name == (string)"..")) continue;
+ 			path+=de->d_name; 
+ 			if ( !stat ( path.c_str(), &sb ) ) {
+-				if (filename_isdir(path.c_str()) && ( sb.st_mode & S_IXUSR)) {
++				if (fl_filename_isdir(path.c_str()) && ( sb.st_mode & S_IXUSR)) {
+ 					Fl_Menu_Item *xx=(Fl_Menu_Item *)0;
+ 					recurse(path,&xx);
+ 					stringovi.insert(stringovi.end(),path);
+@@ -156,7 +157,7 @@ static void recurse (string &s, Fl_Menu_
+ 						xx = new Fl_Menu_Item[2]; memset (xx,0,sizeof(Fl_Menu_Item)*2); xx[0].text = "empty"; xx[1].text=NULL;
+ 					}
+ 					stringovi.insert(stringovi.end(),(string) de->d_name); (*ord_menu)[i].text =stringovi[stringovi.size()-1].c_str(); (*ord_menu)[i].flags =  FL_MENU_DIVIDER | FL_SUBMENU_POINTER; (*ord_menu)[i].user_data_=(void *)xx; i++;
+-				}	else if ((sb.st_mode & S_IRUSR) && (!strcmp(filename_ext(path.c_str()),".sql"))) {
++				}	else if ((sb.st_mode & S_IRUSR) && (!strcmp(fl_filename_ext(path.c_str()),".sql"))) {
+ #ifdef _WIN32
+         FILE *fd = fopen(path.c_str(),"r");
+         if (fd) {
+@@ -461,7 +462,7 @@ void if_disconn (void) { 
  }
  
  static void if_conn (void) {
@@ -10,7 +45,7 @@ $OpenBSD: patch-main_cc,v 1.1 2001/06/08 08:55:21 wilfried Exp $
    try {
  		Query query = con->query(); if (ldb) {ddd=(string)ldb; ldb=(char*)ddd.c_str();}
      query << "show databases";
-@@ -526,7 +526,7 @@ static void if_conn (void) {
+@@ -526,7 +527,7 @@ static void if_conn (void) {
  			tables.insert(tables.end(),xx);
  		}
  		qSortHelp (0, (size_t) tables.size(), Fcmp, Exchange); 	
@@ -19,3 +54,23 @@ $OpenBSD: patch-main_cc,v 1.1 2001/06/08 08:55:21 wilfried Exp $
  		b_connect->set();    down_group->activate();  query_browser->activate();
  		if (databases.size()) choice_db->activate();  choice_db->redraw(); 
  		; if (query_menus) hier->activate();
+@@ -722,8 +723,8 @@ void insert_command (Fl_Widget  *w, void
+ void save_query(Fl_Button *ssw,void *ssp) {
+ 	char Ime[256]; Ime[0]=0;
+ 	int i = fl_file_dialog("Save Query",Ime,Fl_File_Dialog::SAVEMODE | Fl_File_Dialog::MESSAGES,0,0); if (!i) { s_fl_message("You gave up!"); return;} Trim(Ime);
+-	if (!Ime[0] || filename_isdir(Ime)) {s_fl_alert("You have to supply file name !!!!!!!\n"); return;}
+-	if (strcmp(filename_ext(Ime),".sql")) filename_setext(Ime,".sql");
++	if (!Ime[0] || fl_filename_isdir(Ime)) {s_fl_alert("You have to supply file name !!!!!!!\n"); return;}
++	if (strcmp(fl_filename_ext(Ime),".sql")) fl_filename_setext(Ime,".sql");
+ 	string dir(Ime), query(sql_command->value()); strip(query); strip(dir);
+ 	if (!query.length()) {s_fl_alert("We do not save empty queries !!!!!!!\n"); return;}
+ #ifdef _WIN32
+@@ -921,7 +922,7 @@ void get_results(Fl_Button *, void *) { 
+ 		case TO_SCREEN: if (commands29->value()) editing_stuff(real_sql.c_str()); else do_sql(); s_fl_message(con->info().c_str()); s_fl_message("\n"); break;
+ 		case TO_FILE:  {i = fl_file_dialog("Save Results",file_name,Fl_File_Dialog::APPEND | Fl_File_Dialog::SAVEMODE | Fl_File_Dialog::MESSAGES,0,0);  if (!file_name[0] || !i)  break; 
+ 			how_to_open=(i>1000) ? ios::app : ios::trunc;
+-			if (strcmp(filename_ext(file_name),".res")) filename_setext(file_name,".res");  
++			if (strcmp(fl_filename_ext(file_name),".res")) fl_filename_setext(file_name,".res");  
+       Fl_Cursor cursor = Fl_Cursor(FL_CURSOR_WAIT); fl_cursor(cursor); do_save_file(real_sql); cursor = Fl_Cursor(FL_CURSOR_DEFAULT); fl_cursor(cursor);
+ 			s_fl_message(con->info().c_str()); } break;
+ 		case TO_COUNT: s_fl_message("Number of rows = %s",counts.c_str()); break;

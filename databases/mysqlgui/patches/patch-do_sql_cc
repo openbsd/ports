@@ -1,0 +1,20 @@
+$OpenBSD: patch-do_sql_cc,v 1.1 2002/08/10 20:10:24 wilfried Exp $
+--- do_sql.cc.orig	Wed Apr 11 21:12:19 2001
++++ do_sql.cc	Fri Aug  9 16:21:46 2002
+@@ -5,6 +5,7 @@
+ #include <FL/Fl_Pixmap.H>
+ #include <FL/Fl_Check_Button.H>
+ #include <FL/Fl_Round_Button.H>
++#include <FL/filename.H>
+ #include "bebac.h"
+ #include <sqlplus.hh>
+ #include <ctype.h>
+@@ -349,7 +350,7 @@ public:
+ 		Sinisa_je_blesav *s = (Sinisa_je_blesav *)p;
+ 		int i = fl_file_dialog("Save Results",file_name,Fl_File_Dialog::APPEND | Fl_File_Dialog::SAVEMODE | Fl_File_Dialog::MESSAGES,0,0); how_to_open=(i>1000) ? ios::app : ios::trunc; 
+ 		if (!file_name[0] || !i) return; 
+-		if (strcmp(filename_ext(file_name),".res")) filename_setext(file_name,".res");
++		if (strcmp(fl_filename_ext(file_name),".res")) fl_filename_setext(file_name,".res");
+ 		do_save_file(s->sql); 
+ 	}
+ 
