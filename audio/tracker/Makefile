@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/04/01 06:20:03 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/04/16 03:42:05 brad Exp $
 
 DISTNAME=       tracker-5.3
 CATEGORIES=     audio
@@ -14,7 +14,7 @@ PATCH_STRIP=-p2
 MAKE_FLAGS=     MACHINE=openbsd CC=$(CC) INSTALL="$(INSTALL)" \
 		INST_BIN_OPT="-c -s -m $(BINMODE) -o $(BINOWN) -g $(BINGRP)" \
 		INST_MAN_OPT="-c -m 644 -o $(BINOWN) -g $(BINGRP)" \
-		COMPRESSION_FILE=$(PREFIX)/etc/compression_methods \
+		COMPRESSION_FILE=/etc/compression_methods \
 		-f
 
 post-extract:
@@ -26,8 +26,10 @@ post-install:
 	makeinfo --no-split tracker.texinfo -o tracker.info && \
 	$(INSTALL_MAN) tracker.info ${PREFIX}/info && \
 	rm -f tracker.info *.orig
-	-${MKDIR} ${PREFIX}/share/doc/tracker
+	${MKDIR} ${PREFIX}/share/doc/tracker
 	cp -R ${WRKSRC}/Docs/* ${PREFIX}/share/doc/tracker
+	${MKDIR} ${PREFIX}/lib/tracker
+	cp ${WRKSRC}/Lib/compression_methods ${PREFIX}/lib/tracker/compression_methods.sample
 
 # there is a small test module included. This target tests that
 # - tracker correctly handles compressed files (only after install),

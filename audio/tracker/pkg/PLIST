@@ -1,6 +1,7 @@
 bin/tracker
 bin/randomize
-etc/compression_methods
+lib/tracker/compression_methods.sample
+@exec if [ ! -f /etc/compression_methods ]; then cp %D/%F /etc/compression_methods; fi
 info/tracker.info
 share/doc/tracker/Html/Aix.html
 share/doc/tracker/Html/Introduction.html
