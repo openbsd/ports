@@ -1,5 +1,6 @@
-etc/conserver.cf.eg
-etc/rc.d/conserver.sh
+share/examples/conserver/conserver.cf.eg
+share/examples/conserver/README.OpenBSD
+@dirrm share/examples/conserver
 man/man5/conserver.cf.5
 man/man8/conserver.8
 man/man8/console.8

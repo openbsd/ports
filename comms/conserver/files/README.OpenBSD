@@ -1,0 +1,22 @@
+Using conserver in an OpenBSD environment:
+
+1. Copy /usr/local/share/examples/conserver/conserver.cf.eg to
+   /etc/conserver.cf and customize it as necessary.
+
+2. Edit /etc/rc.conf file:
+   ...
+   conserver=YES
+
+3. Edit /etc/rc.local file:
+   echo -n 'starting local daemons:'
+   ...
+   if [ -f /etc/conserver.cf ]; then
+       if [ X"${conserver}" = X"YES" -a -x /usr/local/sbin/conserver ]; then
+           echo -n ' conserver';    /usr/local/sbin/conserver -d -n
+       fi
+   fi
+   ...
+   echo '.'
+
+4. See the man pages for conserver, conserver.cf, and console as well as
+   the files in /usr/local/share/examples/conserver for more information.

@@ -1,5 +1,5 @@
---- conserver.cf/Makefile.orig	Sat Nov 22 22:25:19 1997
-+++ conserver.cf/Makefile	Sat Nov 22 22:29:15 1997
+--- ./conserver.cf/Makefile.orig	Mon Jan  4 19:55:41 1999
++++ ./conserver.cf/Makefile	Mon Jan  4 20:03:10 1999
 @@ -4,18 +4,19 @@
  #
  
@@ -8,7 +8,7 @@
 -LIB=	${DESTDIR}/usr/local/lib
 -DOC=	${DESTDIR}/usr/man
 +PROG=	conserver.cf.eg
-+LIB=	${DESTDIR}/usr/local/etc
++LIB=	${DESTDIR}/usr/local/share/examples/conserver
 +DOC=	${DESTDIR}/usr/local/man/man5
  
  SRCs=	conserver.cf
@@ -34,3 +34,12 @@
  
  lint: FRC
  
+@@ -47,7 +49,7 @@
+ tags: FRC
+ 
+ / ${LIB} ${LIB}:
+-	install -dr $@
++	install -d $@
+ 
+ ${SOURCE}:
+ 	co -q $@

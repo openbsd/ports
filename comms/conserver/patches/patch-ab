@@ -1,44 +1,56 @@
---- ./conserver/cons.h	Sat Nov 22 20:11:48 1997
-+++ ./conserver/cons.h	Sat Aug 23 17:40:11 1997
-@@ -54,5 +54,5 @@
+--- ./conserver/cons.h.orig	Mon Jan  4 19:55:36 1999
++++ ./conserver/cons.h	Mon Jan  4 20:05:26 1999
+@@ -53,7 +53,7 @@
+ #endif
  #endif
  #if !defined(HAVE_UWAIT)
 -#define HAVE_UWAIT	!(defined(IBMR2)||defined(SUN5)||defined(HPUX8)||defined(HPUX9)||defined(PTX)||defined(IRIX5))
 +#define HAVE_UWAIT	!(defined(IBMR2)||defined(SUN5)||defined(HPUX8)||defined(HPUX9)||defined(PTX)||defined(IRIX5)||defined(OPENBSD))
  #endif
  
-@@ -86,5 +86,5 @@
+ #if !defined(HAVE_WAIT3)
+@@ -85,7 +85,7 @@
+ /* Location of the configuration file
   */
  #if !defined(CONFIG)
 -#define CONFIG		"/usr/local/lib/conserver.cf"
-+#define CONFIG		"/usr/local/etc/conserver.cf"
++#define CONFIG		"/etc/conserver.cf"
  #endif
  
-@@ -171,5 +171,5 @@
+ 
+@@ -170,7 +170,7 @@
+ #endif /* virtual (process on a pseudo-tty) console support */
  
  #if !defined(HAVE_SETSID)
 -#define HAVE_SETSID	(defined(IBMR2)||defined(SUN5)||defined(HPUX7)||defined(HPUX8)||defined(HPUX9)||defined(PTX)||defined(IRIX5))
 +#define HAVE_SETSID	(defined(IBMR2)||defined(SUN5)||defined(HPUX7)||defined(HPUX8)||defined(HPUX9)||defined(PTX)||defined(IRIX5)||defined(OPENBSD))
  #endif
  
-@@ -193,5 +193,5 @@
+ /* should we use flock to keep multiple conservers from hurting each other?
+@@ -192,7 +192,7 @@
+ #define USE_TERMIO	(defined(ETA10)||defined(V386))
  #endif
  #if !defined(USE_TERMIOS)
 -#define USE_TERMIOS	(defined(HPUX7)||defined(HPUX8)||defined(HPUX9)||defined(SUN5)||defined(PTX)||defined(IRIX5))
 +#define USE_TERMIOS	(defined(HPUX7)||defined(HPUX8)||defined(HPUX9)||defined(SUN5)||defined(PTX)||defined(IRIX5)||defined(OPENBSD))
  #endif
  #if !defined(USE_TCBREAK)
-@@ -258,5 +258,5 @@
+ #define USE_TCBREAK	(defined(SUN4)||defined(PTX))
+@@ -257,7 +257,7 @@
+ 
  /* which type signal handlers return on this machine
   */
 -#if defined(sun) || defined(NEXT2) || defined(SUN5) || defined(PTX) || defined(IRIX5)
 +#if defined(sun) || defined(NEXT2) || defined(SUN5) || defined(PTX) || defined(IRIX5) || defined(OPENBSD)
  #define SIGRETS	void
  #else
-@@ -273,5 +273,5 @@
+ #define SIGRETS	int
+@@ -272,7 +272,7 @@
+ /* does this system have the ANSI strerror() function?
   */
  #if !defined(HAVE_STRERROR)
 -#define HAVE_STRERROR	(defined(IBMR2)||defined(ETA10)||defined(V386)||defined(SUN5)||defined(NEXT2)||defined(HPUX8)||defined(HPUX9)||defined(PTX)||defined(IRIX5))
 +#define HAVE_STRERROR	(defined(IBMR2)||defined(ETA10)||defined(V386)||defined(SUN5)||defined(NEXT2)||defined(HPUX8)||defined(HPUX9)||defined(PTX)||defined(IRIX5)||defined(OPENBSD))
  #endif
  #if ! HAVE_STRERROR
+ extern int errno;

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/07 05:24:18 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/01/05 16:57:17 jason Exp $
 #
 
 DISTNAME=	conserver-5.21-Beta
@@ -36,13 +36,7 @@ post-extract:
 	cp ${FILESDIR}/Makefile ${WRKSRC}
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/rc.d/conserver.sh ]; then \
-	  echo "Installing ${PREFIX}/etc/rc.d/conserver.sh startup file."; \
-	  echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/conserver.sh; \
-	  echo "if [ -x /usr/local/sbin/conserver -a -f /usr/local/etc/conserver.cf ]; then" >> ${PREFIX}/etc/rc.d/conserver.sh; \
-	  echo "	/usr/local/sbin/conserver -d -n ; echo -n ' conserver'" >> ${PREFIX}/etc/rc.d/conserver.sh; \
-	  echo "fi" >> ${PREFIX}/etc/rc.d/conserver.sh; \
-	  chmod 751 ${PREFIX}/etc/rc.d/conserver.sh; \
-	fi
+	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/examples/conserver
+	more ${FILESDIR}/README.OpenBSD
 
 .include <bsd.port.mk>
