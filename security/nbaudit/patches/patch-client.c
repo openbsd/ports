@@ -1,5 +1,4 @@
-# patch from palante@subterrain.net
-
+$OpenBSD: patch-client.c,v 1.2 2001/10/08 23:34:42 naddy Exp $
 --- client.c.orig	Tue Jul 11 16:01:35 2000
 +++ client.c	Tue Jul 11 16:03:20 2000
 @@ -3612,8 +3612,9 @@ phase_3:				/* smb session setup/auth */

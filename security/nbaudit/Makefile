@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 03:45:58 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/08 23:34:41 naddy Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/02/14 04:10:30 obrien Exp $
 
 COMMENT=	"NetBIOS Auditing Tool / Security Kit"
@@ -8,8 +8,6 @@ PKGNAME=	nbaudit-1.0
 CATEGORIES=	security net
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.auscert.org.au/pub/coast/mirrors/ftp.secnet.com/tools/nat10/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
