@@ -1,15 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/02/21 02:32:20 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/09 00:21:28 espie Exp $
 @pkgcfl mad-*
 bin/abxtest
 bin/madplay
-man/man1/abxtest.1
-man/man1/madplay.1
+@man man/man1/abxtest.1
+@man man/man1/madplay.1
 share/locale/en/LC_MESSAGES/madplay.mo
 share/locale/es/LC_MESSAGES/madplay.mo
 share/locale/fr/LC_MESSAGES/madplay.mo
 share/locale/hr/LC_MESSAGES/madplay.mo
 share/locale/no/LC_MESSAGES/madplay.mo
-@dirrm share/locale/hr/LC_MESSAGES
-@dirrm share/locale/hr
-@dirrm share/locale/en/LC_MESSAGES
-@dirrm share/locale/en

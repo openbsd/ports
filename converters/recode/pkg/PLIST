@@ -1,20 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/16 16:42:31 naddy Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/recode.info
+@comment $OpenBSD: PLIST,v 1.5 2004/08/09 00:21:28 espie Exp $
 bin/recode
 include/recode.h
 include/recodext.h
-info/recode.info
-info/recode.info-1
-info/recode.info-2
-info/recode.info-3
-info/recode.info-4
-info/recode.info-5
-info/recode.info-6
-info/recode.info-7
+@info info/recode.info
 @comment lib/charset.alias
 lib/librecode.a
 lib/librecode.la
-man/man1/recode.1
+@man man/man1/recode.1
 share/locale/da/LC_MESSAGES/recode.mo
 share/locale/de/LC_MESSAGES/recode.mo
 share/locale/el/LC_MESSAGES/recode.mo
@@ -28,29 +20,3 @@ share/locale/pt/LC_MESSAGES/recode.mo
 share/locale/sl/LC_MESSAGES/recode.mo
 share/locale/sv/LC_MESSAGES/recode.mo
 %%SHARED%%
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/gl/LC_MESSAGES
-@dirrm share/locale/gl
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale
-@exec install-info --info-dir=%D/info %D/info/recode.info

@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2004/06/28 06:26:14 jcs Exp $
+# $OpenBSD: Makefile,v 1.19 2004/08/09 00:21:28 espie Exp $
 
-DISTNAME=	freetds-0.62.4
+V=		0.62.4
+DISTNAME=	freetds-$V
 CATEGORIES=	databases
 
 # GPL
@@ -23,6 +24,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-odbc
 MAKE_ENV=	RM=rm
 MODULES=	gettext
+DOC=		share/doc/freetds-$V
+SUBST_VARS=	DOC V
 
 post-install:
 	@sed -e "s:@sysconfdir@:${SYSCONFDIR}:g" ${WRKSRC}/freetds.conf > \

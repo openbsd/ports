@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/16 17:34:06 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/08/09 00:21:29 espie Exp $
 bin/c_incl
 bin/cook
 bin/cook_bom
@@ -8,25 +8,38 @@ bin/cooktime
 bin/find_libs
 bin/make2cook
 bin/roffpp
-man/man1/c_incl.1
-man/man1/cook.1
-man/man1/cook_bom.1
-man/man1/cook_lic.1
-man/man1/cook_rsh.1
-man/man1/cookfp.1
-man/man1/cooktime.1
-man/man1/find_libs.1
-man/man1/make2cook.1
-man/man1/roffpp.1
+@man man/man1/c_incl.1
+@man man/man1/cook.1
+@man man/man1/cook_bom.1
+@man man/man1/cook_lic.1
+@man man/man1/cook_rsh.1
+@man man/man1/cookfp.1
+@man man/man1/cooktime.1
+@man man/man1/find_libs.1
+@man man/man1/make2cook.1
+@man man/man1/roffpp.1
+share/cook/
 share/cook/as
 share/cook/bison
 share/cook/c
+share/cook/en/
 share/cook/en/building.dvi
 share/cook/en/building.ps
 share/cook/en/building.txt
 share/cook/en/lsm.dvi
 share/cook/en/lsm.ps
 share/cook/en/lsm.txt
+share/cook/en/man1/
+share/cook/en/man1/c_incl.1
+share/cook/en/man1/cook.1
+share/cook/en/man1/cook_bom.1
+share/cook/en/man1/cook_lic.1
+share/cook/en/man1/cook_rsh.1
+share/cook/en/man1/cookfp.1
+share/cook/en/man1/cooktime.1
+share/cook/en/man1/find_libs.1
+share/cook/en/man1/make2cook.1
+share/cook/en/man1/roffpp.1
 share/cook/en/readme.dvi
 share/cook/en/readme.ps
 share/cook/en/readme.txt
@@ -67,8 +80,3 @@ share/locale/en/LC_MESSAGES/find_libs.mo
 share/locale/en/LC_MESSAGES/fstrcmp.mo
 share/locale/en/LC_MESSAGES/make2cook.mo
 share/locale/en/LC_MESSAGES/roffpp.mo
-@dirrm share/locale/en/LC_MESSAGES
-@dirrm share/locale/en
-@dirrm share/locale
-@dirrm share/cook/en
-@dirrm share/cook

@@ -1,16 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/03/01 00:04:08 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/08/09 00:21:28 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Sybase/
 ${P5ARCH}/Sybase/BCP.pm
 ${P5ARCH}/Sybase/BLK.pm
 ${P5ARCH}/Sybase/CTlib.pm
 ${P5ARCH}/Sybase/DBlib.pm
 ${P5ARCH}/Sybase/Sybperl.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Sybase/
 @comment ${P5ARCH}/auto/Sybase/.packlist
+${P5ARCH}/auto/Sybase/CTlib/
 ${P5ARCH}/auto/Sybase/CTlib/CTlib.bs
 ${P5ARCH}/auto/Sybase/CTlib/CTlib.so
 ${P5ARCH}/auto/Sybase/CTlib/autosplit.ix
+${P5ARCH}/auto/Sybase/DBlib/
 ${P5ARCH}/auto/Sybase/DBlib/DBlib.bs
 ${P5ARCH}/auto/Sybase/DBlib/DBlib.so
 ${P5ARCH}/auto/Sybase/DBlib/autosplit.ix
+${P5ARCH}/auto/Sybase/Sybperl/
 ${P5ARCH}/auto/Sybase/Sybperl/DBCMDROW.al
 ${P5ARCH}/auto/Sybase/Sybperl/DBCOUNT.al
 ${P5ARCH}/auto/Sybase/Sybperl/DBCURCMD.al
@@ -81,15 +88,9 @@ ${P5ARCH}/ctutil.pl
 ${P5ARCH}/sql.pl
 ${P5ARCH}/sybperl.pl
 ${P5ARCH}/sybutil.pl
-man/man3p/Sybase::BCP.3p
-man/man3p/Sybase::BLK.3p
-man/man3p/Sybase::CTlib.3p
-man/man3p/Sybase::DBlib.3p
-man/man3p/Sybase::Sybperl.3p
+@man man/man3p/Sybase::BCP.3p
+@man man/man3p/Sybase::BLK.3p
+@man man/man3p/Sybase::CTlib.3p
+@man man/man3p/Sybase::DBlib.3p
+@man man/man3p/Sybase::Sybperl.3p
 man/man3p/sybperl.3
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Sybase/Sybperl
-@dirrm ${P5ARCH}/auto/Sybase/DBlib
-@dirrm ${P5ARCH}/auto/Sybase/CTlib
-@dirrm ${P5ARCH}/auto/Sybase
-@dirrm ${P5ARCH}/Sybase
