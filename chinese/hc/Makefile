@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/01/24 01:43:57 kevlo Exp $	
+# $OpenBSD: Makefile,v 1.2 2002/03/25 23:26:02 espie Exp $	
 
 COMMENT=	"convert between GB and BIG-5 codes"
 
@@ -8,9 +8,10 @@ NEED_VERSION=	1.504
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+# Fairly restrictive licence
+PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/
