@@ -1,0 +1,24 @@
+SRCS=	skat.c bitmaps.c xio.c xdial.c text.c
+OBJS=	skat.o bitmaps.o xio.o xdial.o text.o
+
+XCOMM CCOPTIONS=	-DDEFAULT_LANGUAGE=\"german\"
+CCOPTIONS=	-DDEFAULT_LANGUAGE=\"english\"
+
+LDLIBS=		${XLIB}
+
+ComplexProgramTarget(xskat)
+
+xio.o: xio.h skat.h bitmaps.h text.h
+
+bitmaps.h: bwcards.xbm colcards.xbm icon.xbm
+	@echo Generating $@;\
+	(echo "/* Generated file. Don't edit. */";\
+	echo "extern unsigned char colcards_pixs[];";\
+	for bitmap in bwcards colcards icon;\
+	do\
+		egrep width"|"height < $$bitmap.xbm;\
+		echo "extern unsigned char $${bitmap}_bits[];";\
+	done) > $@
+
+xskat.man:	xskat.6x
+	$(LN) $> $@
