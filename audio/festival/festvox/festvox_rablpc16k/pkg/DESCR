@@ -1,0 +1,5 @@
+festvox_rablpc16k is a British English RP male speaker (RAB) using
+residual excited LPC diphone database.
+
+Due to a dependency on festlex_OALD, usage is restricted to
+non-commercial entities.

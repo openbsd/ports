@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/11 06:21:51 jolan Exp $
+lib/festival/voices/english/aec_diphone/festvox/aec_diphone.scm
+lib/festival/voices/english/aec_diphone/festvox/aecdiph.msec
+lib/festival/voices/english/aec_diphone/festvox/aecgain.dat
+lib/festival/voices/english/aec_diphone/group/aec_di_resLPC.group
+@dirrm lib/festival/voices/english/aec_diphone/group
+@dirrm lib/festival/voices/english/aec_diphone/festvox
+@dirrm lib/festival/voices/english/aec_diphone
+@dirrm lib/festival/voices/english
+@dirrm lib/festival/voices

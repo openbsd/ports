@@ -1,0 +1,6 @@
+festvox_don is a British English RP male speaker using spike excited
+LPC diphone database, small database which gives poorer quality but
+runs fast.
+
+Due to a dependency on festlex_OALD, usage is restricted to
+non-commercial entities.

@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/11 06:21:51 jolan Exp $
+lib/festival/voices/english/kal_diphone/COPYING
+lib/festival/voices/english/kal_diphone/festvox/kal_diphone.scm
+lib/festival/voices/english/kal_diphone/festvox/kaldurtreeZ.scm
+lib/festival/voices/english/kal_diphone/group/kallpc16k.group
+@dirrm lib/festival/voices/english/kal_diphone/group
+@dirrm lib/festival/voices/english/kal_diphone/festvox
+@dirrm lib/festival/voices/english/kal_diphone
+@dirrm lib/festival/voices/english
+@dirrm lib/festival/voices

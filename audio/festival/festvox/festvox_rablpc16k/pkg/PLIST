@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/11 06:21:51 jolan Exp $
+lib/festival/voices/english/rab_diphone/COPYING
+lib/festival/voices/english/rab_diphone/festvox/rab_diphone.scm
+lib/festival/voices/english/rab_diphone/group/rablpc16k.group
+@dirrm lib/festival/voices/english/rab_diphone/group
+@dirrm lib/festival/voices/english/rab_diphone/festvox
+@dirrm lib/festival/voices/english/rab_diphone
+@dirrm lib/festival/voices/english
+@dirrm lib/festival/voices
