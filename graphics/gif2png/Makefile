@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/07/15 07:06:18 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2000/07/23 22:21:38 brad Exp $
 
 DISTNAME=	gif2png-2.3.2
 CATEGORIES=	graphics
@@ -29,6 +29,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gif2png
 	cd ${WRKSRC}; ${INSTALL_DATA} COPYING README \
 	 ${PREFIX}/share/doc/gif2png
+	${INSTALL_SCRIPT} ${WRKSRC}/web2png ${PREFIX}/libexec/web2png.bin
 	${INSTALL_SCRIPT} ${WRKDIR}/web2png ${PREFIX}/bin
 
 .include <bsd.port.mk>
