@@ -1,0 +1,29 @@
+graphviz is a set of graph drawing tools for Unix or MS-Windows
+(win32), including a web service interface (webdot).  Graph
+drawing addresses the problem of visualizing structural information
+by constructing geometric representations of abstract graphs and
+networks. 
+
+The goal of graphviz has been twofold: 
+
+    to find efficient algorithms for making very readable
+    drawings of graphs up to several hundreds of nodes,
+    approaching the quality of manual layouts (made
+    with CAD tools).  The algorithms should scale even
+    further, as layout of large graphs can also offer
+    a gestalt view of complex systems.
+
+    to create convenient graph drawing systems and web
+    services. This means defining useful interfaces and
+    features to support applications.
+
+The package includes 
+
+     dot - makes hierarchical layouts of directed graphs 
+     neato - makes "spring" model layouts of undirected graphs 
+     dotty - a customizable interface written in LEFTY 
+     tcldot - a customizable graphical interface written in tcl7.6 
+     libgraph - the base library for graph tools 
+
+More information on ${HOMEPAGE}
+Refer to ${HOMEPAGE}/refs.html for documentation.
