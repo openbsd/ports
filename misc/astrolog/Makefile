@@ -7,12 +7,14 @@
 # Date created:         17 Dec 1997
 # Whom:                 joey@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/17 23:25:47 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/04/12 03:17:09 marc Exp $
 #
 
 DISTNAME=       ast53unx
 PKGNAME=        astrolog-5.30
 CATEGORIES=     misc
+NO_CDROM=	"NOFEE:	Can not sell"
+
 MASTER_SITES=   http://www.astrolog.org/ftp/ephem/ \
 		http://www.astrolog.org/ftp/ \
 		ftp://ftp.kiarchive.ru/pub/unix/magick/astrology/astrolog/
