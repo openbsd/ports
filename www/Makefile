@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2004/12/09 08:18:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.163 2004/12/21 15:22:54 kurt Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -33,7 +33,6 @@
      SUBDIR += igal
      SUBDIR += jakarta-tomcat
      SUBDIR += jesred
-     SUBDIR += jserv
      SUBDIR += junkbuster
      SUBDIR += konqueror-embedded
      SUBDIR += kronolith
