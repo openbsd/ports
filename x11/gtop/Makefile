@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/14 14:41:30 todd Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/19 14:54:41 naddy Exp $
 
-COMMENT=		"the GNOME version of top"
+COMMENT=		"GNOME version of top"
 V=			1.0.13
 DISTNAME=		gtop-${V}
 CATEGORIES=		x11
