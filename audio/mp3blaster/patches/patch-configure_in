@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2002/05/23 15:36:06 naddy Exp $
+--- configure.in.orig	Thu May 23 14:15:01 2002
++++ configure.in	Thu May 23 14:15:16 2002
+@@ -11,6 +11,8 @@ AC_PROG_LN_S
+ AC_PROG_INSTALL
+ AC_PROG_RANLIB
+ 
++AC_LANG_CPLUSPLUS
++
+ dnl Checks for typedefs, structures, and compiler characteristics.
+ AC_C_CONST
+ AC_C_BIGENDIAN

@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/23 15:36:06 naddy Exp $
+bin/mp3blaster
+bin/mp3tag
+bin/nmixer
+bin/splay
+man/man1/mp3blaster.1
+man/man1/nmixer.1
+man/man1/splay.1
+share/mp3blaster/README
+share/mp3blaster/chargen.c
+share/mp3blaster/commands.txt
+share/mp3blaster/koi8-r
+share/mp3blaster/makefile
+share/mp3blaster/maketbl.c
+share/mp3blaster/sample.mp3blasterrc
+share/mp3blaster/win1251
+@dirrm share/mp3blaster

@@ -1,0 +1,7 @@
+Mp3blaster is an audio player with a user-friendly interface that will run
+on any text console. The interface is built using ncurses, and features all
+common audio player controls. The playlist editor is very flexible and allows
+nested groups (albums). Supported audio media: mp3, ogg vorbis, wav, sid and
+streaming mp3 over HTTP.
+
+WWW: ${HOMEPAGE}
