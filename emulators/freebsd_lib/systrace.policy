@@ -1,0 +1,24 @@
+Policy: ${TRUEPREFIX}/sbin/ldconfig, Emulation: freebsd
+	freebsd-__sysctl: permit
+	freebsd-break: permit
+	freebsd-close: permit
+	freebsd-exit: permit
+	freebsd-fchmod: permit
+	freebsd-fcntl: permit
+	freebsd-fstat: permit
+	freebsd-fstatfs: permit
+	freebsd-getdirentries: permit
+	freebsd-getpid: permit
+	freebsd-gettimeofday: permit
+	freebsd-kill: permit
+	freebsd-lseek: permit
+	freebsd-mmap: permit
+	freebsd-ogetdtablesize: permit
+	freebsd-open: permit
+	freebsd-readlink: permit
+	freebsd-rename: permit
+	freebsd-sigprocmask40: permit
+	freebsd-stat: permit
+	freebsd-umask: permit
+	freebsd-unlink: permit
+	freebsd-write: permit

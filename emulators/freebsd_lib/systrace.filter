@@ -1,2 +1,0 @@
-# this is only used after chroot(8)'ing into the fake area
-	native-fswrite: filename match "/usr/local/emul/freebsd/var/run" then permit
