@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.33 2002/11/26 14:38:46 sturm Exp $
+# $OpenBSD: OpenBSD-markers,v 1.34 2003/04/16 21:19:52 david Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -27.48		153.20		"Leonard"	# David
@@ -7,6 +7,7 @@
 32.857736	-117.211507	"Grimes"	# Mark
 33.700077	-117.887943	"Peel"		# Jason
 35.67  		139.75 		"Itojun"	# Jun-ichiro
+36.134		-86.70		"Krause"	# David
 37.515049	-122.339528	"Hyman"		# Marco S.
 38.7341		-9.1446		"Sequeira"	# Margarida
 38.9693		-77.3863	"Wright"	# Jason L.
