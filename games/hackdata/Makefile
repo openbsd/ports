@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/09 10:50:46 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/08/17 02:38:44 pvalchev Exp $
 
 COMMENT=	'common data for the nethack/slash ports'
 DISTNAME=	nethack-3.3.1
@@ -22,15 +22,15 @@ PERMIT_DISTFILES_FTP=	Yes
 EXTRACT_ONLY=
 
 post-extract:
-	@cd ${WRKDIR} && tar zxqf ${FULLDISTDIR}/${DISTFILES} \
+	@cd ${WRKDIR} && ${TAR} zxqf ${FULLDISTDIR}/${DISTFILES} \
 	nethack-3.3.1/win/X11/ibm.bdf \
 	nethack-3.3.1/win/X11/nh10.bdf \
 	nethack-3.3.1/doc/Guidebook.txt
 
 do-build:
 	cd ${WRKSRC}/win/X11 && \
-	/usr/X11R6/bin/bdftopcf ibm.bdf | /usr/bin/gzip > ibm.pcf.gz && \
-	/usr/X11R6/bin/bdftopcf nh10.bdf | /usr/bin/gzip > nh10.pcf.gz
+	${X11BASE}/bin/bdftopcf ibm.bdf | /usr/bin/gzip > ibm.pcf.gz && \
+	${X11BASE}/bin/bdftopcf nh10.bdf | /usr/bin/gzip > nh10.pcf.gz
 
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nethack
