@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/06/01 15:38:00 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/06/02 01:27:26 brad Exp $
 
 DISTNAME=	kdelibs-1.1.1
 CATEGORIES=	x11
@@ -9,6 +9,7 @@ NEED_VERSION=	1.92
 
 MAINTAINER=	yanick@fries.net
 
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	qt.1.44:${PORTSDIR}/x11/qt \
 		gif.4.1:${PORTSDIR}/graphics/giflib \
 		jpeg.62:${PORTSDIR}/graphics/jpeg \
@@ -22,13 +23,9 @@ PATCH_LIST=	patch-* sup-sparc
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-SEPARATE_BUILD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		QT_MOC="/usr/X11R6/bin/moc"
 
 pre-build:      
 	@echo ""
