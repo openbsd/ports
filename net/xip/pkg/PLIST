@@ -1,8 +1,6 @@
 bin/xip
 man/man1/xip.1
-lib/X11/app-defaults/Xip.ad
-lib/xip/pkb/dummy.pkb
-@dirrm lib/xip/pkb
+lib/X11/app-defaults/Xip
 lib/xip/pkc/arp.pkc
 lib/xip/pkc/arp_0.pkt
 lib/xip/pkc/arp_1.pkt
