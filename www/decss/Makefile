@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/24 12:25:15 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2001/03/08 07:40:13 kevlo Exp $
 
 DISTNAME=	decss
 PKGNAME=	decss-0.0.6
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WRKSRC=         ${WRKDIR}/source
+WRKDIST=	${WRKDIR}/source
 
 NO_BUILD=	Yes
 
