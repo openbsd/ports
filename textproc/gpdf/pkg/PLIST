@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:44:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/12/22 06:04:22 marcm Exp $
 bin/gpdf
 lib/bonobo/
 lib/bonobo/servers/
@@ -38,23 +38,18 @@ share/gpdf/glade/gpdf-properties-dialog.glade
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gpdf.mo
-share/locale/am/
-share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/gpdf.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gpdf.mo
-share/locale/az/
-share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/gpdf.mo
-share/locale/be/
-share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/gpdf.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/gpdf.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
+share/locale/bs/
+share/locale/bs/LC_MESSAGES/
+share/locale/bs/LC_MESSAGES/gpdf.mo
 share/locale/ca/LC_MESSAGES/gpdf.mo
 share/locale/cs/LC_MESSAGES/gpdf.mo
 share/locale/cy/
@@ -98,8 +93,6 @@ share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/gpdf.mo
 share/locale/it/LC_MESSAGES/gpdf.mo
 share/locale/ja/LC_MESSAGES/gpdf.mo
-share/locale/kn/
-share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/gpdf.mo
 share/locale/ko/LC_MESSAGES/gpdf.mo
 share/locale/lt/
@@ -118,9 +111,13 @@ share/locale/mn/LC_MESSAGES/gpdf.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/gpdf.mo
+share/locale/nb/LC_MESSAGES/gpdf.mo
 share/locale/nl/LC_MESSAGES/gpdf.mo
 share/locale/nn/LC_MESSAGES/gpdf.mo
 share/locale/no/LC_MESSAGES/gpdf.mo
+share/locale/or/
+share/locale/or/LC_MESSAGES/
+share/locale/or/LC_MESSAGES/gpdf.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/gpdf.mo
@@ -134,11 +131,7 @@ share/locale/sl/LC_MESSAGES/gpdf.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gpdf.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/gpdf.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/gpdf.mo
 share/locale/sv/LC_MESSAGES/gpdf.mo
 share/locale/ta/
@@ -149,8 +142,6 @@ share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gpdf.mo
 share/locale/tr/LC_MESSAGES/gpdf.mo
 share/locale/uk/LC_MESSAGES/gpdf.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/gpdf.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
@@ -159,7 +150,6 @@ share/locale/zh_CN/LC_MESSAGES/gpdf.mo
 share/locale/zh_TW/LC_MESSAGES/gpdf.mo
 share/mime-info/
 share/mime-info/gpdf.keys
-share/omf/
 share/omf/gpdf/
 share/omf/gpdf/gpdf-C.omf
 share/omf/gpdf/gpdf-de.omf
