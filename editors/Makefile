@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/03/14 07:58:34 kevlo Exp $
+# $OpenBSD: Makefile,v 1.15 2000/04/09 20:34:02 turan Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -10,6 +10,7 @@
      SUBDIR += bvi
 #    SUBDIR += e93
      SUBDIR += emacs
+     SUBDIR += emacs:no_X11
      SUBDIR += hexedit
      SUBDIR += jed
      SUBDIR += joe
