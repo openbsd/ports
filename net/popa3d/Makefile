@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2000/08/16 07:27:12 camield Exp $
+# $OpenBSD: Makefile,v 1.15 2000/09/15 14:42:38 camield Exp $
 
 DISTNAME=	popa3d-0.4
+HOMEPAGE=	http://www.openwall.com/popa3d
 CATEGORIES=	net mail
-NEED_VERSION=	1.218
 MAINTAINER=	cd@sentia.nl
+
 MASTER_SITES=   http://www.openwall.com/popa3d/ \
                 ftp://ftp.openwall.com/popa3d/ \
 		ftp://ftp.false.com/security/popa3d/ \
@@ -17,8 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-FAKE=	Yes
 
 NO_CONFIGURE=	Yes
 MAKE_FLAGS=	CC=${CC} LD=${CC} CFLAGS="-c ${CFLAGS}"
