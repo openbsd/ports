@@ -1,5 +1,5 @@
 bin/epic
-bin/epic-EPIC4pre2.500
+bin/epic-EPIC4-2000
 libexec/wserv-epic
 share/epic/help/1_General/1_General
 share/epic/help/1_General/away
@@ -919,17 +919,17 @@ share/epic/script/tls
 share/epic/script/utime
 share/epic/script/webster
 share/epic/script/window
-@dirrm share/epic/help/1_General
 @dirrm share/epic/help/1_General/ctcp
 @dirrm share/epic/help/1_General/dcc
+@dirrm share/epic/help/1_General
 @dirrm share/epic/help/2_Queries
 @dirrm share/epic/help/3_Operators
-@dirrm share/epic/help/4_Misc
 @dirrm share/epic/help/4_Misc/bind
 @dirrm share/epic/help/4_Misc/set
 @dirrm share/epic/help/4_Misc/window
-@dirrm share/epic/help/5_Programming
+@dirrm share/epic/help/4_Misc
 @dirrm share/epic/help/5_Programming/on
+@dirrm share/epic/help/5_Programming
 @dirrm share/epic/help/6_Functions
 @dirrm share/epic/help/7_Docs
 @dirrm share/epic/help/8_Scripts
