@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.585 2003/08/21 20:22:45 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.586 2003/08/28 16:19:00 sturm Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1946,6 +1946,9 @@ _fetch-makefile:
 	@select='${_EVERYTHING:M*${_F:S@^${DIST_SUBDIR}/@@}\:[0-9]}'; \
 	${_SITE_SELECTOR}; \
 	echo "\t SITES=\"$$sites\" \\"
+.    if ${FETCH_MANUALLY:L} != "no"
+	@echo '\t FETCH_MANUALLY="Yes" \\'
+.    endif
 .    if !defined(NO_CHECKSUM) && !empty(_CKSUMFILES:M${_F})
 	@checksum_file=${CHECKSUM_FILE}; \
 	if [ ! -f $$checksum_file ]; then \
