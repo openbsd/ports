@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2003/05/23 22:30:58 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2003/06/18 10:33:46 brad Exp $
 
 COMMENT=	"small, easy to set up, fast and very secure FTP server"
 
-DISTNAME=	pure-ftpd-1.0.14
+DISTNAME=	pure-ftpd-1.0.15
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp2.fr.pureftpd.org/pub/mirrors/ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -18,7 +18,7 @@ HOMEPAGE=	http://www.pureftpd.org/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
-# GPL
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
