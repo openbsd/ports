@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/10 15:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/25 00:13:44 naddy Exp $
 
 CATEGORIES=	math devel graphics
 NEED_VERSION=	1.489
@@ -48,6 +48,9 @@ LIB_DEPENDS=	tcl83.::lang/tcl/8.3 \
 
 BUILD_DEPENDS=	::devel/autoconf \
 		::devel/automake
+
+pre-configure:
+	@rm ${WRKDIR}/bin/automake ${WRKDIR}/bin/aclocal
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/graphviz
