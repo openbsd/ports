@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2004/06/18 13:54:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.113 2005/02/18 01:47:56 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -64,6 +64,7 @@
 #    SUBDIR += jetpack
 #    SUBDIR += kdegames
 #    SUBDIR += klondike
+     SUBDIR += kbilliards
      SUBDIR += kobodeluxe
      SUBDIR += kobodeluxe,harder
      SUBDIR += kslide
