@@ -3,7 +3,7 @@
 # Date created:		December 1, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/03 04:05:23 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/01/21 22:07:11 tacho Exp $
 #
 
 DISTNAME=	lesstif-0.82
@@ -20,6 +20,10 @@ GNU_CONFIGURE=  yes
 USE_X11=	yes
 # change this and remove the strip statement in post-install for debugging
 CONFIGURE_ENV=	CCFLAGS="-O -pipe"
+# static library on alpha
+.ifdef (${MACHINE_ARCH} == "alpha")
+CONFIGURE_ARGS= --with-static --without-shared
+.endif
 
 .if defined(HAVE_MOTIF)
 IS_INTERACTIVE=	yes
