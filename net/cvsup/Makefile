@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/27 20:39:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/09 22:45:35 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 COMMENT=	"network file distribution system"
 COMMENT-server=	"network file distribution server"
 
-VERSION=	16.1a
+VERSION=	16.1d
 DISTNAME=	cvsup-snap-${VERSION}
-PKGNAME=	cvsup-${VERSION}p1
-PKGNAME-server=	cvsupd-${VERSION}p1
+PKGNAME=	cvsup-${VERSION}
+PKGNAME-server=	cvsupd-${VERSION}
 CATEGORIES=	net devel
 NEED_VERSION=	1.405
 HOMEPAGE=	http://www.polstra.com/projects/freeware/CVSup/
@@ -20,10 +20,11 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-MASTER_SITES= \
-	ftp://ftp3.freebsd.org/pub/FreeBSD/development/CVSup/snapshots/ \
-	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/snapshots/ \
-	ftp://ftp.cs.tu-berlin.de/pub/FreeBSD/development/CVSup/snapshots/
+#MASTER_SITES= \
+#	ftp://ftp3.freebsd.org/pub/FreeBSD/development/CVSup/snapshots/ \
+#	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/snapshots/ \
+#	ftp://ftp.cs.tu-berlin.de/pub/FreeBSD/development/CVSup/snapshots/
+MASTER_SITES=	http://people.freebsd.org/~jdp/s1g/
 
 MULTI_PACKAGES=	-server
 
