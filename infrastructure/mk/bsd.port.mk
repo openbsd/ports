@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.239 2000/03/28 09:27:03 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.240 2000/03/29 15:59:50 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -636,9 +636,9 @@ EXTRACT_SUFX?=		.tar.gz
 MAKE_ENV+=	EXTRA_SYS_MK_INCLUDES="<bsd.own.mk>"
 
 .if defined(OBJMACHINE)
-WRKDIR?=		${.CURDIR}/work.${MACHINE_ARCH}
+WRKDIR?=		${.CURDIR}/work${_FEXT}.${MACHINE_ARCH}
 .else
-WRKDIR?=		${.CURDIR}/work
+WRKDIR?=		${.CURDIR}/work${_FEXT}
 .endif
 
 WRKDIST?=		${WRKDIR}/${DISTNAME}
@@ -696,11 +696,42 @@ SCRIPTS_ENV+=	${INSTALL_MACROS}
 .undef NO_PACKAGE
 .endif
 
-# Support architecture dependent packing lists
+# Support architecture and flavor dependent packing lists
 #
-COMMENT?=	${PKGDIR}/COMMENT
-DESCR?=		${PKGDIR}/DESCR
-.if exists(${PKGDIR}/PLIST.${ARCH})
+SED_PLIST?=
+SED_PLIST+=-e '/%%SHARED%%/r${PKGDIR}/PFRAG.shared' -e '//d'
+SED_PLIST+=-e 's/@ARCH@/${ARCH}/'
+
+_FEXT:=
+.if defined(FLAVORS)
+.if defined(FLAVOR)
+.  for _i in ${FLAVOR:L}
+.    if empty(FLAVORS:L:M${_i})
+.BEGIN:
+	@echo >&2 "Unknown flavor: ${_i}"
+	@echo >&2 "Possible flavors are: ${FLAVORS}"
+	@exit 1
+.    endif
+.  endfor
+.endif
+FLAVOR?=
+.  for _i in ${FLAVORS:L}
+.    if empty(FLAVOR:L:M${_i})
+SED_PLIST+=-e '/%%${_i}%%/d'
+.    else
+_FEXT:=${_FEXT}-${_i}
+SED_PLIST+=-e '/%%${_i}%%/r${PKGDIR}/PFRAG.${FLAVOR}' -e '//d'
+.    endif
+.  endfor
+.endif
+
+.if exists(${PKGDIR}/PLIST.sed)
+PLIST=${WRKBUILD}/PLIST
+
+${PLIST}: ${PKGDIR}/PLIST.sed
+	@sed ${SED_PLIST} <$? >${PLIST}.tmp && mv -f ${PLIST}.tmp ${PLIST}
+
+.elif exists(${PKGDIR}/PLIST.${ARCH})
 PLIST?=		${PKGDIR}/PLIST.${ARCH}
 .else
 .  if defined(NO_SHARED_LIBS) && exists(${PKGDIR}/PLIST.noshared)
@@ -709,6 +740,15 @@ PLIST?=		${PKGDIR}/PLIST.noshared
 PLIST?=		${PKGDIR}/PLIST
 .  endif
 .endif
+
+.if !defined(COMMENT)
+.  if exists(${PKGDIR}/COMMENT${_FEXT})
+COMMENT=${PKGDIR}/COMMENT${_FEXT}
+.  else
+COMMENT=	${PKGDIR}/COMMENT
+.  endif
+.endif
+DESCR?=		${PKGDIR}/DESCR
 
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
@@ -850,6 +890,7 @@ _CDROM_OVERRIDE=:
 # Derive names so that they're easily overridable.
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
 PKGNAME?=		${DISTNAME}
+PKGNAME:=${PKGNAME}${_FEXT}
 
 _EVERYTHING=${DISTFILES}
 _DISTFILES=	${DISTFILES:C/:[0-9]$//}
@@ -1904,7 +1945,7 @@ FULL_PACKAGE_NAME=No
 .endif 
 
 # Make variables to pass along on recursive depends computations
-_DEPEND_THRU=FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME} 
+_DEPEND_THRU=FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME} FLAVOR=''
 
 # Nobody should want to override this unless PKGNAME is simply bogus.
 
@@ -2357,7 +2398,7 @@ print-depends:
 # accordance to the @pkgdep directive in the packing lists
 
 .if !target(fake-pkg)
-fake-pkg:
+fake-pkg: ${PLIST}
 	@if [ ! -f ${PLIST} -o ! -f ${COMMENT} -o ! -f ${DESCR} ]; then echo "** Missing package files for ${PKGNAME} - installation not recorded."; exit 1; fi
 	@if [ `/bin/ls -l ${COMMENT} | awk '{print $$5}'` -gt 60 ]; then \
 	    echo "** ${COMMENT} too large - installation not recorded."; \

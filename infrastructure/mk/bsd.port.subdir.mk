@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.18 2000/03/26 16:57:42 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.19 2000/03/29 15:59:51 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -58,6 +58,14 @@ _SUBDIRUSE: .USE
 				continue 2; \
 			fi; \
 		done; \
+		if expr "$$entry" : '.*:' >/dev/null; then \
+			flavor=`echo $$entry | sed -e 's/.*://' -e 's/,/ /g'`; \
+			entry=`echo $$entry | sed -e 's/:.*//'`; \
+			display=" ($$flavor)"; \
+		else \
+			flavor=''; \
+			disply=''; \
+		fi; \
 		if cd ${.CURDIR}/$${entry}.${MACHINE} 2>/dev/null; then \
 			edir=$${entry}.${MACHINE}; \
 		elif cd ${.CURDIR}/$${entry} 2>/dev/null; then \
@@ -66,10 +74,11 @@ _SUBDIRUSE: .USE
 			${ECHO_MSG} "===> ${DIRPRFX}$${entry} non-existent"; \
 			continue; \
 		fi; \
-		${ECHO_MSG} "===> ${DIRPRFX}$${edir}"; \
+		${ECHO_MSG} "===> ${DIRPRFX}$${edir}$$display"; \
 		${MAKE} ${.TARGET:realinstall=install} \
 			DIRPRFX=${DIRPRFX}$$edir/ \
-			RECURSIVE_FETCH_LIST=${RECURSIVE_FETCH_LIST}; \
+			RECURSIVE_FETCH_LIST=${RECURSIVE_FETCH_LIST} \
+			FLAVOR="$$flavor"; \
 	done
 
 ${SUBDIR}::
@@ -80,7 +89,7 @@ ${SUBDIR}::
 	fi; \
 	${MAKE} all
 
-.for __target in all fetch fetch-list package extract configure \
+.for __target in all fetch fetch-list package fake extract configure \
 		 build clean depend describe distclean deinstall \
 		 reinstall tags checksum mirror-distfiles list-distfiles \
 		 obj fetch-makefile
@@ -144,4 +153,4 @@ README.html:
 .PHONY: all fetch fetch-list package extract configure build clean depend \
 	describe distclean deinstall reinstall tags checksum mirror-distfiles \
 	list-distfiles obj readmes readme \
-	beforeinstall afterinstall install realinstall
+	beforeinstall afterinstall install realinstall fake
