@@ -1,0 +1,32 @@
+*** Makefile.unx.orig	Fri Oct  7 20:14:48 1994
+--- Makefile.unx	Sat May 16 21:02:55 1998
+***************
+*** 153,162 ****
+  # RM  = del /q
+  
+  
+  all: sox
+  
+  sox: sox.o $(SOUNDLIB)
+! 	$(CC) $(CFLAGS) -o sox sox.o $(SOUNDLIB) -lm
+  
+  $(SOUNDLIB): $(LIBOBJS)
+  	$(RM) $(SOUNDLIB)
+--- 153,169 ----
+  # RM  = del /q
+  
+  
++ 
++ # FreeBSD 1.x / 2.x / 3.x
++ CFLAGS		= -O -DLINUXSOUND -D_HAVE_PARAM_H
++ CC		= cc
++ AR		= ar r
++ RANLIB		= ranlib
++ 
+  all: sox
+  
+  sox: sox.o $(SOUNDLIB)
+! 	$(CC) $(CFLAGS) -o sox sox.o $(SOUNDLIB) -lm -lossaudio
+  
+  $(SOUNDLIB): $(LIBOBJS)
+  	$(RM) $(SOUNDLIB)

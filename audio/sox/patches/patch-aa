@@ -1,0 +1,28 @@
+*** sbdsp.c.orig	Wed Aug 17 17:11:01 1994
+--- sbdsp.c	Sat May 16 21:03:19 1998
+***************
+*** 17,27 ****
+   */
+  
+  #include <sys/types.h>
+  #ifdef SBLAST
+  #include <i386/isa/sblast.h>
+  #else
+  #ifdef LINUXSOUND
+! #include <linux/soundcard.h>
+  #else
+  #include <sys/sb.h>
+  #endif
+--- 17,28 ----
+   */
+  
+  #include <sys/types.h>
++ #include <sys/ioctl.h>
+  #ifdef SBLAST
+  #include <i386/isa/sblast.h>
+  #else
+  #ifdef LINUXSOUND
+! #include <machine/soundcard.h>
+  #else
+  #include <sys/sb.h>
+  #endif
