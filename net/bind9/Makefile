@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/10/22 15:42:56 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/11/13 16:01:29 jakob Exp $
 
 VERSION=	9.0.0
 DISTNAME=	bind-${VERSION}
@@ -38,6 +38,7 @@ CONFIGURE_ENV+=		CFLAGS=-g
 
 .if ${FLAVOR:L} == "static"
 CONFIGURE_ENV+=		CFLAGS="-O2 -static"
+NO_SHARED_LIBS=		Yes
 .endif
 
 post-install:
