@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/10/11 00:51:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/28 12:30:14 espie Exp $
 
 COMMENT= 		"X11 toolkit, network applications"
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.461
+NEED_VERSION=		1.483
 VERSION=		2.2.1
 DISTNAME=		kdenetwork-${VERSION}
 DIST_SUBDIR=		kde

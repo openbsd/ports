@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2001/10/08 23:20:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.32 2001/10/28 12:30:14 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt2
@@ -7,7 +7,7 @@ COMMENT-html=		off-line html documentation for qt2
 VERSION=	3.1
 DISTNAME=	qt-2.${VERSION}
 CATEGORIES=	x11
-NEED_VERSION=	1.419
+NEED_VERSION=	1.483
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 DISTFILES=	qt-x11-2.${VERSION}.tar.gz
 
@@ -55,7 +55,7 @@ LIB_DEPENDS+=	png.2.::graphics/png \
 		mng.1.::graphics/libmng
 .endif
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"
-LIB_DEPENDS+=	qt.2.::x11/qt2
+LIB_DEPENDS+=	lib/qt2/qt.2.::x11/qt2
 .endif
 
 QT_INCDIR=	${PREFIX}/include/X11/qt2

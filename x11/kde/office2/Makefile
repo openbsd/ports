@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2001/10/17 12:59:12 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/28 12:30:14 espie Exp $
 
 COMMENT=		"office applications for kde"
 CATEGORIES=		x11 x11/kde productivity
-NEED_VERSION=		1.474
+NEED_VERSION=		1.483
 VERSION=		1.1
 DISTNAME=		koffice-${VERSION}
 DIST_SUBDIR=		kde

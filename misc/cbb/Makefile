@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.17 2001/05/06 02:29:51 lebel Exp $
+# $OpenBSD: Makefile,v 1.18 2001/10/28 12:30:13 espie Exp $
 
 COMMENT=	"checkbook balancing tool"
 
 DISTNAME=	cbb-0.73
 CATEGORIES=	misc tk80
-NEED_VERSION=	1.402
+NEED_VERSION=	1.483
 MASTER_SITES=	ftp://ftp.me.umn.edu/pub/finance/ \
 		ftp://ftp.fifi.org/pub/cbb/
 
 LIB_DEPENDS=    tk80.1.::x11/tk/8.0
-RUN_DEPENDS=	wish8.0::x11/tk/8.0 \
-		plan::misc/plan
+RUN_DEPENDS=	::x11/tk/8.0 \
+		::misc/plan
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/24 12:52:42 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/28 12:30:14 espie Exp $
 
 COMMENT= 		"X11 toolkit, additional artwork"
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.461
+NEED_VERSION=		1.483
 VERSION=		2.2.1
 DISTNAME=		kdeartwork-${VERSION}
 DIST_SUBDIR=		kde

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/19 15:20:12 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/28 12:30:14 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries documentation"
 CATEGORIES=		x11 x11/kde devel
-NEED_VERSION=		1.458
+NEED_VERSION=		1.483
 VERSION=		2.2.1
 PKGNAME=		kdelibs-doc-${VERSION}
 

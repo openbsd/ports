@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/08/27 10:07:12 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/28 12:30:13 espie Exp $
 
 COMMENT=	"graphical CVS front-end using QT2"
 
 DISTNAME=	lincvs_0.2.3
 PKGNAME=	${DISTNAME:S/_/-/}
 CATEGORIES=	devel
-NEED_VERSION=	1.447
+NEED_VERSION=	1.483
 MASTER_SITES=	http://ppprs1.phy.tu-dresden.de/~trogisch/lincvs/download/
 
 HOMEPAGE=	http://ppprs1.phy.tu-dresden.de/~trogisch/lincvs/lincvsen.html

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2001/08/27 15:17:28 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/28 12:30:13 espie Exp $
 
 COMMENT=	"graphical debugger for kde"
 DISTNAME=	kdbg-1.2.2
 CATEGORIES=     devel
-NEED_VERSION=	1.447
+NEED_VERSION=	1.483
 HOMEPAGE=	http://members.nextra.at/johsixt/kdbg.html
 
 PERMIT_PACKAGE_CDROM=	Yes

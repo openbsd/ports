@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2001/07/03 12:07:53 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2001/10/28 12:30:14 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=	"C++ X11 GUI toolkit"
@@ -10,20 +10,20 @@ DISTNAME=	qt-${VERSION}
 PKGNAME-examples=qt-examples-${VERSION}
 PKGNAME-html=	qt-html-${VERSION}
 CATEGORIES=	x11
-NEED_VERSION=	1.419
+NEED_VERSION=	1.483
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 HOMEPAGE=	http://www.trolltech.com/products/qt/
 
 # for the qt image extension
-BUILD_DEPENDS=	${PREFIX}/include/jpeglib.h::graphics/jpeg \
-		${PREFIX}/include/png.h::graphics/png
+BUILD_DEPENDS=	::graphics/jpeg \
+		::graphics/png
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=
+PERMIT_PACKAGE_CDROM= "Restrictive licence"
 PERMIT_PACKAGE_FTP=
-PERMIT_DISTFILES_CDROM=
+PERMIT_DISTFILES_CDROM= "Restrictive licence"
 PERMIT_DISTFILES_FTP=
 
 VER_MAJ=	1
@@ -37,6 +37,9 @@ MAKE_ENV=	QTDIR="${WRKSRC}" SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
 
 MULTI_PACKAGES=	-examples -html
 SUBPACKAGE?=
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"
+LIB_DEPENDS+=	lib/qt/qt.1.::x11/qt
+.endif
 
 QT_INCDIR=	${PREFIX}/include/X11/qt
 QT_LIBDIR=	${PREFIX}/lib/qt

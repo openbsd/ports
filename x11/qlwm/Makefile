@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/09 17:11:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/28 12:30:14 espie Exp $
 
 COMMENT=	"qt-based window manager"
 
 DISTNAME=	qlwm-1.7
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.483
 
 HOMEPAGE=	http://qlwm.get.to/
 MASTER_SITES=	http://www.netcologne.de/~nc-lindenal/qlwm/
@@ -21,11 +21,11 @@ DOCDIR=${PREFIX}/share/doc/qlwm
 
 USE_X11=	Yes
 
-LIB_DEPENDS=qt.2.::x11/qt2
+MODULES=	qt2
 
-MAKE_FLAGS=INCPATH='-I${X11BASE}/include -I${LOCALBASE}/include/X11/qt2' \
-	LFLAGS='-L${X11BASE}/lib -L${LOCALBASE}/lib/qt2 -L${LOCALBASE}/lib' \
-	MOC=moc2 \
+MAKE_FLAGS=INCPATH='-I${X11BASE}/include -I${MODQT_INCDIR}' \
+	LFLAGS='-L${X11BASE}/lib -L${MODQT_LIBDIR} -L${LOCALBASE}/lib' \
+	MOC=${MODQT_MOC} \
 	DEST=${LIBDIR}
 
 

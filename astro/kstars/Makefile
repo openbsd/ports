@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/08 02:12:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/28 12:30:13 espie Exp $
 
 COMMENT=	"desktop planetarium"
 
 DISTNAME=	kstars-0.6
 CATEGORIES=	astro
-NEED_VERSION=	1.474
+NEED_VERSION=	1.483
 
 HOMEPAGE=	http://kstars.sourceforge.net/
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=  Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kstars
 
-BUILD_DEPENDS=	automake::devel/automake \
-		uic::x11/qt2-designer
+BUILD_DEPENDS=	::devel/automake \
+		::x11/qt2-designer
 
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
 

@@ -1,10 +1,10 @@
-#$OpenBSD: Makefile,v 1.8 2001/08/12 02:19:36 lebel Exp $
+#$OpenBSD: Makefile,v 1.9 2001/10/28 12:30:14 espie Exp $
 
 COMMENT=	"graphical file comparator and merge tool"
 
 DISTNAME=	xxdiff-1.13
 CATEGORIES=	textproc x11
-NEED_VERSION=	1.434
+NEED_VERSION=	1.483
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= xxdiff
 
@@ -17,9 +17,9 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-LIB_DEPENDS=	qt.2.::x11/qt2
-BUILD_DEPENDS=	bison::devel/bison \
-		uic::x11/qt2-designer
+MODULES=	qt2
+BUILD_DEPENDS=	::devel/bison \
+		::x11/qt2-designer
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
@@ -28,11 +28,11 @@ SEPARATE_BUILD= concurrent
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	QTDIR="${LOCALBASE}"  \
-		USER_LDFLAGS="-L${LOCALBASE}/lib/qt2 -L${LOCALBASE}/lib/X11 -L${LOCALBASE}/lib" \
-		USER_INCLUDES="-I${LOCALBASE}/include/X11/qt2 -I${LOCALBASE}/include/X11 -I${LOCALBASE}/include" \
-		MOC="${LOCALBASE}/bin/moc2"
+		USER_LDFLAGS="-L${MODQT_LIBDIR} -L${LOCALBASE}/lib/X11 -L${LOCALBASE}/lib" \
+		USER_INCLUDES="-I${MODQT_INCDIR} -I${LOCALBASE}/include/X11 -I${LOCALBASE}/include" \
+		MOC=${MODQT_MOC}
 MAKE_ENV=	${CONFIGURE_ENV}
-MAKE_FLAGS=     CXXLD='${CXX} -L${LOCALBASE}/lib/qt2'
+MAKE_FLAGS=     CXXLD='${CXX} -L${MODQT_LIBDIR}'
 
 post-patch:
 	@cd ${WRKSRC} && perl automoc -v

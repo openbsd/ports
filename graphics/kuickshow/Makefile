@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/09 01:45:54 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/28 12:30:13 espie Exp $
 
 COMMENT=	"image viewer similar to ACDSee for Windows"
 
 DISTNAME=	kuickshow-0.8.1
 CATEGORIES=	graphics
-NEED_VERSION=	1.474
+NEED_VERSION=	1.483
 
 HOMEPAGE=	http://kuickshow.sourceforge.net/
 
@@ -19,7 +19,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= kuickshow
 EXTRACT_SUFX=	.tgz
 
-BUILD_DEPENDS=	uic::x11/qt2-designer
+BUILD_DEPENDS=	::x11/qt2-designer
 
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2 \
 		Imlib.19::graphics/imlib 

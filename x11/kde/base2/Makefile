@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2001/10/24 12:52:42 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2001/10/28 12:30:14 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"X11 toolkit, netscape plugins"
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.461
+NEED_VERSION=		1.483
 VERSION=		2.2.1
 DISTNAME=		kdebase-${VERSION}
 PKGNAME-plugins=	kdebase-ns-${VERSION}
