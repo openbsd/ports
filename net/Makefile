@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2001/12/14 16:39:20 brad Exp $
+# $OpenBSD: Makefile,v 1.184 2001/12/30 01:06:13 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -116,6 +116,9 @@
      SUBDIR += proxy-suite
      SUBDIR += pptp
      SUBDIR += pure-ftpd
+     SUBDIR += pure-ftpd,ldap
+     SUBDIR += pure-ftpd,mysql
+     SUBDIR += pure-ftpd,postgresql
      SUBDIR += py-libpcap
      SUBDIR += queso
      SUBDIR += quirc
