@@ -1,4 +1,4 @@
-$OpenBSD: patch-nsprpub_pr_include_md__openbsd_h,v 1.3 2004/03/02 08:34:57 pvalchev Exp $
+$OpenBSD: patch-nsprpub_pr_include_md__openbsd_h,v 1.4 2004/03/06 07:51:27 pvalchev Exp $
 --- nsprpub/pr/include/md/_openbsd.h.orig	2004-03-01 17:36:44.000000000 -0700
 +++ nsprpub/pr/include/md/_openbsd.h	2004-03-01 17:42:08.000000000 -0700
 @@ -43,6 +43,8 @@
@@ -10,19 +10,6 @@ $OpenBSD: patch-nsprpub_pr_include_md__openbsd_h,v 1.3 2004/03/02 08:34:57 pvalc
  #elif defined(__m68k__)
  #define _PR_SI_ARCHITECTURE "m68k"
  #elif defined(__powerpc__)
-@@ -77,6 +79,12 @@
- #define _PR_HAVE_GETADDRINFO
- #define _PR_INET6_PROBE
- 
-+#define _PR_INET6
-+#define _PR_HAVE_INET_NTOP
-+#define _PR_HAVE_GETHOSTBYNAME2
-+#define _PR_HAVE_GETADDRINFO
-+#define _PR_INET6_PROBE
-+
- #define USE_SETJMP
- 
- #ifndef _PR_PTHREADS
 @@ -92,6 +100,8 @@
  #define JB_SP_INDEX 1
  #elif defined(__alpha__)
