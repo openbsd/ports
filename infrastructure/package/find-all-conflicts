@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: find-all-conflicts,v 1.5 2002/03/19 22:20:50 espie Exp $
+# $OpenBSD: find-all-conflicts,v 1.6 2003/10/23 17:49:02 espie Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -30,116 +30,68 @@
 use strict;
 
 use File::Spec;
+use OpenBSD::PackageLocator;
+use OpenBSD::PackageInfo;
+use OpenBSD::PackingList;
+use OpenBSD::PkgCfl;
 
-sub analyze {
-	my $fh = shift;
-	my $all = shift;
-	my $dir = shift;
-	my $conflicts = shift;
-	my ($name, $cwd);
-	my $default_conflict=1;
-	my $conflict_list = [];
-	my $basedir;
-	local $_;
-	while (<$fh>) {
-		chomp;
-		if (m/^\@(?:newdepend|libdepend|comment|exec|unexec|mtree|src|pkgdep|mode|group|owner|display)/) {
-			next; 
-		} elsif (m/^\@ignore/) {
-			$_ = <$fh>;
-			next;
-		} elsif (m/^\@name\s+/) {
-			$name = $';
-		} elsif (m/^\@cwd\s+/) {
-			my $newpath = $';
-			if (File::Spec->file_name_is_absolute($newpath)) {
-				$cwd = $newpath;
-			} else {
-				$cwd = File::Spec->catfile($cwd, $newpath);
-			}
-			$basedir = $cwd unless defined $basedir;
-		} elsif (m/^\@pkgcfl\s+(.*?)\s*$/) {
-			my $conflict=$1;
-			$conflict =~ s/\*/\.\*/g;
-			$conflict =~ s/\?/\./g;
-			$conflict =~ s/\+/\\\+/g;
-			push @$conflict_list, "$conflict";
-		} elsif (m/^\@option\s+no-default-conflict/) {
-			$default_conflict=0;
-		} elsif (m/^\@dirrm\s+/) {
-			my $d = $';
-			if (!File::Spec->file_name_is_absolute($d)) {
-				$d = File::Spec->catfile($basedir, $d);
-			}
-			$d = File::Spec->canonpath($d);
-			unless (defined $dir->{$d}) {
-				$dir->{$d} = [];
-			}
-			push @{$dir->{$d}}, $name;
-		} elsif (m/^\@/) {
-			print $_, "\n";
-		} else {
-			my $file= File::Spec->catfile($cwd, $_);
-			$file = File::Spec->canonpath($file);
-			unless (defined $all->{$file}) {
-				$all->{$file} = [];
-			}
-			push @{$all->{$file}}, $name;
+sub analyze 
+{
+	my ($plist, $all) = @_;
+	my $pkgname = $plist->pkgname();
+
+	for my $item (@{$plist->{items}}) {
+		next unless $item->IsFile();
+		my $file= File::Spec->canonpath($item->fullname());
+		unless (defined $all->{$file}) {
+			$all->{$file} = [];
 		}
+		push @{$all->{$file}}, $pkgname;
 	}
-	if ($default_conflict) {
-		if ($name =~ m/^(.*)\-\d/) {
-			push @$conflict_list, "\Q$1\E\\-\\d.*";
-		} elsif ($name =~ m/^(.*)-/) {
-			push @$conflict_list, "\Q$1\E\\-.*";
-		}
-	}
-	$conflicts->{$name}=$conflict_list;
 }
 
 sub show_problems
 {
-    my $h = shift;
-    my $conflicts = shift;
+    my ($h, $conflicts) = @_;
+
     while (my ($key, $l) = each %$h) {
 	    if (@$l > 1) {
 		my $notfound = 0;
+		# create a list of unconflicting packages.
+		my @l2 = ();
 		for my $pkg (@$l) {
-		    FOUND: for my $pkg2 (@$l) {
-			    next FOUND if $pkg2 eq $pkg;
-			    for my $check (@{$conflicts->{$pkg}}) {
-				    next FOUND if ($pkg2 =~ m/^$check$/);
-			    }
-			    $notfound = 1;
-		    }
+		    next if $conflicts->{$pkg}->conflicts_with(
+			    grep { $_ ne $pkg } (@$l));
+		    push(@l2, $pkg);
 		}
-		if ($notfound) {
-		    print "$key: ", join(',', @$l), "\n";
+		if (@l2 != 0) {
+		    print "$key: ", join(',', @l2), "\n";
 		}
 	    }
     }
 }
 
-my %hash=();
+my $filehash={};
 my %dirhash=();
-my %conflicts=();
+my $conflicts={};
 
 print "Scanning packages\n";
 print "-----------------\n";
-for my $pkgname (<*.tgz>) {
+if (@ARGV==0) {
+	@ARGV=(<*.tgz>);
+}
+for my $pkgname (@ARGV) {
 	print STDERR "$pkgname\n";
-	system "tar zxqf $pkgname +CONTENTS";
-	if (open(my $fh, '<+CONTENTS')) {
-	    analyze($fh, \%hash, \%dirhash, \%conflicts);
-	    unlink("+CONTENTS");
-	} else {
-	    warn "Problem with $pkgname";
-	}
+	my $true_package = OpenBSD::PackageLocator->find($pkgname);
+	next unless $true_package;
+	my $dir = $true_package->info();
+	$true_package->close();
+	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
+	$conflicts->{$plist->pkgname()} = 
+	    OpenBSD::PkgCfl->make_conflict_list($plist);
+	analyze($plist, $filehash);
 }
 
 print "File problems:\n";
 print "-------------\n";
-show_problems(\%hash, \%conflicts);
-print "\@dirrm problems:\n";
-print  "---------------\n";
-show_problems(\%dirhash, \%conflicts);
+show_problems($filehash, $conflicts);
