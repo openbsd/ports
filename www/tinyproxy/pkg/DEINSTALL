@@ -1,12 +1,11 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.2 2002/08/27 02:53:29 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2003/01/27 22:10:56 margarida Exp $
 #
 # tinyproxy de-installation
-
-set -e
+#
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${TP_CONFIG}
+CONFIG_DIR=${SYSCONFDIR}/tinyproxy
 
 if [ -d $CONFIG_DIR ]; then 
 	echo

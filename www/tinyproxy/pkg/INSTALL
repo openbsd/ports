@@ -1,14 +1,12 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2002/08/27 02:53:29 brad Exp $
+# $OpenBSD: INSTALL,v 1.3 2003/01/27 22:10:56 margarida Exp $
 #
 # Pre/post-installation setup of tinyproxy
-
 # exit on errors, use a sane path and install prefix
 #
-set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${TP_CONFIG}
+CONFIG_DIR=${SYSCONFDIR}/tinyproxy
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/tinyproxy
 
 do_notice()
@@ -16,21 +14,22 @@ do_notice()
 	echo
 	echo "+------------"
 	echo "| The existing $1 configuration file in $CONFIG_DIR,"
-	echo "| have NOT been changed. You may want to compare them to the"
-	echo "| current sample file in $SAMPLE_CONFIG_DIR,"
-	echo "| and update your configuration as needed."
+	echo "| has NOT been changed. You may want to compare it to"
+	echo "| the current sample file in $SAMPLE_CONFIG_DIR, and"
+	echo "| update your configuration as needed."
 	echo "+------------"
 }
 
 do_install()
 {
 	install -d -o root -g wheel -m 755 $CONFIG_DIR
-	install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/tinyproxy.conf ${CONFIG_DIR}
+	install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/tinyproxy.conf $CONFIG_DIR
 	echo
 	echo "+------------"
-	echo "| The $1 configuration file have been installed into"
-	echo "| $CONFIG_DIR. Please view this file and change the"
-	echo "| configuration to meet your needs."
+	echo "| The $1 configuration file has been installed into"
+	echo "| $CONFIG_DIR."
+	echo "|	Please view this file and change the configuration"
+	echo "| to meet your needs."
 	echo "+------------"
 }
 
