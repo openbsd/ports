@@ -1,9 +1,26 @@
---- src/config/platforms/openbsd.mk.orig	Tue Feb 15 01:00:22 2000
-+++ src/config/platforms/openbsd.mk	Mon Jun 12 05:36:43 2000
-@@ -93,4 +93,6 @@
+--- src/config/platforms/openbsd.mk.orig	Mon Feb 14 23:00:22 2000
++++ src/config/platforms/openbsd.mk	Mon Jul 17 03:57:48 2000
+@@ -30,8 +30,13 @@
+ ## compiler/loader options are used.  It will probably also be used
+ ## in constructing the name object file destination directory.
+ 
+-OS_ARCH		:= $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc64/ -e s/arm.*/arm/ -e s/sa110/arm/ | sed "s/\//-/")
+-OS_ENDIAN	= LittleEndian32
++OS_ARCH		:= $(shell uname -m)
++
++ifneq (,$(shell $(CC) -E - -dM </usr/include/machine/endian.h | grep BYTE_ORDER.*LITTLE_ENDIAN))
++OS_ENDIAN       = LittleEndian32
++else
++OS_ENDIAN       = BigEndian32
++endif
+ 
+ # Define tools
+ CC		= gcc
+@@ -92,5 +97,7 @@
+ 
  ABI_NATIVE	= unix
  ABI_FE		= Unix
- 
-+ABIPKGDIR	= freebsd
 +
++ABIPKGDIR	= freebsd
+ 
  # End of OpenBSD defs
