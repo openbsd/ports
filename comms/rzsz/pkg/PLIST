@@ -1,0 +1,24 @@
+bin/rz
+@exec ln -fs %f %B/rx
+@exec ln -fs %f %B/rb
+@exec ln -fs %f %B/rc
+@unexec rm -f %B/rx %B/rb %B/rc
+bin/sz
+@exec ln -fs %f %B/sx
+@exec ln -fs %f %B/sb
+@exec ln -fs %f %B/zcommand
+@exec ln -fs %f %B/zcommandi
+@unexec rm -f %B/sx %B/sb %B/zcommand %B/zcommandi
+bin/crc
+man/cat1/crc.1
+man/cat1/rz.1
+@exec ln -fs %f %B/rx.1
+@exec ln -fs %f %B/rb.1
+@exec ln -fs %f %B/rc.1
+@unexec rm -f %B/rx.1 %B/rb.1 %B/rc.1
+man/cat1/sz.1
+@exec ln -fs %f %B/sx.1
+@exec ln -fs %f %B/sb.1
+@exec ln -fs %f %B/zcommand.1
+@exec ln -fs %f %B/zcommandi.1
+@unexec rm -f %B/sx.1 %B/sb.1 %B/zcommand.1 %B/zcommandi.1

@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# shuffle things around for bmake to work right
+#
+mv ${WRKDIR}/makefile  ${WRKDIR}/makefile.dist
+cp ${FILESDIR}/makefile ${WRKDIR}/Makefile

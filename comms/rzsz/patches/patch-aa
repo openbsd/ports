@@ -1,0 +1,305 @@
+*** crc.c.orig	Fri Nov 21 13:13:49 1997
+--- crc.c	Fri Nov 21 13:13:49 1997
+***************
+*** 117,122 ****
+--- 117,126 ----
+  {
+  	register errors = 0;
+  
++ 	if(argc	< 2) {
++ 		fprintf(stderr, "Usage: %s [-x] [-k] file ...\n", argv[0]);
++ 		exit(0);
++ 	}
+  	if (! strcmp(argv[1], "-x")) {
+  		Block = 128; --argc; ++argv;
+  	}
+*** rbsb.c.orig	Fri Nov 21 13:13:50 1997
+--- rbsb.c	Fri Nov 21 13:18:46 1997
+***************
+*** 17,24 ****
+  #ifdef LLITOUT
+  long Locmode;		/* Saved "local mode" for 4.x BSD "new driver" */
+  long Locbit = LLITOUT;	/* Bit SUPPOSED to disable output translations */
+- #include <strings.h>
+  #endif
+  #endif
+  
+  #ifdef USG
+--- 17,25 ----
+  #ifdef LLITOUT
+  long Locmode;		/* Saved "local mode" for 4.x BSD "new driver" */
+  long Locbit = LLITOUT;	/* Bit SUPPOSED to disable output translations */
+  #endif
++ #include <strings.h>
++ char *ttyname(), *getenv();
+  #endif
+  
+  #ifdef USG
+***************
+*** 81,86 ****
+--- 82,88 ----
+  
+  char *Nametty;
+  FILE *Ttystream;
++ FILE *Logstream;
+  int Tty;
+  char linbuf[HOWMANY];
+  char xXbuf[BUFSIZ];
+***************
+*** 358,364 ****
+  		(void) tcflow(Tty, TCOON);	/* Restart output */
+  #else
+  		(void) ioctl(Tty, TCSBRK, 1);	/* Wait for output to drain */
+! 		(void) ioctl(Tty, TCFLSH, 1);	/* Flush input queue */
+  		(void) ioctl(Tty, TCSETAW, &oldtty);	/* Restore modes */
+  		(void) ioctl(Tty, TCXONC,1);	/* Restart output */
+  #endif
+--- 360,366 ----
+  		(void) tcflow(Tty, TCOON);	/* Restart output */
+  #else
+  		(void) ioctl(Tty, TCSBRK, 1);	/* Wait for output to drain */
+! 		(void) ioctl(Tty, TCFLSH, 0);	/* Flush input queue */
+  		(void) ioctl(Tty, TCSETAW, &oldtty);	/* Restore modes */
+  		(void) ioctl(Tty, TCXONC,1);	/* Restart output */
+  #endif
+***************
+*** 370,375 ****
+--- 372,384 ----
+  #ifdef LLITOUT
+  		ioctl(Tty, TIOCLSET, &Locmode);
+  #endif
++ #ifdef TIOCFLUSH
++ 		{ static int fread = 1;
++ 		ioctl(Tty, TIOCFLUSH, &fread);	 /* Flush input	queue */
++ 		}
++ #else
++ 		lseek(Tty, 0L, 2);
++ #endif
+  #endif
+  
+  		return OK;
+***************
+*** 383,389 ****
+  #ifdef V7
+  #ifdef TIOCSBRK
+  #define CANBREAK
+- 	sleep(1);
+  	ioctl(Tty, TIOCSBRK, 0);
+  	sleep(1);
+  	ioctl(Tty, TIOCCBRK, 0);
+--- 392,397 ----
+***************
+*** 402,417 ****
+  /* Initialize tty device for serial file xfer */
+  inittty()
+  {
+! 	if ((Nametty = ttyname(2)) && *Nametty) {
+! 		Tty = open(Nametty, 2);
+! 	} else {
+! 		Tty = open(Nametty = "/dev/tty", 2);
+! 	}
+! 
+! 	if (Tty <= 0) {
+! 		perror(Nametty);  exit(2);
+! 	}
+! 	Ttystream = fdopen(Tty, "w");
+  }
+  
+  flushmoc()
+--- 410,422 ----
+  /* Initialize tty device for serial file xfer */
+  inittty()
+  {
+! 	Tty = 0;
+! 	Ttystream = stdout;
+! 	Nametty	= ttyname(Tty);
+! 	if (!Nametty ||	!*Nametty)
+! 		Nametty	= "|pipe|";
+! 	Logstream = stderr;
+! 	setbuf(Ttystream, xXbuf);
+  }
+  
+  flushmoc()
+***************
+*** 442,448 ****
+  
+  	if (--Lleft >= 0) {
+  		if (Verbose > 8) {
+! 			fprintf(stderr, "%02x ", *cdq&0377);
+  		}
+  		return (*cdq++ & 0377);
+  	}
+--- 447,453 ----
+  
+  	if (--Lleft >= 0) {
+  		if (Verbose > 8) {
+! 			fprintf(Logstream, "%02x ", *cdq&0377);
+  		}
+  		return (*cdq++ & 0377);
+  	}
+***************
+*** 450,464 ****
+  	if (n < 2)
+  		n = 2;
+  	if (Verbose > 5)
+! 		fprintf(stderr, "Calling read: alarm=%d  Readnum=%d ",
+  		  n, Readnum);
+  	if (setjmp(tohere)) {
+! #ifdef TIOCFLUSH
+! /*		ioctl(Tty, TIOCFLUSH, 0); */
+! #endif
+! 		Lleft = 0;
+  		if (Verbose>1)
+! 			fprintf(stderr, "Readline:TIMEOUT\n");
+  		return TIMEOUT;
+  	}
+  	signal(SIGALRM, alrm); alarm(n);
+--- 455,466 ----
+  	if (n < 2)
+  		n = 2;
+  	if (Verbose > 5)
+! 		fprintf(Logstream, "Calling read: alarm=%d  Readnum=%d ",
+  		  n, Readnum);
+  	if (setjmp(tohere)) {
+! 		purgeline();
+  		if (Verbose>1)
+! 			fprintf(Logstream, "Readline:TIMEOUT\n");
+  		return TIMEOUT;
+  	}
+  	signal(SIGALRM, alrm); alarm(n);
+***************
+*** 466,481 ****
+  	Lleft=read(Tty, cdq=linbuf, Readnum);
+  	alarm(0);
+  	if (Verbose > 5) {
+! 		fprintf(stderr, "Read returned %d bytes errno=%d\n",
+  		  Lleft, errno);
+  	}
+  	if (Lleft < 1)
+  		return TIMEOUT;
+  	if (Verbose > 8) {
+  		for (n = Lleft; --n >= 0; ) {
+! 			fprintf(stderr, "%02x ", *cdq&0377);
+  		}
+! 		fprintf(stderr, "\n");
+  	}
+  	--Lleft;
+  	return (*cdq++ & 0377);
+--- 468,483 ----
+  	Lleft=read(Tty, cdq=linbuf, Readnum);
+  	alarm(0);
+  	if (Verbose > 5) {
+! 		fprintf(Logstream, "Read returned %d bytes errno=%d\n",
+  		  Lleft, errno);
+  	}
+  	if (Lleft < 1)
+  		return TIMEOUT;
+  	if (Verbose > 8) {
+  		for (n = Lleft; --n >= 0; ) {
+! 			fprintf(Logstream, "%02x ", *cdq&0377);
+  		}
+! 		fprintf(Logstream, "\n");
+  	}
+  	--Lleft;
+  	return (*cdq++ & 0377);
+***************
+*** 491,505 ****
+  	Lleft = 0;
+  #ifdef USG
+  #ifdef POSIX
+! 	tcflush(Tty, 0);
+  #else
+  	ioctl(Tty, TCFLSH, 0);
+  #endif
+  #else
+  	lseek(Tty, 0L, 2);
+  #endif
+  }
+  
+  
+  /* send cancel string to get the other end to shut up */
+  canit()
+--- 493,537 ----
+  	Lleft = 0;
+  #ifdef USG
+  #ifdef POSIX
+! 	tcflush(Tty, TCIFLUSH);
+  #else
+  	ioctl(Tty, TCFLSH, 0);
+  #endif
+  #else
++ #ifdef TIOCFLUSH
++ 	{ static int fread = 1;
++ 	ioctl(Tty, TIOCFLUSH, &fread);
++ 	}
++ #else
+  	lseek(Tty, 0L, 2);
+  #endif
++ #endif
+  }
+  
++ /*
++  * Purge the modem output queue of all characters
++  */
++ purgeout()
++ {
++ #if (defined(__FreeBSD__) || defined(__OpenBSD__))
++ 	fpurge(Ttystream);
++ #else
++ 	rewind(Ttystream);
++ #endif
++ #ifdef POSIX
++ 	tcflush(Tty, TCOFLUSH);
++ #else
++ #ifdef TCFLSH
++ 	ioctl(Tty, TCFLSH, 1);
++ #else
++ #ifdef TIOCFLUSH
++ 	{ static int fwrite = 2;
++ 	ioctl(Tty, TIOCFLUSH, &fwrite);
++ 	}
++ #endif
++ #endif
++ #endif
++ }
+  
+  /* send cancel string to get the other end to shut up */
+  canit()
+***************
+*** 508,515 ****
+  	 24,24,24,24,24,24,24,24,24,24,8,8,8,8,8,8,8,8,8,8,0
+  	};
+  
+  	zmputs(canistr);
+- 	Lleft=0;	/* Do read next time ... */
+  }
+  
+  /*
+--- 540,547 ----
+  	 24,24,24,24,24,24,24,24,24,24,8,8,8,8,8,8,8,8,8,8,0
+  	};
+  
++ 	purgeline();        /* Do read next time ... */
+  	zmputs(canistr);
+  }
+  
+  /*
+***************
+*** 541,548 ****
+  long a, b, c, d;
+  {
+  	if (Verbose > 2) {
+! 		fprintf(stderr, f, a, b, c, d);
+! 		fprintf(stderr, "\n");
+  	}
+  }
+  
+--- 573,580 ----
+  long a, b, c, d;
+  {
+  	if (Verbose > 2) {
+! 		fprintf(Logstream, f, a, b, c, d);
+! 		fprintf(Logstream, "\n");
+  	}
+  }
+  
