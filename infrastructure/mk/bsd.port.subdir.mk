@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.46 2002/04/17 15:58:48 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.47 2002/08/29 18:35:40 avsm Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -181,11 +181,7 @@ readme:
 	@make README.html
 .endif
 
-.if (${OPSYS} == "NetBSD")
-PORTSDIR ?= /usr/opt
-.else
 PORTSDIR ?= /usr/ports
-.endif
 TEMPLATES ?= ${PORTSDIR}/infrastructure/templates
 .if defined(PORTSTOP)
 README=	${TEMPLATES}/README.top
