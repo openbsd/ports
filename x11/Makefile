@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2002/01/25 20:15:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.125 2002/01/28 03:24:55 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -17,7 +17,6 @@
 #    SUBDIR += auis
      SUBDIR += bbdate
      SUBDIR += bbkeys
-     SUBDIR += bbkeys,qt
      SUBDIR += bbpager
      SUBDIR += bclock
      SUBDIR += belt
