@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2001/05/27 21:30:29 lebel Exp $
+# $OpenBSD: Makefile,v 1.46 2001/08/03 14:59:19 fgsch Exp $
 
 COMMENT=	"tty-based e-mail client"
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	slang imap pop compressed
+FLAVORS=	slang imap pop compressed mixmaster
 FLAVOR?=
 
 SYSCONFDIR=	/etc/mutt
@@ -61,6 +61,12 @@ CONFIGURE_ARGS+= --enable-imap --with-ssl
 # specialized program, such as fetchmail.
 .if ${FLAVOR:L:Mpop}
 CONFIGURE_ARGS+= --enable-pop
+.endif
+
+.if ${FLAVOR:L:Mmixmaster}
+MIXMASTER=             ${LOCALBASE}/sbin/mixmaster
+CONFIGURE_ARGS+=       --with-mixmaster="${MIXMASTER}"
+RUN_DEPENDS+=          ${MIXMASTER}::mail/mixmaster
 .endif
 
 .if defined(HOMESPOOL)
