@@ -1,0 +1,20 @@
+--- Makefile.in-orig	Wed Jun 23 00:01:15 1999
++++ Makefile.in	Wed Jun 23 00:02:35 1999
+@@ -5,7 +5,7 @@
+ CC=@CC@
+ 
+ INCLUDES=-I@srcdir@ @PCAP_INCLUDE@
+-CFLAGS=-O2 @DEFS@ 
++CFLAGS= @CFLAGS@ @DEFS@ 
+ LIBS=-lpcap @EXTRA_LIBS@
+ 
+ SRC=ngrep.c regex.c
+@@ -13,7 +13,7 @@
+ TARGET=ngrep
+ 
+ INSTALL=./install-sh
+-DEST=/usr/local/bin
++DEST=@prefix@/bin
+ 
+ $(TARGET): $(OBJS)
+ 	$(CC) $(CFLAGS) -s -o $(TARGET) $(OBJS) $(LIBS) 

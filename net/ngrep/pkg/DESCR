@@ -1,0 +1,53 @@
+
+Program: ngrep 
+Author: nocarrier <jpr5@darkridge.com>
+
+Goal: 
+
+  A program that mimicks as much functionality in GNU grep as
+  possible, applied at the network layer.
+
+Description:
+
+  ngrep stands for network grep, and is a pcap-aware tool that will
+  allow you to specify extended regular expressions to match against
+  the data payloads of packets, and currently recognizes TCP and UDP,
+  and works on ethernet, ppp and slip interfaces.  Blank regexes
+  assume '.*'.
+
+Usage:
+
+  ngrep <-hiwq> <-d dev> [regex] <filter>
+
+  -h  is help/usage
+  -i  is ignore case
+  -w  is word-regex (expression must match as a word)
+  -q  is be quiet
+  -d  is use a device different from the default (pcap)
+
+  [regex]   is any extended regular expression (metachars are
+            significant and don't have to be escaped)
+  <filter>  is any pcap filter statement 
+
+Examples:
+
+  o ngrep  -qd eth1  'HTTP'  tcp port 80
+
+    Be quiet, look only at tcp packets with either source or dest port
+    80 on interface eth1, look for anything matching 'HTTP'. 
+
+  o ngrep  '(USER|PASS)'  tcp port 21
+
+    Look only at tcp packets with either source or dest port 21, look
+    for anything resembling an FTP login.
+
+  o ngrep  -wi  '(user|pass)'  tcp port 21
+  
+    Look at tcp packets with either source or dest port 21, that match
+    either 'user' or 'pass' (case insensitively) as a word. 
+
+  o ngrep  -qd le0  in-addr  port 53
+
+    Look at all packets with either source or dest port 53 on
+    interface le0, that match match 'in-addr'.  Be quiet.
+
