@@ -1,6 +1,6 @@
 --- etc/afpd/volume.c.orig	Tue Mar 31 02:57:11 1998
-+++ etc/afpd/volume.c	Wed Nov 24 15:09:21 1999
-@@ -16,10 +16,13 @@
++++ etc/afpd/volume.c	Tue Nov 14 19:17:39 2000
+@@ -16,20 +16,32 @@
  #include <fcntl.h>
  #include <stdio.h>
  #include <stdlib.h>
@@ -15,7 +15,11 @@
  #include "directory.h"
  #include "file.h"
  #include "volume.h"
-@@ -30,6 +33,14 @@
+ #include "globals.h"
++#include "cvolume_iconres.h"
+ 
+ struct vol	*volumes = NULL;
+ int		lastvid = 0;
  char		*Trash = "\02\024Network Trash Folder";
  struct extmap	*extmap = NULL, *defextmap = NULL;
  
@@ -30,7 +34,7 @@
  initvolumes()
  {
      struct passwd	*pwent;
-@@ -69,6 +80,7 @@
+@@ -69,6 +81,7 @@ initvolumes()
      return;
  }
  
@@ -38,18 +42,21 @@
  afp_getsrvrparms( ibuf, ibuflen, rbuf, rbuflen )
      char	*ibuf, *rbuf;
      int		ibuflen, *rbuflen;
-@@ -76,9 +88,9 @@
+@@ -76,9 +89,11 @@ afp_getsrvrparms( ibuf, ibuflen, rbuf, r
      struct timeval	tv;
      struct stat		st;
      struct vol		*volume;
 -    struct passwd	*pwent;
      char		*data;
-     int			vcnt, len;
+-    int			vcnt, len;
++    char		iconpath[MAXPATHLEN], iconpathres[MAXPATHLEN];
++    char		parentpath[MAXPATHLEN];
++    int			vcnt, len, iconfd;
 +    u_int32_t		secs;
  
      initvolumes();
  
-@@ -91,11 +103,20 @@
+@@ -91,13 +106,71 @@ afp_getsrvrparms( ibuf, ibuflen, rbuf, r
  	if (( st.st_mode & S_IFDIR ) == 0 ) {
  	    continue;		/* not a dir */
  	}
@@ -71,8 +78,59 @@
 +	memcpy( data, volume->v_name, len );
  	data += len;
  	vcnt++;
++
++	/* check for colour icon file in the root directory of the volume.
++	   If it's not there, we will create one. First we need to create
++	   an Icon\015 file with an empty data fork in volume->v_path.
++	   Next we need to create the resource fork for Icon\015 file in
++	   volume->v_path+.AppleDouble. Copy our Colour_Volume_icon[] data
++	  into the resource fork. i.mcwilliam@uws.edu.au */
++
++	if (username != NULL) {
++	syslog(LOG_INFO, "Colour Icon for volume: %s ?", volume->v_name );
++
++	/* build a path to the icon file. */
++	snprintf(iconpath, sizeof(iconpath), "%s/Icon\015", volume->v_path);
++	snprintf(iconpathres, sizeof(iconpathres),
++			"%s/.AppleDouble/Icon\015", volume->v_path);
++	syslog( LOG_INFO, "iconpath: %s", iconpath);
++	if (!access(iconpath, F_OK)) {
++		syslog( LOG_INFO, "Icon^M found for volume: %s", volume->v_name );
++		syslog( LOG_INFO, "Not updating icon for volume: %s", volume->v_name);
++	} else {
++		/* create an empty data fork and populate the resource fork
++		   with the new icon data. */
++		if (( iconfd = open( iconpath, O_CREAT | O_WRONLY, 0664 )) < 0 ) {
++			syslog( LOG_ERR, "can't open iconpath!");
++		} else { close(iconfd); }
++
++		if (( iconfd = open( iconpathres, O_CREAT | O_WRONLY, 0664 )) < 0 ) {
++			syslog( LOG_ERR, "can't open iconpathres!");
++		} else {
++			/* copy our resource data into the file. */
++			
++			write(iconfd, Colour_Volume_icon, sizeof(Colour_Volume_icon));
++			fsync(iconfd);
++			close(iconfd);
++			syslog (LOG_INFO, "Colour Icon added to volume: %s",
++				volume->v_name);
++
++			/* remove the .AppleDouble/.Parent file otherwise
++			   the icon will not show up on the desktop. The
++			   .Parent file will be recreated */
++			snprintf(parentpath, sizeof(parentpath), "%s/.AppleDouble/.Parent", volume->v_path);
++			if (!access(parentpath, F_OK)) {
++				syslog(LOG_INFO, "removing .Parent file: %s", parentpath);
++				unlink(parentpath);
++			}
++		     }
++		}
++	}
++
      }
-@@ -106,21 +127,27 @@
+ 
+     *rbuflen = data - rbuf;
+@@ -106,21 +179,27 @@ afp_getsrvrparms( ibuf, ibuflen, rbuf, r
  	syslog( LOG_ERR, "afp_getsrvrparms: gettimeofday: %m" );
  	exit( 1 );
      }
@@ -106,7 +164,7 @@
  	    return;	/* Obviously not a fully qualified path */
  	}
  	name++;
-@@ -147,18 +174,21 @@
+@@ -147,18 +226,21 @@ creatvol( path, name )
  	syslog( LOG_ERR, "creatvol: malloc: %m" );
  	exit( 1 );
      }
@@ -132,7 +190,7 @@
  #ifdef __svr4__
      volume->v_qfd = -1;
  #else __svr4__
-@@ -209,6 +239,7 @@
+@@ -209,6 +291,7 @@ char *myfgets( buf, size, fp )
   *		<unix path> [<volume name> [<flags>,...]]
   *		<extension> TYPE [CREATOR]
   */
@@ -140,7 +198,7 @@
  readvolfile( p1, p2, user )
      char	*p1, *p2;
      int		user;
-@@ -218,13 +249,13 @@
+@@ -218,13 +301,13 @@ readvolfile( p1, p2, user )
  			volname[ 28 ], buf[ BUFSIZ ],
  			type[ 5 ], creator[ 5 ];
      char		*u, *p;
@@ -158,7 +216,7 @@
      }
  
      if (( fp = fopen( path, "r" )) == NULL ) {
-@@ -240,7 +271,7 @@
+@@ -240,7 +323,7 @@ readvolfile( p1, p2, user )
  	    continue;
  
  	case '~' :
@@ -167,7 +225,7 @@
  		*p++ = '\0';
  	    }
  	    u = path;
-@@ -251,17 +282,24 @@
+@@ -251,17 +334,24 @@ readvolfile( p1, p2, user )
  	    if ( u == NULL || ( pw = getpwnam( u )) == NULL ) {
  		continue;
  	    }
@@ -197,7 +255,7 @@
  	    break;
  
  	case '.' :
-@@ -280,6 +318,7 @@
+@@ -280,6 +370,7 @@ readvolfile( p1, p2, user )
      return( 0 );
  }
  
@@ -205,7 +263,7 @@
  setextmap( ext, type, creator, user )
      char		*ext, *type, *creator;
      int			user;
-@@ -304,17 +343,17 @@
+@@ -304,17 +395,17 @@ setextmap( ext, type, creator, user )
  	return;
      }
  
@@ -228,7 +286,7 @@
      }
  
      if ( strcmp( ext, "." ) == 0 ) {
-@@ -329,7 +368,7 @@
+@@ -329,7 +420,7 @@ getextmap( path )
      char	*p;
      struct extmap	*em;
  
@@ -237,7 +295,7 @@
  	return( defextmap );
      }
  
-@@ -345,6 +384,7 @@
+@@ -345,6 +436,7 @@ getextmap( path )
      }
  }
  
@@ -245,7 +303,7 @@
  afp_openvol( ibuf, ibuflen, rbuf, rbuflen )
      char	*ibuf, *rbuf;
      int		ibuflen, *rbuflen;
-@@ -354,19 +394,20 @@
+@@ -354,19 +446,20 @@ afp_openvol( ibuf, ibuflen, rbuf, rbufle
      struct vol	*volume;
      struct dir	*dir;
      int		len, ret, buflen;
@@ -270,7 +328,7 @@
      volname[ len ] = '\0';
  
      initvolumes();
-@@ -394,12 +435,13 @@
+@@ -394,12 +487,13 @@ afp_openvol( ibuf, ibuflen, rbuf, rbufle
  	dir->d_balance = 0;
  	dir->d_did = htonl( 2 );
  	dir->d_flags = 0;
@@ -286,7 +344,7 @@
  	volume->v_dir = dir;
  	volume->v_did = dir;
  	volume->v_flags |= AFPVOL_OPEN;
-@@ -410,15 +452,15 @@
+@@ -410,15 +504,15 @@ afp_openvol( ibuf, ibuflen, rbuf, rbufle
  	return( AFPERR_PARAM );
      }
  
@@ -306,7 +364,7 @@
  
      /*
       * If you mount a volume twice, the second time the trash appears on
-@@ -438,16 +480,17 @@
+@@ -438,16 +532,17 @@ afp_openvol( ibuf, ibuflen, rbuf, rbufle
      return( AFP_OK );
  }
  
@@ -326,7 +384,7 @@
      if (( vol = getvolbyvid( vid )) == NULL ) {
  	return( AFPERR_PARAM );
      }
-@@ -471,6 +514,7 @@
+@@ -471,6 +566,7 @@ afp_closevol( ibuf, ibuflen, rbuf, rbufl
      return( AFP_OK );
  }
  
@@ -334,7 +392,7 @@
  freedir( dir )
      struct dir	*dir;
  {
-@@ -484,6 +528,7 @@
+@@ -484,6 +580,7 @@ freedir( dir )
      free( dir );
  }
  
@@ -342,7 +400,7 @@
  afp_getvolparams( ibuf, ibuflen, rbuf, rbuflen )
      char	*ibuf, *rbuf;
      int		ibuflen, *rbuflen;
-@@ -491,12 +536,12 @@
+@@ -491,12 +588,12 @@ afp_getvolparams( ibuf, ibuflen, rbuf, r
      struct stat	st;
      struct vol	*vol;
      int		buflen, ret;
@@ -359,7 +417,7 @@
      bitmap = ntohs( bitmap );
  
      if (( vol = getvolbyvid( vid )) == NULL ) {
-@@ -509,24 +554,25 @@
+@@ -509,24 +606,25 @@ afp_getvolparams( ibuf, ibuflen, rbuf, r
  	return( AFPERR_PARAM );
      }
  
@@ -391,7 +449,7 @@
  
      spaceflag = AFPVOL_GVSMASK & vol->v_flags;
  
-@@ -555,14 +601,26 @@
+@@ -555,14 +653,26 @@ getvolspace( vol, bfree, btotal )
      }
  #endif linux
  
@@ -421,7 +479,7 @@
      struct vol	*vol;
      struct stat	*st;
      char	*buf;
-@@ -570,15 +628,44 @@
+@@ -570,15 +680,44 @@ getvolparams( bitmap, vol, st, buf, bufl
  {
      struct adouble	ad;
      int			bit = 0, aint, isad = 1;
@@ -469,7 +527,7 @@
      if (( bitmap & ( (1<<VOLPBIT_BFREE)|(1<<VOLPBIT_BTOTAL) )) != 0 ) {
  	if ( getvolspace( vol, &bfree, &btotal ) < 0 ) {
  	    if ( isad ) {
-@@ -598,28 +685,28 @@
+@@ -598,28 +737,28 @@ getvolparams( bitmap, vol, st, buf, bufl
  	switch ( bit ) {
  	case VOLPBIT_ATTR :
  	    ashort = 0;
@@ -506,7 +564,7 @@
  	    break;
  
  	case VOLPBIT_MDATE :
-@@ -629,41 +716,41 @@
+@@ -629,41 +768,41 @@ getvolparams( bitmap, vol, st, buf, bufl
  	    } else {
  		aint = htonl( vol->v_time );
  	    }
@@ -558,7 +616,7 @@
  	    break;
  
  	default :
-@@ -677,13 +764,14 @@
+@@ -677,13 +816,14 @@ getvolparams( bitmap, vol, st, buf, bufl
      }
      if ( nameoff != 0 ) {
  	ashort = htons( data - buf );
@@ -575,7 +633,7 @@
  	ad_close( &ad, ADFLAGS_HF );
      }
      *buflen = data - buf;
-@@ -708,6 +796,7 @@
+@@ -708,6 +848,7 @@ getvolbyvid( vid )
      return( vol );
  }
  
