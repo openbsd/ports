@@ -1,0 +1,4 @@
+Data::Buffer implements a low-level binary buffer in which you can get
+and put integers, strings, and other data. Internally the implementation
+is based on "pack" and "unpack", such that Data::Buffer is really a
+layer on top of those built-in functions.
