@@ -3,9 +3,10 @@
 # Date created:		June 6 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/06/08 02:52:32 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/09/22 10:44:21 espie Exp $
 #
 
+NEED_VERSION=	1.116
 DISTNAME=	mmv
 PKGNAME=	mmv-1.01b
 CATEGORIES=	misc
@@ -28,7 +29,7 @@ do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}/tmp
 	@(for file in ${DISTFILES}; do \
-		${CP} ${DISTDIR}/${DIST_SUBDIR}/$$file ${WRKDIR}/tmp; \
+		${CP} ${FULLDISTDIR}/$$file ${WRKDIR}/tmp; \
 	 done ; \
 	 uncompress ${WRKDIR}/tmp/*; \
 	 cd ${WRKDIR}; \

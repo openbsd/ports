@@ -2,9 +2,10 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1998/12/16 20:14:41 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/09/22 10:44:21 espie Exp $
 #
 
+NEED_VERSION=	1.116
 DISTNAME=	pkfonts
 PKGNAME=	pkfonts${RESOLUTION}-1.0
 CATEGORIES=	print
@@ -47,7 +48,7 @@ pre-fetch:
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/fonts
-	tar -C ${PREFIX}/lib/fonts -xzf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
+	tar -C ${PREFIX}/lib/fonts -xzf ${FULLDISTDIR}/${DISTFILES}
 	@${CP} ${PKGDIR}/${RESOLUTION}.list ${PKGDIR}/PLIST 
 
 pre-clean:

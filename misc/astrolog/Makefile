@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 1999/08/10 19:38:34 espie Exp $
+# $OpenBSD: Makefile,v 1.5 1999/09/22 10:44:21 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
+NEED_VERSION=	1.116
 DISTNAME=       ast53unx
 PKGNAME=        astrolog-5.30
 CATEGORIES=     misc
@@ -24,7 +25,7 @@ NO_WRKSUBDIR=   Yes
 
 do-install:
 	-@${MKDIR} ${PREFIX}/lib/astrolog
-	cd ${DISTDIR}/${DIST_SUBDIR} && \
+	cd ${FULLDISTDIR} && \
 		${INSTALL_DATA} ${EPHEM} ${PREFIX}/lib/astrolog
 	cd ${WRKSRC} && \
 		if [ -f ${PREFIX}/lib/astrolog/astrolog.dat ] ; then \

@@ -3,9 +3,10 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/17 04:53:23 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/09/22 10:44:21 espie Exp $
 #
 
+NEED_VERSION=	1.116
 DISTNAME=	iso12083-1993
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://info.ex.ac.uk/pub/SGML/ISO-12083/
@@ -29,7 +30,7 @@ pre-install:
 
 do-install:
 	@for i in ${DISTFILES}; do \
-		${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$i ${INSTDIR}/$$i; \
+		${INSTALL_DATA} ${FULLDISTDIR}/$$i ${INSTDIR}/$$i; \
 	done
 	@${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}/catalog
 
