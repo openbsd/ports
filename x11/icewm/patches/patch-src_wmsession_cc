@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_wmsession_cc,v 1.1 2002/12/13 07:27:39 pvalchev Exp $
+--- src/wmsession.cc.orig	Tue Oct  9 09:54:04 2001
++++ src/wmsession.cc	Thu Dec 12 23:46:25 2002
+@@ -198,7 +198,7 @@ static int rd_str(char *s, char *d) {
+         c = *s++;
+     }
+ 
+-    while (c != EOF) {
++    while (c != 0) {
+         if (c == '"' && !old) {
+             c = *s++;
+             break;
