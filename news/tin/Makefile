@@ -4,17 +4,21 @@
 # Date created:		18 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.9 2000/03/01 10:08:08 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/23 03:43:41 turan Exp $
 #
 
 DISTNAME=		tinpre-1.4-19990216
 PKGNAME=		tin-1.4.19990216
 CATEGORIES=		news
 
-NO_CDROM=		"NOFEE:	Can not sell"
 NO_PACKAGE=		"too much compile time configuration"
 
 MAINTAINER=     	ports@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://nuxi.ucdavis.edu/pub/tin/pre-v1.4/ \
 			ftp://ftp.akk.uni-karlsruhe.de/pub/tin/ \
