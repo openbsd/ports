@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2001/03/24 19:55:43 jakob Exp $
+# $OpenBSD: Makefile,v 1.23 2001/10/06 10:35:14 ho Exp $
 
 COMMENT=	Berkeley Internet Name Daemon
 
-DISTNAME=	bind-openbsd-8.2.3-20010129
-PKGNAME=	bind-8.2.3
+DISTNAME=	bind-openbsd-8.2.5-20011006
+PKGNAME=	bind-8.2.5
 CATEGORIES=	net
 NEED_VERSION=	1.363
 

@@ -1,9 +1,9 @@
-$OpenBSD: SECURITY,v 1.3 1999/11/14 22:39:16 jakob Exp $
+$OpenBSD: SECURITY,v 1.4 2001/10/06 10:35:14 ho Exp $
 
 Quick notes on security issues using BIND 8
 -------------------------------------------
 
-The base version of BIND from ISC is 8.2.2-P5, which is belived
+The base version of BIND from ISC is 8.2.5, which is belived
 to be fairly secure (i.e no obvious or (to the author) known bugs).
 It is, however, a large and complex piece of software, so there are 
 bound to be bugs found in the future...
@@ -36,16 +36,16 @@ this currently includes:
 	   binaries named and named-xfer 
 	** use mkstemp() instead of mktemp() 
 	** Generate good random query IDs
-	
+
 There are also some functionality/bugfix patches (from the indicated sources).
 [These are not strictly security related, but this seems a good place
  to mention this anyway, so...]
-	
+
 	** global transfer-source option [ISC]
 	** allow trusted keys to be specified in hex [TISlabs]
         ** support multiple CNAMEs [ISC]
 
 
-November 14, 1999
+--
 Håkan Olsson <ho@openbsd.org>
 Jakob Schlyter <jakob@openbsd.org>
