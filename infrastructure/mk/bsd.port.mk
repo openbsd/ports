@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.254 2000/04/09 11:34:01 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.255 2000/04/09 11:51:39 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1004,7 +1004,7 @@ SCRIPTS_ENV+= CURDIR=${.CURDIR} DISTDIR=${DISTDIR} \
 SCRIPTS_ENV+=	BATCH=yes
 .endif
 
-.if defined(WRKINST)
+.if defined(WRKINST) && !defined(TRUEPREFIX)
 MANPREFIX?=  ${WRKINST}${PREFIX}
 CATPREFIX?=  ${WRKINST}${PREFIX}
 .else
