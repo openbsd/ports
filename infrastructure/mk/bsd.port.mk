@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.137 1999/11/22 20:34:14 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.138 1999/11/22 20:37:04 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1872,32 +1872,29 @@ RECURSIVE_FETCH_LIST?=	Yes
 
 .if !target(fetch-list)
 fetch-list:
-	@${MAKE} fetch-list-recursive RECURSIVE_FETCH_LIST=${RECURSIVE_FETCH_LIST} | sort -u
+	@make fetch-list-recursive RECURSIVE_FETCH_LIST=${RECURSIVE_FETCH_LIST} | sort -u
 .endif # !target(fetch-list)
 
 .if !target(fetch-list-recursive)
 fetch-list-recursive:
-	@${MAKE} fetch-list-one-pkg
+	@make fetch-list-one-pkg
 .if ${RECURSIVE_FETCH_LIST:U} != "NO"
-	@for dir in `${ECHO} ${FETCH_DEPENDS:C/^[^:]*://:C/:.*//} \
-	${BUILD_DEPENDS:C/^[^:]*://:C/:.*//} \
-	${LIB_DEPENDS:C/^[^:]*://:C/:.*//} \
-	${RUN_DEPENDS:C/^[^:]*://:C/:.*//} \
-	${DEPENDS:C/:.*//} | ${TR} '\040' '\012' | sort -u`; do \
-		(cd $$dir; ${MAKE} fetch-list-recursive; ); \
+	@for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
+	| tr '\040' '\012' | sort -u`; do \
+		cd $$dir; make fetch-list-recursive; \
 	done
 .endif # ${RECURSIVE_FETCH_LIST} != "NO"
 .endif # !target(fetch-list-recursive)
 
 .if !target(fetch-list-one-pkg)
 fetch-list-one-pkg:
-	@${MKDIR} ${FULLDISTDIR}
-	@[ -z "${FULLDISTDIR}" ] || ${ECHO} "${MKDIR} ${FULLDISTDIR}"
-	@(cd ${FULLDISTDIR}; \
+	@mkdir -p ${FULLDISTDIR}
+	@[ -z "${FULLDISTDIR}" ] || echo "mkdir -p ${FULLDISTDIR}"
+	@cd ${FULLDISTDIR}; \
 	 for fullfile in ${DISTFILES}; do \
-	 	file=`${ECHO} $$fullfile|${SED} -e 's,:[0-9]$$,,'`; \
-		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
-			${ECHO} -n "cd ${FULLDISTDIR} && [ -f $$file -o -f `${BASENAME} $$file` ] || " ; \
+	 	file=`echo $$fullfile|sed -e 's,:[0-9]$$,,'`; \
+		if [ ! -f $$file -a ! -f `basename $$file` ]; then \
+			echo -n "cd ${FULLDISTDIR} && [ -f $$file -o -f `basename $$file` ] || " ; \
 			case $$fullfile in \
 				*:0) sites_list="${MASTER_SITES0}";; \
 				*:1) sites_list="${MASTER_SITES1}";; \
@@ -1912,17 +1909,17 @@ fetch-list-one-pkg:
 				*)   sites_list="${MASTER_SITES}";; \
 			esac; \
 			for site in $$sites_list ; do \
-				${ECHO} -n ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} "${FETCH_AFTER_ARGS}" '|| ' ; \
+				echo -n ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
-			${ECHO} "echo $${file} not fetched" ; \
+			echo "echo $${file} not fetched" ; \
 		fi \
-	done)
+	done
 .if defined(PATCHFILES)
-	@(cd ${FULLDISTDIR}; \
+	@cd ${FULLDISTDIR}; \
 	 for fullfile in ${PATCHFILES}; do \
-	 	file=`${ECHO} $$fullfile|${SED} -e 's,:[0-9]$$,,'`; \
-		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
-			${ECHO} -n "cd ${FULLDISTDIR} && [ -f $$file -o -f `${BASENAME} $$file` ] || " ; \
+	 	file=`echo $$fullfile|sed -e 's,:[0-9]$$,,'`; \
+		if [ ! -f $$file -a ! -f `basename $$file` ]; then \
+			echo -n "cd ${FULLDISTDIR} && [ -f $$file -o -f `basename $$file` ] || " ; \
 			case $$fullfile in \
 				*:0) sites_list="${PATCH_SITES0}";; \
 				*:1) sites_list="${PATCH_SITES1}";; \
@@ -1937,11 +1934,11 @@ fetch-list-one-pkg:
 				*)   sites_list="${PATCH_SITES}";; \
 			esac; \
 +			for site in $$sites_list; do \
-				${ECHO} -n ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} "${FETCH_AFTER_ARGS}" '|| ' ; \
+				echo -n ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
-			${ECHO} "echo $${file} not fetched" ; \
+			echo "echo $${file} not fetched" ; \
 		fi \
-	done)
+	done
 .endif # defined(PATCHFILES)
 .endif # !target(fetch-list-one-pkg)
 
