@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/25 21:45:02 naddy Exp $
+bin/binhex
+bin/frommac
+bin/hexbin
+bin/macsave
+bin/macstream
+bin/macunpack
+bin/tomac
+man/man1/binhex.1
+man/man1/frommac.1
+man/man1/hexbin.1
+man/man1/macsave.1
+man/man1/macstream.1
+man/man1/macunpack.1
+man/man1/macutil.1
+man/man1/tomac.1
+share/doc/macutil/README
+@dirrm share/doc/macutil

@@ -1,0 +1,18 @@
+$OpenBSD: patch-crc_makefile,v 1.1.1.1 2002/10/25 21:45:02 naddy Exp $
+--- crc/makefile.orig	Fri Oct 25 17:27:17 2002
++++ crc/makefile	Fri Oct 25 17:29:27 2002
+@@ -1,4 +1,4 @@
+-CFLAGS =	-O $(CF)
++CFLAGS = $(CF)
+ CRCC =	arc.c ccitt.c kermit.c binhex.c ccitt32.c zip.c
+ CRCO =	arc.o ccitt.o kermit.o binhex.o ccitt32.o zip.o
+ 
+@@ -16,7 +16,7 @@ $(CRCC):	makecrc
+ 	./makecrc
+ 
+ makecrc:	makecrc.o
+-	cc -O -o makecrc makecrc.o
++	${CC} ${CFLAGS} -o makecrc makecrc.o
+ 
+ arc.o:	arc.c
+ ccitt.o:	ccitt.c

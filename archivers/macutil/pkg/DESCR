@@ -1,0 +1,12 @@
+With these tools you can handle Macintosh files. The package
+contains the following utilities:
+
+  binhex    - Convert files to BinHex 4.0 compatible hexified form
+  frommac   - Receives files from the Macintosh in the Unix system
+  hexbin    - Convert hexified files to their Macintosh format
+  macsave   - Save a series of files from a MacBinary stream as
+              individual files
+  macstream - Combine a series of files to a MacBinary stream
+  macunpack - Unpack a Macintosh archive into its constituents
+  tomac     - Transmits files from the Unix system to a Macintosh
+

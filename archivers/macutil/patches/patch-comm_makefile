@@ -1,0 +1,9 @@
+$OpenBSD: patch-comm_makefile,v 1.1.1.1 2002/10/25 21:45:02 naddy Exp $
+--- comm/makefile.orig	Fri Oct 25 17:30:30 2002
++++ comm/makefile	Fri Oct 25 17:30:34 2002
+@@ -1,4 +1,4 @@
+-CFLAGS = -O $(CF)
++CFLAGS = $(CF)
+ 
+ SRCS1 =	tomac.c xm_to.c ym_to.c zm_to.c to.c tty.c globals.c
+ SRCS2 =	frommac.c xm_from.c ym_from.c zm_from.c from.c tty.c globals.c

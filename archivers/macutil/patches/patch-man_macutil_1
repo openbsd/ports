@@ -1,0 +1,14 @@
+$OpenBSD: patch-man_macutil_1,v 1.1.1.1 2002/10/25 21:45:02 naddy Exp $
+--- man/macutil.1.orig	Fri Oct 25 17:53:19 2002
++++ man/macutil.1	Fri Oct 25 17:53:27 2002
+@@ -20,10 +20,6 @@ Convert hexified files to their MacIntos
+ .B macsave
+ Save a series of files from a MacBinary stream as individual files.
+ .TP
+-.B macdesea
+-The same as macsave, but this program will rewrite self-extracting
+-archives as normal archives.
+-.TP
+ .B macstream
+ Combine a series of files to a MacBinary stream.
+ .TP

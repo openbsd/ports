@@ -1,0 +1,9 @@
+$OpenBSD: patch-util_makefile,v 1.1.1.1 2002/10/25 21:45:02 naddy Exp $
+--- util/makefile.orig	Fri Oct 25 17:28:11 2002
++++ util/makefile	Fri Oct 25 17:28:22 2002
+@@ -1,4 +1,4 @@
+-CFLAGS=	-O $(CF)
++CFLAGS=	$(CF)
+ 
+ all:	util.o transname.o backtrans.o
+ 	touch all
