@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/06/03 19:00:17 pvalchev Exp $
+--- Makefile.in.orig	Tue Aug 25 08:56:23 1998
++++ Makefile.in	Sun Jun  3 12:55:01 2001
+@@ -92,7 +92,7 @@ xcopilot_OBJECTS =  cmap_mgr.o fakecall.
+ xcopilot.o display.o main.o pdebug.o ser-tcp.o open_app.o
+ xcopilot_DEPENDENCIES =  mc68k/libmc68k.a mx/libmx.a
+ xcopilot_LDFLAGS = 
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ $(X_CFLAGS)
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+ LINK = $(CC) $(CFLAGS) $(LDFLAGS) -o $@
+ man1dir = $(mandir)/man1
