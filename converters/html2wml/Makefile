@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/21 03:06:15 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2001/06/04 06:04:55 shell Exp $
 
 COMMENT=	"on-the-fly HTML to WML conversion"
 
-DISTNAME=       html2wml-0.4.2
+DISTNAME=       html2wml-0.4.3
 CATEGORIES=     converters www perl5
 NEED_VERSION=   1.409
 
