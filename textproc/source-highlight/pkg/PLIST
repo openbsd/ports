@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/10/15 04:49:06 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/06/24 05:30:47 kevlo Exp $
 bin/cpp2html
 bin/java2html
 bin/source-highlight
+bin/source-highlight-cgi
+bin/src-hilite-lesspipe.sh
 man/man1/source-highlight.1
 share/doc/source-highlight/COPYING
 share/doc/source-highlight/CREDITS
 share/doc/source-highlight/ChangeLog
-share/doc/source-highlight/ChangeLog.html
 share/doc/source-highlight/Hello.css
 share/doc/source-highlight/Hello.java
 share/doc/source-highlight/Hello.java.html
@@ -36,11 +37,14 @@ share/doc/source-highlight/mono.css
 share/doc/source-highlight/source-highlight.html
 share/doc/source-highlight/startapp.cc.html
 share/doc/source-highlight/test.js.html
+share/doc/source-highlight/test.lua.html
+share/doc/source-highlight/test.ml.html
 share/doc/source-highlight/test.php3.html
 share/doc/source-highlight/test.pl.html
 share/doc/source-highlight/test.pm.html
 share/doc/source-highlight/test.py.html
 share/doc/source-highlight/test.rb.html
+share/doc/source-highlight/test.sml.html
 share/doc/source-highlight/xhtml.css
 share/source-highlight/tags.j2h
 share/source-highlight/tags2.j2h
