@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/20 11:38:24 shell Exp $
+lib/python${PYTHON_VER}/site-packages/pcap.py
+lib/python${PYTHON_VER}/site-packages/pcap.pyc
+lib/python${PYTHON_VER}/site-packages/pcapcmodule.so
