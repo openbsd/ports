@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/21 21:09:18 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/05/08 18:32:02 millert Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	"astrology program for X11 and alpha-numeric terminals"
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_CASES=	*.shr) ${_SED_FIX_SHAR} ${FULLDISTDIR}/$$archive | /bin/sh;;
+EXTRACT_CASES=	*.shr) ${_PERL_FIX_SHAR} ${FULLDISTDIR}/$$archive | /bin/sh;;
 
 DIST_SUBDIR=    astrolog
 ALL_TARGET=     astrolog

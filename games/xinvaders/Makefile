@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/03/21 20:57:07 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/05/08 18:32:02 millert Exp $
 #
 
 COMMENT=	"shoot them nasty little bugs"
@@ -20,7 +20,7 @@ MASTER_SITES=	ftp://ftp.uu.net/usenet/comp.sources.x/volume19/xinvaders/ \
 		ftp://unix.hensa.ac.uk/archive/usenet/comp.sources.x/volume19/xinvaders/
 DISTFILES=	part01.Z part02.Z part03.Z
 
-EXTRACT_CASES=	*.Z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${_SED_FIX_SHAR} | /bin/sh;;
+EXTRACT_CASES=	*.Z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${_PERL_FIX_SHAR} | /bin/sh;;
 
 CONFIGURE_STYLE=	imake
 

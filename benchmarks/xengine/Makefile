@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/03/21 20:35:43 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2002/05/08 18:32:02 millert Exp $
 
 COMMENT=	"reciprocating engine for X11"
 PKGNAME=	xengine-1.0.1
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 
 DIST_SUBDIR=	xengine
-EXTRACT_CASES=	*.z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${_SED_FIX_SHAR} | /bin/sh;;
+EXTRACT_CASES=	*.z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${_PERL_FIX_SHAR} | /bin/sh;;
 PATCH_DIST_STRIP=	-p1	# no ${PATCHFILES} but used below
 
 WRKDIST=	${WRKDIR}

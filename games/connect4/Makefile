@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/04/25 01:26:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2002/05/08 18:32:02 millert Exp $
 
 COMMENT=	"curses version of the classic game"
 
@@ -20,7 +20,7 @@ MASTER_SITES=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.games/volume6/ \
 		ftp://ftp.funet.fi/pub/archive/comp.sources.games/volume6/
 EXTRACT_SUFX=	.Z
 EXTRACT_CASES=	*.Z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | \
-		${_SED_FIX_SHAR} | /bin/sh ;;
+		${_PERL_FIX_SHAR} | /bin/sh ;;
 
 MAKE_FLAGS=	CFLAGS='${CFLAGS} -DSCOREFILE=\"/var/games/connect4.scores\"'
 
