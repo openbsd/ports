@@ -1,6 +1,6 @@
-$OpenBSD: patch-fping_c,v 1.2 2001/12/06 06:25:32 form Exp $
+$OpenBSD: patch-fping_c,v 1.3 2002/03/29 07:25:52 form Exp $
 --- fping.c.orig	Thu Jan  9 02:29:43 1997
-+++ fping.c	Thu Dec  6 11:44:20 2001
++++ fping.c	Fri Mar 29 13:17:47 2002
 @@ -186,7 +186,11 @@ extern "C" {
  
  #include <string.h>
@@ -66,7 +66,7 @@ $OpenBSD: patch-fping_c,v 1.2 2001/12/06 06:25:32 form Exp $
           if (strcmp(filename,"-")==0) {
               ping_file=fdopen(0,"r");
           } else {
-@@ -1099,6 +1124,8 @@ int wait_for_reply()
+@@ -1099,6 +1121,8 @@ int wait_for_reply()
  
    result=recvfrom_wto(s,buffer,4096,
                       (struct sockaddr *)&response_addr,select_time);
@@ -75,7 +75,16 @@ $OpenBSD: patch-fping_c,v 1.2 2001/12/06 06:25:32 form Exp $
    if (result<0) { return 0; } /* timeout */
    
  #ifdef DEBUG
-@@ -1144,7 +1171,6 @@ int wait_for_reply()
+@@ -1107,7 +1131,7 @@ int wait_for_reply()
+       return 0;
+ #endif
+   ip = (struct ip *) buffer;
+-#if defined(__alpha__) && __STDC__
++#if defined(__FreeBSD__) && defined(__alpha__) && __STDC__
+   /* The alpha headers are decidedly broken.
+    * Using an ANSI compiler, it provides ip_vhl instead of ip_hl and
+    * ip_v.  So, to get ip_hl, we mask off the bottom four bits.
+@@ -1144,7 +1168,6 @@ int wait_for_reply()
    h=table[n];
  
    /* received ping is cool, so process it */
