@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 1999/03/13 05:13:26 fgsch Exp $
+# $OpenBSD: Makefile,v 1.23 1999/03/15 17:12:20 brad Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
      SUBDIR += ImageMagick
      SUBDIR += MesaGL
+     SUBDIR += aalib
 #    SUBDIR += aero
 #    SUBDIR += camediaplay
      SUBDIR += compface
