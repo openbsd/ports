@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2001/03/14 01:57:11 todd Exp $
---- doc/Makefile.in.orig	Tue Mar 13 00:17:00 2001
-+++ doc/Makefile.in	Tue Mar 13 00:17:11 2001
-@@ -89,7 +89,7 @@ AUTOMAKE_OPTIONS = foreign
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2002/01/16 03:10:21 naddy Exp $
+--- doc/Makefile.in.orig	Tue Jan  1 02:53:47 2002
++++ doc/Makefile.in	Tue Jan  1 22:20:37 2002
+@@ -94,7 +94,7 @@ AUTOMAKE_OPTIONS = foreign
  
  SUBDIRS = vorbisfile vorbisenc
  

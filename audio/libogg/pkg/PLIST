@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/14 01:55:43 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/01/16 03:10:21 naddy Exp $
 include/ogg/config_types.h
 include/ogg/ogg.h
 include/ogg/os_types.h
 lib/libogg.a
 lib/libogg.la
-%%SHARED%%
 share/aclocal/ogg.m4
 share/doc/libogg/framing.html
 share/doc/libogg/index.html
@@ -15,17 +14,19 @@ share/doc/libogg/ogg/encoding.html
 share/doc/libogg/ogg/general.html
 share/doc/libogg/ogg/index.html
 share/doc/libogg/ogg/ogg_packet.html
+share/doc/libogg/ogg/ogg_packet_clear.html
 share/doc/libogg/ogg/ogg_page.html
 share/doc/libogg/ogg/ogg_page_bos.html
+share/doc/libogg/ogg/ogg_page_checksum_set.html
 share/doc/libogg/ogg/ogg_page_continued.html
 share/doc/libogg/ogg/ogg_page_eos.html
 share/doc/libogg/ogg/ogg_page_granulepos.html
+share/doc/libogg/ogg/ogg_page_packets.html
 share/doc/libogg/ogg/ogg_page_pageno.html
 share/doc/libogg/ogg/ogg_page_serialno.html
 share/doc/libogg/ogg/ogg_page_version.html
 share/doc/libogg/ogg/ogg_stream_clear.html
 share/doc/libogg/ogg/ogg_stream_destroy.html
-share/doc/libogg/ogg/ogg_stream_eof.html
 share/doc/libogg/ogg/ogg_stream_eos.html
 share/doc/libogg/ogg/ogg_stream_flush.html
 share/doc/libogg/ogg/ogg_stream_init.html
@@ -70,6 +71,7 @@ share/doc/libogg/oggstream.html
 share/doc/libogg/stream.png
 share/doc/libogg/white-ogg.png
 share/doc/libogg/white-xifish.png
+%%SHARED%%
 @dirrm share/doc/libogg/ogg
 @dirrm share/doc/libogg
 @dirrm include/ogg

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/14 01:57:10 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/01/16 03:10:21 naddy Exp $
 include/vorbis/codec.h
 include/vorbis/vorbisenc.h
 include/vorbis/vorbisfile.h
@@ -8,7 +8,6 @@ lib/libvorbisenc.a
 lib/libvorbisenc.la
 lib/libvorbisfile.a
 lib/libvorbisfile.la
-%%SHARED%%
 share/aclocal/vorbis.m4
 share/doc/libvorbis/programming.html
 share/doc/libvorbis/v-comment.html
@@ -21,6 +20,7 @@ share/doc/libvorbis/vorbisenc/reference.html
 share/doc/libvorbis/vorbisenc/style.css
 share/doc/libvorbis/vorbisenc/vorbis_encode_ctl.html
 share/doc/libvorbis/vorbisenc/vorbis_encode_init.html
+share/doc/libvorbis/vorbisenc/vorbis_encode_init_vbr.html
 share/doc/libvorbis/vorbisenc/vorbis_info.html
 share/doc/libvorbis/vorbisfile/OggVorbis_File.html
 share/doc/libvorbis/vorbisfile/chaining_example_c.html
@@ -47,9 +47,13 @@ share/doc/libvorbis/vorbisfile/ov_raw_seek.html
 share/doc/libvorbis/vorbisfile/ov_raw_tell.html
 share/doc/libvorbis/vorbisfile/ov_raw_total.html
 share/doc/libvorbis/vorbisfile/ov_read.html
+share/doc/libvorbis/vorbisfile/ov_read_float.html
 share/doc/libvorbis/vorbisfile/ov_seekable.html
 share/doc/libvorbis/vorbisfile/ov_serialnumber.html
 share/doc/libvorbis/vorbisfile/ov_streams.html
+share/doc/libvorbis/vorbisfile/ov_test.html
+share/doc/libvorbis/vorbisfile/ov_test_callbacks.html
+share/doc/libvorbis/vorbisfile/ov_test_open.html
 share/doc/libvorbis/vorbisfile/ov_time_seek.html
 share/doc/libvorbis/vorbisfile/ov_time_tell.html
 share/doc/libvorbis/vorbisfile/ov_time_total.html
@@ -67,6 +71,7 @@ share/doc/libvorbis/vorbisword2.png
 share/doc/libvorbis/wait.png
 share/doc/libvorbis/white-ogg.png
 share/doc/libvorbis/white-xifish.png
+%%SHARED%%
 @dirrm share/doc/libvorbis/vorbisfile
 @dirrm share/doc/libvorbis/vorbisenc
 @dirrm share/doc/libvorbis

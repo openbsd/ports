@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/08/20 21:53:56 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/01/16 03:10:21 naddy Exp $
 include/ao/ao.h
 include/ao/os_types.h
 include/ao/plugin.h
@@ -14,6 +14,7 @@ share/doc/libao/ao_driver_id.html
 share/doc/libao/ao_driver_info.html
 share/doc/libao/ao_driver_info_list.html
 share/doc/libao/ao_example.c
+share/doc/libao/ao_file_extension.html
 share/doc/libao/ao_free_options.html
 share/doc/libao/ao_info.html
 share/doc/libao/ao_initialize.html
@@ -25,6 +26,7 @@ share/doc/libao/ao_plugin_close.html
 share/doc/libao/ao_plugin_device_clear.html
 share/doc/libao/ao_plugin_device_init.html
 share/doc/libao/ao_plugin_driver_info.html
+share/doc/libao/ao_plugin_file_extension.html
 share/doc/libao/ao_plugin_open.html
 share/doc/libao/ao_plugin_play.html
 share/doc/libao/ao_plugin_set_option.html

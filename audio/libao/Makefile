@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/10/08 14:57:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2002/01/16 03:10:21 naddy Exp $
 
 COMMENT=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
@@ -8,7 +8,7 @@ FULLPKGNAME=		libao-${VERSION}
 FULLPKGNAME-arts=	libao-arts-${VERSION}
 FULLPKGNAME-esd=	libao-esd-${VERSION}
 
-VERSION=	0.8.0
+VERSION=	0.8.2
 DISTNAME=	libao-${VERSION}
 CATEGORIES=    	audio
 NEED_VERSION=	1.435
@@ -22,11 +22,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}files/rc2/unix/
-
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
-		patch-*
+MASTER_SITES=	http://www.xiph.org/ogg/vorbis/download/ \
+		http://www.vorbis.com/files/rc2/unix/ \
+		http://www.oddsock.org/vorbisrc3/files/rc3/unix/
 
 FLAVORS=	no_arts no_esd
 FLAVOR?=	no_arts
@@ -52,10 +50,10 @@ CONFIGURE_ARGS+= --disable-esd
 
 .if defined(PACKAGING)
 .  if   ${SUBPACKAGE} == "-arts"
-LIB_DEPENDS=	ao.2::audio/libao \
+LIB_DEPENDS=	ao.3::audio/libao \
 		artsc.0::x11/kde/libs2
 .  elif ${SUBPACKAGE} == "-esd"
-LIB_DEPENDS=	ao.2::audio/libao \
+LIB_DEPENDS=	ao.3::audio/libao \
 		esd.2::audio/esound
 .  endif
 .else

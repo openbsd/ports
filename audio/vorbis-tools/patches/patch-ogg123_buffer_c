@@ -1,0 +1,15 @@
+$OpenBSD: patch-ogg123_buffer_c,v 1.5 2002/01/16 03:10:21 naddy Exp $
+--- ogg123/buffer.c.orig	Tue Jan 15 19:20:06 2002
++++ ogg123/buffer.c	Tue Jan 15 19:21:17 2002
+@@ -88,9 +88,11 @@ void buffer_thread_cleanup (void *arg)
+ 
+   /* Cleanup thread data structures */
+   pthread_mutex_unlock(&buf->mutex);
++#if 0	/* KLUDGE: disabling this keeps ogg123 from crashing */
+   pthread_mutex_destroy(&buf->mutex);
+   pthread_cond_destroy(&buf->playback_cond);
+   pthread_cond_destroy(&buf->write_cond);
++#endif
+ }
+ 
+ 
