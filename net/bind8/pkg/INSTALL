@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.2 1999/10/29 12:54:23 ho Exp $
+# $OpenBSD: INSTALL,v 1.3 1999/12/17 17:56:30 ho Exp $
 #
 # Pre/post-installation setup of named
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/}
-NROOT=/var/named
+NROOT=${DESTDIR}/var/named
 
 SAMPLEDIR=${3:-/usr/local/share/examples/bind8}
 
@@ -42,8 +42,8 @@ fi
 case $2 in
     PRE-INSTALL)
 	# Note "descending" order
-	pre_fix_dir /usr/share/doc/html/named
-	pre_fix_dir /usr/libexec/named
+	pre_fix_dir ${DESTDIR}/usr/share/doc/html/named
+	pre_fix_dir ${DESTDIR}/usr/libexec/named
 	pre_fix_dir ${NROOT}
 	pre_fix_dir ${NROOT}/slave named:bin 0755
 	pre_fix_dir ${NROOT}/master named:bin 0755

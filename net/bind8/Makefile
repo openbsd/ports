@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 1999/12/06 15:45:01 ho Exp $
+# $OpenBSD: Makefile,v 1.10 1999/12/17 17:56:30 ho Exp $
 
-DISTNAME=	bind-openbsd-8.2.2-P5
-PKGNAME=	bind-8.2.2-P5
+DISTNAME=	bind-openbsd-8.2.2-P6-19991217
+PKGNAME=	bind-8.2.2-P6
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.gsnig.net/pub/openbsd-bind/ \
 		ftp://ftp.sekure.net/pub/gsnig/openbsd-bind/
 
 MAINTAINER=	ho@openbsd.org,jakob@openbsd.org
-
-BROKEN=		"A server running a signed zone can be DOS-ed"
 
 WRKSRC=		${WRKDIR}/named
 PREFIX=		/
@@ -17,7 +15,7 @@ NO_CONFIGURE=	yes
 NO_CDROM=	"CRYPTO: Unclear status of crypto components."
 RESTRICTED=	"Unclear status of crypto components."
 
-SAMPLEDIR=	/usr/local/share/examples/bind8
+SAMPLEDIR=	${DESTDIR}/usr/local/share/examples/bind8
 
 pre-install pre-package:
 	@${SH} ${PKGDIR}/INSTALL ${DISTNAME} PRE-INSTALL
