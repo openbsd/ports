@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2004/06/26 07:35:06 xsa Exp $
+# $OpenBSD: Makefile,v 1.36 2004/07/26 10:13:28 peter Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -10,7 +10,7 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=DBD/}
 
-LIB_DEPENDS=	pq.2::databases/postgresql
+LIB_DEPENDS=	pq.2:postgresql-client-*:databases/postgresql
 RUN_DEPENDS=	::databases/p5-DBI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
