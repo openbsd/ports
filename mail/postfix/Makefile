@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2000/08/15 17:01:22 jakob Exp $
+# $OpenBSD: Makefile,v 1.27 2000/09/18 18:43:35 jakob Exp $
 
-DISTNAME=	postfix-19991231-pl08
+DISTNAME=	postfix-19991231-pl09
 CATEGORIES=	mail
 NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.merit.edu/postfix/official/ \
