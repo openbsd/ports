@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2001/07/27 02:38:27 obecian Exp $
+# $OpenBSD: Makefile,v 1.19 2001/08/10 04:49:22 obecian Exp $
 
 COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
 
 DISTNAME=	lyx-1.1.6fix3
 CATEGORIES=	print
 NEED_VERSION=	1.364
-MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/lyx/stable/
+MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
+		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
+		ftp://ftp.lip6.fr/pub/lyx/stable/
 
 HOMEPAGE=	http://www.lyx.org/
 
@@ -26,7 +28,9 @@ LIB_DEPENDS=	xforms::x11/xforms
 
 CONFIGURE_STYLE=	gnu
 STRIP=
-CONFIGURE_ARGS+=--with-extra-lib=${LOCALBASE}/lib --with-extra-inc="${LOCALBASE}/include ${LOCALBASE}/include/X11"
+CONFIGURE_ARGS+=--with-extra-lib=${LOCALBASE}/lib \
+	--with-extra-inc="${LOCALBASE}/include \
+	${LOCALBASE}/include/X11"
 
 post-install:
 	@strip ${PREFIX}/bin/lyx
