@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.15 2003/01/06 11:37:24 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.16 2003/06/11 08:17:52 jakob Exp $
 @pkgcfl postfix-*
-%%tls%%
 libexec/postfix/bounce
 libexec/postfix/cleanup
 libexec/postfix/error
@@ -166,6 +165,7 @@ share/doc/postfix/readme/QMQP_README
 share/doc/postfix/readme/RELEASE_NOTES
 share/doc/postfix/readme/RESTRICTION_CLASS_README
 share/doc/postfix/readme/SASL_README
+share/doc/postfix/readme/SCHEDULER_README
 share/doc/postfix/readme/ULTRIX_README
 share/doc/postfix/readme/UUCP_README
 share/doc/postfix/readme/VERP_README
@@ -176,6 +176,7 @@ share/examples/postfix/aliases
 share/examples/postfix/canonical
 share/examples/postfix/main.cf
 share/examples/postfix/main.cf.default
+share/examples/postfix/makedefs.out
 share/examples/postfix/master.cf
 share/examples/postfix/pcre_table
 share/examples/postfix/post-install
@@ -198,6 +199,7 @@ share/examples/postfix/sample-misc.cf
 share/examples/postfix/sample-pcre-access.cf
 share/examples/postfix/sample-pcre-body.cf
 share/examples/postfix/sample-pcre-header.cf
+share/examples/postfix/sample-pgsql-aliases.cf
 share/examples/postfix/sample-qmqpd.cf
 share/examples/postfix/sample-rate.cf
 share/examples/postfix/sample-regexp-access.cf
@@ -206,6 +208,7 @@ share/examples/postfix/sample-regexp-header.cf
 share/examples/postfix/sample-relocated.cf
 share/examples/postfix/sample-resource.cf
 share/examples/postfix/sample-rewrite.cf
+share/examples/postfix/sample-scheduler.cf
 share/examples/postfix/sample-smtp.cf
 share/examples/postfix/sample-smtpd.cf
 share/examples/postfix/sample-transport.cf
