@@ -1,0 +1,13 @@
+#!/usr/bin/perl
+
+$PREFIX=shift;
+# This small script does build a suitable shell wrapper that calls
+# icont, according to env variables.
+
+print <<"EOF";
+#!/bin/sh
+IPATH="\${IPATH-} $PREFIX/share/ipl/ucode"
+LPATH="\${LPATH-} $PREFIX/share/ipl/ginclude $PREFIX/share/ipl/include"
+export IPATH LPATH
+exec $PREFIX/lib/icont "\$@"
+EOF

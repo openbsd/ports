@@ -1,0 +1,13 @@
+--- src/h/sys.h.orig	Thu Jul  1 19:36:34 1999
++++ src/h/sys.h	Tue Jul 13 22:14:22 1999
+@@ -190,7 +190,9 @@
+       #undef VMS
+ 
+       #ifdef HaveXpmFormat
+-         #include "../xpm/xpm.h"
++			#undef AMIGA
++         #include <X11/xpm.h>
++			#define AMIGA 0
+       #else				/* HaveXpmFormat */
+          #include <X11/Xlib.h>
+       #endif				/* HaveXpmFormat */

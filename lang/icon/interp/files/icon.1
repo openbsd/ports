@@ -1,0 +1,244 @@
+.co \" IPD244d: Manual page for Version 9 icon(1)
+.ds I \fHicont\fR and \fHiconc\fR
+.TH ICON 1 "29 November 1996 IPD244d"
+.SH NAME
+icon \- interpret or compile Icon programs
+.SH SYNOPSIS
+\fHicont\fR [ option ... ] file ... [ \fH\-x\fR arg ... ]
+.br
+\fHiconc\fR [ option ... ] file ... [ \fH\-x\fR arg ... ]
+.SH DESCRIPTION
+\*I each convert an Icon source program into executable form.
+\fHicont\fR translates quickly and provides interpretive execution.
+\fHiconc\fR takes longer to compile but produces programs that
+execute faster.
+\fHicont\fR and \fHiconc\fR for the most part can be used interchangeably.
+.PP
+This manual page describes both \*I. Where there
+there are differences in usage between \*I, these are noted.
+.PP
+\fBFile Names:\fR Files whose names end in \fH.icn\fR are assumed
+to be Icon source files. The \fH.icn\fR suffix may be omitted;
+if it is not present, it is supplied. The character \fH\-\fR can
+be used to indicate an Icon source file given in standard input.
+Several source files can be given on the same command line; if so, they
+are combined to produce a single program.
+.PP
+The name of the executable file is the base name of the
+first input file,
+formed by deleting the suffix, if present. \fHstdin\fR is used for
+source programs given in standard input.
+.PP
+\fBProcessing:\fR As noted in the synopsis above, \*I accept options followed
+by file names, optionally followed by \fH\-x\fR and arguments. If \fH\-x\fR
+is given, the program is executed automatically and any following
+arguments are passed to it.
+.PP
+\fHicont\fR: The processing performed by \fHicont\fR consists of two phases:
+\fItranslation\fR and \fIlinking\fR. During translation,
+each Icon source file is translated into an intermediate language called
+\fIucode\fR. Two ucode files are produced for each
+source file, with base names from the
+source file and suffixes \fH.u1\fR and \fH.u2\fR.
+During linking, the one or more pairs of ucode files are combined to
+produce a single
+\fIicode\fR file.
+The ucode files are deleted after the icode file is created.
+.PP
+Processing by \fHicont\fR can be terminated after translation by the
+\fH\-c\fR option. In this case, the ucode files are not deleted.
+The names of \fH.u1\fR files from previous translations can be given on the
+\fHicont\fR command line.
+These files and the corresponding \fH.u2\fR
+files are included in the linking phase after the translation of any source
+files.
+The suffix \fH.u\fR can be used in place of \fH.u1\fR; in this case
+the \fH1\fR is supplied automatically.
+Ucode files that are explicitly named are not deleted.
+.PP
+\fHiconc\fR: The processing performed by \fHiconc\fR consists of two
+phases: \fIcode generation\fR and \fIcompilation and linking\fR. The
+code generation phase produces C code, consisting of a \fH.c\fR and a \fH.h\fR
+file, with the base name of the first source file. These files are
+then compiled and linked to produce an executable binary file.
+The C files normally are deleted after compilation and linking.
+.PP
+Processing by \fHiconc\fR can be terminated after code generation by
+the \fH\-c\fR option. In this case, the C files are not deleted.
+.SH OPTIONS
+The following options are recognized by \*I:
+.TP 4
+\fH\-c\fR
+Stop after producing intermediate files and do not delete them.
+.TP 4
+\fH\-e\fR \fIfile\fR
+Redirect standard error output to \fIfile\fR.
+.TP
+\fH\-f s\fR
+Enable full string invocation.
+.TP
+\fH\-o \fIname\fR
+Name the output file \fIname\fR.
+.TP
+\fH\-s\fR
+Suppress informative messages.
+Normally, both informative messages and error messages are sent
+to standard error output.
+.TP
+\fH\-t\fR
+Arrange for \fH&trace\fR to have an initial value of \-1
+when the program is executed and for \fHiconc\fR enable debugging features.
+.TP
+\fH\-u\fR
+Issue warning messages for undeclared identifiers in the program.
+.TP
+\fH\-v \fIi\fR
+Set verbosity level of informative messages to \fIi\fH
+.TP
+\fH\-E\fR
+Direct the results of preprocessing to standard output and inhibit
+further processing.
+.PP
+The following additional options are recognized by \fHiconc\fR:
+.TP 4
+\fH\-f \fIstring\fR
+Enable features as indicated by the letters in \fIstring\fR:
+.TP 8
+      \fHa\fR
+all, equivalent to \fHdelns\fR
+.TP 8
+      \fHd\fR
+enable debugging features: \fHdisplay()\fR,
+\fHname()\fR, \fHvariable()\fR, error
+trace back, and the effect of \fH\-f n\fR (see below) 
+.TP 8
+      \fHe\fR
+enable error conversion
+.TP 8
+      \fHl\fR
+enable large-integer arithmetic
+.TP 8
+      \fHn\fR
+produce code that keeps track of line numbers and file names in the source code
+.TP 8
+      \fHs\fR
+enable full string invocation
+.TP 4
+\fH\-n \fIstring\fR
+Disable specific optimizations. These are indicated by the
+letters in \fIstring\fR:
+.TP 8
+      \fHa\fR
+all, equivalent to \fHcest\fR
+.TP 8
+      \fHc\fR
+control flow optimizations other than switch statement optimizations
+.TP 8
+      \fHe\fR
+expand operations in-line when reasonable
+(keywords are always put in-line)
+.TP 8
+      \fHs\fR
+optimize switch statements associated with operation invocations
+.TP 8
+      \fHt\fR
+type inference
+.TP 4
+\fH\-p \fIarg\fR
+Pass \fIarg\fR on to the C compiler used by \fHiconc\fR
+.TP 4
+\fH\-r \fIpath\fR
+Use the run-time system at \fIpath\fR, which must end with a slash.
+.TP 4
+.TP 4
+\fH\-C \fIprg\fR
+Have \fHiconc\fR use the C compiler given by \fIprg\fH
+.SH "ENVIRONMENT VARIABLES"
+When an Icon program is executed, several environment variables
+are examined to determine certain execution parameters.
+Values in parentheses are the default values.
+.TP 4
+\fHBLKSIZE\fR (500000)
+The initial size of the allocated block region, in bytes.
+.TP
+\fHCOEXPSIZE\fR (2000)
+The size, in words, of each co-expression block.
+.TP
+\fHDBLIST\fR
+The location of data bases
+for \fHiconc\fR to search before the standard one.
+The value of \fHDBLIST\fR should be a blank-separated
+string of the form \fIp1\0p2 ...\0 pn\fR where the \fIpi\fR name directories.
+.TP
+\fHICONCORE\fR
+If set, a core dump is produced for error termination.
+.TP 4
+\fHICONX\fR
+The location of \fHiconx\fR, the executor for icode files, is
+built into an icode file when it
+is produced. This location can be overridden by setting the
+environment variable \fHICONX\fR.
+If \fHICONX\fR is set, its value is used in place of the location
+built into the icode file.
+.TP 4
+\fHIPATH\fR
+The location of ucode files
+specified in link declarations for \fHicont\fR.
+\fHIPATH\fR is a blank-separated list of directories.
+The current directory is always searched first, regardless of the value of
+\fHIPATH\fR.
+.TP 4
+\fHLPATH\fR
+The location of source files
+specified in preprocessor \fH$include\fR directives and in link
+declarations for \fHiconc\fR.
+\fHLPATH\fR is otherwise similar to \fHIPATH\fR.
+.TP
+\fHMSTKSIZE\fR (10000)
+The size, in words, of the main interpreter stack for \fHicont\fR.
+.TP
+\fHNOERRBUF\fR
+By default, \fH&errout\fR is buffered.  If this variable is set, \fH&errout\fR
+is not buffered.
+.TP
+\fHQLSIZE\fR (5000)
+The size, in bytes, of the region used for pointers
+to strings during garbage collection.
+.TP
+\fHSTRSIZE\fR (500000)
+The initial size of the string space, in bytes.
+.TP
+\fHTRACE\fR
+The initial value of \fH&trace\fR.
+If this variable has a value, it overrides the translation-time
+\fH\-t\fR
+option.
+.SH FILES
+.ta \w'\fHicont\fR     'u
+\fHicont\fR	Icon translator
+.br
+\fHiconc\fR	Icon compiler
+.br
+\fHiconx\fR	Icon executor
+.br
+.SH SEE ALSO
+\fIThe Icon Programming Language\fR,
+Ralph E. Griswold and Madge T. Griswold,
+Peer-to-Peer Communications, Inc., Third Edition, 1996.
+.LP
+\fIVersion 9.3 of Icon\fR, Ralph E. Griswold, Clinton L. Jeffery,
+and Gregg M. Townsend, IPD278,
+Department of Computer Science, The University of Arizona, 1996.
+.LP
+\fIVersion 9 of the Icon Compiler\fR,
+Ralph E. Griswold, IPD237, Department of Computer Science,
+The University of Arizona, 1995.
+.LP
+icon_vt(1)
+.SH "LIMITATIONS AND BUGS"
+.LP
+The icode files for the
+interpreter do not stand alone; the Icon run-time system (\fHiconx\fR) must be
+present.
+.LP
+Stack overflow is checked using a heuristic that is not always effective.

@@ -1,0 +1,29 @@
+System configuration:
+
+	OpenBSD >= 2.4
+
+Latest Icon version:
+
+	Version 9.3.1
+
+Installer:
+
+	Marc Espie
+	<espie@openbsd.org>
+
+Missing features:
+
+	Executable images, coexpr (on some archs)
+
+Known bugs:
+
+	None.
+
+Comments:
+
+	Some things to check yet, like building dynamic libraries, and
+	jpeg/giff/png support
+
+Date:
+
+	September 29, 1998

@@ -1,0 +1,10 @@
+#  The -D$D option to CFLAGS makes it possible to specify a definition
+#  at the Make command level without revising the Makefile, as
+#  in
+#
+#	make D=Debug
+#
+D=NOTHING
+CC=cc
+CFLAGS+= -O -D$D 
+SHELL=/bin/sh

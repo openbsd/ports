@@ -1,0 +1,1 @@
+cd ${WRKSRC} && make X-Configure name=openbsd

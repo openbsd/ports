@@ -1,0 +1,2 @@
+SHELL=/bin/sh
+CFLAGS+=-DPersInterp -I/usr/X11R6/include
