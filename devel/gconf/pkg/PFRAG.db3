@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.db3,v 1.1 2001/11/13 14:04:41 wilfried Exp $
-lib/GConf/1/libgconfbackend-bdb.a
-lib/GConf/1/libgconfbackend-bdb.la
-%%SHARED-db3%%

@@ -1,6 +1,6 @@
-$OpenBSD: patch-gconf_gconftool_c,v 1.1 2001/11/13 14:04:41 wilfried Exp $
---- gconf/gconftool.c.orig	Sun Nov 11 23:50:31 2001
-+++ gconf/gconftool.c	Sun Nov 11 23:56:28 2001
+$OpenBSD: patch-gconf_gconftool_c,v 1.2 2002/08/30 19:42:52 nino Exp $
+--- gconf/gconftool.c.orig	Tue Dec  4 14:09:43 2001
++++ gconf/gconftool.c	Mon Aug 26 12:10:57 2002
 @@ -22,9 +22,9 @@
  #include <stdio.h>
  #include <unistd.h>
@@ -13,4 +13,13 @@ $OpenBSD: patch-gconf_gconftool_c,v 1.1 2001/11/13 14:04:41 wilfried Exp $
 +#include <gnome-xml/xmlmemory.h>
  #include <stdlib.h>
  #include <errno.h>
+ 
+@@ -2545,7 +2545,7 @@ do_get_default_source(GConfEngine* conf,
+     }
+ 
+   /* Use default database */
+-  source = g_strconcat("xml::", GCONF_ETCDIR, "/gconf.xml.defaults", NULL);
++  source = g_strconcat(GCONF_CONFIG_SOURCE, NULL);
+   printf("%s\n", source);
+   g_free(source);
  

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/11/13 14:04:41 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/08/30 19:42:52 nino Exp $
 bin/gconf-config
 bin/gconf-config-1
+bin/gconf-sanity-check-1
 bin/gconfd-1
 bin/gconftool
 bin/gconftool-1
@@ -19,8 +20,6 @@ lib/libgconf-1.a
 lib/libgconf-1.la
 lib/libgconf-gtk-1.a
 lib/libgconf-gtk-1.la
-%%SHARED%%
-%%db3%%
 lib/pkgconfig/gconf.pc
 lib/pkgconfig/gconfgtk.pc
 share/aclocal/gconf-1.m4
@@ -33,6 +32,7 @@ share/locale/da/LC_MESSAGES/GConf.mo
 share/locale/de/LC_MESSAGES/GConf.mo
 share/locale/el/LC_MESSAGES/GConf.mo
 share/locale/es/LC_MESSAGES/GConf.mo
+share/locale/eu/LC_MESSAGES/GConf.mo
 share/locale/fi/LC_MESSAGES/GConf.mo
 share/locale/fr/LC_MESSAGES/GConf.mo
 share/locale/ga/LC_MESSAGES/GConf.mo
@@ -53,13 +53,14 @@ share/locale/sl/LC_MESSAGES/GConf.mo
 share/locale/sv/LC_MESSAGES/GConf.mo
 share/locale/tr/LC_MESSAGES/GConf.mo
 share/locale/uk/LC_MESSAGES/GConf.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/GConf.mo
+share/locale/zh_CN/LC_MESSAGES/GConf.mo
+%%SHARED%%
 @dirrm share/examples/gconf/gconf/schemas
 @dirrm share/examples/gconf/gconf/1
 @dirrm share/examples/gconf/gconf
 @dirrm share/examples/gconf
 @dirrm lib/GConf/1
-@dirrm lib/GConf
+@comment @dirrm lib/GConf
 @dirrm include/gconf/1/gconf
 @dirrm include/gconf/1
 @dirrm include/gconf
