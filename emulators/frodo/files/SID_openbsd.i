@@ -31,8 +31,8 @@ void DigitalRenderer::init_sound(void)
 	info.play.channels = 1;
 	info.play.precision = 16;
 	info.play.encoding = AUDIO_ENCODING_LINEAR;
-	info.hiwat = MAXBUFFERED;
-	info.lowat = FRAGSIZE;
+	info.hiwat = 6;
+	info.lowat = 1;
 
 	if (ioctl(fd, AUDIO_SETINFO, &info) != 0) {
     		fprintf(stderr,
