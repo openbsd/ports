@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 19:16:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/12/16 13:04:07 pedro Exp $
 bin/bin2c
 bin/lua
 bin/luac
@@ -17,3 +17,11 @@ share/doc/lua/luac.html
 share/doc/lua/manual.html
 share/doc/lua/readme.html
 %%SHARED%%
+@sample ${SYSCONFDIR}/lua/
+share/examples/lua/
+share/examples/lua/init.lua
+@sample ${SYSCONFDIR}/lua/init.lua
+share/examples/lua/luapkg.lua
+@sample ${SYSCONFDIR}/lua/luapkg.lua
+share/examples/lua/packages.lua
+@sample ${SYSCONFDIR}/lua/packages.lua

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2004/07/04 23:34:36 pedro Exp $
+# $OpenBSD: Makefile,v 1.14 2004/12/16 13:04:07 pedro Exp $
 
 COMMENT=	"powerful, light-weight programming language"
 
 DISTNAME=	lua-5.0.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=     lang
 
 MASTER_SITES=	http://www.lua.org/ftp/ \
@@ -22,12 +23,23 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB=	c m
 NO_REGRESS=	Yes
 
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
 CFLAGS+=	-fPIC
 ALL_TARGET+=	all so sobin
 .endif
+
+post-extract:
+.for f in init luapkg packages
+	@sed -e "s:@pkgconf@:${SYSCONFDIR}/lua/packages.lua:g" \
+		${FILESDIR}/${f}.lua > ${WRKSRC}/$f.lua
+.endfor
+
+post-patch:
+	@perl -pi -e 's:\@initconf@:${SYSCONFDIR}/lua/init.lua:g;' \
+		${WRKSRC}/src/lua/lua.c
 
 post-build:
 	cd ${WRKDIST} && ${CC} ${CFLAGS} -o bin/bin2c etc/bin2c.c
@@ -40,8 +52,14 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/bin/luac ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKDIST}/bin/bin2c ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lua
-	${INSTALL_DATA} ${WRKDIST}/doc/*.html ${WRKDIST}/doc/*.gif ${PREFIX}/share/doc/lua
-	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKDIST}/doc/*.1 ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKDIST}/doc/*.html ${WRKDIST}/doc/*.gif \
+		${PREFIX}/share/doc/lua
+	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIST}/doc/*.1 ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/lua
+	${INSTALL_DATA} ${WRKSRC}/init.lua ${PREFIX}/share/examples/lua
+	${INSTALL_DATA} ${WRKSRC}/luapkg.lua ${PREFIX}/share/examples/lua
+	${INSTALL_DATA} ${WRKSRC}/packages.lua \
+		${PREFIX}/share/examples/lua/packages.lua
 
 .include <bsd.port.mk>
