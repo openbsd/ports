@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2001/03/12 00:09:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.129 2001/03/14 14:11:50 wilfried Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -125,6 +125,7 @@
      SUBDIR += wget
      SUBDIR += wide-dhcp
      SUBDIR += wmnet
+     SUBDIR += wmwave
      SUBDIR += xarchie
      SUBDIR += xchat
      SUBDIR += yafc
