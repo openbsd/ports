@@ -1,6 +1,6 @@
 #!/bin/sh
 
-mv ${WRKSRC}/Imakefile ${WRKSRC}/Imakefile.orig
+mv -f ${WRKSRC}/Imakefile ${WRKSRC}/Imakefile.orig
 
 echo "LOCAL=$PREFIX" >${WRKSRC}/Imakefile || exit 1;
 
