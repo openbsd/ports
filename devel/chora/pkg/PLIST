@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/08/12 01:04:30 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/04/03 11:30:53 avsm Exp $
 horde/chora/COPYING
 horde/chora/README
 horde/chora/annotate.php
@@ -46,20 +46,25 @@ horde/chora/lib/version.php
 horde/chora/locale/.htaccess
 horde/chora/locale/cs_CZ/LC_MESSAGES/chora.mo
 horde/chora/locale/de_DE/LC_MESSAGES/chora.mo
+horde/chora/locale/en_US/help.xml
 horde/chora/locale/es_ES/LC_MESSAGES/chora.mo
+horde/chora/locale/fi_FI/LC_MESSAGES/chora.mo
 horde/chora/locale/fr_FR/LC_MESSAGES/chora.mo
 horde/chora/locale/nb_NO/LC_MESSAGES/chora.mo
 horde/chora/locale/nl_NL/LC_MESSAGES/chora.mo
 horde/chora/locale/pl_PL/LC_MESSAGES/chora.mo
 horde/chora/locale/pt_BR/LC_MESSAGES/chora.mo
 horde/chora/locale/sv_SE/LC_MESSAGES/chora.mo
+horde/chora/menu.php
 horde/chora/po/.htaccess
 horde/chora/po/Makefile
 horde/chora/po/README
+horde/chora/po/chora.pot
 horde/chora/po/cs_CZ.po
 horde/chora/po/de_DE.po
 horde/chora/po/es_ES.po
 horde/chora/po/extract.pl
+horde/chora/po/fi_FI.po
 horde/chora/po/fr_FR.po
 horde/chora/po/nb_NO.po
 horde/chora/po/nl_NL.po
@@ -68,6 +73,8 @@ horde/chora/po/pt_BR.po
 horde/chora/po/shtool
 horde/chora/po/sv_SE.po
 horde/chora/po/xgettext.sh
+horde/chora/prefs.php
+horde/chora/status.php
 horde/chora/templates/.htaccess
 horde/chora/templates/annotate/footer.inc
 horde/chora/templates/annotate/header.inc
@@ -90,6 +97,7 @@ horde/chora/templates/directory/file.inc
 horde/chora/templates/directory/footer.inc
 horde/chora/templates/directory/header.inc
 horde/chora/templates/error_page.inc
+horde/chora/templates/headerbar.inc
 horde/chora/templates/history/blank.inc
 horde/chora/templates/history/branch_cell.inc
 horde/chora/templates/history/footer.inc
@@ -102,6 +110,8 @@ horde/chora/templates/index/notconfigured.inc
 horde/chora/templates/log/header.inc
 horde/chora/templates/log/request.inc
 horde/chora/templates/log/rev.inc
+horde/chora/templates/menu/menu.inc
+@dirrm horde/chora/templates/menu
 @dirrm horde/chora/templates/log
 @dirrm horde/chora/templates/index
 @dirrm horde/chora/templates/history
@@ -124,8 +134,11 @@ horde/chora/templates/log/rev.inc
 @dirrm horde/chora/locale/nb_NO
 @dirrm horde/chora/locale/fr_FR/LC_MESSAGES
 @dirrm horde/chora/locale/fr_FR
+@dirrm horde/chora/locale/fi_FI/LC_MESSAGES
+@dirrm horde/chora/locale/fi_FI
 @dirrm horde/chora/locale/es_ES/LC_MESSAGES
 @dirrm horde/chora/locale/es_ES
+@dirrm horde/chora/locale/en_US
 @dirrm horde/chora/locale/de_DE/LC_MESSAGES
 @dirrm horde/chora/locale/de_DE
 @dirrm horde/chora/locale/cs_CZ/LC_MESSAGES
