@@ -1,11 +1,11 @@
---- driver.c.orig	Tue Jan  5 15:41:12 1999
-+++ driver.c	Mon Jan 18 22:12:05 1999
-@@ -1141,7 +1141,7 @@
- kerberos_auth (socket, canonical) 
- /* authenticate to the server host using Kerberos V4 */
- int socket;		/* socket to server host */
--#ifdef __FreeBSD__
-+#if defined(__FreeBSD__) || defined(__OpenBSD__)
- char *canonical;	/* server name */
- #else
- const char *canonical;	/* server name */
+--- imap.c.orig	Mon Feb  1 17:08:33 1999
++++ imap.c	Wed Feb 10 01:21:12 1999
+@@ -282,7 +282,7 @@
+ 
+     memcpy(session, credentials.session, sizeof session);
+     memset(&credentials, 0, sizeof credentials);
+-    des_key_sched(session, schedule);
++    des_key_sched(&session, schedule);
+ 
+     result = krb_get_tf_fullname(TKT_FILE, tktuser, tktinst, tktrealm);
+     if (result) {

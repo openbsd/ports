@@ -1,27 +1,11 @@
---- imap.c.orig	Tue Jan  5 02:08:54 1999
-+++ imap.c	Mon Jan 18 22:07:42 1999
-@@ -14,7 +14,6 @@
- #endif
- #include  "fetchmail.h"
- #include  "socket.h"
--#include  "i18n.h"
- 
- #ifdef KERBEROS_V4
- #ifdef KERBEROS_V5
-@@ -31,6 +30,7 @@
- #include <krb.h>
- #endif
- #endif /* KERBEROS_V4 */
-+#include  "i18n.h"
- 
- #ifdef GSSAPI
- #include <gssapi/gssapi.h>
-@@ -282,7 +282,7 @@
- 
-     memcpy(session, credentials.session, sizeof session);
-     memset(&credentials, 0, sizeof credentials);
--    des_key_sched(session, schedule);
-+    des_key_sched(&session, schedule);
- 
-     result = krb_get_tf_fullname(TKT_FILE, tktuser, tktinst, tktrealm);
-     if (result) {
+--- driver.c.orig	Mon Feb  1 19:14:17 1999
++++ driver.c	Wed Feb 10 01:20:42 1999
+@@ -1158,7 +1158,7 @@
+ kerberos_auth (socket, canonical) 
+ /* authenticate to the server host using Kerberos V4 */
+ int socket;		/* socket to server host */
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ char *canonical;	/* server name */
+ #else
+ const char *canonical;	/* server name */
