@@ -1,19 +1,18 @@
-$OpenBSD: patch-ext_imap_config_m4,v 1.6 2003/05/23 20:07:18 avsm Exp $
---- ext/imap/config.m4.orig	Fri May 23 19:08:36 2003
-+++ ext/imap/config.m4	Fri May 23 19:09:56 2003
-@@ -86,10 +86,12 @@ AC_DEFUN(PHP_IMAP_KRB_CHK, [
+$OpenBSD: patch-ext_imap_config_m4,v 1.7 2003/05/28 19:27:34 avsm Exp $
+--- ext/imap/config.m4.orig	Sat May 10 18:11:33 2003
++++ ext/imap/config.m4	Tue May 27 19:41:19 2003
+@@ -86,10 +86,11 @@ AC_DEFUN(PHP_IMAP_KRB_CHK, [
      fi
      AC_DEFINE(HAVE_IMAP_KRB,1,[ ])
      PHP_ADD_LIBPATH($PHP_KERBEROS_DIR/lib, IMAP_SHARED_LIBADD)
 -    PHP_ADD_LIBRARY(gssapi_krb5, 1, IMAP_SHARED_LIBADD)
-+    PHP_ADD_LIBRARY(gssapi, 1, IMAP_SHARED_LIBADD)
-+    PHP_ADD_LIBRARY(krb, 1, IMAP_SHARED_LIBADD)
      PHP_ADD_LIBRARY(krb5, 1, IMAP_SHARED_LIBADD)
 -    PHP_ADD_LIBRARY(k5crypto, 1, IMAP_SHARED_LIBADD)
 -    PHP_ADD_LIBRARY(com_err,  1, IMAP_SHARED_LIBADD)
++    PHP_ADD_LIBRARY(crypto, 1, IMAP_SHARED_LIBADD)
++    PHP_ADD_LIBRARY(gssapi, 1, IMAP_SHARED_LIBADD)
 +    PHP_ADD_LIBRARY(asn1, 1, IMAP_SHARED_LIBADD)
-+    PHP_ADD_LIBRARY(des,  1, IMAP_SHARED_LIBADD)
-+    PHP_ADD_LIBRARY(kafs,  1, IMAP_SHARED_LIBADD)
++    PHP_ADD_LIBRARY(com_err, 1, IMAP_SHARED_LIBADD)
      PHP_ADD_INCLUDE($PHP_KERBEROS_DIR/include)
    else
      AC_EGREP_HEADER(auth_gss, $IMAP_INC_DIR/linkage.h, [
