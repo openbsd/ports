@@ -1,0 +1,32 @@
+$OpenBSD: patch-source_file_c,v 1.1 2000/06/09 20:10:32 form Exp $
+--- source/file.c.orig	Sat Mar 18 03:13:47 2000
++++ source/file.c	Sat Jun 10 02:55:25 2000
+@@ -1006,9 +1006,20 @@ void PrintWindow(WindowInfo *window, int
+ */
+ void PrintString(char *string, int length, Widget parent, char *jobName)
+ {
++#ifdef HAVE_MKSTEMP
++    int fd;
++    static char template[] = "/var/tmp/nedit-XXXXXXXXXX";
++    char tmpFileName[sizeof(template)];
++#else
+     char tmpFileName[L_tmpnam];    /* L_tmpnam defined in stdio.h */
++#endif
+     FILE *fp;
+ 
++#ifdef HAVE_MKSTEMP
++    /* Generate a temporary file name */
++    strcpy(tmpFileName, template);
++    if ((fd = mkstemp(tmpFileName)) < 0 || (fp = fdopen(fd, "w")) == NULL) {
++#else
+     /* Generate a temporary file name */
+     tmpnam(tmpFileName);
+ 
+@@ -1018,6 +1029,7 @@ void PrintString(char *string, int lengt
+ #else
+     if ((fp = fopen(tmpFileName, "w")) == NULL) {
+ #endif /* VMS */
++#endif /* HAVE_MKSTEMP */
+     	DialogF(DF_WARN, parent, 1, "Unable to write file for printing:\n%s",
+ 		"Dismiss", errorString());
+         return;

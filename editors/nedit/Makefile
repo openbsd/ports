@@ -1,45 +1,44 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/24 23:28:07 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/06/09 20:10:30 form Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
-DISTNAME=	nedit-5.0.2
+DISTNAME=	nedit-5.1.1
 CATEGORIES=	editors x11
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	form@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-
 HOMEPAGE=	http://www.nedit.org/
 
-MASTER_SITES=	ftp://ftp.nedit.org/pub/v5_0_2/
-MASTER_SITES0=	ftp://ftp.nedit.org/pub/contrib/
+DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} nedit-5.1.app-defaults:0
+EXTRACT_ONLY=	${DISTNAME}-src${EXTRACT_SUFX}
+DIST_SUBDIR=	nedit
 
-DISTFILES=	nedit_source.tar.gz nedit.app-defaults
-EXTRACT_ONLY=	nedit_source.tar.gz
-WRKDIST=	${WRKDIR}
+MASTER_SITES=	ftp://ftp.nedit.org/pub/v5_1_1/
+MASTER_SITES0=	ftp://ftp.nedit.org/pub/contrib/misc/
 
 LIB_DEPENDS=	Xm.1.::x11/lesstif
 
 USE_X11=	Yes
-
-ALL_TARGET=	openbsd_nedit
 FAKE=		Yes
 
+ALL_TARGET=	openbsd
+
 post-extract:
-	@cp ${DISTDIR}/nedit.app-defaults ${WRKSRC}/NEdit.ad
+	@cp ${DISTDIR}/${DIST_SUBDIR}/nedit-5.1.app-defaults ${WRKSRC}/NEdit.ad
+	@cp ${FILESDIR}/Makefile.openbsd ${WRKSRC}/makefiles
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/source/nedit ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/source/nc ${PREFIX}/bin/ncl
-	@${INSTALL_MAN} ${WRKSRC}/nedit.man ${PREFIX}/man/man1/nedit.1
-	@${INSTALL_MAN} ${WRKSRC}/nc.man ${PREFIX}/man/man1/ncl.1
-	@${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/app-defaults
-	@${INSTALL_DATA} ${WRKSRC}/NEdit.ad ${PREFIX}/lib/X11/app-defaults/NEdit
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nedit
-	@${INSTALL_DATA} ${WRKSRC}/nedit.doc ${PREFIX}/share/doc/nedit
+	${INSTALL_PROGRAM} ${WRKSRC}/source/nedit ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/source/nc ${PREFIX}/bin/ncl
+	${INSTALL_MAN} ${WRKSRC}/nedit.man ${PREFIX}/man/man1/nedit.1
+	${INSTALL_MAN} ${WRKSRC}/nc.man ${PREFIX}/man/man1/ncl.1
+	${INSTALL_DATA} ${WRKSRC}/NEdit.ad ${PREFIX}/lib/X11/app-defaults/NEdit
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nedit
+	${INSTALL_DATA} ${WRKSRC}/nedit.doc ${PREFIX}/share/doc/nedit
 
 .include <bsd.port.mk>

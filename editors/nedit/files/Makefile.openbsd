@@ -1,0 +1,17 @@
+# $OpenBSD: Makefile.openbsd,v 1.1 2000/06/09 20:10:31 form Exp $
+
+CC?=	cc
+AR?=	ar
+
+LOCALBASE?=/usr/local
+X11BASE?=/usr/X11R6
+
+CFLAGS+=-I${LOCALBASE}/include -I${X11BASE}/include
+CFLAGS+=-DUSE_DIRENT -DUSE_LPR_PRINT_CMD -DHAVE_MKSTEMP
+
+ARFLAGS=-ur
+
+LIBS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+LIBS+=	-lm -lXm -lXpm -lXext -lXt -lSM -lICE -lX11
+
+include Makefile.common

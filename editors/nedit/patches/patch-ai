@@ -1,8 +1,0 @@
---- nedit.man.~1~	Thu Mar 19 13:20:23 1998
-+++ nedit.man	Wed Jul 15 20:24:09 1998
-@@ -29,4 +29,4 @@
- NEdit distribution kit.  Fermilab users can obtain NEdit
- documentation (PU0135) from the Computing Division Library.
- .SH SEE ALSO
--nc, X, mwm, vi, emacs
-+ncl, X, mwm, vi, emacs

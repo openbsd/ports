@@ -1,0 +1,9 @@
+$OpenBSD: patch-nedit_man,v 1.1 2000/06/09 20:10:32 form Exp $
+--- nedit.man.orig	Sat Jun 10 02:20:09 2000
++++ nedit.man	Sat Jun 10 02:20:39 2000
+@@ -24,4 +24,4 @@ the Unix environment variable for your d
+ For more information see NEdit's on-line help, or nedit.doc in the
+ NEdit distribution kit.
+ .SH SEE ALSO
+-nc, X, mwm, vi, emacs
++ncl, X, mwm, vi, emacs

@@ -1,0 +1,20 @@
+$OpenBSD: patch-nc_man,v 1.1 2000/06/09 20:10:32 form Exp $
+--- nc.man.orig	Sat Jun 10 02:19:09 2000
++++ nc.man	Sat Jun 10 02:19:53 2000
+@@ -1,12 +1,12 @@
+-.TH NC 1
++.TH NCL 1
+ .SH NAME
+-NC \- Client program for NEdit text editor
++NCL \- Client program for NEdit text editor
+ .SH SYNOPSYS
+-.B nc [\-read] [\-create] [\-line n\ |\ +n] [\-do\ command]
++.B ncl [\-read] [\-create] [\-line n\ |\ +n] [\-do\ command]
+  [\-ask] [\-noask] [\-svrname\ name] [-svrcmd\ command]
+  [\-lm languagemode] [\-geometry\ geometry] [\-iconic] [file...]
+ .SH DESCRIPTION
+-nc is the client interface to the NEdit text editor.  To use nc, 
++ncl is the client interface to the NEdit text editor.  To use ncl, 
+ first run NEdit in server mode:
+ .PP
+ .EX

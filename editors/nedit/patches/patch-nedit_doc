@@ -1,0 +1,13 @@
+$OpenBSD: patch-nedit_doc,v 1.1 2000/06/09 20:10:32 form Exp $
+--- nedit.doc.orig	Sat Jun 10 02:13:41 2000
++++ nedit.doc	Sat Jun 10 02:13:51 2000
+@@ -1,5 +1,9 @@
+                     NEdit Version 5.1.1, March 17, 2000
+ 
++    NOTE: Due to conflict with the program nc - Arbitrary tcp and udp
++    connections and listens - the NEdit Client program, called nc in this
++    document, has been installed as ncl.
++
+ NEdit is a standard GUI (Graphical User Interface) style text editor for
+ programs and plain-text files.  Users of Macintosh and MS Windows based text
+ editors should find NEdit a familiar and comfortable environment.  NEdit
