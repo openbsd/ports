@@ -1,13 +1,17 @@
-# $OpenBSD: Makefile,v 1.15 2001/03/07 22:34:45 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2001/03/30 03:01:42 kevlo Exp $
+
+COMMENT=	"X11-based presentation tool"
 
 DISTNAME=	magicpoint-1.07a
 # question is for localized (i.e. Japanese) version
 PKGNAME?=	magicpoint-1.07a
 CATEGORIES=	misc productivity
-NEED_VERSION=	1.336
+NEED_VERSION=	1.378
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
-MAINTAINER=	ports@openbsd.org
+HOMEPAGE=	http://www.mew.org/mgp/
+
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
