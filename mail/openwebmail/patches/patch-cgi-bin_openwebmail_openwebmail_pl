@@ -1,6 +1,6 @@
-$OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.7 2004/07/12 05:54:53 kevlo Exp $
---- cgi-bin/openwebmail/openwebmail.pl.orig	Tue May 25 17:53:48 2004
-+++ cgi-bin/openwebmail/openwebmail.pl	Mon Jul 12 10:43:45 2004
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.8 2004/07/21 00:26:11 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail.pl.orig	Tue Jul 20 18:24:51 2004
++++ cgi-bin/openwebmail/openwebmail.pl	Wed Jul 21 08:14:47 2004
 @@ -1,4 +1,4 @@
 -#!/usr/bin/suidperl -T
 +#!/usr/bin/perl
@@ -31,3 +31,21 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.7 2004/07/12 05:54:53 kev
  loadlang($config{'default_language'});	# so %lang... can be used in error msg
  
  # check & create mapping table for solar/lunar, b2g, g2b convertion
+@@ -77,7 +77,7 @@
+ }
+ 
+ if ($config{'logfile'}) {
+-   my $mailgid=getgrnam('mail');
++   my $mailgid=getgrnam('_mail');
+    my ($fmode, $fuid, $fgid) = (stat($config{'logfile'}))[2,4,5];
+    if ( !($fmode & 0100000) ) {
+       open (LOGFILE,">>$config{'logfile'}") or
+@@ -230,7 +230,7 @@
+ 
+    # create domain logfile
+    if ($config{'logfile'}) {
+-      my $mailgid=getgrnam('mail');
++      my $mailgid=getgrnam('_mail');
+       my ($fmode, $fuid, $fgid) = (stat($config{'logfile'}))[2,4,5];
+       if ( !($fmode & 0100000) ) {
+          open (LOGFILE,">>$config{'logfile'}") or
