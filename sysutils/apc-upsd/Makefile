@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/28 19:53:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2003/04/26 15:00:32 sturm Exp $
 
 COMMENT=	"UPS software for APC UPS models"
 
@@ -21,6 +21,9 @@ WRKDIST=	${WRKDIR}/${DISTNAME}/src
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"
 
 NO_REGRESS=	Yes
+
+post-patch:
+	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/apc_upsd.h
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/apc-upsd

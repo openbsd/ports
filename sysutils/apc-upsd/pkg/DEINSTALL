@@ -1,12 +1,12 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2000/04/20 02:23:39 kevlo Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/04/26 15:00:33 sturm Exp $
 #
 # apc-upsd de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-APC_UPSD=/etc/apc-upsd.conf
+APC_UPSD=${SYSCONFDIR}/apc-upsd.conf
 
 if [ -e ${APC_UPSD} ]; then
     echo

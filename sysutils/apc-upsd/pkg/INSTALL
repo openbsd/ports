@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/04/20 02:23:39 kevlo Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/04/26 15:00:33 sturm Exp $
 #
 # Pre/post-installation setup of apc-upsd
 
@@ -8,7 +8,7 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-APC_UPSD=/etc/apc-upsd.conf
+APC_UPSD=${SYSCONFDIR}/apc-upsd.conf
 
 # Function: tell the user what s/he needs to do to use the port just installed
 #
@@ -27,7 +27,7 @@ do_notice()
 #
 do_install()
 {
-    cp ${PREFIX}/lib/apc-upsd/apc-upsd.conf /etc
+    cp ${PREFIX}/lib/apc-upsd/apc-upsd.conf ${SYSCONFDIR}
     echo
     echo "+---------------"
     echo "| The file ${APC_UPSD} has been created on your system."
