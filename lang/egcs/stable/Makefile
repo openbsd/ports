@@ -3,15 +3,11 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.7 1998/12/19 00:57:57 espie Exp $
+# $OpenBSD: Makefile,v 1.8 1998/12/23 02:45:07 espie Exp $
 #
 
 # This is a configuration file for egcs, stable release
 # right now, we only configure i386.
-
-# we could remove this dependency by patching configure, but this is not
-# reasonable...
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 CATEGORIES=	lang 
 MAINTAINER=	Marc.Espie@openbsd.org
@@ -151,6 +147,12 @@ post-patch:
 # configure section
 #
 
+# we could remove the dependency on autoconf by patching configure, 
+# but this is not reasonable...
+
+USE_AUTOCONF=yes
+AUTOCONF_DIR=${WRKDIR}/source/gcc
+
 GNU_CONFIGURE=	yes
 
 CONFIGURE_SCRIPT=../source/configure
@@ -164,10 +166,9 @@ CONFIGURE_ARGS= --prefix=${PREFIX} \
 CONFIGURE_ARGS+=--enable-shared
 .endif
 
-# rebuild configure file after patching, then move source around !!!
+# move source around after rebuilding configure file.
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
 pre-configure:
-	cd ${WRKSRC}/gcc && autoconf
 	-${MV} ${WRKSRC} ${WRKDIR}/source
 	${MKDIR} ${WRKSRC}
 
