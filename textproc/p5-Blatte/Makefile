@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/14 12:07:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/07/05 08:44:58 jcs Exp $
 
 COMMENT=	"text macro/markup/template language"
 
@@ -8,7 +8,6 @@ HOMEPAGE=	http://www.blatte.org/
 
 CATEGORIES=	textproc perl5
 NEED_VERSION=	1.515
-MAINTAINER=	Brian J. Kifiak <bk@rt.fm>
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=../by-authors/id/B/BO/BOBG/}
 

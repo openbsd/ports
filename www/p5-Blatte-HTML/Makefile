@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/06/10 03:14:35 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2002/07/05 08:44:59 jcs Exp $
 
 COMMENT=	"Blatte functions to generate (X)HTML"
 
@@ -8,7 +8,6 @@ HOMEPAGE=	http://www.blatte.org/
 
 CATEGORIES=	www perl5
 NEED_VERSION=	1.515
-MAINTAINER=	Brian J. Kifiak <bk@rt.fm>
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=../by-authors/id/B/BO/BOBG/}
 

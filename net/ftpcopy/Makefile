@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:19 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/07/05 08:44:58 jcs Exp $
 
 COMMENT=	"FTP listing and transfer tools"
 
@@ -7,7 +7,6 @@ HOMEPAGE=	http://www.ohse.de/uwe/ftpcopy.html
 
 CATEGORIES=	net
 NEED_VERSION=	1.515
-MAINTAINER=	Brian J. Kifiak <bk@rt.fm>
 
 MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/ \
 		ftp://rt.fm/pub/ftpcopy/
