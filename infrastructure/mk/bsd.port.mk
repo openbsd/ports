@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.646 2004/09/15 18:58:49 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.647 2004/09/18 13:45:23 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -375,6 +375,7 @@ PKGNAME?=${DISTNAME}
 FULLPKGNAME?=${PKGNAME}${FLAVOR_EXT}
 PKGFILE=${PKGREPOSITORY}/${FULLPKGNAME}${PKG_SUFX}
 _MASTER?=
+_SOLVING_DEP?=No
 
 .if defined(MULTI_PACKAGES)
 .  for _s in ${MULTI_PACKAGES}
@@ -617,6 +618,12 @@ _SYSTRACE_SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
 SUBST_VARS+=MACHINE_ARCH ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT MAINTAINER
 _tmpvars=
 _SED_SUBST=sed
+
+_PKGADD_AUTO?=
+.if ${_SOLVING_DEP:L} == "yes"
+_PKGADD_AUTO+=-a
+.endif
+
 .for _v in ${SUBST_VARS}
 _SED_SUBST+=-e 's|$${${_v}}|${${_v}}|g'
 PKG_ARGS+=-D${_v}='${${_v}}'
@@ -1048,8 +1055,8 @@ _PACKAGE_DEPS+=${_BULK_COOKIE}
 
 MODSIMPLE_configure= \
 	cd ${WRKCONF} && ${_SYSTRACE_CMD} ${SETENV} \
-		CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
-		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+		CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS:C/ *$//}" \
+		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS:C/ *$//}" \
 		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
 		ac_given_INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_MAN="${INSTALL_MAN}" \
@@ -1269,6 +1276,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 			toset="$$toset _MASTER='[${FULLPKGNAME${SUBPACKAGE}}]${_MASTER}' WRKDIR=${WRKDIR}/$$dir"; \
 			dep="/nonexistent";; \
 		esac; \
+		toset="$$toset _SOLVING_DEP=Yes"; \
 		case "X$$pkg" in X) pkg=`eval $$toset ${MAKE} _print-packagename`; \
 			defaulted=true;; esac; \
 		for abort in false false true; do \
@@ -1802,10 +1810,10 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
 	@if pkg dependencies check ${FULLPKGNAME${SUBPACKAGE}}; then \
 		echo "Package ${FULLPKGNAME${SUBPACKAGE}} is already installed"; \
 	else \
-		${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${PKGFILE${SUBPACKAGE}}; \
+		${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} ${PKGFILE${SUBPACKAGE}}; \
 	fi
 .  else
-	@${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${PKGFILE${SUBPACKAGE}}
+	@${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} ${PKGFILE${SUBPACKAGE}}
 .  endif
 	@-${SUDO} ${_MAKE_COOKIE} $@
 .endif
