@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2002/02/06 16:40:38 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2002/02/07 04:50:55 brad Exp $
 
 COMMENT=	"library for manipulating PNG images"
 
@@ -9,7 +9,7 @@ NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= libpng
 
-HOMEPAGE=	http://www.libpng.org/pub/png/
+HOMEPAGE=	http://www.libpng.org/pub/png/libpng.html
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
