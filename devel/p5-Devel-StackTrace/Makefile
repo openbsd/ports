@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/11/13 18:46:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2003/04/30 19:12:58 wilfried Exp $
 
 COMMENT=	"stack trace and stack trace frame objects"
 
-DISTNAME=	Devel-StackTrace-1.02
+DISTNAME=	Devel-StackTrace-1.03
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
