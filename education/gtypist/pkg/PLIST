@@ -1,13 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:39:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/01/27 22:34:34 naddy Exp $
 bin/gtypist
 bin/typefortune
 @info info/gtypist.info
 @man man/man1/gtypist.1
 @man man/man1/typefortune.1
-@comment share/emacs/
-@comment share/emacs/site-lisp/
-@comment share/emacs/site-lisp/gtypist-mode.el
-@comment share/emacs/site-lisp/gtypist-mode.elc
 share/gtypist/
 share/gtypist/cs.typ
 share/gtypist/d.typ
