@@ -1,0 +1,5 @@
+Finance::Quote provides access to time-delayed stockquotes from a
+number of sources.  After you've installed the package, try
+'man Finance::Quote' for full information. 
+
+WWW: ${HOMEPAGE}
