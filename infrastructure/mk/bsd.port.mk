@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.303 2000/06/13 01:48:17 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.304 2000/06/16 23:10:41 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -183,10 +183,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # USE_LIBTOOL	- Port uses libtool.
 #
 # The following variables are deprecated:
-# NO_CONFIGURE	- Use a dummy (do-nothing) configure target.
 # NO_CDROM		- Port may not go on CDROM.  Set this string to reason.
-# NO_EXTRACT	- Use a dummy (do-nothing) extract target.
-# NO_PATCH		- Use a dummy (do-nothing) patch target.
 # USE_AUTOCONF	- Port uses autoconf (implies GNU_CONFIGURE).
 # USE_IMAKE		- Port uses imake.
 # HAS_CONFIGURE	- Says that the port has its own configure script.
@@ -1241,7 +1238,7 @@ fetch: fetch-depends
 REFETCH?=false
 
 checksum: fetch
-.  if ! (defined(NO_CHECKSUM) || defined(NO_EXTRACT))
+.  if ! defined(NO_CHECKSUM)
 	@if [ ! -f ${CHECKSUM_FILE} ]; then \
 	  ${ECHO_MSG} ">> No checksum file."; \
 	else \
@@ -1347,7 +1344,7 @@ DEPENDS_TARGET=	install
 .endif
 
 makesum: fetch-all
-.if !(defined(NO_CHECKSUM) || defined(NO_EXTRACT))
+.if !defined(NO_CHECKSUM) 
 	@mkdir -p ${FILESDIR} && rm -f ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 		for cipher in ${_CIPHERS}; do \
@@ -1361,7 +1358,7 @@ makesum: fetch-all
 
 
 addsum: fetch-all
-.if !(defined(NO_CHECKSUM) || defined(NO_EXTRACT))
+.if !defined(NO_CHECKSUM)
 	@mkdir -p ${FILESDIR} && touch ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 	 	for cipher in ${_CIPHERS}; do \
@@ -1385,16 +1382,15 @@ addsum: fetch-all
 
 ${_EXTRACT_COOKIE}:
 	@cd ${.CURDIR} && exec ${MAKE} checksum build-depends lib-depends misc-depends
-.if !defined(NO_EXTRACT)
 	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
-.  if target(pre-extract)
+.if target(pre-extract)
 	@cd ${.CURDIR} && exec ${MAKE} pre-extract
-.  endif
-.  if target(do-extract)
+.endif
+.if target(do-extract)
 	@cd ${.CURDIR} && exec ${MAKE} do-extract
-.  else
+.else
 # What EXTRACT normally does:
-.    if defined(WRKOBJDIR)
+.  if defined(WRKOBJDIR)
 	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT}
 	@mkdir -p ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT}
 	@if [ ! -L ${WRKDIR} ] || \
@@ -1403,10 +1399,10 @@ ${_EXTRACT_COOKIE}:
 		rm -f ${WRKDIR}; \
 		ln -sf ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT} ${WRKDIR}; \
 	fi
-.    else
+.  else
 	@rm -rf ${WRKDIR}
 	@mkdir -p ${WRKDIR}
-.    endif
+.  endif
 	@PATH=${PORTPATH}; \
 	for file in ${EXTRACT_ONLY}; do \
 		if cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${FULLDISTDIR}/$$file ${EXTRACT_AFTER_ARGS}; then : ; \
@@ -1415,12 +1411,10 @@ ${_EXTRACT_COOKIE}:
 		fi \
 	done
 # End of EXTRACT
-.  endif
-.  if target(post-extract)
-	@cd ${.CURDIR} && exec ${MAKE} post-extract
-.  endif
 .endif
-
+.if target(post-extract)
+	@cd ${.CURDIR} && exec ${MAKE} post-extract
+.endif
 	@${_MAKE_COOKIE} ${_EXTRACT_COOKIE}
 
 
@@ -1438,15 +1432,14 @@ ${_PREPATCH_COOKIE}:
 # The real distpatch
 
 ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
-.if !defined(NO_PATCH)
-.  if target(pre-patch)
+.if target(pre-patch)
 	@cd ${.CURDIR} && exec ${MAKE} ${_PREPATCH_COOKIE}
-.  endif
-.  if target(do-distpatch)
+.endif
+.if target(do-distpatch)
 	@cd ${.CURDIR} && exec ${MAKE} do-distpatch
-.  else
+.else
 # What DISTPATCH normally does
-.    if defined(_PATCHFILES)
+.  if defined(_PATCHFILES)
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
 	@cd ${FULLDISTDIR}; \
 	  for i in ${_PATCHFILES}; do \
@@ -1462,12 +1455,11 @@ ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 				;; \
 		esac; \
 	  done
-.    endif
+.  endif
 # End of DISTPATCH.
-.  endif
-.  if target(post-distpatch)
+.endif
+.if target(post-distpatch)
 	@cd ${.CURDIR} && exec ${MAKE} post-distpatch
-.  endif
 .endif
 	@${_MAKE_COOKIE} ${_DISTPATCH_COOKIE}
 
@@ -1475,19 +1467,18 @@ ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 # The real patch
 
 ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
-.if !defined(NO_PATCH)
 	@${ECHO_MSG} "===>  Patching for ${PKGNAME}"
-.  if target(pre-patch)
+.if target(pre-patch)
 	@cd ${.CURDIR} && exec ${MAKE} ${_PREPATCH_COOKIE}
-.  endif
-.  if target(do-patch)
+.endif
+.if target(do-patch)
 	@cd ${.CURDIR} && exec ${MAKE} do-patch
-.  else
+.else
 # What PATCH normally does:
 # XXX test for efficiency, don't bother with distpatch if it's not needed
-.    if target(do-distpatch) || target(post-distpatch) || defined(PATCHFILES) 
+.  if target(do-distpatch) || target(post-distpatch) || defined(PATCHFILES) 
 	@cd ${.CURDIR} && exec ${MAKE} distpatch
-.    endif 
+.  endif 
 	@if cd ${PATCHDIR} 2>/dev/null; then \
 		error=0; \
 		for i in ${PATCH_LIST}; do \
@@ -1517,10 +1508,9 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 		case $$error in 1) exit 1;; esac; \
 	fi
 # End of PATCH.
-.  endif
-.  if target(post-patch)
+.endif
+.if target(post-patch)
 	@cd ${.CURDIR} && exec ${MAKE} post-patch
-.  endif
 .endif
 .if !defined(PATCH_CHECK_ONLY) && ${CONFIGURE_STYLE:L:Mautoconf}
 	@cd ${AUTOCONF_DIR} && exec ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
@@ -1531,21 +1521,20 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 # The real configure
 
 ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
-.if !defined(NO_CONFIGURE)
 	@${ECHO_MSG} "===>  Configuring for ${PKGNAME}"
 	@mkdir -p ${WRKBUILD}
-.  if target(pre-configure)
+.if target(pre-configure)
 	@cd ${.CURDIR} && exec ${MAKE} pre-configure
-.  endif
-.  if target(do-configure)
+.endif
+.if target(do-configure)
 	@cd ${.CURDIR} && exec ${MAKE} do-configure
-.  else
+.else
 # What CONFIGURE normally does
 	@if [ -f ${SCRIPTDIR}/configure ]; then \
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 		  ${SCRIPTDIR}/configure; \
 	fi
-.    if ${CONFIGURE_STYLE:L:Mperl}
+.  if ${CONFIGURE_STYLE:L:Mperl}
 	@arch=`/usr/bin/perl -e 'use Config; print $$Config{archname}, "\n";'`; \
      cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
      /usr/bin/perl Makefile.PL \
@@ -1558,8 +1547,8 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 		INSTALLMAN3DIR='$${DESTDIR}${PREFIX}/man/man3' \
 		INSTALLBIN='$${PREFIX}/bin' \
 		INSTALLSCRIPT='$${INSTALLBIN}'
-.    endif
-.    if ${CONFIGURE_STYLE:L:Msimple} || ${CONFIGURE_STYLE:L:Mgnu}
+.  endif
+.  if ${CONFIGURE_STYLE:L:Msimple} || ${CONFIGURE_STYLE:L:Mgnu}
 	@cd ${WRKBUILD} && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
 		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
@@ -1568,22 +1557,21 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}" \
 		YACC="${YACC}" \
 		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
-.    endif
-.    if ${CONFIGURE_STYLE:L:Mimake}
-.      if exists(${X11BASE}/lib/X11/config/ports.cf)
+.  endif
+.  if ${CONFIGURE_STYLE:L:Mimake}
+.    if exists(${X11BASE}/lib/X11/config/ports.cf)
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF}
-.      else
+.    else
 	@echo >&2 "Error: your X installation is not recent enough"
 	@echo >&2 "Update to a more recent version, or use a ports tree"
 	@echo >&2 "that predates March 18, 2000"
 	@exit 1
-.      endif
 .    endif
+.  endif
 # End of CONFIGURE.
-.  endif
-.  if target(post-configure)
+.endif
+.if target(post-configure)
 	@cd ${.CURDIR} && exec ${MAKE} post-configure
-.  endif
 .endif
 	@${_MAKE_COOKIE} ${_CONFIGURE_COOKIE}
 
