@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2002/06/05 22:50:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2002/08/27 11:48:56 naddy Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
 COMMENT=	"GRaphing, Advanced Computation and Exploration of data"
 
-DISTNAME=	grace-5.1.8
+DISTNAME=	grace-5.1.9
 CATEGORIES=	math
-NEED_VERSION=	1.524
 
 HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/
 
@@ -22,12 +21,10 @@ MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/ \
 		ftp://ftp.fu-berlin.de/unix/graphics/grace/src/ \
 		ftp://freedom7.swmed.edu/pub/mirrors/grace/src/
 
-FAKE_FLAGS=	GRACE_HOME=${WRKINST}${PREFIX}/grace
-
 CONFIGURE_STYLE=	gnu dest
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/ac-tools
 CONFIGURE_ARGS+=	--with-bundled-xbae \
-			--with-extra-incpath=${LOCALBASE}/include \
+			--with-extra-incpath=${LOCALBASE}/include:${LOCALBASE}/include/libpng \
 			--with-extra-ldpath=${LOCALBASE}/lib \
 			--enable-grace-home=${PREFIX}/grace
 

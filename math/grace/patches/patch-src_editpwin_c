@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_editpwin_c,v 1.1 2002/08/27 11:48:56 naddy Exp $
+--- src/editpwin.c.orig	Thu Jul 13 00:31:47 2000
++++ src/editpwin.c	Mon Aug 26 11:04:14 2002
+@@ -769,15 +769,19 @@ void create_ss_frame(int gno, int setno)
+  */
+ void do_ext_editor(int gno, int setno)
+ {
+-    char *fname, ebuf[256];
++    char fname[GR_MAXPATHLEN], ebuf[256];
+     FILE *cp;
+-    int save_autos;
++    int save_autos, fd;
+ 
+-    fname = tmpnam(NULL);
+-    cp = grace_openw(fname);
+-    if (cp == NULL) {
++    strlcpy(fname, P_tmpdir, sizeof fname);
++    strlcat(fname, "grace-XXXXXXXXXX", sizeof fname);
++    fd = mkstemp(fname);
++    if (fd == -1) {
++        errmsg("Could not create tmp file.");
+         return;
+-    }
++    } else
++        close(fd);
++    cp = filter_write(fname);
+ 
+     write_set(gno, setno, cp, sformat, FALSE);
+     grace_close(cp);
