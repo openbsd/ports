@@ -1,0 +1,24 @@
+$OpenBSD: patch-moonman_in,v 1.1.1.1 2001/03/18 20:07:43 naddy Exp $
+--- moonman.in.orig	Sun Mar 18 16:54:08 2001
++++ moonman.in	Sun Mar 18 16:55:15 2001
+@@ -47,11 +47,6 @@ The following files on your system are r
+ .I "@MBBINDIR@/moon-buggy"
+ the moon-buggy executable.
+ .TP
+-.I "@MBBINDIR@/maint-buggy"
+-the moon-buggy maintenance script.  See
+-.BR maint-buggy (6)
+-for details.
+-.TP
+ .I "@MBSCORE@/mbscore"
+ the global score file
+ .TP
+@@ -59,8 +54,6 @@ the global score file
+ the local score file.  This is used, if
+ .B moon-buggy
+ has no write access to the global score file.
+-.SH SEE ALSO
+-.BR maint-buggy (6)
+ .SH COPYING
+ Copyright \(co 1999, 2000  Jochen Voss
+ .PP

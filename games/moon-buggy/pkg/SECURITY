@@ -1,0 +1,5 @@
+setre[ug]id in persona.c:
+        These functions are compiled in but never called on OpenBSD.
+        Instead, the POSIX saved IDs feature is used.
+
+$OpenBSD: SECURITY,v 1.1.1.1 2001/03/18 20:07:42 naddy Exp $
