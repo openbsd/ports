@@ -1,0 +1,12 @@
+$OpenBSD: patch-Amaya_thotlib_base_registry_c,v 1.1 2003/04/15 21:55:27 avsm Exp $
+--- Amaya/thotlib/base/registry.c.orig	Tue Apr 15 22:51:13 2003
++++ Amaya/thotlib/base/registry.c	Tue Apr 15 22:52:56 2003
+@@ -1318,7 +1318,7 @@ void TtaInitializeAppRegistry (char *app
+ 	 S_ISLNK (stat_buf.st_mode) &&
+ 	 len > 0)
+     {
+-      len = readlink (c_execname, c_filename, sizeof (filename) / sizeof (char));
++      len = readlink (c_execname, c_filename, sizeof (c_filename));
+       if (len > 0)
+ 	{
+ 	  /*
