@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1998/10/20 08:39:44 form Exp $
+# $OpenBSD: Makefile,v 1.7 1998/12/07 20:47:27 marc Exp $
 # $FreeBSD: Makefile,v 1.25 1998/07/16 06:44:37 vanilla Exp $
 #
 
@@ -13,6 +13,10 @@ MAINTAINER=	form@OpenBSD.ORG
 MASTER_SITES=	ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
 
 IS_INTERACTIVE=	yes
+
+# Needs site specific setup info
+#
+NO_PACKAGE=	yes
 
 WRKSRC=		${WRKDIR}/mgetty-1.1.17
 MAKE_FLAGS=	prefix=${PREFIX} -f
