@@ -1,0 +1,11 @@
+$OpenBSD: patch-server_connect_c,v 1.1 2003/05/27 22:54:26 pvalchev Exp $
+--- server_connect.c.orig	Tue May 27 12:54:12 2003
++++ server_connect.c	Tue May 27 12:54:21 2003
+@@ -13,6 +13,7 @@
+ #include <stdio.h>
+ #ifndef WIN32
+ #include <unistd.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #endif
+ #include "opennap.h"
