@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2003/04/19 17:10:35 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2003/09/02 18:35:33 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 COMMENT=	"free and portable TrueType font rendering engine"
@@ -17,9 +17,10 @@ HOMEPAGE=	http://www.freetype.org/
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 # See http://www.freetype.org/patents.html
-PERMIT_PACKAGE_CDROM=	"patents"
+# bytecode interpreter disabled
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"patents"
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes

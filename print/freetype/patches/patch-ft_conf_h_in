@@ -1,0 +1,12 @@
+$OpenBSD: patch-ft_conf_h_in,v 1.1 2003/09/02 18:35:33 pvalchev Exp $
+--- ft_conf.h.in.orig	2003-09-02 12:27:10.000000000 -0600
++++ ft_conf.h.in	2003-09-02 12:27:53.000000000 -0600
+@@ -93,7 +93,7 @@
+ /* emerged recently on the FreeType lists.  We still do not have Apple's */
+ /* opinion on the subject and will change this as soon as we have.       */
+ 
+-#undef   TT_CONFIG_OPTION_NO_INTERPRETER
++#define  TT_CONFIG_OPTION_NO_INTERPRETER
+ 
+ 
+ /*************************************************************************/
