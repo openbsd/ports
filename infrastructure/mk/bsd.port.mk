@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.551 2003/07/12 12:51:19 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.552 2003/07/14 13:33:04 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -43,8 +43,6 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 # Some variables that typically apply to an individual port.  Non-Boolean
 # variables without defaults are *mandatory*.
 #
-# NO_DESCRIBE	- Use a dummy (do-nothing) describe target.
-# NO_PACKAGE	- Use a dummy (do-nothing) package target.
 # NO_PKG_REGISTER - Don't register a port install as a package.
 # RESTRICTED	- Port is restricted.  Set this string to the reason why.
 #
@@ -52,14 +50,6 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 #                 ${SCRIPTDIR} executed by bsd.port.mk.
 # DEPENDS		- A list of other ports this package depends on being
 #				  made first.  
-#
-# FETCH_BEFORE_ARGS -
-#				  Arguments to ${FETCH_CMD} before filename (default: none).
-# FETCH_AFTER_ARGS -
-#				  Arguments to ${FETCH_CMD} following filename (default: none).
-# NO_WARNINGS	- Set this to Yes to disable warnings regarding variables
-#				  to define to control the build.  Automatically set
-#				  from the "mirror-distfiles" target.
 #
 # Motif support:
 #
@@ -159,8 +149,9 @@ PERMIT_DISTFILES_FTP = No
 # targets.
 
 .if defined(show)
-VARNAME=${show}
 .MAIN: show
+show:
+	@echo ${${show}:Q}
 .elif defined(clean)
 .MAIN: clean
 .else
@@ -662,13 +653,6 @@ _INSTALL_MACROS=	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 MAKE_ENV+=	${_INSTALL_MACROS}
 SCRIPTS_ENV+=	${_INSTALL_MACROS}
 
-# The user can override the NO_PACKAGE by specifying this from
-# the make command line
-.if defined(FORCE_PACKAGE)
-.undef NO_PACKAGE
-.endif
-
-
 # Create the generic variable substitution list, from subst vars
 SUBST_VARS+=MACHINE_ARCH ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT MAINTAINER
 _SED_SUBST=sed
@@ -911,27 +895,27 @@ ALLFILES+= ${SUPDISTFILES:C/:[0-9]$//}
 .  endif
 .endif
 
-CKSUMFILES=
+__CKSUMFILES=
 # First, remove duplicates
 .for _file in ${ALLFILES}
-.  if empty(CKSUMFILES:M${_file})
-CKSUMFILES+=${_file}
+.  if empty(__CKSUMFILES:M${_file})
+__CKSUMFILES+=${_file}
 .  endif
 .endfor
-ALLFILES:=${CKSUMFILES}
+ALLFILES:=${__CKSUMFILES}
 
 .if defined(IGNOREFILES)
 .  for _file in ${IGNOREFILES}
-CKSUMFILES:=${CKSUMFILES:N${_file}}
+__CKSUMFILES:=${__CKSUMFILES:N${_file}}
 .  endfor
 .endif
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
 .if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
-_CKSUMFILES=	${CKSUMFILES:S/^/${DIST_SUBDIR}\//}
+_CKSUMFILES=	${__CKSUMFILES:S/^/${DIST_SUBDIR}\//}
 _IGNOREFILES=	${IGNOREFILES:S/^/${DIST_SUBDIR}\//}
 .else
-_CKSUMFILES=	${CKSUMFILES}
+_CKSUMFILES=	${__CKSUMFILES}
 _IGNOREFILES=	${IGNOREFILES}
 .endif
 
@@ -1842,13 +1826,12 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
 # The real package
 
 _package: ${_PKG_PREREQ}
-.if !defined(NO_PACKAGE)
-.  if target(pre-package)
+.if target(pre-package)
 	@cd ${.CURDIR} && exec ${MAKE} pre-package
-.  endif
-.  if target(do-package)
+.endif
+.if target(do-package)
 	@cd ${.CURDIR} && exec ${MAKE} do-package
-.  else
+.else
 # What PACKAGE normally does:
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${SUBPACKAGE}}"
 	@if [ ! -d ${PKGREPOSITORY} ]; then \
@@ -1873,19 +1856,14 @@ _package: ${_PKG_PREREQ}
 	    exit 1; \
 	  fi
 # End of PACKAGE.
-.  endif
-.  if target(post-package)
+.endif
+.if target(post-package)
 	@cd ${.CURDIR} && exec ${MAKE} post-package
-.  endif
-.else
-.  if !defined(IGNORE_SILENT)
-	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} may not be packaged: ${NO_PACKAGE}."
-.  endif
 .endif
 
 .if !target(fetch-all)
 fetch-all:
-	@cd ${.CURDIR} && exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes fetch
+	@cd ${.CURDIR} && exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes fetch
 .endif
 
 # Separate target for each file fetch will retrieve
@@ -1901,7 +1879,7 @@ ${_F}:
 	${_SITE_SELECTOR}; \
 	for site in $$sites; do \
 		${ECHO_MSG} ">> Attempting to fetch ${_F} from $${site}."; \
-		if ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$$f ${FETCH_AFTER_ARGS}; then \
+		if ${FETCH_CMD} $${site}$$f; then \
 				exit 0; \
 		fi; \
 	done; exit 1
@@ -2004,8 +1982,13 @@ checkpatch:
 # Special target to re-run install
 
 reinstall:
-	@${SUDO} ${PKG_DELETE} -f ${FULLPKGNAME${SUBPACKAGE}}
+	@cd ${.CURDIR} && exec ${MAKE} clean=install
 	@cd ${.CURDIR} && DEPENDS_TARGET=${DEPENDS_TARGET} exec ${MAKE} install
+
+# Force rebuild of a package
+repackage:
+	@cd ${.CURDIR} && exec ${MAKE} clean=packages
+	@cd ${.CURDIR} && exec ${MAKE} package
 
 # Rebuild
 #
@@ -2029,12 +2012,8 @@ uninstall deinstall:
 
 # Cleaning up
 
-.if !target(pre-clean)
-pre-clean:
-.endif
-
 .if !target(clean)
-clean: pre-clean
+clean: 
 .  if ${clean:L:Mdepends}
 	@cd ${.CURDIR} && exec ${MAKE} clean-depends
 .  endif
@@ -2083,14 +2062,8 @@ clean: pre-clean
 .  endif
 .endif
 
-.if !target(pre-distclean)
-pre-distclean:
-.endif
-
-.if !target(distclean)
-distclean: pre-distclean
+distclean: 
 	@${MAKE} clean=dist
-.endif
 
 RECURSIVE_FETCH_LIST?=	Yes
 
@@ -2150,7 +2123,7 @@ fetch-makefile:
 	@echo -n " cdrom"
 .  endif
 	@echo ":: ${PKGPATH}/${FULLPKGNAME}"
-	@cd ${.CURDIR} && exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes _fetch-makefile-helper
+	@cd ${.CURDIR} && exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes _fetch-makefile-helper
 .endif
 
 _fetch-makefile-helper:
@@ -2215,15 +2188,6 @@ package-name:
 	@${_DEPEND_ECHO} '${FULLPKGNAME${SUBPACKAGE}}'
 .  endif 
 
-# Build a package but don't check the package cookie
-
-.if !target(repackage)
-repackage: pre-repackage package
-
-pre-repackage:
-	@rm -f ${_PACKAGE_COOKIES}
-.endif
-
 # Internal variables, used by dependencies targets 
 # Only keep pkg:dir spec
 .if defined(LIB_DEPENDS) || defined(MISC_DEPENDS)
@@ -2280,16 +2244,15 @@ clean-depends:
 #  for-arch|package-cdrom|package-ftp|distfiles-cdrom|distfiles-ftp
 #
 describe:
-.if !defined(NO_DESCRIBE) 
-.  if !defined(PACKAGING) && defined(MULTI_PACKAGES)
+.if !defined(PACKAGING) && defined(MULTI_PACKAGES)
 	@cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' FLAVOR='${FLAVOR}' PACKAGING='${SUBPACKAGE}' exec ${MAKE} describe
-.  else
+.else
 	@echo -n "${FULLPKGNAME${SUBPACKAGE}}|${FULLPKGPATH}|"
-.    if ${PREFIX} == ${LOCALBASE}
+.  if ${PREFIX} == ${LOCALBASE}
 	@echo -n "|"
-.    else
+.  else
 	@echo -n "${PREFIX}|"
-.    endif
+.  endif
 	@echo -n ${_COMMENT}"|"; \
 	if [ -f ${DESCR} ]; then \
 		echo -n "${DESCR:S,^${PORTSDIR}/,,}|"; \
@@ -2297,12 +2260,12 @@ describe:
 		echo -n "/dev/null|"; \
 	fi; \
 	echo -n "${MAINTAINER}|${CATEGORIES}|"
-.    for _d in LIB BUILD RUN
-.      if !empty(_${_d}_DEP2)
+.  for _d in LIB BUILD RUN
+.    if !empty(_${_d}_DEP2)
 	@cd ${.CURDIR} && _FINAL_ECHO=: _INITIAL_ECHO=: exec ${MAKE} ${_d:L}-depends-list
-.      endif
+.    endif
 	@echo -n "|"
-.    endfor
+.  endfor
 	@case "${ONLY_FOR_ARCHS}" in \
 	 "") case "${NOT_FOR_ARCHS}" in \
 		 "") echo -n "any|";; \
@@ -2311,35 +2274,34 @@ describe:
 	 *) echo -n "${ONLY_FOR_ARCHS}|";; \
 	 esac
 
-.    if defined(_BAD_LICENSING)
+.  if defined(_BAD_LICENSING)
 	@echo "?|?|?|?"
+.  else
+.    if ${PERMIT_PACKAGE_CDROM:L} == "yes"
+	@echo -n "y|"
 .    else
-.      if ${PERMIT_PACKAGE_CDROM:L} == "yes"
-	@echo -n "y|"
-.      else
 	@echo -n "n|"
-.      endif
-.      if ${PERMIT_PACKAGE_FTP:L} == "yes"
+.    endif
+.    if ${PERMIT_PACKAGE_FTP:L} == "yes"
 	@echo -n "y|"
-.      else
+.    else
 	@echo -n "n|"
-.      endif
-.	   if ${PERMIT_DISTFILES_CDROM:L} == "yes"
+.    endif
+.    if ${PERMIT_DISTFILES_CDROM:L} == "yes"
 	@echo -n "y|"
-.      else
+.    else
 	@echo -n "n|"
-.      endif
-.	   if ${PERMIT_DISTFILES_FTP:L} == "yes"
+.    endif
+.    if ${PERMIT_DISTFILES_FTP:L} == "yes"
 	@echo "y"
-.      else
+.    else
 	@echo "n"
-.      endif
 .    endif
-.    if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
-.      for _sub in ${MULTI_PACKAGES}
+.  endif
+.  if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
+.    for _sub in ${MULTI_PACKAGES}
 	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' PACKAGING='${_sub}' exec ${MAKE} describe
-.      endfor
-.    endif
+.    endfor
 .  endif
 .endif
 
@@ -2654,11 +2616,6 @@ print-depends:
 	@cd ${.CURDIR} && exec ${MAKE} FULL_PACKAGE_NAME=Yes print-depends-list print-package-depends
 .endif
 
-.if defined(VARNAME)
-show:
-	@echo ${${VARNAME}:Q}
-.endif
-
 # Depend is generally meaningless for arbitrary ports, but if someone wants
 # one they can override this.  This is just to catch people who've gotten into
 # the habit of typing `make depend all install' as a matter of course.
@@ -2726,9 +2683,9 @@ homepage-links:
    misc-depends package package-depends package-links package-name \
    package-noinstall patch plist update-plist update-patches post-build \
    post-configure post-extract post-fetch post-install post-package \
-   post-patch pre-build pre-clean pre-configure pre-distclean \
+   post-patch pre-build pre-configure \
    pre-extract pre-fetch pre-install pre-package pre-patch \
-   pre-repackage print-depends-list print-package-depends readme \
+   print-depends-list print-package-depends readme \
    readmes rebuild reinstall \
    repackage run-depends tags uninstall fetch-all print-depends \
    recurse-build-depends recurse-package-depends \
