@@ -1,84 +1,128 @@
-$OpenBSD: patch-lib_menu_in,v 1.1 2002/01/20 19:54:13 naddy Exp $
-# Add some additional entries to start menu
-# Only installed applications will be shown in the menu.
-#
-# If I can get permission to add more stuff here, then I can list
-# almost every X app that is available for OpenBSD.
-# I can create the appropriate icons too (made some of them already),
-# but that will greatly increase number of files in this port.
-# I will try to talk to IceWM developers about adding more applications
-# from OpenBSD ports tree to the default menu.
-#
---- lib/menu.in.orig	Tue Oct  9 09:54:03 2001
-+++ lib/menu.in	Sun Jan 13 20:02:35 2002
-@@ -5,6 +5,8 @@
+$OpenBSD: patch-lib_menu_in,v 1.2 2004/05/21 17:00:09 naddy Exp $
+--- lib/menu.in.orig	Sat Sep 27 03:54:45 2003
++++ lib/menu.in	Fri Feb 20 20:39:04 2004
+@@ -5,15 +5,114 @@
  # (re)install icewm.
  #
  prog xterm xterm xterm
 +prog Eterm Eterm Eterm
 +prog aterm aterm aterm
  prog rxvt xterm rxvt -bg black -cr green -fg white -C -fn 9x15 -sl 500
- prog fte fte fte
- prog Netscape netscape netscape
-@@ -12,6 +14,8 @@ prog Gimp gimp gimp
+-prog fte fte fte
+-prog NEdit nedit nedit
+-prog Mozilla mozilla mozilla
+-prog XChat xchat xchat
+-prog Gimp gimp gimp
  separator
- menu Applications folder {
-     menu Editors folder {
-+        prog vi vi xterm -e vi
-+        prog mg mg xterm -e mg
-         prog fte fte fte
- 	prog vim vim gvim 
-         prog xemacs xemacs xemacs
-@@ -21,15 +25,26 @@ menu Applications folder {
-     }
-     menu "WWW Browsers" folder {
-         prog Netscape netscape netscape
+-menuprog Gnome folder icewm-menu-gnome1 --list @CONFIG_GNOME1_MENU_DIR@
+-menuprog Gnome folder icewm-menu-gnome2 --list @CONFIG_GNOME2_MENU_DIR@
+-menuprog KDE folder icewm-menu-gnome@GNOME_VER@ --list @CONFIG_KDE_MENU_DIR@
+-menufile Programs folder programs
+-menufile Tool_bar folder toolbar
++#menufile Programs folder programs
++#menufile Tool_bar folder toolbar
++menu Applications folder {
++    menu Editors folder {
++        prog NEdit nedit nedit
++        prog fte fte fte
++        prog vim vim gvim 
++        prog xemacs xemacs xemacs
++        prog emacs emacs emacs
++        prog xed_it xedit xedit
++        prog Lyx emacs lyx
++        prog Anj_uta anjuta anjuta
++        prog Abiword abiword abiword
++        prog Xc_oral xcoral xcoral
++    }
++    menu "WWW Browsers" folder {
++        prog Netscape netscape netscape
 +        prog Konqueror konqueror konqueror
++        prog Mozilla mozilla mozilla
++        prog Firefox firefox firefox
++        prog Galeon galeon galeon
++        prog Opera opera opera
++        prog Dillo dillo dillo
 +        prog Amaya amaya amaya
-         prog Arena arena arena
-         prog Lynx lynx xterm -e lynx
-     }
++        prog Lynx lynx xterm -T Lynx -e lynx 
++    }
 +    menu "Mail and News" folder {
++        prog Kmail kmail kmail
 +        prog Sylpheed sylpheed sylpheed
-+        prog TkRat tkrat tkrat
++        prog Tk_Rat tkrat tkrat
++        prog Thunderbird thunderbird thunderbird
++	prog Elm elm xterm -T Elm -e elm
++	prog Mutt mutt xterm -T Mutt -e mutt
++	prog Pine pine xterm -T Pine -e pine
 +    }
-     menu Graphics folder {
-         prog Gimp gimp gimp
-         prog XV xv xv
-         prog XPaint xpaint xpaint
-         prog XFig xfig xfig
-     }
++    menu "Internet Utilities" folder {
++        prog XChat xchat xchat
++        prog GTK-Gnutella gtk-gnutella gtk-gnutella
++    }
++    menu Graphics folder {
++        prog Dia dia dia
++        prog Blender blender blender
++        prog gtksee gtksee gtksee
++        prog ImageMagic display display
++        prog PornView pornview pornview
++        prog Gimp gimp gimp
++        prog XV xv xv
++        prog XPaint xpaint xpaint
++        prog XFig xfig xfig
++    }
 +    menu Multimedia folder {
-+        prog XPlayCD xplaycd xplaycd
-+        prog XMixer xmixer xmixer
++        prog XPlay_CD xplaycd xplaycd
++        prog XM_ixer xmixer xmixer
 +        prog XMMS xmms xmms
++        prog Mplayer gmplayer gmplayer
 +    }
-     menu Devel folder {
-         prog ddd ddd ddd
-     }
-@@ -46,15 +61,12 @@ menu Games folder {
-     prog XDemineur xdemineur xdemineur
- }
- menu System folder {
--    prog "Control Panel" redhat control-panel
++    menu "System Utilities" folder {
++        prog xosview xosview xosview
++        prog HexCalc hexcalc hexcalc
++        prog "Northern Captain" xnc xnc
++        prog xfm xfm xfm
++        prog "Acrobat Reader" pdf acroread
++        prog Xpdf pdf xpdf
++        prog "DVI Previewer" xdvi xdvi
++        prog Ghostview ghostview gv
++    }
++}
++menu Games folder {
++    prog "Koules for X" koules xkoules -f
++    prog Xboing xboing xboing
++    prog Xboard xboard xboard
++    prog XGalaga xgalaga xgal
++    prog XDemineur xdemineur xdemineur
++    prog "X Scavenger" scavenger scavenger
++    prog Xkobo xkobo xkobo -doublesize
++    prog "Eboard (chess)" eboard eboard
++    prog Quake-2 quake2 quake2
++}
++menu Utilities folder {
 +    prog top top xterm -e top
-     prog xload xload xload
-     prog xosview xosview xosview
- }
- menu Utilities folder {
--    menu Multimedia folder {
--        prog XPlayCD xplaycd xplaycd
--        prog XMixer xmixer xmixer
--    }
++    prog xload xload xload
 +    prog Xman xman xman
-     prog "Font Selector" xfontsel xfontsel
-     prog Clock xclock xclock
-     prog Magnify xmag xmag
-@@ -73,4 +85,7 @@ menu "Window Managers" folder {
-     restart blackbox - blackbox
-     restart fvwm2 - fvwm2
-     restart fvwm - fvwm
-+    restart wm2 - wm2
++    prog "Font Selector" xfontsel xfontsel
++    prog Clock xclock xclock
++    prog Magnify xmag xmag
++    prog Calculator xcalc xcalc
++    prog Colormap xcolormap xcmap
++    prog Clip_board xclip xclipboard
++    prog xkill bomb xkill
++    separator
++    prog "Screen Saver" xlock xlock -nolock
++    prog "Screen _Lock" xlock xlock
++}
++menu "Window _Managers" folder {
++    restart icewm - icewm
++    restart wmaker - wmaker
++    restart enlightenment - enlightenment
++    restart blackbox - blackbox
++    restart fl_uxbox - fluxbox
++    restart fvwm_2 - fvwm2
++    restart fvwm - fvwm
++    restart w_m2 - wm2
++    restart pwm - pwm
++    restart twm - twm
 +    restart KDE - startkde
-+    restart Golem - golem
- }
++    restart Gnome - gnome-session
++}

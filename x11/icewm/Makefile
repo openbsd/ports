@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2004/02/05 21:22:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/05/21 17:00:08 naddy Exp $
 
 COMMENT=		"small, fast window manager"
 
-DISTNAME=		icewm-1.0.9-2
-PKGNAME=		icewm-1.0.9.2
+DISTNAME=		icewm-1.2.13
 CATEGORIES=     	x11	
 
 HOMEPAGE=		http://www.icewm.org/
@@ -20,19 +19,20 @@ LIB_DEPENDS=		Imlib.19::graphics/imlib
 
 USE_X11=		Yes
 NO_REGRESS=		Yes
-USE_GMAKE=		Yes
-CONFIGURE_STYLE=	autoconf dest
-AUTOCONF_VERSION=	2.52
+CONFIGURE_STYLE= 	gnu		
 CONFIGURE_ARGS=		--with-imlib=${PREFIX}/bin \
 			--with-docdir=${PREFIX}/share/doc \
 			--with-libdir=${PREFIX}/share/icewm \
-			--with-cfgdir=${SYSCONFDIR}/icewm
+			--with-cfgdir=${SYSCONFDIR}/icewm \
+			--disable-i18n \
+			--enable-shaped-decorations \
+			--enable-gradients
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-WRKDIST=		${WRKDIR}/icewm-1.0.9
-
 post-install:
-			${INSTALL_DATA} ${FILESDIR}/openbsd.xpm ${PREFIX}/share/icewm/taskbar
+	@perl -pi -e 's:%%SYSCONFDIR%%:${SYSCONFDIR}:g;' \
+		-e 's:%%PREFIX%%:${TRUEPREFIX}:g;' \
+		${PREFIX}/share/doc/icewm/icewm-7.html
 
 .include <bsd.port.mk>

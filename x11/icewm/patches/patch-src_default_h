@@ -1,43 +1,14 @@
-$OpenBSD: patch-src_default_h,v 1.1 2002/01/20 19:54:13 naddy Exp $
-#1,2 Change the default theme to motif, reduce the borders just a bit
-#    reasons: icewm should still be useful on slower platforms with
-#    256colors only (e.g. Sparc), plus motif uses OpenBSD branded
-#    start button :)
-# 3. Replace pine with mail, so the mail can be checked even if
-#    there is no additional mail client installed
-#
---- src/default.h.orig	Tue Oct  9 09:54:03 2001
-+++ src/default.h	Fri Jan 11 09:19:52 2002
-@@ -10,8 +10,8 @@
- #define BOLDTTFONT(pt) "-adobe-courier-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
- #endif
+$OpenBSD: patch-src_default_h,v 1.2 2004/05/21 17:00:09 naddy Exp $
+--- src/default.h.orig	2003-09-27 02:54:45.000000000 -0500
++++ src/default.h	2004-02-15 17:42:38.000000000 -0600
+@@ -188,8 +188,8 @@ XSV(const char *, moveSizeFontName,     
  
--#define CONFIG_DEFAULT_LOOK lookNice
--#define CONFIG_DEFAULT_THEME "Infadel2/default.theme"
-+#define CONFIG_DEFAULT_LOOK lookMotif
-+#define CONFIG_DEFAULT_THEME "motif/default.theme"
- 
- #ifdef CFGDEF
- #define XSV(t,a,b) t a(b);
-@@ -261,8 +261,8 @@ XIV(bool, haveXft,				true)
- XIV(bool, protectClientWindow, 			true)
- #endif
- XIV(WMLook, wmLook,				CONFIG_DEFAULT_LOOK)
--XIV(int, wsBorderX,				6)
--XIV(int, wsBorderY,				6)
-+XIV(int, wsBorderX,				4)
-+XIV(int, wsBorderY,				4)
- XIV(int, wsDlgBorderX,				2)
- XIV(int, wsDlgBorderY,				2)
- XIV(int, wsCornerX,				24)
-@@ -353,8 +353,8 @@ XSV(const char *, libDir,			LIBDIR)
- XSV(const char *, configDir,			CFGDIR)
- XSV(const char *, kdeDataDir,			KDEDIR)
- XSV(const char *, mailBoxPath,			0)
--XSV(const char *, mailCommand,			"xterm -name pine -title PINE -e pine")
--XSV(const char *, mailClassHint,		"pine.XTerm")
-+XSV(const char *, mailCommand,			"xterm -name mail -title MAIL -e  mail")
-+XSV(const char *, mailClassHint,		"mail.XTerm")
- XSV(const char *, newMailCommand,		0)
- XSV(const char *, lockCommand,			"xlock")
- XSV(const char *, clockCommand,			"xclock -name icewm -title Clock")
+ XSV(const char *, kdeDataDir,                   KDEDIR)
+ XSV(const char *, mailBoxPath,                  0)
+-XSV(const char *, mailCommand,                  "xterm -name pine -title PINE -e pine")
+-XSV(const char *, mailClassHint,                "pine.XTerm")
++XSV(const char *, mailCommand,                  "xterm -name mail -title MAIL -e mail")
++XSV(const char *, mailClassHint,                "mail.XTerm")
+ XSV(const char *, newMailCommand,               0)
+ XSV(const char *, lockCommand,                  "xlock")
+ XSV(const char *, clockCommand,                 "xclock -name icewm -title Clock")

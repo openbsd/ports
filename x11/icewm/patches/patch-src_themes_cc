@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_themes_cc,v 1.1 2004/05/21 17:00:09 naddy Exp $
+--- src/themes.cc.orig	2003-09-27 09:54:45.000000000 +0200
++++ src/themes.cc	2004-05-21 17:36:57.000000000 +0200
+@@ -61,9 +61,6 @@ void DTheme::open() {
+ 
+     setDefaultTheme(fTheme);
+ 
+-    const char *bg[] = { ICEWMBGEXE, "-r", 0 };
+-    int pid = app->runProgram(bg[0], bg);
+-    app->waitProgram(pid);
+ 
+     YStringArray args(4);
+ 

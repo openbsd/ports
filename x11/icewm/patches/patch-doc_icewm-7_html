@@ -1,16 +1,25 @@
-$OpenBSD: patch-doc_icewm-7_html,v 1.2 2002/01/20 19:54:13 naddy Exp $
-# Fix the location of the configuration files in on-line help
---- doc/icewm-7.html.orig	Tue Oct  9 09:54:34 2001
-+++ doc/icewm-7.html	Sun Jan 13 03:19:37 2002
-@@ -20,9 +20,8 @@ directories:
- <P>
+$OpenBSD: patch-doc_icewm-7_html,v 1.3 2004/05/21 17:00:09 naddy Exp $
+--- doc/icewm-7.html.orig	2003-09-27 02:54:58.000000000 -0500
++++ doc/icewm-7.html	2004-02-15 16:12:50.000000000 -0600
+@@ -25,17 +25,16 @@ directories:</P>
  <DL>
- <DT><B>$HOME/.icewm</B><DD><P>user's personal customization
--<DT><B>/etc/X11/icewm</B><DD><P>system-wide customized defaults
--<DT><B>/usr/local/lib/X11/icewm</B><DD><P>compiled-in default directory with default files
--(for .rpm packages the default is /usr/X11R6/lib/X11/icewm)
-+<DT><B>/etc/icewm</B><DD><P>system-wide customized defaults
-+<DT><B>/usr/local/share/icewm</B><DD><P>compiled-in default directory with default files
+ <DT><B>$HOME/.icewm</B><DD><P>user's personal customization. This location can
+ be customized by setting the $ICEWM_PRIVCFG environment variable.</P>
+-<DT><B>/etc/X11/icewm</B><DD><P>system-wide customized defaults</P>
+-<DT><B>/usr/local/share/icewm</B><DD><P>compiled-in default directory with default files
+-(for .rpm packages the default is /usr/share/icewm)</P>
++<DT><B>%%SYSCONFDIR%%/icewm</B><DD><P>system-wide customized defaults</P>
++<DT><B>%%PREFIX%%/share/icewm</B><DD><P>compiled-in default directory with default files</P>
  </DL>
+ </P>
  <P>The directories are searched in the above order, so any file located
  in the system/install directory can be overridden by the user by creating
+ the same directory hierarchy under <CODE>$HOME/.icewm</CODE>.</P>
+ <P>To customize icewm yourself, you should create the $HOME/.icewm directory and copy
+-the files that you wish to modify (preferences, winoptions),from /etc/X11/icewm,
+-/usr/share/icewm or /usr/local/share/icewm and then modify as you like.</P>
++the files that you wish to modify (preferences, winoptions, etc.) from %%SYSCONFDIR%%/icewm
++or %%PREFIX%%/share/icewm and then modify them as you like.</P>
+ <P>To customize the default themes, you should create the $HOME/.icewm/themes directory
+ and copy all the theme files there and then modify as necessary.</P>
+ 

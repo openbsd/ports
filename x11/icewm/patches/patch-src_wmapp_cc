@@ -1,17 +1,44 @@
-$OpenBSD: patch-src_wmapp_cc,v 1.1 2002/12/29 00:10:48 pvalchev Exp $
---- src/wmapp.cc.orig	Sat Dec 28 15:21:46 2002
-+++ src/wmapp.cc	Sat Dec 28 15:22:19 2002
-@@ -883,11 +883,11 @@ void runRestart(const char *str, const c
+$OpenBSD: patch-src_wmapp_cc,v 1.2 2004/05/21 17:00:09 naddy Exp $
+--- src/wmapp.cc.orig	2003-09-27 09:54:45.000000000 +0200
++++ src/wmapp.cc	2004-05-21 17:36:57.000000000 +0200
+@@ -681,7 +681,7 @@ static void initMenus() {
+ 
+             logoutMenu->addItem(_("Lock _Workstation"), -2, "", actionLock);
+             logoutMenu->addItem(_("Re_boot"), -2, "", actionReboot);
+-            logoutMenu->addItem(_("Shut_down"), -2, "", actionReboot);
++            logoutMenu->addItem(_("Shut_down"), -2, "", actionShutdown);
+             logoutMenu->addSeparator();
+ 
+             DProgram *restartIcewm =
+@@ -909,11 +909,11 @@ void runRestart(const char *path, char *
          if (args) {
-             execvp(str, (char * const *) args);
+             execvp(path, args);
          } else {
--            execlp(str, str, 0);
-+            execlp(str, str, (void *)NULL);
+-            execlp(path, path, 0);
++            execlp(path, path, (void *)NULL);
          }
      } else {
          const char *c = configArg ? "-c" : NULL;
--        execlp(ICEWMEXE, ICEWMEXE, c, configArg, 0);
-+        execlp(ICEWMEXE, ICEWMEXE, c, configArg, (void *)NULL);
+-        execlp(ICEWMEXE, ICEWMEXE, "--restart", c, configArg, 0);
++        execlp(ICEWMEXE, ICEWMEXE, "--restart", c, configArg, (void *)NULL);
      }
  
      app->alert();
+@@ -1507,6 +1507,8 @@ static void print_usage(const char *argv
+ 
+ int main(int argc, char **argv) {
+     YLocale locale;
++    
++    const char *bg[] = { "icewmbg", 0 };
+ 
+     for (char ** arg = argv + 1; arg < argv + argc; ++arg) {
+         if (**arg == '-') {
+@@ -1549,6 +1551,8 @@ int main(int argc, char **argv) {
+ #endif
+     YWMApp app(&argc, &argv);
+ 
++    app.runProgram(bg[0], bg);
++
+ #ifdef CONFIG_GUIEVENTS
+     app.signalGuiEvent(geStartup);
+ #endif

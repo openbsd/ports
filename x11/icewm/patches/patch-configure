@@ -1,0 +1,22 @@
+$OpenBSD: patch-configure,v 1.1 2004/05/21 17:00:09 naddy Exp $
+--- configure.orig	2003-09-27 09:54:49.000000000 +0200
++++ configure	2004-05-21 17:38:49.000000000 +0200
+@@ -1439,7 +1439,7 @@ test -n "$target_alias" &&
+     NONENONEs,x,x, &&
+   program_prefix=${target_alias}-
+ 
+-TARGETS=base
++TARGETS='base docs'
+ APPLICATIONS='icewm icewm-session icesh icewmhint icewmbg icewmtray'
+ TESTCASES=`echo src/test*.cc | sed 's%src/\([^ ]*\)\.cc%\1%g'`
+ TESTCASES="$TESTCASES iceview icesame iceicon icerun icelist" # iceclock
+@@ -3331,9 +3331,6 @@ ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS 
+ ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+ 
+-  if test x"$ac_cv_c_compiler_gnu" != x; then
+-    CXX_LINK=${CC}
+-  fi
+ 
+ 
+ 
