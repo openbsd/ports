@@ -1,6 +1,6 @@
-Postfix attempts to be fast, easy to administer, and secure, while at the
-same time being sendmail compatible enough to not upset existing users.
-Thus, the outside has a sendmail-ish flavor, but the inside is completely
+Postfix attempts to be fast, easy to administer, and secure, while at the 
+same time being sendmail compatible enough to not upset existing users. 
+Thus, the outside has a sendmail-ish flavor, but the inside is completely 
 different.
 
 Extra features always included:
@@ -10,7 +10,4 @@ Extra features always included:
 Optional features included using flavors:
 
 - authenticated SMTP using Cyrus SASL v2
-- table lookups using LDAP
-- table lookups using MySQL
-- table lookups using PostgreSQL
-
+- table lookups using LDAP, MySQL and PostgreSQL
