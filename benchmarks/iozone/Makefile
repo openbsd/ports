@@ -1,18 +1,22 @@
-# $OpenBSD: Makefile,v 1.6 1999/06/02 20:22:05 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/08/06 03:03:55 brad Exp $
 
-DISTNAME=       iozone-2.01
+DISTNAME=	iozone
+PKGNAME=	iozone-3.0
 CATEGORIES=	benchmarks
-MASTER_SITES=   ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
-EXTRACT_SUFX=	.shar.gz
+MASTER_SITES=	http://www.iozone.org/src/
+EXTRACT_SUFX=	.tar
 
 NEED_VERSION=	1.92
 
 MAINTAINER=	niklas@openbsd.org
 
-EXTRACT_CMD=	( gzcat | awk '{if (/^\#!/) x++} {if(x) print $$0'} | ${SH} )
-EXTRACT_BEFORE_ARGS=	<
-EXTRACT_AFTER_ARGS=	# empty
+MAKEFILE=	makefile
+ALL_TARGET=	openbsd
 
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/src
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/iozone ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/iozone.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

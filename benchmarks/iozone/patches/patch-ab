@@ -1,20 +1,43 @@
-*** iozone.c.old	Thu Nov 27 00:22:03 1997
---- iozone.c	Thu Nov 27 00:35:11 1997
-***************
-*** 487,492 ****
---- 487,501 ----
-  #endif
-  #define BSDtime
-  #endif
-+ #ifdef bsd4_4
-+ #define USE_FSYNC
-+ #ifndef OS_TYPE
-+ #define OS_TYPE "BSD 4.4"
-+ #endif
-+ #define BSDtime
-+ #include <stdlib.h>
-+ #include <string.h>
-+ #endif
-  /*
-  If we made it this far and still don't know which operating system
-  we are running, check if we at least have ANSI C so we can do some
+--- iozone.c.orig	Thu Jun 24 14:43:59 1999
++++ iozone.c	Wed Jul  7 21:41:35 1999
+@@ -74,7 +74,7 @@
+ int main();
+ #ifndef __convex__
+ #endif
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <sys/types.h>
+ #define O_SYNC 0
+ #endif
+@@ -189,7 +189,7 @@
+ #include <signal.h>
+ #include <unistd.h>
+ #include <sys/types.h>
+-#ifndef __FreeBSD__
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ #include <malloc.h>
+ #endif
+ /* SCO Unix System V */
+@@ -256,6 +256,11 @@
+ #ifdef bsd4_2
+ #define BSDtime
+ #endif
++#ifdef bsd4_4
++#define BSDtime
++#include <stdlib.h>
++#include <string.h>
++#endif
+ #ifdef BSDtime
+ #include <sys/time.h>
+ #else
+@@ -274,6 +279,10 @@
+ long long page_size = 4096;
+ #define MS_SYNC 0
+ #define MS_ASYNC 0
++#endif
++
++#ifdef bsd4_4
++long long page_size = 4096;
+ #endif
+ 
+ #ifdef solaris

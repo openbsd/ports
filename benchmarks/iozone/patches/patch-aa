@@ -1,38 +1,47 @@
-*** /dev/null	Wed Oct  5 14:46:59 1994
---- Makefile	Wed Oct  5 16:03:22 1994
-***************
-*** 0 ****
---- 1,33 ----
-+ all: iozone
-+ 
-+ iozone:
-+ 	$(CC) $(CFLAGS) -Dbsd4_4 -DOS_TYPE="\"`uname`\"" -o iozone iozone.c
-+ 
-+ install:
-+ 	-@mkdir -p ${PREFIX}/bin
-+ 	-@mkdir -p ${PREFIX}/man/man1
-+ 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} iozone ${PREFIX}/bin
-+ 	@echo .Dd `/bin/date` > iozone.1
-+ 	@echo .Dt IOZONE 1 >> iozone.1
-+ 	@echo .Sh NAME >> iozone.1
-+ 	@echo .Nm iozone >> iozone.1
-+ 	@echo .Nd Performance Test of Sequential File I/O  >> iozone.1
-+ 	@echo .Sh SYNOPSIS >> iozone.1
-+ 	@echo .Nm iozone >> iozone.1
-+ 	@echo .Op Ar megabytes >> iozone.1
-+ 	@echo .Op Ar record_length_in_bytes >> iozone.1
-+ 	@echo .Op Ar [path]filename>> iozone.1
-+ 	@echo .Nm iozone >> iozone.1
-+ 	@echo .Ar auto[=filename] >> iozone.1
-+ 	@echo .Nm iozone >> iozone.1
-+ 	@echo .Ar raw[=filename] >> iozone.1
-+ 	@echo .Nm iozone >> iozone.1
-+ 	@echo .Ar cdrom[=filename] >> iozone.1
-+ 	@echo .Nm iozone >> iozone.1
-+ 	@echo .Ar help >> iozone.1
-+ 	@echo .Sh DESCRIPTION >> iozone.1
-+ 	./iozone help|awk '{if (/Copyright/) x++} {if (/For V1.06/) exit;}\
-+ 		 {if (x) print $0}' >>iozone.1
-+ 	@echo .Sh AUTHOR >> iozone.1
-+ 	@echo Bill Norcott >> iozone.1
-+ 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 iozone.1 ${PREFIX}/man/man1
+--- makefile.orig	Thu Jun 24 14:43:59 1999
++++ makefile	Wed Jul  7 21:38:13 1999
+@@ -6,7 +6,7 @@
+ #
+ # Supports:	hpux, hpux_no_ansi, hpux-10.1, hpux_no_ansi-10.1,
+ #		sppux, sppux-10.1, ghpux, sppux, 
+-#		convex, FreeBSD
++#		convex, FreeBSD, OpenBSD
+ 
+ 
+ all:  
+@@ -31,6 +31,7 @@
+ 	@echo "\t->   Solaris              (32bit)   <-"
+ 	@echo "\t->   Windows (95/98/NT)   (32bit)   <-"
+ 	@echo "\t->   freebsd              (32bit)   <-"
++	@echo "\t->   openbsd              (32bit)   <-"
+ 	@echo ""
+ 
+ clean:
+@@ -182,6 +183,15 @@
+ freebsd: iozone_freebsd.o libbif.o
+ 	cc -O -Dunix -DHAVE_ANSIC_C -DNO_THREADS -DSHARED_MEM \
+ 		iozone_freebsd.o libbif.o -o iozone
++
++#
++# GNU C compiler OpenBSD build with no threads, no largefiles, no async I/O
++#
++
++openbsd: iozone_openbsd.o libbif.o
++	cc -O -Dunix -DHAVE_ANSIC_C -DNO_THREADS -DSHARED_MEM \
++		iozone_openbsd.o libbif.o -o iozone
++
+ #
+ #
+ # Now for the machine specific stuff
+@@ -383,3 +393,11 @@
+ 	cc -c -O -Dunix -Dbsd4_2 -DHAVE_ANSIC_C -DNO_THREADS \
+ 		-DSHARED_MEM libbif.c -o libbif.o
+ 
++iozone_openbsd.o: iozone.c libbif.c
++	@echo ""
++	@echo "Build Iozone for OpenBSD"
++	@echo ""
++	cc -c -O -Dunix -Dbsd4_4 -DHAVE_ANSIC_C -DNO_THREADS \
++		-DSHARED_MEM iozone.c -o iozone_openbsd.o
++	cc -c -O -Dunix -Dbsd4_4 -DHAVE_ANSIC_C -DNO_THREADS \
++		-DSHARED_MEM libbif.c -o libbif.o
