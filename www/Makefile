@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2000/10/02 05:10:05 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2000/10/09 00:07:00 avsm Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -28,7 +28,7 @@
 #    SUBDIR += linemode
      SUBDIR += links
 #    SUBDIR += mapedit
-#    SUBDIR += mhonarc
+     SUBDIR += mhonarc
 #    SUBDIR += mmm
      SUBDIR += mod_perl
 #    SUBDIR += momspider
