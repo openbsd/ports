@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/03/19 07:33:56 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/30 02:47:18 brad Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 DISTNAME=	imlib-1.9.4
@@ -8,12 +8,11 @@ MASTER_SITE_SUBDIR=	gnome-1.0/sources
 
 MAINTAINER=	brad@openbsd.org
 
-BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext \
-		${LOCALBASE}/lib/libpbm.a:${PORTSDIR}/graphics/netpbm
-RUN_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	${LOCALBASE}/lib/libpbm.a:${PORTSDIR}/graphics/netpbm
 LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
-		glib\\.1\\.2:${PORTSDIR}/devel/glib \
-		gtk\\.1\\.2:${PORTSDIR}/x11/gtk+ \
+		intl:${PORTSDIR}/devel/gettext \
+		glib.1.2:${PORTSDIR}/devel/glib \
+		gtk.1.2:${PORTSDIR}/x11/gtk+ \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff34 \
@@ -25,8 +24,8 @@ SEPARATE_BUILD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${X11BASE}/bin/gtk-config" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		GTK_CONFIG="${X11BASE}/bin/gtk-config"
 
 post-install:
 	@${MKDIR} ${LOCALBASE}/share/aclocal
