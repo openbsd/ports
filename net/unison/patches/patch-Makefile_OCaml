@@ -1,0 +1,59 @@
+$OpenBSD: patch-Makefile_OCaml,v 1.1.1.1 2002/12/22 09:47:24 sturm Exp $
+# Authors assumed here that any non-Solaris Unix system must be Linux.
+# This corrects the thing but requires changing linux to Linux elsewhere.
+# Also, an assumption about bash changed to ksh for OpenBSD.
+--- Makefile.OCaml.orig	Thu Apr 11 01:13:23 2002
++++ Makefile.OCaml	Wed Dec 18 18:37:35 2002
+@@ -42,7 +42,7 @@ else
+ ifeq ($(shell hostname),saul.cis.upenn.edu)
+   OSARCH=solaris
+ else
+-  OSARCH=linux
++  OSARCH=$(shell uname -s)
+ endif
+   ETAGS=etags
+ endif
+@@ -157,9 +157,12 @@ endif
+ ifeq ($(OSARCH), win32gnuc)
+   GUILIBDIR=$(OCAMLLIBDIR)/lablgtk/cclibs
+ endif
+-ifeq ($(OSARCH), linux)
++ifeq ($(OSARCH), Linux)
+   X11LIBDIR=/usr/X11R6/lib
+ endif
++ifeq ($(OSARCH), OpenBSD)
++  X11LIBDIR=${X11BASE}/lib
++endif
+ 
+ # Developer-only directories
+ ifeq ($(shell hostname), saul.cis.upenn.edu)
+@@ -243,7 +246,10 @@ ifeq ($(STATIC), true)
+     # libcurses is not in a standard place in older Solaris releases.
+     STATICLIBS+=-cclib -R/usr/xpg4/lib
+   endif
+-  ifeq ($(OSARCH), linux)
++  ifeq ($(OSARCH), Linux)
++    STATICLIBS+=-cclib -static
++  endif
++  ifeq ($(OSARCH), OpenBSD)
+     STATICLIBS+=-cclib -static
+   endif
+   CLIBS=$(STATICLIBS)
+@@ -254,9 +260,14 @@ endif
+ 
+ # Include an automatically generated list of dependencies
+ include .depend
+-
+-ifeq ($(shell echo type -t ocamldot | bash), file)
+-  OCAMLDOT=true
++ifeq ($(OSARCH), OpenBSD)
++  ifeq ($(shell echo type ocamldot | ksh), file)
++    OCAMLDOT=true
++  endif
++else
++  ifeq ($(shell echo type -t ocamldot | bash), file)
++    OCAMLDOT=true
++  endif
+ endif
+ 
+ # Rebuild dependencies (must be invoked manually)
