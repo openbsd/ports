@@ -1,27 +1,26 @@
-# $OpenBSD: Makefile,v 1.14 2002/05/13 18:50:38 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/09/15 10:54:19 shell Exp $
 
-COMMENT=		"python interface to MySQL"
+COMMENT=	"python interface to MySQL"
 
-VERSION=		0.9.1
-DISTNAME=		MySQL-python-${VERSION}
-PKGNAME=		py-mysql-${VERSION}
-CATEGORIES=		databases
-NEED_VERSION=		1.515
+VERSION=	0.9.2
+DISTNAME=	MySQL-python-${VERSION}
+PKGNAME=	py-mysql-${VERSION}
+CATEGORIES=	databases
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mysql-python/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mysql-python/}
 
-HOMEPAGE=		http://dustman.net/andy/python/MySQLdb/
+HOMEPAGE=	http://sourceforge.net/projects/mysql-python
 
-MAINTAINER=		Shell Hung <shell@openbsd.org>
+MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-LIB_DEPENDS=		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
+LIB_DEPENDS=	lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
 
-PYTHON_VER=	2.1
+PYTHON_VER=	2.2
 
 RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 BUILD_DEPENDS=	${RUN_DEPENDS}
