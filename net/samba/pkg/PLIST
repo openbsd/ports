@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.12 2000/07/22 00:58:28 brad Exp $
 bin/addtosmbpass
 bin/convert_smbpasswd
 bin/make_printerdef

@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.32 2000/07/19 10:15:42 peter Exp $
+# $OpenBSD: Makefile,v 1.33 2000/07/22 00:58:28 brad Exp $
 
 DISTNAME=	samba-2.0.7
 CATEGORIES=	net
-NEED_VERSION=	1.213
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 		http://us1.samba.org/samba/ftp/ \
 		ftp://ca.samba.org/pub/samba/ \
 		ftp://ftp.uni-trier.de/pub/unix/network/samba/ \
 		ftp://ring.asahi-net.or.jp/pub/net/samba/
 
+HOMEPAGE=	http://www.samba.org/
 
 MAINTAINER=	Peter.Galbavy@knowledge.com
 
@@ -17,10 +18,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=	Yes
-
 SEPARATE_BUILD=	concurrent
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/samba" \
 		--localstatedir="/var" \
 		--with-privatedir="/etc/samba" \
