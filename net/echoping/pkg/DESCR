@@ -1,0 +1,4 @@
+"echoping" is a small program to test (approximatively) performances of a 
+remote host by sending it TCP "echo" (or other protocol) packets.
+
+WWW: ${HOMEPAGE}
