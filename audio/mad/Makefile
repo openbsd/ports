@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/27 00:11:40 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/20 07:16:30 pvalchev Exp $
 
 COMMENT=	"high-quality mpeg audio decoder"
 
-VERSION=	0.14.1b
+VERSION=	0.14.2b
 DISTNAME=	mad-${VERSION}
 CATEGORIES=	audio devel
-NEED_VERSION=	1.484
+NEED_VERSION=	1.498
 
 HOMEPAGE=	http://mad.sourceforge.net/
 
@@ -22,13 +22,20 @@ MASTER_SITE_SUBDIR= mad
 
 MODULES=	gettext
 
-FLAVORS=	debug
+FLAVORS=	debug esd
 FLAVOR?=
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+= --enable-debugging
 .else
 CONFIGURE_ARGS+= --disable-debugging
+.endif
+
+.if ${FLAVOR:L:Mesd}
+CONFIGURE_ARGS+= --with-esd
+LIB_DEPENDS+=	esd.2::audio/esound
+.else
+CONFIGURE_ARGS+= --without-esd
 .endif
 
 USE_GMAKE=	Yes
@@ -39,7 +46,8 @@ CONFIGURE_ARGS+= --enable-sso \
 		 --enable-accuracy \
 		 --enable-nls
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-Llibmad/.libs -Llibid3tag/.libs -L${LOCALBASE}/lib"
+
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \

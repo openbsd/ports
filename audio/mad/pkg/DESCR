@@ -18,6 +18,6 @@ The software is distributed as a library (libmad) and
 command-line front-end (madplay).
 
 Additionally, packages can be built with "debug" flavor to enable
-debugging.
+debugging and "esd" flavor for EsounD support.
 
 WWW: ${HOMEPAGE}
