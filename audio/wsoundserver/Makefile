@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2002/04/19 12:43:56 wilfried Exp $
+# $OpenBSD: Makefile,v 1.19 2002/09/17 14:35:03 wilfried Exp $
 
 COMMENT=		'sound server for Window Maker'
 
 DISTNAME=		WSoundServer-0.4.0
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		audio
-NEED_VERSION=		1.513
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2002/04/19 12:46:32 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2002/09/17 14:35:03 wilfried Exp $
 
 COMMENT=		'dockapp-making standard library for Window Maker'
 
 DISTNAME=		libdockapp-0.4.0
 CATEGORIES=		devel
-NEED_VERSION=		1.482
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 

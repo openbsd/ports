@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2002/04/19 11:05:52 wilfried Exp $
+# $OpenBSD: Makefile,v 1.13 2002/09/17 14:35:03 wilfried Exp $
 
 COMMENT=		'wm-app; minesweeper'
 
 DISTNAME=		wmtimebomb.20
 PKGNAME=		wmtimebomb-0.2.0
 CATEGORIES=		games x11 x11/windowmaker
-NEED_VERSION=		1.515
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
