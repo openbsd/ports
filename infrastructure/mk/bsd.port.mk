@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.553 2003/07/14 14:02:18 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.554 2003/07/14 14:08:57 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -43,13 +43,6 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 # DEPENDS		- A list of other ports this package depends on being
 #				  made first.  
 #
-# Motif support:
-#
-# USE_MOTIF		- Set this to "any" for ports that work with lesstif or
-#				  openmotif (automatic flavoring), "openmotif" for ports
-#				  that require openmotif, "lesstif" for ports that require
-#				  lesstif. "any" will create an extra hidden lesstif
-#				  FLAVOR, beware in flavor tests.
 #
 # Variables to change if you want a special behavior:
 #
@@ -305,7 +298,6 @@ NO_REGRESS= Yes
 .endif
 
 USE_MOTIF?=No
-HAVE_MOTIF?=No
 
 .if ${USE_MOTIF:L} != "no"
 .  if ${USE_MOTIF:L} == "lesstif"
