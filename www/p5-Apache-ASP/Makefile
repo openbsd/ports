@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/30 04:46:32 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2002/11/22 12:21:48 naddy Exp $
 
 COMMENT=	"Apache ASP support"
 
-VERSION=	2.31
+VERSION=	2.49
 DISTNAME=	Apache-ASP-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5

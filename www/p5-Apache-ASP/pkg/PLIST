@@ -1,8 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:06 espie Exp $
-libdata/perl5/site_perl/Apache/ASP.pm
-libdata/perl5/site_perl/Bundle/Apache/ASP.pm
-libdata/perl5/site_perl/Bundle/Apache/ASP/Extra.pm
+@comment $OpenBSD: PLIST,v 1.3 2002/11/22 12:21:48 naddy Exp $
+bin/asp-perl
+${P5SITE}/Apache/ASP.pm
+${P5SITE}/Apache/ASP/Application.pm
+${P5SITE}/Apache/ASP/CGI.pm
+${P5SITE}/Apache/ASP/CGI/Test.pm
+${P5SITE}/Apache/ASP/Collection.pm
+${P5SITE}/Apache/ASP/CollectionItem.pm
+${P5SITE}/Apache/ASP/Date.pm
+${P5SITE}/Apache/ASP/Error.pm
+${P5SITE}/Apache/ASP/GlobalASA.pm
+${P5SITE}/Apache/ASP/Lang/PerlScript.pm
+${P5SITE}/Apache/ASP/Load.pm
+${P5SITE}/Apache/ASP/Request.pm
+${P5SITE}/Apache/ASP/Response.pm
+${P5SITE}/Apache/ASP/STDERR.pm
+${P5SITE}/Apache/ASP/Server.pm
+${P5SITE}/Apache/ASP/Session.pm
+${P5SITE}/Apache/ASP/Share/CORE.pm
+${P5SITE}/Apache/ASP/Share/CORE/MailErrors.inc
+${P5SITE}/Apache/ASP/Share/CORE/MailErrorsHTML.inc
+${P5SITE}/Apache/ASP/StatINC.pm
+${P5SITE}/Apache/ASP/State.pm
+${P5SITE}/Apache/ASP/StateManager.pm
+man/man1/asp-perl.1
 man/man3p/Apache::ASP.3p
-man/man3p/Bundle::Apache::ASP.3p
-man/man3p/Bundle::Apache::ASP::Extra.3p
-@dirrm libdata/perl5/site_perl/Bundle/Apache/ASP
+@dirrm ${P5SITE}/Apache/ASP/Share/CORE
+@dirrm ${P5SITE}/Apache/ASP/Share
+@dirrm ${P5SITE}/Apache/ASP/Lang
+@dirrm ${P5SITE}/Apache/ASP/CGI
+@dirrm ${P5SITE}/Apache/ASP
