@@ -1,33 +1,22 @@
-*** map.h.orig	Sun Jul 11 19:02:35 1999
---- map.h	Sun Jul 11 19:10:36 1999
-***************
-*** 38,51 ****
-  #define HIT_MASK       (CORE | U_MASK | R_MASK | D_MASK | L_MASK)
-  
-  class _map{
-!     const int sx_log2 = MAP_SIZEX_LOG2;
-!     const int sy_log2 = MAP_SIZEY_LOG2;
-!     const int sx = 1 << sx_log2;
-!     const int sy = 1 << sy_log2;
-      int sitex[SITE_MAX];
-      int sitey[SITE_MAX];
-      int site_max;
-!     char data[1 << (sx_log2 + sy_log2)];
-      int maze_pop();
-      void maze_push(int x, int y);
-      void maze_move_and_push(int x, int y, int d);
---- 38,51 ----
-  #define HIT_MASK       (CORE | U_MASK | R_MASK | D_MASK | L_MASK)
-  
-  class _map{
-!     int sx_log2;
-!     int sy_log2;
-!     int sx;
-!     int sy;
-      int sitex[SITE_MAX];
-      int sitey[SITE_MAX];
-      int site_max;
-!     char data[1 << (MAP_SIZEX_LOG2 + MAP_SIZEY_LOG2)];
-      int maze_pop();
-      void maze_push(int x, int y);
-      void maze_move_and_push(int x, int y, int d);
+--- map.h.orig	Wed Apr  3 16:58:52 1996
++++ map.h	Sat Oct  2 18:26:55 1999
+@@ -38,14 +38,14 @@
+ #define HIT_MASK       (CORE | U_MASK | R_MASK | D_MASK | L_MASK)
+ 
+ class _map{
+-    const int sx_log2 = MAP_SIZEX_LOG2;
+-    const int sy_log2 = MAP_SIZEY_LOG2;
+-    const int sx = 1 << sx_log2;
+-    const int sy = 1 << sy_log2;
++    int sx_log2;
++    int sy_log2;
++    int sx;
++    int sy;
+     int sitex[SITE_MAX];
+     int sitey[SITE_MAX];
+     int site_max;
+-    char data[1 << (sx_log2 + sy_log2)];
++    char data[1 << (MAP_SIZEX_LOG2 + MAP_SIZEY_LOG2)];
+     int maze_pop();
+     void maze_push(int x, int y);
+     void maze_move_and_push(int x, int y, int d);

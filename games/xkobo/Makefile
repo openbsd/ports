@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/30 23:29:35 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/10/02 22:37:21 brad Exp $
 
 DISTNAME=	xkobo-1.11
 CATEGORIES=	games
@@ -12,6 +12,6 @@ USE_IMAKE=	yes
 ALL_TARGET=	xkobo
 
 post-install: 
-	@${INSTALL_MAN} ${WRKSRC}/xkobo.man ${PREFIX}/man/man1/xkobo.1
+	${INSTALL_MAN} ${WRKSRC}/xkobo.man ${PREFIX}/man/man1/xkobo.1
 
 .include <bsd.port.mk>
