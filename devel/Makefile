@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.253 2004/11/11 03:47:09 djm Exp $
+# $OpenBSD: Makefile,v 1.254 2004/11/18 23:40:41 fgsch Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -14,7 +14,6 @@
      SUBDIR += atlas
      SUBDIR += autoconf
      SUBDIR += automake
-     SUBDIR += binutils
      SUBDIR += bison
      SUBDIR += boehm-gc
      SUBDIR += c2hs
