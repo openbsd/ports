@@ -1,0 +1,20 @@
+$OpenBSD: patch-kcontrol_kfontinst_kfontinst_GetPid_c,v 1.1 2005/03/30 19:25:23 espie Exp $
+--- kcontrol/kfontinst/kfontinst/GetPid.c.orig	Wed Mar 30 12:59:19 2005
++++ kcontrol/kfontinst/kfontinst/GetPid.c	Wed Mar 30 13:00:11 2005
+@@ -55,6 +55,7 @@
+         Linux         Tested on Linux 2.4
+         FreeBSD       Tested on FreeBSD 5.1 by Brian Ledbetter <brian@shadowcom.net>
+         NetBSD
++	OpenBSD
+         Irix
+         Solaris       Tested on Solaris 8 x86 by Torsten Kasch <tk@Genetik.Uni-Bielefeld.DE>
+         HP-UX         Tested on HP-UX B.11.11 U 9000/800
+@@ -160,7 +161,7 @@ unsigned int kfi_getPid(const char *proc
+     return error ? 0 : pid;
+ }
+ 
+-#elif defined OS_FreeBSD || defined OS_NetBSD || defined __FreeBSD__ || defined __NetBSD__ || defined OS_Darwin
++#elif defined OS_FreeBSD || defined OS_NetBSD || defined __FreeBSD__ || defined __NetBSD__ || defined OS_Darwin || defined OS_OpenBSD || defined __OpenBSD__
+ 
+ #include <ctype.h>
+ #include <dirent.h>

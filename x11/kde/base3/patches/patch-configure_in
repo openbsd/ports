@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_in,v 1.13 2005/03/30 19:25:23 espie Exp $
+--- configure.in.orig	Wed Mar 30 12:55:45 2005
++++ configure.in	Wed Mar 30 12:57:09 2005
+@@ -548,6 +548,7 @@ if test "$KFI_FOUND_FREETYPE" -eq 1; the
+             *-*-aix*) UNAME='AIX' ;;
+             *-*-hpux*) UNAME='HPUX' ;;
+             *-*-darwin*) UNAME='Darwin' ;;
++	    *-*-openbsd*) UNAME='OpenBSD';;
+             *) UNAME='Unknown' ;;
+             esac
+                 AC_MSG_RESULT($UNAME)
