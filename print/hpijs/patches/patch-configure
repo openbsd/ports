@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/05/29 11:12:16 sturm Exp $
+--- configure.orig	Wed Feb  5 00:10:32 2003
++++ configure	Thu May 29 12:57:37 2003
+@@ -3360,7 +3360,7 @@ done
+ 
+ 
+ 
+-for ac_header in fcntl.h malloc.h syslog.h unistd.h
++for ac_header in fcntl.h syslog.h unistd.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
+@@ -4101,7 +4101,6 @@ EOF
+ echo "${ECHO_T}\"using Default platform.h\"" >&6
+       cat >platform.h <<EOF
+ #include <stdlib.h>
+-#include <malloc.h>
+ #include <memory.h>
+ #include <string.h>
+ #include <stdio.h>
