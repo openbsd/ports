@@ -1,8 +1,0 @@
-@comment $OpenBSD: PFRAG.odbc,v 1.5 2001/08/07 13:25:50 brad Exp $
-include/postgresql/iodbc/iodbc.h
-include/postgresql/iodbc/isql.h
-include/postgresql/iodbc/isqlext.h
-lib/libpsqlodbc.a
-%%SHARED-odbc%%
-share/postgresql/odbc.sql
-@dirrm include/postgresql/iodbc

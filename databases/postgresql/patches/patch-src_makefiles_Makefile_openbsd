@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_makefiles_Makefile_openbsd,v 1.1 2001/04/23 21:58:44 espie Exp $
---- src/makefiles/Makefile.openbsd.orig	Sun Apr 22 13:14:44 2001
-+++ src/makefiles/Makefile.openbsd	Sun Apr 22 13:40:24 2001
+$OpenBSD: patch-src_makefiles_Makefile_openbsd,v 1.2 2002/12/17 16:38:54 naddy Exp $
+--- src/makefiles/Makefile.openbsd.orig	Wed Aug 29 19:14:40 2001
++++ src/makefiles/Makefile.openbsd	Fri Feb  1 11:24:08 2002
 @@ -1,8 +1,9 @@
  AROPT = cr
-
+ 
 +rpath = -Wl,-rpath,$(libdir)
 +
  ifdef ELF_SYSTEM
@@ -11,21 +11,4 @@ $OpenBSD: patch-src_makefiles_Makefile_openbsd,v 1.1 2001/04/23 21:58:44 espie E
 -rpath = -R$(libdir)
  shlib_symbolic = -Wl,-Bsymbolic
  endif
-
-@@ -10,15 +11,4 @@ DLSUFFIX = .so
- CFLAGS_SL = -fpic -DPIC
-
- %.so: %.o
--ifdef ELF_SYSTEM
--	$(LD) -x -Bshareable -o $@ $<
--else
--	$(LD) $(LDREL) $(LDOUT) $<.obj -x $<
--	@echo building shared object $@
--	@rm -f $@.pic
--	@${AR} cq $@.pic `lorder $<.obj | tsort`
--	${RANLIB} $@.pic
--	@rm -f $@
--	$(LD) -x -Bshareable -Bforcearchive \
--	  -o $@ $@.pic
--endif
-+	$(CC) -shared $(CFLAGS_SL) -o $@ $<
+ 

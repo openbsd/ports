@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.odbc.shared,v 1.4 2001/07/25 08:16:47 peter Exp $
-lib/libpsqlodbc.so.0.26
-DYNLIBDIR(%B)

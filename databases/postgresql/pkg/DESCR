@@ -1,7 +1,7 @@
 PostgreSQL is Object-Relational Database Management System.  It
 supports almost all SQL constructs, including transactions, subselects,
-and user-defined types and functions. Write-ahead logging (new with
-7.1) means increased performance while retaining data integrity.
+and user-defined types and functions. Write-ahead logging means
+increased performance while retaining data integrity.
 
 The OpenBSD PostgreSQL port build produces several packages:
 
@@ -18,28 +18,5 @@ The OpenBSD PostgreSQL port build produces several packages:
   HTML format: Administrator's Guide, Programmer's Manual, PostgreSQL
   Tutorial and User's Guide and Integrated Documentation package
   contains all the above documentation.
-
-
-Packages can be built with additional FLAVORs:
-
-* tcl
-  PostgreSQL built with TCL/TK interfaces.  Provides TCL/TK language
-  interfaces to Postgres backends; includes pgaccess - Postgres
-  graphical interactive client.  This FLAVOR requires lang/tcl/8.3
-  and x11/tk/8.3 packages.
-       
-* odbc
-  PostgreSQL built with ODBC (Open Data Base Connectivity) driver
-  package You need to install some driver manager to use it. You
-  can use iODBC (intrinsic Open Database Connectivity) driver manager
-  can be found in databases/iodbc directory in your OpenBSD ports
-  tree.
-
-* no_locale
-  Remove LOCALE support. It is included by default.
-
-* no_ssl
-  Remove SSL/TLS support. It is included by default.
-
 
 WWW: ${HOMEPAGE}

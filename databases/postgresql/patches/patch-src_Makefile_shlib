@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Makefile_shlib,v 1.1 2001/04/23 21:58:44 espie Exp $
---- src/Makefile.shlib.orig	Sun Apr  1 15:17:30 2001
-+++ src/Makefile.shlib	Sun Apr 22 14:50:24 2001
-@@ -118,12 +118,7 @@ endif
-
+$OpenBSD: patch-src_Makefile_shlib,v 1.2 2002/12/17 16:38:54 naddy Exp $
+--- src/Makefile.shlib.orig	Thu Sep  5 18:28:46 2002
++++ src/Makefile.shlib	Sun Oct  6 16:39:21 2002
+@@ -87,12 +87,7 @@ endif
+ 
  ifeq ($(PORTNAME), openbsd)
    shlib			:= lib$(NAME)$(DLSUFFIX).$(SO_MAJOR_VERSION).$(SO_MINOR_VERSION)
 -  ifdef ELF_SYSTEM
@@ -13,5 +13,5 @@ $OpenBSD: patch-src_Makefile_shlib,v 1.1 2001/04/23 21:58:44 espie Exp $
 -  endif
 +  LINK.shared		= $(COMPILER) -shared
  endif
-
+ 
  ifeq ($(PORTNAME), bsdi)
