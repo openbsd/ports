@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1999/11/03 01:01:26 turan Exp $
-
-BROKEN=		can not consistantly build this port based on which emacs is installed.  Mark broken until consistancy can be 100%.
+# $OpenBSD: Makefile,v 1.13 1999/11/03 16:24:56 espie Exp $
 
 DISTNAME=	id-utils-3.2d
 CATEGORIES=	devel
@@ -47,11 +45,11 @@ pre-install:
 	${INSTALL_DATA} ${WRKBUILD}/elisp/id-utils.elc ${PREFIX}/share/emacs/site-lisp
 .endif
 .if !defined(WITHOUT_XEMACS)
-	@echo "lib/emacs/site-lisp/id-utils.el" >>${PLIST}
-	@echo "lib/emacs/site-lisp/id-utils.elc" >>${PLIST}
+	@echo "lib/xemacs/site-lisp/id-utils.el" >>${PLIST}
+	@echo "lib/xemacs/site-lisp/id-utils.elc" >>${PLIST}
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/emacs/site-lisp
-	${INSTALL_DATA} ${WRKBUILD}/elisp/id-utils.el ${PREFIX}/lib/emacs/site-lisp
-	${INSTALL_DATA} ${WRKBUILD}/elisp/id-utils.elc ${PREFIX}/lib/emacs/site-lisp
+	${INSTALL_DATA} ${WRKBUILD}/elisp/id-utils.el ${PREFIX}/lib/xemacs/site-lisp
+	${INSTALL_DATA} ${WRKBUILD}/elisp/id-utils.elc ${PREFIX}/lib/xemacs/site-lisp
 .endif
 	
 
