@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2002/09/12 00:12:48 jcs Exp $
+# $OpenBSD: Makefile,v 1.10 2003/02/08 13:18:48 espie Exp $
 
 DISTNAME=	freetds-0.60
 CATEGORIES=	databases
+BROKEN=		"/usr/local/include/common.h ? you gotta be kidding"
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
