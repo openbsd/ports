@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.1 1999/09/23 11:32:45 ho Exp $
+# $OpenBSD: INSTALL,v 1.2 1999/10/29 12:54:23 ho Exp $
 #
 # Pre/post-installation setup of named
 
@@ -8,12 +8,13 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/}
 NROOT=/var/named
-SAMPLEDIR=${NROOT}/inst-sample
 
-if [ $# -ne 2 ]; then
-    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
-    exit 1
-fi
+SAMPLEDIR=${3:-/usr/local/share/examples/bind8}
+
+print_usage()
+{
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL}" >&2
+}
 
 pre_fix_dir()
 {
@@ -31,21 +32,10 @@ pre_fix_dir()
     fi
 }
 
-post_copy_move()
-{
-    if [ -f ${SAMPLEDIR}/$1 ]; then
-        if [ -f ${NROOT}/${2} ]; then
-            echo "Keeping old ${NROOT}/${2} as ${NROOT}/${2}.pre-bind8" >&2
-            rm -f ${NROOT}/${2}.pre-bind8
-            mv -f ${NROOT}/${2} ${NROOT}/${2}.pre-bind8
-        fi
-    
-        echo "Installing sample ${NROOT}/${2}" >&2
-        cp ${SAMPLEDIR}/${1} ${NROOT}/${2}
-        chown ${3} ${NROOT}/${2}
-        chmod ${4} ${NROOT}/${2}
-    fi
-}
+if [ $# -ne 2 -a $# -ne 3 ]; then
+	print_usage
+	exit 1
+fi
 
 # Verify/process the command
 #
@@ -63,23 +53,6 @@ case $2 in
 	pre_fix_dir ${SAMPLEDIR}
 	;;
     POST-INSTALL)
-	if [ ! -d ${SAMPLEDIR} ]; then
-	    # Oops.
-	    echo "No sample configuration files found to install !" >&2
-	    exit 0
-	fi
-
-	echo "" >&2
-	echo "Installing BIND 8 sample configuration files" >&2
-	echo "" >&2
-
-	post_copy_move named.conf      named.conf      root:named 0640
-	post_copy_move named.root      named.root      root:wheel 0644
-	post_copy_move named.loopback  named.loopback  root:wheel 0644
-	post_copy_move named.localhost named.localhost root:wheel 0644
-
-	rm -rf ${SAMPLEDIR}
-
 	echo "" >&2
 	echo "Check your /etc/rc.conf file for the 'named' options." >&2
 	echo "Recommended (and also OpenBSD default) values are:" >&2
@@ -87,11 +60,23 @@ case $2 in
 	echo "  named_user=named" >&2
 	echo "  named_chroot=${NROOT}" >&2
 	echo "" >&2
-	echo "Check/modify ${NROOT}/named.conf to suit your site." >&2
+
+	if [ ! -d ${SAMPLEDIR} ]; then
+	    # Oops. 
+	    exit 0
+	fi
+	echo "Sample configuration files have been installed to directory" >&2
+	echo "  ${SAMPLEDIR}" >&2
+	echo "" >&2
+	echo "Proper modes for the sample files are [{owner,group,mode}]" >&2
+	echo "  {root,named,640} for named.conf" >&2
+	echo "  {root,wheel,644} for the rest" >&2
+	echo "" >&2
+	echo "Check/modify named.conf to suit your site." >&2
 	echo "" >&2
 	;;
     *)
-	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	print_usage
 	exit 1
 	;;
 esac
