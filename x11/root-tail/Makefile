@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2002/08/20 07:24:49 mark Exp $
+# $OpenBSD: Makefile,v 1.8 2002/09/19 23:27:43 naddy Exp $
 
 COMMENT=	"tails a given file anywhere on your X11 root window"
 
-VERSION=	0.0.10
-DISTNAME=	root-tail-${VERSION}
+DISTNAME=	root-tail-0.2
 CATEGORIES=	x11
 
 HOMESITE=	http://www.goof.com/pcg/marc
