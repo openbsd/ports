@@ -1,0 +1,12 @@
+$OpenBSD: patch-backends_bdb_h,v 1.1.1.1 2001/09/13 20:52:08 todd Exp $
+--- backends/bdb.h.orig	Mon Aug 27 14:59:17 2001
++++ backends/bdb.h	Mon Aug 27 14:59:27 2001
+@@ -116,7 +116,7 @@
+ 
+ #ifndef BDB_H
+ 
+-#include <db.h>
++#include <db3.h>
+ #include <glib.h>
+ #include <gconf/gconf.h>
+ 
