@@ -3,9 +3,9 @@
 # Date created:		17 Dec 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.10 2000/05/17 16:32:08 dugsong Exp $
+# $OpenBSD: Makefile,v 1.11 2000/05/23 15:15:54 dugsong Exp $
 
-DISTNAME=	dsniff-2.0
+DISTNAME=	dsniff-2.1
 
 CATEGORIES=	security
 
