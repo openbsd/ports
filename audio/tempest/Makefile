@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2002/03/18 15:37:37 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/22 20:23:55 pvalchev Exp $
 
 COMMENT=	"sends AM radio signals using a monitor"
 
 VERSION=	1.0.5
 DISTNAME=	tempest_for_eliza-${VERSION}
-PKGNAME=	tempest-${VERSION}
+PKGNAME=	tempest-${VERSION}p1
 CATEGORIES=	audio
-NEED_VERSION=	1.505
 
 HOMEPAGE=	http://www.erikyyy.de/tempest/
 
@@ -38,7 +37,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mksong.sh ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tempest
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/tempest
-	${INSTALL_DATA_DIR} ${PREFIX}/share/tempest
-	cd ${WRKSRC}/songs && ${INSTALL_DATA} ${SONGS} ${PREFIX}/share/tempest
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tempest
+	cd ${WRKSRC}/songs && ${INSTALL_DATA} ${SONGS} ${PREFIX}/share/examples/tempest
 
 .include <bsd.port.mk>
