@@ -1,19 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2001/10/31 08:08:55 kevlo Exp $
-share/examples/swig/C++/Java/Makefile
-share/examples/swig/C++/Python/Makefile
-share/examples/swig/C++/class/cpptest.H
-share/examples/swig/C++/common.mk
-share/examples/swig/C++/interface/cpptest.i
-share/examples/swig/C++/test_conf.py
-share/examples/swig/C++/test_conf.py.in
-share/examples/swig/C++/test_repo/constructor.py
-share/examples/swig/C++/test_repo/constructor_user_type.py
-share/examples/swig/C++/test_repo/inheritence_map_to_base_class.py
-share/examples/swig/C++/test_repo/object_method.py
-share/examples/swig/C++/test_repo/object_method_user_type.py
-share/examples/swig/C++/test_repo/primitive_method.py
-share/examples/swig/C++/test_repo/primitive_method_user_type.py
-share/examples/swig/C++/typemaps/MyString_typemap.i
+@comment $OpenBSD: PLIST-examples,v 1.3 2002/03/25 03:26:04 kevlo Exp $
 share/examples/swig/GIFPlot/Guile/full/Makefile
 share/examples/swig/GIFPlot/Guile/full/README
 share/examples/swig/GIFPlot/Guile/full/cmap
@@ -25,18 +10,18 @@ share/examples/swig/GIFPlot/Guile/simple/runme.scm
 share/examples/swig/GIFPlot/Guile/simple/simple.i
 share/examples/swig/GIFPlot/Include/gifplot.h
 share/examples/swig/GIFPlot/Interface/gifplot.i
-share/examples/swig/GIFPlot/Java/full/Makefile 
+share/examples/swig/GIFPlot/Java/full/Makefile
 share/examples/swig/GIFPlot/Java/full/README
 share/examples/swig/GIFPlot/Java/full/cmap
 share/examples/swig/GIFPlot/Java/full/gifplot.i
-share/examples/swig/GIFPlot/Java/full/runme.java
+share/examples/swig/GIFPlot/Java/full/main.java
 share/examples/swig/GIFPlot/Java/shadow/Makefile
 share/examples/swig/GIFPlot/Java/shadow/README
 share/examples/swig/GIFPlot/Java/shadow/cmap
-share/examples/swig/GIFPlot/Java/shadow/runme.java
+share/examples/swig/GIFPlot/Java/shadow/main.java
 share/examples/swig/GIFPlot/Java/simple/Makefile
 share/examples/swig/GIFPlot/Java/simple/README
-share/examples/swig/GIFPlot/Java/simple/runme.java
+share/examples/swig/GIFPlot/Java/simple/main.java
 share/examples/swig/GIFPlot/Java/simple/simple.i
 share/examples/swig/GIFPlot/LICENSE
 share/examples/swig/GIFPlot/Lib/Makefile
@@ -65,6 +50,19 @@ share/examples/swig/GIFPlot/Perl/simple/Makefile
 share/examples/swig/GIFPlot/Perl/simple/README
 share/examples/swig/GIFPlot/Perl/simple/runme.pl
 share/examples/swig/GIFPlot/Perl/simple/simple.i
+share/examples/swig/GIFPlot/Php/full/Makefile
+share/examples/swig/GIFPlot/Php/full/README
+share/examples/swig/GIFPlot/Php/full/cmap
+share/examples/swig/GIFPlot/Php/full/gifplot.i
+share/examples/swig/GIFPlot/Php/full/runme.php3
+share/examples/swig/GIFPlot/Php/shadow/Makefile
+share/examples/swig/GIFPlot/Php/shadow/README
+share/examples/swig/GIFPlot/Php/shadow/cmap
+share/examples/swig/GIFPlot/Php/shadow/runme.php3
+share/examples/swig/GIFPlot/Php/simple/Makefile
+share/examples/swig/GIFPlot/Php/simple/README
+share/examples/swig/GIFPlot/Php/simple/runme.php3
+share/examples/swig/GIFPlot/Php/simple/simple.i
 share/examples/swig/GIFPlot/Python/full/Makefile
 share/examples/swig/GIFPlot/Python/full/README
 share/examples/swig/GIFPlot/Python/full/cmap
@@ -131,6 +129,14 @@ share/examples/swig/guile/matrix/package.i
 share/examples/swig/guile/matrix/vector.c
 share/examples/swig/guile/matrix/vector.h
 share/examples/swig/guile/matrix/vector.i
+share/examples/swig/guile/multimap/Makefile
+share/examples/swig/guile/multimap/example.c
+share/examples/swig/guile/multimap/example.i
+share/examples/swig/guile/multimap/runme.scm
+share/examples/swig/guile/multivalue/Makefile
+share/examples/swig/guile/multivalue/example.c
+share/examples/swig/guile/multivalue/example.i
+share/examples/swig/guile/multivalue/runme.scm
 share/examples/swig/guile/port/Makefile
 share/examples/swig/guile/port/README
 share/examples/swig/guile/port/port.c
@@ -160,10 +166,19 @@ share/examples/swig/java/enum/example.i
 share/examples/swig/java/enum/index.html
 share/examples/swig/java/enum/main.java
 share/examples/swig/java/index.html
+share/examples/swig/java/multimap/Makefile
+share/examples/swig/java/multimap/example.c
+share/examples/swig/java/multimap/example.i
+share/examples/swig/java/multimap/main.java
 share/examples/swig/java/native/Makefile
 share/examples/swig/java/native/example.i
 share/examples/swig/java/native/index.html
 share/examples/swig/java/native/main.java
+share/examples/swig/java/pointer/Makefile
+share/examples/swig/java/pointer/example.c
+share/examples/swig/java/pointer/example.i
+share/examples/swig/java/pointer/index.html
+share/examples/swig/java/pointer/main.java
 share/examples/swig/java/reference/Makefile
 share/examples/swig/java/reference/example.cxx
 share/examples/swig/java/reference/example.h
@@ -185,6 +200,16 @@ share/examples/swig/java/typemap/Makefile
 share/examples/swig/java/typemap/example.i
 share/examples/swig/java/typemap/index.html
 share/examples/swig/java/typemap/main.java
+share/examples/swig/java/variables/Makefile
+share/examples/swig/java/variables/example.c
+share/examples/swig/java/variables/example.h
+share/examples/swig/java/variables/example.i
+share/examples/swig/java/variables/index.html
+share/examples/swig/java/variables/main.java
+share/examples/swig/mzscheme/multimap/Makefile
+share/examples/swig/mzscheme/multimap/example.c
+share/examples/swig/mzscheme/multimap/example.i
+share/examples/swig/mzscheme/multimap/example.scm
 share/examples/swig/mzscheme/simple/Makefile
 share/examples/swig/mzscheme/simple/README
 share/examples/swig/mzscheme/simple/example.c
@@ -201,6 +226,9 @@ share/examples/swig/perl5/constants/Makefile
 share/examples/swig/perl5/constants/example.i
 share/examples/swig/perl5/constants/example.pl
 share/examples/swig/perl5/constants/index.html
+share/examples/swig/perl5/constants2/Makefile
+share/examples/swig/perl5/constants2/example.i
+share/examples/swig/perl5/constants2/example.pl
 share/examples/swig/perl5/funcptr/Makefile
 share/examples/swig/perl5/funcptr/example.c
 share/examples/swig/perl5/funcptr/example.h
@@ -219,6 +247,11 @@ share/examples/swig/perl5/import/runme.pl
 share/examples/swig/perl5/import/spam.h
 share/examples/swig/perl5/import/spam.i
 share/examples/swig/perl5/index.html
+share/examples/swig/perl5/multimap/Makefile
+share/examples/swig/perl5/multimap/example.c
+share/examples/swig/perl5/multimap/example.dsp
+share/examples/swig/perl5/multimap/example.i
+share/examples/swig/perl5/multimap/example.pl
 share/examples/swig/perl5/pointer/Makefile
 share/examples/swig/perl5/pointer/example.c
 share/examples/swig/perl5/pointer/example.i
@@ -254,6 +287,59 @@ share/examples/swig/perl5/variables/example.h
 share/examples/swig/perl5/variables/example.i
 share/examples/swig/perl5/variables/example.pl
 share/examples/swig/perl5/variables/index.html
+share/examples/swig/php4/class/Makefile
+share/examples/swig/php4/class/example.cxx
+share/examples/swig/php4/class/example.h
+share/examples/swig/php4/class/example.i
+share/examples/swig/php4/class/example.php
+share/examples/swig/php4/class/runme.php3
+share/examples/swig/php4/constants/Makefile
+share/examples/swig/php4/constants/example.i
+share/examples/swig/php4/constants/runme.php3
+share/examples/swig/php4/enum/Makefile
+share/examples/swig/php4/enum/example.cxx
+share/examples/swig/php4/enum/example.h
+share/examples/swig/php4/enum/example.i
+share/examples/swig/php4/enum/runme.php3
+share/examples/swig/php4/funcptr/Makefile
+share/examples/swig/php4/funcptr/example.c
+share/examples/swig/php4/funcptr/example.h
+share/examples/swig/php4/funcptr/example.i
+share/examples/swig/php4/funcptr/runme.php3
+share/examples/swig/php4/pointer/Makefile
+share/examples/swig/php4/pointer/example.c
+share/examples/swig/php4/pointer/example.i
+share/examples/swig/php4/pointer/runme.php3
+share/examples/swig/php4/reference/Makefile
+share/examples/swig/php4/reference/example.cxx
+share/examples/swig/php4/reference/example.h
+share/examples/swig/php4/reference/example.i
+share/examples/swig/php4/reference/runme.php3
+share/examples/swig/php4/shadow/Makefile
+share/examples/swig/php4/shadow/example.cxx
+share/examples/swig/php4/shadow/example.h
+share/examples/swig/php4/shadow/example.i
+share/examples/swig/php4/shadow/runme.php3
+share/examples/swig/php4/simple/Makefile
+share/examples/swig/php4/simple/example.c
+share/examples/swig/php4/simple/example.i
+share/examples/swig/php4/simple/runme.php3
+share/examples/swig/php4/sync/Makefile
+share/examples/swig/php4/sync/README
+share/examples/swig/php4/sync/example.cxx
+share/examples/swig/php4/sync/example.h
+share/examples/swig/php4/sync/example.i
+share/examples/swig/php4/sync/runme.php3
+share/examples/swig/php4/value/Makefile
+share/examples/swig/php4/value/example.c
+share/examples/swig/php4/value/example.h
+share/examples/swig/php4/value/example.i
+share/examples/swig/php4/value/runme.php3
+share/examples/swig/php4/variables/Makefile
+share/examples/swig/php4/variables/example.c
+share/examples/swig/php4/variables/example.h
+share/examples/swig/php4/variables/example.i
+share/examples/swig/php4/variables/runme.php3
 share/examples/swig/python/class/Makefile
 share/examples/swig/python/class/example.cxx
 share/examples/swig/python/class/example.dsp
@@ -271,6 +357,10 @@ share/examples/swig/python/enum/example.h
 share/examples/swig/python/enum/example.i
 share/examples/swig/python/enum/example.py
 share/examples/swig/python/enum/index.html
+share/examples/swig/python/exceptshadow/Makefile
+share/examples/swig/python/exceptshadow/example.h
+share/examples/swig/python/exceptshadow/example.i
+share/examples/swig/python/exceptshadow/runme.py
 share/examples/swig/python/funcattr/Makefile
 share/examples/swig/python/funcattr/example.i
 share/examples/swig/python/funcattr/index.html
@@ -281,6 +371,14 @@ share/examples/swig/python/funcptr/example.h
 share/examples/swig/python/funcptr/example.i
 share/examples/swig/python/funcptr/example.py
 share/examples/swig/python/funcptr/index.html
+share/examples/swig/python/funcptr2/Makefile
+share/examples/swig/python/funcptr2/example.c
+share/examples/swig/python/funcptr2/example.h
+share/examples/swig/python/funcptr2/example.i
+share/examples/swig/python/funcptr2/example.py
+share/examples/swig/python/functor/Makefile
+share/examples/swig/python/functor/example.i
+share/examples/swig/python/functor/runme.py
 share/examples/swig/python/import/Makefile
 share/examples/swig/python/import/README
 share/examples/swig/python/import/bar.h
@@ -292,12 +390,36 @@ share/examples/swig/python/import/foo.i
 share/examples/swig/python/import/runme.py
 share/examples/swig/python/import/spam.h
 share/examples/swig/python/import/spam.i
+share/examples/swig/python/import_template/Makefile
+share/examples/swig/python/import_template/README
+share/examples/swig/python/import_template/bar.h
+share/examples/swig/python/import_template/bar.i
+share/examples/swig/python/import_template/base.h
+share/examples/swig/python/import_template/base.i
+share/examples/swig/python/import_template/foo.h
+share/examples/swig/python/import_template/foo.i
+share/examples/swig/python/import_template/runme.py
+share/examples/swig/python/import_template/spam.h
+share/examples/swig/python/import_template/spam.i
 share/examples/swig/python/index.html
 share/examples/swig/python/mpointer/Makefile
 share/examples/swig/python/mpointer/example.cxx
 share/examples/swig/python/mpointer/example.h
 share/examples/swig/python/mpointer/example.i
 share/examples/swig/python/mpointer/runme.py
+share/examples/swig/python/multimap/Makefile
+share/examples/swig/python/multimap/example.c
+share/examples/swig/python/multimap/example.dsp
+share/examples/swig/python/multimap/example.i
+share/examples/swig/python/multimap/example.py
+share/examples/swig/python/operator/Makefile
+share/examples/swig/python/operator/example.h
+share/examples/swig/python/operator/example.i
+share/examples/swig/python/operator/runme.py
+share/examples/swig/python/overload_feature/Makefile
+share/examples/swig/python/overload_feature/example.h
+share/examples/swig/python/overload_feature/example.i
+share/examples/swig/python/overload_feature/runme.py
 share/examples/swig/python/pointer/Makefile
 share/examples/swig/python/pointer/example.c
 share/examples/swig/python/pointer/example.i
@@ -338,6 +460,7 @@ share/examples/swig/python/variables/example.py
 share/examples/swig/python/variables/index.html
 share/examples/swig/ruby/class/Makefile
 share/examples/swig/ruby/class/example.cxx
+share/examples/swig/ruby/class/example.dsp
 share/examples/swig/ruby/class/example.h
 share/examples/swig/ruby/class/example.i
 share/examples/swig/ruby/class/index.html
@@ -359,6 +482,11 @@ share/examples/swig/ruby/funcptr/example.i
 share/examples/swig/ruby/funcptr/index.html
 share/examples/swig/ruby/funcptr/runme.rb
 share/examples/swig/ruby/index.html
+share/examples/swig/ruby/multimap/Makefile
+share/examples/swig/ruby/multimap/example.c
+share/examples/swig/ruby/multimap/example.dsp
+share/examples/swig/ruby/multimap/example.i
+share/examples/swig/ruby/multimap/run.rb
 share/examples/swig/ruby/pointer/Makefile
 share/examples/swig/ruby/pointer/example.c
 share/examples/swig/ruby/pointer/example.i
@@ -424,6 +552,15 @@ share/examples/swig/tcl/import/runme.tcl
 share/examples/swig/tcl/import/spam.h
 share/examples/swig/tcl/import/spam.i
 share/examples/swig/tcl/index.html
+share/examples/swig/tcl/multimap/Makefile
+share/examples/swig/tcl/multimap/example.c
+share/examples/swig/tcl/multimap/example.dsp
+share/examples/swig/tcl/multimap/example.i
+share/examples/swig/tcl/multimap/example.tcl
+share/examples/swig/tcl/operator/Makefile
+share/examples/swig/tcl/operator/example.h
+share/examples/swig/tcl/operator/example.i
+share/examples/swig/tcl/operator/runme.tcl
 share/examples/swig/tcl/pointer/Makefile
 share/examples/swig/tcl/pointer/example.c
 share/examples/swig/tcl/pointer/example.i
@@ -454,19 +591,25 @@ share/examples/swig/tcl/variables/example.i
 share/examples/swig/tcl/variables/example.tcl
 share/examples/swig/tcl/variables/index.html
 share/examples/swig/test-suite/README
+share/examples/swig/test-suite/add_link.i
 share/examples/swig/test-suite/anonymous_arg.i
+share/examples/swig/test-suite/arrayptr.i
 share/examples/swig/test-suite/arrays.i
+share/examples/swig/test-suite/arrays_global.i
 share/examples/swig/test-suite/casts.i
 share/examples/swig/test-suite/char_constant.i
 share/examples/swig/test-suite/common.mk
 share/examples/swig/test-suite/const_const.i
 share/examples/swig/test-suite/const_const_2.i
 share/examples/swig/test-suite/constant_pointers.i
+share/examples/swig/test-suite/constover.i
 share/examples/swig/test-suite/cplusplus_throw.i
 share/examples/swig/test-suite/cpp_enum.i
 share/examples/swig/test-suite/cpp_enum_scope.i
+share/examples/swig/test-suite/cpp_nodefault.i
 share/examples/swig/test-suite/cpp_static.i
 share/examples/swig/test-suite/default_constructor.i
+share/examples/swig/test-suite/defineop.i
 share/examples/swig/test-suite/defines.i
 share/examples/swig/test-suite/enum.i
 share/examples/swig/test-suite/explicit.i
@@ -475,6 +618,8 @@ share/examples/swig/test-suite/guile/README
 share/examples/swig/test-suite/guile/casts_runme.scm
 share/examples/swig/test-suite/guile/char_constant_runme.scm
 share/examples/swig/test-suite/guile/imports_runme.scm
+share/examples/swig/test-suite/guile/list_vector_runme.scm
+share/examples/swig/test-suite/guile/multivalue_runme.scm
 share/examples/swig/test-suite/guile/name_runme.scm
 share/examples/swig/test-suite/guile/unions_runme.scm
 share/examples/swig/test-suite/imports.list
@@ -486,10 +631,14 @@ share/examples/swig/test-suite/java/Makefile
 share/examples/swig/test-suite/java/README
 share/examples/swig/test-suite/java/arrays_runme.java
 share/examples/swig/test-suite/java/imports_runme.java
+share/examples/swig/test-suite/java/long_long_runme.java
 share/examples/swig/test-suite/java/unions_runme.java
+share/examples/swig/test-suite/kind.i
 share/examples/swig/test-suite/list_vector.i
 share/examples/swig/test-suite/long_long.i
 share/examples/swig/test-suite/macro_2.i
+share/examples/swig/test-suite/minherit.i
+share/examples/swig/test-suite/multivalue.i
 share/examples/swig/test-suite/mzscheme/Makefile
 share/examples/swig/test-suite/mzscheme/README
 share/examples/swig/test-suite/mzscheme/casts_runme.scm
@@ -504,34 +653,50 @@ share/examples/swig/test-suite/perl5/Makefile
 share/examples/swig/test-suite/perl5/README
 share/examples/swig/test-suite/perl5/imports_runme.pl
 share/examples/swig/test-suite/perl5/unions_runme.pl
+share/examples/swig/test-suite/php4/Makefile
 share/examples/swig/test-suite/pointer_cxx.i
 share/examples/swig/test-suite/pointer_in_out.i
 share/examples/swig/test-suite/pointer_reference.i
 share/examples/swig/test-suite/preproc_1.i
+share/examples/swig/test-suite/preproc_2.i
 share/examples/swig/test-suite/pure_virtual.i
 share/examples/swig/test-suite/python/Makefile
 share/examples/swig/test-suite/python/README
+share/examples/swig/test-suite/python/constover_runme.py
 share/examples/swig/test-suite/python/default_constructor_runme.py
 share/examples/swig/test-suite/python/enum_runme.py
 share/examples/swig/test-suite/python/imports_runme.py
+share/examples/swig/test-suite/python/minherit_runme.py
+share/examples/swig/test-suite/python/sneaky1_runme.py
+share/examples/swig/test-suite/python/template_inherit_runme.py
+share/examples/swig/test-suite/python/typename_runme.py
 share/examples/swig/test-suite/python/unions_runme.py
+share/examples/swig/test-suite/python/voidtest_runme.py
+share/examples/swig/test-suite/ret_by_value.i
+share/examples/swig/test-suite/rname.i
 share/examples/swig/test-suite/ruby/Makefile
 share/examples/swig/test-suite/ruby/README
 share/examples/swig/test-suite/ruby/unions_runme.rb
 share/examples/swig/test-suite/sizeof_pointer.i
+share/examples/swig/test-suite/sneaky1.i
 share/examples/swig/test-suite/static_array_member.i
 share/examples/swig/test-suite/static_const_member.i
 share/examples/swig/test-suite/tcl/Makefile
 share/examples/swig/test-suite/tcl/README
 share/examples/swig/test-suite/tcl/imports_runme.tcl
 share/examples/swig/test-suite/tcl/unions_runme.tcl
+share/examples/swig/test-suite/template.i
+share/examples/swig/test-suite/template_inherit.i
 share/examples/swig/test-suite/template_whitespace.i
 share/examples/swig/test-suite/typemap_subst.i
+share/examples/swig/test-suite/typename.i
 share/examples/swig/test-suite/unions.i
 share/examples/swig/test-suite/virtual_destructor.i
+share/examples/swig/test-suite/voidtest.i
 @dirrm share/examples/swig/test-suite/tcl
 @dirrm share/examples/swig/test-suite/ruby
 @dirrm share/examples/swig/test-suite/python
+@dirrm share/examples/swig/test-suite/php4
 @dirrm share/examples/swig/test-suite/perl5
 @dirrm share/examples/swig/test-suite/mzscheme
 @dirrm share/examples/swig/test-suite/java
@@ -542,6 +707,8 @@ share/examples/swig/test-suite/virtual_destructor.i
 @dirrm share/examples/swig/tcl/simple
 @dirrm share/examples/swig/tcl/reference
 @dirrm share/examples/swig/tcl/pointer
+@dirrm share/examples/swig/tcl/operator
+@dirrm share/examples/swig/tcl/multimap
 @dirrm share/examples/swig/tcl/import
 @dirrm share/examples/swig/tcl/funcptr
 @dirrm share/examples/swig/tcl/enum
@@ -553,6 +720,7 @@ share/examples/swig/test-suite/virtual_destructor.i
 @dirrm share/examples/swig/ruby/simple
 @dirrm share/examples/swig/ruby/reference
 @dirrm share/examples/swig/ruby/pointer
+@dirrm share/examples/swig/ruby/multimap
 @dirrm share/examples/swig/ruby/funcptr
 @dirrm share/examples/swig/ruby/enum
 @dirrm share/examples/swig/ruby/constants
@@ -565,38 +733,65 @@ share/examples/swig/test-suite/virtual_destructor.i
 @dirrm share/examples/swig/python/shadow
 @dirrm share/examples/swig/python/reference
 @dirrm share/examples/swig/python/pointer
+@dirrm share/examples/swig/python/overload_feature
+@dirrm share/examples/swig/python/operator
+@dirrm share/examples/swig/python/multimap
 @dirrm share/examples/swig/python/mpointer
+@dirrm share/examples/swig/python/import_template
 @dirrm share/examples/swig/python/import
+@dirrm share/examples/swig/python/functor
+@dirrm share/examples/swig/python/funcptr2
 @dirrm share/examples/swig/python/funcptr
 @dirrm share/examples/swig/python/funcattr
+@dirrm share/examples/swig/python/exceptshadow
 @dirrm share/examples/swig/python/enum
 @dirrm share/examples/swig/python/constants
 @dirrm share/examples/swig/python/class
 @dirrm share/examples/swig/python
+@dirrm share/examples/swig/php4/variables
+@dirrm share/examples/swig/php4/value
+@dirrm share/examples/swig/php4/sync
+@dirrm share/examples/swig/php4/simple
+@dirrm share/examples/swig/php4/shadow
+@dirrm share/examples/swig/php4/reference
+@dirrm share/examples/swig/php4/pointer
+@dirrm share/examples/swig/php4/funcptr
+@dirrm share/examples/swig/php4/enum
+@dirrm share/examples/swig/php4/constants
+@dirrm share/examples/swig/php4/class
+@dirrm share/examples/swig/php4
 @dirrm share/examples/swig/perl5/variables
 @dirrm share/examples/swig/perl5/value
 @dirrm share/examples/swig/perl5/simple
 @dirrm share/examples/swig/perl5/shadow
 @dirrm share/examples/swig/perl5/reference
 @dirrm share/examples/swig/perl5/pointer
+@dirrm share/examples/swig/perl5/multimap
 @dirrm share/examples/swig/perl5/import
 @dirrm share/examples/swig/perl5/funcptr
+@dirrm share/examples/swig/perl5/constants2
 @dirrm share/examples/swig/perl5/constants
 @dirrm share/examples/swig/perl5/class
 @dirrm share/examples/swig/perl5
 @dirrm share/examples/swig/mzscheme/simple
+@dirrm share/examples/swig/mzscheme/multimap
 @dirrm share/examples/swig/mzscheme
+@dirrm share/examples/swig/java/variables
 @dirrm share/examples/swig/java/typemap
 @dirrm share/examples/swig/java/template
 @dirrm share/examples/swig/java/simple
 @dirrm share/examples/swig/java/reference
+@dirrm share/examples/swig/java/pointer
 @dirrm share/examples/swig/java/native
+@dirrm share/examples/swig/java/multimap
 @dirrm share/examples/swig/java/enum
 @dirrm share/examples/swig/java/constants
 @dirrm share/examples/swig/java/class
 @dirrm share/examples/swig/java
 @dirrm share/examples/swig/guile/simple
 @dirrm share/examples/swig/guile/port
+@dirrm share/examples/swig/guile/multivalue
+@dirrm share/examples/swig/guile/multimap
 @dirrm share/examples/swig/guile/matrix
 @dirrm share/examples/swig/guile/constants
 @dirrm share/examples/swig/guile
@@ -612,6 +807,10 @@ share/examples/swig/test-suite/virtual_destructor.i
 @dirrm share/examples/swig/GIFPlot/Python/shadow
 @dirrm share/examples/swig/GIFPlot/Python/full
 @dirrm share/examples/swig/GIFPlot/Python
+@dirrm share/examples/swig/GIFPlot/Php/simple
+@dirrm share/examples/swig/GIFPlot/Php/shadow
+@dirrm share/examples/swig/GIFPlot/Php/full
+@dirrm share/examples/swig/GIFPlot/Php
 @dirrm share/examples/swig/GIFPlot/Perl/simple
 @dirrm share/examples/swig/GIFPlot/Perl/shadow
 @dirrm share/examples/swig/GIFPlot/Perl/full
@@ -627,11 +826,4 @@ share/examples/swig/test-suite/virtual_destructor.i
 @dirrm share/examples/swig/GIFPlot/Guile/full
 @dirrm share/examples/swig/GIFPlot/Guile
 @dirrm share/examples/swig/GIFPlot
-@dirrm share/examples/swig/C++/typemaps
-@dirrm share/examples/swig/C++/test_repo
-@dirrm share/examples/swig/C++/interface
-@dirrm share/examples/swig/C++/class
-@dirrm share/examples/swig/C++/Python
-@dirrm share/examples/swig/C++/Java
-@dirrm share/examples/swig/C++
 @dirrm share/examples/swig

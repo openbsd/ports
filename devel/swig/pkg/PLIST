@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/10/31 08:08:55 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/03/25 03:26:04 kevlo Exp $
 bin/swig
 lib/libswigguile.a
 lib/libswigguile.la
@@ -17,6 +17,7 @@ lib/swig1.3/common.swg
 lib/swig1.3/constraints.i
 lib/swig1.3/ctype.i
 lib/swig1.3/exception.i
+lib/swig1.3/guile/cplusplus.i
 lib/swig1.3/guile/guile.i
 lib/swig1.3/guile/guile.swg
 lib/swig1.3/guile/guiledec.swg
@@ -26,11 +27,12 @@ lib/swig1.3/guile/list-vector.i
 lib/swig1.3/guile/pointer-in-out.i
 lib/swig1.3/guile/ports.i
 lib/swig1.3/guile/typemaps.i
-lib/swig1.3/java/java.i
 lib/swig1.3/java/java.swg
 lib/swig1.3/java/java_arrays.i
+lib/swig1.3/java/javahead.swg
 lib/swig1.3/java/stl_string.i
 lib/swig1.3/java/typemaps.i
+lib/swig1.3/java/various.i
 lib/swig1.3/malloc.i
 lib/swig1.3/math.i
 lib/swig1.3/memory.i
@@ -42,8 +44,13 @@ lib/swig1.3/objc.i
 lib/swig1.3/perl5/Makefile.pl
 lib/swig1.3/perl5/perl5.swg
 lib/swig1.3/perl5/perlmain.i
+lib/swig1.3/perl5/perlrun.swg
 lib/swig1.3/perl5/ptrlang.i
 lib/swig1.3/perl5/typemaps.i
+lib/swig1.3/php4/php4.swg
+lib/swig1.3/php4/php4run.swg
+lib/swig1.3/php4/ptrlang.i
+lib/swig1.3/php4/typemaps.i
 lib/swig1.3/pointer.i
 lib/swig1.3/python/defarg.swg
 lib/swig1.3/python/embed.i
@@ -51,6 +58,7 @@ lib/swig1.3/python/embed13.i
 lib/swig1.3/python/embed14.i
 lib/swig1.3/python/embed15.i
 lib/swig1.3/python/ptrlang.i
+lib/swig1.3/python/pyrun.swg
 lib/swig1.3/python/python.swg
 lib/swig1.3/python/typemaps.i
 lib/swig1.3/python/typemaps_old.i
@@ -59,16 +67,15 @@ lib/swig1.3/ruby/embed.i
 lib/swig1.3/ruby/exception.i
 lib/swig1.3/ruby/extconf.rb
 lib/swig1.3/ruby/ptrlang.i
-lib/swig1.3/ruby/ruby.i
 lib/swig1.3/ruby/ruby.swg
 lib/swig1.3/ruby/rubydec.swg
 lib/swig1.3/ruby/rubydef.swg
+lib/swig1.3/ruby/rubyhead.swg
 lib/swig1.3/ruby/typemaps.i
 lib/swig1.3/stdlib.i
 lib/swig1.3/swig.swg
 lib/swig1.3/tcl/constarray.i
 lib/swig1.3/tcl/consthash.i
-lib/swig1.3/tcl/object.swg
 lib/swig1.3/tcl/ptrlang.i
 lib/swig1.3/tcl/swigtcl8.swg
 lib/swig1.3/tcl/tcl8.swg
@@ -77,9 +84,48 @@ lib/swig1.3/tcl/typemaps.i
 lib/swig1.3/tcl/wish.i
 lib/swig1.3/timers.i
 %%SHARED%%
+share/doc/swig/Devel/engineering.html
+share/doc/swig/Devel/index.html
+share/doc/swig/Devel/internals.html
+share/doc/swig/Devel/migrate.txt
+share/doc/swig/Devel/whitepaper.html
+share/doc/swig/Manual/About.html
+share/doc/swig/Manual/Advanced.html
+share/doc/swig/Manual/Contents.html
+share/doc/swig/Manual/Copyright.html
+share/doc/swig/Manual/Documentation.html
+share/doc/swig/Manual/Exceptions.html
+share/doc/swig/Manual/Extending.html
+share/doc/swig/Manual/Guile.html
+share/doc/swig/Manual/Introduction.html
+share/doc/swig/Manual/Java.html
+share/doc/swig/Manual/Library.html
+share/doc/swig/Manual/Perl5.html
+share/doc/swig/Manual/Php.html
+share/doc/swig/Manual/Preface.html
+share/doc/swig/Manual/Python.html
+share/doc/swig/Manual/Ruby.html
+share/doc/swig/Manual/SWIG.html
+share/doc/swig/Manual/SWIGPlus.html
+share/doc/swig/Manual/Scripting.html
+share/doc/swig/Manual/Tcl.html
+share/doc/swig/Manual/Typemaps.html
+share/doc/swig/Manual/Windows.html
+share/doc/swig/Manual/ch11.1.png
+share/doc/swig/Manual/ch11.2.png
+share/doc/swig/Manual/ch11.3.png
+share/doc/swig/Manual/ch12.1.png
+share/doc/swig/Manual/ch2.1.png
+share/doc/swig/Manual/ch9.table.2.png
+share/doc/swig/Manual/index.html
+share/doc/swig/README
+@dirrm share/doc/swig/Manual
+@dirrm share/doc/swig/Devel
+@dirrm share/doc/swig
 @dirrm lib/swig1.3/tcl
 @dirrm lib/swig1.3/ruby
 @dirrm lib/swig1.3/python
+@dirrm lib/swig1.3/php4
 @dirrm lib/swig1.3/perl5
 @dirrm lib/swig1.3/mzscheme
 @dirrm lib/swig1.3/java
