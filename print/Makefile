@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.31 2002/11/03 15:50:19 naddy Exp $
+#	$OpenBSD: Makefile,v 1.32 2002/11/29 09:32:22 sturm Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -42,6 +42,7 @@
 #   SUBDIR += musixtex
     SUBDIR += pdflib
     SUBDIR += pkfonts
+    SUBDIR += prosper
     SUBDIR += psutils
 #   SUBDIR += rtf2latex
     SUBDIR += teTeX
