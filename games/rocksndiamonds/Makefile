@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2003/08/09 04:36:42 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2003/09/24 05:43:38 jolan Exp $
 
 COMMENT=	"maze game resembling boulderdash"
-DISTNAME=	rocksndiamonds-3.0.0
+DISTNAME=	rocksndiamonds-3.0.4
 CATEGORIES=	games x11
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/
 
 HOMEPAGE=	http://www.artsoft.org/rocksndiamonds/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/08/09 04:36:42 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/09/24 05:43:38 jolan Exp $
 @group games
 @mode 2555
 bin/rocksndiamonds
@@ -764,6 +764,8 @@ share/rocksndiamonds/levels/Classic_Games/classic_supaplex/109.level
 share/rocksndiamonds/levels/Classic_Games/classic_supaplex/110.level
 share/rocksndiamonds/levels/Classic_Games/classic_supaplex/111.level
 share/rocksndiamonds/levels/Classic_Games/classic_supaplex/levelinfo.conf
+share/rocksndiamonds/levels/Classic_Games/classic_supaplex/music/musicinfo.conf
+share/rocksndiamonds/levels/Classic_Games/classic_supaplex/music/supaplex.s3m
 share/rocksndiamonds/levels/Classic_Games/levelinfo.conf
 share/rocksndiamonds/levels/Contributions_1995-2000/levelinfo.conf
 share/rocksndiamonds/levels/Contributions_1995-2000/rnd_ben_braithwaite/000.level
@@ -3078,6 +3080,7 @@ share/rocksndiamonds/sounds/snd_classic/zonkpush.wav
 @dirrm share/rocksndiamonds/levels/Contributions_1995-2000/rnd_charles_briscoe-smith
 @dirrm share/rocksndiamonds/levels/Contributions_1995-2000/rnd_ben_braithwaite
 @dirrm share/rocksndiamonds/levels/Contributions_1995-2000
+@dirrm share/rocksndiamonds/levels/Classic_Games/classic_supaplex/music
 @dirrm share/rocksndiamonds/levels/Classic_Games/classic_supaplex
 @dirrm share/rocksndiamonds/levels/Classic_Games/classic_sokoban/tapes
 @dirrm share/rocksndiamonds/levels/Classic_Games/classic_sokoban
