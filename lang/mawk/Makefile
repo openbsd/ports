@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 01:28:01 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2002/01/10 15:02:19 brad Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1999/01/18 04:50:26 steve Exp $
 
-COMMENT=	"new/posix awk"
+COMMENT=	"new POSIX awk"
 
 DISTNAME=	mawk1.3.3
 PKGNAME=	mawk-1.3.3
 CATEGORIES=	lang
-NEED_VERSION=	1.402
-MASTER_SITES=	ftp://ftp.whidbey.net/pub/brennan/
+NEED_VERSION=	1.500
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -18,7 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu old
 
-ALL_TARGET=
+ALL_TARGET=	mawk
+REGRESS_TARGET=	mawk_test
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
 
