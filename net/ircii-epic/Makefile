@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:32 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/22 23:27:55 turan Exp $
 
 DISTNAME=	ircii2.8.2-EPIC3.004
 PKGNAME=	ircii-2.8.2-epic3.004
@@ -8,6 +8,11 @@ DISTFILES=	ircii2.8.2-EPIC3.004.tar.gz ircii2.8.2-EPIC3.help.tar.gz
 NEED_VERSION=	1.191
 
 MAINTAINER=	brad@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no obvious license"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no obvious license"
+PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_ONLY=	ircii2.8.2-EPIC3.004.tar.gz
 GNU_CONFIGURE=	yes

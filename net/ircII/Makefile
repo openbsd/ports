@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/03/30 05:53:35 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/22 23:27:55 turan Exp $
 # $FreeBSD: Makefile,v 1.15 1998/01/25 20:40:00 torstenb Exp $
 
 DISTNAME=	ircii-4.4
@@ -10,6 +10,11 @@ MASTER_SITES=	ftp://cs-ftp.bu.edu/irc/clients/ \
 		http://sunsite.doc.ic.ac.uk/packages/irc/clients/
 
 MAINTAINER=	brad@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no obvious license"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no obvious license"
+PERMIT_DISTFILES_FTP=	Yes
 
 GNU_CONFIGURE=	yes
 
