@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/05/30 01:52:41 kevlo Exp $
 libdata/perl5/site_perl/Algorithm/Diff.pm
 libdata/perl5/site_perl/Algorithm/DiffOld.pm
 libdata/perl5/site_perl/Algorithm/cdiff.pl
 libdata/perl5/site_perl/Algorithm/diff.pl
 libdata/perl5/site_perl/Algorithm/diffnew.pl
+libdata/perl5/site_perl/Algorithm/htmldiff.pl
 man/man3p/Algorithm::Diff.3p
 man/man3p/Algorithm::DiffOld.3p
