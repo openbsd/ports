@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.271 2000/04/19 14:37:19 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.272 2000/04/22 18:57:00 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1639,7 +1639,11 @@ _SUBPACKAGE_COOKIES=
 .  for _sub in ${MULTI_PACKAGES}
 
 _SUBPACKAGE_COOKIES+= ${_PACKAGE_COOKIE}${_sub}
-${_PACKAGE_COOKIE}${_sub}: 
+.    if ${FAKE:U} == "YES"
+${_PACKAGE_COOKIE}${_sub}: ${_FAKE_COOKIE}
+.    else
+${_PACKAGE_COOKIE}${_sub}: ${_INSTALL_COOKIE}
+.    endif
 	@cd ${.CURDIR} && make package SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
 
 .  endfor
