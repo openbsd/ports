@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.460 2001/09/21 11:41:17 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.461 2001/09/27 10:34:19 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1551,7 +1551,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .  if target(do-distpatch) || target(post-distpatch) || defined(PATCHFILES) 
 	@cd ${.CURDIR} && exec ${MAKE} distpatch
 .  endif 
-	@if cd ${PATCHDIR} 2>/dev/null; then \
+	@if cd ${PATCHDIR} 2>/dev/null || [ x"${PATCH_LIST:M|/*||}" != x"" ]; then \
 		error=false; \
 		for i in ${PATCH_LIST}; do \
 			case $$i in \
@@ -1568,11 +1568,9 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 							{ echo "***>   $$i did not apply cleanly"; \
 							error=true; }\
 					else \
-						echo "===>   Can't find patch matching $$i"; \
-						if [ -d ${PATCHDIR}/CVS -a "$$i" = \
-							"${PATCHDIR}/patch-*" ]; then \
-								echo "===>   Perhaps you forgot the -P flag to cvs co or update?"; \
-								error=true; \
+						if [ $$i != "patch-*" ]; then \
+							echo "===>   Can't find patch matching $$i"; \
+							error=true; \
 						fi; \
 					fi; \
 					;; \
@@ -2034,8 +2032,9 @@ plist: fake
 .endif
 
 update-patches:
-	@toedit=`WRKDIST=${WRKDIST} PATCHDIR=${PATCHDIR} PATCH_LIST=${PATCH_LIST} \
-		DIFF_ARGS=${DIFF_ARGS} DISTORIG=${DISTORIG} PATCHORIG=${PATCHORIG} \
+	@toedit=`WRKDIST=${WRKDIST} PATCHDIR=${PATCHDIR} \
+		PATCH_LIST='${PATCH_LIST}' DIFF_ARGS='${DIFF_ARGS}' \
+		DISTORIG=${DISTORIG} PATCHORIG=${PATCHORIG} \
 		/bin/sh ${PORTSDIR}/infrastructure/build/update-patches`; \
 	case $$toedit in "");; \
 	*) read i?'edit patches: '; \
