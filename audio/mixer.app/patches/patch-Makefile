@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile,v 1.1 2001/03/21 13:45:27 wilfried Exp $
+--- Makefile.orig	Sat Mar 17 22:30:34 2001
++++ Makefile	Wed Mar 21 14:39:35 2001
+@@ -6,9 +6,9 @@ DESTDIR =
+ GNUSTEP_BINDIR = /usr/local/GNUstep/Apps/Mixer.app
+ X11_BINDIR = /usr/X11R6/bin
+ 
+-CXX=c++
+-CXXFLAGS += -Wall -pedantic -fno-rtti -fno-exceptions -O2 -I/usr/X11R6/include
+-LDFLAGS += -L/usr/X11R6/lib -lXpm -lXext -lX11
++#CXX=c++
++CXXFLAGS += -Wall -pedantic -fno-rtti -fno-exceptions -I${X11BASE}/include
++LDFLAGS += -L${X11BASE}/lib -lXpm -lXext -lX11 -lossaudio
+ 
+ OBJECTS = Main.o Mixer.o Xpm.o
+ 
