@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/28 17:28:26 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/19 07:18:38 pvalchev Exp $
 
 COMMENT=	"graphical user interface library for C++"
 
@@ -22,7 +22,8 @@ MASTER_SITE_SUBDIR= libuta
 LIB_DEPENDS=	smpeg.1.3:smpeg-*:devel/smpeg \
 		SDL_mixer.0.0:sdl-mixer-*:devel/sdl-mixer \
 		png.2:png-*:graphics/png \
-		sigc.0.0:libsigc++-*:devel/libsigc++
+		sigc.0.0:libsigc++-*:devel/libsigc++ \
+		ttf.1.3:freetype-*:print/freetype
 
 USE_X11=	Yes
 
