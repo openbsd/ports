@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2004/10/24 21:53:02 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2005/01/24 16:00:14 brad Exp $
 
 COMMENT=	"AFPL PostScript interpreter"
 
 VERSION=	8.14
 DISTNAME=	ghostscript-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	print lang
 
 DIR=		AFPL/gs${VERSION:S/.//}
