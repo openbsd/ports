@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2000/05/29 17:11:43 reinhard Exp $
+# $OpenBSD: Makefile,v 1.30 2000/06/02 14:16:19 espie Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -36,7 +36,7 @@
      SUBDIR += nmh
 #    SUBDIR += p5-Mail-Folder
      SUBDIR += p5-Mail-POP3Client
-#    SUBDIR += p5-Mail-Tools
+     SUBDIR += p5-Mail-Tools
      SUBDIR += pgpsendmail
      SUBDIR += pine
      SUBDIR += popclient
