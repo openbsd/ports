@@ -1,0 +1,40 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/05/20 01:57:18 naddy Exp $
+--- configure.orig	Mon May 19 19:13:38 2003
++++ configure	Mon May 19 19:19:56 2003
+@@ -198,15 +198,17 @@ sub with_pgsql {
+ 	print "checking for pgsql... ";
+ 	
+ 	if ($value) { 
+-		if (! -e "$value/include/pgsql/postgres.h") {
+-			print "Error! $value/include/pgsql/postgres.h not found\n";
++		my $libpq = "$value/lib/libpq.so";
++
++		if (! -e "$value/include/postgresql/postgres_ext.h") {
++			print "Error! $value/include/postgresql/postgres_ext.h not found\n";
+ 			exit 1;
+ 		}
+-		if (! -e "$value/lib/libpq.so") {
++		if (! grep /^$libpq(\.\d+){0,3}/, <$libpq.*>) {
+ 			print "Error! $value/lib/libpq.so not found\n";
+ 			exit 1;
+ 		}
+-		$INC .= " -I$value/include/pgsql/ ";
++		$INC .= " -I$value/include/postgresql/ ";
+ 		$LIB .= " -L$value/lib/ -lpq ";
+ 		$DEF .= " -DPGSQL_ENABLED ";
+ 		print "found\n";
+@@ -267,11 +269,13 @@ sub with_mysql {
+ 	print "checking for mysql... ";
+ 	
+ 	if ($value) { 
++		my $libmy = "$value/lib/libmysqlclient.so";
++ 
+ 		if (! -e "$value/include/mysql/mysql.h") {
+ 			print "Error! $value/include/mysql/mysql.h not found\n";
+ 			exit 1;
+ 		}
+-		if (! -e "$value/lib/libmysqlclient.so") {
++		if (! grep /^$libmy(\.\d+){0,3}/, <$libmy.*>) {
+ 			print "Error! $value/lib/libmysqlclient.so not found\n";
+ 			exit 1;
+ 		}
