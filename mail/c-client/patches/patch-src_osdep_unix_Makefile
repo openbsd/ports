@@ -1,6 +1,6 @@
---- src/osdep/unix/Makefile.orig	Tue Oct 31 16:55:01 2000
-+++ src/osdep/unix/Makefile	Fri Dec  8 10:05:30 2000
-@@ -84,6 +84,7 @@
+--- src/osdep/unix/Makefile.orig	Thu Jan  4 13:10:00 2001
++++ src/osdep/unix/Makefile	Thu Jan 18 16:11:07 2001
+@@ -84,6 +84,7 @@ RANLIB=ranlib
  DEFAULTAUTHENTICATORS=md5 $(SPECIALAUTHENTICATORS) log
  DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf unix news phile
  
@@ -8,7 +8,7 @@
  
  # Normally no need to change any of these
  
-@@ -92,6 +93,7 @@
+@@ -92,6 +93,7 @@ BINARIES=mail.o misc.o newsrc.o smanager
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
@@ -16,7 +16,7 @@
  CFLAGS=$(BASECFLAGS) $(EXTRACFLAGS)
  
  CAT=cat
-@@ -100,6 +102,7 @@
+@@ -100,6 +102,7 @@ MV=mv
  RM=rm -rf
  SH=sh
  
@@ -24,7 +24,7 @@
  
  # Primary build command
  
-@@ -211,7 +214,7 @@
+@@ -211,7 +214,7 @@ bso:	# OpenBSD
  	 SPOOLDIR=/var \
  	 ACTIVEFILE=/usr/local/news/lib/active \
  	 RSHPATH=/usr/bin/rsh \
@@ -33,7 +33,7 @@
  
  cvx:	# Convex
  	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
-@@ -702,19 +705,26 @@
+@@ -719,19 +722,26 @@ vu2:	# VAX Ultrix 2.3, etc.
  
  # Build it!
  
@@ -62,7 +62,7 @@
  
  
  # Dependencies
-@@ -748,7 +758,7 @@
+@@ -765,7 +775,7 @@ utf8.o: mail.h misc.h osdep.h utf8.h
  
  # OS-dependent
  
@@ -71,7 +71,7 @@
  	osdep.h env_unix.h tcp_unix.h \
  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
  	auths.c crexcl.c flock.c flockbsd.c flcksafe.c fsync.c gethstid.c \
-@@ -760,7 +770,15 @@
+@@ -777,7 +787,15 @@ osdep.o:mail.h misc.h env.h fs.h ftl.h n
  	write.c \
  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
  	OSCFLAGS

@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Nov  2 16:04:11 2000
-+++ Makefile	Fri Dec  8 10:05:30 2000
-@@ -314,7 +314,7 @@
+--- Makefile.orig	Thu Jan  4 13:11:08 2001
++++ Makefile	Thu Jan 18 16:11:06 2001
+@@ -316,7 +316,7 @@ BUILD=$(MAKE) build $(BUILDOPTIONS) EXTR
  
  # Make the IMAP Toolkit
  
@@ -9,7 +9,7 @@
  
  c-client:
  	@echo Not processed yet.  In a first-time build, you must specify
-@@ -426,7 +426,7 @@
+@@ -428,7 +428,7 @@ an ua:
  	$(TOOLS)/$@ "$(LN)" src/imapd imapd
  	$(LN) $(TOOLS)/$@ .
  

@@ -1,6 +1,6 @@
---- src/osdep/unix/env_unix.c.orig	Tue Dec 12 09:52:27 2000
-+++ src/osdep/unix/env_unix.c	Tue Dec 12 09:55:10 2000
-@@ -952,7 +952,8 @@
+--- src/osdep/unix/env_unix.c.orig	Thu Dec 21 01:12:13 2000
++++ src/osdep/unix/env_unix.c	Thu Jan 18 16:11:09 2001
+@@ -971,7 +971,8 @@ long dotlock_lock (char *file,DOTLOCK *b
        }
        close (pi[0]); close (pi[1]);
      }
