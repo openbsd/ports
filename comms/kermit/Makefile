@@ -3,7 +3,7 @@
 # Date created:		Dec 31, 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/31 16:09:45 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/01/30 22:35:21 niklas Exp $
 #
 
 DISTNAME=	cku192src
@@ -19,7 +19,6 @@ MAINTAINER=	joey@OpenBSD.ORG
 RESTRICTED=	"'No redistribution' copyright"
 NO_WRKSUBDIR=	yes
 MAN1=		kermit.1
-MANCOMPRESSED=	yes
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/examples/kermit
