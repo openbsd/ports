@@ -1,0 +1,16 @@
+--- configure.ori	Thu Jan  7 14:13:45 1999
++++ configure	Mon Jan 18 03:07:35 1999
+@@ -5160,10 +5160,10 @@
+ # The "elif" arm (nonempty $with_kerberos) is kind of a crock.  It works for
+ # configuring the BSD/OS Kerberos IV support, though. 
+ 
+-# Check for a NetBSD special case
+-if test "$with_kerberos" = "yes" -a `uname` = "NetBSD" 
++# Check for a NetBSD/OpenBSD special case
++if test -n "$with_kerberos" && test `uname` = "NetBSD" -o `uname` = "OpenBSD"
+ then
+-  echo "Configuring kerberosIV for NetBSD"
++  echo "Configuring kerberosIV for `uname`"
+   CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I/usr/include/kerberosIV"
+   LIBS="$LIBS -lkrb -ldes"
+ elif test -n "$with_kerberos" -a -n "$with_kerberos5"
