@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/27 21:07:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/04 20:16:16 lebel Exp $
 
 COMMENT=		"official distributed.net client"
 
+V=			2.9001
+SV=			478
+
 .if ${MACHINE_ARCH:L} == "i386"
-V=			2.8010
-SV=			463
 A=			x86-aout
 .endif
-
 .if ${MACHINE_ARCH:L} == "sparc"
-V=			2.8015
-SV=			469
 A=			sparc-aout
 .endif
 
@@ -33,8 +31,6 @@ PERMIT_DISTFILES_FTP=	No
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
-
-WRKSRC=			${WRKDIR}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnetc ${PREFIX}/bin/
