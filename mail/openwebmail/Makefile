@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/04/14 08:26:11 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2003/05/13 22:53:58 sturm Exp $
 
 COMMENT=	"highly configurable webmail client"
 
@@ -30,7 +30,8 @@ NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}
 
 PREFIX=		/var/www
-SYSCONFDIR=	${PREFIX}/conf
+CONFDIR=	${PREFIX}/conf
+SUBST_VARS=	CONFDIR
 
 SCRIPTFILES=	openwebmail-abook.pl openwebmail-advsearch.pl \
 		openwebmail-cal.pl openwebmail-folder.pl \
@@ -42,7 +43,7 @@ SCRIPTFILES=	openwebmail-abook.pl openwebmail-advsearch.pl \
 
 do-configure:
 .for file in ${SCRIPTFILES}
-	@perl -pi -e 's@%%SYSCONFDIR%%@${SYSCONFDIR}@g' \
+	@perl -pi -e 's@%%SYSCONFDIR%%@${CONFDIR}@g' \
 		${WRKSRC}/cgi-bin/openwebmail/${file}
 .endfor
 	@cd ${WRKSRC} && cp -Rp data htdocs
@@ -53,7 +54,7 @@ do-configure:
 
 
 do-install:
-	${INSTALL_DATA_DIR} ${SYSCONFDIR}/openwebmail
+	${INSTALL_DATA_DIR} ${CONFDIR}/openwebmail
 	${TAR} -C ${WRKSRC} -cpf- cgi-bin conf htdocs | \
 		${TAR} -C ${PREFIX} -xpf-
 

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2002/02/05 04:53:17 kevlo Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/05/13 22:53:58 sturm Exp $
 #
 # De-installation setup of openwebmail
 
@@ -7,7 +7,7 @@
 #
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/var/www}
-CONFIG_DIR=${SYSCONFDIR}/openwebmail
+CONFIG_DIR=${CONFDIR}/openwebmail
 
 # Function: tell the user what they need to do to delete the port completely
 #

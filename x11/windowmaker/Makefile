@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2002/11/22 11:53:58 wilfried Exp $
+# $OpenBSD: Makefile,v 1.56 2003/05/13 22:53:59 sturm Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 COMMENT-lang=		"language subpackage for Window Maker"
@@ -24,18 +24,19 @@ EXTRACT_SUFX=		.tar.bz2
 NO_REGRESS=		Yes
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
 			--with-pixmapdir="${PREFIX}/share/WindowMaker/Pixmaps" \
 			--with-nlsdir="${LOCALBASE}/share/locale" \
 			--disable-dependency-tracking \
 			--enable-gnome \
-			--enable-kde
+			--enable-kde \
+			--sysconfdir="${CONFDIR}"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng" LIBS="-L${LOCALBASE}/lib" \
 			LINGUAS='bg cs da de el es et fi fr gl hr hu it ja ko ms nl no pl pt ro ru sk sv tr zh_CN zh_TW.Big5'
 
-SYSCONFDIR=		${PREFIX}/share/WindowMaker/Defaults
+CONFDIR=		${PREFIX}/share/WindowMaker/Defaults
 
 MULTI_PACKAGES= 	-lang
 

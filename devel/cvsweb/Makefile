@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2002/10/04 19:21:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2003/05/13 22:53:58 sturm Exp $
 # $FreeBSD: ports/devel/cvsweb/Makefile,v 1.28 2000/09/23 20:48:45 knu Exp $
 
 COMMENT=	"WWW CGI script to browse CVS repository trees"
@@ -22,22 +22,24 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 PREFIX=		/var/www
-SYSCONFDIR=	${PREFIX}/conf
+CONFDIR=	${PREFIX}/conf
 
 CONFFILES=	cvsweb.conf cvsweb.conf-freebsd cvsweb.conf-netbsd \
 		cvsweb.conf-openbsd cvsweb.conf-ruby
 ICONS=		back.gif dir.gif text.gif \
 		miniback.gif minidir.gif minitext.gif
 
+SUBST_VARS=	CONFDIR
+
 do-configure:
-	@perl -i -pe 's@%%SYSCONFDIR%%@${SYSCONFDIR}@g' ${WRKSRC}/cvsweb.cgi
+	@perl -i -pe 's@%%SYSCONFDIR%%@${CONFDIR}@g' ${WRKSRC}/cvsweb.cgi
 
 do-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/cgi-bin
 	${INSTALL_SCRIPT} ${WRKSRC}/cvsweb.cgi ${PREFIX}/cgi-bin/cvsweb
-	${INSTALL_DATA_DIR} ${SYSCONFDIR}/cvsweb
+	${INSTALL_DATA_DIR} ${CONFDIR}/cvsweb
 .for file in ${CONFFILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${SYSCONFDIR}/cvsweb/${file}.dist
+	${INSTALL_DATA} ${WRKSRC}/${file} ${CONFDIR}/cvsweb/${file}.dist
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/icons/cvsweb
 .for file in ${ICONS}

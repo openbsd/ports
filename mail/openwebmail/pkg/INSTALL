@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.7 2003/04/14 08:26:25 kevlo Exp $
+# $OpenBSD: INSTALL,v 1.8 2003/05/13 22:53:58 sturm Exp $
 #
 # Pre/post-installation setup of openwebmail
 
@@ -7,7 +7,7 @@
 #
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/var/www}
-CONFIG_DIR=${SYSCONFDIR}/openwebmail
+CONFIG_DIR=${CONFDIR}/openwebmail
 CONFIG_FILE=$CONFIG_DIR/openwebmail.conf
 CGI_DIR=${PREFIX}/cgi-bin/openwebmail
 SAMPLE_CONFIG_FILE=$CONFIG_FILE.default
