@@ -1,0 +1,13 @@
+MailTools is a suite of modules to handle various aspects of Mail with perl:
+
+Mail::Address - Parse mail addresses
+Mail::Alias - maniulate mail alias files of various formats
+Mail::Cap - Parse mailcap files
+Mail::Field - Base class for manipulation of mail header fields
+Mail::Filter - Filter mail through multiple subroutines
+Mail::Header - manipulate mail RFC822 compliant headers
+Mail::Internet - manipulate Internet format (RFC 822) mail messages
+Mail::Mailer - Simple interface to electronic mailing mechanisms 
+Mail::Send - Simple electronic mail interface
+Mail::Util - mail utility functions
+Mail::Field::AddrList - object representation of e-mail address lists

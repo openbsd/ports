@@ -1,0 +1,11 @@
+$OpenBSD: patch-bin_send_demo_PL,v 1.1.1.1 2000/06/02 14:15:27 espie Exp $
+--- bin/send_demo.PL.orig	Fri Jun  2 15:59:06 2000
++++ bin/send_demo.PL	Fri Jun  2 15:59:33 2000
+@@ -9,7 +9,6 @@ unlink($script);
+ $cwd = Cwd::getcwd();
+ open MIR, ">$script" or die "open for writing $script: $!";
+ print MIR $Config{'startperl'}," -w\n";
+-print MIR "use lib qw($cwd/blib);\n";
+ print MIR <DATA>; 
+ chmod(0755, $script);
+ 
