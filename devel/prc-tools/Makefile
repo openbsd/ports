@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2002/03/21 20:46:25 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2002/04/01 22:14:59 naddy Exp $
 
+BROKEN=		"attempts to install during build"
 ONLY_FOR_ARCHS=	i386
 FAKE=No
 COMMENT=	"PalmPilot(tm) development environment"
