@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/10/05 11:51:55 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/12/20 01:35:13 naddy Exp $
 bin/onsgmls
 bin/openjade
 bin/osgmlnorm
@@ -46,6 +46,7 @@ share/sgml/openjade/dsssl.dtd
 share/sgml/openjade/fot.dtd
 share/sgml/openjade/style-sheet.dtd
 @dirrm share/sgml/openjade
+@dirrm share/sgml
 @dirrm share/doc/openjade/sp
 @dirrm share/doc/openjade/images
 @dirrm share/doc/openjade

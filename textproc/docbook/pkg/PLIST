@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/06/17 16:20:04 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/12/20 01:35:13 naddy Exp $
 share/sgml/catalog
 share/sgml/docbook/2.4.1/241chg.txt
 share/sgml/docbook/2.4.1/announce.txt
@@ -187,11 +187,15 @@ share/xml/docbook/catalog.xml
 @dirrm share/xml/docbook/4.1.2/ent
 @dirrm share/xml/docbook/4.1.2
 @dirrm share/xml/docbook/4.1
+@dirrm share/xml/docbook
+@dirrm share/xml
 @dirrm share/sgml/docbook/4.1
 @dirrm share/sgml/docbook/4.0
 @dirrm share/sgml/docbook/3.1
 @dirrm share/sgml/docbook/3.0
 @dirrm share/sgml/docbook/2.4.1
+@dirrm share/sgml/docbook
+@dirrm share/sgml
 @exec %D/bin/xmlcatalog --noout --add "delegatePublic" "-//OASIS//ENTITIES DocBook XML" "file://%D/share/xml/docbook/catalog.xml" /var/db/xmlcatalog
 @exec %D/bin/xmlcatalog --noout --add "delegatePublic" "-//OASIS//DTD DocBook XML" "file://%D/share/xml/docbook/catalog.xml" /var/db/xmlcatalog
 @exec %D/bin/xmlcatalog --noout --add "delegateSystem" "http://www.oasis-open.org/docbook/" "file://%D/share/xml/docbook/catalog.xml" /var/db/xmlcatalog

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/11 23:34:19 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/20 01:35:13 naddy Exp $
 share/doc/docbook-dsssl/doc/ChangeLog
 share/doc/docbook-dsssl/doc/collateindex.html
 share/doc/docbook-dsssl/doc/common.html
@@ -1074,6 +1074,9 @@ share/sgml/docbook/dsssl/modular/print/version.dsl
 @dirrm share/sgml/docbook/dsssl/modular/common
 @dirrm share/sgml/docbook/dsssl/modular/bin
 @dirrm share/sgml/docbook/dsssl/modular
+@dirrm share/sgml/docbook/dsssl
+@dirrm share/sgml/docbook
+@dirrm share/sgml
 @dirrm share/doc/docbook-dsssl/docsrc/printpr
 @dirrm share/doc/docbook-dsssl/docsrc/libref
 @dirrm share/doc/docbook-dsssl/docsrc/htmlpr
