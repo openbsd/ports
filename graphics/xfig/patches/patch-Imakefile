@@ -1,11 +1,13 @@
---- Imakefile.orig	Sun Mar 25 10:21:40 2001
-+++ Imakefile	Sun Mar 25 10:20:12 2001
-@@ -41,7 +41,7 @@
+--- Imakefile.orig	Wed Jul 19 14:14:27 2000
++++ Imakefile	Mon Mar 26 19:43:28 2001
+@@ -40,8 +40,8 @@
+ 
  #ifdef USEJPEG
  #ifdef USEINSTALLEDJPEG
- JPEGLIBDIR = /usr/local/lib
+-JPEGLIBDIR = /usr/local/lib
 -JPEGINCDIR = /usr/include/X11
-+JPEGINCDIR = /usr/local/include
++JPEGLIBDIR = $(LOCALBASE)/lib
++JPEGINCDIR = $(LOCALBASE)/include
  #else
  JPEGLIBDIR = ../jpeg
  JPEGINCDIR = $(JPEGLIBDIR)
@@ -21,7 +23,7 @@
  #ifdef USEXPM
  XPMLIBDIR = $(USRLIBDIR)
 -XPMINC = -I/usr/include/X11
-+XPMINC = -I/usr/X11R6/include/X11
++XPMINC = -I$(X11BASE)/include/X11
  #endif
  
  XCOMM Uncomment the following definiton if you want to use the small icons

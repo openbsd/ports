@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2001/03/25 08:33:13 jakob Exp $
+# $OpenBSD: Makefile,v 1.18 2001/03/27 01:03:19 brad Exp $
 
-COMMENT=	CAD drawing program for X11
+COMMENT=	"CAD drawing program for X11"
 
 VERSION=	3.2.3c
 DISTNAME=	xfig.${VERSION}.full
 PKGNAME=	xfig-${VERSION}
 CATEGORIES=	graphics x11
-NEED_VERSION=	1.363
+NEED_VERSION=	1.364
 
 MASTER_SITES=	http://www.xfig.org/xfigdist/ \
 		ftp://www-epb.lbl.gov/xfig/ \
@@ -29,12 +29,11 @@ RUN_DEPENDS=	fig2dev::print/transfig \
 
 WRKDIST=	${WRKDIR}/xfig.${VERSION}
 
-CONFIGURE_STYLE=	imake
-MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
-		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  \
-		XFIGLIBDIR=${PREFIX}/lib/X11/xfig 
-
-post-patch:
-	perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Imakefile
+CONFIGURE_STYLE= imake
+MAKE_FLAGS=	BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/man1" \
+		XAPPLOADDIR="${PREFIX}/lib/X11/app-defaults"  \
+		XFIGLIBDIR="${PREFIX}/lib/X11/xfig" \
+		LOCALBASE="${LOCALBASE}" X11BASE="${X11BASE}"
+FAKE_FLAGS+=	${MAKE_FLAGS} DESTDIR="${WRKINST}"
 
 .include <bsd.port.mk>
