@@ -1,6 +1,6 @@
---- binutils/objcopy.c.orig	Thu Jun  7 00:12:27 2001
-+++ binutils/objcopy.c	Sun Mar 10 02:28:35 2002
-@@ -1243,7 +1243,7 @@ copy_archive (ibfd, obfd, output_target)
+--- binutils/objcopy.c.orig	Mon Jul 15 22:04:33 2002
++++ binutils/objcopy.c	Sun Mar 16 19:47:51 2003
+@@ -1292,7 +1292,7 @@ copy_archive (ibfd, obfd, output_target)
      } *list, *l;
    bfd **ptr = &obfd->archive_head;
    bfd *this_element;
@@ -8,8 +8,17 @@
 +  char *dir = make_tempname (bfd_get_filename (obfd), 1);
  
    /* Make a temp directory to hold the contents.  */
- #if defined (_WIN32) && !defined (__CYGWIN32__)
-@@ -1933,7 +1933,7 @@ strip_main (argc, argv)
+   if (MKDIR (dir, 0700) != 0)
+@@ -1324,7 +1324,7 @@ copy_archive (ibfd, obfd, output_target)
+       /* If the file already exists, make another temp dir.  */
+       if (stat (output_name, &buf) >= 0)
+ 	{
+-	  output_name = make_tempname (output_name);
++	  output_name = make_tempname (output_name, 1);
+ 	  if (MKDIR (output_name, 0700) != 0)
+ 	    {
+ 	      fatal (_("cannot mkdir %s for archive copying (error: %s)"),
+@@ -2083,7 +2083,7 @@ strip_main (argc, argv)
        if (output_file != NULL)
  	tmpname = output_file;
        else
@@ -18,7 +27,7 @@
        status = 0;
  
        copy_file (argv[i], tmpname, input_target, output_target);
-@@ -2370,7 +2370,7 @@ copy_main (argc, argv)
+@@ -2592,7 +2592,7 @@ copy_main (argc, argv)
  
    if (output_filename == (char *) NULL)
      {

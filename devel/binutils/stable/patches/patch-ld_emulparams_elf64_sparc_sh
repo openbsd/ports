@@ -1,0 +1,15 @@
+$OpenBSD: patch-ld_emulparams_elf64_sparc_sh,v 1.1 2003/06/05 04:03:55 brad Exp $
+--- ld/emulparams/elf64_sparc.sh.orig	Mon Oct 28 10:58:12 2002
++++ ld/emulparams/elf64_sparc.sh	Thu Apr 24 16:10:23 2003
+@@ -7,6 +7,11 @@ COMMONPAGESIZE=0x2000
+ ARCH="sparc:v9"
+ MACHINE=
+ DATA_PLT=
++PAD_RO=
++RODATA_PADSIZE=${MAXPAGESIZE}
++RODATA_ALIGN=". = ALIGN(${RODATA_PADSIZE}) + (. & (${RODATA_PADSIZE} - 1))"
++PAD_GOT=
++PAD_PLT=
+ GENERATE_SHLIB_SCRIPT=yes
+ NOP=0x01000000
+ NO_SMALL_DATA=yes

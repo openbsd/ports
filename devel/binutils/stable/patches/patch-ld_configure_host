@@ -1,0 +1,15 @@
+$OpenBSD: patch-ld_configure_host,v 1.1 2003/06/05 04:03:55 brad Exp $
+--- ld/configure.host.orig	Mon Mar 17 00:06:54 2003
++++ ld/configure.host	Mon Mar 17 00:17:55 2003
+@@ -30,6 +30,11 @@ case "${host}" in
+   HOSTING_LIBS='-L`dirname \`${CC} --print-file-name=libc.so\`` '"$HOSTING_LIBS"' `if [ -f ../gcc/crtend.o ]; then echo ../gcc/crtend.o; else ${CC} --print-file-name=crtend.o; fi` `${CC} --print-file-name=crtn.o`'
+   ;;
+ 
++*-*-openbsd*)
++  NATIVE_LIB_DIRS=/usr/lib
++  HOSTING_CRT0=/usr/lib/crt0.o
++  ;;
++
+ *-*-linux*aout* | *-*-linux*oldld)
+   HOSTING_CRT0=/usr/lib/crt0.o
+   ;;

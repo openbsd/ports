@@ -1,0 +1,23 @@
+$OpenBSD: patch-ld_lexsup_c,v 1.1 2003/06/05 04:03:56 brad Exp $
+--- ld/lexsup.c.orig	Wed Mar 19 22:27:11 2003
++++ ld/lexsup.c	Wed Mar 19 22:30:13 2003
+@@ -217,6 +217,9 @@ static const struct ld_option ld_options
+   { {"omagic", no_argument, NULL, 'N'},
+       'N', NULL, N_("Do not page align data, do not make text readonly"),
+       EXACTLY_TWO_DASHES },
++  { {"Zmagic", no_argument, NULL, 'Z'},
++      'Z', NULL, N_("Do not page align got/plt, old style executable"),
++      EXACTLY_TWO_DASHES },
+   { {"output", required_argument, NULL, 'o'},
+       'o', N_("FILE"), N_("Set output file name"), EXACTLY_TWO_DASHES },
+   { {NULL, required_argument, NULL, '\0'},
+@@ -748,6 +751,9 @@ parse_args (argc, argv)
+ 	case 'n':
+ 	  config.magic_demand_paged = false;
+ 	  config.dynamic_link = false;
++	  break;
++	case 'Z':
++	  config.data_bss_contig = true;
+ 	  break;
+ 	case OPTION_NO_DEFINE_COMMON:
+ 	  command_line.inhibit_common_definition = true;

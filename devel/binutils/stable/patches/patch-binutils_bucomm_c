@@ -1,6 +1,6 @@
---- binutils/bucomm.c.orig	Mon Jun 11 07:04:27 2001
-+++ binutils/bucomm.c	Sun Mar 10 02:28:35 2002
-@@ -208,12 +208,14 @@ print_arelt_descr (file, abfd, verbose)
+--- binutils/bucomm.c.orig	Mon Oct 28 11:01:19 2002
++++ binutils/bucomm.c	Sun Mar 16 17:19:58 2003
+@@ -200,12 +200,14 @@ print_arelt_descr (file, abfd, verbose)
  /* Return the name of a temporary file in the same directory as FILENAME.  */
  
  char *
@@ -16,7 +16,7 @@
  
  #ifdef HAVE_DOS_BASED_FILE_SYSTEM
    {
-@@ -228,8 +230,6 @@ make_tempname (filename)
+@@ -220,8 +222,6 @@ make_tempname (filename)
  
    if (slash != (char *) NULL)
      {
@@ -25,7 +25,7 @@
        c = *slash;
        *slash = 0;
        tmpname = xmalloc (strlen (filename) + sizeof (template) + 2);
-@@ -243,15 +243,31 @@ make_tempname (filename)
+@@ -235,15 +235,31 @@ make_tempname (filename)
  #endif
        strcat (tmpname, "/");
        strcat (tmpname, template);

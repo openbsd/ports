@@ -1,0 +1,11 @@
+$OpenBSD: patch-ld_ldmain_c,v 1.1 2003/06/05 04:03:56 brad Exp $
+--- ld/ldmain.c.orig	Wed Mar 19 22:32:54 2003
++++ ld/ldmain.c	Wed Mar 19 22:33:27 2003
+@@ -272,6 +272,7 @@ main (argc, argv)
+   force_make_executable = false;
+   config.magic_demand_paged = true;
+   config.text_read_only = true;
++  config.data_bss_contig = false;
+ 
+   emulation = get_emulation (argc, argv);
+   ldemul_choose_mode (emulation);

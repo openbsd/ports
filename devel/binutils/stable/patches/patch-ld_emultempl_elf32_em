@@ -1,8 +1,8 @@
-$OpenBSD: patch-ld_emultempl_elf32_em,v 1.2 2002/04/26 00:44:40 pvalchev Exp $
---- ld/emultempl/elf32.em.orig	Thu Apr 25 15:41:38 2002
-+++ ld/emultempl/elf32.em	Thu Apr 25 18:28:55 2002
-@@ -71,6 +71,155 @@ static boolean gld${EMULATION_NAME}_plac
- static char *gld${EMULATION_NAME}_get_script PARAMS ((int *isfile));
+$OpenBSD: patch-ld_emultempl_elf32_em,v 1.3 2003/06/05 04:03:55 brad Exp $
+--- ld/emultempl/elf32.em.orig	Sun Dec 15 14:41:07 2002
++++ ld/emultempl/elf32.em	Sun Mar 16 23:34:34 2003
+@@ -86,6 +86,159 @@ static char *gld${EMULATION_NAME}_get_sc
+   PARAMS ((int *isfile));
  
  EOF
 +case ${target} in
@@ -34,10 +34,13 @@ $OpenBSD: patch-ld_emultempl_elf32_em,v 1.2 2002/04/26 00:44:40 pvalchev Exp $
 +  force_maj = -1;
 +  force_min = -1;
 +  dot = strchr (filename, '.');
++#ifdef DO_FORCE_VERS
 +  if (dot == NULL)
 +    {
++#endif /* DO_FORCE_VERS */
 +      len = strlen (filename);
 +      alc = NULL;
++#ifdef DO_FORCE_VERS
 +    }
 +  else
 +    {
@@ -53,6 +56,7 @@ $OpenBSD: patch-ld_emultempl_elf32_em,v 1.2 2002/04/26 00:44:40 pvalchev Exp $
 +      if (dot != NULL)
 +	force_min = atoi (dot + 1);
 +    }
++#endif /* DO_FORCE_VERS */
 +
 +  found = NULL;
 +  max_maj = max_min = 0;
@@ -157,7 +161,33 @@ $OpenBSD: patch-ld_emultempl_elf32_em,v 1.2 2002/04/26 00:44:40 pvalchev Exp $
  
  # Import any needed special functions and/or overrides.
  #
-@@ -605,7 +754,7 @@ gld${EMULATION_NAME}_after_open ()
+@@ -265,7 +418,7 @@ gld${EMULATION_NAME}_try_needed (name, f
+      int force;
+ {
+   bfd *abfd;
+-  const char *soname;
++  char *soname;
+ 
+   abfd = bfd_openr (name, bfd_get_target (output_bfd));
+   if (abfd == NULL)
+@@ -358,7 +511,7 @@ cat >>e${EMULATION_NAME}.c <<EOF
+     einfo ("%F%P:%B: bfd_stat failed: %E\n", abfd);
+ 
+   /* First strip off everything before the last '/'.  */
+-  soname = lbasename (abfd->filename);
++  soname = xstrdup (lbasename (abfd->filename));
+ 
+   if (trace_file_tries)
+     info_msg (_("found %s at %s\n"), soname, name);
+@@ -369,6 +522,7 @@ cat >>e${EMULATION_NAME}.c <<EOF
+     {
+       /* Return true to indicate that we found the file, even though
+          we aren't going to do anything with it.  */
++      free (soname);
+       return true;
+     }
+ 
+@@ -634,7 +788,7 @@ gld${EMULATION_NAME}_after_open ()
  	 rpath_link, rpath, then the environment variable
  	 LD_LIBRARY_PATH (native only), then the DT_RPATH/DT_RUNPATH
  	 entries (native only), then the linker script LIB_SEARCH_DIRS.
@@ -166,7 +196,7 @@ $OpenBSD: patch-ld_emultempl_elf32_em,v 1.2 2002/04/26 00:44:40 pvalchev Exp $
  
  	 We search twice.  The first time, we skip objects which may
  	 introduce version mismatches.  The second time, we force
-@@ -619,7 +768,7 @@ if [ "x${host}" = "x${target}" ] ; then
+@@ -648,7 +802,7 @@ if [ "x${host}" = "x${target}" ] ; then
    case " ${EMULATION_LIBPATH} " in
    *" ${EMULATION_NAME} "*)
  cat >>e${EMULATION_NAME}.c <<EOF
@@ -175,7 +205,7 @@ $OpenBSD: patch-ld_emultempl_elf32_em,v 1.2 2002/04/26 00:44:40 pvalchev Exp $
  	  struct bfd_link_needed_list *rp;
  	  int found;
  EOF
-@@ -639,15 +788,38 @@ cat >>e${EMULATION_NAME}.c <<EOF
+@@ -668,15 +822,38 @@ cat >>e${EMULATION_NAME}.c <<EOF
  	  if (gld${EMULATION_NAME}_search_needed (command_line.rpath,
  						  l->name, force))
  	    break;
@@ -217,7 +247,7 @@ $OpenBSD: patch-ld_emultempl_elf32_em,v 1.2 2002/04/26 00:44:40 pvalchev Exp $
  	  if (gld${EMULATION_NAME}_search_needed (lib_path, l->name, force))
  	    break;
  
-@@ -888,7 +1060,15 @@ gld${EMULATION_NAME}_open_dynamic_archiv
+@@ -929,7 +1106,15 @@ gld${EMULATION_NAME}_open_dynamic_archiv
      return false;
  
    filename = entry->filename;
@@ -234,7 +264,7 @@ $OpenBSD: patch-ld_emultempl_elf32_em,v 1.2 2002/04/26 00:44:40 pvalchev Exp $
    /* This allocates a few bytes too many when EXTRA_SHLIB_EXTENSION
       is defined, but it does not seem worth the headache to optimize
       away those two bytes of space.  */
-@@ -902,6 +1082,10 @@ gld${EMULATION_NAME}_open_dynamic_archiv
+@@ -943,6 +1128,10 @@ gld${EMULATION_NAME}_open_dynamic_archiv
  
    sprintf (string, "%s/lib%s%s.so", search->name, filename, arch);
  

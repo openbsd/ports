@@ -1,6 +1,6 @@
---- binutils/ar.c.orig	Thu Jun  7 00:12:27 2001
-+++ binutils/ar.c	Sun Mar 10 02:28:35 2002
-@@ -1077,7 +1077,7 @@ write_archive (iarch)
+--- binutils/ar.c.orig	Mon Jul 15 22:04:30 2002
++++ binutils/ar.c	Sun Mar 16 17:19:57 2003
+@@ -1089,7 +1089,7 @@ write_archive (iarch)
  
    old_name = xmalloc (strlen (bfd_get_filename (iarch)) + 1);
    strcpy (old_name, bfd_get_filename (iarch));

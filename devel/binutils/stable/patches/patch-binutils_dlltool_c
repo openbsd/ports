@@ -1,7 +1,7 @@
-$OpenBSD: patch-binutils_dlltool_c,v 1.1 2002/05/06 20:51:19 drahn Exp $
---- binutils/dlltool.c.orig	Mon May  6 15:28:21 2002
-+++ binutils/dlltool.c	Mon May  6 15:28:54 2002
-@@ -1125,7 +1125,11 @@ run (what, args)
+$OpenBSD: patch-binutils_dlltool_c,v 1.2 2003/06/05 04:03:55 brad Exp $
+--- binutils/dlltool.c.orig	Mon Jul 15 22:04:32 2002
++++ binutils/dlltool.c	Sun Mar 16 17:19:58 2003
+@@ -1129,7 +1129,11 @@ run (what, args)
    int i;
    const char **argv;
    char *errmsg_fmt, *errmsg_arg;

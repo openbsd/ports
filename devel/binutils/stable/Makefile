@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2003/02/27 19:27:01 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2003/06/05 04:03:55 brad Exp $
 
 COMMENT=		"GNU development tools"
 
-DISTNAME=		binutils-2.11.2
+DISTNAME=		binutils-2.13.2.1
 CATEGORIES=		devel
-MASTER_SITES=           ${MASTER_SITE_GNU:=binutils/}
+MASTER_SITES=		${MASTER_SITE_GNU:=binutils/}
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -13,16 +14,18 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MAINTAINER=		Federico G. Schwindt <fgsch@openbsd.org>
 
-HOMEPAGE=		http://sources.redhat.com/
+HOMEPAGE=		http://sources.redhat.com/binutils/
 
 AUTOCONF_VERSION=	2.13
 BUILD_DEPENDS=		::devel/automake \
 			${MODGNU_AUTOCONF_DEPENDS}
 
+SUBST_VARS=		TARGET_ARCH OSREV
+
 MODULES=		gnu
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS=		--with-prefix=${PREFIX} \
-			--disable-nls --disable-gdbtk --disable-commonbfdlib
+			--disable-nls --disable-commonbfdlib
 
 # cross-tools
 FLAVORS=		alpha hppa i386 m68k m88k mips powerpc sparc \
@@ -40,12 +43,16 @@ TARGET_ARCH=		${MACHINE_ARCH}
 TARGET_DIR=		$${PREFIX}/${TARGET_ARCH}-unknown-openbsd${OSREV}
 
 REGRESS_TARGET=		check
+REGRESS_DEPENDS=	::devel/dejagnu
 
 FILES=			ar nm-new objdump ranlib size strings strip-new 
 
+post-extract:
+	@cp -f ${FILESDIR}/{i386obsd.sh,sparcobsd.sh,m68kobsd.sh} \
+		${WRKSRC}/ld/emulparams
+
 post-patch:
 	@cd ${WRKSRC}/bfd && AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
-	@cd ${WRKSRC}/binutils && AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
 	@-cd ${WRKSRC}/gas && { automake; AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf; }
 	@cd ${WRKSRC}/ld && automake
 
@@ -62,10 +69,8 @@ do-install:
 	    for s in ${FILES}; do					\
 		d=`echo $${s} | sed s/-new//`;				\
 		${INSTALL_PROGRAM} binutils/$${s} ${TARGET_DIR}/bin/$${d}; \
-		${INSTALL_MAN} binutils/$${d}.1 ${TARGET_DIR}/man/man1;	\
+		${INSTALL_MAN} binutils/doc/$${d}.1 ${TARGET_DIR}/man/man1; \
 	    done							\
 	}
-
-SUBST_VARS=TARGET_ARCH OSREV
 
 .include <bsd.port.mk>

@@ -1,35 +1,19 @@
-$OpenBSD: patch-binutils_Makefile_in,v 1.2 2002/05/04 10:43:07 fgsch Exp $
---- binutils/Makefile.in.orig	Mon May 28 15:34:46 2001
-+++ binutils/Makefile.in	Sat May  4 06:23:58 2002
-@@ -837,6 +837,7 @@ maintainer-clean-recursive:
+--- binutils/Makefile.in.orig	Mon Jul 15 22:04:30 2002
++++ binutils/Makefile.in	Sun Mar 16 17:16:45 2003
+@@ -690,6 +690,7 @@ maintainer-clean-recursive:
  	rev=''; list='$(SUBDIRS)'; for subdir in $$list; do \
  	  rev="$$subdir $$rev"; \
- 	  test "$$subdir" = "." && dot_seen=yes; \
+ 	  test "$$subdir" != "." || dot_seen=yes; \
 +	  true; \
  	done; \
  	test "$$dot_seen" = "no" && rev=". $$rev"; \
  	target=`echo $@ | sed s/-recursive//`; \
-@@ -1244,18 +1245,18 @@ install-exec-local: install-binPROGRAMS 
+@@ -1081,7 +1082,7 @@ mostlyclean-local:
+ install-exec-local: install-binPROGRAMS $(bin_PROGRAMS) $(noinst_PROGRAMS)
  	@list='$(noinst_PROGRAMS)'; for p in $$list; do \
  	  if test -f $$p; then \
- 	    echo " $(LIBTOOL)  --mode=install $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed -e 's/$(EXEEXT)$$//' -e 's/-new//' -e 's/cxxfilt/$(DEMANGLER_NAME)/'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
--	    $(LIBTOOL)  --mode=install $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed -e 's/$(EXEEXT)$$//' -e 's/-new//' -e 's/cxxfilt/$(DEMANGLER_NAME)/'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
-+	    $(LIBTOOL)  --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed -e 's/$(EXEEXT)$$//' -e 's/-new//' -e 's/cxxfilt/$(DEMANGLER_NAME)/'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+-	    echo " $(LIBTOOL)  --mode=install $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed -e 's/$(EXEEXT)$$//' -e 's/-new//' -e 's/cxxfilt/$(DEMANGLER_NAME)/'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
++	    echo " $(LIBTOOL)  --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed -e 's/$(EXEEXT)$$//' -e 's/-new//' -e 's/cxxfilt/$(DEMANGLER_NAME)/'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
+ 	    $(LIBTOOL)  --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed -e 's/$(EXEEXT)$$//' -e 's/-new//' -e 's/cxxfilt/$(DEMANGLER_NAME)/'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
  	  else :; fi; \
  	done
--	$(mkinstalldirs) $(tooldir)/bin
-+	$(mkinstalldirs) $(DESTDIR)$(tooldir)/bin
- 	for i in $(TOOL_PROGS); do \
- 	  if [ -f $$i$(EXEEXT) ]; then \
- 	    j=`echo $$i | sed -e 's/-new//'`; \
- 	    k=`echo $$j | sed '$(transform)'`; \
- 	    if [ "$(bindir)/$$k$(EXEEXT)" != "$(tooldir)/bin/$$j$(EXEEXT)" ]; then \
--	      rm -f $(tooldir)/bin/$$j$(EXEEXT); \
--	      ln $(bindir)/$$k$(EXEEXT) $(tooldir)/bin/$$j$(EXEEXT) >/dev/null 2>/dev/null \
--		|| $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$i$(EXEEXT) $(tooldir)/bin/$$j$(EXEEXT); \
-+	      rm -f $(DESTDIR)$(tooldir)/bin/$$j$(EXEEXT); \
-+	      ln $(DESTDIR)$(bindir)/$$k$(EXEEXT) $(DESTDIR)$(tooldir)/bin/$$j$(EXEEXT) >/dev/null 2>/dev/null \
-+		|| $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$i$(EXEEXT) $(DESTDIR)$(tooldir)/bin/$$j$(EXEEXT); \
- 	    fi; \
- 	  else true; \
- 	  fi; \

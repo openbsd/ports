@@ -1,6 +1,6 @@
---- binutils/bucomm.h.orig	Thu Jun  7 00:12:27 2001
-+++ binutils/bucomm.h	Sun Mar 10 02:28:35 2002
-@@ -166,7 +166,7 @@ void list_supported_targets PARAMS ((con
+--- binutils/bucomm.h.orig	Sun Jul 29 01:31:43 2001
++++ binutils/bucomm.h	Sun Mar 16 17:19:58 2003
+@@ -168,7 +168,7 @@ void list_supported_architectures PARAMS
  
  void print_arelt_descr PARAMS ((FILE *file, bfd *abfd, boolean verbose));
  

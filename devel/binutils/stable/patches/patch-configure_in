@@ -1,31 +1,30 @@
-$OpenBSD: patch-configure_in,v 1.3 2002/04/25 22:36:14 fgsch Exp $
---- configure.in.orig	Tue Jun 19 18:05:20 2001
-+++ configure.in	Thu Apr 25 18:06:44 2002
-@@ -690,6 +690,7 @@ case "${target}" in
+--- configure.in.orig	Sun Mar 16 15:45:23 2003
++++ configure.in	Sun Mar 16 15:42:29 2003
+@@ -415,6 +415,7 @@ case "${target}" in
    hppa*-*-*elf* | \
-   hppa*-*-linux-gnu* | \
+   parisc*-*-linux* | hppa*-*-linux* | \
    hppa*-*-lites* | \
 +  hppa*-*-openbsd* | \
    hppa*64*-*-*)
+     noconfigdirs="$noconfigdirs ${libgcj}"
      # Do configure ld/binutils/gas for this case.
-     ;;
-@@ -849,6 +850,9 @@ case "${target}" in
+@@ -571,6 +572,9 @@ case "${target}" in
    mips*-dec-bsd*)
-     noconfigdirs="$noconfigdirs gprof target-libgloss target-libffi"
+     noconfigdirs="$noconfigdirs gprof target-libgloss ${libgcj}"
      ;;
 +  mips*-*-openbsd*)
-+    noconfigdirs="target-libgloss target-libffi"
++    noconfigdirs="$noconfigdirs target-libgloss target-libffi ${libgcj}"
 +    ;;
    mips*-*-bsd*)
-     noconfigdirs="$noconfigdirs gprof target-libgloss target-libffi"
+     noconfigdirs="$noconfigdirs gprof target-libgloss ${libgcj}"
      ;;
-@@ -906,6 +910,9 @@ case "${target}" in
+@@ -628,6 +632,9 @@ case "${target}" in
      ;;
    v850ea-*-*)
-     noconfigdirs="$noconfigdirs target-libgloss target-libffi"
+     noconfigdirs="$noconfigdirs target-libgloss ${libgcj}"
 +    ;;
 +  vax-*-openbsd*)
-+    noconfigdirs="$noconfigdirs ld gas gprof"
++    noconfigdirs="$noconfigdirs ld gas gprof ${libgcj}"
      ;;
    vax-*-vms)
-     noconfigdirs="$noconfigdirs bfd binutils gdb ld target-newlib opcodes target-libgloss target-libffi"
+     noconfigdirs="$noconfigdirs bfd binutils gdb ld target-newlib opcodes target-libgloss ${libgcj}"

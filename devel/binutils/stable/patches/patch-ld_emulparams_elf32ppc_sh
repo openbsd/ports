@@ -1,0 +1,15 @@
+$OpenBSD: patch-ld_emulparams_elf32ppc_sh,v 1.1 2003/06/05 04:03:55 brad Exp $
+--- ld/emulparams/elf32ppc.sh.orig	Mon Oct 28 10:21:53 2002
++++ ld/emulparams/elf32ppc.sh	Thu Apr 24 16:09:49 2003
+@@ -10,6 +10,11 @@ MAXPAGESIZE=0x10000
+ ARCH=powerpc
+ MACHINE=
+ BSS_PLT=
++PAD_RO=
++RODATA_PADSIZE=${MAXPAGESIZE}
++RODATA_ALIGN=". = ALIGN(${RODATA_PADSIZE}) + (. & (${RODATA_PADSIZE} - 1))"
++PAD_GOT=
++PAD_PLT=
+ EXECUTABLE_SYMBOLS='PROVIDE (__stack = 0); PROVIDE (___stack = 0);'
+ OTHER_BSS_END_SYMBOLS='__end = .;'
+ OTHER_READWRITE_SECTIONS="

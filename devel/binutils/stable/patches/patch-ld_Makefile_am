@@ -1,23 +1,14 @@
-$OpenBSD: patch-ld_Makefile_am,v 1.3 2002/05/04 11:02:11 fgsch Exp $
---- ld/Makefile.am.orig	Mon Jun 11 07:05:07 2001
-+++ ld/Makefile.am	Sat May  4 06:44:48 2002
-@@ -168,6 +168,7 @@ ALL_EMULATIONS = \
- 	ehp3hpux.o \
- 	ehppaelf.o \
- 	ehppalinux.o \
-+	ehppaobsd.o \
- 	ei386aout.o \
- 	ei386beos.o \
- 	ei386bsd.o \
-@@ -179,6 +180,7 @@ ALL_EMULATIONS = \
+--- ld/Makefile.am.orig	Sun Mar 16 16:13:08 2003
++++ ld/Makefile.am	Sun Mar 16 16:30:29 2003
+@@ -210,6 +210,7 @@ ALL_EMULATIONS = \
  	ei386moss.o \
  	ei386msdos.o \
  	ei386nbsd.o \
 +	ei386obsd.o \
+ 	ei386nto.o \
  	ei386nw.o \
  	ei386pe.o \
- 	ei386pe_posix.o \
-@@ -195,6 +197,7 @@ ALL_EMULATIONS = \
+@@ -228,6 +229,7 @@ ALL_EMULATIONS = \
  	em68klinux.o \
  	em68klynx.o \
  	em68knbsd.o \
@@ -25,7 +16,7 @@ $OpenBSD: patch-ld_Makefile_am,v 1.3 2002/05/04 11:02:11 fgsch Exp $
  	em68kpsos.o \
  	em88kbcs.o \
  	emcorepe.o \
-@@ -226,6 +229,7 @@ ALL_EMULATIONS = \
+@@ -268,6 +270,7 @@ ALL_EMULATIONS = \
  	esparclinux.o \
  	esparclynx.o \
  	esparcnbsd.o \
@@ -33,76 +24,42 @@ $OpenBSD: patch-ld_Makefile_am,v 1.3 2002/05/04 11:02:11 fgsch Exp $
  	est2000.o \
  	esun3.o \
  	esun4.o \
-@@ -560,6 +564,10 @@ ehppalinux.c: $(srcdir)/emulparams/hppal
-   $(srcdir)/emultempl/elf32.em $(srcdir)/emultempl/hppaelf.em \
-   $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
- 	${GENSCRIPTS} hppalinux "$(tdir_hppalinux)"
-+ehppaobsd.c: $(srcdir)/emulparams/hppaobsd.sh \
-+  $(srcdir)/emultempl/elf32.em $(srcdir)/emultempl/hppaelf.em \
-+  $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
-+	${GENSCRIPTS} hppaobsd "$(tdir_hppaobsd)"
- ei386aout.c: $(srcdir)/emulparams/i386aout.sh \
-   $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/aout.sc ${GEN_DEPENDS}
- 	${GENSCRIPTS} i386aout "$(tdir_i386aout)"
-@@ -593,6 +601,9 @@ ei386msdos.c: $(srcdir)/emulparams/i386m
+@@ -809,6 +812,9 @@ ei386msdos.c: $(srcdir)/emulparams/i386m
  ei386nbsd.c:	$(srcdir)/emulparams/i386nbsd.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/aout.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} i386nbsd "$(tdir_i386nbsd)"
-+ei386obsd.c:	$(srcdir)/emulparams/i386obsd.sh \
++ei386obsd.c:    $(srcdir)/emulparams/i386obsd.sh \
 +  $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/aout.sc ${GEN_DEPENDS}
 +	${GENSCRIPTS} i386obsd "$(tdir_i386obsd)"
- ei386nw.c:	$(srcdir)/emulparams/i386nw.sh \
-   $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/nw.sc ${GEN_DEPENDS}
- 	${GENSCRIPTS} i386nw "$(tdir_i386nw)"
-@@ -642,6 +653,9 @@ em68klynx.c: $(srcdir)/emulparams/m68kly
+ ei386nto.c:	$(srcdir)/emulparams/i386nto.sh \
+   $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+ 	${GENSCRIPTS} i386nto "$(tdir_i386nto)"
+@@ -866,6 +872,9 @@ em68klynx.c: $(srcdir)/emulparams/m68kly
  em68knbsd.c:	$(srcdir)/emulparams/m68knbsd.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/aout.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} m68knbsd "$(tdir_m68knbsd)"
-+em68kobsd.c:	$(srcdir)/emulparams/m68kobsd.sh \
++em68kobsd.c:    $(srcdir)/emulparams/m68kobsd.sh \
 +  $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/aout.sc ${GEN_DEPENDS}
 +	${GENSCRIPTS} m68kobsd "$(tdir_m68kobsd)"
  em68kpsos.c:	$(srcdir)/emulparams/m68kpsos.sh \
    $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/psos.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} m68kpsos "$(tdir_m68kpsos)"
-@@ -741,6 +755,9 @@ esparclynx.c: $(srcdir)/emulparams/sparc
+@@ -1025,6 +1034,9 @@ esparclynx.c: $(srcdir)/emulparams/sparc
  esparcnbsd.c:	$(srcdir)/emulparams/sparcnbsd.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/aout.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} sparcnbsd "$(tdir_sparcnbsd)"
-+esparcobsd.c:	$(srcdir)/emulparams/sparcobsd.sh \
++esparcobsd.c:   $(srcdir)/emulparams/sparcobsd.sh \
 +  $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/aout.sc ${GEN_DEPENDS}
 +	${GENSCRIPTS} sparcobsd "$(tdir_sparcobsd)"
  est2000.c: $(srcdir)/emulparams/st2000.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/st2000.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} st2000 "$(tdir_st2000)"
-@@ -911,24 +928,24 @@ CLEANFILES = dep.sed DEP DEPA DEP1 DEP2
- .PHONY: install-exec-local install-data-local
- 
- install-exec-local: ld-new$(EXEEXT)
--	$(mkinstalldirs) $(bindir) $(tooldir)/bin
-+	$(mkinstalldirs) $(DESTDIR)$(bindir) $(DESTDIR)$(tooldir)/bin
+@@ -1212,7 +1224,7 @@ install-exec-local: ld-new$(EXEEXT)
+ 	$(mkinstalldirs) $(DESTDIR)$(bindir) $(DESTDIR)$(tooldir)/bin
  	@list='$(noinst_PROGRAMS)'; for p in $$list; do \
  	  if test -f $$p; then \
- 	    echo " $(LIBTOOL)  --mode=install $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed -e 's/$(EXEEXT)$$//' -e 's/-new//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
--	    $(LIBTOOL)  --mode=install $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed -e 's/$(EXEEXT)$$//' -e 's/-new//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
-+	    $(LIBTOOL)  --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed -e 's/$(EXEEXT)$$//' -e 's/-new//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+-	    echo " $(LIBTOOL)  --mode=install $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed -e 's/$(EXEEXT)$$//' -e 's/-new//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
++	    echo " $(LIBTOOL)  --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed -e 's/$(EXEEXT)$$//' -e 's/-new//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
+ 	    $(LIBTOOL)  --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed -e 's/$(EXEEXT)$$//' -e 's/-new//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
  	  else :; fi; \
  	done
- 	n=`echo ld | sed '$(transform)'`; \
- 	if [ "$(bindir)/$$n$(EXEEXT)" != "$(tooldir)/bin/ld$(EXEEXT)" ]; then \
--	  rm -f $(tooldir)/bin/ld$(EXEEXT); \
--	  ln $(bindir)/$$n$(EXEEXT) $(tooldir)/bin/ld$(EXEEXT) >/dev/null 2>/dev/null \
--	  || $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) ld-new$(EXEEXT) $(tooldir)/bin/ld$(EXEEXT); \
-+	  rm -f $(DESTDIR)$(tooldir)/bin/ld$(EXEEXT); \
-+	  ln $(DESTDIR)$(bindir)/$$n$(EXEEXT) $(DESTDIR)$(tooldir)/bin/ld$(EXEEXT) >/dev/null 2>/dev/null \
-+	  || $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) ld-new$(EXEEXT) $(DESTDIR)$(tooldir)/bin/ld$(EXEEXT); \
- 	fi
- 
- install-data-local:
--	$(mkinstalldirs) $(scriptdir)/ldscripts
-+	$(mkinstalldirs) $(DESTDIR)$(scriptdir)/ldscripts
- 	for f in ldscripts/*; do \
--	  $(INSTALL_DATA) $$f $(scriptdir)/$$f ; \
-+	  $(INSTALL_DATA) $$f $(DESTDIR)$(scriptdir)/$$f ; \
- 	done
- 
- # Stuff that should be included in a distribution.  The diststuff

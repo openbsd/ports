@@ -1,0 +1,15 @@
+$OpenBSD: patch-ld_emulparams_elf64alpha_sh,v 1.1 2003/06/05 04:03:55 brad Exp $
+--- ld/emulparams/elf64alpha.sh.orig	Sat Jul 13 21:14:46 2002
++++ ld/emulparams/elf64alpha.sh	Thu Apr 24 16:10:52 2003
+@@ -11,6 +11,11 @@ ARCH=alpha
+ MACHINE=
+ GENERATE_SHLIB_SCRIPT=yes
+ DATA_PLT=
++PAD_RO=
++RODATA_PADSIZE=${MAXPAGESIZE}
++RODATA_ALIGN=". = ALIGN(${RODATA_PADSIZE}) + (. & (${RODATA_PADSIZE} - 1))"
++PAD_GOT=
++PAD_PLT=
+ # Note that the number is always big-endian, thus we have to 
+ # reverse the digit string.
+ NOP=0x0000fe2f1f04ff47		# unop; nop
