@@ -1,0 +1,32 @@
+--- pwm.1x.in~ Sat Jul  1 14:11:03 2000
++++ pwm.1x.in Mon Mar 19 00:00:06 2001
+@@ -30,16 +30,16 @@ Show about text
+ 
+ .SH FILES
+ .TP
+-.B PREFIX/etc/pwm/pwm.conf
++.B PREFIX/share/pwm/pwm.conf
+ System default configuration file
+ .TP
+-.B PREFIX/etc/pwm/look-*.conf
++.B PREFIX/share/pwm/look-*.conf
+ Color scheme configuration files
+ .TP
+-.B PREFIX/etc/pwm/keys-*.conf
++.B PREFIX/share/pwm/keys-*.conf
+ Key binding configuration files
+ .TP
+-.B PREFIX/etc/pwm/buttons-*.conf
++.B PREFIX/share/pwm/buttons-*.conf
+ Pointer (mouse) button binding configuration files
+ .TP
+ .B ~/.pwm/pwm.conf
+@@ -48,7 +48,7 @@ User default configuration file (overrid
+ .SH SEE ALSO
+ The PWM home page, http://www.students.tut.fi/~tuomov/pwm/
+ .PP
+-.BR PREFIX/doc/pwm/config.txt
++.BR PREFIX/share/doc/pwm/config.txt
+ .PP
+ .BR X (1x)
+ .SH AUTHOR

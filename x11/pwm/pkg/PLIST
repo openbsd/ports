@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/19 15:48:38 jakob Exp $
+bin/pwm
+share/pwm/buttons-default.conf
+share/pwm/keys-default.conf
+share/pwm/look-beoslike.conf
+share/pwm/look-brownsteel.conf
+share/pwm/menus-default.conf
+@unexec if cmp -s %B/sample.conf %B/pwm.conf; then rm -f %B/pwm.conf; fi
+share/pwm/sample.conf
+@exec if [ ! -e %B/pwm.conf ]; then cp %B/sample.conf %B/pwm.conf; fi
+share/doc/pwm/LICENSE
+share/doc/pwm/config.txt
+man/man1/pwm.1
+@dirrm share/doc/pwm
+@dirrm share/pwm

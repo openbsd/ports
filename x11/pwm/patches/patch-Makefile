@@ -1,0 +1,11 @@
+--- Makefile~ Sat Jul  1 15:48:50 2000
++++ Makefile Sat Mar 17 19:19:05 2001
+@@ -21,7 +21,7 @@ OBJS= main.o draw.o font.o frame.o event
+ binding.o winlist.o mwmhints.o signal.o winprops.o
+ 
+ BINDIR=$(PREFIX)/bin
+-ETCDIR=$(PREFIX)/etc
++ETCDIR=$(PREFIX)/share
+ MANDIR=$(PREFIX)/man/man1
+ DOCDIR=$(PREFIX)/doc
+ 
