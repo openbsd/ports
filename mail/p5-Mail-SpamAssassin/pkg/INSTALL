@@ -1,0 +1,68 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2002/10/06 23:34:26 lebel Exp $
+#
+# Pre/post-installation setup of SpamAssassin
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=${SYSCONFDIR}/mail/spamassassin
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/SpamAssassin
+
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration files in,"
+    echo "| $CONFIG_DIR have NOT been changed."
+    echo "| You may want to compare them to the current sample files"
+    echo "| in $SAMPLE_CONFIG_DIR, and update your configuration"
+    echo "| as needed."
+    echo "+---------------"
+    echo
+}
+
+do_install()
+{
+    install -d -o root -g wheel -m 755 $CONFIG_DIR
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/local.cf $CONFIG_DIR/local.cf
+    echo
+    echo "+---------------"
+    echo "| The $1 configuration files have been installed into"
+    echo "| $CONFIG_DIR. Please view these files and change the"
+    echo "| configuration to meet your needs."
+    echo "+---------------"
+    echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if [ ! -d $CONFIG_DIR ]; then
+	    do_install $1
+	elif [ ! -f $CONFIG_DIR/local.cf ]; then
+	    do_install $1
+	else
+	    do_notice $1
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

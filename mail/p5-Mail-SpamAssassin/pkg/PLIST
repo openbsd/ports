@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/09/04 08:32:33 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/10/06 23:34:26 lebel Exp $
 bin/spamassassin
 bin/spamc
 bin/spamd
@@ -37,6 +37,7 @@ share/doc/SpamAssassin/README
 share/doc/SpamAssassin/procmailrc.example
 share/doc/SpamAssassin/sample-nonspam.txt
 share/doc/SpamAssassin/sample-spam.txt
+share/examples/SpamAssassin/local.cf
 share/spamassassin/10_misc.cf
 share/spamassassin/20_anti_ratware.cf
 share/spamassassin/20_body_tests.cf
@@ -60,5 +61,7 @@ share/spamassassin/languages
 share/spamassassin/triplets.txt
 share/spamassassin/user_prefs.template
 @dirrm share/spamassassin
+@dirrm share/examples/SpamAssassin
 @dirrm share/doc/SpamAssassin
 @dirrm ${P5SITE}/Mail/SpamAssassin
+

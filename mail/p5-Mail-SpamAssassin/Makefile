@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/09/05 19:29:29 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2002/10/06 23:34:26 lebel Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
@@ -25,6 +25,9 @@ RUN_DEPENDS=		:p5-Net-DNS-*:net/p5-Net-DNS \
 			:procmail-*:mail/procmail
 
 CONFIGURE_STYLE=	perl
+
+SAMPLE_CONFIG_DIR=	${PREFIX}/share/examples/SpamAssassin
+INSTALL_TARGET=		LOCAL_RULES_DIR=${WRKINST}${SAMPLE_CONFIG_DIR} install
 
 # regress insists on creating files in $HOME
 PORTHOME=		${WRKDIR}/temp-home
