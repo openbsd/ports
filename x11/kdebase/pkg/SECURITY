@@ -1,3 +1,3 @@
-There's a report of a hole in klock in bugtraq, not yet investigated.
-It's *strongly advised* not to use klock until the hole is
-confirmed/disproved.
+kscreensaver is not really secure until someone conducts a thorough audit.
+It does not support KerberosIV for the time being anyway.
+
