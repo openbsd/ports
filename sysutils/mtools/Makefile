@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.40 2003/04/10 18:08:57 jsyn Exp $
+# $OpenBSD: Makefile,v 1.41 2003/05/26 02:02:07 fgsch Exp $
 
 COMMENT=	"read/write/list/format DOS disks under Unix"
 
-DATE=		20021118
-DISTNAME=	mtools-3.9.8
-PKGNAME=	mtools-3.9.8.${DATE}
+DATE=		20030524
+DISTNAME=	mtools-3.9.9
+PKGNAME=	${DISTNAME}.${DATE}
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tux.org/pub/knaff/mtools/ \
 		${HOMEPAGE}
 
-PATCHFILES=	mtools-3.9.8-${DATE}.diff.gz
+PATCHFILES=	${DISTNAME}-${DATE}.diff.gz
 
 MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
@@ -21,6 +21,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=		Yes
+
+USE_X11=		Yes
 
 CONFIGURE_STYLE=	autoconf dest
 SEPARATE_BUILD=		Simple
