@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:53 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/28 10:38:54 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1999/02/18 16:05:47 steve Exp $
 
 DISTNAME=       vnc-3.3.2r3_unixsrc
@@ -11,17 +11,18 @@ DISTFILES=	vnc-3.3.2r3_unixsrc.tgz vnc-3.3.2_doc.tgz
 MAINTAINER=	brad@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_ONLY=	vnc-3.3.2r3_unixsrc.tgz
 IGNOREFILES=	${DISTFILES}
 
 WRKDIST=		${WRKDIR}/vnc_unixsrc
 
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
+FAKE=		Yes
 
 ALL_TARGET=    	World
 
@@ -31,16 +32,16 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Xvnc/programs/Xserver/Xvnc ${PREFIX}/bin/Xvnc
 	${INSTALL_PROGRAM} ${WRKSRC}/vncviewer/vncviewer ${PREFIX}/bin/vncviewer
 	${INSTALL_PROGRAM} ${WRKSRC}/vncpasswd/vncpasswd ${PREFIX}/bin/vncpasswd
-	sed  -e s%/usr/local/vnc/classes%${PREFIX}/share/vnc/classes% \
+	sed  -e s%/usr/local/vnc/classes%${TRUEPREFIX}/share/vnc/classes% \
 		< ${WRKSRC}/vncserver \
 		> ${WRKSRC}/vncserver.local
 	${INSTALL_SCRIPT} ${WRKSRC}/vncserver.local ${PREFIX}/bin/vncserver
 # The documentation comes with bogus ownerships; this is a little leaky security-wise
-	mkdir -p ${PREFIX}/share/doc/vnc
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vnc
 	tar -C ${PREFIX}/share/doc/vnc -xzf ${DISTDIR}/vnc-3.3.2_doc.tgz
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/vnc
 # Go install Java classes
-	mkdir -p ${PREFIX}/share/vnc
+	${INSTALL_DATA_DIR} ${PREFIX}/share/vnc
 	cp -R ${WRKSRC}/classes ${PREFIX}/share/vnc
 
 .include <bsd.port.mk>
