@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2005/01/10 23:18:32 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.39 2005/03/15 22:08:39 pvalchev Exp $
 # $NetBSD: Makefile,v 1.37 2004/10/03 00:13:16 tv Exp $
 
 COMMENT=	"tools to connect your PalmOS® compatible handheld"
@@ -27,10 +27,6 @@ WANTLIB=		c m ncurses readline stdc++ z
 
 MODULES=		converters/libiconv
 LIB_DEPENDS=		png.4::graphics/png
-
-.if ${MACHINE_ARCH} == "powerpc"
-PATCH_LIST=		patch-* gcc-*
-.endif
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
