@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.6 2004/06/22 21:05:20 brad Exp $
---- dovecot-example.conf.orig	2004-06-18 15:25:31.000000000 -0400
-+++ dovecot-example.conf	2004-06-22 16:42:52.000000000 -0400
+$OpenBSD: patch-dovecot-example_conf,v 1.7 2004/06/25 17:41:59 brad Exp $
+--- dovecot-example.conf.orig	Fri Jun 18 15:25:31 2004
++++ dovecot-example.conf	Fri Jun 25 13:35:41 2004
 @@ -1,13 +1,12 @@
  ## Dovecot 1.0 configuration file
  
@@ -10,9 +10,9 @@ $OpenBSD: patch-dovecot-example_conf,v 1.6 2004/06/22 21:05:20 brad Exp $
 -# are for configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
 -# --with-ssldir=/etc/ssl
 +# any of the lines.
-+
-+# *** NOTE *** Some values HAVE been changed for OpenBSD use.
  
++# *** NOTE *** Some values HAVE been changed for OpenBSD use.
++
  # Base directory where to store runtime data.
 -#base_dir = /var/run/dovecot/
 +base_dir = /var/dovecot/
