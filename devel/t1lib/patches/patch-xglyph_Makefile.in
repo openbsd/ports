@@ -1,6 +1,6 @@
---- xglyph/Makefile.in.orig	Thu Aug 31 01:49:54 2000
-+++ xglyph/Makefile.in	Thu Aug 31 01:50:34 2000
-@@ -38,6 +38,8 @@
+--- xglyph/Makefile.in.orig	Mon Jan 15 17:06:53 2001
++++ xglyph/Makefile.in	Mon Aug 27 16:43:46 2001
+@@ -38,6 +38,8 @@ ALLCFLAGS = $(CFLAGS)
  SUBMAKE   = $(MAKE) 'CC=$(CC)' 'CFLAGS=$(ALLCFLAGS)' 'OPTIONS=$(OPTIONS)'
  @SET_MAKE@
  
@@ -9,7 +9,7 @@
  INSTALL         = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
  INSTALL_DATA    = @INSTALL_DATA@
-@@ -94,12 +96,12 @@
+@@ -94,12 +96,12 @@ clean: dummy
  
  
  install: dummy

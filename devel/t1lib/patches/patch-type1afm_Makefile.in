@@ -1,6 +1,6 @@
---- type1afm/Makefile.in.orig	Thu Aug 31 00:54:02 2000
-+++ type1afm/Makefile.in	Thu Aug 31 00:54:47 2000
-@@ -38,6 +38,8 @@
+--- type1afm/Makefile.in.orig	Mon Jan 15 17:08:23 2001
++++ type1afm/Makefile.in	Mon Aug 27 16:43:46 2001
+@@ -38,6 +38,8 @@ ALLCFLAGS = $(CFLAGS)
  SUBMAKE   = $(MAKE) 'CC=$(CC)' 'CFLAGS=$(ALLCFLAGS)' 'OPTIONS=$(OPTIONS)'
  @SET_MAKE@
  
@@ -9,7 +9,7 @@
  INSTALL         = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
  INSTALL_DATA    = @INSTALL_DATA@
-@@ -87,14 +89,14 @@
+@@ -87,14 +89,14 @@ clean: dummy
  	-rmdir .libs
  
  install: dummy
