@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2002/10/28 01:38:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/04/04 14:19:01 brad Exp $
 
 COMMENT=	"simple IRC relay proxy with support for virtual hosting"
 
-DISTNAME=	bnc2.8.4
-PKGNAME=	bnc-2.8.4
+DISTNAME=	${PKGNAME:S,-,,}
+PKGNAME=	bnc-2.8.6
 CATEGORIES=	net
-MASTER_SITES=	http://gotbnc.com/files/
+MASTER_SITES=	${HOMEPAGE}files/
 
 HOMEPAGE=	http://gotbnc.com/
 
-MAINTAINER=	Brad Smith <brad@openbsd.org>
+MAINTAINER=	Robert Nagy <thuglife@bsd.hu>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

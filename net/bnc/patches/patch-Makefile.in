@@ -1,7 +1,7 @@
---- Makefile.in.orig	Sun Dec 31 03:19:39 2000
-+++ Makefile.in	Tue Feb 27 11:50:17 2001
-@@ -1,12 +1,12 @@
- OBJS = bnc.o conf.o server.o cmds.o mtype.o
+$OpenBSD: patch-Makefile.in,v 1.2 2004/04/04 14:19:02 brad Exp $
+--- Makefile.in.orig	Thu Apr  1 11:42:53 2004
++++ Makefile.in	Thu Apr  1 11:43:40 2004
+@@ -1,11 +1,11 @@
  LIBS = @LIBS@
 -OPTS = -O3
 +OPTS = @CFLAGS@
