@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_toplev_c,v 1.1.1.1 2005/01/03 15:21:27 espie Exp $
+$OpenBSD: patch-gcc_toplev_c,v 1.2 2005/01/04 23:06:33 espie Exp $
 --- gcc/toplev.c.orig	Mon Jan  3 12:24:48 2005
 +++ gcc/toplev.c	Mon Jan  3 12:27:08 2005
 @@ -852,7 +852,11 @@ int flag_instrument_function_entry_exit 
@@ -13,6 +13,36 @@ $OpenBSD: patch-gcc_toplev_c,v 1.1.1.1 2005/01/03 15:21:27 espie Exp $
  
  /* This will perform a peephole pass before sched2.  */
  int flag_peephole2 = 0;
+@@ -904,6 +908,18 @@ int align_functions_log;
+    minimum function alignment.  Zero means no alignment is forced.  */
+ int force_align_functions_log;
+ 
++#if defined(STACK_PROTECTOR) && defined(STACK_GROWS_DOWNWARD)
++/* Nonzero means use propolice as a stack protection method */
++int flag_propolice_protection = 1;
++int flag_stack_protection = 0;
++#else
++int flag_propolice_protection = 0;
++int flag_stack_protection = 0;
++#endif
++/* Warn when not issuing stack smashing protection for some reason */
++int warn_stack_protector;
++
++
+ /* Table of supported debugging formats.  */
+ static const struct
+ {
+@@ -1188,6 +1201,10 @@ static const lang_independent_options f_
+    N_("Trap for signed overflow in addition / subtraction / multiplication") },
+   { "new-ra", &flag_new_regalloc, 1,
+    N_("Use graph coloring register allocation.") },
++  {"stack-protector", &flag_propolice_protection, 1,
++   N_("Enables stack protection") },
++  {"stack-protector-all", &flag_stack_protection, 1,
++   N_("Enables stack protection of every function") } ,
+ };
+ 
+ /* Table of language-specific options.  */
 @@ -1362,6 +1366,9 @@ documented_lang_options[] =
    { "-Wwrite-strings",
      N_("Mark strings as 'const char *'") },
@@ -23,6 +53,17 @@ $OpenBSD: patch-gcc_toplev_c,v 1.1.1.1 2005/01/03 15:21:27 espie Exp $
  
  #define DEFINE_LANG_NAME(NAME) { NULL, NAME },
  
+@@ -1547,7 +1567,9 @@ static const lang_independent_options W_
+   {"missing-noreturn", &warn_missing_noreturn, 1,
+    N_("Warn about functions which might be candidates for attribute noreturn") },
+   {"strict-aliasing", &warn_strict_aliasing, 1,
+-   N_ ("Warn about code which might break the strict aliasing rules") }
++   N_ ("Warn about code which might break the strict aliasing rules") },
++  {"stack-protector", &warn_stack_protector, 1,
++   N_("Warn when disabling stack protector for some reason")}
+ };
+ 
+ void
 @@ -4910,14 +4917,19 @@ parse_options_and_default_flags (argc, a
        flag_schedule_insns_after_reload = 1;
  #endif
