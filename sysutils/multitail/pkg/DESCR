@@ -1,0 +1,9 @@
+multitail allows the viewing of one or multiple files like
+the original tail(1) program. 
+The difference is that this program creates multiple windows
+windows on the console (with ncurses). It can also use colors
+while displaying the logfiles for faster recognizing which
+lines are important and which are not. It is optimized for
+terminal-sessions through slow links.
+
+WWW: ${HOMEPAGE}
