@@ -1,5 +1,5 @@
 --- gas/configure.in.orig	Wed Oct 30 12:07:32 2002
-+++ gas/configure.in	Thu Jun  5 12:36:15 2003
++++ gas/configure.in	Thu Jun  5 19:13:17 2003
 @@ -260,7 +260,7 @@ changequote([,])dnl
  					;;
  			    esac
@@ -16,7 +16,7 @@
 -                               sparc) fmt=aout ;;
 +                               sparc)
 +				  case ${os} in
-+				     openbsd[[01]].* | openbsd2.[[0-9]] | openbsd3.[[0-1]])
++				     openbsd[[0-2]].* | openbsd3.[[0-1]])
 +					 fmt=aout ;;
 +				     *)
 +					 fmt=elf ;;
