@@ -1,0 +1,12 @@
+$OpenBSD: patch-gas_config_tc-sparc_c,v 1.1 2003/06/13 04:17:12 brad Exp $
+--- gas/config/tc-sparc.c.orig	Thu Jun 12 22:28:54 2003
++++ gas/config/tc-sparc.c	Thu Jun 12 22:29:11 2003
+@@ -305,7 +305,7 @@ sparc_target_format ()
+     init_default_arch ();
+ 
+ #ifdef OBJ_AOUT
+-#ifdef TE_NetBSD
++#if defined(TE_NetBSD) || defined(TE_OpenBSD)
+   return "a.out-sparc-netbsd";
+ #else
+ #ifdef TE_SPARCAOUT

@@ -1,6 +1,6 @@
-$OpenBSD: patch-bfd_config_bfd,v 1.8 2003/06/08 03:04:50 brad Exp $
+$OpenBSD: patch-bfd_config_bfd,v 1.9 2003/06/13 04:17:12 brad Exp $
 --- bfd/config.bfd.orig	Thu Nov  7 11:57:50 2002
-+++ bfd/config.bfd	Thu Jun  5 22:40:52 2003
++++ bfd/config.bfd	Thu Jun 12 12:11:41 2003
 @@ -413,11 +413,15 @@ case "${targ}" in
      targ_defvec=i386pe_vec
      targ_selvecs="i386pe_vec i386pei_vec bfd_elf32_i386_vec"
@@ -31,6 +31,15 @@ $OpenBSD: patch-bfd_config_bfd,v 1.8 2003/06/08 03:04:50 brad Exp $
 +  mips*-*-netbsd* | mips*-*-openbsd*)
      targ_defvec=bfd_elf32_bigmips_vec
      targ_selvecs="bfd_elf32_littlemips_vec ecoff_big_vec ecoff_little_vec"
+     ;;
+@@ -788,7 +792,7 @@ case "${targ}" in
+     targ_defvec=pc532machaout_vec
+     targ_underscore=yes
+     ;;
+-  ns32k-*-netbsd* | ns32k-*-lites* | ns32k-*-openbsd*)
++  ns32k-*-netbsd* | ns32k-*-lites*)
+     targ_defvec=pc532netbsd_vec
+     targ_underscore=yes
      ;;
 @@ -1041,10 +1045,14 @@ case "${targ}" in
      targ_selvecs=bfd_elf32_sparc_vec
