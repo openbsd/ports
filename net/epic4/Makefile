@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2001/03/24 22:03:24 brad Exp $
+# $OpenBSD: Makefile,v 1.41 2001/03/31 21:23:37 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 COMMENT=	"(E)nhanced (P)rogrammable (I)RC-II (C)lient"
@@ -6,10 +6,16 @@ COMMENT=	"(E)nhanced (P)rogrammable (I)RC-II (C)lient"
 VERSION=	0.10.1
 DISTNAME=	epic4-${VERSION}
 CATEGORIES=	net
-NEED_VERSION=	1.363
+NEED_VERSION=	1.364
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-BETA/
+MASTER_SITES0=	http://www.t17.ds.pwr.wroc.pl/~misiek/ipv6/ \
+		http://zuntum.net/patches/ \
+		http://flis.utech.lublin.pl/~zuntum/patches/
 DISTFILES=	epic4-${VERSION}.tar.gz epic4pre2-help.tar.gz
 EXTRACT_ONLY=	epic4-${VERSION}.tar.gz
+
+PATCHFILES=	epic4-0.10.1-ipv6-20010331.patch.gz:0
+PATCH_DIST_STRIP= -p1
 
 HOMEPAGE=	http://www.epicsol.org/
 
@@ -29,10 +35,14 @@ FAKE_FLAGS=	IP="${WRKINST}" \
 		${MAKE_FLAGS}
 
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+
+DOCS=	README README.v6 doc/IPv4-6.txt
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/epic4
 	@cd ${PREFIX}/bin && ln -sf epic-EPIC4-${VERSION} epic
+	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/epic4
 	${INSTALL_MAN} ${WRKSRC}/doc/epic.1 ${PREFIX}/man/man1
 	@cd ${PREFIX}/share/epic && tar -zxf ${FULLDISTDIR}/epic4pre2-help.tar.gz
 

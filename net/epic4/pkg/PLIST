@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.25 2001/03/24 17:29:16 brad Exp $
+@comment $OpenBSD: PLIST,v 1.26 2001/03/31 21:23:38 brad Exp $
 bin/epic
 bin/epic-EPIC4-${VERSION}
 libexec/wserv-epic
 man/man1/epic.1
+share/doc/epic4/IPv4-6.txt
+share/doc/epic4/README
+share/doc/epic4/README.v6
 share/epic/help/1_General/1_General
 share/epic/help/1_General/away
 share/epic/help/1_General/bye
@@ -944,3 +947,4 @@ share/epic/script/window
 @dirrm share/epic/help/1_General
 @dirrm share/epic/help
 @dirrm share/epic
+@dirrm share/doc/epic4
