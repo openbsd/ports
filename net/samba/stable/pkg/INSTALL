@@ -1,22 +1,18 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.3 2003/05/12 18:02:45 sturm Exp $
+# $OpenBSD: INSTALL,v 1.4 2004/05/28 17:24:54 brad Exp $
 #
-# Pre/post-installation setup of samba
+# Pre/post-installation setup of Samba
 
-# exit on errors, use a sane path and install prefix
-#
-set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${CONFDIR}
 CONFIG_FILE=$CONFIG_DIR/smb.conf
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/samba
+SAMPLE_CONFIG_FILE=$SAMPLE_CONFIG_DIR/smb.conf
 SAMBA_SPOOL=${SAMBA_SPOOL}
 
 install -d -o root -g wheel -m 1755 $SAMBA_SPOOL
 
-# Function: tell the user what s/he needs to do to use the port just installed
-#
 do_notice()
 {
     echo
@@ -29,14 +25,12 @@ do_notice()
     echo
 }
 
-# Function: install the samba configuration files from the samples
-#
 do_install()
 {
     install -d -o root -g wheel -m 755 $CONFIG_DIR
     cat /etc/passwd | $PREFIX/bin/mksmbpasswd.sh > $CONFIG_DIR/smbpasswd; \
     chmod 600 $CONFIG_DIR/smbpasswd
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/smb.conf.default $CONFIG_FILE
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_FILE $CONFIG_FILE
     echo
     echo "+---------------"
     echo "| The $1 configuration files in $CONFIG_DIR,"
@@ -47,15 +41,11 @@ do_install()
 
 }
 
-# verify proper execution
-#
 if [ $# -ne 2 ]; then
     echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
     exit 1
 fi
 
-# Verify/process the command
-#
 case $2 in
     PRE-INSTALL)
 	: nothing to pre-install for this port

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/04/14 05:23:57 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/05/28 17:24:54 brad Exp $
 bin/convert_smbpasswd
 bin/make_printerdef
 bin/make_smbcodepage
@@ -202,7 +202,6 @@ share/examples/samba/LDAP/smbldap-tools/smbldap-usershow.pl
 share/examples/samba/LDAP/smbldap-tools/smbldap_conf.pm
 share/examples/samba/LDAP/smbldap-tools/smbldap_tools.pm
 share/examples/samba/README
-share/examples/samba/VFS/.cvsignore
 share/examples/samba/VFS/Makefile.in
 share/examples/samba/VFS/README
 share/examples/samba/VFS/audit.c
@@ -245,7 +244,8 @@ share/examples/samba/printing/smbprint.safer
 share/examples/samba/printing/smbprint.sysv
 share/examples/samba/simple/README
 share/examples/samba/simple/smb.conf
-share/examples/samba/smb.conf.default
+share/examples/samba/smb.conf
+@comment share/examples/samba/smb.conf.default
 share/examples/samba/svr4-startup/README
 share/examples/samba/svr4-startup/samba.server
 share/examples/samba/thoralf/smb.conf

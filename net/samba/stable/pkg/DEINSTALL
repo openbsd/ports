@@ -1,15 +1,14 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.4 2003/10/18 15:36:34 naddy Exp $
+# $OpenBSD: DEINSTALL,v 1.5 2004/05/28 17:24:54 brad Exp $
 #
-# samba de-installation
+# Samba de-installation
 
-set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${CONFDIR}
 SAMBA_SPOOL=${SAMBA_SPOOL}
 
-if [ "$PKG_DELETE_EXTRA" != Yes -a -d ${CONFIG_DIR} ]; then
+if [ "$PKG_DELETE_EXTRA" != Yes ]; then
     echo
     echo "+---------------"
     echo "| To completely deinstall the $1 package you need to perform"
