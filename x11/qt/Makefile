@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 1999/04/12 23:23:09 brad Exp $
+# $OpenBSD: Makefile,v 1.18 1999/05/27 20:13:30 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
-DISTNAME=	qt-1.42
+DISTNAME=	qt-1.44
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
@@ -9,18 +9,18 @@ NEED_VERSION=	1.64
 
 MAINTAINER=	brad@openbsd.org
 
-.if defined(USE_MESAGL)
-LIB_DEPENDS=	MesaGL:${PORTSDIR}/graphics/MesaGL \
-		MesaGLU:${PORTSDIR}/graphics/MesaGL
-.endif
+LIB_DEPENDS=	MesaGL.3.0:${PORTSDIR}/graphics/MesaGL \
+		MesaGLU.3.0:${PORTSDIR}/graphics/MesaGL
 
+# internal compiler error
 .if ${MACHINE_ARCH} == "sparc"
-BROKEN=		"Currently does not build on sparc due to g++ bug"
+PATCH_LIST=	patch-* sup-sparc
+BROKEN=		"Currently does not build on sparc due to ld bug"
 .endif
 
 USE_GMAKE=	yes
 USE_X11=	yes
-MAKE_ENV+=	QTDIR=${WRKSRC} CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV+=	QTDIR=${WRKSRC} CX="${CXX}" CXFLAGS="${CXXFLAGS}"
 
 EXAMPLES=aclock application biff connect cursor dclock desktop dirview \
 	dragdrop drawdemo forever hello layout life menu movies pref \
@@ -34,8 +34,8 @@ do-install:
 	if [ -f ${WRKSRC}/lib/libqt.a ]; then \
 	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.a ${X11BASE}/lib; \
 	fi
-	if [ -f ${WRKSRC}/lib/libqt.so.1.42 ]; then \
-	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.so.1.42 ${X11BASE}/lib; \
+	if [ -f ${WRKSRC}/lib/libqt.so.1.44 ]; then \
+	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.so.1.44 ${X11BASE}/lib; \
 	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/moc ${X11BASE}/bin
 	${LDCONFIG} -m ${PREFIX}/lib
