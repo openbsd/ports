@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/09/19 07:00:42 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/03/06 00:24:56 pvalchev Exp $
 @group games
 @mode 2755
 bin/xpat2
+@mode
 lib/X11/xpat/XPat.ad.Motif
 lib/X11/xpat/XPat.ad.Xaw
 lib/X11/xpat/XPat.ad.Xlib
