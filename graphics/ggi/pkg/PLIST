@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.6 2000/09/24 00:01:04 brad Exp $
 bin/cube3d
 bin/monitest
 include/ggi/display/aa.h
@@ -37,95 +38,65 @@ include/ggi/misc.h
 include/ggi/types.h
 lib/ggi/default/color.a
 lib/ggi/default/color.la
-lib/ggi/default/color.so
 lib/ggi/default/ilbm.a
 lib/ggi/default/ilbm.la
-lib/ggi/default/ilbm.so
 lib/ggi/default/iplanar_2p.a
 lib/ggi/default/iplanar_2p.la
-lib/ggi/default/iplanar_2p.so
 lib/ggi/default/linear_1.a
 lib/ggi/default/linear_1.la
-lib/ggi/default/linear_1.so
 lib/ggi/default/linear_16.a
 lib/ggi/default/linear_16.la
-lib/ggi/default/linear_16.so
 lib/ggi/default/linear_1_r.a
 lib/ggi/default/linear_1_r.la
-lib/ggi/default/linear_1_r.so
 lib/ggi/default/linear_2.a
 lib/ggi/default/linear_2.la
-lib/ggi/default/linear_2.so
 lib/ggi/default/linear_24.a
 lib/ggi/default/linear_24.la
-lib/ggi/default/linear_24.so
 lib/ggi/default/linear_32.a
 lib/ggi/default/linear_32.la
-lib/ggi/default/linear_32.so
 lib/ggi/default/linear_4.a
 lib/ggi/default/linear_4.la
-lib/ggi/default/linear_4.so
 lib/ggi/default/linear_8.a
 lib/ggi/default/linear_8.la
-lib/ggi/default/linear_8.so
 lib/ggi/default/planar.a
 lib/ggi/default/planar.la
-lib/ggi/default/planar.so
 lib/ggi/default/stubs.a
 lib/ggi/default/stubs.la
-lib/ggi/default/stubs.so
 lib/ggi/default/text_16.a
 lib/ggi/default/text_16.la
-lib/ggi/default/text_16.so
 lib/ggi/default/text_32.a
 lib/ggi/default/text_32.la
-lib/ggi/default/text_32.so
 lib/ggi/display/X-misc.a
 lib/ggi/display/X-misc.la
-lib/ggi/display/X-misc.so
 lib/ggi/display/X.a
 lib/ggi/display/X.la
-lib/ggi/display/X.so
 lib/ggi/display/Xlib.a
 lib/ggi/display/Xlib.la
-lib/ggi/display/Xlib.so
 lib/ggi/display/file.a
 lib/ggi/display/file.la
-lib/ggi/display/file.so
 lib/ggi/display/mansync.a
 lib/ggi/display/mansync.la
-lib/ggi/display/mansync.so
 lib/ggi/display/memory.a
 lib/ggi/display/memory.la
-lib/ggi/display/memory.so
 lib/ggi/display/monotext.a
 lib/ggi/display/monotext.la
-lib/ggi/display/monotext.so
 lib/ggi/display/multi.a
 lib/ggi/display/multi.la
-lib/ggi/display/multi.so
 lib/ggi/display/palemu.a
 lib/ggi/display/palemu.la
-lib/ggi/display/palemu.so
 lib/ggi/display/sub.a
 lib/ggi/display/sub.la
-lib/ggi/display/sub.so
 lib/ggi/display/tele.a
 lib/ggi/display/tele.la
-lib/ggi/display/tele.so
 lib/ggi/display/tile.a
 lib/ggi/display/tile.la
-lib/ggi/display/tile.so
 lib/ggi/display/trueemu.a
 lib/ggi/display/trueemu.la
-lib/ggi/display/trueemu.so
 lib/libggi.a
 lib/libggi.la
-lib/libggi.so.2.0
 lib/libggimisc.a
 lib/libggimisc.la
-lib/libggimisc.so.2.0
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 man/man3/ggiAddFlags.3ggi
 man/man3/ggiCheckGraphMode.3ggi
 man/man3/ggiCheckMode.3ggi
@@ -202,19 +173,13 @@ man/man3/ggiUnpackPixels.3ggi
 man/man6/cube3d.6
 man/man7/libggi.7ggi
 share/doc/ggi/README
-share/doc/ggi/libggi.conf.example
-share/doc/ggi/libggimisc.conf.example
+share/examples/ggi/libggi.conf.example
+share/examples/ggi/libggimisc.conf.example
 @dirrm share/doc/ggi
+@dirrm share/examples/ggi
 @dirrm lib/ggi/display
 @dirrm lib/ggi/default
 @dirrm lib/ggi
 @dirrm include/ggi/internal
 @dirrm include/ggi/display
 @dirrm include/ggi
-@unexec echo "***"
-@unexec echo "*** gii configuation files stored in /etc/ggi have not been"
-@unexec echo "*** removed.  You may wish to remove them manually."
-@unexec echo "***"
-@exec [ -d /etc/ggi ] && mkdir -p /etc/ggi
-@exec [ -f /etc/ggi/libggi.conf ] || cp share/doc/ggi/libggi.conf.example /etc/ggi/libggi.conf
-@exec [ -f /etc/ggi/libggimisc.conf ] || cp share/doc/ggi/libggimisc.conf.example /etc/ggi/libggimisc.conf
