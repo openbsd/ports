@@ -6,6 +6,4 @@ To find a station ID, visit http://www.nws.noaa.gov/tg/siteloc.shtml
 For instance, "Belgium/Bruxelles National" has the EBBR ID so a common 
 usage of pymet2 would be:
 
-  $ pymet2 EBBR
-
-The default ID taken if none supplied in the command line is NZCM.
+  $ pymet EBBR

@@ -1,4 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/02/03 18:23:20 xsa Exp $
-bin/pymet2
+@comment $OpenBSD: PLIST,v 1.2 2004/08/02 20:59:38 xsa Exp $
+bin/pymet
 lib/python${MODPY_VERSION}/site-packages/pymetar.py
 lib/python${MODPY_VERSION}/site-packages/pymetar.pyc
+share/doc/py-metar/
+share/doc/py-metar/COPYING
+share/doc/py-metar/README
+share/doc/py-metar/THANKS
+share/doc/py-metar/TODO
+share/doc/py-metar/librarydoc.txt
+share/examples/py-metar/
+share/examples/py-metar/example.py

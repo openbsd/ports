@@ -1,0 +1,13 @@
+$OpenBSD: patch-setup_py,v 1.1 2004/08/02 20:59:38 xsa Exp $
+--- setup.py.orig	Mon Aug  2 12:15:19 2004
++++ setup.py	Mon Aug  2 22:55:43 2004
+@@ -26,6 +26,7 @@ setup(name = "pymetar", version = pymeta
+       packages= [ "" ],
+       py_modules=["pymetar"],
+       scripts = [ "bin/weather.py" ], 
+-      data_files = [("share/doc/pymetar-%s/"%pymetar.__version__,
+-       ['README', 'COPYING', 'THANKS', 'TODO', 'bin/example.py', 'librarydoc.txt'])]
++      data_files = [("share/doc/py-metar",
++       ['README', 'COPYING', 'THANKS', 'TODO', 'librarydoc.txt']),
++       ("share/examples/py-metar", ['bin/example.py'])]
+       )
