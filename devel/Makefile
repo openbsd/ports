@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2000/01/06 02:37:05 angelos Exp $
+# $OpenBSD: Makefile,v 1.27 2000/02/28 22:55:04 d Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -19,6 +19,7 @@
 #    SUBDIR += crossgo32-djgpp2-pdcurses
 #    SUBDIR += crosssco
 #    SUBDIR += cs
+     SUBDIR += ctm
 #    SUBDIR += cutils
 #    SUBDIR += cxref
      SUBDIR += ddd
