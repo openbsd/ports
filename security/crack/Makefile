@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/09 17:37:59 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/30 09:17:17 kevlo Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	crack5.0
 PKGNAME=	crack-5.0
 CATEGORIES=	security
 NEED_VERSION=	1.191
-FAKE=No
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 
 MASTER_SITES=	ftp://ftp.ox.ac.uk/pub/comp/security/software/crackers/  \
@@ -20,6 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/c50a
+FAKE=		Yes
 
 pre-configure:
 .if !defined(USE_DES)
