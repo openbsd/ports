@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.124 1999/09/30 16:24:47 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.125 1999/09/30 16:35:40 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2106,8 +2106,7 @@ package-depends:
 	@pname=`${MAKE} _DEPEND_ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`; \
 	for dir in `${ECHO} ${LIB_DEPENDS} ${RUN_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
 		if cd $$dir 2>/dev/null; then \
-			${ECHO} -n "$$pname "; \
-			${MAKE} package-name package-depends ${_DEPEND_THRU} || \
+			${MAKE} _DEPEND_ECHO="${ECHO} $$pname" package-name package-depends ${_DEPEND_THRU} || \
 				${ECHO_MSG} "Error: problem in \"$$dir\"" >&2; \
 		else \
 			${ECHO_MSG} "Warning: \"$$dir\" non-existent -- @pkgdep registration incomplete" >&2; \
@@ -2310,8 +2309,7 @@ depends-list:
 	@pname=`${MAKE} _DEPEND_ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`; \
 	for dir in `${ECHO} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
 		if cd $$dir 2>/dev/null; then \
-			${ECHO} -n "$$pname "; \
-			${MAKE} package-name depends-list ${_DEPEND_THRU} || \
+			${MAKE} _DEPEND_ECHO="${ECHO} $$pname" package-name depends-list ${_DEPEND_THRU} || \
 				${ECHO_MSG} "Error: problem in \"$$dir\"" >&2; \
 		else \
 			${ECHO_MSG} "Warning: \"$$dir\" non-existent" >&2; \
