@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.311 2004/04/17 10:40:18 xsa Exp $
+# $OpenBSD: Makefile,v 1.312 2004/04/22 22:06:38 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -64,6 +64,7 @@
      SUBDIR += gnomeicu
      SUBDIR += gnut
      SUBDIR += gtk-gnutella
+     SUBDIR += heartbeat
      SUBDIR += honeyd
      SUBDIR += hping
      SUBDIR += httptunnel
