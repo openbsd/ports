@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.30 2001/11/15 20:05:40 jakob Exp $
+# $OpenBSD: Makefile,v 1.31 2001/11/22 22:31:49 jakob Exp $
 
-DISTNAME=	snapshot-20011115
+DISTNAME=	snapshot-20011121
 PKGNAME=	postfix-${DISTNAME}
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 MASTER_SITE_SUBDIR=	experimental
 
-TLSDISTNAME=	pfixtls-0.7.12-snap20011105-0.9.6b
+TLSDISTNAME=	pfixtls-0.7.13a-snap20011121-0.9.6b
 
 .include <bsd.port.mk>
