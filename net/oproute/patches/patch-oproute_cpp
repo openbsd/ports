@@ -1,0 +1,29 @@
+$OpenBSD: patch-oproute_cpp,v 1.1.1.1 2001/07/03 02:40:21 pvalchev Exp $
+--- oproute.cpp.orig	Sun Jun 24 15:41:04 2001
++++ oproute.cpp	Sun Jun 24 15:41:40 2001
+@@ -706,7 +706,7 @@ void OpRoute::CatchICMP(Hop *pHop)
+ 	    udp = (struct udphdr *)(recvbuf + hlen1 + 8 +hlen2);
+ 	    if(hip->ip_p == IPPROTO_UDP)
+ 	      {
+-		pHop->nPort = ntohs(udp->dest);
++		pHop->nPort = ntohs(udp->uh_dport);
+ 		pHop->sRouterIP = sock_ntop_host((sockaddr *)sa_recv, sa_len);
+ 		pHop->state = HOP_COMPLETED;
+ 		pHop->fLatency = GetLatencyFromTV(tvNow, tvTimeOfLastSend);
+@@ -721,14 +721,14 @@ void OpRoute::CatchICMP(Hop *pHop)
+ 	      {
+ 		if (icmp->icmp_code == ICMP_UNREACH_PORT) 
+ 		  {
+-		    pHop->nPort = ntohs(udp->dest);
++		    pHop->nPort = ntohs(udp->uh_dport);
+ 		    pHop->sRouterIP = sock_ntop_host((sockaddr *)sa_recv, sa_len);
+ 		    pHop->state = HOP_ENDOFLINE;
+ 		    pHop->fLatency = GetLatencyFromTV(tvNow, tvTimeOfLastSend);
+ 		  }
+ 		else 
+ 		  {
+-		    pHop->nPort = ntohs(udp->dest);
++		    pHop->nPort = ntohs(udp->uh_dport);
+ 		    pHop->sRouterIP = sock_ntop_host((sockaddr *)sa_recv, sa_len);
+ 		    pHop->state = HOP_FAILED;
+ 		  }
