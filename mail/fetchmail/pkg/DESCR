@@ -11,3 +11,5 @@ RPOP, APOP, KPOP, Compuserve's POP3 with RPA, Microsoft's NTLM, Demon
 Internet's SDPS, all flavors of IMAP (including IMAP4rev1 with RFC1731
 Kerberos v4 or GSSAPI authentication or CRAM-MD5 authentication), and
 ESMTP ETRN.  Fetchmail also supports end-to-end encryption with OpenSSL.
+
+WWW: ${HOMEPAGE}
