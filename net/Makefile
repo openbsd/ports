@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2001/01/29 21:03:08 danh Exp $
+# $OpenBSD: Makefile,v 1.119 2001/01/30 15:24:08 avsm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -98,6 +98,7 @@
      SUBDIR += tcpreplay
      SUBDIR += tcpshow
      SUBDIR += tcpslice
+     SUBDIR += tcpstat
      SUBDIR += tcptrace
      SUBDIR += tintin++
      SUBDIR += tinyfugue
