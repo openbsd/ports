@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_ntp_stdlib_h,v 1.1.1.1 2003/02/23 21:27:28 danh Exp $
+--- include/ntp_stdlib.h.orig	Sun Feb 23 13:54:37 2003
++++ include/ntp_stdlib.h	Sun Feb 23 13:54:42 2003
+@@ -3,7 +3,6 @@
+  */
+ #include <sys/types.h>
+ #include <sys/socket.h>
+-#include "ntp_rfc2553.h"
+ 
+ #include "ntp_types.h"
+ #include "ntp_string.h"

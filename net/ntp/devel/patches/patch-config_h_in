@@ -1,0 +1,23 @@
+$OpenBSD: patch-config_h_in,v 1.1.1.1 2003/02/23 21:27:28 danh Exp $
+--- config.h.in.orig	Wed Feb 19 10:04:51 2003
++++ config.h.in	Wed Feb 19 10:05:59 2003
+@@ -327,6 +327,9 @@
+ /* Define to 1 if you have the `finite' function. */
+ #undef HAVE_FINITE
+ 
++/* Define if you have the `freeifaddrs' function. */
++#undef HAVE_FREEIFADDRS
++
+ /* Define to 1 if you have the `getbootfile' function. */
+ #undef HAVE_GETBOOTFILE
+ 
+@@ -335,6 +338,9 @@
+ 
+ /* Define to 1 if you have the `getdtablesize' function. */
+ #undef HAVE_GETDTABLESIZE
++
++/* Define if you have the `getifaddrs' function. */
++#undef HAVE_GETIFADDRS
+ 
+ /* Define to 1 if you have the `getrusage' function. */
+ #undef HAVE_GETRUSAGE

@@ -1,0 +1,16 @@
+$OpenBSD: patch-ntpd_ntpd_c,v 1.1.1.1 2003/02/23 21:27:33 danh Exp $
+--- ntpd/ntpd.c.orig	Sun Feb 23 15:21:42 2003
++++ ntpd/ntpd.c	Sun Feb 23 15:22:48 2003
+@@ -361,7 +361,11 @@ ntpdmain(
+ 	}
+ #endif
+ 
+-#if defined(HAVE_GETUID) && !defined(MPE) /* MPE lacks the concept of root */
++ /* 
++  * MPE lacks the concept of root;
++  * OpenBSD can use privilege escalation via systrace.
++  */
++#if defined(HAVE_GETUID) && !defined(MPE) && !defined(__OpenBSD__)
+ 	{
+ 		uid_t uid;
+ 

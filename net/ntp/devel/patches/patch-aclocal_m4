@@ -1,0 +1,12 @@
+$OpenBSD: patch-aclocal_m4,v 1.1.1.1 2003/02/23 21:27:28 danh Exp $
+--- aclocal.m4.orig	Wed Feb 19 09:55:24 2003
++++ aclocal.m4	Wed Feb 19 09:55:50 2003
+@@ -107,7 +107,7 @@ AU_DEFUN([AM_CONFIG_HEADER], [AC_CONFIG_
+ # CC etc. in the Makefile, will ask for an AC_PROG_CC use...
+ 
+ 
+-AC_PREREQ([2.54])
++AC_PREREQ([2.52])
+ 
+ # Autoconf 2.50 wants to disallow AM_ names.  We explicitly allow
+ # the ones we care about.

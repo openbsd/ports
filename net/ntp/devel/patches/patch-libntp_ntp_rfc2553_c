@@ -1,0 +1,11 @@
+$OpenBSD: patch-libntp_ntp_rfc2553_c,v 1.1.1.1 2003/02/23 21:27:28 danh Exp $
+--- libntp/ntp_rfc2553.c.orig	Sun Feb 23 13:56:24 2003
++++ libntp/ntp_rfc2553.c	Sun Feb 23 13:56:35 2003
+@@ -72,7 +72,6 @@
+ #include <sys/types.h>
+ #include <ctype.h>
+ #include <sys/socket.h>
+-#include "ntp_rfc2553.h"
+ #ifdef HAVE_NETINET_IN_H
+ #include <netinet/in.h>
+ #endif

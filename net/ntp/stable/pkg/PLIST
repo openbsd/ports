@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/23 21:27:33 danh Exp $
+@pkgcfl xntp3-*
+sbin/ntp-genkeys
+sbin/ntp-wait
+sbin/ntpd
+sbin/ntpdate
+sbin/ntpdc
+sbin/ntpq
+sbin/ntptimeset
+sbin/ntptrace
+sbin/tickadj
+share/examples/ntp/README
+share/examples/ntp/baldwin.conf
+share/examples/ntp/beauregard.conf
+share/examples/ntp/dewey.conf
+share/examples/ntp/grundoon.conf
+share/examples/ntp/malarky.conf
+share/examples/ntp/pogo.conf
+share/examples/ntp/rackety.conf
+@dirrm share/examples/ntp

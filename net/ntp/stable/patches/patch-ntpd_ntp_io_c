@@ -1,0 +1,98 @@
+$OpenBSD: patch-ntpd_ntp_io_c,v 1.1.1.1 2003/02/23 21:27:33 danh Exp $
+--- ntpd/ntp_io.c.orig	Wed Jan  2 23:03:15 2002
++++ ntpd/ntp_io.c	Sun Feb 23 06:20:35 2003
+@@ -43,7 +43,7 @@
+ 
+ extern int listen_to_virtual_ips;
+ 
+-#if _BSDI_VERSION >= 199510
++#if HAVE_GETIFADDRS
+ # include <ifaddrs.h>
+ #endif
+ 
+@@ -206,15 +206,15 @@ create_sockets(
+ 	u_int port
+ 	)
+ {
+-#if _BSDI_VERSION >= 199510
++#if HAVE_GETIFADDRS
+ 	int i, j;
+ 	struct ifaddrs *ifaddrs, *ifap;
+ 	struct sockaddr_in resmask;
+-#if 	_BSDI_VERSION < 199701
++#if defined(_BSDI_VERSION) && _BSDI_VERSION < 199701
+ 	struct ifaddrs *lp;
+ 	int num_if;
+ #endif
+-#else	/* _BSDI_VERSION >= 199510 */
++#else	/* HAVE_GETIFADDRS */
+ # ifdef STREAMS_TLI
+ 	struct strioctl ioc;
+ # endif /* STREAMS_TLI */
+@@ -223,7 +223,7 @@ create_sockets(
+ 	struct	ifreq	ifreq, *ifr;
+ 	int n, i, j, vs, size = 0;
+ 	struct sockaddr_in resmask;
+-#endif	/* _BSDI_VERSION >= 199510 */
++#endif	/* HAVE_GETIFADDRS */
+ 
+ #ifdef DEBUG
+ 	if (debug)
+@@ -245,8 +245,18 @@ create_sockets(
+ 	inter_list[0].flags = INT_BROADCAST;
+ 	any_interface = &inter_list[0];
+ 
+-#if _BSDI_VERSION >= 199510
+-#if 	_BSDI_VERSION >= 199701
++#if HAVE_GETIFADDRS
++#if defined(_BSDI_VERSION) && _BSDI_VERSION < 199701
++	if (getifaddrs(&ifaddrs, &num_if) < 0)
++	{
++	    msyslog(LOG_ERR, "create_sockets: getifaddrs() failed: %m");
++	    exit(1);
++	}
++
++	i = 1;
++
++	for (ifap = ifaddrs, lp = ifap + num_if; ifap < lp; ifap++)
++#else
+ 	if (getifaddrs(&ifaddrs) < 0)
+ 	{
+ 		msyslog(LOG_ERR, "getifaddrs: %m");
+@@ -254,17 +264,7 @@ create_sockets(
+ 	}
+ 	i = 1;
+ 	for (ifap = ifaddrs; ifap != NULL; ifap = ifap->ifa_next)
+-#else
+-	    if (getifaddrs(&ifaddrs, &num_if) < 0)
+-	    {
+-		    msyslog(LOG_ERR, "create_sockets: getifaddrs() failed: %m");
+-		    exit(1);
+-	    }
+-
+-	i = 1;
+-
+-	for (ifap = ifaddrs, lp = ifap + num_if; ifap < lp; ifap++)
+-#endif
++#endif /* _BSDI_VERSION */
+ 	{
+ 		struct sockaddr_in *sin;
+ 
+@@ -341,7 +341,7 @@ create_sockets(
+ 		    break;
+ 	}
+ 	free(ifaddrs);
+-#else	/* _BSDI_VERSION >= 199510 */
++#else	/* HAVE_GETIFADDRS */
+ # ifdef USE_STREAMS_DEVICE_FOR_IF_CONFIG
+ 	if ((vs = open("/dev/ip", O_RDONLY)) < 0)
+ 	{
+@@ -601,7 +601,7 @@ create_sockets(
+ 		    break;
+ 	}
+ 	closesocket(vs);
+-#endif	/* _BSDI_VERSION >= 199510 */
++#endif	/* HAVE_GETIFADDRS */
+ 
+ 	ninterfaces = i;
+ 	maxactivefd = 0;

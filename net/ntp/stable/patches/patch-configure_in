@@ -1,0 +1,43 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2003/02/23 21:27:33 danh Exp $
+--- configure.in.orig	Mon Dec 30 23:58:34 2002
++++ configure.in	Sun Feb 23 15:23:43 2003
+@@ -199,23 +199,16 @@ AC_CHECK_LIB(kvm, main)		dnl We already 
+ AC_CHECK_LIB(ld, nlist)
+ AC_CHECK_LIB(mld, nlist)
+ AC_CHECK_FUNC(gethostent, , AC_CHECK_LIB(nsl, gethostent, , , -lsocket))
++AC_CHECK_FUNCS(getifaddrs freeifaddrs)
+ AC_CHECK_FUNC(openlog, , 
+   AC_CHECK_LIB(gen, openlog, , 
+   AC_CHECK_LIB(syslog, openlog, , , -lsocket)))
+-dnl HMS: What a hack...
+-AC_CHECK_HEADERS(readline/history.h readline/readline.h)
+-case "$ac_cv_header_readline_history_h$ac_cv_header_readline_readline_h" in
+- *no*) ;;
+- *) AC_CHECK_LIB(readline, readline, ,
+-     AC_MSG_NOTICE([Trying again with -lcurses])
+-     unset ac_cv_lib_readline_readline
+-     AC_CHECK_LIB(readline, readline,
+-      LIBS="-lreadline -lcurses $LIBS"
+-      AC_DEFINE(HAVE_LIBREADLINE)
+-      AC_DEFINE(HAVE_LIBCURSES, , [Do we have the curses library?])
+-      , , -lcurses))
+-    ;;
+-esac
++AC_CHECK_LIB(readline, readline, [cat >>confdefs.h <<EOF
++#define HAVE_LIBREADLINE 1
++EOF
++
++  LIBS="-lreadline -ltermcap $LIBS"
++], , -ltermcap)
+ 
+ dnl Digital UNIX V4.0 and Solaris 7 have POSIX.1c functions in -lrt
+ dnl Solaris 2.6 only has -lposix4; in Solaris 7, this is a symlink to -lrt,
+@@ -620,6 +613,8 @@ case "$host" in
+     ;;
+  *-*-irix[[45]]*)
+     # Just a stub in "old" Irix.  Idiots.
++    ;;
++ *-*-openbsd*)
+     ;;
+  *-*-qnx*)
+     # Apparently there but not working in QNX.  Idiots?
