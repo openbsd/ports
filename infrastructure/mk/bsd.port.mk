@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.679 2005/01/31 09:52:53 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.680 2005/01/31 09:58:22 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -170,10 +170,6 @@ clean=${_internal-clean}
 .endif
 
 FAKE?=Yes
-_LIBLIST=${WRKDIR}/.liblist-${ARCH}${_FLAVOR_EXT2}
-_BUILDLIBLIST=${WRKDIR}/.buildliblist-${ARCH}${_FLAVOR_EXT2}
-_SYSBUILDLIBLIST=${WRKDIR}/.sysbuildliblist-${ARCH}${_FLAVOR_EXT2}
-
 
 # need to go through an extra var because clean is set in stone, 
 # on the cmdline.
@@ -1366,70 +1362,18 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 _internal-${_DEP}-depends: ${_DEP${_DEP}_COOKIES}
 .endfor
 
-# Do a brute-force ldd/objdump on all files under WRKINST.
-.if ${ELF_TOOLCHAIN:L} == "no"
-${_LIBLIST}: ${_FAKE_COOKIE}
-	@${SUDO} mkdir -p ${WRKINST}/usr/libexec
-	@-${SUDO} cp -f /usr/libexec/ld.so ${WRKINST}/usr/libexec
-	@-${SUDO} cp -f /usr/lib/libc.so.* ${WRKINST}
-	@-${SUDO} cp -f /usr/bin/ldd ${WRKINST}
-	@cd ${WRKINST} && ${SUDO} find . -type f|\
-		${SUDO} env LD_LIBRARY_PATH=. xargs chroot ${WRKINST} \
-		./ldd -f '\tlibrary: %o %m %n\n' -f '\tlibrary: %o %m %n\n' 2>/dev/null|\
-		grep '^	'|\
-		sort -u >$@
-.else
-${_LIBLIST}: ${_FAKE_COOKIE}
-	@cd ${WRKINST} && ${SUDO} find . -type f|\
-		${SUDO} xargs objdump -p 2>/dev/null |\
-		sed -n \
-			-e '/^ *NEEDED *\(.*\)\.so\.\([0-9][0-9]*\)\.\([0-9][0-9]*\)$$/s//\1 \2 \3/p' \
-			-e '/^ *NEEDED *\(.*\)\.so$$/s//\1/p'| \
-		sort -u >$@
-.endif
-
-# list of libraries that can be used: libraries just built, and system libs.
-${_BUILDLIBLIST}: ${_FAKE_COOKIE}
-	@${SUDO} find ${WRKINST} -type f -o -type l | \
-		egrep '(\.so\.|\.so$$)'|${SUDO} xargs file -L|fgrep 'shared'|cut -d\: -f1|sort -u >$@
-
-${_SYSBUILDLIBLIST}: ${_FAKE_COOKIE}
-	@{ \
-		${SUDO} find ${WRKINST} -type f -o -type l; \
-		find /usr/lib -path /usr/lib -o -type d -prune -o -type f -print; \
-		find ${X11BASE}/lib -path ${X11BASE}/lib -o -type d -prune -o -type f -print; \
-	}|\
-		egrep '(\.so\.|\.so$$)'|${SUDO} xargs file -L|fgrep 'shared'|cut -d\: -f1|sort -u >$@
-
-
-
 .if defined(IGNORE) && !defined(NO_IGNORE)
 _internal-fetch _internal-checksum _internal-extract _internal-patch \
 _internal-configure _internal-all _internal-build _internal-install \
 _internal-regress _internal-uninstall _internal-deinstall _internal-fake \
-_internal-update \
+_internal-update _internal-newlib-depends-check \
 _internal-package _internal-lib-depends-check _internal-manpages-check:
 .  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE}."
 .  endif
 
 .else
-# For now, just check all libnames are present
-# The check is done on the fake area, be wary of multi-packages situation,
-# since we don't take it into account yet.
-#
-# Note that we cache needed library names, and libraries we're allowed to
-# depend upon, but not the actual list of lib depends, since this list is
-# going to be tweaked as a result of running lib-depends-check.
-#
-_internal-lib-depends-check: ${_LIBLIST} ${_SYSBUILDLIBLIST}
-	@${_depfile_fragment}; \
-	LIB_DEPENDS="`${MAKE} _recurse-lib-depends-check`" \
-	PKG_DBDIR='${PKG_DBDIR}' \
-		perl ${PORTSDIR}/infrastructure/install/check-libs-elf \
-		${_LIBLIST} ${_SYSBUILDLIBLIST}
-
-_internal-newlib-depends-check: ${_PACKAGE_COOKIES}
+_internal-lib-depends-check _internal-newlib-depends-check: ${_PACKAGE_COOKIES}
 	@perl ${PORTSDIR}/infrastructure/package/check-newlib-depends ${_PACKAGE_COOKIES}
 
 _internal-manpages-check: ${_FAKE_COOKIE}
@@ -2379,33 +2323,6 @@ ${_i:L}-depends-list:
 
 # recursive depend targets
 
-# Print list of all libraries that we may depend upon.
-_recurse-lib-depends-check:
-.for _i in  ${LIB_DEPENDS}
-	@unset FLAVOR SUBPACKAGE  || true; \
-	echo '${_i}' | { \
-		IFS=:; read dep pkg dir target; \
-		IFS=,; for j in $$dep; do echo $$j; done; \
-		if ! fgrep -q "|$$dir|" $${_DEPENDS_FILE}; then \
-			echo "|$$dir|" >>$${_DEPENDS_FILE}; \
-			${_flavor_fragment}; \
-			eval $$toset ${MAKE} _recurse-lib-depends-check; \
-		fi; \
-	}
-.endfor
-.for _i in  ${RUN_DEPENDS}
-	@unset FLAVOR SUBPACKAGE  || true; \
-	echo '${_i}' | { \
-		IFS=:; read dep pkg dir target; \
-		if ! fgrep -q "|$$dir|" $${_DEPENDS_FILE}; then \
-			echo "|$$dir|" >>$${_DEPENDS_FILE}; \
-			${_flavor_fragment}; \
-			eval $$toset ${MAKE} _recurse-lib-depends-check; \
-		fi; \
-	}
-.endfor
-
-
 _print-package-args:
 .for _i in ${RUN_DEPENDS}
 	@unset FLAVOR SUBPACKAGE || true; \
@@ -2623,7 +2540,7 @@ uninstall deinstall:
 .PHONY: \
 	_build-dir-depends _delete-package-links _fetch-makefile _fetch-onefile \
 	_package _package-links _print-packagename \
-	_recurse-all-dir-depends _recurse-lib-depends-check \ 
+	_recurse-all-dir-depends \
 	_recurse-run-dir-depends _refetch \
 	addsum _print-package-args \
 	all all-dir-depends build \
