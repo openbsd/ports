@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/02/28 11:24:59 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 1999/04/19 07:15:43 fgsch Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -13,6 +13,7 @@
      SUBDIR += lsof
 #    SUBDIR += manck
 #    SUBDIR += mei
+     SUBDIR += mkhybrid
 #    SUBDIR += mkisofs
      SUBDIR += mtools
 #    SUBDIR += pib
