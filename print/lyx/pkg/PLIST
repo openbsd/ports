@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/01/06 00:13:22 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/12/16 19:36:39 naddy Exp $
 bin/lyx
 bin/noweb2lyx
 bin/reLyX
@@ -455,3 +455,21 @@ share/lyx/xfonts/msbm10.pfb
 @dirrm share/lyx/clipart
 @dirrm share/lyx/bind
 @dirrm share/lyx
+@dirrm share/locale/wa/LC_MESSAGES
+@dirrm share/locale/wa
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/he/LC_MESSAGES
+@dirrm share/locale/he
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@dirrm share/locale/eu/LC_MESSAGES
+@dirrm share/locale/eu
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
+@dirrm share/locale/bg/LC_MESSAGES
+@dirrm share/locale/bg

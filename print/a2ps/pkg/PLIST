@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2001/08/10 16:31:26 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/12/16 19:36:39 naddy Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/a2ps.info
 @unexec install-info --delete --info-dir=%D/info %D/info/ogonkify.info
 @unexec install-info --delete --info-dir=%D/info %D/info/regex.info
@@ -285,6 +285,8 @@ share/ogonkify/ptmri-o.ps
 @dirrm share/ogonkify/fonts
 @dirrm share/ogonkify/afm
 @dirrm share/ogonkify
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
 @dirrm share/a2ps/sheets
 @dirrm share/a2ps/ps
 @dirrm share/a2ps/ppd

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/08/18 19:00:05 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/12/16 19:36:39 naddy Exp $
 bin/rtin
 bin/tin
 man/man1/rtin.1
@@ -17,3 +17,5 @@ share/tin/url_handler.sh
 share/tin/w2r.pl
 share/tin/w2r.pl.1
 @dirrm share/tin
+@dirrm share/locale/en_GB/LC_MESSAGES
+@dirrm share/locale/en_GB
