@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.305 2005/03/03 01:14:12 espie Exp $
+# $OpenBSD: Makefile,v 1.306 2005/03/09 03:22:27 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -151,6 +151,7 @@
      SUBDIR += p5-Carp-Datum
      SUBDIR += p5-Class-Accessor
      SUBDIR += p5-Class-AutoClass
+     SUBDIR += p5-Class-Autouse
      SUBDIR += p5-Class-Container
      SUBDIR += p5-Class-Data-Inheritable
      SUBDIR += p5-Class-Date
@@ -233,7 +234,6 @@
      SUBDIR += p5-PerlIO-via-symlink
      SUBDIR += p5-Pod-Coverage
      SUBDIR += p5-Regexp-Shellish
-     SUBDIR += p5-SVK
      SUBDIR += p5-SVN-Mirror
      SUBDIR += p5-SVN-Notify
      SUBDIR += p5-SVN-Simple
@@ -322,6 +322,7 @@
      SUBDIR += splint
      SUBDIR += startup-notification
      SUBDIR += subversion
+     SUBDIR += svk
      SUBDIR += swig
      SUBDIR += t1lib
      SUBDIR += tclcl
