@@ -1,0 +1,11 @@
+--- win/X11/winX.c.orig	Sat Jul 25 00:36:46 1998
++++ win/X11/winX.c	Sat Jul 25 00:37:01 1998
+@@ -921,7 +921,7 @@
+     XtSetArg(args[num_args], XtNallowShellResize, True);	num_args++;
+     toplevel = XtAppInitialize(
+ 		    &app_context,
+-		    "NetHack",			/* application class */
++		    "Slash",			/* application class */
+ 		    (XrmOptionDescList)0, 0,	/* options list */
+ 		    argcp, (String *)argv,	/* command line args */
+ 		    (String *)0,		/* fallback resources */

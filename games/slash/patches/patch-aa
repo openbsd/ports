@@ -1,0 +1,71 @@
+--- include/config.h.org	Fri Jul 24 22:40:57 1998
++++ include/config.h	Fri Jul 24 22:44:16 1998
+@@ -213,7 +213,7 @@
+  * Some combinations make no sense.  See the installation document.
+  */
+ #define TTY_GRAPHICS	/* good old tty based graphics */
+-/* #define X11_GRAPHICS	/* X11 interface */
++#define X11_GRAPHICS	/* X11 interface */
+ 
+ /*
+  * Define the default window system.  This should be one that is compiled
+@@ -258,7 +258,7 @@
+  * would allow:
+  *  xpmtoppm <x11tiles.xpm | pnmscale 1.25 | ppmquant 90 >x11tiles_big.xpm
+  */
+-/* # define USE_XPM		/* Disable if you do not have the XPM library */
++# define USE_XPM		/* Disable if you do not have the XPM library */
+ # ifdef USE_XPM
+ #  define GRAPHIC_TOMBSTONE	/* Use graphical tombstone (rip.xpm) */
+ # endif
+@@ -271,6 +271,7 @@
+  *		LOGFILE and NEWS refer to files in the playground.
+  */
+ 
++#define WIZARD "games"
+ #ifndef WIZARD		/* allow for compile-time or Makefile changes */
+ # ifndef KR1ED
+ #  define WIZARD  "wizard" /* the person allowed to use the -D option */
+@@ -298,12 +299,12 @@
+ 
+ #ifdef UNIX
+ /* path and file name extension for compression program */
+-# define COMPRESS "/usr/ucb/compress"	     /* Lempel-Ziv compression */
+-# define COMPRESS_EXTENSION ".Z"	     /* compress's extension */
++/* # define COMPRESS "/usr/ucb/compress"	     /* Lempel-Ziv compression */
++/* # define COMPRESS_EXTENSION ".Z"	     /* compress's extension */
+ 
+ /* An example of one alternative you might want to use: */
+-/* # define COMPRESS "/usr/local/bin/gzip"   /* FSF gzip compression */
+-/* # define COMPRESS_EXTENSION ".gz"	     /* normal gzip extension */
++# define COMPRESS "/usr/bin/gzip"   /* FSF gzip compression */
++# define COMPRESS_EXTENSION ".gz"	     /* normal gzip extension */
+ #endif
+ #ifndef COMPRESS
+ # define INTERNAL_COMP	/* control use of NetHack's compression routines */
+@@ -431,7 +432,7 @@
+  * functions that have been macroized.
+  */
+ 
+-/*#define VISION_TABLES	/* use vision tables generated at compile time */
++#define VISION_TABLES	/* use vision tables generated at compile time */
+ #ifndef VISION_TABLES
+ # ifndef NO_MACRO_CPATH
+ #  define MACRO_CPATH	/* use clear_path macros instead of functions */
+@@ -453,14 +454,14 @@
+ /* dungeon levels */
+ #define WALLIFIED_MAZE	/* Fancy mazes - Jean-Christophe Collet */
+ #define REINCARNATION	/* Special Rogue-like levels */
+-/* #define BLACKMARKET	/* Massimo Campostrini (campo@sunthpi3.difi.unipi.it) */
++#define BLACKMARKET	/* Massimo Campostrini (campo@sunthpi3.difi.unipi.it) */
+ /* monsters & objects */
+ #define KOPS		/* Keystone Kops by Scott R. Turner */
+ #define SEDUCE		/* Succubi/incubi seduction, by KAA, suggested by IM */
+ #define TOURIST		/* Tourist players with cameras and Hawaiian shirts */
+ #define INVISIBLE_OBJECTS /* Objects may be invisible */
+ /* difficulty */
+-/* #define ELBERETH	/* Engraving the E-word repels monsters */
++#define ELBERETH	/* Engraving the E-word repels monsters */
+ #define NOARTIFACTWISH	/* No wishing for special artifacts -- swhite@cs.mun.ca */
+ /* I/O */
+ #define REDO		/* support for redoing last command - DGK */
