@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST-ksirtet,v 1.1 2000/05/24 13:58:27 espie Exp $
+@pkgcfl kdegames-*
+bin/ksirtet
+share/applnk/Games/ksirtet.kdelnk
+share/doc/HTML/en/ksirtet/index-1.html
+share/doc/HTML/en/ksirtet/index-2.html
+share/doc/HTML/en/ksirtet/index-3.html
+share/doc/HTML/en/ksirtet/index-4.html
+share/doc/HTML/en/ksirtet/index.html
+share/doc/HTML/en/ksirtet/logotp3.gif
+share/icons/ksirtet.xpm
+share/icons/large/ksirtet.xpm
+share/icons/mini/ksirtet.xpm
+share/locale/br/LC_MESSAGES/ksirtet.mo
+share/locale/cs/LC_MESSAGES/ksirtet.mo
+share/locale/da/LC_MESSAGES/ksirtet.mo
+share/locale/de/LC_MESSAGES/ksirtet.mo
+share/locale/eo/LC_MESSAGES/ksirtet.mo
+share/locale/et/LC_MESSAGES/ksirtet.mo
+share/locale/fi/LC_MESSAGES/ksirtet.mo
+share/locale/fr/LC_MESSAGES/ksirtet.mo
+share/locale/hr/LC_MESSAGES/ksirtet.mo
+share/locale/is/LC_MESSAGES/ksirtet.mo
+share/locale/it/LC_MESSAGES/ksirtet.mo
+share/locale/ja/LC_MESSAGES/ksirtet.mo
+share/locale/ko/LC_MESSAGES/ksirtet.mo
+share/locale/nl/LC_MESSAGES/ksirtet.mo
+share/locale/no/LC_MESSAGES/ksirtet.mo
+share/locale/pl/LC_MESSAGES/ksirtet.mo
+share/locale/pt/LC_MESSAGES/ksirtet.mo
+share/locale/pt_BR/LC_MESSAGES/ksirtet.mo
+share/locale/ro/LC_MESSAGES/ksirtet.mo
+share/locale/sk/LC_MESSAGES/ksirtet.mo
+share/locale/sl/LC_MESSAGES/ksirtet.mo
+share/locale/sv/LC_MESSAGES/ksirtet.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/ksirtet.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/ksirtet.mo
+@dirrm share/doc/HTML/en/ksirtet

@@ -1,0 +1,39 @@
+@comment $OpenBSD: PLIST-ksame,v 1.1 2000/05/24 13:58:27 espie Exp $
+@pkgcfl kdegames-*
+bin/ksame
+share/applnk/Games/ksame.kdelnk
+share/apps/ksame/pics/stones.gif
+share/apps/ksame/pics/stones_mask.gif
+share/doc/HTML/en/ksame/index-1.html
+share/doc/HTML/en/ksame/index-2.html
+share/doc/HTML/en/ksame/index-3.html
+share/doc/HTML/en/ksame/index-4.html
+share/doc/HTML/en/ksame/index.html
+share/doc/HTML/en/ksame/logotp3.gif
+share/icons/ksame.xpm
+share/icons/large/ksame.xpm
+share/icons/mini/ksame.xpm
+share/locale/br/LC_MESSAGES/ksame.mo
+share/locale/cs/LC_MESSAGES/ksame.mo
+share/locale/da/LC_MESSAGES/ksame.mo
+share/locale/de/LC_MESSAGES/ksame.mo
+share/locale/eo/LC_MESSAGES/ksame.mo
+share/locale/et/LC_MESSAGES/ksame.mo
+share/locale/fi/LC_MESSAGES/ksame.mo
+share/locale/fr/LC_MESSAGES/ksame.mo
+share/locale/hr/LC_MESSAGES/ksame.mo
+share/locale/is/LC_MESSAGES/ksame.mo
+share/locale/ja/LC_MESSAGES/ksame.mo
+share/locale/ko/LC_MESSAGES/ksame.mo
+share/locale/nl/LC_MESSAGES/ksame.mo
+share/locale/no/LC_MESSAGES/ksame.mo
+share/locale/pl/LC_MESSAGES/ksame.mo
+share/locale/pt/LC_MESSAGES/ksame.mo
+share/locale/pt_BR/LC_MESSAGES/ksame.mo
+share/locale/sk/LC_MESSAGES/ksame.mo
+share/locale/sl/LC_MESSAGES/ksame.mo
+share/locale/sv/LC_MESSAGES/ksame.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/ksame.mo
+@dirrm share/doc/HTML/en/ksame
+@dirrm share/apps/ksame/pics
+@dirrm share/apps/ksame

@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST-kmines,v 1.1 2000/05/24 13:58:27 espie Exp $
+@pkgcfl kdegames-*
+bin/kmines
+share/applnk/Games/kmines.kdelnk
+share/doc/HTML/en/kmines/index-1.html
+share/doc/HTML/en/kmines/index-2.html
+share/doc/HTML/en/kmines/index-3.html
+share/doc/HTML/en/kmines/index.html
+share/doc/HTML/en/kmines/logotp3.gif
+share/icons/kmines.xpm
+share/icons/large/kmines.xpm
+share/icons/mini/kmines.xpm
+share/locale/br/LC_MESSAGES/kmines.mo
+share/locale/cs/LC_MESSAGES/kmines.mo
+share/locale/da/LC_MESSAGES/kmines.mo
+share/locale/de/LC_MESSAGES/kmines.mo
+share/locale/eo/LC_MESSAGES/kmines.mo
+share/locale/et/LC_MESSAGES/kmines.mo
+share/locale/fi/LC_MESSAGES/kmines.mo
+share/locale/fr/LC_MESSAGES/kmines.mo
+share/locale/he/LC_MESSAGES/kmines.mo
+share/locale/hr/LC_MESSAGES/kmines.mo
+share/locale/hu/LC_MESSAGES/kmines.mo
+share/locale/is/LC_MESSAGES/kmines.mo
+share/locale/it/LC_MESSAGES/kmines.mo
+share/locale/ja/LC_MESSAGES/kmines.mo
+share/locale/ko/LC_MESSAGES/kmines.mo
+share/locale/mk/LC_MESSAGES/kmines.mo
+share/locale/nl/LC_MESSAGES/kmines.mo
+share/locale/no/LC_MESSAGES/kmines.mo
+share/locale/pl/LC_MESSAGES/kmines.mo
+share/locale/pt/LC_MESSAGES/kmines.mo
+share/locale/pt_BR/LC_MESSAGES/kmines.mo
+share/locale/ro/LC_MESSAGES/kmines.mo
+share/locale/sk/LC_MESSAGES/kmines.mo
+share/locale/sl/LC_MESSAGES/kmines.mo
+share/locale/sv/LC_MESSAGES/kmines.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kmines.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kmines.mo
+@dirrm share/doc/HTML/en/kmines

@@ -1,0 +1,85 @@
+@comment $OpenBSD: PLIST-ksnake,v 1.1 2000/05/24 13:58:28 espie Exp $
+@pkgcfl kdegames-*
+bin/ksnake
+share/applnk/Games/ksnake.kdelnk
+share/apps/ksnake/backgrounds/Bark.xpm
+share/apps/ksnake/backgrounds/Blue_Carpet.xpm
+share/apps/ksnake/backgrounds/Dark_Wood.xpm
+share/apps/ksnake/backgrounds/Granite.xpm
+share/apps/ksnake/backgrounds/Green_Carpet.xpm
+share/apps/ksnake/backgrounds/Mystique.xpm
+share/apps/ksnake/backgrounds/Rope_Weave.xpm
+share/apps/ksnake/backgrounds/Volcanic.xpm
+share/apps/ksnake/backgrounds/Wood.xpm
+share/apps/ksnake/highScores
+share/apps/ksnake/levels/room01
+share/apps/ksnake/levels/room02
+share/apps/ksnake/levels/room03
+share/apps/ksnake/levels/room04
+share/apps/ksnake/levels/room05
+share/apps/ksnake/levels/room06
+share/apps/ksnake/levels/room07
+share/apps/ksnake/levels/room08
+share/apps/ksnake/levels/room09
+share/apps/ksnake/levels/room10
+share/apps/ksnake/levels/room11
+share/apps/ksnake/levels/room12
+share/apps/ksnake/levels/room13
+share/apps/ksnake/levels/room14
+share/apps/ksnake/levels/room15
+share/apps/ksnake/levels/room16
+share/apps/ksnake/levels/room17
+share/apps/ksnake/levels/room18
+share/apps/ksnake/levels/room19
+share/apps/ksnake/levels/room20
+share/apps/ksnake/levels/room21
+share/apps/ksnake/levels/room22
+share/apps/ksnake/levels/room23
+share/apps/ksnake/levels/room24
+share/apps/ksnake/levels/room25
+share/apps/ksnake/pics/apples.xpm
+share/apps/ksnake/pics/ball.xpm
+share/apps/ksnake/pics/brick.xpm
+share/apps/ksnake/pics/down.xpm
+share/apps/ksnake/pics/left.xpm
+share/apps/ksnake/pics/right.xpm
+share/apps/ksnake/pics/samy.xpm
+share/apps/ksnake/pics/snake1.xpm
+share/apps/ksnake/pics/snake2.xpm
+share/apps/ksnake/pics/up.xpm
+share/doc/HTML/en/ksnake/index-1.html
+share/doc/HTML/en/ksnake/index-2.html
+share/doc/HTML/en/ksnake/index-3.html
+share/doc/HTML/en/ksnake/index-4.html
+share/doc/HTML/en/ksnake/index.html
+share/doc/HTML/en/ksnake/logotp3.gif
+share/icons/ksnake.xpm
+share/icons/large/ksnake.xpm
+share/icons/mini/ksnake.xpm
+share/locale/br/LC_MESSAGES/ksnake.mo
+share/locale/cs/LC_MESSAGES/ksnake.mo
+share/locale/da/LC_MESSAGES/ksnake.mo
+share/locale/de/LC_MESSAGES/ksnake.mo
+share/locale/eo/LC_MESSAGES/ksnake.mo
+share/locale/et/LC_MESSAGES/ksnake.mo
+share/locale/fi/LC_MESSAGES/ksnake.mo
+share/locale/fr/LC_MESSAGES/ksnake.mo
+share/locale/hr/LC_MESSAGES/ksnake.mo
+share/locale/is/LC_MESSAGES/ksnake.mo
+share/locale/ja/LC_MESSAGES/ksnake.mo
+share/locale/ko/LC_MESSAGES/ksnake.mo
+share/locale/nl/LC_MESSAGES/ksnake.mo
+share/locale/no/LC_MESSAGES/ksnake.mo
+share/locale/pl/LC_MESSAGES/ksnake.mo
+share/locale/pt/LC_MESSAGES/ksnake.mo
+share/locale/pt_BR/LC_MESSAGES/ksnake.mo
+share/locale/sk/LC_MESSAGES/ksnake.mo
+share/locale/sl/LC_MESSAGES/ksnake.mo
+share/locale/sv/LC_MESSAGES/ksnake.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/ksnake.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/ksnake.mo
+@dirrm share/doc/HTML/en/ksnake
+@dirrm share/apps/ksnake/pics
+@dirrm share/apps/ksnake/levels
+@dirrm share/apps/ksnake/backgrounds
+@dirrm share/apps/ksnake

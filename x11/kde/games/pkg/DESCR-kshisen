@@ -1,0 +1,5 @@
+Shisen-Sho is similiar to Mahjongg and uses the same set of tiles as Mahjongg. 
+The object of the game is to remove all tiles from the field. Only two matching
+tiles can be removed at a time. Two tiles can only be removed if they can be 
+connected with at most three connected lines. Lines can be horizontal or 
+vertical but not diagonal. 

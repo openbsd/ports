@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST-kshisen,v 1.1 2000/05/24 13:58:27 espie Exp $
+@pkgcfl kdegames-*
+bin/kshisen
+share/applnk/Games/kshisen.kdelnk
+share/apps/kshisen/pics/kshisen.xpm
+share/apps/kshisen/pics/kshisen_bgnd.xpm
+share/doc/HTML/en/kshisen/index-1.html
+share/doc/HTML/en/kshisen/index-2.html
+share/doc/HTML/en/kshisen/index.html
+share/doc/HTML/en/kshisen/logotp3.gif
+share/icons/kshisen.xpm
+share/icons/large/kshisen.xpm
+share/icons/mini/kshisen.xpm
+share/locale/br/LC_MESSAGES/kshisen.mo
+share/locale/cs/LC_MESSAGES/kshisen.mo
+share/locale/da/LC_MESSAGES/kshisen.mo
+share/locale/de/LC_MESSAGES/kshisen.mo
+share/locale/eo/LC_MESSAGES/kshisen.mo
+share/locale/et/LC_MESSAGES/kshisen.mo
+share/locale/fi/LC_MESSAGES/kshisen.mo
+share/locale/fr/LC_MESSAGES/kshisen.mo
+share/locale/hr/LC_MESSAGES/kshisen.mo
+share/locale/hs/LC_MESSAGES/kshisen.mo
+share/locale/hu/LC_MESSAGES/kshisen.mo
+share/locale/is/LC_MESSAGES/kshisen.mo
+share/locale/it/LC_MESSAGES/kshisen.mo
+share/locale/ja/LC_MESSAGES/kshisen.mo
+share/locale/ko/LC_MESSAGES/kshisen.mo
+share/locale/nl/LC_MESSAGES/kshisen.mo
+share/locale/no/LC_MESSAGES/kshisen.mo
+share/locale/pl/LC_MESSAGES/kshisen.mo
+share/locale/pt/LC_MESSAGES/kshisen.mo
+share/locale/pt_BR/LC_MESSAGES/kshisen.mo
+share/locale/sk/LC_MESSAGES/kshisen.mo
+share/locale/sl/LC_MESSAGES/kshisen.mo
+share/locale/sv/LC_MESSAGES/kshisen.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kshisen.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kshisen.mo
+@dirrm share/doc/HTML/en/kshisen
+@dirrm share/apps/kshisen/pics
+@dirrm share/apps/kshisen

@@ -1,4 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/05/23 21:28:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2000/05/24 13:58:27 espie Exp $
+@pkgcfl kabalone-*
+@pkgcfl kasteroids-*
+@pkgcfl kblackbox-*
+@pkgcfl kmahjongg-*
+@pkgcfl kmines-*
+@pkgcfl konquest-*
+@pkgcfl kpat-*
+@pkgcfl kpoker-*
+@pkgcfl kreversi-*
+@pkgcfl ksame-*
+@pkgcfl kshisen-*
+@pkgcfl ksirtet-*
+@pkgcfl ksmiletris-*
+@pkgcfl ksnake-*
+@pkgcfl ksokoban-*
 bin/kabalone
 bin/kasteroids
 bin/kblackbox

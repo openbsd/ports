@@ -1,0 +1,4 @@
+KSmiletris is a tetris-like game in which you must match not just falling 
+blocks, but falling blocks with different faces on them.  You must match at 
+least 4 similar faces before they disappear.  The game ends when the blocks 
+reach the top of the playing area.   

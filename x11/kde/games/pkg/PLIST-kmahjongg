@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST-kmahjongg,v 1.1 2000/05/24 13:58:27 espie Exp $
+@pkgcfl kdegames-*
+bin/kmahjongg
+share/applnk/Games/kmahjongg.kdelnk
+share/apps/kmahjongg/pics/kmahjongg.bmp
+share/apps/kmahjongg/pics/kmahjongg_bgnd.bmp
+share/doc/HTML/en/kmahjongg/index-1.html
+share/doc/HTML/en/kmahjongg/index-2.html
+share/doc/HTML/en/kmahjongg/index.html
+share/doc/HTML/en/kmahjongg/logotp3.gif
+share/icons/kmahjongg.xpm
+share/icons/large/kmahjongg.xpm
+share/icons/mini/kmahjongg.xpm
+share/locale/br/LC_MESSAGES/kmahjongg.mo
+share/locale/cs/LC_MESSAGES/kmahjongg.mo
+share/locale/da/LC_MESSAGES/kmahjongg.mo
+share/locale/de/LC_MESSAGES/kmahjongg.mo
+share/locale/el/LC_MESSAGES/kmahjongg.mo
+share/locale/eo/LC_MESSAGES/kmahjongg.mo
+share/locale/et/LC_MESSAGES/kmahjongg.mo
+share/locale/fi/LC_MESSAGES/kmahjongg.mo
+share/locale/fr/LC_MESSAGES/kmahjongg.mo
+share/locale/hr/LC_MESSAGES/kmahjongg.mo
+share/locale/hs/LC_MESSAGES/kmahjongg.mo
+share/locale/is/LC_MESSAGES/kmahjongg.mo
+share/locale/it/LC_MESSAGES/kmahjongg.mo
+share/locale/ja/LC_MESSAGES/kmahjongg.mo
+share/locale/ko/LC_MESSAGES/kmahjongg.mo
+share/locale/nl/LC_MESSAGES/kmahjongg.mo
+share/locale/no/LC_MESSAGES/kmahjongg.mo
+share/locale/pl/LC_MESSAGES/kmahjongg.mo
+share/locale/pt/LC_MESSAGES/kmahjongg.mo
+share/locale/pt_BR/LC_MESSAGES/kmahjongg.mo
+share/locale/sk/LC_MESSAGES/kmahjongg.mo
+share/locale/sl/LC_MESSAGES/kmahjongg.mo
+share/locale/sv/LC_MESSAGES/kmahjongg.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kmahjongg.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kmahjongg.mo
+@dirrm share/doc/HTML/en/kmahjongg
+@dirrm share/apps/kmahjongg/pics
+@dirrm share/apps/kmahjongg

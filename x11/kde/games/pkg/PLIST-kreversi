@@ -1,0 +1,67 @@
+@comment $OpenBSD: PLIST-kreversi,v 1.1 2000/05/24 13:58:27 espie Exp $
+@pkgcfl kdegames-*
+bin/kreversi
+share/applnk/Games/kreversi.kdelnk
+share/apps/kreversi/pics/background/Dark_Wood.xpm
+share/apps/kreversi/pics/background/Earth.xpm
+share/apps/kreversi/pics/background/Granite.xpm
+share/apps/kreversi/pics/background/Hexagon.xpm
+share/apps/kreversi/pics/background/Light_Wood.xpm
+share/apps/kreversi/pics/background/Mystique.xpm
+share/apps/kreversi/pics/background/Ocean.xpm
+share/apps/kreversi/pics/background/Pipes.xpm
+share/apps/kreversi/pics/background/Puzzle.xpm
+share/apps/kreversi/pics/background/Stones.xpm
+share/apps/kreversi/pics/chips.xpm
+share/apps/kreversi/pics/chips_mono.xpm
+share/apps/kreversi/pics/help.xpm
+share/apps/kreversi/pics/hint.xpm
+share/apps/kreversi/pics/logo.xpm
+share/apps/kreversi/pics/stop.xpm
+share/apps/kreversi/pics/undo.xpm
+share/apps/kreversi/pics/zoomin.xpm
+share/apps/kreversi/pics/zoomout.xpm
+share/apps/kreversi/sounds/click.wav
+share/apps/kreversi/sounds/lost.wav
+share/apps/kreversi/sounds/won.wav
+share/doc/HTML/en/kreversi/index-1.html
+share/doc/HTML/en/kreversi/index-2.html
+share/doc/HTML/en/kreversi/index-3.html
+share/doc/HTML/en/kreversi/index-4.html
+share/doc/HTML/en/kreversi/index.html
+share/doc/HTML/en/kreversi/logotp3.gif
+share/icons/kreversi.xpm
+share/icons/large/kreversi.xpm
+share/icons/mini/kreversi.xpm
+share/locale/br/LC_MESSAGES/kreversi.mo
+share/locale/cs/LC_MESSAGES/kreversi.mo
+share/locale/da/LC_MESSAGES/kreversi.mo
+share/locale/de/LC_MESSAGES/kreversi.mo
+share/locale/el/LC_MESSAGES/kreversi.mo
+share/locale/eo/LC_MESSAGES/kreversi.mo
+share/locale/et/LC_MESSAGES/kreversi.mo
+share/locale/fi/LC_MESSAGES/kreversi.mo
+share/locale/fr/LC_MESSAGES/kreversi.mo
+share/locale/hr/LC_MESSAGES/kreversi.mo
+share/locale/hu/LC_MESSAGES/kreversi.mo
+share/locale/is/LC_MESSAGES/kreversi.mo
+share/locale/it/LC_MESSAGES/kreversi.mo
+share/locale/ja/LC_MESSAGES/kreversi.mo
+share/locale/ko/LC_MESSAGES/kreversi.mo
+share/locale/mk/LC_MESSAGES/kreversi.mo
+share/locale/nl/LC_MESSAGES/kreversi.mo
+share/locale/no/LC_MESSAGES/kreversi.mo
+share/locale/pl/LC_MESSAGES/kreversi.mo
+share/locale/pt/LC_MESSAGES/kreversi.mo
+share/locale/pt_BR/LC_MESSAGES/kreversi.mo
+share/locale/ro/LC_MESSAGES/kreversi.mo
+share/locale/sk/LC_MESSAGES/kreversi.mo
+share/locale/sl/LC_MESSAGES/kreversi.mo
+share/locale/sv/LC_MESSAGES/kreversi.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kreversi.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kreversi.mo
+@dirrm share/doc/HTML/en/kreversi
+@dirrm share/apps/kreversi/sounds
+@dirrm share/apps/kreversi/pics/background
+@dirrm share/apps/kreversi/pics
+@dirrm share/apps/kreversi

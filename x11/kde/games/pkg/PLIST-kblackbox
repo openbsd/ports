@@ -1,0 +1,46 @@
+@comment $OpenBSD: PLIST-kblackbox,v 1.1 2000/05/24 13:58:27 espie Exp $
+@pkgcfl kdegames-*
+bin/kblackbox
+share/applnk/Games/kblackbox.kdelnk
+share/apps/kblackbox/pics/blue.xpm
+share/apps/kblackbox/pics/brown.xpm
+share/apps/kblackbox/pics/cyan.xpm
+share/apps/kblackbox/pics/done.xpm
+share/apps/kblackbox/pics/giveup.xpm
+share/apps/kblackbox/pics/gray.xpm
+share/apps/kblackbox/pics/green.xpm
+share/apps/kblackbox/pics/green2.xpm
+share/apps/kblackbox/pics/red.xpm
+share/apps/kblackbox/pics/white.xpm
+share/doc/HTML/en/kblackbox/index-1.html
+share/doc/HTML/en/kblackbox/index-2.html
+share/doc/HTML/en/kblackbox/index-3.html
+share/doc/HTML/en/kblackbox/index-4.html
+share/doc/HTML/en/kblackbox/index.html
+share/icons/kblackbox.xpm
+share/icons/large/kblackbox.xpm
+share/icons/mini/kblackbox.xpm
+share/locale/br/LC_MESSAGES/kblackbox.mo
+share/locale/cs/LC_MESSAGES/kblackbox.mo
+share/locale/da/LC_MESSAGES/kblackbox.mo
+share/locale/de/LC_MESSAGES/kblackbox.mo
+share/locale/eo/LC_MESSAGES/kblackbox.mo
+share/locale/et/LC_MESSAGES/kblackbox.mo
+share/locale/fi/LC_MESSAGES/kblackbox.mo
+share/locale/fr/LC_MESSAGES/kblackbox.mo
+share/locale/hr/LC_MESSAGES/kblackbox.mo
+share/locale/is/LC_MESSAGES/kblackbox.mo
+share/locale/it/LC_MESSAGES/kblackbox.mo
+share/locale/ja/LC_MESSAGES/kblackbox.mo
+share/locale/nl/LC_MESSAGES/kblackbox.mo
+share/locale/no/LC_MESSAGES/kblackbox.mo
+share/locale/pl/LC_MESSAGES/kblackbox.mo
+share/locale/pt/LC_MESSAGES/kblackbox.mo
+share/locale/pt_BR/LC_MESSAGES/kblackbox.mo
+share/locale/sk/LC_MESSAGES/kblackbox.mo
+share/locale/sl/LC_MESSAGES/kblackbox.mo
+share/locale/sv/LC_MESSAGES/kblackbox.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kblackbox.mo
+@dirrm share/doc/HTML/en/kblackbox
+@dirrm share/apps/kblackbox/pics
+@dirrm share/apps/kblackbox

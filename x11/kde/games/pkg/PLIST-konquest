@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST-konquest,v 1.1 2000/05/24 13:58:27 espie Exp $
+@pkgcfl kdegames-*
+bin/konquest
+share/apps/konquest/pics/konquest-splash.bmp
+share/apps/konquest/pics/planet1.xpm
+share/apps/konquest/pics/planet2.xpm
+share/apps/konquest/pics/planet3.xpm
+share/apps/konquest/pics/planet4.xpm
+share/apps/konquest/pics/planet5.xpm
+share/apps/konquest/pics/planet6.xpm
+share/apps/konquest/pics/planet7.xpm
+share/apps/konquest/pics/planet8.xpm
+share/apps/konquest/pics/planet9.xpm
+share/apps/konquest/pics/ruler.xpm
+share/doc/HTML/en/konquest/index.html
+share/doc/HTML/pt/konquest/index.html
+share/icons/konquest.xpm
+share/icons/large/konquest.xpm
+share/icons/mini/konquest.xpm
+share/locale/br/LC_MESSAGES/konquest.mo
+share/locale/cs/LC_MESSAGES/konquest.mo
+share/locale/da/LC_MESSAGES/konquest.mo
+share/locale/de/LC_MESSAGES/konquest.mo
+share/locale/eo/LC_MESSAGES/konquest.mo
+share/locale/et/LC_MESSAGES/konquest.mo
+share/locale/fr/LC_MESSAGES/konquest.mo
+share/locale/hr/LC_MESSAGES/konquest.mo
+share/locale/is/LC_MESSAGES/konquest.mo
+share/locale/ja/LC_MESSAGES/konquest.mo
+share/locale/no/LC_MESSAGES/konquest.mo
+share/locale/pl/LC_MESSAGES/konquest.mo
+share/locale/pt/LC_MESSAGES/konquest.mo
+share/locale/pt_BR/LC_MESSAGES/konquest.mo
+share/locale/sk/LC_MESSAGES/konquest.mo
+share/locale/sl/LC_MESSAGES/konquest.mo
+share/locale/sv/LC_MESSAGES/konquest.mo
+@dirrm share/doc/HTML/pt/konquest
+@dirrm share/doc/HTML/en/konquest
+@dirrm share/apps/konquest/pics
+@dirrm share/apps/konquest

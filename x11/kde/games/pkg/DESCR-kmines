@@ -1,0 +1,7 @@
+KMines is the classical Minesweeper game. You must uncover all the empty cases 
+without blowing on a mine. 
+
+When you uncover a case, a number appears : it indicates how many mines surround
+this case. If there is no number the neighbour cases are automatically 
+uncovered. In your process of uncovering secure cases, it is very useful to put
+a flag on the cases which contain a mine. 

@@ -1,0 +1,58 @@
+@comment $OpenBSD: PLIST-kabalone,v 1.1 2000/05/24 13:58:27 espie Exp $
+@pkgcfl kdegames-*
+bin/kabalone
+share/applnk/Games/kabalone.kdelnk
+share/apps/kabalone/toolbar/ab-start.xpm
+share/apps/kabalone/toolbar/ab-stop.xpm
+share/apps/kabalone/toolbar/help.xpm
+share/apps/kabalone/toolbar/hint.xpm
+share/apps/kabalone/toolbar/undo.xpm
+share/doc/HTML/de/kabalone/index.html
+share/doc/HTML/en/kabalone/index-1.html
+share/doc/HTML/en/kabalone/index-2.html
+share/doc/HTML/en/kabalone/index-3.html
+share/doc/HTML/en/kabalone/index-4.html
+share/doc/HTML/en/kabalone/index.html
+share/doc/HTML/en/kabalone/logotp3.gif
+share/doc/HTML/fr/kabalone/index-1.html
+share/doc/HTML/fr/kabalone/index-2.html
+share/doc/HTML/fr/kabalone/index-3.html
+share/doc/HTML/fr/kabalone/index-4.html
+share/doc/HTML/fr/kabalone/index.html
+share/doc/HTML/fr/kabalone/logotp3.gif
+share/icons/kabalone.xpm
+share/icons/large/kabalone.xpm
+share/icons/mini/kabalone.xpm
+share/locale/br/LC_MESSAGES/kabalone.mo
+share/locale/cs/LC_MESSAGES/kabalone.mo
+share/locale/da/LC_MESSAGES/kabalone.mo
+share/locale/de/LC_MESSAGES/kabalone.mo
+share/locale/eo/LC_MESSAGES/kabalone.mo
+share/locale/et/LC_MESSAGES/kabalone.mo
+share/locale/fi/LC_MESSAGES/kabalone.mo
+share/locale/fr/LC_MESSAGES/kabalone.mo
+share/locale/hr/LC_MESSAGES/kabalone.mo
+share/locale/hs/LC_MESSAGES/kabalone.mo
+share/locale/hu/LC_MESSAGES/kabalone.mo
+share/locale/is/LC_MESSAGES/kabalone.mo
+share/locale/it/LC_MESSAGES/kabalone.mo
+share/locale/ja/LC_MESSAGES/kabalone.mo
+share/locale/ko/LC_MESSAGES/kabalone.mo
+share/locale/mk/LC_MESSAGES/kabalone.mo
+share/locale/nl/LC_MESSAGES/kabalone.mo
+share/locale/no/LC_MESSAGES/kabalone.mo
+share/locale/pl/LC_MESSAGES/kabalone.mo
+share/locale/pt/LC_MESSAGES/kabalone.mo
+share/locale/pt_BR/LC_MESSAGES/kabalone.mo
+share/locale/ro/LC_MESSAGES/kabalone.mo
+share/locale/ru/LC_MESSAGES/kabalone.mo
+share/locale/sk/LC_MESSAGES/kabalone.mo
+share/locale/sl/LC_MESSAGES/kabalone.mo
+share/locale/sv/LC_MESSAGES/kabalone.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kabalone.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kabalone.mo
+@dirrm share/doc/HTML/fr/kabalone
+@dirrm share/doc/HTML/en/kabalone
+@dirrm share/doc/HTML/de/kabalone
+@dirrm share/apps/kabalone/toolbar
+@dirrm share/apps/kabalone

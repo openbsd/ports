@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST-ksokoban,v 1.1 2000/05/24 13:58:28 espie Exp $
+@pkgcfl kdegames-*
+bin/ksokoban
+share/applnk/Games/ksokoban.kdelnk
+share/doc/HTML/en/ksokoban/index-1.html
+share/doc/HTML/en/ksokoban/index-2.html
+share/doc/HTML/en/ksokoban/index-3.html
+share/doc/HTML/en/ksokoban/index.html
+share/doc/HTML/en/ksokoban/logotp3.gif
+share/icons/ksokoban.xpm
+share/icons/large/ksokoban.xpm
+share/icons/mini/ksokoban.xpm
+share/locale/br/LC_MESSAGES/ksokoban.mo
+share/locale/cs/LC_MESSAGES/ksokoban.mo
+share/locale/da/LC_MESSAGES/ksokoban.mo
+share/locale/de/LC_MESSAGES/ksokoban.mo
+share/locale/eo/LC_MESSAGES/ksokoban.mo
+share/locale/et/LC_MESSAGES/ksokoban.mo
+share/locale/fi/LC_MESSAGES/ksokoban.mo
+share/locale/fr/LC_MESSAGES/ksokoban.mo
+share/locale/hr/LC_MESSAGES/ksokoban.mo
+share/locale/is/LC_MESSAGES/ksokoban.mo
+share/locale/ja/LC_MESSAGES/ksokoban.mo
+share/locale/no/LC_MESSAGES/ksokoban.mo
+share/locale/pl/LC_MESSAGES/ksokoban.mo
+share/locale/pt/LC_MESSAGES/ksokoban.mo
+share/locale/pt_BR/LC_MESSAGES/ksokoban.mo
+share/locale/ru/LC_MESSAGES/ksokoban.mo
+share/locale/sk/LC_MESSAGES/ksokoban.mo
+share/locale/sl/LC_MESSAGES/ksokoban.mo
+share/locale/sv/LC_MESSAGES/ksokoban.mo
+@dirrm share/doc/HTML/en/ksokoban
