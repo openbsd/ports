@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2002/09/25 19:44:32 lebel Exp $
+# $OpenBSD: Makefile,v 1.67 2002/09/28 19:19:51 brad Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
 
@@ -282,7 +282,7 @@ post-build:
 
 
 post-install:
-	-ldconfig -U ${PREFIX}/lib ${PREFIX}/lib/fpic
+	-ldconfig -U ${PREFIX}/lib ${PREFIX}/lib/fpic ${PREFIX}/lib/nof
 
 # Tests still need to be performed at the end of install, I don't know why.
 
