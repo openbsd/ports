@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat Jun  3 15:26:12 2000
-+++ Makefile	Thu Sep 14 08:51:15 2000
++++ Makefile	Thu Sep 14 09:55:01 2000
 @@ -51,13 +51,13 @@
  LIBDIRS=-L. -L/usr/local/lib -L/usr/lib/X11 -L/usr/X11R6/lib
  
@@ -17,7 +17,7 @@
  
  #
  #
-@@ -69,6 +69,7 @@
+@@ -69,77 +69,75 @@
  
  CC=$(COMPILER) $(INCLUDEDIRS)
  LINK=$(CC) $(LIBDIRS) $(LIBS)
@@ -25,10 +25,13 @@
  
  PROGRAMS=$(BIN_PROGRAMS) $(TEST_PROGRAMS)
  
-@@ -78,68 +79,65 @@
- all: libgd.a $(PROGRAMS)
+ BIN_PROGRAMS=pngtogd pngtogd2 gdtopng gd2topng gd2copypal gdparttopng webpng
+ TEST_PROGRAMS=gdtest gddemo gd2time gdtestttf
  
- install: libgd.a $(BIN_PROGRAMS)
+-all: libgd.a $(PROGRAMS)
++all: libgd.la $(PROGRAMS)
+ 
+-install: libgd.a $(BIN_PROGRAMS)
 -	sh ./install-item 644 libgd.a $(INSTALL_LIB)/libgd.a
 -	sh ./install-item 755 pngtogd $(INSTALL_BIN)/pngtogd
 -	sh ./install-item 755 pngtogd2 $(INSTALL_BIN)/pngtogd2
@@ -46,6 +49,34 @@
 -	sh ./install-item 644 gdfontmb.h $(INSTALL_INCLUDE)/gdfontmb.h
 -	sh ./install-item 644 gdfonts.h $(INSTALL_INCLUDE)/gdfonts.h
 -	sh ./install-item 644 gdfontt.h $(INSTALL_INCLUDE)/gdfontt.h
+-
+-gddemo: gddemo.o libgd.a
+-	$(CC) gddemo.o -o gddemo	$(LIBDIRS) $(LIBS)
+-
+-pngtogd: pngtogd.o libgd.a
+-	$(CC) pngtogd.o -o pngtogd	$(LIBDIRS) $(LIBS) 
+-
+-webpng: webpng.o libgd.a
+-	$(CC) webpng.o -o webpng	$(LIBDIRS) $(LIBS)
+-
+-pngtogd2: pngtogd2.o libgd.a
+-	$(CC) pngtogd2.o -o pngtogd2	$(LIBDIRS) $(LIBS)
+-
+-gdtopng: gdtopng.o libgd.a
+-	$(CC) gdtopng.o -o gdtopng	$(LIBDIRS) $(LIBS)
+-
+-gd2topng: gd2topng.o libgd.a
+-	$(CC) gd2topng.o -o gd2topng	$(LIBDIRS) $(LIBS)
+-
+-gd2copypal: gd2copypal.o libgd.a
+-	$(CC) gd2copypal.o -o gd2copypal	$(LIBDIRS) $(LIBS)
+-
+-gdparttopng: gdparttopng.o libgd.a
+-	$(CC) gdparttopng.o -o gdparttopng	$(LIBDIRS) $(LIBS)
+-
+-gdtest: gdtest.o libgd.a
+-	$(CC) gdtest.o -o gdtest	$(LIBDIRS) $(LIBS)
++install: libgd.la $(BIN_PROGRAMS)
 +	$(LIBTOOL) --mode=install $(BSD_INSTALL_DATA) libgd.la $(DESTDIR)$(INSTALL_LIB)
 +	$(LIBTOOL) --mode=install $(BSD_INSTALL_PROGRAM) pngtogd $(DESTDIR)$(INSTALL_BIN)
 +	$(LIBTOOL) --mode=install $(BSD_INSTALL_PROGRAM) pngtogd2 $(DESTDIR)$(INSTALL_BIN)
@@ -63,52 +94,46 @@
 +	$(BSD_INSTALL_DATA) gdfontmb.h $(DESTDIR)$(INSTALL_INCLUDE)
 +	$(BSD_INSTALL_DATA) gdfonts.h $(DESTDIR)$(INSTALL_INCLUDE)
 +	$(BSD_INSTALL_DATA) gdfontt.h $(DESTDIR)$(INSTALL_INCLUDE)
- 
- gddemo: gddemo.o libgd.a
--	$(CC) gddemo.o -o gddemo	$(LIBDIRS) $(LIBS)
++
++gddemo: gddemo.o libgd.la
 +	$(LIBTOOL) --mode=link $(CC) gddemo.lo -o gddemo $(LIBDIRS) $(LIBS)
- 
- pngtogd: pngtogd.o libgd.a
--	$(CC) pngtogd.o -o pngtogd	$(LIBDIRS) $(LIBS) 
++
++pngtogd: pngtogd.o libgd.la
 +	$(LIBTOOL) --mode=link $(CC) pngtogd.lo -o pngtogd $(LIBDIRS) $(LIBS) 
- 
- webpng: webpng.o libgd.a
--	$(CC) webpng.o -o webpng	$(LIBDIRS) $(LIBS)
++
++webpng: webpng.o libgd.la
 +	$(LIBTOOL) --mode=link $(CC) webpng.lo -o webpng $(LIBDIRS) $(LIBS)
- 
- pngtogd2: pngtogd2.o libgd.a
--	$(CC) pngtogd2.o -o pngtogd2	$(LIBDIRS) $(LIBS)
++
++pngtogd2: pngtogd2.o libgd.la
 +	$(LIBTOOL) --mode=link $(CC) pngtogd2.lo -o pngtogd2 $(LIBDIRS) $(LIBS)
- 
- gdtopng: gdtopng.o libgd.a
--	$(CC) gdtopng.o -o gdtopng	$(LIBDIRS) $(LIBS)
++
++gdtopng: gdtopng.o libgd.la
 +	$(LIBTOOL) --mode=link $(CC) gdtopng.lo -o gdtopng $(LIBDIRS) $(LIBS)
- 
- gd2topng: gd2topng.o libgd.a
--	$(CC) gd2topng.o -o gd2topng	$(LIBDIRS) $(LIBS)
++
++gd2topng: gd2topng.o libgd.la
 +	$(LIBTOOL) --mode=link $(CC) gd2topng.lo -o gd2topng $(LIBDIRS) $(LIBS)
- 
- gd2copypal: gd2copypal.o libgd.a
--	$(CC) gd2copypal.o -o gd2copypal	$(LIBDIRS) $(LIBS)
++
++gd2copypal: gd2copypal.o libgd.la
 +	$(LIBTOOL) --mode=link $(CC) gd2copypal.lo -o gd2copypal $(LIBDIRS) $(LIBS)
- 
- gdparttopng: gdparttopng.o libgd.a
--	$(CC) gdparttopng.o -o gdparttopng	$(LIBDIRS) $(LIBS)
++
++gdparttopng: gdparttopng.o libgd.la
 +	$(LIBTOOL) --mode=link $(CC) gdparttopng.lo -o gdparttopng $(LIBDIRS) $(LIBS)
- 
- gdtest: gdtest.o libgd.a
--	$(CC) gdtest.o -o gdtest	$(LIBDIRS) $(LIBS)
++
++gdtest: gdtest.o libgd.la
 +	$(LIBTOOL) --mode=link $(CC) gdtest.lo -o gdtest $(LIBDIRS) $(LIBS)
  
- gd2time: gd2time.o libgd.a
+-gd2time: gd2time.o libgd.a
 -	$(CC) gd2time.o -o gd2time	$(LIBDIRS) $(LIBS)
++gd2time: gd2time.o libgd.la
 +	$(LIBTOOL) --mode=link $(CC) gd2time.lo -o gd2time $(LIBDIRS) $(LIBS)
  
- gdtestttf: gdtestttf.o libgd.a
+-gdtestttf: gdtestttf.o libgd.a
 -	$(CC) gdtestttf.o -o gdtestttf	$(LIBDIRS) $(LIBS)
++gdtestttf: gdtestttf.o libgd.la
 +	$(LIBTOOL) --mode=link $(CC) gdtestttf.lo -o gdtestttf $(LIBDIRS) $(LIBS)
  
- libgd.a: gd.o gd_gd.o gd_gd2.o gd_io.o gd_io_dp.o gd_io_file.o gd_ss.o \
+-libgd.a: gd.o gd_gd.o gd_gd2.o gd_io.o gd_io_dp.o gd_io_file.o gd_ss.o \
++libgd.la: gd.o gd_gd.o gd_gd2.o gd_io.o gd_io_dp.o gd_io_file.o gd_ss.o \
  	gd_io_ss.o gd_png.o gd_jpeg.o gdxpm.o gdfontt.o gdfonts.o gdfontmb.o gdfontl.o \
 -	gdfontg.o gdtables.o gdttf.o gdcache.o gdkanji.o  wbmp.o gd_wbmp.o \
 -	gd.h gdfontt.h gdfonts.h gdfontmb.h gdfontl.h gdfontg.h

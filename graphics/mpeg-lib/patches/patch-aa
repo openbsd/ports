@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Thu Nov 26 11:03:29 1998
-+++ Makefile.in	Thu Sep 14 08:44:26 2000
++++ Makefile.in	Thu Sep 14 10:15:18 2000
 @@ -15,16 +15,19 @@
  CPPFLAGS      = $(INCLUDE_DIRS) $(DEFINES)
  
@@ -21,7 +21,15 @@
  
  
  # Source for the library itself -- note that we define LIBSRC and
-@@ -48,7 +51,7 @@
+@@ -41,14 +44,14 @@
+ 
+ # Other files of interest
+ 
+-LIBRARY       = libmpeg.a
++LIBRARY       = libmpeg.la
+ SHLIB         = libmpeg.so
+ HEADER        = mpeg.h
+ EXTRAS        = @extras@
  
  # Implicit targets
  .c.o:
@@ -49,7 +57,7 @@
 -		$(INSTALL) -m 0644 $(LIBRARY) $(INSTALL_LIBRARY)/$(LIBRARY)
 -		@if test -f $(SHLIB) ; then echo "warning: $(SHLIB) *not* installed (installing shared libraries is too system-specific)" ; fi
 +		$(INSTALL_DATA) $(HEADER) $(DESTDIR)$(INSTALL_INCLUDE)
-+		libtool --mode=install $(INSTALL_DATA) libmpeg.la $(DESTDIR)$(INSTALL_LIBRARY)
++		$(LIBTOOL) --mode=install $(INSTALL_DATA) libmpeg.la $(DESTDIR)$(INSTALL_LIBRARY)
  
  clean:
 -		rm -f $(LIBRARY) $(EXTRAS) $(LIBOBJ) core
