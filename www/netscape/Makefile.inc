@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2000/08/31 10:04:36 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2000/08/31 10:09:44 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 
@@ -40,7 +40,7 @@ pre-fetch:
 .endif
 
 do-install:
-	@cd ${WRKDIR}/${DIRNAME} && ${MAKE_ENV} ./ns-install
+	@cd ${WRKSRC} && ${MAKE_ENV} ./ns-install
 
 post-install:
 	@sed -e 's#@netscape_home@#${TRUEPREFIX}/netscape#' \
