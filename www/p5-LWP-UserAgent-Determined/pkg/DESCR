@@ -1,0 +1,5 @@
+This class works just like LWP::UserAgent (and is based on
+it, by being a subclass of it), except that when you use it
+to get a web page but run into a possibly-temporary error
+(like a DNS lookup timeout), it'll wait a few seconds and
+retry a few times.
