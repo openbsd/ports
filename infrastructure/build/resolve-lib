@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: resolve-lib,v 1.3 2002/10/01 12:16:38 naddy Exp $
+# $OpenBSD: resolve-lib,v 1.4 2002/11/28 19:20:37 espie Exp $
 #
 # Copyright (c) 2001
 # Marc Espie.  All rights reserved.
@@ -114,7 +114,7 @@ while(<>) {
 				$bestminor = $minor;
 			}
 		}
-	} elsif (!$sharedonly && m/^lib\Q$libname\E.a$/) {
+	} elsif (!$sharedonly && m/^lib\Q$libname\E\.a$/) {
 		$found_unshared = 1;
 	}
 }
