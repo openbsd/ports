@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/12/09 04:46:18 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/12/21 18:51:21 fgsch Exp $
 
 DISTNAME=	cfs-1.3.3
 CATEGORIES=	security
@@ -17,21 +17,15 @@ do-build:
 	(cd ${WRKSRC} ; sh make_with_bad_rpcgen cfs)
 
 do-install:
-	@mkdir -p ${PREFIX}/share/doc/cfs
-.for f in ccat cfsd cname
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/sbin
-.endfor
-.for f in cattach cdetach cmkdir cpasswd
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
-.endfor
-.for f in cattach.1 cdetach.1 cmkdir.1 cpasswd.1
-	${INSTALL_MAN} ${WRKSRC}/${f} ${PREFIX}/man/man1
-.endfor
-.for f in ccat.8 cfsd.8 cname.8
-	${INSTALL_MAN} ${WRKSRC}/${f} ${PREFIX}/man/man8
-.endfor
-.for f in README.install notes.ms
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/cfs
-.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cfs
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} ccat cfsd cname ${PREFIX}/sbin
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} cattach cdetach cmkdir \
+	    cpasswd ${PREFIX}/bin
+	cd ${WRKSRC} && ${INSTALL_MAN} cattach.1 cdetach.1 cmkdir.1 \
+	    cpasswd.1 ${PREFIX}/man/man1
+	cd ${WRKSRC} && ${INSTALL_MAN} ccat.8 cfsd.8 cname.8 \
+	    ${PREFIX}/man/man8
+	cd ${WRKSRC} && ${INSTALL_DATA} README.install notes.ms \
+	    ${PREFIX}/share/doc/cfs
 
 .include <bsd.port.mk>
