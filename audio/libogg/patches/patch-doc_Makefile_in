@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2001/03/14 01:55:47 todd Exp $
+--- doc/Makefile.in.orig	Mon Mar 12 23:41:38 2001
++++ doc/Makefile.in	Mon Mar 12 23:42:14 2001
+@@ -87,7 +87,7 @@ AUTOMAKE_OPTIONS = foreign
+ 
+ SUBDIRS = ogg
+ 
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ 
+ doc_DATA = index.html framing.html oggstream.html white-xifish.png stream.png white-ogg.png
+ 
