@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.60 2004/04/25 10:36:40 jakob Exp $
+# $OpenBSD: Makefile,v 1.61 2004/04/27 12:02:23 jakob Exp $
 
 VERSION=	2.1.0
 
 DISTNAME=	postfix-${VERSION}
-PKGNAME=	postfix-${VERSION}
+PKGNAME=	postfix-${VERSION}p1
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 MASTER_SITES=	${MASTER_SITE_POSTFIX:=official/}
 
-IPV6VERSION=	1.22
+IPV6VERSION=	1.23
 IPV6POSTFIX=	2.1.0
 
 TLSHOMEPAGE=	http://www.aet.tu-cottbus.de/personen/jaenicke/pfixtls/
@@ -23,7 +23,7 @@ MAKE_AUXLIBS+=	-lssl -lcrypto
 
 PATCH_DIST_STRIP=-p1
 PATCHFILES+=	tls+ipv6-${IPV6VERSION}-pf-${IPV6POSTFIX}.patch.gz:0
-MASTER_SITES0=	ftp://ftp.suse.com/pub/people/choeger/postfix-2.1/source/
+MASTER_SITES0=	http://www.ipnet6.org/postfix/download/
 
 post-patch:
 	@find ${WRKSRC} -type f -name '*.bak.orig' -print | xargs rm
