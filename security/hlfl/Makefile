@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/05 20:10:38 jsyn Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/22 05:44:52 jsyn Exp $
 
 COMMENT=		"high level firewall language"
 
 DISTNAME=		hlfl-0.52
 CATEGORIES=    		security lang
-NEED_VERSION=		1.417
+NEED_VERSION=		1.425
 
 HOMEPAGE=		http://www.hlfl.org/
 
