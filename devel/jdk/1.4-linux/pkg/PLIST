@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/09/19 06:09:41 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/10/29 03:25:24 kevlo Exp $
 @option no-default-conflict
 @pkgcfl jdk-linux-1.4*
 jdk1.4.1-linux/COPYRIGHT
@@ -912,7 +912,7 @@ jdk1.4.1-linux/jre/bin/rmid
 jdk1.4.1-linux/jre/bin/rmiregistry
 jdk1.4.1-linux/jre/bin/servertool
 jdk1.4.1-linux/jre/bin/tnameserv
-jdk1.4.1-linux/jre/javaws-1_2-linux-i586-i.zip
+jdk1.4.1-linux/jre/javaws-1_2_0_01-linux-i586-i.zip
 jdk1.4.1-linux/jre/lib/audio/soundbank.gm
 jdk1.4.1-linux/jre/lib/charsets.jar
 jdk1.4.1-linux/jre/lib/cmm/CIEXYZ.pf

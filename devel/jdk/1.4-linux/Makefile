@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2002/09/19 06:09:39 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/29 03:25:21 kevlo Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Java Development Kit for Java 2 Standard Edition 1.4"
-VERSION=	1.4.1
+VERSION=	1.4.1_01
 
 DISTNAME=	jdk${VERSION}
 PKGNAME=	jdk-linux-${VERSION}
@@ -30,7 +30,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}/j2sdk1.4.1
+WRKDIST=	${WRKDIR}/j2sdk${VERSION}
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
