@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/23 12:11:37 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/12 20:33:21 naddy Exp $
 
 CATEGORIES=news
 MAINTAINER= Marc Espie <espie@openbsd.org>
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM=No
 
 CONFIGURE_STYLE=simple
 CONFIGURE_SCRIPT=Configure
-CONFIGURE_ARGS=-dse -Doptimize=${CFLAGS} -Dlocal=${PREFIX}
+CONFIGURE_ARGS=-dse -Doptimize="${CFLAGS}" -Dlocal=${PREFIX}
 SEPARATE_BUILD=concurrent
 
 pre-configure: 
