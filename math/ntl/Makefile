@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/08 16:15:35 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/09 14:41:36 espie Exp $
 
 DISTNAME=	ntl-5.0c
 CATEGORIES=	math
@@ -15,10 +15,8 @@ HOMEPAGE=	http://www.shoup.net/ntl/
 MAINTAINER=	Tom Knienieder <tom@knienieder.com>
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/src
+MAKE_FILE=	makefile
 
 CONFIGURE_STYLE= simple
-
-pre-patch:
-	@mv ${WRKDIST}/makefile ${WRKDIST}/Makefile
 
 .include <bsd.port.mk>
