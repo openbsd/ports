@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2003/11/02 05:47:43 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2003/11/18 05:25:27 brad Exp $
 
 COMMENT=	"image viewer for KDE"
 
-DISTNAME=	gwenview-1.0.0pre3
+DISTNAME=	gwenview-1.0.0pre4
 CATEGORIES=	graphics x11 x11/kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gwenview/}
 EXTRACT_SUFX=	.tar.bz2
@@ -31,6 +31,6 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_ARGS=	${MODKDE_CONFIGURE_ARGS}
-CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
+CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV} xdg_appsdir="\$${kde_appsdir}/Graphics"
 
 .include <bsd.port.mk>
