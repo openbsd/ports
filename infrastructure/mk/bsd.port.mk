@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.166 2000/01/06 21:53:27 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.167 2000/01/13 17:40:20 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -35,12 +35,12 @@ _REVISION=${_VERSION_REVISION:C/.*\.//}
 
 _VERSION_NEEDED=${NEED_VERSION:C/\..*//}
 _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
-.if ${_VERSION_NEEDED} > ${_VERSION} || \
+.  if ${_VERSION_NEEDED} > ${_VERSION} || \
    (${_VERSION_NEEDED} == ${_VERSION} && ${_REVISION_NEEDED} > ${_REVISION})
 .BEGIN:
 	echo "Need version ${NEED_VERSION} of bsd.port.mk"; \
 	exit 1;
-.endif
+.  endif
 .endif
 
 # Supported Variables and their behaviors:
@@ -403,11 +403,11 @@ NO_SHARED_LIBS=	Yes
 
 # Compatibility kludge for old scripts
 .if defined(NOCLEANDEPENDS)
-.if ${NOCLEANDEPENDS:L}=="no"
+.  if ${NOCLEANDEPENDS:L}=="no"
 CLEANDEPENDS?=Yes
-.else
+.  else
 CLEANDEPENDS?=No
-.endif
+.  endif
 .else
 CLEANDEPENDS?=No
 .endif
@@ -585,24 +585,24 @@ EXTRACT_AFTER_ARGS?=   -d ${WRKDIR}
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
 EXTRACT_BEFORE_ARGS?=	-dc
 
-.if defined(USE_BZIP2)
+.  if defined(USE_BZIP2)
 BUILD_DEPENDS+=		${BZIP2}:${PORTSDIR}/archivers/bzip2
 EXTRACT_CMD?=		${BZIP2}
 EXTRACT_SUFX?=		.tar.bz2
-.else
+.  else
 EXTRACT_CMD?=		${GZIP_CMD}
 EXTRACT_SUFX?=		.tar.gz
-.endif
+.  endif
 
 .endif
 
 # Figure out where the local mtree file is
 .if !defined(MTREE_FILE)
-.if defined(USE_IMAKE) || defined(USE_X11)
+.  if defined(USE_IMAKE) || defined(USE_X11)
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
-.else
+.  else
 MTREE_FILE=	/etc/mtree/BSD.local.dist
-.endif
+.  endif
 .endif
 MTREE_CMD?=	/usr/sbin/mtree
 MTREE_ARGS?=	-U -f ${MTREE_FILE} -d -e -q -p
@@ -611,11 +611,11 @@ MTREE_ARGS?=	-U -f ${MTREE_FILE} -d -e -q -p
 MAKE_ENV+=	EXTRA_SYS_MK_INCLUDES="<bsd.own.mk>"
 
 .if !defined(NO_WRKDIR)
-.if defined(OBJMACHINE)
+.  if defined(OBJMACHINE)
 WRKDIR?=		${.CURDIR}/work.${MACHINE_ARCH}
-.else
+.  else
 WRKDIR?=		${.CURDIR}/work
-.endif
+.  endif
 .else
 WRKDIR?=		${.CURDIR}
 .endif
@@ -679,11 +679,11 @@ DESCR?=		${PKGDIR}/DESCR
 .if exists(${PKGDIR}/PLIST.${ARCH})
 PLIST?=		${PKGDIR}/PLIST.${ARCH}
 .else
-.if defined(NO_SHARED_LIBS) && exists(${PKGDIR}/PLIST.noshared)
+.  if defined(NO_SHARED_LIBS) && exists(${PKGDIR}/PLIST.noshared)
 PLIST?=		${PKGDIR}/PLIST.noshared
-.else
+.  else
 PLIST?=		${PKGDIR}/PLIST
-.endif
+.  endif
 .endif
 
 PKG_CMD?=		/usr/sbin/pkg_create
@@ -692,21 +692,21 @@ _SORT_DEPENDS?=tsort|tail -r
 
 .if !defined(PKG_ARGS)
 PKG_ARGS=		-v -c ${COMMENT} -d ${DESCR} -f ${PLIST} -p ${PREFIX} -P "`${MAKE} package-depends|${_SORT_DEPENDS}`"
-.if exists(${PKGDIR}/INSTALL)
+.  if exists(${PKGDIR}/INSTALL)
 PKG_ARGS+=		-i ${PKGDIR}/INSTALL
-.endif
-.if exists(${PKGDIR}/DEINSTALL)
+.  endif
+.  if exists(${PKGDIR}/DEINSTALL)
 PKG_ARGS+=		-k ${PKGDIR}/DEINSTALL
-.endif
-.if exists(${PKGDIR}/REQ)
+.  endif
+.  if exists(${PKGDIR}/REQ)
 PKG_ARGS+=		-r ${PKGDIR}/REQ
-.endif
-.if exists(${PKGDIR}/MESSAGE)
+.  endif
+.  if exists(${PKGDIR}/MESSAGE)
 PKG_ARGS+=		-D ${PKGDIR}/MESSAGE
-.endif
-.if !defined(NO_MTREE)
+.  endif
+.  if !defined(NO_MTREE)
 PKG_ARGS+=		-m ${MTREE_FILE}
-.endif
+.  endif
 .endif
 PKG_SUFX?=		.tgz
 # where pkg_add records its dirty deeds.
@@ -714,11 +714,11 @@ PKG_DBDIR?=		/var/db/pkg
 
 # shared/dynamic motif libs
 .if defined(USE_MOTIF) || defined(HAVE_MOTIF)
-.if defined(MOTIF_STATIC)
+.  if defined(MOTIF_STATIC)
 MOTIFLIB?=	${X11BASE}/lib/libXm.a
-.else
+.  else
 MOTIFLIB?=	-L${X11BASE}/lib -lXm
-.endif
+.  endif
 .endif
 
 CHMOD?=		/bin/chmod
@@ -806,22 +806,22 @@ PATCH_SITES:=	${MASTER_SITE_OVERRIDE} ${_PATCH_SITES}
 .endif
 
 .for _I in 0 1 2 3 4 5 6 7 8 9
-.if defined(MASTER_SITES${_I})
+.  if defined(MASTER_SITES${_I})
 _MASTER_SITES${_I}:=	${MASTER_SITES${_I}:S@%SUBDIR%@${MASTER_SITE_SUBDIR}@}
-.if !defined(MASTER_SITE_OVERRIDE)
+.    if !defined(MASTER_SITE_OVERRIDE)
 MASTER_SITES${_I}:=	${_MASTER_SITES${_I}} ${MASTER_SITE_BACKUP}
-.else
+.    else
 MASTER_SITES${_I}:= ${MASTER_SITE_OVERRIDE} ${_MASTER_SITES${_I}}
-.endif
-.endif
-.if defined(PATCH_SITES${_I})
+.    endif
+.  endif
+.  if defined(PATCH_SITES${_I})
 _PATCH_SITES${_I}:=	${PATCH_SITES${_I}:S@%SUBDIR%@${PATCH_SITE_SUBDIR}@}
-.if !defined(MASTER_SITE_OVERRIDE)
+.    if !defined(MASTER_SITE_OVERRIDE)
 PATCH_SITES${_I}:=	${_PATCH_SITES${_I}} ${MASTER_SITE_BACKUP}
-.else
+.    else
 PATCH_SITES${_I}:= ${MASTER_SITE_OVERRIDE} ${_PATCH_SITES${_I}}
-.endif
-.endif
+.    endif
+.  endif
 .endfor
 
 
@@ -831,21 +831,21 @@ PATCH_SITES${_I}:= ${MASTER_SITE_OVERRIDE} ${_PATCH_SITES${_I}}
 #
 .if exists(/cdrom/distfiles)
 CDROM_SITE:=	/cdrom/distfiles/${DIST_SUBDIR}
-.if defined(FETCH_SYMLINK_DISTFILES)
+.  if defined(FETCH_SYMLINK_DISTFILES)
 CDROM_COPY:=	ln
 CDROM_OPT=		-s
-.else
+.  else
 CDROM_COPY:=	cp
 CDROM_OPT=		-f
-.endif
+.  endif
 .endif
 
 .if defined(CDROM_SITE)
-.if defined(FETCH_SYMLINK_DISTFILES)
+.  if defined(FETCH_SYMLINK_DISTFILES)
 _CDROM_OVERRIDE=if ln -s ${CDROM_SITE}/$$f .; then exit 0; fi;
-.else
+.  else
 _CDROM_OVERRIDE=if cp -f ${CDROM_SITE}/$$f .; then exit 0; fi;
-.endif
+.  endif
 .else
 _CDROM_OVERRIDE=:
 .endif
@@ -858,22 +858,22 @@ _DISTFILES=		${DISTFILES:C/:[0-9]$//}
 _PATCHFILES=	${PATCHFILES:C/:[0-9]$//}
 
 .if make(makesum) || make(addsum) || defined(__FETCH_ALL)
-.if defined(SUPDISTFILES)
+.  if defined(SUPDISTFILES)
  DISTFILES+=${SUPDISTFILES}
  _DISTFILES+=${SUPDISTFILES:C/:[0-9]$//}
-.endif
-.if defined(SUPPATCHFILES)
+.  endif
+.  if defined(SUPPATCHFILES)
  PATCHFILES+=${SUPPATCHFILES}
  _PATCHFILES+=${SUPPATCHFILES:C/:[0-9]$//}
-.endif
+.  endif
 .endif
 ALLFILES?=	${_DISTFILES} ${_PATCHFILES}
 
 CKSUMFILES=		${ALLFILES}
 .if defined(IGNOREFILES)
-.for __TMP in ${IGNOREFILES}
+.  for __TMP in ${IGNOREFILES}
 CKSUMFILES:=${CKSUMFILES:N${__TMP}}
-.endfor
+.  endfor
 .endif
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
@@ -950,14 +950,14 @@ MANLANG?=	""	# english only by default
 
 .for lang in ${MANLANG}
 
-.for sect in 1 2 3 4 5 6 7 8 9 L N
-.if defined(MAN${sect})
+.  for sect in 1 2 3 4 5 6 7 8 9 L N
+.    if defined(MAN${sect})
 _MANPAGES+=	${MAN${sect}:S%^%${MAN${sect}PREFIX}/man/${lang}/man${sect:L}/%}
-.endif
-.if defined(CAT${sect})
+.    endif
+.    if defined(CAT${sect})
 _CATPAGES+=	${CAT${sect}:S%^%${CAT${sect}PREFIX}/man/${lang}/cat${sect:L}/%}
-.endif
-.endfor
+.    endif
+.  endfor
 .endfor
 
 .MAIN: all
@@ -986,56 +986,56 @@ _CATPAGES+=	${CAT${sect}:S%^%${CAT${sect}PREFIX}/man/${lang}/cat${sect:L}/%}
 ################################################################
 
 .if !defined(NO_IGNORE)
-.if (defined(IS_INTERACTIVE) && defined(BATCH))
+.  if (defined(IS_INTERACTIVE) && defined(BATCH))
 IGNORE=	"is an interactive port"
-.elif (!defined(IS_INTERACTIVE) && defined(INTERACTIVE))
+.  elif (!defined(IS_INTERACTIVE) && defined(INTERACTIVE))
 IGNORE=	"is not an interactive port"
-.elif (defined(REQUIRES_MOTIF) && !defined(HAVE_MOTIF))
+.  elif (defined(REQUIRES_MOTIF) && !defined(HAVE_MOTIF))
 IGNORE=	"requires Motif"
-.elif (defined(MOTIF_ONLY) && !defined(REQUIRES_MOTIF))
+.  elif (defined(MOTIF_ONLY) && !defined(REQUIRES_MOTIF))
 IGNORE=	"does not require Motif"
-.elif (defined(NO_CDROM) && defined(FOR_CDROM))
+.  elif (defined(NO_CDROM) && defined(FOR_CDROM))
 IGNORE=	"may not be placed on a CDROM: ${NO_CDROM}"
-.elif (defined(RESTRICTED) && defined(NO_RESTRICTED))
+.  elif (defined(RESTRICTED) && defined(NO_RESTRICTED))
 IGNORE=	"is restricted: ${RESTRICTED}"
-.elif ((defined(USE_IMAKE) || defined(USE_X11)) && !exists(${X11BASE}))
+.  elif ((defined(USE_IMAKE) || defined(USE_X11)) && !exists(${X11BASE}))
 IGNORE=	"uses X11, but ${X11BASE} not found"
-.elif defined(BROKEN)
+.  elif defined(BROKEN)
 IGNORE=	"is marked as broken: ${BROKEN}"
-.elif defined(ONLY_FOR_ARCHS)
-.for __ARCH in ${MACHINE_ARCH} ${ARCH}
-.if !empty(ONLY_FOR_ARCHS:M${__ARCH})
+.  elif defined(ONLY_FOR_ARCHS)
+.    for __ARCH in ${MACHINE_ARCH} ${ARCH}
+.      if !empty(ONLY_FOR_ARCHS:M${__ARCH})
 _ARCH_OK=1
-.endif
-.endfor
-.if !defined(_ARCH_OK)
-.if ${MACHINE_ARCH} == "${ARCH}"
+.      endif
+.    endfor
+.    if !defined(_ARCH_OK)
+.      if ${MACHINE_ARCH} == "${ARCH}"
 IGNORE= "is only for ${ONLY_FOR_ARCHS}, not ${MACHINE_ARCH}"
-.else
+.      else
 IGNORE= "is only for ${ONLY_FOR_ARCHS}, not ${MACHINE_ARCH} \(${ARCH}\)"
-.endif
-.endif
-.elif defined(COMES_WITH)
-.if ( ${OPSYS_VER} >= ${COMES_WITH} )
+.      endif
+.    endif
+.  elif defined(COMES_WITH)
+.    if ( ${OPSYS_VER} >= ${COMES_WITH} )
 IGNORE= "-- ${PKGNAME:C/-[0-9].*//g} comes with ${OPSYS} as of release ${COMES_WITH}"
-.endif
-.endif
+.    endif
+.  endif
 
 .endif		# NO_IGNORE
 
 .if defined(IGNORE) && !defined(NO_IGNORE)
 fetch checksum extract patch configure all build install \
 uninstall deinstall package:
-.if !defined(IGNORE_SILENT)
+.  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${PKGNAME} ${IGNORE}."
-.endif
+.  endif
 
 .else 
 
 fetch: real-fetch
 
 checksum: fetch
-.if ! (defined(NO_CHECKSUM) || defined(NO_EXTRACT))
+.  if ! (defined(NO_CHECKSUM) || defined(NO_EXTRACT))
 	@if [ ! -f ${CHECKSUM_FILE} ]; then \
 	  ${ECHO_MSG} ">> No checksum file."; \
 	else \
@@ -1084,7 +1084,7 @@ checksum: fetch
 		  exit 1; \
 		fi ; \
   fi
-.endif
+.  endif
 
 extract: ${_EXTRACT_COOKIE}
 patch: ${_PATCH_COOKIE}
@@ -1093,7 +1093,7 @@ build: ${_BUILD_COOKIE}
 install: ${_INSTALL_COOKIE}
 package: ${_PACKAGE_COOKIE}
 
-.if defined(ALL_HOOK)
+.  if defined(ALL_HOOK)
 all:
 	@cd ${.CURDIR} && ${SETENV} CURDIR=${.CURDIR} DISTNAME=${DISTNAME} \
 	  DISTDIR=${DISTDIR} WRKDIR=${WRKDIR} WRKSRC=${WRKSRC} WRKBUILD=${WRKBUILD}\
@@ -1102,9 +1102,9 @@ all:
 	  DEPENDS="${DEPENDS}" BUILD_DEPENDS="${BUILD_DEPENDS}" \
 	  RUN_DEPENDS="${RUN_DEPENDS}" X11BASE=${X11BASE} \
 	${ALL_HOOK}
-.else
+.  else
 all: ${_BUILD_COOKIE}
-.endif
+.  endif
 
 uninstall deinstall:
 	@${ECHO_MSG} "===> Deinstalling for ${PKGNAME}"
@@ -1114,11 +1114,11 @@ uninstall deinstall:
 .endif # IGNORECMD
 
 .if !defined(DEPENDS_TARGET)
-.if make(reinstall)
+.  if make(reinstall)
 DEPENDS_TARGET=	reinstall
-.else
+.  else
 DEPENDS_TARGET=	install
-.endif
+.  endif
 .endif
 
 ################################################################
@@ -1196,9 +1196,9 @@ ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE}
 .if !defined(NO_PACKAGE)
 	@cd ${.CURDIR} && make real-package
 .else
-.if !defined(IGNORE_SILENT)
+.  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${PKGNAME} may not be packaged: ${NO_PACKAGE}."
-.endif
+.  endif
 .endif
 .if !defined(PACKAGE_NOINSTALL)
 	@${_MAKE_COOKIE} ${_PACKAGE_COOKIE}
@@ -1218,7 +1218,7 @@ ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE}
 .if !target(do-fetch)
 do-fetch: ${ALLFILES:S@^@${FULLDISTDIR}/@}
 
-.for _F in ${_DISTFILES:S@^@${FULLDISTDIR}/@}
+.  for _F in ${_DISTFILES:S@^@${FULLDISTDIR}/@}
 ${_F}:
 	@mkdir -p ${_F:H}
 	@cd ${_F:H}; \
@@ -1245,10 +1245,10 @@ ${_F}:
 				exit 0; \
 		fi; \
 	done; exit 1
-.endfor
+.  endfor
 
-.if defined(PATCHFILES)
-.for _F in ${_PATCHFILES:S@^@${FULLDISTDIR}/@}
+.  if defined(PATCHFILES)
+.    for _F in ${_PATCHFILES:S@^@${FULLDISTDIR}/@}
 ${_F}:
 	@mkdir -p ${_F:H}
 	@cd ${_F:H}; \
@@ -1275,9 +1275,9 @@ ${_F}:
 				exit 0; \
 		fi; \
 	done; exit 1
-.endfor
+.    endfor
 
-.endif	# defined(PATCHFILES)
+.  endif	# defined(PATCHFILES)
 
 .endif	# !target(do-fetch)
 
@@ -1309,8 +1309,8 @@ list-distfiles:
 #
 .if !target(obj)
 obj:
-.if !defined(NO_WRKDIR)
-.if defined(WRKOBJDIR)
+.  if !defined(NO_WRKDIR)
+.    if defined(WRKOBJDIR)
 	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}
 	@mkdir -p ${WRKOBJDIR}/${PORTSUBDIR}
 	@if [ ! -L ${WRKDIR} ] || \
@@ -1319,21 +1319,21 @@ obj:
 		rm -f ${WRKDIR}; \
 		ln -sf ${WRKOBJDIR}/${PORTSUBDIR} ${WRKDIR}; \
 	fi
-.else
+.    else
 	@echo ">>"
 	@echo ">> Please set the WRKOBJDIR variable before using 'make obj'"
 	@echo ">>"
 	@exit 1;
-.endif
-.endif
+.    endif
+.  endif
 .endif
 
 # Extract
 
 .if !target(do-extract)
 do-extract:
-.if !defined(NO_WRKDIR)
-.if defined(WRKOBJDIR)
+.  if !defined(NO_WRKDIR)
+.    if defined(WRKOBJDIR)
 	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}
 	@mkdir -p ${WRKOBJDIR}/${PORTSUBDIR}
 	@if [ ! -L ${WRKDIR} ] || \
@@ -1342,11 +1342,11 @@ do-extract:
 		rm -f ${WRKDIR}; \
 		ln -sf ${WRKOBJDIR}/${PORTSUBDIR} ${WRKDIR}; \
 	fi
-.else
+.    else
 	@rm -rf ${WRKDIR}
 	@mkdir -p ${WRKDIR}
-.endif
-.endif
+.    endif
+.  endif
 	@PATH=${PORTPATH}; \
 	for file in ${EXTRACT_ONLY}; do \
 		if cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${FULLDISTDIR}/$$file ${EXTRACT_AFTER_ARGS}; then : ; \
@@ -1360,7 +1360,7 @@ do-extract:
 
 .if !target(do-patch)
 do-patch:
-.if defined(PATCHFILES)
+.  if defined(PATCHFILES)
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
 	@cd ${FULLDISTDIR}; \
 	  for i in ${_PATCHFILES}; do \
@@ -1376,7 +1376,7 @@ do-patch:
 				;; \
 		esac; \
 	  done
-.endif
+.  endif
 	@if cd ${PATCHDIR} 2>/dev/null; then \
 		error=0; \
 		for i in ${PATCH_LIST}; do \
@@ -1415,7 +1415,7 @@ do-configure: ${WRKBUILD}
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 		  ${SCRIPTDIR}/configure; \
 	fi
-.if defined(HAS_CONFIGURE)
+.  if defined(HAS_CONFIGURE)
 	@cd ${WRKBUILD} && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
 		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
@@ -1423,10 +1423,10 @@ do-configure: ${WRKBUILD}
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}" \
 		YACC="${YACC}" \
 		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
-.endif
-.if defined(USE_IMAKE)
+.  endif
+.  if defined(USE_IMAKE)
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF}
-.endif
+.  endif
 .endif
 
 ${WRKBUILD}:
@@ -1518,14 +1518,14 @@ _PORT_USE: .USE
 
 _POST_INSTALL: .USE
 .if defined(_MANPAGES) || defined(_CATPAGES)
-.if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
+.  if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
-.for manpage in ${_MANPAGES} ${_CATPAGES}
+.    for manpage in ${_MANPAGES} ${_CATPAGES}
 	@${GUNZIP_CMD} ${manpage}.gz
-.endfor
-.elif !defined(MANCOMPRESSED) && !defined(NOMANCOMPRESS)
+.    endfor
+.  elif !defined(MANCOMPRESSED) && !defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
-.for manpage in ${_MANPAGES} ${_CATPAGES}
+.    for manpage in ${_MANPAGES} ${_CATPAGES}
 	@if [ -L ${manpage} ]; then \
 		set - `file ${manpage}`; \
 		shift `expr $$# - 1`; \
@@ -1534,8 +1534,8 @@ _POST_INSTALL: .USE
 	else \
 		${GZIP_CMD} ${manpage}; \
 	fi
-.endfor
-.endif
+.    endfor
+.  endif
 .endif
 .if exists(${PKGDIR}/MESSAGE)
 	@cat	${PKGDIR}/MESSAGE
@@ -1613,13 +1613,13 @@ real-package: _PORT_USE
 
 .for name in fetch extract patch configure build install package
 
-.if !target(pre-${name})
+.  if !target(pre-${name})
 pre-${name}:
-.endif
+.  endif
 
-.if !target(post-${name})
+.  if !target(post-${name})
 post-${name}:
-.endif
+.  endif
 
 .endfor
 
@@ -1666,15 +1666,15 @@ pre-clean:
 
 .if !target(clean)
 clean: pre-clean
-.if ${CLEANDEPENDS:L}=="yes"
+.  if ${CLEANDEPENDS:L}=="yes"
 	@make clean-depends
-.endif
+.  endif
 	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
-.if !defined(NO_WRKDIR)
-.if  defined(WRKOBJDIR)
+.  if !defined(NO_WRKDIR)
+.    if  defined(WRKOBJDIR)
 	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}
 	@rm -f ${WRKDIR}
-.else
+.    else
 	@if [ -d ${WRKDIR} ]; then \
 		if [ -w ${WRKDIR} ]; then \
 			rm -rf ${WRKDIR}; \
@@ -1682,10 +1682,10 @@ clean: pre-clean
 			${ECHO_MSG} "===>   ${WRKDIR} not writable, skipping"; \
 		fi; \
 	fi
-.endif
-.else
+.    endif
+.  else
 	@rm -f ${_ALL_COOKIES}
-.endif
+.  endif
 .endif
 
 .if !target(pre-distclean)
@@ -1698,9 +1698,9 @@ distclean: pre-distclean clean
 	@if cd ${FULLDISTDIR} 2>/dev/null; then \
 		rm -f ${_DISTFILES} ${_PATCHFILES}; \
 	fi
-.if defined(DIST_SUBDIR)
+.  if defined(DIST_SUBDIR)
 	-@rmdir ${FULLDISTDIR}  
-.endif
+.  endif
 .endif
 
 # Prints out a list of files to fetch (useful to do a batch fetch)
@@ -1720,12 +1720,12 @@ fetch-list:
 .if !target(fetch-list-recursive)
 fetch-list-recursive:
 	@make fetch-list-one-pkg
-.if ${RECURSIVE_FETCH_LIST:L} != "no"
+.  if ${RECURSIVE_FETCH_LIST:L} != "no"
 	@for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
 	| tr '\040' '\012' | sort -u`; do \
 		cd $$dir; make fetch-list-recursive; \
 	done
-.endif # ${RECURSIVE_FETCH_LIST} != "NO"
+.  endif # ${RECURSIVE_FETCH_LIST} != "NO"
 .endif # !target(fetch-list-recursive)
 
 .if !target(fetch-list-one-pkg)
@@ -1756,7 +1756,7 @@ fetch-list-one-pkg:
 			echo "echo $${file} not fetched" ; \
 		fi \
 	done
-.if defined(PATCHFILES)
+.  if defined(PATCHFILES)
 	@cd ${FULLDISTDIR}; \
 	 for fullfile in ${PATCHFILES}; do \
 	 	file=`echo $$fullfile|sed -e 's,:[0-9]$$,,'`; \
@@ -1781,7 +1781,7 @@ fetch-list-one-pkg:
 			echo "echo $${file} not fetched" ; \
 		fi \
 	done
-.endif # defined(PATCHFILES)
+.  endif # defined(PATCHFILES)
 .endif # !target(fetch-list-one-pkg)
 
 # packing list utilities.  This generates a packing list from a recently
@@ -1815,11 +1815,11 @@ _DEPEND_THRU=FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}
 # XXX
 .if !target(package-name)
 package-name:
-.if (${FULL_PACKAGE_NAME:L} == "yes")
+.  if (${FULL_PACKAGE_NAME:L} == "yes")
 	@${_DEPEND_ECHO} `make package-path`/${PKGNAME}
-.else
+.  else
 	@${_DEPEND_ECHO} '${PKGNAME}'
-.endif 
+.  endif 
 .endif 
 
 .if !target(package-path)
@@ -1850,10 +1850,10 @@ package-noinstall:
 .if !target(depends)
 depends: lib-depends misc-depends fetch-depends build-depends run-depends
 
-.for _DEP in fetch build run
+.  for _DEP in fetch build run
 ${_DEP}-depends:
-.if defined(${_DEP:U}_DEPENDS)
-.if !defined(NO_DEPENDS)
+.    if defined(${_DEP:U}_DEPENDS)
+.      if !defined(NO_DEPENDS)
 	@PATH=${PORTPATH}; \
 	for i in ${${_DEP:U}_DEPENDS}; do \
 		prog=`echo $$i | sed -e 's/:.*//'`; \
@@ -1893,14 +1893,14 @@ ${_DEP}-depends:
 			fi; \
 		fi; \
 	done
-.endif
-.endif
-.endfor
+.      endif
+.    endif
+.  endfor
 
 lib-depends:
-.if defined(LIB_DEPENDS)
-.if !defined(NO_DEPENDS)
-.if defined(NO_SHARED_LIBS)
+.  if defined(LIB_DEPENDS)
+.    if !defined(NO_DEPENDS)
+.      if defined(NO_SHARED_LIBS)
 	@for i in ${LIB_DEPENDS}; do \
 		lib=`echo $$i | sed -e 's/:.*//' -e 's|\([^\\]\)[\\\.].*|\1|'`; \
 		dir=`echo $$i | sed -e 's/[^:]*://'`; \
@@ -1927,7 +1927,7 @@ lib-depends:
 		fi; \
 		rm -f $$tmp; \
 	done
-.else
+.      else
 	@for i in ${LIB_DEPENDS}; do \
 		lib=`echo $$i | sed -e 's/:.*//' -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
 		dir=`echo $$i | sed -e 's/[^:]*://'`; \
@@ -1954,13 +1954,13 @@ lib-depends:
 			${ECHO_MSG} "===>  ${PKGNAME} depends on shared library: $$libname - $$reallib found"; \
 		fi; \
 	done
-.endif
-.endif
-.endif
+.      endif
+.    endif
+.  endif
 
 misc-depends:
-.if defined(DEPENDS)
-.if !defined(NO_DEPENDS)
+.  if defined(DEPENDS)
+.    if !defined(NO_DEPENDS)
 	@for dir in ${DEPENDS}; do \
 		if expr "$$dir" : '.*:' > /dev/null; then \
 			target=`echo $$dir | sed -e 's/.*://'`; \
@@ -1979,8 +1979,8 @@ misc-depends:
 				exit 1; \
 		fi \
 	done
-.endif
-.endif
+.    endif
+.  endif
 
 .endif
 
@@ -2002,7 +2002,7 @@ _RUN_DEP = ${RUN_DEPENDS:C/^[^:]*://:C/:.*//}
 
 .if !target(clean-depends)
 clean-depends:
-.if defined(_ALWAYS_DEP) || defined(_BUILD_DEP) || defined(_RUN_DEP)
+.  if defined(_ALWAYS_DEP) || defined(_BUILD_DEP) || defined(_RUN_DEP)
 	@for dir in \
 	   `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
@@ -2010,7 +2010,7 @@ clean-depends:
 			make CLEANDEPENDS=No clean clean-depends; \
 		fi \
 	done
-.endif
+.  endif
 .endif
 
 ################################################################
@@ -2089,26 +2089,26 @@ README.html:
 
 .if !target(print-depends-list)
 print-depends-list:
-.if defined(_ALWAYS_DEP) || defined(_BUILD_DEP) || target(depends-list)
+.  if defined(_ALWAYS_DEP) || defined(_BUILD_DEP) || target(depends-list)
 	@echo -n 'This port requires package(s) "'
 	@echo -n `make ${_DEPEND_THRU} depends-list | ${_SORT_DEPENDS}`
 	@echo '" to build.'
-.endif
+.  endif
 .endif
 
 .if !target(print-package-depends)
 print-package-depends:
-.if defined(_ALWAYS_DEP) || defined(_RUN_DEP) || target(package-depends)
+.  if defined(_ALWAYS_DEP) || defined(_RUN_DEP) || target(package-depends)
 	@echo -n 'This port requires package(s) "'
 	@echo -n `make ${_DEPEND_THRU} package-depends | ${_SORT_DEPENDS}`
 	@echo '" to run.'
-.endif
+.  endif
 .endif
 
 
 .if !target(recurse-build-depends)
 recurse-build-depends:
-.if defined(_ALWAYS_DEP) || defined(_BUILD_DEP) || defined(_RUN_DEP)
+.  if defined(_ALWAYS_DEP) || defined(_BUILD_DEP) || defined(_RUN_DEP)
 	@pname=`make _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
 	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
 		 | tr '\040' '\012' | sort -u`; do \
@@ -2122,14 +2122,14 @@ recurse-build-depends:
 			exit 1; \
 		fi; \
 	done 
-.else
+.  else
 	@pname=`make _DEPEND_ECHO='echo -n' package-name`; echo $$pname $$pname
-.endif
+.  endif
 .endif
 
 .if !target(depends-list)
 depends-list:
-.if defined(_ALWAYS_DEP) || defined(_BUILD_DEP)
+.  if defined(_ALWAYS_DEP) || defined(_BUILD_DEP)
 	@for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
 		if cd $$dir 2>/dev/null; then \
@@ -2142,13 +2142,13 @@ depends-list:
 			exit 1; \
 		fi; \
 	done 
-.endif
+.  endif
 .endif
 
 # Build (recursively) a list of package dependencies suitable for tsort
 .if !target(recurse-package-depends)
 recurse-package-depends:
-.if defined(_ALWAYS_DEP) || defined(_RUN_DEP)
+.  if defined(_ALWAYS_DEP) || defined(_RUN_DEP)
 	@pname=`make _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
 	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
@@ -2162,14 +2162,14 @@ recurse-package-depends:
 			exit 1; \
 		fi; \
 	done
-.else
+.  else
 	@pname=`make _DEPEND_ECHO='echo -n' package-name`; echo $$pname $$pname
-.endif
+.  endif
 .endif
 
 .if !target(package-depends)
 package-depends:
-.if defined(_ALWAYS_DEP) || defined(_RUN_DEP)
+.  if defined(_ALWAYS_DEP) || defined(_RUN_DEP)
 	@for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
 		if cd $$dir 2>/dev/null; then \
@@ -2182,7 +2182,7 @@ package-depends:
 			exit 1; \
 		fi; \
 	done
-.endif
+.  endif
 .endif
 
 README_NAME?=	${TEMPLATES}/README.port
@@ -2221,9 +2221,9 @@ fake-pkg:
 	    exit 1; \
 	 fi
 	@if [ ! -d ${PKG_DBDIR} ]; then rm -f ${PKG_DBDIR}; mkdir -p ${PKG_DBDIR}; fi
-.if defined(FORCE_PKG_REGISTER)
+.  if defined(FORCE_PKG_REGISTER)
 	@rm -rf ${PKG_DBDIR}/${PKGNAME}
-.endif
+.  endif
 	@if [ ! -d ${PKG_DBDIR}/${PKGNAME} ]; then \
 		${ECHO_MSG} "===>  Registering installation for ${PKGNAME}"; \
 		mkdir -p ${PKG_DBDIR}/${PKGNAME}; \
