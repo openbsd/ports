@@ -1,21 +1,32 @@
-# $OpenBSD: Makefile,v 1.12 2000/02/12 00:43:57 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/11 01:08:42 espie Exp $
 
 DISTNAME=	tracker-5.3
 CATEGORIES=	audio
+NEED_VERSION=	1.195
 MASTER_SITES=	ftp://ftp.uni-trier.de/pub/unix/audio/tracker/
 EXTRACT_SUFX=	.tgz
-NEED_VERSION=	1.195
 
 MAINTAINER=	espie@openbsd.org
 
-USE_GMAKE=	yes
+USE_GMAKE=		Yes
+
+# OpenBSD has a special exemption. Other BSD should contact me (Marc Espie) 
+# for redistribution on the CD.
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=		${WRKDIR}/tracker
-PATCH_STRIP= 	-p2
+PATCH_STRIP= 		-p2
 MAKE_FLAGS=	MACHINE=openbsd CC=$(CC) INSTALL="$(INSTALL)" \
 		INST_BIN_OPT="-c -s -m $(BINMODE) -o $(BINOWN) -g $(BINGRP)" \
 		INST_MAN_OPT="-c -m 644 -o $(BINOWN) -g $(BINGRP)" \
-		COMPRESSION_FILE=/etc/compression_methods 
+		COMPRESSION_FILE='$${DESTDIR}/etc/compression_methods' \
+		PREFIX='$${DESTDIR}/${PREFIX}'
+
+FAKE_FLAGS=	${MAKE_FLAGS}
+FAKE=		Yes
 
 post-extract:
 	@mkdir -p ${WRKSRC}/Arch/OpenBSD

@@ -1,7 +1,6 @@
-diff -u -r w2/tracker/Docs/tracker.texinfo work/tracker/Docs/tracker.texinfo
---- w2/tracker/Docs/tracker.texinfo	Thu Apr 11 19:21:05 1996
-+++ work/tracker/Docs/tracker.texinfo	Sun Sep 27 17:16:43 1998
-@@ -1,10 +1,10 @@
+--- work/tracker/Docs/tracker.texinfo.orig	Thu Apr 11 19:21:05 1996
++++ work/tracker/Docs/tracker.texinfo	Sat Mar 11 02:02:03 2000
+@@ -1,12 +1,17 @@
  \input texinfo
  
  @setfilename tracker.info
@@ -13,8 +12,15 @@ diff -u -r w2/tracker/Docs/tracker.texinfo work/tracker/Docs/tracker.texinfo
 +@set EMAIL Marc.Espie@@openbsd.org
  @set POSTAL Marc Espie@*60 rue du 4 septembre@*87100 Limoges@*France
  
++@dircategory Miscellaneous
++@direntry
++* Tracker: (tracker).		Amiga modules player.
++@end direntry
++
  @titlepage
-@@ -979,14 +979,14 @@
+ @title Tracker @value{VERSION}
+ @subtitle Documentation rev. 1.0
+@@ -979,14 +984,14 @@
  * Other Architectures: Porting tracker.
  @end menu
  
@@ -31,4 +37,3 @@ diff -u -r w2/tracker/Docs/tracker.texinfo work/tracker/Docs/tracker.texinfo
  @subsection Amiga
  
  There is currently one Amiga version running under AmigaDos. 
-
