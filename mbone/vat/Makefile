@@ -1,7 +1,7 @@
 # $FreeBSD: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
-# $OpenBSD: Makefile,v 1.18 2001/07/30 15:47:16 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2001/09/09 18:14:51 naddy Exp $
 
-COMMENT=	"The Visual Audio Tool - multicast audioconferencing"
+COMMENT=	"Visual Audio Tool, multicast audioconferencing"
 
 DISTNAME=	vatsrc-4.0b2
 PKGNAME=	vat-4.0b2

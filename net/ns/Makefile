@@ -1,9 +1,9 @@
 #
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
-# $OpenBSD: Makefile,v 1.16 2001/06/20 01:43:30 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2001/09/09 18:14:51 naddy Exp $
 #
 
-COMMENT=	"The UCB/LBNL Network Simulator Version 2"
+COMMENT=	"UCB/LBNL Network Simulator Version 2"
 
 #BROKEN=		tclcl API for delay_bind_dispatch changed
 

@@ -1,9 +1,9 @@
 #
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
-# $OpenBSD: Makefile,v 1.12 2001/05/06 05:00:08 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/09/09 18:14:51 naddy Exp $
 #
 
-COMMENT=	"The UCB/LBNL Network Animator"
+COMMENT=	"UCB/LBNL Network Animator"
 
 DISTNAME=	nam-src-1.0a8
 PKGNAME=	nam-1.0a8

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 01:06:34 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/09/09 18:14:51 naddy Exp $
 
-COMMENT=	"the card game Skat"
+COMMENT=	"skat card game"
 
 DISTNAME=	xskat-3.4
 CATEGORIES=	games

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 01:06:31 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/09/09 18:14:51 naddy Exp $
 
-COMMENT=	"the Mr Do video arcade game for X11"
+COMMENT=	"Mr Do video arcade game for X11"
 
 DISTNAME=	xmris.4.04
 PKGNAME=	xmris-4.04
