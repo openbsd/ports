@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.26 2001/03/08 02:55:32 brad Exp $
+# $OpenBSD: Makefile.template,v 1.27 2001/03/08 03:31:43 kevlo Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -20,6 +20,25 @@ DISTNAME=		???
 CATEGORIES=     	???
 #NEED_VERSION=		?.??
 # Always put the NEED_VERSION line right after CATEGORIES
+
+#HOMEPAGE=		???	URL
+
+# where to send bitches about this port
+
+MAINTAINER=		ports@openbsd.org
+
+# Licensing:  This determines what we can distribute.
+# When you determine the license type, make sure to look at ALL distfiles.
+# Every distfile can have a different license.  The PERMIT_* values are
+# determined by the most restrictive license.  If you have two licenses
+# that are in conflict, set PERMIT_* based on the most restrictive one.
+# Make SURE you get these values right.
+
+#PERMIT_PACKAGE_CDROM=	Yes | "Reason if No"
+#PERMIT_PACKAGE_FTP=	Yes | "Reason if No"
+#PERMIT_DISTFILES_CDROM=Yes | "Reason if No"
+#PERMIT_DISTFILES_FTP=	Yes | "Reason if No"
+
 # where the source files and patches can be fetched
 #
 MASTER_SITES=		???
@@ -37,30 +56,12 @@ MASTER_SITES=		???
 #PATCHFILES=		???
 #PATCH_DIST_STRIP=	-p0
 
-#HOMEPAGE=		???	URL
-
 # Dependencies
 #
 #FETCH_DEPENDS=		???
 #BUILD_DEPENDS=		???
 #RUN_DEPENDS=		???
 #LIB_DEPENDS=		???
-
-# where to send bitches about this port
-#
-MAINTAINER=		ports@openbsd.org
-
-# Licensing:  This determines what we can distribute.
-# When you determine the license type, make sure to look at ALL distfiles.
-# Every distfile can have a different license.  The PERMIT_* values are
-# determined by the most restrictive license.  If you have two licenses
-# that are in conflict, set PERMIT_* based on the most restrictive one.
-# Make SURE you get these values right.
-
-#PERMIT_PACKAGE_CDROM=	Yes | "Reason if No"
-#PERMIT_PACKAGE_FTP=	Yes | "Reason if No"
-#PERMIT_DISTFILES_CDROM=Yes | "Reason if No"
-#PERMIT_DISTFILES_FTP=	Yes | "Reason if No"
 
 #MAKE_FLAGS=		???
 #MAKE_ENV=		???
