@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Filter_cc,v 1.1 2002/12/29 00:10:48 pvalchev Exp $
+--- src/Filter.cc.orig	Sat Dec 28 15:24:26 2002
++++ src/Filter.cc	Sat Dec 28 15:25:12 2002
+@@ -178,7 +178,7 @@ int OutputFilter::getfd()
+       }
+       if(a)
+ 	 execvp(a->a0(),a->GetV());
+-      execl("/bin/sh","sh","-c",name,NULL);
++      execl("/bin/sh","sh","-c",name,(void *)NULL);
+       fprintf(stderr,_("execl(/bin/sh) failed: %s\n"),strerror(errno));
+       fflush(stderr);
+       _exit(1);

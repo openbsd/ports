@@ -1,0 +1,12 @@
+$OpenBSD: patch-plug-ins_common_url_c,v 1.1 2002/12/29 00:10:47 pvalchev Exp $
+--- plug-ins/common/url.c.orig	Sat Dec 28 14:58:06 2002
++++ plug-ins/common/url.c	Sat Dec 28 14:58:16 2002
+@@ -189,7 +189,7 @@ load_image (gchar             *filename,
+       putenv ("LANG=C");
+ #endif
+ 
+-      execlp ("wget", "wget", "-T", TIMEOUT, filename, "-O", tmpname, NULL);
++      execlp ("wget", "wget", "-T", TIMEOUT, filename, "-O", tmpname, (void *)NULL);
+       g_message ("url: exec() failed: wget: %s", g_strerror (errno));
+       g_free (tmpname);
+       _exit (127);

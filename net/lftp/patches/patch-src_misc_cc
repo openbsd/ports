@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_misc_cc,v 1.1 2002/12/29 00:10:48 pvalchev Exp $
+--- src/misc.cc.orig	Sat Dec 28 15:24:50 2002
++++ src/misc.cc	Sat Dec 28 15:25:18 2002
+@@ -258,7 +258,7 @@ void  truncate_file_tree(const char *dir
+       SignalHook::Ignore(SIGTSTP);
+       SignalHook::Ignore(SIGQUIT);
+       SignalHook::Ignore(SIGHUP);
+-      execlp("rm","rm","-rf",dir,NULL);
++      execlp("rm","rm","-rf",dir,(void *)NULL);
+       perror("execlp(rm)");
+       fflush(stderr);
+       _exit(1);

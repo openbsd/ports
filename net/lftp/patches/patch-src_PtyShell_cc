@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_PtyShell_cc,v 1.3 2002/12/29 00:10:48 pvalchev Exp $
+--- src/PtyShell.cc.orig	Sat Dec 28 15:24:54 2002
++++ src/PtyShell.cc	Sat Dec 28 15:25:28 2002
+@@ -114,7 +114,7 @@ int PtyShell::getfd()
+       putenv((char*)"LANGUAGE=C");
+       if(a)
+ 	 execvp(a->a0(),a->GetV());
+-      execl("/bin/sh","sh","-c",name,NULL);
++      execl("/bin/sh","sh","-c",name,(void *)NULL);
+       fprintf(stderr,_("execl(/bin/sh) failed: %s\n"),strerror(errno));
+       fflush(stderr);
+       _exit(1);

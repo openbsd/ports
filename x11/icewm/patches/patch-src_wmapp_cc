@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_wmapp_cc,v 1.1 2002/12/29 00:10:48 pvalchev Exp $
+--- src/wmapp.cc.orig	Sat Dec 28 15:21:46 2002
++++ src/wmapp.cc	Sat Dec 28 15:22:19 2002
+@@ -883,11 +883,11 @@ void runRestart(const char *str, const c
+         if (args) {
+             execvp(str, (char * const *) args);
+         } else {
+-            execlp(str, str, 0);
++            execlp(str, str, (void *)NULL);
+         }
+     } else {
+         const char *c = configArg ? "-c" : NULL;
+-        execlp(ICEWMEXE, ICEWMEXE, c, configArg, 0);
++        execlp(ICEWMEXE, ICEWMEXE, c, configArg, (void *)NULL);
+     }
+ 
+     app->alert();
