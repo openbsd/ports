@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 1999/06/14 03:23:04 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/10/09 20:27:50 brad Exp $
 
 DISTNAME=	fnlib-0.4
 CATEGORIES=    	graphics
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= gnome-1.0/sources
+MASTER_SITES=	http://labs.8m.com/enlightenment/
 
 NEED_VERSION=	1.73
 
