@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 1999/10/29 08:54:05 kevlo Exp $
+# $OpenBSD: Makefile,v 1.35 1999/12/04 02:09:21 brad Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -55,7 +55,6 @@
 #    SUBDIR += splitmpg
      SUBDIR += tgif
      SUBDIR += tiff
-     SUBDIR += tiff34
 #    SUBDIR += txtmerge
 #    SUBDIR += urt
 #    SUBDIR += vcg
