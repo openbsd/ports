@@ -1,0 +1,18 @@
+--- config/free_net-bsd-shared.mk.orig	Mon Apr 28 19:26:48 1997
++++ config/free_net-bsd-shared.mk	Thu May 22 22:59:55 1997
+@@ -26,15 +26,10 @@
+ 
+ ${SHARED_LIB}: $(SH_OBJS)
+ 	ld -Bshareable -o ${SHARED_LIB} ${SH_OBJS}
+-	chmod a+x ${SHARED_LIB}
+-	rm -f lib${lib_name}.so
+-	ln -s ${SHARED_LIB} lib${lib_name}.so
+ 
+ install:: ${SHARED_LIB}
+ 	mkdir -p ${lib_dir}
+ 	${INSTALL_DATA} ${SHARED_LIB} ${lib_dir}
+-	rm -f ${lib_dir}/lib${lib_name}.so
+-	ln -s ${lib_dir}/${SHARED_LIB} ${lib_dir}/lib${lib_name}.so
+ 
+ clean::
+ 	rm -f ${SHARED_LIB} lib${lib_name}.so ${SH_OBJS}

@@ -1,0 +1,10 @@
+--- clients/Motif-1.2/mwm/Makefile.in.orig	Mon Apr 28 19:25:17 1997
++++ clients/Motif-1.2/mwm/Makefile.in	Mon Apr 21 10:19:32 1997
+@@ -88,6 +88,6 @@
+ 
+ mwmlex.o: y.tab.h
+ 
+-$(srcdir)/version.h: Makefile
++version.h $(srcdir)/version.h: Makefile
+ 	echo "#define VERSION \"@major_shared@.@minor_shared@\"" > $(srcdir)/version.h
+ 
