@@ -1,28 +1,57 @@
-# $OpenBSD: Makefile,v 1.16 2000/10/22 15:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2001/01/18 16:41:27 naddy Exp $
 
-BROKEN=		spinlocks in a loop if stdin is null
-
-DISTNAME=	xmcd-2.3
+DISTNAME=	xmcd-2.6
 CATEGORIES=	audio
-NEED_VERSION=	1.305
-FAKE=No
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR= applications/xmcd
+NEED_VERSION=	1.340
+HOMEPAGE=	http://metalab.unc.edu/tkan/xmcd/
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_MOTIF=		Yes
-CONFIGURE_STYLE=	imake
-IS_INTERACTIVE=		Yes	# asks a lot of questions
-NO_PACKAGE=		interactive port
+MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/src/
+
+USE_MOTIF=	Yes
+CONFIGURE_STYLE= imake
+
+XMCDLIB=	${PREFIX}/share/xmcd
+
+do-install:
+	@cd ${WRKSRC}; env BATCH_BINDIR=${PREFIX}/bin \
+	    BATCH_LIBDIR=${PREFIX}/share \
+	    BATCH_MANDIR=${PREFIX}/man/man1 \
+	    BATCH_CDDBDIR=${WRKINST}/var/db/xmcd/cddb \
+	    BATCH_DISCOGDIR=${WRKINST}/var/db/xmcd/discog \
+	    sh install.sh -n -b
 
 post-install:
-	cp ${WRKSRC}/README ${PREFIX}/lib/X11/xmcd
+	mv ${XMCDLIB}/docs ${PREFIX}/share/doc/xmcd
+	cd ${XMCDLIB}; ln -s ../doc/xmcd docs
+	mv ${XMCDLIB}/config/.tbl ${XMCDLIB}/tbl
+	mv ${XMCDLIB}/config/config.sh ${PREFIX}/sbin/xmcdconfig
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xmcd
+	cd ${XMCDLIB}/config; for i in common.cfg device.cfg sites; do \
+	    mv $$i ${PREFIX}/share/examples/xmcd/$$i; done
+	rmdir ${XMCDLIB}/config; ln -s ${SYSCONFDIR}/xmcd ${XMCDLIB}/config
+	mv ${XMCDLIB}/app-defaults/XMcd ${PREFIX}/lib/X11/app-defaults/XMcd
+	rm -f ${XMCDLIB}/cddb ${XMCDLIB}/discog
+	for i in cddb discog; do ln -s /var/db/xmcd/$$i ${XMCDLIB}/$$i; done
+	for i in bkgnd.gif xmcdlogo.gif discog.html; do \
+	    mv ${WRKINST}/var/db/xmcd/discog/$$i \
+	    ${PREFIX}/share/examples/xmcd/$$i; done
+	cd ${PREFIX}/bin; \
+	    rm -f xmcd cda cddbcmd dp2xmcd wm2xmcd; mv .xmcd_start xmcd; \
+	    for i in cda cddbcmd dp2xmcd wm2xmcd; do ln -s xmcd $$i; done
+	perl -pi -e 's,\@PREFIX@,${TRUEPREFIX},; s,\@X11BASE@,${X11BASE},;' \
+	    -e 's,\@SYSCONFDIR@,${SYSCONFDIR},;' \
+	    ${PREFIX}/bin/xmcd ${PREFIX}/sbin/xmcdconfig \
+	    ${PREFIX}/lib/X11/app-defaults/XMcd \
+	    ${PREFIX}/man/man1/cda.1 ${PREFIX}/man/man1/xmcd.1
+	perl -pi -e 's,${WRKINST},,g' ${PREFIX}/bin/xmcd \
+	    ${XMCDLIB}/scripts/genidx ${PREFIX}/sbin/xmcdconfig \
+	    ${PREFIX}/share/examples/xmcd/discog.html
 
 .include <bsd.port.mk>

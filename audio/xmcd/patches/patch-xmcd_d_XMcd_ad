@@ -1,12 +1,12 @@
-$OpenBSD: patch-xmcd_d_XMcd_ad,v 1.1 2000/12/03 20:50:50 espie Exp $
---- xmcd_d/XMcd.ad.orig	Sun Dec  3 21:27:34 2000
-+++ xmcd_d/XMcd.ad	Sun Dec  3 21:27:45 2000
-@@ -42,7 +42,7 @@ XMcd.version:			2.3
+$OpenBSD: patch-xmcd_d_XMcd_ad,v 1.2 2001/01/18 16:41:28 naddy Exp $
+--- xmcd_d/XMcd.ad.orig	Sat Feb  5 08:26:29 2000
++++ xmcd_d/XMcd.ad	Tue Nov  7 18:52:19 2000
+@@ -42,7 +42,7 @@ XMcd.version:			2.6
  !* This resource _must_ be set correctly in your environment
  !* in order for xmcd to function correctly.
  !*
 -XMcd.libdir:			/usr/lib/X11/xmcd
-+XMcd.libdir:			/usr/local/lib/X11/xmcd
++XMcd.libdir:			@PREFIX@/share/xmcd
  
  !*
  !* CD Database archive contribution

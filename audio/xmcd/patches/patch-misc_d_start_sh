@@ -1,0 +1,79 @@
+$OpenBSD: patch-misc_d_start_sh,v 1.1 2001/01/18 16:41:28 naddy Exp $
+--- misc_d/start.sh.orig	Sat Feb  5 08:26:39 2000
++++ misc_d/start.sh	Tue Dec 12 22:57:18 2000
+@@ -26,7 +26,7 @@
+ #    along with this program; if not, write to the Free Software
+ #    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ #
+-PATH=${PATH}:/sbin:/usr/sbin:/bin:/usr/bin:/etc
++PATH=${PATH}:/sbin:/usr/sbin:/bin:/usr/bin
+ export PATH
+ 
+ if [ -z "$XMCD_LIBDIR" ]
+@@ -35,62 +35,12 @@ then
+ 	export XMCD_LIBDIR
+ fi
+ 
+-XFILESEARCHPATH=$XMCD_LIBDIR/%T/%N%S:$XFILESEARCHPATH
++XFILESEARCHPATH=@PREFIX@/lib/X11/%T/%N%S:$XFILESEARCHPATH
+ XUSERFILESEARCHPATH=$HOME/.xmcdcfg/%N%S:$XUSERFILESEARCHPATH
+-XKEYSYMDB=$XMCD_LIBDIR/app-defaults/XKeysymDB
++XKEYSYMDB=@X11BASE@/lib/X11/XKeysymDB
+ 
+-PROG=`(basename $0) 2>/dev/null`
+-
+-SYS=`(uname -s) 2>/dev/null | sed -e 's/\//_/g' -e 's/-/_/g' -e 's/[ 	]/_/g'`
+-MACH=`(uname -m) 2>/dev/null | sed -e 's/\//_/g' -e 's/-/_/g' -e 's/[ 	]/_/g'`
+-REL=`(uname -r) 2>/dev/null | sed -e 's/\//_/g' -e 's/-/_/g' -e 's/[ 	]/_/g'`
+-
+-# Platform-specific handling
+-if [ "$SYS" = FreeBSD ]
+-then
+-	# Differentiate between FreeBSD versions
+-	REL=`echo "$REL" | sed 's/\..*$//'`
+-	SYS=${SYS}_${REL}
+-elif [ "$SYS" = SunOS ]
+-then
+-	# Differentiate between SunOS 4.x and Solaris
+-	case "$REL" in
+-	4.*)
+-		;;
+-	5.*)
+-		SYS=Solaris
+-		;;
+-	*)
+-		SYS=Solaris
+-		;;
+-	esac
+-elif [ -x /bin/i386 -o -x /sbin/i386 ] && i386
+-then
+-	case "$REL" in
+-	3.2)
+-		# SCO UNIX/Open Desktop
+-		if (uname -X | fgrep "Release = 3.2") >/dev/null 2>&1
+-		then
+-			SYS=SCO_SV
+-		fi
+-		;;
+-	4.*)
+-		# UNIX SVR4.x
+-		SYS=${SYS}_${REL}
+-		;;
+-	5)
+-		# UNIX SVR5
+-		SYS=${SYS}_${REL}
+-		;;
+-	5.*)
+-		# UNIX SVR5.x
+-		SYS=${SYS}_${REL}
+-		;;
+-	*)
+-		;;
+-	esac
+-fi
++PROG=`basename $0 2>/dev/null`
+ 
+ export XFILESEARCHPATH XUSERFILESEARCHPATH XKEYSYMDB
+ 
+-exec $XMCD_LIBDIR/bin-${SYS}-${MACH}/$PROG ${1+"$@"}
++exec @PREFIX@/libexec/xmcd/$PROG ${1+"$@"}

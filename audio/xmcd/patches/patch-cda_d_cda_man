@@ -1,0 +1,49 @@
+$OpenBSD: patch-cda_d_cda_man,v 1.1 2001/01/18 16:41:27 naddy Exp $
+--- cda_d/cda.man.orig	Mon Dec 11 22:20:25 2000
++++ cda_d/cda.man	Tue Dec 12 00:04:43 2000
+@@ -499,11 +499,11 @@ This parameter which specifies
+ the directory path under which
+ .I cda's
+ configuration files and CD database files are located.
+-On most systems this is \fI/usr/lib/X11/xmcd\fR.
++On modern systems this is \fI@PREFIX@/share/xmcd\fR.
+ .IP \fBXMCD_CDDBPATH\fR
+ This is used to override the \fIcddbPath\fR common configuration
+ parameter, which is a list of CD database category directories
+-to be used under \fBXMCDLIB\fI/cddb\fR.  See
++to be used under \fI/var/db/xmcd/cddb\fR.  See
+ .I xmcd(1)
+ for details.
+ 
+@@ -524,23 +524,21 @@ do not support the appropriate functiona
+ .SH "FILES"
+ $HOME/.xmcdcfg/\(**
+ .br
+-XMCDLIB/cddb/\(**
++@SYSCONFDIR@/xmcd/common.cfg
+ .br
+-XMCDLIB/config/config.sh
++@SYSCONFDIR@/xmcd/device.cfg
+ .br
+-XMCDLIB/config/common.cfg
++@SYSCONFDIR@/xmcd/\(**
+ .br
+-XMCDLIB/config/device.cfg
++@PREFIX@/sbin/xmcdconfig
+ .br
+-XMCDLIB/config/.tbl/\(**
++@PREFIX@/share/doc/xmcd/\(**
+ .br
+-XMCDLIB/config/\(**
++@PREFIX@/share/xmcd/help/\(**
+ .br
+-XMCDLIB/help/\(**
++@PREFIX@/share/xmcd/tbl/\(**
+ .br
+-BINDIR/cda
+-.br
+-MANDIR/cda.1
++/var/db/xmcd/cddb/\(**
+ .br
+ /tmp/.cdaudio/\(**
+ 

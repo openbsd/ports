@@ -1,0 +1,21 @@
+$OpenBSD: patch-misc_d_ncsawrap_sh,v 1.1 2001/01/18 16:41:27 naddy Exp $
+--- misc_d/ncsawrap.sh.orig	Wed Nov  8 03:04:40 2000
++++ misc_d/ncsawrap.sh	Wed Nov  8 03:05:54 2000
+@@ -10,7 +10,7 @@
+ #    -remote		Control a running Mosaic session
+ #    -direct		Start a new Mosaic session (default)
+ #    -auth type		"xhost", "xhost-xterminal", "xauth", "environment"
+-#			or "none" (the default is "xhost").
++#			or "none" (the default is "xauth").
+ #    host		The remote host where Mosaic is to be run.
+ #    mosaic_path	the full path to the Mosaic executable
+ #    args		The URL to go to
+@@ -74,7 +74,7 @@ else
+ 	RSH=rsh
+ fi
+ 
+-default_auth_type=xhost	# sites might want to change this
++default_auth_type=xauth	# sites might want to change this
+ authenv=
+ xhostvar=		# used by auth type xhost-xterminal
+ mode=dir

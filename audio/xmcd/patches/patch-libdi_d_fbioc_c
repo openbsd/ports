@@ -1,0 +1,31 @@
+$OpenBSD: patch-libdi_d_fbioc_c,v 1.1 2001/01/18 16:41:27 naddy Exp $
+--- libdi_d/fbioc.c.orig	Mon Nov  6 15:09:02 2000
++++ libdi_d/fbioc.c	Mon Nov  6 15:11:14 2000
+@@ -123,7 +123,7 @@ STATIC iocname_t iname[] = {
+  *	FALSE - ioctl failed
+  */
+ STATIC bool_t
+-fbioc_send(int cmd, void *arg, bool_t prnerr)
++fbioc_send(unsigned long cmd, void *arg, bool_t prnerr)
+ {
+ 	int		i,
+ 			ret;
+@@ -135,14 +135,14 @@ fbioc_send(int cmd, void *arg, bool_t pr
+ 	if (app_data.debug) {
+ 		for (i = 0; iname[i].name != NULL; i++) {
+ 			if (iname[i].cmd == cmd) {
+-				(void) fprintf(errfp, "\nIOCTL: %s arg=0x%x ",
+-					       iname[i].name, (int) arg);
++				(void) fprintf(errfp, "\nIOCTL: %s arg=0x%lx ",
++					       iname[i].name, (unsigned long) arg);
+ 				break;
+ 			}
+ 		}
+ 		if (iname[i].name == NULL)
+-			(void) fprintf(errfp, "\nIOCTL: 0x%x arg=0x%x ",
+-				       cmd, (int) arg);
++			(void) fprintf(errfp, "\nIOCTL: 0x%x arg=0x%lx ",
++				       cmd, (unsigned long) arg);
+ 	}
+ 
+ 	ret = ioctl(fbioc_fd, cmd, arg);

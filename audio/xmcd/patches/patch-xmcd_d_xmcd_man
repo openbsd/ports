@@ -1,0 +1,125 @@
+$OpenBSD: patch-xmcd_d_xmcd_man,v 1.1 2001/01/18 16:41:28 naddy Exp $
+--- xmcd_d/xmcd.man.orig	Mon Dec 11 22:36:36 2000
++++ xmcd_d/xmcd.man	Tue Dec 12 00:06:18 2000
+@@ -228,10 +228,9 @@ text labels can also be changed (for exa
+ .PP
+ There are too many resources to list here, but the resource names
+ and their defaults (plus descriptive comments) can be found in the
+-\fBXMCDLIB\fI/app-defaults/XMcd\fR
+-file (where XMCDLIB is typically \fI/usr/lib/X11/xmcd\fR).
++\fI@PREFIX@/lib/X11/app-defaults/XMcd\fR file.
+ It is not recommended
+-that you change values in the \fBXMCDLIB\fI/app-defaults/XMcd\fR file,
++that you change values in this file,
+ unless you want the changes to be forced upon all users of
+ .I xmcd
+ on the system.  Instead, make a copy of this file, change the copy as you
+@@ -432,13 +431,14 @@ per-drive basis.  For example, in some c
+ must operate the drive differently depending upon the brand
+ and model of the drive.  Thus, there must be a separate
+ configuration file for these parameters \fIper-device\fR.
+-The common parameters file is \fBXMCDLIB\fI/config/common.cfg\fR
++The common parameters file is \fI@SYCONFIGDIR@/xmcd/common.cfg\fR
+ and the device-specific parameters file is
+-\fBXMCDLIB\fI/config/\fBDEVICE\fR
+-(where XMCDLIB is typically \fI/usr/lib/X11/xmcd\fR and DEVICE is
++\fI@SYSCONFDIR@/xmcd/\fBDEVICE\fR
++(where DEVICE is
+ the base name of the raw device special file for the CD-ROM drive
+-; e.g., \fI/usr/lib/X11/xmcd/config/rcd0\fR).
+-A configuration program \fBXMCDLIB\fI/config/config.sh\fR
++; e.g., \fI/etc/xmcd/rcd0c\fR).
++A configuration program
++.I xmcdconfig
+ is provided to make maintaining these configuration
+ file easy (Note: on SCO systems the configuration program can
+ also be invoked as "\fImkdev xmcd\fR").
+@@ -469,7 +469,7 @@ common and device-specific parameters (w
+ directory and DEVICE is as specified above).  Parameters found in
+ this file will override the system defaults (except those
+ parameters that cannot be overridden; see the comments in the
+-\fBXMCDLIB\fI/config/device.cfg\fR for details).
++\fI@SYSCONFDIR@/xmcd/device.cfg\fR for details).
+ 
+ .SH "USING XMCD"
+ The basic functions of
+@@ -566,7 +566,7 @@ The CD database information is stored in
+ in a designated directory (category).  The path of this
+ directory is \fBCDDBDIR\fI/\fBCATEGORY\fR, where CDDBDIR
+ is the top level directory of the local CD database.
+-CDDBDIR is typically /usr/lib/X11/xmcd/cddb and
++CDDBDIR is typically /var/db/xmcd/cddb and
+ CATEGORY is the category name selected when
+ .B Save
+ is performed.  See the description of XMCD_CDDBPATH in the
+@@ -667,12 +667,12 @@ and are described as follows:
+ .IP \fBXMCD_LIBDIR\fR
+ This parameter is the directory path under which \fIxmcd\fP's
+ configuration files, help files, and CD database files are located.
+-The default value of XMCD_LIBDIR on most systems
+-is \fI/usr/lib/X11/xmcd\fR.
++The default value of XMCD_LIBDIR on modern systems
++is \fI@PREFIX@/share/xmcd\fR.
+ .IP \fBXMCD_CDDBPATH\fR
+ This is used to override the \fBcddbPath\fR common configuration parameter,
+ which is a list of CD database category directories to be
+-used under \fB$XMCD_LIBDIR\fI/cddb\fR.  Also, remote CD database hosts
++used under \fI/var/db/xmcd/cddb\fR.  Also, remote CD database hosts
+ can be specified.
+ .sp
+ .in +4
+@@ -684,11 +684,11 @@ This string will cause
+ to search the following directories for CD database files:
+ .sp
+ .in +4
+-\fBXMCDLIB\fI/cddb/rock\fR
++\fI/var/db/xmcd/cddb/rock\fR
+ .br
+-\fBXMCDLIB\fI/cddb/classical\fR
++\fI/var/db/xmcd/cddb/classical\fR
+ .br
+-\fBXMCDLIB\fI/cddb/jazz\fR
++\fI/var/db/xmcd/cddb/jazz\fR
+ .br
+ etc.
+ .in -4
+@@ -774,29 +774,25 @@ file for each xmcd user.
+ .SH "FILES"
+ $HOME/.xmcdcfg/\(**
+ .br
+-XMCDLIB/app-defaults/XMcd
++@SYSCONFDIR@/xmcd/config.sh
+ .br
+-XMCDLIB/cddb/\(**
++@SYSCONFDIR@/xmcd/common.cfg
+ .br
+-XMCDLIB/discog/\(**
++@SYSCONFDIR@/xmcd/device.cfg
+ .br
+-XMCDLIB/doc/\(**
++@SYSCONFDIR@/xmcd/\(**
+ .br
+-XMCDLIB/config/config.sh
++@PREFIX@/lib/X11/app-defaults/XMcd
+ .br
+-XMCDLIB/config/common.cfg
++@PREFIX@/share/doc/xmcd/\(**
+ .br
+-XMCDLIB/config/device.cfg
++@PREFIX@/share/xmcd/help/\(**
+ .br
+-XMCDLIB/config/.tbl/\(**
++@PREFIX@/share/xmcd/tbl/\(**
+ .br
+-XMCDLIB/config/\(**
++/var/db/xmcd/cddb/\(**
+ .br
+-XMCDLIB/help/\(**
+-.br
+-BINDIR/xmcd
+-.br
+-MANDIR/xmcd.1
++/var/db/xmcd/discog/\(**
+ .br
+ /tmp/.cdaudio/\(**
+ 
