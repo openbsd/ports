@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2005/01/31 09:12:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.29 2005/02/14 14:10:30 espie Exp $
 @conflict kdebase-<3.3
 bin/artsmessage
 bin/checkXML
@@ -972,6 +972,32 @@ lib/libkwalletclient.la
 @lib lib/libkwalletclient.so.1.0
 lib/libvcard.la
 @lib lib/libvcard.so.0.0
+@man man/man1/artsmessage.1
+@man man/man1/cupsdconf.1
+@man man/man1/dcop.1
+@man man/man1/dcopfind.1
+@man man/man1/dcopserver.1
+@man man/man1/dcopserver_shutdown.1
+@man man/man1/imagetops.1
+@man man/man1/kaddprinterwizard.1
+@man man/man1/kbuildsycoca.1
+@man man/man1/kconf_update.1
+@man man/man1/kcookiejar.1
+@man man/man1/kde-config.1
+@man man/man1/kded.1
+@man man/man1/kdeinit.1
+@man man/man1/kdeinit_shutdown.1
+@man man/man1/kdeinit_wrapper.1
+@man man/man1/kdontchangethehostname.1
+@man man/man1/kfile.1
+@man man/man1/kinstalltheme.1
+@man man/man1/kio_http_cache_cleaner.1
+@man man/man1/kio_uiserver.1
+@man man/man1/kmailservice.1
+@man man/man1/ksendbugmail.1
+@man man/man1/ksvgtopng.1
+@man man/man1/ktelnetservice.1
+@man man/man1/meinproc.1
 share/applications/
 share/applications/kde/
 share/applications/kde/kresources.desktop

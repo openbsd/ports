@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2005/02/07 11:30:05 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2005/02/14 14:10:30 espie Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.3.2
 DISTNAME=		kdelibs-${VERSION}
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 MODKDE_VERSION?=	3.3.0
 
 FLAVORS=debug
@@ -24,6 +24,7 @@ WANTLIB=	c ICE SM X11 Xext Xrender audiofile esd glib-2.0.0.0 \
 CONFIGURE_ARGS+= --enable-cups
 
 BUILD_DEPENDS+=	::print/cups # crypto,ssl,cups
+BUILD_DEPENDS+= ::textproc/docbook-to-man
 LIB_DEPENDS+=	Half,Iex,Imath,IlmImf::graphics/openexr	\
 		aspell::textproc/aspell/core
 
@@ -33,5 +34,28 @@ EXTRA_CONFIG=xdg/menus/applications.menu
 
 FAKE_FLAGS=DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
 	
+# Stuff provided that debian, trimmed down of non-existent stuff.
+
+EXTRA_MANPAGES= artsmessage cupsdconf dcop \
+    dcopfind dcopserver \
+    dcopserver_shutdown imagetops kaddprinterwizard \
+    kbuildsycoca kconf_update kcookiejar kde-config kded kdeinit \
+    kdeinit_shutdown kdeinit_wrapper kdontchangethehostname \
+    kfile kinstalltheme kio_http_cache_cleaner \
+    kio_uiserver kmailservice \
+    ksendbugmail ksvgtopng ktelnetservice \
+    meinproc 
+
+post-build:
+	@mkdir -p ${WRKBUILD}/man/man1
+	@for i in ${EXTRA_MANPAGES}; do \
+	    ${LOCALBASE}/bin/docbook-to-man ${WRKDIST}/debian/man/$$i.sgml >${WRKBUILD}/man/man1/$$i.1; \
+	done
+
+post-install:
+	@for i in ${EXTRA_MANPAGES}; do \
+		${INSTALL_MAN} ${WRKBUILD}/man/man1/$$i.1 ${PREFIX}/man/man1; \
+	done
+
 .include <bsd.port.mk>
 MODGNU_AUTOCONF_FILES+= dcop/dcop-path.h.in
