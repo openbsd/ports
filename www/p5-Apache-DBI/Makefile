@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2004/01/17 15:07:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2004/04/20 18:11:12 robert Exp $
 
 COMMENT=	"DBI persistent connection, authentication and authorization"
 
-VERSION=	0.93
+VERSION=	0.94
 DISTNAME=	Apache-DBI-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www databases perl5
