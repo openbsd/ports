@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/18 21:35:17 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/10/27 00:11:40 pvalchev Exp $
 bin/abxtest
 bin/madplay
+include/id3tag.h
 include/mad.h
+lib/libid3tag.a
+lib/libid3tag.la
 lib/libmad.a
 lib/libmad.la
 %%SHARED%%

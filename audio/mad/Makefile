@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/08 04:57:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/27 00:11:40 pvalchev Exp $
 
 COMMENT=	"high-quality mpeg audio decoder"
 
-VERSION=	0.13.0b
+VERSION=	0.14.1b
 DISTNAME=	mad-${VERSION}
 CATEGORIES=	audio devel
-NEED_VERSION=	1.425
+NEED_VERSION=	1.484
 
 HOMEPAGE=	http://mad.sourceforge.net/
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.mars.org/pub/mpeg/
+MASTER_SITES=	ftp://ftp.mars.org/pub/mpeg/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= mad
 
 MODULES=	gettext
@@ -41,8 +41,8 @@ CONFIGURE_ARGS+= --enable-sso \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
 		patch-*
 
 .include <bsd.port.mk>

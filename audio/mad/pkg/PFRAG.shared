@@ -1,3 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/07/18 21:35:17 pvalchev Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2001/10/27 00:11:40 pvalchev Exp $
+lib/libid3tag.so.0.0
 lib/libmad.so.0.0
 DYNLIBDIR(%B)
