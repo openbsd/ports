@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2002/07/09 12:32:34 matt Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2002/10/08 02:52:25 brad Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -12,7 +12,7 @@ COMMENT-mpz=	"GNU arbitrary magnitude integer module for Python"
 COMMENT-tkinter="tk GUI module for Python"
 COMMENT-expat=	"expat module for Python"
 
-PKGNAME=	python-${VERSION}${PATCHLEVEL}
+PKGNAME=	python-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 DISTNAME=	Python-${VERSION}${PATCHLEVEL}
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.python.org/pub/${PSUBDIR}/ \
@@ -103,11 +103,11 @@ LIB_DEPENDS+=		expat::textproc/expat
 FULLPKGNAME=${PKGNAME}${FLAVOR_EXT:S/-no_mpz//:S/-no_tkinter//:S/-no_expat//}
 .endif
 
-FULLPKGNAME-tests=	python-tests-${VERSION}${PATCHLEVEL}
-FULLPKGNAME-tools=	python-tools-${VERSION}${PATCHLEVEL}
-FULLPKGNAME-mpz=	python-mpz-${VERSION}${PATCHLEVEL}
-FULLPKGNAME-tkinter=	python-tkinter-${VERSION}${PATCHLEVEL}
-FULLPKGNAME-expat=	python-expat-${VERSION}${PATCHLEVEL}
+FULLPKGNAME-tests=	python-tests-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
+FULLPKGNAME-tools=	python-tools-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
+FULLPKGNAME-mpz=	python-mpz-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
+FULLPKGNAME-tkinter=	python-tkinter-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
+FULLPKGNAME-expat=	python-expat-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 
 CONFIGURE_STYLE= autoconf dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

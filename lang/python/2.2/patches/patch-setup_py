@@ -1,7 +1,16 @@
-$OpenBSD: patch-setup_py,v 1.2 2002/05/11 21:35:13 matt Exp $
+$OpenBSD: patch-setup_py,v 1.3 2002/10/08 02:52:25 brad Exp $
 --- setup.py.orig	Tue Mar 26 08:43:04 2002
-+++ setup.py	Fri Apr 19 09:05:16 2002
-@@ -793,7 +793,8 @@ def main():
++++ setup.py	Mon Oct  7 22:19:31 2002
+@@ -273,8 +273,6 @@ class PyBuildExt(build_ext):
+         exts.append( Extension('pwd', ['pwdmodule.c']) )
+         # grp(3)
+         exts.append( Extension('grp', ['grpmodule.c']) )
+-        # posix (UNIX) errno values
+-        exts.append( Extension('errno', ['errnomodule.c']) )
+         # select(2); not on ancient System V
+         exts.append( Extension('select', ['selectmodule.c']) )
+ 
+@@ -793,7 +791,8 @@ def main():
            ext_modules=[Extension('struct', ['structmodule.c'])],
  
            # Scripts to install
