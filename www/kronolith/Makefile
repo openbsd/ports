@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2004/07/19 05:09:49 kevlo Exp $ 
+# $OpenBSD: Makefile,v 1.7 2005/03/09 07:16:46 mbalmer Exp $ 
 
-COMMENT=	"calendar and scheduling application for Horde"
+COMMENT=	"addressbook for imp"
 
-V=		1.1.2
 HORDE_MODULE=	kronolith
 HORDE_NAME=	Kronolith
 
-DISTNAME=	${HORDE_MODULE}-${V}
-CATEGORIES=	www
+DISTNAME=	${HORDE_MODULE}-h3-2.0.2
+CATEGORIES=	www mail
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
 
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
+MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,16 +28,15 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/horde
 SUBST_VARS=	INSTDIR HORDE_NAME HORDE_MODULE
 
-RUN_DEPENDS=	:horde->=2.2.1:devel/horde \
-		:pear-Date->=1.3:devel/pear-Date \
-		:pear-HTML-Common->=1.2.1:www/pear-HTML-Common \
-		:pear-HTML-Select->=1.2.1:www/pear-HTML-Select
+PHP_VERSION=	5
+RUN_DEPENDS=	:horde->=3.0:devel/horde \
+		:php${PHP_VERSION}-imap-*:www/php${PHP_VERSION}/extensions,-imap
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 
 do-install:
 	@cd ${INSTDIR} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-	@mv ${INSTDIR}/${HORDE_MODULE}-${V} ${INSTDIR}/${HORDE_MODULE}
+	@mv ${INSTDIR}/${DISTNAME} ${INSTDIR}/${HORDE_MODULE}
 
 .include <bsd.port.mk>

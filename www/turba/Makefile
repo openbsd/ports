@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2004/05/01 23:57:38 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.8 2005/03/09 07:13:11 mbalmer Exp $ 
 
 COMMENT=	"contact management module for Horde"
 
-V=		1.2.2
 HORDE_MODULE=	turba
 HORDE_NAME=	Turba
 
-DISTNAME=	${HORDE_MODULE}-${V}
+DISTNAME=	${HORDE_MODULE}-h3-2.0.2
 CATEGORIES=	www
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
 
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
+MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,15 +26,15 @@ EXTRACT_ONLY=
 
 PREFIX=		/var/www
 INSTDIR=	${PREFIX}/horde
-SUBST_VARS=	INSTDIR HORDE_NAME HORDE_MODULE
+SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	:horde->=2.2.1:devel/horde
+RUN_DEPENDS=	:horde->=3.0:devel/horde
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 
 do-install:
 	@cd ${INSTDIR} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-	@mv ${INSTDIR}/${HORDE_MODULE}-${V} ${INSTDIR}/${HORDE_MODULE}
+	@mv ${INSTDIR}/${DISTNAME} ${INSTDIR}/${HORDE_MODULE}
 
 .include <bsd.port.mk>
