@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/09/22 10:18:26 espie Exp $
+# $OpenBSD: Makefile,v 1.4 1999/10/29 10:57:16 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -10,7 +10,7 @@ NEED_VERSION=1.116
 MAPLE_DIR?=${PREFIX}/maple
 
 DISTNAME=		maple-5.5
-CATEGORIES=     	maths
+CATEGORIES=     	math
 
 # if someone wants to buy the sparc version and check it, be my guest...
 
