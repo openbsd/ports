@@ -1,0 +1,13 @@
+$OpenBSD: patch-ckuus5_c,v 1.1 2001/09/11 00:18:45 brad Exp $
+--- ckuus5.c.orig	Sun Nov 24 19:20:50 1996
++++ ckuus5.c	Mon Sep 10 19:30:53 2001
+@@ -3351,6 +3351,9 @@ shofea() {
+ #ifdef __NetBSD__
+     if (!prtopt(&lines,"__NetBSD__")) return;
+ #endif /* __NetBSD__ */
++#ifdef __OpenBSD__
++    if (!prtopt(&lines,"__OpenBSD__")) return;
++#endif /* __OpenBSD__ */
+ #ifdef __FreeBSD__
+     if (!prtopt(&lines,"__FreeBSD__")) return;
+ #endif /* __FreeBSD__ */

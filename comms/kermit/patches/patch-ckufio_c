@@ -1,6 +1,7 @@
---- ckufio.c.~1~	Sun Nov 24 16:20:49 1996
-+++ ckufio.c	Tue Mar  3 09:59:28 1998
-@@ -2959,11 +2959,15 @@
+$OpenBSD: patch-ckufio_c,v 1.1 2001/09/11 00:18:45 brad Exp $
+--- ckufio.c.orig	Sun Nov 24 19:20:49 1996
++++ ckufio.c	Mon Sep 10 19:30:54 2001
+@@ -2959,11 +2959,15 @@ struct utimbuf tp;
  	    }
  	    tmx += n;
  	}

@@ -1,6 +1,7 @@
---- ckutio.c.orig	Sun Nov 24 16:20:49 1996
-+++ ckutio.c	Tue Mar  3 10:23:55 1998
-@@ -289,7 +289,11 @@
+$OpenBSD: patch-ckutio_c,v 1.1 2001/09/11 00:18:45 brad Exp $
+--- ckutio.c.orig	Sun Nov 24 19:20:49 1996
++++ ckutio.c	Mon Sep 10 19:30:52 2001
+@@ -289,7 +289,11 @@ char *ckxsys = HERALD;
  #ifdef __NetBSD__
  #define LOCK_DIR "/var/spool/lock";
  #else
@@ -12,7 +13,7 @@
  #endif /* __NetBSD__ */
  #endif /* __FreeBSD__ */
  #endif /* __386BSD__ */
-@@ -7162,6 +7166,11 @@
+@@ -7162,6 +7166,11 @@ ztime(s) char **s; {
  #define ZTIMEV7
  #endif /* POSIX */
  
@@ -24,7 +25,7 @@
  #ifdef HPUX1020
  /*
    Prototypes are in <time.h>, included above.
-@@ -7233,6 +7242,7 @@
+@@ -7233,6 +7242,7 @@ ztime(s) char **s; {
  #endif /* PROVX1 */
  #endif /* ATTSV */
  #endif /* HPUX1020 */

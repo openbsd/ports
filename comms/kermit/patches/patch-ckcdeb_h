@@ -1,0 +1,49 @@
+$OpenBSD: patch-ckcdeb_h,v 1.1 2001/09/11 00:18:45 brad Exp $
+--- ckcdeb.h.orig	Sun Nov 24 19:20:48 1996
++++ ckcdeb.h	Mon Sep 10 19:30:51 2001
+@@ -1555,6 +1555,9 @@ _PROTOTYP( long getmsec, (void) );
+ #ifdef __NetBSD__
+ #define BPS_57K
+ #else
++#ifdef __OpenBSD__
++#define BPS_57K
++#else
+ #ifdef MAC
+ #define BPS_57K
+ #else
+@@ -1566,6 +1569,7 @@ _PROTOTYP( long getmsec, (void) );
+ #endif /* BEBOX */
+ #endif /* QNX */
+ #endif /* MAC */
++#endif /* __OpenBSD__ */
+ #endif /* __NetBSD__ */
+ #endif /* __FreeBSD__ */
+ #endif /* __386BSD__ */
+@@ -1620,6 +1624,9 @@ _PROTOTYP( long getmsec, (void) );
+ #ifdef __NetBSD__
+ #define BPS_115K
+ #else
++#ifdef __OpenBSD__
++#define BPS_115K
++#else
+ #ifdef OS2
+ #ifdef __32BIT__
+ #define BPS_115K
+@@ -1629,6 +1636,7 @@ _PROTOTYP( long getmsec, (void) );
+ #define BPS_115K
+ #endif /* BEBOX */
+ #endif /* OS2 */
++#endif /* __OpenBSD__ */
+ #endif /* __NetBSD__ */
+ #endif /* __FreeBSD__ */
+ #endif /* __386BSD__ */
+@@ -1755,6 +1763,9 @@ _PROTOTYP( long getmsec, (void) );
+ #ifdef __NetBSD__			/* NetBSD */
+ #define POSIX_CRTSCTS
+ #endif /* __NetBSD__ */
++#ifdef __OpenBSD__			/* OpenBSD */
++#define POSIX_CRTSCTS
++#endif /* __OpenBSD__ */
+ #ifdef BEBOX
+ #define POSIX_CRTSCTS
+ /* BEBOX defines CRTSFL as (CTSFLOW & RTSFLOW) */
