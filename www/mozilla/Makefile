@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2003/07/24 12:18:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.58 2003/08/18 14:22:12 wilfried Exp $
 
 NOT_FOR_ARCHS=	vax m68k hppa
 
@@ -35,7 +35,7 @@ SUBPACKAGE?=
 RUN_DEPENDS=	::www/mozilla
 .else
 MODULES=	gcc3
-MODGCC3_ARCHES=	alpha sparc64
+MODGCC3_ARCHES=	alpha sparc64 powerpc
 MODGCC3_LANGS=	C++
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \

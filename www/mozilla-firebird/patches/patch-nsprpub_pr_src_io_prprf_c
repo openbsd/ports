@@ -1,0 +1,14 @@
+$OpenBSD: patch-nsprpub_pr_src_io_prprf_c,v 1.1 2003/08/18 14:22:13 wilfried Exp $
+--- nsprpub/pr/src/io/prprf.c.orig	2003-08-18 08:19:34.000000000 -0500
++++ nsprpub/pr/src/io/prprf.c	2003-08-18 08:20:10.000000000 -0500
+@@ -51,7 +51,9 @@
+ ** Note: on some platforms va_list is defined as an array,
+ ** and requires array notation.
+ */
+-#if (defined(LINUX) && defined(__powerpc__)) || \
++#if defined(va_copy)
++#define VARARGS_ASSIGN(foo, bar) va_copy(foo,bar)
++#elif (defined(LINUX) && defined(__powerpc__)) || \
+     (defined(LINUX) && defined(__s390__)) || \
+     (defined(LINUX) && defined(__s390x__)) || \
+     defined(WIN16) || defined(QNX) || \
