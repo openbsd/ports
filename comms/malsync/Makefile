@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 14:02:59 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/05/05 22:40:02 jakob Exp $
+
+COMMENT=	"sync Palm organizer with AvantGo sites"
 
 PKGNAME=	malsync-1.6
 DISTNAME=	malsync_1_6
 
 CATEGORIES=	comms
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.406
 
 DISTFILES=	malsync_1_6.source.tar.gz \
 		mal-0_7_tar.gz:0

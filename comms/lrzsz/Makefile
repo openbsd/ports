@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 15:41:36 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/05/05 22:39:58 jakob Exp $
+
+COMMENT=	"receive/send files via X/Y/ZMODEM protocol"
 
 DISTNAME=	lrzsz-0.12.20
 CATEGORIES=	comms
-NEED_VERSION=	1.305
+NEED_VERSION=	1.406
+
 MASTER_SITES=	ftp://tirka.ohse.de/uwe/releases/ \
 		ftp://ftp.netsw.org/netsw/Network/Modem/Protocols/ZModem/lrzsz/ \
 		http://www.nrw.net/uwe/archive/ \

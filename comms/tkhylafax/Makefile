@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2000/04/09 17:36:11 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/05 22:40:20 jakob Exp $
+
+COMMENT=	"Tcl/Tk interface to Sam Leffler's fax package"
 
 DISTNAME=	tkhylafax-3.0b2
 PKGNAME=	tkhylafax-3.0
 CATEGORIES=	comms
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.406
+
 FAKE=No
 
 BROKEN=		"required dependencies not available"

@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/11/15 12:57:42 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/05 22:39:36 jakob Exp $
+
+COMMENT=	"B Plus file transfer protocol"
 
 DISTNAME=	bpl+
 PKGNAME=	bpl+-1.0
 CATEGORIES=	comms
+NEED_VERSION=	1.406
 
 MAINTAINER=	ports@openbsd.org
 

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.27 2001/04/01 17:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2001/05/05 22:39:47 jakob Exp $
+
+COMMENT=	"send/receive faxes and share modems"
 
 BROKEN=		"Security hole (buffer overflow yielding setuid uucp)"
 
@@ -10,7 +12,8 @@ PKGNAME=	hylafax-4.0.2-letter
 .endif
 
 CATEGORIES=	comms
-NEED_VERSION=	 1.305
+NEED_VERSION=	1.406
+
 FAKE=No
 MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/ \
 		ftp://ftp.leo.org/pub/comp/os/unix/networking/fax/hylafax/source/ \

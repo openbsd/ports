@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.19 2001/03/31 21:56:45 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2001/05/05 22:40:06 jakob Exp $
 # $FreeBSD: Makefile,v 1.25 1998/07/16 06:44:37 vanilla Exp $
+
+COMMENT=	"handle external logins, send and receive faxes"
 
 BROKEN=		insecure tempfile handling: can overwrite any file on the system
 
 DISTNAME=	mgetty1.1.21-Jul24
 PKGNAME=	mgetty-1.1.21
 CATEGORIES=	comms
-NEED_VERSION=	1.330
+NEED_VERSION=	1.406
+
 FAKE=No
 MASTER_SITES=	ftp://alpha.greenie.net/pub/mgetty/source/1.1/ \
 		ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:41:37 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/05 22:40:13 jakob Exp $
+
+COMMENT=	"SNPP client/server (alphanum pager software)"
 
 DISTNAME=	qpage-3.3
 CATEGORIES=	comms
-NEED_VERSION=	1.305
+NEED_VERSION=	1.406
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

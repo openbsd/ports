@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2001/03/22 22:06:36 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/05 22:39:51 jakob Exp $
+
+COMMENT=	"desktop organizer software for the Palm Pilot"
 
 DISTNAME=	jpilot-0.99
 CATEGORIES=	comms
-NEED_VERSION=	1.322
+NEED_VERSION=	1.406
 
 MASTER_SITES=	http://www.jpilot.org/
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:41:36 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.12 2001/05/05 22:39:55 jakob Exp $
+
+COMMENT=	"file transfer/terminal emulation"
 
 DISTNAME=	cku192src
 PKGNAME=        kermit-6.0.192
 CATEGORIES=	comms
-NEED_VERSION=	1.191
+NEED_VERSION=	1.406
 
 RESTRICTED=	"'No redistribution' copyright"
 

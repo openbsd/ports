@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2000/09/06 05:48:47 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2001/05/05 22:40:23 jakob Exp $
+
+COMMENT=	"decoder for the CEPT (Btx) protocol"
 
 DISTNAME=	xcept-2.1.2
 CATEGORIES=	comms
-NEED_VERSION=	1.324
+NEED_VERSION=	1.406
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 MAINTAINER=	ports@openbsd.org
