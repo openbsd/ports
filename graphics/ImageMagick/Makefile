@@ -1,6 +1,10 @@
-# $OpenBSD: Makefile,v 1.72 2004/07/18 07:16:53 brad Exp $
+# $OpenBSD: Makefile,v 1.73 2004/09/21 07:28:58 brad Exp $
 
 COMMENT=	"image processing tools"
+
+.if ${MACHINE_ARCH} == "sparc64"
+BROKEN=		${MACHINE_ARCH} run-time issues, crashing
+.endif
 
 VER=		6.0.0
 DASHVER=	2
