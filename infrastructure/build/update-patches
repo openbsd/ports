@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $OpenBSD: update-patches,v 1.5 2001/05/22 09:26:46 camield Exp $
+# $OpenBSD: update-patches,v 1.6 2001/08/24 14:43:28 todd Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -24,41 +24,46 @@
 # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 
-# Find out all .orig files and strip the name to what diff will use
-cd $WRKDIST && find . -type f -name '*.orig' | fgrep -v $DISTORIG | \
-sed -e "s,^./\(.*\)\.orig\$,\1," | {
+# Find out all $PATCHORIG files and strip the name to what diff will use
+cd $WRKDIST && find . -type f -name '*'${PATCHORIG} | fgrep -v $DISTORIG | \
+sed -e "s,^./\(.*\)\.${PATCHORIG#.*}\$,\1," | {
 while read file 
 do
-    if cmp $WRKDIST/$file $WRKDIST/$file.orig >/dev/null 2>/dev/null; then
-    	echo 1>&2 "$file and $file.orig are identical"
+    if cmp $WRKDIST/$file $WRKDIST/$file$PATCHORIG >/dev/null 2>&1; then
+    	echo 1>&2 "$file and $file$PATCHORIG are identical"
     	continue
     fi
+    if ! [ -f $WRKDIST/$file ]; then
+		echo 1>&2 "$file does not exist"
+		continue
+	fi
     echo 1>&2 "Processing $file"
     # look in patchdir for an existing patchfile matching this
     mkdir -p $PATCHDIR
     cd $PATCHDIR
-    for i in ${PATCH_LIST}
+    for i in $PATCH_LIST
     do
 	# Ignore non-files, or old backup
 	[ -f $i ] || continue
 	case $i in \
-	*.orig|*.rej|*~) ;;
+	*${PATCHORIG}|*.rej|*~) ;;
 	*) # Patch found. Is this the one ?
-	    if grep "^--- $file.orig" $i >/dev/null
+	    if grep "^--- $file$PATCHORIG" $i >/dev/null
 	    then
 		accounted="$accounted $i"
 		# found it, splice before diff part with diff
 		esc=`echo $file | sed -e 's,/,\\\\/,g'`
-		{ sed -e "/^--- $esc.orig/,\$ d" <$i
-		    (cd $WRKDIST && diff ${DIFF_ARGS} -u -p $file.orig $file) } >$i.new
+		{ sed -e "/^--- $esc$PATCHORIG/,\$ d" <$i
+		    (cd $WRKDIST && diff ${DIFF_ARGS} -u -p $file$PATCHORIG $file) } >$i.new
 		# did it change ? mark it as changed
-		if diff ${DIFF_ARGS} -u --ignore-matching-lines="^--- $file.orig	.*" \
+		if diff ${DIFF_ARGS} -u \
+			--ignore-matching-lines="^--- $file$PATCHORIG	.*" \
 		    --ignore-matching-lines="^+++ $file	.*" $i $i.new 1>&2
 		then
 		    rm $i.new
 		else
 		    echo 1>&2 "Patch $i for $file updated"
-		    mv $i $i.orig
+		    mv $i $i$PATCHORIG
 		    mv $i.new $i
 		    edit="$edit $i"
 		fi
@@ -70,7 +75,7 @@ do
     patchname=patch-`echo $file|sed -e s,[/.],_,g`
     echo 1>&2 "No patch-* found for $file, creating $patchname"
     { echo "$"OpenBSD$; \
-	(cd $WRKDIST && diff ${DIFF_ARGS} -u -p $file.orig $file) } >$patchname
+	(cd $WRKDIST && diff ${DIFF_ARGS} -u -p $file$PATCHORIG $file) }>$patchname
     edit="$edit $patchname"
     accounted="$accounted $patchname"
 done
@@ -80,7 +85,7 @@ for i in *
 do
     [ -f $i ] || continue
     case $i in \
-    *.orig|*.rej|*~) ;;
+    *$PATCHORIG|*.rej|*~) ;;
     *)
 	for j in $accounted 
 	do
@@ -93,7 +98,7 @@ do
     esac
 done
 
-# Check for $Id: update-patches,v 1.5 2001/05/22 09:26:46 camield Exp $ and similar bugs in all those patch files.
+# Check for $Id: update-patches,v 1.6 2001/08/24 14:43:28 todd Exp $ and similar bugs in all those patch files.
 for i in $accounted
 do
     if sed -e '/1,^---/ d' $i|grep '$(Id|OpenBSD'
