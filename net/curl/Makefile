@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 1999/08/18 00:14:17 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/09/01 17:12:58 brad Exp $
 
-DISTNAME=	curl-5.10
+DISTNAME=	curl-5.11
 CATEGORIES=	net
 MASTER_SITES=	http://www.fts.frontec.se/~dast/stuff/ \
 		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
