@@ -1,7 +1,19 @@
-$OpenBSD: patch-stel_sub_c,v 1.1 2001/09/29 21:27:50 naddy Exp $
---- stel/sub.c.orig	Fri Apr 26 18:29:26 1996
-+++ stel/sub.c	Sat Sep 29 22:55:22 2001
-@@ -515,10 +515,10 @@ unsigned char	*rndstr;
+$OpenBSD: patch-stel_sub_c,v 1.2 2004/01/04 21:03:51 espie Exp $
+--- stel/sub.c.orig	1996-04-26 18:29:26.000000000 +0200
++++ stel/sub.c	2004-01-04 22:01:07.000000000 +0100
+@@ -24,7 +24,11 @@ static char *rcsid = "@(#) $Id: sub.c,v 
+ #include <sys/stat.h>
+ #include <sys/utsname.h>
+ #include <syslog.h>
++#ifndef __STDC__
+ #include <varargs.h>
++#else
++#include <stdarg.h>
++#endif
+ 
+ #include "regex.h"
+ 
+@@ -515,10 +519,10 @@ unsigned char	*rndstr;
  	memcpy(sessionkeyhash, digest2, 8);
  
  #ifdef DESCORE
@@ -14,7 +26,7 @@ $OpenBSD: patch-stel_sub_c,v 1.1 2001/09/29 21:27:50 naddy Exp $
  #endif
  	bzero(tmpsched, sizeof(tmpsched));
  
-@@ -984,17 +984,17 @@ char	*authbuf;
+@@ -984,17 +988,17 @@ char	*authbuf;
  	/* build K_E(sessionkeyhash) */
  	memcpy(cookie, sessionkeyhash, 8);
  #ifdef DESCORE
@@ -36,7 +48,7 @@ $OpenBSD: patch-stel_sub_c,v 1.1 2001/09/29 21:27:50 naddy Exp $
  #endif
  
  	if (logging) {
-@@ -1053,17 +1053,17 @@ char	*authbuf;
+@@ -1053,17 +1057,17 @@ char	*authbuf;
  
  	if (side == CLIENT_SIDE) /* decrypt it once */
  #ifdef DESCORE
@@ -58,3 +70,27 @@ $OpenBSD: patch-stel_sub_c,v 1.1 2001/09/29 21:27:50 naddy Exp $
  #endif
  
  	if (logging) {
+@@ -1574,7 +1578,7 @@ randomdigest()
+ }
+ 
+ /* client printf */
+-#if defined(IRIX) || defined(SOLARIS)
++#if defined(IRIX) || defined(SOLARIS) || defined(__STDC__)
+ cprintf(char *fmt, ...)
+ #else
+ cprintf(va_alist)
+@@ -1582,12 +1586,12 @@ va_dcl
+ #endif
+ {
+ 	va_list		args;
+-#if !defined(IRIX) && !defined(SOLARIS)
++#if !defined(IRIX) && !defined(SOLARIS) && !defined(__STDC__)
+ 	char		*fmt;
+ #endif
+ 	char		buf[128];
+ 
+-#if defined(IRIX) || defined(SOLARIS)
++#if defined(IRIX) || defined(SOLARIS) || defined(__STDC__)
+ 	va_start(args, fmt);
+ #else
+ 	va_start(args);
