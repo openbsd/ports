@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/08/09 15:58:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/10/22 16:37:08 naddy Exp $
 include/ao/
 include/ao/ao.h
 include/ao/os_types.h
@@ -23,6 +23,7 @@ share/doc/libao/ao_file_extension.html
 share/doc/libao/ao_free_options.html
 share/doc/libao/ao_info.html
 share/doc/libao/ao_initialize.html
+share/doc/libao/ao_is_big_endian.html
 share/doc/libao/ao_open_file.html
 share/doc/libao/ao_open_live.html
 share/doc/libao/ao_option.html
