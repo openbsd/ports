@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2000/07/04 01:46:37 krw Exp $
+# $OpenBSD: Makefile,v 1.29 2000/08/17 20:55:58 fgsch Exp $
 
 DISTNAME=	glib-1.2.8
 CATEGORIES=	devel
@@ -19,8 +19,14 @@ PERMIT_DISTFILES_FTP=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static --disable-threads \
-		--includedir="${PREFIX}/include/glib"
+CONFIGURE_ARGS+= --enable-static --includedir="${PREFIX}/include/glib"
+
+FLAVORS=	no_threads
+FLAVOR?=
+
+.if ${FLAVOR:L} == "no_threads"
+CONFIGURE_ARGS+=  --disable-threads
+.endif
 
 post-extract:
 	@rm -f ${WRKSRC}/docs/glib.info*
