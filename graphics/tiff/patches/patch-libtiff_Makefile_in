@@ -1,0 +1,12 @@
+$OpenBSD: patch-libtiff_Makefile_in,v 1.4 2003/12/23 23:48:55 brad Exp $
+--- libtiff/Makefile.in.orig	2003-12-19 22:18:52.000000000 -0500
++++ libtiff/Makefile.in	2003-12-19 22:19:48.000000000 -0500
+@@ -244,7 +244,7 @@ OSFdso: ${OBJS}
+ 	${LD} -o libtiff.@DSOSUF@ -shared -error_unresolved ${OBJS} @LIBJPEG@ @LIBGZ@ -lc -lm
+ 
+ OPENBSDdso: ${OBJS}
+-	${CC} -shared @LIBCOPTS@ -o libtiff.@DSOSUF_VERSION@ ${OBJS} @LIBJPEG@ @LIBGZ@ -lm
++	${CC} -shared @LIBCOPTS@ -o libtiff.@DSOSUF_VERSION@ ${OBJS}
+ 	touch $@
+ 
+ OPENSERVERdso:  ${OBJS}
