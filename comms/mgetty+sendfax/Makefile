@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/09/24 07:04:02 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2001/03/31 21:56:45 brad Exp $
 # $FreeBSD: Makefile,v 1.25 1998/07/16 06:44:37 vanilla Exp $
 
 BROKEN=		insecure tempfile handling: can overwrite any file on the system
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://alpha.greenie.net/pub/mgetty/source/1.1/ \
 
 HOMEPAGE=	http://alpha.greenie.net/mgetty/
 
-MAINTAINER=	Brad Smith <brad@openbsd.org>
+MAINTAINER=	ports@openbsd.org
 
 MAKE_ENV+=	prefix="${PREFIX}" spool="/var/spool" \
 		CONFDIR="/etc/mgetty+sendfax" \
