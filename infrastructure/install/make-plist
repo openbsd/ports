@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.11 2001/05/07 15:25:44 espie Exp $
+# $OpenBSD: make-plist,v 1.12 2001/05/23 14:18:25 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -38,16 +38,33 @@ use strict;
 
 
 use File::Find;
+use File::Spec;
 
 my ($plist, $pshared);
+my @backsubst;
 
 my (%newdir, %occupied, %ldconfig, %has_stuff, %infodir, @files, @libfiles);
 die "Update bsd.port.mk" if @ARGV == 0;
-$plist = shift;
-$pshared = $plist;
-$pshared =~ s/PLIST/PFRAG.shared/;
-open(PLIST, ">$plist-auto") or die "Can't write to $plist-auto";
+my $plistdir = shift;
+die "Update bsd.port.mk" if -f $plistdir;
+$plist = File::Spec->catfile($plistdir, 'PLIST');
+$pshared = File::Spec->catfile($plistdir, 'PFRAG.shared');
+if (-e "$plist.orig" or -e "$pshared.orig") {
+	die "You must clean up old files first";
+}
+rename($plist, "$plist.orig") or die "Can't rename $plist to $plist.orig";
+rename($pshared, "$pshared.orig");
+
+open(PLIST, '>', $plist) or die "Can't write to $plist";
 select PLIST;
+
+for (@ARGV) {
+	if (m/\=/) {
+		my $back = $`;
+		my $v = $';
+		push(@backsubst, ["\${$back}", $v]) if $v ne '';
+	}
+}
 
 print "\@comment \$OpenBSD\$\n";
 
@@ -89,6 +106,11 @@ sub parse_mtree {
 sub strip {
 	local($_) = shift;
 	s|^\Q$base\E/||;
+	for my $l (@backsubst) {
+		my $v = $l->[1];
+		my $r = $l->[0];
+		s/\Q$v\E/$r/g;
+	}
 	# If the resulting name is arch-dependent, we warn.
 	# We don't fix it automatically, as this may need special handling.
 	if (m/i386|m68k|sparc/) {

@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.411 2001/05/23 13:28:14 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.412 2001/05/23 14:18:24 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -604,7 +604,7 @@ SCRIPTS_ENV+=	${_INSTALL_MACROS}
 
 
 # Create the generic variable substitution list, from subst vars
-SUBST_VARS+=ARCH MACHINE_ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT
+SUBST_VARS+=MACHINE_ARCH ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT
 _SED_SUBST=sed
 .for _v in ${SUBST_VARS}
 _SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
@@ -1974,11 +1974,15 @@ RECURSIVE_FETCH_LIST?=	Yes
 # when port is installed or package created.
 #
 .if ${FAKE:L} == "yes"
+_tmp:=
+.  for _v in ${SUBST_VARS}
+_tmp += ${_v}='${${_v}}'
+.  endfor
 plist: fake
 	@DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} LDCONFIG="${LDCONFIG}" \
 	MTREE_FILE=${WRKPKG}/mtree.spec \
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
-	perl ${PORTSDIR}/infrastructure/install/make-plist ${PLIST}
+	perl ${PORTSDIR}/infrastructure/install/make-plist ${PKGDIR} ${_tmp}
 .endif
 
 update-patches:
