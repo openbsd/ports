@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/11/10 19:57:04 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2003/10/31 10:23:43 kevlo Exp $
 
 COMMENT=	"speed up perl scripts by running them persistently"
 
-VERSION=	2.21
+VERSION=	2.22
 DISTNAME=	CGI-SpeedyCGI-${VERSION}
 PKGNAME=	p5-CGI-SpeedyCGI-${VERSION}
 CATEGORIES=	www perl5
