@@ -1,10 +1,14 @@
---- Makefile.in.orig	Mon Feb 21 11:53:17 2000
-+++ Makefile.in	Mon Feb 21 21:04:29 2000
-@@ -9,7 +9,7 @@
+--- Makefile.in.orig	Thu Oct  5 16:56:58 2000
++++ Makefile.in	Thu Nov  2 12:20:12 2000
+@@ -10,10 +10,10 @@
  	purify 	$(CC) -o $(PROGNAME) $(OBJECTS)
  
  .C.o:
 -	$(CC) -c -DDATA_DIR=$(INSTALL_DATADIR) $(EXTRA_FLAGS) ${OPTIMIZATION} $<
++	$(CC) $(CFLAGS) -c -DDATA_DIR=$(INSTALL_DATADIR) $<
+ 
+ .c.o:
+-	$(CC) -c $(EXTRA_FLAGS) $(OPTIMIZATION) $<
 +	$(CC) $(CFLAGS) -c -DDATA_DIR=$(INSTALL_DATADIR) $<
  
  remake: clean all

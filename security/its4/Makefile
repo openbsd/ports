@@ -3,9 +3,9 @@
 # Date created:		21 Feb 2000
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.9 2000/10/22 15:43:24 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/11/18 06:27:25 dugsong Exp $
 
-DISTNAME=	its4-1.0.1
+DISTNAME=	its4-1.1.1
 
 CATEGORIES=	security
 NEED_VERSION=	1.305
@@ -22,9 +22,11 @@ MIRROR_DISTFILE=no
 
 EXTRACT_SUFX=	.tgz
 
-CONFIGURE_STYLE=	gnu dest
+CONFIGURE_STYLE=	gnu dest old
 
 CONFIGURE_ARGS=	--datadir='$${DESTDIR}${PREFIX}/share/its4'
+
+WRKDIST=	${WRKDIR}/its4
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
@@ -33,7 +35,7 @@ do-fetch:
 	   echo "  due to licensing restrictions. You MUST fetch the source" ; \
 	   echo "  manually after reading and agreeing to the license at:" ; \
 	   echo "" ; \
-	   echo "      http://www.rstcorp.com/its4/download.html" ; \
+	   echo "      http://www.cigital.com/its4/" ; \
 	   echo "" ; \
 	   echo "  Once ${DISTFILES} has been downloaded, move it to ${DISTDIR}" ; \
 	   echo "  and then restart this build." ; \
