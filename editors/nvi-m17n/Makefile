@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:41:52 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/02/21 17:25:55 espie Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
@@ -60,6 +60,11 @@ AUTODETECT.iso-2022-kr=kr
 
 ENCODING+=	iso-2022-cn iso-2022-jp iso-2022-kr
 ENCODING+=	euc-jp euc-cn euc-kr sjis big5 euc-tw hz
+
+
+# nvi provides an outdated version of queue.h, stupid stunt...
+post-extract:
+	@rm -f ${WRKDIST}/include/sys/queue.h
 
 post-build:
 .for encoding in ${ENCODING}
