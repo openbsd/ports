@@ -1,0 +1,154 @@
+$OpenBSD: patch-kolf_Makefile_in,v 1.1 2003/01/27 19:42:21 espie Exp $
+--- kolf/Makefile.in.orig	Fri Jan 10 03:05:45 2003
++++ kolf/Makefile.in	Fri Jan 10 03:06:59 2003
+@@ -249,18 +249,18 @@ x_libraries = @x_libraries@
+ SUBDIRS = objects sounds courses pics graphics
+ INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/libkdegames $(all_includes)
+ 
+-lib_LTLIBRARIES = libkolf.la
++lib_LTLIBRARIES = libkkolf.la
+ bin_PROGRAMS = kolf
+ 
+-libkolf_la_SOURCES = \
++libkkolf_la_SOURCES = \
+ 	kolf.cpp game.cpp canvasitem.cpp ball.cpp newgame.cpp config.cpp \
+ 	scoreboard.cpp editor.cpp pluginloader.cpp object.cpp vector.cpp \
+ 	printdialogpage.cpp kcomboboxdialog.cpp kvolumecontrol.cpp \
+ 	floater.cpp slope.cpp
+ 
+ 
+-libkolf_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -export-dynamic
+-libkolf_la_LIBADD = $(LIB_KDEGAMES) $(LIB_KDEPRINT) $(LIB_KIO) -lartskde
++libkkolf_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -export-dynamic
++libkkolf_la_LIBADD = $(LIB_KDEGAMES) $(LIB_KDEPRINT) $(LIB_KIO) -lartskde
+ 
+ # the installed header files
+ kolfinclude_HEADERS = \
+@@ -274,7 +274,7 @@ kolfincludedir = $(includedir)/kolf
+ kde_module_LTLIBRARIES = kolf.la
+ kolf_la_SOURCES = main.cpp
+ kolf_la_LDFLAGS = $(KDE_RPATH) $(all_libraries) -module -avoid-version
+-kolf_la_LIBADD = libkolf.la
++kolf_la_LIBADD = libkkolf.la
+ 
+ # the empty "stub" app that has nothing
+ kolf_SOURCES = dummy.cpp
+@@ -302,25 +302,25 @@ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(kde_module_LTLIBRARIES) $(lib_LTLIBRARIES)
+ 
+-kolf_la_DEPENDENCIES = libkolf.la
++kolf_la_DEPENDENCIES = libkkolf.la
+ am_kolf_la_OBJECTS = main.lo
+ #>- kolf_la_OBJECTS = $(am_kolf_la_OBJECTS)
+ #>+ 1
+ kolf_la_OBJECTS = main.lo
+-libkolf_la_DEPENDENCIES =
+-am_libkolf_la_OBJECTS = kolf.lo game.lo canvasitem.lo ball.lo newgame.lo \
++libkkolf_la_DEPENDENCIES =
++am_libkkolf_la_OBJECTS = kolf.lo game.lo canvasitem.lo ball.lo newgame.lo \
+ 	config.lo scoreboard.lo editor.lo pluginloader.lo object.lo \
+ 	vector.lo printdialogpage.lo kcomboboxdialog.lo \
+ 	kvolumecontrol.lo floater.lo slope.lo
+-#>- libkolf_la_OBJECTS = $(am_libkolf_la_OBJECTS)
++#>- libkkolf_la_OBJECTS = $(am_libkkolf_la_OBJECTS)
+ #>+ 7
+-libkolf_la_final_OBJECTS = libkolf_la.all_cpp.lo 
+-libkolf_la_nofinal_OBJECTS = kolf.lo game.lo canvasitem.lo ball.lo newgame.lo \
++libkkolf_la_final_OBJECTS = libkkolf_la.all_cpp.lo 
++libkkolf_la_nofinal_OBJECTS = kolf.lo game.lo canvasitem.lo ball.lo newgame.lo \
+ 	config.lo scoreboard.lo editor.lo pluginloader.lo object.lo \
+ 	vector.lo printdialogpage.lo kcomboboxdialog.lo \
+ 	kvolumecontrol.lo floater.lo slope.lo
+-@KDE_USE_FINAL_FALSE@libkolf_la_OBJECTS = $(libkolf_la_nofinal_OBJECTS)
+-@KDE_USE_FINAL_TRUE@libkolf_la_OBJECTS = $(libkolf_la_final_OBJECTS)
++@KDE_USE_FINAL_FALSE@libkkolf_la_OBJECTS = $(libkkolf_la_nofinal_OBJECTS)
++@KDE_USE_FINAL_TRUE@libkkolf_la_OBJECTS = $(libkkolf_la_final_OBJECTS)
+ bin_PROGRAMS = kolf$(EXEEXT)
+ PROGRAMS = $(bin_PROGRAMS)
+ 
+@@ -349,7 +349,7 @@ am__depfiles_maybe = depfiles
+ #>- @AMDEP_TRUE@	./$(DEPDIR)/scoreboard.Plo ./$(DEPDIR)/slope.Plo \
+ #>- @AMDEP_TRUE@	./$(DEPDIR)/vector.Plo
+ #>+ 23
+-@AMDEP_TRUE@@KDE_USE_FINAL_TRUE@DEP_FILES =   $(DEPDIR)/libkolf_la.all_cpp.P  ./$(DEPDIR)/ball.Plo ./$(DEPDIR)/canvasitem.Plo \
++@AMDEP_TRUE@@KDE_USE_FINAL_TRUE@DEP_FILES =   $(DEPDIR)/libkkolf_la.all_cpp.P  ./$(DEPDIR)/ball.Plo ./$(DEPDIR)/canvasitem.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/config.Plo ./$(DEPDIR)/dummy.Po \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/editor.Plo ./$(DEPDIR)/floater.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/game.Plo \
+@@ -391,7 +391,7 @@ CXXLD = $(CXX)
+ CXXLINK = $(LIBTOOL) --mode=link --tag=CXX $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ CXXFLAGS = @CXXFLAGS@
+-DIST_SOURCES = $(kolf_la_SOURCES) $(libkolf_la_SOURCES) $(kolf_SOURCES)
++DIST_SOURCES = $(kolf_la_SOURCES) $(libkkolf_la_SOURCES) $(kolf_SOURCES)
+ DATA = $(app_DATA) $(applicationmime_DATA) $(apps_DATA) $(magic_DATA)
+ 
+ HEADERS = $(kolfinclude_HEADERS)
+@@ -404,7 +404,7 @@ RECURSIVE_TARGETS = info-recursive dvi-r
+ DIST_COMMON = $(kolfinclude_HEADERS) AUTHORS COPYING Makefile.am \
+ 	Makefile.in TODO
+ DIST_SUBDIRS = $(SUBDIRS)
+-SOURCES = $(kolf_la_SOURCES) $(libkolf_la_SOURCES) $(kolf_SOURCES)
++SOURCES = $(kolf_la_SOURCES) $(libkkolf_la_SOURCES) $(kolf_SOURCES)
+ 
+ #>- all: all-recursive
+ #>+ 1
+@@ -479,8 +479,8 @@ clean-libLTLIBRARIES:
+ 	done
+ kolf.la: $(kolf_la_OBJECTS) $(kolf_la_DEPENDENCIES) 
+ 	$(CXXLINK) -rpath $(kde_moduledir) $(kolf_la_LDFLAGS) $(kolf_la_OBJECTS) $(kolf_la_LIBADD) $(LIBS)
+-libkolf.la: $(libkolf_la_OBJECTS) $(libkolf_la_DEPENDENCIES) 
+-	$(CXXLINK) -rpath $(libdir) $(libkolf_la_LDFLAGS) $(libkolf_la_OBJECTS) $(libkolf_la_LIBADD) $(LIBS)
++libkkolf.la: $(libkkolf_la_OBJECTS) $(libkkolf_la_DEPENDENCIES) 
++	$(CXXLINK) -rpath $(libdir) $(libkkolf_la_LDFLAGS) $(libkkolf_la_OBJECTS) $(libkkolf_la_LIBADD) $(LIBS)
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ install-binPROGRAMS: $(bin_PROGRAMS)
+ 	@$(NORMAL_INSTALL)
+@@ -993,33 +993,33 @@ force-reedit:
+ 
+ 
+ #>+ 11
+-libkolf_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/kolf.cpp $(srcdir)/game.cpp $(srcdir)/canvasitem.cpp $(srcdir)/ball.cpp $(srcdir)/newgame.cpp $(srcdir)/config.cpp $(srcdir)/scoreboard.cpp $(srcdir)/editor.cpp $(srcdir)/pluginloader.cpp $(srcdir)/object.cpp $(srcdir)/vector.cpp $(srcdir)/printdialogpage.cpp $(srcdir)/kcomboboxdialog.cpp $(srcdir)/kvolumecontrol.cpp $(srcdir)/floater.cpp $(srcdir)/slope.cpp  object.moc floater.moc kvolumecontrol.moc scoreboard.moc kcomboboxdialog.moc editor.moc printdialogpage.moc game.moc slope.moc kolf.moc config.moc newgame.moc
+-	@echo 'creating libkolf_la.all_cpp.cpp ...'; \
+-	rm -f libkolf_la.all_cpp.files libkolf_la.all_cpp.final; \
+-	echo "#define KDE_USE_FINAL 1" >> libkolf_la.all_cpp.final; \
++libkkolf_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/kolf.cpp $(srcdir)/game.cpp $(srcdir)/canvasitem.cpp $(srcdir)/ball.cpp $(srcdir)/newgame.cpp $(srcdir)/config.cpp $(srcdir)/scoreboard.cpp $(srcdir)/editor.cpp $(srcdir)/pluginloader.cpp $(srcdir)/object.cpp $(srcdir)/vector.cpp $(srcdir)/printdialogpage.cpp $(srcdir)/kcomboboxdialog.cpp $(srcdir)/kvolumecontrol.cpp $(srcdir)/floater.cpp $(srcdir)/slope.cpp  object.moc floater.moc kvolumecontrol.moc scoreboard.moc kcomboboxdialog.moc editor.moc printdialogpage.moc game.moc slope.moc kolf.moc config.moc newgame.moc
++	@echo 'creating libkkolf_la.all_cpp.cpp ...'; \
++	rm -f libkkolf_la.all_cpp.files libkkolf_la.all_cpp.final; \
++	echo "#define KDE_USE_FINAL 1" >> libkkolf_la.all_cpp.final; \
+ 	for file in kolf.cpp game.cpp canvasitem.cpp ball.cpp newgame.cpp config.cpp scoreboard.cpp editor.cpp pluginloader.cpp object.cpp vector.cpp printdialogpage.cpp kcomboboxdialog.cpp kvolumecontrol.cpp floater.cpp slope.cpp ; do \
+-	  echo "#include \"$$file\"" >> libkolf_la.all_cpp.files; \
+-	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> libkolf_la.all_cpp.final; \
++	  echo "#include \"$$file\"" >> libkkolf_la.all_cpp.files; \
++	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> libkkolf_la.all_cpp.final; \
+ 	done; \
+-	cat libkolf_la.all_cpp.final libkolf_la.all_cpp.files > libkolf_la.all_cpp.cpp; \
+-	rm -f libkolf_la.all_cpp.final libkolf_la.all_cpp.files
++	cat libkkolf_la.all_cpp.final libkkolf_la.all_cpp.files > libkkolf_la.all_cpp.cpp; \
++	rm -f libkkolf_la.all_cpp.final libkkolf_la.all_cpp.files
+ 
+ #>+ 3
+ clean-final:
+-	-rm -f libkolf_la.all_cpp.cpp
++	-rm -f libkkolf_la.all_cpp.cpp
+ 
+ #>+ 2
+ final:
+-	$(MAKE) libkolf_la_OBJECTS="$(libkolf_la_final_OBJECTS)" all-am
++	$(MAKE) libkkolf_la_OBJECTS="$(libkkolf_la_final_OBJECTS)" all-am
+ #>+ 2
+ final-install:
+-	$(MAKE) libkolf_la_OBJECTS="$(libkolf_la_final_OBJECTS)" install-am
++	$(MAKE) libkkolf_la_OBJECTS="$(libkkolf_la_final_OBJECTS)" install-am
+ #>+ 2
+ no-final:
+-	$(MAKE) libkolf_la_OBJECTS="$(libkolf_la_nofinal_OBJECTS)" all-am
++	$(MAKE) libkkolf_la_OBJECTS="$(libkkolf_la_nofinal_OBJECTS)" all-am
+ #>+ 2
+ no-final-install:
+-	$(MAKE) libkolf_la_OBJECTS="$(libkolf_la_nofinal_OBJECTS)" install-am
++	$(MAKE) libkkolf_la_OBJECTS="$(libkkolf_la_nofinal_OBJECTS)" install-am
+ #>+ 3
+ cvs-clean:
+ 	$(MAKE) admindir=$(top_srcdir)/admin -f $(top_srcdir)/admin/Makefile.common cvs-clean

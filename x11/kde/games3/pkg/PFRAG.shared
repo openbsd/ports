@@ -1,7 +1,9 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2002/07/16 12:20:42 espie Exp $
-lib/libkbackgammon.so.0.0
-lib/libkdegames.so.1.1
-lib/libkdehighscores.so.0.1
-lib/libksirtetbase.so.0.1
-lib/libksirtetcommon.so.0.1
+@comment $OpenBSD: PFRAG.shared,v 1.8 2003/01/27 19:42:21 espie Exp $
+${KDE}/libkio_atlantik.so.0.0
+${KDE}/libkolf.so.0.0
+lib/libatlantic.so.2.0
+lib/libatlantikclient.so.2.0
+lib/libatlantikui.so.2.0
+lib/libkdegames.so.2.0
+lib/libkkolf.so.0.0
 DYNLIBDIR(%D/lib)

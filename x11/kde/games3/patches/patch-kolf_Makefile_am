@@ -1,0 +1,34 @@
+$OpenBSD: patch-kolf_Makefile_am,v 1.1 2003/01/27 19:42:21 espie Exp $
+--- kolf/Makefile.am.orig	Sun Dec 29 22:35:44 2002
++++ kolf/Makefile.am	Sun Dec 29 22:36:17 2002
+@@ -1,17 +1,17 @@
+ SUBDIRS = objects sounds courses pics graphics
+ INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/libkdegames $(all_includes)
+ 
+-lib_LTLIBRARIES = libkolf.la
++lib_LTLIBRARIES = libkkolf.la
+ bin_PROGRAMS = kolf
+ 
+-libkolf_la_SOURCES = \
++libkkolf_la_SOURCES = \
+ 	kolf.cpp game.cpp canvasitem.cpp ball.cpp newgame.cpp config.cpp \
+ 	scoreboard.cpp editor.cpp pluginloader.cpp object.cpp vector.cpp \
+ 	printdialogpage.cpp kcomboboxdialog.cpp kvolumecontrol.cpp \
+ 	floater.cpp slope.cpp
+ 
+-libkolf_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -export-dynamic
+-libkolf_la_LIBADD = $(LIB_KDEGAMES) $(LIB_KDEPRINT) $(LIB_KIO) -lartskde
++libkkolf_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -export-dynamic
++libkkolf_la_LIBADD = $(LIB_KDEGAMES) $(LIB_KDEPRINT) $(LIB_KIO) -lartskde
+ 
+ # the installed header files
+ kolfinclude_HEADERS = \
+@@ -25,7 +25,7 @@ kolfincludedir=$(includedir)/kolf
+ kde_module_LTLIBRARIES = kolf.la
+ kolf_la_SOURCES = main.cpp
+ kolf_la_LDFLAGS = $(KDE_RPATH) $(all_libraries) -module -avoid-version
+-kolf_la_LIBADD = libkolf.la
++kolf_la_LIBADD = libkkolf.la
+ 
+ 
+ # the empty "stub" app that has nothing

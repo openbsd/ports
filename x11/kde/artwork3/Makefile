@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2003/01/07 15:36:35 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2003/01/27 19:42:20 espie Exp $
 
 COMMENT= 		"X11 toolkit, additional artwork"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.0.5a
+VERSION=		3.1
 DISTNAME=		kdeartwork-${VERSION}
 
 LIB_DEPENDS=kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kscreensaver::x11/kde/libs3 \
