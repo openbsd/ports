@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 1999/09/28 20:00:35 brad Exp $
+# $OpenBSD: Makefile,v 1.17 1999/11/01 06:13:35 angelos Exp $
 
-DISTNAME=	lsof_4.45_W
-PKGNAME=	lsof-4.45
+DISTNAME=	lsof_4.46_W
+PKGNAME=	lsof-4.46
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/ \
 		ftp://ftp.crc.doc.ca/packages/lsof/ \
