@@ -1,12 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/07/19 10:49:19 shell Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/11/30 19:49:10 margarida Exp $
 ${P5SITE}/Date/Format.pm
 ${P5SITE}/Date/Language.pm
 ${P5SITE}/Date/Language/Austrian.pm
+${P5SITE}/Date/Language/Brazilian.pm
 ${P5SITE}/Date/Language/Czech.pm
+${P5SITE}/Date/Language/Danish.pm
 ${P5SITE}/Date/Language/Dutch.pm
 ${P5SITE}/Date/Language/English.pm
 ${P5SITE}/Date/Language/French.pm
 ${P5SITE}/Date/Language/German.pm
+${P5SITE}/Date/Language/Greek.pm
 ${P5SITE}/Date/Language/Italian.pm
 ${P5SITE}/Date/Language/Norwegian.pm
 ${P5SITE}/Date/Parse.pm
