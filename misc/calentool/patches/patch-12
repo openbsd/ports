@@ -1,5 +1,5 @@
---- riseset.c.orig	Tue Sep 29 22:38:24 1998
-+++ riseset.c	Wed Sep 30 11:36:47 1998
+--- riseset.c.orig	Wed Sep 30 03:38:24 1998
++++ riseset.c	Wed Jun 18 03:38:06 2003
 @@ -48,7 +48,7 @@
  extern char *daynames[], *monthnames[];
  extern int day_first;
@@ -9,7 +9,7 @@
  double	Julian_Day, MJD, Tu, Ru, T70, Local, GMST, LST;
  double	Eqt, Tua, L, G, e, eps, g, alpha, delta, sd, cd, lha, lhr, sh, ch;
  double	la, lf, S, C, sp, cp, tp, Az, alt;
-@@ -287,7 +287,7 @@
+@@ -287,7 +287,7 @@ long epoch_seconds;
  
  struct tm *
  sunrise(t0, rs, z)
@@ -18,7 +18,7 @@
  	double rs, z;
  {
  	double cz, dh;
-@@ -311,12 +311,12 @@
+@@ -311,12 +311,12 @@ sunrise(t0, rs, z)
  
  char *
  moonrise(t0, rs, z)
@@ -33,7 +33,16 @@
  	struct tm *ltm;
  
  	moondata(t0);	/* get starting declination of Moon */
-@@ -522,7 +522,7 @@
+@@ -353,7 +353,7 @@ moonrise(t0, rs, z)
+ 	t1 += 30 /* seconds, rounding to nearest minute */;
+ 	ltm = localtime(&t1);
+ #ifdef HAS_STRFTIME
+-	(void)strftime(rbuf, 64, "%H:%M %Z", ltm);
++	(void)strftime(rbuf, sizeof rbuf, "%H:%M %Z", ltm);
+ #else
+ 	sprintf(rbuf, "%02d:%02d %s", ltm->tm_hour, ltm->tm_min,
+ 			timezone(tzp.tz_minuteswest, ltm->tm_isdst));
+@@ -522,7 +522,7 @@ long	tim;
  
  /* time functions */
  char *gmctime(t)
