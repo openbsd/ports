@@ -1,14 +1,14 @@
 # ex:ts=8
 # OpenBSD makefile for:	tin
-# Version required:	tinpre-1.4-980730
+# Version required:	tinpre-1.4-19990216
 # Date created:		18 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.5 1998/09/08 05:43:35 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1999/03/30 06:23:44 marc Exp $
 #
 
-DISTNAME=		tinpre-1.4-980818
-PKGNAME=		tin-1.4.980818
+DISTNAME=		tinpre-1.4-19990216
+PKGNAME=		tin-1.4.19990216
 CATEGORIES=		news
 
 NO_CDROM=		"NOFEE:	Can not sell"
@@ -16,7 +16,7 @@ NO_PACKAGE=		"too much compile time configuration"
 
 MAINTAINER=     	marc@OpenBSD.ORG
 
-MASTER_SITES=		ftp://nuxi.ucdavis.edu/pub/tin/ \
+MASTER_SITES=		ftp://nuxi.ucdavis.edu/pub/tin/pre-v1.4/ \
 			ftp://ftp.akk.uni-karlsruhe.de/pub/tin/ \
 			ftp://ftp.nuxi.com/pub/tin/
 
