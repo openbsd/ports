@@ -1,8 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/06/20 18:46:23 brad Exp $
-include/GL/dosmesa.h
-include/GL/foomesa.h
-include/GL/fxmesa.h
-include/GL/ggimesa.h
+@comment $OpenBSD: PLIST,v 1.3 2000/07/26 23:54:38 brad Exp $
 include/GL/gl.h
 include/GL/gl_mangle.h
 include/GL/glu.h
@@ -10,16 +6,17 @@ include/GL/glu_mangle.h
 include/GL/glut.h
 include/GL/glx.h
 include/GL/glx_mangle.h
-include/GL/mglmesa.h
 include/GL/osmesa.h
-include/GL/osmesa3.h
-include/GL/svgamesa.h
-include/GL/wmesa.h
 include/GL/xmesa.h
+include/GL/xmesa_x.h
+include/GL/xmesa_xf86.h
 lib/libGL.a
+lib/libGL.la
 lib/libGLU.a
+lib/libGLU.la
 lib/libMesaGL.a
 lib/libMesaGLU.a
 lib/libglut.a
+lib/libglut.la
 %%SHARED%%
 @dirrm include/GL
