@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/07/24 12:47:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/07/24 13:36:03 espie Exp $
 bin/ark
 bin/irkick
 bin/kcalc
@@ -20,7 +20,7 @@ bin/kwikdisk
 include/kmultiformlistbox.h
 include/kmultiformlistboxentry.h
 include/kmultiformlistboxfactory.h
-@dir include/ksim
+include/ksim/
 include/ksim/chart.h
 include/ksim/common.h
 include/ksim/ksimconfig.h
@@ -85,14 +85,14 @@ share/applications/kde/kwikdisk.desktop
 share/applications/kde/laptop.desktop
 share/applications/kde/pcmcia.desktop
 share/applications/kde/userinfo.desktop
-@dir share/apps/ark
+share/apps/ark/
 share/apps/ark/ark_part.rc
 share/apps/ark/ark_part_readonly.rc
 share/apps/ark/arkui.rc
-@dir share/apps/ark/icons
-@dir share/apps/ark/icons/crystalsvg
-@dir share/apps/ark/icons/crystalsvg/22x22
-@dir share/apps/ark/icons/crystalsvg/22x22/actions
+share/apps/ark/icons/
+share/apps/ark/icons/crystalsvg/
+share/apps/ark/icons/crystalsvg/22x22/
+share/apps/ark/icons/crystalsvg/22x22/actions/
 share/apps/ark/icons/crystalsvg/22x22/actions/ark_adddir.png
 share/apps/ark/icons/crystalsvg/22x22/actions/ark_addfile.png
 share/apps/ark/icons/crystalsvg/22x22/actions/ark_delete.png
@@ -103,11 +103,11 @@ share/apps/ark/icons/crystalsvg/22x22/actions/ark_open.png
 share/apps/ark/icons/crystalsvg/22x22/actions/ark_options.png
 share/apps/ark/icons/crystalsvg/22x22/actions/ark_selectall.png
 share/apps/ark/icons/crystalsvg/22x22/actions/ark_view.png
-@dir share/apps/irkick
-@dir share/apps/irkick/icons
-@dir share/apps/irkick/icons/hicolor
-@dir share/apps/irkick/icons/hicolor/16x16
-@dir share/apps/irkick/icons/hicolor/16x16/actions
+share/apps/irkick/
+share/apps/irkick/icons/
+share/apps/irkick/icons/hicolor/
+share/apps/irkick/icons/hicolor/16x16/
+share/apps/irkick/icons/hicolor/16x16/actions/
 share/apps/irkick/icons/hicolor/16x16/actions/irkick.png
 share/apps/irkick/icons/hicolor/16x16/actions/irkickflash.png
 share/apps/irkick/icons/hicolor/16x16/actions/irkickoff.png
@@ -119,8 +119,8 @@ share/apps/irkick/icons/hicolor/16x16/actions/ledorange.png
 share/apps/irkick/icons/hicolor/16x16/actions/ledpurple.png
 share/apps/irkick/icons/hicolor/16x16/actions/ledred.png
 share/apps/irkick/icons/hicolor/16x16/actions/ledyellow.png
-@dir share/apps/irkick/icons/hicolor/32x32
-@dir share/apps/irkick/icons/hicolor/32x32/actions
+share/apps/irkick/icons/hicolor/32x32/
+share/apps/irkick/icons/hicolor/32x32/actions/
 share/apps/irkick/icons/hicolor/32x32/actions/ledblue.png
 share/apps/irkick/icons/hicolor/32x32/actions/ledgreen.png
 share/apps/irkick/icons/hicolor/32x32/actions/ledlightblue.png
@@ -129,12 +129,12 @@ share/apps/irkick/icons/hicolor/32x32/actions/ledorange.png
 share/apps/irkick/icons/hicolor/32x32/actions/ledpurple.png
 share/apps/irkick/icons/hicolor/32x32/actions/ledred.png
 share/apps/irkick/icons/hicolor/32x32/actions/ledyellow.png
-@dir share/apps/kcalc
+share/apps/kcalc/
 share/apps/kcalc/kcalcui.rc
 share/apps/kconf_update/kcalcrc.upd
-@dir share/apps/kdf
+share/apps/kdf/
 share/apps/kdf/kdfui.rc
-@dir share/apps/kdf/pics
+share/apps/kdf/pics/
 share/apps/kdf/pics/delete.png
 share/apps/kdf/pics/tick.png
 share/apps/kdm/pics/users/Apple.png
@@ -200,18 +200,18 @@ share/apps/kdm/pics/users/Turtle.png
 share/apps/kdm/pics/users/UFO.png
 share/apps/kdm/pics/users/Watch.png
 share/apps/kdm/pics/users/Wind.png
-@dir share/apps/kedit
+share/apps/kedit/
 share/apps/kedit/keditui.rc
-@dir share/apps/kgpg
-@dir share/apps/kgpg/icons
-@dir share/apps/kgpg/icons/crystalsvg
-@dir share/apps/kgpg/icons/crystalsvg/16x16
-@dir share/apps/kgpg/icons/crystalsvg/16x16/actions
+share/apps/kgpg/
+share/apps/kgpg/icons/
+share/apps/kgpg/icons/crystalsvg/
+share/apps/kgpg/icons/crystalsvg/16x16/
+share/apps/kgpg/icons/crystalsvg/16x16/actions/
 share/apps/kgpg/icons/crystalsvg/16x16/actions/kgpg_key1.png
 share/apps/kgpg/icons/crystalsvg/16x16/actions/kgpg_key2.png
 share/apps/kgpg/icons/crystalsvg/16x16/actions/kgpg_key3.png
-@dir share/apps/kgpg/icons/crystalsvg/22x22
-@dir share/apps/kgpg/icons/crystalsvg/22x22/actions
+share/apps/kgpg/icons/crystalsvg/22x22/
+share/apps/kgpg/icons/crystalsvg/22x22/actions/
 share/apps/kgpg/icons/crystalsvg/22x22/actions/kgpg_edit.png
 share/apps/kgpg/icons/crystalsvg/22x22/actions/kgpg_export.png
 share/apps/kgpg/icons/crystalsvg/22x22/actions/kgpg_gen.png
@@ -224,30 +224,30 @@ share/apps/kgpg/icons/crystalsvg/22x22/actions/kgpg_sign.png
 share/apps/kgpg/icons/crystalsvg/22x22/actions/kgpg_term.png
 share/apps/kgpg/kgpg.rc
 share/apps/kgpg/listkeys.rc
-@dir share/apps/kgpg/pics
+share/apps/kgpg/pics/
 share/apps/kgpg/pics/kgpg_anim.gif
 share/apps/kgpg/pics/kgpg_bad.png
 share/apps/kgpg/pics/kgpg_good.png
 share/apps/kgpg/pics/kgpg_marginal.png
 share/apps/kgpg/pics/kgpg_unknown.png
 share/apps/kgpg/tips
-@dir share/apps/khexedit
+share/apps/khexedit/
 share/apps/khexedit/khexeditui.rc
-@dir share/apps/khexedit/toolbar
+share/apps/khexedit/toolbar/
 share/apps/khexedit/toolbar/hexdrag.png
 share/apps/khexedit/toolbar/hexmask.png
 share/apps/khexedit/toolbar/hexwrite.png
 share/apps/kicker/applets/kcharselectapplet.desktop
 share/apps/kicker/extensions/ksim.desktop
-@dir share/apps/kjots
+share/apps/kjots/
 share/apps/kjots/kjotsui.rc
-@dir share/apps/kjots/pics
+share/apps/kjots/pics/
 share/apps/kjots/pics/filedel.png
-@dir share/apps/klaptopdaemon
-@dir share/apps/klaptopdaemon/icons
-@dir share/apps/klaptopdaemon/icons/crystalsvg
-@dir share/apps/klaptopdaemon/icons/crystalsvg/16x16
-@dir share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions
+share/apps/klaptopdaemon/
+share/apps/klaptopdaemon/icons/
+share/apps/klaptopdaemon/icons/crystalsvg/
+share/apps/klaptopdaemon/icons/crystalsvg/16x16/
+share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/
 share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/alt2_laptop_nobattery.png
 share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/alt2_laptop_nocharge.png
 share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/alt2_laptop_power.png
@@ -259,21 +259,21 @@ share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/laptop_charge.png
 share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/laptop_nobattery.png
 share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/laptop_nocharge.png
 share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/power.png
-@dir share/apps/klaptopdaemon/icons/crystalsvg/22x22
-@dir share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions
+share/apps/klaptopdaemon/icons/crystalsvg/22x22/
+share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions/
 share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions/laptop_charge.png
 share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions/laptop_nobattery.png
 share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions/laptop_nocharge.png
 share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions/laptop_power.png
-@dir share/apps/klaptopdaemon/icons/crystalsvg/32x32
-@dir share/apps/klaptopdaemon/icons/crystalsvg/32x32/actions
+share/apps/klaptopdaemon/icons/crystalsvg/32x32/
+share/apps/klaptopdaemon/icons/crystalsvg/32x32/actions/
 share/apps/klaptopdaemon/icons/crystalsvg/32x32/actions/power.png
 share/apps/konqueror/servicemenus/ark_directory_service.desktop
 share/apps/konqueror/servicemenus/arkservicemenu.desktop
 share/apps/konqueror/servicemenus/encryptfile.desktop
 share/apps/konqueror/servicemenus/encryptfolder.desktop
-@dir share/apps/kregexpeditor
-@dir share/apps/kregexpeditor/pics
+share/apps/kregexpeditor/
+share/apps/kregexpeditor/pics/
 share/apps/kregexpeditor/pics/altn.png
 share/apps/kregexpeditor/pics/anychar.png
 share/apps/kregexpeditor/pics/autoverify.png
@@ -290,22 +290,22 @@ share/apps/kregexpeditor/pics/select.png
 share/apps/kregexpeditor/pics/text.png
 share/apps/kregexpeditor/pics/verify.png
 share/apps/kregexpeditor/pics/wordboundary.png
-@dir share/apps/kregexpeditor/predefined
-@dir share/apps/kregexpeditor/predefined/general
+share/apps/kregexpeditor/predefined/
+share/apps/kregexpeditor/predefined/general/
 share/apps/kregexpeditor/predefined/general/anything.regexp
 share/apps/kregexpeditor/predefined/general/spaces.regexp
-@dir share/apps/ksim
-@dir share/apps/ksim/monitors
+share/apps/ksim/
+share/apps/ksim/monitors/
 share/apps/ksim/monitors/DFree.desktop
 share/apps/ksim/monitors/Lm_sensors.desktop
 share/apps/ksim/monitors/Net.desktop
 share/apps/ksim/monitors/cpu.desktop
 share/apps/ksim/monitors/disk.desktop
-@dir share/apps/ksim/pics
+share/apps/ksim/pics/
 share/apps/ksim/pics/clock.png
 share/apps/ksim/pics/uptime.png
-@dir share/apps/ksim/themes
-@dir share/apps/ksim/themes/ksim
+share/apps/ksim/themes/
+share/apps/ksim/themes/ksim/
 share/apps/ksim/themes/ksim/bg_chart.png
 share/apps/ksim/themes/ksim/bg_grid.png
 share/apps/ksim/themes/ksim/bg_meter.png
@@ -316,34 +316,34 @@ share/apps/ksim/themes/ksim/frame_right.png
 share/apps/ksim/themes/ksim/frame_top.png
 share/apps/ksim/themes/ksim/gkrellmrc
 share/apps/ksim/themes/ksim/gkrellmrc_ksim
-@dir share/apps/ksim/themes/ksim/host
+share/apps/ksim/themes/ksim/host/
 share/apps/ksim/themes/ksim/host/bg_meter.png
 share/apps/ksim/themes/ksim/krell_meter.png
 share/apps/ksim/themes/ksim/krell_panel.png
 share/apps/ksim/themes/ksim/krell_slider.png
-@dir share/apps/ksim/themes/ksim/mail
+share/apps/ksim/themes/ksim/mail/
 share/apps/ksim/themes/ksim/mail/decal_mail.png
 share/apps/ksim/themes/ksim/mail/krell_mail.png
 share/apps/ksim/themes/ksim/mail/krell_mail_daemon.png
-@dir share/apps/ksim/themes/ksim/net
+share/apps/ksim/themes/ksim/net/
 share/apps/ksim/themes/ksim/net/decal_net_leds.png
-@dir share/apps/kwalletmanager
-@dir share/apps/kwalletmanager/icons
-@dir share/apps/kwalletmanager/icons/crystalsvg
-@dir share/apps/kwalletmanager/icons/crystalsvg/22x22
-@dir share/apps/kwalletmanager/icons/crystalsvg/22x22/actions
+share/apps/kwalletmanager/
+share/apps/kwalletmanager/icons/
+share/apps/kwalletmanager/icons/crystalsvg/
+share/apps/kwalletmanager/icons/crystalsvg/22x22/
+share/apps/kwalletmanager/icons/crystalsvg/22x22/actions/
 share/apps/kwalletmanager/icons/crystalsvg/22x22/actions/folder_closed.png
 share/apps/kwalletmanager/icons/crystalsvg/22x22/actions/folder_open.png
 share/apps/kwalletmanager/icons/crystalsvg/22x22/actions/wallet_closed.png
 share/apps/kwalletmanager/icons/crystalsvg/22x22/actions/wallet_open.png
 share/apps/kwalletmanager/kwalleteditor.rc
 share/apps/kwalletmanager/kwalletmanager.rc
-@dir share/apps/profiles
+share/apps/profiles/
 share/apps/profiles/klauncher.profile.xml
 share/apps/profiles/konqueror.profile.xml
 share/apps/profiles/noatun.profile.xml
 share/apps/profiles/profile.dtd
-@dir share/apps/remotes
+share/apps/remotes/
 share/apps/remotes/RM-0010.remote.xml
 share/apps/remotes/cimr100.remote.xml
 share/apps/remotes/hauppauge.remote.xml
@@ -351,13 +351,13 @@ share/apps/remotes/remote.dtd
 share/apps/remotes/sherwood.remote.xml
 share/autostart/irkick.desktop
 share/autostart/kgpg.desktop
-@dir share/config.kcfg
+share/config.kcfg/
 share/config.kcfg/kcalc.kcfg
 share/config.kcfg/kedit.kcfg
 share/config.kcfg/kgpg.kcfg
 share/config.kcfg/kjots.kcfg
 share/config/ksim_panelextensionrc
-@dir share/doc/HTML/en/KRegExpEditor
+share/doc/HTML/en/KRegExpEditor/
 share/doc/HTML/en/KRegExpEditor/altn.png
 share/doc/HTML/en/KRegExpEditor/altntool.png
 share/doc/HTML/en/KRegExpEditor/anychar.png
@@ -384,59 +384,59 @@ share/doc/HTML/en/KRegExpEditor/text.png
 share/doc/HTML/en/KRegExpEditor/texttool.png
 share/doc/HTML/en/KRegExpEditor/theEditor.png
 share/doc/HTML/en/KRegExpEditor/wordboundary.png
-@dir share/doc/HTML/en/ark
+share/doc/HTML/en/ark/
 share/doc/HTML/en/ark/common
 share/doc/HTML/en/ark/index.cache.bz2
 share/doc/HTML/en/ark/index.docbook
-@dir share/doc/HTML/en/irkick
+share/doc/HTML/en/irkick/
 share/doc/HTML/en/irkick/common
 share/doc/HTML/en/irkick/index.cache.bz2
 share/doc/HTML/en/irkick/index.docbook
-@dir share/doc/HTML/en/kcalc
+share/doc/HTML/en/kcalc/
 share/doc/HTML/en/kcalc/common
 share/doc/HTML/en/kcalc/index.cache.bz2
 share/doc/HTML/en/kcalc/index.docbook
 share/doc/HTML/en/kcalc/kcalc_on_Aix.txt
 share/doc/HTML/en/kcalc/kcalc_on_OSF.txt
-@dir share/doc/HTML/en/kcharselect
+share/doc/HTML/en/kcharselect/
 share/doc/HTML/en/kcharselect/common
 share/doc/HTML/en/kcharselect/index.cache.bz2
 share/doc/HTML/en/kcharselect/index.docbook
-@dir share/doc/HTML/en/kcmlirc
+share/doc/HTML/en/kcmlirc/
 share/doc/HTML/en/kcmlirc/common
 share/doc/HTML/en/kcmlirc/index.cache.bz2
 share/doc/HTML/en/kcmlirc/index.docbook
-@dir share/doc/HTML/en/kcontrol/kcmlowbatcrit
+share/doc/HTML/en/kcontrol/kcmlowbatcrit/
 share/doc/HTML/en/kcontrol/kcmlowbatcrit/common
 share/doc/HTML/en/kcontrol/kcmlowbatcrit/index.cache.bz2
 share/doc/HTML/en/kcontrol/kcmlowbatcrit/index.docbook
-@dir share/doc/HTML/en/kcontrol/kcmlowbatwarn
+share/doc/HTML/en/kcontrol/kcmlowbatwarn/
 share/doc/HTML/en/kcontrol/kcmlowbatwarn/common
 share/doc/HTML/en/kcontrol/kcmlowbatwarn/index.cache.bz2
 share/doc/HTML/en/kcontrol/kcmlowbatwarn/index.docbook
-@dir share/doc/HTML/en/kcontrol/laptop
+share/doc/HTML/en/kcontrol/laptop/
 share/doc/HTML/en/kcontrol/laptop/common
 share/doc/HTML/en/kcontrol/laptop/index.cache.bz2
 share/doc/HTML/en/kcontrol/laptop/index.docbook
-@dir share/doc/HTML/en/kcontrol/powerctrl
+share/doc/HTML/en/kcontrol/powerctrl/
 share/doc/HTML/en/kcontrol/powerctrl/common
 share/doc/HTML/en/kcontrol/powerctrl/index.cache.bz2
 share/doc/HTML/en/kcontrol/powerctrl/index.docbook
-@dir share/doc/HTML/en/kdf
+share/doc/HTML/en/kdf/
 share/doc/HTML/en/kdf/common
 share/doc/HTML/en/kdf/index.cache.bz2
 share/doc/HTML/en/kdf/index.docbook
 share/doc/HTML/en/kdf/kdf.png
 share/doc/HTML/en/kdf/kdf_config.png
-@dir share/doc/HTML/en/kedit
+share/doc/HTML/en/kedit/
 share/doc/HTML/en/kedit/common
 share/doc/HTML/en/kedit/index.cache.bz2
 share/doc/HTML/en/kedit/index.docbook
-@dir share/doc/HTML/en/kfloppy
+share/doc/HTML/en/kfloppy/
 share/doc/HTML/en/kfloppy/common
 share/doc/HTML/en/kfloppy/index.cache.bz2
 share/doc/HTML/en/kfloppy/index.docbook
-@dir share/doc/HTML/en/kgpg
+share/doc/HTML/en/kgpg/
 share/doc/HTML/en/kgpg/common
 share/doc/HTML/en/kgpg/editor.png
 share/doc/HTML/en/kgpg/index.cache.bz2
@@ -446,28 +446,28 @@ share/doc/HTML/en/kgpg/keymanage.png
 share/doc/HTML/en/kgpg/keys.png
 share/doc/HTML/en/kgpg/kicker.png
 share/doc/HTML/en/kgpg/options.png
-@dir share/doc/HTML/en/khexedit
+share/doc/HTML/en/khexedit/
 share/doc/HTML/en/khexedit/common
 share/doc/HTML/en/khexedit/index.cache.bz2
 share/doc/HTML/en/khexedit/index.docbook
 share/doc/HTML/en/khexedit/khexedit1.png
-@dir share/doc/HTML/en/kinfocenter/blockdevices
+share/doc/HTML/en/kinfocenter/blockdevices/
 share/doc/HTML/en/kinfocenter/blockdevices/common
 share/doc/HTML/en/kinfocenter/blockdevices/index.cache.bz2
 share/doc/HTML/en/kinfocenter/blockdevices/index.docbook
-@dir share/doc/HTML/en/kjots
+share/doc/HTML/en/kjots/
 share/doc/HTML/en/kjots/common
 share/doc/HTML/en/kjots/index.cache.bz2
 share/doc/HTML/en/kjots/index.docbook
-@dir share/doc/HTML/en/ksim
+share/doc/HTML/en/ksim/
 share/doc/HTML/en/ksim/common
 share/doc/HTML/en/ksim/index.cache.bz2
 share/doc/HTML/en/ksim/index.docbook
-@dir share/doc/HTML/en/ktimer
+share/doc/HTML/en/ktimer/
 share/doc/HTML/en/ktimer/common
 share/doc/HTML/en/ktimer/index.cache.bz2
 share/doc/HTML/en/ktimer/index.docbook
-@dir share/doc/HTML/en/kwallet
+share/doc/HTML/en/kwallet/
 share/doc/HTML/en/kwallet/common
 share/doc/HTML/en/kwallet/index.cache.bz2
 share/doc/HTML/en/kwallet/index.docbook
@@ -538,8 +538,8 @@ share/icons/crystalsvg/64x64/apps/kwalletmanager.png
 share/icons/crystalsvg/64x64/apps/kwikdisk.png
 share/icons/crystalsvg/64x64/apps/laptop_battery.png
 share/icons/hicolor/16x16/apps/irkick.png
-@dir share/icons/hicolor/22x22
-@dir share/icons/hicolor/22x22/apps
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/irkick.png
 share/icons/hicolor/32x32/apps/irkick.png
 share/icons/locolor/16x16/apps/irkick.png
@@ -548,11 +548,11 @@ share/services/ark_part.desktop
 share/services/kbyteseditwidget.desktop
 share/services/kded/klaptopdaemon.desktop
 share/services/kded/kmilod.desktop
-@dir share/services/kmilo
+share/services/kmilo/
 share/services/kmilo/kmilo_generic.desktop
 share/services/kregexpeditorgui.desktop
 share/services/kwallet_config.desktop
 share/services/kwalletmanager_show.desktop
-@dir share/servicetypes/kmilo
+share/servicetypes/kmilo/
 share/servicetypes/kmilo/kmilopluginsvc.desktop
 %%SHARED%%
