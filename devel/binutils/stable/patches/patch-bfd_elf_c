@@ -1,0 +1,25 @@
+$OpenBSD: patch-bfd_elf_c,v 1.1 2002/04/30 18:15:55 fgsch Exp $
+--- bfd/elf.c.orig	Tue Apr 30 06:24:34 2002
++++ bfd/elf.c	Tue Apr 30 06:25:29 2002
+@@ -4535,7 +4535,9 @@ _bfd_elf_get_symtab_upper_bound (abfd)
+   Elf_Internal_Shdr *hdr = &elf_tdata (abfd)->symtab_hdr;
+ 
+   symcount = hdr->sh_size / get_elf_backend_data (abfd)->s->sizeof_sym;
+-  symtab_size = (symcount - 1 + 1) * (sizeof (asymbol *));
++  symtab_size = (symcount + 1) * (sizeof (asymbol *));
++  if (symtab_size > 0)
++    symtab_size -= sizeof (asymbol *);
+ 
+   return symtab_size;
+ }
+@@ -4555,7 +4557,9 @@ _bfd_elf_get_dynamic_symtab_upper_bound 
+     }
+ 
+   symcount = hdr->sh_size / get_elf_backend_data (abfd)->s->sizeof_sym;
+-  symtab_size = (symcount - 1 + 1) * (sizeof (asymbol *));
++  symtab_size = (symcount + 1) * (sizeof (asymbol *));
++  if (symtab_size > 0)
++    symtab_size -= sizeof (asymbol *);
+ 
+   return symtab_size;
+ }
