@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.4 2003/08/12 20:23:20 sturm Exp $
+# $OpenBSD: python.port.mk,v 1.5 2003/10/10 16:38:18 sturm Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -35,5 +35,6 @@ do-build:
 # extra documentation or scripts should be installed via post-install
 .if !target(do-install)
 do-install:
-	${_MODPY_CMD} ${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
+	${_MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS} \
+		${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
 .endif
