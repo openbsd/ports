@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/08/11 10:42:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/09/15 19:10:00 espie Exp $
 bin/camlp4
 bin/camlp4o
 bin/camlp4r
@@ -607,86 +607,86 @@ lib/ocaml/weak.mli
 @man man/man1/ocamlrun.1
 @man man/man1/ocamlyacc.1
 @man man/man1/ocpp.1
-man/man3/Arg.3o
-man/man3/Array.3o
-man/man3/ArrayLabels.3o
-man/man3/Bigarray.3o
-man/man3/Bigarray.Array1.3o
-man/man3/Bigarray.Array2.3o
-man/man3/Bigarray.Array3.3o
-man/man3/Bigarray.Genarray.3o
-man/man3/Buffer.3o
-man/man3/Callback.3o
-man/man3/CamlinternalOO.3o
-man/man3/Char.3o
-man/man3/Complex.3o
-man/man3/Digest.3o
-man/man3/Filename.3o
-man/man3/Format.3o
-man/man3/Gc.3o
-man/man3/Genlex.3o
-man/man3/Hashtbl.3o
-man/man3/Hashtbl.HashedType.3o
-man/man3/Hashtbl.Make.3o
-man/man3/Hashtbl.S.3o
-man/man3/Int32.3o
-man/man3/Int64.3o
-man/man3/Lazy.3o
-man/man3/Lexing.3o
-man/man3/List.3o
-man/man3/ListLabels.3o
-man/man3/Map.3o
-man/man3/Map.Make.3o
-man/man3/Map.OrderedType.3o
-man/man3/Map.S.3o
-man/man3/Marshal.3o
-man/man3/MoreLabels.3o
-man/man3/MoreLabels.Hashtbl.3o
-man/man3/MoreLabels.Hashtbl.HashedType.3o
-man/man3/MoreLabels.Hashtbl.Make.3o
-man/man3/MoreLabels.Hashtbl.S.3o
-man/man3/MoreLabels.Map.3o
-man/man3/MoreLabels.Map.Make.3o
-man/man3/MoreLabels.Map.OrderedType.3o
-man/man3/MoreLabels.Map.S.3o
-man/man3/MoreLabels.Set.3o
-man/man3/MoreLabels.Set.Make.3o
-man/man3/MoreLabels.Set.OrderedType.3o
-man/man3/MoreLabels.Set.S.3o
-man/man3/Nativeint.3o
-man/man3/Num.3o
-man/man3/Obj.3o
-man/man3/Oo.3o
-man/man3/Parsing.3o
-man/man3/Pervasives.3o
-man/man3/Pervasives.LargeFile.3o
-man/man3/Printexc.3o
-man/man3/Printf.3o
-man/man3/Queue.3o
-man/man3/Random.3o
-man/man3/Random.State.3o
-man/man3/Scanf.3o
-man/man3/Scanf.Scanning.3o
-man/man3/Set.3o
-man/man3/Set.Make.3o
-man/man3/Set.OrderedType.3o
-man/man3/Set.S.3o
-man/man3/Sort.3o
-man/man3/Stack.3o
-man/man3/StdLabels.3o
-man/man3/StdLabels.Array.3o
-man/man3/StdLabels.List.3o
-man/man3/StdLabels.String.3o
-man/man3/Str.3o
-man/man3/Stream.3o
-man/man3/String.3o
-man/man3/StringLabels.3o
-man/man3/Sys.3o
-man/man3/Unix.3o
-man/man3/Unix.LargeFile.3o
-man/man3/Weak.3o
-man/man3/Weak.Make.3o
-man/man3/Weak.S.3o
+@man man/man3/Arg.3o
+@man man/man3/Array.3o
+@man man/man3/ArrayLabels.3o
+@man man/man3/Bigarray.3o
+@man man/man3/Bigarray.Array1.3o
+@man man/man3/Bigarray.Array2.3o
+@man man/man3/Bigarray.Array3.3o
+@man man/man3/Bigarray.Genarray.3o
+@man man/man3/Buffer.3o
+@man man/man3/Callback.3o
+@man man/man3/CamlinternalOO.3o
+@man man/man3/Char.3o
+@man man/man3/Complex.3o
+@man man/man3/Digest.3o
+@man man/man3/Filename.3o
+@man man/man3/Format.3o
+@man man/man3/Gc.3o
+@man man/man3/Genlex.3o
+@man man/man3/Hashtbl.3o
+@man man/man3/Hashtbl.HashedType.3o
+@man man/man3/Hashtbl.Make.3o
+@man man/man3/Hashtbl.S.3o
+@man man/man3/Int32.3o
+@man man/man3/Int64.3o
+@man man/man3/Lazy.3o
+@man man/man3/Lexing.3o
+@man man/man3/List.3o
+@man man/man3/ListLabels.3o
+@man man/man3/Map.3o
+@man man/man3/Map.Make.3o
+@man man/man3/Map.OrderedType.3o
+@man man/man3/Map.S.3o
+@man man/man3/Marshal.3o
+@man man/man3/MoreLabels.3o
+@man man/man3/MoreLabels.Hashtbl.3o
+@man man/man3/MoreLabels.Hashtbl.HashedType.3o
+@man man/man3/MoreLabels.Hashtbl.Make.3o
+@man man/man3/MoreLabels.Hashtbl.S.3o
+@man man/man3/MoreLabels.Map.3o
+@man man/man3/MoreLabels.Map.Make.3o
+@man man/man3/MoreLabels.Map.OrderedType.3o
+@man man/man3/MoreLabels.Map.S.3o
+@man man/man3/MoreLabels.Set.3o
+@man man/man3/MoreLabels.Set.Make.3o
+@man man/man3/MoreLabels.Set.OrderedType.3o
+@man man/man3/MoreLabels.Set.S.3o
+@man man/man3/Nativeint.3o
+@man man/man3/Num.3o
+@man man/man3/Obj.3o
+@man man/man3/Oo.3o
+@man man/man3/Parsing.3o
+@man man/man3/Pervasives.3o
+@man man/man3/Pervasives.LargeFile.3o
+@man man/man3/Printexc.3o
+@man man/man3/Printf.3o
+@man man/man3/Queue.3o
+@man man/man3/Random.3o
+@man man/man3/Random.State.3o
+@man man/man3/Scanf.3o
+@man man/man3/Scanf.Scanning.3o
+@man man/man3/Set.3o
+@man man/man3/Set.Make.3o
+@man man/man3/Set.OrderedType.3o
+@man man/man3/Set.S.3o
+@man man/man3/Sort.3o
+@man man/man3/Stack.3o
+@man man/man3/StdLabels.3o
+@man man/man3/StdLabels.Array.3o
+@man man/man3/StdLabels.List.3o
+@man man/man3/StdLabels.String.3o
+@man man/man3/Str.3o
+@man man/man3/Stream.3o
+@man man/man3/String.3o
+@man man/man3/StringLabels.3o
+@man man/man3/Sys.3o
+@man man/man3/Unix.3o
+@man man/man3/Unix.LargeFile.3o
+@man man/man3/Weak.3o
+@man man/man3/Weak.Make.3o
+@man man/man3/Weak.S.3o
 share/doc/ocaml/
 share/doc/ocaml/LICENSE
 share/doc/ocaml/html/
@@ -939,5 +939,4 @@ share/doc/ocaml/html/manual043.html
 share/doc/ocaml/html/manual044.html
 share/doc/ocaml/html/next_motif.gif
 share/doc/ocaml/html/previous_motif.gif
-@exec mkdir -p %D/lib/ocaml/stublibs
 %%native%%

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2004/06/22 18:14:44 avsm Exp $
+# $OpenBSD: Makefile,v 1.29 2004/09/15 19:10:00 espie Exp $
 
 COMMENT=	"ML language based on complete class-based objective system"
 
@@ -38,10 +38,10 @@ USE_GMAKE=	Yes
 	${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
 	${MACHINE_ARCH} == "powerpc"
 ALL_TARGET=	world bootstrap opt opt.opt
-SED_PLIST=	|sed -e '/^%%native%%$$/r${PKGDIR}/PFRAG.native' -e '//d'
+PKG_ARGS+=-Dnative=1
 .else
 ALL_TARGET=	world bootstrap
-SED_PLIST=	|sed -e '/^%%native%%$$/d'
+PKG_ARGS+=-Dnative=0
 .endif
 
 NO_REGRESS=	Yes

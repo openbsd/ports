@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.1 2004/08/10 20:39:38 xsa Exp $
+# $OpenBSD: ocaml.port.mk,v 1.2 2004/09/15 19:10:00 espie Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
@@ -15,18 +15,7 @@
 MODOCAML_NATIVE=Yes
 
 # include nativecode base files
-SED_PLIST+=	|sed -e '/^%%native%%$$/r${PKGDIR}/PFRAG.native' -e '//d'
-
-# create sed substitution for nativecode FLAVORS
-.  if !empty(FLAVORS)
-.    for _i in ${FLAVORS:L}
-.      if empty(FLAVOR:L:M${_i})
-SED_PLIST+=	|sed -e '/^!%%native\.${_i}%%$$/r${PKGDIR}/PFRAG.native.no-${_i}' -e '//d' -e '/^%%native\.${_i}%%$$/d'
-.      else
-SED_PLIST+=	|sed -e '/^!%%native\.${_i}%%$$/d' -e '/^%%native\.${_i}%%$$/r${PKGDIR}/PFRAG.native.${_i}' -e '//d' 
-.      endif
-.    endfor
-.  endif
+PKG_ARGS+=-Dnative=1
 
 .else
 
@@ -34,14 +23,7 @@ MODOCAML_NATIVE=No
 RUN_DEPENDS+=	::lang/ocaml
 
 # remove native base file entry from PLIST
-SED_PLIST+=	|sed -e '/^%%native%%$$/d'
-
-# remove nativecode FLAVOR entries from PLIST
-.  if !empty(FLAVORS)
-.    for _i in ${FLAVORS:L}
-SED_PLIST+=	|sed -e '/^!%%native\.${_i}%%$$/d' -e '/^%%native\.${_i}%%$$/d'
-.    endfor
-.  endif
+PKG_ARGS+=-Dnative=0
 .endif
 
 BUILD_DEPENDS+=	::lang/ocaml
