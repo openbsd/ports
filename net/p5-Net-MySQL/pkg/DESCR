@@ -1,0 +1,6 @@
+Net::MySQL is a Pure Perl client interface for the MySQL database.
+This module implements network protocol between server and client
+of MySQL, thus you don't need external MySQL client library like
+libmysqlclient for this module to work. It means this module enables
+you to connect to MySQL server from some operation systems which
+MySQL is not ported. How nifty!
