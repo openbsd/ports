@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/29 20:31:42 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2003/06/11 07:35:03 wilfried Exp $
 
 COMMENT=	"dynamically change some settings of an xterm"
 
-DISTNAME=	xtermset-0.5.1
+DISTNAME=	xtermset-0.5.2
 CATEGORIES=	x11
 
-HOMEPAGE=	http://clts.sourceforge.net/xtermset.html
+HOMEPAGE=	http://www.bje.nu/apps/xtermset/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
