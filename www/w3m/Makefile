@@ -1,13 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2003/10/18 19:45:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.56 2004/06/26 04:57:35 naddy Exp $
 
 COMMENT=	"pager/text-based web browser"
 
-VERSION=	0.4.1
-M17N_VERSION=	20030308
-REVISION=
-
-DISTNAME=	w3m-${VERSION}
-PKGNAME=	${DISTNAME}${REVISION}
+DISTNAME=	w3m-0.5.1
 CATEGORIES=	www
 HOMEPAGE=	http://w3m.sourceforge.net/
 
@@ -22,56 +17,42 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=w3m/}
 MASTER_SITES0=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
 
-SUPDISTFILES=	w3m-${VERSION}${EXTRACT_SUFX} \
-		w3m-${VERSION}-stable-m17n-${M17N_VERSION}${EXTRACT_SUFX}:0
-
+MODULES=	gettext
 LIB_DEPENDS=	gc.1::devel/boehm-gc
 
-FLAVORS=	image japanese m17n
+FLAVORS=	image japanese
 FLAVOR?=
 
-CONFIGURE_STYLE= simple
-CONFIGURE_ARGS=	--nonstop \
-		--prefix="${PREFIX}" \
-		--gc-includedir="${LOCALBASE}/include" \
-		--gc-libdir="${LOCALBASE}/lib" \
-		--sysconfdir="${SYSCONFDIR}/w3m" \
-		--model=monster \
-		--mimetypes=/var/www/conf/mime.types
-CONFIGURE_ENV=	use_ssl_verify=y \
-		dmail=mail ded=vi dbrowser=lynx \
-		use_bundled_gclib=n
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--disable-xface \
+		--with-browser=/usr/bin/lynx \
+		--with-termlib=curses \
+		--with-gc=${LOCALBASE}
 
 NO_REGRESS=	Yes
 
 DOCS=	FAQ.html HISTORY MANUAL.html README README.dict README.func \
-	README.mouse README.pre_form README.tab STORY.html \
+	README.m17n README.mouse README.pre_form README.tab STORY.html \
 	keymap.default keymap.lynx menu.default menu.submenu
 
 .if ${FLAVOR:L:Mimage}
 LIB_DEPENDS+=	gdk_pixbuf.2,gdk_pixbuf_xlib.2::graphics/gdk-pixbuf
-CONFIGURE_ENV+=	use_image=y
+CONFIGURE_ARGS+=--with-imagelib=gdk-pixbuf
 DOCS+=		README.img
+.else
+CONFIGURE_ARGS+=--enable-image=no
 .endif
 
 .if ${FLAVOR:L:Mjapanese}
 FULLPKGNAME=	ja-${PKGNAME}${FLAVOR_EXT:S/-japanese//}
 CATEGORIES+=	japanese
-CONFIGURE_ARGS+= --lang=ja --code=n
+CONFIGURE_ARGS+=--enable-japanese=E
 DOCS+=		README.SSL README.cookie README.keymap \
 		README.mailcap README.menu
 DOCSRC=		${WRKSRC}/doc-jp
 .else
-CONFIGURE_ARGS+= --lang=en
+CONFIGURE_ARGS+=--enable-m17n=ISO-8859-1
 DOCSRC=		${WRKSRC}/doc
-.endif
-
-.if ${FLAVOR:L:Mm17n}
-DISTNAME=	w3m-${VERSION}-stable-m17n-${M17N_VERSION}
-PKGNAME=	w3m-${VERSION}.${M17N_VERSION}${REVISION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:0
-CONFIGURE_ARGS+= --suffix="" --charset=UTF-8
-DOCS+=		README.m17n
 .endif
 
 post-install:

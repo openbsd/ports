@@ -11,5 +11,3 @@ Available flavors:
               terminal emulator.
   japanese  - Provide Japanese menus and documentation, and properly
               display Japanese characters in kterm.
-  m17n      - Multilingualization extension to handle a plethora of
-              document and terminal character sets, including UTF-8.
