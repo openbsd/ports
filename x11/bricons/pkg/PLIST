@@ -1,4 +1,5 @@
 bin/bricons
+man/cat1/bricons.0
 lib/X11/app-defaults/Xbricons
 include/X11/bitmaps/calander.xbm
 include/X11/bitmaps/help.xbm
@@ -8,3 +9,4 @@ include/X11/pixmaps/clock.xpm
 include/X11/pixmaps/editor.xpm
 include/X11/pixmaps/mail.xpm
 include/X11/pixmaps/news.xpm
+lib/bricons/briconsrc.sample
