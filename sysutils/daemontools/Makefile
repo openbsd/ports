@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/28 12:32:57 camield Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/26 14:20:18 camield Exp $
 
 DISTNAME=	daemontools-0.70
 HOMEPAGE=	http://cr.yp.to/daemontools.html
@@ -14,13 +14,16 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_CONFIGURE=	Yes
-ALL_TARGET=	default WRKINST=${WRKINST}
+ALL_TARGET=	default
 INSTALL_TARGET=	setup check
 
 FAKE=	Yes
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	@echo ${PREFIX} > ${WRKSRC}/conf-home
+
+pre-install:
 	@echo ${PREFIX} > ${WRKSRC}/conf-home
 
 .include <bsd.port.mk>
