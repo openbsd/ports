@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/08/26 06:01:48 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2002/09/11 20:12:57 danh Exp $
 
 COMMENT=		"MP3 ID3 tags editor"
 
@@ -27,7 +27,7 @@ USE_X11=		Yes
 NO_REGRESS=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" 
 
 .include <bsd.port.mk>
