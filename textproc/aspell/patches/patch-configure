@@ -1,0 +1,75 @@
+$OpenBSD: patch-configure,v 1.1 2002/03/11 14:38:36 lebel Exp $
+--- configure.orig	Thu Aug  2 06:56:38 2001
++++ configure	Mon Mar 11 12:51:19 2002
+@@ -3079,7 +3079,7 @@ done
+ # Because of `break', _AC_PREPROC_IFELSE's cleaning code was skipped.
+ rm -f conftest.err conftest.$ac_ext
+ if $ac_preproc_ok; then
+-  break 2
++  break
+ fi
+ 
+     done
+@@ -3324,7 +3324,7 @@ done
+ # Because of `break', _AC_PREPROC_IFELSE's cleaning code was skipped.
+ rm -f conftest.err conftest.$ac_ext
+ if $ac_preproc_ok; then
+-  break 2
++  break
+ fi
+ 
+     done
+@@ -4972,7 +4972,7 @@ else
+       *)
+         archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+         hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
+-        if  "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc" ; then
++        if [ -z "`echo __ELF__ | $CC -E - | grep __ELF__`" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc" ]; then
+          export_dynamic_flag_spec='${wl}-E'
+         fi
+       ;;
+@@ -5556,7 +5556,7 @@ openbsd*)
+   shlibpath_var=LD_LIBRARY_PATH
+   file_magic_cmd=/usr/bin/file
+   file_magic_test_file=`echo /usr/lib/libc.so.*`
+-  if  "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc" ; then
++  if [ -z "`echo __ELF__ | $CC -E - | grep __ELF__`" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc" ]; then
+     deplibs_check_method='file_magic ELF 0-90-9*-bit LMSB shared object'
+   else
+     deplibs_check_method='file_magic OpenBSD.* shared library'
+@@ -8458,7 +8458,7 @@ else
+       *)
+         archive_cmds_CXX='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+         hardcode_libdir_flag_spec_CXX='${wl}-rpath,$libdir'
+-        if  "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc" ; then
++        if [ -z "`echo __ELF__ | $CC -E - | grep __ELF__`" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc" ]; then
+          export_dynamic_flag_spec_CXX='${wl}-E'
+         fi
+       ;;
+@@ -9042,7 +9042,7 @@ openbsd*)
+   shlibpath_var=LD_LIBRARY_PATH
+   file_magic_cmd=/usr/bin/file
+   file_magic_test_file=`echo /usr/lib/libc.so.*`
+-  if  "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc" ; then
++  if [ -z "`echo __ELF__ | $CC -E - | grep __ELF__`" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc" ]; then
+     deplibs_check_method='file_magic ELF 0-90-9*-bit LMSB shared object'
+   else
+     deplibs_check_method='file_magic OpenBSD.* shared library'
+@@ -10899,7 +10899,7 @@ else
+       *)
+         archive_cmds_GCJ='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+         hardcode_libdir_flag_spec_GCJ='${wl}-rpath,$libdir'
+-        if  "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc" ; then
++        if [ -z "`echo __ELF__ | $CC -E - | grep __ELF__`" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc" ]; then
+          export_dynamic_flag_spec_GCJ='${wl}-E'
+         fi
+       ;;
+@@ -11483,7 +11483,7 @@ openbsd*)
+   shlibpath_var=LD_LIBRARY_PATH
+   file_magic_cmd=/usr/bin/file
+   file_magic_test_file=`echo /usr/lib/libc.so.*`
+-  if  "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc" ; then
++  if [ -z "`echo __ELF__ | $CC -E - | grep __ELF__`" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc" ]; then
+     deplibs_check_method='file_magic ELF 0-90-9*-bit LMSB shared object'
+   else
+     deplibs_check_method='file_magic OpenBSD.* shared library'
