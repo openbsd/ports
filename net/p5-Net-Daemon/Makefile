@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/15 17:42:24 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/09 05:24:49 wilfried Exp $
 
 COMMENT=	"extension for portable daemons"
 
@@ -17,8 +17,5 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=Net/}
 
 CONFIGURE_STYLE= perl
-
-REGRESS_TARGET=	test
-REGRESS_DEPENDS= ::devel/p5-Test-Harness	
 
 .include <bsd.port.mk>

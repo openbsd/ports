@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/14 12:07:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/06/09 05:24:56 wilfried Exp $
 
 COMMENT=	"US-ASCII transliterations of Unicode text"
 
@@ -17,7 +17,5 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Text/}
 
 CONFIGURE_STYLE= perl
-
-REGRESS_TARGET=	test
 
 .include <bsd.port.mk>

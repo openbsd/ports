@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.10 2002/05/15 17:42:25 espie Exp $
+#   $OpenBSD: Makefile,v 1.11 2002/06/09 05:24:50 wilfried Exp $
 
 COMMENT=	"modules for net-based applications"
 
@@ -18,7 +18,5 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
-
-REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>

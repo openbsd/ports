@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/30 01:57:45 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/06/09 05:24:49 wilfried Exp $
 
 COMMENT=	"module for ICQv7 protocol realisation"
 
@@ -17,7 +17,5 @@ PERMIT_DISTFILES_FTP=	No
 MASTER_SITES=	http://gonzo.kiev.ua/projects/vicq/
 
 CONFIGURE_STYLE= perl
-
-REGRESS_TARGET=	test
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/13 18:50:37 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/06/09 05:24:31 wilfried Exp $
 
 COMMENT=	"module to encode and decode ASN.1 data structures"
 
@@ -17,7 +17,5 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=Convert/}
 
 CONFIGURE_STYLE= perl
-
-REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>

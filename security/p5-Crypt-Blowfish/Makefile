@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/15 17:58:49 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/06/09 05:24:53 wilfried Exp $
 
 COMMENT=	"interface to the Blowfish encryption alogorithm"
 
@@ -17,7 +17,5 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Crypt/}
 
 CONFIGURE_STYLE= perl
-
-REGRESS_TARGET=	test
 
 .include <bsd.port.mk>	

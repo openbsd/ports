@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/05/13 18:50:38 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/06/09 05:24:35 wilfried Exp $
 
 COMMENT=	"tie class for a simple ASCII database"
 DISTNAME=	AsciiDB-TagFile-1.06
@@ -15,7 +15,5 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
-
-REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>

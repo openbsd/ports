@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/13 18:50:38 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/09 05:24:31 wilfried Exp $
 
 COMMENT=	"module to implement efficient mapping tables"
 
@@ -19,7 +19,5 @@ MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=Unicode/}
 BUILD_DEPENDS=	::converters/p5-Unicode-String
 
 CONFIGURE_STYLE= perl
-
-REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/16 05:21:19 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2002/06/09 05:24:43 wilfried Exp $
 
 COMMENT=	"module to determine the size of images in several formats"
 
@@ -19,7 +19,5 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Image/}
 
 CONFIGURE_STYLE= perl
-
-REGRESS_DEPENDS=	::devel/p5-Test-Harness        
 
 .include <bsd.port.mk>
