@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/06 04:11:48 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2001/06/09 16:35:23 brad Exp $
 
 COMMENT=	"object-oriented SGML/XML parser toolkit and DSSSL engine"
 
 DISTNAME=	openjade-1.3
 CATEGORIES=	textproc
-NEED_VERSION=	1.402
+NEED_VERSION=	1.413
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= openjade
 
@@ -46,7 +46,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/jadedoc/images/*.gif ${DOCDIR}/images
 	${INSTALL_DATA_DIR} ${SGMLDIR}
 .for i in ${SGMLFILES}
-	${INSTALL_DATA}	${WRKSRC}/dsssl/$i ${SGMLDIR}
+	${INSTALL_DATA} ${WRKSRC}/dsssl/$i ${SGMLDIR}
 .endfor
 
 .include <bsd.port.mk>
