@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/01 17:19:23 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2002/08/09 18:43:00 naddy Exp $
 # $FreeBSD: ports/devel/ffcall/Makefile,v 1.2 2001/08/31 14:20:18 sobomax Exp $
 # Original From:                jagapen@home.com
 
@@ -17,10 +17,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_STYLE=autoconf
-MODGNU_CONFIG_GUESS_DIRS?=${WRKSRC}/autoconf
+CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf
+
+FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} \
+		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" \
+		htmldir="\$$(datadir)/doc/ffcall/html"
 
 pre-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ffcall/html
