@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2004/04/20 01:45:30 jolan Exp $
+# $OpenBSD: Makefile,v 1.32 2004/06/19 23:37:41 jolan Exp $
 
 COMMENT=	"mpeg audio 1/2 layer 1, 2 and 3 player"
 
@@ -23,10 +23,6 @@ MASTER_SITES1=	http://www.unix-ag.org/Linux-Alpha/Packages/
 PATCHFILES=	mpg123-059r-v6-20000713b.diff.gz:0 \
 		l3.diff.gz:1
 PATCH_DIST_STRIP= -p1
-
-.if ${MACHINE_ARCH:L:Mhppa}
-CFLAGS+=-O1	# XXX compiler bugs
-.endif
 
 FLAVORS=	esd
 FLAVOR?=
