@@ -7,3 +7,6 @@ RMD160 (aub/aub.1) = 533603f02c796f80b9221ece17f9638b3d603679
 SHA1 (aub/BUG_FIXES) = d9307bb95119ff5c489410fecb17eb760efdbce6
 SHA1 (aub/aub) = f193326afb7ae8fd61d164290b51c350415bae40
 SHA1 (aub/aub.1) = c48d22f8e72c1eb2cf85bf3e4c2fa703f7a40405
+SIZE (aub/BUG_FIXES) = 2262
+SIZE (aub/aub) = 85833
+SIZE (aub/aub.1) = 2179

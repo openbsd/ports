@@ -7,3 +7,6 @@ RMD160 (xinvaders/part03.Z) = 9cd606c11cca9f4c8087811e569938a7121ac102
 SHA1 (xinvaders/part01.Z) = 2da2ea9718f2a6e5f1f0222ff5a3161f873db01d
 SHA1 (xinvaders/part02.Z) = f5bc31139ccd43d29fd74e8fdf4e23c07d26cc91
 SHA1 (xinvaders/part03.Z) = 207376b81042cdcf7213c70101ce93ba4a55447e
+SIZE (xinvaders/part01.Z) = 15161
+SIZE (xinvaders/part02.Z) = 24538
+SIZE (xinvaders/part03.Z) = 17263

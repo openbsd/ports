@@ -10,3 +10,7 @@ SHA1 (iso12083/article.dtd) = 977f2efd0d85c0803385421611e74c582fea10b5
 SHA1 (iso12083/book.dtd) = 6e0addd1cd5d18ad10e4a37958c0ba7b42c9dfe4
 SHA1 (iso12083/maths.dtd) = 083c4d31d7e67da70d80b0ddc992fc8923d2d570
 SHA1 (iso12083/serial.dtd) = 0ffea25cdc6364ca4bc6358dc08a8600c20e4a3b
+SIZE (iso12083/article.dtd) = 38142
+SIZE (iso12083/book.dtd) = 40355
+SIZE (iso12083/maths.dtd) = 16111
+SIZE (iso12083/serial.dtd) = 10543

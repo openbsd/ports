@@ -10,3 +10,7 @@ SHA1 (acrofonts/chsfont.tar.gz) = 87a2c3cd8bb029c223b6ea844438a3a65b3352f9
 SHA1 (acrofonts/chtfont.tar.gz) = 502bdbfed1e46d65724fc59da07d86b487106110
 SHA1 (acrofonts/jpnfont.tar.gz) = ac2ad153704ca05ea5b8c9a98f921db80848eb75
 SHA1 (acrofonts/korfont.tar.gz) = efd24c978cfb303cbd7025ed282037c6ccce51c0
+SIZE (acrofonts/chsfont.tar.gz) = 13078861
+SIZE (acrofonts/chtfont.tar.gz) = 9441658
+SIZE (acrofonts/jpnfont.tar.gz) = 5332283
+SIZE (acrofonts/korfont.tar.gz) = 4977639

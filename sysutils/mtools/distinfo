@@ -4,3 +4,5 @@ RMD160 (mtools-3.9.9-20040505.diff.gz) = 2db68962d4bf5b581c78d8214b5500799e98071
 RMD160 (mtools-3.9.9.tar.gz) = df85452f062366b6581211a7669bc6a236545d83
 SHA1 (mtools-3.9.9-20040505.diff.gz) = 8e19b7d09bf09d82993626ff37d542e98ab3c663
 SHA1 (mtools-3.9.9.tar.gz) = 47551ee9331527fadaf174cf55952d5113443564
+SIZE (mtools-3.9.9-20040505.diff.gz) = 43201
+SIZE (mtools-3.9.9.tar.gz) = 322805

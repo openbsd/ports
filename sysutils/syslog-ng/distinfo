@@ -4,3 +4,5 @@ RMD160 (libol-0.3.13.tar.gz) = 45c98ef2f289970affb995c5f02f8f0e203be4ca
 RMD160 (syslog-ng-1.6.4.tar.gz) = ca54eec07d5b7dba895e48a80735ab8912e43d20
 SHA1 (libol-0.3.13.tar.gz) = f2860e9af39a792f27c220ab5616366cd551e1c8
 SHA1 (syslog-ng-1.6.4.tar.gz) = 8cde9f4805831a35ade41ca5095ded1c76c739c0
+SIZE (libol-0.3.13.tar.gz) = 203390
+SIZE (syslog-ng-1.6.4.tar.gz) = 363532

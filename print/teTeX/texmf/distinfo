@@ -4,3 +4,5 @@ RMD160 (teTeX/listings-1.1.tar.gz) = d2b6d99bca7612859320953dd41fd7ae6818b22a
 RMD160 (teTeX/tetex-texmf-2.0.2.tar.gz) = ff88622c2d97416a4f67fbdf7a00d837af35d94e
 SHA1 (teTeX/listings-1.1.tar.gz) = 449df983e3e34118e8d71a5549b055a312581b8d
 SHA1 (teTeX/tetex-texmf-2.0.2.tar.gz) = 9ad88d5fc1df7e10b3538f7b5e3871ceefe8ee2f
+SIZE (teTeX/listings-1.1.tar.gz) = 435263
+SIZE (teTeX/tetex-texmf-2.0.2.tar.gz) = 52424280

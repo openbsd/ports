@@ -10,3 +10,7 @@ SHA1 (heroes/heroes-0.21.tar.gz) = 55ead80e0f82fdae4914e47696203bfadccbb9ca
 SHA1 (heroes/heroes-data-1.5.tar.gz) = c3fba61847603bb6be3744376693941b1ad111e0
 SHA1 (heroes/heroes-sound-effects-1.0.tar.gz) = 353ab26e81eff7792e0b6c570ceeaea8c2f5682a
 SHA1 (heroes/heroes-sound-tracks-1.0.tar.gz) = cb03dc03323d31a0cf213758465b4d58e9e5a085
+SIZE (heroes/heroes-0.21.tar.gz) = 917466
+SIZE (heroes/heroes-data-1.5.tar.gz) = 477765
+SIZE (heroes/heroes-sound-effects-1.0.tar.gz) = 424733
+SIZE (heroes/heroes-sound-tracks-1.0.tar.gz) = 1327548

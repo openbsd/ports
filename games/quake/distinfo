@@ -4,3 +4,5 @@ RMD160 (quake-v6-bsd-kame.tar.gz) = 1844e193b62886c452a65c5c5780f58d19684109
 RMD160 (quake6-00-v6-20000202b.diff.gz) = 5006cb749d68df7399af01be9caadb1f4e27be8f
 SHA1 (quake-v6-bsd-kame.tar.gz) = 09d58eef39f3d8a6b7b7287c88fc66d4dd3feb0b
 SHA1 (quake6-00-v6-20000202b.diff.gz) = a4a1cf178e40c5effb3faad0fa744bbbcd0a56ab
+SIZE (quake-v6-bsd-kame.tar.gz) = 4503326
+SIZE (quake6-00-v6-20000202b.diff.gz) = 3857
