@@ -1,0 +1,11 @@
+--- fetch.c.orig	Sun Oct 27 19:34:06 1996
++++ fetch.c	Fri Dec 19 16:42:23 1997
+@@ -645,7 +645,7 @@
+ 	struct newsgroup * g;
+ 
+ 	strcpy( newfile, ".supplement.XXXXX" );
+-	o = fopen( mktemp( newfile ), "w" );
++	o = fopen( mkstemp( newfile ), "w" );
+ 	
+ 	sprintf( s, "%s/interesting.groups", 
+ 		 spooldir );

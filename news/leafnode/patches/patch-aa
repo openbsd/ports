@@ -1,0 +1,12 @@
+*** fetch.c.orig	Fri Jul  4 10:32:32 1997
+--- fetch.c	Fri Jul  4 10:32:39 1997
+***************
+*** 14,20 ****
+  #include <ctype.h>
+  #include <dirent.h>
+  #include <fcntl.h>
+- #include <malloc.h>
+  #include <netdb.h>
+  #include <netinet/in.h>
+  #include <pwd.h>
+--- 14,19 ----

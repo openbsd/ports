@@ -1,0 +1,11 @@
+--- util.c.orig	Tue Oct 29 20:26:36 1996
++++ util.c	Fri Dec 19 16:52:20 1997
+@@ -1331,7 +1331,7 @@
+ 		    error, getcwd( s, 1024 ) );
+ 
+ 	strcpy( newfile, ".overview.XXXXXX" );
+-	if ( (wfd=open( mktemp(newfile), O_WRONLY|O_CREAT|O_EXCL, 0664 )) ) {
++	if ( (wfd=open( mkstemp(newfile), O_WRONLY|O_CREAT|O_EXCL, 0664 )) ) {
+ 	    struct iovec oooh[UIO_MAXIOV];
+ 	    int vi, vc, va;
+ 
