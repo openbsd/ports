@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2003/10/26 17:30:39 sturm Exp $
+# $OpenBSD: Makefile,v 1.37 2004/01/18 14:00:54 sturm Exp $
 
 COMMENT=	"Data Display Debugger, graphical front-end for GDB, etc"
 
-DISTNAME=	ddd-3.3.7
+DISTNAME=	ddd-3.3.8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=ddd/}
 
@@ -19,9 +19,12 @@ REGRESS_IS_INTERACTIVE=Yes
 # /${PKGNAME}_writes_to_home
 REGRESS_FLAGS+=	"DISPLAY=$${DISPLAY}" "HOME=$${HOME}"
 
+VMEM_WARNING=	Yes
 USE_MOTIF=	any
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=gnu autoconf
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+AUTOCONF_VERSION=2.54
 SEPARATE_BUILD=	simple
 
 SUBST_VARS+=	DISTNAME
@@ -36,7 +39,7 @@ VMEM_WARNING=	Yes
 
 DOCS=	ddd-paper.ps ddd-themes.pdf ddd-themes.ps ddd.pdf ddd.ps html/ddd.html
 
-pre-build:
+pre-patch:
 	find ${WRKSRC} -type f \( -name '*.C' -o -name '*.h' \) -print0 | xargs -0 \
 		perl -pi -e 'next if /#include/; s/\bstring\b/gnu_string/g;'
 

@@ -4,5 +4,8 @@
 |
 | If you select the 'plot' command without gnuplot installed you may
 | get an X error. (Clicking 'ignore' seems ok.)
+|
+| You may need to increase your memory limits when plotting
+| large arrays.
 +---------------
 
