@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.4 1999/09/02 21:35:20 brad Exp $
+#   $OpenBSD: Makefile,v 1.5 1999/09/03 16:12:40 angelos Exp $
 
 DISTNAME=	sdr-2.7e
 CATEGORIES=	mbone
@@ -8,7 +8,7 @@ NEED_VERSION=	1.111
 
 MAINTAINER=	angelos@openbsd.org
 
-LIB_DEPENDS=	tcl80.1.5:${PORTSDIR}/lang/tcl80
+LIB_DEPENDS=	tcl80.1.5:${PORTSDIR}/lang/tcl80 \
 		tk80.1.5:${PORTSDIR}/x11/tk80
 
 USE_X11=	yes
