@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 1999/05/25 14:39:43 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 1999/05/30 22:28:35 brad Exp $
 #
 # Pre/post-installation setup of netatalk
 
@@ -55,7 +55,7 @@ case $2 in
 	: nothing to pre-install for this port
 	;;
     POST-INSTALL)
-	if [ -f $CONFIG_DIR ]; then
+	if [ -d $CONFIG_DIR ]; then
 	    do_notice $1
 	else
 	    do_install $1
