@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile,v 1.1 2001/03/21 10:06:21 wilfried Exp $
+--- Makefile.orig	Thu Dec 15 02:53:00 1994
++++ Makefile	Thu Mar 15 21:11:31 2001
+@@ -55,7 +55,7 @@ DESTMAN1      = $(DESTMAN)/man1
+ 
+ # I use environment variables for these...
+ #CFLAGS	      = -g
+-CFLAGS	      = -O2 -fwritable-strings -DDESTLIB=\"$(DESTLIB)\"
++CFLAGS	     += -fwritable-strings -DDESTLIB=\"$(DESTLIB)\"
+ 
+ # release directories.  Nobody should care about this but me
+ FTPHOME	      = /mnt/ftp
+@@ -66,7 +66,7 @@ NINSTPKGDIR   = $(NINSTDIR)/packages
+ # This is only used by the author when making a new release ftp-able.
+ INSTALL	      = .do cp
+ 
+-LD	      = cc
++LD	      = ${CC}
+ 
+ MAKEFILE      = Makefile
+ 
