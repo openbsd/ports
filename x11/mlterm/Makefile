@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/04 17:13:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/04 16:39:21 naddy Exp $
 
 NOT_FOR_ARCHS=	vax
 
@@ -25,6 +25,10 @@ LIB_DEPENDS=	gtk.1.2::x11/gtk+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-anti-alias --enable-utmp
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2"
+
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/script \
+				${WRKSRC}/mkf/script \
+				${WRKSRC}/kiklib/script
 
 .if ${MACHINE_ARCH} == "vax" || ${MACHINE_ARCH} == "m88k"
 CONFIGURE_ENV+=	"X_EXTRA_LIBS=\"/usr/X11R6/lib/libXft.a \

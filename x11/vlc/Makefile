@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/07/10 01:49:42 jolan Exp $
+# $OpenBSD: Makefile,v 1.13 2004/08/04 16:39:21 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -64,6 +64,8 @@ CONFIGURE_ARGS+=--disable-altivec \
 		--disable-fb \
 		--disable-qnx \
 		--disable-slp
+
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
 FLAVORS=	no_dvd
 FLAVOR?=
