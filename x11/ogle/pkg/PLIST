@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/02/24 22:56:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/02/24 23:36:19 espie Exp $
 bin/ifo_dump
 bin/ogle
 include/ogle/dvd.h
@@ -19,7 +19,7 @@ lib/ogle/ogle_mpeg_vs
 lib/ogle/ogle_nav
 lib/ogle/ogle_vout
 man/man1/ogle.1
-man/man5/oglerc.5
+man/man5/oglerc.tbl
 share/ogle/ogle_conf.dtd
 share/ogle/oglerc
 @exec echo "This package may need further setup. Run pkg_info ogle to find out more"

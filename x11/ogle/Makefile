@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2003/02/24 22:56:35 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2003/02/24 23:36:18 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64
 
@@ -39,5 +39,8 @@ CONFIGURE_ARGS+=--enable-altivec
 .else
 CONFIGURE_ARGS+=--disable-altivec
 .endif
+
+post-install:
+	cd ${PREFIX}/man/man5 && mv oglerc.5 oglerc.tbl
 
 .include <bsd.port.mk>
