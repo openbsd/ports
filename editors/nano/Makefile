@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2003/02/20 13:26:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2003/02/20 18:21:33 naddy Exp $
 
 COMMENT=	"small, easy to use editor"
 
@@ -25,6 +25,7 @@ MODULES=	gettext
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS='-I${LOCALBASE}/include' \
 			LDFLAGS='-L${LOCALBASE}/lib'
+CONFIGURE_ARGS=		--enable-all
 .if ${FLAVOR:L:Mslang}
 LIB_DEPENDS+=		slang.14::devel/libslang
 CONFIGURE_ARGS+=	--with-slang='${LOCALBASE}'
