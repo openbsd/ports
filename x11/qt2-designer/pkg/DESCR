@@ -1,0 +1,6 @@
+The Qt toolkit features an interface designer.
+This interface designer is bundled apart, because of
+dependency issues.
+
+Namely, it can handle kde applications, but it depends on kde being
+installed for that... and kde needs qt2 to build.
