@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2001/05/23 08:38:40 wilfried Exp $
+# $OpenBSD: Makefile,v 1.47 2001/06/13 21:52:50 jakob Exp $
 
 COMMENT=	network protocol analyzer
 
@@ -18,7 +18,6 @@ MASTER_SITES=	http://www.ethereal.com/distribution/ \
 HOMEPAGE=	http://www.ethereal.com/
 
 LIB_DEPENDS=	gtk.1.2::x11/gtk+
-BUILD_DEPENDS=	python::lang/python
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
@@ -43,6 +42,11 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" LIBS="-lsnmp -lcrypto"
 LIB_DEPENDS+=		snmp::net/ucd-snmp
 .else
 CONFIGURE_ARGS+=	--disable-snmp
+.endif
+
+pre-build:
+.if defined(SEPARATE_BUILD)
+	cp -p ${WRKSRC}/packet-ncp2222.c ${WRKBUILD}
 .endif
 
 post-install:
