@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2003/08/21 19:13:04 grange Exp $
+# $OpenBSD: Makefile,v 1.23 2004/01/06 21:35:42 sturm Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR += birda
      SUBDIR += bottlerocket
-     SUBDIR += bpl+
      SUBDIR += conserver
 #    SUBDIR += ecu
      SUBDIR += efax
