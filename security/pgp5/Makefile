@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2002/04/23 06:38:48 fgsch Exp $
+# $OpenBSD: Makefile,v 1.29 2002/10/05 21:11:09 fgsch Exp $
 
 COMMENT=	"Pretty Good Privacy 5.0i (world wide use)"
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
 CATEGORIES=	security
-NEED_VERSION=	1.524
 MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.at.pgpi.com/pub/pgpi/5.0/unix/ \
 		ftp://ftp.cz.pgpi.com/pub/pgpi/5.0/unix/ \

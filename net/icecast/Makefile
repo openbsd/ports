@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/04/19 23:10:14 fgsch Exp $
+# $OpenBSD: Makefile,v 1.21 2002/10/05 21:11:09 fgsch Exp $
 # Uses pthreads
 
 COMMENT=	"Internet based broadcasting system"
@@ -9,7 +9,6 @@ ONLY_FOR_ARCHS=	i386 sparc
 
 DISTNAME=	icecast-1.3.12
 CATEGORIES=	net audio
-NEED_VERSION=	1.524
 MASTER_SITES=	http://www.icecast.org/releases/
 
 HOMEPAGE=	http://www.icecast.org/

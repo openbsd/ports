@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2002/06/14 21:09:11 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2002/10/05 21:11:09 fgsch Exp $
 
 COMMENT=	"tty-based e-mail client"
 
 VERSION=	1.4
 DISTNAME=	mutt-${VERSION}i
 CATEGORIES=	mail
-NEED_VERSION=	1.500
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.gbnet.net/pub/mutt-international/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
