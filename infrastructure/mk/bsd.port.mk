@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.582 2003/08/13 19:41:01 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.583 2003/08/14 15:29:20 naddy Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -953,7 +953,7 @@ USE_X11?=No
 FETCH_MANUALLY?=No
 .if ${FETCH_MANUALLY:L} != "no"
 _ALLFILES_PRESENT=Yes
-.  for _F in ${ALLFILES:S@^@${FULLDISTDIR}@}
+.  for _F in ${ALLFILES:S@^@${FULLDISTDIR}/@}
 .    if !exists(${_F})
 _ALLFILES_PRESENT=No
 .    endif
