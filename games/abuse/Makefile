@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 1999/10/02 17:33:11 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/10/29 10:01:06 turan Exp $
+
+BROKEN=		c syntax errors
 
 DISTNAME=	abuse-2.0
 CATEGORIES=	games x11
