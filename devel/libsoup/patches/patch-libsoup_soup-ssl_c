@@ -1,0 +1,15 @@
+$OpenBSD: patch-libsoup_soup-ssl_c,v 1.1.1.1 2003/11/03 15:44:05 marcm Exp $
+--- libsoup/soup-ssl.c.orig	2003-08-28 13:58:39.000000000 -0700
++++ libsoup/soup-ssl.c	2003-08-28 13:59:37.000000000 -0700
+@@ -133,9 +133,9 @@ soup_ssl_get_iochannel_real (GIOChannel 
+ 
+ 		execl (LIBEXECDIR G_DIR_SEPARATOR_S SSL_PROXY_NAME,
+ 		       LIBEXECDIR G_DIR_SEPARATOR_S SSL_PROXY_NAME,
+-		       NULL);
++		       (void *)NULL);
+ 
+-		execlp (SSL_PROXY_NAME, SSL_PROXY_NAME, NULL);
++		execlp (SSL_PROXY_NAME, SSL_PROXY_NAME, (void *)NULL);
+ 
+ 		g_error ("Error executing SSL Proxy\n");
+ 	}

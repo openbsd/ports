@@ -1,0 +1,14 @@
+$OpenBSD: patch-libsoup_soup-address_c,v 1.1.1.1 2003/11/03 15:44:05 marcm Exp $
+--- libsoup/soup-address.c.orig	2003-08-28 14:09:44.000000000 -0700
++++ libsoup/soup-address.c	2003-08-28 14:10:11.000000000 -0700
+@@ -25,9 +25,9 @@
+ #include <sys/wait.h>
+ #include <signal.h>
+ 
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <netdb.h>
+-#include <netinet/in.h>
+ 
+ #include "soup-private.h"
+ #include "soup-address.h"

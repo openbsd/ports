@@ -1,0 +1,12 @@
+$OpenBSD: patch-libsoup_soup-headers_c,v 1.1.1.1 2003/11/03 15:44:05 marcm Exp $
+--- libsoup/soup-headers.c.orig	2003-08-28 14:00:08.000000000 -0700
++++ libsoup/soup-headers.c	2003-08-28 14:04:08.000000000 -0700
+@@ -125,7 +125,7 @@ soup_headers_parse_request (gchar       
+ 		goto THROW_MALFORMED_HEADER;
+ 
+ 	if (sscanf (str, 
+-		    "%16s %1024s HTTP/%1u.%1u", 
++		    "%15s %1023s HTTP/%1u.%1u", 
+ 		    method,
+ 		    path,
+ 		    &http_major,

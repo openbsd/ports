@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2003/11/03 15:44:05 marcm Exp $
+--- configure.in.orig	2003-11-01 09:47:20.000000000 -0800
++++ configure.in	2003-11-01 09:47:23.000000000 -0800
+@@ -248,11 +248,11 @@ if test "x$enable_ssl" = xyes; then
+ 	###
+ 	### Check for GnuTLS
+ 	###
+-	save_CPPFLAGS=$CPPFLAGS
+-	CPPFLAGS="$CPPFLAGS $gnutls_inc_prefix"
+-	AC_CHECK_HEADERS(gnutls/gnutls.h,
+-			 [enable_gnutls="yes"],
+-			 [enable_gnutls="no"; break])
++dnl	save_CPPFLAGS=$CPPFLAGS
++dnl	CPPFLAGS="$CPPFLAGS $gnutls_inc_prefix"
++dnl	AC_CHECK_HEADERS(gnutls/gnutls.h,
++dnl			 [enable_gnutls="yes"],
++dnl			 [enable_gnutls="no"; break])
+ 
+ 	if test "x$enable_gnutls" = xyes; then
+ 		if test "x$enable_static_ssl" = "xyes"; then
+@@ -271,7 +271,7 @@ if test "x$enable_ssl" = xyes; then
+ 
+ 	AC_SUBST(GNUTLS_CFLAGS)
+ 	AC_SUBST(GNUTLS_LIBS)
+-	CPPFLAGS=$save_CPPFLAGS
++dnl	CPPFLAGS=$save_CPPFLAGS
+ 
+ 	AM_CONDITIONAL(BUILD_PROXY, false)
+ 
