@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/07 02:51:50 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/08 03:46:54 shell Exp $
 
 COMMENT=	'perl module for using OpenSSL'
 
@@ -6,7 +6,7 @@ VERSION=	1.07
 DISTNAME=	Net_SSLeay.pm-${VERSION}
 PKGNAME=	p5-Net-SSLeay-${VERSION}
 CATEGORIES=	security perl5
-NEED_VERSION=	1.407
+NEED_VERSION=	1.408
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Net
