@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/06/19 14:11:56 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/08/04 01:02:48 naddy Exp $
 Acrobat5/Browsers/intellinux/nppdf.so
 Acrobat5/Browsers/netscape
 Acrobat5/Reader/AcroVersion
@@ -10,10 +10,15 @@ Acrobat5/Reader/intellinux/bin/acroread
 Acrobat5/Reader/intellinux/fonts
 Acrobat5/Reader/intellinux/lib/XKeysymDB
 Acrobat5/Reader/intellinux/lib/libACE.so
+Acrobat5/Reader/intellinux/lib/libACE.so.2.02
 Acrobat5/Reader/intellinux/lib/libAGM.so
+Acrobat5/Reader/intellinux/lib/libAGM.so.4.08
 Acrobat5/Reader/intellinux/lib/libBIB.so
+Acrobat5/Reader/intellinux/lib/libBIB.so.1.1
 Acrobat5/Reader/intellinux/lib/libCoolType.so
+Acrobat5/Reader/intellinux/lib/libCoolType.so.4.10
 Acrobat5/Reader/intellinux/lib/libOPP.so
+Acrobat5/Reader/intellinux/lib/libOPP.so.1.02
 Acrobat5/Reader/intellinux/plug_ins/AcroForm.api
 Acrobat5/Reader/intellinux/plug_ins/EScript.api
 Acrobat5/Reader/intellinux/plug_ins/Highlight.api
@@ -48,7 +53,6 @@ Acrobat5/Resource/Font/ZapfDingbats
 Acrobat5/Resource/LICFONT.TXT
 Acrobat5/bin/acroread
 bin/acroread
-%%SHARED%%
 @dirrm Acrobat5/bin
 @dirrm Acrobat5/Resource/Font
 @dirrm Acrobat5/Resource

@@ -3,15 +3,14 @@
 # Date created:		June 7 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.18 2002/06/22 13:45:36 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/08/04 01:02:48 naddy Exp $
 #
 
 COMMENT=	"view, distribute and print PDF documents"
 
-DISTNAME=	linux-505
-PKGNAME=	acroread-5.05
+DISTNAME=	linux-506
+PKGNAME=	acroread-5.06
 CATEGORIES=	print
-NEED_VERSION=	1.531
 
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
 ONLY_FOR_ARCHS=	i386
