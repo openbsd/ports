@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2001/04/02 15:16:58 wilfried Exp $
+# $OpenBSD: Makefile,v 1.68 2001/04/05 00:33:04 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -7,7 +7,7 @@
 #    SUBDIR += SWIG
 #    SUBDIR += SpecTcl
      SUBDIR += asp2php
-     SUBDIR += asp2php:gui
+     SUBDIR += asp2php,gui
 #    SUBDIR += asl
      SUBDIR += astyle
      SUBDIR += autobook
@@ -109,6 +109,8 @@
 #    SUBDIR += p5-Include
 #    SUBDIR += p5-IniConf
 #    SUBDIR += p5-Ioctl
+     SUBDIR += p5-IO-stringy
+     SUBDIR += p5-IO-String
      SUBDIR += p5-Locale-PGettext
      SUBDIR += p5-MLDBM
 #    SUBDIR += p5-PV
