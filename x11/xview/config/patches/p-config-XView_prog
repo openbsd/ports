@@ -1,0 +1,21 @@
+--- config/XView.prog.orig	Mon Apr  3 00:52:19 2000
++++ config/XView.prog	Mon Apr  3 00:52:46 2000
+@@ -4,15 +4,15 @@ PopulateSCCSTree(h,$(ALLFILES))
+ 
+ #if HasInfoFiles
+ install::
+-	$(MKDIRHIER) $(HELP_DEST)
++	$(MKDIRHIER) $(DESTDIR)$(HELP_DEST)
+ 
+ InstallNonExecList($(INFOFILES),$(HELP_DEST))
+ #endif
+ 
+ #if InstallSrcs
+-MakeDirectories(install, $(SRC_DEST)/examples/bin)
++MakeDirectories(install,$(SRC_DEST)/examples/bin)
+ InstallMultiple($(PROGRAMS),$(SRC_DEST)/examples/bin) 
+-MakeDirectories(install.srcs, $(SRC_DEST)/$(LOCATION))
++MakeDirectories(install.srcs,$(SRC_DEST)/$(LOCATION))
+ InstallExampleSrcs($(INSTALL_SRCS),$(MAKEFILE_SIMPLE),$(SRC_DEST)/$(LOCATION))
+ #else
+ install.srcs::
