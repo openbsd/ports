@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2001/08/13 17:53:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.65 2001/08/16 21:58:24 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -11,6 +11,7 @@
 #    SUBDIR += cam
 #    SUBDIR += cddbd
 #    SUBDIR += cdplay
+     SUBDIR += disc-cover
      SUBDIR += esound
      SUBDIR += flac
      SUBDIR += gkrellm-volume
