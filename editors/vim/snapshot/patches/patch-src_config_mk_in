@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_config_mk_in,v 1.1.1.1 2001/04/02 16:02:02 espie Exp $
+--- src/config.mk.in.orig	Sun Feb  4 10:38:48 2001
++++ src/config.mk.in	Fri Mar 23 08:06:39 2001
+@@ -85,19 +85,19 @@ COMPILEDBY	= @compiledby@
+ NL   		= @line_break@
+ 
+ ### Top directory for everything
+-prefix		= $(DESTDIR)@prefix@
++prefix		= @prefix@
+ 
+ ### Top directory for the binary
+-exec_prefix	= $(DESTDIR)@exec_prefix@
++exec_prefix	= @exec_prefix@
+ 
+ ### Prefix for location of data files
+-BINDIR		= $(DESTDIR)@bindir@
++BINDIR		= @bindir@
+ 
+ ### Prefix for location of data files
+-DATADIR		= $(DESTDIR)@datadir@
++DATADIR		= @datadir@
+ 
+ ### Prefix for location of man pages
+-MANDIR		= $(DESTDIR)@mandir@
++MANDIR		= @mandir@
+ 
+ ### Do we have a GUI
+ GUI_INC_LOC	= @GUI_INC_LOC@

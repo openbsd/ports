@@ -1,0 +1,54 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2001/04/02 16:02:02 espie Exp $
+#
+# Pre/post-installation setup of vim6
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+do_notice()
+{
+	echo
+	echo "+---------------"
+	echo "| Message from the author of Vim:  http://www.vim.org/announce/"
+	echo "|"
+	echo "| WARNING: This is really an unstable version.  Many things have been added"
+	echo "| without proper testing.  It does crash.  It may destroy your work.  New"
+	echo "| features may change incompatibly in the next version."
+	echo "|"
+	echo "| This version is for developers, thus it comes as source code only."
+	echo "| If you run into something that doesn't work, please try to figure out why,"
+	echo "| try to solve it and send me a patch.  If you can't do that, at least send me"
+	echo "| precise information to save me time."
+	echo "|"
+	echo "| More info about the new 6.0 features with \":help version6\"."
+	echo "+---------------"
+	echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+	PRE-INSTALL)
+		: nothing to pre-install for this port
+		;;
+	POST-INSTALL)
+		do_notice $1
+		;;
+	*)
+	    	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	    	exit 1
+	    	;;
+esac
+
+exit 0
