@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.95 1999/06/04 15:28:58 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.96 1999/06/04 15:32:05 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -502,12 +502,18 @@ CONFIGURE_ENV+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 MAKE_ENV+=			LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 .endif
 .if defined(USE_EGCC)
+_CC_VERSION!=/usr/bin/cc -dumpversion
+.if ${_CC_VERSION} == "2.8.0" || ${_CC_VERSION} == "2.8.1"
 BUILD_DEPENDS+= 	${EGCC}:${PORTSDIR}/lang/egcs-stable
 CC=${EGCC}
 .endif
+.endif
 .if defined(USE_EGXX)
+_CXX_VERSION!=/usr/bin/cc -dumpversion
+.if ${_CXX_VERSION} == "2.8.0" || ${_CXX_VERSION} == "2.8.1" 
 BUILD_DEPENDS+= 	${EGXX}:${PORTSDIR}/lang/egcs-stable
 CXX=${EGXX}
+.endif
 .endif
 .if defined(USE_MOTIF) && !defined(HAVE_MOTIF) && !defined(REQUIRES_MOTIF)
 LIB_DEPENDS+=		Xm.:${PORTSDIR}/x11/lesstif
