@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2004/06/22 03:23:00 marcm Exp $
+# $OpenBSD: Makefile,v 1.189 2004/06/25 00:05:57 marcm Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -23,7 +23,6 @@
      SUBDIR += bbpager
      SUBDIR += bclock
      SUBDIR += belt
-     SUBDIR += bitstream-vera-fonts
      SUBDIR += blackbox
      SUBDIR += blast
 #    SUBDIR += blt
