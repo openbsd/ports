@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-c++,v 1.4 2005/02/27 21:27:12 espie Exp $
+@comment $OpenBSD: PLIST-c++,v 1.5 2005/04/03 15:40:19 espie Exp $
 bin/ec++
 bin/eg++
 bin/${CONFIG}-ec++
@@ -227,11 +227,19 @@ include/c++/${V}/streambuf
 include/c++/${V}/string
 include/c++/${V}/tr1/
 include/c++/${V}/tr1/array
+include/c++/${V}/tr1/bind_iterate.h
+include/c++/${V}/tr1/bind_repeat.h
+include/c++/${V}/tr1/boost_shared_ptr.h
 include/c++/${V}/tr1/functional
 include/c++/${V}/tr1/functional_iterate.h
 include/c++/${V}/tr1/hashtable
 include/c++/${V}/tr1/memory
+include/c++/${V}/tr1/mu_iterate.h
+include/c++/${V}/tr1/ref_fwd.h
+include/c++/${V}/tr1/ref_wrap_iterate.h
+include/c++/${V}/tr1/repeat.h
 include/c++/${V}/tr1/tuple
+include/c++/${V}/tr1/tuple_iterate.h
 include/c++/${V}/tr1/type_traits
 include/c++/${V}/tr1/type_traits_fwd.h
 include/c++/${V}/tr1/unordered_map
