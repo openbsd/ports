@@ -1,5 +1,5 @@
---- surfraw.conf.in.orig	Wed Feb 28 11:43:57 2001
-+++ surfraw.conf.in	Wed Feb 28 11:44:51 2001
+--- surfraw.conf.in.orig	Tue Aug 22 19:01:50 2000
++++ surfraw.conf.in	Sun Oct  7 07:21:14 2001
 @@ -27,7 +27,7 @@ def   SURFRAW_conf		$HOME/.surfraw.conf
  
  # name/path of browser executable
@@ -14,4 +14,4 @@
  
  # file containing list of elvi
 -def   SURFRAW_elvi_list		@sysconfdir@/surfraw_elvi.list
-+def   SURFRAW_elvi_list		@datadir@/surfraw_elvi.list
++def   SURFRAW_elvi_list		@datadir@/@PACKAGE@/surfraw_elvi.list

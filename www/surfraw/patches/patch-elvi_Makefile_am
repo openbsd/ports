@@ -1,0 +1,12 @@
+$OpenBSD: patch-elvi_Makefile_am,v 1.1 2001/10/07 18:17:44 heko Exp $
+--- elvi/Makefile.am.orig	Fri Jan 12 08:23:37 2001
++++ elvi/Makefile.am	Sun Oct  7 07:13:57 2001
+@@ -36,7 +36,7 @@ bin_SCRIPTS	= \
+ 		  xxx \
+ 		  yahoo
+ 
+-sysconf_DATA	= surfraw_elvi.list
++pkgdata_DATA	= surfraw_elvi.list
+ 
+ EXTRA_DIST	= $(bin_SCRIPTS)
+ 

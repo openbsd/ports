@@ -1,11 +1,11 @@
---- elvi/Makefile.in.orig	Wed Feb 28 11:47:19 2001
-+++ elvi/Makefile.in	Wed Feb 28 13:50:38 2001
+--- elvi/Makefile.in.orig	Sat Jan 13 04:39:42 2001
++++ elvi/Makefile.in	Sun Oct  7 07:36:24 2001
 @@ -104,14 +104,14 @@ bin_SCRIPTS	= \
  		  xxx \
  		  yahoo
  
 -sysconf_DATA	= surfraw_elvi.list
-+data_DATA =	surfraw_elvi.list
++pkgdata_DATA = surfraw_elvi.list
  
  EXTRA_DIST	= $(bin_SCRIPTS)
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
@@ -13,7 +13,7 @@
  SCRIPTS =  $(bin_SCRIPTS)
  
 -DATA =  $(sysconf_DATA)
-+DATA =	$(data_DATA)
++DATA =  $(pkgdata_DATA)
  
  DIST_COMMON =  Makefile.am Makefile.in
  
@@ -22,69 +22,67 @@
  	done
  
 -install-sysconfDATA: $(sysconf_DATA)
-+install-dataDATA: $(data_DATA)
++install-pkgdataDATA: $(pkgdata_DATA)
  	@$(NORMAL_INSTALL)
 -	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
 -	@list='$(sysconf_DATA)'; for p in $$list; do \
-+	$(mkinstalldirs) $(DESTDIR)$(datadir)
-+	@list='$(data_DATA)'; for p in $$list; do \
++	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)
++	@list='$(pkgdata_DATA)'; for p in $$list; do \
  	  if test -f $(srcdir)/$$p; then \
 -	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p"; \
 -	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p; \
-+			echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(datadir)/$$p"; \
-+			$(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(datadir)/$$p; \
++	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pkgdatadir)/$$p"; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pkgdatadir)/$$p; \
  	  else if test -f $$p; then \
 -	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p"; \
 -	    $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p; \
-+			echo " $(INSTALL_DATA) $$p $(DESTDIR)$(datadir)/$$p"; \
-+			$(INSTALL_DATA) $$p $(DESTDIR)$(datadir)/$$p; \
++	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(pkgdatadir)/$$p"; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(pkgdatadir)/$$p; \
  	  fi; fi; \
  	done
  
--uninstall-sysconfDATA:
-+uninstall-dataDATA:
+ uninstall-sysconfDATA:
  	@$(NORMAL_UNINSTALL)
 -	list='$(sysconf_DATA)'; for p in $$list; do \
 -	  rm -f $(DESTDIR)$(sysconfdir)/$$p; \
-+	list='$(data_DATA)'; for p in $$list; do \
-+		rm -f $(DESTDIR)$(datadir)/$$p; \
++	list='$(pkgdata_DATA)'; for p in $$list; do \
++	  rm -f $(DESTDIR)$(pkgdatadir)/$$p; \
  	done
  tags: TAGS
  TAGS:
-@@ -188,21 +188,21 @@ dvi:
+@@ -188,7 +188,8 @@ dvi:
  check: all
  	$(MAKE)
  installcheck:
 -install-exec: install-binSCRIPTS install-sysconfDATA
-+install-exec: install-binSCRIPTS
++
++install-exec: install-binSCRIPTS install-pkgdataDATA
  	@$(NORMAL_INSTALL)
  
--install-data: 
-+install-data:	install-dataDATA
- 	@$(NORMAL_INSTALL)
- 
+ install-data: 
+@@ -197,12 +198,12 @@ install-data: 
  install: install-exec install-data all
  	@:
  
 -uninstall: uninstall-binSCRIPTS uninstall-sysconfDATA
-+uninstall: uninstall-binSCRIPTS uninstall-dataDATA
++uninstall: uninstall-binSCRIPTS uninstall-pkgdataDATA
  
  install-strip:
  	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' INSTALL_SCRIPT='$(INSTALL_PROGRAM)' install
  installdirs:
 -	$(mkinstalldirs)  $(DATADIR)$(bindir) $(DATADIR)$(sysconfdir)
-+	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(datadir)
++	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(pkgdatadir)
  
  
  mostlyclean-generic:
-@@ -230,8 +230,8 @@ maintainer-clean:  maintainer-clean-gene
+@@ -230,8 +231,8 @@ maintainer-clean:  maintainer-clean-gene
  	@echo "This command is intended for maintainers to use;"
  	@echo "it deletes files that may require special tools to rebuild."
  
 -.PHONY: uninstall-binSCRIPTS install-binSCRIPTS uninstall-sysconfDATA \
 -install-sysconfDATA tags distdir info dvi installcheck install-exec \
-+.PHONY: uninstall-binSCRIPTS install-binSCRIPTS uninstall-dataDATA \
-+install-dataDATA tags distdir info dvi installcheck install-exec \
++.PHONY: uninstall-binSCRIPTS install-binSCRIPTS uninstall-pkgdataDATA \
++install-pkgdataDATA tags distdir info dvi installcheck install-exec \
  install-data install uninstall all installdirs mostlyclean-generic \
  distclean-generic clean-generic maintainer-clean-generic clean \
  mostlyclean distclean maintainer-clean

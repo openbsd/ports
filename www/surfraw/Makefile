@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/04/14 11:36:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/07 18:17:44 heko Exp $
 
 COMMENT=	"command line interface to popular WWW search engines"
 
@@ -23,5 +23,7 @@ CONFIGURE_STYLE= gnu
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/surfraw
 	${INSTALL_DATA} ${WRKSRC}/surfraw.conf ${PREFIX}/share/examples/surfraw
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/surfraw
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/HACKING ${PREFIX}/share/doc/surfraw
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/03/01 01:41:20 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.4 2001/10/07 18:17:44 heko Exp $
 bin/W
 bin/altavista
 bin/amazon
@@ -36,5 +36,10 @@ bin/webster
 bin/wetandwild
 bin/xxx
 bin/yahoo
-share/surfraw_elvi.list
+share/doc/surfraw/HACKING
+share/doc/surfraw/README
 share/examples/surfraw/surfraw.conf
+share/surfraw/surfraw_elvi.list
+@dirrm share/surfraw
+@dirrm share/examples/surfraw
+@dirrm share/doc/surfraw
