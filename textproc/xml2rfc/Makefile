@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/28 16:08:26 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/29 02:07:08 kevlo Exp $
 #
 
 DISTNAME=	xml2rfc
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=	wish8.3::x11/tk/8.3 \
 		${PREFIX}/lib/tcl8.3/TclXML::textproc/TclXML \
 
+FAKE=		Yes
 NO_BUILD=       Yes
 NO_CONFIGURE=	Yes
 
