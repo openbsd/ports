@@ -1,0 +1,10 @@
+Ingo is an email filter rules manager.
+
+Ingo currently supports the following filtering drivers:
+
+    * Sieve (using timsieved) [FRAMEWORK_3, RELENG_1 and HEAD]
+    * procmail (using VFS FTP driver) [FRAMEWORK_3, RELENG_1 and HEAD]
+    * IMAP client-side filtering [FRAMEWORK_3 and HEAD]
+
+Ingo has replaced IMP's internal filtering code and is the default
+filtering agent in IMP H3.
