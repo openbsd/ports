@@ -1,9 +1,9 @@
 use %s with fprintf
 
-$OpenBSD: patch-uuconv_c,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
---- uuconv.c.orig	Sun Aug 20 15:29:45 1995
-+++ uuconv.c	Thu Jul 12 21:38:53 2001
-@@ -684,7 +684,7 @@ uvwrite_chat_script (e, pzarg)
+$OpenBSD: patch-uuconv_c,v 1.2 2003/12/14 01:39:18 naddy Exp $
+--- uuconv.c.orig	2003-05-29 08:08:47.000000000 +0200
++++ uuconv.c	2003-11-11 21:17:58.000000000 +0100
+@@ -676,7 +676,7 @@ uvwrite_chat_script (e, pzarg)
      {
        if ((*pz)[0] != '-' && pz != pzarg)
  	fprintf (e, " ");

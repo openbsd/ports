@@ -1,7 +1,7 @@
-$OpenBSD: patch-policy_h,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
---- policy.h.orig	Sun Aug 20 15:36:06 1995
-+++ policy.h	Thu Jul 12 03:22:54 2001
-@@ -65,7 +65,7 @@
+$OpenBSD: patch-policy_h,v 1.2 2003/12/14 01:39:18 naddy Exp $
+--- policy.h.orig	2003-11-11 20:37:44.000000000 +0100
++++ policy.h	2003-11-11 20:55:38.000000000 +0100
+@@ -64,7 +64,7 @@
     */
  #define HAVE_BSD_TTY 0
  #define HAVE_SYSV_TERMIO 0
@@ -10,16 +10,7 @@ $OpenBSD: patch-policy_h,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
  
  /* This code tries to guess which terminal driver to use if you did
     not make a choice above.  It is in this file to make it easy to
-@@ -105,7 +105,7 @@
-    set to 0 when it should be 1, file transfer will use more CPU time
-    than necessary.  If you are unsure, setting HAVE_UNBLOCKED_WRITES
-    to 0 should always be safe.  */
--#define HAVE_UNBLOCKED_WRITES 0
-+#define HAVE_UNBLOCKED_WRITES 1
- 
- /* When the code does do a blocking write, it wants to write the
-    largest amount of data which the kernel will accept as a single
-@@ -118,7 +118,7 @@
+@@ -117,7 +117,7 @@
     SINGLE_WRITE is too small, file transfer will use more CPU time
     than necessary.  If you have no idea, 64 should work on most modern
     systems.  */
@@ -28,7 +19,7 @@ $OpenBSD: patch-policy_h,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
  
  /* Some tty drivers, such as those from SCO and AT&T's Unix PC, have a
     bug in the implementation of ioctl() that causes CLOCAL to be
-@@ -213,7 +213,7 @@
+@@ -212,7 +212,7 @@
     such a system you must set HAVE_BROKEN_SETREUID to 1; if you do
     not, you will get error messages from setreuid.  Systems on which
     setreuid exists but is broken pretty much always have saved setuid.  */
@@ -37,25 +28,26 @@ $OpenBSD: patch-policy_h,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
  
  /* On a few systems, such as NextStep 3.3, the POSIX macro F_SETLKW is
     defined, but does not work.  On such systems, you must set
-@@ -241,7 +241,7 @@
+@@ -240,8 +240,7 @@
     the sendmail choice below.  Otherwise, select one of the other
     choices as appropriate.  */
  #if 1
 -#define MAIL_PROGRAM "/usr/lib/sendmail -t"
+-/* #define MAIL_PROGRAM "/usr/sbin/sendmail -t" */
 +#define MAIL_PROGRAM "/usr/sbin/sendmail -t"
  #define MAIL_PROGRAM_TO_BODY 1
  #define MAIL_PROGRAM_SUBJECT_BODY 1
  #endif
-@@ -301,7 +301,7 @@
+@@ -301,7 +300,7 @@
  /* #define LOCKDIR "/etc/locks" */
  /* #define LOCKDIR "/usr/spool/locks" */
  /* #define LOCKDIR "/usr/spool/uucp/LCK" */
 -/* #define LOCKDIR "/var/spool/lock" */
 +#define LOCKDIR "/var/spool/lock"
+ /* #define LOCKDIR "/var/lock" */
  
  /* You must also specify the format of the lock files by setting
-    exactly one of the following macros to 1.  Check an existing lock
-@@ -465,8 +465,8 @@
+@@ -466,8 +465,8 @@
     When looking something up (a system, a port, etc.) the new style
     configuration files will be read first, followed by the V2
     configuration files, followed by the HDB configuration files.  */
@@ -66,7 +58,7 @@ $OpenBSD: patch-policy_h,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
  
  /* Exactly one of the following macros must be set to 1.  The exact
     format of the spool directories is explained in unix/spool.c.
-@@ -571,16 +571,14 @@
+@@ -572,16 +571,14 @@
  /* The name of the default spool directory.  If HAVE_TAYLOR_CONFIG is
     set to 1, this may be overridden by the ``spool'' command in the
     configuration file.  */
@@ -85,12 +77,13 @@ $OpenBSD: patch-policy_h,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
  
  /* The default command path.  This is a space separated list of
     directories.  Remote command executions requested by uux are looked
-@@ -643,20 +641,17 @@
+@@ -644,23 +641,17 @@
  /* The default log file when using HAVE_TAYLOR_LOGGING.  When using
     HAVE_TAYLOR_CONFIG, this may be overridden by the ``logfile''
     command in the configuration file.  */
 -#define LOGFILE "/usr/spool/uucp/Log"
 -/* #define LOGFILE "/var/spool/uucp/Log" */
+-/* #define LOGFILE "/var/log/uucp/Log" */
 +#define LOGFILE "/var/spool/uucp/Log"
  
  /* The default statistics file when using HAVE_TAYLOR_LOGGING.  When
@@ -98,6 +91,7 @@ $OpenBSD: patch-policy_h,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
     ``statfile'' command in the configuration file.  */
 -#define STATFILE "/usr/spool/uucp/Stats"
 -/* #define STATFILE "/var/spool/uucp/Stats" */
+-/* #define STATFILE "/var/log/uucp/Stats" */
 +#define STATFILE "/var/spool/uucp/Stats"
  
  /* The default debugging file when using HAVE_TAYLOR_LOGGING.  When
@@ -105,11 +99,12 @@ $OpenBSD: patch-policy_h,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
     ``debugfile'' command in the configuration file.  */
 -#define DEBUGFILE "/usr/spool/uucp/Debug"
 -/* #define DEBUGFILE "/var/spool/uucp/Debug" */
+-/* #define DEBUGFILE "/var/log/uucp/Debug" */
 +#define DEBUGFILE "/var/spool/uucp/Debug"
  
  #endif /* HAVE_TAYLOR_LOGGING */
  
-@@ -665,17 +660,17 @@
+@@ -669,17 +660,17 @@
  /* The default log file when using HAVE_V2_LOGGING.  When using
     HAVE_TAYLOR_CONFIG, this may be overridden by the ``logfile''
     command in the configuration file.  */
@@ -130,7 +125,7 @@ $OpenBSD: patch-policy_h,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
  
  #endif /* HAVE_V2_LOGGING */
  
-@@ -688,16 +683,16 @@
+@@ -692,16 +683,16 @@
     be replaced by the system name (if there is no appropriate system,
     "ANY" will be used).  No other '%' character may appear in the
     string.  */

@@ -1,8 +1,8 @@
 handle "/*" path parsing correctly; netbsd pr#2970, darcey@druid.com
 
-$OpenBSD: patch-unix_mkdirs_c,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
---- unix/mkdirs.c.orig	Sun Aug 20 15:30:30 1995
-+++ unix/mkdirs.c	Thu Jul 12 21:56:10 2001
+$OpenBSD: patch-unix_mkdirs_c,v 1.2 2003/12/14 01:39:18 naddy Exp $
+--- unix/mkdirs.c.orig	2003-05-29 08:08:49.000000000 +0200
++++ unix/mkdirs.c	2003-11-11 21:28:58.000000000 +0100
 @@ -28,11 +28,6 @@ fsysdep_make_dirs (zfile, fpublic)
      {
        if (*z == '/' && z != zcopy)
@@ -13,10 +13,10 @@ $OpenBSD: patch-unix_mkdirs_c,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
 -	  if (z[-1] == '/')
 -	    continue;
  	  *z = '\0';
- 	  if (mkdir (zcopy, imode) != 0
- 	      && errno != EEXIST
-@@ -48,6 +43,11 @@ fsysdep_make_dirs (zfile, fpublic)
- 	      return FALSE;
+ 	  if (mkdir (zcopy, imode) != 0)
+ 	    {
+@@ -53,6 +48,11 @@ fsysdep_make_dirs (zfile, fpublic)
+ 		}
  	    }
  	  *z = '/';
 +	  /* Some versions of uuto will send a double slash.  Some

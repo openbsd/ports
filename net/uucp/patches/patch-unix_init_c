@@ -1,10 +1,10 @@
 Deal with _POSIX_SAVED_IDS when relinquishing privileges
 use MAXHOSTNAMELEN
 
-$OpenBSD: patch-unix_init_c,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
---- unix/init.c.orig	Sun Aug 20 15:30:24 1995
-+++ unix/init.c	Thu Jul 12 21:56:10 2001
-@@ -210,7 +210,8 @@ usysdep_initialize (puuconf,iflags)
+$OpenBSD: patch-unix_init_c,v 1.2 2003/12/14 01:39:18 naddy Exp $
+--- unix/init.c.orig	2003-05-29 08:08:49.000000000 +0200
++++ unix/init.c	2003-11-11 21:28:58.000000000 +0100
+@@ -209,7 +209,8 @@ usysdep_initialize (puuconf,iflags)
    if (iuuconf == UUCONF_NOT_FOUND)
      {
  #if HAVE_GETHOSTNAME
@@ -14,7 +14,7 @@ $OpenBSD: patch-unix_init_c,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
  
        if (gethostname (ab, sizeof ab - 1) < 0)
  	ulog (LOG_FATAL, "gethostname: %s", strerror (errno));
-@@ -272,8 +273,10 @@ usysdep_initialize (puuconf,iflags)
+@@ -271,8 +272,10 @@ usysdep_initialize (puuconf,iflags)
        && geteuid () == 0)
      {
        q = getpwnam (OWNER);
@@ -26,9 +26,9 @@ $OpenBSD: patch-unix_init_c,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
      }
  
    if ((iflags & INIT_GETCWD) != 0)
-@@ -371,8 +374,10 @@ usysdep_exit (fsuccess)
+@@ -370,8 +373,10 @@ usysdep_exit (fsuccess)
  boolean fsysdep_other_config (z)
-      const char *z;
+      const char *z ATTRIBUTE_UNUSED;
  {
 -  (void) setuid (getuid ());
 +  (void) setegid (getgid ());

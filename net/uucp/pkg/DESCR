@@ -2,7 +2,5 @@ This is the standard UUCP package of the Free Software Foundation.
 
 The package currently supports the 'f', 'g' (in all window and packet
 sizes), 'G', 't' and 'e' protocols, as well a Zmodem protocol, the FX
-UUCICO 'y' protocol, and two new bidirectional protocols.  If you have
-a Berkeley sockets library, it can make TCP connections.  If you have
-TLI libraries, it can make TLI connections.  It supports a new
-configuration file mechanism which I like (but other people dislike).
+UUCICO 'y' protocol, and two new bidirectional protocols.  It can make
+TCP connections.

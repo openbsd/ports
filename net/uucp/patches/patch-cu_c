@@ -1,9 +1,9 @@
 broken send file function fix, Frederick Bruckman, netbsd pr 6834
 
-$OpenBSD: patch-cu_c,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
---- cu.c.orig	Sun Aug 20 15:29:25 1995
-+++ cu.c	Thu Jul 12 02:01:04 2001
-@@ -2101,7 +2101,7 @@ fcusend_buf (qconn, zbufarg, cbufarg)
+$OpenBSD: patch-cu_c,v 1.2 2003/12/14 01:39:18 naddy Exp $
+--- cu.c.orig	2003-05-29 08:08:45.000000000 +0200
++++ cu.c	2003-11-11 21:17:57.000000000 +0100
+@@ -2083,7 +2083,7 @@ fcusend_buf (qconn, zbufarg, cbufarg)
  	 of normal characters; when we send a newline we look for
  	 *zCuvar_echonl.  */
        if ((fCuvar_echocheck && ! fCuvar_binary)

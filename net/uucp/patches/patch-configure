@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure,v 1.1 2003/12/14 01:39:18 naddy Exp $
+--- configure.orig	2003-11-11 18:15:02.000000000 +0100
++++ configure	2003-11-11 20:24:38.000000000 +0100
+@@ -3939,12 +3939,14 @@ else
+   echo "$ac_t""no" 1>&6
+ fi
+ 
++if test $ac_cv_func_ftime = yes; then
+ if test $uucp_cv_sys_ftime_ok = yes || test $uucp_cv_sys_ftime_ok = runtime; then
+   cat >> confdefs.h <<\EOF
+ #define HAVE_FTIME 1
+ EOF
+ 
+ fi
++fi
+ for ac_func in times
+ do
+ echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
