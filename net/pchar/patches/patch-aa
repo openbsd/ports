@@ -1,0 +1,13 @@
+--- main.cc.orig	Fri Apr 13 12:53:22 2001
++++ main.cc	Fri Apr 13 12:53:55 2001
+@@ -1412,8 +1412,8 @@
+ 	    fprintf(stdout, "    End of path not reached after %d hops\n", pathLength);
+ 	}
+ 
+-	fprintf(stdout, "    Start time:        %s", ctime(&(timeFirst.tv_sec)));
+-	fprintf(stdout, "    End time:          %s", ctime(&(timeLast.tv_sec)));
++	fprintf(stdout, "    Start time:        %s", ctime((const time_t *) &(timeFirst.tv_sec)));
++	fprintf(stdout, "    End time:          %s", ctime((const time_t *) &(timeLast.tv_sec)));
+     }
+ 
+     //
