@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/01/10 23:55:50 couderc Exp $
+# $OpenBSD: Makefile,v 1.30 2004/03/23 19:29:12 pvalchev Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-LIB_DEPENDS=	gtk-x11-2.0.=0,gdk-x11-2.0.=0::x11/gtk+2 \
+LIB_DEPENDS=	gtk-x11-2.0.0.14,gdk-x11-2.0.0.14,gdk_pixbuf-2.0.0.14::x11/gtk+2 \
 		pcre::devel/pcre \
 		aspell::textproc/aspell/core
 
