@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/09/15 18:49:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2004/11/26 10:18:06 alek Exp $
 lib/mod_perl.so
 ${P5ARCH}/
 ${P5ARCH}/Apache/
@@ -110,3 +110,4 @@ ${P5ARCH}/mod_perl_tuning.pod
 sbin/mod_perl-enable
 share/doc/mod_perl/
 share/doc/mod_perl/mod_perl.html
+@unexec rm -f /usr/lib/apache/modules/mod_perl.so
