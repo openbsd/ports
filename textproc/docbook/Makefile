@@ -3,7 +3,7 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 2000/03/23 06:10:42 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/24 16:00:24 kevlo Exp $
 #
 
 DISTNAME=	docbook-3.0
@@ -28,6 +28,7 @@ NO_PATCH=	Yes
 NO_CONFIGURE=	Yes
 WRKDIST=	${WRKDIR}
 
+FAKE=		Yes
 INSTDIR=	${PREFIX}/share/sgml/docbook
 ISOCAT=		${PREFIX}/share/sgml/iso8879/catalog
 
