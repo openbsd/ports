@@ -1,0 +1,28 @@
+--- src/imapd/imapd.8c.orig	Tue Oct 13 04:31:21 1998
++++ src/imapd/imapd.8c	Sat Oct 16 23:59:57 1999
+@@ -1,9 +1,9 @@
+-.TH IMAPD 8C "October 12, 1998"
++.TH IMAPD 8 "October 12, 1998"
+ .UC 5
+ .SH NAME
+ IMAPd \- Internet Message Access Protocol server
+ .SH SYNOPSIS
+-.B /usr/etc/imapd
++.B imapd
+ .SH DESCRIPTION
+ .I imapd
+ is a server which supports the
+@@ -22,11 +22,11 @@
+ .PP
+ .I imapd
+ can also be accessed via
+-.IR rsh (1C)
++.IR rsh (1)
+ by many Unix-based clients.  To do this, the
+ .I imapd
+ binary must have a link to
+ .I /etc/rimapd
+ since this is where this software expects it to be located.
+ .SH "SEE ALSO"
+-rsh(1C) ipopd(8C)
++rsh(1) ipopd(8)
