@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2005/02/07 21:00:53 todd Exp $
+# $OpenBSD: Makefile,v 1.63 2005/02/15 09:30:42 espie Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -23,6 +23,9 @@
 #    SUBDIR += g77
      SUBDIR += gawk
 #    SUBDIR += gcl
+     SUBDIR += gcc/3.3
+     SUBDIR += gcc/3.4
+     SUBDIR += gcc/4.0
      SUBDIR += ghc
 #    SUBDIR += gnat
      SUBDIR += gprolog
