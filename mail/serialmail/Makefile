@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/06/16 23:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/06/21 06:00:57 camield Exp $
 
 DISTNAME=	serialmail-0.75
 HOMEPAGE=	http://cr.yp.to/serialmail.html
@@ -26,6 +26,7 @@ ALL_TARGET=	default
 INSTALL_TARGET=	setup check
 
 RUN_DEPENDS=	tcpclient::net/ucspi-tcp
+RUN_DEPENDS+=	setlock::sysutils/daemontools
 RUN_DEPENDS+=	${QMAILDIR}/bin/qmail-local::mail/qmail
 
 pre-build:
@@ -34,6 +35,12 @@ pre-build:
 	@echo ${QMAILDIR} > ${WRKSRC}/conf-qmail
 
 pre-install:
+	# Rebuild custom installer with fake prefix
 	@echo ${PREFIX} > ${WRKSRC}/conf-home
+
+post-install:
+	# We prefer the setlock from daemontools, this is
+	# done to resolve a package install conflict.
+	@rm ${WRKSRC}/setlock
 
 .include <bsd.port.mk>

@@ -1,21 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/06/21 06:00:58 camield Exp $
 bin/maildirqmtp
 bin/maildirserial
 bin/maildirsmtp
 bin/serialqmtp
 bin/serialsmtp
-bin/setlock
 man/cat1/maildirqmtp.0
 man/cat1/maildirserial.0
 man/cat1/maildirsmtp.0
 man/cat1/serialqmtp.0
 man/cat1/serialsmtp.0
-man/cat1/setlock.0
 man/man1/maildirqmtp.1
 man/man1/maildirserial.1
 man/man1/maildirsmtp.1
 man/man1/serialqmtp.1
 man/man1/serialsmtp.1
-man/man1/setlock.1
 share/doc/serialmail/AUTOTURN
 share/doc/serialmail/FROMISP
 share/doc/serialmail/TOISP
