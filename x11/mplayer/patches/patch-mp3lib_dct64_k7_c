@@ -1,0 +1,10 @@
+$OpenBSD: patch-mp3lib_dct64_k7_c,v 1.5 2003/01/21 23:07:38 sturm Exp $
+--- mp3lib/dct64_k7.c.orig	Wed Nov 20 00:35:51 2002
++++ mp3lib/dct64_k7.c	Sun Jan 19 01:05:19 2003
+@@ -758,5 +758,5 @@ void __attribute__ (( __stdcall__ )) dct
+ "	femms\n\t"
+ 	:
+ 	:"m"(a),"m"(b),"m"(c),"m"(tmp[0])
+-	:"memory","%ebx","%esi","%edi");
++	:"memory","%eax","%ebx","%ecx","%edx","%esi","%edi");
+ }
