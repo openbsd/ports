@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/12/07 18:16:42 form Exp $
+# $OpenBSD: Makefile,v 1.8 2000/01/14 08:44:28 form Exp $
 
 DISTNAME=	xruskb-1.10.0
 CATEGORIES=	russian x11
@@ -27,8 +27,8 @@ pre-configure:
 .endif
 
 post-install:
-	${CP} ${WRKSRC}/Xrus.ad ${X11BASE}/lib/X11/app-defaults/Xrus
-	${CP} ${WRKSRC}/xrus.doc-english ${X11BASE}/share/xruskb/xrus.doc
-	${CP} ${WRKSRC}/xrus.doc-koi8 ${X11BASE}/share/xruskb
+	${INSTALL_DATA} ${WRKSRC}/Xrus.ad ${X11BASE}/lib/X11/app-defaults/Xrus
+	${INSTALL_DATA} ${WRKSRC}/xrus.doc-english ${X11BASE}/share/xruskb/xrus.doc
+	${INSTALL_DATA} ${WRKSRC}/xrus.doc-koi8 ${X11BASE}/share/xruskb
 
 .include <bsd.port.mk>
