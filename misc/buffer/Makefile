@@ -1,19 +1,13 @@
-# OpenBSD makefile for:	buffer
-# Version required:     1.17
-# Date created:         17 Dec 1997
-# Whom:                 joey
-#
-# $OpenBSD: Makefile,v 1.2 1999/03/11 20:19:28 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/12/07 04:23:04 brad Exp $
 
-DISTNAME=       buffer-1.17
+DISTNAME=	buffer-1.17.1
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/ \
-		ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
+MASTER_SITES=	http://www.freebsd.org/~steve/distfiles/
 
 MAINTAINER=	naddy@unix-ag.uni-kl.de
 
+USE_BZIP2=	yes
+
 NO_WRKSUBDIR=	yes
-MAN1=		buffer.1
 
 .include <bsd.port.mk>

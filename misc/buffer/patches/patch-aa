@@ -1,42 +1,13 @@
---- Makefile.orig	Wed Jul 14 17:59:17 1993
-+++ Makefile	Thu Mar 11 18:51:57 1999
-@@ -4,13 +4,13 @@
- #   You should also add -DSYS5 for Ultrix, AIX, and Solarix.
- # Add -DDEF_SHMEM=n if you can only have n bytes of shared memory
- #   (eg: -DDEF_SHMEM=524288 if you can only have half a meg.)
--CFLAGS=
-+CFLAGS+=
- 
- # Where to install buffer and its manual pages
--INSTBIN=/usr/local/bin
--INSTMAN=/usr/man/manl
-+INSTBIN=${PREFIX}/bin
-+INSTMAN=${PREFIX}/man/man1
- # The manual page section (normally l or 1)
--S=l
-+S=1
- 
- RM=/bin/rm
- ALL=README buffer.man Makefile buffer.c sem.c COPYING
-@@ -18,18 +18,14 @@
- all: buffer
- 
- buffer: buffer.o sem.o
--	$(CC) -o buffer $(CFLAGS) buffer.o sem.o
-+	$(CC) -o buffer buffer.o sem.o
- 
- clean:
+--- Makefile.orig	Sat Oct 30 16:51:23 1999
++++ Makefile	Tue Nov  2 01:15:00 1999
+@@ -23,8 +23,8 @@
  	$(RM) -f *.o core buffer .merrs
  
  install: buffer
--	rm -f $(INSTBIN)/buffer
--	cp buffer $(INSTBIN)/buffer
--	chmod 111 $(INSTBIN)/buffer
--	rm -f $(INSTMAN)/buffer.$S
--	cp buffer.man $(INSTMAN)/buffer.$S
--	chmod 444 $(INSTMAN)/buffer.$S
+-	install -cs -m 0755 -o root -g wheel buffer $(INSTBIN)/buffer
+-	install -c  -m 0644 -o root -g wheel buffer.man $(INSTMAN)/buffer.1
 +	${BSD_INSTALL_PROGRAM} buffer $(INSTBIN)/buffer
-+	${BSD_INSTALL_MAN} buffer.man $(INSTMAN)/buffer.$S
++	${BSD_INSTALL_MAN} buffer.man $(INSTMAN)/buffer.1
  
  buffer.tar: $(ALL)
  	$(RM) -f buffer.tar

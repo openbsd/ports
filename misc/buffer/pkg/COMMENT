@@ -1,1 +1,1 @@
-buffer sporadic binary I/O for faster tape use
+buffer sporadic I/O for faster tape and pipe throughput
