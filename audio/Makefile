@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2000/04/21 18:45:10 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2000/05/28 20:37:15 jakob Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -29,6 +29,7 @@
      SUBDIR += p5-cddb
 #    SUBDIR += playmidi
 #    SUBDIR += radio
+     SUBDIR += rio500
 #    SUBDIR += rosegarden
      SUBDIR += rplay
      SUBDIR += rsynth
