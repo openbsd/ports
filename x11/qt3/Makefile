@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/08/02 22:13:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2002/08/21 13:52:39 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -10,14 +10,13 @@ COMMENT-mysql=		MySQL plugin for qt3
 VERSION=	0.5
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
-NEED_VERSION=	1.508
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 HOMEPAGE=	http://www.trolltech.com/qt/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-FLAVORS=	no_mysql no_postgresql
+PSEUDO_FLAVORS=	no_mysql no_postgresql
 # Adjust for arches where MySQL/PostgreSQL don't work.
 .if !${MACHINE_ARCH:Mi386} && !${MACHINE_ARCH:Msparc} && \
 !${MACHINE_ARCH:Mpowerpc}
@@ -231,10 +230,10 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/plugins/designer/librcplugin.so \
 	    ${QT_PLUGINSDIR}/designer
 
-FULLPKGNAME=		qt3-${VERSION}
-FULLPKGNAME-examples=	qt3-examples-${VERSION}
-FULLPKGNAME-html=	qt3-html-${VERSION}
-FULLPKGNAME-mysql=	qt3-mysql-${VERSION}
-FULLPKGNAME-postgresql=	qt3-postgresql-${VERSION}
+PKGNAME=		qt3-${VERSION}
+PKGNAME-examples=	qt3-examples-${VERSION}
+PKGNAME-html=	qt3-html-${VERSION}
+PKGNAME-mysql=	qt3-mysql-${VERSION}
+PKGNAME-postgresql=	qt3-postgresql-${VERSION}
 
 .include <bsd.port.mk>
