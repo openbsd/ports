@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/09/15 21:59:56 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/09/15 22:39:50 brad Exp $
 
 DISTNAME=	xpdf-0.90
 CATEGORIES=	textproc
@@ -17,6 +17,5 @@ MAINTAINER=	apollo@slcnet.net
 USE_X11=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gzip
-CONFIGURE_ENV=	CXXFLAGS=-fno-const-strings
 
 .include <bsd.port.mk>
