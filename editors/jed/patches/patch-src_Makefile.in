@@ -1,0 +1,95 @@
+--- src/Makefile.in.orig	Tue May 30 02:15:41 2000
++++ src/Makefile.in	Tue Sep  5 00:09:54 2000
+@@ -10,6 +10,8 @@
+ # $JED_ROOT.  /usr/local/jed is a good choice.  For a private installation,
+ # use, e.g., $(HOME)/src/jed
+ #---------------------------------------------------------------------------
++DESTDIR = 
++
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ #JED_ROOT = $(HOME)/src/jed# <--- make sure # is at end of file!!
+@@ -157,57 +159,57 @@
+ 	/bin/rm -rf $(OBJDIR) Makefile sysconf.h
+ 
+ install_directories:
+-	$(MKINSDIR) $(BIN_DIR)
+-	$(MKINSDIR) $(MAN_DIR)
+-	$(MKINSDIR) $(JED_ROOT)
+-	$(MKINSDIR) $(JED_ROOT)/bin
+-	$(MKINSDIR) $(JED_ROOT)/info
+-	$(MKINSDIR) $(JED_ROOT)/doc
+-	$(MKINSDIR) $(JED_ROOT)/lib
+-	$(MKINSDIR) $(JED_ROOT)/lib/colors
+-	$(MKINSDIR) $(JED_ROOT)/lib/tm
++	$(MKINSDIR) $(DESTDIR)$(prefix)/info
++	$(MKINSDIR) $(DESTDIR)$(prefix)/share/doc/jed
++	$(MKINSDIR) $(DESTDIR)$(BIN_DIR)
++	$(MKINSDIR) $(DESTDIR)$(MAN_DIR)
++	$(MKINSDIR) $(DESTDIR)$(JED_ROOT)
++	$(MKINSDIR) $(DESTDIR)$(JED_ROOT)/bin
++	$(MKINSDIR) $(DESTDIR)$(JED_ROOT)/lib
++	$(MKINSDIR) $(DESTDIR)$(JED_ROOT)/lib/colors
++	$(MKINSDIR) $(DESTDIR)$(JED_ROOT)/lib/tm
+ 
+ install: all install_directories
+-	$(INSTALL) $(OBJDIR)/jed $(BIN_DIR)/
+-	-$(INSTALL) $(OBJDIR)/xjed $(BIN_DIR)/
+-	-$(INSTALL) $(OBJDIR)/rgrep $(BIN_DIR)/
+-	-$(INSTALL) $(OBJDIR)/getmail $(JED_ROOT)/bin/
++	$(INSTALL) $(OBJDIR)/jed $(DESTDIR)$(BIN_DIR)/
++	-$(INSTALL) $(OBJDIR)/xjed $(DESTDIR)$(BIN_DIR)/
++	-$(INSTALL) $(OBJDIR)/rgrep $(DESTDIR)$(BIN_DIR)/
++	-$(INSTALL) $(OBJDIR)/getmail $(DESTDIR)$(JED_ROOT)/bin/
+ 	@for i in $(JED_LIB_FILES); \
+ 	do \
+-		echo $(INSTALL_DATA) $$i $(JED_ROOT)/lib/; \
+-		$(INSTALL_DATA) $$i $(JED_ROOT)/lib/; \
++		echo $(INSTALL_DATA) $$i $(DESTDIR)$(JED_ROOT)/lib/; \
++		$(INSTALL_DATA) $$i $(DESTDIR)$(JED_ROOT)/lib/; \
+ 		if [ "$$?" != "0" ]; then \
+ 		  exit 1; \
+ 		fi; \
+ 	done
+-	$(INSTALL_DATA) $(JED_COLOR_FILES) $(JED_ROOT)/lib/colors/
++	$(INSTALL_DATA) $(JED_COLOR_FILES) $(DESTDIR)$(JED_ROOT)/lib/colors/
+ 	@for i in $(JED_COLOR_FILES); \
+ 	do \
+-		echo $(INSTALL_DATA) $$i $(JED_ROOT)/lib/colors/; \
+-		$(INSTALL_DATA) $$i $(JED_ROOT)/lib/colors/; \
++		echo $(INSTALL_DATA) $$i $(DESTDIR)$(JED_ROOT)/lib/colors/; \
++		$(INSTALL_DATA) $$i $(DESTDIR)$(JED_ROOT)/lib/colors/; \
+ 		if [ "$$?" != "0" ]; then \
+ 		  exit 1; \
+ 		fi; \
+ 	done
+ 	@for i in $(JED_MAN_FILES); \
+ 	do \
+-		$(INSTALL_DATA) $$i $(MAN_DIR)/; \
+-		echo $(INSTALL_DATA) $$i $(MAN_DIR)/; \
++		$(INSTALL_DATA) $$i $(DESTDIR)$(MAN_DIR)/; \
++		echo $(INSTALL_DATA) $$i $(DESTDIR)$(MAN_DIR)/; \
+ 	done
+ 	@for i in $(JED_TM_FILES); \
+ 	do \
+-		$(INSTALL_DATA) $$i $(JED_ROOT)/lib/tm/; \
+-		echo $(INSTALL_DATA) $$i $(JED_ROOT)/lib/tm/; \
++		$(INSTALL_DATA) $$i $(DESTDIR)$(JED_ROOT)/lib/tm/; \
++		echo $(INSTALL_DATA) $$i $(DESTDIR)$(JED_ROOT)/lib/tm/; \
+ 	done
+ 	@for i in $(JED_DOC_FILES); \
+ 	do \
+-		$(INSTALL_DATA) $$i $(JED_ROOT)/doc/; \
+-		echo $(INSTALL_DATA) $$i $(JED_ROOT)/doc/; \
++		$(INSTALL_DATA) $$i $(DESTDIR)$(prefix)/share/doc/jed/; \
++		echo $(INSTALL_DATA) $$i $(DESTDIR)$(prefix)/share/doc/jed/; \
+ 	done
+ 	@for i in $(JED_INFO_FILES); \
+ 	do \
+-		$(INSTALL_DATA) $$i $(JED_ROOT)/info/; \
+-		echo $(INSTALL_DATA) $$i $(JED_ROOT)/info/; \
++		$(INSTALL_DATA) $$i $(DESTDIR)$(prefix)/info/; \
++		echo $(INSTALL_DATA) $$i $(DESTDIR)$(prefix)/info/; \
+ 	done
+ 
+ # The symlinks target is for my own private use.  It simply creates the object

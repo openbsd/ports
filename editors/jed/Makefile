@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2000/04/09 17:36:23 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/09/06 00:07:14 brad Exp $
 
-DISTNAME=       jed-B0.99-10
-PKGNAME=        jed-0.99.10
+DISTNAME=	jed-B0.99-11
+PKGNAME=	jed-0.99.11
 CATEGORIES=	editors
-NEED_VERSION=	 1.230
-FAKE=No
+NEED_VERSION=	1.322
 MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/jed/v0.99/
 
@@ -12,24 +11,21 @@ LIB_DEPENDS=	slang.14::devel/libslang
 
 MAINTAINER=     ports@openbsd.org
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-GNU_CONFIGURE=  Yes
-CONFIGURE_ENV=	JED_ROOT=${PREFIX}/lib/jed
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	JED_ROOT="${PREFIX}/lib/jed"
 
-ALL_TARGET=     all getmail ${XJED}
+ALL_TARGET=	all getmail
 
-# comment out the next line if you don't want the X version of JED.
-XJED=		xjed
+FLAVORS=	xjed
+FLAVOR?=
 
-post-install:
-	@jed -batch -n -l preparse.sl
-	@install-info --section="Editors" \
-		--entry="* JED: (jed). 		JED editor documentation." \
-		${PREFIX}/info/jed.info ${PREFIX}/info/dir
+.if ${FLAVOR:L:Mxjed}
+ALL_TARGET+=	xjed
+.endif
 
 .include <bsd.port.mk>
