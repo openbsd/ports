@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/23 16:25:37 ian Exp $
+# $OpenBSD: Makefile,v 1.4 1998/10/23 20:59:40 marc Exp $
 #
 # Relevant URLs:	http://www.transvirtual.com/kaffe/
 
-DISTNAME=       kaffe-1.0.b2
+DISTNAME=       kaffe-1.0.b1
 CATEGORIES=	lang
 
 MASTER_SITES=	ftp://ftp.transvirtual.com/pub/kaffe/
@@ -16,12 +16,8 @@ GNU_CONFIGURE=		yes
 .if (${MACHINE_ARCH} != "alpha")
 CONFIGURE_ARGS+=	--enable-shared
 .endif
-CONFIGURE_ARGS+=	--enable-static
-
-CONFIGURE_ENV=		${SETENV} CPPFLAGS=-I/usr/local/include \
-			LDFLAGS=-L/usr/local/lib
-
-post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ENVIRONMENT ${PREFIX}/share/kaffe
+CONFIGURE_ARGS+=	--enable-static \
+	--with-includes=${PREFIX}/include \
+	--with-libs=${PREFIX}/lib
 
 .include <bsd.port.mk>
