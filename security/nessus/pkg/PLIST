@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2003/11/27 19:53:24 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.18 2003/12/06 08:05:57 sturm Exp $
 bin/nasl
 @comment bin/nasl-config
 bin/nessus
@@ -1937,11 +1937,10 @@ sbin/nessusd
 sbin/uninstall-nessus
 %%SHARED%%
 @dirrm lib/nessus/plugins_factory
-@extraunexec rm -fr lib/nessus/plugins/*
+@extraunexec rm -fr %D/lib/nessus/plugins/*
 @dirrm lib/nessus/plugins
 @dirrm lib/nessus
 @dirrm include/nessus
 @cwd ${SYSCONFDIR}
-@extraunexec rm -fr nessus
-@cwd /var
-@extraunexec rm -fr nessus
+@extraunexec rm -fr %D/nessus
+@extraunexec rm -fr /var/nessus
