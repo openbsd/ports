@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2001/06/08 17:03:09 shell Exp $
+# $OpenBSD: Makefile,v 1.81 2001/06/12 16:58:36 avsm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -71,6 +71,7 @@
      SUBDIR += p5-Locale-PGettext
      SUBDIR += p5-MLDBM
      SUBDIR += p5-Params-Validate
+     SUBDIR += p5-Parse-RecDescent
      SUBDIR += p5-Set-Scalar
      SUBDIR += p5-Storable
      SUBDIR += p5-Term-ReadKey
