@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/13 16:12:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/17 16:13:30 naddy Exp $
 
 DISTNAME=	wmeyes
 PKGNAME=	${DISTNAME}-0.0
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	"no license"
 
 WRKDIST=	${WRKDIR}
 
+USE_X11=	Yes
 CONFIGURE_STYLE=	imake noman
 
 .include <bsd.port.mk>

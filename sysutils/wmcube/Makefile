@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/12 15:24:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/17 16:13:30 naddy Exp $
 
 DISTNAME=	wmcube-0.98
 CATEGORIES=	sysutils x11
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=	Yes
 WRKDIST=	${WRKDIR}/wmcube
 WRKSRC=		${WRKDIST}/wmcube
 

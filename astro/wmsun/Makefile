@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/09 22:10:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/17 16:13:29 naddy Exp $
 
 DISTNAME=	wmSun-1.03
 PKGNAME=	${DISTNAME:L}
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=	Yes
 WRKSRC=	${WRKDIST}/wmSun
 
 post-extract:

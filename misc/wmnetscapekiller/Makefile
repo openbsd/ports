@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/11 23:23:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/17 16:13:30 naddy Exp $
 
 DISTNAME=	wmNetscapeKiller-0.3
 PKGNAME=	${DISTNAME:L}
@@ -16,5 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}wmNetscapeKiller-0.3/
 
 RUN_DEPENDS=	skill::sysutils/skill
+
+USE_X11=	Yes
 
 .include <bsd.port.mk>

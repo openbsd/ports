@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/11 00:13:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/17 16:13:30 naddy Exp $
 
 DISTNAME=	wmapm-3.1
 CATEGORIES=	sysutils x11
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=	Yes
 WRKSRC=	${WRKDIST}/wmapm
 
 .include <bsd.port.mk>

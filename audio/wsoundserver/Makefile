@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/09 20:59:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/17 16:13:29 naddy Exp $
 
 DISTNAME=	WSoundServer-0.4.0
 PKGNAME=	${DISTNAME:L}
@@ -19,6 +19,7 @@ LIB_DEPENDS=	PropList.2::devel/libproplist \
 		dockapp:devel/libdockapp
 RUN_DEPENDS=	wmaker::x11/windowmaker
 
+USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} --enable-static
 

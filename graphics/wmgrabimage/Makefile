@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/11 02:57:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/17 16:13:30 naddy Exp $
 
 DISTNAME=	wmGrabImage-0.70
 PKGNAME=	${DISTNAME:L}
@@ -19,6 +19,7 @@ RUN_DEPENDS=	convert::graphics/ImageMagick \
 		xv::graphics/xv \
 		wget::net/wget
 
+USE_X11=	Yes
 WRKSRC=	${WRKDIST}/wmGrabImage
 
 .include <bsd.port.mk>

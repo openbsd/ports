@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/11 22:45:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/17 16:13:30 naddy Exp $
 
 DISTNAME=	wmtimer-2.2
 CATEGORIES=	misc x11
@@ -19,6 +19,7 @@ FLAVOR?=
 
 LIB_DEPENDS=	gtk.1.2::x11/gtk+
 
+USE_X11=	Yes
 WRKSRC=		${WRKDIST}/wmtimer
 
 do-configure:

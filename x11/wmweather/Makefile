@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/09 22:13:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/17 16:13:31 naddy Exp $
 
 DISTNAME=	wmWeather-1.31
 PKGNAME=	${DISTNAME:L}
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	wget::net/wget
 
+USE_X11=	Yes
 WRKSRC=	${WRKDIST}/Src
 
 .include <bsd.port.mk>

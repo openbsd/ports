@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/10 16:54:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/17 16:13:29 naddy Exp $
 
 DISTNAME=	wmSpaceWeather-1.04
 PKGNAME=	${DISTNAME:L}
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	wget::net/wget
 
+USE_X11=	Yes
 WRKSRC=	${WRKDIST}/wmSpaceWeather
 
 post-extract:
