@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/06/17 12:22:17 reinhard Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2001/06/18 09:15:30 reinhard Exp $
 #
 # jserv de-installation
 
@@ -16,7 +16,7 @@ echo "| To completely deinstall the $1 package you"
 echo "| need to perform these steps as root:"
 echo "|"
 echo "|        edit ${CONF}"
-echo "|        and remove the lines 
+echo "|        and remove the lines"
 echo "|        'LoadModule jserv_module'"
 echo "|        and"
 echo "|        'include /etc/tomcat/tomcat-apache.conf'"
