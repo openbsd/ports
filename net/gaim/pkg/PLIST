@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2004/04/24 08:04:13 brad Exp $
+@comment $OpenBSD: PLIST,v 1.31 2004/06/02 19:16:26 brad Exp $
 bin/gaim
 bin/gaim-remote
 include/gaim-remote/remote-socket.h
@@ -39,6 +39,7 @@ share/locale/ca/LC_MESSAGES/gaim.mo
 share/locale/cs/LC_MESSAGES/gaim.mo
 share/locale/da/LC_MESSAGES/gaim.mo
 share/locale/de/LC_MESSAGES/gaim.mo
+share/locale/en_CA/LC_MESSAGES/gaim.mo
 share/locale/en_GB/LC_MESSAGES/gaim.mo
 share/locale/es/LC_MESSAGES/gaim.mo
 share/locale/fi/LC_MESSAGES/gaim.mo
@@ -58,6 +59,7 @@ share/locale/pt_BR/LC_MESSAGES/gaim.mo
 share/locale/ro/LC_MESSAGES/gaim.mo
 share/locale/ru/LC_MESSAGES/gaim.mo
 share/locale/sk/LC_MESSAGES/gaim.mo
+share/locale/sl/LC_MESSAGES/gaim.mo
 share/locale/sr/LC_MESSAGES/gaim.mo
 share/locale/sr@Latn/LC_MESSAGES/gaim.mo
 share/locale/sv/LC_MESSAGES/gaim.mo
@@ -205,6 +207,7 @@ share/pixmaps/gaim/smileys/default/yahoo_batting.gif
 share/pixmaps/gaim/smileys/default/yahoo_beatup.gif
 share/pixmaps/gaim/smileys/default/yahoo_bigsmile.gif
 share/pixmaps/gaim/smileys/default/yahoo_blush.gif
+share/pixmaps/gaim/smileys/default/yahoo_brokenheart.gif
 share/pixmaps/gaim/smileys/default/yahoo_bye.gif
 share/pixmaps/gaim/smileys/default/yahoo_chicken.gif
 share/pixmaps/gaim/smileys/default/yahoo_clap.gif
@@ -219,10 +222,12 @@ share/pixmaps/gaim/smileys/default/yahoo_doh.gif
 share/pixmaps/gaim/smileys/default/yahoo_drool.gif
 share/pixmaps/gaim/smileys/default/yahoo_eyebrow.gif
 share/pixmaps/gaim/smileys/default/yahoo_eyeroll.gif
+share/pixmaps/gaim/smileys/default/yahoo_femalefighter.gif
 share/pixmaps/gaim/smileys/default/yahoo_flag.gif
 share/pixmaps/gaim/smileys/default/yahoo_flower.gif
 share/pixmaps/gaim/smileys/default/yahoo_frustrated.gif
 share/pixmaps/gaim/smileys/default/yahoo_ghost.gif
+share/pixmaps/gaim/smileys/default/yahoo_giggle.gif
 share/pixmaps/gaim/smileys/default/yahoo_glasses.gif
 share/pixmaps/gaim/smileys/default/yahoo_huggs.gif
 share/pixmaps/gaim/smileys/default/yahoo_hypnotized.gif
@@ -230,34 +235,51 @@ share/pixmaps/gaim/smileys/default/yahoo_idea.gif
 share/pixmaps/gaim/smileys/default/yahoo_kiss.gif
 share/pixmaps/gaim/smileys/default/yahoo_laughloud.gif
 share/pixmaps/gaim/smileys/default/yahoo_liar.gif
+share/pixmaps/gaim/smileys/default/yahoo_loser.gif
 share/pixmaps/gaim/smileys/default/yahoo_love.gif
+share/pixmaps/gaim/smileys/default/yahoo_madtongue.gif
+share/pixmaps/gaim/smileys/default/yahoo_malefighter1.gif
+share/pixmaps/gaim/smileys/default/yahoo_malefighter2.gif
 share/pixmaps/gaim/smileys/default/yahoo_mean.gif
 share/pixmaps/gaim/smileys/default/yahoo_moneyeyes.gif
 share/pixmaps/gaim/smileys/default/yahoo_monkey.gif
+share/pixmaps/gaim/smileys/default/yahoo_nailbiting.gif
 share/pixmaps/gaim/smileys/default/yahoo_neutral.gif
 share/pixmaps/gaim/smileys/default/yahoo_ooooh.gif
+share/pixmaps/gaim/smileys/default/yahoo_party.gif
 share/pixmaps/gaim/smileys/default/yahoo_peace.gif
 share/pixmaps/gaim/smileys/default/yahoo_pig.gif
 share/pixmaps/gaim/smileys/default/yahoo_pray.gif
 share/pixmaps/gaim/smileys/default/yahoo_pumpkin.gif
 share/pixmaps/gaim/smileys/default/yahoo_question.gif
+share/pixmaps/gaim/smileys/default/yahoo_rotfl.gif
 share/pixmaps/gaim/smileys/default/yahoo_sad.gif
 share/pixmaps/gaim/smileys/default/yahoo_shame.gif
 share/pixmaps/gaim/smileys/default/yahoo_shamrock.gif
 share/pixmaps/gaim/smileys/default/yahoo_shhhh.gif
 share/pixmaps/gaim/smileys/default/yahoo_sick.gif
+share/pixmaps/gaim/smileys/default/yahoo_sighing.gif
 share/pixmaps/gaim/smileys/default/yahoo_silent.gif
 share/pixmaps/gaim/smileys/default/yahoo_silly.gif
 share/pixmaps/gaim/smileys/default/yahoo_sleep.gif
 share/pixmaps/gaim/smileys/default/yahoo_smiley.gif
+share/pixmaps/gaim/smileys/default/yahoo_star.gif
 share/pixmaps/gaim/smileys/default/yahoo_sunglas.gif
+share/pixmaps/gaim/smileys/default/yahoo_sweating.gif
+share/pixmaps/gaim/smileys/default/yahoo_talktohand.gif
 share/pixmaps/gaim/smileys/default/yahoo_think.gif
 share/pixmaps/gaim/smileys/default/yahoo_tired.gif
 share/pixmaps/gaim/smileys/default/yahoo_tongue.gif
+share/pixmaps/gaim/smileys/default/yahoo_waiting.gif
+share/pixmaps/gaim/smileys/default/yahoo_waving.gif
 share/pixmaps/gaim/smileys/default/yahoo_whistling.gif
 share/pixmaps/gaim/smileys/default/yahoo_wink.gif
 share/pixmaps/gaim/smileys/default/yahoo_worried.gif
+share/pixmaps/gaim/smileys/default/yahoo_worship.gif
+share/pixmaps/gaim/smileys/default/yahoo_yingyang.gif
+share/pixmaps/gaim/smileys/default/yahoo_youkiddingme.gif
 share/pixmaps/gaim/smileys/default/yell.png
+share/pixmaps/gaim/smileys/none/theme
 share/pixmaps/gaim/status/default/activebuddy.png
 share/pixmaps/gaim/status/default/admin.png
 share/pixmaps/gaim/status/default/aim.png
@@ -286,6 +308,7 @@ share/pixmaps/gaim/status/default/occupied.png
 share/pixmaps/gaim/status/default/offline.png
 share/pixmaps/gaim/status/default/rendezvous.png
 share/pixmaps/gaim/status/default/secure.png
+share/pixmaps/gaim/status/default/silc.png
 share/pixmaps/gaim/status/default/trepia.png
 share/pixmaps/gaim/status/default/wireless.png
 share/pixmaps/gaim/status/default/yahoo.png
@@ -306,6 +329,7 @@ share/sounds/gaim/send.wav
 @dirrm share/sounds
 @dirrm share/pixmaps/gaim/status/default
 @dirrm share/pixmaps/gaim/status
+@dirrm share/pixmaps/gaim/smileys/none
 @dirrm share/pixmaps/gaim/smileys/default
 @dirrm share/pixmaps/gaim/smileys
 @dirrm share/pixmaps/gaim/icons
