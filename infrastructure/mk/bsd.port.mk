@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.286 2000/05/30 14:51:59 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.287 2000/05/30 16:39:04 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -778,6 +778,8 @@ COMMENT=	${PKGDIR}/COMMENT${SUBPACKAGE}
 .endif
 DESCR?=		${PKGDIR}/DESCR${SUBPACKAGE}
 
+_PKG_PREREQ=${PLIST} ${DESCR} ${COMMENT}
+
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
 _SORT_DEPENDS?=tsort|tail -r
@@ -788,15 +790,19 @@ PKG_ARGS+=-f ${PLIST} -p ${PREFIX}
 PKG_ARGS+=-P "`cd ${.CURDIR} && ${MAKE} SUBPACKAGE='${SUBPACKAGE}' package-depends|${_SORT_DEPENDS}`"
 .  if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
 PKG_ARGS+=		-i ${PKGDIR}/INSTALL${SUBPACKAGE}
+_PKG_PREREQ+=${PKGDIR}/INSTALL${SUBPACKAGE}
 .  endif
 .  if exists(${PKGDIR}/DEINSTALL${SUBPACKAGE})
 PKG_ARGS+=		-k ${PKGDIR}/DEINSTALL${SUBPACKAGE}
+_PKG_PREREQ+=${PKGDIR}/DEINSTALL${SUBPACKAGE}
 .  endif
 .  if exists(${PKGDIR}/REQ${SUBPACKAGE})
 PKG_ARGS+=		-r ${PKGDIR}/REQ${SUBPACKAGE}
+_PKG_PREREQ+=${PKGDIR}/REQ${SUBPACKAGE}
 .  endif
 .  if exists(${PKGDIR}/MESSAGE${SUBPACKAGE})
 PKG_ARGS+=		-D ${PKGDIR}/MESSAGE${SUBPACKAGE}
+_PKG_PREREQ+=${PKGDIR}/MESSAGE${SUBPACKAGE}
 .  endif
 .endif
 .if ${FAKE:U} == "YES"
@@ -1672,9 +1678,9 @@ ${_PACKAGE_COOKIE}${_sub}: ${_INSTALL_COOKIE}
 
 
 .if ${FAKE:U} == "YES"
-${_PACKAGE_COOKIE}: ${_FAKE_COOKIE} ${_SUBPACKAGE_COOKIES} ${PLIST} 
+${_PACKAGE_COOKIE}: ${_FAKE_COOKIE} ${_SUBPACKAGE_COOKIES} ${_PKG_PREREQ}
 .else
-${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE} ${_SUBPACKAGE_COOKIES} ${PLIST}
+${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE} ${_SUBPACKAGE_COOKIES} ${_PKG_PREREQ}
 .endif
 .if !defined(NO_PACKAGE)
 .  if target(pre-package)
@@ -2548,8 +2554,7 @@ print-depends:
 # accordance to the @pkgdep directive in the packing lists
 
 .if !target(fake-pkg)
-fake-pkg: ${PLIST}
-	@if [ ! -f ${PLIST} -o ! -f ${COMMENT} -o ! -f ${DESCR} ]; then echo "** Missing package files for ${PKGNAME} - installation not recorded."; exit 1; fi
+fake-pkg: ${_PKG_PREREQ}
 	@if [ `/bin/ls -l ${COMMENT} | awk '{print $$5}'` -gt 60 ]; then \
 	    echo "** ${COMMENT} too large - installation not recorded."; \
 	    exit 1; \
