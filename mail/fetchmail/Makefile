@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2000/07/08 08:54:01 fgsch Exp $
+# $OpenBSD: Makefile,v 1.48 2000/07/15 07:18:01 brad Exp $
 
 DISTNAME=	fetchmail-5.4.3
 CATEGORIES=	mail
@@ -16,11 +16,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu dest
+CONFIGURE_ARGS+= --disable-nls --enable-inet6
 
 FLAVORS=	kerberos ssl
-
 FLAVOR?=
-CONFIGURE_ARGS+= --disable-nls --enable-inet6
+
 .if ${FLAVOR:L} == "kerberos"
 CONFIGURE_ARGS+= --with-kerberos
 .endif
@@ -30,6 +30,7 @@ CONFIGURE_ARGS+= --with-ssl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/fetchmail
+	@cd ${PREFIX}/man/man1 && ln -sf fetchmail.1 fetchmailconf.1
 	cd ${WRKSRC} && ${INSTALL_DATA} \
 	   sample.rcfile FAQ NOTES FEATURES README COPYING \
 	   fetchmail-FAQ.html fetchmail-features.html \
