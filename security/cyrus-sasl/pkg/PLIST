@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/11/15 23:17:59 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/07/26 16:14:47 jakob Exp $
+@pkgcfl cyrus-sasl2-*
 include/sasl/hmac-md5.h
 include/sasl/md5.h
 include/sasl/md5global.h
