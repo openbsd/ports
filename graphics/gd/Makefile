@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/05 18:30:28 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/15 19:12:47 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
-DISTNAME=	gd-1.7.3
+DISTNAME=	gd-1.8.1
 CATEGORIES=	graphics
 NEED_VERSION=	1.223
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
@@ -9,7 +9,8 @@ MASTER_SITES=	http://www.boutell.com/gd/http/ \
 
 HOMEPAGE=	http://www.boutell.com/gd/
 
-LIB_DEPENDS=	png.1.3:graphics/png \
+LIB_DEPENDS=	jpeg.62:graphics/jpeg \
+		png.1.3:graphics/png \
 		ttf.1.3:print/freetype
 
 MAINTAINER=	brad@openbsd.org
@@ -22,6 +23,8 @@ PERMIT_DISTFILES_FTP=	Yes
 FAKE=	Yes
 
 NO_CONFIGURE=	Yes
+
+MAKE_FLAGS=	COMPILER="${CC}"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gd

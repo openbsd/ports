@@ -15,7 +15,7 @@ include/gdfontmb.h
 include/gdfontl.h
 include/gdfontg.h
 lib/libgd.a
-lib/libgd.so.17.3
+lib/libgd.so.18.1
 @exec /sbin/ldconfig -m %B
 share/examples/gd/demoin.png
 share/examples/gd/demoout.png
