@@ -1,3 +1,4 @@
+$OpenBSD: patch-sablot_h,v 1.2 2000/09/13 13:58:41 avsm Exp $
 --- Sablot/engine/sablot.h.orig	Wed Sep  6 16:34:25 2000
 +++ Sablot/engine/sablot.h	Wed Sep  6 16:34:34 2000
 @@ -43,7 +43,7 @@ header file for Sablot.cpp
