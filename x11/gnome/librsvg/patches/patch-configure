@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2004/06/23 03:26:17 marcm Exp $
---- configure.orig	2004-04-30 22:59:38.000000000 -0600
-+++ configure	2004-06-20 14:43:09.000000000 -0600
-@@ -7984,7 +7984,7 @@ nto-qnx*)
+$OpenBSD: patch-configure,v 1.7 2004/12/23 05:03:09 marcm Exp $
+--- configure.orig	Sun Sep 12 12:16:43 2004
++++ configure	Wed Dec 22 18:57:52 2004
+@@ -9246,7 +9246,7 @@ nto-qnx*)
  openbsd*)
    version_type=sunos
    need_lib_prefix=no

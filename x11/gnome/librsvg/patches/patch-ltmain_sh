@@ -1,46 +1,21 @@
---- ltmain.sh.orig	Mon Aug  9 13:07:34 2004
-+++ ltmain.sh	Wed Dec  1 18:12:31 2004
-@@ -1374,6 +1374,17 @@
- 	continue
- 	;;
- 
-+	-pthread)
-+	case $host in
-+	    *-*-openbsd*)
-+	    deplibs="deplibs $arg"
-+	    ;;
-+	    *)
+--- ltmain.sh.orig	Tue May  4 20:35:36 2004
++++ ltmain.sh	Wed Dec 22 18:57:52 2004
+@@ -1854,9 +1854,12 @@ EOF
+ 	  if test "$linkmode,$pass" = "prog,link"; then
+ 	    compile_deplibs="$deplib $compile_deplibs"
+ 	    finalize_deplibs="$deplib $finalize_deplibs"
+-	  else
+-	    deplibs="$deplib $deplibs"
 +	    continue
-+	    ;;
-+	esac
-+	;;
-+
-       -module)
- 	module=yes
- 	continue
-@@ -2024,6 +2035,21 @@
  	  fi
++	  if test "$linkmode" = "lib"; then
++	      newdependency_libs="$deplib $newdependency_libs"
++	  fi
++	  deplibs="$deplib $deplibs"
  	  continue
  	  ;;
-+	  
-+	  -pthread)
-+	  case $linkmode in
-+	      lib)
-+	      deplibs="$deplib $deplibs"
-+	      newdependency_libs="$deplib $newdependency_libs"
-+	      ;;
-+	      prog)
-+	      compile_deplibs="$deplib $compile_deplibs"
-+	      finalize_deplibs="$deplib $finalize_deplibs"
-+	      ;;
-+	  esac
-+	  continue
-+	  ;;
-+
- 	%DEPLIBS%)
- 	  alldeplibs=yes
- 	  continue
-@@ -2274,10 +2300,6 @@
+ 	-l*)
+@@ -2271,10 +2274,6 @@ EOF
  	link_static=no # Whether the deplib will be linked statically
  	if test -n "$library_names" &&
  	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
@@ -51,7 +26,7 @@
  	  # This is a shared library
  
  	  # Warn about portability, can't link against -module's on
-@@ -5827,40 +5849,6 @@
+@@ -5824,40 +5823,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  
