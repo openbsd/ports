@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2001/09/28 06:02:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2001/10/06 21:31:28 naddy Exp $
 
 COMMENT=	"rather neat animated clock"
 
 DISTNAME=	xdaliclock-2.18
 CATEGORIES=	x11
 NEED_VERSION=	1.402
-MASTER_SITES=	http://www.jwz.org/xdaliclock/
-
-MAINTAINER=	ports@OpenBSD.ORG
 HOMEPAGE=	http://www.jwz.org/xdaliclock/
 
 # License: BSD
@@ -16,10 +13,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+MASTER_SITES=	${HOMEPAGE}
+
 USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/X11
+MODGNU_CONFIG_GUESS_DIRS=	${WRKDIST}
 WRKSRC=			${WRKDIST}/X11
 
 .include <bsd.port.mk>
