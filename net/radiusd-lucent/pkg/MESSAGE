@@ -1,5 +1,5 @@
 +---------------
-| The RADIUS configuration files belong in /etc/raddb.  Examples
+| The RADIUS configuration files belong in ${SYSCONFDIR}/raddb.  Examples
 | and extra documentation can be found in the following locations:
 |
 |     ${PREFIX}/share/examples/radiusd-lucent
