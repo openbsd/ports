@@ -1,31 +1,28 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/06/18 16:54:55 espie Exp $
+# $OpenBSD: Makefile,v 1.2 1999/09/23 20:32:41 brad Exp $
+# Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
-DISTNAME=		adom-g14
-
-WRKSRC=${WRKDIR}/adom
-
-CATEGORIES=     	games
+DISTNAME=	adom-g14
+CATEGORIES=	games
+MASTER_SITES=	http://www.adom.de/adom/
+DISTFILES=	adom-099g14-elf.tar.gz
 
 ONLY_FOR_ARCHS=	i386
 
-NO_CDROM=		prevented by license
-NO_PACKAGE =	prevented by license
-
-MAINTAINER=		espie@cvs.openbsd.org
-AUTHOR= 			Thomas Biskup <rpg@saranxis.ruhr.de>
-
-MASTER_SITES=		http://www.adom.de/adom/
-DISTFILES=			adom-099g14-elf.tar.gz
-
 NO_BUILD=	binary port
+NO_CDROM=	"prevented by license"
+NO_PACKAGE=	"prevented by license"
 
-ADOM_DOC=${PREFIX}/share/doc/adom
+MAINTAINER=	espie@openbsd.org
+
+WRKSRC=		${WRKDIR}/adom
+
+ADOM_DOC=	${PREFIX}/share/doc/adom
 
 # cage adom into its specific group if you don't trust the binary
-ADOMOWN?=games
+ADOMOWN?=	games
 
 # can't be changed except by patching the binary
-HISCORE_DIR=/var/lib/adom
+HISCORE_DIR=	/var/lib/adom
 
 pre-fetch:
 	@${ECHO} "Your kernel must have COMPAT_LINUX (GENERIC does)"
