@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.261 2003/04/16 20:32:14 sturm Exp $
+# $OpenBSD: Makefile,v 1.262 2003/04/17 08:59:33 wilfried Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -155,6 +155,7 @@
      SUBDIR += plushs
      SUBDIR += poink
      SUBDIR += pop3gwd
+     SUBDIR += poptop
      SUBDIR += pork
      SUBDIR += pptp
      SUBDIR += proxy-suite
