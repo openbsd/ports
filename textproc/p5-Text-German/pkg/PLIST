@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/03 17:29:07 msf Exp $
+${P5SITE}/Text/
+${P5SITE}/Text/German/
+${P5SITE}/Text/German.pm
+${P5SITE}/Text/German.pod
+${P5SITE}/Text/German/Adjektiv.pm
+${P5SITE}/Text/German/Ausnahme.pm
+${P5SITE}/Text/German/Cache.pm
+${P5SITE}/Text/German/Endung.pm
+${P5SITE}/Text/German/Regel.pm
+${P5SITE}/Text/German/Util.pm
+${P5SITE}/Text/German/Verb.pm
+${P5SITE}/Text/German/Vorsilbe.pm
+@man man/man3p/Text::German.3p
