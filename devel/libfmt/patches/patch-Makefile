@@ -1,6 +1,19 @@
---- Makefile.orig	Thu Feb 13 16:04:39 2003
-+++ Makefile	Fri Feb 14 18:40:50 2003
-@@ -83,6 +83,7 @@ test: $(LIB) test.$O
+--- Makefile.orig	Thu Feb 13 08:04:39 2003
++++ Makefile	Sun Mar  2 13:57:31 2003
+@@ -10,7 +10,7 @@ OBJTYPE!=uname -m | sed 's;i.86;386;; s;
+ # the gnu rules will mess up bsd but not vice versa,
+ # hence the gnu rules come first.
+ 
+-include Make.$(SYSNAME)-$(OBJTYPE)
++include Make.$(SYSNAME)
+ 
+ PREFIX=/usr/local
+ 
+@@ -80,9 +80,11 @@ strtod.$O: nan.h
+ 
+ test: $(LIB) test.$O
+ 	$(CC) -o test test.$O $(LIB) -L$(PREFIX)/lib -lutf
++	./test
  
  $(LIB): $(OFILES)
  	$(AR) $(ARFLAGS) $(LIB) $(OFILES)
