@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/18 06:56:52 camield Exp $
+# $OpenBSD: Makefile,v 1.3 2000/09/18 07:40:26 camield Exp $
 
 DISTNAME=	djbdns-1.01
 HOMEPAGE=	http://cr.yp.to/djbdns.html
@@ -16,8 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 ALL_TARGET=	default
 INSTALL_TARGET=	setup check
 
-RUN_DEPENDS=	supervise:${PORTSDIR}/sysutils/daemontools \
-		tcpclient:${PORTSDIR}/net/ucspi-tcp
+RUN_DEPENDS=	supervise::sysutils/daemontools \
+		tcpclient::net/ucspi-tcp
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
