@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2002/10/28 19:53:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2002/12/12 07:24:38 pvalchev Exp $
 
 COMMENT=	"list information about open files"
 
@@ -27,27 +27,6 @@ CONFIGURE_ENV=	LSOF_CC="${CC}"
 
 SRCBALL_NAME=	${DISTNAME}_src
 WRKDIST=	${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
-
-.if ${MACHINE_ARCH} == "sparc"
-IS_INTERACTIVE=	Yes
-.if defined(SUN4) && ${SUN4:U} == YES
-CDEF=-DSUN4
-.elif defined(SUN4C) && ${SUN4C:U} == YES
-CDEF=-DSUN4C
-.elif defined(SUN4M) && ${SUN4M:U} == YES
-CDEF=-DSUN4M
-.endif
-MAKE_ENV=	CDEF="${CDEF}"
-.if !defined(CDEF)
-pre-build:
-	@echo
-	@echo "*** when building for a sparc you must specify one of"
-	@echo "***	SUN4=Yes, SUN4C=Yes, or SUN4M=Yes"
-	@echo "*** on the make command line"
-	@echo
-	exit 1;
-.endif
-.endif
 
 post-extract:
 	@(cd ${WRKDIST}/..; \
