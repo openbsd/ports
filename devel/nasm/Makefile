@@ -1,20 +1,16 @@
-# OpenBSD makefile for:	nasm
-# Version required:    0.97
-# Date created:        May 21 1998
-# Whom:                Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/22 01:41:14 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/08 18:39:46 marc Exp $
 #
 
 DISTNAME=	nasm-0.97
 CATEGORIES=	devel lang
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	devel/lang/assemblers
-HAS_CONFIGURE=
+
+RESTRICTED=	"license required if incorporated into commerical product"
 
 MAINTAINER=	angelos@openbsd.org
 
-MAN1=		nasm.1 ndisasm.1
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	devel/lang/assemblers
+HAS_CONFIGURE=
 
 do-install:
 	cd ${WRKSRC} && \
