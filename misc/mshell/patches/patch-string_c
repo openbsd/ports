@@ -1,10 +1,12 @@
-$OpenBSD: patch-string_c,v 1.1 2002/12/23 07:42:00 pvalchev Exp $
---- string.c.orig	Sun Dec 22 23:50:21 2002
-+++ string.c	Sun Dec 22 23:50:27 2002
-@@ -4,6 +4,17 @@
+$OpenBSD: patch-string_c,v 1.2 2004/01/02 22:12:55 espie Exp $
+--- string.c.orig	2004-01-02 23:06:35.000000000 +0100
++++ string.c	2004-01-02 23:07:59.000000000 +0100
+@@ -4,6 +4,19 @@
  #define strchr	index
  #endif
  
++char *strsave(char *);
++
 +char *
 +gets (char *s)
 +{
@@ -19,3 +21,11 @@ $OpenBSD: patch-string_c,v 1.1 2002/12/23 07:42:00 pvalchev Exp $
  
  /* function to find the position of sub_string in main_string 
   * ---------------------------------------------------------- */
+@@ -260,7 +273,6 @@ char *string;
+ 		/* if it has a multi-command delim, save rest for next time */
+ #define MULTI_CMD_DELIM ','
+ 		if (p = index(string, MULTI_CMD_DELIM)) {
+-			char *strsave();
+ 			struct inp_link *l;
+ 			*p++ = EOS;
+ 			if ((l=getnode(sizeof(*l))) && (l->input=strsave(p)))
