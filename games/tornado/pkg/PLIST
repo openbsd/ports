@@ -1,0 +1,54 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/27 06:07:37 jolan Exp $
+@group games
+@mode 2555
+bin/tornado
+@mode
+@group
+man/de/man6/tornado.6
+man/fr/man6/tornado.6
+man/it/man6/tornado.6
+man/man6/tornado.6
+man/nl/man6/tornado.6
+man/no/man6/tornado.6
+man/ru/man6/tornado.6
+share/doc/tornado/README
+share/examples/tornado/tornado.scores
+share/locale/de/LC_MESSAGES/tornado.mo
+share/locale/es/LC_MESSAGES/tornado.mo
+share/locale/fr/LC_MESSAGES/tornado.mo
+share/locale/it/LC_MESSAGES/tornado.mo
+share/locale/nl/LC_MESSAGES/tornado.mo
+share/locale/no/LC_MESSAGES/tornado.mo
+share/locale/pt/LC_MESSAGES/tornado.mo
+share/locale/ru/LC_MESSAGES/tornado.mo
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/pt/LC_MESSAGES
+@comment @dirrm share/locale/pt
+@comment @dirrm share/locale/no/LC_MESSAGES
+@comment @dirrm share/locale/no
+@comment @dirrm share/locale/nl/LC_MESSAGES
+@comment @dirrm share/locale/nl
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale
+@dirrm share/examples/tornado
+@dirrm share/doc/tornado
+@dirrm man/ru/man6
+@dirrm man/ru
+@dirrm man/no/man6
+@dirrm man/no
+@dirrm man/nl/man6
+@dirrm man/nl
+@dirrm man/it/man6
+@dirrm man/it
+@dirrm man/fr/man6
+@dirrm man/fr
+@dirrm man/de/man6
+@dirrm man/de

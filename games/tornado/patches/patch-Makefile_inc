@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile_inc,v 1.1.1.1 2003/11/27 06:07:37 jolan Exp $
+--- Makefile.inc.orig	2003-11-20 04:55:50.000000000 -0600
++++ Makefile.inc	2003-11-20 20:35:42.000000000 -0600
+@@ -1,9 +1,9 @@
+-CC = gcc
+-MAKE = make
++#CC = gcc
++#MAKE = make
+ LDFLAGS = -lncurses
+ OBJFILES = main.o draw.o erwin.o network.o scores.o
+-PREFIX = /usr/local
+-LOCALEPATH = /usr/local/share/locale
+-CFLAGS = -Wall -O2 -DPREFIX="\"$(PREFIX)\"" -DLOCALEPATH="\"$(LOCALEPATH)\""
++#PREFIX = /usr/local
++LOCALEPATH = ${PREFIX}/share/locale
++CFLAGS+= -Wall -DPREFIX="\"$(PREFIX)\"" -DLOCALEPATH="\"$(LOCALEPATH)\""
+ LOCALES = de
+ MAN = doc/man

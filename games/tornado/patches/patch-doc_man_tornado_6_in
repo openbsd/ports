@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_man_tornado_6_in,v 1.1.1.1 2003/11/27 06:07:37 jolan Exp $
+--- doc/man/tornado.6.in.orig	2003-11-20 05:00:47.000000000 -0600
++++ doc/man/tornado.6.in	2003-11-26 22:24:05.000000000 -0600
+@@ -92,9 +92,9 @@ PREFIX/man/man6/tornado.6
+ .P
+ /var/games/tornado.scores
+ .P
+-/usr/local/share/locale/de/LC_MESSAGES/tornado.mo
++PREFIX/share/locale/de/LC_MESSAGES/tornado.mo
+ .P
+-/usr/local/share/locale/fr/LC_MESSAGES/tornado.mo
++PREFIX/share/locale/fr/LC_MESSAGES/tornado.mo
+ .SH NOTES
+ When you run the game in network mode you should have the same game versions
+ on client and server side. Versions prior 1.0pre4 won't work at all due to
