@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/05 18:30:33 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/24 23:28:16 espie Exp $
 
 DISTNAME=	qmail-1.03
 CATEGORIES=	mail
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MAINTAINER=	cd@sentia.nl
 MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
@@ -20,7 +20,7 @@ ALL_TARGET=	default
 INSTALL_TARGET=	setup check
 IS_INTERACTIVE= "if qmail users/groups do not exist yet"
 
-RUN_DEPENDS=    tcpserver:net/ucspi-tcp
+RUN_DEPENDS=    tcpserver::net/ucspi-tcp
 
 SETUPBINARIES=	${WRKSRC}/dnsfq		${WRKSRC}/dnsip		\
 		${WRKSRC}/dnsptr	${WRKSRC}/hostname	\

@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.6 2000/03/05 18:30:31 espie Exp $
+#	$OpenBSD: Makefile,v 1.7 2000/03/24 23:28:14 espie Exp $
 
 BROKEN=		"sources no longer exist"
 
@@ -6,12 +6,12 @@ BROKEN=		"sources no longer exist"
 
 
 # If you want to be built with egcs-snapshot instead of in-tree, depend on that
-#BUILD_DEPENDS=	egcj:lang/egcs/snapshot
+#BUILD_DEPENDS=	egcj::lang/egcs/snapshot
 # In the end we want to use autoconf to regen configure after patching
-#BUILD_DEPENDS+=	autoconf:devel/autoconf
+#BUILD_DEPENDS+=	autoconf::devel/autoconf
 
 CATEGORIES=	lang
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MAINTAINER=	niklas@openbsd.org
 
 LICENSE_TYPE=		GPL

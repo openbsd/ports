@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/13 11:27:33 camield Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/24 23:28:15 espie Exp $
 
 DISTNAME=	fastforward-0.51
 HOMEPAGE=	http://cr.yp.to/fastforward.html
 CATEGORIES=	mail
+NEED_VERSION=	1.230
 MAINTAINER=	cd@sentia.nl
 
 MASTER_SITES=	http://cr.yp.to/software/ \
@@ -24,7 +25,7 @@ INSTALL_TARGET=	setup check
 # when package is created
 FAKE=   Yes
 
-RUN_DEPENDS=	${PREFIX}/bin/qmail-local:mail/qmail
+RUN_DEPENDS=	${PREFIX}/bin/qmail-local::mail/qmail
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc

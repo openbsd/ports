@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/05 18:30:44 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 23:28:35 espie Exp $
 
 DISTNAME=	catdoc-0.90b4
 CATEGORIES=	textproc
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.ice.ru/pub/vitus/
 
-RUN_DEPENDS=	wish8.0:x11/tk80
+RUN_DEPENDS=	wish8.0::x11/tk80
 
 GNU_CONFIGURE=	Yes
 

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:54 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 23:28:28 espie Exp $
 
 DISTNAME=	vtun-2.0
 CATEGORIES=	net
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	http://vtun.netpedia.net/ \
 		http://vtun.saol.com/
 
 
 MAINTAINER=	kevlo@openbsd.org
 
-LIB_DEPENDS=	lzo.1.0:archivers/lzo
+LIB_DEPENDS=	lzo.1.0::archivers/lzo
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

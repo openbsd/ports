@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/03/22 22:39:39 turan Exp $
+# $OpenBSD: Makefile,v 1.18 2000/03/24 23:28:24 espie Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 DISTNAME=	BitchX-1.0c16
@@ -8,12 +8,12 @@ PKGNAME=	bitchx-1.0c16-socks5
 PKGNAME=	bitchx-1.0c16
 .endif
 CATEGORIES=	net
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://bitchx.dimension6.com/pub/BitchX/source/
 
 .if defined(USE_SOCKS5) && ${USE_SOCKS5:U} == YES
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:security/socks5
+BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a::security/socks5
 .endif
 
 MAINTAINER=	brad@openbsd.org

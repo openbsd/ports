@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/05 18:30:32 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 23:28:15 espie Exp $
 
 DISTNAME=	ezmlm-0.53
 CATEGORIES=	mail
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
 		ftp://ftp.mira.net.au/unix/mail/qmail/ \
@@ -20,7 +20,7 @@ NO_CONFIGURE=	Yes
 ALL_TARGET=	default man
 INSTALL_TARGET=	setup
 
-RUN_DEPENDS=	${QMAILDIR}/bin/qmail-local:mail/qmail
+RUN_DEPENDS=	${QMAILDIR}/bin/qmail-local::mail/qmail
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc

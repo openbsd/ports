@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/16 22:32:35 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/24 23:28:06 espie Exp $
 
 VERS=		0.7.7
 PKGNAME=	abiword-${VERS}
 CATEGORIES=	editors
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	http://www.abisource.com/downloads/Version-${VERS}/lf/
 DIST_SUBDIR=	${PKGNAME}
 
@@ -19,10 +19,10 @@ DISTFILES=	abi-${VERS}${EXTRACT_SUFX} \
 		unixfonts-${VERS}${EXTRACT_SUFX} \
 		wv-${VERS}${EXTRACT_SUFX}
 
-BUILD_DEPENDS=	${PREFIX}/lib/libexpat.a:textproc/expat
-LIB_DEPENDS=	gtk.1.2:x11/gtk+ \
-		png.1.3:graphics/png
-RUN_DEPENDS=	ispell:textproc/ispell
+BUILD_DEPENDS=	${PREFIX}/lib/libexpat.a::textproc/expat
+LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
+		png.1.3::graphics/png
+RUN_DEPENDS=	ispell::textproc/ispell
 
 WRKDIST=		${WRKDIR}/abi-${VERS}
 

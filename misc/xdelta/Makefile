@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/05 18:30:37 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/24 23:28:24 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1998/09/03 00:05:11 jmacd Exp $
 
 DISTNAME=	xdelta-1.1.1
 CATEGORIES=	misc
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.xcf.berkeley.edu/pub/xdelta/
 
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	gdbm.2:databases/gdbm \
-		glib.1.2:devel/glib
+LIB_DEPENDS=	gdbm.2::databases/gdbm \
+		glib.1.2::devel/glib
 
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

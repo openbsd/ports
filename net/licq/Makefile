@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/05 18:30:38 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/24 23:28:26 espie Exp $
 
 DISTNAME=	licq-0.61
 CATEGORIES=	net
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	http://licq.wibble.net/
 
 MAINTAINER=	ports@openbsd.org
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	qt.1.44:x11/qt
+LIB_DEPENDS=	qt.1.44::x11/qt
 
 USE_GMAKE=	Yes
 GNU_CONFIGURE=	Yes

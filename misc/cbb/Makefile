@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/19 16:43:41 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 23:28:22 espie Exp $
 #
 
 DISTNAME=	cbb-0.73
 CATEGORIES=	misc tk80
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -16,9 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.me.umn.edu/pub/finance/ \
 		ftp://ftp.fifi.org/pub/cbb/
 
-LIB_DEPENDS=    tk80.1.:x11/tk80
+LIB_DEPENDS=    tk80.1.::x11/tk80
 
-RUN_DEPENDS=	wish8.0:x11/tk80 \
+RUN_DEPENDS=	wish8.0::x11/tk80 \
 		plan:misc/plan
 
 NO_BUILD=       Yes

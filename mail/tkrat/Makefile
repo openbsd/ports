@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/17 20:14:01 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/24 23:28:18 espie Exp $
 
 DISTNAME=	tkrat-2.0b8
 CATEGORIES=	mail x11
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	http://www.dtek.chalmers.se/~maf/ratatosk/ \
 		ftp://ftp.md.chalmers.se/pub/tkrat/ \
 		ftp://ftp.sunet.se/pub/unix/mail/tkrat/
 
-LIB_DEPENDS=	tcl82.1.3:lang/tcl82 \
-		tk82.1.3:x11/tk82	
+LIB_DEPENDS=	tcl82.1.3::lang/tcl82 \
+		tk82.1.3::x11/tk82	
 
 MAINTAINER=	riks@wni.com
 

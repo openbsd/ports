@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/05 18:30:42 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/24 23:28:33 espie Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
 CATEGORIES=	security
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.at.pgpi.com/pub/pgpi/5.0/unix/ \
 		ftp://ftp.cz.pgpi.com/pub/pgpi/5.0/unix/ \
@@ -28,7 +28,7 @@ USE_AUTOCONF=	Yes
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
-LIB_DEPENDS=	rsaref.2:security/rsaref
+LIB_DEPENDS=	rsaref.2::security/rsaref
 CONFIGURE_ARGS=	--with-rsaref
 .endif
 

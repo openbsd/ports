@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/23 23:09:02 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/24 23:28:34 espie Exp $
 
 BROKEN=	depend xview is broken
 
 DISTNAME=	contool-3.3a
 CATEGORIES=	sysutils
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.kfu.com/pub/
 
 MAINTAINER=		ian@openbsd.org
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	xview.3.:x11/xview-lib
+LIB_DEPENDS=	xview.3.::x11/xview-lib
 
 NO_CDROM=	"source code cannot be sold, nor can you incorporate the source code into a product which is subsequently sold"
 WRKDIST=	${WRKDIR}

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/05 18:30:35 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 23:28:20 espie Exp $
 
 BROKEN=		dependency mbone/wbd is also broken
 
 DISTNAME=       relate
 DISTFILES=	relate-2.0.tar.gz
 CATEGORIES=	mbone
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/relate-ui/2.0/
 MAINTAINER=	angelos@openbsd.org
 
@@ -15,13 +15,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	tcl80:lang/tcl80 \
-		tk80:x11/tk80 \
+LIB_DEPENDS=	tcl80::lang/tcl80 \
+		tk80::x11/tk80 \
 
-RUN_DEPENDS=	nte:mbone/nte \
-		vic:mbone/vic \
-		wbd:mbone/wbd \
-		rat:mbone/rat
+RUN_DEPENDS=	nte::mbone/nte \
+		vic::mbone/vic \
+		wbd::mbone/wbd \
+		rat::mbone/rat
 
 USE_GMAKE=	Yes
 MAKE_FILE=	makefile

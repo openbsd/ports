@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2000/03/12 19:59:49 jasoni Exp $
+# $OpenBSD: Makefile,v 1.26 2000/03/24 23:28:41 espie Exp $
 
 DISTNAME=	WindowMaker-0.61.1
 PKGNAME=	windowmaker-0.61.1
 CATEGORIES=	x11
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR= beta/srcs
 DATAFILES=	WindowMaker-extra-0.1.tar.gz
@@ -16,11 +16,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-LIB_DEPENDS=	PropList.2:devel/libproplist \
-		jpeg.62:graphics/jpeg \
-		tiff.35:graphics/tiff \
-		png.1.3:graphics/png \
-		gif.4.1:graphics/giflib
+LIB_DEPENDS=	PropList.2::devel/libproplist \
+		jpeg.62::graphics/jpeg \
+		tiff.35::graphics/tiff \
+		png.1.3::graphics/png \
+		gif.4.1::graphics/giflib
 
 GNU_CONFIGURE=	Yes
 FAKE=		Yes

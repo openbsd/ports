@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2000/03/24 22:11:45 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/03/24 23:28:11 espie Exp $
 
 DISTNAME=	tiff-v3.5.4
 PKGNAME=	tiff-3.5.4
 CATEGORIES=	graphics
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	http://www.libtiff.org/
 
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=    jpeg.62:graphics/jpeg
+LIB_DEPENDS=    jpeg.62::graphics/jpeg
 
 FAKE=	Yes
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2000/03/05 18:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2000/03/24 23:28:07 espie Exp $
 
 DISTNAME=	vim-5.6
 DIST_SUBDIR=	vim
 CATEGORIES=	editors
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
 		ftp://ftp.oce.nl/pub/vim/unix/  \
@@ -53,7 +53,7 @@ CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
 .elif defined(USE_ATHENA) && ${USE_ATHENA:U} == YES
 CONFIGURE_ARGS+=--enable-gui="athena"
 .else
-LIB_DEPENDS=	gtk.1.2:x11/gtk+
+LIB_DEPENDS=	gtk.1.2::x11/gtk+
 CONFIGURE_ARGS+=--enable-gui="gtk" 
 .endif
 .endif

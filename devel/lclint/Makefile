@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2000/03/12 01:52:45 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/03/24 23:28:05 espie Exp $
 
 DISTNAME=	lclint-2.4b
 CATEGORIES=	devel
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.sds.lcs.mit.edu/pub/lclint/
 
 DIST_SUBDIR=	lclint
@@ -25,7 +25,7 @@ BUGS=		lclint-bug@sds.lcs.mit.edu
 HOMEPAGE=	http://lclint.cs.virginia.edu/
 
 # Has to use bison because lclint uses pure parsers
-BUILD_DEPENDS=	bison:devel/bison
+BUILD_DEPENDS=	bison::devel/bison
 
 USE_GMAKE=	Yes
 HAS_CONFIGURE=	Yes

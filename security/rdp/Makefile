@@ -3,12 +3,12 @@
 # Date created:		25 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.4 2000/03/23 05:15:35 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/24 23:28:33 espie Exp $
 
 PKGNAME=	rdp-1.0
 
 CATEGORIES=	security
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 
 MAINTAINER=	dugsong@monkey.org
 
@@ -21,7 +21,7 @@ DISTNAME=	rdp
 
 MASTER_SITES=	http://www.l0pht.com/advisories/
 
-BUILD_DEPENDS=	${PREFIX}/lib/libnet.a:net/libnet
+BUILD_DEPENDS=	${PREFIX}/lib/libnet.a::net/libnet
 
 WRKDIST=	${WRKDIR}
 

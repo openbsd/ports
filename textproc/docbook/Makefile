@@ -3,12 +3,12 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/03/24 16:00:24 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 23:28:35 espie Exp $
 #
 
 DISTNAME=	docbook-3.0
 CATEGORIES=	textproc
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.ora.com/pub/davenport/
 DISTFILES=	docbk241.tar.Z docbk30.tar.Z
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no explict license"
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	${ISOCAT}:textproc/iso8879
+RUN_DEPENDS=	${ISOCAT}::textproc/iso8879
 
 NO_MTREE=       Yes
 EXTRACT_ONLY=	# empty

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/05 18:30:43 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 23:28:34 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	tcplist-2.2
 CATEGORIES=	sysutils net
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/jdd/tcplist/
 EXTRACT_SUFX=	.shar
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	lsof:sysutils/lsof
+RUN_DEPENDS=	lsof::sysutils/lsof
 
 WRKDIST=	${WRKDIR}
 EXTRACT_CMD=	cat

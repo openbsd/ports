@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2000/03/05 18:30:23 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2000/03/24 23:28:04 espie Exp $
 
 BROKEN=		installs files automatically in /etc
 
 PKGNAME=	minicom-1.82.1
 DISTNAME=	${PKGNAME}.src
 CATEGORIES=	comms
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 
 MAINTAINER=     form@openbsd.org
 
@@ -20,8 +20,8 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
 
 MASTER_SITE_SUBDIR=     apps/serialcomm/dialout
 
-RUN_DEPENDS=	kermit:comms/kermit
-RUN_DEPENDS+=	lrz:comms/lrzsz
+RUN_DEPENDS=	kermit::comms/kermit
+RUN_DEPENDS+=	lrz::comms/lrzsz
 
 WRKDIST=		${WRKDIR}/${PKGNAME}/src
 

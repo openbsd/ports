@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/19 00:24:20 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 23:28:30 espie Exp $
 # Original from:	Andreas Klemm <andreas@klemm.gtn.com>
 
 DISTNAME=	ghostscript-5.50
 CATEGORIES=	print
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 
 DIR=		gnu/gs550
 
@@ -32,11 +32,11 @@ MAINTAINER=	ports@openbsd.org
 JPEGDIR=graphics/jpeg
 PNGDIR=graphics/png
 
-BUILD_DEPENDS=	/nonexistent:${JPEGDIR}:patch \
-		/nonexistent:${PNGDIR}:patch \
-		unzip:archivers/unzip \
+BUILD_DEPENDS=	/nonexistent::${JPEGDIR}:patch \
+		/nonexistent::${PNGDIR}:patch \
+		unzip::archivers/unzip \
 
-LIB_DEPENDS=	png.1.3:${PNGDIR}
+LIB_DEPENDS=	png.1.3::${PNGDIR}
 
 EXTRACT_ONLY=	${GS_SOURCES}
 WRKDIST=	${WRKDIR}/gs5.50

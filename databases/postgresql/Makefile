@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2000/03/05 18:30:24 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2000/03/24 23:28:04 espie Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 DISTNAME=	postgresql-6.5.3
 CATEGORIES=	databases
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 
 MAINTAINER=	form@OpenBSD.ORG
 
@@ -64,7 +64,7 @@ MASTER_SITES=	ftp://ftp.postgresql.org/pub/ \
 TCL_INCDIR=	${LOCALBASE}/include/tcl8.0
 TK_INCDIR=	${LOCALBASE}/include/tk8.0
 MAKE_ENV=	USE_TCL=true TCL_INCDIR=${TCL_INCDIR} TK_INCDIR=${TK_INCDIR}
-LIB_DEPENDS=	tcl80:lang/tcl80 tk80:x11/tk80
+LIB_DEPENDS=	tcl80::lang/tcl80 tk80::x11/tk80
 WITH_TCL=	--with-tcl --with-tclconfig="${LOCALBASE}/lib/tcl8.0 ${LOCALBASE}/lib/tk8.0"
 PKGNAME=	${DISTNAME}-tcl
 .else

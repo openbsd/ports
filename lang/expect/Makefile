@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2000/03/24 22:43:16 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2000/03/24 23:28:13 espie Exp $
 
 DISTNAME=	expect-5.30
 CATEGORIES=	lang
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	http://expect.nist.gov/old/
 
 MAINTAINER=	niklas@openbsd.org
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	tk80.1.5:x11/tk80
+LIB_DEPENDS=	tk80.1.5::x11/tk80
 
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	Yes

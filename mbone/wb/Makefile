@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/19 16:43:41 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 23:28:21 espie Exp $
 #
 
 DISTNAME=       wb-1.59
 CATEGORIES=	mbone
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=   ftp://ftp.ee.lbl.gov/conferencing/wb/
 DISTFILES=      i386-wb-1.59.tar.Z
 ONLY_FOR_ARCHS=	i386
@@ -21,7 +21,7 @@ NO_BUILD=	Yes
 USE_X11=	Yes
 
 # XXX ghostscript, ghostscript3, ghostscript4 or ghostscript5 will all do.
-RUN_DEPENDS=	gs:print/ghostscript/gnu
+RUN_DEPENDS=	gs::print/ghostscript/gnu
 
 .if !defined(NO_WARNINGS)
 pre-fetch:

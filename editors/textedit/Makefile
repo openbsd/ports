@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/23 23:09:02 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/24 23:28:07 espie Exp $
 
 BROKEN=	depend xview is broken
 
 DISTNAME=	textedit
 PKGNAME=	textedit-1.0
 CATEGORIES=	editors
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 
 MAINTAINER=	ian@OpenBSD.ORG
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	"No license information"
 
 MASTER_SITES=	http://www.darwinsys.com/freeware/
 
-LIB_DEPENDS=    xview.3:x11/xview-lib
+LIB_DEPENDS=    xview.3::x11/xview-lib
 
 USE_IMAKE=	Yes
 

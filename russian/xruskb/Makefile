@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2000/03/12 13:20:41 form Exp $
+# $OpenBSD: Makefile,v 1.16 2000/03/24 23:28:32 espie Exp $
 
 DISTNAME=	xruskb-1.13.0
 CATEGORIES=	russian x11
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/X11/
 
 MAINTAINER=	form@openbsd.org
@@ -18,7 +18,7 @@ GNU_CONFIGURE=	Yes
 
 .if defined(USE_MOTIF) && ${USE_MOTIF:U} == YES
 CONFIGURE_ARGS=	--with-motif --without-Xaw
-LIB_DEPENDS=	Xm:x11/lesstif
+LIB_DEPENDS=	Xm::x11/lesstif
 .else
 CONFIGURE_ARGS=	--without-motif --with-Xaw
 .endif

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/05 18:30:28 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/24 23:28:08 espie Exp $
 
 DISTNAME=	fnlib-0.5
 CATEGORIES=    	graphics
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://beaver.its.vu.edu.au/pub/enlightenment/enlightenment/libs/ \
 		http://mirror.nucba.ac.jp/mirror/enlightenment/enlightenment/libs/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/fnlib/ \
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	Imlib.19:graphics/imlib
+LIB_DEPENDS=	Imlib.19::graphics/imlib
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2000/03/05 18:30:25 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/03/24 23:28:05 espie Exp $
 
 DISTNAME=	id-utils-3.2d
 CATEGORIES=	devel
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 
 MAINTAINER=	ports@OpenBSD.ORG
 
@@ -21,12 +21,12 @@ PKGNAME=${DISTNAME}
 .if defined(WITHOUT_EMACS)
 PKGNAME:=${PKGNAME}-noemacs
 .else
-BUILD_DEPENDS+=	emacs:editors/emacs
+BUILD_DEPENDS+=	emacs::editors/emacs
 .endif
 .if defined(WITHOUT_XEMACS)
 PKGNAME:=${PKGNAME}-noxemacs
 .else
-BUILD_DEPENDS+=	xemacs:editors/xemacs20
+BUILD_DEPENDS+=	xemacs::editors/xemacs20
 .endif
 PLIST=${WRKBUILD}/PLIST
 

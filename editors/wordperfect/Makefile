@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/05 18:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 23:28:07 espie Exp $
 
 PKGNAME=	wordperfect-8.0
 CATEGORIES=     editors
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 
 MAINTAINER=	dugsong@monkey.org
 
@@ -19,7 +19,7 @@ DISTNAME=	WordPerfect
 NO_CDROM=	"LIC: redistribution not allowed"
 MIRROR_DISTFILE=no
 
-RUN_DEPENDS=    /emul/linux/lib/libc.so.5:emulators/linux_lib
+RUN_DEPENDS=    /emul/linux/lib/libc.so.5::emulators/linux_lib
 
 ONLY_FOR_ARCHS=	i386
 

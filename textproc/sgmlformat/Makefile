@@ -4,12 +4,12 @@
 # Whom:			jfieber
 #
 # $FreeBSD: Makefile,v 1.9 1998/02/21 21:59:37 jfieber Exp $
-# $OpenBSD: Makefile,v 1.4 2000/03/05 18:30:44 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/24 23:28:36 espie Exp $
 #
 
 DISTNAME=	sgmlformat-1.6
 CATEGORIES=	textproc print
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://fallout.campusview.indiana.edu/pub/sgml/
 
 MAINTAINER=	matthieu@laas.fr
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	nsgmls:textproc/jade
-RUN_DEPENDS+=	${PREFIX}/share/sgml/linuxdoc:textproc/linuxdoc 
+RUN_DEPENDS=	nsgmls::textproc/jade
+RUN_DEPENDS+=	${PREFIX}/share/sgml/linuxdoc::textproc/linuxdoc 
 
 .include <bsd.port.mk>

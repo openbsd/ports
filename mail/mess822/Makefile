@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/14 08:17:39 camield Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 23:28:16 espie Exp $
 
 DISTNAME=	mess822-0.58
 HOMEPAGE=	http://cr.yp.to/mess822.html
 CATEGORIES=	mail
+NEED_VERSION=	1.230
 MAINTAINER=	cd@sentia.nl
 
 MASTER_SITES=	http://cr.yp.to/software/ \
@@ -22,7 +23,7 @@ INSTALL_TARGET=	setup check
 
 FAKE=	Yes
 
-RUN_DEPENDS=	${QMAILDIR}/bin/qmail-local:mail/qmail
+RUN_DEPENDS=	${QMAILDIR}/bin/qmail-local::mail/qmail
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc

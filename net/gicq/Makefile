@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/19 16:59:10 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 23:28:25 espie Exp $
 # $FreeBSD: Makefile,v 1.6 1999/04/06 12:02:41 flathill Exp $
 
 DISTNAME=	gicq-0.33
 CATEGORIES=	net
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/
 
 MAINTAINER=	brad@openbsd.org
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	gtk.1.2:x11/gtk+ \
-		icq.0.3:devel/libicq
+LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
+		icq.0.3::devel/libicq
 
 USE_X11=	Yes
 GNU_CONFIGURE=	Yes

@@ -1,17 +1,17 @@
 #
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
-# $OpenBSD: Makefile,v 1.4 2000/03/05 18:30:38 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/24 23:28:26 espie Exp $
 #
 
 DISTNAME=	nam-src-1.0a7
 PKGNAME=	nam-1.0a7
 CATEGORIES=	net
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/vint/
 
 MAINTAINER=	angelos@openbsd.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/libtclcl.a:devel/tclcl
+BUILD_DEPENDS=	${PREFIX}/lib/libtclcl.a::devel/tclcl
 
 WRKDIST=		${WRKDIR}/${PKGNAME}
 

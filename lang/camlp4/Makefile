@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/05 18:30:30 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 23:28:12 espie Exp $
 
 BROKEN=		does not handle v2.04 of its dependency ocamlc.  Also need to make sure it works with a stdin of null
 
 DISTNAME=	camlp4
 PKGNAME=	camlp4-2.04
 CATEGORIES=	lang
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/Daniel.de_Rauglaudre/Camlp4/
 
 MAINTAINER=	angelos@openbsd.org
 
-BUILD_DEPENDS=	ocamlc:lang/ocaml
+BUILD_DEPENDS=	ocamlc::lang/ocaml
 
 IS_INTERACTIVE=	Yes
 NO_PACKAGE=	interactive port

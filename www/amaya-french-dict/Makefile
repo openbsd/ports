@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/23 19:01:13 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/24 23:28:36 espie Exp $
 
 DISTNAME=		French
 DIST_SUBDIR=		amaya
 PKGNAME=		amaya-french-dict
 CATEGORIES=     	www
-NEED_VERSION=		1.223
+NEED_VERSION=		 1.230
 
 MAINTAINER=		rohee@openbsd.org
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ftp.w3.org/pub/amaya/ \
 			ftp://ftp-eu.w3.org/pub/amaya/
 
-RUN_DEPENDS=		${PREFIX}/bin/amaya:www/amaya
+RUN_DEPENDS=		${PREFIX}/bin/amaya::www/amaya
 
 NO_PATCH=		Yes
 NO_CONFIGURE=		Yes

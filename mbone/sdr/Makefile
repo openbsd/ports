@@ -1,8 +1,8 @@
-#   $OpenBSD: Makefile,v 1.10 2000/03/05 18:30:35 espie Exp $
+#   $OpenBSD: Makefile,v 1.11 2000/03/24 23:28:20 espie Exp $
 
 DISTNAME=	sdr-2.7e
 CATEGORIES=	mbone
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/sdr/2.7e/
 
 MAINTAINER=	angelos@openbsd.org
@@ -13,8 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	tcl80.1.5:lang/tcl80 \
-		tk80.1.5:x11/tk80
+LIB_DEPENDS=	tcl80.1.5::lang/tcl80 \
+		tk80.1.5::x11/tk80
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2000/03/05 18:30:24 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/03/24 23:28:05 espie Exp $
 
 DISTNAME=	ORBit-0.5.0
 CATEGORIES=	devel
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/ORBit
 
 
-LIB_DEPENDS=	intl:devel/gettext \
-		glib.1.2:devel/glib
+LIB_DEPENDS=	intl::devel/gettext \
+		glib.1.2::devel/glib
 
 MAINTAINER=	rohee@openbsd.org
 

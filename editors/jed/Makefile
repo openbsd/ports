@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/05 18:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/24 23:28:06 espie Exp $
 
 DISTNAME=       jed-B0.99-10
 PKGNAME=        jed-0.99.10
 CATEGORIES=	editors
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/jed/v0.99/
 
-LIB_DEPENDS=	slang.13:devel/libslang
+LIB_DEPENDS=	slang.13::devel/libslang
 
 MAINTAINER=     ports@openbsd.org
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/19 16:04:20 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 23:28:12 espie Exp $
 #
 
 DISTNAME=	kterm-6.2.0
 PKGNAME=	ja-kterm-6.2.0
 CATEGORIES=	japanese x11
-NEED_VERSION=	1.175
+NEED_VERSION=	 1.230
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
@@ -27,7 +27,7 @@ FAKE=		Yes
 XAW3D?=		No
 .if ${XAW3D:U} == "YES"
 PKGNAME:= ${PKGNAME}-Xaw3d
-LIB_DEPENDS=	Xaw3d.6.1:x11/Xaw3d
+LIB_DEPENDS=	Xaw3d.6.1::x11/Xaw3d
 MAKE_ENV=EXTRA_DEFINES=-DKTERM_XAW3D
 .endif
 

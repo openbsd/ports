@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2000/03/19 16:43:41 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/03/24 23:28:29 espie Exp $
 #
 
 DISTNAME=	a2ps-4.12g
 PKGNAME=	a2ps
 CATEGORIES=	print
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 
 MAINTAINER=	weingart@OpenBSD.org
 
@@ -18,16 +18,16 @@ MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/
 
 # Note: You can get by without these
 #
-BUILD_DEPENDS=	gv:print/gv \
-		dvips:print/teTeX/base \
-		ps2pdf:print/ghostscript/gnu \
-		psselect:print/psutils \
-		convert:graphics/ImageMagick
-RUN_DEPENDS=	gv:print/gv \
-		dvips:print/teTeX/base \
-		ps2pdf:print/ghostscript/gnu \
-		psselect:print/psutils \
-		convert:graphics/ImageMagick
+BUILD_DEPENDS=	gv::print/gv \
+		dvips::print/teTeX/base \
+		ps2pdf::print/ghostscript/gnu \
+		psselect::print/psutils \
+		convert::graphics/ImageMagick
+RUN_DEPENDS=	gv::print/gv \
+		dvips::print/teTeX/base \
+		ps2pdf::print/ghostscript/gnu \
+		psselect::print/psutils \
+		convert::graphics/ImageMagick
 
 IS_INTERACTIVE=		Yes
 NO_PACKAGE=		interactive port

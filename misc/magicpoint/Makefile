@@ -3,15 +3,15 @@
 # Date created:		July 13 1999
 # Whom:			Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.7 2000/03/05 18:30:36 espie Exp $
-# $OpenBSD: Makefile,v 1.7 2000/03/05 18:30:36 espie Exp $
+# $Id: Makefile,v 1.8 2000/03/24 23:28:23 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 23:28:23 espie Exp $
 #
 
 DISTNAME=	magicpoint-1.05a
 # question is for localized (i.e. Japanese) version
 PKGNAME?=	magicpoint-1.05a
 CATEGORIES=	misc
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
 MAINTAINER=	angelos@openbsd.org
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 # plus sign is for localized (i.e. Japanese) version
-LIB_DEPENDS+=	ttf.1:print/freetype
+LIB_DEPENDS+=	ttf.1::print/freetype
 
 USE_IMAKE=	Yes
 GNU_CONFIGURE=	Yes

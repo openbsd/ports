@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2000/03/19 00:58:06 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/03/24 23:28:10 espie Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 DISTNAME=	imlib-1.9.8
 CATEGORIES=	graphics
-NEED_VERSION=	1.227
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://beaver.its.vu.edu.au/pub/enlightenment/enlightenment/libs/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/imlib/ \
 		ftp://ftp.squish.org/pub/enlightenment/imlib/
@@ -17,16 +17,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	intl:devel/gettext \
-		gtk.1.2:x11/gtk+ \
-		gif.4.1:graphics/giflib \
-		jpeg.62:graphics/jpeg \
-		png.1.3:graphics/png \
-		tiff.35:graphics/tiff
-BUILD_DEPENDS=	convert:graphics/ImageMagick \
-		giftopnm:graphics/netpbm
-RUN_DEPENDS=	convert:graphics/ImageMagick \
-		giftopnm:graphics/netpbm
+LIB_DEPENDS=	intl::devel/gettext \
+		gtk.1.2::x11/gtk+ \
+		gif.4.1::graphics/giflib \
+		jpeg.62::graphics/jpeg \
+		png.1.3::graphics/png \
+		tiff.35::graphics/tiff
+BUILD_DEPENDS=	convert::graphics/ImageMagick \
+		giftopnm::graphics/netpbm
+RUN_DEPENDS=	convert::graphics/ImageMagick \
+		giftopnm::graphics/netpbm
 
 USE_GMAKE=	Yes
 USE_X11=	Yes

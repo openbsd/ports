@@ -1,12 +1,12 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.6 2000/03/07 16:59:21 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/24 23:28:13 espie Exp $
 
 VERSION=9.3.2
 DISTNAME=icon_lib-${VERSION}
 DIST_SUBDIR=icon/${VERSION}
 
 CATEGORIES=lang
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 
 MAINTAINER=espie@openbsd.org
 LICENSE_TYPE=PD
@@ -28,8 +28,8 @@ FAKE=		Yes
 
 
 
-BUILD_DEPENDS=${PREFIX}/bin/icont:lang/icon/interp
-RUN_DEPENDS=${PREFIX}/bin/iconx:lang/icon/interp
+BUILD_DEPENDS=${PREFIX}/bin/icont::lang/icon/interp
+RUN_DEPENDS=${PREFIX}/bin/iconx::lang/icon/interp
 
 # temporary values for building programs
 IPATH=${WRKSRC}/gprocs ${WRKSRC}/procs

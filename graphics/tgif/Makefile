@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/05 22:29:31 jakob Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 23:28:10 espie Exp $
 
 DISTNAME=	tgif-4.1.27
 CATEGORIES=	graphics
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		ftp://ftp.cs.ucla.edu/pub/tgif/
 
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_FTP=	yes
 
 MAINTAINER=	jakob@openbsd.org
 
-RUN_DEPENDS=	giftopnm:graphics/netpbm
+RUN_DEPENDS=	giftopnm::graphics/netpbm
 
 USE_IMAKE=	Yes
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2000/03/05 18:30:42 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/03/24 23:28:33 espie Exp $
 
 DISTNAME=       pgp263is
 PKGNAME=	pgp-2.6.3
 CATEGORIES=	security
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	http://the.wiretapped.net/security/cryptography/pgp/2.x/src/ \
 		ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
 		ftp://ftp.dk.pgpi.com/mirrors/ftp.ifi.uio.no/pub/pgp/2.x/src/
@@ -21,7 +21,7 @@ CFLAGS+=-DUNIX -DPORTABLE -DMERIT -DIDEA32 -DMAX_NAMELEN=255 \
 	-DPGP_DOC_DIR=\\\"${PGP_DOC_DIR}\\\"
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
-LIB_DEPENDS=	rsaref.2:security/rsaref
+LIB_DEPENDS=	rsaref.2::security/rsaref
 RSAOBJS= rsaglue2.o
 RSAINCDIR= -I${LOCALBASE}/include
 RSALIBS= -L${LOCALBASE}/lib -lrsaref

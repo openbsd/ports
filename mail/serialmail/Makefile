@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/05 18:30:33 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/24 23:28:18 espie Exp $
 
 DISTNAME=	serialmail-0.75
 CATEGORIES=	mail
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MAINTAINER=	cd@sentia.nl
 MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
@@ -19,8 +19,8 @@ NO_CONFIGURE=	Yes
 ALL_TARGET=	default
 INSTALL_TARGET=	setup check
 
-RUN_DEPENDS=	tcpclient:net/ucspi-tcp
-RUN_DEPENDS+=	${QMAILDIR}/bin/qmail-local:mail/qmail
+RUN_DEPENDS=	tcpclient::net/ucspi-tcp
+RUN_DEPENDS+=	${QMAILDIR}/bin/qmail-local::mail/qmail
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc

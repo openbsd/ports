@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2000/03/24 17:57:02 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/24 23:28:30 espie Exp $
 
 DISTNAME=	ghostscript-6.01
 CATEGORIES=	print lang
-NEED_VERSION=	1.218
+NEED_VERSION=	 1.230
 
 DIR=		aladdin/gs601
 MASTER_SITES=	${GS_SITES}
@@ -31,11 +31,11 @@ MAINTAINER=	ports@openbsd.org
 JPEGDIR=graphics/jpeg
 PNGDIR=graphics/png
 
-BUILD_DEPENDS=	/nonexistent:${JPEGDIR}:patch \
-		/nonexistent:${PNGDIR}:patch \
-		unzip:archivers/unzip \
+BUILD_DEPENDS=	/nonexistent::${JPEGDIR}:patch \
+		/nonexistent::${PNGDIR}:patch \
+		unzip::archivers/unzip \
 
-LIB_DEPENDS=	png.1.3:${PNGDIR}
+LIB_DEPENDS=	png.1.3::${PNGDIR}
 
 EXTRACT_ONLY=	${GS_SOURCES}
 WRKDIST=	${WRKDIR}/gs6.01

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/05 18:30:47 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/24 23:28:41 espie Exp $
 
 DISTNAME=	wterm-6.2.6
 CATEGORIES=	x11
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	http://wm.current.nu/files/
 
 MAINTAINER=	brad@openbsd.org
@@ -13,8 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	wmaker:x11/windowmaker
-RUN_DEPENDS=	wmaker:x11/windowmaker
+BUILD_DEPENDS=	wmaker::x11/windowmaker
+RUN_DEPENDS=	wmaker::x11/windowmaker
 
 USE_X11=	Yes
 GNU_CONFIGURE=	Yes

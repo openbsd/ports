@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/19 17:45:18 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/24 23:28:07 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 DISTNAME=	nedit-5.0.2
 CATEGORIES=	editors x11
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 
 MAINTAINER=	ports@openbsd.org
 
@@ -22,7 +22,7 @@ DISTFILES=	nedit_source.tar.gz nedit.app-defaults
 EXTRACT_ONLY=	nedit_source.tar.gz
 WRKDIST=	${WRKDIR}
 
-LIB_DEPENDS=	Xm.1.:x11/lesstif
+LIB_DEPENDS=	Xm.1.::x11/lesstif
 
 USE_X11=	Yes
 

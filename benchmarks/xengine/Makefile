@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/12 15:11:09 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/24 23:28:03 espie Exp $
 
 PKGNAME=	xengine-1.0.1
 CATEGORIES=	benchmarks x11
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/comp.sources.x/volume09/xengine/
 DISTFILES=	part01.z patch1.z
 
@@ -19,7 +19,7 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	| ${SETENV} gunshar -d $(WRKDIR)
 PATCH_DIST_STRIP=	-p1	# no ${PATCHFILES} but used below
 
-BUILD_DEPENDS=	gunshar:archivers/gshar+gunshar
+BUILD_DEPENDS=	gunshar::archivers/gshar+gunshar
 
 WRKDIST=	${WRKDIR}
 USE_IMAKE=	yes

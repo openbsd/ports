@@ -3,12 +3,12 @@
 # Date created:        23 August 1999
 # Whom:                Alex Varju <varju@webct.com>
 #
-# $OpenBSD: Makefile,v 1.5 2000/03/14 00:24:55 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/24 23:28:03 espie Exp $
 # $FreeBSD: ports/palm/jpilot/Makefile,v 1.6 1999/11/11 22:40:39 sumikawa Exp $
 
 DISTNAME=	jpilot-0.96
 CATEGORIES=	comms
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	http://jpilot.linuxbox.com/
 
 MAINTAINER=	evan.cordes@UMICH.EDU
@@ -18,8 +18,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	pisock.3:comms/pilot-link \
-		gtk.1.2:x11/gtk+
+LIB_DEPENDS=	pisock.3::comms/pilot-link \
+		gtk.1.2::x11/gtk+
 
 USE_AUTOCONF=	yes
 

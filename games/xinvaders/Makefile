@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/16 23:47:53 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/24 23:28:08 espie Exp $
 #
 
 DISTNAME=       xinvaders
 DIST_SUBDIR=	xinvaders
 PKGNAME=	xinvaders-2.0
 CATEGORIES=	games
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 
 MAINTAINER=	pjanzen@openbsd.org
 
@@ -21,7 +21,7 @@ EXTRACT_CMD=            zcat
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	| ${SETENV} gunshar -d $(WRKDIR)
 
-BUILD_DEPENDS=	gunshar:archivers/gshar+gunshar
+BUILD_DEPENDS=	gunshar::archivers/gshar+gunshar
 
 USE_IMAKE=	Yes
 

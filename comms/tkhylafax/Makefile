@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/05 18:30:24 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/24 23:28:04 espie Exp $
 
 DISTNAME=	tkhylafax-3.0b2
 PKGNAME=	tkhylafax-3.0
 CATEGORIES=	comms
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 
 BROKEN=		"required dependencies not available"
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP=	YES
 
 MASTER_SITES=	http://www.NeoSoft.com/tcl/ftparchive/sorted/comm/tkhylafax-3.0b2/
 
-RUN_DEPENDS=	sendfax:comms/hylafax \
-		gv:print/gv
+RUN_DEPENDS=	sendfax::comms/hylafax \
+		gv::print/gv
 
 WRKDIST=		${WRKDIR}/tkhylafax-3.0
 

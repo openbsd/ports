@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/23 23:09:02 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 23:28:01 espie Exp $
 
 BROKEN=		depend xview is broken
 
 DISTNAME=	gom-0.29.103
 CATEGORIES=     audio
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/sound/mixers
 
@@ -17,8 +17,8 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
-LIB_DEPENDS=	xview:x11/xview-lib \
-		olgx:x11/xview-lib
+LIB_DEPENDS=	xview::x11/xview-lib \
+		olgx::x11/xview-lib
 
 SEPARATE_BUILD=	concurrent
 USE_AUTOCONF=	yes

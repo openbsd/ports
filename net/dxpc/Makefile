@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/07 22:24:23 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/24 23:28:25 espie Exp $
 
 VERSION=	3.8.0
 DISTNAME=	dxpc-${VERSION}
 CATEGORIES=	net x11
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 
 MAINTAINER=	espie@openbsd.org
 
@@ -17,7 +17,7 @@ MASTER_SITES=	http://www.vigor.nu/dxpc/${VERSION}/ \
 		ftp://ftp.x.org/contrib/utilities/ \
 		ftp://sunsite.unc.edu/pub/Linux/X11/xutils/
 
-LIB_DEPENDS=	lzo:archivers/lzo
+LIB_DEPENDS=	lzo::archivers/lzo
 HOMEPAGE=	http://www.vigor.nu/dxpc/
 
 FAKE=	Yes

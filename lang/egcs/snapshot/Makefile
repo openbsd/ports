@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2000/03/05 18:30:30 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2000/03/24 23:28:13 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -8,10 +8,10 @@
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
-BUILD_DEPENDS=	autoconf:devel/autoconf
+BUILD_DEPENDS=	autoconf::devel/autoconf
 
 CATEGORIES=	lang 
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MAINTAINER=	Marc.Espie@openbsd.org
 
 LICENSE_TYPE=		GPL
@@ -47,7 +47,7 @@ MAKE_OBJC=yes
 MAKE_JAVA=yes
 
 .if defined(MAKE_TESTS)
-BUILD_DEPENDS+=	runtest:devel/dejagnu
+BUILD_DEPENDS+=	runtest::devel/dejagnu
 .endif
 
 # if you want/need to use the mammoth archive

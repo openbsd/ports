@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/16 22:32:35 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/24 23:28:08 espie Exp $
 
 # If MULE extensions are desired use
 # make USE_MULE=YES
 
 DISTNAME=	xemacs-20.4
 CATEGORIES=	editors
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/${DISTNAME}/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/${DISTNAME}/ \
                 ftp://ftp.usyd.edu.au:/pub/Xemacs/${DISTNAME}/ \
@@ -19,9 +19,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	${PREFIX}/lib/libcompface.a:graphics/compface
-LIB_DEPENDS=	jpeg.62:graphics/jpeg \
-		png.1.3:graphics/png
+BUILD_DEPENDS=	${PREFIX}/lib/libcompface.a::graphics/compface
+LIB_DEPENDS=	jpeg.62::graphics/jpeg \
+		png.1.3::graphics/png
 
 USE_GMAKE=	Yes
 HAS_CONFIGURE=	Yes

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/19 16:59:10 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/24 23:28:37 espie Exp $
 
 DISTNAME=	bluefish-0.3.6
 CATEGORIES=	www 
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	http://bluefish.linuxbox.com/download/ \
 		http://student.wau.nl/~olivier/bluefish/download/ \
 		http://ha-pc.cheque.uq.edu.au/download/
@@ -16,9 +16,9 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 
-RUN_DEPENDS=	weblint:www/weblint
-LIB_DEPENDS=	gtk.1.2:x11/gtk+ \
-		gdk_imlib:graphics/imlib
+RUN_DEPENDS=	weblint::www/weblint
+LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
+		gdk_imlib::graphics/imlib
 
 GTK_CONFIG=	${LOCALBASE}/bin/gtk-config
 

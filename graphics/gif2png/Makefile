@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2000/03/24 22:11:44 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/03/24 23:28:09 espie Exp $
 
 DISTNAME=	gif2png-2.3.2
 CATEGORIES=	graphics
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	http://www.tuxedo.org/~esr/gif2png/ \
 		ftp://ftp.ccil.org/pub/esr/
 
 
-LIB_DEPENDS=	png.1.3:graphics/png
+LIB_DEPENDS=	png.1.3::graphics/png
 
 MAINTAINER=	brad@openbsd.org
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2000/03/24 22:12:04 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2000/03/24 23:28:39 espie Exp $
 
 DISTNAME=	gtk+-1.2.7
 CATEGORIES=     x11
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
 		http://www.ameth.org/gimp/gtk/v1.2/
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	intl:devel/gettext \
-		glib.1.2:devel/glib
+LIB_DEPENDS=	intl::devel/gettext \
+		glib.1.2::devel/glib
 
 FAKE=		Yes
 

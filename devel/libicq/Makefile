@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/05 18:30:25 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/24 23:28:05 espie Exp $
 # $FreeBSD: Makefile,v 1.3 1999/03/15 19:59:22 nectar Exp $
 
 DISTNAME=	libicq-0.33
 CATEGORIES=	devel
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/
 
 MAINTAINER=	brad@openbsd.org
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	glib.1.2:devel/glib
+LIB_DEPENDS=	glib.1.2::devel/glib
 
 SEPARATE_BUILD= concurrent
 GNU_CONFIGURE=	Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/17 20:47:07 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/24 23:28:19 espie Exp $
 
 DISTNAME=	gnuplot-3.7
 PKGNAME=	gnuplot-3.7
 CATEGORIES=	math graphics
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.gnuplot.vt.edu/pub/gnuplot/ \
 		ftp://ftp.irisa.fr/pub/gnuplot/ \
 		ftp://ftp.cc.monash.edu.au/pub/gnuplot/ \
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	"no modify"
 PERMIT_DISTFILES_CDROM=	"no modify"
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	png:graphics/png
+LIB_DEPENDS=	png::graphics/png
 
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/05 18:30:45 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/24 23:28:38 espie Exp $
 # $FreeBSD: Makefile,v 1.3 1999/03/08 20:59:19 steve Exp $
 
 DISTNAME=	aterm-0.3.6
 CATEGORIES=	x11
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	http://members.xoom.com/sashav/aterm/ \
 		http://www.tigr.net/afterstep/as-apps/download/aterm/
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	jpeg.62:graphics/jpeg \
-		png.1.3:graphics/png
+LIB_DEPENDS=	jpeg.62::graphics/jpeg \
+		png.1.3::graphics/png
 
 USE_X11=	Yes
 GNU_CONFIGURE=	Yes

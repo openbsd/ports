@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/14 08:39:59 camield Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/24 23:28:17 espie Exp $
 
 DISTNAME=	rblsmtpd-0.70
 HOMEPAGE=	http://cr.yp.to/rblsmtpd.html
 CATEGORIES=	mail
+NEED_VERSION=	1.230
 MAINTAINER=	cd@sentia.nl
 
 MASTER_SITES=	http://cr.yp.to/software/ \
@@ -21,7 +22,7 @@ INSTALL_TARGET=	setup check
 
 FAKE=	Yes
 
-RUN_DEPENDS=	tcpserver:net/ucspi-tcp
+RUN_DEPENDS=	tcpserver::net/ucspi-tcp
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc

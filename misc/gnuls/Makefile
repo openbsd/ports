@@ -1,10 +1,10 @@
 # original taken from FreeBSD
-# $OpenBSD: Makefile,v 1.8 2000/03/05 18:30:36 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 23:28:22 espie Exp $
 #
 
 DISTNAME=	fileutils-4.0
 CATEGORIES=	misc
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= fileutils
 SEPARATE_BUILD=concurrent
@@ -13,8 +13,8 @@ SEPARATE_BUILD=concurrent
 
 .if defined(WANT_NLS)
 NLS_CHOICE=--enable-nls
-RUN_DEPENDS=	gettext:devel/gettext
-LIB_DEPENDS=	intl:devel/gettext 
+RUN_DEPENDS=	gettext::devel/gettext
+LIB_DEPENDS=	intl::devel/gettext 
 PLIST=${PKGDIR}/PLIST.nls
 PKGNAME=gnuls-4.0-nls
 .else

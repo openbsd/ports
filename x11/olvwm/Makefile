@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/23 23:09:03 turan Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/24 23:28:40 espie Exp $
 
 BROKEN=		depend xview is broken
 
 DISTNAME=	olvwm4
 PKGNAME=	olvwm-4.2
 CATEGORIES=	x11-wm
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	olvwm4.tar.Z
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 # PATCHFILES=	olvwm4.Patch01.Z:0 olvwm4.Patch02.Z:0
 # PATCH_DIST_STRIP=	-p1
 
-LIB_DEPENDS=	xview.3.:x11/xview-lib
+LIB_DEPENDS=	xview.3.::x11/xview-lib
 
 WRKDIST=	${WRKDIR}
 USE_IMAKE=	Yes

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.52 2000/03/05 18:30:42 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2000/03/24 23:28:34 espie Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
-NEED_VERSION=	1.223
+NEED_VERSION=	 1.230
 MASTER_SITES=	http://the.wiretapped.net/security/cryptography/ssh/SSH/ \
 		ftp://ftp.cs.hut.fi/pub/ssh/ \
 		ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
-LIB_DEPENDS=	rsaref.2:security/rsaref
+LIB_DEPENDS=	rsaref.2::security/rsaref
 CONFIGURE_ARGS+= --with-rsaref="${LOCALBASE}/lib"
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 .endif
