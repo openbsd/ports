@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/04/16 18:51:08 wilfried Exp $
---- configure.orig	Mon Dec 23 02:33:38 2002
-+++ configure	Mon Dec 23 02:34:03 2002
-@@ -84,22 +84,23 @@ cat<<EOF>config.h
+$OpenBSD: patch-configure,v 1.2 2003/10/16 15:00:17 naddy Exp $
+--- configure.orig	2003-10-15 13:46:42.000000000 +0200
++++ configure	2003-10-15 16:26:58.000000000 +0200
+@@ -97,22 +97,23 @@ cat<<EOF>config.h
  EOF
  
  if [ "$debug" = "1" ]; then
@@ -35,3 +35,12 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/04/16 18:51:08 wilfried Exp $
  
  if type ld > /dev/null 2> /dev/null; then
  	echo "LD=ld" >> Makefile.settings;
+@@ -160,7 +161,7 @@ if [ -e /usr/include/iconv.h -a "$iconv"
+ 	## no-op
+ elif [ -e /usr/local/include/iconv.h -a "$iconv" = "1" ]; then
+ 	cat<<EOF>>Makefile.settings
+-LFLAGS+=-L/usr/local/lib
++LFLAGS+=-L/usr/local/lib -liconv
+ CFLAGS+=-I/usr/local/include
+ EOF
+ else
