@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/30 11:37:59 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2005/02/13 16:28:09 msf Exp $
 
 COMMENT=	"perl DBI driver for CSV files"
 
-BROKEN=		"can't install on top of DBD-1.45"
-DISTNAME=	DBD-CSV-0.2002
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	DBD-CSV-0.21
+PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5 
 
 MAINTAINER=	Chris Kuethe <ckuethe@ualberta.ca>

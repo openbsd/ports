@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/12/30 11:37:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/02/13 16:28:09 msf Exp $
 ${P5SITE}/Bundle/DBD/
 ${P5SITE}/Bundle/DBD/CSV.pm
 ${P5SITE}/DBD/
 ${P5SITE}/DBD/CSV.pm
-${P5SITE}/DBD/File.pm
 @man man/man3p/Bundle::DBD::CSV.3p
 @man man/man3p/DBD::CSV.3p
-@man man/man3p/DBD::File.3p
