@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/06 04:22:47 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2001/08/01 19:22:09 dugsong Exp $
 
 COMMENT=	"convert Netscape bookmarks into a Yahoo-like website"
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=		concurrent
-CONFIGURE_STYLE=	gnu destdir
+CONFIGURE_STYLE=	gnu dest
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/bk2site.1 ${PREFIX}/man/man1/
