@@ -1,24 +1,28 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/09/13 21:23:08 todd Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2001/09/18 21:45:30 naddy Exp $
 #
 
+set -e
+PREFIX=${PKG_PREFIX:-/usr/local}
+PATH=/bin:/usr/bin:/sbin:/usr/sbin:${PREFIX}/bin
+
     echo
-    echo "*=================[ $1"
+    echo "+--------------- $1"
 
     # scrollkeeper
-    echo "*"
-    echo "* Running scrollkeeper-update..."
-    /usr/local/bin/scrollkeeper-update -p $(/usr/local/bin/scrollkeeper-config --pkglocalstatedir)
-    echo "*"
+    echo "|"
+    echo "| Running scrollkeeper-update..."
+    ${PREFIX}/bin/scrollkeeper-update -p $(${PREFIX}/bin/scrollkeeper-config --pkglocalstatedir)
+    echo "|"
 
-    echo "* To really remove $1 from your system you should also"
-    echo "* remove the configuration files from the /etc directory."
-    echo "* If you are planning on installing $1 again in the future"
-    echo "* you can leave it as it is."
-    echo "*"
-    echo "* FYI, the following configuration files belongs to this package:"
-    echo "*"
+    echo "| To really remove $1 from your system you should also"
+    echo "| remove the configuration files from the ${SYSCONFDIR} directory."
+    echo "| If you are planning on installing $1 again in the future"
+    echo "| you can leave it as it is."
+    echo "|"
+    echo "| FYI, the following configuration files belongs to this package:"
+    echo "|"
     for f in \
 	CORBA/servers/another_clock_applet.gnorba \
 	CORBA/servers/asclock_applet.gnorba \
@@ -48,9 +52,9 @@
 	CORBA/servers/sound-monitor_applet.gnorba \
 	CORBA/servers/gnotes_applet.gnorba
     do
-	echo "* /etc/$f"
+	echo "| ${SYSCONFDIR}/$f"
     done
-    echo "*================= $1 ]"
+    echo "+--------------- $1"
     echo
 
 exit 0

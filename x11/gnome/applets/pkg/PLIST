@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/13 21:23:08 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/09/18 21:45:30 naddy Exp $
 bin/another_clock_applet
 bin/asclock_applet
 bin/battery_applet
@@ -1715,33 +1715,33 @@ share/gnome/help/whereami_applet/it/stylesheet-images/warning.gif
 share/gnome/help/whereami_applet/it/topic.dat
 share/gnome/help/whereami_applet/it/whereami.sgml
 share/gnome/help/whereami_applet/it/whereami_applet.sgml
-share/gnome-applets/CORBA/servers/another_clock_applet.gnorba
-share/gnome-applets/CORBA/servers/asclock_applet.gnorba
-share/gnome-applets/CORBA/servers/battery_applet.gnorba
-share/gnome-applets/CORBA/servers/charpick_applet.gnorba
-share/gnome-applets/CORBA/servers/clockmail_applet.gnorba
-share/gnome-applets/CORBA/servers/drivemount_applet.gnorba
-share/gnome-applets/CORBA/servers/fifteen_applet.gnorba
-share/gnome-applets/CORBA/servers/geyes_applet.gnorba
-share/gnome-applets/CORBA/servers/gkb_applet.gnorba
-share/gnome-applets/CORBA/servers/jbc_applet.gnorba
-share/gnome-applets/CORBA/servers/life_applet.gnorba
-share/gnome-applets/CORBA/servers/mini-commander_applet.gnorba
-share/gnome-applets/CORBA/servers/quicklaunch_applet.gnorba
-share/gnome-applets/CORBA/servers/tickastat_applet.gnorba
-share/gnome-applets/CORBA/servers/webcontrol_applet.gnorba
-share/gnome-applets/CORBA/servers/whereami_applet.gnorba
-share/gnome-applets/CORBA/servers/odometer_applet.gnorba
-share/gnome-applets/CORBA/servers/cpumemusage_applet.gnorba
-share/gnome-applets/CORBA/servers/diskusage_applet.gnorba
-share/gnome-applets/CORBA/servers/multiload_applet.gnorba
-share/gnome-applets/CORBA/servers/gweather.gnorba
-share/gnome-applets/CORBA/servers/gtik2_applet.gnorba
-share/gnome-applets/CORBA/servers/slash_applet.gnorba
-share/gnome-applets/CORBA/servers/mixer_applet.gnorba
-share/gnome-applets/CORBA/servers/modemlights_applet.gnorba
-share/gnome-applets/CORBA/servers/sound-monitor_applet.gnorba
-share/gnome-applets/CORBA/servers/gnotes_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/another_clock_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/asclock_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/battery_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/charpick_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/clockmail_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/drivemount_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/fifteen_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/geyes_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/gkb_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/jbc_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/life_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/mini-commander_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/quicklaunch_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/tickastat_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/webcontrol_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/whereami_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/odometer_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/cpumemusage_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/diskusage_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/multiload_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/gweather.gnorba
+share/examples/gnome-applets/CORBA/servers/gtik2_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/slash_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/mixer_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/modemlights_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/sound-monitor_applet.gnorba
+share/examples/gnome-applets/CORBA/servers/gnotes_applet.gnorba
 share/gweather/Locations
 share/odometer/57chevy/57chevy-small-black.png
 share/odometer/57chevy/57chevy-small-red.png
@@ -2253,8 +2253,6 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/clockmail_applet/ja/figures
 @dirrm share/gnome/help/clockmail_applet/ja
 @dirrm share/gnome/help/clockmail_applet/it/stylesheet-images
-@exec mkdir -p %D/share/gnome/help/clockmail_applet/it/figures
-@dirrm share/gnome/help/clockmail_applet/it/figures
 @dirrm share/gnome/help/clockmail_applet/it
 @dirrm share/gnome/help/clockmail_applet/C/stylesheet-images
 @dirrm share/gnome/help/clockmail_applet/C/figures
@@ -2284,8 +2282,6 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/asclock_applet/ja/figures
 @dirrm share/gnome/help/asclock_applet/ja
 @dirrm share/gnome/help/asclock_applet/it/stylesheet-images
-@exec mkdir -p %D/share/gnome/help/asclock_applet/it/figures
-@dirrm share/gnome/help/asclock_applet/it/figures
 @dirrm share/gnome/help/asclock_applet/it
 @dirrm share/gnome/help/asclock_applet/C/stylesheet-images
 @dirrm share/gnome/help/asclock_applet/C/figures
@@ -2302,6 +2298,9 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/anotherclock_applet/C
 @dirrm share/gnome/help/anotherclock_applet
 @dirrm share/gnome/gkb
+@dirrm share/examples/gnome-applets/CORBA/servers
+@dirrm share/examples/gnome-applets/CORBA
+@dirrm share/examples/gnome-applets
 @dirrm share/geyes/Horrid
 @dirrm share/geyes/Default-tiny
 @dirrm share/geyes/Default
