@@ -1,3 +1,4 @@
+@pkgcfl xemacs-*
 bin/etags
 bin/ctags
 bin/emacsclient
