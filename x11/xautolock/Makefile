@@ -3,12 +3,15 @@
 # Date created:		16 March 1998	
 # Whom:			Thomas Graichen
 #
-# $OpenBSD: Makefile,v 1.3 1998/03/28 22:28:43 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/12/16 22:54:54 marc Exp $
 #
 
 DISTNAME=	xautolock-pl11
-COMES_WITH=	2.3
 CATEGORIES=	x11
+
+COMES_WITH=	2.3
+MIRROR_DISTFILE=no
+
 MASTER_SITES=	ftp://ftp.science.unitn.it/pub/unix/X11/utilities/
 
 MAINTAINER=	graichen@OpenBSD.ORG

@@ -3,12 +3,15 @@
 # Date created:		18 March 1998
 # Whom:			Todd Fries
 #
-# $OpenBSD: Makefile,v 1.2 1998/03/27 05:11:23 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/12/16 22:55:31 marc Exp $
 #
 
 DISTNAME=       xlockmore-4.08.2
-COMES_WITH=	2.3
 CATEGORIES=	x11
+
+COMES_WITH=	2.3
+MIRROR_DISTFILE=no
+
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 

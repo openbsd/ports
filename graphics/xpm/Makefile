@@ -3,12 +3,15 @@
 # Date created:		24 November 1997
 # Whom:			todd@OpenBSD.org
 #
-# $OpenBSD: Makefile,v 1.3 1998/03/27 05:03:21 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/12/16 22:53:29 marc Exp $
 #
 
 DISTNAME=       xpm-3.4k
-COMES_WITH=	2.3
 CATEGORIES=	graphics x11
+
+COMES_WITH=	2.3
+MIRROR_DISTFILE=no
+
 MASTER_SITES=	ftp://avahi.inria.fr/pub/xpm/
 
 USE_IMAKE=	yes
