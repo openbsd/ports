@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/21 21:26:24 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/10/14 13:15:22 xsa Exp $
 
 COMMENT=	"print information about the content and structure of a DVD"
 
@@ -7,7 +7,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
-HOMEPAGE=	http://acidrip.thirtythreeandathird.net/lsdvd.html
+HOMEPAGE=	http://untrepid.com/acidrip/lsdvd.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
