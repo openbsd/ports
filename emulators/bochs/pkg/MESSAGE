@@ -1,3 +1,6 @@
 Bochs requires a .bochsrc file to be present in either your current
 directory or your home directory before starting.  A sample of the
 .bochsrc file can be found in /usr/X11R6/share/bochs/bochsrc
+
+*** BOCHS is commercial software ***
+Please read /usr/X11R6/share/doc/bochs/LICENSE for details.
