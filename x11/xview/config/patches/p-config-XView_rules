@@ -1,0 +1,106 @@
+--- config/XView.rules.orig	Tue Jun 29 07:13:20 1993
++++ config/XView.rules	Sun Apr  2 04:34:04 2000
+@@ -83,8 +83,8 @@
+ #ifndef InstallLibraryNoBuild
+ #define	InstallLibraryNoBuild(libname,dest)				@@\
+ install:: 								@@\
+-	-$(INSTALL) -c $(INSTLIBFLAGS) lib/**/libname.a dest		@@\
+-	-$(RANLIB) $(RANLIBINSTFLAGS) dest/lib/**/libname.a
++	-$(INSTALL) -c $(INSTLIBFLAGS) lib/**/libname.a $(DESTDIR)dest	@@\
++	-$(RANLIB) $(RANLIBINSTFLAGS) $(DESTDIR)dest/lib/**/libname.a
+ 
+ #endif /* InstallLibraryNoBuild */
+ 
+@@ -93,7 +93,7 @@
+ #ifndef InstallLibraryNoBuild
+ #define	InstallLibraryNoBuild(libname,dest)				@@\
+ install:: 								@@\
+-	-$(INSTALL) -c $(INSTLIBFLAGS) lib/**/libname.a dest
++	-$(INSTALL) -c $(INSTLIBFLAGS) lib/**/libname.a $(DESTDIR)dest
+ #endif /* InstallLibraryNoBuild */
+ 
+ #endif /* DoRanlibCmd */
+@@ -343,8 +343,8 @@
+ #ifndef InstallSharedLibraryDataNoBuild
+ #define	InstallSharedLibraryDataNoBuild(libname,rev,dest)		@@\
+ install:: 								@@\
+-	-$(INSTALL) -c $(INSTSHAREDLIBFLAGS) lib/**/libname.sa.rev dest	@@\
+-	-$(RANLIB) $(RANLIBINSTFLAGS) dest/lib/**/libname.sa.rev
++	-$(INSTALL) -c $(INSTSHAREDLIBFLAGS) lib/**/libname.sa.rev $(DESTDIR)dest	@@\
++	-$(RANLIB) $(RANLIBINSTFLAGS) $(DESTDIR)dest/lib/**/libname.sa.rev
+ 	
+ 
+ #endif /* InstallSharedLibraryDataNoBuild */
+@@ -354,7 +354,7 @@
+ #ifndef InstallSharedLibraryDataNoBuild
+ #define	InstallSharedLibraryDataNoBuild(libname,rev,dest)		@@\
+ install:: 								@@\
+-	-$(INSTALL) -c $(INSTSHAREDLIBFLAGS) lib/**/libname.sa.rev dest
++	-$(INSTALL) -c $(INSTSHAREDLIBFLAGS) lib/**/libname.sa.rev $(DESTDIR)dest
+ 
+ #endif /* InstallSharedLibraryDataNoBuild */
+ 
+@@ -366,9 +366,9 @@
+ #ifndef InstallSharedLibraryNoBuild
+ #define	InstallSharedLibraryNoBuild(libname,rev,dest)				@@\
+ install::  								@@\
+-        $(RM) /dest/lib/**/libname.so                                   @@\
+-	$(INSTALL) -c $(INSTSHAREDLIBFLAGS) lib/**/libname.so.rev dest	@@\
+-        (cd dest; $(LN) lib/**/libname.so.rev lib/**/libname.so)
++	$(RM) $(DESTDIR)/dest/lib/**/libname.so                                   @@\
++	$(INSTALL) -c $(INSTSHAREDLIBFLAGS) lib/**/libname.so.rev $(DESTDIR)dest	@@\
++	(cd $(DESTDIR)dest; $(LN) lib/**/libname.so.rev lib/**/libname.so)
+ 
+ #endif /* InstallSharedLibraryNoBuild */
+ 
+@@ -475,9 +475,9 @@
+ 	for i in srcs ;\						@@\
+ 	do \								@@\
+ 		echo "installing $$i"; \				@@\
+-		$(RM) dest/$$i dest/.$$i; \				@@\
+-		$(INSTALL) -c $(INSTDATFLAGS) $$i dest ; \ 		@@\
+-		( cd dest; $(MV) $$i .$$i; $(LN) .$$i $$i ); \		@@\
++		$(RM) $(DESTDIR)dest/$$i $(DESTDIR)dest/.$$i; \				@@\
++		$(INSTALL) -c $(INSTDATFLAGS) $$i $(DESTDIR)dest ; \ 		@@\
++		( cd $(DESTDIR)dest; $(MV) $$i .$$i; $(LN) .$$i $$i ); \		@@\
+ 	done
+ #endif /* InstallSupportList */
+ 
+@@ -491,8 +491,8 @@
+ 	for i in srcs ;\						@@\
+ 	do \								@@\
+ 		echo "installing $$i"; \				@@\
+-		$(RM) dest/$$i ; \					@@\
+-		$(INSTALL) -c $(INSTDATFLAGS) $$i dest ; \ 		@@\
++		$(RM) $(DESTDIR)dest/$$i ; \				@@\
++		$(INSTALL) -c $(INSTDATFLAGS) $$i $(DESTDIR)dest ; \ 	@@\
+ 	done
+ #endif /* InstallNonExecList */
+ 
+@@ -506,11 +506,11 @@
+ 	for i in files ;\						@@\
+ 	do \								@@\
+ 		echo "installing $$i"; \				@@\
+-		$(RM) dest/$$i ; \					@@\
+-		$(INSTALL) -c $(INSTDATFLAGS) $$i dest ; \ 		@@\
++		$(RM) $(DESTDIR)dest/$$i ; \				@@\
++		$(INSTALL) -c $(INSTDATFLAGS) $$i $(DESTDIR)dest ; \ 	@@\
+ 	done 								@@\
+-	$(RM) dest/Makefile ;		 				@@\
+-	$(INSTALL) -c $(INSTDATFLAGS) makefile dest/Makefile 
++	$(RM) $(DESTDIR)dest/Makefile ;		 			@@\
++	$(INSTALL) -c $(INSTDATFLAGS) makefile $(DESTDIR)dest/Makefile 
+ #endif /* InstallExampleSrcs */
+ 
+ /*
+@@ -524,8 +524,8 @@
+ 	for i in files ;\						@@\
+ 	do \								@@\
+ 		echo "installing $$i"; \				@@\
+-		$(RM) dest/$$i ; \					@@\
+-		$(INSTALL) -c $(INSTDATFLAGS) $$i dest ; \ 		@@\
++		$(RM) $(DESTDIR)dest/$$i ; \				@@\
++		$(INSTALL) -c $(INSTDATFLAGS) $$i $(DESTDIR)dest ; \ 	@@\
+ 	done 
+ #endif /* InstallExampleSrcsNoMakefile */
+ 

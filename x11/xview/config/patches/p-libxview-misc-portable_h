@@ -1,0 +1,22 @@
+--- ./lib/libxview/misc/portable.h.orig	Tue Jun 29 07:16:34 1993
++++ ./lib/libxview/misc/portable.h	Sat Apr  1 18:25:25 2000
+@@ -10,6 +10,7 @@
+ #ifndef xview_portable_h_DEFINED
+ #define xview_portable_h_DEFINED
+ 
++#include <sys/param.h>
+ #include <xview/attr.h>
+ 
+ #if defined(__STDC__) || defined(__cplusplus) || defined(c_plusplus)
+@@ -70,7 +71,11 @@ EXTERN_FUNCTION (Attr_avlist copy_va_to_
+ #define	XV_USE_TERMIOS
+ #define	XV_USE_SVR4_PTYS
+ #else	/* SVR4 */
++#if (defined(BSD) && (BSD >= 199103))
++#define XV_USE_TERMIOS
++#else
+ #undef	XV_USE_TERMIOS
++#endif
+ #undef	XV_USE_SVR4_PTYS
+ #endif	/* SVR4 */
+ 

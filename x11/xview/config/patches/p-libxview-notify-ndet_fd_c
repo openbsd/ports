@@ -1,0 +1,14 @@
+--- ./lib/libxview/notify/ndet_fd.c.orig	Tue Jun 29 07:18:08 1993
++++ ./lib/libxview/notify/ndet_fd.c	Sat Apr  1 18:25:39 2000
+@@ -27,8 +27,9 @@ extern int      dtablesize_cache;
+ #define GETDTABLESIZE() \
+ (dtablesize_cache?dtablesize_cache:(dtablesize_cache=(int)sysconf(_SC_OPEN_MAX)))
+ #else
+-#define GETDTABLESIZE() \
+-    (dtablesize_cache?dtablesize_cache:(dtablesize_cache=getdtablesize()))
++#define GETDTABLESIZE()						\
++    (dtablesize_cache ? dtablesize_cache :			\
++    (dtablesize_cache = MIN(getdtablesize(), FD_SETSIZE)))
+ #endif SVR4
+ 
+ static int      ndet_fd_table_size;	/* Number of descriptor slots

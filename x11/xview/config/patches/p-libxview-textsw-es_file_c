@@ -1,0 +1,16 @@
+--- ./lib/libxview/textsw/es_file.c.orig	Tue Jun 29 07:17:34 1993
++++ ./lib/libxview/textsw/es_file.c	Sat Apr  1 18:25:28 2000
+@@ -110,8 +110,13 @@ static char     sccsid[] = "@(#)es_file.
+ 
+ 
+ extern int      errno, sys_nerr;
++#if (defined(BSD) && (BSD >= 199306))
++extern const char *const sys_err_list[];
++extern off_t	lseek();
++#else
+ extern char    *sys_errlist[];
+ extern long     lseek();
++#endif
+ 
+ static void update_read_buf();  /* update the read buf if overlaps write buf */
+ static Es_status es_file_commit();

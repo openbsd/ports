@@ -1,0 +1,10 @@
+--- ./clients/olwm/screen.c.orig	Sat Apr  1 18:26:06 2000
++++ ./clients/olwm/screen.c	Sat Apr  1 18:26:28 2000
+@@ -220,6 +220,7 @@ isColorScreen(scrInfo,visInfo,nvisuals)
+ 		     	case PseudoColor:
+ 			case GrayScale:
+ 		     	case DirectColor:
++			case TrueColor:
+ 		    		return True;
+ 				/*NOTREACHED*/
+ 		    		break;

@@ -1,0 +1,10 @@
+--- ./clients/olwmslave/helpwin.c.orig	Tue Jun 29 07:12:11 1993
++++ ./clients/olwmslave/helpwin.c	Sat Apr  1 18:26:06 2000
+@@ -136,6 +136,7 @@ Bool		TextHelpWindow();
+ Bool		ImageHelpWindow();
+ void		MoreHelp();
+ void		ErrorNotice();
++static int	ConstrainMousePos();
+ 
+ /* ----------------------------------------------------------------------
+  *	ShowHelpWindow

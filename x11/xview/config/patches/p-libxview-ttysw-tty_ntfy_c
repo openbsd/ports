@@ -1,0 +1,44 @@
+--- ./lib/libxview/ttysw/tty_ntfy.c.orig	Tue Jun 29 07:17:17 1993
++++ ./lib/libxview/ttysw/tty_ntfy.c	Sat Apr  1 18:25:30 2000
+@@ -171,10 +171,14 @@ ttysw_sigwinch(ttysw)
+      * SIGWINCHes on resize.
+      */
+     /* Notify process group that terminal has changed. */
++#if !(defined(BSD) && (BSD >= 199103))
+     if (ioctl(ttysw->ttysw_tty, TIOCGPGRP, &pgrp) == -1) {
+ 	perror(XV_MSG("ttysw_sigwinch, can't get tty process group"));
+ 	return;
+     }
++#else
++    pgrp = tcgetpgrp(ttysw->ttysw_pty);
++#endif
+     /*
+      * Only killpg when pgrp is not tool's.  This is the case of haven't
+      * completed ttysw_fork yet (or even tried to do it yet).
+@@ -204,7 +208,11 @@ ttysw_sendsig(ttysw, textsw, sig)
+ 	return;
+     }
+     /* Send the signal to the process group of the controlling tty */
++#if !(defined(BSD) && (BSD >= 199103))
+     if (ioctl(ttysw->ttysw_tty, TIOCGPGRP, &control_pg) >= 0) {
++#else
++    if ((control_pg = tcgetpgrp(ttysw->ttysw_pty)) >= 0) {
++#endif
+ 	/*
+ 	 * Flush our buffers of completed and partial commands. Be sure to do
+ 	 * this BEFORE killpg, or we'll flush the prompt coming back from the
+@@ -227,11 +235,11 @@ ttysw_sendsig(ttysw, textsw, sig)
+ 	    termsw->cmd_started = 0;
+ 	    termsw->pty_owes_newline = 0;
+ 	}
+-#	if defined(XV_USE_SVR4_PTYS) || defined(sun)
++#if defined(XV_USE_SVR4_PTYS) || defined(sun)
+ 	(void) ioctl(ttysw->ttysw_pty, TIOCSIGNAL, &sig);;
+-#	else
++#else
+ 	(void) killpg(control_pg, sig);
+-#	endif
++#endif
+     } else
+ 	perror(XV_MSG("ioctl"));
+ }

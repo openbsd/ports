@@ -1,0 +1,11 @@
+--- ./lib/libxview/panel/p_list.c.orig	Tue Jun 29 07:16:48 1993
++++ ./lib/libxview/panel/p_list.c	Sat Apr  1 18:25:27 2000
+@@ -3789,7 +3789,7 @@ is_dbl_click(dp, row, event)
+ 
+     /* weigh timeval's against multiclick-timeout resource */
+     is_multiclick = panel_is_multiclick(ip->panel, 
+-					dp->last_click_row->click_time,
++					&dp->last_click_row->click_time,
+ 					&event_time(event)
+ 					);
+ 

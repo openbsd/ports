@@ -1,0 +1,10 @@
+--- ./lib/libxview/base/xv_error.c.orig	Tue Jun 29 07:14:42 1993
++++ ./lib/libxview/base/xv_error.c	Sat Apr  1 18:25:23 2000
+@@ -11,6 +11,7 @@ static char     sccsid[] = "@(#)xv_error
+  */
+ 
+ #include <stdio.h>
++#include <sys/param.h>
+ #include <xview/pkg_public.h>
+ #include <X11/Xlib.h>
+ #include <xview_private/i18n_impl.h>

@@ -1,0 +1,65 @@
+--- config/XView.tmpl.orig	Mon Jun 27 04:10:00 1994
++++ config/XView.tmpl	Sun Apr  2 02:10:40 2000
+@@ -96,7 +96,7 @@
+  *      Work around small conflict with Project.tmpl file
+  */
+ #if UseInstalled
+-              MKDIRHIER = BourneShell BinDir/mkdirhier
++              MKDIRHIER = mkdirhier
+ #endif
+ 
+ #if OsHasLocale
+@@ -194,6 +194,7 @@
+ /*
+  *	use the same trick X11R5 does for defining rules for installed libs
+  */
++#undef _Use
+ #ifdef UseInstalled
+ #define _Use(a,b) a
+ #else
+@@ -224,7 +225,7 @@
+  *	afterwards.
+  */
+ #ifndef XVIncludeDirName
+-#define XVIncludeDirName /include
++#define XVIncludeDirName include
+ #endif
+                  INCDIR = XVIncludeDirName
+ /*
+@@ -356,10 +357,10 @@
+ 
+ #if SystemV4
+              SYSV_CLIENT_LIB = -lintl -ldl
+-	     XVCLIENTSYSDEFINES = -DSVR4 -DSYSV
++             XVCLIENTSYSDEFINES = -DSVR4 -DSYSV
+ #else
+              SYSV_CLIENT_LIB =
+-	     XVCLIENTSYSDEFINES = -DSUNOS41
++             XVCLIENTSYSDEFINES = -DSUNOS41
+ #endif
+ 
+ /*
+@@ -371,16 +372,16 @@
+  */
+ 
+ #if XvI18nLevel == 4
+-	XVCLIENTI18NDEFINES = -DOW_I18N_L4 -DOW_I18N_L3 -DOW_I18N -DFULL_R5
+-	XVCLIENTMISCLIB = -lw
+-	XVCLIENTINCLUDES = -I$(OPENWINHOME)/include
++        XVCLIENTI18NDEFINES = -DOW_I18N_L4 -DOW_I18N_L3 -DOW_I18N -DFULL_R5
++        XVCLIENTMISCLIB = -lw
++        XVCLIENTINCLUDES = -I$(OPENWINHOME)/include
+ #else
+-	XVCLIENTI18NDEFINES = -DOW_I18N_L3
+-	XVCLIENTMISCLIB = 
+-	XVCLIENTINCLUDES = 
++        XVCLIENTI18NDEFINES = -DOW_I18N_L3
++        XVCLIENTMISCLIB = 
++        XVCLIENTINCLUDES = 
+ #endif
+ 
+-	XVCLIENTDEFINES = $(XVCLIENTSYSDEFINES) $(XVCLIENTI18NDEFINES)
++        XVCLIENTDEFINES = $(XVCLIENTSYSDEFINES) $(XVCLIENTI18NDEFINES)
+ 
+ /*
+  *	Define libraries for XView clients

@@ -1,0 +1,11 @@
+--- ./lib/libxview/ttysw/tty_mapkey.c.orig	Tue Jun 29 07:17:20 1993
++++ ./lib/libxview/ttysw/tty_mapkey.c	Sat Apr  1 18:25:33 2000
+@@ -500,7 +500,7 @@ ttysw_remove_caps(label, label_ptr)
+  * have more time.
+  */
+ 
+-#ifdef i386
++#if defined(i386) && !defined (__OpenBSD__)
+ static void
+ ttysw_arrow_keys_to_string(xv_id, str)
+     unsigned        xv_id;

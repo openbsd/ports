@@ -1,0 +1,14 @@
+--- ./bitmaps/Imakefile.orig	Tue Jun 29 07:19:54 1993
++++ ./bitmaps/Imakefile	Sat Apr  1 18:24:54 2000
+@@ -34,9 +34,9 @@ SRCS =  \
+ 
+ ALLFILES = $(BITMAPS) 
+ 
+-all: $(SRCS)
++all:: $(SRCS)
+ 
+-BuildIncludes($(INCLUDES_SRCS),$(BITMAP_INCDIR),/**/)
++BuildIncludes($(INCLUDES_SRCS),$(BITMAP_INCDIR),.)
+ 
+ install:: $(SRCS)
+ 	$(MKDIRHIER) $(HEADER_DEST)/$(BITMAPINC)

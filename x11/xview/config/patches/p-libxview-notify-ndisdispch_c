@@ -1,0 +1,14 @@
+--- ./lib/libxview/notify/ndisdispch.c.orig	Tue Jun 29 07:18:06 1993
++++ ./lib/libxview/notify/ndisdispch.c	Sat Apr  1 18:25:41 2000
+@@ -30,8 +30,9 @@ int             dtablesize_cache = 0;
+ #define GETDTABLESIZE() \
+ (dtablesize_cache?dtablesize_cache:(dtablesize_cache=(int)sysconf(_SC_OPEN_MAX)))
+ #else
+-#define GETDTABLESIZE() \
+- (dtablesize_cache?dtablesize_cache:(dtablesize_cache=getdtablesize()))
++#define GETDTABLESIZE()						\
++    (dtablesize_cache ? dtablesize_cache :			\
++    (dtablesize_cache = MIN(getdtablesize(), FD_SETSIZE)))
+ #endif SVR4
+ 
+ pkg_private_data u_int ndis_flags = 0;

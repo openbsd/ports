@@ -1,0 +1,20 @@
+--- config/XView.lib.orig	Tue Jun 29 07:13:20 1993
++++ config/XView.lib	Sun Apr  2 16:03:06 2000
+@@ -6,7 +6,7 @@
+ #include BandAidCompiler
+ #endif
+ install::
+-	$(MKDIRHIER) $(LIBRARY_DEST)
++	$(MKDIRHIER) $(DESTDIR)$(LIBRARY_DEST)
+ 
+ #if DebugLibXView
+ InstallLibraryNoBuild(${LIBTARGET}_d,$(LIBRARY_DEST))
+@@ -29,7 +29,7 @@ InstallSharedLibraryDataNoBuild(${LIBTAR
+ InstallSharedLibraryNoBuild(${LIBTARGET},${SOREV},$(LIBRARY_DEST))
+ #endif
+ 
+-InstallLibraryNoBuild(${LIBTARGET}, $(LIBRARY_DEST))
++InstallLibraryNoBuild(${LIBTARGET},$(LIBRARY_DEST))
+ SubdirLintLibraryBuild(${LIBTARGET},lint)
+ InstallLintLibrary(${LIBTARGET},$(LINT_LIBRARY_DEST))
+ 

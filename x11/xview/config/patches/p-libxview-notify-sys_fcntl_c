@@ -1,0 +1,14 @@
+--- ./lib/libxview/notify/sys_fcntl.c.orig	Tue Jun 29 07:18:17 1993
++++ ./lib/libxview/notify/sys_fcntl.c	Sat Apr  1 18:25:17 2000
+@@ -15,7 +15,11 @@ static char     sccsid[] = "@(#)sys_fcnt
+  */
+ 
+ #ifndef SVR4
++#ifndef __OpenBSD__
+ #include <syscall.h>
++#else
++#include <sys/syscall.h>
++#endif
+ #else SVR4
+ #include <sys/syscall.h>
+ #endif SVR4

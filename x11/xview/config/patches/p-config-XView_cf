@@ -1,0 +1,47 @@
+--- ./config/XView.cf.orig	Mon Jun 27 04:09:19 1994
++++ ./config/XView.cf	Sat Apr  1 18:23:44 2000
+@@ -101,7 +101,7 @@
+  *	the appropriate value.
+  */
+ #ifndef XVDestDir
+-#define XVDestDir /usr/X11/xview
++#define XVDestDir /usr/X11R6
+ #endif
+ /*
+  *	Command to add object modules to the library.
+@@ -139,7 +139,7 @@
+  *	installed in $(DESTDIR)/lib/X11/config (aka $(CONFIGDIR)).
+  */ 
+ #ifndef OnlyNeedsNewXViewConfigInstalled 
+-#define OnlyNeedsNewXViewConfigInstalled NO 
++#define OnlyNeedsNewXViewConfigInstalled YES 
+ #endif 
+ /*
+  *	If you would like the XView man pages to be installed in 
+@@ -305,7 +305,7 @@
+  *	malloc() and read() will be used instead.
+  */
+ #ifndef OsHasMmap
+-#define OsHasMmap YES
++#define OsHasMmap NO
+ #endif
+ /*
+  *	The implementation of internationalization support in XView depends
+@@ -315,7 +315,7 @@
+  *	features disabled.
+  */
+ #ifndef OsHasLocale
+-#define OsHasLocale YES
++#define OsHasLocale NO
+ #endif
+ /*
+  *	There are number of memory allocation macros in lib/libxview/base.h 
+@@ -360,7 +360,7 @@
+  *    	be defined as -PIC
+  */
+ #ifndef PositionIndependentCodeFlag
+-#define PositionIndependentCodeFlag -PIC
++#define PositionIndependentCodeFlag -fPIC
+ #endif
+ 
+ /*

@@ -1,0 +1,40 @@
+--- ./config/XView.obj.orig	Tue Jun 29 07:13:20 1993
++++ ./config/XView.obj	Sat Apr  1 18:23:44 2000
+@@ -15,7 +15,7 @@
+             STD_DEFINES = StandardDefines LibXViewDefines 
+ #endif
+ HEADERS= ${HDRSPUBLIC} ${HDRSPRIVATE}
+-INCLUDES= -I$(BUILDINCDIR)$(INCDIR) 
++INCLUDES= -I$(BUILDINCDIR)/$(INCDIR) 
+ OBJS = $(TEXT_OBJS) $(DATA_OBJS) $(SPECIAL_OBJS)
+ #if !NotLibXView
+ ALLFILES = $(SRCS) $(HEADERS)
+@@ -85,14 +85,14 @@ NormalLintTarget($(SRCS))
+ 
+ #if SubdirHasPublicHeaders
+ # if NotLibXView
+-BuildIncludes($(HDRSPUBLIC),$(PUB_INCDIR),/**/)
++BuildIncludes($(HDRSPUBLIC),$(PUB_INCDIR),.)
+ 
+ install::
+ 	$(MKDIRHIER) $(PUB_HEADER_DEST)
+ 
+ InstallMultiple($(HDRSPUBLIC),$(PUB_HEADER_DEST))
+ # else
+-BuildIncludes($(HDRSPUBLIC),$(XVPUB_INCDIR),/**/)
++BuildIncludes($(HDRSPUBLIC),$(XVPUB_INCDIR),.)
+ 
+ install::
+ 	$(MKDIRHIER) $(XVPUB_HEADER_DEST)
+@@ -103,9 +103,9 @@ InstallMultiple($(HDRSPUBLIC),$(XVPUB_HE
+ 
+ #if SubdirHasPrivateHeaders
+ # if NotLibXView
+-BuildIncludes($(HDRSPRIVATE),$(PRI_INCDIR),/**/)
++BuildIncludes($(HDRSPRIVATE),$(PRI_INCDIR),.)
+ # else
+-BuildIncludes($(HDRSPRIVATE),$(XVPRI_INCDIR),/**/)
++BuildIncludes($(HDRSPRIVATE),$(XVPRI_INCDIR),.)
+ # endif
+ # if InstallPrivateHeaders
+ #  if NotLibXView

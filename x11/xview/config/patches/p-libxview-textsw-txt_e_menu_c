@@ -1,0 +1,33 @@
+--- ./lib/libxview/textsw/txt_e_menu.c.orig	Tue Jun 29 07:17:42 1993
++++ ./lib/libxview/textsw/txt_e_menu.c	Sat Apr  1 18:25:29 2000
+@@ -50,8 +50,12 @@ extern int errno;
+ #define	ERROR	-1
+ 
+ #define	MAX_FILES	40
++#ifndef MAXPATHLEN
+ #define MAXPATHLEN	1024
++#endif
++#ifndef EXTRASMENU
+ #define	EXTRASMENU	"text_extras_menu"
++#endif
+ #define	MAXSTRLEN	256
+ #define	MAXARGS		20
+ 
+@@ -78,6 +82,8 @@ static	char	*check_filename_locale();
+ 
+ extern int      EXTRASMENU_FILENAME_KEY;
+ 
++static any_shell_meta();
++
+ Pkg_private char *
+ textsw_get_extras_filename(mi)
+     Menu_item       mi;
+@@ -136,7 +142,7 @@ textsw_get_extras_filename(mi)
+ 	            goto found;
+ 	}
+ 
+-#ifdef notdef
++#ifdef __OpenBSD__
+ 	/* Gee, still?... We will try the old fashioned way */
+         (void) sprintf(tmp, "%s/lib/.%s",
+ 		       filename, EXTRASMENU);

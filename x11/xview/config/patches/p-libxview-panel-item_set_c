@@ -1,0 +1,11 @@
+--- ./lib/libxview/panel/item_set.c.orig	Tue Jun 29 07:16:50 1993
++++ ./lib/libxview/panel/item_set.c	Sat Apr  1 18:25:26 2000
+@@ -28,6 +28,8 @@ static void item_adjust_label_size();
+ 
+ extern Notify_value panel_base_event_handler();
+ 
++static fix_positions();
++
+ Pkg_private     Xv_opaque
+ item_set_avlist(item_public, avlist)
+     Panel_item      item_public;
