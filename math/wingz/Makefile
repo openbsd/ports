@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 01:59:31 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/08/02 03:27:31 pvalchev Exp $
 #
 
 COMMENT=	"commercial spreadsheet"
 
 ONLY_FOR_ARCHS=	i386
 DISTNAME=	Wingz-142
+PKGNAME=	${DISTNAME:L}
 CATEGORIES=	math
 NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
@@ -25,10 +26,10 @@ do-configure:
 		sed 's:xxxx:${PREFIX}/lib/X11/:' Wingz/bin/Wingz.sh >Wingz.sh
 
 do-install:
-	cd ${WRKDIST} && pax -w Wingz |(cd ${PREFIX}/lib/X11; pax -r)
+	@cd ${WRKDIST} && pax -w Wingz |(cd ${PREFIX}/lib/X11; pax -r)
 	${INSTALL_SCRIPT} ${WRKDIST}/Wingz.sh ${PREFIX}/bin/Wingz
 	${INSTALL_DATA} ${WRKDIST}/Wingz/Wingz.Xdefs ${PREFIX}/lib/X11/app-defaults/Wingz
-	install -m 666 /dev/null ${PREFIX}/lib/X11/Wingz/.wingz
+	@install -m 666 /dev/null ${PREFIX}/lib/X11/Wingz/.wingz
 	
 RUN_DEPENDS=    /emul/linux/lib/libc.so.6::emulators/redhat_base
 
