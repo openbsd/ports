@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/11/18 18:24:19 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/08/16 20:01:55 lebel Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/zsh.info
 bin/zsh
 bin/zsh-${VERSION}
@@ -31,7 +31,9 @@ share/zsh/${VERSION}/functions/_archie
 share/zsh/${VERSION}/functions/_arg_compile
 share/zsh/${VERSION}/functions/_arguments
 share/zsh/${VERSION}/functions/_arp
+share/zsh/${VERSION}/functions/_arping
 share/zsh/${VERSION}/functions/_arrays
+share/zsh/${VERSION}/functions/_auto-apt
 share/zsh/${VERSION}/functions/_autocd
 share/zsh/${VERSION}/functions/_autoload
 share/zsh/${VERSION}/functions/_bash_completions
@@ -47,7 +49,9 @@ share/zsh/${VERSION}/functions/_cache_invalid
 share/zsh/${VERSION}/functions/_call_function
 share/zsh/${VERSION}/functions/_call_program
 share/zsh/${VERSION}/functions/_cd
+share/zsh/${VERSION}/functions/_cdcd
 share/zsh/${VERSION}/functions/_chflags
+share/zsh/${VERSION}/functions/_chkconfig
 share/zsh/${VERSION}/functions/_chown
 share/zsh/${VERSION}/functions/_combination
 share/zsh/${VERSION}/functions/_command
@@ -69,6 +73,7 @@ share/zsh/${VERSION}/functions/_cvs
 share/zsh/${VERSION}/functions/_cvsup
 share/zsh/${VERSION}/functions/_dd
 share/zsh/${VERSION}/functions/_deb_packages
+share/zsh/${VERSION}/functions/_debfoster
 share/zsh/${VERSION}/functions/_default
 share/zsh/${VERSION}/functions/_describe
 share/zsh/${VERSION}/functions/_description
@@ -83,6 +88,7 @@ share/zsh/${VERSION}/functions/_disable
 share/zsh/${VERSION}/functions/_domains
 share/zsh/${VERSION}/functions/_dpkg
 share/zsh/${VERSION}/functions/_dpkg_source
+share/zsh/${VERSION}/functions/_dput
 share/zsh/${VERSION}/functions/_dupload
 share/zsh/${VERSION}/functions/_dvi
 share/zsh/${VERSION}/functions/_echotc
@@ -98,6 +104,7 @@ share/zsh/${VERSION}/functions/_expand_word
 share/zsh/${VERSION}/functions/_fakeroot
 share/zsh/${VERSION}/functions/_fc
 share/zsh/${VERSION}/functions/_fetchmail
+share/zsh/${VERSION}/functions/_figlet
 share/zsh/${VERSION}/functions/_file_descriptors
 share/zsh/${VERSION}/functions/_files
 share/zsh/${VERSION}/functions/_find
@@ -105,11 +112,14 @@ share/zsh/${VERSION}/functions/_finger
 share/zsh/${VERSION}/functions/_first
 share/zsh/${VERSION}/functions/_flex
 share/zsh/${VERSION}/functions/_floppy
+share/zsh/${VERSION}/functions/_fsh
 share/zsh/${VERSION}/functions/_functions
 share/zsh/${VERSION}/functions/_gcc
 share/zsh/${VERSION}/functions/_gdb
 share/zsh/${VERSION}/functions/_generic
 share/zsh/${VERSION}/functions/_getconf
+share/zsh/${VERSION}/functions/_global
+share/zsh/${VERSION}/functions/_global_tags
 share/zsh/${VERSION}/functions/_gnu_generic
 share/zsh/${VERSION}/functions/_gprof
 share/zsh/${VERSION}/functions/_grep
@@ -123,10 +133,12 @@ share/zsh/${VERSION}/functions/_history
 share/zsh/${VERSION}/functions/_history_complete_word
 share/zsh/${VERSION}/functions/_hosts
 share/zsh/${VERSION}/functions/_iconv
+share/zsh/${VERSION}/functions/_ifconfig
 share/zsh/${VERSION}/functions/_ignored
 share/zsh/${VERSION}/functions/_imagemagick
 share/zsh/${VERSION}/functions/_in_vared
 share/zsh/${VERSION}/functions/_init_d
+share/zsh/${VERSION}/functions/_irssi
 share/zsh/${VERSION}/functions/_ispell
 share/zsh/${VERSION}/functions/_java
 share/zsh/${VERSION}/functions/_jobs
@@ -137,6 +149,7 @@ share/zsh/${VERSION}/functions/_joe
 share/zsh/${VERSION}/functions/_kill
 share/zsh/${VERSION}/functions/_killall
 share/zsh/${VERSION}/functions/_kld
+share/zsh/${VERSION}/functions/_last
 share/zsh/${VERSION}/functions/_limits
 share/zsh/${VERSION}/functions/_links
 share/zsh/${VERSION}/functions/_list
@@ -156,6 +169,7 @@ share/zsh/${VERSION}/functions/_mail
 share/zsh/${VERSION}/functions/_mailboxes
 share/zsh/${VERSION}/functions/_main_complete
 share/zsh/${VERSION}/functions/_make
+share/zsh/${VERSION}/functions/_make-kpkg
 share/zsh/${VERSION}/functions/_man
 share/zsh/${VERSION}/functions/_match
 share/zsh/${VERSION}/functions/_math
@@ -164,14 +178,18 @@ share/zsh/${VERSION}/functions/_mere
 share/zsh/${VERSION}/functions/_message
 share/zsh/${VERSION}/functions/_mh
 share/zsh/${VERSION}/functions/_modutils
+share/zsh/${VERSION}/functions/_mondo
 share/zsh/${VERSION}/functions/_most_recent_file
 share/zsh/${VERSION}/functions/_mount
+share/zsh/${VERSION}/functions/_mozilla
+share/zsh/${VERSION}/functions/_mtools
 share/zsh/${VERSION}/functions/_multi_parts
 share/zsh/${VERSION}/functions/_mutt
 share/zsh/${VERSION}/functions/_my_accounts
 share/zsh/${VERSION}/functions/_mysql_utils
 share/zsh/${VERSION}/functions/_ncftp
 share/zsh/${VERSION}/functions/_nedit
+share/zsh/${VERSION}/functions/_net_interfaces
 share/zsh/${VERSION}/functions/_netscape
 share/zsh/${VERSION}/functions/_newsgroups
 share/zsh/${VERSION}/functions/_next_label
@@ -219,10 +237,14 @@ share/zsh/${VERSION}/functions/_requested
 share/zsh/${VERSION}/functions/_retrieve_cache
 share/zsh/${VERSION}/functions/_rlogin
 share/zsh/${VERSION}/functions/_rpm
+share/zsh/${VERSION}/functions/_rsync
 share/zsh/${VERSION}/functions/_ruby
 share/zsh/${VERSION}/functions/_samba
+share/zsh/${VERSION}/functions/_sccs
 share/zsh/${VERSION}/functions/_sched
 share/zsh/${VERSION}/functions/_sep_parts
+share/zsh/${VERSION}/functions/_service
+share/zsh/${VERSION}/functions/_services
 share/zsh/${VERSION}/functions/_set
 share/zsh/${VERSION}/functions/_setopt
 share/zsh/${VERSION}/functions/_setup
@@ -232,6 +254,7 @@ share/zsh/${VERSION}/functions/_slrn
 share/zsh/${VERSION}/functions/_smit
 share/zsh/${VERSION}/functions/_socket
 share/zsh/${VERSION}/functions/_source
+share/zsh/${VERSION}/functions/_spamassassin
 share/zsh/${VERSION}/functions/_ssh
 share/zsh/${VERSION}/functions/_stat
 share/zsh/${VERSION}/functions/_store_cache
@@ -260,6 +283,7 @@ share/zsh/${VERSION}/functions/_unhash
 share/zsh/${VERSION}/functions/_unsetopt
 share/zsh/${VERSION}/functions/_update-alternatives
 share/zsh/${VERSION}/functions/_urls
+share/zsh/${VERSION}/functions/_urpmi
 share/zsh/${VERSION}/functions/_user_admin
 share/zsh/${VERSION}/functions/_user_at_host
 share/zsh/${VERSION}/functions/_users
@@ -295,11 +319,13 @@ share/zsh/${VERSION}/functions/_x_resource
 share/zsh/${VERSION}/functions/_x_selection_timeout
 share/zsh/${VERSION}/functions/_x_title
 share/zsh/${VERSION}/functions/_x_utils
+share/zsh/${VERSION}/functions/_x_visual
 share/zsh/${VERSION}/functions/_x_window
 share/zsh/${VERSION}/functions/_xargs
 share/zsh/${VERSION}/functions/_xauth
 share/zsh/${VERSION}/functions/_xdvi
 share/zsh/${VERSION}/functions/_xfig
+share/zsh/${VERSION}/functions/_xloadimage
 share/zsh/${VERSION}/functions/_xmodmap
 share/zsh/${VERSION}/functions/_xrdb
 share/zsh/${VERSION}/functions/_xset
@@ -321,6 +347,12 @@ share/zsh/${VERSION}/functions/_zpty
 share/zsh/${VERSION}/functions/_zstyle
 share/zsh/${VERSION}/functions/allopt
 share/zsh/${VERSION}/functions/bash-backward-kill-word
+share/zsh/${VERSION}/functions/bash-backward-word
+share/zsh/${VERSION}/functions/bash-down-case-word
+share/zsh/${VERSION}/functions/bash-forward-word
+share/zsh/${VERSION}/functions/bash-kill-word
+share/zsh/${VERSION}/functions/bash-transpose-words
+share/zsh/${VERSION}/functions/bash-up-case-word
 share/zsh/${VERSION}/functions/checkmail
 share/zsh/${VERSION}/functions/colors
 share/zsh/${VERSION}/functions/compaudit
@@ -352,6 +384,7 @@ share/zsh/${VERSION}/functions/prompt_off_setup
 share/zsh/${VERSION}/functions/prompt_oliver_setup
 share/zsh/${VERSION}/functions/prompt_redhat_setup
 share/zsh/${VERSION}/functions/prompt_suse_setup
+share/zsh/${VERSION}/functions/prompt_walters_setup
 share/zsh/${VERSION}/functions/prompt_zefram_setup
 share/zsh/${VERSION}/functions/promptinit
 share/zsh/${VERSION}/functions/promptnl
