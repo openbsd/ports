@@ -1,0 +1,74 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/11 19:00:59 david Exp $
+@pkgcfl zebra-*
+@unexec install-info --delete --info-dir=%D/info %D/info/quagga.info
+include/zebra/buffer.h
+include/zebra/command.h
+include/zebra/debug.h
+include/zebra/distribute.h
+include/zebra/filter.h
+include/zebra/getopt.h
+include/zebra/hash.h
+include/zebra/if.h
+include/zebra/if_rmap.h
+include/zebra/keychain.h
+include/zebra/linklist.h
+include/zebra/log.h
+include/zebra/md5-gnu.h
+include/zebra/memory.h
+include/zebra/network.h
+include/zebra/ospfd/ospf_api.h
+include/zebra/ospfd/ospf_asbr.h
+include/zebra/ospfd/ospf_dump.h
+include/zebra/ospfd/ospf_ism.h
+include/zebra/ospfd/ospf_lsa.h
+include/zebra/ospfd/ospf_lsdb.h
+include/zebra/ospfd/ospf_nsm.h
+include/zebra/ospfd/ospf_opaque.h
+include/zebra/ospfd/ospfd.h
+include/zebra/plist.h
+include/zebra/prefix.h
+include/zebra/privs.h
+include/zebra/routemap.h
+include/zebra/smux.h
+include/zebra/sockopt.h
+include/zebra/sockunion.h
+include/zebra/str.h
+include/zebra/stream.h
+include/zebra/table.h
+include/zebra/thread.h
+include/zebra/vector.h
+include/zebra/version.h
+include/zebra/vty.h
+include/zebra/zclient.h
+include/zebra/zebra.h
+info/quagga.info
+lib/libospf.a
+lib/libzebra.a
+man/man1/vtysh.1
+man/man8/bgpd.8
+man/man8/ospf6d.8
+man/man8/ospfd.8
+man/man8/ripd.8
+man/man8/ripngd.8
+man/man8/zebra.8
+sbin/bgpd
+sbin/ospf6d
+sbin/ospfd
+sbin/ripd
+sbin/ripngd
+sbin/zebra
+share/doc/zebra/README
+share/examples/zebra/bgpd.conf.sample
+share/examples/zebra/bgpd.conf.sample2
+share/examples/zebra/ospf6d.conf.sample
+share/examples/zebra/ospfd.conf.sample
+share/examples/zebra/ripd.conf.sample
+share/examples/zebra/ripngd.conf.sample
+share/examples/zebra/zebra.conf.sample
+@dirrm share/examples/zebra
+@dirrm share/doc/zebra
+@dirrm include/zebra/ospfd
+@dirrm include/zebra
+@exec install-info --info-dir=%D/info %D/info/quagga.info
+@extraunexec rm -rf ${CONFDIR}
+@extraunexec rm -rf ${STATEDIR}

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/12/11 19:00:59 david Exp $
+--- configure.orig	2003-11-01 23:14:09.000000000 -0600
++++ configure	2003-11-11 16:41:23.000000000 -0600
+@@ -9190,7 +9190,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_htonl_works" >&5
+ echo "${ECHO_T}$ac_cv_htonl_works" >&6
+ 
+-                                                                                                                                  ac_config_files="$ac_config_files Makefile lib/Makefile zebra/Makefile ripd/Makefile ripngd/Makefile bgpd/Makefile ospfd/Makefile ospf6d/Makefile vtysh/Makefile doc/Makefile ospfclient/Makefile redhat/quagga.spec lib/version.h"
++                                                                                                                                  ac_config_files="$ac_config_files Makefile lib/Makefile zebra/Makefile ripd/Makefile ripngd/Makefile bgpd/Makefile ospfd/Makefile ospf6d/Makefile vtysh/Makefile doc/Makefile doc/bgpd.8 doc/ospf6d.8 doc/ospfd.8 doc/ripd.8 doc/ripngd.8 doc/vtysh.1 doc/zebra.8 ospfclient/Makefile redhat/quagga.spec lib/version.h"
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+ # tests run on this system so they can be shared between configure
