@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 1999/06/10 16:06:03 dugsong Exp $
+# $OpenBSD: Makefile,v 1.23 1999/08/30 21:30:54 jakob Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -15,6 +15,7 @@
      SUBDIR += gnupg
      SUBDIR += john
      SUBDIR += libident
+     SUBDIR += logsurfer
      SUBDIR += nbaudit
      SUBDIR += nessus
      SUBDIR += nfsshell
