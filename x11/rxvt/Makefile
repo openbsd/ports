@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/02/23 05:02:31 jasoni Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/12 01:00:54 espie Exp $
 
 DISTNAME=	rxvt-2.7.2
 CATEGORIES=	x11
@@ -13,8 +13,9 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-USE_X11=	Yes
+#USE_X11=	Yes
 GNU_CONFIGURE=	Yes
+FAKE=		Yes
 CONFIGURE_ARGS+=--enable-utmp --enable-wtmp \
 		--with-xpm --enable-xpm-background --enable-transparency \
 		--enable-xgetdefault --enable-languages --enable-xim 
