@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2001/01/16 15:16:31 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2001/04/13 22:09:41 brad Exp $
 # $FreeBSD: Makefile,v 1.6 1998/09/22 15:30:37 vanilla Exp $
+
+COMMENT=	"ascii art library"
 
 DISTNAME=	aalib-1.2
 CATEGORIES=	graphics
-NEED_VERSION=	1.336
+NEED_VERSION=	1.384
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= libs/graphics
 
