@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.404 2001/04/20 15:06:19 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.405 2001/04/20 16:25:24 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -205,6 +205,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 
 FAKE?=Yes
 NEW_DEPENDS?=Yes
+TRUST_PACKAGES?=No
 WRKINST?=${WRKDIR}/fake-${ARCH}${FLAVOR_EXT}
 
 # Get the architecture
@@ -1120,6 +1121,17 @@ _flavor_fragment= \
 
 # Various dependency styles
 
+.if ${TRUST_PACKAGES:L} == "yes"
+_fetch_depends_fragment= \
+	if pkg dependencies check $$pkg; then \
+		found=true; \
+	fi
+
+_build_depends_fragment=${_fetch_depends_fragment}
+_run_depends_fragment=${_fetch_depends_fragment}
+_lib_depends_fragment=${_fetch_depends_fragment}
+
+.else
 _fetch_depends_fragment= \
 	case $$dep in \
 	/*) \
@@ -1138,18 +1150,19 @@ _fetch_depends_fragment= \
 _build_depends_fragment = ${_fetch_depends_fragment}
 _run_depends_fragment = ${_fetch_depends_fragment}; earlyexit=true
 
-.if defined(NO_SHARED_LIBS)
+.  if defined(NO_SHARED_LIBS)
 _lib_depends_fragment = \
 	lib=`echo $$dep | sed -e 's|\([^\\]\)[\\\.].*|\1|'`; \
 	tmp=`mktemp /tmp/bpmXXXXXXXXXX`; \
 	if ${LD} -r -o $$tmp ${EXTRA_LIBDIRS:S/^/-L/} -L${LOCALBASE}/lib -L${X11BASE}/lib -l$$lib; then \
 		found=true; \
 	fi
-.else
+.  else
 _lib_depends_fragment = \
 	lib=`echo $$dep | sed -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
 	check=`${LDCONFIG} -r | awk "/-l$$lib/"'{ print $$3 }'`; \
 	case "X$$check" in "X") ;; *) found=true;; esac 
+.  endif
 .endif
 
 _misc_depends_fragment = :
@@ -1666,7 +1679,15 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
 		${SUDO} ln -sf /var/X11/app-defaults /usr/local/lib/X11/app-defaults; \
 	fi
 .  endif
+.  if ${TRUST_PACKAGES:L} == "yes"
+	@if pkg dependencies check ${FULLPKGNAME}; then \
+		echo "Package ${FULLPKGNAME} is already installed"; \
+	else \
+		${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} pkg_add ${PKGFILE}; \
+	fi
+.  else
 	@${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} pkg_add ${PKGFILE}
+.  endif
 	@${SUDO} ${_MAKE_COOKIE} $@
 .endif 
 
