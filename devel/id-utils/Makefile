@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/05/06 00:13:03 lebel Exp $
+# $OpenBSD: Makefile,v 1.22 2001/06/20 01:43:15 pvalchev Exp $
 
 COMMENT=	"gid/lid tools for looking up variables in code"
 
@@ -8,7 +8,7 @@ NEED_VERSION=	1.402
 
 MAINTAINER=	ports@OpenBSD.ORG
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

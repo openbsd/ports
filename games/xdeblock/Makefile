@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/05/06 01:06:24 lebel Exp $
+# $OpenBSD: Makefile,v 1.15 2001/06/20 01:43:20 pvalchev Exp $
 
 COMMENT=	"block action game"
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		NONE
+# License: NONE
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

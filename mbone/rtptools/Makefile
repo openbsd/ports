@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/05/06 02:07:29 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/06/20 01:43:28 pvalchev Exp $
 
 COMMENT=	"record, playback and monitor RTPv2 data streams"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/schulzrinne/rtptools/
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 NEED_VERSION=	1.402
 
-LICENSE_TYPE=		NONE
+# License: NONE
 PERMIT_PACKAGE_CDROM=	YES
 PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES

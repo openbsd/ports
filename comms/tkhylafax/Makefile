@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/05 22:40:20 jakob Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:13 pvalchev Exp $
 
 COMMENT=	"Tcl/Tk interface to Sam Leffler's fax package"
 
@@ -13,7 +13,7 @@ BROKEN=		"required dependencies not available"
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		"BSD NONE"
+# License: "BSD NONE"
 PERMIT_PACKAGE_CDROM=	YES
 PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES

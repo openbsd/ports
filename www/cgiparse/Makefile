@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/06/08 13:36:39 shell Exp $
+# $OpenBSD: Makefile,v 1.16 2001/06/20 01:43:37 pvalchev Exp $
 
 COMMENT=	"C library to parse CGI Forms"
 
@@ -10,7 +10,7 @@ MAINTAINER=	ports@openbsd.org
 
 HOMEPAGE=	http://resnet.uoregon.edu/~gurney_j/jmpc/cgiparse.html
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/06/02 23:41:44 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:16 pvalchev Exp $
 
 COMMENT=	"PalmPilot(tm) development environment"
 
@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	YES
 PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES

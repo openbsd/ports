@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/05 22:40:16 jakob Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:13 pvalchev Exp $
 
 COMMENT=	"communication package for X11"
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	-tar.Z
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

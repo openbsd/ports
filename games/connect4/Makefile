@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 01:06:12 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:18 pvalchev Exp $
 
 COMMENT=	"curses version of the classic game"
 
@@ -13,7 +13,7 @@ EXTRACT_CASES=	connect4) gunshar ${FULLDISTDIR}/$$archive ;;
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		NONE
+# License: NONE
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

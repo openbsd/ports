@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/05/11 22:54:15 pjanzen Exp $
+# $OpenBSD: Makefile,v 1.15 2001/06/20 01:43:21 pvalchev Exp $
 
 COMMENT=	"Athena port of xminesweeper"
 
@@ -9,7 +9,7 @@ NEED_VERSION=	1.402
 
 MAINTAINER=	Paul Janzen <pjanzen@openbsd.org>
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 01:06:14 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:18 pvalchev Exp $
 #
 
 COMMENT=	"GNU version of Shogi"
@@ -10,7 +10,7 @@ NEED_VERSION=	1.402
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	YES
 PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES

@@ -3,7 +3,7 @@
 # Date created:		May 21 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2001/05/06 04:11:53 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2001/06/20 01:43:36 pvalchev Exp $
 #
 
 COMMENT=	"OO toolkit for SGML parsing and entity management"
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
 MAINTAINER=	ports@openbsd.org
 NEED_VERSION=	1.402
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

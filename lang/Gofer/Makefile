@@ -3,7 +3,7 @@
 # Date created:		31 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.11 2001/05/06 01:27:52 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/06/20 01:43:24 pvalchev Exp $
 #
 
 COMMENT=	"lazy functional language"
@@ -17,7 +17,7 @@ MASTER_SITES=	http://www.cse.ogi.edu/~mpj/goferarc/
 
 MAINTAINER=	ports@OpenBSD.ORG
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

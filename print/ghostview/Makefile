@@ -3,7 +3,7 @@
 # Date created:		December 2, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2001/05/06 03:19:53 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2001/06/20 01:43:33 pvalchev Exp $
 #
 
 COMMENT=	"X11 front-end for ghostscript"
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR= ghostview
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/05/05 22:39:40 jakob Exp $
+# $OpenBSD: Makefile,v 1.17 2001/06/20 01:43:12 pvalchev Exp $
 
 COMMENT=	"manage remote serial consoles via TCP/IP"
 
@@ -9,7 +9,7 @@ NEED_VERSION=	1.406
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

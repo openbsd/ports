@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 04:11:54 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/06/20 01:43:37 pvalchev Exp $
 
 COMMENT=	"texinfo to HTML converter"
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

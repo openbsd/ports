@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/05/06 02:07:46 lebel Exp $
+# $OpenBSD: Makefile,v 1.23 2001/06/20 01:43:26 pvalchev Exp $
 
 COMMENT=	"shared drawing (whiteboard) tool using multicast"
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/wbd/1.0ucl4/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

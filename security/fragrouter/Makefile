@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 03:45:47 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:33 pvalchev Exp $
 
 COMMENT=	"tool for testing network IDS implementations"
 
@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.anzen.com/research/nidsbench/
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2001/05/05 22:39:47 jakob Exp $
+# $OpenBSD: Makefile,v 1.29 2001/06/20 01:43:12 pvalchev Exp $
 
 COMMENT=	"send/receive faxes and share modems"
 
@@ -26,7 +26,7 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	David Leonard <d@openbsd.org>
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

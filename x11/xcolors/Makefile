@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 04:41:32 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/06/20 01:43:41 pvalchev Exp $
 
 COMMENT=	"display all (ok, most of) the colors in the universe"
 
@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.tut.ac.jp/X11/X11R6/contrib/programs/ \
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

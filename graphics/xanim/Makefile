@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 05:05:51 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:23 pvalchev Exp $
 
 COMMENT=	"X11 animation player with support for lots of formats"
 
@@ -16,7 +16,7 @@ DIST_SUBDIR=xanim
 MASTER_SITES=ftp://xanim.va.pubnix.com/
 MASTER_SITES0=ftp://xanim.va.pubnix.com/modules/
 
-LICENSE_TYPE=	NOFEE
+# License: NOFEE
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/06 03:58:58 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2001/06/20 01:43:34 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.2 1998/08/19 11:28:23 jseger Exp $
 #
 
@@ -10,7 +10,7 @@ NEED_VERSION=	1.402
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

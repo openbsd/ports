@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 01:11:40 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/06/20 01:43:23 pvalchev Exp $
 #
 
 COMMENT=	"Japanese-capable xterm"
@@ -10,7 +10,7 @@ NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
-LICENSE_TYPE=	X
+# License: X
 PERMIT_PACKAGE_CDROM=Yes
 PERMIT_PACKAGE_FTP=Yes
 PERMIT_DISTFILES_CDROM=Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/05/06 01:06:12 lebel Exp $
+# $OpenBSD: Makefile,v 1.17 2001/06/20 01:43:17 pvalchev Exp $
 
 COMMENT=	"Battle.net(r) server emulator"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.bnetd.org/files/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

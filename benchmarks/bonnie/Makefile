@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/05 21:59:31 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/06/20 01:43:11 pvalchev Exp $
 
 COMMENT=	"performance test of filesystem I/O"
 DISTNAME=       Bonnie
@@ -7,7 +7,7 @@ CATEGORIES=	benchmarks
 
 MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

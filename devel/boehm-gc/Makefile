@@ -15,7 +15,7 @@ EXTRACT_CASES= gc4.12.tar.gz) tar zxf ${FULLDISTDIR}/$$archive || true;;
 
 MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

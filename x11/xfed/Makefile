@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/05/06 04:41:34 lebel Exp $
+# $OpenBSD: Makefile,v 1.15 2001/06/20 01:43:42 pvalchev Exp $
 
 COMMENT=	"X11 fonts (.bdf files) editor"
 
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.demon.co.uk/pub/graphics/systems/X11.old/pub/R6untarred/
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

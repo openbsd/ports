@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 03:46:25 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:34 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.5 1999/03/09 00:16:14 jseger Exp $
 
 COMMENT=	"fast scatter/gather TCP port scanner"
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

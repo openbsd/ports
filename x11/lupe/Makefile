@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 04:41:19 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/06/20 01:43:38 pvalchev Exp $
 
 COMMENT=	"real-time magnifying glass for X11"
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.oersted.co.jp/~yav/soft/
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		PD
+# License: PD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

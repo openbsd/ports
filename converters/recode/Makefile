@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/05 23:11:51 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:14 pvalchev Exp $
 
 COMMENT=	"convert files between character sets and usages"
 
@@ -8,7 +8,7 @@ NEED_VERSION=	1.402
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/05/06 01:27:53 lebel Exp $
+# $OpenBSD: Makefile,v 1.16 2001/06/20 01:43:24 pvalchev Exp $
 
 COMMENT=	"Pre-Processor-Pretty-Printer for Objective Caml"
 
@@ -12,7 +12,7 @@ MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 BUILD_DEPENDS=	ocamlc::lang/ocaml
 
-LICENSE_TYPE=           BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=   No
 PERMIT_PACKAGE_FTP=     No
 PERMIT_DISTFILES_CDROM= Yes

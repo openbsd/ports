@@ -3,7 +3,7 @@
 # Date created:		April 8, 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2001/05/06 01:46:25 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2001/06/20 01:43:25 pvalchev Exp $
 #
 
 COMMENT=	"Rand MH mail handling system"
@@ -23,7 +23,7 @@ MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 BROKEN=		"Buffer overflow in MIME support, use nmh >= 1.03 instead."
 
-LICENSE_TYPE=		PD
+# License: PD
 PERMIT_PACKAGE_CDROM=	YES
 PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES

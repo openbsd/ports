@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/05 23:11:14 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/06/20 01:43:13 pvalchev Exp $
 
 COMMENT=	"converter to/from base64 encoding"
 
@@ -11,7 +11,7 @@ NEED_VERSION=	1.402
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		PD
+# License: PD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/06/09 17:13:34 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/06/20 01:43:22 pvalchev Exp $
 #
 
 DISTNAME=	xpm
@@ -7,7 +7,7 @@ DISTFILES=
 CATEGORIES=	graphics x11
 COMES_WITH=	2.3
 NEED_VERSION=	1.293
-LICENSE_TYPE=		INC
+# License: INC
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

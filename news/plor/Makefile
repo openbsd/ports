@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/04/21 16:58:03 shell Exp $
+# $OpenBSD: Makefile,v 1.12 2001/06/20 01:43:30 pvalchev Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	'alpha-release readers for reading SOUP and QWK packets'
@@ -9,7 +9,7 @@ NEED_VERSION=	1.405
 
 MAINTAINER=	ports@OpenBSD.ORG
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

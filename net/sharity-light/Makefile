@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 05:00:27 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/06/20 01:43:30 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.10 1999/01/06 17:11:23 dt Exp $
 
 COMMENT=	"userland smbfs --- SMB to NFS protocols converter"
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/Sharity-Light/	\
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

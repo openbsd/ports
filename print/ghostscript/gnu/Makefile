@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/05/24 02:28:14 kevlo Exp $
+# $OpenBSD: Makefile,v 1.19 2001/06/20 01:43:32 pvalchev Exp $
 # Original from:	Andreas Klemm <andreas@klemm.gtn.com>
 
 COMMENT=	"GNU Postscript interpreter"
@@ -25,7 +25,7 @@ SUBST_VARS=		OSREV	VERSION
 DIST_SUBDIR=	gs
 
 # png and jpeg sources are under a BSD license
-LICENSE_TYPE=		GPL BSD
+# License: GPL BSD
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes

@@ -3,7 +3,7 @@
 # Date created:			  May 17 1998
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.11 2001/05/06 03:19:50 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/06/20 01:43:32 pvalchev Exp $
 #
 
 COMMENT=		"strip TeX/LaTeX codes from a file"
@@ -16,7 +16,7 @@ EXTRACT_SUFX=		.tar
 
 MAINTAINER=     	Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		NONE
+# License: NONE
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

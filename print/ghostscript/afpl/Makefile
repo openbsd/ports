@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/05/28 15:14:56 lebel Exp $
+# $OpenBSD: Makefile,v 1.9 2001/06/20 01:43:31 pvalchev Exp $
 
 COMMENT="AFPL PostScript interpreter"
 
@@ -20,7 +20,7 @@ SUBST_VARS=		OSREV	VERSION
 DIST_SUBDIR=	gs
 
 # Aladdin license 
-LICENSE_TYPE=		COPY GPL BSD
+# License: COPY GPL BSD
 # Aladdin ghostscript wants a fee for redistribution
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes

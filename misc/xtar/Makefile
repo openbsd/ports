@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/05/06 02:31:39 lebel Exp $
+# $OpenBSD: Makefile,v 1.18 2001/06/20 01:43:29 pvalchev Exp $
 
 COMMENT=	"view and manipulate contents of a tar file"
 
@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR= utilities
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

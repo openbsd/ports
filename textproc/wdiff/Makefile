@@ -3,7 +3,7 @@
 # Date created:		May 16 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.12 2001/05/06 04:11:55 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/06/20 01:43:37 pvalchev Exp $
 #
 
 COMMENT=	"word differences between text files"
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR= wdiff
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/05 21:59:27 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:11 pvalchev Exp $
 
 BROKEN=	"check out gomconfig..."
 COMMENT=	"generic audio mixer"
@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR= apps/sound/mixers
 
 MAINTAINER=	Scott Robinson <scott@tranzoa.com>
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

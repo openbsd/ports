@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/06 02:29:44 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2001/06/20 01:43:28 pvalchev Exp $
 
 COMMENT=	"bible reader"
 
@@ -12,7 +12,7 @@ NEED_VERSION=	1.402
 
 MAINTAINER=	J Shoemaker <shoemaker@softhome.net>
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -3,7 +3,7 @@
 # Date created:		6 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.8 2001/05/06 04:41:30 lebel Exp $
+# $OpenBSD: Makefile,v 1.9 2001/06/20 01:43:41 pvalchev Exp $
 #
 
 COMMENT=	"ant hill simulation on X11 root window"
@@ -17,7 +17,7 @@ DISTFILES=	xantfarm23oct91.tar.gz
 
 MAINTAINER=	ports@OpenBSD.ORG
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

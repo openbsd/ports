@@ -1,6 +1,6 @@
 #
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
-# $OpenBSD: Makefile,v 1.15 2001/05/06 05:00:14 lebel Exp $
+# $OpenBSD: Makefile,v 1.16 2001/06/20 01:43:30 pvalchev Exp $
 #
 
 COMMENT=	"The UCB/LBNL Network Simulator Version 2"
@@ -16,7 +16,7 @@ MASTER_SITES= ftp://ftp.ee.surrey.ac.uk/pub/Mirrors/ftp.isi.edu/nsnam/ \
 ftp://ftp.isi.edu/nsnam/ \
 http://www.isi.edu/nsnam/dist/
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

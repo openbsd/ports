@@ -3,7 +3,7 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2001/06/07 08:06:47 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2001/06/20 01:43:42 pvalchev Exp $
 #
 
 COMMENT=	"find color values by graphical color mixing"
@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

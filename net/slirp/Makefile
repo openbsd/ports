@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 05:00:28 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/06/20 01:43:30 pvalchev Exp $
 #
 
 COMMENT=	"SLIP/CSLIP emulator for users with shell accounts"
@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://blitzen.canberra.edu.au/pub/slirp/ \
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

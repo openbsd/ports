@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 00:13:36 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/06/20 01:43:16 pvalchev Exp $
 
 COMMENT=	"powerful make utility"
 
@@ -8,7 +8,7 @@ NEED_VERSION=	1.402
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		NONE
+# License: NONE
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

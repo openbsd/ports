@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 01:06:24 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/06/20 01:43:20 pvalchev Exp $
 #
 
 COMMENT=	"dino puzzle game for X11"
@@ -9,7 +9,7 @@ NEED_VERSION=	1.402
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

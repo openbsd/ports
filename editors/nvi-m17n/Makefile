@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 00:29:15 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/06/20 01:43:17 pvalchev Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
@@ -17,7 +17,7 @@ PATCHFILES=	nvi-1.79.m17n-19991117.diff.gz
 
 MAINTAINER=	Jun-ichiro itojun Hagino <itojun@itojun.org>
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

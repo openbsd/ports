@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/05/06 01:46:38 lebel Exp $
+# $OpenBSD: Makefile,v 1.15 2001/06/20 01:43:24 pvalchev Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	"PGP sign/encrypt/decrypt messages automatically"
@@ -15,7 +15,7 @@ MASTER_SITES=   ftp://ftp.atnf.csiro.au/pub/people/rgooch/ \
 
 MAINTAINER=     ports@OpenBSD.ORG
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

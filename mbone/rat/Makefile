@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 02:07:23 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/06/20 01:43:26 pvalchev Exp $
 
 COMMENT=	"Robust Audio Tool from UCL"
 
@@ -9,7 +9,7 @@ NEED_VERSION=	1.402
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/3.0.33/
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

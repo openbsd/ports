@@ -3,7 +3,7 @@
 # Date created:				April 27 1998
 # Whom:					Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.10 2001/06/02 23:41:46 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2001/06/20 01:43:36 pvalchev Exp $
 #
 
 COMMENT=	"convert text into the Doc format used by PalmPilots"
@@ -17,7 +17,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		NONE
+# License: NONE
 PERMIT_PACKAGE_CDROM=	YES
 PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES

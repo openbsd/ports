@@ -4,7 +4,7 @@
 # Whom:			jfieber
 #
 # $FreeBSD: Makefile,v 1.9 1998/02/21 21:59:37 jfieber Exp $
-# $OpenBSD: Makefile,v 1.10 2001/05/06 04:11:53 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/06/20 01:43:36 pvalchev Exp $
 #
 
 COMMENT=	"generate groff/HTML from linuxdoc/docbook SGML documents"
@@ -16,7 +16,7 @@ MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 
 MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

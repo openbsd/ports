@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/05/06 00:29:28 lebel Exp $
+# $OpenBSD: Makefile,v 1.16 2001/06/20 01:43:16 pvalchev Exp $
 
 COMMENT=	"powerful programming editor"
 
@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR= apps/editors/X
 
 MAINTAINER=	Yannick Cote <yanick@fries.net>
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 02:07:43 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:27 pvalchev Exp $
 #
 
 COMMENT=	"shared drawing (whiteboard) tool using multicast"
@@ -12,7 +12,7 @@ ONLY_FOR_ARCHS=	i386
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		NONE
+# License: NONE
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

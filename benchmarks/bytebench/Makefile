@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/05 21:59:33 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/06/20 01:43:12 pvalchev Exp $
 
 COMMENT=	"BYTE magazine benchmark suite"
 DISTNAME=       bytebench-3.1
@@ -7,7 +7,7 @@ NEED_VERSION=	1.250
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		NONE
+# License: NONE
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

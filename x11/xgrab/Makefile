@@ -3,7 +3,7 @@
 # Date created:         25 January 1998
 # Whom:                 Angelos
 #
-# $OpenBSD: Makefile,v 1.12 2001/05/06 04:41:37 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/06/20 01:43:42 pvalchev Exp $
 #
 
 COMMENT=	"X11 image grabber"
@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

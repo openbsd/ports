@@ -3,7 +3,7 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2001/05/06 04:41:29 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2001/06/20 01:43:40 pvalchev Exp $
 #
 
 COMMENT=	"animate your root-cursor"
@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.src.tar.Z
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		NONE
+# License: NONE
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

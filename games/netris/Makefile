@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/05/06 01:06:15 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/06/20 01:43:18 pvalchev Exp $
 
 COMMENT=	"network head-to-head version of T*tris"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.netris.org/pub/netris/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/06/13 03:53:39 kevlo Exp $
+# $OpenBSD: Makefile,v 1.25 2001/06/20 01:43:23 pvalchev Exp $
 
 COMMENT=	"simple paint program"
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://home.worldonline.dk/~torsten/xpaint/
 
 MAINTAINER=	ports@openbsd.org
 
-# LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

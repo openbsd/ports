@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 05:00:10 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:29 pvalchev Exp $
 
 COMMENT=	"curses-based ftp program"
 
@@ -10,7 +10,7 @@ MASTER_SITES=		ftp://ftp.ncftp.com/ncftp/
 
 MAINTAINER=		Eric Jackson <shinobi@monkey.org>
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

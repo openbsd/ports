@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/05/06 04:41:28 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/06/20 01:43:40 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.9 1998/03/07 23:26:23 jmz Exp $
 
 COMMENT=	"display files containing g3 and/or g4 coded fax pages"
@@ -12,7 +12,7 @@ CONFIGURE_STYLE=	imake
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

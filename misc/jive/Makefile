@@ -3,7 +3,7 @@
 # Date created:			  29 April 1998
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.12 2001/05/06 02:30:09 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/06/20 01:43:29 pvalchev Exp $
 #
 
 COMMENT=	"convert English text to Jive"
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/
 
 MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		NONE
+# License: NONE
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/05/06 02:30:58 lebel Exp $
+# $OpenBSD: Makefile,v 1.9 2001/06/20 01:43:29 pvalchev Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	"run two shells in a split window/terminal"
@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	utils/console
 
 MAINTAINER=     ports@OpenBSD.ORG
 
-LICENSE_TYPE=		NONE
+# License: NONE
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

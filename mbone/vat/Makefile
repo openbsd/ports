@@ -1,5 +1,5 @@
 # $FreeBSD: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
-# $OpenBSD: Makefile,v 1.16 2001/05/06 02:07:37 lebel Exp $
+# $OpenBSD: Makefile,v 1.17 2001/06/20 01:43:27 pvalchev Exp $
 
 COMMENT=	"The Visual Audio Tool - multicast audioconferencing"
 
@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		BSD
+# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

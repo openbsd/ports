@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/05/06 00:12:53 lebel Exp $
+# $OpenBSD: Makefile,v 1.20 2001/06/20 01:43:15 pvalchev Exp $
 
 COMMENT=	"GNU parser generator"
 
@@ -8,7 +8,7 @@ NEED_VERSION=	1.402
 
 MAINTAINER=	David Leonard <d@openbsd.org>
 
-LICENSE_TYPE=		GPL
+# License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
