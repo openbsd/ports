@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/25 00:08:45 avsm Exp $
+bin/harch
+bin/hi
+bin/hmake
+bin/hmake-config
+lib/hmake/ix86-OpenBSD/HInteractive
+lib/hmake/ix86-OpenBSD/MkConfig
+lib/hmake/ix86-OpenBSD/MkProg
+lib/hmake/ix86-OpenBSD/Older
+lib/hmake/ix86-OpenBSD/config
+lib/hmake/ix86-OpenBSD/hmakerc
+man/man1/hmake.1
+@dirrm lib/hmake/ix86-OpenBSD
+@dirrm lib/hmake
