@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/11/13 20:14:39 danh Exp $
+# $OpenBSD: Makefile,v 1.8 2002/01/16 15:41:27 brad Exp $
 
 COMMENT=	"Microsoft FrontPage 2000 Server extensions for Apache"
 
@@ -9,7 +9,7 @@ APVERSION=	1.3.17
 DISTNAME=	mod_frontpage-${VERSION}-${APVERSION}
 PKGNAME=	mod_frontpage-${VERSION}
 CATEGORIES=	www
-NEED_VERSION=	1.435
+NEED_VERSION=	1.500
 MASTER_SITES=	http://home.edo.uni-dortmund.de/~chripo/download/ \
 		ftp://ftp.edo.uni-dortmund.de/pub/mod_frontpage/
 MASTER_SITES0=	ftp://ftp.microsoft.com/products/frontpage/
@@ -29,18 +29,22 @@ FP_PATCH=	${WRKDIR}/${DISTNAME}/patch-${VERSION}-${APVERSION}
 WRKSRC=		${WRKDIR}/apache_${APVERSION}/src/modules/frontpage
 NO_REGRESS=	Yes
 
+APXS=		/usr/sbin/apxs
+CC!=		${APXS} -q CC
+CFLAGS!=	${APXS} -q CFLAGS
+INCLUDES!=	${APXS} -q INCLUDEDIR
+
 post-extract:
 	@mkdir -p ${WRKSRC}
-	@cp ${FILESDIR}/Makefile.OpenBSD ${WRKSRC}/Makefile.OpenBSD
 
 post-patch:
 	@patch -s -p0 -d ${APACHEDIST} < ${FP_PATCH}
 
 do-build:
-	@cd ${WRKSRC} && ${MAKE} -f Makefile.OpenBSD
-	@sed 's,!!PREFIX!!,${PREFIX},' \
-		< ${FILESDIR}/mod_frontpage-enable > \
-			${WRKSRC}/mod_frontpage-enable
+	@cd ${WRKSRC}; ${APXS} -c mod_frontpage.c
+	cd ${WRKSRC}; ${CC} ${CFLAGS} -I${INCLUDES} fpexec.c -o fpexec
+	@sed 's,!!PREFIX!!,${PREFIX},' ${FILESDIR}/mod_frontpage-enable > \
+		${WRKSRC}/mod_frontpage-enable
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/mod_frontpage.so ${PREFIX}/lib
