@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/07 01:54:48 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/03/30 12:27:58 miod Exp $
+@exec echo "This package may need further setup. Be sure to read the package description"
+@exec echo "carefully."
 bin/wine
 bin/dosmod
 include/wine/windows.h

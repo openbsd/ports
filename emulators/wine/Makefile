@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2002/10/26 12:52:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2003/03/30 12:27:55 miod Exp $
 
 COMMENT=	"MS-Windows 3.1/95/NT emulator for Unix (Alpha release)"
 
@@ -22,15 +22,6 @@ CONFIGURE_STYLE=	gnu dest
 WRKDIST=	${WRKDIR}/${PKGNAME}
 
 NO_REGRESS=	Yes
-
-.if !defined(NO_WARNINGS)
-pre-fetch:
-	@echo
-	@echo "  WARNING: This application requires a kernel compiled with"
-	@echo "           'option USER_LDT' for proper operation. The GENERIC"
-	@echo "           kernel does not have this option enabled by default."
-	@echo
-.endif
 
 post-configure:
 	cd ${WRKSRC} && make depend

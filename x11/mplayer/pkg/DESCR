@@ -37,7 +37,9 @@ Flavors:
 
   no_x11: disable audio/video output.
 
-  win32: enables win32 codecs (i386-only)  To use this flavor, your
-         kernel must be rebuilt with option USER_LDT
+  win32: enables win32 codecs (i386-only)  To use this flavor, you
+         need to enable the machdep.userldt sysctl, either via
+         /etc/sysctl.conf, or by entering (as root):
+		sysctl -w machdep.userldt=1
 
 WWW: ${HOMEPAGE}

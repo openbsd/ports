@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2003/02/19 01:06:03 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.51 2003/03/30 12:27:58 miod Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -145,15 +145,6 @@ CONFIGURE_ARGS+=--disable-iconv
 
 .if ${FLAVOR:L:Mwin32}
 ONLY_FOR_ARCHS=i386
-
-.  if !defined(NO_WARNINGS)
-pre-fetch:
-	@echo
-	@echo "  WARNING: This application requires a kernel compiled with"
-	@echo "           'option USER_LDT' for proper operation. The GENERIC"
-	@echo "           kernel does not have this option enabled by default."
-	@echo
-.  endif
 
 RUN_DEPENDS+=	:win32-codecs-*:graphics/win32-codecs
 BUILD_DEPENDS+=	${RUN_DEPENDS}
