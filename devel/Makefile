@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.202 2004/01/12 17:59:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.203 2004/01/15 14:16:28 avsm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -141,6 +141,7 @@
      SUBDIR += p5-Exception-Class
      SUBDIR += p5-Expect
      SUBDIR += p5-File-ReadBackwards
+     SUBDIR += p5-File-Sync
      SUBDIR += p5-File-Tail
      SUBDIR += p5-FreezeThaw
      SUBDIR += p5-Getargs-Long
