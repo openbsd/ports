@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/03/07 08:21:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2004/03/07 17:48:24 pvalchev Exp $
 # Original from: Mark Kettenis
 
-ONLY_FOR_ARCHS=		amd64 i386 sparc
+ONLY_FOR_ARCHS=		alpha amd64 i386 sparc
 
 COMMENT=		"GNU debugger"
 
