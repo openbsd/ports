@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.20 2000/06/20 01:24:45 brad Exp $
+@comment $OpenBSD: PLIST,v 1.21 2000/07/08 14:11:20 matt Exp $
+@pkgcfl openmotif-*
 LessTif/Motif1.2/include/Mrm/MrmAppl.h
 LessTif/Motif1.2/include/Mrm/MrmDecls.h
 LessTif/Motif1.2/include/Mrm/MrmPrivate.h
