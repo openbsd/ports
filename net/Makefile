@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2001/07/03 02:44:01 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.149 2001/07/13 02:42:34 fgsch Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -136,6 +136,7 @@
      SUBDIR += ucd-snmp
      SUBDIR += ucspi-tcp
      SUBDIR += ucspi-unix
+     SUBDIR += uucp
      SUBDIR += vnc
      SUBDIR += vtun
      SUBDIR += wget
