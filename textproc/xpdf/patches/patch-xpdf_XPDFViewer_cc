@@ -1,0 +1,15 @@
+$OpenBSD: patch-xpdf_XPDFViewer_cc,v 1.1 2003/10/24 19:31:57 brad Exp $
+--- xpdf/XPDFViewer.cc.orig	2003-10-23 22:55:18.000000000 -0700
++++ xpdf/XPDFViewer.cc	2003-10-23 22:55:31.000000000 -0700
+@@ -2132,11 +2132,6 @@ void XPDFViewer::printPrintCbk(Widget wi
+   PSOutputDev *psOut;
+ 
+   doc = viewer->core->getDoc();
+-  if (!doc->okToPrint()) {
+-    error(-1, "Printing this document is not allowed.");
+-    return;
+-  }
+-
+   viewer->core->setBusyCursor(gTrue);
+ 
+   XtVaGetValues(viewer->printWithCmdBtn, XmNset, &withCmd, NULL);

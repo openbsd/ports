@@ -1,0 +1,45 @@
+$OpenBSD: patch-xpdf_XPDFCore_cc,v 1.1 2003/10/24 19:31:57 brad Exp $
+--- xpdf/XPDFCore.cc.orig	2003-10-23 22:54:49.000000000 -0700
++++ xpdf/XPDFCore.cc	2003-10-23 22:56:34.000000000 -0700
+@@ -970,9 +970,6 @@ void XPDFCore::moveSelection(int mx, int
+ // global variables (currentSelection and currentSelectionOwner).
+ 
+ void XPDFCore::copySelection() {
+-  if (!doc->okToCopy()) {
+-    return;
+-  }
+   if (currentSelection) {
+     delete currentSelection;
+   }
+@@ -1027,9 +1024,6 @@ GBool XPDFCore::getSelection(int *xMin, 
+ }
+ 
+ GString *XPDFCore::extractText(int xMin, int yMin, int xMax, int yMax) {
+-  if (!doc->okToCopy()) {
+-    return NULL;
+-  }
+   return out->getText(xMin, yMin, xMax, yMax);
+ }
+ 
+@@ -1038,9 +1032,6 @@ GString *XPDFCore::extractText(int pageN
+   TextOutputDev *textOut;
+   GString *s;
+ 
+-  if (!doc->okToCopy()) {
+-    return NULL;
+-  }
+   textOut = new TextOutputDev(NULL, gTrue, gFalse, gFalse);
+   if (!textOut->isOk()) {
+     delete textOut;
+@@ -1680,11 +1671,7 @@ void XPDFCore::inputCbk(Widget widget, X
+ #ifndef NO_TEXT_SELECT
+ 	  if (core->selectXMin != core->selectXMax &&
+ 	      core->selectYMin != core->selectYMax) {
+-	    if (core->doc->okToCopy()) {
+ 	      core->copySelection();
+-	    } else {
+-	      error(-1, "Copying of text from this document is not allowed.");
+-	    }
+ 	  }
+ #endif
+ 	}
