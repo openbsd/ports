@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/10 03:24:22 kevlo Exp $
+${P5SITE}/Date/
+${P5SITE}/Date/Format.pm
+${P5SITE}/Date/Language/
+${P5SITE}/Date/Language.pm
+${P5SITE}/Date/Language/Afar.pm
+${P5SITE}/Date/Language/Amharic.pm
+${P5SITE}/Date/Language/Austrian.pm
+${P5SITE}/Date/Language/Brazilian.pm
+${P5SITE}/Date/Language/Chinese_GB.pm
+${P5SITE}/Date/Language/Czech.pm
+${P5SITE}/Date/Language/Danish.pm
+${P5SITE}/Date/Language/Dutch.pm
+${P5SITE}/Date/Language/English.pm
+${P5SITE}/Date/Language/Finnish.pm
+${P5SITE}/Date/Language/French.pm
+${P5SITE}/Date/Language/Gedeo.pm
+${P5SITE}/Date/Language/German.pm
+${P5SITE}/Date/Language/Greek.pm
+${P5SITE}/Date/Language/Italian.pm
+${P5SITE}/Date/Language/Norwegian.pm
+${P5SITE}/Date/Language/Oromo.pm
+${P5SITE}/Date/Language/Sidama.pm
+${P5SITE}/Date/Language/Somali.pm
+${P5SITE}/Date/Language/Swedish.pm
+${P5SITE}/Date/Language/Tigrinya.pm
+${P5SITE}/Date/Language/TigrinyaEritrean.pm
+${P5SITE}/Date/Language/TigrinyaEthiopian.pm
+${P5SITE}/Date/Parse.pm
+${P5SITE}/Time/
+${P5SITE}/Time/Zone.pm
+@man man/man3p/Date::Format.3p
+@man man/man3p/Date::Parse.3p
+@man man/man3p/Time::Zone.3p
