@@ -1,0 +1,10 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/07/28 04:55:59 marcm Exp $
+lib/bonobo/libgedit-control.so
+lib/gedit-2/plugins/libdocinfo.so
+lib/gedit-2/plugins/libindent.so
+lib/gedit-2/plugins/libsample.so
+lib/gedit-2/plugins/libshell_output.so
+lib/gedit-2/plugins/libsort.so
+lib/gedit-2/plugins/libspell.so
+lib/gedit-2/plugins/libtaglist.so
+lib/gedit-2/plugins/libtime.so
