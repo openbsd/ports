@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/01/10 22:51:14 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/06/25 06:14:08 marcm Exp $
 bin/AbiWord-2.0
 bin/abiword
 bin/ttfadmin.sh
@@ -29,6 +29,7 @@ share/AbiSuite-2.0/AbiWord/glade/xap_UnixDlg_Zoom.glade
 share/AbiSuite-2.0/AbiWord/readme.txt
 share/AbiSuite-2.0/AbiWord/scripts/abw2html.pl
 share/AbiSuite-2.0/AbiWord/strings/am-ET.strings
+share/AbiSuite-2.0/AbiWord/strings/ar.strings
 share/AbiSuite-2.0/AbiWord/strings/be-BY.strings
 share/AbiSuite-2.0/AbiWord/strings/bg-BG.strings
 share/AbiSuite-2.0/AbiWord/strings/br-FR.strings
@@ -188,6 +189,9 @@ share/AbiSuite-2.0/templates/A4.awt
 share/AbiSuite-2.0/templates/Business-Report.awt
 share/AbiSuite-2.0/templates/Employee-Directory.awt
 share/AbiSuite-2.0/templates/Fax-Coversheet.awt
+share/AbiSuite-2.0/templates/Memo.awt
+share/AbiSuite-2.0/templates/Press-Release.awt
+share/AbiSuite-2.0/templates/Resume.awt
 share/AbiSuite-2.0/templates/Two-Columns.awt
 share/AbiSuite-2.0/templates/US-Letter.awt
 share/AbiSuite-2.0/templates/normal.awt
@@ -252,8 +256,8 @@ share/AbiSuite-2.0/templates/normal.awt-zh_CN
 share/AbiSuite-2.0/templates/normal.awt-zh_TW
 share/applications/abiword.desktop
 share/icons/abiword_48.png
-@comment @dirrm share/icons
-@comment @dirrm share/applications
+@dirrm share/icons
+@dirrm share/applications
 @dirrm share/AbiSuite-2.0/templates
 @dirrm share/AbiSuite-2.0/icons
 @dirrm share/AbiSuite-2.0/dictionary
@@ -263,5 +267,5 @@ share/icons/abiword_48.png
 @dirrm share/AbiSuite-2.0/AbiWord/glade
 @dirrm share/AbiSuite-2.0/AbiWord
 @dirrm share/AbiSuite-2.0
-@comment @dirrm lib/bonobo/servers
-@comment @dirrm lib/bonobo
+@dirrm lib/bonobo/servers
+@dirrm lib/bonobo

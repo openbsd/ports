@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2004/01/10 22:51:14 couderc Exp $
+# $OpenBSD: Makefile,v 1.33 2004/06/25 06:14:08 marcm Exp $
 
 COMMENT=		"open-source, cross-platform WYSIWYG word processor"
 
-VERSION=		2.0.2
+VERSION=		2.0.7
 DISTNAME=		abiword-${VERSION}
 CATEGORIES=		editors
 
@@ -12,7 +12,7 @@ MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
 MODULES=		gettext
 
-BUILD_DEPENDS=		:pkgconfig->=0.14.0:devel/pkgconfig
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
 LIB_DEPENDS=		fribidi::devel/fribidi \
 			gthread-2.0.0.0::devel/glib2 \
