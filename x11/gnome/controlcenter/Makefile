@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/14 14:41:30 todd Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/18 20:28:53 naddy Exp $
 
-COMMENT=		"the GNOME control center"
+COMMENT=		"GNOME control center"
 V=			1.4.0.1
 DISTNAME=		control-center-${V}
 CATEGORIES=		x11 gnome
@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR= 	stable/sources/control-center
 LIB_DEPENDS=		gnomecanvaspixbuf.::graphics/gdk-pixbuf,gnome \
 			gnome.36::x11/gnome/libs \
 			gnomevfs.::x11/gnome/vfs
-BUILD_DEPENDS=          scrollkeeper-config::textproc/scrollkeeper
-RUN_DEPENDS=            scrollkeeper-config::textproc/scrollkeeper
+BUILD_DEPENDS=		scrollkeeper-config::textproc/scrollkeeper
+RUN_DEPENDS=		${BUILD_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
-CONFIGURE_STYLE= 	gnu
+CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= 	--localstatedir=/var/gnome
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -35,7 +35,7 @@ post-extract:
 	    ${WRKSRC}/capplets/screensaver-properties/screensaver-desktops/Superquadrics.desktop.in;
 
 post-install:
-	@install -d ${PREFIX}/share/control-center; \
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/control-center; \
 	cp -r ${PREFIX}/../../etc/* ${PREFIX}/share/control-center/
 
 .include <bsd.port.mk>
