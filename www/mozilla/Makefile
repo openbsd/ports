@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/08/13 14:16:34 drahn Exp $
-#
-# From: $NetBSD: Makefile,v 1.13 1998/08/04 13:09:21 fvdl Exp $
-#	but modified to use lesstif 0.86.0...
+# $OpenBSD: Makefile,v 1.20 2001/08/19 02:30:45 brad Exp $
 
 COMMENT=	"free version of the Netscape browser"
 
@@ -10,10 +7,10 @@ DISTNAME=	mozilla
 PKGNAME=	mozilla-${VER}
 DISTFILES=	mozilla-source-${VER}.tar.bz2
 
-bROKEN=		core dumps in dynamic library constructor
+BROKEN=		core dumps in dynamic library constructor
 
 CATEGORIES=	www
-NEED_VERSION=	1.402
+NEED_VERSION=	1.435
 
 MAINTAINER=	ports@openbsd.org
 
@@ -30,7 +27,7 @@ MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/releases/mozilla${VER}/src/
 USE_X11=	Yes
 USE_GMAKE=	Yes
 
-CONFIGURE_STYLE=	gnu	autoconf
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=					\
 		--disable-cpp-exceptions	\
 		--disable-cpp-rtti		\
@@ -56,15 +53,16 @@ CONFIGURE_ARGS=					\
 		--with-mng=${LOCALBASE}		\
 		--with-pthreads
 
-CONFIGURE_ENV=	BSD_PTHREAD_LIBS="${PTHREAD_LIBS}" \
+CONFIGURE_ENV=	BSD_PTHREAD_LIBS="-pthread" \
 		CFLAGS="" CXXFLAGS=""
-MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin \
+MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 		CFLAGS="" CXXFLAGS="" \
 		MALLOC_OPTIONS=j
+
 do-install:
-	mkdir -p ${PREFIX}/lib/mozilla
-	${CHMOD} 755 ${PREFIX}/lib/mozilla
-	cd ${WRKSRC}/dist/bin && ${TAR} -chf - . | \
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/mozilla
+	@chmod 755 ${PREFIX}/lib/mozilla
+	@cd ${WRKSRC}/dist/bin && ${TAR} -chf - . | \
 		${TAR} -xf - -C ${PREFIX}/lib/mozilla
 	${INSTALL_SCRIPT} ${WRKSRC}/dist/bin/mozilla ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/dist/bin/mozilla-bin ${PREFIX}/bin
