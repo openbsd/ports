@@ -1,0 +1,4 @@
+The wtf utility displays the expansion of the acronyms
+specified on the command line. If the acronym is unknown,
+wtf will check to see if the acronym is known by the
+whatis(1) command.
