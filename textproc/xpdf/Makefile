@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/09/15 22:39:50 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/10/06 20:36:29 rohee Exp $
 
 DISTNAME=	xpdf-0.90
 CATEGORIES=	textproc
@@ -12,7 +12,7 @@ PATCH_DIST_STRIP=	-p1
 PATCH_SITES=	http://www.fefe.de/
 PATCHFILES=	xpdf-0.90-fefe-diff2.gz
 
-MAINTAINER=	apollo@slcnet.net
+MAINTAINER=	eep@inconnect.com
 
 USE_X11=	yes
 GNU_CONFIGURE=	yes
