@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2000/08/11 06:30:34 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2000/08/31 06:43:40 brad Exp $
 
 DISTNAME=	squid-2.3.STABLE4
 PKGNAME=	squid-2.3
 CATEGORIES=	www
-NEED_VERSION=	1.310
+NEED_VERSION=	1.322
 MASTER_SITES=	http://www.squid-cache.org/Versions/v2/2.3/
 MASTER_SITES0=	http://www.squid-cache.org/Versions/v2/2.3/bugs/
 EXTRACT_SUFX=	-src.tar.gz
@@ -29,8 +29,6 @@ SUBST_VARS=	SYSCONFDIR STATEDIR
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--localstatedir="${STATEDIR}"
-
-FAKE_FLAGS=	MFLAGS="DESTDIR=\"${WRKINST}\""
 
 MAKE_FILE=	makefile
 
