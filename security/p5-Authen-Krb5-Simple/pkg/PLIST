@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/26 05:07:53 sk Exp $
+${P5ARCH}/Authen/Krb5/Simple.pm
+${P5ARCH}/auto/Authen/Krb5/Simple/Simple.bs
+${P5ARCH}/auto/Authen/Krb5/Simple/Simple.so
+man/man3p/Authen::Krb5::Simple.3p
+@dirrm man/man3p
+@dirrm ${P5ARCH}/auto/Authen/Krb5/Simple
+@dirrm ${P5ARCH}/auto/Authen/Krb5
+@dirrm ${P5ARCH}/auto/Authen
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}/Authen/Krb5
+@dirrm ${P5ARCH}/Authen
+@dirrm ${P5ARCH}
