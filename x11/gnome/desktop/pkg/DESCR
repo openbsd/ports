@@ -1,0 +1,5 @@
+This package contains the libgnome-desktop library as well as GNOME's
+.desktop files, the gnome-about program, some manpages and GNOME's
+core graphics files and icons.
+
+WWW: ${HOMEPAGE}
