@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/10/27 15:23:44 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/06/25 02:41:10 kevlo Exp $
 bin/kxmleditor
-lib/libkxmleditor.a
-lib/libkxmleditor.la
-%%SHARED%%
+lib/libkxmleditorpart.a
+lib/libkxmleditorpart.la
 share/applnk/Applications/kxmleditor.desktop
 share/apps/kxmleditor/icons/hicolor/16x16/actions/bookmark_next.png
 share/apps/kxmleditor/icons/hicolor/16x16/actions/bookmark_prev.png
@@ -62,15 +61,19 @@ share/apps/kxmleditor/icons/locolor/16x16/actions/xml_insert_element.png
 share/apps/kxmleditor/icons/locolor/16x16/actions/xml_insert_procins.png
 share/apps/kxmleditor/icons/locolor/16x16/actions/xml_move_item_down.png
 share/apps/kxmleditor/icons/locolor/16x16/actions/xml_move_item_up.png
-share/apps/kxmleditor/kxmleditorpart.rc
+share/apps/kxmleditor/kxmleditorpartBrowseUI.rc
+share/apps/kxmleditor/kxmleditorpartEditUI.rc
+share/apps/kxmleditor/kxmleditorshell.rc
 share/apps/kxmleditor/kxmleditorui.rc
 share/apps/kxmleditor/pics/xml_attribute.png
 share/apps/kxmleditor/pics/xml_cdata.png
 share/apps/kxmleditor/pics/xml_comment.png
 share/apps/kxmleditor/pics/xml_contents.png
 share/apps/kxmleditor/pics/xml_element.png
+share/apps/kxmleditor/pics/xml_procinstr.png
 share/apps/kxmleditor/pics/xml_text.png
 share/doc/HTML/en/kxmleditor/common
+share/doc/HTML/en/kxmleditor/index.cache.bz2
 share/doc/HTML/en/kxmleditor/index.docbook
 share/doc/HTML/en/kxmleditor/screenshot.png
 share/doc/HTML/en/kxmleditor/setupspcchr.png
@@ -80,6 +83,7 @@ share/icons/hicolor/32x32/apps/kxmleditor.png
 share/icons/hicolor/48x48/apps/kxmleditor.png
 share/icons/locolor/16x16/apps/kxmleditor.png
 share/icons/locolor/32x32/apps/kxmleditor.png
+share/services/kxmleditorpart.desktop
 @dirrm share/doc/HTML/en/kxmleditor
 @dirrm share/apps/kxmleditor/pics
 @dirrm share/apps/kxmleditor/icons/locolor/16x16/actions
