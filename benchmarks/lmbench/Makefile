@@ -1,18 +1,19 @@
-# OpenBSD makefile for:	lmbench
-# Version required:	1.1
-# Date created:		Nov 27 1997
-# Whom:			ejovi
-#
-# $OpenBSD: Makefile,v 1.2 1998/03/01 08:28:33 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/07 04:43:01 marc Exp $
 #
 
 DISTNAME=	lmbench
 PKGNAME=	lmbench-1.1
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://reality.sgi.com/lm_engr/lmbench/
-EXTRACT_SUFX=	.tar.Z
+
+BROKEN=		"version changed; home site moved"
 
 MAINTAINER=	joey@OpenBSD.ORG
+
+
+# this is the new home site
+#
+MASTER_SITES=	ftp://ftp.bitmover.com/lmbench/
+EXTRACT_SUFX=	.tar.Z
 
 ALL_TARGET=	build
 MAKE_ENV=	PATH=${PATH}:${WRKSRC}/scripts
