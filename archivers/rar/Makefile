@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2003/10/18 18:20:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.38 2005/02/21 21:59:44 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc
 
@@ -41,6 +41,7 @@ NO_BUILD=	Yes
 
 WRKDIST=	${WRKDIR}
 SUBST_VARS+=	EMUL
+SYSTRACE_SUBST_VARS=	FULLDISTDIR
 SYSCTL=		${SUDO} sysctl -w kern.emul.${EMUL}
 
 pre-extract:
