@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/08/23 19:33:20 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2001/08/26 18:10:46 brad Exp $
 
 COMMENT=	"GNU Standards-compliant Makefile generator"
 
@@ -12,6 +12,7 @@ HOMEPAGE=	http://www.gnu.org/software/automake/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
