@@ -1,6 +1,7 @@
---- lib/Makefile.in.orig	Wed Mar 17 15:19:06 1999
-+++ lib/Makefile.in	Wed Mar 17 15:19:21 1999
-@@ -97,7 +97,7 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1 2001/02/20 22:07:48 danh Exp $
+--- lib/Makefile.in.orig	Wed Feb 10 01:49:56 1999
++++ lib/Makefile.in	Tue Feb 20 16:53:37 2001
+@@ -97,7 +97,7 @@ libgif_la_SOURCES = dev2gif.c   \
                      quantize.c  \
  					gif_lib_private.h
  
