@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.26 2000/06/11 17:49:35 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2000/06/21 09:57:54 brad Exp $
 
-DISTNAME=	glib-1.2.7
+DISTNAME=	glib-1.2.8
 CATEGORIES=	devel
 NEED_VERSION=	1.301
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
 		http://www.ameth.org/gimp/gtk/v1.2/
 
-HOMEPAGE=	http://www.gtk.org
+HOMEPAGE=	http://www.gtk.org/
 
 MAINTAINER=	brad@openbsd.org
 

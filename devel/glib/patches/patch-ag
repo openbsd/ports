@@ -1,6 +1,6 @@
---- gmodule/gmodule-dl.c.orig	Tue Sep  7 17:13:05 1999
-+++ gmodule/gmodule-dl.c	Tue Sep  7 17:15:32 1999
-@@ -130,15 +130,12 @@
+--- gmodule/gmodule-dl.c.orig	Tue Feb 29 23:19:47 2000
++++ gmodule/gmodule-dl.c	Wed Jun 21 05:33:39 2000
+@@ -140,15 +140,12 @@
  
  static gchar*
  _g_module_build_path (const gchar *directory,
