@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/25 01:00:53 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/27 14:12:48 naddy Exp $
 
 
 COMMENT=	"smalltalk system"
 CATEGORIES=	lang
-NEED_VERSION=	1.400
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 
@@ -56,6 +55,8 @@ MAKE_FLAGS+=INTERP=gnu-interp
 FAKE_FLAGS=${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 PLUGINS= Profiler.so SoundCodecPrims.so Squeak3D.so System.so
+
+NO_REGRESS=	Yes
 
 post-extract:
 	cp ${FILESDIR}/sqOpenBSDSound.c ${WRKSRC}

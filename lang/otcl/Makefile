@@ -1,13 +1,12 @@
 #
 # $FreeBSD: ports/lang/otcl/Makefile,v 1.6 1999/11/28 18:31:28 steve Exp $
-# $OpenBSD: Makefile,v 1.13 2002/02/28 15:21:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/27 14:12:48 naddy Exp $
 #
 
 COMMENT=	"MIT Object Tcl"
 
 DISTNAME=	otcl-1.0a7
 CATEGORIES=	lang
-NEED_VERSION=	1.505
 
 HOMEPAGE=	http://www.isi.edu/nsnam/otcl/index.html
 
@@ -26,5 +25,7 @@ CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include/tcl8.3/generic \
 		--with-tcl-ver=8.3 \
 		--with-tk-ver=8.3
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

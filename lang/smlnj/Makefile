@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/06/30 01:02:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/27 14:12:48 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -40,6 +40,8 @@ post-extract:
 do-build:
 	cd ${WRKDIR} && unset PWD && \
 	FILESDIR="$(FILESDIR)" ./config/install.sh
+
+NO_REGRESS=	Yes
 	
 do-install:
 	rm -rf ${SML_BASE}

@@ -1,5 +1,5 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.17 2002/03/21 21:09:17 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/27 14:12:48 naddy Exp $
 
 COMMENT=	"useful and interesting programs for Icon"
 
@@ -10,7 +10,6 @@ PKGNAME=	icon-lib-${VERSION}
 DISTFILES=	icon.v940src.tgz
 
 CATEGORIES=lang
-NEED_VERSION=	1.515
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 # PD
@@ -67,6 +66,8 @@ do-build:
 	${BUILDENV} cd ${WRKSRC}/gpacks/vib && ${MAKE}
 	${BUILDENV} cd ${WRKSRC}/gpacks/xtiles && icont -s xtiles.icn
 .endif
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${IPL}/ucode

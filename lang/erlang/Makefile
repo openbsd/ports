@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:47 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/27 14:12:47 naddy Exp $
 #
 
 COMMENT=	"Ericsson's high-level functional programming language"
@@ -6,7 +6,6 @@ COMMENT=	"Ericsson's high-level functional programming language"
 VERSION=		47.4.0
 DISTNAME=		erlang-${VERSION}
 CATEGORIES=     	lang
-NEED_VERSION=		1.402
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -22,6 +21,7 @@ CONFIGURE_STYLE=	autoconf
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/erts-${VERSION}/autoconf
 
 ALL_TARGET=		emulator new_libraries
+NO_REGRESS=		Yes
 
 # Move the rest of erlang configuration into the port configure step,
 # not the build step.

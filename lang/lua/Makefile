@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/03/21 21:09:17 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/27 14:12:48 naddy Exp $
 
 COMMENT=	"powerful, light-weight programming language"
 
 DISTNAME=	lua-4.0
 CATEGORIES=     lang
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 		ftp://csg.uwaterloo.ca/pub/lhf/lua/ \
 		ftp://ftp.freesoftware.com/pub/languages/lua/ \
@@ -32,6 +32,8 @@ post-build:
 	cd ${WRKDIST} && ${CC} ${CFLAGS} -o bin/bin2c etc/bin2c.c
 #	and recompile with shared libs
 	${BUILD_SHARED}
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include

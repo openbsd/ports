@@ -3,7 +3,7 @@
 # Date created:		31 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.14 2002/03/21 21:09:16 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/10/27 14:12:47 naddy Exp $
 #
 
 COMMENT=	"lazy functional language"
@@ -11,7 +11,6 @@ COMMENT=	"lazy functional language"
 DISTNAME=	gofer230a
 PKGNAME=	gofer-2.30a
 CATEGORIES=	lang
-NEED_VERSION=	1.515
 
 MASTER_SITES=	http://www.cse.ogi.edu/~mpj/goferarc/
 
@@ -23,6 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/src
 LIBDIR=		${PREFIX}/lib/Gofer
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${LIBDIR}

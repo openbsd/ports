@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/21 21:09:17 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/27 14:12:48 naddy Exp $
 
 CATEGORIES=	lang
-NEED_VERSION=	1.515
 ONLY_FOR_ARCHS=	i386
 
 COMMENT="Polytechnique Montreal Modula-3"
@@ -46,5 +45,7 @@ M3ARCH=OpenBSD_386
 M3OPTIONS=-DPREFIX=${PREFIX} -DLOCALBASE=${LOCALBASE} -DX11BASE=${X11BASE}
 MAKE_FLAGS=M3OPTIONS="${M3OPTIONS}"
 SUBST_VARS=M3ARCH
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

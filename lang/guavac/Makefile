@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/09/19 22:29:36 todd Exp $
+# $OpenBSD: Makefile,v 1.11 2002/10/27 14:12:48 naddy Exp $
 #
 
 COMMENT=		"Java compiler and decompiler developed under GPL"
@@ -17,5 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu dest
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

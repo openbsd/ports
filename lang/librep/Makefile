@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/09/24 07:35:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2002/10/27 14:12:48 naddy Exp $
 # Original from: John Harper <jsh@users.sourceforge.net>
 
 COMMENT=	"Emacs Lisp-like runtime library"
@@ -12,7 +12,7 @@ BROKEN=		A bug in GCC on powerpc
 VERSION=	0.13.4
 DISTNAME=	librep-${VERSION}
 CATEGORIES=	lang
-NEED_VERSION=	1.474
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=librep/}
 
 HOMEPAGE=	http://librep.sourceforge.net/
@@ -39,5 +39,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static
 CONFIGURE_ARGS+= --without-gmp
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
