@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2005/01/08 19:51:07 espie Exp $
 
 # common stuff for all gcc ports
 # we assume each one defines a V variable.
@@ -24,7 +24,7 @@ PKGNAME=	gcc-${FULL_VERSION}
 PKGNAME-c++ =	g++-${FULL_VERSION}
 PKGNAME-estdc =	libstdc++-${FULL_VERSION}
 PKGNAME-g77=	g77-${FULL_VERSION}
-PKGNAME-g95=	g95-${FULL_VERSION}
+PKGNAME-f95=	g95-${FULL_VERSION}
 PKGNAME-java=	gcj-${FULL_VERSION}
 PKGNAME-objc=	gobjc-${FULL_VERSION}
 PKGNAME-ada=	gnat-${FULL_VERSION}
