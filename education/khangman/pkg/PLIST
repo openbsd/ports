@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/10/27 15:56:44 kevlo Exp $
+bin/khangman
+share/applnk/Applications/khangman.desktop
+share/apps/khangman/easy.txt
+share/apps/khangman/level2.txt
+share/apps/khangman/level3.txt
+share/apps/khangman/level4.txt
+share/apps/khangman/pics/hg1.gif
+share/apps/khangman/pics/hg10.gif
+share/apps/khangman/pics/hg12.gif
+share/apps/khangman/pics/hg13.gif
+share/apps/khangman/pics/hg14.gif
+share/apps/khangman/pics/hg2.gif
+share/apps/khangman/pics/hg3.gif
+share/apps/khangman/pics/hg4.gif
+share/apps/khangman/pics/hg5.gif
+share/apps/khangman/pics/hg6.gif
+share/apps/khangman/pics/hg7.gif
+share/apps/khangman/pics/hg8.gif
+share/apps/khangman/pics/hg9.gif
+share/apps/khangman/pics/kh_sm.png
+share/apps/khangman/pics/khm_splash.png
+share/apps/khangman/sounds/new_game.wav
+share/apps/khangman/sounds/splash.wav
+share/icons/locolor/16x16/apps/khangman.png
+share/icons/locolor/32x32/apps/khangman.png
+@dirrm share/apps/khangman/sounds
+@dirrm share/apps/khangman/pics
+@dirrm share/apps/khangman
