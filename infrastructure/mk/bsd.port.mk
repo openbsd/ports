@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.339 2000/10/22 16:06:25 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.340 2000/10/22 16:31:38 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1227,7 +1227,7 @@ fetch: fetch-depends
 .  if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
     !defined(PERMIT_DISTFILES_CDROM) || !defined(PERMIT_DISTFILES_FTP)
 	@echo >&2 "*** The licensing info for this port is incomplete."
-	@echo >&2 "*** Please notify the OpenBSD port maintainer <${MAINTAINER}>"
+	@echo >&2 "*** Please notify the OpenBSD port maintainer: ${MAINTAINER}"
 .  endif
 .  if target(pre-fetch)
 	@cd ${.CURDIR} && exec ${MAKE} pre-fetch
