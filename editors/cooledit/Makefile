@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/24 21:55:53 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/06 00:29:01 lebel Exp $
 
-CATEGORIES=		editors
-MASTER_SITES=		${HOMEPAGE}
+COMMENT=	"easy to use, graphical editor"
+
+CATEGORIES=	editors
+MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE= 	http://cooledit.sourceforge.net/ 
 DISTNAME=	cooledit-3.17.2
+NEED_VERSION=	1.402
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

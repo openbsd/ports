@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2001/02/26 00:25:42 danh Exp $
+# $OpenBSD: Makefile,v 1.15 2001/05/06 00:29:28 lebel Exp $
+
+COMMENT=	"powerful programming editor"
 
 DISTNAME=	xwpe-1.5.22a
 CATEGORIES=	editors
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.identicalsoftware.com/xwpe/ 
 MASTER_SITE_SUBDIR= apps/editors/X

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2000/10/22 15:41:50 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/05/06 00:29:06 lebel Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/08/10 00:31:40 steve Exp $
+
+COMMENT=	"view and edit files in hexadecimal or ASCII"
 
 DISTNAME=	hexedit-1.1.0
 CATEGORIES=	editors
-NEED_VERSION=	1.330
+NEED_VERSION=	1.402
 MASTER_SITES=	http://pixel.linuxave.net/
 EXTRACT_SUFX=	.src.tgz
 

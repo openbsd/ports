@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2001/01/05 16:35:58 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 00:28:57 lebel Exp $
+
+COMMENT=		"simple to use text editor for X11"
 
 DISTNAME=		aXe-6.1.2
 PKGNAME=		axe-6.1.2
 CATEGORIES=		editors
-NEED_VERSION=		1.336
+NEED_VERSION=		1.402
 MASTER_SITES=           ${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=     editors
 EXTRACT_SUFX=		.tar.Z

@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2000/10/23 21:45:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2001/05/06 00:29:24 lebel Exp $
+
+COMMENT=	"extensible, customizable real-time display editor"
 
 # use flavors for mule and compface support
 # e.g., make FLAVOR=mule
 
 DISTNAME=	xemacs-20.4
 CATEGORIES=	editors
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 FAKE=		No
 MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/${DISTNAME}/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/${DISTNAME}/ \

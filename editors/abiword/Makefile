@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2001/02/18 23:58:37 dugsong Exp $
+# $OpenBSD: Makefile,v 1.18 2001/05/06 00:28:54 lebel Exp $
+
+COMMENT=	"open-source, cross-platform WYSIWYG word processor"
 
 VERSION=	0.7.12
 PKGNAME=	abiword-${VERSION}
 CATEGORIES=	editors
+NEED_VERSION=	1.402
 
 MASTER_SITES=	http://www.abisource.com/downloads/Version-${VERSION}/lf/
 DISTFILES=	abi-${VERSION}.tar.gz abidistfiles.tar.gz expat.tar.gz \
