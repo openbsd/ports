@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1998/04/29 17:23:15 angelos Exp $
+# $OpenBSD: Makefile,v 1.14 1998/05/14 03:39:10 form Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -68,7 +68,7 @@
 #    SUBDIR += tkstep80
 #    SUBDIR += tvtwm
 #    SUBDIR += tycoon
-#    SUBDIR += viewfax
+     SUBDIR += viewfax
 #    SUBDIR += windowmaker
      SUBDIR += wm2
 #    SUBDIR += x3270
