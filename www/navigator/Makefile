@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1999/06/21 16:12:04 brad Exp $
+# $OpenBSD: Makefile,v 1.13 1999/06/21 16:15:54 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -40,7 +40,7 @@ MASTER_SITES=	ftp://ftp.fortify.net/pub/Fortify/ \
 
 DISTFILES=	${DISTNAME}.tar.gz \
 		${FORTIFY}.tar.gz
-SUPDISTFILES=	${NS_i386} ${NS_SPARC} ${FORTIFY}
+SUPDISTFILES=	${NS_i386} ${NS_SPARC} ${FORTIFY}.tar.gz
 
 OBJMACHINE=	"yes"
 NO_WRKSUBDIR=	"No work subdirectory"
