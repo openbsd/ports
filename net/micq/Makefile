@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 1999/06/23 19:21:37 form Exp $
+# $OpenBSD: Makefile,v 1.4 1999/09/15 13:03:35 form Exp $
 # $FreeBSD: Makefile,v 1.6 1999/06/03 08:31:06 ache Exp $
 
-DISTNAME=       micq-0.4.1
+DISTNAME=       micq-0.4.2
 CATEGORIES=	net
-MASTER_SITES=   ftp://micq.chatzone.org/pub/micq/V0.4.1/
+MASTER_SITES=   ftp://micq.chatzone.org/pub/micq/V0.4.2/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	form@openbsd.org
@@ -24,7 +24,7 @@ MICQ_LANG?=	ENGLISH
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/micq ${PREFIX}/bin
 		${MKDIR} ${PREFIX}/share/doc/micq
-.for file in README TODO WISHLIST commands.txt
+.for file in README CHANGELOG
 		${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/micq
 .endfor
 
