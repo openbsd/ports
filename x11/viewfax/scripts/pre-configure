@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cat <<EOF >>$WRKSRC/Imakefile
+BINDIR  = $PREFIX/bin 
+HELPDIR = $PREFIX/lib/X11/viewfax
+MANDIR  = $PREFIX/man/cat1
+EOF
+exit 0
