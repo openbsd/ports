@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2001/03/30 22:04:21 avsm Exp $
+# $OpenBSD: Makefile,v 1.57 2001/04/05 03:46:25 brad Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
      SUBDIR += ImageMagick
      SUBDIR += Mesa
      SUBDIR += aalib
-     SUBDIR += aalib:no_x11
+     SUBDIR += aalib,no_x11
 #    SUBDIR += aero
 #    SUBDIR += camediaplay
      SUBDIR += compface
@@ -16,7 +16,7 @@
      SUBDIR += fnlib
      SUBDIR += fxtv
      SUBDIR += gd
-     SUBDIR += gd:no_x11
+     SUBDIR += gd,no_x11
      SUBDIR += gdk-pixbuf
 #    SUBDIR += geomview
 #    SUBDIR += gfont
@@ -53,7 +53,7 @@
      SUBDIR += netpbm
      SUBDIR += p5-Imager
      SUBDIR += p5-GD
-     SUBDIR += p5-GD:no_x11
+     SUBDIR += p5-GD,no_x11
      SUBDIR += p5-GD-Graph
      SUBDIR += p5-GD-Graph3d
      SUBDIR += p5-GD-TextUtil

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2001/04/02 15:17:42 wilfried Exp $
+# $OpenBSD: Makefile,v 1.22 2001/04/05 03:46:25 brad Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += cdb
      SUBDIR += db
-     SUBDIR += db:java
+     SUBDIR += db,java
      SUBDIR += gdbm
      SUBDIR += gnats
      SUBDIR += iodbc
@@ -17,7 +17,7 @@
      SUBDIR += p5-DBD-Pg
      SUBDIR += p5-DBI
      SUBDIR += postgresql
-     SUBDIR += postgresql:tcl
+     SUBDIR += postgresql,tcl
      SUBDIR += xmysql
      SUBDIR += xmysqladmin
 
