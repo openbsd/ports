@@ -3,10 +3,8 @@
 # Date created:        25 January 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 1999/10/31 08:49:04 angelos Exp $
+# $OpenBSD: Makefile,v 1.4 1999/11/15 02:27:55 turan Exp $
 #
-
-BROKEN=		waiting for turans@ to verify
 
 DISTNAME=	xmascot2.5p2
 PKGNAME=        xmascot-2.5p2
