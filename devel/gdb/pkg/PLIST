@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/03 11:21:32 espie Exp $
-bin/gdb
-bin/gdbtui
-@info info/annotate.info
-@info info/gdb.info
-@info info/gdbint.info
-@info info/stabs.info
-@man man/man1/gdb.1
-@man man/man1/gdbtui.1
