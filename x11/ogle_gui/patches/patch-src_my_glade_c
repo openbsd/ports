@@ -1,0 +1,64 @@
+$OpenBSD: patch-src_my_glade_c,v 1.1.1.1 2002/05/27 14:39:17 espie Exp $
+
+--- src/my_glade.c.orig	Tue Dec  4 19:36:57 2001
++++ src/my_glade.c	Mon May 27 16:32:18 2002
+@@ -48,13 +48,58 @@ static void *my_dlsym(void *handle, char
+   return fun;
+ }
+ 
++#ifdef __OpenBSD__
++#include <string.h>
++#include <dirent.h>
++#include <libgen.h>
++/* Quick and dirty: settle for any libglade */
++static void *findlibrary(char *template)
++{
++    char *name;
++    char *sopart;
++    size_t len;
++    DIR *d;
++    struct dirent *de;
++    void *lib;
++    
++    name = dirname(template);
++    if (!name)
++    	return NULL;
++    template = basename(template);
++    if (!template)
++    	return NULL;
++    sopart = strstr(template, ".so.");
++    if (!sopart)
++    	return NULL;
++
++    len = sopart-template+4;
++
++    d = opendir(name);
++    if (!d)
++    	return NULL;
++    while ((de = readdir(d)) != NULL) {
++    	if (strncmp(de->d_name, template, len) == 0) { 
++		lib = dlopen(de->d_name, DL_LAZY);
++		closedir(d);
++		return lib;
++	}
++    }
++    closedir(d);
++    return NULL;
++}
++#endif
++
+ // to be called first
+ void my_glade_setup ()
+ {
+   void *glade_lib;
+   char *home;
+ 
+-  glade_lib = dlopen (LIBGLADE_LIB, RTLD_NOW);
++  glade_lib = dlopen (LIBGLADE_LIB, DL_LAZY);
++#ifdef __OpenBSD__
++  if (glade_lib == NULL)
++      glade_lib = findlibrary(LIBGLADE_LIB);
++#endif
+   if (glade_lib == NULL) {
+     fprintf(stderr, "Error during dlopen: %s\n", dlerror());
+     gtk_exit(1);
