@@ -1,33 +1,33 @@
-# $OpenBSD: Makefile,v 1.4 1999/10/29 10:57:16 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/10 09:38:03 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
 # Directory where the maple CDROM was mounted
 CDROM?=/cdrom
-NEED_VERSION=1.116
+NEED_VERSION=1.191
 
 # where the basic distribution unpacks
 MAPLE_DIR?=${PREFIX}/maple
 
-DISTNAME=		maple-5.5
-CATEGORIES=     	math
+DISTNAME=	maple-5.5
+CATEGORIES=     math
 
 # if someone wants to buy the sparc version and check it, be my guest...
 
 ONLY_FOR_ARCHS=	i386
-NO_CDROM=		"Commercial"
-MIRROR_DISTFILE=	no
+NO_CDROM=	"Commercial"
+MIRROR_DISTFILE=no
 
-MAINTAINER=		espie@cvs.openbsd.org
+MAINTAINER=	espie@cvs.openbsd.org
 
-NO_WRKSUBDIR=  yes
-NO_PATCH=		yes
-NO_CONFIGURE=	yes
-NO_PACKAGE=		yes
+WRKDIST=	${WRKDIR}
+NO_PATCH=	Yes
+NO_CONFIGURE=	Yes
+NO_PACKAGE=	Yes
 
 # verify that it makes sense to install maple here
 pre-fetch:
-	@${ECHO} "You must have LINUX_COMPAT in your kernel for this port"
+	@echo "You must have LINUX_COMPAT in your kernel for this port"
 
 # we only use the CD-Rom files for markers
 DIST_SUBDIR=maple5.5
@@ -62,12 +62,12 @@ do-fetch:
 MAPLE_SCRIPTS=maple march mint updtsrc xmaple
 
 do-install:
-	@mkdir ${MAPLE_DIR} || ${ECHO} "${MAPLE_DIR} already exists"
+	@mkdir -p ${MAPLE_DIR} || ${ECHO} "${MAPLE_DIR} already exists"
 	@cd ${MAPLE_DIR} && yes | ${FULLDISTDIR}/install
-	@${ECHO} "But this installation script does it for you"
+	@echo "But this installation script does it for you"
 	@for file in ${MAPLE_SCRIPTS}; do\
-		sed -e 's,/usr/local/maple,${MAPLE_DIR},' ${MAPLE_DIR}/bin/$$file >${WRKDIR}/$$file; \
-		cp ${WRKDIR}/$$file ${MAPLE_DIR}/bin; \
+		sed -e 's,/usr/local/maple,${MAPLE_DIR},' ${MAPLE_DIR}/bin/$$file >${WRKDIST}/$$file; \
+		cp ${WRKDIST}/$$file ${MAPLE_DIR}/bin; \
 		ln -sf ${MAPLE_DIR}/bin/$$file ${PREFIX}/bin; \
 	done
 	@for file in ${MAPLE_DIR}/man/man1/*; do \
