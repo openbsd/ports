@@ -1,0 +1,11 @@
+$OpenBSD: patch-annot_c,v 1.1 2002/07/19 10:17:10 wcobb Exp $
+--- annot.c.orig	Fri Jul 19 07:09:35 2002
++++ annot.c	Fri Jul 19 07:09:58 2002
+@@ -678,6 +678,7 @@ static TV_BOOL TVANNOTInputDevPropUpdate
+         case TV_DEVICE_VIDEO   : str = "VIDEO IN"  ; break;
+         case TV_DEVICE_SVIDEO  : str = "SVIDEO IN" ; break;
+         case TV_DEVICE_CSVIDEO : str = "CSVIDEO IN"; break;
++        case TV_DEVICE_DEV3    : str = "DEV3 IN"; break;
+         default :
+              fprintf( stderr, "TVANNOTInputDevPropUpdate: Bad device\n" );
+              exit(1);

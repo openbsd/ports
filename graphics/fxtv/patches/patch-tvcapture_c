@@ -1,6 +1,6 @@
-$OpenBSD: patch-tvcapture_c,v 1.1 2002/02/02 00:52:18 naddy Exp $
+$OpenBSD: patch-tvcapture_c,v 1.2 2002/07/19 10:17:11 wcobb Exp $
 --- tvcapture.c.orig	Mon Feb 12 14:59:22 2001
-+++ tvcapture.c	Wed Aug 15 13:46:30 2001
++++ tvcapture.c	Fri Jul 19 06:53:10 2002
 @@ -35,7 +35,8 @@
  #include <fcntl.h>
  #include <errno.h>
@@ -11,7 +11,17 @@ $OpenBSD: patch-tvcapture_c,v 1.1 2002/02/02 00:52:18 naddy Exp $
  # include <dev/ic/bt8xx.h>
  #else
  # include <machine/ioctl_bt848.h>
-@@ -520,8 +521,6 @@ void TVCAPTURESetInputDevice( TV_CAPTURE
+@@ -492,9 +493,7 @@ void TVCAPTURESetInputDevice( TV_CAPTURE
+         case TV_DEVICE_VIDEO   : arg = METEOR_INPUT_DEV0;        break;
+         case TV_DEVICE_SVIDEO  : arg = METEOR_INPUT_DEV_SVIDEO;  break;
+         case TV_DEVICE_CSVIDEO : arg = METEOR_INPUT_DEV2;        break;
+-#ifdef METEOR_INPUT_DEV3
+         case TV_DEVICE_DEV3    : arg = METEOR_INPUT_DEV3;        break;
+-#endif
+         default :
+              fprintf( stderr, "TVCAPTURESetInputDevice(): Bad value %d\n",
+                       dev );
+@@ -520,8 +519,6 @@ void TVCAPTURESetInputDevice( TV_CAPTURE
              case TV_AUDIO_INPUT_INTERN : arg = AUDIO_INTERN;  break;
          }
          if ( ioctl( c->tfd, BT848_SAUDIO, &arg ) < 0 ) {
@@ -20,7 +30,7 @@ $OpenBSD: patch-tvcapture_c,v 1.1 2002/02/02 00:52:18 naddy Exp $
              return;
          }
      }
-@@ -562,8 +561,6 @@ void TVCAPTURESetAudioInputDevice( TV_CA
+@@ -562,8 +559,6 @@ void TVCAPTURESetAudioInputDevice( TV_CA
      /*    to keep that setting whenever it wants to change the setting.  */
      if ( dev != TV_AUDIO_INPUT_AUTO ) {
          if ( ioctl( c->tfd, BT848_SAUDIO, &arg ) < 0 ) {
@@ -29,7 +39,7 @@ $OpenBSD: patch-tvcapture_c,v 1.1 2002/02/02 00:52:18 naddy Exp $
              return;
          }
          c->audio_input_dev = dev;
-@@ -727,7 +724,6 @@ void TVCAPTURESetAudioMute( TV_CAPTURE *
+@@ -727,7 +722,6 @@ void TVCAPTURESetAudioMute( TV_CAPTURE *
  
      /*  Don't change audio source; just mute it  */
      if ( ioctl( c->tfd, BT848_SAUDIO, &arg ) < 0 ) {
@@ -37,7 +47,17 @@ $OpenBSD: patch-tvcapture_c,v 1.1 2002/02/02 00:52:18 naddy Exp $
          return;
      }
  }
-@@ -1729,7 +1725,7 @@ TV_BOOL TVCAPTUREConfigure( TV_CAPTURE  
+@@ -811,9 +805,7 @@ TV_BOOL TVCAPTUREQueryDriverState( TV_CA
+         case METEOR_INPUT_DEV1       : s->input_dev = TV_DEVICE_TUNER  ; break;
+         case METEOR_INPUT_DEV_SVIDEO : s->input_dev = TV_DEVICE_SVIDEO ; break;
+         case METEOR_INPUT_DEV2       : s->input_dev = TV_DEVICE_CSVIDEO; break;
+-#ifdef METEOR_INPUT_DEV3
+         case METEOR_INPUT_DEV3       : s->input_dev = TV_DEVICE_DEV3   ; break;
+-#endif
+         default :
+              fprintf( stderr, "TVCAPTUREQueryDriverState(): Bad INPUT %ld\n",
+                       larg );
+@@ -1729,7 +1721,7 @@ TV_BOOL TVCAPTUREConfigure( TV_CAPTURE  
          goto RETURN;
      }
  
@@ -46,7 +66,7 @@ $OpenBSD: patch-tvcapture_c,v 1.1 2002/02/02 00:52:18 naddy Exp $
          if ( !( x->visual_modes[ x->active_visual ] & TV_TRANSFER_DIRECT )) {
              strcpy( S_err_msg, "Active visual does not support direct video");
              goto RETURN;
-@@ -1738,6 +1734,7 @@ TV_BOOL TVCAPTUREConfigure( TV_CAPTURE  
+@@ -1738,6 +1730,7 @@ TV_BOOL TVCAPTUREConfigure( TV_CAPTURE  
              strcpy( S_err_msg, "Direct transfer only supported for video" );
              goto RETURN;
          }
