@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/25 15:19:20 xsa Exp $
+%%SHARED%%
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/Milter.py
+lib/python${MODPY_VERSION}/site-packages/Milter.pyc
+lib/python${MODPY_VERSION}/site-packages/mime.py
+lib/python${MODPY_VERSION}/site-packages/mime.pyc
+lib/python${MODPY_VERSION}/site-packages/spf.py
+lib/python${MODPY_VERSION}/site-packages/spf.pyc
+share/doc/py-milter/
+share/doc/py-milter/README
+share/examples/py-milter/
+share/examples/py-milter/bms.py
+share/examples/py-milter/milter.cfg
+share/examples/py-milter/rejects.py
+share/examples/py-milter/rhsbl.m4
+share/examples/py-milter/sample.py
+share/examples/py-milter/spfquery.py
