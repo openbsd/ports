@@ -1,0 +1,13 @@
+$OpenBSD: patch-common_dircmp_rcs_scanfile_c,v 1.1 2003/06/05 13:04:19 naddy Exp $
+--- common/dircmp_rcs_scanfile.c.orig	Wed Jun  4 16:06:41 2003
++++ common/dircmp_rcs_scanfile.c	Thu Jun  5 14:52:48 2003
+@@ -747,6 +747,9 @@ dircmp_rcs_scanfile_read(struct dircmp_a
+ 	struct scanfile_attr rpref_attr;
+ 	char *name;
+ 
++	if (sa->sa_start == sa->sa_end)
++		return (FALSE);
++
+ 	rpref_attr.a_name = cl->cl_rprefix;
+ 	rpref_attr.a_namelen = cl->cl_rprefixlen + 1;
+ 
