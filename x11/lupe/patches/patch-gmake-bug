@@ -1,0 +1,10 @@
+--- Imakefile.orig	Wed Apr  5 11:57:08 2000
++++ Imakefile	Wed Apr  5 11:58:52 2000
+@@ -12,6 +12,6 @@ HEADERS = config.h extern.h version.h ti
+ $(OBJS) : $(HEADERS)
+ 
+ config.h: config
+-	/bin/sh $^ >$@
++	/bin/sh $> >$@
+ 
+ lupe.o : icon.xbm
