@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.495 2001/11/12 14:24:06 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.496 2001/11/12 14:32:52 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2266,8 +2266,10 @@ pre-repackage:
 .if defined(LIB_DEPENDS) || defined(MISC_DEPENDS)
 _ALWAYS_DEP2 = ${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/} \
 	${MISC_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_ALWAYS_DEP3 = ${MISC_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
 _ALWAYS_DEP= ${_ALWAYS_DEP2:C/[^:]*://}
 .else
+_ALWAYS_DEP3=
 _ALWAYS_DEP2=
 _ALWAYS_DEP=
 .endif
@@ -2326,11 +2328,11 @@ describe:
 		echo -n "/dev/null|"; \
 	fi; \
 	echo -n "${MAINTAINER}|${CATEGORIES}|"
-.    if !empty(_ALWAYS_DEP2) || !empty(_BUILD_DEP2)
+.    if !empty(_ALWAYS_DEP3) || !empty(_BUILD_DEP2)
 	@cd ${.CURDIR} && _FINAL_ECHO=: _INITIAL_ECHO=: exec ${MAKE} build-depends-list
 .    endif
 	@echo -n "|"
-.    if !empty(_ALWAYS_DEP2) || !empty(_RUN_DEP2)
+.    if !empty(_ALWAYS_DEP3) || !empty(_RUN_DEP2)
 	@cd ${.CURDIR} && _FINAL_ECHO=: _INITIAL_ECHO=: exec ${MAKE} run-depends-list
 .    endif
 	@echo -n "|"
@@ -2609,14 +2611,14 @@ package-dir-depends:
 .endif
 
 new-depends:
-.if !empty(_ALWAYS_DEP2) || !empty(_RUN_DEP2)
+.if !empty(_ALWAYS_DEP3) || !empty(_RUN_DEP2)
 	@unset FLAVOR SUBPACKAGE || true; \
 	: $${self:=self}; \
-	for spec in `echo '${_ALWAYS_DEP2} ${_RUN_DEP2}' \
+	for spec in `echo '${_ALWAYS_DEP3} ${_RUN_DEP2}' \
 		| tr '\040' '\012' | sort -u`; do \
 		dir=$${spec#*:}; pkg=$${spec%:*}; \
 		${_flavor_fragment}; \
-		default=`eval $$toset ${MAKE} package-name`; \
+		default=`eval $$toset ${MAKE} _print-packagename`; \
 		: $${pkg:=$$default}; \
 		echo "@newdepend $$self:$$pkg:$$default"; \
 		toset="$$toset self=\"$$default\""; \
@@ -2626,6 +2628,48 @@ new-depends:
 		fi; \
 	done
 .endif
+.if !defined(NO_SHARED_LIBS) && defined(LIB_DEPENDS) && !empty(LIB_DEPENDS)
+.  for _i in ${LIB_DEPENDS}
+	@unset FLAVOR SUBPACKAGE || true; \
+	: $${self:=self}; \
+		echo '${_i}'|{ \
+			IFS=:; read dep pkg dir target; \
+			${_flavor_fragment}; \
+			libspecs='';comma=''; \
+			default=`eval $$toset ${MAKE} _print-packagename`; \
+			case "X$$pkg" in X) pkg=`echo $$default|sed -e 's,-[0-9].*,-*,'`;; esac; \
+			if pkg dependencies check $$pkg; then \
+				listlibs='ls $$shdir 2>/dev/null'; \
+			else \
+				eval $$toset ${MAKE} ${PKGREPOSITORY}/$$default.tgz >/dev/null; \
+				listlibs='pkg_info -L ${PKGREPOSITORY}/$$default.tgz|grep $$shdir|sed -e "s,^$$shdir/,,"'; \
+			fi; \
+			IFS=,; for d in $$dep; do \
+				${_libresolve_fragment}; \
+				case "X$$check" in \
+				Xlib*.a) continue;; \
+				X) \
+					echo 1>&2 "Can't resolve libspec $$d"; \
+					exit 1;; \
+				X*) \
+					libspecs="$$libspecs$$comma$$shprefix$$check"; \
+					comma=',';; \
+				esac; \
+			done; \
+			case "X$$libspecs" in \
+			X) ;;\
+			*) \
+				echo "@libdepend $$self:$$libspecs:$$pkg:$$default"; \
+				toset="$$toset self=\"$$default\""; \
+				if ! eval $$toset ${MAKE} new-depends; then  \
+					echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
+					exit 1; \
+				fi;; \
+			esac; \
+		}
+.  endfor
+.endif
+
 README_NAME?=	${TEMPLATES}/README.port
 
 .if !target(readmes)
