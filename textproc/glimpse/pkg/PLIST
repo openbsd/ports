@@ -1,3 +1,4 @@
+@pkgcfl agrep-*
 bin/agrep
 bin/glimpse
 bin/glimpseindex

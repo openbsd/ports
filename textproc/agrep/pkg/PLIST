@@ -1,3 +1,4 @@
+@pkgcfl glimpse-*
 bin/agrep
 man/man1/agrep.1
 share/doc/agrep/agrep.algorithms
