@@ -3,7 +3,7 @@ bzip-0.21|archivers/bzip||block-sorting file compressor, encumbered|archivers/bz
 bzip2-0.9.5d|archivers/bzip2||block-sorting file compressor, unencumbered|archivers/bzip2/pkg/DESCR|angelos@openbsd.org|archivers|||any|y|y|y|y
 freeze-2.5|archivers/freeze||FREEZE / MELT compression program - often used in QNX|archivers/freeze/pkg/DESCR|ports@openbsd.org|archivers|||any|y|y|y|y
 sharutils-4.2|archivers/gshar+gunshar||packing and unpacking of shell archives|archivers/gshar+gunshar/pkg/DESCR|ports@openbsd.org|archivers|||any|y|y|y|y
-tar-1.13|archivers/gtar||GNU version of the traditional tar archiver|archivers/gtar/pkg/DESCR|niklas@openbsd.org|archivers|||any|y|y|y|y
+tar-1.13|archivers/gtar||GNU version of the traditional tar archiver|archivers/gtar/pkg/DESCR|niklas@openbsd.org|archivers|gettext-0.10.35||any|y|y|y|y
 ha-0.999b|archivers/ha||archive files using the HSC compression method|archivers/ha/pkg/DESCR|angelos@openbsd.org|archivers|gmake-3.78.1||any|y|y|y|y
 lha-1.14f|archivers/lha||archive files using LZW compression (.lzh files)|archivers/lha/pkg/DESCR|angelos@openbsd.org|archivers|||any|y|y|y|y
 lzo-1.06|archivers/lzo||portable speedy lossless data compression library|archivers/lzo/pkg/DESCR|brad@openbsd.org|archivers devel|||any|y|y|y|y
@@ -37,20 +37,20 @@ nspmod-0.1|audio/nspmod||MOD/S3M/MTM tracker that does its own DSP|audio/nspmod/
 MPEG-MP3Info-0.71|audio/p5-MPEG-MP3Info||Perl5 module for reading MPEG3 tags.|audio/p5-MPEG-MP3Info/pkg/DESCR|angelos@openbsd.org|audio perl5|||any|y|y|y|y
 CDDB-1.02|audio/p5-cddb||Perl5 module for CDDB|audio/p5-cddb/pkg/DESCR|angelos@openbsd.org|audio perl5|||any|y|y|y|y
 rplay-3.3.0|audio/rplay||network audio player|audio/rplay/pkg/DESCR|angelos@openbsd.org|audio|gsm-1.0.10 gmake-3.78.1|gsm-1.0.10|any|y|y|y|y
-rsynth-2.0|audio/rsynth||speech synthesizer|audio/rsynth/pkg/DESCR|angelos@openbsd.org|audio|gdbm-1.8.0||any|y|y|y|y
+rsynth-2.0|audio/rsynth||speech synthesizer|audio/rsynth/pkg/DESCR|angelos@openbsd.org|audio|gdbm-1.8.0 autoconf-2.13|gdbm-1.8.0|any|y|y|y|y
 sox-12.15|audio/sox||SOund eXchange - universal sound sample translator|audio/sox/pkg/DESCR|angelos@openbsd.org|audio|||any|y|y|y|y
 timidity-0.2i|audio/timidity||MIDI to WAV renderer and player|audio/timidity/pkg/DESCR|ports@openbsd.org|audio|lesstif-0.89.9|lesstif-0.89.9|any|n|n|n|n
 tosha-0.6|audio/tosha||read CD digital audio data through the SCSI bus|audio/tosha/pkg/DESCR|angelos@openbsd.org|audio|||any|y|y|y|y
 tracker-5.3|audio/tracker||MOD player|audio/tracker/pkg/DESCR|espie@openbsd.org|audio|gmake-3.78.1||any|y|y|y|y
 waveplay-1.0|audio/waveplay||simple wav audio player|audio/waveplay/pkg/DESCR|ports@openbsd.org|audio|||any|y|y|y|y
 workman-1.3a|audio/workman||OpenLook-based CD player|audio/workman/pkg/DESCR|angelos@openbsd.org|audio|xview-config-3.2.1 xview-lib-3.2.1|xview-lib-3.2.1|any|y|y|y|y
-xcd-1.6|audio/xcd||Tcl/Tk CD player|audio/xcd/pkg/DESCR|angelos@openbsd.org|audio||tcl-8.0.5 tk-8.0.5|any|y|y|y|y
+xcd-1.6|audio/xcd||Tcl/Tk CD player|audio/xcd/pkg/DESCR|angelos@openbsd.org|audio||tcl-8.3.0 tk-8.3.0|any|y|y|y|y
 xcdplayer-2.2|audio/xcdplayer||CD player for X11|audio/xcdplayer/pkg/DESCR|angelos@openbsd.org|audio|||any|y|y|y|y
 xmcd-2.3|audio/xmcd||Motif CD player|audio/xmcd/pkg/DESCR|ports@openbsd.org|audio|lesstif-0.89.9|lesstif-0.89.9|any|y|y|y|y
 xmix-2.1|audio/xmix||X11-based audio mixer|audio/xmix/pkg/DESCR|angelos@openbsd.org|audio|||any|y|y|y|y
 xmmix-1.2|audio/xmmix||Motif-based audio mixer|audio/xmmix/pkg/DESCR|ports@openbsd.org|audio|lesstif-0.89.9|lesstif-0.89.9|any|y|y|y|y
 xmp-1.1.5|audio/xmp||Extended Module Player; many formats plus an X11 display|audio/xmp/pkg/DESCR|ports@openbsd.org|audio|gmake-3.78.1||any|y|y|y|y
-xmpeg3-1.0|audio/xmpeg3||Simple TCL interface to the Amp Mpeg-3 player|audio/xmpeg3/pkg/DESCR|angelos@openbsd.org|audio tk80||tcl-8.0.5 amp-0.7.6 tk-8.0.5|any|y|y|y|y
+xmpeg3-1.0|audio/xmpeg3||Simple TCL interface to the Amp Mpeg-3 player|audio/xmpeg3/pkg/DESCR|angelos@openbsd.org|audio tk83||tcl-8.3.0 amp-0.7.6 tk-8.3.0|any|y|y|y|y
 bonnie-1.0|benchmarks/bonnie||performance test of filesystem I/O|benchmarks/bonnie/pkg/DESCR|niklas@openbsd.org|benchmarks|||any|y|y|y|y
 bytebench-3.1|benchmarks/bytebench||BYTE magazine benchmark suite|benchmarks/bytebench/pkg/DESCR|angelos@openbsd.org|benchmarks|||any|y|y|y|y
 iozone-3.9|benchmarks/iozone||performance test of sequential file I/O|benchmarks/iozone/pkg/DESCR|brad@openbsd.org|benchmarks|||any|y|y|y|y
@@ -67,7 +67,7 @@ bpl+-1.0|comms/bpl+||B Plus file transfer protocol|comms/bpl+/pkg/DESCR|ports@op
 conserver-5.21|comms/conserver||manage remote serial consoles via TCP/IP|comms/conserver/pkg/DESCR|angelos@openbsd.org|comms|||any|y|y|y|y
 efax-0.9|comms/efax||small & simple FAX send/receive program|comms/efax/pkg/DESCR|ian@OpenBSD.ORG|comms|||any|y|y|y|y
 hylafax-4.0.2-letter|comms/hylafax||send/receive faxes and share modems|comms/hylafax/pkg/DESCR|d@openbsd.org|comms|jpeg-6b gmake-3.78.1 tiff-3.5.4 afm-1.0|jpeg-6b png-1.0.3 tiff-3.5.4 ghostscript-5.50|any|y|y|y|y
-jpilot-0.96|comms/jpilot||Desktop Organizer Software for the Palm Pilot|comms/jpilot/pkg/DESCR|evan.cordes@UMICH.EDU|comms|tcl-8.3.0 tk-8.3.0 gettext-0.10.35 glib-1.2.7 pilot-link-0.9.3 autoconf-2.13 gtk+-1.2.7|tcl-8.3.0 tk-8.3.0 gettext-0.10.35 glib-1.2.7 pilot-link-0.9.3 gtk+-1.2.7|any|y|y|y|y
+jpilot-0.98|comms/jpilot||Desktop Organizer Software for the Palm Pilot|comms/jpilot/pkg/DESCR|ho@openbsd.org|comms|tcl-8.3.0 tk-8.3.0 gettext-0.10.35 glib-1.2.7 pilot-link-0.9.3 autoconf-2.13 gtk+-1.2.7|tcl-8.3.0 tk-8.3.0 gettext-0.10.35 glib-1.2.7 pilot-link-0.9.3 gtk+-1.2.7|any|y|y|y|y
 kermit-6.0.192|comms/kermit||file transfer/terminal emulation|comms/kermit/pkg/DESCR|ports@OpenBSD.ORG|comms|||any|n|y|n|y
 lrzsz-0.12.20|comms/lrzsz||receive/send files via X/Y/ZMODEM protocol|comms/lrzsz/pkg/DESCR|ports@openbsd.org|comms|||any|n|y|n|y
 malsync-1.6|comms/malsync||sync Palm organizer with AvantGo sites|comms/malsync/pkg/DESCR|evan.cordes@UMICH.EDU|comms|tcl-8.3.0 tk-8.3.0 pilot-link-0.9.3|tcl-8.3.0 tk-8.3.0 pilot-link-0.9.3|any|y|y|y|y
@@ -111,13 +111,13 @@ glib-1.2.7|devel/glib||useful routines for C programming|devel/glib/pkg/DESCR|br
 gmake-3.78.1|devel/gmake||GNU version of 'make'|devel/gmake/pkg/DESCR|todd@openbsd.org|devel|||any|y|y|y|y
 gperf-2.7-19981006|devel/gperf||perfect hash functions, to help write parsers|devel/gperf/pkg/DESCR|espie@cvs.openbsd.org|devel|||any|y|y|y|y
 gsl-0.3b|devel/gsl||GNU Scientific Library|devel/gsl/pkg/DESCR|rohee@openbsd.org|devel|||any|y|y|y|y
-id-utils-3.2d|devel/id-utils||gid/lid tools for looking up variables in code|devel/id-utils/pkg/DESCR|ports@OpenBSD.ORG|devel|compface-1.0 jpeg-6b png-1.0.3 gmake-3.78.1 emacs-20.3 xemacs-20.4||any|y|y|y|y
+id-utils-3.2d|devel/id-utils||gid/lid tools for looking up variables in code|devel/id-utils/pkg/DESCR|ports@OpenBSD.ORG|devel|gmake-3.78.1||any|y|y|y|y
 kdbg-1.0.2|devel/kdbg||graphical debugger for kde|devel/kdbg/pkg/DESCR|seanc@cginfo.sk.ca|devel|gmake-3.78.1 bzip2-0.9.5d gettext-0.10.35 giflib-4.1.0 jpeg-6b png-1.0.3 tiff-3.5.4 qt-1.45 kdelibs-1.1.2|giflib-4.1.0 jpeg-6b png-1.0.3 tiff-3.5.4 qt-1.45 kdelibs-1.1.2|any|y|y|y|y
 lclint-2.4b|devel/lclint||advanced lint: statically check C programs|devel/lclint/pkg/DESCR|espie@cvs.openbsd.org|devel|bison-1.27 gmake-3.78.1||any|y|y|y|y
 libaudiofile-0.1.9|devel/libaudiofile||SGI audiofile library GPLed clone|devel/libaudiofile/pkg/DESCR|rohee@openbsd.org|devel|||any|y|y|y|y
 libicq-0.33|devel/libicq||library to add ICQ support to your software|devel/libicq/pkg/DESCR|brad@openbsd.org|devel|glib-1.2.7|glib-1.2.7|any|y|y|y|y
 libIDL-0.6.5|devel/libIDL||library for creating trees of CORBA IDL files.|devel/libIDL/pkg/DESCR|fgsch@openbsd.org|devel|glib-1.2.7 gmake-3.78.1|glib-1.2.7|any|y|y|y|y
-libproplist-0.10.0|devel/libproplist||GNUstep/OPENSTEP property lists compatibility library|devel/libproplist/pkg/DESCR|jasoni@openbsd.org|devel|gmake-3.78.1||any|y|y|y|y
+libproplist-0.10.1|devel/libproplist||GNUstep/OPENSTEP property lists compatibility library|devel/libproplist/pkg/DESCR|jasoni@openbsd.org|devel|gmake-3.78.1||any|y|y|y|y
 libslang-1.4.0|devel/libslang||stack-based interpreter for terminal applications|devel/libslang/pkg/DESCR|todd@openbsd.org|devel|||any|y|y|y|y
 libtool-1.3.3|devel/libtool||generic shared library support script|devel/libtool/pkg/DESCR|ports@openbsd.org|devel|||any|y|y|y|y
 m4-1.4|devel/m4||GNU m4|devel/m4/pkg/DESCR|niklas@openbsd.org|devel|||any|y|y|y|y
@@ -133,6 +133,7 @@ axe-6.1.2|editors/axe||simple to use text editor for X11|editors/axe/pkg/DESCR|p
 beav-1.40-13|editors/beav||Binary Editor And Viewer|editors/beav/pkg/DESCR|kevlo@openbsd.org|editors|||any|y|y|y|y
 bvi-1.2.0|editors/bvi||binary visual display editor, based on vi|editors/bvi/pkg/DESCR|naddy@unix-ag.uni-kl.de|editors|||any|y|y|y|y
 emacs-20.3|editors/emacs||GNU editor|editors/emacs/pkg/DESCR|ports@OpenBSD.ORG|editors|gmake-3.78.1||any|y|y|y|y
+emacs-20.3-no_x11|editors/emacs:no_X11||GNU editor|editors/emacs/pkg/DESCR|ports@OpenBSD.ORG|editors|gmake-3.78.1||any|y|y|y|y
 hexedit-1.1.0|editors/hexedit||view and edit files in hexadecimal or ASCII|editors/hexedit/pkg/DESCR|brad@openbsd.org|editors|||any|y|y|y|y
 jed-0.99.10|editors/jed||text editor|editors/jed/pkg/DESCR|ports@openbsd.org|editors|libslang-1.4.0|libslang-1.4.0|any|y|y|y|y
 joe-2.8|editors/joe||Joe's own editor|editors/joe/pkg/DESCR|ports@openbsd.org|editors|||any|y|y|y|y
@@ -140,12 +141,12 @@ jove-4.16|editors/jove||Jonathan's Own Version of Emacs|editors/jove/pkg/DESCR|p
 nedit-5.0.2|editors/nedit||X11/Motif GUI text editor|editors/nedit/pkg/DESCR|ports@openbsd.org|editors x11|lesstif-0.89.9|lesstif-0.89.9|any|y|y|y|y
 textedit-1.0|editors/textedit||standard OpenLook text editor for X11|editors/textedit/pkg/DESCR|ian@OpenBSD.ORG|editors|xview-config-3.2.1 xview-lib-3.2.1|xview-lib-3.2.1|any|n|n|n|n
 uemacs-4.0|editors/uemacs||full screen simple editor|editors/uemacs/pkg/DESCR|ports@openbsd.org|editors|unzip-5.40||any|n|y|n|y
-vim-5.6|editors/vim||vi clone, many additional features|editors/vim/pkg/DESCR|jasoni@openbsd.org|editors|gettext-0.10.35 glib-1.2.7 gtk+-1.2.7|gettext-0.10.35 glib-1.2.7 gtk+-1.2.7|any|n|y|n|y
+vim-5.6|editors/vim||vi clone, many additional features|editors/vim/pkg/DESCR|jasoni@openbsd.org|editors|||any|n|y|n|y
 wordperfect-8.0|editors/wordperfect||graphical word processor ported from Windows|editors/wordperfect/pkg/DESCR|dugsong@monkey.org|editors||linux_lib-2.6.1|i386|n|n|n|n
-xemacs-20.4|editors/xemacs20||extensible, customizable real-time display editor|editors/xemacs20/pkg/DESCR|hgweigand@wiesbaden.netsurf.de|editors|gmake-3.78.1 compface-1.0 jpeg-6b png-1.0.3|jpeg-6b png-1.0.3|any|y|y|y|y
+xemacs-20.4|editors/xemacs20||extensible, customizable real-time display editor|editors/xemacs20/pkg/DESCR|hgweigand@wiesbaden.netsurf.de|editors|gmake-3.78.1 jpeg-6b png-1.0.3|jpeg-6b png-1.0.3|any|y|y|y|y
 xwpe-1.5.22a|editors/xwpe||powerful programming editor|editors/xwpe/pkg/DESCR|yanick@fries.net|editors|||any|y|y|y|y
 bochs-991023a|emulators/bochs||Intel 80386 CPU emulator|emulators/bochs/pkg/DESCR|ports@openbsd.org|emulators|gmake-3.78.1||any|n|n|n|y
-freebsd_lib-2.2.8|emulators/freebsd_lib|/usr/local/emul/freebsd|necessary libraries for FreeBSD 2.x compatibility|emulators/freebsd_lib/pkg/DESCR|brad@openbsd.org|emulators|||i386|y|y|y|y
+freebsd_lib-2.2.8|emulators/freebsd_lib|/emul/freebsd|necessary libraries for FreeBSD 2.x compatibility|emulators/freebsd_lib/pkg/DESCR|brad@openbsd.org|emulators|||i386|y|y|y|y
 linux_lib-2.6.1|emulators/linux_lib|/usr/local/emul/linux|necessary libraries for linux compatibility|emulators/linux_lib/pkg/DESCR|brad@openbsd.org|emulators|||i386|y|y|y|y
 simh-2.3d|emulators/simh||PDP, IBM 1401, and Nova CPU simulator|emulators/simh/pkg/DESCR|form@openbsd.org|emulators|||any|n|y|n|y
 wine-990225|emulators/wine||MS-Windows 3.1/95/NT emulator for Unix (Alpha release)|emulators/wine/pkg/DESCR|rohee@OpenBSD.ORG|emulators x11|||i386|y|y|y|y
@@ -230,7 +231,7 @@ mpeg_lib-1.3.1|graphics/mpeg-lib||collection of C routines to decode MPEG movies
 mpeg_play-2.4|graphics/mpeg_play||play mpeg movies on X11|graphics/mpeg_play/pkg/DESCR|ports@OpenBSD.ORG|graphics|||any|y|y|y|y
 netpbm-19940301|graphics/netpbm||toolkit for converting images between different formats|graphics/netpbm/pkg/DESCR|brad@openbsd.org|graphics|jpeg-6b png-1.0.3 tiff-3.5.4|jpeg-6b png-1.0.3 tiff-3.5.4|any|n|y|n|y
 png-1.0.3|graphics/png||library for manipulating PNG images|graphics/png/pkg/DESCR|angelos@openbsd.org|graphics|||any|y|y|y|y
-pngcrush-1.4.0|graphics/pngcrush||optimizer for PNG files|graphics/pngcrush/pkg/DESCR|brad@openbsd.org|graphics|||any|y|y|y|y
+pngcrush-1.4.1|graphics/pngcrush||optimizer for PNG files|graphics/pngcrush/pkg/DESCR|brad@openbsd.org|graphics|||any|y|y|y|y
 tgif-4.1.27|graphics/tgif||two-dimensional drawing tool and hyper-object browser|graphics/tgif/pkg/DESCR|jakob@openbsd.org|graphics||jpeg-6b png-1.0.3 tiff-3.5.4 netpbm-19940301|any|n|y|n|y
 tiff-3.5.4|graphics/tiff||Tools and library routines for working with TIFF images|graphics/tiff/pkg/DESCR|brad@openbsd.org|graphics|jpeg-6b|jpeg-6b|any|y|y|y|y
 xanim-2.80.1|graphics/xanim||X11 animation player with support for lots of formats|graphics/xanim/pkg/DESCR|espie@openbsd.org|graphics x11|||any|n|y|n|y
@@ -251,7 +252,7 @@ gofer-2.30a|lang/Gofer||lazy functional language|lang/Gofer/pkg/DESCR|ports@Open
 STk-3.1.1|lang/STk||scheme interpreter with Tk interface|lang/STk/pkg/DESCR|ports@openbsd.org|lang|||any|?|?|?|?
 camlp4-2.04|lang/camlp4||Pre-Processor-Pretty-Printer for Objective Caml|lang/camlp4/pkg/DESCR|angelos@openbsd.org|lang|gmake-3.78.1 ocaml-2.04||any|?|?|?|?
 gcc-2.95.1|lang/egcs/stable||experimental GNU C, C++, f77..., release flavor|lang/egcs/stable/pkg/DESCR|espie@openbsd.org|lang|bzip2-0.9.5d autoconf-2.13||any|y|y|y|y
-egcs-20000403|lang/egcs/snapshot||experimental GNU C, C++, f77, java..., snapshot flavor|lang/egcs/snapshot/pkg/DESCR|Marc.Espie@openbsd.org|lang|autoconf-2.13||any|n|y|n|n
+egcs-20000313|lang/egcs/snapshot||experimental GNU C, C++, f77, java..., snapshot flavor|lang/egcs/snapshot/pkg/DESCR|Marc.Espie@openbsd.org|lang|autoconf-2.13||any|n|y|n|n
 erlang-47.4.0|lang/erlang||Ericsson's high-level functional programming language|lang/erlang/pkg/DESCR|ports@openbsd.org|lang|autoconf-2.13 gmake-3.78.1||any|y|y|y|y
 expect-5.31|lang/expect||sophisticated scripter based on Tcl/Tk|lang/expect/pkg/DESCR|niklas@openbsd.org|lang|tcl-8.3.0 tk-8.3.0|tcl-8.3.0 tk-8.3.0|any|y|y|y|y
 guavac-1.2|lang/guavac||Java compiler and decompiler developed under GPL|lang/guavac/pkg/DESCR|toddf@acm.org|lang|gmake-3.78.1||any|y|y|y|y
@@ -389,8 +390,8 @@ ncftp-2.4.3|net/ncftp||curses-based ftp program|net/ncftp/pkg/DESCR|shinobi@monk
 netatalk-990130|net/netatalk||File and Print Services for AppleTalk Networks|net/netatalk/pkg/DESCR|ianm@cit.nepean.uws.edu.au|net|||any|?|?|?|?
 netpipes-4.1.1-export|net/netpipe||shell utilities to connect programs to sockets|net/netpipe/pkg/DESCR|ports@openbsd.org|net|||any|y|y|y|y
 ngrep-1.37|net/ngrep||network grep|net/ngrep/pkg/DESCR|dugsong@monkey.org|net|autoconf-2.13||any|n|y|n|y
-nmap-2.3b17|net/nmap||port scanning large networks|net/nmap/pkg/DESCR|angelos@openbsd.org|net security|||any|y|y|y|y
-nmapfe-0.9.5|net/nmapfe||a graphical front end to the nmap port scanner|net/nmapfe/pkg/DESCR|seanc@cginfo.sk.ca|net security|gettext-0.10.35 glib-1.2.7 nmap-2.3b17 gtk+-1.2.7|gettext-0.10.35 glib-1.2.7 nmap-2.3b17 gtk+-1.2.7|any|y|y|y|y
+nmap-2.3b18|net/nmap||port scanning large networks|net/nmap/pkg/DESCR|angelos@openbsd.org|net security|||any|y|y|y|y
+nmapfe-0.9.5|net/nmapfe||a graphical front end to the nmap port scanner|net/nmapfe/pkg/DESCR|seanc@cginfo.sk.ca|net security|gettext-0.10.35 glib-1.2.7 nmap-2.3b18 gtk+-1.2.7|gettext-0.10.35 glib-1.2.7 nmap-2.3b18 gtk+-1.2.7|any|y|y|y|y
 nsping-0.8|net/nsping||DNS "ping"|net/nsping/pkg/DESCR|dugsong@monkey.org|net|||any|y|y|y|y
 ntop-1.1|net/ntop||network usage, with an interface similar to top(1)|net/ntop/pkg/DESCR|brad@openbsd.org|net|||any|y|y|y|y
 pchar-1.1.1|net/pchar||Sandia Internet path characterization tool|net/pchar/pkg/DESCR|angelos@openbsd.org|net|||any|y|y|y|y
@@ -497,7 +498,7 @@ rsaref-2.0|security/rsaref||encryption/authentication library, RSA/MDX/DES|secur
 smurflog-2.1|security/smurflog||a program to assist logging of smurf attacks|security/smurflog/pkg/DESCR|todd@OpenBSD.ORG|net security|||any|y|y|y|y
 socks5-1.0.10|security/socks5||SOCKS v5 application layer gateway and clients|security/socks5/pkg/DESCR|ports@openbsd.org|security net|||any|n|n|n|n
 ssh-1.2.27|security/ssh||secure shell client and server (remote login program)|security/ssh/pkg/DESCR|todd@openbsd.org|security net|||any|n|y|n|y
-ssl-2.6-USA|security/sslusa||ssl and crypto libraries with RSAREF -- USA USE ONLY|security/sslusa/pkg/DESCR|ports@openbsd.org|security|||any|n|y|n|n
+ssl-2.7-USA|security/sslusa||ssl and crypto libraries with RSAREF -- USA USE ONLY|security/sslusa/pkg/DESCR|ports@openbsd.org|security|||any|n|y|n|n
 stel|security/stel||Secure Telnet, encrypted version of the telnet daemon|security/stel/pkg/DESCR|turan@openbsd.org|security|||any|n|y|n|y
 strobe-1.06|security/strobe||fast scatter/gather TCP port scanner|security/strobe/pkg/DESCR|brad@openbsd.org|security|||any|y|y|y|y
 stunnel-3.8|security/stunnel||SSL encryption wrapper for standard network daemons|security/stunnel/pkg/DESCR|jakob@openbsd.org|security|||any|y|y|y|y
@@ -521,7 +522,7 @@ cfengine-1.4.12|sysutils/cfengine||GNU system administration tool for networks|s
 contool-3.3a|sysutils/contool||console tool for openlook|sysutils/contool/pkg/DESCR|ian@openbsd.org|sysutils|xview-config-3.2.1 xview-lib-3.2.1|xview-lib-3.2.1|any|n|y|n|y
 daemontools-0.70|sysutils/daemontools||collection of tools for managing UNIX services|sysutils/daemontools/pkg/DESCR|cd@sentia.nl|sysutils|||any|y|y|y|y
 idled-1.16|sysutils/idled||log out idle users and those hogging resources|sysutils/idled/pkg/DESCR|ports@openbsd.org|sysutils|||any|n|y|n|y
-lsof-4.49C|sysutils/lsof||list information about open files|sysutils/lsof/pkg/DESCR|angelos@openbsd.org|sysutils|||any|y|y|y|y
+lsof-4.49_W|sysutils/lsof||list information about open files|sysutils/lsof/pkg/DESCR|angelos@openbsd.org|sysutils|||any|y|y|y|y
 mkhybrid-1.12b5.1|sysutils/mkhybrid||create a hybrid ISO9660/JOLIET/HFS/Rock Ridge filesystem.|sysutils/mkhybrid/pkg/DESCR|retrev@csh.rit.edu|sysutils|||any|y|y|y|y
 mtools-3.9.6-19991121|sysutils/mtools||read/write/list/format DOS disks under Unix|sysutils/mtools/pkg/DESCR|fgsch@openbsd.org|sysutils|gmake-3.78.1||any|y|y|y|y
 rtty-3.2|sysutils/rtty||multiuser "tip"/"cu" replacement with logging|sysutils/rtty/pkg/DESCR|ports@openbsd.org|sysutils|||any|y|y|y|y
@@ -530,7 +531,7 @@ setquota-0.1|sysutils/setquota||command line quota tools|sysutils/setquota/pkg/D
 socket-1.1|sysutils/socket||create tcp socket and connect to stdin/out|sysutils/socket/pkg/DESCR|ports@openbsd.org|sysutils net|||any|y|y|y|y
 star-1.2|sysutils/star||unique standard tape archiver with many enhancements|sysutils/star/pkg/DESCR|naddy@unix-ag.uni-kl.de|sysutils|gmake-3.78.1||any|y|y|y|y
 stat-1.3|sysutils/stat||print inode contents|sysutils/stat/pkg/DESCR|ports@openbsd.org|sysutils|||any|y|y|y|y
-tcplist-2.2|sysutils/tcplist||list tcp connections to/from the local machine|sysutils/tcplist/pkg/DESCR|ports@OpenBSD.ORG|sysutils net||lsof-4.49C|any|y|y|y|y
+tcplist-2.2|sysutils/tcplist||list tcp connections to/from the local machine|sysutils/tcplist/pkg/DESCR|ports@OpenBSD.ORG|sysutils net||lsof-4.49_W|any|y|y|y|y
 upsd-2.0|sysutils/upsd||APC Smart UPS Monitoring Daemon|sysutils/upsd/pkg/DESCR|kevlo@openbsd.org|sysutils|||any|n|n|n|y
 xbatt-1.2|sysutils/xbatt||laptop battery status display for X11|sysutils/xbatt/pkg/DESCR|niklas@openbsd.org|sysutils x11|||i386|y|y|y|y
 webmin-0.78|sysutils/webmin||Web-based interface for system administration for Unix|sysutils/webmin/pkg/DESCR|kevlo@openbsd.org|sysutils|||any|y|y|y|y
@@ -636,9 +637,9 @@ tk-8.0.5|x11/tk/8.0||graphical toolkit for Tcl|x11/tk/8.0/pkg/DESCR|niklas@openb
 tk-8.3.0|x11/tk/8.3||Graphical toolkit for TCL|x11/tk/8.3/pkg/DESCR|kevlo@openbsd.org|x11 tk83|tcl-8.3.0|tcl-8.3.0|any|y|y|y|y
 tvtwm-pl11|x11/tvtwm||twm with a virtual desktop|x11/tvtwm/pkg/DESCR|dugsong@monkey.org|x11|||any|y|y|y|y
 viewfax-2.3|x11/viewfax||display files containing g3 and/or g4 coded fax pages|x11/viewfax/pkg/DESCR|ports@openbsd.org|x11|||any|y|y|y|y
-windowmaker-0.62.0|x11/windowmaker||windowmanager that emulates NEXTSTEP(tm)|x11/windowmaker/pkg/DESCR|jasoni@openbsd.org|x11|gmake-3.78.1 libproplist-0.10.0 giflib-4.1.0 jpeg-6b png-1.0.3 tiff-3.5.4|libproplist-0.10.0 giflib-4.1.0 jpeg-6b png-1.0.3 tiff-3.5.4|any|y|y|y|y
+windowmaker-0.62.1|x11/windowmaker||windowmanager that emulates NEXTSTEP(tm)|x11/windowmaker/pkg/DESCR|jasoni@openbsd.org|x11|gmake-3.78.1 libproplist-0.10.1 giflib-4.1.0 jpeg-6b png-1.0.3 tiff-3.5.4|libproplist-0.10.1 giflib-4.1.0 jpeg-6b png-1.0.3 tiff-3.5.4|any|y|y|y|y
 wmx-6pre1|x11/wmx||window manager|x11/wmx/pkg/DESCR|jakob@openbsd.org|x11|||any|y|y|y|y
-wterm-6.2.6|x11/wterm||color vt102 terminal emulator with transparency support|x11/wterm/pkg/DESCR|brad@openbsd.org|x11|gmake-3.78.1 libproplist-0.10.0 giflib-4.1.0 jpeg-6b png-1.0.3 tiff-3.5.4 windowmaker-0.62.0|libproplist-0.10.0 giflib-4.1.0 jpeg-6b png-1.0.3 tiff-3.5.4 windowmaker-0.62.0|any|y|y|y|y
+wterm-6.2.6|x11/wterm||color vt102 terminal emulator with transparency support|x11/wterm/pkg/DESCR|brad@openbsd.org|x11|gmake-3.78.1 libproplist-0.10.1 giflib-4.1.0 jpeg-6b png-1.0.3 tiff-3.5.4 windowmaker-0.62.1|libproplist-0.10.1 giflib-4.1.0 jpeg-6b png-1.0.3 tiff-3.5.4 windowmaker-0.62.1|any|y|y|y|y
 x2vnc-1.0|x11/x2vnc||one keyboard and/or mouse, multiple X and VNC displays|x11/x2vnc/pkg/DESCR|dugsong@monkey.org|x11|||any|y|y|y|y
 x2x-1.27|x11/x2x||one keyboard and/or mouse, multiple X displays|x11/x2x/pkg/DESCR|todd@openbsd.org|x11|||any|y|y|y|y
 xaniroc-1.02|x11/xaniroc||animate your root-cursor|x11/xaniroc/pkg/DESCR|angelos@openbsd.org|x11|||any|y|y|y|y
