@@ -190,7 +190,7 @@ include/X11/qt/qwindefs.h
 include/X11/qt/qwindow.h
 include/X11/qt/qwindowdefs.h
 include/X11/qt/qwmatrix.h
-lib/libqt.so.1.41
+lib/libqt.so.1.42
 lib/libqt.so
 lib/qt/tutorial/t1
 lib/qt/tutorial/t2

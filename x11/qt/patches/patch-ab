@@ -1,0 +1,39 @@
+--- configs/openbsd-g++-static.orig	Wed Mar  3 23:10:09 1999
++++ configs/openbsd-g++-static	Wed Mar  3 23:10:56 1999
+@@ -1,30 +1,30 @@
+ # Compiling
+-SYSCONF_CC		= g++
++SYSCONF_CC		= $(CXX)
+ 
+ # Compiling with support libraries
+-SYSCONF_CFLAGS_X11	= -I/usr/X11R6/include
++SYSCONF_CFLAGS_X11	= -I$(X11BASE)/include
+ SYSCONF_CFLAGS_QT	= -I$(QTDIR)/include
+-SYSCONF_CFLAGS_OPENGL	= -I/usr/X11R6/include
++SYSCONF_CFLAGS_OPENGL	= -I$(X11BASE)/include
+ 
+ # Compiline YACC output
+ SYSCONF_CFLAGS_YACC     = -Wno-unused -Wno-parentheses
+ 
+ # Linking with support libraries
+ # X11
+-SYSCONF_LFLAGS_X11	= -L/usr/X11R6/lib
++SYSCONF_LFLAGS_X11	= -L$(X11BASE)/lib
+ SYSCONF_LIBS_X11	= -lX11 -lXext
+ # Qt, Qt+OpenGL
+ SYSCONF_LFLAGS_QT	= -L$(QTDIR)/lib
+ SYSCONF_LIBS_QT		= -lqt
+ SYSCONF_LIBS_QT_OPENGL	= -lqgl
+ # OpenGL
+-SYSCONF_LFLAGS_OPENGL	= -L/usr/X11R6/lib
++SYSCONF_LFLAGS_OPENGL	= -L$(X11BASE)/lib
+ SYSCONF_LIBS_OPENGL	= -lMesaGL -lMesaGLU -lXmu -lXext -lm
+ # Yacc
+ SYSCONF_LIBS_YACC	= 
+ 
+ # Linking applications
+-SYSCONF_LINK		= g++
++SYSCONF_LINK		= $(CXX)
+ SYSCONF_LFLAGS		= 
+ SYSCONF_LIBS		= 
+ 
