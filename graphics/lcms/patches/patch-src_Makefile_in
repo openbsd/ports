@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2004/02/03 05:15:16 brad Exp $
+--- src/Makefile.in.orig	2004-02-02 22:27:54.000000000 -0500
++++ src/Makefile.in	2004-02-02 22:28:53.000000000 -0500
+@@ -202,7 +202,7 @@ liblcms_la_LDFLAGS = -no-undefined \
+   -version-info $(LIBRARY_CURRENT):$(LIBRARY_REVISION):$(LIBRARY_AGE)
+ 
+ 
+-liblcms_la_LIBADD = $(LCMS_LIB_DEPLIBS)
++liblcms_la_LIBADD = 
+ 
+ liblcms_la_CFLAGS = -O3
+ 

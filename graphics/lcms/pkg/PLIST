@@ -1,8 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/12/03 16:35:47 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/02/03 05:15:16 brad Exp $
+bin/icc2ps
+bin/icclink
+bin/icctrans
+bin/jpegicc
+bin/tifficc
+bin/wtpt
 include/icc34.h
 include/lcms.h
 lib/liblcms.a
+lib/liblcms.la
+%%SHARED%%
 share/doc/lcms/LCMSAPI.TXT
 share/doc/lcms/TUTORIAL.TXT
-%%SHARED%%
 @dirrm share/doc/lcms

@@ -1,7 +1,7 @@
-$OpenBSD: patch-.._include_lcms_h,v 1.2 2003/05/12 04:10:54 brad Exp $
---- ../include/lcms.h.orig	Wed Aug  7 15:34:37 2002
-+++ ../include/lcms.h	Tue Dec 31 11:46:43 2002
-@@ -130,6 +130,9 @@
+$OpenBSD: patch-include_lcms_h,v 1.1 2004/02/03 05:15:16 brad Exp $
+--- include/lcms.h.orig	2003-12-20 10:00:11.000000000 -0500
++++ include/lcms.h	2004-02-02 22:05:58.000000000 -0500
+@@ -114,6 +114,9 @@
  
  #if defined(__OpenBSD__) || defined(__NetBSD__) || defined(__FreeBSD__)
  #  include <sys/types.h>
@@ -11,12 +11,12 @@ $OpenBSD: patch-.._include_lcms_h,v 1.2 2003/05/12 04:10:54 brad Exp $
  #  define USE_INT64           1
  #  undef  LONGLONG
  #  define LONGLONG            u_int64_t
-@@ -144,7 +147,7 @@
+@@ -128,7 +131,7 @@
  #include <memory.h>
  #include <string.h>
  
 -#if defined(__GNUC__) || defined(__FreeBSD__)
 +#if defined(__GNUC__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__FreeBSD__)
- #   include <sys/unistd.h>
+ #   include <unistd.h>
  #endif
  

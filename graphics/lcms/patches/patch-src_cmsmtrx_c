@@ -1,13 +1,7 @@
-$OpenBSD: patch-cmsmtrx_c,v 1.1 2003/05/12 04:15:58 brad Exp $
-
-This patch fixes assumptions made in different parts of the code
-regarding the sizeof long and int. The original code appears to
-use them interchangeably, even though it expects them to be 32-bit
-wide.
-
---- cmsmtrx.c.orig	Tue Dec 31 11:32:40 2002
-+++ cmsmtrx.c	Tue Dec 31 11:34:42 2002
-@@ -738,9 +738,9 @@ void MAT3fromFix(LPMAT3 r, LPWMAT3 v)
+$OpenBSD: patch-src_cmsmtrx_c,v 1.1 2004/02/03 05:15:16 brad Exp $
+--- src/cmsmtrx.c.orig	2003-12-20 10:00:11.000000000 -0500
++++ src/cmsmtrx.c	2004-02-02 22:06:07.000000000 -0500
+@@ -733,9 +733,9 @@ void MAT3fromFix(LPMAT3 r, LPWMAT3 v)
  
  void VEC3scaleAndCut(LPWVEC3 r, LPVEC3 v, double d)
  {
