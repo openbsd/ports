@@ -1,0 +1,11 @@
+--- usr/bin/ldd.orig	Tue Apr 30 12:44:23 2002
++++ usr/bin/ldd	Tue Apr 30 12:44:46 2002
+@@ -28,7 +28,7 @@
+ TEXTDOMAIN=libc
+ TEXTDOMAINDIR=@TEXTDOMAINDIR@
+ 
+-RTLD=/lib/ld-linux.so.2
++RTLD=/emul/linux/usr/bin/ld-2.1.3-olf.so
+ warn=
+ bind_now=
+ verbose=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/15 23:43:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/04 08:51:14 jasoni Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 6.2"
 
@@ -39,6 +39,8 @@ RPMS=		ldconfig-1.9.5-16.i386.rpm \
 REMOVE_DIRS=	/usr/doc /usr/info /usr/man /usr/share/zoneinfo
 REMOVE_FILES=	/etc/localtime
 
+do-patch:
+
 pre-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}
 
@@ -55,12 +57,19 @@ do-install:
 	@rm -f ${PREFIX}/${F}
 .endfor
 
+	@cd ${PREFIX} && ${PATCH} --forward --quiet -E < ${PATCHDIR}/patch-ldd
+
 # copy in ld.so.conf
 	${INSTALL_DATA} ${FILESDIR}/ld.so.conf ${PREFIX}/etc
 
 # run elf2olf on a few binaries known not to run as elf
 	@elf2olf -o linux ${PREFIX}/sbin/ldconfig
 	@elf2olf -o linux ${PREFIX}/bin/rpm
+
+# make a copy of ld.so, convert to olf and then patch
+	@cp -p ${PREFIX}/lib/ld-2.1.3.so ${PREFIX}/usr/bin/ld-2.1.3-olf.so
+	@elf2olf -o linux ${PREFIX}/usr/bin/ld-2.1.3-olf.so
+	@perl ${FILESDIR}/fix-ldd.pl ${PREFIX}/usr/bin/ld-2.1.3-olf.so
 
 # run ldconfig
 	-chroot ${PREFIX} /sbin/ldconfig

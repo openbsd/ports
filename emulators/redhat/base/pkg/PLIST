@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/16 16:48:11 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/05/04 08:51:14 jasoni Exp $
 @pkgcfl linux_lib-*
 @exec mkdir -p %D/dev
 @exec ln -sf /dev/console %D/dev/tty0
@@ -221,6 +221,7 @@ usr/bin/infotocap
 usr/bin/install
 usr/bin/jpegtran
 usr/bin/ld
+usr/bin/ld-2.1.3-olf.so
 usr/bin/ldd
 usr/bin/lddlibc4
 usr/bin/locale
