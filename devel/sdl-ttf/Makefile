@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/07 04:16:33 obecian Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/20 20:32:42 pvalchev Exp $
 
 COMMENT=	"SDL TrueType fonts library"
 
-VER=	1.2.2
+VER=	2.0.3
 PROJ=	SDL_ttf
 DISTNAME=	${PROJ}-${VER}
 PKGNAME=	sdl-ttf-${VER}
@@ -19,15 +19,13 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-LIB_DEPENDS=	SDL.:sdl-*-!no_x11:devel/sdl \
-	ttf.1.::print/freetype
+LIB_DEPENDS=	SDL.:sdl-*-!no_x11:devel/sdl
 
 USE_X11=	Yes
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/freetype" \
-	LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

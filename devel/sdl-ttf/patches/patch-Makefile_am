@@ -1,10 +1,11 @@
---- Makefile.am.orig	Sun May  6 15:40:36 2001
-+++ Makefile.am	Sun May  6 15:41:51 2001
-@@ -14,7 +14,6 @@ EXTRA_DIST =			\
+$OpenBSD: patch-Makefile_am,v 1.2 2001/07/20 20:32:43 pvalchev Exp $
+--- Makefile.am.orig	Mon Jul  9 17:08:26 2001
++++ Makefile.am	Mon Jul  9 17:08:31 2001
+@@ -17,7 +17,6 @@ EXTRA_DIST =			\
  	autogen.sh
  
  libSDL_ttf_la_LDFLAGS = 		\
--        -release $(LT_RELEASE)	\
+-	-release $(LT_RELEASE)	\
  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  libSDL_ttf_la_LIBADD = 
  
