@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:49 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/11/14 14:39:38 espie Exp $
 bin/adom
 share/doc/adom/adomfaq.txt
 share/doc/adom/manual.doc
 share/doc/adom/readme.1st
+share/doc/adom/techstat.doc
 @dirrm share/doc/adom
 @unexec echo "Please remove /var/lib/adom/ hiscores manually"
