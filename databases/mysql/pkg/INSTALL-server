@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL-server,v 1.4 2002/02/20 04:16:20 brad Exp $
+# $OpenBSD: INSTALL-server,v 1.5 2002/02/20 18:03:33 brad Exp $
 #
 # Pre/post-installation setup of MySQL
 
@@ -7,51 +7,53 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 DB_DIR=${DB_DIR}
 SOCKET_DIR=${SOCKET_DIR}
+MYSQLUSER=mysql
+MYSQLGROUP=mysql
 
-do_notice_pre_install()
+do_notice_existingdir()
 {
-    echo
-    echo "+---------------"
-    echo "| You appear to already have a MySQL database directory in $DB_DIR"
-    echo "|"
-    echo "| The database directory has been preserved. If you want to start"
-    echo "| from the default database setup, you should perform these steps"
-    echo "| as root:"
-    echo "|"
-    echo "|           rm -rf $DB_DIR"
-    echo "|           $PREFIX/bin/mysql_install_db"
-    echo "|"
-    echo "+---------------"
-    echo
+  echo
+  echo "+---------------"
+  echo "| You appear to already have a MySQL database directory in $DB_DIR"
+  echo "|"
+  echo "| The database directory has been preserved. If you want to start"
+  echo "| from the default database setup, you should perform these steps"
+  echo "| as root:"
+  echo "|"
+  echo "|           rm -rf $DB_DIR"
+  echo "|           $PREFIX/bin/mysql_install_db"
+  echo "|"
+  echo "+---------------"
+  echo
 }
 
-do_pre_install()
+do_usergroup_install()
 {
-    # Create mysql user and group
-    groupinfo -e mysql
-    if [ $? -eq 0 ]; then
-        echo "===> Using mysql group for MySQL"
-    else
-	echo "===> Creating mysql group"
-	groupadd mysql
-    fi
-    userinfo -e mysql
-    if [ $? -eq 0 ]; then
-        echo "===> Using mysql user for MySQL"
-    else
-	echo "===> Creating mysql user"
-	useradd -g mysql -d /nonexistent -L daemon -c 'MySQL Account' -s /sbin/nologin mysql
-    fi
+  # Create MySQL user and group
+  groupinfo -e $MYSQLGROUP
+  if [ $? -eq 0 ]; then
+    echo "===> Using $MYSQLGROUP group for MySQL"
+  else
+    echo "===> Creating $MYSQLGROUP group for MySQL"
+    groupadd $MYSQLGROUP
+  fi
+  userinfo -e $MYSQLUSER
+  if [ $? -eq 0 ]; then
+    echo "===> Using $MYSQLUSER user for MySQL"
+  else
+    echo "===> Creating $MYSQLUSER user for MySQL"
+    useradd -g $MYSQLGROUP -d /nonexistent -L daemon -c 'MySQL Account' -s /sbin/nologin $MYSQLUSER
+  fi
 }
 
 do_database_install()
 {
-$PREFIX/bin/mysql_install_db
+  $PREFIX/bin/mysql_install_db
 }
 
 do_socket_install()
 {
-install -d -o mysql -g mysql -m 711 $SOCKET_DIR
+  install -d -o $MYSQLUSER -g $MYSQLGROUP -m 711 $SOCKET_DIR
 }
 
 # Verify/process the command
@@ -59,9 +61,9 @@ install -d -o mysql -g mysql -m 711 $SOCKET_DIR
 case $2 in 
     PRE-INSTALL)
 	if [ -d $DB_DIR ]; then
-	    do_notice_pre_install $1
+	    do_notice_existingdir $1
 	fi
-	do_pre_install
+	do_usergroup_install
 	;;
     POST-INSTALL)
 	if [ ! -d $DB_DIR ]; then
