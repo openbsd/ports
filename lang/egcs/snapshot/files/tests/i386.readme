@@ -1,4 +1,4 @@
-Native configuration is i386-unknown-openbsd2.4
+Native configuration is i386-unknown-openbsd2.5
 
 		=== libio tests ===
 
@@ -23,43 +23,32 @@ Running target unix
 FAIL: gcc.c-torture/execute/930603-1.c execution,  -O0 
 FAIL: gcc.c-torture/execute/930603-1.c execution,  -O1 
 FAIL: gcc.c-torture/execute/930603-1.c execution,  -O2 
-FAIL: gcc.c-torture/execute/930603-1.c execution,  -O2 -g 
 FAIL: gcc.c-torture/execute/930603-1.c execution,  -Os 
-FAIL: gcc.c-torture/execute/990119-1.c execution,  -O0 
-FAIL: gcc.c-torture/execute/990119-1.c execution,  -O1 
-FAIL: gcc.c-torture/execute/990119-1.c execution,  -O2 
-FAIL: gcc.c-torture/execute/990119-1.c execution,  -O2 -fomit-frame-pointer -finline-functions 
-FAIL: gcc.c-torture/execute/990119-1.c execution,  -O2 -g 
-FAIL: gcc.c-torture/execute/990119-1.c execution,  -Os 
 FAIL: gcc.c-torture/execute/990130-1.c compilation,  -O0 
 FAIL: gcc.c-torture/execute/990130-1.c compilation,  -O1 
 FAIL: gcc.c-torture/execute/990130-1.c compilation,  -O2 
-FAIL: gcc.c-torture/execute/990130-1.c compilation,  -O2 -fomit-frame-pointer -finline-functions 
-FAIL: gcc.c-torture/execute/990130-1.c compilation,  -O2 -g 
+FAIL: gcc.c-torture/execute/990130-1.c compilation,  -O3 -fomit-frame-pointer 
+FAIL: gcc.c-torture/execute/990130-1.c compilation,  -O3 -g 
 FAIL: gcc.c-torture/execute/990130-1.c compilation,  -Os 
 FAIL: gcc.c-torture/execute/loop-2b.c execution,  -O2 
-FAIL: gcc.c-torture/execute/loop-2b.c execution,  -O2 -fomit-frame-pointer -finline-functions 
-FAIL: gcc.c-torture/execute/loop-2b.c execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-loops 
-FAIL: gcc.c-torture/execute/loop-2b.c execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-all-loops 
-FAIL: gcc.c-torture/execute/loop-2b.c execution,  -O2 -g 
+FAIL: gcc.c-torture/execute/loop-2b.c execution,  -O3 -fomit-frame-pointer 
+FAIL: gcc.c-torture/execute/loop-2b.c execution,  -O3 -fomit-frame-pointer -funroll-loops 
+FAIL: gcc.c-torture/execute/loop-2b.c execution,  -O3 -fomit-frame-pointer -funroll-all-loops -finline-functions 
+FAIL: gcc.c-torture/execute/loop-2b.c execution,  -O3 -g 
 FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O1 
 FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O2 
-FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O2 -fomit-frame-pointer -finline-functions 
-FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-loops 
-FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-all-loops 
-FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O2 -g 
+FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O3 -fomit-frame-pointer 
+FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O3 -fomit-frame-pointer -funroll-loops 
+FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O3 -fomit-frame-pointer -funroll-all-loops -finline-functions 
+FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O3 -g 
 FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -Os 
 FAIL: gcc.c-torture/execute/ieee/rbug.c execution,  -O0 
 FAIL: gcc.c-torture/execute/ieee/rbug.c execution,  -O1 
 FAIL: gcc.c-torture/execute/ieee/rbug.c execution,  -O2 
-FAIL: gcc.c-torture/execute/ieee/rbug.c execution,  -O2 -g 
 FAIL: gcc.c-torture/execute/ieee/rbug.c execution,  -Os 
 FAIL: gcc.c-torture/noncompile/951227-1.c
-FAIL: gcc.c-torture/special/981006-1.c  (test for bogus messages, line 11)
-FAIL: gcc.c-torture/special/981006-1.c  (test for bogus messages, line 12)
 FAIL: gcc.dg/980414-1.c (test for excess errors)
-FAIL: gcc.dg/990213-2.c (test for excess errors)
-FAIL: gcc.dg/990214-1.c (test for excess errors)
+FAIL: gcc.dg/990119-1.c execution test
 FAIL: gcc.dg/cpp-if1.c invalid number (test for errors, line 12)
 FAIL: gcc.dg/cpp-if1.c invalid number (test for errors, line 15)
 FAIL: gcc.dg/cpp-if1.c invalid number (test for errors, line 18)
@@ -67,30 +56,29 @@ FAIL: gcc.dg/cpp-if1.c floating point in #if (test for errors, line 21)
 FAIL: gcc.dg/cpp-if1.c too many suffixes (test for errors, line 24)
 FAIL: gcc.dg/cpp-if1.c too many suffixes (test for errors, line 27)
 FAIL: gcc.dg/cpp-if1.c (test for excess errors)
-FAIL: gcc.dg/special/weak-1.c execution test
-FAIL: gcc.dg/special/alias-1.c (test for excess errors)
-FAIL: gcc.dg/special/wkali-1.c (test for excess errors)
-FAIL: wkali-2a.o
+FAIL: gcc.dg/cpp-if3.c (test for excess errors)
 FAIL: gcc.misc-tests/m-un-2.c warning regression (test for warnings, line 18)
 FAIL: gcc.misc-tests/m-un-2.c warning regression (test for warnings, line 23)
 FAIL: gcc.misc-tests/m-un-2.c (test for excess errors)
 
 		=== gcc Summary ===
 
-# of expected passes		7953
-# of unexpected failures	54
-# of expected failures		19
+# of expected passes		7977
+# of unexpected failures	40
+# of expected failures		23
 # of unresolved testcases	6
 # of unsupported tests		12
-/vbig/ports/lang/egcs-snapshot/build-i386/gcc/xgcc version egcs-2.93.08 19990214 (gcc2 ss-980929 experimental)
+/vbig/ports/lang/egcs-snapshot/build-i386/gcc/xgcc version egcs-2.93.12 19990314 (gcc2 ss-980929 experimental)
 
 		=== g++ tests ===
 
 
 Running target unix
-FAIL: g++.law/operators1.C (test for excess errors)
-FAIL: g++.law/operators7.C (test for excess errors)
+FAIL: g++.brendan/eh1.C  Execution test
+FAIL: g++.eh/spec3.C  Execution test
+FAIL: g++.eh/spec4.C  Execution test
 FAIL: g++.law/profile1.C (test for excess errors)
+FAIL: g++.mike/eh49.C  Execution test
 FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 21)
 FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 22)
 FAIL: g++.other/null1.C NULL used in arithmetic (test for warnings, line 25)
@@ -105,30 +93,27 @@ FAIL: g++.other/null1.C converting NULL to int (test for warnings, line 35)
 FAIL: g++.other/null1.C converting NULL to int (test for warnings, line 36)
 FAIL: g++.other/null1.C NULL bound to integer template parameter (test for warnings, line 37)
 FAIL: g++.other/null1.C converting NULL to int (test for warnings, line 38)
-FAIL: g++.pt/expr3.C (test for excess errors)
 FAIL: g++.pt/instantiate4.C (test for excess errors)
 
 		=== g++ Summary ===
 
-# of expected passes		4836
-# of unexpected failures	19
-# of expected failures		91
-# of untested testcases		7
-/vbig/ports/lang/egcs-snapshot/build-i386/gcc/testsuite/../xgcc version egcs-2.93.08 19990214 (gcc2 ss-980929 experimental)
+# of expected passes		4964
+# of unexpected failures	20
+# of expected failures		82
+# of untested testcases		8
+/vbig/ports/lang/egcs-snapshot/build-i386/gcc/testsuite/../xgcc version egcs-2.93.12 19990314 (gcc2 ss-980929 experimental)
 
 		=== g77 tests ===
 
 
 Running target unix
-FAIL: g77.f-torture/execute/auto0.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-loops 
-FAIL: g77.f-torture/execute/auto0.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-all-loops 
-FAIL: g77.f-torture/execute/auto1.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-loops 
-FAIL: g77.f-torture/execute/auto1.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-all-loops 
+FAIL: g77.f-torture/execute/970625-2.f compilation,  -O1 
 
 		=== g77 Summary ===
 
-# of expected passes		468
-# of unexpected failures	4
+# of expected passes		549
+# of unexpected failures	1
+# of untested testcases		1
 		=== objc tests ===
 
 
@@ -137,10 +122,9 @@ Running target unix
 		=== objc Summary ===
 
 # of expected passes		38
-/vbig/ports/lang/egcs-snapshot/build-i386/gcc/xgcc version egcs-2.93.08 19990214 (gcc2 ss-980929 experimental)
+/vbig/ports/lang/egcs-snapshot/build-i386/gcc/xgcc version egcs-2.93.12 19990314 (gcc2 ss-980929 experimental)
 
 
-Compiler version: egcs-2.93.08 19990214 (gcc2 ss-980929 experimental) 
-Platform: i386-unknown-openbsd2.4
-configure flags: --with-gcc-version-trigger=/usr/ports/lang/egcs-snapshot/work/egcs-19990214/gcc/version.c --host=i386-unknown-openbsd2.4 --prefix=/usr/local --verbose --program-transform-name=s,^,e, --with-gnu-as --with-gnu-ld --enable-shared --prefix=/usr/local --norecursion
-
+Compiler version: egcs-2.93.12 19990314 (gcc2 ss-980929 experimental) 
+Platform: i386-unknown-openbsd2.5
+configure flags: --with-gcc-version-trigger=/usr/ports/lang/egcs-snapshot/work/egcs-19990314/gcc/version.c --host=i386-unknown-openbsd2.5 --prefix=/usr/local --verbose --program-transform-name=s,^,e, --with-gnu-as --with-gnu-ld --enable-shared --prefix=/usr/local --norecursion
