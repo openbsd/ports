@@ -1,0 +1,14 @@
+$OpenBSD: patch-xpdf_Gfx_cc,v 1.1 2004/12/22 17:36:24 robert Exp $
+--- xpdf/Gfx.cc.orig	Thu Jan 22 02:26:45 2004
++++ xpdf/Gfx.cc	Wed Dec 22 12:59:33 2004
+@@ -2654,7 +2654,9 @@
+     haveMask = gFalse;
+     dict->lookup("Mask", &maskObj);
+     if (maskObj.isArray()) {
+-      for (i = 0; i < maskObj.arrayGetLength(); ++i) {
++      for (i = 0;
++	   i < maskObj.arrayGetLength() && i < 2*gfxColorMaxComps;
++	   ++i) {
+ 	maskObj.arrayGet(i, &obj1);
+ 	maskColors[i] = obj1.getInt();
+ 	obj1.free();

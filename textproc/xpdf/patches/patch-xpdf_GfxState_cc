@@ -1,0 +1,24 @@
+$OpenBSD: patch-xpdf_GfxState_cc,v 1.4 2004/12/22 17:36:24 robert Exp $
+--- xpdf/GfxState.cc.orig	Thu Jan 22 02:26:45 2004
++++ xpdf/GfxState.cc	Wed Dec 22 12:59:33 2004
+@@ -708,6 +708,11 @@
+   }
+   nCompsA = obj2.getInt();
+   obj2.free();
++  if (nCompsA > gfxColorMaxComps) {
++    error(-1, "ICCBased color space with too many (%d > %d) components",
++	  nCompsA, gfxColorMaxComps);
++    nCompsA = gfxColorMaxComps;
++  }
+   if (dict->lookup("Alternate", &obj2)->isNull() ||
+       !(altA = GfxColorSpace::parse(&obj2))) {
+     switch (nCompsA) {
+@@ -1054,7 +1059,7 @@
+   }
+   nCompsA = obj1.arrayGetLength();
+   if (nCompsA > gfxColorMaxComps) {
+-    error(-1, "DeviceN color space with more than %d > %d components",
++    error(-1, "DeviceN color space with too many (%d > %d) components",
+ 	  nCompsA, gfxColorMaxComps);
+     nCompsA = gfxColorMaxComps;
+   }

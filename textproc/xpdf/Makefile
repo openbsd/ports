@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2004/12/07 00:23:24 alek Exp $
+# $OpenBSD: Makefile,v 1.46 2004/12/22 17:36:24 robert Exp $
 
 COMMENT=	"PDF viewer for X"
 
 DISTNAME=	xpdf-3.00
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	textproc x11
 
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
@@ -27,7 +27,7 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_MOTIF=	openmotif
 CONFIGURE_STYLE=autoconf no-autoheader
-AUTOCONF_VERSION=2.57
+AUTOCONF_VERSION=2.59
 CONFIGURE_ARGS+= --enable-multithreaded \
 		 --without-Sgm-library \
 		 --without-libpaper-library
