@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/04/15 12:42:31 wilfried Exp $
+# $OpenBSD: Makefile,v 1.16 2004/09/30 22:31:06 xsa Exp $
 
 COMMENT=	"X11 version of the popular board game"
 
@@ -15,10 +15,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=imake noman
 
+NO_REGRESS=	Yes
+
 post-patch:
 	@/usr/bin/perl -pi.bak -e "s|\@XSCRABBLEDIR\@|${PREFIX}/lib/X11/xscrabble|;" \
 		${WRKSRC}/Imakefile ${WRKSRC}/XScrabble.ad ${WRKSRC}/src/main.c
 
-NO_REGRESS=	Yes
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xscrabble
+	${INSTALL_DATA} /dev/null \
+		${PREFIX}/share/examples/xscrabble/xscrabble.scores
 
 .include <bsd.port.mk>
