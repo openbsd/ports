@@ -3,7 +3,7 @@
 # Date created:         22 Nov 1999
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.12 2002/03/21 21:25:52 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/08/05 02:25:28 kevlo Exp $
 #
 
 COMMENT=	"APC Smart UPS Monitoring Daemon"
@@ -11,7 +11,6 @@ COMMENT=	"APC Smart UPS Monitoring Daemon"
 DISTNAME=	upsd-2.0.1.6
 PKGNAME=	upsd-2.0
 CATEGORIES=	sysutils
-NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
@@ -21,15 +20,17 @@ PERMIT_PACKAGE_FTP=	"missing license"
 PERMIT_DISTFILES_CDROM=	"missing license"
 PERMIT_DISTFILES_FTP=	Yes
 
-WRKDIST=	${WRKDIR}/upsd-2.0
+WRKDIST=	${WRKDIR}/${PKGNAME}
 
 pre-build:
+	@perl -pi -e 's:%%SYSCONFDIR%%:${SYSCONFDIR}:' \
+		${WRKSRC}/config.h
 	@mv ${WRKSRC}/config.h ${WRKSRC}/conf.h.orig
 	@sed -e "s!@prefix@!${PREFIX}!g" ${WRKSRC}/conf.h.orig > ${WRKSRC}/conf.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/upsd ${PREFIX}/sbin
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/upsd
-	${INSTALL_DATA} ${WRKSRC}/sample/upsd.conf ${PREFIX}/lib/upsd/upsd.conf.sample
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/upsd
+	${INSTALL_DATA} ${WRKSRC}/sample/upsd.conf ${PREFIX}/share/examples/upsd/upsd.conf-sample
 
 .include <bsd.port.mk>
