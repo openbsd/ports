@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 1997/11/27 23:44:43 niklas Exp $
+# $OpenBSD: Makefile,v 1.2 1997/12/03 03:05:51 angelos Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -23,7 +23,7 @@
 #    SUBDIR += hpscan
 #    SUBDIR += imlib
 #    SUBDIR += jbigkit
-#    SUBDIR += jpeg
+     SUBDIR += jpeg
 #    SUBDIR += mpeg-lib
 #    SUBDIR += mpeg2codec
 #    SUBDIR += mpeg2play
@@ -47,7 +47,7 @@
 #    SUBDIR += spigot
 #    SUBDIR += splitmpg
 #    SUBDIR += tgif
-#    SUBDIR += tiff
+     SUBDIR += tiff
 #    SUBDIR += tiff34
 #    SUBDIR += txtmerge
 #    SUBDIR += urt
@@ -66,8 +66,8 @@
 #    SUBDIR += xmorph
 #    SUBDIR += xmountains
 #    SUBDIR += xpaint
-#    SUBDIR += xpdf
-    SUBDIR += xpm
+     SUBDIR += xpdf
+     SUBDIR += xpm
 #    SUBDIR += xv
 
 .include <bsd.port.subdir.mk>
