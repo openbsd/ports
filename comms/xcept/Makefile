@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:04:06 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/19 21:09:15 turan Exp $
+
+BROKEN=		"installs files into /usr/local/etc
 
 DISTNAME=       xcept-2.1.2
 CATEGORIES=	comms
