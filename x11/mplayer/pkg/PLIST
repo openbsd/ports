@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2003/12/16 17:17:39 biorn Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/05/06 07:27:49 biorn Exp $
 bin/mencoder
 bin/mplayer
 lib/mplayer/vidix/cyberblade_vid.so
@@ -13,6 +13,7 @@ lib/mplayer/vidix/sis_vid.so
 %%SHARED%%
 man/man1/mencoder.1
 man/man1/mplayer.1
+share/doc/mplayer/amiga.html
 share/doc/mplayer/aspect.html
 share/doc/mplayer/bsd.html
 share/doc/mplayer/bugreports.html
@@ -40,6 +41,7 @@ share/doc/mplayer/gcc-296.html
 share/doc/mplayer/gui.html
 share/doc/mplayer/history.html
 share/doc/mplayer/howtoread.html
+share/doc/mplayer/hpux.html
 share/doc/mplayer/index.html
 share/doc/mplayer/install.html
 share/doc/mplayer/intro.html
@@ -49,6 +51,7 @@ share/doc/mplayer/linux.html
 share/doc/mplayer/macos.html
 share/doc/mplayer/mailinglists.html
 share/doc/mplayer/menc-feat-divx4.html
+share/doc/mplayer/menc-feat-dvd-mpeg4.html
 share/doc/mplayer/menc-feat-enc-images.html
 share/doc/mplayer/menc-feat-enc-libavcodec.html
 share/doc/mplayer/menc-feat-extractsub.html
@@ -56,6 +59,7 @@ share/doc/mplayer/menc-feat-fix-avi.html
 share/doc/mplayer/menc-feat-mpeg.html
 share/doc/mplayer/menc-feat-rescale.html
 share/doc/mplayer/menc-feat-streamcopy.html
+share/doc/mplayer/menc-feat-telecine.html
 share/doc/mplayer/mencoder.html
 share/doc/mplayer/mplayer-binary.html
 share/doc/mplayer/mpst.html

@@ -1,16 +1,7 @@
-$OpenBSD: patch-configure,v 1.25 2004/03/04 12:57:45 avsm Exp $
---- configure.orig	2003-12-08 21:33:31.000000000 +0000
-+++ configure	2004-03-04 12:53:03.000000000 +0000
-@@ -431,7 +431,7 @@ if test -z "$_target" ; then
-       case "`( uname -m ) 2>&1`" in
-       i[3-9]86*|x86|x86pc|k5|k6|k6_2|k6_3|k6-2|k6-3|pentium*|athlon*|i586_i686|i586-i686) host_arch=i386 ;;
-       ia64) host_arch=ia64 ;;
--      x86_64) host_arch=x86_64 ;;
-+      x86_64|amd64) host_arch=x86_64 ;;
-       ppc) host_arch=ppc ;;
-       alpha) host_arch=alpha ;;
-       sparc*) host_arch=sparc ;;
-@@ -4020,7 +4020,7 @@ echores "$_sgiaudio"
+$OpenBSD: patch-configure,v 1.26 2004/05/06 07:27:49 biorn Exp $
+--- configure.orig	2004-04-26 11:44:06.000000000 +0200
++++ configure	2004-04-28 12:24:12.000000000 +0200
+@@ -4148,7 +4148,7 @@ echores "$_sgiaudio"
  
  
  echocheck "VCD support"
@@ -19,7 +10,7 @@ $OpenBSD: patch-configure,v 1.25 2004/03/04 12:57:45 avsm Exp $
    _inputmodules="vcd $_inputmodules"
    _def_vcd='#define HAVE_VCD 1'
    echores "ok"
-@@ -4826,7 +4826,7 @@ fi
+@@ -4991,7 +4991,7 @@ fi
  
  
  echocheck "iconv"
@@ -28,7 +19,7 @@ $OpenBSD: patch-configure,v 1.25 2004/03/04 12:57:45 avsm Exp $
    _iconv_tmp='#include <iconv.h>'
  
    cat > $TMPC << EOF
-@@ -6298,6 +6298,9 @@ $_def_vcd
+@@ -6459,6 +6459,9 @@ $_def_vcd
  #elif defined(SYS_DARWIN)
  #define DEFAULT_CDROM_DEVICE    "/dev/rdiskN"
  #define DEFAULT_DVD_DEVICE	DEFAULT_CDROM_DEVICE
