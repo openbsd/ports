@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/10 16:05:50 lebel Exp $
+bin/mudix
+share/mudix/sample.usr
+@dirrm share/mudix

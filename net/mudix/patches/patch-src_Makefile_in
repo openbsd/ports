@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2002/05/10 16:05:50 lebel Exp $
+--- src/Makefile.in.orig	Sun May  5 10:07:29 2002
++++ src/Makefile.in	Mon May  6 10:14:55 2002
+@@ -2,9 +2,9 @@ CC      = @CC@
+ #DEBUG   = -DKEY_DEBUG 
+ DEBUG   = 
+ EXEC    = ../mudix
+-O_FLAGS = -O -g
++O_FLAGS = @CFLAGS@
+ C_FLAGS = $(O_FLAGS) $(DEBUG) -Wall -I../include
+-L_FLAGS = $(O_FLAGS) $(DEBUG) -lpanel -lncurses
++L_FLAGS = $(O_FLAGS) $(DEBUG) -lpanel -lcurses
+ 
+ O_FILES = alias.o \
+           commands.o \
+@@ -25,7 +25,7 @@ $(EXEC): $(O_FILES)
+ 	rm -f $(EXEC) 
+ 	$(CC) -o $(EXEC) $(L_FLAGS) $(O_FILES)
+ 
+-.c.o: mudix.h conf.h 
++.c.o:  
+ 	$(CC) -c $(C_FLAGS) $<
+ 
+ clean:
