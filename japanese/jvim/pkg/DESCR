@@ -8,3 +8,12 @@ difference.doc for a summary of the differences between vi and Vim.
 
 -- S. Taoka
 <taoka@infonets.hiroshima-u.ac.jp>
+
+Flavors (non-exclusive)
+wnn
+	can use wnn input method
+canna
+	can use canna input method
+
+Note that the wnn flavor can be installed even if Wnn is not present.
+In fact it can connect to a distant Wnn server as is.
