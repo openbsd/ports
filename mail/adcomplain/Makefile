@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.3 1999/10/29 10:42:32 turan Exp $
+# $OpenBSD: Makefile,v 1.4 1999/10/30 22:09:17 angelos Exp $
 
-BROKEN=		checksum mismatch
+BROKEN=		waiting for turans@ to verify
 
 DISTNAME=       adcomplain-3.49
 CATEGORIES=     mail news
 
-MAINTAINER=     angelos@openbsd.org
+MAINTAINER=     ports@openbsd.org
 
 MASTER_SITES=   http://www.rdrop.com/users/billmc/
 DISTFILES=      adcomplain.pl.uu
-EXTRACT_CMD=    /usr/bin/uudecode
-EXTRACT_BEFORE_ARGS=    <
 
 NO_WRKSUBDIR=	YES
 NO_CONFIGURE=   YES
 NO_BUILD=       YES
+
+do-extract:
+	cd ${WRKSRC}; /usr/bin/uudecode < ${FULLDISTDIR}/${DISTFILES}
 
 do-install:
 	cd ${WRKSRC}; \
