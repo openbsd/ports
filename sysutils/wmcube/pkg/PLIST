@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/12 15:24:42 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/08/28 14:08:57 wilfried Exp $
+@pkgcfl wmcube-gdk-*
 bin/wmcube
 share/wmcube/2planes-solid.wmc
 share/wmcube/4d.wmc

@@ -1,6 +1,6 @@
-$OpenBSD: patch-wmcube_Makefile_OPENBSD,v 1.1.1.1 2001/01/12 15:24:42 naddy Exp $
+$OpenBSD: patch-wmcube_Makefile_OPENBSD,v 1.2 2001/08/28 14:08:57 wilfried Exp $
 --- wmcube/Makefile.OPENBSD.orig	Sun Oct  8 22:38:46 2000
-+++ wmcube/Makefile.OPENBSD	Thu Jan 11 19:45:33 2001
++++ wmcube/Makefile.OPENBSD	Mon Aug 27 19:11:27 2001
 @@ -1,37 +1,34 @@
 -CC = gcc
 -OS = -DOPENBSD
@@ -46,7 +46,7 @@ $OpenBSD: patch-wmcube_Makefile_OPENBSD,v 1.1.1.1 2001/01/12 15:24:42 naddy Exp 
 +
 +# Edit OSLIBS as appropriate to include OS specific libraries.
 +
-+OSLIBS = -lkvm
++OSLIBS =
 +LIBS   = -lXpm -lXext -lX11 -lm $(OSLIBS)
 +INCLUDES = -I${X11BASE}/include
 +CFLAGS += $(OS) $(INCLUDES)
