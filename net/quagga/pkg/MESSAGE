@@ -1,0 +1,4 @@
+Sample Quagga configuration files have been installed in
+${PREFIX}/share/examples/zebra
+Please rename and install these files into ${CONFDIR}
+Change the configuration to meet your needs.

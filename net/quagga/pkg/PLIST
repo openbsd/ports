@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/18 13:01:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/11/30 23:12:54 alek Exp $
 @conflict zebra-*
+@newgroup _quagga:525
+@newuser _quagga:525:_quagga:daemon:Quagga Account:/nonexistent:/sbin/nologin
 include/zebra/
 include/zebra/buffer.h
 include/zebra/command.h
@@ -69,5 +71,8 @@ share/examples/zebra/ospfd.conf.sample
 share/examples/zebra/ripd.conf.sample
 share/examples/zebra/ripngd.conf.sample
 share/examples/zebra/zebra.conf.sample
-@extraunexec rm -rf ${CONFDIR}
+@owner _quagga
+@group _quagga
+@sample ${SYSCONFDIR}/zebra/
+@sample ${STATEDIR}/
 @extraunexec rm -rf ${STATEDIR}

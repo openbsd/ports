@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2004/10/13 03:10:49 danh Exp $
+# $OpenBSD: Makefile,v 1.4 2004/11/30 23:12:53 alek Exp $
 
 COMMENT=	"multi-threaded routing daemon"
 
 DISTNAME=	quagga-0.96.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 MASTER_SITES=	http://www.quagga.net/download/
 
@@ -15,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c curses m
 
 STATEDIR?=	/var/zebra
 SUBST_VARS=	CONFDIR STATEDIR
