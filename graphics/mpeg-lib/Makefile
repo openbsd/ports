@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/03/25 05:08:33 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1999/04/06 01:11:39 marc Exp $
 #
 
 DISTNAME=	mpeg_lib-1.2.1
@@ -11,7 +11,7 @@ MAINTAINER=	marc@OpenBSD.ORG
 MASTER_SITES=	ftp://ftp.mni.mcgill.ca/pub/mpeg/
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${PREFIX} ${CONFIGURE_SHARED}
 
 WRKSRC=		${WRKDIR}/mpeg_lib
 
