@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2001/01/28 13:31:28 jakob Exp $
+# $OpenBSD: Makefile,v 1.27 2001/02/07 09:14:38 jakob Exp $
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-xml \
 			--with-config-file-path=/var/www/conf
 
-LIB_DEPENDS+=		expat.1.::textproc/expat
+LIB_DEPENDS+=		expat.2::textproc/expat
 
 FLAVORS=	imap mysql postgresql
 FLAVOR?= 
