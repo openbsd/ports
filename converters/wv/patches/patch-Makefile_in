@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/08/11 00:51:32 avsm Exp $
+--- Makefile.in.orig	Wed May 23 14:01:15 2001
++++ Makefile.in	Wed May 23 14:02:07 2001
+@@ -466,7 +466,7 @@ install: installdirs all
+ 	$(INSTALL_DATA) $(src_mandir)/wvAbw.1 $(mandir)/man1/
+ 	$(INSTALL_DATA) $(src_mandir)/wvRTF.1 $(mandir)/man1/
+ 	$(RM) -f $(mandir)/man1/wvConvert.1
+-	$(LN) -s $(mandir)/man1/wvWare.1 $(mandir)/man1/wvConvert.1	
++	$(LN) -s $(mandir)/man1/wvWare.1 wvConvert.1	
+ 	$(INSTALL_DATA) $(src_mandir)/wvMime.1 $(mandir)/man1/
+ 	$(INSTALL_DATA) $(src_mandir)/wvVersion.1 $(mandir)/man1/
+ 	$(INSTALL_DATA) $(src_mandir)/wvSummary.1 $(mandir)/man1/

@@ -1,0 +1,22 @@
+$OpenBSD: patch-wvText_in,v 1.1.1.1 2001/08/11 00:51:32 avsm Exp $
+--- wvText.in.orig	Thu Aug  9 18:57:51 2001
++++ wvText.in	Thu Aug  9 18:58:40 2001
+@@ -29,7 +29,7 @@ if [ ${USING_LYNX} -ne "0" ]; then
+     fi
+ 
+     # intermediate file
+-    TMP_FILE="/tmp/wv$$.html"
++    TMP_FILE=`mktemp /tmp/wvText.XXXXXXXXXX`
+ 
+     wvHtml "${1}" "${TMP_FILE}" >/dev/null 2>&1
+     if [ ${?} -ne "0" ]; then
+@@ -51,5 +51,8 @@ else
+     # fall back onto our cruddy output
+     # this is, admittedly, better than running
+     # 'strings' on the word document though :)
+-    wvWare -x ${datadir}/wv/wvText.xml "${1}" > "${2}"
++    TMPDIR=`mktemp -d /tmp/wvWare.XXXXXXXXXX` && {
++      wvWare -x ${datadir}/wv/wvText.xml "${1}" > "${2}"
++      rm -rf $TMPDIR
++    }
+ fi

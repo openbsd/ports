@@ -1,0 +1,12 @@
+$OpenBSD: patch-wvHtml_in,v 1.1.1.1 2001/08/11 00:51:32 avsm Exp $
+--- wvHtml.in.orig	Fri Nov 17 23:51:39 2000
++++ wvHtml.in	Thu Aug  9 18:48:39 2001
+@@ -16,4 +16,7 @@ if [ ${?} -ne "0" ]; then
+     exit 1
+ fi
+ 
+-wvWare -x ${datadir}/wv/wvHtml.xml "${1}" > "${2}"
++TMPDIR=`mktemp -d /tmp/wvHtml.XXXXXXXXX` && {
++  wvWare -x ${datadir}/wv/wvHtml.xml "${1}" > "${2}"
++  rm -rf $TMPDIR
++}
