@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/23 15:52:11 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/08/07 08:29:07 jasoni Exp $
 
-DISTNAME=	rxvt-2.4.11
-CATEGORIES=	x11
-MASTER_SITES=	ftp://babayaga.math.fu-berlin.de/rxvt/
+DISTNAME=		rxvt-2.6.0
+CATEGORIES=		x11
+MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
+             	ftp://mason.primenet.com.au/pub/rxvt/ \
+                http://wm.current.nu/files/ \
+                ftp://ftp.nstu.ru/pub/sources/x/
 
-MAINTAINER=	jasoni@openbsd.org
+MAINTAINER=		jasoni@openbsd.org
 
-USE_X11=	yes
+USE_X11=		yes
 GNU_CONFIGURE=  yes
-# Various compile time options you may want to configure.
-#CONFIGURE_ARGS+=	--enable-utmp \
-#			--enable-wtmp \
-#			--enable-xpm-background \
-#			--enable-menubar 
 
 .include <bsd.port.mk>
