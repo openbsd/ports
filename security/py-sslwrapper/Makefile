@@ -1,25 +1,24 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/15 17:58:50 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/09/13 09:00:00 shell Exp $
 
-COMMENT=		"OpenSSL Wrappers for Python"
+COMMENT=	"OpenSSL Wrappers for Python"
 
-VERSION=		0.6.1
-DISTNAME=		POW-${VERSION}
-PKGNAME=		py-sslwrapper-${VERSION}
-CATEGORIES=     	security devel
-NEED_VERSION=		1.504
+VERSION=	0.6.1
+DISTNAME=	POW-${VERSION}
+PKGNAME=	py-sslwrapper-${VERSION}
+CATEGORIES=    	security devel
 
-HOMEPAGE=		http://pow.sourceforge.net/
+HOMEPAGE=	http://www.sf.net/projects/pow/
 
-MAINTAINER=		Shell Hung <shell@openbsd.org>
+MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pow/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pow/}
 
-PYTHON_VER=	2.1
+PYTHON_VER=	2.2
 
 BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	${BUILD_DEPENDS}
