@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2002/09/28 19:19:51 brad Exp $
+# $OpenBSD: Makefile,v 1.68 2002/09/30 20:52:45 naddy Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
 
@@ -20,6 +20,7 @@ MAKE_ADA=No
 COM=		'GNU compiler collection'
 COMMENT=	${COM}: core C compiler
 COMMENT-c++ =	${COM}: C++ compiler
+COMMENT-estdc=	${COM}: C++ compiler library
 COMMENT-chill=	${COM}: Chill compiler
 COMMENT-g77=	${COM}: f77 compiler
 COMMENT-java=	${COM}: java compiler
@@ -28,6 +29,7 @@ COMMENT-ada=	${COM}: Ada compiler
 
 PKGNAME=	gcc-$V
 PKGNAME-c++ =	g++-$V
+PKGNAME-estdc =	libestdc-$V
 PKGNAME-chill=	gchill-$V
 PKGNAME-g77=	g77-$V
 PKGNAME-java=	gcj-$V
@@ -40,7 +42,6 @@ BUILD_DEPENDS=	::devel/autoconf
 BUILD_DEPENDS+= :bison-*:devel/bison
 
 CATEGORIES=	lang 
-NEED_VERSION=	1.474
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 
@@ -177,7 +178,7 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gcc
 LANGS=c
 .if defined(MAKE_GXX) && ${MAKE_GXX:L} == "yes"
 LANGS:=${LANGS},c++
-MULTI_PACKAGES+=-c++
+MULTI_PACKAGES+=-c++ -estdc
 .endif
 .if defined(MAKE_FORTRAN) && ${MAKE_FORTRAN:L} == "yes"
 LANGS:=${LANGS},f77
@@ -288,7 +289,7 @@ post-install:
 
 REGRESS_DEPENDS+=::lang/egcs/stable
 .if defined(MAKE_GXX) && ${MAKE_GXX:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/stable,-c++
+REGRESS_DEPENDS+=::lang/egcs/stable,-c++,-estdc
 .endif
 .if defined(MAKE_FORTRAN) && ${MAKE_FORTRAN:L} == "yes"
 REGRESS_DEPENDS+=::lang/egcs/stable,-g77
@@ -324,8 +325,11 @@ SED_PLIST=|sed -e '/^IFPIC:/d'
 GCC_NAME=${WRKBUILD}/gcc/xgcc
 
 .if defined(PACKAGING) && defined(SUBPACKAGE)
-.  if !empty(SUBPACKAGE)
+.  if !empty(SUBPACKAGE) && ${SUBPACKAGE} != "-estdc"
 RUN_DEPENDS+=::lang/egcs/stable
+.  endif
+.  if ${SUBPACKAGE} == "-c++"
+RUN_DEPENDS+=::lang/egcs/stable,-estdc
 .  endif
 .endif
 
