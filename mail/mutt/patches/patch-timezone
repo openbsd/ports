@@ -1,0 +1,16 @@
+--- sendlib.c	1999/04/21 21:05:38	2.19
++++ sendlib.c	1999/04/21 21:18:53
+@@ -1149,10 +1149,12 @@
+   struct tm *l =3D localtime (&t);
+   time_t tz =3D mutt_local_tz (t);
+
++  tz /=3D 60;
++
+   snprintf (s, len,  "Date: %s, %d %s %d %02d:%02d:%02d %+03d%02d\n",
+ 	    Weekdays[l->tm_wday], l->tm_mday, Months[l->tm_mon],
+ 	    l->tm_year + 1900, l->tm_hour, l->tm_min, l->tm_sec,
+-	    tz / 3600, abs (tz) % 3600);
++	    tz / 60, abs (tz) % 60);
+   return (s);
+ }
+
