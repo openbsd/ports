@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2005/02/21 21:36:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.32 2005/03/03 20:55:41 sturm Exp $
 
 COMMENT=	"TeX distribution, executables"
+COMMENT-fmt=	"format files"
 
 VERSION=	3.0
 DISTNAME=	tetex-base-${VERSION}
-PKGNAME=	${DISTNAME:S/tetex-/teTeX_/}
+PKGNAME=	teTeX_base-${VERSION}p0
+PKGNAME-fmt=	teTeX_base-fmt-${VERSION}
 CATEGORIES=	print
 
 DISTFILES=	tetex-src-${VERSION}.tar.gz
@@ -44,6 +46,17 @@ CONFIGURE_ARGS+=--with-system-t1lib \
 LIB_DEPENDS+=	t1.4::devel/t1lib
 RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
 USE_X11=	Yes
+.endif
+
+MULTI_PACKAGES=	-fmt
+SUBPACKAGE?=
+
+.if defined(PACKAGING)
+.  if ${SUBPACKAGE} == "-fmt"
+PREFIX=		/var
+.  else
+RUN_DEPENDS+=	::print/teTeX/base,-fmt
+.  endif
 .endif
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/base/src/}

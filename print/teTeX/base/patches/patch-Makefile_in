@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2005/02/21 21:36:07 sturm Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2005/03/03 20:55:41 sturm Exp $
 --- Makefile.in.orig	Sun Feb 20 09:21:55 2005
 +++ Makefile.in	Sun Feb 20 11:08:03 2005
 @@ -47,6 +47,10 @@ LIBSDIRS = @LIBSDIRS@
@@ -6,8 +6,8 @@ $OpenBSD: patch-Makefile_in,v 1.1 2005/02/21 21:36:07 sturm Exp $
  INSTDIRS = @INSTDIRS@
  
 +TETEXENV=TEXMFDIST="$(texmf)"-dist TEXMFLOCAL="$(texmf)"-local \
-+	TEXMFSYSVAR=${PREFIX}/var/texmf \
-+	TEXMFSYSCONFIG=${PREFIX}${SYSCONFDIR}/texmf
++	TEXMFSYSVAR=${DESTDIR}/var/texmf \
++	TEXMFSYSCONFIG=${DESTDIR}${SYSCONFDIR}/texmf
 +
  default: all
  install: all 

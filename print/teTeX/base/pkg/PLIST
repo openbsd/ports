@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2005/02/21 21:36:07 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.20 2005/03/03 20:55:41 sturm Exp $
 bin/a2ping
 bin/afm2tfm
 bin/aleph
@@ -354,7 +354,4 @@ share/texmf/web2c/texmf.cnf.dist
 @sample share/texmf/web2c/texmf.cnf
 !%%no_x11%%
 @exec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
-@exec TEXMFMAIN=%D/share/texmf %D/bin/fmtutil-sys --all
-@exec TEXMFMAIN=%D/share/texmf %D/bin/updmap-sys
-@extraunexec rm -fr /var/texmf
 @extraunexec rm -fr ${SYSCONFDIR}/texmf
