@@ -1,0 +1,56 @@
+--- quotas.c.orig	Wed Oct  8 19:43:54 1997
++++ quotas.c	Sun Nov 16 15:33:11 1997
+@@ -419,7 +419,7 @@
+ 
+ #else
+ 
+-#ifdef        __FreeBSD__
++#if	defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <ufs/ufs/quota.h>
+ #include <machine/param.h>
+ #elif         AIX
+@@ -429,7 +429,7 @@
+ #define dqb_curfiles dqb_curinodes
+ #define dqb_fhardlimit dqb_ihardlimit
+ #define dqb_fsoftlimit dqb_isoftlimit
+-#else /* !__FreeBSD__ && !AIX */
++#else /* !__FreeBSD__ && !AIX && !__OpenBSD__ */
+ #include <sys/quota.h>
+ #include <devnm.h>
+ #endif
+@@ -442,7 +442,7 @@
+   uid_t euser_id;
+   int r;
+   struct dqblk D;
+-#if !defined(__FreeBSD__) && !defined(AIX)
++#if !defined(__FreeBSD__) && !defined(AIX) && !defined(__OpenBSD__)
+   char dev_disk[256];
+   struct stat S;
+   /* find the block device file */
+@@ -464,7 +464,7 @@
+       DEBUG(5,("Unable to reset uid to %d\n", user_id));
+   }
+ #else /* USE_SETRES */
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+   {
+     /* FreeBSD patches from Marty Moll <martym@arbor.edu> */
+     uid_t user_id;
+@@ -494,7 +494,7 @@
+ #endif /* USE_SETRES */
+ 
+   /* Use softlimit to determine disk space, except when it has been exceeded */
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+   *bsize = DEV_BSIZE;
+ #else /* !__FreeBSD__ */
+   *bsize = 1024;
+@@ -514,7 +514,7 @@
+     return(False);
+   /* Use softlimit to determine disk space, except when it has been exceeded */
+   if ((D.dqb_curblocks>D.dqb_bsoftlimit)
+-#if !defined(__FreeBSD__)
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ ||((D.dqb_curfiles>D.dqb_fsoftlimit) && (D.dqb_fsoftlimit != 0))
+ #endif
+     ) {

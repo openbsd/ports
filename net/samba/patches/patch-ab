@@ -1,11 +1,33 @@
---- Makefile.orig	Sun Nov 16 10:52:38 1997
-+++ Makefile	Sun Nov 16 10:52:42 1997
-@@ -387,7 +387,7 @@
- # contributed by kuku@acds.physik.rwth-aachen.de
- # NOTE: You may need to add -DBSD44 if you have password problems
- FLAGSM = -DFreeBSD -DFAST_SHARE_MODES
--LIBSM = -lcrypt 
-+#LIBSM = -lcrypt 
+--- includes.h.orig	Tue Oct  7 06:18:26 1997
++++ includes.h	Sun Nov 16 15:33:11 1997
+@@ -193,7 +193,7 @@
+ #include <pwdadj.h>
+ #endif
+ 
+-#if defined(SHADOW_PWD) && !defined(NETBSD) && !defined(FreeBSD) && !defined(CONVEX)
++#if defined(SHADOW_PWD) && !defined(NETBSD) && !defined(FreeBSD) && !defined(CONVEX) && !defined(__OpenBSD__)
+ #include <shadow.h>
+ #endif
+ 
+@@ -496,6 +496,21 @@
+ #endif 
  
  
- # This is for NEXTSTEP Release 2.X
++#ifdef __OpenBSD__
++#include <strings.h>
++#include <netinet/tcp.h>
++#define NO_GETSPNAM
++#define SIGNAL_CAST (void (*)())
++#define USE_DIRECT
++#define REPLACE_INNETGR
++#define HAVE_BZERO
++#define HAVE_PATHCONF
++#define HAVE_GETGRNAM 1
++#define HAVE_GETTIMEOFDAY
++#define HAVE_MEMMOVE
++#define USE_GETCWD
++#define USE_SETSID
++#endif 
+ 
+ #ifdef FreeBSD
+ #include <arpa/inet.h>
