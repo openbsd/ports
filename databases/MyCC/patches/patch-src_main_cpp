@@ -1,12 +1,40 @@
-$OpenBSD: patch-src_main_cpp,v 1.1 2003/01/28 22:15:38 wilfried Exp $
---- src/main.cpp.orig	Tue Jan 21 12:58:57 2003
-+++ src/main.cpp	Tue Jan 28 22:35:46 2003
-@@ -16,7 +16,7 @@
-   MA 02111-1307, USA 
- */
- #include "mysqlcc_main.h"
--#ifdef WIN32
-+#if defined(WIN32) || MYSQL_VERSION_ID < 40000
+$OpenBSD: patch-src_main_cpp,v 1.2 2003/04/01 14:26:09 wilfried Exp $
+--- src/main.cpp.orig	Fri Mar 28 23:06:01 2003
++++ src/main.cpp	Tue Apr  1 15:44:51 2003
+@@ -22,7 +22,9 @@
+ #undef VERSION
+ #endif
+ #include <m_string.h>
++#if MYSQL_VERSION_ID >= 40000
+ #include <my_getopt.h>
++#endif
+ #ifndef NO_QT
+ #define NO_QT
+ #endif
+@@ -44,6 +46,7 @@ static const char *load_default_groups[]
+ static ulong select_limit,my_net_buffer_length,max_join_size,my_max_allowed_packet,opt_connect_timeout=0;
+ static uint opt_local_infile=0;
  
- // Win32 platforms currently don't support command line parameters
++#if MYSQL_VERSION_ID >= 40000
+ static struct my_option my_long_options[] =
+ {
+   {"compress", 'C', "Use compression in server/client protocol.", 0, 0, 0, GET_NO_ARG, NO_ARG, 0, 0, 0, 0, 0, 0},
+@@ -185,6 +188,7 @@ static void usage()
+   my_print_variables(my_long_options);
+   exit(-1);
+ }
++#endif
+ 
+ 
  int main(int argc, char *argv[])
+@@ -196,8 +200,10 @@ int main(int argc, char *argv[])
+   load_defaults("my",load_default_groups,&argc,&argv);
+   save_argv = argv;
+   progname= argv[0];
++#if MYSQL_VERSION_ID >= 40000
+   if (handle_options(&argc, &argv, my_long_options, get_one_option))
+     exit(-1);
++#endif
+   if (!argv[0] || !argv[1] || (pid = atoi(argv[0])) <= 0 || (t= atoi(argv[1])) <= 0)  
+     ret = mysqlcc_main(argc, argv);
+   free_defaults(save_argv);

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2003/03/01 09:15:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2003/04/01 14:26:08 wilfried Exp $
 
 COMMENT=		"GUI client for MySQL"
 
-VERSION=		0.8.9
+VERSION=		0.9.1
 DISTNAME=		mysqlcc-${VERSION}-src
 PKGNAME=		mysqlcc-${VERSION}
 CATEGORIES=		databases
 
-HOMEPAGE=		http://mysql.com/products/mycc/index.html
+HOMEPAGE=		http://mysql.com/products/mysqlcc/index.html
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
@@ -17,10 +17,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MyCC/ \
-			ftp://sunsite.dk/mirrors/mysql/Downloads/MyCC/ \
-			ftp://gd.tuwien.ac.at/db/mysql/Downloads/MyCC/ \
-			ftp://mysql.secsup.org/pub/software/mysql/Downloads/MyCC
+MASTER_SITES=		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQLCC/ \
+			ftp://sunsite.dk/mirrors/mysql/Downloads/MySQLCC/ \
+			ftp://gd.tuwien.ac.at/db/mysql/Downloads/MySQLCC/ \
+			ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQLCC
 
 MODQT_MT=		Yes
 MODULES=		qt3
