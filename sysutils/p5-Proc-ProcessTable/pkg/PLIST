@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/30 14:41:39 lebel Exp $
+${P5ARCH}/Proc/Killall.pm
+${P5ARCH}/Proc/Killfam.pm
+${P5ARCH}/Proc/ProcessTable.pm
+${P5ARCH}/Proc/ProcessTable/Process.pm
+${P5ARCH}/Proc/example.pl
+${P5ARCH}/auto/Proc/ProcessTable/Process/autosplit.ix
+${P5ARCH}/auto/Proc/ProcessTable/ProcessTable.bs
+${P5ARCH}/auto/Proc/ProcessTable/ProcessTable.so
+man/man3p/Proc::Killall.3p
+man/man3p/Proc::Killfam.3p
+man/man3p/Proc::ProcessTable.3p
+man/man3p/Proc::ProcessTable::Process.3p
+@dirrm ${P5ARCH}/auto/Proc/ProcessTable/Process
+@dirrm ${P5ARCH}/auto/Proc/ProcessTable
+@dirrm ${P5ARCH}/Proc/ProcessTable
