@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/24 07:04:04 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/12 01:41:11 brad Exp $
 
-DISTNAME=	t1lib-1.0.1
+VERSION=	1.1.0
+DISTNAME=	t1lib-${VERSION}
 CATEGORIES=	devel textproc
-NEED_VERSION=	1.330
+NEED_VERSION=	1.336
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= libs/graphics
 
@@ -22,6 +23,6 @@ CONFIGURE_ARGS+= --enable-static
 
 ALL_TARGET=	without_doc
 
-WRKDIST=	${WRKDIR}/T1-1.0.1
+WRKDIST=	${WRKDIR}/T1-${VERSION}
 
 .include <bsd.port.mk>

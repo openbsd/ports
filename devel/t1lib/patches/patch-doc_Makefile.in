@@ -1,0 +1,31 @@
+--- doc/Makefile.in.orig	Sat Mar 10 11:07:25 2001
++++ doc/Makefile.in	Sat Mar 10 11:10:16 2001
+@@ -39,6 +39,8 @@
+ SUBMAKE   = $(MAKE) 'CC=$(CC)' 'CFLAGS=$(ALLCFLAGS)' 'OPTIONS=$(OPTIONS)'
+ @SET_MAKE@
+ 
++DESTDIR = 
++
+ INSTALL         = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA    = @INSTALL_DATA@
+@@ -88,14 +90,14 @@
+ install: dummy
+ 	if (test -f t1lib_doc.dvi) \
+ 	then \
+-	  $(MKINSTALLDIRS) @T1LIB_DATA_DIR@/doc; \
+-	  $(INSTALL_DATA) t1lib_doc.dvi @T1LIB_DATA_DIR@/doc; \
+-	  $(INSTALL_DATA) t1_data.eps @T1LIB_DATA_DIR@/doc; \
++	  $(MKINSTALLDIRS) $(DESTDIR)@datadir@/doc/t1lib; \
++	  $(INSTALL_DATA) t1lib_doc.dvi $(DESTDIR)@datadir@/doc/t1lib; \
++	  $(INSTALL_DATA) t1_data.eps $(DESTDIR)@datadir@/doc/t1lib; \
+ 	fi;
+ 	if (test -f t1lib_doc.pdf) \
+ 	then \
+-	  $(MKINSTALLDIRS) @T1LIB_DATA_DIR@/doc; \
+-	  $(INSTALL_DATA) t1lib_doc.pdf @T1LIB_DATA_DIR@/doc; \
++	  $(MKINSTALLDIRS) $(DESTDIR)@datadir@/doc/t1lib; \
++	  $(INSTALL_DATA) t1lib_doc.pdf $(DESTDIR)@datadir@/doc/t1lib; \
+ 	fi;
+ 
+ 

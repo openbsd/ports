@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2000/08/31 06:54:07 brad Exp $
-lib/libt1.so.1.1
-lib/libt1x.so.1.1
+@comment $OpenBSD: PFRAG.shared,v 1.2 2001/03/12 01:41:12 brad Exp $
+lib/libt1.so.2.0
+lib/libt1x.so.2.0
 DYNLIBDIR(%B)

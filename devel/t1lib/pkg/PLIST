@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/08/31 06:54:07 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/03/12 01:41:12 brad Exp $
 bin/type1afm
 bin/xglyph
 include/t1lib.h
@@ -9,4 +9,6 @@ lib/libt1x.a
 lib/libt1x.la
 %%SHARED%%
 share/t1lib/t1lib.config
+share/doc/t1lib/t1lib_doc.pdf
+@dirrm share/doc/t1lib
 @dirrm share/t1lib
