@@ -3,7 +3,7 @@
 # Date created:		April 28, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1998/08/04 00:13:40 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/07/14 20:29:39 angelos Exp $
 #
 
 DISTNAME=	teTeX-src-0.4
@@ -20,7 +20,6 @@ PATCH_DIST_STRIP=	-p1
 NO_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	config clean texhash all
-EXTRACT_BEFORE_ARGS=	-xzpf
 INSTALL_TARGET=	install ini
 MAN1=		afm2tfm.1 allcm.1 alldc.1 allneeded.1 amslatex.1 \
 		amstex.1 append_db.1 bibtex.1 dvilj.1 dvips.1 \
