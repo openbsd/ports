@@ -1,0 +1,8 @@
+Japanese documents are hard to print when you don't have 
+a Japanese PostScript printer, especially the huge fonts
+and the required extension.
+
+Kanjips is a poor man's replacement, that can convert
+Japanese strings in a PostScript documents to bitmap equivalent.
+
+The quality of the result is not very good, but at least it's readable.
