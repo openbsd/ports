@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2001/08/13 14:14:22 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.19 2001/08/20 02:09:36 lebel Exp $
 bin/ex
 bin/rview
 bin/rvim
@@ -92,6 +92,7 @@ share/vim/vim60${V}/doc/quickfix.txt
 share/vim/vim60${V}/doc/quickref.txt
 share/vim/vim60${V}/doc/quotes.txt
 share/vim/vim60${V}/doc/recover.txt
+share/vim/vim60${V}/doc/remote.txt
 share/vim/vim60${V}/doc/repeat.txt
 share/vim/vim60${V}/doc/rightleft.txt
 share/vim/vim60${V}/doc/scroll.txt
@@ -103,7 +104,6 @@ share/vim/vim60${V}/doc/tagsearch.txt
 share/vim/vim60${V}/doc/term.txt
 share/vim/vim60${V}/doc/tips.txt
 share/vim/vim60${V}/doc/todo.txt
-share/vim/vim60${V}/doc/uganda.nsis.txt
 share/vim/vim60${V}/doc/uganda.txt
 share/vim/vim60${V}/doc/undo.txt
 share/vim/vim60${V}/doc/usr_01.txt
@@ -156,6 +156,7 @@ share/vim/vim60${V}/ftplugin/c.vim
 share/vim/vim60${V}/ftplugin/changelog.vim
 share/vim/vim60${V}/ftplugin/cpp.vim
 share/vim/vim60${V}/ftplugin/debchangelog.vim
+share/vim/vim60${V}/ftplugin/dosbatch.vim
 share/vim/vim60${V}/ftplugin/fortran.vim
 share/vim/vim60${V}/ftplugin/ishd.vim
 share/vim/vim60${V}/ftplugin/java.vim
