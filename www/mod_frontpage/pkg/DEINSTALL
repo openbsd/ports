@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/03/04 17:21:21 danh Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/02/23 22:36:37 danh Exp $
 #
 # mod_frontpage de-installation
 
@@ -11,17 +11,24 @@ CONF=`apxs -q SYSCONFDIR`/httpd.conf
 MODULE=/usr/lib/apache/modules/mod_frontpage.so
 
 rm -f ${MODULE}
+apxs -e -A -n 'frontpage' mod_frontpage.so 2> /dev/null
 
 echo
 echo "+---------------"
 echo "| To completely deinstall the $1 package you"
 echo "| need to perform these steps as root:"
 echo "|"
-echo "|        edit ${CONF}"
-echo "|        remove the line LoadModule frontpage_module"
+echo "|   * edit ${CONF}"
+echo "|"
+echo "|   * remove, or leave commented out, the LoadModule directive"
+echo "|     that refers to this module"
+echo "|"
+echo "|   * remove, or comment out, the following directives:"
+echo "|       FrontpageEnable, FrontpageDisable,"
+echo "|       FrontpageAdminEnable, FrontpageAdminDisable"
 if [ -d ${PREFIX}/frontpage ]; then
 	echo "|"
-	echo "| Optionally, you may also delete the FrontPage 2000 Server"
+	echo "| Optionally, you may also delete the Microsoft FrontPage Server"
 	echo "| Extensions located in ${PREFIX}/frontpage."
 fi
 echo "|"

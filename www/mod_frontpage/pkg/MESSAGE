@@ -1,10 +1,25 @@
+
 +---------------
-| To finish the install of ${PKGNAME}, you need
-| to enable the module using the following command
+| To  finish the install of ${PKGNAME}, you need to enable the
+| module using the following command
 |
 |   ${PREFIX}/sbin/mod_frontpage-enable
 |
-| If you already have Apache running on your machine,
-| you should not use "apachectl restart" - instead,
-| you should fully stop and then restart the server.
+| If you already have Apache  running  on  your  machine,  you
+| should  not  use  "apachectl  restart" - instead, you should
+| fully stop and then restart the server.
+|
+| This package only  includes  the  mod_frontpage  module  for
+| Apache.   It is still neccessary to download and install the
+| server extensions from Microsoft.  They can be retrieved and
+| installed using the following instructions.
+|
+|   # ftp ftp://ftp.microsoft.com/products/frontpage/fp50.bsdi.tar.Z
+|   # tar -C /usr/local -xzpvf fp50.bsdi.tar.Z
+|   # cd /usr/local/frontpage/version5.0
+|   # dd if=/dev/arandom of=apache-fp/suidkey bs=129 count=1
+|   # sh set_default_perms.sh
+|   # find . -type f -perm -4000 -exec chmod u-s {} \;
+|
 +---------------
+

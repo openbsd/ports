@@ -1,58 +1,61 @@
-# $OpenBSD: Makefile,v 1.10 2002/12/29 15:03:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2003/02/23 22:36:36 danh Exp $
 
-BROKEN=		"security hole, contains buffer overflow"
-
-COMMENT=	"Microsoft FrontPage 2000 Server extensions for Apache"
+COMMENT=	"Microsoft FrontPage Server extensions for Apache"
 
 ONLY_FOR_ARCHS=	i386
 
-VERSION=	1.5.1
-APVERSION=	1.3.17
-DISTNAME=	mod_frontpage-${VERSION}-${APVERSION}
+VERSION=	1.6.2
+DISTNAME=	mod_frontpage_mirfak-${VERSION}
 PKGNAME=	mod_frontpage-${VERSION}
 CATEGORIES=	www
-MASTER_SITES=	http://home.edo.uni-dortmund.de/~chripo/download/ \
-		ftp://ftp.edo.uni-dortmund.de/pub/mod_frontpage/
-MASTER_SITES0=	ftp://ftp.microsoft.com/products/frontpage/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} fp40.bsdi.tar.z:0
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mirfak/}
 
-HOMEPAGE=	http://home.edo.uni-dortmund.de/~chripo/
+HOMEPAGE=	http://mirfak.sourceforge.net
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"licensing restrictions"
-PERMIT_PACKAGE_FTP=	"licensing restrictions"
-PERMIT_DISTFILES_CDROM=	"licensing restrictions"
-PERMIT_DISTFILES_FTP=	"licensing restrictions"
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-APACHEDIST=	${WRKDIR}/apache_${APVERSION}
-FP_PATCH=	${WRKDIR}/${DISTNAME}/patch-${VERSION}-${APVERSION}
-WRKSRC=		${WRKDIR}/apache_${APVERSION}/src/modules/frontpage
-NO_REGRESS=	Yes
+SEPARATE_BUILD=	concurrent
 
 APXS=		/usr/sbin/apxs
 CC!=		${APXS} -q CC
 CFLAGS!=	${APXS} -q CFLAGS
 INCLUDES!=	${APXS} -q INCLUDEDIR
 
-post-extract:
-	@mkdir -p ${WRKSRC}
+DEF=	-DFPEXEC_BIN=\\\"/usr/local/sbin/fpexec\\\" \
+	-DFPSTATIC_BIN=\\\"/usr/local/sbin/fpstatic\\\"
 
-post-patch:
-	@patch -s -p0 -d ${APACHEDIST} < ${FP_PATCH}
+DEF2=	-DFP_HTTPD_USER=\"www\" -DFP_UID_MIN=1000 -DFP_GID_MIN=1000 \
+	-DFP_LOG_EXEC=\"/var/log/fpexec_log\" \
+	-DFP_USERDIR_SUFFIX=\"public_html\" \
+	-DFP_DOC_ROOT=\"/var/www/htdocs\" \
+	-DFP_SAFE_PATH=\"/usr/bin:/bin:/usr/local/bin\" \
+	-DFPDIR=\"/usr/local/frontpage/version5.0/exes\" \
+	-DFPBASE=\"/usr/local/frontpage/version5.0/exes\" \
+	-DFP_USER=\"bin\" -DFP_GROUP=\"bin\" \
+	-DFP_HTACCESS=\".htaccess\" -DFP_UMASK=022
+
+INC=	-I/usr/lib/apache/include
 
 do-build:
-	@cd ${WRKSRC}; ${APXS} -c mod_frontpage.c
-	cd ${WRKSRC}; ${CC} ${CFLAGS} -I${INCLUDES} fpexec.c -o fpexec
+	cd ${WRKBUILD} && \
+	    ${APXS} -Wall -c ${DEF} ${INC} \
+	       -o ${WRKBUILD}/mod_frontpage.so ${WRKSRC}/mod_frontpage.c
+	${CC} ${CFLAGS} ${DEF2} ${INC} -o ${WRKBUILD}/fpexec ${WRKSRC}/fpexec.c
+	${CC} ${CFLAGS} ${DEF2} ${INC} \
+	    -o ${WRKBUILD}/fpstatic ${WRKSRC}/fpstatic.c
 	@sed 's,!!PREFIX!!,${PREFIX},' ${FILESDIR}/mod_frontpage-enable > \
-		${WRKSRC}/mod_frontpage-enable
+	    ${WRKBUILD}/mod_frontpage-enable
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/mod_frontpage.so ${PREFIX}/lib
-	${INSTALL_SCRIPT} ${WRKSRC}/mod_frontpage-enable ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/fpexec ${PREFIX}/sbin
-	@cd ${WRKDIR} && pax -rw frontpage ${PREFIX}
-	@chown -R bin:bin ${PREFIX}/frontpage
-	@chown root ${PREFIX}/frontpage/version4.0/apache-fp/_vti_bin/fpexe
+	${INSTALL_DATA} ${WRKBUILD}/mod_frontpage.so ${PREFIX}/lib/
+	${INSTALL_SCRIPT} ${WRKBUILD}/mod_frontpage-enable ${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKBUILD}/fpexec ${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKBUILD}/fpstatic ${PREFIX}/sbin/
+	@chown root:www ${PREFIX}/sbin/fpexec ${PREFIX}/sbin/fpstatic
 
 .include <bsd.port.mk>
