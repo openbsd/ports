@@ -1,7 +1,7 @@
-$OpenBSD: patch-aclocal_m4,v 1.1 2003/12/31 07:13:20 brad Exp $
---- aclocal.m4.orig	2003-12-17 06:49:08.000000000 -0500
-+++ aclocal.m4	2003-12-17 21:37:37.000000000 -0500
-@@ -6847,8 +6847,8 @@ nto-qnx*)
+$OpenBSD: patch-aclocal_m4,v 1.2 2004/09/18 09:37:27 espie Exp $
+--- aclocal.m4.orig	Wed Jun 30 09:56:42 2004
++++ aclocal.m4	Tue Sep  7 13:53:41 2004
+@@ -6932,8 +6932,8 @@ nto-qnx*)
  
  openbsd*)
    version_type=sunos
@@ -12,7 +12,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2003/12/31 07:13:20 brad Exp $
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
-@@ -7572,13 +7572,7 @@ nto-qnx*)
+@@ -7661,13 +7661,7 @@ nto-qnx*)
    ;;
  
  openbsd*)
@@ -27,7 +27,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2003/12/31 07:13:20 brad Exp $
    ;;
  
  osf3* | osf4* | osf5*)
-@@ -8526,6 +8520,15 @@ case $host_os in
+@@ -8615,6 +8609,15 @@ case $host_os in
      # Workaround some broken pre-1.5 toolchains
      output_verbose_link_cmd='$CC -shared $CFLAGS -v conftest.$objext 2>&1 | grep conftest.$objext | $SED -e "s:-lgcc -lc -lgcc::"'
      ;;
@@ -43,7 +43,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2003/12/31 07:13:20 brad Exp $
    osf3*)
      case $cc_basename in
        KCC)
-@@ -8899,15 +8902,24 @@ if AC_TRY_EVAL(ac_compile); then
+@@ -8988,15 +8991,24 @@ if AC_TRY_EVAL(ac_compile); then
  	   else
  	     _LT_AC_TAGVAR(compiler_lib_search_path, $1)="${_LT_AC_TAGVAR(compiler_lib_search_path, $1)} ${prev}${p}"
  	   fi
@@ -70,7 +70,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2003/12/31 07:13:20 brad Exp $
  	 fi
         fi
         ;;
-@@ -10833,22 +10845,8 @@ EOF
+@@ -10922,22 +10934,8 @@ EOF
      openbsd*)
        _LT_AC_TAGVAR(hardcode_direct, $1)=yes
        _LT_AC_TAGVAR(hardcode_shlibpath_var, $1)=no
@@ -95,7 +95,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2003/12/31 07:13:20 brad Exp $
        ;;
  
      os2*)
-@@ -10857,6 +10855,7 @@ EOF
+@@ -10946,6 +10944,7 @@ EOF
        _LT_AC_TAGVAR(allow_undefined_flag, $1)=unsupported
        _LT_AC_TAGVAR(archive_cmds, $1)='$echo "LIBRARY $libname INITINSTANCE" > $output_objdir/$libname.def~$echo "DESCRIPTION \"$libname\"" >> $output_objdir/$libname.def~$echo DATA >> $output_objdir/$libname.def~$echo " SINGLE NONSHARED" >> $output_objdir/$libname.def~$echo EXPORTS >> $output_objdir/$libname.def~emxexp $libobjs >> $output_objdir/$libname.def~$CC -Zdll -Zcrtdll -o $lib $libobjs $deplibs $compiler_flags $output_objdir/$libname.def'
        _LT_AC_TAGVAR(old_archive_From_new_cmds, $1)='emximp -o $output_objdir/$libname.a $output_objdir/$libname.def'

@@ -1,0 +1,12 @@
+$OpenBSD: patch-kspread_plugins_calculator_Makefile_in,v 1.1 2004/09/18 09:37:28 espie Exp $
+--- kspread/plugins/calculator/Makefile.in.orig	Tue Sep  7 15:48:54 2004
++++ kspread/plugins/calculator/Makefile.in	Tue Sep  7 15:49:08 2004
+@@ -525,7 +525,7 @@ clean-kde_moduleLTLIBRARIES:
+ #>+ 2
+ @KDE_USE_CLOSURE_TRUE@libkspreadcalc.la: libkspreadcalc.la.closure $(libkspreadcalc_la_OBJECTS) $(libkspreadcalc_la_DEPENDENCIES) 
+ @KDE_USE_CLOSURE_FALSE@libkspreadcalc.la: $(libkspreadcalc_la_OBJECTS) $(libkspreadcalc_la_DEPENDENCIES) 
+-	$(CXXLINK) -rpath $(kde_moduledir) $(libkspreadcalc_la_LDFLAGS) $(libkspreadcalc_la_OBJECTS) $(libkspreadcalc_la_LIBADD) $(LIBS)
++	$(CXXLINK) -Wl,-rpath,$(kde_moduledir) -rpath $(kde_moduledir) $(libkspreadcalc_la_LDFLAGS) $(libkspreadcalc_la_OBJECTS) $(libkspreadcalc_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core
