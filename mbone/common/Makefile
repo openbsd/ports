@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2002/12/23 00:37:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2004/11/14 12:49:46 espie Exp $
 
 COMMENT=	"common library functions used by the UCL multicast utils"
 
 DISTNAME=	common-1.0.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mbone
 
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/common/
@@ -13,8 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
-		tk80.1.5::x11/tk/8.0
+LIB_DEPENDS=	tcl80.1.5:tcl->=8.0,<8.1:lang/tcl/8.0 \
+		tk80.1.5:tk->=8.0,<8.1:x11/tk/8.0
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
