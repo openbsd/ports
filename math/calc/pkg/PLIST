@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/01/04 23:05:11 wcobb Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/01/18 12:38:23 wcobb Exp $
 bin/calc
 bin/cscript/4dsphere
 bin/cscript/fproduct
@@ -390,7 +390,6 @@ share/calc/help/change
 share/calc/help/errorcode
 share/calc/help/type
 share/calc/help/obj
-share/calc/custom
 share/calc/custom/pzasusb8.cal
 share/calc/custom/argv.cal
 share/calc/custom/halflen.cal

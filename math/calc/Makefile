@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2003/01/04 23:05:11 wcobb Exp $
+# $OpenBSD: Makefile,v 1.12 2003/01/18 12:38:23 wcobb Exp $
 #
 
 COMMENT=	"C-style arbitrary precision calculator"
 
-DISTNAME=	calc-2.11.6
+DISTNAME=	calc-2.11.6.2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.uu.net/pub/calc/ \
 		ftp://reality.sgi.com/chongo/src/calc/ \
