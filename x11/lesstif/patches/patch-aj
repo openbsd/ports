@@ -1,0 +1,11 @@
+--- doc/www.lesstif.org/Makefile.in.orig	Sat Mar 14 16:50:02 1998
++++ doc/www.lesstif.org/Makefile.in	Tue Mar 17 11:35:59 1998
+@@ -103,7 +103,7 @@
+ # Lets put the informational stuff in a sub directory to avoid 
+ # poluting /usr/local for default installs.
+ #
+-rootdir=	$(exec_prefix)/LessTif/doc
++rootdir=	$(datadir)/doc/LessTif/doc
+ root_DATA=	COPYING.LIB.html FAQ.html agenda.html bug-reporting.html \
+ 		core.html current.html download.html get.html \
+ 		lesstif.html links.html mailing-lists.html \

@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Sat Mar 14 16:50:01 1998
++++ doc/Makefile.in	Tue Mar 17 11:35:12 1998
+@@ -98,7 +98,7 @@
+ 
+ SUBDIRS	= www.lesstif.org lessdox
+ 
+-rootdir=	$(exec_prefix)/LessTif/doc
++rootdir=	$(datadir)/doc/LessTif/doc
+ root_DATA=	INSTALL.html
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../include/LTconfig.h
