@@ -4,3 +4,7 @@ randomly.  It can also be used to cache MP3s into memory and have
 the server operate entirely from memory.
 
 WWW: ${HOMEPAGE}
+
+Available flavors:
+  mysql       - Fetch data from MySQL database.
+  postgresql  - Fetch data from PostgreSQL database (alpha).
