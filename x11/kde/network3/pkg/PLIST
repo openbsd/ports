@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/02 17:01:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/04 14:07:49 espie Exp $
 bin/dsirc
 bin/kdict
 bin/kit
@@ -791,21 +791,6 @@ share/services/lan.protocol
 share/services/rlan.protocol
 share/sounds/ktalkd.wav
 %%SHARED%%
-@dirrm share/sounds
-@dirrm share/services
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/doc/HTML/en/lisa
 @dirrm share/doc/HTML/en/ktalkd
 @dirrm share/doc/HTML/en/ksirc
@@ -817,9 +802,6 @@ share/sounds/ktalkd.wav
 @dirrm share/doc/HTML/en/kmail
 @dirrm share/doc/HTML/en/kit
 @dirrm share/doc/HTML/en/kdict
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
-@dirrm share/config
 @dirrm share/apps/lisa
 @dirrm share/apps/ksirc/pics/emoticons
 @dirrm share/apps/ksirc/pics
@@ -893,7 +875,6 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kppp
 @dirrm share/apps/konqueror/dirtree/remote
 @dirrm share/apps/konqueror/dirtree
-@dirrm share/apps/konqueror
 @dirrm share/apps/knode/pics
 @dirrm share/apps/knode/icons/hicolor/32x32/actions
 @dirrm share/apps/knode/icons/hicolor/32x32
@@ -914,8 +895,6 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kit/icons/hicolor
 @dirrm share/apps/kit/icons
 @dirrm share/apps/kit
-@dirrm share/apps/kicker/applets
-@dirrm share/apps/kicker
 @dirrm share/apps/kdict/icons/hicolor/32x32/actions
 @dirrm share/apps/kdict/icons/hicolor/32x32
 @dirrm share/apps/kdict/icons/hicolor/22x22/actions
@@ -925,13 +904,4 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kdict/icons/hicolor
 @dirrm share/apps/kdict/icons
 @dirrm share/apps/kdict
-@dirrm share/apps
-@dirrm share/applnk/Utilities
-@dirrm share/applnk/Settings/System
-@dirrm share/applnk/Settings/Personalization
-@dirrm share/applnk/Settings/Network
-@dirrm share/applnk/Settings
-@dirrm share/applnk/Internet
-@dirrm share/applnk/.hidden
-@dirrm share/applnk
 @dirrm include/mimelib

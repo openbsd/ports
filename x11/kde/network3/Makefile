@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/04/02 17:01:54 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2002/04/04 14:07:48 espie Exp $
 
 COMMENT= 		"X11 toolkit, network applications"
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.504
-VERSION=		3.0rc3
+VERSION=		3.0
 DISTNAME=		kdenetwork-${VERSION}
 DIST_SUBDIR=		kde
 
 HOMEPAGE=		http://www.kde.org
-MASTER_SITES= http://gd.tuwien.ac.at/pub/kde/%SUBDIR%/
-MASTER_SITE_SUBDIR=	unstable/kde-${VERSION}/src
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${VERSION}/src
 EXTRACT_SUFX=		.tar.bz2
 
 # Parts of kde want shared libraries to work, as some symbols are
