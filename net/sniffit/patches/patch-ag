@@ -1,19 +1,11 @@
-*** sn_data.h.orig	Thu May  7 15:04:04 1998
---- sn_data.h	Thu May  7 15:04:38 1998
-***************
-*** 20,26 ****
-  char *ETH_DEV[]={"et"};
-  #endif
-  
-! #ifdef FREEBSD
-  #define ETH_DEV_NR      1
-  char *ETH_DEV[]={"ed"};
-  #endif
---- 20,26 ----
-  char *ETH_DEV[]={"et"};
-  #endif
-  
-! #if defined(FREEBSD) || defined(OPENBSD)
-  #define ETH_DEV_NR      1
-  char *ETH_DEV[]={"ed"};
-  #endif
+--- sn_data.h.orig	Fri Apr 18 05:33:58 1997
++++ sn_data.h	Sat Mar 25 18:28:00 2000
+@@ -20,7 +20,7 @@
+ char *ETH_DEV[]={"et"};
+ #endif
+ 
+-#ifdef FREEBSD
++#if defined(FREEBSD) || defined(OPENBSD)
+ #define ETH_DEV_NR      1
+ char *ETH_DEV[]={"ed"};
+ #endif
