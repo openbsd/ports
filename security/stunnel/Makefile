@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2005/01/03 08:06:42 jakob Exp $
+# $OpenBSD: Makefile,v 1.35 2005/02/28 07:03:09 jakob Exp $
 
 COMMENT=	"SSL encryption wrapper for standard network daemons"
 
-VERSION=	4.07
+VERSION=	4.08
 DISTNAME=	stunnel-${VERSION}
 PKGNAME=	${DISTNAME}
 CATEGORIES=	security
@@ -31,6 +31,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-random=/dev/arandom \
 			--with-ssl=/usr \
+			--enable-ipv6 \
 			--sysconfdir=${SYSCONFDIR} \
 			--localstatedir=/var \
 			${CONFIGURE_SHARED}
