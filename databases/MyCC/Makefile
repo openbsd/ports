@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/16 14:55:37 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2003/01/14 09:40:24 wilfried Exp $
 
 COMMENT=		"GUI client for MySQL"
 
@@ -23,6 +23,7 @@ MASTER_SITES=		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/
 			ftp://mysql.secsup.org/pub/software/mysql/Downloads/MyCC \
 			http://www.mysql.com/Downloads/MyCC/
 
+MODQT_MT=		Yes
 MODULES=		qt3
 LIB_DEPENDS=		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
 
