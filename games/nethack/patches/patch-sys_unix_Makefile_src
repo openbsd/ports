@@ -1,9 +1,9 @@
-$OpenBSD: patch-sys_unix_Makefile_src,v 1.4 2001/08/27 09:46:31 espie Exp $
---- sys/unix/Makefile.src.orig	Sat Aug  5 12:52:57 2000
-+++ sys/unix/Makefile.src	Mon Aug 27 11:08:29 2001
+$OpenBSD: patch-sys_unix_Makefile_src,v 1.5 2002/03/23 14:51:46 espie Exp $
+--- sys/unix/Makefile.src.orig	Thu Mar 21 00:43:54 2002
++++ sys/unix/Makefile.src	Sat Mar 23 14:44:36 2002
 @@ -1,6 +1,7 @@
  #	NetHack Makefile.
- #	SCCS Id: @(#)Makefile.src	3.3	97/04/17
+ #	SCCS Id: @(#)Makefile.src	3.4	2002/03/02
  
 +include ${NETHACKCONFIG}
  # newer makes predefine $(MAKE) to 'make' and do smarter processing of
@@ -46,7 +46,7 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.4 2001/08/27 09:46:31 espie Exp $
  # any other strange libraries your system needs (for Sysunix only -- the more
  # specialized targets should already be right)
  #
-@@ -443,12 +439,14 @@ objects.o:
+@@ -448,15 +444,17 @@ objects.o:
  	$(CC) $(CFLAGS) -c objects.c
  	@rm -f $(MAKEDEFS)
  
@@ -60,6 +60,10 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.4 2001/08/27 09:46:31 espie Exp $
  qt_win.moc: ../include/qt_win.h
 -	$(QTDIR)/bin/moc ../include/qt_win.h > qt_win.moc
 +	${MOC} ../include/qt_win.h > qt_win.moc
+ 
+ qttableview.moc: ../include/qttableview.h
+-	$(QTDIR)/bin/moc ../include/qttableview.h > qttableview.moc
++	${MOC} ../include/qttableview.h > qttableview.moc
  
  $(MAKEDEFS): ../util/makedefs.c  $(CONFIG_H) ../include/permonst.h \
  		../include/objclass.h ../include/monsym.h \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/01/31 22:43:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/03/23 14:51:46 espie Exp $
 @group games
 bin/nethack
 bin/recover
@@ -97,8 +97,14 @@ lib/nethackdir/medusa-2.lev
 lib/nethackdir/minefill.lev
 lib/nethackdir/minend-1.lev
 lib/nethackdir/minend-2.lev
+lib/nethackdir/minend-3.lev
 lib/nethackdir/minetn-1.lev
 lib/nethackdir/minetn-2.lev
+lib/nethackdir/minetn-3.lev
+lib/nethackdir/minetn-4.lev
+lib/nethackdir/minetn-5.lev
+lib/nethackdir/minetn-6.lev
+lib/nethackdir/minetn-7.lev
 lib/nethackdir/opthelp
 lib/nethackdir/options
 lib/nethackdir/oracle.lev

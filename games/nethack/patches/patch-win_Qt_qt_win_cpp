@@ -1,13 +1,13 @@
-$OpenBSD: patch-win_Qt_qt_win_cpp,v 1.1 2000/04/16 20:49:00 espie Exp $
---- win/Qt/qt_win.cpp.orig	Sat Dec 11 06:21:09 1999
-+++ win/Qt/qt_win.cpp	Fri Apr 14 14:13:20 2000
-@@ -91,7 +91,8 @@ extern "C" {
- #include "qt_clust.h"
- #include "qt_xpms.h"
- 
--#include <malloc.h>
-+//#include <malloc.h>
+$OpenBSD: patch-win_Qt_qt_win_cpp,v 1.2 2002/03/23 14:51:46 espie Exp $
+--- win/Qt/qt_win.cpp.orig	Wed Mar 20 18:44:15 2002
++++ win/Qt/qt_win.cpp	Fri Mar 22 08:16:40 2002
+@@ -103,7 +103,8 @@ extern "C" {
+ #ifdef Q_WS_MACX
+ #  include <sys/malloc.h>
+ #else
+-#  include <malloc.h>
++//#  include <malloc.h>
 +#include <stdlib.h>
+ #endif
  
  #ifdef _WS_X11_
- // For userid control
