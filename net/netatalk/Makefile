@@ -1,14 +1,8 @@
-# New OpenBSD Ports collection makefile for:    netatalk
-#
-# Version required:                     1.4b2
-# Date created:                         8th January 1999
-#
-# $OpenBSD: Makefile,v 1.2 1999/03/31 22:51:00 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/05/24 02:33:58 brad Exp $
 
 DISTNAME=       netatalk-1.4b2
-CATEGORIES=	net print
+CATEGORIES=	net
 MASTER_SITES=   ftp://terminator.rs.itd.umich.edu/unix/netatalk/
-EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	ianm@cit.nepean.uws.edu.au	
 

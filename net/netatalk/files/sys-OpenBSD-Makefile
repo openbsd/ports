@@ -1,7 +1,5 @@
 # OpenBSD specific defines, passed to subdirectories.
 DEFS=	-DBSD4_4
-OPTOPTS=	-O
-CC=	gcc
 INSTALL=	install
 ADDLIBS=
 
@@ -13,7 +11,7 @@ all:	${ALL}
 
 ${ALL}:	FRC
 	cd $@; ${MAKE} ${MFLAGS} CC="${CC}" \
-	    ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" OPTOPTS="${OPTOPTS}" \
+	    ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" OPTOPTS="${CFLAGS}" \
 	    SBINDIR="${SBINDIR}" BINDIR="${BINDIR}" RESDIR="${RESDIR}" \
 	    ETCDIR="${ETCDIR}" LIBDIR="${LIBDIR}" INCDIR="${INCDIR}" \
 	    DESTDIR="${DESTDIR}" AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" all
@@ -24,7 +22,7 @@ install :
 	-mkdir ${DESTDIR} ${SBINDIR} ${BINDIR} ${ETCDIR} ${LIBDIR}
 	for i in ${ALL}; \
 	    do (cd $$i; ${MAKE} ${MFLAGS} CC="${CC}" \
-		ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" OPTOPTS="${OPTOPTS}" \
+		ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" OPTOPTS="${CFLAGS}" \
 	        SBINDIR="${SBINDIR}" BINDIR="${BINDIR}" RESDIR="${RESDIR}" \
 	        ETCDIR="${ETCDIR}" LIBDIR="${LIBDIR}" INCDIR="${INCDIR}" \
 		AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" \
