@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/15 13:57:56 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2005/03/06 10:51:07 alek Exp $
 
 COMMENT=		"GNOME frontend for GhostScript"
-DISTNAME=		ggv-2.8.1
+DISTNAME=		ggv-2.8.3
 CATEGORIES=		print x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/	
