@@ -1,0 +1,49 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2000/08/13 00:06:21 naddy Exp $
+#
+# De-installation setup of urlview
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=${SYSCONFDIR}
+
+# Function: tell the user what they need to do to delete the port completely
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package you need to perform"
+    echo "| these steps as root:"
+    echo "|"
+    echo "|       rm -f ${CONFIG_DIR}/urlview.conf"
+    echo "|"
+    echo "| Do not do this if you plan on re-installing $1"
+    echo "| at some future time."
+    echo "+---------------"
+    echo
+}
+
+# Verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname DEINSTALL" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    DEINSTALL)
+	do_notice "$1"
+	;;
+    *)
+	echo "usage: $0 distname DEINSTALL" >&2
+	exit 1
+	;;
+esac
+
+exit 0

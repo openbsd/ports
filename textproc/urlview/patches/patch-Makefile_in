@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2000/08/13 00:06:21 naddy Exp $
+--- Makefile.in.orig	Tue Jul  4 12:16:37 2000
++++ Makefile.in	Sat Aug 12 02:35:58 2000
+@@ -318,7 +318,7 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-local:
+-	$(INSTALL_DATA) urlview.man $(mandir)/man1/urlview.1
++	$(INSTALL_DATA) urlview.man $(DESTDIR)$(mandir)/man1/urlview.1
+ 
+ # how to create a target for uninstall-data-local???
+ 

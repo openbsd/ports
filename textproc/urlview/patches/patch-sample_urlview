@@ -1,0 +1,13 @@
+$OpenBSD: patch-sample_urlview,v 1.1.1.1 2000/08/13 00:06:21 naddy Exp $
+--- sample.urlview.orig	Fri Aug 11 15:48:27 2000
++++ sample.urlview	Fri Aug 11 15:53:46 2000
+@@ -22,7 +22,7 @@ REGEXP (((http|https|ftp|gopher)|mailto)
+ # Command to invoke for selected URL.  Use lynx, netscape, or url_handler.sh
+ # shell script.
+ 
+-#COMMAND lynx %s
++COMMAND lynx %s
+ #COMMAND netscape -remote 'openURL(%s)'
+-COMMAND url_handler.sh
++#COMMAND url_handler.sh
+ 

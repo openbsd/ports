@@ -1,0 +1,35 @@
+$OpenBSD: patch-url_handler_sh,v 1.1.1.1 2000/08/13 00:06:21 naddy Exp $
+--- url_handler.sh.orig	Tue Jul  4 12:14:30 2000
++++ url_handler.sh	Sat Aug 12 02:38:24 2000
+@@ -1,4 +1,4 @@
+-#! /bin/bash
++#!/bin/sh
+ 
+ #   Copyright (c) 1998  Martin Schulze <joey@debian.org>
+ #   Slightly modified by Luis Francisco Gonzalez <luisgh@debian.org>
+@@ -28,11 +28,11 @@
+ # VT: Launch in the same terminal
+ 
+ # The lists of programs to be executed are
+-https_prgs="/usr/X11R6/bin/netscape:XW /usr/bin/lynx:XT"
+-http_prgs="/usr/bin/lynx:XT /usr/X11R6/bin/netscape:XW"
+-mailto_prgs="/usr/bin/mutt:VT /usr/bin/elm:VT /usr/bin/pine:VT /usr/bin/mail:VT"
+-gopher_prgs="/usr/bin/lynx:XT /usr/bin/gopher:XT"
+-ftp_prgs="/usr/bin/lynx:XT /usr/bin/ncftp:XT"
++https_prgs="/usr/bin/lynx:XT /usr/local/bin/netscape:XW"
++http_prgs="/usr/local/bin/links:XT /usr/bin/lynx:XT /usr/local/bin/netscape:XW"
++mailto_prgs="/usr/local/bin/mutt:VT /usr/local/bin/pine:VT /usr/bin/mail:VT"
++gopher_prgs="/usr/bin/lynx:XT /usr/local/bin/gopher:XT"
++ftp_prgs="/usr/local/bin/ncftp:XT /usr/bin/lynx:XT /usr/bin/ftp:VT"
+ 
+ # Program used as an xterm (if it doesn't support -T you'll need to change
+ # the command line in getprg)
+@@ -42,7 +42,7 @@ XTERM=/usr/X11R6/bin/xterm
+ ###########################################################################
+ # Change bellow this at your own risk
+ ###########################################################################
+-function getprg()
++function getprg
+ {
+     local ele tag prog
+ 
