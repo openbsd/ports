@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/10/08 05:20:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2004/10/26 09:13:38 espie Exp $
 
 COMMENT=		"office suite for KDE"
 
@@ -7,7 +7,7 @@ VERSION=		3.1.4
 VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/${DISTNAME}/src/@}
 
-DISTNAME=	koffice-1.3.3
+DISTNAME=	koffice-1.3.4
 
 FAKE_FLAGS=	${MAKE_FLAGS} TAR=tar DESTDIR=${WRKINST}
 

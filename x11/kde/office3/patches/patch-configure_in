@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2004/10/26 09:13:38 espie Exp $
+--- configure.in.orig	Sat Oct 23 07:59:13 2004
++++ configure.in	Sat Oct 23 08:02:32 2004
+@@ -624,7 +624,7 @@ dnl FILE: ./lib/kospell/configure.in.in
+ dnl =======================================================
+ 
+    AC_LANG_SAVE
+-   AC_LANG_C
++   AC_LANG_CPLUSPLUS
+    dnl Check for aspell library
+    KDE_CHECK_LIB(aspell, new_aspell_config, [LIBASPELL="-laspell"])
+    KDE_CHECK_HEADER(aspell.h)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/09/18 09:37:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/10/26 09:13:38 espie Exp $
 bin/karbon
 bin/kchart
 bin/kformula
@@ -1991,6 +1991,16 @@ share/apps/koffice/pics/koPortrait.png
 share/apps/koffice/pics/koRulerFirst.png
 share/apps/koffice/pics/koRulerLeft.png
 share/apps/koffice/pics/koffice-logo.png
+share/apps/konqueror/
+share/apps/konqueror/servicemenus/
+share/apps/konqueror/servicemenus/karbon_konqi.desktop
+share/apps/konqueror/servicemenus/kexi_konqi.desktop
+share/apps/konqueror/servicemenus/kformula_konqi.desktop
+share/apps/konqueror/servicemenus/kivio_konqi.desktop
+share/apps/konqueror/servicemenus/kpresenter_konqi.desktop
+share/apps/konqueror/servicemenus/krita_konqi.desktop
+share/apps/konqueror/servicemenus/kspread_konqi.desktop
+share/apps/konqueror/servicemenus/kword_konqi.desktop
 share/apps/koshell/
 share/apps/koshell/koshellui.rc
 share/apps/kpresenter/
