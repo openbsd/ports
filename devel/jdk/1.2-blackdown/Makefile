@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/05/13 18:50:39 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/07/09 12:35:54 matt Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -6,10 +6,9 @@ COMMENT=	"Blackdown Java Development Kit for Java 2 platform"
 
 DISTNAME=	jdk-blackdown-1.2pre2
 CATEGORIES=	devel
-NEED_VERSION=	1.499
 
 HOMEPAGE=	http://www.blackdown.org/
-MAINTAINER=	Matt Behrens <matt@openbsd.org>
+MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
 # Sun Binary Code License
 PERMIT_PACKAGE_CDROM=	"Redistribution not permitted"
