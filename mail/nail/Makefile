@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/12/04 08:35:12 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/02/04 03:12:19 pvalchev Exp $
 
 COMMENT=		"enhanced, MIME capable Berkeley Mail"
 
@@ -6,7 +6,7 @@ DISTNAME=		nail-10.3
 CATEGORIES=		mail
 HOMEPAGE=		http://omnibus.ruf.uni-freiburg.de/~gritter/
 
-MAINTAINER=		Jeffrey Neitzel <jneitzel@sdf.lonestar.org>
+MAINTAINER=		Jeffrey Neitzel <jneitzel@bluemarble.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
