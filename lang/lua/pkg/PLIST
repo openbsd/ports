@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.2 2000/12/19 06:58:46 dbt Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/12/19 17:54:29 dbt Exp $
 bin/lua
 bin/luac
 bin/bin2c
@@ -11,12 +11,12 @@ lib/liblualib.a
 %%SHARED%%
 share/lua/docs/idx.html
 share/lua/docs/index.html
-share/lua/docs/logo.gif
-share/lua/docs/lua.1
 share/lua/docs/lua.html
-share/lua/docs/luac.1
 share/lua/docs/luac.html
 share/lua/docs/manual.html
 share/lua/docs/readme.html
+share/lua/docs/logo.gif
+man/man1/lua.1
+man/man1/luac.1
 @dirrm share/lua/docs
 @dirrm share/lua
