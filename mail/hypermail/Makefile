@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2003/03/06 05:21:12 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2003/11/02 19:37:56 margarida Exp $
 
 COMMENT=		"generate a cross-referenced HTML mail archive"
 
-VERSION=		2.1.7
+VERSION=		2.1.8
 DISTNAME=		hypermail-${VERSION}
 CATEGORIES=		mail www
 
@@ -42,8 +42,7 @@ CONFIGURE_ARGS+=--without-gdbm
 
 NO_REGRESS=		Yes
 
-DOCS=	hr.yellow.gif hypermail.gif hypermail-faq.html customizing.html \
-	hmrc.html hypermail.html customizing.html attachments.txt
+DOCS=	*.html *.png attachments.txt 
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/hypermail ${PREFIX}/bin

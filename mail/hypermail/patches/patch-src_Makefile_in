@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2003/03/06 20:51:39 brad Exp $
---- src/Makefile.in.orig	Fri Feb 14 01:35:14 2003
-+++ src/Makefile.in	Thu Mar  6 21:11:34 2003
-@@ -27,10 +27,10 @@ INSTALL_PROG=@INSTALL@ 
+$OpenBSD: patch-src_Makefile_in,v 1.5 2003/11/02 19:37:57 margarida Exp $
+--- src/Makefile.in.orig	2003-11-02 19:09:04.000000000 +0000
++++ src/Makefile.in	2003-11-02 19:09:53.000000000 +0000
+@@ -29,10 +29,10 @@ SPLINTFLAGS=-Ipcre 
  #WNOERROR=-Werror
  #WARNINGS=$(WNOERROR) -ansi -pedantic -Wall -Wtraditional -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Dlint
  
@@ -9,25 +9,17 @@ $OpenBSD: patch-src_Makefile_in,v 1.4 2003/03/06 20:51:39 brad Exp $
 +CFLAGS=@CFLAGS@ @INCLUDES@ -DTRIO_MINIMAL $(WARNINGS)
  YACC=@YACC@
  NETLIBS=@LIBS@
--LDFLAGS=@LDFLAGS@ -Lpcre
+-LDFLAGS=@LDFLAGS@ -Lpcre/.libs
 +LDFLAGS=@LDFLAGS@
  MISC_LIBS= -lm -lpcre
  OPT_LIBS=@EXTRA_LIBS@
  
-@@ -56,7 +56,7 @@ MAILOBJS=	mail.o ../libcgi/libcgi.a
+@@ -58,7 +58,7 @@ MAILOBJS=	mail.o ../libcgi/libcgi.a
  .c.o:
  	$(CC) -c $(CFLAGS) $<
  
--all:    pcre/libpcre.a @FNV_DEP@ hypermail$(SUFFIX) mail$(SUFFIX) lang$(SUFFIX)
+-all:    pcre/.libs/libpcre.a @FNV_DEP@ hypermail$(SUFFIX) mail$(SUFFIX) lang$(SUFFIX)
 +all:    @FNV_DEP@ hypermail$(SUFFIX) mail$(SUFFIX) lang$(SUFFIX)
  
- pcre/libpcre.a:
- 	@cd pcre; $(MAKE) libtool libpcre.a CC="$(CC)" CFLAGS="$(CFLAGS)"
-@@ -118,7 +118,6 @@ clean:
- 	rm -f *.o .pure *qx *qv *.ln core
- 	rm -f .inslog tca.map lint.out
- 	rm -f getdate.c
--	@cd pcre; $(MAKE) clean
- 	@(if test "$(FNV_DEP)" != "" ; then cd fnv; $(MAKE) clean; fi)
- 	@cd ../libcgi; $(MAKE) clean
- 
+ pcre/.libs/libpcre.a:
+ 	@cd pcre; $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)"
