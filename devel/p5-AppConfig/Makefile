@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/03 14:22:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/05/07 04:56:50 robert Exp $
 
 COMMENT=	"Module bundle for reading and parsing config files"
 
-DISTNAME=	AppConfig-1.55
+DISTNAME=	AppConfig-1.56
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
