@@ -1,0 +1,9 @@
+dvi2tty is intended for previewing dvi-files on text-only devices
+(terminals and lineprinters). A number of switches exist to control the 
+format of the output, including width of the lines and even some
+limited font handling. The program is basicly an improved C version
+of the pascal program written by Svante Lindahl (see README.ORG).
+
+Disdvi is a simple hack that dumps a dvi file in a more readable form.
+
+WWW: ${HOMEPAGE}

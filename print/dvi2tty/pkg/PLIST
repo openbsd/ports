@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/03 15:47:06 naddy Exp $
+bin/disdvi
+bin/dvi2tty
+man/man1/disdvi.1
+man/man1/dvi2tty.1

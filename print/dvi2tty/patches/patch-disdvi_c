@@ -1,0 +1,24 @@
+$OpenBSD: patch-disdvi_c,v 1.1.1.1 2002/11/03 15:47:06 naddy Exp $
+--- disdvi.c.orig	Mon May 27 18:49:40 1996
++++ disdvi.c	Sun Nov  3 16:15:50 2002
+@@ -91,11 +91,6 @@ char * progname;
+ char *          malloc          ();
+ #endif
+ 
+-#if defined(VMS)
+-                main            (int argc, char ** argv);
+-#else
+-void            main            (int argc, char ** argv);
+-#endif
+ void            bop             (void);
+ void            preamble        (void);
+ void            postamble       (void);
+@@ -118,7 +113,7 @@ void            usage           (void);
+ #if defined(VMS)
+      main(int argc, char **argv)
+ #else
+-void main(int argc, char **argv)
++int main(int argc, char **argv)
+ #endif
+ {
+     register int opcode;                /* dvi opcode                        */
