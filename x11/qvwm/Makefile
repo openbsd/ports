@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/07/02 23:44:17 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/07/03 00:39:08 espie Exp $
 
 DISTNAME=		qvwm-1.1.8
 CATEGORIES=     	x11
@@ -18,6 +18,12 @@ USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 FLAVORS=		esound imlib
 FLAVOR?=
+
+# the build-scheme will get confused otherwise
+post-patch:
+	rm ${WRKDIST}/src/yaccsrc.{cc,h}
+
+SEPARATE_BUILD=flavored
 
 .if ${FLAVOR:L:Mesound}
 LIB_DEPENDS+=esd.2.::audio/esound
