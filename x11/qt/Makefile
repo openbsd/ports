@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2000/09/06 21:35:06 brad Exp $
+# $OpenBSD: Makefile,v 1.51 2000/09/07 00:42:05 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.45
@@ -59,6 +59,15 @@ do-configure:
 post-configure:
 	@cd ${WRKSRC} && cp -R examples examples-src
 	@cd ${WRKSRC} && cp -R tutorial tutorial-src
+
+pre-build:
+	@echo ""
+	@echo "*** WARNING: you may see an error such as"
+	@echo "***       virtual memory exhausted"
+	@echo "*** when building this package.  If you do you must increase"
+	@echo "*** your limits.  See the man page for your shell and look"
+	@echo "*** for the 'limit' or 'ulimit' command."
+	@echo ""
 
 post-build:
 	@cd ${IMAGEIODIR} && \
