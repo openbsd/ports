@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/03/05 22:55:44 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/20 21:49:39 espie Exp $
 
 DISTNAME=	stunnel-3.8
 CATEGORIES=	security
@@ -22,6 +22,7 @@ MASTER_SITES=	http://opensores.thebunker.net/pub/mirrors/stunnel/ \
 GNU_CONFIGURE=	yes
 
 ALL_TARGET=	stunnel
+FAKE=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stunnel ${PREFIX}/sbin
