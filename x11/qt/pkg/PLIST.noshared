@@ -297,8 +297,6 @@ man/man3/QGCache.3qt
 man/man3/QGCacheIterator.3qt
 man/man3/QGDict.3qt
 man/man3/QGDictIterator.3qt
-man/man3/QGIFFormat.3qt
-man/man3/QGIFFormatType.3qt
 man/man3/QGLContext.3qt
 man/man3/QGLFormat.3qt
 man/man3/QGLWidget.3qt
@@ -474,8 +472,6 @@ man/man3/qgcache.3qt
 man/man3/qgcacheiterator.3qt
 man/man3/qgdict.3qt
 man/man3/qgdictiterator.3qt
-man/man3/qgifformat.3qt
-man/man3/qgifformattype.3qt
 man/man3/qglcontext.3qt
 man/man3/qglformat.3qt
 man/man3/qglist.3qt
@@ -597,5 +593,7 @@ man/man3/qxtwidget.3qt
 share/doc/qt/README
 share/doc/qt/README.QT
 @dirrm share/doc/qt
+@dirrm lib/qt/examples
 @dirrm lib/qt/tutorial
+@dirrm lib/qt
 @dirrm include/X11/qt

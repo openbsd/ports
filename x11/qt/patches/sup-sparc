@@ -1,0 +1,90 @@
+--- src/Makefile.in.orig	Fri Feb 26 12:02:22 1999
++++ src/Makefile.in	Thu May 27 15:05:30 1999
+@@ -741,6 +741,7 @@
+ 		tools/qintdict.h \
+ 		kernel/qlayout.h \
+ 		kernel/qgmanager.h
++	$(CXX) -c $(CXXFLAGS) -O0 $(INCPATH) -o dialogs/qtabdialog.o dialogs/qtabdialog.cpp
+ 
+ kernel/qaccel.o: kernel/qaccel.cpp \
+ 		kernel/qaccel.h \
+@@ -1037,6 +1038,7 @@
+ 		tools/qdict.h \
+ 		tools/qgdict.h \
+ 		tools/qbuffer.h
++	$(CXX) -c $(CXXFLAGS) -O0 $(INCPATH) -o kernel/qdragobject.o kernel/qdragobject.cpp
+ 
+ kernel/qdrawutil.o: kernel/qdrawutil.cpp \
+ 		kernel/qdrawutil.h \
+@@ -1247,6 +1249,7 @@
+ 		kernel/qbrush.h \
+ 		kernel/qpointarray.h \
+ 		kernel/qwmatrix.h
++	$(CXX) -c $(CXXFLAGS) -O0 $(INCPATH) -o kernel/qiconset.o kernel/qiconset.cpp
+ 
+ kernel/qimage.o: kernel/qimage.cpp \
+ 		kernel/qimage.h \
+@@ -1525,6 +1528,7 @@
+ 		tools/qcollection.h \
+ 		tools/qdatastream.h \
+ 		tools/qfile.h
++	$(CXX) -c $(CXXFLAGS) -O0 $(INCPATH) -o kernel/qpicture.o kernel/qpicture.cpp
+ 
+ kernel/qpixmap.o: kernel/qpixmap.cpp \
+ 		kernel/qbitmap.h \
+@@ -1823,6 +1827,7 @@
+ 		kernel/qkeycode.h \
+ 		kernel/qapplication.h \
+ 		kernel/qbrush.h
++	$(CXX) -c $(CXXFLAGS) -O0 $(INCPATH) -o kernel/qwidget.o kernel/qwidget.cpp
+ 
+ kernel/qwindow.o: kernel/qwindow.cpp \
+ 		kernel/qwindow.h \
+@@ -2376,6 +2381,7 @@
+ 		tools/qintdict.h \
+ 		tools/qgdict.h \
+ 		tools/qcollection.h
++	$(CXX) -c $(CXXFLAGS) -O0 $(INCPATH) -o widgets/qlabel.o widgets/qlabel.cpp
+ 
+ widgets/qlcdnumber.o: widgets/qlcdnumber.cpp \
+ 		widgets/qlcdnumber.h \
+@@ -2553,6 +2559,7 @@
+ 		tools/qgdict.h \
+ 		tools/qvector.h \
+ 		tools/qgvector.h
++	$(CXX) -c $(CXXFLAGS) -O0 $(INCPATH) -o widgets/qlistview.o widgets/qlistview.cpp
+ 
+ widgets/qmainwindow.o: widgets/qmainwindow.cpp \
+ 		widgets/qmainwindow.h \
+@@ -2607,6 +2614,7 @@
+ 		widgets/qtoolbar.h \
+ 		widgets/qstatusbar.h \
+ 		widgets/qtooltip.h
++	$(CXX) -c $(CXXFLAGS) -O0 $(INCPATH) -o widgets/qmainwindow.o widgets/qmainwindow.cpp
+ 
+ widgets/qmenubar.o: widgets/qmenubar.cpp \
+ 		widgets/qmenubar.h \
+@@ -2727,6 +2735,7 @@
+ 		tools/qregexp.h \
+ 		kernel/qapplication.h \
+ 		kernel/qtimer.h
++	$(CXX) -c $(CXXFLAGS) -O0 $(INCPATH) -o widgets/qmultilinedit.o widgets/multilinedit.cpp
+ 
+ widgets/qpopupmenu.o: widgets/qpopupmenu.cpp \
+ 		widgets/qpopupmenu.h \
+@@ -3683,6 +3692,7 @@
+ 		tools/qgarray.h \
+ 		tools/qshared.h \
+ 		tools/qgeneric.h
++	$(CXX) -c $(CXXFLAGS) -O0 $(INCPATH) -o kernel/qpicture_x11.o kernel/qpicture_x11.cpp
+ 
+ kernel/qpixmap_x11.o: kernel/qpixmap_x11.cpp \
+ 		kernel/qbitmap.h \
+@@ -4016,6 +4026,7 @@
+ 		tools/qfile.h \
+ 		tools/qbuffer.h \
+ 		tools/qintdict.h
++	$(CXX) -c $(CXXFLAGS) -O0 $(INCPATH) -o kernel/qpsprinter.o kernel/qpsprinter.cpp
+ 
+ kernel/qnpsupport.o: kernel/qnpsupport.cpp \
+ 		kernel/qapplication.h \
