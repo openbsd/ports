@@ -1,0 +1,55 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 1999/07/05 19:35:58 form Exp $
+#
+# Pre/post-installation setup of analog
+
+IMAGES="analogo.gif bara1.gif bara16.gif bara2.gif bara32.gif bara4.gif \
+	bara8.gif barb1.gif barb16.gif barb2.gif barb32.gif barb4.gif \
+	barb8.gif barc1.gif barc16.gif barc2.gif barc32.gif barc4.gif \
+	barc8.gif bard1.gif bard16.gif bard2.gif bard32.gif bard4.gif \
+	bard8.gif bare1.gif bare16.gif bare2.gif bare32.gif bare4.gif \
+	bare8.gif barf1.gif barf16.gif barf2.gif barf32.gif barf4.gif \
+	barf8.gif barg1.gif barg16.gif barg2.gif barg32.gif barg4.gif \
+	barg8.gif barh1.gif barh16.gif barh2.gif barh32.gif barh4.gif \
+	barh8.gif html2.gif"
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	install -d -o root -g bin -m 755 /var/www/htdocs/analog-images
+	[ -d /var/www/cgi-bin ] || \
+		install -d -o root -g daemon -m 755 /var/www/cgi-bin
+	for img in ${IMAGES}; do
+		install -o root -g bin -m 444 \
+			${PREFIX}/lib/analog/images/${img} \
+			/var/www/htdocs/analog-images
+	done
+	install -o root -g bin -m 111 ${PREFIX}/lib/analog/anlgform.cgi \
+		/var/www/cgi-bin
+	[ -f /etc/analog.cfg ] || install -o root -g wheel -m 444 \
+		${PREFIX}/lib/analog/analog.cfg /etc
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

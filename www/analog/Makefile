@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/09 04:11:58 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/07/05 19:35:57 form Exp $
 
-DISTNAME=	analog3.11
-PKGNAME=	analog-3.11
+DISTNAME=	analog3.31
+PKGNAME=	analog-3.31
 CATEGORIES=	www
 MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://www.magma.ca/~brendanr/analog/ \
@@ -14,31 +14,35 @@ MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://analog.wizard.net/ \
 		ftp://ftp.netcasting.net/pub/packages/analog/
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	form@OpenBSD.ORG
 
 ETCDIR=		/etc
 ANALOGDIR=	${PREFIX}/lib/analog
+CONFIGFILE=	${ETCDIR}/analog.cfg
 DOCDIR=		${PREFIX}/share/doc/analog
 HTTPDIR=	/var/www
+IMAGEDIR=	/analog-images
 
 CFLAGS+=	-DANALOGDIR=\\\"${ANALOGDIR}/\\\" \
-		-DHTTPDIR=\\\"${HTTPDIR}/\\\" -DETCDIR=\\\"${ETCDIR}/\\\" \
+		-DDEFAULTCONFIGFILE=\\\"${CONFIGFILE}\\\" \
+		-DHTTPDIR=\\\"${HTTPDIR}/\\\" \
+		-DIMAGEDIR=\\\"${IMAGEDIR}/\\\" \
 		-DANALOG=\\\"${PREFIX}/bin/analog\\\"
 
 do-install:
-	@${MKDIR} ${DOCDIR}
-	@${MKDIR} ${ANALOGDIR}/lang
-	@${MKDIR} ${HTTPDIR}/htdocs/images
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/images/* ${HTTPDIR}/htdocs/images
-	${INSTALL_DATA} ${WRKSRC}/lang/* ${ANALOGDIR}/lang
+	@${INSTALL_DATA_DIR} ${DOCDIR}
+	@${INSTALL_DATA_DIR} ${ANALOGDIR}/lang
+	@${INSTALL_DATA_DIR} ${ANALOGDIR}/images
+	@${INSTALL_DATA_DIR} ${HTTPDIR}/htdocs${IMAGEDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/analog ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/images/* ${ANALOGDIR}/images
+	${INSTALL_DATA} ${WRKSRC}/lang/* ${ANALOGDIR}/lang
 	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${ANALOGDIR}
-.if !exists(${ETCDIR}/analog.cfg)
-	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${ETCDIR}
-.endif
-	${INSTALL_DATA} ${WRKSRC}/domains.tab ${ANALOGDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/anlgform.cgi ${ANALOGDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/anlgform.cgi ${HTTPDIR}/cgi-bin
+	${INSTALL_DATA} ${WRKSRC}/anlgform.html ${ANALOGDIR}
+	${INSTALL_DATA} ${WRKSRC}/anlgform.cgi ${ANALOGDIR}
+
+post-install:
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>

@@ -1,0 +1,34 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1 1999/07/05 19:35:58 form Exp $
+#
+# analog deinstallation
+
+IMAGES="analogo.gif bara1.gif bara16.gif bara2.gif bara32.gif bara4.gif \
+	bara8.gif barb1.gif barb16.gif barb2.gif barb32.gif barb4.gif \
+	barb8.gif barc1.gif barc16.gif barc2.gif barc32.gif barc4.gif \
+	barc8.gif bard1.gif bard16.gif bard2.gif bard32.gif bard4.gif \
+	bard8.gif bare1.gif bare16.gif bare2.gif bare32.gif bare4.gif \
+	bare8.gif barf1.gif barf16.gif barf2.gif barf32.gif barf4.gif \
+	barf8.gif barg1.gif barg16.gif barg2.gif barg32.gif barg4.gif \
+	barg8.gif barh1.gif barh16.gif barh2.gif barh32.gif barh4.gif \
+	barh8.gif html2.gif"
+
+# exit on errors, use a sane path and prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+
+for img in ${IMAGES}; do rm -f /var/www/htdocs/analog-images/${img}; done
+rmdir /var/www/htdocs/analog-images
+rm -f /var/www/cgi-bin/anlgform.cgi
+if [ -f /etc/analog.cfg ]; then
+	echo ""
+	echo "+---------------"
+	echo "| To completely deinstall the $1 package you need to remove"
+	echo "| /etc/analog.cfg file manually."
+	echo "|"
+	echo "+---------------"
+	echo ""
+fi
+
+exit 0
