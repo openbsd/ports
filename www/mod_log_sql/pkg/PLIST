@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/26 15:19:32 naddy Exp $
+lib/mod_log_sql.so
+sbin/mod_log_sql-enable
+share/doc/mod_log_sql/contents.png
+share/doc/mod_log_sql/documentation.css
+share/doc/mod_log_sql/documentation.html
+share/doc/mod_log_sql/img1.png
+share/doc/mod_log_sql/img2.png
+share/doc/mod_log_sql/img3.png
+share/doc/mod_log_sql/img4.png
+share/doc/mod_log_sql/next.png
+share/doc/mod_log_sql/next_g.png
+share/doc/mod_log_sql/node1.html
+share/doc/mod_log_sql/node2.html
+share/doc/mod_log_sql/node3.html
+share/doc/mod_log_sql/node4.html
+share/doc/mod_log_sql/node5.html
+share/doc/mod_log_sql/node6.html
+share/doc/mod_log_sql/prev.png
+share/doc/mod_log_sql/prev_g.png
+share/doc/mod_log_sql/up.png
+share/doc/mod_log_sql/up_g.png
+share/examples/mod_log_sql/create_tables.sql
+share/examples/mod_log_sql/make_combined_log.pl
+@dirrm share/examples/mod_log_sql
+@dirrm share/doc/mod_log_sql
