@@ -1,0 +1,12 @@
+$OpenBSD: patch-libscg_scsiopen_c,v 1.2 2003/05/17 01:12:23 brad Exp $
+--- libscg/scsiopen.c.orig	Tue Nov 19 11:13:37 2002
++++ libscg/scsiopen.c	Fri May 16 18:57:52 2003
+@@ -270,7 +270,7 @@ nulldevice:
+ 	}
+ 	if (scg__open(scgp, devname) <= 0) {
+ 		if (errs && scgp->errstr)
+-			js_snprintf(errs, slen, scgp->errstr);
++			js_snprintf(errs, slen, "%s", scgp->errstr);
+ 		scg_sfree(scgp);
+ 		return ((SCSI *)0);
+ 	}
