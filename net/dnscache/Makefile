@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/03/27 08:32:24 camield Exp $
+# $OpenBSD: Makefile,v 1.2 2000/04/26 14:06:47 camield Exp $
 
 DISTNAME=	dnscache-1.00
 HOMEPAGE=	http://cr.yp.to/dnscache.html
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_CONFIGURE=	Yes
-ALL_TARGET=	default WRKINST=${WRKINST}
+ALL_TARGET=	default
 INSTALL_TARGET=	setup check
 
 FAKE=	Yes
@@ -24,6 +24,9 @@ RUN_DEPENDS=	supervise:${PORTSDIR}/sysutils/daemontools \
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	@echo ${PREFIX} > ${WRKSRC}/conf-home
+
+pre-install:
 	@echo ${PREFIX} > ${WRKSRC}/conf-home
 
 .include <bsd.port.mk>
