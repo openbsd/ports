@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.32 2002/04/06 22:14:17 miod Exp $
+# $OpenBSD: Makefile,v 1.33 2002/05/15 17:42:25 espie Exp $
 
 COMMENT=	"retrieve files from the 'net via HTTP and FTP"
 
 DISTNAME=	wget-1.7
 CATEGORIES=	net
 NEED_VERSION=	1.460
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	${MASTER_SITE_GNU:=wget/}
 MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
-MASTER_SITE_SUBDIR= wget
 
 PATCHFILES=	wget-17-v6-20010716a.diff.gz:0
 PATCH_DIST_STRIP= -p1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/01/22 05:55:56 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/15 17:42:25 espie Exp $
 
 COMMENT=	"modules to implement the irc protocol"
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= Net 
+MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=Net/}
 
 CONFIGURE_STYLE= perl
 

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/12 15:59:15 bmc Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/15 17:42:24 espie Exp $
 
 COMMENT=	"TCP/IP traffic logging tool"
 
 DISTNAME=	iplog-2.2.3
 CATEGORIES=	net security
 NEED_VERSION=	1.394
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= ojnk
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ojnk/}
 
 HOMEPAGE=	http://ojnk.sourceforge.net
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2002/04/19 07:19:19 kevlo Exp $
+# $OpenBSD: Makefile,v 1.30 2002/05/15 17:42:24 espie Exp $
 
 COMMENT=	"shell-like command line ftp client"
 
@@ -7,10 +7,9 @@ CATEGORIES=     net
 NEED_VERSION=	1.460
 MASTER_SITES=	http://the.wiretapped.net/mirrors/lftp/ \
 		ftp://ftp.ayamura.org/pub/lftp/ \
-		${MASTER_SITE_SUNSITE} \
+		${MASTER_SITE_SUNSITE:=system/network/file-transfer/} \
 		ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
 		http://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/
-MASTER_SITE_SUBDIR= system/network/file-transfer/
 
 HOMEPAGE=	http://lftp.yar.ru/
 

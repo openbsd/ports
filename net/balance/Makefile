@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/11/15 19:25:52 jsyn Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/15 17:42:24 espie Exp $
 
 COMMENT=		"tcp proxy with load balancing and failover mechanisms"
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	balance
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=balance/}
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=		balance

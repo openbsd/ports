@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/03/29 03:30:00 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2002/05/15 17:42:25 espie Exp $
 
 COMMENT=	"small, easy to set up, fast and very secure FTP server"
 
@@ -11,8 +11,7 @@ MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.za.pureftpd.org/pub/pure-ftpd/releases/ \
 		http://ftp.cn.pureftpd.org/pure-ftpd/releases/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= pureftpd
+		${MASTER_SITE_SOURCEFORGE:=pureftpd/}
 
 HOMEPAGE=	http://www.pureftpd.org/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/11/10 15:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/15 17:42:24 espie Exp $
 
 COMMENT=	"download manager for KDE"
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= kmago
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kmago/}
 
 BUILD_DEPENDS=	::x11/qt2-designer
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2

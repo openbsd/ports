@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2002/04/17 14:55:28 jcs Exp $
+# $OpenBSD: Makefile,v 1.29 2002/05/15 17:42:24 espie Exp $
 
 DISTNAME=	gaim-0.55
 CATEGORIES=	net
@@ -11,8 +11,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 COMMENT=	"Gtk-based AOL Instant Messenger (AIM) client"
 HOMEPAGE=	http://gaim.sourceforge.net/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= gaim
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaim/}
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 

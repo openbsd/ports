@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/09 15:33:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/15 17:42:24 espie Exp $
 
 COMMENT=		"GNOME ICQ client"
 V=			0.96.1
@@ -8,8 +8,7 @@ NEED_VERSION=   	1.455
 HOMEPAGE=		http://gnomeicu.sourceforge.net
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
-MASTER_SITES=		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= 	stable/sources/gnomeicu
+MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/gnomeicu/}
 
 LIB_DEPENDS=		panel_applet::x11/gnome/core \
 			gdbm.::databases/gdbm

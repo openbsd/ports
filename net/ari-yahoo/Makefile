@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/08 17:05:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/15 17:42:24 espie Exp $
 
 COMMENT=	"console Yahoo! messenger client"
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ari-yahoo
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ari-yahoo/}
 
 CONFIGURE_STYLE= gnu
 

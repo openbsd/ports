@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2002/05/15 17:42:25 espie Exp $
 
 COMMENT=	"powerful console ftp client with many features"
 
 DISTNAME=	yafc-0.7.3
 CATEGORIES=	net
 NEED_VERSION=	1.387
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= yafc
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=yafc/}
 
 HOMEPAGE=	http://yafc.sourceforge.net/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

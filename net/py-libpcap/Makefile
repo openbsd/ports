@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:20 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/15 17:42:25 espie Exp $
 
 COMMENT=	"libpcap bindings for Python"
 
@@ -8,8 +8,7 @@ PKGNAME=	py-libpcap-${V}
 CATEGORIES=	net
 NEED_VERSION=	1.515
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	pylibpcap
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pylibcap/}
 
 HOMEPAGE=	http://sourceforge.net/projects/pylibpcap/
 

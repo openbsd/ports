@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/03/21 21:09:20 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/05/15 17:42:25 espie Exp $
 # $FreeBSD: Makefile,v 1.12 1996/12/01 01:23:22 obrien Exp $
 
 COMMENT=	"X11 front-end program for the archie network search service"
@@ -6,8 +6,7 @@ COMMENT=	"X11 front-end program for the archie network search service"
 DISTNAME=	xarchie-2.0.10
 CATEGORIES=	net
 NEED_VERSION=	1.515
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	applications
+MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

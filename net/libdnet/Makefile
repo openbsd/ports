@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.2 2002/03/07 05:19:05 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/15 17:42:24 espie Exp $
 
 COMMENT=	"portable low-level networking library"
 
 DISTNAME=	libdnet-1.2
 CATEGORIES=	net
 NEED_VERSION=	1.504
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=libdnet
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libdnet/}
 
 HOMEPAGE=	http://libdnet.sourceforge.net/
 

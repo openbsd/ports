@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2002/02/24 04:24:50 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2002/05/15 17:42:25 espie Exp $
 
 COMMENT=	"virtual tunnels over TCP/IP networks with traffic shaping"
 
 DISTNAME=	vtun-2.5
 CATEGORIES=	net
 NEED_VERSION=	1.500
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= vtun
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vtun/}
 
 HOMEPAGE=	http://vtun.sourceforge.net/
 

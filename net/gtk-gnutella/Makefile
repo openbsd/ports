@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/02/28 00:33:37 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/15 17:42:24 espie Exp $
 
 COMMENT=		"Gtk-based GUI client for the Gnutella Network"
 
@@ -13,8 +13,7 @@ MAINTAINER=		Flinn Mueller <flinn@activeintra.net>
 
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gtk-gnutella
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gtk-gnutella/}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

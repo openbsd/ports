@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/05/03 03:19:14 mark Exp $
+# $OpenBSD: Makefile,v 1.15 2002/05/15 17:42:24 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -8,8 +8,7 @@ VER=		0.6.5
 DISTNAME=	ettercap-${VER}
 CATEGORIES=	net
 NEED_VERSION=	1.500
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ettercap
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/}
 
 HOMEPAGE=	http://ettercap.sourceforge.net/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/01/21 12:54:38 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/15 17:42:24 espie Exp $
 
 COMMENT=	"ICQ client for KDE"
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= kxicq
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kxicq/}
 
 BUILD_DEPENDS=	::x11/qt2-designer
 LIB_DEPENDS=	kdecore.3,DCOP,kdesu,kdeui,kfile,kio,kssl,ksycoca::x11/kde/libs2
