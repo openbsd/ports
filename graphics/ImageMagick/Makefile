@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 1999/10/27 20:49:08 brad Exp $
+# $OpenBSD: Makefile,v 1.22 1999/12/19 01:28:52 brad Exp $
 
-DISTNAME=	ImageMagick-4.2.8
+DISTNAME=	ImageMagick-4.2.9
 CATEGORIES=     graphics
 MASTER_SITES=	ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
 		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/ \
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
 		--enable-lzw \
 		--without-perl
-CONFIGURE_ENV=	CPPFLAGS="-I/usr/local/include" \
-		LDFLAGS="-L/usr/local/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
