@@ -13,6 +13,6 @@ When you press right mouse button inside the tree list, you can make any
 action on selected item(s). You can save files from the cache to other 
 locations, you can remove files and entries from the chache (one or all 
 entries for server), or you can compute numbers of documents in sub-trees 
-and size of all documets in the sub-tree. You can launch any viewer 
+and size of all documents in the sub-tree. You can launch any viewer 
 command on cache file or on source URL. The viewers you can assign to any 
 MIME type. You can also copy selected URL to clipboard.

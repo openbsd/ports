@@ -20,7 +20,7 @@
   - You can maintain a PGP public-key database (I use this library to
     maintain a database with ~40.000 keys).  There is code to use DBM
     as supplied from Berkeley.  A copy of DBM is included for your
-    convinience
+    convenience
 
   In general, PGPlib operates on buffers in order for you to use it in
   your applications.

@@ -2,7 +2,7 @@ Xtestpicture creates a full-screen picture that is intended to help
 you adjusting your monitor, resembling the usual TV test pictures.
 
 The picture consists of some geometrical elements, like two crossing
-diagonals, a circle, a couple of recatangles.  In the center, there's
+diagonals, a circle, a couple of rectangles.  In the center, there's
 a rectangle filled with vertical lines, to prove sharpness and video
 bandwidth, and a color area to adjust the color saturation and contrast.
 
