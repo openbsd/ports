@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 1999/09/27 14:54:29 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/17 00:26:37 turan Exp $
 
 DISTNAME=	xscrabble
 PKGNAME=	xscrabble-1.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.freebsd.org/~mph/distfiles/
 
-NO_CDROM=	"NOFEE:	Can not sell"
-
 MAINTAINER=	angelos@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_FTP=	Yes
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/11/12 14:37:34 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/17 00:26:37 turan Exp $
 
 DISTNAME=	xroach
 PKGNAME=	xroach-4.4
@@ -8,6 +8,11 @@ EXTRACT_SUFX=	.tar
 IGNOREFILES=	xroach.tar
 
 MAINTAINER=	mickey@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	yes
 

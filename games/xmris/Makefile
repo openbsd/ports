@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/12 00:43:58 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/17 00:26:36 turan Exp $
 
 DISTNAME=	xmris.4.04
 PKGNAME=	xmris-4.04
@@ -8,9 +8,12 @@ MASTER_SITE_SUBDIR= games
 EXTRACT_SUFX=	.tgz
 NEED_VERSION=	1.195
 
-NO_CDROM=	"NOFEE:	Can not sell"
-
 MAINTAINER=	angelos@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	yes
 USE_IMAKE=      yes
