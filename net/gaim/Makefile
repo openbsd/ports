@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.50 2003/11/17 04:24:23 brad Exp $
+# $OpenBSD: Makefile,v 1.51 2003/11/22 23:04:42 brad Exp $
 
-DISTNAME=	gaim-0.72
+DISTNAME=	gaim-0.73
 PATCHFILES=	${DISTNAME}-openssl.patch.gz:0
 PATCH_DIST_STRIP=-p1
 CATEGORIES=	net
@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=--disable-gtkspell
 .endif
 
 .if ${FLAVOR:L:Mdebug}
-CFLAGS=	-O1
+CFLAGS=	-O0
 CONFIGURE_ARGS+=--enable-debug
 
 INSTALL_STRIP=
