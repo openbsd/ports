@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.9 1998/12/17 05:13:23 marc Exp $
+# $OpenBSD: Makefile,v 1.10 1998/12/17 23:04:10 espie Exp $
 #
 # This is a configuration file for egcs, recent snapshot
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -31,7 +31,7 @@ ONLY_FOR_ARCHS = i386 sparc m68k
 # see files/tests for precise testing procedure
 
 
-# as of 19981122, cygnus snapshot packaging scheme is BROKEN.
+# as of 19981213, cygnus snapshot packaging scheme is still BROKEN.
 # YOU MUST USE THE MAMMOTH ARCHIVE !!!
 MAKE_TESTS=yes
 MAKE_GXX=yes
@@ -48,7 +48,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1998-12-06
+LATEST_DATE=1998-12-13
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -57,7 +57,7 @@ LATEST_DATE=1998-12-06
 
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
-NEXT_DATE=1998-12-13
+#NEXT_DATE=1998-12-13
 #PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
@@ -70,12 +70,11 @@ DISTNAME=   egcs-${LATEST}
 .endif
 
 # getting the right archives where they should be
-MASTER_SITE_SUBDIR=${LATEST}
-PATCH_SITE_SUBDIR=${NEXT}
+MASTER_SITE_SUBDIR=${LATEST_DATE}
+PATCH_SITE_SUBDIR=${NEXT_DATE}
 
 DIST_SUBDIR=egcs
 
-PATCH_SITES = ${MASTER_SITES}
 PATCH_DIST_STRIP=-p1
 
 .if defined(ONE_ARCHIVE)
@@ -117,9 +116,11 @@ DISTFILES+=egcs-chill-${LATEST}${EXTRACT_SUFX}
 
 # to do: check egcs-stable mirror list for sites which carry snapshots
 
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/${DIRECTORY} \
+MASTER_SITES=	\
+	ftp://egcs.cygnus.com/pub/${DIRECTORY} \
 	ftp://ftp.lip6.fr/pub/${DIRECTORY}
 
+PATCH_SITES = ${MASTER_SITES}
 
 # add a possible next snapshot
 
