@@ -1,15 +1,20 @@
 --- src/unexelf.c.orig	Tue Sep 26 07:01:57 2000
-+++ src/unexelf.c	Fri Mar 22 23:02:09 2002
-@@ -466,7 +466,7 @@ typedef struct {
- #define hdrNil ((pHDRR)0)
- #endif
++++ src/unexelf.c	Sun Mar 24 18:35:20 2002
+@@ -508,7 +508,12 @@ typedef struct {
  
--#ifdef __NetBSD__
-+#if defined (__NetBSD__) || defined (__OpenBSD__)
- /*
-  * NetBSD does not have normal-looking user-land ELF support.
-  */
-@@ -520,10 +520,12 @@ typedef struct {
+ #ifdef __OpenBSD__
+ # include <sys/exec_elf.h>
+-#endif
++# ifdef __alpha__
++#  include <sys/exec_ecoff.h>
++#  define HDRR		struct ecoff_symhdr
++#  define pHDRR		HDRR *
++# endif /* __alpha__ */
++#endif /* __OpenBSD__ */
+ 
+ #if __GNU_LIBRARY__ - 0 >= 6
+ # include <link.h>	/* get ElfW etc */
+@@ -520,10 +525,12 @@ typedef struct {
  # else
  #  define ElfBitsW(bits, type) Elf/**/bits/**/_/**/type
  # endif
