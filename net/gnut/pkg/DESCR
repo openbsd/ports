@@ -2,5 +2,3 @@ Gnut is a command-line client which implements the gnutella protocol.
 It supports all features available in the original Nullsoft client, as
 well as many others. Bandwidth limiting, sorting of results and
 regular expression searching are among the list.
-
-WWW: ${HOMEPAGE}
