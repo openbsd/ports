@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.16 2003/08/11 23:49:45 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.17 2003/12/15 06:48:37 kevlo Exp $
 bin/xslt-config
 bin/xsltproc
 include/libexslt/exslt.h
 include/libexslt/exsltconfig.h
+include/libexslt/exsltexports.h
 include/libxslt/attributes.h
 include/libxslt/documents.h
 include/libxslt/extensions.h
@@ -21,6 +22,7 @@ include/libxslt/variables.h
 include/libxslt/xslt.h
 include/libxslt/xsltInternals.h
 include/libxslt/xsltconfig.h
+include/libxslt/xsltexports.h
 include/libxslt/xsltutils.h
 lib/libexslt.a
 lib/libexslt.la
@@ -77,7 +79,6 @@ share/doc/libxslt/html/libxslt-transform.html
 share/doc/libxslt/html/libxslt-variables.html
 share/doc/libxslt/html/libxslt-xslt.html
 share/doc/libxslt/html/libxslt-xsltInternals.html
-share/doc/libxslt/html/libxslt-xsltinternals.html
 share/doc/libxslt/html/libxslt-xsltutils.html
 share/doc/libxslt/html/news.html
 share/doc/libxslt/html/node.gif

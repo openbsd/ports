@@ -1,12 +1,11 @@
-$OpenBSD: patch-tests_docs_Makefile_in,v 1.2 2003/08/11 23:49:45 marcm Exp $
---- tests/docs/Makefile.in.orig	Sun Jul  6 15:00:29 2003
-+++ tests/docs/Makefile.in	Mon Jul  7 21:49:03 2003
-@@ -291,7 +291,7 @@ info: info-am
- dvi-am:
- dvi: dvi-am
+--- tests/docs/Makefile.in.orig	2003-09-12 12:23:12.000000000 +0000
++++ tests/docs/Makefile.in	2003-12-15 14:13:02.000000000 +0000
+@@ -323,7 +323,7 @@ distdir: $(DISTFILES)
+ 	  fi; \
+ 	done
  check-am: all-am
 -check: check-am
 +tests check: check-am
- installcheck-am:
- installcheck: installcheck-am
- install-exec-am:
+ all-am: Makefile
+ 
+ installdirs:

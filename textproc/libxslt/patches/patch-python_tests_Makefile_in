@@ -1,10 +1,9 @@
-$OpenBSD: patch-python_tests_Makefile_in,v 1.2 2003/08/11 23:49:45 marcm Exp $
---- python/tests/Makefile.in.orig	Sun Jul  6 15:00:16 2003
-+++ python/tests/Makefile.in	Mon Jul  7 21:49:03 2003
-@@ -122,7 +122,7 @@ XSLT_LIBDIR = @XSLT_LIBDIR@
- XSLT_LIBS = @XSLT_LIBS@
+--- python/tests/Makefile.in.orig	2003-09-12 12:23:11.000000000 +0000
++++ python/tests/Makefile.in	2003-12-15 14:13:02.000000000 +0000
+@@ -133,7 +133,7 @@ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
  pythondir = @pythondir@
- 
 -EXAMPLE_DIR = $(datadir)/doc/libxslt-python-$(LIBXSLT_VERSION)/examples
 +EXAMPLE_DIR = $(datadir)/doc/libxslt-python/examples
  

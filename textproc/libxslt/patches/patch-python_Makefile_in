@@ -1,21 +1,20 @@
-$OpenBSD: patch-python_Makefile_in,v 1.4 2003/08/11 23:49:45 marcm Exp $
---- python/Makefile.in.orig	Sun Jul  6 15:00:15 2003
-+++ python/Makefile.in	Mon Jul  7 21:49:03 2003
-@@ -425,7 +425,7 @@ installcheck: installcheck-recursive
- install-exec-am:
- install-exec: install-exec-recursive
- 
--install-data-am: install-pythonLTLIBRARIES install-data-local
-+install-data-am: install-pythonLTLIBRARIES
- install-data: install-data-recursive
- 
- install-am: all-am
-@@ -433,7 +433,7 @@ install-am: all-am
- install: install-recursive
- uninstall-am: uninstall-pythonLTLIBRARIES
- uninstall: uninstall-recursive
+--- python/Makefile.in.orig	2003-09-12 12:23:11.000000000 +0000
++++ python/Makefile.in	2003-12-15 14:13:02.000000000 +0000
+@@ -438,7 +438,7 @@ distdir: $(DISTFILES)
+ 	done
+ check-am: all-am
+ check: check-recursive
 -all-am: Makefile $(LTLIBRARIES) all-local
 +all-am: Makefile $(LTLIBRARIES)
- all-redirect: all-recursive
- install-strip:
- 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+ installdirs: installdirs-recursive
+ installdirs-am:
+ 	$(mkinstalldirs) $(DESTDIR)$(pythondir)
+@@ -485,7 +485,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-pythonLTLIBRARIES
++install-data-am: install-pythonLTLIBRARIES
+ 
+ install-exec-am:
+ 
