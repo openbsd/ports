@@ -1,11 +1,11 @@
-# $OpenBSD: OpenBSD-markers,v 1.22 2002/02/10 22:17:38 nino Exp $
+# $OpenBSD: OpenBSD-markers,v 1.23 2002/03/16 22:42:09 jsyn Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -27.48		153.20		"Leonard"	# David
 -34.67  	-58.50 		"Schwindt"	# Federico G.
 25.0		121.400		"Lo"		# Kevin
-32.281365	-95.310001	"Peel"		# Jason
 32.857736	-117.211507	"Grimes"	# Mark
+33.700077	-117.887943	"Peel"		# Jason
 35.67  		139.75 		"Itojun"	# Jun-ichiro
 37.515049	-122.339528	"Hyman"		# Marco S.
 38.9693		-77.3863	"Wright"	# Jason L.
