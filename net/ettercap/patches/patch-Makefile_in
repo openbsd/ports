@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.10 2002/10/28 01:55:49 mark Exp $
---- Makefile.in~	Sun Oct 27 17:45:31 2002
-+++ Makefile.in	Sun Oct 27 17:46:02 2002
+$OpenBSD: patch-Makefile_in,v 1.11 2002/12/13 08:04:52 pvalchev Exp $
+--- Makefile.in.orig	Thu Jun 27 11:27:33 2002
++++ Makefile.in	Thu Dec 12 00:25:20 2002
 @@ -27,13 +27,13 @@ DOC      = COPYING README README.PLUGINS
             ./plugins/H01_zaratan/ZARATAN.HOWTO ./plugins/H05_roper/ROPER.HOWTO
  
