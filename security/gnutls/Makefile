@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/02 04:04:31 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2003/10/12 02:18:49 brad Exp $
 
 COMMENT=		"GNU Transport Layer Security library"
 
 VERSION=		0.8.6
 DISTNAME=		gnutls-${VERSION}
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		security
 
 HOMEPAGE=		http://www.gnutls.org/
@@ -22,11 +23,10 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gnutls/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/alpha/gnutls/
 
 LIB_DEPENDS=	gcrypt.6::security/libgcrypt \
-		opencdk.6::security/opencdk \
-		tasn1.2::security/libtasn1
+		opencdk.6::security/opencdk
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} --with-included-libtasn1
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
