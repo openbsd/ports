@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/19 02:56:40 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/03/19 03:34:04 lebel Exp $
 bin/neon-config
 include/neon/ne_207.h
 include/neon/ne_acl.h
@@ -22,5 +22,68 @@ include/neon/ne_uri.h
 include/neon/ne_utils.h
 include/neon/ne_xml.h
 lib/libneon.a
+man/man1/neon-config.1
+man/man3/ne_close_connection.3
+man/man3/ne_session_create.3
+man/man3/ne_session_decide_proxy.3
+man/man3/ne_session_destroy.3
+man/man3/ne_session_proxy.3
+share/doc/neon/BUGS
+share/doc/neon/NEWS
+share/doc/neon/README
+share/doc/neon/THANKS
+share/doc/neon/TODO
+share/doc/neon/html/apas02.html
+share/doc/neon/html/apas03.html
+share/doc/neon/html/apas04.html
+share/doc/neon/html/apas05.html
+share/doc/neon/html/apas06.html
+share/doc/neon/html/apas07.html
+share/doc/neon/html/apas08.html
+share/doc/neon/html/apas09.html
+share/doc/neon/html/apas10.html
+share/doc/neon/html/apas11.html
+share/doc/neon/html/apas12.html
+share/doc/neon/html/auth.html
+share/doc/neon/html/basic.html
+share/doc/neon/html/ch01s02.html
+share/doc/neon/html/ch02.html
+share/doc/neon/html/compliance.html
+share/doc/neon/html/gfdl.html
+share/doc/neon/html/index.html
+share/doc/neon/html/intro.html
+share/doc/neon/html/locking.html
+share/doc/neon/html/lowlevel.html
+share/doc/neon/html/props.html
+share/doc/neon/html/ref.html
+share/doc/neon/html/rn01re01.html
+share/doc/neon/html/rn01re02.html
+share/doc/neon/html/rn01re03.html
+share/doc/neon/html/utils.html
+share/doc/neon/html/xml.html
+share/neon/macros/ChangeLog
+share/neon/macros/aclocal-include.m4
+share/neon/macros/compiler-flags.m4
+share/neon/macros/gnome-common.m4
+share/neon/macros/gnome-gnorba-check.m4
+share/neon/macros/gnome-orbit-check.m4
+share/neon/macros/gnome-print-check.m4
+share/neon/macros/gnome-pthread-check.m4
+share/neon/macros/gnome-support.m4
+share/neon/macros/gnome-x-checks.m4
+share/neon/macros/gnome.m4
+share/neon/macros/neon-debug.m4
+share/neon/macros/neon-socks.m4
+share/neon/macros/neon-ssl.m4
+share/neon/macros/neon-test.m4
+share/neon/macros/neon-warnings.m4
+share/neon/macros/neon-xml-parser.m4
+share/neon/macros/neon.m4
+share/neon/macros/readline.m4
+share/neon/macros/socklen-arg-type.m4
+share/neon/macros/strftime.m4
 %%SHARED%%
+@dirrm share/neon/macros
+@dirrm share/doc/neon/html
+@dirrm share/doc/neon
 @dirrm include/neon
