@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/12/28 05:03:27 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2002/01/10 20:56:15 brad Exp $
 
 COMMENT=	"small, easy to set up, fast and very secure FTP server"
 
@@ -58,9 +58,9 @@ CONTRIB= xml_python_processors.txt
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pure-ftpd
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pure-ftpd
-	${INSTALL_PROGRAM} ${WRKSRC}/configuration-file/pure-config.pl \
+	${INSTALL_PROGRAM} ${WRKBUILD}/configuration-file/pure-config.pl \
 		${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/configuration-file/pure-ftpd.conf \
+	${INSTALL_DATA} ${WRKBUILD}/configuration-file/pure-ftpd.conf \
 		${PREFIX}/share/examples/pure-ftpd/pure-ftpd.conf.sample
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/pure-ftpd
 .if defined(CONF_FILE) && !empty(CONF_FILE)
