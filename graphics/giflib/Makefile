@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2001/05/06 05:05:45 lebel Exp $
+# $OpenBSD: Makefile,v 1.18 2001/08/21 19:36:08 brad Exp $
 
-COMMENT=	"Gif Library and utilities"
+COMMENT=	"GIF library and utilities"
 
 DISTNAME=	giflib-4.1.0
 CATEGORIES=	graphics
-NEED_VERSION=	1.402
+NEED_VERSION=	1.435
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITES0=	${MASTER_SITE_BACKUP}
 MASTER_SITE_SUBDIR= libs/giflib
@@ -35,6 +35,9 @@ FLAVOR?=
 
 .if ${FLAVOR:L} == "no_x11"
 CONFIGURE_ARGS+= --without-x
+.else
+USE_X11=	Yes
+CONFIGURE_ARGS+= --with-x
 .endif
 
 .include <bsd.port.mk>
