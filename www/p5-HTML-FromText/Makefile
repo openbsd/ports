@@ -1,14 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 2003/10/18 19:44:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/04/24 08:20:44 peter Exp $
 
 COMMENT=	"convert text to HTML with controlling options"
 
-VERSION=	1.005
+VERSION=	2.05
 DISTNAME=	HTML-FromText-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 
 MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
+
+RUN_DEPENDS=	::textproc/p5-Email-Find ::devel/p5-Exporter-Lite
+REGRESS_DEPENDS=	${RUN_DEPENDS}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

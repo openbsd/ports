@@ -1,5 +1,4 @@
-The module marks up plain text as HTML.  By default it converts
-HTML metacharacters into the corresponding entities.  More sophisticated
-transformations, such as splitting the text into paragraphs or
-marking up bulleted lists, can be carried out by setting the
-appropriate options.
+HTML::FromText converts plain text to HTML. There are a handful
+of options that shape the conversion. There is a utility function,
+text2html, that's exported by default. This function is simply a
+short-cut to the Object Oriented interface.
