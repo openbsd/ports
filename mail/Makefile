@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2001/02/18 22:08:01 jakob Exp $
+# $OpenBSD: Makefile,v 1.47 2001/02/19 16:05:15 danh Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -11,6 +11,7 @@
      SUBDIR += courier-imap
      SUBDIR += courier-imap:pop3
      SUBDIR += cucipop
+     SUBDIR += cucipop:no_ipv6
      SUBDIR += dot-forward
      SUBDIR += elm
      SUBDIR += exim
