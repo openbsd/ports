@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/05 18:30:48 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/19 16:59:11 espie Exp $
 # $NetBSD: Makefile,v 1.4 1999/03/04 08:58:42 tron Exp $
 
 DISTNAME=	xtraceroute-0.8.14
@@ -28,7 +28,7 @@ USE_X11=	Yes
 GNU_CONFIGURE=	Yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		GTK_CONFIG="${X11BASE}/bin/gtk-config"
+		GTK_CONFIG="${LOCALBASE}/bin/gtk-config"
 
 post-install:
 	@mkdir -p ${PREFIX}/share/xtraceroute/

@@ -3,7 +3,7 @@
 # Date created:		28 Jan 2000
 # Whom:			Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.2 2000/03/05 18:30:48 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/19 16:59:11 espie Exp $
 #
 
 DISTNAME=	xfce-3.2.5
@@ -15,16 +15,16 @@ MAINTAINER=	kevlo@openbsd.org
 
 LIB_DEPENDS=	Imlib.19:graphics/imlib \
 		gtk.1:x11/gtk+
-RUN_DEPENDS=	${LOCALBASE}/bin/sox:audio/sox
+RUN_DEPENDS=	sox:audio/sox
 
-GTK_CONFIG=	${X11BASE}/bin/gtk-config
+GTK_CONFIG=	${LOCALBASE}/bin/gtk-config
 
 USE_X11=  	Yes
 GNU_CONFIGURE=	Yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--prefix=${X11BASE} \
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
                 --localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share \
 		--with-xpm=${X11BASE}

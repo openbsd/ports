@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/03/05 18:30:39 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/03/19 16:59:10 espie Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 
 DISTNAME=	xchat-1.2.1
@@ -24,7 +24,7 @@ GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= --disable-gnome --disable-imlib --disable-panel
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		GTK_CONFIG="${X11BASE}/bin/gtk-config"
+		GTK_CONFIG="${LOCALBASE}/bin/gtk-config"
 
 post-install:
 	@strip ${PREFIX}/bin/xchat

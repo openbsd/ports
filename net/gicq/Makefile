@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/05 18:30:38 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/19 16:59:10 espie Exp $
 # $FreeBSD: Makefile,v 1.6 1999/04/06 12:02:41 flathill Exp $
 
 DISTNAME=	gicq-0.33
@@ -22,6 +22,6 @@ GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--without-gnome --disable-nls
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE} -L${X11BASE}/lib" \
-		GTK_CONFIG="${X11BASE}/bin/gtk-config"
+		GTK_CONFIG="${LOCALBASE}/bin/gtk-config"
 
 .include <bsd.port.mk>

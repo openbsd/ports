@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/05 18:30:45 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/19 16:59:10 espie Exp $
 
 DISTNAME=	bluefish-0.3.6
 CATEGORIES=	www 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	weblint:www/weblint
 LIB_DEPENDS=	gtk.1.2:x11/gtk+ \
 		gdk_imlib:graphics/imlib
 
-GTK_CONFIG=	${X11BASE}/bin/gtk-config
+GTK_CONFIG=	${LOCALBASE}/bin/gtk-config
 
 USE_X11=	Yes
 USE_GMAKE=	Yes 	
