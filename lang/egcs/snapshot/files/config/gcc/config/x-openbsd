@@ -1,4 +1,3 @@
 # Enforce yacc even when the FSF wants bison
 
 BISON=yacc
-SET_BISON=bison=yacc

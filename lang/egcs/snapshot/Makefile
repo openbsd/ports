@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2000/07/19 21:20:57 espie Exp $
+# $OpenBSD: Makefile,v 1.77 2000/07/20 00:18:28 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -38,7 +38,7 @@ PERMIT_DISTFILES_CDROM="Probably meaningless"
 # cygnus packaging scheme is now working, though it is weird.
 # namely, testsuite holds all the tests. g++-tests no longer exists,
 # and g77-tests only holds duplicates from the main testsuite archive.
-#MAKE_TESTS=yes
+MAKE_TESTS=yes
 MAKE_GXX=Yes
 MAKE_FORTRAN=Yes
 # we don't care about chill
@@ -77,8 +77,13 @@ PATCH_LIST+=patch-java-*
 MULTI_PACKAGES+=-java
 .endif
 
-.if defined(MAKE_TESTS)
+.if defined(MAKE_TESTS) && ${MAKE_TESTS:L} == "yes"
 BUILD_DEPENDS+=	runtest::lang/egcs/dejagnu
+.endif
+
+# No way around it, java wants a pure parser
+.if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
+BUILD_DEPENDS+=bison::devel/bison
 .endif
 
 LATEST_DATE=2000-07-17
