@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/08/11 20:02:43 heko Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/24 12:25:01 espie Exp $
 
 COMMENT=	"personal accounts manager"
 
@@ -6,7 +6,7 @@ VERSION=	0.7.5
 DISTNAME=	gacc_${VERSION}.orig
 PKGNAME=	gacc-${VERSION}
 CATEGORIES=	misc productivity
-NEED_VERSION=	1.378
+NEED_VERSION=	1.474
 
 HOMEPAGE=	http://gacc.sourceforge.net/
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}/programmes/
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+
+LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 
 USE_GMAKE=	Yes
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/28 08:26:10 obecian Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/24 12:25:01 espie Exp $
 
 COMMENT=	"graphical reverse polish notation calculator"
 
 DISTNAME=	grpn-1.1.1
 CATEGORIES=	math x11
-NEED_VERSION=	1.364
+NEED_VERSION=	1.474
 
 MAINTAINER=	Mark Grimes <obecian@openbsd.org>
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+
+LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/grpn ${PREFIX}/bin

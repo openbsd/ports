@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 02:29:47 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/24 12:25:01 espie Exp $
 
 COMMENT=	"nice X11-based calendar/scheduling tool (using XView)"
 
 DISTNAME=	calentool-2.3
 CATEGORIES=	misc x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.474
 MASTER_SITES = 	http://www.darwinsys.com/freeware/
 
 PERMIT_PACKAGE_CDROM=	No Fee
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/X11/config/XView.cf::x11/xview/config
-LIB_DEPENDS=    xview.3.::x11/xview/lib
+LIB_DEPENDS=    xview.3,olgx.3::x11/xview/lib
 
 WRKDIST     = ${WRKDIR}/xcalentool-2.3
 
