@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/10/22 14:03:29 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/02/27 08:04:33 avsm Exp $
 
 DISTNAME=	cbb-0.73
 CATEGORIES=	misc tk80
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.me.umn.edu/pub/finance/ \
 
 LIB_DEPENDS=    tk80.1.::x11/tk/8.0
 RUN_DEPENDS=	wish8.0::x11/tk/8.0 \
-		plan:misc/plan
+		plan::misc/plan
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
