@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/12/27 07:16:40 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2004/04/21 03:04:14 naddy Exp $
 
 COMMENT=	"USB access library"
 
@@ -22,7 +22,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libusb/}
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static
+CONFIGURE_ARGS+= --enable-static --disable-build-docs
 
 post-extract:
 	@rm ${WRKSRC}/usb.h
