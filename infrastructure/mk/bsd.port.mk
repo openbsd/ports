@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.142 1999/11/24 00:56:52 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.143 1999/11/24 01:18:57 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2201,7 +2201,7 @@ lib-depends:
 			${ECHO_MSG} "===>  Verifying $$target for $$libname in $$dir"; \
 			if cd $$dir && ${MAKE} $$target; then \
 				${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
-			else
+			else \
 				if [ ! -d "$$dir" ]; then \
 					echo ">> No directory for $$libname ($$dir)"; \
 				fi; \
