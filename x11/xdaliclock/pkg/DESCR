@@ -1,7 +1,8 @@
-XDaliClock V 2.05
+XDaliClock is for the X Window System. It can display in 12 or 24
+hour modes, and displays the date when a mouse button is held down.
+It has four large fonts built into it, but it can animate most other
+fonts that contain all of the digits. It can also do some funky
+psychedelic colormap cycling, and can use overlay planes or the
+`shape' extension so that the window is transparent.
 
-This is a neat program which ``morphs'' each of the digits into the
-next in the sequence to update the time. Good processor hog for all you
-P90 owners.
-
-Gary Palmer <gpalmer@FreeBSD.ORG>
+WWW: ${HOMEPAGE}
