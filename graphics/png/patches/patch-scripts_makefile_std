@@ -1,6 +1,6 @@
 --- scripts/makefile.std.orig	Wed Dec  8 18:44:40 1999
-+++ scripts/makefile.std	Tue Jul 25 04:27:47 2000
-@@ -8,44 +8,44 @@
++++ scripts/makefile.std	Thu Sep 14 05:32:12 2000
+@@ -8,12 +8,11 @@
  # Where the zlib library and include files are located
  #ZLIBLIB=/usr/local/lib
  #ZLIBINC=/usr/local/include
@@ -14,30 +14,23 @@
  
  #RANLIB=echo
  RANLIB=ranlib
+@@ -22,30 +21,29 @@
+ 	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
+ 	pngwtran.o pngmem.o pngerror.o pngpread.o
  
--OBJS = png.o pngset.o pngget.o pngrutil.o pngtrans.o pngwutil.o \
--	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
--	pngwtran.o pngmem.o pngerror.o pngpread.o
-+OBJS = png.lo pngset.lo pngget.lo pngrutil.lo pngtrans.lo pngwutil.lo \
-+	pngread.lo pngrio.lo pngwio.lo pngwrite.lo pngrtran.lo \
-+	pngwtran.lo pngmem.lo pngerror.lo pngpread.lo
- 
- all: libpng.a pngtest
- 
-+.SUFFIXES: .c .lo
-+
-+.c.lo:
++.c.o:
 +	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c $(.IMPSRC)
 +
+ all: libpng.a pngtest
+ 
  libpng.a: $(OBJS)
 -	ar rc $@  $(OBJS)
 -	$(RANLIB) $@
-+	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libpng.la $(OBJS) \
-+	 -version-info 1:8:0 -rpath $(prefix)/lib
++	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libpng.la $(OBJS:.o=.lo) \
++		-version-info 1:8:0 -rpath $(prefix)/lib
  
--pngtest: pngtest.o libpng.a
+ pngtest: pngtest.o libpng.a
 -	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
-+pngtest: pngtest.lo libpng.a
 +	$(LIBTOOL) --mode=link $(CC) -o pngtest $(CFLAGS) pngtest.lo $(LDFLAGS)
  
  test: pngtest
@@ -59,44 +52,7 @@
  
  clean:
 -	rm -f *.o libpng.a pngtest pngout.png
-+	rm -f *.o *.lo libpng.a pngtest pngout.png
++	rm -f *.o *.lo libpng.a libpng.so.* pngtest pngout.png
  
  DOCS = ANNOUNCE CHANGES INSTALL KNOWNBUG LICENSE README TODO Y2KINFO
  writelock:
-@@ -53,20 +53,19 @@
- 
- # DO NOT DELETE THIS LINE -- make depend depends on it.
- 
--png.o: png.h pngconf.h
--pngerror.o: png.h pngconf.h
--pngrio.o: png.h pngconf.h
--pngwio.o: png.h pngconf.h
--pngmem.o: png.h pngconf.h
--pngset.o: png.h pngconf.h
--pngget.o: png.h pngconf.h
--pngread.o: png.h pngconf.h
--pngrtran.o: png.h pngconf.h
--pngrutil.o: png.h pngconf.h
--pngtest.o: png.h pngconf.h
--pngtrans.o: png.h pngconf.h
--pngwrite.o: png.h pngconf.h
--pngwtran.o: png.h pngconf.h
--pngwutil.o: png.h pngconf.h
--pngpread.o: png.h pngconf.h
--
-+png.lo: png.h pngconf.h
-+pngerror.lo: png.h pngconf.h
-+pngrio.lo: png.h pngconf.h
-+pngwio.lo: png.h pngconf.h
-+pngmem.lo: png.h pngconf.h
-+pngset.lo: png.h pngconf.h
-+pngget.lo: png.h pngconf.h
-+pngread.lo: png.h pngconf.h
-+pngrtran.lo: png.h pngconf.h
-+pngrutil.lo: png.h pngconf.h
-+pngtest.lo: png.h pngconf.h
-+pngtrans.lo: png.h pngconf.h
-+pngwrite.lo: png.h pngconf.h
-+pngwtran.lo: png.h pngconf.h
-+pngwutil.lo: png.h pngconf.h
-+pngpread.lo: png.h pngconf.h
