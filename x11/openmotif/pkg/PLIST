@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/07/08 18:14:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2000/07/09 00:01:49 matt Exp $
 @pkgcfl lesstif-*
 @comment bin/imake
 @comment bin/lndir
@@ -6,7 +6,7 @@
 @comment bin/makeg
 @comment bin/mkdirhier
 @comment bin/xmkmf
-bin/mergelib
+@comment bin/mergelib
 bin/mwm
 bin/uil
 bin/xmbind
