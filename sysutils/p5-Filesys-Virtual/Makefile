@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/30 02:55:10 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/30 21:17:36 jolan Exp $
+PKG_ARCH=	*
 
 COMMENT=	"perl module to provide a framework for a virtual filesystem"
 DISTNAME=	Filesys-Virtual-0.05
