@@ -1,13 +1,6 @@
-$OpenBSD: patch-etc_afpd_file_c,v 1.1 2002/07/26 15:12:17 naddy Exp $
+$OpenBSD: patch-etc_afpd_file_c,v 1.2 2002/07/26 17:54:49 naddy Exp $
 --- etc/afpd/file.c.orig	Thu Mar 14 07:50:23 2002
 +++ etc/afpd/file.c	Fri Jul 26 10:14:39 2002
-@@ -1,5 +1,5 @@
- /*
-- * $Id: patch-etc_afpd_file_c,v 1.1 2002/07/26 15:12:17 naddy Exp $
-+ * $Id: patch-etc_afpd_file_c,v 1.1 2002/07/26 15:12:17 naddy Exp $
-  *
-  * Copyright (c) 1990,1993 Regents of The University of Michigan.
-  * All Rights Reserved.  See COPYRIGHT.
 @@ -11,6 +11,7 @@
  
  #include <stdio.h>

@@ -1,13 +1,6 @@
-$OpenBSD: patch-etc_afpd_filedir_c,v 1.1 2002/07/26 15:12:17 naddy Exp $
+$OpenBSD: patch-etc_afpd_filedir_c,v 1.2 2002/07/26 17:54:49 naddy Exp $
 --- etc/afpd/filedir.c.orig	Thu Mar 14 07:55:50 2002
 +++ etc/afpd/filedir.c	Fri Jul 26 11:22:20 2002
-@@ -1,5 +1,5 @@
- /*
-- * $Id: patch-etc_afpd_filedir_c,v 1.1 2002/07/26 15:12:17 naddy Exp $
-+ * $Id: patch-etc_afpd_filedir_c,v 1.1 2002/07/26 15:12:17 naddy Exp $
-  *
-  * Copyright (c) 1990,1993 Regents of The University of Michigan.
-  * All Rights Reserved.  See COPYRIGHT.
 @@ -71,7 +71,7 @@ more information */
      int		uid;
  
