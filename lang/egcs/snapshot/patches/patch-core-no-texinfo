@@ -1,6 +1,5 @@
 --- configure.in.orig	Wed Jun 23 00:44:40 1999
-+++ configure.in	Sat Aug 21 00:22:09 1999
-@@ -50,8 +50,12 @@
++++ configure.in	Sun Aug 22 13:07:33 1999
  # these tools are built for the host environment
  # Note, the powerpc-eabi build depends on sim occurring before gdb in order to
  # know that we are building the simulator.
@@ -11,6 +10,7 @@
 +if [ "${enable_subdir_texinfo}" != "no" ] ; then
 +	host_tools="texinfo ${host_tools}"
 +fi
++ 
  
  # these libraries are built for the target environment, and are built after
  # the host libraries and the host tools (which may be a cross compiler)

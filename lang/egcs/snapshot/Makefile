@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 1999/07/04 18:20:26 espie Exp $
+# $OpenBSD: Makefile,v 1.52 1999/08/22 16:53:37 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -31,7 +31,7 @@ MIRROR_DISTFILE=no
 # cygnus packaging scheme is now working, though it is weird.
 # namely, testsuite holds all the tests. g++-tests no longer exists,
 # and g77-tests only holds duplicates from the main testsuite archive.
-MAKE_TESTS=yes
+#MAKE_TESTS=yes
 MAKE_GXX=yes
 MAKE_FORTRAN=yes
 MAKE_CHILL=yes
@@ -46,7 +46,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1999-06-29
+LATEST_DATE=1999-08-08
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -107,15 +107,15 @@ DISTFILES+=egcs-chill-${LATEST}${EXTRACT_SUFX}
 
 .if ! (defined(JUST_BUMP) && defined(NEXT_DATE))
 SUPDISTFILES=egcs-${LATEST}${EXTRACT_SUFX}
-.for sub in core tests g++ g77 java objc chill
+.for sub in core g++ g77 java objc chill
 SUPDISTFILES+=egcs-${sub}-${LATEST}${EXTRACT_SUFX}
 .endfor
 .endif
 
 
 MASTER_SITES=	
-MASTER_SITES+=	ftp://egcs.cygnus.com/pub/${DIRECTORY} 
 MASTER_SITES+=	ftp://ftp.lip6.fr/pub/${DIRECTORY}
+MASTER_SITES+=	ftp://egcs.cygnus.com/pub/${DIRECTORY} 
 MASTER_SITES+= ftp://ftp.goof.com/pub/pcg/${DIRECTORY}
 MASTER_SITES+= ftp://go.cygnus.com/pub/ftp.cygnus.com/${DIRECTORY}
 #MASTER_SITES+= ftp://cambridge.cygnus.com/pub/${DIRECTORY}
@@ -338,7 +338,8 @@ SEPARATE_BUILD=concurrent
 
 # you shouldn't skip bootstrap unless you know what you're doing
 # use bootstrap-lean if you're pressed for space
-ALL_TARGET=bootstrap
+#ALL_TARGET=bootstrap
+ALL_TARGET=bootstrap3
 # ALL_TARGET=bootstrap-lean
 
 # desactivate the fixincludes mechanism by supplying a script which does

@@ -13,7 +13,7 @@
  @dircategory Programming
  @direntry
 -* gcc: (gcc).                  The GNU Compiler Collection.
-+* egcc: (egcc).                  The GNU Compiler Collection.
++* egcc: (egcc).                  The experimental GNU Compiler Collection.
  @end direntry
  @ifset INTERNALS
  @ifset USING
