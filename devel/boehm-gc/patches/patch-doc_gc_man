@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_gc_man,v 1.1 2002/08/27 15:41:30 todd Exp $
---- doc/gc.man.orig	Wed Sep 22 01:55:00 1999
-+++ doc/gc.man	Sat Jul 27 01:04:55 2002
+$OpenBSD: patch-doc_gc_man,v 1.2 2002/10/26 13:25:26 todd Exp $
+--- doc/gc.man.orig	Tue Sep 21 18:55:00 1999
++++ doc/gc.man	Fri Oct 25 11:53:09 2002
 @@ -68,6 +68,48 @@ This may temporarily write protect pages
  .LP
  Other facilities not discussed here include limited facilities to support incremental collection on machines without appropriate VM support, provisions for providing more explicit object layout information to the garbage collector, more direct support for ``weak'' pointers, support for ``abortable'' garbage collections during idle time, etc.

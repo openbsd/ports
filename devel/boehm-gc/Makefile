@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2002/09/16 22:00:13 todd Exp $
+# $OpenBSD: Makefile,v 1.22 2002/10/26 13:25:26 todd Exp $
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
 COMMENT=	"garbage collection and memory leak detection for C and C++"
 
-VERSION=	6.0
+VERSION=	6.1
 DISTNAME=	gc${VERSION}
 PKGNAME=	boehm-gc-${VERSION}
 CATEGORIES=	devel
@@ -23,8 +23,9 @@ MAKE_ENV=	CP="cp" \
 		INSTALL_MAN="${INSTALL_MAN}"
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS= ${CONFIGURE_SHARED}
 
-WRKDIST=	${WRKDIR}/gc6.0
+WRKDIST=	${WRKDIR}/gc6.1
 
 post-patch:
 	@mv ${WRKSRC}/doc/gc.man ${WRKSRC}/doc/gc.man.in

@@ -1,25 +1,36 @@
-$OpenBSD: patch-dyn_load_c,v 1.1 2002/08/27 15:41:30 todd Exp $
---- dyn_load.c.orig	Tue Jun 26 04:37:38 2001
-+++ dyn_load.c	Wed Jul 31 05:06:30 2002
-@@ -53,6 +53,7 @@
-     !(defined(ALPHA) && defined(OSF1)) && \
+$OpenBSD: patch-dyn_load_c,v 1.2 2002/10/26 13:25:26 todd Exp $
+--- dyn_load.c.orig	Tue Aug  6 15:14:31 2002
++++ dyn_load.c	Fri Oct 25 12:37:33 2002
+@@ -57,6 +57,7 @@
      !defined(HPUX) && !(defined(LINUX) && defined(__ELF__)) && \
-     !defined(RS6000) && !defined(SCO_ELF) && \
+     !defined(RS6000) && !defined(SCO_ELF) && !defined(DGUX) && \
+     !(defined(FREEBSD) && defined(__ELF__)) && \
 +    !(defined(OPENBSD) && defined(__ELF__)) && \
      !(defined(NETBSD) && defined(__ELF__)) && !defined(HURD)
   --> We only know how to find data segments of dynamic libraries for the
   --> above.  Additional SVR4 variants might not be too
-@@ -243,6 +244,7 @@ void GC_register_dynamic_libraries()
- # endif /* SUNOS */
+@@ -81,9 +82,9 @@
  
  #if defined(LINUX) && defined(__ELF__) || defined(SCO_ELF) || \
+     (defined(FREEBSD) && defined(__ELF__)) || defined(DGUX) || \
++    (defined(OPENBSD) && defined(__ELF__)) || \
+     (defined(NETBSD) && defined(__ELF__)) || defined(HURD)
+ #   include <stddef.h>
+-#   include <elf.h>
+ #   include <link.h>
+ #endif
+ 
+@@ -265,6 +266,7 @@ void GC_register_dynamic_libraries()
+ 
+ #if defined(LINUX) && defined(__ELF__) || defined(SCO_ELF) || \
+     (defined(FREEBSD) && defined(__ELF__)) || defined(DGUX) || \
 +    (defined(OPENBSD) && defined(__ELF__)) || \
      (defined(NETBSD) && defined(__ELF__)) || defined(HURD)
  
  
-@@ -424,7 +426,7 @@ static char *parse_map_entry(char *buf_p
-  * This code was derived from the Solaris/ELF support. Thanks to
-  * whatever kind soul wrote that.  - Patrick Bridges */
+@@ -533,7 +535,7 @@ GC_bool GC_register_dynamic_libraries_dl
+ /* This doesn't necessarily work in all cases, e.g. with preloaded
+  * dynamic libraries.						*/
  
 -#if defined(NETBSD)
 +#if defined(NETBSD) || defined(OPENBSD)
