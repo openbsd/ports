@@ -3,10 +3,8 @@
 PROG=	pgwrap
 SRCS=	pgwrap.c
 
-MAN=
+NOMAN=	noman
 
 CFLAGS+=-Wall -Werror
-
-BINDIR=	/usr/local/bin
 
 .include <bsd.prog.mk>
