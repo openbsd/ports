@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.550 2003/07/12 12:50:06 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.551 2003/07/12 12:51:19 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -10,7 +10,7 @@
 # Each port has a MAINTAINER, which is the email address(es) of the person(s)
 # to contact if you have questions/suggestions about that specific port.
 # To obtain that address, just type 
-#	make show VARNAME=MAINTAINER
+#	make show=MAINTAINER
 # in the specific port's directory.
 # 
 # The ports@openbsd.org address is the `default' MAINTAINER (the generic
