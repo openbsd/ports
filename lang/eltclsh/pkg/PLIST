@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/29 11:24:57 matthieu Exp $
+bin/eltclsh
+bin/elwish
+man/cat1/eltclsh.0
+man/man1/eltclsh.1
+share/eltcl/complete.tcl
+share/eltcl/init.tcl
+share/eltcl/pkgIndex.tcl
+share/eltcl/tools.tcl
+@dirrm share/eltcl

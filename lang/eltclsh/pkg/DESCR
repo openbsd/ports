@@ -1,0 +1,9 @@
+eltclsh (editline tcl shell) is an interactive shell for the TCL
+programming language. It provides command line editing, history
+browsing as well as variables and command completion thanks to
+editline features. The completion engine is programmable in a way
+similar to tcsh, and comes with an intelligent completion for the full
+tcl language by default.
+
+The package also provides elwish, an interactive interpreter for the
+Tk toolkit.

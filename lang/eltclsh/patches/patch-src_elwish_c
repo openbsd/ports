@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_elwish_c,v 1.1.1.1 2003/12/29 11:24:57 matthieu Exp $
+--- src/elwish.c.orig	Thu Oct 23 20:17:29 2003
++++ src/elwish.c	Wed Dec 24 11:05:39 2003
+@@ -77,9 +77,6 @@
+    /* change the rc file */
+    Tcl_SetVar(iinfo->interp, "tcl_rcFileName", ".elwishrc", TCL_GLOBAL_ONLY);
+ 
+-   /* I hate that stupid empty window you get after Tk_Init() */
+-   Tcl_Eval(iinfo->interp, "wm withdraw .");
+-
+    return TCL_OK;
+ }
+ 
+
+
