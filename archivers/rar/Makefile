@@ -4,14 +4,14 @@
 # Date created:         24 November 1997
 # Whom:                 angelos
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/27 23:52:59 niklas Exp $
+# $OpenBSD: Makefile,v 1.3 1998/01/05 15:29:30 joey Exp $
 #
 
 DISTNAME=       rarbsd
 PKGNAME=        rar-2.01
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.inetpros.net/pub/rar/ \
-		ftp://ftp.kiarchive.ru/pub/unix/arcers/
+MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
+
 EXTRACT_SUFX=   .exe
 
 MAINTAINER=     angelos@openbsd.org
