@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/02/10 23:14:37 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2000/02/12 00:44:01 espie Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -11,7 +11,7 @@
 #	 'option COMPAT_SUNOS'
 
 ONLY_FOR_ARCHS=	i386 sparc
-NEED_VERSION=	1.191
+NEED_VERSION=	1.195
 
 COMMUNICATOR_V=	4.61
 COMMUNICATOR_V2=461
@@ -100,9 +100,9 @@ pre-fetch:
 
 do-build:
 	@cd ${WRKDIR}/${FORTIFY}/src/common && \
-	env ${MAKE_ENV} make ${MAKE_FLAGS} ${MAKEFILE} all && \
+	env ${MAKE_ENV} make ${MAKE_FLAGS} -f ${MAKEFILE} all && \
 	cd ${WRKDIR}/${FORTIFY}/src/cmdline && \
-	env ${MAKE_ENV} make ${MAKE_FLAGS} ${MAKEFILE} fortify
+	env ${MAKE_ENV} make ${MAKE_FLAGS} -f ${MAKEFILE} fortify
 
 do-install:
 	@cd ${WRKDIR}/${COMMUNICATORNAME} && ${MAKE_ENV} ./ns-install

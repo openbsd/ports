@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/11 01:09:59 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/12 00:43:57 espie Exp $
 
 DISTNAME=	xephem-3.2.2
 CATEGORIES=	astro
 MASTER_SITES=	ftp://iraf.noao.edu/contrib/xephem/xephem-3.2/
+NEED_VERSION=	1.195
 
 NO_CDROM=	"NOFEE:	Can not sell"
 
@@ -17,17 +18,17 @@ do-configure:
 
 do-build:
 	@(cd ${WRKSRC}/libastro && \
-	  ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
+	  ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} -f ${MAKEFILE} ${ALL_TARGET})
 	@(cd ${WRKSRC}/GUI/xephem && \
-	  ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
+	  ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} -f ${MAKEFILE} ${ALL_TARGET})
 
 do-install:
 	@(cd ${WRKSRC}/GUI/xephem && \
 	 ${SETENV} ${MAKE_ENV} \
-	 ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
+	 ${MAKE} ${MAKE_FLAGS} -f ${MAKEFILE} ${INSTALL_TARGET})
 	@(cd ${WRKSRC}/GUI/xephem && \
 	 ${SETENV} ${MAKE_ENV} \
-	 ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install.man)
+	 ${MAKE} ${MAKE_FLAGS} -f ${MAKEFILE} install.man)
 	@(cd ${WRKSRC}/GUI/xephem && \
 	 sed -e 's,: .$$,: ${PREFIX}/lib/X11/xephem,' XEphem.ad > XEphem && \
 	 ${INSTALL_DATA} XEphem ${PREFIX}/lib/X11/app-defaults)

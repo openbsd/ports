@@ -1,11 +1,10 @@
-#	$OpenBSD: Makefile,v 1.2 1999/09/17 10:26:50 turan Exp $
+#	$OpenBSD: Makefile,v 1.3 2000/02/12 00:43:59 espie Exp $
 
 BROKEN=		"sources no longer exist"
 
 # This should probably be part of the egcs port eventually.
 
-# it only works right with a recent bsd.port.mk.
-NEED_VERSION=1.73
+NEED_VERSION=1.195
 
 # If you want to be built with egcs-snapshot instead of in-tree, depend on that
 #BUILD_DEPENDS=	egcj:${PORTSDIR}/lang/egcs-snapshot

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/12/11 00:20:44 marc Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/12 00:43:59 espie Exp $
 #
 
 DISTNAME=		erlang-47.4.0
@@ -9,6 +9,7 @@ MAINTAINER=		marc@openbsd.org
 MASTER_SITES=		http://erlang.stacken.kth.se/download/ \
 			http://www.erlang.org/download/
 EXTRACT_SUFX=		.base.tar.gz
+NEED_VERSION=		1.195
 
 USE_GMAKE=		yes
 USE_AUTOCONF=		yes
@@ -22,6 +23,6 @@ post-configure:
 	@cd ${WRKSRC}/erts-47.4.0/autoconf && \
 		${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
-	  ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} autoconf )
+	  ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKEFILE} autoconf )
 
 .include <bsd.port.mk>

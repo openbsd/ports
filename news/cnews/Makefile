@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:35 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 00:44:00 espie Exp $
 
 BROKEN=		does not install cleanly, major fixups required.
 
@@ -7,7 +7,7 @@ PKGNAME=	cnews-cr.g
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.zoo.toronto.edu/pub/
 EXTRACT_SUFX=	.tar.Z
-NEED_VERSION=	1.191
+NEED_VERSION=	1.195
 
 WRKDIST=	${WRKDIR}
 MAKEFILE=	makefile
@@ -34,13 +34,13 @@ do-install:
 	chown news.news ${NEWSSPOOL} ${NEWSLIB}
 	chown bin.bin ${NEWSBIN}
 	cd ${WRKSRC}; \
-		echo ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install | \
+		echo ${MAKE} ${MAKE_FLAGS} -f ${MAKEFILE} install | \
 		su -m bin
 	cd ${WRKSRC}; \
-		echo ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} setup | \
+		echo ${MAKE} ${MAKE_FLAGS} -f ${MAKEFILE} setup | \
 		su -m news
 	cd ${WRKSRC}; \
-		echo ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ui readpostcheck | \
+		echo ${MAKE} ${MAKE_FLAGS} -f ${MAKEFILE} ui readpostcheck | \
 		su -m bin
 	chown news.news ${NEWSBIN}/input/newsspool
 	chmod 6755 ${NEWSBIN}/input/newsspool

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2000/02/11 01:10:11 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2000/02/12 00:44:00 espie Exp $
 
 DISTNAME=	ghostscript-5.10
 CATEGORIES=	print
 MASTER_SITES= $(MASTER_SITE_GNU)
-NEED_VERSION=	1.191
+NEED_VERSION=	1.195
 
 MASTER_SITES0=	http://www.ozemail.com.au/~geoffk/pdfencrypt/ 
 MASTER_SITES1= http://www.erdw.ethz.ch/~bonk/ftp/gs-driver-distrib/
@@ -12,7 +12,6 @@ MASTER_SITE_SUBDIR=     ghostscript
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${HP850_DRV}:1 ${PDFENCRYPT}:0
 
-NEED_VERSION=	1.92
 
 MAINTAINER=	ports@openbsd.org
 
@@ -25,7 +24,7 @@ MAKE_ENV=	PORTSDIR=${PORTSDIR}
 EXTRACT_ONLY=	${GS_SOURCES}
 WRKDIST=	${WRKDIR}/gs5.10
 MAKEFILE=	unix-gcc.mak
-MAKE_FLAGS=	prefix=${PREFIX} zlibc_=-lz CFLAGS="${CFLAGS}" -f
+MAKE_FLAGS=	prefix=${PREFIX} zlibc_=-lz CFLAGS="${CFLAGS}"
 
 GS_SOURCES=	ghostscript-5.10.tar.gz
 #  Note: the following two are real files that have symlinks with

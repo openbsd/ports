@@ -5,16 +5,15 @@
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.7 2000/02/11 01:10:04 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/12 00:43:59 espie Exp $
 
-NEED_VERSION=	1.116
+NEED_VERSION=	1.195
 DISTNAME=	Wnn4.2
 PKGNAME?=	ja-Wnn-4.2
 CATEGORIES?=	japanese
 MASTER_SITES=	ftp://ftp.u-tokyo.ac.jp/pub/Japanese/Wnn/ \
 		ftp://ports.jp.FreeBSD.org/pub/incoming/distfiles/
 DISTFILES=	Wnn4.2.tar.gz Wnn4.2.patch.tar.gz
-NEED_VERSION=	1.191
 
 MAINTAINER=	espie@openbsd.org
 
@@ -67,7 +66,7 @@ pre-build:
 # These are necesary because this package uses a different Makefile for
 #  building and installing etc.
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} Makefile.inst World)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} -f Makefile.inst World)
 
 pre-install:
 	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
@@ -75,7 +74,7 @@ pre-install:
 post-install:
 # This package uses imake's "install.man" target to install man pages but
 #  I can't define USE_IMAKE because it doesn't involve xmkmf
-	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install.man)
+	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} -f ${MAKEFILE} install.man)
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)

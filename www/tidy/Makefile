@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/02/09 23:55:44 rohee Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/12 00:44:01 espie Exp $
 # Original from: Bruno Rohée <rohee@OpenBSD.ORG>
 
 TIDYDATE=	13jan00
 DISTNAME=	tidy${TIDYDATE}
 PKGNAME=	tidy-${TIDYDATE}
+NEED_VERSION=	1.195
 
 CATEGORIES=     www
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 1999/11/28 06:13:46 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 00:43:58 espie Exp $
 # $FreeBSD: Makefile,v 1.17 1999/03/16 14:01:06 roger Exp $
 
 DISTNAME=	fxtv-0.48
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ipass.net/~dbhopper/aa8vb/fxtv/
 EXTRACT_SUFX=	.tgz
+NEED_VERSION=	1.195
 
 MAINTAINER=	ports@openbsd.org
 
