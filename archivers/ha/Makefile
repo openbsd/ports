@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2002/12/23 00:37:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2002/12/23 07:29:30 pvalchev Exp $
 
 COMMENT=	"archive files using the HSC compression method"
 
 DISTNAME=	ha0999
 PKGNAME=	ha-0.999b
 CATEGORIES=	archivers
-NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=	.tgz
 

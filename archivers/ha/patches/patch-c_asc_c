@@ -1,5 +1,6 @@
---- c/asc.c.orig	Thu Jan 12 01:51:34 1995
-+++ c/asc.c	Wed Dec 15 17:17:58 1999
+$OpenBSD: patch-c_asc_c,v 1.1 2002/12/23 07:29:30 pvalchev Exp $
+--- c/asc.c.orig	Wed Jan 11 23:51:34 1995
++++ c/asc.c	Mon Dec 23 00:26:56 2002
 @@ -19,7 +19,6 @@
  	HA ASC method
  ***********************************************************************/
