@@ -1,0 +1,8 @@
+cvsplot is a perl script which analyses the history of a CVS-managed 
+project. The script executes on a set of files, analyses their history, 
+and automatically generates graphs that plot lines of code and number of 
+files against time.
+
+Read README file in ${PREFIX}/share/doc/cvsplot
+
+WWW: ${HOMEPAGE}
