@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.13 2003/06/02 18:06:28 brad Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.14 2003/07/23 01:18:02 brad Exp $
 lib/gaim/autorecon.so
 lib/gaim/docklet.so
 lib/gaim/gestures.so
@@ -14,10 +14,11 @@ lib/gaim/liboscar.so
 lib/gaim/libtoc.so
 lib/gaim/libyahoo.so
 lib/gaim/libzephyr.so
-lib/gaim/notify.so
 lib/gaim/perl.so
 lib/gaim/spellchk.so
 lib/gaim/statenotify.so
 lib/gaim/ticker.so
 lib/gaim/timestamp.so
+lib/libgaim-remote.so.0.0
+DYNLIBDIR(%B)
 @dirrm lib/gaim

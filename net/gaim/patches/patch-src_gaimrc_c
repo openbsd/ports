@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_gaimrc_c,v 1.1 2003/07/23 01:18:02 brad Exp $
+--- src/gaimrc.c.orig	Mon Jul 21 22:43:08 2003
++++ src/gaimrc.c	Mon Jul 21 22:44:42 2003
+@@ -358,8 +358,9 @@ static void gaimrc_read_away(FILE *f)
+ 			gaim_prefs_set_int("/core/away/mins_before_away",
+ 					atoi(p->value[0]));
+ 			default_away = g_slist_nth_data(away_messages, atoi(p->value[1]));
+-			gaim_prefs_set_string("/core/away/default_message",
+-					default_away->name);
++			if (default_away)
++				gaim_prefs_set_string("/core/away/default_message",
++						default_away->name);
+ 		}
+ 	}
+ 	if (!away_messages) {

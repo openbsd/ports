@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.7 2003/06/02 18:06:28 brad Exp $
---- configure.orig	Mon May 19 04:08:14 2003
-+++ configure	Mon May 19 04:11:10 2003
-@@ -3176,13 +3176,7 @@ newos6*)
+$OpenBSD: patch-configure,v 1.8 2003/07/23 01:13:58 brad Exp $
+--- configure.orig	Wed Jul 16 15:28:18 2003
++++ configure	Thu Jul 17 18:51:59 2003
+@@ -3412,13 +3412,7 @@ newos6*)
    ;;
  
  openbsd*)

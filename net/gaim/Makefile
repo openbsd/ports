@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.41 2003/06/02 13:37:16 brad Exp $
+# $OpenBSD: Makefile,v 1.42 2003/07/23 01:13:58 brad Exp $
 
-DISTNAME=	gaim-0.64
+DISTNAME=	gaim-0.66
 CATEGORIES=	net
 
 # GPL
@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaim/}
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
-MODULES=	iconv gettext
+MODULES=	gettext
 
 LIB_DEPENDS+=	glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
 		atk-1.0.0.0::devel/atk \

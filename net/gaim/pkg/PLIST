@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.19 2003/06/02 18:06:28 brad Exp $
+@comment $OpenBSD: PLIST,v 1.20 2003/07/23 01:18:02 brad Exp $
 bin/gaim
 bin/gaim-remote
+include/gaim-remote/remote-socket.h
+include/gaim-remote/remote.h
+man/man1/gaim-remote.1
 man/man1/gaim.1
 share/applications/gaim.desktop
 share/locale/am/LC_MESSAGES/gaim.mo
@@ -9,9 +12,11 @@ share/locale/ca/LC_MESSAGES/gaim.mo
 share/locale/cs/LC_MESSAGES/gaim.mo
 share/locale/da/LC_MESSAGES/gaim.mo
 share/locale/de/LC_MESSAGES/gaim.mo
+share/locale/en_GB/LC_MESSAGES/gaim.mo
 share/locale/es/LC_MESSAGES/gaim.mo
 share/locale/fi/LC_MESSAGES/gaim.mo
 share/locale/fr/LC_MESSAGES/gaim.mo
+share/locale/he/LC_MESSAGES/gaim.mo
 share/locale/hu/LC_MESSAGES/gaim.mo
 share/locale/it/LC_MESSAGES/gaim.mo
 share/locale/ja/LC_MESSAGES/gaim.mo
@@ -19,6 +24,7 @@ share/locale/ko/LC_MESSAGES/gaim.mo
 share/locale/nl/LC_MESSAGES/gaim.mo
 share/locale/no/LC_MESSAGES/gaim.mo
 share/locale/pl/LC_MESSAGES/gaim.mo
+share/locale/pt_BR/LC_MESSAGES/gaim.mo
 share/locale/ro/LC_MESSAGES/gaim.mo
 share/locale/ru/LC_MESSAGES/gaim.mo
 share/locale/sk/LC_MESSAGES/gaim.mo
@@ -35,6 +41,8 @@ share/pixmaps/gaim/buttons/edit.png
 share/pixmaps/gaim/buttons/insert-image-small.png
 share/pixmaps/gaim/buttons/insert-link-small.png
 share/pixmaps/gaim/buttons/insert-smiley-small.png
+share/pixmaps/gaim/buttons/pause.png
+share/pixmaps/gaim/buttons/send-im.png
 share/pixmaps/gaim/buttons/text_bigger.png
 share/pixmaps/gaim/buttons/text_normal.png
 share/pixmaps/gaim/buttons/text_smaller.png
@@ -136,6 +144,8 @@ share/pixmaps/gaim/smileys/default/yahoo_chicken.gif
 share/pixmaps/gaim/smileys/default/yahoo_clap.gif
 share/pixmaps/gaim/smileys/default/yahoo_clown.gif
 share/pixmaps/gaim/smileys/default/yahoo_coffee.gif
+share/pixmaps/gaim/smileys/default/yahoo_cow.gif
+share/pixmaps/gaim/smileys/default/yahoo_cowboy.gif
 share/pixmaps/gaim/smileys/default/yahoo_cry.gif
 share/pixmaps/gaim/smileys/default/yahoo_dance.gif
 share/pixmaps/gaim/smileys/default/yahoo_devil.gif
@@ -189,6 +199,7 @@ share/pixmaps/gaim/status/default/aol.png
 share/pixmaps/gaim/status/default/away.png
 share/pixmaps/gaim/status/default/dnd.png
 share/pixmaps/gaim/status/default/extendedaway.png
+share/pixmaps/gaim/status/default/female.png
 share/pixmaps/gaim/status/default/freeforchat.png
 share/pixmaps/gaim/status/default/gadu-gadu.png
 share/pixmaps/gaim/status/default/game.png
@@ -198,12 +209,14 @@ share/pixmaps/gaim/status/default/irc.png
 share/pixmaps/gaim/status/default/jabber.png
 share/pixmaps/gaim/status/default/login.png
 share/pixmaps/gaim/status/default/logout.png
+share/pixmaps/gaim/status/default/male.png
 share/pixmaps/gaim/status/default/msn.png
 share/pixmaps/gaim/status/default/na.png
 share/pixmaps/gaim/status/default/napster.png
 share/pixmaps/gaim/status/default/notauthorized.png
 share/pixmaps/gaim/status/default/occupied.png
 share/pixmaps/gaim/status/default/offline.png
+share/pixmaps/gaim/status/default/trepia.png
 share/pixmaps/gaim/status/default/wireless.png
 share/pixmaps/gaim/status/default/yahoo.png
 share/pixmaps/gaim/tb_drag_arrow_down.xpm
@@ -212,8 +225,15 @@ share/pixmaps/gaim/tb_drag_arrow_right.xpm
 share/pixmaps/gaim/tb_drag_arrow_up.xpm
 share/pixmaps/gaim/typed.png
 share/pixmaps/gaim/typing.png
+share/sounds/gaim/arrive.wav
+share/sounds/gaim/leave.wav
+share/sounds/gaim/receive.wav
+share/sounds/gaim/redalert.wav
+share/sounds/gaim/send.wav
 %%SHARED%%
 %%audio%%
+@comment @dirrm share/sounds/gaim
+@comment @dirrm share/sounds
 @dirrm share/pixmaps/gaim/status/default
 @dirrm share/pixmaps/gaim/status
 @dirrm share/pixmaps/gaim/smileys/default
@@ -237,6 +257,8 @@ share/pixmaps/gaim/typing.png
 @comment @dirrm share/locale/ru
 @comment @dirrm share/locale/ro/LC_MESSAGES
 @comment @dirrm share/locale/ro
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
 @comment @dirrm share/locale/pl/LC_MESSAGES
 @comment @dirrm share/locale/pl
 @comment @dirrm share/locale/no/LC_MESSAGES
@@ -251,12 +273,16 @@ share/pixmaps/gaim/typing.png
 @comment @dirrm share/locale/it
 @comment @dirrm share/locale/hu/LC_MESSAGES
 @comment @dirrm share/locale/hu
+@comment @dirrm share/locale/he/LC_MESSAGES
+@comment @dirrm share/locale/he
 @comment @dirrm share/locale/fr/LC_MESSAGES
 @comment @dirrm share/locale/fr
 @comment @dirrm share/locale/fi/LC_MESSAGES
 @comment @dirrm share/locale/fi
 @comment @dirrm share/locale/es/LC_MESSAGES
 @comment @dirrm share/locale/es
+@comment @dirrm share/locale/en_GB/LC_MESSAGES
+@comment @dirrm share/locale/en_GB
 @comment @dirrm share/locale/de/LC_MESSAGES
 @comment @dirrm share/locale/de
 @comment @dirrm share/locale/da/LC_MESSAGES
@@ -271,3 +297,4 @@ share/pixmaps/gaim/typing.png
 @comment @dirrm share/locale/am
 @comment @dirrm share/locale
 @comment @dirrm share/applications
+@dirrm include/gaim-remote
