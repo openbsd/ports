@@ -1,12 +1,13 @@
 #!/bin/sh
-# $OpenBSD: pptp_reconnect,v 1.1.1.1 2000/12/21 14:02:52 reinhard Exp $ 
+# $OpenBSD: pptp_reconnect,v 1.2 2001/04/12 14:27:12 reinhard Exp $ 
 #
 # PPTP reconnect script
 #
-# sample crontab entry: 0,30 * * * * /sbin/ping -c 2 MY_REMOTE_PEER_IP >/dev/null || /usr/local/sbin/pptp-reconnect
+# sample crontab entry: 
+# 0,30 * * * * /sbin/ping -c 2 MY_REMOTE_PEER_IP >/dev/null || PREFIX/sbin/pptp-reconnect
 #
 #
-# INSTALL-INSTRUCTIONS: edit below ip and uncomment the line
+# INSTALL-INSTRUCTIONS: edit following IP and uncomment the line
 #MODEMIP=10.0.0.138
  
 PATH=/bin:/usr/bin:/sbin:/usr/sbin:PREFIX/sbin
@@ -24,12 +25,14 @@ echo "Killing pptp."
 kill -9	`ps -ax|grep pptp|grep -v pptp-reconnect|grep -v grep|awk '{print $1}'`
 /bin/sleep 3
 
-if [ -x /var/run/pptp/$MODEMIP ]; then
+if [ -S /var/run/pptp/$MODEMIP ]; then
 	/bin/rm -f /var/run/pptp/$MODEMIP
 fi
 
 echo "Establishing connection."
-PREFIX/sbin/pptp $MODEMIP >/var/log/ppp.log 2>&1
+echo "=========================================================" >> /var/log/ppp.log 
+echo "Establishing connection at `date`." >> /var/log/ppp.log 
+PREFIX/sbin/pptp $MODEMIP >> /var/log/ppp.log 2>&1
 /bin/sleep 7
 
 echo "Flushing rulesets:"
