@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2001/07/25 15:35:44 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2001/08/09 14:17:42 brad Exp $
 
 COMMENT=	"FTP proxy"
 
-DISTNAME=	jftpgw-0.0.12
+DISTNAME=	jftpgw-0.12.0
 CATEGORIES=	net
 NEED_VERSION=	1.413
 MASTER_SITES=	http://www.mcknight.de/jftpgw/
@@ -18,7 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--enable-crypt \
+CONFIGURE_ARGS= \
+		--enable-crypt --enable-sftp \
 		--with-logpath="/var/log" --with-confpath="${SYSCONFDIR}"
 
 post-install:
