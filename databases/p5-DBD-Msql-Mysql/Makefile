@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2001/12/13 15:22:15 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2002/02/18 21:40:17 brad Exp $
 
-COMMENT=		'mysql drivers for the perl DBI'
+COMMENT=		'MySQL drivers for the Perl DBI'
 
 DISTNAME=		Msql-Mysql-modules-1.2219
 PKGNAME=		p5-DBD-Msql-Mysql-1.22.19
