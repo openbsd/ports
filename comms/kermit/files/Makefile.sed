@@ -11,8 +11,8 @@ MANDIR=%%PREFIX%%/man/man
 
 CLEANFILES+= ckcpro.c ckcwart.o wart kermit.1
 
-DPADD=  ${LIBCURSES} ${LIBTERM}
-LDADD=  -lcurses -ltermcap
+DPADD=  ${LIBCURSES} ${LIBTERMLIB}
+LDADD=  -lcurses -ltermlib
 
 .SUFFIXES: .w
 
