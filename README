@@ -111,7 +111,7 @@ recursively built.
 
 Please note that, in normal use, the OpenBSD ports tree will grow quite
 a lot.  Careful use of make clean and make distclean will help you.
-`find /usr/ports -type d -name work -print' can be useful to find out
+`find /usr/ports -type d -name work\* -print' can be useful to find out
 ports you forgot to clean out.
 
 There are a few kinks in the building of ports with options yet. Namely,
@@ -327,4 +327,4 @@ please visit
 
 	http://www.openbsd.org/porting.html
 
-$OpenBSD: README,v 1.5 1999/09/25 14:45:27 espie Exp $
+$OpenBSD: README,v 1.6 1999/09/26 10:52:55 espie Exp $
