@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.678 2005/01/13 11:54:55 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.679 2005/01/31 09:52:53 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1429,12 +1429,8 @@ _internal-lib-depends-check: ${_LIBLIST} ${_SYSBUILDLIBLIST}
 		perl ${PORTSDIR}/infrastructure/install/check-libs-elf \
 		${_LIBLIST} ${_SYSBUILDLIBLIST}
 
-_internal-newlib-depends-check: ${_LIBLIST} ${_BUILDLIBLIST}
-	@LIB_DEPENDS='${LIB_DEPENDS:C/:.*//}' \
-	WANTLIB='${WANTLIB}' \
-	PKG_DBDIR='${PKG_DBDIR}' \
-		perl ${PORTSDIR}/infrastructure/install/check-libs-elf \
-		${_LIBLIST} ${_BUILDLIBLIST}
+_internal-newlib-depends-check: ${_PACKAGE_COOKIES}
+	@perl ${PORTSDIR}/infrastructure/package/check-newlib-depends ${_PACKAGE_COOKIES}
 
 _internal-manpages-check: ${_FAKE_COOKIE}
 	@cd ${WRKINST}${TRUEPREFIX}/man && \
@@ -1892,7 +1888,7 @@ ${_UPDATE_COOKIE}: ${_PACKAGE_COOKIES}
 	case $$a in \
 		'') ;; \
 		*) ${ECHO_MSG} "Upgrading from $$a"; \
-		   ${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} -F update -F installed -r ${PKGFILE${SUBPACKAGE}};; \
+		   ${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} -F update -F updatedepends -F installed -r ${PKGFILE${SUBPACKAGE}};; \
 	esac
 .else
 	@a=`pkg_info -e ${FULLPKGPATH} 2>/dev/null || true`; \
