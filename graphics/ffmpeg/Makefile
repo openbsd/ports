@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2003/09/26 14:40:29 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2003/11/04 07:50:19 jolan Exp $
 
 COMMENT=	"audio/video converter and streamer"
-DISTNAME=	ffmpeg-0.4.7
+DISTNAME=	ffmpeg-0.4.8
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ffmpeg/}
 
@@ -25,9 +25,9 @@ CFLAGS+=-fomit-frame-pointer
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--cc=${CC} --make=gmake ${CONFIGURE_SHARED} \
-		--disable-ffserver
+		--disable-ffserver --disable-opts --enable-pp
 
-SV=	0.3
+SV=	0.4
 
 pre-configure:
 	@perl -pi -e 's|_SV_|${SV}|g' ${WRKSRC}/configure
