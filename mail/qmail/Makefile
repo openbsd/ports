@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/21 16:13:04 camield Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/27 06:14:15 camield Exp $
 
 DISTNAME=	qmail-1.03
 CATEGORIES=	mail
-NEED_VERSION=	 1.230
-FAKE=No
+NEED_VERSION=	1.230
 MAINTAINER=	cd@sentia.nl
+
 MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
 		ftp://ftp.mira.net.au/unix/mail/qmail/ \
@@ -22,9 +22,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 PREFIX=		/var/qmail
 NO_CONFIGURE=	Yes
-ALL_TARGET=	default
+NO_MTREE=	Yes
+ALL_TARGET=	it man
 INSTALL_TARGET=	setup check
 IS_INTERACTIVE= "if qmail users/groups do not exist yet"
+
+FAKE=	Yes
 
 RUN_DEPENDS=    tcpserver::net/ucspi-tcp
 
@@ -38,10 +41,18 @@ pre-build:
 	@echo ${PREFIX} > ${WRKSRC}/conf-qmail
 	@PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${DISTNAME} PRE-INSTALL
 
+pre-install:
+	# preserve installer with correct prefix so it can be used by the
+	# the package later (we create the queue directories with it)
+	@mv ${WRKSRC}/install ${WRKSRC}/install.nonfake
+	# rebuild install utilities with fake prefix
+	@echo ${PREFIX} > ${WRKSRC}/conf-qmail
+
 post-install:
+	# restore original installer
+	@mv ${WRKSRC}/install.nonfake ${WRKSRC}/install
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/setup 
 	${INSTALL_PROGRAM} ${SETUPBINARIES} ${PREFIX}/setup
 	${INSTALL_SCRIPT} ${SETUPSCRIPTS} ${PREFIX}/setup
-	@PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
