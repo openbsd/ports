@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/02/04 18:44:47 reinhard Exp $
+# $OpenBSD: Makefile,v 1.22 2001/02/09 10:58:13 reinhard Exp $
 #
 
 #    SUBDIR += Scilab
@@ -55,5 +55,6 @@
 #    SUBDIR += xmgr
 #    SUBDIR += xplot
      SUBDIR += xspread
+     SUBDIR += yorick
 #
 .include <bsd.port.subdir.mk>
