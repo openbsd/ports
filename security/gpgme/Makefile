@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/29 18:27:26 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/24 19:18:15 naddy Exp $
 
 COMMENT=		"GnuPG Made Easy"
 
@@ -8,7 +8,7 @@ NEED_VERSION=		1.427
 
 HOMEPAGE=		http://www.gnupg.org/gpgme.html
 
-MAINTAINER=		COUDERC Damien <couderc.damien@wanadoo.fr>
+MAINTAINER=		Damien Couderc <couderc.damien@wanadoo.fr>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
