@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.37 2004/04/25 10:36:39 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.38 2004/06/10 21:22:25 jakob Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -11,8 +11,11 @@ MASTER_SITE_POSTFIX=\
 		ftp://ftp.tau.ac.il/pub/unix/mail/postfix/ \
 		ftp://ftp.cs.uu.nl/mirror/postfix/postfix-release/
 
+MASTER_SITES0=	http://www.ipnet6.org/postfix/download/
+
 DIST_SUBDIR=	postfix
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+PATCHFILES+=	tls+ipv6-${IPV6VERSION}-pf-${IPV6POSTFIX}.patch.gz:0
 
 HOMEPAGE=	http://www.postfix.org/
 
@@ -24,7 +27,16 @@ PERMIT_DISTFILES_FTP=	yes
 MAKE_DEBUG?=
 MAKE_CCARGS?=	-DFD_SETSIZE=2048
 MAKE_CCARGS+=	-DDEF_CONFIG_DIR=\"${SYSCONFDIR}/postfix\"
-MAKE_AUXLIBS?=
+MAKE_CCARGS+=	-DHAS_SSL
+MAKE_AUXLIBS+=	-lssl -lcrypto
+
+TLSHOMEPAGE=	http://www.aet.tu-cottbus.de/personen/jaenicke/pfixtls/
+SUBST_VARS+=	TLSHOMEPAGE
+
+IPV6HOMEPAGE=	http://www.ipnet6.org/postfix/
+SUBST_VARS+=	IPV6HOMEPAGE
+
+PATCH_DIST_STRIP=-p1
 
 ALL_TARGET=	default
 
@@ -62,6 +74,13 @@ MAKE_CCARGS+=	-I${LOCALBASE}/include/postgresql -DHAS_PGSQL
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpq
 .endif
 
+
+post-patch:
+	@find ${WRKSRC} -type f -name '*.bak.orig' -print | xargs rm
+
+post-install:
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postfix/tls
+	@${INSTALL_DATA} ${WRKSRC}/pfixtls/doc/* ${PREFIX}/share/doc/postfix/tls
 
 do-configure:
 	@cd ${WRKSRC}; ${MAKE_PROGRAM} makefiles \
