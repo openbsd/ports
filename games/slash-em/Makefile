@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/08/10 10:04:57 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2004/09/15 19:57:25 espie Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Hard"
 DISTNAME=	se006e4f8
@@ -32,7 +32,6 @@ FLAVOR?=
 .if ${FLAVOR:L} == "no_x11"
 NETHACKCONFIG=${FILESDIR}/simple-config
 .elif ${FLAVOR:L} == "qt"
-SED_PLIST=|sed -e '/^!%%no_x11%%/d'
 NETHACKCONFIG=${FILESDIR}/qt-config
 PORTPATH=${LOCALBASE}/lib/qt2/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin
 LIB_DEPENDS=qt.2.::x11/qt2
