@@ -1,0 +1,3 @@
+GroupUserFolder is a kind of user folder that provides a special kind of
+user management. Some users are "flagged" as GROUP and then normal users
+will be able to belong to one or several groups.
