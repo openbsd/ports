@@ -1,0 +1,2 @@
+statically linked version of mini_sendmail which installs itself into
+the default Apache chroot area.

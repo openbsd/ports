@@ -1,0 +1,31 @@
+$OpenBSD: patch-mini_sendmail_c,v 1.1.1.1 2003/07/22 23:01:16 jolan Exp $
+--- mini_sendmail.c.orig	Thu Nov 21 14:27:55 2002
++++ mini_sendmail.c	Sat Jul 19 22:47:43 2003
+@@ -129,6 +129,8 @@ main( int argc, char** argv )
+ 	    timeout = atoi( &(argv[argn][2]) );
+ 	else if ( strcmp( argv[argn], "-v" ) == 0 )
+ 	    verbose = 1;
++	else if ( strcmp( argv[argn], "-i" ) == 0 || strcmp ( argv[argn], "-oi" ) == 0 )
++	    /* do nothing */ ;
+ 	else
+ 	    usage();
+ 	++argn;
+@@ -575,14 +577,16 @@ open_client_socket( void )
+     sock_family = PF_INET6;
+ 
+ #ifdef DO_MINUS_S
+-    if ( inet_pton( PF_INET, server, (void*) &sa4.sin_addr ) == 0 )
++
++    (void) memset( (void*) &sa4, 0, sizeof(sa4) );
++    if ( inet_pton( AF_INET, server, (void*) &sa4.sin_addr ) == 1 )
+ 	{
+ 	sock_family = PF_INET;
+ 	sa4.sin_port = htons( SMTP_PORT );
+ 	sa_len = sizeof(sa4);
+ 	(void) memmove( &sa, &sa4, sa_len );
+ 	}
+-    else if ( inet_pton( PF_INET6, server, (void*) &sa.sin6_addr ) == -1 )
++    else if ( inet_pton( AF_INET6, server, (void*) &sa.sin6_addr ) != 1 )
+ 	{
+ #ifdef DO_DNS
+ 	(void) memset( &hints, 0, sizeof(hints) );

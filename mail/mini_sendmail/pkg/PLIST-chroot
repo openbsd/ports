@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-chroot,v 1.1.1.1 2003/07/22 23:01:16 jolan Exp $
+bin/mini_sendmail
