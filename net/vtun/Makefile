@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2003/09/30 15:10:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2004/09/17 08:02:12 espie Exp $
 
 BROKEN=		"insecure due to protocol flaws"
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	lzo.1::archivers/lzo
 LOG_DIR=	/var
 SUBST_VARS=	LOG_DIR
 
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= autoconf no-autoheader
 AUTOCONF_VERSION= 2.13
 CONFIGURE_ARGS=	--localstatedir="${LOG_DIR}" \
 		--with-ssl-headers="/usr/include/openssl" \
