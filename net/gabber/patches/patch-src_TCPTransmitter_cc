@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_TCPTransmitter_cc,v 1.1.1.1 2002/10/28 17:22:17 todd Exp $
+$OpenBSD: patch-src_TCPTransmitter_cc,v 1.2 2004/01/05 02:04:54 espie Exp $
 $RuOBSD: patch-src_TCPTransmitter_cc,v 1.4 2002/10/26 12:04:30 grange Exp $
---- src/TCPTransmitter.cc.orig	Mon Feb 18 01:29:51 2002
-+++ src/TCPTransmitter.cc	Sat Oct 26 15:51:24 2002
+--- src/TCPTransmitter.cc.orig	2002-02-17 23:29:51.000000000 +0100
++++ src/TCPTransmitter.cc	2004-01-05 03:01:58.000000000 +0100
 @@ -120,13 +120,15 @@ void TCPTransmitter::connect(const strin
       // Set autoreconnect and use_ssl
       _autoreconnect = autoreconnect;
@@ -173,3 +173,12 @@ $RuOBSD: patch-src_TCPTransmitter_cc,v 1.4 2002/10/26 12:04:30 grange Exp $
       _IOChannel = g_io_channel_unix_new(_socketfd);
       _socket_watchid = g_io_add_watch(_IOChannel,
  				      GIOCondition(G_IO_IN | G_IO_OUT | G_IO_PRI | G_IO_ERR | G_IO_HUP | G_IO_NVAL),
+@@ -1338,7 +1362,7 @@ const string TCPTransmitter::getsockname
+      }
+ }
+ 
+-void TCPTransmitter::setProxy(const string &ptype, const string &host, guint port, const string &user, const string &password, bool tryOther = true)
++void TCPTransmitter::setProxy(const string &ptype, const string &host, guint port, const string &user, const string &password, bool tryOther/*=true*/)
+ {
+      if (_state != Offline)
+      {
