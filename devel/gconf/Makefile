@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2002/08/30 19:42:52 nino Exp $
+# $OpenBSD: Makefile,v 1.14 2002/09/14 23:47:49 naddy Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 
 DISTNAME=		GConf-1.0.9
 PKGNAME=		${DISTNAME:L}
-CATEGORIES=		devel gnome
+CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/projects/gconf/
 MAINTAINER=		Nils Nordman <nino@openbsd.org>
