@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2002/12/10 16:21:08 couderc Exp $
+# $OpenBSD: Makefile,v 1.151 2002/12/16 14:31:06 grange Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -55,9 +55,11 @@
      SUBDIR += jfc
      SUBDIR += kdbg
      SUBDIR += lam
+     SUBDIR += lib765
      SUBDIR += libaudiofile
      SUBDIR += libavl
      SUBDIR += libdockapp
+     SUBDIR += libdsk
      SUBDIR += libdvdread
      SUBDIR += libglade
      SUBDIR += libglade,gnome
@@ -67,6 +69,7 @@
      SUBDIR += libproplist
      SUBDIR += libsigc++
      SUBDIR += libslang
+     SUBDIR += libspectrum
      SUBDIR += libtool
      SUBDIR += libusb
      SUBDIR += libuta
