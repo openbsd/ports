@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/05/12 19:11:35 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/06/03 00:57:37 brad Exp $
 
 DISTNAME=	9wm-1.1
 CATEGORIES=	plan9
@@ -8,9 +8,9 @@ EXTRACT_SUFX=	.shar.gz
 MAINTAINER=	angelos@openbsd.org
 
 NO_WRKSUBDIR=	yes
-EXTRACT_CMD=		zcat
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	|sh
+EXTRACT_CMD=	${GZCAT}
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS= | ${SH}
 USE_IMAKE=	yes
 
 .include <bsd.port.mk>
