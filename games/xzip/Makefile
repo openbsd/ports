@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/09/08 02:11:27 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/12/08 15:24:40 kevlo Exp $
 # $NetBSD: Makefile,v 1.4 1999/01/30 23:18:49 agc Exp $
 # Original from: Andrew Plotkin, Mark Howell
 
-DISTNAME=	xzip181
-PKGNAME=	xzip-1.8.1
+DISTNAME=	xzip182
+PKGNAME=	xzip-1.8.2
 CATEGORIES=     games x11
-NEED_VERSION=	1.326
+NEED_VERSION=	1.341
 
 HOMEPAGE=	http://www.eblong.com/zarf/xzip.html
 
-MAINTAINER=	ci2@gmx.net
+MAINTAINER=	Carsten Ilchmann <ci2@gmx.net>
 
 # usage restriction and licensing of files by Mark Howell unclear
 # read xzip(6)
