@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.72 2004/12/31 00:56:39 jsg Exp $
+# $OpenBSD: network.conf.template,v 1.73 2005/04/05 20:10:53 alek Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -62,7 +62,8 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.lip6.fr/pub/gnu/ \
 	ftp://ftp.chg.ru/pub/gnu/ \
 	ftp://ftp.uvsq.fr/pub/gnu/ \
-  	ftp://ftp.sunet.se/pub/gnu/
+  	ftp://ftp.sunet.se/pub/gnu/ \
+  	ftp://mirrors.dotsrc.org/gnu/
 
 MASTER_SITE_XCONTRIB+=	\
 	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/ \
@@ -159,9 +160,9 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.cs.colorado.edu/pub/perl/CPAN/modules/by-module/ \
 	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/ \
 	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/ \
-	http://cpan.shellhung.org/modules/by-module/ \
 	ftp://sunsite.org.uk/packages/perl/CPAN/modules/by-module/ \
-	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/
+	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/ \
+	ftp://mirrors.dotsrc.org/cpan/
 
 MASTER_SITE_TEX_CTAN+=	\
 	ftp://ftp.funet.fi/pub/TeX/CTAN/ \
@@ -169,7 +170,7 @@ MASTER_SITE_TEX_CTAN+=	\
 	ftp://ftp.cise.ufl.edu/pub/mirrors/tex-archive/ \
 	ftp://ftp.tex.ac.uk/tex-archive/ \
 	ftp://ftp.kddlabs.co.jp/CTAN/ \
-	ftp://sunsite.dk/pub/tex/ctan/ \
+	ftp://mirrors.dotsrc.org/ctan/ \
 	ftp://ctan.tug.org/tex-archive/ \
 	ftp://ftp.chg.ru/pub/TeX/CTAN/ \
 	ftp://ftp.dante.de/tex-archive/ \
