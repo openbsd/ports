@@ -1,24 +1,23 @@
 --- bfd/config.bfd.orig	Thu Nov  7 11:57:50 2002
-+++ bfd/config.bfd	Thu Jun  5 14:00:37 2003
-@@ -405,7 +405,7 @@ case "${targ}" in
- 	targ_cflags=-DOLD_FREEBSD_ABI_LABEL ;;
-     esac
-     ;;
--  i[3456]86-*-netbsdelf*) 
-+  i[3456]86-*-netbsdelf* | i[3456]86-*-openbsd*) 
-     targ_defvec=bfd_elf32_i386_vec
-     targ_selvecs=i386netbsd_vec
-     ;;
-@@ -413,7 +413,7 @@ case "${targ}" in
++++ bfd/config.bfd	Thu Jun  5 22:40:52 2003
+@@ -413,11 +413,15 @@ case "${targ}" in
      targ_defvec=i386pe_vec
      targ_selvecs="i386pe_vec i386pei_vec bfd_elf32_i386_vec"
      ;;
 -  i[3456]86-*-netbsdaout* | i[3456]86-*-netbsd* | i[3456]86-*-openbsd*)
-+  i[3456]86-*-netbsdaout* | i[3456]86-*-netbsd*)
++  i[3456]86-*-netbsdaout* | i[3456]86-*-netbsd* | i[3456]86-*-openbsd[0-2].* | i[3456]86-*-openbsd3.[0-2])
      targ_defvec=i386netbsd_vec
      targ_selvecs="bfd_elf32_i386_vec i386bsd_vec"
      targ_underscore=yes
-@@ -673,11 +673,11 @@ case "${targ}" in
+     ;;
++  i[3456]86-*-openbsd*)
++    targ_defvec=bfd_elf32_i386_vec
++    targ_selvecs=i386netbsd_vec
++    ;;
+   i[3456]86-*-netware*)
+     targ_defvec=bfd_elf32_i386_vec
+     targ_selvecs="nlm32_i386_vec i386coff_vec i386aout_vec"
+@@ -673,11 +677,11 @@ case "${targ}" in
      targ_defvec=ecoff_big_vec
      targ_selvecs=ecoff_little_vec
      ;;
@@ -32,12 +31,12 @@
      targ_defvec=bfd_elf32_bigmips_vec
      targ_selvecs="bfd_elf32_littlemips_vec ecoff_big_vec ecoff_little_vec"
      ;;
-@@ -1041,10 +1041,14 @@ case "${targ}" in
+@@ -1041,10 +1045,14 @@ case "${targ}" in
      targ_selvecs=bfd_elf32_sparc_vec
      targ_underscore=yes
      ;;
 -  sparc-*-openbsd*)
-+  sparc-*-openbsd[0-2].* | sparc-*-openbsd3.[0-1])
++  sparc*-*-openbsd[0-2].* | sparc*-*-openbsd3.[0-1])
      targ_defvec=sparcnetbsd_vec
      targ_underscore=yes
      ;;
@@ -48,7 +47,7 @@
    sparc-*-elf* | sparc-*-solaris2.[0-6] | sparc-*-solaris2.[0-6].*)
      targ_defvec=bfd_elf32_sparc_vec
      targ_selvecs=sunos_big_vec
-@@ -1129,6 +1133,11 @@ case "${targ}" in
+@@ -1129,6 +1137,11 @@ case "${targ}" in
  
    vax-*-bsd* | vax-*-ultrix*)
      targ_defvec=vaxbsd_vec
