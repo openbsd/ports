@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2001/12/27 22:09:32 avsm Exp $
+# $OpenBSD: Makefile,v 1.63 2002/01/09 16:00:51 jcs Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -54,7 +54,7 @@ USE_LIBTOOL=	Yes
 
 FLAVORS+=	gdbm gettext imap ldap mhash mm recode snmp
 FLAVORS+=	gd no_x11 pdflib mcrypt curl
-FLAVORS+=	dbase filepro mysql mysql_bundled postgresql iodbc
+FLAVORS+=	dbase filepro mysql mysql_bundled postgresql iodbc freetds
 FLAVOR?= 
 
 .if ${FLAVOR:L:Mcurl}
@@ -194,6 +194,13 @@ CONFIGURE_ARGS+=        --with-iodbc
 LIB_DEPENDS+=		iodbc.2::databases/iodbc
 .else
 CONFIGURE_ARGS+=        --without-iodbc
+.endif        
+
+.if ${FLAVOR:L:Mfreetds}
+CONFIGURE_ARGS+=        --with-sybase-ct=${LOCALBASE}
+LIB_DEPENDS+=		tds.0,ct.0::databases/freetds
+.else
+CONFIGURE_ARGS+=        --without-sybase-ct
 .endif        
 
 .if ${SUBPACKAGE} == "-pear"

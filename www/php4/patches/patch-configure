@@ -1,6 +1,5 @@
-$OpenBSD: patch-configure,v 1.8 2001/12/18 01:40:48 avsm Exp $
---- configure.orig	Sat Dec  8 19:40:35 2001
-+++ configure	Mon Dec 17 21:35:09 2001
+--- configure.orig	Wed Dec 26 04:43:05 2001
++++ configure	Fri Dec 28 11:47:29 2001
 @@ -24893,22 +24893,22 @@ EOF
    fi
  
@@ -91,7 +90,343 @@ $OpenBSD: patch-configure,v 1.8 2001/12/18 01:40:48 avsm Exp $
      fi
  
      if test "$cross_compiling" = yes; then
-@@ -57538,7 +57538,7 @@ unset with_pic
+@@ -52283,33 +52283,6 @@ EOF
+   fi
+ 
+   
+- case cs in
+- c|c_r|pthread*) ;;
+- *)
+-
+-   if test "$ext_shared" = "yes"; then
+-     
+-  SYBASE_CT_SHARED_LIBADD="-lcs $SYBASE_CT_SHARED_LIBADD"
+-
+-   else
+-     
+- case cs in
+- c|c_r|pthread*) ;;
+- *)
+-
+-   
+-  LIBS="-lcs $LIBS"
+-
+-
+-  ;;
+-  esac
+-
+-   fi
+-
+-  ;;
+-  esac
+-
+-  
+  case ct in
+  c|c_r|pthread*) ;;
+  *)
+@@ -52337,214 +52310,22 @@ EOF
+   esac
+ 
+   
+- case comn in
+- c|c_r|pthread*) ;;
+- *)
+-
+-   if test "$ext_shared" = "yes"; then
+-     
+-  SYBASE_CT_SHARED_LIBADD="-lcomn $SYBASE_CT_SHARED_LIBADD"
+-
+-   else
+-     
+- case comn in
+- c|c_r|pthread*) ;;
+- *)
+-
+-   
+-  LIBS="-lcomn $LIBS"
+-
+-
+-  ;;
+-  esac
+-
+-   fi
+-
+-  ;;
+-  esac
+-
+-  
+- case intl in
+- c|c_r|pthread*) ;;
+- *)
+-
+-   if test "$ext_shared" = "yes"; then
+-     
+-  SYBASE_CT_SHARED_LIBADD="-lintl $SYBASE_CT_SHARED_LIBADD"
+-
+-   else
+-     
+- case intl in
+- c|c_r|pthread*) ;;
+- *)
+-
+-   
+-  LIBS="-lintl $LIBS"
+-
+-
+-  ;;
+-  esac
+-
+-   fi
+-
+-  ;;
+-  esac
+-
+-
+-  SYBASE_CT_LIBS="-L$SYBASE_CT_LIBDIR -lcs -lct -lcomn -lintl"
+-
+-  echo $ac_n "checking for netg_errstr in -ltcl""... $ac_c" 1>&6
+-echo "configure:52398: checking for netg_errstr in -ltcl" >&5
+-ac_lib_var=`echo tcl'_'netg_errstr | sed 'y%./+-%__p_%'`
+-if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  ac_save_LIBS="$LIBS"
+-LIBS="-ltcl  
+-    $SYBASE_CT_LIBS 
+-   $LIBS"
+-cat > conftest.$ac_ext <<EOF
+-#line 52408 "configure"
+-#include "confdefs.h"
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char netg_errstr();
+-
+-int main() {
+-netg_errstr()
+-; return 0; }
+-EOF
+-if { (eval echo configure:52419: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=no"
+-fi
+-rm -f conftest*
+-LIBS="$ac_save_LIBS"
+-
+-fi
+-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-  
+-    
+- case tcl in
+- c|c_r|pthread*) ;;
+- *)
+-
+-   if test "$ext_shared" = "yes"; then
+-     
+-  SYBASE_CT_SHARED_LIBADD="-ltcl $SYBASE_CT_SHARED_LIBADD"
+-
+-   else
+-     
+- case tcl in
+- c|c_r|pthread*) ;;
+- *)
+-
+-   
+-  LIBS="-ltcl $LIBS"
+-
+-
+-  ;;
+-  esac
+-
+-   fi
+-
+-  ;;
+-  esac
+-
+-  
+-else
+-  echo "$ac_t""no" 1>&6
+- 
+-    
+- case sybtcl in
+- c|c_r|pthread*) ;;
+- *)
+-
+-   if test "$ext_shared" = "yes"; then
+-     
+-  SYBASE_CT_SHARED_LIBADD="-lsybtcl $SYBASE_CT_SHARED_LIBADD"
+-
+-   else
+-     
+- case sybtcl in
+- c|c_r|pthread*) ;;
+- *)
+-
+-   
+-  LIBS="-lsybtcl $LIBS"
+-
+-
+-  ;;
+-  esac
+-
+-   fi
+-
+-  ;;
+-  esac
+-
+-  
+-fi
+-
+-
+-  echo $ac_n "checking for insck__getVdate in -linsck""... $ac_c" 1>&6
+-echo "configure:52498: checking for insck__getVdate in -linsck" >&5
+-ac_lib_var=`echo insck'_'insck__getVdate | sed 'y%./+-%__p_%'`
+-if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  ac_save_LIBS="$LIBS"
+-LIBS="-linsck -L$SYBASE_CT_LIBDIR $LIBS"
+-cat > conftest.$ac_ext <<EOF
+-#line 52506 "configure"
+-#include "confdefs.h"
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char insck__getVdate();
+-
+-int main() {
+-insck__getVdate()
+-; return 0; }
+-EOF
+-if { (eval echo configure:52517: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=no"
+-fi
+-rm -f conftest*
+-LIBS="$ac_save_LIBS"
+-
+-fi
+-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-  
+- case insck in
++ case tds in
+  c|c_r|pthread*) ;;
+  *)
+ 
+    if test "$ext_shared" = "yes"; then
+      
+-  SYBASE_CT_SHARED_LIBADD="-linsck $SYBASE_CT_SHARED_LIBADD"
++  SYBASE_CT_SHARED_LIBADD="-ltds $SYBASE_CT_SHARED_LIBADD"
+ 
+    else
+      
+- case insck in
++ case tds in
+  c|c_r|pthread*) ;;
+  *)
+ 
+    
+-  LIBS="-linsck $LIBS"
++  LIBS="-ltds $LIBS"
+ 
+ 
+   ;;
+@@ -52555,81 +52336,10 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+   ;;
+   esac
+ 
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
+-
+-  echo $ac_n "checking for bsd_tcp in -linsck""... $ac_c" 1>&6
+-echo "configure:52564: checking for bsd_tcp in -linsck" >&5
+-ac_lib_var=`echo insck'_'bsd_tcp | sed 'y%./+-%__p_%'`
+-if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  ac_save_LIBS="$LIBS"
+-LIBS="-linsck -L$SYBASE_CT_LIBDIR $LIBS"
+-cat > conftest.$ac_ext <<EOF
+-#line 52572 "configure"
+-#include "confdefs.h"
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char bsd_tcp();
+-
+-int main() {
+-bsd_tcp()
+-; return 0; }
+-EOF
+-if { (eval echo configure:52583: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=no"
+-fi
+-rm -f conftest*
+-LIBS="$ac_save_LIBS"
+-
+-fi
+-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+   
+- case insck in
+- c|c_r|pthread*) ;;
+- *)
+-
+-   if test "$ext_shared" = "yes"; then
+-     
+-  SYBASE_CT_SHARED_LIBADD="-linsck $SYBASE_CT_SHARED_LIBADD"
+-
+-   else
+-     
+- case insck in
+- c|c_r|pthread*) ;;
+- *)
+-
+-   
+-  LIBS="-linsck $LIBS"
+-
+-
+-  ;;
+-  esac
+-
+-   fi
+-
+-  ;;
+-  esac
+-
+-else
+-  echo "$ac_t""no" 1>&6
++  SYBASE_CT_LIBS="-L$SYBASE_CT_LIBDIR -lct -ltds"
+ fi
+ 
+-fi
+-
+-
+-
+-
+ echo $ac_n "checking whether to enable System V semaphore support""... $ac_c" 1>&6
+ echo "configure:52635: checking whether to enable System V semaphore support" >&5
+ # Check whether --enable-sysvsem or --disable-sysvsem was given.
+@@ -57538,7 +57248,7 @@ unset with_pic
  
  case $php_build_target in
  program|static)
@@ -100,7 +435,7 @@ $OpenBSD: patch-configure,v 1.8 2001/12/18 01:40:48 avsm Exp $
      if test "$lib_build_shared" != "yes"; then
          enable_shared=no
      fi
-@@ -57547,7 +57547,7 @@ program|static)
+@@ -57547,7 +57257,7 @@ program|static)
  ;;
  shared)
      enable_static=no
@@ -109,7 +444,7 @@ $OpenBSD: patch-configure,v 1.8 2001/12/18 01:40:48 avsm Exp $
      EXTRA_LDFLAGS="$EXTRA_LDFLAGS -avoid-version"
  ;;
  esac
-@@ -60620,7 +60620,14 @@ old_postuninstall_cmds=
+@@ -60620,7 +60330,14 @@ old_postuninstall_cmds=
  
  if test -n "$RANLIB"; then
    old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
@@ -125,7 +460,7 @@ $OpenBSD: patch-configure,v 1.8 2001/12/18 01:40:48 avsm Exp $
  fi
  
  # Allow CC to be a program name with arguments.
-@@ -61117,7 +61124,9 @@ cygwin* | mingw* | pw32* )
+@@ -61117,7 +60834,9 @@ cygwin* | mingw* | pw32* )
      with_gnu_ld=no
    fi
    ;;
@@ -136,7 +471,7 @@ $OpenBSD: patch-configure,v 1.8 2001/12/18 01:40:48 avsm Exp $
  esac
  
  ld_shlibs=yes
-@@ -61521,10 +61530,24 @@ else
+@@ -61521,10 +61240,24 @@ else
      ;;
  
    openbsd*)
@@ -163,7 +498,7 @@ $OpenBSD: patch-configure,v 1.8 2001/12/18 01:40:48 avsm Exp $
      ;;
  
    os2*)
-@@ -62001,9 +62024,25 @@ newsos6)
+@@ -62001,9 +61734,25 @@ newsos6)
  
  openbsd*)
    version_type=sunos
