@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/08 23:50:23 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/03/29 18:05:51 rohee Exp $
 #
 
 DISTNAME=		xmp-1.1.5
@@ -18,5 +18,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/main/xmp ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/main/xxmp ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/docs/xmp.1 ${MANPREFIX}/man/man1
+	${LN} ${MANPREFIX}/man/man1/xmp.1 ${MANPREFIX}/man/man1/xxmp.1
 
 .include <bsd.port.mk>
+
+
