@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
---- gcc/config.gcc.orig	Tue Sep  7 21:39:05 2004
-+++ gcc/config.gcc	Tue Sep 14 01:21:22 2004
-@@ -927,11 +927,11 @@ x86_64-*-netbsd*)
+$OpenBSD: patch-gcc_config_gcc,v 1.2 2005/01/03 16:23:48 espie Exp $
+--- gcc/config.gcc.orig	Wed Dec 22 09:41:31 2004
++++ gcc/config.gcc	Mon Jan  3 15:47:19 2005
+@@ -931,11 +931,11 @@ x86_64-*-netbsd*)
  	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h netbsd.h netbsd-elf.h i386/x86-64.h i386/netbsd64.h"
  	;;
  i[34567]86-*-openbsd*)

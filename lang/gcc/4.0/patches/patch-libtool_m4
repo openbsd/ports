@@ -1,7 +1,7 @@
-$OpenBSD: patch-libtool_m4,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
---- libtool.m4.orig	Tue May 18 12:11:24 2004
-+++ libtool.m4	Tue Sep 14 01:24:01 2004
-@@ -703,6 +703,10 @@ newsos6)
+$OpenBSD: patch-libtool_m4,v 1.2 2005/01/03 16:23:48 espie Exp $
+--- libtool.m4.orig	Tue Nov 30 00:45:17 2004
++++ libtool.m4	Mon Jan  3 15:47:20 2005
+@@ -696,6 +696,10 @@ newsos6)
    lt_cv_file_magic_test_file=/usr/lib/libnls.so
    ;;
  
