@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/04/27 13:25:59 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2002/04/28 16:58:30 brad Exp $
 
 COMMENT=	"Blackbox-derived window manager with Gnome and KDE support"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--enable-gnome --enable-kde
+CONFIGURE_ARGS=		--enable-gnome --enable-kde --enable-xinerama
 
 USE_X11=		Yes
 
