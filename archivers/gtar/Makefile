@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2004/07/31 15:36:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2004/08/03 09:24:50 espie Exp $
 
 COMMENT=	"GNU version of the traditional tar archiver"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_GNU:=tar/}
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	gettext
+MODULES=	devel/gettext
 RUN_DEPENDS=	:bzip2-*:archivers/bzip2
 
 CONFIGURE_STYLE=gnu
