@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2001/03/07 22:51:22 brad Exp $
+# $OpenBSD: Makefile,v 1.36 2001/03/22 14:52:08 brad Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN=		"BROKEN on powerpc: reason unknown at the moment"
@@ -29,8 +29,8 @@ FLAVORS=	threads
 FLAVOR?=
 
 .if ${FLAVOR:L} == "threads"
-. if ${MACHINE_ARCH} == "sparc"
-BROKEN=		"pthreads are currently not working on the SPARC architecture"
+. if ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "powerpc"
+BROKEN=		"pthreads are currently not working on the ${MACHINE_ARCH} architecture"
 . endif
 CONFIGURE_ARGS+= --enable-threads
 .else
