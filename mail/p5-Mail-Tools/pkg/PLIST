@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/02/21 01:53:45 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/04/16 19:25:04 espie Exp $
 libdata/perl5/site_perl/Mail/Address.pm
 libdata/perl5/site_perl/Mail/Cap.pm
 libdata/perl5/site_perl/Mail/Field.pm
@@ -29,16 +29,16 @@ libdata/perl5/site_perl/auto/Mail/Util/autosplit.ix
 libdata/perl5/site_perl/auto/Mail/Util/mailaddress.al
 libdata/perl5/site_perl/auto/Mail/Util/maildomain.al
 libdata/perl5/site_perl/auto/Mail/Util/read_mbox.al
-man/man3/Mail::Address.3p
-man/man3/Mail::Cap.3p
-man/man3/Mail::Field.3p
-man/man3/Mail::Field::AddrList.3p
-man/man3/Mail::Filter.3p
-man/man3/Mail::Header.3p
-man/man3/Mail::Internet.3p
-man/man3/Mail::Mailer.3p
-man/man3/Mail::Send.3p
-man/man3/Mail::Util.3p
+man/man3p/Mail::Address.3p
+man/man3p/Mail::Cap.3p
+man/man3p/Mail::Field.3p
+man/man3p/Mail::Field::AddrList.3p
+man/man3p/Mail::Filter.3p
+man/man3p/Mail::Header.3p
+man/man3p/Mail::Internet.3p
+man/man3p/Mail::Mailer.3p
+man/man3p/Mail::Send.3p
+man/man3p/Mail::Util.3p
 share/examples/p5-MailTools/README.demos
 share/examples/p5-MailTools/forwd_demo
 share/examples/p5-MailTools/rplyto_demo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/11/21 23:35:45 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/04/16 19:25:03 espie Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Carp/Clan.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Carp/Clan.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Date/Calc.pm
@@ -13,12 +13,12 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Date/Calendar/Year.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Date/Calendar/Year.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Date/Calc/Calc.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Date/Calc/Calc.so
-man/man3/Carp::Clan.3p
-man/man3/Date::Calc.3p
-man/man3/Date::Calc::Object.3p
-man/man3/Date::Calendar.3p
-man/man3/Date::Calendar::Profiles.3p
-man/man3/Date::Calendar::Year.3p
+man/man3p/Carp::Clan.3p
+man/man3p/Date::Calc.3p
+man/man3p/Date::Calc::Object.3p
+man/man3p/Date::Calendar.3p
+man/man3p/Date::Calendar::Profiles.3p
+man/man3p/Date::Calendar::Year.3p
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Date/Calc
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Date/Calendar
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Date/Calc

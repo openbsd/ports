@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/09/07 22:46:15 peter Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/04/16 19:25:07 espie Exp $
 bin/embpexec.pl
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl.pod
@@ -20,20 +20,20 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/EmbperlObject.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/HTML/Embperl/Embperl.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/HTML/Embperl/Embperl.so
 man/man1/embpexec.pl.1
-man/man3/HTML::Embperl.3p
-man/man3/HTML::Embperl::Changes.3p
-man/man3/HTML::Embperl::Faq.3p
-man/man3/HTML::Embperl::Features.3p
-man/man3/HTML::Embperl::FeaturesD.3p
-man/man3/HTML::Embperl::INSTALL.3p
-man/man3/HTML::Embperl::Intro.3p
-man/man3/HTML::Embperl::IntroD.3p
-man/man3/HTML::Embperl::IntroEmbperlObject.3p
-man/man3/HTML::Embperl::Mail.3p
-man/man3/HTML::Embperl::NEWS.3p
-man/man3/HTML::Embperl::Session.3p
-man/man3/HTML::Embperl::TipsAndTricks.3p
-man/man3/HTML::EmbperlD.3p
-man/man3/HTML::EmbperlObject.3p
+man/man3p/HTML::Embperl.3p
+man/man3p/HTML::Embperl::Changes.3p
+man/man3p/HTML::Embperl::Faq.3p
+man/man3p/HTML::Embperl::Features.3p
+man/man3p/HTML::Embperl::FeaturesD.3p
+man/man3p/HTML::Embperl::INSTALL.3p
+man/man3p/HTML::Embperl::Intro.3p
+man/man3p/HTML::Embperl::IntroD.3p
+man/man3p/HTML::Embperl::IntroEmbperlObject.3p
+man/man3p/HTML::Embperl::Mail.3p
+man/man3p/HTML::Embperl::NEWS.3p
+man/man3p/HTML::Embperl::Session.3p
+man/man3p/HTML::Embperl::TipsAndTricks.3p
+man/man3p/HTML::EmbperlD.3p
+man/man3p/HTML::EmbperlObject.3p
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/HTML/Embperl
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl

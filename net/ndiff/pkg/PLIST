@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/17 02:24:23 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:04 espie Exp $
 bin/ndiff
 bin/ndiff2html
 bin/ngen
@@ -16,5 +16,5 @@ man/man1/ndiff.1
 man/man1/ndiff2html.1
 man/man1/ngen.1
 man/man1/nrun.1
-man/man3/NDiff_Quickstart.3
+man/man3p/NDiff_Quickstart.3
 @dirrm libdata/perl5/site_perl/PortScan

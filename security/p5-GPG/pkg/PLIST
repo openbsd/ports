@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/11 14:35:56 peter Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:05 espie Exp $
 libdata/perl5/site_perl/GPG.pm
-man/man3/GPG.3p
+man/man3p/GPG.3p

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/09/07 22:35:17 peter Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:05 espie Exp $
 libdata/perl5/site_perl/GnuPG/Fingerprint.pm
 libdata/perl5/site_perl/GnuPG/Handles.pm
 libdata/perl5/site_perl/GnuPG/Interface.pm
@@ -31,15 +31,15 @@ libdata/perl5/site_perl/auto/GnuPG/Interface/sign.al
 libdata/perl5/site_perl/auto/GnuPG/Interface/sign_and_encrypt.al
 libdata/perl5/site_perl/auto/GnuPG/Interface/test_default_key_passphrase.al
 libdata/perl5/site_perl/auto/GnuPG/Interface/verify.al
-man/man3/GnuPG::Fingerprint.3p
-man/man3/GnuPG::Handles.3p
-man/man3/GnuPG::Interface.3p
-man/man3/GnuPG::Key.3p
-man/man3/GnuPG::Options.3p
-man/man3/GnuPG::PrimaryKey.3p
-man/man3/GnuPG::PublicKey.3p
-man/man3/GnuPG::SecretKey.3p
-man/man3/GnuPG::Signature.3p
-man/man3/GnuPG::SubKey.3p
-man/man3/GnuPG::UserId.3p
+man/man3p/GnuPG::Fingerprint.3p
+man/man3p/GnuPG::Handles.3p
+man/man3p/GnuPG::Interface.3p
+man/man3p/GnuPG::Key.3p
+man/man3p/GnuPG::Options.3p
+man/man3p/GnuPG::PrimaryKey.3p
+man/man3p/GnuPG::PublicKey.3p
+man/man3p/GnuPG::SecretKey.3p
+man/man3p/GnuPG::Signature.3p
+man/man3p/GnuPG::SubKey.3p
+man/man3p/GnuPG::UserId.3p
 @dirrm libdata/perl5/site_perl/auto/GnuPG/Interface

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/01/08 20:54:56 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:04 espie Exp $
 libdata/perl5/site_perl/Date/Format.pm
 libdata/perl5/site_perl/Date/Language.pm
 libdata/perl5/site_perl/Date/Language/Austrian.pm
@@ -11,7 +11,7 @@ libdata/perl5/site_perl/Date/Language/Italian.pm
 libdata/perl5/site_perl/Date/Language/Norwegian.pm
 libdata/perl5/site_perl/Date/Parse.pm
 libdata/perl5/site_perl/Time/Zone.pm
-man/man3/Date::Format.3p
-man/man3/Date::Parse.3p
-man/man3/Time::Zone.3p
+man/man3p/Date::Format.3p
+man/man3p/Date::Parse.3p
+man/man3p/Time::Zone.3p
 @dirrm libdata/perl5/site_perl/Date/Language

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/27 08:44:37 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:03 espie Exp $
 bin/showtable
 libdata/perl5/site_perl/Data/ShowTable.pm
 man/man1/showtable.1
-man/man3/Data::ShowTable.3p
+man/man3p/Data::ShowTable.3p

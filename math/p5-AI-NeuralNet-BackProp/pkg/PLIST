@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/23 15:05:24 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:04 espie Exp $
 libdata/perl5/site_perl/AI/NeuralNet/BackProp.pm
-man/man3/AI::NeuralNet::BackProp.3p
+man/man3p/AI::NeuralNet::BackProp.3p
 @dirrm libdata/perl5/site_perl/AI/NeuralNet

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/01/23 06:14:17 shell Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:06 espie Exp $
 libdata/perl5/site_perl/XML/SAX.pm
 libdata/perl5/site_perl/XML/SAX/Base.pm
 libdata/perl5/site_perl/XML/SAX/DocumentLocator.pm
@@ -18,13 +18,13 @@ libdata/perl5/site_perl/XML/SAX/PurePerl/Reader/String.pm
 libdata/perl5/site_perl/XML/SAX/PurePerl/Reader/URI.pm
 libdata/perl5/site_perl/XML/SAX/PurePerl/XMLDecl.pm
 libdata/perl5/site_perl/XML/SAX/placeholder.pl
-man/man3/XML::SAX.3p
-man/man3/XML::SAX::Base.3p
-man/man3/XML::SAX::DocumentLocator.3p
-man/man3/XML::SAX::Exception.3p
-man/man3/XML::SAX::ParserFactory.3p
-man/man3/XML::SAX::PurePerl.3p
-man/man3/XML::SAX::PurePerl::Reader.3p
+man/man3p/XML::SAX.3p
+man/man3p/XML::SAX::Base.3p
+man/man3p/XML::SAX::DocumentLocator.3p
+man/man3p/XML::SAX::Exception.3p
+man/man3p/XML::SAX::ParserFactory.3p
+man/man3p/XML::SAX::PurePerl.3p
+man/man3p/XML::SAX::PurePerl::Reader.3p
 @dirrm libdata/perl5/site_perl/XML/SAX/PurePerl/Reader
 @dirrm libdata/perl5/site_perl/XML/SAX/PurePerl
 @dirrm libdata/perl5/site_perl/XML/SAX

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/20 14:00:26 heko Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:05 espie Exp $
 libdata/perl5/site_perl/Net/Ping/External.pm
-man/man3/Net::Ping::External.3p
+man/man3p/Net::Ping::External.3p
 @dirrm libdata/perl5/site_perl/Net/Ping

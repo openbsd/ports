@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/12/27 22:06:38 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/04/16 19:25:07 espie Exp $
 bin/GET
 bin/HEAD
 bin/POST
@@ -57,34 +57,34 @@ man/man1/lwp-download.1
 man/man1/lwp-mirror.1
 man/man1/lwp-request.1
 man/man1/lwp-rget.1
-man/man3/Bundle::LWP.3p
-man/man3/File::Listing.3p
-man/man3/HTML::Form.3p
-man/man3/HTTP::Cookies.3p
-man/man3/HTTP::Daemon.3p
-man/man3/HTTP::Date.3p
-man/man3/HTTP::Headers.3p
-man/man3/HTTP::Headers::Util.3p
-man/man3/HTTP::Message.3p
-man/man3/HTTP::Negotiate.3p
-man/man3/HTTP::Request.3p
-man/man3/HTTP::Request::Common.3p
-man/man3/HTTP::Response.3p
-man/man3/HTTP::Status.3p
-man/man3/LWP.3p
-man/man3/LWP::ConnCache.3p
-man/man3/LWP::Debug.3p
-man/man3/LWP::MediaTypes.3p
-man/man3/LWP::MemberMixin.3p
-man/man3/LWP::Protocol.3p
-man/man3/LWP::RobotUA.3p
-man/man3/LWP::Simple.3p
-man/man3/LWP::UserAgent.3p
-man/man3/Net::HTTP.3p
-man/man3/Net::HTTP::NB.3p
-man/man3/WWW::RobotRules.3p
-man/man3/WWW::RobotRules::AnyDBM_File.3p
-man/man3/lwpcook.3p
+man/man3p/Bundle::LWP.3p
+man/man3p/File::Listing.3p
+man/man3p/HTML::Form.3p
+man/man3p/HTTP::Cookies.3p
+man/man3p/HTTP::Daemon.3p
+man/man3p/HTTP::Date.3p
+man/man3p/HTTP::Headers.3p
+man/man3p/HTTP::Headers::Util.3p
+man/man3p/HTTP::Message.3p
+man/man3p/HTTP::Negotiate.3p
+man/man3p/HTTP::Request.3p
+man/man3p/HTTP::Request::Common.3p
+man/man3p/HTTP::Response.3p
+man/man3p/HTTP::Status.3p
+man/man3p/LWP.3p
+man/man3p/LWP::ConnCache.3p
+man/man3p/LWP::Debug.3p
+man/man3p/LWP::MediaTypes.3p
+man/man3p/LWP::MemberMixin.3p
+man/man3p/LWP::Protocol.3p
+man/man3p/LWP::RobotUA.3p
+man/man3p/LWP::Simple.3p
+man/man3p/LWP::UserAgent.3p
+man/man3p/Net::HTTP.3p
+man/man3p/Net::HTTP::NB.3p
+man/man3p/WWW::RobotRules.3p
+man/man3p/WWW::RobotRules::AnyDBM_File.3p
+man/man3p/lwpcook.3p
 @dirrm libdata/perl5/site_perl/WWW/RobotRules
 @dirrm libdata/perl5/site_perl/LWP/Protocol
 @dirrm libdata/perl5/site_perl/LWP/Authen

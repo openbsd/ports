@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/07 09:46:17 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:03 espie Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/String/CRC32.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/String/CRC32.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/String/CRC32/CRC32.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/String/CRC32/CRC32.so
-man/man3/String::CRC32.3p
+man/man3p/String::CRC32.3p
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/String/CRC32

@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/24 19:25:48 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:03 espie Exp $
 libdata/perl5/site_perl/Date/Handler.pm
 libdata/perl5/site_perl/Date/Handler.pod
 libdata/perl5/site_perl/Date/Handler/Constants.pm
 libdata/perl5/site_perl/Date/Handler/Delta.pm
 libdata/perl5/site_perl/Date/Handler/Range.pm
 libdata/perl5/site_perl/Date/Handler/Test.pm
-man/man3/Date::Handler.3p
-man/man3/Date::Handler::Delta.3p
-man/man3/Date::Handler::Range.3p
-man/man3/Date::Handler::Test.3p
+man/man3p/Date::Handler.3p
+man/man3p/Date::Handler::Delta.3p
+man/man3p/Date::Handler::Range.3p
+man/man3p/Date::Handler::Test.3p
 @dirrm libdata/perl5/site_perl/Date/Handler

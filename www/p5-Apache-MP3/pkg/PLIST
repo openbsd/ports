@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/08 19:02:03 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:06 espie Exp $
 libdata/perl5/site_perl/Apache/MP3.pm
 libdata/perl5/site_perl/Apache/MP3/Playlist.pm
 libdata/perl5/site_perl/Apache/MP3/Resample.pm
 libdata/perl5/site_perl/Apache/MP3/Sorted.pm
-man/man3/Apache::MP3.3p
-man/man3/Apache::MP3::Playlist.3p
-man/man3/Apache::MP3::Resample.3p
-man/man3/Apache::MP3::Sorted.3p
+man/man3p/Apache::MP3.3p
+man/man3p/Apache::MP3::Playlist.3p
+man/man3p/Apache::MP3::Resample.3p
+man/man3p/Apache::MP3::Sorted.3p
 share/examples/apache_mp3/apache_mp3.css
 share/examples/apache_mp3/apache_mp3_help.gif
 share/examples/apache_mp3/back.gif

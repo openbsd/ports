@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/12/05 07:49:28 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:06 espie Exp $
 libdata/perl5/site_perl/Text/Unidecode/x00.pm
 libdata/perl5/site_perl/Text/Unidecode/x01.pm
 libdata/perl5/site_perl/Text/Unidecode/x02.pm
@@ -180,5 +180,5 @@ libdata/perl5/site_perl/Text/Unidecode/xfd.pm
 libdata/perl5/site_perl/Text/Unidecode/xfe.pm
 libdata/perl5/site_perl/Text/Unidecode/xff.pm
 libdata/perl5/site_perl/Text/Unidecode.pm
-man/man3/Text::Unidecode.3p
+man/man3p/Text::Unidecode.3p
 @dirrm libdata/perl5/site_perl/Text/Unidecode

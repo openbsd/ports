@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/22 19:47:10 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:05 espie Exp $
 libdata/perl5/site_perl/News/Gateway.pm
 libdata/perl5/site_perl/News/Gateway.pod
 libdata/perl5/site_perl/auto/News/Gateway/anykeyword.al
@@ -20,7 +20,7 @@ libdata/perl5/site_perl/auto/News/Gateway/nobinaries.al
 libdata/perl5/site_perl/auto/News/Gateway/post.al
 libdata/perl5/site_perl/auto/News/Gateway/previoushop.al
 libdata/perl5/site_perl/auto/News/Gateway/whitelist.al
-man/man3/News::Gateway.3
+man/man3p/News::Gateway.3
 share/examples/p5-Gateway/listgate
 share/examples/p5-Gateway/listgate.m4
 share/examples/p5-Gateway/listgate.readme

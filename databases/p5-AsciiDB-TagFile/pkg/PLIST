@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/10/17 22:03:56 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/04/16 19:25:02 espie Exp $
 libdata/perl5/site_perl/AsciiDB/TagFile.pm
 libdata/perl5/site_perl/AsciiDB/TagRecord.pm
-man/man3/AsciiDB::TagFile.3p
+man/man3p/AsciiDB::TagFile.3p

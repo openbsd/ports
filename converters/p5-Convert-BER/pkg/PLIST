@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/10/25 09:25:26 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:02 espie Exp $
 libdata/perl5/site_perl/Convert/BER.pm
 libdata/perl5/site_perl/Convert/BER.pod
-man/man3/Convert::BER.3p
+man/man3p/Convert::BER.3p

@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/01/08 21:10:45 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:04 espie Exp $
 libdata/perl5/site_perl/Mail/Alias.pm
-man/man3/Mail::Alias.3p
+man/man3p/Mail::Alias.3p

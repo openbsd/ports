@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/21 04:13:51 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:05 espie Exp $
 bin/ipv4calc
 libdata/perl5/site_perl/Net/IPv4Addr.pm
 libdata/perl5/site_perl/auto/Net/IPv4Addr/autosplit.ix
 man/man1/ipv4calc.1
-man/man3/Net::IPv4Addr.3p
+man/man3p/Net::IPv4Addr.3p
 @dirrm libdata/perl5/site_perl/auto/Net/IPv4Addr

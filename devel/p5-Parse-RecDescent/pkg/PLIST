@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/12 16:57:08 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:03 espie Exp $
 libdata/perl5/site_perl/Parse/RecDescent.pm
 libdata/perl5/site_perl/Parse/RecDescent.pod
 libdata/perl5/site_perl/Text/Balanced.pm
 libdata/perl5/site_perl/Text/Balanced.pod
-man/man3/Parse::RecDescent.3p
-man/man3/Text::Balanced.3p
+man/man3p/Parse::RecDescent.3p
+man/man3p/Text::Balanced.3p

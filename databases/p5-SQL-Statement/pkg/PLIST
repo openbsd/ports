@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/20 13:06:07 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:02 espie Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SQL/Eval.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SQL/Statement.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SQL/Statement/Hash.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SQL/Statement/Statement.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SQL/Statement/Statement.so
-man/man3/SQL::Eval.3p
-man/man3/SQL::Statement.3p
+man/man3p/SQL::Eval.3p
+man/man3p/SQL::Statement.3p
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SQL/Statement
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SQL/Statement

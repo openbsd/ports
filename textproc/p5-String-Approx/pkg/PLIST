@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/15 02:12:17 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:06 espie Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/String/Approx.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/String/Approx/Approx.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/String/Approx/Approx.so
-man/man3/String::Approx.3p
+man/man3p/String::Approx.3p
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/String/Approx

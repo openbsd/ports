@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/06/07 17:12:12 shell Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:04 espie Exp $
 libdata/perl5/site_perl/MIME/Body.pm
 libdata/perl5/site_perl/MIME/Decoder.pm
 libdata/perl5/site_perl/MIME/Decoder/Base64.pm
@@ -20,27 +20,27 @@ libdata/perl5/site_perl/MIME/Parser/Results.pm
 libdata/perl5/site_perl/MIME/Tools.pm
 libdata/perl5/site_perl/MIME/WordDecoder.pm
 libdata/perl5/site_perl/MIME/Words.pm
-man/man3/MIME::Body.3p
-man/man3/MIME::Decoder.3p
-man/man3/MIME::Decoder::Base64.3p
-man/man3/MIME::Decoder::Binary.3p
-man/man3/MIME::Decoder::Gzip64.3p
-man/man3/MIME::Decoder::NBit.3p
-man/man3/MIME::Decoder::QuotedPrint.3p
-man/man3/MIME::Decoder::UU.3p
-man/man3/MIME::Entity.3p
-man/man3/MIME::Field::ConTraEnc.3p
-man/man3/MIME::Field::ContDisp.3p
-man/man3/MIME::Field::ContType.3p
-man/man3/MIME::Field::ParamVal.3p
-man/man3/MIME::Head.3p
-man/man3/MIME::Parser.3p
-man/man3/MIME::Parser::Filer.3p
-man/man3/MIME::Parser::Reader.3p
-man/man3/MIME::Parser::Results.3p
-man/man3/MIME::Tools.3p
-man/man3/MIME::WordDecoder.3p
-man/man3/MIME::Words.3p
+man/man3p/MIME::Body.3p
+man/man3p/MIME::Decoder.3p
+man/man3p/MIME::Decoder::Base64.3p
+man/man3p/MIME::Decoder::Binary.3p
+man/man3p/MIME::Decoder::Gzip64.3p
+man/man3p/MIME::Decoder::NBit.3p
+man/man3p/MIME::Decoder::QuotedPrint.3p
+man/man3p/MIME::Decoder::UU.3p
+man/man3p/MIME::Entity.3p
+man/man3p/MIME::Field::ConTraEnc.3p
+man/man3p/MIME::Field::ContDisp.3p
+man/man3p/MIME::Field::ContType.3p
+man/man3p/MIME::Field::ParamVal.3p
+man/man3p/MIME::Head.3p
+man/man3p/MIME::Parser.3p
+man/man3p/MIME::Parser::Filer.3p
+man/man3p/MIME::Parser::Reader.3p
+man/man3p/MIME::Parser::Results.3p
+man/man3p/MIME::Tools.3p
+man/man3p/MIME::WordDecoder.3p
+man/man3p/MIME::Words.3p
 @dirrm libdata/perl5/site_perl/MIME/Parser
 @dirrm libdata/perl5/site_perl/MIME/Field
 @dirrm libdata/perl5/site_perl/MIME/Decoder

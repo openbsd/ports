@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/05 23:13:46 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:06 espie Exp $
 libdata/perl5/site_perl/XML/Checker.pm
 libdata/perl5/site_perl/XML/Checker/DOM.pm
 libdata/perl5/site_perl/XML/Checker/Parser.pm
 libdata/perl5/site_perl/XML/Checker/patch
 libdata/perl5/site_perl/XML/DOM/ValParser.pm
-man/man3/XML::Checker.3p
-man/man3/XML::Checker::Parser.3p
-man/man3/XML::DOM::ValParser.3p
+man/man3p/XML::Checker.3p
+man/man3p/XML::Checker::Parser.3p
+man/man3p/XML::DOM::ValParser.3p
 @dirrm libdata/perl5/site_perl/XML/Checker

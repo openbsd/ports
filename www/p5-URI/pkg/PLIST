@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/01/08 21:09:04 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:07 espie Exp $
 libdata/perl5/site_perl/URI.pm
 libdata/perl5/site_perl/URI/Escape.pm
 libdata/perl5/site_perl/URI/Heuristic.pm
@@ -33,12 +33,12 @@ libdata/perl5/site_perl/URI/rlogin.pm
 libdata/perl5/site_perl/URI/rsync.pm
 libdata/perl5/site_perl/URI/snews.pm
 libdata/perl5/site_perl/URI/telnet.pm
-man/man3/URI.3p
-man/man3/URI::Escape.3p
-man/man3/URI::Heuristic.3p
-man/man3/URI::URL.3p
-man/man3/URI::WithBase.3p
-man/man3/URI::data.3p
-man/man3/URI::file.3p
-man/man3/URI::ldap.3p
+man/man3p/URI.3p
+man/man3p/URI::Escape.3p
+man/man3p/URI::Heuristic.3p
+man/man3p/URI::URL.3p
+man/man3p/URI::WithBase.3p
+man/man3p/URI::data.3p
+man/man3p/URI::file.3p
+man/man3p/URI::ldap.3p
 @dirrm libdata/perl5/site_perl/URI/file

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/12/26 14:39:21 shell Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/04/16 19:25:05 espie Exp $
 libdata/perl5/site_perl/Net/Cmd.pm
 libdata/perl5/site_perl/Net/Config.pm
 libdata/perl5/site_perl/Net/Domain.pm
@@ -15,13 +15,13 @@ libdata/perl5/site_perl/Net/SMTP.pm
 libdata/perl5/site_perl/Net/Time.pm
 libdata/perl5/site_perl/Net/libnet.cfg
 libdata/perl5/site_perl/Net/libnetFAQ.pod
-man/man3/Net::Cmd.3p
-man/man3/Net::Domain.3p
-man/man3/Net::FTP.3p
-man/man3/Net::NNTP.3p
-man/man3/Net::Netrc.3p
-man/man3/Net::POP3.3p
-man/man3/Net::SMTP.3p
-man/man3/Net::Time.3p
-man/man3/Net::libnetFAQ.3p
+man/man3p/Net::Cmd.3p
+man/man3p/Net::Domain.3p
+man/man3p/Net::FTP.3p
+man/man3p/Net::NNTP.3p
+man/man3p/Net::Netrc.3p
+man/man3p/Net::POP3.3p
+man/man3p/Net::SMTP.3p
+man/man3p/Net::Time.3p
+man/man3p/Net::libnetFAQ.3p
 @dirrm libdata/perl5/site_perl/Net/FTP

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/12/25 09:50:01 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/04/16 19:25:05 espie Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Digest/MD5.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Digest/MD5/MD5.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Digest/MD5/MD5.so
-man/man3/Digest::MD5.3p
+man/man3p/Digest::MD5.3p
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Digest/MD5

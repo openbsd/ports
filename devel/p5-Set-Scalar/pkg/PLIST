@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/20 14:24:00 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:03 espie Exp $
 libdata/perl5/site_perl/Set/Scalar/Base.pm
 libdata/perl5/site_perl/Set/Scalar/Null.pm
 libdata/perl5/site_perl/Set/Scalar/Real.pm
@@ -7,12 +7,12 @@ libdata/perl5/site_perl/Set/Scalar/Valued.pm
 libdata/perl5/site_perl/Set/Scalar/ValuedUniverse.pm
 libdata/perl5/site_perl/Set/Scalar/Virtual.pm
 libdata/perl5/site_perl/Set/Scalar.pm
-man/man3/Set::Scalar.3p
-man/man3/Set::Scalar::Base.3p
-man/man3/Set::Scalar::Null.3p
-man/man3/Set::Scalar::Real.3p
-man/man3/Set::Scalar::Universe.3p
-man/man3/Set::Scalar::Valued.3p
-man/man3/Set::Scalar::ValuedUniverse.3p
-man/man3/Set::Scalar::Virtual.3p
+man/man3p/Set::Scalar.3p
+man/man3p/Set::Scalar::Base.3p
+man/man3p/Set::Scalar::Null.3p
+man/man3p/Set::Scalar::Real.3p
+man/man3p/Set::Scalar::Universe.3p
+man/man3p/Set::Scalar::Valued.3p
+man/man3p/Set::Scalar::ValuedUniverse.3p
+man/man3p/Set::Scalar::Virtual.3p
 @dirrm libdata/perl5/site_perl/Set/Scalar

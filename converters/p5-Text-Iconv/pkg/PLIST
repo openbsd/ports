@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/18 03:58:41 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:02 espie Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Text/Iconv.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Text/Iconv/Iconv.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Text/Iconv/Iconv.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Text/Iconv/autosplit.ix
-man/man3/Text::Iconv.3p 
+man/man3p/Text::Iconv.3p 
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Text/Iconv

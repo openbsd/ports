@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/03/11 21:52:12 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/04/16 19:25:07 espie Exp $
 !%%gtkglarea%%
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Atoms.pm
@@ -56,13 +56,13 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gtk.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gtk.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/autosplit.ix
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/base/.packlist
-man/man3/Gtk.3p
-man/man3/Gtk::CListModel.3p
-man/man3/Gtk::Gdk::ImlibImage::reference.3p
-man/man3/Gtk::Gdk::Pixbuf::reference.3p
-man/man3/Gtk::cookbook.3p
-man/man3/Gtk::objects.3p
-man/man3/Gtk::reference.3p
+man/man3p/Gtk.3p
+man/man3p/Gtk::CListModel.3p
+man/man3p/Gtk::Gdk::ImlibImage::reference.3p
+man/man3p/Gtk::Gdk::Pixbuf::reference.3p
+man/man3p/Gtk::cookbook.3p
+man/man3p/Gtk::objects.3p
+man/man3p/Gtk::reference.3p
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/base
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gdk/Pixbuf
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gdk/ImlibImage

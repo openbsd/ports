@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/22 08:48:08 peter Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:03 espie Exp $
 libdata/perl5/site_perl/MLDBM/Sync.pm
 libdata/perl5/site_perl/MLDBM/Sync/SDBM_File.pm
-man/man3/MLDBM::Sync.3p
+man/man3p/MLDBM::Sync.3p
 @dirrm libdata/perl5/site_perl/MLDBM/Sync

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/12 09:04:15 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:03 espie Exp $
 libdata/perl5/site_perl/Class/Loader.pm
 libdata/perl5/site_perl/Class/LoaderTest.pm
-man/man3/Class::Loader.3p
+man/man3p/Class::Loader.3p

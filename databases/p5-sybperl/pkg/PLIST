@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/22 13:30:40 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:02 espie Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Sybase/BCP.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Sybase/CTlib.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Sybase/CTlib.pod
@@ -81,10 +81,10 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/ctutil.pl
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/sql.pl
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/sybperl.pl
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/sybutil.pl
-man/man3/Sybase::BCP.3p
-man/man3/Sybase::CTlib.3p
-man/man3/Sybase::DBlib.3p
-man/man3/Sybase::Sybperl.3p
+man/man3p/Sybase::BCP.3p
+man/man3p/Sybase::CTlib.3p
+man/man3p/Sybase::DBlib.3p
+man/man3p/Sybase::Sybperl.3p
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Sybase/Sybperl
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Sybase/DBlib
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Sybase/CTlib

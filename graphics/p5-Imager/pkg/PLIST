@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/06/04 22:28:54 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/04/16 19:25:04 espie Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Imager.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Imager/Color.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Imager/Expr.pm
@@ -9,14 +9,14 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Imager/Transform.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Imager/regmach.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Imager/Imager.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Imager/Imager.so
-man/man3/Imager.3p
-man/man3/Imager::Color.3p
-man/man3/Imager::Expr.3p
-man/man3/Imager::Expr::Assem.3p
-man/man3/Imager::Font.3p
-man/man3/Imager::Regops.3p
-man/man3/Imager::Transform.3p
-man/man3/Imager::regmach.3p
+man/man3p/Imager.3p
+man/man3p/Imager::Color.3p
+man/man3p/Imager::Expr.3p
+man/man3p/Imager::Expr::Assem.3p
+man/man3p/Imager::Font.3p
+man/man3p/Imager::Regops.3p
+man/man3p/Imager::Transform.3p
+man/man3p/Imager::regmach.3p
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Imager
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Imager/Expr
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Imager

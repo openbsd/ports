@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/02/20 05:32:18 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:04 espie Exp $
 libdata/perl5/site_perl/Locale/Constants.pm
 libdata/perl5/site_perl/Locale/Constants.pod
 libdata/perl5/site_perl/Locale/Country.pm
@@ -9,8 +9,8 @@ libdata/perl5/site_perl/Locale/Language.pm
 libdata/perl5/site_perl/Locale/Language.pod
 libdata/perl5/site_perl/Locale/Script.pm
 libdata/perl5/site_perl/Locale/Script.pod
-man/man3/Locale::Constants.3p
-man/man3/Locale::Country.3p
-man/man3/Locale::Currency.3p
-man/man3/Locale::Language.3p
-man/man3/Locale::Script.3p
+man/man3p/Locale::Constants.3p
+man/man3p/Locale::Country.3p
+man/man3p/Locale::Currency.3p
+man/man3p/Locale::Language.3p
+man/man3p/Locale::Script.3p

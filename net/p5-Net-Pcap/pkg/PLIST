@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/05/10 19:20:49 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/04/16 19:25:05 espie Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Net/Pcap.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/Pcap/Pcap.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/Pcap/Pcap.so
-man/man3/Net::Pcap.3p
+man/man3p/Net::Pcap.3p
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/Pcap

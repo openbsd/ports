@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/26 01:01:38 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:06 espie Exp $
 bin/xpath
 libdata/perl5/site_perl/XML/XPath.pm
 libdata/perl5/site_perl/XML/XPath/Boolean.pm
@@ -22,20 +22,20 @@ libdata/perl5/site_perl/XML/XPath/Root.pm
 libdata/perl5/site_perl/XML/XPath/Step.pm
 libdata/perl5/site_perl/XML/XPath/Variable.pm
 libdata/perl5/site_perl/XML/XPath/XMLParser.pm
-man/man3/XML::XPath.3p
-man/man3/XML::XPath::Boolean.3p
-man/man3/XML::XPath::Builder.3p
-man/man3/XML::XPath::Literal.3p
-man/man3/XML::XPath::Node.3p
-man/man3/XML::XPath::Node::Attribute.3p
-man/man3/XML::XPath::Node::Comment.3p
-man/man3/XML::XPath::Node::Element.3p
-man/man3/XML::XPath::Node::Namespace.3p
-man/man3/XML::XPath::Node::PI.3p
-man/man3/XML::XPath::Node::Text.3p
-man/man3/XML::XPath::NodeSet.3p
-man/man3/XML::XPath::Number.3p
-man/man3/XML::XPath::PerlSAX.3p
-man/man3/XML::XPath::XMLParser.3p
+man/man3p/XML::XPath.3p
+man/man3p/XML::XPath::Boolean.3p
+man/man3p/XML::XPath::Builder.3p
+man/man3p/XML::XPath::Literal.3p
+man/man3p/XML::XPath::Node.3p
+man/man3p/XML::XPath::Node::Attribute.3p
+man/man3p/XML::XPath::Node::Comment.3p
+man/man3p/XML::XPath::Node::Element.3p
+man/man3p/XML::XPath::Node::Namespace.3p
+man/man3p/XML::XPath::Node::PI.3p
+man/man3p/XML::XPath::Node::Text.3p
+man/man3p/XML::XPath::NodeSet.3p
+man/man3p/XML::XPath::Number.3p
+man/man3p/XML::XPath::PerlSAX.3p
+man/man3p/XML::XPath::XMLParser.3p
 @dirrm libdata/perl5/site_perl/XML/XPath/Node
 @dirrm libdata/perl5/site_perl/XML/XPath

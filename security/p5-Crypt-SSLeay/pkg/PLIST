@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/05/10 19:20:50 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:05 espie Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Crypt/SSLeay.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Crypt/SSLeay/CTX.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Crypt/SSLeay/Conn.pm
@@ -8,6 +8,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Crypt/SSLeay/X509.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Net/SSL.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Crypt/SSLeay/SSLeay.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Crypt/SSLeay/SSLeay.so
-man/man3/Crypt::SSLeay.3p
+man/man3p/Crypt::SSLeay.3p
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Crypt/SSLeay
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Crypt/SSLeay

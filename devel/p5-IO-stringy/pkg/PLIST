@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/08/21 21:22:07 shell Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/04/16 19:25:03 espie Exp $
 libdata/perl5/site_perl/IO/AtomicFile.pm
 libdata/perl5/site_perl/IO/InnerFile.pm
 libdata/perl5/site_perl/IO/Lines.pm
@@ -8,14 +8,14 @@ libdata/perl5/site_perl/IO/ScalarArray.pm
 libdata/perl5/site_perl/IO/Stringy.pm
 libdata/perl5/site_perl/IO/Wrap.pm
 libdata/perl5/site_perl/IO/WrapTie.pm
-man/man3/IO::AtomicFile.3p
-man/man3/IO::InnerFile.3p
-man/man3/IO::Lines.3p
-man/man3/IO::Scalar.3p
-man/man3/IO::ScalarArray.3p
-man/man3/IO::Stringy.3p
-man/man3/IO::Wrap.3p
-man/man3/IO::WrapTie.3p
+man/man3p/IO::AtomicFile.3p
+man/man3p/IO::InnerFile.3p
+man/man3p/IO::Lines.3p
+man/man3p/IO::Scalar.3p
+man/man3p/IO::ScalarArray.3p
+man/man3p/IO::Stringy.3p
+man/man3p/IO::Wrap.3p
+man/man3p/IO::WrapTie.3p
 share/doc/p5-IO-stringy/IO/AtomicFile.pm.html
 share/doc/p5-IO-stringy/IO/InnerFile.pm.html
 share/doc/p5-IO-stringy/IO/Lines.pm.html

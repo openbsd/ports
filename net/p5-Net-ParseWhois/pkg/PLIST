@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/13 18:06:20 peter Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:05 espie Exp $
 libdata/perl5/site_perl/Net/ParseWhois.pm
 libdata/perl5/site_perl/Net/ParseWhois/Domain.pm
 libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar.pm
@@ -11,7 +11,7 @@ libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/OpenSRS.pm
 libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/Register.pm
 libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/Registrars.pm
 libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar/Unknown.pm
-man/man3/Net::ParseWhois.3p
+man/man3p/Net::ParseWhois.3p
 @dirrm libdata/perl5/site_perl/Net/ParseWhois/Domain/Registrar
 @dirrm libdata/perl5/site_perl/Net/ParseWhois/Domain
 @dirrm libdata/perl5/site_perl/Net/ParseWhois

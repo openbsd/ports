@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/29 21:24:21 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:03 espie Exp $
 libdata/perl5/site_perl/Net/Server.pm
 libdata/perl5/site_perl/Net/Server/Daemonize.pm
 libdata/perl5/site_perl/Net/Server/Fork.pm
@@ -13,19 +13,19 @@ libdata/perl5/site_perl/Net/Server/Proto/UDP.pm
 libdata/perl5/site_perl/Net/Server/Proto/UNIX.pm
 libdata/perl5/site_perl/Net/Server/SIG.pm
 libdata/perl5/site_perl/Net/Server/Single.pm
-man/man3/Net::Server.3p
-man/man3/Net::Server::Daemonize.3p
-man/man3/Net::Server::Fork.3p
-man/man3/Net::Server::INET.3p
-man/man3/Net::Server::MultiType.3p
-man/man3/Net::Server::PreFork.3p
-man/man3/Net::Server::PreForkSimple.3p
-man/man3/Net::Server::Proto.3p
-man/man3/Net::Server::Proto::SSL.3p
-man/man3/Net::Server::Proto::TCP.3p
-man/man3/Net::Server::Proto::UDP.3p
-man/man3/Net::Server::Proto::UNIX.3p
-man/man3/Net::Server::SIG.3p
-man/man3/Net::Server::Single.3p
+man/man3p/Net::Server.3p
+man/man3p/Net::Server::Daemonize.3p
+man/man3p/Net::Server::Fork.3p
+man/man3p/Net::Server::INET.3p
+man/man3p/Net::Server::MultiType.3p
+man/man3p/Net::Server::PreFork.3p
+man/man3p/Net::Server::PreForkSimple.3p
+man/man3p/Net::Server::Proto.3p
+man/man3p/Net::Server::Proto::SSL.3p
+man/man3p/Net::Server::Proto::TCP.3p
+man/man3p/Net::Server::Proto::UDP.3p
+man/man3p/Net::Server::Proto::UNIX.3p
+man/man3p/Net::Server::SIG.3p
+man/man3p/Net::Server::Single.3p
 @dirrm libdata/perl5/site_perl/Net/Server/Proto
 @dirrm libdata/perl5/site_perl/Net/Server

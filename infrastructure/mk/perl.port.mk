@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.3 2002/04/16 17:35:21 espie Exp $
+# $OpenBSD: perl.port.mk,v 1.4 2002/04/16 19:25:07 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -15,7 +15,7 @@ MODPERL_configure= \
 		INSTALLPRIVLIB='$${${DESTDIRNAME}}/usr/./libdata/perl5' \
 		INSTALLARCHLIB="\$${INSTALLPRIVLIB}/$$arch" \
 		INSTALLMAN1DIR='$${${DESTDIRNAME}}${PREFIX}/man/man1' \
-		INSTALLMAN3DIR='$${${DESTDIRNAME}}${PREFIX}/man/man3' \
+		INSTALLMAN3DIR='$${${DESTDIRNAME}}${PREFIX}/man/man3p' \
 		INSTALLBIN='$${PREFIX}/bin' \
 		INSTALLSCRIPT='$${INSTALLBIN}' ${CONFIGURE_ARGS}
 

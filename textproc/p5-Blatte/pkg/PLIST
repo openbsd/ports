@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/14 16:05:19 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:05 espie Exp $
 bin/blatte
 libdata/perl5/site_perl/Blatte.pm
 libdata/perl5/site_perl/Blatte/Builtins.pm
@@ -7,10 +7,10 @@ libdata/perl5/site_perl/Blatte/Parser.pm
 libdata/perl5/site_perl/Blatte/Syntax.pm
 libdata/perl5/site_perl/Blatte/Ws.pm
 man/man1/blatte.1
-man/man3/Blatte.3p
-man/man3/Blatte::Builtins.3p
-man/man3/Blatte::Compiler.3p
-man/man3/Blatte::Parser.3p
-man/man3/Blatte::Syntax.3p
-man/man3/Blatte::Ws.3p
+man/man3p/Blatte.3p
+man/man3p/Blatte::Builtins.3p
+man/man3p/Blatte::Compiler.3p
+man/man3p/Blatte::Parser.3p
+man/man3p/Blatte::Syntax.3p
+man/man3p/Blatte::Ws.3p
 @dirrm libdata/perl5/site_perl/Blatte

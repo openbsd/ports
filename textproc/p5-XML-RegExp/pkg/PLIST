@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/05 14:53:27 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:06 espie Exp $
 libdata/perl5/site_perl/XML/RegExp.pm
-man/man3/XML::RegExp.3p
+man/man3p/XML::RegExp.3p

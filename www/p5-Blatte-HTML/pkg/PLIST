@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/14 16:25:22 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:06 espie Exp $
 bin/blatte-html
 libdata/perl5/site_perl/Blatte/HTML.pm
 man/man1/blatte-html.1
-man/man3/Blatte::HTML.3p
+man/man3p/Blatte::HTML.3p

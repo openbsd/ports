@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/10/29 19:54:22 shell Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:02 espie Exp $
 libdata/perl5/site_perl/Authen/SASL.pm
 libdata/perl5/site_perl/Authen/SASL.pod
 libdata/perl5/site_perl/Authen/SASL/CRAM_MD5.pm
@@ -41,32 +41,32 @@ libdata/perl5/site_perl/Net/LDAP/Search.pod
 libdata/perl5/site_perl/Net/LDAP/Security.pod
 libdata/perl5/site_perl/Net/LDAP/Util.pm
 libdata/perl5/site_perl/Net/LDAPS.pm
-man/man3/Authen::SASL.3p
-man/man3/Bundle::Net::LDAP.3p
-man/man3/Net::LDAP.3p
-man/man3/Net::LDAP::Constant.3p
-man/man3/Net::LDAP::Control.3p
-man/man3/Net::LDAP::Control::Paged.3p
-man/man3/Net::LDAP::Control::ProxyAuth.3p
-man/man3/Net::LDAP::Control::Sort.3p
-man/man3/Net::LDAP::Control::SortResult.3p
-man/man3/Net::LDAP::Control::VLV.3p
-man/man3/Net::LDAP::Control::VLVResponse.3p
-man/man3/Net::LDAP::DSML.3p
-man/man3/Net::LDAP::Entry.3p
-man/man3/Net::LDAP::Examples.3p
-man/man3/Net::LDAP::Extra.3p
-man/man3/Net::LDAP::FAQ.3p
-man/man3/Net::LDAP::Filter.3p
-man/man3/Net::LDAP::LDIF.3p
-man/man3/Net::LDAP::Message.3p
-man/man3/Net::LDAP::RFC.3p
-man/man3/Net::LDAP::Reference.3p
-man/man3/Net::LDAP::Schema.3p
-man/man3/Net::LDAP::Search.3p
-man/man3/Net::LDAP::Security.3p
-man/man3/Net::LDAP::Util.3p
-man/man3/Net::LDAPS.3p
+man/man3p/Authen::SASL.3p
+man/man3p/Bundle::Net::LDAP.3p
+man/man3p/Net::LDAP.3p
+man/man3p/Net::LDAP::Constant.3p
+man/man3p/Net::LDAP::Control.3p
+man/man3p/Net::LDAP::Control::Paged.3p
+man/man3p/Net::LDAP::Control::ProxyAuth.3p
+man/man3p/Net::LDAP::Control::Sort.3p
+man/man3p/Net::LDAP::Control::SortResult.3p
+man/man3p/Net::LDAP::Control::VLV.3p
+man/man3p/Net::LDAP::Control::VLVResponse.3p
+man/man3p/Net::LDAP::DSML.3p
+man/man3p/Net::LDAP::Entry.3p
+man/man3p/Net::LDAP::Examples.3p
+man/man3p/Net::LDAP::Extra.3p
+man/man3p/Net::LDAP::FAQ.3p
+man/man3p/Net::LDAP::Filter.3p
+man/man3p/Net::LDAP::LDIF.3p
+man/man3p/Net::LDAP::Message.3p
+man/man3p/Net::LDAP::RFC.3p
+man/man3p/Net::LDAP::Reference.3p
+man/man3p/Net::LDAP::Schema.3p
+man/man3p/Net::LDAP::Search.3p
+man/man3p/Net::LDAP::Security.3p
+man/man3p/Net::LDAP::Util.3p
+man/man3p/Net::LDAPS.3p
 @dirrm libdata/perl5/site_perl/Net/LDAP/DSML
 @dirrm libdata/perl5/site_perl/Net/LDAP/Control
 @dirrm libdata/perl5/site_perl/Net/LDAP
