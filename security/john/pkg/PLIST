@@ -1,15 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.4 2000/09/12 10:38:54 brad Exp $
 bin/john
 bin/mailer
 bin/unshadow
 bin/unafs
 bin/unique
-share/john/john.ini
-share/john/all.chr
-share/john/alpha.chr
-share/john/digits.chr
-share/john/lanman.chr
-share/john/password.lst
-@dirrm share/john
 share/doc/john/CONFIG
 share/doc/john/CREDITS
 share/doc/john/EXAMPLES
@@ -21,4 +15,11 @@ share/doc/john/NEWS
 share/doc/john/OPTIONS
 share/doc/john/README
 share/doc/john/RULES
+share/john/john.ini
+share/john/all.chr
+share/john/alpha.chr
+share/john/digits.chr
+share/john/lanman.chr
+share/john/password.lst
 @dirrm share/doc/john
+@dirrm share/john
