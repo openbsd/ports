@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2004/12/30 19:04:22 alek Exp $
+# $OpenBSD: Makefile,v 1.35 2005/01/11 07:16:01 sturm Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 # $RuOBSD: Makefile,v 1.4 2002/05/18 04:21:36 form Exp $
 
@@ -12,11 +12,6 @@ MASTER_SITES=		ftp://ftp.xfmail.org/pub/xfmail/release/${V}/source/
 EXTRACT_SUFX=		.tar.bz2
 
 HOMEPAGE=		http://www.xfmail.org/
-
-AUTOCONF_VERSION=	2.59
-BUILD_DEPENDS=		::devel/autoconf/${AUTOCONF_VERSION} \
-			::devel/metaauto \
-			::devel/automake
 
 LIB_DEPENDS=		forms::x11/xforms \
 			jpeg.62::graphics/jpeg \
@@ -32,7 +27,11 @@ WANTLIB=		GL ICE SM X11 Xext Xpm c m stdc++
 USE_X11=		Yes
 USE_LIBTOOL=	Yes
 USE_GMAKE=		Yes
-CONFIGURE_STYLE=	gnu
+
+AUTOCONF_VERSION=	2.59
+# doesn't work otherwise
+BUILD_DEPENDS=		::devel/autoconf/${AUTOCONF_VERSION}
+CONFIGURE_STYLE=	automake
 CONFIGURE_ARGS=		--without-nas-sound
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
@@ -49,6 +48,7 @@ CONFIGURE_ARGS+=	--without-esd-sound
 .endif
 
 pre-configure:
-	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} sh autogen.sh
+	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} sh autogen.sh
 
 .include <bsd.port.mk>

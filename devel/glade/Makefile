@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2004/11/23 11:22:02 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2005/01/11 07:16:01 sturm Exp $
 
 COMMENT=		"free user interface builder for GTK+ and GNOME"
 
 DISTNAME=		glade-0.6.4
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://glade.gnome.org/
@@ -13,7 +14,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
 BUILD_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper
-RUN_DEPENDS=		:automake->=1.4:devel/automake \
+RUN_DEPENDS=		:automake->=1.4:devel/automake/1.4 \
 			:autoconf->=2.13:devel/autoconf/2.13 \
 			::devel/metaauto \
 			:scrollkeeper->=0.3.12:textproc/scrollkeeper

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/28 22:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/01/11 07:16:01 sturm Exp $
 
 COMMENT=	"Zangband (Zelazny Angband) with color, X11 support"
 
@@ -15,14 +15,11 @@ WANTLIB=		c ncurses
 
 HOMEPAGE=		http://www.zangband.org/
 
-AUTOCONF_VERSION=	2.13
-BUILD_DEPENDS=  	::devel/autoconf/${AUTOCONF_VERSION} \
-			::devel/metaauto \
-	                ::devel/automake
-
 USE_GMAKE=		Yes
 MAKE_ENV=		CC="${CC}" CFLAGS="${CFLAGS}"
-CONFIGURE_STYLE=	gnu
+
+AUTOCONF_VERSION=	2.13
+CONFIGURE_STYLE=	autoconf automake
 CONFIGURE_ENV=		TRUEPREFIX="${TRUEPREFIX}"
 
 WRKDIST=		${WRKDIR}/zangband
@@ -39,7 +36,8 @@ CONFIGURE_ARGS+=	--without-x
 .endif
 
 pre-configure:
-	@cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} ${WRKSRC}/bootstrap
+	@cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ${WRKSRC}/bootstrap
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zangband

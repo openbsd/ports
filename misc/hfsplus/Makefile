@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/07/23 04:30:26 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2005/01/11 07:16:01 sturm Exp $
 
 COMMENT=	"hfsplus filesystem access tool"
 
@@ -19,9 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
 AUTOCONF_VERSION=	2.59
-BUILD_DEPENDS=	::devel/autoconf/${AUTOCONF_VERSION} \
-		::devel/metaauto \
-		::devel/automake
+BUILD_DEPENDS=	::devel/autoconf/${AUTOCONF_VERSION}
 LIB_DEPENDS=	utf8::misc/libutf8 
 
 USE_GMAKE=	Yes
@@ -30,13 +28,15 @@ HOMEPAGE=	http://ftp.penguinppc.org/projects/hfsplus/
 MASTER_SITES=	http://ftp.penguinppc.org/projects/hfsplus/
 
 # actually uses automake/autoheader, but that is done in pre-configure now
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=automake
 CONFIGURE_ENV=	LIBS="-lutf8" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}
 
 pre-configure:
-	@cd ${WRKDIST} && AUTOCONF_VERSION=${AUTOCONF_VERSION} ${MAKE_PROGRAM} -f Makefile.cvs all
+	@cd ${WRKDIST} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		${MAKE_PROGRAM} -f Makefile.cvs all
 
 .include <bsd.port.mk>
