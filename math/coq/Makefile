@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/18 09:40:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2003/12/31 17:07:26 sturm Exp $
 
 COMMENT=		"proof assistant based on a typed lambda calculus"
 
 DISTNAME=		coq-7.3.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		math
 HOMEPAGE=		http://coq.inria.fr/
 
@@ -23,6 +24,7 @@ DISTFILES=		${DISTNAME}.tar.gz \
 			Reference-Manual-all.ps.gz:0 \
 			library.tar.gz:1 \
 			RecTutorial.v.ps:2
+PATCHFILES=		patch-coq-7.3.1-ocaml-3.07
 
 IGNOREFILES=		doc-html.tar.gz
 

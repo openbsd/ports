@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_Makefile_in,v 1.1 2003/06/29 07:57:18 sturm Exp $
---- config/Makefile.in.orig	Thu Jun  5 09:32:27 2003
-+++ config/Makefile.in	Tue Jun 24 23:18:49 2003
-@@ -450,6 +450,8 @@ uninstall::
+$OpenBSD: patch-config_Makefile_in,v 1.2 2003/12/31 17:06:42 sturm Exp $
+--- config/Makefile.in.orig	2003-10-12 20:41:28.000000000 +0200
++++ config/Makefile.in	2003-12-31 16:48:40.000000000 +0100
+@@ -451,6 +451,8 @@ uninstall::
  	rm -f $(BINDIR)/mlnet
  	rm -f $(BINDIR)/mlgui
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-config_Makefile_in,v 1.1 2003/06/29 07:57:18 sturm Exp $
  install:: opt 
  	mkdir -p $(prefix)/bin
  	if test -e mlnet; then \
-@@ -459,7 +461,7 @@ install:: opt 
+@@ -460,7 +462,7 @@ install:: opt 
               done; \
           fi
  	if test -e mlgui; then \
@@ -19,7 +19,7 @@ $OpenBSD: patch-config_Makefile_in,v 1.1 2003/06/29 07:57:18 sturm Exp $
               rm -f $(prefix)/bin/mldonkey_gui; cp -f mlgui $(prefix)/bin/mldonkey_gui; \
           fi
  	if test -e mlnet+gui; then \
-@@ -469,9 +471,25 @@ install:: opt 
+@@ -470,9 +472,25 @@ install:: opt 
               done; \
           fi
  	if test -e mlim; then \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/12/09 11:07:06 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2003/12/31 17:06:42 sturm Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--enable-ocamlver=3.07
 
 HOMEPAGE=http://savannah.nongnu.org/projects/mldonkey/
 
@@ -24,6 +25,7 @@ MODULES=ocaml
 BUILD_DEPENDS=::x11/lablgtk
 LIB_DEPENDS=gdk.1,gtk.1::x11/gtk+
 FAKE_FLAGS=prefix=${DESTDIR}${PREFIX} MODOCAML_NATIVE=${MODOCAML_NATIVE}
+NO_REGRESS=Yes
 
 post-install:
 	mkdir -p ${PREFIX}/share/mldonkey
