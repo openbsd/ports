@@ -1,0 +1,30 @@
+$OpenBSD: patch-aclocal_m4,v 1.1.1.1 2001/08/27 14:38:24 espie Exp $
+--- aclocal.m4.orig	Mon Aug  6 03:26:32 2001
++++ aclocal.m4	Mon Aug 20 01:09:01 2001
+@@ -1,4 +1,4 @@
+-dnl aclocal.m4 generated automatically by aclocal 1.4
++dnl aclocal.m4 generated automatically by aclocal 1.4-p4
+ 
+ dnl Copyright (C) 1994, 1995-8, 1999 Free Software Foundation, Inc.
+ dnl This file is free software; the Free Software Foundation
+@@ -4722,19 +4722,7 @@ netbsd*)
+   ;;
+ 
+ openbsd* )
+-  if echo __ELF__ | $CC -E - | grep __ELF__ > /dev/null; then
+-    case "$host_cpu" in
+-    i*86 )
+-      changequote(,)dnl
+-      lt_cv_deplibs_check_method='file_magic OpenBSD/i[3-9]86 demand paged shared library'
+-      changequote([, ])dnl
+-      lt_cv_file_magic_cmd=/usr/bin/file
+-      lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
+-      ;;
+-    esac
+-  else
+-    lt_cv_deplibs_check_method=pass_all
+-  fi
++  lt_cv_deplibs_check_method=pass_all
+   ;;
+ 
+ newsos6)
