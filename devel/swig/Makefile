@@ -1,17 +1,15 @@
-# OpenBSD makefile for:    SWIG
-# Version required:     1.1b5p1
-# Date created:         1 Dec 1997
-# Whom:                 ejovi
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/01 22:23:25 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/08 18:49:04 marc Exp $
 #
 
 DISTNAME=	swig1.1
 PKGNAME=	swig-1.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.cs.utah.edu/pub/beazley/SWIG/
+
+BROKEN=		"newer version available"
 
 MAINTAINER=	joey@OpenBSD.ORG
+
+MASTER_SITES=	ftp://ftp.cs.utah.edu/pub/beazley/SWIG/
 
 WRKSRC=		${WRKDIR}/SWIG1.1
 GNU_CONFIGURE=	yes

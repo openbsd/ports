@@ -1,17 +1,15 @@
-# OpenBSD makefile for:    S-Lang library
-# Version required:     0.99-38
-# Date created:         19 November 1997
-# Whom:                 todd@OpenBSD.org
-#
-# $OpenBSD: Makefile,v 1.3 1998/02/10 10:45:16 niklas Exp $
+# $OpenBSD: Makefile,v 1.4 1998/10/08 18:47:14 marc Exp $
 #
 
 DISTNAME=       slang0.99-38
 PKGNAME=        libslang-0.99.38
 CATEGORIES=	devel
-MASTER_SITES=   ftp://space.mit.edu/pub/davis/slang/
+
+BROKEN=		"newer version available"
 
 MAINTAINER=     todd@OpenBSD.org
+
+MASTER_SITES=   ftp://space.mit.edu/pub/davis/slang/
 
 GNU_CONFIGURE=  yes
 ALL_TARGET=     all
