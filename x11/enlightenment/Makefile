@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.4 2000/01/20 04:54:03 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/01/21 12:25:36 kevlo Exp $
 
-DISTNAME=	enlightenment-0.15.5
+DISTNAME=	enlightenment-0.16.3
 CATEGORIES=     x11
 MASTER_SITES=	ftp://www.rasterman.com/pub/enlightenment/enlightenment/
+		ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/
 
 MAINTAINER=	op21@squish.org
 
-LIB_DEPENDS=	esd.2.15:${PORTSDIR}/audio/esound \
-		Fnlib.0.4:${PORTSDIR}/graphics/fnlib \
+LIB_DEPENDS=	esd.2.16:${PORTSDIR}/audio/esound \
+		Fnlib.0.5:${PORTSDIR}/graphics/fnlib \
 		gif.4.1:${PORTSDIR}/graphics/giflib \
 		Imlib.19:${PORTSDIR}/graphics/imlib \
 		tiff.35:${PORTSDIR}/graphics/tiff \
 		ttf.1.3:${PORTSDIR}/print/freetype \
-		ghttp:${PORTSDIR}/www/libghttp
+		ghttp.1:${PORTSDIR}/www/libghttp
 
 USE_X11=	yes 
 USE_GMAKE=	yes

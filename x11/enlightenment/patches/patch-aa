@@ -1,11 +1,11 @@
---- econfig.h.orig	Sun Apr 18 23:35:10 1999
-+++ econfig.h	Sun Apr 18 23:35:39 1999
-@@ -58,7 +58,7 @@
- #define HAVE_STRCASECMP 1
+--- dox/dox.h.orig	Thu Jan 20 00:01:45 2000
++++ dox/dox.h	Thu Jan 20 00:02:04 2000
+@@ -53,7 +53,7 @@
+ #include <sys/resource.h>
+ #include <sys/ipc.h>
+ #include <sys/shm.h>
+-#include <freetype.h>
++#include <freetype/freetype.h>
  
- /* Define if you have the <alloca.h> header file.  */
--#define HAVE_ALLOCA_H 1
-+/* #undef HAVE_ALLOCA_H */
+ #define FILEPATH_LEN_MAX 4096
  
- /* Define if you have the Fridge library (-lFridge).  */
- /* #undef HAVE_LIBFRIDGE */
