@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/02/05 03:56:58 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2000/02/10 10:37:59 espie Exp $
 
 DISTNAME=       libpng-1.0.3
 PKGNAME=        png-1.0.3
@@ -36,5 +36,5 @@ post-install:
 # apply one more patch.
 post-patch:
 .if defined(NO_SHARED_LIBS)
-	@(cd ${DISTDIR}; patch ${PATCH_DIST_ARGS} < ${FILESDIR}/patch)
+	@cd ${DISTDIR}; patch ${PATCH_DIST_ARGS} < ${FILESDIR}/patch
 .endif
