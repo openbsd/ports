@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/07/19 18:18:07 jolan Exp $
---- configure.orig	Fri Apr 18 19:04:16 2003
-+++ configure	Thu Jul  3 23:24:51 2003
-@@ -3021,7 +3021,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+$OpenBSD: patch-configure,v 1.2 2003/07/28 06:07:03 jolan Exp $
+--- configure.orig	2003-07-26 10:37:43.000000000 -0500
++++ configure	2003-07-28 00:25:08.000000000 -0500
+@@ -3295,7 +3295,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -9,8 +9,8 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/07/19 18:18:07 jolan Exp $
 +  ac_cv_try_cflags_ok=no
  else
    echo "$as_me: failed program was:" >&5
- cat conftest.$ac_ext >&5
-@@ -3078,7 +3078,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -3348,7 +3348,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -18,8 +18,8 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/07/19 18:18:07 jolan Exp $
 +  ac_cv_try_cflags_ok=no
  else
    echo "$as_me: failed program was:" >&5
- cat conftest.$ac_ext >&5
-@@ -3137,7 +3137,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -3410,7 +3410,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -27,8 +27,8 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/07/19 18:18:07 jolan Exp $
 +  ac_cv_try_cflags_ok=no
  else
    echo "$as_me: failed program was:" >&5
- cat conftest.$ac_ext >&5
-@@ -3486,7 +3486,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -3474,7 +3474,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -36,8 +36,8 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/07/19 18:18:07 jolan Exp $
 +  ac_cv_try_cflags_ok=no
  else
    echo "$as_me: failed program was:" >&5
- cat conftest.$ac_ext >&5
-@@ -3536,7 +3536,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -3882,7 +3882,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -45,8 +45,8 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/07/19 18:18:07 jolan Exp $
 +  ac_cv_try_cflags_ok=no
  else
    echo "$as_me: failed program was:" >&5
- cat conftest.$ac_ext >&5
-@@ -3581,7 +3581,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -3937,7 +3937,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -54,8 +54,8 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/07/19 18:18:07 jolan Exp $
 +  ac_cv_try_cflags_ok=no
  else
    echo "$as_me: failed program was:" >&5
- cat conftest.$ac_ext >&5
-@@ -3642,7 +3642,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -3987,7 +3987,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -63,8 +63,8 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/07/19 18:18:07 jolan Exp $
 +  ac_cv_try_cflags_ok=no
  else
    echo "$as_me: failed program was:" >&5
- cat conftest.$ac_ext >&5
-@@ -7612,7 +7612,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -4053,7 +4053,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -72,4 +72,13 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/07/19 18:18:07 jolan Exp $
 +  ac_cv_try_cflags_ok=no
  else
    echo "$as_me: failed program was:" >&5
- cat conftest.$ac_ext >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -12330,7 +12330,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  ac_cv_try_cflags_ok=yes
++  ac_cv_try_cflags_ok=no
+ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5

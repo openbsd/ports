@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/19 18:18:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/28 06:07:03 jolan Exp $
 
 COMMENT=	"free MPEG-2 video stream decoder"
 DISTNAME=	mpeg2dec-20030612
-PKGNAME=	libmpeg2-20030612
+PKGNAME=	libmpeg2-20030612p0
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/0.6.0/contrib/
