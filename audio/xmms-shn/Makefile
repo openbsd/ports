@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/01/31 13:21:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/01/31 13:47:28 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}source/
 
 LIB_DEPENDS=	xmms.2::audio/xmms \
-		gtk.1.2,gdk.1.2::x11/gtk+
+		gthread.1.2::devel/glib
 
 CONFIGURE_STYLE= gnu
 
