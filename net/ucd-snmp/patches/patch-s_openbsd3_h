@@ -1,0 +1,9 @@
+$OpenBSD: patch-s_openbsd3_h,v 1.1 2003/01/24 20:06:57 henning Exp $
+--- s/openbsd3.h.orig	Fri Jan 24 19:40:18 2003
++++ s/openbsd3.h	Fri Jan 24 19:41:26 2003
+@@ -3,3 +3,5 @@
+ #define netbsd1 1 	/* we're really close to this */
+ 
+ #undef TOTAL_MEMORY_SYMBOL
++#undef HAVE_VM_VM_H
++#undef HAVE_VM_SWAP_PAGER_H
