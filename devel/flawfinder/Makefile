@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2001/11/18 19:55:31 jsyn Exp $
+# $OpenBSD: Makefile,v 1.9 2001/12/17 05:56:06 obecian Exp $
 
 COMMENT=		"c/c++ source code auditing tool"
 
-DISTNAME=		flawfinder-0.19
+DISTNAME=		flawfinder-0.20
 CATEGORIES=    		devel security
-NEED_VERSION=		1.498
+NEED_VERSION=		1.500
 
 HOMEPAGE=		http://www.dwheeler.com/flawfinder/
 
