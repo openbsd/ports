@@ -1,7 +1,0 @@
-Eric Young's implemention of SSL and supporting libraries.
-
-Includes support for SSLv2, SSLv3, DES, RC4, RC2, Blowfish,
-IDEA, MD5, MD2, SHA, SHA-1, MDC2, RSA, DSA, Diffie-Hellman,
-X509 ASN cruft, etc.
-
-See http://www.ssleay.org/ for more info.
