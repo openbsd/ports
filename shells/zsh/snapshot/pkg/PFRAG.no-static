@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-static,v 1.1 2002/07/01 15:34:04 lebel Exp $
+@comment $OpenBSD: PFRAG.no-static,v 1.2 2002/07/01 15:46:47 lebel Exp $
 lib/zsh/${VERSION}/zsh/cap.so
 lib/zsh/${VERSION}/zsh/clone.so
 lib/zsh/${VERSION}/zsh/compctl.so
@@ -20,7 +20,6 @@ lib/zsh/${VERSION}/zsh/sched.so
 lib/zsh/${VERSION}/zsh/stat.so
 lib/zsh/${VERSION}/zsh/termcap.so
 lib/zsh/${VERSION}/zsh/terminfo.so
-lib/zsh/${VERSION}/zsh/zftp.so
 lib/zsh/${VERSION}/zsh/zle.so
 lib/zsh/${VERSION}/zsh/zleparameter.so
 lib/zsh/${VERSION}/zsh/zprof.so
