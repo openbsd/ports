@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.104 1999/07/28 13:02:15 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.105 1999/07/29 15:41:47 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1476,9 +1476,9 @@ do-patch:
 					;; \
 				*) \
 				    if [ -e $$i ]; then \
-						if [ ${PATCH_DEBUG_TMP} = yes ]; then \
-							${ECHO_MSG} "===>   Applying ${OPSYS} patch $$i" ; \
-						fi; \
+						case ${PATCH_DEBUG_TMP} in \
+							yes) ${ECHO_MSG} "===>   Applying ${OPSYS} patch $$i" ;; \
+						esac; \
 						${PATCH} ${PATCH_ARGS} < $$i || \
 							{ echo "***>   $$i did not apply cleanly"; \
 							error=1; }\
