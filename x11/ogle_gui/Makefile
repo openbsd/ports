@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/11/13 18:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2004/04/02 19:07:05 sturm Exp $
 
 CATEGORIES=	x11
 
@@ -28,6 +28,7 @@ FLAVOR?=
 LIB_DEPENDS+= 	glade.5.0::devel/libglade \
 		gtk.1.2::x11/gtk+
 .else
+BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS+=	glade-2.0.0.0::devel/libglade2 \
 		gtk-x11-2.0.0.0::x11/gtk+2
 CONFIGURE_ARGS+=--enable-gtk2

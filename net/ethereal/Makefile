@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2004/03/31 09:49:38 jakob Exp $
+# $OpenBSD: Makefile,v 1.87 2004/04/02 19:07:05 sturm Exp $
 
 COMMENT=	"network protocol analyzer"
 COMMENT-x11=	"network protocol analyzer (X11 GUI)"
@@ -52,7 +52,8 @@ BUILD_DEPENDS+=		glib.1.2,gmodule.1.2::devel/glib
 .else
 CONFIGURE_ARGS+=	--enable-gtk2
 LIB_DEPENDS+=		glib-2.0.0.0,gthread-2.0.0.0::devel/glib2
-BUILD_DEPENDS+=		gdk_pixbuf-2.0.0.0,gdk-x11-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+BUILD_DEPENDS+=		gdk_pixbuf-2.0.0.0,gdk-x11-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
+			:pkgconfig-*:devel/pkgconfig
 .endif
 
 .if ${SUBPACKAGE} == "-x11"

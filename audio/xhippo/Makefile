@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/12/10 21:28:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2004/04/02 19:07:04 sturm Exp $
 
 COMMENT=	"generic playlist manager for UNIX"
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=  Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=xhippo/}
 
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk_pixbuf_xlib-2.0.0.0::x11/gtk+2 \
 		id3tag.2::audio/libid3tag
 

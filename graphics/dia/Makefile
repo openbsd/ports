@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/12/08 01:09:15 margarida Exp $
+# $OpenBSD: Makefile,v 1.24 2004/04/02 19:07:04 sturm Exp $
 
 COMMENT=	"technical diagrams drawing tool"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 		art_lgpl_2.5::graphics/libart \
 		popt::devel/popt \
