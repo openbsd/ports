@@ -22,7 +22,7 @@
 +#ASFLAGS=-f elf -D__unix__ $(E3DN)
  #if FreeBSD 2.x then
 -#ASFLAGS = -f aoutb -D__unix__ -DAOUT
-+ASFLAGS = -f aoutb -D__unix__ -DAOUT
++ASFLAGS = -f aoutb -D__unix__ -DAOUT $(E3DN)
  
  LDFLAGS=$(PROF)
  

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/26 02:29:58 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/27 01:55:54 espie Exp $
 
-DISTNAME=	gogo224b	
-PKGNAME=	gogo-2.24b
+DISTNAME=	gogo226a	
+PKGNAME=	gogo-2.26a
 CATEGORIES=	audio
 NEED_VERSION=	1.230
 MASTER_SITES=	http://www.kurims.kyoto-u.ac.jp/~shigeo/soft/gogo2/src/
+HOMEPAGE=	http://homepage1.nifty.com/herumi/gogo_e.html
 EXTRACT_SUFX=	.tgz
 
 
@@ -16,6 +17,7 @@ MAINTAINER=	beck@openbsd.org
 
 USE_GMAKE=	Yes
 FAKE=		Yes
+MAKE_FLAGS=	E3DN=''
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gogo
