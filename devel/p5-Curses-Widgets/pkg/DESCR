@@ -1,0 +1,18 @@
+This module provides a standard library of functions and widgets
+for use in creating Curses-based interfaces. Should work reliably
+with both Curses and nCurses libraries.
+
+Current widgets include:
+
+        Text field (txt_field) 
+        List box (list_box)
+        Button sets (buttons) 
+        Calendar (calendar) 
+        Message box (msg_box) 
+        Input box (input_box)
+
+Extra functions include:
+
+        select_colour line_split grab_key init_scr
+
+WWW: ${HOMEPAGE}

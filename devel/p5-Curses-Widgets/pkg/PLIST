@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/05 19:12:39 avsm Exp $
+libdata/perl5/site_perl/Curses/Widgets.pm
+libdata/perl5/site_perl/Curses/Widgets.pod
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Curses/Widgets/.packlist
+man/man3/Curses::Widgets.3p
+share/examples/p5-Curses-Widgets/demo.pl
+@dirrm share/examples/p5-Curses-Widgets
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Curses/Widgets
+@option no-default-conflict
+@pkgcfl p5-Curses-Widgets-[0-9\.]*
