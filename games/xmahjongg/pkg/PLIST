@@ -1,9 +1,27 @@
 bin/xmahjongg
-man/cat6/xmahjongg.0
-lib/X11/xmahjongg/bridge
-lib/X11/xmahjongg/default
-lib/X11/xmahjongg/wedges
-lib/X11/fonts/misc/xmahjongg.bdf 
-@exec /usr/X11R6/bin/mkfontdir %B
-@unexec /usr/X11R6/bin/mkfontdir %B
-@dirrm lib/X11/xmahjongg
+man/man6/xmahjongg.6
+share/xmahjongg/layouts/default
+share/xmahjongg/layouts/bridge
+share/xmahjongg/layouts/wedges
+share/xmahjongg/layouts/ceremonial
+share/xmahjongg/layouts/farandole
+share/xmahjongg/layouts/arena
+share/xmahjongg/layouts/theater
+share/xmahjongg/layouts/deepwell
+share/xmahjongg/layouts/hourglass
+share/xmahjongg/layouts/arrow
+share/xmahjongg/layouts/papillon
+share/xmahjongg/tiles/thin.gif
+share/xmahjongg/tiles/small.gif
+share/xmahjongg/tiles/thick.gif
+share/xmahjongg/tiles/gnome.gif
+share/xmahjongg/tiles/gnome2.gif
+share/xmahjongg/tiles/dorothys.gif
+share/xmahjongg/tiles/dorwhite.gif
+share/xmahjongg/tiles/real.gif
+share/xmahjongg/backgrounds/default.gif
+share/xmahjongg/backgrounds/green.gif
+@dirrm share/xmahjongg/layouts
+@dirrm share/xmahjongg/tiles
+@dirrm share/xmahjongg/backgrounds
+@dirrm share/xmahjongg

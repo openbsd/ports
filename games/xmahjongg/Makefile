@@ -1,21 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 1999/09/28 17:22:27 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/01/22 08:02:19 fgsch Exp $
 
-DISTNAME=	xmahjongg
-PKGNAME=	xmahjongg-1.0
+DISTNAME=	xmahjongg-3.2
 CATEGORIES=	games
-# Most Usenet archive sites don't store it as a .tar.gz, but Slackware
-# and it's mirrors do.
-MASTER_SITES=	ftp://ftp.digex.net/pub/os/linux/slackware/source/xap/xgames/ \
-		ftp://wcarchive.cdrom.com/pub/linux/slackware/source/xap/xgames/
+MASTER_SITES=	http://www.lcdf.org/~eddietwo/xmahjongg/
 
-NO_CDROM=	"Restrictive copyright"
+MAINTAINER=	fgsch@openbsd.org
 
-MAINTAINER=	angelos@openbsd.org
-
-USE_IMAKE=	yes
-WRKSRC=		${WRKDIR}/xmahjongg
-
-post-extract:
-	@${CP} ${WRKSRC}/xmahjongg.6 ${WRKSRC}/xmahjongg.man
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
