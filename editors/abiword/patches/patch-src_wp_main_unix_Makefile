@@ -1,0 +1,22 @@
+--- src/wp/main/unix/Makefile.orig	Sun Feb 18 18:10:11 2001
++++ src/wp/main/unix/Makefile	Sun Feb 18 18:13:37 2001
+@@ -44,6 +44,9 @@
+ ifdef __FreeBSD__
+ LoadOrder+= Abi_libiconv
+ endif
++ifdef __OpenBSD__
++LoadOrder+= Abi_libiconv
++endif 
+ 
+ ABI_APPLIBS=		$(LoadOrder) $(LoadOrder) $(LoadOrder)
+ ABI_APPLIBDEP=		$(LoadOrder)
+@@ -58,9 +61,6 @@
+ ifdef __FreeBSD__
+ #ABI_LIBS+=		iconv intl
+ endif # FreeBSD
+-ifdef __OpenBSD__
+-ABI_LIBS+=		iconv intl
+-endif # OpenBSD
+ 
+ # include both dynamic and static binaries
+ TARGETS=		$(PROGRAM) $(PROGRAM_S)

@@ -1,0 +1,14 @@
+--- src/config/require/unix/Makefile.orig	Sun Feb 18 17:49:41 2001
++++ src/config/require/unix/Makefile	Sun Feb 18 17:54:28 2001
+@@ -22,9 +22,9 @@
+ 
+ include $(ABI_ROOT)/src/config/abi_defs.mk
+ 
+-REQUIRE=		_GCC_ _GLIB_ _GTK_ _ZLIB_ _LIBPNG_ _LIBWV_ _UNIXFONTS_ _ABIDISTFILES_ _GNOME_ _LIBICONV_
++REQUIRE=		_GCC_ _GLIB_ _GTK_ _ZLIB_ _LIBICONV_ _LIBPNG_ _LIBWV_ _UNIXFONTS_ _ABIDISTFILES_ _GNOME_
+ REQUIREABICLEAN=	
+-REQUIRECLEAN=		clean_ZLIB_ clean_LIBPNG_ clean_LIBWV_ clean_LIBICONV_
++REQUIRECLEAN=		clean_ZLIB_ clean_LIBICONV_ clean_LIBPNG_ clean_LIBWV_ 
+ REQUIREREALCLEAN=	$(REQUIRECLEAN) 
+ 
+ TARGET=		build
