@@ -1,24 +1,6 @@
-$OpenBSD: patch-conftools_ltmain_sh,v 1.1 2001/01/21 19:17:40 avsm Exp $
---- conftools/ltmain.sh.orig	Sun Oct 22 19:47:34 2000
-+++ conftools/ltmain.sh	Sun Jan 21 02:09:50 2001
-@@ -627,14 +627,14 @@ compiler."
-       # we shouldn't force the makefile maintainer to figure out
-       # which system we are compiling for in order to pass an extra
-       # flag for every libtool invokation.
--      allow_undefined=no
-+      # allow_undefined=no
- 
-       # FIXME: Unfortunately, there are problems with the above when trying
-       # to make a dll which has undefined symbols, in which case not
-       # even a static library is built.  For now, we need to specify
-       # -no-undefined on the libtool link line when we can be certain
-       # that all symbols are satisfied, otherwise we get a static library.
--      # allow_undefined=yes
-+      allow_undefined=yes
- 
-       # This is a source program that is used to create dlls on Windows
-       # Don't remove nor modify the starting and closing comments
-@@ -1800,6 +1800,9 @@ compiler."
+--- conftools/ltmain.sh.orig	Sun Oct 22 15:47:34 2000
++++ conftools/ltmain.sh	Mon Jan 22 11:10:54 2001
+@@ -1800,6 +1800,9 @@
  	  # rhapsody is a little odd...
  	  deplibs="$deplibs -framework System"
  	  ;;
@@ -28,7 +10,7 @@ $OpenBSD: patch-conftools_ltmain_sh,v 1.1 2001/01/21 19:17:40 avsm Exp $
  	*)
  	  # Add libc to deplibs on all other systems.
  	  deplibs="$deplibs -lc"
-@@ -3568,40 +3571,6 @@ libdir='$install_libdir'\
+@@ -3568,40 +3571,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
