@@ -1,0 +1,16 @@
+--- statist.1.orig	Sun Dec 26 00:19:25 1999
++++ statist.1	Sun Dec 26 00:22:59 1999
+@@ -102,11 +102,8 @@
+ percentiles and sigma) are FYI only.
+ .PP
+ You may create the 
+-.IR /etc/default/freeze
+-file (if you don't like
+-.IR /etc/default/
+-directory, choose another - in MS-DOS it is FREEZE.CNF in
+-the directory of FREEZE.EXE), which has the following format:
++.IR /etc/freeze.cnf
++file, which has the following format:
+ .in +8
+ .I name
+ =

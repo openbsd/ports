@@ -1,0 +1,10 @@
+--- configure.orig	Sat Dec 25 23:57:00 1999
++++ configure	Sat Dec 25 23:57:19 1999
+@@ -126,7 +126,6 @@
+ ${CC-cc} -E conftest.c > conftest.out 2>&1
+ if egrep yes conftest.out >/dev/null 2>&1; then
+   GCC=1 # For later tests.
+-  CC="$CC -O"
+ fi
+ rm -f conftest*
+ 

@@ -1,0 +1,11 @@
+--- freeze.1.orig	Sun Dec 26 00:19:16 1999
++++ freeze.1	Sun Dec 26 00:21:11 1999
+@@ -109,7 +109,7 @@
+ of following files in the command string. An explicite definition
+ of the file's type can give up to 2% of additional compression.
+ The list of types is stored in file
+-.IR /usr/local/lib/freeze.cnf .
++.IR /etc/freeze.cnf .
+ Types may be abbreviated while not ambigious. You can also determine
+ values for the static Huffman table by using a list of 8 numbers
+ separated by commas instead of
