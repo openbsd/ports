@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/08 14:51:49 espie Exp $
+share/apps/amor/misato_beer/misato_beer1.xpm
+share/apps/amor/misato_beer/misato_beer2.xpm
+share/apps/amor/misato_beer/misato_beer3.xpm
+share/apps/amor/misato_beer/misato_beer_mini.xpm
+share/apps/amor/misato_beerrc
+@dirrm share/apps/amor/misato_beer
