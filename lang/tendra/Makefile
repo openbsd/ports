@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2003/08/06 14:01:23 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2003/08/18 14:54:56 avsm Exp $
 
 COMMENT=	"TeNDRA: advanced BSD-licensed C compiler"
 
 V=		20030803
 DISTNAME=	tendra-${V}
-PKGNAME=	tendra-${V}p0
+PKGNAME=	tendra-${V}p1
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.tendra.org/
@@ -14,11 +14,15 @@ MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org> \
 ONLY_FOR_ARCHS=	i386
 # supports 68k, alpha, mips, sparc as well, but not ported yet
 
+NO_REGRESS=	yes
+
 MASTER_SITES=	ftp://ftp.tendra.org/pub/snapshot/ \
 		ftp://ftp.recoil.org/pub/tendra/
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/tendra
 ALL_TARGET=
+
+SUBST_VARS+=	OPSYS_VER
 
 # BSDL + Crown Copyright (BSD-like)
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,7 +34,7 @@ pre-build:
 	(cd ${WRKSRC} && make openbsd)
 
 post-install:
-	sed s,%%TENDRA%%,${LOCALBASE}/lib/TenDRA/5.0.0/OpenBSD/3.3/80x86,g \
+	sed s,%%TENDRA%%,${LOCALBASE}/lib/TenDRA/5.0.0/OpenBSD/${OPSYS_VER}/80x86,g \
 	< ${FILESDIR}/tcc.sh > ${PREFIX}/bin/tcc
 
 .include <bsd.port.mk>
