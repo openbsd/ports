@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/01/21 16:39:36 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2000/02/05 22:48:46 espie Exp $
 
 DISTNAME=	mutt-1.0.1i
 CATEGORIES=     mail
@@ -25,8 +25,6 @@ PKGNAME=${DISTNAME}-${TTY_LIB}
 .if ${TTY_LIB:L} == "slang"
 LIB_DEPENDS+=	slang.13:${PORTSDIR}/devel/libslang
 CONFIGURE_ARGS+=--with-slang=${PREFIX}
-# work-around for ld problem with slang
-CONFIGURE_ENV=LIBS=-lc
 
 .elif ${TTY_LIB:L} == "curses"
 CONFIGURE_ARGS+=--with-curses
