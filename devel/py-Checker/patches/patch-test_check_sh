@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_check_sh,v 1.1 2004/01/01 09:07:59 sturm Exp $
+--- test_check.sh.orig	2003-11-18 04:49:00.000000000 +0100
++++ test_check.sh	2003-12-28 16:29:39.000000000 +0100
+@@ -2,7 +2,7 @@
+ 
+ TESTS="test_input/test[1-9]*.py"
+ # comment out to use python from path
+-PYTHON="python"
++PYTHON="%%PYTHON%%"
+ #PYTHON="$HOME/build/python/clean/python"
+ # PYTHON="$HOME/build/python/2.2/python"
+ #PYTHON="/usr/bin/python"

@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.4 2002/07/15 04:09:33 shell Exp $
---- setup.py.orig	Fri Jun  7 03:59:21 2002
-+++ setup.py	Mon Jul 15 12:05:50 2002
+$OpenBSD: patch-setup_py,v 1.5 2004/01/01 09:07:59 sturm Exp $
+--- setup.py.orig	2003-11-18 04:50:14.000000000 +0100
++++ setup.py	2003-12-28 16:28:06.000000000 +0100
 @@ -10,7 +10,7 @@ Contributed by:  Nicolas Chauvat
  
  import sys
@@ -10,7 +10,7 @@ $OpenBSD: patch-setup_py,v 1.4 2002/07/15 04:09:33 shell Exp $
  
  from distutils.core import setup
  from distutils import sysconfig
-@@ -42,8 +42,8 @@ fairly infrequent."""
+@@ -56,8 +56,8 @@ fairly infrequent."""
          script_str = '%s %s %s\n' % (py_exe, checker_py, arg_str)
          script_suffix = '.bat'
  
@@ -21,12 +21,12 @@ $OpenBSD: patch-setup_py,v 1.4 2002/07/15 04:09:33 shell Exp $
      remove_file(LOCAL_SCRIPT)
  
      try :
-@@ -64,7 +64,7 @@ fairly infrequent."""
+@@ -78,7 +78,7 @@ fairly infrequent."""
            author_email          = "pychecker@metaslash.com",
            url                   = "http://pychecker.sourceforge.net/",
            packages              = [ 'pychecker' ],
 -          data_files            = [ (install_dir, DOC_FILES) ],
 +#          data_files            = [ (install_dir, DOC_FILES) ],
            scripts               = [ LOCAL_SCRIPT, ],
-           long_description      = LONG_DESCRIPTION
-          )
+           # classifiers was added in Python 2.3, but needed for PyPI
+           #classifiers           = CLASSIFIERS,

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/07/31 19:11:59 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/01/01 09:07:59 sturm Exp $
 bin/pyChecker
 lib/python${MODPY_VERSION}/site-packages/pychecker/CodeChecks.py
 lib/python${MODPY_VERSION}/site-packages/pychecker/CodeChecks.pyc
@@ -50,5 +50,7 @@ share/doc/py-Checker/KNOWN_BUGS
 share/doc/py-Checker/MAINTAINERS
 share/doc/py-Checker/README
 share/doc/py-Checker/TODO
+share/examples/py-Checker/pycheckrc
+@dirrm share/examples/py-Checker
 @dirrm share/doc/py-Checker
 @dirrm lib/python${MODPY_VERSION}/site-packages/pychecker
