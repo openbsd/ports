@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 1999/12/20 01:15:21 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2000/01/12 05:19:49 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.44
@@ -9,12 +9,11 @@ NEED_VERSION=	1.96
 
 MAINTAINER=	brad@openbsd.org
 
-LIB_DEPENDS=	MesaGL.3.0:${PORTSDIR}/graphics/Mesa \
-		MesaGLU.3.0:${PORTSDIR}/graphics/Mesa
+LIB_DEPENDS=	MesaGL.3.0:${PORTSDIR}/graphics/Mesa
 
 USE_GMAKE=	yes
 USE_X11=	yes
-MAKE_ENV+=	QTDIR="${WRKSRC}" SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV=	QTDIR="${WRKSRC}" SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
 
 EXAMPLES=aclock application biff connect cursor dclock desktop dirview \
 	dragdrop drawdemo forever hello layout life menu movies pref \
@@ -22,13 +21,13 @@ EXAMPLES=aclock application biff connect cursor dclock desktop dirview \
 	tetrix tictac timestmp tooltip validator widgets xform
 
 post-configure:
-	@cd ${WRKSRC} && env ${MAKE_ENV} gmake ${USE_TARGET}
+	@cd ${WRKSRC} && env ${MAKE_ENV} ${MAKE_PROGRAM} ${USE_TARGET}
 
 do-install:
-	@mkdir -p ${PREFIX}/include/X11/qt
-	@mkdir -p ${PREFIX}/lib/qt/examples
-	@mkdir -p ${PREFIX}/lib/qt/tutorial
-	@mkdir -p ${PREFIX}/share/doc/qt
+	${INSTALL_DATA_DIR} ${PREFIX}/include/X11/qt
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/qt/examples
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/qt/tutorial
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/qt
 	@if [ -f ${WRKSRC}/lib/libqt.a ]; then \
 	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.a ${X11BASE}/lib; \
 	fi
