@@ -1,4 +1,4 @@
-# $Id: full-list.mk,v 1.2 2000/04/18 10:51:00 turan Exp $
+# $Id: full-list.mk,v 1.3 2000/04/18 12:26:31 turan Exp $
 
 SUBDIR += archivers/bzip2
 SUBDIR += archivers/gshar+gunshar
@@ -51,8 +51,8 @@ SUBDIR += net/ircii-epic
 SUBDIR += net/netpipe
 SUBDIR += net/rsync
 SUBDIR += net/wget
-SUBDIR += print/a2ps PAPERSIZE=A4
-SUBDIR += print/a2ps PAPERSIZE=Letter
+SUBDIR += print/a2ps:a4
+SUBDIR += print/a2ps:letter
 SUBDIR += print/afm
 SUBDIR += print/enscript
 SUBDIR += print/freetype
@@ -83,7 +83,7 @@ SUBDIR += x11/tk80
 SUBDIR += x11/viewfax
 SUBDIR += x11/xcolors
 SUBDIR += x11/qt
-SUBDIR += x11/kdebase
-SUBDIR += x11/kdelibs
+SUBDIR += x11/kde/base
+SUBDIR += x11/kde/libs
 
 .include <bsd.port.subdir.mk>
