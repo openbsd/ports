@@ -1,0 +1,75 @@
+--- libPropList/configure.orig	Mon Nov  2 08:38:32 1998
++++ libPropList/configure	Tue Dec 15 10:35:19 1998
+@@ -550,10 +550,11 @@
+ # ./install, which can be erroneously created by make from ./install.sh.
+ echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
+ echo "configure:553: checking for a BSD compatible install" >&5
+-if test -z "$INSTALL"; then
++# OpenBSD for some reason, thinks that $INSTALL is ../ bah!
++#if test -z "$INSTALL"; then
+ if eval "test \"`echo '$''{'ac_cv_path_install'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+-else
++ else
+     IFS="${IFS= 	}"; ac_save_IFS="$IFS"; IFS="${IFS}:"
+   for ac_dir in $PATH; do
+     # Account for people who put trailing slashes in PATH elements.
+@@ -579,7 +580,7 @@
+   done
+   IFS="$ac_save_IFS"
+ 
+-fi
++ fi
+   if test "${ac_cv_path_install+set}" = set; then
+     INSTALL="$ac_cv_path_install"
+   else
+@@ -589,7 +590,7 @@
+     # removed, or if the path is relative.
+     INSTALL="$ac_install_sh"
+   fi
+-fi
++#fi
+ echo "$ac_t""$INSTALL" 1>&6
+ 
+ # Use test -z because SunOS4 sh mishandles braces in ${var-val}.
+@@ -1413,6 +1414,40 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ done
++
++
++echo $ac_n "checking for mkstemp""... $ac_c" 1>&6
++echo "configure:?: checking for mkstemp" >&5
++if eval "test \"`echo '$''{'ac_cv_func_mkstemp'+set}'`\" = set"; then
++  echo $ac_n "(cached) $ac_c" 1>&6
++  eval "ac_cv_func_mkstemp=yes"
++else
++  cat>conftest.$ac_ext<<EOF
++#include <unistd.h>
++int main(){
++int i;char doh[12]={"/tmp/wmt.X"};
++i=mkstemp(doh);close(i);
++return 0;}
++EOF
++if { (eval echo configure:1859: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; test -s conftest;} then
++  rm -rf /tmp/wmt.*
++  eval "ac_cv_func_mkstemp=yes"
++else
++  echo "configure: failed program was:" >&5
++  ac_cv_func_mkstemp=-1
++fi
++rm conftest*
++fi
++
++echo "$ac_t""$ac_cv_func_mkstemp" 1>&6
++if test $ac_cv_func_mkstemp = yes; then
++  cat >> confdefs.h <<\EOF
++#define HAVE_MKSTEMP 1
++EOF
++    
++fi  
++
++
+ 
+ 
+ echo $ac_n "checking for working const""... $ac_c" 1>&6

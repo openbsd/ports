@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/12/04 00:29:20 jasoni Exp $
+# $OpenBSD: Makefile,v 1.2 1998/12/18 08:13:40 jasoni Exp $
 #
 
 DISTNAME=	WindowMaker-0.20.3
@@ -19,10 +19,6 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	INSTALL="/usr/bin/install -c"
 CONFIGURE_ARGS=	--with-gfx-incs=-I/usr/local/include \
 		--with-gfx-libs=-L/usr/local/lib 
-
-post-configure:
-		@cd ${WRKSRC}/libPropList && \
-		INSTALL="/usr/bin/install -c" ./configure
 
 post-install:	
 		@${INSTALL_DATA} ${WRKDIR}/WindowMaker-data/pixmaps/* \
