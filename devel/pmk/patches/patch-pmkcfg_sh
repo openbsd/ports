@@ -1,0 +1,14 @@
+$OpenBSD: patch-pmkcfg_sh,v 1.1.1.1 2004/12/23 21:42:16 couderc Exp $
+--- pmkcfg.sh.orig	Thu Dec 23 22:14:37 2004
++++ pmkcfg.sh	Thu Dec 23 22:16:21 2004
+@@ -47,8 +47,8 @@ if test "$1" != "autodetected"; then
+ 			posix_sh="/bin/sh"
+ 		fi
+ 	fi
+-	printf "Using $posix_sh $0 $@\n\n"
+-	$posix_sh $0 "autodetected" "$@"
++	printf "Using %s %s %s\n\n" "$posix_sh" "$0" "$*"
++	$posix_sh $0 "autodetected" "$*"
+ 	exit $?
+ else
+ 	# skip "autodetected"

@@ -1,0 +1,4 @@
+The pmksetup utility has been executed to update or modify the following
+configuration file:
+
+${SYSCONFDIR}/pmk/pmk.conf

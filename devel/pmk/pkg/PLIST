@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/23 21:42:16 couderc Exp $
+bin/pmk
+bin/pmkinstall
+bin/pmkpc
+bin/pmkscan
+@man man/man1/pmk.1
+@man man/man1/pmkinstall.1
+@man man/man1/pmkscan.1
+@man man/man5/pmk.conf.5
+@man man/man5/pmkfile.5
+@man man/man8/pmksetup.8
+sbin/pmksetup
+@exec %B/pmksetup
+share/pmk/
+share/pmk/pmk.conf.sample
+share/pmk/pmkcfgtool.dat
+share/pmk/pmkcomp.dat
+share/pmk/pmkfile.sample
+share/pmk/pmkscan.dat
