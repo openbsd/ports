@@ -1,0 +1,9 @@
+The ElementTree type is a simple but flexible container object, designed
+to store hierarchical data structures, such as simplified XML infosets,
+in memory. The element type can be described as a cross between a Python
+list and a Python dictionary.
+
+The cElementTree module is a C implementation of the ElementTree API. On
+typical documents, it's 15-20 times faster than the Python version of
+ElementTree, and uses 2-5 times less memory.
+
