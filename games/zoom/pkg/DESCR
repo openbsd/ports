@@ -1,0 +1,9 @@
+Zoom is a Z-Machine, which means that it plays text adventure games
+written in ZCode.  The original games were written by a company called
+'Infocom' in the 80's: these are available on the Infocom Masterpieces
+CD, published by Activision.  The version presented here is known to
+work with version 3, 5, 7 and 8 story files. Version 4 should be ready
+soon, but version 6 will take a bit more work.  It is designed to run
+under the X Window System.
+
+WWW: ${HOMEPAGE}
