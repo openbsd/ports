@@ -1,0 +1,136 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2001/06/14 14:46:07 camield Exp $
+#
+# Pre/post-installation setup of pdnsd
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=${SYSCONFDIR}
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/pdnsd
+CACHE_DIR=/var/pdnsd
+ID=pdnsd
+
+# Function: user "pdnsd" is not available
+#
+do_notice_user()
+{
+echo
+echo "+---------------"
+echo "| Please add user ${ID} and group ${ID}"
+echo "| "$1" won't work without it."
+echo "| Example:"
+echo "| groupadd ${ID}"
+echo "| useradd -c PDNSD -d /nonexistent -g ${ID} -s /sbin/nologin ${ID}"
+echo "+---------------"
+exit 1
+}
+
+# Function: install configuration files
+#
+do_install_conf()
+{
+install -d -o root -g wheel ${CONFIG_DIR}
+install -o root -g wheel ${SAMPLE_CONFIG_DIR}/pdnsd.conf \
+${CONFIG_DIR}/pdnsd.conf
+echo
+echo "+---------------"
+echo "| The $1 configuration files have been installed in ${CONFIG_DIR}."
+echo "| Please view these files and change the configuration to meet"
+echo "| your needs."
+echo "|"
+echo "| You may want to put the following in /etc/rc.local:"
+echo "|"
+echo "| if [ -x /usr/local/sbin/pdnsd ]; then"
+echo "|   echo -n ' pdnsd'; /usr/local/sbin/pdnsd -4 -s -d -p /var/run/pdnsd.pid"
+echo "| fi"
+echo "+---------------"
+}
+
+# Function: install cache dir
+#
+do_install_cachedir()
+{
+install -d -o ${ID} -g ${ID} ${CACHE_DIR}
+dd if=/dev/zero of=${CACHE_DIR}/pdnsd.cache bs=1 count=4 2>/dev/null
+chown ${ID}:${ID} ${CACHE_DIR}/pdnsd.cache
+echo
+echo "+---------------"
+echo "| The $1 caching directory has been installed in ${CACHE_DIR}."
+echo "+---------------"
+}
+
+# Function: tell the user what they need to do to use the port just installed
+#
+do_notice_conf()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration files in ${CONFIG_DIR} have NOT"
+    echo "| been changed.  You may want to compare them to the current samples"
+    echo "| in ${SAMPLE_CONFIG_DIR}, and update your configuration files"
+    echo "| as needed."
+    echo "+---------------"
+}
+
+# Function: tell the user what they need to do to use the port just installed
+#
+do_notice_cachedir()
+{
+    echo
+    echo "+---------------"
+    echo "| The caching directory ${CACHE_DIR} has not been touched."
+    echo "+---------------"
+}
+
+# Function: inform user where documentation has been installed
+#
+do_notice_docs()
+{
+    echo
+    echo "+---------------"
+    echo "| Documentation files for $1 have been copied to"
+    echo "| ${PREFIX}/share/doc/pdnsd"
+    echo "+---------------"
+}
+
+
+
+# Verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	userinfo  -e ${ID} || do_notice_user "$1"
+	groupinfo -e ${ID} || do_notice_user "$1"
+	;;
+    POST-INSTALL)
+	if [ ! -d ${CONFIG_DIR} ]; then
+	    do_install_conf "$1"
+	elif [ ! -f ${CONFIG_DIR}/pdnsd.conf ]; then
+	    do_install_conf "$1"
+	else
+	    do_notice_conf "$1"
+	fi
+	if [ ! -d ${CACHE_DIR} ]; then
+	    do_install_cachedir "$1"
+	else
+	    do_notice_cachedir "$1"
+	fi
+	do_notice_docs "$1"
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

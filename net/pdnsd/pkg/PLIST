@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/14 14:46:07 camield Exp $
+man/man8/pdnsd-ctl.8
+sbin/pdnsd
+sbin/pdnsd-ctl
+share/doc/pdnsd/faq.txt
+share/doc/pdnsd/intro.txt
+share/doc/pdnsd/manual.txt
+share/examples/pdnsd/pdnsd.conf
+@dirrm share/examples/pdnsd
+@dirrm share/doc/pdnsd
