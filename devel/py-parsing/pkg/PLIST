@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/23 08:39:24 xsa Exp $
+lib/python${MODPY_VERSION}/site-packages/pyparsing.py
+lib/python${MODPY_VERSION}/site-packages/pyparsing.pyc
+share/doc/py-parsing/HowToUsePyparsing.html
+share/doc/py-parsing/README
+share/examples/py-parsing/AcManForm.dfm
+share/examples/py-parsing/Setup.ini
+share/examples/py-parsing/SingleForm.dfm
+share/examples/py-parsing/chemicalFormulas.py
+share/examples/py-parsing/commasep.py
+share/examples/py-parsing/configParse.py
+share/examples/py-parsing/dfmparse.py
+share/examples/py-parsing/dictExample.py
+share/examples/py-parsing/dictExample2.py
+share/examples/py-parsing/ebnf.py
+share/examples/py-parsing/ebnftest.py
+share/examples/py-parsing/fourFn.py
+share/examples/py-parsing/getNTPservers.py
+share/examples/py-parsing/greeting.py
+share/examples/py-parsing/httpServerLogParser.py
+share/examples/py-parsing/idlParse.py
+share/examples/py-parsing/scanExamples.py
+share/examples/py-parsing/simpleSQL.py
+share/examples/py-parsing/urlExtractor.py
+@dirrm share/examples/py-parsing
+@dirrm share/doc/py-parsing
