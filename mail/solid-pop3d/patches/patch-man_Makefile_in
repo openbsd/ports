@@ -1,0 +1,15 @@
+--- man/Makefile.in.orig	Tue Jun 20 16:11:13 2000
++++ man/Makefile.in	Tue Jun 20 16:11:49 2000
+@@ -157,10 +157,10 @@
+ 	done
+ install-man: $(MANS)
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) install-man1 install-man5 install-man8
++	$(MAKE) $(AM_MAKEFLAGS) install-man1 install-man5 install-man8
+ uninstall-man:
+ 	@$(NORMAL_UNINSTALL)
+-	$(MAKE) uninstall-man1 uninstall-man5 uninstall-man8
++	$(MAKE) $(AM_MAKEFLAGS) uninstall-man1 uninstall-man5 uninstall-man8
+ 
+ distdir = $(top_builddir)/$(PACKAGE)-$(VERSION)/$(subdir)
+ 

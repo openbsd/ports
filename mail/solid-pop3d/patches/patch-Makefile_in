@@ -1,0 +1,65 @@
+--- Makefile.in.orig	Tue Jun 20 15:51:42 2000
++++ Makefile.in	Tue Jun 20 15:53:43 2000
+@@ -45,7 +45,7 @@
+ all-recursive:
+ 	@for subdir in $(SUBDIRS); do \
+ 	  target=`echo $@ | sed s/-recursive//`; \
+-	  (cd $$subdir && $(MAKE) $$target) \
++	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$target) \
+ 	  || exit 1; \
+ 	done
+ 
+@@ -55,7 +55,7 @@
+ 
+ clean-recursive:
+ 	@for subdir in $(SUBDIRS); do \
+-	  (cd $$subdir && $(MAKE) clean) \
++	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) clean) \
+ 	  || exit 1; \
+ 	done
+ 
+@@ -66,7 +66,7 @@
+ 
+ distclean-recursive:
+ 	@for subdir in $(SUBDIRS); do \
+-	  (cd $$subdir && $(MAKE) distclean) \
++	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) distclean) \
+ 	  || exit 1; \
+ 	done
+ 
+@@ -74,7 +74,7 @@
+ 
+ maintainer-clean-recursive:
+ 	@for subdir in $(SUBDIRS); do \
+-	  (cd $$subdir && $(MAKE) maintainer-clean) \
++	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) maintainer-clean) \
+ 	  || exit 1; \
+ 	done
+ 
+@@ -85,7 +85,7 @@
+ 
+ install-recursive:
+ 	@for subdir in $(SUBDIRS); do \
+-	  (cd $$subdir && $(MAKE) install) \
++	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) install) \
+ 	  || exit 1; \
+ 	done
+ 
+@@ -93,7 +93,7 @@
+ 
+ uninstall-recursive:
+ 	@for subdir in $(SUBDIRS); do \
+-	  (cd $$subdir && $(MAKE) uninstall) \
++	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) uninstall) \
+ 	  || exit 1; \
+ 	done
+ 
+@@ -119,7 +119,7 @@
+ 	  mkdir $(distdir)/$$subdir \
+ 	  || exit 1; \
+ 	  chmod 755 $(distdir)/$$subdir; \
+-	  (cd $$subdir && $(MAKE) top_distdir=../$(distdir) distdir=../$(distdir)/$$subdir distdir) \
++	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) top_distdir=../$(distdir) distdir=../$(distdir)/$$subdir distdir) \
+ 	  || exit 1; \
+ 	  chmod 644 $(distdir)/$$subdir/*; \
+ 	done

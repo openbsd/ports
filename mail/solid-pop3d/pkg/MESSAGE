@@ -1,9 +1,12 @@
 +---------------
-| This program requires an account named spop3d.  You'll also
-| have to edit /etc/inetd.conf manually and add a line like the
-| following:
+| You'll also have to edit /etc/inetd.conf manually and add 
+| lines like the following:
 |
-|   pop3 stream tcp nowait root /usr/local/sbin/spop3d spop3d
+|   pop3 stream tcp  nowait root ${PREFIX}/sbin/spop3d spop3d
+|   pop3 stream tcp6 nowait root ${PREFIX}/sbin/spop3d spop3d
+|
+| The second line is only necessary if you want to use IPv6
+| support.
 |
 | An optional global configuration file may be used in /etc
 | called spop3d.conf.

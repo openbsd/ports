@@ -1,0 +1,11 @@
+--- man/spop3d.8.orig	Mon Jun 19 10:12:57 2000
++++ man/spop3d.8	Mon Jun 19 10:13:38 2000
+@@ -70,7 +70,7 @@ and
+ is expanded to
+ .I /home/jurekb/Mail/bugtraq
+ for "jurekb" user on my system. The default is
+-.I /var/spool/mail/%s
++.I /var/mail/%s
+ or
+ .I Maildir
+ when mailbox support is not compiled in.
