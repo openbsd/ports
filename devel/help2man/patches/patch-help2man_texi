@@ -1,15 +1,15 @@
-$OpenBSD: patch-help2man_texi,v 1.2 2001/08/27 00:08:12 brad Exp $
---- help2man.texi.orig	Sat Mar  9 08:48:17 2002
-+++ help2man.texi	Thu Aug 22 12:36:54 2002
+$OpenBSD: patch-help2man_texi,v 1.3 2002/08/22 16:43:15 brad Exp $
+--- help2man.texi.orig	Wed Nov 13 20:16:20 2002
++++ help2man.texi	Wed Nov 13 20:17:27 2002
 @@ -5,9 +5,9 @@
  @finalout
- @c $Id: help2man.texi,v 1.7 2002/03/09 12:53:04 bod Exp $
+ @c $Id: help2man.texi,v 1.8 2002/09/06 15:49:44 bod Exp $
  
--@dircategory GNU admin
+-@dircategory GNU programming support
 +@dircategory Programming & development tools
  @direntry
 -* help2man: (help2man).      Automatic manual page generation.
-+* Help2man: (help2man).         Automatic manual page generation.
++* Help2man: (help2man).      Automatic manual page generation.
  @end direntry
  
  @ifinfo

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2002/08/22 16:43:15 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2002/11/13 19:04:53 naddy Exp $
 
 COMMENT=	"GNU help2man"
 
-DISTNAME=	help2man-1.26
+DISTNAME=	help2man-1.29
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=help2man/}
 
