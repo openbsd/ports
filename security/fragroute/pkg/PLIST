@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/20 10:50:12 jsyn Exp $
+man/man8/fragroute.8
+man/man8/fragtest.8
+sbin/fragroute
+sbin/fragtest
