@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/25 22:37:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/11/18 23:29:56 naddy Exp $
 
 COMMENT=        "java equivalent to make"
 
@@ -9,8 +9,6 @@ CATEGORIES=     devel
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-ant/release/v1.3/bin/
 
 HOMEPAGE=       http://jakarta.apache.org/ant/
-
-MAINTAINER=     Felix Kronlage <fkr@grummel.net>
 
 # XXX: USE_JAVA=TBD
 JAVA_HOME=	${LOCALBASE}/jdk1.2-blackdown
