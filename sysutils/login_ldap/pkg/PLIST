@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/06 16:12:05 shell Exp $
-bin/enable-login_ldap
-libexec/auth/login_-ldap
-man/cat8/login_ldap.0
-share/login_ldap/active-directory.login_ldap.conf
-share/login_ldap/login_ldap.conf
-@dirrm share/login_ldap
