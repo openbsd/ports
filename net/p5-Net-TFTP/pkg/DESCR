@@ -1,0 +1,6 @@
+Net::TFTP is a class implementing a simple Trivial File Transfer
+Protocol client in Perl as described in RFC1350.  Net::TFTP also
+supports the TFTP Option Extension (as described in RFC2347), with the
+following options:
+
+RFC2348 Blocksize Option
