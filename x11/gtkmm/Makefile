@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/14 13:58:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2001/11/20 21:39:12 wilfried Exp $
 
 COMMENT=		"C++ interface for gtk+"
 COMMENT-docs=		"C++ interface for gtk+ documentation"
 
-VERSION=		1.2.7
+VERSION=		1.2.8
 DISTNAME=		gtkmm-${VERSION}
 PKGNAME-docs=		gtkmm-docs-${VERSION}
 CATEGORIES=		devel x11
