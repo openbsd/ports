@@ -1,6 +1,6 @@
---- Doc/zsh.texi.orig	Mon Mar  6 18:38:07 2000
-+++ Doc/zsh.texi	Mon Mar  6 18:39:52 2000
-@@ -2,11 +2,15 @@
+--- Doc/zsh.texi.orig	Fri Sep  3 10:44:37 1999
++++ Doc/zsh.texi	Fri Mar 17 13:07:48 2000
+@@ -2,6 +2,10 @@
  @c %**start of header
  @setfilename zsh.info
  @settitle    zsh
@@ -11,12 +11,6 @@
  @c %**end of header
  
  @ifinfo
- @c Note to RedHat: Do NOT change this to @{@}.  It really should be @'@'.
--@set dsq @'@'
-+@set dsq @'{}@'{}
- @end ifinfo
- @iftex
- @c The sequence {} disappears completely in TeX, leaving only the quotes.
 @@ -1062,7 +1066,7 @@
  the smallest matching pattern is preferred; in the second form, the
  largest matching pattern is preferred.  If name is an
