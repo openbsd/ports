@@ -1,0 +1,67 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2001/06/07 14:26:22 lebel Exp $
+#
+# Pre/post-installation setup of aide
+
+# exit on errors, use a sane path and install prefix
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_FILE=${SYSCONFDIR}/aide.conf
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/aide
+
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration file in $CONFIG_FILE,"
+    echo "| have NOT been changed. You may want to compare them to the"
+    echo "| current sample file in $SAMPLE_CONFIG_DIR,"
+    echo "| and update your configuration as needed."
+    echo "+---------------"
+    echo
+}
+
+do_install()
+{
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/aide.conf \
+   				    $CONFIG_FILE
+    echo
+    echo "+---------------"
+    echo "| The $1 configuration file have been installed into"
+    echo "| $CONFIG_FILE. Please view this file and change the configuration"
+    echo "| to meet your needs."
+    echo "+---------------"
+    echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if [ ! -d $CONFIG_DIR ]; then
+	    do_install $1
+	elif [ ! -f $CONFIG_DIR/Muttrc ]; then
+	    do_install $1
+	else
+	    do_notice $1
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
