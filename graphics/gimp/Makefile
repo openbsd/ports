@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 1999/10/29 02:02:11 brad Exp $
+# $OpenBSD: Makefile,v 1.25 1999/11/10 13:17:05 jakob Exp $
 
 DISTNAME=	gimp-1.1.10
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v1.1.10/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/gimp/unstable/v1.1.10/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/old/v1.1.10/ \
+		ftp://ftp.sunet.se/pub/gnu/gimp/unstable/old/v1.1.10/ \
+		ftp://ftp.cs.umn.edu/pub/gimp/unstable/old/v1.1.10/
 
 MAINTAINER=	brad@openbsd.org
 
