@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2003/03/06 04:30:25 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2004/02/12 18:47:26 naddy Exp $
 
 COMMENT=		"code browsing program"
 
-DISTNAME=		cscope-15.3
+DISTNAME=		cscope-15.5
 CATEGORIES=     	devel
 
 HOMEPAGE=		http://cscope.sourceforge.net/
@@ -18,5 +18,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cscope/}
 
 CONFIGURE_STYLE=	gnu
+
+post-install:
+	cd ${WRKSRC}; ${INSTALL_SCRIPT} contrib/xcscope/cscope-indexer \
+		${PREFIX}/bin/cscope-indexer
+	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
+	cd ${WRKSRC}; ${INSTALL_DATA} contrib/xcscope/xcscope.el \
+		${PREFIX}/share/emacs/site-lisp
 
 .include <bsd.port.mk>
