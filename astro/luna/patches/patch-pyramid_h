@@ -1,0 +1,38 @@
+$OpenBSD: patch-pyramid_h,v 1.1.1.1 2002/04/27 15:23:58 wcobb Exp $
+--- pyramid.h.orig	Fri Nov  9 11:51:45 2001
++++ pyramid.h	Fri Nov  9 11:52:58 2001
+@@ -14,13 +14,15 @@
+ # include	<dos.h>
+ # include	<stdlib.h>
+ # include	<string.h>
+-# define	LASCTIME	(30)
++# define	LASCTIME	(26)
+ 
+ #else	/* UNIX */
+-# include	<sys/time.h>
++# include	<time.h>
+   typedef time_t	Time_t;
+ # include	<memory.h>  
+-# define	LASCTIME	(30)
++# define	LASCTIME	(26)
++  extern char  *asctime();
++  extern char  *getenv();
+ #endif	/* MSDOS or not */
+  
+ typedef long	ABDATE;
+@@ -52,15 +54,6 @@ typedef long	ABDATE;
+ # if defined(MSDOS)
+ 	extern char		*Asctime(struct tm *tmp);	
+ 	extern char		*capitalize(char *chp);
+-#	define	Tolower(cc)	tolower(cc)
+-#	define	Toupper(cc)	toupper(cc)
+-# else	/* MSDOS */
+-#	define	Asctime	asctime	
+-/*#	define	Tolower(cc)	\
+-/*		(('A' <= (cc) && (cc) <= 'Z') ? ((cc) - 'A' + 'a') : (cc))
+-/*#	define	Toupper(cc)	\
+-/*		(('a' <= (cc) && (cc) <= 'z') ? ((cc) - 'a' + 'A') : (cc))
+- */
+ # endif		/* ANSI and MSDOS */	
+ 
+ #else	/* ANSI */

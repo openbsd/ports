@@ -1,0 +1,28 @@
+$OpenBSD: patch-iprintf_makefile,v 1.1.1.1 2002/04/27 15:23:58 wcobb Exp $
+--- iprintf/makefile.orig	Fri Nov  9 11:21:04 2001
++++ iprintf/makefile	Fri Nov  9 11:21:52 2001
+@@ -2,22 +2,16 @@
+ # 	Makefile for luna using BSD cc / MSC
+ # 
+ 
+-# MSDOS
+-CC = cl
+-CFLAGS = -Ox -AS -DANSI -W4
+ # UNIX
+-#CC = cc
+-#CFLAGS = -O -DUNIX
++CFLAGS += -DUNIX
+ 
+ #
+ # All modules
+ #
+ SRCS = iansilib.c idoprnt.c iprintf.c isprintf.c
+ 
+-# MSDOS
+-OBJS = iansilib.obj idoprnt.obj iprintf.obj isprintf.obj
+ # UNIX
+-#OBJS = iansilib.o idoprnt.o iprintf.o isprintf.o
++OBJS = iansilib.o idoprnt.o iprintf.o isprintf.o
+ 
+ HDRS = iansilib.h iprint.h
+ #
