@@ -1,9 +1,9 @@
 # OpenBSD makefile for:	cdrecord-current
-# Version required:			1.6
+# Version required:			1.6.1
 # Date created:				7 Jun 1998
 # Whom:					niklas
 #
-# $OpenBSD: Makefile,v 1.3 1999/01/20 05:50:40 d Exp $
+# $OpenBSD: Makefile,v 1.4 1999/01/20 05:56:46 d Exp $
 #
 
 DISTNAME=	cdrecord-1.6.1
@@ -11,8 +11,6 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/
 
 MAINTAINER=	niklas@openbsd.org
-
-#WRKSRC=		${WRKDIR}/cdrecord-1.6
 
 # It's pretty easy to add other architectures,
 # mail me if you miss a particular one.
