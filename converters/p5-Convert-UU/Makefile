@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/04/08 14:11:09 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/04/08 14:17:52 espie Exp $
 
 DISTNAME=	Convert-UU-0.40
 PKGNAME=	Convert-UU-0.40
@@ -17,7 +17,8 @@ MASTER_SITE_SUBDIR=	Convert
 FAKE=			Yes
 
 pre-fake:
-	@mkdir -p ${WRKINST}/usr/libdata/perl5/i386-openbsd
+	@mkdir -p ${WRKINST}`/usr/bin/perl -e 'use Config; print $$Config{installarchlib}, "\n";'`
+
 do-configure:
 	@arch=`/usr/bin/perl -e 'use Config; print $$Config{archname}, "\n";'`; \
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
