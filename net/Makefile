@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.359 2005/03/07 17:10:25 todd Exp $
+# $OpenBSD: Makefile,v 1.360 2005/03/30 03:16:24 jolan Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -146,6 +146,7 @@
      SUBDIR += openh323
      SUBDIR += openvpn
      SUBDIR += p5-Chatbot-Eliza
+     SUBDIR += p5-Filesys-Virtual-DAAP
      SUBDIR += p5-Geo-IP
      SUBDIR += p5-IO-INET6
      SUBDIR += p5-IO-Interface
@@ -154,6 +155,8 @@
      SUBDIR += p5-Net-BGP
      SUBDIR += p5-Net-CIDR
      SUBDIR += p5-Net-CIDR-Lite
+     SUBDIR += p5-Net-DAAP-Client
+     SUBDIR += p5-Net-DAAP-DMAP
      SUBDIR += p5-Net-DNS
      SUBDIR += p5-Net-DNS-SEC
      SUBDIR += p5-Net-Daemon
