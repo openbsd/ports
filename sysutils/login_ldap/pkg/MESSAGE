@@ -1,0 +1,8 @@
+
+Please run ${PREFIX}/bin/enable-login_ldap as root. This will install
+the login_-ldap binary setuid root, also please read pkg/SECURITY
+for more information.
+
+After that, read login_ldap(8) for more information on how to
+configure the login_-ldap utility.
+

@@ -1,0 +1,22 @@
+
+Two things to note here:
+
+1) This program should be suid root to ensure proper operation. The reason 
+for this is given in the login.conf(5) manpage:
+
+     An authentication program must not assume it will be called as root, nor
+     must it assume it will not be called as root.  If it needs special per-
+     missions to access files it should be setuid or setgid to the appropriate
+     user/group.  See chmod(1).
+
+   You can try and remove the setuid bit. It may work without it, it may not.
+
+   Every effort has been made to ensure this software is bug free. 
+
+2) This program will "break out" of the ports tree. It has to be in 
+   /usr/libexec/auth for it to be noticed/found by the auth_subr(3) functions.
+   When/If you remove this port you will have to run 
+
+   rm /usr/libexec/auth/login_-ldap
+
+   as root.

@@ -1,0 +1,6 @@
+This port is for OpenBSD administrators wanting to authenticate
+users off an LDAP server. It uses the BSD Authentication API.
+
+Please visit WWW for information on updates and commercial support.
+
+WWW: ${HOMEPAGE}
