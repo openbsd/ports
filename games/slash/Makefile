@@ -1,18 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 1999/09/26 21:39:39 espie Exp $
+# $OpenBSD: Makefile,v 1.8 1999/09/28 19:07:33 brad Exp $
 
-NEED_VERSION=1.121
 DISTNAME=	slash-e8
 CATEGORIES=	games
-
-MASTER_SITES=	ftp://ftp.uu.net/pub/games/nethack/sources/ \
-		${MASTER_SITE_GNU}
-
-MASTER_SITES0= http://www.rz.tu-ilmenau.de/~wi019/Slash/ 
-
+MASTER_SITES0=	${MASTER_SITE_GNU}
+MASTER_SITES1=	http://www.rz.tu-ilmenau.de/~wi019/Slash/
 MASTER_SITE_SUBDIR= nethack
-DISTFILES=	nethack-3.2.2.tar.gz Slash-Unix.tar.gz:0
+DISTFILES=	nethack-3.2.2.tar.gz:0 Slash-Unix.tar.gz:1
 
-MAINTAINER=	espie@OpenBSD.ORG
+NEED_VERSION=	1.121
+
+MAINTAINER=	espie@openbsd.org
 
 USE_GMAKE=	yes
 USE_X11=	yes
@@ -21,30 +18,28 @@ NHDIR=		${PREFIX}/lib/slashdir
 MAKE_ENV+= 	NHDIR=${NHDIR}
 
 post-extract:
-	@cd ${WRKDIR}; mv nethack-3.2.2 ${DISTNAME}
-	@cd ${WRKDIR}; mv dat/* ${DISTNAME}/dat
-	cp ${FILESDIR}/blkmar.des ${WRKSRC}/dat
+	@cd ${WRKDIR}; ${MV} nethack-3.2.2 ${DISTNAME}
+	@cd ${WRKDIR}; ${MV} dat/* ${DISTNAME}/dat
+	@${CP} ${FILESDIR}/blkmar.des ${WRKSRC}/dat
 
 pre-patch:
-	@cd ${WRKSRC}; patch -p1 -s < ${WRKDIR}/slashe8.dif
-	@cd ${WRKSRC}; patch -p1 -s < ${WRKDIR}/e8p1.dif
+	@cd ${WRKSRC}; ${PATCH} -p1 -s < ${WRKDIR}/slashe8.dif
+	@cd ${WRKSRC}; ${PATCH} -p1 -s < ${WRKDIR}/e8p1.dif
 
 pre-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh
 
 post-install:
-	@cd ${WRKSRC}/doc; chmod 644 *.6
+	@${MKDIR} ${PREFIX}/lib/X11/fonts/hack
+	@${MKDIR} ${PREFIX}/share/doc/nethack
+	@cd ${WRKSRC}/doc; ${CHMOD} 644 *.6
 	@cd ${WRKSRC}/doc; PREFIX='${PREFIX}' INSTALL_MAN='${INSTALL_MAN}' ${MAKE} manpages
-
-	${MKDIR} ${PREFIX}/share/doc/nethack
 	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/share/doc/nethack
-
-	${MKDIR} ${PREFIX}/lib/X11/fonts/hack
-	cd ${WRKSRC}/win/X11 && \
-	sed-e "s/^NetHack/Slash/; s/^!NetHack/!Slash/" <NetHack.ad >Slash && \
+	@cd ${WRKSRC}/win/X11 && \
+	${SED} -e "s/^NetHack/Slash/; s/^!NetHack/!Slash/" <NetHack.ad > Slash && \
 	${INSTALL_DATA} Slash ${PREFIX}/lib/X11/app-defaults && \
-	${X11BASE}/bin/bdftopcf ibm.bdf|gzip >ibm.pcf.gz && \
-	${X11BASE}/bin/bdftopcf nh10.bdf|gzip >nh10.pcf.gz && \
+	${X11BASE}/bin/bdftopcf ibm.bdf | /usr/bin/gzip > ibm.pcf.gz && \
+	${X11BASE}/bin/bdftopcf nh10.bdf | /usr/bin/gzip > nh10.pcf.gz && \
 	${INSTALL_DATA} ibm.pcf.gz ${PREFIX}/lib/X11/fonts/hack && \
 	${INSTALL_DATA} nh10.pcf.gz ${PREFIX}/lib/X11/fonts/hack
 	${X11BASE}/bin/mkfontdir ${X11BASE}/lib/X11/fonts/hack
