@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2000/05/30 10:47:37 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2000/06/01 10:48:34 kevlo Exp $
 
 DISTNAME=	ImageMagick-4.2.9
 CATEGORIES=     graphics
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	bz2.9.5::archivers/bzip2 \
+LIB_DEPENDS=	bz2.10.0::archivers/bzip2 \
 		jbig.1.1::graphics/jbigkit \
 		jpeg.62::graphics/jpeg \
 		mpeg.13::graphics/mpeg-lib \
