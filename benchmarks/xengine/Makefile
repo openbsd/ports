@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/05 18:30:23 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/12 15:11:09 turan Exp $
 
 PKGNAME=	xengine-1.0.1
 CATEGORIES=	benchmarks x11
@@ -6,9 +6,12 @@ NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/comp.sources.x/volume09/xengine/
 DISTFILES=	part01.z patch1.z
 
-NO_CDROM=	"NOFEE:	Can not sell"
-
 MAINTAINER=	ports@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_FTP=	Yes
 
 DIST_SUBDIR=	xengine
 EXTRACT_CMD=	zcat
