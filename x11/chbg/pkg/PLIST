@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/11/11 14:16:11 heko Exp $
-share/control-center/.data/ChBgxss1.desktop
-share/control-center/.data/ChBgxss2.desktop
-share/control-center/.data/ChBgxss3.desktop
-share/control-center/.data/chbg_logo.xpm
+@comment $OpenBSD: PLIST,v 1.2 2002/04/08 22:10:54 naddy Exp $
+bin/chbg
+man/man1/chbg.1
 share/doc/chbg/kde2.txt
 share/doc/chbg/xscreensaver-howto.txt
 share/examples/chbg/chbgrc.sample
