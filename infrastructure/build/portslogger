@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portslogger,v 1.5 2001/07/26 14:53:53 espie Exp $
+# $OpenBSD: portslogger,v 1.6 2001/10/05 07:26:50 espie Exp $
 # Copyright (c) 2001 Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -92,6 +92,7 @@ while (<>) {
 	if (m/^\=\=\=\>\s+(?:(?:Extracting|Applying distribution patches|\
 Patching|Configuring|Building|Faking installation|Building package|\
 Deinstalling|Cleaning|Dist cleaning|Checking files|\
+Regression check|\
 Registering installation)\s+for\s+(.*)|\
 Returning to build of\s+(.*)|Installing\s+(.*?)\s+from)/o) {
 		$ncontext = "$1$2$3"; 	# XXX only one alternative matches
