@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2000/08/16 15:34:45 brad Exp $
+@comment $OpenBSD: PLIST,v 1.11 2001/01/02 23:48:24 naddy Exp $
 bin/blackbox
 bin/bsetbg
 bin/bsetroot
@@ -21,6 +21,7 @@ share/Blackbox/nls/ru_RU/blackbox.cat
 share/Blackbox/nls/sv_SE/blackbox.cat
 share/Blackbox/nls/tr_TR/blackbox.cat
 share/Blackbox/styles/Artwiz
+share/Blackbox/styles/Cthulhain
 share/Blackbox/styles/Flux
 share/Blackbox/styles/Minimal
 share/Blackbox/styles/Nyz

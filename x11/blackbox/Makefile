@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2000/10/22 14:03:55 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2001/01/02 23:48:24 naddy Exp $
 
-DISTNAME=	blackbox-0.61.0
+DISTNAME=	blackbox-0.61.1
 CATEGORIES=	x11
 NEED_VERSION=	1.310
 MASTER_SITES=	ftp://portal.alug.org/pub/blackbox/0.6x.x/ \
