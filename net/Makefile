@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.220 2002/06/07 15:41:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.221 2002/06/19 21:11:58 fgsch Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -129,6 +129,8 @@
      SUBDIR += p5-PlRPC
      SUBDIR += p5-SNMP_Session
      SUBDIR += p5-libnet
+     SUBDIR += pavuk
+     SUBDIR += pavuk,no_x11
      SUBDIR += pcapmerge
      SUBDIR += pchar
      SUBDIR += pdnsd
