@@ -1,6 +1,20 @@
-$OpenBSD: patch-bfd_config_bfd,v 1.12 2003/06/30 18:24:16 brad Exp $
+$OpenBSD: patch-bfd_config_bfd,v 1.13 2003/07/28 05:12:01 brad Exp $
 --- bfd/config.bfd.orig	Thu Nov  7 11:57:50 2002
-+++ bfd/config.bfd	Mon Jun 30 12:36:22 2003
++++ bfd/config.bfd	Mon Jul 21 16:18:47 2003
+@@ -180,11 +180,11 @@ case "${targ}" in
+     targ_defvec=bfd_elf32_littlearm_vec
+     targ_selvecs=bfd_elf32_bigarm_vec
+     ;;
+-  armeb-*-elf | arm*b-*-linux-gnu*)
++  armeb-*-elf | arm*b-*-linux-gnu* | armeb-*-openbsd*)
+     targ_defvec=bfd_elf32_bigarm_vec
+     targ_selvecs=bfd_elf32_littlearm_vec
+     ;;
+-  arm-*-elf | arm-*-freebsd* | arm*-*-linux-gnu* | arm*-*-conix* | arm*-*-uclinux*)
++  arm-*-elf | arm-*-freebsd* | arm*-*-linux-gnu* | arm*-*-conix* | arm*-*-uclinux* | arm-*-openbsd*)
+     targ_defvec=bfd_elf32_littlearm_vec
+     targ_selvecs=bfd_elf32_bigarm_vec
+     ;;
 @@ -413,11 +413,15 @@ case "${targ}" in
      targ_defvec=i386pe_vec
      targ_selvecs="i386pe_vec i386pei_vec bfd_elf32_i386_vec"

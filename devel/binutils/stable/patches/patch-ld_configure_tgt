@@ -1,6 +1,6 @@
-$OpenBSD: patch-ld_configure_tgt,v 1.10 2003/07/16 19:17:22 brad Exp $
+$OpenBSD: patch-ld_configure_tgt,v 1.11 2003/07/28 05:12:01 brad Exp $
 --- ld/configure.tgt.orig	Mon Oct 28 10:58:12 2002
-+++ ld/configure.tgt	Wed Jul  9 15:22:39 2003
++++ ld/configure.tgt	Mon Jul 21 16:46:42 2003
 @@ -70,12 +70,15 @@ sparc*-*-linux-gnu*)	targ_emul=elf32_spa
  			tdir_sun4=sparc-sun-sunos4
  			;;
@@ -34,7 +34,19 @@ $OpenBSD: patch-ld_configure_tgt,v 1.10 2003/07/16 19:17:22 brad Exp $
  x86_64-*-netbsd*)	targ_emul=elf_x86_64
  			targ_extra_emuls="elf_i386 i386nbsd"
  			tdir_elf_i386=`echo ${targ_alias} | \
-@@ -340,6 +351,7 @@ m68*-*-netbsdelf*)	targ_emul=m68kelfnbsd
+@@ -229,7 +240,10 @@ arm-*-netbsdelf*)	targ_emul=armelf_nbsd;
+ 			targ_extra_emuls="armelfb_nbsd armelf armnbsd" ;;
+ arm-*-netbsd*)		targ_emul=armnbsd;
+ 			targ_extra_emuls="armelf armelf_nbsd armelfb_nbsd"  ;;
+-arm-*-openbsd*)		targ_emul=armnbsd ;;
++armeb-*-openbsd*)	targ_emul=armelfb_obsd
++			targ_extra_emuls="armelf_obsd" ;;
++arm-*-openbsd*)		targ_emul=armelf_obsd
++			targ_extra_emuls="armelfb_obsd" ;;
+ arm-*-rtems*)		targ_emul=armelf ;;
+ arm-*-elf)		targ_emul=armelf ;;
+ arm9e-*-elf)		targ_emul=armelf ;;
+@@ -340,6 +354,7 @@ m68*-*-netbsdelf*)	targ_emul=m68kelfnbsd
  m68*-*-netbsdaout* | m68*-*-netbsd*)
  			targ_emul=m68knbsd
  			targ_extra_emuls="m68kelfnbsd m68k4knbsd" ;;
@@ -42,7 +54,7 @@ $OpenBSD: patch-ld_configure_tgt,v 1.10 2003/07/16 19:17:22 brad Exp $
  m68*-*-psos*)		targ_emul=m68kpsos ;;
  m68*-*-rtemscoff*)	targ_emul=m68kcoff ;;
  m68*-*-rtems*)		targ_emul=m68kelf ;;
-@@ -375,6 +387,8 @@ mips*el-*-netbsd*)	targ_emul=elf32lmip
+@@ -375,6 +390,8 @@ mips*el-*-netbsd*)	targ_emul=elf32lmip
  mips*-*-netbsd*)	targ_emul=elf32bmip
  			targ_extra_emuls="elf32lmip"
  			;;
@@ -51,7 +63,7 @@ $OpenBSD: patch-ld_configure_tgt,v 1.10 2003/07/16 19:17:22 brad Exp $
  mips*-*-bsd*)		targ_emul=mipsbig ;;
  mips*vr4300el-*-elf*)	targ_emul=elf32l4300 ;;
  mips*vr4300-*-elf*)	targ_emul=elf32b4300 ;;
-@@ -415,7 +429,7 @@ alpha*-*-osf*)		targ_emul=alpha ;;
+@@ -415,7 +432,7 @@ alpha*-*-osf*)		targ_emul=alpha ;;
  alpha*-*-gnu*)		targ_emul=elf64alpha ;;
  alpha*-*-netware*)	targ_emul=alpha ;;
  alpha*-*-netbsd*)	targ_emul=elf64alpha_nbsd ;;
@@ -60,7 +72,7 @@ $OpenBSD: patch-ld_configure_tgt,v 1.10 2003/07/16 19:17:22 brad Exp $
  z8k-*-coff) 		targ_emul=z8002; targ_extra_emuls=z8001 ;;
  ns32k-pc532-mach* | ns32k-pc532-ux*)	targ_emul=pc532macha ;;
  ns32k-*-netbsd* | ns32k-pc532-lites*) targ_emul=ns32knbsd ;;
-@@ -431,6 +445,7 @@ powerpc-*-freebsd*)	targ_emul=elf32ppc_f
+@@ -431,6 +448,7 @@ powerpc-*-freebsd*)	targ_emul=elf32ppc_f
  			targ_extra_libpath=elf32ppc;
  			tdir_elf32ppcsim=`echo ${targ_alias} | sed -e 's/ppc/ppcsim/'`
  			;;
@@ -68,7 +80,7 @@ $OpenBSD: patch-ld_configure_tgt,v 1.10 2003/07/16 19:17:22 brad Exp $
  powerpc*-*-linux*)
  	case "${targ}" in
  	*64*)	targ_emul=elf64ppc
-@@ -454,7 +469,7 @@ powerpc*le-*-elf* | powerpc*le-*-eabi* |
+@@ -454,7 +472,7 @@ powerpc*le-*-elf* | powerpc*le-*-eabi* |
  		targ_extra_emuls="elf32ppcsim" ;;
  	esac ;;
  powerpc*-*-elf* | powerpc*-*-eabi* | powerpc*-*-sysv* \

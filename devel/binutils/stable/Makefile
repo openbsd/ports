@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/07/16 19:17:21 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2003/07/28 05:12:00 brad Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -29,7 +29,7 @@ CONFIGURE_ARGS=		--with-prefix=${PREFIX} \
 			--disable-nls --disable-commonbfdlib
 
 # cross-tools
-FLAVORS=		alpha hppa i386 m68k m88k mips powerpc \
+FLAVORS=		alpha arm armeb hppa i386 m68k m88k mips powerpc \
 			sparc sparc64 vax x86_64
 FLAVOR?=
 
@@ -59,7 +59,7 @@ EMULPARAMS=		i386obsd.sh sparcobsd.sh m68kobsd.sh \
 			elf32_sparc_obsd.sh elf32ppc_obsd.sh \
 			elf64_sparc_obsd.sh elf64alpha_obsd.sh \
 			elf_i386_obsd.sh elf_x86_64_obsd.sh \
-			elf_obsd.sh
+			elf_obsd.sh armelf_obsd.sh armelfb_obsd.sh
 
 post-extract:
 .for f in ${EMULPARAMS}
