@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.26 2000/03/24 23:28:41 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2000/04/03 03:03:31 jasoni Exp $
 
-DISTNAME=	WindowMaker-0.61.1
-PKGNAME=	windowmaker-0.61.1
+DISTNAME=	WindowMaker-0.62.0
+PKGNAME=	windowmaker-0.62.0
 CATEGORIES=	x11
 NEED_VERSION=	 1.230
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR= beta/srcs
 DATAFILES=	WindowMaker-extra-0.1.tar.gz
 DISTFILES=	${DISTNAME}.tar.gz ${DATAFILES}
+
+HOMEPAGE=	http://www.windowmaker.org/
 
 MAINTAINER=	jasoni@openbsd.org
 
