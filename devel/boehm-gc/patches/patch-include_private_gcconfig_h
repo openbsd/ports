@@ -1,0 +1,119 @@
+$OpenBSD: patch-include_private_gcconfig_h,v 1.1 2002/08/27 15:41:30 todd Exp $
+--- include/private/gcconfig.h.orig	Thu Jul 26 19:28:57 2001
++++ include/private/gcconfig.h	Wed Jul 31 07:45:46 2002
+@@ -33,6 +33,10 @@
+ #    define NETBSD
+ # endif
+ 
++# if defined(__OpenBSD__)
++#    define OPENBSD
++# endif
++
+ /* Determine the machine type: */
+ # if defined(sun) && defined(mc68000)
+ #    define M68K
+@@ -46,12 +50,14 @@
+ # endif
+ # if defined(__OpenBSD__) && defined(m68k)
+ #    define M68K
+-#    define OPENBSD
+ #    define mach_type_known
+ # endif
+ # if defined(__OpenBSD__) && defined(__sparc__)
+ #    define SPARC
+-#    define OPENBSD
++#    define mach_type_known
++# endif
++# if defined(__OpenBSD__) && defined(__powerpc__)
++#    define POWERPC
+ #    define mach_type_known
+ # endif
+ # if defined(__NetBSD__) && defined(m68k)
+@@ -196,7 +202,7 @@
+ # endif
+ # if defined(__alpha) || defined(__alpha__)
+ #   define ALPHA
+-#   if !defined(LINUX) && !defined(NETBSD)
++#   if !defined(LINUX) && !defined(NETBSD) && !defined(OPENBSD)
+ #     define OSF1	/* a.k.a Digital Unix */
+ #   endif
+ #   define mach_type_known
+@@ -241,7 +247,6 @@
+ # endif
+ # if defined(__OpenBSD__) && (defined(i386) || defined(__i386__))
+ #   define I386
+-#   define OPENBSD
+ #   define mach_type_known
+ # endif
+ # if defined(__FreeBSD__) && (defined(i386) || defined(__i386__))
+@@ -664,6 +669,14 @@
+ #     define DATASTART GC_data_start
+ #     define DYNAMIC_LOADING
+ #   endif
++#   ifdef OPENBSD
++#     define ALIGNMENT 4
++#     define OS_TYPE "OPENBSD"
++#     define HEURISTIC2
++      extern char etext;
++#     define DATASTART GC_data_start
++#     define DYNAMIC_LOADING
++#   endif
+ #   ifdef NOSYS
+ #     define ALIGNMENT 4
+ #     define OS_TYPE "NOSYS"
+@@ -793,9 +806,18 @@
+ #   endif
+ #   ifdef OPENBSD
+ #     define OS_TYPE "OPENBSD"
+-#     define STACKBOTTOM ((ptr_t) 0xf8000000)
+-      extern int etext;
+-#     define DATASTART ((ptr_t)(&etext))
++#     define HEURISTIC2
++#     ifdef __arch64__
++#	define CPP_WORDSZ 64
++#       define ELF_CLASS ELFCLASS64
++#     endif
++#     ifdef __ELF__
++#	define DATASTART GC_data_start
++#	define DYNAMIC_LOADING
++#     else
++	extern char etext;
++#	define DATASTART ((ptr_t)(&etext))
++#     endif
+ #   endif
+ #   ifdef NETBSD
+ #     define OS_TYPE "NETBSD"
+@@ -1000,6 +1022,9 @@
+ #   endif
+ #   ifdef OPENBSD
+ #	define OS_TYPE "OPENBSD"
++#	define HEURISTIC2
++	extern char etext;
++#	define DATASTART ((ptr_t)(&etext))
+ #   endif
+ #   ifdef FREEBSD
+ #	define OS_TYPE "FREEBSD"
+@@ -1015,7 +1040,7 @@
+ #   ifdef BSDI
+ #	define OS_TYPE "BSDI"
+ #   endif
+-#   if defined(OPENBSD) || defined(NETBSD) || defined(FREEBSD) \
++#   if defined(NETBSD) || defined(FREEBSD) \
+         || defined(THREE86BSD) || defined(BSDI)
+ #	define HEURISTIC2
+ 	extern char etext;
+@@ -1238,6 +1263,14 @@
+ #	define DATASTART GC_data_start
+ #	define ELFCLASS32 32
+ #	define ELFCLASS64 64
++#	define ELF_CLASS ELFCLASS64
++#   	define CPP_WORDSZ 64
++#       define DYNAMIC_LOADING
++#   endif
++#   ifdef OPENBSD
++#	define OS_TYPE "OPENBSD"
++#	define HEURISTIC2
++#	define DATASTART GC_data_start
+ #	define ELF_CLASS ELFCLASS64
+ #   	define CPP_WORDSZ 64
+ #       define DYNAMIC_LOADING

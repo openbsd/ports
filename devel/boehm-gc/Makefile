@@ -1,18 +1,15 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/01 03:49:08 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2002/08/27 15:41:30 todd Exp $
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
 COMMENT=	"garbage collection and memory leak detection for C and C++"
 
-ONLY_FOR_ARCHS=	i386 m68k sparc
-
-DISTNAME=	gc4.12
-PKGNAME=	boehm-gc-4.12
+VERSION=	6.0
+DISTNAME=	gc${VERSION}
+PKGNAME=	boehm-gc-${VERSION}
 CATEGORIES=	devel
-NEED_VERSION=	1.500
-MASTER_SITES=	${MASTER_SITE_BACKUP}
-EXTRACT_CASES=	gc4.12.tar.gz) tar zxf ${FULLDISTDIR}/$$archive || true;;
+MASTER_SITES=	${HOMEPAGE}gc_source/
 
-HOMEPAGE=	http://ginger.hpl.hp.com/personal/Hans_Boehm/gc/
+HOMEPAGE=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/
 
 MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 
@@ -25,14 +22,19 @@ MAKE_ENV=	CP="cp" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_MAN="${INSTALL_MAN}"
 
-ALL_TARGET=	OpenBSD-pkg-all
-INSTALL_TARGET=	OpenBSD-pkg-install
+CONFIGURE_STYLE=gnu
 
-WRKDIST=	${WRKDIR}/gc
+WRKDIST=	${WRKDIR}/gc6.0
 
 post-patch:
-	@mv ${WRKSRC}/gc.man ${WRKSRC}/gc.man.in
-	@sed -e "s,@PREFIX@,${PREFIX},g" ${WRKSRC}/gc.man.in > \
-		${WRKSRC}/gc.man
+	@mv ${WRKSRC}/doc/gc.man ${WRKSRC}/doc/gc.man.in
+	@sed -e "s,@PREFIX@,${PREFIX},g" ${WRKSRC}/doc/gc.man.in > \
+		${WRKSRC}/doc/gc.man
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/doc/gc.man ${PREFIX}/man/man3/gc.3
+	${INSTALL_DATA} ${WRKSRC}/include/gc{,_cpp}.h ${PREFIX}/include
+
+REGRESS_TARGET=	check-TESTS
 
 .include <bsd.port.mk>
