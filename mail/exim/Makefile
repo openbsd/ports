@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2003/09/03 17:21:05 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2004/01/02 05:03:33 brad Exp $
 
 COMMENT=	"flexible mail transfer agent"
 
@@ -30,7 +30,7 @@ MAKE_ENV=	FLAVOR="${FLAVOR}"
 
 EXIM_MAKECAT=
 EXIM_LOOKUP_INCLUDE=
-EXIM_LOOKUP_LIB=
+EXIM_LOOKUP_LIBS=
 
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=	Yes
@@ -49,8 +49,7 @@ EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib -lldap -llber
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-LIBS+=		${LOCALBASE}/lib/mysql
-LIB_DEPENDS+=	lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
+LIB_DEPENDS+=	lib/mysql/mysqlclient.10::databases/mysql
 EXIM_MAKECAT+=	"LOOKUP_MYSQL=yes\n"
 EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include/mysql
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
