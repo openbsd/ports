@@ -25,7 +25,6 @@ include/expect.h
 include/expect_comm.h
 include/expect_tcl.h
 include/tclRegexp.h
-lib/expect5.26/pkgIndex.tcl
 lib/expect5.26/libexpect526.a
 @exec ranlib %D/%F
 lib/libexpect526.a
