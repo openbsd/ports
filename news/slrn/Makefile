@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/06/09 17:18:00 lebel Exp $
+# $OpenBSD: Makefile,v 1.22 2001/06/09 17:20:17 lebel Exp $
 
 COMMENT=		"SLang-based newsreader"
 
@@ -21,8 +21,5 @@ LIB_DEPENDS=		slang.::devel/libslang
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-inews --with-ssl
-
-do-install:
-	@cd ${WRKBUILD}/src && make ${FAKE_FLAGS} install
 
 .include <bsd.port.mk>
