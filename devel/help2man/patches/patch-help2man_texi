@@ -1,9 +1,9 @@
-$OpenBSD: patch-help2man_texi,v 1.1.1.1 2001/08/26 22:18:42 brad Exp $
---- help2man.texi.orig	Fri Dec 22 07:19:33 2000
-+++ help2man.texi	Sun Aug 26 20:01:18 2001
-@@ -7,9 +7,9 @@
- @c %**end of header
- @c $Id: help2man.texi,v 1.5 2000/12/22 12:15:21 bod Exp $
+$OpenBSD: patch-help2man_texi,v 1.2 2001/08/27 00:08:12 brad Exp $
+--- help2man.texi.orig	Sat Mar  9 08:48:17 2002
++++ help2man.texi	Thu Aug 22 12:36:54 2002
+@@ -5,9 +5,9 @@
+ @finalout
+ @c $Id: help2man.texi,v 1.7 2002/03/09 12:53:04 bod Exp $
  
 -@dircategory GNU admin
 +@dircategory Programming & development tools
