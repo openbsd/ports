@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2003/06/12 13:47:44 brad Exp $
---- Makefile.in.orig	Thu May 22 14:53:02 2003
-+++ Makefile.in	Wed Jun  4 08:58:58 2003
+$OpenBSD: patch-Makefile_in,v 1.4 2003/09/23 06:35:33 fgsch Exp $
+--- Makefile.in.orig	2003-09-21 04:57:56.000000000 -0300
++++ Makefile.in	2003-09-23 02:55:51.000000000 -0300
 @@ -99,7 +99,7 @@ https.o img.o imgcache.o ipret.o javascr
- kbd.o language.o links_icon.o listedit.o lru.o mailto.o main.o menu.o \
- memory.o md5.o md5hl.o ns.o objreq.o os_dep.o pmshell.o png.o pomocny.o \
- sched.o select.o session.o svgalib.o terminal.o tiff.o types.o url.o \
--view.o view_gr.o win32.o x.o xbm.o
-+view.o view_gr.o win32.o x.o xbm.o auth.o
+ kbd.o language.o links_icon.o listedit.o lru.o mailto.o main.o md5.o \
+ md5hl.o menu.o memory.o ns.o objreq.o os_dep.o pmshell.o png.o \
+ pomocny.o sched.o select.o session.o svgalib.o terminal.o tiff.o \
+-types.o url.o view.o view_gr.o win32.o x.o xbm.o
++types.o url.o view.o view_gr.o win32.o x.o xbm.o auth.o
  @ATHEOS_GR_TRUE@links_DEPENDENCIES =  atheos.o
  links_LDFLAGS = 
  CFLAGS = @CFLAGS@

@@ -1,6 +1,6 @@
-$OpenBSD: patch-menu_c,v 1.4 2003/06/12 13:47:44 brad Exp $
---- menu.c.orig	Thu May 22 03:29:22 2003
-+++ menu.c	Wed Jun  4 08:57:15 2003
+$OpenBSD: patch-menu_c,v 1.5 2003/09/23 06:35:33 fgsch Exp $
+--- menu.c.orig	2003-09-01 17:22:57.000000000 -0300
++++ menu.c	2003-09-23 02:55:15.000000000 -0300
 @@ -329,7 +329,7 @@ void flush_caches(struct terminal *term,
  /* jde v historii o psteps polozek dozadu */
  void go_backwards(struct terminal *term, void *psteps, struct session *ses)
@@ -64,7 +64,7 @@ $OpenBSD: patch-menu_c,v 1.4 2003/06/12 13:47:44 brad Exp $
  	}
  	sel = *ptr;
  	if (sel < 0) sel = 0;
-@@ -755,26 +755,68 @@ int dlg_http_options(struct dialog_data 
+@@ -751,26 +751,68 @@ int dlg_http_options(struct dialog_data 
  	return 0;
  }
  
@@ -148,7 +148,7 @@ $OpenBSD: patch-menu_c,v 1.4 2003/06/12 13:47:44 brad Exp $
   	do_dialog(dlg->win->term, d, getml(d, NULL));
  	return 0;
  }
-@@ -1760,7 +1802,7 @@ void miscelaneous_options(struct termina
+@@ -1845,7 +1887,7 @@ void miscelaneous_options(struct termina
  
  void menu_set_language(struct terminal *term, void *pcp, struct session *ses)
  {
@@ -157,7 +157,7 @@ $OpenBSD: patch-menu_c,v 1.4 2003/06/12 13:47:44 brad Exp $
  	cls_redraw_all_terminals();
  }
  
-@@ -1772,7 +1814,7 @@ void menu_language_list(struct terminal 
+@@ -1857,7 +1899,7 @@ void menu_language_list(struct terminal 
  	if (!(mi = new_menu(1))) return;
  	for (i = 0; i < n_languages(); i++) {
  		n = language_name(i);

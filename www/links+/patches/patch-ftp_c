@@ -1,6 +1,6 @@
-$OpenBSD: patch-ftp_c,v 1.1 2002/12/28 21:49:14 fgsch Exp $
---- ftp.c.orig	Tue May  7 07:13:18 2002
-+++ ftp.c	Sat Dec 28 17:20:00 2002
+$OpenBSD: patch-ftp_c,v 1.2 2003/09/23 06:35:33 fgsch Exp $
+--- ftp.c.orig	2003-09-01 16:40:44.000000000 -0300
++++ ftp.c	2003-09-23 02:58:09.000000000 -0300
 @@ -19,6 +19,7 @@ struct ftp_connection_info {
  	int d;
  	int dpos;
@@ -205,7 +205,7 @@ $OpenBSD: patch-ftp_c,v 1.1 2002/12/28 21:49:14 fgsch Exp $
 +			add_chr_to_str(&s, &l, ',');
 +			add_num_to_str(&s, &l, pc[5]);
 +		}
- 		if (c->from) {
+ 		if (c->from && c->no_cache < NC_IF_MOD) {
  			add_to_str(&s, &l, "\r\nREST ");
  			add_num_to_str(&s, &l, c->from);
 @@ -314,6 +391,8 @@ void ftp_retr_file(struct connection *c,

@@ -1,7 +1,7 @@
-$OpenBSD: patch-jsint_c,v 1.3 2003/06/12 13:47:44 brad Exp $
---- jsint.c.orig	Thu May 22 12:56:20 2003
-+++ jsint.c	Wed Jun  4 08:57:15 2003
-@@ -2805,7 +2805,7 @@ static void __js_upcall_goto_history_ok_
+$OpenBSD: patch-jsint_c,v 1.4 2003/09/23 06:35:33 fgsch Exp $
+--- jsint.c.orig	2003-09-01 16:40:44.000000000 -0300
++++ jsint.c	2003-09-23 02:55:15.000000000 -0300
+@@ -2810,7 +2810,7 @@ static void __js_upcall_goto_history_ok_
  
  	if (a<jsid->n&&(fd->js)&&jsid->js_id==fd->js->ctx->js_id){js_downcall_vezmi_null(fd->js->ctx);return;}   /* call downcall */
  
