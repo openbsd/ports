@@ -1,6 +1,6 @@
---- support/config.h.dist.old	Wed Dec  9 15:05:45 1998
-+++ support/config.h.dist	Wed Dec  9 15:09:34 1998
-@@ -168,13 +168,13 @@
+--- support/config.h.dist.orig	Tue Jun  6 22:35:20 2000
++++ support/config.h.dist	Tue Jan  9 22:04:28 2001
+@@ -118,13 +118,13 @@
   * if 'OPER_x' is undefined so you can't give local operators more rights
   * than global ones.
   */
@@ -18,7 +18,7 @@
  #undef	LOCOP_DIE
  
  /*
-@@ -299,32 +299,32 @@
+@@ -237,32 +237,32 @@
   * this option is used unless you tell the system administrator beforehand
   * and obtain their permission to send messages to the system log files.
   */
@@ -48,7 +48,7 @@
   * this define.
   */
 -#define LOG_FACILITY LOG_DAEMON
-+#define LOG_FACILITY !!SYSLOG_FACILITY!!
++#define LOG_FACILITY LOG_LOCAL5
  #endif /* USE_SYSLOG */
  
  /*
@@ -60,7 +60,7 @@
  
  /*
   * If you want to store encrypted passwords in N-lines for server links,
-@@ -376,7 +376,7 @@
+@@ -314,7 +314,7 @@
   * send to the server without processing before disconnecting the client for
   * flooding it.  Values greater than 8000 make no difference to the server.
   */
@@ -69,7 +69,7 @@
  
  /* Remote query flood protection. */
  #define	CHREPLLEN	8192
-@@ -414,7 +414,7 @@
+@@ -352,7 +352,7 @@
   * The library and the include files must have been found by configure,
   * if you have installed the zlib after running configure, run it again.
   */

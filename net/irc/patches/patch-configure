@@ -1,0 +1,11 @@
+--- support/configure.orig	Thu Jan 11 13:26:00 2001
++++ support/configure	Thu Jan 11 13:26:19 2001
+@@ -246,7 +246,7 @@
+   -logdir | --logdir | --logdi | --logd)
+     ac_prev=logdir ;;
+   -logdir=* | --logdir=* | --logdi=* | --logd=*)
+-    logdir="$ac_optarg/" ;;
++    logdir="$ac_optarg" ;;
+ 
+   -mandir | --mandir | --mandi | --mand | --man | --ma | --m)
+     ac_prev=mandir ;;
