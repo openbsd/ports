@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2001/09/29 20:14:20 pvalchev Exp $
---- configure.orig	Sat Jan 29 19:26:06 2000
-+++ configure	Sat Sep 29 13:06:59 2001
+$OpenBSD: patch-configure,v 1.5 2001/10/02 12:27:12 espie Exp $
+--- configure.orig	Sun Jan 30 03:26:06 2000
++++ configure	Tue Oct  2 12:18:11 2001
 @@ -774,9 +774,23 @@ LIBPLPLOT=""
  ### Allow the user disable support for command line editing using GNU
  ### readline.
@@ -84,3 +84,12 @@ $OpenBSD: patch-configure,v 1.4 2001/09/29 20:14:20 pvalchev Exp $
       #ifdef FNM_PERIOD
         yes
       #endif
+@@ -6233,7 +6255,7 @@ test -z "$INSTALL_DATA" && INSTALL_DATA=
+ INSTALL_SCRIPT='${INSTALL}'
+ 
+ 
+-if test "$cross_compiling" = yes; then
++if true; then
+   GNUPLOT_BINARY=gnuplot
+   echo "$ac_t""assuming $GNUPLOT_BINARY exists on $canonical_host_type host" 1>&6
+   

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/02 12:27:11 espie Exp $
 
 COMMENT=	"High-level language for numerical computations"
 VERSION=	2.0.16
@@ -19,8 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	octave
 
-BUILD_DEPENDS=	gnuplot:gnuplot-*:math/gnuplot
-RUN_DEPENDS=	gnuplot:gnuplot-*:math/gnuplot
+REGRESS_DEPENDS=::devel/dejagnu
 
 USE_GMAKE=	Yes
 
