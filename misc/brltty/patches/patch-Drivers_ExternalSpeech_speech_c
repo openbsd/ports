@@ -1,0 +1,12 @@
+$OpenBSD: patch-Drivers_ExternalSpeech_speech_c,v 1.1 2004/01/04 17:27:48 sturm Exp $
+--- Drivers/ExternalSpeech/speech.c.orig	2004-01-04 18:24:07.000000000 +0100
++++ Drivers/ExternalSpeech/speech.c	2004-01-04 18:24:25.000000000 +0100
+@@ -159,7 +159,7 @@ static void spk_open (char **parameters)
+       long numfds = sysconf(_SC_OPEN_MAX);
+       for(i=2; i<numfds; i++) close(i);
+     }
+-    execl(extProgPath, extProgPath, 0);
++    execl(extProgPath, extProgPath, (void *)NULL);
+     myperror("Unable to execute external speech program '%s'", extProgPath);
+     _exit(1);
+   }
