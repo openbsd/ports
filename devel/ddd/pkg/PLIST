@@ -1,0 +1,4 @@
+@mode 555
+bin/ddd
+@mode 444
+man/man1/ddd.1

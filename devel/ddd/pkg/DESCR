@@ -1,0 +1,28 @@
+What is DDD, anyway?
+====================
+
+    The Data Display Debugger (DDD) is a common graphical user
+    interface to GDB, DBX, and XDB, the popular UNIX debuggers.
+    Besides ``usual'' features such as viewing source texts and
+    breakpoints, DDD provides a graphical data display, where data
+    structures are displayed as graphs.  A simple mouse click
+    dereferences pointers or reveals structure contents, updated each
+    time the program stops.  Using DDD, you can reason about your
+    application by viewing its data, not just by viewing it execute
+    lines of source code.
+
+    Other DDD features include: debugging of programs written in C,
+    C++, Ada, Fortran, Pascal, Modula-2, or Modula-3; machine-level
+    debugging; hypertext source navigation and lookup; breakpoint,
+    backtrace, and history editors; preferences and settings editors;
+    program execution in terminal emulator window; debugging on remote
+    host; on-line manual; interactive help on the Motif user
+    interface; GDB/DBX/XDB command-line interface with full editing,
+    history, and completion capabilities.  DDD has been designed to
+    compete with well-known commercial debuggers.
+    
+    DDD is free software, protected by the GNU general public license.
+    It is actively maintained by its authors, Dorothea Luetkehaus and
+    Andreas Zeller at the Technische Universitaet Braunschweig,
+    Germany.
+
