@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/10/12 13:40:14 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2001/10/12 13:41:05 wilfried Exp $
 #
 # This port should remain Python 1.5.2.  Please do not upgrade.
 # Uses threads
@@ -65,7 +65,7 @@ CONFIGURE_ARGS+= --with-thread
 .endif
 .endif
 
-.if ${MACHINE_ARCH} == "alpha"
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "sparc64"
 NO64BIT=	\#
 .endif
 

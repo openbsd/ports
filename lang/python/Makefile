@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2001/10/12 13:40:14 wilfried Exp $
+# $OpenBSD: Makefile,v 1.43 2001/10/12 13:41:05 wilfried Exp $
 # Uses threads
 
 COMMENT= 	"interpreted object-oriented programming language"
@@ -64,7 +64,7 @@ CONFIGURE_ARGS+= --with-threads
 CONFIGURE_ARGS+= --without-threads
 .endif
 
-.if ${MACHINE_ARCH} == "alpha"
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "sparc64"
 NO64BIT=	\#
 .endif
 
