@@ -3,8 +3,8 @@
 # Date created:		July 14 1999
 # Whom:			Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.2 1999/07/15 16:04:28 angelos Exp $
-# $OpenBSD: Makefile,v 1.2 1999/07/15 16:04:28 angelos Exp $
+# $Id: Makefile,v 1.3 1999/07/29 06:34:57 niklas Exp $
+# $OpenBSD: Makefile,v 1.3 1999/07/29 06:34:57 niklas Exp $
 #
 
 DISTNAME=	vic
@@ -19,8 +19,9 @@ LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11/tk80
 USE_AUTOCONF=	yes
 USE_X_PREFIX=	yes
 
-post-install:
-	strip ${PREFIX}/bin/vic
-	strip ${PREFIX}/bin/histtolut
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/vic ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/histtolut ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/vic.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
