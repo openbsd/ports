@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2004/10/02 23:14:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.85 2004/12/01 17:09:49 jcs Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -58,6 +58,7 @@
      SUBDIR += syslog-ng
      SUBDIR += tcplist
      SUBDIR += tentakel
+     SUBDIR += tpb
      SUBDIR += upsd
      SUBDIR += usbutil
      SUBDIR += wdsetup
