@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2002/06/10 03:14:35 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2002/11/29 05:40:41 kevlo Exp $
+
+IGNORE=		"comes with ${OPSYS} as of release 3.3"
 
 COMMENT=	"modules for use in writing cgi scripts"
 
