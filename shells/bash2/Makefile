@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/03/31 16:30:25 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/05/17 01:02:23 espie Exp $
 
 DISTNAME=	bash-2.04
 CATEGORIES=	shells
@@ -20,7 +20,7 @@ HAS_CONFIGURE=	Yes
 CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
 
 # Work-around for curses bug, which makes trace visible...
-CFLAGS+=-Dtrace=bash_trace
+#CFLAGS+=-Dtrace=bash_trace
 
 FLAVORS=static
 .if defined(STATIC) && ${STATIC:U} == YES
@@ -29,7 +29,7 @@ FLAVOR=static
 FLAVOR?=
 
 .if ${FLAVOR:L} == "static"
-CONFIGURE_ENV+= LDFLAGS=-static
+CONFIGURE_ARGS+= --enable-static-link
 .endif
 
 post-install:
