@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/01/24 13:47:13 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2002/01/26 14:14:53 wilfried Exp $
 
 COMMENT=		'wm-dockapp; audio mixer'
 
@@ -22,5 +22,17 @@ USE_X11=		Yes
 NO_REGRESS=		Yes
 
 ALL_TARGET=		wmix
+
+DOCS=			README
+DOCDIR=			${PREFIX}/share/doc/wmix
+SAMPLES=		sample.wmixrc
+SAMPLE_DIR=		${PREFIX}/share/examples/wmix
+SUBST_VARS+=		SAMPLE_DIR
+
+post-install:
+	${INSTALL_DATA_DIR} ${DOCDIR} ${SAMPLE_DIR}
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} ${DOCS} ${DOCDIR} && \
+		${INSTALL_DATA} ${SAMPLES} ${SAMPLE_DIR}
 
 .include <bsd.port.mk>
