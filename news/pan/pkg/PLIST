@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/10/05 20:25:50 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/02/03 13:53:06 fgsch Exp $
 bin/pan
 share/doc/pan/faq.html
 share/doc/pan/pan_acccelerators.txt
+@comment share/gnome/apps/Internet/pan.desktop
 share/locale/ca/LC_MESSAGES/pan.mo
 share/locale/cs/LC_MESSAGES/pan.mo
 share/locale/da/LC_MESSAGES/pan.mo
@@ -33,4 +34,72 @@ share/locale/sv/LC_MESSAGES/pan.mo
 share/locale/tr/LC_MESSAGES/pan.mo
 share/locale/uk/LC_MESSAGES/pan.mo
 share/locale/zh_CN/LC_MESSAGES/pan.mo
+@comment share/pixmaps/pan.png
+@comment @dirrm share/pixmaps
+@comment @dirrm share/locale/zh_CN/LC_MESSAGES
+@comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/uk/LC_MESSAGES
+@comment @dirrm share/locale/uk
+@comment @dirrm share/locale/tr/LC_MESSAGES
+@comment @dirrm share/locale/tr
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sr/LC_MESSAGES
+@comment @dirrm share/locale/sr
+@comment @dirrm share/locale/sp/LC_MESSAGES
+@comment @dirrm share/locale/sp
+@comment @dirrm share/locale/sl/LC_MESSAGES
+@comment @dirrm share/locale/sl
+@comment @dirrm share/locale/sk/LC_MESSAGES
+@comment @dirrm share/locale/sk
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/pt/LC_MESSAGES
+@comment @dirrm share/locale/pt
+@comment @dirrm share/locale/pl/LC_MESSAGES
+@comment @dirrm share/locale/pl
+@comment @dirrm share/locale/no/LC_MESSAGES
+@comment @dirrm share/locale/no
+@comment @dirrm share/locale/nl/LC_MESSAGES
+@comment @dirrm share/locale/nl
+@comment @dirrm share/locale/lt/LC_MESSAGES
+@comment @dirrm share/locale/lt
+@comment @dirrm share/locale/ko/LC_MESSAGES
+@comment @dirrm share/locale/ko
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/hu/LC_MESSAGES
+@comment @dirrm share/locale/hu
+@comment @dirrm share/locale/gl/LC_MESSAGES
+@comment @dirrm share/locale/gl
+@comment @dirrm share/locale/ga/LC_MESSAGES
+@comment @dirrm share/locale/ga
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/fi/LC_MESSAGES
+@comment @dirrm share/locale/fi
+@comment @dirrm share/locale/et/LC_MESSAGES
+@comment @dirrm share/locale/et
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/en_GB/LC_MESSAGES
+@comment @dirrm share/locale/en_GB
+@comment @dirrm share/locale/el/LC_MESSAGES
+@comment @dirrm share/locale/el
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale/cs/LC_MESSAGES
+@comment @dirrm share/locale/cs
+@comment @dirrm share/locale/ca/LC_MESSAGES
+@comment @dirrm share/locale/ca
+@comment @dirrm share/locale
+@comment @dirrm share/gnome/apps/Internet
+@comment @dirrm share/gnome/apps
+@comment @dirrm share/gnome
 @dirrm share/doc/pan

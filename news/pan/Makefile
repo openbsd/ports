@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/10/05 20:25:50 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2003/02/03 13:53:06 fgsch Exp $
 
 COMMENT=	"powerful Gtk+2 newsreader"
 
-VER=		0.13.0
+VER=		0.13.3
 DISTNAME=	pan-${VER}
 CATEGORIES=	news x11
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${VER}/SOURCE/
@@ -23,6 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS+= --disable-gtkspell
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
