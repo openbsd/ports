@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/08/09 00:34:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2001/10/16 14:18:28 pvalchev Exp $
 
 COMMENT=	"module for generating and manipulating images"
 
@@ -24,7 +24,7 @@ FLAVORS=	libs
 FLAVOR?=
 
 .if ${FLAVOR:L} == "libs"
-LIB_DEPENDS=	t1.2::devel/t1lib \
+LIB_DEPENDS=	t1.3::devel/t1lib \
 		png.2::graphics/png \
 		jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff
