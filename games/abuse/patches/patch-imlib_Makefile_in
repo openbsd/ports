@@ -1,0 +1,11 @@
+--- imlib/Makefile.in.orig	Wed Jul  9 09:55:05 1997
++++ imlib/Makefile.in	Fri Mar 16 18:50:57 2001
+@@ -102,7 +102,7 @@ EXTRA_libtime_a_SOURCES = port/unix/timi
+ INCLUDES = -I$(srcdir)/include $(X_CFLAGS)
+ 
+ MYDEFS = -DMANAGE_MEM -DNO_CHECK
+-CXXFLAGS = -g -O2
++CXXFLAGS = @CXXFLAGS@
+ 
+ MOSTLYCLEANFILES = $(SOUND) $(JOYSTICK) $(TIMING)
+ 

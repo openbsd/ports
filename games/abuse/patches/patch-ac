@@ -1,5 +1,5 @@
---- abuse/Makefile.in.orig	Wed Jul  9 00:55:21 1997
-+++ abuse/Makefile.in	Sat Aug 29 04:31:24 1998
+--- abuse/Makefile.in.orig	Wed Jul  9 09:55:21 1997
++++ abuse/Makefile.in	Fri Mar 16 18:53:26 2001
 @@ -37,10 +37,10 @@
  AUTOMAKE = @AUTOMAKE@
  AUTOHEADER = @AUTOHEADER@
@@ -15,6 +15,15 @@
  transform = @program_transform_name@
  
  NORMAL_INSTALL = true
+@@ -103,7 +103,7 @@
+ 	   -I$(srcdir)/src/net/inc -I$(srcdir)/src/net/unix
+ 
+ MYDEFS = -DMANAGE_MEM -DNO_CHECK
+-CXXFLAGS = -g -O2
++CXXFLAGS = @CXXFLAGS@
+ 
+ COMPILE = $(CXX) $(DEFS) $(MYDEFS) $(INCLUDES) $(CPPFLAGS) $(CXXFLAGS) $(ADDCXXFLAGS) -o $@
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 @@ -239,11 +239,11 @@
  
  install-pkglibPROGRAMS: $(pkglib_PROGRAMS)
