@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/10/07 11:35:39 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/08 09:21:38 matthieu Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	"Tool Command Language"
@@ -34,6 +34,9 @@ CONFIGURE_ARGS+= --enable-static
 
 .if (${MACHINE_ARCH} == "mips")
 CONFIGURE_ARGS+= --disable-load
+.endif
+.if (${MACHINE_ARCH} == "sparc64")
+CONFIGURE_ARGS+= --enable-64bit
 .endif
 CONFIGURE_ENV=	PORTSDIR="${PORTSDIR}"
 
