@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2000/10/22 17:02:41 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2000/10/30 12:52:32 markus Exp $
 
-DISTNAME=	gnupg-1.0.3
+DISTNAME=	gnupg-1.0.4
 CATEGORIES=	security
 NEED_VERSION=	1.320
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--disable-nls
 
 GNUPGDOCDIR=	${PREFIX}/share/doc/gnupg
 GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
-		doc/DETAILS doc/FAQ doc/OpenPGP doc/HACKING
+		doc/DETAILS doc/FAQ doc/OpenPGP doc/HACKING doc/faq.html
 
 post-install:
 	${INSTALL_DATA_DIR} ${GNUPGDOCDIR}

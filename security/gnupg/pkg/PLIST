@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/06/29 06:06:31 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2000/10/30 12:52:32 markus Exp $
 bin/gpg
+bin/gpgv
 lib/gnupg/rndunix
 lib/gnupg/rndegd
 lib/gnupg/tiger
 man/man1/gpg.1
+man/man1/gpgv.1
 share/doc/gnupg/README
 share/doc/gnupg/AUTHORS
 share/doc/gnupg/COPYING
@@ -14,6 +16,7 @@ share/doc/gnupg/DETAILS
 share/doc/gnupg/FAQ
 share/doc/gnupg/OpenPGP
 share/doc/gnupg/HACKING
+share/doc/gnupg/faq.html
 share/gnupg/options.skel
 @dirrm lib/gnupg
 @dirrm share/doc/gnupg

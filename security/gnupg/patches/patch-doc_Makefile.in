@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Mon Oct 30 13:03:14 2000
++++ doc/Makefile.in	Tue Oct 17 15:40:48 2000
+@@ -111,7 +111,7 @@
+ 
+ man_MANS = gpg.1 gpgv.1
+ 
+-pkgdata_DATA = FAQ faq.html
++#pkgdata_DATA = FAQ faq.html
+ 
+ BUILT_SOURCES = FAQ faq.html
+ 
