@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2001/11/01 13:35:56 wilfried Exp $
+# $OpenBSD: Makefile,v 1.119 2001/11/06 14:12:49 wilfried Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -120,6 +120,7 @@
      SUBDIR += windowmaker-extra
      SUBDIR += wmbutton
      SUBDIR += wmcalclock
+     SUBDIR += wmclock
      SUBDIR += wmdate
      SUBDIR += wmfishtime
      SUBDIR += wminfo
