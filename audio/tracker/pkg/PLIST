@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/05/12 18:02:44 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/08/22 17:48:18 espie Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/tracker.info
 bin/randomize
 bin/tracker
@@ -94,3 +94,5 @@ share/doc/tracker/tracker.texinfo
 @dirrm share/doc/tracker
 @dirrm lib/tracker
 @exec install-info --info-dir=%D/info %D/info/tracker.info
+@cwd ${SYSCONFDIR}
+@extra compression_methods
