@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2000/07/01 21:18:30 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/07/21 06:18:27 brad Exp $
 # $FreeBSD: Makefile,v 1.1 1999/12/22 14:53:53 jedgar Exp $
 
-DISTNAME=	pngcrush-1.4.5
+DISTNAME=	pngcrush-1.4.7
 CATEGORIES=	graphics
 NEED_VERSION=	1.310
-MASTER_SITES=	http://download.sourceforge.net/pmt/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= pmt
+
+HOMEPAGE=	http://pmt.sourceforge.net/pngcrush/
 
 MAINTAINER=	brad@openbsd.org
 
