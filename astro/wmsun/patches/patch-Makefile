@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2001/01/09 22:10:18 naddy Exp $
+$OpenBSD: patch-Makefile,v 1.2 2001/04/23 14:43:11 wilfried Exp $
 --- wmSun/Makefile.orig	Wed Jan  6 03:28:39 1999
 +++ wmSun/Makefile	Tue Jan  9 17:53:48 2001
 @@ -1,8 +1,5 @@
@@ -25,7 +25,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2001/01/09 22:10:18 naddy Exp $
  wmSun.o: wmSun_master.xpm wmSun_mask.xbm 
  wmSun:	$(OBJS) 
 -	$(CC) $(COPTS) $(SYSTEM) -lm -o wmSun $^ $(INCDIR) $(LIBDIR) $(LIBS)
-+	$(CC) $(COPTS) $(SYSTEM) -lm -o wmSun $(OBJS) $(INCDIR) $(LIBDIR) $(LIBS)
++	$(CC) $(COPTS) $(SYSTEM) -o wmSun $(OBJS) $(INCDIR) $(LIBDIR) $(LIBS) -lm
  
  clean:
  	for i in $(OBJS) ; do \
