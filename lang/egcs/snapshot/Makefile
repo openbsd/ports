@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2003/11/13 19:04:09 espie Exp $
+# $OpenBSD: Makefile,v 1.96 2003/11/15 16:51:52 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -293,6 +293,9 @@ post-build:
 	cp ${FILESDIR}/include/machine/ansi.h ${WRKBUILD}/gcc/include/machine
 .if ${MAKE_ADA:L} == "yes"
 	cd ${WRKBUILD}/gcc && env ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} gnatlib_and_tools
+.endif
+.if ${MAKE_JAVA:L} == "yes"
+	cd ${WRKBUILD} && env ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_ARGS} all-target-libjava
 .endif
 
 
