@@ -7,11 +7,13 @@ The ipop2d, ipop3d, and imapd daemons should be invoked by your
 
 
 To use SSL as default transport you need to add the lines below to
-/etc/inetd.conf. You also need to install files containing certificate
-and private key to /etc/ssl/ipop3d.pem and /etc/ssl/imapd.pem.
+/etc/inetd.conf.
 
   pop3s   stream  tcp     nowait  root    /usr/local/libexec/ipop3d   ipop3d
   imaps   stream  tcp     nowait  root    /usr/local/libexec/imapd    imapd
+
+You also need to install files containing an RSA certificate and private key
+to /etc/ssl/ipop3d.pem and /etc/ssl/imapd.pem. See ssl(8) for how to do this.
 
 The following lines also needs to be added to /etc/services:
 
