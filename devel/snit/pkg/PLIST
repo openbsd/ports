@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/17 00:26:52 naddy Exp $
+lib/snit/README.txt
+lib/snit/license.txt
+lib/snit/pkgIndex.tcl
+lib/snit/snit.html
+lib/snit/snit.tcl
+lib/snit/snit.test
+@dirrm lib/snit
