@@ -1,7 +1,0 @@
-include/cgi.h
-lib/libcgiparse.a
-lib/libcgiparse.so.1.0
-@exec /sbin/ldconfig -m %B
-man/man3/cgigetvalue.3
-man/man3/cgiclose.3
-man/man3/cginewquerystr.3

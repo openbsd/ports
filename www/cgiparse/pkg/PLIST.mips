@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST.mips,v 1.1 2000/06/09 20:41:11 espie Exp $
+include/cgi.h
+lib/libcgiparse.a
+lib/libcgiparse.so.1.0
+man/cat3/cgiclose.0
+man/cat3/cgigetvalue.0
+man/cat3/cginewquerystr.0
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
+@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib

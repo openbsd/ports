@@ -1,8 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.5 2000/06/09 20:41:11 espie Exp $
 include/cgi.h
 lib/libcgiparse.a
-lib/libcgiparse.so.1.0
 lib/libcgiparse_pic.a
-@exec /sbin/ldconfig -m %B
-man/man3/cgigetvalue.3
-man/man3/cgiclose.3
-man/man3/cginewquerystr.3
+%%SHARED%%
+man/cat3/cgiclose.0
+man/cat3/cgigetvalue.0
+man/cat3/cginewquerystr.0

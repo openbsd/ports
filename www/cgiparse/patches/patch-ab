@@ -1,32 +1,19 @@
-*** cgi.c.orig	Thu Apr 30 14:41:27 1998
---- cgi.c	Thu Apr 30 14:41:53 1998
-***************
-*** 109,121 ****
-  		return -1;
-  
-  	if (!strcmp(a, "GET"))
-  		if ((a = getenv("QUERY_STRING")))
-  					/* calls parsestr if QUERY_STRING
-  					   environment variable exists */
-  			cgiparsequerystr(a);
-  		else
-  			return -1;
-! 	else if (!strcmp(a, "POST")) {
-  		int b;
-  
-  		if (!(a = getenv("CONTENT_TYPE")) || (a &&
---- 109,122 ----
-  		return -1;
-  
-  	if (!strcmp(a, "GET"))
-+ 	{
-  		if ((a = getenv("QUERY_STRING")))
-  					/* calls parsestr if QUERY_STRING
-  					   environment variable exists */
-  			cgiparsequerystr(a);
-  		else
-  			return -1;
-! 	} else if (!strcmp(a, "POST")) {
-  		int b;
-  
-  		if (!(a = getenv("CONTENT_TYPE")) || (a &&
+$OpenBSD: patch-ab,v 1.2 2000/06/09 20:41:11 espie Exp $
+--- cgi.c.orig	Sun Mar  1 21:13:45 1998
++++ cgi.c	Fri Jun  9 22:27:16 2000
+@@ -109,13 +109,14 @@ cgiinit(void)
+ 		return -1;
+ 
+ 	if (!strcmp(a, "GET"))
++	{
+ 		if ((a = getenv("QUERY_STRING")))
+ 					/* calls parsestr if QUERY_STRING
+ 					   environment variable exists */
+ 			cgiparsequerystr(a);
+ 		else
+ 			return -1;
+-	else if (!strcmp(a, "POST")) {
++	} else if (!strcmp(a, "POST")) {
+ 		int b;
+ 
+ 		if (!(a = getenv("CONTENT_TYPE")) || (a &&

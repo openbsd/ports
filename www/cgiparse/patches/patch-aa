@@ -1,12 +1,21 @@
-*** Makefile.orig	Thu Apr 30 14:40:39 1998
---- Makefile	Thu Apr 30 14:40:45 1998
-***************
-*** 16,22 ****
-  MAN3 = cgigetvalue.3 cgiclose.3 cginewquerystr.3
-  MANDIR = ${INST_DIR}/man/man
-  
-- DPADD = ${INST_DIR}/lib/libcgiparse.a
-  NOPROFILE = 
-  
-  afterinstall: cgi.h
---- 16,21 ----
+$OpenBSD: patch-aa,v 1.2 2000/06/09 20:41:11 espie Exp $
+--- Makefile.orig	Thu Feb 19 07:45:00 1998
++++ Makefile	Fri Jun  9 22:30:16 2000
+@@ -13,15 +13,13 @@ STRIP =
+ 
+ SRCS = cgi.c utils.c
+ 
+-MAN3 = cgigetvalue.3 cgiclose.3 cginewquerystr.3
+-MANDIR = ${INST_DIR}/man/man
++MAN = cgigetvalue.3 cgiclose.3 cginewquerystr.3
+ 
+-DPADD = ${INST_DIR}/lib/libcgiparse.a
+ NOPROFILE = 
+ 
+ afterinstall: cgi.h
+ 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} cgi.h	\
+-	    ${INST_DIR}/include
++	    $(DESTDIR)${INST_DIR}/include
+ 
+ .include <bsd.lib.mk>
+ 
