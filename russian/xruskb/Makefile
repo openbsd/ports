@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/03 18:08:31 form Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/03 19:36:12 form Exp $
 
 DISTNAME=	xruskb-1.13.0
 CATEGORIES=	russian x11
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	YES
 USE_X11=	yes
 GNU_CONFIGURE=	yes
 
-.if defined(USE_MOTIF)
+.if defined(USE_MOTIF) && ${USE_MOTIF:U} == YES
 CONFIGURE_ARGS=	--with-motif --without-Xaw
 LIB_DEPENDS=	Xm:${PORTSDIR}/x11/lesstif
 .else
@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--without-motif --with-Xaw
 .endif
 
 pre-configure:
-.if !defined(USE_MOTIF)
+.if !defined(USE_MOTIF) || ${USE_MOTIF:U} != YES
 	@${ECHO_MSG} "***"
 	@${ECHO_MSG} "*** You are building Xaw version of xruskb."
 	@${ECHO_MSG} "*** Some features are not available in Xaw version."

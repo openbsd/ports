@@ -1,0 +1,13 @@
+# $OpenBSD: patch-ab,v 1.1 2000/03/03 19:36:13 form Exp $
+
+--- configure.orig	Sat Mar  4 01:25:06 2000
++++ configure	Sat Mar  4 01:24:34 2000
+@@ -2794,7 +2794,7 @@
+ fi
+ 
+ 
+-   if test -z "TOOLKIT_LIBS"; then
++   if test -z "$TOOLKIT_LIBS"; then
+       
+    echo $ac_n "checking for main in -lXaw""... $ac_c" 1>&6
+ echo "configure:2801: checking for main in -lXaw" >&5
