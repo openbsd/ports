@@ -1,6 +1,6 @@
-$OpenBSD: patch-c4_c,v 1.1 2001/08/11 03:17:12 brad Exp $
---- c4.c.orig	Fri Aug 10 22:48:14 2001
-+++ c4.c	Fri Aug 10 22:48:25 2001
+$OpenBSD: patch-c4_c,v 1.2 2003/04/14 16:03:01 avsm Exp $
+--- c4.c.orig	Mon Apr 14 16:53:17 2003
++++ c4.c	Mon Apr 14 16:54:01 2003
 @@ -11,6 +11,8 @@
   *     BITNET:                  tcjones@WATER.bitnet
   *     Canadian domain:         tcjones@dragon.uwaterloo.ca
@@ -15,7 +15,7 @@ $OpenBSD: patch-c4_c,v 1.1 2001/08/11 03:17:12 brad Exp $
  
      printf("Would you like to go first? (yes/no) -> ");
 -    if (!gets(line)){
-+    if (!fgets(line,256,stdin)){
++    if (!fgets(line, sizeof line, stdin)){
          plot_finish();
          fprintf(stderr, "Could not read input line.\n");
          goodbye();
@@ -26,7 +26,7 @@ $OpenBSD: patch-c4_c,v 1.1 2001/08/11 03:17:12 brad Exp $
 -    printf("Do you need help (n/y)? -> ");
 -    if (!gets(line)){
 +    printf("Do you need help (y/n)? -> ");
-+    if (!fgets(line,256,stdin)){
++    if (!fgets(line, sizeof line, stdin)){
          fprintf(stderr, "Could not read input line\n");
          goodbye();
      }
