@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2002/11/16 05:02:21 mark Exp $
+# $OpenBSD: Makefile,v 1.37 2003/02/05 18:35:03 reinhard Exp $
 
 COMMENT=	'GNU privacy guard - a free PGP replacement'
 
@@ -6,16 +6,13 @@ DISTNAME=	gnupg-1.2.1
 PKGNAME=	${DISTNAME}
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/gnupg/ \
-		ftp://ftp.progsoc.uts.edu.au/pub/gnupg/gnupg/ \
-		ftp://openbsd.rug.ac.be/pub/gcrypt/gnupg/ \
-		ftp://sunsite.auc.dk/pub/security/gcrypt/gnupg/ \
+		ftp://gd.tuwien.ac.at/privacy/gnupg/gnupg/ \
+		ftp://crypto.yashy.com/pub/cryptography/gnupg/ \
+		ftp://ftp.planetmirror.com/pub/gnupg/gnupg/ \
+		ftp://sunsite.dk/pub/security/gcrypt/gnupg/ \
 		ftp://ftp.linux.it/pub/mirrors/gnupg/gnupg/ \
-		ftp://pgp.iijlab.net/pub/gnupg/gnupg/ \
-		ftp://ring.aist.go.jp/pub/net/gnupg/gnupg/ \
-		ftp://sunsite.icm.edu.pl/pub/security/gcrypt/gnupg/ \
-		ftp://ftp.stacken.kth.se/pub/crypto/gnupg/gnupg/ \
-		ftp://ftp.net.lut.ac.uk/gcrypt/gnupg/ \
-		ftp://gd.tuwien.ac.at/privacy/gnupg/gnupg/
+		ftp://pgp.iijlab.net/pub/pgp/gnupg/ \
+		ftp://ring.aist.go.jp/pub/net/gnupg/gnupg/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
