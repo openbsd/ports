@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2001/03/14 21:56:06 wilfried Exp $
+# $OpenBSD: Makefile,v 1.42 2001/03/16 16:32:42 espie Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -28,7 +28,6 @@
      SUBDIR += findutils
      SUBDIR += gacc
 #    SUBDIR += git
-     SUBDIR += gnuls
 #    SUBDIR += ical
      SUBDIR += impress
      SUBDIR += jive
