@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/12/30 23:24:32 sturm Exp $
+# $OpenBSD: Makefile,v 1.21 2004/01/15 22:38:02 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -39,9 +39,11 @@ FETCH_MANUALLY+= " Choose the '* Linux self-extracting file' option and place"
 FETCH_MANUALLY+= " ${DISTFILES} into ${FULLDISTDIR}."
 
 JDK_HOME=	${PREFIX}/jdk1.3.1-linux
+SYSCTL=		${SUDO} sysctl -w kern.emul.linux
 
-pre-install:
-	@${INSTALL_DATA_DIR} ${JDK_HOME}
+pre-extract:
+	@sysctl -n kern.emul.linux > ${WRKDIR}/.emul_linux
+	@${SYSCTL}=1
 
 # Add OpenBSD resource bundle for javah
 post-patch:
@@ -49,6 +51,10 @@ post-patch:
 	@touch ${WRKSRC}/lib/com/sun/tools/javah/resources/OpenBSD_i386.properties
 	@${WRKSRC}/bin/jar -0uvf ${WRKSRC}/lib/tools.jar -C ${WRKSRC}/lib \
 	    com/sun/tools/javah/resources/OpenBSD_i386.properties
+	@${SYSCTL}=`cat ${WRKDIR}/.emul_linux`
+
+pre-install:
+	@${INSTALL_DATA_DIR} ${JDK_HOME}
 
 do-install:
 	@cp -Rp ${WRKDIST}/* ${JDK_HOME}

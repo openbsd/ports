@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/11 18:49:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/01/15 22:38:02 sturm Exp $
 @option no-default-conflict
 @pkgcfl jdk-linux-1.3*
 jdk1.3.1-linux/COPYRIGHT
@@ -960,3 +960,4 @@ jdk1.3.1-linux/src.jar
 @dirrm jdk1.3.1-linux/bin/${MACHINE_ARCH}
 @dirrm jdk1.3.1-linux/bin
 @dirrm jdk1.3.1-linux
+@exec sysctl -w kern.emul.linux=1

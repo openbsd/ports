@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2001/05/08 00:54:39 matt Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/01/15 22:38:02 sturm Exp $
 @option no-default-conflict
 @pkgcfl jdk-blackdown-1.2*
 jdk1.2-blackdown/COPYRIGHT
@@ -1269,3 +1269,5 @@ jdk1.2-blackdown/src.jar
 @dirrm jdk1.2-blackdown/bin/i386
 @dirrm jdk1.2-blackdown/bin
 @dirrm jdk1.2-blackdown
+@exec sysctl -w kern.emul.linux=1
+@exec echo "Edit /etc/sysctl.conf to activate linux emulation permanently."

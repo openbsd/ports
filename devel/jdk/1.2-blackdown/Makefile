@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/08/20 00:04:06 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2004/01/15 22:38:02 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -32,6 +32,7 @@ NO_REGRESS=	Yes
 
 WRKDIST=	${WRKDIR}/jdk1.2
 JDK_HOME=	${PREFIX}/jdk1.2-blackdown
+SYSCTL=		${SUDO} sysctl -w kern.emul.linux
 
 # Fix permissions in the tarball
 post-extract:
@@ -43,8 +44,11 @@ post-patch:
 	@mkdir -p ${WRKSRC}/lib/com/sun/tools/javah/resources
 	@cp ${FILESDIR}/OpenBSD_i386.properties \
 	    ${WRKSRC}/lib/com/sun/tools/javah/resources/
+	@sysctl -n kern.emul.linux > ${WRKDIR}/.emul_linux
+	@${SYSCTL}=1
 	@${WRKSRC}/bin/jar -0uvf ${WRKSRC}/lib/tools.jar -C ${WRKSRC}/lib \
 	    com/sun/tools/javah/resources/OpenBSD_i386.properties
+	@${SYSCTL}=`cat ${WRKDIR}/.emul_linux`
 
 pre-install:
 	@${INSTALL_DATA_DIR} ${JDK_HOME}
