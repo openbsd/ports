@@ -1,0 +1,27 @@
+--- Makefile.in.orig	Mon Mar  6 09:53:10 2000
++++ Makefile.in	Wed Apr  5 01:20:56 2000
+@@ -62,16 +62,14 @@
+ 
+ install: installdirs xboard zic2xpm cmail pxboard xboard.man cmail.man \
+ 		zic2xpm.man
+-	$(INSTALL_PROGRAM) -s xboard $(bindir)/xboard
+-	$(INSTALL_PROGRAM) -s zic2xpm $(bindir)/zic2xpm
+-	$(INSTALL_PROGRAM) cmail $(bindir)/cmail
+-	$(INSTALL_PROGRAM) $(srcdir)/pxboard $(bindir)/pxboard
+-	$(INSTALL_DATA) $(srcdir)/xboard.man $(man6dir)/xboard$(man6ext)
+-	$(INSTALL_DATA) $(srcdir)/cmail.man $(man6dir)/cmail$(man6ext)
+-	$(INSTALL_DATA) $(srcdir)/zic2xpm.man $(man6dir)/zic2xpm$(man6ext)
+-	$(INSTALL_DATA) xboard.info $(infodir)/xboard.info
+-	-PATH=$$PATH:/sbin:/usr/sbin install-info \
+-		$(infodir)/xboard.info $(infodir)/dir
++	$(INSTALL_PROGRAM) xboard $(DESTDIR)$(bindir)/xboard
++	$(INSTALL_PROGRAM) zic2xpm $(DESTDIR)$(bindir)/zic2xpm
++	$(INSTALL) cmail $(DESTDIR)$(bindir)/cmail
++	$(INSTALL) $(srcdir)/pxboard $(DESTDIR)$(bindir)/pxboard
++	$(INSTALL_DATA) $(srcdir)/xboard.man $(DESTDIR)$(man6dir)/xboard$(man6ext)
++	$(INSTALL_DATA) $(srcdir)/cmail.man $(DESTDIR)$(man6dir)/cmail$(man6ext)
++	$(INSTALL_DATA) $(srcdir)/zic2xpm.man $(DESTDIR)$(man6dir)/zic2xpm$(man6ext)
++	$(INSTALL_DATA) xboard.info $(DESTDIR)$(infodir)/xboard.info
+ 
+ installdirs: mkinstalldirs
+ 	$(srcdir)/mkinstalldirs $(bindir) $(mandir) $(man6dir) $(infodir)
