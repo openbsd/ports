@@ -1,5 +1,6 @@
---- ltconfig.orig	Sun May  6 12:41:58 2001
-+++ ltconfig	Sun May  6 12:46:37 2001
+$OpenBSD: patch-ltconfig,v 1.2 2002/09/03 04:29:10 mark Exp $
+--- ltconfig.orig	Wed Apr  5 21:48:53 2000
++++ ltconfig	Mon Sep  2 21:22:28 2002
 @@ -1294,6 +1294,9 @@ cygwin* | mingw*)
      with_gnu_ld=no
    fi

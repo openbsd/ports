@@ -1,5 +1,6 @@
---- ltmain.sh.orig	Sun May  6 12:42:05 2001
-+++ ltmain.sh	Sun May  6 12:49:52 2001
+$OpenBSD: patch-ltmain_sh,v 1.2 2002/09/03 04:29:10 mark Exp $
+--- ltmain.sh.orig	Wed Apr  5 21:48:54 2000
++++ ltmain.sh	Mon Sep  2 21:22:29 2002
 @@ -1980,6 +1980,9 @@ compiler."
  	  *-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
  	    # these systems don't actually have a c library (as such)!
