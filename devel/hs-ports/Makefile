@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/10 08:23:37 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2005/03/08 22:52:44 dons Exp $
 # $FreeBSD: ports/devel/hs-hpl/Makefile,v 1.11 2004/03/11 07:48:11 obraun Exp $
 
 # only for archs to which the GHC ffi has been ported
-ONLY_FOR_ARCHS= i386 sparc
+ONLY_FOR_ARCHS= i386
 
 COMMENT=	"Haskell library for concurrent and distributed programming"
 
