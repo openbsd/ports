@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/03/27 16:00:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/27 17:28:59 espie Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 
 DISTNAME=	tk8.0.5
@@ -27,7 +27,8 @@ CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/unix
 FAKE=		Yes
-FAKE_FLAGS=INSTALL_ROOT=${WRKINST}
+FAKE_FLAGS=INSTALL_ROOT=${WRKINST} \
+	MAN_INSTALL_DIR='$${INSTALL_ROOT}$$(TK_LIBRARY)/man'
 
 test:	build
 	@cd ${WRKBUILD} && make test
