@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2001/11/10 15:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/01/02 02:53:25 shell Exp $
 
 COMMENT=		"OpenSSL Wrappers for Python"
 
-VERSION=		0.5
+VERSION=		0.6.1
 DISTNAME=		POW-${VERSION}
 PKGNAME=		py-sslwrapper-${VERSION}
 CATEGORIES=     	security devel
-NEED_VERSION=		1.489
+NEED_VERSION=		1.504
 
 HOMEPAGE=		http://pow.sourceforge.net/
 
@@ -26,9 +26,13 @@ BUILD_DEPENDS+=	::lang/python
 RUN_DEPENDS=	${BUILD_DEPENDS}
 NO_REGRESS=	Yes
 
-PY_CMD=		cd ${WRKSRC}; python${PYTHON_VER} ./setup.py
+PY_CMD=		cd ${WRKSRC}; python${PYTHON_VER} ./setup.py.new
 
 SUBST_VARS=	PYTHON_VER
+
+post-patch:
+	@sed -e 's|%%LOCALBASE%%|${LOCALBASE}|g'	\
+		< ${WRKSRC}/setup.py > ${WRKSRC}/setup.py.new
 
 do-build:
 	${PY_CMD} build --build-base=${WRKSRC}
