@@ -5,7 +5,7 @@
 # Date created:         17 Nov 1997
 # Whom:                 ejovi
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/17 23:50:14 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1997/12/20 17:41:14 todd Exp $
 #
 
 DISTNAME=       zip21
@@ -18,7 +18,7 @@ MAINTAINER=     joey@OpenBSD.ORG
 
 BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
 
-EXTRACT_CMD=    unzip
+EXTRACT_CMD=    ${SETENV} unzip
 EXTRACT_ARGS=   -oq
 NO_WRKSUBDIR=   yes
 MAKEFILE=       unix/Makefile
