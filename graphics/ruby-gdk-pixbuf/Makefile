@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/28 16:29:19 couderc Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/24 13:52:29 couderc Exp $
 
 COMMENT=	"Ruby binding to Gdk-pixbuf"
 
-VERSION=	0.31
+VERSION=	0.34
 DISTNAME=	ruby-gnome-all-${VERSION}
 PKGNAME=	ruby-gdk-pixbuf-${VERSION}
 CATEGORIES=	graphics
@@ -20,13 +20,12 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ruby-gnome/}
 
 MODULES=	ruby
 LIB_DEPENDS=	gdk_pixbuf.2::graphics/gdk-pixbuf
-RUN_DEPENDS=	:ruby-gtk->=0.31:x11/ruby-gtk
+RUN_DEPENDS=	:ruby-gtk->=0.34:x11/ruby-gtk
 
 CONFIGURE_STYLE= simple
 INSTALL_TARGET=	site-install
 USE_X11=	Yes
 NO_REGRESS=	Yes
-SUBST_VARS=	OPSYS_VER
 
 WRKSRC=		${WRKDIST}/gdkpixbuf
 DOC_DIR=        ${MODRUBY_DOCDIR}/ruby-gdk-pixbuf

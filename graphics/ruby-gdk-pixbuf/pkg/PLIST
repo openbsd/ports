@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/15 17:17:34 naddy Exp $
-lib/ruby/site_ruby/1.6/gdk_pixbuf.rb
-lib/ruby/site_ruby/1.6/${MACHINE_ARCH}-openbsd${OPSYS_VER}/gdk_pixbuf.so
+@comment $OpenBSD: PLIST,v 1.3 2004/02/24 13:52:29 couderc Exp $
+lib/ruby/site_ruby/${REV}/gdk_pixbuf.rb
+lib/ruby/site_ruby/${REV}/${SUB}/gdk_pixbuf.so
 share/doc/ruby/ruby-gdk-pixbuf/README
 share/examples/ruby/ruby-gdk-pixbuf/scale.rb
 share/examples/ruby/ruby-gdk-pixbuf/test.rb
 share/examples/ruby/ruby-gdk-pixbuf/to_drawable.rb
 @dirrm share/examples/ruby/ruby-gdk-pixbuf
-@dirrm share/examples/ruby
 @dirrm share/doc/ruby/ruby-gdk-pixbuf
