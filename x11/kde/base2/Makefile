@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2001/04/22 14:59:43 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2001/04/24 11:44:03 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
+COMMENT-plugins=	"X11 toolkit, netscape plugins"
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.400
+NEED_VERSION=		1.405
 VERSION=		2.1.1
 DISTNAME=		kdebase-${VERSION}
+PKGNAME-plugins=	kdebase-ns-${VERSION}
 DIST_SUBDIR=		kde
 
 HOMEPAGE=		http://www.kde.org
@@ -16,7 +18,13 @@ EXTRACT_SUFX=		.tar.bz2
 # duplicated over the place.
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
+MULTI_PACKAGES=-plugins
+
+SUBPACKAGE?=
+.if !defined(PACKAGING) || ${SUBPACKAGE} == "-plugins"
 USE_MOTIF=	any
+.endif
+
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2 \
 		ldap.2::databases/openldap
 

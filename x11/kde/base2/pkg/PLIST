@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2001/04/22 13:23:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2001/04/24 11:44:06 espie Exp $
 @mode u+s
 @owner root
 bin/konsole_grantpty
@@ -70,8 +70,6 @@ bin/kxkb
 bin/kxmlrpcd
 bin/kxsconfig
 bin/kxsrun
-bin/nspluginscan
-bin/nspluginviewer
 bin/startkde
 include/KBackgroundIface.h
 include/KDesktopIface.h
@@ -210,7 +208,6 @@ lib/libkasbarextension.la
 lib/libkcm_htmlsearch.la
 lib/libkcm_ioslaveinfo.la
 lib/libkcm_layout.la
-lib/libkcm_nsplugin.la
 lib/libkcm_xmlrpcd.la
 lib/libkhelpcenter.la
 lib/libkminipagerapplet.la
@@ -224,7 +221,6 @@ lib/libktaskbarapplet.la
 lib/libkwindefault.la
 lib/libkwritepart.la
 lib/libnaughtyapplet.la
-lib/libnsplugin.la
 lib/libquicklauncher.la
 lib/libtaskbarextension.la
 lib/libtaskmanager.la
@@ -313,7 +309,6 @@ share/applnk/Settings/WebBrowsing/.directory
 share/applnk/Settings/WebBrowsing/cookies.desktop
 share/applnk/Settings/WebBrowsing/ebrowsing.desktop
 share/applnk/Settings/WebBrowsing/konqhtml.desktop
-share/applnk/Settings/WebBrowsing/nsplugin.desktop
 share/applnk/Settings/WebBrowsing/proxy.desktop
 share/applnk/Settings/WebBrowsing/smb.desktop
 share/applnk/Settings/WebBrowsing/useragent.desktop

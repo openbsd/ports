@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2001/04/08 17:03:50 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.10 2001/04/24 11:44:06 espie Exp $
 lib/kde2/libhtmlthumbnail.so.0.0
 lib/kde2/libimagethumbnail.so.0.0
 lib/kde2/libkaccess.so.0.0
@@ -79,7 +79,6 @@ lib/libkasbarextension.so.1.0
 lib/libkcm_htmlsearch.so.0.0
 lib/libkcm_ioslaveinfo.so.0.0
 lib/libkcm_layout.so.0.0
-lib/libkcm_nsplugin.so.0.0
 lib/libkcm_xmlrpcd.so.0.0
 lib/libkcminit.so.0.0
 lib/libkcmshell.so.0.0
@@ -111,7 +110,6 @@ lib/libkwritepart.so.0.0
 lib/libkxkb.so.0.0
 lib/libkxmlrpcd.so.0.0
 lib/libnaughtyapplet.so.1.0
-lib/libnsplugin.so.1.1
 lib/libquicklauncher.so.1.0
 lib/libtaskbarextension.so.1.0
 lib/libtaskmanager.so.1.0
