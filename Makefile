@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2003/05/12 22:15:53 pb Exp $
+# $OpenBSD: Makefile,v 1.41 2003/05/28 13:47:04 avsm Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -27,6 +27,7 @@ SUBDIR += archivers
 SUBDIR += astro
 SUBDIR += audio
 SUBDIR += benchmarks
+SUBDIR += books
 SUBDIR += cad
 SUBDIR += chinese
 SUBDIR += comms
