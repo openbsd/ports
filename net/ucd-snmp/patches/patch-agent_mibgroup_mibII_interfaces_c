@@ -1,23 +1,16 @@
-$OpenBSD: patch-agent_mibgroup_mibII_interfaces_c,v 1.2 2002/06/16 20:01:20 pvalchev Exp $
---- agent/mibgroup/mibII/interfaces.c.orig	Wed Nov 28 15:30:33 2001
-+++ agent/mibgroup/mibII/interfaces.c	Sun Jun 16 13:44:49 2002
-@@ -1684,15 +1684,16 @@ static int Interface_Scan_By_Index(int I
- }
+--- agent/mibgroup/mibII/interfaces.c.orig	Mon Jun 10 06:10:24 2002
++++ agent/mibgroup/mibII/interfaces.c	Tue Apr 22 10:28:42 2003
+@@ -1889,11 +1889,10 @@ static int Interface_Scan_Get_Count (voi
  
+ #else	/* hpux11 */
  
--static int Interface_Count=0;
 -static time_t scan_time = 0;
 -
  static int Interface_Scan_Get_Count (void)
  {
-+	static int Interface_Count = 0;
-+	static time_t scan_time = 0;
-+
-         time_t time_now = time(NULL);
+-        time_t time_now = time(NULL);
++        static time_t scan_time = 0;
++	time_t time_now = time(NULL);
      
  	if (!Interface_Count || (time_now > scan_time + 60)) {
              scan_time = time_now;
-+	    Interface_Count = 0;
- 	    Interface_Scan_Init();
- 	    Interface_Count = 0;
- 	    while (Interface_Scan_Next(NULL, NULL, NULL, NULL) != 0) {

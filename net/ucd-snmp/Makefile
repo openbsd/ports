@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2002/12/29 21:14:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.37 2003/04/22 15:11:05 danh Exp $
 
 COMMENT=	"extendable SNMP implementation"
 
-VERSION=	4.2.3
+VERSION=	4.2.6
 DISTNAME=	ucd-snmp-${VERSION}
 CATEGORIES=     net
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=net-snmp/}
@@ -23,7 +23,7 @@ CONFIGURE_ARGS+= --with-defaults --with-logfile='/var/log/snmpd' \
 		 --with-libwrap='/usr' --with-openssl --with-zlib \
 		 --with-sys-contact='default@' \
 		 --with-sys-location='Default Location'
-CONFIGURE_ENV=	VERSION_INFO='42:2:0'
+CONFIGURE_ENV=	VERSION_INFO='42:6:0'
 NO_REGRESS=	Yes
 
 SNMP_BIN=	encode_keychange snmpbulkget snmpbulkwalk snmpdelta \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2001/10/11 19:16:19 danh Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/04/22 15:11:05 danh Exp $
 @unexec rm -f %D/share/snmp/mibs/.index
 @mode 0555
 bin/encode_keychange
@@ -207,11 +207,8 @@ share/snmp/snmpconf/snmptrapd.conf/formatting
 share/snmp/snmpconf/snmptrapd.conf/traphandle
 @mode
 lib/libsnmp.a
-lib/libsnmp.la
 lib/libucdagent.a
-lib/libucdagent.la
 lib/libucdmibs.a
-lib/libucdmibs.la
 %%SHARED%%
 @dirrm share/snmp/snmpconf/snmptrapd.conf
 @dirrm share/snmp/snmpconf/snmpd.conf

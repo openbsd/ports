@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2001/10/11 19:16:19 danh Exp $
-lib/libsnmp.so.42.2
-lib/libucdagent.so.42.2
-lib/libucdmibs.so.42.2
+@comment $OpenBSD: PFRAG.shared,v 1.4 2003/04/22 15:11:05 danh Exp $
+lib/libsnmp.so.42.6
+lib/libucdagent.so.42.6
+lib/libucdmibs.so.42.6
 DYNLIBDIR(%B)
