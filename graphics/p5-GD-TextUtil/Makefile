@@ -1,16 +1,21 @@
-#	$OpenBSD: Makefile,v 1.2 2000/09/19 17:24:52 mickey Exp $
+#	$OpenBSD: Makefile,v 1.3 2000/09/19 18:42:41 brad Exp $
 
 DISTNAME=	GDTextUtil-0.80
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-GD-TextUtil-0.80
 CATEGORIES=	graphics perl5
 NEED_VERSION=	1.330
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	GD
+MASTER_SITE_SUBDIR= GD
+
+RUN_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/${ARCH}-openbsd/GD.pm::graphics/p5-GD
 
 MAINTAINER=	ports@openbsd.org
 
-RUN_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/${ARCH}-openbsd/auto/GD/GD.so::graphics/p5-GD
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	perl
+CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>
