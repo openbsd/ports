@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/02/07 08:24:48 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/02/07 08:44:05 brad Exp $
 #
 # Pre/post-installation setup of vtun
 
@@ -9,6 +9,8 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=/etc/vtund.conf
+
+mkdir -p /var/log/vtund
 
 # Function: tell the user what s/he needs to do to use the port just installed
 #
