@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/05/23 21:26:46 jolan Exp $
-lib/libgnet.so.7.2
+@comment $OpenBSD: PFRAG.shared,v 1.2 2003/07/25 06:42:05 jolan Exp $
+lib/libgnet-2.0.so.0.3
 DYNLIBDIR(%D/lib)
