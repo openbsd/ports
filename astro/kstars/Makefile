@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/01/24 13:40:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2002/04/23 01:49:22 kevlo Exp $
 
 COMMENT=	"desktop planetarium"
 
@@ -6,7 +6,7 @@ DISTNAME=	kstars-0.8.5
 CATEGORIES=	astro
 NEED_VERSION=	1.502
 
-HOMEPAGE=	http://kstars.sourceforge.net/
+HOMEPAGE=	http://edu.kde.org/kstars/index.phtml
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
