@@ -1,0 +1,39 @@
+$OpenBSD: patch-kdm_backend_auth_c,v 1.1 2003/03/12 01:17:57 espie Exp $
+--- kdm/backend/auth.c.orig	Tue Mar 11 17:41:21 2003
++++ kdm/backend/auth.c	Wed Mar 12 01:51:12 2003
+@@ -47,6 +47,9 @@ from The Open Group.
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ #include <stdlib.h>
++#ifdef __OpenBSD__
++#include <pwd.h>
++#endif
+ 
+ #include <sys/ioctl.h>
+ 
+@@ -345,6 +348,25 @@ SaveServerAuthorizations (
+ 	    return FALSE;
+ 	}
+     }
++#ifdef __OpenBSD__
++    {
++	struct passwd *x11;
++	uid_t uid;
++	gid_t gid;
++	/* Give read capability to group _x11 */
++	x11 = getpwnam("_x11");
++	if (x11 == NULL) {
++	    LogError("Can't find _x11 user\n");
++	    uid = getuid();
++	    gid = getgid();
++	} else {
++	    uid = x11->pw_uid;
++	    gid = x11->pw_gid;
++	}
++
++	fchown(fileno(auth_file), uid, gid);
++    }
++#endif
+     Debug ("File: %s auth: %p\n", d->authFile, auths);
+     ret = TRUE;
+     for (i = 0; i < count; i++)
