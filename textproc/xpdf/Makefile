@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2001/03/10 17:23:28 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2001/04/15 23:10:36 brad Exp $
+
+COMMENT=	"PDF viewer for X"
 
 DISTNAME=	xpdf-0.92
 CATEGORIES=	textproc x11
-NEED_VERSION=	1.336
+NEED_VERSION=	1.384
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR= support/xpdf
 EXTRACT_SUFX=	.tgz
@@ -19,6 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-gzip \
 		--with-t1-library="${LOCALBASE}/lib" \
