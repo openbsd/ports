@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/01/17 15:58:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2004/02/25 03:31:04 kevlo Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -7,8 +7,6 @@ COMMENT=	"module for easy date and time manipulation"
 DISTNAME=	Class-Date-1.1.7
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
-
-HOMEPAGE=	http://dlux.sch.bme.hu/Class-Date/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
