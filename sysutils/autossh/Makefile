@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/11/24 00:29:53 margarida Exp $
+# $OpenBSD: Makefile,v 1.3 2002/12/26 00:30:53 margarida Exp $
 
 COMMENT=		"SSH monitoring"
 
-VERSION=		1.2b
+VERSION=		1.2c
 DISTNAME=		autossh-${VERSION}
 CATEGORIES=		sysutils
 
