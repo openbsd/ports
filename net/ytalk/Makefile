@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2000/08/16 17:02:29 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/09/06 05:48:48 brad Exp $
 
 DISTNAME=	ytalk-3.1.1
 CATEGORIES=	net
-NEED_VERSION=	1.319
-HOMEPAGE=	http://www.iagora.com/~espel/ytalk/
-MASTER_SITES=	${HOMEPAGE} \
+NEED_VERSION=	1.324
+MASTER_SITES=	http://www.iagora.com/~espel/ytalk/ \
 		ftp://quatramaran.ens.fr/pub/orabidoo/ytalk/
+
+HOMEPAGE=	http://www.iagora.com/~espel/ytalk/
 
 MAINTAINER=	espie@openbsd.org
 
@@ -14,12 +15,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+CONFIGURE_STYLE= gnu dest
+
 FLAVORS=	no_x11
 FLAVOR?=
 
-SUBST_VARS=	SYSCONFDIR
-
-CONFIGURE_STYLE= gnu dest
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --without-x
 .endif

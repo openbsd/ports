@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2000/08/29 04:57:47 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/09/06 05:48:49 brad Exp $
 
-#ONLY_FOR_ARCH=	i386
+ONLY_FOR_ARCH=	i386
 
 DISTNAME=	icecast-1.3.7
 CATEGORIES=	net audio www
-NEED_VERSION=	1.320
+NEED_VERSION=	1.324
 MASTER_SITES=	http://www.icecast.org/releases/
 
 HOMEPAGE=	http://www.icecast.org/
@@ -17,8 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SYSCONFDIR=	/etc/icecast
-SUBST_VARS=	SYSCONFDIR
-
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-crypt --with-libwrap
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/08/25 01:18:20 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2000/09/06 05:48:49 brad Exp $
 # KAME Id: Makefile,v 1.5 1999/09/13 16:27:41 itojun Exp
 
 #
@@ -6,7 +6,7 @@
 #
 DISTNAME=	zebra-0.88
 CATEGORIES=	net
-NEED_VERSION=	1.320
+NEED_VERSION=	1.324
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 
 HOMEPAGE=	http://www.zebra.org/
@@ -22,8 +22,6 @@ PERMIT_DISTFILES_FTP=	Yes
 #CFLAGS+=	-g
 
 SYSCONFDIR=	/etc/zebra
-SUBST_VARS=	SYSCONFDIR
-
 CONFIGURE_STYLE= gnu
 
 #

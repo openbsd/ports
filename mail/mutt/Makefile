@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2000/08/12 13:29:55 brad Exp $
+# $OpenBSD: Makefile,v 1.41 2000/09/06 05:48:48 brad Exp $
 
 DISTNAME=	mutt-1.2.5i
 CATEGORIES=     mail
-NEED_VERSION=	1.310
+NEED_VERSION=	1.324
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
                 ftp://ftp.gbnet.net/pub/mutt-international/ \
                 ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -24,8 +24,6 @@ FLAVORS=	slang curses imap pop
 FLAVOR?=	curses
 
 SYSCONFDIR=	/etc/mutt
-SUBST_VARS=	SYSCONFDIR
-
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-sharedir="${PREFIX}/share/mutt" \
 		--with-docdir="${PREFIX}/share/doc/mutt" \

@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2000/08/12 23:57:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2000/09/06 05:48:48 brad Exp $
 
 DISTNAME=	exim-3.16
 CATEGORIES=	mail
-NEED_VERSION=	1.319
+NEED_VERSION=	1.324
+MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/ \
+		ftp://ftp.exim.org/pub/exim/ \
+		ftp://ftp.fu-berlin.de/unix/mail/exim/
+DISTFILES=	exim-3.16.tar.gz exim-texinfo-3.10.tar.gz
 
 HOMEPAGE=	http://www.exim.org/
 
@@ -13,16 +17,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/ \
-		ftp://ftp.exim.org/pub/exim/ \
-		ftp://ftp.fu-berlin.de/unix/mail/exim/
-DISTFILES=	exim-3.16.tar.gz exim-texinfo-3.10.tar.gz
-
 FLAVORS=	no_x11
 FLAVOR?=
 
 MAKE_ENV=	FLAVOR="${FLAVOR}"
-SUBST_VARS=	SYSCONFDIR
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=	Yes
 .endif
