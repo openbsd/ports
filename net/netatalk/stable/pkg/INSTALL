@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2003/05/12 18:02:45 sturm Exp $
+# $OpenBSD: INSTALL,v 1.3 2004/08/24 17:14:16 pvalchev Exp $
 #
 # Pre/post-installation setup of netatalk
 
@@ -30,11 +30,6 @@ do_notice2()
 
 	echo
 	echo "+--------------------"
-	echo "| Please check /etc/services for the entries"
-	echo "| afpovertcp	548/tcp		# AFP over TCP"
-	echo "| afpovertcp	548/udp"
-	echo "| and add if needed."
-	echo "|"
 	echo "| If you are upgrading from an older Netatalk distribution,"
 	echo "| please backup your Netatalk volume(s) data before playing"
 	echo "| with the tool:- adv1tov2. (conversion from appledouble"
