@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/08/05 00:12:45 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.8 2001/01/09 16:10:17 naddy Exp $
 bin/nmap
 man/man1/nmap.1
+%%x11%%
 share/nmap/nmap-os-fingerprints
 share/nmap/nmap-protocols
 share/nmap/nmap-rpc

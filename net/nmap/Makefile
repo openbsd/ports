@@ -1,31 +1,28 @@
-# $OpenBSD: Makefile,v 1.29 2000/10/22 16:08:00 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2001/01/09 16:10:16 naddy Exp $
 
-DISTNAME=	nmap-2.54BETA6
-PKGNAME=	nmap-2.54b6
+DISTNAME=	nmap-2.54BETA7
+PKGNAME=	nmap-2.54b7
 CATEGORIES=	net security
-NEED_VERSION=	1.338
-MASTER_SITES=	http://www.insecure.org/nmap/dist/
-EXTRACT_SUFX=	.tgz
-
+NEED_VERSION=	1.348
 HOMEPAGE=	http://www.insecure.org/nmap/
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
+
+MAINTAINER=	Brian Caswell <bmc@mitre.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FLAGS=	CCOPT="${CFLAGS}"
-CONFIGURE_STYLE= gnu
-ALL_TARGET=	nmap
-NMAP_FILES=	os-fingerprints protocols rpc services
+MASTER_SITES=	${HOMEPAGE}dist/
+EXTRACT_SUFX=	.tgz
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/nmap
-	${INSTALL_PROGRAM} ${WRKBUILD}/nmap ${PREFIX}/bin
-	${INSTALL_MAN}	${WRKBUILD}/docs/nmap.1 ${PREFIX}/man/man1
-.	for i in ${NMAP_FILES}
-	${INSTALL_DATA} ${WRKSRC}/nmap-$i ${PREFIX}/share/nmap
-.	endfor
+FLAVORS=	x11
+FLAVOR?=
+
+.if ${FLAVOR:L:Mx11}
+LIB_DEPENDS+=	gtk.1.2::x11/gtk+
+.endif
+
+CONFIGURE_STYLE= gnu dest
 
 .include <bsd.port.mk>

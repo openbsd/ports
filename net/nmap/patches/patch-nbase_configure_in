@@ -1,0 +1,12 @@
+$OpenBSD: patch-nbase_configure_in,v 1.1 2001/01/09 16:10:17 naddy Exp $
+--- nbase/configure.in.orig	Mon Jan  8 22:23:43 2001
++++ nbase/configure.in	Mon Jan  8 22:24:05 2001
+@@ -9,7 +9,7 @@ if test -d /usr/local/lib; then
+   LDFLAGS="$LDFLAGS -L/usr/local/lib"
+ fi
+ if test -d /usr/local/include; then
+-  CFLAGS="$CLFAGS -I/usr/local/include"
++  CFLAGS="$CFLAGS -I/usr/local/include"
+ fi
+ 
+ dnl use config.h instad of -D macros

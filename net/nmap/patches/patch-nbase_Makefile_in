@@ -1,0 +1,12 @@
+$OpenBSD: patch-nbase_Makefile_in,v 1.1 2001/01/09 16:10:17 naddy Exp $
+--- nbase/Makefile.in.orig	Mon Jan  8 17:33:45 2001
++++ nbase/Makefile.in	Mon Jan  8 17:33:54 2001
+@@ -9,7 +9,7 @@ CC = @CC@
+ AR = ar
+ CCOPT = 
+ DEFS = @DEFS@ -DNCRACK_VERSION=\"$(NCRACK_VERSION)\" 
+-CFLAGS = @CFLAGS@ -g $(CCOPT) $(GLIB_CFLAGS) $(DEFS) $(INCLS)
++CFLAGS = @CFLAGS@ $(CCOPT) $(GLIB_CFLAGS) $(DEFS) $(INCLS)
+ # CFLAGS = -g -Wall $(DEFS) $(INCLS)
+ STATIC = 
+ LDFLAGS = @LDFLAGS@ $(STATIC)

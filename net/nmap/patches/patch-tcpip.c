@@ -1,6 +1,7 @@
---- tcpip.c.orig	Sun Nov 19 09:13:48 2000
-+++ tcpip.c	Sun Nov 19 09:18:17 2000
-@@ -317,27 +317,19 @@
+$OpenBSD: patch-tcpip.c,v 1.2 2001/01/09 16:10:17 naddy Exp $
+--- tcpip.c.orig	Sun Oct  8 23:30:03 2000
++++ tcpip.c	Mon Jan  8 02:29:18 2001
+@@ -317,27 +317,19 @@ inline int Sendto(char *functionname, in
  
  struct sockaddr_in *sin = (struct sockaddr_in *) to;
  int res;
