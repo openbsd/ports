@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2001/04/13 18:15:46 brad Exp $
+# $OpenBSD: Makefile,v 1.46 2001/04/20 13:49:38 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 COMMENT=	"multithreaded SQL database"
 
-VERSION=	3.23.36
+VERSION=	3.23.37
 DISTNAME=	mysql-${VERSION}
-PKGNAME-innodb=mysql-${VERSION}-innodb
+PKGNAME-innodb=	mysql-${VERSION}-innodb
 CATEGORIES=	databases
 NEED_VERSION=	1.384
 MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
@@ -50,9 +50,9 @@ FLAVORS=	innodb
 FLAVOR?=
 
 .if ${FLAVOR:L} == "innodb"
-CONFIGURE_ARGS+= --with-innobase
+CONFIGURE_ARGS+= --with-innodb
 .else
-CONFIGURE_ARGS+= --without-innobase
+CONFIGURE_ARGS+= --without-innodb
 .endif
 
 DOCS=	manual.html manual.ps manual_toc.html manual.txt

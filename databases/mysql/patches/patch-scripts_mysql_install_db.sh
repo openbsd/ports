@@ -1,5 +1,5 @@
---- scripts/mysql_install_db.sh.orig	Tue Mar 27 05:11:06 2001
-+++ scripts/mysql_install_db.sh	Wed Mar 28 13:19:23 2001
+--- scripts/mysql_install_db.sh.orig	Wed Apr 18 04:45:56 2001
++++ scripts/mysql_install_db.sh	Thu Apr 19 19:36:59 2001
 @@ -7,12 +7,9 @@
  #
  # All unrecognized arguments to this script are passed to mysqld.
@@ -36,7 +36,7 @@
  parse_arguments `$print_defaults $defaults mysqld mysql_install_db`
  parse_arguments PICK-ARGS-FROM-ARGV "$@"
  
-@@ -92,53 +88,37 @@
+@@ -96,53 +92,37 @@
  
  if test ! -x $execdir/mysqld
  then
@@ -108,7 +108,7 @@
  
  # Initialize variables
  c_d="" i_d=""
-@@ -305,12 +285,6 @@
+@@ -309,12 +289,6 @@
  END_OF_DATA
  then
    echo ""
@@ -121,7 +121,7 @@
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
    echo "This is done with:"
    echo "$bindir/mysqladmin -u root -p password 'new-password'"
-@@ -326,15 +300,6 @@
+@@ -330,15 +304,6 @@
      echo "able to use the new GRANT command!"
    fi
    echo

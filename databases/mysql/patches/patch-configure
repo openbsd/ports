@@ -1,6 +1,6 @@
---- configure.orig	Tue Mar 27 05:11:17 2001
-+++ configure	Wed Mar 28 13:19:21 2001
-@@ -2981,7 +2981,7 @@
+--- configure.orig	Wed Apr 18 04:46:07 2001
++++ configure	Thu Apr 19 19:39:45 2001
+@@ -2983,7 +2983,7 @@
    ;;
  esac
  fi
@@ -9,9 +9,9 @@
  if test -n "$HOSTNAME"; then
    echo "$ac_t""$HOSTNAME" 1>&6
  else
-@@ -3115,35 +3115,7 @@
+@@ -3117,38 +3117,7 @@
  echo $ac_n "checking "how to check if pid exists"""... $ac_c" 1>&6
- echo "configure:3117: checking "how to check if pid exists"" >&5
+ echo "configure:3119: checking "how to check if pid exists"" >&5
  PS=$ac_cv_path_PS
 -# Linux style
 -if $PS p $$ 2> /dev/null | grep $0 > /dev/null
@@ -38,6 +38,9 @@
 -    *darwin*)
 -      FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
 -      ;;
+-    *cygwin*)
+-      FIND_PROC="$PS -e | grep mysqld | grep \" \$\$PID \" > /dev/null"
+-      ;;
 -    *)
 -      { echo "configure: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." 1>&2; exit 1; }
 -  esac
@@ -46,23 +49,23 @@
  
  echo "$ac_t"""$FIND_PROC"" 1>&6
  
-@@ -4965,6 +4937,7 @@
+@@ -5006,6 +4975,7 @@
    cat > conftest.$ac_ext <<EOF
- #line 4967 "configure"
+ #line 5008 "configure"
  #include "confdefs.h"
 +#include <stdio.h>
  #include <tcpd.h>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
-@@ -4990,6 +4963,7 @@
+@@ -5031,6 +5001,7 @@
        cat > conftest.$ac_ext <<EOF
- #line 4992 "configure"
+ #line 5033 "configure"
  #include "confdefs.h"
 +#include <stdio.h>
  #include <tcpd.h>
  int allow_severity = 0;
  int deny_severity  = 0;
-@@ -5861,8 +5835,6 @@
+@@ -5911,8 +5882,6 @@
  #define $ac_tr_lib 1
  EOF
  
@@ -71,7 +74,7 @@
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -6084,29 +6056,6 @@
+@@ -6142,29 +6111,6 @@
  
  fi
  
