@@ -5,10 +5,15 @@ Installing Ojnk's Identd on OpenBSD
 See oidentd(8), oidentd.conf(5), and oidentd_masq.conf(5) for
 information on configuring oidentd.
 
-Additionally, you may wish to start oidentd at system start-up
-via the /etc/rc.local script:
+oidentd can run either as a standalone daemon or via inetd.
+
+For standalone mode, add the following to the /etc/rc.local script:
 
 if [ -x ${PREFIX}/sbin/oidentd ]; then
         echo -n ' oidentd';	${PREFIX}/sbin/oidentd -m
 fi
+
+For inetd, modify /etc/inetd.conf to use oidentd for ident:
+
+ident	stream	tcp	nowait	root	${PREFIX}/sbin/oidentd oidentd -Im
 
