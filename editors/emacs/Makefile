@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2002/12/29 19:43:49 fgsch Exp $
+# $OpenBSD: Makefile,v 1.28 2003/01/24 08:54:54 pvalchev Exp $
 
 COMMENT=	"GNU editor"
 
@@ -16,9 +16,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SUBST_VARS=	GCCARCH VER
 
+.include <bsd.own.mk>
+
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${GCCARCH}
+.if ${ELF_TOOLCHAIN} == "yes"
+CONFIGURE_ENV=	LDFLAGS="-Z"
+.endif
 
 FLAVORS=	no_x11
 FLAVOR?=
