@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2003/12/10 21:28:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/03/31 02:49:36 jolan Exp $
 
 COMMENT=	"play games built around LucasArts' SCUMM"
-DISTNAME=	scummvm-0.5.1
-EXTRACT_SUFX=	.tgz
+DISTNAME=	scummvm-0.6.0
+EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -20,11 +20,20 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		mad.2::audio/libmad \
 		vorbis.0,vorbisfile.1::audio/libvorbis
 
+CONFIGURE_STYLE=simple
+CONFIGURE_ARGS+=--disable-alsa
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 USE_X11=	Yes
 
-MAKE_ENV+=	CXXFLAGS="${CXXFLAGS} -DSCUMM_NEED_ALIGNMENT" CXX="${CXX}"
+MAKE_ENV+=	CXXFLAGS="${CXXFLAGS}" CXX="${CXX}"
+
+# XXX gcc3 compiling compact.cpp with -O2 gobbles 800MB
+.if ${MACHINE_ARCH} == "sparc64"
+CXXFLAGS+=	-O0
+.endif
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scummvm
