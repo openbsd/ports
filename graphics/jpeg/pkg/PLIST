@@ -5,7 +5,7 @@ bin/rdjpgcom
 bin/wrjpgcom
 lib/libjpeg.a
 lib/libjpeg.so.62.0
-@exec [ -x /sbin/ldconfig ] && /sbin/ldconfig -m %B
+@exec /sbin/ldconfig -m %B
 lib/libjpeg.la
 man/man1/cjpeg.1
 man/man1/djpeg.1
