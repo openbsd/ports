@@ -1,4 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 09:09:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/24 09:24:37 espie Exp $
+@newgroup _majordomo:520
+@newuser _majordomo:520:_majordomo::Majordomo:/root:/sbin/nologin
+@mode 755
+@owner _majordomo
+@group _majordomo
 lib/majordomo/
 lib/majordomo/Tools/
 lib/majordomo/Tools/archive.pl
@@ -23,8 +28,14 @@ lib/majordomo/majordomo_version.pl
 lib/majordomo/request-answer
 lib/majordomo/resend
 lib/majordomo/sample.cf
+@sample ${SYSCONFDIR}/majordomo/
+@sample ${SYSCONFDIR}/majordomo/majordomo.cf
 lib/majordomo/shlock.pl
+@mode 6550
 lib/majordomo/wrapper
+@group
+@owner
+@mode
 @man man/man1/approve.1
 @man man/man1/bounce-remind.1
 @man man/man1/bounce.1
@@ -45,3 +56,11 @@ share/doc/majordomo/majordomo-faq.html
 share/doc/majordomo/majordomo.lisa6.ps
 share/doc/majordomo/majordomo.ora
 share/doc/majordomo/post-install-notes
+@owner _majordomo
+@group _majordomo
+@mode 755
+@sample /var/spool/majordomo/
+@mode 750
+@sample /var/spool/majordomo/lists/
+@sample /var/spool/majordomo/digests/
+@sample /var/spool/majordomo/tmp/

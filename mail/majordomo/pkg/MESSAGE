@@ -1,0 +1,2 @@
+Don't forget to set the hostname in ${SYSCONFDIR}/majordomo/majordomo.cf
+See ${PREFIX}/share/doc/majordomo/post-install-notes
