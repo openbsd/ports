@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/09/19 06:42:00 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/05/24 22:02:51 marcm Exp $
 
 COMMENT=	"module to calculate Nilsimsa digests"
 
 DISTNAME=	Digest-Nilsimsa-0.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
-
-MAINTAINER=	Marc Matteo <marcm@openbsd.org>
 
 # Artistic licence
 PERMIT_PACKAGE_CDROM=	Yes
