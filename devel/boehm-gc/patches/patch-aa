@@ -1,11 +1,13 @@
 --- Makefile.orig	Thu Aug 21 02:17:10 1997
-+++ Makefile	Tue Apr 20 09:43:01 1999
-@@ -8,14 +8,40 @@
++++ Makefile	Fri Mar 23 14:43:41 2001
+@@ -7,15 +7,41 @@
+ #      	 and runs some tests of collector and cords.  Does not add cords or
  #	 c++ interface to gc.a
  # cord/de - builds dumb editor based on cords.
- CC=cc
+-CC=cc
 -CXX=CC
-+CXX=c++
++#CC=cc
++#CXX=CC
  AS=as
  #  The above doesn't work with gas, which doesn't run cpp.
  #  Define AS as `gcc -c -x assembler-with-cpp' instead.
@@ -17,7 +19,7 @@
 +# The new c++-t and c++-nt (test and notest) are because we don't want
 +# to fill anyone's log with leak messages! - MMCG
 +
-+CFLAGS= -g -O -DNO_SIGNALS -DALL_INTERIOR_POINTERS -DATOMIC_UNCOLLECTABLE \
++CFLAGS+= -DNO_SIGNALS -DALL_INTERIOR_POINTERS -DATOMIC_UNCOLLECTABLE \
 +		-DNO_EXECUTE_PERMISSION -DSILENT -DREDIRECT_MALLOC=GC_malloc
 +
 +LEAKFLAGS=$(CFLAGS) -DFIND_LEAK
@@ -43,7 +45,15 @@
  
  # Setjmp_test may yield overly optimistic results when compiled
  # without optimization.
-@@ -162,8 +188,6 @@
+@@ -100,7 +126,6 @@
+     -DDONT_ADD_BYTE_AT_END -DALL_INTERIOR_POINTERS
+ #   Flags for building libgc.a -- the last two are required.
+ 
+-CXXFLAGS= $(CFLAGS) 
+ AR= ar
+ RANLIB= ranlib
+ 
+@@ -162,8 +187,6 @@
  # not time-critical anyway.
  # Set SPECIALCFLAGS to -q nodirect_code on Encore.
  
@@ -52,7 +62,7 @@
  pcr: PCR-Makefile gc_private.h gc_hdrs.h gc.h config.h mach_dep.o $(SRCS)
  	make -f PCR-Makefile depend
  	make -f PCR-Makefile
-@@ -210,13 +234,18 @@
+@@ -210,13 +233,18 @@
  	./if_mach HP_PA "" $(CXX) $(CXXFLAGS) -o test_cpp $(srcdir)/test_cpp.cc gc_cpp.o gc.a -ldld
  	./if_not_there test_cpp $(CXX) $(CXXFLAGS) -o test_cpp $(srcdir)/test_cpp.cc gc_cpp.o gc.a `./threadlibs`
  

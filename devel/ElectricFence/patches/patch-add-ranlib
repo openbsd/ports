@@ -1,7 +1,16 @@
+$OpenBSD: patch-add-ranlib,v 1.2 2001/03/26 09:22:10 wilfried Exp $
 --- Makefile.orig	Fri Jan 20 06:33:04 1995
-+++ Makefile	Tue Mar 30 13:10:15 1999
-@@ -7,6 +7,7 @@
- CFLAGS= -g
++++ Makefile	Mon Mar 26 11:37:14 2001
+@@ -1,12 +1,13 @@
+ ASFLAGS= -mips2
+-CC= cc
++#CC= cc
+ AR= ar
+ INSTALL= install
+ MV= mv
+ CHMOD= chmod
+-CFLAGS= -g
++#CFLAGS= -g
  LIB_INSTALL_DIR= /usr/lib
  MAN_INSTALL_DIR= /usr/man/man3
 +RANLIB = ranlib
