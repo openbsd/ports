@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2001/03/07 21:15:06 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2001/04/21 14:47:05 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
+
+COMMENT=	"graphics library for fast PNG creation"
 
 DISTNAME=	gd-1.8.3
 CATEGORIES=	graphics
-NEED_VERSION=	1.336
+NEED_VERSION=	1.384
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/
 
@@ -21,7 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	COMPILER="${CC}" prefix="${PREFIX}"
-FAKE_FLAGS=	DESTDIR="${WRKINST}"
+FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR="${WRKINST}"
 
 FLAVORS=	no_x11
 FLAVOR?=
@@ -31,7 +33,6 @@ MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_JPEG -DHAVE_LIBTTF" \
 		INCLUDEDIRS="-I. -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype" \
 		LIBS="-lgd -lm -lpng -lz -ljpeg -lttf" \
 		LIBDIRS="-L. -L${LOCALBASE}/lib"
-FAKE_FLAGS+=	${MAKE_FLAGS}
 .else
 USE_X11=	Yes
 MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF" \
@@ -39,7 +40,6 @@ MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF" \
 			-I${X11BASE}/include -I${X11BASE}/include/X11" \
 		LIBS="-lgd -lm -lpng -lz -ljpeg -lttf -lXpm -lX11" \
 		LIBDIRS="-L. -L${LOCALBASE}/lib -L${X11BASE}/lib"
-FAKE_FLAGS+=	${MAKE_FLAGS}
 .endif
 
 post-install:
@@ -51,5 +51,5 @@ post-install:
 .include <bsd.port.mk>
 
 .if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-MAKE_ENV=	NO_SHARED_LIBS=Yes
+MAKE_ENV+=	NO_SHARED_LIBS=Yes
 .endif
