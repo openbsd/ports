@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/09 10:43:56 wilfried Exp $
+${P5SITE}/AppConfig.pm
+${P5SITE}/AppConfig/Args.pm
+${P5SITE}/AppConfig/File.pm
+${P5SITE}/AppConfig/Getopt.pm
+${P5SITE}/AppConfig/State.pm
+${P5SITE}/AppConfig/Sys.pm
+@comment ${P5ARCH}/auto/AppConfig/.packlist
+@comment ${P5ARCH}/perllocal.pod
+man/man3p/AppConfig.3p
+man/man3p/AppConfig::Args.3p
+man/man3p/AppConfig::File.3p
+man/man3p/AppConfig::Getopt.3p
+man/man3p/AppConfig::State.3p
+man/man3p/AppConfig::Sys.3p
+@comment @dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/AppConfig
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/AppConfig

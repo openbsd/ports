@@ -1,0 +1,5 @@
+AppConfig has a powerful but easy to use module for parsing
+configuration files.  It also has a simple and efficient module for
+parsing command line arguments.  For fully-featured command line
+parsing, a module is provided for interfacing AppConfig to Johan
+Vromans' extensive Getopt::Long module.

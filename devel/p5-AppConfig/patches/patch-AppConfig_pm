@@ -1,0 +1,12 @@
+$OpenBSD: patch-AppConfig_pm,v 1.1.1.1 2003/04/09 10:43:56 wilfried Exp $
+--- AppConfig.pm.orig	Thu Apr  3 23:38:53 2003
++++ AppConfig.pm	Thu Apr  3 23:38:57 2003
+@@ -578,7 +578,7 @@ accessed via hash reference.
+ Used to provide an argument specification string to pass to Getopt::Long 
+ via AppConfig::Getopt.  E.g. "=i", ":s", "=s@".  This can also be used to 
+ implicitly set the ARGCOUNT value (C</^!/> = ARGCOUNT_NONE, C</@/> = 
+-ARGCOUNT_LIST, C</%/ = ARGCOUNT_HASH, C</[=:].*/> = ARGCOUNT_ONE)
++ARGCOUNT_LIST, C</%/> = ARGCOUNT_HASH, C</[=:].*/> = ARGCOUNT_ONE)
+ 
+ =item EXPAND
+ 
