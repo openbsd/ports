@@ -1,0 +1,11 @@
+--- configure.orig	Tue Aug 17 13:55:56 1999
++++ configure	Fri Sep 10 04:08:36 1999
+@@ -1655,7 +1655,7 @@
+ 		fi
+ 	fi
+ 	echo "$ac_t""$mutt_cv_slang" 1>&6
+-	LIBS="$LIBS -lslang -lm"
++	LIBS="$LIBS -L/usr/local/lib -lslang -lm"
+ 	if test $mutt_cv_bsdish = yes; then
+ 		LIBS="$LIBS -ltermlib"
+ 	fi

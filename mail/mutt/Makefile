@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 1999/07/15 02:42:28 brad Exp $
+# $OpenBSD: Makefile,v 1.17 1999/09/10 09:50:17 turan Exp $
 
-DISTNAME=	mutt-0.95.6i
+DISTNAME=	mutt-0.95.7i
 CATEGORIES=     mail
 MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
 		ftp://riemann.iam.uni-bonn.de/pub/mutt/ \
@@ -19,7 +19,7 @@ CONFIGURE_ARGS=	--prefix=/usr/local \
 		--with-docdir=/usr/local/share/doc/mutt \
 		--with-sharedir=/usr/local/share/mutt
 
-WRKSRC=		${WRKDIR}/mutt-0.95.6
+WRKSRC=		${WRKDIR}/mutt-0.95.7
 
 pre-fetch:
 .if !defined(NO_WARNINGS)
