@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 1999/10/26 21:48:16 jasoni Exp $
+# $OpenBSD: Makefile,v 1.18 1999/10/27 04:57:22 jasoni Exp $
 
 DISTNAME=	WindowMaker-0.61.1
 PKGNAME=	windowmaker-0.61.1
@@ -12,11 +12,11 @@ NEED_VERSION=	1.73
 
 MAINTAINER=	jasoni@openbsd.org
 
-LIB_DEPENDS=	PropList:${PORTSDIR}/devel/libproplist \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		tiff:${PORTSDIR}/graphics/tiff34 \
-		png:${PORTSDIR}/graphics/png \
-		gif:${PORTSDIR}/graphics/giflib
+LIB_DEPENDS=	PropList.2.0:${PORTSDIR}/devel/libproplist \
+		jpeg.62:${PORTSDIR}/graphics/jpeg \
+		tiff.35:${PORTSDIR}/graphics/tiff \
+		png.1.3:${PORTSDIR}/graphics/png \
+		gif.4.1:${PORTSDIR}/graphics/giflib
 
 # The files placed in $SYSCONFDIR are better placed in $PREFIX/share/WindowMaker
 SYSCONFDIR=		${PREFIX}/share/WindowMaker/Defaults
