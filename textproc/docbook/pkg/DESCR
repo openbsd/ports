@@ -12,6 +12,11 @@ DocBook is supported "out of the box" by a number of commercial
 tools, and there is rapidly expanding support for it in a number
 of free software environments.
 
+This ports installs all versions of the DocBook SGML DTD from 
+versions 3.x and 4.x, and the last major release on the 2.x branch.
+If you are creating a new document, always try to use the latest 
+version of the DTD.
+
 There is a free online copy of O'Reilly's definitive guide to DocBook
 available at http://www.docbook.org/tdg/html/docbook.html
 
