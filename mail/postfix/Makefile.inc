@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2000/10/05 20:58:34 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2000/10/05 21:08:38 jakob Exp $
 
 CATEGORIES=	mail
 NEED_VERSION=	1.310
@@ -19,10 +19,14 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-MAKE_FLAGS+=	CC="${CC}" DEBUG="" OPT="${CFLAGS}" \
-		OPTS="CC=\"${CC}\" DEBUG=\"\" OPT=\"${CFLAGS}\""
+MAKE_CCARGS?=
+MAKE_AUXLIBS?=
 
 ALL_TARGET=	default
+
+do-configure:
+	cd ${WRKSRC}; ${MAKE_PROGRAM} makefiles \
+		CCARGS="${MAKE_CCARGS}" AUXLIBS="${MAKE_AUXLIBS}"
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/libexec/postfix
