@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.548 2003/07/09 11:16:21 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.549 2003/07/11 16:46:20 pvalchev Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -687,7 +687,7 @@ SCRIPTS_ENV+=	${_INSTALL_MACROS}
 SUBST_VARS+=MACHINE_ARCH ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT MAINTAINER
 _SED_SUBST=sed
 .for _v in ${SUBST_VARS}
-_SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
+_SED_SUBST+=-e 's|$${${_v}}|${${_v}}|g'
 .endfor
 _SED_SUBST+=-e 's,$${FLAVORS},${FLAVOR_EXT},g' -e 's,$$\\,$$,g'
 # and append it to the PLIST substitution pipeline
