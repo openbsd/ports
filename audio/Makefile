@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2004/07/11 08:13:12 sturm Exp $
+# $OpenBSD: Makefile,v 1.113 2004/10/21 05:05:49 jolan Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -63,6 +63,7 @@
      SUBDIR += normalize
      SUBDIR += nspmod
      SUBDIR += oggtag
+     SUBDIR += openal
      SUBDIR += opennap
      SUBDIR += p5-Audio-CD
      SUBDIR += p5-CDDB_get
