@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1998/05/20 03:41:50 angelos Exp $
+# $OpenBSD: Makefile,v 1.14 1998/06/23 01:08:59 marc Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -95,6 +95,7 @@
      SUBDIR += xsol
      SUBDIR += xsoldier
 #    SUBDIR += xspringies
+     SUBDIR += xteddy
 #    SUBDIR += xtic
 #    SUBDIR += xtriangles
 #    SUBDIR += yahtzee
