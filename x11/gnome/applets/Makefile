@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2002/01/22 15:34:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2002/02/15 19:13:15 nino Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
-V=			1.4.0.4
-DISTNAME=		gnome-applets-${V}
+
+DISTNAME=		gnome-applets-1.4.0.5
 CATEGORIES=		x11 x11/gnome
-NEED_VERSION=   	1.490
-HOMEPAGE=		http://www.gnome.org
+NEED_VERSION=   	1.504
+HOMEPAGE=		http://www.gnome.org/
+
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
@@ -14,6 +15,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		panel_applet::x11/gnome/core \
 			gtop,gtop_common,gtop_sysdeps::devel/libgtop,gnome
+BUILD_DEPENDS=		:zsh-*:shells/zsh/stable
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,10 +24,14 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
+MAKE_FLAGS+=		LIBTOOL='$(WRKBUILD)/sh $(WRKBUILD)/libtool'
 CONFIGURE_STYLE= 	autoconf
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# use zsh as a shell replacement
+pre-build:
+	ln -sf $(LOCALBASE)/bin/zsh ${WRKBUILD}/sh
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-applets; \
