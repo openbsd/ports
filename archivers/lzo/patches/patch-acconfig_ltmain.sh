@@ -1,16 +1,27 @@
---- acconfig/ltmain.sh.orig	Tue Oct 17 21:25:10 2000
-+++ acconfig/ltmain.sh	Sat Nov 11 17:28:21 2000
-@@ -1799,6 +1799,9 @@
- 	  # rhapsody is a little odd...
- 	  deplibs="$deplibs -framework System"
+--- acconfig/ltmain.sh.orig	Thu Feb  8 16:07:36 2001
++++ acconfig/ltmain.sh	Thu Feb  8 16:07:41 2001
+@@ -1079,6 +1079,10 @@
+ 	    # These systems don't actually have c library (as such)
+ 	    continue
+ 	    ;;
++	  *-*-openbsd*)
++	    # Do not include libc due to us having libc/libc_r.
++	    continue
++	    ;;
+ 	  esac
+ 	elif test "$arg" = "-lm"; then
+ 	  case "$host" in
+@@ -1795,6 +1799,9 @@
+ 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
+ 	  # these systems don't actually have a c library (as such)!
  	  ;;
 +	*-*-openbsd*)
-+	  # do not include libc due to us having libc/libc_r.
++	  # Do not include libc due to us having libc/libc_r.
 +	  ;;
- 	*)
- 	  # Add libc to deplibs on all other systems.
- 	  deplibs="$deplibs -lc"
-@@ -3567,40 +3570,6 @@
+         *-*-rhapsody*)
+ 	  # rhapsody is a little odd...
+ 	  deplibs="$deplibs -framework System"
+@@ -3567,40 +3574,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
