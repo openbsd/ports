@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/01/10 10:46:14 jakob Exp $
+# $OpenBSD: Makefile,v 1.22 2002/02/09 20:50:53 brad Exp $
 
 COMMENT=	"University of Washington's c-client mail access routines"
 
@@ -23,7 +23,8 @@ SHLIB=		libc-client.so.4.0
 SUBST_VARS=	SHLIB
 
 MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" SHLIB="${SHLIB}" \
-		SSLTYPE="unix" EXTRAAUTHENTICATORS="gss"
+		SSLTYPE="unix" EXTRAAUTHENTICATORS="gss" \
+		CC="${CC}"
 
 NO_REGRESS=	Yes
 
