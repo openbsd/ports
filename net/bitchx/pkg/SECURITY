@@ -1,0 +1,11 @@
+$OpenBSD: SECURITY,v 1.1 2000/12/13 14:37:08 brad Exp $
+
+patches/patch-source_misc.c
+${WRKSRC}/source/misc.c
+	Fix a buffer overflow in the DNS resolution code. A buffer overflow
+	within the resolver code makes it possible to overwrite stack
+	variables by generating a malformed DNS packet. This problem makes
+	it possible to create a situation where a malicious user may be
+	able to execute code remotely with the UID and GID of the BitchX
+	client. It is necessary for an attacker to control their own DNS 
+	to exploit this bug.

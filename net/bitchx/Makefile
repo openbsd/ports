@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2000/09/24 07:04:10 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2000/12/13 14:37:08 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 VERSION=	1.0c17
 DISTNAME=	BitchX-${VERSION}
-PKGNAME=	bitchx-${VERSION}
+PKGNAME=	bitchx-${VERSION}p1
 CATEGORIES=	net
-NEED_VERSION=	1.330
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/ \
 		ftp://bitchx.dimension6.com/pub/BitchX/source/
