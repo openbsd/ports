@@ -1,19 +1,17 @@
-$OpenBSD: patch-Makefile_in,v 1.12 2004/01/12 21:33:12 sturm Exp $
---- Makefile.in.orig	2004-01-09 17:18:28.000000000 +0100
-+++ Makefile.in	2004-01-12 18:38:27.000000000 +0100
-@@ -1346,15 +1346,7 @@ install-data-hook: quickmkdir amiroot
+--- Makefile.in.orig	Tue Apr 20 07:40:25 2004
++++ Makefile.in	Tue Apr 20 07:42:01 2004
+@@ -1358,14 +1358,7 @@ install-data-hook: amiroot
  	set -e ; for i in . leaf.node failed.postings interesting.groups \
  		out.going message.id temp.files ; do \
          mkdir -p $(DESTDIR)$(SPOOLDIR)/$$i ; \
 -	if ./amiroot ; then \
--	 chown news:news $(DESTDIR)$(SPOOLDIR)/$$i ; \
+-	 chown @NEWS_USER@:@NEWS_GROUP@ $(DESTDIR)$(SPOOLDIR)/$$i ; \
 -	 chmod 2775      $(DESTDIR)$(SPOOLDIR)/$$i ; fi ; \
  	done
 -	d="`dirname $(DESTDIR)@LOCKFILE@`" ; mkdir -p "$${d}" && \
 -	if ./amiroot ; then \
--          chown news:news "$${d}" ; \
+-          chown @NEWS_USER@:@NEWS_GROUP@ "$${d}" ; \
 -	  chmod 2775 "$${d}" ; fi
--	./quickmkdir $(DESTDIR)
  
  uninstall-local:
  	rm -rf $(DESTDIR)$(SPOOLDIR) $(DESTDIR)@LOCKFILE@
