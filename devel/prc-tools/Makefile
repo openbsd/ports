@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/09/02 05:06:27 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2001/09/02 07:47:13 pvalchev Exp $
 
 FAKE=No
 COMMENT=	"PalmPilot(tm) development environment"
@@ -8,10 +8,14 @@ DISTNAME=       prc-tools.${VERSION}
 PKGNAME=	prc-tools-${VERSION}
 CATEGORIES=     devel palm
 NEED_VERSION=	1.448
-MASTER_SITES=   ftp://ryeham.ee.ryerson.ca/pub/PalmOS/ \
-		${MASTER_SITE_GNU}
+MASTER_SITES=   ftp://ryeham.ee.ryerson.ca/pub/PalmOS/
+MASTER_SITES0=	${MASTER_SITE_GNU:S@%SUBDIR%@binutils@}
+MASTER_SITES1=	${MASTER_SITE_GNU:S@%SUBDIR%@gdb@}
+MASTER_SITES2=	${MASTER_SITE_GNU:S@%SUBDIR%@gcc@}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		binutils-2.7${EXTRACT_SUFX} gdb-4.16${EXTRACT_SUFX} gcc-2.7.2.2${EXTRACT_SUFX}
+		binutils-2.7${EXTRACT_SUFX}:0 \
+		gdb-4.16${EXTRACT_SUFX}:1 \
+		gcc-2.7.2.2${EXTRACT_SUFX}:2
 
 HOMEPAGE=	http://www.palmos.com/dev/tech/tools/gcc/
 
