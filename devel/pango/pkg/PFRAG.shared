@@ -1,8 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/07/25 09:20:01 nino Exp $
-lib/libpango-1.0.so.0.3
-lib/libpangoft2-1.0.so.0.3
-lib/libpangox-1.0.so.0.3
-lib/libpangoxft-1.0.so.0.3
+@comment $OpenBSD: PFRAG.shared,v 1.2 2002/12/23 04:57:56 marcm Exp $
+lib/libpango-1.0.so.0.5
+lib/libpangoft2-1.0.so.0.5
+lib/libpangox-1.0.so.0.5
+lib/libpangoxft-1.0.so.0.5
 lib/pango/1.0.0/modules/pango-arabic-ft2.so
 lib/pango/1.0.0/modules/pango-arabic-x.so
 lib/pango/1.0.0/modules/pango-arabic-xft.so
@@ -21,4 +21,5 @@ lib/pango/1.0.0/modules/pango-myanmar-x.so
 lib/pango/1.0.0/modules/pango-tamil-x.so
 lib/pango/1.0.0/modules/pango-tamil-xft.so
 lib/pango/1.0.0/modules/pango-thai-x.so
+lib/pango/1.0.0/modules/pango-thai-xft.so
 DYNLIBDIR(%D/lib)

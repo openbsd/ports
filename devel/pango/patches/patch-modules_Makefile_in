@@ -1,6 +1,6 @@
-$OpenBSD: patch-modules_Makefile_in,v 1.1.1.1 2002/07/25 09:20:01 nino Exp $
---- modules/Makefile.in.orig	Thu Jun 13 23:04:52 2002
-+++ modules/Makefile.in	Thu Jul 11 15:27:26 2002
+$OpenBSD: patch-modules_Makefile_in,v 1.2 2002/12/23 04:57:56 marcm Exp $
+--- modules/Makefile.in.orig	Sun Oct 13 09:50:50 2002
++++ modules/Makefile.in	Wed Dec  4 13:54:30 2002
 @@ -115,6 +115,7 @@ WIN32_LIBS = @WIN32_LIBS@
  XFT_LIBS = @XFT_LIBS@
  YACC = @YACC@
@@ -9,14 +9,29 @@ $OpenBSD: patch-modules_Makefile_in,v 1.1.1.1 2002/07/25 09:20:01 nino Exp $
  
  SUBDIRS = \
  	arabic		\
-@@ -335,8 +336,9 @@ maintainer-clean-generic clean mostlycle
+@@ -336,21 +337,11 @@ maintainer-clean-generic clean mostlycle
+ 
  
  install-data-local:
- 	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)/pango && 	\
--	$(top_builddir)/pango/pango-querymodules 		\
--		> $(DESTDIR)$(sysconfdir)/pango/pango.modules
-+	LD_LIBRARY_PATH=$(top_builddir)/pango/.libs $(top_builddir)/pango/pango-querymodules 		\
-+	`find $(DESTDIR)$(moduledir) -name '*.so'` | sed 's,$(DESTDIR),,'	\
+-	@if $(RUN_QUERY_IMMODULES_TEST) ; then 				\
+-	  echo $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/pango \&\& 	\
+-	  $(top_builddir)/pango/pango-querymodules 			\
+-		\> $(DESTDIR)$(sysconfdir)/pango/pango.modules ;	\
+-	  $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/pango && 		\
+-	  $(top_builddir)/pango/pango-querymodules 			\
+-		> $(DESTDIR)$(sysconfdir)/pango/pango.modules ;		\
+-	else								\
+-	  echo "***" ; 							\
+-	  echo "*** Warning: pango.modules not created" ; 		\
+-	  echo "***" ; 							\
+-	  echo "*** Generate this file on the target system" ; 		\
+-	  echo "*** system using pango-querymodules" ; 			\
+-	  echo "***" ; 							\
+-	fi
++	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)/pango &&		  \
++	LD_LIBRARY_PATH=$(top_builddir)/pango/.libs			  \
++	$(top_builddir)/pango/pango-querymodules			  \
++	`find $(DESTDIR)$(moduledir) -name '*.so'` | sed 's,$(DESTDIR),,' \
 +	> $(DESTDIR)$(sysconfdir)/pango/pango.modules
  
  included-modules:

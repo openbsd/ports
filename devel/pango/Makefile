@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2002/08/09 21:26:43 nino Exp $
+# $OpenBSD: Makefile,v 1.3 2002/12/23 04:57:56 marcm Exp $
 
 COMMENT=		"library for layout and rendering of text"
 
-DISTNAME=		pango-1.0.4
+DISTNAME=		pango-1.0.5
 CATEGORIES=		devel x11
 
 HOMEPAGE=		http://www.gtk.org
-MAINTAINER=		Nils Nordman <nino@openbsd.org>
+MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,14 +17,14 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ftp.gtk.org/pub/gtk/v2.0/
 EXTRACT_SUFX=           .tar.bz2
 
-LIB_DEPENDS=		glib-2.0.=0,gmodule-2.0.=0,gobject-2.0.=0::devel/glib2
+LIB_DEPENDS=		glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2
 BUILD_DEPENDS=          :pkgconfig-*:devel/pkgconfig
 
 # library versions (major:minor)
-LIBPANGO_VERSION=	0:3
-LIBPANGOFT2_VERSION=	0:3
-LIBPANGOX_VERSION=	0:3
-LIBPANGOXFT_VERSION=	0:3
+LIBPANGO_VERSION=	0:5
+LIBPANGOFT2_VERSION=	0:5
+LIBPANGOX_VERSION=	0:5
+LIBPANGOXFT_VERSION=	0:5
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes

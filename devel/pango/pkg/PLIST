@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/07/25 09:20:01 nino Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/12/23 04:57:56 marcm Exp $
 bin/pango-querymodules
 include/pango-1.0/pango/pango-attributes.h
 include/pango-1.0/pango/pango-break.h
@@ -66,6 +66,8 @@ lib/pango/1.0.0/modules/pango-tamil-xft.a
 lib/pango/1.0.0/modules/pango-tamil-xft.la
 lib/pango/1.0.0/modules/pango-thai-x.a
 lib/pango/1.0.0/modules/pango-thai-x.la
+lib/pango/1.0.0/modules/pango-thai-xft.a
+lib/pango/1.0.0/modules/pango-thai-xft.la
 lib/pkgconfig/pango.pc
 lib/pkgconfig/pangoft2.pc
 lib/pkgconfig/pangox.pc
