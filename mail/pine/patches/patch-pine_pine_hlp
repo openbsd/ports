@@ -1,4 +1,4 @@
-$OpenBSD: patch-pine_pine_hlp,v 1.5 2004/05/11 22:29:23 jakob Exp $
+$OpenBSD: patch-pine_pine_hlp,v 1.6 2004/07/18 16:57:56 jakob Exp $
 --- pine/pine.hlp.orig	Tue Sep  9 23:19:06 2003
 +++ pine/pine.hlp	Sat Sep 20 00:08:13 2003
 @@ -809,8 +809,7 @@
@@ -20,15 +20,6 @@ $OpenBSD: patch-pine_pine_hlp,v 1.5 2004/05/11 22:29:23 jakob Exp $
  </PRE>
  <!--chtml endif-->
  <P><UL>
-@@ -20847,7 +20846,7 @@
- <H1>OPTION: Ssh-Path</H1>
- 
- Sets the name of the command used to open a UNIX secure shell
--connection. The default is typically <CODE>/usr/local/bin/ssh</CODE>.
-+connection. The default is typically <CODE>/usr/bin/ssh</CODE>.
- <P>
- <UL>   
- <LI><A HREF="h_finding_help">Finding more information and requesting help</A>
 @@ -22632,7 +22631,7 @@
  So, here are some example entries:
  <PRE>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2004/05/11 22:29:23 jakob Exp $
+# $OpenBSD: Makefile,v 1.58 2004/07/18 16:57:55 jakob Exp $
 
 COMMENT=	"program for Internet E-mail and News"
 COMMENT-pico=	"small text editor"
@@ -6,8 +6,8 @@ COMMENT-pilot=	"file system browser"
 
 CATEGORIES=	mail news
 
-VERSION=	4.60
-PICO_VERSION=	4.7
+VERSION=	4.61
+PICO_VERSION=	4.8
 PILOT_VERSION=	2.0
 
 DISTNAME=	pine${VERSION}
