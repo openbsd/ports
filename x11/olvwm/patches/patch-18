@@ -1,42 +1,51 @@
---- pixmap.c.orig	Thu Jan 13 22:36:12 1994
-+++ pixmap.c	Sat Jul 17 00:35:59 1999
-@@ -4,7 +4,7 @@
-  */
- 
- #ifdef IDENT
--#ident "%W% olvwm version %G%"
-+#ident "@(#)pixmap.c	1.3 olvwm version 09 Feb 1994"
- #endif
- 
- /*
-@@ -20,8 +20,20 @@
- #include <X11/XWDFile.h>
- 
- #ifdef XPM
--#include <xpm.h>
--#endif
-+#ifndef NO_PIXEL_FIX
-+/* The problem with xpm.h is that it includes <X11/Intrinsic.h> to get
-+ * the typedef for Pixel.  Intrinsic.h, however, also typedefs Boolean
-+ * (to char).  This causes the compiler to fail on the Boolean typedef
-+ * in <olgx/olgx.h> (which is, of course, also char). <olgx/olgx.h> is
-+ * included within "win.h".
-+ * This kludge typedefs Pixel and defines _XtIntrinsic_h so that the
-+ * real Intrinsic.h does not get included.
-+ */
-+#define _XtIntrinsic_h
-+typedef unsigned long   Pixel;      /* Index into colormap              */
-+#endif  /* NO_PIXEL_FIX */
-+#include <X11/xpm.h>
-+#endif XPM
- 
- #include "i18n.h"
- #include <olgx/olgx.h>
-@@ -159,6 +171,7 @@
- }
- 
- FreePixmapColors(dpy, ncolors, colors, colormap)
-+    Display *dpy;
-     int ncolors;
-     XColor *colors;
-     Colormap *colormap;
+--- olvwm.info.orig	Thu Jan  1 01:00:00 1970
++++ ./olvwm.info	Fri Jul 16 21:49:03 1999
+@@ -0,0 +1,48 @@
++# -----------------------------------------------
++#	olvwm.info	31 October 1991
++#
++#	OpenWindows Version 3
++# -----------------------------------------------
++#	@(#)olvwm.info	1.2 25 Nov 1992
++##########################50######################
++:VDM:
++Virtual Desktop Manager
++
++The Virtual Desktop Manager (VDM) allows you to
++have 1 or more logical desktops one of which may
++be viewed at any time.  Each desktop is
++represented by a region surrounded with
++a dashed line.
++
++The background of the VDM represents the logical
++desktops which you currently have; you can
++increase or reduce this number simply by
++resizing the VDM.  If you make the VDM smaller, 
++the rightmost and bottommost desktops will
++"go away" and you will not be able to access
++any windows in that desktop.  The windows
++themselves are still active, though, and will
++appear if you again make the VDM larger.
++
++The desktop boundaries are not physical
++boundaries; a window can straddle a boundary
++and you can view portions of more that one
++desktop at a time (whatever amount that will
++fit on your screen).  Usually, though, you
++will see a logical boundary between desktops.
++
++To move to another desktop, you can use the arrow
++keys or you can double-click the SELECT button
++inside the VDM at the location you want to go to.
++Pressing MENU in the VDM brings up a menu which
++also allows you to move to a different desktop.
++
++The small windows in the desktop represent each
++frame as it appears on your screen.  In terms of
++window manager actions, they mimic the frame they
++represent:  you can select and move them with
++the SELECT button, you can bring up their
++window menu with the MENU button, you can drop
++items from other tools into them, etc.  All
++actions performed on one of these little
++windows affects the frame the window represents.

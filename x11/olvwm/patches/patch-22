@@ -1,11 +1,42 @@
---- st.c.orig	Thu Jan 13 16:36:18 1994
-+++ st.c	Tue Sep 29 22:08:32 1998
-@@ -208,7 +208,7 @@
-     }
+--- pixmap.c.orig	Thu Jan 13 22:36:12 1994
++++ ./pixmap.c	Sat Jul 17 00:35:59 1999
+@@ -4,7 +4,7 @@
+  */
+ 
+ #ifdef IDENT
+-#ident "%W% olvwm version %G%"
++#ident "@(#)pixmap.c	1.3 olvwm version 09 Feb 1994"
+ #endif
+ 
+ /*
+@@ -20,8 +20,20 @@
+ #include <X11/XWDFile.h>
+ 
+ #ifdef XPM
+-#include <xpm.h>
+-#endif
++#ifndef NO_PIXEL_FIX
++/* The problem with xpm.h is that it includes <X11/Intrinsic.h> to get
++ * the typedef for Pixel.  Intrinsic.h, however, also typedefs Boolean
++ * (to char).  This causes the compiler to fail on the Boolean typedef
++ * in <olgx/olgx.h> (which is, of course, also char). <olgx/olgx.h> is
++ * included within "win.h".
++ * This kludge typedefs Pixel and defines _XtIntrinsic_h so that the
++ * real Intrinsic.h does not get included.
++ */
++#define _XtIntrinsic_h
++typedef unsigned long   Pixel;      /* Index into colormap              */
++#endif  /* NO_PIXEL_FIX */
++#include <X11/xpm.h>
++#endif XPM
+ 
+ #include "i18n.h"
+ #include <olgx/olgx.h>
+@@ -159,6 +171,7 @@
  }
  
--static rehash(table)
-+extern rehash(table)
- register st_table *table;
- {
-     register st_table_entry *ptr, *next, **old_bins = table->bins;
+ FreePixmapColors(dpy, ncolors, colors, colormap)
++    Display *dpy;
+     int ncolors;
+     XColor *colors;
+     Colormap *colormap;

@@ -1,22 +1,48 @@
---- virtual.c.orig	Thu Jan 13 16:36:22 1994
-+++ virtual.c	Tue Sep 29 22:08:33 1998
-@@ -48,6 +48,9 @@
- #ident "@(#)virtual.c	1.6 olvwm version 07 Jan 1994"
+--- resources.c.orig	Thu Jan 13 22:36:14 1994
++++ ./resources.c	Sat Jul 17 10:04:16 1999
+@@ -5,7 +5,7 @@
+  */
+ 
+ #ifdef IDENT
+-#ident "@(#)resources.c	1.6 olvwm version 07 Jan 1994"
++#ident "@(#)resources.c	1.8 olvwm version 01/13/98"
  #endif
  
-+static rexMatch();
-+static rexInit();
-+
- /* Class Function Vector; a virtual pane is the VDM window in which all
-  * the little virtual windows appear (and to which said windows are
-  * parented)
-@@ -2108,7 +2111,9 @@
-     }
- }
- 
-+#ifndef __OpenBSD__
- static char expbuf[256];
+ /*
+@@ -562,8 +562,8 @@
+     &(GRV.VirtualFontColor),	cvtString,		updVirtualFontColor,
+     0L },
+ {   "virtualIconic",		"VirtualIconic", 	"False",
+-    &(GRV.VirtualIconic),	cvtString,		NULL,
+-    RI_IMMUTABLE },
++    &(GRV.VirtualIconic),	cvtBoolean,		NULL,
++    0L },
+ {   "virtualSticky",		"VirtualSticky", 	"",
+     &(GRV.StickyList),		cvtStringList,		NULL,
+     0L },
+@@ -620,13 +620,13 @@
+     0L },
+ {   "autoShowRootMenu",		"AutoShowRootMenu", 	"False",
+     &(GRV.AutoShowRootMenu),	cvtBoolean,		NULL,
+-    RI_IMMUTABLE },
++    0L },
+ {   "autoRootMenuX",		"AutoRootMenuX", 	"0",
+     &(GRV.AutoRootMenuX),	cvtInteger,		NULL,
+-    RI_IMMUTABLE },
++    0L },
+ {   "autoRootMenuY",		"AutoRootMenuY", 	"0",
+     &(GRV.AutoRootMenuY),	cvtInteger,		NULL,
+-    RI_IMMUTABLE },
++    0L },
+ {   "inputFocusColor",		"InputFocusColor", 	NULL,
+     &(GRV.InputFocusColor),	cvtString,		updInputFocusColor,
+     0L },
+@@ -1577,7 +1577,7 @@
+ 	    GRV.lc_ilang.locale ? GRV.lc_ilang.locale : "(null)",
+ 	    GRV.lc_numeric.locale ? GRV.lc_numeric.locale : "(null)",
+ 	    GRV.lc_datefmt.locale ? GRV.lc_datefmt.locale : "(null)");
+-										#endif
 +#endif
  
- static
- rexMatch(string)
+ 
+ /* ===== Updaters ========================================================= */

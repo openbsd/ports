@@ -1,22 +1,14 @@
---- gif.c.orig	Thu Jan 13 16:36:06 1994
-+++ gif.c	Tue Sep 29 22:08:27 1998
-@@ -56,6 +56,10 @@
- 	int     disposal;
- } Gif89 = { -1, -1, -1, 0 };
- 
-+static	ReadColorMap();
-+static	DoExtension();
-+static	GetDataBlock();
-+
- extern XImage* ReadImage();
- 
- XImage *ReadGIF(dpy, fd, pNcolors, pColors)
-@@ -456,7 +460,7 @@
- 	return code;
- }
- 
--static XImage*
-+extern XImage*
- ReadImage(dpy, fd, len, height, cmap, interlace, ignore)
- Display *dpy;
- FILE    *fd;
+--- defaults.c.orig	Thu Jan 13 22:36:03 1994
++++ ./defaults.c	Fri Jul 16 21:49:02 1999
+@@ -90,7 +90,11 @@
+ #ifdef SVR4
+ 	    if (sysinfo(SI_HOSTNAME, hostname, sizeof(hostname)) != -1) {
+ #else
++#ifndef __OpenBSD__
+ 	    if (0 == gethostname(hostname, sizeof(hostname), &namelen)) {
++#else
++	    if (0 == gethostname(hostname, sizeof(hostname))) {
++#endif
+ #endif
+ 		(void) strcat(filename, hostname);
+ 		fileDB = XrmGetFileDatabase(filename);

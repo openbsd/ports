@@ -1,187 +1,23 @@
---- images.c.orig	Thu Jan 13 16:36:07 1994
-+++ images.c	Tue Sep 29 22:08:28 1998
-@@ -4,7 +4,7 @@
-  */
+--- error.c.orig	Thu Jan 13 22:36:04 1994
++++ ./error.c	Sat Jul 17 10:05:18 1999
+@@ -13,7 +13,11 @@
  
- #ifdef IDENT
--#ident "@(#)images.c	1.5 olvwm version 07 Jan 1994"
-+#ident "@(#)images.c	1.6 olvwm version 09 Feb 1994"
- #endif
+ #include <stdio.h>
+ #include <stdlib.h>
++#ifdef __FreeBSD__
++#include <X11/Xlibint.h>
++#else
+ #include <X11/Xlib.h>
++#endif
+ #include <X11/Xproto.h>
  
- /* Use small images */
-@@ -51,7 +51,6 @@
-     True,
-     True,
-     WindowOpenCloseAction,
--    NULL,
-     ACTION_OPEN_CLOSE,
-     NULL,
-     NULL
-@@ -67,7 +66,6 @@
-     True,
-     True,
-     WindowFullRestoreSizeAction,
--    NULL,
-     ACTION_FULL_RESTORE,
-     NULL,
-     NULL
-@@ -83,7 +81,6 @@
-     True,
-     True,
-     WindowMoveAction,
--    NULL,
-     ACTION_MOVE,
-     NULL,
-     NULL
-@@ -99,7 +96,6 @@
-     True,
-     True,
-     WindowResizeAction,
--    NULL,
-     ACTION_RESIZE,
-     NULL,
-     NULL
-@@ -115,7 +111,6 @@
-     True,
-     True,
-     WindowStickAction,
--    NULL,
-     ACTION_STICK,
-     NULL,
-     NULL
-@@ -131,7 +126,6 @@
-     False,
-     True,
-     WindowPropsAction,
--    NULL,
-     ACTION_PROPS,
-     NULL,
-     NULL
-@@ -147,7 +141,6 @@
-     True,
-     True,
-     WindowBackAction,
--    NULL,
-     ACTION_BACK,
-     NULL,
-     NULL
-@@ -163,7 +156,6 @@
-     True,
-     True,
-     WindowRefreshAction,
--    NULL,
-     ACTION_REFRESH,
-     NULL,
-     NULL
-@@ -179,7 +171,6 @@
-     True,
-     True,
-     WindowQuitAction,
--    NULL,
-     ACTION_QUIT,
-     NULL,
-     NULL
-@@ -195,7 +186,6 @@
-     True,
-     True,
-     NULL,
--    NULL,
-     ACTION_NONE,
-     NULL,
-     NULL
-@@ -211,7 +201,6 @@
-     True,
-     True,
-     WindowDismissThisAction,
--    NULL,
-     ACTION_OPEN_CLOSE,
-     NULL,
-     NULL
-@@ -227,7 +216,6 @@
-     True,
-     True,
-     WindowDismissAllAction,
--    NULL,
-     ACTION_NONE,
-     NULL,
-     NULL
-@@ -243,7 +231,6 @@
-     True,
-     True,
-     WindowFlashOwnerAction,
--    NULL,
-     ACTION_OWNER,
-     NULL,
-     NULL
-@@ -262,7 +249,6 @@
-     True,
-     True,
-     VDMMenuAction,
--    NULL,
-     ACTION_RIGHT_V,
-     NULL,
-     NULL
-@@ -277,7 +263,6 @@
-     True,
-     True,
-     VDMMenuAction,
--    NULL,
-     ACTION_LEFT_V,
-     NULL,
- };
-@@ -291,7 +276,6 @@
-     True,
-     True,
-     VDMMenuAction,
--    NULL,
-     ACTION_UP_V,
-     NULL,
-     NULL
-@@ -306,7 +290,6 @@
-     True,
-     True,
-     VDMMenuAction,
--    NULL,
-     ACTION_DOWN_V,
-     NULL,
-     NULL
-@@ -321,7 +304,6 @@
-     True,
-     True,
-     VDMMenuAction, 
--    NULL,
-     ACTION_UPRIGHT_V,
-     NULL,
-     NULL
-@@ -336,7 +318,6 @@
-     True,
-     True,
-     VDMMenuAction,
--    NULL,
-     ACTION_DOWNRIGHT_V,
-     NULL,
-     NULL
-@@ -351,7 +332,6 @@
-     True,
-     True,
-     VDMMenuAction,
--    NULL,
-     ACTION_UPLEFT_V,
-     NULL,
-     NULL
-@@ -366,7 +346,6 @@
-     True,
-     True,
-     VDMMenuAction,
--    NULL,
-     ACTION_DOWNLEFT_V,
-     NULL,
-     NULL
-@@ -381,7 +360,6 @@
-     True,
-     True,
-     VDMMenuAction,
--    NULL,
-     ACTION_HOME_V,
-     NULL,
-     NULL
+ #include "i18n.h"
+@@ -232,8 +236,6 @@
+ 	err->resourceid);
+     FPRINTF(stderr, GetString("  serial number of failed request:  %d\n"),
+ 	err->serial);
+-    FPRINTF(stderr, GetString("  current request serial number:  %d\n"),
+-	dpy->request);
+ }
+ 
+ 

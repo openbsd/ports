@@ -1,35 +1,22 @@
---- menu.h.orig	Thu Jan 13 16:40:03 1994
-+++ menu.h	Tue Sep 29 22:08:28 1998
-@@ -8,7 +8,7 @@
- #define _OLWM_MENU_H
+--- gif.c.orig	Thu Jan 13 22:36:06 1994
++++ ./gif.c	Fri Jul 16 21:49:03 1999
+@@ -56,6 +56,10 @@
+ 	int     disposal;
+ } Gif89 = { -1, -1, -1, 0 };
  
- #ifdef IDENT
--#ident "@(#)menu.h	1.4 olvwm version 07 Jan 1994"
-+#ident "@(#)menu.h	1.5 olvwm version 09 Feb 1994"
- #endif
- 
- /*
-@@ -56,17 +56,18 @@
-     FuncPtr	callback;	/* function to call when item hit */
- 				/* NULL if button has pullright */
- 
-+    SemanticAction semantic;	/* semantic action for window menu items */
++static	ReadColorMap();
++static	DoExtension();
++static	GetDataBlock();
 +
-+    FuncPtr	generate_func;	/* If !NULL, called when this button is
-+				 * hilighted to re-initialize action.submenu */
-+    char	*generate_args;	/* args for generate function */
-+
-     union {
- 	struct _menu *submenu;	/* pointer to the submenu, if has_submenu */
- 	char	*command;	/* command, if callback is AppMenuFunc */
- 	void	*other;		/* unspecified */
-     } action;
+ extern XImage* ReadImage();
  
--    SemanticAction semantic;	/* semantic action for window menu items */
--
--    FuncPtr	generate_func;	/* If !NULL, called when this button is
--				 * hilighted to re-initialize action.submenu */
--    char	*generate_args;	/* args for generate function */
- }           Button;
+ XImage *ReadGIF(dpy, fd, pNcolors, pColors)
+@@ -456,7 +460,7 @@
+ 	return code;
+ }
  
- /*
+-static XImage*
++extern XImage*
+ ReadImage(dpy, fd, len, height, cmap, interlace, ignore)
+ Display *dpy;
+ FILE    *fd;

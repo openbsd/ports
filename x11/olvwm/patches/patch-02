@@ -1,5 +1,5 @@
 --- Imakefile.orig	Mon Jan 24 22:45:05 1994
-+++ Imakefile	Fri Jul 16 22:18:41 1999
++++ ./Imakefile	Fri Jul 16 22:18:41 1999
 @@ -45,8 +45,8 @@
  /**/#MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DIDENT
  

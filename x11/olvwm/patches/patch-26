@@ -1,13 +1,11 @@
---- winicon.c.orig	Thu Jan 13 16:36:26 1994
-+++ winicon.c	Tue Sep 29 22:08:34 1998
-@@ -37,6 +37,10 @@
- extern 	Bool	PropGetWMName();
- extern 	Bool	PropGetWMIconName();
+--- st.c.orig	Thu Jan 13 22:36:18 1994
++++ ./st.c	Fri Jul 16 21:49:04 1999
+@@ -208,7 +208,7 @@
+     }
+ }
  
-+static	heightTopIcon();
-+static	heightBottomIcon();
-+static	widthBothIcon();
-+
- /***************************************************************************
- * private data
- ***************************************************************************/
+-static rehash(table)
++extern rehash(table)
+ register st_table *table;
+ {
+     register st_table_entry *ptr, *next, **old_bins = table->bins;

@@ -1,21 +1,23 @@
---- olvwmrc.y.orig	Thu Jan 13 16:46:53 1994
-+++ olvwmrc.y	Tue Sep 29 22:08:29 1998
-@@ -526,7 +526,9 @@
- 	    }
- %%
- /* Programs */
-+#ifndef YYDEBUG
- #define YYDEBUG 1
+--- menu.c.orig	Thu Jan 13 22:36:09 1994
++++ ./menu.c	Sat Jul 17 10:04:15 1999
+@@ -5,7 +5,7 @@
+  */
+ 
+ #ifdef IDENT
+-#ident	"@(#)menu.c	1.6 olvwm version 07 Jan 1994"
++#ident	"@(#)menu.c	1.7 olvwm version 01/13/98"
+ #endif
+ 
+ /*
+@@ -3154,7 +3154,11 @@
+     else if (pb->label[pb->which].kind == ComboLabel) {
+ 	label = &combLabel;
+ 	combLabel.pixlabel = *(pb->label[pb->which].pixlabel);
++#ifdef OW_I18N_L4
++	combLabel.strlabel = GetText(pb->label[pb->which].string);
++#else
+ 	combLabel.strlabel = pb->label[pb->which].string;
 +#endif
- #include "parse.c"
- 
- extern List	*ActiveClientList;
-@@ -577,7 +579,7 @@
-    return(True);
- }
- 
--static char *
-+extern char *
- strexpand(s)
- char *s;
- {
+ 	state |= OLGX_LABEL_IS_COMB;
+     }
+ #endif

@@ -1,7 +1,25 @@
---- CHANGES.orig	Mon Jan 24 16:43:14 1994
-+++ CHANGES	Tue Sep 29 22:08:25 1998
-@@ -1,4 +1,13 @@
+--- CHANGES.orig	Mon Jan 24 22:43:14 1994
++++ ./CHANGES	Sat Jul 17 10:04:13 1999
+@@ -1,4 +1,31 @@
 -Version 3.4 fixes and enhancements:
++Version 4.2 fixes:
++    1)  Fixed problems with windows that have a compound text title
++
++    2)  Fixed problems with the cursor font name
++
++    3)  error.c will now compile under Solaris 2.6
++
++    4)  Fixed misc. compilation warnings.  Some survive in error.c and states.c
++
++    5)  Fixed warp function when two screens have the same program:  warp will
++	now look first on the screen containing the mouse pointer
++
++    6)  Fixed hot key functions when num lock/shift lock might be pressed
++
++    7)  Fixed problem with AutoRootMenu startup
++
++    8)  Fixed problem with VirtualIconic resource
++
 +Version 4.1 fixes:
 +    1)  Fixed compilation problems with /usr/ucb/cc on SunOS 4.1.3
 +

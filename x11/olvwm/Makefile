@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 1999/02/11 23:31:14 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1999/07/17 10:53:21 matthieu Exp $
 #
 
 DISTNAME=	olvwm4
-PKGNAME=	olvwm-4.1
+PKGNAME=	olvwm-4.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	olvwm4.tar.Z
 
 MAINTAINER= ian@openbsd.org
 
-# The Patch01 patch is included in the patches directory.
+# The Patch01 and Patch02 patches are included in the patches directory.
 # PATCH_SITES=	${MASTER_SITES}
-# PATCHFILES=	olvwm4.Patch01.Z
+# PATCHFILES=	olvwm4.Patch01.Z olvwm4.Patch02.Z
 # PATCH_DIST_STRIP=	-p1
 
 LIB_DEPENDS=	xview\\.3\\.:${PORTSDIR}/x11/xview-lib

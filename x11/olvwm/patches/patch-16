@@ -1,33 +1,35 @@
---- olwm.c.orig	Thu Jan 13 16:36:12 1994
-+++ olwm.c	Tue Sep 29 22:08:30 1998
-@@ -56,6 +56,9 @@
+--- menu.h.orig	Thu Jan 13 22:40:03 1994
++++ ./menu.h	Fri Jul 16 21:49:03 1999
+@@ -8,7 +8,7 @@
+ #define _OLWM_MENU_H
  
- typedef	void	(*VoidFunc)();
- 
-+#ifdef __OpenBSD__
-+#define MAXPID 30000
-+#endif
- 
- /*
-  * Globals
-@@ -182,7 +185,7 @@
- /*
-  * main	-- parse arguments, perform initialization, call event-loop
-  */
--void
-+int
- main(argc, argv)
- 	int argc;
- 	char **argv;
-@@ -679,7 +682,11 @@
- #else
- 	int oldmask;
- 	int pid;
-+#ifndef __FreeBSD__
- 	union wait status;
-+#else
-+	int status;
-+#endif
+ #ifdef IDENT
+-#ident "@(#)menu.h	1.4 olvwm version 07 Jan 1994"
++#ident "@(#)menu.h	1.5 olvwm version 09 Feb 1994"
  #endif
  
- 	if (!deadChildren)
+ /*
+@@ -56,17 +56,18 @@
+     FuncPtr	callback;	/* function to call when item hit */
+ 				/* NULL if button has pullright */
+ 
++    SemanticAction semantic;	/* semantic action for window menu items */
++
++    FuncPtr	generate_func;	/* If !NULL, called when this button is
++				 * hilighted to re-initialize action.submenu */
++    char	*generate_args;	/* args for generate function */
++
+     union {
+ 	struct _menu *submenu;	/* pointer to the submenu, if has_submenu */
+ 	char	*command;	/* command, if callback is AppMenuFunc */
+ 	void	*other;		/* unspecified */
+     } action;
+ 
+-    SemanticAction semantic;	/* semantic action for window menu items */
+-
+-    FuncPtr	generate_func;	/* If !NULL, called when this button is
+-				 * hilighted to re-initialize action.submenu */
+-    char	*generate_args;	/* args for generate function */
+ }           Button;
+ 
+ /*

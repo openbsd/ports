@@ -1,25 +1,25 @@
---- error.c.orig	Thu Jan 13 16:36:04 1994
-+++ error.c	Tue Sep 29 22:08:27 1998
-@@ -13,7 +13,11 @@
+--- atom.c.orig	Thu Jan 13 22:36:02 1994
++++ ./atom.c	Sat Jul 17 10:04:13 1999
+@@ -73,11 +73,11 @@
+ Atom	AtomDecorIconName;
+ Atom	AtomSunReReadMenuFile;
+ #ifdef OW_I18N_L4
+-Atom	AtomCompoundText;
+ Atom	AtomDecorIMStatus;
+ Atom	AtomLeftIMStatus;
+ Atom	AtomRightIMStatus;
+ #endif
++Atom	AtomCompoundText;
  
- #include <stdio.h>
- #include <stdlib.h>
-+#ifdef __FreeBSD__
-+#include <X11/Xlibint.h>
-+#else
- #include <X11/Xlib.h>
-+#endif
- #include <X11/Xproto.h>
+ /***************************************************************************
+ * Global functions
+@@ -153,9 +153,7 @@
+ 	AtomTargets = XInternAtom(dpy,"TARGETS",False);
+ 	AtomTimestamp = XInternAtom(dpy,"TIMESTAMP",False);
+ 	AtomUser = XInternAtom(dpy,"USER",False);
+-#ifdef OW_I18N_L4
+ 	AtomCompoundText = XInternAtom(dpy, "COMPOUND_TEXT" , False);
+-#endif
  
- #include "i18n.h"
-@@ -232,8 +236,10 @@
- 	err->resourceid);
-     FPRINTF(stderr, GetString("  serial number of failed request:  %d\n"),
- 	err->serial);
-+#ifndef	__OpenBSD__
-     FPRINTF(stderr, GetString("  current request serial number:  %d\n"),
- 	dpy->request);
-+#endif
- }
- 
- 
+ 	/* SunView environment */
+ 	AtomSunViewEnv = XInternAtom(dpy,"_SUN_SUNVIEW_ENV",False);

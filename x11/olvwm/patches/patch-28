@@ -1,5 +1,14 @@
 --- usermenu.c.orig	Thu Jan 13 22:36:21 1994
-+++ usermenu.c	Fri Jul 16 22:20:49 1999
++++ ./usermenu.c	Sat Jul 17 10:04:16 1999
+@@ -5,7 +5,7 @@
+  */
+ 
+ #ifdef IDENT
+-#ident	"@(#)usermenu.c	1.6 olvwm version 07 Jan 1994"
++#ident	"@(#)usermenu.c	1.7 olvwm version 01/13/98"
+ #endif
+ 
+ /*
 @@ -122,7 +122,7 @@
  #define _XtIntrinsic_h
  typedef unsigned long	Pixel;	    /* Index into colormap		*/
@@ -9,3 +18,12 @@
  #endif XPM
  
  #include <assert.h>
+@@ -1003,7 +1003,7 @@
+     int	 lineno = 1;	/* Needed for recursion */
+     int		rval;
+ 
+-    if (++menuRecursionCount > 25) {
++    if (++menuRecursionCount > 1000) {
+         fprintf(stderr, GetString("olvwm: maximum menu filedepth exceeded\n"));
+         menuRecursionCount = 0;
+         return MENU_RECURSION;

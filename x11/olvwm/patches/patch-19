@@ -1,20 +1,85 @@
---- resources.c.orig	Thu Jan 13 16:36:14 1994
-+++ resources.c	Tue Sep 29 22:08:31 1998
+--- olvwmrc.y.orig	Thu Jan 13 22:46:53 1994
++++ ./olvwmrc.y	Sat Jul 17 10:04:15 1999
 @@ -5,7 +5,7 @@
-  */
  
+ %{
  #ifdef IDENT
--#ident "@(#)resources.c	1.6 olvwm version 07 Jan 1994"
-+#ident "@(#)resources.c	1.7 olvwm version 09 Feb 1994"
+-#ident  "@(#)olvwmrc.y	1.6 olvwm version 07 Jan 1994"
++#ident  "@(#)olvwmrc.y	1.7 olvwm version 01/13/98"
  #endif
  
- /*
-@@ -1577,7 +1577,7 @@
- 	    GRV.lc_ilang.locale ? GRV.lc_ilang.locale : "(null)",
- 	    GRV.lc_numeric.locale ? GRV.lc_numeric.locale : "(null)",
- 	    GRV.lc_datefmt.locale ? GRV.lc_datefmt.locale : "(null)");
--										#endif
+ #include <sys/types.h>
+@@ -81,6 +81,7 @@
+ List	*WinMenuActionsList = NULL;
+ 
+ static Display	*dpy;
++static unsigned int NumLockMask;
+ %}
+ 
+ 
+@@ -526,7 +527,9 @@
+ 	    }
+ %%
+ /* Programs */
++#ifndef YYDEBUG
+ #define YYDEBUG 1
 +#endif
+ #include "parse.c"
  
+ extern List	*ActiveClientList;
+@@ -577,7 +580,7 @@
+    return(True);
+ }
  
- /* ===== Updaters ========================================================= */
+-static char *
++extern char *
+ strexpand(s)
+ char *s;
+ {
+@@ -712,7 +715,8 @@
+ 
+ {
+     if (p->keycode == ev->xkey.keycode &&
+-	(p->modmask == AnyModifier || p->modmask == ev->xkey.state))
++	(p->modmask == AnyModifier ||
++	(p->modmask == (~(NumLockMask|LockMask) & ev->xkey.state))))
+ 	return p;
+     return NULL;
+ }
+@@ -799,14 +803,26 @@
+ 		    extern List *ScreenInfoList;
+ 		    List *l = ScreenInfoList;
+ 		    ScreenInfo *scr;
++		    Client *saveClient = NULL;
++		    Window root, child;
++		    int rx, ry, wx, wy;
++		    unsigned int keys;
+ 
+ 		    /* allow one warp per screen */
+ 		    for (scr = ListEnum(&l); scr != NULL; scr = ListEnum(&l)) {
+ 			findClient_rootid = scr->rootid;
+ 			c = (Client *) ListApply(ActiveClientList, findClient, t);
+-			if (c)
+-			    clientWarp(c);
++			if (c) {
++			    if (XQueryPointer(dpy, c->groupid, &root, &child,
++					&rx, &ry, &wx, &wy, &keys)) {
++			        clientWarp(c);
++				break;
++			    }
++			    else saveClient = c;
++			}
+ 		    }
++		    if (saveClient)
++			clientWarp(c);
+ 		    findClient_rootid = 0;
+ 		}
+ 	    free(s);
+@@ -1249,6 +1265,7 @@
+ 	return;
+     olvwmOldBuf = olvwmBuf;
+     dpy = ldpy;
++    NumLockMask = FindModifierMask(XKeysymToKeycode(dpy, XK_Num_Lock));
+     yyparse();
+ #ifdef DEBUG
+     DumpProgKeyList();

@@ -1,21 +1,20 @@
---- evbind.c.orig	Thu Jan 13 16:36:05 1994
-+++ evbind.c	Tue Sep 29 22:08:27 1998
-@@ -5,7 +5,7 @@
-  */
+--- cursors.c.orig	Thu Jan 13 22:36:03 1994
++++ ./cursors.c	Sat Jul 17 10:04:13 1999
+@@ -21,7 +21,7 @@
+ #include "st.h"
  
  #ifdef IDENT
--#ident	"@(#)evbind.c	1.5 olvwm version 07 Jan 1994"
-+#ident	"@(#)evbind.c	1.6 olvwm version 09 Feb 1994"
+-#ident "@(#)cursors.c	1.4 olvwm version 07 Jan 1994"
++#ident "@(#)cursors.c	1.5 olvwm version 01/13/98"
  #endif
  
- /*
-@@ -20,7 +20,9 @@
- #include <sys/types.h>
- #include <sys/time.h>
- 
-+#ifdef __STDC__
- #include <X11/Intrinsic.h>
-+#endif
- #include <X11/Xlib.h>
- #include <X11/Xutil.h>
- #include <X11/keysym.h>
+ static st_table	*cursorTable;
+@@ -278,7 +278,7 @@
+ 	    if (our_copy[0] == 'X')
+ 		font_file = "cursor";
+ 	    else if (our_copy[0] == 'O')
+-		font_file = "olcursor";
++		font_file = "-sun-open look cursor-----12-120-75-75-p-455-sunolcursor-1";
+ 	    createCursor(dpy, cmap, pointer, cursor_id, font_file, end, ptr);
+ 	}
+ 	else {

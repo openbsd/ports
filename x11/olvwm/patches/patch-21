@@ -1,24 +1,5 @@
---- screen.c.orig	Thu Jan 13 16:36:16 1994
-+++ screen.c	Tue Sep 29 22:08:32 1998
-@@ -66,6 +66,13 @@
-  *-------------------------------------------------------------------------*/
- List	*ScreenInfoList;			/* List of managed screens */
- extern	Bool BoolString();
-+static	updateScreenWorkspaceColor();
-+static	updateScreenWindowColor();
-+static	updateScreenForegroundColor();
-+static	updateScreenBackgroundColor();
-+static	updateScreenBorderColor();
-+static	updateScreenInputFocusColor();
-+static	updateScreenGlyphFont();
- 
- /*-------------------------------------------------------------------------
-  *	Local Data
-@@ -281,6 +288,7 @@
- 		     	case StaticColor:
- 		     	case PseudoColor:
- 			case GrayScale:
-+			case TrueColor:
- 		     	case DirectColor:
- 		    		return True;
- 				/*NOTREACHED*/
+--- patchlevel.h.orig	Thu Jan 13 22:40:04 1994
++++ ./patchlevel.h	Sat Jul 17 10:04:12 1999
+@@ -1 +1 @@
+-#define PATCHLEVELv4 0
++#define PATCHLEVELv4 2
