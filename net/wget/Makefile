@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/03/25 07:38:54 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/03/25 23:24:05 brad Exp $
 
 DISTNAME=	wget-1.5.3
 CATEGORIES=	net
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE=	Yes
 
-USE_GMAKE=	Yes
 HAS_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
