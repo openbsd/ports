@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/07/17 01:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2001/07/30 12:41:46 espie Exp $
 
 COMMENT=	designer for qt2
 
@@ -64,6 +64,7 @@ do-install:
 	fi
 	@if [ -f ${WRKBUILD}/lib/libqutil.so.1.0 ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqutil.so.1.0 ${QT_LIBDIR}; \
+	 ln -sf qt2/libqutil.so.1.0 ${PREFIX}/lib/libqutil.so.1.0; \
 	fi
 	echo "#! /bin/sh" >${WRKDIR}/designer
 	echo "QTDIR=${TRUEDIR} exec ${TRUEDIR}/bin/designer" \
