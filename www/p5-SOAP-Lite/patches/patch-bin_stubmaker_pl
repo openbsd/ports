@@ -1,0 +1,10 @@
+$OpenBSD: patch-bin_stubmaker_pl,v 1.1.1.1 2003/05/21 18:14:44 avsm Exp $
+--- bin/stubmaker.pl.orig	Wed May 21 19:10:44 2003
++++ bin/stubmaker.pl	Wed May 21 19:10:53 2003
+@@ -1,5 +1,4 @@
+-#!/bin/env perl 
+-#!d:\perl\bin\perl.exe 
++#!/usr/bin/perl
+ 
+ # -- SOAP::Lite -- soaplite.com -- Copyright (C) 2001 Paul Kulchenko --
+ 
