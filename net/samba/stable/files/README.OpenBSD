@@ -5,29 +5,29 @@ Using samba package in OpenBSD environment:
 
 2. Edit /etc/rc.conf.local:
    ...
-   smbd=YES
-   nmbd=YES
+   smbd_flags="-D"         # for normal use: "-D"
+   nmbd_flags="-D"         # for normal use: "-D"
    ...
 
 3. Edit /etc/rc.local:
    echo -n 'starting local daemons:'
    ...
    if [ -f /etc/samba/smb.conf ]; then
-       if [ X"${smbd}" = X"YES" -a -x /usr/local/libexec/smbd ]; then
-           echo -n ' smbd';    /usr/local/libexec/smbd -D
+       if [ X"${smbd_flags}" != X"NO" -a -x /usr/local/libexec/smbd ]; then
+           echo -n ' smbd';    /usr/local/libexec/smbd ${smbd_flags}
        fi
-       if [ X"${nmbd}" = X"YES" -a -x /usr/local/libexec/nmbd ]; then
-           echo -n ' nmbd';    /usr/local/libexec/nmbd -D
+       if [ X"${nmbd_flags}" != X"NO" -a -x /usr/local/libexec/nmbd ]; then
+           echo -n ' nmbd';    /usr/local/libexec/nmbd ${nmbd_flags}
        fi
    fi
    ...
    echo '.'
 
 Steps 4 and 5 are only necessary if you want to enable swat (Samba 
-Web Administration Tool.)  Please note that administering the the 
-server with swat over a network is inadvisable as passwords are passed
-in the clear.  You can avoid this problem by using ssh forwarding to port
-901.
+Web Administration Tool). Please note that administering the server
+with swat over a network is inadvisable as passwords are passed in
+the clear. You can avoid this problem by using ssh forwarding to
+port 901.
 
 4. add the following entry to /etc/inetd.conf:
 
