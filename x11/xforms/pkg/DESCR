@@ -1,8 +1,4 @@
 This is the binary distribution of XForms, a graphical user interface
 toolkit for X Window Systems. It should work under X11 R4, R5 & R6.
 
-Documentation on XForms is available from bragg.phys.uwm.edu /pub/xforms
-via anonymous ftp.
-
-The entire XForms distribution is also accessible via
-http://bloch.phys.uwm.edu/xforms
+WWW: ${HOMEPAGE}

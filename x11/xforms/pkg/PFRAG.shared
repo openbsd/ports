@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2000/09/13 04:04:03 brad Exp $
+lib/libforms.so.0.88
+lib/libxforms.so.0.88
+DYNLIBDIR(%B)
