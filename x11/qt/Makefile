@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2000/06/09 19:18:14 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2000/06/14 06:16:55 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.45
 CATEGORIES=	x11
-NEED_VERSION=	1.295
+NEED_VERSION=	1.301
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 # for the qt image extension
@@ -16,9 +16,6 @@ PERMIT_PACKAGE_FTP=
 PERMIT_DISTFILES_CDROM=
 PERMIT_DISTFILES_FTP=
 
-FAKE=	Yes
-
-USE_X11=	Yes
 USE_GMAKE=	Yes
 MAKE_ENV=	QTDIR="${WRKSRC}" SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
 MAKE_FLAGS=	VER_MAJ="1" VER_MIN="45"
