@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.31 2002/03/18 20:04:07 jsyn Exp $
+# $OpenBSD: network.conf.template,v 1.32 2002/04/04 11:27:28 wilfried Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -188,7 +188,7 @@ MASTER_SITE_KDE+=	\
 	ftp://ftp.dataplus.se/pub/linux/kde/%SUBDIR%/ \
 	ftp://ftp.uvsq.fr/pub/X11/kde/%SUBDIR%/ \
  	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
- 	ftp://ftp.sunet.se/pub/X11/kde/%SUBDIR%
+ 	ftp://ftp.sunet.se/pub/X11/kde/%SUBDIR%/
 
 MASTER_SITE_TCLTK+=	\
 	ftp://ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
@@ -227,7 +227,7 @@ MASTER_SITE_SOURCEWARE+=	\
 	ftp://ftp.sdn.co.za/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
 	ftp://ftp.sun.ac.za/sites/sourceware.cygnus.com/pub/%SUBDIR%/ \
 	ftp://ftp.unina.it/pub/Unix/cygnus/%SUBDIR%/ \
-	ftp://ftp1.sinica.edu.tw/pub3/CYGNUS/%SUBDIR% \
+	ftp://ftp1.sinica.edu.tw/pub3/CYGNUS/%SUBDIR%/ \
 	ftp://gd.tuwien.ac.at/gnu/sourceware/%SUBDIR%/ \
 	ftp://mirrors.rcn.net/pub/sourceware/%SUBDIR%/ \
 	ftp://planetmirror.com/pub/sourceware/%SUBDIR%/ \
