@@ -1,0 +1,39 @@
+$OpenBSD: patch-configure,v 1.3 2002/12/13 23:56:58 naddy Exp $
+--- configure.orig	Wed Dec  4 18:12:04 2002
++++ configure	Wed Dec  4 18:13:24 2002
+@@ -8299,7 +8299,7 @@ if test -z "$aix_libpath"; then aix_libp
+       hardcode_shlibpath_var=no
+ 
+       if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
++	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+ 	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
+ 	export_dynamic_flag_spec='${wl}-E'
+       else
+@@ -8309,7 +8309,7 @@ if test -z "$aix_libpath"; then aix_libp
+ 	   hardcode_libdir_flag_spec='-R$libdir'
+ 	   ;;
+ 	 *)
+-	   archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
++	   archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+ 	   hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
+ 	   ;;
+        esac
+@@ -14098,7 +14098,7 @@ if test -z "$aix_libpath"; then aix_libp
+       hardcode_shlibpath_var_GCJ=no
+ 
+       if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-	archive_cmds_GCJ='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
++	archive_cmds_GCJ='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+ 	hardcode_libdir_flag_spec_GCJ='${wl}-rpath,$libdir'
+ 	export_dynamic_flag_spec_GCJ='${wl}-E'
+       else
+@@ -14108,7 +14108,7 @@ if test -z "$aix_libpath"; then aix_libp
+ 	   hardcode_libdir_flag_spec_GCJ='-R$libdir'
+ 	   ;;
+ 	 *)
+-	   archive_cmds_GCJ='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
++	   archive_cmds_GCJ='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+ 	   hardcode_libdir_flag_spec_GCJ='${wl}-rpath,$libdir'
+ 	   ;;
+        esac

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2002/10/21 23:18:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2002/12/13 23:56:58 naddy Exp $
 
 COMMENT=	"library for arbitrary precision arithmetic"
 
-DISTNAME=	gmp-4.1
+DISTNAME=	gmp-4.1.1
 CATEGORIES=	devel math
 
 HOMEPAGE=	http://www.swox.com/gmp/
@@ -22,8 +22,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=gmp/}
 PATCH_LIST=	patch-* gcc-patch-*
 .endif
 
-AUTOCONF_NEW=	Yes
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 # Don't try to optimize for the local CPU submodel
 CONFIGURE_ARGS+= --build=${MACHINE_ARCH}-unknown-openbsd${OSrev}
