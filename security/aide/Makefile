@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/11/10 15:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/02/10 19:48:21 pvalchev Exp $
 
 COMMENT=		"Advanced Intrusion Detection Environment"
 
@@ -27,6 +27,11 @@ CONFIGURE_ARGS+=	--with-mhash
 CONFIGURE_ENV=		YACC="bison -y" \
 			CPPFLAGS="-I${LOCALBASE}/include/" \
 			LDFLAGS="-L${LOCALBASE}/lib/"
+
+# XXX workaround sparc64 gcc optimization bug
+.if ${MACHINE_ARCH:Msparc64}
+PATCH_LIST=     gcc-* patch-*
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/aide
