@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/17 23:44:06 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/02/27 22:09:02 pvalchev Exp $
+
+.if ${MACHINE_ARCH} == "amd64"
+BROKEN=			"uic spins forever"
+.endif
 
 COMMENT= 		"billiard game"
 CATEGORIES=		x11 x11/kde games
