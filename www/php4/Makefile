@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/01/28 13:31:28 jakob Exp $
+# $OpenBSD: Makefile,v 1.25 2001/01/28 14:38:30 avsm Exp $
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
@@ -110,10 +110,10 @@ CONFIGURE_ARGS+=	--without-recode
 .endif
 
 .if ${FLAVOR:L:Msnmp}
-CONFIGURE_ARGS+=	--with-snmp --enable-ucd-snmp-hack --with-openssl
+CONFIGURE_ARGS+=	--with-snmp --enable-ucd-snmp-hack
 LIB_DEPENDS+=		snmp.4::net/ucd-snmp
 .else
-CONFIGURE_ARGS+=	--without-snmp --without-openssl
+CONFIGURE_ARGS+=	--without-snmp
 .endif
 
 .if ${FLAVOR:L:Mgd}
