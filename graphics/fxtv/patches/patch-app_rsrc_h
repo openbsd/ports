@@ -1,4 +1,4 @@
-$OpenBSD: patch-app_rsrc_h,v 1.3 2004/01/02 19:03:12 espie Exp $
+$OpenBSD: patch-app_rsrc_h,v 1.4 2004/01/03 14:23:24 espie Exp $
 --- app_rsrc.h.orig	2001-02-12 22:17:53.000000000 +0100
 +++ app_rsrc.h	2004-01-02 19:58:04.000000000 +0100
 @@ -399,20 +399,20 @@ static XtResource Resources[] = {
@@ -6,24 +6,24 @@ $OpenBSD: patch-app_rsrc_h,v 1.3 2004/01/02 19:03:12 espie Exp $
      { RNrecCmdMpeg2, RCrecCmd, XtRString, sizeof(String),
          XtOffsetOf(AppResources, rec_cmd_mpeg2 ), XtRImmediate,
 -        "mpeg_musicin -l 2 -p 1"  },
-+        "/usr/local/bin/mp3encode -l 2 -p 1"  },
++        "%%LOCALBASE%%/bin/mp3encode -l 2 -p 1"  },
      { RNrecCmdMpeg3, RCrecCmd, XtRString, sizeof(String),
          XtOffsetOf(AppResources, rec_cmd_mpeg3 ), XtRImmediate,
 -        "mpeg_musicin -l 3 -p 2"  },
-+        "/usr/local/bin/mp3encode -l 3 -p 2"  },
++        "%%LOCALBASE%%/bin/mp3encode -l 3 -p 2"  },
      { RNplayCmdMpeg2, RCplayCmd, XtRString, sizeof(String),
          XtOffsetOf(AppResources, play_cmd_mpeg2 ), XtRImmediate,
 -        "mpg123"  },
-+        "/usr/local/bin/mpg321"  },
++        "%%LOCALBASE%%/bin/mpg321"  },
      { RNplayCmdMpeg3, RCplayCmd, XtRString, sizeof(String),
          XtOffsetOf(AppResources, play_cmd_mpeg3 ), XtRImmediate,
 -        "mpg123"  },
-+        "/usr/local/bin/mpg321"  },
++        "%%LOCALBASE%%/bin/mpg321"  },
  
      { RNvideoCnvtScript, RCvideoCnvtScript, XtRString, sizeof(String),
          XtOffsetOf(AppResources, video_cnvt_script ), XtRImmediate,
 -        X11BASE "/lib/X11/fxtv/fxtv_cnvt.sh"  },
-+        "/usr/local/share/fxtv/fxtv_cnvt.sh"  },
++        "%%LOCALBASE%%/share/fxtv/fxtv_cnvt.sh"  },
  
      { RNbswap2Bpp, RCswap, XtRBoolean, sizeof(Boolean),
          XtOffsetOf(AppResources, bswap2Bpp), XtRImmediate,
