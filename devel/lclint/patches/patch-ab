@@ -1,6 +1,6 @@
---- src/Makefile.orig	Mon Jun  7 23:26:33 1999
-+++ src/Makefile	Mon Jun  7 23:32:37 1999
-@@ -60,7 +60,7 @@
+--- src/Makefile.orig	Tue May 23 21:59:58 2000
++++ src/Makefile	Fri May 26 02:34:56 2000
+@@ -60,7 +60,7 @@ all : dorelease
  
  quick: lclint
  
@@ -9,7 +9,7 @@
  	@echo '// '
  	@echo '//  Linking:'
  	@echo '// '
-@@ -75,17 +75,18 @@
+@@ -75,17 +75,18 @@ lclint : $(OBJ) 
  ### this is probably NOT compatible with yacc.
  ###
  
@@ -29,8 +29,8 @@
 +cgrammar.c : cgrammar.y
  ifdef BISON
  	$(BISON) $(YFLAGS) cgrammar.y
- 	@echo '//           Expect 113 shift/reduce conflicts and 36 reduce/reduce conflicts.'
-@@ -94,13 +95,14 @@
+ 	@echo '//           Expect 119 shift/reduce conflicts and 114 reduce/reduce conflicts.'
+@@ -94,13 +95,14 @@ ifdef BISON
  	@$(MV) Headers/cgrammar_tokens.h Headers/cgrammar_tokens.bak
  	@$(CAT) bison.head cgrammar.tab.h > Headers/cgrammar_tokens.h
  else
@@ -46,7 +46,7 @@
  	$(BISON) $(YFLAGS) -p yl llgrammar.y
  	@echo '//            Expect 2 shift/reduce conflicts.'
  	@$(CAT) bison.head llgrammar.tab.c > llgrammar.c
-@@ -109,14 +111,16 @@
+@@ -109,14 +111,16 @@ ifdef BISON
  	@$(MV) Headers/llgrammar_gen.h Headers/llgrammar_gen.bak
  	@$(CAT) bison.head llgrammar.tab.h > Headers/llgrammar_gen.h
  else

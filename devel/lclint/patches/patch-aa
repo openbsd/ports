@@ -1,19 +1,19 @@
---- Makefile.in.orig	Sun Apr 19 03:06:51 1998
-+++ Makefile.in	Tue Jun  8 01:19:51 1999
-@@ -40,10 +40,10 @@
+--- Makefile.in.orig	Tue May 23 17:01:30 2000
++++ Makefile.in	Fri May 26 02:34:56 2000
+@@ -41,10 +41,10 @@ SYSTEM_LIBDIR   = "/usr/include"
  ### 
  
  ### directory for lclint libraries
 -LIBDIR     = @installdir@/lib
-+LIBDIR     = @installdir@/share/lclint-2.4b/lib
++LIBDIR     = @installdir@/share/lclint-2.5m/lib
  
  ### directory for lclint standard imports
 -IMPORTSDIR = @installdir@/imports
-+IMPORTSDIR = @installdir@/share/lclint-2.4b/imports
++IMPORTSDIR = @installdir@/share/lclint-2.5m/imports
  
  ### directory for lclint binary
  INSTALLDIR = @installdir@/bin
-@@ -90,9 +90,8 @@
+@@ -91,9 +91,8 @@ SHELL  = /bin/csh
  ###	make install
  ###
  
@@ -25,7 +25,7 @@
  
  ### this works with nfs, change to whatever is needed to make
  ### a file executable on your system
-@@ -114,7 +113,7 @@
+@@ -115,7 +114,7 @@ CC = @CC@ @DEFS@
  ### optimizing compiler --- add optimization flags here
  ### 
  
@@ -34,7 +34,7 @@
  
  ###
  ### link flags --- this links the lex or flex library
-@@ -164,6 +163,7 @@
+@@ -165,6 +164,7 @@ ifeq ($(SHELL), /bin/csh)
  	setenv LINKFLAGS '$(LINKFLAGS)' ; \
  	setenv DEFAULT_LARCHPATH '".:$(LIBDIR)"' ; \
  	setenv DEFAULT_LCLIMPORTDIR '"$(IMPORTSDIR)"' ; \
@@ -42,7 +42,7 @@
  	$(MAKE) -e
  else
  	cd src ; CC='$(CC)'; export CC; CCOPT='$(CCOPT)'; \
-@@ -173,6 +173,7 @@
+@@ -174,6 +174,7 @@ else
  	DEFAULT_LARCHPATH='".:$(LIBDIR)/"' ; export DEFAULT_LARCHPATH ;\
  	LINKFLAGS='$(LINKFLAGS)'; export LINK_FLAGS; \
  	DEFAULT_LCLIMPORTDIR='"$(IMPORTSDIR)"' ; export DEFAULT_LCLIMPORTDIR ;\
@@ -50,7 +50,7 @@
  	$(MAKE) -e 
  endif
  	@echo '// '
-@@ -225,21 +226,21 @@
+@@ -226,21 +227,21 @@ install: 
  
  dobinaries:
  	@echo '//  Installing binaries in '$(INSTALLDIR)
