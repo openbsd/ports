@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/17 18:22:48 kurt Exp $
+# $OpenBSD: Makefile,v 1.10 2005/02/20 11:18:55 sturm Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 
 # Requires existing JDK 1.3 to build
@@ -58,7 +58,6 @@ MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/${JDKHOME}"
 .else
 BUILD_DEPENDS+=		:jdk-linux->=1.3.1_10:devel/jdk/1.3-linux
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/jdk1.3.1-linux"
-NO_SYSTRACE=		Yes
 .endif
 
 WANTLIB=		ICE SM X11 Xext Xp Xt Xtst c dps m ossaudio pthread
@@ -101,6 +100,7 @@ JDKHOME=		jdk-${V}
 JREHOME=		jre-${V}
 
 SUBST_VARS=		JDKHOME JREHOME
+SYSTRACE_SUBST_VARS=	LOCALBASE
 
 # Deal with Sun's internal build structure
 WRKDIST=		${WRKDIR}

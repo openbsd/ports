@@ -1,0 +1,163 @@
+# $OpenBSD: systrace.policy,v 1.1 2005/02/20 11:18:55 sturm Exp $
+Policy: ${LOCALBASE}/jdk1.3.1-linux/bin/i386/green_threads/jar, Emulation: linux
+	linux-brk: permit
+	linux-close: permit
+	linux-exit: permit
+	linux-fcntl64: permit
+	linux-fsread: true then permit
+	linux-fstat64: permit
+	linux-fswrite: filename match "${WRKDIR}" then permit
+	linux-fswrite: filename match "/tmp" then permit
+	linux-getcwd: permit
+	linux-getdents64: permit
+	linux-getegid: permit
+	linux-geteuid: permit
+	linux-getgid: permit
+	linux-getpid: permit
+	linux-getrlimit: permit
+	linux-gettimeofday: permit
+	linux-getuid: permit
+	linux-ioctl: permit
+	linux-llseek: permit
+	linux-lstat64: permit
+	linux-mmap: permit
+	linux-mprotect: permit
+	linux-mremap: permit
+	linux-munmap: permit
+	linux-read: permit
+	linux-rt_sigaction: permit
+	linux-rt_sigprocmask: permit
+	linux-setrlimit: permit
+	linux-socketcall: permit
+	linux-stat64: permit
+	linux-time: permit
+	linux-uname: permit
+	linux-write: permit
+	linux-writev: permit
+
+Policy: ${LOCALBASE}/jdk1.3.1-linux/bin/i386/green_threads/java, Emulation: linux
+	linux-brk: permit
+	linux-close: permit
+	linux-exit: permit
+	linux-fcntl64: permit
+	linux-fsread: true then permit
+	linux-fstat64: permit
+	linux-fswrite: filename match "${WRKDIR}" then permit
+	linux-fswrite: filename match "/tmp" then permit
+	linux-getcwd: permit
+	linux-getdents64: permit
+	linux-getegid: permit
+	linux-geteuid: permit
+	linux-getgid: permit
+	linux-getpid: permit
+	linux-getrlimit: permit
+	linux-gettimeofday: permit
+	linux-getuid: permit
+	linux-ioctl: permit
+	linux-llseek: permit
+	linux-lstat64: permit
+	linux-mmap: permit
+	linux-mprotect: permit
+	linux-munmap: permit
+	linux-read: permit
+	linux-rt_sigaction: permit
+	linux-rt_sigprocmask: permit
+	linux-setrlimit: permit
+	linux-socketcall: permit
+	linux-stat64: permit
+	linux-time: permit
+	linux-uname: permit
+	linux-write: permit
+	linux-writev: permit
+
+Policy: ${LOCALBASE}/jdk1.3.1-linux/bin/i386/green_threads/javac, Emulation: linux
+	linux-brk: permit
+	linux-close: permit
+	linux-exit: permit
+	linux-fcntl64: permit
+	linux-fsread: true then permit
+	linux-fstat64: permit
+	linux-fswrite: filename match "${WRKDIR}" then permit
+	linux-fswrite: filename match "/tmp" then permit
+	linux-getcwd: permit
+	linux-getdents64: permit
+	linux-getegid: permit
+	linux-geteuid: permit
+	linux-getgid: permit
+	linux-getpid: permit
+	linux-getrlimit: permit
+	linux-gettimeofday: permit
+	linux-getuid: permit
+	linux-ioctl: permit
+	linux-llseek: permit
+	linux-lstat64: permit
+	linux-mmap: permit
+	linux-mprotect: permit
+	linux-munmap: permit
+	linux-read: permit
+	linux-rt_sigaction: permit
+	linux-rt_sigprocmask: permit
+	linux-setrlimit: permit
+	linux-socketcall: permit
+	linux-stat64: permit
+	linux-time: permit
+	linux-uname: permit
+	linux-write: permit
+	linux-writev: permit
+
+Policy: ${LOCALBASE}/jdk1.3.1-linux/bin/i386/green_threads/javah, Emulation: linux
+	linux-brk: permit
+	linux-close: permit
+	linux-exit: permit
+	linux-fcntl64: permit
+	linux-fsread: true then permit
+	linux-fstat64: permit
+	linux-fswrite: filename match "${WRKDIR}" then permit
+	linux-fswrite: filename match "/tmp" then permit
+	linux-getcwd: permit
+	linux-getdents64: permit
+	linux-getegid: permit
+	linux-geteuid: permit
+	linux-getgid: permit
+	linux-getpid: permit
+	linux-getrlimit: permit
+	linux-gettimeofday: permit
+	linux-getuid: permit
+	linux-ioctl: permit
+	linux-llseek: permit
+	linux-lstat64: permit
+	linux-mmap: permit
+	linux-mprotect: permit
+	linux-munmap: permit
+	linux-read: permit
+	linux-rt_sigaction: permit
+	linux-rt_sigprocmask: permit
+	linux-setrlimit: permit
+	linux-socketcall: permit
+	linux-stat64: permit
+	linux-time: permit
+	linux-uname: permit
+	linux-write: permit
+	linux-writev: permit
+
+Policy: ${LOCALBASE}/jdk1.3.1-linux/jre/bin/i386/realpath, Emulation: linux
+	linux-brk: permit
+	linux-close: permit
+	linux-exit: permit
+	linux-fsread: true then permit    
+	linux-fstat64: permit
+	linux-fswrite: filename match "${WRKDIR}" then permit
+	linux-fswrite: filename match "/tmp" then permit
+	linux-getegid: permit
+	linux-geteuid: permit
+	linux-getgid: permit
+	linux-getuid: permit
+	linux-lstat64: permit
+	linux-mmap: permit
+	linux-mremap: permit
+	linux-munmap: permit
+	linux-read: permit
+	linux-uname: permit
+	linux-write: permit
+	linux-writev: permit
+
