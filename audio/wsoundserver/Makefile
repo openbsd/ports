@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/02/13 18:29:45 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2001/02/18 21:09:06 brad Exp $
 
 DISTNAME=	WSoundServer-0.4.0
 PKGNAME=	${DISTNAME:L}
@@ -30,6 +30,8 @@ FLAVOR?=
 .if ${FLAVOR:L} == "esd"
 LIB_DEPENDS+= esd::audio/esound
 CONFIGURE_ARGS+= --enable-esd
+.else
+CONFIGURE_ARGS+= --disable-esd
 .endif
 
 post-patch:
@@ -39,7 +41,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/wsoundserver
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/wsoundserver
 	${INSTALL_DATA_DIR} ${PREFIX}/share/WindowMaker/Defaults/WindowMaker
-	sed -e s,@PREFIX@,${TRUEPREFIX},g <${FILESDIR}/WMSound >${WRKBUILD}/WMSound
+	@sed -e s,@PREFIX@,${TRUEPREFIX},g < \
+		${FILESDIR}/WMSound > ${WRKBUILD}/WMSound
 	${INSTALL_DATA} ${WRKBUILD}/WMSound ${PREFIX}/share/WindowMaker/Defaults/WindowMaker/WMSound
 
 .include <bsd.port.mk>
