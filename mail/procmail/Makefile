@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2002/10/27 17:21:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2003/03/30 21:18:38 rohee Exp $
 
 COMMENT=	"filtering local mail delivery agent"
 
@@ -36,7 +36,7 @@ FLAVOR?=
 CFLAGS+=	-DLMTP
 .endif
 
-MAKE_FLAGS=	BASENAME="${PREFIX}" CFLAGS0="${CFLAGS}" LOCKINGTEST="110"
+MAKE_FLAGS=	BASENAME="${PREFIX}" CC="${CC}" CFLAGS0="${CFLAGS}" LOCKINGTEST="110"
 
 NO_REGRESS=	Yes
 
