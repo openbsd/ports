@@ -1,0 +1,48 @@
+--- configure.orig	Thu Feb 10 19:09:57 2000
++++ configure	Wed Mar 22 19:52:56 2000
+@@ -4933,7 +4933,14 @@
+ if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+   
+-		# NetBSD/SPARC needs -fPIC, -fpic will not do.
++		# OpenBSD needs -fPIC, -fpic will not do.
++		case `machine` in
++		sparc)
++		    SHLIB_CFLAGS="-fPIC";;
++                *)
++		    SHLIB_CFLAGS="-fpic";;
++                esac
++		SHLIB_LD="ld -Bshareable -Bforcearchive -x"
+ 		SHLIB_CFLAGS="-fPIC"
+ 		SHLIB_LD="ld -Bshareable -x"
+ 		SHLIB_LD_LIBS=""
+@@ -4961,7 +4968,7 @@
+ else
+   rm -rf conftest*
+   echo "$ac_t""no" 1>&6
+-		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
++		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.3'
+ 		
+ fi
+ rm -f conftest*
+@@ -5652,10 +5659,9 @@
+     TCL_LD_SEARCH_FLAGS="${LD_SEARCH_FLAGS}"
+     eval "TCL_LIB_FILE=libtcl${TCL_SHARED_LIB_SUFFIX}"
+     if test "x$DL_OBJS" = "xtclLoadAout.o"; then
+-	MAKE_LIB="ar cr \${TCL_LIB_FILE} \${OBJS}"
++       MAKE_LIB="ar cr \${TCL_LIB_FILE} \${OBJS}; \${RANLIB} \${TCL_LIB_FILE}"
+     else
+ 	MAKE_LIB="\${SHLIB_LD} -o \${TCL_LIB_FILE} \${OBJS} ${SHLIB_LD_LIBS}"
+-	RANLIB=":"
+     fi
+ else
+     case $system in
+@@ -5739,7 +5745,7 @@
+ # Replace DBGX with TCL_DBGX
+ eval "STUB_LIB_FILE=\"${STUB_LIB_FILE}\""
+ 
+-MAKE_STUB_LIB="ar cr \${STUB_LIB_FILE} \${STUB_LIB_OBJS}"
++MAKE_STUB_LIB="ar cr \${STUB_LIB_FILE} \${STUB_LIB_OBJS}; \${RANLIB} \${STUB_LIB_FILE}"
+ 
+ TCL_STUB_LIB_FILE=${STUB_LIB_FILE}
+ 
