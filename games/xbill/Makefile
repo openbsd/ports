@@ -3,7 +3,7 @@
 # Date created:		December 15, 1997
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/20 03:27:01 don Exp $
+# $OpenBSD: Makefile,v 1.2 1998/06/13 23:26:44 marc Exp $
 #
 
 DISTNAME=	xbill-2.0
@@ -14,7 +14,11 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	don@OpenBSD.ORG
 
+OS_RELEASE!=	uname -r
+OS_HAS_XPM=	2.3
+.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+.endif
 
 USE_IMAKE=	yes
 

@@ -6,7 +6,7 @@
 # ATTENTION: It not work in > 256 colors modes, please fix it
 # if you can.
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/19 05:29:54 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/06/13 23:27:12 marc Exp $
 #
 
 DISTNAME=       xfedor
@@ -14,7 +14,11 @@ PKGNAME=        xfedor-1.0
 CATEGORIES=	x11
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/x11/util/
 
+OS_RELEASE!=	uname -r
+OS_HAS_XPM=	2.3
+.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+.endif
 
 MAINTAINER=     angelos@openbsd.org
 

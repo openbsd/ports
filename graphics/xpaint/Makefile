@@ -3,7 +3,7 @@
 # Date created:         December 2, 1997
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 1998/05/20 09:45:04 form Exp $
+# $OpenBSD: Makefile,v 1.5 1998/06/13 23:26:58 marc Exp $
 #
 
 DISTNAME=       xpaint-2.5.4
@@ -14,8 +14,12 @@ MAINTAINER=	angelos@openbsd.org
 
 LIB_DEPENDS=    jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
 		tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34 \
-		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm   \
 		png\\.1\\.:${PORTSDIR}/graphics/png
+OS_RELEASE!=	uname -r
+OS_HAS_XPM=	2.3
+.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
+LIB_DEPENDS+=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+.endif
 
 WRKSRC=		${WRKDIR}/xpaint
 USE_IMAKE=      yes

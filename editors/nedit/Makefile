@@ -4,7 +4,7 @@
 #
 # Whom:	Oleg Safiullin <form@vs.itam.nsc.ru>
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/06 07:03:18 form Exp $
+# $OpenBSD: Makefile,v 1.2 1998/06/13 23:26:39 marc Exp $
 # FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp
 #
 
@@ -17,8 +17,8 @@ DISTFILES=	nedit_source.tar.gz nedit.app-defaults
 MAINTAINER=	form@vs.itam.nsc.ru
 
 OS_RELEASE!=	uname -r
-OS_NO_XPM=	2.2
-.if ( ${OS_RELEASE} <= ${OS_NO_XPM} )
+OS_HAS_XPM=	2.3
+.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 .endif
 

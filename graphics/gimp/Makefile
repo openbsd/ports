@@ -3,7 +3,7 @@
 # Date created:		1998-Jun-07
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.5 1998/06/10 02:56:16 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1998/06/13 23:26:54 marc Exp $
 #
 
 # What port/package will be created
@@ -30,8 +30,8 @@ LIB_DEPENDS=		gtk\\.1\\.:${PORTSDIR}/x11/gtk+ \
 			png\\.1\\.:${PORTSDIR}/graphics/png \
 			tiff\\.1\\.:${PORTSDIR}/graphics/tiff34
 OS_RELEASE!=		uname -r
-OS_NO_XPM=		2.2
-.if ( ${OS_RELEASE} <= ${OS_NO_XPM} )
+OS_HAS_XPM=		2.3
+.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
 LIB_DEPENDS+=		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 .endif
 

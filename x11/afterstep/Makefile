@@ -3,7 +3,7 @@
 # Date created:		6 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.2 1998/02/13 14:51:26 niklas Exp $
+# $OpenBSD: Makefile,v 1.3 1998/06/13 23:27:04 marc Exp $
 #
 
 DISTNAME=	AfterStep-1.0
@@ -13,7 +13,11 @@ MASTER_SITES=	ftp://afterstep.foo.net/pub/AfterStep/
 
 MAINTAINER=	don@OpenBSD.ORG
 
+OS_RELEASE!=	uname -r
+OS_HAS_XPM=	2.3
+.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+.endif
 
 USE_X11=	yes
 INSTALL_TARGET=	install install.man

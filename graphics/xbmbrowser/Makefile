@@ -3,7 +3,7 @@
 # Date created:		05 May 1998
 # Whom:			Oleg Safiullin <form@vs.itam.nsc.ru>
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/05 14:56:23 form Exp $
+# $OpenBSD: Makefile,v 1.2 1998/06/13 23:26:55 marc Exp $
 # FreeBSD: Makefile,v 1.3 1997/08/26 07:12:20 tg Exp 
 #
 
@@ -16,8 +16,8 @@ MASTER_SITE_SUBDIR=	utilities
 MAINTAINER=	form@vs.itam.nsc.ru
 
 OS_RELEASE!=	uname -r
-OS_NO_XPM=	2.2
-.if ( ${OS_RELEASE} <= ${OS_NO_XPM} )
+OS_HAS_XPM=	2.3
+.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 .endif
 

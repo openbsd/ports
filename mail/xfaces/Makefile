@@ -3,7 +3,7 @@
 # Date created:		December 4, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/05 03:28:40 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/06/13 23:27:01 marc Exp $
 #
 
 DISTNAME=	xfaces-3.3
@@ -16,8 +16,13 @@ DISTFILES=	${DISTNAME}.tar.Z xfaces-sounds.tar.gz
 
 MAINTAINER=	angelos@openbsd.org
 
-LIB_DEPENDS=	compface\\.1\\.:${PORTSDIR}/mail/faces \
-		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	compface\\.1\\.:${PORTSDIR}/mail/faces
+OS_RELEASE!=	uname -r
+OS_HAS_XPM=	2.3
+.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
+LIB_DEPENDS+=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+.endif
+
 
 USE_IMAKE=	YES
 

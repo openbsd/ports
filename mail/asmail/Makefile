@@ -3,7 +3,7 @@
 # Date created:		16 May 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/17 04:11:44 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/06/13 23:27:00 marc Exp $
 #
 
 DISTNAME=	asmail-0.50
@@ -13,7 +13,11 @@ MASTER_SITES=	ftp://afterstep.foo.net/pub/AfterStep/apps/asmail/ \
 
 MAINTAINER=	angelos@openbsd.org
 
+OS_RELEASE!=	uname -r
+OS_HAS_XPM=	2.3
+.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+.endif
 
 USE_IMAKE=	yes
 

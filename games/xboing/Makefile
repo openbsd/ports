@@ -3,7 +3,7 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/20 02:53:11 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/06/13 23:26:45 marc Exp $
 
 DISTNAME=	xboing2.3
 PKGNAME=	xboing-2.3
@@ -14,7 +14,11 @@ EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	angelos@openbsd.org
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+OS_RELEASE!=	uname -r
+OS_HAS_XPM=	2.3
+.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
+LIB_DEPENDS+=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+.endif
 
 USE_IMAKE=	yes
 WRKSRC= ${WRKDIR}/xboing

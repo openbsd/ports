@@ -3,7 +3,7 @@
 # Date created:		December 1, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1998/04/10 20:04:09 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/06/13 23:26:51 marc Exp $
 #
 
 DISTNAME=	xscrabble
@@ -15,7 +15,11 @@ MASTER_SITES=	http://www.belgarath.demon.co.uk/programs/
 
 MAINTAINER=	angelos@openbsd.org
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+OS_RELEASE!=		uname -r
+OS_HAS_XPM=		2.3
+.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
+LIB_DEPENDS=		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+.endif
 
 USE_IMAKE=		yes
 NO_INSTALL_MANPAGES=	yes

@@ -3,7 +3,7 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1998/06/13 06:50:23 mickey Exp $
+# $OpenBSD: Makefile,v 1.3 1998/06/13 23:26:43 marc Exp $
 #
 
 DISTNAME=	freeciv-1.6.3
@@ -13,7 +13,11 @@ EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	angelos@openbsd.org
 
+OS_RELEASE!=	uname -r
+OS_HAS_XPM=	2.3
+.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+.endif
 
 WRKSRC=		${WRKDIR}/freeciv-1.6.3
 USE_IMAKE=      	yes
