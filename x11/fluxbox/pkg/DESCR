@@ -3,4 +3,18 @@ It's based on the Blackbox 0.61.1 code. Fluxbox looks like blackbox and
 handles styles, colors, window placement and similar thing exactly like
 blackbox (100% theme/style compability).
 
+So what's the difference between fluxbox and blackbox then?
+The answer is: LOTS!
+
+Here is a list of features that fluxbox already has, or is in the works...
+	* Configurable window tabs.
+	* Iconbar (for minimized/iconified windows)
+	* Wheel scroll changes workspace
+	* Configurable titlebar (placement of buttons, new buttons etc) | 
+	* KDE support
+	* GNOME support
+	* New native integrated keygrabber (supports emacs like keychains)
+	* Maximize over slit option
+	* Other minor features
+
 WWW: ${HOMEPAGE}

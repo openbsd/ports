@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/25 20:11:42 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/03/02 17:36:24 naddy Exp $
 @pkgcfl blackbox-*
 bin/bsetbg
 bin/bsetroot
@@ -11,6 +11,7 @@ share/fluxbox/menu
 share/fluxbox/nls/C/blackbox.cat
 share/fluxbox/nls/POSIX
 share/fluxbox/nls/US_ASCII
+share/fluxbox/nls/bg_BG
 share/fluxbox/nls/da_DK/blackbox.cat
 share/fluxbox/nls/en
 share/fluxbox/nls/en_US
@@ -20,7 +21,9 @@ share/fluxbox/nls/et_EE/blackbox.cat
 share/fluxbox/nls/fr
 share/fluxbox/nls/fr_FR/blackbox.cat
 share/fluxbox/nls/it_IT/blackbox.cat
+share/fluxbox/nls/ja_JP/blackbox.cat
 share/fluxbox/nls/pt_BR/blackbox.cat
+share/fluxbox/nls/pt_PT/blackbox.cat
 share/fluxbox/nls/ru_RU/blackbox.cat
 share/fluxbox/nls/sv_SE/blackbox.cat
 share/fluxbox/nls/tr_TR/blackbox.cat
@@ -50,7 +53,9 @@ share/fluxbox/titlebar
 @dirrm share/fluxbox/nls/tr_TR
 @dirrm share/fluxbox/nls/sv_SE
 @dirrm share/fluxbox/nls/ru_RU
+@dirrm share/fluxbox/nls/pt_PT
 @dirrm share/fluxbox/nls/pt_BR
+@dirrm share/fluxbox/nls/ja_JP
 @dirrm share/fluxbox/nls/it_IT
 @dirrm share/fluxbox/nls/fr_FR
 @dirrm share/fluxbox/nls/et_EE
