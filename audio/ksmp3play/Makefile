@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/02 04:09:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2001/12/28 22:11:58 pvalchev Exp $
 
 COMMENT=	"curses-based mp3 player"
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	SDL.0.3:sdl-*:devel/sdl \
+LIB_DEPENDS=	SDL::devel/sdl \
 		smpeg.1.3:smpeg-*:devel/smpeg
 
 MASTER_SITES=	http://www.xanadunet.net/ksmp3play/

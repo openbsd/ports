@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/10 15:44:58 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2001/12/28 22:11:58 pvalchev Exp $
 
 COMMENT=	"sends AM radio signals using a monitor"
 
@@ -21,7 +21,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 NO_REGRESS=	Yes
 
-LIB_DEPENDS=	SDL.0.3:sdl-*-!no_x11:devel/sdl
+LIB_DEPENDS=	SDL::devel/sdl
 
 USE_X11=	Yes
 

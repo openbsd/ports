@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/25 08:07:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/12/28 22:11:58 pvalchev Exp $
 
 COMMENT=	"organic fireworks demo"
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-LIB_DEPENDS=	SDL.0.3:sdl-*-!no_x11:devel/sdl
+LIB_DEPENDS=	SDL::devel/sdl
 
 USE_X11=	Yes
 

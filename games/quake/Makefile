@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/08/10 02:53:55 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/12/28 22:11:58 pvalchev Exp $
 
 COMMENT=		"Quake/Quake-world client"
 COMMENT-server=		"Quake world server"
@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=	--with-opengl=no --with-opengl-includes=no
 
 .if ${FLAVOR:L:Msdl}
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == ""
-LIB_DEPENDS=		SDL.0.3:sdl-*-!no_x11:devel/sdl
+LIB_DEPENDS=		SDL::devel/sdl
 .  endif
 CONFIGURE_ARGS+=	--with-sdl=${LOCALBASE} --without-ggi
 MAKE_FLAGS=	HAS_X11=no

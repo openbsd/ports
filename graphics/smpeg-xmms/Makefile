@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/21 02:29:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2001/12/28 22:11:58 pvalchev Exp $
 
 COMMENT=	"MPEG and VCD video playback in XMMS"
 
@@ -21,7 +21,7 @@ MASTER_SITES=	${HOMEPAGE} \
 
 LIB_DEPENDS=	glib.1.2:glib-*:devel/glib \
 		gtk.1.2:gtk+-*:x11/gtk+ \
-		SDL.0.3:sdl-*-!no_x11:devel/sdl \
+		SDL::devel/sdl \
 		smpeg.1.3:smpeg-*:devel/smpeg \
 		xmms.2.0:xmms-*:audio/xmms
 

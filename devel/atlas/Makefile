@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/11/11 13:57:32 heko Exp $
+# $OpenBSD: Makefile,v 1.5 2001/12/28 22:11:58 pvalchev Exp $
 
 COMMENT=	"C++ reference implementation of the Atlas protocol"
 
@@ -22,7 +22,7 @@ PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
 		patch-*
 
-LIB_DEPENDS=	SDL.0.3:sdl-*-!no_x11:devel/sdl \
+LIB_DEPENDS=	SDL::devel/sdl \
 		sigc.0.0:libsigc++-*:devel/libsigc++
 
 USE_X11=	Yes
