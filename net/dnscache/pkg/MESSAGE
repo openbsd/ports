@@ -12,9 +12,9 @@ dnscache:*:2000:
 tinydns:*:2100:
 dnslog:*:2200:
 -> /etc/master.passwd
-dnscache:*:2000:2000:DNSCACHE:/nonexistent:/sbin/nologin
-tinydns:*:2100:2100:DNSCACHE:/nonexistent:/sbin/nologin
-dnslog:*:2200:2000:DNSCACHE:/nonexistent:/sbin/nologin
+dnscache:*:2000:2000::0:0:DNSCACHE:/nonexistent:/sbin/nologin
+tinydns:*:2100:2100::0:0:DNSCACHE:/nonexistent:/sbin/nologin
+dnslog:*:2200:2200::0:0:DNSCACHE:/nonexistent:/sbin/nologin
 
 After running dnscache-conf, do the following in your new dnscache
 directory to get a strong(er) random seed:
