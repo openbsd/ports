@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2001/02/24 11:39:20 reinhard Exp $
+# $OpenBSD: Makefile,v 1.125 2001/02/27 17:42:16 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -14,6 +14,7 @@
      SUBDIR += bind9
      SUBDIR += bing
      SUBDIR += bitchx
+     SUBDIR += bnc
      SUBDIR += cidr
      SUBDIR += clog
      SUBDIR += courtney
