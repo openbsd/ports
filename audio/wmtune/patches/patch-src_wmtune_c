@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
+$OpenBSD: patch-src_wmtune_c,v 1.4 2002/10/01 06:36:31 pvalchev Exp $
 --- src/wmtune.c.orig	Sat Sep 11 11:49:24 1999
-+++ src/wmtune.c	Fri Jan 11 00:51:57 2002
++++ src/wmtune.c	Fri Sep 27 21:22:11 2002
 @@ -18,102 +18,74 @@
   ****************************************************************
   */
@@ -129,7 +129,11 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
 -	char temp[128];
 -
 -	int i;
--
++int VOLUME_STEP;
++static struct radio_info ri;
++char *radiodevice = NULL;
++#endif /* ZOLTRIX */
+ 
 -	XEvent Event;
 -
 -	int but_stat=-1;
@@ -143,11 +147,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
 -	int alarm_state=0;
 -
 -struct { double freq; } *presets;
-+int VOLUME_STEP;
-+static struct radio_info ri;
-+char *radiodevice = NULL;
-+#endif /* ZOLTRIX */
- 
+-
 -// Functions
 -void ParseCMDLine(int argc, char *argv[]);
 +/* Functions */
@@ -165,7 +165,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
  void PresetHandler(int);
  void ScanUp(void);
  void ScanDown(void);
-@@ -137,333 +108,251 @@ void FastFreqUpdate(void);
+@@ -137,333 +108,262 @@ void FastFreqUpdate(void);
  void TuneRadio(void);
  int TestTune(void);
  void TestFreq(void);
@@ -175,6 +175,8 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
 -void tuneFreq(double freq,int fast);
 +void tuneFreq(double, int);
 +void CheckIOPerms(void);
++void goroot(void);
++void gouser(void);
 +inline int cardRead(int);
 +inline void cardWrite(int);
 +#else
@@ -187,14 +189,6 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
 -{
 -	myname = argv[0];
 -	ParseCMDLine(argc,argv);
--
--	strcpy(temp,(char*)getenv("HOME"));
--	strcat(temp,"/.");
--	strcat(temp,RCFILE);
--	if (ParseRCFile(temp) == 1)
--	{
--		strcpy(temp, "/etc/");
--		strcat(temp, RCFILE);
 +int main(int argc,char **argv) {
 +	char temp[TMPBUFLEN];
 +	char *home;
@@ -203,6 +197,18 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
 +	int but_timer = 0;
 +	int alarm_state = 0;
 +	int i = 0;
+ 
+-	strcpy(temp,(char*)getenv("HOME"));
+-	strcat(temp,"/.");
+-	strcat(temp,RCFILE);
+-	if (ParseRCFile(temp) == 1)
+-	{
+-		strcpy(temp, "/etc/");
+-		strcat(temp, RCFILE);
++#ifdef ZOLTRIX
++	/* Drop privileges */
++	gouser();
++#endif /* ZOLTRIX */
 +
 +	ParseCMDLine(argc, argv);
 +
@@ -312,9 +318,13 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
 -					#endif
 -				#endif
 +#ifdef ZOLTRIX
++				goroot();
++
 +				memset(iomap, 0xFFFF, sizeof(iomap));
 +				ioperms.iomap = iomap;
 +				sysarch(I386_SET_IOPERM, (char *)&ioperms);
++
++				gouser();
 +#endif /* NATIVE */
  				exit(0);
 -			break;
@@ -670,7 +680,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
  	GeneralFreqUpdate();
  }
  
-@@ -475,110 +364,65 @@ void GeneralFreqUpdate(void)
+@@ -475,110 +375,65 @@ void GeneralFreqUpdate(void)
  	DrawDigitalFreq();
  }
  
@@ -810,7 +820,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
  		copyXPMArea((*p-'0')*6 + 1, 79, 5, 7, k, 50);
  		k += 6;
  		p++;
-@@ -589,16 +433,15 @@ void DrawDigitalPreset(void)
+@@ -589,16 +444,15 @@ void DrawDigitalPreset(void)
  	
  void DrawDigitalFreq(void)
  {
@@ -836,7 +846,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
  			copyXPMArea(76, 40, 6, 9, k, 7);
  			k += 7;
  			i--;
-@@ -606,8 +449,7 @@ void DrawDigitalFreq(void)
+@@ -606,8 +460,7 @@ void DrawDigitalFreq(void)
  		copyXPMArea((*p-'0')*7 + 1, 66, 7, 9, k, 7);
  		k += 7;
  		p++;
@@ -846,7 +856,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
  			copyXPMArea(71, 66, 3, 9, k, 7);
  			k += 3;
  			p++;
-@@ -619,30 +461,22 @@ void DrawDigitalFreq(void)
+@@ -619,30 +472,22 @@ void DrawDigitalFreq(void)
  
  void ScanUp(void)
  {
@@ -888,7 +898,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
  			RedrawWindowXYWH(44, 16, 13, 4); 			// Test Freq Field Only
  			return;
  		}
-@@ -651,333 +485,155 @@ void ScanUp(void)
+@@ -651,333 +496,155 @@ void ScanUp(void)
  
  void ScanDown(void)
  {
@@ -935,8 +945,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
  }
  
 -void CheckIOPerms(void)
-+void ParseCMDLine(int argc,char **argv)
- {
+-{
 -	#if (defined FreeBSD || defined NetBSD || defined OpenBSD)
 -	if ((fpiopl = open( "/dev/io", O_RDONLY ) < 0) )
 -	{
@@ -957,7 +966,8 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
 -}
 -
 -void ParseCMDLine(int argc,char *argv[])
--{
++void ParseCMDLine(int argc,char **argv)
+ {
 -	char *cmdline;
 -	int i;
 +	int optchar;
@@ -1037,10 +1047,15 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
 -				printf("\n");
 -				exit(0);
 -			}
--		}
--	}
--}
--
++#endif /* !ZOLTRIX */
++		case 'h':
++		default:
++			usage();
++			exit(0);
+ 		}
+ 	}
+ }
+ 
 -#ifdef ZOLTRIX
 -inline void cardWrite(int k)
 -{
@@ -1152,12 +1167,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
 -			OUTW (5,rport);
 -			OUTW (7,rport);
 -			OUTW (7,rport);
-+#endif /* !ZOLTRIX */
-+		case 'h':
-+		default:
-+			usage();
-+			exit(0);
- 		}
+-		}
 -		else 
 -		{
 -			OUTW (1,rport);
@@ -1166,9 +1176,9 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
 -			OUTW (3,rport);
 -	    }
 -	v>>=1;
- 	}
- }
- 
+-	}
+-}
+-
  void ButtonDown(int button)
  {
 -	switch (button)
@@ -1332,7 +1342,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
  		minute++;
  	}
  	DrawDigitalTime(hour,minute);
-@@ -985,113 +641,48 @@ void TimeUp(void)
+@@ -985,113 +652,48 @@ void TimeUp(void)
  
  void TimeDown(void)
  {
@@ -1461,7 +1471,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
  		break;
  	}
  	RedrawWindowXYWH(44, 16, 13, 4);
-@@ -1099,12 +690,10 @@ void TestFreq(void)
+@@ -1099,12 +701,10 @@ void TestFreq(void)
  
  void OnPreset(void)
  {
@@ -1477,7 +1487,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
  			preset_count = count;
  			DrawDigitalPreset();
  			return;
-@@ -1113,28 +702,129 @@ void OnPreset(void)
+@@ -1113,28 +713,129 @@ void OnPreset(void)
  	}
  }
  
@@ -1490,6 +1500,10 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
 +	FILE *fp;
 +	int ln = 1, count = -1;
 +	char *tokens = " \t\n";
++
++	presets = malloc(sizeof(struct presets_t));
++	if (presets == NULL)
++		err(1, "memory allocation error");
  
 -	OUTB(0xf8,rport);
 -	usleep(150000);
@@ -1501,10 +1515,6 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
 -	else if (res != 0xff)
 -	{
 -		return 2;				// POSSIBLY MONO :) 	(2)
-+	presets = malloc(sizeof(struct presets_t));
-+	if (presets == NULL)
-+		err(1, "memory allocation error");
-+
 +	if ((fp = fopen(filename, "r")) == NULL)
 +		return 1;
 +
@@ -1619,12 +1629,12 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
  
 -	OUTB(0x00, rport);         // This stuff I found to do nothing
 -	OUTB(volume, rport);
-+	outb(0x00, rport); /* This stuff I found to do nothing */
-+	outb(volume, rport);
++	outb(rport, 0x00); /* This stuff I found to do nothing */
++	outb(rport, volume);
  	usleep(10000);
  
  	x1 = inb(rport);
-@@ -1143,73 +833,165 @@ int TestTune(void)
+@@ -1143,73 +844,181 @@ int TestTune(void)
  
  	if ((x1 == x2) && (x1 == 0xdf)) 
  	   return 1;
@@ -1699,10 +1709,22 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
 +
 +/* ZOLTRIX & NATIVE STUFF */
 +#ifdef ZOLTRIX
++void
++goroot(void) {
++	if (seteuid(0) < 0)
++		err(1, "failed to restore saved root id");
++}
++
++void
++gouser(void) {
++	if (seteuid(getuid()) < 0)
++		err(1, "failed to get effective user id");
++}
++
 +inline void cardWrite(int k)
 +{
 +	usleep(0);
-+	outb(k,rport);
++	outb(rport, k);
 +}
 +
 +inline int cardRead(int offset)
@@ -1755,12 +1777,16 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
 +	unsigned long mask = 0;
 +	offset = rport / 32;
 +
++	goroot();
++
 +	mask = 0x0F << rport % 32;
 +	memset(iomap, 0xFFFF, sizeof(iomap));
 +	iomap[offset] ^= mask;
 +	ioperms.iomap = iomap;
 +	if (sysarch(I386_SET_IOPERM, (char *)&ioperms) < 0)
 +		err(1, "Unsufficient IO privledges");
++
++	gouser();
 +}
 +#else /* !ZOLTRIX */
 +int
@@ -1770,16 +1796,6 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
 +	rd = open(radiodevice, setinfo == RIOCSINFO ? O_RDWR : O_RDONLY);
 +	if (rd < 0) {
 +		warn("%s open error", radiodevice);
-+		return -1;
-+	}
-+
-+	if (ioctl(rd, setinfo, &ri) < 0) {
-+		warn("%s", setinfo == RIOCSINFO ? "RIOCSINFO" : "RIOCGINFO");
-+		return -1;
-+	}
-+
-+	if (close(rd) < 0) {
-+		warn("%s close error", radiodevice);
 +		return -1;
  	}
 -	while(fgets(temp, 128, fp)) 
@@ -1821,9 +1837,22 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
 -				}
 -				count++;
 -			}
+-		}
+-		ln++;
 +
-+	return 0;
-+}
++	if (ioctl(rd, setinfo, &ri) < 0) {
++		warn("%s", setinfo == RIOCSINFO ? "RIOCSINFO" : "RIOCGINFO");
++		return -1;
+ 	}
+-	fclose(fp);
++
++	if (close(rd) < 0) {
++		warn("%s close error", radiodevice);
++		return -1;
++	}
++
+ 	return 0;
+ }
 +
 +void
 +GetVolumeStep(void) {
@@ -1841,13 +1870,10 @@ $OpenBSD: patch-src_wmtune_c,v 1.3 2002/01/11 01:29:07 naddy Exp $
 +		if (ri.volume) {
 +			VOLUME_STEP = ri.volume;
 +			break;
- 		}
--		ln++;
- 	}
--	fclose(fp);
--	return 0;
++		}
++	}
 +
 +	ri.volume = oldvol;
 +	SetGetRadioInfo(RIOCSINFO);
- }
++}
 +#endif
