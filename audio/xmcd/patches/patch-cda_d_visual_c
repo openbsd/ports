@@ -1,0 +1,28 @@
+$OpenBSD: patch-cda_d_visual_c,v 1.1 2001/08/08 23:31:23 naddy Exp $
+--- cda_d/visual.c.orig	Sat Feb  5 08:26:38 2000
++++ cda_d/visual.c	Wed Aug  8 01:32:14 2001
+@@ -582,6 +582,7 @@ cda_screen(int signo)
+ 	char		*p;
+ 	curstat_t	*s = curstat_addr();
+ 	bool_t		playing;
++	struct stat	stbuf;
+ 	static bool_t	cddb = FALSE;
+ 	static unsigned int odiscnum;
+ 
+@@ -667,6 +668,16 @@ cda_screen(int signo)
+ 					    "cannot open recv pipe for writing"
+ 					);
+ 				}
++			}
++
++			/* Check FIFOs */
++			if (stat(spipe, &stbuf) < 0 ||
++			    !S_ISFIFO(stbuf.st_mode)) {
++				CDA_FATAL("Send pipe error.");
++			}
++			if (stat(rpipe, &stbuf) < 0 ||
++			    !S_ISFIFO(stbuf.st_mode)) {
++				CDA_FATAL("Receive pipe error.");
+ 			}
+ 		}
+ 

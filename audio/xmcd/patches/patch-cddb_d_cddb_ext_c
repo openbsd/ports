@@ -1,0 +1,22 @@
+$OpenBSD: patch-cddb_d_cddb_ext_c,v 1.1 2001/08/08 23:31:23 naddy Exp $
+--- cddb_d/cddb_ext.c.orig	Sat Feb  5 08:26:22 2000
++++ cddb_d/cddb_ext.c	Wed Aug  8 01:32:14 2001
+@@ -156,7 +156,7 @@ cddb_init(cddb_client_t *clp)
+ 
+ 	/* Load XMCD_CDDBPATH environment variable, if specified */
+ 	if ((cp = (char *) getenv("XMCD_CDDBPATH")) != NULL) {
+-		if ((int) strlen(cp) >= MAX_ENV_LEN) {
++		if ((int) strlen(cp) >= MAX_ENV_LEN || (int) strlen(cp) < 0) { /* try to avoid integer overflows, thomas@suse.de */
+ 			CDDB_FATAL(app_data.str_longpatherr);
+ 			return;
+ 		}
+@@ -168,8 +168,7 @@ cddb_init(cddb_client_t *clp)
+ 			CDDB_FATAL(app_data.str_nomemory);
+ 			return;
+ 		}
+-
+-		(void) strcpy(app_data.cddb_path, cp);
++		strncpy(app_data.cddb_path, cp, strlen(cp)-1)[strlen(cp)-1] = 0;
+ 	}
+ 
+ 	if (app_data.cddb_path == NULL || app_data.cddb_path[0] == '\0')

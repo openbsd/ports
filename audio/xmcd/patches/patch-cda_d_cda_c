@@ -1,0 +1,152 @@
+$OpenBSD: patch-cda_d_cda_c,v 1.1 2001/08/08 23:31:23 naddy Exp $
+--- cda_d/cda.c.orig	Sat Feb  5 08:26:38 2000
++++ cda_d/cda.c	Wed Aug  8 01:32:14 2001
+@@ -349,23 +349,52 @@ cda_init(curstat_t *s)
+ STATIC void
+ cda_start(curstat_t *s)
+ {
++	struct stat	stbuf;
++
+ 	/* Start up libutil */
+ 	util_start();
+ 
+ 	/* Start up I/O interface */
+ 	di_start(s);
+ 
++  /*
++  ** NO_FOLLOW isn't supported by all flavours of Unix,
++  ** but at least by linux and openbsd.
++  ** thomas@suse.de
++  */
+ 	/* Open FIFOs - daemon side */
+-	if ((cda_sfd[0] = open(spipe, O_RDONLY)) < 0) {
++	if ((cda_sfd[0] = open(spipe, O_RDONLY | O_NOFOLLOW)) < 0) {
+ 		perror("CD audio daemon: cannot open send pipe");
+ 		cda_quit(s);
+ 		exit(4);
+ 	}
+-	if ((cda_rfd[0] = open(rpipe, O_WRONLY)) < 0) {
++	if ((cda_rfd[0] = open(rpipe, O_WRONLY | O_NOFOLLOW)) < 0) {
+ 		perror("CD audio daemon: cannot open recv pipe");
+ 		cda_quit(s);
+ 		exit(5);
+ 	}
++
++	/* Check FIFOs */
++	if (stat(spipe, &stbuf) < 0 || !S_ISFIFO(stbuf.st_mode)) {
++		(void) fprintf(errfp,
++				"CD audio: Send pipe error (daemon): %s\n",
++				spipe);
++		di_halt(s);
++		/* Remove lock */
++		if (dlock[0] != '\0')
++			(void) UNLINK(dlock);
++		exit(6);
++	}
++	if (stat(rpipe, &stbuf) < 0 || !S_ISFIFO(stbuf.st_mode)) {
++		(void) fprintf(errfp,
++				"CD audio: Receive pipe error (daemon): %s\n",
++				rpipe);
++		di_halt(s);
++		/* Remove lock */
++		if (dlock[0] != '\0')
++			(void) UNLINK(dlock);
++		exit(6);
++	}
+ }
+ 
+ 
+@@ -396,7 +425,7 @@ cda_daemonlock(void)
+ 		fd = open(dlock, O_CREAT | O_EXCL | O_WRONLY);
+ 		if (fd < 0) {
+ 			if (errno == EEXIST) {
+-				if ((fd = open(dlock, O_RDONLY)) < 0)
++				if ((fd = open(dlock, O_RDONLY | O_NOFOLLOW)) < 0)
+ 					return FALSE;
+ 
+ 				if (read(fd, buf, 12) > 0)
+@@ -430,7 +459,7 @@ cda_daemonlock(void)
+ 			(void) write(fd, buf, strlen(buf));
+ 
+ 			(void) close(fd);
+-			(void) chmod(dlock, 0644);
++			(void) chmod(dlock, 0644); /* woudln't 0622 suffice ? */
+ 
+ 			return TRUE;
+ 		}
+@@ -3592,7 +3621,7 @@ cda_daemon_alive(void)
+ 
+ 	(void) sprintf(dlock, "%s/cdad.%x", TEMP_DIR, (int) cd_rdev);
+ 
+-	if ((fd = open(dlock, O_RDONLY)) < 0)
++	if ((fd = open(dlock, O_RDONLY | O_NOFOLLOW)) < 0)
+ 		return FALSE;
+ 
+ 	if (read(fd, buf, 12) < 0) {
+@@ -3644,7 +3673,7 @@ cda_daemon(curstat_t *s)
+ 	/* Make temporary directory, if needed */
+ 	(void) sprintf(emsgp, app_data.str_tmpdirerr, TEMP_DIR);
+ 	if (LSTAT(TEMP_DIR, &stbuf) < 0) {
+-		if (!util_mkdir(TEMP_DIR, 0777)) {
++		if (!util_mkdir(TEMP_DIR, 0700)) {
+ 			(void) fprintf(errfp, "%s\n", emsgp);
+ 			return 1;
+ 		}
+@@ -3817,12 +3846,14 @@ main(int argc, char **argv)
+ 	errfp = stderr;
+ 	s = &status;
+ 
++
+ 	/* Hack: Aside from stdin, stdout, stderr, there shouldn't
+ 	 * be any other files open, so force-close them.  This is
+ 	 * necessary in case xmcd was inheriting any open file
+ 	 * descriptors from a parent process which is for the
+ 	 * CD-ROM device, and violating exclusive-open requirements
+ 	 * on some platforms.
++   * thomas@suse.de: not neccessary anymore on modern systems
+ 	 */
+ 	for (i = 3; i < 10; i++)
+ 		(void) close(i);
+@@ -3941,7 +3972,7 @@ main(int argc, char **argv)
+ 	if (remote > 0)
+ 		app_data.cddb_rmtdsbl = (remote == 1) ? FALSE : TRUE;
+ 	(void) strcpy(cddb_cldata.prog, PROGNAME);
+-	(void) strcpy(cddb_cldata.user, util_loginname());
++	(void) strcpy(cddb_cldata.user, util_loginname()); /* bufferoverflow with orig. code here thomas@suse.de */
+ 	cddb_cldata.isdemo = di_isdemo;
+ 	cddb_cldata.curstat_addr = curstat_addr;
+ 	cddb_cldata.fatal_msg = cda_fatal_msg;
+@@ -3981,24 +4012,30 @@ main(int argc, char **argv)
+ 	cda_parse_devlist(s);
+ 
+ 	/* Open FIFOs - command side */
+-	if ((cda_sfd[1] = open(spipe, O_WRONLY)) < 0) {
++	if ((cda_sfd[1] = open(spipe, O_WRONLY | O_NOFOLLOW)) < 0) {
+ 		perror("CD audio: cannot open send pipe");
+ 		CDA_FATAL(
+ 			"Run \"cda on\" first to initialize CD audio daemon."
+ 		);
+ 	}
+-	if ((cda_rfd[1] = open(rpipe, O_RDONLY)) < 0) {
++	if ((cda_rfd[1] = open(rpipe, O_RDONLY | O_NOFOLLOW)) < 0) {
+ 		perror("CD audio: cannot open recv pipe for reading");
+ 		CDA_FATAL(
+ 			"Run \"cda on\" first to initialize CD audio daemon."
+ 		);
+ 	}
+-	if ((cda_rfd[0] = open(rpipe, O_WRONLY)) < 0) {
++	if ((cda_rfd[0] = open(rpipe, O_WRONLY | O_NOFOLLOW)) < 0) {
+ 		perror("CD audio: cannot open recv pipe for writing");
+ 		CDA_FATAL(
+ 			"Run \"cda on\" first to initialize CD audio daemon."
+ 		);
+ 	}
++
++	/* Check FIFOs */
++	if (stat(spipe, &stbuf) < 0 || !S_ISFIFO(stbuf.st_mode))
++		CDA_FATAL("Send pipe error");
++	if (stat(rpipe, &stbuf) < 0 || !S_ISFIFO(stbuf.st_mode))
++		CDA_FATAL("Receive pipe error");
+ 
+ 	/* Handle some signals */
+ 	(void) signal(SIGINT, onintr);

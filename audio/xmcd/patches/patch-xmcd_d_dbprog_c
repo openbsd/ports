@@ -1,0 +1,64 @@
+$OpenBSD: patch-xmcd_d_dbprog_c,v 1.1 2001/08/08 23:31:23 naddy Exp $
+--- xmcd_d/dbprog.c.orig	Sat Feb  5 08:26:30 2000
++++ xmcd_d/dbprog.c	Wed Aug  8 01:32:14 2001
+@@ -736,29 +736,29 @@ dbprog_dbput(curstat_t *s)
+ 	case 0:
+ 		break;
+ 
+-	case FORK_ERR:
++	case FORK_ERR:  /* XXX: format bug??? thomas@suse.de */
+ 		(void) sprintf(errstr, app_data.str_saverr_fork,
+ 			       CDDB_GET_ARG(ret));
+ 		CD_WARNING(errstr);
+ 		return;
+ 
+-	case SETUID_ERR:
++	case SETUID_ERR:  /* XXX: format bug??? thomas@suse.de */
+ 		(void) sprintf(errstr, app_data.str_saverr_suid,
+ 			       util_get_ouid(), util_get_ogid());
+ 		CD_WARNING(errstr);
+ 		return;
+ 
+-	case OPEN_ERR:
++	case OPEN_ERR:  /* XXX: format bug??? thomas@suse.de */
+ 		(void) sprintf(errstr, app_data.str_saverr_open);
+ 		CD_WARNING(errstr);
+ 		return;
+ 
+-	case CLOSE_ERR:
++	case CLOSE_ERR:  /* XXX: format bug??? thomas@suse.de */
+ 		(void) sprintf(errstr, app_data.str_saverr_close);
+ 		CD_WARNING(errstr);
+ 		return;
+ 
+-	case KILLED_ERR:
++	case KILLED_ERR:  /* XXX: format bug??? thomas@suse.de */
+ 		(void) sprintf(errstr, app_data.str_saverr_killed,
+ 			       CDDB_GET_ARG(ret));
+ 		CD_WARNING(errstr);
+@@ -766,7 +766,7 @@ dbprog_dbput(curstat_t *s)
+ 
+ 	case WRITE_ERR:
+ 	case MEM_ERR:
+-	default:
++	default:  /* XXX: format bug??? thomas@suse.de */
+ 		(void) sprintf(errstr, app_data.str_saverr_write);
+ 		CD_WARNING(errstr);
+ 		return;
+@@ -3801,14 +3801,14 @@ dbprog_linksel_ok(Widget w, XtPointer cl
+ 		CD_WARNING(errstr);
+ 		return;
+ 
+-	case OPEN_ERR:
++	case OPEN_ERR:          /* XXX: format bug??? thomas@suse.de */
+ 		(void) sprintf(errstr, app_data.str_saverr_open);
+ 		CD_WARNING(errstr);
+ 		return;
+ 
+ 	case LINK_ERR:
+ 	case MEM_ERR:
+-	default:
++	default:                 /* XXX: format bug??? thomas@suse.de */
+ 		(void) sprintf(errstr, app_data.str_lnkerr_link);
+ 		CD_WARNING(errstr);
+ 		return;
