@@ -1,0 +1,4 @@
+lib/libwx_x11univ.so
+lib/libwx_x11univ.so.2
+lib/libwx_x11univ.so.2.4
+DYNLIBDIR(%D/lib)

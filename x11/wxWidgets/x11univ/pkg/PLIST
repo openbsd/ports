@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/16 21:01:36 todd Exp $
+%%SHARED%%
+%%!SHARED%%
+bin/wxx11univ-2.4-config
+include/wx/x11/app.h
+include/wx/x11/bitmap.h
+include/wx/x11/brush.h
+include/wx/x11/clipbrd.h
+include/wx/x11/colour.h
+include/wx/x11/cursor.h
+include/wx/x11/dataform.h
+include/wx/x11/dataobj.h
+include/wx/x11/dataobj2.h
+include/wx/x11/dc.h
+include/wx/x11/dcclient.h
+include/wx/x11/dcmemory.h
+include/wx/x11/dcprint.h
+include/wx/x11/dcscreen.h
+include/wx/x11/dnd.h
+include/wx/x11/font.h
+include/wx/x11/gdiobj.h
+include/wx/x11/glcanvas.h
+include/wx/x11/icon.h
+include/wx/x11/joystick.h
+include/wx/x11/minifram.h
+include/wx/x11/palette.h
+include/wx/x11/pen.h
+include/wx/x11/print.h
+include/wx/x11/private.h
+include/wx/x11/region.h
+include/wx/x11/reparent.h
+include/wx/x11/textctrl.h
+include/wx/x11/toplevel.h
+include/wx/x11/window.h
+lib/wx/include/x11univ-2.4/wx/setup.h
+@dirrm lib/wx/include/x11univ-2.4/wx
+@dirrm lib/wx/include/x11univ-2.4
+@dirrm include/wx/x11
