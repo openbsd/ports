@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_YSM_Wrappers_c,v 1.1 2003/10/06 15:59:13 fgsch Exp $
+--- src/YSM_Wrappers.c.orig	2003-10-04 15:44:18.000000000 -0300
++++ src/YSM_Wrappers.c	2003-10-06 05:23:56.000000000 -0300
+@@ -307,7 +307,7 @@ YSM_Exit( int32_t status, int8_t ask )
+ 		0,
+ 		NULL );
+ 
+-#ifndef WIN32
++#if !defined(WIN32) && !defined(__OpenBSD__)
+ 	/* Clear the terminal title */
+ 	printf( "%c]0;%c", '\033', '\007' );
+ #endif

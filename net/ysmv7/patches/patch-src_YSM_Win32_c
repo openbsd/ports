@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_YSM_Win32_c,v 1.1 2003/10/06 15:59:13 fgsch Exp $
+--- src/YSM_Win32.c.orig	2003-10-04 15:44:18.000000000 -0300
++++ src/YSM_Win32.c	2003-10-06 05:23:56.000000000 -0300
+@@ -971,7 +971,7 @@ char	pszNewWindowTitle[1024];
+  
+ 	/* Ensure window title has been updated. */
+ 	Sleep(40); 
+-#else
++#elif !defined(__OpenBSD__)
+ 	printf( "%c]0;%s%c", '\033', pszNewWindowTitle, '\007' );
+ #endif
+ }
