@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/11/22 16:59:29 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2005/02/27 11:30:06 alek Exp $
 
 SHARED_ONLY=	Yes
 
@@ -47,9 +47,8 @@ PKG_ARCH=	*
 .endif
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-python=python${PYTHON_VER}		\
-		--with-python-version=${PYTHON_VER}		\
-		--with-mxdatetime-includes=${DATETIME_PATH}/mxDateTime
+CONFIGURE_ARGS=	--with-mxdatetime-includes=${DATETIME_PATH}/mxDateTime
+CONFIGURE_ENV=	PYTHON=${LOCALBASE}/bin/python${PYTHON_VER}
 
 SUBST_VARS=	PYTHON_VER
 
