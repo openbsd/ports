@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/30 04:46:31 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/11/21 01:11:15 naddy Exp $
 
 COMMENT=	"safe concurrent access to MLDBM databases"
 
-VERSION=	0.25
+VERSION=	0.30
 DISTNAME=	MLDBM-Sync-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
