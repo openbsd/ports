@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/03/24 22:38:50 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2002/06/29 13:39:26 couderc Exp $
 
 COMMENT=	object oriented script language with threads
 VERSION=	1.6.7
@@ -17,7 +17,7 @@ DISTFILES=	${BINARCH} ${MANARCH}:0
 EXTRACT_ONLY=	${BINARCH}
 
 HOMEPAGE=	http://www.ruby-lang.org/
-MAINTAINER=	Ken Westerback <krw@openbsd.org>
+MAINTAINER=	Damien Couderc <couderc@openbsd.org>
 
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_FTP=	Yes
