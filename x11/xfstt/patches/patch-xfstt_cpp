@@ -1,5 +1,6 @@
---- xfstt.cpp.orig	Sat Dec 11 18:23:45 1999
-+++ xfstt.cpp	Thu Jan 18 15:34:06 2001
+$OpenBSD: patch-xfstt_cpp,v 1.3 2002/09/30 14:47:24 naddy Exp $
+--- xfstt.cpp.orig	Sat Dec 11 19:23:45 1999
++++ xfstt.cpp	Mon Sep 30 16:44:57 2002
 @@ -11,8 +11,8 @@
  #define UNSTRAPLIMIT	10500U
  
@@ -11,7 +12,7 @@
  
  #define TTINFO_LEAF     "ttinfo.dir"
  #define TTNAME_LEAF     "ttname.dir"
-@@ -470,10 +470,12 @@
+@@ -470,10 +470,12 @@ static XFSFont* openFont( TTFont* ttFont
  	raster->getFontExtent( &xfs->fe);
  
  	int used = (xfs->fe.bitmaps + xfs->fe.bmplen) - xfs->fe.buffer;

@@ -1,0 +1,79 @@
+$OpenBSD: patch-ttf_h,v 1.1 2002/09/30 14:47:24 naddy Exp $
+--- ttf.h.orig	Thu May  6 07:26:10 1999
++++ ttf.h	Mon Sep 30 16:44:57 2002
+@@ -188,7 +188,7 @@ struct FontInfo
+ class TTFont
+ : public RandomAccessFile
+ {
+-friend Rasterizer;
++friend class Rasterizer;
+ public:	//### perftest needs maxpTable
+ 	NameTable* nameTable;
+ 	HeadTable* headTable;
+@@ -322,8 +322,8 @@ public:
+ class MaxpTable
+ : public RandomAccessFile
+ {
+-friend TTFont;
+-friend Rasterizer;
++friend class TTFont;
++friend class Rasterizer;
+ 
+ 	U16 numGlyphs;
+ 	U16 maxPoints;
+@@ -393,7 +393,7 @@ public:
+ class GlyphTable
+ : /*public*/ RandomAccessFile
+ {
+-friend Rasterizer;
++friend class Rasterizer;
+ 	S16 xmin;
+ 	//S16 xmin, ymin;
+ 	//S16 xmax, ymax;
+@@ -441,8 +441,8 @@ private:
+ class HheaTable
+ : public RandomAccessFile
+ {
+-friend TTFont;
+-friend Rasterizer;
++friend class TTFont;
++friend class Rasterizer;
+ 	int yAscent;
+ 	int yDescent;
+ 	int advWidth;
+@@ -575,7 +575,7 @@ public:
+ class FpgmTable
+ : public RandomAccessFile
+ {
+-friend TTFont;
++friend class TTFont;
+ 	FpgmTable( RandomAccessFile& f, int offset, int length);
+ };
+ 
+@@ -584,7 +584,7 @@ friend TTFont;
+ class PrepTable
+ : public RandomAccessFile
+ {
+-friend TTFont;
++friend class TTFont;
+ 	PrepTable( RandomAccessFile& f, int offset, int length);
+ };
+ 
+@@ -692,7 +692,7 @@ public:
+ 
+ 
+ class GraphicsState {
+-friend Rasterizer;	// only Rasterizer needs this
++friend class Rasterizer;	// only Rasterizer needs this
+ 
+ 	GraphicsState() {}
+ 
+@@ -824,7 +824,7 @@ public:
+ 	void printOutline( void);
+ 
+ private:
+-friend GlyphTable;
++friend class GlyphTable;
+ 	void applyTransformation();
+ 	void scaleGlyph();
+ 	int scaleX( int x, int y) { return (((xx*x+xy*y) + 16) >> 5) << xxexp;}
