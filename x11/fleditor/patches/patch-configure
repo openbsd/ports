@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2001/04/02 15:11:46 wilfried Exp $
+$OpenBSD: patch-configure,v 1.2 2001/04/15 10:32:10 wilfried Exp $
 --- configure.orig	Wed Jan 10 00:11:24 2001
-+++ configure	Mon Apr  2 15:57:59 2001
++++ configure	Sun Apr 15 12:03:26 2001
 @@ -998,7 +998,7 @@ else
  fi
  
@@ -10,3 +10,166 @@ $OpenBSD: patch-configure,v 1.1.1.1 2001/04/02 15:11:46 wilfried Exp $
  
  
  echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
+@@ -1348,33 +1348,12 @@ if test "${enable_shared+set}" = set; th
+   enableval="$enable_shared"
+   
+ if eval "test x$enable_shared = xyes"; then
+-  PICFLAG=1
++  CFLAGS="$CFLAGS -fPIC"
++  CXXFLAGS="$CXXFLAGS -fPIC"
+   ac_fltk_dso="-lfltk"
+   DSOLIBNAME="libfleditor"
+-  case $uname in
+-      SunOS* | UNIX_S*)
+-	  DSOEXT=".so.1"
+-	  DSOCOMMAND="\$(CXX) -Wl,-h,\$@ \$(LDLIBS) -G $DEBUGFLAG -o"
+-	  ;;
+-      HP-UX*)
+-	  DSOEXT=".s1.1"
+-	  DSOCOMMAND="ld -b -z +h \$@ $DEBUGFLAG -o"
+-	  ;;
+-      OSF1*)
+-	  DSOEXT=".so.1"
+-          DSOCOMMAND="\$(CXX) -Wl,-soname,\$@ \$(LDLIBS) -shared $DEBUGFLAG -o"
+-cd 	  ;;
+-      IRIX*)
+-	  DSOEXT=".so.1"
+-          DSOCOMMAND="\$(CXX) -soname \$@ \$(LDLIBS) -shared $DEBUGFLAG -o"
+-	  ;;
+-      *)
+-          echo "Warning: shared libraries may not be supported.  Trying -shared"
+-	  echo "         option with compiler."
+-	  DSOEXT=".so.1"
+-          DSOCOMMAND="\$(CXX) -Wl,-soname,\$@ -shared $DEBUGFLAG -o"
+-	  ;;
+-  esac
++  DSOEXT=".so.1.0"
++  DSOCOMMAND="\$(CXX) -Wl,-soname,\$@ \$(LDLIBS) -fPIC -shared $DEBUGFLAG -o"
+ fi
+ else
+   
+@@ -1407,7 +1386,7 @@ fi
+ 
+ 
+ echo $ac_n "checking for numericsort in -lfltk""... $ac_c" 1>&6
+-echo "configure:1411: checking for numericsort in -lfltk" >&5
++echo "configure:1390: checking for numericsort in -lfltk" >&5
+ ac_lib_var=`echo fltk'_'numericsort | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -1415,7 +1394,7 @@ else
+   ac_save_LIBS="$LIBS"
+ LIBS="-lfltk  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+-#line 1419 "configure"
++#line 1398 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+@@ -1426,7 +1405,7 @@ int main() {
+ numericsort()
+ ; return 0; }
+ EOF
+-if { (eval echo configure:1430: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++if { (eval echo configure:1409: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   rm -rf conftest*
+   eval "ac_cv_lib_$ac_lib_var=yes"
+ else
+@@ -1451,97 +1430,6 @@ EOF
+ 
+ else
+   echo "$ac_t""no" 1>&6
+-fi
+-
+-
+-GLLIB=
+-echo $ac_n "checking for glXMakeCurrent in -lGL""... $ac_c" 1>&6
+-echo "configure:1460: checking for glXMakeCurrent in -lGL" >&5
+-ac_lib_var=`echo GL'_'glXMakeCurrent | sed 'y%./+-%__p_%'`
+-if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  ac_save_LIBS="$LIBS"
+-LIBS="-lGL \
+-    -lX11 -lXext $X_EXTRA_LIBS -lm $LIBS"
+-cat > conftest.$ac_ext <<EOF
+-#line 1469 "configure"
+-#include "confdefs.h"
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char glXMakeCurrent();
+-
+-int main() {
+-glXMakeCurrent()
+-; return 0; }
+-EOF
+-if { (eval echo configure:1480: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=no"
+-fi
+-rm -f conftest*
+-LIBS="$ac_save_LIBS"
+-
+-fi
+-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-  cat >> confdefs.h <<\EOF
+-#define HAVE_GL 1
+-EOF
+- GLLIB=" -lGLU -lGL"
+-else
+-  echo "$ac_t""no" 1>&6
+-\
+-    echo $ac_n "checking for glXMakeCurrent in -lMesaGL""... $ac_c" 1>&6
+-echo "configure:1503: checking for glXMakeCurrent in -lMesaGL" >&5
+-ac_lib_var=`echo MesaGL'_'glXMakeCurrent | sed 'y%./+-%__p_%'`
+-if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  ac_save_LIBS="$LIBS"
+-LIBS="-lMesaGL \
+-	-lX11 -lXext $X_EXTRA_LIBS -lm $LIBS"
+-cat > conftest.$ac_ext <<EOF
+-#line 1512 "configure"
+-#include "confdefs.h"
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char glXMakeCurrent();
+-
+-int main() {
+-glXMakeCurrent()
+-; return 0; }
+-EOF
+-if { (eval echo configure:1523: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=no"
+-fi
+-rm -f conftest*
+-LIBS="$ac_save_LIBS"
+-
+-fi
+-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-  cat >> confdefs.h <<\EOF
+-#define HAVE_GL 1
+-EOF
+- GLLIB=" -lMesaGLU -lMesaGL"
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
+-
+ fi
+ 
+ 

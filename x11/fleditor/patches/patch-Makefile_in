@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/04/02 15:11:46 wilfried Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2001/04/15 10:32:09 wilfried Exp $
 --- Makefile.in.orig	Wed Jan 10 00:11:24 2001
-+++ Makefile.in	Mon Apr  2 17:05:28 2001
++++ Makefile.in	Sun Apr 15 12:04:55 2001
 @@ -29,9 +29,9 @@ FLTKLIBDIR	=	@ac_fltk_libraries@
  # Program options...
  #
@@ -46,17 +46,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/04/02 15:11:46 wilfried Exp $
  
  #
  # Remove object and target files...
-@@ -85,8 +85,7 @@ distclean: clean
- 	$(RM) config.status
- 
- install: libfleditor.a
--	echo "Installing library to $(FLTKLIBDIR)"
--	cp libfleditor.a $(FLTKLIBDIR)	
-+	${BSD_INSTALL_DATA} libfleditor.a $(PREFIX)/lib
- 
- #
- # Make the test programs.
-@@ -124,8 +123,6 @@ EDITOR_OBJS = src/Fl_Editor.o src/Fl_Fan
+@@ -124,12 +124,10 @@ EDITOR_OBJS = src/Fl_Editor.o src/Fl_Fan
          src/editengine.o src/lists.o src/wstring.o
  
  libfleditor.a:	$(EDITOR_OBJS)
@@ -65,3 +55,8 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/04/02 15:11:46 wilfried Exp $
  	$(AR) $(ARFLAGS) libfleditor.a $(EDITOR_OBJS)
  	$(RANLIB) libfleditor.a
  
+-libfleditor.so:	$(EDITOR_OBJS)
++libfleditor.so.1.0:	$(EDITOR_OBJS)
+ 	echo Building library $@...
+ 	$(RM) libfleditor.so
+ 	@DSOCOMMAND@ @DSOLIBNAME@@DSOEXT@ $(EDITOR_OBJS)
