@@ -1,0 +1,32 @@
+$OpenBSD: patch-c4_c,v 1.1 2001/08/11 03:17:12 brad Exp $
+--- c4.c.orig	Fri Aug 10 22:48:14 2001
++++ c4.c	Fri Aug 10 22:48:25 2001
+@@ -11,6 +11,8 @@
+  *     BITNET:                  tcjones@WATER.bitnet
+  *     Canadian domain:         tcjones@dragon.uwaterloo.ca
+  *
++ * Patched by Joel Sutton, 15th April 1997
++ *     Changed gets calls to fgets. Changed inital prompt slightly.
+  */
+ 
+ #include <stdio.h>
+@@ -219,7 +221,7 @@ ask_turn()
+     register char *cp;
+ 
+     printf("Would you like to go first? (yes/no) -> ");
+-    if (!gets(line)){
++    if (!fgets(line,256,stdin)){
+         plot_finish();
+         fprintf(stderr, "Could not read input line.\n");
+         goodbye();
+@@ -620,8 +622,8 @@ ask_help()
+         }
+     }
+ 
+-    printf("Do you need help (n/y)? -> ");
+-    if (!gets(line)){
++    printf("Do you need help (y/n)? -> ");
++    if (!fgets(line,256,stdin)){
+         fprintf(stderr, "Could not read input line\n");
+         goodbye();
+     }
