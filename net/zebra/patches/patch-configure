@@ -1,0 +1,11 @@
+--- configure.orig	Sun Apr  1 22:30:46 2001
++++ configure	Sun Apr  1 22:31:59 2001
+@@ -4242,7 +4242,7 @@
+ 
+ cat >> $CONFIG_STATUS <<EOF
+ 
+-CONFIG_FILES=\${CONFIG_FILES-"Makefile lib/Makefile zebra/Makefile ripd/Makefile ripngd/Makefile bgpd/Makefile ospfd/Makefile ospf6d/Makefile vtysh/Makefile doc/Makefile"}
++CONFIG_FILES=\${CONFIG_FILES-"Makefile lib/Makefile zebra/Makefile ripd/Makefile ripngd/Makefile bgpd/Makefile ospfd/Makefile ospf6d/Makefile vtysh/Makefile doc/Makefile doc/bgpd.8 doc/ospf6d.8 doc/ospfd.8 doc/ripd.8 doc/ripngd.8 doc/zebra.8"}
+ EOF
+ cat >> $CONFIG_STATUS <<\EOF
+ for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
