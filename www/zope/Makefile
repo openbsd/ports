@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/03/26 02:50:23 matt Exp $
+# $OpenBSD: Makefile,v 1.9 2002/04/10 01:39:08 matt Exp $
 
 COMMENT=	"object-oriented web application server"
 
@@ -27,9 +27,9 @@ MASTER_SITES0=	http://www.zope.org/Members/zigg/UnixSecurityPatch/
 PATCHFILES=	Zope-${VERSION}-unix-security.patch:0
 PATCH_DIST_STRIP=-p1
 
-BUILD_DEPENDS=	:python->=2.1.2:lang/python/2.1 \
+BUILD_DEPENDS=	:python->=2.1.2,<2.2:lang/python/2.1 \
 		:gtar-*:archivers/gtar					
-RUN_DEPENDS=	:python->=2.1.2:lang/python/2.1
+RUN_DEPENDS=	:python->=2.1.2,<2.2:lang/python/2.1
 
 # Note that the configure script is really just for pcgi, but it's
 # the only one in the package.
