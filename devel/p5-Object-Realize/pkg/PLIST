@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/07/11 09:25:59 shell Exp $
+${P5SITE}/Object/Realize/Later.pm
+man/man3p/Object::Realize::Later.3p
+@dirrm ${P5SITE}/Object/Realize
