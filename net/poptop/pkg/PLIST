@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/17 08:59:26 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/06/05 07:53:20 sturm Exp $
 man/man5/pptpd.conf.5
 man/man8/pptpctrl.8
 man/man8/pptpd.8
 sbin/pptpctrl
 sbin/pptpd
+share/doc/poptop/README.OpenBSD
 share/examples/poptop/pptpd.conf-sample
 @dirrm share/examples/poptop
+@dirrm share/doc/poptop

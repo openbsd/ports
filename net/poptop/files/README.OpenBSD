@@ -1,0 +1,82 @@
+                     PoPToP - Unix PPTP Server
+                   ----------------------------
+1. Kernel
+   PoPToP requires a kernel compiled without GRE support.  See sections 5.3
+   and 5.4 of the OpenBSD FAQ for instructions on compiling a custom kernel
+   http://www.openbsd.org/faq/faq5.html#Options Essentially:
+1.1 Configuration
+   Grab a copy of the src tree (CD3 - src.tar.gz), you'll probably want to
+   sync this to -STABLE.
+        (See http://www.openbsd.org/faq/faq3.html#GetCurrent)
+   Make a copy of src/sys/conf/GENERIC (We'll call it PPTPSrv) Comment out
+   the following line:
+        pseudo-device   gre     1       # GRE encapsulation interface
+   Make a copy of src/sys/arch/`uname -m`/conf/GENERIC (We'll copy to PPTPSrv)
+   Edit the line:
+        include "../../../conf/GENERIC"
+   to point to the modified configuration file in src/sys/conf/ In our case:
+        include "../../../conf/PPTPSrv"
+1.2 Compilation
+   In the src/sys/arch/`uname -m`/conf directory, execute config with the
+   name of the modified configuration file.  (In our case PPTPSrv), then build
+   a new kernel.
+        /usr/sbin/config PPTPSrv cd ../compile/PPTPSrv make clean && make
+        depend && make
+   We now have a new kernel in src/sys/arch/`uname -m`/compile/ called 'bsd'
+   Backup old kernel
+        mv /bsd /bsd.old
+   Copy new kernel
+        cp src/sys/arch/`uname -m`/compile/PPTPSrv/bsd /bsd
+   Reboot. Note: If your source has changed (e.g. you updated to -STABLE),
+   you will most likely need to rebuild the rest of the source tree after
+   reboot.
+2. Configuration of PPTP
+   A sample configuration file is copied into your configuration directory
+   (normally /etc) as pptpd.conf. Personalise this config file to suit. At
+   least configure 'localip' and 'remoteip'.  Only 'localip' needs to be
+   configured on one of your interfaces.
+3. Configuration of PPP
+   PoPToP only handles a small part of the PPTP connection, most of the work
+   is done by PPP.
+3.1 /etc/ppp/options
+   General desired options:
+        proxyarp
+   For Microsoft clients you will want the following options:
+        +MSChap-V2 mppe-128 mppe-stateless
+   Lower cryptography level (40-bit v 128-bit) is also available, but not
+   recommended.
+        mppe-40
+   Optional for Microsoft clients (not preferred)
+        +MSChap
+3.2 /etc/ppp/ppp.conf
+   In ppp.conf create a section pptp
+        pptp: enable proxy set dns IP.Of.DNS.Server1 IP.Of.DNS.Server2 set
+        ifaddr Local.IP Remote.IP set timeout 0
+   For non-Microsoft clients chose your authentication method (one or more
+   of):
+        enable pap enable chap
+   For Microsoft clients you will also want:
+        enable MSChapV2
+   If you chose "+MSChap" in options above you can enable it with
+        enable MSChap
+   If you have a WINS server:
+        set nbns IP.Of.WINS.Server
+3.3 Users and Passwords
+   You will now need to create username/password entries for your users in
+   /etc/ppp/ppp.secret. See /etc/ppp/ppp.secret.sample for examples. If you
+   assigned a range to 'remoteip' in the above configuration files, you can
+   assign per-user IPs for accounting purposes here (third field).
+4. Firewalls
+   There are three flows you will need to create.  An inbound TCP connection
+   to port 1723 (Initial connection)
+        pass in  quick on $ext_if proto tcp from any to $ext_ip port = 1723 \
+        modulate state
+   An inbound and outbound GRE connection (The main data channel)
+        pass in  quick on $ext_if proto gre from any to $ext_ip keep state
+        pass out quick on $ext_if proto gre from $ext_ip to any keep state
+   Where $ext_ip is the externally accessable IP address ('host' in the PPTP
+   client config).
+   Also, make sure you have flows defined to allow the traffic out of your 
+   server. The traffic will appear to be from the IP address defined in
+   ppp.secret, or if not defined there, Remote.IP as defined in ppp.conf
+   (first available if this a pool).
