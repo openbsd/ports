@@ -1,0 +1,31 @@
+--- Makefile.orig	Mon Jan  4 19:07:31 1999
++++ Makefile	Mon Jan  4 19:08:07 1999
+@@ -12,11 +12,11 @@
+ ##############################################################################
+ 
+ # For NEXTSTEP/OPENSTEP:
+-CFLAGS = -Wall -O2 -traditional-cpp -g
++#CFLAGS = -Wall -O2 -traditional-cpp -g
+ # put your architecture here:
+-ARCH = -arch i386
+-THE_CC = cc
+-RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
++#ARCH = -arch i386
++#THE_CC = cc
++#RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
+ 
+ # For Linux: (use static linking because of libc5/libc6 troubles)
+ #CFLAGS = -Wall -O2 -g
+@@ -24,9 +24,9 @@
+ #RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
+ 
+ # For FreeBSD
+-#CFLAGS = -Wall -O2
+-#THE_CC = cc
+-#RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
++CFLAGS += -Wall
++THE_CC := $(CC)
++RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
+ 
+ # For NetBsd
+ #CFLAGS = -Wall -O2 -DNETBSD

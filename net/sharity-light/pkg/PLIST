@@ -1,0 +1,6 @@
+sbin/shlight
+sbin/unshlight
+man/man8/smbmount.8
+share/doc/Sharity-Light/README
+share/doc/Sharity-Light/FAQ
+@dirrm share/doc/Sharity-Light
