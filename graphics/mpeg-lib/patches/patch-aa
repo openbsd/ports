@@ -31,7 +31,7 @@
  		$(RANLIB) $(LIBRARY)
  
 +$(SHLIBRARY):	$(SHLIBOBJ)
-+		ld -Bshareable -o $(SHLIBRARY) $(SHLIBOBJ)
++		ld -Bshareable -Bforcearchive -o $(SHLIBRARY) $(SHLIBOBJ)
 +
  $(LIBOBJ):	Makefile
  
