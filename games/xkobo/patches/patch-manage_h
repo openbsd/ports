@@ -1,0 +1,12 @@
+$OpenBSD: patch-manage_h,v 1.1 2003/08/22 17:57:20 espie Exp $
+--- manage.h.orig	2003-08-22 19:47:45.000000000 +0200
++++ manage.h	2003-08-22 19:47:50.000000000 +0200
+@@ -62,7 +62,7 @@ class _manage {
+     static void plus_key();
+     static void minus_key();
+     static void add_score(int sc);
+-    static void get_highscore(char *s);
++    static void get_highscore(char *s, size_t);
+     static inline int state_playing(){return (state == playing);}
+ };
+ 

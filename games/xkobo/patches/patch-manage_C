@@ -1,0 +1,63 @@
+$OpenBSD: patch-manage_C,v 1.1 2003/08/22 17:57:20 espie Exp $
+--- manage.C.orig	2003-08-22 19:46:19.000000000 +0200
++++ manage.C	2003-08-22 19:47:34.000000000 +0200
+@@ -127,18 +127,18 @@ void _manage::put_info()
+     int posx = MARGIN * 2 + (WSIZE << scale_log2) + 2;
+     
+     wbase.string(posx, 25, "SCORE");
+-    sprintf(s, "%09d", score);
++    snprintf(s, sizeof s, "%09d", score);
+     wbase.string(posx, 40, s);
+     
+     wbase.string(posx, 55, "STAGE");
+-    sprintf(s, "%09d", scene_num + 1);
++    snprintf(s, sizeof s, "%09d", scene_num + 1);
+     wbase.string(posx, 70, s);
+     
+     wbase.string(posx, 85, "SHIPS");
+     if (!cheat_mode)
+-        sprintf(s, "%09d", ships);
++        snprintf(s, sizeof s, "%09d", ships);
+     else
+-        sprintf(s, "999999999");
++        snprintf(s, sizeof s, "999999999");
+     wbase.string(posx, 100, s);
+ }
+ 
+@@ -147,7 +147,7 @@ void _manage::put_score()
+     static char s[1024];
+     int posx = MARGIN * 2 + (WSIZE << scale_log2) + 2;
+     
+-    sprintf(s, "%09d", score);
++    snprintf(s, sizeof s, "%09d", score);
+     wbase.string(posx, 40, s);
+     score_changed = 0;
+ }
+@@ -165,7 +165,7 @@ void _manage::flush_score()
+     }
+     else {
+         wbase.string(posx, 25, "SCORE");
+-        sprintf(s, "%09d", score);
++        snprintf(s, sizeof s, "%09d", score);
+         wbase.string(posx, 40, s);
+     }
+     if (flush_score_count == 0) flush_score_count = -1;
+@@ -184,7 +184,7 @@ void _manage::flush_ships()
+     }
+     else {
+         wbase.string(posx, 85, "SHIPS");
+-        sprintf(s, "%09d", ships);
++        snprintf(s, sizeof s, "%09d", ships);
+         wbase.string(posx, 100, s);
+     }
+ }
+@@ -343,7 +343,7 @@ void _manage::add_score(int sc)
+     score_changed = 1;
+ }
+ 
+-void _manage::get_highscore(char *s)
++void _manage::get_highscore(char *s, size_t n)
+ {
+-    sprintf(s, "high score : %09d", highscore);
++    snprintf(s, n, "high score : %09d", highscore);
+ }    
