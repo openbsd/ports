@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2000/11/30 15:08:26 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/02/09 12:22:44 avsm Exp $
 
-DISTNAME=	maildrop-1.2.2
+DISTNAME=	maildrop-1.3.0
 CATEGORIES=    	mail
-NEED_VERSION=	1.340
+NEED_VERSION=	1.351
 
 HOMEPAGE=	http://www.flounder.net/~mrsam/maildrop/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
