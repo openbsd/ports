@@ -1,12 +1,28 @@
-# $OpenBSD: Makefile,v 1.3 2002/07/09 19:47:43 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2002/07/12 10:13:56 avsm Exp $
 
 COMMENT=	"server-side HTML-embedded scripting language"
 PKGNAME=	php4-core-${V}
 
 CONFIGURE_ARGS+= --with-apxs=/usr/sbin/apxs \
-		--without-mysql --without-xml --enable-cli \
-		--with-iconv=${LOCALBASE} --with-gettext=${LOCALBASE} \
-		--enable-dio --without-pear
+		--without-mysql \
+		--without-xml \
+		--enable-cli \
+		--with-iconv=${LOCALBASE} \
+		--with-gettext=${LOCALBASE} \
+		--enable-dio \
+		--without-pear \
+		--enable-bcmath \
+		--enable-session \
+		--enable-trans-sid \
+		--enable-calendar \
+		--enable-ctype \
+		--enable-ftp \
+		--with-pcre-regex \
+		--with-posix \
+		--enable-sockets \
+		--enable-sysvsem \
+		--enable-sysvshm \
+		--enable-yp
 
 MODULES=	gettext iconv
 
@@ -25,9 +41,10 @@ do-install:
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/php4-enable
 	@chmod ${BINMODE} ${PREFIX}/sbin/php4-enable
 
-.include <bsd.port.mk>
-
 .if ${MACHINE_ARCH} == "i386"
 LIB_DEPENDS+=	recode.0::converters/recode
 CONFIGURE_ARGS+= --with-recode=${LOCALBASE}
 .endif
+
+.include <bsd.port.mk>
+

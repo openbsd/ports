@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2002/06/24 19:36:07 avsm Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2002/07/12 10:13:56 avsm Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -44,17 +44,6 @@ CONFIGURE_ARGS+=	--enable-shared \
 # default included extensions
 CONFIGURE_ARGS+= \
 			--with-openssl \
-			--with-zlib \
-			--enable-bcmath \
-			--enable-calendar \
-			--enable-ctype \
-			--enable-ftp \
-			--with-pcre-regex \
-			--with-posix \
-			--enable-session --enable-trans-sid \
-			--enable-sockets \
-			--enable-sysvsem \
-			--enable-sysvshm \
-			--enable-yp
+			--with-zlib 
 
 USE_LIBTOOL=	Yes
