@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.53 2002/01/05 11:00:03 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2002/03/24 22:47:39 brad Exp $
+
+ONLY_FOR_ARCHS=	alpha i386 m68k sparc
 
 # This is a configuration file for egcs
 
