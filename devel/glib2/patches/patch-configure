@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.5 2004/08/08 17:12:55 marcm Exp $
---- configure.orig	Fri Jul 30 12:04:47 2004
-+++ configure	Sat Aug  7 15:21:17 2004
+$OpenBSD: patch-configure,v 1.6 2004/10/26 03:49:03 marcm Exp $
+--- configure.orig	Fri Oct  8 10:59:07 2004
++++ configure	Mon Oct 11 17:49:34 2004
 @@ -465,7 +465,7 @@ ac_includes_default="\
  # include <unistd.h>
  #endif"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.5 2004/08/08 17:12:55 marcm Exp $
  ac_subst_files=''
  
  # Initialize some variables set by options.
-@@ -30442,6 +30442,7 @@ else
+@@ -30430,6 +30430,7 @@ else
  fi
  G_MODULE_NEED_USCORE=0
  G_MODULE_BROKEN_RTLD_GLOBAL=0
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.5 2004/08/08 17:12:55 marcm Exp $
  G_MODULE_HAVE_DLERROR=0
  if test -z "$G_MODULE_IMPL"; then
    case "$host" in
-@@ -31095,6 +31096,72 @@ echo "${ECHO_T}$glib_cv_rtldglobal_broke
+@@ -31083,6 +31084,72 @@ echo "${ECHO_T}$glib_cv_rtldglobal_broke
  	else
    		G_MODULE_BROKEN_RTLD_GLOBAL=0
  	fi
@@ -91,7 +91,7 @@ $OpenBSD: patch-configure,v 1.5 2004/08/08 17:12:55 marcm Exp $
  	echo "$as_me:$LINENO: checking for preceeding underscore in symbols" >&5
  echo $ECHO_N "checking for preceeding underscore in symbols... $ECHO_C" >&6
  if test "${glib_cv_uscore+set}" = set; then
-@@ -38418,6 +38485,7 @@ s,@G_MODULE_PLUGIN_LIBS@,$G_MODULE_PLUGI
+@@ -38406,6 +38473,7 @@ s,@G_MODULE_PLUGIN_LIBS@,$G_MODULE_PLUGI
  s,@G_MODULE_LDFLAGS@,$G_MODULE_LDFLAGS,;t t
  s,@G_MODULE_HAVE_DLERROR@,$G_MODULE_HAVE_DLERROR,;t t
  s,@G_MODULE_BROKEN_RTLD_GLOBAL@,$G_MODULE_BROKEN_RTLD_GLOBAL,;t t

@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.5 2004/06/22 03:15:03 marcm Exp $
---- ltmain.sh.orig	2004-04-08 06:34:47.000000000 -0700
-+++ ltmain.sh	2004-05-02 10:54:10.000000000 -0700
-@@ -1847,9 +1847,12 @@ EOF
+$OpenBSD: patch-ltmain_sh,v 1.6 2004/10/26 03:49:03 marcm Exp $
+--- ltmain.sh.orig	Sun Apr 11 19:01:57 2004
++++ ltmain.sh	Mon Oct 11 17:50:10 2004
+@@ -1857,9 +1857,12 @@ EOF
  	  if test "$linkmode,$pass" = "prog,link"; then
  	    compile_deplibs="$deplib $compile_deplibs"
  	    finalize_deplibs="$deplib $finalize_deplibs"
@@ -16,7 +16,7 @@ $OpenBSD: patch-ltmain_sh,v 1.5 2004/06/22 03:15:03 marcm Exp $
  	  continue
  	  ;;
  	-l*)
-@@ -2262,10 +2265,6 @@ EOF
+@@ -2274,10 +2277,6 @@ EOF
  	link_static=no # Whether the deplib will be linked statically
  	if test -n "$library_names" &&
  	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
@@ -25,11 +25,11 @@ $OpenBSD: patch-ltmain_sh,v 1.5 2004/06/22 03:15:03 marcm Exp $
 -	    need_relink=yes
 -	  fi
  	  # This is a shared library
- 	
-       # Warn about portability, can't link against -module's on some systems (darwin)
-@@ -5804,40 +5803,6 @@ relink_command=\"$relink_command\""
+ 
+ 	  # Warn about portability, can't link against -module's on
+@@ -5827,40 +5826,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
-     test "$show" = : && exit 0
+     test "$show" = : && exit $EXIT_SUCCESS
  
 -    $echo "----------------------------------------------------------------------"
 -    $echo "Libraries have been installed in:"
@@ -65,6 +65,6 @@ $OpenBSD: patch-ltmain_sh,v 1.5 2004/06/22 03:15:03 marcm Exp $
 -    $echo "See any operating system documentation about shared libraries for"
 -    $echo "more information, such as the ld(1) and ld.so(8) manual pages."
 -    $echo "----------------------------------------------------------------------"
-     exit 0
+     exit $EXIT_SUCCESS
      ;;
  
