@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/05/17 20:03:20 sturm Exp $
---- configure.orig	Sun May 18 02:54:34 2003
-+++ configure	Sun May 18 02:53:25 2003
-@@ -671,7 +671,7 @@ netbsd*)
+$OpenBSD: patch-configure,v 1.2 2004/11/26 16:40:10 naddy Exp $
+--- configure.orig	Tue Nov 23 21:07:42 2004
++++ configure	Tue Nov 23 21:07:51 2004
+@@ -673,7 +673,7 @@ netbsd*)
  	;;
  esac
  
