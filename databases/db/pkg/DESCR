@@ -1,7 +1,20 @@
-In November of 1999, Sleepycat Software released Version 3.0 of
-Berkeley DB.  The 3.X code line includes major new features, some
-of which require a database format upgrade. Release 3 also modified
-the Berkeley DB API.  Applications developed using version 2 of
-Berkeley DB will need to be upgraded in order to use release 3.X.
+Berkeley DB is a programmatic toolkit that provides fast, reliable,
+scalable, and mission-critical database support to software developers.
+
+Berkeley DB provides data management services for some of the most
+demanding high-end server applications in the world. Vendors of
+industry-leading messaging, directory, billing and provisioning servers as
+well as the biggest portal, ASP and commerce sites on the Internet rely on
+Berkeley DB. Berkeley DB's high performance and scalability support
+thousands of simultaneous users working on databases as large as 256
+terabytes.
+
+At the same time, Berkeley DB's small footprint, in-process execution
+model, simple function-call API and low administrative overhead make it
+ideal for use in embedded systems. Vendors of telecommunications switches,
+routers and wired and wireless network gateways choose Berkeley DB to
+manage critical information in their products. Berkeley DB runs reliably
+24 hours a day, 7 days a week in unattended systems, with no database or
+system administrator to oversee it.
 
 WWW: ${HOMEPAGE}
