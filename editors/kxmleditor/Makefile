@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2003/06/20 14:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2004/04/11 07:48:25 kevlo Exp $
 
 COMMENT=	"XML editor for KDE"
 
-DISTNAME=	kxmleditor-0.7.2
+DISTNAME=	kxmleditor-1.0.0
 CATEGORIES=	editors x11 x11/kde
 
 HOMEPAGE=	http://kxmleditor.sourceforge.net/
@@ -17,10 +17,8 @@ PERMIT_DISTFILES_FTP=  Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kxmleditor/}
 
-LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kparts::x11/kde/libs3
+LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kparts,kdeprint::x11/kde/libs3
 
-AUTOCONF_VERSION= 2.52
-MODKDE_VERSION=	3.1
 MODULES=	kde
 
 PORTHOME=	${WRKDIR}
@@ -30,10 +28,9 @@ MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_ARGS+= ${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
-MAKE_ENV+=		UIC_PATH="${MODQT_UIC}" UIC="${MODQT_UIC}"
 
 .include <bsd.port.mk>
