@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/12/04 23:07:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2004/05/24 09:34:04 sturm Exp $
 
 COMMENT=	"class 1 and 2 DAV server for the Apache webserver"
 
@@ -27,6 +27,8 @@ LIB_DEPENDS=		expat.2::textproc/expat
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-expat=${LOCALBASE}
+
+SUBST_VARS=	PKGNAME
 
 DOCDIR=		share/doc/mod_dav
 DOCFILES=	README INSTALL LICENSE.html
