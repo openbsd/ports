@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2003/04/07 12:46:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2004/04/14 20:30:21 naddy Exp $
 
 COMMENT=	"serial and network communications package"
 
-PKGNAME=	kermit-8.0.209
-DISTNAME=	cku209
+PKGNAME=	kermit-8.0.211
+DISTNAME=	cku211
 CATEGORIES=	comms
 HOMEPAGE=	http://www.kermit-project.org/
-
-MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"discriminatory license"
 PERMIT_PACKAGE_FTP=	Yes
