@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2001/11/16 21:35:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2001/11/17 02:36:40 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
@@ -29,7 +29,9 @@ CONFIGURE_ARGS= -nonstop -prefix="${PREFIX}" -cflags="${CFLAGS}" \
 CONFIGURE_ENV=	use_nntp=y use_ssl_verify=y \
 		dmail=mail ded=vi dbrowser=lynx dcc="${CC}" \
 		dtermlib="${TERMLIB}" def_helpdir="${PREFIX}/share/w3m" \
-		def_libdir="${PREFIX}/libexec/w3m"
+		def_libdir="${PREFIX}/libexec/w3m" \
+		MIME_TYPES="/var/www/conf/mime.types"
+NO_REGRESS=	Yes
 
 DOCS=	FAQ.html HISTORY MANUAL.html \
 	README README.dict README.func STORY.html \
@@ -56,9 +58,7 @@ pre-build:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/w3m
-	${INSTALL_MAN} ${WRKSRC}/doc/w3m.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${DOCSRC}/w3m.1 ${PREFIX}/man/man1
 	cd ${DOCSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/w3m
-
-NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
