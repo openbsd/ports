@@ -13,7 +13,7 @@ manipulation procedures and other functionality to be easily added
 without requiring any change to the application core.  A plug-in can
 provide functionality as simple as rotating an image, or as
 complicated as rendering iterated function system fractals.  There are
-nearly 140 plug-ins available in version 1.1, and more are sure to
+over 140+ plug-ins available in version 1.1, and more are sure to
 follow.
 
 The plug-in architecture also allows the GIMP to support a wide
@@ -25,7 +25,7 @@ XPM, SGI, PCX, and Windows BMP.
 
 The GIMP's home page is at 
 
-	http://www.gimp.org
+	http://www.gimp.org/
 
 Please be sure to visit this site for information, documentation,
-tutorials, news, etc.  All things GIMP-ish are available from there.
+tutorials, news, etc.  All things GIMP related are available from there.

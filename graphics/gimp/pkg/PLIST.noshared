@@ -86,6 +86,7 @@ lib/gimp/1.1/plug-ins/gap_plugins
 lib/gimp/1.1/plug-ins/gauss_iir
 lib/gimp/1.1/plug-ins/gauss_rle
 lib/gimp/1.1/plug-ins/gbr
+lib/gimp/1.1/plug-ins/gdyntext
 lib/gimp/1.1/plug-ins/gee
 lib/gimp/1.1/plug-ins/gfig
 lib/gimp/1.1/plug-ins/gfli
@@ -135,6 +136,7 @@ lib/gimp/1.1/plug-ins/print
 lib/gimp/1.1/plug-ins/ps
 lib/gimp/1.1/plug-ins/psd
 lib/gimp/1.1/plug-ins/randomize
+lib/gimp/1.1/plug-ins/rcm
 lib/gimp/1.1/plug-ins/ripple
 lib/gimp/1.1/plug-ins/rotate
 lib/gimp/1.1/plug-ins/rotators
@@ -147,7 +149,6 @@ lib/gimp/1.1/plug-ins/shift
 lib/gimp/1.1/plug-ins/sinus
 lib/gimp/1.1/plug-ins/smooth_palette
 lib/gimp/1.1/plug-ins/snoise
-lib/gimp/1.1/plug-ins/snp
 lib/gimp/1.1/plug-ins/sobel
 lib/gimp/1.1/plug-ins/sparkle
 lib/gimp/1.1/plug-ins/spread
@@ -551,7 +552,6 @@ share/gimp/fractalexplorer/The_Green_Place
 share/gimp/fractalexplorer/Wave
 share/gimp/fractalexplorer/Wood
 share/gimp/fractalexplorer/Zooming_Circle
-share/gimp/gimprc.5
 share/gimp/gimp_logo.ppm
 share/gimp/gimp_splash.ppm
 share/gimp/gimp1_1_splash.ppm

@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.18 1999/04/11 02:55:55 brad Exp $
+# $OpenBSD: Makefile,v 1.19 1999/05/05 20:51:09 brad Exp $
 
-DISTNAME=	gimp-1.1.4
+DISTNAME=	gimp-1.1.5
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v1.1.4/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/gimp/unstable/v1.1.4/ \
-		http://www.ameth.org/gimp/pub/gimp/unstable/v1.1.4/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v1.1.5/ \
+		ftp://ftp.cs.umn.edu/pub/gimp/gimp/unstable/v1.1.5/ \
+		http://www.ameth.org/gimp/pub/gimp/unstable/v1.1.5/
 
 MAINTAINER=	brad@openbsd.org
 
 RUN_DEPENDS=	gettext:${PORTSDIR}/devel/gettext \
 		wget:${PORTSDIR}/net/wget
-LIB_DEPENDS=	aa:${PORTSDIR}/graphics/aalib \
+LIB_DEPENDS=	aa.1.3:${PORTSDIR}/graphics/aalib \
 		intl:${PORTSDIR}/devel/gettext \
 		glib.1.2:${PORTSDIR}/devel/glib \
 		gtk.1.2:${PORTSDIR}/x11/gtk+ \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		mpeg:${PORTSDIR}/graphics/mpeg-lib \
-		png:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff34
+		jpeg.62:${PORTSDIR}/graphics/jpeg \
+		mpeg.1.2:${PORTSDIR}/graphics/mpeg-lib \
+		png.1.3:${PORTSDIR}/graphics/png \
+		tiff.3.4:${PORTSDIR}/graphics/tiff34
 
 USE_X11=	yes
 USE_GMAKE=	yes

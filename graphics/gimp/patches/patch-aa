@@ -1,6 +1,15 @@
---- libgimp/Makefile.in.orig	Tue Mar 30 17:29:07 1999
-+++ libgimp/Makefile.in	Tue Mar 30 17:30:03 1999
-@@ -189,11 +189,11 @@
+--- libgimp/Makefile.in.orig	Mon May  3 18:44:58 1999
++++ libgimp/Makefile.in	Wed May  5 12:18:02 1999
+@@ -162,7 +162,7 @@
+ 
+ gimpincludedir = $(includedir)/libgimp
+ 
+-CPPFLAGS =  	-DGIMPDIR=\""$(gimpdir)"\"		-DDATADIR=\""$(gimpdatadir)"\"		@GIMP_THREAD_FLAGS@
++CPPFLAGS =  	-DGIMPDIR=\""$(gimpdir)"\"		-DDATADIR=\""$(gimpdatadir)"\"		@GIMP_THREAD_FLAGS@		@CPPFLAGS@
+ 
+ 
+ INCLUDES =  	-I$(top_srcdir)			-I$(top_srcdir)/intl		-I../intl			$(GTK_CFLAGS)			-I$(includedir)
+@@ -188,11 +188,11 @@
  gimpinclude_HEADERS =  	color_selector.h		gimp.h				gimpchainbutton.h		gimpenums.h			gimpenv.h			gimpfeatures.h			gimpfileselection.h		gimpmatrix.h			gimpmenu.h			gimpmodule.h			gimppatheditor.h		gimpsizeentry.h			gimpui.h			gimpunit.h              	gimpunitmenu.h          	gimpintl.h			gserialize.h			parasite.h			parasiteF.h			parasiteP.h
  
  

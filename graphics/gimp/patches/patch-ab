@@ -1,6 +1,6 @@
---- plug-ins/libgck/gck/Makefile.in.orig	Tue Mar 30 17:31:20 1999
-+++ plug-ins/libgck/gck/Makefile.in	Tue Mar 30 17:31:47 1999
-@@ -172,7 +172,7 @@
+--- plug-ins/libgck/gck/Makefile.in.orig	Wed May  5 11:53:22 1999
++++ plug-ins/libgck/gck/Makefile.in	Wed May  5 11:53:40 1999
+@@ -171,7 +171,7 @@
  gckinclude_HEADERS =  	gck.h			gckcolor.h		gckcommon.h		gckimage.h		gcklistbox.h		gckmath.h		gcktypes.h		gckui.h			gckvector.h
  
  
