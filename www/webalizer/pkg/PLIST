@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/05/26 01:34:27 espie Exp $
+bin/webalizer
+bin/webazolver
+man/man1/webalizer.1
+share/doc/webalizer/README
+share/doc/webalizer/README.FIRST
+share/doc/webalizer/sample.conf
+@dirrm share/doc/webalizer

@@ -1,0 +1,21 @@
+--- Makefile.in.orig	Sat Mar 25 00:13:16 2000
++++ Makefile.in	Fri May 26 03:27:30 2000
+@@ -23,7 +23,7 @@ BINDIR = @bindir@
+ MANDIR = @mandir@/man1
+ CC     = @CC@
+ CFLAGS = @CFLAGS@
+-LIBS   = @LIBS@
++LIBS   = @LIBS@ -ljpeg
+ DEFS   = @DEFS@@OPTS@
+ LDFLAGS= @LDFLAGS@
+ INSTALL= @INSTALL@
+@@ -85,9 +85,6 @@ distclean: clean
+ install: all
+ 	$(INSTALL_PROGRAM) webalizer ${BINDIR}/webalizer
+ 	$(INSTALL_DATA) webalizer.1 ${MANDIR}/webalizer.1
+-	$(INSTALL_DATA) sample.conf /etc/webalizer.conf.sample
+-	rm -f ${BINDIR}/webazolver
+-	@LN_S@ ${BINDIR}/webalizer ${BINDIR}/webazolver
+ 
+ uninstall:
+ 	rm -f ${BINDIR}/webalizer
