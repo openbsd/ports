@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/28 05:34:00 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/01/21 09:38:22 pvalchev Exp $
 bin/afternoonstalker
 man/man6/afternoonstalker.6
 share/afternoonstalker/level1.set
-share/pixmaps/afternoonstalker.png
 share/sounds/afternoonstalker/bat-killed.wav
 share/sounds/afternoonstalker/gun-pickup.wav
 share/sounds/afternoonstalker/new-life.wav
