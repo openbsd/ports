@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2000/12/26 23:32:25 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2001/01/13 16:13:08 naddy Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -51,6 +51,7 @@
      SUBDIR += starlanes
 #    SUBDIR += tksol
 #    SUBDIR += tvp
+     SUBDIR += wmeyes
      SUBDIR += xasteroids
      SUBDIR += xbat
      SUBDIR += xbattle
