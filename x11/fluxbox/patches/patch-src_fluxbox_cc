@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_fluxbox_cc,v 1.3 2003/06/12 14:46:02 brad Exp $
+Rathnor found another one.
+--- src/fluxbox.cc.orig	Tue Jun 10 13:23:03 2003
++++ src/fluxbox.cc	Wed Jun 11 06:55:49 2003
+@@ -1736,7 +1736,7 @@ void Fluxbox::restart(const char *prog) 
+     shutdown();
+ 
+     if (prog) {
+-        execlp(prog, prog, 0);
++        execlp(prog, prog, (void *) NULL);
+         perror(prog);
+     }
+ 
