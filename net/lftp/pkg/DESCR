@@ -1,4 +1,4 @@
-LFTP is a shell-like command line ftp client. 
+LFTP is a shell-like command line ftp and sftp client. 
 It is reliable: can retry operations and does reget automatically.
 It can do several transfers simultaneously in background.
 You can start a transfer in background and continue browsing
