@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/02/04 07:39:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2004/06/14 18:02:27 pvalchev Exp $
 
 COMMENT=		"C++ interface for gtk+"
 COMMENT-docs=		"C++ interface for gtk+ documentation"
@@ -36,6 +36,7 @@ SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
 NO_REGRESS=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
