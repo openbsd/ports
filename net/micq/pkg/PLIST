@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/10/15 04:26:27 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/10/16 22:08:26 pvalchev Exp $
 bin/micq
 man/de/man1/micq.1
 man/de/man5/micqrc.5
@@ -11,6 +11,8 @@ man/fr/man7/micq.7
 man/man1/micq.1
 man/man5/micqrc.5
 man/man7/micq.7
+man/pt_BR/man1/micq.1
+man/pt_BR/man5/micqrc.5
 man/ru/man1/micq.1
 man/ru/man5/micqrc.5
 man/ru/man7/micq.7
@@ -42,6 +44,9 @@ share/micq/zh_CN.i18n
 @dirrm man/ru/man5
 @dirrm man/ru/man1
 @dirrm man/ru
+@dirrm man/pt_BR/man5
+@dirrm man/pt_BR/man1
+@dirrm man/pt_BR
 @dirrm man/fr/man7
 @dirrm man/fr/man5
 @dirrm man/fr/man1
