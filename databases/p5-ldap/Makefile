@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/07/30 10:27:45 shell Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/30 04:46:31 pvalchev Exp $
 
 COMMENT=	"client interface to LDAP servers"
 
@@ -16,7 +16,6 @@ MAINTAINER=	Shell Hung <shell@openbsd.org>
 BUILD_DEPENDS=	:p5-Convert-ASN1->0.07:converters/p5-Convert-ASN1 \
 		:p5-URI->=1.08:www/p5-URI \
 		:p5-IO-Socket-SSL-*:security/p5-IO-Socket-SSL \
-		:p5-Digest-MD5-*:security/p5-Digest-MD5 \
 		:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

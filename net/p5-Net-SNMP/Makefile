@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2002/06/09 05:31:54 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/30 04:46:31 pvalchev Exp $
 
 DISTNAME=	Net-SNMP-4.0.1
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net devel
-NEED_VERSION=	1.522
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
@@ -18,7 +17,6 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/}
 
 BUILD_DEPENDS=	:p5-Crypt-DES->=2.03:security/p5-Crypt-DES \
 		:p5-Digest-HMAC->=1:security/p5-Digest-HMAC \
-		:p5-Digest-MD5->=2.11:security/p5-Digest-MD5 \
 		:p5-Digest-SHA1->=1.02:security/p5-Digest-SHA1
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
