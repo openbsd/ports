@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.397 2001/04/16 21:40:04 naddy Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.398 2001/04/17 16:45:14 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -333,6 +333,16 @@ LIB_DEPENDS+=		Xm.::x11/lesstif
 SUBPACKAGE?=
 FLAVOR?=
 
+.if !empty(SUBPACKAGE)
+.  for _i in ${SUBPACKAGE}
+.    if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES:M${_i})
+.BEGIN:
+	@echo >&2 "Subpackage ${SUBPACKAGE} does not exist"
+	@exit 1
+.    endif
+.  endfor
+.endif
+
 _EXTRACT_COOKIE=	${WRKDIR}/.extract_done
 _PATCH_COOKIE=		${WRKDIR}/.patch_done
 _DISTPATCH_COOKIE=	${WRKDIR}/.distpatch_done
@@ -520,7 +530,7 @@ PKGDEPTH=${PKGPATH:C|[^./][^/]*|..|g}
 .if empty(SUBPACKAGE)
 FULLPKGPATH=${PKGPATH}${FLAVOR_EXT:S/-/,/g}
 .else
-FULLPKGPATH=${PKGPATH},-${SUBPACKAGE}${FLAVOR_EXT:S/-/,/g}
+FULLPKGPATH=${PKGPATH},${SUBPACKAGE}${FLAVOR_EXT:S/-/,/g}
 .endif
 
 # A few aliases for *-install targets
@@ -612,7 +622,7 @@ DESCR?=		${PKGDIR}/DESCR${SUBPACKAGE}
 
 # And create the actual files from sources
 ${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST}
-	@echo "@comment name=${PKGPATH}/${FULLPKGNAME} cdrom=${PERMIT_PACKAGE_CDROM:L} ftp=${PERMIT_PACKAGE_FTP:L}" >$@.tmp
+	@echo "@comment subdir=${FULLPKGPATH} cdrom=${PERMIT_PACKAGE_CDROM:L} ftp=${PERMIT_PACKAGE_FTP:L}" >$@.tmp
 .if ${NEW_DEPENDS:L} == "yes"
 	@self=${FULLPKGNAME} exec ${MAKE} new-depends|sort -u >>$@.tmp
 .endif
