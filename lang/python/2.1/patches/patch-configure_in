@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.2 2002/05/11 21:35:13 matt Exp $
+$OpenBSD: patch-configure_in,v 1.3 2002/05/12 19:32:41 matt Exp $
 
         This has been submitted to the Python team as part of patch
         554718.
@@ -13,14 +13,14 @@ $OpenBSD: patch-configure_in,v 1.2 2002/05/11 21:35:13 matt Exp $
 +	OpenBSD*)
 +		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
 +		then
-+			LDSHARED='$(CC) -shared $(CCSHARED)'
++			LDSHARED='$(CC) -shared $(CCSHARED) ${LDFLAGS}'
 +		else
 +			case `uname -r` in
 +			[01].* | 2.[[0-7]] | 2.[[0-7]].*)
-+			  LDSHARED="ld -Bshareable"
++			  LDSHARED="ld -Bshareable ${LDFLAGS}"
 +			  ;;
 +			*)
-+			  LDSHARED='$(CC) -shared $(CCSHARED)'
++			  LDSHARED='$(CC) -shared $(CCSHARED) ${LDFLAGS}'
 +			  ;;
 +			esac
 +		fi;;
