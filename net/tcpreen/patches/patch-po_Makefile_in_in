@@ -1,5 +1,6 @@
---- po/Makefile.in.in~	Sat Aug 31 23:30:23 2002
-+++ po/Makefile.in.in	Sat Aug 31 23:32:19 2002
+$OpenBSD: patch-po_Makefile_in_in,v 1.2 2002/09/16 00:53:53 pvalchev Exp $
+--- po/Makefile.in.in.orig	Sun Sep  1 02:29:08 2002
++++ po/Makefile.in.in	Sun Sep 15 18:44:58 2002
 @@ -8,6 +8,8 @@
  # Please note that the actual code of GNU gettext is covered by the GNU
  # General Public License and is *not* in the public domain.
