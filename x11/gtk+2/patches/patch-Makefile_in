@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2003/06/12 19:26:36 marcm Exp $
+--- Makefile.in.orig	Mon Apr 21 18:16:03 2003
++++ Makefile.in	Mon Apr 21 18:16:20 2003
+@@ -167,7 +167,7 @@ gtktargetlib = @gtktargetlib@
+ ms_librarian = @ms_librarian@
+ xinput_progs = @xinput_progs@
+ 
+-SRC_SUBDIRS = gdk-pixbuf gdk gtk modules demos tests contrib
++SRC_SUBDIRS = gdk-pixbuf gdk gtk modules demos contrib
+ SUBDIRS = po $(SRC_SUBDIRS) docs build m4macros
+ 
+ # require automake 1.4

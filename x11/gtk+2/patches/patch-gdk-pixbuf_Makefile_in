@@ -1,7 +1,7 @@
-$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.1 2002/08/11 11:03:27 nino Exp $
---- gdk-pixbuf/Makefile.in.orig	Sun Aug 11 11:31:16 2002
-+++ gdk-pixbuf/Makefile.in	Sun Aug 11 11:33:14 2002
-@@ -409,7 +409,7 @@ libgdk_pixbuf_2_0_la_SOURCES = @STRIP_BE
+$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.2 2003/06/12 19:26:36 marcm Exp $
+--- gdk-pixbuf/Makefile.in.orig	Sun Feb  2 07:28:38 2003
++++ gdk-pixbuf/Makefile.in	Tue Apr 22 08:14:41 2003
+@@ -421,7 +421,7 @@ libgdk_pixbuf_2_0_la_SOURCES = @STRIP_BE
  @STRIP_END@
  
  libgdk_pixbuf_2_0_la_LDFLAGS = @STRIP_BEGIN@ \
@@ -10,3 +10,12 @@ $OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.1 2002/08/11 11:03:27 nino Exp $
  	@LIBTOOL_EXPORT_OPTIONS@				\
  	$(no_undefined)						\
  	$(gdk_pixbuf_symbols)					\
+@@ -1352,7 +1352,7 @@ gdk-pixbuf.loaders: $(loader_LTLIBRARIES
+ 	LOADERS=`echo libpixbufloader-*.la` ; \
+ 	if test "x$$LOADERS" != 'xlibpixbufloader-*.la' ; then \
+           echo "Writing a gdk-pixbuf.loader file to use when running examples before installing gdk-pixbuf."; \
+-	  $(top_builddir)/gdk-pixbuf/gdk-pixbuf-query-loaders $$LOADERS > ./gdk-pixbuf.loaders ;\
++	  LD_LIBRARY_PATH=$(top_builddir)/gdk-pixbuf/.libs $(top_builddir)/gdk-pixbuf/gdk-pixbuf-query-loaders $$LOADERS > ./gdk-pixbuf.loaders ;\
+ 	else \
+           echo "No dynamic modules found; will use only static modules for uninstalled example programs."; \
+ 	  touch gdk-pixbuf.loaders; \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2003/02/18 17:36:04 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2003/06/12 19:26:36 marcm Exp $
 
 COMMENT=			"multi-platform graphical toolkit"
 COMMENT-docs=           	"gtk+-2 documentation"
 
-VERSION=			2.0.9
+VERSION=			2.2.1
 DISTNAME=			gtk+-${VERSION}
 PKGNAME=			gtk+2-${VERSION}
 PKGNAME-docs=			gtk+2-docs-${VERSION}
@@ -18,16 +18,16 @@ PERMIT_PACKAGE_FTP=		Yes
 PERMIT_DISTFILES_CDROM=		Yes
 PERMIT_DISTFILES_FTP=		Yes
 
-MASTER_SITES=			ftp://ftp.gtk.org/pub/gtk/v2.0/
+MASTER_SITES=			ftp://ftp.gtk.org/pub/gtk/v2.2/
 EXTRACT_SUFX=           	.tar.bz2
 
 MULTI_PACKAGES=         	-docs
 SUBPACKAGE?=
 
 .if ${SUBPACKAGE} != "-docs"
-LIB_DEPENDS=			glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
-				pango-1.0.0.0,pangox-1.0.0.0,pangoxft-1.0.0.0::devel/pango \
-				atk-1.0.0.0::devel/atk \
+LIB_DEPENDS=			glib-2.0.0.8,gmodule-2.0.0.8,gobject-2.0.0.8::devel/glib2 \
+				pango-1.0.0.1,pangox-1.0.0.1,pangoxft-1.0.0.1::devel/pango \
+				atk-1.0.0.1::devel/atk \
 				tiff.35::graphics/tiff \
 				png.3::graphics/png \
 				jpeg.62::graphics/jpeg
@@ -35,10 +35,10 @@ BUILD_DEPENDS=          	:pkgconfig-*:devel/pkgconfig
 .endif
 
 # library versions (major:minor)
-LIBGDK_X11_VERSION=		0:9
-LIBGDK_PIXBUF_VERSION=		0:9
-LIBGDK_PIXBUF_XLIB_VERSION=	0:9
-LIBGTK_X11_VERSION=		0:9
+LIBGDK_X11_VERSION=		0:11
+LIBGDK_PIXBUF_VERSION=		0:11
+LIBGDK_PIXBUF_XLIB_VERSION=	0:11
+LIBGTK_X11_VERSION=		0:11
 
 USE_X11=			Yes
 USE_GMAKE=			Yes
@@ -53,10 +53,9 @@ MAKE_ENV=			LIBGDK_X11_VERSION="${LIBGDK_X11_VERSION}" \
 				LIBGDK_PIXBUF_XLIB_VERSION="${LIBGDK_PIXBUF_XLIB_VERSION}" \
 				LIBGTK_X11_VERSION="${LIBGTK_X11_VERSION}"
 
-NO_REGRESS=			Yes
-
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gtk+2/gtk-2.0; \
-	${INSTALL_DATA} ${WRKSRC}/modules/input/gtk.immodules ${PREFIX}/share/examples/gtk+2/gtk-2.0/
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gtk+2/; \
+	sed s,${WRKSRC}/modules/input,${LOCALBASE}/lib/gtk-2.0/2.2.0/immodules, ${WRKSRC}/modules/input/gtk.immodules > ${PREFIX}/share/examples/gtk+2/gtk.immodules; \
+	sed s,${WRKSRC}/gdk-pixbuf,${LOCALBASE}/lib/gtk-2.0/2.2.0/loaders, ${WRKSRC}/gdk-pixbuf/gdk-pixbuf.loaders > ${PREFIX}/share/examples/gtk+2/gdk-pixbuf.loaders
 
 .include <bsd.port.mk>
