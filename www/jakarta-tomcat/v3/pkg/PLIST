@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/05 15:28:10 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/03/12 12:57:28 reinhard Exp $
 tomcat/LICENSE
 tomcat/bin/ant
 tomcat/bin/antRun
@@ -65,9 +65,9 @@ tomcat/doc/uguide/tomcat-security-unix.html
 tomcat/doc/uguide/tomcat-security.html
 tomcat/doc/uguide/tomcat_ug.html
 tomcat/lib/ant.jar
+tomcat/lib/crimson.jar
 tomcat/lib/jasper.jar
 tomcat/lib/jaxp.jar
-tomcat/lib/parser.jar
 tomcat/lib/servlet.jar
 tomcat/lib/test/Golden/Err.txt
 tomcat/lib/test/Golden/ForwardWithQuery.txt
@@ -402,7 +402,7 @@ tomcat/webapps/test.war
 @dirrm tomcat/doc/appdev/sample/web/images
 @dirrm tomcat/doc/appdev/sample/web
 @dirrm tomcat/doc/appdev/sample/src
-@dirrm tomcat/doc/appdev/sample/etc
+@dirrm tomcat/doc/appdev/sample${SYSCONFDIR}
 @dirrm tomcat/doc/appdev/sample
 @dirrm tomcat/doc/appdev
 @dirrm tomcat/doc

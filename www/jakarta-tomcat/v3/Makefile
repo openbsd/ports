@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/01/05 15:28:09 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/12 12:57:28 reinhard Exp $
 
 COMMENT=	"java servlet 2.2 and java server pages 1.1 server"
 
-V=		3.2.3
+V=		3.2.4
 DISTNAME=	jakarta-tomcat-${V}
 CATEGORIES=	www
-NEED_VERSION=	1.499
+NEED_VERSION=	1.504
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${V}/bin/
 EXTRACT_SUFX=	.zip
 
@@ -15,7 +15,7 @@ MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
 JDK_VERSION=	1.2-blackdown
 JAVA_HOME=	${LOCALBASE}/jdk${JDK_VERSION}
-RUN_DEPENDS=	:jdk-blackdown-*:devel/jdk/${JDK_VERSION}
+RUN_DEPENDS=	:jdk-blackdown-1.2:devel/jdk/${JDK_VERSION}
 
 # Apache Software License
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,7 +28,7 @@ NO_REGRESS=	Yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-DIRS=	bin conf doc lib logs src webapps 
+DIRS=		bin conf doc lib logs src webapps
 CONFDIR=	/etc/tomcat
 TOMCATDIR=	/var/tomcat
 SUBST_VARS=	TOMCATDIR CONFDIR
@@ -37,6 +37,7 @@ post-patch:
 	@perl -pi -e 's|JAVA_HOME|${JAVA_HOME}|g' ${WRKSRC}/conf/workers.properties
 	@perl -pi -e 's|TOMCATDIR|${TOMCATDIR}|g' ${WRKSRC}/bin/tomcat.sh
 	@perl -pi -e 's|PREFIX|${PREFIX}|g' ${WRKSRC}/bin/tomcat.sh
+	@cd ${WRKDIST}/conf && perl -pi -e 's,^M,,g' *
 
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/tomcat

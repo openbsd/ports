@@ -1,6 +1,6 @@
-$OpenBSD: patch-conf_workers_properties,v 1.1.1.1 2002/01/05 15:28:09 reinhard Exp $
---- conf/workers.properties.orig	Tue Dec 12 22:36:26 2000
-+++ conf/workers.properties	Fri May 18 15:24:26 2001
+$OpenBSD: patch-conf_workers_properties,v 1.2 2002/03/12 12:57:28 reinhard Exp $
+--- conf/workers.properties.orig	Tue Nov 20 16:43:26 2001
++++ conf/workers.properties	Fri Mar  1 12:00:12 2002
 @@ -40,20 +40,20 @@
  # installed tomcat. This is where you have your conf, webapps and lib
  # directories.
