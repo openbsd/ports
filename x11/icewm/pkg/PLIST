@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/06/30 06:11:04 kevlo Exp $
 bin/icewm
 bin/icewmbg
 bin/icewmhint
@@ -71,6 +72,7 @@ lib/X11/icewm/mailbox/nomail.xpm
 lib/X11/icewm/mailbox/unreadmail.xpm
 lib/X11/icewm/menu
 lib/X11/icewm/preferences
+lib/X11/icewm/taskbar/bsd-daemon.xpm
 lib/X11/icewm/taskbar/debian.xpm
 lib/X11/icewm/taskbar/linux.xpm
 lib/X11/icewm/taskbar/linux1.xpm
@@ -195,12 +197,6 @@ share/doc/icewm/COPYING
 share/doc/icewm/FAQ
 share/doc/icewm/README
 share/doc/icewm/doc/icewm-1.html
-share/doc/icewm/doc/icewm-10.html
-share/doc/icewm/doc/icewm-11.html
-share/doc/icewm/doc/icewm-12.html
-share/doc/icewm/doc/icewm-13.html
-share/doc/icewm/doc/icewm-14.html
-share/doc/icewm/doc/icewm-15.html
 share/doc/icewm/doc/icewm-2.html
 share/doc/icewm/doc/icewm-3.html
 share/doc/icewm/doc/icewm-4.html
@@ -209,6 +205,12 @@ share/doc/icewm/doc/icewm-6.html
 share/doc/icewm/doc/icewm-7.html
 share/doc/icewm/doc/icewm-8.html
 share/doc/icewm/doc/icewm-9.html
+share/doc/icewm/doc/icewm-10.html
+share/doc/icewm/doc/icewm-11.html
+share/doc/icewm/doc/icewm-12.html
+share/doc/icewm/doc/icewm-13.html
+share/doc/icewm/doc/icewm-14.html
+share/doc/icewm/doc/icewm-15.html
 share/doc/icewm/doc/icewm.html
 @dirrm share/doc/icewm/doc
 @dirrm share/doc/icewm
