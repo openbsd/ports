@@ -1,0 +1,12 @@
+--- client-src/sendbackup-gnutar.c.orig	Wed Jan 14 10:50:27 1998
++++ client-src/sendbackup-gnutar.c	Wed Jan 14 10:50:32 1998
+@@ -130,8 +130,7 @@
+ 			"gtar", "--create",
+ 			"--directory", dirname, "--newer", dumptimestr,
+ 			"--incremental","--sparse","--one-file-system",
+-			"--atime-preserve","--totals",
+-			"--file", "-", ".",
++			"--totals","--file", "-", ".",
+ 			(char *) 0);
+ 
+     /* close the write ends of the pipes */

@@ -1,0 +1,26 @@
+--- ./server-src/Makefile.in.orig	Mon May 20 04:11:25 1996
++++ ./server-src/Makefile.in	Fri Jan  9 12:00:35 1998
+@@ -151,9 +151,9 @@
+ install-libexec-perms:
+ 	@echo "Setting permissions for setuid-root libexec programs:"
+ 	@for f in $(SUIDEXEC); do \
+-	    echo "  (cd $(EXECDIR); chown root $$f; chmod u+s $$f)"; \
++	    echo "  (cd $(EXECDIR); /usr/sbin/chown root $$f; chmod u+s $$f)"; \
+ 	    (cd $(EXECDIR); \
+-	     chown root $$f || \
++	     /usr/sbin/chown root $$f || \
+ 	     (echo '***' You must be root to set Amanda permissions properly.;\
+ 	      echo '***' Su to root then "\"$(MAKE) install-perms\"."; exit 0); \
+ 	     chmod u+s $$f); \
+@@ -162,9 +162,9 @@
+ install-usr-perms:
+ 	@echo "Setting permissions for setuid-root user programs:"
+ 	@for f in $(SUIDUSR); do \
+-	    echo "  (cd $(BINDIR); chown root $$f; chmod u+s $$f)"; \
++	    echo "  (cd $(BINDIR); /usr/sbin/chown root $$f; chmod u+s $$f)"; \
+ 	    (cd $(BINDIR); \
+-	     chown root $$f || \
++	     /usr/sbin/chown root $$f || \
+ 	     (echo '***' You must be root to set Amanda permissions properly.;\
+ 	      echo '***' Su to root then "\"$(MAKE) install-perms\"."; exit 0); \
+ 	     chmod u+s $$f); \

@@ -1,0 +1,14 @@
+--- ./client-src/Makefile.in.orig	Mon May 20 04:11:24 1996
++++ ./client-src/Makefile.in	Fri Jan  9 11:59:41 1998
+@@ -120,9 +120,9 @@
+ install-client-perms:
+ 	@echo "Setting permissions for setuid-root client programs:"
+ 	@for f in $(SUIDCLIENT); do \
+-	    echo "  (cd $(EXECDIR); chown root $$f; chmod u+s $$f)"; \
++	    echo "  (cd $(EXECDIR); /usr/sbin/chown root $$f; chmod u+s $$f)"; \
+ 	    (cd $(EXECDIR); \
+-	     chown root $$f || \
++	     /usr/sbin/chown root $$f || \
+ 	     (echo '***' You must be root to set Amanda permissions properly.;\
+ 	      echo '***' Su to root then "\"$(MAKE) install-perms\"."; exit 0); \
+ 	     chmod u+s $$f); \

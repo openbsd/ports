@@ -1,0 +1,11 @@
+--- ./tools/munge.orig	Mon May 20 04:11:25 1996
++++ ./tools/munge	Thu Jan  8 13:46:13 1998
+@@ -35,7 +35,7 @@
+ # Customize CPP to point to your system's C preprocessor.
+ 
+ # if cpp is on your path:
+-CPP=cpp
++CPP=/usr/bin/cpp
+ 
+ # if cpp is not on your path, try one of these:
+ # CPP=/lib/cpp			# traditional

@@ -1,0 +1,11 @@
+--- ./client-src/sendbackup-dump.c.orig	Thu Jan  8 15:30:41 1998
++++ ./client-src/sendbackup-dump.c	Thu Jan  8 15:31:44 1998
+@@ -42,6 +42,8 @@
+   /* the various encodings of dump size */
+   { DMP_SIZE, 
+ 	"DUMP: DUMP: [0-9][0-9]* tape blocks",				1024},
++  { DMP_SIZE, 
++	"DUMP: [0-9][0-9]* tape blocks",				1024},
+   { DMP_SIZE,
+ 	"dump: Actual: [0-9][0-9]* tape blocks",
+                                                                         1024},

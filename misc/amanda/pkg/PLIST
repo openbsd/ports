@@ -1,25 +1,18 @@
+@pkgdep tar-1.12
 libexec/amanda/amandad
-libexec/amanda/sendsize
 libexec/amanda/calcsize
-libexec/amanda/sendbackup-dump
-libexec/amanda/sendbackup-gnutar
-libexec/amanda/runtar
-libexec/amanda/selfcheck
-libexec/amanda/taper
-libexec/amanda/dumper
+libexec/amanda/chg-generic
 libexec/amanda/driver
+libexec/amanda/dumper
+libexec/amanda/getconf
 libexec/amanda/planner
 libexec/amanda/reporter
-libexec/amanda/getconf
-sbin/amrestore
-sbin/amadmin
-sbin/amflush
-sbin/amlabel
-sbin/amcheck
-sbin/amdump
-sbin/amcleanup
-sbin/amtape
-libexec/amanda/chg-generic
+libexec/amanda/runtar
+libexec/amanda/selfcheck
+libexec/amanda/sendbackup-dump
+libexec/amanda/sendbackup-gnutar
+libexec/amanda/sendsize
+libexec/amanda/taper
 man/man8/amanda.8
 man/man8/amadmin.8
 man/man8/amcheck.8
@@ -29,3 +22,16 @@ man/man8/amflush.8
 man/man8/amlabel.8
 man/man8/amrestore.8
 man/man8/amtape.8
+sbin/amadmin
+sbin/amcheck
+sbin/amcleanup
+sbin/amdump
+sbin/amflush
+sbin/amlabel
+sbin/amrestore
+sbin/amtape
+share/examples/amanda/amanda.conf
+share/examples/amanda/chg-generic.conf
+share/examples/amanda/disklist
+@dirrm share/examples/amanda
+@dirrm libexec/amanda
