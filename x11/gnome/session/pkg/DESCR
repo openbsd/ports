@@ -1,0 +1,11 @@
+This package contains the following:
+
+ * the GNOME session manager
+ * the GNOME session manager configuration program and several other 
+   session management related utilities.
+ * the GNOME session manager proxy, which handles basic session
+   management for applications that do not support XSM.
+
+For more information about the gnome project, visit:
+
+WWW: ${HOMEPAGE}
