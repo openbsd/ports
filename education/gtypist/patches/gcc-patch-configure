@@ -1,0 +1,20 @@
+$OpenBSD: gcc-patch-configure,v 1.1 2003/10/03 20:51:39 naddy Exp $
+--- configure.orig	2003-09-28 23:35:45.000000000 +0200
++++ configure	2003-10-03 22:17:25.000000000 +0200
+@@ -4595,6 +4595,8 @@ exit (malloc (0) ? 0 : 1);
+ }
+ _ACEOF
+ rm -f conftest$ac_exeext
++_SAVE_CFLAGS=$CFLAGS
++CFLAGS=-O0
+ if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
+   (eval $ac_link) 2>&5
+   ac_status=$?
+@@ -4614,6 +4616,7 @@ sed 's/^/| /' conftest.$ac_ext >&5
+ ( exit $ac_status )
+ ac_cv_func_malloc_0_nonnull=no
+ fi
++CFLAGS=$_SAVE_CFLAGS
+ rm -f core core.* *.core gmon.out bb.out conftest$ac_exeext conftest.$ac_objext conftest.$ac_ext
+ fi
+ fi
