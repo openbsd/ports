@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.23 2001/01/22 00:26:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2001/02/19 00:11:43 naddy Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 
-DISTNAME=	xchat-1.6.3
+DISTNAME=	xchat-1.6.4
 CATEGORIES=	net x11
 NEED_VERSION=	1.336
 HOMEPAGE=	http://www.xchat.org/
@@ -26,6 +26,9 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --disable-gnome --disable-imlib --disable-python
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@touch ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xchat
