@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.481 2001/10/24 11:57:34 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.482 2001/10/24 16:35:38 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2110,7 +2110,8 @@ _tmp:=
 .  for _v in ${SUBST_VARS}
 _tmp += ${_v}='${${_v}}'
 .  endfor
-plist: fake
+plist update-plist: fake
+	@mkdir -p ${PKGDIR}
 	@DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} LDCONFIG="${LDCONFIG}" \
 	MTREE_FILE=${WRKPKG}/mtree.spec \
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
@@ -2719,7 +2720,7 @@ unlink-categories:
    fetch fetch-depends install lib-depends makesum \
    cdrom-packages ftp-packages \
    misc-depends package package-depends package-links package-name \
-   package-noinstall patch plist update-patches post-build \
+   package-noinstall patch plist update-plist update-patches post-build \
    post-configure post-extract post-fetch post-install post-package \
    post-patch pre-build pre-clean pre-configure pre-distclean \
    pre-extract pre-fetch pre-install pre-package pre-patch \
