@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/22 17:08:38 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/14 04:21:59 turan Exp $
 
 DISTNAME=		mimepp-1.0
 CATEGORIES=		converters
-
-NO_CDROM=		"LIC: obnoxious license"
-RESTRICTED=		"many, many restrictions: read license"
+NEED_VERSION=		1.210
 
 MAINTAINER=		angelos@openbsd.org
-NEED_VERSION=		1.210
+
+PERMIT_PACKAGE_CDROM=	"restrictive non-commercial license"
+PERMIT_PACKAGE_FTP=	"restrictive non-commercial license"
+PERMIT_DISTFILES_CDROM=	"restrictive non-commercial license"
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c++

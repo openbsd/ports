@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/05 10:36:43 rohee Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/14 04:22:00 turan Exp $
 
 DISTNAME=       trans120
 PKGNAME=        trans-1.20
 CATEGORIES=     converters russian
 
-NO_CDROM=	"LIC: Requires license for redistribution"
-RESTRICTED=	"no commercial use"
-
 MAINTAINER=     angelos@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=   http://www.kostis.net/freeware/
 
