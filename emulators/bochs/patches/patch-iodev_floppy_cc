@@ -1,6 +1,6 @@
-$OpenBSD: patch-iodev_floppy_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
+$OpenBSD: patch-iodev_floppy_cc,v 1.2 2001/02/12 18:41:06 todd Exp $
 --- iodev/floppy.cc.orig	Sat Mar 25 21:28:49 2000
-+++ iodev/floppy.cc	Fri Oct 20 16:24:08 2000
++++ iodev/floppy.cc	Mon Feb 12 12:41:58 2001
 @@ -95,21 +95,26 @@ bx_floppy_ctrl_c::init(bx_devices_c *d, 
    switch (bx_options.floppya.type) {
      case BX_FLOPPY_NONE:
@@ -418,7 +418,7 @@ $OpenBSD: patch-iodev_floppy_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
                       " sectors/track=%u\n", (unsigned) sector,
                       (unsigned) BX_FD_THIS s.media[drive].sectors_per_track);
          BX_FD_THIS s.result_size = 7;
-@@ -745,21 +754,21 @@ bx_floppy_ctrl_c::floppy_command(void)
+@@ -745,23 +754,23 @@ bx_floppy_ctrl_c::floppy_command(void)
          }
  
        if (sector_size != 0x02) { // 512 bytes
@@ -444,10 +444,14 @@ $OpenBSD: patch-iodev_floppy_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
        if (sector > BX_FD_THIS s.media[drive].sectors_per_track) {
          // requested sector > last sector on track
 -        bx_printf("floppy_command: attempt to read/write sector %u,"
-+        bio->printf("[FDD] floppy_command: attempt to read/write sector %u,"
-                      " sectors/track=%u\n", (unsigned) sector,
-                      (unsigned) BX_FD_THIS s.media[drive].sectors_per_track);
+-                     " sectors/track=%u\n", (unsigned) sector,
+-                     (unsigned) BX_FD_THIS s.media[drive].sectors_per_track);
++        // bio->printf("[FDD] floppy_command: attempt to read/write sector %u,"
++                     // " sectors/track=%u\n", (unsigned) sector,
++                     // (unsigned) BX_FD_THIS s.media[drive].sectors_per_track);
          // set controller to where drive would have left off
+         // after it discovered the sector was past EOT
+         BX_FD_THIS s.cylinder[drive] = cylinder;
 @@ -792,18 +801,18 @@ bx_floppy_ctrl_c::floppy_command(void)
  
  #if 0
