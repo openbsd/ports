@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/29 03:04:43 kevlo Exp $
+bin/antic
+bin/jlint
+share/doc/jlint/manual.html
+share/doc/jlint/manual.pdf
+@dirrm share/doc/jlint
