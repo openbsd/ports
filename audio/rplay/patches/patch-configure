@@ -1,0 +1,20 @@
+--- configure.orig	Thu Jun 18 13:29:36 1998
++++ configure	Thu Sep 21 03:49:06 2000
+@@ -3239,6 +3239,8 @@
+ fi
+ fi
+ 
++echo "Setting appropriate target for OpenBSD..."
++RPLAY_TARGET="generic"
+ 
+ if test -z "$RPLAY_TARGET"; then
+ 	echo 'Sorry, I could not figure out what type of system you have.'
+@@ -3268,7 +3270,7 @@
+ fi
+ 
+ 
+-BUILD_TARGETS="include lib rx adpcm gsm librplay rplayd rplay rptp doc"
++BUILD_TARGETS="include lib rx adpcm librplay rplayd rplay rptp doc"
+ 
+ 
+ subdirs="rx"

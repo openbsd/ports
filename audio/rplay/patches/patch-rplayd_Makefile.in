@@ -1,0 +1,34 @@
+--- rplayd/Makefile.in.orig	Tue Jun 16 14:00:04 1998
++++ rplayd/Makefile.in	Thu Sep 21 03:54:28 2000
+@@ -1,4 +1,5 @@
+ include @RPLAY_TOP@/Makefile.config
++bindir=         $(exec_prefix)/sbin
+ 
+ srcdir = @srcdir@
+ VPATH = @srcdir@
+@@ -9,7 +10,7 @@
+ INSTALL_DATA = @INSTALL_DATA@
+ MKINSTALLDIRS= @srcdir@/../mkinstalldirs
+ 
+-CPPFLAGS = $(CC_OPTIONS) -I. -I../include -I@srcdir@ -I@srcdir@/../include -I@srcdir@/../lib -I@srcdir@/../adpcm -I@srcdir@/../gsm -I@srcdir@/../rx @DEFS@ \
++CPPFLAGS = $(CC_OPTIONS) -I. -I../include -I@srcdir@ -I@srcdir@/../include -I@srcdir@/../lib -I@srcdir@/../adpcm -I/usr/local/include/ -I@srcdir@/../rx @DEFS@ \
+ 	-DRPLAY_CONF=\"${sysconfdir}/rplay.conf\" \
+ 	-DRPLAY_HOSTS=\"${sysconfdir}/rplay.hosts\" \
+ 	-DRPLAY_SERVERS=\"${sysconfdir}/rplay.servers\" \
+@@ -22,7 +23,7 @@
+ 		$(CC) -c $(CPPFLAGS) $(CFLAGS) $<
+ 
+ LDFLAGS=	$(LD_OPTIONS) -L../librplay -lrplay -L../lib -lrp \
+-		-L../adpcm -ladpcm -L../gsm -lgsm -L../rx -lrx @LDFLAGS@ @LIBS@ -lm
++		-L../adpcm -ladpcm -L/usr/local/lib -lgsm -L../rx -lrx @LDFLAGS@ @LIBS@ -lm
+ 
+ TARGET=		rplayd
+ 
+@@ -42,7 +43,6 @@
+ install:	all
+ 		$(MKINSTALLDIRS) $(sbindir)
+ 		$(INSTALL_PROGRAM) $(TARGET) $(sbindir)/$(TARGET)
+-		@test -x $(bindir)/$(TARGET) && echo "" && echo "    Note: Consider removing $(bindir)/$(TARGET)" && echo ""
+ 
+ uninstall:
+ 		$(RM) $(bindir)/$(TARGET)

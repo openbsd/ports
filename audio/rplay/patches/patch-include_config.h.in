@@ -1,0 +1,13 @@
+--- include/config.h.in.orig	Sun Jun 21 14:12:25 1998
++++ include/config.h.in	Thu Sep 21 03:49:08 2000
+@@ -167,6 +167,10 @@
+ #define HAVE_CDDA
+ #endif /* Solaris 2.x */
+ 
++#if defined (__OpenBSD__)
++#define HAVE_CDROM
++#endif
++
+ #if defined (linux)
+ #define HAVE_OSS
+ #define HAVE_CDROM

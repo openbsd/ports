@@ -1,19 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.8 2000/09/21 07:47:07 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2000/09/21 08:41:01 brad Exp $
 bin/rplay
 bin/rptp
 include/rplay.h
 @unexec install-info --delete --info-dir=%D/info %D/info/RPLAY.info
 @unexec install-info --delete --info-dir=%D/info %D/info/RPTP.info
 @unexec install-info --delete --info-dir=%D/info %D/info/librplay.info
-@unexec install-info --delete --info-dir=%D/info %D/info/rplay.info
+@unexec install-info --delete --info-dir=%D/info %D/info/rplayd.info
 info/RPLAY.info
 info/RPTP.info
 info/librplay.info
-info/rplay.info
+info/rplayd.info
 @exec install-info --info-dir=%D/info %D/info/RPLAY.info
 @exec install-info --info-dir=%D/info %D/info/RPTP.info
 @exec install-info --info-dir=%D/info %D/info/librplay.info
-@exec install-info --info-dir=%D/info %D/info/rplay.info
+@exec install-info --info-dir=%D/info %D/info/rplayd.info
 lib/librplay.a
 man/man1/rplay.1
 man/man1/rptp.1

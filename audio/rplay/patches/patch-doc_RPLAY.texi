@@ -1,5 +1,5 @@
---- doc/RPLAY.texi.orig	Mon Jun 29 20:04:34 1998
-+++ doc/RPLAY.texi	Sat Apr  8 18:32:48 2000
+--- doc/RPLAY.texi.orig	Mon Jun 29 14:04:34 1998
++++ doc/RPLAY.texi	Thu Sep 21 04:07:42 2000
 @@ -6,9 +6,15 @@
  @finalout
  @end iftex
