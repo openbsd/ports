@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 1999/06/20 21:05:35 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/09/21 07:09:56 turan Exp $
+
+BROKEN=		"sources unavailible"
 
 DISTNAME=       speak_freely-7.0
 CATEGORIES=     mbone audio security
