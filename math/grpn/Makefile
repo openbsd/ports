@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/18 02:17:11 obecian Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/28 08:26:10 obecian Exp $
+
+COMMENT=	"graphical reverse polish notation calculator"
 
 DISTNAME=	grpn-1.1.1
 CATEGORIES=	math x11
-NEED_VERSION=	1.320
+NEED_VERSION=	1.364
 
 MAINTAINER=	Mark Grimes <obecian@openbsd.org>
 
 MASTER_SITES=	ftp://wilkins.ne.mediaone.net/pub/
 
-HOMEPAGE=       http://wilkins.ne.mediaone.net/grpn.html
+HOMEPAGE=	http://wilkins.ne.mediaone.net/grpn.html
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
