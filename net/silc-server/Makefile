@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/10/31 16:40:06 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2004/01/07 04:53:12 brad Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN= "config file parser bug on ${MACHINE_ARCH}"
@@ -6,7 +6,7 @@ BROKEN= "config file parser bug on ${MACHINE_ARCH}"
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) server"
 
-DISTNAME=	silc-server-0.9.15
+DISTNAME=	silc-server-0.9.16
 CATEGORIES=	net
 HOMEPAGE=	http://www.silcnet.org/
 
@@ -39,18 +39,17 @@ PATCH_LIST+=	operops-* patch-*
 CONFDIR=	${SYSCONFDIR}/silcd
 SUBST_VARS=	CONFDIR
 
-CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION=2.54
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/lib/silcmath/mpi
-CONFIGURE_ARGS=	\
-	--enable-ipv6 \
-	--without-irssi \
-	--with-docdir=${PREFIX}/share/doc/silcd	\
-	--with-etcdir=${CONFDIR} \
-	--with-logsdir=/var/log/silcd \
-	--with-simdir=${PREFIX}/lib \
-	--with-silcd-config-file=${CONFDIR}/silcd.conf	\
-	--with-silcd-pid-file=/var/run/silcd.pid
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.57
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/lib/silcmath/mpi
+CONFIGURE_ARGS+= --enable-ipv6 \
+		 --without-irssi \
+		 --with-docdir=${PREFIX}/share/doc/silcd \
+		 --with-etcdir=${CONFDIR} \
+		 --with-logsdir=/var/log/silcd \
+		 --with-simdir=${PREFIX}/lib \
+		 --with-silcd-config-file=${CONFDIR}/silcd.conf \
+		 --with-silcd-pid-file=/var/run/silcd.pid
 
 .if ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS+= --disable-asm
