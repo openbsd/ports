@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2000/12/21 19:38:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2001/01/22 00:13:32 naddy Exp $
 
-DISTNAME=	tar-1.13.18
+DISTNAME=	tar-1.13.19
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 NEED_VERSION=	1.330
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--program-prefix="g"
+CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		DEFAULT_ARCHIVE="/dev/rst0"
 
@@ -30,8 +30,5 @@ CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -static"
 .else
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 .endif
-
-post-extract:
-	@rm -f ${WRKSRC}/doc/tar.info*
 
 .include <bsd.port.mk>
