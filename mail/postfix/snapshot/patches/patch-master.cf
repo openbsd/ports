@@ -1,6 +1,8 @@
---- conf/master.cf.orig	Tue Dec 10 10:13:00 2002
-+++ conf/master.cf	Tue Dec 10 10:15:01 2002
-@@ -69,24 +69,24 @@
+$OpenBSD: patch-master.cf,v 1.8 2003/01/06 11:37:24 jakob Exp $
+
+--- conf/master.cf.orig	Sat Dec 21 23:49:48 2002
++++ conf/master.cf	Mon Dec 23 08:13:32 2002
+@@ -69,26 +69,26 @@
  # service type	private	unpriv	chroot	wakeup	maxproc	command + args
  # 		(yes)	(yes)	(yes)	(never)	(50)
  # ==========================================================================
@@ -13,6 +15,8 @@
 -rewrite	  unix	-	-	n	-	-	trivial-rewrite
 -bounce	  unix	-	-	n	-	0	bounce
 -defer	  unix	-	-	n	-	0	bounce
+-trace	  unix	-	-	n	-	0	bounce
+-verify	  unix  -       -       n       -       1       verify
 -flush	  unix	n	-	n	1000?	0	flush
 -smtp	  unix	-	-	n	-	-	smtp
 -relay	  unix	-	-	n	-	-	smtp
@@ -25,6 +29,8 @@
 +rewrite	  unix	-	-	-	-	-	trivial-rewrite
 +bounce	  unix	-	-	-	-	0	bounce
 +defer	  unix	-	-	-	-	0	bounce
++trace	  unix	-	-	-	-	0	bounce
++verify	  unix	-	-	-	-	1	verify
 +flush	  unix	n	-	-	1000?	0	flush
 +smtp	  unix	-	-	-	-	-	smtp
 +relay	  unix	-	-	-	-	-	smtp

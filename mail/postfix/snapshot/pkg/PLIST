@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2002/12/15 22:10:41 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.15 2003/01/06 11:37:24 jakob Exp $
 @pkgcfl postfix-*
 %%tls%%
 libexec/postfix/bounce
@@ -11,6 +11,7 @@ libexec/postfix/master
 libexec/postfix/nqmgr
 libexec/postfix/pickup
 libexec/postfix/pipe
+libexec/postfix/proxymap
 libexec/postfix/qmgr
 libexec/postfix/qmqpd
 libexec/postfix/showq
@@ -18,6 +19,7 @@ libexec/postfix/smtp
 libexec/postfix/smtpd
 libexec/postfix/spawn
 libexec/postfix/trivial-rewrite
+libexec/postfix/verify
 libexec/postfix/virtual
 man/man1/mailq.1
 man/man1/newaliases.1
@@ -52,13 +54,16 @@ man/man8/master.8
 man/man8/nqmgr.8
 man/man8/pickup.8
 man/man8/pipe.8
+man/man8/proxymap.8
 man/man8/qmgr.8
 man/man8/qmqpd.8
 man/man8/showq.8
 man/man8/smtp.8
 man/man8/smtpd.8
 man/man8/spawn.8
+man/man8/trace.8
 man/man8/trivial-rewrite.8
+man/man8/verify.8
 man/man8/virtual.8
 sbin/mailq
 sbin/postalias
@@ -116,6 +121,7 @@ share/doc/postfix/html/postlog.1.html
 share/doc/postfix/html/postmap.1.html
 share/doc/postfix/html/postqueue.1.html
 share/doc/postfix/html/postsuper.1.html
+share/doc/postfix/html/proxymap.8.html
 share/doc/postfix/html/qmgr.8.html
 share/doc/postfix/html/qmqpd.8.html
 share/doc/postfix/html/queuing.html
@@ -132,11 +138,15 @@ share/doc/postfix/html/small-picture.gif
 share/doc/postfix/html/smtp.8.html
 share/doc/postfix/html/smtpd.8.html
 share/doc/postfix/html/spawn.8.html
+share/doc/postfix/html/trace.8.html
 share/doc/postfix/html/transport.5.html
 share/doc/postfix/html/trivial-rewrite.8.html
 share/doc/postfix/html/uce.html
+share/doc/postfix/html/verify.8.html
 share/doc/postfix/html/virtual.5.html
 share/doc/postfix/html/virtual.8.html
+share/doc/postfix/readme/ADDRESS_CLASS_README
+share/doc/postfix/readme/ADDRESS_VERIFICATION_README
 share/doc/postfix/readme/DB_README
 share/doc/postfix/readme/DEBUG_README
 share/doc/postfix/readme/ETRN_README
@@ -145,6 +155,7 @@ share/doc/postfix/readme/INSTALL
 share/doc/postfix/readme/LDAP_README
 share/doc/postfix/readme/LINUX_README
 share/doc/postfix/readme/LMTP_README
+share/doc/postfix/readme/LOCAL_RECIPIENT_README
 share/doc/postfix/readme/MACOSX_README
 share/doc/postfix/readme/MAILDROP_README
 share/doc/postfix/readme/MYSQL_README
@@ -198,6 +209,7 @@ share/examples/postfix/sample-rewrite.cf
 share/examples/postfix/sample-smtp.cf
 share/examples/postfix/sample-smtpd.cf
 share/examples/postfix/sample-transport.cf
+share/examples/postfix/sample-verify.cf
 share/examples/postfix/sample-virtual.cf
 share/examples/postfix/transport
 share/examples/postfix/virtual
