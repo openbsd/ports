@@ -1,0 +1,84 @@
+$OpenBSD: patch-cvsweb_conf,v 1.1.1.1 2000/10/01 19:18:53 naddy Exp $
+--- cvsweb.conf.orig	Fri Sep 22 13:13:18 2000
++++ cvsweb.conf	Mon Sep 25 23:09:37 2000
+@@ -26,12 +26,12 @@
+ # 'symbolic_name' 'path_to_the_actual_repository'
+ %CVSROOT = (
+ 	    'local'     => '/home/cvs',
+-	    'freebsd'   => '/home/ncvs',
++	    'openbsd'   => '/home/ncvs',
+ 	   );
+ 
+ %CVSROOTdescr = (
+ 		 'local'     => 'Local Repository',
+-		 'freebsd'   => 'FreeBSD',
++		 'openbsd'   => 'OpenBSD',
+ 		);
+ 
+ # This tree is enabled by default when
+@@ -42,28 +42,32 @@ $cvstreedefault = 'local';
+ # PR categoties
+ ##############
+ @prcategories = qw(
+-		   advocacy
+-		   alpha
+-		   bin
+-		   conf
+-		   docs
+-		   gnu
+-		   i386
+-		   kern
+-		   misc
++		   system
++		   user
++		   library
++		   documentation
+ 		   ports
++		   kernel
+ 		   sparc
++		   i386
++		   m68k
++		   mips
++		   ppc
++		   arm
++		   alpha
++		   ns32k
++		   vax
+ 		  );
+ 
+ ##############
+ # query-pr.cgi
+ ##############
+-$prcgi = "http://www.FreeBSD.org/cgi/query-pr.cgi?pr=%s";
++$prcgi = "http://cvs.openbsd.org/cgi-bin/wwwgnats.pl/full?pr=%s";
+ 
+ ##############
+ # man.cgi
+ ##############
+-$mancgi = "http://www.FreeBSD.org/cgi/man.cgi?apropos=0&sektion=%s&query=%s&manpath=FreeBSD+5.0-current&format=html";
++$mancgi = "http://www.openbsd.org/cgi-bin/man.cgi?apropos=0&sektion=%s&query=%s&manpath=OpenBSD+Current&format=html";
+ 
+ ##############
+ # Defaults for UserSettings
+@@ -194,9 +198,9 @@ EOT
+ # icons/ directory; they have a width/height of 16/16
+ # format:               TEXT      ICON-URL          width height
+ %ICONS  = (
+-	   back => [ ("[BACK]", "/icons/cvsweb/back.gif", 20,   22) ],
+-	   dir  => [ ("[DIR]",  "/icons/cvsweb/dir.gif",  20,   22) ],
+-	   file => [ ("[TXT]",  "/icons/cvsweb/text.gif", 20,   22) ],
++	   back => [ ("[BACK]", "/icons/back.gif", 20,   22) ],
++	   dir  => [ ("[DIR]",  "/icons/dir.gif",  20,   22) ],
++	   file => [ ("[TXT]",  "/icons/text.gif", 20,   22) ],
+ 	   );
+ 
+ # the length to which the last logentry should
+@@ -309,7 +313,7 @@ $inputTextSize = 12;
+ # cvsweb to guess the correct mime-type on
+ # checkout; you can use the mime.types from
+ # apache here:
+-$mime_types = '/usr/local/etc/apache/mime.types';
++$mime_types = '/var/www/conf/mime.types';
+ 
+ # quick mime-type lookup; maps file-suffices to
+ # mime-types for displaying checkouts in the browser.

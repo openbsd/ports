@@ -1,0 +1,18 @@
+$OpenBSD: patch-cvsweb_cgi,v 1.1.1.1 2000/10/01 19:18:53 naddy Exp $
+--- cvsweb.cgi.orig	Sat Sep 30 22:10:01 2000
++++ cvsweb.cgi	Sun Oct  1 20:37:59 2000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl5 -ws
++#!/usr/bin/perl -ws
+ #
+ # cvsweb - a CGI interface to CVS trees.
+ #
+@@ -128,7 +128,7 @@ use Cwd;
+ # Locations to search for user configuration, in order:
+ for (
+      $ENV{CVSWEB_CONFIG},
+-     '/usr/local/etc/cvsweb.conf',
++     '%%SYSCONFDIR%%/cvsweb.conf',
+      getcwd() . '/cvsweb.conf'
+     ) {
+     $config = $_ if defined($_) && -r $_;
