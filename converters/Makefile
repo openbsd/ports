@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2001/03/12 01:33:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2001/03/30 22:36:50 avsm Exp $
 #
 
     SUBDIR += base64
     SUBDIR += btoa
+    SUBDIR += html2wml
     SUBDIR += ish
     SUBDIR += libiconv
     SUBDIR += mimepp
