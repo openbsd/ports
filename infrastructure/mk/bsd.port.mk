@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.602 2004/01/22 21:28:49 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.603 2004/01/28 20:16:14 sturm Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1901,10 +1901,10 @@ clean:
 .  if ${_clean:L:Minstall}
 .    if ${_clean:L:Msub}
 .      for _s in ${MULTI_PACKAGES}
-	-${SUDO} ${PKG_DELETE} ${_clean:M-f} ${FULLPKGNAME${_s}}
+	-${SUDO} ${PKG_DELETE} ${FULLPKGNAME${_s}}
 .      endfor
 .    else
-	-${SUDO} ${PKG_DELETE} ${_clean:M-f} ${FULLPKGNAME${SUBPACKAGE}}
+	-${SUDO} ${PKG_DELETE} ${FULLPKGNAME${SUBPACKAGE}}
 .    endif
 .  endif
 .  if ${_clean:L:Mpackages} || ${_clean:L:Mpackage} && ${_clean:L:Msub}
@@ -2449,7 +2449,7 @@ rebuild:
 
 uninstall deinstall:
 	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME${SUBPACKAGE}}"
-	@${SUDO} ${PKG_DELETE} -f ${FULLPKGNAME${SUBPACKAGE}}
+	@${SUDO} ${PKG_DELETE} ${FULLPKGNAME${SUBPACKAGE}}
 
 .if defined(ERRORS)
 .BEGIN:
