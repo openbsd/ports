@@ -38,6 +38,7 @@ DEBUG=
 #   environment variable is unset.  SP now automatically searches for a file
 #   called "catalog" in the same directory as the document entity.
 DEFINES=-DSGML_CATALOG_FILES_DEFAULT=\"${PREFIX}/share/sgml/catalog\"
+DEFINES+=-DSP_HAVE_BOOL -DSP_ANSI_CLASS_INST
 INCLUDES+=-I. -I${.CURDIR}/../include -I${.CURDIR}/../generic
 CXXFLAGS=-ansi $(DEBUG) $(WARN) $(DEFINES) $(INCLUDES)
 
