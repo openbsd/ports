@@ -1,0 +1,277 @@
+#!/usr/bin/perl
+
+# $OpenBSD: check-lib-depends,v 1.1 2004/09/14 22:22:17 espie Exp $
+# Copyright (c) 2004 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+# check all packages in the current directory, and report library issues
+
+use strict;
+use warnings;
+
+use File::Spec;
+use File::Path;
+use File::Basename;
+use OpenBSD::PackageLocator;
+use OpenBSD::PackageInfo;
+use OpenBSD::PackingList;
+use File::Temp;
+use Getopt::Std;
+
+package OpenBSD::PackingList;
+
+sub visit
+{
+	my ($self, $method, @l) = @_;
+
+	if (defined $self->{cvstags}) {
+		for my $item (@{$self->{cvstags}}) {
+			$item->$method(@l);
+		}
+	}
+
+	for my $special (OpenBSD::PackageInfo::info_names()) {
+		$self->{$special}->$method(@l, 0) if defined $self->{$special};
+	}
+
+	for my $unique_item (qw(name no-default-conflict manual-installation extrainfo arch)) {
+		$self->{$unique_item}->$method(@l) if defined $self->{$unique_item};
+	}
+	for my $listname (qw(modules pkgcfl pkgdep newdepend libdepend items)) {
+		if (defined $self->{$listname}) {
+			for my $item (@{$self->{$listname}}) {
+				$item->$method(@l);
+			}
+		}
+	}
+	for my $special (OpenBSD::PackageInfo::info_names()) {
+		$self->{$special}->$method(@l, 1) if defined $self->{$special};
+	}
+}
+
+package OpenBSD::PackingElement;
+sub check_libs
+{
+}
+
+package OpenBSD::PackingElement::LibDepend;
+sub check_libs
+{
+	my ($item, $t, $where, $handle, $system_libs) = @_;
+	$t->{deps}->{$item->{def}} = 1;
+}
+
+package OpenBSD::PackingElement::NewDepend;
+sub check_libs
+{
+	&OpenBSD::PackingElement::LibDepend::check_libs;
+}
+
+package OpenBSD::PackingElement::FileBase;
+use File::Basename;
+sub shellquote
+{
+	local $_ = shift;
+	s/[*?;() #\\'"`\${}]/\\$&/g;
+	return $_;
+}
+
+my $portsdir;
+$portsdir = $ENV{'PORTSDIR'} if defined $ENV{'PORTSDIR'};
+
+sub check_libs
+{
+	my ($item, $t, $where, $handle, $system_libs, $logfile) = @_;
+	my $fullname = File::Spec->canonpath($item->fullname());
+	if ($fullname =~ m/(^.*lib[^\/]+\.so\.\d+)\.\d+$/) {
+		$t->{has_libs}->{$&} = 1;
+		$t->{has_libs}->{$1} = 1;
+	}
+	if ($fullname =~ m/^.*lib[^\/]+\.so$/) {
+		$t->{has_libs}->{$&} = 1;
+	}
+	my $file = $handle->next();
+	$file->{destdir} = $where;
+	$file->{cwd} = $item->{cwd};
+	$file->{name} = $fullname;
+	my $linux_bin = 0;
+	my $freebsd_bin = 0;
+	if ($fullname =~ m,^/usr/local/emul/redhat/,) {
+		$linux_bin = 1;
+	}
+	if ($fullname =~ m,^/usr/local/emul/freebsd/,) {
+		$freebsd_bin = 1;
+	}
+	# this will fail because of links, so we don't care.
+	eval { $file->create(); };
+	unless ($@) {
+		my $n = shellquote("$where$fullname");
+		open(my $cmd, "objdump -p $n 2>/dev/null|");
+		local $_;
+		my @l;
+		my @rpath;
+		while(<$cmd>) {
+			if (m/^\s+NEEDED\s+(.*?)\s*$/) {
+				my $lib = $1;
+				next if defined $system_libs->{$lib};
+				push(@l, $lib);
+				# detect linux binaries
+				if ($lib eq 'libc.so.6') {
+					$linux_bin = 1;
+				}
+			} elsif (m/^\s+RPATH\s+(.*?)\s*$/) {
+				my $r = $1;
+				@rpath= split(':', $r);
+				if (defined $portsdir and $r =~ m/\Q$portsdir\E/) {
+				    print $t->{pkgname}, "($fullname) -> ", join(':', @rpath),"\n";
+				    
+				}
+			}
+		}
+		close($cmd);
+		if ($linux_bin) {
+			push(@rpath, (qw(/lib /usr/lib /usr/X11R6/lib)));
+			# linux ldconfig also looks in the current directory...
+			push(@rpath, dirname($fullname));
+			# XXX this is an approximation, as we don't check 
+			# what directories exist or not.
+			push(@rpath, map {'/usr/local/emul/redhat'.$_} @rpath);
+		} elsif ($freebsd_bin) {
+			push(@rpath, (qw(/usr/lib /usr/X11R6/lib /usr/lib/compat)));
+			push(@rpath, map {'/usr/local/emul/freebsd'.$_} @rpath);
+		} else {
+			push(@rpath, '/usr/local/lib');
+		}
+		for my $lib (@l) {
+			$t->{need_libs}->{$lib} = [$fullname, @rpath];
+		}
+	}
+	# okay, we are not OpenBSD, we don't have sensible names
+	if ($linux_bin or $freebsd_bin) {
+		if ($fullname =~ m/^.*ld\-linux\.so\.\d+$/) {
+			$t->{has_libs}->{$&} = 1;
+		} elsif ($fullname =~ m/^.*lib[^\/]+\.so\.\d+$/) {
+			$t->{has_libs}->{$&} = 1;
+		} elsif ($fullname =~ m/^(.*lib[^\/]+\.so\.\d+)(\.\d+)\.\d+$/) {
+			$t->{has_libs}->{$&} = 1;
+			$t->{has_libs}->{$1} = 1;
+			$t->{has_libs}->{$1.$2} = 1;
+		}
+	}
+	unlink($where.$fullname);
+}
+
+package main;
+
+sub analyze 
+{
+	my ($plist, $db, @l) = @_;
+
+	my $where = File::Temp::mkdtemp("/tmp/zoinx.XXXXXXXXXX");
+	my $pkgname = $plist->pkgname();
+	$db->{$pkgname} = {
+		pkgname => $pkgname,
+		has_libs => {},
+		need_libs => {},
+		deps => {},
+		walked => 0
+	} unless defined $db->{$pkgname};
+	my $t = $db->{$pkgname};
+	$plist->visit('check_libs', $t, $where, @l);
+	rmtree($where);
+}
+
+sub find_lib
+{
+	my ($lib, $rp, $has) = @_;
+	for my $d (@$rp) {
+		return 1 if defined $has->{"$d/$lib"};
+	}
+	return 0;
+}
+
+my $logfile;
+our ($opt_a, $opt_l);
+getopts('al:');
+print "Scanning packages\n";
+print "-----------------\n";
+if (@ARGV==0) {
+	@ARGV=(<*.tgz>);
+}
+
+if ($opt_l) {
+	open my $logfile, '>', $opt_l;
+}
+
+my $system_libs = {};
+for my $l (glob('{/usr/lib,/usr/X11R6/lib}/lib*.so*')) {
+	if ($l =~ m/\/(lib[^\/]+\.so\.\d+\.\d+)$/) {
+		$system_libs->{$1} = 1;
+	}
+}
+	
+my $db = {};
+sub do_pkg
+{
+	my $pkgname = shift;
+
+	print STDERR "$pkgname:\n";
+	my $true_package = OpenBSD::PackageLocator->find($pkgname);
+	return 0 unless $true_package;
+	my $dir = $true_package->info();
+	# twice read
+	return 0 unless -d $dir;
+	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
+	analyze($plist, $db, $true_package, $system_libs, $logfile);
+	$true_package->close();
+	rmtree($dir);
+	return 1;
+}
+
+
+sub walk_libs
+{
+	my ($entry, $db) = @_;
+	return if $entry->{walked};
+	for my $dep (keys %{$entry->{deps}}) {
+		if (!defined $db->{$dep} && $opt_a) {
+			do_pkg($dep);
+		}
+		print "Can't find $dep\n" unless defined $db->{$dep};
+		walk_libs($db->{$dep}, $db);
+		for my $l (keys %{$db->{$dep}->{has_libs}}) {
+			$entry->{has_libs}->{$l} = 1;
+		}
+		$entry->{walked} = 1;
+	}
+}
+for my $pkgname (@ARGV) {
+	do_pkg($pkgname);
+}
+
+for my $pkgname (sort keys %$db) {
+	my $t = $db->{$pkgname};
+	walk_libs($t, $db);
+	my @l = ();
+	for my $lib (sort keys %{$t->{need_libs}}) {
+		next if defined $t->{has_libs}->{$lib};
+		my $rp = $t->{need_libs}->{$lib};
+		my $name = shift(@$rp);
+		next if find_lib($lib, $rp, $t->{has_libs});
+		push(@l, "$lib ($name)");
+	}
+	if (@l != 0) {
+		print $pkgname, ": ", join(' ', @l), "\n";
+	}
+}
