@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2002/05/16 03:49:26 avsm Exp $
+# $OpenBSD: Makefile,v 1.13 2002/08/17 01:08:05 avsm Exp $
 
 COMMENT=		"fast, compact and portable XSL/XSLT processor"
 
-V=			0.90
+V=			0.95
 DISTNAME=		Sablot-${V}
 PKGNAME=		sablotron-${V}
 CATEGORIES=     	textproc
-NEED_VERSION=		1.460
 
 HOMEPAGE=		http://www.gingerall.com/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
