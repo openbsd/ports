@@ -1,10 +1,11 @@
---- config.old	Tue Aug  8 19:37:13 2000
-+++ config	Tue Aug  8 19:37:06 2000
-@@ -20,6 +20,7 @@
- # you need an ANSI C compiler. gcc is a popular one.
- CC= gcc
- WARN= -ansi -Wall
-+EXTRA_DEFS+=-fpic
+--- config.orig	Tue Nov 21 18:42:42 2000
++++ config	Tue Nov 21 18:45:12 2000
+@@ -93,7 +93,7 @@
+ INCS= -I$(INC) $(EXTRA_INCS)
+ DEFS= $(COMPAT) $(NUMBER) $(OLD_ANSI) $(EXTRA_DEFS)
  
- # on IRIX, cc is a good ANSI compiler.
- #CC= cc
+-CFLAGS= -O2 $(WARN) $(INCS) $(DEFS)
++CFLAGS= -O2 -fpic $(WARN) $(INCS) $(DEFS)
+ 
+ V=4.0
+ 

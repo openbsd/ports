@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2000/08/16 03:15:41 kevlo Exp $
-lib/liblua.so.3.2
-lib/liblualib.so.3.2
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.2 2000/12/19 06:58:46 dbt Exp $
+lib/liblua.so.4.0
+lib/liblualib.so.4.0
 DYNLIBDIR(%B)
