@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/20 10:50:12 jsyn Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/30 01:00:55 jsyn Exp $
 			
 COMMENT=		"intercept, modify, and rewrite egress traffic"
 
 DISTNAME=		fragroute-1.2
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=    		security net
 NEED_VERSION=		1.531
 
