@@ -1,12 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.7 2000/06/16 06:00:15 form Exp $
 bin/rarchie
 bin/rfinger
 bin/rftp
 bin/rtelnet
-bin/runsocks
 bin/rwhois
 include/socks.h
 lib/libsocks5.a
-lib/libsocks5_sh.so
+%%SHARED%%
 lib/socks/README
 lib/socks/multiple_server.example
 lib/socks/server_2_multiple_server.example

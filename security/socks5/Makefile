@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2000/03/31 05:58:41 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2000/06/16 06:00:14 form Exp $
 
 DISTNAME=	socks5-v1.0r10
 PKGNAME=	socks5-1.0.10
 CATEGORIES=	security net
-NEED_VERSION=	1.234
+NEED_VERSION=	1.301
 
 MIRROR_DISTFILE=No
+
+HOMEPAGE=	http://www.socks5.nec.com/socks5_index.html
 
 MAINTAINER=	ports@openbsd.org
 
@@ -22,9 +24,7 @@ PERMIT_DISTFILES_FTP=	commercial
 #		--with-syslog-facility=LOG_AUTH \
 #		--with-passwd
 
-FAKE=	Yes
-
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-libconffile="/etc/libsocks5.conf" \
 		--with-srvconffile="/etc/socks5.conf" \
 		--with-srvpidfile="/var/run/socks5.pid" \
@@ -39,9 +39,9 @@ do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
 		echo ""; \
 		echo "NEC requires that you grab the dist files from their"; \
-		echo "web site at http://www.socks.nec.com.  Please make sure"; \
-		echo "you have ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}"; \
-		echo "and run make again."; \
+		echo "web site at ${HOMEPAGE}."; \
+		echo "Please make sure you have ${DISTNAME}${EXTRACT_SUFX}"; \
+		echo "in ${DISTDIR} and run make again."; \
 		echo ""; \
 		exit 1;\
 	fi
