@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.13 2001/08/30 01:43:35 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2001/08/30 02:10:40 brad Exp $
+# Uses pthreads
 
 COMMENT=	"Internet based broadcasting system"
 

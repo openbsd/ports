@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.53 2001/08/14 02:06:29 brad Exp $
+# $OpenBSD: Makefile,v 1.54 2001/08/30 02:10:40 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
+# Uses pthreads
 
 COMMENT=	"multithreaded SQL database (client)"
 COMMENT-server=	"multithreaded SQL database (server)"
