@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2001/09/15 14:50:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2001/09/19 17:30:44 naddy Exp $
 
 COMMENT=	"GNU version of the traditional tar archiver"
 
-DISTNAME=	tar-1.13.22
+DISTNAME=	tar-1.13.23
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 NEED_VERSION=	1.384
@@ -25,15 +25,17 @@ SEPARATE_BUILD=	flavored
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		DEFAULT_ARCHIVE="/dev/rst0"
+		LDFLAGS="-L${LOCALBASE}/lib ${LDSTATIC}" \
+		DEFAULT_ARCHIVE="/dev/rst0" \
+		MAKEINFO="makeinfo --no-split"
 
 FLAVORS=	static
 FLAVOR?=
 
 .if ${FLAVOR:L:Mstatic}
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -static"
+LDSTATIC=	-static
 .else
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+LDSTATIC=
 .endif
 
 .include <bsd.port.mk>
