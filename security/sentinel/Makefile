@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/11/19 05:11:26 jsyn Exp $
+# $OpenBSD: Makefile,v 1.5 2001/12/01 20:09:47 jsyn Exp $
 
 COMMENT=		"remote promiscous mode detection tool"
 
-DISTNAME=		sentinel
-PKGNAME=		sentinel-1.0
+DISTNAME=		sentinel-1.0
 CATEGORIES=    		security net
-NEED_VERSION=		1.498
+NEED_VERSION=		1.500
 
 HOMEPAGE=		http://www.packetfactory.net/Projects/sentinel/
 
@@ -20,11 +19,14 @@ MASTER_SITES=		http://www.packetfactory.net/Projects/sentinel/
 
 LIB_DEPENDS=		net::net/libnet
 
+WRKDIST=		${WRKDIR}/sentinel
+
 ALL_TARGET=		sentinel
 MAKE_FLAGS=		CC="${CC}" CFLAGS='${CFLAGS} -Wall -I. \
 			 -I${LOCALBASE}/include `libnet-config --defines`'
 
 NO_REGRESS=		Yes
+
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sentinel ${PREFIX}/bin/sentinel
