@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/01/31 18:27:45 todd Exp $
+--- Makefile.in.orig	Thu Aug 29 05:53:59 2002
++++ Makefile.in	Mon Sep 23 11:52:34 2002
+@@ -636,9 +636,7 @@ uninstall-info: uninstall-info-recursive
+ 
+ 
+ install-data-local:
+-	-xmlcatalog --noout --add "system" "http://glade.gnome.org/glade-2.0.dtd" $(xmldir)/glade-2.0.dtd $(XMLCATALOG)
+ uninstall-local:
+-	-xmlcatalog --noout --del $(xmldir)/glade-2.0.dtd $(XMLCATALOG)
+ 
+ #small hack to get distcheck to work
+ clean-local:

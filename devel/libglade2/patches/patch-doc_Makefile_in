@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2003/01/31 18:27:45 todd Exp $
+--- doc/Makefile.in.orig	Thu Aug 29 05:53:59 2002
++++ doc/Makefile.in	Mon Sep 23 11:52:34 2002
+@@ -342,10 +342,6 @@ install-data-local: 
+ 	    echo '-- Installing '$$i ; \
+ 	    $(INSTALL_DATA) $$i $(DESTDIR)$(TARGET_DIR); \
+ 	  done; \
+-	  echo '-- Installing $(srcdir)/html/index.sgml' ; \
+-	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(TARGET_DIR); \
+-	  echo '-- Fixing Crossreferences' ; \
+-	  gtkdoc-fixxref --module=$(DOC_MODULE) --html-dir=$(HTML_DIR) || true; \
+ 	fi)
+ 
+ uninstall-local:

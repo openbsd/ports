@@ -1,0 +1,43 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/01/31 18:27:45 todd Exp $
+--- configure.orig	Thu Aug 29 05:54:02 2002
++++ configure	Wed Dec 11 22:55:11 2002
+@@ -5486,8 +5486,8 @@ else
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
+       case "$host_os" in
+@@ -5496,8 +5496,8 @@ else
+ 	hardcode_libdir_flag_spec='-R$libdir'
+         ;;
+       *)
+-        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++        hardcode_libdir_flag_spec='${wl}-R$libdir'
+         ;;
+       esac
+     fi
+@@ -6013,6 +6013,8 @@ openbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+   need_version=no
++  sys_lib_search_path_spec="/usr/lib"
++  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case "$host_os" in
+     openbsd2.[89] | openbsd2.[89].*)
+@@ -7911,7 +7913,7 @@ echo "${ECHO_T}yes" >&6
+ 
+             echo "$as_me:$LINENO: checking LIBGLADE_CFLAGS" >&5
+ echo $ECHO_N "checking LIBGLADE_CFLAGS... $ECHO_C" >&6
+-            LIBGLADE_CFLAGS=`$PKG_CONFIG --cflags "libxml-2.0 >= 2.4.10 atk >= 1.0.0 gtk+-2.0 >= 2.0.0"`
++            LIBGLADE_CFLAGS=`$PKG_CONFIG --cflags "libxml-2.0 >= 2.4.10 gtk+-2.0 >= 2.0.0 atk >= 1.0.0"`
+             echo "$as_me:$LINENO: result: $LIBGLADE_CFLAGS" >&5
+ echo "${ECHO_T}$LIBGLADE_CFLAGS" >&6
+ 
