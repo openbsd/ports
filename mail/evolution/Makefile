@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/06/03 18:11:17 nino Exp $
+# $OpenBSD: Makefile,v 1.3 2002/06/21 10:18:07 nino Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 
-DISTNAME=		evolution-1.0.5
+DISTNAME=		evolution-1.0.7
 CATEGORIES=    		mail x11
 NEED_VERSION=		1.531
 

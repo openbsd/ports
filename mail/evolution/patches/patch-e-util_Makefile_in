@@ -1,12 +1,13 @@
-$OpenBSD: patch-e-util_Makefile_in,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
---- e-util/Makefile.in.orig	Mon May  6 13:29:07 2002
-+++ e-util/Makefile.in	Thu May 16 15:50:22 2002
-@@ -202,7 +202,7 @@ imagesdir = $(datadir)/images/evolution
+$OpenBSD: patch-e-util_Makefile_in,v 1.2 2002/06/21 10:18:08 nino Exp $
+--- e-util/Makefile.in.orig	Fri Jun  7 13:53:24 2002
++++ e-util/Makefile.in	Sun Jun 16 10:12:36 2002
+@@ -203,7 +203,8 @@ imagesdir = $(datadir)/images/evolution
  INCLUDES =  	$(DB3_CFLAGS)								-I$(top_srcdir)								$(GNOME_INCLUDEDIR)							$(EXTRA_GNOME_CFLAGS)							$(BONOBO_GNOME_CFLAGS)							$(BONOBO_CONF_CFLAGS)							$(PISOCK_CFLAGS)							-DEVOLUTION_IMAGES=\""$(imagesdir)"\"					-DEVOLUTION_CATEGORY_ICONS=\""$(imagesdir)/categories"\"		-DG_LOG_DOMAIN=\"e-utils\"
  
  
 -noinst_LTLIBRARIES = libeutil.la libeutil-static.la 	libeconduit.la libeconduit-static.la 	libedb3util.la
-+noinst_LTLIBRARIES = libeutil.la libeutil-static.la libedb3util.la
++@ENABLE_PILOT_CONDUITS_TRUE@noinst_LTLIBRARIES = libeutil.la libeutil-static.la libeconduit.la libeconduit-static.la libedb3util.la
++@ENABLE_PILOT_CONDUITS_FALSE@noinst_LTLIBRARIES = libeutil.la libeutil-static.la libedb3util.la
  
  
  libeutil_la_SOURCES =  	e-bonobo-factory-util.c				e-bonobo-factory-util.h				e-categories-master-list-wombat.c		e-categories-master-list-wombat.h		e-categories-config.c				e-categories-config.h				e-corba-utils.c					e-corba-utils.h					e-dialog-utils.c				e-dialog-utils.h				e-dialog-widgets.c				e-dialog-widgets.h				e-gtk-utils.c					e-gtk-utils.h					e-gui-utils.c					e-gui-utils.h					e-host-utils.c					e-host-utils.h					e-html-utils.c					e-html-utils.h					e-iterator.c					e-iterator.h					e-list-iterator.c				e-list-iterator.h				e-list.c					e-list.h					e-memory.c					e-memory.h					e-mktemp.c					e-mktemp.h					e-msgport.c					e-msgport.h					e-passwords.c					e-passwords.h					e-path.c					e-path.h					e-request.c					e-request.h					e-sexp.c					e-sexp.h					e-time-utils.c					e-time-utils.h					e-url.c						e-url.h						md5-utils.c					md5-utils.h

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/31 11:49:41 nino Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/06/21 10:18:08 nino Exp $
 bin/csv2vcard
 bin/evolution
 bin/evolution-addressbook
@@ -190,10 +190,10 @@ lib/evolution/camel-providers/1.0/libcamelsendmail.urls
 lib/evolution/camel-providers/1.0/libcamelsmtp.a
 lib/evolution/camel-providers/1.0/libcamelsmtp.la
 lib/evolution/camel-providers/1.0/libcamelsmtp.urls
-lib/evolution/evolution-mail-importers/1.0.5/libmbox.a
-lib/evolution/evolution-mail-importers/1.0.5/libmbox.la
-lib/evolution/evolution-mail-importers/1.0.5/liboutlook.a
-lib/evolution/evolution-mail-importers/1.0.5/liboutlook.la
+lib/evolution/evolution-mail-importers/1.0.7/libmbox.a
+lib/evolution/evolution-mail-importers/1.0.7/libmbox.la
+lib/evolution/evolution-mail-importers/1.0.7/liboutlook.a
+lib/evolution/evolution-mail-importers/1.0.7/liboutlook.la
 lib/libcal-client.a
 lib/libcal-client.la
 lib/libcal-util.a
@@ -1115,6 +1115,8 @@ share/locale/el/LC_MESSAGES/evolution.mo
 share/locale/en_AU/LC_MESSAGES/evolution.mo
 share/locale/en_GB/LC_MESSAGES/evolution.mo
 share/locale/es/LC_MESSAGES/evolution.mo
+share/locale/et/LC_MESSAGES/evolution.mo
+share/locale/eu/LC_MESSAGES/evolution.mo
 share/locale/fi/LC_MESSAGES/evolution.mo
 share/locale/fr/LC_MESSAGES/evolution.mo
 share/locale/ga/LC_MESSAGES/evolution.mo
@@ -1138,6 +1140,7 @@ share/locale/sl/LC_MESSAGES/evolution.mo
 share/locale/sv/LC_MESSAGES/evolution.mo
 share/locale/tr/LC_MESSAGES/evolution.mo
 share/locale/uk/LC_MESSAGES/evolution.mo
+share/locale/vi/LC_MESSAGES/evolution.mo
 share/locale/zh_CN/LC_MESSAGES/evolution.mo
 share/locale/zh_TW/LC_MESSAGES/evolution.mo
 share/mime-info/evolution.keys
@@ -1171,6 +1174,8 @@ share/pixmaps/evolution.png
 @comment @dirrm share/locale/zh_TW
 @comment @dirrm share/locale/zh_CN/LC_MESSAGES
 @comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/vi/LC_MESSAGES
+@comment @dirrm share/locale/vi
 @comment @dirrm share/locale/uk/LC_MESSAGES
 @comment @dirrm share/locale/uk
 @comment @dirrm share/locale/tr/LC_MESSAGES
@@ -1217,6 +1222,10 @@ share/pixmaps/evolution.png
 @comment @dirrm share/locale/fr
 @comment @dirrm share/locale/fi/LC_MESSAGES
 @comment @dirrm share/locale/fi
+@comment @dirrm share/locale/eu/LC_MESSAGES
+@comment @dirrm share/locale/eu
+@comment @dirrm share/locale/et/LC_MESSAGES
+@comment @dirrm share/locale/et
 @comment @dirrm share/locale/es/LC_MESSAGES
 @comment @dirrm share/locale/es
 @comment @dirrm share/locale/en_GB/LC_MESSAGES
@@ -1300,7 +1309,7 @@ share/pixmaps/evolution.png
 @dirrm share/evolution/default_user/local
 @dirrm share/evolution/default_user
 @dirrm share/evolution
-@dirrm lib/evolution/evolution-mail-importers/1.0.5
+@dirrm lib/evolution/evolution-mail-importers/1.0.7
 @dirrm lib/evolution/evolution-mail-importers
 @dirrm lib/evolution/camel-providers/1.0
 @dirrm lib/evolution/camel-providers
