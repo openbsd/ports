@@ -269,4 +269,6 @@ lib/gcc-lib/ARCH/VERSION/jvgenmain
 @dirrm lib/gcc-lib/ARCH/VERSION
 @dirrm lib/gcc-lib/ARCH
 @dirrm lib/gcc-lib
+@dirrm ARCH/include
+@dirrm ARCH
 @exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib

@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.20 1999/01/18 10:23:25 espie Exp $
+# $OpenBSD: Makefile,v 1.21 1999/01/24 21:36:11 espie Exp $
 #
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -45,10 +45,10 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 .endif
 
 # if you want/need to use the mammoth archive
-ONE_ARCHIVE=yes
+#ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1999-01-12
+LATEST_DATE=1999-01-24
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -57,7 +57,7 @@ LATEST_DATE=1999-01-12
 
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
-NEXT_DATE=1999-01-17
+#NEXT_DATE=1999-01-17
 #PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;

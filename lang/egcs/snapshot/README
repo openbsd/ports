@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 1999/01/13 13:58:46 espie Exp $
+$OpenBSD: README,v 1.2 1999/01/24 21:36:12 espie Exp $
 
 Warning: highly experimental port.
 
@@ -32,8 +32,9 @@ egcs evolves and add new specs, it's easier to know what to pick up, and
 what to leave alone.
 
 As another example, netbsd recently added '.globl' to ASM_WEAKEN_LABEL,
-and I don't know why yet... I am trying to figure out why, and whether
-we need it to.
+and it took me a while to figure it out. Apparently, this is something that
+is required for arm32 to work. No reason it should contaminate other
+architectures as it did.
 
 As a final example, it turns out that a large part of openbsd configuration
 information in gcc 2.8.1 was just random cut&paste which didn't make much
@@ -60,10 +61,12 @@ On the other hand, there are several known situations which confuse our
 specific flavor of gas. For instance, recent snapshots build fine on the
 older machines with default CFLAGS (-O2 -g), but crash when -g is removed.
 
+As of 19990117, I personally built egcs for m68k, i386, alpha, and sparc.
+So all those archs *do* work. If it doesn't work for you, you've been doing
+something wrong.
+
 Once you get through all those caveats, and manage to build egcs, one
 nice point is that you get fairly good C, C++, f77, objective-C, and
 java compilers.
-
-
 --
 	Marc Espie
