@@ -1,0 +1,44 @@
+*** src/fileio.c.orig	Sat May 17 13:30:00 1997
+--- src/fileio.c	Wed Oct 15 13:42:24 1997
+***************
+*** 108,113 ****
+--- 108,116 ----
+  #ifdef BSD
+  #  include <sys/wait.h>
+  #endif
++ #if defined(__OpenBSD__)
++ #  include <time.h>
++ #endif
+  #include "me.h"
+  
+  extern int errno;
+***************
+*** 537,543 ****
+--- 540,550 ----
+      dprint(5,(debugfile,
+  	      "copy_message: No 'From ' line seen...\n"));
+      if (!remove_header && !remove_envelope) {
++ #if defined(__OpenBSD__)
++       time_t thetime = time((time_t *) 0);
++ #else
+        long thetime = time((long *) 0);
++ #endif
+        dprint(5,(debugfile,
+  		"copy_message: Create it!\n"));
+        if (fprintf(dest_file,
+*** src/mailmsg2.c.orig	Sat May 17 13:30:00 1997
+--- src/mailmsg2.c	Wed Oct 15 10:12:23 1997
+***************
+*** 1607,1613 ****
+--- 1607,1617 ----
+  #ifdef MMDF
+  	  fprintf(filedesc, MSG_SEPARATOR);
+  #endif /* MMDF */
++ #if defined(__OpenBSD__)
++ 	  thetime = time((time_t *) 0);
++ #else
+  	  thetime = time((long *) 0);
++ #endif
+  	  fprintf(filedesc,"From %s %s", username, ctime(&thetime));
+  #ifdef MMDF
+  	} else if (strcmp(submitmail,mailer) == 0) {

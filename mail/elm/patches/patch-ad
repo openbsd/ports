@@ -1,0 +1,53 @@
+*** utils/newmail.c.orig	Sat May 17 13:30:00 1997
+--- utils/newmail.c	Wed Oct 15 14:19:28 1997
+***************
+*** 242,248 ****
+  
+  extern int errno;
+  
+! #if defined(BSD) && !defined(__convex__) && !defined(__FreeBSD__) && !defined(__NetBSD__)
+          time_t utime_buffer[2];         /* utime command */
+  #else
+          struct utimbuf utime_buffer;    /* utime command */
+--- 242,248 ----
+  
+  extern int errno;
+  
+! #if defined(BSD) && !defined(__convex__) && !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+          time_t utime_buffer[2];         /* utime command */
+  #else
+          struct utimbuf utime_buffer;    /* utime command */
+***************
+*** 470,476 ****
+  	      /* try to set the file access times back, ignore
+  		 failures */
+  
+! #if defined(BSD) && !defined(__convex__) && !defined(__FreeBSD__) && !defined(__NetBSD__)
+  	      utime(cur_folder->foldername, utime_buffer);
+  #else
+                utime(cur_folder->foldername, &utime_buffer);
+--- 470,476 ----
+  	      /* try to set the file access times back, ignore
+  		 failures */
+  
+! #if defined(BSD) && !defined(__convex__) && !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+  	      utime(cur_folder->foldername, utime_buffer);
+  #else
+                utime(cur_folder->foldername, &utime_buffer);
+***************
+*** 863,869 ****
+  	
+  	/* retain the access times for later use */
+  
+! #if defined(BSD) && !defined(__convex__) && !defined(__FreeBSD__) && !defined(__NetBSD__)
+          utime_buffer[0]     = buffer.st_atime;
+          utime_buffer[1]     = buffer.st_mtime;
+  #else
+--- 863,869 ----
+  	
+  	/* retain the access times for later use */
+  
+! #if defined(BSD) && !defined(__convex__) && !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+          utime_buffer[0]     = buffer.st_atime;
+          utime_buffer[1]     = buffer.st_mtime;
+  #else

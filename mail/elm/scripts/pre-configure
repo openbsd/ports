@@ -1,0 +1,14 @@
+#!/bin/sh -
+#
+#	pre-configure script for Elm port to FreeBSD 2.0
+#	$Id: pre-configure,v 1.1.1.1 1997/11/18 04:09:48 gene Exp $
+
+PortsDir=$PORTSDIR
+  CurDir=$CURDIR
+  WrkSrc=$WRKSRC
+
+if [ ${OPSYS} == "OpenBSD" ]; then
+	/bin/sh ${FILESDIR}/config.sh.OpenBSD
+else
+	/bin/sh ${FILESDIR}/config.sh.FreeBSD
+fi
