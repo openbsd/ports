@@ -1,4 +1,9 @@
-lib/ethereal/plugins/0.8.19/gryphon.la
-lib/ethereal/plugins/0.8.19/gryphon.a
-lib/ethereal/plugins/0.8.19/mgcp.la
-lib/ethereal/plugins/0.8.19/mgcp.a
+@comment $OpenBSD: PFRAG.no-shared,v 1.12 2001/10/24 15:07:10 jakob Exp $
+lib/ethereal/plugins/${VERSION}/coseventcomm.a
+lib/ethereal/plugins/${VERSION}/coseventcomm.la
+lib/ethereal/plugins/${VERSION}/cosnaming.a
+lib/ethereal/plugins/${VERSION}/cosnaming.la
+lib/ethereal/plugins/${VERSION}/gryphon.a
+lib/ethereal/plugins/${VERSION}/gryphon.la
+lib/ethereal/plugins/${VERSION}/mgcp.a
+lib/ethereal/plugins/${VERSION}/mgcp.la

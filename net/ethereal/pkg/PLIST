@@ -1,16 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.19 2001/10/07 19:18:16 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.20 2001/10/24 15:07:10 jakob Exp $
 bin/editcap
+bin/idl2eth
 bin/mergecap
 bin/tethereal
 bin/text2pcap
 !%%no_x11%%
 %%SHARED%%
 man/man1/editcap.1
+man/man1/idl2eth.1
 man/man1/mergecap.1
 man/man1/tethereal.1
 man/man1/text2pcap.1
 share/ethereal/manuf
 @dirrm share/ethereal
-@dirrm lib/ethereal/plugins/0.8.19
+@dirrm lib/ethereal/plugins/${VERSION}
 @dirrm lib/ethereal/plugins
 @dirrm lib/ethereal

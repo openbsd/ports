@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.53 2001/10/24 12:29:50 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2001/10/24 15:07:10 jakob Exp $
 
 COMMENT=	network protocol analyzer
 
-VERSION=	0.8.19
+VERSION=	0.8.20
 DISTNAME=	ethereal-${VERSION}
 PKGNAME=	ethereal-${VERSION}
 CATEGORIES=	net x11
@@ -17,7 +17,6 @@ MASTER_SITES=	http://www.ethereal.com/distribution/ \
 
 HOMEPAGE=	http://www.ethereal.com/
 
-
 BUILD_DEPENDS=	zsh:zsh-*:shells/zsh/stable
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
@@ -27,11 +26,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WRKDIST=		${WRKDIR}/${PKGNAME}
+
 SYSCONFDIR=		${PREFIX}/share/ethereal
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV+=		CONFIG_SHELL='$(WRKBUILD)/sh'
 USE_GMAKE=		Yes
+SUBST_VARS+=		VERSION
 
-WRKDIST=		${WRKDIR}/${PKGNAME}
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+		patch-*
 
 FLAVORS=	no_x11 snmp
 FLAVOR?=
@@ -53,10 +57,6 @@ LIB_DEPENDS+=		snmp::net/ucd-snmp
 .else
 CONFIGURE_ARGS+=	--disable-snmp
 .endif
-CONFIGURE_ENV+=		CONFIG_SHELL='$(WRKBUILD)/sh'
-
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-		patch-*
 
 pre-configure:
 	# Let zsh act as an sh replacement
