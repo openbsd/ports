@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.7 2000/08/21 00:54:22 brad Exp $
 bin/puudecode
 bin/puuencode
 libdata/perl5/site_perl/Convert/UU.pm
