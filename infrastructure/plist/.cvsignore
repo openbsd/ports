@@ -1,0 +1,4 @@
+*.depends
+*.pkgs
+*.dirs
+*.trimmed
