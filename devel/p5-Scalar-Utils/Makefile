@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/07/11 09:25:03 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/30 00:07:40 pvalchev Exp $
+
+IGNORE=		"comes with ${OPSYS} as of release 3.3"
 
 COMMENT=	"perl module replacement for the builtin Scalar"
 

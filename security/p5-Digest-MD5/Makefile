@@ -1,4 +1,6 @@
-#   $OpenBSD: Makefile,v 1.8 2002/06/09 05:24:53 wilfried Exp $
+#   $OpenBSD: Makefile,v 1.9 2002/10/30 00:03:38 pvalchev Exp $
+
+IGNORE=		"comes with ${OPSYS} as of release 3.3"
 
 COMMENT=	"module to calculate digests"
 

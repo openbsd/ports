@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/16 12:37:39 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/30 00:03:38 pvalchev Exp $
+
+IGNORE=		"comes with ${OPSYS} as of release 3.3"
 
 COMMENT=	"perl module to simplify package attribute handling"
 

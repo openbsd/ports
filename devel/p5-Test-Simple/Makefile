@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2002/08/31 15:09:23 shell Exp $
+# $OpenBSD: Makefile,v 1.22 2002/10/30 00:03:38 pvalchev Exp $
+
+IGNORE=		"comes with ${OPSYS} as of release 3.3"
 
 COMMENT=	"basic utilities for writing tests in perl"
 
