@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2003/11/03 20:24:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.116 2004/04/18 02:05:19 jolan Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -47,6 +47,7 @@
 #    SUBDIR += hobbes-icons-xpm
 #    SUBDIR += hpscan
      SUBDIR += imlib
+     SUBDIR += imlib2
      SUBDIR += indexpage
      SUBDIR += iview
      SUBDIR += jbigkit
@@ -55,6 +56,7 @@
      SUBDIR += jpeg2ps
      SUBDIR += lcms
      SUBDIR += libart
+     SUBDIR += libcaca
      SUBDIR += libdivxdecore
      SUBDIR += libdvbpsi
      SUBDIR += libexif
