@@ -1,0 +1,20 @@
+--- sys/sys.h.orig	Wed Jul 29 02:05:15 1998
++++ sys/sys.h	Wed Jul 29 02:04:37 1998
+@@ -30,7 +30,7 @@
+  || defined(MACH) \
+  || defined(NeXT) \
+  || defined(bsdi) \
+- || defined(__FreeBSD__)
++ || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #define USE_SGTTY
+ #define HAS_SELECT
+ #endif
+@@ -69,7 +69,7 @@
+ #define READYCC(fp)	(fp->_egptr - fp->_gptr)
+ #endif
+ #else
+-#if defined(bsdi) || defined(__FreeBSD__)
++#if defined(bsdi) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #define READYCC(fp)	(fp->_r)
+ #else
+ #define READYCC(fp)	(fp->_cnt)

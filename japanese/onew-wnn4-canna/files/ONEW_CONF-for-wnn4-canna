@@ -1,0 +1,9 @@
+WNNINC		= -I%PREFIX%/include/wnn
+WNNLIB		= -L%PREFIX%/lib -ljd
+WNN_RKPATH      = '"./rk:$$ONEW_WNN_ROMKAND:$$ONEW_ROMKAND:$$HOME/.rk:%PREFIX%/lib/wnn/ja_JP/rk:/tmp/onew_rktabs/wnn"'
+CANNAINC	= -I%PREFIX%/include
+CANNAOBJ	= Canna.o CannaRk.o
+CANNALIB	= -L%PREFIX%/lib -lcanna
+CANNA_RKPATH	= '".:$$HOME:%PREFIX%/lib/canna/dic:/tmp/onew_rktabs/canna"'
+RKKLIBS		= $(CANNALIB) $(WNNLIB)
+RKKOBJS		= $(CANNAOBJ) $(WNNOBJ)
