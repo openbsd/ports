@@ -17,9 +17,9 @@ packages/check-dependencies
 	Basically, verifies that the tsort in bsd.port.mk did their job.
 
 build/find-build-order
-	used such as cat db/essentials | build/find-build-order
+	used such as cat plist/i386 | build/find-build-order
 	outputs a list of stuff that actually needs to be built to obtain those
-	packges, in a suitable order for removing backward dependencies.
+	packages, in a suitable order for removing backward dependencies.
 
 	Optional arg `build' or `run' to take only build or run dependencies
 	into account.
@@ -28,7 +28,7 @@ build/find-build-order
 	rearrange the list it gets as input.
 
 build/out-of-date
-	compare installed registered  packages with INDEX, try to find out 
+	compare installed registered packages with INDEX, try to find out 
 	of date ports.
 
 install/make-plist

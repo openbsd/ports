@@ -213,7 +213,7 @@ build packages for all ports under /usr/ports/audio.
 A more useful command is the
 INFRA/package/check-plist script.
 You normally prepare a list of the ports you want to build, in the same
-format as  INFRA/db/essentials, and pass it to that script.
+format as INFRA/plist/i386, and pass it to that script.
 This yields a sorted list of the required ports.
 
 You can filter ports that require interaction out with
@@ -290,4 +290,4 @@ ports@openbsd.org.  Why create a brand new shiny port to discover that
 someone was already working on it, and they committed their new version
 ten minutes before you announced yours ?
 
-$OpenBSD: README,v 1.15 2003/06/15 21:09:31 avsm Exp $
+$OpenBSD: README,v 1.16 2003/09/23 01:40:26 pvalchev Exp $
