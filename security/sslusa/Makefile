@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2000/04/19 17:16:17 marc Exp $
+# $OpenBSD: Makefile,v 1.6 2000/06/01 04:20:00 marc Exp $
 
 DISTNAME=		sslUSA-2.7b
 PKGNAME=		ssl-2.7-USA
 CATEGORIES=     	security
 
-MAINTAINER=		ports@openbsd.org
+MAINTAINER=		marc@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Only valid in USA
 PERMIT_PACKAGE_FTP=	Yes
@@ -14,9 +14,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ftp.snafu.org/pub/
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 
-MASTER_SITES0=		ftp://ftp.zedz.net/pub/crypto/crypto/LIBS/rsa/ \
-		http://the.wiretapped.net/security/cryptography/libs/rsa/ \
-		ftp://utopia.hacktic.nl/pub/replay/pub/crypto/LIBS/rsa/
+MASTER_SITES0=		ftp://ftp.zedz.net/pub/crypto/libraries/rsa/ \
+		http://the.wiretapped.net/security/cryptography/libs/rsa/
 DISTFILES+=		rsaref20.1996.tar.Z:0
 
 WRKDIST=		${WRKDIR}/sslUSA
