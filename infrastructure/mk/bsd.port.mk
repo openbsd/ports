@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.312 2000/07/03 13:01:47 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.313 2000/07/07 15:49:32 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1832,9 +1832,7 @@ fetch-all:
 
 .for _F in ${ALLFILES:S@^@${FULLDISTDIR}/@}
 ${_F}:
-# Bug-fix for make/ftp interaction in 2.6
-	@if [ -e ${_F} ]; then touch ${_F}; exit 0; fi; \
-	mkdir -p ${_F:H}; \
+	@mkdir -p ${_F:H}; \
 	cd ${_F:H}; \
 	select=${_EVERYTHING:M*${_F:S@^${FULLDISTDIR}/@@}\:[0-9]}; \
 	f=${_F:S@^${FULLDISTDIR}/@@}; \
