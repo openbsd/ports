@@ -1,50 +1,49 @@
-$OpenBSD: patch-ltmain_sh,v 1.2 2001/05/25 17:02:02 lebel Exp $
+$OpenBSD: patch-ltmain_sh,v 1.3 2001/08/12 02:19:36 lebel Exp $
 
---- ltmain.sh.orig	Thu May 24 14:20:27 2001
-+++ ltmain.sh	Thu May 24 14:23:56 2001
-@@ -1079,7 +1079,18 @@ compiler."
- 	    # These systems don't actually have c library (as such)
- 	    continue
+--- ltmain.sh.orig	Sat Aug 11 21:24:16 2001
++++ ltmain.sh	Sat Aug 11 21:27:36 2001
+@@ -1031,12 +1031,28 @@ compiler."
+ 	    # These systems don't actually have a C library (as such)
+ 	    test "X$arg" = "X-lc" && continue
  	    ;;
 +          *-*-openbsd*)
 +            # Do not include libc due to us having libc/libc_r.
-+            continue
-+            ;;
- 	  esac
++	    continue
++	    ;;
++	  esac
 +        elif test "$arg" = "-lc_r"; then
 +          case "$host" in
 +          *-*-openbsd*)
 +            # Do not include libc_r directly, use -pthread flag.
 +            continue
 +            ;;
-+          esac
- 	elif test "$arg" = "-lm"; then
- 	  case "$host" in
- 	  *-*-cygwin* | *-*-beos*)
-@@ -1091,6 +1102,10 @@ compiler."
+ 	  esac
+ 	fi
  	deplibs="$deplibs $arg"
+ 	continue
  	;;
  
 +      -?thread)
 +        deplibs="$deplibs $arg"
++	continue
 +        ;;
 +
        -module)
  	module=yes
  	continue
-@@ -1799,6 +1814,9 @@ compiler."
- 	  # rhapsody is a little odd...
- 	  deplibs="$deplibs -framework System"
- 	  ;;
-+       *-*-openbsd*)
-+         # Do not include libc due to us having libc/libc_r.
-+         ;;
- 	*)
- 	  # Add libc to deplibs on all other systems.
- 	  deplibs="$deplibs -lc"
-@@ -3571,40 +3589,6 @@ libdir='$install_libdir'\
+@@ -2405,6 +2421,9 @@ compiler."
+ 	    # Rhapsody C library is in the System framework
+ 	    deplibs="$deplibs -framework System"
+ 	    ;;
++          *-*-openbsd*)
++            # Do not include libc due to us having libc/libc_r.
++            ;;
+ 	  *-*-netbsd*)
+ 	    # Don't link with libc until the a.out ld.so is fixed.
+ 	    ;;
+@@ -4412,40 +4431,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
-     test "$show" = : && exit 0
+     test "$show" = ":" && exit 0
  
 -    echo "----------------------------------------------------------------------"
 -    echo "Libraries have been installed in:"
@@ -54,7 +53,7 @@ $OpenBSD: patch-ltmain_sh,v 1.2 2001/05/25 17:02:02 lebel Exp $
 -    echo
 -    echo "If you ever happen to want to link against installed libraries"
 -    echo "in a given directory, LIBDIR, you must either use libtool, and"
--    echo "specify the full pathname of the library, or use \`-LLIBDIR'"
+-    echo "specify the full pathname of the library, or use the \`-LLIBDIR'"
 -    echo "flag during linking and do at least one of the following:"
 -    if test -n "$shlibpath_var"; then
 -      echo "   - add LIBDIR to the \`$shlibpath_var' environment variable"

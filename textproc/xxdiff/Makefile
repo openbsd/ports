@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/06/20 19:30:59 lebel Exp $
+#$OpenBSD: Makefile,v 1.8 2001/08/12 02:19:36 lebel Exp $
 
 COMMENT=	"graphical file comparator and merge tool"
 
-DISTNAME=	xxdiff-1.12
+DISTNAME=	xxdiff-1.13
 CATEGORIES=	textproc x11
-NEED_VERSION=	1.414
+NEED_VERSION=	1.434
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= xxdiff
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-LIB_DEPENDS=	qt.2::x11/qt2
+LIB_DEPENDS=	qt.2.::x11/qt2
 BUILD_DEPENDS=	bison::devel/bison \
 		uic::x11/qt2-designer
 
@@ -38,5 +38,3 @@ post-patch:
 	@cd ${WRKSRC} && perl automoc -v
 
 .include <bsd.port.mk>
-
-
