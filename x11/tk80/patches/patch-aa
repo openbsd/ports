@@ -1,13 +1,6 @@
---- configure.orig	Fri Mar 19 15:45:39 1999
-+++ configure	Fri Mar 19 15:50:03 1999
-@@ -874,14 +874,14 @@
-   withval="$with_tcl"
-   TCL_BIN_DIR=$withval
- else
--  TCL_BIN_DIR=`cd ../../tcl8.0$TK_PATCH_LEVEL/unix; pwd`
-+  TCL_BIN_DIR=${prefix}/lib/tcl8.0
- fi
- 
+--- configure.orig	Tue Mar  9 01:53:50 1999
++++ configure	Sun Jan  9 01:32:57 2000
+@@ -880,8 +880,8 @@
  if test ! -d $TCL_BIN_DIR; then
      { echo "configure: error: Tcl directory $TCL_BIN_DIR doesn't exist" 1>&2; exit 1; }
  fi

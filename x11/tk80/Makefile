@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/01/07 18:17:44 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/01/09 07:16:49 brad Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 
 DISTNAME=	tk8.0.5
@@ -16,7 +16,7 @@ LIB_DEPENDS=	tcl80.1.5:${PORTSDIR}/lang/tcl80
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static
+CONFIGURE_ARGS+= --enable-static --with-tcl="${PREFIX}/lib/tcl8.0"
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} 
 
 WRKSRC=	${WRKDIR}/${DISTNAME}/unix
