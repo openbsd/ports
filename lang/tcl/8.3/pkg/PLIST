@@ -97,8 +97,8 @@ lib/tcl8.3/encoding/symbol.enc
 lib/tcl8.3/history.tcl
 lib/tcl8.3/http1.0/http.tcl
 lib/tcl8.3/http1.0/pkgIndex.tcl
-lib/tcl8.3/http2.1/http.tcl
-lib/tcl8.3/http2.1/pkgIndex.tcl
+lib/tcl8.3/http2.3/http.tcl
+lib/tcl8.3/http2.3/pkgIndex.tcl
 lib/tcl8.3/init.tcl
 lib/tcl8.3/ldAix
 lib/tcl8.3/ldAout.tcl
@@ -647,7 +647,7 @@ lib/tcl8.3/man/mann/while.n
 @dirrm include/tcl8.3
 @dirrm lib/tcl8.3/encoding
 @dirrm lib/tcl8.3/http1.0
-@dirrm lib/tcl8.3/http2.1
+@dirrm lib/tcl8.3/http2.3
 @dirrm lib/tcl8.3/msgcat1.0
 @dirrm lib/tcl8.3/opt0.4
 @dirrm lib/tcl8.3/tcltest1.0
