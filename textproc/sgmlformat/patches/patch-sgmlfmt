@@ -1,0 +1,11 @@
+--- sgmlfmt/sgmlfmt.pl.orig	Tue Sep 15 23:05:47 1998
++++ sgmlfmt/sgmlfmt.pl	Wed Sep 20 22:14:40 2000
+@@ -44,7 +44,7 @@
+ # The SGML parser, and translation engine.
+ #
+ 
+-$sgmls = "nsgmls";
++$sgmls = "onsgmls";
+ $instant = "instant";
+ 
+ #

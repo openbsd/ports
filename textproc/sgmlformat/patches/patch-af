@@ -1,6 +1,6 @@
---- sgmlfmt/Makefile.orig	Tue Jul 22 15:40:33 1997
-+++ sgmlfmt/Makefile	Sat Jun 10 02:31:14 2000
-@@ -2,7 +2,7 @@
+--- sgmlfmt/Makefile.orig	Tue Sep 15 23:05:39 1998
++++ sgmlfmt/Makefile	Wed Sep 20 22:34:15 2000
+@@ -2,12 +2,12 @@
  
  FILES=		sgmlfmt
  CLEANFILES=	sgmlfmt
@@ -9,7 +9,13 @@
  
  all: sgmlfmt
  
-@@ -11,6 +11,6 @@ sgmlfmt: sgmlfmt.pl
+ sgmlfmt: sgmlfmt.pl
+-.if exists(/usr/bin/perl5)
++.if exists(/usr/bin/perl)
+ 	sed -e 's|##PERL##|/usr/bin/perl|' -e 's|##PREFIX##|${PREFIX}|' < sgmlfmt.pl > sgmlfmt
+ .else
+ 	sed -e 's|##PERL##|${PREFIX}/bin/perl|' -e 's|##PREFIX##|${PREFIX}|' < sgmlfmt.pl > sgmlfmt
+@@ -15,6 +15,6 @@
  
  afterinstall:
  	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} ${FILES} \
