@@ -1,0 +1,6 @@
+bin/ac3dec
+bin/extract_ac3
+bin/verify_ac3
+share/doc/ac3dec/README
+share/doc/ac3dec/TODO
+@dirrm share/doc/ac3dec
