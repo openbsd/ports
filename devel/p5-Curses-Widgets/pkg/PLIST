@@ -1,8 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/01/08 20:54:55 avsm Exp $
-libdata/perl5/site_perl/Curses/Widgets.pm
-libdata/perl5/site_perl/Curses/Widgets.pod
-man/man3/Curses::Widgets.3p
-share/examples/p5-Curses-Widgets/demo.pl
-@dirrm share/examples/p5-Curses-Widgets
+@comment $OpenBSD: PLIST,v 1.3 2002/01/06 10:24:05 avsm Exp $
 @option no-default-conflict
 @pkgcfl p5-Curses-Widgets-[0-9\.]*
+libdata/perl5/site_perl/Curses/Widgets.pm
+libdata/perl5/site_perl/Curses/Widgets/ButtonSet.pm
+libdata/perl5/site_perl/Curses/Widgets/Calendar.pm
+libdata/perl5/site_perl/Curses/Widgets/ComboBox.pm
+libdata/perl5/site_perl/Curses/Widgets/ListBox.pm
+libdata/perl5/site_perl/Curses/Widgets/ProgressBar.pm
+libdata/perl5/site_perl/Curses/Widgets/TextField.pm
+libdata/perl5/site_perl/Curses/Widgets/TextMemo.pm
+libdata/perl5/site_perl/Curses/Widgets/Tutorial.pod
+libdata/perl5/site_perl/Curses/Widgets/Tutorial/Creation.pod
+libdata/perl5/site_perl/Curses/testw.pl
+man/man3/Curses::Widgets.3p
+man/man3/Curses::Widgets::ButtonSet.3p
+man/man3/Curses::Widgets::Calendar.3p
+man/man3/Curses::Widgets::ComboBox.3p
+man/man3/Curses::Widgets::ListBox.3p
+man/man3/Curses::Widgets::ProgressBar.3p
+man/man3/Curses::Widgets::TextField.3p
+man/man3/Curses::Widgets::TextMemo.3p
+man/man3/Curses::Widgets::Tutorial.3p
+man/man3/Curses::Widgets::Tutorial::Creation.3p
+share/examples/p5-Curses-Widgets/demo.pl
+@dirrm share/examples/p5-Curses-Widgets
+@dirrm libdata/perl5/site_perl/Curses/Widgets/Tutorial
+@dirrm libdata/perl5/site_perl/Curses/Widgets
