@@ -1,0 +1,20 @@
+$OpenBSD: patch-xlife_utils_c,v 1.1 2000/12/16 15:39:33 espie Exp $
+--- xlife/utils.c.orig	Wed Jan 28 23:07:52 1998
++++ xlife/utils.c	Thu Dec 14 03:53:44 2000
+@@ -22,6 +22,7 @@
+ 
+ #include <pwd.h>
+ #include <time.h>
++#include <stdio.h>
+ #include "defs.h"
+ 
+ void fatal(const char *s)
+@@ -48,7 +49,7 @@ void stamp(char *leader, FILE *ofp)
+     }
+ }
+ 
+-void heapsort(coord_t *data, int n, int size)
++void lheapsort(coord_t *data, int n, int size)
+ {
+     /**  !! There must be size(coord_t) free for usage in front of data !!  **/
+    register unsigned long  h, i, j, k;

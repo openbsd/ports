@@ -1,0 +1,13 @@
+$OpenBSD: patch-xlife_Imakefile,v 1.1 2000/12/16 15:39:33 espie Exp $
+--- xlife/Imakefile.orig	Thu Dec 14 04:05:21 2000
++++ xlife/Imakefile	Thu Dec 14 04:05:50 2000
+@@ -69,6 +69,9 @@ ComplexProgramTarget_2(lifeconv,,)
+ help.h: help.text
+ 	sed <help.text -e '/\\[^n]/s//\\&/g' -e '/.*/s//"&",/' >help.h
+ 
++lifeconv.man: xlife.man
++	ln xlife.man $@
++
+ TAGS: $(SRCS)
+ 	etags $(SRCS)
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-xlife_xlife_man,v 1.1 2000/12/16 15:39:33 espie Exp $
+--- xlife/xlife.man.orig	Thu Dec 14 04:19:03 2000
++++ xlife/xlife.man	Thu Dec 14 04:19:14 2000
+@@ -191,7 +191,7 @@ default) all live cells are displayed no
+ cells changed from the previous generation are shown (whether alive or dead).
+ Your display mode is reset to zero by the `l' command or by selecting a
+ tentative battern.
+-.IP \fB#f\R 10
++.IP \fB#\fR 10
+ Change tentative-display mode.  By default the tentative-pattern cells are
+ displayed in normal state colors but with a bounding box.  In the alternate
+ (`wireframe') mode, tentative-pattern cells are displayed as open rectangles

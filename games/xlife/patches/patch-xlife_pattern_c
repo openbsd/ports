@@ -1,0 +1,14 @@
+$OpenBSD: patch-xlife_pattern_c,v 1.1 2000/12/16 15:39:33 espie Exp $
+--- xlife/pattern.c.orig	Thu Dec 14 03:51:52 2000
++++ xlife/pattern.c	Thu Dec 14 03:52:04 2000
+@@ -233,8 +233,8 @@ void median(pattern *context, coord_t *p
+ 	}
+     } 
+     if (ctr>0) {
+-	heapsort(coordxlist,ctr,1);
+-	heapsort(coordylist,ctr,1);
++	lheapsort(coordxlist,ctr,1);
++	lheapsort(coordylist,ctr,1);
+ 	*px = coordxlist[ctr/2];
+ 	*py = coordylist[ctr/2];
+     }
