@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/09/15 18:49:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/09/28 12:47:20 xsa Exp $
+@newgroup _zope:534
+@newuser _zope:534:_zope:daemon:Zope Account:/nonexistent:/sbin/nologin
 lib/zope/
 lib/zope/bin/
 lib/zope/bin/README.txt
@@ -3056,5 +3058,3 @@ lib/zope/skel/log/README.txt
 lib/zope/skel/var/
 lib/zope/skel/var/README.txt
 %%SHARED%%
-@extraunexec userdel _zope
-@extraunexec groupdel _zope
