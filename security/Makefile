@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2002/10/15 11:25:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.110 2002/10/22 14:21:37 naddy Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -65,6 +65,7 @@
      SUBDIR += p5-Crypt-OpenSSL-Random
      SUBDIR += p5-Crypt-RC4
      SUBDIR += p5-Crypt-SSLeay
+     SUBDIR += p5-Crypt-TripleDES
      SUBDIR += p5-Crypt-Twofish
      SUBDIR += p5-Digest-HMAC
      SUBDIR += p5-Digest-MD5
