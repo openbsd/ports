@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/20 19:30:39 jsyn Exp $
+# $OpenBSD: Makefile,v 1.6 2002/09/17 08:42:20 pvalchev Exp $
 
 COMMENT=		"network performance measuring tool"
 
 DISTNAME=		oproute-0.7
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=    		net
-NEED_VERSION=		1.499
 EXTRACT_SUFX=		.tgz
 
 HOMEPAGE=		http://www.oproute.net/

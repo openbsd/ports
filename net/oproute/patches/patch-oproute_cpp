@@ -1,7 +1,22 @@
-$OpenBSD: patch-oproute_cpp,v 1.1.1.1 2001/07/03 02:40:21 pvalchev Exp $
---- oproute.cpp.orig	Sun Jun 24 15:41:04 2001
-+++ oproute.cpp	Sun Jun 24 15:41:40 2001
-@@ -706,7 +706,7 @@ void OpRoute::CatchICMP(Hop *pHop)
+$OpenBSD: patch-oproute_cpp,v 1.2 2002/09/17 08:42:20 pvalchev Exp $
+--- oproute.cpp.orig	Wed Feb 28 19:28:31 2001
++++ oproute.cpp	Tue Sep 17 02:07:26 2002
+@@ -146,10 +146,13 @@ OpRoute::OpRoute(string sDestination, in
+ 	cout << "Could not resolve host... " << endl;
+ 	exit(1);
+       }
++    recvfd = socket(PF_INET, SOCK_RAW, 1);
++    /* revoke priveleges */
++    seteuid(getuid());
++    setuid(getuid());
+     struct in_addr *ia = (struct in_addr *) *he->h_addr_list;
+     sDestinationIP = inet_ntoa(*ia);
+     nPort = getpid();
+-    recvfd = socket(PF_INET, SOCK_RAW, 1);
+     long nBufSize = 10000000;
+     setsockopt(recvfd, SOL_SOCKET, SO_RCVBUF, (char *)&nBufSize, sizeof(nBufSize));
+     nCurrentTTL = nBeginTTL = nTheBeginTTL;
+@@ -706,7 +709,7 @@ void OpRoute::CatchICMP(Hop *pHop)
  	    udp = (struct udphdr *)(recvbuf + hlen1 + 8 +hlen2);
  	    if(hip->ip_p == IPPROTO_UDP)
  	      {
@@ -10,7 +25,7 @@ $OpenBSD: patch-oproute_cpp,v 1.1.1.1 2001/07/03 02:40:21 pvalchev Exp $
  		pHop->sRouterIP = sock_ntop_host((sockaddr *)sa_recv, sa_len);
  		pHop->state = HOP_COMPLETED;
  		pHop->fLatency = GetLatencyFromTV(tvNow, tvTimeOfLastSend);
-@@ -721,14 +721,14 @@ void OpRoute::CatchICMP(Hop *pHop)
+@@ -721,14 +724,14 @@ void OpRoute::CatchICMP(Hop *pHop)
  	      {
  		if (icmp->icmp_code == ICMP_UNREACH_PORT) 
  		  {
