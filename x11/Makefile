@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 1998/06/08 01:14:45 angelos Exp $
+# $OpenBSD: Makefile,v 1.22 1998/07/08 09:56:04 form Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -88,7 +88,7 @@
      SUBDIR += xfedor
      SUBDIR += xfishtank
      SUBDIR += xfm
-#    SUBDIR += xforms
+     SUBDIR += xforms
      SUBDIR += xgrab
 #    SUBDIR += xkeycaps
      SUBDIR += xloadimage
