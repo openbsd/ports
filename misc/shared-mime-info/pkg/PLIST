@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/05/31 22:03:19 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/01/10 22:58:31 couderc Exp $
 bin/update-mime-database
 man/man1/update-mime-database.1
 share/mime/XMLnamespaces
@@ -151,6 +151,7 @@ share/mime/application/x-qw.xml
 share/mime/application/x-rar.xml
 share/mime/application/x-reject.xml
 share/mime/application/x-rpm.xml
+share/mime/application/x-ruby.xml
 share/mime/application/x-sc.xml
 share/mime/application/x-shar.xml
 share/mime/application/x-shared-library-la.xml
