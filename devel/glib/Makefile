@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/01/01 00:02:42 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2000/02/06 00:28:56 brad Exp $
 
 DISTNAME=	glib-1.2.6
 CATEGORIES=	devel
@@ -13,7 +13,7 @@ MAINTAINER=	brad@openbsd.org
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-threads \
-		--includedir=${PREFIX}/include/glib
+		--includedir="${PREFIX}/include/glib"
 
 # People that installed an older version of gtk+ wound up with
 # libglib.a and libglib.so.1.6 in /usr/X11R6/lib... these files
@@ -39,8 +39,8 @@ post-extract:
 	@rm -f ${WRKSRC}/docs/glib.info*
 
 post-install:
-	${INSTALL_DATA_DIR} ${LOCALBASE}/share/aclocal
-	${INSTALL_DATA} ${WRKSRC}/glib.m4 ${LOCALBASE}/share/aclocal/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal
+	${INSTALL_DATA} ${WRKSRC}/glib.m4 ${PREFIX}/share/aclocal/
 	@install-info ${PREFIX}/info/glib.info ${PREFIX}/info/dir
 	@${LDCONFIG} -m ${PREFIX}/lib
 
