@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/06/15 05:47:11 form Exp $
+# $OpenBSD: Makefile,v 1.19 2000/06/16 10:19:02 form Exp $
 
 DISTNAME=	xruskb-1.13.0
 CATEGORIES=	russian x11
@@ -19,8 +19,8 @@ CONFIGURE_STYLE=gnu
 FLAVOR=		motif
 .endif
 
-FLAVORS=	motif xaw
-FLAVOR?=	xaw
+FLAVORS=	motif
+FLAVOR?=
 
 .if ${FLAVOR:L:Mmotif}
 CONFIGURE_ARGS=	--with-motif --without-Xaw
