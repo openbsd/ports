@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2000/03/23 05:06:02 kevlo Exp $
+# $OpenBSD: Makefile,v 1.27 2000/03/30 21:15:01 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -22,6 +22,7 @@
 #    SUBDIR += empire
 #    SUBDIR += flying
      SUBDIR += freeciv
+     SUBDIR += freeciv:gtk
      SUBDIR += frotz
 #    SUBDIR += galaxis
      SUBDIR += gnuchess
@@ -70,6 +71,7 @@
      SUBDIR += xjewel
      SUBDIR += xjig
      SUBDIR += xkobo
+     SUBDIR += xkobo:harder
      SUBDIR += xlife
      SUBDIR += xmahjongg
 #    SUBDIR += xmame

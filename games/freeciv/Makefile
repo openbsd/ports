@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2000/03/24 23:28:08 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2000/03/30 21:15:01 espie Exp $
 
 DISTNAME=	freeciv-1.10.0
 CATEGORIES=	games
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.241
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable_version/
 
 MAINTAINER=	israfil@gmx.net
@@ -19,12 +19,19 @@ HOMEPAGE=	http://www.freeciv.org/
 # feel:
 #USE_GTK=	Yes
 
+FLAVORS=gtk
+
 .if defined(USE_GTK)
+FLAVOR=gtk
+.endif
+
+FLAVOR?=
+
+.if ${FLAVOR:L} == "gtk"
 LIB_DEPENDS=	intl::devel/gettext \
 		glib.1.2::devel/glib \
 		gtk.1.2::x11/gtk+ \
 		Imlib.19::graphics/imlib
-PKGNAME=	freeciv-1.10.0-gtk
 CONFIGURE_ENV=	GTK_CONFIG="${PREFIX}/bin/gtk-config"
 .else
 CONFIGURE_ARGS=	--disable-gtktest
