@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/14 18:32:42 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/06/15 19:14:39 brad Exp $
 
 DISTNAME=	giflib-4.1.0
 CATEGORIES=	graphics
 NEED_VERSION=	1.301
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		${MASTER_SITES0}
-MASTER_SITES0= 	http://www.arrakeen.demon.co.uk/giflib/
+MASTER_SITES0=	${MASTER_SITE_BACKUP}
 MASTER_SITE_SUBDIR= libs/giflib
 
 PATCHFILES=	giflib-4.1.0-19990224.patch.gz:0 \
