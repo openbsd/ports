@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/08/04 19:46:14 xsa Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/05 07:27:57 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-LIB_DEPENDS+=	sqlite::databases/sqlite
+LIB_DEPENDS=	sqlite.8.6::databases/sqlite
 
 MODULES=	lang/python
 
