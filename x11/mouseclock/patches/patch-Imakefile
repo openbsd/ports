@@ -1,0 +1,14 @@
+$OpenBSD: patch-Imakefile,v 1.1 2000/05/17 16:22:11 espie Exp $
+--- Imakefile.orig	Wed May 17 18:05:42 2000
++++ Imakefile	Wed May 17 18:05:50 2000
+@@ -4,8 +4,8 @@
+ 
+         DEPLIBS = $(DEPXLIB)
+ LOCAL_LIBRARIES = $(XLIB)
+-	CDEBUGFLAGS =
+-	CCOPTIONS = -O3 -s -pipe -Wall
++CDEBUGFLAGS =
++CCOPTIONS = -O3 -s -pipe -Wall
+ 
+ AllTarget(mouseclock)
+ 
