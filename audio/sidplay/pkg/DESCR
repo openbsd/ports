@@ -1,0 +1,10 @@
+SIDPLAY is basically a music player. It emulates the Sound Interface
+Device (SID) chip and the microprocessor unit of the Commodore 64
+computer, so it can load and execute C64 machine code programs which
+produce music or sound. Normally these are short pieces of code
+pulled out of Commodore games or demonstration programs. Using
+SIDPLAY, you can listen to thousands of old and new C64 sound files
+by infamous artists such as Hubbard and Paul Norman! In emulation,
+their music lives on...
+
+WWW: ${HOMEPAGE}
