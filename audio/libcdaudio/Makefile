@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/30 07:58:24 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/06 05:40:41 kevlo Exp $
 
 COMMENT=	"multi-platform cd player development library"
 DISTNAME=	libcdaudio-0.99.6
@@ -21,6 +21,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+		patch-*
 
 .include <bsd.port.mk>
