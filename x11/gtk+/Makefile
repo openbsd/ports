@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2003/10/08 17:13:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.55 2004/01/20 13:41:41 marcm Exp $
 
 COMMENT=	"General Toolkit for X11 GUI"
 
@@ -24,6 +24,7 @@ USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-xinput="xfree"
+CONFIGURE_ARGS+= --disable-glibtest
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
