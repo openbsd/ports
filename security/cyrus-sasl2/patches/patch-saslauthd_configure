@@ -1,4 +1,4 @@
-$OpenBSD: patch-saslauthd_configure,v 1.3 2002/12/10 08:37:42 jakob Exp $
+$OpenBSD: patch-saslauthd_configure,v 1.4 2003/02/23 01:16:29 pvalchev Exp $
 --- saslauthd/configure.orig	Mon Dec  9 16:45:05 2002
 +++ saslauthd/configure	Tue Dec 10 00:10:52 2002
 @@ -2636,8 +2636,8 @@ fi
@@ -7,7 +7,7 @@ $OpenBSD: patch-saslauthd_configure,v 1.3 2002/12/10 08:37:42 jakob Exp $
    elif test "$gss_impl" = "heimdal"; then
 -     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -ldes -lasn1 -lroken ${LIB_CRYPT} -lcom_err"
 -     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libdes.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
-+     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -ldes -lasn1 -lkafs -lcrypto ${LIB_CRYPT} -lcom_err"
++     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -ldes -lasn1 -lkrb -lkafs -lcrypto ${LIB_CRYPT} -lcom_err"
 +     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libdes.a $gssapi_dir/libasn1.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
    else
       gssapi="no"
