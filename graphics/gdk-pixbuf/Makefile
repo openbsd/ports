@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/03/26 04:14:34 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2002/04/07 17:25:36 brad Exp $
 
 COMMENT=	"GdkPixbuf graphics library"
 COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
@@ -48,18 +48,18 @@ LIB_DEPENDS+=	jpeg.62::graphics/jpeg \
 		tiff.35.::graphics/tiff \
 		gtk.1.2,gdk.1.2::x11/gtk+
 
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-gnome"
+.if defined(PACKAGING)
+. if ${SUBPACKAGE} == "-gnome"
 LIB_DEPENDS+=	gnome.36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs
-.endif
-
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-gnome"
-LIB_DEPENDS+=	gdk_pixbuf.2::graphics/gdk-pixbuf
+. endif
+.else
+. if ${MULTI_PACKAGES:M-gnome}
+LIB_DEPENDS+=	gnome.36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs
+. endif
 .endif
 
 .if ${MULTI_PACKAGES:M-gnome}
 CONFIGURE_ARGS+= --with-gnome
-.else
-CONFIGURE_ARGS+= --without-gnome
 .endif
 
 pre-patch:
