@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 1999/10/26 22:06:44 brad Exp $
+# $OpenBSD: Makefile,v 1.34 1999/10/29 08:54:05 kevlo Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -24,6 +24,7 @@
      SUBDIR += gii
      SUBDIR += gimp
      SUBDIR += gqview
+     SUBDIR += gracula
 #    SUBDIR += hdf
 #    SUBDIR += hobbes-icons-xpm
 #    SUBDIR += hpscan
