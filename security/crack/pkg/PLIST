@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/05/05 01:14:54 turan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/11/18 19:07:54 sturm Exp $
 crack/Crack
-crack/Crack.orig
+@comment crack/Crack.orig
 crack/LICENCE
 crack/Makefile
 crack/Reporter
+crack/README.OpenBSD
 crack/conf/dictgrps.conf
-crack/conf/dictgrps.conf.orig
+@comment crack/conf/dictgrps.conf.orig
 crack/conf/dictrun.conf
 crack/conf/globrule.conf
 crack/conf/network.conf
@@ -136,6 +137,7 @@ crack/scripts/mkdictgrps
 crack/scripts/mkgecosd
 crack/scripts/nastygram
 crack/scripts/netcrack
+crack/scripts/openbsd2spf
 crack/scripts/pauser
 crack/scripts/plaster
 crack/scripts/shadmrg.aix
@@ -239,8 +241,10 @@ crack/src/util/kickdict.c
 @dirrm crack/src/lib
 @dirrm crack/src
 @dirrm crack/scripts
+@extraunexec rm -f %D/crack/run/dict/*
 @dirrm crack/run/dict
 @dirrm crack/run/bin
+@extraunexec rm -f %D/crack/run/*
 @dirrm crack/run
 @dirrm crack/extra
 @dirrm crack/doc

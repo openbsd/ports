@@ -1,0 +1,22 @@
+$OpenBSD: README.OpenBSD,v 1.1 2003/11/18 19:07:54 sturm Exp $
+
+To use Crack 5.0 on OpenBSD:
+
+   $ cd %%TRUEPREFIX%%/crack
+   $ sudo ./Crack -fmt openbsd /etc/master.passwd
+
+This will start a background process trying to crack all the passwords
+in your master password file.
+
+Run
+
+   $ ./Reporter
+
+to see how Crack is getting on.
+
+Entries such as
+
+   E:0:ignoring locked entry: _fingerd
+
+are to be expected; these accounts do not have passwords set, but
+are locked so that no login is possible.

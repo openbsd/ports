@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.21 2002/12/29 20:31:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.22 2003/11/18 19:07:53 sturm Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	'sensible unix password cracker'
 
 DISTNAME=	crack5.0
-PKGNAME=	crack-5.0
+PKGNAME=	crack-5.0p0
 CATEGORIES=	security
 
-HOMEPAGE=	http://www.users.dircon.co.uk/~crypto/
+HOMEPAGE=	http://www.crypticide.org/users/alecm/
 
 MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/unix/pwdutils/crack/ \
 		${MASTER_SITE_PACKETSTORM:=Crackers/crack/}
 
-PERMIT_PACKAGE_CDROM=	No
+# Artistic
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/c50a
@@ -28,7 +29,7 @@ pre-configure:
 
 pre-build:
 	@(if [ ! -f /usr/share/dict/words ];then \
-		echo "You may want to install the dict distribution into /usr/share/dict" ; \
+		echo "You may want to install the miscXX.tgz fileset" ; \
 		echo "to increase the size of the cracking dictionary." ; \
 	fi)
 
@@ -44,7 +45,10 @@ NO_REGRESS=	Yes
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/crack
 	@rm -f ${WRKSRC}/Run/*
+	@${INSTALL_SCRIPT} ${FILESDIR}/openbsd2spf ${WRKSRC}/scripts
 	@(cd ${WRKSRC} ; tar cf - . | (cd ${PREFIX}/crack; tar xfBp -))
-
+	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/crack
+	@perl -pi -e "s,%%TRUEPREFIX%%,${TRUEPREFIX}," ${PREFIX}/crack/README.OpenBSD
+	@perl -pi -e "s,^make.*,# make removed for runtime," ${PREFIX}/crack/Crack
 
 .include <bsd.port.mk>
