@@ -1,19 +1,21 @@
-# $OpenBSD: Makefile,v 1.8 2000/06/20 19:48:58 jakob Exp $
+# $OpenBSD: Makefile,v 1.9 2000/07/14 08:13:48 brad Exp $
 
-DISTNAME=		httptunnel-3.0.1
-CATEGORIES=     	net
-NEED_VERSION=		1.302
+DISTNAME=	httptunnel-3.0.3
+CATEGORIES=	net
+NEED_VERSION=	1.310
+MASTER_SITES=	http://www.nocrew.org/software/httptunnel/ \
+		ftp://ftp.nocrew.org/pub/nocrew/unix/
 
-MASTER_SITES=		http://www.nocrew.org/software/httptunnel/
+HOMEPAGE=	http://www.nocrew.org/software/httptunnel/
 
-MAINTAINER=		jakob@openbsd.org
+MAINTAINER=	jakob@openbsd.org
 
-PERMIT_PACKAGE_CDROM=	yes
-PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	yes
-PERMIT_DISTFILES_FTP=	yes
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	gnu
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=	concurrent
+CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>
