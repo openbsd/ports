@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/27 12:34:43 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/27 16:14:58 pvalchev Exp $
 
 ONLY_FOR_ARCHS=		i386
 
 COMMENT=		"file-sharing client"
 DISTNAME=		donkey_s
-PKGNAME=		edonkey-16.16.59
+PKGNAME=		edonkey-16.16.59p1
 CATEGORIES=		net
 NEED_VERSION=		1.525
 
