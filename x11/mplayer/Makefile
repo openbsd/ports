@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/05/16 14:00:23 art Exp $
+# $OpenBSD: Makefile,v 1.16 2002/05/17 02:00:29 pvalchev Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -24,7 +24,9 @@ MASTER_SITES0=		http://www.sightly.net/mplayer/
 SKIN=		default
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKIN}${EXTRACT_SUFX}:0
 
-.if ${MACHINE_ARCH:Mi386}
+.include <bsd.own.mk>
+
+.if ${ELF_TOOLCHAIN} == "no"
 BUILD_DEPENDS=	::devel/binutils/stable
 .endif
 LIB_DEPENDS=	png::graphics/png \
@@ -34,7 +36,7 @@ LIB_DEPENDS=	png::graphics/png \
 		mp3lame::audio/lame \
 		ungif::graphics/libungif
 
-.if ${MACHINE_ARCH:Mi386}
+.if ${ELF_TOOLCHAIN} == "no"
 MAKE_ENV=	AR=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/ar
 .endif
 
@@ -117,7 +119,7 @@ CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32
 CONFIGURE_ARGS+=--disable-win32
 .endif
 
-.if ${MACHINE_ARCH:Mi386}
+.if ${ELF_TOOLCHAIN} == "no"
 post-patch:
 	@ln -s ${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/as ${WRKDIR}/bin/as
 .endif
