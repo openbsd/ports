@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/10/07 17:08:03 marcm Exp $
+# $OpenBSD: Makefile,v 1.13 2003/10/08 01:27:00 marcm Exp $
 
      SUBDIR += applets2
      SUBDIR += bonobo
@@ -33,5 +33,6 @@
      SUBDIR += vfs
      SUBDIR += vfs2
      SUBDIR += yelp
+     SUBDIR += zenity
 
 .include <bsd.port.subdir.mk>
