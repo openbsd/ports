@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 1999/11/30 02:15:10 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/01/06 01:58:44 brad Exp $
 # $FreeBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 
 DISTNAME=	tcl8.0.5
@@ -26,7 +26,7 @@ WRKSRC=	${WRKDIR}/tcl8.0.5/unix
 post-install:
 	@${LDCONFIG} -m ${PREFIX}/lib
 
-test:
+test:	build
 	@cd ${WRKSRC} && make test
 
 .include <bsd.port.mk>
