@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/02/16 15:17:58 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2003/02/27 19:27:01 espie Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -19,6 +19,7 @@ AUTOCONF_VERSION=	2.13
 BUILD_DEPENDS=		::devel/automake \
 			${MODGNU_AUTOCONF_DEPENDS}
 
+MODULES=		gnu
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS=		--with-prefix=${PREFIX} \
 			--disable-nls --disable-gdbtk --disable-commonbfdlib
