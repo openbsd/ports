@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2001/08/07 00:15:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.64 2001/08/13 17:53:52 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -61,6 +61,7 @@
      SUBDIR += sox
 #    SUBDIR += splay
      SUBDIR += teknap
+     SUBDIR += tempest
      SUBDIR += timidity
      SUBDIR += tosha
      SUBDIR += tracker
