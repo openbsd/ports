@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/05/20 21:25:44 miod Exp $
+# $OpenBSD: Makefile,v 1.8 2004/06/25 06:46:54 kevlo Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	"Tool Command Language"
@@ -47,6 +47,8 @@ pre-regress:
 	@mkdir -p ${TESTHOME}
 
 post-install:
+	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/aclocal
+	cp ${WRKSRC}/tcl.m4 ${PREFIX}/share/aclocal
 	ranlib ${PREFIX}/lib/libtcl84.a
 
 .include <bsd.port.mk>
