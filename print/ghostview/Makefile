@@ -3,12 +3,14 @@
 # Date created:		December 2, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:43:16 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 03:19:53 lebel Exp $
 #
+
+COMMENT=	"X11 front-end for ghostscript"
 
 DISTNAME=	ghostview-1.5
 CATEGORIES=	print
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= ghostview
 

@@ -2,13 +2,15 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.12 2001/03/22 22:06:40 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 03:20:00 lebel Exp $
 #
+
+COMMENT=	"English PK fonts, for ghostscript, xdvi and so on"
 
 DISTNAME=	pkfonts
 PKGNAME=	pkfonts${RESOLUTION}-1.0
 CATEGORIES=	print
-NEED_VERSION=	1.116
+NEED_VERSION=	1.402
 FAKE=No
 MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/TeX/fonts/ \
 		ftp://ftp.wg.omron.co.jp/pub/tex/

@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/09 00:21:14 avsm Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 03:20:03 lebel Exp $
 # Original from: Marc Espie
+
+COMMENT=	"TeX distribution, common support files"
 
 PKGNAME=	teTeX_texmf-1.0.2
 
@@ -9,7 +11,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
 CATEGORIES=	print/teTeX
-NEED_VERSION=	1.330
+NEED_VERSION=	1.402
 
 HOMEPAGE=	http://tug.cs.umb.edu/tetex/
 MAINTAINER=	Marc Espie <espie@openbsd.org>, Anil Madhavapeddy <avsm@openbsd.org>

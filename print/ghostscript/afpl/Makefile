@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/05 21:05:07 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/06 03:19:53 lebel Exp $
 
 COMMENT="AFPL PostScript interpreter"
 
@@ -158,7 +158,7 @@ pre-install:
 			tar xzf ${FULLDISTDIR}/${GS_FONTS_STD}
 
 post-install:
-	strip ${PREFIX}/bin/gs
+#strip ${PREFIX}/bin/gs
 	cd ${PREFIX}/man/man1 && \
 		ln -sf ps2ps.1 eps2eps.1 && \
 		ln -sf gslp.1 gsbj.1 && \

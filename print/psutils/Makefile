@@ -2,12 +2,14 @@
 # Date created:         17 March 1998
 # Whom:                 mickey@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.11 2000/12/23 20:51:22 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 03:20:01 lebel Exp $
 #
+
+COMMENT=	"manipulating PostScript documents"
 
 DISTNAME=	psutils-p17
 CATEGORIES=	print
-NEED_VERSION=	1.223
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/
 
 MAINTAINER=	ports@openbsd.org

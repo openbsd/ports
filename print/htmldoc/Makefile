@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/21 23:36:28 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 03:19:55 lebel Exp $
+
+COMMENT=	"convert HTML pages to PDF/PS format"
 
 DISTNAME=		htmldoc-1.8.11
 CATEGORIES=     	print www
-NEED_VERSION=		1.354
+NEED_VERSION=	1.402
 
 HOMEPAGE=		http://www.easysw.com/htmldoc
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2000/10/22 16:16:29 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2001/05/06 03:19:44 lebel Exp $
+
+COMMENT=	"format ascii files for printing on PostScript printers"
 
 DISTNAME=	a2ps-4.13b
 WRKDIST=	${WRKDIR}/a2ps-4.13
 CATEGORIES=	print
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 
 MAINTAINER=	Tobias Weingartner <weingart@openbsd.org>
 
