@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2000/07/18 02:08:57 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2000/09/08 08:38:44 kevlo Exp $
 
-DISTNAME=	lftp-2.2.4
+DISTNAME=	lftp-2.2.6
 CATEGORIES=     net
 NEED_VERSION=	1.314
 MASTER_SITES=	http://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/
@@ -16,7 +16,7 @@ BUILD_DEPENDS= 	msgfmt::devel/gettext
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=	gnu 
-CONFIGURE_ARGS+=	--sysconfdir="/etc"
+#CONFIGURE_ARGS+=	--sysconfdir="/etc"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/lftp
