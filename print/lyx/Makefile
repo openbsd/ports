@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.29 2002/12/29 19:49:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.30 2003/01/06 00:13:22 margarida Exp $
 
 COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
 
-DISTNAME=	lyx-1.1.6fix4
+DISTNAME=	lyx-1.2.2
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
-		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
-		ftp://ftp.lip6.fr/pub/lyx/stable/
 
 HOMEPAGE=	http://www.lyx.org/
 
-MODULES=	gettext
+MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
+		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
+		ftp://ftp.lip6.fr/pub/lyx/stable/ \
+		ftp://ftp.chg.ru/pub/TeX/lyx/stable/
 
-MAINTAINER=	Mark Grimes <mark@stateful.net>
+MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # quasi-GPL (linked to closed source library)
 # no limitation of license; considered GPL
@@ -22,14 +22,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS+=	:teTeX_base-*:print/teTeX/base
-RUN_DEPENDS+=	:teTeX_base-*:print/teTeX/base \
-		:ispell-*:textproc/ispell
-LIB_DEPENDS+=	forms::x11/xforms
+MODULES=		gettext
 
-CONFIGURE_STYLE=		autoconf
+BUILD_DEPENDS+=		:teTeX_base-*:print/teTeX/base
+RUN_DEPENDS+=		:teTeX_base-*:print/teTeX/base \
+			:ispell-*:textproc/ispell
+LIB_DEPENDS+=		forms.1::x11/xforms
+
+CONFIGURE_STYLE=		gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
-STRIP=
+
 CONFIGURE_ARGS=		--with-extra-lib=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-inc="${LOCALBASE}/include \
 			${LOCALBASE}/include/X11"
