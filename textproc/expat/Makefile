@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2000/10/22 14:03:50 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/11/01 19:13:17 jakob Exp $
 # $FreeBSD: Makefile,v 1.2 1999/08/31 02:09:14 peter Exp $
 
-DISTNAME=	expat
+DISTNAME=	expat1_1
 PKGNAME=	expat-1.1
 CATEGORIES=	textproc
 NEED_VERSION=	1.330
@@ -20,6 +20,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 SHLIB=	libexpat.so.1.0
 SUBST_VARS=	SHLIB
+
+WRKDIST=	${WRKDIR}/expat
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Ixmltok -Ixmlparse -DXML_NS" \
 		SHLIB="$(SHLIB)"
