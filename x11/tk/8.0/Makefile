@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/10/06 17:46:42 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/07 11:35:39 espie Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 
 COMMENT=	"graphical toolkit for Tcl"
@@ -39,6 +39,11 @@ CONFIGURE_ENV=	PORTSDIR="${PORTSDIR}"
 WRKDIST=	${WRKDIR}/${DISTNAME}/unix
 
 REGRESS_TARGET=	test
+REGRESS_DEPENDS=::lang/tcl/8.3:regress
+REGRESS_FLAGS=TCL_BIN_DIR=`cd ${PORTSDIR}/lang/tcl/8.3 && ${MAKE} show=WRKBUILD`
+# This regression test wants an X11 display
+REGRESS_FLAGS+=DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE=Yes
 
 post-install:
 	@strip ${PREFIX}/bin/wish8.0

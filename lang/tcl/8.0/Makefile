@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/06 17:46:42 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/07 11:35:39 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 
 COMMENT=	"Tool Command Language"
@@ -39,6 +39,12 @@ CONFIGURE_ENV=  PORTSDIR="${PORTSDIR}"
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/unix
 REGRESS_TARGET=	test
+TESTHOME=${WRKDIR}/testhome
+REGRESS_FLAGS=	HOME=${TESTHOME}
+# Needs a full network connection to run
+REGRESS_IS_INTERACTIVE=Yes
+pre-regress:
+	mkdir -p ${TESTHOME}
 
 post-install:
 	@strip ${PREFIX}/bin/tclsh8.0

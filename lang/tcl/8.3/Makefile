@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/10/06 17:45:06 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/07 11:35:39 espie Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	"Tool Command Language"
@@ -41,5 +41,12 @@ WRKDIST=	${WRKDIR}/${DISTNAME}/unix
 
 INSTALL_TARGET=	install-strip
 REGRESS_TARGET=	test
+# Needs a full network connection to run
+REGRESS_IS_INTERACTIVE=Yes
+TESTHOME=${WRKDIR}/testhome
+REGRESS_FLAGS=	HOME=${TESTHOME}
+pre-regress:
+	mkdir -p ${TESTHOME}
+
 
 .include <bsd.port.mk>
