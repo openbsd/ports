@@ -1,0 +1,3 @@
+This module was created to fill a need for a quick and easy way to
+create 'on the fly' XHTML tables from SQL queries for the purpose
+of 'quick and dirty' reporting.
