@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2004/02/18 20:59:24 djm Exp $
+lib/libsqlite.so.8.6
+DYNLIBDIR(%B)
