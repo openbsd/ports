@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/03 11:41:38 turan Exp $
-
-BROKEN=		installs files automatically in /etc
+# $OpenBSD: Makefile,v 1.10 2000/03/03 13:01:49 turan Exp $
 
 DISTNAME=	fnlib-0.5
 CATEGORIES=    	graphics
