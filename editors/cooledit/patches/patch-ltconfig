@@ -1,8 +1,8 @@
---- ltconfig.orig	Mon Sep  4 11:51:05 2000
-+++ ltconfig	Sun Feb 18 12:31:02 2001
-@@ -1030,6 +1030,9 @@
- freebsd2* | sunos4*)
-   exclude_expsyms="_GLOBAL_OFFSET_TABLE_"
+--- ltconfig.orig	2002-08-03 13:03:26.000000000 +0200
++++ ltconfig	2003-08-01 20:33:56.000000000 +0200
+@@ -1105,6 +1105,9 @@ cygwin* | mingw*)
+     with_gnu_ld=no
+   fi
    ;;
 +openbsd*)
 +  with_gnu_ld=no
@@ -10,7 +10,7 @@
  
  esac
  
-@@ -1262,10 +1265,21 @@
+@@ -1391,10 +1394,21 @@ else
      ;;
  
    openbsd*)
@@ -34,7 +34,7 @@
      ;;
  
    os2*)
-@@ -1789,13 +1803,10 @@
+@@ -1955,13 +1969,10 @@ netbsd*)
  
  openbsd*)
    version_type=sunos
