@@ -3,13 +3,12 @@
 # Date created:		September 28, 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/09/29 00:01:13 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/08/31 00:59:53 angelos Exp $
 
 DISTNAME=       PGPlib-1.1
 PKGNAME=	PGPlib
 CATEGORIES=	security
 MASTER_SITES=	ftp://dslab1.cs.uit.no/pub/
-BUILD_DEPENDS=	/usr/local/ssl/lib/libcrypto.a:${PORTSDIR}/security/SSLeay
 
 NO_CDROM=       "CRYPTO: Third party crypto not allowed."
 RESTRICTED=     "Crypto; export-controlled"
