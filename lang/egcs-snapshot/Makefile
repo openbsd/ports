@@ -3,37 +3,57 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.3 1998/11/16 21:11:13 espie Exp $
+# $OpenBSD: Makefile,v 1.4 1998/11/17 17:39:33 espie Exp $
 #
-
 # This is a configuration file for egcs, recent snapshot
-# right now, we only configure i386, C and C++.
+# PLEASE use the regular egcs-stable for serious work, resort to this one
+# for experimentations and testing.
+# Right now, we can only configure i386. Bound to change in the future
 
-# user configuration
+# we could remove this dependency by patching configure, but this is not
+# reasonable...
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+
+CATEGORIES=	lang 
+MAINTAINER=	Marc.Espie@openbsd.org
+
+# this will improve over time as more and more architectures are handled
+ONLY_FOR_ARCHS = i386
+
+# user configuration section
+
 # see files/tests for precise testing procedure
+
 MAKE_TESTS=yes
 MAKE_GXX=yes
 MAKE_FORTRAN=yes
-MAKE_OBJC=yes
 
 
-# these are broken, as of this snapshot...
-#MAKE_CHILL=yes
+# these are broken, as of 1998-11-09
+MAKE_CHILL=yes
+
+# java archive is truncated, objc too
+#MAKE_OBJC=yes
 #MAKE_JAVA=yes
 
-#PATCH_DEBUG=yes
-# this configuration allow for ONE level of diff-files
 
-LATEST=19981109
+LATEST_DATE=1998-11-09
+
+#### fetch section
+# configuration is built so that you can test the next snapshot easily,
+# define NEXT_DATE to the next snapshot... you lose the ability to check
+# md5 sums, though.
+# NEXT_DATE=1998-11-20
+#PATCH_DEBUG=yes
+
+LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
 DIRECTORY=egcs/snapshots/%SUBDIR%/
-.if defined(NEXT)
+.if defined(NEXT_DATE)
+NEXT != echo ${NEXT_DATE} | sed -e s/-//g;
 DISTNAME=	egcs-${NEXT}
 .else
 DISTNAME=   egcs-${LATEST}
 .endif
-CATEGORIES=	lang 
-MAINTAINER=	Marc.Espie@openbsd.org
-
 
 # getting the right archives where they should be
 MASTER_SITE_SUBDIR=${LATEST}
@@ -75,8 +95,13 @@ DISTFILES+=egcs-objc-${LATEST}${EXTRACT_SUFX}
 DISTFILES+=egcs-chill-${LATEST}${EXTRACT_SUFX}
 .endif
 
+# to do: check egcs-stable mirror list for sites which carry snapshots
+
 MASTER_SITES=	ftp://egcs.cygnus.com/pub/${DIRECTORY} \
 	ftp://ftp.lip6.fr/pub/${DIRECTORY}
+
+
+# add a possible next snapshot
 
 .if defined(NEXT)
 PATCHFILES=egcs-core-${LATEST}-${NEXT}.diff.gz
@@ -107,50 +132,90 @@ PATCHFILES+=egcs-chill-${LATEST}-${NEXT}.diff.gz
 
 .endif
 
-# to do: check egcs-stable mirror list for sites which carry snapshots
+# synch the date
+.if defined(NEXT)
+post-extract:
+	${MV} ${WRKDIR}/egcs-${LATEST} ${WRKSRC}
+.endif
 
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+#### 
+# Patch section
+# this rigmarole is needed as all patches DON'T necessarily apply 
+# to every configuration
 
-# will improve over time as more and more architectures are handled
-ONLY_FOR_ARCHS = i386
+pre-patch:
+	-${RM} -f ${PATCHDIR}/*
+	-${MKDIR} ${PATCHDIR}
+	${CP} ${FILESDIR}/patches/patch-core-* ${PATCHDIR}
+.if defined(MAKE_GXX)
+	${CP} ${FILESDIR}/patches/patch-g++-* ${PATCHDIR}
+.endif
+
+# get openbsd configuration files where they should be
+post-patch:
+	${CP} -R ${FILESDIR}/config/* ${WRKSRC}
+	-${RM} -rf ${WRKSRC}/texinfo 
+.if !defined(MAKE_CHILL)
+	-${RM} -rf ${WRKSRC}/gcc/ch
+.endif
+
+
 
 GNU_CONFIGURE=	yes
-USE_GMAKE= yes
 
-# don't make bootstrap if you're impatient/you know what you're doing
-# use bootstrap-lean if you don't have room.
-ALL_TARGET=bootstrap
-
+####
+# configure section
+#
+# define AS_PATH/LD_PATH is you don't want to use the default as/ld.
+# This should not be used for regular releases, but if you're on this
+# snapshot, you know what you're doing, don't you ?
 CONFIGURE_SCRIPT=../source/configure
 
 CONFIGURE_ENV=CFLAGS=-O2
 CONFIGURE_ARGS= --prefix=${PREFIX} \
---verbose --with-gnu-ld --with-gnu-as \
---program-transform-name=s,^,e,
+--verbose --program-transform-name=s,^,e,
+
+
+.if defined(AS_PATH)
+CONFIGURE_ARGS += --with-as=${AS_PATH}
+.else
+CONFIGURE_ARGS += --with-gnu-as 
+.endif
+
+.if defined(LD_PATH)
+CONFIGURE_ARGS += --with-ld=${LD_PATH}
+.else
+CONFIGURE_ARGS += --with-gnu-ld 
+.endif
 
 .if (${MACHINE_ARCH} != "alpha")
 CONFIGURE_ARGS+=--enable-shared
 .endif
 
-
-.if defined(NEXT)
-post-extract:
-	mv ${WRKDIR}/egcs-${LATEST} ${WRKSRC}
-.endif
-
-# get openbsd configuration files where they should be
-post-patch:
-	cp -R ${FILESDIR}/config/* ${WRKSRC}
-	rm -rf ${WRKSRC}/texinfo 
-
 # rebuild configure file after patching, then move file around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
 # + kludge to build in a separate directory.
 pre-configure:
-	cd ${WRKSRC}/gcc && autoconf
-	mv ${WRKSRC} ${WRKDIR}/source
-	mkdir ${WRKSRC}
+#	cd ${WRKSRC}/gcc && autoconf
+	-${MV} ${WRKSRC} ${WRKDIR}/source
+	${MKDIR} ${WRKSRC}
+
+
+####
+# build section
+# should work without gmake. If it turns out to be needed, this is a bug
+#USE_GMAKE= yes
+
+# you shouldn't skip bootstrap unless you know what you're doing
+# use bootstrap-lean if you don't have room.
+ALL_TARGET=bootstrap
+# ALL_TARGET=bootstrap-lean
+
+
+
+####
+# Install section
 
 M4FLAGS=-Uinclude -DDISTNAME=${DISTNAME}
 .if defined(MAKE_GXX)
@@ -171,10 +236,10 @@ M4FLAGS+= -DDYNAMIC
 
 pre-install:
 	m4 ${M4FLAGS} -DARCH=`${WRKDIR}/source/config.guess` \
-	-DVERSION=`sed -e 's/.*\(egcs-[0-9.]*\) .*/\1/' <${WRKDIR}/source/gcc/version.c` \
+	-DVERSION=`${SED} -e 's/.*\(egcs-[0-9.]*\) .*/\1/' <${WRKDIR}/source/gcc/version.c` \
 	<${FILESDIR}/PLIST.template >${PKGDIR}/PLIST
 
 pre-clean:
-	-rm ${PKGDIR}/PLIST
+	-${RM} ${PKGDIR}/PLIST ${PATCHDIR}/*
 
 .include <bsd.port.mk>
