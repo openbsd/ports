@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2001/09/27 23:37:30 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2001/11/19 01:56:13 brad Exp $
 
 COMMENT=	"University of Washington's c-client mail access routines"
 
-VERSION=	4.40
+VERSION=	4.41
 DISTNAME=	pine${VERSION}
-PKGNAME=	c-client-${VERSION}p1
+PKGNAME=	c-client-${VERSION}
 CATEGORIES=	mail devel
-NEED_VERSION=	1.460
+NEED_VERSION=	1.489
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/ \
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
-SHLIB=		libc-client.so.3.0
+SHLIB=		libc-client.so.4.0
 SUBST_VARS=	SHLIB
 
 MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" SHLIB="${SHLIB}" \

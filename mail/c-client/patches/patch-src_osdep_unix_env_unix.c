@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_osdep_unix_env_unix.c,v 1.3 2001/09/27 16:28:09 brad Exp $
---- src/osdep/unix/env_unix.c.orig	Mon Jun 25 23:10:04 2001
-+++ src/osdep/unix/env_unix.c	Wed Sep 26 23:49:57 2001
-@@ -992,7 +992,8 @@ long dotlock_lock (char *file,DOTLOCK *b
+$OpenBSD: patch-src_osdep_unix_env_unix.c,v 1.4 2001/11/19 01:56:13 brad Exp $
+--- src/osdep/unix/env_unix.c.orig	Wed Oct 17 23:35:20 2001
++++ src/osdep/unix/env_unix.c	Sat Nov 17 19:06:47 2001
+@@ -1001,7 +1001,8 @@ long dotlock_lock (char *file,DOTLOCK *b
        }
        close (pi[0]); close (pi[1]);
      }

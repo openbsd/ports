@@ -1,16 +1,16 @@
-$OpenBSD: patch-Makefile,v 1.6 2001/09/27 16:28:09 brad Exp $
---- Makefile.orig	Tue Jul  3 02:25:17 2001
-+++ Makefile	Wed Sep 26 23:49:56 2001
-@@ -256,7 +256,7 @@ BUILD=$(MAKE) build EXTRACFLAGS='$(EXTRA
+$OpenBSD: patch-Makefile,v 1.7 2001/11/19 01:56:13 brad Exp $
+--- Makefile.orig	Tue Oct 23 00:48:10 2001
++++ Makefile	Sat Nov 17 19:11:39 2001
+@@ -253,7 +253,7 @@ BUILD=$(MAKE) build EXTRACFLAGS='$(EXTRA
  
  # Make the IMAP Toolkit
  
--all:	c-client rebuild bundled
-+all:	c-client rebuild
+-all:	SPECIALS c-client rebuild bundled
++all:	SPECIALS c-client rebuild
  
  c-client:
  	@echo Not processed yet.  In a first-time build, you must specify
-@@ -367,7 +367,7 @@ an ua:
+@@ -374,7 +374,7 @@ an ua:
  	$(TOOLS)/$@ "$(LN)" src/imapd imapd
  	$(LN) $(TOOLS)/$@ .
  
