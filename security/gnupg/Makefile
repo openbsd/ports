@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2000/03/24 22:11:57 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/06/29 06:06:31 brad Exp $
 
 DISTNAME=	gnupg-1.0.1
 CATEGORIES=	security
-NEED_VERSION=	1.226
+NEED_VERSION=	1.301
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 		ftp://ftp.progsoc.uts.edu.au/pub/gnupg/gnupg/ \
 		ftp://openbsd.rug.ac.be/pub/gcrypt/ \
@@ -16,19 +16,17 @@ MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 DISTFILES=	${DISTNAME}.tar.gz gpg.1.gz
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
+HOMEPAGE=	http://www.gnupg.org/
+
 MAINTAINER=	markus@openbsd.org
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-# For now, because OpenBSD make seems to have a weird bug in suffix handling
-#USE_GMAKE=	Yes
-GNU_CONFIGURE=	yes
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-nls
-FAKE=		Yes
 
 GNUPGDOCDIR=	${PREFIX}/share/doc/gnupg
 GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
@@ -38,7 +36,7 @@ post-extract:
 	@gunzip -c ${FULLDISTDIR}/gpg.1.gz > ${WRKSRC}/doc/gpg.1
 
 post-install:
-	@mkdir -p ${GNUPGDOCDIR}
+	${INSTALL_DATA_DIR} ${GNUPGDOCDIR}
 	@set -e; for f in ${GNUPGDOCFILES}; do \
 	 ${INSTALL_DATA} ${WRKSRC}/$${f} ${GNUPGDOCDIR}; \
 	done

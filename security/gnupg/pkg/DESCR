@@ -3,3 +3,5 @@ not use IDEA or RSA it can be used without any restrictions. GnuPG
 is nearly in compliance with RFC2440 (OpenPGP).
 
 IDEA and RSA plugins are available from ftp://ftp.gnupg.org/
+
+WWW: ${HOMEPAGE}

@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.6 2000/06/29 06:06:31 brad Exp $
 bin/gpg
 lib/gnupg/rndunix
 lib/gnupg/rndegd
