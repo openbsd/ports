@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.15 2001/08/02 22:01:26 jakob Exp $
+# $OpenBSD: Makefile,v 1.16 2001/09/27 16:28:09 brad Exp $
 
 COMMENT=	"University of Washington's c-client mail access routines"
 
-DISTNAME=	imap-2000c
-PKGNAME=	c-client-2000c
+VERSION=	4.40
+DISTNAME=	pine${VERSION}
+PKGNAME=	c-client-${VERSION}
 CATEGORIES=	mail devel
-NEED_VERSION=	1.427
-MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
-		ftp://ftp.cac.washington.edu/imap/old/ \
-		ftp://ftp.sunet.se/pub/unix/mail/imap/ \
-		ftp://ftp.sunet.se/pub/unix/mail/imap/old/
-EXTRACT_SUFX=	.tar.Z
+NEED_VERSION=	1.460
+MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
+		ftp://ftp.sunet.se/pub/unix/mail/pine/ \
+
+HOMEPAGE=	http://www.washington.edu/imap/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -19,13 +19,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
-SHLIB=	libc-client.so.2.1
+SHLIB=	libc-client.so.2.2
 SUBST_VARS=	SHLIB
 
+# Disabled for now.
+# EXTRAAUTHENTICATORS="gss"
 MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" SHLIB="${SHLIB}" \
-		SPECIALAUTHENTICATORS="ssl"
+		SSLTYPE="unix"
 
 ALL_TARGET=	bso
+
+WRKDIST=	${WRKDIR}/${DISTNAME}/imap
 
 HEADERS=	c-client.h env.h env_unix.h flstring.h fs.h ftl.h imap4r1.h \
 		linkage.c linkage.h mail.h misc.h nl.h nntp.h osdep.h \
@@ -42,5 +46,5 @@ do-install:
 .include <bsd.port.mk>
 
 .if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-MAKE_ENV+=	NO_SHARED_LIBS=	Yes
+MAKE_ENV+=	NO_SHARED_LIBS=Yes
 .endif
