@@ -1,0 +1,12 @@
+$OpenBSD: patch-appFrame_appFileChooserMotif_c,v 1.1.1.1 2001/04/18 15:02:46 espie Exp $
+--- appFrame/appFileChooserMotif.c.orig	Thu Mar  8 01:56:37 2001
++++ appFrame/appFileChooserMotif.c	Thu Mar  8 01:56:53 2001
+@@ -523,7 +523,7 @@ static int appMakeFileChooser( AppChoose
+     XtSetArg( al[ac], XmNallowShellResize,	True ); ac++;
+ 
+     XtSetArg( al[ac], XmNchildPlacement,XmPLACE_ABOVE_SELECTION ); ac++;
+-#   if	XmVersion >= 2000
++#   if	XmVersion >= 2000 && !defined(LESSTIF_VERSION)
+     XtSetArg( al[ac], XmNfileFilterStyle,
+ 					XmFILTER_HIDDEN_FILES ); ac++;
+ #   endif
