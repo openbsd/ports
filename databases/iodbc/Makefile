@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/19 17:59:42 danh Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/05 23:25:02 lebel Exp $
+
+COMMENT=	"ODBC 2.x driver manager"
 
 DISTNAME=	libiodbc-2.50.3
 PKGNAME=	iodbc-2.50.3
 CATEGORIES=	databases
-NEED_VERSION=	1.356
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.iodbc.org/dist/
 
 HOMEPAGE=	http://www.iodbc.org/

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2000/12/28 17:14:10 matt Exp $
+# $OpenBSD: Makefile,v 1.22 2001/05/05 23:24:50 lebel Exp $
+
+COMMENT=	"Berkeley DB package, revision 3"
 
 DISTNAME=	db-3.1.17
 CATEGORIES=	databases
-NEED_VERSION=	1.320
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.sleepycat.com/update/3.1.17/
 HOMEPAGE=	http://www.sleepycat.com/
 

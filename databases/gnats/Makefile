@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/18 16:33:09 ian Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/05 23:24:59 lebel Exp $
+
+COMMENT=	"GNU Problem Report Management System"
 
 DISTNAME=	gnats-3.113
-
 CATEGORIES=	databases devel
-
 MASTER_SITES=	ftp://sourceware.cygnus.com/pub/gnats/snapshots/ \
 		ftp://ftp.freesoftware.com/pub/sourceware/gnats/snapshots/ \
 		ftp://gd.tuwien.ac.at/gnu/sourceware/gnats/snapshots/ \
 		ftp://ftp.chg.ru/pub/sourceware/gnats/snapshots/
-
 HOMEPAGE=	http://sources.redhat.com/gnats/
-
 MAINTAINER=	Dug Song <dugsong@monkey.org>
+NEED_VERSION=	1.402
 
 FLAVORS=	www
 FLAVOR?=

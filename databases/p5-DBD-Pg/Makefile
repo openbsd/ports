@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2001/04/23 12:38:17 peter Exp $
+# $OpenBSD: Makefile,v 1.24 2001/05/05 23:25:05 lebel Exp $
+
+COMMENT=	"access to PostgreSQL databases through the DBI"
 
 COMMENT=	"access to PostgreSQL databases through the DBI"
 
 DISTNAME=	DBD-Pg-0.95
 PKGNAME=	p5-DBD-Pg-0.95
 CATEGORIES=	databases perl5
-NEED_VERSION=	1.405
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= DBD
 

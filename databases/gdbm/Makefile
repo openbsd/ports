@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2000/07/22 15:33:34 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2001/05/05 23:24:55 lebel Exp $
+
+COMMENT=	"GNU dbm"
 
 DISTNAME=	gdbm-1.8.0
 CATEGORIES=	databases
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gdbm
 
