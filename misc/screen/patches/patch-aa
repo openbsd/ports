@@ -1,10 +1,13 @@
---- Makefile.in.orig	Tue Nov  9 21:23:15 1999
-+++ Makefile.in	Tue Nov  9 21:24:22 1999
-@@ -21,7 +21,6 @@
+--- Makefile.in.orig	Wed Sep  1 18:50:31 1999
++++ Makefile.in	Thu Dec  9 16:04:03 1999
+@@ -21,8 +21,8 @@
  ETCSCREENRC = `sed < config.h -n -e '/define ETCSCREENRC/s/^.*"\([^"]*\)"/\1/p'`
  
  CC = @CC@
 -CFLAGS = -O
- LDFLAGS =
+-LDFLAGS =
++CFLAGS = @CFLAGS@
++LDFLAGS = @LDFLAGS@
  LIBS = @LIBS@
  
+ CPP_DEPEND=$(CC) -MM

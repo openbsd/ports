@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	Tue Nov  9 21:25:24 1999
-+++ doc/Makefile.in	Tue Nov  9 21:26:28 1999
+--- doc/Makefile.in.orig	Wed Sep  1 18:50:32 1999
++++ doc/Makefile.in	Thu Dec  9 16:05:41 1999
 @@ -9,7 +9,7 @@
  
  INSTALL = @INSTALL@
@@ -9,7 +9,15 @@
  TEXI2DVI = texi2dvi
  
  SHELL = /bin/sh
-@@ -28,9 +28,6 @@
+@@ -20,6 +20,7 @@
+ 	$(TEXI2DVI) $(srcdir)/screen.texinfo
+ 
+ info screen.info: screen.texinfo
++	@rm -f screen.info*
+ 	$(MAKEINFO) $(srcdir)/screen.texinfo -o screen.info
+ 
+ install: installdirs
+@@ -28,9 +29,6 @@
  	-if test -f screen.info; then d=.; else d=$(srcdir); fi; \
  	if test -f $$d/screen.info; then \
  	for f in $$d/screen.info*; do $(INSTALL_DATA) $$f $(infodir);done; \
