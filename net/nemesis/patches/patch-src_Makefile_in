@@ -1,14 +1,21 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2003/09/26 06:01:13 jolan Exp $
---- src/Makefile.in.orig	2003-05-28 21:44:52.000000000 -0500
-+++ src/Makefile.in	2003-09-26 00:46:40.000000000 -0500
-@@ -131,8 +131,8 @@ install-binPROGRAMS: $(bin_PROGRAMS)
- 	$(mkinstalldirs) $(DESTDIR)$(bindir)
+$OpenBSD: patch-src_Makefile_in,v 1.2 2005/03/27 01:10:36 naddy Exp $
+--- src/Makefile.in.orig	Sun Mar 27 01:40:46 2005
++++ src/Makefile.in	Sun Mar 27 01:41:31 2005
+@@ -164,14 +164,14 @@ Makefile:  $(srcdir)/Makefile.in  $(top_
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ install-binPROGRAMS: $(bin_PROGRAMS)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(bindir)
++	$(mkinstalldirs) $(DESTDIR)$(sbindir)
  	@list='$(bin_PROGRAMS)'; for p in $$list; do \
- 	  if test -f $$p; then \
--	    echo "  $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
--	     $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
-+	    echo "  $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
-+	     $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+ 	  p1=`echo $$p|sed 's/$(EXEEXT)$$//'`; \
+ 	  if test -f $$p \
+ 	  ; then \
+ 	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
+-	   echo " $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(bindir)/$$f"; \
+-	   $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(bindir)/$$f; \
++	   echo " $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(sbindir)/$$f"; \
++	   $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(sbindir)/$$f; \
  	  else :; fi; \
  	done
  

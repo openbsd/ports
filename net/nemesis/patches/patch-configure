@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.1 2003/09/26 06:01:13 jolan Exp $
---- configure.orig	2003-05-28 21:44:55.000000000 -0500
-+++ configure	2003-09-26 00:41:54.000000000 -0500
-@@ -2702,7 +2702,6 @@ echo "$as_me: WARNING: Nemesis may not w
- esac
+$OpenBSD: patch-configure,v 1.2 2005/03/27 01:10:36 naddy Exp $
+--- configure.orig	Sun Mar 27 01:43:40 2005
++++ configure	Sun Mar 27 01:43:48 2005
+@@ -4148,7 +4148,6 @@ fi
+ 
  
  CPPFLAGS="${CPPFLAGS} `libnet-config --defines`"
--CFLAGS="${CFLAGS} -funroll-loops -fomit-frame-pointer -pipe"
+-CFLAGS="${CFLAGS} -funroll-loops -pipe"
  
  if test `libnet-config --cflags | wc -c` = "1"; then
      CPPFLAGS="${CPPFLAGS} -I/usr/local/include -I/sw/include"

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.22 2004/12/16 00:31:23 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2005/03/27 01:10:36 naddy Exp $
 
 COMMENT=	"command line arbitrary packet builder"
 
-DISTNAME=	nemesis-1.4beta3
+DISTNAME=	nemesis-1.4
 CATEGORIES=	net security
-MASTER_SITES=	http://www.packetfactory.net/projects/nemesis/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nemesis/}
 
-HOMEPAGE=	http://cerberus.sourcefire.com/~jeff/nemesis/
+HOMEPAGE=	http://nemesis.sourceforge.net/
 
-LIB_DEPENDS=	net::net/libnet
+LIB_DEPENDS=	net.0::net/libnet
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
