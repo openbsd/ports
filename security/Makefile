@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2005/02/05 23:17:50 msf Exp $
+# $OpenBSD: Makefile,v 1.148 2005/02/06 15:12:03 sturm Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -85,6 +85,7 @@
      SUBDIR += p5-Crypt-Twofish
      SUBDIR += p5-Digest-BubbleBabble
      SUBDIR += p5-Digest-HMAC
+     SUBDIR += p5-Digest-MD2
      SUBDIR += p5-Digest-Nilsimsa
      SUBDIR += p5-Digest-SHA1
      SUBDIR += p5-GPG
@@ -96,6 +97,7 @@
      SUBDIR += p5-PGP-Sign
      SUBDIR += p5-PGP-Sign,pgp
      SUBDIR += p5-PGP-Sign,pgp5
+     SUBDIR += p5-Tie-EncryptedHash
      SUBDIR += parse
      SUBDIR += passwdqc
      SUBDIR += pcsc-lite
