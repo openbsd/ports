@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_strlib_c,v 1.1 2004/10/25 02:37:07 pvalchev Exp $
+--- src/strlib.c.orig	Sun Oct 24 20:17:41 2004
++++ src/strlib.c	Sun Oct 24 20:18:37 2004
+@@ -37,6 +37,10 @@
+ #define FALSE 0
+ #define TRUE 1
+ 
++#ifdef __OpenBSD__
++#define G_VA_COPY(ap1, ap2)	va_copy(ap1, ap2)
++#endif
++
+ #if !defined (G_VA_COPY)
+ #  if defined (__GNUC__) && defined (__PPC__) && (defined (_CALL_SYSV) || defined (_WIN32)) || defined(__s390__)
+ #  define G_VA_COPY(ap1, ap2)     (*(ap1) = *(ap2))
