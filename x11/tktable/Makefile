@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/15 18:05:19 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/10/29 17:50:08 naddy Exp $
 
 COMMENT=	"tk extension"
 
 DISTNAME=	Tktable2.7
 PKGNAME=	Tktable-2.7
 CATEGORIES=	x11
-NEED_VERSION=	1.489
 
 HOMEPAGE= 	http://tktable.sourceforge.net/
 
@@ -27,6 +26,17 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.3 \
 		--with-tk=${PREFIX}/lib/tk8.3
+
+MAKE_ENV=	DISPLAY="${DISPLAY}" XAUTHORITY="${XAUTHORITY}"
+REGRESS_TARGET=	test
+REGRESS_IS_INTERACTIVE=	Yes
+
+pre-regress:
+.for t in DISPLAY XAUTHORITY
+.  if !defined($t)
+	@echo "$t needs to be set to run regress"; exit 1
+.  endif
+.endfor
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/Tktable
