@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2004/12/27 13:28:35 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2005/01/27 03:27:04 kevlo Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"perl module for using OpenSSL"
 
-VERSION=	1.23
+VERSION=	1.25
 DISTNAME=	Net_SSLeay.pm-${VERSION}
 PKGNAME=	p5-Net-SSLeay-${VERSION}
 CATEGORIES=	security perl5
