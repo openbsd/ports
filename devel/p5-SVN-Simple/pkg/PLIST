@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/09 03:48:39 kevlo Exp $
+${P5SITE}/SVN/
+${P5SITE}/SVN/Simple/
+${P5SITE}/SVN/Simple/Edit.pm
+${P5SITE}/SVN/Simple/Editor.pm
+@man man/man3p/SVN::Simple::Edit.3p
+@man man/man3p/SVN::Simple::Editor.3p

@@ -1,0 +1,3 @@
+SVN::Simple::Edit wraps the subversion delta editor with a perl
+friendly interface and then you could easily drive it for describing
+changes to a tree.
