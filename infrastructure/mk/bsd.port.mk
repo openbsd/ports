@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.246 2000/04/02 10:47:54 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.247 2000/04/02 16:42:27 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2009,7 +2009,7 @@ depends: lib-depends misc-depends fetch-depends build-depends run-depends
 .  for _DEP in fetch build run
 ${_DEP}-depends:
 .    if defined(${_DEP:U}_DEPENDS) && !defined(NO_DEPENDS)
-	@PATH=${PORTPATH}; \
+	@PATH=${PORTPATH}; { unset DEPENDS_TARGET || true; }; \
 	for i in ${${_DEP:U}_DEPENDS:S,::,:,}; do \
 		cd ${PORTSDIR}; \
 		prog=`echo $$i | sed -e 's/:.*//'`; \
@@ -2054,7 +2054,8 @@ ${_DEP}-depends:
 lib-depends:
 .  if defined(LIB_DEPENDS) && !defined(NO_DEPENDS)
 .    if defined(NO_SHARED_LIBS)
-	@for i in ${LIB_DEPENDS:S,::,:,}; do \
+	@{ unset DEPENDS_TARGET || true; }; \
+	for i in ${LIB_DEPENDS:S,::,:,}; do \
 		cd ${PORTSDIR}; \
 		lib=`echo $$i | sed -e 's/:.*//' -e 's|\([^\\]\)[\\\.].*|\1|'`; \
 		dir=`echo $$i | sed -e 's/[^:]*://'`; \
@@ -2083,7 +2084,8 @@ lib-depends:
 		rm -f $$tmp; \
 	done
 .    else
-	@for i in ${LIB_DEPENDS:S,::,:,}; do \
+	@{ unset DEPENDS_TARGET || true ; }; \
+	for i in ${LIB_DEPENDS:S,::,:,}; do \
 		cd ${PORTSDIR}; \
 		lib=`echo $$i | sed -e 's/:.*//' -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
 		dir=`echo $$i | sed -e 's/[^:]*://'`; \
@@ -2115,7 +2117,8 @@ lib-depends:
 
 misc-depends:
 .  if defined(DEPENDS) && !defined(NO_DEPENDS)
-	@for dir in ${DEPENDS:S,::,:,}; do \
+	@{unset DEPENDS_TARGET || true; } ; \
+	for dir in ${DEPENDS:S,::,:,}; do \
 		cd ${PORTSDIR}; \
 		if expr "$$dir" : '.*:' > /dev/null; then \
 			target=`echo $$dir | sed -e 's/.*://'`; \
