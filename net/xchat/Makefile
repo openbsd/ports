@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.30 2001/07/31 05:25:29 shell Exp $
+# $OpenBSD: Makefile,v 1.31 2001/08/30 02:24:52 brad Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
+# Uses pthreads
 
 COMMENT=	"X-Chat is an X11 IRC client"
 

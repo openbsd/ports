@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.16 2001/08/14 22:42:03 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2001/08/30 02:24:52 brad Exp $
+# Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
 

@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.12 2001/04/16 12:15:22 lebel Exp $
-# Original from: Christopher Turan <turan@openbsd.org>
+# $OpenBSD: Makefile,v 1.13 2001/08/30 02:24:52 brad Exp $
+# Uses pthreads
 
 COMMENT=		"daemon/libs/toolkit for routing BPG4, RIP, OSPF, etc."
 

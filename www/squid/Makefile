@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.34 2001/07/20 14:37:38 brad Exp $
+# $OpenBSD: Makefile,v 1.35 2001/08/30 02:24:52 brad Exp $
+# Uses pthreads (can but does not at the moment)
 
 COMMENT=	"WWW and FTP proxy cache and accelerator"
 
