@@ -1,0 +1,12 @@
+$OpenBSD: patch-ksmp3play_Makefile_in,v 1.1.1.1 2001/07/18 18:19:18 pvalchev Exp $
+--- ksmp3play/Makefile.in.orig	Tue Jul 10 13:55:15 2001
++++ ksmp3play/Makefile.in	Tue Jul 10 13:56:22 2001
+@@ -218,7 +218,7 @@ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+-LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
++LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
+ DIST_COMMON =  Makefile.am Makefile.in
+ 
+ 
