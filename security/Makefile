@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2000/08/30 00:37:41 turan Exp $
+# $OpenBSD: Makefile,v 1.46 2000/09/06 20:23:56 marc Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -45,7 +45,6 @@
      SUBDIR += socks5
      SUBDIR += ssl26
      SUBDIR += sslintl
-     SUBDIR += sslusa
      SUBDIR += stel
      SUBDIR += strobe
      SUBDIR += stunnel
