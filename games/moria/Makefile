@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/09/15 00:50:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2005/02/25 23:15:12 alek Exp $
 
 COMMENT=	"The Dungeons of Moria"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	"not-for-profit redistribution only"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"not-for-profit redistribution only"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c curses termcap
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/05/04 04:49:51 jolan Exp $
+# $OpenBSD: Makefile,v 1.22 2005/02/25 23:18:00 alek Exp $
 
 COMMENT=	"print multiple pages per sheet on PostScript printer"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	"incomplete license"
 PERMIT_PACKAGE_FTP=	"incomplete license"
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=	ftp://ftp.mesa.nl/pub/mpage/
 EXTRACT_SUFX=	.tgz
