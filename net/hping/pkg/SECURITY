@@ -1,0 +1,10 @@
+from antirez's INSTALL docs:
+
+        WARNING: hping2 isn't so trusted code, i didn't
+        audit for hidden buffers over flow and others
+        security related problems. However if (as default)
+        LIMITWHENSUID is defined if euid != uid
+        it's not possible to use a lot of options
+        banally unsafe.
+
+-d.

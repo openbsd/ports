@@ -1,0 +1,13 @@
+--- main.c.orig	Thu Oct 28 13:47:33 1999
++++ main.c	Thu Oct 28 13:48:55 1999
+@@ -138,8 +138,8 @@
+ 
+ 	if ( parse_options(argc, argv) == -1 )
+ 	{
+-		printf("hping2: missing host argument\n"
+-			"Try `hping2 --help' for more information.\n");
++		printf("%s: missing host argument\n"
++			"Try `%s --help' for more information.\n", argv[0], argv[0]);
+ 		exit(1);
+ 	}
+ 

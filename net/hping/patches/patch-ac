@@ -1,0 +1,25 @@
+--- getlhs.c.orig	Tue Aug 24 08:43:29 1999
++++ getlhs.c	Thu Oct 28 14:02:45 1999
+@@ -20,16 +20,16 @@
+ 		linkhdr_size = PPPHDR_SIZE;
+ 		return 0;
+ 	}
+-	else if ( strstr(ifname, "eth") || strstr(ifname, "ed") )
+-	{
+-		linkhdr_size = ETHHDR_SIZE;
+-		return 0;
+-	}
+ 	else if ( strstr(ifname, "lo") )
+ 	{
+ 		linkhdr_size = LOHDR_SIZE;
+ 		return 0;
+ 	}
+ 	else
+-		return -1;
++	{
++	  /* XXX - bogus. but i'm not going to rewrite all this to use
++	     libpcap or libnet correctly... */
++		linkhdr_size = ETHHDR_SIZE;
++		return 0;
++	}
+ }
