@@ -1,6 +1,6 @@
 --- Makefile.orig	Fri Dec  3 16:45:01 1999
-+++ Makefile	Sun Dec  3 23:07:17 2000
-@@ -7,15 +7,15 @@
++++ Makefile	Fri Mar 16 16:16:40 2001
+@@ -7,15 +7,14 @@
  
  ####### Compiler, tools and options
  
@@ -12,16 +12,39 @@
 -LINK	=	g++
 +#CC	=	gcc
 +#CXX	=	g++
-+CFLAGS+=	-Wall -W -O2 -D_REENTRANT -DLINCVS_APP -DNO_DEBUG
-+CXXFLAGS=	-Wall -W -D_REENTRANT -DLINCVS_APP -DNO_DEBUG
-+INCPATH	=	-I./include -I./res -I./themes/include -I./themes/res -I${PREFIX}/include/X11/qt2
++DEFS	=	-D_REENTRANT -DLINCVS_APP -DNO_DEBUG
++INCPATH	=	-I./include -I./res -I./themes/include -I./themes/res -I${LOCALBASE}/include/X11/qt2
 +LINK	=	$(CXX)
  LFLAGS	=	
 -LIBS	=	-L$(QTDIR)/lib -lqt -L/usr/X11R6/lib -lXext -lX11 -lm
 -MOC	=	moc
-+LIBS	=	-L$(PREFIX)/lib/qt2 -L${PREFIX}/lib -L${X11BASE}/lib -lqt -lXext -lX11 -lm
-+MOC	=	$(PREFIX)/bin/moc2
++LIBS	=	-L$(LOCALBASE)/lib/qt2 -L${LOCALBASE}/lib -L${X11BASE}/lib -lqt -lXext -lX11 -lm
++MOC	=	$(LOCALBASE)/bin/moc2
  
  TAR	=	tar -cf
  GZIP	=	gzip -9f
+@@ -69,19 +68,19 @@ TARGET	=	LinCVS
+ .SUFFIXES: .cpp .cxx .cc .C .c
+ 
+ .cpp.o:
+-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o $@ $<
++	$(CXX) -c $(CXXFLAGS) ${DEFS} $(INCPATH) -o $@ $<
+ 
+ .cxx.o:
+-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o $@ $<
++	$(CXX) -c $(CXXFLAGS) ${DEFS} $(INCPATH) -o $@ $<
+ 
+ .cc.o:
+-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o $@ $<
++	$(CXX) -c $(CXXFLAGS) ${DEFS} $(INCPATH) -o $@ $<
+ 
+ .C.o:
+-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o $@ $<
++	$(CXX) -c $(CXXFLAGS) ${DEFS} $(INCPATH) -o $@ $<
+ 
+ .c.o:
+-	$(CC) -c $(CFLAGS) $(INCPATH) -o $@ $<
++	$(CC) -c $(CFLAGS) ${DEFS} $(INCPATH) -o $@ $<
+ 
+ ####### Build rules
  
