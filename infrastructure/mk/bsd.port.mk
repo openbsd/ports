@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.518 2002/04/03 15:00:30 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.519 2002/04/09 13:52:58 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -346,7 +346,8 @@ CONFIGURE_STYLE?=
 
 # where configuration files should go
 SYSCONFDIR?=	/etc
-.if defined(USE_GMAKE)
+USE_GMAKE?=		No
+.if ${USE_GMAKE:L} == "yes"
 BUILD_DEPENDS+=		::devel/gmake
 MAKE_PROGRAM=		${GMAKE}
 .else
@@ -357,7 +358,8 @@ MAKE_PROGRAM=		${MAKE}
 CONFIGURE_STYLE+=gnu
 .endif
 
-.if defined(USE_LIBTOOL)
+USE_LIBTOOL?=No
+.if ${USE_LIBTOOL:L} == "yes"
 LIBTOOL?=			${LOCALBASE}/bin/libtool
 BUILD_DEPENDS+=		::devel/libtool
 CONFIGURE_ENV+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
@@ -1081,6 +1083,7 @@ _CATPAGES+=	${CAT${sect}:S%^%${CAT${sect}PREFIX}/man/${lang}/cat${sect:L}/%}
 .  endfor
 .endfor
 
+USE_X11?=No
 ################################################################
 # Many ways to disable a port.
 #
@@ -1113,7 +1116,7 @@ IGNORE=	"is an interactive port"
 IGNORE=	"is not an interactive port"
 .  elif (defined(RESTRICTED) && defined(NO_RESTRICTED))
 IGNORE=	"is restricted: ${RESTRICTED}"
-.  elif defined(USE_X11) && !exists(${X11BASE})
+.  elif ${USE_X11:L} == "yes" && !exists(${X11BASE})
 IGNORE=	"uses X11, but ${X11BASE} not found"
 .  elif defined(BROKEN)
 IGNORE=	"is marked as broken: ${BROKEN}"
