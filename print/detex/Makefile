@@ -1,16 +1,10 @@
-# OpenBSD makefile for: 	  detex
-# Version required:     	  2.6
-# Date created:			  May 17 1998
-# Whom:				  Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.14 2002/03/21 21:25:50 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.15 2002/10/28 13:40:41 naddy Exp $
 
 COMMENT=		"strip TeX/LaTeX codes from a file"
 
 DISTNAME=		detex-2.6
 CATEGORIES=		print
-NEED_VERSION=		1.515
+
 MASTER_SITES=		ftp://ftp.cs.purdue.edu/pub/trinkle/
 EXTRACT_SUFX=		.tar
 
@@ -23,11 +17,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=		${WRKDIR}
-MAN1=			detex.1
+
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/detex ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1}l ${PREFIX}/man/man1/${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/detex.1l ${PREFIX}/man/man1/detex.1
 
 
 .include <bsd.port.mk>

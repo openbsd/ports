@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2002/07/19 14:27:25 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2002/10/28 13:40:41 naddy Exp $
 
 COMMENT=	"tools to convert Xfig's .fig files"
 
@@ -30,5 +30,7 @@ FLAVOR?=
 .if ${FLAVOR:L} == "a4"
 PATCH_LIST=	patch-* a4-*
 .endif
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/03/21 21:25:50 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/10/28 13:40:41 naddy Exp $
 
 COMMENT=	"Adobe Font Metrics"
 
@@ -7,7 +7,6 @@ PKGNAME=	afm-1.0
 CATEGORIES=	print
 MASTER_SITES=	ftp://sgi.com/sgi/fax/source/
 EXTRACT_SUFX=	-tar.Z
-NEED_VERSION=	1.515
 
 MAINTAINER=	David Leonard <d@openbsd.org>
 
@@ -21,6 +20,7 @@ MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}"
 pre-patch:
 	@rm -rf ${WRKSRC}/RCS
 
-do-build:
+NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2002/05/15 17:58:49 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2002/10/28 13:40:41 naddy Exp $
 
 COMMENT="GNU PostScript interpreter"
 
@@ -120,6 +120,8 @@ FLAVOR?=
 .if ${FLAVOR:U} == "A4"
 CFLAGS+=	-DA4
 .endif
+
+NO_REGRESS=	Yes
 
 FAKE_FLAGS=${BASE_FLAGS} \
 	prefix=${WRKINST}${PREFIX} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/05/14 11:49:22 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/28 13:40:41 naddy Exp $
 # Original from: Marc Espie
 
 COMMENT=	"TeX distribution, common support files"
@@ -11,7 +11,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
 CATEGORIES=	print/teTeX
-NEED_VERSION=	1.528
 
 HOMEPAGE=	http://www.tug.org/tetex/
 MAINTAINER=	Marc Espie <espie@openbsd.org>, Anil Madhavapeddy <avsm@openbsd.org>
@@ -25,6 +24,7 @@ WRKDIST=	${WRKDIR}
 # better than NO_EXTRACT, as this builds WRKDIR correctly for us.
 EXTRACT_ONLY=
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 TEXMF_DIR=	${PREFIX}/share/texmf
 

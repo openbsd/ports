@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2002/05/15 18:15:44 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/10/28 13:40:41 naddy Exp $
 
 COMMENT="AFPL PostScript interpreter"
 
 VERSION=	7.00
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
-NEED_VERSION=	1.525
 
 DIR=		AFPL/gs${VERSION:S/.//}
 MASTER_SITES=	${GS_SITES}
@@ -130,6 +129,8 @@ NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 .else
 end_install=
 .endif
+
+NO_REGRESS=	Yes
 
 FAKE_FLAGS=${BASE_FLAGS} prefix=${WRKINST}${PREFIX}
 

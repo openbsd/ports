@@ -1,15 +1,10 @@
-# New ports collection makefile for:    psutils
-# Date created:         17 March 1998
-# Whom:                 mickey@openbsd.org
-#
-# $OpenBSD: Makefile,v 1.16 2002/05/23 18:11:34 jsyn Exp $
-#
+# $OpenBSD: Makefile,v 1.17 2002/10/28 13:40:41 naddy Exp $
 
 COMMENT=	"manipulating PostScript documents"
 
 DISTNAME=	psutils-p17
 CATEGORIES=	print
-NEED_VERSION=	1.515
+
 MASTER_SITES=   ftp://ftp.tardis.ed.ac.uk/users/ajcd/
 
 HOMEPAGE=	http://www.tardis.ed.ac.uk/~ajcd/psutils/
@@ -58,5 +53,7 @@ FAKE_FLAGS=	\
 .endfor
 
 MAKE_FILE=Makefile.unix
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2002/06/09 05:37:07 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2002/10/28 13:40:41 naddy Exp $
 
 COMMENT=		"macros for the OpenJade DSSSL TeX backend"
 
 DISTNAME=		jadetex-3.11
 CATEGORIES=     	print
-NEED_VERSION=		1.528
 
 HOMEPAGE=		http://jadetex.sourceforge.net/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
@@ -25,6 +24,8 @@ RUN_DEPENDS=		${BUILD_DEPENDS}
 
 ALL_TARGET=		jadetex.fmt pdfjadetex.fmt
 TEXMFLOC=		${PREFIX}/share/texmf
+
+NO_REGRESS=		Yes
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${TEXMFLOC}/web2c

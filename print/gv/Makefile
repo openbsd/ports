@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/10/28 00:27:54 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2002/10/28 13:40:41 naddy Exp $
 
 COMMENT= 	"PostScript and PDF previewer"
 
@@ -18,7 +18,9 @@ RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu
 
 CONFIGURE_STYLE=	imake
 
-INSTALL_TARGET=install install.man install.doc
+NO_REGRESS=	Yes
+
+INSTALL_TARGET=	install install.man install.doc
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/source/gv.0 ${PREFIX}/man/cat1

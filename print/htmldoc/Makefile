@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/09/13 22:18:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/28 13:40:41 naddy Exp $
 
 COMMENT=	"convert HTML pages to PDF/PS format"
 
@@ -30,5 +30,7 @@ CONFIGURE_ENV= 		LDFLAGS="-L${LOCALBASE}/lib" \
 
 post-extract:
 	@rm -rf ${WRKSRC}/jpeg ${WRKSRC}/png ${WRKSRC}/zlib
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

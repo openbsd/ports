@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/07/07 17:03:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/28 13:40:41 naddy Exp $
 
 COMMENT=	"print multiple pages per sheet on PostScript printer"
 
@@ -30,6 +30,8 @@ MAKE_FLAGS+=	PAGESIZE=PAGE_A4
 .else
 ERRORS+=	"Fatal: You must set exactly ONE flavor: ${FLAVORS}"
 .endif
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/mpage ${PREFIX}/bin
