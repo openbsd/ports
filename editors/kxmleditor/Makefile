@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/15 09:25:41 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/18 03:39:14 kevlo Exp $
 
 COMMENT=	"xml editor for KDE"
 
-DISTNAME=	kxmleditor-0.4
+DISTNAME=	kxmleditor-0.5
 CATEGORIES=	editors
 NEED_VERSION=	1.420
 
@@ -30,6 +30,6 @@ CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
 CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
-CONFIGURE_ENV=	MOC=${LOCALBASE}/bin/moc2  KDEDIR=/usr/local
+CONFIGURE_ENV=	MOC=${LOCALBASE}/bin/moc2  KDEDIR=${LOCALBASE} 
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/15 09:25:41 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/08/18 03:39:19 kevlo Exp $
 bin/kxmleditor
 share/applnk/Applications/kxmleditor.desktop
 share/apps/kxmleditor/icons/hicolor/16x16/actions/bookmark_next.png
@@ -69,6 +69,8 @@ share/apps/kxmleditor/pics/xml_text.png
 share/doc/HTML/en/kxmleditor/common
 share/doc/HTML/en/kxmleditor/index.docbook
 share/doc/HTML/en/kxmleditor/screenshot.png
+share/doc/HTML/en/kxmleditor/setupspcchr.png
+share/doc/HTML/en/kxmleditor/setuptargz.png
 share/doc/HTML/en/kxmleditor/xml.png
 @dirrm share/doc/HTML/en/kxmleditor
 @dirrm share/apps/kxmleditor/pics
