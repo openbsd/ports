@@ -1,0 +1,22 @@
+--- Makefile.orig	Fri Aug 18 08:35:46 2000
++++ Makefile	Tue Oct  3 09:37:23 2000
+@@ -44,7 +44,7 @@
+ OPTIONS += -DLOG_TO_FILE_LINEBUFF
+ 
+ # BSD IPFILTER mechanism for fetching intended destination address.
+-#OPTIONS += -DIPFILTER
++OPTIONS += -DIPFILTER
+ 
+ # linux-2.4 iptables mechanism for fetching intended destination address.
+ #OPTIONS += -DIPTABLES
+@@ -53,8 +53,8 @@
+ #OPTIONS += -DDO_DOUBLE_FORK
+ 
+ # Define these to enable tcp_wrappers. You can use the built-in ACLs instead though.
+-#OPTIONS += -DTCP_WRAPPERS
+-#LIBS    += -lwrap
++OPTIONS += -DTCP_WRAPPERS
++LIBS    += -lwrap
+ 
+ # You may need one or both of these to get a clean compile.
+ #OPTIONS += -DHAVE_PATHS_H
