@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/12/30 16:26:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2003/09/29 13:02:29 naddy Exp $
 
 COMMENT=	"astronomical julian date calculator"
 
 DISTNAME=	jday-1.3
 CATEGORIES=	astro
 HOMEPAGE=	http://jday.sourceforge.net/
-
-MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
