@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.160 1999/12/19 23:48:36 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.161 1999/12/20 00:07:17 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1112,8 +1112,7 @@ package:
 	@${IGNORECMD}
 .else # IGNORECMD
 
-fetch:
-	@cd ${.CURDIR} && make real-fetch
+fetch: real-fetch
 
 checksum: fetch
 .if defined(NO_CHECKSUM) || defined(NO_EXTRACT)
@@ -1255,6 +1254,9 @@ ${_EXTRACT_COOKIE}:
 ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .if !defined(NO_PATCH)
 	@cd ${.CURDIR} && make real-patch
+.endif
+.if !defined(PATCH_CHECK_ONLY) && defined(USE_AUTOCONF)
+	@cd ${AUTOCONF_DIR} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 .endif
 	@${_MAKE_COOKIE} ${_PATCH_COOKIE}
 
@@ -1608,7 +1610,73 @@ delete-package:
 ################################################################
 
 _PORT_USE: .USE
-.if make(real-install)
+	@cd ${.CURDIR} && make ${.TARGET:S/^real-/pre-/}
+	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/pre-/} ]; then \
+		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
+			${SCRIPTDIR}/${.TARGET:S/^real-/pre-/}; \
+	fi
+	@cd ${.CURDIR} && make ${.TARGET:S/^real-/do-/}
+	@cd ${.CURDIR} && make ${.TARGET:S/^real-/post-/}
+	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/post-/} ]; then \
+		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
+			${SCRIPTDIR}/${.TARGET:S/^real-/post-/}; \
+	fi
+
+_POST_INSTALL: .USE
+.if defined(_MANPAGES) || defined(_CATPAGES)
+.if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
+	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
+.for manpage in ${_MANPAGES} ${_CATPAGES}
+	@${GUNZIP_CMD} ${manpage}.gz
+.endfor
+.elif !defined(MANCOMPRESSED) && !defined(NOMANCOMPRESS)
+	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
+.for manpage in ${_MANPAGES} ${_CATPAGES}
+	@if [ -L ${manpage} ]; then \
+		set - `file ${manpage}`; \
+		shift `expr $$# - 1`; \
+		ln -sf $${1}.gz ${manpage}.gz; \
+		rm ${manpage}; \
+	else \
+		${GZIP_CMD} ${manpage}; \
+	fi
+.endfor
+.endif
+.endif
+.if exists(${PKGDIR}/MESSAGE)
+	@cat	${PKGDIR}/MESSAGE
+.endif
+.if !defined(NO_PKG_REGISTER)
+	@cd ${.CURDIR} && make fake-pkg
+.endif
+
+################################################################
+# Skeleton targets start here
+# 
+# You shouldn't have to change these.  Either add the pre-* or
+# post-* targets/scripts or redefine the do-* targets.  These
+# targets don't do anything other than checking for cookies and
+# call the necessary targets/scripts.
+################################################################
+
+.if !target(fetch-all)
+fetch-all:
+	@cd ${.CURDIR} && make __FETCH_ALL=Yes real-fetch
+.endif
+
+# And call the macros
+
+real-fetch: fetch-depends _PORT_USE
+real-extract: build-depends lib-depends misc-depends _PORT_USE
+	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
+real-patch: _PORT_USE
+	@${ECHO_MSG} "===>  Patching for ${PKGNAME}"
+real-configure: _PORT_USE
+	@${ECHO_MSG} "===>  Configuring for ${PKGNAME}"
+real-build: _PORT_USE
+	@${ECHO_MSG} "===>  Building for ${PKGNAME}"
+real-install: run-depends lib-depends _PORT_USE _POST_INSTALL
+	@${ECHO_MSG} "===>  Installing for ${PKGNAME}"
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
 	@if [ -d ${PKG_DBDIR}/${PKGNAME} -o "X$$(ls -d ${PKG_DBDIR}/${PKGNAME:C/-[0-9].*//g}-* 2> /dev/null)" != "X" ]; then \
 		echo "===>  ${PKGNAME} is already installed - perhaps an older version?"; \
@@ -1643,77 +1711,7 @@ _PORT_USE: .USE
 	fi
 .endif
 	@${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
-.endif
-	@cd ${.CURDIR} && make ${.TARGET:S/^real-/pre-/}
-	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/pre-/} ]; then \
-		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
-			${SCRIPTDIR}/${.TARGET:S/^real-/pre-/}; \
-	fi
-	@cd ${.CURDIR} && make ${.TARGET:S/^real-/do-/}
-	@cd ${.CURDIR} && make ${.TARGET:S/^real-/post-/}
-	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/post-/} ]; then \
-		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
-			${SCRIPTDIR}/${.TARGET:S/^real-/post-/}; \
-	fi
-.if make(real-install) 
-.if defined(_MANPAGES) || defined(_CATPAGES)
-.if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
-	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
-.for manpage in ${_MANPAGES} ${_CATPAGES}
-	@${GUNZIP_CMD} ${manpage}.gz
-.endfor
-.elif !defined(MANCOMPRESSED) && !defined(NOMANCOMPRESS)
-	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
-.for manpage in ${_MANPAGES} ${_CATPAGES}
-	@if [ -L ${manpage} ]; then \
-		set - `file ${manpage}`; \
-		shift `expr $$# - 1`; \
-		ln -sf $${1}.gz ${manpage}.gz; \
-		rm ${manpage}; \
-	else \
-		${GZIP_CMD} ${manpage}; \
-	fi
-.endfor
-.endif
-.endif
-.if exists(${PKGDIR}/MESSAGE)
-	@cat	${PKGDIR}/MESSAGE
-.endif
-.if !defined(NO_PKG_REGISTER)
-	@cd ${.CURDIR} && make fake-pkg
-.endif
-.endif
-.if make(real-patch) && !defined(PATCH_CHECK_ONLY) && defined(USE_AUTOCONF)
-	@cd ${AUTOCONF_DIR} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-.endif
 
-################################################################
-# Skeleton targets start here
-# 
-# You shouldn't have to change these.  Either add the pre-* or
-# post-* targets/scripts or redefine the do-* targets.  These
-# targets don't do anything other than checking for cookies and
-# call the necessary targets/scripts.
-################################################################
-
-.if !target(fetch-all)
-fetch-all:
-	@cd ${.CURDIR} && make __FETCH_ALL=Yes real-fetch
-.endif
-
-# And call the macros
-
-real-fetch: fetch-depends _PORT_USE
-real-extract: build-depends lib-depends misc-depends _PORT_USE
-	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
-real-patch: _PORT_USE
-	@${ECHO_MSG} "===>  Patching for ${PKGNAME}"
-real-configure: _PORT_USE
-	@${ECHO_MSG} "===>  Configuring for ${PKGNAME}"
-real-build: _PORT_USE
-	@${ECHO_MSG} "===>  Building for ${PKGNAME}"
-real-install: run-depends lib-depends _PORT_USE
-	@${ECHO_MSG} "===>  Installing for ${PKGNAME}"
 real-package: _PORT_USE
 
 # Empty pre-* and post-* targets, note we can't use .if !target()
