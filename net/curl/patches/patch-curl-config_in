@@ -1,0 +1,12 @@
+$OpenBSD: patch-curl-config_in,v 1.1 2003/02/14 02:38:15 brad Exp $
+--- curl-config.in.orig	Thu Feb 13 21:21:37 2003
++++ curl-config.in	Thu Feb 13 21:21:48 2003
+@@ -107,7 +107,7 @@ while test $# -gt 0; do
+ 	;;
+ 
+     --cflags)
+-       	#echo -I@includedir@
++       	echo -I@includedir@
+         echo ""
+        	;;
+ 
