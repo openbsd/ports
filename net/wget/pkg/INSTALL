@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2000/08/15 05:47:15 brad Exp $
+# $OpenBSD: INSTALL,v 1.5 2001/09/06 04:02:24 brad Exp $
 #
 # Pre/post-installation setup of wget
 
@@ -30,7 +30,7 @@ do_install()
     echo "+---------------"
     echo "| The $1 configuration file, $CONFIG_FILE,"
     echo "| has been installed.  Please view this file and change"
-    echo "| the configuration to meet your needs"
+    echo "| the configuration to meet your needs."
     echo "+---------------"
     echo
 
