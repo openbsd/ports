@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/10/08 17:13:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2004/05/18 08:45:33 xsa Exp $
 
 COMMENT=	"PostIt (R) messages onto your X11 screen"
 
@@ -10,7 +10,7 @@ CATEGORIES=	x11
 # servers only have the comp.sources.x version, with its distfile named
 # `part01.gz'.
 #
-MASTER_SITES=	ftp://ftp.hrz.th-darmstadt.de/pub/X11/R5contrib/
+MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
 EXTRACT_SUFX=	.tar.Z
 
 # BSD

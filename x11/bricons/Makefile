@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/10/29 19:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2004/05/18 08:45:33 xsa Exp $
 
 COMMENT=	"quick start-up utility for applications on an X11 display"
 
@@ -12,8 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.uni-paderborn.de/unix/X11/ftp.x.org/R5contrib/ \
-		ftp://ftp.pasteur.fr/pub/computing/unix/X11/R5contrib/
+MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
 
 CONFIGURE_STYLE= imake
 WRKDIST=	${WRKDIR}/bricons

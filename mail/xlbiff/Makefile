@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/27 17:21:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2004/05/18 08:45:33 xsa Exp $
 
 COMMENT=	"display from/subject from incoming mails using X11"
 
 DISTNAME=	xlbiff-3.0
 CATEGORIES=	mail x11
 
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/
+MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
 EXTRACT_SUFX=	.tar.Z
 
 PERMIT_PACKAGE_CDROM=	Yes

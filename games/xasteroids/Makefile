@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/10/26 20:44:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2004/05/18 08:45:33 xsa Exp $
 
 COMMENT=	"X11-based asteroids-style arcade"
 
@@ -6,7 +6,7 @@ DISTNAME=	xasteroids
 PKGNAME=	xasteroids-5.0
 CATEGORIES=	games
 
-MASTER_SITES=	ftp://ftp.freesoftware.com/pub/X11/R5contrib/
+MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
 EXTRACT_SUFX=	.sh.Z
 
 PERMIT_PACKAGE_CDROM=	Yes

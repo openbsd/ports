@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/29 19:48:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/05/18 08:45:33 xsa Exp $
 
 COMMENT=	"find color values by graphical color mixing"
 
@@ -6,8 +6,7 @@ DISTNAME=	xcoloredit
 PKGNAME=	xcoloredit-1.2
 CATEGORIES=	x11
 
-MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/X11/R5contrib/ \
-		ftp://ftp.x.org/R5contrib/
+MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
 EXTRACT_SUFX=	.tar.Z
 
 # License: BSD
