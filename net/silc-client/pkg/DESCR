@@ -24,5 +24,3 @@ passwords or public key authentication. All authentication data is always
 encrypted in the SILC network. Each connection has their own session keys,
 all channels have channel specific keys, and all private messages can be
 secured with private message specific keys.
-
-WWW: ${HOMEPAGE}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/06/01 23:11:23 brad Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/10/25 23:14:42 brad Exp $
 bin/silc
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi.pm
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/TextUI.pm
@@ -22,12 +22,13 @@ share/doc/silc/FAQ
 @comment share/doc/silc/INSTALL
 share/doc/silc/README
 @comment share/doc/silc/TODO
-share/doc/silc/draft-riikonen-presence-attrs-01.txt
-share/doc/silc/draft-riikonen-silc-commands-04.txt
-share/doc/silc/draft-riikonen-silc-flags-payloads-02.txt
-share/doc/silc/draft-riikonen-silc-ke-auth-06.txt
-share/doc/silc/draft-riikonen-silc-pp-06.txt
-share/doc/silc/draft-riikonen-silc-spec-06.txt
+share/doc/silc/draft-riikonen-presence-attrs-02.txt
+share/doc/silc/draft-riikonen-silc-commands-06.txt
+share/doc/silc/draft-riikonen-silc-flags-payloads-03.txt
+share/doc/silc/draft-riikonen-silc-flags-payloads-04.txt
+share/doc/silc/draft-riikonen-silc-ke-auth-07.txt
+share/doc/silc/draft-riikonen-silc-pp-08.txt
+share/doc/silc/draft-riikonen-silc-spec-08.txt
 share/doc/silc/formats.txt
 share/doc/silc/manual.txt
 share/doc/silc/signals.txt
@@ -127,6 +128,7 @@ share/silc/scripts/dns.pl
 share/silc/scripts/hello.pl
 share/silc/scripts/mail-maildir.pl
 share/silc/scripts/mail.pl
+share/silc/scripts/silc-mime.pl
 share/silc/themes/default.theme
 @dirrm share/silc/themes
 @dirrm share/silc/scripts
@@ -142,3 +144,4 @@ share/silc/themes/default.theme
 @comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto
 @comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi
 @comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
+@extraunexec rm -rf ${SYSCONFDIR}/silc

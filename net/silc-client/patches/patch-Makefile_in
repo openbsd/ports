@@ -1,21 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2003/04/18 03:22:23 brad Exp $
---- Makefile.in.orig	Tue Mar 18 04:40:51 2003
-+++ Makefile.in	Thu Apr 17 09:09:27 2003
-@@ -216,7 +216,7 @@ install_sh = @install_sh@
- libdir = @libdir@
- libexecdir = @libexecdir@
- localstatedir = @localstatedir@
--mansdir = $(DESTDIR)$(mandir)
-+mansdir = $(DESTDIR)$(silc_mandir)
- oldincludedir = @oldincludedir@
- prefix = @prefix@
- program_transform_name = @program_transform_name@
-@@ -775,7 +775,7 @@ generate-server-key:
+$OpenBSD: patch-Makefile_in,v 1.8 2003/10/25 23:14:41 brad Exp $
+--- Makefile.in.orig	2003-10-24 09:46:37.000000000 -0400
++++ Makefile.in	2003-10-25 02:57:22.000000000 -0400
+@@ -776,7 +776,7 @@ generate-server-key:
  	  $(sbindir)/silcd -C $(etcdir); \
  	fi
  
 -@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs-client sim-install doc-install-client etc-install-client
 +@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs-client doc-install-client etc-install-client
- @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs-client install-dirs-server sim-install doc-install-client doc-install-server toolkit-install examples-install etc-install-client etc-install-server generate-server-key
+ @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs-client install-dirs-server sim-install doc-install-client doc-install-server toolkit-install examples-install etc-install-client etc-install-server
  @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs-server sim-install doc-install-server examples-install etc-install-server generate-server-key
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
