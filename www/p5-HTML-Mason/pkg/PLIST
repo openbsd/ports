@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/04/30 19:20:50 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/15 19:46:16 naddy Exp $
 ${P5SITE}/Apache/Mason.pm
 ${P5SITE}/Bundle/HTML/Mason.pm
 ${P5SITE}/HTML/Mason.pm
@@ -59,7 +59,7 @@ man/man3p/HTML::Mason::Subclassing.3p
 man/man3p/HTML::Mason::Tests.3p
 man/man3p/HTML::Mason::Tools.3p
 man/man3p/HTML::Mason::Utils.3p
-@comment @dirrm man/man3p
+@dirrm man/man3p
 @comment @dirrm ${P5ARCH}/auto/HTML/Mason
 @comment @dirrm ${P5ARCH}/auto/HTML
 @comment @dirrm ${P5ARCH}/auto
@@ -69,7 +69,7 @@ man/man3p/HTML::Mason::Utils.3p
 @dirrm ${P5SITE}/HTML/Mason/Compiler
 @dirrm ${P5SITE}/HTML/Mason/Cache
 @dirrm ${P5SITE}/HTML/Mason
-@comment @dirrm ${P5SITE}/HTML
-@comment @dirrm ${P5SITE}/Bundle/HTML
-@comment @dirrm ${P5SITE}/Bundle
-@comment @dirrm ${P5SITE}/Apache
+@dirrm ${P5SITE}/HTML
+@dirrm ${P5SITE}/Bundle/HTML
+@dirrm ${P5SITE}/Bundle
+@dirrm ${P5SITE}/Apache

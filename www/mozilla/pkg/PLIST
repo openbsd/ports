@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2003/12/04 15:01:39 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.24 2003/12/15 19:46:16 naddy Exp $
 bin/mozilla
 mozilla/LICENSE
 mozilla/chrome/US.jar
@@ -453,8 +453,8 @@ share/pixmaps/mozilla-compose-icon.gif
 share/pixmaps/mozilla-icon.png
 share/pixmaps/mozilla-mail-icon.gif
 %%SHARED%%
-@comment @dirrm share/pixmaps
-@comment @dirrm share/applications
+@dirrm share/pixmaps
+@dirrm share/applications
 @dirrm mozilla/searchplugins
 @dirrm mozilla/res/throbber
 @dirrm mozilla/res/samples/sampleimages

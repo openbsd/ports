@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/04/18 19:46:24 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/12/15 19:46:16 naddy Exp $
 ${P5SITE}/Apache/MP3.pm
 ${P5SITE}/Apache/MP3/L10N.pm
 ${P5SITE}/Apache/MP3/L10N/Aliases.pm
@@ -61,10 +61,10 @@ share/apache_mp3/playlist.gif
 share/apache_mp3/right_arrow.gif
 share/apache_mp3/sound.gif
 @dirrm share/apache_mp3
-@comment @dirrm man/man3p
+@dirrm man/man3p
 @comment @dirrm ${P5ARCH}/auto/Apache/MP3
 @comment @dirrm ${P5ARCH}/auto
 @comment @dirrm ${P5ARCH}
 @dirrm ${P5SITE}/Apache/MP3/L10N
 @dirrm ${P5SITE}/Apache/MP3
-@comment @dirrm ${P5SITE}/Apache
+@dirrm ${P5SITE}/Apache

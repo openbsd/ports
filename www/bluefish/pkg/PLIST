@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/08/27 12:41:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/12/15 19:46:16 naddy Exp $
 bin/bluefish
 share/bluefish/bluefish_splash.png
 share/bluefish/custom_menu.default
@@ -31,28 +31,28 @@ share/locale/pl/LC_MESSAGES/bluefish.mo
 share/locale/ru/LC_MESSAGES/bluefish.mo
 share/locale/sv/LC_MESSAGES/bluefish.mo
 share/pixmaps/bluefish-icon.png
-@comment @dirrm share/pixmaps
-@comment @dirrm share/locale/sv/LC_MESSAGES
-@comment @dirrm share/locale/sv
-@comment @dirrm share/locale/ru/LC_MESSAGES
-@comment @dirrm share/locale/ru
-@comment @dirrm share/locale/pl/LC_MESSAGES
-@comment @dirrm share/locale/pl
-@comment @dirrm share/locale/no/LC_MESSAGES
-@comment @dirrm share/locale/no
-@comment @dirrm share/locale/ja/LC_MESSAGES
-@comment @dirrm share/locale/ja
-@comment @dirrm share/locale/it/LC_MESSAGES
-@comment @dirrm share/locale/it
-@comment @dirrm share/locale/hu/LC_MESSAGES
-@comment @dirrm share/locale/hu
-@comment @dirrm share/locale/fr/LC_MESSAGES
-@comment @dirrm share/locale/fr
-@comment @dirrm share/locale/es/LC_MESSAGES
-@comment @dirrm share/locale/es
-@comment @dirrm share/locale/de/LC_MESSAGES
-@comment @dirrm share/locale/de
-@comment @dirrm share/locale/da/LC_MESSAGES
-@comment @dirrm share/locale/da
-@comment @dirrm share/locale
+@dirrm share/pixmaps
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/da
+@dirrm share/locale
 @dirrm share/bluefish
