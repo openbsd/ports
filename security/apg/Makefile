@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/01/24 19:35:16 jsyn Exp $
+# $OpenBSD: Makefile,v 1.3 2002/01/25 17:38:50 jsyn Exp $
 
 COMMENT=		"automated password generator"
 
@@ -15,7 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 
-MASTER_SITES=		http://www.adel.nursat.kz/apg/download/
+MASTER_SITES=		http://www.adel.nursat.kz/apg/download/ \
+MASTER_SITES=		${MASTER_SITE_PACKETSTORM}
+MASTER_SITE_SUBDIR=	UNIX/misc
 
 MAKE_FLAGS=		CC="${CC}" 
 FAKE_FLAGS=		INSTALL_PREFIX=${WRKINST}${PREFIX}
