@@ -1,6 +1,6 @@
-$OpenBSD: patch-ld_configure_tgt,v 1.1.1.1 2002/02/19 04:19:21 fgsch Exp $
+$OpenBSD: patch-ld_configure_tgt,v 1.2 2002/03/19 08:27:31 fgsch Exp $
 --- ld/configure.tgt.orig	Mon Jun 11 07:05:08 2001
-+++ ld/configure.tgt	Wed Feb 13 23:19:24 2002
++++ ld/configure.tgt	Sun Mar 17 20:09:18 2002
 @@ -68,8 +68,10 @@ sparc*-*-linux-gnu*)	targ_emul=elf32_spa
  			;;
  sparc*-*-lynxos*)	targ_emul=sparclynx ;;
@@ -35,7 +35,16 @@ $OpenBSD: patch-ld_configure_tgt,v 1.1.1.1 2002/02/19 04:19:21 fgsch Exp $
  hppa*-*-rtems*)		targ_emul=hppaelf ;;
  vax-dec-ultrix* | vax-dec-bsd*) targ_emul=vax ;;
  mips*-*-pe)		targ_emul=mipspe ;
-@@ -298,6 +303,7 @@ alpha*-*-osf*)		targ_emul=alpha ;;
+@@ -261,6 +266,8 @@ mips*el-*-ecoff*)	targ_emul=mipsidtl ;;
+ mips*-*-ecoff*)		targ_emul=mipsidt ;;
+ mips*-dec-bsd*)		targ_emul=mipsbsd ;;
+ mips*-dec-netbsd*)	targ_emul=elf32lmip ;;
++mips*el-*-openbsd*)	targ_emul=elf32lmip ;;
++mips*-*-openbsd*)	targ_emul=elf32bmip ;;
+ mips*-*-bsd*)		targ_emul=mipsbig ;;
+ mips*vr4300el-*-elf*)	targ_emul=elf32l4300 ;;
+ mips*vr4300-*-elf*)	targ_emul=elf32b4300 ;;
+@@ -298,6 +305,7 @@ alpha*-*-osf*)		targ_emul=alpha ;;
  alpha*-*-gnu*)		targ_emul=elf64alpha ;;
  alpha*-*-netware*)	targ_emul=alpha ;;
  alpha*-*-netbsd*)	targ_emul=elf64alpha ;;
@@ -43,7 +52,7 @@ $OpenBSD: patch-ld_configure_tgt,v 1.1.1.1 2002/02/19 04:19:21 fgsch Exp $
  z8k-*-coff) 		targ_emul=z8002; targ_extra_emuls=z8001 ;;
  ns32k-pc532-mach* | ns32k-pc532-ux*)	targ_emul=pc532macha ;;
  ns32k-pc532-netbsd* | ns32k-pc532-lites*) targ_emul=ns32knbsd ;;
-@@ -312,7 +318,7 @@ powerpc-*-linux-gnu*)	targ_emul=elf32ppc
+@@ -312,7 +320,7 @@ powerpc-*-linux-gnu*)	targ_emul=elf32ppc
  pjl*-*-*)	        targ_emul=pjlelf ; targ_extra_emuls="elf_i386" ;;
  pj*-*-*)	        targ_emul=pjelf ;;
  powerpc-*-elf* | powerpc-*-eabi* | powerpc-*-sysv* \

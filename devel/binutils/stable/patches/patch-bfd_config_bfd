@@ -1,6 +1,6 @@
-$OpenBSD: patch-bfd_config_bfd,v 1.1.1.1 2002/02/19 04:19:21 fgsch Exp $
+$OpenBSD: patch-bfd_config_bfd,v 1.2 2002/03/19 08:27:31 fgsch Exp $
 --- bfd/config.bfd.orig	Thu Jun 14 08:16:59 2001
-+++ bfd/config.bfd	Thu Feb 14 03:26:10 2002
++++ bfd/config.bfd	Sun Mar 17 20:10:26 2002
 @@ -62,7 +62,7 @@ esac
  case "${targ}" in
  # START OF targmatch.h
@@ -27,4 +27,18 @@ $OpenBSD: patch-bfd_config_bfd,v 1.1.1.1 2002/02/19 04:19:21 fgsch Exp $
 +  hppa*-*-*elf* | hppa*-*-lites* | hppa*-*-openbsd* | hppa*-*-sysv4* | hppa*-*-rtems*)
      targ_defvec=bfd_elf32_hppa_vec
      targ_selvecs=bfd_elf32_hppa_linux_vec
+     ;;
+@@ -594,11 +594,11 @@ case "${targ}" in
+     targ_defvec=ecoff_big_vec
+     targ_selvecs=ecoff_little_vec
+     ;;
+-  mips-dec-netbsd* | mips*el*-*-netbsd*)
++  mips-dec-netbsd* | mips*el*-*-netbsd* | mips*el-*-openbsd*)
+     targ_defvec=bfd_elf32_littlemips_vec
+     targ_selvecs="bfd_elf32_bigmips_vec ecoff_little_vec ecoff_big_vec"
+     ;;
+- mips*-*-netbsd*)
++ mips*-*-netbsd* | mips*-*-openbsd*)
+     targ_defvec=bfd_elf32_bigmips_vec
+     targ_selvecs="bfd_elf32_littlemips_vec ecoff_big_vec ecoff_little_vec"
      ;;

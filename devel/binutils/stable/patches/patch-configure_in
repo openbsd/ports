@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2002/02/19 04:19:21 fgsch Exp $
+$OpenBSD: patch-configure_in,v 1.2 2002/03/19 08:27:31 fgsch Exp $
 --- configure.in.orig	Tue Jun 19 18:05:20 2001
-+++ configure.in	Wed Feb 13 23:19:24 2002
++++ configure.in	Sun Mar 17 20:03:33 2002
 @@ -690,6 +690,7 @@ case "${target}" in
    hppa*-*-*elf* | \
    hppa*-*-linux-gnu* | \
@@ -9,3 +9,13 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2002/02/19 04:19:21 fgsch Exp $
    hppa*64*-*-*)
      # Do configure ld/binutils/gas for this case.
      ;;
+@@ -848,6 +849,9 @@ case "${target}" in
+     ;;
+   mips*-dec-bsd*)
+     noconfigdirs="$noconfigdirs gprof target-libgloss target-libffi"
++    ;;
++  mips*-*-openbsd*)
++    noconfigdirs="target-libgloss target-libffi"
+     ;;
+   mips*-*-bsd*)
+     noconfigdirs="$noconfigdirs gprof target-libgloss target-libffi"
