@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2005/01/24 17:51:37 naddy Exp $
+--- configure.orig	Mon Jan 24 18:37:20 2005
++++ configure	Mon Jan 24 18:37:54 2005
+@@ -2104,7 +2104,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lvorbisfile -lvorbis $LIBS"
++LIBS="-lvorbisfile -lvorbis -logg $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2110 "configure"
+ #include "confdefs.h"
+@@ -2135,7 +2135,7 @@ HAVE_OGG="no"
+ fi
+ 
+   if test "$HAVE_OGG" = "yes" ; then
+-    OGG_LIBS="-lvorbisfile -lvorbis"
++    OGG_LIBS="-lvorbisfile -lvorbis -logg"
+ 		
+     cat >> confdefs.h <<\EOF
+ #define INCLUDE_OGG 1
