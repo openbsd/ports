@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/30 20:36:28 djm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/02/11 22:56:45 djm Exp $
 
 COMMENT=		"plugin password complexity checker for passwd(1)"
 
@@ -16,7 +16,11 @@ WANTLIB=		c
 
 MASTER_SITES=		http://www2.mindrot.org/files/passwdqc/
 
-MAKE_FLAGS=		LOCALBASE='${LOCALBASE}'
 NO_REGRESS=		Yes
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/passwdqc/passwdqc ${PREFIX}/libexec
+	${INSTALL_MAN} ${WRKSRC}/passwdqc/passwdqc.cat8 \
+	    ${PREFIX}/man/cat8/passwdqc.0
 
 .include <bsd.port.mk>
