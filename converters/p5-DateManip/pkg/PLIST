@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1 2000/06/28 11:53:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/08/21 00:49:02 brad Exp $
 libdata/perl5/site_perl/Date/Manip.pm
 libdata/perl5/site_perl/Date/Manip.pod
 libdata/perl5/site_perl/${ARCH}-openbsd/auto/Date/Manip/.packlist
 man/man3/Date::Manip.3p
-@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Date/Manip
-@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Date
 @dirrm libdata/perl5/site_perl/Date
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Date/Manip
