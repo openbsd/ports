@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/09/16 21:03:11 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2003/11/27 19:39:41 pvalchev Exp $
 
 COMMENT=		"library for manipulating ID3v1 and ID3v2 tags"
 
@@ -21,10 +21,12 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=id3lib/}
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
+.include <bsd.port.mk>
+.if !defined(NO_SHARED_LIBS)
 post-install:
 	@rm ${PREFIX}/lib/libid3.so.${VERSION}
 	@mv ${PREFIX}/lib/libid3-${VERSION}.so.${VERSION} \
 		 ${PREFIX}/lib/libid3.so.${VERSION}
-
-.include <bsd.port.mk>
+.endif
