@@ -1,0 +1,18 @@
+RC5-64:
+
+distributed.net's longest-running project is the RC5-64 challenge.
+We're now cracking at 127.24 billion keys per second and are moving
+through the keyspace faster every day.
+
+Optimal 24 Mark Golomb Rulers:
+
+Essentially, a Golomb Ruler is a mathematical term given to a set
+of whole numbers where no two pairs of numbers have the same
+difference. An Optimal Golomb Ruler (OGR) is just like an everyday
+ruler, except that the marks are placed so that no two pairs of
+marks measure the same distance. OGR's have many uses in the real
+world; for more information about them and the status of the project,
+please visit our pages devoted to our OGR effort. We're now testing
+at 182.49 billion nodes per second.
+
+WWW: ${HOMEPAGE}
