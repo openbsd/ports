@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/11/13 18:53:43 espie Exp $
+--- configure.orig	2003-11-05 06:33:01.000000000 +0100
++++ configure	2003-11-10 17:02:56.000000000 +0100
+@@ -8881,7 +8881,7 @@ if test "${ac_cv_lib_dvdcontrol_DVDReque
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldvdcontrol -L$dvdcontrol_prefix/lib/ogle
++LIBS="-ldvdcontrol -L$dvdcontrol_prefix/lib/ogle -lxml2 -L/usr/local/lib
+   $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+@@ -9340,7 +9340,7 @@ fi;
+  fi
+ 
+ saved_CPPFLAGS=$CPPFLAGS
+-CPPFLAGS="$CPPFLAGS -L$fox_prefix/lib"
++CPPFLAGS="$CPPFLAGS -L$fox_prefix/include"
+ 
+ echo "$as_me:$LINENO: checking for fxfindfox in -lFOX-1.1" >&5
+ echo $ECHO_N "checking for fxfindfox in -lFOX-1.1... $ECHO_C" >&6
+@@ -9348,7 +9348,7 @@ if test "${ac_cv_lib_FOX_1_1_fxfindfox+s
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lFOX-1.1  $LIBS"
++LIBS="-lFOX-1.1  -L$fox_prefix/lib -L/usr/X11R6/lib $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */

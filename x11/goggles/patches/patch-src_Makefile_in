@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2003/11/13 18:53:43 espie Exp $
+--- src/Makefile.in.orig	2003-11-10 17:25:17.000000000 +0100
++++ src/Makefile.in	2003-11-10 17:25:28.000000000 +0100
+@@ -519,10 +519,10 @@ uninstall-am: uninstall-binPROGRAMS unin
+ main.cpp: icons.h icons.cpp
+ 
+ icons.h: $(ICONS)
+-	$(RESWRAP) -i -o icons.h $^
++	$(RESWRAP) -i -o icons.h $(ICONS)
+ 
+ icons.cpp: $(ICONS)
+-	$(RESWRAP) -e -o icons.cpp $^
++	$(RESWRAP) -e -o icons.cpp $(ICONS)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
