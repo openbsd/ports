@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 1999/06/14 17:37:32 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/08/23 00:50:28 brad Exp $
 
-DISTNAME=	libghttp-1.0.2
+DISTNAME=	libghttp-1.0.4
 CATEGORIES=	www
 MASTER_SITES=	$(MASTER_SITE_GNOME)
 MASTER_SITE_SUBDIR= sources/libghttp
