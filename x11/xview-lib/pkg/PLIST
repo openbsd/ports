@@ -14,9 +14,9 @@ lib/ttyswrc
 lib/help/textsw.info
 lib/help/ttysw.info
 lib/help/xview.info
-man/man1/msgfmt.1.gz
-man/man1/xgettext.1.gz
-man/man1/xview.1.gz
+man/cat1/msgfmt.0
+man/cat1/xgettext.0
+man/cat1/xview.0
 include/bitmaps/1x1
 include/bitmaps/2x2
 include/bitmaps/black
