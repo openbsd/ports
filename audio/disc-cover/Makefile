@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2002/08/09 00:23:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2002/11/17 11:52:19 wilfried Exp $
 
 COMMENT=	"creates cover for audio cds using cddb and latex"
 
 DISTNAME=	disc-cover-1.3.2
 CATEGORIES=	audio
 
-HOMEPAGE=	http://eek.wi.leidenuniv.nl/~jvhemert/disc-cover
+HOMEPAGE=	http://home.wanadoo.nl/jano/disc-cover.html
 
 MAINTAINER=	Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>	
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/download/unstable/
+MASTER_SITES=	http://home.wanadoo.nl/jano/files/
 
 RUN_DEPENDS=	:teTeX_base-*:print/teTeX/base \
 		:ImageMagick-*:graphics/ImageMagick \
