@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/06/04 19:23:30 shell Exp $
-# vim:ts=8
+# $OpenBSD: Makefile,v 1.3 2001/09/11 01:51:09 jcs Exp $
 
-DISTNAME=	grepmail-4.47
+DISTNAME=	grepmail-4.51
 CATEGORIES=	mail perl5
-NEED_VERSION=	1.405
+NEED_VERSION=	1.454
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2001/09/11 01:51:09 jcs Exp $
+--- Makefile.PL.orig	Sun Sep  9 11:00:59 2001
++++ Makefile.PL	Mon Sep 10 20:25:49 2001
+@@ -6,10 +6,7 @@
+ 
+ require 5.004;
+ 
+-die "You don't need to specify options on the command line.\n"
+-  if $ARGV[0] =~ /^\w+=/;
+-
+-my $use_fastreader = 1;
++my $use_fastreader = 0;
+ 
+ unless (@ARGV)
+ {
+@@ -26,8 +23,7 @@
+ {
+   my $VERSION = shift;
+ 
+-  my ($install_type,$use_fastreader,$prefix) =
+-      Get_Unix_Install_Info();
++  my ($install_type,$use_fastreader,$prefix) = ('system', 0, 0);
+ 
+   unless ($install_type eq 'system')
+   {
