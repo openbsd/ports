@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2003/11/17 05:16:38 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.20 2004/01/17 17:23:55 naddy Exp $
 bin/dbiprof
 bin/dbiproxy
 ${P5ARCH}/Bundle/DBI.pm
@@ -23,6 +23,7 @@ ${P5ARCH}/DBI/ProxyServer.pm
 ${P5ARCH}/DBI/PurePerl.pm
 ${P5ARCH}/DBI/W32ODBC.pm
 ${P5ARCH}/Win32/DBIODBC.pm
+@comment ${P5ARCH}/auto/DBI/.packlist
 ${P5ARCH}/auto/DBI/DBI.bs
 ${P5ARCH}/auto/DBI/DBI.so
 ${P5ARCH}/auto/DBI/DBIXS.h
@@ -52,7 +53,14 @@ man/man3p/DBI::ProxyServer.3p
 man/man3p/DBI::PurePerl.3p
 man/man3p/DBI::W32ODBC.3p
 man/man3p/Win32::DBIODBC.3p
+@dirrm ${P5ARCH}/auto/DBI
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}/Win32
 @dirrm ${P5ARCH}/DBI/ProfileDumper
 @dirrm ${P5ARCH}/DBI/DBD
 @dirrm ${P5ARCH}/DBI/Const/GetInfo
 @dirrm ${P5ARCH}/DBI/Const
+@dirrm ${P5ARCH}/DBI
+@dirrm ${P5ARCH}/DBD
+@dirrm ${P5ARCH}/Bundle
+@dirrm ${P5ARCH}

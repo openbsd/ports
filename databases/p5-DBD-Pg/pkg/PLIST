@@ -1,8 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/04/16 19:25:02 espie Exp $
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/DBD/Pg.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/DBD/dbd-pg.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/DBD/Pg/Pg.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/DBD/Pg/Pg.so
+@comment $OpenBSD: PLIST,v 1.8 2004/01/17 17:23:55 naddy Exp $
+${P5ARCH}/DBD/Pg.pm
+${P5ARCH}/DBD/dbd-pg.pod
+@comment ${P5ARCH}/auto/DBD/Pg/.packlist
+${P5ARCH}/auto/DBD/Pg/Pg.bs
+${P5ARCH}/auto/DBD/Pg/Pg.so
 man/man3p/DBD::Pg.3p
 man/man3p/DBD::dbd-pg.3p
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/DBD/Pg
+@dirrm man/man3p
+@dirrm ${P5ARCH}/auto/DBD/Pg
+@dirrm ${P5ARCH}/auto/DBD
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}/DBD
+@dirrm ${P5ARCH}
