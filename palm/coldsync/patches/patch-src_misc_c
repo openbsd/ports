@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_misc_c,v 1.1.1.1 2005/01/17 00:25:38 jcs Exp $
+--- src/misc.c.orig	Sun Nov 11 19:09:27 2001
++++ src/misc.c	Sun Jan 16 18:16:17 2005
+@@ -288,7 +288,7 @@ mkpdbname(const char *dirname,
+ 						 */
+ 		{
+ 			/* Escape it */
+-			sprintf(nptr, "%%%02X",
++			snprintf(nptr, sizeof(namebuf), "%%%02X",
+ 				(unsigned char) dbinfo->name[i]);
+ 			nptr += 3;
+ 		} else {

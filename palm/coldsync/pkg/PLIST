@@ -1,0 +1,116 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/17 00:25:38 jcs Exp $
+bin/coldsync
+@info info/conduits.info
+libexec/coldsync/
+libexec/coldsync/copy-appinfo
+libexec/coldsync/mbox-inbox
+libexec/coldsync/send-mail
+libexec/coldsync/send-mail-2
+libexec/coldsync/todo-text
+@man man/man1/copy-appinfo.1
+@man man/man1/mbox-inbox.1
+@man man/man1/send-mail-2.1
+@man man/man1/send-mail.1
+@man man/man1/todo-text.1
+@man man/man3/DlpAddSyncLogEntry.3
+@man man/man3/DlpCallApplication.3
+@man man/man3/DlpCleanUpDataBase.3
+@man man/man3/DlpCloseDB.3
+@man man/man3/DlpCreateDB.3
+@man man/man3/DlpDeleteDB.3
+@man man/man3/DlpDeleteRecord.3
+@man man/man3/DlpDeleteResource.3
+@man man/man3/DlpEndOfSync.3
+@man man/man3/DlpGetSysDateTime.3
+@man man/man3/DlpMoveCategory.3
+@man man/man3/DlpOpenConduit.3
+@man man/man3/DlpOpenDB.3
+@man man/man3/DlpRPC.3
+@man man/man3/DlpReadAppBlock.3
+@man man/man3/DlpReadAppPreference.3
+@man man/man3/DlpReadDBList.3
+@man man/man3/DlpReadFeature.3
+@man man/man3/DlpReadNetSyncInfo.3
+@man man/man3/DlpReadNextModifiedRec.3
+@man man/man3/DlpReadNextModifiedRecInCategory.3
+@man man/man3/DlpReadNextRecInCategory.3
+@man man/man3/DlpReadOpenDBInfo.3
+@man man/man3/DlpReadRecordByID.3
+@man man/man3/DlpReadRecordByIndex.3
+@man man/man3/DlpReadRecordIDList.3
+@man man/man3/DlpReadResourceByIndex.3
+@man man/man3/DlpReadResourceByType.3
+@man man/man3/DlpReadSortBlock.3
+@man man/man3/DlpReadStorageInfo.3
+@man man/man3/DlpReadSysInfo.3
+@man man/man3/DlpReadUserInfo.3
+@man man/man3/DlpResetRecordIndex.3
+@man man/man3/DlpResetSyncFlags.3
+@man man/man3/DlpResetSystem.3
+@man man/man3/DlpSetSysDateTime.3
+@man man/man3/DlpWriteAppBlock.3
+@man man/man3/DlpWriteAppPreference.3
+@man man/man3/DlpWriteNetSyncInfo.3
+@man man/man3/DlpWriteRecord.3
+@man man/man3/DlpWriteResource.3
+@man man/man3/DlpWriteSortBlock.3
+@man man/man3/DlpWriteUserInfo.3
+@man man/man3/PConnClose.3
+@man man/man3/PConn_bind.3
+@man man/man3/RDLP_Backlight.3
+@man man/man3/RDLP_BatteryDialog.3
+@man man/man3/RDLP_BatteryLevel.3
+@man man/man3/RDLP_GetOSVersionString.3
+@man man/man3/RDLP_MemHandleNew.3
+@man man/man3/RDLP_MemMove.3
+@man man/man3/RDLP_MemReadable.3
+@man man/man3/RDLP_PluggedIn.3
+@man man/man3/RDLP_ROMToken.3
+@man man/man3/free_pdb.3
+@man man/man3/libpconn.3
+@man man/man3/libpdb.3
+@man man/man3/new_PConnection.3
+@man man/man3/new_Record.3
+@man man/man3/new_pdb.3
+@man man/man3/pdb_AppendRecord.3
+@man man/man3/pdb_AppendResource.3
+@man man/man3/pdb_CopyRecord.3
+@man man/man3/pdb_CopyResource.3
+@man man/man3/pdb_DeleteRecordByID.3
+@man man/man3/pdb_FindRecordByID.3
+@man man/man3/pdb_FindRecordByIndex.3
+@man man/man3/pdb_InsertRecord.3
+@man man/man3/pdb_InsertResource.3
+@man man/man3/pdb_LoadHeader.3
+@man man/man3/pdb_Read.3
+@man man/man3/pdb_Write.3
+@man man/man3/time_dlp2palmtime.3
+@man man/man3/time_dlp2time_t.3
+@man man/man3/time_palmtime2dlp.3
+@man man/man3/time_time_t2dlp.3
+@man man/man8/coldsync.8
+sbin/coldnamed
+share/examples/coldsync/
+share/examples/coldsync/sample.coldsync.rc
+share/locale/
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
+share/locale/cs/LC_MESSAGES/coldsync.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
+share/locale/de/LC_MESSAGES/coldsync.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
+share/locale/fr/LC_MESSAGES/coldsync.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
+share/locale/it/LC_MESSAGES/coldsync.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
+share/locale/ja/LC_MESSAGES/coldsync.mo
+share/locale/pt_BR/
+share/locale/pt_BR/LC_MESSAGES/
+share/locale/pt_BR/LC_MESSAGES/coldsync.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
+share/locale/ru/LC_MESSAGES/coldsync.mo
