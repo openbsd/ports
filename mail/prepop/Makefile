@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/25 23:43:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/27 12:19:45 naddy Exp $
 
 COMMENT=	"simple interactive POP3 client"
 
@@ -16,11 +16,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}
-
-# master site doesn't interop with ftp
-FETCH_DEPENDS=	curl:curl-*:net/curl
-FETCH_CMD=	curl
-FETCH_BEFORE_ARGS= -O
 
 MAKE_FLAGS= \
 	CC='${CXX}' \
