@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/24 23:28:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/30 22:40:32 espie Exp $
 # Original from: Bruno Rohée
 
 DISTNAME=	gqmpeg-0.6.3.src
 PKGNAME=	gqmpeg-0.6.3
 CATEGORIES=     audio
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	http://gqview.netpedia.net/
 
 HOMEPAGE=	http://gqview.netpedia.net/mpeg-over.html
@@ -12,10 +12,10 @@ HOMEPAGE=	http://gqview.netpedia.net/mpeg-over.html
 MAINTAINER=	rohee@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	glib.1.2::devel/glib \
 		gtk.1.2::x11/gtk+ \
@@ -23,7 +23,8 @@ LIB_DEPENDS=	glib.1.2::devel/glib \
 BUILD_DEPENDS=	mpg123::audio/mpg123
 RUN_DEPENDS=	mpg123::audio/mpg123
 
-NO_CONFIGURE=	yes
+NO_CONFIGURE=	Yes
+FAKE=		Yes
 
 ALL_TARGET=	gqmpeg
 WRKDIST=	${WRKDIR}/${PKGNAME}
