@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/21 04:13:59 shell Exp $
+# $OpenBSD: Makefile,v 1.5 2001/06/08 17:02:12 shell Exp $
 
 COMMENT=		"convert ASP code to PHP code"
 
@@ -16,15 +16,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-FLAVORS=		gui
+FLAVORS=		no_x11
 FLAVOR?=		
 
-ALL_TARGET?=		all unipiss
-
-.if ${FLAVOR:L:Mgui}
+.if ${FLAVOR:L:Mno_x11}
+ALL_TARGET=		all unipiss
+.else
 USE_X11=		Yes
 LIB_DEPENDS=		gtk.1.2::x11/gtk+
-ALL_TARGET+=		gtkasp2php
+ALL_TARGET=		all unipiss gtkasp2php
 .endif
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/21 23:28:17 avsm Exp $
-%%gui%%
+@comment $OpenBSD: PLIST,v 1.2 2001/06/08 17:02:13 shell Exp $
 bin/asp2php
+!%%no_x11%%
 bin/unipiss
