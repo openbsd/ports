@@ -1,24 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/11 01:15:25 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/02/10 03:04:18 jcs Exp $
+bin/aemenu
+bin/aemenu-gtk
+bin/aemenu-xaw
+bin/aepanel
+bin/aepanel-gtk
+bin/aepanel-xaw
+bin/aesession
 bin/aewm
-bin/gtk-palette
-bin/gtk-panel
-bin/gtk-panel-menu
-bin/gtk-panel-menu2
-bin/gtk-switch
-bin/gtk-switch-menu
-bin/xaw-palette
-bin/xaw-panel
-bin/xaw-switch
-bin/xsession
-man/man1/aewm-goodies.1x
+bin/set-gnome-pda
+man/man1/aeclients.1x
+man/man1/aemenu-gtk.1x
+man/man1/aemenu-xaw.1x
+man/man1/aepanel-gtk.1x
+man/man1/aepanel-xaw.1x
+man/man1/aesession.1x
 man/man1/aewm.1x
-man/man1/gtk-palette.1x
-man/man1/gtk-panel-menu.1x
-man/man1/gtk-panel-menu2.1x
-man/man1/gtk-panel.1x
-man/man1/gtk-switch-menu.1x
-man/man1/gtk-switch.1x
-man/man1/xaw-palette.1x
-man/man1/xaw-panel.1x
-man/man1/xaw-switch.1x
-man/man1/xsession.1x
+man/man1/set-gnome-pda.1x
+share/examples/aewm/aewmrc
+share/examples/aewm/clientsrc
+@dirrm share/examples/aewm
