@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/08/28 23:36:46 matt Exp $
+bin/ppgen
+man/man1/ppgen.1
+share/ppgen/en
+@dirrm share/ppgen
