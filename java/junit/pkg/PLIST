@@ -1,14 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/07/18 05:20:37 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 09:04:04 espie Exp $
+share/java/
+share/java/classes/
+share/java/classes/junit-3.8.1/
 share/java/classes/junit-3.8.1/junit.jar
 share/java/classes/junit-3.8.1/src.jar
+share/java/junit-3.8.1/
 share/java/junit-3.8.1/README.html
 share/java/junit-3.8.1/cpl-v10.html
+share/java/junit-3.8.1/doc/
 share/java/junit-3.8.1/doc/Changes34.html
 share/java/junit-3.8.1/doc/JUnitProperties.html
 share/java/junit-3.8.1/doc/changes21.html
+share/java/junit-3.8.1/doc/cookbook/
 share/java/junit-3.8.1/doc/cookbook/IMG00001.GIF
 share/java/junit-3.8.1/doc/cookbook/cookbook.htm
 share/java/junit-3.8.1/doc/cookbook/logo.gif
+share/java/junit-3.8.1/doc/cookstour/
 share/java/junit-3.8.1/doc/cookstour/Image1.gif
 share/java/junit-3.8.1/doc/cookstour/Image2.gif
 share/java/junit-3.8.1/doc/cookstour/Image3.gif
@@ -17,12 +24,15 @@ share/java/junit-3.8.1/doc/cookstour/Image5.gif
 share/java/junit-3.8.1/doc/cookstour/Image6.gif
 share/java/junit-3.8.1/doc/cookstour/Image7.gif
 share/java/junit-3.8.1/doc/cookstour/cookstour.htm
+share/java/junit-3.8.1/doc/faq/
 share/java/junit-3.8.1/doc/faq/faq.htm
+share/java/junit-3.8.1/doc/testinfected/
 share/java/junit-3.8.1/doc/testinfected/IMG00001.GIF
 share/java/junit-3.8.1/doc/testinfected/IMG00002.GIF
 share/java/junit-3.8.1/doc/testinfected/IMG00003.GIF
 share/java/junit-3.8.1/doc/testinfected/logo.gif
 share/java/junit-3.8.1/doc/testinfected/testing.htm
+share/java/junit-3.8.1/javadoc/
 share/java/junit-3.8.1/javadoc/allclasses-frame.html
 share/java/junit-3.8.1/javadoc/allclasses-noframe.html
 share/java/junit-3.8.1/javadoc/constant-values.html
@@ -30,6 +40,8 @@ share/java/junit-3.8.1/javadoc/deprecated-list.html
 share/java/junit-3.8.1/javadoc/help-doc.html
 share/java/junit-3.8.1/javadoc/index-all.html
 share/java/junit-3.8.1/javadoc/index.html
+share/java/junit-3.8.1/javadoc/junit/
+share/java/junit-3.8.1/javadoc/junit/extensions/
 share/java/junit-3.8.1/javadoc/junit/extensions/ActiveTestSuite.html
 share/java/junit-3.8.1/javadoc/junit/extensions/ExceptionTestCase.html
 share/java/junit-3.8.1/javadoc/junit/extensions/RepeatedTest.html
@@ -38,6 +50,7 @@ share/java/junit-3.8.1/javadoc/junit/extensions/TestSetup.html
 share/java/junit-3.8.1/javadoc/junit/extensions/package-frame.html
 share/java/junit-3.8.1/javadoc/junit/extensions/package-summary.html
 share/java/junit-3.8.1/javadoc/junit/extensions/package-tree.html
+share/java/junit-3.8.1/javadoc/junit/framework/
 share/java/junit-3.8.1/javadoc/junit/framework/Assert.html
 share/java/junit-3.8.1/javadoc/junit/framework/AssertionFailedError.html
 share/java/junit-3.8.1/javadoc/junit/framework/ComparisonFailure.html
@@ -58,12 +71,15 @@ share/java/junit-3.8.1/javadoc/package-list
 share/java/junit-3.8.1/javadoc/packages.html
 share/java/junit-3.8.1/javadoc/serialized-form.html
 share/java/junit-3.8.1/javadoc/stylesheet.css
+share/java/junit-3.8.1/junit/
+share/java/junit-3.8.1/junit/samples/
 share/java/junit-3.8.1/junit/samples/AllTests.class
 share/java/junit-3.8.1/junit/samples/AllTests.java
 share/java/junit-3.8.1/junit/samples/SimpleTest.class
 share/java/junit-3.8.1/junit/samples/SimpleTest.java
 share/java/junit-3.8.1/junit/samples/VectorTest.class
 share/java/junit-3.8.1/junit/samples/VectorTest.java
+share/java/junit-3.8.1/junit/samples/money/
 share/java/junit-3.8.1/junit/samples/money/IMoney.class
 share/java/junit-3.8.1/junit/samples/money/IMoney.java
 share/java/junit-3.8.1/junit/samples/money/Money.class
@@ -72,10 +88,12 @@ share/java/junit-3.8.1/junit/samples/money/MoneyBag.class
 share/java/junit-3.8.1/junit/samples/money/MoneyBag.java
 share/java/junit-3.8.1/junit/samples/money/MoneyTest.class
 share/java/junit-3.8.1/junit/samples/money/MoneyTest.java
+share/java/junit-3.8.1/junit/tests/
 share/java/junit-3.8.1/junit/tests/AllTests.class
 share/java/junit-3.8.1/junit/tests/AllTests.java
 share/java/junit-3.8.1/junit/tests/WasRun.class
 share/java/junit-3.8.1/junit/tests/WasRun.java
+share/java/junit-3.8.1/junit/tests/extensions/
 share/java/junit-3.8.1/junit/tests/extensions/ActiveTestTest$SuccessTest.class
 share/java/junit-3.8.1/junit/tests/extensions/ActiveTestTest.class
 share/java/junit-3.8.1/junit/tests/extensions/ActiveTestTest.java
@@ -97,6 +115,7 @@ share/java/junit-3.8.1/junit/tests/extensions/ExtensionTest.java
 share/java/junit-3.8.1/junit/tests/extensions/RepeatedTestTest$SuccessTest.class
 share/java/junit-3.8.1/junit/tests/extensions/RepeatedTestTest.class
 share/java/junit-3.8.1/junit/tests/extensions/RepeatedTestTest.java
+share/java/junit-3.8.1/junit/tests/framework/
 share/java/junit-3.8.1/junit/tests/framework/AllTests.class
 share/java/junit-3.8.1/junit/tests/framework/AllTests.java
 share/java/junit-3.8.1/junit/tests/framework/AssertTest.class
@@ -149,6 +168,7 @@ share/java/junit-3.8.1/junit/tests/framework/TestListenerTest$2.class
 share/java/junit-3.8.1/junit/tests/framework/TestListenerTest$3.class
 share/java/junit-3.8.1/junit/tests/framework/TestListenerTest.class
 share/java/junit-3.8.1/junit/tests/framework/TestListenerTest.java
+share/java/junit-3.8.1/junit/tests/runner/
 share/java/junit-3.8.1/junit/tests/runner/AllTests.class
 share/java/junit-3.8.1/junit/tests/runner/AllTests.java
 share/java/junit-3.8.1/junit/tests/runner/BaseTestRunnerTest$MockRunner.class
@@ -182,21 +202,3 @@ share/java/junit-3.8.1/junit/tests/runner/TextRunnerTest$1.class
 share/java/junit-3.8.1/junit/tests/runner/TextRunnerTest.class
 share/java/junit-3.8.1/junit/tests/runner/TextRunnerTest.java
 share/java/junit-3.8.1/junit/tests/runner/test.jar
-@dirrm share/java/junit-3.8.1/junit/tests/runner
-@dirrm share/java/junit-3.8.1/junit/tests/framework
-@dirrm share/java/junit-3.8.1/junit/tests/extensions
-@dirrm share/java/junit-3.8.1/junit/tests
-@dirrm share/java/junit-3.8.1/junit/samples/money
-@dirrm share/java/junit-3.8.1/junit/samples
-@dirrm share/java/junit-3.8.1/junit
-@dirrm share/java/junit-3.8.1/javadoc/junit/framework
-@dirrm share/java/junit-3.8.1/javadoc/junit/extensions
-@dirrm share/java/junit-3.8.1/javadoc/junit
-@dirrm share/java/junit-3.8.1/javadoc
-@dirrm share/java/junit-3.8.1/doc/testinfected
-@dirrm share/java/junit-3.8.1/doc/faq
-@dirrm share/java/junit-3.8.1/doc/cookstour
-@dirrm share/java/junit-3.8.1/doc/cookbook
-@dirrm share/java/junit-3.8.1/doc
-@dirrm share/java/junit-3.8.1
-@dirrm share/java/classes/junit-3.8.1

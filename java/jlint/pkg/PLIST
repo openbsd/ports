@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/11 16:21:03 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 09:04:04 espie Exp $
 bin/antic
 bin/jlint
+share/doc/jlint/
 share/doc/jlint/manual.html
 share/doc/jlint/manual.pdf
-@dirrm share/doc/jlint
