@@ -1,33 +1,37 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/06 21:54:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/10 15:09:09 espie Exp $
 
-COMMENT=	"dejagnu snapshot, needed for gcc"
+COMMENT=	"recent dejagnu, needed for gcc"
 
-DISTNAME=       dejagnu-19990614
-CATEGORIES=	devel lang/egcs
-NEED_VERSION=	1.402
+DISTNAME=	dejagnu-1.4.2
+CATEGORIES=	devel
+NEED_VERSION=	1.474
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= dejagnu
+
+HOMEPAGE=	http://www.gnu.org/software/dejagnu/
+
+LIB_DEPENDS=	tk83.1.3::x11/tk/8.3
+RUN_DEPENDS=	::lang/expect
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://gcc.gnu.org/pub/gcc/infrastructure/
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--with-tclinclude="${PREFIX}/include/tcl8.3/generic" \
+		--with-tkinclude="${PREFIX}/include/tk8.3/generic"
+CONFIGURE_ENV=ac_cv_path_tclsh=${PREFIX}/bin/tclsh8.3
 
-BUILD_DEPENDS=	expect::lang/expect
-LIB_DEPENDS=	tk83.1.3::x11/tk/8.3
-
-WRKSRC=${WRKDIST}/dejagnu
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-tclinclude=${PREFIX}/include/tcl8.3/generic \
-		--with-tkinclude=${PREFIX}/include/tk8.3/generic
-MODGNU_CONFIG_GUESS_DIRS=	${WRKDIST} ${WRKSRC}
+ALL_TARGET=	all
+INSTALL_TARGET=	install
 
 post-extract:
-	@rm -rf ${WRKSRC}/{expect,tcl}
 
 post-build:
-	cd ${WRKSRC}; ${MAKE} info
+	@cd ${WRKBUILD}/doc && makeinfo --no-split dejagnu.texi
 
-INSTALL_TARGET=install install-info
+post-install:
+	@${INSTALL_DATA} ${WRKBUILD}/doc/dejagnu.info ${PREFIX}/info
 
 .include <bsd.port.mk>

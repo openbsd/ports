@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/06/28 00:11:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/10/10 15:09:09 espie Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/dejagnu.info
 bin/runtest
+include/dejagnu.h
 info/dejagnu.info
-info/dejagnu.info-1
-info/dejagnu.info-2
-info/dejagnu.info-3
+man/man1/runtest.1
 share/dejagnu/baseboards/README
 share/dejagnu/baseboards/a29k-udi.exp
 share/dejagnu/baseboards/arc-sim.exp
@@ -28,8 +27,11 @@ share/dejagnu/baseboards/i386-bozo.exp
 share/dejagnu/baseboards/i960-cyclone.exp
 share/dejagnu/baseboards/i960-sim.exp
 share/dejagnu/baseboards/jmr3904-sim.exp
+share/dejagnu/baseboards/linux-gdbserver.exp
+share/dejagnu/baseboards/linux-libremote.exp
 share/dejagnu/baseboards/m32r-elf.exp
 share/dejagnu/baseboards/m32r-sim.exp
+share/dejagnu/baseboards/m68hc11-sim.exp
 share/dejagnu/baseboards/m68k-emc.exp
 share/dejagnu/baseboards/mcore-elf.exp
 share/dejagnu/baseboards/mcore-moto-sim.exp
@@ -79,7 +81,7 @@ share/dejagnu/baseboards/vx68k.exp
 share/dejagnu/baseboards/vx960.exp
 share/dejagnu/baseboards/vxsparc.exp
 share/dejagnu/baseboards/x86-cygmon.exp
-share/dejagnu/config.guess
+share/dejagnu/baseboards/xscale-cygmon.exp
 share/dejagnu/config/README
 share/dejagnu/config/arc.exp
 share/dejagnu/config/arm-ice.exp
@@ -91,15 +93,17 @@ share/dejagnu/config/cygmon.exp
 share/dejagnu/config/d10v.exp
 share/dejagnu/config/ddb-ether.exp
 share/dejagnu/config/ddb.exp
+share/dejagnu/config/default.exp
 share/dejagnu/config/dos.exp
 share/dejagnu/config/dve.exp
 share/dejagnu/config/gdb-comm.exp
 share/dejagnu/config/gdb_stub.exp
 share/dejagnu/config/h8300.exp
-share/dejagnu/config/i386-bozo.exp
+share/dejagnu/config/${MACHINE_ARCH}-bozo.exp
 share/dejagnu/config/i960.exp
 share/dejagnu/config/m32r-stub.exp
 share/dejagnu/config/m32r.exp
+share/dejagnu/config/m68hc11.exp
 share/dejagnu/config/m68k-emc.exp
 share/dejagnu/config/mips-idt.exp
 share/dejagnu/config/mn10200-eval.exp
@@ -121,11 +125,13 @@ share/dejagnu/config/vr5000.exp
 share/dejagnu/config/vrtx.exp
 share/dejagnu/config/vxworks.exp
 share/dejagnu/debugger.exp
+share/dejagnu/dejagnu.exp
 share/dejagnu/dg.exp
 share/dejagnu/framework.exp
 share/dejagnu/ftp.exp
 share/dejagnu/i960glue.c
 share/dejagnu/kermit.exp
+share/dejagnu/libexec/config.guess
 share/dejagnu/libgloss.exp
 share/dejagnu/mondfe.exp
 share/dejagnu/remote.exp
@@ -142,6 +148,7 @@ share/dejagnu/tip.exp
 share/dejagnu/util-defs.exp
 share/dejagnu/utils.exp
 share/dejagnu/xsh.exp
+@dirrm share/dejagnu/libexec
 @dirrm share/dejagnu/config
 @dirrm share/dejagnu/baseboards
 @dirrm share/dejagnu
