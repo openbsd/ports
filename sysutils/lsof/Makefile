@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 1999/09/19 22:16:48 angelos Exp $
+# $OpenBSD: Makefile,v 1.16 1999/09/28 20:00:35 brad Exp $
 
 DISTNAME=	lsof_4.45_W
 PKGNAME=	lsof-4.45
@@ -7,9 +7,9 @@ MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/ \
 		ftp://ftp.crc.doc.ca/packages/lsof/ \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/
 
-NEED_VERSION=	1.92
-
 NO_PACKAGE=	"compile from source to set proper options"
+
+NEED_VERSION=	1.114
 
 MAINTAINER=     angelos@openbsd.org
 
@@ -62,6 +62,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/lsof.man ${PREFIX}/man/man1/lsof.1
 	@${MKDIR} ${PREFIX}/share/lsof
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
-	@chmod 0444 ${PREFIX}/share/lsof/00*
+	@${CHMOD} 0444 ${PREFIX}/share/lsof/00*
 
 .include <bsd.port.mk>
