@@ -1,6 +1,6 @@
---- config/Makefile.in.orig	Sun Apr 18 01:48:08 1999
-+++ config/Makefile.in	Sun Apr 18 01:52:13 1999
-@@ -106,14 +106,14 @@
+--- config/Makefile.in.orig	Thu Jan 21 15:49:11 1999
++++ config/Makefile.in	Sat Oct  9 17:33:05 1999
+@@ -107,14 +107,14 @@
  
  install-sysconfDATA: $(sysconf_DATA)
  	@$(NORMAL_INSTALL)
@@ -11,7 +11,7 @@
 -	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p"; \
 -	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p; \
 +	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(PREFIX)/lib/fnlib/$$p.sample"; \
-+	    $(INSTALL_DATA) $(srcdir)/$$p $(PREFIX)/lib/fnlib/$$p.sampole; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(PREFIX)/lib/fnlib/$$p.sample; \
  	  else if test -f $$p; then \
 -	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p"; \
 -	    $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p; \
