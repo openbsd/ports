@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/09 17:38:29 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/05/30 19:02:21 fgsch Exp $
 
-DISTNAME=	libxml-1.0.0
+DISTNAME=	libxml-1.8.7
 CATEGORIES=	textproc
-NEED_VERSION=	1.73
-FAKE=No
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= stable/sources/libxml
-
+NEED_VERSION=	1.283
+FAKE=		Yes
+MASTER_SITES=	ftp://rpmfind.net/pub/libxml/
 
 MAINTAINER=	rohee@openbsd.org
 
@@ -19,8 +17,5 @@ PERMIT_DISTFILES_FTP=	YES
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
-
-post-install:
-	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
