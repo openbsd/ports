@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2002/12/08 20:23:55 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2003/04/03 23:40:05 margarida Exp $
 
 COMMENT=	"SDL image library"
 
-VER=		1.2.2
-PROJ=		SDL_image
-DISTNAME=	${PROJ}-${VER}
-PKGNAME=	sdl-image-${VER}
+DISTNAME=	SDL_image-1.2.3
+PKGNAME=	${DISTNAME:L:S/_/-/}
 CATEGORIES=	devel graphics
-MASTER_SITES=	http://www.libsdl.org/projects/${PROJ}/release/
+MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
 
-HOMEPAGE=	http://www.libsdl.org/
+HOMEPAGE=	http://www.libsdl.org/projects/SDL_image/
 
 MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
 
@@ -26,11 +24,11 @@ LIB_DEPENDS=	SDL.::devel/sdl \
 
 USE_X11=	Yes
 
-SEPARATE_BUILD=		concurrent
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
-			LDFLAGS="-L${X11BASE}/lib"
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+SEPARATE_BUILD=	concurrent
+CONFIGURE_STYLE=gnu
+CONFIGURE_ENV+=	LDFLAGS="-L${X11BASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng"
+CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
 		patch-*

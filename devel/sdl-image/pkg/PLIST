@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/05/17 22:16:11 obecian Exp $
-bin/showimage
+@comment $OpenBSD: PLIST,v 1.3 2003/04/03 23:40:05 margarida Exp $
 include/SDL/SDL_image.h
 lib/libSDL_image.a
 lib/libSDL_image.la
