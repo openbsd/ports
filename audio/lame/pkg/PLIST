@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/31 09:15:18 jakob Exp $
+bin/lame
+bin/mp3x
+man/man1/lame.1
+share/doc/lame/contributors.html
+share/doc/lame/examples.html
+share/doc/lame/history.html
+share/doc/lame/id3.html
+share/doc/lame/index.html
+share/doc/lame/lame.css
+share/doc/lame/node5.html
+share/doc/lame/node6.html
+share/doc/lame/node7.html
+share/doc/lame/switchs.html
+@dirrm share/doc/lame
