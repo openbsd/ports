@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# Function: tell the user the requirements for this port
+#
+do_notice()
+{
+    case `uname -m` in
+	i386)
+	    echo
+	    echo "+---------------"
+	    echo "| This application requires a kernel compiled with"
+	    echo "| 'option COMPAT_FREEBSD' for proper operation. The"
+	    echo "| GENERIC kernel contains this option."
+	    echo "+---------------"
+	    echo
+	    ;;
+	sparc)
+	    echo
+	    echo "+---------------"
+	    echo "| This application requires a kernel compiled with"
+	    echo "| 'option COMPAT_SUNOS' and SunOS shared libraries"
+	    echo "| for proper operation; see compat_sunos(8) for"
+	    echo "| further details. The GENERIC kernel contains this"
+	    echo "| option."
+	    echo "+---------------"
+	    echo
+	    if [ ! -f /emul/sunos/usr/lib/ld.so ]; then
+		echo "  You have no SunOS shared libraries installed."
+		echo
+		exit 1
+	    fi
+	    ;;
+    esac
+}
+
+# Verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname INSTALL" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    INSTALL)
+	do_notice
+	;;
+    *)
+	echo "usage: $0 distname INSTALL" >&2
+	exit 1
+	;;
+esac
+
+exit 0

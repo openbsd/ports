@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST.i386,v 1.1.1.1 2000/06/11 18:21:34 espie Exp $
+bin/cvpasswd
+bin/cvsup
+libexec/cvsup
+man/man1/cvpasswd.1
+man/man1/cvsup.1
