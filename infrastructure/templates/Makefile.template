@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.7 2000/02/12 06:02:05 turan Exp $
+# $OpenBSD: Makefile.template,v 1.8 2000/02/12 08:08:58 turan Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -63,10 +63,6 @@ MAINTAINER=		ports@openbsd.org
 #         NOTE: A LICENSE THAT ALLOWS COPYING/REDISTRIBUTION MAY STILL
 #         BE RESTRICTIVE WITH RESPECT TO USE OF THE BINARY AND/OR
 #         SOURCE CODE.  PLEASE READ ALL LICENSES/COPYRIGHTS CAREFULLY.
-#
-# LICENSE_FILE is the path to the file that contains licensing information
-# for this port.  LICENSE_MD5 is the MD5 checksum of that file.  Set
-# NO_LICENSE if the port does not have a license.
 
 LICENSE_TYPE=		"License type"
 PERMIT_PKG_CDROM=	"YES|'Reason if NO'"
