@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/12/11 04:28:30 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/28 11:43:42 espie Exp $
 
 COMMENT=	"opendivx decoding API"
 
@@ -11,9 +11,10 @@ HOMEPAGE=	http://www.projectmayo.com/projects/detail.php?projectId=4
 
 MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+# Mayo licence, h263 decoding
+PERMIT_PACKAGE_CDROM=	"No commercial use plus patent issue"
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_CDROM=	"No commercial use plus patent issue"
 PERMIT_DISTFILES_FTP=	Yes
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
