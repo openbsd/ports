@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2000/08/30 02:37:52 brad Exp $
+# $OpenBSD: Makefile,v 1.49 2000/09/02 21:20:58 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.45
 CATEGORIES=	x11
-NEED_VERSION=	1.320
+NEED_VERSION=	1.322
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 HOMEPAGE=	http://www.trolltech.com/products/qt/
@@ -41,6 +41,9 @@ QT_DOC=		${PREFIX}/share/doc/qt
 SUBST_VARS=	QT_LIBDIR QT_DOC
 
 IMAGEIODIR=	${WRKSRC}/extensions/imageio/src
+
+DOCS=	ANNOUNCE FAQ LICENSE README README.QT changes-1.40 changes-1.41 \
+	changes-1.42 changes-1.43 changes-1.44 changes-1.45
 
 post-patch:
 	@cd ${WRKSRC}/configs; for i in openbsd-*; do \
@@ -97,9 +100,7 @@ do-install:
 	if [ -x $$i/$$i ]; then \
 	    ${INSTALL_PROGRAM} $$i/$$i ${QT_TUTORIAL}/$$i; \
 	fi; done
-	cd ${WRKSRC}; ${INSTALL_DATA} ANNOUNCE FAQ LICENSE README \
-	    README.QT changes-1.40 changes-1.41 changes-1.42 changes-1.43 \
-	    changes-1.44 changes-1.45 ${QT_DOC}
+	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${QT_DOC}
 	cp -R ${WRKSRC}/html/* ${QT_DOC}/html
 
 .include <bsd.port.mk>
