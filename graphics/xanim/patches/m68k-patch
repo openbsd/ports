@@ -14,9 +14,9 @@
 -XA_IV32_LIB = 
 -XA_CVID_LIB = 
 -XA_CYUV_LIB = 
-+XA_IV32_LIB = xa2.0_cvid_sun3.o
-+XA_CVID_LIB = xa2.0_iv32_sun3.o
-+XA_CYUV_LIB = xa1.0_cyuv_sun3.o
++XA_IV32_LIB = xa2.0_cvid_netbsd68k.o
++XA_CVID_LIB = xa2.0_iv32_netbsd68k.o
++XA_CYUV_LIB = xa1.0_cyuv_netbsd68k.o
  XCOMM
  XCOMM NOTE: SGI Machines Only:
  XCOMM    if your linker core dumps then you'll need to uncomment the following
