@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/11/15 23:58:01 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/01/18 09:32:02 jakob Exp $
 bin/dig
 bin/host
 bin/isc-config.sh
@@ -6,7 +6,6 @@ bin/nslookup
 bin/nsupdate
 include/dns/a6.h
 include/dns/acl.h
-include/dns/aclconf.h
 include/dns/adb.h
 include/dns/byaddr.h
 include/dns/cache.h
@@ -22,6 +21,7 @@ include/dns/confip.h
 include/dns/confkeys.h
 include/dns/conflog.h
 include/dns/conflsn.h
+include/dns/conflwres.h
 include/dns/confparser.h
 include/dns/confresolv.h
 include/dns/confrrset.h
@@ -30,6 +30,7 @@ include/dns/confzone.h
 include/dns/db.h
 include/dns/dbiterator.h
 include/dns/dbtable.h
+include/dns/diff.h
 include/dns/dispatch.h
 include/dns/dnssec.h
 include/dns/enumclass.h
@@ -64,13 +65,13 @@ include/dns/request.h
 include/dns/resolver.h
 include/dns/result.h
 include/dns/rootns.h
+include/dns/sdb.h
 include/dns/secalg.h
 include/dns/secproto.h
 include/dns/ssu.h
 include/dns/tcpmsg.h
 include/dns/time.h
 include/dns/tkey.h
-include/dns/tkeyconf.h
 include/dns/tsig.h
 include/dns/ttl.h
 include/dns/types.h
@@ -78,7 +79,6 @@ include/dns/validator.h
 include/dns/view.h
 include/dns/xfrin.h
 include/dns/zone.h
-include/dns/zoneconf.h
 include/dns/zt.h
 include/dst/dst.h
 include/dst/lib.h
@@ -93,6 +93,7 @@ include/isc/bufferlist.h
 include/isc/commandline.h
 include/isc/condition.h
 include/isc/dir.h
+include/isc/entropy.h
 include/isc/error.h
 include/isc/event.h
 include/isc/eventclass.h
@@ -100,6 +101,8 @@ include/isc/file.h
 include/isc/formatcheck.h
 include/isc/fsaccess.h
 include/isc/heap.h
+include/isc/hex.h
+include/isc/hmacmd5.h
 include/isc/int.h
 include/isc/interfaceiter.h
 include/isc/lang.h
@@ -112,6 +115,7 @@ include/isc/magic.h
 include/isc/md5.h
 include/isc/mem.h
 include/isc/msgcat.h
+include/isc/msgs.h
 include/isc/mutex.h
 include/isc/mutexblock.h
 include/isc/net.h
@@ -127,6 +131,7 @@ include/isc/quota.h
 include/isc/random.h
 include/isc/ratelimiter.h
 include/isc/region.h
+include/isc/resource.h
 include/isc/result.h
 include/isc/resultclass.h
 include/isc/rwlock.h
@@ -171,9 +176,95 @@ lib/liblwres.a
 lib/liblwres.la
 lib/libomapi.a
 lib/libomapi.la
-%%SHARED%%
 man/man1/dig.1
 man/man1/host.1
+man/man1/named-checkconf.1
+man/man1/named-checkzone.1
+man/man3/lwres.3
+man/man3/lwres_addr_parse.3
+man/man3/lwres_buffer.3
+man/man3/lwres_buffer_add.3
+man/man3/lwres_buffer_back.3
+man/man3/lwres_buffer_clear.3
+man/man3/lwres_buffer_first.3
+man/man3/lwres_buffer_forward.3
+man/man3/lwres_buffer_getmem.3
+man/man3/lwres_buffer_getuint16.3
+man/man3/lwres_buffer_getuint32.3
+man/man3/lwres_buffer_getuint8.3
+man/man3/lwres_buffer_init.3
+man/man3/lwres_buffer_invalidate.3
+man/man3/lwres_buffer_putmem.3
+man/man3/lwres_buffer_putuint16.3
+man/man3/lwres_buffer_putuint32.3
+man/man3/lwres_buffer_putuint8.3
+man/man3/lwres_buffer_subtract.3
+man/man3/lwres_conf_clear.3
+man/man3/lwres_conf_get.3
+man/man3/lwres_conf_init.3
+man/man3/lwres_conf_parse.3
+man/man3/lwres_conf_print.3
+man/man3/lwres_config.3
+man/man3/lwres_context.3
+man/man3/lwres_context_allocmem.3
+man/man3/lwres_context_create.3
+man/man3/lwres_context_destroy.3
+man/man3/lwres_context_freemem.3
+man/man3/lwres_context_initserial.3
+man/man3/lwres_context_nextserial.3
+man/man3/lwres_context_sendrecv.3
+man/man3/lwres_endhostent.3
+man/man3/lwres_endhostent_r.3
+man/man3/lwres_freeaddrinfo.3
+man/man3/lwres_freehostent.3
+man/man3/lwres_gabn.3
+man/man3/lwres_gabnrequest_free.3
+man/man3/lwres_gabnrequest_parse.3
+man/man3/lwres_gabnrequest_render.3
+man/man3/lwres_gabnresponse_free.3
+man/man3/lwres_gabnresponse_parse.3
+man/man3/lwres_gabnresponse_render.3
+man/man3/lwres_gai_strerror.3
+man/man3/lwres_getaddrinfo.3
+man/man3/lwres_getaddrsbyname.3
+man/man3/lwres_gethostbyaddr.3
+man/man3/lwres_gethostbyaddr_r.3
+man/man3/lwres_gethostbyname.3
+man/man3/lwres_gethostbyname2.3
+man/man3/lwres_gethostbyname_r.3
+man/man3/lwres_gethostent.3
+man/man3/lwres_gethostent_r.3
+man/man3/lwres_getipnode.3
+man/man3/lwres_getipnodebyaddr.3
+man/man3/lwres_getipnodebyname.3
+man/man3/lwres_getnamebyaddr.3
+man/man3/lwres_getnameinfo.3
+man/man3/lwres_getrrsetbyname.3
+man/man3/lwres_gnba.3
+man/man3/lwres_gnbarequest_free.3
+man/man3/lwres_gnbarequest_parse.3
+man/man3/lwres_gnbarequest_render.3
+man/man3/lwres_gnbaresponse_free.3
+man/man3/lwres_gnbaresponse_parse.3
+man/man3/lwres_gnbaresponse_render.3
+man/man3/lwres_herror.3
+man/man3/lwres_hstrerror.3
+man/man3/lwres_inetntop.3
+man/man3/lwres_lwpacket_parseheader.3
+man/man3/lwres_lwpacket_renderheader.3
+man/man3/lwres_net_ntop.3
+man/man3/lwres_noop.3
+man/man3/lwres_nooprequest_free.3
+man/man3/lwres_nooprequest_parse.3
+man/man3/lwres_nooprequest_render.3
+man/man3/lwres_noopresponse_free.3
+man/man3/lwres_noopresponse_parse.3
+man/man3/lwres_noopresponse_render.3
+man/man3/lwres_packet.3
+man/man3/lwres_resutil.3
+man/man3/lwres_sethostent.3
+man/man3/lwres_sethostent_r.3
+man/man3/lwres_string_parse.3
 man/man5/rndc.conf.5
 man/man8/dnssec-keygen.8
 man/man8/dnssec-makekeyset.8
@@ -183,14 +274,16 @@ man/man8/lwresd.8
 man/man8/named.8
 man/man8/nsupdate.8
 man/man8/rndc.8
+sbin/bind9-enable
 sbin/dnssec-keygen
 sbin/dnssec-makekeyset
 sbin/dnssec-signkey
 sbin/dnssec-signzone
 sbin/lwresd
 sbin/named
+sbin/named-checkconf
+sbin/named-checkzone
 sbin/rndc
-share/doc/bind9/arm/Bv9ARM-book.xml
 share/doc/bind9/arm/Bv9ARM.ch01.html
 share/doc/bind9/arm/Bv9ARM.ch02.html
 share/doc/bind9/arm/Bv9ARM.ch03.html
@@ -201,21 +294,21 @@ share/doc/bind9/arm/Bv9ARM.ch07.html
 share/doc/bind9/arm/Bv9ARM.ch08.html
 share/doc/bind9/arm/Bv9ARM.ch09.html
 share/doc/bind9/arm/Bv9ARM.html
-share/doc/bind9/arm/README-SGML
-share/doc/bind9/arm/nominum-docbook-html.dsl
 share/doc/bind9/arm/isc.color.gif
 share/doc/bind9/misc/dnssec
 share/doc/bind9/misc/ipv6
 share/doc/bind9/misc/migration
 share/doc/bind9/misc/options
+share/doc/bind9/misc/sdb
 share/examples/bind9/named.conf
-share/examples/bind9/named.root
 share/examples/bind9/named.localhost
 share/examples/bind9/named.loopback
+share/examples/bind9/named.root
+%%SHARED%%
+@dirrm share/examples/bind9
 @dirrm share/doc/bind9/misc
 @dirrm share/doc/bind9/arm
 @dirrm share/doc/bind9
-@dirrm share/examples/bind9
 @dirrm include/omapi
 @dirrm include/lwres
 @dirrm include/isc

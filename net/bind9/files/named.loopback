@@ -1,4 +1,4 @@
-; $OpenBSD: named.loopback,v 1.1.1.1 2000/09/16 07:36:53 jakob Exp $
+; $OpenBSD: named.loopback,v 1.2 2001/01/18 09:32:01 jakob Exp $
 ;
 $ORIGIN 0.0.127.in-addr.arpa.
 $TTL 6h
