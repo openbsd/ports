@@ -1,0 +1,35 @@
+--- config.h.in.~1~	Tue Feb 10 22:46:45 1998
++++ config.h.in	Tue Apr 28 22:32:25 1998
+@@ -37,9 +37,9 @@
+  *  OpenBSD 2.x
+  *  BSD/OS 2.x
+  */
+-/* #define BIND     1 */
+-/* #define BSD42    1 */
+-/* #define BSD44    1 */
++#define BIND     1
++#define BSD42    1
++#define BSD44    1
+ 
+ /*
+  *  SCO 4.x
+@@ -72,8 +72,8 @@
+  * other programs which may modify your maildrops.
+  * Currently you can only use one type.
+  */
+-#define DOT_LOCKING   1
+-/* #define FCNTL_LOCKING 1 */
++/* #define DOT_LOCKING   1 */
++#define FCNTL_LOCKING 1
+ /* #define LOCKF_LOCKING 1 */
+ /* #define FLOCK_LOCKING 1 */
+ 
+@@ -139,7 +139,7 @@
+  * Define the default creation modes for folders and messages.
+  */
+ #define DEFAULT_FOLDER_MODE "0700"
+-#define DEFAULT_MESSAGE_MODE "0644"
++#define DEFAULT_MESSAGE_MODE "0600"
+ 
+ /*
+  * The prefix to use when messages are "removed" by rmm.
