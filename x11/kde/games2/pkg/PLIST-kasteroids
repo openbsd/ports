@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-kasteroids,v 1.1 2000/12/17 21:53:04 espie Exp $
+@comment $OpenBSD: PLIST-kasteroids,v 1.2 2001/03/16 15:07:51 espie Exp $
 @pkgcfl kdegames-*
 bin/kasteroids
 share/applnk/Games/kasteroids.desktop
+share/apps/kasteroids/kasteroidsui.rc
 share/apps/kasteroids/sounds/Explosion.wav
 share/apps/kasteroids/sprites/bg.png
 share/apps/kasteroids/sprites/bits/bits0000.png
@@ -25,6 +26,7 @@ share/apps/kasteroids/sprites/missile/missile.png
 share/apps/kasteroids/sprites/powerups/brake.png
 share/apps/kasteroids/sprites/powerups/energy.png
 share/apps/kasteroids/sprites/powerups/shield.png
+share/apps/kasteroids/sprites/powerups/shoot.png
 share/apps/kasteroids/sprites/powerups/teleport.png
 share/apps/kasteroids/sprites/rock1/rock10000.png
 share/apps/kasteroids/sprites/rock1/rock10001.png
@@ -164,12 +166,16 @@ share/apps/kasteroids/sprites/ship/ship0031.png
 share/doc/HTML/en/kasteroids/.anchors
 share/doc/HTML/en/kasteroids/authors.html
 share/doc/HTML/en/kasteroids/common
+share/doc/HTML/en/kasteroids/compilation.html
 share/doc/HTML/en/kasteroids/controls.html
-share/doc/HTML/en/kasteroids/epilogue.html
-share/doc/HTML/en/kasteroids/index.cvlog
+share/doc/HTML/en/kasteroids/credits.html
+share/doc/HTML/en/kasteroids/fuel.png
 share/doc/HTML/en/kasteroids/index.docbook
 share/doc/HTML/en/kasteroids/index.html
+share/doc/HTML/en/kasteroids/installation.html
 share/doc/HTML/en/kasteroids/introduction.html
+share/doc/HTML/en/kasteroids/menu-reference.html
+share/doc/HTML/en/kasteroids/settings-menu.html
 share/doc/HTML/en/kasteroids/ship.html
 share/doc/HTML/en/kasteroids/tips.html
 share/doc/HTML/en/kasteroids/upgrades.html

@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-kblackbox,v 1.1 2000/12/17 21:53:04 espie Exp $
+@comment $OpenBSD: PLIST-kblackbox,v 1.2 2001/03/16 15:07:52 espie Exp $
 @pkgcfl kdegames-*
 bin/kblackbox
 share/applnk/Games/kblackbox.desktop
+share/apps/kblackbox/kblackboxui.rc
 share/apps/kblackbox/pics/blue.xpm
 share/apps/kblackbox/pics/brown.xpm
 share/apps/kblackbox/pics/cyan.xpm

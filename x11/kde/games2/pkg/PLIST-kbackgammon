@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST-kbackgammon,v 1.1 2001/03/16 15:07:52 espie Exp $
+@pkgcfl kdegames-*
+bin/kbackgammon
+share/applnk/Games/kbackgammon.desktop
+share/apps/kbackgammon/kbackgammonui.rc
+share/apps/kbackgammon/pics/kbackgammon-double.xpm
+share/apps/kbackgammon/pics/kbackgammon-reload.xpm
+share/apps/kbackgammon/pics/kbackgammon-roll.xpm
+share/apps/kbackgammon/pics/kbackgammon-send.xpm
+share/apps/kbackgammon/sounds/kbackgammon-lost.wav
+share/apps/kbackgammon/sounds/kbackgammon-move.wav
+share/apps/kbackgammon/sounds/kbackgammon-roll.wav
+share/apps/kbackgammon/sounds/kbackgammon-won.wav
+share/doc/HTML/en/kbackgammon/.anchors
+share/doc/HTML/en/kbackgammon/command.html
+share/doc/HTML/en/kbackgammon/common
+share/doc/HTML/en/kbackgammon/compilation.html
+share/doc/HTML/en/kbackgammon/credits.html
+share/doc/HTML/en/kbackgammon/engine-fibs.html
+share/doc/HTML/en/kbackgammon/engine-gnubg.html
+share/doc/HTML/en/kbackgammon/engines-menu.html
+share/doc/HTML/en/kbackgammon/engines.html
+share/doc/HTML/en/kbackgammon/help-menu.html
+share/doc/HTML/en/kbackgammon/index.docbook
+share/doc/HTML/en/kbackgammon/index.html
+share/doc/HTML/en/kbackgammon/installation.html
+share/doc/HTML/en/kbackgammon/introduction.html
+share/doc/HTML/en/kbackgammon/keys.html
+share/doc/HTML/en/kbackgammon/play-menu.html
+share/doc/HTML/en/kbackgammon/prefs.html
+share/doc/HTML/en/kbackgammon/settings-menu.html
+share/doc/HTML/en/kbackgammon/use-the-board.html
+share/icons/hicolor/32x32/apps/kbackgammon.png
+share/icons/hicolor/48x48/apps/kbackgammon.png
+share/icons/locolor/16x16/apps/kbackgammon.png
+share/icons/locolor/32x32/apps/kbackgammon.png
+@dirrm share/doc/HTML/en/kbackgammon
+@dirrm share/apps/kbackgammon/sounds
+@dirrm share/apps/kbackgammon/pics
+@dirrm share/apps/kbackgammon

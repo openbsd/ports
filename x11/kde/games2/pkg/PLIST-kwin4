@@ -1,0 +1,39 @@
+@comment $OpenBSD: PLIST-kwin4,v 1.1 2001/03/16 15:07:53 espie Exp $
+@pkgcfl kdegames-*
+bin/kproc4
+bin/kwin4
+share/applnk/Games/kwin4.desktop
+share/apps/kwin4/grafix/aboute.png
+share/apps/kwin4/grafix/arrow.png
+share/apps/kwin4/grafix/arrow_red.png
+share/apps/kwin4/grafix/arrow_yellow.png
+share/apps/kwin4/grafix/background.png
+share/apps/kwin4/grafix/board.png
+share/apps/kwin4/grafix/empty.png
+share/apps/kwin4/grafix/hint.png
+share/apps/kwin4/grafix/red.png
+share/apps/kwin4/grafix/win4about.png
+share/apps/kwin4/grafix/yellow.png
+share/doc/HTML/en/kwin4/.anchors
+share/doc/HTML/en/kwin4/common
+share/doc/HTML/en/kwin4/compilation.html
+share/doc/HTML/en/kwin4/credits.html
+share/doc/HTML/en/kwin4/edit-menu.html
+share/doc/HTML/en/kwin4/help.html
+share/doc/HTML/en/kwin4/index.docbook
+share/doc/HTML/en/kwin4/index.html
+share/doc/HTML/en/kwin4/installation.html
+share/doc/HTML/en/kwin4/menus.html
+share/doc/HTML/en/kwin4/option-menu.html
+share/doc/HTML/en/kwin4/overview.html
+share/doc/HTML/en/kwin4/remote-connections.html
+share/doc/HTML/en/kwin4/requirements.html
+share/doc/HTML/en/kwin4/rules.html
+share/doc/HTML/en/kwin4/view-menu.html
+share/icons/hicolor/32x32/apps/kwin4.png
+share/icons/hicolor/48x48/apps/kwin4.png
+share/icons/locolor/16x16/apps/kwin4.png
+share/icons/locolor/32x32/apps/kwin4.png
+@dirrm share/doc/HTML/en/kwin4
+@dirrm share/apps/kwin4/grafix
+@dirrm share/apps/kwin4

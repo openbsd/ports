@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST-kjezz,v 1.1 2001/03/16 15:07:52 espie Exp $
+@pkgcfl kdegames-*
+bin/kjezz
+share/applnk/Games/kjezz.desktop
+share/apps/kjezz/kjezzui.rc
+share/apps/kjezz/pics/ball0000.png
+share/apps/kjezz/pics/ball0001.png
+share/apps/kjezz/pics/ball0002.png
+share/apps/kjezz/pics/ball0003.png
+share/apps/kjezz/pics/ball0004.png
+share/apps/kjezz/pics/ball0005.png
+share/apps/kjezz/pics/ball0006.png
+share/apps/kjezz/pics/ball0007.png
+share/apps/kjezz/pics/ball0008.png
+share/apps/kjezz/pics/ball0009.png
+share/apps/kjezz/pics/ball0010.png
+share/apps/kjezz/pics/ball0011.png
+share/apps/kjezz/pics/ball0012.png
+share/apps/kjezz/pics/ball0013.png
+share/apps/kjezz/pics/ball0014.png
+share/apps/kjezz/pics/ball0015.png
+share/apps/kjezz/pics/ball0016.png
+share/apps/kjezz/pics/ball0017.png
+share/apps/kjezz/pics/ball0018.png
+share/apps/kjezz/pics/ball0019.png
+share/apps/kjezz/pics/ball0020.png
+share/apps/kjezz/pics/ball0021.png
+share/apps/kjezz/pics/ball0022.png
+share/apps/kjezz/pics/ball0023.png
+share/apps/kjezz/pics/ball0024.png
+share/apps/kjezz/pics/tiles.png
+share/apps/kjezz/sounds/death.au
+share/apps/kjezz/sounds/reflect.au
+share/apps/kjezz/sounds/seconds.au
+share/apps/kjezz/sounds/timeout.au
+share/apps/kjezz/sounds/wallend.au
+share/apps/kjezz/sounds/wallstart.au
+share/doc/HTML/en/kjezz/.anchors
+share/doc/HTML/en/kjezz/common
+share/doc/HTML/en/kjezz/index.docbook
+share/doc/HTML/en/kjezz/index.html
+share/doc/HTML/en/kjezz/introduction.html
+share/icons/locolor/16x16/apps/kjezz.xpm
+share/icons/locolor/32x32/apps/kjezz.xpm
+@dirrm share/doc/HTML/en/kjezz
+@dirrm share/apps/kjezz/sounds
+@dirrm share/apps/kjezz/pics
+@dirrm share/apps/kjezz

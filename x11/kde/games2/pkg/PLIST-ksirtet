@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ksirtet,v 1.1 2000/12/17 21:53:04 espie Exp $
+@comment $OpenBSD: PLIST-ksirtet,v 1.2 2001/03/16 15:07:53 espie Exp $
 @pkgcfl kdegames-*
 bin/ksirtet
 share/applnk/Games/ksirtet.desktop
@@ -8,7 +8,7 @@ share/doc/HTML/en/ksirtet/authors.html
 share/doc/HTML/en/ksirtet/common
 share/doc/HTML/en/ksirtet/epilogue.html
 share/doc/HTML/en/ksirtet/how-to-gain-points.html
-share/doc/HTML/en/ksirtet/howtoplay.html
+share/doc/HTML/en/ksirtet/how-to-play.html
 share/doc/HTML/en/ksirtet/index.cvlog
 share/doc/HTML/en/ksirtet/index.docbook
 share/doc/HTML/en/ksirtet/index.html

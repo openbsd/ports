@@ -1,35 +1,9 @@
-@comment $OpenBSD: PLIST-lskat,v 1.1 2000/12/17 21:53:04 espie Exp $
+@comment $OpenBSD: PLIST-lskat,v 1.2 2001/03/16 15:07:53 espie Exp $
 @pkgcfl kdegames-*
+@pkgdep	kdecardgames-${VERSION}
 bin/lskat
 bin/lskatproc
 share/applnk/Games/lskat.desktop
-share/apps/lskat/grafix/1.png
-share/apps/lskat/grafix/10.png
-share/apps/lskat/grafix/11.png
-share/apps/lskat/grafix/12.png
-share/apps/lskat/grafix/13.png
-share/apps/lskat/grafix/14.png
-share/apps/lskat/grafix/15.png
-share/apps/lskat/grafix/16.png
-share/apps/lskat/grafix/17.png
-share/apps/lskat/grafix/18.png
-share/apps/lskat/grafix/19.png
-share/apps/lskat/grafix/2.png
-share/apps/lskat/grafix/20.png
-share/apps/lskat/grafix/21.png
-share/apps/lskat/grafix/22.png
-share/apps/lskat/grafix/23.png
-share/apps/lskat/grafix/24.png
-share/apps/lskat/grafix/25.png
-share/apps/lskat/grafix/26.png
-share/apps/lskat/grafix/27.png
-share/apps/lskat/grafix/28.png
-share/apps/lskat/grafix/29.png
-share/apps/lskat/grafix/3.png
-share/apps/lskat/grafix/30.png
-share/apps/lskat/grafix/31.png
-share/apps/lskat/grafix/32.png
-share/apps/lskat/grafix/4.png
 share/apps/lskat/grafix/400000.png
 share/apps/lskat/grafix/400001.png
 share/apps/lskat/grafix/400002.png
@@ -55,11 +29,6 @@ share/apps/lskat/grafix/400021.png
 share/apps/lskat/grafix/400022.png
 share/apps/lskat/grafix/400023.png
 share/apps/lskat/grafix/400024.png
-share/apps/lskat/grafix/5.png
-share/apps/lskat/grafix/6.png
-share/apps/lskat/grafix/7.png
-share/apps/lskat/grafix/8.png
-share/apps/lskat/grafix/9.png
 share/apps/lskat/grafix/background.png
 share/apps/lskat/grafix/deck1.png
 share/apps/lskat/grafix/deck2.png
@@ -74,6 +43,7 @@ share/apps/lskat/grafix/tback.png
 share/apps/lskat/grafix/type1.png
 share/apps/lskat/grafix/type2.png
 share/apps/lskat/grafix/type3.png
+share/apps/lskat/lskatui.rc
 share/doc/HTML/en/lskat/.anchors
 share/doc/HTML/en/lskat/common
 share/doc/HTML/en/lskat/compilation.html

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-katomic,v 1.1 2000/12/17 21:53:04 espie Exp $
+@comment $OpenBSD: PLIST-katomic,v 1.2 2001/03/16 15:07:52 espie Exp $
 @pkgcfl kdegames-*
 bin/katomic
 share/applnk/Games/katomic.desktop
@@ -83,9 +83,9 @@ share/doc/HTML/en/katomic/index.html
 share/doc/HTML/en/katomic/installation.html
 share/doc/HTML/en/katomic/introduction.html
 share/doc/HTML/en/katomic/keybindings.html
-share/doc/HTML/en/katomic/optmenu.html
-share/doc/HTML/en/katomic/playingkatomic.html
+share/doc/HTML/en/katomic/playing-katomic.html
 share/doc/HTML/en/katomic/requirements.html
+share/doc/HTML/en/katomic/settings-menu.html
 share/icons/locolor/32x32/apps/katomic.png
 @dirrm share/doc/HTML/en/katomic
 @dirrm share/apps/katomic/pics

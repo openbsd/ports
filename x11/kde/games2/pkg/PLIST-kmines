@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-kmines,v 1.1 2000/12/17 21:53:04 espie Exp $
+@comment $OpenBSD: PLIST-kmines,v 1.2 2001/03/16 15:07:52 espie Exp $
 @pkgcfl kdegames-*
 bin/kmines
 share/applnk/Games/kmines.desktop
@@ -9,7 +9,7 @@ share/doc/HTML/en/kmines/common
 share/doc/HTML/en/kmines/compilation.html
 share/doc/HTML/en/kmines/credits.html
 share/doc/HTML/en/kmines/help-menu.html
-share/doc/HTML/en/kmines/howtoplay.html
+share/doc/HTML/en/kmines/how-to-play.html
 share/doc/HTML/en/kmines/index.docbook
 share/doc/HTML/en/kmines/index.html
 share/doc/HTML/en/kmines/installation.html

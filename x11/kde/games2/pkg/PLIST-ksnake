@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ksnake,v 1.1 2000/12/17 21:53:04 espie Exp $
+@comment $OpenBSD: PLIST-ksnake,v 1.2 2001/03/16 15:07:53 espie Exp $
 @pkgcfl kdegames-*
 bin/ksnake
 share/applnk/Games/ksnake.desktop
@@ -57,7 +57,7 @@ share/doc/HTML/en/ksnake/index.cvlog
 share/doc/HTML/en/ksnake/index.docbook
 share/doc/HTML/en/ksnake/index.html
 share/doc/HTML/en/ksnake/introduction.html
-share/doc/HTML/en/ksnake/rulesofthegame.html
+share/doc/HTML/en/ksnake/rules-of-the-game.html
 share/doc/HTML/en/ksnake/scoring.html
 share/icons/hicolor/32x32/apps/ksnake.png
 share/icons/hicolor/48x48/apps/ksnake.png

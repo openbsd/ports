@@ -1,16 +1,18 @@
-@comment $OpenBSD: PLIST-kmahjongg,v 1.1 2000/12/17 21:53:04 espie Exp $
+@comment $OpenBSD: PLIST-kmahjongg,v 1.2 2001/03/16 15:07:52 espie Exp $
 @pkgcfl kdegames-*
 bin/kmahjongg
 share/applnk/Games/kmahjongg.desktop
 share/apps/kmahjongg/pics/cross.layout
 share/apps/kmahjongg/pics/default.bgnd
 share/apps/kmahjongg/pics/default.layout
+share/apps/kmahjongg/pics/default.theme
 share/apps/kmahjongg/pics/default.tileset
 share/apps/kmahjongg/pics/haze.bgnd
 share/apps/kmahjongg/pics/kmahjongg.png
 share/apps/kmahjongg/pics/kmahjongg_bgnd.png
 share/apps/kmahjongg/pics/pirates.bgnd
 share/apps/kmahjongg/pics/pirates.layout
+share/apps/kmahjongg/pics/pirates.theme
 share/apps/kmahjongg/pics/pirates.tileset
 share/apps/kmahjongg/pics/pyramid.layout
 share/apps/kmahjongg/pics/slate.bgnd

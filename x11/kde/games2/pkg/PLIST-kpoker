@@ -1,63 +1,9 @@
-@comment $OpenBSD: PLIST-kpoker,v 1.1 2000/12/17 21:53:04 espie Exp $
+@comment $OpenBSD: PLIST-kpoker,v 1.2 2001/03/16 15:07:52 espie Exp $
 @pkgcfl kdegames-*
+@pkgdep	kdecardgames-${VERSION}
 bin/kpoker
 share/applnk/Games/kpoker.desktop
-share/apps/kpoker/pics/1.png
-share/apps/kpoker/pics/10.png
-share/apps/kpoker/pics/11.png
-share/apps/kpoker/pics/12.png
-share/apps/kpoker/pics/13.png
-share/apps/kpoker/pics/14.png
-share/apps/kpoker/pics/15.png
-share/apps/kpoker/pics/16.png
-share/apps/kpoker/pics/17.png
-share/apps/kpoker/pics/18.png
-share/apps/kpoker/pics/19.png
-share/apps/kpoker/pics/2.png
-share/apps/kpoker/pics/20.png
-share/apps/kpoker/pics/21.png
-share/apps/kpoker/pics/22.png
-share/apps/kpoker/pics/23.png
-share/apps/kpoker/pics/24.png
-share/apps/kpoker/pics/25.png
-share/apps/kpoker/pics/26.png
-share/apps/kpoker/pics/27.png
-share/apps/kpoker/pics/28.png
-share/apps/kpoker/pics/29.png
-share/apps/kpoker/pics/3.png
-share/apps/kpoker/pics/30.png
-share/apps/kpoker/pics/31.png
-share/apps/kpoker/pics/32.png
-share/apps/kpoker/pics/33.png
-share/apps/kpoker/pics/34.png
-share/apps/kpoker/pics/35.png
-share/apps/kpoker/pics/36.png
-share/apps/kpoker/pics/37.png
-share/apps/kpoker/pics/38.png
-share/apps/kpoker/pics/39.png
-share/apps/kpoker/pics/4.png
-share/apps/kpoker/pics/40.png
-share/apps/kpoker/pics/41.png
-share/apps/kpoker/pics/42.png
-share/apps/kpoker/pics/43.png
-share/apps/kpoker/pics/44.png
-share/apps/kpoker/pics/45.png
-share/apps/kpoker/pics/46.png
-share/apps/kpoker/pics/47.png
-share/apps/kpoker/pics/48.png
-share/apps/kpoker/pics/49.png
-share/apps/kpoker/pics/5.png
-share/apps/kpoker/pics/50.png
-share/apps/kpoker/pics/51.png
-share/apps/kpoker/pics/52.png
-share/apps/kpoker/pics/6.png
-share/apps/kpoker/pics/7.png
-share/apps/kpoker/pics/8.png
-share/apps/kpoker/pics/9.png
-share/apps/kpoker/pics/deck1.png
-share/apps/kpoker/pics/deck2.png
-share/apps/kpoker/pics/deck3.png
-share/apps/kpoker/pics/deck4.png
+share/apps/kpoker/kpokerui.rc
 share/apps/kpoker/sounds/cardflip.wav
 share/apps/kpoker/sounds/hold.wav
 share/apps/kpoker/sounds/lose.wav
@@ -89,5 +35,4 @@ share/icons/locolor/16x16/apps/kpoker.png
 share/icons/locolor/32x32/apps/kpoker.png
 @dirrm share/doc/HTML/en/kpoker
 @dirrm share/apps/kpoker/sounds
-@dirrm share/apps/kpoker/pics
 @dirrm share/apps/kpoker

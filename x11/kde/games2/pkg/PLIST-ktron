@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ktron,v 1.1 2000/12/17 21:53:04 espie Exp $
+@comment $OpenBSD: PLIST-ktron,v 1.2 2001/03/16 15:07:53 espie Exp $
 @pkgcfl kdegames-*
 bin/ktron
 share/applnk/Games/ktron.desktop
@@ -15,10 +15,10 @@ share/doc/HTML/en/ktron/index.html
 share/doc/HTML/en/ktron/installation.html
 share/doc/HTML/en/ktron/introduction.html
 share/doc/HTML/en/ktron/keybindings.html
-share/doc/HTML/en/ktron/pausegame.html
-share/doc/HTML/en/ktron/playingktron.html
+share/doc/HTML/en/ktron/pause-game.html
+share/doc/HTML/en/ktron/playing-ktron.html
 share/doc/HTML/en/ktron/requirements.html
-share/doc/HTML/en/ktron/usingkeyboard.html
+share/doc/HTML/en/ktron/using-keyboard.html
 share/icons/locolor/16x16/apps/ktron.png
 share/icons/locolor/32x32/apps/ktron.png
 @dirrm share/doc/HTML/en/ktron
