@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/12/20 14:47:42 espie Exp $
 include/bitmaps/
 include/bitmaps/1x1
 include/bitmaps/2x2
@@ -276,8 +276,8 @@ lib/.text_extras_menu
 lib/.textswrc
 lib/.ttyswrc
 lib/help/
-lib/help/clock.info
-lib/help/olwm.info
+@comment lib/help/clock.info
+@comment lib/help/olwm.info
 lib/help/props.info
 lib/help/textedit.info
 lib/help/textsw.info
