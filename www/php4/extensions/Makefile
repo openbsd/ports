@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/05/07 14:02:32 avsm Exp $
+# $OpenBSD: Makefile,v 1.22 2003/05/10 14:42:49 avsm Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -109,7 +109,7 @@ CONFIGURE_ARGS+=	--without-gd --without-xpm-dir --without-ttf \
 .else
 MULTI_PACKAGES+=	-gd
 COMMENT-gd=		"image manipulation extensions for php4"
-GD_DEPENDS=		ttf.1::print/freetype
+GD_DEPENDS=		ttf.1::print/freetype ${GRAPHIC_DEPENDS}
 CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
 			--with-ttf=shared,${LOCALBASE} --without-freetype-dir
 .if !${FLAVOR:L:Mno_x11}
