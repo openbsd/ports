@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/05/30 14:47:13 lebel Exp $
+# $OpenBSD: Makefile,v 1.16 2003/05/30 15:05:01 lebel Exp $
 #
 
     SUBDIR += base64
@@ -17,6 +17,7 @@
     SUBDIR += p5-DateManip
     SUBDIR += p5-MIME-Base64
     SUBDIR += p5-Text-Iconv
+    SUBDIR += p5-Unicode-Map
     SUBDIR += p5-Unicode-Map8
     SUBDIR += p5-Unicode-MapUTF8
     SUBDIR += p5-Unicode-String
