@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/05/24 15:37:45 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:49:50 espie Exp $
 lib/mod_gzip.so
 sbin/mod_gzip-enable
+share/doc/mod_gzip/
 share/doc/mod_gzip/browser.htm
 share/doc/mod_gzip/cache.htm
 share/doc/mod_gzip/config.htm
@@ -15,6 +16,5 @@ share/doc/mod_gzip/status.htm
 share/doc/mod_gzip/valid-css.png
 share/doc/mod_gzip/valid-xhtml11.png
 share/doc/mod_gzip/versions.htm
+share/examples/mod_gzip/
 share/examples/mod_gzip/mod_gzip.conf.sample
-@dirrm share/examples/mod_gzip
-@dirrm share/doc/mod_gzip

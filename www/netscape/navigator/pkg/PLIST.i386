@@ -1,12 +1,25 @@
-@comment $OpenBSD: PLIST.i386,v 1.7 2004/01/15 22:07:28 sturm Exp $
+@comment $OpenBSD: PLIST.i386,v 1.8 2004/09/15 18:49:50 espie Exp $
 @pkgcfl communicator-*
 @pkgcfl navigator-*
 bin/netscape
+netscape/
 netscape/LICENSE
 netscape/Netscape.ad
 netscape/README
 netscape/XKeysymDB
 netscape/bookmark.htm
+netscape/java/
+netscape/java/classes/
+netscape/java/classes/aix/
+netscape/java/classes/aix/font.properties
+netscape/java/classes/aix/font.properties.cs
+netscape/java/classes/aix/font.properties.hu
+netscape/java/classes/aix/font.properties.ja
+netscape/java/classes/aix/font.properties.ko
+netscape/java/classes/aix/font.properties.pl
+netscape/java/classes/aix/font.properties.ru
+netscape/java/classes/aix/font.properties.zh
+netscape/java/classes/aix/font.properties.zh_TW
 netscape/java/classes/awt.properties
 netscape/java/classes/font.properties
 netscape/java/classes/font.properties.cs
@@ -24,8 +37,36 @@ netscape/java/classes/font.properties.zh_GB2312
 netscape/java/classes/font.properties.zh_TW
 netscape/java/classes/font.properties.zh_TW_Big5
 netscape/java/classes/font.properties.zh_TW_CNS11643
+netscape/java/classes/hpux/
+netscape/java/classes/hpux/font.properties
+netscape/java/classes/hpux/font.properties.bg
+netscape/java/classes/hpux/font.properties.cs
+netscape/java/classes/hpux/font.properties.el
+netscape/java/classes/hpux/font.properties.hr
+netscape/java/classes/hpux/font.properties.hu
+netscape/java/classes/hpux/font.properties.ja
+netscape/java/classes/hpux/font.properties.ko
+netscape/java/classes/hpux/font.properties.pl
+netscape/java/classes/hpux/font.properties.ro
+netscape/java/classes/hpux/font.properties.ru
+netscape/java/classes/hpux/font.properties.sk
+netscape/java/classes/hpux/font.properties.sl
+netscape/java/classes/hpux/font.properties.tr
+netscape/java/classes/hpux/font.properties.zh_GB2312
+netscape/java/classes/hpux/font.properties.zh_TW_Big5
+netscape/java/classes/hpux/font.properties.zh_TW_CNS11643
 netscape/java/classes/ifc11.jar
 netscape/java/classes/iiop10.jar
+netscape/java/classes/irix/
+netscape/java/classes/irix/font.properties
+netscape/java/classes/irix/font.properties.cs
+netscape/java/classes/irix/font.properties.el
+netscape/java/classes/irix/font.properties.hu
+netscape/java/classes/irix/font.properties.ja
+netscape/java/classes/irix/font.properties.ko
+netscape/java/classes/irix/font.properties.zh_GB2312
+netscape/java/classes/irix/font.properties.zh_TW_Big5
+netscape/java/classes/irix/font.properties.zh_TW_CNS11643
 netscape/java/classes/jae40.jar
 netscape/java/classes/java40.jar
 netscape/java/classes/jio40.jar
@@ -34,6 +75,7 @@ netscape/java/classes/jsd10.jar
 netscape/java/classes/ldap40.jar
 netscape/java/classes/resource.jar
 netscape/java/classes/scd10.jar
+netscape/nethelp/
 netscape/nethelp/Back_dep.gif
 netscape/nethelp/Back_dis.gif
 netscape/nethelp/Back_sel.gif
@@ -74,14 +116,18 @@ netscape/nethelp/Tool_up.gif
 netscape/nethelp/Topic.js
 netscape/nethelp/Utility.js
 netscape/nethelp/Wait.gif
+netscape/nethelp/netscape/
+netscape/nethelp/netscape/home/
 netscape/nethelp/netscape/home/help.hpf
 netscape/nethelp/netscape/home/home.gif
 netscape/nethelp/netscape/home/home.htm
 netscape/nethelp/netscape/home/homeHdr.htm
+netscape/nethelp/netscape/navigatr/
 netscape/nethelp/netscape/navigatr/help.hpf
 netscape/nethelp/netscape/navigatr/nav.htm
 netscape/nethelp/netscape/navigatr/navHdr.htm
 netscape/nethelp/netscape/navigatr/navigatr.gif
+netscape/nethelp/netscape/shared/
 netscape/nethelp/netscape/shared/NetHelpm.css
 netscape/nethelp/netscape/shared/NetHelpu.css
 netscape/nethelp/netscape/shared/NetHelpw.css
@@ -99,19 +145,11 @@ netscape/nethelp/netwatch.gif
 netscape/nethelp/picsfail.htm
 netscape/nethelp/picsfail.jar
 netscape/netscape
+netscape/nls/
 netscape/nls/C
 netscape/nls/nls.dir
+netscape/plugins/
 netscape/plugins/cpPack1.jar
 netscape/registry
 netscape/vreg
-@dirrm netscape/java/classes
-@dirrm netscape/java
-@dirrm netscape/nethelp/netscape/home
-@dirrm netscape/nethelp/netscape/navigatr
-@dirrm netscape/nethelp/netscape/shared
-@dirrm netscape/nethelp/netscape
-@dirrm netscape/nethelp
-@dirrm netscape/nls
-@dirrm netscape/plugins
-@dirrm netscape
 @exec sysctl -w kern.emul.${EMUL_TYPE}=1

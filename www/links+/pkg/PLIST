@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/07/25 01:56:42 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:49 espie Exp $
 @pkgcfl links-*
 bin/links
-man/man1/links.1
+@man man/man1/links.1
+share/links+/
 share/links+/adjusted.png
 share/links+/black-control-rocking.png
 share/links+/black-icon.png
@@ -12,4 +13,3 @@ share/links+/picture-crank-0.png
 share/links+/picture-crank-up.png
 share/links+/picture-icon.png
 share/links+/test_pattern.png
-@dirrm share/links+

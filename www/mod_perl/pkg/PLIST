@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/05/28 18:54:45 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.16 2004/09/15 18:49:50 espie Exp $
 lib/mod_perl.so
+${P5ARCH}/
+${P5ARCH}/Apache/
 ${P5ARCH}/Apache.pm
 ${P5ARCH}/Apache/Connection.pm
+${P5ARCH}/Apache/Constants/
 ${P5ARCH}/Apache/Constants.pm
 ${P5ARCH}/Apache/Constants/Exports.pm
 ${P5ARCH}/Apache/Debug.pm
@@ -37,12 +40,20 @@ ${P5ARCH}/Apache/Util.pm
 ${P5ARCH}/Apache/httpd_conf.pm
 ${P5ARCH}/Apache/src.pm
 ${P5ARCH}/Apache/testold.pm
+${P5ARCH}/Bundle/
 ${P5ARCH}/Bundle/Apache.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Apache/
+${P5ARCH}/auto/Apache/Leak/
 ${P5ARCH}/auto/Apache/Leak/Leak.bs
 ${P5ARCH}/auto/Apache/Leak/Leak.so
+${P5ARCH}/auto/Apache/Symbol/
 ${P5ARCH}/auto/Apache/Symbol/Symbol.bs
 ${P5ARCH}/auto/Apache/Symbol/Symbol.so
+${P5ARCH}/auto/Apache/include/
 ${P5ARCH}/auto/Apache/include/ap_config_auto.h
+${P5ARCH}/auto/Apache/include/modules/
+${P5ARCH}/auto/Apache/include/modules/perl/
 ${P5ARCH}/auto/Apache/include/modules/perl/apache_inc.h
 ${P5ARCH}/auto/Apache/include/modules/perl/mod_perl.h
 ${P5ARCH}/auto/Apache/include/modules/perl/mod_perl_version.h
@@ -50,7 +61,6 @@ ${P5ARCH}/auto/Apache/include/modules/perl/mod_perl_xs.h
 ${P5ARCH}/auto/Apache/include/modules/perl/perl_PL.h
 ${P5ARCH}/auto/Apache/mod_perl.exp
 ${P5ARCH}/auto/Apache/typemap
-@comment ${P5ARCH}/auto/mod_perl/.packlist
 ${P5ARCH}/cgi_to_mod_perl.pod
 ${P5ARCH}/mod_perl.pm
 ${P5ARCH}/mod_perl.pod
@@ -60,56 +70,43 @@ ${P5ARCH}/mod_perl_hooks.pm.PL
 ${P5ARCH}/mod_perl_method_handlers.pod
 ${P5ARCH}/mod_perl_traps.pod
 ${P5ARCH}/mod_perl_tuning.pod
-man/man3p/Apache.3p
-man/man3p/Apache::Constants.3p
-man/man3p/Apache::Debug.3p
-man/man3p/Apache::ExtUtils.3p
-man/man3p/Apache::FakeRequest.3p
-man/man3p/Apache::File.3p
-man/man3p/Apache::Include.3p
-man/man3p/Apache::Leak.3p
-man/man3p/Apache::Log.3p
-man/man3p/Apache::MyConfig.3p
-man/man3p/Apache::Options.3p
-man/man3p/Apache::PerlRun.3p
-man/man3p/Apache::PerlRunXS.3p
-man/man3p/Apache::PerlSections.3p
-man/man3p/Apache::RedirectLogFix.3p
-man/man3p/Apache::Registry.3p
-man/man3p/Apache::RegistryLoader.3p
-man/man3p/Apache::Resource.3p
-man/man3p/Apache::SIG.3p
-man/man3p/Apache::SizeLimit.3p
-man/man3p/Apache::StatINC.3p
-man/man3p/Apache::Status.3p
-man/man3p/Apache::Symbol.3p
-man/man3p/Apache::Symdump.3p
-man/man3p/Apache::Table.3p
-man/man3p/Apache::URI.3p
-man/man3p/Apache::Util.3p
-man/man3p/Apache::httpd_conf.3p
-man/man3p/Apache::src.3p
-man/man3p/Apache::testold.3p
-man/man3p/Bundle::Apache.3p
-man/man3p/cgi_to_mod_perl.3p
-man/man3p/mod_perl.3p
-man/man3p/mod_perl_cvs.3p
-man/man3p/mod_perl_method_handlers.3p
-man/man3p/mod_perl_traps.3p
-man/man3p/mod_perl_tuning.3p
+@man man/man3p/Apache.3p
+@man man/man3p/Apache::Constants.3p
+@man man/man3p/Apache::Debug.3p
+@man man/man3p/Apache::ExtUtils.3p
+@man man/man3p/Apache::FakeRequest.3p
+@man man/man3p/Apache::File.3p
+@man man/man3p/Apache::Include.3p
+@man man/man3p/Apache::Leak.3p
+@man man/man3p/Apache::Log.3p
+@man man/man3p/Apache::MyConfig.3p
+@man man/man3p/Apache::Options.3p
+@man man/man3p/Apache::PerlRun.3p
+@man man/man3p/Apache::PerlRunXS.3p
+@man man/man3p/Apache::PerlSections.3p
+@man man/man3p/Apache::RedirectLogFix.3p
+@man man/man3p/Apache::Registry.3p
+@man man/man3p/Apache::RegistryLoader.3p
+@man man/man3p/Apache::Resource.3p
+@man man/man3p/Apache::SIG.3p
+@man man/man3p/Apache::SizeLimit.3p
+@man man/man3p/Apache::StatINC.3p
+@man man/man3p/Apache::Status.3p
+@man man/man3p/Apache::Symbol.3p
+@man man/man3p/Apache::Symdump.3p
+@man man/man3p/Apache::Table.3p
+@man man/man3p/Apache::URI.3p
+@man man/man3p/Apache::Util.3p
+@man man/man3p/Apache::httpd_conf.3p
+@man man/man3p/Apache::src.3p
+@man man/man3p/Apache::testold.3p
+@man man/man3p/Bundle::Apache.3p
+@man man/man3p/cgi_to_mod_perl.3p
+@man man/man3p/mod_perl.3p
+@man man/man3p/mod_perl_cvs.3p
+@man man/man3p/mod_perl_method_handlers.3p
+@man man/man3p/mod_perl_traps.3p
+@man man/man3p/mod_perl_tuning.3p
 sbin/mod_perl-enable
+share/doc/mod_perl/
 share/doc/mod_perl/mod_perl.html
-@dirrm share/doc/mod_perl
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/mod_perl
-@dirrm ${P5ARCH}/auto/Apache/include/modules/perl
-@dirrm ${P5ARCH}/auto/Apache/include/modules
-@dirrm ${P5ARCH}/auto/Apache/include
-@dirrm ${P5ARCH}/auto/Apache/Symbol
-@dirrm ${P5ARCH}/auto/Apache/Leak
-@dirrm ${P5ARCH}/auto/Apache
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Bundle
-@dirrm ${P5ARCH}/Apache/Constants
-@dirrm ${P5ARCH}/Apache
-@dirrm ${P5ARCH}

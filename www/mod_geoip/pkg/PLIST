@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/27 15:06:13 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:50 espie Exp $
 lib/mod_geoip.so
 sbin/mod_geoip-enable
+share/doc/mod_geoip/
 share/doc/mod_geoip/README
-@dirrm share/doc/mod_geoip

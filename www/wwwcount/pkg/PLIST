@@ -1,30 +1,44 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/04/13 21:27:02 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/15 18:49:53 espie Exp $
 bin/extdgts
 bin/mkstrip
+lib/wwwcount/
 lib/wwwcount/Count.cgi
 lib/wwwcount/count.cfg.sample
+lib/wwwcount/digits/
+lib/wwwcount/digits/A/
 lib/wwwcount/digits/A/peng.gif
 lib/wwwcount/digits/A/strip.gif
 lib/wwwcount/digits/A/yeehaw.gif
+lib/wwwcount/digits/B/
 lib/wwwcount/digits/B/strip.gif
+lib/wwwcount/digits/C/
 lib/wwwcount/digits/C/strip.gif
+lib/wwwcount/digits/D/
 lib/wwwcount/digits/D/lenna.gif
 lib/wwwcount/digits/D/strip.gif
+lib/wwwcount/digits/E/
 lib/wwwcount/digits/E/foo.gif
 lib/wwwcount/digits/E/strip.gif
+lib/wwwcount/digits/bang/
 lib/wwwcount/digits/bang/strip.gif
+lib/wwwcount/digits/cd/
 lib/wwwcount/digits/cd/strip.gif
+lib/wwwcount/digits/cdd/
 lib/wwwcount/digits/cdd/strip.gif
+lib/wwwcount/digits/cdr/
 lib/wwwcount/digits/cdr/strip.gif
 lib/wwwcount/rgb.txt
-man/man1/mkstrip.1
+@man man/man1/mkstrip.1
+share/doc/wwwcount/
 share/doc/wwwcount/Count.html
+share/doc/wwwcount/Count2.5/
 share/doc/wwwcount/Count2.5/Count2.4-ex.html
 share/doc/wwwcount/Count2.5/Count2ex.html
 share/doc/wwwcount/Count2.5/CountNT.html
 share/doc/wwwcount/Count2.5/c-c.txt
 share/doc/wwwcount/Count2.5/c.html
 share/doc/wwwcount/Count2.5/confi.html
+share/doc/wwwcount/Count2.5/eximages/
 share/doc/wwwcount/Count2.5/eximages/ex2_5102576.gif
 share/doc/wwwcount/Count2.5/eximages/ex2_5106850.gif
 share/doc/wwwcount/Count2.5/eximages/ex2_5111124.gif
@@ -72,6 +86,7 @@ share/doc/wwwcount/Count2.5/eximages/ex2_589754.gif
 share/doc/wwwcount/Count2.5/eximages/ex2_594028.gif
 share/doc/wwwcount/Count2.5/eximages/ex2_598302.gif
 share/doc/wwwcount/Count2.5/gen-c.txt
+share/doc/wwwcount/Count2.5/images/
 share/doc/wwwcount/Count2.5/images/Image1.gif
 share/doc/wwwcount/Count2.5/images/c24latr.gif
 share/doc/wwwcount/Count2.5/images/c24rel.gif
@@ -107,6 +122,7 @@ share/doc/wwwcount/README
 share/doc/wwwcount/blues.gif
 share/doc/wwwcount/crdates.sh
 share/doc/wwwcount/green.gif
+share/doc/wwwcount/prehtml/
 share/doc/wwwcount/prehtml/.bash_mp3
 share/doc/wwwcount/prehtml/CountNT.prehtml
 share/doc/wwwcount/prehtml/Count_main.prehtml
@@ -155,22 +171,6 @@ share/doc/wwwcount/prehtml/test.prehtml
 share/doc/wwwcount/prehtml/toc.prehtml
 share/doc/wwwcount/prehtml/us_mirrors.prehtml
 share/doc/wwwcount/prehtml/whatsnew.prehtml
-@dirrm share/doc/wwwcount/prehtml
-@dirrm share/doc/wwwcount/Count2.5/images
-@dirrm share/doc/wwwcount/Count2.5/eximages
-@dirrm share/doc/wwwcount/Count2.5
-@dirrm share/doc/wwwcount
-@dirrm lib/wwwcount/digits/cdr
-@dirrm lib/wwwcount/digits/cdd
-@dirrm lib/wwwcount/digits/cd
-@dirrm lib/wwwcount/digits/bang
-@dirrm lib/wwwcount/digits/E
-@dirrm lib/wwwcount/digits/D
-@dirrm lib/wwwcount/digits/C
-@dirrm lib/wwwcount/digits/B
-@dirrm lib/wwwcount/digits/A
-@dirrm lib/wwwcount/digits
-@dirrm lib/wwwcount
 @cwd /var/www/logs
 @extra Count.log
 @extraunexec rm -rf /var/www/wwwcount

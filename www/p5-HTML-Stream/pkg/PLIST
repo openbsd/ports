@@ -1,10 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/01/16 23:42:03 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:49:51 espie Exp $
+${P5SITE}/HTML/
 ${P5SITE}/HTML/Stream.pm
-@comment ${P5ARCH}/auto/HTML/Stream/.packlist
-man/man3p/HTML::Stream.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/HTML/Stream
-@comment @dirrm ${P5ARCH}/auto/HTML
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/HTML
+@man man/man3p/HTML::Stream.3p

@@ -1,12 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/01/15 22:07:28 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:49:50 espie Exp $
 @pkgcfl communicator-*
 @pkgcfl navigator-*
 bin/netscape
+netscape/
 netscape/LICENSE
 netscape/Netscape.ad
 netscape/README
 netscape/XKeysymDB
 netscape/bookmark.htm
+netscape/java/
+netscape/java/classes/
+netscape/java/classes/aix/
 netscape/java/classes/aix/font.properties
 netscape/java/classes/aix/font.properties.cs
 netscape/java/classes/aix/font.properties.hu
@@ -33,6 +37,7 @@ netscape/java/classes/font.properties.zh_GB2312
 netscape/java/classes/font.properties.zh_TW
 netscape/java/classes/font.properties.zh_TW_Big5
 netscape/java/classes/font.properties.zh_TW_CNS11643
+netscape/java/classes/hpux/
 netscape/java/classes/hpux/font.properties
 netscape/java/classes/hpux/font.properties.bg
 netscape/java/classes/hpux/font.properties.cs
@@ -52,6 +57,7 @@ netscape/java/classes/hpux/font.properties.zh_TW_Big5
 netscape/java/classes/hpux/font.properties.zh_TW_CNS11643
 netscape/java/classes/ifc11.jar
 netscape/java/classes/iiop10.jar
+netscape/java/classes/irix/
 netscape/java/classes/irix/font.properties
 netscape/java/classes/irix/font.properties.cs
 netscape/java/classes/irix/font.properties.el
@@ -69,13 +75,16 @@ netscape/java/classes/jsd10.jar
 netscape/java/classes/ldap40.jar
 netscape/java/classes/resource.jar
 netscape/java/classes/scd10.jar
+netscape/lib/
 netscape/lib/libjsd.so
 netscape/libjsd.so
 netscape/libnullplugin-dynMotif.so
 netscape/movemail
+netscape/movemail-src/
 netscape/movemail-src/COPYING
 netscape/movemail-src/README
 netscape/movemail-src/movemail.c
+netscape/nethelp/
 netscape/nethelp/Back_dep.gif
 netscape/nethelp/Back_dis.gif
 netscape/nethelp/Back_sel.gif
@@ -116,12 +125,15 @@ netscape/nethelp/Tool_up.gif
 netscape/nethelp/Topic.js
 netscape/nethelp/Utility.js
 netscape/nethelp/Wait.gif
+netscape/nethelp/netscape/
+netscape/nethelp/netscape/collabra/
 netscape/nethelp/netscape/collabra/coll.htm
 netscape/nethelp/netscape/collabra/collHdr.htm
 netscape/nethelp/netscape/collabra/collabra.gif
 netscape/nethelp/netscape/collabra/discgrps.gif
 netscape/nethelp/netscape/collabra/help.hpf
 netscape/nethelp/netscape/collabra/mailbox2.gif
+netscape/nethelp/netscape/composer/
 netscape/nethelp/netscape/composer/comp.htm
 netscape/nethelp/netscape/composer/compHdr.htm
 netscape/nethelp/netscape/composer/composer.gif
@@ -129,10 +141,12 @@ netscape/nethelp/netscape/composer/comtlbr2.gif
 netscape/nethelp/netscape/composer/fmtlbr3.gif
 netscape/nethelp/netscape/composer/help.hpf
 netscape/nethelp/netscape/composer/tagicon2.gif
+netscape/nethelp/netscape/home/
 netscape/nethelp/netscape/home/help.hpf
 netscape/nethelp/netscape/home/home.gif
 netscape/nethelp/netscape/home/home.htm
 netscape/nethelp/netscape/home/homeHdr.htm
+netscape/nethelp/netscape/messengr/
 netscape/nethelp/netscape/messengr/abook.gif
 netscape/nethelp/netscape/messengr/compbar.gif
 netscape/nethelp/netscape/messengr/help.hpf
@@ -144,10 +158,12 @@ netscape/nethelp/netscape/messengr/messengr.gif
 netscape/nethelp/netscape/messengr/mpctrl.gif
 netscape/nethelp/netscape/messengr/newsgrp.gif
 netscape/nethelp/netscape/messengr/tabs.gif
+netscape/nethelp/netscape/navigatr/
 netscape/nethelp/netscape/navigatr/help.hpf
 netscape/nethelp/netscape/navigatr/nav.htm
 netscape/nethelp/netscape/navigatr/navHdr.htm
 netscape/nethelp/netscape/navigatr/navigatr.gif
+netscape/nethelp/netscape/news/
 netscape/nethelp/netscape/news/abook.gif
 netscape/nethelp/netscape/news/collabra.gif
 netscape/nethelp/netscape/news/compbar.gif
@@ -156,6 +172,7 @@ netscape/nethelp/netscape/news/help.hpf
 netscape/nethelp/netscape/news/mailbox2.gif
 netscape/nethelp/netscape/news/news.htm
 netscape/nethelp/netscape/news/newsgrp.gif
+netscape/nethelp/netscape/shared/
 netscape/nethelp/netscape/shared/NetHelpm.css
 netscape/nethelp/netscape/shared/NetHelpu.css
 netscape/nethelp/netscape/shared/NetHelpw.css
@@ -169,37 +186,22 @@ netscape/nethelp/netscape/shared/ibmIcon.gif
 netscape/nethelp/netscape/shared/messIcon.gif
 netscape/nethelp/netscape/shared/navIcon.gif
 netscape/nethelp/netscape/shared/netIcon.gif
+netscape/nethelp/netscape/trouble/
 netscape/nethelp/netscape/trouble/help.hpf
 netscape/nethelp/netscape/trouble/trouble.htm
 netscape/nethelp/netwatch.gif
 netscape/nethelp/picsfail.htm
 netscape/nethelp/picsfail.jar
 netscape/netscape
-netscape/netscape-dynMotif
+@comment netscape/netscape-dynMotif
+netscape/plugins/
+netscape/plugins/ShockwaveFlash.class
 netscape/plugins/cpPack1.jar
 netscape/plugins/libnullplugin.so
 netscape/registry
+netscape/spell/
 netscape/spell/netscape.dic
 netscape/spell/pen4s324.dat
 netscape/vreg
-@dirrm netscape/spell
-@dirrm netscape/plugins
-@dirrm netscape/nethelp/netscape/trouble
-@dirrm netscape/nethelp/netscape/shared
-@dirrm netscape/nethelp/netscape/news
-@dirrm netscape/nethelp/netscape/navigatr
-@dirrm netscape/nethelp/netscape/messengr
-@dirrm netscape/nethelp/netscape/home
-@dirrm netscape/nethelp/netscape/composer
-@dirrm netscape/nethelp/netscape/collabra
-@dirrm netscape/nethelp/netscape
-@dirrm netscape/nethelp
-@dirrm netscape/movemail-src
-@dirrm netscape/lib
-@dirrm netscape/java/classes/irix
-@dirrm netscape/java/classes/hpux
-@dirrm netscape/java/classes/aix
-@dirrm netscape/java/classes
-@dirrm netscape/java
-@dirrm netscape
 @exec sysctl -w kern.emul.${EMUL_TYPE}=1
+%%SHARED%%

@@ -1,221 +1,221 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/07/21 06:59:59 kevlo Exp $
-horde/kronolith/COPYING
-horde/kronolith/README
-horde/kronolith/addevent.php
-horde/kronolith/addeventaction.php
-horde/kronolith/config/.htaccess
-horde/kronolith/config/conf.php.dist
-horde/kronolith/config/html.php.dist
-horde/kronolith/config/keywords.php.dist
-horde/kronolith/config/menu.php.dist
-horde/kronolith/config/prefs.php.dist
-horde/kronolith/data.php
-horde/kronolith/day.php
-horde/kronolith/delevent.php
-horde/kronolith/deleventaction.php
-horde/kronolith/docs/CHANGES
-horde/kronolith/docs/CREDITS
-horde/kronolith/docs/INSTALL
-horde/kronolith/docs/RELEASE_NOTES
-horde/kronolith/editevent.php
-horde/kronolith/editeventaction.php
-horde/kronolith/graphics/alarm.gif
-horde/kronolith/graphics/alarm_small.gif
-horde/kronolith/graphics/bullet.gif
-horde/kronolith/graphics/clear.gif
-horde/kronolith/graphics/colorpicker.gif
-horde/kronolith/graphics/colorpicker.png
-horde/kronolith/graphics/dayview.gif
-horde/kronolith/graphics/delete.gif
-horde/kronolith/graphics/event.gif
-horde/kronolith/graphics/goto.gif
-horde/kronolith/graphics/kronolith.gif
-horde/kronolith/graphics/monthview.gif
-horde/kronolith/graphics/new.gif
-horde/kronolith/graphics/next.gif
-horde/kronolith/graphics/prev.gif
-horde/kronolith/graphics/print.gif
-horde/kronolith/graphics/recur.gif
-horde/kronolith/graphics/today.gif
-horde/kronolith/graphics/weekview.gif
-horde/kronolith/graphics/workweekview.gif
-horde/kronolith/index.php
-horde/kronolith/lib/Day.php
-horde/kronolith/lib/DayView.php
-horde/kronolith/lib/Driver.php
-horde/kronolith/lib/Driver/mcal.php
-horde/kronolith/lib/Driver/sql.php
-horde/kronolith/lib/Event.php
-horde/kronolith/lib/Kronolith.php
-horde/kronolith/lib/Notification/kronolith.php
-horde/kronolith/lib/WeekView.php
-horde/kronolith/lib/api.php
-horde/kronolith/lib/base.php
-horde/kronolith/lib/version.php
-horde/kronolith/locale/ar_SY/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/bg_BG/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/cs_CZ/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/da_DK/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/de_DE/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/el_GR/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/en_US/help.xml
-horde/kronolith/locale/es_ES/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/fi_FI/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/fi_FI/help.xml
-horde/kronolith/locale/fr_FR/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/hu_HU/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/hu_HU/help.xml
-horde/kronolith/locale/it_IT/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/ko_KR/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/lt_LT/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/nb_NO/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/nl_NL/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/nn_NO/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/pl_PL/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/pt_BR/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/ro_RO/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/ru_RU.KOI8-R/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/ru_RU/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/sk_SK/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/sv_SE/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/zh_CN/LC_MESSAGES/kronolith.mo
-horde/kronolith/locale/zh_TW/LC_MESSAGES/kronolith.mo
-horde/kronolith/menu.php
-horde/kronolith/month.php
-horde/kronolith/po/Makefile
-horde/kronolith/po/README
-horde/kronolith/po/ar_SY.po
-horde/kronolith/po/bg_BG.po
-horde/kronolith/po/cs_CZ.po
-horde/kronolith/po/da_DK.po
-horde/kronolith/po/de_DE.po
-horde/kronolith/po/el_GR.po
-horde/kronolith/po/es_ES.po
-horde/kronolith/po/extract.pl
-horde/kronolith/po/fi_FI.po
-horde/kronolith/po/fr_FR.po
-horde/kronolith/po/hu_HU.po
-horde/kronolith/po/it_IT.po
-horde/kronolith/po/ko_KR.po
-horde/kronolith/po/kronolith.pot
-horde/kronolith/po/lt_LT.po
-horde/kronolith/po/nb_NO.po
-horde/kronolith/po/nl_NL.po
-horde/kronolith/po/nn_NO.po
-horde/kronolith/po/pl_PL.po
-horde/kronolith/po/pt_BR.po
-horde/kronolith/po/ro_RO.po
-horde/kronolith/po/ru_RU.KOI8-R.po
-horde/kronolith/po/ru_RU.po
-horde/kronolith/po/shtool
-horde/kronolith/po/sk_SK.po
-horde/kronolith/po/sv_SE.po
-horde/kronolith/po/xgettext.sh
-horde/kronolith/po/zh_CN.po
-horde/kronolith/po/zh_TW.po
-horde/kronolith/prefs.php
-horde/kronolith/scripts/drivers/kronolith.oracle.sql
-horde/kronolith/scripts/drivers/kronolith.sql
-horde/kronolith/status.php
-horde/kronolith/templates/common-footer.inc
-horde/kronolith/templates/common-header.inc
-horde/kronolith/templates/data/export.inc
-horde/kronolith/templates/data/import.inc
-horde/kronolith/templates/day/all_day.inc
-horde/kronolith/templates/day/foot.inc
-horde/kronolith/templates/day/head.inc
-horde/kronolith/templates/day/row.inc
-horde/kronolith/templates/day/row_half.inc
-horde/kronolith/templates/delete/delete.inc
-horde/kronolith/templates/delete/one.inc
-horde/kronolith/templates/edit/edit.inc
-horde/kronolith/templates/edit/javascript.inc
-horde/kronolith/templates/index/css.inc
-horde/kronolith/templates/index/notconfigured.inc
-horde/kronolith/templates/javascript/goto.inc
-horde/kronolith/templates/javascript/open_print_win.js
-horde/kronolith/templates/javascript/print.inc
-horde/kronolith/templates/menu/menu.inc
-horde/kronolith/templates/month/head.inc
-horde/kronolith/templates/prefs/category_management.inc
-horde/kronolith/templates/view/view.inc
-horde/kronolith/templates/week/head.inc
-horde/kronolith/util/colorpicker.php
-horde/kronolith/viewevent.php
-horde/kronolith/week.php
-horde/kronolith/workweek.php
-@dirrm horde/kronolith/util
-@dirrm horde/kronolith/templates/week
-@dirrm horde/kronolith/templates/view
-@dirrm horde/kronolith/templates/prefs
-@dirrm horde/kronolith/templates/month
-@dirrm horde/kronolith/templates/menu
-@dirrm horde/kronolith/templates/javascript
-@dirrm horde/kronolith/templates/index
-@dirrm horde/kronolith/templates/edit
-@dirrm horde/kronolith/templates/delete
-@dirrm horde/kronolith/templates/day
-@dirrm horde/kronolith/templates/data
-@dirrm horde/kronolith/templates
-@dirrm horde/kronolith/scripts/drivers
-@dirrm horde/kronolith/scripts
-@dirrm horde/kronolith/po
-@dirrm horde/kronolith/locale/zh_TW/LC_MESSAGES
-@dirrm horde/kronolith/locale/zh_TW
-@dirrm horde/kronolith/locale/zh_CN/LC_MESSAGES
-@dirrm horde/kronolith/locale/zh_CN
-@dirrm horde/kronolith/locale/sv_SE/LC_MESSAGES
-@dirrm horde/kronolith/locale/sv_SE
-@dirrm horde/kronolith/locale/sk_SK/LC_MESSAGES
-@dirrm horde/kronolith/locale/sk_SK
-@dirrm horde/kronolith/locale/ru_RU/LC_MESSAGES
-@dirrm horde/kronolith/locale/ru_RU.KOI8-R/LC_MESSAGES
-@dirrm horde/kronolith/locale/ru_RU.KOI8-R
-@dirrm horde/kronolith/locale/ru_RU
-@dirrm horde/kronolith/locale/ro_RO/LC_MESSAGES
-@dirrm horde/kronolith/locale/ro_RO
-@dirrm horde/kronolith/locale/pt_BR/LC_MESSAGES
-@dirrm horde/kronolith/locale/pt_BR
-@dirrm horde/kronolith/locale/pl_PL/LC_MESSAGES
-@dirrm horde/kronolith/locale/pl_PL
-@dirrm horde/kronolith/locale/nn_NO/LC_MESSAGES
-@dirrm horde/kronolith/locale/nn_NO
-@dirrm horde/kronolith/locale/nl_NL/LC_MESSAGES
-@dirrm horde/kronolith/locale/nl_NL
-@dirrm horde/kronolith/locale/nb_NO/LC_MESSAGES
-@dirrm horde/kronolith/locale/nb_NO
-@dirrm horde/kronolith/locale/lt_LT/LC_MESSAGES
-@dirrm horde/kronolith/locale/lt_LT
-@dirrm horde/kronolith/locale/ko_KR/LC_MESSAGES
-@dirrm horde/kronolith/locale/ko_KR
-@dirrm horde/kronolith/locale/it_IT/LC_MESSAGES
-@dirrm horde/kronolith/locale/it_IT
-@dirrm horde/kronolith/locale/hu_HU/LC_MESSAGES
-@dirrm horde/kronolith/locale/hu_HU
-@dirrm horde/kronolith/locale/fr_FR/LC_MESSAGES
-@dirrm horde/kronolith/locale/fr_FR
-@dirrm horde/kronolith/locale/fi_FI/LC_MESSAGES
-@dirrm horde/kronolith/locale/fi_FI
-@dirrm horde/kronolith/locale/es_ES/LC_MESSAGES
-@dirrm horde/kronolith/locale/es_ES
-@dirrm horde/kronolith/locale/en_US
-@dirrm horde/kronolith/locale/el_GR/LC_MESSAGES
-@dirrm horde/kronolith/locale/el_GR
-@dirrm horde/kronolith/locale/de_DE/LC_MESSAGES
-@dirrm horde/kronolith/locale/de_DE
-@dirrm horde/kronolith/locale/da_DK/LC_MESSAGES
-@dirrm horde/kronolith/locale/da_DK
-@dirrm horde/kronolith/locale/cs_CZ/LC_MESSAGES
-@dirrm horde/kronolith/locale/cs_CZ
-@dirrm horde/kronolith/locale/bg_BG/LC_MESSAGES
-@dirrm horde/kronolith/locale/bg_BG
-@dirrm horde/kronolith/locale/ar_SY/LC_MESSAGES
-@dirrm horde/kronolith/locale/ar_SY
-@dirrm horde/kronolith/locale
-@dirrm horde/kronolith/lib/Notification
-@dirrm horde/kronolith/lib/Driver
-@dirrm horde/kronolith/lib
-@dirrm horde/kronolith/graphics
-@dirrm horde/kronolith/docs
-@dirrm horde/kronolith/config
-@dirrm horde/kronolith
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:49:49 espie Exp $
+horde/${HORDE_MODULE}/
+horde/${HORDE_MODULE}/COPYING
+horde/${HORDE_MODULE}/README
+horde/${HORDE_MODULE}/addevent.php
+horde/${HORDE_MODULE}/addeventaction.php
+horde/${HORDE_MODULE}/config/
+horde/${HORDE_MODULE}/config/.htaccess
+horde/${HORDE_MODULE}/config/conf.php.dist
+horde/${HORDE_MODULE}/config/html.php.dist
+horde/${HORDE_MODULE}/config/keywords.php.dist
+horde/${HORDE_MODULE}/config/menu.php.dist
+horde/${HORDE_MODULE}/config/prefs.php.dist
+horde/${HORDE_MODULE}/data.php
+horde/${HORDE_MODULE}/day.php
+horde/${HORDE_MODULE}/delevent.php
+horde/${HORDE_MODULE}/deleventaction.php
+horde/${HORDE_MODULE}/docs/
+horde/${HORDE_MODULE}/docs/CHANGES
+horde/${HORDE_MODULE}/docs/CREDITS
+horde/${HORDE_MODULE}/docs/INSTALL
+horde/${HORDE_MODULE}/docs/RELEASE_NOTES
+horde/${HORDE_MODULE}/editevent.php
+horde/${HORDE_MODULE}/editeventaction.php
+horde/${HORDE_MODULE}/graphics/
+horde/${HORDE_MODULE}/graphics/alarm.gif
+horde/${HORDE_MODULE}/graphics/alarm_small.gif
+horde/${HORDE_MODULE}/graphics/bullet.gif
+horde/${HORDE_MODULE}/graphics/clear.gif
+horde/${HORDE_MODULE}/graphics/colorpicker.gif
+horde/${HORDE_MODULE}/graphics/colorpicker.png
+horde/${HORDE_MODULE}/graphics/dayview.gif
+horde/${HORDE_MODULE}/graphics/delete.gif
+horde/${HORDE_MODULE}/graphics/event.gif
+horde/${HORDE_MODULE}/graphics/goto.gif
+horde/${HORDE_MODULE}/graphics/${HORDE_MODULE}.gif
+horde/${HORDE_MODULE}/graphics/monthview.gif
+horde/${HORDE_MODULE}/graphics/new.gif
+horde/${HORDE_MODULE}/graphics/next.gif
+horde/${HORDE_MODULE}/graphics/prev.gif
+horde/${HORDE_MODULE}/graphics/print.gif
+horde/${HORDE_MODULE}/graphics/recur.gif
+horde/${HORDE_MODULE}/graphics/today.gif
+horde/${HORDE_MODULE}/graphics/weekview.gif
+horde/${HORDE_MODULE}/graphics/workweekview.gif
+horde/${HORDE_MODULE}/index.php
+horde/${HORDE_MODULE}/lib/
+horde/${HORDE_MODULE}/lib/Day.php
+horde/${HORDE_MODULE}/lib/DayView.php
+horde/${HORDE_MODULE}/lib/Driver/
+horde/${HORDE_MODULE}/lib/Driver.php
+horde/${HORDE_MODULE}/lib/Driver/mcal.php
+horde/${HORDE_MODULE}/lib/Driver/sql.php
+horde/${HORDE_MODULE}/lib/Event.php
+horde/${HORDE_MODULE}/lib/${HORDE_NAME}.php
+horde/${HORDE_MODULE}/lib/Notification/
+horde/${HORDE_MODULE}/lib/Notification/${HORDE_MODULE}.php
+horde/${HORDE_MODULE}/lib/WeekView.php
+horde/${HORDE_MODULE}/lib/api.php
+horde/${HORDE_MODULE}/lib/base.php
+horde/${HORDE_MODULE}/lib/version.php
+horde/${HORDE_MODULE}/locale/
+horde/${HORDE_MODULE}/locale/ar_SY/
+horde/${HORDE_MODULE}/locale/ar_SY/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/ar_SY/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/bg_BG/
+horde/${HORDE_MODULE}/locale/bg_BG/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/bg_BG/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/cs_CZ/
+horde/${HORDE_MODULE}/locale/cs_CZ/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/cs_CZ/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/da_DK/
+horde/${HORDE_MODULE}/locale/da_DK/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/da_DK/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/de_DE/
+horde/${HORDE_MODULE}/locale/de_DE/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/de_DE/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/el_GR/
+horde/${HORDE_MODULE}/locale/el_GR/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/el_GR/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/en_US/
+horde/${HORDE_MODULE}/locale/en_US/help.xml
+horde/${HORDE_MODULE}/locale/es_ES/
+horde/${HORDE_MODULE}/locale/es_ES/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/es_ES/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/fi_FI/
+horde/${HORDE_MODULE}/locale/fi_FI/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/fi_FI/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/fi_FI/help.xml
+horde/${HORDE_MODULE}/locale/fr_FR/
+horde/${HORDE_MODULE}/locale/fr_FR/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/fr_FR/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/hu_HU/
+horde/${HORDE_MODULE}/locale/hu_HU/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/hu_HU/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/hu_HU/help.xml
+horde/${HORDE_MODULE}/locale/it_IT/
+horde/${HORDE_MODULE}/locale/it_IT/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/it_IT/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/ko_KR/
+horde/${HORDE_MODULE}/locale/ko_KR/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/ko_KR/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/lt_LT/
+horde/${HORDE_MODULE}/locale/lt_LT/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/lt_LT/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/nb_NO/
+horde/${HORDE_MODULE}/locale/nb_NO/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/nb_NO/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/nl_NL/
+horde/${HORDE_MODULE}/locale/nl_NL/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/nl_NL/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/nn_NO/
+horde/${HORDE_MODULE}/locale/nn_NO/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/nn_NO/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/pl_PL/
+horde/${HORDE_MODULE}/locale/pl_PL/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/pl_PL/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/pt_BR/
+horde/${HORDE_MODULE}/locale/pt_BR/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/pt_BR/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/ro_RO/
+horde/${HORDE_MODULE}/locale/ro_RO/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/ro_RO/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/ru_RU/
+horde/${HORDE_MODULE}/locale/ru_RU.KOI8-R/
+horde/${HORDE_MODULE}/locale/ru_RU.KOI8-R/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/ru_RU.KOI8-R/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/ru_RU/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/ru_RU/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/sk_SK/
+horde/${HORDE_MODULE}/locale/sk_SK/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/sk_SK/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/sv_SE/
+horde/${HORDE_MODULE}/locale/sv_SE/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/sv_SE/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/zh_CN/
+horde/${HORDE_MODULE}/locale/zh_CN/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/zh_CN/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/zh_TW/
+horde/${HORDE_MODULE}/locale/zh_TW/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/zh_TW/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/menu.php
+horde/${HORDE_MODULE}/month.php
+horde/${HORDE_MODULE}/po/
+horde/${HORDE_MODULE}/po/Makefile
+horde/${HORDE_MODULE}/po/README
+horde/${HORDE_MODULE}/po/ar_SY.po
+horde/${HORDE_MODULE}/po/bg_BG.po
+horde/${HORDE_MODULE}/po/cs_CZ.po
+horde/${HORDE_MODULE}/po/da_DK.po
+horde/${HORDE_MODULE}/po/de_DE.po
+horde/${HORDE_MODULE}/po/el_GR.po
+horde/${HORDE_MODULE}/po/es_ES.po
+horde/${HORDE_MODULE}/po/extract.pl
+horde/${HORDE_MODULE}/po/fi_FI.po
+horde/${HORDE_MODULE}/po/fr_FR.po
+horde/${HORDE_MODULE}/po/hu_HU.po
+horde/${HORDE_MODULE}/po/it_IT.po
+horde/${HORDE_MODULE}/po/ko_KR.po
+horde/${HORDE_MODULE}/po/${HORDE_MODULE}.pot
+horde/${HORDE_MODULE}/po/lt_LT.po
+horde/${HORDE_MODULE}/po/nb_NO.po
+horde/${HORDE_MODULE}/po/nl_NL.po
+horde/${HORDE_MODULE}/po/nn_NO.po
+horde/${HORDE_MODULE}/po/pl_PL.po
+horde/${HORDE_MODULE}/po/pt_BR.po
+horde/${HORDE_MODULE}/po/ro_RO.po
+horde/${HORDE_MODULE}/po/ru_RU.KOI8-R.po
+horde/${HORDE_MODULE}/po/ru_RU.po
+horde/${HORDE_MODULE}/po/shtool
+horde/${HORDE_MODULE}/po/sk_SK.po
+horde/${HORDE_MODULE}/po/sv_SE.po
+horde/${HORDE_MODULE}/po/xgettext.sh
+horde/${HORDE_MODULE}/po/zh_CN.po
+horde/${HORDE_MODULE}/po/zh_TW.po
+horde/${HORDE_MODULE}/prefs.php
+horde/${HORDE_MODULE}/scripts/
+horde/${HORDE_MODULE}/scripts/drivers/
+horde/${HORDE_MODULE}/scripts/drivers/${HORDE_MODULE}.oracle.sql
+horde/${HORDE_MODULE}/scripts/drivers/${HORDE_MODULE}.sql
+horde/${HORDE_MODULE}/status.php
+horde/${HORDE_MODULE}/templates/
+horde/${HORDE_MODULE}/templates/common-footer.inc
+horde/${HORDE_MODULE}/templates/common-header.inc
+horde/${HORDE_MODULE}/templates/data/
+horde/${HORDE_MODULE}/templates/data/export.inc
+horde/${HORDE_MODULE}/templates/data/import.inc
+horde/${HORDE_MODULE}/templates/day/
+horde/${HORDE_MODULE}/templates/day/all_day.inc
+horde/${HORDE_MODULE}/templates/day/foot.inc
+horde/${HORDE_MODULE}/templates/day/head.inc
+horde/${HORDE_MODULE}/templates/day/row.inc
+horde/${HORDE_MODULE}/templates/day/row_half.inc
+horde/${HORDE_MODULE}/templates/delete/
+horde/${HORDE_MODULE}/templates/delete/delete.inc
+horde/${HORDE_MODULE}/templates/delete/one.inc
+horde/${HORDE_MODULE}/templates/edit/
+horde/${HORDE_MODULE}/templates/edit/edit.inc
+horde/${HORDE_MODULE}/templates/edit/javascript.inc
+horde/${HORDE_MODULE}/templates/index/
+horde/${HORDE_MODULE}/templates/index/css.inc
+horde/${HORDE_MODULE}/templates/index/notconfigured.inc
+horde/${HORDE_MODULE}/templates/javascript/
+horde/${HORDE_MODULE}/templates/javascript/goto.inc
+horde/${HORDE_MODULE}/templates/javascript/open_print_win.js
+horde/${HORDE_MODULE}/templates/javascript/print.inc
+horde/${HORDE_MODULE}/templates/menu/
+horde/${HORDE_MODULE}/templates/menu/menu.inc
+horde/${HORDE_MODULE}/templates/month/
+horde/${HORDE_MODULE}/templates/month/head.inc
+horde/${HORDE_MODULE}/templates/prefs/
+horde/${HORDE_MODULE}/templates/prefs/category_management.inc
+horde/${HORDE_MODULE}/templates/view/
+horde/${HORDE_MODULE}/templates/view/view.inc
+horde/${HORDE_MODULE}/templates/week/
+horde/${HORDE_MODULE}/templates/week/head.inc
+horde/${HORDE_MODULE}/util/
+horde/${HORDE_MODULE}/util/colorpicker.php
+horde/${HORDE_MODULE}/viewevent.php
+horde/${HORDE_MODULE}/week.php
+horde/${HORDE_MODULE}/workweek.php

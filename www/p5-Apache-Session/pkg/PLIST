@@ -1,12 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/02 23:09:37 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:51 espie Exp $
+${P5SITE}/Apache/
+${P5SITE}/Apache/Session/
 ${P5SITE}/Apache/Session.pm
 ${P5SITE}/Apache/Session/DB_File.pm
 ${P5SITE}/Apache/Session/File.pm
 ${P5SITE}/Apache/Session/Flex.pm
+${P5SITE}/Apache/Session/Generate/
 ${P5SITE}/Apache/Session/Generate/MD5.pm
 ${P5SITE}/Apache/Session/Generate/ModUniqueId.pm
 ${P5SITE}/Apache/Session/Generate/ModUsertrack.pm
 ${P5SITE}/Apache/Session/Informix.pm
+${P5SITE}/Apache/Session/Lock/
 ${P5SITE}/Apache/Session/Lock/File.pm
 ${P5SITE}/Apache/Session/Lock/MySQL.pm
 ${P5SITE}/Apache/Session/Lock/Null.pm
@@ -15,10 +19,12 @@ ${P5SITE}/Apache/Session/Lock/Sybase.pm
 ${P5SITE}/Apache/Session/MySQL.pm
 ${P5SITE}/Apache/Session/Oracle.pm
 ${P5SITE}/Apache/Session/Postgres.pm
+${P5SITE}/Apache/Session/Serialize/
 ${P5SITE}/Apache/Session/Serialize/Base64.pm
 ${P5SITE}/Apache/Session/Serialize/Storable.pm
 ${P5SITE}/Apache/Session/Serialize/Sybase.pm
 ${P5SITE}/Apache/Session/Serialize/UUEncode.pm
+${P5SITE}/Apache/Session/Store/
 ${P5SITE}/Apache/Session/Store/DBI.pm
 ${P5SITE}/Apache/Session/Store/DB_File.pm
 ${P5SITE}/Apache/Session/Store/File.pm
@@ -28,43 +34,31 @@ ${P5SITE}/Apache/Session/Store/Oracle.pm
 ${P5SITE}/Apache/Session/Store/Postgres.pm
 ${P5SITE}/Apache/Session/Store/Sybase.pm
 ${P5SITE}/Apache/Session/Sybase.pm
-@comment ${P5ARCH}/auto/Apache/Session/.packlist
-man/man3p/Apache::Session.3p
-man/man3p/Apache::Session::DB_File.3p
-man/man3p/Apache::Session::File.3p
-man/man3p/Apache::Session::Flex.3p
-man/man3p/Apache::Session::Generate::MD5.3p
-man/man3p/Apache::Session::Generate::ModUniqueId.3p
-man/man3p/Apache::Session::Generate::ModUsertrack.3p
-man/man3p/Apache::Session::Informix.3p
-man/man3p/Apache::Session::Lock::File.3p
-man/man3p/Apache::Session::Lock::MySQL.3p
-man/man3p/Apache::Session::Lock::Null.3p
-man/man3p/Apache::Session::Lock::Semaphore.3p
-man/man3p/Apache::Session::Lock::Sybase.3p
-man/man3p/Apache::Session::MySQL.3p
-man/man3p/Apache::Session::Oracle.3p
-man/man3p/Apache::Session::Postgres.3p
-man/man3p/Apache::Session::Serialize::Base64.3p
-man/man3p/Apache::Session::Serialize::Storable.3p
-man/man3p/Apache::Session::Serialize::Sybase.3p
-man/man3p/Apache::Session::Serialize::UUEncode.3p
-man/man3p/Apache::Session::Store::DB_File.3p
-man/man3p/Apache::Session::Store::File.3p
-man/man3p/Apache::Session::Store::Informix.3p
-man/man3p/Apache::Session::Store::MySQL.3p
-man/man3p/Apache::Session::Store::Oracle.3p
-man/man3p/Apache::Session::Store::Postgres.3p
-man/man3p/Apache::Session::Store::Sybase.3p
-man/man3p/Apache::Session::Sybase.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Apache/Session
-@comment @dirrm ${P5ARCH}/auto/Apache
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Apache/Session/Store
-@dirrm ${P5SITE}/Apache/Session/Serialize
-@dirrm ${P5SITE}/Apache/Session/Lock
-@dirrm ${P5SITE}/Apache/Session/Generate
-@dirrm ${P5SITE}/Apache/Session
-@dirrm ${P5SITE}/Apache
+@man man/man3p/Apache::Session.3p
+@man man/man3p/Apache::Session::DB_File.3p
+@man man/man3p/Apache::Session::File.3p
+@man man/man3p/Apache::Session::Flex.3p
+@man man/man3p/Apache::Session::Generate::MD5.3p
+@man man/man3p/Apache::Session::Generate::ModUniqueId.3p
+@man man/man3p/Apache::Session::Generate::ModUsertrack.3p
+@man man/man3p/Apache::Session::Informix.3p
+@man man/man3p/Apache::Session::Lock::File.3p
+@man man/man3p/Apache::Session::Lock::MySQL.3p
+@man man/man3p/Apache::Session::Lock::Null.3p
+@man man/man3p/Apache::Session::Lock::Semaphore.3p
+@man man/man3p/Apache::Session::Lock::Sybase.3p
+@man man/man3p/Apache::Session::MySQL.3p
+@man man/man3p/Apache::Session::Oracle.3p
+@man man/man3p/Apache::Session::Postgres.3p
+@man man/man3p/Apache::Session::Serialize::Base64.3p
+@man man/man3p/Apache::Session::Serialize::Storable.3p
+@man man/man3p/Apache::Session::Serialize::Sybase.3p
+@man man/man3p/Apache::Session::Serialize::UUEncode.3p
+@man man/man3p/Apache::Session::Store::DB_File.3p
+@man man/man3p/Apache::Session::Store::File.3p
+@man man/man3p/Apache::Session::Store::Informix.3p
+@man man/man3p/Apache::Session::Store::MySQL.3p
+@man man/man3p/Apache::Session::Store::Oracle.3p
+@man man/man3p/Apache::Session::Store::Postgres.3p
+@man man/man3p/Apache::Session::Store::Sybase.3p
+@man man/man3p/Apache::Session::Sybase.3p

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/07/14 16:20:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/09/15 18:49:48 espie Exp $
 bin/bluefish
-@dir share/bluefish
+share/bluefish/
 share/bluefish/bluefish_splash.png
 share/bluefish/custom_menu.default
 share/bluefish/encodings.default
@@ -22,20 +22,14 @@ share/bluefish/icon_python.png
 share/bluefish/icon_r.png
 share/bluefish/icon_unknown.png
 share/bluefish/icon_xml.png
-@dir share/locale/bg
-@dir share/locale/bg/LC_MESSAGES
 share/locale/bg/LC_MESSAGES/bluefish.mo
 share/locale/cs/LC_MESSAGES/bluefish.mo
 share/locale/da/LC_MESSAGES/bluefish.mo
 share/locale/de/LC_MESSAGES/bluefish.mo
 share/locale/el/LC_MESSAGES/bluefish.mo
 share/locale/es/LC_MESSAGES/bluefish.mo
-@dir share/locale/fi
-@dir share/locale/fi/LC_MESSAGES
 share/locale/fi/LC_MESSAGES/bluefish.mo
 share/locale/fr/LC_MESSAGES/bluefish.mo
-@dir share/locale/hu
-@dir share/locale/hu/LC_MESSAGES
 share/locale/hu/LC_MESSAGES/bluefish.mo
 share/locale/it/LC_MESSAGES/bluefish.mo
 share/locale/ja/LC_MESSAGES/bluefish.mo
@@ -44,18 +38,14 @@ share/locale/no/LC_MESSAGES/bluefish.mo
 share/locale/pl/LC_MESSAGES/bluefish.mo
 share/locale/pt/LC_MESSAGES/bluefish.mo
 share/locale/pt_BR/LC_MESSAGES/bluefish.mo
-@dir share/locale/ro
-@dir share/locale/ro/LC_MESSAGES
 share/locale/ro/LC_MESSAGES/bluefish.mo
 share/locale/ru/LC_MESSAGES/bluefish.mo
-@dir share/locale/sr
-@dir share/locale/sr/LC_MESSAGES
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/bluefish.mo
 share/locale/sv/LC_MESSAGES/bluefish.mo
-@dir share/locale/ta
-@dir share/locale/ta/LC_MESSAGES
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/bluefish.mo
-@dir share/locale/zh_CN
-@dir share/locale/zh_CN/LC_MESSAGES
 share/locale/zh_CN/LC_MESSAGES/bluefish.mo
-@dir share/pixmaps
+share/pixmaps/

@@ -1,15 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/18 17:50:15 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:52 espie Exp $
+phpicalendar/
 phpicalendar/AUTHORS
 phpicalendar/COPYING
 phpicalendar/README
 phpicalendar/TIMEZONES
 phpicalendar/admin.php
+phpicalendar/calendars/
 phpicalendar/calendars/Home.ics
 phpicalendar/calendars/US Holidays.ics
 phpicalendar/calendars/Work.ics
 phpicalendar/calendars/publish.php
 phpicalendar/config.inc.php
 phpicalendar/day.php
+phpicalendar/functions/
 phpicalendar/functions/admin_functions.php
 phpicalendar/functions/calendar_functions.php
 phpicalendar/functions/date_functions.php
@@ -27,6 +30,7 @@ phpicalendar/functions/overlapping_events.php
 phpicalendar/functions/timezones.php
 phpicalendar/functions/todo.js
 phpicalendar/functions/upload_functions.php
+phpicalendar/images/
 phpicalendar/images/cancelled.gif
 phpicalendar/images/completed.gif
 phpicalendar/images/confirmed.gif
@@ -36,6 +40,7 @@ phpicalendar/images/phpical-logo.gif
 phpicalendar/images/spacer.gif
 phpicalendar/images/tentative.gif
 phpicalendar/images/valid-rss.png
+phpicalendar/includes/
 phpicalendar/includes/calendar_nav.php
 phpicalendar/includes/event.php
 phpicalendar/includes/footer.inc.php
@@ -44,6 +49,7 @@ phpicalendar/includes/login.php
 phpicalendar/includes/sidebar.php
 phpicalendar/includes/todo.php
 phpicalendar/index.php
+phpicalendar/languages/
 phpicalendar/languages/brazilian.inc.php
 phpicalendar/languages/catalan.inc.php
 phpicalendar/languages/czech.inc.php
@@ -66,9 +72,12 @@ phpicalendar/languages/traditional_chinese.inc.php
 phpicalendar/month.php
 phpicalendar/preferences.php
 phpicalendar/print.php
+phpicalendar/rss/
 phpicalendar/rss/index.php
 phpicalendar/rss/rss.php
 phpicalendar/search.php
+phpicalendar/styles/
+phpicalendar/styles/green/
 phpicalendar/styles/green/allday_dot.gif
 phpicalendar/styles/green/back.gif
 phpicalendar/styles/green/background.gif
@@ -88,6 +97,7 @@ phpicalendar/styles/green/spacer.gif
 phpicalendar/styles/green/time_bg.gif
 phpicalendar/styles/green/week_on.gif
 phpicalendar/styles/green/year_on.gif
+phpicalendar/styles/grey/
 phpicalendar/styles/grey/allday_dot.gif
 phpicalendar/styles/grey/back.gif
 phpicalendar/styles/grey/background.gif
@@ -106,6 +116,7 @@ phpicalendar/styles/grey/smallicon.gif
 phpicalendar/styles/grey/time_bg.gif
 phpicalendar/styles/grey/week_on.gif
 phpicalendar/styles/grey/year_on.gif
+phpicalendar/styles/orange/
 phpicalendar/styles/orange/allday_dot.gif
 phpicalendar/styles/orange/back.gif
 phpicalendar/styles/orange/day_on.gif
@@ -123,6 +134,7 @@ phpicalendar/styles/orange/smallicon.gif
 phpicalendar/styles/orange/time_bg.gif
 phpicalendar/styles/orange/week_on.gif
 phpicalendar/styles/orange/year_on.gif
+phpicalendar/styles/red/
 phpicalendar/styles/red/allday_dot.gif
 phpicalendar/styles/red/back.gif
 phpicalendar/styles/red/day_on.gif
@@ -140,6 +152,7 @@ phpicalendar/styles/red/smallicon.gif
 phpicalendar/styles/red/time_bg.gif
 phpicalendar/styles/red/week_on.gif
 phpicalendar/styles/red/year_on.gif
+phpicalendar/styles/silver/
 phpicalendar/styles/silver/allday_bg.gif
 phpicalendar/styles/silver/allday_dot.gif
 phpicalendar/styles/silver/back.gif
@@ -161,6 +174,7 @@ phpicalendar/styles/silver/spacer.gif
 phpicalendar/styles/silver/time_bg.gif
 phpicalendar/styles/silver/week_on.gif
 phpicalendar/styles/silver/year_on.gif
+phpicalendar/styles/tan/
 phpicalendar/styles/tan/allday_dot.gif
 phpicalendar/styles/tan/back.gif
 phpicalendar/styles/tan/background.gif
@@ -182,17 +196,3 @@ phpicalendar/styles/tan/week_on.gif
 phpicalendar/styles/tan/year_on.gif
 phpicalendar/week.php
 phpicalendar/year.php
-@dirrm phpicalendar/styles/tan
-@dirrm phpicalendar/styles/silver
-@dirrm phpicalendar/styles/red
-@dirrm phpicalendar/styles/orange
-@dirrm phpicalendar/styles/grey
-@dirrm phpicalendar/styles/green
-@dirrm phpicalendar/styles
-@dirrm phpicalendar/rss
-@dirrm phpicalendar/languages
-@dirrm phpicalendar/includes
-@dirrm phpicalendar/images
-@dirrm phpicalendar/functions
-@dirrm phpicalendar/calendars
-@dirrm phpicalendar

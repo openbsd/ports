@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/08/03 10:16:37 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/09/15 18:49:53 espie Exp $
 lib/zope/
 lib/zope/bin/
 lib/zope/bin/README.txt
@@ -3048,6 +3048,7 @@ lib/zope/skel/bin/zopectl.in
 lib/zope/skel/bin/zopeservice.py.in
 lib/zope/skel/etc/
 lib/zope/skel/etc/zope.conf.in
+@comment lib/zope/skel/etc/zope.conf.in.orig
 lib/zope/skel/import/
 lib/zope/skel/import/README.txt
 lib/zope/skel/log/

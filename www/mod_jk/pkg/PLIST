@@ -1,13 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/02 08:19:54 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:50 espie Exp $
 lib/mod_jk.so
 sbin/mod_jk-enable
+share/doc/mod_jk/
 share/doc/mod_jk/LICENSE
 share/doc/mod_jk/README.OpenBSD
+share/doc/mod_jk/common/
 share/doc/mod_jk/common/AJPv13-extensions-proposal.html
 share/doc/mod_jk/common/AJPv13.html
 share/doc/mod_jk/common/doccontrib.html
 share/doc/mod_jk/common/tools.html
 share/doc/mod_jk/faq.html
+share/doc/mod_jk/images/
 share/doc/mod_jk/images/corner.gif
 share/doc/mod_jk/images/jakarta.gif
 share/doc/mod_jk/images/jk2.gif
@@ -16,12 +19,14 @@ share/doc/mod_jk/images/mod_jk.jpg
 share/doc/mod_jk/images/pixel.gif
 share/doc/mod_jk/images/tomcat.ico
 share/doc/mod_jk/index.html
+share/doc/mod_jk/jk/
 share/doc/mod_jk/jk/aphowto.html
 share/doc/mod_jk/jk/domhowto.html
 share/doc/mod_jk/jk/iishowto.html
 share/doc/mod_jk/jk/neshowto.html
 share/doc/mod_jk/jk/quickhowto.html
 share/doc/mod_jk/jk/workershowto.html
+share/doc/mod_jk/jk2/
 share/doc/mod_jk/jk2/confighowto.html
 share/doc/mod_jk/jk2/configtc.html
 share/doc/mod_jk/jk2/configtccom.html
@@ -32,11 +37,6 @@ share/doc/mod_jk/jk2/configwebex.html
 share/doc/mod_jk/jk2/installhowto.html
 share/doc/mod_jk/jk2/vhosthowto.html
 share/doc/mod_jk/style.css
+share/examples/mod_jk/
 share/examples/mod_jk/mod_jk.conf
 share/examples/mod_jk/workers.properties
-@dirrm share/examples/mod_jk
-@dirrm share/doc/mod_jk/jk2
-@dirrm share/doc/mod_jk/jk
-@dirrm share/doc/mod_jk/images
-@dirrm share/doc/mod_jk/common
-@dirrm share/doc/mod_jk

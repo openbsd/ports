@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/15 01:58:24 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:53 espie Exp $
+htdocs/xoops/
+htdocs/xoops/docs/
 htdocs/xoops/docs/CHANGES.txt
 htdocs/xoops/docs/COPYING.txt
 htdocs/xoops/docs/INSTALL.html
 htdocs/xoops/docs/RELNOTES.txt
+htdocs/xoops/docs/images/
 htdocs/xoops/docs/images/install001.gif
 htdocs/xoops/docs/images/install002.gif
 htdocs/xoops/docs/images/install003.gif
@@ -15,21 +18,29 @@ htdocs/xoops/docs/images/install009.gif
 htdocs/xoops/docs/images/install010.gif
 htdocs/xoops/docs/images/install011.gif
 htdocs/xoops/docs/images/install024.gif
+htdocs/xoops/extras/
 htdocs/xoops/extras/login.php
+htdocs/xoops/extras/theme_x2t/
+htdocs/xoops/extras/theme_x2t/doc/
 htdocs/xoops/extras/theme_x2t/doc/readme.htm
 htdocs/xoops/extras/theme_x2t/doc/readme.txt
+htdocs/xoops/extras/theme_x2t/extras/
 htdocs/xoops/extras/theme_x2t/extras/news_index.html
 htdocs/xoops/extras/theme_x2t/extras/news_item.html
 htdocs/xoops/extras/theme_x2t/extras/theme.html
 htdocs/xoops/extras/theme_x2t/x2t.tar.gz
+htdocs/xoops/html/
 htdocs/xoops/html/admin.php
 htdocs/xoops/html/backend.php
 htdocs/xoops/html/banners.php
+htdocs/xoops/html/cache/
 htdocs/xoops/html/cache/index.html
+htdocs/xoops/html/class/
 htdocs/xoops/html/class/class.tar.php
 htdocs/xoops/html/class/class.zipfile.php
 htdocs/xoops/html/class/commentrenderer.php
 htdocs/xoops/html/class/criteria.php
+htdocs/xoops/html/class/database/
 htdocs/xoops/html/class/database/database.php
 htdocs/xoops/html/class/database/databasefactory.php
 htdocs/xoops/html/class/database/index.html
@@ -39,6 +50,8 @@ htdocs/xoops/html/class/downloader.php
 htdocs/xoops/html/class/errorhandler.php
 htdocs/xoops/html/class/index.html
 htdocs/xoops/html/class/logger.php
+htdocs/xoops/html/class/mail/
+htdocs/xoops/html/class/mail/phpmailer/
 htdocs/xoops/html/class/mail/phpmailer/ChangeLog.txt
 htdocs/xoops/html/class/mail/phpmailer/LICENSE
 htdocs/xoops/html/class/mail/phpmailer/README
@@ -48,11 +61,14 @@ htdocs/xoops/html/class/mail/xoopsmultimailer.php
 htdocs/xoops/html/class/module.errorhandler.php
 htdocs/xoops/html/class/module.textsanitizer.php
 htdocs/xoops/html/class/pagenav.php
+htdocs/xoops/html/class/smarty/
 htdocs/xoops/html/class/smarty/Config_File.class.php
 htdocs/xoops/html/class/smarty/Smarty.class.php
 htdocs/xoops/html/class/smarty/Smarty_Compiler.class.php
+htdocs/xoops/html/class/smarty/configs/
 htdocs/xoops/html/class/smarty/configs/test.conf
 htdocs/xoops/html/class/smarty/debug.tpl
+htdocs/xoops/html/class/smarty/plugins/
 htdocs/xoops/html/class/smarty/plugins/block.textformat.php
 htdocs/xoops/html/class/smarty/plugins/function.assign.php
 htdocs/xoops/html/class/smarty/plugins/function.assign_debug_info.php
@@ -104,7 +120,9 @@ htdocs/xoops/html/class/tardownloader.php
 htdocs/xoops/html/class/template.php
 htdocs/xoops/html/class/tree.php
 htdocs/xoops/html/class/uploader.php
+htdocs/xoops/html/class/xml/
 htdocs/xoops/html/class/xml/index.html
+htdocs/xoops/html/class/xml/rpc/
 htdocs/xoops/html/class/xml/rpc/bloggerapi.php
 htdocs/xoops/html/class/xml/rpc/index.html
 htdocs/xoops/html/class/xml/rpc/metaweblogapi.php
@@ -113,6 +131,7 @@ htdocs/xoops/html/class/xml/rpc/xmlrpcapi.php
 htdocs/xoops/html/class/xml/rpc/xmlrpcparser.php
 htdocs/xoops/html/class/xml/rpc/xmlrpctag.php
 htdocs/xoops/html/class/xml/rpc/xoopsapi.php
+htdocs/xoops/html/class/xml/rss/
 htdocs/xoops/html/class/xml/rss/index.html
 htdocs/xoops/html/class/xml/rss/xmlrss2parser.php
 htdocs/xoops/html/class/xml/saxparser.php
@@ -120,6 +139,7 @@ htdocs/xoops/html/class/xml/themesetparser.php
 htdocs/xoops/html/class/xml/xmltaghandler.php
 htdocs/xoops/html/class/xoopsblock.php
 htdocs/xoops/html/class/xoopscomments.php
+htdocs/xoops/html/class/xoopsform/
 htdocs/xoops/html/class/xoopsform/form.php
 htdocs/xoops/html/class/xoopsform/formbutton.php
 htdocs/xoops/html/class/xoopsform/formcheckbox.php
@@ -165,10 +185,12 @@ htdocs/xoops/html/footer.php
 htdocs/xoops/html/header.php
 htdocs/xoops/html/image.php
 htdocs/xoops/html/imagemanager.php
+htdocs/xoops/html/images/
 htdocs/xoops/html/images/aligncenter.gif
 htdocs/xoops/html/images/alignleft.gif
 htdocs/xoops/html/images/alignright.gif
 htdocs/xoops/html/images/await.gif
+htdocs/xoops/html/images/banners/
 htdocs/xoops/html/images/banners/banner.swf
 htdocs/xoops/html/images/banners/index.html
 htdocs/xoops/html/images/banners/xoops_banner.gif
@@ -178,6 +200,7 @@ htdocs/xoops/html/images/bold.gif
 htdocs/xoops/html/images/code.gif
 htdocs/xoops/html/images/download.gif
 htdocs/xoops/html/images/email.gif
+htdocs/xoops/html/images/icons/
 htdocs/xoops/html/images/icons/aim.gif
 htdocs/xoops/html/images/icons/delete.gif
 htdocs/xoops/html/images/icons/edit.gif
@@ -210,6 +233,7 @@ htdocs/xoops/html/images/poweredby.gif
 htdocs/xoops/html/images/quote.gif
 htdocs/xoops/html/images/read.gif
 htdocs/xoops/html/images/s_poweredby.gif
+htdocs/xoops/html/images/subject/
 htdocs/xoops/html/images/subject/icon1.gif
 htdocs/xoops/html/images/subject/icon2.gif
 htdocs/xoops/html/images/subject/icon3.gif
@@ -220,6 +244,7 @@ htdocs/xoops/html/images/subject/icon7.gif
 htdocs/xoops/html/images/subject/index.html
 htdocs/xoops/html/images/underline.gif
 htdocs/xoops/html/images/url.gif
+htdocs/xoops/html/include/
 htdocs/xoops/html/include/calendar-blue.css
 htdocs/xoops/html/include/calendar.js
 htdocs/xoops/html/include/calendarjs.php
@@ -251,11 +276,14 @@ htdocs/xoops/html/include/version.php
 htdocs/xoops/html/include/xoops.js
 htdocs/xoops/html/include/xoopscodes.php
 htdocs/xoops/html/index.php
+htdocs/xoops/html/install/
+htdocs/xoops/html/install/class/
 htdocs/xoops/html/install/class/cachemanager.php
 htdocs/xoops/html/install/class/dbmanager.php
 htdocs/xoops/html/install/class/mainfilemanager.php
 htdocs/xoops/html/install/class/settingmanager.php
 htdocs/xoops/html/install/class/textsanitizer.php
+htdocs/xoops/html/install/img/
 htdocs/xoops/html/install/img/bg_content_left.gif
 htdocs/xoops/html/install/img/bg_content_right.gif
 htdocs/xoops/html/install/img/bg_darkblue.gif
@@ -271,6 +299,8 @@ htdocs/xoops/html/install/img/xoops2.gif
 htdocs/xoops/html/install/img/yes.gif
 htdocs/xoops/html/install/index.php
 htdocs/xoops/html/install/install_tpl.php
+htdocs/xoops/html/install/language/
+htdocs/xoops/html/install/language/english/
 htdocs/xoops/html/install/language/english/finish.php
 htdocs/xoops/html/install/language/english/install.php
 htdocs/xoops/html/install/language/english/install2.php
@@ -278,10 +308,13 @@ htdocs/xoops/html/install/language/english/mysql.lang.data.sql
 htdocs/xoops/html/install/language/english/welcome.php
 htdocs/xoops/html/install/makedata.php
 htdocs/xoops/html/install/passwd.php
+htdocs/xoops/html/install/sql/
 htdocs/xoops/html/install/sql/mysql.data.sql
 htdocs/xoops/html/install/sql/mysql.structure.sql
+htdocs/xoops/html/install/sql/upgrade/
 htdocs/xoops/html/install/sql/upgrade/mysql.structure.sql
 htdocs/xoops/html/install/style.css
+htdocs/xoops/html/kernel/
 htdocs/xoops/html/kernel/avatar.php
 htdocs/xoops/html/kernel/block.php
 htdocs/xoops/html/kernel/comment.php
@@ -306,12 +339,15 @@ htdocs/xoops/html/kernel/session.php
 htdocs/xoops/html/kernel/tplfile.php
 htdocs/xoops/html/kernel/tplset.php
 htdocs/xoops/html/kernel/user.php
+htdocs/xoops/html/language/
+htdocs/xoops/html/language/english/
 htdocs/xoops/html/language/english/admin.php
 htdocs/xoops/html/language/english/calendar.php
 htdocs/xoops/html/language/english/comment.php
 htdocs/xoops/html/language/english/global.php
 htdocs/xoops/html/language/english/index.html
 htdocs/xoops/html/language/english/mail.php
+htdocs/xoops/html/language/english/mail_template/
 htdocs/xoops/html/language/english/mail_template/activated.tpl
 htdocs/xoops/html/language/english/mail_template/adminactivate.tpl
 htdocs/xoops/html/language/english/mail_template/comment_notify.tpl
@@ -332,20 +368,28 @@ htdocs/xoops/html/lostpass.php
 htdocs/xoops/html/mainfile.dist.php
 htdocs/xoops/html/mainfile.php
 htdocs/xoops/html/misc.php
+htdocs/xoops/html/modules/
+htdocs/xoops/html/modules/contact/
 htdocs/xoops/html/modules/contact/contact_slogo.png
 htdocs/xoops/html/modules/contact/contactform.php
 htdocs/xoops/html/modules/contact/header.php
 htdocs/xoops/html/modules/contact/index.php
+htdocs/xoops/html/modules/contact/language/
+htdocs/xoops/html/modules/contact/language/english/
 htdocs/xoops/html/modules/contact/language/english/index.html
 htdocs/xoops/html/modules/contact/language/english/main.php
 htdocs/xoops/html/modules/contact/language/english/modinfo.php
 htdocs/xoops/html/modules/contact/language/index.html
+htdocs/xoops/html/modules/contact/templates/
 htdocs/xoops/html/modules/contact/templates/contact_contactusform.html
 htdocs/xoops/html/modules/contact/templates/index.html
 htdocs/xoops/html/modules/contact/xoops_version.php
 htdocs/xoops/html/modules/index.html
+htdocs/xoops/html/modules/mydownloads/
+htdocs/xoops/html/modules/mydownloads/admin/
 htdocs/xoops/html/modules/mydownloads/admin/index.php
 htdocs/xoops/html/modules/mydownloads/admin/menu.php
+htdocs/xoops/html/modules/mydownloads/blocks/
 htdocs/xoops/html/modules/mydownloads/blocks/index.html
 htdocs/xoops/html/modules/mydownloads/blocks/mydownloads_top.php
 htdocs/xoops/html/modules/mydownloads/brokenfile.php
@@ -356,6 +400,7 @@ htdocs/xoops/html/modules/mydownloads/comment_post.php
 htdocs/xoops/html/modules/mydownloads/comment_reply.php
 htdocs/xoops/html/modules/mydownloads/footer.php
 htdocs/xoops/html/modules/mydownloads/header.php
+htdocs/xoops/html/modules/mydownloads/images/
 htdocs/xoops/html/modules/mydownloads/images/arrow.gif
 htdocs/xoops/html/modules/mydownloads/images/counter.gif
 htdocs/xoops/html/modules/mydownloads/images/decs.gif
@@ -369,20 +414,25 @@ htdocs/xoops/html/modules/mydownloads/images/mydl_slogo.png
 htdocs/xoops/html/modules/mydownloads/images/newred.gif
 htdocs/xoops/html/modules/mydownloads/images/platform.gif
 htdocs/xoops/html/modules/mydownloads/images/pop.gif
+htdocs/xoops/html/modules/mydownloads/images/shots/
 htdocs/xoops/html/modules/mydownloads/images/shots/index.html
 htdocs/xoops/html/modules/mydownloads/images/size.gif
 htdocs/xoops/html/modules/mydownloads/images/size2.gif
 htdocs/xoops/html/modules/mydownloads/images/speck.gif
 htdocs/xoops/html/modules/mydownloads/images/up.gif
 htdocs/xoops/html/modules/mydownloads/images/update.gif
+htdocs/xoops/html/modules/mydownloads/include/
 htdocs/xoops/html/modules/mydownloads/include/comment_functions.php
 htdocs/xoops/html/modules/mydownloads/include/functions.php
 htdocs/xoops/html/modules/mydownloads/include/index.html
 htdocs/xoops/html/modules/mydownloads/include/notification.inc.php
 htdocs/xoops/html/modules/mydownloads/include/search.inc.php
 htdocs/xoops/html/modules/mydownloads/index.php
+htdocs/xoops/html/modules/mydownloads/language/
+htdocs/xoops/html/modules/mydownloads/language/english/
 htdocs/xoops/html/modules/mydownloads/language/english/blocks.php
 htdocs/xoops/html/modules/mydownloads/language/english/index.html
+htdocs/xoops/html/modules/mydownloads/language/english/mail_template/
 htdocs/xoops/html/modules/mydownloads/language/english/mail_template/category_filesubmit_notify.tpl
 htdocs/xoops/html/modules/mydownloads/language/english/mail_template/category_newfile_notify.tpl
 htdocs/xoops/html/modules/mydownloads/language/english/mail_template/file_approve_notify.tpl
@@ -398,9 +448,12 @@ htdocs/xoops/html/modules/mydownloads/modfile.php
 htdocs/xoops/html/modules/mydownloads/notification_update.php
 htdocs/xoops/html/modules/mydownloads/ratefile.php
 htdocs/xoops/html/modules/mydownloads/singlefile.php
+htdocs/xoops/html/modules/mydownloads/sql/
 htdocs/xoops/html/modules/mydownloads/sql/index.html
 htdocs/xoops/html/modules/mydownloads/sql/mysql.sql
 htdocs/xoops/html/modules/mydownloads/submit.php
+htdocs/xoops/html/modules/mydownloads/templates/
+htdocs/xoops/html/modules/mydownloads/templates/blocks/
 htdocs/xoops/html/modules/mydownloads/templates/blocks/index.html
 htdocs/xoops/html/modules/mydownloads/templates/blocks/mydownloads_block_new.html
 htdocs/xoops/html/modules/mydownloads/templates/blocks/mydownloads_block_top.html
@@ -418,8 +471,11 @@ htdocs/xoops/html/modules/mydownloads/topten.php
 htdocs/xoops/html/modules/mydownloads/viewcat.php
 htdocs/xoops/html/modules/mydownloads/visit.php
 htdocs/xoops/html/modules/mydownloads/xoops_version.php
+htdocs/xoops/html/modules/mylinks/
+htdocs/xoops/html/modules/mylinks/admin/
 htdocs/xoops/html/modules/mylinks/admin/index.php
 htdocs/xoops/html/modules/mylinks/admin/menu.php
+htdocs/xoops/html/modules/mylinks/blocks/
 htdocs/xoops/html/modules/mylinks/blocks/index.html
 htdocs/xoops/html/modules/mylinks/blocks/mylinks_top.php
 htdocs/xoops/html/modules/mylinks/brokenlink.php
@@ -429,6 +485,7 @@ htdocs/xoops/html/modules/mylinks/comment_new.php
 htdocs/xoops/html/modules/mylinks/comment_post.php
 htdocs/xoops/html/modules/mylinks/comment_reply.php
 htdocs/xoops/html/modules/mylinks/header.php
+htdocs/xoops/html/modules/mylinks/images/
 htdocs/xoops/html/modules/mylinks/images/arrow.gif
 htdocs/xoops/html/modules/mylinks/images/down.gif
 htdocs/xoops/html/modules/mylinks/images/editicon.gif
@@ -439,17 +496,22 @@ htdocs/xoops/html/modules/mylinks/images/logo.gif
 htdocs/xoops/html/modules/mylinks/images/mylinks_slogo.png
 htdocs/xoops/html/modules/mylinks/images/newred.gif
 htdocs/xoops/html/modules/mylinks/images/pop.gif
+htdocs/xoops/html/modules/mylinks/images/shots/
 htdocs/xoops/html/modules/mylinks/images/shots/index.html
 htdocs/xoops/html/modules/mylinks/images/up.gif
 htdocs/xoops/html/modules/mylinks/images/update.gif
+htdocs/xoops/html/modules/mylinks/include/
 htdocs/xoops/html/modules/mylinks/include/comment_functions.php
 htdocs/xoops/html/modules/mylinks/include/functions.php
 htdocs/xoops/html/modules/mylinks/include/index.html
 htdocs/xoops/html/modules/mylinks/include/notification.inc.php
 htdocs/xoops/html/modules/mylinks/include/search.inc.php
 htdocs/xoops/html/modules/mylinks/index.php
+htdocs/xoops/html/modules/mylinks/language/
+htdocs/xoops/html/modules/mylinks/language/english/
 htdocs/xoops/html/modules/mylinks/language/english/blocks.php
 htdocs/xoops/html/modules/mylinks/language/english/index.html
+htdocs/xoops/html/modules/mylinks/language/english/mail_template/
 htdocs/xoops/html/modules/mylinks/language/english/mail_template/category_linksubmit_notify.tpl
 htdocs/xoops/html/modules/mylinks/language/english/mail_template/category_newlink_notify.tpl
 htdocs/xoops/html/modules/mylinks/language/english/mail_template/global_linkbroken_notify.tpl
@@ -466,9 +528,12 @@ htdocs/xoops/html/modules/mylinks/myheader.php
 htdocs/xoops/html/modules/mylinks/notification_update.php
 htdocs/xoops/html/modules/mylinks/ratelink.php
 htdocs/xoops/html/modules/mylinks/singlelink.php
+htdocs/xoops/html/modules/mylinks/sql/
 htdocs/xoops/html/modules/mylinks/sql/index.html
 htdocs/xoops/html/modules/mylinks/sql/mysql.sql
 htdocs/xoops/html/modules/mylinks/submit.php
+htdocs/xoops/html/modules/mylinks/templates/
+htdocs/xoops/html/modules/mylinks/templates/blocks/
 htdocs/xoops/html/modules/mylinks/templates/blocks/index.html
 htdocs/xoops/html/modules/mylinks/templates/blocks/mylinks_block_new.html
 htdocs/xoops/html/modules/mylinks/templates/blocks/mylinks_block_top.html
@@ -486,12 +551,16 @@ htdocs/xoops/html/modules/mylinks/topten.php
 htdocs/xoops/html/modules/mylinks/viewcat.php
 htdocs/xoops/html/modules/mylinks/visit.php
 htdocs/xoops/html/modules/mylinks/xoops_version.php
+htdocs/xoops/html/modules/newbb/
+htdocs/xoops/html/modules/newbb/admin/
 htdocs/xoops/html/modules/newbb/admin/admin_forums.php
 htdocs/xoops/html/modules/newbb/admin/admin_priv_forums.php
 htdocs/xoops/html/modules/newbb/admin/index.php
 htdocs/xoops/html/modules/newbb/admin/menu.php
+htdocs/xoops/html/modules/newbb/blocks/
 htdocs/xoops/html/modules/newbb/blocks/index.html
 htdocs/xoops/html/modules/newbb/blocks/newbb_new.php
+htdocs/xoops/html/modules/newbb/class/
 htdocs/xoops/html/modules/newbb/class/class.forumposts.php
 htdocs/xoops/html/modules/newbb/class/index.html
 htdocs/xoops/html/modules/newbb/config.php
@@ -499,6 +568,7 @@ htdocs/xoops/html/modules/newbb/delete.php
 htdocs/xoops/html/modules/newbb/edit.php
 htdocs/xoops/html/modules/newbb/functions.php
 htdocs/xoops/html/modules/newbb/header.php
+htdocs/xoops/html/modules/newbb/images/
 htdocs/xoops/html/modules/newbb/images/del_topic.gif
 htdocs/xoops/html/modules/newbb/images/folder.gif
 htdocs/xoops/html/modules/newbb/images/folder_big.gif
@@ -518,14 +588,18 @@ htdocs/xoops/html/modules/newbb/images/sticky.gif
 htdocs/xoops/html/modules/newbb/images/unlock_topic.gif
 htdocs/xoops/html/modules/newbb/images/unsticky.gif
 htdocs/xoops/html/modules/newbb/images/xoopsbb_slogo.png
+htdocs/xoops/html/modules/newbb/include/
 htdocs/xoops/html/modules/newbb/include/forumform.inc.php
 htdocs/xoops/html/modules/newbb/include/index.html
 htdocs/xoops/html/modules/newbb/include/notification.inc.php
 htdocs/xoops/html/modules/newbb/include/search.inc.php
 htdocs/xoops/html/modules/newbb/index.php
+htdocs/xoops/html/modules/newbb/language/
+htdocs/xoops/html/modules/newbb/language/english/
 htdocs/xoops/html/modules/newbb/language/english/admin.php
 htdocs/xoops/html/modules/newbb/language/english/blocks.php
 htdocs/xoops/html/modules/newbb/language/english/index.html
+htdocs/xoops/html/modules/newbb/language/english/mail_template/
 htdocs/xoops/html/modules/newbb/language/english/mail_template/forum_newpost_notify.tpl
 htdocs/xoops/html/modules/newbb/language/english/mail_template/forum_newthread_notify.tpl
 htdocs/xoops/html/modules/newbb/language/english/mail_template/global_newforum_notify.tpl
@@ -540,8 +614,11 @@ htdocs/xoops/html/modules/newbb/notification_update.php
 htdocs/xoops/html/modules/newbb/post.php
 htdocs/xoops/html/modules/newbb/reply.php
 htdocs/xoops/html/modules/newbb/search.php
+htdocs/xoops/html/modules/newbb/sql/
 htdocs/xoops/html/modules/newbb/sql/index.html
 htdocs/xoops/html/modules/newbb/sql/mysql.sql
+htdocs/xoops/html/modules/newbb/templates/
+htdocs/xoops/html/modules/newbb/templates/blocks/
 htdocs/xoops/html/modules/newbb/templates/blocks/index.html
 htdocs/xoops/html/modules/newbb/templates/blocks/newbb_block_active.html
 htdocs/xoops/html/modules/newbb/templates/blocks/newbb_block_new.html
@@ -559,15 +636,19 @@ htdocs/xoops/html/modules/newbb/topicmanager.php
 htdocs/xoops/html/modules/newbb/viewforum.php
 htdocs/xoops/html/modules/newbb/viewtopic.php
 htdocs/xoops/html/modules/newbb/xoops_version.php
+htdocs/xoops/html/modules/news/
+htdocs/xoops/html/modules/news/admin/
 htdocs/xoops/html/modules/news/admin/index.php
 htdocs/xoops/html/modules/news/admin/menu.php
 htdocs/xoops/html/modules/news/admin/storyform.inc.php
 htdocs/xoops/html/modules/news/archive.php
 htdocs/xoops/html/modules/news/article.php
+htdocs/xoops/html/modules/news/blocks/
 htdocs/xoops/html/modules/news/blocks/index.html
 htdocs/xoops/html/modules/news/blocks/news_bigstory.php
 htdocs/xoops/html/modules/news/blocks/news_top.php
 htdocs/xoops/html/modules/news/blocks/news_topics.php
+htdocs/xoops/html/modules/news/class/
 htdocs/xoops/html/modules/news/class/class.newsstory.php
 htdocs/xoops/html/modules/news/class/index.html
 htdocs/xoops/html/modules/news/comment_delete.php
@@ -576,23 +657,29 @@ htdocs/xoops/html/modules/news/comment_new.php
 htdocs/xoops/html/modules/news/comment_post.php
 htdocs/xoops/html/modules/news/comment_reply.php
 htdocs/xoops/html/modules/news/header.php
+htdocs/xoops/html/modules/news/images/
 htdocs/xoops/html/modules/news/images/forum.gif
 htdocs/xoops/html/modules/news/images/friend.gif
 htdocs/xoops/html/modules/news/images/index.html
 htdocs/xoops/html/modules/news/images/news_slogo.png
 htdocs/xoops/html/modules/news/images/print.gif
 htdocs/xoops/html/modules/news/images/size.gif
+htdocs/xoops/html/modules/news/images/topics/
 htdocs/xoops/html/modules/news/images/topics/index.html
 htdocs/xoops/html/modules/news/images/topics/xoops.gif
+htdocs/xoops/html/modules/news/include/
 htdocs/xoops/html/modules/news/include/comment_functions.php
 htdocs/xoops/html/modules/news/include/index.html
 htdocs/xoops/html/modules/news/include/notification.inc.php
 htdocs/xoops/html/modules/news/include/search.inc.php
 htdocs/xoops/html/modules/news/include/storyform.inc.php
 htdocs/xoops/html/modules/news/index.php
+htdocs/xoops/html/modules/news/language/
+htdocs/xoops/html/modules/news/language/english/
 htdocs/xoops/html/modules/news/language/english/admin.php
 htdocs/xoops/html/modules/news/language/english/blocks.php
 htdocs/xoops/html/modules/news/language/english/index.html
+htdocs/xoops/html/modules/news/language/english/mail_template/
 htdocs/xoops/html/modules/news/language/english/mail_template/global_newcategory_notify.tpl
 htdocs/xoops/html/modules/news/language/english/mail_template/global_newstory_notify.tpl
 htdocs/xoops/html/modules/news/language/english/mail_template/global_storysubmit_notify.tpl
@@ -602,9 +689,12 @@ htdocs/xoops/html/modules/news/language/english/modinfo.php
 htdocs/xoops/html/modules/news/language/index.html
 htdocs/xoops/html/modules/news/notification_update.php
 htdocs/xoops/html/modules/news/print.php
+htdocs/xoops/html/modules/news/sql/
 htdocs/xoops/html/modules/news/sql/index.html
 htdocs/xoops/html/modules/news/sql/mysql.sql
 htdocs/xoops/html/modules/news/submit.php
+htdocs/xoops/html/modules/news/templates/
+htdocs/xoops/html/modules/news/templates/blocks/
 htdocs/xoops/html/modules/news/templates/blocks/index.html
 htdocs/xoops/html/modules/news/templates/blocks/news_block_bigstory.html
 htdocs/xoops/html/modules/news/templates/blocks/news_block_new.html
@@ -616,34 +706,46 @@ htdocs/xoops/html/modules/news/templates/news_article.html
 htdocs/xoops/html/modules/news/templates/news_index.html
 htdocs/xoops/html/modules/news/templates/news_item.html
 htdocs/xoops/html/modules/news/xoops_version.php
+htdocs/xoops/html/modules/sections/
+htdocs/xoops/html/modules/sections/admin/
 htdocs/xoops/html/modules/sections/admin/index.php
 htdocs/xoops/html/modules/sections/admin/menu.php
 htdocs/xoops/html/modules/sections/header.php
+htdocs/xoops/html/modules/sections/images/
 htdocs/xoops/html/modules/sections/images/index.html
 htdocs/xoops/html/modules/sections/images/print.gif
 htdocs/xoops/html/modules/sections/images/sections_slogo.png
 htdocs/xoops/html/modules/sections/images/template.gif
 htdocs/xoops/html/modules/sections/index.php
+htdocs/xoops/html/modules/sections/language/
+htdocs/xoops/html/modules/sections/language/english/
 htdocs/xoops/html/modules/sections/language/english/index.html
 htdocs/xoops/html/modules/sections/language/english/main.php
 htdocs/xoops/html/modules/sections/language/english/modinfo.php
 htdocs/xoops/html/modules/sections/language/index.html
+htdocs/xoops/html/modules/sections/sql/
 htdocs/xoops/html/modules/sections/sql/index.html
 htdocs/xoops/html/modules/sections/sql/mysql.sql
 htdocs/xoops/html/modules/sections/xoops_version.php
+htdocs/xoops/html/modules/system/
+htdocs/xoops/html/modules/system/admin/
 htdocs/xoops/html/modules/system/admin.php
+htdocs/xoops/html/modules/system/admin/avatars/
 htdocs/xoops/html/modules/system/admin/avatars/index.html
 htdocs/xoops/html/modules/system/admin/avatars/main.php
 htdocs/xoops/html/modules/system/admin/avatars/xoops_version.php
+htdocs/xoops/html/modules/system/admin/banners/
 htdocs/xoops/html/modules/system/admin/banners/banners.php
 htdocs/xoops/html/modules/system/admin/banners/index.html
 htdocs/xoops/html/modules/system/admin/banners/main.php
 htdocs/xoops/html/modules/system/admin/banners/xoops_version.php
+htdocs/xoops/html/modules/system/admin/blocksadmin/
 htdocs/xoops/html/modules/system/admin/blocksadmin/blockform.php
 htdocs/xoops/html/modules/system/admin/blocksadmin/blocksadmin.php
 htdocs/xoops/html/modules/system/admin/blocksadmin/index.html
 htdocs/xoops/html/modules/system/admin/blocksadmin/main.php
 htdocs/xoops/html/modules/system/admin/blocksadmin/xoops_version.php
+htdocs/xoops/html/modules/system/admin/comments/
 htdocs/xoops/html/modules/system/admin/comments/admin_header.php
 htdocs/xoops/html/modules/system/admin/comments/comment_delete.php
 htdocs/xoops/html/modules/system/admin/comments/comment_edit.php
@@ -651,58 +753,71 @@ htdocs/xoops/html/modules/system/admin/comments/comment_post.php
 htdocs/xoops/html/modules/system/admin/comments/index.html
 htdocs/xoops/html/modules/system/admin/comments/main.php
 htdocs/xoops/html/modules/system/admin/comments/xoops_version.php
+htdocs/xoops/html/modules/system/admin/findusers/
 htdocs/xoops/html/modules/system/admin/findusers/index.html
 htdocs/xoops/html/modules/system/admin/findusers/main.php
 htdocs/xoops/html/modules/system/admin/findusers/xoops_version.php
 htdocs/xoops/html/modules/system/admin/groupperm.php
+htdocs/xoops/html/modules/system/admin/groups/
 htdocs/xoops/html/modules/system/admin/groups/groupform.php
 htdocs/xoops/html/modules/system/admin/groups/groups.php
 htdocs/xoops/html/modules/system/admin/groups/index.html
 htdocs/xoops/html/modules/system/admin/groups/main.php
 htdocs/xoops/html/modules/system/admin/groups/xoops_version.php
+htdocs/xoops/html/modules/system/admin/images/
 htdocs/xoops/html/modules/system/admin/images/index.html
 htdocs/xoops/html/modules/system/admin/images/main.php
 htdocs/xoops/html/modules/system/admin/images/xoops_version.php
 htdocs/xoops/html/modules/system/admin/index.html
+htdocs/xoops/html/modules/system/admin/mailusers/
 htdocs/xoops/html/modules/system/admin/mailusers/index.html
 htdocs/xoops/html/modules/system/admin/mailusers/mailform.php
 htdocs/xoops/html/modules/system/admin/mailusers/mailusers.php
 htdocs/xoops/html/modules/system/admin/mailusers/main.php
 htdocs/xoops/html/modules/system/admin/mailusers/xoops_version.php
+htdocs/xoops/html/modules/system/admin/modulesadmin/
 htdocs/xoops/html/modules/system/admin/modulesadmin/index.html
 htdocs/xoops/html/modules/system/admin/modulesadmin/main.php
 htdocs/xoops/html/modules/system/admin/modulesadmin/modulesadmin.php
 htdocs/xoops/html/modules/system/admin/modulesadmin/xoops_version.php
+htdocs/xoops/html/modules/system/admin/preferences/
 htdocs/xoops/html/modules/system/admin/preferences/index.html
 htdocs/xoops/html/modules/system/admin/preferences/main.php
 htdocs/xoops/html/modules/system/admin/preferences/xoops_version.php
+htdocs/xoops/html/modules/system/admin/smilies/
 htdocs/xoops/html/modules/system/admin/smilies/index.html
 htdocs/xoops/html/modules/system/admin/smilies/main.php
 htdocs/xoops/html/modules/system/admin/smilies/smileform.php
 htdocs/xoops/html/modules/system/admin/smilies/smilies.php
 htdocs/xoops/html/modules/system/admin/smilies/xoops_version.php
+htdocs/xoops/html/modules/system/admin/tplsets/
 htdocs/xoops/html/modules/system/admin/tplsets/index.html
 htdocs/xoops/html/modules/system/admin/tplsets/main.php
 htdocs/xoops/html/modules/system/admin/tplsets/themeimgform.php
 htdocs/xoops/html/modules/system/admin/tplsets/tplform.php
 htdocs/xoops/html/modules/system/admin/tplsets/xoops_version.php
+htdocs/xoops/html/modules/system/admin/userrank/
 htdocs/xoops/html/modules/system/admin/userrank/index.html
 htdocs/xoops/html/modules/system/admin/userrank/main.php
 htdocs/xoops/html/modules/system/admin/userrank/rankform.php
 htdocs/xoops/html/modules/system/admin/userrank/userrank.php
 htdocs/xoops/html/modules/system/admin/userrank/xoops_version.php
+htdocs/xoops/html/modules/system/admin/users/
 htdocs/xoops/html/modules/system/admin/users/index.html
 htdocs/xoops/html/modules/system/admin/users/main.php
 htdocs/xoops/html/modules/system/admin/users/userform.php
 htdocs/xoops/html/modules/system/admin/users/users.php
 htdocs/xoops/html/modules/system/admin/users/xoops_version.php
+htdocs/xoops/html/modules/system/admin/version/
 htdocs/xoops/html/modules/system/admin/version/index.html
 htdocs/xoops/html/modules/system/admin/version/main.php
 htdocs/xoops/html/modules/system/admin/version/s_poweredby.gif
 htdocs/xoops/html/modules/system/admin/version/xoops_version.php
+htdocs/xoops/html/modules/system/blocks/
 htdocs/xoops/html/modules/system/blocks/index.html
 htdocs/xoops/html/modules/system/blocks/system_blocks.php
 htdocs/xoops/html/modules/system/constants.php
+htdocs/xoops/html/modules/system/images/
 htdocs/xoops/html/modules/system/images/bg_content.gif
 htdocs/xoops/html/modules/system/images/bg_menu.gif
 htdocs/xoops/html/modules/system/images/check.gif
@@ -719,6 +834,9 @@ htdocs/xoops/html/modules/system/images/uninstall.gif
 htdocs/xoops/html/modules/system/images/update.gif
 htdocs/xoops/html/modules/system/images/xoops2.gif
 htdocs/xoops/html/modules/system/index.html
+htdocs/xoops/html/modules/system/language/
+htdocs/xoops/html/modules/system/language/english/
+htdocs/xoops/html/modules/system/language/english/admin/
 htdocs/xoops/html/modules/system/language/english/admin.php
 htdocs/xoops/html/modules/system/language/english/admin/avatars.php
 htdocs/xoops/html/modules/system/language/english/admin/banners.php
@@ -742,6 +860,8 @@ htdocs/xoops/html/modules/system/language/english/modinfo.php
 htdocs/xoops/html/modules/system/language/index.html
 htdocs/xoops/html/modules/system/menu.php
 htdocs/xoops/html/modules/system/style.css
+htdocs/xoops/html/modules/system/templates/
+htdocs/xoops/html/modules/system/templates/blocks/
 htdocs/xoops/html/modules/system/templates/blocks/index.html
 htdocs/xoops/html/modules/system/templates/blocks/system_block_comments.html
 htdocs/xoops/html/modules/system/templates/blocks/system_block_login.html
@@ -771,6 +891,8 @@ htdocs/xoops/html/modules/system/templates/system_siteclosed.html
 htdocs/xoops/html/modules/system/templates/system_userform.html
 htdocs/xoops/html/modules/system/templates/system_userinfo.html
 htdocs/xoops/html/modules/system/xoops_version.php
+htdocs/xoops/html/modules/xoopsfaq/
+htdocs/xoops/html/modules/xoopsfaq/admin/
 htdocs/xoops/html/modules/xoopsfaq/admin/contentsform.php
 htdocs/xoops/html/modules/xoopsfaq/admin/index.php
 htdocs/xoops/html/modules/xoopsfaq/admin/menu.php
@@ -780,79 +902,108 @@ htdocs/xoops/html/modules/xoopsfaq/comment_new.php
 htdocs/xoops/html/modules/xoopsfaq/comment_post.php
 htdocs/xoops/html/modules/xoopsfaq/comment_reply.php
 htdocs/xoops/html/modules/xoopsfaq/header.php
+htdocs/xoops/html/modules/xoopsfaq/images/
 htdocs/xoops/html/modules/xoopsfaq/images/docs.gif
 htdocs/xoops/html/modules/xoopsfaq/images/folder.gif
 htdocs/xoops/html/modules/xoopsfaq/images/index.html
 htdocs/xoops/html/modules/xoopsfaq/images/question.gif
 htdocs/xoops/html/modules/xoopsfaq/images/question2.gif
 htdocs/xoops/html/modules/xoopsfaq/images/slogo.png
+htdocs/xoops/html/modules/xoopsfaq/include/
 htdocs/xoops/html/modules/xoopsfaq/include/index.html
 htdocs/xoops/html/modules/xoopsfaq/include/search.inc.php
 htdocs/xoops/html/modules/xoopsfaq/index.php
+htdocs/xoops/html/modules/xoopsfaq/language/
+htdocs/xoops/html/modules/xoopsfaq/language/english/
 htdocs/xoops/html/modules/xoopsfaq/language/english/index.html
 htdocs/xoops/html/modules/xoopsfaq/language/english/main.php
 htdocs/xoops/html/modules/xoopsfaq/language/english/modinfo.php
 htdocs/xoops/html/modules/xoopsfaq/language/index.html
+htdocs/xoops/html/modules/xoopsfaq/sql/
 htdocs/xoops/html/modules/xoopsfaq/sql/index.html
 htdocs/xoops/html/modules/xoopsfaq/sql/mysql.sql
+htdocs/xoops/html/modules/xoopsfaq/templates/
 htdocs/xoops/html/modules/xoopsfaq/templates/index.html
 htdocs/xoops/html/modules/xoopsfaq/templates/xoopsfaq_category.html
 htdocs/xoops/html/modules/xoopsfaq/templates/xoopsfaq_index.html
 htdocs/xoops/html/modules/xoopsfaq/xoops_version.php
+htdocs/xoops/html/modules/xoopsheadline/
+htdocs/xoops/html/modules/xoopsheadline/admin/
 htdocs/xoops/html/modules/xoopsheadline/admin/index.html
 htdocs/xoops/html/modules/xoopsheadline/admin/index.php
 htdocs/xoops/html/modules/xoopsheadline/admin/menu.php
+htdocs/xoops/html/modules/xoopsheadline/blocks/
 htdocs/xoops/html/modules/xoopsheadline/blocks/headline.php
 htdocs/xoops/html/modules/xoopsheadline/blocks/headline_block.html
 htdocs/xoops/html/modules/xoopsheadline/blocks/index.html
+htdocs/xoops/html/modules/xoopsheadline/class/
 htdocs/xoops/html/modules/xoopsheadline/class/headline.php
 htdocs/xoops/html/modules/xoopsheadline/class/headlinerenderer.php
 htdocs/xoops/html/modules/xoopsheadline/class/index.html
+htdocs/xoops/html/modules/xoopsheadline/images/
 htdocs/xoops/html/modules/xoopsheadline/images/headline_slogo.png
 htdocs/xoops/html/modules/xoopsheadline/images/index.html
 htdocs/xoops/html/modules/xoopsheadline/images/rss.gif
+htdocs/xoops/html/modules/xoopsheadline/include/
 htdocs/xoops/html/modules/xoopsheadline/include/functions.php
 htdocs/xoops/html/modules/xoopsheadline/index.php
+htdocs/xoops/html/modules/xoopsheadline/language/
+htdocs/xoops/html/modules/xoopsheadline/language/english/
 htdocs/xoops/html/modules/xoopsheadline/language/english/admin.php
 htdocs/xoops/html/modules/xoopsheadline/language/english/blocks.php
 htdocs/xoops/html/modules/xoopsheadline/language/english/index.html
 htdocs/xoops/html/modules/xoopsheadline/language/english/main.php
 htdocs/xoops/html/modules/xoopsheadline/language/english/modinfo.php
 htdocs/xoops/html/modules/xoopsheadline/language/index.html
+htdocs/xoops/html/modules/xoopsheadline/language/japanese/
 htdocs/xoops/html/modules/xoopsheadline/language/japanese/admin.php
 htdocs/xoops/html/modules/xoopsheadline/language/japanese/blocks.php
 htdocs/xoops/html/modules/xoopsheadline/language/japanese/headlinerenderer.php
 htdocs/xoops/html/modules/xoopsheadline/language/japanese/index.html
 htdocs/xoops/html/modules/xoopsheadline/language/japanese/main.php
 htdocs/xoops/html/modules/xoopsheadline/language/japanese/modinfo.php
+htdocs/xoops/html/modules/xoopsheadline/sql/
 htdocs/xoops/html/modules/xoopsheadline/sql/mysql.sql
+htdocs/xoops/html/modules/xoopsheadline/templates/
+htdocs/xoops/html/modules/xoopsheadline/templates/blocks/
 htdocs/xoops/html/modules/xoopsheadline/templates/blocks/index.html
 htdocs/xoops/html/modules/xoopsheadline/templates/blocks/xoopsheadline_block_rss.html
 htdocs/xoops/html/modules/xoopsheadline/templates/index.html
 htdocs/xoops/html/modules/xoopsheadline/templates/xoopsheadline_feed.html
 htdocs/xoops/html/modules/xoopsheadline/templates/xoopsheadline_index.html
 htdocs/xoops/html/modules/xoopsheadline/xoops_version.php
+htdocs/xoops/html/modules/xoopsmembers/
 htdocs/xoops/html/modules/xoopsmembers/index.php
+htdocs/xoops/html/modules/xoopsmembers/language/
+htdocs/xoops/html/modules/xoopsmembers/language/english/
 htdocs/xoops/html/modules/xoopsmembers/language/english/index.html
 htdocs/xoops/html/modules/xoopsmembers/language/english/main.php
 htdocs/xoops/html/modules/xoopsmembers/language/english/modinfo.php
 htdocs/xoops/html/modules/xoopsmembers/language/index.html
 htdocs/xoops/html/modules/xoopsmembers/members_slogo.png
+htdocs/xoops/html/modules/xoopsmembers/templates/
 htdocs/xoops/html/modules/xoopsmembers/templates/index.html
 htdocs/xoops/html/modules/xoopsmembers/templates/xoopsmembers_searchform.html
 htdocs/xoops/html/modules/xoopsmembers/templates/xoopsmembers_searchresults.html
 htdocs/xoops/html/modules/xoopsmembers/xoops_version.php
+htdocs/xoops/html/modules/xoopspartners/
+htdocs/xoops/html/modules/xoopspartners/admin/
 htdocs/xoops/html/modules/xoopspartners/admin/index.php
 htdocs/xoops/html/modules/xoopspartners/admin/menu.php
+htdocs/xoops/html/modules/xoopspartners/blocks/
 htdocs/xoops/html/modules/xoopspartners/blocks/index.html
 htdocs/xoops/html/modules/xoopspartners/blocks/partners.php
+htdocs/xoops/html/modules/xoopspartners/class/
 htdocs/xoops/html/modules/xoopspartners/class/index.html
 htdocs/xoops/html/modules/xoopspartners/class/partners.php
 htdocs/xoops/html/modules/xoopspartners/header.php
+htdocs/xoops/html/modules/xoopspartners/images/
 htdocs/xoops/html/modules/xoopspartners/images/index.html
 htdocs/xoops/html/modules/xoopspartners/images/logo.png
 htdocs/xoops/html/modules/xoopspartners/index.php
 htdocs/xoops/html/modules/xoopspartners/join.php
+htdocs/xoops/html/modules/xoopspartners/language/
+htdocs/xoops/html/modules/xoopspartners/language/english/
 htdocs/xoops/html/modules/xoopspartners/language/english/admin.php
 htdocs/xoops/html/modules/xoopspartners/language/english/blocks.php
 htdocs/xoops/html/modules/xoopspartners/language/english/index.html
@@ -860,8 +1011,11 @@ htdocs/xoops/html/modules/xoopspartners/language/english/join.tpl
 htdocs/xoops/html/modules/xoopspartners/language/english/main.php
 htdocs/xoops/html/modules/xoopspartners/language/english/modinfo.php
 htdocs/xoops/html/modules/xoopspartners/language/index.html
+htdocs/xoops/html/modules/xoopspartners/sql/
 htdocs/xoops/html/modules/xoopspartners/sql/index.html
 htdocs/xoops/html/modules/xoopspartners/sql/mysql.sql
+htdocs/xoops/html/modules/xoopspartners/templates/
+htdocs/xoops/html/modules/xoopspartners/templates/blocks/
 htdocs/xoops/html/modules/xoopspartners/templates/blocks/index.html
 htdocs/xoops/html/modules/xoopspartners/templates/blocks/xoopspartners_block_site.html
 htdocs/xoops/html/modules/xoopspartners/templates/index.html
@@ -869,10 +1023,14 @@ htdocs/xoops/html/modules/xoopspartners/templates/xoopspartners_index.html
 htdocs/xoops/html/modules/xoopspartners/templates/xoopspartners_join.html
 htdocs/xoops/html/modules/xoopspartners/vpartner.php
 htdocs/xoops/html/modules/xoopspartners/xoops_version.php
+htdocs/xoops/html/modules/xoopspoll/
+htdocs/xoops/html/modules/xoopspoll/admin/
 htdocs/xoops/html/modules/xoopspoll/admin/index.php
 htdocs/xoops/html/modules/xoopspoll/admin/menu.php
+htdocs/xoops/html/modules/xoopspoll/blocks/
 htdocs/xoops/html/modules/xoopspoll/blocks/index.html
 htdocs/xoops/html/modules/xoopspoll/blocks/xoopspoll.php
+htdocs/xoops/html/modules/xoopspoll/class/
 htdocs/xoops/html/modules/xoopspoll/class/index.html
 htdocs/xoops/html/modules/xoopspoll/class/xoopspoll.php
 htdocs/xoops/html/modules/xoopspoll/class/xoopspolllog.php
@@ -883,6 +1041,8 @@ htdocs/xoops/html/modules/xoopspoll/comment_edit.php
 htdocs/xoops/html/modules/xoopspoll/comment_new.php
 htdocs/xoops/html/modules/xoopspoll/comment_post.php
 htdocs/xoops/html/modules/xoopspoll/comment_reply.php
+htdocs/xoops/html/modules/xoopspoll/images/
+htdocs/xoops/html/modules/xoopspoll/images/colorbars/
 htdocs/xoops/html/modules/xoopspoll/images/colorbars/aqua.gif
 htdocs/xoops/html/modules/xoopspoll/images/colorbars/blank.gif
 htdocs/xoops/html/modules/xoopspoll/images/colorbars/blue.gif
@@ -899,19 +1059,26 @@ htdocs/xoops/html/modules/xoopspoll/images/colorbars/red.gif
 htdocs/xoops/html/modules/xoopspoll/images/colorbars/yellow.gif
 htdocs/xoops/html/modules/xoopspoll/images/index.html
 htdocs/xoops/html/modules/xoopspoll/images/xoopspoll_slogo.png
+htdocs/xoops/html/modules/xoopspoll/include/
 htdocs/xoops/html/modules/xoopspoll/include/constants.php
 htdocs/xoops/html/modules/xoopspoll/include/index.html
 htdocs/xoops/html/modules/xoopspoll/index.php
+htdocs/xoops/html/modules/xoopspoll/language/
+htdocs/xoops/html/modules/xoopspoll/language/english/
 htdocs/xoops/html/modules/xoopspoll/language/english/admin.php
 htdocs/xoops/html/modules/xoopspoll/language/english/blocks.php
 htdocs/xoops/html/modules/xoopspoll/language/english/index.html
+htdocs/xoops/html/modules/xoopspoll/language/english/mail_template/
 htdocs/xoops/html/modules/xoopspoll/language/english/mail_template/mail_results.tpl
 htdocs/xoops/html/modules/xoopspoll/language/english/main.php
 htdocs/xoops/html/modules/xoopspoll/language/english/modinfo.php
 htdocs/xoops/html/modules/xoopspoll/language/index.html
 htdocs/xoops/html/modules/xoopspoll/pollresults.php
+htdocs/xoops/html/modules/xoopspoll/sql/
 htdocs/xoops/html/modules/xoopspoll/sql/index.html
 htdocs/xoops/html/modules/xoopspoll/sql/mysql.sql
+htdocs/xoops/html/modules/xoopspoll/templates/
+htdocs/xoops/html/modules/xoopspoll/templates/blocks/
 htdocs/xoops/html/modules/xoopspoll/templates/blocks/index.html
 htdocs/xoops/html/modules/xoopspoll/templates/blocks/xoopspoll_block_poll.html
 htdocs/xoops/html/modules/xoopspoll/templates/index.html
@@ -926,7 +1093,10 @@ htdocs/xoops/html/readpmsg.php
 htdocs/xoops/html/register.php
 htdocs/xoops/html/robots.txt
 htdocs/xoops/html/search.php
+htdocs/xoops/html/templates_c/
 htdocs/xoops/html/templates_c/index.html
+htdocs/xoops/html/themes/
+htdocs/xoops/html/themes/default/
 htdocs/xoops/html/themes/default/hbar.gif
 htdocs/xoops/html/themes/default/logo.gif
 htdocs/xoops/html/themes/default/poweredby.gif
@@ -940,6 +1110,8 @@ htdocs/xoops/html/themes/default/theme_blockcenter_r.html
 htdocs/xoops/html/themes/default/theme_blockleft.html
 htdocs/xoops/html/themes/default/theme_blockright.html
 htdocs/xoops/html/themes/index.html
+htdocs/xoops/html/themes/phpkaox/
+htdocs/xoops/html/themes/phpkaox/images/
 htdocs/xoops/html/themes/phpkaox/images/index.html
 htdocs/xoops/html/themes/phpkaox/images/leftbar.gif
 htdocs/xoops/html/themes/phpkaox/images/logo.gif
@@ -949,6 +1121,7 @@ htdocs/xoops/html/themes/phpkaox/style.css
 htdocs/xoops/html/themes/phpkaox/styleMAC.css
 htdocs/xoops/html/themes/phpkaox/styleNN.css
 htdocs/xoops/html/themes/phpkaox/theme.html
+htdocs/xoops/html/themes/x2t/
 htdocs/xoops/html/themes/x2t/_cellpic_cat.gif
 htdocs/xoops/html/themes/x2t/_foot_bg.gif
 htdocs/xoops/html/themes/x2t/_foot_left.gif
@@ -1007,6 +1180,8 @@ htdocs/xoops/html/themes/x2t/user_editaccount.gif
 htdocs/xoops/html/themes/x2t/user_inbox.gif
 htdocs/xoops/html/themes/x2t/user_logout.gif
 htdocs/xoops/html/themes/x2t/user_notifications.gif
+htdocs/xoops/html/upgrade/
+htdocs/xoops/html/uploads/
 htdocs/xoops/html/uploads/blank.gif
 htdocs/xoops/html/uploads/index.html
 htdocs/xoops/html/uploads/rank3dbf8e94a6f72.gif
@@ -1039,179 +1214,3 @@ htdocs/xoops/html/userinfo.php
 htdocs/xoops/html/viewpmsg.php
 htdocs/xoops/html/xmlrpc.php
 htdocs/xoops/html/xoops.css
-@dirrm htdocs/xoops/html/uploads
-@exec mkdir -p %D/htdocs/xoops/html/upgrade
-@dirrm htdocs/xoops/html/upgrade
-@dirrm htdocs/xoops/html/themes/x2t
-@dirrm htdocs/xoops/html/themes/phpkaox/images
-@dirrm htdocs/xoops/html/themes/phpkaox
-@dirrm htdocs/xoops/html/themes/default
-@dirrm htdocs/xoops/html/themes
-@dirrm htdocs/xoops/html/templates_c
-@dirrm htdocs/xoops/html/modules/xoopspoll/templates/blocks
-@dirrm htdocs/xoops/html/modules/xoopspoll/templates
-@dirrm htdocs/xoops/html/modules/xoopspoll/sql
-@dirrm htdocs/xoops/html/modules/xoopspoll/language/english/mail_template
-@dirrm htdocs/xoops/html/modules/xoopspoll/language/english
-@dirrm htdocs/xoops/html/modules/xoopspoll/language
-@dirrm htdocs/xoops/html/modules/xoopspoll/include
-@dirrm htdocs/xoops/html/modules/xoopspoll/images/colorbars
-@dirrm htdocs/xoops/html/modules/xoopspoll/images
-@dirrm htdocs/xoops/html/modules/xoopspoll/class
-@dirrm htdocs/xoops/html/modules/xoopspoll/blocks
-@dirrm htdocs/xoops/html/modules/xoopspoll/admin
-@dirrm htdocs/xoops/html/modules/xoopspoll
-@dirrm htdocs/xoops/html/modules/xoopspartners/templates/blocks
-@dirrm htdocs/xoops/html/modules/xoopspartners/templates
-@dirrm htdocs/xoops/html/modules/xoopspartners/sql
-@dirrm htdocs/xoops/html/modules/xoopspartners/language/english
-@dirrm htdocs/xoops/html/modules/xoopspartners/language
-@dirrm htdocs/xoops/html/modules/xoopspartners/images
-@dirrm htdocs/xoops/html/modules/xoopspartners/class
-@dirrm htdocs/xoops/html/modules/xoopspartners/blocks
-@dirrm htdocs/xoops/html/modules/xoopspartners/admin
-@dirrm htdocs/xoops/html/modules/xoopspartners
-@dirrm htdocs/xoops/html/modules/xoopsmembers/templates
-@dirrm htdocs/xoops/html/modules/xoopsmembers/language/english
-@dirrm htdocs/xoops/html/modules/xoopsmembers/language
-@dirrm htdocs/xoops/html/modules/xoopsmembers
-@dirrm htdocs/xoops/html/modules/xoopsheadline/templates/blocks
-@dirrm htdocs/xoops/html/modules/xoopsheadline/templates
-@dirrm htdocs/xoops/html/modules/xoopsheadline/sql
-@dirrm htdocs/xoops/html/modules/xoopsheadline/language/japanese
-@dirrm htdocs/xoops/html/modules/xoopsheadline/language/english
-@dirrm htdocs/xoops/html/modules/xoopsheadline/language
-@dirrm htdocs/xoops/html/modules/xoopsheadline/include
-@dirrm htdocs/xoops/html/modules/xoopsheadline/images
-@dirrm htdocs/xoops/html/modules/xoopsheadline/class
-@dirrm htdocs/xoops/html/modules/xoopsheadline/blocks
-@dirrm htdocs/xoops/html/modules/xoopsheadline/admin
-@dirrm htdocs/xoops/html/modules/xoopsheadline
-@dirrm htdocs/xoops/html/modules/xoopsfaq/templates
-@dirrm htdocs/xoops/html/modules/xoopsfaq/sql
-@dirrm htdocs/xoops/html/modules/xoopsfaq/language/english
-@dirrm htdocs/xoops/html/modules/xoopsfaq/language
-@dirrm htdocs/xoops/html/modules/xoopsfaq/include
-@dirrm htdocs/xoops/html/modules/xoopsfaq/images
-@dirrm htdocs/xoops/html/modules/xoopsfaq/admin
-@dirrm htdocs/xoops/html/modules/xoopsfaq
-@dirrm htdocs/xoops/html/modules/system/templates/blocks
-@dirrm htdocs/xoops/html/modules/system/templates
-@dirrm htdocs/xoops/html/modules/system/language/english/admin
-@dirrm htdocs/xoops/html/modules/system/language/english
-@dirrm htdocs/xoops/html/modules/system/language
-@dirrm htdocs/xoops/html/modules/system/images
-@dirrm htdocs/xoops/html/modules/system/blocks
-@dirrm htdocs/xoops/html/modules/system/admin/version
-@dirrm htdocs/xoops/html/modules/system/admin/users
-@dirrm htdocs/xoops/html/modules/system/admin/userrank
-@dirrm htdocs/xoops/html/modules/system/admin/tplsets
-@dirrm htdocs/xoops/html/modules/system/admin/smilies
-@dirrm htdocs/xoops/html/modules/system/admin/preferences
-@dirrm htdocs/xoops/html/modules/system/admin/modulesadmin
-@dirrm htdocs/xoops/html/modules/system/admin/mailusers
-@dirrm htdocs/xoops/html/modules/system/admin/images
-@dirrm htdocs/xoops/html/modules/system/admin/groups
-@dirrm htdocs/xoops/html/modules/system/admin/findusers
-@dirrm htdocs/xoops/html/modules/system/admin/comments
-@dirrm htdocs/xoops/html/modules/system/admin/blocksadmin
-@dirrm htdocs/xoops/html/modules/system/admin/banners
-@dirrm htdocs/xoops/html/modules/system/admin/avatars
-@dirrm htdocs/xoops/html/modules/system/admin
-@dirrm htdocs/xoops/html/modules/system
-@dirrm htdocs/xoops/html/modules/sections/sql
-@dirrm htdocs/xoops/html/modules/sections/language/english
-@dirrm htdocs/xoops/html/modules/sections/language
-@dirrm htdocs/xoops/html/modules/sections/images
-@dirrm htdocs/xoops/html/modules/sections/admin
-@dirrm htdocs/xoops/html/modules/sections
-@dirrm htdocs/xoops/html/modules/news/templates/blocks
-@dirrm htdocs/xoops/html/modules/news/templates
-@dirrm htdocs/xoops/html/modules/news/sql
-@dirrm htdocs/xoops/html/modules/news/language/english/mail_template
-@dirrm htdocs/xoops/html/modules/news/language/english
-@dirrm htdocs/xoops/html/modules/news/language
-@dirrm htdocs/xoops/html/modules/news/include
-@dirrm htdocs/xoops/html/modules/news/images/topics
-@dirrm htdocs/xoops/html/modules/news/images
-@dirrm htdocs/xoops/html/modules/news/class
-@dirrm htdocs/xoops/html/modules/news/blocks
-@dirrm htdocs/xoops/html/modules/news/admin
-@dirrm htdocs/xoops/html/modules/news
-@dirrm htdocs/xoops/html/modules/newbb/templates/blocks
-@dirrm htdocs/xoops/html/modules/newbb/templates
-@dirrm htdocs/xoops/html/modules/newbb/sql
-@dirrm htdocs/xoops/html/modules/newbb/language/english/mail_template
-@dirrm htdocs/xoops/html/modules/newbb/language/english
-@dirrm htdocs/xoops/html/modules/newbb/language
-@dirrm htdocs/xoops/html/modules/newbb/include
-@dirrm htdocs/xoops/html/modules/newbb/images
-@dirrm htdocs/xoops/html/modules/newbb/class
-@dirrm htdocs/xoops/html/modules/newbb/blocks
-@dirrm htdocs/xoops/html/modules/newbb/admin
-@dirrm htdocs/xoops/html/modules/newbb
-@dirrm htdocs/xoops/html/modules/mylinks/templates/blocks
-@dirrm htdocs/xoops/html/modules/mylinks/templates
-@dirrm htdocs/xoops/html/modules/mylinks/sql
-@dirrm htdocs/xoops/html/modules/mylinks/language/english/mail_template
-@dirrm htdocs/xoops/html/modules/mylinks/language/english
-@dirrm htdocs/xoops/html/modules/mylinks/language
-@dirrm htdocs/xoops/html/modules/mylinks/include
-@dirrm htdocs/xoops/html/modules/mylinks/images/shots
-@dirrm htdocs/xoops/html/modules/mylinks/images
-@dirrm htdocs/xoops/html/modules/mylinks/blocks
-@dirrm htdocs/xoops/html/modules/mylinks/admin
-@dirrm htdocs/xoops/html/modules/mylinks
-@dirrm htdocs/xoops/html/modules/mydownloads/templates/blocks
-@dirrm htdocs/xoops/html/modules/mydownloads/templates
-@dirrm htdocs/xoops/html/modules/mydownloads/sql
-@dirrm htdocs/xoops/html/modules/mydownloads/language/english/mail_template
-@dirrm htdocs/xoops/html/modules/mydownloads/language/english
-@dirrm htdocs/xoops/html/modules/mydownloads/language
-@dirrm htdocs/xoops/html/modules/mydownloads/include
-@dirrm htdocs/xoops/html/modules/mydownloads/images/shots
-@dirrm htdocs/xoops/html/modules/mydownloads/images
-@dirrm htdocs/xoops/html/modules/mydownloads/blocks
-@dirrm htdocs/xoops/html/modules/mydownloads/admin
-@dirrm htdocs/xoops/html/modules/mydownloads
-@dirrm htdocs/xoops/html/modules/contact/templates
-@dirrm htdocs/xoops/html/modules/contact/language/english
-@dirrm htdocs/xoops/html/modules/contact/language
-@dirrm htdocs/xoops/html/modules/contact
-@dirrm htdocs/xoops/html/modules
-@dirrm htdocs/xoops/html/language/english/mail_template
-@dirrm htdocs/xoops/html/language/english
-@dirrm htdocs/xoops/html/language
-@dirrm htdocs/xoops/html/kernel
-@dirrm htdocs/xoops/html/install/sql/upgrade
-@dirrm htdocs/xoops/html/install/sql
-@dirrm htdocs/xoops/html/install/language/english
-@dirrm htdocs/xoops/html/install/language
-@dirrm htdocs/xoops/html/install/img
-@dirrm htdocs/xoops/html/install/class
-@dirrm htdocs/xoops/html/install
-@dirrm htdocs/xoops/html/include
-@dirrm htdocs/xoops/html/images/subject
-@dirrm htdocs/xoops/html/images/icons
-@dirrm htdocs/xoops/html/images/banners
-@dirrm htdocs/xoops/html/images
-@dirrm htdocs/xoops/html/class/xoopsform
-@dirrm htdocs/xoops/html/class/xml/rss
-@dirrm htdocs/xoops/html/class/xml/rpc
-@dirrm htdocs/xoops/html/class/xml
-@dirrm htdocs/xoops/html/class/smarty/plugins
-@dirrm htdocs/xoops/html/class/smarty/configs
-@dirrm htdocs/xoops/html/class/smarty
-@dirrm htdocs/xoops/html/class/mail/phpmailer
-@dirrm htdocs/xoops/html/class/mail
-@dirrm htdocs/xoops/html/class/database
-@dirrm htdocs/xoops/html/class
-@dirrm htdocs/xoops/html/cache
-@dirrm htdocs/xoops/html
-@dirrm htdocs/xoops/extras/theme_x2t/extras
-@dirrm htdocs/xoops/extras/theme_x2t/doc
-@dirrm htdocs/xoops/extras/theme_x2t
-@dirrm htdocs/xoops/extras
-@dirrm htdocs/xoops/docs/images
-@dirrm htdocs/xoops/docs
-@dirrm htdocs/xoops

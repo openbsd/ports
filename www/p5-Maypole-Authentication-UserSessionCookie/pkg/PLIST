@@ -1,8 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/26 13:58:44 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:52 espie Exp $
+${P5SITE}/Maypole/Authentication/
 ${P5SITE}/Maypole/Authentication/UserSessionCookie.pm
-@comment ${P5ARCH}/auto/Maypole/Authentication/UserSessionCookie/.packlist
-man/man3p/Maypole::Authentication::UserSessionCookie.3p
-@comment @dirrm ${P5ARCH}/auto/Maypole/Authentication/UserSessionCookie
-@comment @dirrm ${P5ARCH}/auto/Maypole/Authentication
-@comment @dirrm ${P5ARCH}/auto/Maypole
-@dirrm ${P5SITE}/Maypole/Authentication
+@man man/man3p/Maypole::Authentication::UserSessionCookie.3p

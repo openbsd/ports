@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/10/08 23:47:18 naddy Exp $
-man/man1/privoxy.1
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:49:52 espie Exp $
+@man man/man1/privoxy.1
 sbin/privoxy
+share/doc/privoxy/
 share/doc/privoxy/README
+share/examples/privoxy/
 share/examples/privoxy/config
 share/examples/privoxy/default.action
 share/examples/privoxy/default.filter
 share/examples/privoxy/standard.action
+share/examples/privoxy/templates/
 share/examples/privoxy/templates/blocked
 share/examples/privoxy/templates/cgi-error-404
 share/examples/privoxy/templates/cgi-error-bad-param
@@ -40,9 +43,6 @@ share/examples/privoxy/templates/toggle
 share/examples/privoxy/templates/toggle-mini
 share/examples/privoxy/templates/untrusted
 share/examples/privoxy/user.action
-@dirrm share/examples/privoxy/templates
-@dirrm share/examples/privoxy
-@dirrm share/doc/privoxy
 @cwd ${SYSCONFDIR}
 @extra privoxy/templates/blocked
 @extra privoxy/templates/cgi-error-404

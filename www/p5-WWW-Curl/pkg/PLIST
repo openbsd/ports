@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/21 17:21:54 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:52 espie Exp $
+${P5ARCH}/
 @comment ${P5ARCH}/Makefile.am
+${P5ARCH}/WWW/
+${P5ARCH}/WWW/Curl/
 ${P5ARCH}/WWW/Curl.pm
 ${P5ARCH}/WWW/Curl/Easy.pm
 ${P5ARCH}/WWW/Curl/Form.pm
@@ -7,24 +10,19 @@ ${P5ARCH}/WWW/Curl/Form.pm
 ${P5ARCH}/WWW/Curl/Multi.pm
 ${P5ARCH}/WWW/Curl/easy.pm
 @comment ${P5ARCH}/WWW/Makefile.am
-@comment ${P5ARCH}/auto/WWW/Curl/.packlist
+${P5ARCH}/auto/
+${P5ARCH}/auto/WWW/
+${P5ARCH}/auto/WWW/Curl/
 ${P5ARCH}/auto/WWW/Curl/Curl.bs
 ${P5ARCH}/auto/WWW/Curl/Curl.so
+${P5ARCH}/auto/WWW/Curl/Easy/
 ${P5ARCH}/auto/WWW/Curl/Easy/autosplit.ix
-man/man3p/WWW::Curl.3p
-man/man3p/WWW::Curl::Easy.3p
-man/man3p/WWW::Curl::Multi.3p
-man/man3p/WWW::Curl::easy.3p
+@man man/man3p/WWW::Curl.3p
+@man man/man3p/WWW::Curl::Easy.3p
+@man man/man3p/WWW::Curl::Multi.3p
+@man man/man3p/WWW::Curl::easy.3p
+share/examples/p5-WWW-Curl/
 share/examples/p5-WWW-Curl/basicfirst.pl
 share/examples/p5-WWW-Curl/easy.pl
 @comment share/examples/p5-WWW-Curl/multi-threaded.pl
 share/examples/p5-WWW-Curl/multi.pl
-@dirrm share/examples/p5-WWW-Curl
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/WWW/Curl/Easy
-@dirrm ${P5ARCH}/auto/WWW/Curl
-@dirrm ${P5ARCH}/auto/WWW
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/WWW/Curl
-@dirrm ${P5ARCH}/WWW
-@dirrm ${P5ARCH}

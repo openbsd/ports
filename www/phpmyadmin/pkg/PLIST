@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/15 10:02:37 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:52 espie Exp $
+phpMyAdmin/
 phpMyAdmin/CREDITS
 phpMyAdmin/ChangeLog
 phpMyAdmin/Documentation.html
@@ -12,6 +13,7 @@ phpMyAdmin/browse_foreigners.php
 phpMyAdmin/chk_rel.php
 phpMyAdmin/config.default
 phpMyAdmin/config.inc.php
+phpMyAdmin/css/
 phpMyAdmin/css/phpmyadmin.css.php
 phpMyAdmin/db_create.php
 phpMyAdmin/db_datadict.php
@@ -30,6 +32,7 @@ phpMyAdmin/export.php
 phpMyAdmin/footer.inc.php
 phpMyAdmin/header.inc.php
 phpMyAdmin/header_printview.inc.php
+phpMyAdmin/images/
 phpMyAdmin/images/arrow_ltr.gif
 phpMyAdmin/images/arrow_rtl.gif
 phpMyAdmin/images/asc_order.png
@@ -66,6 +69,7 @@ phpMyAdmin/images/pma_logo.png
 phpMyAdmin/images/spacer.gif
 phpMyAdmin/images/vertical_line.png
 phpMyAdmin/index.php
+phpMyAdmin/lang/
 phpMyAdmin/lang/add_message.sh
 phpMyAdmin/lang/add_message_file.sh
 phpMyAdmin/lang/afrikaans-iso-8859-1.inc.php
@@ -176,6 +180,8 @@ phpMyAdmin/lang/ukrainian-windows-1251.inc.php
 phpMyAdmin/ldi_check.php
 phpMyAdmin/ldi_table.php
 phpMyAdmin/left.php
+phpMyAdmin/libraries/
+phpMyAdmin/libraries/auth/
 phpMyAdmin/libraries/auth/config.auth.lib.php
 phpMyAdmin/libraries/auth/cookie.auth.lib.php
 phpMyAdmin/libraries/auth/http.auth.lib.php
@@ -186,6 +192,7 @@ phpMyAdmin/libraries/common.lib.php
 phpMyAdmin/libraries/config_import.lib.php
 phpMyAdmin/libraries/db_config.lib.php
 phpMyAdmin/libraries/db_table_exists.lib.php
+phpMyAdmin/libraries/dbg/
 phpMyAdmin/libraries/dbg/profiling.php
 phpMyAdmin/libraries/dbg/setup.php
 phpMyAdmin/libraries/defines.lib.php
@@ -194,11 +201,14 @@ phpMyAdmin/libraries/display_export.lib.php
 phpMyAdmin/libraries/display_tbl.lib.php
 phpMyAdmin/libraries/display_tbl_links.lib.php
 phpMyAdmin/libraries/dom-drag.js
+phpMyAdmin/libraries/export/
 phpMyAdmin/libraries/export/csv.php
 phpMyAdmin/libraries/export/latex.php
 phpMyAdmin/libraries/export/sql.php
 phpMyAdmin/libraries/export/xml.php
+phpMyAdmin/libraries/fpdf/
 phpMyAdmin/libraries/fpdf/README
+phpMyAdmin/libraries/fpdf/font/
 phpMyAdmin/libraries/fpdf/font/courier.php
 phpMyAdmin/libraries/fpdf/font/helvetica.php
 phpMyAdmin/libraries/fpdf/font/helveticab.php
@@ -236,6 +246,7 @@ phpMyAdmin/libraries/sqlvalidator.class.php
 phpMyAdmin/libraries/sqlvalidator.lib.php
 phpMyAdmin/libraries/string.lib.php
 phpMyAdmin/libraries/tbl_change.js
+phpMyAdmin/libraries/transformations/
 phpMyAdmin/libraries/transformations.lib.php
 phpMyAdmin/libraries/transformations/README
 phpMyAdmin/libraries/transformations/TEMPLATE
@@ -266,6 +277,7 @@ phpMyAdmin/phpinfo.php
 phpMyAdmin/queryframe.php
 phpMyAdmin/querywindow.php
 phpMyAdmin/read_dump.php
+phpMyAdmin/scripts/
 phpMyAdmin/scripts/check_lang.php
 phpMyAdmin/scripts/convertcfg.pl
 phpMyAdmin/scripts/create-release.sh
@@ -309,15 +321,3 @@ phpMyAdmin/tbl_select.php
 phpMyAdmin/transformation_wrapper.php
 phpMyAdmin/translators.html
 phpMyAdmin/user_password.php
-@dirrm phpMyAdmin/scripts
-@dirrm phpMyAdmin/libraries/transformations
-@dirrm phpMyAdmin/libraries/fpdf/font
-@dirrm phpMyAdmin/libraries/fpdf
-@dirrm phpMyAdmin/libraries/export
-@dirrm phpMyAdmin/libraries/dbg
-@dirrm phpMyAdmin/libraries/auth
-@dirrm phpMyAdmin/libraries
-@dirrm phpMyAdmin/lang
-@dirrm phpMyAdmin/images
-@dirrm phpMyAdmin/css
-@dirrm phpMyAdmin

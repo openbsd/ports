@@ -1,14 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/04/18 19:53:41 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:49:51 espie Exp $
+${P5SITE}/Apache/
 ${P5SITE}/Apache/Mason.pm
+${P5SITE}/Bundle/
+${P5SITE}/Bundle/HTML/
 ${P5SITE}/Bundle/HTML/Mason.pm
+${P5SITE}/HTML/
+${P5SITE}/HTML/Mason/
 ${P5SITE}/HTML/Mason.pm
 ${P5SITE}/HTML/Mason/Admin.pod
 ${P5SITE}/HTML/Mason/ApacheHandler.pm
 ${P5SITE}/HTML/Mason/Buffer.pm
 ${P5SITE}/HTML/Mason/CGIHandler.pm
+${P5SITE}/HTML/Mason/Cache/
 ${P5SITE}/HTML/Mason/Cache/BaseCache.pm
+${P5SITE}/HTML/Mason/Compiler/
 ${P5SITE}/HTML/Mason/Compiler.pm
 ${P5SITE}/HTML/Mason/Compiler/ToObject.pm
+${P5SITE}/HTML/Mason/Component/
 ${P5SITE}/HTML/Mason/Component.pm
 ${P5SITE}/HTML/Mason/Component/FileBased.pm
 ${P5SITE}/HTML/Mason/Component/Subcomponent.pm
@@ -23,6 +31,7 @@ ${P5SITE}/HTML/Mason/MethodMaker.pm
 ${P5SITE}/HTML/Mason/Params.pod
 ${P5SITE}/HTML/Mason/Parser.pm
 ${P5SITE}/HTML/Mason/Request.pm
+${P5SITE}/HTML/Mason/Resolver/
 ${P5SITE}/HTML/Mason/Resolver.pm
 ${P5SITE}/HTML/Mason/Resolver/File.pm
 ${P5SITE}/HTML/Mason/Resolver/Null.pm
@@ -30,45 +39,33 @@ ${P5SITE}/HTML/Mason/Subclassing.pod
 ${P5SITE}/HTML/Mason/Tests.pm
 ${P5SITE}/HTML/Mason/Tools.pm
 ${P5SITE}/HTML/Mason/Utils.pm
-@comment ${P5ARCH}/auto/HTML/Mason/.packlist
-man/man3p/Bundle::HTML::Mason.3p
-man/man3p/HTML::Mason.3p
-man/man3p/HTML::Mason::Admin.3p
-man/man3p/HTML::Mason::ApacheHandler.3p
-man/man3p/HTML::Mason::Buffer.3p
-man/man3p/HTML::Mason::CGIHandler.3p
-man/man3p/HTML::Mason::Cache::BaseCache.3p
-man/man3p/HTML::Mason::Compiler.3p
-man/man3p/HTML::Mason::Compiler::ToObject.3p
-man/man3p/HTML::Mason::Component.3p
-man/man3p/HTML::Mason::Component::FileBased.3p
-man/man3p/HTML::Mason::Component::Subcomponent.3p
-man/man3p/HTML::Mason::ComponentSource.3p
-man/man3p/HTML::Mason::Devel.3p
-man/man3p/HTML::Mason::Escapes.3p
-man/man3p/HTML::Mason::Exceptions.3p
-man/man3p/HTML::Mason::FakeApache.3p
-man/man3p/HTML::Mason::Interp.3p
-man/man3p/HTML::Mason::Lexer.3p
-man/man3p/HTML::Mason::MethodMaker.3p
-man/man3p/HTML::Mason::Params.3p
-man/man3p/HTML::Mason::Parser.3p
-man/man3p/HTML::Mason::Request.3p
-man/man3p/HTML::Mason::Resolver.3p
-man/man3p/HTML::Mason::Resolver::File.3p
-man/man3p/HTML::Mason::Resolver::Null.3p
-man/man3p/HTML::Mason::Subclassing.3p
-man/man3p/HTML::Mason::Tests.3p
-man/man3p/HTML::Mason::Tools.3p
-man/man3p/HTML::Mason::Utils.3p
-@comment @dirrm ${P5ARCH}/auto/HTML/Mason
-@comment @dirrm ${P5ARCH}/auto/HTML
-@dirrm ${P5SITE}/HTML/Mason/Resolver
-@dirrm ${P5SITE}/HTML/Mason/Component
-@dirrm ${P5SITE}/HTML/Mason/Compiler
-@dirrm ${P5SITE}/HTML/Mason/Cache
-@dirrm ${P5SITE}/HTML/Mason
-@dirrm ${P5SITE}/HTML
-@dirrm ${P5SITE}/Bundle/HTML
-@dirrm ${P5SITE}/Bundle
-@dirrm ${P5SITE}/Apache
+@man man/man3p/Bundle::HTML::Mason.3p
+@man man/man3p/HTML::Mason.3p
+@man man/man3p/HTML::Mason::Admin.3p
+@man man/man3p/HTML::Mason::ApacheHandler.3p
+@man man/man3p/HTML::Mason::Buffer.3p
+@man man/man3p/HTML::Mason::CGIHandler.3p
+@man man/man3p/HTML::Mason::Cache::BaseCache.3p
+@man man/man3p/HTML::Mason::Compiler.3p
+@man man/man3p/HTML::Mason::Compiler::ToObject.3p
+@man man/man3p/HTML::Mason::Component.3p
+@man man/man3p/HTML::Mason::Component::FileBased.3p
+@man man/man3p/HTML::Mason::Component::Subcomponent.3p
+@man man/man3p/HTML::Mason::ComponentSource.3p
+@man man/man3p/HTML::Mason::Devel.3p
+@man man/man3p/HTML::Mason::Escapes.3p
+@man man/man3p/HTML::Mason::Exceptions.3p
+@man man/man3p/HTML::Mason::FakeApache.3p
+@man man/man3p/HTML::Mason::Interp.3p
+@man man/man3p/HTML::Mason::Lexer.3p
+@man man/man3p/HTML::Mason::MethodMaker.3p
+@man man/man3p/HTML::Mason::Params.3p
+@man man/man3p/HTML::Mason::Parser.3p
+@man man/man3p/HTML::Mason::Request.3p
+@man man/man3p/HTML::Mason::Resolver.3p
+@man man/man3p/HTML::Mason::Resolver::File.3p
+@man man/man3p/HTML::Mason::Resolver::Null.3p
+@man man/man3p/HTML::Mason::Subclassing.3p
+@man man/man3p/HTML::Mason::Tests.3p
+@man man/man3p/HTML::Mason::Tools.3p
+@man man/man3p/HTML::Mason::Utils.3p

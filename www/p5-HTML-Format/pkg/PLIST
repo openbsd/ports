@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/01/18 02:55:03 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:49:51 espie Exp $
 ${P5SITE}/HTML/FormatPS.pm
 ${P5SITE}/HTML/FormatText.pm
 ${P5SITE}/HTML/Formatter.pm
-@comment ${P5ARCH}/auto/HTML-Format/.packlist
-man/man3p/HTML::FormatPS.3p
-man/man3p/HTML::FormatText.3p
-man/man3p/HTML::Formatter.3p
-@comment @dirrm ${P5ARCH}/auto/HTML-Format
+@man man/man3p/HTML::FormatPS.3p
+@man man/man3p/HTML::FormatText.3p
+@man man/man3p/HTML::Formatter.3p

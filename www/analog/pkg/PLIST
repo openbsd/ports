@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.21 2004/04/13 21:27:01 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.22 2004/09/15 18:49:48 espie Exp $
 @pkgcfl chipmunk-*
 bin/analog
+share/analog/
 share/analog/anlgform.html
 share/analog/anlgform.pl
+share/analog/images/
 share/analog/images/analogo.gif
 share/analog/images/analogo.png
 share/analog/images/bara1.gif
@@ -138,6 +140,7 @@ share/analog/images/sq7.png
 share/analog/images/sq8.png
 share/analog/images/sq9.png
 share/analog/images/sqg.png
+share/analog/lang/
 share/analog/lang/README.txt
 share/analog/lang/am.lng
 share/analog/lang/amdom.tab
@@ -301,6 +304,7 @@ share/analog/lang/usform.html
 share/analog/lang/yu.lng
 share/analog/lang/yua.lng
 share/analog/lang/yudom.tab
+share/doc/analog/
 share/doc/analog/LicBSD.txt
 share/doc/analog/Licapach.txt
 share/doc/analog/Licence.txt
@@ -365,6 +369,7 @@ share/doc/analog/wasnew3.html
 share/doc/analog/wasnew4.html
 share/doc/analog/webworks.html
 share/doc/analog/whatsnew.html
+share/examples/analog/
 share/examples/analog/big.cfg
 share/examples/analog/bigbyrep.cfg
 share/examples/analog/misclogs.cfg
@@ -374,10 +379,5 @@ share/examples/analog/statslab.cfg
 share/examples/analog/typealias.cfg
 share/examples/analog/virtdoms.cfg
 share/examples/analog/xferlog.cfg
-@dirrm share/examples/analog
-@dirrm share/doc/analog
-@dirrm share/analog/lang
-@dirrm share/analog/images
-@dirrm share/analog
 @cwd ${SYSCONFDIR}
 @extra analog.cfg

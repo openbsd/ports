@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2002/03/27 13:29:15 wilfried Exp $
-lib/libcgiparse.so.1.0
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/15 18:49:49 espie Exp $
+@lib lib/libcgiparse.so.1.0

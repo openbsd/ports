@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/04/15 07:34:11 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:49:49 espie Exp $
 bin/ffproxy
-man/man5/ffproxy.conf.5
-man/man7/ffproxy.quick.7
-man/man8/ffproxy.8
+@man man/man5/ffproxy.conf.5
+@man man/man7/ffproxy.quick.7
+@man man/man8/ffproxy.8
+share/doc/ffproxy/
 share/doc/ffproxy/README
+share/examples/ffproxy/
+share/examples/ffproxy/db/
 share/examples/ffproxy/db/access.dyndns
 share/examples/ffproxy/db/access.host
 share/examples/ffproxy/db/access.ip
@@ -17,15 +20,12 @@ share/examples/ffproxy/db/filter.rheader.entry
 share/examples/ffproxy/db/filter.rheader.match
 share/examples/ffproxy/db/filter.url.match
 share/examples/ffproxy/ffproxy.conf
+share/examples/ffproxy/html/
 share/examples/ffproxy/html/connect
 share/examples/ffproxy/html/filtered
 share/examples/ffproxy/html/invalid
 share/examples/ffproxy/html/post
 share/examples/ffproxy/html/resolve
-@dirrm share/examples/ffproxy/html
-@dirrm share/examples/ffproxy/db
-@dirrm share/examples/ffproxy
-@dirrm share/doc/ffproxy
 @cwd ${SYSCONFDIR}
 @extra ffproxy.conf
 @extraunexec rm -rf /var/ffproxy

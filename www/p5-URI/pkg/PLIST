@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/04/22 22:15:47 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:49:52 espie Exp $
+${P5SITE}/URI/
 ${P5SITE}/URI.pm
 ${P5SITE}/URI/Escape.pm
-@comment ${P5SITE}/URI/Escape.pm.orig
 ${P5SITE}/URI/Heuristic.pm
 ${P5SITE}/URI/QueryParam.pm
 ${P5SITE}/URI/Split.pm
@@ -16,6 +16,7 @@ ${P5SITE}/URI/_segment.pm
 ${P5SITE}/URI/_server.pm
 ${P5SITE}/URI/_userpass.pm
 ${P5SITE}/URI/data.pm
+${P5SITE}/URI/file/
 ${P5SITE}/URI/file.pm
 ${P5SITE}/URI/file/Base.pm
 ${P5SITE}/URI/file/FAT.pm
@@ -46,24 +47,17 @@ ${P5SITE}/URI/snews.pm
 ${P5SITE}/URI/ssh.pm
 ${P5SITE}/URI/telnet.pm
 ${P5SITE}/URI/tn3270.pm
+${P5SITE}/URI/urn/
 ${P5SITE}/URI/urn.pm
 ${P5SITE}/URI/urn/isbn.pm
 ${P5SITE}/URI/urn/oid.pm
-@comment ${P5ARCH}/auto/URI/.packlist
-man/man3p/URI.3p
-man/man3p/URI::Escape.3p
-man/man3p/URI::Heuristic.3p
-man/man3p/URI::QueryParam.3p
-man/man3p/URI::Split.3p
-man/man3p/URI::URL.3p
-man/man3p/URI::WithBase.3p
-man/man3p/URI::data.3p
-man/man3p/URI::file.3p
-man/man3p/URI::ldap.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/URI
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/URI/urn
-@dirrm ${P5SITE}/URI/file
-@dirrm ${P5SITE}/URI
+@man man/man3p/URI.3p
+@man man/man3p/URI::Escape.3p
+@man man/man3p/URI::Heuristic.3p
+@man man/man3p/URI::QueryParam.3p
+@man man/man3p/URI::Split.3p
+@man man/man3p/URI::URL.3p
+@man man/man3p/URI::WithBase.3p
+@man man/man3p/URI::data.3p
+@man man/man3p/URI::file.3p
+@man man/man3p/URI::ldap.3p

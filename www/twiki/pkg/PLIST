@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/07/14 13:59:46 espie Exp $
-@comment @dir cgi-bin
-@dir cgi-bin/twiki
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:49:53 espie Exp $
+cgi-bin/twiki/
 cgi-bin/twiki/attach
 cgi-bin/twiki/changes
 cgi-bin/twiki/edit
@@ -22,11 +21,10 @@ cgi-bin/twiki/testenv
 cgi-bin/twiki/upload
 cgi-bin/twiki/view
 cgi-bin/twiki/viewfile
-@comment @dir htdocs
-@dir htdocs/twiki
-@dir htdocs/twiki/data
+htdocs/twiki/
+htdocs/twiki/data/
 htdocs/twiki/data/.htpasswd
-@dir htdocs/twiki/data/Know
+htdocs/twiki/data/Know/
 htdocs/twiki/data/Know/.changes
 htdocs/twiki/data/Know/.mailnotify
 htdocs/twiki/data/Know/IncorrectDllVersionW32PTH10DLL.txt
@@ -85,7 +83,7 @@ htdocs/twiki/data/Know/WebTopicList.txt
 htdocs/twiki/data/Know/WebTopicList.txt,v
 htdocs/twiki/data/Know/WinDoze95Crash.txt
 htdocs/twiki/data/Know/WinDoze95Crash.txt,v
-@dir htdocs/twiki/data/Main
+htdocs/twiki/data/Main/
 htdocs/twiki/data/Main/.changes
 htdocs/twiki/data/Main/.mailnotify
 htdocs/twiki/data/Main/AndreaSterbini.txt
@@ -144,7 +142,7 @@ htdocs/twiki/data/Main/WebStatistics.txt
 htdocs/twiki/data/Main/WebStatistics.txt,v
 htdocs/twiki/data/Main/WebTopicList.txt
 htdocs/twiki/data/Main/WebTopicList.txt,v
-@dir htdocs/twiki/data/Sandbox
+htdocs/twiki/data/Sandbox/
 htdocs/twiki/data/Sandbox/.changes
 htdocs/twiki/data/Sandbox/.mailnotify
 htdocs/twiki/data/Sandbox/WebChanges.txt
@@ -163,7 +161,7 @@ htdocs/twiki/data/Sandbox/WebStatistics.txt
 htdocs/twiki/data/Sandbox/WebStatistics.txt,v
 htdocs/twiki/data/Sandbox/WebTopicList.txt
 htdocs/twiki/data/Sandbox/WebTopicList.txt,v
-@dir htdocs/twiki/data/TWiki
+htdocs/twiki/data/TWiki/
 htdocs/twiki/data/TWiki/.changes
 htdocs/twiki/data/TWiki/.mailnotify
 htdocs/twiki/data/TWiki/AdminSkillsAssumptions.txt
@@ -444,7 +442,7 @@ htdocs/twiki/data/TWiki/WindowsInstallCookbook.txt
 htdocs/twiki/data/TWiki/WindowsInstallCookbook.txt,v
 htdocs/twiki/data/TWiki/YouAreHere.txt
 htdocs/twiki/data/TWiki/YouAreHere.txt,v
-@dir htdocs/twiki/data/Trash
+htdocs/twiki/data/Trash/
 htdocs/twiki/data/Trash/.changes
 htdocs/twiki/data/Trash/.mailnotify
 htdocs/twiki/data/Trash/TrashAttachment.txt
@@ -465,7 +463,7 @@ htdocs/twiki/data/Trash/WebStatistics.txt
 htdocs/twiki/data/Trash/WebStatistics.txt,v
 htdocs/twiki/data/Trash/WebTopicList.txt
 htdocs/twiki/data/Trash/WebTopicList.txt,v
-@dir htdocs/twiki/data/_default
+htdocs/twiki/data/_default/
 htdocs/twiki/data/_default/.changes
 htdocs/twiki/data/_default/.mailnotify
 htdocs/twiki/data/_default/WebChanges.txt
@@ -489,10 +487,10 @@ htdocs/twiki/data/_default/WebTopicList.txt,v
 htdocs/twiki/data/debug.txt
 htdocs/twiki/data/mime.types
 htdocs/twiki/data/warning.txt
-@dir htdocs/twiki/lib
-@dir htdocs/twiki/lib/Algorithm
+htdocs/twiki/lib/
+htdocs/twiki/lib/Algorithm/
 htdocs/twiki/lib/Algorithm/Diff.pm
-@dir htdocs/twiki/lib/TWiki
+htdocs/twiki/lib/TWiki/
 htdocs/twiki/lib/TWiki.cfg
 htdocs/twiki/lib/TWiki.cfg-sample
 htdocs/twiki/lib/TWiki.pm
@@ -502,36 +500,36 @@ htdocs/twiki/lib/TWiki/Form.pm
 htdocs/twiki/lib/TWiki/Func.pm
 htdocs/twiki/lib/TWiki/Meta.pm
 htdocs/twiki/lib/TWiki/Net.pm
-@dir htdocs/twiki/lib/TWiki/Plugins
+htdocs/twiki/lib/TWiki/Plugins/
 htdocs/twiki/lib/TWiki/Plugins.pm
 htdocs/twiki/lib/TWiki/Plugins/DefaultPlugin.pm
 htdocs/twiki/lib/TWiki/Plugins/EmptyPlugin.pm
 htdocs/twiki/lib/TWiki/Plugins/InterwikiPlugin.pm
 htdocs/twiki/lib/TWiki/Prefs.pm
 htdocs/twiki/lib/TWiki/Search.pm
-@dir htdocs/twiki/lib/TWiki/Store
+htdocs/twiki/lib/TWiki/Store/
 htdocs/twiki/lib/TWiki/Store.pm
 htdocs/twiki/lib/TWiki/Store/RcsFile.pm
 htdocs/twiki/lib/TWiki/Store/RcsLite.pm
 htdocs/twiki/lib/TWiki/Store/RcsWrap.pm
-@dir htdocs/twiki/pub
-@dir htdocs/twiki/pub/Know
-@dir htdocs/twiki/pub/Know/IncorrectDllVersionW32PTH10DLL
+htdocs/twiki/pub/
+htdocs/twiki/pub/Know/
+htdocs/twiki/pub/Know/IncorrectDllVersionW32PTH10DLL/
 htdocs/twiki/pub/Know/IncorrectDllVersionW32PTH10DLL/W32PTH10.DLL
-@dir htdocs/twiki/pub/Main
-@dir htdocs/twiki/pub/Sandbox
-@dir htdocs/twiki/pub/TWiki
-@dir htdocs/twiki/pub/TWiki/FileAttachment
+htdocs/twiki/pub/Main/
+htdocs/twiki/pub/Sandbox/
+htdocs/twiki/pub/TWiki/
+htdocs/twiki/pub/TWiki/FileAttachment/
 htdocs/twiki/pub/TWiki/FileAttachment/Sample.txt
 htdocs/twiki/pub/TWiki/FileAttachment/Smile.gif
 htdocs/twiki/pub/TWiki/FileAttachment/Smile.gif,v
-@dir htdocs/twiki/pub/TWiki/PreviewBackground
+htdocs/twiki/pub/TWiki/PreviewBackground/
 htdocs/twiki/pub/TWiki/PreviewBackground/blankltgraybg.gif
 htdocs/twiki/pub/TWiki/PreviewBackground/blankwhitebg.gif
 htdocs/twiki/pub/TWiki/PreviewBackground/preview2bg.gif
 htdocs/twiki/pub/TWiki/PreviewBackground/preview2bg.gif,v
 htdocs/twiki/pub/TWiki/PreviewBackground/previewbg.gif
-@dir htdocs/twiki/pub/TWiki/TWikiDocGraphics
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/arrowright.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/arrowright.gif,v
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/attachfile.gif
@@ -562,7 +560,7 @@ htdocs/twiki/pub/TWiki/TWikiDocGraphics/viewtopic.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/viewtopic.gif,v
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/warning.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/warning.gif,v
-@dir htdocs/twiki/pub/TWiki/TWikiLogos
+htdocs/twiki/pub/TWiki/TWikiLogos/
 htdocs/twiki/pub/TWiki/TWikiLogos/twikiRobot121x54.gif
 htdocs/twiki/pub/TWiki/TWikiLogos/twikiRobot121x54.gif,v
 htdocs/twiki/pub/TWiki/TWikiLogos/twikiRobot121x54a.gif
@@ -577,15 +575,15 @@ htdocs/twiki/pub/TWiki/TWikiLogos/twikiRobot88x31.gif
 htdocs/twiki/pub/TWiki/TWikiLogos/twikiRobot88x31.gif,v
 htdocs/twiki/pub/TWiki/TWikiLogos/twikilogo88x31.gif
 htdocs/twiki/pub/TWiki/TWikiLogos/twikilogo88x31.gif,v
-@dir htdocs/twiki/pub/TWiki/TWikiTemplates
+htdocs/twiki/pub/TWiki/TWikiTemplates/
 htdocs/twiki/pub/TWiki/TWikiTemplates/testscreen.gif
 htdocs/twiki/pub/TWiki/TWikiTemplates/testscreen.gif,v
-@dir htdocs/twiki/pub/TWiki/WabiSabi
+htdocs/twiki/pub/TWiki/WabiSabi/
 htdocs/twiki/pub/TWiki/WabiSabi/wabisabi.gif
 htdocs/twiki/pub/TWiki/WabiSabi/wabisabi.gif,v
-@dir htdocs/twiki/pub/Trash
+htdocs/twiki/pub/Trash/
 htdocs/twiki/pub/favicon.ico
-@dir htdocs/twiki/pub/icn
+htdocs/twiki/pub/icn/
 htdocs/twiki/pub/icn/_filetypes.txt
 htdocs/twiki/pub/icn/bat.gif
 htdocs/twiki/pub/icn/bmp.gif
@@ -623,7 +621,7 @@ htdocs/twiki/pub/icn/xml.gif
 htdocs/twiki/pub/icn/xsl.gif
 htdocs/twiki/pub/icn/zip.gif
 htdocs/twiki/pub/wikiHome.gif
-@dir htdocs/twiki/templates
+htdocs/twiki/templates/
 htdocs/twiki/templates/attach.tmpl
 htdocs/twiki/templates/attachagain.tmpl
 htdocs/twiki/templates/attachnew.tmpl

@@ -1,11 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/04/24 08:20:45 peter Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:49:51 espie Exp $
 bin/text2html
+@comment ${P5SITE}/HTML/
 ${P5SITE}/HTML/FromText.pm
-@comment ${P5ARCH}/auto/HTML/FromText/.packlist
-man/man1/text2html.1
-man/man3p/HTML::FromText.3p
-@comment @dirrm ${P5ARCH}/auto/HTML/FromText
-@comment @dirrm ${P5ARCH}/auto/HTML
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@comment @dirrm ${P5SITE}/HTML
+@man man/man1/text2html.1
+@man man/man3p/HTML::FromText.3p

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/10/02 20:18:59 heko Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:49:48 espie Exp $
+Amaya/
+Amaya/amaya/
 Amaya/amaya/AmayaPage.html
 Amaya/amaya/AmayaPage.html.fr
 Amaya/amaya/Annot.conf
@@ -64,11 +66,15 @@ Amaya/amaya/radio.gif
 Amaya/amaya/target.gif
 Amaya/amaya/toggle-s.gif
 Amaya/amaya/toggle.gif
+Amaya/annotlib/
 Amaya/annotlib/Annot.STR
 Amaya/annotlib/AnnotP.PRS
 Amaya/annotlib/AnnotT.TRA
+Amaya/applis/
+Amaya/applis/bin/
 Amaya/applis/bin/amaya
 Amaya/applis/bin/print
+Amaya/config/
 Amaya/config/XKeysymDB
 Amaya/config/amaya.keyboard
 Amaya/config/amaya.profiles
@@ -100,6 +106,7 @@ Amaya/config/tr-amayamsg
 Amaya/config/tr-corrdialogue
 Amaya/config/tr-libdialogue
 Amaya/config/unix-thot.rc
+Amaya/dicopar/
 Amaya/dicopar/alphabet
 Amaya/dicopar/american.ptn
 Amaya/dicopar/clavier
@@ -112,6 +119,8 @@ Amaya/dicopar/italiano.ptn
 Amaya/dicopar/nederl.ptn
 Amaya/dicopar/portug.ptn
 Amaya/dicopar/swedish.ptn
+Amaya/doc/
+Amaya/doc/Icons/
 Amaya/doc/Icons/Back.gif
 Amaya/doc/Icons/Browser.gif
 Amaya/doc/Icons/CacheMenu.gif
@@ -193,6 +202,7 @@ Amaya/doc/Icons/ui.gif
 Amaya/doc/Icons/up.gif
 Amaya/doc/Icons/w3c-amaya.gif
 Amaya/doc/Icons/warning.gif
+Amaya/doc/amaya/
 Amaya/doc/amaya/Access.html
 Amaya/doc/amaya/Access.html.fr
 Amaya/doc/amaya/Annotations.html
@@ -208,6 +218,7 @@ Amaya/doc/amaya/Configure.html
 Amaya/doc/amaya/Configure.html.fr
 Amaya/doc/amaya/Creating.html
 Amaya/doc/amaya/Creating.html.fr
+Amaya/doc/amaya/HTML-elements/
 Amaya/doc/amaya/HTML-elements/40styling.html
 Amaya/doc/amaya/HTML-elements/address.html
 Amaya/doc/amaya/HTML-elements/headings.html
@@ -253,6 +264,7 @@ Amaya/doc/amaya/Transform.html
 Amaya/doc/amaya/Views.html
 Amaya/doc/amaya/Views.html.fr
 Amaya/doc/amaya/index.css
+Amaya/fonts/
 Amaya/fonts/Families.list
 Amaya/fonts/fonts.dir
 Amaya/fonts/icones.ff
@@ -260,15 +272,3 @@ Amaya/fonts/icones.pcf
 Amaya/fonts/icones1.fb
 Amaya/fonts/icones11.fb
 bin/amaya
-@dirrm Amaya/fonts
-@dirrm Amaya/doc/amaya/HTML-elements
-@dirrm Amaya/doc/amaya
-@dirrm Amaya/doc/Icons
-@dirrm Amaya/doc
-@dirrm Amaya/dicopar
-@dirrm Amaya/config
-@dirrm Amaya/applis/bin
-@dirrm Amaya/applis
-@dirrm Amaya/annotlib
-@dirrm Amaya/amaya
-@dirrm Amaya

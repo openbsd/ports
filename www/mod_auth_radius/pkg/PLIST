@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/01 15:26:13 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:50 espie Exp $
 lib/mod_auth_radius.so
 sbin/mod_auth_radius-enable
+share/examples/mod_auth_radius/
 share/examples/mod_auth_radius/htaccess-example
 share/examples/mod_auth_radius/httpd.conf-example
-@dirrm share/examples/mod_auth_radius

@@ -1,32 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/15 21:21:18 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:49:49 espie Exp $
+${DISTNAME}/
 ${DISTNAME}/LICENSE
 ${DISTNAME}/README.txt
 ${DISTNAME}/RELEASE-NOTES-4.1.txt
 ${DISTNAME}/RELEASE-PLAN-4.1.txt
 ${DISTNAME}/RUNNING.txt
+${DISTNAME}/bin/
 ${DISTNAME}/bin/bootstrap.jar
-@comment ${DISTNAME}/bin/catalina.bat
 ${DISTNAME}/bin/catalina.sh
 ${DISTNAME}/bin/commons-daemon.jar
-@comment ${DISTNAME}/bin/cpappend.bat
-@comment ${DISTNAME}/bin/digest.bat
 ${DISTNAME}/bin/digest.sh
-@comment ${DISTNAME}/bin/jasper.bat
 ${DISTNAME}/bin/jasper.sh
-@comment ${DISTNAME}/bin/jspc.bat
 ${DISTNAME}/bin/jspc.sh
-@comment ${DISTNAME}/bin/setclasspath.bat
 ${DISTNAME}/bin/setclasspath.sh
-@comment ${DISTNAME}/bin/shutdown.bat
 ${DISTNAME}/bin/shutdown.sh
-@comment ${DISTNAME}/bin/startup.bat
 ${DISTNAME}/bin/startup.sh
 ${DISTNAME}/bin/tomcat-jni.jar
-@comment ${DISTNAME}/bin/tomcat.exe
-@comment ${DISTNAME}/bin/tool-wrapper.bat
 ${DISTNAME}/bin/tool-wrapper.sh
+${DISTNAME}/common/
+${DISTNAME}/common/classes/
+${DISTNAME}/common/endorsed/
 ${DISTNAME}/common/endorsed/xercesImpl.jar
 ${DISTNAME}/common/endorsed/xmlParserAPIs.jar
+${DISTNAME}/common/lib/
 ${DISTNAME}/common/lib/activation.jar
 ${DISTNAME}/common/lib/ant.jar
 ${DISTNAME}/common/lib/commons-collections.jar
@@ -43,6 +39,7 @@ ${DISTNAME}/common/lib/naming-common.jar
 ${DISTNAME}/common/lib/naming-factory.jar
 ${DISTNAME}/common/lib/naming-resources.jar
 ${DISTNAME}/common/lib/servlet.jar
+${DISTNAME}/conf/
 ${DISTNAME}/conf/README.OpenBSD
 ${DISTNAME}/conf/catalina.policy
 ${DISTNAME}/conf/jk2.properties
@@ -51,6 +48,9 @@ ${DISTNAME}/conf/server.xml
 ${DISTNAME}/conf/tomcat-users.xml
 ${DISTNAME}/conf/tomcat.rc
 ${DISTNAME}/conf/web.xml
+${DISTNAME}/server/
+${DISTNAME}/server/classes/
+${DISTNAME}/server/lib/
 ${DISTNAME}/server/lib/catalina-ant.jar
 ${DISTNAME}/server/lib/catalina.jar
 ${DISTNAME}/server/lib/commons-beanutils.jar
@@ -75,7 +75,16 @@ ${DISTNAME}/server/lib/tomcat-jk.jar
 ${DISTNAME}/server/lib/tomcat-jk2.jar
 ${DISTNAME}/server/lib/tomcat-util.jar
 ${DISTNAME}/server/lib/tomcat-warp.jar
+${DISTNAME}/server/webapps/
+${DISTNAME}/server/webapps/admin/
+${DISTNAME}/server/webapps/admin/WEB-INF/
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/filters/
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/filters/SetCharacterEncodingFilter.class
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/ActionTag.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/ActionsTag.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/ApplicationLocales.class
@@ -104,6 +113,7 @@ ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/TreeCon
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/TreeControlNode.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/TreeControlTag.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/TreeControlTestAction.class
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/connector/
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/connector/AddConnectorAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/connector/ConnectorForm.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/connector/ConnectorsForm.class
@@ -112,6 +122,7 @@ ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/connect
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/connector/DeleteConnectorsAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/connector/EditConnectorAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/connector/SaveConnectorAction.class
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/context/
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/context/AddContextAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/context/ContextForm.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/context/ContextsForm.class
@@ -120,6 +131,7 @@ ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/context
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/context/DeleteContextsAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/context/EditContextAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/context/SaveContextAction.class
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/defaultcontext/
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/defaultcontext/AddDefaultContextAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/defaultcontext/DefaultContextForm.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/defaultcontext/DefaultContextsForm.class
@@ -128,6 +140,8 @@ ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/default
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/defaultcontext/DeleteDefaultContextsAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/defaultcontext/EditDefaultContextAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/defaultcontext/SaveDefaultContextAction.class
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/filters/
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host/
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host/AddAliasAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host/AddHostAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host/AliasForm.class
@@ -143,6 +157,7 @@ ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host/Ho
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host/HostsForm.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host/SaveAliasAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host/SaveHostAction.class
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/logger/
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/logger/AddLoggerAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/logger/DeleteLoggerAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/logger/DeleteLoggerForm.class
@@ -151,6 +166,7 @@ ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/logger/
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/logger/LoggerForm.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/logger/LoggersForm.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/logger/SaveLoggerAction.class
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/AddRealmAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/DeleteRealmAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/DeleteRealmForm.class
@@ -166,6 +182,7 @@ ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/S
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/SaveMemoryRealmAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/SaveUserDatabaseRealmAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/UserDatabaseRealmForm.class
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/resources/
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/resources/BaseForm.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/resources/DataSourceForm.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/resources/DataSourcesForm.class
@@ -199,9 +216,11 @@ ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/resourc
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/resources/SetUpUserDatabaseAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/resources/UserDatabaseForm.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/resources/UserDatabasesForm.class
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/server/
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/server/EditServerAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/server/SaveServerAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/server/ServerForm.class
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/service/
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/service/AddServiceAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/service/DeleteServiceAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/service/DeleteServiceForm.class
@@ -210,6 +229,7 @@ ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/service
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/service/SaveServiceAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/service/ServiceForm.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/service/ServicesForm.class
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/users/
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/users/BaseForm.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/users/DeleteGroupsAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/users/DeleteRolesAction.class
@@ -231,6 +251,7 @@ ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/users/U
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/users/UserUtils.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/users/UsersForm.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/users/UsersTreeBuilder.class
+${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/valve/
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/valve/AccessLogValveForm.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/valve/AddValveAction.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/valve/DeleteValveAction.class
@@ -250,6 +271,7 @@ ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/valve/V
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/valve/ValveUtil.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/valve/ValvesForm.class
 ${DISTNAME}/server/webapps/admin/WEB-INF/controls.tld
+${DISTNAME}/server/webapps/admin/WEB-INF/lib/
 ${DISTNAME}/server/webapps/admin/WEB-INF/lib/struts.jar
 ${DISTNAME}/server/webapps/admin/WEB-INF/struts-bean.tld
 ${DISTNAME}/server/webapps/admin/WEB-INF/struts-config.xml
@@ -260,20 +282,25 @@ ${DISTNAME}/server/webapps/admin/admin.css
 ${DISTNAME}/server/webapps/admin/banner.jsp
 ${DISTNAME}/server/webapps/admin/blank.jsp
 ${DISTNAME}/server/webapps/admin/buttons.jsp
+${DISTNAME}/server/webapps/admin/connector/
 ${DISTNAME}/server/webapps/admin/connector/connector.jsp
 ${DISTNAME}/server/webapps/admin/connector/connectors.jsp
+${DISTNAME}/server/webapps/admin/context/
 ${DISTNAME}/server/webapps/admin/context/context.jsp
 ${DISTNAME}/server/webapps/admin/context/contexts.jsp
+${DISTNAME}/server/webapps/admin/defaultcontext/
 ${DISTNAME}/server/webapps/admin/defaultcontext/defaultcontext.jsp
 ${DISTNAME}/server/webapps/admin/dumpRegistry.jsp
 ${DISTNAME}/server/webapps/admin/dumpServer.jsp
 ${DISTNAME}/server/webapps/admin/error.jsp
 ${DISTNAME}/server/webapps/admin/footer.jsp
 ${DISTNAME}/server/webapps/admin/header.jsp
+${DISTNAME}/server/webapps/admin/host/
 ${DISTNAME}/server/webapps/admin/host/alias.jsp
 ${DISTNAME}/server/webapps/admin/host/aliases.jsp
 ${DISTNAME}/server/webapps/admin/host/host.jsp
 ${DISTNAME}/server/webapps/admin/host/hosts.jsp
+${DISTNAME}/server/webapps/admin/images/
 ${DISTNAME}/server/webapps/admin/images/BlueTile.gif
 ${DISTNAME}/server/webapps/admin/images/Connector.gif
 ${DISTNAME}/server/webapps/admin/images/Context.gif
@@ -304,14 +331,17 @@ ${DISTNAME}/server/webapps/admin/images/linelastnode.gif
 ${DISTNAME}/server/webapps/admin/images/linemiddlenode.gif
 ${DISTNAME}/server/webapps/admin/images/linevertical.gif
 ${DISTNAME}/server/webapps/admin/index.jsp
+${DISTNAME}/server/webapps/admin/logger/
 ${DISTNAME}/server/webapps/admin/logger/logger.jsp
 ${DISTNAME}/server/webapps/admin/logger/loggers.jsp
 ${DISTNAME}/server/webapps/admin/login.jsp
+${DISTNAME}/server/webapps/admin/realm/
 ${DISTNAME}/server/webapps/admin/realm/jdbcRealm.jsp
 ${DISTNAME}/server/webapps/admin/realm/jndiRealm.jsp
 ${DISTNAME}/server/webapps/admin/realm/memoryRealm.jsp
 ${DISTNAME}/server/webapps/admin/realm/realms.jsp
 ${DISTNAME}/server/webapps/admin/realm/userDatabaseRealm.jsp
+${DISTNAME}/server/webapps/admin/resources/
 ${DISTNAME}/server/webapps/admin/resources/dataSource.jsp
 ${DISTNAME}/server/webapps/admin/resources/dataSources.jspf
 ${DISTNAME}/server/webapps/admin/resources/deleteDataSources.jsp
@@ -338,11 +368,14 @@ ${DISTNAME}/server/webapps/admin/resources/resourceLinks.jspf
 ${DISTNAME}/server/webapps/admin/resources/userDatabase.jsp
 ${DISTNAME}/server/webapps/admin/resources/userDatabases.jspf
 ${DISTNAME}/server/webapps/admin/saved.jsp
+${DISTNAME}/server/webapps/admin/server/
 ${DISTNAME}/server/webapps/admin/server/server.jsp
+${DISTNAME}/server/webapps/admin/service/
 ${DISTNAME}/server/webapps/admin/service/service.jsp
 ${DISTNAME}/server/webapps/admin/service/services.jsp
 ${DISTNAME}/server/webapps/admin/tree-control-test.css
 ${DISTNAME}/server/webapps/admin/tree-control-test.jsp
+${DISTNAME}/server/webapps/admin/users/
 ${DISTNAME}/server/webapps/admin/users/deleteGroups.jsp
 ${DISTNAME}/server/webapps/admin/users/deleteRoles.jsp
 ${DISTNAME}/server/webapps/admin/users/deleteUsers.jsp
@@ -360,25 +393,39 @@ ${DISTNAME}/server/webapps/admin/users/role.jsp
 ${DISTNAME}/server/webapps/admin/users/roles.jspf
 ${DISTNAME}/server/webapps/admin/users/user.jsp
 ${DISTNAME}/server/webapps/admin/users/users.jspf
+${DISTNAME}/server/webapps/admin/valve/
 ${DISTNAME}/server/webapps/admin/valve/accessLogValve.jsp
 ${DISTNAME}/server/webapps/admin/valve/remoteAddrValve.jsp
 ${DISTNAME}/server/webapps/admin/valve/remoteHostValve.jsp
 ${DISTNAME}/server/webapps/admin/valve/requestDumperValve.jsp
 ${DISTNAME}/server/webapps/admin/valve/singleSignOnValve.jsp
 ${DISTNAME}/server/webapps/admin/valve/valves.jsp
+${DISTNAME}/server/webapps/manager/
+${DISTNAME}/server/webapps/manager/WEB-INF/
 ${DISTNAME}/server/webapps/manager/WEB-INF/web.xml
 ${DISTNAME}/server/webapps/manager/html-manager-howto.html
+${DISTNAME}/server/webapps/manager/images/
 ${DISTNAME}/server/webapps/manager/images/jakarta-logo.gif
 ${DISTNAME}/server/webapps/manager/images/tomcat.gif
 ${DISTNAME}/server/webapps/manager/images/void.gif
 ${DISTNAME}/server/webapps/manager/manager-howto.html
+${DISTNAME}/shared/
+${DISTNAME}/shared/classes/
+${DISTNAME}/shared/lib/
+${DISTNAME}/temp/
 ${DISTNAME}/temp/README.txt
+${DISTNAME}/webapps/
+${DISTNAME}/webapps/ROOT/
+${DISTNAME}/webapps/ROOT/WEB-INF/
 ${DISTNAME}/webapps/ROOT/WEB-INF/web.xml
 ${DISTNAME}/webapps/ROOT/index.jsp
 ${DISTNAME}/webapps/ROOT/jakarta-banner.gif
 ${DISTNAME}/webapps/ROOT/tomcat-power.gif
 ${DISTNAME}/webapps/ROOT/tomcat.gif
 ${DISTNAME}/webapps/admin.xml
+${DISTNAME}/webapps/examples/
+${DISTNAME}/webapps/examples/WEB-INF/
+${DISTNAME}/webapps/examples/WEB-INF/classes/
 ${DISTNAME}/webapps/examples/WEB-INF/classes/CookieExample.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/CookieExample.java
 ${DISTNAME}/webapps/examples/WEB-INF/classes/HelloWorldExample.class
@@ -399,6 +446,7 @@ ${DISTNAME}/webapps/examples/WEB-INF/classes/SendMailServlet.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/SendMailServlet.java
 ${DISTNAME}/webapps/examples/WEB-INF/classes/SessionExample.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/SessionExample.java
+${DISTNAME}/webapps/examples/WEB-INF/classes/cal/
 ${DISTNAME}/webapps/examples/WEB-INF/classes/cal/Entries.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/cal/Entries.java
 ${DISTNAME}/webapps/examples/WEB-INF/classes/cal/Entry.class
@@ -407,10 +455,13 @@ ${DISTNAME}/webapps/examples/WEB-INF/classes/cal/JspCalendar.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/cal/JspCalendar.java
 ${DISTNAME}/webapps/examples/WEB-INF/classes/cal/TableBean.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/cal/TableBean.java
+${DISTNAME}/webapps/examples/WEB-INF/classes/checkbox/
 ${DISTNAME}/webapps/examples/WEB-INF/classes/checkbox/CheckTest.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/checkbox/CheckTest.java
+${DISTNAME}/webapps/examples/WEB-INF/classes/colors/
 ${DISTNAME}/webapps/examples/WEB-INF/classes/colors/ColorGameBean.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/colors/ColorGameBean.java
+${DISTNAME}/webapps/examples/WEB-INF/classes/compressionFilters/
 ${DISTNAME}/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilter.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilter.java
 ${DISTNAME}/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilterTestServlet.class
@@ -419,10 +470,13 @@ ${DISTNAME}/webapps/examples/WEB-INF/classes/compressionFilters/CompressionRespo
 ${DISTNAME}/webapps/examples/WEB-INF/classes/compressionFilters/CompressionResponseStream.java
 ${DISTNAME}/webapps/examples/WEB-INF/classes/compressionFilters/CompressionServletResponseWrapper.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/compressionFilters/CompressionServletResponseWrapper.java
+${DISTNAME}/webapps/examples/WEB-INF/classes/dates/
 ${DISTNAME}/webapps/examples/WEB-INF/classes/dates/JspCalendar.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/dates/JspCalendar.java
+${DISTNAME}/webapps/examples/WEB-INF/classes/error/
 ${DISTNAME}/webapps/examples/WEB-INF/classes/error/Smart.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/error/Smart.java
+${DISTNAME}/webapps/examples/WEB-INF/classes/examples/
 ${DISTNAME}/webapps/examples/WEB-INF/classes/examples/ExampleTagBase.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/examples/ExampleTagBase.java
 ${DISTNAME}/webapps/examples/WEB-INF/classes/examples/FooTag.class
@@ -433,33 +487,44 @@ ${DISTNAME}/webapps/examples/WEB-INF/classes/examples/LogTag.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/examples/LogTag.java
 ${DISTNAME}/webapps/examples/WEB-INF/classes/examples/ShowSource.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/examples/ShowSource.java
+${DISTNAME}/webapps/examples/WEB-INF/classes/filters/
 ${DISTNAME}/webapps/examples/WEB-INF/classes/filters/ExampleFilter.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/filters/ExampleFilter.java
 ${DISTNAME}/webapps/examples/WEB-INF/classes/filters/RequestDumperFilter.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/filters/RequestDumperFilter.java
 ${DISTNAME}/webapps/examples/WEB-INF/classes/filters/SetCharacterEncodingFilter.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/filters/SetCharacterEncodingFilter.java
+${DISTNAME}/webapps/examples/WEB-INF/classes/listeners/
 ${DISTNAME}/webapps/examples/WEB-INF/classes/listeners/ContextListener.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/listeners/ContextListener.java
 ${DISTNAME}/webapps/examples/WEB-INF/classes/listeners/SessionListener.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/listeners/SessionListener.java
+${DISTNAME}/webapps/examples/WEB-INF/classes/num/
 ${DISTNAME}/webapps/examples/WEB-INF/classes/num/NumberGuessBean.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/num/NumberGuessBean.java
 ${DISTNAME}/webapps/examples/WEB-INF/classes/servletToJsp.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/servletToJsp.java
+${DISTNAME}/webapps/examples/WEB-INF/classes/sessions/
 ${DISTNAME}/webapps/examples/WEB-INF/classes/sessions/DummyCart.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/sessions/DummyCart.java
+${DISTNAME}/webapps/examples/WEB-INF/classes/util/
 ${DISTNAME}/webapps/examples/WEB-INF/classes/util/HTMLFilter.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/util/HTMLFilter.java
+${DISTNAME}/webapps/examples/WEB-INF/classes/validators/
 ${DISTNAME}/webapps/examples/WEB-INF/classes/validators/DebugValidator.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/validators/DebugValidator.java
+${DISTNAME}/webapps/examples/WEB-INF/jsp/
+${DISTNAME}/webapps/examples/WEB-INF/jsp/applet/
 ${DISTNAME}/webapps/examples/WEB-INF/jsp/applet/Clock2.java
 ${DISTNAME}/webapps/examples/WEB-INF/jsp/debug-taglib.tld
 ${DISTNAME}/webapps/examples/WEB-INF/jsp/example-taglib.tld
 ${DISTNAME}/webapps/examples/WEB-INF/web.xml
+${DISTNAME}/webapps/examples/images/
 ${DISTNAME}/webapps/examples/images/code.gif
 ${DISTNAME}/webapps/examples/images/execute.gif
 ${DISTNAME}/webapps/examples/images/return.gif
+${DISTNAME}/webapps/examples/jsp/
+${DISTNAME}/webapps/examples/jsp/cal/
 ${DISTNAME}/webapps/examples/jsp/cal/Entries.txt
 ${DISTNAME}/webapps/examples/jsp/cal/Entry.txt
 ${DISTNAME}/webapps/examples/jsp/cal/JspCalendar.txt
@@ -470,69 +535,87 @@ ${DISTNAME}/webapps/examples/jsp/cal/cal2.jsp
 ${DISTNAME}/webapps/examples/jsp/cal/cal2.txt
 ${DISTNAME}/webapps/examples/jsp/cal/calendar.html
 ${DISTNAME}/webapps/examples/jsp/cal/login.html
+${DISTNAME}/webapps/examples/jsp/checkbox/
 ${DISTNAME}/webapps/examples/jsp/checkbox/CheckTest.html
 ${DISTNAME}/webapps/examples/jsp/checkbox/check.html
 ${DISTNAME}/webapps/examples/jsp/checkbox/checkresult.jsp
 ${DISTNAME}/webapps/examples/jsp/checkbox/checkresult.txt
 ${DISTNAME}/webapps/examples/jsp/checkbox/cresult.html
+${DISTNAME}/webapps/examples/jsp/colors/
 ${DISTNAME}/webapps/examples/jsp/colors/ColorGameBean.html
 ${DISTNAME}/webapps/examples/jsp/colors/clr.html
 ${DISTNAME}/webapps/examples/jsp/colors/colors.html
 ${DISTNAME}/webapps/examples/jsp/colors/colors.txt
 ${DISTNAME}/webapps/examples/jsp/colors/colrs.jsp
+${DISTNAME}/webapps/examples/jsp/dates/
 ${DISTNAME}/webapps/examples/jsp/dates/date.html
 ${DISTNAME}/webapps/examples/jsp/dates/date.jsp
 ${DISTNAME}/webapps/examples/jsp/dates/date.txt
+${DISTNAME}/webapps/examples/jsp/error/
 ${DISTNAME}/webapps/examples/jsp/error/er.html
 ${DISTNAME}/webapps/examples/jsp/error/err.jsp
 ${DISTNAME}/webapps/examples/jsp/error/err.txt
 ${DISTNAME}/webapps/examples/jsp/error/error.html
 ${DISTNAME}/webapps/examples/jsp/error/errorpge.jsp
+${DISTNAME}/webapps/examples/jsp/forward/
 ${DISTNAME}/webapps/examples/jsp/forward/forward.jsp
 ${DISTNAME}/webapps/examples/jsp/forward/forward.txt
 ${DISTNAME}/webapps/examples/jsp/forward/fwd.html
 ${DISTNAME}/webapps/examples/jsp/forward/one.jsp
 ${DISTNAME}/webapps/examples/jsp/forward/two.html
+${DISTNAME}/webapps/examples/jsp/include/
 ${DISTNAME}/webapps/examples/jsp/include/foo.html
 ${DISTNAME}/webapps/examples/jsp/include/foo.jsp
 ${DISTNAME}/webapps/examples/jsp/include/inc.html
 ${DISTNAME}/webapps/examples/jsp/include/include.jsp
 ${DISTNAME}/webapps/examples/jsp/include/include.txt
 ${DISTNAME}/webapps/examples/jsp/index.html
+${DISTNAME}/webapps/examples/jsp/jsptoserv/
 ${DISTNAME}/webapps/examples/jsp/jsptoserv/hello.jsp
 ${DISTNAME}/webapps/examples/jsp/jsptoserv/jsptoservlet.jsp
 ${DISTNAME}/webapps/examples/jsp/jsptoserv/jts.html
 ${DISTNAME}/webapps/examples/jsp/jsptoserv/jts.txt
 ${DISTNAME}/webapps/examples/jsp/jsptoserv/stj.txt
+${DISTNAME}/webapps/examples/jsp/mail/
 ${DISTNAME}/webapps/examples/jsp/mail/sendmail.html
 ${DISTNAME}/webapps/examples/jsp/mail/sendmail.jsp
 ${DISTNAME}/webapps/examples/jsp/mail/sendmail.txt
+${DISTNAME}/webapps/examples/jsp/num/
 ${DISTNAME}/webapps/examples/jsp/num/numguess.html
 ${DISTNAME}/webapps/examples/jsp/num/numguess.jsp
 ${DISTNAME}/webapps/examples/jsp/num/numguess.txt
+${DISTNAME}/webapps/examples/jsp/plugin/
+${DISTNAME}/webapps/examples/jsp/plugin/applet/
 ${DISTNAME}/webapps/examples/jsp/plugin/applet/Clock2.class
 ${DISTNAME}/webapps/examples/jsp/plugin/applet/Clock2.java
 ${DISTNAME}/webapps/examples/jsp/plugin/plugin.html
 ${DISTNAME}/webapps/examples/jsp/plugin/plugin.jsp
 ${DISTNAME}/webapps/examples/jsp/plugin/plugin.txt
+${DISTNAME}/webapps/examples/jsp/security/
+${DISTNAME}/webapps/examples/jsp/security/protected/
 ${DISTNAME}/webapps/examples/jsp/security/protected/error.jsp
 ${DISTNAME}/webapps/examples/jsp/security/protected/index.jsp
 ${DISTNAME}/webapps/examples/jsp/security/protected/login.jsp
+${DISTNAME}/webapps/examples/jsp/sessions/
 ${DISTNAME}/webapps/examples/jsp/sessions/DummyCart.html
 ${DISTNAME}/webapps/examples/jsp/sessions/carts.html
 ${DISTNAME}/webapps/examples/jsp/sessions/carts.jsp
 ${DISTNAME}/webapps/examples/jsp/sessions/carts.txt
 ${DISTNAME}/webapps/examples/jsp/sessions/crt.html
+${DISTNAME}/webapps/examples/jsp/simpletag/
 ${DISTNAME}/webapps/examples/jsp/simpletag/foo.html
 ${DISTNAME}/webapps/examples/jsp/simpletag/foo.jsp
 ${DISTNAME}/webapps/examples/jsp/simpletag/foo.txt
+${DISTNAME}/webapps/examples/jsp/snp/
 ${DISTNAME}/webapps/examples/jsp/snp/snoop.html
 ${DISTNAME}/webapps/examples/jsp/snp/snoop.jsp
 ${DISTNAME}/webapps/examples/jsp/snp/snoop.txt
 ${DISTNAME}/webapps/examples/jsp/source.jsp
+${DISTNAME}/webapps/examples/jsp/xml/
 ${DISTNAME}/webapps/examples/jsp/xml/xml.html
 ${DISTNAME}/webapps/examples/jsp/xml/xml.jsp
 ${DISTNAME}/webapps/examples/jsp/xml/xml.txt
+${DISTNAME}/webapps/examples/servlets/
 ${DISTNAME}/webapps/examples/servlets/cookies.html
 ${DISTNAME}/webapps/examples/servlets/helloworld.html
 ${DISTNAME}/webapps/examples/servlets/index.html
@@ -542,15 +625,19 @@ ${DISTNAME}/webapps/examples/servlets/reqinfo.html
 ${DISTNAME}/webapps/examples/servlets/reqparams.html
 ${DISTNAME}/webapps/examples/servlets/sessions.html
 ${DISTNAME}/webapps/manager.xml
+${DISTNAME}/webapps/tomcat-docs/
 ${DISTNAME}/webapps/tomcat-docs/BUILDING.txt
 ${DISTNAME}/webapps/tomcat-docs/README.txt
 ${DISTNAME}/webapps/tomcat-docs/RUNNING.txt
+${DISTNAME}/webapps/tomcat-docs/WEB-INF/
 ${DISTNAME}/webapps/tomcat-docs/WEB-INF/web.xml
+${DISTNAME}/webapps/tomcat-docs/appdev/
 ${DISTNAME}/webapps/tomcat-docs/appdev/build.xml.txt
 ${DISTNAME}/webapps/tomcat-docs/appdev/deployment.html
 ${DISTNAME}/webapps/tomcat-docs/appdev/index.html
 ${DISTNAME}/webapps/tomcat-docs/appdev/installation.html
 ${DISTNAME}/webapps/tomcat-docs/appdev/introduction.html
+${DISTNAME}/webapps/tomcat-docs/appdev/printer/
 ${DISTNAME}/webapps/tomcat-docs/appdev/printer/build.xml.txt
 ${DISTNAME}/webapps/tomcat-docs/appdev/printer/deployment.html
 ${DISTNAME}/webapps/tomcat-docs/appdev/printer/index.html
@@ -560,15 +647,25 @@ ${DISTNAME}/webapps/tomcat-docs/appdev/printer/processes.html
 ${DISTNAME}/webapps/tomcat-docs/appdev/printer/source.html
 ${DISTNAME}/webapps/tomcat-docs/appdev/printer/web.xml.txt
 ${DISTNAME}/webapps/tomcat-docs/appdev/processes.html
+${DISTNAME}/webapps/tomcat-docs/appdev/sample/
 ${DISTNAME}/webapps/tomcat-docs/appdev/sample/build.xml
+${DISTNAME}/webapps/tomcat-docs/appdev/sample/docs/
 ${DISTNAME}/webapps/tomcat-docs/appdev/sample/docs/README.txt
+${DISTNAME}/webapps/tomcat-docs/appdev/sample/src/
+${DISTNAME}/webapps/tomcat-docs/appdev/sample/src/mypackage/
 ${DISTNAME}/webapps/tomcat-docs/appdev/sample/src/mypackage/Hello.java
+${DISTNAME}/webapps/tomcat-docs/appdev/sample/web/
+${DISTNAME}/webapps/tomcat-docs/appdev/sample/web/WEB-INF/
 ${DISTNAME}/webapps/tomcat-docs/appdev/sample/web/WEB-INF/web.xml
 ${DISTNAME}/webapps/tomcat-docs/appdev/sample/web/hello.jsp
+${DISTNAME}/webapps/tomcat-docs/appdev/sample/web/images/
 ${DISTNAME}/webapps/tomcat-docs/appdev/sample/web/images/tomcat.gif
 ${DISTNAME}/webapps/tomcat-docs/appdev/sample/web/index.html
 ${DISTNAME}/webapps/tomcat-docs/appdev/source.html
 ${DISTNAME}/webapps/tomcat-docs/appdev/web.xml.txt
+${DISTNAME}/webapps/tomcat-docs/catalina/
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/allclasses-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/allclasses-noframe.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/constant-values.html
@@ -576,6 +673,9 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/deprecated-list.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/help-doc.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/index-all.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/index.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Authenticator.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Cluster.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Connector.html
@@ -620,6 +720,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/UserDataba
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Valve.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ValveContext.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Wrapper.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/AbstractCatalinaTask.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/DeployTask.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/InstallTask.html
@@ -634,6 +735,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/Undepl
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/AuthenticatorBase.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/BasicAuthenticator.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/Constants.html
@@ -646,6 +748,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authentica
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/ClusterMemberInfo.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/ClusterReceiver.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/ClusterSender.html
@@ -658,6 +761,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/St
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/ClientAbortException.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/Constants.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/HttpRequestBase.PrivilegedGetSession.html
@@ -677,6 +781,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/ResponseStream.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/ResponseWrapper.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/ResponseWriter.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/Constants.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/HttpConnector.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/HttpRequestStream.html
@@ -685,6 +790,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/Constants.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/HttpConnector.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/package-frame.html
@@ -693,6 +799,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/Constants.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpCertificates.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpConfigurationHandler.html
@@ -711,6 +818,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetRequestDispatcher.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetResource.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetResourcePaths.html
@@ -742,6 +850,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/Stand
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ApplicationParameter.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ContextEjb.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ContextEnvironment.html
@@ -760,6 +869,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/Tes
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/Constants.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/Extension.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/Reloader.html
@@ -772,6 +882,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/Web
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/Constants.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/FileLogger.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/LoggerBase.html
@@ -780,6 +891,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/Sys
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/mbeans/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/mbeans/ClassNameMBean.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/mbeans/ConnectorMBean.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/mbeans/ContextEnvironmentMBean.html
@@ -803,6 +915,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/mbeans/Use
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/mbeans/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/mbeans/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/mbeans/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net/DefaultServerSocketFactory.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net/SSLServerSocketFactory.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net/ServerSocketFactory.html
@@ -812,6 +925,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net/packag
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/Constants.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/DataSourceRealm.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/GenericPrincipal.html
@@ -827,6 +941,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/User
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.CGIEnvironment.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.CGIRunner.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.html
@@ -840,6 +955,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/W
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/Constants.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/DistributedManager.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/FileStore.html
@@ -853,6 +969,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/St
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/ByteArrayServletOutputStream.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/ExpressionParseTree.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/ExpressionTokenizer.html
@@ -878,6 +995,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/SSISto
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/Bootstrap.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/BootstrapService.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/BootstrapServiceContext.html
@@ -912,6 +1030,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/We
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/users/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/users/AbstractGroup.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/users/AbstractRole.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/users/AbstractUser.html
@@ -924,6 +1043,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/users/Memo
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/users/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/users/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/users/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/Base64.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/CGIProcessEnvironment.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/CharsetMapper.html
@@ -956,6 +1076,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/XMLWr
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/AccessLogValve.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/CertificatesValve.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/Constants.AccessLog.html
@@ -972,6 +1093,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/Val
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/Constants.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/ContextAccessController.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/ContextBindings.html
@@ -990,6 +1112,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/ResourceRef.
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/SelectorContext.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/StringManager.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/TransactionRef.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/BeanFactory.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/Constants.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/EjbFactory.html
@@ -1005,6 +1128,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/Tyre
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/java/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/java/javaURLContextFactory.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/java/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/java/package-summary.html
@@ -1012,6 +1136,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/java/package
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/BaseDirContext.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/Constants.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/DirContextURLConnection.html
@@ -1029,6 +1154,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/Re
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/WARDirContext.Entry.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/WARDirContext.WARResource.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/WARDirContext.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/jndi/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/jndi/Handler.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/jndi/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/jndi/package-summary.html
@@ -1041,9 +1167,11 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/overview-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/overview-tree.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/package-list
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/packages.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/resources/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/resources/inherit.gif
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/serialized-form.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/stylesheet.css
+${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/
 ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/fs-admin-apps.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/fs-admin-objects.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/fs-admin-opers.html
@@ -1054,6 +1182,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/fs-jndi-realm.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/fs-memory-realm.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/index.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/mbean-names.html
+${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/printer/
 ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/printer/fs-admin-apps.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/printer/fs-admin-objects.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/printer/fs-admin-opers.html
@@ -1066,6 +1195,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/printer/index.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/printer/mbean-names.html
 ${DISTNAME}/webapps/tomcat-docs/cgi-howto.html
 ${DISTNAME}/webapps/tomcat-docs/class-loader-howto.html
+${DISTNAME}/webapps/tomcat-docs/config/
 ${DISTNAME}/webapps/tomcat-docs/config/connectors.html
 ${DISTNAME}/webapps/tomcat-docs/config/context.html
 ${DISTNAME}/webapps/tomcat-docs/config/coyote.html
@@ -1080,6 +1210,7 @@ ${DISTNAME}/webapps/tomcat-docs/config/jk2.html
 ${DISTNAME}/webapps/tomcat-docs/config/loader.html
 ${DISTNAME}/webapps/tomcat-docs/config/logger.html
 ${DISTNAME}/webapps/tomcat-docs/config/manager.html
+${DISTNAME}/webapps/tomcat-docs/config/printer/
 ${DISTNAME}/webapps/tomcat-docs/config/printer/connectors.html
 ${DISTNAME}/webapps/tomcat-docs/config/printer/context.html
 ${DISTNAME}/webapps/tomcat-docs/config/printer/coyote.html
@@ -1107,6 +1238,7 @@ ${DISTNAME}/webapps/tomcat-docs/config/service.html
 ${DISTNAME}/webapps/tomcat-docs/config/valve.html
 ${DISTNAME}/webapps/tomcat-docs/config/webapp.html
 ${DISTNAME}/webapps/tomcat-docs/html-manager-howto.html
+${DISTNAME}/webapps/tomcat-docs/images/
 ${DISTNAME}/webapps/tomcat-docs/images/jakarta-logo.gif
 ${DISTNAME}/webapps/tomcat-docs/images/printer.gif
 ${DISTNAME}/webapps/tomcat-docs/images/tomcat.gif
@@ -1114,6 +1246,9 @@ ${DISTNAME}/webapps/tomcat-docs/images/void.gif
 ${DISTNAME}/webapps/tomcat-docs/index.html
 ${DISTNAME}/webapps/tomcat-docs/introduction.html
 ${DISTNAME}/webapps/tomcat-docs/jasper-howto.html
+${DISTNAME}/webapps/tomcat-docs/jasper/
+${DISTNAME}/webapps/tomcat-docs/jasper/docs/
+${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/allclasses-frame.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/allclasses-noframe.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/constant-values.html
@@ -1121,12 +1256,16 @@ ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/deprecated-list.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/help-doc.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/index-all.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/index.html
+${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/
+${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/
+${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/Constants.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/EmbededServletOptions.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/JasperException.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/JspC.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/JspCompilationContext.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/Options.html
+${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/BeanRepository.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/Collector.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/Compiler.html
@@ -1180,6 +1319,7 @@ ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/Valid
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/logging/
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/logging/DefaultLogger.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/logging/JasperLogger.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/logging/LogAware.html
@@ -1191,6 +1331,7 @@ ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/logging/packag
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/runtime/
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/runtime/BodyContentImpl.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/runtime/HttpJspBase.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/runtime/JspFactoryImpl.PrivilegedGetPageContext.html
@@ -1205,6 +1346,7 @@ ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/runtime/TagHan
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/runtime/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/runtime/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/runtime/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/servlet/
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/servlet/JasperLoader.PrivilegedLoadClass.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/servlet/JasperLoader.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/servlet/JspCServletContext.html
@@ -1215,6 +1357,7 @@ ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/servlet/Tomcat
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/servlet/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/servlet/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/servlet/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/util/
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/util/FastDateFormat.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/util/Queue.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/util/SimplePool.html
@@ -1223,6 +1366,7 @@ ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/util/SystemLog
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/util/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/util/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/util/package-tree.html
+${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/xmlparser/
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/xmlparser/ParserUtils.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/xmlparser/TreeNode.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/xmlparser/package-frame.html
@@ -1233,14 +1377,18 @@ ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/overview-summary.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/overview-tree.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/package-list
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/packages.html
+${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/resources/
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/resources/inherit.gif
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/serialized-form.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/stylesheet.css
+${DISTNAME}/webapps/tomcat-docs/jk2/
+${DISTNAME}/webapps/tomcat-docs/jk2/common/
 ${DISTNAME}/webapps/tomcat-docs/jk2/common/AJPv13-extensions-proposal.html
 ${DISTNAME}/webapps/tomcat-docs/jk2/common/AJPv13.html
 ${DISTNAME}/webapps/tomcat-docs/jk2/common/doccontrib.html
 ${DISTNAME}/webapps/tomcat-docs/jk2/common/tools.html
 ${DISTNAME}/webapps/tomcat-docs/jk2/faq.html
+${DISTNAME}/webapps/tomcat-docs/jk2/images/
 ${DISTNAME}/webapps/tomcat-docs/jk2/images/corner.gif
 ${DISTNAME}/webapps/tomcat-docs/jk2/images/jakarta.gif
 ${DISTNAME}/webapps/tomcat-docs/jk2/images/jk2.gif
@@ -1249,12 +1397,14 @@ ${DISTNAME}/webapps/tomcat-docs/jk2/images/mod_jk.jpg
 ${DISTNAME}/webapps/tomcat-docs/jk2/images/pixel.gif
 ${DISTNAME}/webapps/tomcat-docs/jk2/images/tomcat.ico
 ${DISTNAME}/webapps/tomcat-docs/jk2/index.html
+${DISTNAME}/webapps/tomcat-docs/jk2/jk/
 ${DISTNAME}/webapps/tomcat-docs/jk2/jk/aphowto.html
 ${DISTNAME}/webapps/tomcat-docs/jk2/jk/domhowto.html
 ${DISTNAME}/webapps/tomcat-docs/jk2/jk/iishowto.html
 ${DISTNAME}/webapps/tomcat-docs/jk2/jk/neshowto.html
 ${DISTNAME}/webapps/tomcat-docs/jk2/jk/quickhowto.html
 ${DISTNAME}/webapps/tomcat-docs/jk2/jk/workershowto.html
+${DISTNAME}/webapps/tomcat-docs/jk2/jk2/
 ${DISTNAME}/webapps/tomcat-docs/jk2/jk2/confighowto.html
 ${DISTNAME}/webapps/tomcat-docs/jk2/jk2/configtc.html
 ${DISTNAME}/webapps/tomcat-docs/jk2/jk2/configtccom.html
@@ -1264,11 +1414,13 @@ ${DISTNAME}/webapps/tomcat-docs/jk2/jk2/configwebcom.html
 ${DISTNAME}/webapps/tomcat-docs/jk2/jk2/configwebex.html
 ${DISTNAME}/webapps/tomcat-docs/jk2/jk2/installhowto.html
 ${DISTNAME}/webapps/tomcat-docs/jk2/jk2/vhosthowto.html
+${DISTNAME}/webapps/tomcat-docs/jk2/printer/
 ${DISTNAME}/webapps/tomcat-docs/jk2/style.css
 ${DISTNAME}/webapps/tomcat-docs/jndi-datasource-examples-howto.html
 ${DISTNAME}/webapps/tomcat-docs/jndi-resources-howto.html
 ${DISTNAME}/webapps/tomcat-docs/manager-howto.html
 ${DISTNAME}/webapps/tomcat-docs/mbeans-descriptor-howto.html
+${DISTNAME}/webapps/tomcat-docs/printer/
 ${DISTNAME}/webapps/tomcat-docs/printer/BUILDING.txt
 ${DISTNAME}/webapps/tomcat-docs/printer/README.txt
 ${DISTNAME}/webapps/tomcat-docs/printer/RUNNING.txt
@@ -1290,6 +1442,7 @@ ${DISTNAME}/webapps/tomcat-docs/printer/ssl-howto.html
 ${DISTNAME}/webapps/tomcat-docs/proxy-howto.html
 ${DISTNAME}/webapps/tomcat-docs/realm-howto.html
 ${DISTNAME}/webapps/tomcat-docs/security-manager-howto.html
+${DISTNAME}/webapps/tomcat-docs/servletapi/
 ${DISTNAME}/webapps/tomcat-docs/servletapi/allclasses-frame.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/allclasses-noframe.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/constant-values.html
@@ -1297,6 +1450,8 @@ ${DISTNAME}/webapps/tomcat-docs/servletapi/deprecated-list.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/help-doc.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/index-all.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/index.html
+${DISTNAME}/webapps/tomcat-docs/servletapi/javax/
+${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/Filter.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/FilterChain.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/FilterConfig.html
@@ -1318,6 +1473,7 @@ ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/ServletResponse.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/ServletResponseWrapper.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/SingleThreadModel.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/UnavailableException.html
+${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/class-use/
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/class-use/Filter.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/class-use/FilterChain.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/class-use/FilterConfig.html
@@ -1339,6 +1495,7 @@ ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/class-use/ServletRespon
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/class-use/ServletResponseWrapper.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/class-use/SingleThreadModel.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/class-use/UnavailableException.html
+${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http/
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http/Cookie.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http/HttpServlet.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http/HttpServletRequest.html
@@ -1354,6 +1511,7 @@ ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http/HttpSessionContext
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http/HttpSessionEvent.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http/HttpSessionListener.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http/HttpUtils.html
+${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http/class-use/
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http/class-use/Cookie.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http/class-use/HttpServlet.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http/class-use/HttpServletRequest.html
@@ -1373,6 +1531,7 @@ ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http/package-tree.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http/package-use.html
+${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/HttpJspPage.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/JspEngineInfo.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/JspException.html
@@ -1381,6 +1540,7 @@ ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/JspPage.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/JspTagException.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/JspWriter.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/PageContext.html
+${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/class-use/
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/class-use/HttpJspPage.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/class-use/JspEngineInfo.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/class-use/JspException.html
@@ -1393,6 +1553,7 @@ ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/package-tree.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/package-use.html
+${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/BodyContent.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/BodyTag.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/BodyTagSupport.html
@@ -1410,6 +1571,7 @@ ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/TagVariableI
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/TryCatchFinally.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/ValidationMessage.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/VariableInfo.html
+${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/class-use/
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/class-use/BodyContent.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/class-use/BodyTag.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/class-use/BodyTagSupport.html
@@ -1427,6 +1589,7 @@ ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/class-use/Ta
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/class-use/TryCatchFinally.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/class-use/ValidationMessage.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/class-use/VariableInfo.html
+${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/doc-files/
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/doc-files/BodyTagProtocol.gif
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/doc-files/IterationTagProtocol.gif
 ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/doc-files/TagProtocol.gif
@@ -1444,198 +1607,31 @@ ${DISTNAME}/webapps/tomcat-docs/servletapi/overview-summary.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/overview-tree.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/package-list
 ${DISTNAME}/webapps/tomcat-docs/servletapi/packages.html
+${DISTNAME}/webapps/tomcat-docs/servletapi/resources/
 ${DISTNAME}/webapps/tomcat-docs/servletapi/resources/inherit.gif
 ${DISTNAME}/webapps/tomcat-docs/servletapi/serialized-form.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/stylesheet.css
 ${DISTNAME}/webapps/tomcat-docs/ssi-howto.html
 ${DISTNAME}/webapps/tomcat-docs/ssl-howto.html
+${DISTNAME}/webapps/webdav/
+${DISTNAME}/webapps/webdav/WEB-INF/
 ${DISTNAME}/webapps/webdav/WEB-INF/web.xml
 ${DISTNAME}/webapps/webdav/index.html
 ${DISTNAME}/webapps/webdav/tomcat-power.gif
 ${DISTNAME}/webapps/webdav/tomcat.gif
-@exec mkdir -p %D/${DISTNAME}/work
-@dirrm ${DISTNAME}/work
-@dirrm ${DISTNAME}/webapps/webdav/WEB-INF
-@dirrm ${DISTNAME}/webapps/webdav
-@dirrm ${DISTNAME}/webapps/tomcat-docs/servletapi/resources
-@dirrm ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/doc-files
-@dirrm ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext/class-use
-@dirrm ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/tagext
-@dirrm ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp/class-use
-@dirrm ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/jsp
-@dirrm ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http/class-use
-@dirrm ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/http
-@dirrm ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet/class-use
-@dirrm ${DISTNAME}/webapps/tomcat-docs/servletapi/javax/servlet
-@dirrm ${DISTNAME}/webapps/tomcat-docs/servletapi/javax
-@dirrm ${DISTNAME}/webapps/tomcat-docs/servletapi
-@dirrm ${DISTNAME}/webapps/tomcat-docs/printer
-@exec mkdir -p %D/${DISTNAME}/webapps/tomcat-docs/jk2/printer
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jk2/printer
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jk2/jk2
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jk2/jk
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jk2/images
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jk2/common
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jk2
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/resources
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/xmlparser
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/util
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/servlet
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/runtime
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/logging
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jasper/docs
-@dirrm ${DISTNAME}/webapps/tomcat-docs/jasper
-@dirrm ${DISTNAME}/webapps/tomcat-docs/images
-@dirrm ${DISTNAME}/webapps/tomcat-docs/config/printer
-@dirrm ${DISTNAME}/webapps/tomcat-docs/config
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/printer
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/resources
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/jndi
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/java
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/users
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/mbeans
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina
-@dirrm ${DISTNAME}/webapps/tomcat-docs/appdev/sample/web/images
-@dirrm ${DISTNAME}/webapps/tomcat-docs/appdev/sample/web/WEB-INF
-@dirrm ${DISTNAME}/webapps/tomcat-docs/appdev/sample/web
-@dirrm ${DISTNAME}/webapps/tomcat-docs/appdev/sample/src/mypackage
-@dirrm ${DISTNAME}/webapps/tomcat-docs/appdev/sample/src
-@dirrm ${DISTNAME}/webapps/tomcat-docs/appdev/sample/docs
-@dirrm ${DISTNAME}/webapps/tomcat-docs/appdev/sample
-@dirrm ${DISTNAME}/webapps/tomcat-docs/appdev/printer
-@dirrm ${DISTNAME}/webapps/tomcat-docs/appdev
-@dirrm ${DISTNAME}/webapps/tomcat-docs/WEB-INF
-@dirrm ${DISTNAME}/webapps/tomcat-docs
-@dirrm ${DISTNAME}/webapps/examples/servlets
-@dirrm ${DISTNAME}/webapps/examples/jsp/xml
-@dirrm ${DISTNAME}/webapps/examples/jsp/snp
-@dirrm ${DISTNAME}/webapps/examples/jsp/simpletag
-@dirrm ${DISTNAME}/webapps/examples/jsp/sessions
-@dirrm ${DISTNAME}/webapps/examples/jsp/security/protected
-@dirrm ${DISTNAME}/webapps/examples/jsp/security
-@dirrm ${DISTNAME}/webapps/examples/jsp/plugin/applet
-@dirrm ${DISTNAME}/webapps/examples/jsp/plugin
-@dirrm ${DISTNAME}/webapps/examples/jsp/num
-@dirrm ${DISTNAME}/webapps/examples/jsp/mail
-@dirrm ${DISTNAME}/webapps/examples/jsp/jsptoserv
-@dirrm ${DISTNAME}/webapps/examples/jsp/include
-@dirrm ${DISTNAME}/webapps/examples/jsp/forward
-@dirrm ${DISTNAME}/webapps/examples/jsp/error
-@dirrm ${DISTNAME}/webapps/examples/jsp/dates
-@dirrm ${DISTNAME}/webapps/examples/jsp/colors
-@dirrm ${DISTNAME}/webapps/examples/jsp/checkbox
-@dirrm ${DISTNAME}/webapps/examples/jsp/cal
-@dirrm ${DISTNAME}/webapps/examples/jsp
-@dirrm ${DISTNAME}/webapps/examples/images
-@dirrm ${DISTNAME}/webapps/examples/WEB-INF/jsp/applet
-@dirrm ${DISTNAME}/webapps/examples/WEB-INF/jsp
-@dirrm ${DISTNAME}/webapps/examples/WEB-INF/classes/validators
-@dirrm ${DISTNAME}/webapps/examples/WEB-INF/classes/util
-@dirrm ${DISTNAME}/webapps/examples/WEB-INF/classes/sessions
-@dirrm ${DISTNAME}/webapps/examples/WEB-INF/classes/num
-@dirrm ${DISTNAME}/webapps/examples/WEB-INF/classes/listeners
-@dirrm ${DISTNAME}/webapps/examples/WEB-INF/classes/filters
-@dirrm ${DISTNAME}/webapps/examples/WEB-INF/classes/examples
-@dirrm ${DISTNAME}/webapps/examples/WEB-INF/classes/error
-@dirrm ${DISTNAME}/webapps/examples/WEB-INF/classes/dates
-@dirrm ${DISTNAME}/webapps/examples/WEB-INF/classes/compressionFilters
-@dirrm ${DISTNAME}/webapps/examples/WEB-INF/classes/colors
-@dirrm ${DISTNAME}/webapps/examples/WEB-INF/classes/checkbox
-@dirrm ${DISTNAME}/webapps/examples/WEB-INF/classes/cal
-@dirrm ${DISTNAME}/webapps/examples/WEB-INF/classes
-@dirrm ${DISTNAME}/webapps/examples/WEB-INF
-@dirrm ${DISTNAME}/webapps/examples
-@dirrm ${DISTNAME}/webapps/ROOT/WEB-INF
-@dirrm ${DISTNAME}/webapps/ROOT
-@dirrm ${DISTNAME}/webapps
-@dirrm ${DISTNAME}/temp
-@exec mkdir -p %D/${DISTNAME}/shared/lib
-@dirrm ${DISTNAME}/shared/lib
-@exec mkdir -p %D/${DISTNAME}/shared/classes
-@dirrm ${DISTNAME}/shared/classes
-@dirrm ${DISTNAME}/shared
-@dirrm ${DISTNAME}/server/webapps/manager/images
-@dirrm ${DISTNAME}/server/webapps/manager/WEB-INF
-@dirrm ${DISTNAME}/server/webapps/manager
-@dirrm ${DISTNAME}/server/webapps/admin/valve
-@dirrm ${DISTNAME}/server/webapps/admin/users
-@dirrm ${DISTNAME}/server/webapps/admin/service
-@dirrm ${DISTNAME}/server/webapps/admin/server
-@dirrm ${DISTNAME}/server/webapps/admin/resources
-@dirrm ${DISTNAME}/server/webapps/admin/realm
-@dirrm ${DISTNAME}/server/webapps/admin/logger
-@dirrm ${DISTNAME}/server/webapps/admin/images
-@dirrm ${DISTNAME}/server/webapps/admin/host
-@dirrm ${DISTNAME}/server/webapps/admin/defaultcontext
-@dirrm ${DISTNAME}/server/webapps/admin/context
-@dirrm ${DISTNAME}/server/webapps/admin/connector
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/lib
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/valve
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/users
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/service
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/server
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/resources
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/logger
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host
-@exec mkdir -p %D/${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/filters
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/filters
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/defaultcontext
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/context
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/connector
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache/webapp
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org/apache
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes/org
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes/filters
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF/classes
-@dirrm ${DISTNAME}/server/webapps/admin/WEB-INF
-@dirrm ${DISTNAME}/server/webapps/admin
-@dirrm ${DISTNAME}/server/webapps
-@dirrm ${DISTNAME}/server/lib
-@exec mkdir -p %D/${DISTNAME}/server/classes
-@dirrm ${DISTNAME}/server/classes
-@dirrm ${DISTNAME}/server
-@dirrm ${DISTNAME}/conf
-@dirrm ${DISTNAME}/common/lib
-@dirrm ${DISTNAME}/common/endorsed
-@exec mkdir -p %D/${DISTNAME}/common/classes
-@dirrm ${DISTNAME}/common/classes
-@dirrm ${DISTNAME}/common
-@dirrm ${DISTNAME}/bin
-@dirrm ${DISTNAME}
+${DISTNAME}/work/
+@comment ${DISTNAME}/bin/catalina.bat
+@comment ${DISTNAME}/bin/catalina.sh.orig
+@comment ${DISTNAME}/bin/cpappend.bat
+@comment ${DISTNAME}/bin/digest.bat
+@comment ${DISTNAME}/bin/jasper.bat
+@comment ${DISTNAME}/bin/jspc.bat
+@comment ${DISTNAME}/bin/setclasspath.bat
+@comment ${DISTNAME}/bin/setclasspath.sh.orig
+@comment ${DISTNAME}/bin/shutdown.bat
+@comment ${DISTNAME}/bin/startup.bat
+@comment ${DISTNAME}/bin/tomcat.exe
+@comment ${DISTNAME}/bin/tool-wrapper.bat
+@comment ${DISTNAME}/conf/server.xml.orig
 @extraunexec rm -fr ${SYSCONFDIR}/tomcat
 @extraunexec rm -fr /var/tomcat

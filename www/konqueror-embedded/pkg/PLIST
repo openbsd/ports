@@ -1,10 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/07/16 17:00:07 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:49:49 espie Exp $
+apps/
+apps/Applications/
 bin/konq-e
+lib/kde2/
+lib/konq-e/
+lib/konq-e/apps/
+lib/konq-e/apps/Applications/
 lib/konq-e/apps/Applications/konqueror.desktop
+lib/konq-e/pics/
 lib/konq-e/pics/konqueror.png
+lib/konq-e/share/
+lib/konq-e/share/apps/
+lib/konq-e/share/apps/khtml/
+lib/konq-e/share/apps/khtml/css/
 lib/konq-e/share/apps/khtml/css/html4.css
+lib/konq-e/share/apps/konq-embed/
+lib/konq-e/share/apps/konq-embed/actions/
 lib/konq-e/share/apps/konq-embed/actions/2rightarrow.png
 lib/konq-e/share/apps/konq-embed/actions/back.png
+lib/konq-e/share/apps/konq-embed/actions/big/
 lib/konq-e/share/apps/konq-embed/actions/bookmark.png
 lib/konq-e/share/apps/konq-embed/actions/bookmark_add.png
 lib/konq-e/share/apps/konq-embed/actions/configure.png
@@ -30,24 +44,25 @@ lib/konq-e/share/apps/konq-embed/actions/undo.png
 lib/konq-e/share/apps/konq-embed/actions/viewmag.png
 lib/konq-e/share/apps/konq-embed/actions/window_list.png
 lib/konq-e/share/apps/konq-embed/konqe.rc
+lib/konq-e/share/apps/kplaintextpart/
 lib/konq-e/share/apps/kplaintextpart/kplaintextpart.rc
+lib/konq-e/share/apps/kssl/
+lib/konq-e/share/apps/kssl/caroot/
 lib/konq-e/share/apps/kssl/caroot/ca-bundle.crt
+lib/konq-e/share/config/
 lib/konq-e/share/config/charsets
 lib/konq-e/share/config/khtmlrc
+lib/konq-e/share/services/
 lib/konq-e/share/services/kplaintextpart.desktop
 libexec/konq-e
-@dirrm lib/konq-e/share/services
-@dirrm lib/konq-e/share/config
-@dirrm lib/konq-e/share/apps/kssl/caroot
-@dirrm lib/konq-e/share/apps/kssl
-@dirrm lib/konq-e/share/apps/kplaintextpart
-@dirrm lib/konq-e/share/apps/konq-embed/actions
-@dirrm lib/konq-e/share/apps/konq-embed
-@dirrm lib/konq-e/share/apps/khtml/css
-@dirrm lib/konq-e/share/apps/khtml
-@dirrm lib/konq-e/share/apps
-@dirrm lib/konq-e/share
-@dirrm lib/konq-e/pics
-@dirrm lib/konq-e/apps/Applications
-@dirrm lib/konq-e/apps
-@dirrm lib/konq-e
+pics/
+share/apps/
+share/apps/khtml/
+share/apps/khtml/css/
+share/apps/konq-embed/
+share/apps/konq-embed/actions/
+share/apps/kplaintextpart/
+share/apps/kssl/
+share/apps/kssl/caroot/
+share/config/
+share/services/

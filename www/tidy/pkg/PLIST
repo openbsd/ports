@@ -1,14 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/03/02 21:20:12 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:49:52 espie Exp $
 bin/tab2space
 bin/tidy
+include/tidy/
 include/tidy/buffio.h
 include/tidy/fileio.h
 include/tidy/platform.h
 include/tidy/tidy.h
 include/tidy/tidyenum.h
 lib/libtidy.a
-man/man1/tidy.1
+@man man/man1/tidy.1
+share/doc/tidy/
 share/doc/tidy/Overview.html
+share/doc/tidy/api/
 share/doc/tidy/api/annotated.html
 share/doc/tidy/api/buffio_8h-source.html
 share/doc/tidy/api/buffio_8h.html
@@ -69,6 +72,3 @@ share/doc/tidy/quickref.html
 share/doc/tidy/release-notes.html
 share/doc/tidy/tidy.css
 share/doc/tidy/tidy.gif
-@dirrm share/doc/tidy/api
-@dirrm share/doc/tidy
-@dirrm include/tidy

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pear,v 1.10 2004/08/05 15:04:26 espie Exp $
+@comment $OpenBSD: PLIST-pear,v 1.11 2004/09/15 18:49:52 espie Exp $
 pear/
 pear/build/
 pear/build/Makefile.global
@@ -222,8 +222,6 @@ pear/include/regex/regex2.h
 pear/include/regex/regex_extra.h
 pear/include/regex/utils.h
 pear/lib/
-@comment pear/lib/.filemap
-@comment pear/lib/.lock
 pear/lib/.registry/
 pear/lib/.registry/archive_tar.reg
 pear/lib/.registry/console_getopt.reg

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/06 07:40:17 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:49 espie Exp $
 bin/igal
-man/man1/igal.1
+@man man/man1/igal.1
+share/igal/
 share/igal/igal.css
 share/igal/indextemplate.html
 share/igal/slidetemplate.html
 share/igal/tile.png
-@dirrm share/igal

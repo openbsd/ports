@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/07/13 17:50:45 pvalchev Exp $
-lib/libXmHTML.so.1.2
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 18:49:53 espie Exp $
+@lib lib/libXmHTML.so.1.2

@@ -1,11 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/05/14 04:35:43 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:49:49 espie Exp $
+tomcat/
 tomcat/LICENSE
+tomcat/bin/
 tomcat/bin/ant
+tomcat/bin/ant.bat
 tomcat/bin/antRun
+tomcat/bin/antRun.bat
+tomcat/bin/cpappend.bat
+tomcat/bin/jspc.bat
 tomcat/bin/jspc.sh
+tomcat/bin/shutdown.bat
 tomcat/bin/shutdown.sh
+tomcat/bin/startup.bat
 tomcat/bin/startup.sh
+tomcat/bin/tomcat.bat
 tomcat/bin/tomcat.sh
+@comment tomcat/bin/tomcat.sh.orig
+tomcat/bin/tomcatEnv.bat
+tomcat/conf/
 tomcat/conf/README.OpenBSD
 tomcat/conf/build.xml
 tomcat/conf/jni_server.xml
@@ -23,12 +35,15 @@ tomcat/conf/uriworkermap.properties
 tomcat/conf/web.dtd
 tomcat/conf/web.xml
 tomcat/conf/workers.properties
+@comment tomcat/conf/workers.properties.orig
 tomcat/conf/wrapper.properties
+tomcat/doc/
 tomcat/doc/AJPv13.html
 tomcat/doc/JDBCRealm.howto
 tomcat/doc/NT-Service-howto.html
 tomcat/doc/Tomcat-Workers-HowTo.html
 tomcat/doc/Tomcat-on-NetWare-HowTo.html
+tomcat/doc/appdev/
 tomcat/doc/appdev/build.xml.txt
 tomcat/doc/appdev/contents.html
 tomcat/doc/appdev/deployment.html
@@ -38,11 +53,17 @@ tomcat/doc/appdev/index.html
 tomcat/doc/appdev/installation.html
 tomcat/doc/appdev/introduction.html
 tomcat/doc/appdev/processes.html
+tomcat/doc/appdev/sample/
+tomcat/doc/appdev/sample/build.bat
 tomcat/doc/appdev/sample/build.sh
 tomcat/doc/appdev/sample/build.xml
+tomcat/doc/appdev/sample/etc/
 tomcat/doc/appdev/sample/etc/web.xml
+tomcat/doc/appdev/sample/src/
 tomcat/doc/appdev/sample/src/Hello.java
+tomcat/doc/appdev/sample/web/
 tomcat/doc/appdev/sample/web/hello.jsp
+tomcat/doc/appdev/sample/web/images/
 tomcat/doc/appdev/sample/web/images/tomcat.gif
 tomcat/doc/appdev/sample/web/index.html
 tomcat/doc/appdev/source.html
@@ -58,17 +79,22 @@ tomcat/doc/tomcat-iis-howto.html
 tomcat/doc/tomcat-localization-howto.html
 tomcat/doc/tomcat-netscape-howto.html
 tomcat/doc/tomcat-ssl-howto.html
+tomcat/doc/uguide/
+tomcat/doc/uguide/images/
 tomcat/doc/uguide/images/banner.gif
 tomcat/doc/uguide/images/tomcat.gif
 tomcat/doc/uguide/style.css
 tomcat/doc/uguide/tomcat-security-unix.html
 tomcat/doc/uguide/tomcat-security.html
 tomcat/doc/uguide/tomcat_ug.html
+tomcat/lib/
 tomcat/lib/ant.jar
 tomcat/lib/crimson.jar
 tomcat/lib/jasper.jar
 tomcat/lib/jaxp.jar
 tomcat/lib/servlet.jar
+tomcat/lib/test/
+tomcat/lib/test/Golden/
 tomcat/lib/test/Golden/Err.txt
 tomcat/lib/test/Golden/ForwardWithQuery.txt
 tomcat/lib/test/Golden/HelloWorld.txt
@@ -106,6 +132,11 @@ tomcat/lib/test/Golden/servletParam1.txt
 tomcat/lib/test/Golden/servletParam2.txt
 tomcat/lib/test/Golden/welcome.txt
 tomcat/lib/webserver.jar
+tomcat/logs/
+tomcat/src/
+tomcat/src/org/
+tomcat/src/org/apache/
+tomcat/src/org/apache/jasper/
 tomcat/src/org/apache/jasper/CommandLineContext.java
 tomcat/src/org/apache/jasper/Constants.java
 tomcat/src/org/apache/jasper/EmbededServletOptions.java
@@ -114,6 +145,7 @@ tomcat/src/org/apache/jasper/JspC.java
 tomcat/src/org/apache/jasper/JspCompilationContext.java
 tomcat/src/org/apache/jasper/JspEngineContext.java
 tomcat/src/org/apache/jasper/Options.java
+tomcat/src/org/apache/jasper/compiler/
 tomcat/src/org/apache/jasper/compiler/BaseJspListener.java
 tomcat/src/org/apache/jasper/compiler/BeanEndGenerator.java
 tomcat/src/org/apache/jasper/compiler/BeanGenerator.java
@@ -167,11 +199,13 @@ tomcat/src/org/apache/jasper/compiler/TagEndGenerator.java
 tomcat/src/org/apache/jasper/compiler/TagGeneratorBase.java
 tomcat/src/org/apache/jasper/compiler/TagLibraries.java
 tomcat/src/org/apache/jasper/compiler/TagLibraryInfoImpl.java
+tomcat/src/org/apache/jasper/resources/
 tomcat/src/org/apache/jasper/resources/messages.properties
 tomcat/src/org/apache/jasper/resources/messages_es.properties
 tomcat/src/org/apache/jasper/resources/messages_fr.properties
 tomcat/src/org/apache/jasper/resources/web-jsptaglib_1_1.dtd
 tomcat/src/org/apache/jasper/resources/web.dtd
+tomcat/src/org/apache/jasper/runtime/
 tomcat/src/org/apache/jasper/runtime/BodyContentImpl.java
 tomcat/src/org/apache/jasper/runtime/HttpJspBase.java
 tomcat/src/org/apache/jasper/runtime/JspFactoryImpl.java
@@ -179,13 +213,17 @@ tomcat/src/org/apache/jasper/runtime/JspLoader.java
 tomcat/src/org/apache/jasper/runtime/JspRuntimeLibrary.java
 tomcat/src/org/apache/jasper/runtime/JspWriterImpl.java
 tomcat/src/org/apache/jasper/runtime/PageContextImpl.java
+tomcat/src/org/apache/jasper/servlet/
 tomcat/src/org/apache/jasper/servlet/JasperLoader.java
 tomcat/src/org/apache/jasper/servlet/JasperLoader12.java
 tomcat/src/org/apache/jasper/servlet/JspServlet.java
 tomcat/src/org/apache/jasper/servlet/ServletEngine.java
 tomcat/src/org/apache/jasper/servlet/TomcatServletEngine.java
+tomcat/src/org/apache/tomcat/
+tomcat/src/org/apache/tomcat/adapter/
 tomcat/src/org/apache/tomcat/adapter/AdapterHandler.java
 tomcat/src/org/apache/tomcat/adapter/HttpAdapter.java
+tomcat/src/org/apache/tomcat/context/
 tomcat/src/org/apache/tomcat/context/AutoSetup.java
 tomcat/src/org/apache/tomcat/context/DefaultCMSetter.java
 tomcat/src/org/apache/tomcat/context/LoadOnStartupInterceptor.java
@@ -194,6 +232,7 @@ tomcat/src/org/apache/tomcat/context/LogEvents.java
 tomcat/src/org/apache/tomcat/context/PolicyInterceptor.java
 tomcat/src/org/apache/tomcat/context/WebXmlReader.java
 tomcat/src/org/apache/tomcat/context/WorkDirInterceptor.java
+tomcat/src/org/apache/tomcat/core/
 tomcat/src/org/apache/tomcat/core/BaseInterceptor.java
 tomcat/src/org/apache/tomcat/core/BufferedServletInputStream.java
 tomcat/src/org/apache/tomcat/core/BufferedServletOutputStream.java
@@ -218,6 +257,7 @@ tomcat/src/org/apache/tomcat/core/ServletLoader.java
 tomcat/src/org/apache/tomcat/core/ServletWrapper.java
 tomcat/src/org/apache/tomcat/core/TomcatException.java
 tomcat/src/org/apache/tomcat/core/package.html
+tomcat/src/org/apache/tomcat/facade/
 tomcat/src/org/apache/tomcat/facade/HttpServletRequestFacade.java
 tomcat/src/org/apache/tomcat/facade/HttpServletResponseFacade.java
 tomcat/src/org/apache/tomcat/facade/HttpSessionFacade.java
@@ -230,21 +270,28 @@ tomcat/src/org/apache/tomcat/facade/ServletWriterFacade.java
 tomcat/src/org/apache/tomcat/facade/SessionContextImpl.java
 tomcat/src/org/apache/tomcat/facade/SimpleFacadeManager.java
 tomcat/src/org/apache/tomcat/facade/package.html
+tomcat/src/org/apache/tomcat/loader/
 tomcat/src/org/apache/tomcat/loader/AdaptiveClassLoader.java
 tomcat/src/org/apache/tomcat/loader/AdaptiveClassLoader12.java
 tomcat/src/org/apache/tomcat/loader/AdaptiveServletLoader.java
 tomcat/src/org/apache/tomcat/loader/ClassRepository.java
 tomcat/src/org/apache/tomcat/loader/SimpleFileFilter.java
+tomcat/src/org/apache/tomcat/logging/
 tomcat/src/org/apache/tomcat/logging/LogHelper.java
 tomcat/src/org/apache/tomcat/logging/Logger.java
 tomcat/src/org/apache/tomcat/logging/TomcatLogger.java
+tomcat/src/org/apache/tomcat/net/
 tomcat/src/org/apache/tomcat/net/DefaultServerSocketFactory.java
 tomcat/src/org/apache/tomcat/net/SSLSocketFactory.java
 tomcat/src/org/apache/tomcat/net/ServerSocketFactory.java
+tomcat/src/org/apache/tomcat/protocol/
 tomcat/src/org/apache/tomcat/protocol/WARConnection.java
 tomcat/src/org/apache/tomcat/protocol/WARManager.java
+tomcat/src/org/apache/tomcat/protocol/jar/
 tomcat/src/org/apache/tomcat/protocol/jar/Handler.java
+tomcat/src/org/apache/tomcat/protocol/war/
 tomcat/src/org/apache/tomcat/protocol/war/Handler.java
+tomcat/src/org/apache/tomcat/request/
 tomcat/src/org/apache/tomcat/request/AccessInterceptor.java
 tomcat/src/org/apache/tomcat/request/AccountingInterceptor.java
 tomcat/src/org/apache/tomcat/request/InvokerInterceptor.java
@@ -256,11 +303,13 @@ tomcat/src/org/apache/tomcat/request/SessionInterceptor.java
 tomcat/src/org/apache/tomcat/request/SimpleMapper1.java
 tomcat/src/org/apache/tomcat/request/SimpleRealm.java
 tomcat/src/org/apache/tomcat/request/StaticInterceptor.java
+tomcat/src/org/apache/tomcat/resources/
 tomcat/src/org/apache/tomcat/resources/LocalStrings.properties
 tomcat/src/org/apache/tomcat/resources/LocalStrings_en.properties
 tomcat/src/org/apache/tomcat/resources/LocalStrings_es.properties
 tomcat/src/org/apache/tomcat/resources/LocalStrings_fr.properties
 tomcat/src/org/apache/tomcat/resources/web.dtd
+tomcat/src/org/apache/tomcat/service/
 tomcat/src/org/apache/tomcat/service/JNIEndpoint.java
 tomcat/src/org/apache/tomcat/service/JNIEndpointConnector.java
 tomcat/src/org/apache/tomcat/service/LocalStrings.properties
@@ -274,6 +323,7 @@ tomcat/src/org/apache/tomcat/service/TcpConnection.java
 tomcat/src/org/apache/tomcat/service/TcpConnectionHandler.java
 tomcat/src/org/apache/tomcat/service/TcpEndpoint.java
 tomcat/src/org/apache/tomcat/service/TcpEndpointConnector.java
+tomcat/src/org/apache/tomcat/service/connector/
 tomcat/src/org/apache/tomcat/service/connector/Ajp12ConnectionHandler.java
 tomcat/src/org/apache/tomcat/service/connector/Ajp13ConnectionHandler.java
 tomcat/src/org/apache/tomcat/service/connector/Ajp13ConnectorRequest.java
@@ -283,26 +333,31 @@ tomcat/src/org/apache/tomcat/service/connector/MsgBuffer.java
 tomcat/src/org/apache/tomcat/service/connector/MsgConnector.java
 tomcat/src/org/apache/tomcat/service/connector/TcpConnector.java
 tomcat/src/org/apache/tomcat/service/connector/package.html
+tomcat/src/org/apache/tomcat/service/http/
 tomcat/src/org/apache/tomcat/service/http/HttpConnectionHandler.java
 tomcat/src/org/apache/tomcat/service/http/HttpRequestAdapter.java
 tomcat/src/org/apache/tomcat/service/http/HttpResponseAdapter.java
 tomcat/src/org/apache/tomcat/service/http/package.html
 tomcat/src/org/apache/tomcat/service/package.html
+tomcat/src/org/apache/tomcat/session/
 tomcat/src/org/apache/tomcat/session/LocalStrings.properties
 tomcat/src/org/apache/tomcat/session/LocalStrings_es.properties
 tomcat/src/org/apache/tomcat/session/SessionSerializer.java
 tomcat/src/org/apache/tomcat/session/StandardManager.java
 tomcat/src/org/apache/tomcat/session/StandardSession.java
 tomcat/src/org/apache/tomcat/session/StandardSessionInterceptor.java
+tomcat/src/org/apache/tomcat/startup/
 tomcat/src/org/apache/tomcat/startup/EmbededTomcat.java
 tomcat/src/org/apache/tomcat/startup/HostConfig.java
 tomcat/src/org/apache/tomcat/startup/Tomcat.java
+tomcat/src/org/apache/tomcat/task/
 tomcat/src/org/apache/tomcat/task/ApacheConfig.java
 tomcat/src/org/apache/tomcat/task/Expand.java
 tomcat/src/org/apache/tomcat/task/GTest.java
 tomcat/src/org/apache/tomcat/task/IISConfig.java
 tomcat/src/org/apache/tomcat/task/NSConfig.java
 tomcat/src/org/apache/tomcat/task/StopTomcat.java
+tomcat/src/org/apache/tomcat/util/
 tomcat/src/org/apache/tomcat/util/ArrayEnumerator.java
 tomcat/src/org/apache/tomcat/util/Ascii.java
 tomcat/src/org/apache/tomcat/util/BuffTool.java
@@ -341,71 +396,26 @@ tomcat/src/org/apache/tomcat/util/ThreadPool.java
 tomcat/src/org/apache/tomcat/util/ThreadPoolRunnable.java
 tomcat/src/org/apache/tomcat/util/URLUtil.java
 tomcat/src/org/apache/tomcat/util/WARUtil.java
+tomcat/src/org/apache/tomcat/util/compat/
 tomcat/src/org/apache/tomcat/util/compat/Action.java
 tomcat/src/org/apache/tomcat/util/compat/Jdk11Compat.java
 tomcat/src/org/apache/tomcat/util/compat/Jdk12Support.java
 tomcat/src/org/apache/tomcat/util/compat/SimpleClassLoader.java
 tomcat/src/org/apache/tomcat/util/package.html
+tomcat/src/org/apache/tomcat/util/pattern/
 tomcat/src/org/apache/tomcat/util/pattern/Implication.java
 tomcat/src/org/apache/tomcat/util/pattern/ImplicationTable.java
 tomcat/src/org/apache/tomcat/util/pattern/PatternMatcher.java
 tomcat/src/org/apache/tomcat/util/pattern/URLPatternMatcher.java
 tomcat/src/org/apache/tomcat/util/pattern/WildcardPattern.java
+tomcat/src/org/apache/tomcat/util/xml/
 tomcat/src/org/apache/tomcat/util/xml/PathMatch.java
 tomcat/src/org/apache/tomcat/util/xml/SaxContext.java
 tomcat/src/org/apache/tomcat/util/xml/XmlAction.java
 tomcat/src/org/apache/tomcat/util/xml/XmlMapper.java
 tomcat/src/org/apache/tomcat/util/xml/XmlMatch.java
+tomcat/webapps/
 tomcat/webapps/ROOT.war
 tomcat/webapps/admin.war
 tomcat/webapps/examples.war
 tomcat/webapps/test.war
-@dirrm tomcat/webapps
-@dirrm tomcat/src/org/apache/tomcat/util/xml
-@dirrm tomcat/src/org/apache/tomcat/util/pattern
-@dirrm tomcat/src/org/apache/tomcat/util/compat
-@dirrm tomcat/src/org/apache/tomcat/util
-@dirrm tomcat/src/org/apache/tomcat/task
-@dirrm tomcat/src/org/apache/tomcat/startup
-@dirrm tomcat/src/org/apache/tomcat/session
-@dirrm tomcat/src/org/apache/tomcat/service/http
-@dirrm tomcat/src/org/apache/tomcat/service/connector
-@dirrm tomcat/src/org/apache/tomcat/service
-@dirrm tomcat/src/org/apache/tomcat/resources
-@dirrm tomcat/src/org/apache/tomcat/request
-@dirrm tomcat/src/org/apache/tomcat/protocol/war
-@dirrm tomcat/src/org/apache/tomcat/protocol/jar
-@dirrm tomcat/src/org/apache/tomcat/protocol
-@dirrm tomcat/src/org/apache/tomcat/net
-@dirrm tomcat/src/org/apache/tomcat/logging
-@dirrm tomcat/src/org/apache/tomcat/loader
-@dirrm tomcat/src/org/apache/tomcat/facade
-@dirrm tomcat/src/org/apache/tomcat/core
-@dirrm tomcat/src/org/apache/tomcat/context
-@dirrm tomcat/src/org/apache/tomcat/adapter
-@dirrm tomcat/src/org/apache/tomcat
-@dirrm tomcat/src/org/apache/jasper/servlet
-@dirrm tomcat/src/org/apache/jasper/runtime
-@dirrm tomcat/src/org/apache/jasper/resources
-@dirrm tomcat/src/org/apache/jasper/compiler
-@dirrm tomcat/src/org/apache/jasper
-@dirrm tomcat/src/org/apache
-@dirrm tomcat/src/org
-@dirrm tomcat/src
-@exec mkdir -p %D/tomcat/logs
-@dirrm tomcat/logs
-@dirrm tomcat/lib/test/Golden
-@dirrm tomcat/lib/test
-@dirrm tomcat/lib
-@dirrm tomcat/doc/uguide/images
-@dirrm tomcat/doc/uguide
-@dirrm tomcat/doc/appdev/sample/web/images
-@dirrm tomcat/doc/appdev/sample/web
-@dirrm tomcat/doc/appdev/sample/src
-@dirrm tomcat/doc/appdev/sample/etc
-@dirrm tomcat/doc/appdev/sample
-@dirrm tomcat/doc/appdev
-@dirrm tomcat/doc
-@dirrm tomcat/conf
-@dirrm tomcat/bin
-@dirrm tomcat

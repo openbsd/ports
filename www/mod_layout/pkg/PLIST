@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/25 19:57:56 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:50 espie Exp $
 lib/mod_layout.so
 sbin/mod_layout-enable
+share/doc/mod_layout/
+share/doc/mod_layout/directives/
 share/doc/mod_layout/directives/Layout.html
 share/doc/mod_layout/directives/LayoutCache.html
 share/doc/mod_layout/directives/LayoutCacheNeeded.html
@@ -36,5 +38,3 @@ share/doc/mod_layout/directives/LayoutProxy.html
 share/doc/mod_layout/directives/LayoutReplaceTags.html
 share/doc/mod_layout/directives/LayoutTimeFormat.html
 share/doc/mod_layout/faq.html
-@dirrm share/doc/mod_layout/directives
-@dirrm share/doc/mod_layout

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/13 17:50:45 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:53 espie Exp $
+include/XmHTML/
 include/XmHTML/Balloon.h
 include/XmHTML/BalloonP.h
 include/XmHTML/HTML.h
@@ -13,7 +14,7 @@ include/XmHTML/resources.h
 include/XmHTML/tka.h
 include/XmHTML/toolkit.h
 lib/libXmHTML.a
-%%SHARED%%
+share/doc/XmHTML/
 share/doc/XmHTML/GPL.html
 share/doc/XmHTML/LGPL.html
 share/doc/XmHTML/XmHTML.html
@@ -28,6 +29,7 @@ share/doc/XmHTML/extensions.html
 share/doc/XmHTML/font_map.html
 share/doc/XmHTML/getit.html
 share/doc/XmHTML/legals.html
+share/doc/XmHTML/man/
 share/doc/XmHTML/man.html
 share/doc/XmHTML/man/AllocCol.html
 share/doc/XmHTML/man/AncGetId.html
@@ -81,6 +83,8 @@ share/doc/XmHTML/procedures.html
 share/doc/XmHTML/progguide.html
 share/doc/XmHTML/structures.html
 share/doc/XmHTML/xmhtml_prog.html
+share/examples/XmHTML/
+share/examples/XmHTML/book/
 share/examples/XmHTML/book/Imakefile
 share/examples/XmHTML/book/Makefile
 share/examples/XmHTML/book/Makefile.org
@@ -98,6 +102,7 @@ share/examples/XmHTML/book/simple_html.c
 share/examples/XmHTML/book/simple_html2
 share/examples/XmHTML/book/simple_html2.c
 share/examples/XmHTML/book/work_window.c
+share/examples/XmHTML/contrib/
 share/examples/XmHTML/contrib/Makefile
 share/examples/XmHTML/contrib/Makefile.org
 share/examples/XmHTML/contrib/README
@@ -110,6 +115,7 @@ share/examples/XmHTML/contrib/netscape.c
 share/examples/XmHTML/contrib/swallow.c
 share/examples/XmHTML/contrib/swallow2
 share/examples/XmHTML/contrib/swallow2.c
+share/examples/XmHTML/examples/
 share/examples/XmHTML/examples/HTMLDemos.ad
 share/examples/XmHTML/examples/Imakefile
 share/examples/XmHTML/examples/Makefile
@@ -134,6 +140,7 @@ share/examples/XmHTML/examples/menu.h
 share/examples/XmHTML/examples/menuItems.h
 share/examples/XmHTML/examples/misc.c
 share/examples/XmHTML/examples/misc.h
+share/examples/XmHTML/examples/test-pages/
 share/examples/XmHTML/examples/test-pages/README
 share/examples/XmHTML/examples/test-pages/animation1.html
 share/examples/XmHTML/examples/test-pages/animation2.html
@@ -208,11 +215,4 @@ share/examples/XmHTML/examples/test-pages/table9.html
 share/examples/XmHTML/examples/test-pages/unclosed.html
 share/examples/XmHTML/examples/test-pages/unclosed1.html
 share/examples/XmHTML/examples/visual.c
-@dirrm share/examples/XmHTML/examples/test-pages
-@dirrm share/examples/XmHTML/examples
-@dirrm share/examples/XmHTML/contrib
-@dirrm share/examples/XmHTML/book
-@dirrm share/examples/XmHTML
-@dirrm share/doc/XmHTML/man
-@dirrm share/doc/XmHTML
-@dirrm include/XmHTML
+%%SHARED%%

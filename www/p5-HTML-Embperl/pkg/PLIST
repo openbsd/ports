@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/01/18 01:41:36 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:49:51 espie Exp $
 bin/embpexec.pl
+${P5ARCH}/HTML/
+${P5ARCH}/HTML/Embperl/
 ${P5ARCH}/HTML/Embperl.pm
 ${P5ARCH}/HTML/Embperl.pod
 ${P5ARCH}/HTML/Embperl/CVS.pod
@@ -18,27 +20,24 @@ ${P5ARCH}/HTML/Embperl/Session.pm
 ${P5ARCH}/HTML/Embperl/TipsAndTricks.pod
 ${P5ARCH}/HTML/EmbperlD.pod
 ${P5ARCH}/HTML/EmbperlObject.pm
-@comment ${P5ARCH}/auto/HTML/Embperl/.packlist
+${P5ARCH}/auto/HTML/
+${P5ARCH}/auto/HTML/Embperl/
 ${P5ARCH}/auto/HTML/Embperl/Embperl.bs
 ${P5ARCH}/auto/HTML/Embperl/Embperl.so
-man/man1/embpexec.pl.1
-man/man3p/HTML::Embperl.3p
-man/man3p/HTML::Embperl::CVS.3p
-man/man3p/HTML::Embperl::Changes.3p
-man/man3p/HTML::Embperl::Faq.3p
-man/man3p/HTML::Embperl::Features.3p
-man/man3p/HTML::Embperl::FeaturesD.3p
-man/man3p/HTML::Embperl::INSTALL.3p
-man/man3p/HTML::Embperl::Intro.3p
-man/man3p/HTML::Embperl::IntroD.3p
-man/man3p/HTML::Embperl::IntroEmbperlObject.3p
-man/man3p/HTML::Embperl::Mail.3p
-man/man3p/HTML::Embperl::NEWS.3p
-man/man3p/HTML::Embperl::Session.3p
-man/man3p/HTML::Embperl::TipsAndTricks.3p
-man/man3p/HTML::EmbperlD.3p
-man/man3p/HTML::EmbperlObject.3p
-@dirrm ${P5ARCH}/auto/HTML/Embperl
-@dirrm ${P5ARCH}/auto/HTML
-@dirrm ${P5ARCH}/HTML/Embperl
-@dirrm ${P5ARCH}/HTML
+@man man/man1/embpexec.pl.1
+@man man/man3p/HTML::Embperl.3p
+@man man/man3p/HTML::Embperl::CVS.3p
+@man man/man3p/HTML::Embperl::Changes.3p
+@man man/man3p/HTML::Embperl::Faq.3p
+@man man/man3p/HTML::Embperl::Features.3p
+@man man/man3p/HTML::Embperl::FeaturesD.3p
+@man man/man3p/HTML::Embperl::INSTALL.3p
+@man man/man3p/HTML::Embperl::Intro.3p
+@man man/man3p/HTML::Embperl::IntroD.3p
+@man man/man3p/HTML::Embperl::IntroEmbperlObject.3p
+@man man/man3p/HTML::Embperl::Mail.3p
+@man man/man3p/HTML::Embperl::NEWS.3p
+@man man/man3p/HTML::Embperl::Session.3p
+@man man/man3p/HTML::Embperl::TipsAndTricks.3p
+@man man/man3p/HTML::EmbperlD.3p
+@man man/man3p/HTML::EmbperlObject.3p

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/11 06:54:50 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:50 espie Exp $
 lib/mod_auth_bsd.so
-@group auth
 @mode 2555
+@group auth
 libexec/login_bsd
 @mode
 @group
 sbin/mod_auth_bsd-enable
+share/doc/mod_auth_bsd/
 share/doc/mod_auth_bsd/README
-@dirrm share/doc/mod_auth_bsd

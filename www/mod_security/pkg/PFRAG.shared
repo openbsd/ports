@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2004/07/20 06:05:24 david Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 18:49:50 espie Exp $
 lib/mod_security.so
-DYNLIBDIR(%D/lib)

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/26 14:24:11 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:50 espie Exp $
 lib/mod_random.so
 sbin/mod_random-enable
+share/doc/mod_random/
 share/doc/mod_random/faq.html
-@dirrm share/doc/mod_random

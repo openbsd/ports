@@ -1,18 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/22 15:48:20 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:51 espie Exp $
+${P5SITE}/CGI/
+${P5SITE}/CGI/Untaint/
 ${P5SITE}/CGI/Untaint.pm
 ${P5SITE}/CGI/Untaint/hex.pm
 ${P5SITE}/CGI/Untaint/integer.pm
 ${P5SITE}/CGI/Untaint/object.pm
 ${P5SITE}/CGI/Untaint/printable.pm
-@comment ${P5ARCH}/auto/CGI/Untaint/.packlist
-man/man3p/CGI::Untaint.3p
-man/man3p/CGI::Untaint::hex.3p
-man/man3p/CGI::Untaint::integer.3p
-man/man3p/CGI::Untaint::object.3p
-man/man3p/CGI::Untaint::printable.3p
-@comment @dirrm ${P5ARCH}/auto/CGI/Untaint
-@comment @dirrm ${P5ARCH}/auto/CGI
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/CGI/Untaint
-@dirrm ${P5SITE}/CGI
+@man man/man3p/CGI::Untaint.3p
+@man man/man3p/CGI::Untaint::hex.3p
+@man man/man3p/CGI::Untaint::integer.3p
+@man man/man3p/CGI::Untaint::object.3p
+@man man/man3p/CGI::Untaint::printable.3p

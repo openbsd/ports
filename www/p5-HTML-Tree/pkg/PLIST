@@ -1,23 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/01/18 02:55:03 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:49:52 espie Exp $
 ${P5SITE}/HTML/AsSubs.pm
+${P5SITE}/HTML/Element/
 ${P5SITE}/HTML/Element.pm
 ${P5SITE}/HTML/Element/traverse.pm
 ${P5SITE}/HTML/Parse.pm
+${P5SITE}/HTML/Tree/
 ${P5SITE}/HTML/Tree.pm
 ${P5SITE}/HTML/Tree/AboutObjects.pod
 ${P5SITE}/HTML/Tree/AboutTrees.pod
 ${P5SITE}/HTML/Tree/Scanning.pod
 ${P5SITE}/HTML/TreeBuilder.pm
-@comment ${P5ARCH}/auto/HTML-Tree/.packlist
-man/man3p/HTML::AsSubs.3p
-man/man3p/HTML::Element.3p
-man/man3p/HTML::Element::traverse.3p
-man/man3p/HTML::Parse.3p
-man/man3p/HTML::Tree.3p
-man/man3p/HTML::Tree::AboutObjects.3p
-man/man3p/HTML::Tree::AboutTrees.3p
-man/man3p/HTML::Tree::Scanning.3p
-man/man3p/HTML::TreeBuilder.3p
-@comment @dirrm ${P5ARCH}/auto/HTML-Tree
-@dirrm ${P5SITE}/HTML/Tree
-@dirrm ${P5SITE}/HTML/Element
+@man man/man3p/HTML::AsSubs.3p
+@man man/man3p/HTML::Element.3p
+@man man/man3p/HTML::Element::traverse.3p
+@man man/man3p/HTML::Parse.3p
+@man man/man3p/HTML::Tree.3p
+@man man/man3p/HTML::Tree::AboutObjects.3p
+@man man/man3p/HTML::Tree::AboutTrees.3p
+@man man/man3p/HTML::Tree::Scanning.3p
+@man man/man3p/HTML::TreeBuilder.3p

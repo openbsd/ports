@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/20 01:57:18 naddy Exp $
-%%mysql%%
-%%postgresql%%
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:50 espie Exp $
 lib/mod_mp3.so
 sbin/mod_mp3-enable
-share/examples/mod_mp3/mp3.conf
+share/doc/mod_mp3/
 share/doc/mod_mp3/faq.html
-@dirrm share/examples/mod_mp3
-@dirrm share/doc/mod_mp3
+share/examples/mod_mp3/
+share/examples/mod_mp3/mp3.conf
+%%mysql%%
+%%postgresql%%

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/03/16 10:26:21 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:49:48 espie Exp $
 bin/bk2site
-man/man1/bk2site.1
+@man man/man1/bk2site.1
+share/bk2site/
 share/bk2site/dot.bk2siterc
 share/bk2site/indexbase.html
 share/bk2site/otherbase.html
-@dirrm share/bk2site

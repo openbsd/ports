@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/27 06:17:42 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:52 espie Exp $
+lib/
+lib/php/
 pear/doc/HTML_QuickForm/
 pear/doc/HTML_QuickForm/docs/
 pear/doc/HTML_QuickForm/docs/elements.php
@@ -33,6 +35,7 @@ pear/doc/HTML_QuickForm/docs/renderers/templates/styles/green.html
 pear/doc/HTML_QuickForm/docs/rules-builtin.php
 pear/doc/HTML_QuickForm/docs/rules-custom.php
 pear/lib/.registry/html_quickform.reg
+pear/lib/HTML/
 pear/lib/HTML/QuickForm/
 pear/lib/HTML/QuickForm.php
 pear/lib/HTML/QuickForm/Renderer/

@@ -1,17 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/04/13 21:27:02 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:49:50 espie Exp $
+cgi-bin/calendar/
 cgi-bin/calendar/LICENSE
 cgi-bin/calendar/README
 cgi-bin/calendar/README.MAKING-PRINTABLE-CALENDARS
 cgi-bin/calendar/README.html
+cgi-bin/calendar/appointments.txt
 cgi-bin/calendar/common.pl
 cgi-bin/calendar/convert2newformat.pl
 cgi-bin/calendar/convert2pscal.pl
 cgi-bin/calendar/email.pl
+@comment cgi-bin/calendar/email.pl~
 cgi-bin/calendar/index.cgi
 cgi-bin/calendar/printable.cgi
+cgi-bin/calendar/protected/
 cgi-bin/calendar/protected/import.cgi
 cgi-bin/calendar/protected/update.cgi
 cgi-bin/calendar/sitevariables.pl
+@comment cgi-bin/calendar/sitevariables.pl~
 cgi-bin/calendar/template.html
-@dirrm cgi-bin/calendar/protected
 @extraunexec rm -rf /var/www/cgi-bin/calendar

@@ -1,22 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/30 03:10:02 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:49:52 espie Exp $
 @comment bin/opml2snow
 bin/snownews
-man/de/man1/snownews.1
-man/fr/man1/snownews.1
-man/it/man1/snownews.1
-man/man1/snownews.1
-man/nl/man1/snownews.1
+man/de/
+man/de/man1/
+@man man/de/man1/snownews.1
+man/fr/
+man/fr/man1/
+@man man/fr/man1/snownews.1
+man/it/
+man/it/man1/
+@man man/it/man1/snownews.1
+@man man/man1/opml2snow.1
+@man man/man1/snownews.1
+man/nl/
+man/nl/man1/
+@man man/nl/man1/snownews.1
 share/locale/de/LC_MESSAGES/snownews.mo
 share/locale/es/LC_MESSAGES/snownews.mo
 share/locale/fr/LC_MESSAGES/snownews.mo
 share/locale/it/LC_MESSAGES/snownews.mo
 share/locale/nl/LC_MESSAGES/snownews.mo
 share/locale/sl/LC_MESSAGES/snownews.mo
-@dirrm man/nl/man1
-@dirrm man/nl
-@dirrm man/it/man1
-@dirrm man/it
-@dirrm man/fr/man1
-@dirrm man/fr
-@dirrm man/de/man1
-@dirrm man/de
+share/locale/zh_TW/LC_MESSAGES/snownews.mo

@@ -1,5 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:53 espie Exp $
 @pkgcfl plone-*
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/08/05 14:23:03 xsa Exp $
 lib/zope/lib/python/Products/GroupUserFolder/
 lib/zope/lib/python/Products/GroupUserFolder/CHANGES
 lib/zope/lib/python/Products/GroupUserFolder/CONTRIBUTORS

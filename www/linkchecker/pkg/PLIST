@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/06/01 17:46:31 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/09/15 18:49:49 espie Exp $
 bin/linkchecker
 lib/python${MODPY_VERSION}/site-packages/_linkchecker_configdata.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/AnsiColor.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/Config.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/DNS/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/DNS/Base.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/DNS/Class.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/DNS/Lib.py
@@ -37,6 +39,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/i18n.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/lc_cgi.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/linkname.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/linkparse.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/log/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/log/BlacklistLogger.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/log/CSVLogger.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/log/ColoredLogger.py
@@ -49,6 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/log/StandardLogger.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/log/XMLLogger.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/log/__init__.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/optcomplete.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/parser/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/parser/__init__.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/parser/htmllib.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/parser/htmlsax.so
@@ -57,7 +61,8 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/sz_fcgi.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/test_support.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/url.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/util1.py
-man/man1/linkchecker.1
+@man man/man1/linkchecker.1
+share/examples/linkchecker/
 share/examples/linkchecker/check.js
 share/examples/linkchecker/index.html
 share/examples/linkchecker/lc.cgi
@@ -70,20 +75,15 @@ share/examples/linkchecker/leer.html.en
 share/examples/linkchecker/linkcheck-cron.sh
 share/examples/linkchecker/linkchecker-completion
 share/examples/linkchecker/linkchecker.bat
+share/linkchecker/
 share/linkchecker/linkcheckerrc
+share/locale/
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/linkcheck.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/linkcheck.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/linkcheck.mo
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale
-@dirrm share/linkchecker
-@dirrm share/examples/linkchecker
-@dirrm lib/python${MODPY_VERSION}/site-packages/linkcheck/parser
-@dirrm lib/python${MODPY_VERSION}/site-packages/linkcheck/log
-@dirrm lib/python${MODPY_VERSION}/site-packages/linkcheck/DNS
-@dirrm lib/python${MODPY_VERSION}/site-packages/linkcheck

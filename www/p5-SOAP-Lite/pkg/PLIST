@@ -1,13 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/01/17 23:02:23 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:49:52 espie Exp $
 bin/SOAPsh.pl
 bin/XMLRPCsh.pl
 bin/stubmaker.pl
+${P5SITE}/Apache/
 ${P5SITE}/Apache/SOAP.pm
+${P5SITE}/Apache/XMLRPC/
 ${P5SITE}/Apache/XMLRPC/Lite.pm
 ${P5SITE}/IO/SessionData.pm
 ${P5SITE}/IO/SessionSet.pm
+${P5SITE}/SOAP/
 ${P5SITE}/SOAP/Lite.pm
 ${P5SITE}/SOAP/Test.pm
+${P5SITE}/SOAP/Transport/
 ${P5SITE}/SOAP/Transport/FTP.pm
 ${P5SITE}/SOAP/Transport/HTTP.pm
 ${P5SITE}/SOAP/Transport/IO.pm
@@ -17,44 +21,37 @@ ${P5SITE}/SOAP/Transport/MAILTO.pm
 ${P5SITE}/SOAP/Transport/MQ.pm
 ${P5SITE}/SOAP/Transport/POP3.pm
 ${P5SITE}/SOAP/Transport/TCP.pm
+${P5SITE}/UDDI/
 ${P5SITE}/UDDI/Lite.pm
+${P5SITE}/XML/
+${P5SITE}/XML/Parser/
 ${P5SITE}/XML/Parser/Lite.pm
+${P5SITE}/XMLRPC/
 ${P5SITE}/XMLRPC/Lite.pm
 ${P5SITE}/XMLRPC/Test.pm
+${P5SITE}/XMLRPC/Transport/
 ${P5SITE}/XMLRPC/Transport/HTTP.pm
 ${P5SITE}/XMLRPC/Transport/POP3.pm
 ${P5SITE}/XMLRPC/Transport/TCP.pm
-@comment ${P5ARCH}/auto/SOAP/Lite/.packlist
-man/man1/SOAPsh.pl.1
-man/man1/XMLRPCsh.pl.1
-man/man3p/Apache::SOAP.3p
-man/man3p/Apache::XMLRPC::Lite.3p
-man/man3p/SOAP::Lite.3p
-man/man3p/SOAP::Test.3p
-man/man3p/SOAP::Transport::FTP.3p
-man/man3p/SOAP::Transport::HTTP.3p
-man/man3p/SOAP::Transport::IO.3p
-man/man3p/SOAP::Transport::JABBER.3p
-man/man3p/SOAP::Transport::LOCAL.3p
-man/man3p/SOAP::Transport::MAILTO.3p
-man/man3p/SOAP::Transport::MQ.3p
-man/man3p/SOAP::Transport::POP3.3p
-man/man3p/SOAP::Transport::TCP.3p
-man/man3p/UDDI::Lite.3p
-man/man3p/XML::Parser::Lite.3p
-man/man3p/XMLRPC::Lite.3p
-man/man3p/XMLRPC::Test.3p
-man/man3p/XMLRPC::Transport::HTTP.3p
-man/man3p/XMLRPC::Transport::POP3.3p
-man/man3p/XMLRPC::Transport::TCP.3p
-@comment @dirrm ${P5ARCH}/auto/SOAP/Lite
-@comment @dirrm ${P5ARCH}/auto/SOAP
-@dirrm ${P5SITE}/XMLRPC/Transport
-@dirrm ${P5SITE}/XMLRPC
-@dirrm ${P5SITE}/XML/Parser
-@dirrm ${P5SITE}/XML
-@dirrm ${P5SITE}/UDDI
-@dirrm ${P5SITE}/SOAP/Transport
-@dirrm ${P5SITE}/SOAP
-@dirrm ${P5SITE}/Apache/XMLRPC
-@dirrm ${P5SITE}/Apache
+@man man/man1/SOAPsh.pl.1
+@man man/man1/XMLRPCsh.pl.1
+@man man/man3p/Apache::SOAP.3p
+@man man/man3p/Apache::XMLRPC::Lite.3p
+@man man/man3p/SOAP::Lite.3p
+@man man/man3p/SOAP::Test.3p
+@man man/man3p/SOAP::Transport::FTP.3p
+@man man/man3p/SOAP::Transport::HTTP.3p
+@man man/man3p/SOAP::Transport::IO.3p
+@man man/man3p/SOAP::Transport::JABBER.3p
+@man man/man3p/SOAP::Transport::LOCAL.3p
+@man man/man3p/SOAP::Transport::MAILTO.3p
+@man man/man3p/SOAP::Transport::MQ.3p
+@man man/man3p/SOAP::Transport::POP3.3p
+@man man/man3p/SOAP::Transport::TCP.3p
+@man man/man3p/UDDI::Lite.3p
+@man man/man3p/XML::Parser::Lite.3p
+@man man/man3p/XMLRPC::Lite.3p
+@man man/man3p/XMLRPC::Test.3p
+@man man/man3p/XMLRPC::Transport::HTTP.3p
+@man man/man3p/XMLRPC::Transport::POP3.3p
+@man man/man3p/XMLRPC::Transport::TCP.3p

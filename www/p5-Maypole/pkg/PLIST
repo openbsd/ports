@@ -1,29 +1,37 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/26 13:56:43 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:52 espie Exp $
+${P5SITE}/Apache/
 ${P5SITE}/Apache/MVC.pm
 ${P5SITE}/CGI/Maypole.pm
+${P5SITE}/Maypole/
 ${P5SITE}/Maypole.pm
 ${P5SITE}/Maypole/CLI.pm
 ${P5SITE}/Maypole/Constants.pm
+${P5SITE}/Maypole/Model/
 ${P5SITE}/Maypole/Model/Base.pm
 ${P5SITE}/Maypole/Model/CDBI.pm
+${P5SITE}/Maypole/View/
 ${P5SITE}/Maypole/View/Base.pm
 ${P5SITE}/Maypole/View/Mason.pm
 ${P5SITE}/Maypole/View/TT.pm
 ${P5SITE}/Maypole/Workflow.pod
-@comment ${P5ARCH}/auto/Maypole/.packlist
-man/man3p/Apache::MVC.3p
-man/man3p/CGI::Maypole.3p
-man/man3p/Maypole.3p
-man/man3p/Maypole::CLI.3p
-man/man3p/Maypole::Model::Base.3p
-man/man3p/Maypole::Model::CDBI.3p
-man/man3p/Maypole::View::Mason.3p
-man/man3p/Maypole::View::TT.3p
-man/man3p/Maypole::Workflow.3p
+@man man/man3p/Apache::MVC.3p
+@man man/man3p/CGI::Maypole.3p
+@man man/man3p/Maypole.3p
+@man man/man3p/Maypole::CLI.3p
+@man man/man3p/Maypole::Model::Base.3p
+@man man/man3p/Maypole::Model::CDBI.3p
+@man man/man3p/Maypole::View::Mason.3p
+@man man/man3p/Maypole::View::TT.3p
+@man man/man3p/Maypole::Workflow.3p
+share/examples/p5-Maypole/
 share/examples/p5-Maypole/BeerDB.pm
+share/examples/p5-Maypole/templates/
+share/examples/p5-Maypole/templates/beer/
 share/examples/p5-Maypole/templates/beer/addnew
+share/examples/p5-Maypole/templates/custom/
 share/examples/p5-Maypole/templates/custom/frontpage
 share/examples/p5-Maypole/templates/custom/header
+share/examples/p5-Maypole/templates/factory/
 share/examples/p5-Maypole/templates/factory/addnew
 share/examples/p5-Maypole/templates/factory/edit
 share/examples/p5-Maypole/templates/factory/header
@@ -33,13 +41,3 @@ share/examples/p5-Maypole/templates/factory/navbar
 share/examples/p5-Maypole/templates/factory/pager
 share/examples/p5-Maypole/templates/factory/search_form
 share/examples/p5-Maypole/templates/factory/view
-@dirrm share/examples/p5-Maypole/templates/factory
-@dirrm share/examples/p5-Maypole/templates/custom
-@dirrm share/examples/p5-Maypole/templates/beer
-@dirrm share/examples/p5-Maypole/templates
-@dirrm share/examples/p5-Maypole
-@comment @dirrm ${P5ARCH}/auto/Maypole
-@dirrm ${P5SITE}/Maypole/View
-@dirrm ${P5SITE}/Maypole/Model
-@dirrm ${P5SITE}/Maypole
-@dirrm ${P5SITE}/Apache

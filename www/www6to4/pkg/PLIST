@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/20 19:59:53 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:53 espie Exp $
 bin/www6to4
+share/examples/www6to4/
 share/examples/www6to4/www6to4.conf
 share/examples/www6to4/www6to4_forward.conf
-@dirrm share/examples/www6to4
 @cwd ${SYSCONFDIR}
 @extra www6to4.conf
 @extra www6to4_forward.conf

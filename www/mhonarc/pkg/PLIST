@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/11/28 00:06:59 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:49:50 espie Exp $
 bin/mha-dbedit
 bin/mha-dbrecover
 bin/mha-decode
 bin/mhonarc
+${P5SITE}/MHonArc/
+${P5SITE}/MHonArc/Char/
 ${P5SITE}/MHonArc/Char.pm
 ${P5SITE}/MHonArc/Char/JP.pm
 ${P5SITE}/MHonArc/Char/KR.pm
+${P5SITE}/MHonArc/CharEnt/
 ${P5SITE}/MHonArc/CharEnt.pm
 ${P5SITE}/MHonArc/CharEnt/AppleArabic.pm
 ${P5SITE}/MHonArc/CharEnt/AppleCenteuro.pm
@@ -65,6 +68,7 @@ ${P5SITE}/MHonArc/CharEnt/VISCII.pm
 ${P5SITE}/MHonArc/CharMaps.pm
 ${P5SITE}/MHonArc/Encode.pm
 ${P5SITE}/MHonArc/RFC822.pm
+${P5SITE}/MHonArc/UTF8/
 ${P5SITE}/MHonArc/UTF8.pm
 ${P5SITE}/MHonArc/UTF8/AppleArabic.pm
 ${P5SITE}/MHonArc/UTF8/AppleCenteuro.pm
@@ -159,10 +163,11 @@ ${P5SITE}/mhutil.pl
 ${P5SITE}/osinit.pl
 ${P5SITE}/qprint.pl
 ${P5SITE}/readmail.pl
-man/man1/mha-dbedit.1
-man/man1/mha-dbrecover.1
-man/man1/mha-decode.1
-man/man1/mhonarc.1
+@man man/man1/mha-dbedit.1
+@man man/man1/mha-dbrecover.1
+@man man/man1/mha-decode.1
+@man man/man1/mhonarc.1
+share/doc/mhonarc/
 share/doc/mhonarc/app-api.html
 share/doc/mhonarc/app-bugs.html
 share/doc/mhonarc/app-diagnos.html
@@ -174,6 +179,7 @@ share/doc/mhonarc/blank.png
 share/doc/mhonarc/bug.png
 share/doc/mhonarc/commontasks.html
 share/doc/mhonarc/contacts.html
+share/doc/mhonarc/faq/
 share/doc/mhonarc/faq.png
 share/doc/mhonarc/faq/about.html
 share/doc/mhonarc/faq/archives.html
@@ -198,6 +204,7 @@ share/doc/mhonarc/monicon.png
 share/doc/mhonarc/next.png
 share/doc/mhonarc/prev.png
 share/doc/mhonarc/quickstart.html
+share/doc/mhonarc/rcfileexs/
 share/doc/mhonarc/rcfileexs/blog.mrc.html
 share/doc/mhonarc/rcfileexs/date.mrc.html
 share/doc/mhonarc/rcfileexs/def-mime.mrc.html
@@ -208,6 +215,7 @@ share/doc/mhonarc/rcfileexs/utf-8-encode.mrc.html
 share/doc/mhonarc/rcfileexs/utf-8.mrc.html
 share/doc/mhonarc/rcvars.html
 share/doc/mhonarc/relnotes.html
+share/doc/mhonarc/resources/
 share/doc/mhonarc/resources.html
 share/doc/mhonarc/resources/add.html
 share/doc/mhonarc/resources/addressmodifycode.html
@@ -467,6 +475,8 @@ share/doc/mhonarc/resources/weekdaysabr.html
 share/doc/mhonarc/ssbg75.jpg
 share/doc/mhonarc/stampwb2.png
 share/doc/mhonarc/up.png
+share/examples/mhonarc/
+share/examples/mhonarc/examples/
 share/examples/mhonarc/examples/blog.mrc
 share/examples/mhonarc/examples/date.mrc
 share/examples/mhonarc/examples/def-mime.mrc
@@ -478,19 +488,9 @@ share/examples/mhonarc/examples/mhonarc.vim
 share/examples/mhonarc/examples/subject.mrc
 share/examples/mhonarc/examples/utf-8-encode.mrc
 share/examples/mhonarc/examples/utf-8.mrc
+share/examples/mhonarc/extras/
 share/examples/mhonarc/extras/INSTALL
 share/examples/mhonarc/extras/README
 share/examples/mhonarc/extras/mha-mhedit
 share/examples/mhonarc/extras/mha-mhedit.html
 share/examples/mhonarc/extras/mha-repl.mrc
-@dirrm share/examples/mhonarc/extras
-@dirrm share/examples/mhonarc/examples
-@dirrm share/examples/mhonarc
-@dirrm share/doc/mhonarc/resources
-@dirrm share/doc/mhonarc/rcfileexs
-@dirrm share/doc/mhonarc/faq
-@dirrm share/doc/mhonarc
-@dirrm ${P5SITE}/MHonArc/UTF8
-@dirrm ${P5SITE}/MHonArc/CharEnt
-@dirrm ${P5SITE}/MHonArc/Char
-@dirrm ${P5SITE}/MHonArc

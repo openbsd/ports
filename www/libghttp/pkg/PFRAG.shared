@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2000/07/20 05:17:48 brad Exp $
-lib/libghttp.so.1.0
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 18:49:49 espie Exp $
+@lib lib/libghttp.so.1.0

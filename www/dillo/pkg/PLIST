@@ -1,22 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/07/06 16:14:21 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:49:49 espie Exp $
 bin/dillo
 bin/dpid
 bin/dpidc
+lib/dillo/
+lib/dillo/dpi/
+lib/dillo/dpi/bookmarks/
 lib/dillo/dpi/bookmarks/bookmarks.dpi
+lib/dillo/dpi/downloads/
 lib/dillo/dpi/downloads/downloads.dpi
+lib/dillo/dpi/ftp/
 lib/dillo/dpi/ftp/ftp.filter.dpi
+lib/dillo/dpi/hello/
 lib/dillo/dpi/hello/hello.filter.dpi
+lib/dillo/dpi/https/
 lib/dillo/dpi/https/https.filter.dpi
+share/examples/dillo/
 share/examples/dillo/dillorc
+@sample ${SYSCONFDIR}/dillorc
 share/examples/dillo/dpidrc
-@dirrm share/examples/dillo
-@dirrm lib/dillo/dpi/https
-@dirrm lib/dillo/dpi/hello
-@dirrm lib/dillo/dpi/ftp
-@dirrm lib/dillo/dpi/downloads
-@dirrm lib/dillo/dpi/bookmarks
-@dirrm lib/dillo/dpi
-@dirrm lib/dillo
-@cwd ${SYSCONFDIR}
-@extra dillorc
-@extra dpidrc
+@sample ${SYSCONFDIR}/dpidrc

@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/01/17 15:11:19 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:49:51 espie Exp $
+${P5SITE}/Apache/
+${P5SITE}/Apache/MP3/
 ${P5SITE}/Apache/MP3.pm
+${P5SITE}/Apache/MP3/L10N/
 ${P5SITE}/Apache/MP3/L10N.pm
 ${P5SITE}/Apache/MP3/L10N/Aliases.pm
 ${P5SITE}/Apache/MP3/L10N/RightToLeft.pm
@@ -43,12 +46,12 @@ ${P5SITE}/Apache/MP3/L10N/zh_tw.pm
 ${P5SITE}/Apache/MP3/Playlist.pm
 ${P5SITE}/Apache/MP3/Resample.pm
 ${P5SITE}/Apache/MP3/Sorted.pm
-@comment ${P5ARCH}/auto/Apache/MP3/.packlist
-man/man3p/Apache::MP3.3p
-man/man3p/Apache::MP3::L10N.3p
-man/man3p/Apache::MP3::Playlist.3p
-man/man3p/Apache::MP3::Resample.3p
-man/man3p/Apache::MP3::Sorted.3p
+@man man/man3p/Apache::MP3.3p
+@man man/man3p/Apache::MP3::L10N.3p
+@man man/man3p/Apache::MP3::Playlist.3p
+@man man/man3p/Apache::MP3::Resample.3p
+@man man/man3p/Apache::MP3::Sorted.3p
+share/apache_mp3/
 share/apache_mp3/apache_mp3.css
 share/apache_mp3/apache_mp3_fig1.gif
 share/apache_mp3/apache_mp3_help.gif
@@ -59,8 +62,3 @@ share/apache_mp3/functions.js
 share/apache_mp3/playlist.gif
 share/apache_mp3/right_arrow.gif
 share/apache_mp3/sound.gif
-@dirrm share/apache_mp3
-@comment @dirrm ${P5ARCH}/auto/Apache/MP3
-@dirrm ${P5SITE}/Apache/MP3/L10N
-@dirrm ${P5SITE}/Apache/MP3
-@dirrm ${P5SITE}/Apache

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/08/18 15:48:50 shell Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:49:49 espie Exp $
 bin/cgicc-config
+include/cgicc/
 include/cgicc/CgiDefs.h
 include/cgicc/CgiEnvironment.h
 include/cgicc/CgiInput.h
@@ -26,6 +27,7 @@ include/cgicc/HTTPStatusHeader.h
 include/cgicc/MStreamable.h
 lib/libcgicc.a
 lib/libcgicc.la
+share/doc/cgicc/
 share/doc/cgicc/COPYING-source.html
 share/doc/cgicc/COPYING_8DOC-source.html
 share/doc/cgicc/COPYING_8LIB-source.html
@@ -177,5 +179,3 @@ share/doc/cgicc/tutorial_8tmpl-source.html
 share/doc/cgicc/upload_8cpp-source.html
 share/doc/cgicc/upload_8cpp.html
 %%SHARED%%
-@dirrm share/doc/cgicc
-@dirrm include/cgicc

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/06/11 08:00:36 brad Exp $
+@comment $OpenBSD: PLIST,v 1.17 2004/09/15 18:49:52 espie Exp $
 bin/RunAccel
 bin/RunCache
 bin/squidclient
@@ -10,9 +10,12 @@ libexec/ncsa_auth
 libexec/squid_unix_group
 libexec/unlinkd
 libexec/yp_auth
-man/man8/squid.8
-man/man8/squid_unix_group.8
+@man man/man8/squid.8
+@man man/man8/squid_unix_group.8
 sbin/squid
+share/examples/squid/
+share/examples/squid/errors/
+share/examples/squid/errors/Bulgarian/
 share/examples/squid/errors/Bulgarian/ERR_ACCESS_DENIED
 share/examples/squid/errors/Bulgarian/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Bulgarian/ERR_CACHE_MGR_ACCESS_DENIED
@@ -42,6 +45,7 @@ share/examples/squid/errors/Bulgarian/ERR_UNSUP_REQ
 share/examples/squid/errors/Bulgarian/ERR_URN_RESOLVE
 share/examples/squid/errors/Bulgarian/ERR_WRITE_ERROR
 share/examples/squid/errors/Bulgarian/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Catalan/
 share/examples/squid/errors/Catalan/ERR_ACCESS_DENIED
 share/examples/squid/errors/Catalan/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Catalan/ERR_CACHE_MGR_ACCESS_DENIED
@@ -71,6 +75,7 @@ share/examples/squid/errors/Catalan/ERR_UNSUP_REQ
 share/examples/squid/errors/Catalan/ERR_URN_RESOLVE
 share/examples/squid/errors/Catalan/ERR_WRITE_ERROR
 share/examples/squid/errors/Catalan/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Czech/
 share/examples/squid/errors/Czech/ERR_ACCESS_DENIED
 share/examples/squid/errors/Czech/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Czech/ERR_CACHE_MGR_ACCESS_DENIED
@@ -100,6 +105,7 @@ share/examples/squid/errors/Czech/ERR_UNSUP_REQ
 share/examples/squid/errors/Czech/ERR_URN_RESOLVE
 share/examples/squid/errors/Czech/ERR_WRITE_ERROR
 share/examples/squid/errors/Czech/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Danish/
 share/examples/squid/errors/Danish/ERR_ACCESS_DENIED
 share/examples/squid/errors/Danish/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Danish/ERR_CACHE_MGR_ACCESS_DENIED
@@ -129,6 +135,7 @@ share/examples/squid/errors/Danish/ERR_UNSUP_REQ
 share/examples/squid/errors/Danish/ERR_URN_RESOLVE
 share/examples/squid/errors/Danish/ERR_WRITE_ERROR
 share/examples/squid/errors/Danish/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Dutch/
 share/examples/squid/errors/Dutch/ERR_ACCESS_DENIED
 share/examples/squid/errors/Dutch/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Dutch/ERR_CACHE_MGR_ACCESS_DENIED
@@ -158,6 +165,7 @@ share/examples/squid/errors/Dutch/ERR_UNSUP_REQ
 share/examples/squid/errors/Dutch/ERR_URN_RESOLVE
 share/examples/squid/errors/Dutch/ERR_WRITE_ERROR
 share/examples/squid/errors/Dutch/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/English/
 share/examples/squid/errors/English/ERR_ACCESS_DENIED
 share/examples/squid/errors/English/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/English/ERR_CACHE_MGR_ACCESS_DENIED
@@ -187,6 +195,7 @@ share/examples/squid/errors/English/ERR_UNSUP_REQ
 share/examples/squid/errors/English/ERR_URN_RESOLVE
 share/examples/squid/errors/English/ERR_WRITE_ERROR
 share/examples/squid/errors/English/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Estonian/
 share/examples/squid/errors/Estonian/ERR_ACCESS_DENIED
 share/examples/squid/errors/Estonian/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Estonian/ERR_CACHE_MGR_ACCESS_DENIED
@@ -216,6 +225,7 @@ share/examples/squid/errors/Estonian/ERR_UNSUP_REQ
 share/examples/squid/errors/Estonian/ERR_URN_RESOLVE
 share/examples/squid/errors/Estonian/ERR_WRITE_ERROR
 share/examples/squid/errors/Estonian/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Finnish/
 share/examples/squid/errors/Finnish/ERR_ACCESS_DENIED
 share/examples/squid/errors/Finnish/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Finnish/ERR_CACHE_MGR_ACCESS_DENIED
@@ -245,6 +255,7 @@ share/examples/squid/errors/Finnish/ERR_UNSUP_REQ
 share/examples/squid/errors/Finnish/ERR_URN_RESOLVE
 share/examples/squid/errors/Finnish/ERR_WRITE_ERROR
 share/examples/squid/errors/Finnish/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/French/
 share/examples/squid/errors/French/ERR_ACCESS_DENIED
 share/examples/squid/errors/French/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/French/ERR_CACHE_MGR_ACCESS_DENIED
@@ -274,6 +285,7 @@ share/examples/squid/errors/French/ERR_UNSUP_REQ
 share/examples/squid/errors/French/ERR_URN_RESOLVE
 share/examples/squid/errors/French/ERR_WRITE_ERROR
 share/examples/squid/errors/French/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/German/
 share/examples/squid/errors/German/ERR_ACCESS_DENIED
 share/examples/squid/errors/German/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/German/ERR_CACHE_MGR_ACCESS_DENIED
@@ -303,6 +315,7 @@ share/examples/squid/errors/German/ERR_UNSUP_REQ
 share/examples/squid/errors/German/ERR_URN_RESOLVE
 share/examples/squid/errors/German/ERR_WRITE_ERROR
 share/examples/squid/errors/German/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Hebrew/
 share/examples/squid/errors/Hebrew/ERR_ACCESS_DENIED
 share/examples/squid/errors/Hebrew/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Hebrew/ERR_CACHE_MGR_ACCESS_DENIED
@@ -332,6 +345,7 @@ share/examples/squid/errors/Hebrew/ERR_UNSUP_REQ
 share/examples/squid/errors/Hebrew/ERR_URN_RESOLVE
 share/examples/squid/errors/Hebrew/ERR_WRITE_ERROR
 share/examples/squid/errors/Hebrew/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Hungarian/
 share/examples/squid/errors/Hungarian/ERR_ACCESS_DENIED
 share/examples/squid/errors/Hungarian/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Hungarian/ERR_CACHE_MGR_ACCESS_DENIED
@@ -361,6 +375,7 @@ share/examples/squid/errors/Hungarian/ERR_UNSUP_REQ
 share/examples/squid/errors/Hungarian/ERR_URN_RESOLVE
 share/examples/squid/errors/Hungarian/ERR_WRITE_ERROR
 share/examples/squid/errors/Hungarian/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Italian/
 share/examples/squid/errors/Italian/ERR_ACCESS_DENIED
 share/examples/squid/errors/Italian/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Italian/ERR_CACHE_MGR_ACCESS_DENIED
@@ -390,6 +405,7 @@ share/examples/squid/errors/Italian/ERR_UNSUP_REQ
 share/examples/squid/errors/Italian/ERR_URN_RESOLVE
 share/examples/squid/errors/Italian/ERR_WRITE_ERROR
 share/examples/squid/errors/Italian/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Japanese/
 share/examples/squid/errors/Japanese/ERR_ACCESS_DENIED
 share/examples/squid/errors/Japanese/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Japanese/ERR_CACHE_MGR_ACCESS_DENIED
@@ -419,6 +435,7 @@ share/examples/squid/errors/Japanese/ERR_UNSUP_REQ
 share/examples/squid/errors/Japanese/ERR_URN_RESOLVE
 share/examples/squid/errors/Japanese/ERR_WRITE_ERROR
 share/examples/squid/errors/Japanese/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Korean/
 share/examples/squid/errors/Korean/ERR_ACCESS_DENIED
 share/examples/squid/errors/Korean/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Korean/ERR_CACHE_MGR_ACCESS_DENIED
@@ -448,6 +465,7 @@ share/examples/squid/errors/Korean/ERR_UNSUP_REQ
 share/examples/squid/errors/Korean/ERR_URN_RESOLVE
 share/examples/squid/errors/Korean/ERR_WRITE_ERROR
 share/examples/squid/errors/Korean/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Lithuanian/
 share/examples/squid/errors/Lithuanian/ERR_ACCESS_DENIED
 share/examples/squid/errors/Lithuanian/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Lithuanian/ERR_CACHE_MGR_ACCESS_DENIED
@@ -477,6 +495,7 @@ share/examples/squid/errors/Lithuanian/ERR_UNSUP_REQ
 share/examples/squid/errors/Lithuanian/ERR_URN_RESOLVE
 share/examples/squid/errors/Lithuanian/ERR_WRITE_ERROR
 share/examples/squid/errors/Lithuanian/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Polish/
 share/examples/squid/errors/Polish/ERR_ACCESS_DENIED
 share/examples/squid/errors/Polish/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Polish/ERR_CACHE_MGR_ACCESS_DENIED
@@ -506,6 +525,7 @@ share/examples/squid/errors/Polish/ERR_UNSUP_REQ
 share/examples/squid/errors/Polish/ERR_URN_RESOLVE
 share/examples/squid/errors/Polish/ERR_WRITE_ERROR
 share/examples/squid/errors/Polish/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Portuguese/
 share/examples/squid/errors/Portuguese/ERR_ACCESS_DENIED
 share/examples/squid/errors/Portuguese/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Portuguese/ERR_CACHE_MGR_ACCESS_DENIED
@@ -535,6 +555,7 @@ share/examples/squid/errors/Portuguese/ERR_UNSUP_REQ
 share/examples/squid/errors/Portuguese/ERR_URN_RESOLVE
 share/examples/squid/errors/Portuguese/ERR_WRITE_ERROR
 share/examples/squid/errors/Portuguese/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Romanian/
 share/examples/squid/errors/Romanian/ERR_ACCESS_DENIED
 share/examples/squid/errors/Romanian/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Romanian/ERR_CACHE_MGR_ACCESS_DENIED
@@ -564,6 +585,7 @@ share/examples/squid/errors/Romanian/ERR_UNSUP_REQ
 share/examples/squid/errors/Romanian/ERR_URN_RESOLVE
 share/examples/squid/errors/Romanian/ERR_WRITE_ERROR
 share/examples/squid/errors/Romanian/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Russian-1251/
 share/examples/squid/errors/Russian-1251/ERR_ACCESS_DENIED
 share/examples/squid/errors/Russian-1251/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Russian-1251/ERR_CACHE_MGR_ACCESS_DENIED
@@ -593,6 +615,7 @@ share/examples/squid/errors/Russian-1251/ERR_UNSUP_REQ
 share/examples/squid/errors/Russian-1251/ERR_URN_RESOLVE
 share/examples/squid/errors/Russian-1251/ERR_WRITE_ERROR
 share/examples/squid/errors/Russian-1251/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Russian-koi8-r/
 share/examples/squid/errors/Russian-koi8-r/ERR_ACCESS_DENIED
 share/examples/squid/errors/Russian-koi8-r/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Russian-koi8-r/ERR_CACHE_MGR_ACCESS_DENIED
@@ -622,6 +645,7 @@ share/examples/squid/errors/Russian-koi8-r/ERR_UNSUP_REQ
 share/examples/squid/errors/Russian-koi8-r/ERR_URN_RESOLVE
 share/examples/squid/errors/Russian-koi8-r/ERR_WRITE_ERROR
 share/examples/squid/errors/Russian-koi8-r/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Serbian/
 share/examples/squid/errors/Serbian/ERR_ACCESS_DENIED
 share/examples/squid/errors/Serbian/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Serbian/ERR_CACHE_MGR_ACCESS_DENIED
@@ -651,6 +675,7 @@ share/examples/squid/errors/Serbian/ERR_UNSUP_REQ
 share/examples/squid/errors/Serbian/ERR_URN_RESOLVE
 share/examples/squid/errors/Serbian/ERR_WRITE_ERROR
 share/examples/squid/errors/Serbian/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Simplify_Chinese/
 share/examples/squid/errors/Simplify_Chinese/ERR_ACCESS_DENIED
 share/examples/squid/errors/Simplify_Chinese/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Simplify_Chinese/ERR_CACHE_MGR_ACCESS_DENIED
@@ -680,6 +705,7 @@ share/examples/squid/errors/Simplify_Chinese/ERR_UNSUP_REQ
 share/examples/squid/errors/Simplify_Chinese/ERR_URN_RESOLVE
 share/examples/squid/errors/Simplify_Chinese/ERR_WRITE_ERROR
 share/examples/squid/errors/Simplify_Chinese/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Slovak/
 share/examples/squid/errors/Slovak/ERR_ACCESS_DENIED
 share/examples/squid/errors/Slovak/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Slovak/ERR_CACHE_MGR_ACCESS_DENIED
@@ -709,6 +735,7 @@ share/examples/squid/errors/Slovak/ERR_UNSUP_REQ
 share/examples/squid/errors/Slovak/ERR_URN_RESOLVE
 share/examples/squid/errors/Slovak/ERR_WRITE_ERROR
 share/examples/squid/errors/Slovak/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Spanish/
 share/examples/squid/errors/Spanish/ERR_ACCESS_DENIED
 share/examples/squid/errors/Spanish/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Spanish/ERR_CACHE_MGR_ACCESS_DENIED
@@ -738,6 +765,7 @@ share/examples/squid/errors/Spanish/ERR_UNSUP_REQ
 share/examples/squid/errors/Spanish/ERR_URN_RESOLVE
 share/examples/squid/errors/Spanish/ERR_WRITE_ERROR
 share/examples/squid/errors/Spanish/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Swedish/
 share/examples/squid/errors/Swedish/ERR_ACCESS_DENIED
 share/examples/squid/errors/Swedish/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Swedish/ERR_CACHE_MGR_ACCESS_DENIED
@@ -767,6 +795,7 @@ share/examples/squid/errors/Swedish/ERR_UNSUP_REQ
 share/examples/squid/errors/Swedish/ERR_URN_RESOLVE
 share/examples/squid/errors/Swedish/ERR_WRITE_ERROR
 share/examples/squid/errors/Swedish/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Traditional_Chinese/
 share/examples/squid/errors/Traditional_Chinese/ERR_ACCESS_DENIED
 share/examples/squid/errors/Traditional_Chinese/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Traditional_Chinese/ERR_CACHE_MGR_ACCESS_DENIED
@@ -796,6 +825,7 @@ share/examples/squid/errors/Traditional_Chinese/ERR_UNSUP_REQ
 share/examples/squid/errors/Traditional_Chinese/ERR_URN_RESOLVE
 share/examples/squid/errors/Traditional_Chinese/ERR_WRITE_ERROR
 share/examples/squid/errors/Traditional_Chinese/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Turkish/
 share/examples/squid/errors/Turkish/ERR_ACCESS_DENIED
 share/examples/squid/errors/Turkish/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Turkish/ERR_CACHE_MGR_ACCESS_DENIED
@@ -825,6 +855,7 @@ share/examples/squid/errors/Turkish/ERR_UNSUP_REQ
 share/examples/squid/errors/Turkish/ERR_URN_RESOLVE
 share/examples/squid/errors/Turkish/ERR_WRITE_ERROR
 share/examples/squid/errors/Turkish/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/icons/
 share/examples/squid/icons/anthony-binhex.gif
 share/examples/squid/icons/anthony-bomb.gif
 share/examples/squid/icons/anthony-box.gif
@@ -857,37 +888,6 @@ share/examples/squid/mime.conf
 @comment share/examples/squid/mime.conf.default
 share/examples/squid/squid.conf
 @comment share/examples/squid/squid.conf.default
-@dirrm share/examples/squid/icons
-@dirrm share/examples/squid/errors/Turkish
-@dirrm share/examples/squid/errors/Traditional_Chinese
-@dirrm share/examples/squid/errors/Swedish
-@dirrm share/examples/squid/errors/Spanish
-@dirrm share/examples/squid/errors/Slovak
-@dirrm share/examples/squid/errors/Simplify_Chinese
-@dirrm share/examples/squid/errors/Serbian
-@dirrm share/examples/squid/errors/Russian-koi8-r
-@dirrm share/examples/squid/errors/Russian-1251
-@dirrm share/examples/squid/errors/Romanian
-@dirrm share/examples/squid/errors/Portuguese
-@dirrm share/examples/squid/errors/Polish
-@dirrm share/examples/squid/errors/Lithuanian
-@dirrm share/examples/squid/errors/Korean
-@dirrm share/examples/squid/errors/Japanese
-@dirrm share/examples/squid/errors/Italian
-@dirrm share/examples/squid/errors/Hungarian
-@dirrm share/examples/squid/errors/Hebrew
-@dirrm share/examples/squid/errors/German
-@dirrm share/examples/squid/errors/French
-@dirrm share/examples/squid/errors/Finnish
-@dirrm share/examples/squid/errors/Estonian
-@dirrm share/examples/squid/errors/English
-@dirrm share/examples/squid/errors/Dutch
-@dirrm share/examples/squid/errors/Danish
-@dirrm share/examples/squid/errors/Czech
-@dirrm share/examples/squid/errors/Catalan
-@dirrm share/examples/squid/errors/Bulgarian
-@dirrm share/examples/squid/errors
-@dirrm share/examples/squid
 @extraunexec rm -rf ${SYSCONFDIR}/squid
 @extraunexec rm -rf ${PREFIX}/share/squid
 @extraunexec rm -rf /var/squid

@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/07/07 12:14:43 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.16 2004/09/15 18:49:50 espie Exp $
 bin/opera
+lib/opera/
+lib/opera/plugins/
 lib/opera/plugins/libnpp.so
 lib/opera/plugins/operamotifwrapper-1
 lib/opera/plugins/operamotifwrapper-2
@@ -9,13 +11,20 @@ libexec/missingsyms.so
 libexec/opera
 libexec/spellcheck.so
 libexec/works
+share/doc/opera/
 share/doc/opera/LICENSE
 share/doc/opera/help
+share/examples/opera/
 share/examples/opera/opera6rc
+@sample ${SYSCONFDIR}/opera6rc
 share/examples/opera/opera6rc.fixed
+@sample ${SYSCONFDIR}/opera6rc.fixed
+share/opera/
 share/opera/chartables.bin
+share/opera/config/
 share/opera/config/opera6rc
 share/opera/config/opera6rc.fixed
+share/opera/help/
 share/opera/help/advertising.html
 share/opera/help/background.png
 share/opera/help/chat.html
@@ -53,6 +62,7 @@ share/opera/help/toc.html
 share/opera/help/toolbars.html
 share/opera/help/windows.html
 share/opera/hhd.ssr
+share/opera/images/
 share/opera/images/background.gif
 share/opera/images/blank.gif
 share/opera/images/drive.gif
@@ -69,6 +79,7 @@ share/opera/images/shared.gif
 share/opera/images/splash.png
 share/opera/images/startup1.png
 share/opera/images/startup2.png
+share/opera/ini/
 share/opera/ini/dialog.ini
 share/opera/ini/fastforward.ini
 share/opera/ini/filehandler.ini
@@ -79,18 +90,23 @@ share/opera/ini/standard_menu.ini
 share/opera/ini/standard_mouse.ini
 share/opera/ini/standard_toolbar.ini
 share/opera/ini/unix_keyboard.ini
+share/opera/java/
 share/opera/java/opera.jar
 share/opera/java/opera.policy
 share/opera/jsconsole.html
 share/opera/lngcode.txt
+share/opera/locale/
+share/opera/locale/en/
 share/opera/locale/en/default.adr
 share/opera/locale/en/lngcode.txt
 share/opera/locale/en/search.ini
 share/opera/locale/english.lng
 share/opera/opera6.adr
 share/opera/search.ini
+share/opera/skin/
 share/opera/skin/standard_skin.zip
 share/opera/skin/windows_skin.zip
+share/opera/styles/
 share/opera/styles/OPF.css
 share/opera/styles/about.css
 share/opera/styles/cache.css
@@ -105,6 +121,7 @@ share/opera/styles/mime.css
 share/opera/styles/mimehead.css
 share/opera/styles/opf.css
 share/opera/styles/plugins.css
+share/opera/styles/user/
 share/opera/styles/user/accessibility.css
 share/opera/styles/user/contrastbw.css
 share/opera/styles/user/contrastwb.css
@@ -118,21 +135,3 @@ share/opera/styles/user/showstructure.css
 share/opera/styles/user/textonly.css
 share/opera/styles/user/userstyle.ini
 share/opera/styles/wml.css
-@dirrm share/opera/styles/user
-@dirrm share/opera/styles
-@dirrm share/opera/skin
-@dirrm share/opera/locale/en
-@dirrm share/opera/locale
-@dirrm share/opera/java
-@dirrm share/opera/ini
-@dirrm share/opera/images
-@dirrm share/opera/help
-@dirrm share/opera/config
-@dirrm share/opera
-@dirrm share/examples/opera
-@dirrm share/doc/opera
-@dirrm lib/opera/plugins
-@dirrm lib/opera
-@cwd /etc
-@extra opera6rc
-@extra opera6rc.fixed

@@ -1,13 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/20 19:51:26 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:49:52 espie Exp $
 bin/g-request
+${P5ARCH}/
+${P5ARCH}/HTTP/
 ${P5ARCH}/HTTP/GHTTP.pm
-@comment ${P5ARCH}/auto/HTTP/GHTTP/.packlist
+${P5ARCH}/auto/
+${P5ARCH}/auto/HTTP/
+${P5ARCH}/auto/HTTP/GHTTP/
 ${P5ARCH}/auto/HTTP/GHTTP/GHTTP.bs
 ${P5ARCH}/auto/HTTP/GHTTP/GHTTP.so
-man/man3p/HTTP::GHTTP.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/HTTP/GHTTP
-@dirrm ${P5ARCH}/auto/HTTP
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/HTTP
-@dirrm ${P5ARCH}
+@man man/man3p/HTTP::GHTTP.3p
