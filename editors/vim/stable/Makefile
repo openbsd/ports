@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2002/02/14 19:03:51 lebel Exp $
+# $OpenBSD: Makefile,v 1.40 2002/02/16 15:23:16 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=--enable-perlinterp
 PYTHON_VER=     2.1
 CONFIGURE_ARGS+=--enable-pythoninterp \
 	--with-python-config-dir=${LOCALBASE}/lib/python${PYTHON_VER}/config
-RUN_DEPENDS+=   python${PYTHON_VER}::lang/python
+RUN_DEPENDS+=   :python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 .endif
 
