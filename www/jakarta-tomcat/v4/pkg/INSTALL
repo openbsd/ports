@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2002/01/05 15:29:25 reinhard Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/01/07 12:13:52 reinhard Exp $
 #
 # Pre/post-installation setup of jakarta-tomcat
 
@@ -11,7 +11,6 @@ PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${CONFDIR}
 SAMPLE_CONFIG_DIR=$PREFIX/${DISTNAME}/conf
 CONF_FILES="catalina.policy server-noexamples.xml.config server.xml tomcat-users.xml web.xml"
-#TOMCATDIR=${TOMCATDIR}
 SAMPLE_WEBAPPS_DIR=$PREFIX/${DISTNAME}/webapps
 
 # Function: install configuration files
@@ -39,7 +38,7 @@ do_install_conf()
     echo "| Please view these files and change the configuration"
     echo "| to meet your needs."
     echo "|"
-    echo "| \$CATALINA_HOME is ${TOMCATDIR}."
+    echo "| \$CATALINA_BASE is ${TOMCATDIR}."
     echo "+---------------"
     echo
 }
