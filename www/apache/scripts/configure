@@ -1,4 +1,0 @@
-#!/bin/sh
-echo "Making Makefile"
-sed -e "s;@@PREFIX@@;${PREFIX};" $FILESDIR/Makefile >$WRKSRC/Makefile
-cd $WRKSRC/src ; sh ./Configure
