@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_asn1Coding_c,v 1.1.1.1 2003/05/01 17:26:01 sturm Exp $
+--- src/asn1Coding.c.orig	Wed Apr 30 20:21:40 2003
++++ src/asn1Coding.c	Wed Apr 30 20:21:57 2003
+@@ -28,7 +28,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <libtasn1.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <config.h>
+ 
+ #ifdef HAVE_UNISTD_H

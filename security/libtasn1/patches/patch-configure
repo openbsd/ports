@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/05/01 17:26:01 sturm Exp $
+--- configure.orig	Wed Apr 30 20:25:06 2003
++++ configure	Wed Apr 30 20:28:03 2003
+@@ -2716,7 +2716,7 @@ done
+ # Because of `break', _AC_PREPROC_IFELSE's cleaning code was skipped.
+ rm -f conftest.err conftest.$ac_ext
+ if $ac_preproc_ok; then
+-  break 2
++  break 1
+ fi
+ 
+     done
+@@ -6860,7 +6860,7 @@ else
+     ;;
+ 
+   openbsd*)
+-    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
++    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $compiler_flags'
+     hardcode_libdir_flag_spec='-R$libdir'
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+@@ -7348,6 +7348,8 @@ openbsd*)
+     need_lib_prefix=no
+     need_version=no
+   fi
++  sys_lib_search_path_spec="/usr/lib"
++  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
