@@ -1,11 +1,15 @@
-$OpenBSD: patch-configure,v 1.1 2001/04/22 22:57:27 avsm Exp $
---- configure.orig	Wed Mar 29 17:51:49 2000
-+++ configure	Sun Apr 22 23:49:49 2001
-@@ -1273,7 +1273,7 @@ sparc-*) cat >> confdefs.h <<\EOF
+$OpenBSD: patch-configure,v 1.2 2002/04/09 19:50:14 naddy Exp $
+--- configure.orig	Thu Mar 30 02:51:49 2000
++++ configure	Tue Apr  9 21:35:14 2002
+@@ -1273,7 +1273,11 @@ sparc-*) cat >> confdefs.h <<\EOF
  #define __sparc__ 1
  EOF
  ;;
 -ppc-*) cat >> confdefs.h <<\EOF
++sparc64-*) cat >> confdefs.h <<\EOF
++#define __sparc64__ 1
++EOF
++;;
 +ppc-*|powerpc-*) cat >> confdefs.h <<\EOF
  #define __ppc__ 1
  EOF
