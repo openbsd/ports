@@ -1,10 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/06/15 05:31:54 form Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/08/13 04:10:02 form Exp $
 bin/xrus
 bin/xrusmodmap
 man/man1/xrus.1
+share/doc/xruskb/README
+share/doc/xruskb/README.WindowMaker
+share/doc/xruskb/xrus.doc
+share/doc/xruskb/xrus.doc-koi8
 share/xruskb/DocumentL.xpm
 share/xruskb/DocumentY.xpm
 share/xruskb/Xrus.ad
+share/xruskb/Xrus.wmaker
+share/xruskb/hebrew-iso8.xmm
+share/xruskb/hebrew.xmm
 share/xruskb/jcuken-cp1251.xmm
 share/xruskb/jcuken-cp866.xmm
 share/xruskb/jcuken-cyr.xmm
@@ -23,8 +30,6 @@ share/xruskb/kbrus.xpm
 share/xruskb/kbrus8.xpm
 share/xruskb/rus.xpm
 share/xruskb/usa.xpm
-share/xruskb/xrus.doc
-share/xruskb/xrus.doc-koi8
 share/xruskb/yawerty-cp1251.xmm
 share/xruskb/yawerty-cp866.xmm
 share/xruskb/yawerty-cyr.xmm
@@ -36,3 +41,4 @@ share/xruskb/yawerty-deru-koi8.xmm
 share/xruskb/yawerty-iso5.xmm
 share/xruskb/yawerty-koi8.xmm
 @dirrm share/xruskb
+@dirrm share/doc/xruskb

@@ -1,7 +1,6 @@
-# $OpenBSD: patch-aa,v 1.3 2000/03/03 18:08:32 form Exp $
-
---- Xrus.ad.orig	Fri Mar  3 23:58:45 2000
-+++ Xrus.ad	Sat Mar  4 00:00:28 2000
+$OpenBSD: patch-Xrus_ad,v 1.1 2001/08/13 04:10:02 form Exp $
+--- Xrus.ad.orig	Mon Feb 14 22:38:19 2000
++++ Xrus.ad	Mon Aug 13 11:06:04 2001
 @@ -26,20 +26,20 @@
  !*modeButton0.labelPixmap:	/usr/share/xruskb/usa.xpm
  !*modeButton1.labelPixmap:	/usr/share/xruskb/rus.xpm

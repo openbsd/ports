@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/03/12 13:20:41 form Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/08/13 04:10:02 form Exp $
 #
 # Pre/post-installation setup of xruskb
 
@@ -8,7 +8,7 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/X11R6}
-AD_FILE=/var/X11/app-defaults/Xrus
+AD_FILE=/etc/X11/app-defaults/Xrus
 SAMPLE_AD_FILE=${PREFIX}/share/xruskb/Xrus.ad
 
 # Function: tell the user what s/he needs to do to use the port just installed
