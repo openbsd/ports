@@ -1,3 +1,6 @@
 MD5 (mtools-3.9.5.tar.gz) = 124289b95012cd19673b047dc7c40fd5
 SHA1 (mtools-3.9.5.tar.gz) = 3a9e587cb50e0a2894af0be70f58b1edc69d7a6c
 RMD160 (mtools-3.9.5.tar.gz) = 63faf34d11409dafc0a452a19e85efb31be9b40b
+MD5 (mtools-3.9.5-0205b.diff.gz) = d669b7fedd19fbba1f12401a3f3019a1
+SHA1 (mtools-3.9.5-0205b.diff.gz) = ae3ad5175cfa0dc4d6a23d6f16354cc8c23a1ec5
+RMD160 (mtools-3.9.5-0205b.diff.gz) = 13032e180aebf2bda5135fef5ceb51993dfb7714

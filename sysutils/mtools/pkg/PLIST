@@ -22,6 +22,15 @@ bin/mtoolstest
 bin/mshowfat
 bin/mbadblocks
 bin/mzip
+bin/mkmanifest
+bin/floppyd
+bin/floppyd_installtest
+bin/mcheck
+bin/mxtar
+bin/uz
+bin/tgz
+bin/mcomp
+bin/lz
 @unexec install-info --delete %D/info/mtools.info %D/info/dir
 info/mtools.info
 @exec install-info %D/info/mtools.info %D/info/dir
