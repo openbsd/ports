@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/03/25 20:14:42 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1999/03/25 23:48:37 marc Exp $
 
 DISTNAME=	glib-1.2.0
 CATEGORIES=	devel
@@ -16,15 +16,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static --disable-threads
 
-post-extract:
-	@${RM} ${WRKSRC}/docs/*.info
-
 # People that installed an older version of gtk+ wound up with
 # libglib.a and libglib.so.1.6 in /usr/X11R6/lib... these files
 # MUST be removed as the version was incorrect (it came from 1.0.6
 # sources). Check that out here (and bitch if necessary).
 # 
-pre-install:
+pre-extract:
 	@if [ -f ${X11BASE}/lib/libglib.a ]; then \
 	   echo "+-------------------"; \
 	   echo "| ERROR: you MUST remove the existing glib installation"; \
@@ -36,6 +33,9 @@ pre-install:
 	   echo "+-------------------"; \
 	   exit 1; \
 	fi
+
+post-extract:
+	@${RM} ${WRKSRC}/docs/*.info
 
 post-install:
 	@${MKDIR} ${LOCALBASE}/share/aclocal
