@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/21 14:50:41 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/12 09:37:35 camield Exp $
 
 DISTNAME=	arpwatch-2.1a4
 CATEGORIES=	net
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=		Yes
-HAS_CONFIGURE=	Yes
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--quiet
 INSTALL_TARGET=	install install-man
 
@@ -31,6 +30,5 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/arpwatch; \
 	done
 	@${INSTALL_SCRIPT} ${WRKSRC}/arp2ethers ${PREFIX}/arpwatch
-	@${INSTALL_SCRIPT} ${FILESDIR}/arpwatch.sh /etc/rc.arpwatch
 
 .include <bsd.port.mk>
