@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/08/08 05:47:38 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/08/08 20:20:41 couderc Exp $
 bin/xchat2
+bin/xchat2-text
 share/applications/xchat2.desktop
 share/locale/am/LC_MESSAGES/xchat2.mo
 share/locale/ca/LC_MESSAGES/xchat2.mo

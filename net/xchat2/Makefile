@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/08/08 05:47:38 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/08/08 20:20:41 couderc Exp $
 
 COMMENT=	"GTK+2 IRC client"
 
@@ -25,7 +25,7 @@ MODULES=	gettext
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --disable-python \
+CONFIGURE_ARGS+= --disable-python --enable-textfe \
 		 --disable-perl --disable-mmx \
 		 --enable-ipv6 --enable-openssl="/usr"
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
