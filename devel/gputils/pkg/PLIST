@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/01/14 22:19:29 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/01/30 01:01:11 naddy Exp $
+bin/gpal
 bin/gpasm
 bin/gpdasm
 bin/gplib
 bin/gplink
 bin/gpvc
 bin/gpvo
+man/man1/gpal.1
 man/man1/gpasm.1
 man/man1/gpdasm.1
 man/man1/gplib.1

@@ -1,6 +1,6 @@
-$OpenBSD: patch-gpasm_coff_c,v 1.1.1.1 2003/11/03 01:02:34 naddy Exp $
---- gpasm/coff.c.orig	2003-10-03 15:59:39.000000000 +1000
-+++ gpasm/coff.c	2003-10-19 01:24:54.000000000 +1000
+$OpenBSD: patch-gpasm_coff_c,v 1.2 2004/01/30 01:01:11 naddy Exp $
+--- gpasm/coff.c.orig	2004-01-21 17:17:52.000000000 +1100
++++ gpasm/coff.c	2004-01-25 20:36:30.000000000 +1100
 @@ -32,8 +32,8 @@ void 
  coff_init(void)
  {
@@ -12,7 +12,7 @@ $OpenBSD: patch-gpasm_coff_c,v 1.1.1.1 2003/11/03 01:02:34 naddy Exp $
    }
  
    if (state.objfile == suppress) {
-@@ -399,7 +399,7 @@ coff_add_sym(char *name, int value, int 
+@@ -403,7 +403,7 @@ coff_add_sym(char *name, int value, int 
  
    new = gp_coffgen_findsymbol(state.obj.object, name);
    if (new != NULL) {
@@ -21,7 +21,7 @@ $OpenBSD: patch-gpasm_coff_c,v 1.1.1.1 2003/11/03 01:02:34 naddy Exp $
              "Duplicate label or redefining symbol that cannot be redefined. (%s)",
              name);    
      gperror(GPE_DUPLAB, message);
-@@ -537,14 +537,14 @@ coff_local_name(char *name)
+@@ -547,14 +547,14 @@ coff_local_name(char *name)
    if (local == NULL) {
      /* It isn't in the stGlobal so it must be in stTop. It's local. */
      while(1) {

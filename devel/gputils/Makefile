@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/14 22:19:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/30 01:01:11 naddy Exp $
 
 COMMENT=		"GNU PIC assembler and utilities"
 
-VERSION=		0.11.8
+VERSION=		0.12.0
 DISTNAME=		gputils-${VERSION}
 DIST_SUBDIR=		gputils
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} gputils-testsuite-${VERSION}${EXTRACT_SUFX}:0
@@ -24,7 +24,7 @@ MASTER_SITES0=		http://www.ajd.net.au/ports/
 
 # From Jolan:
 .if ${MACHINE_ARCH:Msparc64}
-CFLAGS+=	"-O0"
+CFLAGS+=	-O0
 .endif
 
 CONFIGURE_STYLE=	gnu autoconf

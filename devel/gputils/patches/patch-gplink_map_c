@@ -1,6 +1,6 @@
-$OpenBSD: patch-gplink_map_c,v 1.1.1.1 2003/11/03 01:02:36 naddy Exp $
---- gplink/map.c.orig	2003-07-25 12:13:07.000000000 +1000
-+++ gplink/map.c	2003-10-14 23:57:41.000000000 +1000
+$OpenBSD: patch-gplink_map_c,v 1.2 2004/01/30 01:01:11 naddy Exp $
+--- gplink/map.c.orig	2004-01-17 13:33:51.000000000 +1100
++++ gplink/map.c	2004-01-25 20:36:31.000000000 +1100
 @@ -44,7 +44,7 @@ map_line(const char *format, ...)
      return;
  
@@ -10,12 +10,3 @@ $OpenBSD: patch-gplink_map_c,v 1.1.1.1 2003/11/03 01:02:36 naddy Exp $
    va_end(args);
  
    fprintf(state.map.f, "%s\n", buffer);
-@@ -249,7 +249,7 @@ make_map(void)
-   }
- 
-   /* Determine start date */
--  gp_date_string(state.map.startdate);
-+  gp_date_string(state.map.startdate, sizeof(state.map.startdate));
- 
-   map_line("%s", GPLINK_VERSION_STRING);
-   map_line("Map File - Created %s", state.map.startdate);

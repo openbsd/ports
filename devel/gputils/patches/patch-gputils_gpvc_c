@@ -1,7 +1,7 @@
-$OpenBSD: patch-gputils_gpvc_c,v 1.1.1.1 2003/11/03 01:02:36 naddy Exp $
---- gputils/gpvc.c.orig	2003-10-14 22:17:16.000000000 +1000
-+++ gputils/gpvc.c	2003-10-14 22:17:59.000000000 +1000
-@@ -168,7 +168,7 @@ int main(int argc, char *argv[])
+$OpenBSD: patch-gputils_gpvc_c,v 1.2 2004/01/30 01:01:11 naddy Exp $
+--- gputils/gpvc.c.orig	2004-01-07 17:35:54.000000000 +1100
++++ gputils/gpvc.c	2004-01-25 20:36:31.000000000 +1100
+@@ -170,7 +170,7 @@ int main(int argc, char *argv[])
    }
    
    if ((optind + 1) == argc)

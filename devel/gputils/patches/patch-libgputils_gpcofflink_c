@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgputils_gpcofflink_c,v 1.1.1.1 2003/11/03 01:02:36 naddy Exp $
---- libgputils/gpcofflink.c.orig	2003-09-28 15:20:26.000000000 +1000
-+++ libgputils/gpcofflink.c	2003-10-19 01:24:55.000000000 +1000
-@@ -404,8 +404,8 @@ _create_rom_section(gp_object_type *obje
+$OpenBSD: patch-libgputils_gpcofflink_c,v 1.2 2004/01/30 01:01:11 naddy Exp $
+--- libgputils/gpcofflink.c.orig	2004-01-17 13:33:51.000000000 +1100
++++ libgputils/gpcofflink.c	2004-01-25 20:36:31.000000000 +1100
+@@ -415,8 +415,8 @@ _create_rom_section(gp_object_type *obje
    int last;
    
    /* create the new section */
@@ -12,7 +12,7 @@ $OpenBSD: patch-libgputils_gpcofflink_c,v 1.1.1.1 2003/11/03 01:02:36 naddy Exp 
    new = gp_coffgen_newsection(name);
  
    /* select "retlw" instruction */  
-@@ -536,8 +536,8 @@ gp_add_cinit_section(gp_object_type *obj
+@@ -547,8 +547,8 @@ gp_add_cinit_section(gp_object_type *obj
      while (section != NULL) {
        if (section->flags & STYP_DATA) {
          /* locate the rom table */
@@ -23,7 +23,7 @@ $OpenBSD: patch-libgputils_gpcofflink_c,v 1.1.1.1 2003/11/03 01:02:36 naddy Exp 
          prog_section = gp_coffgen_findsection(object, 
                                                object->sections, 
                                                prog_name);
-@@ -1038,7 +1038,7 @@ gp_cofflink_fill_pages(gp_object_type *o
+@@ -1049,7 +1049,7 @@ gp_cofflink_fill_pages(gp_object_type *o
                                   &current_address,
                                   &current_size);
            if (found == 1) {
