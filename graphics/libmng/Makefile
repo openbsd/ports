@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2003/05/12 04:07:55 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2003/12/23 23:50:56 brad Exp $
 
 COMMENT=	"Multiple-image Network Graphics (MNG) reference library"
 
 DISTNAME=	libmng-1.0.5
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libmng/}
 
@@ -19,13 +20,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static \
-		--with-jpeg="${LOCALBASE}"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lm"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	cd ${WRKSRC}/doc/man && \
