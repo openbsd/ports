@@ -1,5 +1,5 @@
---- Makefile.in	Tue Oct  7 07:55:21 1997
-+++ Makefile.in	Mon Nov 24 00:13:27 1997
+--- Makefile.in.orig	Fri May 14 02:55:33 1999
++++ Makefile.in	Sun Jun  4 11:54:32 2000
 @@ -15,11 +15,11 @@
  PURIFY =
  
@@ -14,3 +14,45 @@
  
  # Libraries needed to link with GNU readline
  RLLIBS = @RLLIBS@
+@@ -109,29 +109,32 @@
+ 	$(SUBMAKE_COMM_CC) libpicc.a
+ 
+ installdirs:
+-	$(SHELL) ${srcdir}/scripts/mkinstalldirs $(bindir) $(includedir) $(libdir) $(pixdir) $(mandir1) $(mandir7)
++	$(SHELL) ${srcdir}/scripts/mkinstalldirs ${DESTDIR}/$(bindir) \
++		${DESTDIR}/$(includedir) ${DESTDIR}/$(libdir) \
++		${DESTDIR}/$(pixdir) ${DESTDIR}/$(mandir1) \
++		${DESTDIR}/$(mandir7)
+ 
+ install: $(EXECS) installdirs $(PILIB) $(PICCLIB)
+-	$(INSTALL_DATA) $(PILIB) $(libdir)/libpisock.la
++	$(INSTALL_DATA) $(PILIB) ${DESTDIR}/$(libdir)/libpisock.la
+ 	if test -n "$(PICCLIB)"; then \
+-		$(INSTALL_DATA) $(PICCLIB) $(libdir)/libpicc.la; \
++		$(INSTALL_DATA) $(PICCLIB) ${DESTDIR}/$(libdir)/libpicc.la; \
+ 	fi
+ 	for p in $(EXECS); do \
+-		$(INSTALL_PROGRAM) $$p $(bindir)/$$p; \
++		$(INSTALL_PROGRAM) $$p ${DESTDIR}/$(bindir)/$$p; \
+ 	done
+ 	for h in include/*.h $(srcdir)/include/*.h include/*.hxx $(srcdir)/include/*.hxx; do \
+-		$(INSTALL_DATA) $$h $(includedir)/`basename $$h`; \
++		$(INSTALL_DATA) $$h ${DESTDIR}/$(includedir)/`basename $$h`; \
+ 	done
+ 	for m in man/*.1; do \
+-		$(INSTALL_DATA) $$m $(mandir1)/`basename $$m`; \
++		$(INSTALL_DATA) $$m ${DESTDIR}/$(mandir1)/`basename $$m`; \
+ 	done
+ 	for m in man/*.7; do \
+-		$(INSTALL_DATA) $$m $(mandir7)/`basename $$m`; \
++		$(INSTALL_DATA) $$m ${DESTDIR}/$(mandir7)/`basename $$m`; \
+ 	done
+ 	for p in $(srcdir)/pix/*.gif $(srcdir)/pix/*.xbm; do \
+-		$(INSTALL_DATA) $$p $(pixdir)/`basename $$p`; \
++		$(INSTALL_DATA) $$p ${DESTDIR}/$(pixdir)/`basename $$p`; \
+ 	done
+-	$(LIBTOOL) -n --finish $(libdir)
++	$(LIBTOOL) -n --finish ${DESTDIR}/$(libdir)
+ 
+ uninstall:
+ 	-for p in $(EXECS) $(PERLEXECS) $(CXXEXECS) $(TCLEXECS); do \
