@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.47 2005/01/02 12:56:04 alek Exp $
+# $OpenBSD: Makefile,v 1.48 2005/01/26 19:33:20 sturm Exp $
 
 COMMENT=	"Flexible mail transfer agent"
-VERSION=	4.41
+VERSION=	4.44
 DISTNAME=	exim-${VERSION}
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim4/ \
 		http://ftp.planetmirror.com/pub/exim/exim4/ \
@@ -27,7 +26,7 @@ FLAVOR?=
 NO_REGRESS=Yes
 
 .if !${FLAVOR:L:Mno_exiscan}
-PATCHFILES=		exiscan-acl-4.41-24.patch:0
+PATCHFILES=		exiscan-acl-4.44-28.patch:0
 PATCH_DIST_STRIP=	-p1
 .endif
 
