@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/01/05 14:40:50 joey Exp $
+# $OpenBSD: Makefile,v 1.4 1998/03/20 04:06:31 marc Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -15,7 +15,7 @@
 #    SUBDIR += p5-Crypt-IDEA
 #    SUBDIR += p5-MD5
 #    SUBDIR += p5-PGP
-#    SUBDIR += pgp
+     SUBDIR += pgp
 #    SUBDIR += pidentd
      SUBDIR += rsaref
      SUBDIR += ssh
