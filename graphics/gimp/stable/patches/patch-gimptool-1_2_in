@@ -1,0 +1,37 @@
+$OpenBSD: patch-gimptool-1_2_in,v 1.1.1.1 2002/07/28 21:55:12 brad Exp $
+--- gimptool-1.2.in.orig	Sun Jul 28 15:06:45 2002
++++ gimptool-1.2.in	Sun Jul 28 15:10:31 2002
+@@ -227,27 +227,27 @@ while test $# -gt 0; do
+     | --uninstall-script | --uninstall-admin-script )
+       case $1 in
+         --*install-bin)
+-          install_cmd="@INSTALL_PROGRAM@"
++          install_cmd="@INSTALL_SCRIPT@"
+           install_dir="$HOME/@gimpdir@/plug-ins"
+           ;;
+         --install-bin-strip)
+-          install_cmd="@INSTALL_PROGRAM@ -s"
++          install_cmd="@INSTALL_SCRIPT@ -s"
+           install_dir="$HOME/@gimpdir@/plug-ins"
+           ;;
+         --*install-admin-bin)
+-          install_cmd="@INSTALL_PROGRAM@"
++          install_cmd="@INSTALL_SCRIPT@"
+           install_dir="$gimpplugindir/plug-ins"
+           ;;
+         --install-admin-bin-strip)
+-          install_cmd="@INSTALL_PROGRAM@ -s"
++          install_cmd="@INSTALL_SCRIPT@ -s"
+           install_dir="$gimpplugindir/plug-ins"
+           ;;
+         --*install-script)
+-          install_cmd="@INSTALL_DATA@"
++          install_cmd="@INSTALL_SCRIPT@"
+           install_dir="$HOME/@gimpdir@/scripts"
+           ;;
+         --*install-admin-script)
+-          install_cmd="@INSTALL_DATA@"
++          install_cmd="@INSTALL_SCRIPT@"
+           install_dir="$gimpdatadir/scripts"
+           ;;
+       esac

@@ -1,0 +1,47 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2002/07/28 21:55:10 brad Exp $
+--- configure.orig	Sun Feb 10 01:21:30 2002
++++ configure	Sun Jul 28 15:38:55 2002
+@@ -3774,8 +3774,8 @@ else
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
+       case "$host_os" in
+@@ -3784,8 +3784,8 @@ else
+ 	hardcode_libdir_flag_spec='-R$libdir'
+         ;;
+       *)
+-        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++        hardcode_libdir_flag_spec='${wl}-R$libdir'
+         ;;
+       esac
+     fi
+@@ -10102,7 +10102,7 @@ else
+ 	{
+ 	  int id;
+ 	  char *shmaddr;
+-	id = shmget (IPC_PRIVATE, 4, IPC_CREAT | 0777);
++	id = shmget (IPC_PRIVATE, 4, IPC_CREAT | 0600);
+ 	if (id == -1)
+ 	  exit (2);
+ 	  shmaddr = shmat (id, 0, 0);
+@@ -11957,9 +11957,9 @@ fi
+ 
+ fi
+ 
+-gimpdatadir=$datadir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
+-gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
+-gimpsysconfdir=$sysconfdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
++gimpdatadir=$datadir/$PACKAGE
++gimpplugindir=$libdir/$PACKAGE
++gimpsysconfdir=$sysconfdir/$PACKAGE
+ 
+ localedir='${prefix}/${DATADIRNAME}/locale'
+ 

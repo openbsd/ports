@@ -1,0 +1,40 @@
+$OpenBSD: patch-Makefile.in,v 1.1.1.1 2002/07/28 21:55:10 brad Exp $
+--- Makefile.in.orig	Mon Feb 11 16:45:59 2002
++++ Makefile.in	Sun Jul 28 15:20:12 2002
+@@ -429,21 +429,21 @@ uninstall-gimpdataDATA:
+ 
+ install-gimpsysconfDATA: $(gimpsysconf_DATA)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(gimpsysconfdir)
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/examples/gimp
+ 	@list='$(gimpsysconf_DATA)'; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(gimpsysconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(gimpsysconfdir)/$$p; \
++	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(datadir)/examples/gimp/$$p-sample"; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(datadir)/examples/gimp/$$p-sample; \
+ 	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(gimpsysconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(gimpsysconfdir)/$$p; \
++	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(datadir)/examples/gimp/$$p-sample"; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(datadir)/examples/gimp/$$p-sample; \
+ 	  fi; fi; \
+ 	done
+ 
+ uninstall-gimpsysconfDATA:
+ 	@$(NORMAL_UNINSTALL)
+ 	list='$(gimpsysconf_DATA)'; for p in $$list; do \
+-	  rm -f $(DESTDIR)$(gimpsysconfdir)/$$p; \
++	  rm -f $(DESTDIR)$(datadir)/examples/gimp/$$p-sample; \
+ 	done
+ 
+ install-m4dataDATA: $(m4data_DATA)
+@@ -655,7 +655,7 @@ installdirs: installdirs-recursive
+ installdirs-am:
+ 	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(gimpdatadir) \
+ 		$(DESTDIR)$(mandir)/man1 $(DESTDIR)$(mandir)/man5 \
+-		$(DESTDIR)$(gimpdatadir) $(DESTDIR)$(gimpsysconfdir) \
++		$(DESTDIR)$(gimpdatadir) $(DESTDIR)$(datadir)/examples/gimp \
+ 		$(DESTDIR)$(m4datadir)
+ 
+ 
