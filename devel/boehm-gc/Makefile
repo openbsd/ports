@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/09/12 14:18:56 todd Exp $
+# $OpenBSD: Makefile,v 1.20 2002/09/12 14:53:27 todd Exp $
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
 COMMENT=	"garbage collection and memory leak detection for C and C++"
@@ -33,7 +33,7 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/gc.man ${PREFIX}/man/man3/gc.3
-	${INSTALL_DATA} ${WRKSRC}/include/gc{,_cpp}.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/include/gc{,_cpp,_backptr}.h ${PREFIX}/include
 
 REGRESS_TARGET=	check-TESTS
 
