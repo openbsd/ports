@@ -1,0 +1,12 @@
+$OpenBSD: patch-binutils_configure_in,v 1.1 2002/05/06 22:37:05 drahn Exp $
+--- binutils/configure.in.orig	Mon May  6 17:23:36 2002
++++ binutils/configure.in	Mon May  6 17:18:21 2002
+@@ -238,6 +238,8 @@ changequote([,])dnl
+ 	  BUILD_DLLTOOL='$(DLLTOOL_PROG)'
+ 	  DLLTOOL_DEFS="$DLLTOOL_DEFS -DDLLTOOL_I386"
+ 	  ;;
++	powerpc*-*-openbsd*)
++	  ;;
+ 	powerpc*-*-*pe* | powerpc*-*-cygwin*)
+   	  BUILD_DLLTOOL='$(DLLTOOL_PROG)$(EXEEXT)'
+ 	  DLLTOOL_DEFS="$DLLTOOL_DEFS -DDLLTOOL_PPC"
