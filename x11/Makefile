@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 1998/11/23 19:04:52 yanick Exp $
+# $OpenBSD: Makefile,v 1.25 1998/11/23 19:28:55 yanick Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -38,7 +38,7 @@
 #    SUBDIR += iv
 #    SUBDIR += kde
      SUBDIR += kdebase
-#    SUBDIR += kdelibs
+     SUBDIR += kdelibs
      SUBDIR += lesstif
 #    SUBDIR += libdnd
 #    SUBDIR += libsx
