@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.305 2000/06/16 23:53:40 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.306 2000/06/18 23:27:03 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2665,19 +2665,19 @@ fake-pkg: ${_PKG_PREREQ}
 		${ECHO_MSG} "===>  Registering installation for ${PKGNAME}"; \
 		mkdir -p ${PKG_DBDIR}/${PKGNAME}; \
 		${PKG_CMD} ${PKG_ARGS} -O ${PKGFILE} > ${PKG_DBDIR}/${PKGNAME}/+CONTENTS; \
-		cp ${WRKBUILD}/DESCR${SUBPACKAGE} ${PKG_DBDIR}/${PKGNAME}/+DESC; \
+		cp ${WRKPKG}/DESCR${SUBPACKAGE} ${PKG_DBDIR}/${PKGNAME}/+DESC; \
 		cp ${COMMENT} ${PKG_DBDIR}/${PKGNAME}/+COMMENT; \
-		if [ -f ${PKGDIR}/INSTALL ]; then \
-			cp ${PKGDIR}/INSTALL ${PKG_DBDIR}/${PKGNAME}/+INSTALL; \
+		if [ -f ${WRKPKG}/INSTALL${SUBPACKAGE} ]; then \
+			cp ${WRKPKG}/INSTALL${SUBPACKAGE} ${PKG_DBDIR}/${PKGNAME}/+INSTALL; \
 		fi; \
-		if [ -f ${PKGDIR}/DEINSTALL ]; then \
-			cp ${PKGDIR}/DEINSTALL ${PKG_DBDIR}/${PKGNAME}/+DEINSTALL; \
+		if [ -f ${WRKPKG}/DEINSTALL${SUBPACKAGE} ]; then \
+			cp ${WRKPKG}/DEINSTALL${SUBPACKAGE} ${PKG_DBDIR}/${PKGNAME}/+DEINSTALL; \
 		fi; \
-		if [ -f ${PKGDIR}/REQ ]; then \
-			cp ${PKGDIR}/REQ ${PKG_DBDIR}/${PKGNAME}/+REQ; \
+		if [ -f ${WRKPKG}/REQ${SUBPACKAGE} ]; then \
+			cp ${WRKPKG}}/REQ${SUBPACKAGE} ${PKG_DBDIR}/${PKGNAME}/+REQ; \
 		fi; \
-		if [ -f ${WRKBUILD}/MESSAGE${SUBPACKAGE} ]; then \
-			cp ${WRKBUILD}/MESSAGE${SUBPACKAGE} ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
+		if [ -f ${WRKPKG}/MESSAGE${SUBPACKAGE} ]; then \
+			cp ${WRKPKG}/MESSAGE${SUBPACKAGE} ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
 		fi; \
 		for dep in `cd ${.CURDIR} && ${MAKE} package-depends ECHO_MSG=true | ${_SORT_DEPENDS}`; do \
 			if [ -d ${PKG_DBDIR}/$$dep ]; then \
