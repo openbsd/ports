@@ -30,7 +30,7 @@
 #undef WCHAR_TYPE_SIZE
 #define WCHAR_TYPE_SIZE 32
 
-/*	$OpenBSD: openbsd.h,v 1.1 1998/10/02 18:51:26 espie Exp $	*/
+/*	$OpenBSD: openbsd.h,v 1.2 1998/12/22 23:44:51 espie Exp $	*/
 
 /* There are conflicting reports about whether this system uses
    a different assembler syntax.  wilson@cygnus.com says # is right.  */
@@ -57,7 +57,7 @@
 /* Indicate that jump tables go in the text section.  This is
    necessary when compiling PIC code.  */
 
-#define JUMP_TABLES_IN_TEXT_SECTION 1
+#define JUMP_TABLES_IN_TEXT_SECTION (flag_pic)
 
 /* Don't default to pcc-struct-return, because gcc is the only compiler, and
    we want to retain compatibility with older gcc versions.  */

@@ -1,4 +1,4 @@
-/*	$OpenBSD: openbsd.h,v 1.1 1998/10/02 18:51:25 espie Exp $	*/
+/*	$OpenBSD: openbsd.h,v 1.2 1998/12/22 23:44:51 espie Exp $	*/
 
 /* OPENBSD_NATIVE is defined when gcc is integrated into the OpenBSD
    source tree so it can be configured appropriately when using the
@@ -36,26 +36,28 @@
    prefer mkstemp(), but we will take what we get. XXX busted */
 #undef MKTEMP_EACH_FILE
 
-/* Provide a CPP_SPEC appropriate for OpenBSD.  Current we just deal with
-   the GCC option `-posix'.  */
+/* CPP_SPEC appropriate for OpenBSD. We only deal with -posix 
+	and -pthread */
 
 #undef CPP_SPEC
-#define CPP_SPEC "%{posix:-D_POSIX_SOURCE}"
+#define CPP_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
 
-/* Provide an ASM_SPEC appropriate for OpenBSD.  Currently we only deal
+/* Provide an ASM_SPEC appropriate for OpenBSD.  We only deal
    with the options for generating PIC code.  */
 
 #undef ASM_SPEC
 #define ASM_SPEC " %| %{fpic:-k} %{fPIC:-k -K}"
 
-/* Provide a LIB_SPEC appropriate for OpenBSD.  Just select the appropriate
-   libc, depending on whether we're doing profiling.  */
+/* Provide a LIB_SPEC appropriate for OpenBSD.  Select the appropriate
+   libc, depending on profiling and threads.
+	Basically, -lc(_r)?(_p)?, select _r for threads, and _p for p or pg
+ */
 
 #undef LIB_SPEC
-#define LIB_SPEC "%{!p:%{!pg:-lc}}%{p:-lc_p}%{pg:-lc_p}"
+#define LIB_SPEC "-lc%{pthread:_r}%{p:_p}%{!p:%{pg:_p}}"
 
-/* Provide a LINK_SPEC appropriate for OpenBSD.  Here we provide support
-   for the special GCC options -static, -assert, and -nostdlib.  */
+/* Provide a LINK_SPEC appropriate for OpenBSD.  Support
+   for GCC options -static, -assert, and -nostdlib.  */
 
 #undef LINK_SPEC
 #define LINK_SPEC \
