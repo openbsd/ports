@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/27 08:43:13 wilfried Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/Bundle/DBD/mysql.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/DBD/mysql.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Mysql.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Mysql/Statement.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/DBD/mysql/mysql.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/DBD/mysql/mysql.so
+man/man3/Bundle::DBD::mysql.3p
+man/man3/DBD::mysql.3p
+man/man3/Mysql.3p
+%%dbimon%%
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/DBD/mysql
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/Mysql

@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.dbimon,v 1.1.1.1 2001/03/27 08:43:13 wilfried Exp $
+bin/dbimon
+man/man1/dbimon.1

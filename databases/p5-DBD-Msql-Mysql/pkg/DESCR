@@ -1,0 +1,12 @@
+DBD::mysql are the Perl5 Database Interface drivers for the
+mysql database.
+
+In other words: DBD::mysql are an interface between the
+Perl programming language and the mysql programming API that
+come with the mysql relational database management systems.
+Most functions provided by the respective programming API's
+are supported.
+
+Flavor: dbimon
+	Installs dbimon - an interactive shell with readline
+	for DBI
