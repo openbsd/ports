@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1999/02/07 05:22:28 marc Exp $
+# $OpenBSD: Makefile,v 1.15 1999/03/22 05:05:07 brad Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -6,6 +6,7 @@
 #    SUBDIR += cam
 #    SUBDIR += cddbd
 #    SUBDIR += cdplay
+     SUBDIR += esound
 #    SUBDIR += gmod
      SUBDIR += gsm
 #    SUBDIR += maplay
