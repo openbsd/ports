@@ -1,0 +1,20 @@
+$OpenBSD: patch-pngerror_c,v 1.1 2004/05/03 05:13:04 robert Exp $
+--- pngerror.c.orig	Sun May  2 22:47:58 2004
++++ pngerror.c	Sun May  2 22:49:36 2004
+@@ -135,10 +135,14 @@
+       buffer[iout] = 0;
+    else
+    {
++      int len = strlen(error_message);
++
++      if (len > 64)
++	      len = 64;
+       buffer[iout++] = ':';
+       buffer[iout++] = ' ';
+-      png_memcpy(buffer+iout, error_message, 64);
+-      buffer[iout+63] = 0;
++      png_memcpy(buffer+iout, error_message, len);
++      buffer[iout+len-1] = 0;
+    }
+ }
+ 
