@@ -1,0 +1,11 @@
+--- src/builtin.c.orig	Mon Dec 29 14:04:03 1997
++++ src/builtin.c	Mon Dec 29 14:04:14 1997
+@@ -1078,7 +1078,7 @@
+ {
+   if (bad_argc (argv[0], argc, 2, 2))
+     return;
+-  mktemp (ARG (1));
++  mkstemp (ARG (1));
+   obstack_grow (obs, ARG (1), strlen (ARG (1)));
+ }
+ 
