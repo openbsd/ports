@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/06/22 01:15:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2001/07/30 00:24:19 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
@@ -11,7 +11,7 @@ V_AITO=		0.2.1
 V_HSAKA=	0.19
 
 DISTNAME=	w3m-${V_AITO}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www
 NEED_VERSION=	1.364
 HOMEPAGE=	http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/eng/
