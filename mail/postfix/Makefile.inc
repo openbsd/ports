@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2001/10/24 12:22:45 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2001/10/25 21:35:38 jakob Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -25,7 +25,7 @@ MAKE_AUXLIBS?=
 
 ALL_TARGET=	default
 
-FLAVORS=	pcre sasl ldap mysql
+FLAVORS+=	pcre sasl ldap mysql tls
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpcre}
@@ -50,6 +50,33 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
 LIB_DEPENDS+=	mysqlclient.10:mysql-client-3.23.*:databases/mysql
 MAKE_CCARGS+=	-I${LOCALBASE}/include/mysql -DHAS_MYSQL
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
+.endif
+
+.if ${FLAVOR:L:Mtls}
+MASTER_SITES0=	ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/ \
+		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/old/
+
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${TLSDISTNAME}${EXTRACT_SUFX}:0
+
+MAKE_CCARGS+=	-DHAS_SSL
+MAKE_AUXLIBS+=	-lssl -lcrypto
+
+post-patch:
+	mv ${WRKDIST}/conf/master.cf ${WRKDIST}/conf/master.cf.save
+	cp ${WRKDIST}/conf/master.cf.orig ${WRKDIST}/conf/master.cf
+	cd ${WRKDIST} && patch -p1 < ${WRKDIR}/${TLSDISTNAME}/pfixtls.diff
+	mv ${WRKDIST}/conf/master.cf.save ${WRKDIST}/conf/master.cf
+	cd ${WRKDIST} && patch -p0 < ${FILESDIR}/patch-tls-master.cf
+	rm ${WRKDIST}/conf/*.orig
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postfix/tls
+	${INSTALL_DATA} ${WRKDIR}/${TLSDISTNAME}/doc/* \
+		${PREFIX}/share/doc/postfix/tls
+.else
+post-patch:
+	rm ${WRKDIST}/conf/*.orig
 .endif
 
 do-configure:
