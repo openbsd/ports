@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/02/23 18:30:20 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2003/03/02 05:25:39 pvalchev Exp $
 
 COMMENT=	"SDL TrueType fonts library"
 
@@ -9,7 +9,7 @@ PKGNAME=	sdl-ttf-${VER}
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.libsdl.org/projects/${PROJ}/release/
 
-HOMEPAGE=	http://www.libsdl.org/
+HOMEPAGE=	http://www.libsdl.org/projects/SDL_ttf/
 
 MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
 
