@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 03:45:43 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/20 22:48:54 pvalchev Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	"system secureness checker"
@@ -31,7 +31,7 @@ pre-build:
 	mv cops.out cops ; chmod u+x cops)
 
 do-build:
-	(cd ${WRKSRC} ; make EXECUTABLE="${EXECUTABLE}" C_SRC="${C_SRC}")
+	(cd ${WRKSRC} ; ${MAKE_PROGRAM} EXECUTABLE="${EXECUTABLE}" C_SRC="${C_SRC}")
 
 do-install:
 	(cd ${WRKDIR} ; rm -rf ${PREFIX}/cops ; mkdir -p ${PREFIX}/cops ; \
