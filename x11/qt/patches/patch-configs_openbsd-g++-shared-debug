@@ -1,5 +1,5 @@
---- configs/openbsd-g++-shared-debug.orig	Sat Jun 24 14:52:34 2000
-+++ configs/openbsd-g++-shared-debug	Sat Jun 24 15:04:07 2000
+--- configs/openbsd-g++-shared-debug.orig	Sat Sep  2 01:47:50 2000
++++ configs/openbsd-g++-shared-debug	Sat Sep  2 01:55:31 2000
 @@ -1,35 +1,35 @@
  # Compiling
 -SYSCONF_CXX		= g++
@@ -43,12 +43,15 @@
  
  # Meta-object compiler
  SYSCONF_MOC		= $(QTDIR)/bin/moc
-@@ -41,7 +41,7 @@
+@@ -39,9 +39,9 @@
+ #   - Place target in $(DESTDIR) - which has a trailing /
+ #   - Usually needs to incorporate $(VER_MAJ) and $(VER_MIN)
  #
- SYSCONF_LINK_SHLIB	= ld
+-SYSCONF_LINK_SHLIB	= ld
++SYSCONF_LINK_SHLIB	= $(SYS_CXX) -shared
  SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ).$(VER_MIN)
 -SYSCONF_LINK_LIB_SHARED	= $(SYSCONF_LINK_SHLIB) -Bshareable $(LFLAGS) -o $(DESTDIR)$(SYSCONF_LINK_TARGET_SHARED) `lorder /usr/lib/c++rt0.o $(OBJECTS) $(OBJMOC) | tsort` $(LIBS)
-+SYSCONF_LINK_LIB_SHARED	= $(SYSCONF_LINK_SHLIB) -Bshareable -Bforcearchive $(LFLAGS) -o $(DESTDIR)$(SYSCONF_LINK_TARGET_SHARED) $(OBJECTS) $(OBJMOC) $(LIBS)
++SYSCONF_LINK_LIB_SHARED	= $(SYSCONF_LINK_SHLIB) $(LFLAGS) -o $(DESTDIR)$(SYSCONF_LINK_TARGET_SHARED) $(OBJECTS) $(OBJMOC) $(LIBS)
  
  # Linking static libraries
  #   - Build the $(TARGET) library, eg. lib$(TARGET).a
