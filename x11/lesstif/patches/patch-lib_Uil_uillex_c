@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Uil_uillex_c,v 1.1 2003/01/02 06:39:31 pvalchev Exp $
+--- lib/Uil/uillex.c.orig	Thu Dec 12 01:25:29 2002
++++ lib/Uil/uillex.c	Thu Dec 12 01:25:43 2002
+@@ -435,7 +435,7 @@ unput(Uil_parse_data *pd)
+ extern int
+ _uil_next_lexeme(Uil_parse_data *pd)
+ {
+-    char ch, ch2, *ptr;
++    signed char ch, ch2, *ptr;
+     int have_point;
+     sym_entry *e;
+ 
