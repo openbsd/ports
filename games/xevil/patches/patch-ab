@@ -1,9 +1,0 @@
---- Makefile.old	Tue Jun  9 02:56:03 1998
-+++ Makefile	Tue Jun  9 19:20:29 1998
-@@ -281,5 +281,5 @@
- 	cp xevil $(PREFIX)/bin
- 	mkdir -p $(PREFIX)/lib/app-defaults
- 	for f in iris mac sun3 sun4_sparc; do 	  cp app-defaults/XEvil.$$f $(PREFIX)/lib/app-defaults/; done
--	gzip -9 <xevil.6 >$(PREFIX)/man/man6/xevil.6.gz
-+	install -c -m 444 -o bin -g bin xevil.6 $(PREFIX)/man/man6/xevil.6
- 
