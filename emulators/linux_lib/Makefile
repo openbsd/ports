@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2000/10/01 04:31:57 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2001/01/21 18:52:16 brad Exp $
 # $NetBSD: Makefile,v 1.10 1998/04/24 09:07:55 agc Exp $
 # $FreeBSD Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp $
 
@@ -10,7 +10,7 @@ NEED_VERSION=	1.330
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 EXTRACT_ONLY=
 
-MAINTAINER=	Brad Smith <brad@openbsd.org>
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/10/01 03:41:14 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2001/01/21 18:52:16 brad Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -8,7 +8,7 @@ NEED_VERSION=	1.330
 MASTER_SITES=	ftp://ftp.dqc.org/pub/brad/source/
 EXTRACT_ONLY=
 
-MAINTAINER=	Brad Smith <brad@openbsd.org>
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
