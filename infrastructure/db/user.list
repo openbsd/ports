@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.20 2004/11/13 01:52:25 alek Exp $
+$OpenBSD: user.list,v 1.21 2004/11/14 11:59:31 sturm Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -45,3 +45,4 @@ id  user		group		port options
 534 _zope		_zope		www/zope
 535 _symon		_symon		sysutils/symon
 536 _nostromo		_nostromo	www/nostromo
+537 _maradns		_maradns	net/maradns/stable
