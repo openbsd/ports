@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2000/05/22 16:41:20 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2000/05/24 09:33:46 form Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -17,6 +17,7 @@
      SUBDIR += faces
      SUBDIR += fastforward
      SUBDIR += fetchmail
+     SUBDIR += hypermail
      SUBDIR += imap-uw
 #    SUBDIR += mailagent
 #    SUBDIR += majorcool
