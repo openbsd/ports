@@ -1,12 +1,16 @@
-# $OpenBSD: Makefile.inc,v 1.10 2000/10/22 16:16:26 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2001/08/10 14:37:58 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
 
 # Subdirectory MUST define DIRNAME, LOCATION and PROGRAM_V.
 
+.if ${MACHINE_ARCH} == "sparc" && !exists(/emul/sunos/usr/lib/ld.so)
+IGNORE=		"requires SunOS shared libraries"
+.endif
+
 CATEGORIES=     www
-NEED_VERSION=	1.322
+NEED_VERSION=	1.413
 MASTER_SITES= \
 	ftp://ftp.netscape.com/pub/%SUBDIR%/ \
 	ftp://uiarchive.uiuc.edu/pub/www/netscape/%SUBDIR%/ \
