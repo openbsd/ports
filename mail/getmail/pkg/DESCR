@@ -16,5 +16,3 @@ licensed under the GNU General Public License version 2.
    * Can remember which mail it has already retrieved, and can be set
      to only download new messages.
    * Written in Python, and therefore easy to extend.
-
-WWW: ${HOMEPAGE}
