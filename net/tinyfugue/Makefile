@@ -1,28 +1,33 @@
-# New ports collection makefile for:	tinyfugue
-# Version required:	4.0a7
-# Date created:		Thu Jul 16 10:23:11 PDT 1998
-# Whom:			downsj@openbsd.org
+# New ports collection makefile for:    tinyfugue
+# Version required:     4.0s1
+# Date created:         Thu Jul 16 10:23:11 PDT 1998
+# Whom:                 downsj@openbsd.org
 #
-# Originally from FreeBSD:
+# From FreeBSD:
 # Date created:		4 January 1997
 # Whom:			mike@binghamton.edu
 #
-# $OpenBSD: Makefile,v 1.1 1998/07/16 17:30:32 downsj Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/11 03:15:09 downsj Exp $
+# $FreeBSD: Makefile,v 1.16 1999/02/16 03:06:21 jseger Exp $
 #
 
-DISTNAME=	tf-40a7
-PKGNAME=	tf-4.0a7
-CATEGORIES=	net
+DISTNAME=	tf-40s1
+PKGNAME=	tf-4.0s1
+CATEGORIES=	net games
 MASTER_SITES=	ftp://tf.tcp.com/pub/tinyfugue/ \
-		ftp://laurel.actlab.utexas.edu/pub/tinyfugue/
+		ftp://ftp.demon.co.uk/pub/games/mud/
 
 MAINTAINER=	downsj@openbsd.org
 
-MAN1=		tf.1
-MAKEFILE=	${WRKSRC}/unix/Makefile
-ALL_TARGET=	${MAKE_ARGS} all
-INSTALL_TARGET=	${MAKE_ARGS} install
+.if defined(PARALLEL_PACKAGE_BUILD)
+BROKEN=		tries to cd to directory that do not exist yet
+.endif
 
-MAKE_ARGS=	TFVER=${DISTNAME:S/^tf-//}
+PLIST_SUB=	DISTNAME=${DISTNAME}
+
+MAKEFILE=	${WRKSRC}/unix/Makefile
+MAKE_ENV=	TFVER=${DISTNAME:S/^tf-//}
+
+MAN1=		tf.1
 
 .include <bsd.port.mk>
