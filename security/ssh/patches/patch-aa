@@ -1,6 +1,6 @@
---- make-ssh-known-hosts.pl.~1~	Mon May 11 15:34:43 1998
-+++ make-ssh-known-hosts.pl.in	Sun May 31 12:36:43 1998
-@@ -95,7 +95,7 @@
+--- make-ssh-known-hosts.pl.in.orig	Wed Jul  8 09:40:08 1998
++++ make-ssh-known-hosts.pl.in	Sun Jul 12 17:48:10 1998
+@@ -98,7 +98,7 @@
  $debug = 5;
  $defserver = '';
  $bell='\a';

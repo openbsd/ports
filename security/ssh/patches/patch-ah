@@ -1,6 +1,6 @@
---- newchannels.c.orig	Thu Jun 11 07:01:12 1998
-+++ newchannels.c	Thu Jun 11 19:52:43 1998
-@@ -2383,6 +2383,10 @@
+--- newchannels.c.orig	Wed Jul  8 09:40:36 1998
++++ newchannels.c	Sun Jul 12 17:48:14 1998
+@@ -2388,6 +2388,10 @@
       ssh-agent connections on your system */
    old_umask = umask(S_IRUSR|S_IXUSR|S_IRGRP|S_IXGRP|S_IROTH|S_IXOTH);
    

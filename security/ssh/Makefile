@@ -3,13 +3,13 @@
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.25 1998/07/07 03:59:57 marc Exp $
+# $OpenBSD: Makefile,v 1.26 1998/07/13 01:16:52 marc Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
 #
 
-DISTNAME=       ssh-1.2.25
+DISTNAME=       ssh-1.2.26
 CATEGORIES=	security net
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 
@@ -29,9 +29,6 @@ MASTER_SITES=	\
 	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
 	ftp://idea.dsi.unimi.it/pub/security/crypt/math/
 .endif
-PATCH_SITES=		http://www.core-sdi.com/ssh/
-PATCHFILES=		ssh-1.2.25.patch
-PATCH_DIST_STRIP=	-p1
 
 RESTRICTED=	"Crypto; export-controlled"
 IS_INTERACTIVE=	YES
