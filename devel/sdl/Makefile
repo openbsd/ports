@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2002/05/06 04:26:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.25 2002/09/07 04:56:28 pvalchev Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
 
 VERSION=	1.2.4
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p1
+PKGNAME=	${DISTNAME:L}p2
 CATEGORIES=	devel
-NEED_VERSION=	1.525
 
 HOMEPAGE=	http://www.libsdl.org
 
@@ -55,7 +54,7 @@ CONFIGURE_ARGS+= --disable-esd
 .endif
 
 .if ${FLAVOR:L:Marts}
-LIB_DEPENDS+=	artsc::x11/kde/libs2
+LIB_DEPENDS+=	artsc::x11/kde/arts3
 CONFIGURE_ARGS+= --enable-arts
 .else
 CONFIGURE_ARGS+= --disable-arts
