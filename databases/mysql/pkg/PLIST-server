@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.1 2001/06/02 20:18:45 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.2 2001/06/15 19:10:13 brad Exp $
 bin/comp_err
 bin/isamchk
 bin/isamlog
@@ -69,6 +69,7 @@ share/doc/mysql/Flags/israel.gif
 share/doc/mysql/Flags/italy.gif
 share/doc/mysql/Flags/japan.gif
 share/doc/mysql/Flags/kroatia.gif
+share/doc/mysql/Flags/latvia.gif
 share/doc/mysql/Flags/netherlands.gif
 share/doc/mysql/Flags/poland.gif
 share/doc/mysql/Flags/portugal.gif

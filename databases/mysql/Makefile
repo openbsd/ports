@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2001/06/03 01:20:02 brad Exp $
+# $OpenBSD: Makefile,v 1.49 2001/06/15 19:10:11 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 COMMENT=	"multithreaded SQL database (client)"
 COMMENT-server=	"multithreaded SQL database (server)"
 
-VERSION=	3.23.38
+VERSION=	3.23.39
 DISTNAME=	mysql-${VERSION}
 FULLPKGNAME=	mysql-client-${VERSION}
 FULLPKGNAME-server=	mysql-server-${VERSION}${FLAVOR_EXT}
