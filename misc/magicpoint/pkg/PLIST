@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/11/19 12:34:12 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/08/13 01:43:44 espie Exp $
 bin/mgp
 bin/mgp2ps
 bin/mgpembed
@@ -17,7 +17,7 @@ man/cat1/mgp.0
 man/cat1/mgp2ps.0
 man/cat1/mgpembed.0
 man/cat1/mgpnet.0
-man/cat1/xwintoppm.0 
+man/cat1/xwintoppm.0
 man/man1/xmindpath.1
 share/doc/mgp/COPYRIGHT
 share/doc/mgp/COPYRIGHT.jp
