@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.670 2004/11/28 11:44:00 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.671 2004/12/19 12:20:12 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -190,6 +190,14 @@ _clean+=fake
 .if ${_clean:L:Mforce}
 _clean+=-f
 .endif
+# check that clean is clean
+_okay_words=depends work fake -f flavors dist install sub packages package \
+	readme bulk
+.for _w in ${_clean:L}
+.  if !${_okay_words:M${_w}}
+ERRORS+="Fatal: unknown clean command: ${_w}"
+.  endif
+.endfor
 
 NOMANCOMPRESS?=	Yes
 DEF_UMASK?=		022
