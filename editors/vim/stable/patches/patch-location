@@ -1,0 +1,29 @@
+--- Makefile.orig	Mon Dec  4 22:14:47 2000
++++ Makefile	Mon Dec  4 22:14:49 2000
+@@ -788,16 +788,16 @@ SCRIPTLOC	= $(VIMRTLOC)
+ ### some sed trickery. (the files are installed into a temporary directory
+ ### for building the package, but they eventually end up in /usr/... . This
+ ### ensures that the correct path is put into the man page.)
+-VIMRCENDLOC = $(VIMRCLOC)
+-#VIMRCENDLOC = /etc
+-HELPENDLOC = $(HELPSUBLOC)
+-#HELPENDLOC = /usr/doc/vim
+-SYNTAXENDLOC = $(SYNSUBLOC)
+-#SYNTAXENDLOC = /usr/lib/vim/syntax
+-SCRIPTENDLOC = $(SCRIPTLOC)
+-#SCRIPTENDLOC = /etc
+-TUTORENDLOC = $(TUTORSUBLOC)
+-#TUTORENDLOC = /usr/lib/vim/tutor
++#VIMRCENDLOC = $(VIMRCLOC)
++VIMRCENDLOC = $(LOCALBASE)/share$(VIMDIR)
++#HELPENDLOC = $(HELPSUBLOC)
++HELPENDLOC = $(LOCALBASE)/share$(VIMDIR)$(VIMRTDIR)$(HELPSUBDIR)
++#SYNTAXENDLOC = $(SYNSUBLOC)
++SYNTAXENDLOC = $(LOCALBASE)/share$(VIMDIR)$(VIMRTDIR)$(SYNSUBDIR)
++#SCRIPTENDLOC = $(SCRIPTLOC)
++SCRIPTENDLOC = $(LOCALBASE)/share$(VIMDIR)$(VIMRTDIR)
++#TUTORENDLOC = $(TUTORSUBLOC)
++TUTORENDLOC = $(LOCALBASE)/share$(VIMDIR)$(VIMRTDIR)$(TUTORSUBDIR)
+ 
+ ### Name of the menu file target.
+ SYS_MENU_FILE	= $(SCRIPTLOC)/menu.vim
