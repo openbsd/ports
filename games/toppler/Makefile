@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/02/28 05:22:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2002/04/08 23:21:33 naddy Exp $
 
 COMMENT=	"Nebulous rewrite of Tower Toppler"
 
@@ -18,10 +18,10 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=		http://prdownloads.sourceforge.net/toppler/
 
-LIB_DEPENDS=    SDL::devel/sdl \
-		SDL_mixer::devel/sdl-mixer
+LIB_DEPENDS=	SDL_mixer::devel/sdl-mixer
 
 CONFIGURE_STYLE= autoconf
+MAKE_FLAGS=	scoredir=/var/games
 
 USE_X11=	Yes
 

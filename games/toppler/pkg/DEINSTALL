@@ -1,0 +1,23 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1 2002/04/08 23:21:33 naddy Exp $
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+SCORE_FILE=/var/games/toppler.hsc
+
+if [ -f $SCORE_FILE ]; then
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package you need to perform"
+    echo "| this step as root:"
+    echo "|"
+    echo "|           rm -f $SCORE_FILE"
+    echo "|"
+    echo "| Do not do this if you plan on re-installing $1"
+    echo "| at some future time."
+    echo "+---------------"
+    echo
+fi
+
+exit 0
