@@ -1,0 +1,24 @@
+*** common/tmpfile.c.orig	Wed May 20 02:47:47 1998
+--- common/tmpfile.c	Wed May 20 02:51:16 1998
+***************
+*** 90,96 ****
+  char *tmpfile_create()
+  {
+      TMP_FILE *ptr, *tf;
+!     char *filename = strdup(tmpnam(NULL));
+  
+      if(filename == NULL)
+          return(NULL);
+--- 90,101 ----
+  char *tmpfile_create()
+  {
+      TMP_FILE *ptr, *tf;
+!     char xxx[40];
+!     char *filename;
+! 
+!    sprintf(xxx, "/tmp/tmpf.XXXXXXXX");
+!    close(mkstemp(xxx));
+!    filename = strdup(xxx);
+  
+      if(filename == NULL)
+          return(NULL);
