@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/14 11:36:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/08/10 14:39:54 naddy Exp $
 
 COMMENT=	"network file distribution system, optimized for CVS"
 ONLY_FOR_ARCHS=	sparc
@@ -41,7 +41,13 @@ INSTALL_STRIP=
 
 .if !defined(NO_WARNINGS)
 pre-fetch:
-	@sh ${PKGDIR}/REQ ${PKGNAME} INSTALL
+	@echo
+	@echo "  WARNING: This application requires a kernel compiled with"
+	@echo "           'option COMPAT_SUNOS' and SunOS shared libraries"
+	@echo "           for proper operation; see compat_sunos(8) for"
+	@echo "           further details. The GENERIC kernel contains this"
+	@echo "           option."
+	@echo
 .endif
 
 NO_BUILD=	Yes
