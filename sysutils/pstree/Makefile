@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/06/18 22:15:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/06/20 13:32:04 naddy Exp $
 
 COMMENT=		"list processes as a tree"
 DISTNAME=		pstree-2.17
@@ -24,5 +24,6 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/pstree ${PREFIX}/bin/pstree
+	${INSTALL_MAN} ${FILESDIR}/pstree.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -1,0 +1,75 @@
+.\"	$OpenBSD: pstree.1,v 1.1 2002/06/20 13:32:04 naddy Exp $
+.Dd June 19, 2002
+.Dt PSTREE 1
+.Os
+.Sh NAME
+.Nm pstree
+.Nd list processes as a tree
+.Sh SYNOPSIS
+.Nm pstree
+.Op Fl Uw
+.Op Fl f Ar file
+.Op Fl g Ar n
+.Op Fl u Ar user
+.Op Fl s Ar string
+.Op Fl p Ar pid
+.Op Ar pid ...
+.Sh DESCRIPTION
+Tree sorted output frontend for
+.Xr ps 1 .
+.Nm
+uses the output of the
+.Xr ps 1
+program to show a nicely formatted process family tree.
+.Pp
+If given one or more
+.Ar pid
+arguments
+.Nm
+shows just the branches rooted at the given pids.
+By default it starts at pid 1.
+(If no argument is given).
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl U
+Don't show branches containing only root processes.
+.It Fl w
+Wide output, not truncated to window width.
+.It Fl f Ar file
+Read input from
+.Ar file
+(- is stdin) instead of running
+.Dq ps -axwwo user,pid,ppid,pgid,command .
+.It Fl g Ar n
+Use graphics chars for tree.
+.Ar n
+= 1:
+IBM-850,
+.Ar n
+= 2: VT100.
+.It Fl u Ar user
+Show only branches containing processes of
+.Ar user .
+.It Fl s Ar string
+Show only branches containing process with
+.Ar string
+in commandline.
+.It Fl p Ar pid
+Show only branches containing process
+.Ar pid .
+.Sh EXAMPLES
+Show branches of processes containing
+.Dq \&httpd
+using VT100 graphic chars:
+.Pp
+.Cm $ pstree -g 2 -s httpd
+.Pp
+Show process number
+.Dq \&15495
+and its descendants:
+.Pp
+.Cm $ pstree 15495
+.Sh SEE ALSO
+.Xr ps 1 ,
+.Xr top 1
