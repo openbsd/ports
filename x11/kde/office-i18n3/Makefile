@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/02/23 13:55:37 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2003/02/26 10:42:07 espie Exp $
 
 FLAVORS=af ar bs cs da de el en_GB eo es et fr he hu \
     it ja lt lv mt nb nl nn pl pt pt_BR ru sk sl sv th tr uk ven \
@@ -28,7 +28,11 @@ PLIST=${PKGDIR}/PLIST.${FLAVOR}
 #.endif
 
 MODKDE_VERSION=
-PATCH_LIST=patch-* 
+MODKDE_NODEBUG=Yes
+
+MAKE_FLAGS+=MEINPROC=
+FAKE_FLAGS=DESTDIR=${WRKINST} MEINPROC=
+
 # some extra vars to compact PLISTs
 DOC=share/doc/HTML/${FLAVOR}/
 LOC=share/locale/${FLAVOR}/LC_MESSAGES/
@@ -36,5 +40,4 @@ I=index.docbook
 C=index.cache.bz2
 SUBST_VARS=DOC LOC I C
 
-NO_DEBUG=Yes
 .include <bsd.port.mk>
