@@ -1,4 +1,4 @@
-$OpenBSD: patch-asmrun_amd64_S,v 1.1 2004/03/05 21:54:36 avsm Exp $
+$OpenBSD: patch-asmrun_amd64_S,v 1.2 2004/03/06 17:28:03 avsm Exp $
 --- asmrun/amd64.S.orig	2003-06-30 09:28:45.000000000 +0100
 +++ asmrun/amd64.S	2004-03-05 11:37:40.000000000 +0000
 @@ -252,7 +252,8 @@ FUNCTION(caml_start_program)
@@ -16,7 +16,7 @@ $OpenBSD: patch-asmrun_amd64_S,v 1.1 2004/03/05 21:54:36 avsm Exp $
          .align  8
  
 -	.section	.rodata.cst8,"aM",@progbits,8
-+	.section	rodata
++	.section	.rodata.cst8,"a",@progbits
          .globl  caml_negf_mask
          .type   caml_negf_mask,@object
          .align  16

@@ -1,4 +1,4 @@
-$OpenBSD: patch-asmcomp_amd64_emit_mlp,v 1.1 2004/03/05 21:54:36 avsm Exp $
+$OpenBSD: patch-asmcomp_amd64_emit_mlp,v 1.2 2004/03/06 17:28:03 avsm Exp $
 --- asmcomp/amd64/emit.mlp.orig	2004-03-04 22:55:53.000000000 +0000
 +++ asmcomp/amd64/emit.mlp	2004-03-04 22:56:33.000000000 +0000
 @@ -612,7 +612,7 @@ let fundecl fundecl =
@@ -6,7 +6,7 @@ $OpenBSD: patch-asmcomp_amd64_emit_mlp,v 1.1 2004/03/05 21:54:36 avsm Exp $
      (* Never returns, but useful to have retaddr on stack for debugging *)
    if !float_constants <> [] then begin
 -    `	.section	.rodata.cst8,\"aM\",@progbits,8\n`;
-+    `	.section	.rodata\n`;
++    `	.section	.rodata.cst8,\"a\",@progbits\n`;
      List.iter emit_float_constant !float_constants
    end
  
