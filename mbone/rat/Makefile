@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/27 18:17:29 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/07 12:44:07 kevlo Exp $
 
 DISTNAME=       rat-3.0
 DISTFILES=	rat-3.0.33.tar.gz
@@ -15,6 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	tcl80::lang/tcl/8.0 \
 		tk80::x11/tk/8.0 \
+
+FAKE=		Yes
 
 post-extract:
 	@cp ${FILESDIR}/buildcmd ${WRKSRC}/buildcmd

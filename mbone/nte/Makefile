@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/27 18:17:29 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/04/07 12:43:59 kevlo Exp $
 
 DISTNAME=       nte-1.7.0
 CATEGORIES=	mbone
@@ -19,6 +19,7 @@ LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
 
 USE_GMAKE=	Yes
 HAS_CONFIGURE=	Yes
+FAKE=		Yes
 
 WRKDIST=		${WRKDIR}/nte
 

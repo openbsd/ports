@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/03/27 18:17:28 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/04/07 12:43:51 kevlo Exp $
 
 DISTNAME=       common-1.0.6
 CATEGORIES=	mbone
@@ -18,6 +18,7 @@ LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
 
 USE_GMAKE=	Yes
 GNU_CONFIGURE=	Yes
+FAKE=		Yes
 
 WRKDIST=		${WRKDIR}/common
 

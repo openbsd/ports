@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/24 23:28:21 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/07 12:44:16 kevlo Exp $
 #
 
 DISTNAME=       wb-1.59
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WRKDIST=	${WRKDIR}
 NO_BUILD=	Yes
 USE_X11=	Yes
+FAKE=		Yes
 
 # XXX ghostscript, ghostscript3, ghostscript4 or ghostscript5 will all do.
 RUN_DEPENDS=	gs::print/ghostscript/gnu
