@@ -1,8 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.20 2003/07/23 01:18:02 brad Exp $
+@comment $OpenBSD: PLIST,v 1.21 2003/08/13 03:07:51 jolan Exp $
+%%audio%%
 bin/gaim
 bin/gaim-remote
 include/gaim-remote/remote-socket.h
 include/gaim-remote/remote.h
+lib/gaim/autorecon.la
+lib/gaim/docklet.la
+lib/gaim/gaim-remote.la
+lib/gaim/gestures.la
+lib/gaim/history.la
+lib/gaim/iconaway.la
+lib/gaim/idle.la
+lib/gaim/libgg.la
+lib/gaim/libirc.la
+lib/gaim/libjabber.la
+lib/gaim/libmsn.la
+lib/gaim/libnapster.la
+lib/gaim/liboscar.la
+lib/gaim/libtoc.la
+lib/gaim/libyahoo.la
+lib/gaim/libzephyr.la
+lib/gaim/perl.la
+lib/gaim/spellchk.la
+lib/gaim/statenotify.la
+lib/gaim/ticker.la
+lib/gaim/timestamp.la
+lib/libgaim-remote.la
 man/man1/gaim-remote.1
 man/man1/gaim.1
 share/applications/gaim.desktop
@@ -225,15 +248,7 @@ share/pixmaps/gaim/tb_drag_arrow_right.xpm
 share/pixmaps/gaim/tb_drag_arrow_up.xpm
 share/pixmaps/gaim/typed.png
 share/pixmaps/gaim/typing.png
-share/sounds/gaim/arrive.wav
-share/sounds/gaim/leave.wav
-share/sounds/gaim/receive.wav
-share/sounds/gaim/redalert.wav
-share/sounds/gaim/send.wav
 %%SHARED%%
-%%audio%%
-@comment @dirrm share/sounds/gaim
-@comment @dirrm share/sounds
 @dirrm share/pixmaps/gaim/status/default
 @dirrm share/pixmaps/gaim/status
 @dirrm share/pixmaps/gaim/smileys/default

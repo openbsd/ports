@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2003/07/23 01:13:58 brad Exp $
+# $OpenBSD: Makefile,v 1.43 2003/08/13 03:07:51 jolan Exp $
 
 DISTNAME=	gaim-0.66
 CATEGORIES=	net
@@ -17,20 +17,17 @@ MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 MODULES=	gettext
 
-LIB_DEPENDS+=	glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
-		atk-1.0.0.0::devel/atk \
-		pango-1.0.0.0,pangox-1.0.0.0,pangoxft-1.0.0.0::devel/pango \
-		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} --disable-gtkspell --disable-nas
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} --disable-nas
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-FLAVORS=	audio
+FLAVORS=	audio gtkspell
 FLAVOR?=	
 
 .if ${FLAVOR:L:Maudio}
@@ -38,6 +35,12 @@ LIB_DEPENDS+=	audiofile::devel/libaudiofile \
 		ao.3::audio/libao
 .else
 CONFIGURE_ARGS+= --disable-audio
+.endif
+
+.if ${FLAVOR:L:Mgtkspell}
+LIB_DEPENDS+=	gtkspell::textproc/gtkspell
+.else
+CONFIGURE_ARGS+=--disable-gtkspell
 .endif
 
 .include <bsd.port.mk>

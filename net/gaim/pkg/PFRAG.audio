@@ -1,7 +1,8 @@
-@comment $OpenBSD: PFRAG.audio,v 1.1 2003/04/09 16:39:46 brad Exp $
+@comment $OpenBSD: PFRAG.audio,v 1.2 2003/08/13 03:07:51 jolan Exp $
 share/sounds/gaim/arrive.wav
 share/sounds/gaim/leave.wav
 share/sounds/gaim/receive.wav
 share/sounds/gaim/redalert.wav
 share/sounds/gaim/send.wav
 @dirrm share/sounds/gaim
+@comment @dirrm share/sounds
