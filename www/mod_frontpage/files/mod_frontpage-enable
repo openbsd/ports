@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# $OpenBSD: mod_frontpage-enable,v 1.1 2001/08/13 15:50:22 brad Exp $
+
+MODULE=!!PREFIX!!/lib/mod_frontpage.so
+
+if [ `id -u` -ne 0 ]; then
+    echo "You must be root to run this script."
+    exit
+fi
+
+if [ ! -f ${MODULE} ]; then
+    echo "Can not find mod_frontpage module (${MODULE})"
+    exit 1
+else
+    echo "Enabling Frontpage module..."
+    /usr/sbin/apxs -i -a -n frontpage ${MODULE}
+fi
