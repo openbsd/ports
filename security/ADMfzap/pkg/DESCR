@@ -15,7 +15,6 @@
 
 
 ADMfzap makes all (or most of) your connect() and bind()
-calls originating from port 20 (tcp, ftp-data) or 53 (udp,
-dns). Alternatly, the source port can also be configured
+calls originate from port 20 (tcp, ftp-data) or 53 (udp,
+dns). Alternatively, the source port can also be configured
 via the environment variable $LOPORT.
-

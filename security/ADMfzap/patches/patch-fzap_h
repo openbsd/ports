@@ -1,3 +1,4 @@
+$OpenBSD: patch-fzap_h,v 1.1 2002/03/24 07:30:43 jsyn Exp $
 --- fzap.h.orig	Mon Feb 15 18:50:43 1999
 +++ fzap.h	Thu Apr  6 15:51:10 2000
 @@ -1,8 +1,9 @@
