@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/13 22:25:12 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/14 14:41:29 todd Exp $
 
 COMMENT=		"the core GNOME system"
 V=			1.4.0.4
 DISTNAME=		gnome-core-${V}
 CATEGORIES=		x11
-NEED_VERSION=   	1.384
+NEED_VERSION=   	1.455
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 

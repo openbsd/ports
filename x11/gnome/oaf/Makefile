@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/13 20:23:11 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/14 14:41:30 todd Exp $
 
 COMMENT=		"Object Activation Framework for GNOME"
 V=			0.6.5
 DISTNAME=		oaf-${V}
 CATEGORIES=		devel
-NEED_VERSION=   	1.384
+NEED_VERSION=   	1.455
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 

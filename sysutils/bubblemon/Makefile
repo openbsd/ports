@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/13 20:51:03 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/14 14:41:30 todd Exp $
 
 COMMENT=		"GNOME panel applet that displays the CPU + memory load"
 V=			1.0.5
 DISTNAME=		bubblemon-${V}
 CATEGORIES=		x11
-NEED_VERSION=   	1.384
+NEED_VERSION=   	1.455
 HOMEPAGE=		http://www.d.kth.se/~d92-jwa/code/
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 

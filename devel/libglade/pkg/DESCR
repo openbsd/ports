@@ -4,4 +4,4 @@ create the interface files.
 
 For more information about libglade, visit:
 
-WWW: http://www.gnome.org
+WWW: ${HOMEPAGE}

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/13 21:38:02 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/14 14:41:30 todd Exp $
 
 COMMENT=		"the GNOME control center"
 V=			1.4.0.1
 DISTNAME=		control-center-${V}
 CATEGORIES=		x11 gnome
-NEED_VERSION=   	1.384
+NEED_VERSION=   	1.455
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 

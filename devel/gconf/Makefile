@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/13 21:18:43 todd Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/14 14:41:29 todd Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 V=			1.0.1
 DISTNAME=		GConf-${V}
 CATEGORIES=		devel
-NEED_VERSION=   	1.384
+NEED_VERSION=   	1.455
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/13 20:47:16 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/14 14:41:30 todd Exp $
 
 COMMENT=		"GNOME icq client"
 V=			0.96.1
 DISTNAME=		gnomeicu-${V}
 CATEGORIES=		net
-NEED_VERSION=   	1.384
+NEED_VERSION=   	1.455
 HOMEPAGE=		http://gnomeicu.sourceforge.net
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 

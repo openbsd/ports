@@ -3,4 +3,4 @@ setting up your GNOME environment.
 
 For more information about the GNOME project, visit:
 
-WWW: http://www.gnome.org
+WWW: ${HOMEPAGE}

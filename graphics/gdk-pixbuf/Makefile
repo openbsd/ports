@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/09/14 03:41:29 heko Exp $
+# $OpenBSD: Makefile,v 1.8 2001/09/14 14:41:30 todd Exp $
 
 COMMENT=	"replacement library for Imlib"
 
 DISTNAME=	gdk-pixbuf-0.10.1
 CATEGORIES=	graphics
-NEED_VERSION=	1.435
+NEED_VERSION=	1.455
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= unstable/sources/gdk-pixbuf
 

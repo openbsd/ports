@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/13 20:48:53 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/14 14:41:30 todd Exp $
 
 COMMENT=		"sample theme engines for GTK+ provided with GNOME"
 V=			0.12
 DISTNAME=		gtk-engines-${V}
 CATEGORIES=		x11
-NEED_VERSION=   	1.384
+NEED_VERSION=   	1.455
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 

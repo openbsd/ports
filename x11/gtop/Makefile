@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/14 14:15:26 todd Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/14 14:41:30 todd Exp $
 
 COMMENT=		"the GNOME version of top"
 V=			1.0.13
@@ -7,6 +7,7 @@ CATEGORIES=		x11
 NEED_VERSION=   	1.455
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
+HOMEPAGE=		http://www.gnome.org
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	stable/sources/gtop
 

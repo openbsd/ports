@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/13 21:07:28 todd Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/14 14:41:30 todd Exp $
 
 COMMENT=		"libraries for the GNOME project"
 V=			1.2.13
 DISTNAME=		gnome-libs-${V}
 CATEGORIES=		x11
-NEED_VERSION=   	1.384
+NEED_VERSION=   	1.455
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 

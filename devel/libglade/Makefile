@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/13 21:38:24 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/14 14:41:29 todd Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
 V=			0.16
 DISTNAME=		libglade-${V}
 CATEGORIES=		devel
-NEED_VERSION=   	1.384
+NEED_VERSION=   	1.455
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/13 21:01:04 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/14 14:41:30 todd Exp $
 
 V=			1.2
 DISTNAME=		users-guide-${V}
 PKGNAME=		gnome-${DISTNAME}
 COMMENT=		"the official Users Guide for GNOME"
 CATEGORIES=		x11
-NEED_VERSION=   	1.384
+NEED_VERSION=   	1.455
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>

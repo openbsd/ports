@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/14 13:44:46 todd Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/14 14:41:29 todd Exp $
 
 COMMENT=		"portable library for obtaining system information"
 V=			1.0.12
 DISTNAME=		libgtop-${V}
 CATEGORIES=		devel
-NEED_VERSION=   	1.384
+NEED_VERSION=   	1.455
 HOMEPAGE=		http://www.home-of-linux.org/gnome/libgtop/
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 

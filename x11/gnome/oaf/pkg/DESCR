@@ -9,4 +9,4 @@ requirements using the OAF query language.
 
 For more information about the GNOME project, visit:
 
-WWW: http://www.gnome.org
+WWW: ${HOMEPAGE}

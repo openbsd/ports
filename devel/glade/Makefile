@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/14 13:37:38 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/14 14:41:29 todd Exp $
 
 COMMENT=		"free user interface builder for GTK+ and GNOME"
 V=			0.5.11
 DISTNAME=		glade-${V}
 CATEGORIES=		devel
-NEED_VERSION=   	1.417
+NEED_VERSION=   	1.455
 HOMEPAGE=		http://glade.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
@@ -33,7 +33,7 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 .if ${FLAVOR:L:Mgnome}
 LIB_DEPENDS+=		gnome.36::x11/gnome/libs
 .else
-CONFIGURE_ARGS+=	"--disable-gnome"
+CONFIGURE_ARGS+=	--disable-gnome
 .endif
 
 .include <bsd.port.mk>
