@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2001/09/19 14:13:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2001/10/25 04:58:54 kevlo Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -2287,7 +2287,6 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/sounds
 @dirrm share/services/useragentstrings
 @dirrm share/services/searchproviders
-@dirrm share/services/kded
 @dirrm share/locale/l10n/za
 @dirrm share/locale/l10n/ve
 @dirrm share/locale/l10n/vc
@@ -2363,15 +2362,13 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/locale/l10n/C
 @dirrm share/locale/l10n
 @dirrm share/locale/C
-@dirrm share/locale
 @dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/16x16/filesystems
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16/actions
-@dirrm share/icons/hicolor/16x16
 @dirrm share/fonts/override
 @dirrm share/fonts
 @dirrm share/doc/HTML/en/kwrite
@@ -2499,7 +2496,6 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/kdcop
 @dirrm share/apps/kcontrol/pics
 @dirrm share/apps/kcontrol
-@dirrm share/apps/kconf_update
 @dirrm share/apps/kcmusb
 @dirrm share/apps/kcmlocale/pics
 @dirrm share/apps/kcmlocale
@@ -2597,6 +2593,5 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/applnk/Applications
 @dirrm share/applnk/.hidden
 @dirrm share/applnk
-@dirrm lib/kde2
 @dirrm include/kwin
 @dirrm include/kate
