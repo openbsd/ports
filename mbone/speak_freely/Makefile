@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/05 18:30:35 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/18 00:28:51 turan Exp $
 
 DISTNAME=	speak_freely-7.1
 CATEGORIES=	mbone audio security
@@ -6,6 +6,11 @@ NEED_VERSION=	1.223
 MASTER_SITES=	http://www.fourmilab.ch/speakfree/unix/prior-releases/7.1/
 
 MAINTAINER=	angelos@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"generally restrictive license"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"generally restrictive license"
+PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	gsm.1.0:audio/gsm
 
