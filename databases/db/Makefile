@@ -1,43 +1,41 @@
-# OpenBSD makefile for:	Berkeley DB
-# Version required:     2.3.12
-# Date created:	        26 Nov 1997
-# Whom:                 Stanislav Grozev <tacho@openbsd.org>
-#
-# $OpenBSD: Makefile,v 1.4 1998/02/06 17:53:53 tacho Exp $
+# $OpenBSD: Makefile,v 1.5 1998/10/08 04:23:55 marc Exp $
 #
 
 DISTNAME=	db-2.3.16
 CATEGORIES=	databases
-MASTER_SITES=	http://www.sleepycat.com/packages/
+
+BROKEN=		"newer version available"
 
 MAINTAINER=	tacho@openbsd.org
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/build.unix
+MASTER_SITES=	http://www.sleepycat.com/packages/
 
 GNU_CONFIGURE=	YES
 CONFIGURE_SCRIPT=	../dist/configure
 CONFIGURE_ARGS=		--host=${ARCH}-unknown-openbsd --prefix=${PREFIX}\
 			--enable-compat185 --enable-dump185 --enable-cxx
+WRKSRC=		${WRKDIR}/${DISTNAME}/build.unix
 
-MAN1=	db_archive.1 db_checkpoint.1 db_deadlock.1 db_dump.1 db_load.1 \
-	db_recover.1 db_stat.1
-MAN3=	db_appinit.3 db_cursor.3 db_dbm.3 db_hsearch.3 db_intro.3 db_lock.3 \
-	db_log.3 db_mpool.3 db_open.3 db_txn.3 \
-	Db.3 DbEnv.3 DbException.3 DbInfo.3 DbLock.3 DbLockTab.3 DbLog.3 \
-	DbLsn.3 DbMpool.3 DbMpoolFile.3 DbTxn.3 DbTxnMgr.3 Dbc.3 Dbt.3
+DOCs=		hash.usenix.ps libtp.usenix.ps
+EXAMPLES=	README ex_access.c ex_appinit.c ex_btrec.c ex_lock.c \
+		ex_mpool.c ex_tpcb.c ex_tpcb.h
+EXAMPLES_CPP=	AccessExample.cpp AppinitExample.cpp LockExample.cpp \
+		MpoolExample.cpp TpcbExample.cpp
 
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/db
-.for doc in hash.usenix.ps libtp.usenix.ps
+.for doc in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/../documents/${doc} ${PREFIX}/share/doc/db
 	gzip -9 ${PREFIX}/share/doc/db/${doc}
 .endfor
 	${MKDIR} ${PREFIX}/share/examples/db
-.for example in README ex_access.c ex_appinit.c ex_btrec.c ex_lock.c ex_mpool.c ex_tpcb.c ex_tpcb.h
-	${INSTALL_DATA} ${WRKSRC}/../examples/${example} ${PREFIX}/share/examples/db
+.for example in ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/../examples/${example} \
+		${PREFIX}/share/examples/db
 .endfor
-.for example in AccessExample.cpp AppinitExample.cpp LockExample.cpp MpoolExample.cpp TpcbExample.cpp
-	${INSTALL_DATA} ${WRKSRC}/../examples_cxx/${example} ${PREFIX}/share/examples/db
+.for example in ${EXAMPLES_CPP}
+	${INSTALL_DATA} ${WRKSRC}/../examples_cxx/${example} \
+		${PREFIX}/share/examples/db
 .endfor
 
 .include <bsd.port.mk>
