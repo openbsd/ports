@@ -1,0 +1,40 @@
+--- src/lib/sfio/Sfio_t/terror.h.orig	Sat Apr 26 06:28:15 2003
++++ src/lib/sfio/Sfio_t/terror.h	Sat Apr 26 06:29:29 2003
+@@ -119,7 +119,7 @@
+ 
+ 	s = buf;
+ 	if(line >= 0)
+-	{	sprintf(s,"\tLine=%d: ", line);
++	{	snprintf(s, sizeof(buf), "\tLine=%d: ", line);
+ 		s += strlen(s);
+ 	}
+ 	vsprintf(s,form,args);
+@@ -152,7 +152,7 @@
+ 	form = va_arg(args,char*);
+ #endif
+ 
+-	sprintf(failform, "Failure: %s", form);
++	snprintf(failform, sizeof(failform), "Failure: %s", form);
+ 	tstputmesg(Tstline,failform,args);
+ 
+ 	va_end(args);
+@@ -229,7 +229,8 @@
+ 	if(!Tstfile[n][0])
+ 	{
+ #ifdef DEBUG
+-		sprintf(Tstfile[n], "Tstfile.%c%c%c", '0'+n, '0'+n, '0'+n);
++		snprintf(Tstfile[n], sizeof(Tstfile[n]), "Tstfile.%c%c%c",
++		    '0'+n, '0'+n, '0'+n);
+ #else
+ 		static int	pid;
+ 		static char*	tmp;
+@@ -238,7 +239,8 @@
+ 				tmp = "/tmp";
+ 			pid = (int)getpid() % 10000;
+                 }
+-                sprintf(Tstfile[n], "%s/sft.%c.%d", tmp, '0'+n, pid);
++                snprintf(Tstfile[n], sizeof(Tstfile[n]), "%s/sft.%c.%d", tmp,
++		    '0'+n, pid);
+ #endif
+ 	}
+ 

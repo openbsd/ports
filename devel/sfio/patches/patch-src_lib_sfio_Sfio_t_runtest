@@ -1,0 +1,11 @@
+--- src/lib/sfio/Sfio_t/runtest.orig	Sat Apr 26 06:25:02 2003
++++ src/lib/sfio/Sfio_t/runtest	Sat Apr 26 06:25:04 2003
+@@ -75,7 +75,7 @@
+ 	if $CC -g $DEFS $HDRS $i $LIBS -o ./t
+ 	then
+ 		if ./t
+-		then	rm ./t; status=Passed
++		then	rm -f ./t; status=Passed
+ 		else	status=Failed
+ 		fi
+ 	else	status="Not compiled"
