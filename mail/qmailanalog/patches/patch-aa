@@ -1,0 +1,29 @@
+--- hier.c.orig	Sun Aug 30 23:39:27 1998
++++ hier.c	Wed Dec 29 19:38:31 1999
+@@ -2,16 +2,18 @@
+ 
+ void hier()
+ {
+-  h(auto_home,-1,-1,02755);
++  h(auto_home,-1,-1,0755);
+ 
+-  d(auto_home,"bin",-1,-1,02755);
+-  d(auto_home,"doc",-1,-1,02755);
+-  d(auto_home,"man",-1,-1,02755);
+-  d(auto_home,"man/man1",-1,-1,02755);
+-  d(auto_home,"man/cat1",-1,-1,02755);
++  d(auto_home,"bin",-1,-1,0755);
++  d(auto_home,"man",-1,-1,0755);
++  d(auto_home,"man/man1",-1,-1,0755);
++  d(auto_home,"man/cat1",-1,-1,0755);
++  d(auto_home,"share",-1,-1,0755);
++  d(auto_home,"share/doc",-1,-1,0755);
++  d(auto_home,"share/doc/qmailanalog",-1,-1,0755);
+ 
+-  c(auto_home,"doc","MATCHUP",-1,-1,0644);
+-  c(auto_home,"doc","ACCOUNTING",-1,-1,0644);
++  c(auto_home,"share/doc/qmailanalog","MATCHUP",-1,-1,0644);
++  c(auto_home,"share/doc/qmailanalog","ACCOUNTING",-1,-1,0644);
+ 
+   c(auto_home,"man/man1","matchup.1",-1,-1,0644);
+   c(auto_home,"man/cat1","matchup.0",-1,-1,0644);
