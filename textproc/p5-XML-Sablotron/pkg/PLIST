@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/06/29 23:15:23 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/12/20 19:51:27 naddy Exp $
 ${P5ARCH}/XML/Sablotron.pm
 ${P5ARCH}/XML/Sablotron/DOM.pm
 ${P5ARCH}/XML/Sablotron/DOM/DOMHandler.pm
@@ -7,6 +7,7 @@ ${P5ARCH}/XML/Sablotron/SAXBuilder.pm
 ${P5ARCH}/XML/Sablotron/SXP.pm
 ${P5ARCH}/XML/Sablotron/Situation.pm
 ${P5ARCH}/XML/Sablotron/Situation/DOMHandlerDispatcher.pm
+@comment ${P5ARCH}/auto/XML/Sablotron/.packlist
 ${P5ARCH}/auto/XML/Sablotron/Sablotron.bs
 ${P5ARCH}/auto/XML/Sablotron/Sablotron.so
 man/man3p/XML::Sablotron.3p
@@ -14,7 +15,12 @@ man/man3p/XML::Sablotron::DOM.3p
 man/man3p/XML::Sablotron::DOM::DOMHandler.3p
 man/man3p/XML::Sablotron::SAXBuilder.3p
 man/man3p/XML::Sablotron::Situation::DOMHandlerDispatcher.3p
+@dirrm man/man3p
 @dirrm ${P5ARCH}/auto/XML/Sablotron
+@dirrm ${P5ARCH}/auto/XML
+@dirrm ${P5ARCH}/auto
 @dirrm ${P5ARCH}/XML/Sablotron/Situation
 @dirrm ${P5ARCH}/XML/Sablotron/DOM
 @dirrm ${P5ARCH}/XML/Sablotron
+@dirrm ${P5ARCH}/XML
+@dirrm ${P5ARCH}

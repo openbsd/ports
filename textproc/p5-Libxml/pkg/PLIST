@@ -1,20 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:06 espie Exp $
-libdata/perl5/site_perl/Data/Grove.pm
-libdata/perl5/site_perl/Data/Grove/Parent.pm
-libdata/perl5/site_perl/Data/Grove/Visitor.pm
-libdata/perl5/site_perl/XML/ESISParser.pm
-libdata/perl5/site_perl/XML/Handler/CanonXMLWriter.pm
-libdata/perl5/site_perl/XML/Handler/Sample.pm
-libdata/perl5/site_perl/XML/Handler/Subs.pm
-libdata/perl5/site_perl/XML/Handler/XMLWriter.pm
-libdata/perl5/site_perl/XML/Parser/PerlSAX.pm
-libdata/perl5/site_perl/XML/PatAct/ActionTempl.pm
-libdata/perl5/site_perl/XML/PatAct/Amsterdam.pm
-libdata/perl5/site_perl/XML/PatAct/MatchName.pm
-libdata/perl5/site_perl/XML/PatAct/PatternTempl.pm
-libdata/perl5/site_perl/XML/PatAct/ToObjects.pm
-libdata/perl5/site_perl/XML/Perl2SAX.pm
-libdata/perl5/site_perl/XML/SAX2Perl.pm
+@comment $OpenBSD: PLIST,v 1.4 2003/12/20 19:51:26 naddy Exp $
+${P5SITE}/Data/Grove.pm
+${P5SITE}/Data/Grove/Parent.pm
+${P5SITE}/Data/Grove/Visitor.pm
+${P5SITE}/XML/ESISParser.pm
+${P5SITE}/XML/Handler/CanonXMLWriter.pm
+${P5SITE}/XML/Handler/Sample.pm
+${P5SITE}/XML/Handler/Subs.pm
+${P5SITE}/XML/Handler/XMLWriter.pm
+${P5SITE}/XML/Parser/PerlSAX.pm
+${P5SITE}/XML/PatAct/ActionTempl.pm
+${P5SITE}/XML/PatAct/Amsterdam.pm
+${P5SITE}/XML/PatAct/MatchName.pm
+${P5SITE}/XML/PatAct/PatternTempl.pm
+${P5SITE}/XML/PatAct/ToObjects.pm
+${P5SITE}/XML/Perl2SAX.pm
+${P5SITE}/XML/SAX2Perl.pm
+@comment ${P5ARCH}/auto/libxml-perl/.packlist
 man/man3p/Data::Grove.3p
 man/man3p/Data::Grove::Parent.3p
 man/man3p/Data::Grove::Visitor.3p
@@ -31,6 +32,10 @@ man/man3p/XML::PatAct::PatternTempl.3p
 man/man3p/XML::PatAct::ToObjects.3p
 man/man3p/XML::Perl2SAX.3p
 man/man3p/XML::SAX2Perl.3p
-@dirrm libdata/perl5/site_perl/XML/PatAct
-@dirrm libdata/perl5/site_perl/XML/Handler
-@dirrm libdata/perl5/site_perl/Data/Grove
+@comment @dirrm ${P5ARCH}/auto/libxml-perl
+@dirrm ${P5SITE}/XML/PatAct
+@dirrm ${P5SITE}/XML/Parser
+@dirrm ${P5SITE}/XML/Handler
+@dirrm ${P5SITE}/XML
+@dirrm ${P5SITE}/Data/Grove
+@dirrm ${P5SITE}/Data

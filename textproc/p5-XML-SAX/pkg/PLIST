@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/09/16 07:13:07 shell Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/20 19:51:27 naddy Exp $
 ${P5SITE}/XML/SAX.pm
 ${P5SITE}/XML/SAX/Base.pm
 ${P5SITE}/XML/SAX/DocumentLocator.pm
@@ -23,6 +23,7 @@ ${P5SITE}/XML/SAX/PurePerl/Reader/UnicodeExt.pm
 ${P5SITE}/XML/SAX/PurePerl/UnicodeExt.pm
 ${P5SITE}/XML/SAX/PurePerl/XMLDecl.pm
 ${P5SITE}/XML/SAX/placeholder.pl
+@comment ${P5ARCH}/auto/XML/SAX/.packlist
 man/man3p/XML::SAX.3p
 man/man3p/XML::SAX::Base.3p
 man/man3p/XML::SAX::DocumentLocator.3p
@@ -31,6 +32,10 @@ man/man3p/XML::SAX::Intro.3p
 man/man3p/XML::SAX::ParserFactory.3p
 man/man3p/XML::SAX::PurePerl.3p
 man/man3p/XML::SAX::PurePerl::Reader.3p
+@comment @dirrm ${P5ARCH}/auto/XML/SAX
+@comment @dirrm ${P5ARCH}/auto/XML
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
 @dirrm ${P5SITE}/XML/SAX/PurePerl/Reader
 @dirrm ${P5SITE}/XML/SAX/PurePerl
 @dirrm ${P5SITE}/XML/SAX

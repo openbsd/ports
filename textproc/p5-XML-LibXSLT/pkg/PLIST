@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/05/27 05:11:52 shell Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/12/20 19:51:27 naddy Exp $
 ${P5ARCH}/XML/LibXSLT.pm
 ${P5ARCH}/XML/benchmark.pl
+@comment ${P5ARCH}/auto/XML/LibXSLT/.packlist
 ${P5ARCH}/auto/XML/LibXSLT/LibXSLT.bs
 ${P5ARCH}/auto/XML/LibXSLT/LibXSLT.so
 man/man3p/XML::LibXSLT.3p

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/07/15 08:36:57 shell Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/20 19:51:26 naddy Exp $
 ${P5SITE}/XML/DOM.pm
 ${P5SITE}/XML/DOM/AttDef.pod
 ${P5SITE}/XML/DOM/AttlistDecl.pod
@@ -27,6 +27,7 @@ ${P5SITE}/XML/DOM/ProcessingInstruction.pod
 ${P5SITE}/XML/DOM/Text.pod
 ${P5SITE}/XML/DOM/XMLDecl.pod
 ${P5SITE}/XML/Handler/BuildDOM.pm
+@comment ${P5ARCH}/auto/XML-DOM/.packlist
 man/man3p/XML::DOM.3p
 man/man3p/XML::DOM::AttDef.3p
 man/man3p/XML::DOM::AttlistDecl.3p
@@ -52,4 +53,5 @@ man/man3p/XML::DOM::ProcessingInstruction.3p
 man/man3p/XML::DOM::Text.3p
 man/man3p/XML::DOM::XMLDecl.3p
 man/man3p/XML::Handler::BuildDOM.3p
+@comment @dirrm ${P5ARCH}/auto/XML-DOM
 @dirrm ${P5SITE}/XML/DOM

@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/11/30 22:09:50 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/20 19:51:26 naddy Exp $
 ${P5SITE}/URI.pm
 ${P5SITE}/URI/Escape.pm
+@comment ${P5SITE}/URI/Escape.pm.orig
 ${P5SITE}/URI/Heuristic.pm
 ${P5SITE}/URI/QueryParam.pm
+@comment ${P5SITE}/URI/QueryParam.pm.orig
 ${P5SITE}/URI/URL.pm
 ${P5SITE}/URI/WithBase.pm
 ${P5SITE}/URI/_foreign.pm
@@ -42,6 +44,7 @@ ${P5SITE}/URI/telnet.pm
 ${P5SITE}/URI/urn.pm
 ${P5SITE}/URI/urn/isbn.pm
 ${P5SITE}/URI/urn/oid.pm
+@comment ${P5ARCH}/auto/URI/.packlist
 man/man3p/URI.3p
 man/man3p/URI::Escape.3p
 man/man3p/URI::Heuristic.3p
@@ -51,5 +54,10 @@ man/man3p/URI::WithBase.3p
 man/man3p/URI::data.3p
 man/man3p/URI::file.3p
 man/man3p/URI::ldap.3p
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/URI
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
 @dirrm ${P5SITE}/URI/urn
 @dirrm ${P5SITE}/URI/file
+@dirrm ${P5SITE}/URI

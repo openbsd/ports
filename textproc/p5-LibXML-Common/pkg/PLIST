@@ -1,6 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/11/14 20:14:41 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/12/20 19:51:26 naddy Exp $
 ${P5ARCH}/XML/LibXML/Common.pm
+@comment ${P5ARCH}/auto/XML/LibXML/Common/.packlist
 ${P5ARCH}/auto/XML/LibXML/Common/Common.bs
 ${P5ARCH}/auto/XML/LibXML/Common/Common.so
 man/man3p/XML::LibXML::Common.3p
+@dirrm man/man3p
+@dirrm ${P5ARCH}/auto/XML/LibXML/Common
+@dirrm ${P5ARCH}/auto/XML/LibXML
+@dirrm ${P5ARCH}/auto/XML
+@dirrm ${P5ARCH}/auto
 @dirrm ${P5ARCH}/XML/LibXML
+@dirrm ${P5ARCH}/XML
+@dirrm ${P5ARCH}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/14 21:25:10 jose Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/20 19:51:27 naddy Exp $
 ${P5SITE}/XML/RSS.pm
 @comment ${P5ARCH}/auto/XML/RSS/.packlist
 man/man3p/XML::RSS.3
@@ -27,9 +27,5 @@ share/examples/p5-XML-RSS/update_rss.pl
 @dirrm share/examples/p5-XML-RSS/0.91
 @dirrm share/examples/p5-XML-RSS/0.9
 @dirrm share/examples/p5-XML-RSS
-@dirrm man/man3p
 @comment @dirrm ${P5ARCH}/auto/XML/RSS
-@comment @dirrm ${P5ARCH}/auto/XML
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
 @dirrm ${P5SITE}/XML

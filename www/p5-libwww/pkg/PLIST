@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2003/11/23 11:35:23 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2003/12/20 19:51:26 naddy Exp $
 bin/GET
 bin/HEAD
 bin/POST
@@ -56,10 +56,9 @@ ${P5SITE}/Net/HTTP/NB.pm
 ${P5SITE}/Net/HTTPS.pm
 ${P5SITE}/WWW/RobotRules.pm
 ${P5SITE}/WWW/RobotRules/AnyDBM_File.pm
+@comment ${P5ARCH}/auto/libwww-perl/.packlist
 ${P5SITE}/lwpcook.pod
 ${P5SITE}/lwptut.pod
-@comment ${P5ARCH}/auto/libwww-perl/.packlist
-@comment ${P5ARCH}/perllocal.pod
 man/man1/GET.1
 man/man1/HEAD.1
 man/man1/POST.1
@@ -103,6 +102,8 @@ man/man3p/lwptut.3p
 @comment @dirrm ${P5ARCH}/auto/libwww-perl
 @dirrm ${P5SITE}/WWW/RobotRules
 @dirrm ${P5SITE}/WWW
+@dirrm ${P5SITE}/Net/HTTP
+@dirrm ${P5SITE}/Net
 @dirrm ${P5SITE}/LWP/Protocol
 @dirrm ${P5SITE}/LWP/Authen
 @dirrm ${P5SITE}/LWP

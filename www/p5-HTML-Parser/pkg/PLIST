@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/05/16 04:03:31 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/12/20 19:51:26 naddy Exp $
 ${P5ARCH}/HTML/Entities.pm
 ${P5ARCH}/HTML/Filter.pm
 ${P5ARCH}/HTML/HeadParser.pm
@@ -6,6 +6,7 @@ ${P5ARCH}/HTML/LinkExtor.pm
 ${P5ARCH}/HTML/Parser.pm
 ${P5ARCH}/HTML/PullParser.pm
 ${P5ARCH}/HTML/TokeParser.pm
+@comment ${P5ARCH}/auto/HTML/Parser/.packlist
 ${P5ARCH}/auto/HTML/Parser/Parser.bs
 ${P5ARCH}/auto/HTML/Parser/Parser.so
 man/man3p/HTML::Entities.3p
@@ -16,3 +17,7 @@ man/man3p/HTML::Parser.3p
 man/man3p/HTML::PullParser.3p
 man/man3p/HTML::TokeParser.3p
 @dirrm ${P5ARCH}/auto/HTML/Parser
+@dirrm ${P5ARCH}/auto/HTML
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}/HTML
+@dirrm ${P5ARCH}

@@ -1,30 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:06 espie Exp $
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/Japanese_Encodings.msg
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/README
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/big5.enc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/euc-kr.enc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/iso-8859-2.enc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/iso-8859-3.enc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/iso-8859-4.enc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/iso-8859-5.enc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/iso-8859-7.enc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/iso-8859-8.enc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/iso-8859-9.enc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/windows-1250.enc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/x-euc-jp-jisx0221.enc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/x-euc-jp-unicode.enc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/x-sjis-cp932.enc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/x-sjis-jdk117.enc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/x-sjis-jisx0221.enc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings/x-sjis-unicode.enc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Expat.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/LWPExternEnt.pl
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/Parser/Expat/Expat.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/Parser/Expat/Expat.so
+@comment $OpenBSD: PLIST,v 1.4 2003/12/20 19:51:27 naddy Exp $
+${P5ARCH}/XML/Parser.pm
+${P5ARCH}/XML/Parser/Encodings/Japanese_Encodings.msg
+${P5ARCH}/XML/Parser/Encodings/README
+${P5ARCH}/XML/Parser/Encodings/big5.enc
+${P5ARCH}/XML/Parser/Encodings/euc-kr.enc
+${P5ARCH}/XML/Parser/Encodings/iso-8859-2.enc
+${P5ARCH}/XML/Parser/Encodings/iso-8859-3.enc
+${P5ARCH}/XML/Parser/Encodings/iso-8859-4.enc
+${P5ARCH}/XML/Parser/Encodings/iso-8859-5.enc
+${P5ARCH}/XML/Parser/Encodings/iso-8859-7.enc
+${P5ARCH}/XML/Parser/Encodings/iso-8859-8.enc
+${P5ARCH}/XML/Parser/Encodings/iso-8859-9.enc
+${P5ARCH}/XML/Parser/Encodings/windows-1250.enc
+${P5ARCH}/XML/Parser/Encodings/x-euc-jp-jisx0221.enc
+${P5ARCH}/XML/Parser/Encodings/x-euc-jp-unicode.enc
+${P5ARCH}/XML/Parser/Encodings/x-sjis-cp932.enc
+${P5ARCH}/XML/Parser/Encodings/x-sjis-jdk117.enc
+${P5ARCH}/XML/Parser/Encodings/x-sjis-jisx0221.enc
+${P5ARCH}/XML/Parser/Encodings/x-sjis-unicode.enc
+${P5ARCH}/XML/Parser/Expat.pm
+${P5ARCH}/XML/Parser/LWPExternEnt.pl
+@comment ${P5ARCH}/auto/XML/Parser/.packlist
+${P5ARCH}/auto/XML/Parser/Expat/Expat.bs
+${P5ARCH}/auto/XML/Parser/Expat/Expat.so
 man/man3p/XML::Parser.3p
 man/man3p/XML::Parser::Expat.3p
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/Parser/Expat
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/Parser
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser/Encodings
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Parser
+@dirrm man/man3p
+@dirrm ${P5ARCH}/auto/XML/Parser/Expat
+@dirrm ${P5ARCH}/auto/XML/Parser
+@dirrm ${P5ARCH}/auto/XML
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}/XML/Parser/Encodings
+@dirrm ${P5ARCH}/XML/Parser
+@dirrm ${P5ARCH}/XML
+@dirrm ${P5ARCH}
