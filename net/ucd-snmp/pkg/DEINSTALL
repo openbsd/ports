@@ -1,28 +1,19 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.2 2000/06/29 21:20:05 jakob Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2001/02/13 02:23:40 danh Exp $
 #
 # de-installation of ucd-snmp
 
 PERSISTENT_DIR=/var/ucd-snmp
 
-remove_persistent()
-{
-	rm -rf ${1}
-}
+if [ -d ${PERSISTENT_DIR} ]; then
+	rm -rf ${PERSISTENT_DIR}
+fi
+if [ -f ${SYSCONFDIR}/snmpd.conf ]; then
+	echo "+------------"
+	echo "| If you do not plan on re-installing or upgrading this"
+	echo "| package, it is safe to remove ${SYSCONFDIR}/snmpd.conf"
+	echo "+------------"
+fi
 
-do_deinstall()
-{
-	if [ -d ${PERSISTENT_DIR} ]; then
-		remove_persistent ${PERSISTENT_DIR}
-	fi
-	if [ -f /etc/snmpd.conf ]; then
-		echo "+------------"
-		echo "| If you do not plan on re-installing or upgrading this"
-		echo "| package, it is safe to remove /etc/snmpd.conf"
-		echo "+------------"
-	fi
-}
-
-do_deinstall ${PERSISTENT_DIR}
 exit 0
