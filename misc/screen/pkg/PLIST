@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.19 2003/09/29 11:08:02 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.20 2003/10/10 01:27:38 brad Exp $
 bin/screen
-bin/screen-${VERSION}
 @unexec install-info --delete --info-dir=%D/info %D/info/screen.info
 info/screen.info
 @exec install-info --info-dir=%D/info %D/info/screen.info
