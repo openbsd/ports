@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.5 2004/06/23 14:17:05 naddy Exp $
+# $OpenBSD: ruby.port.mk,v 1.1 2004/08/09 19:54:20 xsa Exp $
 
 # ruby module
 
