@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/26 12:35:05 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 05:05:52 lebel Exp $
+
+COMMENT=	"medical image conversion"
 
 DISTNAME=	xmedcon-0.5.2
 CATEGORIES=	graphics
-NEED_VERSION=	1.346
+NEED_VERSION=	1.402
 
 MASTER_SITES=	http://download.sourceforge.net/xmedcon/
 

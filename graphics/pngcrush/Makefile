@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2000/12/25 22:04:16 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2001/05/06 05:05:50 lebel Exp $
 # $FreeBSD: Makefile,v 1.1 1999/12/22 14:53:53 jedgar Exp $
+
+COMMENT=	"optimizer for PNG files"
 
 DISTNAME=	pngcrush-1.5.3
 CATEGORIES=	graphics
-NEED_VERSION=	1.336
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= pmt
 

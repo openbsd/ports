@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2000/09/24 07:04:07 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2001/05/06 05:05:45 lebel Exp $
+
+COMMENT=	"Gif Library and utilities"
 
 DISTNAME=	giflib-4.1.0
 CATEGORIES=	graphics
-NEED_VERSION=	1.330
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITES0=	${MASTER_SITE_BACKUP}
 MASTER_SITE_SUBDIR= libs/giflib

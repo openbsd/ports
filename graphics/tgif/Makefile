@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2001/03/22 22:06:39 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2001/05/06 05:05:51 lebel Exp $
+
+COMMENT=	"two-dimensional drawing tool and hyper-object browser"
 
 DISTNAME=	tgif-4.1.40
 CATEGORIES=	graphics
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		ftp://ftp.cs.ucla.edu/pub/tgif/
 

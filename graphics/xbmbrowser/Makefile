@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:42:19 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 05:05:52 lebel Exp $
 # $FreeBSD: Makefile,v 1.3 1997/08/26 07:12:20 tg Exp $
+
+COMMENT=	"view complete directories of X bitmaps and X pixmaps"
 
 DISTNAME=	xbmbrowser5.1
 PKGNAME=	xbmbrowser-5.1
 CATEGORIES=	graphics
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 

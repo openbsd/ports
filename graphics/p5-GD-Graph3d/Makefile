@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/22 21:53:45 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/06 05:05:49 lebel Exp $
+
+COMMENT=	"module for 3D graph plotting"
 
 DISTNAME=	GDGraph3d-0.55
 PKGNAME=	p5-GD-Graph3d-0.55
 CATEGORIES=	graphics perl5
-NEED_VERSION=	1.348
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= GD
 

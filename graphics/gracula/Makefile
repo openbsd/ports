@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/24 12:20:45 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 05:05:47 lebel Exp $
+
+COMMENT=	"a graphic counter language compiler/interpreter"
 
 DISTNAME=	gracula-3.0
 CATEGORIES=	graphics
-NEED_VERSION=	1.340
+NEED_VERSION=	1.402
 MASTER_SITES=	${HOMEPAGE} \
 		ftp://ftp.whizkidtech.net/cgi/gcl/ 
 

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2001/03/14 21:06:55 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2001/05/06 05:05:44 lebel Exp $
+
+COMMENT=	"converts GIF images to the PNG format"
 
 DISTNAME=	gif2png-2.4.2
 CATEGORIES=	graphics
-NEED_VERSION=	1.336
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.tuxedo.org/~esr/gif2png/ \
 		ftp://ftp.ccil.org/pub/esr/
 

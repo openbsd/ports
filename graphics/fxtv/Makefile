@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2001/03/07 07:06:07 fgsch Exp $
+# $OpenBSD: Makefile,v 1.22 2001/05/06 05:05:44 lebel Exp $
 # $FreeBSD: Makefile,v 1.17 1999/03/16 14:01:06 roger Exp $
+
+COMMENT=	"X-based TV Display and Capture (use with the bt848 driver)"
 
 BROKEN=		"security issues with tempnam(), to fix"
 DISTNAME=	fxtv-1.03
 CATEGORIES=	graphics
-NEED_VERSION=	1.358
+NEED_VERSION=	1.402
 MASTER_SITES=	http://people.freebsd.org/~rhh/fxtv/
 EXTRACT_SUFX=	.tgz
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2000/10/22 15:42:21 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2001/05/06 05:05:53 lebel Exp $
 # Original from: Marco S Hyman <marc@OpenBSD.ORG>
+
+COMMENT=	"X11 image display and modification tool"
 
 DISTNAME=	xv-3.10a
 CATEGORIES=	graphics x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/
 MASTER_SITES0=	ftp://swrinde.nde.swri.edu/pub/png/applications/
 MASTER_SITES1=	http://ftp.trilon.com/pub/xv/patches/
