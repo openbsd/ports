@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2002/12/28 06:20:20 todd Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/01/13 14:55:46 brad Exp $
 bin/bochs
 bin/bximage
 man/man1/bochs-dlx.1
@@ -10,8 +10,8 @@ share/bochs/bios/BIOS-bochs-8-processors
 share/bochs/bios/BIOS-bochs-latest
 share/bochs/bios/VGABIOS-elpin-2.40
 share/bochs/bios/VGABIOS-elpin-LICENSE
-share/bochs/bios/VGABIOS-lgpl-latest
 share/bochs/bios/VGABIOS-lgpl-README
+share/bochs/bios/VGABIOS-lgpl-latest
 share/bochs/bochsrc
 share/bochs/fonts/fonts.dir
 share/bochs/fonts/hercules.bdf
