@@ -1,4 +1,4 @@
-$OpenBSD: patch-smtpclient_main_c,v 1.1.1.1 2001/08/13 01:06:41 naddy Exp $
+$OpenBSD: patch-smtpclient_main_c,v 1.2 2003/04/01 18:52:05 sturm Exp $
 --- smtpclient_main.c.orig	Wed Aug  1 15:25:22 2001
 +++ smtpclient_main.c	Wed Aug  1 15:33:07 2001
 @@ -86,7 +86,7 @@ void log(char *str, ...)
@@ -10,6 +10,14 @@ $OpenBSD: patch-smtpclient_main_c,v 1.1.1.1 2001/08/13 01:06:41 naddy Exp $
      if (usesyslog)
          syslog(LOG_ERR, "SMTPclient: %s", buf);
      else
+@@ -306,6 +306,7 @@
+     int s;
+     int r;
+     int i;
++    size_t ll;
+     struct passwd *pwd;
+     char *cp;
+ 
 @@ -395,16 +395,16 @@ int main(int argc, char **argv)
          log("%s: unknown host\n", my_name);
          exit(1);
@@ -30,3 +38,23 @@ $OpenBSD: patch-smtpclient_main_c,v 1.1.1.1 2001/08/13 01:06:41 naddy Exp $
          }
          from_addr = strdup(buf);
      }
+@@ -496,12 +497,13 @@
+         toqp(stdin, sfp);
+     } else {
+         while (fgets(buf, sizeof(buf), stdin)) {
+-            buf[strlen(buf)-1] = 0;
+-            if (strcmp(buf, ".") == 0) { /* quote alone dots */
+-                fprintf(sfp, "..\r\n");
+-            } else { /* pass thru mode */
+-                fprintf(sfp, "%s\r\n", buf);
++            if ((ll = strlen(buf)) > 0 && buf[ll-1] == '\n') {
++                buf[ll-1] = 0;
+             }
++            if (buf[0] == '.') { /* quote dots */
++                fprintf(sfp, ".");
++            }
++            fprintf(sfp, "%s\r\n", buf);
+         }
+     }
+ 
+
