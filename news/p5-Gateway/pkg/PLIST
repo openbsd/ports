@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/22 19:47:10 avsm Exp $
+libdata/perl5/site_perl/News/Gateway.pm
+libdata/perl5/site_perl/News/Gateway.pod
+libdata/perl5/site_perl/auto/News/Gateway/anykeyword.al
+libdata/perl5/site_perl/auto/News/Gateway/bodyheaders.al
+libdata/perl5/site_perl/auto/News/Gateway/cleanbody.al
+libdata/perl5/site_perl/auto/News/Gateway/config.al
+libdata/perl5/site_perl/auto/News/Gateway/crosspost.al
+libdata/perl5/site_perl/auto/News/Gateway/hash.al
+libdata/perl5/site_perl/auto/News/Gateway/headers.al
+libdata/perl5/site_perl/auto/News/Gateway/keywords.al
+libdata/perl5/site_perl/auto/News/Gateway/mail.al
+libdata/perl5/site_perl/auto/News/Gateway/mailpath.al
+libdata/perl5/site_perl/auto/News/Gateway/mailtonews.al
+libdata/perl5/site_perl/auto/News/Gateway/moosesign.al
+libdata/perl5/site_perl/auto/News/Gateway/mungeids.al
+libdata/perl5/site_perl/auto/News/Gateway/newsgroups.al
+libdata/perl5/site_perl/auto/News/Gateway/newstomail.al
+libdata/perl5/site_perl/auto/News/Gateway/nobinaries.al
+libdata/perl5/site_perl/auto/News/Gateway/post.al
+libdata/perl5/site_perl/auto/News/Gateway/previoushop.al
+libdata/perl5/site_perl/auto/News/Gateway/whitelist.al
+man/man3/News::Gateway.3
+share/examples/p5-Gateway/listgate
+share/examples/p5-Gateway/listgate.m4
+share/examples/p5-Gateway/listgate.readme
+share/examples/p5-Gateway/raccmod
+share/examples/p5-Gateway/raccpost
+share/examples/p5-Gateway/racrmod
+@dirrm share/examples/p5-Gateway
+@dirrm libdata/perl5/site_perl/auto/News/Gateway
