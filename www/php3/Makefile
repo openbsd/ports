@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.43 2002/03/17 04:55:03 brad Exp $
+# $OpenBSD: Makefile,v 1.44 2002/08/07 22:16:54 avsm Exp $
+
+BROKEN=		"unsupported with possible security holes - use php4 instead"
 
 COMMENT=	"server-side HTML-embedded scripting language"
 
