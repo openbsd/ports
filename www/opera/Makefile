@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/04/27 16:27:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2003/08/20 20:09:01 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -8,8 +8,6 @@ PKGNAME=	opera-6.12
 DISTNAME=	opera-6.12-20030305.1-static-qt.i386
 CATEGORIES=	www
 HOMEPAGE=	http://www.opera.com/
-
-MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"Commercial software"
 PERMIT_PACKAGE_FTP=	"Commercial software"
