@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/19 19:18:38 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/25 05:10:47 brad Exp $
 
 DISTNAME=	Compress-Zlib-1.01
 PKGNAME=	p5-Cmprs-Zlib-1.01
@@ -8,13 +8,18 @@ MASTER_SITE_SUBDIR= Compress
 
 MAINTAINER=	angelos@openbsd.org
 
-LICENSE_TYPE=   ARTISTIC
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
+PLIST=	${WRKDIR}/PLIST
+
 do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} /usr/bin/perl Makefile.PL
+	@cd ${WRKSRC}; env ${MAKE_ENV} /usr/bin/perl Makefile.PL
+
+pre-install:
+	@sed -e s/@ARCH@/${MACHINE_ARCH}/ ${FILESDIR}/PLIST.template > \
+		${WRKDIR}/PLIST
 
 .include <bsd.port.mk>
