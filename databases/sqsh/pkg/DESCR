@@ -1,0 +1,12 @@
+Sqsh (pronounced skwish) is short for SQshelL (pronounced
+s-q-shell), it is intended as a replacement for the
+venerable 'isql' program supplied by Sybase.
+
+Sqsh is much more than a nice prompt, it is intended to
+provide much of the functionality provided by a good shell,
+such as variables, redirection, pipes, back-grounding, job
+control, history, command completion, and dynamic
+configuration.  Also, as a by-product of the design, it is
+remarkably easy to extend and add functionality. 
+
+WWW: ${HOMEPAGE}
