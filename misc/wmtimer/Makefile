@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/10/29 09:27:42 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/31 20:03:44 wilfried Exp $
 
 COMMENT=		'wm-dockapp; alarm clock'
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 
-MODULES=		gtk
+LIB_DEPENDS=		gtk.1,gdk.1::x11/gtk+
 
 USE_X11=		Yes
 NO_REGRESS=		Yes

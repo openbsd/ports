@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/29 09:27:42 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/31 20:03:44 wilfried Exp $
 
 COMMENT=		'wm-dockapp; clock application with clock, date and fish'
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}software/
 
-MODULES=		gtk
+LIB_DEPENDS=		gtk.1,gdk.1::x11/gtk+
 
 MAKE_FLAGS=		CC="${CC}" \
 			CFLAGS="${CFLAGS} -Wall `gtk-config --cflags`" \
