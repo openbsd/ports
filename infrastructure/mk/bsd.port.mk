@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.552 2003/07/14 13:33:04 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.553 2003/07/14 14:02:18 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -27,21 +27,13 @@ ERRORS+= "Fatal: Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead."
 ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 .endif
 
-# There is a transition in progress. When the dust settles, 
-# the definitive source of documentation to this file's working
-# should be bsd.port.mk(5).
+# The definitive source of documentation to this file's user-visible parts
+# is bsd.port.mk(5).
 #
-# All redundant documentation is being stripped, refer to bsd.port.mk(5),
-# really !
+# Any variable or target starting with an underscore (e.g., _DEPEND_ECHO) 
+# is internal to bsd.port.mk, not part of the user's API, and liable to 
+# change without notice. 
 #
-# IMPORTANT: any variable or target starting with an underscore 
-# (e.g., _DEPEND_ECHO) is internal to bsd.port.mk, and 
-# liable to change without notice. 
-#
-# DON'T USE IN INDIVIDUAL PORTS !!!
-#
-# Some variables that typically apply to an individual port.  Non-Boolean
-# variables without defaults are *mandatory*.
 #
 # NO_PKG_REGISTER - Don't register a port install as a package.
 # RESTRICTED	- Port is restricted.  Set this string to the reason why.
@@ -79,24 +71,6 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 # CAT<sect>     - The same as MAN<sect>, only for formatted manpages.
 # MANPREFIX		 -The directory prefix for ${MAN<sect>} (default: ${PREFIX}).
 # CATPREFIX     - The directory prefix for ${CAT<sect>} (default: ${PREFIX}).
-#
-# Other variables:
-#
-# Some targets and their behaviors:
-#
-# package	    - Build package from the fake installation.
-# install       - Install the resulting package.
-#
-# Note that `fake' uses {pre,do,post}-install for its own dark purposes.
-# There is also a special pre-fake target that gets run after mtree but
-# before making the INSTALL_PRECOOKIE, to finish setting up the fake tree.
-#
-# describe		- Try to generate a one-line description for each port for
-#				  use in INDEX files and the like.
-# checkpatch	- Do a "patch -C" instead of a "patch".  Note that it may
-#				  give incorrect results if multiple patches deal with
-#				  the same file.
-# obj			- pre-build ${WRKDIR} -> ${WRKOBJDIR}/${PKGPATH} links
 #
 # readme		- Create a README.html file describing the category or package
 #				  (somewhat broken due to NEW_DEPENDS)
