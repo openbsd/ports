@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Thu Sep 23 03:25:58 1999
-+++ src/Makefile.in	Fri Oct  1 16:54:16 1999
+--- src/Makefile.in.orig	Sun Nov 14 01:21:11 1999
++++ src/Makefile.in	Sun Nov 21 15:51:22 1999
 @@ -2,8 +2,8 @@
  #---------------------------------------------------------------------------
  # ANSI C compiler
@@ -33,7 +33,7 @@
  DOC_FILES = ../changes.txt ../COPY* ../doc/slangdoc.html ../doc/text/*.txt
  #---------------------------------------------------------------------------
  # Misc commands (safe to leave these untouched)
-@@ -105,11 +105,9 @@
+@@ -106,11 +106,9 @@
  
  $(ELFDIR_ELF_LIB): $(ELFDIR) $(CONFIG_H) $(ELFOBJS)
  	-$(RM) $(ELFDIR_ELF_LIB)
@@ -46,10 +46,10 @@
  	@echo ""
  $(OBJDIR) :
  	-$(MKDIR) $(OBJDIR)
-@@ -146,15 +144,10 @@
- install-elf: install elf $(install_lib_dir) $(install_include_dir) $(ELFDIR_ELF_LIB)
- 	$(INSTALL_DATA) $(SRCDIR)/slang.h $(install_include_dir)
- 	$(INSTALL_DATA) $(SRCDIR)/slcurses.h $(install_include_dir)
+@@ -144,15 +142,10 @@
+ $(install_lib_dir):
+ 	$(MKINSDIR) $(install_lib_dir)
+ install-elf: elf install
 -	-$(RM) $(install_lib_dir)/$(ELFLIB)
 -	-$(RM) $(install_lib_dir)/$(ELFLIB_MAJOR)
  	@echo installing $(ELFLIB_MAJOR_MINOR) in $(install_lib_dir)

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 1999/10/01 23:17:38 brad Exp $
+# $OpenBSD: Makefile,v 1.13 1999/11/28 00:28:59 brad Exp $
 
-DISTNAME=	slang-1.3.9
-PKGNAME=	libslang-1.3.9
+DISTNAME=	slang-1.3.10
+PKGNAME=	libslang-1.3.10
 CATEGORIES=	devel
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.3/
+MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.3/ \
+		http://gd.tuwien.ac.at/editors/davis/slang/v1.3/
 
 NEED_VERSION=	1.73
 
@@ -15,7 +16,7 @@ post-install:
 	@${LDCONFIG} -m ${PREFIX}/lib
 
 test:
-	@cd ${WRKSRC} && ${MAKE} runtests
+	@cd ${WRKSRC} && make runtests
 
 .include <bsd.port.mk>
 
