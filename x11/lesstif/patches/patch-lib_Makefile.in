@@ -1,0 +1,12 @@
+--- lib/Makefile.in.orig	Sun Jun 25 12:37:47 2000
++++ lib/Makefile.in	Thu Jun 29 22:43:12 2000
+@@ -117,9 +117,6 @@
+ MAINTAINERCLEANFILES = Makefile.in
+ SUBDIRS = config \
+ 		Xm Mrm Uil \
+-		Xm-2.0 Mrm-2.0 Uil-2.0 \
+-		Xm-2.1 Mrm-2.1 \
+-		Xm-CDE Mrm-CDE \
+ 		@BuildXltDir@ @BuildXbaeDir@
+ 
+ 
