@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/11/25 03:04:33 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2003/08/24 20:31:23 sturm Exp $
 
 COMMENT=	"module to read TNEF files"
 
@@ -15,6 +15,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Convert/}
+
+RUN_DEPENDS=	:p5-MIME-tools-*:mail/p5-MIME-tools
+REGRESS_DEPENDS=${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
 
