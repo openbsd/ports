@@ -4,3 +4,5 @@ RMD160 (btoa-5.2-patch1.gz) = 74a2fac788882861a0c7211afa42f5dd9844727d
 RMD160 (btoa-5.2.tar.gz) = cd5d567b6d9311f104fc7cd13efefef2a989ae19
 SHA1 (btoa-5.2-patch1.gz) = f0282fcf559d53f0785d9041de73a0966c3fc287
 SHA1 (btoa-5.2.tar.gz) = bf87fb2a3c6744d6632663512b0bedada2396af3
+SIZE (btoa-5.2-patch1.gz) = 807
+SIZE (btoa-5.2.tar.gz) = 10188
