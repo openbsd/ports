@@ -4,7 +4,7 @@
 # Date created:         24 November 1997
 # Whom:                 angelos
 #
-# $OpenBSD: Makefile,v 1.1 1997/11/24 20:53:02 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1997/11/27 23:52:59 niklas Exp $
 #
 
 DISTNAME=       rarbsd
@@ -21,6 +21,7 @@ NO_PACKAGE=     Only unmodified original package can be distributed
 NO_WRKSUBDIR=   yes
 EXTRACT_CMD=
 EXTRACT_BEFORE_ARGS=
+ONLY_FOR_ARCHS=	i386
 
 post-fetch:
 	chmod a+x ${DISTDIR}/${DISTFILES}
