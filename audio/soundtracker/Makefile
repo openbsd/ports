@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/04/15 20:04:44 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/08 19:24:56 wcobb Exp $
 # Uses pthreads
 
 COMMENT=		"Music tracking tool for X11"
@@ -9,7 +9,7 @@ CATEGORIES=		audio
 NEED_VERSION=		1.504
 HOMEPAGE=		http://www.soundtracker.org/
 
-MAINTAINER=		Wilbern Cobb <vedge@csoft.org>
+MAINTAINER=		Wilbern Cobb <wcobb@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITE_SUBDIR=	v0.6
 MASTER_SITES=		http://www.soundtracker.org/dl/%SUBDIR%/ \
-			ftp://vedge.com.ar/pub/mirror/soundtracker/%SUBDIR%/
+			http://mirror.csoft.org/soundtracker/%SUBDIR%/
 
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 			intl.1::devel/gettext \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/21 20:57:07 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/08 19:28:07 wcobb Exp $
 
 COMMENT=		"Rich city simulation game for X"
 
@@ -7,7 +7,7 @@ CATEGORIES=		games
 NEED_VERSION=		1.515
 HOMEPAGE=		http://www.floot.demon.co.uk/lincity.html
 
-MAINTAINER=		Wilbern Cobb <cobb@vedge.com.ar>
+MAINTAINER=		Wilbern Cobb <wcobb@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

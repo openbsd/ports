@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/13 13:26:59 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/08 19:28:39 wcobb Exp $
 
 COMMENT=		"stand-alone shell with built-in commands"
 
@@ -13,11 +13,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAINTAINER=		Wilbern Cobb <cobb@vedge.com.ar>
+MAINTAINER=		Wilbern Cobb <wcobb@openbsd.org>
 
 MASTER_SITES=		http://www.canb.auug.org.au/~dbell/programs/ \
-			http://mirror.csoft.org/sash/ \
-			ftp://vedge.com.ar/pub/mirror/sash
+			http://mirror.csoft.org/sash/
 
 ALL_TARGET=		sash
 

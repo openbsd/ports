@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/03/11 20:32:55 lebel Exp $
+# $OpenBSD: Makefile,v 1.23 2002/05/08 19:26:24 wcobb Exp $
 # Uses pthreads
 
 COMMENT=		"Multimedia player for the X Window System"
@@ -19,7 +19,7 @@ CATEGORIES=		audio
 NEED_VERSION=		1.507
 HOMEPAGE=		http://www.xmms.org
 
-MAINTAINER=		Wilbern Cobb <vedge@csoft.org>
+MAINTAINER=		Wilbern Cobb <wcobb@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -34,7 +34,6 @@ MASTER_SITES=		http://www.xmms.org/files/%SUBDIR%/ \
 			ftp://ftp.stealth.net/xmms/%SUBDIR%/
 
 MASTER_SITES0=		http://vedge.com.ar/hack/ \
-			ftp://vedge.com.ar/pub/xmms/ \
 			http://mirror.csoft.org/xmms/
 
 FLAVORS=		no_gnome no_esd no_vorbis no_mikmod
