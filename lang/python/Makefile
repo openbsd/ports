@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/06/28 13:51:23 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/07/14 02:15:56 matt Exp $
 
 DISTNAME=	py152
 PKGNAME=	python-1.5.2
@@ -18,11 +18,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=tk mpz threads no-tools
+FLAVORS=tk mpz threads no_tools
 FLAVOR?=threads mpz
 
 # don't package tools if not needed
-.if empty(FLAVOR:L:Mno-tools)
+.if empty(FLAVOR:L:Mno_tools)
 MULTI_PACKAGES=	-tools
 .endif
 
@@ -85,8 +85,8 @@ post-install:
 .if defined(SUBPACKAGE) && ${SUBPACKAGE} == "-tools"
 PKGNAME=python-tools-1.5.2
 .endif
-.if ${FLAVOR:L:Mno-tools}
-PKGNAME:=${PKGNAME:S/-no-tools//}
+.if ${FLAVOR:L:Mno_tools}
+PKGNAME:=${PKGNAME:S/-no_tools//}
 .endif
 
 .if defined(NO64BIT)
