@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2000/07/25 07:16:59 brad Exp $
+# $OpenBSD: Makefile,v 1.40 2000/08/08 19:01:37 brad Exp $
 
 DISTNAME=	ImageMagick-5.2.1
 CATEGORIES=     graphics
@@ -18,7 +18,8 @@ LIB_DEPENDS=	bz2.10::archivers/bzip2 \
 		mpeg.13::graphics/mpeg-lib \
 		png.1::graphics/png \
 		tiff.35::graphics/tiff \
-		ttf.1.3::print/freetype
+		ttf.1.3::print/freetype \
+		xml.4::textproc/libxml
 BUILD_DEPENDS=	fig2dev::print/transfig \
 		gs::print/ghostscript/gnu \
 		picttoppm::graphics/netpbm
@@ -33,11 +34,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --enable-lzw --enable-16bit-pixel \
 		 --without-perl --without-modules --without-dps \
-		 --without-fpx --without-hdf --without-xml --without-lcms
+		 --without-fpx --without-hdf --without-lcms
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
