@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2000/04/13 16:02:08 jakob Exp $
+# $OpenBSD: Makefile,v 1.13 2000/06/20 19:52:43 jakob Exp $
 
 DISTNAME=	mtr-0.41
 CATEGORIES=	net
-NEED_VERSION=	1.258
+NEED_VERSION=	1.302
 
 MAINTAINER=     jakob@openbsd.org
+
+HOMEPAGE=	http://www.bitwizard.nl/mtr/
 
 PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
@@ -18,8 +20,7 @@ MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
 PATCHFILES=	mtr-041-v6-20000127a.diff.gz:0
 PATCH_DIST_STRIP=	-p1
 
-FAKE=		yes
-GNU_CONFIGURE=	yes
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-ipv6
 USE_GMAKE=	yes
 
