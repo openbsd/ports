@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/11 15:50:12 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/27 05:19:22 kevlo Exp $
 
 COMMENT=	"hierarchical notebook"
 
-DISTNAME=	hnb-1.7
+DISTNAME=	hnb-1.8.1
 CATEGORIES=	editors
 NEED_VERSION=	1.419
 
