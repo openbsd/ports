@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/11/20 14:55:29 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2002/04/11 20:01:44 pvalchev Exp $
 
 COMMENT=	"high-quality mpeg audio decoder"
 
@@ -42,11 +42,14 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-sso \
-		 --enable-accuracy \
 		 --enable-nls
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-Llibmad/.libs -Llibid3tag/.libs -L${LOCALBASE}/lib"
 
+# XXX workaround
+.if ${MACHINE_ARCH} != "powerpc"
+CONFIGURE_ARGS+= --enable-accuracy
+.endif
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
