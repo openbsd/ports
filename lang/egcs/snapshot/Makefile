@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 1999/04/18 20:54:38 espie Exp $
+# $OpenBSD: Makefile,v 1.41 1999/04/28 15:40:26 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -46,12 +46,11 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1999-04-12
+LATEST_DATE=1999-04-18
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
-# define NEXT_DATE to the next snapshot... you lose the ability to check
-# md5 sums, though.
+# define NEXT_DATE to the next snapshot... 
 
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
@@ -113,7 +112,7 @@ SUPDISTFILES+=egcs-${sub}-${LATEST}${EXTRACT_SUFX}
 
 
 MASTER_SITES=	
-MASTER_SITES+=	ftp://egcs.cygnus.com/pub/${DIRECTORY} 
+#MASTER_SITES+=	ftp://egcs.cygnus.com/pub/${DIRECTORY} 
 MASTER_SITES+=	ftp://ftp.lip6.fr/pub/${DIRECTORY}
 MASTER_SITES+= ftp://go.cygnus.com/pub/ftp.cygnus.com/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.goof.com/pub/pcg/${DIRECTORY}
@@ -198,6 +197,14 @@ SUPPATCHFILES+=egcs-${sub}-${LATEST}-${NEXT}.diff.gz
 .endfor
 
 .endif
+
+# Misc bug sections
+.if (${MACHINE_ARCH} == "i386")
+pre-fetch:
+	@(cd /tmp && /usr/bin/as -k ${FILESDIR}/gas-bug/test-i386-gas.s) || \
+	(${ECHO} "Your gas has a bug, see ${FILESDIR}/gas-bug for details"; ${FALSE})
+.endif
+
 
 makesum:
 	@${ECHO} ">>>Please make addsum to avoid clobbering old checksums"
@@ -285,7 +292,12 @@ CONFIGURE_ENV=LANGUAGES='${LANGS}'
 
 
 CONFIGURE_ARGS= --prefix=${PREFIX} \
---verbose --program-transform-name=s,^,e, 
+--verbose --program-transform-name=s,^,e, \
+
+
+# This is needed, as internal cpp is no longer compatible with the
+# visible beast
+CONFIGURE_ARGS+=--enable-cpp
 
 
 # if you wish to try your luck
@@ -306,7 +318,7 @@ CONFIGURE_ARGS += --with-gnu-ld
 CONFIGURE_ARGS += ${CONFIGURE_SHARED}
 
 SEPARATE_BUILD=yes
-WRKBUILD=${WRKDIR}/build-${MACHINE_ARCH}
+#WRKBUILD=${WRKDIR}/build-${MACHINE_ARCH}
 
 
 
@@ -321,6 +333,11 @@ WRKBUILD=${WRKDIR}/build-${MACHINE_ARCH}
 ALL_TARGET=bootstrap
 # ALL_TARGET=bootstrap-lean
 
+# desactivate the fixincludes mechanism by supplying a script which does
+# nothing
+pre-build:
+	echo "#!/bin/sh" >${WRKBUILD}/gcc/fixinc.sh
+
 # XXX we need to override do-build to get the warnings from within make
 do-build:
 	@(cd ${WRKBUILD}; \
@@ -331,16 +348,16 @@ do-build:
 ####
 # Install & tests section 
 
-# Tests should be performed at the end of install, since they depend upon
-# having the correct flavor of libstdc++.so.
+# Tests no longer need to be performed at the end of install, this
+# was a bug in libstdc++/openbsd.ml
 .if defined(MAKE_TESTS)
 TEST_RESULT=${WRKBUILD}/test.result
 
-post-install:
+post-build:
 	@(cd ${WRKBUILD}; ulimit -c 0; \
 	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} check && \
 	${WRKSRC}/contrib/test_summary >${TEST_RESULT})
-	@${ECHO} "Please send the tests results to the egcs projects"
+	@${ECHO} "Please send the tests results to the egcs project"
 	@${ECHO} "By invoking make send-results"
 
 send-results: ${TEST_RESULT}
@@ -366,6 +383,11 @@ M4FLAGS+= -DOBJC
 M4FLAGS+= -DJAVA
 .endif
 
+special: extract
+		# avoid packaging include copies along...
+	find ${WRKSRC} -name \*.orig|xargs ${RM}
+	-${RM} -rf ${WRKSRC}/texinfo 
+	
 pre-install:
 	${M4} ${M4FLAGS} -DARCH=`${WRKSRC}/config.guess` \
 	-DVERSION=`${SED} -e 's/.*\(egcs-[0-9.]*\) .*/\1/' <${WRKSRC}/gcc/version.c` \

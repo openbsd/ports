@@ -1,21 +1,17 @@
 bin/egcc
+bin/ecpp
 bin/eprotoize
 bin/eunprotoize
 bin/egcov
 bin/ARCH-gcc
-ARCH/include/_G_config.h
 lib/gcc-lib/ARCH/VERSION/SYSCALLS.c.X
 lib/gcc-lib/ARCH/VERSION/cc1
+lib/gcc-lib/ARCH/VERSION/collect2
 lib/gcc-lib/ARCH/VERSION/cpp
 lib/gcc-lib/ARCH/VERSION/libgcc.a
 lib/gcc-lib/ARCH/VERSION/specs
 lib/gcc-lib/ARCH/VERSION/include/syslimits.h
-lib/gcc-lib/ARCH/VERSION/include/typeinfo
-lib/gcc-lib/ARCH/VERSION/include/exception
-lib/gcc-lib/ARCH/VERSION/include/new
-lib/gcc-lib/ARCH/VERSION/include/new.h
 lib/gcc-lib/ARCH/VERSION/include/limits.h
-lib/gcc-lib/ARCH/VERSION/include/math.h
 lib/gcc-lib/ARCH/VERSION/include/float.h
 lib/gcc-lib/ARCH/VERSION/include/README
 lib/libiberty.a
@@ -63,6 +59,7 @@ lib/gcc-lib/ARCH/VERSION/cc1chill
 lib/gcc-lib/ARCH/VERSION/chillrt0.o
 lib/gcc-lib/ARCH/VERSION/libchill.a
 )ifdef(`GXX',
+ARCH/include/_G_config.h
 bin/ec++
 bin/ec++filt
 bin/eg++
@@ -203,13 +200,17 @@ include/g++-2/type_traits.h
 include/g++-2/utility
 include/g++-2/vector
 include/g++-2/vector.h
+lib/gcc-lib/ARCH/VERSION/include/typeinfo
+lib/gcc-lib/ARCH/VERSION/include/exception
+lib/gcc-lib/ARCH/VERSION/include/new
+lib/gcc-lib/ARCH/VERSION/include/new.h
 lib/libstdc++.a.2.9.0
 ifdef(`DYNAMIC',
 lib/libstdc++.so.29.0
 lib/libstdc++.so.2.9.0
 lib/gcc-lib/ARCH/VERSION/libstdc++.so
+lib/gcc-lib/ARCH/VERSION/libstdc++.a
 )lib/gcc-lib/ARCH/VERSION/cc1plus
-lib/gcc-lib/ARCH/VERSION/collect2
 man/man1/eg++.1
 )ifdef(`FORTRAN',
 bin/eg77
@@ -269,6 +270,5 @@ lib/gcc-lib/ARCH/VERSION/jvgenmain
 @dirrm lib/gcc-lib/ARCH
 @dirrm lib/gcc-lib
 @dirrm ARCH/include
-@dirrm ARCH/lib
 @dirrm ARCH
 @exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib
