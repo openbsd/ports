@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.37 2000/07/27 22:27:59 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2000/07/29 11:15:24 brad Exp $
 
-DISTNAME=	mutt-1.2.4i
+DISTNAME=	mutt-1.2.5i
 CATEGORIES=     mail
 NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
