@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/02/26 08:54:35 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2001/03/02 15:29:52 brad Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://java.sun.com/products/jfc/
 
-RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java::devel/jdk
+RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java::devel/jdk
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
