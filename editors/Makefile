@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2001/01/08 22:40:53 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2001/03/01 21:30:43 naddy Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -44,6 +44,8 @@
 #    SUBDIR += xemacs20:mule
      SUBDIR += xemacs21
      SUBDIR += xemacs21:mule
+     SUBDIR += xemacs21-sumo
+     SUBDIR += xemacs21-sumo:mule
 #    SUBDIR += xvile
      SUBDIR += xwpe
 
