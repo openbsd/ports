@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2000/07/04 01:46:39 krw Exp $
-lib/libltdl.so.1.2
-DYNLIBDIR(%B)

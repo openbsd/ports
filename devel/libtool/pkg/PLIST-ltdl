@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST-ltdl,v 1.1 2004/07/02 01:59:12 brad Exp $
+include/ltdl.h
+lib/libltdl.a
+lib/libltdl.la
+%%SHARED%%
+share/aclocal/ltdl.m4
+share/libtool/libltdl/COPYING.LIB
+share/libtool/libltdl/Makefile.am
+share/libtool/libltdl/Makefile.in
+share/libtool/libltdl/README
+share/libtool/libltdl/acinclude.m4
+share/libtool/libltdl/aclocal.m4
+share/libtool/libltdl/config-h.in
+share/libtool/libltdl/config.guess
+share/libtool/libltdl/config.sub
+share/libtool/libltdl/configure
+share/libtool/libltdl/configure.ac
+share/libtool/libltdl/install-sh
+share/libtool/libltdl/ltdl.c
+share/libtool/libltdl/ltdl.h
+share/libtool/libltdl/ltmain.sh
+share/libtool/libltdl/missing
+@dirrm share/libtool/libltdl
+@dirrm share/libtool
