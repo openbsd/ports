@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.5 2001/08/24 18:36:06 brad Exp $
+# $OpenBSD: INSTALL,v 1.6 2004/01/09 19:08:34 sturm Exp $
 #
 # Pre/post-installation setup of freebsd_lib
 
@@ -29,6 +29,9 @@ do_notice_link()
 
 do_notice_bottom()
 {
+    echo "| This package requires the sysctl kern.emul.freebsd being set to 1"
+    echo "| and just did so. To make this change permanent, edit /etc/sysctl.conf."
+    echo "|"
     echo "| Installation of $1 complete. See compat_freebsd(8)"
     echo "| for more information."
     echo "|"
@@ -51,6 +54,7 @@ case $2 in
 	install -d -o root -g bin -m 755 $PREFIX
 	;;
     POST-INSTALL)
+	sysctl -w kern.emul.freebsd=1
 	do_notice_top
 
 	if [ -e /emul/freebsd ]; then
