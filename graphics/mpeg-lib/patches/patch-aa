@@ -1,0 +1,151 @@
+*** Makefile.in.orig	Mon Feb 26 12:12:54 1996
+--- Makefile.in	Thu Dec 18 19:36:45 1997
+***************
+*** 16,21 ****
+--- 16,22 ----
+  RANLIB        = @RANLIB@
+  SHELL         = /bin/sh
+  
++ .SUFFIXES: .so
+  
+  # Source for the library itself -- note that we define LIBSRC and
+  # LIBOBJ this way (instead of just LIBOBJ=$(LIBSRC:.c=.o) because
+***************
+*** 27,49 ****
+  		mono.c ordered.c ordered2.c mb_ordered.c
+  LIBSRC        = @libsrc@
+  LIBOBJ        = @libobj@
+  
+  
+  # Other files of interest
+  
+  LIBRARY       = libmpeg.a
+  MPEGTEST      = mpegtest
+  
+  # Targets for all platforms
+  
+! all:		$(LIBRARY) @extras@
+  
+  $(LIBRARY):	$(LIBOBJ)
+  		$(AR) $(ARFLAGS) $(LIBRARY) $(LIBOBJ)
+  		$(RANLIB) $(LIBRARY)
+  
+  $(LIBOBJ):	Makefile
+  
+  @Makefile_extras@
+  
+  clean:
+--- 28,59 ----
+  		mono.c ordered.c ordered2.c mb_ordered.c
+  LIBSRC        = @libsrc@
+  LIBOBJ        = @libobj@
++ SHLIBOBJ      = @shlibobj@
+  
+  
+  # Other files of interest
+  
+  LIBRARY       = libmpeg.a
++ SHLIBRARY	  = libmpeg.so.1.2
+  MPEGTEST      = mpegtest
+  
+  # Targets for all platforms
+  
+! all:		$(LIBRARY) ${SHLIBRARY} @extras@
+  
+  $(LIBRARY):	$(LIBOBJ)
+  		$(AR) $(ARFLAGS) $(LIBRARY) $(LIBOBJ)
+  		$(RANLIB) $(LIBRARY)
+  
++ $(SHLIBRARY):	$(SHLIBOBJ)
++ 		ld -Bshareable -o $(SHLIBRARY) $(SHLIBOBJ)
++ 
+  $(LIBOBJ):	Makefile
+  
++ install:
++ 	install -c -m 444 ${LIBRARY} ${SHLIBRARY} ${PREFIX}/lib
++ 	install -c -m 444 mpeg.h ${PREFIX}/include
++ 
+  @Makefile_extras@
+  
+  clean:
+***************
+*** 53,58 ****
+--- 63,71 ----
+  distclean: clean
+  		rm -f config.cache config.log config.status Makefile config.h
+  		cd extras && $(MAKE) distclean
++ 
++ .c.so:
++ 	${CC} ${CFLAGS} -fpic -DPIC -c $< -o $@
+  
+  # Include a system-specific Makefile fragment, if any
+  
+*** configure.orig	Mon Feb 26 11:58:27 1996
+--- configure	Thu Dec 18 19:36:45 1997
+***************
+*** 817,822 ****
+--- 817,823 ----
+  if test $dither = yes; then
+    libsrc='$(DECODER_SRC) $(DITHER_SRC)'
+    libobj='$(DECODER_SRC:.c=.o) $(DITHER_SRC:.c=.o)'
++   shlibobj='$(DECODER_SRC:.c=.so) $(DITHER_SRC:.c=.so)'
+    cat >> confdefs.h <<\EOF
+  #define ENABLE_DITHER 1
+  EOF
+***************
+*** 825,830 ****
+--- 826,832 ----
+  else
+    libsrc='$(DECODER_SRC)'
+    libobj='$(DECODER_SRC:.c=.o)'
++   shlibobj='$(DECODER_SRC:.c=.so)'
+    cat >> confdefs.h <<\EOF
+  #define ENABLE_DITHER 0
+  EOF
+***************
+*** 1459,1464 ****
+--- 1461,1467 ----
+  s%@AR@%$AR%g
+  s%@libsrc@%$libsrc%g
+  s%@libobj@%$libobj%g
++ s%@shlibobj@%$shlibobj%g
+  s%@jrevdct@%$jrevdct%g
+  s%@extras@%$extras%g
+  /@Makefile_extras@/r $Makefile_extras
+*** config.guess.orig	Thu Dec 18 19:51:29 1997
+--- config.guess	Thu Dec 18 20:00:23 1997
+***************
+*** 311,316 ****
+--- 311,319 ----
+      *:NetBSD:*:*)
+  	echo ${UNAME_MACHINE}-unknown-netbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
+  	exit 0 ;;
++     *:OpenBSD:*:*)
++ 	echo ${UNAME_MACHINE}-unknown-openbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
++ 	exit 0 ;;
+      *:GNU:*:*)
+  	echo `echo ${UNAME_MACHINE}|sed -e 's,/.*$,,'`-unknown-gnu`echo ${UNAME_RELEASE}|sed -e 's,/.*$,,'`
+  	exit 0 ;;
+*** config.sub.orig	Thu Dec 18 20:03:37 1997
+--- config.sub	Thu Dec 18 20:06:00 1997
+***************
+*** 637,645 ****
+  	      | -amigados* | -msdos* | -newsos* | -unicos* | -aos* \
+  	      | -nindy* | -vxworks* | -ebmon* | -hms* | -mvs* | -clix* \
+  	      | -riscos* | -linux* | -uniplus* | -iris* | -rtu* | -xenix* \
+! 	      | -hiux* | -386bsd* | -netbsd* | -freebsd* | -riscix* \
+! 	      | -lynxos* | -bosx* | -nextstep* | -cxux* | -aout* | -elf* \
+! 	      | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
+  	      | -udi* | -eabi* | -lites* )
+  	# Remember, each alternative MUST END IN *, to match a version number.
+  		;;
+--- 637,645 ----
+  	      | -amigados* | -msdos* | -newsos* | -unicos* | -aos* \
+  	      | -nindy* | -vxworks* | -ebmon* | -hms* | -mvs* | -clix* \
+  	      | -riscos* | -linux* | -uniplus* | -iris* | -rtu* | -xenix* \
+! 	      | -hiux* | -386bsd* | -netbsd* | -openbsd* | -freebsd* \
+! 	      |	-riscix* | -lynxos* | -bosx* | -nextstep* | -cxux* | -aout* \
+! 	      | -elf* | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
+  	      | -udi* | -eabi* | -lites* )
+  	# Remember, each alternative MUST END IN *, to match a version number.
+  		;;
