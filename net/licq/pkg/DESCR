@@ -1,0 +1,4 @@
+Licq is an ICQ clone written fully in c++ using the Qt widget set. It is an 
+attempt to give linux a non-java option to the ICQ protocol, as the java
+version is unstable and a memory hog. Licq is distributed under GPL with 
+some special exceptions for Qt as Qt is not. 
