@@ -1,0 +1,17 @@
+--- kscreensaver/Makefile.in.orig	Thu Apr  6 18:08:36 2000
++++ kscreensaver/Makefile.in	Thu Apr  6 18:09:01 2000
+@@ -821,10 +821,10 @@ messages:
+ 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot *.cpp *.h && mv messages.po ../po/klock.pot
+ 
+ install-data-local: 
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-kscreensaver.xpm $(kde_minidir)/kscreensaver.xpm
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-kscreensaver.xpm $(kde_icondir)/large/kscreensaver.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-kscreensaver.xpm $(DESTDIR)$(kde_minidir)/kscreensaver.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/large-kscreensaver.xpm $(DESTDIR)$(kde_icondir)/large/kscreensaver.xpm
+ 
+ uninstall-local:
+ 	rm -f $(kde_minidir)/kscreensaver.xpm

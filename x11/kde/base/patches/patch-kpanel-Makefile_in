@@ -1,0 +1,13 @@
+--- kpanel/Makefile.in.orig	Thu Apr  6 18:06:13 2000
++++ kpanel/Makefile.in	Thu Apr  6 18:06:27 2000
+@@ -525,8 +525,8 @@ messages:
+ 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kpanel_SOURCES) && mv messages.po ../po/kpanel.pot
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(defaultdir)
+-	$(INSTALL_DATA) $(srcdir)/personal.kdelnk $(defaultdir)/personal_directory
++	$(mkinstalldirs) $(DESTDIR)$(defaultdir)
++	$(INSTALL_DATA) $(srcdir)/personal.kdelnk $(DESTDIR)$(defaultdir)/personal_directory
+ 
+ uninstall-local:
+ 	-rm -f $(defaultdir)/personal_directory

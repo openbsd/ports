@@ -1,0 +1,17 @@
+--- kdehelp/Makefile.in.orig	Thu Apr  6 04:11:26 2000
++++ kdehelp/Makefile.in	Thu Apr  6 04:11:52 2000
+@@ -525,10 +525,10 @@ maintainer-clean
+ 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/mini-kdehelp.xpm $(kde_minidir)/kdehelp.xpm
+-	$(INSTALL_DATA) $(srcdir)/large-kdehelp.xpm $(kde_icondir)/large/kdehelp.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/mini-kdehelp.xpm $(DESTDIR)$(kde_minidir)/kdehelp.xpm
++	$(INSTALL_DATA) $(srcdir)/large-kdehelp.xpm $(DESTDIR)$(kde_icondir)/large/kdehelp.xpm
+ 
+ uninstall-local:
+ 	rm -f $(kde_icondir)/large/kdehelp.xpm

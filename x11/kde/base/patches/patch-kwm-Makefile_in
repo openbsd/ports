@@ -1,0 +1,17 @@
+--- kwm/Makefile.in.orig	Thu Apr  6 17:51:23 2000
++++ kwm/Makefile.in	Thu Apr  6 17:51:43 2000
+@@ -531,10 +531,10 @@ messages:
+ 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kwm_SOURCES) && mv messages.po ../po/kwm.pot
+ 
+ install-data-local: 
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-kwm.xpm $(kde_minidir)/kwm.xpm
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-kwm.xpm $(kde_icondir)/large/kwm.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-kwm.xpm $(DESTDIR)$(kde_minidir)/kwm.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/large-kwm.xpm $(DESTDIR)$(kde_icondir)/large/kwm.xpm
+ 
+ uninstall-local:
+ 	rm -f $(kde_icondir)/large/kwm.xpm

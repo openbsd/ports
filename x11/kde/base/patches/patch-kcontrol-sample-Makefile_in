@@ -1,0 +1,13 @@
+--- kcontrol/sample/Makefile.in.orig	Thu Apr  6 19:01:12 2000
++++ kcontrol/sample/Makefile.in	Thu Apr  6 19:02:06 2000
+@@ -394,8 +394,8 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-local: 
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-sample.xpm $(kde_minidir)/sample.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-sample.xpm $(DESTDIR)$(kde_minidir)/sample.xpm
+ 
+ uninstall-local:
+ 	rm -f $(kde_minidir)/sample.xpm

@@ -1,0 +1,18 @@
+--- kpanel/sample_kdelnk_files/Makefile.in.orig	Thu Apr  6 17:59:58 2000
++++ kpanel/sample_kdelnk_files/Makefile.in	Thu Apr  6 18:03:44 2000
+@@ -300,12 +300,12 @@ mostlyclean distclean maintainer-clean
+ 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(kdisknavdir)
++	$(mkinstalldirs) $(DESTDIR)$(kdisknavdir)
+ 	@for dir in /cdrom /mnt/cdrom /CDROM /CD-ROM ; do \
+ 		if test -d $$dir ; then \
+ 			echo $(INSTALL_DATA) $(srcdir)/CD-ROM.kdelnk $(kdisknavdir) ;\
+-			$(INSTALL_DATA) $(srcdir)/CD-ROM.kdelnk $(kdisknavdir) ; \
+-			echo "URL=$$dir" >> $(kdisknavdir)/CD-ROM.kdelnk ; \
++			$(INSTALL_DATA) $(srcdir)/CD-ROM.kdelnk $(DESTDIR)$(kdisknavdir) ; \
++			echo "URL=$$dir" >> $(DESTDIR)$(kdisknavdir)/CD-ROM.kdelnk ; \
+ 			break; \
+ 		 fi ; \
+ 	done 

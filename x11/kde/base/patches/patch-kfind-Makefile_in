@@ -1,0 +1,21 @@
+--- kfind/Makefile.in.orig	Thu Apr  6 22:56:24 2000
++++ kfind/Makefile.in	Thu Apr  6 22:56:39 2000
+@@ -504,12 +504,12 @@ maintainer-clean
+ 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(ICONSDIR)
+-	$(INSTALL_DATA) $(srcdir)/kfind.xpm $(ICONSDIR)
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/mini-kfind.xpm $(kde_minidir)/kfind.xpm
+-	$(INSTALL_DATA) $(srcdir)/large-kfind.xpm $(kde_icondir)/large/kfind.xpm
++	$(mkinstalldirs) $(DESTDIR)$(ICONSDIR)
++	$(INSTALL_DATA) $(srcdir)/kfind.xpm $(DESTDIR)$(ICONSDIR)
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/mini-kfind.xpm $(DESTDIR)$(kde_minidir)/kfind.xpm
++	$(INSTALL_DATA) $(srcdir)/large-kfind.xpm $(DESTDIR)$(kde_icondir)/large/kfind.xpm
+ 
+ uninstall-local:
+ 	rm -f $(ICONSDIR)/$(TARGET).xpm

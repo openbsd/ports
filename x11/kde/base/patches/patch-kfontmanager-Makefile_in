@@ -1,0 +1,21 @@
+--- kfontmanager/Makefile.in.orig	Thu Apr  6 22:53:53 2000
++++ kfontmanager/Makefile.in	Thu Apr  6 22:54:19 2000
+@@ -420,12 +420,12 @@ maintainer-clean-generic clean mostlycle
+ ####### Meta objects
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(kde_icondir)
+-	$(INSTALL_DATA) $(srcdir)/kfontmanager.xpm $(kde_icondir)/kfontmanager.xpm
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-kfontmanager.xpm $(kde_minidir)/kfontmanager.xpm
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-kfontmanager.xpm $(kde_icondir)/large/kfontmanager.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)
++	$(INSTALL_DATA) $(srcdir)/kfontmanager.xpm $(DESTDIR)$(kde_icondir)/kfontmanager.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-kfontmanager.xpm $(DESTDIR)$(kde_minidir)/kfontmanager.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/large-kfontmanager.xpm $(DESTDIR)$(kde_icondir)/large/kfontmanager.xpm
+ 
+ uninstall-local:
+ 	rm -f $(kde_icondir/large/kfontmanager.xpm

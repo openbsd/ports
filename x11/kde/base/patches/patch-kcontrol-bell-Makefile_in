@@ -1,0 +1,17 @@
+--- kcontrol/bell/Makefile.in.orig	Thu Apr  6 18:32:47 2000
++++ kcontrol/bell/Makefile.in	Thu Apr  6 18:32:59 2000
+@@ -440,10 +440,10 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-local: 
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-bell.xpm $(kde_minidir)/bell.xpm
+-	$(mkinstalldirs) $(kde_minidir)/../large/
+-	$(INSTALL_DATA) $(srcdir)/large-bell.xpm $(kde_minidir)/../large/bell.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-bell.xpm $(DESTDIR)$(kde_minidir)/bell.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)/../large/
++	$(INSTALL_DATA) $(srcdir)/large-bell.xpm $(DESTDIR)$(kde_minidir)/../large/bell.xpm
+ 
+ uninstall-local:
+ 	rm -f $(kde_minidir)/bell.xpm

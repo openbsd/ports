@@ -1,0 +1,17 @@
+--- kcontrol/kdm/pics/Makefile.in.orig	Thu Apr  6 18:41:44 2000
++++ kcontrol/kdm/pics/Makefile.in	Thu Apr  6 18:42:02 2000
+@@ -321,10 +321,10 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-local: 
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-kdmconfig.xpm $(kde_minidir)/kdmconfig.xpm
+-	$(mkinstalldirs) $(kde_minidir)/../large/
+-	$(INSTALL_DATA) $(srcdir)/large-kdmconfig.xpm $(kde_minidir)/../large/kdmconfig.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-kdmconfig.xpm $(DESTDIR)$(kde_minidir)/kdmconfig.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)/../large/
++	$(INSTALL_DATA) $(srcdir)/large-kdmconfig.xpm $(DESTDIR)$(kde_minidir)/../large/kdmconfig.xpm
+ 
+ uninstall-local:
+ 	-rm -f $(kde_minidir)/kdmconfig.xpm

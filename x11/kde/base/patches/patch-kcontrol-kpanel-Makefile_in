@@ -1,0 +1,13 @@
+--- kcontrol/kpanel/Makefile.in.orig	Thu Apr  6 18:48:16 2000
++++ kcontrol/kpanel/Makefile.in	Thu Apr  6 18:48:24 2000
+@@ -443,8 +443,8 @@ messages:
+ 	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kcmkpanel_SOURCES) && mv messages.po ../../po/kcmkpanel.pot
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-kcmkpanel.xpm $(kde_minidir)/kcmkpanel.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-kcmkpanel.xpm $(DESTDIR)$(kde_minidir)/kcmkpanel.xpm
+ 
+ uninstall-local:
+ 	-rm -f $(kde_minidir)/kcmkpanel.xpm

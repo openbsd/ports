@@ -1,0 +1,11 @@
+--- kcontrol/info/pics/Makefile.in.orig	Thu Apr  6 18:38:47 2000
++++ kcontrol/info/pics/Makefile.in	Thu Apr  6 18:39:04 2000
+@@ -305,7 +305,7 @@ mostlyclean distclean maintainer-clean
+ 
+ 
+ install-data-local: 
+-	$(mkinstalldirs) $(kde_minidir)
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
+ 	@list='$(mini_ICONS)'; for p in $$list; do \
+ 	    file2=`echo $$p | sed -e "s#mini-##"`; \
+ 	    echo "$(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(kde_minidir)/$$file2"; \

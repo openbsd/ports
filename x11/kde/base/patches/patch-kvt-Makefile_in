@@ -1,0 +1,17 @@
+--- kvt/Makefile.in.orig	Thu Apr  6 17:49:03 2000
++++ kvt/Makefile.in	Thu Apr  6 17:49:22 2000
+@@ -448,10 +448,10 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-local: 
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-kvt.xpm $(kde_minidir)/kvt.xpm
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-kvt.xpm $(kde_icondir)/large/kvt.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-kvt.xpm $(DESTDIR)$(kde_minidir)/kvt.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/large-kvt.xpm $(DESTDIR)$(kde_icondir)/large/kvt.xpm
+ 
+ uninstall-local:
+ 	rm -f $(kde_minidir)/kvt.xpm

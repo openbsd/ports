@@ -1,0 +1,17 @@
+--- kikbd/Makefile.in.orig	Thu Apr  6 19:19:05 2000
++++ kikbd/Makefile.in	Thu Apr  6 19:19:25 2000
+@@ -634,10 +634,10 @@ messages:
+ 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kikbd_SOURCES) $(kcmikbd_SOURCES) && mv messages.po ../po/kikbd.pot
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-kikbd.xpm $(kde_minidir)/kikbd.xpm
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-kikbd.xpm $(kde_icondir)/large/kikbd.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-kikbd.xpm $(DESTDIR)$(kde_minidir)/kikbd.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/large-kikbd.xpm $(DESTDIR)$(kde_icondir)/large/kikbd.xpm
+ 
+ uninstall-local:
+ 	-rm -f $(kde_icondir)/large/kikbd.xpm

@@ -1,0 +1,15 @@
+--- kcontrol/input/Makefile.in.orig	Thu Apr  6 18:35:51 2000
++++ kcontrol/input/Makefile.in	Thu Apr  6 18:36:09 2000
+@@ -522,9 +522,9 @@ maintainer-clean
+ 
+ 
+ install-data-local: 
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-mouse.xpm $(kde_minidir)/mouse.xpm
+-	$(INSTALL_DATA) $(srcdir)/mini-keyboard.xpm $(kde_minidir)/keyboard.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-mouse.xpm $(DESTDIR)$(kde_minidir)/mouse.xpm
++	$(INSTALL_DATA) $(srcdir)/mini-keyboard.xpm $(DESTDIR)$(kde_minidir)/keyboard.xpm
+ 
+ uninstall-local:
+ 	rm -f $(kde_minidir)/mouse.xpm

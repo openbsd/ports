@@ -1,0 +1,19 @@
+--- kfm/Makefile.in.orig	Thu Apr  6 04:08:25 2000
++++ kfm/Makefile.in	Thu Apr  6 04:09:45 2000
+@@ -583,11 +583,11 @@ maintainer-clean
+ 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(CONFIGDIR)
+-	$(INSTALL_DATA) $(srcdir)/config/kfmrc $(CONFIGDIR)
+-	$(INSTALL_DATA) $(srcdir)/config/desktop $(CONFIGDIR)
+-	$(mkinstalldirs) $(MIMELNKDIR)
+-	$(INSTALL_DATA) $(srcdir)/magic $(MIMELNKDIR)
++	$(mkinstalldirs) $(DESTDIR)$(CONFIGDIR)
++	$(INSTALL_DATA) $(srcdir)/config/kfmrc $(DESTDIR)$(CONFIGDIR)
++	$(INSTALL_DATA) $(srcdir)/config/desktop $(DESTDIR)$(CONFIGDIR)
++	$(mkinstalldirs) $(DESTDIR)$(MIMELNKDIR)
++	$(INSTALL_DATA) $(srcdir)/magic $(DESTDIR)$(MIMELNKDIR)
+ 
+ uninstall-local:
+ 	-rm -f $(CONFIGDIR)/kfmrc

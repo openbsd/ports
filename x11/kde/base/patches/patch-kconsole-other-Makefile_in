@@ -1,0 +1,17 @@
+--- konsole/other/Makefile.in.orig	Thu Apr  6 19:33:43 2000
++++ konsole/other/Makefile.in	Thu Apr  6 19:36:29 2000
+@@ -321,10 +321,10 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-local: 
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/konsole-mini.xpm $(kde_minidir)/konsole.xpm
+-	$(mkinstalldirs) $(kde_icondir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-konsole.xpm $(kde_icondir)/large/konsole.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/konsole-mini.xpm $(DESTDIR)$(kde_minidir)/konsole.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/large
++	$(INSTALL_DATA) $(srcdir)/large-konsole.xpm $(DESTDIR)$(kde_icondir)/large/konsole.xpm
+ 
+ uninstall-local:
+ 	rm -f $(kde_icondir)/large/konsole.xpm

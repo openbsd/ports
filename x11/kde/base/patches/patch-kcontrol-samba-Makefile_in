@@ -1,0 +1,13 @@
+--- kcontrol/samba/Makefile.in.orig	Thu Apr  6 18:29:03 2000
++++ kcontrol/samba/Makefile.in	Thu Apr  6 18:29:31 2000
+@@ -440,8 +440,8 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-smbstatus.xpm $(kde_minidir)/smbstatus.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-smbstatus.xpm $(DESTDIR)$(kde_minidir)/smbstatus.xpm
+ 
+ uninstall-local:
+ 	rm -f $(kde_minidir)/smbstatus.xpm

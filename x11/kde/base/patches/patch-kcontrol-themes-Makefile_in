@@ -1,0 +1,37 @@
+--- kcontrol/themes/Makefile.in.orig	Thu Apr  6 19:14:04 2000
++++ kcontrol/themes/Makefile.in	Thu Apr  6 19:14:29 2000
+@@ -524,12 +524,12 @@ maintainer-clean
+ 
+ 
+ install-data-local: install-themes
+-	$(mkinstalldirs) $(APPSDIR)
+-	$(INSTALL_DATA) $(srcdir)/kthememgr.kdelnk $(APPSDIR)
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-kthememgr.xpm $(kde_minidir)/kthememgr.xpm
+-	$(mkinstalldirs) $(kde_datadir)/kthememgr
+-	$(INSTALL_DATA) $(srcdir)/theme.mappings $(kde_datadir)/kthememgr
++	$(mkinstalldirs) $(DESTDIR)$(APPSDIR)
++	$(INSTALL_DATA) $(srcdir)/kthememgr.kdelnk $(DESTDIR)$(APPSDIR)
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-kthememgr.xpm $(DESTDIR)$(kde_minidir)/kthememgr.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_datadir)/kthememgr
++	$(INSTALL_DATA) $(srcdir)/theme.mappings $(DESTDIR)$(kde_datadir)/kthememgr
+ 
+ uninstall-local:
+ 	rm -f $(APPSDIR)/kthememgr.kdelnk
+@@ -538,12 +538,12 @@ uninstall-local:
+ 	rm -f $(THEMESDIR)/Template.themerc
+ 
+ install-themes:
+-	$(mkinstalldirs) $(THEMESDIR)
+-	$(INSTALL_DATA) $(srcdir)/Themes/Template.themerc $(THEMESDIR)
++	$(mkinstalldirs) $(DESTDIR)$(THEMESDIR)
++	$(INSTALL_DATA) $(srcdir)/Themes/Template.themerc $(DESTDIR)$(THEMESDIR)
+ 	cd $(srcdir)/Themes; \
+ 	for f in *; do \
+ 	  if [ -d $$f -a $$f != "CVS" ]; then \
+-	    $(TAR) --exclude CVS -c -f - $$f | gzip -c > $(THEMESDIR)/$$f.tar.gz; \
++	    $(TAR) --exclude CVS -c -f - $$f | gzip -c > $(DESTDIR)$(THEMESDIR)/$$f.tar.gz; \
+ 	  fi; \
+ 	done
+ 

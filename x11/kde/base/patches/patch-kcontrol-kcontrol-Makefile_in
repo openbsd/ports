@@ -1,0 +1,17 @@
+--- kcontrol/kcontrol/Makefile.in.orig	Thu Apr  6 18:44:31 2000
++++ kcontrol/kcontrol/Makefile.in	Thu Apr  6 18:44:43 2000
+@@ -503,10 +503,10 @@ messages:
+ 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kcontrol_SOURCES) && mv messages.po ../../po/kcontrol.pot
+ 
+ install-data-local: 
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(mkinstalldirs) $(kde_icondir)
+-	$(INSTALL_DATA) $(srcdir)/mini-kcontrol.xpm $(kde_minidir)/kcontrol.xpm
+-	$(INSTALL_DATA) $(srcdir)/large-kcontrol.xpm $(kde_icondir)/large/kcontrol.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)
++	$(INSTALL_DATA) $(srcdir)/mini-kcontrol.xpm $(DESTDIR)$(kde_minidir)/kcontrol.xpm
++	$(INSTALL_DATA) $(srcdir)/large-kcontrol.xpm $(DESTDIR)$(kde_icondir)/large/kcontrol.xpm
+ 
+ uninstall-local:
+ 	rm -f $(kde_icondir)/large/kcontrol.xpm

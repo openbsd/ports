@@ -1,0 +1,25 @@
+--- kpanel/pics/Makefile.in.orig	Thu Apr  6 17:55:54 2000
++++ kpanel/pics/Makefile.in	Thu Apr  6 17:56:34 2000
+@@ -428,14 +428,14 @@ clean-generic maintainer-clean-generic c
+ maintainer-clean
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-default.xpm $(kde_minidir)
+-	$(mkinstalldirs) $(datadir)/large
+-	$(INSTALL_DATA) $(srcdir)/large-go.xpm $(datadir)/large/go.xpm
+-	$(INSTALL_DATA) $(srcdir)/large-kdisknav.xpm $(datadir)/large/kdisknav.xpm
+-	$(INSTALL_DATA) $(srcdir)/large-kfm_home.xpm $(datadir)/large/kfm_home.xpm
+-	$(INSTALL_DATA) $(srcdir)/large-window_list.xpm $(datadir)/large/window_list.xpm
+-	$(INSTALL_DATA) $(srcdir)/large-pers_applnk.xpm $(datadir)/large/pers_applnk.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-default.xpm $(DESTDIR)$(kde_minidir)
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/large
++	$(INSTALL_DATA) $(srcdir)/large-go.xpm $(DESTDIR)$(datadir)/large/go.xpm
++	$(INSTALL_DATA) $(srcdir)/large-kdisknav.xpm $(DESTDIR)$(datadir)/large/kdisknav.xpm
++	$(INSTALL_DATA) $(srcdir)/large-kfm_home.xpm $(DESTDIR)$(datadir)/large/kfm_home.xpm
++	$(INSTALL_DATA) $(srcdir)/large-window_list.xpm $(DESTDIR)$(datadir)/large/window_list.xpm
++	$(INSTALL_DATA) $(srcdir)/large-pers_applnk.xpm $(DESTDIR)$(datadir)/large/pers_applnk.xpm
+ 
+ uninstall-local:
+ 	rm -f $(datadir)/large/go.xpm

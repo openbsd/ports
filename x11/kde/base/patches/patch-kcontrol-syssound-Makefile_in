@@ -1,0 +1,17 @@
+--- kcontrol/syssound/Makefile.in.orig	Thu Apr  6 18:55:27 2000
++++ kcontrol/syssound/Makefile.in	Thu Apr  6 18:57:12 2000
+@@ -534,10 +534,10 @@ messages:
+ 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kcmsyssound_SOURCES) && mv messages.po ../../po/kcmsyssound.pot
+ 
+ install-data-local: 
+-	$(mkinstalldirs) $(kde_minidir)
+-	$(INSTALL_DATA) $(srcdir)/mini-kcmsyssound.xpm $(kde_minidir)/kcmsyssound.xpm
+-	$(mkinstalldirs) $(kde_minidir)/../large/
+-	$(INSTALL_DATA) $(srcdir)/large-kcmsyssound.xpm $(kde_minidir)/../large/kcmsyssound.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)
++	$(INSTALL_DATA) $(srcdir)/mini-kcmsyssound.xpm $(DESTDIR)$(kde_minidir)/kcmsyssound.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)/../large/
++	$(INSTALL_DATA) $(srcdir)/large-kcmsyssound.xpm $(DESTDIR)$(kde_minidir)/../large/kcmsyssound.xpm
+ 
+ # remove ALL you have installed in install-data-local or install-exec-local
+ uninstall-local:
