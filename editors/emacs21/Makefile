@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/20 02:27:24 mark Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/29 19:13:25 pvalchev Exp $
 # Original from A B <obsdfaq30@yahoo.com>
 
 COMMENT=	"GNU editor: extensible, customizable, self documenting"
@@ -63,6 +63,7 @@ CONFIGURE_ARGS+= --without-x --without-jpeg --without-png \
 
 USE_X11=Yes
 CONFIGURE_ARGS+= --with-x
+LIB_DEPENDS+= ungif.5::graphics/libungif
 
 .  if ${FLAVOR:L:Mno_jpeg}
 CONFIGURE_ARGS+= --without-jpeg
