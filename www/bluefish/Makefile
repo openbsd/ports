@@ -1,14 +1,19 @@
-# $OpenBSD: Makefile,v 1.16 2001/01/09 16:34:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2001/03/27 22:09:48 naddy Exp $
+
+COMMENT=	"HTML editor for experienced web designers"
 
 DISTNAME=	bluefish-0.6
 CATEGORIES=	www 
-NEED_VERSION=	1.312
+NEED_VERSION=	1.364
 HOMEPAGE=	http://bluefish.openoffice.nl/
 
 MAINTAINER=	Couderc Damien <couderc.damien@wanadoo.fr>
 
-MASTER_SITES=	${HOMEPAGE}download/ \
-		http://pkedu.fbt.eitn.wau.nl/~olivier/downloads/
+MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/downloads/ \
+		ftp://bluefish.advancecreations.com/pub/bluefish/downloads/ \
+		http://bluefish.mrball.net/downloads/ \
+		ftp://ftp.ratisbona.com/pub/bluefish/downloads/ \
+		http://bluefish.shellhung.org/downloads/
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
@@ -20,8 +25,8 @@ LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		gdk_imlib::graphics/imlib
 
 CONFIGURE_STYLE= gnu dest
-CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
-		LDFLAGS='-L${LOCALBASE}/lib'
+CFLAGS+=	-I${LOCALBASE}/include
+
 MANUAL=		${PREFIX}/share/doc/bluefish
 
 post-install:
