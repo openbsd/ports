@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/01 23:17:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/08/28 01:41:43 lebel Exp $
 
+     SUBDIR += devtodo
      SUBDIR += gtimer
      SUBDIR += qhacc
      SUBDIR += xinvest
