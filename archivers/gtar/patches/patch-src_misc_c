@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_misc_c,v 1.1 2002/10/01 02:03:52 brad Exp $
+--- src/misc.c.orig	Sun Aug 26 19:14:26 2001
++++ src/misc.c	Mon Sep 30 21:39:32 2002
+@@ -214,6 +214,13 @@ contains_dot_dot (char const *name)
+ 	    return 0;
+ 	}
+       while (! ISSLASH (*p));
++
++      do
++	{
++	  if (! *p++)
++	    return 0;
++	}
++      while ( ISSLASH (*p));
+     }
+ }
+ 
