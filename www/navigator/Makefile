@@ -3,13 +3,14 @@
 # Date created:		1998-Jun-14
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/13 00:35:00 marc Exp $
+# $Id: Makefile,v 1.2 1998/09/14 18:03:12 marc Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
 
 # WARNING: Requires a kernel built with 'option COMPAT_BSDOS'
 #
+BROKEN=		"required navigator binary no longer available"
 DISTNAME=	navigator-v405-export.x86-bsdi-bsd2
 PKGNAME=	navigator-4.05-fortified
 CATEGORIES=     www
