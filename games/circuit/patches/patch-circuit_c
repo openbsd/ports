@@ -1,0 +1,12 @@
+$OpenBSD: patch-circuit_c,v 1.3 2002/12/17 21:25:06 espie Exp $
+--- circuit.c.orig	Tue Dec 17 21:20:16 2002
++++ circuit.c	Tue Dec 17 21:20:44 2002
+@@ -61,7 +61,7 @@ static GTimer *timer = NULL;
+ static unsigned
+ random_number(unsigned max)
+ {
+-    return(rand() % max);
++    return(rand()/(double)RAND_MAX * max);
+ }
+ 
+ static unsigned
