@@ -1,0 +1,10 @@
+--- configure.orig	Fri Oct 20 16:00:28 2000
++++ configure	Fri Oct 20 16:01:43 2000
+@@ -733,6 +733,7 @@
+       m68k-*-openbsd*)  machine=hp9000s300 ;;
+       mipsel-*-openbsd*) machine=pmax ;;
+       ns32k-*-openbsd*)	machine=ns32000 ;;
++      powerpc-*-openbsd*) machine=macppc ;;
+       sparc-*-openbsd*)	machine=sparc ;;
+       vax-*-openbsd*)	machine=vax ;;
+     esac
