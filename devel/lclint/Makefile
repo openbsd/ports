@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 1999/09/17 12:43:21 espie Exp $
+# $OpenBSD: Makefile,v 1.6 1999/09/22 10:34:03 espie Exp $
 
+NEED_VERSION=	1.116
 DISTNAME=	lclint-2.4b
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.sds.lcs.mit.edu/pub/lclint/
@@ -26,7 +27,7 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${DOCDIR}
-	@cd ${DOCDIR} && ${TAR} -zxf ${_DISTDIR}/${GUIDE}
+	@cd ${DOCDIR} && ${TAR} -zxf ${FULLDISTDIR}/${GUIDE}
 
 test: ${INSTALL_COOKIE}
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} test

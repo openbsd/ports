@@ -5,8 +5,9 @@
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.1 1998/07/29 01:31:20 espie Exp $
+# $OpenBSD: Makefile,v 1.2 1999/09/22 10:34:03 espie Exp $
 
+NEED_VERSION=	1.116
 DISTNAME=	Wnn4.2
 PKGNAME?=	ja-Wnn-4.2
 CATEGORIES?=	japanese
@@ -32,7 +33,7 @@ DOC_FROM=	${WRKSRC}/cWnn
 
 post-extract:
 	${EXTRACT_CMD} -C ${WRKSRC} ${EXTRACT_BEFORE_ARGS} \
-		${_DISTDIR}/Wnn4.2.patch.tar.gz
+		${FULLDISTDIR}/Wnn4.2.patch.tar.gz
 	/bin/ln -sf Project.tmpl ${WRKSRC}/config/X11.tmpl
 
 pre-patch:
@@ -48,7 +49,7 @@ post-patch:
 	  ko-Wnn-4.2) \
 		LANG_PATCH=${FILESDIR}/patch-for-korean;; \
 	esac; \
-	(cd ${_DISTDIR}; \
+	(cd ${FULLDISTDIR}; \
 		${PATCH} ${PATCH_DIST_ARGS} < $${LANG_PATCH})
 
 # for PREFIX
