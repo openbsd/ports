@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name DISTNAME
 bin/egcc
 bin/eprotoize
 bin/eunprotoize
@@ -17,6 +15,7 @@ lib/gcc-lib/ARCH/VERSION/include/exception
 lib/gcc-lib/ARCH/VERSION/include/new
 lib/gcc-lib/ARCH/VERSION/include/new.h
 lib/gcc-lib/ARCH/VERSION/include/limits.h
+lib/gcc-lib/ARCH/VERSION/include/math.h
 lib/gcc-lib/ARCH/VERSION/include/float.h
 lib/gcc-lib/ARCH/VERSION/include/README
 lib/libiberty.a
@@ -270,5 +269,6 @@ lib/gcc-lib/ARCH/VERSION/jvgenmain
 @dirrm lib/gcc-lib/ARCH
 @dirrm lib/gcc-lib
 @dirrm ARCH/include
+@dirrm ARCH/lib
 @dirrm ARCH
 @exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib

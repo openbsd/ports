@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 1999/03/22 00:25:33 espie Exp $
+# $OpenBSD: Makefile,v 1.40 1999/04/18 20:54:38 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -46,7 +46,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1999-03-14
+LATEST_DATE=1999-04-12
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -55,7 +55,7 @@ LATEST_DATE=1999-03-14
 
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
-NEXT_DATE=1999-03-21
+#NEXT_DATE=1999-04-18
 #PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
@@ -106,13 +106,18 @@ DISTFILES+=egcs-chill-${LATEST}${EXTRACT_SUFX}
 
 .endif
 
+SUPDISTFILES=egcs-${LATEST}${EXTRACT_SUFX}
+.for sub in core tests g++ g77 java objc chill
+SUPDISTFILES+=egcs-${sub}-${LATEST}${EXTRACT_SUFX}
+.endfor
+
+
 MASTER_SITES=	
 MASTER_SITES+=	ftp://egcs.cygnus.com/pub/${DIRECTORY} 
 MASTER_SITES+=	ftp://ftp.lip6.fr/pub/${DIRECTORY}
 MASTER_SITES+= ftp://go.cygnus.com/pub/ftp.cygnus.com/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.goof.com/pub/pcg/${DIRECTORY}
 #MASTER_SITES+= ftp://cambridge.cygnus.com/pub/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.ninemoons.com/pub/mirrors/${DIRECTORY}
 MASTER_SITES+= ftp://sunsite.doc.ic.ac.uk/Mirrors/egcs.cygnus.com/pub/${DIRECTORY}
 MASTER_SITES+= ftp://gd.tuwien.ac.at/gnu/${DIRECTORY}
 #MASTER_SITES+= ftp://ftp.ilog.fr/pub/Mirrors/${DIRECTORY}
@@ -149,6 +154,7 @@ MASTER_SITES+= ftp://ftp.lca.uevora.pt/pub/${DIRECTORY}
 MASTER_SITES+= ftp://cair-archive.kaist.ac.kr/pub/gnu/${DIRECTORY}
 MASTER_SITES+= ftp://linux.ihep.su/pub/cygnus/${DIRECTORY}
 MASTER_SITES+= ftp://linux.cis.nctu.edu.tw/pub/packages/pcg/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.ninemoons.com/pub/mirrors/${DIRECTORY}
 
 PATCH_SITES = ${MASTER_SITES}
 
@@ -186,7 +192,16 @@ PATCHFILES+=egcs-chill-${LATEST}-${NEXT}.diff.gz
 .endif
 .endif
 
+SUPPATCHFILES=egcs-${LATEST}-${NEXT}.diff.gz
+.for sub in core tests g++ g77 java objc chill
+SUPPATCHFILES+=egcs-${sub}-${LATEST}-${NEXT}.diff.gz
+.endfor
+
 .endif
+
+makesum:
+	@${ECHO} ">>>Please make addsum to avoid clobbering old checksums"
+	@${FALSE}
 
 # synch the date
 .if defined(NEXT)
@@ -218,7 +233,7 @@ PATCH_LIST+=patch-java-*
 # get openbsd configuration files where they should be
 post-patch:
 		# avoid packaging include copies along...
-	#find ${WRKSRC} -name \*.orig|xargs ${RM}
+	find ${WRKSRC} -name \*.orig|xargs ${RM}
 	${CP} -R ${FILESDIR}/config/* ${WRKSRC}
 	-${RM} -rf ${WRKSRC}/texinfo 
 	cd ${WRKSRC}; \
@@ -262,7 +277,12 @@ LANGS+=objc
 LANGS+=java
 .endif
 
-CONFIGURE_ENV=LANGUAGES='${LANGS}' CFLAGS='-O2'
+# Note: the configure target passes CFLAGS to the configure script anyways.
+
+#CFLAGS='-g -O2'
+CONFIGURE_ENV=LANGUAGES='${LANGS}'  
+
+
 
 CONFIGURE_ARGS= --prefix=${PREFIX} \
 --verbose --program-transform-name=s,^,e, 
@@ -305,17 +325,27 @@ ALL_TARGET=bootstrap
 do-build:
 	@(cd ${WRKBUILD}; \
 	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET} 2>warnings) || \
-	(echo "Make bootstrap failed."; \
-	echo "Don't forget to look at ${WRKBUILD}/warnings"; ${FALSE})
-
-.if defined(MAKE_TESTS)
-post-build:
-	@(cd ${WRKBUILD}; \
-	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} check)
-.endif
+	(echo "*** Make bootstrap failed."; \
+	echo "*** Look at ${WRKBUILD}/warnings for errors"; ${FALSE})
 
 ####
-# Install section
+# Install & tests section 
+
+# Tests should be performed at the end of install, since they depend upon
+# having the correct flavor of libstdc++.so.
+.if defined(MAKE_TESTS)
+TEST_RESULT=${WRKBUILD}/test.result
+
+post-install:
+	@(cd ${WRKBUILD}; ulimit -c 0; \
+	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} check && \
+	${WRKSRC}/contrib/test_summary >${TEST_RESULT})
+	@${ECHO} "Please send the tests results to the egcs projects"
+	@${ECHO} "By invoking make send-results"
+
+send-results: ${TEST_RESULT}
+	sh ${TEST_RESULT}
+.endif
 
 PLIST=${WRKBUILD}/PLIST
 
