@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2000/06/25 01:51:40 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/07/08 19:38:51 brad Exp $
 
 DISTNAME=	nemesis-1.1
 CATEGORIES=	net security
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 MASTER_SITES=	http://celerity.bartoli.org/nemesis/ \
 		http://www.packetfactory.net/Projects/nemesis/ \
 		http://www.nol.net/~halogen/
