@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 1999/04/01 06:20:02 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/09/06 18:23:45 brad Exp $
 
 DISTNAME=       rplay-3.3.0
 CATEGORIES=	audio
+MASTER_SITES=	http://rplay.doit.org/dist/
 
 MAINTAINER=	angelos@openbsd.org
 
-MASTER_SITES=	http://rplay.doit.org/dist/
-
 LIB_DEPENDS=    gsm.1.0:${PORTSDIR}/audio/gsm
 
-HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 SYSCONFDIR=	/etc/rplay
-CONFIGURE_ARGS+=--sysconfdir=${SYSCONFDIR}
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+= --sysconfdir=${SYSCONFDIR}
 
 post-configure:
 .for ff in rplay.conf.5 rplay.helpers.5 rplay.hosts.5 rplayd.8
@@ -26,7 +25,7 @@ post-install:
 		${ECHO} "Installing default configs..."; \
 		${MKDIR} /etc/rplay; \
 		${ECHO} localhost >/etc/rplay/rplay.hosts; \
-		touch /etc/rplay/rplay.{conf,helpers,servers}; \
+		${TOUCH} /etc/rplay/rplay.{conf,helpers,servers}; \
 	fi
 
 .include <bsd.port.mk>
