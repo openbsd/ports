@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/08/10 20:41:47 xsa Exp $
+# $OpenBSD: Makefile,v 1.6 2004/09/15 18:09:33 espie Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -30,5 +30,12 @@ NO_REGRESS=Yes
 post-install:
 	mkdir -p ${PREFIX}/share/mldonkey
 	cp -R ${WRKDIST}/distrib ${PREFIX}/share/mldonkey
+	@${strip_binaries}
 
 .include <bsd.port.mk>
+
+.if ${MODOCAML_NATIVE:L} == "yes"
+strip_binaries=cd ${PREFIX}/bin && strip mlnet mlgui mlnet+gui mlim
+.else
+strip_binaries=:
+.endif
