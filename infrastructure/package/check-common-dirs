@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-common-dirs,v 1.1 2004/08/12 18:58:34 espie Exp $
+# $OpenBSD: check-common-dirs,v 1.2 2004/08/13 07:45:22 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -145,7 +145,9 @@ sub show_results
 			next if parent_has_dir($db, $t, $dir);
 			push(@l, $dir);
 		}
-		print "$pkgname: ", join(', ', sort @l), "\n";
+		if (@l != 0) {
+			print "$pkgname: ", join(', ', sort @l), "\n";
+		}
 	}
 }
 
