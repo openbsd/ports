@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/08/27 02:46:17 lebel Exp $
+# $OpenBSD: Makefile,v 1.16 2002/09/14 22:41:03 marcm Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
@@ -20,7 +20,8 @@ MASTER_SITES=		http://www.jwz.org/xscreensaver/
 
 MODULES=		gettext
 
-LIB_DEPENDS+=		xml2.6::textproc/libxml
+LIB_DEPENDS+=		xml2.6::textproc/libxml \
+			gdk_pixbuf.2,gdk_pixbuf_xlib.2::graphics/gdk-pixbuf
 
 MAKE_ENV+=		${CONFIGURE_ENV}
 
