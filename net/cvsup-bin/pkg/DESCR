@@ -1,4 +1,4 @@
-This is the BINARY (statically linked) version of the CVSup client.
+This is the binary (statically linked) version of the CVSup client.
 CVSup is a software package for distributing and updating collections
 of files across a network.  It can efficiently and accurately mirror
 all types of files, including sources, binaries, hard links, symbolic
@@ -9,5 +9,10 @@ a great general-purpose mirroring tool, CVSup includes special
 features and optimizations specifically tailored to CVS repositories.
 
 See ${HOMEPAGE} for details.
-See http://www.freebsd.org/handbook/mirrors-cvsup.html
-to use cvsup to grab FreeBSD source.
+
+Also check these sites for instructions how use CVSup to grab
+OpenBSD, FreeBSD, and NetBSD source, respectively:
+
+http://www.openbsd.org/cvsup.html
+http://www.freebsd.org/handbook/mirrors-cvsup.html
+http://www.netbsd.org/Sites/net.html#cvsup
