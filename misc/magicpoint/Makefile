@@ -3,8 +3,8 @@
 # Date created:		July 13 1999
 # Whom:			Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.11 2000/06/26 03:35:39 jason Exp $
-# $OpenBSD: Makefile,v 1.11 2000/06/26 03:35:39 jason Exp $
+# $Id: Makefile,v 1.12 2000/07/10 02:08:29 angelos Exp $
+# $OpenBSD: Makefile,v 1.12 2000/07/10 02:08:29 angelos Exp $
 #
 
 DISTNAME=	magicpoint-1.07a
@@ -23,9 +23,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 # plus sign is for localized (i.e. Japanese) version
-LIB_DEPENDS+=	ttf.1::print/freetype
+LIB_DEPENDS+=	ttf.1::print/freetype \
+		png.1::graphics/png
 
-FAKE=		Yes
 USE_IMAKE=	Yes
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--disable-vflib
