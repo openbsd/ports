@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/13 18:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/07/07 01:32:20 fgsch Exp $
 
 COMMENT=	"usb access library"
 
-VERSION=	0.1.5
+VERSION=	0.1.6a
 DISTNAME=	libusb-${VERSION}
 CATEGORIES=	devel
 NEED_VERSION=	1.506
