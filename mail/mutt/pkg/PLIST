@@ -1,4 +1,3 @@
-@pkgdep libslang-1.2.2
 bin/mutt
 man/man1/mutt.1
 man/man1/mutt_dotlock.1
