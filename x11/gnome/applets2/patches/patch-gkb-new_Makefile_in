@@ -1,0 +1,11 @@
+$OpenBSD: patch-gkb-new_Makefile_in,v 1.1 2003/07/06 18:19:20 marcm Exp $
+--- gkb-new/Makefile.in.orig	Sun Jul  6 10:50:49 2003
++++ gkb-new/Makefile.in	Sun Jul  6 10:50:58 2003
+@@ -649,7 +649,6 @@ gkb_xmmap: gkb_xmmap.in
+ 	&& mv gkb_xmmap.tmp gkb_xmmap
+ 
+ install-data-local:
+-	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

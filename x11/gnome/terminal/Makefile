@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/12 20:15:47 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/07/06 18:19:21 marcm Exp $
 
 COMMENT=		"GNOME terminal"
 
@@ -26,8 +26,6 @@ RUN_DEPENDS=		:scrollkeeper->=0.3.11:textproc/scrollkeeper
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			startup-notification-1::devel/startup-notification \
 			vte::devel/vte
-
-MAKE_ENV+=		GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
 SEPARATE_BUILD= 	concurrent
 USE_GMAKE=		Yes

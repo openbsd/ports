@@ -1,0 +1,11 @@
+$OpenBSD: patch-gtik_Makefile_in,v 1.1 2003/07/06 18:19:20 marcm Exp $
+--- gtik/Makefile.in.orig	Sun Jul  6 10:51:17 2003
++++ gtik/Makefile.in	Sun Jul  6 10:51:25 2003
+@@ -570,7 +570,6 @@ $(server_in_files): $(server_in_files:.s
+ @INTLTOOL_SERVER_RULE@
+ 
+ install-data-local:
+-		GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

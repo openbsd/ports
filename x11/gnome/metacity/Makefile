@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/12 20:07:18 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/07/06 18:19:20 marcm Exp $
 
 COMMENT=		"Boring window manager for the adult in you."
 
@@ -24,8 +24,6 @@ BUILD_DEPENDS=		:pkgconfig->=0.12.0p1:devel/pkgconfig
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			glade-2.0.0.0::devel/libglade2 \
 			startup-notification-1::devel/startup-notification
-
-MAKE_ENV+=		GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2003/07/06 18:19:21 marcm Exp $
+--- src/Makefile.in.orig	Sun Jul  6 10:33:44 2003
++++ src/Makefile.in	Sun Jul  6 10:35:07 2003
+@@ -906,7 +906,6 @@ maintainer-clean-generic clean mostlycle
+ @INTLTOOL_SCHEMAS_RULE@
+ 
+ install-data-local:
+-	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA)
+ 
+ inlinepixbufs.h: $(IMAGES)
+ 	   $(GDK_PIXBUF_CSOURCE) --raw --build-list $(VARIABLES) >$(srcdir)/inlinepixbufs.h

@@ -1,0 +1,12 @@
+$OpenBSD: patch-mini-commander_src_Makefile_in,v 1.1 2003/07/06 18:19:20 marcm Exp $
+--- mini-commander/src/Makefile.in.orig	Mon Mar 10 09:50:07 2003
++++ mini-commander/src/Makefile.in	Sun Jul  6 11:12:22 2003
+@@ -657,8 +657,6 @@ $(server_in_files): $(server_in_files:.s
+ 	sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
+ 
+ install-data-local:
+-	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
+-	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(top_builddir)/mini-commander/src/mc-install-default-macros
+ 
+ @INTLTOOL_SERVER_RULE@
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/12 20:12:55 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/07/06 18:19:20 marcm Exp $
 
 COMMENT=		"applets for use with the GNOME2 panel"
 COMMENT-battstat=	"Gnome2 applet for monitoring battery level"
@@ -29,8 +29,6 @@ RUN_DEPENDS=		:scrollkeeper->=0.3.11:textproc/scrollkeeper
 LIB_DEPENDS=		panel-applet-2.0::x11/gnome/panel \
 			gailutil.17::x11/gnome/gail \
 			gtop-2.0.0.0,gtop_common-2.0.0.0,gtop_sysdeps-2.0.0.0,gtop_suid_common-2.0.0.0,gtop_sysdeps_suid-2.0.0.0::devel/libgtop2
-
-MAKE_ENV+=		GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
 PSEUDO_FLAVORS=		no_battstat
 # Only i386 and macppc have the headers for the battstat applet

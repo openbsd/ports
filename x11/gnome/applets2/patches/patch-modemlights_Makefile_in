@@ -1,0 +1,13 @@
+$OpenBSD: patch-modemlights_Makefile_in,v 1.1 2003/07/06 18:19:20 marcm Exp $
+--- modemlights/Makefile.in.orig	Sun Jul  6 10:55:14 2003
++++ modemlights/Makefile.in	Sun Jul  6 10:55:51 2003
+@@ -493,9 +493,6 @@ $(server_in_files): $(server_in_files:.s
+ @INTLTOOL_SERVER_RULE@
+ 
+ install-data-local:
+-	for p in $(schema_DATA); do \
+-		GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$$p ; \
+-	done
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

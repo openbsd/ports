@@ -1,0 +1,11 @@
+$OpenBSD: patch-geyes_Makefile_in,v 1.1 2003/07/06 18:19:20 marcm Exp $
+--- geyes/Makefile.in.orig	Sun Jul  6 10:50:30 2003
++++ geyes/Makefile.in	Sun Jul  6 10:50:38 2003
+@@ -597,7 +597,6 @@ $(server_in_files): $(server_in_files:.s
+ @INTLTOOL_SERVER_RULE@
+ 
+ install-data-local:
+-	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
