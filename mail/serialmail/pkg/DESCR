@@ -1,0 +1,25 @@
+serialmail is a collection of tools for passing mail across serial
+links. It works with qmail: you use qmail to deliver messages to a
+maildir, and then serialmail to deliver messages out of the maildir.
+
+serialmail is designed to handle three common types of mail delivery
+between a dialup computer and an ISP:
+
+   * Delivery to the ISP. The dialup computer sends all outgoing mail to
+     the ISP.
+
+   * AutoTURN delivery from the ISP. After the dialup computer makes an
+     SMTP connection to the ISP, it automatically receives an SMTP
+     connection back from the ISP if there is any new mail for it. This
+     provides the same power as ETRN but does not require a special
+     client.
+
+   * User-controlled delivery from the ISP. A user with a shell account
+     can switch from qmail-pop3d to serialmail without pestering the
+     sysadmin. The user can also decide whether undeliverable messages
+     should be left for POP retrieval or bounced back to the sender.
+
+serialmail supports SMTP, including ESMTP PIPELINING, and QMTP.
+
+serialmail uses ucspi-tcp/tcpclient for networking. It can also be used
+with future UCSPI clients for transparent compression, IPv6, etc.
