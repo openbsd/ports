@@ -1,27 +1,6 @@
---- Makefile.in.orig	Tue Mar  9 07:53:50 1999
-+++ Makefile.in	Tue Mar 21 21:55:29 2000
-@@ -56,7 +56,10 @@
- BIN_DIR =		$(exec_prefix)/bin
- 
- # Directory in which to install the include file tk.h:
--INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include
-+BASE_INSTALL_DIR =	$(prefix)/include/tk$(VERSION)
-+INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(BASE_INSTALL_DIR)
-+GENERIC_INCLUDE_INSTALL_DIR = $(BASE_INSTALL_DIR)/generic
-+UNIX_INCLUDE_INSTALL_DIR = $(BASE_INSTALL_DIR)/unix
- 
- # Top-level directory for manual entries:
- MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
-@@ -97,7 +100,7 @@
- #CFLAGS = 		$(CFLAGS_DEBUG)
- #CFLAGS = 		$(CFLAGS_OPTIMIZE)
- #CFLAGS = 		$(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
--CFLAGS = 		$(@CFLAGS_DEFAULT@)
-+#CFLAGS = 		$(@CFLAGS_DEFAULT@)
- 
- # A "-I" switch that can be used when compiling to make all of the
- # X11 include files accessible (the configure script will try to
-@@ -112,7 +115,7 @@
+--- Makefile.in.orig	Tue Mar  9 01:53:50 1999
++++ Makefile.in	Tue Jul 18 05:26:36 2000
+@@ -112,7 +112,7 @@
  
  # Libraries to use when linking.  This definition is determined by the
  # configure script.
@@ -30,16 +9,7 @@
  
  # To turn off the security checks that disallow incoming sends when
  # the X server appears to be insecure, reverse the comments on the
-@@ -148,7 +151,7 @@
- # "install" around;  better to use the install-sh script that comes
- # with the distribution, which is slower but guaranteed to work.
- 
--INSTALL = @srcdir@/install-sh -c
-+INSTALL = install -c
- INSTALL_PROGRAM =	${INSTALL}
- INSTALL_DATA =		${INSTALL} -m 644
- 
-@@ -302,14 +305,18 @@
+@@ -302,14 +302,18 @@
  
  DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
  
@@ -60,7 +30,7 @@
  
  # Make target which outputs the list of the .o contained in the Tk lib
  # usefull to build a single big shared library containing Tcl/Tk and other
-@@ -365,7 +372,7 @@
+@@ -365,7 +369,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -69,7 +39,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -377,15 +384,19 @@
+@@ -377,15 +381,19 @@
  	    done;
  	@echo "Installing $(TK_LIB_FILE)"
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
@@ -91,7 +61,7 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -395,8 +406,18 @@
+@@ -395,8 +403,18 @@
  		else true; \
  		fi; \
  	    done;
