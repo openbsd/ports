@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/20 19:01:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/09 15:33:35 naddy Exp $
 
 COMMENT=		"GNOME ICQ client"
 V=			0.96.1
 DISTNAME=		gnomeicu-${V}
-CATEGORIES=		net
+CATEGORIES=		net x11/gnome
 NEED_VERSION=   	1.455
 HOMEPAGE=		http://gnomeicu.sourceforge.net
 MAINTAINER=		Nils Nordman <nino@nforced.com>
