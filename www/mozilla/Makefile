@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2003/05/17 05:15:10 wilfried Exp $
+# $OpenBSD: Makefile,v 1.33 2003/05/17 05:52:25 wilfried Exp $
 # Uses pthreads
 
 COMMENT=	"open source version of the Netscape browser"
@@ -58,6 +58,9 @@ MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/mozilla
+
+pre-configure:
+	cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 
 do-install:
 	${INSTALL_DATA_DIR} ${MOZ}
