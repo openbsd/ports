@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/12/22 08:26:15 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2000/01/01 04:39:11 kevlo Exp $
 
 DISTNAME=	DBD-Pg-0.93
 PKGNAME=	p5-DBD-Pg-0.93
@@ -9,7 +9,7 @@ MAINTAINER=	kevlo@openbsd.org
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
 
-BUILD_DEPENDS=	/usr/local/libdata/perl5/site_perl/i386-openbsdDBI.pm: \
+BUILD_DEPENDS=	/usr/local/libdata/perl5/site_perl/i386-openbsd/DBI.pm: \
                 ${PORTSDIR}/databases/p5-DBI \
 		pq.1.:${PORTSDIR}/databases/postgresql
 
