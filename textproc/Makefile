@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 1998/10/01 01:47:09 ian Exp $
+# $OpenBSD: Makefile,v 1.21 1999/01/31 00:44:31 marc Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -27,5 +27,6 @@
      SUBDIR += texi2html
 #    SUBDIR += unroff
      SUBDIR += wdiff
+     SUBDIR += xpdf
 
 .include <bsd.port.subdir.mk>
