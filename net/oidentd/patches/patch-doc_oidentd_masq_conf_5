@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_oidentd_masq_conf_5,v 1.1 2002/08/04 17:32:28 naddy Exp $
+--- doc/oidentd_masq.conf.5.orig	Sat Dec 29 10:23:02 2001
++++ doc/oidentd_masq.conf.5	Fri Aug  2 15:11:18 2002
+@@ -19,7 +19,7 @@ If you are using IP masquerading or NAT,
+ username for connections from other machines.  Support for
+ this is specified by calling
+ \fBoidentd\fP with the \-m (or \-\-masq) flag and by creating an
+-\fB/etc/oidentd_masq.conf\fP file.
++\fB%%SYSCONFDIR%%/oidentd_masq.conf\fP file.
+ .PP
+ \fBoidentd\fP can also forward requests for an IP masqueraded connection to the
+ machine from which connection originates by way of the -f option.  This

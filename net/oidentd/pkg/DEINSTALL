@@ -3,14 +3,17 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
+CONFFILE=${SYSCONFDIR}/oidentd.conf
+MASQFILE=${SYSCONFDIR}/oidentd_masq.conf
 
-if [ -f /etc/oidentd.conf -o -f /etc/oidentd_masq.conf ]; then
+if [ -f ${CONFFILE} -o -f ${MASQFILE} ];
+then
     echo
     echo "+---------------"
     echo "| To completely deinstall the $1 package you need to perform"
     echo "| this step as root:"
     echo "|"
-    echo "|           rm -rf /etc/oidentd*"
+    echo "|         rm -f ${CONFFILE} ${MASQFILE}
     echo "|"
     echo "| Do not do this if you plan on re-installing $1"
     echo "| at some future time."

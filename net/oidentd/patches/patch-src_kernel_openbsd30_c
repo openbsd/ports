@@ -1,6 +1,6 @@
-$OpenBSD: patch-oidentd_openbsd30_c,v 1.1 2002/05/14 01:01:48 naddy Exp $
---- src/kernel/openbsd30.c.orig	Sat Dec 29 17:30:25 2001
-+++ src/kernel/openbsd30.c	Tue May 14 02:46:30 2002
+$OpenBSD: patch-src_kernel_openbsd30_c,v 1.1 2002/08/04 17:32:28 naddy Exp $
+--- src/kernel/openbsd30.c.orig	Sat Dec 29 10:30:25 2001
++++ src/kernel/openbsd30.c	Fri Aug  2 16:10:36 2002
 @@ -42,6 +42,7 @@
  #include <netinet/ip_var.h>
  #include <netinet/tcp_timer.h>
