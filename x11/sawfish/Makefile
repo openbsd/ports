@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/05/15 04:39:16 margarida Exp $
+# $OpenBSD: Makefile,v 1.14 2004/06/25 00:16:36 naddy Exp $
 
 COMMENT=	"extensible window manager"
 
@@ -23,7 +23,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SUBST_VARS=	OPSYS_VER VERSION
+GNU_ARCH=	${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OPSYS_VER}
+SUBST_VARS=	GNU_ARCH VERSION
 
 USE_X11=	Yes
 USE_GMAKE=      Yes

@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/05/15 02:52:02 brad Exp $
-libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gtk.a
-libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gtk.la
-libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gui/gtk.a
-libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gui/gtk.la
-libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gui/gtk/gtk.a
-libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gui/gtk/gtk.la
-libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gui/gtk/types.a
-libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gui/gtk/types.la
-libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sgtk-types.a
-libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sgtk-types.la
+@comment $OpenBSD: PLIST,v 1.3 2004/06/25 00:16:36 naddy Exp $
+libexec/rep/${GNU_ARCH}/gtk.a
+libexec/rep/${GNU_ARCH}/gtk.la
+libexec/rep/${GNU_ARCH}/gui/gtk.a
+libexec/rep/${GNU_ARCH}/gui/gtk.la
+libexec/rep/${GNU_ARCH}/gui/gtk/gtk.a
+libexec/rep/${GNU_ARCH}/gui/gtk/gtk.la
+libexec/rep/${GNU_ARCH}/gui/gtk/types.a
+libexec/rep/${GNU_ARCH}/gui/gtk/types.la
+libexec/rep/${GNU_ARCH}/sgtk-types.a
+libexec/rep/${GNU_ARCH}/sgtk-types.la
 %%SHARED%%
-@dirrm libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gui/gtk
-@dirrm libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gui
+@dirrm libexec/rep/${GNU_ARCH}/gui/gtk
+@dirrm libexec/rep/${GNU_ARCH}/gui

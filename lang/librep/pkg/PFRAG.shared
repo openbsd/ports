@@ -1,19 +1,19 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2003/05/15 05:26:58 margarida Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.4 2004/06/25 00:16:36 naddy Exp $
 lib/librep.so.12.0
 DYNLIBDIR(%D/lib)
-libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gdbm.so
-libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gettext.so
-libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/readline.so
-libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/data/tables.so
-libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/i18n/gettext.so
-libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db/gdbm.so
-libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db/sdbm.so
-libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/readline.so
-libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/sockets.so
-libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/timers.so
-libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/lang/record-profile.so
-libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/util/md5.so
-libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/vm/safe-interpreter.so
-libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sdbm.so
-libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/tables.so
-libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/timers.so
+libexec/rep/${VERSION}/${GNU_ARCH}/gdbm.so
+libexec/rep/${VERSION}/${GNU_ARCH}/gettext.so
+libexec/rep/${VERSION}/${GNU_ARCH}/readline.so
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/data/tables.so
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/i18n/gettext.so
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/db/gdbm.so
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/db/sdbm.so
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/readline.so
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/sockets.so
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/timers.so
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/lang/record-profile.so
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/util/md5.so
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/vm/safe-interpreter.so
+libexec/rep/${VERSION}/${GNU_ARCH}/sdbm.so
+libexec/rep/${VERSION}/${GNU_ARCH}/tables.so
+libexec/rep/${VERSION}/${GNU_ARCH}/timers.so
