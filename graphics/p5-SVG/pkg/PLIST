@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/02 23:32:23 espie Exp $
+${P5SITE}/SVG/
+${P5SITE}/SVG.pm
+${P5SITE}/SVG/DOM.pm
+${P5SITE}/SVG/Element.pm
+${P5SITE}/SVG/Extension.pm
+${P5SITE}/SVG/Manual.pm
+${P5SITE}/SVG/XML.pm
+@man man/man3p/SVG.3p
+@man man/man3p/SVG::DOM.3p
+@man man/man3p/SVG::Element.3p
+@man man/man3p/SVG::Manual.3p
+@man man/man3p/SVG::XML.3p
