@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 1999/05/30 23:49:35 brad Exp $
+# $OpenBSD: Makefile,v 1.14 1999/10/29 12:05:31 espie Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 
 DISTNAME=	tk8.0.5
 PKGNAME=	tk-8.0.5
-CATEGORIES=	x11
+CATEGORIES=	x11 tk80
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR= tcl8_0
 

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 1999/06/01 17:38:19 espie Exp $
+# $OpenBSD: Makefile,v 1.5 1999/10/29 12:05:31 espie Exp $
 
 DISTNAME=	dxpc-3.7.0
-CATEGORIES=	net X11
+CATEGORIES=	net x11
 
 MAINTAINER=	espie@openbsd.org
 
