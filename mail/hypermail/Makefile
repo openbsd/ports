@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2002/10/27 17:21:39 naddy Exp $
-# $NetBSD: Makefile,v 1.3 2000/01/10 14:35:22 hubertf Exp $
-# $FreeBSD: ports/www/hypermail/Makefile,v 1.4 1999/08/31 02:42:53 peter Exp $
+# $OpenBSD: Makefile,v 1.18 2002/11/05 05:24:36 brad Exp $
 
 COMMENT=		"generate a cross-referenced HTML mail archive"
 
 DISTNAME=		hypermail-2.1.5
 CATEGORIES=		mail www
 
-MASTER_SITES=		http://www.landfield.com/hypermail/dist/ \
-			ftp://ftp.landfield.com/hypermail/ \
-			ftp://ftp.faqs.org/hypermail/
+HOMEPAGE=		http://www.hypermail.org/
 
-HOMEPAGE=		http://www.landfield.com/hypermail/
+MASTER_SITES=		${HOMEPAGE}dist/
 
 MAINTAINER=		Margarida Sequeira <niness@devilness.org>
 
