@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.36 2001/03/22 14:52:08 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2001/04/03 14:12:47 brad Exp $
 
-.if ${MACHINE_ARCH} == "powerpc"
-BROKEN=		"BROKEN on powerpc: reason unknown at the moment"
-.endif
+COMMENT=	"useful routines for C programming"
 
 DISTNAME=	glib-1.2.9
 CATEGORIES=	devel
-NEED_VERSION=	1.336
+NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
 		http://www.ameth.org/gimp/gtk/v1.2/
 
 HOMEPAGE=	http://www.gtk.org/
+
+LIB_DEPENDS=	pthread.14::devel/pth
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -24,20 +24,15 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
-
-FLAVORS=	threads
-FLAVOR?=
-
-.if ${FLAVOR:L} == "threads"
-. if ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "powerpc"
-BROKEN=		"pthreads are currently not working on the ${MACHINE_ARCH} architecture"
-. endif
-CONFIGURE_ARGS+= --enable-threads
-.else
-CONFIGURE_ARGS+= --disable-threads
-.endif
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/pth" \
+		LDFLAGS="-L${LOCALBASE}/lib/pth"
 
 post-extract:
 	@rm -f ${WRKSRC}/docs/glib.info*
+
+post-patch:
+	@mv -f ${WRKSRC}/glib-config.in ${WRKSRC}/glib-config.in.orig
+	@sed -e s#!!PTHREAD_LIBDIR!!#${LOCALBASE}/lib/pth#g \
+		${WRKSRC}/glib-config.in.orig > ${WRKSRC}/glib-config.in
 
 .include <bsd.port.mk>

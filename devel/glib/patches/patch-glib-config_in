@@ -1,5 +1,5 @@
 --- glib-config.in.orig	Sat Oct 28 00:35:30 2000
-+++ glib-config.in	Wed Mar  7 08:46:18 2001
++++ glib-config.in	Mon Mar 26 20:36:35 2001
 @@ -88,7 +88,7 @@
  	if test "$lib_gthread" = "yes"; then
  		cflags="$cflags @G_THREAD_CFLAGS@"
@@ -9,3 +9,12 @@
  fi
  if test "$echo_libs" = "yes"; then
  	libsp=""
+@@ -98,7 +98,7 @@
+ 	fi
+ 	if test "$lib_gthread" = "yes"; then
+ 		libsp="-lgthread $libsp"
+-		libsa="$libsa @G_THREAD_LIBS@"
++		libsa="$libsa -L!!PTHREAD_LIBDIR!! @G_THREAD_LIBS@"
+ 	fi
+ 	if test "$lib_gmodule" = "yes"; then
+ 		libsp="@G_MODULE_LDFLAGS@ -lgmodule $libsp"
