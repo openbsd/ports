@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/08/12 18:49:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.16 2003/11/19 16:42:33 lebel Exp $
 
 COMMENT=		"spell checker designed to eventually replace Ispell"
 COMMENT-br=		"aspell dictionary for Breton"
@@ -28,8 +28,6 @@ DISTNAME=		aspell-${VERSION}
 DIST_SUBDIR=		aspell
 CATEGORIES=		textproc
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-
-MAINTAINER=		David Lebel <lebel@openbsd.org>
 
 HOMEPAGE=		http://aspell.sourceforge.net/
 
