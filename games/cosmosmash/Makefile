@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/01/21 09:39:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2003/11/21 21:02:58 sturm Exp $
 
 COMMENT=	"astrosmash clone for X"
 
@@ -18,6 +18,11 @@ MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
 LIB_DEPENDS=	gengameng.4.1::devel/gengameng \
 		SDL_mixer::devel/sdl-mixer
+
+MODULES=	gcc3
+MODGCC3_ARCHES=	sparc64
+MODGCC3_LANGS=	c++
+
 USE_X11=	Yes
 
 CONFIGURE_STYLE= gnu

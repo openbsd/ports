@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/01/21 09:35:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2003/11/21 21:02:57 sturm Exp $
 
 COMMENT=	"X11 game engine library"
 
@@ -17,6 +17,10 @@ MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
 LIB_DEPENDS=	SDL::devel/sdl \
 		SDL_image::devel/sdl-image
+
+MODULES=	gcc3
+MODGCC3_ARCHES=	sparc64
+MODGCC3_LANGS=	c++
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
