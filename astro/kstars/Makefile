@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2002/01/07 12:24:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2002/01/21 09:50:56 kevlo Exp $
 
 COMMENT=	"desktop planetarium"
 
-DISTNAME=	kstars-0.8.2
+DISTNAME=	kstars-0.8.5
 CATEGORIES=	astro
 NEED_VERSION=	1.502
 
