@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/10/27 21:07:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2004/12/22 11:48:33 alek Exp $
 
 COMMENT=	"format the display of a shell script"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c curses
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes

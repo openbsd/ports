@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/11/23 12:15:20 reinhard Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/22 11:50:30 alek Exp $
 
 COMMENT=	"tty recorder"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 NO_REGRESS=	Yes
 

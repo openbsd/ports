@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/09/23 15:29:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/12/22 11:48:33 alek Exp $
 
 COMMENT=	"move/copy/append/link multiple files with wildcards"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 DIST_SUBDIR=	${DISTNAME}
 WRKDIST=	${WRKDIR}

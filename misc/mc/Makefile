@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/08/03 14:44:42 robert Exp $
+# $OpenBSD: Makefile,v 1.22 2004/12/22 11:48:33 alek Exp $
 
 COMMENT=		"free Norton Commander clone with many useful features"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c termcap
 
 MODULES=		devel/gettext
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig

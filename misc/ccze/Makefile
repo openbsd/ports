@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/04/18 06:41:11 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/22 11:48:33 alek Exp $
 
 COMMENT=	"log colorizer"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c ncurses
 
 LIB_DEPENDS=	pcreposix,pcre::devel/pcre
 

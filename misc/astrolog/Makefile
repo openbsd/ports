@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/03/31 14:27:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2004/12/22 11:48:32 alek Exp $
 
 COMMENT=	"astrology program for X11 and alpha-numeric terminals"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 c m
 
 EXTRACT_CASES=	*.shr) ${_PERL_FIX_SHAR} ${FULLDISTDIR}/$$archive | /bin/sh;;
 

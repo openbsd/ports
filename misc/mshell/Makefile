@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/10/08 20:46:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2004/12/22 11:48:33 alek Exp $
 
 COMMENT=	"Unix menuing shell"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	"no explict license"
 PERMIT_PACKAGE_FTP=	"no explict license"
 PERMIT_DISTFILES_CDROM=	"no explict license"
 PERMIT_DISTFILES_FTP=	"no explict license"
+WANTLIB=		c curses termlib
 
 post-extract:
 	zcat ${FULLDISTDIR}/${DISTFILES} |(cd ${WRKDIR}; \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2004/06/24 04:07:53 brad Exp $
+# $OpenBSD: Makefile,v 1.54 2004/12/22 11:50:29 alek Exp $
 
 COMMENT=	"multi-screen window manager"
 
@@ -29,6 +29,8 @@ FLAVOR?=
 
 .if ${FLAVOR:L} == "static"
 CONFIGURE_ENV=	LDFLAGS="-static"
+.else
+WANTLIB=	c curses util
 .endif
 .if ${FLAVOR:L} == "shm"
 PATCH_LIST=	patch-* shmpatch-*

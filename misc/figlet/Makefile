@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/27 21:07:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/22 11:48:33 alek Exp $
 
 COMMENT=	"generates ASCII banner art"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=	ftp://ftp.figlet.org/pub/figlet/program/unix/
 MASTER_SITES0=	ftp://ftp.recoil.org/pub/figlet/

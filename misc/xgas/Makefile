@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/04/14 15:02:09 wilfried Exp $
+# $OpenBSD: Makefile,v 1.16 2004/12/22 11:50:30 alek Exp $
 
 COMMENT=	"animated simulation of an ideal gas"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xaw Xext Xmu Xt c m
 
 CONFIGURE_STYLE=imake
 

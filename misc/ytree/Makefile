@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/27 21:07:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/22 11:50:30 alek Exp $
 # $FreeBSD: ports/misc/ytree/Makefile,v 1.10 2000/04/30 20:15:23 steve Exp $
 
 COMMENT=	"DOS-XTREE(tm) look-a-like file manager"
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c curses
 
 ALL_TARGET=
 
