@@ -1,0 +1,20 @@
+--- src/sound.c.orig	Thu Jan  6 00:23:56 2000
++++ src/sound.c	Sun Jul 15 12:52:17 2001
+@@ -5,7 +5,7 @@
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <sys/ioctl.h>
+-#include <linux/soundcard.h>
++#include <soundcard.h>
+ #include <sys/time.h>
+ #include <signal.h>
+ #include <string.h>
+@@ -14,7 +14,7 @@
+ #include "scav.h"
+ #include "sound.h"
+ 
+-#define SOUNDDEV "/dev/dsp"
++#define SOUNDDEV "/dev/audio"
+ 
+ char dirlist[512];
+ 

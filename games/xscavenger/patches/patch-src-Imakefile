@@ -1,0 +1,20 @@
+--- src/Imakefile.orig	Mon Jan 10 06:15:30 2000
++++ src/Imakefile	Mon Jul 16 14:58:25 2001
+@@ -1,7 +1,7 @@
+ # set this to the path where data files should be stored.  LIBDIR
+ # is automatically defined by imake, usually to /usr/X11R6/lib/X11, so
+ # this should be a good default.
+-LIBNAME = $(LIBDIR)/scavenger
++LIBNAME = $(TRUEPREFIX)/share/scavenger
+ 
+ SRCS = anim.c edit.c scav.c x.c sound.c
+ OBJS = $(SRCS:.c=.o)
+@@ -13,7 +13,7 @@ LIB_DATA = \
+ 	../data/reddevil.lbm ../data/regularguy.lbm ../data/spiralthing.lbm \
+ 	../data/victory.raw
+ 
+-LOCAL_LIBRARIES = $(XLIB)
++LOCAL_LIBRARIES = $(XLIB) -lossaudio
+ EXTRA_DEFINES = -DLIBNAME=\"$(LIBNAME)\"
+ 
+ ComplexProgramTarget(scavenger)
