@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/11/25 20:23:20 pvalchev Exp $
-
-.if ${MACHINE_ARCH} == "hppa"
-BROKEN=		"libsigc bug??"
-.endif
+# $OpenBSD: Makefile,v 1.7 2003/11/27 02:22:41 pvalchev Exp $
 
 COMMENT=	"protocol icq2000/2001 library"
 
