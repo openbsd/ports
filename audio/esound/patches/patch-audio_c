@@ -1,0 +1,11 @@
+--- audio.c.orig	Tue Sep 26 11:56:18 2000
++++ audio.c	Sun Jul 22 17:41:04 2001
+@@ -23,6 +23,8 @@ static int esd_audio_fd = -1;
+ /* ALSA before OSS as ALSA is OSS compatible */
+ #if defined(DRIVER_ALSA) || defined(DRIVER_NEWALSA) 
+ #  include "audio_alsa.c"
++#elif defined(DRIVER_SUN)
++#  include "audio_sun.c"
+ #elif defined(DRIVER_OSS)
+ #  include "audio_oss.c"
+ #elif defined(DRIVER_AIX)

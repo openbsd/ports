@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/07/22 22:49:47 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2001/08/04 05:03:19 brad Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
 COMMENT=	"sound library for Enlightenment"
@@ -24,6 +24,9 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-libwrap
+
+post-extract:
+	@cp -f ${FILESDIR}/audio_sun.c ${WRKSRC}
 
 post-install:
 	@cd ${PREFIX}/share/examples/esound && mv esd.conf esd.conf-sample

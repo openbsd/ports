@@ -1,0 +1,10 @@
+--- acconfig.h.orig	Sat Jul 21 00:21:12 2001
++++ acconfig.h	Sat Jul 21 00:21:18 2001
+@@ -8,6 +8,7 @@
+ #undef DRIVER_ALSA
+ #undef DRIVER_NEWALSA
+ #undef DRIVER_DART
++#undef DRIVER_SUN
+ #undef DRIVER_NONE
+ #undef HAVE_INET_ATON
+ #undef HAVE_NANOSLEEP

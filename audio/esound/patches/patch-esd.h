@@ -1,6 +1,6 @@
---- esd.h.orig	Thu Oct  5 19:34:39 2000
-+++ esd.h	Thu Oct  5 19:35:35 2000
-@@ -7,8 +7,13 @@
+--- esd.h.orig	Mon Oct  9 11:09:24 2000
++++ esd.h	Sun Jul 22 17:41:06 2001
+@@ -7,8 +7,13 @@ extern "C" {
  #endif
  
  /* path and name of the default EsounD domain socket */
