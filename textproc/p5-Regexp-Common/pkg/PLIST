@@ -1,0 +1,70 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/22 02:46:39 msf Exp $
+${P5SITE}/Regexp/
+${P5SITE}/Regexp/Common/
+${P5SITE}/Regexp/Common.pm
+${P5SITE}/Regexp/Common/CC.pm
+${P5SITE}/Regexp/Common/SEN.pm
+${P5SITE}/Regexp/Common/URI/
+${P5SITE}/Regexp/Common/URI.pm
+${P5SITE}/Regexp/Common/URI/RFC1035.pm
+${P5SITE}/Regexp/Common/URI/RFC1738.pm
+${P5SITE}/Regexp/Common/URI/RFC1808.pm
+${P5SITE}/Regexp/Common/URI/RFC2384.pm
+${P5SITE}/Regexp/Common/URI/RFC2396.pm
+${P5SITE}/Regexp/Common/URI/RFC2806.pm
+${P5SITE}/Regexp/Common/URI/fax.pm
+${P5SITE}/Regexp/Common/URI/file.pm
+${P5SITE}/Regexp/Common/URI/ftp.pm
+${P5SITE}/Regexp/Common/URI/gopher.pm
+${P5SITE}/Regexp/Common/URI/http.pm
+${P5SITE}/Regexp/Common/URI/news.pm
+${P5SITE}/Regexp/Common/URI/pop.pm
+${P5SITE}/Regexp/Common/URI/prospero.pm
+${P5SITE}/Regexp/Common/URI/tel.pm
+${P5SITE}/Regexp/Common/URI/telnet.pm
+${P5SITE}/Regexp/Common/URI/tv.pm
+${P5SITE}/Regexp/Common/URI/wais.pm
+${P5SITE}/Regexp/Common/_support.pm
+${P5SITE}/Regexp/Common/balanced.pm
+${P5SITE}/Regexp/Common/comment.pm
+${P5SITE}/Regexp/Common/delimited.pm
+${P5SITE}/Regexp/Common/lingua.pm
+${P5SITE}/Regexp/Common/list.pm
+${P5SITE}/Regexp/Common/net.pm
+${P5SITE}/Regexp/Common/number.pm
+${P5SITE}/Regexp/Common/profanity.pm
+${P5SITE}/Regexp/Common/whitespace.pm
+${P5SITE}/Regexp/Common/zip.pm
+@man man/man3p/Regexp::Common.3p
+@man man/man3p/Regexp::Common::CC.3p
+@man man/man3p/Regexp::Common::SEN.3p
+@man man/man3p/Regexp::Common::URI.3p
+@man man/man3p/Regexp::Common::URI::RFC1035.3p
+@man man/man3p/Regexp::Common::URI::RFC1738.3p
+@man man/man3p/Regexp::Common::URI::RFC1808.3p
+@man man/man3p/Regexp::Common::URI::RFC2384.3p
+@man man/man3p/Regexp::Common::URI::RFC2396.3p
+@man man/man3p/Regexp::Common::URI::RFC2806.3p
+@man man/man3p/Regexp::Common::URI::fax.3p
+@man man/man3p/Regexp::Common::URI::file.3p
+@man man/man3p/Regexp::Common::URI::ftp.3p
+@man man/man3p/Regexp::Common::URI::gopher.3p
+@man man/man3p/Regexp::Common::URI::http.3p
+@man man/man3p/Regexp::Common::URI::news.3p
+@man man/man3p/Regexp::Common::URI::pop.3p
+@man man/man3p/Regexp::Common::URI::prospero.3p
+@man man/man3p/Regexp::Common::URI::tel.3p
+@man man/man3p/Regexp::Common::URI::telnet.3p
+@man man/man3p/Regexp::Common::URI::tv.3p
+@man man/man3p/Regexp::Common::URI::wais.3p
+@man man/man3p/Regexp::Common::_support.3p
+@man man/man3p/Regexp::Common::balanced.3p
+@man man/man3p/Regexp::Common::comment.3p
+@man man/man3p/Regexp::Common::delimited.3p
+@man man/man3p/Regexp::Common::lingua.3p
+@man man/man3p/Regexp::Common::list.3p
+@man man/man3p/Regexp::Common::net.3p
+@man man/man3p/Regexp::Common::number.3p
+@man man/man3p/Regexp::Common::profanity.3p
+@man man/man3p/Regexp::Common::whitespace.3p
+@man man/man3p/Regexp::Common::zip.3p
