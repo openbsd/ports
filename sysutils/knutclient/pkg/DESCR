@@ -1,0 +1,14 @@
+KNUTClient is a graphical client for UPS system NUT
+NUT is a collection of Network UPS Tools
+
+KNUTClient allows viewing in realtime such information as:
+* Battery Charge
+* Battery Voltage
+* Input Voltage
+* Input Frequency
+* Output Voltage
+* Output Current
+* UPS Load
+* UPS Temperature
+
+WWW: ${HOMEPAGE}

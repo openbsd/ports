@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2003/04/17 09:18:56 wilfried Exp $
+--- configure.in.orig	Tue Mar 25 16:02:47 2003
++++ configure.in	Tue Mar 25 16:02:57 2003
+@@ -53,7 +53,7 @@ dnl for NLS support. Call them in this o
+ dnl WITH_NLS is for the po files
+ AM_KDE_WITH_NLS
+ 
+-KDE_USE_QT(2.3)
++KDE_USE_QT(3)
+ AC_PATH_KDE
+ #MIN_CONFIG(2.3)
+ 
