@@ -1,0 +1,7 @@
+This is a replacement for the BIND that is shipped with OpenBSD.
+
+Among other things, BIND 8.x supports notifications, IXFR, dynamic
+updates and DNSSEC. This port also includes the dnssigner utitily
+from TISLabs.
+
+More information om BIND is availible at http://www.isc.org/.

@@ -1,0 +1,49 @@
+usr/sbin/addr
+usr/sbin/dig
+usr/sbin/host
+usr/sbin/nslookup
+usr/sbin/dnsquery
+usr/sbin/dnskeygen
+usr/sbin/dnssigner
+usr/sbin/named
+var/named/named-xfer
+usr/libexec/named/ndc
+usr/sbin/ndc
+usr/sbin/named-bootconf
+usr/sbin/nsupdate
+usr/share/man/cat1/dig.0
+usr/share/man/cat1/host.0
+usr/share/man/cat1/dnsquery.0
+usr/share/man/cat1/dnskeygen.0
+usr/share/man/cat8/nslookup.0
+usr/share/man/cat8/named.0
+usr/share/man/cat8/named-xfer.0
+usr/share/man/cat8/ndc.0
+usr/share/man/cat8/named-bootconf.0
+usr/share/man/cat8/nsupdate.0
+usr/share/misc/nslookup.help
+usr/share/man/cat5/named.conf.0
+usr/share/doc/html/named/acl.html
+usr/share/doc/html/named/address_list.html
+usr/share/doc/html/named/comments.html
+usr/share/doc/html/named/config.html
+usr/share/doc/html/named/controls.html
+usr/share/doc/html/named/docdef.html
+usr/share/doc/html/named/example.html
+usr/share/doc/html/named/include.html
+usr/share/doc/html/named/index.html
+usr/share/doc/html/named/key.html
+usr/share/doc/html/named/logging.html
+usr/share/doc/html/named/master.html
+usr/share/doc/html/named/options.html
+usr/share/doc/html/named/server.html
+usr/share/doc/html/named/trusted-keys.html
+usr/share/doc/html/named/zone.html
+@unexec mkdir /var/named/inst-sample
+@unexec touch /var/named/inst-sample/named.conf /var/named/inst-sample/named.root /var/named/inst-sample/named.localhost /var/named/inst-sample/named.loopback
+var/named/inst-sample/named.conf
+var/named/inst-sample/named.root
+var/named/inst-sample/named.localhost
+var/named/inst-sample/named.loopback
+@dirrm /usr/libexec/named
+@dirrm /usr/share/doc/html/named
