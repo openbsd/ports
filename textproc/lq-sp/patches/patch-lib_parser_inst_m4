@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_parser_inst_m4,v 1.1 2003/02/03 01:42:50 naddy Exp $
+--- lib/parser_inst.m4.orig	Mon Feb  3 02:16:00 2003
++++ lib/parser_inst.m4	Mon Feb  3 02:16:28 2003
+@@ -164,7 +164,7 @@ __instantiate(Vector<NamedResourceTable<
+ __instantiate(Vector<ContentModelAmbiguity>)
+ __instantiate(Vector<Transition>)
+ __instantiate(Vector<LeafContentToken*>)
+-#if 0
++#if defined(__alpha__) || defined(__sparc64__)
+ __instantiate(Vector<size_t>)
+ #endif
+ __instantiate(Vector<unsigned int>)
