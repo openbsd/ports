@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2005/02/25 06:35:05 kevlo Exp $
+# $OpenBSD: Makefile,v 1.180 2005/02/27 21:06:31 espie Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -32,6 +32,7 @@
      SUBDIR += http_load
      SUBDIR += http_ping
      SUBDIR += igal
+     SUBDIR += japana
      SUBDIR += jakarta-tomcat
      SUBDIR += jesred
      SUBDIR += junkbuster

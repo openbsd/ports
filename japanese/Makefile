@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/01/25 23:11:06 jsyn Exp $
+# $OpenBSD: Makefile,v 1.16 2005/02/27 21:06:31 espie Exp $
 
      SUBDIR += Wnn
      SUBDIR += canna
@@ -22,5 +22,6 @@
      SUBDIR += onew,canna
      SUBDIR += onew,wnn4
      SUBDIR += onew,wnn4,canna
+     SUBDIR += p5-Text-Kakasi
 
 .include <bsd.port.subdir.mk>
