@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.352 2001/01/18 14:58:16 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.353 2001/02/03 01:14:52 miod Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -975,7 +975,7 @@ uninstall deinstall package:
 # can be run several times in a row.
 
 fetch: fetch-depends
-# You need to define LICENCE_TYPE and PERMIT_* to make the warning go away.
+# You need to define PERMIT_* to make the warning go away.
 # See ports/infrastructure/templates/Makefile.template
 .  if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
     !defined(PERMIT_DISTFILES_CDROM) || !defined(PERMIT_DISTFILES_FTP)
