@@ -1,0 +1,22 @@
+bin/gpg
+bin/gpgm
+lib/gnupg/rndunix
+lib/gnupg/rndegd
+lib/gnupg/tiger
+lib/gnupg/twofish
+man/man1/gpg.1
+man/man1/gpgm.1
+share/doc/gnupg/README
+share/doc/gnupg/AUTHORS
+share/doc/gnupg/COPYING
+share/doc/gnupg/THANKS
+share/doc/gnupg/TODO
+share/doc/gnupg/BUGS
+share/doc/gnupg/DETAILS
+share/doc/gnupg/FAQ
+share/doc/gnupg/OpenPGP
+share/doc/gnupg/HACKING
+share/gnupg/options.skel
+@dirrm lib/gnupg
+@dirrm share/doc/gnupg
+@dirrm share/gnupg
