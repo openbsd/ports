@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/29 18:09:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2001/11/09 22:22:58 wilfried Exp $
 
 COMMENT=		"GNOME panel applet that displays the CPU + memory load"
 V=			1.0.9
@@ -9,6 +9,7 @@ HOMEPAGE=		http://www.d.kth.se/~d92-jwa/code/
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		http://www.d.kth.se/~d92-jwa/code/bubblemon/ \
+			http://www.d.kth.se/~d92-jwa/code/bubblemon/attic \
 			http://nforced.com/openbsd/distfiles/
 
 LIB_DEPENDS=		panel_applet::x11/gnome/core \
