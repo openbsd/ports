@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.594 2003/12/26 00:26:01 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.595 2004/01/04 09:07:19 sturm Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -592,7 +592,7 @@ _SYSTRACE_CMD=
 SYSTRACE_FILTER?=		${PORTSDIR}/infrastructure/db/systrace.filter
 _SYSTRACE_POLICIES+=	/bin/sh /usr/bin/env /usr/bin/make \
 	${LOCALBASE}/bin/gmake
-SYSTRACE_SUBST_VARS+=	WRKOBJDIR PORTSDIR DISTDIR
+SYSTRACE_SUBST_VARS+=	WRKDIR PORTSDIR DISTDIR
 .for _v in ${SYSTRACE_SUBST_VARS}
 _SYSTRACE_SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
 .endfor

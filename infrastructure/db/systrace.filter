@@ -34,7 +34,7 @@
 	native-fswrite: filename eq "/dev/zero" then permit
 	native-fswrite: filename match "/tmp" then permit
 	native-fswrite: filename match "${DISTDIR}" then permit
-	native-fswrite: filename match "${WRKOBJDIR}" then permit
+	native-fswrite: filename match "${WRKDIR}" then permit
 	native-fswrite: filename match "${PORTSDIR}/bulk" then permit
 	native-fswrite: filename match "${PORTSDIR}/packages" then permit
 	native-fswrite: filename match "/var/tmp" then permit
