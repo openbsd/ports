@@ -1,17 +1,14 @@
+bin/jmacs
 bin/joe
-@exec ln %D/%F %B/jmacs
-@unexec rm -f %B/jmacs
-@exec ln %D/%F %B/jstar
-@unexec rm -f %B/jstar
-@exec ln %D/%F %B/rjoe
-@unexec rm -f %B/rjoe
-@exec ln %D/%F %B/jpico
-@unexec rm -f %B/jpico
-bin/termidx
-lib/joe/joerc
+bin/jstar
+bin/rjoe
+bin/jpico
 lib/joe/jmacsrc
+lib/joe/joerc
 lib/joe/jstarrc
 lib/joe/rjoerc
 lib/joe/jpicorc
 man/man1/joe.1
 @dirrm lib/joe
+@exec if [ ! -d /etc/joe ]; then echo "***"; echo "*** Finished installing joe."; echo "*** Default configuration files stored in %D/lib/joe."; echo "*** If you wish to change joe configuration, copy these"; echo "*** files to /etc/joe and edit them."; fi
+@unexec if [ -d /etc/joe ]; then echo "***"; echo "*** Finished uninstalling joe."; echo "*** Configuration files stored in /etc/joe have not been removed."; echo "*** You may wish to remove them manually."; fi
