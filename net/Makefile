@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.273 2003/05/23 16:25:26 jakob Exp $
+# $OpenBSD: Makefile,v 1.274 2003/05/23 16:28:39 jakob Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -15,8 +15,6 @@
      SUBDIR += arpwatch
      SUBDIR += axyftp
      SUBDIR += balance
-     SUBDIR += bind8
-     SUBDIR += bind9
      SUBDIR += bing
      SUBDIR += bitchx
      SUBDIR += bitlbee
