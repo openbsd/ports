@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.24 2001/09/19 03:37:20 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2001/09/23 05:32:18 brad Exp $
 # $FreeBSD: Makefile,v 1.4 1998/11/18 15:09:35 vanilla Exp $
 
 COMMENT=	"GNU gettext"
 
 DISTNAME=	gettext-0.10.40
 CATEGORIES=	devel
-NEED_VERSION=	1.435
+NEED_VERSION=	1.460
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gettext
 
 HOMEPAGE=	http://www.gnu.org/software/gettext/
 
-LIB_DEPENDS=	iconv.2::converters/libiconv
+MODULES=	iconv
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 

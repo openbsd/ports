@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2001/09/19 17:30:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2001/09/23 05:32:18 brad Exp $
 
 COMMENT=	"GNU version of the traditional tar archiver"
 
 DISTNAME=	tar-1.13.23
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
-NEED_VERSION=	1.384
+NEED_VERSION=	1.460
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/tar/ \
 		ftp://ftp.sunsite.org.uk/Mirrors/alpha.gnu.org/gnu/tar/ \
 		ftp://ftp.funet.fi/pub/mirrors/alpha.gnu.org/gnu/tar/
@@ -17,8 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	intl.1::devel/gettext
-RUN_DEPENDS=	bzip2::archivers/bzip2
+MODULES=	gettext
+RUN_DEPENDS+=	:bzip2-*:archivers/bzip2
 
 SEPARATE_BUILD=	flavored
 
