@@ -1,0 +1,21 @@
+$OpenBSD: patch-interact_c,v 1.1.1.1 2001/06/19 03:23:26 angelos Exp $
+--- interact.c.orig	Wed May 31 07:18:33 1995
++++ interact.c	Sun Jun 10 00:43:14 2001
+@@ -67,7 +67,7 @@ void ask_continue ()
+     char input[20];
+ 
+     printf ("\nContinue processing (y/n) : ");
+-    do gets (input);
++    do fgets (input, sizeof(input), stdin);
+     while (input[0]!='N'&&input[0]!='n'&&input[0]!='y'&&input[0]!='Y');
+ 
+     if (input[0]=='N' || input[0]=='n')
+@@ -92,7 +92,7 @@ unsigned char ask_verbose ()
+     char input[20];
+ 
+     printf ("\nVery verbose mode (y/n) : ");
+-    do gets (input);
++    do fgets (input, sizeof(input), stdin);
+     while (input[0]!='N'&&input[0]!='n'&&input[0]!='y'&&input[0]!='Y');
+ 
+     if (input[0]=='N' || input[0]=='n') return (FALSE); else return (TRUE);
