@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/01/06 00:39:43 angelos Exp $
+# $OpenBSD: Makefile,v 1.22 2000/01/06 02:19:24 angelos Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -42,6 +42,7 @@
 #    SUBDIR += moscow_ml
 #    SUBDIR += objc
      SUBDIR += ocaml
+#    SUBDIR += otcl
 #    SUBDIR += p2c
 #    SUBDIR += p5-Tcl
 #    SUBDIR += p5-ePerl
