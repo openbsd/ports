@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1997/12/05 02:12:14 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 1997/12/05 02:18:40 angelos Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -18,7 +18,7 @@
 #    SUBDIR += playmidi
 #    SUBDIR += radio
 #    SUBDIR += rosegarden
-#    SUBDIR += rplay
+     SUBDIR += rplay
 #    SUBDIR += rsynth
 #    SUBDIR += s3mod
 #    SUBDIR += sox
