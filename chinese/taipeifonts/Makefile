@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/05/30 13:09:11 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/01 02:45:37 kevlo Exp $
 
 DISTNAME=       chinese-fonts-taipei
 CATEGORIES=     chinese x11
@@ -29,7 +29,6 @@ post-extract:
 	@for i in ${FONTS} ; do cp $(FULLDISTDIR)/$$i ${WRKDIST}; done
 
 post-install:
-	cd ${FONTDIR} && mv fonts.alias fonts.alias-taipei
 	@cp ${WRKDIST}/fonts.dir ${FONTDIR}
 
 .include <bsd.port.mk>
