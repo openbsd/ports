@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.52 2003/11/26 19:30:24 brad Exp $
+# $OpenBSD: Makefile,v 1.53 2004/01/18 00:06:22 brad Exp $
 
-DISTNAME=	gaim-0.74
-PATCHFILES=	${DISTNAME}-openssl.patch.gz:0
-PATCH_DIST_STRIP=-p1
+DISTNAME=	gaim-0.75
 CATEGORIES=	net
 
 # GPL
@@ -14,8 +12,6 @@ PERMIT_DISTFILES_FTP=	Yes
 COMMENT=	"Gtk AIM, ICQ, IRC, Jabber, MSN, Yahoo, and Zephyr client"
 HOMEPAGE=	http://gaim.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaim/}
-# from http://people.freebsd.org/~marcus/
-MASTER_SITES0=	ftp://openbsd.comstyle.com/pub/brad/source/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -55,5 +51,8 @@ CONFIGURE_ARGS+=--enable-debug
 
 INSTALL_STRIP=
 .endif
+
+post-extract:
+	@cp -f ${FILESDIR}/ssl-openssl.c ${WRKSRC}/plugins/ssl
 
 .include <bsd.port.mk>
