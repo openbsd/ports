@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.297 2005/01/27 13:15:27 sturm Exp $
+# $OpenBSD: Makefile,v 1.298 2005/02/04 18:50:00 alek Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -36,6 +36,7 @@
      SUBDIR += ddd
      SUBDIR += dejagnu
      SUBDIR += doc++
+     SUBDIR += eclipse
      SUBDIR += ectags
      SUBDIR += ffcall
      SUBDIR += flawfinder
