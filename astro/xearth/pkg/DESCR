@@ -4,4 +4,5 @@ shaded  for  the  current position of the Sun. By default,
 xearth updates the displayed image every five minutes. The
 time between updates can be changed with the -wait option.
 Xearth  can  also  render  directly into PPM and GIF files
-instead of drawing in the root window.
+or  into  its  own window  instead  of drawing in the root
+window.
