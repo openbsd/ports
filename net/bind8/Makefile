@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/10/06 10:35:14 ho Exp $
+# $OpenBSD: Makefile,v 1.24 2002/03/06 23:48:32 lebel Exp $
 
 COMMENT=	Berkeley Internet Name Daemon
 
@@ -11,6 +11,11 @@ MASTER_SITES=	ftp://ftp.gsnig.org/pub/openbsd-bind/ \
 		ftp://ftp.sekure.net/pub/gsnig/openbsd-bind/
 
 MAINTAINER=	Hakan Olsson <ho@openbsd.org>, Jakob Schlyter <jakob@openbsd.org>
+
+# XXX workaround gcc bugs on sparc64
+.if ${MACHINE_ARCH:Msparc64}
+CFLAGS+=        -O0
+.endif
 
 WRKDIST=	${WRKDIR}/named
 PREFIX=		/

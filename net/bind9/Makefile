@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2001/11/26 23:25:18 jakob Exp $
+# $OpenBSD: Makefile,v 1.28 2002/03/06 23:48:23 lebel Exp $
 
 COMMENT=	Berkeley Internet Name Daemon
 
@@ -22,6 +22,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+# XXX workaround gcc bugs on sparc64
+.if ${MACHINE_ARCH:Msparc64}
+CFLAGS+=        -O0
+.endif
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
