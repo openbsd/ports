@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/14 13:34:05 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/22 23:00:32 jakob Exp $
 # $NetBSD: Makefile,v 1.2 2000/06/19 14:30:02 rh Exp $
 
 COMMENT=	AntiVirus DAT file for uvscan
 
-DISTNAME=	dat-4137
+VERSION=	4139
+DISTNAME=	dat-${VERSION}
 PKGNAME=	uvscan_${DISTNAME}
 CATEGORIES=	security
 NEED_VERSION=	1.363
@@ -12,6 +13,7 @@ HOMEPAGE=	http://www.nai.com/asp_set/download/dats/mcafee_4x.asp
 
 MASTER_SITES=	http://download.nai.com/products/datfiles/4.x/nai/
 EXTRACT_SUFX=	.tar
+SUBST_VARS+=	VERSION
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
@@ -34,9 +36,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/libexec/uvscan
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/uvscan
-.for file in reseller.txt readme.txt packing.lst
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/uvscan
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/doc/uvscan/readme-dat-${VERSION}.txt
 	${INSTALL_SCRIPT} ${WRKSRC}/uvscan_update ${PREFIX}/sbin
 
 .include <bsd.port.mk>
