@@ -1,9 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.10 2000/07/03 09:14:27 brad Exp $
 include/png.h
 include/pngconf.h
 lib/libpng.a
 lib/libpng.la
-lib/libpng.so.1.6
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 man/man3/libpng.3
 man/man3/libpngpf.3
 man/man5/png.5

@@ -1,9 +1,0 @@
-include/png.h
-include/pngconf.h
-lib/libpng.a
-man/man3/libpng.3
-man/man3/libpngpf.3
-man/man5/png.5
-share/doc/png/README
-share/doc/png/libpng.txt
-@dirrm share/doc/png
