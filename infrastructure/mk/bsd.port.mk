@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.591 2003/12/15 17:56:40 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.592 2003/12/16 19:05:23 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2203,7 +2203,7 @@ _recurse-lib-depends-check:
 	echo '${_i}' | { \
 		IFS=:; read dep pkg dir target; \
 		IFS=,; for j in $$dep; do echo $$j; done; \
-		if fgrep -q "|$$dir|" $${_DEPENDS_FILE}; then :; else \
+		if ! fgrep -q "|$$dir|" $${_DEPENDS_FILE}; then \
 			echo "|$$dir|" >>$${_DEPENDS_FILE}; \
 			${_flavor_fragment}; \
 			eval $$toset ${MAKE} _recurse-lib-depends-check; \
@@ -2214,7 +2214,7 @@ _recurse-lib-depends-check:
 	@unset FLAVOR SUBPACKAGE  || true; \
 	echo '${_i}' | { \
 		IFS=:; read dep pkg dir target; \
-		if fgrep -q "|$$dir|" $${_DEPENDS_FILE}; then :; else \
+		if ! fgrep -q "|$$dir|" $${_DEPENDS_FILE}; then \
 			echo "|$$dir|" >>$${_DEPENDS_FILE}; \
 			${_flavor_fragment}; \
 			eval $$toset ${MAKE} _recurse-lib-depends-check; \
