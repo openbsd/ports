@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2002/05/08 18:32:02 millert Exp $
+# $OpenBSD: Makefile,v 1.21 2002/07/31 06:10:55 pvalchev Exp $
 
 COMMENT=	"reciprocating engine for X11"
 PKGNAME=	xengine-1.0.1
 CATEGORIES=	benchmarks x11
-NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/comp.sources.x/volume09/xengine/
 DISTFILES=	part01.z patch1.z
 

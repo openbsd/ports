@@ -1,0 +1,12 @@
+$OpenBSD: patch-Imakefile,v 1.1 2002/07/31 06:10:55 pvalchev Exp $
+--- Imakefile.orig	Sun Jul 14 21:18:10 2002
++++ Imakefile	Sun Jul 14 21:18:15 2002
+@@ -14,7 +14,7 @@
+ #
+ 
+        INCLUDES = -I$(TOP)/X11
+-LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB)
++LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XPMLIB) $(XLIB)
+   SYS_LIBRARIES = -lm
+            SRCS = xengine.c
+            OBJS = xengine.o

@@ -1,6 +1,7 @@
---- xengine.c.orig	Sun Aug 20 15:56:04 2000
-+++ xengine.c	Sun Aug 20 15:58:16 2000
-@@ -29,13 +29,13 @@
+$OpenBSD: patch-xengine_c,v 1.1 2002/07/31 06:10:56 pvalchev Exp $
+--- xengine.c.orig	Sun Jul 14 21:16:31 2002
++++ xengine.c	Sun Jul 14 21:16:31 2002
+@@ -29,13 +29,13 @@ static char     sccsid[] = "@(#)xengine.
  
  #define	PI	3.141592654
  
@@ -17,7 +18,7 @@
  
  String          colors[] = {"gray", "lightseagreen", "dimgrey", "forestgreen", "black", "red", "cyan", "firebrick"};
  
-@@ -47,7 +47,7 @@
+@@ -47,7 +47,7 @@ main(argc, argv)
  	Arg             args[10];
  	XtTranslations  newTranslations;
  	static XtActionsRec redrawActions[] = {
@@ -26,7 +27,7 @@
  	};
  
  	static char    *overrideTranslations =
-@@ -59,8 +59,6 @@
+@@ -59,8 +59,6 @@ main(argc, argv)
  	int             i;
  	int             count;
  
@@ -35,7 +36,7 @@
  	toplevel = XtInitialize("xengine", "XEngine", NULL, 0, &argc, argv);
  
  	for (count = 1; count < argc; count++) {
-@@ -170,7 +168,7 @@
+@@ -170,7 +168,7 @@ main(argc, argv)
  	XtMainLoop();
  }
  
@@ -44,7 +45,7 @@
  redraw_callback(w, event, params, nparams)
  	Widget          w;
  	XEvent         *event;
-@@ -180,22 +178,19 @@
+@@ -180,22 +178,19 @@ redraw_callback(w, event, params, nparam
  
  	Arg             args[10];
  
