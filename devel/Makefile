@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2001/01/06 15:53:12 kevlo Exp $
+# $OpenBSD: Makefile,v 1.54 2001/01/09 05:51:05 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -71,7 +71,12 @@
 #    SUBDIR += noweb
 #    SUBDIR += omniBroker
 #    SUBDIR += omniORB
+     SUBDIR += p5-Algorithm-Diff
+     SUBDIR += p5-Algorithm-MDiff
+     SUBDIR += p5-Algorithm-MarkovChain
+     SUBDIR += p5-Algorithm-Permute
 #    SUBDIR += p5-B
+     SUBDIR += p5-B-Graph
 #    SUBDIR += p5-BSD-Resource
 #    SUBDIR += p5-C-Scan
 #    SUBDIR += p5-ConfigReader
