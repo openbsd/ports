@@ -1,5 +1,5 @@
 --- Makefile.orig	Fri Dec  3 16:45:01 1999
-+++ Makefile	Fri Mar 16 16:16:40 2001
++++ Makefile	Mon Aug 27 11:42:28 2001
 @@ -7,15 +7,14 @@
  
  ####### Compiler, tools and options
@@ -13,12 +13,12 @@
 +#CC	=	gcc
 +#CXX	=	g++
 +DEFS	=	-D_REENTRANT -DLINCVS_APP -DNO_DEBUG
-+INCPATH	=	-I./include -I./res -I./themes/include -I./themes/res -I${LOCALBASE}/include/X11/qt2
++INCPATH	=	-I./include -I./res -I./themes/include -I./themes/res -I${MODQT_INCDIR}
 +LINK	=	$(CXX)
  LFLAGS	=	
 -LIBS	=	-L$(QTDIR)/lib -lqt -L/usr/X11R6/lib -lXext -lX11 -lm
 -MOC	=	moc
-+LIBS	=	-L$(LOCALBASE)/lib/qt2 -L${LOCALBASE}/lib -L${X11BASE}/lib -lqt -lXext -lX11 -lm
++LIBS	=	-L$(MODQT_LIBDIR) -L${LOCALBASE}/lib -L${X11BASE}/lib -lqt -lXext -lX11 -lm
 +MOC	=	$(LOCALBASE)/bin/moc2
  
  TAR	=	tar -cf
