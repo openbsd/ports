@@ -1,5 +1,5 @@
 --- Makefile.orig	Tue Jul  2 10:36:06 1996
-+++ Makefile	Sat Sep 16 12:05:33 2000
++++ Makefile	Mon Feb  5 21:12:33 2001
 @@ -7,11 +7,13 @@
  SASR	= -DSASR
  ######### Define SASR if >> is a signed arithmetic shift (-1 >> 1 == -1)
@@ -34,15 +34,17 @@
  GSM_INSTALL_MAN = $(GSM_INSTALL_ROOT)/man/man3
  
  
-@@ -106,6 +108,7 @@
+@@ -106,6 +108,9 @@
  COMPRESSFLAGS 	= 
  # RANLIB 	= true
  RANLIB	 	= ranlib
 +RM		= rm -f
++
++PICFLAG		= -fpic
  
  #
  #    You shouldn't have to configure below this line if you're porting.
-@@ -136,11 +139,20 @@
+@@ -136,11 +141,20 @@
  LFLAGS	= $(LDFLAGS) $(LDINC)
  ######### It's $(LD) $(LFLAGS)
  
@@ -63,7 +65,7 @@
  TOAST	= $(BIN)/toast
  UNTOAST	= $(BIN)/untoast
  TCAT	= $(BIN)/tcat
-@@ -258,6 +270,7 @@
+@@ -258,6 +272,7 @@
  
  GSM_INSTALL_TARGETS =	\
  		$(GSM_INSTALL_LIB)/libgsm.a		\
@@ -71,12 +73,12 @@
  		$(GSM_INSTALL_INC)/gsm.h		\
  		$(GSM_INSTALL_MAN)/gsm.3		\
  		$(GSM_INSTALL_MAN)/gsm_explode.3	\
-@@ -277,9 +290,12 @@
+@@ -277,9 +292,12 @@
  		$(CC) $(CFLAGS) $?
  		@-mv `$(BASENAME) $@` $@ > /dev/null 2>&1
  
 +.c.so:
-+		$(CC) $(CFLAGS) -fpic -DPIC -c $? -o $@
++		$(CC) $(CFLAGS) $(PICFLAG) -DPIC $? -o $@
 +
  # Target rules
  
@@ -85,12 +87,12 @@
  		@-echo $(ROOT): Done.
  
  tst:		$(TST)/lin2cod $(TST)/cod2lin $(TOAST) $(TST)/test-result
-@@ -299,8 +315,11 @@
+@@ -299,8 +317,11 @@
  
  # The basic API: libgsm
  
 +$(LIBGSMSO):	$(LIB) $(GSM_OBJECTS:.o=.so)
-+		$(CC) -shared -o $@ $(GSM_OBJECTS:.o=.so)
++		$(CC) -shared $(PICFLAG) -o $@ $(GSM_OBJECTS:.o=.so)
 +
  $(LIBGSM):	$(LIB) $(GSM_OBJECTS)
 -		-rm $(RMFLAGS) $(LIBGSM)
@@ -98,7 +100,7 @@
  		$(AR) $(ARFLAGS) $(LIBGSM) $(GSM_OBJECTS)
  		$(RANLIB) $(LIBGSM)
  
-@@ -308,14 +327,14 @@
+@@ -308,14 +329,14 @@
  # Toast, Untoast and Tcat -- the compress-like frontends to gsm.
  
  $(TOAST):	$(BIN) $(TOAST_OBJECTS) $(LIBGSM)
@@ -116,7 +118,7 @@
  		$(LN) $(TOAST) $(TCAT)
  
  
-@@ -342,61 +361,49 @@
+@@ -342,61 +363,49 @@
  
  gsmuninstall:
  		-if [ x"$(GSM_INSTALL_ROOT)" != x ] ; then	\
@@ -196,7 +198,7 @@
  
  
  # Distribution
-@@ -416,16 +423,16 @@
+@@ -416,16 +425,16 @@
  		@-echo uninstall: Done.
  
  semi-clean:
@@ -216,7 +218,7 @@
  			$(TOAST) $(TCAT) $(UNTOAST)	\
  			$(ROOT)/gsm-1.0.tar.Z
  
-@@ -434,29 +441,29 @@
+@@ -434,29 +443,29 @@
  # but aren't generally needed to port this.
  
  $(TLS)/sweet:	$(TLS)/sweet.o $(TLS)/taste.o
@@ -251,7 +253,7 @@
  
  
  # Various conversion programs between linear, text, .gsm and the code
-@@ -474,21 +481,21 @@
+@@ -474,21 +483,21 @@
  			( cd $(TST); ./run ) 
  
  $(TST)/lin2txt:		$(TST)/lin2txt.o $(LIBGSM)
