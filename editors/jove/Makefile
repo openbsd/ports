@@ -1,9 +1,4 @@
-# OpenBSD makefile for:	jove
-# Version required:	4.16
-# Date created:		05 November 1997
-# Whom:			ejovi
-#
-# $OpenBSD: Makefile,v 1.4 1998/07/25 04:18:22 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/10/08 23:08:39 marc Exp $
 #
 
 DISTNAME=	jove-4.16

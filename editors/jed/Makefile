@@ -1,17 +1,13 @@
-# OpenBSD makefile for: Jed text editor
-# Version required:     0.98-7
-# Date created:         05 November 1997
-# Whom:                 ejovi
-#
-# $Id: Makefile,v 1.2 1998/04/10 18:55:17 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/08 23:06:21 marc Exp $
 #
 
 DISTNAME=       jed0.98-7
 PKGNAME=        jed-0.98.7
 CATEGORIES=	editors
-MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/
 
 MAINTAINER=     ports@OpenBSD.ORG
+
+MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/
 
 LIB_DEPENDS=	slang\\.0\\.993[6-9]:${PORTSDIR}/devel/libslang
 
@@ -23,7 +19,6 @@ CONFIGURE_ENV=	JED_ROOT=${PREFIX}/lib/jed
 ALL_TARGET=     all getmail ${XJED}
 INSTALL_TARGET= install
 WRKSRC=         ${WRKDIR}/jed
-MAN1=		jed.1 rgrep.1
 
 pre-install:
 	ln -sf ${WRKSRC}/autoconf/mkinsdir.sh  ${WRKSRC}/
