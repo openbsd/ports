@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/01/28 04:58:15 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2004/03/01 08:20:22 kevlo Exp $
 
 COMMENT=	"text-based MSN messenger client"
 
-DISTNAME=	pebrot-0.8.3
+DISTNAME=	pebrot-0.8.5
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	net
 
