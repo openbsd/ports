@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2001/01/04 02:10:00 kevlo Exp $
+# $OpenBSD: Makefile,v 1.55 2001/01/05 23:26:15 danh Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -14,6 +14,7 @@
      SUBDIR += crack
      SUBDIR += cyrus-sasl
      SUBDIR += dante
+     SUBDIR += despoof
      SUBDIR += dsniff
      SUBDIR += fragrouter
      SUBDIR += gnupg
