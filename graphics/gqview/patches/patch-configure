@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.4 2001/12/28 06:03:58 jcs Exp $
+--- configure.orig	Sat Dec 15 11:42:15 2001
++++ configure	Thu Dec 27 23:55:33 2001
+@@ -2106,7 +2106,7 @@
+ fi
+ 
+ cat >> confdefs.h <<EOF
+-#define GQVIEW_HELPDIR "$prefix/share/gqview"
++#define GQVIEW_HELPDIR "$prefix/share/doc/gqview"
+ EOF
+ 
+ 
