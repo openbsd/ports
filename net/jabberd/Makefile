@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2004/10/08 15:27:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2004/11/17 21:08:26 jakob Exp $
 
 COMMENT=		"jabber server"
-DISTNAME=		jabberd-2.0s3
+DISTNAME=		jabberd-2.0s4
 CATEGORIES=		net
 HOMEPAGE=		http://jabberd.jabberstudio.org/2/
 MAINTAINER=		Gerardo Santana Gomez Garrido <santana@openbsd.org.mx>
@@ -26,11 +26,17 @@ SUBST_VARS=		CONFIG_DIR EXAMPLES \
 
 LIB_DEPENDS=		lib/mysql/mysqlclient.10::databases/mysql
 
-MODULES=		converters/libiconv
+MODULES+=		iconv
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--localstatedir=${JABBERDDIR:H} \
+CONFIGURE_ARGS+=	--localstatedir=/var \
+			--enable-ssl \
 			--disable-idn \
+			--enable-mysql \
+			--with-extra-include-path=${LOCALBASE}/include \
+			--with-extra-library-path=${LOCALBASE}/lib \
+
+CONFIGURE_ARGS+=	--enable-mysql \
 			--with-extra-include-path=${LOCALBASE}/include/mysql \
 			--with-extra-library-path=${LOCALBASE}/lib/mysql
 
