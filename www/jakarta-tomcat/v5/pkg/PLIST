@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/04 21:46:09 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/01/30 15:38:15 naddy Exp $
 ${PKGNAME}/
 ${PKGNAME}/LICENSE
 ${PKGNAME}/NOTICE
@@ -2004,7 +2004,7 @@ share/examples/tomcat/webapps/webdav/tomcat.gif
 @sample ${CATALINA_BASE}/work/
 @exec if [ ! -e ${CATALINA_BASE}/conf ]; then ln -sf ${CONFDIR} ${CATALINA_BASE}/conf; fi
 @unexec if [ -h ${CATALINA_BASE}/conf ]; then rm ${CATALINA_BASE}/conf; fi
-@exec chown -RP _tomcat:_tomcat ${CONFDIR} 
+@exec chown -RP _tomcat:_tomcat ${CONFDIR}
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${CONFDIR}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/11/23 23:23:47 alek Exp $
+@comment $OpenBSD: PLIST,v 1.9 2005/01/30 15:38:15 naddy Exp $
 sbin/mod_security-enable
 share/doc/mod_security/
 share/doc/mod_security/CHANGES
@@ -9,4 +9,4 @@ share/doc/mod_security/modsecurity-manual.pdf
 share/examples/mod_security/
 share/examples/mod_security/httpd.conf.example-minimal
 %%SHARED%%
-@unexec rm -f /usr/lib/apache/modules/mod_security.so 
+@unexec rm -f /usr/lib/apache/modules/mod_security.so
