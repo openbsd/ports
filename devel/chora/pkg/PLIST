@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/04/03 11:30:53 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/06/12 21:53:50 avsm Exp $
 horde/chora/COPYING
 horde/chora/README
 horde/chora/annotate.php
@@ -18,6 +18,7 @@ horde/chora/docs/CHANGES
 horde/chora/docs/CREDITS
 horde/chora/docs/GOALS
 horde/chora/docs/INSTALL
+horde/chora/docs/RELEASE_NOTES
 horde/chora/graphics/back.gif
 horde/chora/graphics/chora.gif
 horde/chora/graphics/deleted.gif
@@ -54,7 +55,10 @@ horde/chora/locale/nb_NO/LC_MESSAGES/chora.mo
 horde/chora/locale/nl_NL/LC_MESSAGES/chora.mo
 horde/chora/locale/pl_PL/LC_MESSAGES/chora.mo
 horde/chora/locale/pt_BR/LC_MESSAGES/chora.mo
+horde/chora/locale/ro_RO/LC_MESSAGES/chora.mo
 horde/chora/locale/sv_SE/LC_MESSAGES/chora.mo
+horde/chora/locale/zh_CN/LC_MESSAGES/chora.mo
+horde/chora/locale/zh_TW/LC_MESSAGES/chora.mo
 horde/chora/menu.php
 horde/chora/po/.htaccess
 horde/chora/po/Makefile
@@ -70,9 +74,12 @@ horde/chora/po/nb_NO.po
 horde/chora/po/nl_NL.po
 horde/chora/po/pl_PL.po
 horde/chora/po/pt_BR.po
+horde/chora/po/ro_RO.po
 horde/chora/po/shtool
 horde/chora/po/sv_SE.po
 horde/chora/po/xgettext.sh
+horde/chora/po/zh_CN.po
+horde/chora/po/zh_TW.po
 horde/chora/prefs.php
 horde/chora/status.php
 horde/chora/templates/.htaccess
@@ -122,8 +129,14 @@ horde/chora/templates/menu/menu.inc
 @dirrm horde/chora/templates/annotate
 @dirrm horde/chora/templates
 @dirrm horde/chora/po
+@dirrm horde/chora/locale/zh_TW/LC_MESSAGES
+@dirrm horde/chora/locale/zh_TW
+@dirrm horde/chora/locale/zh_CN/LC_MESSAGES
+@dirrm horde/chora/locale/zh_CN
 @dirrm horde/chora/locale/sv_SE/LC_MESSAGES
 @dirrm horde/chora/locale/sv_SE
+@dirrm horde/chora/locale/ro_RO/LC_MESSAGES
+@dirrm horde/chora/locale/ro_RO
 @dirrm horde/chora/locale/pt_BR/LC_MESSAGES
 @dirrm horde/chora/locale/pt_BR
 @dirrm horde/chora/locale/pl_PL/LC_MESSAGES
