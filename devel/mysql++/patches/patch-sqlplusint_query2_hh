@@ -1,0 +1,12 @@
+$OpenBSD: patch-sqlplusint_query2_hh,v 1.1 2002/08/10 20:07:02 wilfried Exp $
+--- sqlplusint/query2.hh.orig	Sat May 19 18:44:48 2001
++++ sqlplusint/query2.hh	Fri Aug  9 16:10:19 2002
+@@ -7,7 +7,7 @@
+ #include "coldata2.hh"
+ 
+ inline bool Query::success() {
+-  if (!Success) return false;
++  if (!Success_) return false;
+   return mysql->success();
+ }
+ 
