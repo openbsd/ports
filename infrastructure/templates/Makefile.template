@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.35 2001/09/28 01:48:58 naddy Exp $
+# $OpenBSD: Makefile.template,v 1.36 2002/05/25 11:43:33 naddy Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -54,7 +54,7 @@ CATEGORIES=		???
 # where the source files and patches can be fetched
 #
 MASTER_SITES=		???
-#MASTER_SITE_SUBDIR=	???
+#MASTER_SITES=		${MASTER_SITE_foo:=subdir/}
 # if more master sites are needed...
 #MASTER_SITES0=
 # ...
