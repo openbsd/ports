@@ -1,0 +1,7 @@
+gphoto2 is a command line client to libgphoto2. It allows almost everything
+that libgphoto2 can do. With it, one may use gPhoto from a terminal or 
+from a shell script to perform any camera operation that can be done. 
+
+gphoto2 is the canonical user interface to libgphoto2.
+
+WWW: ${HOMEPAGE}
