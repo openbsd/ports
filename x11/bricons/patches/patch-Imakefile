@@ -1,6 +1,7 @@
+$OpenBSD: patch-Imakefile,v 1.1 2001/04/17 14:57:11 naddy Exp $
 --- Imakefile.orig	Thu Jan 21 21:27:31 1993
-+++ Imakefile	Fri Mar 31 23:59:44 2000
-@@ -4,40 +4,17 @@
++++ Imakefile	Tue Apr 17 16:39:02 2001
+@@ -4,40 +4,16 @@
  /**/# MTI: Build srcs
  /**/#
  
@@ -29,8 +30,7 @@
  DEPLIBS = XawClientDepLibs
 -EXTRA_INCLUDES  = -I$(XPM_INCLUDE_DIR)
 -LOCAL_LIBRARIES = -L$(XPM_LIB_DIR) -lXpm XawClientLibs
-+EXTRA_INCLUDES  = -I$(XPMINCDIR)/X11
-+LOCAL_LIBRARIES = -L$(XPMLIBDIR) -lXpm XawClientLibs
++LOCAL_LIBRARIES = XawClientLibs
  
  SRCS =  main.c \
  	action.c \

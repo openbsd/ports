@@ -1,0 +1,27 @@
+$OpenBSD: patch-gen_h,v 1.1 2001/04/17 14:57:12 naddy Exp $
+--- gen.h.orig	Thu Jan 21 21:27:33 1993
++++ gen.h	Tue Apr 17 16:26:58 2001
+@@ -11,11 +11,11 @@ static char* sccs_gen_h = "%W%%G%";
+ #include <X11/Xaw/MenuButton.h>
+ #include <X11/Shell.h>
+ #include <X11/Xaw/Cardinals.h>
+-/* #include <stdlib.h>  */
+-#include <malloc.h>
++#include <X11/xpm.h>
++#include <stdlib.h>
++/* #include <malloc.h>  */
+ #include <ctype.h>
+ #include <unistd.h>
+-#include "xpm.h"
+ 
+ /*
+ 	Macro for using prototypes if ANSI C is available.
+@@ -32,7 +32,7 @@ static char* sccs_gen_h = "%W%%G%";
+ #define NO_OF_COLS  18		/* default number of columns */
+ 
+ #define	EDITOR		"xterm -e "	/* editor used to edit icon file. */
+-#define	FORMATTER	"xterm -e vi " 	/* text formatter for help file */
++#define	FORMATTER	"xterm -e man " 	/* text formatter for help file */
+ #define	HELP_VIEWER	" "		/* viewer for help file */
+ 
+ #define	MAXPROCS	20

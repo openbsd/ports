@@ -1,5 +1,6 @@
+$OpenBSD: patch-Xbricons,v 1.1 2001/04/17 14:57:11 naddy Exp $
 --- Xbricons.orig	Thu Jan 21 21:27:32 1993
-+++ Xbricons	Sat Apr  1 00:02:13 2000
++++ Xbricons	Tue Apr 17 16:18:59 2001
 @@ -1,9 +1,8 @@
  ! Application resources file for bricons program
  ! B.R. Ingram 9th Sept 1991
