@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 1999/11/01 06:13:35 angelos Exp $
+# $OpenBSD: Makefile,v 1.18 2000/01/28 07:47:35 fgsch Exp $
 
-DISTNAME=	lsof_4.46_W
-PKGNAME=	lsof-4.46
+DISTNAME=	lsof_4.48_W
+PKGNAME=	lsof-4.48
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/ \
 		ftp://ftp.crc.doc.ca/packages/lsof/ \
@@ -34,33 +34,34 @@ CDEF=-DSUN4M
 MAKE_ENV += "CDEF=${CDEF}"
 .if !defined( CDEF )
 pre-build:
-	@${ECHO} ""
-	@${ECHO} "*** when building for a sparc you must specify one of"
-	@${ECHO} "***	SUN4=YES, SUN4C=YES, or SUN4M=YES"
-	@${ECHO} "*** on the make command line"
-	@${ECHO} ""
-	@${FALSE}
+	@echo
+	@echo "*** when building for a sparc you must specify one of"
+	@echo "***	SUN4=YES, SUN4C=YES, or SUN4M=YES"
+	@echo "*** on the make command line"
+	@echo
 .endif
 .endif
 
 post-extract:
 	@(cd ${WRKDIR} ; \
-	EXPMD5=`${GREP} MD5 README.${SRCBALL_NAME} | ${SED} 's/^[ ]*//'` ; \
-	CALCMD5=`${MD5} ${SRCBALL_NAME}.tar` ; \
+	EXPMD5=`/usr/bin/grep MD5 README.${SRCBALL_NAME} | \
+	    /usr/bin/sed 's/^[ ]*//'` ; \
+	CALCMD5=`md5 ${SRCBALL_NAME}.tar` ; \
 	if [ "$${EXPMD5}"X != "$${CALCMD5}"X ]; then \
-		${ECHO} "Expected and calculated MD5 signatures don't agree." ; \
-		${ECHO} "($$EXPMD5 != $$CALCMD5)" ; \
-		exit 1 ; \
+	    echo "Expected and calculated MD5 signatures don't agree." ; \
+	    echo "($$EXPMD5 != $$CALCMD5)" ; \
+	    exit 1 ; \
 	fi ; \
 	${TAR} -xf ${SRCBALL_NAME}.tar \
 	)
-	@(cd ${WRKSRC};${ECHO} "y" | ./Inventory || exit 1)
+	@(cd ${WRKSRC}; echo "y" | ./Inventory || exit 1)
 
 
 do-install:
-	${INSTALL_PROGRAM} -o ${BINOWN} -g ${BINGRP} -m 0755 ${WRKSRC}/lsof ${PREFIX}/sbin
+	${INSTALL_PROGRAM} -o ${BINOWN} -g ${BINGRP} -m 0755 \
+	    ${WRKSRC}/lsof ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/lsof.man ${PREFIX}/man/man1/lsof.1
-	@${MKDIR} ${PREFIX}/share/lsof
+	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/lsof
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
 	@${CHMOD} 0444 ${PREFIX}/share/lsof/00*
 
