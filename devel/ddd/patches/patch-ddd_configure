@@ -1,0 +1,27 @@
+$OpenBSD: patch-ddd_configure,v 1.1 2002/10/13 21:45:46 naddy Exp $
+--- ddd/configure.orig	Sun Oct 13 21:34:55 2002
++++ ddd/configure	Sun Oct 13 21:45:43 2002
+@@ -6121,7 +6121,23 @@ else
+   echo "configure: failed program was:" >&5
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
++  cat > conftest.$ac_ext <<EOF
++#include "confdefs.h"
++#include <fstream.h>
++int main() {
++streampos scan_start;
++; return 0; }
++EOF
++if { (eval echo configure:6133: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>&5; }; then
++  rm -rf conftest*
++  ice_cv_have_streampos=yes
++else
++  echo "configure: failed program was:" >&5
++  cat conftest.$ac_ext >&5
++  rm -rf conftest*
+   ice_cv_have_streampos=no
++fi
++rm -f conftest*
+ fi
+ rm -f conftest*
+ ac_ext=C

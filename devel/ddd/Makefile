@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2002/05/13 18:50:39 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2002/10/13 21:45:46 naddy Exp $
 
 COMMENT=	"Data Display Debugger, graphical front-end for GDB, etc"
 
 DISTNAME=	ddd-3.3
 CATEGORIES=	devel
-NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_GNU:=ddd/}
 
 HOMEPAGE=	http://www.gnu.org/software/ddd/
@@ -19,8 +18,6 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/libiberty \
 				${WRKSRC}/readline/support
-CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_DATA="${INSTALL_DATA}"
 CONFIGURE_ARGS=	--with-readline-libraries=/usr/lib
 
 MAKE_FLAGS=	MAINTAINER="'${MAINTAINER}'"

@@ -1,0 +1,15 @@
+$OpenBSD: patch-ddd_aclocal_m4,v 1.1 2002/10/13 21:45:46 naddy Exp $
+--- ddd/aclocal.m4.orig	Sun Oct 13 21:35:46 2002
++++ ddd/aclocal.m4	Sun Oct 13 21:43:58 2002
+@@ -941,7 +941,10 @@ AC_LANG_CPLUSPLUS
+ AC_TRY_COMPILE([#include <iostream.h>],
+ [streampos scan_start;],
+ ice_cv_have_streampos=yes,
+-ice_cv_have_streampos=no)
++AC_TRY_COMPILE([#include <fstream.h>],
++[streampos scan_start;],
++ice_cv_have_streampos=yes,
++ice_cv_have_streampos=no))
+ AC_LANG_RESTORE
+ ])
+ AC_MSG_RESULT($ice_cv_have_streampos)
