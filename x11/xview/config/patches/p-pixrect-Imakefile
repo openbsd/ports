@@ -1,6 +1,6 @@
---- ./lib/pixrect/Imakefile.orig	Tue Jun 29 07:18:39 1993
-+++ ./lib/pixrect/Imakefile	Sat Apr  1 18:24:54 2000
-@@ -41,8 +41,8 @@ ALLFILES = $(HEADERS)
+--- lib/pixrect/Imakefile.orig	Tue Jun 29 07:18:39 1993
++++ lib/pixrect/Imakefile	Tue Apr  4 02:54:36 2000
+@@ -41,11 +41,11 @@ ALLFILES = $(HEADERS)
  all:: 
  
  #if InstallPixrectHeaders
@@ -10,4 +10,8 @@
 +BuildIncludes($(HEADERS2),$(INCDIR),.)
   
  install::
- 	$(MKDIRHIER) $(PIXRECT_HEADER_DEST)
+-	$(MKDIRHIER) $(PIXRECT_HEADER_DEST)
++	$(MKDIRHIER) $(DESTDIR)$(PIXRECT_HEADER_DEST)
+          
+ InstallMultiple($(HEADERS),$(PIXRECT_HEADER_DEST))
+ #else
