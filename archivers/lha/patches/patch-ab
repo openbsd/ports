@@ -1,5 +1,5 @@
-*** src/lharc.c.bak	Fri Mar  8 09:09:06 1996
---- src/lharc.c	Wed Aug 28 21:13:02 1996
+*** src/lharc.c.orig	Fri Mar  8 01:09:06 1996
+--- src/lharc.c	Tue Nov 25 15:37:05 1997
 ***************
 *** 318,324 ****
   		cmd_filec = 0;
@@ -19,3 +19,30 @@
   			if (cmd_filec >= xfilec) {
   				xfilec += 256;
   				cmd_filev = (char **) realloc(xfilev,
+***************
+*** 798,803 ****
+--- 800,806 ----
+  /*																			*/
+  /* ------------------------------------------------------------------------ */
+  /* Build temporary file name and store to TEMPORARY_NAME */
++ #if !defined(__OpenBSD__)
+  void
+  build_temporary_name()
+  {
+***************
+*** 821,827 ****
+  	mktemp(temporary_name);
+  #endif
+  }
+! 
+  /* ------------------------------------------------------------------------ */
+  static void
+  modify_filename_extention(buffer, ext)
+--- 824,830 ----
+  	mktemp(temporary_name);
+  #endif
+  }
+! #endif
+  /* ------------------------------------------------------------------------ */
+  static void
+  modify_filename_extention(buffer, ext)
