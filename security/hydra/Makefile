@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/11/11 17:26:11 margarida Exp $
+# $OpenBSD: Makefile,v 1.11 2003/11/12 23:54:09 margarida Exp $
 
 COMMENT=		"parallelized login hacker"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=		Yes
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	gnu dest
 
 post-extract:
 		@chmod -R u+w ${WRKDIST}
