@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/10/06 13:01:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/10/06 13:03:17 espie Exp $
 share/texmf/ChangeLog
 share/texmf/aliases
 share/texmf/bibtex/bib/README
@@ -1159,6 +1159,7 @@ share/texmf/doc/help/Catalogue/entries/texdraw.html
 share/texmf/doc/help/Catalogue/entries/texed.html
 share/texmf/doc/help/Catalogue/entries/texemplar.html
 @exec ln -sf %D/share/doc/texi2html/texi2html.html %B/texi2html.html
+@unexec rm %B/texi2html.html
 share/texmf/doc/help/Catalogue/entries/texi2www.html
 share/texmf/doc/help/Catalogue/entries/texinfo.html
 share/texmf/doc/help/Catalogue/entries/texip.html
