@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/30 16:17:39 couderc Exp $
+# $OpenBSD: Makefile,v 1.6 2003/03/29 15:27:26 couderc Exp $
 
 BROKEN=			"Needs upgrade to newer version"
 
@@ -8,7 +8,7 @@ VERSION=		1.8.5
 DISTNAME=		openh323-${VERSION}
 CATEGORIES=		net
 
-HOMEPAGE=		http://www.openh323.org
+HOMEPAGE=		http://www.openh323.org/
 
 MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
