@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.82 2001/03/16 15:53:15 espie Exp $
+# $OpenBSD: Makefile,v 1.83 2001/03/17 16:15:50 wilfried Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 
-COM=		GNU compiler collection (experimental)
+COM=		'GNU compiler collection (experimental)'
 COMMENT=	${COM}: core C compiler
 COMMENT-c++=	${COM}: C++ compiler
 COMMENT-chill=	${COM}: Chill compiler
