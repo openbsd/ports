@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2002/07/11 17:21:42 shell Exp $
+@comment $OpenBSD: PLIST,v 1.14 2002/09/15 04:01:31 shell Exp $
 bin/xslt-config
 bin/xsltproc
 include/libexslt/exslt.h
@@ -32,11 +32,6 @@ lib/xsltConf.sh
 man/man1/xsltproc.1
 man/man4/libexslt.4
 man/man4/libxslt.4
-share/doc/libxslt-python/examples/basic.py
-share/doc/libxslt-python/examples/extfunc.py
-share/doc/libxslt-python/examples/pyxsltproc.py
-share/doc/libxslt-python/examples/test.xml
-share/doc/libxslt-python/examples/test.xsl
 share/doc/libxslt/html/API.html
 share/doc/libxslt/html/APIchunk0.html
 share/doc/libxslt/html/APIchunk1.html
@@ -97,8 +92,5 @@ share/doc/libxslt/html/xsltproc2.html
 %%SHARED%%
 @dirrm share/doc/libxslt/html/tutorial
 @dirrm share/doc/libxslt/html
-@dirrm share/doc/libxslt-python/examples
-@dirrm share/doc/libxslt-python
-@dirrm share/doc/libxslt
 @dirrm include/libxslt
 @dirrm include/libexslt

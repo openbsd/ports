@@ -1,21 +1,21 @@
-$OpenBSD: patch-python_Makefile_in,v 1.2 2002/09/14 07:52:03 shell Exp $
---- python/Makefile.in.orig	Sat Sep 14 15:43:54 2002
-+++ python/Makefile.in	Sat Sep 14 15:45:16 2002
-@@ -129,7 +129,7 @@ INCLUDES = \
- 	-I$(top_srcdir)
+$OpenBSD: patch-python_Makefile_in,v 1.3 2002/09/15 04:01:31 shell Exp $
+--- python/Makefile.in.orig	Fri Aug 23 20:37:55 2002
++++ python/Makefile.in	Sun Sep 15 11:55:54 2002
+@@ -400,7 +400,7 @@ installcheck: installcheck-recursive
+ install-exec-am:
+ install-exec: install-exec-recursive
  
+-install-data-am: install-pythonLTLIBRARIES install-data-local
++install-data-am: install-pythonLTLIBRARIES
+ install-data: install-data-recursive
  
--DOCS_DIR = $(datadir)/doc/libxslt-python-$(LIBXSLT_VERSION)
-+DOCS_DIR = $(datadir)/doc/libxslt-python
- # libxsltclass.txt is generated
- DOCS = TODO
- 
-@@ -478,7 +478,7 @@ maintainer-clean
- @WITH_PYTHON_TRUE@libxslt.py: $(srcdir)/libxsl.py libxsltclass.py
- @WITH_PYTHON_TRUE@	cat $(srcdir)/libxsl.py libxsltclass.py > libxslt.py
- 
--@WITH_PYTHON_TRUE@install-data-local:
-+install-data-local:
- @WITH_PYTHON_TRUE@	$(mkinstalldirs) $(libdir)/python${PYTHON_VERSION}/site-packages
- @WITH_PYTHON_TRUE@	@INSTALL@ -m 0644 libxslt.py $(libdir)/python${PYTHON_VERSION}/site-packages
- @WITH_PYTHON_TRUE@	$(mkinstalldirs) $(DOCS_DIR)
+ install-am: all-am
+@@ -408,7 +408,7 @@ install-am: all-am
+ install: install-recursive
+ uninstall-am: uninstall-pythonLTLIBRARIES
+ uninstall: uninstall-recursive
+-all-am: Makefile $(LTLIBRARIES) all-local
++all-am: Makefile $(LTLIBRARIES)
+ all-redirect: all-recursive
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
