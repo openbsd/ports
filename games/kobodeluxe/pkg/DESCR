@@ -1,5 +1,5 @@
 Kobo Deluxe (formerly SKobo) is an SDL port of Akira Higuchi's game
-XKobo.  It adds such features such as sound, smoother animation, and
+XKobo.  It adds features such as sound, smoother animation, and
 filtered, high resolution support.
 
 KEY CONFIGURATION
@@ -22,4 +22,3 @@ harder
         makes the game slightly harder by not giving you bonus lives
 
 WWW: ${HOMEPAGE}
-
