@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.259 2000/04/09 23:57:58 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.260 2000/04/10 00:42:02 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1210,7 +1210,11 @@ patch: ${_PATCH_COOKIE}
 distpatch: ${_DISTPATCH_COOKIE}
 configure: ${_CONFIGURE_COOKIE}
 all build: ${_BUILD_COOKIE}
+.if defined(ALWAYS_PACKAGE)
+install: ${_INSTALL_COOKIE} ${_PACKAGE_COOKIE}
+.else
 install: ${_INSTALL_COOKIE}
+.endif
 fake: ${_FAKE_COOKIE}
 package: ${_PACKAGE_COOKIE}
 
@@ -1699,11 +1703,9 @@ mirror-distfiles:
 	@cd ${.CURDIR} && make __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes fetch
 .endif
 
-packageinstall: package install
-
 all-packages:
 .if !exists(${PKGFILE})
-	cd ${.CURDIR} && make package DEPENDS_TARGET=packageinstall
+	cd ${.CURDIR} && make package ALWAYS_PACKAGE=Yes
 .endif
 
 # Invoke "make cdrom-packages CDROM_PACKAGES=/cdrom/snapshots/packages"
@@ -1712,7 +1714,7 @@ cdrom-packages:
     !exists(${CDROM_PACKAGES}/${PKGNAME}${PKG_SUFX}})
 	@if [ ! -f ${PKGFILE} ]; then \
 	   mkdir -p ${PORTSDIR}/logs ;\
-	   cd ${.CURDIR} && make package DEPENDS_TARGET=packageinstall \
+	   cd ${.CURDIR} && make package ALWAYS_PACKAGE=Yes \
 	      2>&1 | tee ${PORTSDIR}/logs/${PKGNAME}.log ;\
 	fi
 	@if [ -f ${PKGFILE} ]; then \
@@ -1728,7 +1730,7 @@ ftp-packages:
     !exists(${FTP_PACKAGES}/${PKGNAME}${PKG_SUFX}})
 	@if [ ! -f ${PKGFILE} ]; then \
 	   mkdir -p ${PORTSDIR}/logs ;\
-	   cd ${.CURDIR} && make package DEPENDS_TARGET=packageinstall \
+	   cd ${.CURDIR} && make package ALWAYS_PACKAGE=Yes \
 	      2>&1 | tee  ${PORTSDIR}/logs/${PKGNAME}.log ;\
 	fi
 	@if [ -f ${PKGFILE} ]; then \
@@ -2536,7 +2538,7 @@ tags:
    do-fetch do-install do-package do-patch extract list-distfiles \
    fake-pkg fetch fetch-depends fetch-list fetch-list-one-pkg \
    fetch-list-recursive install lib-depends makesum mirror-distfiles \
-   packageinstall cdrom-packages ftp-packages \
+   cdrom-packages ftp-packages \
    misc-depends package package-depends package-links package-name \
    package-noinstall package-path patch plist post-build \
    post-configure post-extract post-fetch post-install post-package \
