@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/02/26 01:58:48 brad Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/02/26 09:14:55 brad Exp $
 bin/gwenview
 man/man1/gwenview.1
-share/applnk/Graphics/gwenview.desktop
+share/applications/kde/gwenview.desktop
 share/apps/gwenview/cursors/drag.png
 share/apps/gwenview/cursors/dragging.png
 share/apps/gwenview/cursors/zoom.png
@@ -187,5 +187,3 @@ share/locale/zu/LC_MESSAGES/gwenview.mo
 @dirrm share/apps/gwenview/cursors
 @dirrm share/apps/gwenview
 @dirrm share/apps
-@dirrm share/applnk/Graphics
-@dirrm share/applnk

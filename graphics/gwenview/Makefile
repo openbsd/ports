@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/02/26 01:58:48 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2004/02/26 09:14:55 brad Exp $
 
 COMMENT=	"image viewer for KDE"
 
@@ -31,6 +31,6 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_ARGS=	${MODKDE_CONFIGURE_ARGS}
-CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV} xdg_appsdir="\$${kde_appsdir}/Graphics"
+CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
 
 .include <bsd.port.mk>
