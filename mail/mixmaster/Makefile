@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/11/23 18:52:39 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2005/01/02 12:56:05 alek Exp $
 
 COMMENT=	"client for anonymous remailing"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"only with patch notice"
 PERMIT_PACKAGE_FTP=	"only with patch notice"
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto curses z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mixmaster/}
 MASTER_SITES0=	ftp://ftp.erisiandiscord.de/pub/misc/

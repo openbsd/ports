@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/08/09 14:08:49 xsa Exp $
+# $OpenBSD: Makefile,v 1.6 2005/01/02 12:56:05 alek Exp $
 
 COMMENT=		"POP3-server virtual domain support"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		c
 
 MASTER_SITES=		ftp://ftp.toontown.org/pub/teapop/		
 

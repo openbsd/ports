@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2004/08/10 09:14:48 xsa Exp $
+# $OpenBSD: Makefile,v 1.100 2005/01/02 12:56:05 alek Exp $
 
 COMMENT=	"mail retrieval utility for POP2, POP3, KPOP, IMAP and more"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto krb5 ssl
 
 MODULES=	devel/gettext
 

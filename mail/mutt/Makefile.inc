@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2004/11/30 08:57:55 xsa Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2005/01/02 12:56:05 alek Exp $
 
 DISTNAME=	mutt-${VERSION}i
 PKGNAME=	${DISTNAME}p0
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto des gssapi krb5 ssl
 
 FLAVORS+=	slang mixmaster compressed
 FLAVOR?=
@@ -37,8 +38,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .if ${FLAVOR:L:Mslang}
 LIB_DEPENDS+=		slang.14::devel/libslang
 CONFIGURE_ARGS+=	--with-slang="${PREFIX}"
+WANTLIB+=		m termlib
 .else
 CONFIGURE_ARGS+=	--with-curses
+WANTLIB+=		ncurses 
 .endif
 
 # compressed folder support provided by

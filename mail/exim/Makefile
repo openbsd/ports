@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2004/11/18 23:26:41 alek Exp $
+# $OpenBSD: Makefile,v 1.47 2005/01/02 12:56:04 alek Exp $
 
 COMMENT=	"Flexible mail transfer agent"
 VERSION=	4.41
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		c crypto perl ssl util wrap m
 
 FLAVORS=no_exiscan no_x11 mysql postgresql ldap iconv
 FLAVOR?=
@@ -33,6 +34,7 @@ PATCH_DIST_STRIP=	-p1
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=		Yes
 EXIM_MAKECAT+=		"EXIM_MONITOR=eximon.bin\n"
+WANTLIB+=		X11 Xaw Xext Xmu Xt
 .endif
 
 .if ${FLAVOR:L:Mmysql}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/27 17:21:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2005/01/02 12:56:04 alek Exp $
 
 COMMENT=	"Cubic Circle's POP3 daemon"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -DINET6" LDFLAGS="" MD5_OBJ=""
 

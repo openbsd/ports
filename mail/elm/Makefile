@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/09/15 09:09:41 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2005/01/02 12:56:04 alek Exp $
 
 COMMENT=	"once-popular mail user agent"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c termlib
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT= Configure

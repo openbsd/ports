@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/10/12 14:56:19 danh Exp $
+# $OpenBSD: Makefile,v 1.14 2005/01/02 12:56:05 alek Exp $
 
 COMMENT=	"flexible POP3 server"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		c
 
 FLAVORS=	apop 
 FLAVOR?=

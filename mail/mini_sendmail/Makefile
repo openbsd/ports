@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/10/14 01:44:06 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2005/01/02 12:56:05 alek Exp $
 COMMENT=	"accept email on behalf of real sendmail"
 COMMENT-chroot=	"static mini_sendmail for chrooted apache"
 DISTNAME=	mini_sendmail-1.3.5
@@ -23,6 +23,8 @@ SUBPACKAGE?=
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
 PREFIX=	/var/www
+.else
+WANTLIB=	c
 .endif
 
 do-install:

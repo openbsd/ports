@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/04/01 18:52:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2005/01/02 12:56:05 alek Exp $
 
 COMMENT=		"simple SMTP client"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=		${HOMEPAGE}distrib/
 

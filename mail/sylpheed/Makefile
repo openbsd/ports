@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2004/11/07 17:45:54 couderc Exp $
+# $OpenBSD: Makefile,v 1.52 2005/01/02 12:56:05 alek Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xi c crypto gdk glib gmodule gtk iconv intl \
+			jpeg m png pthread ssl tiff z
 
 MASTER_SITES=	${HOMEPAGE}/sylpheed/
 
@@ -46,6 +48,7 @@ CONFIGURE_ARGS+=	--disable-gpgme
 .if ${FLAVOR:L:Mldap}
 LIB_DEPENDS+=		ldap.2,lber.2::databases/openldap
 CONFIGURE_ARGS+=	--enable-ldap
+WANTLIB+=		gthread
 .else
 CONFIGURE_ARGS+=	--disable-ldap
 .endif

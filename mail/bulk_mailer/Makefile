@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/06/25 04:46:34 xsa Exp $
+# $OpenBSD: Makefile,v 1.13 2005/01/02 12:56:04 alek Exp $
 
 COMMENT=	"speed mail delivery by sorting & batching addresses"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 CONFIGURE_STYLE=gnu
 

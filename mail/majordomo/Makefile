@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/06/22 10:06:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2005/01/02 12:56:05 alek Exp $
 
 COMMENT=	"mailing list manager"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
+WANTLIB=		c
 
 MASTER_SITES=	ftp://ftp.sgi.com/other/majordomo/1.94.5/ \
 		ftp://ftp.greatcircle.com/pub/majordomo/1.94.5/
