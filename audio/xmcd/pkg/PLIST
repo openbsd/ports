@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/01/18 16:41:28 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/04/13 09:31:06 xsa Exp $
 bin/cda
 bin/cddbcmd
 bin/dp2xmcd
@@ -195,3 +195,5 @@ share/xmcd/tbl/Yamaha
 @dirrm share/xmcd/scripts
 @dirrm share/xmcd/tbl
 @dirrm share/xmcd
+@extraunexec rm -rf ${SYSCONFDIR}/xmcd
+@extraunexec rm -rf /var/db/xmcd

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/08/13 13:59:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/04/13 09:31:06 xsa Exp $
 bin/xhippo
 man/man1/xhippo.1
 share/doc/xhippo/ChangeLog
@@ -15,3 +15,5 @@ share/examples/xhippo/xhippo.config-sample
 share/locale/de/LC_MESSAGES/xhippo.mo
 @dirrm share/examples/xhippo
 @dirrm share/doc/xhippo
+@cwd ${SYSCONFDIR}
+@extra xhippo.config

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.3 2003/06/22 10:01:35 sturm Exp $
+# $OpenBSD: DEINSTALL,v 1.4 2004/04/13 09:31:06 xsa Exp $
 #
 # opennap de-installation
 
@@ -10,7 +10,7 @@ CONFIG_DIR=${SYSCONFDIR}/opennap
 OPENNAPUSER=_opennap
 OPENNAPGROUP=_opennap
 
-if [ -d $CONFIG_DIR ]; then
+if [ ${PKG_DELETE_EXTRA} != Yes -d $CONFIG_DIR ]; then
     echo
     echo "+---------------"
     echo "| To completely deinstall the $1 package you need to perform"
