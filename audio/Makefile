@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2002/02/02 19:50:47 lebel Exp $
+# $OpenBSD: Makefile,v 1.77 2002/02/04 15:02:43 naddy Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -57,6 +57,7 @@
      SUBDIR += p5-MP3-ID3v1Tag
      SUBDIR += p5-MP3-Info
      SUBDIR += p5-cddb
+     SUBDIR += p5-libvorbis
 #    SUBDIR += playmidi
 #    SUBDIR += radio
      SUBDIR += rio500
