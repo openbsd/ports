@@ -1,0 +1,24 @@
+$OpenBSD: patch-error_c,v 1.1 2004/01/28 20:58:53 naddy Exp $
+--- error.c.orig	1994-01-13 22:36:04.000000000 +0100
++++ error.c	2004-01-28 21:49:09.000000000 +0100
+@@ -13,7 +13,11 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#ifdef __FreeBSD__
++#include <X11/Xlibint.h>
++#else
+ #include <X11/Xlib.h>
++#endif
+ #include <X11/Xproto.h>
+ 
+ #include "i18n.h"
+@@ -232,8 +236,6 @@ printError(dpy, err, tag)
+ 	err->resourceid);
+     FPRINTF(stderr, GetString("  serial number of failed request:  %d\n"),
+ 	err->serial);
+-    FPRINTF(stderr, GetString("  current request serial number:  %d\n"),
+-	dpy->request);
+ }
+ 
+ 

@@ -1,0 +1,6 @@
+$OpenBSD: patch-patchlevel_h,v 1.1 2004/01/28 20:58:54 naddy Exp $
+--- patchlevel.h.orig	1994-01-13 22:40:04.000000000 +0100
++++ patchlevel.h	2004-01-28 21:49:10.000000000 +0100
+@@ -1 +1 @@
+-#define PATCHLEVELv4 0
++#define PATCHLEVELv4 2

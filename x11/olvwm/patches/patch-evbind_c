@@ -1,0 +1,31 @@
+$OpenBSD: patch-evbind_c,v 1.1 2004/01/28 20:58:53 naddy Exp $
+--- evbind.c.orig	1994-01-13 22:36:05.000000000 +0100
++++ evbind.c	2004-01-28 21:49:10.000000000 +0100
+@@ -5,7 +5,7 @@
+  */
+ 
+ #ifdef IDENT
+-#ident	"@(#)evbind.c	1.5 olvwm version 07 Jan 1994"
++#ident	"@(#)evbind.c	1.7 olvwm version 01/13/98"
+ #endif
+ 
+ /*
+@@ -20,7 +20,9 @@
+ #include <sys/types.h>
+ #include <sys/time.h>
+ 
++#ifdef __STDC__
+ #include <X11/Intrinsic.h>
++#endif
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
+ #include <X11/keysym.h>
+@@ -137,7 +139,7 @@ establishModBindings(dpy, newDB)
+  */
+ 
+ typedef struct {
+-    int state;
++    unsigned int state;
+     int button;
+     SemanticAction action;
+ } MouseBinding;

@@ -1,0 +1,15 @@
+$OpenBSD: patch-defaults_c,v 1.1 2004/01/28 20:58:53 naddy Exp $
+--- defaults.c.orig	1994-01-13 22:36:03.000000000 +0100
++++ defaults.c	2004-01-28 21:49:09.000000000 +0100
+@@ -90,7 +90,11 @@ GetUserDefaults(dpy)
+ #ifdef SVR4
+ 	    if (sysinfo(SI_HOSTNAME, hostname, sizeof(hostname)) != -1) {
+ #else
++#ifndef __OpenBSD__
+ 	    if (0 == gethostname(hostname, sizeof(hostname), &namelen)) {
++#else
++	    if (0 == gethostname(hostname, sizeof(hostname))) {
++#endif
+ #endif
+ 		(void) strcat(filename, hostname);
+ 		fileDB = XrmGetFileDatabase(filename);

@@ -1,0 +1,86 @@
+$OpenBSD: patch-olvwmrc_y,v 1.1 2004/01/28 20:58:54 naddy Exp $
+--- olvwmrc.y.orig	1994-01-13 22:46:53.000000000 +0100
++++ olvwmrc.y	2004-01-28 21:49:10.000000000 +0100
+@@ -5,7 +5,7 @@
+ 
+ %{
+ #ifdef IDENT
+-#ident  "@(#)olvwmrc.y	1.6 olvwm version 07 Jan 1994"
++#ident  "@(#)olvwmrc.y	1.7 olvwm version 01/13/98"
+ #endif
+ 
+ #include <sys/types.h>
+@@ -81,6 +81,7 @@ List    *ProgKeyList = NULL;
+ List	*WinMenuActionsList = NULL;
+ 
+ static Display	*dpy;
++static unsigned int NumLockMask;
+ %}
+ 
+ 
+@@ -526,7 +527,9 @@ String :    WORD
+ 	    }
+ %%
+ /* Programs */
++#ifndef YYDEBUG
+ #define YYDEBUG 1
++#endif
+ #include "parse.c"
+ 
+ extern List	*ActiveClientList;
+@@ -577,7 +580,7 @@ char   name[];
+    return(True);
+ }
+ 
+-static char *
++extern char *
+ strexpand(s)
+ char *s;
+ {
+@@ -712,7 +715,8 @@ matchProgKey(p, ev)
+ 
+ {
+     if (p->keycode == ev->xkey.keycode &&
+-	(p->modmask == AnyModifier || p->modmask == ev->xkey.state))
++	(p->modmask == AnyModifier ||
++	(p->modmask == (~(NumLockMask|LockMask) & ev->xkey.state))))
+ 	return p;
+     return NULL;
+ }
+@@ -799,14 +803,26 @@ struct stat statbuf;
+ 		    extern List *ScreenInfoList;
+ 		    List *l = ScreenInfoList;
+ 		    ScreenInfo *scr;
++		    Client *saveClient = NULL;
++		    Window root, child;
++		    int rx, ry, wx, wy;
++		    unsigned int keys;
+ 
+ 		    /* allow one warp per screen */
+ 		    for (scr = ListEnum(&l); scr != NULL; scr = ListEnum(&l)) {
+ 			findClient_rootid = scr->rootid;
+ 			c = (Client *) ListApply(ActiveClientList, findClient, t);
+-			if (c)
+-			    clientWarp(c);
++			if (c) {
++			    if (XQueryPointer(dpy, c->groupid, &root, &child,
++					&rx, &ry, &wx, &wy, &keys)) {
++			        clientWarp(c);
++				break;
++			    }
++			    else saveClient = c;
++			}
+ 		    }
++		    if (saveClient)
++			clientWarp(c);
+ 		    findClient_rootid = 0;
+ 		}
+ 	    free(s);
+@@ -1249,6 +1265,7 @@ InitOlvwmRC(ldpy, path)
+ 	return;
+     olvwmOldBuf = olvwmBuf;
+     dpy = ldpy;
++    NumLockMask = FindModifierMask(XKeysymToKeycode(dpy, XK_Num_Lock));
+     yyparse();
+ #ifdef DEBUG
+     DumpProgKeyList();

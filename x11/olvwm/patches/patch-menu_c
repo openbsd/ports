@@ -1,0 +1,24 @@
+$OpenBSD: patch-menu_c,v 1.1 2004/01/28 20:58:54 naddy Exp $
+--- menu.c.orig	1994-01-13 22:36:09.000000000 +0100
++++ menu.c	2004-01-28 21:49:10.000000000 +0100
+@@ -5,7 +5,7 @@
+  */
+ 
+ #ifdef IDENT
+-#ident	"@(#)menu.c	1.6 olvwm version 07 Jan 1994"
++#ident	"@(#)menu.c	1.7 olvwm version 01/13/98"
+ #endif
+ 
+ /*
+@@ -3154,7 +3154,11 @@ drawCommonButton(dpy, menuInfo, idx, fDe
+     else if (pb->label[pb->which].kind == ComboLabel) {
+ 	label = &combLabel;
+ 	combLabel.pixlabel = *(pb->label[pb->which].pixlabel);
++#ifdef OW_I18N_L4
++	combLabel.strlabel = GetText(pb->label[pb->which].string);
++#else
+ 	combLabel.strlabel = pb->label[pb->which].string;
++#endif
+ 	state |= OLGX_LABEL_IS_COMB;
+     }
+ #endif

@@ -1,0 +1,36 @@
+$OpenBSD: patch-menu_h,v 1.1 2004/01/28 20:58:54 naddy Exp $
+--- menu.h.orig	1994-01-13 22:40:03.000000000 +0100
++++ menu.h	2004-01-28 21:49:10.000000000 +0100
+@@ -8,7 +8,7 @@
+ #define _OLWM_MENU_H
+ 
+ #ifdef IDENT
+-#ident "@(#)menu.h	1.4 olvwm version 07 Jan 1994"
++#ident "@(#)menu.h	1.5 olvwm version 09 Feb 1994"
+ #endif
+ 
+ /*
+@@ -56,17 +56,18 @@ typedef struct _button {
+     FuncPtr	callback;	/* function to call when item hit */
+ 				/* NULL if button has pullright */
+ 
++    SemanticAction semantic;	/* semantic action for window menu items */
++
++    FuncPtr	generate_func;	/* If !NULL, called when this button is
++				 * hilighted to re-initialize action.submenu */
++    char	*generate_args;	/* args for generate function */
++
+     union {
+ 	struct _menu *submenu;	/* pointer to the submenu, if has_submenu */
+ 	char	*command;	/* command, if callback is AppMenuFunc */
+ 	void	*other;		/* unspecified */
+     } action;
+ 
+-    SemanticAction semantic;	/* semantic action for window menu items */
+-
+-    FuncPtr	generate_func;	/* If !NULL, called when this button is
+-				 * hilighted to re-initialize action.submenu */
+-    char	*generate_args;	/* args for generate function */
+ }           Button;
+ 
+ /*

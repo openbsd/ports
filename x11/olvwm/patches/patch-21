@@ -1,5 +1,0 @@
---- patchlevel.h.orig	Thu Jan 13 22:40:04 1994
-+++ ./patchlevel.h	Sat Jul 17 10:04:12 1999
-@@ -1 +1 @@
--#define PATCHLEVELv4 0
-+#define PATCHLEVELv4 2
