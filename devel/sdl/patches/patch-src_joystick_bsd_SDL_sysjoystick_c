@@ -1,61 +1,55 @@
-$OpenBSD: patch-src_joystick_bsd_SDL_sysjoystick_c,v 1.2 2002/05/14 02:10:29 pvalchev Exp $
---- src/joystick/bsd/SDL_sysjoystick.c.orig	Sat Mar  9 20:49:25 2002
-+++ src/joystick/bsd/SDL_sysjoystick.c	Mon May 13 20:04:44 2002
-@@ -194,7 +194,7 @@ SDL_SYS_JoystickOpen(SDL_Joystick *joy)
- 		goto usberr;
- 	}
+$OpenBSD: patch-src_joystick_bsd_SDL_sysjoystick_c,v 1.3 2002/11/30 11:17:26 wcobb Exp $
+--- src/joystick/bsd/SDL_sysjoystick.c.orig	Fri Nov  1 22:19:59 2002
++++ src/joystick/bsd/SDL_sysjoystick.c	Fri Nov  1 23:13:44 2002
+@@ -136,17 +136,24 @@ SDL_SYS_JoystickInit(void)
+ 	memset(joydevnames, NULL, sizeof(joydevnames));
  
--	hdata = hid_start_parse(hw->repdesc, 1 << hid_input);
-+	hdata = hid_start_parse(hw->repdesc, 1 << hid_input, rep->rid);
- 	if (hdata == NULL) {
- 		SDL_SetError("%s: Cannot start HID parser", hw->path);
- 		goto usberr;
-@@ -275,10 +275,10 @@ SDL_SYS_JoystickUpdate(SDL_Joystick *joy
- 	Sint32 v;
- 	
- 	rep = &joy->hwdata->inreport;
--	if (read(joy->hwdata->fd, rep->buf->data, rep->size) != rep->size) {
-+	if (read(joy->hwdata->fd, rep->buf->ucr_data, rep->size) != rep->size) {
- 		return;
+ 	for (i = 0; i < MAX_UHID_JOYS; i++) {
++		SDL_Joystick nj;
++
+ 		sprintf(s, "/dev/uhid%d", i);
+-		fd = open(s, O_RDWR);
+-		if (fd > 0) {
+-			joynames[SDL_numjoysticks++] = strdup(s);
+-			close(fd);
++
++		nj.index = SDL_numjoysticks;
++		joynames[nj.index] = strdup(s);
++
++		if (SDL_SYS_JoystickOpen(&nj) == 0) {
++			SDL_SYS_JoystickClose(&nj);
++			SDL_numjoysticks++;
++		} else {
++			free(joynames[nj.index]);
+ 		}
  	}
--	hdata = hid_start_parse(joy->hwdata->repdesc, 1 << hid_input);
-+	hdata = hid_start_parse(joy->hwdata->repdesc, 1 << hid_input, rep->rid);
- 	if (hdata == NULL) {
- 		fprintf(stderr, "%s: Cannot start HID parser\n",
- 		    joy->hwdata->path);
-@@ -310,7 +310,7 @@ SDL_SYS_JoystickUpdate(SDL_Joystick *joy
- 					goto scaleaxe;
- 				}
- scaleaxe:
--				v = (Sint32)hid_get_data(rep->buf->data, &hitem);
-+				v = (Sint32)hid_get_data(rep->buf->ucr_data, &hitem);
- 				if (v != 127) {
- 					if (v < 127) {
- 						v = -(256 - v);
-@@ -329,7 +329,7 @@ scaleaxe:
- 				}
- 				break;
- 			case HUP_BUTTON:
--				v = (Sint32)hid_get_data(rep->buf->data,
-+				v = (Sint32)hid_get_data(rep->buf->ucr_data,
- 				    &hitem);
- 				if (joy->buttons[nbutton] != v) {
- 					SDL_PrivateJoystickButton(joy,
-@@ -381,7 +381,7 @@ report_alloc(struct report *r, struct re
- {
+ 	for (i = 0; i < MAX_JOY_JOYS; i++) {
+ 		sprintf(s, "/dev/joy%d", i);
+-		fd = open(s, O_RDWR);
+-		if (fd > 0) {
++		fd = open(s, O_RDONLY);
++		if (fd != -1) {
+ 			joynames[SDL_numjoysticks++] = strdup(s);
+ 			close(fd);
+ 		}
+@@ -178,7 +185,7 @@ SDL_SYS_JoystickOpen(SDL_Joystick *joy)
+ 	int fd;
+ 
+ 	fd = open(path, O_RDWR);
+-	if (fd < 0) {
++	if (fd == -1) {
+ 		SDL_SetError("%s: %s", path, strerror(errno));
+ 		return (-1);
+ 	}
+@@ -400,9 +407,9 @@ report_alloc(struct report *r, struct re
  	int len;
  
+ #ifdef USBHID_NEW
 -	len = hid_report_size(rd, repinfo[repind].kind, &r->rid);
-+	len = hid_report_size(rd, repinfo[repind].kind, r->rid);
+-#else
+ 	len = hid_report_size(rd, repinfo[repind].kind, r->rid);
++#else
++	len = hid_report_size(rd, repinfo[repind].kind, &r->rid);
+ #endif
  	if (len < 0) {
  		SDL_SetError("Negative HID report size");
- 		return (-1);
-@@ -389,7 +389,7 @@ report_alloc(struct report *r, struct re
- 	r->size = len;
- 
- 	if (r->size > 0) {
--		r->buf = malloc(sizeof(*r->buf) - sizeof(r->buf->data) +
-+		r->buf = malloc(sizeof(*r->buf) - sizeof(r->buf->ucr_data) +
- 		    r->size);
- 		if (r->buf == NULL) {
- 			SDL_OutOfMemory();

@@ -1,41 +1,17 @@
-$OpenBSD: patch-configure_in,v 1.18 2002/05/26 04:11:16 wcobb Exp $
---- configure.in.orig	Sat Apr 13 20:57:24 2002
-+++ configure.in	Sun May 26 01:07:30 2002
-@@ -468,7 +468,12 @@ CheckNASM()
-                   NASMFLAGS="-f elf"
-                   ;;
-             esac
--            AC_SUBST(NASMFLAGS)
-+	    case "$target" in
-+		    *-*-openbsd*)
-+		      NASMFLAGS="-f aoutb"
-+		      ;;
-+	    esac
-+	    	AC_SUBST(NASMFLAGS)
-             CFLAGS="$CFLAGS -I\$(top_srcdir)/src/hermes"
-             SDL_EXTRADIRS="$SDL_EXTRADIRS hermes"
-             SDL_EXTRALIBS="$SDL_EXTRALIBS hermes/libhermes.la"
-@@ -1681,6 +1686,7 @@ case "$target" in
-         if test x$enable_joystick = xyes; then
-             JOYSTICK_SUBDIRS="$JOYSTICK_SUBDIRS bsd"
-             JOYSTICK_DRIVERS="$JOYSTICK_DRIVERS bsd/libjoystick_bsd.la"
-+	    SYSTEM_LIBS="$SYSTEM_LIBS -lusbhid"
-         fi
-         # Set up files for the cdrom library
-         if test x$enable_cdrom = xyes; then
-@@ -2355,7 +2361,10 @@ fi
+$OpenBSD: patch-configure_in,v 1.19 2002/11/30 11:17:26 wcobb Exp $
+--- configure.in.orig	Fri Nov  1 21:54:26 2002
++++ configure.in	Fri Nov  1 22:04:03 2002
+@@ -2484,6 +2484,9 @@ fi
  if test $ARCH = solaris; then
    SDL_RLD_FLAGS="-R\${exec_prefix}/lib"
  fi
--if test $ARCH = openbsd -o $ARCH = bsdi; then
 +if test $ARCH = openbsd -a x$enable_video_x11 = xyes; then
 +  SDL_RLD_FLAGS="-L${X11BASE}/lib"
 +fi
-+if test $ARCH = bsdi; then
-     SHARED_SYSTEM_LIBS="$SYSTEM_LIBS"
- else
-     SHARED_SYSTEM_LIBS=""
-@@ -2363,7 +2372,7 @@ fi
+ 
+ case "$ARCH" in
+   openbsd | netbsd | bsdi)
+@@ -2503,7 +2506,7 @@ esac
  STATIC_SYSTEM_LIBS="$SYSTEM_LIBS"
  
  dnl Output the video drivers we use

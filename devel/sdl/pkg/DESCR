@@ -12,7 +12,10 @@ Packages can be built with additional FLAVORs:
 
   arts:	SDL built with ARTS support.
 	This FLAVOR requires the kdelibs package.
-  
+
+  aa:   SDL built with ASCII art support.
+	This FLAVOR requires the aalib package.
+
   no_x11: Built without X11.
 
 WWW: ${HOMEPAGE}

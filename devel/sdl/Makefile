@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2002/09/15 19:53:21 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2002/11/30 11:17:26 wcobb Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
 
-VERSION=	1.2.4
+VERSION=	1.2.5
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p2
+PKGNAME=	${DISTNAME:L}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org
@@ -20,20 +20,21 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${HOMEPAGE}/release/ \
 		http://www.devolution.com/~slouken/SDL/release/
 
-FLAVORS=	sun esd arts no_x11
+FLAVORS=	sun esd arts aa no_x11
 FLAVOR?=	sun
-
-USE_GMAKE=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
-CONFIGURE_ENV+=	X11BASE="${X11BASE}"
+CONFIGURE_ENV+=	X11BASE="${X11BASE}" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --disable-oss \
 		 --enable-pthread-sem
 
-.if ${MACHINE_ARCH} == "i386"
+# XXX gcc 3/nasm issue.
+.if (${MACHINE_ARCH} == "i386") && (${CC} != "egcc")
 BUILD_DEPENDS=	nasm::devel/nasm
 CONFIGURE_ARGS+= --enable-nasm
 .else
@@ -58,6 +59,13 @@ LIB_DEPENDS+=	artsc::x11/kde/arts3
 CONFIGURE_ARGS+= --enable-arts
 .else
 CONFIGURE_ARGS+= --disable-arts
+.endif
+
+.if ${FLAVOR:L:Maa}
+LIB_DEPENDS+=	aa::graphics/aalib
+CONFIGURE_ARGS+= --enable-video-aalib
+.else
+CONFIGURE_ARGS+= --disable-video-aalib
 .endif
 
 .if ${FLAVOR:L:Mno_x11}
