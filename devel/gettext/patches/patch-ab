@@ -1,0 +1,10 @@
+--- misc/Makefile.in.orig	Thu Apr  2 17:02:04 1998
++++ misc/Makefile.in	Thu Apr  2 17:02:52 1998
+@@ -65,6 +65,7 @@
+ 	    $(INSTALL_DATA) $$file $(lispdir)/$$file; \
+ 	  done; \
+ 	fi
++	mkdir -p $(localedir)
+ 	$(INSTALL_DATA) $(srcdir)/locale.alias $(localedir)/locale.alias
+ 
+ uninstall:
