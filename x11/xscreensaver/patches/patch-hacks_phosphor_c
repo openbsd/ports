@@ -1,0 +1,11 @@
+$OpenBSD: patch-hacks_phosphor_c,v 1.1 2004/06/24 16:23:37 marcm Exp $
+--- hacks/phosphor.c.orig	Tue Jun 22 22:29:32 2004
++++ hacks/phosphor.c	Tue Jun 22 22:28:56 2004
+@@ -31,6 +31,7 @@
+ #  include <pty.h>
+ # endif
+ # ifdef HAVE_UTIL_H
++#  include <termios.h>
+ #  include <util.h>
+ # endif
+ #endif /* HAVE_FORKPTY */

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2004/04/02 19:07:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.24 2004/06/24 16:23:37 marcm Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
-VERSION=		4.06
+VERSION=		4.16
 DISTNAME=		xscreensaver-${VERSION}
 CATEGORIES=     	x11
 
@@ -29,7 +29,7 @@ USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 
 CONFIGURE_STYLE=	autoconf no-autoheader
-AUTOCONF_VERSION=	2.54
+AUTOCONF_VERSION=	2.57
 CONFIGURE_ARGS+=	--with-hackdir="${PREFIX}/libexec/xscreensaver"
 CONFIGURE_ARGS+=	--with-gl
 CONFIGURE_ARGS+=	--with-xpm
@@ -57,7 +57,8 @@ LIB_DEPENDS+=		gdk_pixbuf_xlib-2.0.0.0::x11/gtk+2 \
 			glade-2.0.0.0::devel/libglade2
 CONFIGURE_ARGS+=	--with-gtk2
 .else
-LIB_DEPENDS+=		gdk_pixbuf.2,gdk_pixbuf_xlib.2::graphics/gdk-pixbuf
+CONFIGURE_ARGS+=	--with-pixbuf=${LOCALBASE}
+LIB_DEPENDS+=		gdk_pixbuf.2,gdk_pixbuf_xlib.2::graphics/gdk-pixbuf,no_gnome
 .endif
 
 post-install:
@@ -68,8 +69,8 @@ post-install:
 	@mv ${PREFIX}/lib/xscreensaver/config/deco.xml \
 		${PREFIX}/lib/xscreensaver/config/xdeco.xml
 # Need a pretty icon for the controlcenter
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	@${INSTALL_DATA} ${PREFIX}/share/xscreensaver/xscreensaver.xpm \
-		${PREFIX}/share/pixmaps/
+#	@${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+#	@${INSTALL_DATA} ${PREFIX}/share/xscreensaver/xscreensaver.xpm \
+#		${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>
