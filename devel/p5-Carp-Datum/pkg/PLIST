@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/13 16:54:28 sturm Exp $
+bin/datum_strip
+${P5SITE}/Carp/Datum.pm
+${P5SITE}/Carp/Datum/Assert.pm
+${P5SITE}/Carp/Datum/Cfg.pm
+${P5SITE}/Carp/Datum/Flags.pm
+${P5SITE}/Carp/Datum/MakeMaker.pm
+${P5SITE}/Carp/Datum/Makefile
+${P5SITE}/Carp/Datum/Parser.pm
+${P5SITE}/Carp/Datum/Parser.y
+${P5SITE}/Carp/Datum/Strip.pm
+@comment ${P5ARCH}/auto/Carp/Datum/.packlist
+@comment ${P5ARCH}/perllocal.pod
+@comment man/man1/datum_strip.1
+man/man3p/Carp::Datum.3p
+man/man3p/Carp::Datum::Assert.3p
+man/man3p/Carp::Datum::Cfg.3p
+man/man3p/Carp::Datum::Flags.3p
+man/man3p/Carp::Datum::MakeMaker.3p
+man/man3p/Carp::Datum::Strip.3p
+@comment @dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Carp/Datum
+@comment @dirrm ${P5ARCH}/auto/Carp
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Carp/Datum
+@dirrm ${P5SITE}/Carp

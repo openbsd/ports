@@ -1,0 +1,11 @@
+Debugging And Tracing Ultimate Module
+
+Carp::Datum implements the following features:
+
+* Programming by contract: pre-conditions, post-conditions, assertions.
+* Flow control tracing: routine entry, arguments, returned values
+* Dynamic (i.e. runtime) configuration via mini language to tailor
+  debugging and/or tracing at the routine / file / package / type level.
+* Ability to statically remove all assertions and flow control tracing
+  hooks in modules making use of Carp::Datum.
+* Cooperation with Log::Agent for tracing.
