@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/06/06 00:58:20 shell Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/06/14 09:51:34 shell Exp $
 bin/check_attach.plx
 bin/eurofix.plx
 bin/hackos2.plx
@@ -69,6 +69,7 @@ ${P5SITE}/Font/TTF/XMLparse.pm
 ${P5SITE}/ttfmod.pl
 man/man1/ttfbuilder.plx.1
 man/man3p/Font::TTF::AATKern.3p
+man/man3p/Font::TTF::AATutils.3p
 man/man3p/Font::TTF::Anchor.3p
 man/man3p/Font::TTF::Bsln.3p
 man/man3p/Font::TTF::Cmap.3p
@@ -135,6 +136,7 @@ share/examples/p5-Font-TTF/ttunadopter.plx
 share/examples/p5-Font-TTF/xmldump.plx
 share/examples/p5-Font-TTF/zerohyph.plx
 @dirrm share/examples/p5-Font-TTF
+@dirrm ${P5ARCH}/auto/Font/TTF
 @dirrm ${P5SITE}/Font/TTF/Mort
 @dirrm ${P5SITE}/Font/TTF/Kern
 @dirrm ${P5SITE}/Font/TTF
