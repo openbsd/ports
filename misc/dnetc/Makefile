@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/09/15 00:06:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2004/09/15 00:35:29 pvalchev Exp $
 
 COMMENT=		"official distributed.net client"
 
@@ -29,10 +29,10 @@ MASTER_SITES=		http://http.distributed.net/pub/dcti/v${V}/
 
 ONLY_FOR_ARCHS=		i386 sparc m68k
 
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	No
+PERMIT_PACKAGE_CDROM=	"no redistribution"
+PERMIT_PACKAGE_FTP=	"no redistribution"
+PERMIT_DISTFILES_CDROM=	"no redistribution"
+PERMIT_DISTFILES_FTP=	"no redistribution"
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
