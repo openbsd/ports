@@ -1,0 +1,53 @@
+The japanese tools are somewhat ackward to use and difficult to setup
+for the time being. Here is some useful information.
+
+* japanese and locale
+OpenBSD does not have any true japanese locale support for the time being.
+Startup errors for kterm (`can't set locale for ja...') are quite normal.
+
+Manual pages for, e.g., jvim do install under /usr/local/man/ja_JP.EUC/,
+as they are written in Japanese.
+For the time being, you will have to fix your /etc/man.conf to see them,
+so that the _default setup reads:
+
+_default /usr/{share,X11R6,X386,X11,X11R4,contrib,gnu,local}/{man,man/old,man/ja_JP_EUC}/
+
+* is kterm working ?
+Not under vanilla 2.4, due to some tinkering with ncurses/termcap.
+With the default OpenBSD.cf, kterm links against -ltermcap, where it should
+link against -lcurses.
+This is fixed in current X11 sources. The fix is to add 
+#if defined(TermcapLibrary)
+#undef TermcapLibrary
+#endif
+#define TermcapLibrary   -lcurses
+to /usr/X11R6/lib/X11/config/OpenBSD.cf
+Once kterm is built, the distribution holds an uuencoded file (DEMO.kt.uu)
+that you should be able to cat after uudecoding.
+Note that the choice of fonts is reduced when you need to display japanese
+or corean characters.
+
+* jless vs. less
+Normally, jless should be highly compatible with less, to the point where 
+it doesn't display japanese before you set JLESSCHARSET in your
+environment. iso8 is the sanest setting.
+
+* the jvim puzzle
+jvim depends on several pieces to work correctly:
+- kterm for the display, jvim uses ONLY EUC mode,
+- Wnn for the dictionary conversion,
+- onew for the interface between Wnn and jvim.
+
+as japanese includes thousands of characters, the only reasonable method
+for inputting these is to use a dictionary: you enter your text
+phonetically, then the automated dictionary makes a guess at the conversion,
+and you confirm the right choice. Wnn is the dictionary server.
+It needs to be started as root (this will probably be fixed in the future), 
+it is called /usr/local/bin/Wnn4/jserver.
+
+To handle conversions, jvim adds another set of modes to the usual vim
+modes. 
+
+ctrl-space, ctrl-@, or ctrl-\ is used to toggle from normal insert mode to
+japanese inserts. If Wnn does not work, you can still enter
+katakana/hiragana, but you will need Wnn to convert them to kanji.
