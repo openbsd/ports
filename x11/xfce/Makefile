@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2002/08/26 02:30:24 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2002/11/28 20:35:43 margarida Exp $
 
 COMMENT=	"CDE like desktop with Gtk"
 
-DISTNAME=	xfce-3.8.16
+DISTNAME=	xfce-3.8.18
 CATEGORIES=	x11
 MAINTAINER=	Jim Geovedi <jim@corebsd.or.id>
 HOMEPAGE=	http://www.xfce.org/
@@ -23,6 +23,7 @@ RUN_DEPENDS=	::audio/sox
 
 USE_X11=	Yes
 CONFIGURE_STYLE= autoconf
+AUTOCONF_NEW=	Yes
 CONFIGURE_ARGS=	--disable-arts \
 		--enable-audiofile="${LOCALBASE}" \
 		--enable-gdk-pixbuf="${LOCALBASE}" \
@@ -33,6 +34,9 @@ CONFIGURE_ARGS=	--disable-arts \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-locale-dir="${PREFIX}/share/locale" \
 		--with-xpm="${X11BASE}" \
-		--enable-xft=yes
+		--enable-xft=yes \
+		--enable-taskbar
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

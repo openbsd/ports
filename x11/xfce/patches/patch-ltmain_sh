@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.1 2002/03/24 01:20:39 brad Exp $
---- ltmain.sh.orig	Sun Dec  9 17:51:24 2001
-+++ ltmain.sh	Sat Mar 23 20:11:55 2002
-@@ -1021,15 +1021,18 @@ compiler."
+$OpenBSD: patch-ltmain_sh,v 1.2 2002/11/28 20:35:43 margarida Exp $
+--- ltmain.sh.orig	Mon Jun 10 03:25:37 2002
++++ ltmain.sh	Tue Nov 12 15:39:53 2002
+@@ -1044,15 +1044,18 @@ compiler."
  	;;
  
        -l*)
@@ -25,9 +25,9 @@ $OpenBSD: patch-ltmain_sh,v 1.1 2002/03/24 01:20:39 brad Exp $
 +	    # Do not include libc_r directly, use -pthread flag.
 +	    continue
  	    ;;
- 	  esac
- 	fi
-@@ -1037,6 +1040,17 @@ compiler."
+ 	  *-*-openbsd*)
+ 	    # Do not include libc due to us having libc/libc_r.
+@@ -1071,6 +1074,17 @@ compiler."
  	continue
  	;;
  
@@ -45,7 +45,7 @@ $OpenBSD: patch-ltmain_sh,v 1.1 2002/03/24 01:20:39 brad Exp $
        -module)
  	module=yes
  	continue
-@@ -2405,6 +2419,9 @@ compiler."
+@@ -2468,6 +2482,9 @@ compiler."
  	    # Rhapsody C library is in the System framework
  	    deplibs="$deplibs -framework System"
  	    ;;
@@ -55,7 +55,7 @@ $OpenBSD: patch-ltmain_sh,v 1.1 2002/03/24 01:20:39 brad Exp $
  	  *-*-netbsd*)
  	    # Don't link with libc until the a.out ld.so is fixed.
  	    ;;
-@@ -4412,40 +4429,6 @@ relink_command=\"$relink_command\""
+@@ -4498,40 +4515,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  

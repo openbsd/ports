@@ -1,12 +1,12 @@
-$OpenBSD: patch-other_xinitrc_in,v 1.2 2002/08/26 02:30:24 pvalchev Exp $
---- other/xinitrc.in.orig	Wed Mar 20 16:26:18 2002
-+++ other/xinitrc.in	Thu Aug 22 02:16:38 2002
+$OpenBSD: patch-other_xinitrc_in,v 1.3 2002/11/28 20:35:43 margarida Exp $
+--- other/xinitrc.in.orig	Mon Nov 25 00:14:37 2002
++++ other/xinitrc.in	Mon Nov 25 00:15:01 2002
 @@ -41,7 +41,7 @@ fi
  # fi
  
  # Launch xscreensaver (if available)
--xscreensaver -no-splash -lock-mode &
-+# xscreensaver -no-splash -lock-mode &
+-xscreensaver -no-splash &
++#xscreensaver -no-splash &
  
  # Finally, launch XFce window manager
  exec xfwm
