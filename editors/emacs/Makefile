@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/04/09 20:34:02 turan Exp $
+# $OpenBSD: Makefile,v 1.18 2000/04/22 10:22:15 turan Exp $
 
 VER=		20.3
 DISTNAME=	emacs-${VER}
@@ -32,7 +32,7 @@ M_ARCH=		${MACHINE_ARCH}
 
 GCCARCH=	${M_ARCH}-unknown-openbsd${OPSYS_VER}
 
-.if defined(FLAVOR) && ${FLAVOR:L:Mno_X11}
+.if defined(FLAVOR) && ${FLAVOR} == "no_X11"
 CONFIGURE_ARGS+=--without-x
 .else
 CONFIGURE_ARGS+=${GCCARCH} --with-x-toolkit
