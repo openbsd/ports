@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2002/11/02 02:11:23 lebel Exp $
+# $OpenBSD: Makefile,v 1.63 2002/12/02 23:13:04 pvalchev Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -109,10 +109,6 @@ SUBST_VARS=     	VERSION
 # auto/configure.in is newer than auto/configure.
 post-patch:
 	touch ${WRKBUILD}/auto/configure
-# link.sh messes up the final executables when linking under ELF
-.if ${ELF_TOOLCHAIN} == yes
-	touch ${WRKBUILD}/auto/link.sed
-.endif
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pf.vim ${PREFIX}/share/vim/vim61/syntax
