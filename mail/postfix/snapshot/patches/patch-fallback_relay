@@ -1,0 +1,180 @@
+*** src/smtp/smtp.h	Sat Jul 15 14:06:34 2000
+--- ./smtp.h	Sat Jan 20 18:30:34 2001
+***************
+*** 85,91 ****
+    */
+  extern SMTP_SESSION *smtp_connect(char *, VSTRING *);
+  extern SMTP_SESSION *smtp_connect_host(char *, unsigned, VSTRING *);
+! extern SMTP_SESSION *smtp_connect_domain(char *, unsigned, VSTRING *);
+  
+   /*
+    * smtp_proto.c
+--- 85,91 ----
+    */
+  extern SMTP_SESSION *smtp_connect(char *, VSTRING *);
+  extern SMTP_SESSION *smtp_connect_host(char *, unsigned, VSTRING *);
+! extern SMTP_SESSION *smtp_connect_domain(char *, unsigned, VSTRING *, int *);
+  
+   /*
+    * smtp_proto.c
+*** src/smtp/smtp_addr.c	Mon Nov 20 13:06:02 2000
+--- ./smtp_addr.c	Sat Jan 20 18:34:23 2001
+***************
+*** 6,14 ****
+  /* SYNOPSIS
+  /*	#include "smtp_addr.h"
+  /*
+! /*	DNS_RR *smtp_domain_addr(name, why)
+  /*	char	*name;
+  /*	VSTRING	*why;
+  /*
+  /*	DNS_RR *smtp_host_addr(name, why)
+  /*	char	*name;
+--- 6,15 ----
+  /* SYNOPSIS
+  /*	#include "smtp_addr.h"
+  /*
+! /*	DNS_RR *smtp_domain_addr(name, why, found_myself)
+  /*	char	*name;
+  /*	VSTRING	*why;
++ /*	int	*found_myself;
+  /*
+  /*	DNS_RR *smtp_host_addr(name, why)
+  /*	char	*name;
+***************
+*** 279,289 ****
+  
+  /* smtp_domain_addr - mail exchanger address lookup */
+  
+! DNS_RR *smtp_domain_addr(char *name, VSTRING *why)
+  {
+      DNS_RR *mx_names;
+      DNS_RR *addr_list = 0;
+!     DNS_RR *self;
+      unsigned best_pref;
+      unsigned best_found;
+  
+--- 280,290 ----
+  
+  /* smtp_domain_addr - mail exchanger address lookup */
+  
+! DNS_RR *smtp_domain_addr(char *name, VSTRING *why, int *found_myself)
+  {
+      DNS_RR *mx_names;
+      DNS_RR *addr_list = 0;
+!     DNS_RR *self = 0;
+      unsigned best_pref;
+      unsigned best_found;
+  
+***************
+*** 363,368 ****
+--- 364,370 ----
+      /*
+       * Clean up.
+       */
++     *found_myself = (self != 0);
+      return (addr_list);
+  }
+  
+*** src/smtp/smtp_addr.h	Mon Jan 18 15:11:48 1999
+--- ./smtp_addr.h	Sat Jan 20 18:34:53 2001
+***************
+*** 17,23 ****
+    * Internal interfaces.
+    */
+  extern DNS_RR *smtp_host_addr(char *, VSTRING *);
+! extern DNS_RR *smtp_domain_addr(char *, VSTRING *);
+  
+  /* LICENSE
+  /* .ad
+--- 17,23 ----
+    * Internal interfaces.
+    */
+  extern DNS_RR *smtp_host_addr(char *, VSTRING *);
+! extern DNS_RR *smtp_domain_addr(char *, VSTRING *, int *);
+  
+  /* LICENSE
+  /* .ad
+*** src/smtp/smtp_connect.c	Mon Nov 20 13:06:03 2000
+--- ./smtp_connect.c	Sat Jan 20 18:36:00 2001
+***************
+*** 292,298 ****
+  
+  /* smtp_connect_domain - connect to smtp server for domain */
+  
+! SMTP_SESSION *smtp_connect_domain(char *name, unsigned port, VSTRING *why)
+  {
+      SMTP_SESSION *session = 0;
+      DNS_RR *addr_list;
+--- 292,299 ----
+  
+  /* smtp_connect_domain - connect to smtp server for domain */
+  
+! SMTP_SESSION *smtp_connect_domain(char *name, unsigned port, VSTRING *why,
+! 				          int *found_myself)
+  {
+      SMTP_SESSION *session = 0;
+      DNS_RR *addr_list;
+***************
+*** 306,312 ****
+       * the primary MX host is reachable but does not want to receive our
+       * mail, there is no point in trying the backup hosts.
+       */
+!     addr_list = smtp_domain_addr(name, why);
+      for (addr = addr_list; addr; addr = addr->next) {
+  	if ((session = smtp_connect_addr(addr, port, why)) != 0) {
+  	    session->best = (addr->pref == addr_list->pref);
+--- 307,313 ----
+       * the primary MX host is reachable but does not want to receive our
+       * mail, there is no point in trying the backup hosts.
+       */
+!     addr_list = smtp_domain_addr(name, why, found_myself);
+      for (addr = addr_list; addr; addr = addr->next) {
+  	if ((session = smtp_connect_addr(addr, port, why)) != 0) {
+  	    session->best = (addr->pref == addr_list->pref);
+***************
+*** 393,398 ****
+--- 394,400 ----
+      char   *save;
+      char   *dest;
+      char   *cp;
++     int     found_myself;
+  
+      /*
+       * First try to deliver to the indicated destination, then try to deliver
+***************
+*** 417,423 ****
+  	if (var_disable_dns || *dest == '[') {
+  	    session = smtp_connect_host(host, port, why);
+  	} else {
+! 	    session = smtp_connect_domain(host, port, why);
+  	}
+  	myfree(dest_buf);
+  
+--- 419,425 ----
+  	if (var_disable_dns || *dest == '[') {
+  	    session = smtp_connect_host(host, port, why);
+  	} else {
+! 	    session = smtp_connect_domain(host, port, why, &found_myself);
+  	}
+  	myfree(dest_buf);
+  
+***************
+*** 426,432 ****
+  	 * is the best MX relay for the destination. Agreed, an errno of OK
+  	 * after failure is a weird way to reporting progress.
+  	 */
+! 	if (session != 0 || smtp_errno == SMTP_OK)
+  	    break;
+      }
+  
+--- 428,434 ----
+  	 * is the best MX relay for the destination. Agreed, an errno of OK
+  	 * after failure is a weird way to reporting progress.
+  	 */
+! 	if (session != 0 || smtp_errno == SMTP_OK || found_myself)
+  	    break;
+      }
+  
+
+
