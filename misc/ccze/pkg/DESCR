@@ -1,4 +1,4 @@
-CZE is a robust and modular log colorizer with plugins for apm,
+CCZE is a robust and modular log colorizer with plugins for apm,
 exim, fetchmail, httpd, postfix, procmail, squid, syslog, ulogd,
 vsftpd, xferlog, and more. 
 
