@@ -1,0 +1,153 @@
+#!/usr/bin/perl
+
+# $OpenBSD: check-newlib-depends,v 1.1 2004/12/11 14:27:57 espie Exp $
+# Copyright (c) 2004 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+# check all packages in the current directory, and report library issues
+
+use strict;
+use warnings;
+
+use File::Spec;
+use File::Path;
+use File::Basename;
+use OpenBSD::PackageLocator;
+use OpenBSD::PackageInfo;
+use OpenBSD::PackingList;
+use File::Temp;
+use Getopt::Std;
+
+package OpenBSD::PackingList;
+
+package OpenBSD::PackingElement;
+sub check_wantlibs
+{
+}
+
+package OpenBSD::PackingElement::Wantlib;
+sub check_wantlibs
+{
+	my ($item, $t, $where, $handle) = @_;
+	my $name = $item->{name};
+	$name =~ s/^(.*\/)?(.*)\.\d+\.\d+$/$2/;
+	$t->{$name} = 1;
+}
+
+package OpenBSD::PackingElement::FileBase;
+use File::Basename;
+sub shellquote
+{
+	local $_ = shift;
+	s/[*?;() #\\'"`\${}]/\\$&/g;
+	return $_;
+}
+
+sub check_wantlibs
+{
+	my ($item, $t, $where, $handle) = @_;
+	my $fullname = File::Spec->canonpath($item->fullname());
+	my $file = $handle->next();
+	$file->{destdir} = $where;
+	$file->{cwd} = $item->cwd();
+	$file->{name} = $fullname;
+	my $linux_bin = 0;
+	my $freebsd_bin = 0;
+	if ($fullname =~ m,^/usr/local/emul/redhat/,) {
+		$linux_bin = 1;
+	}
+	if ($fullname =~ m,^/usr/local/emul/freebsd/,) {
+		$freebsd_bin = 1;
+	}
+	# this will fail because of links, so we don't care.
+	eval { $file->create(); };
+	unless ($@) {
+		my $n = shellquote("$where$fullname");
+		open(my $cmd, "objdump -p $n 2>/dev/null|");
+		local $_;
+		my @l;
+		while(<$cmd>) {
+			if (m/^\s+NEEDED\s+(.*?)\s*$/) {
+				my $lib = $1;
+				push(@l, $lib);
+				# detect linux binaries
+				if ($lib eq 'libc.so.6') {
+					$linux_bin = 1;
+				}
+			}
+		}
+		close($cmd);
+		# okay, we are not OpenBSD, we don't have sensible names
+		if ($linux_bin or $freebsd_bin) {
+			return;
+		}
+		for my $lib (@l) {
+			$lib =~ s/^(.*\/)?lib(.*)\.so\.\d+\.\d+$/$2/;
+			if (!defined $t->{$lib}) {
+				print "Missing: $lib ($fullname)\n";
+			}
+			$t->{$lib} = 2;
+		}
+	}
+	unlink($where.$fullname);
+}
+
+package main;
+
+sub analyze 
+{
+	my ($plist, $db, @l) = @_;
+
+	my $where = File::Temp::mkdtemp("/tmp/zoinx.XXXXXXXXXX");
+	my $pkgname = $plist->pkgname();
+	my $t = {};
+	$plist->visit('check_wantlibs', $t, $where, @l);
+	while (my ($k, $v) = each %$t) {
+		next if $v == 2;
+		print "Extra: $k\n";
+	}
+	rmtree($where);
+}
+
+print "Scanning packages\n";
+print "-----------------\n";
+if (@ARGV==0) {
+	@ARGV=(<*.tgz>);
+}
+
+my $db = {};
+sub do_pkg
+{
+	my $pkgname = shift;
+
+	print STDERR "$pkgname:\n";
+	my $true_package = OpenBSD::PackageLocator->find($pkgname);
+	return 0 unless $true_package;
+	my $dir = $true_package->info();
+	# twice read
+	return 0 unless -d $dir;
+	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
+	analyze($plist, $db, $true_package);
+	$true_package->close();
+	rmtree($dir);
+	$plist->forget();
+	return 1;
+}
+
+
+for my $pkgname (@ARGV) {
+	do_pkg($pkgname);
+}
+
+exit(0);
