@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/01/23 05:25:49 jolan Exp $
+# $OpenBSD: Makefile,v 1.23 2004/07/03 23:46:33 jolan Exp $
 # $FreeBSD: Makefile,v 1.19 1997/11/20 08:21:26 tg Exp $
 
      SUBDIR += arc
@@ -25,6 +25,7 @@
      SUBDIR += p5-Compress-LZO
      SUBDIR += p5-Compress-Zlib
      SUBDIR += p5-IO-Zlib
+     SUBDIR += par1cmdline
      SUBDIR += par2cmdline
      SUBDIR += rar
      SUBDIR += star
