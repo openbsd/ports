@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/06/02 16:27:26 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/07/26 23:19:54 brad Exp $
 
 DISTNAME=       pgp263is
 PKGNAME=	pgp-2.6.3
@@ -48,7 +48,7 @@ post-extract:
 	 fi
 
 # common C flags
-CFLAGS=	-O2 -DUNIX -DPORTABLE -DMERIT -DIDEA32 -DMAX_NAMELEN=255 \
+CFLAGS+=-DUNIX -DPORTABLE -DMERIT -DIDEA32 -DMAX_NAMELEN=255 \
 	-DPGP_DOC_DIR=\\\"${PGP_DOC_DIR}\\\"
 
 # RSAREF parameters
