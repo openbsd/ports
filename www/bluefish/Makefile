@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2001/11/13 22:13:24 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2001/12/14 02:00:53 naddy Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
-DISTNAME=	bluefish-0.6
+DISTNAME=	bluefish-0.7
 CATEGORIES=	www 
 NEED_VERSION=	1.496
 HOMEPAGE=	http://bluefish.openoffice.nl/
@@ -13,19 +13,39 @@ MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/downloads/ \
 		ftp://bluefish.advancecreations.com/pub/bluefish/downloads/ \
 		http://bluefish.mrball.net/downloads/ \
 		ftp://ftp.ratisbona.com/pub/bluefish/downloads/ \
-		http://bluefish.shellhung.org/downloads/
+		http://bluefish.shellhung.org/downloads/ \
+		ftp://ftp.europeanservers.net/pub/bluefish
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=	::www/weblint
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
-		gdk_imlib::graphics/imlib
+		ungif.5::graphics/libungif
 
-CONFIGURE_STYLE= gnu dest
-CFLAGS+=	-I${LOCALBASE}/include
+FLAVORS=        imlib
+FLAVOR?=
+
+.if ${FLAVOR:L:Mimlib}
+LIB_DEPENDS+=   gdk_imlib.19::graphics/imlib
+CONFIGURE_ARGS+= --disable-gdk-pixbuf
+.else
+LIB_DEPENDS+=   gdk_pixbuf.2::graphics/gdk-pixbuf
+CONFIGURE_ARGS+= --disable-imlib
+.endif
+
+CONFIGURE_STYLE= autoconf dest
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+# default locations
+CONFIGURE_ENV+=	WEBLINT=${LOCALBASE}/bin/weblint \
+		NETSCAPE=${LOCALBASE}/bin/netscape \
+		TIDY=${LOCALBASE}/bin/tidy \
+		RXVT=${LOCALBASE}/bin/rxvt \
+		MIDNIGHT_COMMANDER=${LOCALBASE}/bin/mc
+
+NO_REGRESS=	Yes
 
 MANUAL=		${PREFIX}/share/doc/bluefish
 

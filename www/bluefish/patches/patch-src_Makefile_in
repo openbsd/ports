@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2001/12/14 02:00:53 naddy Exp $
+--- src/Makefile.in.orig	Sun Dec  9 14:11:30 2001
++++ src/Makefile.in	Sun Dec  9 14:11:43 2001
+@@ -38,7 +38,7 @@ gnulocaledir = $(prefix)/share/locale
+ aliaspath = $(localedir):.
+ 
+ CC = @CC@
+-CFLAGS = @CFLAGS@
++CFLAGS = @CPPFLAGS@ @CFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @INTLLIBS@ @LIBS@
+ INSTALL = @INSTALL@
