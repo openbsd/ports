@@ -4,6 +4,13 @@ the extinction of all other civilizations.  Freeciv aims to be
 mostly rule-compatible with Civilization II, published by Sid Meier
 and Microprose.
 
+FreeCiv comes without sound sets.  You can get them from:
+  ftp://ftp.freeciv.org/freeciv/contrib/sounds/
+and then start civclient with:
+  -P sound_plugin_name -S /sound/spec/file
+E.g.: civclient -P sdl -S /home/deraadt/civsounds/file.spec
+(Note: Sound specs might have relative paths.)
+
 Flavors:
  * gtk - build UI using GTK widgets
  * sdl - sound support using SDL library
