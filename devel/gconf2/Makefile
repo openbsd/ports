@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/31 18:26:49 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2003/06/12 19:37:27 marcm Exp $
 
 COMMENT=		"configuration database system for GNOME"
 
-VERSION=		1.2.1
+VERSION=		2.2.0
 DISTNAME=		GConf-${VERSION}
 PKGNAME=		gconf2-${VERSION}
 CATEGORIES=		devel
@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.gnome.org/projects/gconf/
 
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/GConf/1.2/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/GConf/2.2/}
 EXTRACT_SUFX=           .tar.bz2
 
 MODULES=		gettext

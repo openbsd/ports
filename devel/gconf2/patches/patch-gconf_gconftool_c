@@ -1,7 +1,7 @@
-$OpenBSD: patch-gconf_gconftool_c,v 1.1.1.1 2003/01/31 18:26:49 todd Exp $
---- gconf/gconftool.c.orig	Wed Jun 12 13:32:24 2002
-+++ gconf/gconftool.c	Sun Aug 18 20:38:39 2002
-@@ -2683,7 +2683,7 @@ do_get_default_source (const gchar** arg
+$OpenBSD: patch-gconf_gconftool_c,v 1.2 2003/06/12 19:37:27 marcm Exp $
+--- gconf/gconftool.c.orig	Wed Sep 18 19:04:30 2002
++++ gconf/gconftool.c	Wed Apr 30 20:14:27 2003
+@@ -2702,7 +2702,7 @@ do_get_default_source (const gchar** arg
      }
  
    /* Use default database */
