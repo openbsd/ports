@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.39 2004/01/30 11:44:45 xsa Exp $
+# $OpenBSD: OpenBSD-markers,v 1.40 2004/01/30 12:08:27 otto Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -27.48		153.20		"Leonard"	# David
@@ -51,6 +51,7 @@
 51.05		3.60		"Vandeputte"	# Wim
 51.6		-114.1		"de Raadt"	# Theo
 52.26		4.63		"Dobbelaar"	# Camiel
+52.35		4.62		"Moerbeek"	# Otto
 53.13		9		"Finck"		# Jan-Uwe
 53.22		10.00		"Brauer"	# Henning	
 53.56		-113.51		"Beck"		# Bob
