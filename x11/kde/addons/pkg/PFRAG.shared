@@ -1,0 +1,22 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/03/23 16:00:33 espie Exp $
+lib/kde3/libbabelfishplugin.so.0.0
+lib/kde3/libdirfilterplugin.so.0.0
+lib/kde3/libdomtreeviewerplugin.so.0.0
+lib/kde3/libkatehtmltoolsplugin.so.0.0
+lib/kde3/libkateinsertcommandplugin.so.0.0
+lib/kde3/libkateopenheaderplugin.so.0.0
+lib/kde3/libkateprojectmanagerplugin.so.0.0
+lib/kde3/libkatetextfilterplugin.so.0.0
+lib/kde3/libkatexmltoolsplugin.so.0.0
+lib/kde3/libkcm_kuick.so.0.0
+lib/kde3/libkhtmlsettingsplugin.so.0.0
+lib/kde3/libkimgallery.so.0.0
+lib/kde3/libkolourpicker_panelapplet.so.0.0
+lib/kde3/libkonqsidebar_mediaplayer.so.0.0
+lib/kde3/libktimemon_panelapplet.so.1.0
+lib/kde3/libkuickplugin.so.0.0
+lib/kde3/libuachangerplugin.so.0.0
+lib/kde3/libvalidatorsplugin.so.0.0
+lib/kde3/libwebarchiverplugin.so.0.0
+lib/kde3/libwebarchivethumbnail.so.0.0
+NEWDYNLIBDIR(%D/lib/kde3)
