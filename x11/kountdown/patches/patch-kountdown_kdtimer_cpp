@@ -1,0 +1,57 @@
+$OpenBSD: patch-kountdown_kdtimer_cpp,v 1.1 2002/09/30 13:10:39 naddy Exp $
+--- kountdown/kdtimer.cpp.orig	Mon Sep 30 15:09:27 2002
++++ kountdown/kdtimer.cpp	Mon Sep 30 15:11:04 2002
+@@ -71,7 +71,7 @@ KDTimer::KDTimer( const QDateTime *fdate
+ * Make sure the round off (fr and hr) is within boundaries (KD::DOWN (0) - KD::MATH (3) ) else set it to KD::DOWN
+ * hf and hr are only checked if != 0
+ **/
+-void KDTimer::init( short int *ff, short int *fr, short int *hf = 0, short int *hr = 0 )
++void KDTimer::init( short int *ff, short int *fr, short int *hf, short int *hr )
+ {
+ 	finishDate = new QDateTime();
+ 	halfDate = new QDateTime();
+@@ -214,7 +214,7 @@ void KDTimer::years( short int r )
+ 	}
+ }
+ 
+-void KDTimer::months( short int r, const short int f = -1 )
++void KDTimer::months( short int r, const short int f )
+ {
+ 	ULONG months = 0;
+ 	// Check if we can call years() to calc years left
+@@ -322,7 +322,7 @@ void KDTimer::weeks( short int r )
+ 	}	
+ }
+ 
+-void KDTimer::days( short int r, const short int f = -1 )
++void KDTimer::days( short int r, const short int f )
+ {
+ 	ULONG temp = calcDate->daysTo( finishDate->date() );
+ 	if ( *calcTime > finishDate->time() )
+@@ -353,7 +353,7 @@ void KDTimer::days( short int r, const s
+ 	}		
+ }
+ 
+-void KDTimer::hours( short int r, const short int f = -1 )
++void KDTimer::hours( short int r, const short int f )
+ {
+ 	if ( f >= 0 && f < KD::DAYS )
+ 	{
+@@ -389,7 +389,7 @@ void KDTimer::hours( short int r, const 
+ 	}		
+ }
+ 
+-void KDTimer::mins( short int r, const short int f = -1 )
++void KDTimer::mins( short int r, const short int f )
+ {
+ 	if ( f < 0 && f < KD::HOURS )
+ 	{
+@@ -423,7 +423,7 @@ void KDTimer::mins( short int r, const s
+ 	}			
+ }
+ 
+-void KDTimer::secs( const short int f = -1 )
++void KDTimer::secs( const short int f )
+ {
+ 	timeLeft.secs = calcDateTime->secsTo( *finishDate );
+ 	if ( f != -2 )
