@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.40 2004/07/26 22:44:40 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.41 2004/10/18 06:48:31 jakob Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -96,7 +96,7 @@ do-install:
 		daemon_directory=${TRUEPREFIX}/libexec/postfix \
 		command_directory=${TRUEPREFIX}/sbin \
 		sendmail_path=${TRUEPREFIX}/sbin/sendmail \
-		newalises_path=${TRUEPREFIX}/sbin/newaliases \
+		newaliases_path=${TRUEPREFIX}/sbin/newaliases \
 		mailq_path=${TRUEPREFIX}/sbin/mailq \
 		manpage_directory=${TRUEPREFIX}/man \
 		readme_directory=${TRUEPREFIX}/share/doc/postfix/readme \
