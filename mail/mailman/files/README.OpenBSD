@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.4 2003/05/12 04:30:44 sturm Exp $
+$OpenBSD: README.OpenBSD,v 1.5 2003/05/12 05:11:44 sturm Exp $
 
 Throughout this document $mailmandir is the directory mailman is installed
 in. This defaults to /usr/local/lib/mailman. If you install your ports
@@ -49,7 +49,7 @@ OpenBSD specific comments added. It's a good time to become root, now.
   example for Apache, based on the standard installation
   directories:
 
-  <Directory "/usr/local/mailman/archives/public/">
+  <Directory "/var/spool/mailman/archives/public/">
       AddDefaultCharset Off
   </Directory>
 
@@ -64,17 +64,6 @@ OpenBSD specific comments added. It's a good time to become root, now.
      % bin/newlist mailman
 
   Follow the prompts, and see the README file for more information.
-
-  Now configure your site list.  There is a convenient template
-  for a generic site list in misc/sitelist.cfg to help you with
-  this.  The template can be applied to your site list by running:
-
-     % bin/config_list -i data/sitelist.cfg mailman
-
-  Before doing this, review the configuration options in the
-  template (note that many options are not changed by
-  sitelist.cfg).  After you do this, be sure you review the
-  configurations via the admin pages for this list.
 
   Be sure to subscribe yourself to the site list, but use the
   admin interface because mailback subscription confirmations
