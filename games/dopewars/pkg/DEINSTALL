@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.4 2002/03/02 22:54:05 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.5 2003/07/07 12:40:14 brad Exp $
 #
 # dopewars de-installation
 
@@ -10,8 +10,8 @@ SCORE_FILE=/var/games/dopewars.sco
 if [ -f $SCORE_FILE ]; then
   echo
   echo "+---------------"
-  echo "| To completely deinstall the $1 package you need to perform"
-  echo "| this step as root:"
+  echo "| To completely deinstall the $1 package you need"
+  echo "| to perform this step as root:"
   echo "|"
   echo "|           rm -f $SCORE_FILE"
   echo "|"

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2003/07/07 12:40:14 brad Exp $
+--- src/Makefile.in.orig	Tue Jun 25 13:08:23 2002
++++ src/Makefile.in	Sun Jul  6 22:06:48 2003
+@@ -133,7 +133,7 @@ plugindir = @plugindir@
+ @CURSESPORT_TRUE@CURSESPORTSUBDIR = @CURSESPORT_TRUE@cursesport
+ 
+ SUBDIRS = $(GUISUBDIR) $(CURSESSUBDIR) $(GTKPORTSUBDIR) $(CURSESPORTSUBDIR) plugins
+-dopewars_LDADD = @GUILIB@ @CURSESLIB@ @GTKPORTLIB@ @CURSESPORTLIB@ @GTK_LIBS@ @INTLLIBS@ @WNDRES@ @PLUGOBJS@ @PLUGLIBS@
++dopewars_LDADD = @GUILIB@ @CURSESLIB@ @GTKPORTLIB@ @CURSESPORTLIB@ @GLIB_LIBS@ @GTK_LIBS@ @INTLLIBS@ @WNDRES@ @PLUGOBJS@ @PLUGLIBS@
+ dopewars_DEPENDENCIES = @GUILIB@ @CURSESLIB@ @GTKPORTLIB@ @CURSESPORTLIB@ @INTLLIBS@ @WNDRES@ @PLUGOBJS@
+ 
+ bin_PROGRAMS = dopewars
+@@ -144,7 +144,7 @@ dopewars_SOURCES = admin.c admin.h AIPla
+                    serverside.c serverside.h sound.c sound.h \
+                    tstring.c tstring.h winmain.c winmain.h
+ 
+-INCLUDES = -I../intl -I${srcdir} -I.. @GTK_CFLAGS@
++INCLUDES = -I../intl -I${srcdir} -I.. @GLIB_CFLAGS@ @GTK_CFLAGS@
+ DEFS = @DEFS@
+ PIXDIR = ${DESTDIR}${datadir}/pixmaps
+ DOPEDIR = ${DESTDIR}${bindir}
