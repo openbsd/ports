@@ -1,0 +1,19 @@
+--- Makefile.in.old	Sat May 10 12:57:25 2003
++++ Makefile.in	Sat May 10 12:58:18 2003
+@@ -11,6 +11,7 @@
+ docdir=${DESTDIR}@docdir@
+ 
+ APSSHARE=${datadir}/apsfilter
++REALAPSSHARE=@datadir@/apsfilter
+ APSDOC=${docdir}/apsfilter
+ APSCONF=${sysconfdir}/apsfilter
+ 
+@@ -80,7 +81,7 @@
+ 	${INSTALL_DATA}   man/apsfilter-bug.1	${mandir}/man1/apsfilter-bug.1
+ 	${INSTALL_DATA}   man/apsfilterrc.5	${mandir}/man5/apsfilterrc.5
+ 	tar cf - driver | ( cd ${APSSHARE} && tar xf -)
+-	${LN} ${APSSHARE} ${APSCONF}/basedir
++	${LN} ${REALAPSSHARE} ${APSCONF}/basedir
+ 
+ clean:
+ 	(cd doc; make clean)
