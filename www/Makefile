@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2000/08/21 15:11:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2000/09/04 18:29:24 jakob Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -43,6 +43,11 @@
 #    SUBDIR += p5-WWW-Search
 #    SUBDIR += p5-libwww
      SUBDIR += php3
+     SUBDIR += php3:mysql
+     SUBDIR += php3:postgresql
+     SUBDIR += php4
+     SUBDIR += php4:mysql
+     SUBDIR += php4:postgresql
      SUBDIR += squid
      SUBDIR += surfraw
      SUBDIR += thttpd
