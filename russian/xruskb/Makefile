@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.30 2002/12/29 19:49:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.31 2003/08/14 18:40:11 grange Exp $
 
 COMMENT=	"english-russian keyboard switcher for X11"
 
-DISTNAME=	xruskb-1.15.2
+DISTNAME=	xruskb-1.15.3
 CATEGORIES=	russian x11
-MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/X11/
+MASTER_SITES=	ftp://ftp.yars.free.net/unix/X11/
+
+MAINTAINER=	Alexander Yurchenko <grange@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
