@@ -1,3 +1,5 @@
+@option no-default-conflict
+@pkgcfl egcs-*-java
 @pkgdep @COREPKG@
 bin/egcj
 bin/gcjh

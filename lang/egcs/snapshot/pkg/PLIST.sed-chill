@@ -1,3 +1,5 @@
+@option no-default-conflict
+@pkgcfl egcs-*-chill
 @pkgdep @COREPKG@
 @unexec install-info --delete --info-dir=%D/info %D/info/chill.info
 bin/chill

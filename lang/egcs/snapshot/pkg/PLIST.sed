@@ -1,3 +1,5 @@
+@option no-default-conflict
+@pkgcfl egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/ecpp.info
 @unexec install-info --delete --info-dir=%D/info %D/info/ecpp.info
 bin/egcc
