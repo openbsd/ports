@@ -1,0 +1,17 @@
+bin/socksify
+lib/libdsocks.la
+lib/libdsocks.so
+lib/libdsocks.so.1.0
+lib/libsocks.a
+lib/libsocks.la
+lib/libsocks.so
+lib/libsocks.so.1.0
+man/man5/sockd.conf.5
+man/man5/socks.conf.5
+man/man8/sockd.8
+sbin/sockd
+share/examples/socks/sockd.conf
+share/examples/socks/socks.conf
+@dirrm share/examples/socks
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
+@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
