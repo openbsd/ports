@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri May 12 13:59:44 2000
-+++ Makefile.in	Tue Sep  5 23:26:50 2000
-@@ -24,7 +24,7 @@
+--- Makefile.in.orig	Thu Jul 18 11:07:41 2002
++++ Makefile.in	Sun Jul 13 01:50:56 2003
+@@ -24,7 +24,7 @@ TCLHDIRDASHI = @TCLHDIRDASHI@
  TCL_LIBRARY = @TCL_LIBRARY@
  
  # Tcl library uninstalled.  Should be something like -ltcl or ../tcl/libtcl.a
@@ -9,7 +9,7 @@
  # Tcl library installed.  Should be something like -ltcl or ../tcl/libtcl.a
  TCLLIB_INSTALLED = @TCL_LIB_SPEC@
  
-@@ -32,7 +32,7 @@
+@@ -32,7 +32,7 @@ TCLLIB_INSTALLED = @TCL_LIB_SPEC@
  # Tk include files
  TKHDIRDASHI = @TKHDIRDASHI@
  # Tk library
@@ -18,7 +18,7 @@
  TKLIB_INSTALLED = @TK_LIB_SPEC@
  # X11 include files and other flags to compiler
  X11_CFLAGS = @TK_XINCLUDES@
-@@ -191,6 +191,7 @@
+@@ -192,6 +192,7 @@ SHELL = @EXP_CONFIG_SHELL@
  
  INSTALL = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
@@ -26,7 +26,7 @@
  INSTALL_DATA = @INSTALL_DATA@
  
  AR = ar
-@@ -207,6 +208,7 @@
+@@ -208,6 +209,7 @@ FLAGS_TO_PASS = \
  	"HDEFS=$(HDEFS)" \
  	"INSTALL=$(INSTALL)" \
  	"INSTALL_DATA=$(INSTALL_DATA)" \
@@ -34,7 +34,7 @@
  	"INSTALL_PROGRAM=$(INSTALL_PROGRAM)" \
  	"LDFLAGS=$(LDFLAGS)" \
  	"RUNTEST=$(RUNTEST)" \
-@@ -365,7 +367,7 @@
+@@ -367,7 +369,7 @@ install_shared_lib: $(EXP_LIB_FILES)
  	else true; fi
  	if [ -s $(EXP_SHARED_LIB_FILE) ] ; then \
  	  $(INSTALL_PROGRAM) $(EXP_SHARED_LIB_FILE) $(tcl_libdir)/$(EXP_SHARED_LIB_FILE) ; \
@@ -43,7 +43,7 @@
  	else true; fi
  
  expect_installed:	exp_main_exp.o $(EXP_LIB_FILE) install_shared_lib
-@@ -448,7 +450,7 @@
+@@ -450,7 +452,7 @@ install-libraries:
  	${srcdir}/mkinstalldirs $(bindir_arch_indep) $(man1dir) $(SCRIPTDIR) $(EXECSCRIPTDIR)
  	-for i in $(SCRIPT_LIST) ; do \
  	  if [ -f $$i ] ; then \
