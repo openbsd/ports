@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2003/02/20 05:50:34 marcm Exp $
+# $OpenBSD: Makefile,v 1.29 2003/03/06 00:49:08 brad Exp $
 
 COMMENT=	"open-source, cross-platform WYSIWYG word processor"
 
@@ -26,6 +26,7 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-libpng=${LOCALBASE}/lib \
+			--without-pspell \
 			--disable-debug
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib"
