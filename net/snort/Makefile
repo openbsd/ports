@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.22 2001/12/13 16:25:05 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2002/04/26 12:51:39 bmc Exp $
 
-COMMENT=	"highly flexible sniffer/basic NIDS"
+COMMENT=	"highly flexible sniffer/NIDS"
 
-DISTNAME=	snort-1.8.3
+DISTNAME=	snort-1.8.6
 CATEGORIES=	net security
-NEED_VERSION=	1.500
-MASTER_SITES=	${HOMEPAGE}/releases/
+NEED_VERSION=	1.525
+MASTER_SITES=	${HOMEPAGE}/dl/
 
 HOMEPAGE=       http://www.snort.org
 
 MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 
+# License: GPL
 PERMIT_PACKAGE_CDROM= 	Yes
 PERMIT_PACKAGE_FTP=   	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -31,15 +32,11 @@ CONFIGURE_ARGS+= --enable-flexresp
 .if ${FLAVOR:L:Mpostgresql}
 LIB_DEPENDS+=	pq.2::databases/postgresql
 CONFIGURE_ARGS+= --with-postgresql="${LOCALBASE}"
-.else
-CONFIGURE_ARGS+= --without-postgresql
 .endif
 
 .if ${FLAVOR:L:Mmysql}
 LIB_DEPENDS+=	lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
 CONFIGURE_ARGS+= --with-mysql="${LOCALBASE}"
-.else
-CONFIGURE_ARGS+= --without-mysql
 .endif
 
 .if ${FLAVOR:L:Msmbalert}
@@ -51,6 +48,7 @@ CONFIGURE_ARGS+= --enable-smbalerts
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/snort
 	${INSTALL_DATA} ${WRKSRC}/snort.conf ${PREFIX}/share/examples/snort
+	${INSTALL_DATA} ${WRKSRC}/sid-msg.map ${PREFIX}/share/examples/snort
 	${INSTALL_DATA} ${WRKSRC}/classification.config \
 		 ${PREFIX}/share/examples/snort
 	${INSTALL_DATA} ${WRKSRC}/*.rules ${PREFIX}/share/examples/snort

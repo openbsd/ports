@@ -1,5 +1,4 @@
-Snort is a fairly intelligent sniffer/NIDS, with a very strong rule set
-ability.
+Snort is a fairly intelligent sniffer/NIDS, with a very strong rule set.
 
 Snort can perform protocol analysis, content searching/matching and can be 
 used to detect a variety of attacks and probes, such as buffer overflows, 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2001/12/06 18:31:39 bmc Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/04/26 12:51:39 bmc Exp $
 bin/snort
 man/man8/snort.8
 share/examples/snort/attack-responses.rules
@@ -23,6 +23,7 @@ share/examples/snort/rpc.rules
 share/examples/snort/rservices.rules
 share/examples/snort/scan.rules
 share/examples/snort/shellcode.rules
+share/examples/snort/sid-msg.map
 share/examples/snort/smtp.rules
 share/examples/snort/snort.conf
 share/examples/snort/sql.rules
