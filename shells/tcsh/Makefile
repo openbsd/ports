@@ -3,7 +3,7 @@
 # Date created:		17 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.10 1998/12/17 03:54:01 form Exp $
+# $OpenBSD: Makefile,v 1.11 1999/04/08 15:53:29 marc Exp $
 #
 
 DISTNAME=       tcsh-6.08
@@ -37,14 +37,6 @@ do-install:
 		${PREFIX}/share/nls/de_CH.ISO_8859-1/tcsh.cat
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nls/el_GR.ISO_8859-7
 	${INSTALL_DATA} ${WRKSRC}/tcsh.greek.cat ${PREFIX}/share/nls/el_GR.ISO_8859-7/tcsh.cat
-	@${ECHO} ""
-	@${ECHO} "*** Finished installing $(DISTNAME)"
-	@${ECHO} "*** To complete the install, you should notify the system"
-	@${ECHO} "*** that $(PREFIX)/bin/tcsh is a valid shell by adding it to"
-	@${ECHO} "*** the file /etc/shells."
-	@${ECHO} "***"
-	@${ECHO} "*** If you are unfamiliar with this file, consult the"
-	@${ECHO} "*** shells(5) manual page."
-	@${ECHO} ""
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
