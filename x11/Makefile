@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2001/02/15 18:05:29 wilfried Exp $
+# $OpenBSD: Makefile,v 1.87 2001/02/21 18:09:38 danh Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -72,6 +72,7 @@
      SUBDIR += qvwm:esound,imlib
      SUBDIR += qvwm:imlib
      SUBDIR += rclock
+     SUBDIR += rep-gtk
      SUBDIR += root-tail
      SUBDIR += rxvt
      SUBDIR += sliderule
