@@ -1,12 +1,12 @@
-$OpenBSD: patch-contrib_Makefile_in,v 1.3 2000/11/20 01:12:41 danh Exp $
---- contrib/Makefile.in.orig	Thu Sep 14 02:04:30 2000
-+++ contrib/Makefile.in	Sun Nov 19 19:54:44 2000
-@@ -86,7 +86,7 @@ VERSION = @VERSION@
+$OpenBSD: patch-contrib_Makefile_in,v 1.4 2001/03/04 17:06:41 danh Exp $
+--- contrib/Makefile.in.orig	Thu Feb 22 06:07:39 2001
++++ contrib/Makefile.in	Thu Feb 22 16:07:21 2001
+@@ -87,7 +87,7 @@ VERSION = @VERSION@
  ZLIB_LIB_DIR = @ZLIB_LIB_DIR@
  
- SUBDIRS = log2rrd rrd-file-icon trytime rrdproc rrdlastds add_ds killspike rrdfetchnames
+ SUBDIRS = trytime
 -contribdir = $(prefix)/contrib
 +contribdir = $(prefix)/share/examples/rrdtool/contrib
  contrib_DATA = README
- EXTRA_DIST = clickgraphs php3 php4
+ EXTRA_DIST = rrdview log2rrd rrd-file-icon rrdproc rrdlastds add_ds killspike rrdfetchnames snmpstats rrdexplorer php3 php4
  mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs

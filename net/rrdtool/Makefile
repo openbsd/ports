@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2000/12/07 17:25:09 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2001/03/04 17:06:41 danh Exp $
 
-VERSION=	1.0.28
+VERSION=	1.0.33
 DISTNAME=	rrdtool-${VERSION}
 CATEGORIES=     net
-NEED_VERSION=	1.340
+NEED_VERSION=	1.358
 MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/rrdtool/pub/ \
 		ftp://ftp.sunet.se/pub/network/monitoring/rrdtool/ \
 		http://ftp.sunet.se/pub/network/monitoring/rrdtool/
@@ -22,18 +22,13 @@ SUBST_VARS=	VERSION
 FLAVORS=	tcl
 FLAVOR?=
 
-LIB_DEPENDS+=	gd.18::graphics/gd
 .if ${FLAVOR:L:Mtcl}
 LIB_DEPENDS+=	tcl83::lang/tcl/8.3
-.endif
-
-.if ${FLAVOR:L:Mtcl}
 USE_GMAKE=	Yes
 .endif
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 

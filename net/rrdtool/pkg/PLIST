@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/09/06 19:17:24 danh Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/03/04 17:06:44 danh Exp $
 bin/rrdcgi
 bin/rrdtool
+bin/rrdupdate
 bin/trytime
 include/rrd.h
 lib/librrd.a
 lib/librrd.la
-libdata/perl5/site_perl/${ARCH}-openbsd/RRDp.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/RRDs.pm
+libdata/perl5/site_perl/RRDp.pm
+libdata/perl5/site_perl/RRDs.pm
 libdata/perl5/site_perl/${ARCH}-openbsd/auto/RRDs/RRDs.bs
 libdata/perl5/site_perl/${ARCH}-openbsd/auto/RRDs/RRDs.so
 man/man1/RRDp.1
@@ -26,6 +27,7 @@ man/man1/rrdrestore.1
 man/man1/rrdtool.1
 man/man1/rrdtune.1
 man/man1/rrdtutorial.1
+man/man1/rrdtutorial.es.1
 man/man1/rrdupdate.1
 share/doc/rrdtool/RRDp.txt
 share/doc/rrdtool/RRDs.txt
@@ -49,6 +51,7 @@ share/doc/rrdtool/html/rrdresize.html
 share/doc/rrdtool/html/rrdrestore.html
 share/doc/rrdtool/html/rrdtool.html
 share/doc/rrdtool/html/rrdtune.html
+share/doc/rrdtool/html/rrdtutorial.es.html
 share/doc/rrdtool/html/rrdtutorial.html
 share/doc/rrdtool/html/rrdupdate.html
 share/doc/rrdtool/rpntutorial.pod
@@ -75,6 +78,8 @@ share/doc/rrdtool/rrdtool.pod
 share/doc/rrdtool/rrdtool.txt
 share/doc/rrdtool/rrdtune.pod
 share/doc/rrdtool/rrdtune.txt
+share/doc/rrdtool/rrdtutorial.es.pod
+share/doc/rrdtool/rrdtutorial.es.txt
 share/doc/rrdtool/rrdtutorial.pod
 share/doc/rrdtool/rrdtutorial.txt
 share/doc/rrdtool/rrdupdate.pod
@@ -82,21 +87,6 @@ share/doc/rrdtool/rrdupdate.txt
 share/examples/rrdtool/bigtops.pl
 share/examples/rrdtool/cgi-demo.cgi
 share/examples/rrdtool/contrib/README
-share/examples/rrdtool/contrib/add_ds/README
-share/examples/rrdtool/contrib/add_ds/add_ds.pl
-share/examples/rrdtool/contrib/add_ds/batch.pl
-share/examples/rrdtool/contrib/killspike/README
-share/examples/rrdtool/contrib/killspike/killspike.pl
-share/examples/rrdtool/contrib/log2rrd/README
-share/examples/rrdtool/contrib/log2rrd/log2rrd.pl
-share/examples/rrdtool/contrib/rrd-file-icon/README
-share/examples/rrdtool/contrib/rrd-file-icon/rrd.png
-share/examples/rrdtool/contrib/rrdfetchnames/README
-share/examples/rrdtool/contrib/rrdfetchnames/rrdfetchnames.pl
-share/examples/rrdtool/contrib/rrdlastds/README
-share/examples/rrdtool/contrib/rrdlastds/rrdlastds.pl
-share/examples/rrdtool/contrib/rrdproc/README
-share/examples/rrdtool/contrib/rrdproc/rrdproc.c
 share/examples/rrdtool/contrib/trytime/README
 share/examples/rrdtool/contrib/trytime/trytime.c
 share/examples/rrdtool/minmax.pl
@@ -105,13 +95,6 @@ share/examples/rrdtool/shared-demo.pl
 share/examples/rrdtool/stripes.pl
 %%SHARED%%
 @dirrm share/examples/rrdtool/contrib/trytime
-@dirrm share/examples/rrdtool/contrib/rrdproc
-@dirrm share/examples/rrdtool/contrib/rrdlastds
-@dirrm share/examples/rrdtool/contrib/rrdfetchnames
-@dirrm share/examples/rrdtool/contrib/rrd-file-icon
-@dirrm share/examples/rrdtool/contrib/log2rrd
-@dirrm share/examples/rrdtool/contrib/killspike
-@dirrm share/examples/rrdtool/contrib/add_ds
 @dirrm share/examples/rrdtool/contrib
 @dirrm share/examples/rrdtool
 @dirrm share/doc/rrdtool/html

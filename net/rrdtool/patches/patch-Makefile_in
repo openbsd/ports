@@ -1,16 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2000/11/20 01:12:41 danh Exp $
---- Makefile.in.orig	Thu Sep 14 01:57:45 2000
-+++ Makefile.in	Sun Nov 19 20:03:59 2000
-@@ -86,7 +86,7 @@ ZLIB_LIB_DIR = @ZLIB_LIB_DIR@
- RSYNC = rsync --rsh=ssh
- 
- # build the following subdirectories
--SUBDIRS = cgilib-0.4 config gd1.3 zlib-1.1.3 libpng-1.0.6           src doc examples contrib tcl
-+SUBDIRS = cgilib-0.4 config src doc examples contrib tcl
- 
- 
- # the following files are not mentioned in any other Makefile
-@@ -384,11 +384,11 @@ maintainer-clean
+$OpenBSD: patch-Makefile_in,v 1.7 2001/03/04 17:06:41 danh Exp $
+--- Makefile.in.orig	Thu Feb 22 06:02:14 2001
++++ Makefile.in	Sun Mar  4 11:30:43 2001
+@@ -385,11 +385,11 @@ maintainer-clean
  # lets schedule the perl stuff for installation
  # the special call to install-sh is because the -d switch is not portable
  install-data-local:
@@ -19,9 +10,9 @@ $OpenBSD: patch-Makefile_in,v 1.6 2000/11/20 01:12:41 danh Exp $
 -	$(INSTALL) -m 644 perl-shared/RRDs.pm $(DESTDIR)$(prefix)/lib/perl
 -	$(INSTALL) -m 644 perl-shared/blib/arch/auto/RRDs/RRDs.bs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
 -	$(INSTALL) -m 755 perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
-+	$(INSTALL) -d -m 755 $(DESTDIR)$(prefix)/libdata/perl5/site_perl/@build_cpu@-openbsd/auto/RRDs
-+	$(INSTALL) -m 644 perl-piped/RRDp.pm $(DESTDIR)$(prefix)/libdata/perl5/site_perl/@build_cpu@-openbsd
-+	$(INSTALL) -m 644 perl-shared/RRDs.pm $(DESTDIR)$(prefix)/libdata/perl5/site_perl/@build_cpu@-openbsd
++	./config/mkinstalldirs $(DESTDIR)$(prefix)/libdata/perl5/site_perl/@build_cpu@-openbsd/auto/RRDs
++	$(INSTALL) -m 644 perl-piped/RRDp.pm $(DESTDIR)$(prefix)/libdata/perl5/site_perl
++	$(INSTALL) -m 644 perl-shared/RRDs.pm $(DESTDIR)$(prefix)/libdata/perl5/site_perl
 +	$(INSTALL) -m 644 perl-shared/blib/arch/auto/RRDs/RRDs.bs $(DESTDIR)$(prefix)/libdata/perl5/site_perl/@build_cpu@-openbsd/auto/RRDs
 +	$(INSTALL) -m 755 perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/libdata/perl5/site_perl/@build_cpu@-openbsd/auto/RRDs
  
