@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/09/29 20:45:56 ian Exp $
+# $OpenBSD: Makefile,v 1.2 1998/09/29 20:47:53 ian Exp $
 #
 
 PKGNAME=	idiff-1.0
 DISTNAME=	idiff-1.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.darwinsys.com/freeware
+MASTER_SITES=	http://www.darwinsys.com/freeware/
 
 MAINTAINER=	ian@openbsd.org
 
