@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/05/03 06:27:00 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2004/06/23 06:29:26 naddy Exp $
 
 COMMENT=		"heavily customizable and extensible editor"
 
@@ -7,9 +7,6 @@ DISTNAME=		xemacs-${VERSION}
 CATEGORIES=     	editors
 
 HOMEPAGE=		http://www.xemacs.org/
-
-# where to send bitches about this port
-MAINTAINER=		Jean-Yves Burlett <jean-yves@burlett.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
