@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/05/22 16:33:43 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/05/23 20:17:03 fgsch Exp $
 
 DISTNAME=		majordomo-1.94.5
 CATEGORIES=     	mail
@@ -20,7 +20,8 @@ MASTER_SITES=		ftp://ftp.greatcircle.com/pub/majordomo/1.94.5/
 
 MAKE_FLAGS=		W_HOME=${PREFIX}/lib/majordomo
 MAKE_FLAGS+=		W_PATH=/bin:/usr/bin
-MAKE_FLAGS+=		W_MAJORDOMO_CF=/etc/mail/majordomo.cf
+MAKE_FLAGS+=		W_MAJORDOMO_CFDIR=/etc/majordomo
+MAKE_FLAGS+=		W_MAJORDOMO_CF=majordomo.cf
 MAKE_FLAGS+=		POSIX=""
 ALL_TARGET=		wrapper
 

@@ -1,6 +1,14 @@
-$OpenBSD: patch-majordomo,v 1.1.1.1 2000/05/22 16:33:43 espie Exp $
---- majordomo.orig	Mon May 15 02:41:58 2000
-+++ majordomo	Mon May 15 02:42:35 2000
+--- majordomo.orig	Thu Jan 13 14:29:31 2000
++++ majordomo	Tue May 23 07:48:42 2000
+@@ -29,7 +29,7 @@
+ 
+ while ($ARGV[0]) {	# parse for config file or default list
+     if ($ARGV[0] =~ /^-C$/i) {	# sendmail v8 clobbers case
+-        $cf = $ARGV[1];
++        $cf = "$ENV{'MAJORDOMO_CFDIR'}/$ARGV[1]" unless $ARGV[1] ~= /\//;
+         shift(@ARGV); 
+         shift(@ARGV); 
+     } elsif ($ARGV[0] eq "-l") {
 @@ -75,7 +75,7 @@
  # Define all of the mailer properties:
  # It is possible that one or both of $sendmail_command and $bounce_mailer

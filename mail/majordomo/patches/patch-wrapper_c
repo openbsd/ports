@@ -1,0 +1,53 @@
+--- wrapper.c.orig	Wed Aug 27 12:01:12 1997
++++ wrapper.c	Tue May 23 07:06:23 2000
+@@ -42,20 +42,27 @@
+ #  define SHELL "SHELL=/bin/sh"
+ #endif
+ 
++#ifndef MAJORDOMO_CF
++#  error "MAJORDOMO_CF not defined; edit Makefile"
++#endif
++
++#ifndef MAJORDOMO_CFDIR
++#  error "MAJORDOMO_CFDIR not defined; edit Makefile"
++#endif
++
+ char * new_env[] = {
+     HOME,		/* 0 */
+     PATH,		/* 1 */
+     SHELL,		/* 2 */
+-#ifdef MAJORDOMO_CF
+     MAJORDOMO_CF,	/* 3 */
+-#endif
++    MAJORDOMO_CFDIR,	/* 4 */
+     0,		/* possibly for USER or LOGNAME */
+     0,		/* possible for LOGNAME */
+     0,          /* possibly for timezone */
+     0
+ };
+     
+-int new_env_size = 7;				/* to prevent overflow problems */
++int new_env_size = 8;				/* to prevent overflow problems */
+ 
+ main(argc, argv, env)
+     int argc;
+@@ -89,11 +96,7 @@
+      *  if they exist.
+      */
+ 
+-#ifdef MAJORDOMO_CF
+-    e = 4; /* the first unused slot in new_env[] */
+-#else
+-    e = 3; /* the first unused slot in new_env[] */
+-#endif
++    e = 5; /* the first unused slot in new_env[] */
+ 
+     for (i = 0 ; env[i] != NULL && e <= new_env_size; i++) {
+ 	if ((strncmp(env[i], "USER=", 5) == 0) ||
+@@ -153,5 +156,6 @@
+     fprintf(stderr, "    PATH is %s,\n", PATH);
+     fprintf(stderr, "    SHELL is %s,\n", SHELL);
+     fprintf(stderr, "    MAJORDOMO_CF is %s\n", MAJORDOMO_CF);
++    fprintf(stderr, "    MAJORDOMO_CFDIR is %s\n", MAJORDOMO_CFDIR);
+     exit(EX_OSERR);
+ }

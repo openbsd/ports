@@ -1,0 +1,11 @@
+--- medit.orig	Mon Apr 28 15:38:05 1997
++++ medit	Tue May 23 07:48:55 2000
+@@ -19,7 +19,7 @@
+ # Read and execute the .cf file
+ $cf = $ENV{"MAJORDOMO_CF"} || "/etc/majordomo.cf";
+ if ($ARGV[0] eq "-C") {
+-    $cf = $ARGV[1];
++    $cf = "$ENV{'MAJORDOMO_CFDIR'}/$ARGV[1]" unless $ARGV[1] ~= /\//;
+     shift(@ARGV); 
+     shift(@ARGV); 
+ }

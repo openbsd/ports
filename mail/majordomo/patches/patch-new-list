@@ -1,0 +1,11 @@
+--- contrib/new-list.orig	Mon Dec  9 13:50:45 1996
++++ contrib/new-list	Tue May 23 07:50:41 2000
+@@ -15,7 +15,7 @@
+ # Read and execute the .cf file
+ $cf = $ENV{"MAJORDOMO_CF"} || "/etc/majordomo.cf";
+ if ($ARGV[0] eq "-C") {
+-    $cf = $ARGV[1];
++    $cf = "$ENV{'MAJORDOMO_CFDIR'}/$ARGV[1]" unless $ARGV[1] ~= /\//;
+     shift(@ARGV); 
+     shift(@ARGV); 
+ }

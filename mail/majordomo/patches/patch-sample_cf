@@ -1,15 +1,6 @@
-$OpenBSD: patch-sample_cf,v 1.1.1.1 2000/05/22 16:33:49 espie Exp $
+$OpenBSD: patch-sample_cf,v 1.2 2000/05/23 20:17:05 fgsch Exp $
 --- sample.cf.orig	Wed Aug 27 17:00:31 1997
 +++ sample.cf	Mon May 22 16:37:49 2000
-@@ -10,7 +10,7 @@ $whereami = "example.com";
- 
- # $whoami -- Who do users send requests to me as?
- #
--$whoami = "Majordomo\@$whereami";
-+$whoami = "majordomo\@$whereami";
- 
- # $whoami_owner -- Who is the owner of the above, in case of problems?
- #
 @@ -27,7 +27,7 @@ if ( defined $ENV{"HOME"}) {
  
  # $listdir -- Where are the mailing lists?

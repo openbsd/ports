@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2000/05/22 16:33:49 espie Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/05/23 20:17:05 fgsch Exp $
 #
 # Pre/post-installation setup of majordomo
 
@@ -58,16 +58,18 @@ do_set_file_permissions()
 do_install_configuration()
 {
   echo -n "Let's see if there is already a configuration file... "
-  if [ -f /etc/mail/majordomo.cf ]; then
+  if [ -d /etc/majordomo -a -f /etc/majordomo/majordomo.cf ]; then
     echo "yes"
     echo "Please compare your existing configuration with"
     echo "${PREFIX}/lib/majordomo/sample.cf"
   else
     echo "no"
     echo -n "Copying sample configuration file... "
-    sed -e "s/example.com/$(hostname)/" ${PREFIX}/lib/majordomo/sample.cf > /etc/mail/majordomo.cf
+    mkdir /etc/majordomo
+    chmod 755 /etc/majordomo 
+    sed -e "s/example.com/$(hostname)/" ${PREFIX}/lib/majordomo/sample.cf > /etc/majordomo/majordomo.cf
     echo "ok"
-    echo "Please review new configuration /etc/mail/majordomo.cf"
+    echo "Please review new configuration /etc/majordomo/majordomo.cf"
   fi
 }
 

@@ -1,6 +1,14 @@
-$OpenBSD: patch-request-answer,v 1.1.1.1 2000/05/22 16:33:43 espie Exp $
---- request-answer.orig	Mon May 15 02:43:14 2000
-+++ request-answer	Mon May 15 02:43:32 2000
+--- request-answer.orig	Fri Jan  7 08:10:18 2000
++++ request-answer	Tue May 23 07:49:10 2000
+@@ -16,7 +16,7 @@
+ # Read and execute the .cf file
+ $cf = $ENV{"MAJORDOMO_CF"} || "/etc/majordomo.cf";
+ if ($ARGV[0] eq "-C") {
+-    $cf = $ARGV[1];
++    $cf = "$ENV{'MAJORDOMO_CFDIR'}/$ARGV[1]" unless $ARGV[1] ~= /\//;
+     shift(@ARGV); 
+     shift(@ARGV); 
+ }
 @@ -51,7 +51,7 @@
  # Define all of the mailer properties:
  # It is possible that one or both of $sendmail_command and $bounce_mailer

@@ -7,7 +7,7 @@ manually:
 
 	- read README, FAQ and NEWLIST in /usr/local/share/doc/majordomo
 
-	- review /etc/mail/majordomo.cf
+	- review /etc/majordomo/majordomo.cf
 
 	- run '/usr/local/lib/majordomo/wrapper config-test'
 	  as ordinary user (not root or majordom) to test your

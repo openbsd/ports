@@ -1,7 +1,16 @@
-$OpenBSD: patch-resend,v 1.1.1.1 2000/05/22 16:33:49 espie Exp $
---- resend.orig	Mon May 15 02:43:44 2000
-+++ resend	Mon May 15 02:44:27 2000
-@@ -111,7 +111,7 @@
+--- resend.orig	Fri Jan  7 12:32:39 2000
++++ resend	Tue May 23 16:33:49 2000
+@@ -79,6 +79,9 @@
+ }
+     
+ # Read and execute the .cf file
++$cfdir = $ENV{'MAJORDOMO_CFDIR'};
++$opt_C = ($opt_C && $opt_C !~ /\//) ? "$cfdir/$opt_C" : '';
++$opt_c = ($opt_c && $opt_c !~ /\//) ? "$cfdir/$opt_c" : '';
+ $cf = $opt_C || $opt_c || $ENV{"MAJORDOMO_CF"} || "/etc/majordomo.cf";
+ 
+ # Despite not having a place to send the remains of the body,
+@@ -111,7 +114,7 @@
  # XXX It is possible that owner-$opt_l won't be the right address, but we
  # have little choice.  Sending the bounces to $whoami_owner is an option,
  # but might not clearly indicate the list name.
@@ -10,7 +19,7 @@ $OpenBSD: patch-resend,v 1.1.1.1 2000/05/22 16:33:49 espie Exp $
  $bounce_mailer = $bounce_mailer || "$sendmail_command -f\$sender -t";
  &set_mail_from("owner-$opt_l");
  &set_mail_sender("owner-$opt_l");
-@@ -936,7 +936,7 @@
+@@ -936,7 +939,7 @@
      else {
  	# Painful, but we have to provide some kind of backwards
  	# compatibility and this is what 1.93 used
