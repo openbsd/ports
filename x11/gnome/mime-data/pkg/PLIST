@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/02/22 05:33:53 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 04:12:56 marcm Exp $
+lib/pkgconfig/
 lib/pkgconfig/gnome-mime-data-2.0.pc
+share/application-registry/
 share/application-registry/gnome-vfs.applications
+@sample ${SYSCONFDIR}/gnome/
+share/examples/gnome-mime-data/
 share/examples/gnome-mime-data/gnome-vfs-mime-magic
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-mime-magic
+share/mime-info/
 share/mime-info/gnome-vfs.keys
 share/mime-info/gnome-vfs.mime
-@dirrm share/mime-info
-@dirrm share/examples/gnome-mime-data
-@dirrm share/application-registry
-@dirrm lib/pkgconfig
-@cwd ${SYSCONFDIR}
-@extra gnome/gnome-vfs-mime-magic
-@extraunexec rmdir %D/gnome 2>/dev/null || true

@@ -1,15 +1,1 @@
 This package contains the session manager for the GNOME desktop.
-
-This is the foundation of the GNOME desktop environment and this package
-is also responsible for installing a basic set of GNOME utilities
-(window manager, file manager, applets, etc) to make up a minimal GNOME
-environment.
-
-Other recommended packages for GNOME include:
-
-	x11/gnome/users-guide - general Gnome documentation
-	x11/gnome/utils - a set of simple utilities for GNOME
-	x11/xscreensaver - a screen saver and locker
-
-To run the GNOME environment, simply start "gnome-session" from
-either your ~/.xinitrc or ~/.xsession file.

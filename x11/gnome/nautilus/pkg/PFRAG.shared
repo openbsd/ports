@@ -1,10 +1,9 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/06/23 03:26:18 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/15 04:12:56 marcm Exp $
 lib/bonobo/libnautilus-emblem-view.so
 lib/bonobo/libnautilus-history-view.so
 lib/bonobo/libnautilus-image-properties-view.so
 lib/bonobo/libnautilus-notes-view.so
-lib/libnautilus-adapter.so.2.0
-lib/libnautilus-extension.so.1.0
-lib/libnautilus-private.so.2.0
-lib/libnautilus.so.2.0
-DYNLIBDIR(%D/lib)
+@lib lib/libnautilus-adapter.so.2.0
+@lib lib/libnautilus-extension.so.1.0
+@lib lib/libnautilus-private.so.2.0
+@lib lib/libnautilus.so.2.0

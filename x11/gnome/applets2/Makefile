@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/08/10 10:56:42 xsa Exp $
+# $OpenBSD: Makefile,v 1.14 2004/09/15 04:12:55 marcm Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 COMMENT-battstat=	"GNOME applet for monitoring battery level"
@@ -24,7 +24,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		devel/gettext
 
 BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig \
-			:scrollkeeper-*:textproc/scrollkeeper
+			:scrollkeeper-*:textproc/scrollkeeper \
+			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 LIB_DEPENDS=		panel-applet-2.0::x11/gnome/panel \
 			gailutil.17::x11/gnome/gail \
