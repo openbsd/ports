@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2003/05/28 13:47:04 avsm Exp $
+# $OpenBSD: Makefile,v 1.42 2003/06/06 15:52:50 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -62,9 +62,6 @@ SUBDIR += textproc
 #SUBDIR += vietnamese
 SUBDIR += www
 SUBDIR += x11
-.  if exists(mystuff) && !make(describe) && !make(fetch-makefile)
-SUBDIR += mystuff
-.  endif
 .endif
 
 PORTSTOP?=	yes
