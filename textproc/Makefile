@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2004/05/17 19:37:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.113 2004/05/29 21:15:49 avsm Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -56,6 +56,7 @@
      SUBDIR += p5-String-ShellQuote
      SUBDIR += p5-String-Similarity
      SUBDIR += p5-Template
+     SUBDIR += p5-Test-Pod
      SUBDIR += p5-Text-Autoformat
      SUBDIR += p5-Text-CSV_XS
      SUBDIR += p5-Text-PDF
@@ -75,6 +76,7 @@
      SUBDIR += p5-XML-SAX
      SUBDIR += p5-XML-Sablotron
      SUBDIR += p5-XML-Simple
+     SUBDIR += p5-XML-Twig
      SUBDIR += p5-XML-Writer
      SUBDIR += p5-XML-XPath
      SUBDIR += p5-XML-XSLT
