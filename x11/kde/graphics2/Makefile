@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/18 15:01:27 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/22 16:33:16 espie Exp $
 
 COMMENT= 		"X11 toolkit, graphics applications"
 CATEGORIES=		x11 x11/kde
@@ -16,12 +16,14 @@ USE_MOTIF=	any
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
 
 BUILD_DEPENDS=	uic::x11/qt2-designer
+BUILD_DEPENDS+=	zsh:zsh-*:shells/zsh
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
 CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
+CONFIGURE_ARGS+=	--disable-debug
 #CONFIGURE_ARGS+=	--with-xdmdir=/var/X11/kdm
 #CONFIGURE_ARGS+=	--without-motif
 #CONFIGURE_ARGS+=--enable-static --enable-debug --disable-shared
@@ -35,8 +37,13 @@ CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2 \
 	RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 MAKE_ENV=		${CONFIGURE_ENV}
 
+pre-build:
+	# Let zsh act as an sh replacement
+	ln -sf $(LOCALBASE)/bin/zsh ${WRKBUILD}/sh
+
 # Ensure qt2 will always be at the front
 MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${LOCALBASE}/lib/qt2'
+MAKE_FLAGS+=LIBTOOL='$(WRKBUILD)/sh $(WRKBUILD)/libtool'
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes

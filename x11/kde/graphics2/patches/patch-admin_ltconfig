@@ -1,4 +1,4 @@
-$OpenBSD: patch-admin_ltconfig,v 1.1.1.1 2001/03/30 13:05:01 espie Exp $
+$OpenBSD: patch-admin_ltconfig,v 1.2 2001/04/22 16:33:16 espie Exp $
 --- admin/ltconfig.orig	Sat Mar 10 15:05:21 2001
 +++ admin/ltconfig	Sat Mar 10 15:07:50 2001
 @@ -1162,6 +1162,8 @@ openbsd*)

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/04/22 16:33:16 espie Exp $
+--- configure.in.orig	Sun Apr 22 17:23:00 2001
++++ configure.in	Sun Apr 22 17:23:41 2001
+@@ -414,7 +414,7 @@ AC_SUBST(KDVI_KPATHSEA_LIB)
+ AC_CHECK_HEADERS(sys/types.h sys/params.h limits.h)
+ 
+ AC_FUNC_MMAP
+-AC_CHECK_HEADERS(pthread.h)
++dnl AC_CHECK_HEADERS(pthread.h)
+ KDE_CREATE_SUBDIRSLIST
+ AC_OUTPUT( \
+ ./Makefile \
