@@ -1,0 +1,15 @@
+wmbutton is a 64x64 pixel application that displays nine
+buttons.  Each of these buttons can be configured via a
+configuration file to run just about any application you'd
+like to.  Basically, if you can type it in a shell command,
+wmbutton can run it.
+
+It is specifically designed to be docked in Windowmaker, or
+'Swallowed' by wharf in Afterstep.  Of course, it should work
+in just about any window manager. 
+
+You need a ~/.wmbutton file, copy a sample from ${SAMPLE_DIR}.
+
+wmbutton -h gives you usage info.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/16 21:29:04 naddy Exp $
+bin/wmbutton
+share/examples/wmbutton/dot.wmbutton.sample
+@dirrm share/examples/wmbutton
