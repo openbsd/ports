@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/28 09:11:37 jasoni Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/06/04 21:17:04 jasoni Exp $
 bin/normalize
 bin/normalize-mp3
 bin/normalize-ogg
 man/man1/normalize-mp3.1
 man/man1/normalize.1
-share/locale/en_GB/LC_MESSAGES/normalize.mo
-share/locale/fr/LC_MESSAGES/normalize.mo

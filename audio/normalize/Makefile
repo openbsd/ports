@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/04/28 09:11:37 jasoni Exp $
+# $OpenBSD: Makefile,v 1.2 2002/06/04 21:17:04 jasoni Exp $
 
 COMMENT=	"audio file volume normalizer"
 
-DISTNAME=	normalize-0.7.3
+DISTNAME=	normalize-0.7.4
 CATEGORIES=	audio
 NEED_VERSION=	1.522
 MASTER_SITES=	http://www.cs.columbia.edu/~cvaill/normalize/

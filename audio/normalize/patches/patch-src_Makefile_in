@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2002/04/28 09:11:37 jasoni Exp $
---- src/Makefile.in.orig	Tue Mar 12 00:41:33 2002
-+++ src/Makefile.in	Wed Apr 24 11:26:44 2002
-@@ -673,31 +673,31 @@ install-exec-hook:
+$OpenBSD: patch-src_Makefile_in,v 1.2 2002/06/04 21:17:04 jasoni Exp $
+--- src/Makefile.in.orig	Sun Apr 28 14:22:57 2002
++++ src/Makefile.in	Tue Jun  4 07:03:12 2002
+@@ -675,31 +675,31 @@ install-exec-hook:
  # test program targets follow
  
  mktestwav: mktestwav.o riff.o version.o getopt.o getopt1.o
