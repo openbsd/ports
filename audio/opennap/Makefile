@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2003/05/12 08:23:46 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2003/06/22 10:01:35 sturm Exp $
 
 COMMENT=	"opensource Napster(tm) server"
 
 DISTNAME=	opennap-0.44
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opennap/}
 
@@ -22,7 +23,9 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	\
 	--enable-email \
 	--enable-resume \
-	--datadir=${SYSCONFDIR}
+	--datadir=${SYSCONFDIR} \
+	--with-uid=_opennap \
+	--with-gid=_opennap
 #	--enable-chroot \  (breaks uid, gid, and ip lookup)
 
 DOCS=	FAQ README manual.html napster.txt

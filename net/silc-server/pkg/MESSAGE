@@ -11,7 +11,7 @@ recommended to take advantage of the installed silcd user and group.
 If you have not already done so, you will need to generate a keypair:
 
 # silcd -C ${SYSCONFDIR}/silcd
-# chown silcd:silcd ${SYSCONFDIR}/silcd/silcd.{pub,prv}
+# chown _silcd:_silcd ${SYSCONFDIR}/silcd/silcd.{pub,prv}
 # chmod 600 ${SYSCONFDIR}/silcd/silcd.prv
 
 Additionally, you may wish to start silcd at system start-up
@@ -20,3 +20,12 @@ via the /etc/rc.local script:
 if [ -x ${PREFIX}/sbin/silcd ]; then
 	echo -n ' silcd';	${PREFIX}/sbin/silcd
 fi
+
+*********************
+* WARNING!
+*
+* This port has changed its user/group from 'silcd' to '_silcd'. If you
+* installed this port before, ensure all permissions are set correctly and
+* then "rmuser silcd".
+*********************
+

@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_example_silcd_conf_in,v 1.1.1.1 2002/12/16 03:40:02 brad Exp $
+$OpenBSD: patch-doc_example_silcd_conf_in,v 1.2 2003/06/22 10:01:35 sturm Exp $
 --- doc/example_silcd.conf.in.orig	Sat Nov 30 08:09:21 2002
 +++ doc/example_silcd.conf.in	Sat Dec 14 19:45:12 2002
 @@ -35,7 +35,7 @@ General {
@@ -52,8 +52,8 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.1.1.1 2002/12/16 03:40:02 brad Exp
  	#
 -	User = "nobody";
 -	Group = "nobody";
-+	User = "silcd";
-+	Group = "silcd";
++	User = "_silcd";
++	Group = "_silcd";
  
  	#
  	# Public and private keys

@@ -12,3 +12,12 @@ via the /etc/rc.local script:
 if [ -x ${PREFIX}/sbin/opennap ]; then
 	echo -n ' opennap';	${PREFIX}/sbin/opennap -b > /dev/null
 fi
+
+*********************
+* WARNING!
+*
+* This port has changed its user/group from 'opennap' to '_opennap'. If you
+* installed this port before, ensure all permissions are set correctly and
+* then "rmuser opennap".
+*********************
+

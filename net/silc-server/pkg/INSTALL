@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2002/12/29 21:22:13 brad Exp $
+# $OpenBSD: INSTALL,v 1.3 2003/06/22 10:01:35 sturm Exp $
 #
 # Pre/post-installation setup of silc-server
 
@@ -8,8 +8,9 @@ PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}/silcd
 LOG_DIR=/var/log/silcd
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/silcd
-SILCDUSER=silcd
-SILCDGROUP=silcd
+SILCDUSER=_silcd
+SILCDGROUP=_silcd
+ID=512
 
 do_usergroup_install()
 {
@@ -19,14 +20,14 @@ do_usergroup_install()
     echo "===> Using $SILCDGROUP group for silc-server"
   else
     echo "===> Creating $SILCDGROUP group for silc-server"
-    groupadd $SILCDGROUP
+    groupadd -g $ID $SILCDGROUP
   fi
   userinfo -e $SILCDUSER
   if [ $? -eq 0 ]; then
     echo "===> Using $SILCDUSER user for silc-server"
   else
     echo "===> Creating $SILCDUSER user for silc-server"
-    useradd -g $SILCDGROUP -d /nonexistent -L daemon -c ' Silc-server Account' -s /sbin/nologin $SILCDUSER
+    useradd -g $SILCDGROUP -d /nonexistent -L daemon -c ' Silc-server Account' -s /sbin/nologin -u $ID $SILCDUSER
   fi
 }
 
@@ -44,10 +45,10 @@ do_notice()
 
 do_install()
 {
-    install -d -o silcd -g silcd -m 700 $CONFIG_DIR
-    install -d -o silcd -g silcd -m 700 $LOG_DIR
-    install -o silcd -g silcd -m 600 $SAMPLE_CONFIG_DIR/silcd.conf $CONFIG_DIR/silcd.conf
-    install -o silcd -g silcd -m 600 $SAMPLE_CONFIG_DIR/silcalgs.conf $CONFIG_DIR/silcalgs.conf
+    install -d -o $SILCDUSER -g $SILCDGROUP -m 700 $CONFIG_DIR
+    install -d -o $SILCDUSER -g $SILCDGROUP -m 700 $LOG_DIR
+    install -o $SILCDUSER -g $SILCDGROUP -m 600 $SAMPLE_CONFIG_DIR/silcd.conf $CONFIG_DIR/silcd.conf
+    install -o $SILCDUSER -g $SILCDGROUP -m 600 $SAMPLE_CONFIG_DIR/silcalgs.conf $CONFIG_DIR/silcalgs.conf
     echo
     echo "+---------------"
     echo "|"
