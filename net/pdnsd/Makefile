@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/29 21:14:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2003/06/22 14:07:21 sturm Exp $
 # Uses pthreads
 
 COMMENT=		"threaded DNS daemon, optimized for caching"
@@ -8,10 +8,9 @@ COMMENT=		"threaded DNS daemon, optimized for caching"
 ONLY_FOR_ARCHS=	i386
 
 DISTNAME=		pdnsd-1.1.7a
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	net
 HOMEPAGE=		http://home.t-online.de/home/Moestl/
-
-MAINTAINER=		Sebastian Stark <seb@todesplanet.de>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,7 +29,7 @@ CONFIGURE_ARGS+=	--with-target=BSD \
 			--with-random-device=arc4random \
 			--enable-strict-rfc2181 \
 			--with-cachedir="/var/pdnsd" \
-			--with-default-id=pdnsd
+			--with-default-id=_pdnsd
 
 DOCFILES=		faq.txt intro.txt manual.txt
 

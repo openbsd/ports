@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/06/14 14:46:07 camield Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/06/22 14:07:22 sturm Exp $
 #
 # De-installation setup of pdnsd
 
@@ -19,6 +19,7 @@ do_notice()
     echo "| To completely deinstall the $1 package you need to perform"
     echo "| these steps as root:"
     echo "|"
+    echo "|       rmuser _pdnsd"
     echo "|       rm -f ${CONFIG_DIR}/pdnsd.conf"
     echo "|       rm -rf /var/pdnsd"
     echo "|       rm -f /var/run/pdnsd.pid"

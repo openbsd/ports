@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2003/05/10 15:25:25 sturm Exp $
+# $OpenBSD: INSTALL,v 1.3 2003/06/22 14:07:22 sturm Exp $
 #
 # Pre/post-installation setup of pdnsd
 
@@ -10,31 +10,31 @@ PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/pdnsd
 CACHE_DIR=/var/pdnsd
-ID=pdnsd
+PDNSD=_pdnsd
+ID=510
 
 # Function: user "pdnsd" is not available
 #
 do_add_user()
 {
-	groupinfo -e ${ID}
+	groupinfo -e ${PDNSD}
 	if [ $? -eq 0 ]; then
-		echo "===>  Using existing group '${ID}'"
+		echo "===>  Using existing group '${PDNSD}'"
 	else
-		echo "===>  Creating group '${ID}'"
-		groupadd ${ID}
+		echo "===>  Creating group '${PDNSD}'"
+		groupadd -g ${ID} ${PDNSD}
 	fi
 
-	userinfo -e ${ID}
+	userinfo -e ${PDNSD}
 	if [ $? -eq 0 ]; then
-		echo "===>  Using existing account '${ID}'"
+		echo "===>  Using existing account '${PDNSD}'"
 	else
-		echo "===>  Creating user '${ID}'"
-		useradd -g ${ID} \
+		echo "===>  Creating user '${PDNSD}'"
+		useradd -g ${PDNSD} \
 		-c "Proxy DNS Server" \
-		-m -d /nonexistent \
+		-d /nonexistent \
 		-s /sbin/nologin \
-		-p \* \
-		${ID}
+		-u ${ID} ${PDNSD}
 	fi
 }
 
@@ -63,9 +63,9 @@ echo "+---------------"
 #
 do_install_cachedir()
 {
-install -d -o ${ID} -g ${ID} ${CACHE_DIR}
+install -d -o ${PDNSD} -g ${PDNSD} ${CACHE_DIR}
 dd if=/dev/zero of=${CACHE_DIR}/pdnsd.cache bs=1 count=4 2>/dev/null
-chown ${ID}:${ID} ${CACHE_DIR}/pdnsd.cache
+chown ${PDNSD}:${PDNSD} ${CACHE_DIR}/pdnsd.cache
 echo
 echo "+---------------"
 echo "| The $1 caching directory has been installed in ${CACHE_DIR}."
@@ -106,7 +106,17 @@ do_notice_docs()
     echo "+---------------"
 }
 
-
+do_warning()
+{
+    echo
+    echo "+---------------"
+    echo "| WARNING!"
+    echo "|"
+    echo "| This port has changed its user/group from 'pdnsd' to '_pdnsd'."
+    echo "| If you installed this port before, ensure all permissions are set"
+    echo "| correctly and then \"rmuser pdnsd\"."
+    echo "+---------------"
+}
 
 # Verify proper execution
 #
@@ -135,6 +145,7 @@ case $2 in
 	    do_notice_cachedir "$1"
 	fi
 	do_notice_docs "$1"
+	do_warning
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
