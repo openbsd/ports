@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2004/07/02 07:05:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.25 2004/12/22 20:11:20 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"view, distribute and print PDF documents"
 
-DISTNAME=	linux-509
-PKGNAME=	acroread-5.09
+DISTNAME=	linux-5010
+PKGNAME=	acroread-5.010
 CATEGORIES=	print
 
 MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
 
 RUN_DEPENDS=	::emulators/redhat/base
 
-WRKDIST=	${WRKDIR}
+WRKDIST=	${WRKDIR}/installers
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
