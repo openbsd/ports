@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2001/07/30 17:49:05 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/09/01 18:50:27 naddy Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
-DISTNAME=	sylpheed-0.5.1
+DISTNAME=	sylpheed-0.6.0
 CATEGORIES=    	mail news x11
-NEED_VERSION=	1.427
+NEED_VERSION=	1.440
 HOMEPAGE=	http://sylpheed.good-day.net
 
 MAINTAINER=	Damien Couderc <couderc.damien@wanadoo.fr>
@@ -16,24 +16,21 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/sylpheed/
 
-USE_X11=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --disable-glibtest
+CONFIGURE_ARGS= --enable-ssl \
+		--enable-ipv6
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
                 LDFLAGS="-L${LOCALBASE}/lib"
 
-FLAVORS=	imlib pixbuf gpgme
-FLAVOR?=	pixbuf
+FLAVORS=	compface gpgme imlib
+FLAVOR?=
 
-.if ${FLAVOR:L:Mimlib}
-LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
-		gdk_imlib.19::graphics/imlib
-CONFIGURE_ARGS+=	--disable-gdk-pixbuf
-.endif
-.if ${FLAVOR:L:Mpixbuf}
-LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
-		gdk_pixbuf::graphics/gdk-pixbuf
-CONFIGURE_ARGS+=	--disable-imlib
+.if ${FLAVOR:L:Mcompface}
+PERMIT_PACKAGE_CDROM=	"No Fee"
+PERMIT_DISTFILES_CDROM=	"No Fee"
+BUILD_DEPENDS=	${LOCALBASE}/lib/libcompface.a::graphics/compface
+.else
+CONFIGURE_ARGS+= --disable-compface
 .endif
 
 .if ${FLAVOR:L:Mgpgme}
@@ -41,6 +38,14 @@ LIB_DEPENDS=	gpgme::security/gpgme
 CONFIGURE_ARGS+= --enable-gpgme
 .else
 CONFIGURE_ARGS+= --disable-gpgme
+.endif
+
+.if ${FLAVOR:L:Mimlib}
+LIB_DEPENDS+=	gdk_imlib.19::graphics/imlib
+CONFIGURE_ARGS+= --disable-gdk-pixbuf
+.else
+LIB_DEPENDS+=	gdk_pixbuf.2::graphics/gdk-pixbuf
+CONFIGURE_ARGS+= --disable-imlib
 .endif
 
 .include <bsd.port.mk>

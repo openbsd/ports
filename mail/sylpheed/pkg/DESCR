@@ -8,7 +8,7 @@ on the X Window System, and aiming for:
 
 WWW: ${HOMEPAGE}
 
-FLAVORS :
-	* pixbuf : use gdk_pixbuf as graphic library (default)
-	* imlib	: use imlib as graphic library
-	* gpgme : compile with gnupg made easy support
+FLAVORS:
+	* compface: support X-Face header
+	* gpgme: compile with gnupg made easy support
+	* imlib: use imlib instead of gdk_pixbuf as graphic library
