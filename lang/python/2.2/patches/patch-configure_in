@@ -1,0 +1,26 @@
+$OpenBSD: patch-configure_in,v 1.1 2002/02/15 19:42:18 matt Exp $
+--- configure.in.orig	Fri Dec  7 07:38:26 2001
++++ configure.in	Mon Dec 17 12:06:44 2001
+@@ -799,7 +799,21 @@ then
+ 	Linux*) LDSHARED="gcc -shared";;
+ 	dgux*) LDSHARED="ld -G";;
+ 	BSD/OS*/4*) LDSHARED="gcc -shared";;
+-	OpenBSD*|NetBSD*|FreeBSD*)
++	OpenBSD*)
++		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
++		then
++			LDSHARED="cc -shared ${LDFLAGS}"
++		else
++			case `uname -r` in
++			[01].* | 2.[[0-7]] | 2.[[0-7]].*)
++			  LDSHARED="ld -Bshareable"
++			  ;;
++			*)
++			  LDSHARED='$(CC) -shared $(CCSHARED)'
++			  ;;
++			esac
++		fi;;
++	NetBSD*|FreeBSD*)
+ 		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
+ 		then
+ 			LDSHARED="cc -shared ${LDFLAGS}"

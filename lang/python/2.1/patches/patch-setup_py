@@ -1,0 +1,39 @@
+$OpenBSD: patch-setup_py,v 1.1 2002/02/15 19:42:18 matt Exp $
+--- setup.py.orig	Thu Dec 27 16:51:02 2001
++++ setup.py	Mon Jan 14 12:09:08 2002
+@@ -346,22 +346,9 @@ class PyBuildExt(build_ext):
+         # (See http://electricrain.com/greg/python/bsddb3/ for an interface to
+         # BSD DB 3.x.)
+ 
+-        dblib = []
+-        if self.compiler.find_library_file(lib_dirs, 'db'):
+-            dblib = ['db']
+-        
+-        db185_incs = find_file('db_185.h', inc_dirs,
+-                               ['/usr/include/db3', '/usr/include/db2'])
+-        db_inc = find_file('db.h', inc_dirs, ['/usr/include/db1'])
+-        if db185_incs is not None:
+-            exts.append( Extension('bsddb', ['bsddbmodule.c'],
+-                                   include_dirs = db185_incs,
+-                                   define_macros=[('HAVE_DB_185_H',1)],
+-                                   libraries = dblib ) )
+-        elif db_inc is not None:
+-            exts.append( Extension('bsddb', ['bsddbmodule.c'],
+-                                   include_dirs = db_inc,
+-                                   libraries = dblib) )
++        exts.append( Extension('bsddb', ['bsddbmodule.c'],
++                                   include_dirs = ['/usr/include'],
++                                   libraries = []) )
+ 
+         # The mpz module interfaces to the GNU Multiple Precision library.
+         # You need to ftp the GNU MP library.
+@@ -609,7 +596,8 @@ def main():
+           ext_modules=[Extension('struct', ['structmodule.c'])],
+ 
+           # Scripts to install
+-          scripts = ['Tools/scripts/pydoc']
++          #scripts = ['Tools/scripts/pydoc']
++          scripts = []
+         )
+ 
+ # --install-platlib

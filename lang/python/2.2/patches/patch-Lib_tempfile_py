@@ -1,0 +1,12 @@
+$OpenBSD: patch-Lib_tempfile_py,v 1.1 2002/02/15 19:42:18 matt Exp $
+--- Lib/tempfile.py.orig	Mon Oct 29 13:46:08 2001
++++ Lib/tempfile.py	Mon Dec 17 11:58:52 2001
+@@ -21,7 +21,7 @@ def gettempdir():
+         pwd = os.getcwd()
+     except (AttributeError, os.error):
+         pwd = os.curdir
+-    attempdirs = ['/tmp', '/var/tmp', '/usr/tmp', pwd]
++    attempdirs = ['/tmp', '/var/tmp', pwd]
+     if os.name == 'nt':
+         attempdirs.insert(0, 'C:\\TEMP')
+         attempdirs.insert(0, '\\TEMP')
