@@ -1,22 +1,26 @@
 --- Makefile.orig	Thu May 11 01:53:15 2000
-+++ Makefile	Thu Sep 12 12:26:38 2002
-@@ -4,8 +4,8 @@
++++ Makefile	Tue Sep 24 02:14:30 2002
+@@ -4,33 +4,34 @@
  CC=g++
  GC=gcc
  
 -CFLAGS = -O2 -DPREFIX=\"${prefix}\"
 -LDFLAGS = -L/usr/X11R6/lib -I/usr/X11/include/X11 -lX11 -lXpm -lm
 +CFLAGS = -O2 -I${X11BASE}/include -DPREFIX=\"${prefix}\"
-+LDFLAGS = -L${X11BASE}/lib -lX11 -lXpm -lm
++LDFLAGS = -L${X11BASE}/lib
++LIBS = -lXpm -lX11 -lm
  prefix = /usr/local
  
  all: xbreaky xbreaky.snd
-@@ -15,22 +15,22 @@ xbreaky:
- 	$(CC) $(LDFLAGS) xbreaky.o -o xbreaky
+ 
+ xbreaky:
+ 	$(CC) $(CFLAGS) -c xbreaky.cpp -o xbreaky.o
+-	$(CC) $(LDFLAGS) xbreaky.o -o xbreaky
++	$(CC) $(LDFLAGS) xbreaky.o -o xbreaky ${LIBS}
  
  xbreaky.snd:
 -	$(GC) $(CFLAGS) -lm -o xbreaky.snd xbreaky.snd.c
-+	$(GC) $(CFLAGS) -lm -lossaudio -o xbreaky.snd xbreaky.snd.c
++	$(GC) $(CFLAGS) -o xbreaky.snd xbreaky.snd.c -lm -lossaudio
  
  install:
 -	for d in $(prefix)/bin $(prefix)/share/pixmaps $(prefix)/man/man6 \
