@@ -1,6 +1,6 @@
---- zap.1.orig	Tue Sep 29 19:39:08 1998
-+++ zap.1	Tue Sep 29 19:42:05 1998
-@@ -0,0 +1,38 @@
+--- zap.1.orig	Sun May 30 15:47:25 1999
++++ zap.1	Sun May 30 16:33:31 1999
+@@ -0,0 +1,49 @@
 +.Dd 1984
 +.Os OpenBSD 2.3
 +.Dt ZAP 1 UPM
@@ -8,20 +8,31 @@
 +.Nm zap
 +.Nd interactive process killer
 +.Sh SYNOPSIS
-+.Nm zap [string [...]]
++.Nm zap [-s NUM] [-y] string [...]]
 +.Sh DESCRIPTION
 +.Nm Zap
-+takes zero or more strings, looks for each in the output of a
++takes one or more strings, looks for each in the output of a
 +.Nm ps
 +command that it runs, and for each process whose
 +.Nm ps
 +line matches the string, prints the line as a prompt.
 +If you reply with a
 +.Nm y,
-+the program attempts to deliver a signal to the given process.
-+If no
++the program attempts to deliver a signal SIGERM to the given process.
++If a zero-length
 +.Nm string
 +is given, then every process will be prompted for.
++.PP
++The 
++.B -y
++option tells the program to just do it, not to ask for confirmation.
++It makes the program non-interactive.
++.PP
++The 
++.B -s
++.I signum
++option takes a numeric (only) argument, which is the signal number
++to send. In the absence of this option, SIGTERM is sent.
 +.Sh EXAMPLES
 +.Nm zap pppd
 +.br

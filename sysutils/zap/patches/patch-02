@@ -1,5 +1,5 @@
 --- system.c.orig	Sat Dec 20 11:08:08 1997
-+++ system.c	Tue Sep 29 19:39:07 1998
++++ system.c	Sun May 30 15:47:24 1999
 @@ -8,7 +8,7 @@
  	char *s;
  {

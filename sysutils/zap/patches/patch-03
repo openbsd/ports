@@ -1,5 +1,5 @@
---- zap-slashproc.c.orig	Tue Sep 29 19:39:07 1998
-+++ zap-slashproc.c	Tue Sep 29 19:39:07 1998
+--- zap-slashproc.c.orig	Sun May 30 15:47:25 1999
++++ zap-slashproc.c	Sun May 30 15:47:25 1999
 @@ -0,0 +1,148 @@
 +/*
 + * zap -- fast kill by name using SVR4 /proc
@@ -8,7 +8,7 @@
 + * The UNIX Programming Environment, 1984.
 + */
 +
-+#ident "$Id: patch-03,v 1.1.1.1 1998/09/29 23:59:18 ian Exp $"
++#ident "$Id: patch-03,v 1.2 1999/05/30 20:44:39 ian Exp $"
 +
 +#include <stdio.h>
 +#include <dirent.h>

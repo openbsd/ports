@@ -1,6 +1,6 @@
 --- zap.c.orig	Sat Dec 20 11:08:09 1997
-+++ zap.c	Fri Oct  2 14:50:18 1998
-@@ -2,18 +2,22 @@
++++ zap.c	Sun May 30 16:19:56 1999
+@@ -2,36 +2,81 @@
  
  #include <stdio.h>
  #include <signal.h>
@@ -18,29 +18,81 @@
 +main(int argc, char **argv)
  {
  	FILE *fin, *popen();
- 	char buf[BUFSIZ];
- 	int pid;
+-	char buf[BUFSIZ];
+-	int pid;
++	char buf[BUFSIZ];	/* a line to read */
++	int errors = 0;		/* for getopt */
++	int c = 0;			/* from getopt */
++	extern int optind;	/* from getopt */
++	extern char* optarg;/* from getopt */
++	int pid;			/* target PID */
++	int interact = 1;	/* ? ask : just do it */
++	int debug = 0;		/* print debugging? (unused) */
++	int signum = SIGTERM;	/* how shall I tell thee? */
  
  	progname = argv[0];
 +	progpid  = getpid();
 +
++	while ((c = getopt(argc, argv, "ds:y")) != EOF) {
++		switch (c) {
++		case 's':
++			signum = atoi(optarg);	/* TODO name lookup like kill(1) */
++			break;
++		case 'd':
++			++debug;
++			break;
++		case 'y':
++			interact = 0;
++			break;
++		case '?':
++		default:
++			errors++;
++			break;
++		}
++	}
++	if (errors || (argc-optind<1)) {
++		(void) fprintf(stderr, "usage: %s [-s signum] processname ...\n", progname);
++		exit(2);
++	}
++
  	if ((fin = popen(ps, "r")) == NULL) {
  		fprintf(stderr, "%s: can't run %s\n", progname, ps);
  		exit(1);
-@@ -21,12 +25,14 @@
+ 	}
  	fgets(buf, sizeof buf, fin);	/* get header line */
  	fprintf(stderr, "%s", buf);
- 	while (fgets(buf, sizeof buf, fin) != NULL)
+-	while (fgets(buf, sizeof buf, fin) != NULL)
 -		if (argc == 1 || strindex(buf, argv[1]) >= 0) {
-+		if (argc == 1 || 
-+			(strindex(buf, argv[1]) >= 0 && atoi(buf) != progpid)) {
- 			buf[strlen(buf)-1] = '\0'; /* suppress \n */
- 			fprintf(stderr, "%s? ", buf);
- 			if (ttyin() == 'y') {
- 				sscanf(buf, "%d", &pid);
+-			buf[strlen(buf)-1] = '\0'; /* suppress \n */
+-			fprintf(stderr, "%s? ", buf);
+-			if (ttyin() == 'y') {
+-				sscanf(buf, "%d", &pid);
 -				kill(pid, SIGKILL);
-+				if (kill(pid, SIGKILL)<0)
++
++	/* Read a line from ps, process it. */
++	while (fgets(buf, sizeof buf, fin) != NULL) {
++		buf[strlen(buf)-1] = '\0'; /* suppress \n */
++		if (strstr(buf, argv[optind]) != NULL && 
++				(pid = atoi(buf)) != progpid) {
++
++			fprintf(stderr, "%s", buf);
++
++			if (interact) {
++				fprintf(stderr, "? ");
++				if (ttyin() == 'y') {
++					if (kill(pid, signum)<0)
++						perror(buf);
++				}
++			} else {
++				fprintf(stderr, "\n");
++				if (kill(pid, signum)<0)
 +					perror(buf);
  			}
  		}
++	}
  	exit(0);
+ }
+ 
+ #include "ttyin2.c"
+-#include "strindex.c"
+ #include "efopen.c"
