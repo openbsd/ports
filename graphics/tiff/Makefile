@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/01/01 21:28:30 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/05 03:59:04 brad Exp $
 
 DISTNAME=	tiff-v3.5.4
 PKGNAME=	tiff-3.5.4
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN="${PREFIX}/bin" \
 DOCDIR=	${PREFIX}/share/doc/tiff
 
 post-install:
-	@${MKDIR} ${DOCDIR}/images
+	${INSTALL_DATA_DIR} ${DOCDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/html/*.html ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/html/images/*.gif ${DOCDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/html/images/*.jpg ${DOCDIR}/images
