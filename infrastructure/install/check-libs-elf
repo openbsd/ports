@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: check-libs-elf,v 1.4 2004/09/18 08:12:11 espie Exp $
+# $OpenBSD: check-libs-elf,v 1.5 2004/11/21 10:39:24 espie Exp $
 
 #  Copyright (c) 2001 Marc Espie
 # 
@@ -40,7 +40,7 @@ sub find_library
 		my $plist = OpenBSD::PackingList->fromfile(installed_info($pkg).CONTENTS, \&OpenBSD::PackingList::LibraryOnly);
 		for my $file (@{$plist->{items}}) {
 			next unless $file->isa('OpenBSD::PackingElement::Lib');
-			if ($file->fullname() =~ m/\Q$libname\E/) {
++			if ($file->fullname() =~ m/\/lib\Q$libname\E\.so/) {
 				push(@list, $plist->{extrainfo}->{subdir});
 				last;
 			}
