@@ -1,4 +1,5 @@
-# $OpenBSD: meta.in,v 1.1.1.1 2003/02/15 14:01:18 espie Exp $
+#! /bin/sh
+# $OpenBSD: meta.in,v 1.2 2004/04/12 10:35:27 matthieu Exp $
 
 # Copyright (c) 2003 Marc Espie.
 # 
