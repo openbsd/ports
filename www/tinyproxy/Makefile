@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/08/12 22:49:34 couderc Exp $
+# $OpenBSD: Makefile,v 1.2 2002/08/27 02:53:29 brad Exp $
 
 COMMENT=		"lightweight HTTP/SSL proxy"
 CATEGORIES=		www
@@ -17,9 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	simple
 
-SYSCONFDIR=		/etc/tinyproxy
+TP_CONFIG=		${SYSCONFDIR}/tinyproxy
 
-CONFIGURE_ARGS+=	--with-config=${SYSCONFDIR}/tinyproxy.conf
+CONFIGURE_ARGS+=	--with-config=${TP_CONFIG}/tinyproxy.conf
+
+SUBST_VARS=		TP_CONFIG
 
 DOCS=			HTTP_ERROR_CODES RFC_INFO
 
