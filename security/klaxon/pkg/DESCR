@@ -1,0 +1,6 @@
+Here's a modification of rexec source that I call klaxon. It is
+extremely useful for detecting portscanner attacks like those perpetrated
+by ISS and SATAN, among others. It also has IDENT (RFC931) support
+for finding out the remote user (where applicable).
+
+WWW: ${HOMEPAGE}
