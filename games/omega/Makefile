@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/28 16:31:47 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/24 14:37:25 lebel Exp $
 
 COMMENT=	"complex rogue-style game of dungeon exploration"
 
 VERSION=	0.90.4
 PKGNAME=	omega-${VERSION}
 DISTNAME=	${PKGNAME}-src
-PORTVERSION=    0.90.4
 CATEGORIES=     games
+NEED_VERSION=	1.474
 MASTER_SITES=   http://www.alcyone.com/binaries/omega/
 
 MAINTAINER=     David Lebel <lebel@openbsd.org>
@@ -20,6 +20,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 WRKDIST=        ${WRKDIR}/omega
 WRKSRC=         ${WRKDIST}
+
+NO_REGRESS=	Yes
 
 ALL_TARGET=
 

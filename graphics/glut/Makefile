@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/20 18:55:24 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/24 14:40:38 lebel Exp $
 
 COMMENT=	"OpenGL Utility Toolkit"
 
 DISTNAME=	glut-3.7
 CATEGORIES=	graphics devel
-NEED_VERSION=	1.405
+NEED_VERSION=	1.474
 MASTER_SITES=	http://reality.sgi.com/opengl/glut3/
 
 HOMEPAGE=	http://reality.sgi.com/opengl/glut3/glut3.html	
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= 	imake
 USE_X11= 		Yes
+NO_REGRESS=		Yes
 
 post-extract:
 	@perl -i -p -e 's/3GLUT/3/;' ${WRKSRC}/man/glut/*.man
