@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 21:03:38 espie Exp $
 
 BROKEN=	"check out gomconfig..."
 DISTNAME=	gom-0.29.103
@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/sound/mixers
 
 
-MAINTAINER=	scott@tranzoa.com
+MAINTAINER=	Scott Robinson <scott@tranzoa.com>
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes

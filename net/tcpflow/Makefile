@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/06 01:41:08 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 21:03:38 espie Exp $
 
 DISTNAME=	tcpflow-0.12
 CATEGORIES=	net
@@ -7,7 +7,7 @@ MASTER_SITES=	ftp://ftp.circlemud.org/pub/jelson/tcpflow/
 
 HOMEPAGE=       http://www.circlemud.org/~jelson/software/tcpflow/
 
-MAINTAINER=	jethro@dqc.org
+MAINTAINER=	Jeremy Jethro <jethro@dqc.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
