@@ -1,0 +1,39 @@
+$OpenBSD: patch-INSTALL,v 1.1 2002/06/19 14:12:38 lebel Exp $
+--- INSTALL.orig	Tue May 21 10:02:18 2002
++++ INSTALL	Tue May 21 10:06:29 2002
+@@ -135,6 +135,8 @@ PrintRequiredFree()
+     if [ "$i" -a -f "$i" ] ; then
+         if [ `uname -s` = "Linux" ] ; then
+           size=`ls -lLn "$i" | ( read perm links owner group size date ; echo $size )`
++        elif [ `uname -s` = "OpenBSD" ] ; then
++          size=`ls -lL "$i" | ( read perm links owner group size date ; echo $size )`
+         else
+           size=`ls -lLon "$i" | ( read perm links owner size date ; echo $size )`
+         fi
+@@ -209,7 +211,7 @@ InstallBin()
+ 
+       case "$product" in
+         Reader)
+-          replacement="$topdir"/"$product"
++          replacement="${TRUEPREFIX}/Acrobat5"/"$product"
+           ;;
+         *)
+           echo "ERROR installing $filename, invalid product name"
+@@ -344,7 +346,7 @@ InstallReader()
+   SearchPlatformTar="$3"
+   CustomPlatformTar="$4"
+ 
+-  OutputLicense "$ReadLicense"
++#  OutputLicense "$ReadLicense"
+   ReadLicense=""
+ 
+   PrintRequiredFree "$ReadTar" "$SearchTar" "$CustomTar" \
+@@ -524,7 +526,7 @@ case "$OSname" in
+       ;;
+     esac
+     ;;
+-  Linux)
++  OpenBSD|Linux)
+     ReadDefaultNum="$ReadIntelLinuxNum"
+     DefaultName="Intel/Linux"
+     ;;
