@@ -1,0 +1,6 @@
+
+NOTES FOR OPENBSD OIDENTD INSTALLATION
+--------------------------------------
+See oidentd(8), oidentd.conf(5), and oidentd_masq.conf(5) for information on
+setting up oidentd.
+

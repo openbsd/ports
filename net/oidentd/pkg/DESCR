@@ -1,0 +1,5 @@
+Oidentd is a highly flexible replacement for the standard ident. 
+It is capable of providing custom responses to ident requests and
+also has nat support for pf-based OpenBSD.
+
+WWW: ${HOMEPAGE}
