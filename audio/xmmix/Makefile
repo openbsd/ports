@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2002/10/24 22:20:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2004/10/08 08:22:28 xsa Exp $
 
 COMMENT=	"Motif-based audio mixer"
 DISTNAME=	xmmix-1.2.2
 CATEGORIES=	audio
 HOMEPAGE=	http://www.ibiblio.org/tkan/xmmix/
-
-MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

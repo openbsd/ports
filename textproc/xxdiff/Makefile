@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/08/13 19:40:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2004/10/08 08:22:29 xsa Exp $
 
 COMMENT=	"graphical file comparator and merge tool"
 
@@ -8,8 +8,6 @@ CATEGORIES=	textproc x11
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=xxdiff/}
 
 HOMEPAGE=	http://xxdiff.sourceforge.net/
-
-MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/02/21 01:18:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2004/10/08 08:22:28 xsa Exp $
 
 COMMENT=	"OpenGL Utility Toolkit"
 
@@ -7,8 +7,6 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.opengl.org/developers/documentation/glut/
 	
 HOMEPAGE=	http://www.opengl.org/resources/libraries/glut.html
-
-MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
 PERMIT_PACKAGE_CDROM=	"incomplete license"
 PERMIT_PACKAGE_FTP=	"incomplete license"

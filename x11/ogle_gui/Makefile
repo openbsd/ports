@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/08/10 11:16:44 xsa Exp $
+# $OpenBSD: Makefile,v 1.10 2004/10/08 08:22:29 xsa Exp $
 
 CATEGORIES=	x11
 
@@ -7,8 +7,6 @@ DISTNAME=	ogle_gui-0.9.2
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
 # Authors can be reached at dvd@dtek.chalmers.se
 MASTER_SITES=	${HOMEPAGE}dist/
-
-MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
 CONFIGURE_STYLE=	gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2004/08/03 18:24:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2004/10/08 08:22:28 xsa Exp $
 
 COMMENT=	"scan ports and fingerprint stack of network hosts"
 
@@ -8,8 +8,6 @@ MASTER_SITES=	${HOMEPAGE}dist/
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.insecure.org/nmap/
-
-MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/09/23 05:09:06 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2004/10/08 08:22:28 xsa Exp $
 
 COMMENT=		"perl interface to query for cddb-information"
 
@@ -8,8 +8,6 @@ CATEGORIES=		audio perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=../by-authors/id/F/FO/FONKIE/}
 
 HOMEPAGE=		http://armin.emx.at/cddb/
-
-MAINTAINER=		Dan Weeks <danimal@danimal.org>
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/08/10 12:42:23 xsa Exp $
+# $OpenBSD: Makefile,v 1.7 2004/10/08 08:22:28 xsa Exp $
 
 COMMENT=	"Cross-platform makefile tool from TrollTech"
 
@@ -6,8 +6,6 @@ DISTNAME=	tmake-1.10
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.trolltech.com/developer/download/tmake.html
-
-MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
 # Permission to use, copy, modify, and distribute
 PERMIT_PACKAGE_CDROM=	Yes

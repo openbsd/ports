@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/28 01:38:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2004/10/08 08:22:29 xsa Exp $
 
 COMMENT=	"TCP dump file analysis tool"
 
@@ -6,8 +6,6 @@ DISTNAME=	tcptrace-6.2.0
 CATEGORIES=	net
 HOMEPAGE=	http://masaka.cs.ohiou.edu/software/tcptrace/
 MASTER_SITES=	${HOMEPAGE}/download/
-
-MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
