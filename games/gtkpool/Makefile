@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/15 15:37:23 reinhard Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/16 19:47:10 brad Exp $
 
 DISTNAME=	gtkpool-0.3.4
 CATEGORIES=	games x11
@@ -8,7 +8,6 @@ MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://gtkpool.seul.org/
 
 LIB_DEPENDS=	gtk.1.2::x11/gtk+
-BUILD_DEPENDS=	gtk-config::x11/gtk+
 
 MAINTAINER=	Peter Valchev <pvalchev@toxiclinux.org>
 
@@ -17,12 +16,14 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
+MAKE_FLAGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
+		LDFLAGS="-lossaudio"
+
 USE_X11=	Yes
-MAKE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}"
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gtkpool ${PREFIX}/bin/gtkpool
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/gtkpool
+	${INSTALL_PROGRAM} ${WRKSRC}/gtkpool ${PREFIX}/bin/gtkpool
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/* ${PREFIX}/lib/gtkpool
 
 .include <bsd.port.mk>
