@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/30 12:56:59 nino Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/09/21 15:32:01 marcm Exp $
 bin/bonobo-moniker-xmldb
 bin/cedit
 include/bonobo-conf/Bonobo_Config.h
@@ -18,14 +18,20 @@ lib/bonobo_confConf.sh
 lib/libbonobo_conf.a
 lib/libbonobo_conf.la
 share/idl/Bonobo_Config.idl
+share/locale/az/LC_MESSAGES/bonobo-conf.mo
 share/locale/da/LC_MESSAGES/bonobo-conf.mo
 share/locale/de/LC_MESSAGES/bonobo-conf.mo
+share/locale/el/LC_MESSAGES/bonobo-conf.mo
 share/locale/es/LC_MESSAGES/bonobo-conf.mo
 share/locale/fr/LC_MESSAGES/bonobo-conf.mo
+share/locale/hu/LC_MESSAGES/bonobo-conf.mo
 share/locale/it/LC_MESSAGES/bonobo-conf.mo
 share/locale/nn/LC_MESSAGES/bonobo-conf.mo
 share/locale/no/LC_MESSAGES/bonobo-conf.mo
 share/locale/pl/LC_MESSAGES/bonobo-conf.mo
+share/locale/pt/LC_MESSAGES/bonobo-conf.mo
+share/locale/pt_BR/LC_MESSAGES/bonobo-conf.mo
+share/locale/sk/LC_MESSAGES/bonobo-conf.mo
 share/locale/sv/LC_MESSAGES/bonobo-conf.mo
 share/locale/tr/LC_MESSAGES/bonobo-conf.mo
 share/locale/zh_TW/LC_MESSAGES/bonobo-conf.mo
@@ -39,6 +45,12 @@ share/oaf/Bonobo_Moniker_xmldb.oaf
 @comment @dirrm share/locale/tr
 @comment @dirrm share/locale/sv/LC_MESSAGES
 @comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sk/LC_MESSAGES
+@comment @dirrm share/locale/sk
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/pt/LC_MESSAGES
+@comment @dirrm share/locale/pt
 @comment @dirrm share/locale/pl/LC_MESSAGES
 @comment @dirrm share/locale/pl
 @comment @dirrm share/locale/no/LC_MESSAGES
@@ -47,14 +59,20 @@ share/oaf/Bonobo_Moniker_xmldb.oaf
 @comment @dirrm share/locale/nn
 @comment @dirrm share/locale/it/LC_MESSAGES
 @comment @dirrm share/locale/it
+@comment @dirrm share/locale/hu/LC_MESSAGES
+@comment @dirrm share/locale/hu
 @comment @dirrm share/locale/fr/LC_MESSAGES
 @comment @dirrm share/locale/fr
 @comment @dirrm share/locale/es/LC_MESSAGES
 @comment @dirrm share/locale/es
+@comment @dirrm share/locale/el/LC_MESSAGES
+@comment @dirrm share/locale/el
 @comment @dirrm share/locale/de/LC_MESSAGES
 @comment @dirrm share/locale/de
 @comment @dirrm share/locale/da/LC_MESSAGES
 @comment @dirrm share/locale/da
+@comment @dirrm share/locale/az/LC_MESSAGES
+@comment @dirrm share/locale/az
 @comment @dirrm share/locale
 @comment @exec mkdir -p %D/share/bonobo-conf/html/bonobo-conf
 @comment @dirrm share/bonobo-conf/html/bonobo-conf
