@@ -1,14 +1,12 @@
-$OpenBSD: patch-src_procmime_c,v 1.1 2001/09/23 19:50:57 naddy Exp $
---- src/procmime.c.orig	Sun Sep 23 19:57:06 2001
-+++ src/procmime.c	Sun Sep 23 19:59:22 2001
-@@ -820,8 +820,8 @@ static GList *procmime_get_mime_type_lis
- 	gchar *p, *delim;
- 	MimeType *mime_type;
- 
--	if ((fp = fopen("/etc/mime.types", "r")) == NULL) {
--		FILE_OP_ERROR("/etc/mime.types", "fopen");
-+	if ((fp = fopen("/var/www/conf/mime.types", "r")) == NULL) {
-+		FILE_OP_ERROR("/var/www/conf/mime.types", "fopen");
- 		return NULL;
- 	}
- 
+$OpenBSD: patch-src_procmime_c,v 1.2 2001/11/28 22:45:17 naddy Exp $
+--- src/procmime.c.orig	Mon Nov 26 11:37:18 2001
++++ src/procmime.c	Mon Nov 26 11:37:45 2001
+@@ -910,7 +910,7 @@ static GHashTable *procmime_get_mime_typ
+ 		mime_type_list =
+ 			procmime_get_mime_type_list(SYSCONFDIR "/mime.types");
+ 		if (!mime_type_list) {
+-			list = procmime_get_mime_type_list("/etc/mime.types");
++			list = procmime_get_mime_type_list("/var/www/conf/mime.types");
+ 			mime_type_list = g_list_concat(mime_type_list, list);
+ 		}
+ 		dir = g_strconcat(get_home_dir(), G_DIR_SEPARATOR_S, RC_DIR,
