@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/29 20:41:07 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2003/08/22 18:03:44 espie Exp $
 
 COMMENT=	"revised^5 report on scheme"
 
-CATEGORIES=	lang
+CATEGORIES=	lang books
 
 DISTNAME=	r5rs
 PKGNAME=	${DISTNAME}-19980421
