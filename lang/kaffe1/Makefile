@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 1999/02/18 02:37:34 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1999/02/21 04:26:14 marc Exp $
 #
 # Relevant URLs:	http://www.transvirtual.com/kaffe/
 
 DISTNAME=       kaffe-1.0.b3
 CATEGORIES=	lang
+
+NEED_VERSION=	1.64
 
 MASTER_SITES=	ftp://ftp.transvirtual.com/pub/kaffe/
 

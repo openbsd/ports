@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 1999/01/27 00:22:35 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1999/02/21 04:26:15 marc Exp $
 #
 
 DISTNAME=	amanda-2.4.1p1
 CATEGORIES=	misc
+
+NEED_VERSION=	1.64
 
 MAINTAINER=	marc@OpenBSD.ORG
 

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 1999/02/18 02:37:36 marc Exp $
-# Version required: 2.2.0
-# Date created: 3 nov 98
-# Whom: Marc Espie (espie@openbsd.org)
+# $OpenBSD: Makefile,v 1.4 1999/02/21 04:26:15 marc Exp $
 #
-
 
 DISTNAME= rsync-2.2.1
 CATEGORIES=net
+
+NEED_VERSION=		1.64
 
 MAINTAINER=		espie@openbsd.org
 

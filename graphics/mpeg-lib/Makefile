@@ -1,13 +1,10 @@
-# OpenBSD makefile for:	mpeg_lib
-# Version required:	1.2.1
-# Date created:		December 17, 1997
-# Whom:			Don Schmidt
-#
-# $OpenBSD: Makefile,v 1.3 1999/02/18 02:37:30 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1999/02/21 04:26:12 marc Exp $
 #
 
 DISTNAME=	mpeg_lib-1.2.1
 CATEGORIES=	graphics
+
+NEED_VERSION=	1.64
 
 MAINTAINER=	marc@OpenBSD.ORG
 

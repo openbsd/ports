@@ -1,16 +1,12 @@
-# New ports collection makefile for: rsaref
-# Version required:     2.0
-#
-# Date created:         2 December 1997
-# Whom:                 niklas
-#
-# $OpenBSD: Makefile,v 1.4 1999/02/18 02:37:37 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1999/02/21 04:26:15 marc Exp $
 # $FreeBSD: Makefile,v 1.3 1997/07/17 15:12:58 max Exp $
 #
 
 PKGNAME=        rsaref-2.0
 DISTNAME=       rsaref20.1996
 CATEGORIES=     security
+
+NEED_VERSION=	1.64
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 
 MASTER_SITES=   ftp://utopia.hacktic.nl/pub/replay/pub/crypto/LIBS/rsa/

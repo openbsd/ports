@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 1999/02/19 05:01:47 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1999/02/21 04:26:10 marc Exp $
 #
 
 DISTNAME=		ImageMagick-4.2.0
 CATEGORIES=     	graphics x11
+
+NEED_VERSION=		1.64
 
 MAINTAINER=		marc@openbsd.org
 

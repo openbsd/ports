@@ -1,24 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 1999/02/18 02:37:39 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1999/02/21 04:26:16 marc Exp $
 #
 
-# What port/package will be created
-#
 DISTNAME=		gtk+-1.0.6
 CATEGORIES=     	x11
 
-# where to send bitches about this port
-#
+NEED_VERSION=		1.64
+
 MAINTAINER=		marc@openbsd.org
 
-# where the source files and patches can be fetched
-#
 MASTER_SITES=		ftp://ftp.gimp.org/pub/gtk/v1.0/ \
 		ftp://ftp.ameth.org/pub/mirrors/ftp.gimp.org/pub/gtk/v1.0/
 
-# build/configuration variables
-#
 USE_X11=		yes
-
 GNU_CONFIGURE=		yes
 .if !defined(NO_SHARED_LIBS)
 CONFIGURE_ARGS+=	--enable-shared

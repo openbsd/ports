@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 1998/10/20 08:39:44 form Exp $
+# $OpenBSD: Makefile,v 1.13 1999/02/21 04:26:10 marc Exp $
 # FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp
 #
 
 DISTNAME=	postgresql-6.3.2
 CATEGORIES=	databases
 
+NEED_VERSION=	1.64
 NO_PACKAGE=	"Requires pgsql uid"
 
 MAINTAINER=	form@OpenBSD.ORG

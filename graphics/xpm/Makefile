@@ -1,14 +1,10 @@
-# OpenBSD makefile for:	xpm
-# Version required:     3.4j
-# Date created:		24 November 1997
-# Whom:			todd@OpenBSD.org
-#
-# $OpenBSD: Makefile,v 1.4 1998/12/16 22:53:29 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1999/02/21 04:26:13 marc Exp $
 #
 
 DISTNAME=       xpm-3.4k
 CATEGORIES=	graphics x11
 
+NEED_VERSION=	1.64
 COMES_WITH=	2.3
 MIRROR_DISTFILE=no
 

@@ -1,9 +1,4 @@
-# OpenBSD makefile for:	tiff34
-# Version required:	3.4
-# Date created:	 	December 18, 1997	
-# Whom:			Don Schmidt
-#
-# $OpenBSD: Makefile,v 1.7 1998/08/23 04:30:30 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1999/02/21 04:26:13 marc Exp $
 #
 
 # NOTE:
@@ -19,6 +14,8 @@
 DISTNAME=	tiff-v3.4
 PKGNAME=	tiff-3.4
 CATEGORIES=	graphics
+
+NEED_VERSION=	1.64
 
 MAINTAINER=	don@OpenBSD.ORG
 

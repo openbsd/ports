@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 1998/10/06 22:50:46 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1999/02/21 04:26:09 marc Exp $
 #
 
 DISTNAME=       gsm-1.0.10
 CATEGORIES=	audio
+
+NEED_VERSION=	1.64
 
 MAINTAINER=	angelos@openbsd.org
 

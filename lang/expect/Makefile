@@ -1,12 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 1999/02/18 02:37:33 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1999/02/21 04:26:13 marc Exp $
 #
 
 DISTNAME=	expect
 PKGNAME=	expect-5.26
 CATEGORIES=	lang tcl80 tk80
-#MASTER_SITES=	http://expect.nist.gov/
+
+NEED_VERSION=	1.64
 
 MAINTAINER=	niklas@openbsd.org
+
+# Expect is now at 5.27, un-comment when port updated
+#MASTER_SITES=	http://expect.nist.gov/
 
 LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
 

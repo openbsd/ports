@@ -1,13 +1,10 @@
-# OpenBSD makefile for:	faces-1.6.1
-# Version required:	1.6.1
-# Date created:		December 4, 1997
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.2 1998/04/12 03:16:36 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/02/21 04:26:14 marc Exp $
 #
 
 DISTNAME=	faces-1.6.1
 CATEGORIES=	mail
+
+NEED_VERSION=	1.64
 NO_CDROM=	"NOFEE:	Can not sell"
 
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/ \

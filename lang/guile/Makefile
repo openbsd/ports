@@ -1,5 +1,10 @@
+# $OpenBSD: Makefile,v 1.3 1999/02/21 04:26:13 marc Exp $
+#
+
 DISTNAME=		guile-1.3
 CATEGORIES=		lang
+
+NEED_VERSION=		1.64
 
 MAINTAINER=             br@spooky.net
 

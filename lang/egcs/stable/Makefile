@@ -3,13 +3,15 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.10 1999/02/18 02:37:33 marc Exp $
+# $OpenBSD: Makefile,v 1.11 1999/02/21 04:26:13 marc Exp $
 #
 
 # This is a configuration file for egcs, stable release.
 
 CATEGORIES=	lang 
 MAINTAINER=	Marc.Espie@openbsd.org
+
+NEED_VERSION=	1.64
 
 # this will improve over time as more and more architectures are handled
 # with some help from Jason L. Wright for sparc...

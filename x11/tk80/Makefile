@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 1999/02/18 02:37:41 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1999/02/21 04:26:17 marc Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 #
 
 DISTNAME=	tk8.0.4
 PKGNAME=	tk-8.0.4
 CATEGORIES=	x11 tk80
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
+
+NEED_VERSION=	1.64
 
 MAINTAINER=	niklas@openbsd.org
+
+MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
 LIB_DEPENDS=	tcl80.1.4:${PORTSDIR}/lang/tcl80
 

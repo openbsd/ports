@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 1998/09/11 21:11:07 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1999/02/21 04:26:12 marc Exp $
 #
 
 DISTNAME=       libpng-1.0.2
 PKGNAME=        png-1.0.2
 CATEGORIES=     graphics
-MASTER_SITES=   ftp://ftp.uu.net/graphics/png/src/
+
+NEED_VERSION=	1.64
 
 MAINTAINER=     angelos@openbsd.org
+
+MASTER_SITES=   ftp://ftp.uu.net/graphics/png/src/
 
 post-extract:
 	@chmod +w ${WRKSRC}/scripts

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/02/18 02:37:29 marc Exp $
+# $OpenBSD: Makefile,v 1.10 1999/02/21 04:26:11 marc Exp $
 #
 
 # What port/package will be created
@@ -6,6 +6,8 @@
 DISTNAME=		gimp-1.0.2
 EXTRANAME=		gimp-data-extras-1.0.0
 CATEGORIES=     	graphics x11
+
+NEED_VERSION=		1.64
 
 MAINTAINER=		dugsong@openbsd.org
 

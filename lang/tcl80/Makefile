@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 1999/02/18 01:28:30 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1999/02/21 04:26:14 marc Exp $
 # $FreeBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 #
 
 DISTNAME=	tcl8.0.4
 PKGNAME=	tcl-8.0.4
 CATEGORIES=	lang tcl80
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
+
+NEED_VERSION=	1.64
 
 MAINTAINER=	niklas@openbsd.org
+
+MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
 WRKSRC=		${WRKDIR}/tcl8.0.4/unix
 GNU_CONFIGURE=	yes

@@ -1,9 +1,4 @@
-# OpenBSD makefile for:	qt
-# Version required:	1.40
-# Date created:		9 January 1998
-# Whom:			Don Schmidt
-#
-# $OpenBSD: Makefile,v 1.8 1999/02/18 02:37:40 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1999/02/21 04:26:16 marc Exp $
 # FreeBSD: Makefile,v 1.18 1998/07/20 16:51:14 andreas Exp
 #
 
@@ -11,9 +6,12 @@ MAJ=		1
 MIN=		41
 DISTNAME=	qt-${MAJ}.${MIN}
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.troll.no/qt/source/
+
+NEED_VERSION=	1.64
 
 MAINTAINER=	form@OpenBSD.ORG
+
+MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 #
 # MesaGL library support is currently in progress...

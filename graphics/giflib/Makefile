@@ -1,13 +1,10 @@
-# OpenBSD makefile for:	giflib - Gif library
-# Version required:	3.0
-# Date created:		1998-09-08
-# Whom:			Yannick Cote	
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/11/19 00:41:20 yanick Exp $
+# $OpenBSD: Makefile,v 1.2 1999/02/21 04:26:11 marc Exp $
 #
 
 DISTNAME=		giflib-3.0
 CATEGORIES=		graphics
+
+NEED_VERSION=		1.64
 
 MAINTAINER=		yanick@fries.net	
 

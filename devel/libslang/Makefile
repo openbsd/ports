@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 1998/11/20 03:42:59 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1999/02/21 04:26:10 marc Exp $
 #
 
 DISTNAME=       slang1.2.2
 PKGNAME=        libslang-1.2.2
 CATEGORIES=	devel
+
+NEED_VERSION=	1.64
 
 MAINTAINER=     todd@OpenBSD.org
 
