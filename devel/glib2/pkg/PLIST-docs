@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST-docs,v 1.5 2004/06/22 18:01:25 marcm Exp $
+@comment $OpenBSD: PLIST-docs,v 1.6 2004/08/08 17:12:55 marcm Exp $
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/glib/
 share/gtk-doc/html/glib/glib-Arrays.html
 share/gtk-doc/html/glib/glib-Asynchronous-Queues.html
 share/gtk-doc/html/glib/glib-Atomic-Operations.html
@@ -76,6 +79,7 @@ share/gtk-doc/html/glib/right.png
 share/gtk-doc/html/glib/style.css
 share/gtk-doc/html/glib/tools.html
 share/gtk-doc/html/glib/up.png
+share/gtk-doc/html/gobject/
 share/gtk-doc/html/gobject/GTypeModule.html
 share/gtk-doc/html/gobject/GTypePlugin.html
 share/gtk-doc/html/gobject/glib-genmarshal.html
@@ -104,7 +108,3 @@ share/gtk-doc/html/gobject/rn01.html
 share/gtk-doc/html/gobject/rn02.html
 share/gtk-doc/html/gobject/style.css
 share/gtk-doc/html/gobject/up.png
-@dirrm share/gtk-doc/html/gobject
-@dirrm share/gtk-doc/html/glib
-@dirrm share/gtk-doc/html
-@dirrm share/gtk-doc
