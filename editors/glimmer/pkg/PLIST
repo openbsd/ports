@@ -1,0 +1,88 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/06/13 12:37:07 nino Exp $
+bin/glimmer
+bin/glimmerout
+@comment share/glimmer/docs/AUTHORS
+@comment share/glimmer/docs/COPYING
+@comment share/glimmer/docs/ChangeLog
+@comment share/glimmer/docs/NEWS
+@comment share/glimmer/docs/PROPS
+@comment share/glimmer/docs/README
+@comment share/glimmer/docs/TODO
+share/glimmer/languages/ada.lang
+share/glimmer/languages/asp.lang
+share/glimmer/languages/bash.lang
+share/glimmer/languages/c.lang
+share/glimmer/languages/cpp.lang
+share/glimmer/languages/dtml.lang
+share/glimmer/languages/fortran.lang
+share/glimmer/languages/html.lang
+share/glimmer/languages/java.lang
+share/glimmer/languages/js.lang
+share/glimmer/languages/lang.lang
+share/glimmer/languages/latex.lang
+share/glimmer/languages/make.lang
+share/glimmer/languages/ocaml.lang
+share/glimmer/languages/oolong.lang
+share/glimmer/languages/perl.lang
+share/glimmer/languages/php.lang
+share/glimmer/languages/po.lang
+share/glimmer/languages/python.lang
+share/glimmer/languages/ruby.lang
+share/glimmer/languages/scheme.lang
+share/glimmer/languages/sgml.lang
+share/glimmer/languages/sql.lang
+share/glimmer/languages/tcltk.lang
+share/glimmer/languages/wml.lang
+share/glimmer/languages/x86.lang
+share/glimmer/languages/xhtml-trans.lang
+share/glimmer/languages/xml.lang
+share/glimmer/languages/z80.lang
+share/glimmer/scripts/Bookmarks.py
+share/glimmer/scripts/Delete_To_End.py
+share/glimmer/scripts/Delete_To_Start.py
+share/glimmer/scripts/FileSelector.py
+share/glimmer/scripts/Global.py
+share/glimmer/scripts/ISO2HTML.py
+share/glimmer/scripts/Replace_Spaces.py
+share/glimmer/scripts/Replace_Tabs.py
+share/glimmer/scripts/To_Lower.py
+share/glimmer/scripts/To_Upper.py
+share/gnome/apps/Development/glimmer.desktop
+share/gnome/help/glimmer/C/bugs.html
+share/gnome/help/glimmer/C/customize.html
+share/gnome/help/glimmer/C/faq.html
+share/gnome/help/glimmer/C/gpl.html
+share/gnome/help/glimmer/C/index.html
+share/gnome/help/glimmer/C/menus.html
+share/gnome/help/glimmer/C/mission.html
+share/gnome/help/glimmer/C/preferences.html
+share/gnome/help/glimmer/C/properties.html
+share/gnome/help/glimmer/C/sessions.html
+share/gnome/help/glimmer/C/topic.dat
+share/locale/de/LC_MESSAGES/glimmer.mo
+share/locale/es/LC_MESSAGES/glimmer.mo
+share/locale/ja/LC_MESSAGES/glimmer.mo
+share/locale/sv/LC_MESSAGES/glimmer.mo
+share/pixmaps/glimmer-icon.png
+share/pixmaps/glimmer-splash.png
+share/pixmaps/glimmer-title.png
+@comment @dirrm share/pixmaps
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale
+@dirrm share/gnome/help/glimmer/C
+@dirrm share/gnome/help/glimmer
+@comment @dirrm share/gnome/help
+@comment @dirrm share/gnome/apps/Development
+@comment @dirrm share/gnome/apps
+@comment @dirrm share/gnome
+@dirrm share/glimmer/scripts
+@dirrm share/glimmer/languages
+@comment @dirrm share/glimmer/docs
+@dirrm share/glimmer
