@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2003/11/03 20:24:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.174 2003/11/13 18:54:44 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -59,6 +59,7 @@
      SUBDIR += gentoo
      SUBDIR += gnome
      SUBDIR += gnomemm
+     SUBDIR += goggles
      SUBDIR += golem
      SUBDIR += gtk+
      SUBDIR += gtk+2
