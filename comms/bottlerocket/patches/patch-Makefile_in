@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2002/06/05 20:28:21 jason Exp $
+--- Makefile.in.orig	Sat Jul 17 15:03:14 1999
++++ Makefile.in	Wed Jun  5 15:43:12 2002
+@@ -39,6 +39,10 @@ CC=@CC@
+ 
+ # DEFS += -DTIOCM_FOR_0=TIOCM_ST
+ 
++DESTDIR=
++
++all: br
++
+ br: br_cmd.o br.o
+ 	${CC} ${CFLAGS} ${DEFS} -o br br.o br_cmd.o
+ 
+@@ -49,8 +53,8 @@ br_cmd.o: ${srcdir}/br_cmd.c ${srcdir}/b
+ 	${CC} ${CFLAGS} ${DEFS} -c ${srcdir}/br_cmd.c
+ 
+ install: br
+-	${INSTALL} -d -m 755 ${bindir}
+-	${INSTALL} -m 555 br ${bindir}
++	${INSTALL} -d -m 755 ${DESTDIR}${bindir}
++	${INSTALL} -m 555 br ${DESTDIR}${bindir}
+ 
+ clean:
+ 	-rm -f *.o br

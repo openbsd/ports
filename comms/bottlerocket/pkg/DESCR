@@ -1,0 +1,7 @@
+BottleRocket is a command-line interface for Unix systems to
+use the X.10 FireCracker kit. It is easy to use, has all of the
+major (non-gui) functionality of the Windows interface, is  
+easy to call from scripts and the backend code is made to be
+easily linked into other programs.
+
+WWW: ${HOMEPAGE}
