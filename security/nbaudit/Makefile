@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/09 04:11:55 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/09/20 13:26:08 form Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/02/14 04:10:30 obrien Exp $
 
 DISTNAME=	nat10
 PKGNAME=	nbaudit-1.0
 CATEGORIES=	security net
-MASTER_SITES=	ftp://ftp.secnet.com/pub/tools/nat10/
+MASTER_SITES=	ftp://ftp.auscert.org.au/pub/coast/mirrors/ftp.secnet.com/tools/nat10/
 
 MAINTAINER=	ports@openbsd.org
 
