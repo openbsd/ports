@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/23 16:19:28 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/25 23:22:06 naddy Exp $
 			
 COMMENT=		"Darwin Streaming Server"
 COMMENT-admin=		"Darwin Streaming Server, Admin Interface"
@@ -41,19 +41,14 @@ EXAMPLESDIR=	${PREFIX}/share/examples/dss
 ADMINHTMLDIR=	${PREFIX}/share/dss/AdminHtml
 DOCDIR=		${PREFIX}/share/doc/dss
 
-do-fetch:
-	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
-	   echo "" ; \
-	   echo "  The source to this port may not be automatically fetched" ; \
-	   echo "  due to licensing restrictions. You MUST fetch the source" ; \
-	   echo "  from http://developer.apple.com/darwin/projects/streaming/ "; \
-	   echo "  manually."; \
-	   echo "" ; \
-	   echo "  Once ${DISTFILES} has been downloaded, move it to"; \
-	   echo "  ${DISTDIR} and then restart this build." ; \
-	   echo "" ; \
-	   exit 1 ; \
-	fi
+FETCH_MANUALLY=	"The source to this port may not be automatically fetched" \
+		"due to licensing restrictions. You MUST fetch the source" \
+		"from http://developer.apple.com/darwin/projects/streaming/ " \
+		"manually." \
+		"" \
+		"Once ${DISTFILES} has been downloaded, move it to" \
+		"${DISTDIR} and then restart this build." \
+		""
 
 post-patch:
 	@find ${WRKSRC} -type f | xargs perl -pi -e \

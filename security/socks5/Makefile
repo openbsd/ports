@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2002/10/28 17:35:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2003/07/25 23:22:06 naddy Exp $
 
 COMMENT=	"SOCKS v5 application layer gateway and clients"
 
@@ -34,16 +34,11 @@ WRKDIST=	${WRKDIR}/${DISTNAME}
 
 NO_REGRESS=	Yes
 
-do-fetch:
-	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
-		echo ""; \
-		echo "NEC requires that you grab the dist files from their"; \
-		echo "web site at ${HOMEPAGE}."; \
-		echo "Please make sure you have ${DISTNAME}${EXTRACT_SUFX}"; \
-		echo "in ${DISTDIR} and run make again."; \
-		echo ""; \
-		exit 1;\
-	fi
+FETCH_MANUALLY=	"NEC requires that you grab the dist files from their" \
+		"web site at ${HOMEPAGE}." \
+		"Please make sure you have ${DISTNAME}${EXTRACT_SUFX}" \
+		"in ${DISTDIR} and run make again." \
+		""
 
 post-build:
 	@if [ ! x"${INSTALL_RUNSOCKS}" = "x" ]; then \
