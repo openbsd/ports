@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/20 15:25:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/03/25 22:04:07 naddy Exp $
 
+COMMENT=	"portable audio output library"
 DISTNAME=	libao-0.6.0
 CATEGORIES=    	audio
-NEED_VERSION=	1.359
+NEED_VERSION=	1.363
 HOMEPAGE=	http://www.vorbis.com
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>

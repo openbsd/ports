@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/20 15:25:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/25 22:04:11 naddy Exp $
 
+COMMENT=	"play, encode, and manage Ogg Vorbis files"
 DISTNAME=	vorbis-tools-1.0beta4
 CATEGORIES=    	audio
-NEED_VERSION=	1.359
+NEED_VERSION=	1.363
 HOMEPAGE=	http://www.vorbis.com
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
