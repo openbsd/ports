@@ -6,3 +6,5 @@ Exports to mutt alias, html, pine, gcrd (GnomeCard), csv, elm
 alias, and plain text.
 
 It is nice for querying from within mutt.
+
+WWW: ${HOMEPAGE}
