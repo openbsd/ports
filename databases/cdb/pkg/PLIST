@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/16 07:31:18 camield Exp $
+bin/cdbdump
+bin/cdbget
+bin/cdbmake
+bin/cdbmake-12
+bin/cdbmake-sv
+bin/cdbstats
+bin/cdbtest
+include/cdb.h
+lib/libcdb.a
