@@ -1,17 +1,6 @@
 *** sz.c.orig	Fri Nov 21 13:13:53 1997
 --- sz.c	Fri Nov 21 13:16:37 1997
 ***************
-*** 1,4 ****
-! #define VERSION "3.46 08-11-97"
-  #define PUBDIR "/usr/spool/uucppublic"
-  
-  /*
---- 1,4 ----
-! #define VERSION "3.46/gene 08-11-97"
-  #define PUBDIR "/usr/spool/uucppublic"
-  
-  /*
-***************
 *** 192,208 ****
   
   STATIC jmp_buf intrjmp;	/* For the interrupt on RX CAN */
@@ -137,24 +126,6 @@
   	mode(0);
   	if(errcnt || Exitcode)
   		exit(1);
-***************
-*** 465,472 ****
-  #ifndef REGISTERED
-  	/* Removing or disabling this code without registering is theft */
-  	if (!Usevhdrs)  {
-! 		printf("\n\n\nPlease read the License Agreement in sz.doc\n");
-! 		fflush(stdout);
-  		sleep(10);
-  	}
-  #endif
---- 468,474 ----
-  #ifndef REGISTERED
-  	/* Removing or disabling this code without registering is theft */
-  	if (!Usevhdrs)  {
-! 		fprintf(stderr, "\n\n\nPlease read the License Agreement in sz.doc\n");
-  		sleep(10);
-  	}
-  #endif
 ***************
 *** 501,508 ****
   	bytcnt = maxbytcnt = -1;

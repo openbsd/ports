@@ -1,17 +1,6 @@
 *** rz.c.orig	Fri Nov 21 13:13:51 1997
 --- rz.c	Fri Nov 21 13:13:51 1997
 ***************
-*** 1,4 ****
-! #define VERSION "3.47 08-11-97"
-  #define PUBDIR "/usr/spool/uucppublic"
-  
-  /*
---- 1,4 ----
-! #define VERSION "3.47/gene 11-21-97"
-  #define PUBDIR "/usr/spool/uucppublic"
-  
-  /*
-***************
 *** 174,179 ****
 --- 174,181 ----
   int Zctlesc;		/* Encode control characters */
