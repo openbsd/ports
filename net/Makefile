@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.251 2003/02/03 19:19:42 lebel Exp $
+# $OpenBSD: Makefile,v 1.252 2003/02/20 20:39:55 couderc Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -210,6 +210,7 @@
      SUBDIR += unison
      SUBDIR += uucp
      SUBDIR += vicq
+     SUBDIR += vsftpd
      SUBDIR += vtun
      SUBDIR += wget
      SUBDIR += wide-dhcp
