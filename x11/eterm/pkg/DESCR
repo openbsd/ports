@@ -1,3 +1,5 @@
 Eterm is a color vt102 terminal emulator, with support for
 transparency and theme support, amongst other things. It runs
 best under Enlightment, though it works just about anywhere.
+
+WWW: ${HOMEPAGE}
