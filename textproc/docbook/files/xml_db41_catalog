@@ -25,3 +25,4 @@ PUBLIC "ENT/ISO 8879:1986//ENTITIES Added Math Symbols: Relations//EN" "ent/iso-
 PUBLIC "ENT/ISO 8879:1986//ENTITIES Box and Line Drawing//EN" "ent/iso-box.ent"
 PUBLIC "ENT/ISO 8879:1986//ENTITIES Russian Cyrillic//EN" "ent/iso-cyr1.ent"
 PUBLIC "ENT/ISO 8879:1986//ENTITIES Non-Russian Cyrillic//EN" "ent/iso-cyr2.ent"
+SYSTEM "http://www.oasis-open.org/docbook/xml/4.1/docbookx.dtd" "docbookx.dtd"
