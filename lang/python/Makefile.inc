@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2002/02/15 19:55:14 matt Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2002/02/25 21:25:37 matt Exp $
 
 COMMENT=	"interpreted object-oriented programming language"
 COMMENT-tests=	"Python testsuite"
@@ -98,7 +98,6 @@ FULLPKGNAME-expat=	python-expat-${VERSION}${PATCHLEVEL}${FLAVOR_EXT}
 CONFIGURE_STYLE= autoconf dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-fpectl --with-threads --without-pymalloc
-CONFIGURE_ENV+=  LDFLAGS='-L${WRKSRC}' OPT='${CFLAGS}' # -fPIC == Zope crash
 
 REGRESS_TARGET=	test
 
@@ -114,16 +113,17 @@ SED_PLIST+=-e '/%%mm%%/r${PKGDIR}/PFRAG.mm' -e '//d'
 
 .if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:U} == YES
 NOSHARED=	\#
-#CONFIGURE_ENV+=  OPT='${CFLAGS} -fPIC' LDFLAGS='-L${WRKSRC}'
-#.else
-#CONFIGURE_ENV+= OPT='${CFLAGS} -fPIC' LDFLAGS='-L${WRKSRC}'
-#MAKE_FLAGS+= MAJOR=0 MINOR=0 LDLIBRARY=libpython2.1.so.0.0 \
-#	LD_LIBRARY_PATH=${WRKSRC}
-#FAKE_FLAGS+= MAJOR=0 MINOR=0 LDLIBRARY=libpython2.1.so.0.0 \
-#	LD_LIBRARY_PATH=${WRKSRC} RANLIB=:
+CONFIGURE_ENV+=	OPT='${CFLAGS}' LDFLAGS='-L${WRKSRC}'
+.else
+CONFIGURE_ENV+= OPT='${CFLAGS} -DTHREAD_STACK_SIZE=0x20000 -fPIC' \
+		LDFLAGS='-L${WRKSRC}'
+MAKE_FLAGS+=	MAJOR=0 MINOR=0 LDLIBRARY=libpython${VERSION}.so.0.0 \
+		LD_LIBRARY_PATH=${WRKSRC}
+FAKE_FLAGS+=	MAJOR=0 MINOR=0 LDLIBRARY=libpython${VERSION}.so.0.0 \
+		LD_LIBRARY_PATH=${WRKSRC} RANLIB=:
 .endif
 
-#ALL_TARGET=	all ./Lib/plat-openbsd3
+ALL_TARGET=	all ./Lib/plat-openbsd3
 
 patch:
 
@@ -142,9 +142,9 @@ post-install:
 	@strip ${PREFIX}/bin/python
 	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python${VERSION}; \
 		tar -xf -)
-#	${INSTALL_DATA} ${WRKSRC}/libpython${VERSION}.a \
-#		${PREFIX}/lib/python${VERSION}/config
-#	@if [ -f ${PREFIX}/lib/python${VERSION}/config/libpython${VERSION}.so.0.0 ]; then \
-#		cd ${PREFIX}/lib && ln -s python${VERSION}/config/libpython${VERSION}.so.0.0; \
-#	fi
+	${INSTALL_DATA} ${WRKSRC}/libpython${VERSION}.a \
+		${PREFIX}/lib/python${VERSION}/config
+	@if [ -f ${PREFIX}/lib/python${VERSION}/config/libpython${VERSION}.so.0.0 ]; then \
+		cd ${PREFIX}/lib && ln -s python${VERSION}/config/libpython${VERSION}.so.0.0; \
+	fi
 
