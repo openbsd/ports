@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/11/18 13:49:20 naddy Exp $
+bin/cscope
+man/man1/cscope.1
