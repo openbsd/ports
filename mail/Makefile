@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.127 2004/10/11 00:52:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.128 2004/11/08 21:58:04 naddy Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
      SUBDIR += abook
      SUBDIR += adcomplain
+     SUBDIR += akpop3d
      SUBDIR += amavisd-new
      SUBDIR += asmail
      SUBDIR += bmf
