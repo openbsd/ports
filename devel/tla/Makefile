@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/11/24 00:11:04 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/01/15 14:42:42 espie Exp $
 
 COMMENT=	"original Arch source control management CLI written in C"
 
@@ -19,8 +19,8 @@ WANTLIB=		c m
 MASTER_SITES=	${MASTER_SITE_GNU:=gnu-arch/} \
 		http://regexps.srparish.net/src/tla/
 
-RUN_DEPENDS=	::textproc/gdiff \
-		::archivers/gtar
+RUN_DEPENDS=	:gdiff-*:textproc/gdiff \
+		:gtar-*:archivers/gtar
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GMAKE=	Yes
