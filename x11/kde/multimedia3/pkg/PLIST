@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/12/12 11:33:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2004/12/14 10:48:42 espie Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/kaboodle
@@ -331,7 +331,7 @@ lib/libkdeinit_noatun.so
 lib/libkmidlib.la
 @lib lib/libkmidlib.so.0.0
 lib/libmpeg-0.3.0.so
-lib/libmpeg.la
+@comment lib/libmpeg.la
 lib/libmpeg.so
 lib/libnoatun.la
 @lib lib/libnoatun.so.3.0
