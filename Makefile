@@ -1,14 +1,17 @@
-# $OpenBSD: Makefile,v 1.39 2003/05/10 13:28:08 avsm Exp $
+# $OpenBSD: Makefile,v 1.40 2003/05/12 22:15:53 pb Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
 PKGPATH=
-.if defined(key) || defined(category) || defined(author)
+.if defined(key) || defined(name) || defined(category) || defined(author)
 
 # set up subdirs from the index, assume it's up-to-date
 _CMD=perl ${.CURDIR}/infrastructure/build/index-retrieve index='${.CURDIR}/INDEX'
 .  if defined(key)
 _CMD+=key='${key}'
+.  endif
+.  if defined(name)
+_CMD+=maintainer='${name}'
 .  endif
 .  if defined(category)
 _CMD+=category='${category}'
@@ -84,11 +87,15 @@ print-licenses: ${.CURDIR}/INDEX
 	@awk -F\| '{printf("%-40.39s%-3.2s%-3.2s%-3.2s%-3.2s%-25.25s\n",$$2,$$12,$$13,$$14,$$15,$$6);}' < ${.CURDIR}/INDEX
 
 search:	${.CURDIR}/INDEX
-.if !defined(key)
-	@echo "The search target requires a keyword parameter,"
-	@echo "e.g.: \"make search key=somekeyword\""
+.if !defined(key) && !defined(name)
+	@echo "The search target requires a keyword or name parameter,"
+	@echo "e.g.: \"make search key=somekeyword\" \"make search name=somename\""
 .else
+. if defined(key)
 	@egrep -i -- "${key}" ${.CURDIR}/INDEX | awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nL-deps:\t%s\nB-deps:\t%s\nR-deps:\t%s\nArchs:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9, $$10, $$11); }'
+. else
+	@awk -F\| '$$1 ~ /${name}/ { printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nL-deps:\t%s\nB-deps:\t%s\nR-deps:\t%s\nArchs:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9, $$10, $$11); }' ${.CURDIR}/INDEX
+. endif
 .endif
 
 
