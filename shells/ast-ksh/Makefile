@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2002/06/23 11:58:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2002/06/28 14:24:13 naddy Exp $
 
 COMMENT=	"official AT&T release of KornShell 93"
 
 PKGNAME=	ast-ksh-${VERSION:S/-//g}
-VERSION=	2002-06-14
+VERSION=	2002-06-28
 CATEGORIES=	shells
 NEED_VERSION=	1.515
 HOMEPAGE=	http://www.kornshell.com/
@@ -29,7 +29,7 @@ MAKE_ENV+=	LDFLAGS=-static
 WRKDIST=	${WRKDIR}
 
 do-build:
-	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ./bin/package make ksh93
+	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ./bin/package make
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/arch/openbsd.${MACHINE_ARCH}/bin/ksh \
