@@ -1,0 +1,7 @@
+$OpenBSD: SECURITY,v 1.1 2000/10/30 13:54:51 espie Exp $
+
+There are lots of tmpnam() warnings in ddd.
+Most are temporary files that are used locally.
+A few are passed off to an external gnuplot process.
+Fortunately, gnuplot has no compunction about writing over 
+an existing file, so those can be fixed.

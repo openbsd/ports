@@ -1,0 +1,16 @@
+$OpenBSD: patch-ddd_exit_C,v 1.1 2000/10/30 13:54:50 espie Exp $
+--- ddd/exit.C.orig	Wed Feb  9 08:59:07 2000
++++ ddd/exit.C	Mon Oct 30 13:55:44 2000
+@@ -1088,8 +1088,10 @@ void report_core(ostream& log)
+     if (!is_core_file("core"))
+ 	return;
+ 
+-    string tempfile = tmpnam(0);
+-    ofstream os(tempfile);
++    char temp_name[] = "/tmp/ddd.XXXXXXXXXX";
++    int temp_fd = mkstemp(temp_name);
++    string tempfile = temp_name;
++    ofstream os(temp_fd);
+     os << 
+ 	"set verbose off\n"
+ 	"set height 0\n"

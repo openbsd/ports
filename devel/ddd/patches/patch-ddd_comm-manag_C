@@ -1,0 +1,29 @@
+$OpenBSD: patch-ddd_comm-manag_C,v 1.1 2000/10/30 13:54:50 espie Exp $
+--- ddd/comm-manag.C.orig	Mon Oct 30 13:32:30 2000
++++ ddd/comm-manag.C	Mon Oct 30 13:34:26 2000
+@@ -83,6 +83,7 @@ char comm_manager_rcsid[] =
+ 
+ #include <ctype.h>
+ #include <fstream.h>
++#include <unistd.h>
+ 
+ 
+ //-----------------------------------------------------------------------------
+@@ -705,13 +706,15 @@ void init_session(const string& restart,
+ 	info = new InitSessionInfo;
+ 	info->restart  = restart;
+ 	info->settings = settings;
+-	info->tempfile = tmpnam(0);
++	char temp_name[] = "/tmp/ddd.XXXXXXXXXX";
++	int temp_fd = mkstemp(temp_name);
++	info->tempfile = temp_name;
+ 
+ 	string file_commands = "";
+ 	bool recording_defines = false;
+ 
+ 	{
+-	    ofstream os(info->tempfile);
++	    ofstream os(temp_fd);
+ 	    while (init_commands != "")
+ 	    {
+ 		string cmd = init_commands.before('\n');

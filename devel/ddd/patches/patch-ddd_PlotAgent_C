@@ -1,0 +1,21 @@
+$OpenBSD: patch-ddd_PlotAgent_C,v 1.1 2000/10/30 13:54:50 espie Exp $
+--- ddd/PlotAgent.C.orig	Mon Oct 30 14:28:07 2000
++++ ddd/PlotAgent.C	Mon Oct 30 14:33:54 2000
+@@ -83,11 +83,14 @@ void PlotAgent::start_plot(const string&
+ 
+     while (files.size() < titles.size())
+     {
+-	// Open a new temporary file
+-	files += tmpnam(0);
++	// Create a new temporary file
++	char temp_name[] = "/tmp/dplot.XXXXXXXXXX";
++	int temp_fd = mkstemp(temp_name);
++	close(temp_fd);
++	files += temp_name;
+     }
+ 
+-    // Open plot stream
++    // Re-Open plot stream
+     plot_os.open(files[titles.size() - 1]);
+ 
+     // Issue initial line

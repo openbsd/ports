@@ -1,0 +1,17 @@
+$OpenBSD: patch-ddd_print_C,v 1.1 2000/10/30 13:54:51 espie Exp $
+--- ddd/print.C.orig	Mon Oct 30 13:36:27 2000
++++ ddd/print.C	Mon Oct 30 13:39:17 2000
+@@ -212,7 +212,12 @@ static void printOutputHP(Agent *, void 
+ static int print_to_printer(string command, PrintGC& gc, 
+ 			    bool selectedOnly, bool displays)
+ {
+-    string tempfile = tmpnam(0);
++    char temp_name[] = "/tmp/ddd.XXXXXXXXXX";
++    int temp_fd = mkstemp(temp_name);
++    if (temp_fd == -1)
++    	return 1;
++    close(temp_fd);
++    string tempfile = temp_name;
+     int ret = print_to_file(tempfile, gc, selectedOnly, displays);
+     if (ret)
+ 	return ret;

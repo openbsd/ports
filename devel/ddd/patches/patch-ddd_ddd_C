@@ -1,0 +1,24 @@
+$OpenBSD: patch-ddd_ddd_C,v 1.1 2000/10/30 13:54:50 espie Exp $
+--- ddd/ddd.C.orig	Fri Feb 11 18:21:24 2000
++++ ddd/ddd.C	Mon Oct 30 13:47:24 2000
+@@ -273,6 +273,7 @@ char ddd_rcsid[] =
+ #include <fstream.h>
+ #include <time.h>
+ #include <signal.h>
++#include <unistd.h>
+ 
+ #if HAVE_LOCALE_H
+ #include <locale.h>
+@@ -2990,8 +2991,10 @@ XrmDatabase GetFileDatabase(char *filena
+ {
+     string version_found = "";
+ 
+-    string tempfile = tmpnam(0);
+-    ofstream os(tempfile);
++    char temp_name[] = "/tmp/ddd.XXXXXXXXXX";
++    int temp_fd = mkstemp(temp_name);
++    string tempfile = temp_name;
++    ofstream os(temp_fd);
+     ifstream is(filename);
+ 
+ #if 0

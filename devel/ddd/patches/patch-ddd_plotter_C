@@ -1,0 +1,19 @@
+$OpenBSD: patch-ddd_plotter_C,v 1.1 2000/10/30 13:54:51 espie Exp $
+--- ddd/plotter.C.orig	Mon Oct 30 14:10:42 2000
++++ ddd/plotter.C	Mon Oct 30 14:27:57 2000
+@@ -412,7 +412,14 @@ static void configure_plot(PlotWindowInf
+ 		new StatusDelay("Retrieving Plot Settings");
+ 
+ 	    // Save settings...
+-	    plot->settings_file = tmpnam(0);
++	    // gnuplot has no compunction about saving twice to the same
++	    // file, so we can make this safe
++	    char temp_name[] = "/tmp/ddd.XXXXXXXXXX";
++	    int fd = mkstemp(temp_name);
++	    if (fd == 0)
++	    	return;
++	    close(fd);
++	    plot->settings_file = temp_name;
+ 	    string cmd = "save " + quote(plot->settings_file) + "\n";
+ 	    send(plot, cmd);
+ 
