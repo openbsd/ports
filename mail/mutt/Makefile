@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 1999/01/04 06:33:47 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1999/01/09 15:24:24 espie Exp $
 #
 
 # What port/package will be created
 #
 DISTNAME=		mutt-0.95
 DISTFILES=		${DISTNAME}i${EXTRACT_SUFX}
+BROKEN="Security hole"
 
 CATEGORIES=     	mail
 

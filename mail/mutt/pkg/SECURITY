@@ -1,0 +1,5 @@
+$OpenBSD: SECURITY,v 1.1 1999/01/09 15:24:25 espie Exp $
+
+mutt port is NOT secure right now !!!
+
+	${WRKDIR}/rfc1524.c:   call to mktemp that MUST go.
