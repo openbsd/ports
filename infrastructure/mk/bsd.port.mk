@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.441 2001/08/21 22:22:57 naddy Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.442 2001/08/24 14:39:36 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1990,7 +1990,15 @@ clean: pre-clean
 .    endif 
 .  endif
 .  if ${clean:L:Mdist}
-	@exec ${MAKE} distclean
+	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
+	@if cd ${FULLDISTDIR} 2>/dev/null; then \
+		if [ "${_DISTFILES}" -o "${_PATCHFILES}" ]; then \
+			rm -f ${_DISTFILES} ${_PATCHFILES}; \
+		fi \
+	fi
+.    if defined(DIST_SUBDIR)
+	-@rmdir ${FULLDISTDIR}  
+.    endif
 .  endif
 .  if ${clean:L:Minstall}
 .    if ${clean:L:Msub}
@@ -2013,16 +2021,8 @@ pre-distclean:
 .endif
 
 .if !target(distclean)
-distclean: pre-distclean clean
-	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
-	@if cd ${FULLDISTDIR} 2>/dev/null; then \
-		if [ "${_DISTFILES}" -o "${_PATCHFILES}" ]; then \
-			rm -f ${_DISTFILES} ${_PATCHFILES}; \
-		fi \
-	fi
-.  if defined(DIST_SUBDIR)
-	-@rmdir ${FULLDISTDIR}  
-.  endif
+distclean: pre-distclean
+	@${MAKE} clean=dist
 .endif
 
 RECURSIVE_FETCH_LIST?=	Yes
