@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $OpenBSD: update-patches,v 1.8 2002/07/24 11:54:21 nino Exp $
+# $OpenBSD: update-patches,v 1.9 2003/07/30 11:10:34 jolan Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -23,6 +23,13 @@
 # LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
+
+# Require GNU diff for now
+if [ ! -x "`which gdiff`" ]; then
+    echo 1>&2 "Fatal: GNU diff (gdiff) is required for 'update-patches'"
+    echo 1>&2 "       It may be installed from the textproc/gdiff port."
+    exit 1
+fi
 
 # Find out all $PATCHORIG files and strip the name to what diff will use
 cd $WRKDIST && find . -type f -name '*'${PATCHORIG} | fgrep -v $DISTORIG | \
@@ -54,9 +61,9 @@ do
 		# found it, splice before diff part with diff
 		esc=`echo $file | sed -e 's,/,\\\\/,g'`
 		{ sed -e "/^--- $esc$PATCHORIG/,\$ d" <$i
-		    (cd $WRKDIST && diff ${DIFF_ARGS} -u -p $file$PATCHORIG $file) } >$i.new
+		    (cd $WRKDIST && gdiff ${DIFF_ARGS} -u -p $file$PATCHORIG $file) } >$i.new
 		# did it change ? mark it as changed
-		if diff ${DIFF_ARGS} -u \
+		if gdiff ${DIFF_ARGS} -u \
 			--ignore-matching-lines="^--- $file$PATCHORIG	.*" \
 		    --ignore-matching-lines="^+++ $file	.*" $i $i.new 1>&2
 		then
@@ -75,7 +82,7 @@ do
     patchname=patch-`echo $file|sed -e s,[/.],_,g`
     echo 1>&2 "No patch-* found for $file, creating $patchname"
     { echo "$"OpenBSD$; \
-	(cd $WRKDIST && diff ${DIFF_ARGS} -u -p $file$PATCHORIG $file) }>$patchname
+	(cd $WRKDIST && gdiff ${DIFF_ARGS} -u -p $file$PATCHORIG $file) }>$patchname
     edit="$edit $patchname"
     accounted="$accounted $patchname"
 done
@@ -102,7 +109,7 @@ do
     esac
 done
 
-# Check for $Id: update-patches,v 1.8 2002/07/24 11:54:21 nino Exp $ and similar bugs in all those patch files.
+# Check for $Id: update-patches,v 1.9 2003/07/30 11:10:34 jolan Exp $ and similar bugs in all those patch files.
 for i in $accounted
 do
     if sed -e '/1,^---/ d' $i|grep '$(Id|OpenBSD'
