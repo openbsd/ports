@@ -1,6 +1,6 @@
-$OpenBSD: patch-memory_misc_mem_cc,v 1.1 2001/02/02 16:59:12 todd Exp $
+$OpenBSD: patch-memory_misc_mem_cc,v 1.2 2001/03/30 16:47:03 todd Exp $
 --- memory/misc_mem.cc.orig	Sat Mar 25 21:46:43 2000
-+++ memory/misc_mem.cc	Thu Oct 19 11:27:34 2000
++++ memory/misc_mem.cc	Fri Mar 30 10:20:20 2001
 @@ -35,7 +35,7 @@
    Bit32u
  BX_MEM_C::get_memory_in_k(void)
@@ -36,7 +36,7 @@ $OpenBSD: patch-memory_misc_mem_cc,v 1.1 2001/02/02 16:59:12 todd Exp $
      // memory not already allocated, do now...
 -    bx_printf("(%u) BX_MEM_C::init_memory(int): allocating memory.\n", BX_SIM_ID);
 -    bx_printf("(%u)   memsize = %u\n", BX_SIM_ID, (unsigned) memsize);
-+    bio->printf("[CPU%u] BX_MEM_C::init_memory(int): allocating memory.\n", BX_SIM_ID);
++    bio->printd("[CPU%u] BX_MEM_C::init_memory(int): allocating memory.\n", BX_SIM_ID);
 +    bio->printf("[CPU%u]   memsize = %u\n", BX_SIM_ID, (unsigned) memsize);
      BX_MEM_THIS vector = new Bit8u[memsize];
      BX_MEM_THIS len    = memsize;
@@ -52,39 +52,41 @@ $OpenBSD: patch-memory_misc_mem_cc,v 1.1 2001/02/02 16:59:12 todd Exp $
      }
  #endif
  
-@@ -132,19 +132,19 @@ BX_MEM_C::load_ROM(const char *path, Bit
+@@ -132,20 +132,17 @@ BX_MEM_C::load_ROM(const char *path, Bit
  #endif
             );
    if (fd < 0) {
 -    fprintf(stderr, "load_ROM: couldn't open ROM image file '%s'.\n", path);
-+    bio->printf("[load_ROM] couldn't open ROM image file '%s'.\n", path);
-     exit(1);
+-    exit(1);
++    bio->panic("[load_ROM] couldn't open ROM image file '%s'.\n", path);
      }
    ret = fstat(fd, &stat_buf);
    if (ret) {
 -    fprintf(stderr, "load_ROM: couldn't stat ROM image file '%s'.\n", path);
-+    bio->printf("[load_ROM] couldn't stat ROM image file '%s'.\n", path);
-     exit(1);
+-    exit(1);
++    bio->panic("[load_ROM] couldn't stat ROM image file '%s'.\n", path);
      }
  
    size = stat_buf.st_size;
  
    if ( (romaddress + size) > BX_MEM_THIS len ) {
 -    fprintf(stderr, "load_ROM: ROM address range > physical memsize!\n");
-+    bio->printf("[load_ROM] ROM address range > physical memsize!\n");
-     exit(1);
+-    exit(1);
++    bio->panic("[load_ROM] ROM address range > physical memsize!\n");
      }
  
-@@ -160,7 +160,7 @@ BX_MEM_C::load_ROM(const char *path, Bit
+   offset = 0;
+@@ -160,8 +157,7 @@ BX_MEM_C::load_ROM(const char *path, Bit
      ret = read(fd, (bx_ptr_t) &BX_MEM_THIS vector[romaddress + offset], size);
  #endif
      if (ret <= 0) {
 -      fprintf(stderr, "load_ROM: read failed on ROM BIOS image\n");
-+      bio->printf("[load_ROM] read failed on ROM BIOS image\n");
-       exit(1);
+-      exit(1);
++      bio->panic("[load_ROM] read failed on ROM BIOS image\n");
        }
      size -= ret;
-@@ -169,13 +169,13 @@ BX_MEM_C::load_ROM(const char *path, Bit
+     offset += ret;
+@@ -169,13 +165,13 @@ BX_MEM_C::load_ROM(const char *path, Bit
    close(fd);
  #if BX_PCI_SUPPORT
    if (bx_options.i440FXSupport)
@@ -101,7 +103,7 @@ $OpenBSD: patch-memory_misc_mem_cc,v 1.1 2001/02/02 16:59:12 todd Exp $
            BX_SIM_ID, path, (unsigned) stat_buf.st_size, (unsigned) romaddress);
  #endif // #if BX_PCI_SUPPORT
  }
-@@ -204,15 +204,15 @@ BX_MEM_C::dbg_fetch_mem(Bit32u addr, uns
+@@ -204,15 +200,15 @@ BX_MEM_C::dbg_fetch_mem(Bit32u addr, uns
          switch (bx_pci.rd_memType (addr)) {
            case 0x0:  // Fetch from ShadowRAM
              *buf = BX_MEM.vector[addr];

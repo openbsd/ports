@@ -1,5 +1,5 @@
 --- iodev/harddrv.cc.orig	Sat Mar 25 21:28:49 2000
-+++ iodev/harddrv.cc	Thu Oct 19 10:25:12 2000
++++ iodev/harddrv.cc	Fri Mar 30 10:31:29 2001
 @@ -103,10 +103,11 @@ bx_hard_drive_c::init(bx_devices_c *d, b
    BX_HD_THIS s[1].hard_drive->cylinders = bx_options.diskd.cylinders;
    BX_HD_THIS s[1].hard_drive->heads     = bx_options.diskd.heads;
@@ -669,7 +669,7 @@
            BX_SELECTED_CONTROLLER.error_register = 0x81; // Drive 1 failed, no error on drive 0
            // BX_SELECTED_CONTROLLER.status.busy = 0; // not needed
            BX_SELECTED_CONTROLLER.status.drq = 0;
-@@ -1339,20 +1341,20 @@ bx_hard_drive_c::write(Bit32u address, B
+@@ -1339,20 +1341,17 @@ bx_hard_drive_c::write(Bit32u address, B
  
          case 0x91: // initialize drive parameters
            if (BX_SELECTED_CONTROLLER.status.busy) {
@@ -682,14 +682,13 @@
            // sets logical geometry of specified drive
 -          bx_printf("initialize drive params\n");
 -          bx_printf("  sector count = %u\n",
-+          bio->printf("[HDD] initialize drive params\n");
-+          bio->printf("[HDD]   sector count = %u\n",
-             (unsigned) BX_SELECTED_CONTROLLER.sector_count);
+-            (unsigned) BX_SELECTED_CONTROLLER.sector_count);
 -          bx_printf("  drive select = %u\n",
-+          bio->printf("[HDD]   drive select = %u\n",
-             (unsigned) BX_HD_THIS drive_select);
+-            (unsigned) BX_HD_THIS drive_select);
 -          bx_printf("  head number = %u\n",
-+          bio->printf("[HDD]   head number = %u\n",
++          bio->printf("[HDD] init drive parms: sec ct = %u, drive sel = %u, head = %u\n",
++            (unsigned) BX_SELECTED_CONTROLLER.sector_count,
++            (unsigned) BX_HD_THIS drive_select,
              (unsigned) BX_SELECTED_CONTROLLER.head_no);
            if (BX_HD_THIS drive_select != 0 && !bx_options.diskd.present) {
 -            bx_panic("disk: init drive params: drive != 0\n");
@@ -697,7 +696,7 @@
              //BX_SELECTED_CONTROLLER.error_register = 0x12;
              BX_SELECTED_CONTROLLER.status.busy = 0;
              BX_SELECTED_CONTROLLER.status.drive_ready = 1;
-@@ -1362,9 +1364,9 @@ bx_hard_drive_c::write(Bit32u address, B
+@@ -1362,9 +1361,9 @@ bx_hard_drive_c::write(Bit32u address, B
              break;
  	  }
            if (BX_SELECTED_CONTROLLER.sector_count != BX_SELECTED_HD.hard_drive->sectors)
@@ -709,7 +708,7 @@
            BX_SELECTED_CONTROLLER.status.busy = 0;
            BX_SELECTED_CONTROLLER.status.drive_ready = 1;
            BX_SELECTED_CONTROLLER.status.drq = 0;
-@@ -1374,11 +1376,11 @@ bx_hard_drive_c::write(Bit32u address, B
+@@ -1374,11 +1373,11 @@ bx_hard_drive_c::write(Bit32u address, B
  
          case 0xec: // Get Drive Info
            if (bx_options.newHardDriveSupport) {
@@ -724,7 +723,7 @@
                command_aborted(value);
                break;
                }
-@@ -1408,7 +1410,7 @@ bx_hard_drive_c::write(Bit32u address, B
+@@ -1408,7 +1407,7 @@ bx_hard_drive_c::write(Bit32u address, B
  	    }
  	  }
            else {
@@ -733,7 +732,7 @@
              command_aborted(value);
  	  }
            break;
-@@ -1416,8 +1418,8 @@ bx_hard_drive_c::write(Bit32u address, B
+@@ -1416,8 +1415,8 @@ bx_hard_drive_c::write(Bit32u address, B
          case 0x40: //
            if (bx_options.newHardDriveSupport) {
  	    if (BX_SELECTED_HD.device_type != IDE_DISK)
@@ -744,7 +743,7 @@
              BX_SELECTED_CONTROLLER.status.busy = 0;
              BX_SELECTED_CONTROLLER.status.drive_ready = 1;
              BX_SELECTED_CONTROLLER.status.drq = 0;
-@@ -1425,11 +1427,14 @@ bx_hard_drive_c::write(Bit32u address, B
+@@ -1425,11 +1424,14 @@ bx_hard_drive_c::write(Bit32u address, B
  	    raise_interrupt();
              }
            else {
@@ -761,7 +760,7 @@
  	case 0xc6: // (mch) set multiple mode
  	      if (BX_SELECTED_CONTROLLER.sector_count != 128 &&
  		  BX_SELECTED_CONTROLLER.sector_count != 64 &&
-@@ -1441,7 +1446,7 @@ bx_hard_drive_c::write(Bit32u address, B
+@@ -1441,7 +1443,7 @@ bx_hard_drive_c::write(Bit32u address, B
  		    command_aborted(value);
  
  	      if (BX_SELECTED_HD.device_type != IDE_DISK)
@@ -770,7 +769,7 @@
  
  	      BX_SELECTED_CONTROLLER.sectors_per_block = BX_SELECTED_CONTROLLER.sector_count;
  	      BX_SELECTED_CONTROLLER.status.busy = 0;
-@@ -1498,9 +1503,9 @@ bx_hard_drive_c::write(Bit32u address, B
+@@ -1498,9 +1500,9 @@ bx_hard_drive_c::write(Bit32u address, B
  	      if (BX_SELECTED_HD.device_type == IDE_CDROM) {
  		    // PACKET
  		    if (BX_SELECTED_CONTROLLER.features & (1 << 0))
@@ -782,7 +781,7 @@
  
  		    // We're already ready!
  		    BX_SELECTED_CONTROLLER.sector_count = 1;
-@@ -1518,11 +1523,11 @@ bx_hard_drive_c::write(Bit32u address, B
+@@ -1518,11 +1520,11 @@ bx_hard_drive_c::write(Bit32u address, B
  	      }
          case 0xa2: // ATAPI service (optional)
  	      if (BX_SELECTED_HD.device_type == IDE_CDROM) {
@@ -796,7 +795,7 @@
            command_aborted(value);
            break;
  
-@@ -1538,7 +1543,7 @@ bx_hard_drive_c::write(Bit32u address, B
+@@ -1538,7 +1540,7 @@ bx_hard_drive_c::write(Bit32u address, B
  	  break;
  
          default:
@@ -805,7 +804,7 @@
          }
        break;
  
-@@ -1550,13 +1555,13 @@ bx_hard_drive_c::write(Bit32u address, B
+@@ -1550,13 +1552,13 @@ bx_hard_drive_c::write(Bit32u address, B
  	  BX_HD_THIS s[0].controller.control.reset         = value & 0x04;
  	  BX_HD_THIS s[1].controller.control.reset         = value & 0x04;
  	  BX_SELECTED_CONTROLLER.control.disable_irq    = value & 0x02;
@@ -822,7 +821,7 @@
  
  		// (mch) Set BSY, drive not ready
  		for (int id = 0; id < 2; id++) {
-@@ -1583,7 +1588,7 @@ bx_hard_drive_c::write(Bit32u address, B
+@@ -1583,7 +1585,7 @@ bx_hard_drive_c::write(Bit32u address, B
  	  } else if (BX_SELECTED_CONTROLLER.reset_in_progress &&
  		     !BX_SELECTED_CONTROLLER.control.reset) {
  		// Clear BSY and DRDY
@@ -831,7 +830,7 @@
  		for (int id = 0; id < 2; id++) {
  		      BX_CONTROLLER(id).status.busy           = 0;
  		      BX_CONTROLLER(id).status.drive_ready    = 1;
-@@ -1606,7 +1611,7 @@ bx_hard_drive_c::write(Bit32u address, B
+@@ -1606,7 +1608,7 @@ bx_hard_drive_c::write(Bit32u address, B
  	  break;
  
      default:
@@ -840,7 +839,7 @@
          (unsigned) address, (unsigned) value);
      }
  }
-@@ -1619,7 +1624,7 @@ bx_hard_drive_c::close_harddrive(void)
+@@ -1619,7 +1621,7 @@ bx_hard_drive_c::close_harddrive(void)
  }
  
  
@@ -849,7 +848,7 @@
  
    Bit32u
  bx_hard_drive_c::calculate_logical_address()
-@@ -1637,8 +1642,21 @@ bx_hard_drive_c::calculate_logical_addre
+@@ -1637,8 +1639,21 @@ bx_hard_drive_c::calculate_logical_addre
  		  (BX_SELECTED_CONTROLLER.sector_no - 1);
  
        if (logical_sector >=
@@ -873,7 +872,7 @@
        }
        return logical_sector;
  }
-@@ -1675,7 +1693,7 @@ bx_hard_drive_c::identify_ATAPI_drive(un
+@@ -1675,7 +1690,7 @@ bx_hard_drive_c::identify_ATAPI_drive(un
    unsigned i;
  
    if (drive != (unsigned)BX_HD_THIS drive_select) {
@@ -882,7 +881,7 @@
    }
  
    BX_SELECTED_HD.id_drive[0] = (2 << 14) | (5 << 8) | (1 << 7) | (2 << 5) | (0 << 0); // Removable CDROM, 50us response, 12 byte packets
-@@ -1779,7 +1797,7 @@ bx_hard_drive_c::identify_drive(unsigned
+@@ -1779,7 +1794,7 @@ bx_hard_drive_c::identify_drive(unsigned
    Bit16u temp16;
  
    if (drive != BX_HD_THIS drive_select) {
@@ -891,7 +890,7 @@
    }
  
  #if defined(CONNER_CFA540A)
-@@ -2108,8 +2126,8 @@ bx_hard_drive_c::identify_drive(unsigned
+@@ -2108,8 +2123,8 @@ bx_hard_drive_c::identify_drive(unsigned
  
  #endif
  
@@ -902,7 +901,7 @@
  
    // now convert the id_drive array (native 256 word format) to
    // the controller buffer (512 bytes)
-@@ -2124,13 +2142,13 @@ bx_hard_drive_c::identify_drive(unsigned
+@@ -2124,13 +2139,13 @@ bx_hard_drive_c::identify_drive(unsigned
  bx_hard_drive_c::init_send_atapi_command(Bit8u command, int req_length, int alloc_length, bool lazy)
  {
        if (BX_SELECTED_CONTROLLER.byte_count == 0)
@@ -919,7 +918,7 @@
  
        BX_SELECTED_CONTROLLER.interrupt_reason.i_o = 1;
        BX_SELECTED_CONTROLLER.interrupt_reason.c_d = 0;
-@@ -2218,19 +2236,19 @@ void
+@@ -2218,19 +2233,19 @@ void
  bx_hard_drive_c::raise_interrupt()
  {
        if (!BX_SELECTED_CONTROLLER.control.disable_irq) {
@@ -944,7 +943,7 @@
    BX_SELECTED_CONTROLLER.current_command = 0;
    BX_SELECTED_CONTROLLER.status.busy = 0;
    BX_SELECTED_CONTROLLER.status.drive_ready = 1;
-@@ -2263,7 +2281,7 @@ int default_image_t::open (const char* p
+@@ -2263,7 +2278,7 @@ int default_image_t::open (const char* p
        int ret = fstat(fd, &stat_buf);
        if (ret) {
  	    perror("fstat'ing hard drive image file");
@@ -953,7 +952,7 @@
        }
  
        return fd;
-@@ -2294,7 +2312,7 @@ ssize_t default_image_t::write (const vo
+@@ -2294,7 +2309,7 @@ ssize_t default_image_t::write (const vo
  error_recovery_t::error_recovery_t ()
  {
        if (sizeof(error_recovery_t) != 8) {

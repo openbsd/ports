@@ -1,6 +1,6 @@
-$OpenBSD: patch-iodev_devices_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
+$OpenBSD: patch-iodev_devices_cc,v 1.2 2001/03/30 16:47:02 todd Exp $
 --- iodev/devices.cc.orig	Sat Mar 25 21:32:21 2000
-+++ iodev/devices.cc	Tue Oct 17 12:04:02 2000
++++ iodev/devices.cc	Fri Mar 30 10:13:53 2001
 @@ -273,11 +273,11 @@ bx_devices_c::port92_read(Bit32u address
    UNUSED(this_ptr);
  #endif  // !BX_USE_DEV_SMF
@@ -11,34 +11,50 @@ $OpenBSD: patch-iodev_devices_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
  
 -  bx_printf("devices: port92h read partially supported!!!\n");
 -  bx_printf("devices:   returning %02x\n", (unsigned) (BX_GET_ENABLE_A20() << 1));
-+  bio->printf("devices: port92h read partially supported!!!\n");
-+  bio->printf("devices:   returning %02x\n", (unsigned) (BX_GET_ENABLE_A20() << 1));
++  bio->printd("[devices] port92h read partially supported!!!\n");
++  bio->printd("[devices]   returning %02x\n", (unsigned) (BX_GET_ENABLE_A20() << 1));
    return(BX_GET_ENABLE_A20() << 1);
  }
  
-@@ -300,17 +300,17 @@ bx_devices_c::port92_write(Bit32u addres
-   Boolean bx_cpu_reset;
+@@ -295,23 +295,23 @@ bx_devices_c::write_handler(void *this_p
+ bx_devices_c::port92_write(Bit32u address, Bit32u value, unsigned io_len)
+ {
+ #else
+-  UNUSED(this_ptr);
++	UNUSED(this_ptr);
+ #endif  // !BX_USE_DEV_SMF
+-  Boolean bx_cpu_reset;
++	Boolean bx_cpu_reset;
  
-   if (io_len > 1)
+-  if (io_len > 1)
 -    bx_panic("devices.c: port 92h: io read from address %08x, len=%u\n",
-+    bio->panic("devices.c: port 92h: io read from address %08x, len=%u\n",
-              (unsigned) address, (unsigned) io_len);
- 
+-             (unsigned) address, (unsigned) io_len);
+-
 -  bx_printf("devices: port92h write of %02x partially supported!!!\n",
-+  bio->printf("devices: port92h write of %02x partially supported!!!\n",
-     (unsigned) value);
+-    (unsigned) value);
 -bx_printf("devices: A20: set_enable_a20() called\n");
-+bio->printf("devices: A20: set_enable_a20() called\n");
-   BX_SET_ENABLE_A20( (value & 0x02) >> 1 );
+-  BX_SET_ENABLE_A20( (value & 0x02) >> 1 );
 -  bx_printf("A20: now %u\n", (unsigned) BX_GET_ENABLE_A20());
-+  bio->printf("A20: now %u\n", (unsigned) BX_GET_ENABLE_A20());
-   bx_cpu_reset  = (value & 0x01); /* high speed reset */
-   if (bx_cpu_reset) {
+-  bx_cpu_reset  = (value & 0x01); /* high speed reset */
+-  if (bx_cpu_reset) {
 -    bx_panic("PORT 92h write: CPU reset requested!\n");
-+    bio->panic("PORT 92h write: CPU reset requested!\n");
-     }
+-    }
++	if (io_len > 1)
++		bio->panic("[devices] port 92h: io read from address %08x, len=%u\n",
++		(unsigned) address, (unsigned) io_len);
++
++	bio->printd("[devices] port92h write of %02x partially supported!!!\n",
++		(unsigned) value);
++	bio->printd("[devices] A20: set_enable_a20() called\n");
++	BX_SET_ENABLE_A20( (value & 0x02) >> 1 );
++	bio->printd("[devices] A20: now %u\n", (unsigned) BX_GET_ENABLE_A20());
++	bx_cpu_reset  = (value & 0x01); /* high speed reset */
++	if (bx_cpu_reset) {
++		bio->panic("PORT 92h write: CPU reset requested!\n");
++	}
  }
  
+   void
 @@ -333,8 +333,8 @@ bx_devices_c::timer()
  
    retval = keyboard->periodic( TIMER_DELTA );
@@ -46,7 +62,7 @@ $OpenBSD: patch-iodev_devices_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
 -    if (bx_dbg.keyboard)
 -      bx_printf("keyboard: interrupt(1)\n");
 +    if (bio->getdbg().keyboard)
-+      bio->printf("keyboard: interrupt(1)\n");
++      bio->printd("keyboard: interrupt(1)\n");
      pic->trigger_irq(1);
      }
    if (retval & 0x02)
@@ -75,14 +91,14 @@ $OpenBSD: patch-iodev_devices_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
  
    if (!irq_handler_name[irq]) {
 -    bx_printf("IO device %s tried to unregister IRQ %d, not registered\n",
-+    bio->printf("IO device %s tried to unregister IRQ %d, not registered\n",
++    bio->printd("IO device %s tried to unregister IRQ %d, not registered\n",
  	      name, irq);
      return;
    }
  
    if (strcmp(irq_handler_name[irq], name)) {
 -    bx_printf("IRQ %u not registered to %s but to %s\n", irq,
-+    bio->printf("IRQ %u not registered to %s but to %s\n", irq,
++    bio->printd("IRQ %u not registered to %s but to %s\n", irq,
        name, irq_handler_name[irq]);
      return;
      }
@@ -102,7 +118,7 @@ $OpenBSD: patch-iodev_devices_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
      // if it is not the Unmapped port handler, bail
      if ( strcmp( io_read_handler[read_handler_id[addr]].handler_name, "Unmapped" ) ) {
 -      bx_printf("IO device address conflict(read) at IO address %Xh\n",
-+      bio->printf("IO device address conflict(read) at IO address %Xh\n",
++      bio->printd("IO device address conflict(read) at IO address %Xh\n",
          (unsigned) addr);
 -      bx_panic("  conflicting devices: %s & %s\n",
 +      bio->panic("  conflicting devices: %s & %s\n",

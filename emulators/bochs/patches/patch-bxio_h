@@ -1,7 +1,7 @@
-$OpenBSD: patch-bxio_h,v 1.1 2001/02/02 16:59:06 todd Exp $
---- bxio.h.orig	Mon Oct 23 22:25:25 2000
-+++ bxio.h	Tue Oct 31 13:13:50 2000
-@@ -0,0 +1,122 @@
+$OpenBSD: patch-bxio_h,v 1.2 2001/03/30 16:47:02 todd Exp $
+--- bxio.h.orig	Fri Mar 30 09:30:20 2001
++++ bxio.h	Fri Mar 30 10:02:06 2001
+@@ -0,0 +1,124 @@
 +//  Copyright (C) 2000  MandrakeSoft S.A.
 +//
 +//    MandrakeSoft S.A.
@@ -96,6 +96,7 @@ $OpenBSD: patch-bxio_h,v 1.1 2001/02/02 16:59:06 todd Exp $
 +class bxio {
 +	void init_debug(void);
 +	void init(void);
++	int debug;
 +public:
 +	bxio(int fd);
 +	bxio(char *fn);
@@ -108,6 +109,7 @@ $OpenBSD: patch-bxio_h,v 1.1 2001/02/02 16:59:06 todd Exp $
 +	void init_log(char *fn);
 +	void panic(char *fmt, ...);
 +	void printf(char *fmt, ...);
++	void printd(char *fmt, ...);
 +	void atexit(void);
 +	bx_debug_t getdbg(void);
 +	void setdbg(bx_debug_t dbg);

@@ -1,6 +1,6 @@
-$OpenBSD: patch-main_cc,v 1.1 2001/02/02 16:59:12 todd Exp $
+$OpenBSD: patch-main_cc,v 1.2 2001/03/30 16:47:03 todd Exp $
 --- main.cc.orig	Sat Mar 25 21:23:20 2000
-+++ main.cc	Mon Oct 23 22:12:22 2000
++++ main.cc	Fri Mar 30 09:56:02 2001
 @@ -26,10 +26,12 @@
  
  
@@ -736,13 +736,13 @@ $OpenBSD: patch-main_cc,v 1.1 2001/02/02 16:59:12 todd Exp $
      exit(1);
      }
  }
-@@ -906,5 +782,241 @@ bx_signal_handler( int signum)
+@@ -906,5 +782,251 @@ bx_signal_handler( int signum)
      }
  #endif
  
 -  bx_panic("SIGNAL %u caught\n", signum);
 +  bio->printf("SIGNAL %u caught\n", signum);
- }
++}
 +
 +bxio::bxio(FILE *fs) {
 +	//fprintf(stderr,"bxio::bxio(%s)\n",fn);
@@ -864,7 +864,19 @@ $OpenBSD: patch-main_cc,v 1.1 2001/02/02 16:59:12 todd Exp $
 +		showtick = 0;
 +}
 +
-+  void
++void
++bxio::printd(char *fmt, ...)
++{
++  va_list ap;
++
++  if(debug) {
++    va_start(ap, fmt);
++    this->printf(fmt, ap);
++    va_end(ap);
++  }
++}
++
++void
 +bxio::printf(char *fmt, ...)
 +{
 +  va_list ap;
@@ -947,8 +959,8 @@ $OpenBSD: patch-main_cc,v 1.1 2001/02/02 16:59:12 todd Exp $
 +}
 +
 +  void
-+bxio::init_debug(void)
-+{
++bxio::init_debug(void) {
++  this->debug = 0;
 +  this->dbg.floppy = 0;
 +  this->dbg.keyboard = 0;
 +  this->dbg.video = 0;
@@ -976,6 +988,4 @@ $OpenBSD: patch-main_cc,v 1.1 2001/02/02 16:59:12 todd Exp $
 +  this->dbg.record_io = 0;
 +  this->dbg.serial = 0;
 +  this->dbg.cdrom = 0;
-+}
-+
-+
+ }
