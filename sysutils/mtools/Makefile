@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 1999/10/27 04:46:34 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 1999/11/08 06:22:37 fgsch Exp $
 
 DISTNAME=	mtools-3.9.6
 PKGNAME=	mtools-3.9.6-1012
 CATEGORIES=	sysutils
+DIST_SUBDIR=	mtools
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/knaff/mtools/
 
 PATCH_SITES=	ftp://ftp.tux.org/pub/tux/knaff/mtools/
