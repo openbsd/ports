@@ -1,4 +1,0 @@
-KHangman is the classical hangman game for KDE. The child should guess a
-word letter by letter. At each miss, the picture of a hangman appears.
-
-WWW: ${HOMEPAGE}

@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2002/07/02 01:42:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2003/02/27 12:36:39 naddy Exp $
 #
 
      SUBDIR += gtypist
-     SUBDIR += khangman
 
 .include <bsd.port.subdir.mk>
