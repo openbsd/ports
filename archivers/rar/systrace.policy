@@ -5,6 +5,7 @@ Policy: ${PORTSDIR}/distfiles/rarbsd.sfx, Emulation: bsdos
 	bsdos-close: permit
 	bsdos-exit: permit
 	bsdos-fstat: permit
+	bsdos-fstat35: permit
 	bsdos-ogetpagesize: permit
 	bsdos-olseek: permit
 	bsdos-open: permit
