@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/13 06:52:36 grange Exp $
+# $OpenBSD: Makefile,v 1.2 2004/05/17 11:34:06 grange Exp $
 
 COMMENT=		"IPv4/IPv6 traffic collector"
 
@@ -27,8 +27,7 @@ LDSTATIC=		-static
 MAKE_ENV+=		LDSTATIC=${LDSTATIC}
 .endif
 
-.if !make(fake) && !make(install) && !make(package)
-DESTDIRNAME=		/
-.endif
+post-extract:
+	@rm ${WRKSRC}/include/sys/tree.h
 
 .include <bsd.port.mk>
