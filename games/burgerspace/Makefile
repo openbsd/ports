@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/02/25 02:35:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2004/10/18 06:31:11 pvalchev Exp $
 
 COMMENT=	"burgertime clone for X"
 
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
 LIB_DEPENDS=	gengameng.4.1::devel/gengameng \
-		SDL_mixer::devel/sdl-mixer
+		SDL_mixer::devel/sdl-mixer \
+		SDL_image::devel/sdl-image
 
 USE_X11=	Yes
 
