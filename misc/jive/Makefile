@@ -3,15 +3,13 @@
 # Date created:			  29 April 1998
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/02/27 06:15:06 kevlo Exp $
 #
 
 DISTNAME=	jive-1.1
 CATEGORIES=	misc
 NEED_VERSION=	1.191
-MASTER_SITES=	ftp://ftp.nuxi.com/pub/misc/
-
-MASTER_SITE_SUBDIR= games/amusements
+MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/
 
 MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
