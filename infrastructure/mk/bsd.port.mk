@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.143 1999/11/24 01:18:57 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.144 1999/11/27 13:17:13 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1879,7 +1879,7 @@ fetch-list:
 .if !target(fetch-list-recursive)
 fetch-list-recursive:
 	@make fetch-list-one-pkg
-.if ${RECURSIVE_FETCH_LIST:U} != "NO"
+.if ${RECURSIVE_FETCH_LIST:L} != "no"
 	@for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
 	| tr '\040' '\012' | sort -u`; do \
 		cd $$dir; make fetch-list-recursive; \
