@@ -1,0 +1,5 @@
+phpPgAdmin can manage a whole PostgreSQL server (needs a super-user)
+as well as a single database. To accomplish the latter you'll need a
+properly set up PostgreSQL user who can read/write only the desired
+database. It's up to you to look up the appropriate part in the
+PostgreSQL manual.
