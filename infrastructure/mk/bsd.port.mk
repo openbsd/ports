@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.363 2001/03/22 00:22:36 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.364 2001/03/25 20:35:35 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -752,9 +752,9 @@ EXTRACT_SUFX?=		.tar.gz
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
 .if ${SUBPACKAGE} != '' 
 .  if defined(FULLPKGNAME${SUBPACKAGE})
-FULLPKGNAME?=	${FULLPKGNAME${SUBPACKAGE}}
+FULLPKGNAME:=	${FULLPKGNAME${SUBPACKAGE}}
 .  elif defined(PKGNAME${SUBPACKAGE})
-PKGNAME?=		${PKGNAME${SUBPACKAGE}}
+PKGNAME:=		${PKGNAME${SUBPACKAGE}}
 .  endif
 .endif
 PKGNAME?=		${DISTNAME}${SUBPACKAGE}
