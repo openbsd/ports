@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/07/08 16:50:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2003/09/24 15:07:19 naddy Exp $
 
 COMMENT=	"GTK2-based scientific calculator"
 
-DISTNAME=	galculator-1.1.2
+DISTNAME=	galculator-1.1.3
 CATEGORIES=	math
 HOMEPAGE=	http://galculator.sourceforge.net/
 
@@ -17,10 +17,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=galculator/}
 EXTRACT_SUFX=	.tar.bz2
 
-LIB_DEPENDS=	glade-2.0.0.1::devel/libglade2
+LIB_DEPENDS=	glade-2.0.=0::devel/libglade2
 
 USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
