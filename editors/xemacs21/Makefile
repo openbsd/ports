@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/07/06 18:34:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2004/03/03 09:54:19 brad Exp $
 
 COMMENT=		"heavily customizable and extensible editor"
 
@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=	--infodir='$${DESTDIR}${PREFIX}/info/${DISTNAME}' \
 			--without-wnn6 \
 			--without-gtk \
 			--without-gnome \
-			--with-database=berkdb \
+			--with-database=no \
 			--with-file-coding=yes \
 			--with-system-malloc \
 			--pdump
