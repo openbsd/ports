@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2003/12/07 20:19:15 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2003/12/08 02:28:32 brad Exp $
 
-COMMENT= 		"developer extensions for kde"
+COMMENT= 		"developer extensions for KDE"
 CATEGORIES=		x11 x11/kde devel
 VERSION=		3.1.4
 DISTNAME=		kdesdk-${VERSION}

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/12 19:16:17 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2003/12/08 02:33:19 brad Exp $
 
-COMMENT= 		"UML modeller for kde"
+COMMENT= 		"UML modeller for KDE"
 CATEGORIES=		x11 x11/kde devel
-VERSION=		3.1.1
+VERSION=		3.1.4
 DISTNAME=		umbrello-1.1.1
 
 HOMEPAGE=	http://uml.sourceforge.net/

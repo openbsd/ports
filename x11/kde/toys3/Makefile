@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2003/12/07 20:19:15 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2003/12/08 02:25:50 brad Exp $
 
-COMMENT= 		"some useless kde applications"
+COMMENT= 		"some useless KDE applications"
 CATEGORIES=		x11 x11/kde games
 VERSION=		3.1.4
 DISTNAME=		kdetoys-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2003/12/07 20:19:15 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2003/12/08 02:27:52 brad Exp $
 
-COMMENT= 		"kde personal information applications"
+COMMENT= 		"KDE personal information applications"
 COMMENT-kpilot=		"synch with palm pilot"
 CATEGORIES=		x11 x11/kde productivity
 VERSION=		3.1.4
