@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/20 15:06:04 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2002/04/17 15:17:54 brad Exp $
 
 COMMENT=	"asynchronous event library"
 
-DISTNAME=	libevent-0.3d
+DISTNAME=	libevent-0.4
 CATEGORIES=	devel
-NEED_VERSION=	1.425
+NEED_VERSION=	1.522
 MASTER_SITES=	http://www.monkey.org/~provos/
 
 HOMEPAGE=	http://www.monkey.org/~provos/libevent/
@@ -16,11 +16,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-DESTDIRNAME=	install_prefix
-
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= automake
 
 WRKDIST=	${WRKDIR}/libevent
+
+post-patch:
+	cd ${WRKSRC} && automake
+
+do-regress:
+	cd ${WRKBUILD}/test && ${MAKE_PROGRAM}
 
 .include <bsd.port.mk>
