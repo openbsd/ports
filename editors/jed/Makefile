@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2001/05/06 00:29:08 lebel Exp $
+# $OpenBSD: Makefile,v 1.21 2001/06/07 15:49:04 brad Exp $
 
 COMMENT=	"text editor"
 
-DISTNAME=	jed-B0.99-13
-PKGNAME=	jed-0.99.13
+DISTNAME=	jed-B0.99-14
+PKGNAME=	jed-0.99.14
 CATEGORIES=	editors
 NEED_VERSION=	1.402
 MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/ \

@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.10 2001/02/22 02:45:17 brad Exp $
+@comment $OpenBSD: PLIST,v 1.11 2001/06/07 15:49:05 brad Exp $
 bin/jed
 bin/rgrep
 !%%no_x11%%
-@unexec install-info --delete %D/info/jed.info %D/info/dir 
+@unexec install-info --delete --info-dir=%D/info %D/info/jed.info
 info/jed.1in
 info/jed.2in
 info/jed.3in
 info/jed.info
-@exec install-info --section "Editors" --entry "* JED: (jed).		JED editor documentation" %D/info/jed.info %D/info/dir
+@exec install-info --info-dir=%D/info %D/info/jed.info
 lib/jed/bin/getmail
 lib/jed/lib/abbrev.sl
 lib/jed/lib/abbrmisc.sl
@@ -127,6 +127,7 @@ lib/jed/lib/pscript.sl
 lib/jed/lib/pushmode.sl
 lib/jed/lib/pymode.sl
 lib/jed/lib/rcs.sl
+lib/jed/lib/recent.sl
 lib/jed/lib/regexp.sl
 lib/jed/lib/register.sl
 lib/jed/lib/replace.sl
@@ -198,12 +199,12 @@ share/doc/jed/txt/wjed.txt
 share/doc/jed/txt/wordstar.txt
 share/doc/jed/txt/xjed.txt
 share/doc/jed/txt/yankpop.txt
-@dirrm lib/jed/bin
-@dirrm lib/jed/lib/colors/Xjed
-@dirrm lib/jed/lib/colors
-@dirrm lib/jed/lib/tm
-@dirrm lib/jed/lib
-@dirrm lib/jed
 @dirrm share/doc/jed/txt
 @dirrm share/doc/jed/manual
 @dirrm share/doc/jed
+@dirrm lib/jed/lib/tm
+@dirrm lib/jed/lib/colors/Xjed
+@dirrm lib/jed/lib/colors
+@dirrm lib/jed/lib
+@dirrm lib/jed/bin
+@dirrm lib/jed
