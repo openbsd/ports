@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/04/02 14:41:52 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2000/04/08 07:20:58 kevlo Exp $
 
 DISTNAME=	speak_freely-7.1
 CATEGORIES=	mbone audio security
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	gsm.1.0::audio/gsm
 
-FAKE=		yes
+FAKE=		Yes
 
 MAKE_ENV=	DUPLEX=-DHALF_DUPLEX
 
@@ -24,7 +24,7 @@ MAKE_ENV+=	CCFLAGS=-DM_LITTLE_ENDIAN
 .endif
 
 post-install:
-	@mkdir -p ${PREFIX}/lib/speak_freely
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/speak_freely
 	@$(INSTALL_DATA) ${WRKSRC}/busy.au ${WRKSRC}/ring.au \
 		${PREFIX}/lib/speak_freely
 
