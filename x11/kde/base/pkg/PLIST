@@ -1,14 +1,7 @@
 bin/kappfinder
 bin/kappfinder_restart
-bin/kattraction.kss
 bin/kaudioserver
-bin/kbanner.kss
-bin/kbat.kss
 bin/kbgndwm
-bin/kblankscrn.kss
-bin/kblob.kss
-bin/kbouboule.kss
-bin/kbsod.kss
 bin/kcheckpass
 bin/kcmbell
 bin/kcmdisplay
@@ -30,7 +23,6 @@ bin/kdm
 bin/kdmconfig
 bin/kdmdesktop
 bin/kfind
-bin/kflame.kss
 bin/kfm
 bin/kfmclient
 bin/kfmexec
@@ -38,31 +30,18 @@ bin/kfmsu
 bin/kfmsu2
 bin/kfmwarn
 bin/kfontmanager
-bin/kforest.kss
-bin/khop.kss
 bin/kikbd
 bin/kioslave
-bin/klaser.kss
-bin/klines.kss
-bin/klissie.kss
 bin/klock
-bin/kmatrix.kss
 bin/kmenuedit
 bin/konsole
 bin/konsole_grantpty
 bin/kpager
 bin/kpanel
 bin/kplayaudio
-bin/kpolygon.kss
-bin/kpyro.kss
 bin/krdb
-bin/krock.kss
 bin/krootwm
-bin/kscience.kss
-bin/kslidescreen.kss
-bin/kslip.kss
 bin/kstart
-bin/kswarm.kss
 bin/kthememgr
 bin/kvt
 bin/kwm
@@ -928,7 +907,6 @@ share/icons/large/desktop.xpm
 share/icons/large/desktop_settings.xpm
 share/icons/large/document.xpm
 share/icons/large/dvi.xpm
-share/icons/large/edit.xpm
 share/icons/large/editors_package.xpm
 share/icons/large/exec.xpm
 share/icons/large/f_src.xpm
@@ -946,7 +924,6 @@ share/icons/large/games_package.xpm
 share/icons/large/gf.xpm
 share/icons/large/go.xpm
 share/icons/large/graphics_package.xpm
-share/icons/large/gv.xpm
 share/icons/large/h_src.xpm
 share/icons/large/hd_mount.xpm
 share/icons/large/hd_unmount.xpm
@@ -1030,14 +1007,9 @@ share/icons/large/utilities_package.xpm
 share/icons/large/video.xpm
 share/icons/large/www.xpm
 share/icons/large/x.xpm
-share/icons/large/xcalc.xpm
-share/icons/large/xeyes.xpm
-share/icons/large/xload.xpm
 share/icons/large/y_src.xpm
 share/icons/large/zip_mount.xpm
 share/icons/large/zip_unmount.xpm
-share/icons/edit.xpm
-share/icons/gv.xpm
 share/icons/library.xpm
 share/icons/link.xpm
 share/icons/locale.xpm
@@ -1052,9 +1024,6 @@ share/icons/make.xpm
 share/icons/man.xpm
 share/icons/metafont.xpm
 share/icons/midi.xpm
-share/icons/xcalc.xpm
-share/icons/xeyes.xpm
-share/icons/xload.xpm
 share/icons/mini/3floppy_mount.xpm
 share/icons/mini/3floppy_unmount.xpm
 share/icons/mini/5floppy_mount.xpm
@@ -1270,7 +1239,6 @@ share/icons/mini/windows.xpm
 share/icons/mini/winprops.xpm
 share/icons/mini/www.xpm
 share/icons/mini/x.xpm
-share/icons/mini/xload.xpm
 share/icons/mini/y_src.xpm
 share/icons/mini/zip_mount.xpm
 share/icons/mini/zip_unmount.xpm
@@ -2440,6 +2408,32 @@ share/wallpapers/whiplash_vines.jpg
 share/wallpapers/whirling_spirit.jpg
 share/wallpapers/wind_chill.jpg
 share/wallpapers/wood1.jpg
+@owner root
+@mode u+s
+bin/kattraction.kss
+bin/kbanner.kss
+bin/kbat.kss
+bin/kblankscrn.kss
+bin/kblob.kss
+bin/kbouboule.kss
+bin/kbsod.kss
+bin/kflame.kss
+bin/kforest.kss
+bin/khop.kss
+bin/klaser.kss
+bin/klines.kss
+bin/klissie.kss
+bin/kmatrix.kss
+bin/kmorph3d.kss
+bin/kpolygon.kss
+bin/kpipes.kss
+bin/krock.kss
+bin/kpyro.kss
+bin/kscience.kss
+bin/kslidescreen.kss
+bin/kslip.kss
+bin/kspace.kss
+bin/kswarm.kss
 @dirrm share/wallpapers
 @dirrm share/sounds
 @dirrm share/mimelnk/video
@@ -2483,7 +2477,6 @@ share/wallpapers/wood1.jpg
 @dirrm share/doc/HTML/en/kcontrol/kcmdisplay
 @dirrm share/doc/HTML/en/kcontrol/kcmbell
 @dirrm share/doc/HTML/en/kcontrol
-@dirrm share/doc/HTML/en/
 @dirrm share/apps/kwm/pics
 @dirrm share/apps/kwm
 @dirrm share/apps/kthememgr/Themes
@@ -2549,3 +2542,5 @@ share/wallpapers/wood1.jpg
 @unexec rm -rf %D/share/applnk/apps
 @dirrm share/applnk
 @dirrm cgi-bin
+@exec echo 'You might wish to run kappfinder %D after installing new apps'
+@unexec echo 'You will have to remove %D/share/icons manually'

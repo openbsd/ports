@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/26 22:20:03 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/07 00:09:24 espie Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 DISTNAME=	kdebase-1.1.2
@@ -28,6 +28,9 @@ CONFIGURE_ARGS+= --prefix='$${DESTDIR}${PREFIX}' \
                  --enable-static \
                  --with-qt-includes="${LOCALBASE}/include/X11/qt" \
                  --with-qt-libraries="${LOCALBASE}/lib"
+CONFIGURE_ENV=RUN_KAPPFINDER=no
+
+FAKE=Yes
 
 pre-build:
 	@echo ""
@@ -38,12 +41,8 @@ pre-build:
 	@echo "*** for the 'limit' or 'ulimit' command."
 	@echo ""
 
-KSS= kattraction.kss kbanner.kss kbat.kss kblankscrn.kss kblob.kss \
-kbouboule.kss kbsod.kss kflame.kss kforest.kss khop.kss klaser.kss \
-klines.kss klissie.kss kpolygon.kss kpyro.kss krock.kss kscience.kss \
-kslidescreen.kss kslip.kss kswarm.kss
-
-post-install:
-	@cd ${PREFIX}/bin && chmod u+s ${KSS}
+# Uncomment if you want to update kde base plist.
+#pre-fake:
+#	@PKG_DBDIR=${DESTDIR}/var/db pkg_add -p ${PREFIX} ${PKGREPOSITORY}/kdelibs-1.1.2${PKG_SUFX}
 
 .include <bsd.port.mk>
