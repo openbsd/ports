@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/06/26 07:34:25 mjc Exp $
+lib/librioutil.so.5.1
+DYNLIBDIR(%D/lib)
