@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/10/03 19:52:52 danh Exp $
+# $OpenBSD: Makefile,v 1.16 2001/10/04 20:44:45 jakob Exp $
 
 COMMENT=	network time protocol implementation
 COMMENT-doc=	network time protocol documentation
@@ -38,5 +38,6 @@ post-install:
 	@cd ${WRKSRC}/html && pax -rw * ${PREFIX}/share/doc/ntp
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ntp
 	@cd ${WRKSRC}/conf && pax -rw * ${PREFIX}/share/examples/ntp
+	@mv ${PREFIX}/sbin/genkeys ${PREFIX}/sbin/ntp-genkeys
 
 .include <bsd.port.mk>

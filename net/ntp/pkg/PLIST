@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/10/03 19:52:53 danh Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/10/04 20:44:45 jakob Exp $
 @pkgcfl xntp3-*
-sbin/genkeys
+sbin/ntp-genkeys
 sbin/ntp-wait
 sbin/ntpd
 sbin/ntpdate
