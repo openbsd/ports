@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/01/01 13:11:37 shell Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/07/15 04:00:40 shell Exp $
 bin/html2wml
 man/man1/html2wml.1
 share/doc/html2wml/COPYING
