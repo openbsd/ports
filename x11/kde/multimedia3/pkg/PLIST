@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/09/18 09:36:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/10/19 00:25:29 espie Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/kaboodle
@@ -205,6 +205,8 @@ ${KDE}/kfile_avi.la
 ${KDE}/kfile_avi.so
 ${KDE}/kfile_m3u.la
 ${KDE}/kfile_m3u.so
+${KDE}/kfile_ogg.la
+${KDE}/kfile_ogg.so
 ${KDE}/kfile_sid.la
 ${KDE}/kfile_sid.so
 ${KDE}/kfile_wav.la
@@ -1128,7 +1130,6 @@ share/doc/HTML/en/noatun/
 share/doc/HTML/en/noatun/common
 share/doc/HTML/en/noatun/index.cache.bz2
 share/doc/HTML/en/noatun/index.docbook
-share/icons/crystalsvg/128x128/actions/
 share/icons/crystalsvg/128x128/actions/artsaudiomanager.png
 share/icons/crystalsvg/128x128/actions/artsenvironment.png
 share/icons/crystalsvg/128x128/actions/artsfftscope.png
@@ -1229,6 +1230,7 @@ share/services/kcm_krec_files.desktop
 share/services/kfile_au.desktop
 share/services/kfile_avi.desktop
 share/services/kfile_m3u.desktop
+share/services/kfile_ogg.desktop
 share/services/kfile_sid.desktop
 share/services/kfile_wav.desktop
 share/services/kmixctrl_restore.desktop

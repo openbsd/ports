@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2004/10/09 14:50:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.40 2004/10/19 00:25:26 espie Exp $
 
 COMMENT=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
 COMMENT-kpov=		"KDE modeller for povray"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.3.0
+VERSION=		3.3.1
 DISTNAME=		kdegraphics-${VERSION}
 MODKDE_VERSION=		3.3.0
 
@@ -17,7 +17,8 @@ SUBPACKAGE?=
 
 LIB_DEPENDS= \
 	kdecore.6,DCOP,kdefx,kdeprint,kdesu,kdeui,khtml,kjs,kio,kparts,kutils,kwalletclient::x11/kde/libs3 \
-	fribidi::devel/fribidi
+	fribidi::devel/fribidi \
+	t1.5::devel/t1lib
 
 .if defined(PACKAGING)
 .  if ${SUBPACKAGE} == "-kamera"

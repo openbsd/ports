@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/18 09:36:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/10/19 00:25:29 espie Exp $
 bin/egroupwarewizard
 @comment bin/ghns
 bin/groupwarewizard
@@ -700,6 +700,7 @@ share/apps/kmail/pics/key_ok.png
 share/apps/kmail/pics/key_unknown.png
 share/apps/kmail/pics/kmgroupware_folder_calendar.png
 share/apps/kmail/pics/kmgroupware_folder_contacts.png
+share/apps/kmail/pics/kmgroupware_folder_journals.png
 share/apps/kmail/pics/kmgroupware_folder_notes.png
 share/apps/kmail/pics/kmgroupware_folder_tasks.png
 share/apps/kmail/pics/kmmsgattachment.png
@@ -953,8 +954,22 @@ share/apps/korganizer/sounds/lightmag.wav
 share/apps/korganizer/sounds/onscreen.wav
 share/apps/korganizer/sounds/spinout.wav
 share/apps/korganizer/tips
+share/apps/kpilot/icons/crystalsvg/16x16/actions/fullsync.png
+share/apps/kpilot/icons/crystalsvg/16x16/actions/listsync.png
 share/apps/kpilot/icons/crystalsvg/16x16/actions/nosync.png
+share/apps/kpilot/icons/crystalsvg/22x22/actions/fullsync.png
+share/apps/kpilot/icons/crystalsvg/22x22/actions/listsync.png
 share/apps/kpilot/icons/crystalsvg/22x22/actions/nosync.png
+share/apps/kpilot/icons/crystalsvg/32x32/actions/
+share/apps/kpilot/icons/crystalsvg/32x32/actions/fastsync.png
+share/apps/kpilot/icons/crystalsvg/32x32/actions/fullsync.png
+share/apps/kpilot/icons/crystalsvg/32x32/actions/hotsync.png
+share/apps/kpilot/icons/crystalsvg/32x32/actions/listsync.png
+share/apps/kpilot/icons/crystalsvg/48x48/actions/
+share/apps/kpilot/icons/crystalsvg/48x48/actions/fastsync.png
+share/apps/kpilot/icons/crystalsvg/48x48/actions/fullsync.png
+share/apps/kpilot/icons/crystalsvg/48x48/actions/hotsync.png
+share/apps/kpilot/icons/crystalsvg/48x48/actions/listsync.png
 share/apps/kpilot/kpilot-bhotsync.png
 share/apps/ksync/
 share/apps/ksync/ksyncui.rc

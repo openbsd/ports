@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/18 09:36:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/10/19 00:25:26 espie Exp $
 bin/jsaccess
 bin/kjscmd
 bin/krubyinit
@@ -71,6 +71,8 @@ lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.6/korundum.la
 lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.6/korundum.so.0.0
 lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.6/qtruby.la
 lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.6/qtruby.so.0.0
+lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.6/qui.la
+lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.6/qui.so.0.0
 @man man/man1/kjscmd.1
 share/applications/kde/kjscmd.desktop
 share/apps/kjsembed/

@@ -1,13 +1,23 @@
-$OpenBSD: patch-config_h_in,v 1.9 2004/09/18 09:36:44 espie Exp $
---- config.h.in.orig	Sat Aug 14 02:23:45 2004
-+++ config.h.in	Mon Sep  6 02:37:03 2004
-@@ -994,6 +994,9 @@ int snprintf(char *str, size_t n, char c
+$OpenBSD: patch-config_h_in,v 1.10 2004/10/19 00:25:27 espie Exp $
+--- config.h.in.orig	Fri Oct  8 15:52:39 2004
++++ config.h.in	Wed Oct 13 15:46:55 2004
+@@ -165,6 +165,9 @@
+ /* Define to 1 if you have the `getservbyname_r' function. */
+ #undef HAVE_GETSERVBYNAME_R
+ 
++/* Define to 1 if you have the `getservbyport_r' function. */
++#undef HAVE_GETSERVBYPORT_R
++
+ /* Define to 1 if you have the `getsockname' function. */
+ #undef HAVE_GETSOCKNAME
+ 
+@@ -1005,6 +1008,9 @@ int snprintf(char *str, size_t n, char c
+ 
  /* path to su */
  #undef __PATH_SU
- 
++
 +/* path to sudo */
 +#undef __PATH_SUDO
-+
+ 
  
  #if defined(__SVR4) && !defined(__svr4__)
- #define __svr4__ 1

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2004/09/18 09:36:45 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2004/10/19 00:25:30 espie Exp $
 
 COMMENT= 		"K Desktop Environment, utilities"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.3.0
+VERSION=		3.3.1
 DISTNAME=		kdeutils-${VERSION}
 MODKDE_VERSION=		3.3.0
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2004/09/18 09:36:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.25 2004/10/19 00:25:28 espie Exp $
 bin/artsmessage
 bin/checkXML
 bin/dcop
@@ -2804,6 +2804,8 @@ share/doc/HTML/en/kspell/index.docbook
 share/icons/
 share/icons/crystalsvg/
 share/icons/crystalsvg/128x128/
+share/icons/crystalsvg/128x128/actions/
+share/icons/crystalsvg/128x128/actions/player_playlist.png
 share/icons/crystalsvg/128x128/apps/
 share/icons/crystalsvg/128x128/apps/password.png
 share/icons/crystalsvg/128x128/devices/
@@ -3089,6 +3091,7 @@ share/icons/crystalsvg/16x16/actions/player_end.png
 share/icons/crystalsvg/16x16/actions/player_fwd.png
 share/icons/crystalsvg/16x16/actions/player_pause.png
 share/icons/crystalsvg/16x16/actions/player_play.png
+share/icons/crystalsvg/16x16/actions/player_playlist.png
 share/icons/crystalsvg/16x16/actions/player_rew.png
 share/icons/crystalsvg/16x16/actions/player_start.png
 share/icons/crystalsvg/16x16/actions/player_stop.png
@@ -3481,6 +3484,7 @@ share/icons/crystalsvg/22x22/actions/player_end.png
 share/icons/crystalsvg/22x22/actions/player_fwd.png
 share/icons/crystalsvg/22x22/actions/player_pause.png
 share/icons/crystalsvg/22x22/actions/player_play.png
+share/icons/crystalsvg/22x22/actions/player_playlist.png
 share/icons/crystalsvg/22x22/actions/player_rew.png
 share/icons/crystalsvg/22x22/actions/player_start.png
 share/icons/crystalsvg/22x22/actions/player_stop.png
@@ -3756,6 +3760,7 @@ share/icons/crystalsvg/32x32/actions/player_end.png
 share/icons/crystalsvg/32x32/actions/player_fwd.png
 share/icons/crystalsvg/32x32/actions/player_pause.png
 share/icons/crystalsvg/32x32/actions/player_play.png
+share/icons/crystalsvg/32x32/actions/player_playlist.png
 share/icons/crystalsvg/32x32/actions/player_rew.png
 share/icons/crystalsvg/32x32/actions/player_start.png
 share/icons/crystalsvg/32x32/actions/player_stop.png
@@ -3993,6 +3998,7 @@ share/icons/crystalsvg/48x48/actions/gear.png
 share/icons/crystalsvg/48x48/actions/indent.png
 share/icons/crystalsvg/48x48/actions/lock.png
 share/icons/crystalsvg/48x48/actions/misc.png
+share/icons/crystalsvg/48x48/actions/player_playlist.png
 share/icons/crystalsvg/48x48/actions/share.png
 share/icons/crystalsvg/48x48/actions/unindent.png
 share/icons/crystalsvg/48x48/actions/up.png
@@ -4172,6 +4178,7 @@ share/icons/crystalsvg/64x64/
 share/icons/crystalsvg/64x64/actions/
 share/icons/crystalsvg/64x64/actions/favorites.png
 share/icons/crystalsvg/64x64/actions/knewstuff.png
+share/icons/crystalsvg/64x64/actions/player_playlist.png
 share/icons/crystalsvg/64x64/apps/
 share/icons/crystalsvg/64x64/apps/password.png
 share/icons/crystalsvg/64x64/devices/
@@ -4614,6 +4621,7 @@ share/mimelnk/application/x-iso.desktop
 share/mimelnk/application/x-jar.desktop
 share/mimelnk/application/x-java-applet.desktop
 share/mimelnk/application/x-java.desktop
+share/mimelnk/application/x-javascript.desktop
 share/mimelnk/application/x-karbon.desktop
 share/mimelnk/application/x-kchart.desktop
 share/mimelnk/application/x-kcsrc.desktop

@@ -1,7 +1,7 @@
-$OpenBSD: patch-acinclude_m4,v 1.3 2004/09/18 09:46:37 espie Exp $
---- acinclude.m4.orig	Sat Aug 14 01:39:40 2004
-+++ acinclude.m4	Mon Sep  6 01:08:05 2004
-@@ -6168,6 +6168,19 @@ AC_CACHE_VAL([lt_cv_sys_max_cmd_len], [d
+$OpenBSD: patch-acinclude_m4,v 1.4 2004/10/19 00:25:29 espie Exp $
+--- acinclude.m4.orig	Fri Oct  8 15:52:10 2004
++++ acinclude.m4	Wed Oct 13 08:16:40 2004
+@@ -6173,6 +6173,19 @@ AC_CACHE_VAL([lt_cv_sys_max_cmd_len], [d
      lt_cv_sys_max_cmd_len=8192;
      ;;
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-acinclude_m4,v 1.3 2004/09/18 09:46:37 espie Exp $
   *)
      # If test is not a shell built-in, we'll probably end up computing a
      # maximum length that is only half of the actual maximum length, but
-@@ -7708,13 +7721,7 @@ nto-qnx*)
+@@ -7713,13 +7726,7 @@ nto-qnx*)
    ;;
  
  openbsd*)
@@ -36,7 +36,7 @@ $OpenBSD: patch-acinclude_m4,v 1.3 2004/09/18 09:46:37 espie Exp $
    ;;
  
  osf3* | osf4* | osf5*)
-@@ -8666,6 +8673,22 @@ case $host_os in
+@@ -8671,6 +8678,22 @@ case $host_os in
      # Workaround some broken pre-1.5 toolchains
      output_verbose_link_cmd='$CC -shared $CFLAGS -v conftest.$objext 2>&1 | grep conftest.$objext | $SED -e "s:-lgcc -lc -lgcc::"'
      ;;
@@ -59,7 +59,7 @@ $OpenBSD: patch-acinclude_m4,v 1.3 2004/09/18 09:46:37 espie Exp $
    osf3*)
      case $cc_basename in
        KCC)
-@@ -10983,6 +11006,7 @@ EOF
+@@ -10988,6 +11011,7 @@ EOF
        _LT_AC_TAGVAR(hardcode_shlibpath_var, $1)=no
        if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
  	_LT_AC_TAGVAR(archive_cmds, $1)='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'

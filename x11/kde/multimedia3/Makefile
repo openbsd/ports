@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.24 2004/10/03 09:03:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.25 2004/10/19 00:25:28 espie Exp $
 
 COMMENT= 		"K Desktop Environment, multimedia applications"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.3.0
+VERSION=		3.3.1
 DISTNAME=		kdemultimedia-${VERSION}
 MODKDE_VERSION=		3.3.0
 
-LIB_DEPENDS= DCOP,kdecore.6,kdefakes,kdefx,kdesu,kdeui,kio,kmid,kparts,kmediaplayer,kutils::x11/kde/libs3 \
+LIB_DEPENDS= DCOP,kdecore.6,kdefakes,kdefx,kdesu,kdeui,kio,kmid,kparts,kmediaplayer,kutils,kwalletclient::x11/kde/libs3 \
 	artsc,artskde::x11/kde/arts3 \
-	FLAC::audio/flac \
 	ogg::audio/libogg \
+	OggFLAC,FLAC::audio/flac \
 	vorbis,vorbisenc::audio/libvorbis \
 	cdda_paranoia,cdda_interface::audio/cdparanoia \
 	mpeg::graphics/mpeg-lib

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/09/22 21:23:14 espie Exp $
-@conflict quanta-*
+@comment $OpenBSD: PLIST,v 1.2 2004/10/19 00:25:30 espie Exp $
 bin/kimagemapeditor
 bin/klinkstatus
 bin/kmdr-editor
@@ -39,6 +38,11 @@ share/applnk/Editors/kmdr-editor.desktop
 share/applnk/Utilities/
 share/applnk/Utilities/kfilereplacepart.desktop
 share/applnk/Utilities/klinkstatus.desktop
+share/apps/kafkapart/
+share/apps/kafkapart/entities
+share/apps/kafkapart/pics/
+share/apps/kafkapart/pics/comment.png
+share/apps/kafkapart/pics/php.png
 share/apps/kfilereplacepart/
 share/apps/kfilereplacepart/kfilereplacepartui.rc
 share/apps/kfilereplacepart/pics/

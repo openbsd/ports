@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/18 09:36:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/10/19 00:25:29 espie Exp $
 bin/adddebug
 bin/build-progress.sh
 bin/catalogmanager
@@ -599,7 +599,6 @@ share/apps/umbrello/pics/uniassociation.png
 share/apps/umbrello/pics/usecase.png
 share/apps/umbrello/tips
 share/apps/umbrello/umbrelloui.rc
-share/config.kcfg/
 share/config.kcfg/cervisiapart.kcfg
 share/config.kcfg/kbabel.kcfg
 share/doc/HTML/en/cervisia/
@@ -749,7 +748,6 @@ share/icons/crystalsvg/22x22/actions/vcs_commit.png
 share/icons/crystalsvg/22x22/actions/vcs_remove.png
 share/icons/crystalsvg/22x22/actions/vcs_status.png
 share/icons/crystalsvg/22x22/actions/vcs_update.png
-share/icons/crystalsvg/22x22/apps/
 share/icons/crystalsvg/22x22/apps/catalogmanager.png
 share/icons/crystalsvg/22x22/apps/cervisia.png
 share/icons/crystalsvg/22x22/apps/umbrello.png
@@ -787,30 +785,20 @@ share/icons/crystalsvg/scalable/actions/vcs_commit.svgz
 share/icons/crystalsvg/scalable/actions/vcs_remove.svgz
 share/icons/crystalsvg/scalable/actions/vcs_status.svgz
 share/icons/crystalsvg/scalable/actions/vcs_update.svgz
-share/icons/crystalsvg/scalable/apps/
 share/icons/crystalsvg/scalable/apps/kompare.svgz
 share/icons/crystalsvg/scalable/apps/umbrello.svgz
 share/icons/crystalsvg/scalable/mimetypes/umbrellofile.svgz
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kuiviewer.png
 share/icons/hicolor/16x16/apps/umbrello.png
 share/icons/hicolor/16x16/mimetypes/
 share/icons/hicolor/16x16/mimetypes/umbrellofile.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kcachegrind.png
 share/icons/hicolor/32x32/apps/kuiviewer.png
 share/icons/hicolor/32x32/apps/umbrello.png
 share/icons/hicolor/32x32/mimetypes/
 share/icons/hicolor/32x32/mimetypes/umbrellofile.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kcachegrind.png
 share/icons/hicolor/48x48/apps/kuiviewer.png
-share/icons/locolor/
-share/icons/locolor/16x16/
-share/icons/locolor/16x16/apps/
 share/icons/locolor/16x16/apps/catalogmanager.png
 share/icons/locolor/16x16/apps/kbabel.png
 share/icons/locolor/16x16/apps/kbabeldict.png
@@ -820,8 +808,6 @@ share/icons/locolor/16x16/apps/kuiviewer.png
 share/icons/locolor/16x16/apps/umbrello.png
 share/icons/locolor/16x16/mimetypes/
 share/icons/locolor/16x16/mimetypes/umbrellofile.png
-share/icons/locolor/32x32/
-share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/catalogmanager.png
 share/icons/locolor/32x32/apps/kbabel.png
 share/icons/locolor/32x32/apps/kbabeldict.png
@@ -857,7 +843,6 @@ share/services/kfile_po.desktop
 share/services/kfile_ts.desktop
 share/services/komparenavtreepart.desktop
 share/services/komparepart.desktop
-share/services/kresources/kcal/
 share/services/kresources/kcal/bugzilla.desktop
 share/services/kuiviewer_part.desktop
 share/services/poauxiliary.desktop
