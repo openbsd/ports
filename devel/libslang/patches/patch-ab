@@ -1,0 +1,12 @@
+*** configure.bak	Tue Jan 21 09:58:15 1997
+--- configure	Tue Jan 28 11:16:31 1997
+***************
+*** 1421,1426 ****
+--- 1421,1427 ----
+  slang_major_version=`echo $slang_version |
+   awk '{ print $1 - 100 * '$slang_minor_version' }'`
+  echo "$ac_t""$slang_major_version.$slang_minor_version" 1>&6
++ slang_minor_version=`echo $slang_minor_version | tr -d '.'`
+  
+  
+  
