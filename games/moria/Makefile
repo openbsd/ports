@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/21 20:57:07 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/29 15:10:08 fgsch Exp $
 
 COMMENT=	"The Dungeons of Moria"
 
@@ -9,7 +9,6 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/games/moria/source/ \
 		ftp://alge.anart.no/pub/games/RPG/moria/
 EXTRACT_SUFX=	.tar.Z
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www-math.bgsu.edu/~grabine/moria.html
 

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/21 02:18:21 jcs Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/29 15:10:08 fgsch Exp $
 
 DISTNAME=	xscavenger-143
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	games
-NEED_VERSION=	1.504
 PKGNAME=	xscavenger-1.4.3
 
 PERMIT_PACKAGE_CDROM=	Yes

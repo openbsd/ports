@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2001/12/28 22:11:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/29 15:10:08 fgsch Exp $
 
 COMMENT=		"Quake/Quake-world client"
 COMMENT-server=		"Quake world server"
 CATEGORIES=		games
-NEED_VERSION=		1.405
 
 FULLPKGNAME-server=	quakeworld-server-20000101
 PKGNAME=		quake-20000101

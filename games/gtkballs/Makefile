@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2002/05/13 18:50:42 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/12/29 15:10:07 fgsch Exp $
 
 COMMENT=	"gtk+ clone of the lines ball logic game"
 
 DISTNAME=	gtkballs-2.2.0
 CATEGORIES=	games x11
-NEED_VERSION=	1.504
 MASTER_SITES=	${HOMEPAGE}dist/ \
 		${MASTER_SITE_SUNSITE:=games/strategy/}
 

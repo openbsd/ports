@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2001/10/28 13:05:47 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/12/29 15:10:08 fgsch Exp $
 
 COMMENT=	"cuddlesome teddy for the X11 desktop"
 
 DISTNAME=	xteddy-2.0.1
 CATEGORIES=	games
-NEED_VERSION=	1.402
 MASTER_SITES=	http://www.ITN.LiU.SE/~stegu/xteddy/
 
 LIB_DEPENDS=	Imlib.19::graphics/imlib

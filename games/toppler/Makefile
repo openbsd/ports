@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/06/08 06:03:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/29 15:10:08 fgsch Exp $
 
 COMMENT=	"Nebulous rewrite of Tower Toppler"
 
 VERSION=	0.96
 DISTNAME=	toppler-${VERSION}
 CATEGORIES=	games
-NEED_VERSION=	1.504
 
 HOMEPAGE=	http://toppler.sourceforge.net
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2002/04/19 07:24:56 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2002/12/29 15:10:08 fgsch Exp $
 
 COMMENT=	"puzzle game for KDE"
 
 DISTNAME=	kslide-0.90
 CATEGORIES=	games
-NEED_VERSION=	1.524
 
 HOMEPAGE=	http://perso.wanadoo.fr/coquelle/taquin/
 

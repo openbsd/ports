@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/26 01:07:57 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/29 15:10:08 fgsch Exp $
 
 COMMENT=	"turn-based strategy engine"
 
 VERSION=	0.5.0
 DISTNAME=	lgeneral-${VERSION}
 CATEGORIES=	games x11
-NEED_VERSION=	1.525
 
 HOMEPAGE=	http://lgeneral.sourceforge.net/
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/13 13:28:07 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/29 15:10:08 fgsch Exp $
 
 COMMENT=		"essentially an Asteroids clone"
 
 DISTNAME=		sdlroids-1.3.4
 CATEGORIES=		games
-NEED_VERSION=		1.528
 
 HOMEPAGE=		http://david.hedbor.org/projects/sdlroids/
 

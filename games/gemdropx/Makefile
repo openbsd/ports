@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 20:57:06 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/29 15:10:07 fgsch Exp $
 
 COMMENT=	"one-player puzzle game for x11"
 
 VERSION=	0.7
 DISTNAME=	gemdropx-${VERSION}
 CATEGORIES=	games x11
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www.newbreedsoftware.com/gemdropx/
 

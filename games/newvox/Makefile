@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2001/12/28 22:11:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/29 15:10:08 fgsch Exp $
 
 COMMENT=	"voxel-style landscape rendering fly-by"
 
 DISTNAME=	newvox-1.0
 CATEGORIES=	games
-NEED_VERSION=	1.419
 
 HOMEPAGE=	http://www.libsdl.org/projects/newvox
 

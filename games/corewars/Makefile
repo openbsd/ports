@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/06/08 06:03:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/12/29 15:10:07 fgsch Exp $
 COMMENT=	"computer simulation game"
 
 VERSION=	0.9.12
 DISTNAME=	corewars-${VERSION}
-NEED_VERSION=	1.500
 
 CATEGORIES=	games x11
 

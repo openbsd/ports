@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/12/28 22:40:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/12/29 15:10:08 fgsch Exp $
 
 COMMENT=	"zombies clone"
 
 VERSION=	1.0.0
 DISTNAME=	sdlzombies-${VERSION}
 CATEGORIES=	games x11
-NEED_VERSION=	1.427
 
 HOMEPAGE=	http://hocwp.free.fr/sdlzombies.html
 
