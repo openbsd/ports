@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/10/27 21:07:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2003/06/20 08:18:53 kevlo Exp $
 
 COMMENT=	"Convert invisible (binary) characters to a visible form"
 
@@ -7,8 +7,6 @@ CATEGORIES=	misc
 
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 EXTRACT_SUFX=	.tgz
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
