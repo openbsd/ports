@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/04/04 14:10:09 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2004/04/18 20:58:45 brad Exp $
 
 COMMENT=	"tools and library routines for working with GIF images"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static --without-x
+CONFIGURE_ARGS+= --without-x
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \
@@ -27,10 +27,6 @@ PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
 DOCS=	COPYING UNCOMPRESSED_GIF
 HTMLDOCS= *.html *.txt *.png
 DOCSDIR= ${PREFIX}/share/doc/libungif
-
-pre-build:
-	@touch ${WRKSRC}/aclocal.m4
-	@find ${WRKSRC} -name 'Makefile.in' -print | xargs touch
 
 post-install:
 	@cd ${PREFIX}/lib; \
