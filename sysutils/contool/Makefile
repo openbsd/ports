@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/04/03 00:24:04 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/04/03 01:38:25 espie Exp $
 
 DISTNAME=	contool-3.3a
 CATEGORIES=	sysutils
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	xview.3.::x11/xview/lib
-BUILD_DEPENDS=	${X11BASE}/lib/X11/config/XView.cf
+BUILD_DEPENDS=	${X11BASE}/lib/X11/config/XView.cf::x11/xview/config
 
 WRKDIST=	${WRKDIR}
 USE_IMAKE=	Yes
