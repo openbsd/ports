@@ -9,4 +9,6 @@ ${PREFIX}/share/doc/pptp/USING; design notes are in the Documentation
 directory; and the standards documents used to implement pptp-linux 
 can be found in the Reference directory.
 
+bbaa FLAVOR: fix for buggy Alcatel 1000 ADSL modem (model type BBAA)
+
 WWW: ${HOMEPAGE}
