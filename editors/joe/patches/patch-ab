@@ -1,5 +1,5 @@
 *** Makefile.orig	Mon Jan 23 12:01:28 1995
---- Makefile	Thu Oct 15 11:28:54 1998
+--- Makefile	Thu Nov 12 16:40:55 1998
 ***************
 *** 10,23 ****
   # to go:
@@ -49,6 +49,29 @@
   
   # Object files
   
+***************
+*** 90,99 ****
+  	if [ ! -d $(WHEREJOE) ]; then mkdir $(WHEREJOE); chmod a+rx $(WHEREJOE); fi
+  	rm -f $(WHEREJOE)/joe $(WHEREJOE)/jmacs $(WHEREJOE)/jstar $(WHEREJOE)/jpico $(WHEREJOE)/rjoe $(WHEREJOE)/termidx
+  	mv joe $(WHEREJOE)
+! 	ln $(WHEREJOE)/joe $(WHEREJOE)/jmacs
+! 	ln $(WHEREJOE)/joe $(WHEREJOE)/jstar
+! 	ln $(WHEREJOE)/joe $(WHEREJOE)/rjoe
+! 	ln $(WHEREJOE)/joe $(WHEREJOE)/jpico
+  	mv termidx $(WHEREJOE)
+  	if [ ! -d $(WHERERC) ]; then mkdir $(WHERERC); chmod a+rx $(WHERERC); fi
+  	rm -f $(WHERERC)/joerc $(WHERERC)/jmacsrc $(WHERERC)/jstarrc $(WHERERC)/jpicorc $(WHERERC)/rjoerc $(WHEREMAN)/joe.1
+--- 98,107 ----
+  	if [ ! -d $(WHEREJOE) ]; then mkdir $(WHEREJOE); chmod a+rx $(WHEREJOE); fi
+  	rm -f $(WHEREJOE)/joe $(WHEREJOE)/jmacs $(WHEREJOE)/jstar $(WHEREJOE)/jpico $(WHEREJOE)/rjoe $(WHEREJOE)/termidx
+  	mv joe $(WHEREJOE)
+! 	ln -s $(WHEREJOE)/joe $(WHEREJOE)/jmacs
+! 	ln -s $(WHEREJOE)/joe $(WHEREJOE)/jstar
+! 	ln -s $(WHEREJOE)/joe $(WHEREJOE)/rjoe
+! 	ln -s $(WHEREJOE)/joe $(WHEREJOE)/jpico
+  	mv termidx $(WHEREJOE)
+  	if [ ! -d $(WHERERC) ]; then mkdir $(WHERERC); chmod a+rx $(WHERERC); fi
+  	rm -f $(WHERERC)/joerc $(WHERERC)/jmacsrc $(WHERERC)/jstarrc $(WHERERC)/jpicorc $(WHERERC)/rjoerc $(WHEREMAN)/joe.1
 ***************
 *** 115,126 ****
   	chmod a+r $(WHERERC)/jpicorc

@@ -1,5 +1,15 @@
-*** main.c.orig	Thu Apr 16 18:00:34 1998
---- main.c	Thu Apr 16 18:01:27 1998
+*** main.c.orig	Sun Jan 22 06:21:08 1995
+--- main.c	Thu Nov 12 16:43:59 1998
+***************
+*** 119,124 ****
+--- 119,125 ----
+   if(flg)
+    if(maint->curwin->watom->what==TYPETW) return 0;
+    else maint->curwin->notify= &term;
++  nredraw(n);
+   while(!leave && (!flg || !term))
+    {
+    MACRO *m;
 ***************
 *** 187,198 ****
    run=namprt(argv[0]);
@@ -14,7 +24,7 @@
   
   #ifndef __MSDOS__
    if(!(cap=getcap(NULL,9600,NULL,NULL)))
---- 187,198 ----
+--- 188,199 ----
    run=namprt(argv[0]);
   #endif 
   
@@ -36,7 +46,7 @@
    if(s)
     {
     s=vsncpy(NULL,0,sz(s));
---- 249,255 ----
+--- 250,256 ----
     }
   
    vsrm(s);
