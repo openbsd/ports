@@ -1,0 +1,16 @@
+$OpenBSD: patch-report_c,v 1.1 2003/10/21 19:23:50 jakob Exp $
+--- report.c.orig	Sun Oct  1 01:41:10 2000
++++ report.c	Tue Oct 21 21:22:27 2003
+@@ -343,6 +343,12 @@ report(register char *title, register u_
+ 		syslog(LOG_ERR, "dup2: %m");
+ 		exit(1);
+ 	}
++
++	if (freopen("/dev/null", "w", stderr) == NULL) {
++		syslog(LOG_ERR, "freopen: %m");
++		exit(1);
++	}
++
+ 	/* XXX Need to freopen()? */
+ 	/* Always Deliver interactively (pause when child depth gets large) */
+ 	execl(sendmail, "sendmail", "-odi", watcher, NULL);
