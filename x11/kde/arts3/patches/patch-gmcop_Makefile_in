@@ -1,0 +1,12 @@
+$OpenBSD: patch-gmcop_Makefile_in,v 1.1 2003/04/19 14:39:03 espie Exp $
+--- gmcop/Makefile.in.orig	Sat Apr 19 16:32:10 2003
++++ gmcop/Makefile.in	Sat Apr 19 16:32:22 2003
+@@ -101,7 +101,7 @@ FRAMEWORK_COREAUDIO = @FRAMEWORK_COREAUD
+ GCJ = @GCJ@
+ GCJFLAGS = @GCJFLAGS@
+ GLIB_CFLAGS = @GLIB_CFLAGS@
+-GLIB_LDFLAGS = @GLIB_LDFLAGS@
++GLIB_LDFLAGS = @GLIB_LDFLAGS@ -pthread
+ GLIB_LIBADD = @GLIB_LIBADD@
+ GLINC = @GLINC@
+ GLLIB = @GLLIB@
