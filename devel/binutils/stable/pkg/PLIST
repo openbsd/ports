@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/19 04:19:21 fgsch Exp $
+bin/ar
+bin/as
+bin/gprof
+bin/ld
+bin/nm
+bin/objdump
+bin/ranlib
+bin/size
+bin/strings
+bin/strip
+man/man1/ar.1
+man/man1/as.1
+man/man1/gprof.1
+man/man1/ld.1
+man/man1/nm.1
+man/man1/objdump.1
+man/man1/ranlib.1
+man/man1/size.1
+man/man1/strings.1
+man/man1/strip.1

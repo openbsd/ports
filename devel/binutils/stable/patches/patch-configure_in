@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2002/02/19 04:19:21 fgsch Exp $
+--- configure.in.orig	Tue Jun 19 18:05:20 2001
++++ configure.in	Wed Feb 13 23:19:24 2002
+@@ -690,6 +690,7 @@ case "${target}" in
+   hppa*-*-*elf* | \
+   hppa*-*-linux-gnu* | \
+   hppa*-*-lites* | \
++  hppa*-*-openbsd* | \
+   hppa*64*-*-*)
+     # Do configure ld/binutils/gas for this case.
+     ;;

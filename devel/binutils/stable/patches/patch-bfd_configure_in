@@ -1,0 +1,11 @@
+$OpenBSD: patch-bfd_configure_in,v 1.1.1.1 2002/02/19 04:19:21 fgsch Exp $
+--- bfd/configure.in.orig	Tue Jun 19 16:58:12 2001
++++ bfd/configure.in	Thu Feb 14 06:19:46 2002
+@@ -143,6 +143,7 @@ if test "${target}" = "${host}"; then
+ 	TRAD_HEADER='"hosts/alphalinux.h"'
+ 	;;
+   alpha*-*-netbsd*)	COREFILE=netbsd-core.lo ;;
++  alpha*-*-openbsd*)	COREFILE=netbsd-core.lo ;;
+   alpha*-*-*)		COREFILE=osf-core.lo ;;
+   arm-*-freebsd*)	COREFILE='' ;;
+   arm-*-riscix)		COREFILE=trad-core.lo ;;

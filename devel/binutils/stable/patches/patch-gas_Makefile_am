@@ -1,0 +1,11 @@
+$OpenBSD: patch-gas_Makefile_am,v 1.1.1.1 2002/02/19 04:19:21 fgsch Exp $
+--- gas/Makefile.am.orig	Mon Jun 11 07:04:36 2001
++++ gas/Makefile.am	Wed Jan  2 18:10:36 2002
+@@ -348,6 +348,7 @@ TARG_ENV_HFILES = \
+ 	config/te-macos.h \
+ 	config/te-nbsd.h \
+ 	config/te-nbsd532.h \
++	config/te-obsd.h \
+ 	config/te-pc532mach.h \
+ 	config/te-pe.h \
+ 	config/te-ppcnw.h \
