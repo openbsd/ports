@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/11/01 21:34:13 jasoni Exp $
+# $OpenBSD: Makefile,v 1.24 2001/11/19 09:10:07 jasoni Exp $
 
 COMMENT=	"color, low memory usage, xterm replacement"
 
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/autoconf
 CONFIGURE_ARGS=		--enable-utmp \
