@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/15 17:42:24 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/09/03 05:49:19 mark Exp $
 
 COMMENT=	"active packet sniffer"
 
 DISTNAME=	angst-0.4b
 CATEGORIES=	net
-NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=angst/}
 
 HOMEPAGE=	http://angst.sourceforge.net/
@@ -13,6 +12,7 @@ LIB_DEPENDS=	net::net/libnet
 
 MAINTAINER=	Mark Grimes <mark@openbsd.org>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
