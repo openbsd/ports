@@ -6,17 +6,17 @@
 # Relevant URLs:	http://www.postfix.org/
 #			http://www.alphaworks.ibm.com/formula/securemailer/
 #
-# $OpenBSD: Makefile,v 1.4 1999/02/02 19:39:16 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1999/03/10 03:25:27 marc Exp $
 
 DISTNAME=	postfix-beta-19990122
-
 CATEGORIES=     mail
+
+#BROKEN=	"newer version available"
 
 MASTER_SITES=	ftp://ftp.merit.edu/postfix/ \
 		ftp://ftp.sunet.se/pub/unix/mail/postfix/ \
 		ftp://ftp.tau.ac.il/pub/unix/mail/postfix/ \
-		ftp://ftp.cs.uu.nl/mirror/postfix/postfix-release/ \
-		ftp://ftp.win.ne.jp/pub/network/mail/postfix/
+		ftp://ftp.cs.uu.nl/mirror/postfix/postfix-release/
 
 MAINTAINER=	dugsong@monkey.org
 
