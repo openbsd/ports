@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 1999/06/09 20:33:41 brad Exp $
+# $OpenBSD: Makefile,v 1.16 1999/09/04 04:56:24 brad Exp $
 
-DISTNAME=	glib-1.2.3
+DISTNAME=	glib-1.2.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
@@ -10,7 +10,7 @@ NEED_VERSION=	1.73
 
 MAINTAINER=	brad@openbsd.org
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD= simple
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-threads \

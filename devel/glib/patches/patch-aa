@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue May 11 12:40:36 1999
-+++ Makefile.in	Tue May 11 12:46:58 1999
-@@ -97,8 +97,6 @@
+--- Makefile.in.orig	Mon Aug 23 16:02:15 1999
++++ Makefile.in	Sat Aug 28 00:47:32 1999
+@@ -99,8 +99,6 @@
  
  SUBDIRS = . gmodule gthread docs tests
  
@@ -9,7 +9,7 @@
  bin_SCRIPTS = glib-config
  
  BUILT_SOURCES = stamp-gc-h #note: not glibconfig.h
-@@ -113,13 +111,9 @@
+@@ -115,13 +113,9 @@
  libglib_la_SOURCES =  	garray.c		gcache.c		gcompletion.c		gdataset.c		gdate.c         	gerror.c		ghash.c			ghook.c			giochannel.c    	giounix.c       	glist.c			gmain.c         	gmem.c			gmessages.c		gmutex.c		gnode.c			gprimes.c		grel.c			gscanner.c		gslist.c		gstrfuncs.c		gstring.c		gtimer.c		gtree.c			gutils.c
  
  
@@ -25,7 +25,7 @@
  
  
  noinst_PROGRAMS = testglib testgdate testgdateparser
-@@ -167,7 +161,7 @@
+@@ -169,7 +163,7 @@
  LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
@@ -34,7 +34,7 @@
  
  HEADERS =  $(include_HEADERS)
  
-@@ -341,25 +335,6 @@
+@@ -343,25 +337,6 @@
  	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
  	done
  
@@ -60,7 +60,7 @@
  install-m4dataDATA: $(m4data_DATA)
  	@$(NORMAL_INSTALL)
  	$(mkinstalldirs) $(DESTDIR)$(m4datadir)
-@@ -557,15 +532,14 @@
+@@ -559,15 +534,14 @@
  install-exec-am: install-libLTLIBRARIES install-binSCRIPTS
  install-exec: install-exec-recursive
  
@@ -78,7 +78,7 @@
  		uninstall-includeHEADERS
  uninstall: uninstall-recursive
  all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) \
-@@ -631,7 +605,6 @@
+@@ -633,7 +607,6 @@
  maintainer-clean-libtool mostlyclean-noinstPROGRAMS \
  distclean-noinstPROGRAMS clean-noinstPROGRAMS \
  maintainer-clean-noinstPROGRAMS uninstall-binSCRIPTS install-binSCRIPTS \
