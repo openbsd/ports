@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Sun Apr 29 14:40:37 2001
-+++ src/Makefile.in	Sat Jul 21 17:04:36 2001
-@@ -338,7 +338,7 @@
+--- src/Makefile.in.orig	Sun Apr 29 07:40:37 2001
++++ src/Makefile.in	Mon Feb 24 23:18:38 2003
+@@ -338,7 +338,7 @@ install-binPROGRAMS: $(bin_PROGRAMS)
  	$(mkinstalldirs) $(DESTDIR)$(bindir)
  	@list='$(bin_PROGRAMS)'; for p in $$list; do \
  	  if test -f $$p; then \
@@ -9,7 +9,7 @@
  	   echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f"; \
  	   $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f; \
  	  else :; fi; \
-@@ -347,7 +347,7 @@
+@@ -347,7 +347,7 @@ install-binPROGRAMS: $(bin_PROGRAMS)
  uninstall-binPROGRAMS:
  	@$(NORMAL_UNINSTALL)
  	@list='$(bin_PROGRAMS)'; for p in $$list; do \

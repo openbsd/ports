@@ -1,6 +1,6 @@
---- src/ls.c.orig	Sun Apr 29 12:42:47 2001
-+++ src/ls.c	Fri Jul 20 21:01:39 2001
-@@ -510,13 +510,13 @@
+--- src/ls.c.orig	Sun Apr 29 05:42:47 2001
++++ src/ls.c	Mon Feb 24 23:18:38 2003
+@@ -510,13 +510,13 @@ enum color_type
  enum indicator_no
    {
      C_LEFT, C_RIGHT, C_END, C_NORM, C_FILE, C_DIR, C_LINK, C_FIFO, C_SOCK,
@@ -16,7 +16,7 @@
    };
  
  struct color_ext_type
-@@ -542,7 +542,11 @@
+@@ -542,7 +542,11 @@ static struct bin_str color_indicator[] 
      { 0, NULL },			/* mi: Missing file: undefined */
      { 0, NULL },			/* or: Orphanned symlink: undefined */
      { LEN_STR_PAIR ("01;32") },		/* ex: Executable: bright green */
@@ -29,7 +29,7 @@
    };
  
  /* FIXME: comment  */
-@@ -2883,7 +2887,14 @@
+@@ -2883,7 +2887,14 @@ print_color_indicator (const char *name,
    else
      {
        if (S_ISDIR (mode))
@@ -45,7 +45,7 @@
        else if (S_ISLNK (mode))
  	type = ((!linkok && color_indicator[C_ORPHAN].string)
  		? C_ORPHAN : C_LINK);
-@@ -2898,7 +2909,13 @@
+@@ -2898,7 +2909,13 @@ print_color_indicator (const char *name,
        else if (S_ISDOOR (mode))
  	type = C_DOOR;
  

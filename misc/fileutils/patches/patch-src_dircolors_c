@@ -1,6 +1,6 @@
---- src/dircolors.c.orig	Mon Aug  7 19:46:16 2000
-+++ src/dircolors.c	Fri Jul 20 20:56:09 2001
-@@ -69,13 +69,15 @@
+--- src/dircolors.c.orig	Mon Aug  7 12:46:16 2000
++++ src/dircolors.c	Mon Feb 24 23:18:38 2003
+@@ -69,13 +69,15 @@ static const char *const slack_codes[] =
    "NORMAL", "NORM", "FILE", "DIR", "LNK", "LINK",
    "SYMLINK", "ORPHAN", "MISSING", "FIFO", "PIPE", "SOCK", "BLK", "BLOCK",
    "CHR", "CHAR", "DOOR", "EXEC", "LEFT", "LEFTCODE", "RIGHT", "RIGHTCODE",
