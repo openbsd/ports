@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2000/09/06 05:48:49 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/09/16 08:16:43 brad Exp $
 
-ONLY_FOR_ARCH=	i386
+.if ${MACHINE_ARCH} == "sparc"
+BROKEN=		"pthreads are currently not working on the SPARC architecture"
+.endif
 
 DISTNAME=	icecast-1.3.7
 CATEGORIES=	net audio www
