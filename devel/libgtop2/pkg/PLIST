@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/08/06 20:44:09 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/10/07 05:47:57 marcm Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/libgtop2.info
 bin/libgtop_daemon2
 bin/libgtop_server2
@@ -68,8 +68,10 @@ share/locale/ar/LC_MESSAGES/libgtop-2.0.mo
 share/locale/az/LC_MESSAGES/libgtop-2.0.mo
 share/locale/be/LC_MESSAGES/libgtop-2.0.mo
 share/locale/bg/LC_MESSAGES/libgtop-2.0.mo
+share/locale/bn/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ca/LC_MESSAGES/libgtop-2.0.mo
 share/locale/cs/LC_MESSAGES/libgtop-2.0.mo
+share/locale/cy/LC_MESSAGES/libgtop-2.0.mo
 share/locale/da/LC_MESSAGES/libgtop-2.0.mo
 share/locale/de/LC_MESSAGES/libgtop-2.0.mo
 share/locale/el/LC_MESSAGES/libgtop-2.0.mo
@@ -82,6 +84,7 @@ share/locale/fr/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ga/LC_MESSAGES/libgtop-2.0.mo
 share/locale/gl/LC_MESSAGES/libgtop-2.0.mo
 share/locale/he/LC_MESSAGES/libgtop-2.0.mo
+share/locale/hi/LC_MESSAGES/libgtop-2.0.mo
 share/locale/hu/LC_MESSAGES/libgtop-2.0.mo
 share/locale/id/LC_MESSAGES/libgtop-2.0.mo
 share/locale/it/LC_MESSAGES/libgtop-2.0.mo
@@ -167,6 +170,8 @@ share/locale/zh_TW/LC_MESSAGES/libgtop-2.0.mo
 @comment @dirrm share/locale/id
 @comment @dirrm share/locale/hu/LC_MESSAGES
 @comment @dirrm share/locale/hu
+@comment @dirrm share/locale/hi/LC_MESSAGES
+@comment @dirrm share/locale/hi
 @comment @dirrm share/locale/he/LC_MESSAGES
 @comment @dirrm share/locale/he
 @comment @dirrm share/locale/gl/LC_MESSAGES
@@ -191,10 +196,14 @@ share/locale/zh_TW/LC_MESSAGES/libgtop-2.0.mo
 @comment @dirrm share/locale/de
 @comment @dirrm share/locale/da/LC_MESSAGES
 @comment @dirrm share/locale/da
+@comment @dirrm share/locale/cy/LC_MESSAGES
+@comment @dirrm share/locale/cy
 @comment @dirrm share/locale/cs/LC_MESSAGES
 @comment @dirrm share/locale/cs
 @comment @dirrm share/locale/ca/LC_MESSAGES
 @comment @dirrm share/locale/ca
+@comment @dirrm share/locale/bn/LC_MESSAGES
+@comment @dirrm share/locale/bn
 @comment @dirrm share/locale/bg/LC_MESSAGES
 @comment @dirrm share/locale/bg
 @comment @dirrm share/locale/be/LC_MESSAGES

@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/07/10 20:43:32 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/10/07 05:47:57 marcm Exp $
+@pkgcfl linc-*
 bin/ior-decode-2
+bin/linc-cleanup-sockets
 bin/orbit-idl-2
 bin/orbit2-config
 bin/typelib-dump
@@ -7,14 +9,6 @@ include/orbit-2.0/ORBitservices/CosNaming.h
 include/orbit-2.0/ORBitservices/CosNaming_impl.h
 include/orbit-2.0/ORBitservices/orbit-imodule.h
 include/orbit-2.0/orbit-idl/orbit-idl-backend.h
-include/orbit-2.0/orbit/GIOP/giop-basics.h
-include/orbit-2.0/orbit/GIOP/giop-connection.h
-include/orbit-2.0/orbit/GIOP/giop-endian.h
-include/orbit-2.0/orbit/GIOP/giop-recv-buffer.h
-include/orbit-2.0/orbit/GIOP/giop-send-buffer.h
-include/orbit-2.0/orbit/GIOP/giop-server.h
-include/orbit-2.0/orbit/GIOP/giop-types.h
-include/orbit-2.0/orbit/GIOP/giop.h
 include/orbit-2.0/orbit/dynamic/dynamic-defs.h
 include/orbit-2.0/orbit/dynamic/dynamic.h
 include/orbit-2.0/orbit/orb-core/allocators.h
@@ -70,10 +64,23 @@ lib/pkgconfig/ORBit-CosNaming-2.0.pc
 lib/pkgconfig/ORBit-idl-2.0.pc
 lib/pkgconfig/ORBit-imodule-2.0.pc
 share/aclocal/ORBit2.m4
+share/gtk-doc/html/ORBit2/ORBit2-orbit2-allocators.html
+share/gtk-doc/html/ORBit2/ORBit2-orbit2-small.html
+share/gtk-doc/html/ORBit2/ORBit2.devhelp
+share/gtk-doc/html/ORBit2/general.html
+share/gtk-doc/html/ORBit2/home.png
+share/gtk-doc/html/ORBit2/index.html
+share/gtk-doc/html/ORBit2/index.sgml
+share/gtk-doc/html/ORBit2/left.png
+share/gtk-doc/html/ORBit2/right.png
+share/gtk-doc/html/ORBit2/up.png
 share/idl/orbit-2.0/CosNaming.idl
 %%SHARED%%
 @dirrm share/idl/orbit-2.0
 @unexec rmdir %D/share/idl 2>/dev/null || true
+@dirrm share/gtk-doc/html/ORBit2
+@comment @dirrm share/gtk-doc/html
+@comment @dirrm share/gtk-doc
 @comment @dirrm share/aclocal
 @comment @dirrm lib/pkgconfig
 @dirrm lib/orbit-2.0
@@ -81,7 +88,6 @@ share/idl/orbit-2.0/CosNaming.idl
 @dirrm include/orbit-2.0/orbit/poa
 @dirrm include/orbit-2.0/orbit/orb-core
 @dirrm include/orbit-2.0/orbit/dynamic
-@dirrm include/orbit-2.0/orbit/GIOP
 @dirrm include/orbit-2.0/orbit-idl
 @dirrm include/orbit-2.0/orbit
 @dirrm include/orbit-2.0/ORBitservices

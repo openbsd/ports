@@ -1,7 +1,7 @@
-$OpenBSD: patch-gnome-pty-helper_Makefile_in,v 1.1.1.1 2003/06/12 19:45:35 marcm Exp $
---- gnome-pty-helper/Makefile.in.orig	Mon May 12 12:33:52 2003
-+++ gnome-pty-helper/Makefile.in	Thu May 29 21:24:56 2003
-@@ -427,7 +427,7 @@ uninstall-am: uninstall-info-am uninstal
+$OpenBSD: patch-gnome-pty-helper_Makefile_in,v 1.2 2003/10/07 05:47:58 marcm Exp $
+--- gnome-pty-helper/Makefile.in.orig	2003-06-16 14:50:27.000000000 -0700
++++ gnome-pty-helper/Makefile.in	2003-09-08 15:25:52.000000000 -0700
+@@ -514,7 +514,7 @@ uninstall-am: uninstall-info-am uninstal
  
  
  install-exec-hook:

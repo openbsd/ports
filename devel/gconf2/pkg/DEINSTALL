@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.3 2003/08/23 19:54:23 marcm Exp $
+# $OpenBSD: DEINSTALL,v 1.4 2003/10/07 05:47:57 marcm Exp $
 #
 
 set -e

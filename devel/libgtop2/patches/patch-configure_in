@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure_in,v 1.2 2003/06/12 19:39:57 marcm Exp $
---- configure.in.orig	Mon May 19 12:33:10 2003
-+++ configure.in	Mon May 19 12:33:38 2003
+$OpenBSD: patch-configure_in,v 1.3 2003/10/07 05:47:57 marcm Exp $
+--- configure.in.orig	2003-08-24 11:58:42.000000000 -0700
++++ configure.in	2003-09-08 15:05:35.000000000 -0700
+@@ -36,7 +36,7 @@ AC_SUBST(LIBGTOP_VERSION_SUFFIX)
+ 
+ # libtool versioning
+ LT_RELEASE=$LIBGTOP_MAJOR_VERSION.$LIBGTOP_MINOR_VERSION
+-LT_CURRENT=`expr $LIBGTOP_MICRO_VERSION - $LIBGTOP_INTERFACE_AGE`
++LT_CURRENT=1
+ LT_REVISION=$LIBGTOP_INTERFACE_AGE
+ LT_AGE=`expr $LIBGTOP_BINARY_AGE - $LIBGTOP_INTERFACE_AGE`
+ LT_VERSION_INFO='-version-info ${LT_CURRENT}:${LT_REVISION}:${LT_AGE}'
 @@ -471,6 +471,7 @@ sysdeps/osf1/Makefile
  sysdeps/linux/Makefile
  sysdeps/kernel/Makefile

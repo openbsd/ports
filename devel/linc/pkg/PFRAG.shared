@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2003/06/12 19:34:48 marcm Exp $
-lib/liblinc.so.1.0
-DYNLIBDIR(%D/lib)

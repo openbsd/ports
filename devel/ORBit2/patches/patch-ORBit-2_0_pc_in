@@ -1,0 +1,12 @@
+$OpenBSD: patch-ORBit-2_0_pc_in,v 1.1 2003/10/07 05:47:57 marcm Exp $
+--- ORBit-2.0.pc.in.orig	2003-08-20 08:44:44.000000000 -0700
++++ ORBit-2.0.pc.in	2003-08-20 08:46:02.000000000 -0700
+@@ -8,6 +8,6 @@ orbit_idl=@bindir@/orbit-idl-2
+ Name: ORBit-2.0
+ Description: High-performance CORBA Object Request Broker.
+ Version: @ORBIT_VERSION@
+-Requires: glib-2.0 gmodule-2.0
+-Libs: -L${libdir} -lORBit-2 @ORBIT_LIBS@ @LIBS@ -lm
++Requires: glib-2.0 gobject-2.0 gthread-2.0 gmodule-2.0
++Libs: -L${libdir} -lORBit-2 @LIBS@ -lm
+ Cflags: -I${includedir}/orbit-2.0 -DORBIT2=1

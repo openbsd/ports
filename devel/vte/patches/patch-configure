@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure,v 1.1 2003/10/07 05:47:58 marcm Exp $
+--- configure.orig	2003-06-16 14:50:24.000000000 -0700
++++ configure	2003-09-08 22:38:21.000000000 -0700
+@@ -23732,19 +23732,10 @@ fi
+ rm -f conftest*
+ 
+ 
+-cat >>confdefs.h <<\_ACEOF
+-#define _XOPEN_SOURCE_EXTENDED 1
+-_ACEOF
+ 
+ 
+-cat >>confdefs.h <<\_ACEOF
+-#define _XOPEN_SOURCE 1
+-_ACEOF
+ 
+ 
+-cat >>confdefs.h <<\_ACEOF
+-#define __EXTENSIONS__ 1
+-_ACEOF
+ 
+ 
+ 

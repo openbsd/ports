@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2003/10/06 17:13:25 marcm Exp $
+# $OpenBSD: Makefile,v 1.186 2003/10/07 05:47:57 marcm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -95,7 +95,6 @@
      SUBDIR += libutf
      SUBDIR += libwnck
      SUBDIR += libzvt
-     SUBDIR += linc
      SUBDIR += lincvs
      SUBDIR += m4
      SUBDIR += mico
