@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/10/02 23:07:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/10/11 20:01:25 naddy Exp $
 
 COMMENT=		"daemontools alike replacement for init"
 
-DISTNAME=		runit-1.0.4
+DISTNAME=		runit-1.0.5
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://www.smarden.org/runit/
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
-WRKDIST=		${WRKDIR}/admin/runit-1.0.4
+WRKDIST=		${WRKDIR}/admin/${DISTNAME}
 WRKSRC=			${WRKDIST}/src
 SBINPROGRAMS=		runit runit-init runsvdir runsvchdir runsv \
 			runsvctrl runsvstat svlogd utmpset svwaitdown \
