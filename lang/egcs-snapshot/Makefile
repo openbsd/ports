@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.29 1999/02/13 00:53:48 espie Exp $
+# $OpenBSD: Makefile,v 1.30 1999/02/14 19:33:31 espie Exp $
 #
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -48,7 +48,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1999-01-31
+LATEST_DATE=1999-02-14
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -57,7 +57,7 @@ LATEST_DATE=1999-01-31
 
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
-NEXT_DATE=1999-02-08
+#NEXT_DATE=1999-02-14
 #PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
@@ -223,7 +223,6 @@ post-patch:
 	#find ${WRKSRC} -name \*.orig|xargs ${RM}
 	${CP} -R ${FILESDIR}/config/* ${WRKSRC}
 	-${RM} -rf ${WRKSRC}/texinfo 
-	${MV} ${WRKSRC}/libiberty/mkstemp.c ${WRKSRC}/libiberty/mkstemps.c
 	cd ${WRKSRC}; \
 	for f in `cat ${FILESDIR}/fixdepend`; \
 	do \
@@ -291,8 +290,8 @@ WRKBUILD=${WRKDIR}/build-${MACHINE_ARCH}
 # rebuild configure files after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
 pre-configure:
-	cd ${WRKSRC}/gcc && autoreconf
-	cd ${WRKSRC}/libiberty && autoreconf
+	cd ${WRKSRC}/gcc && PATH=${PORTPATH} autoreconf
+	cd ${WRKSRC}/libiberty && PATH=${PORTPATH} autoreconf
 
 
 ####
