@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2002/03/07 17:39:10 espie Exp $
+# $OpenBSD: Makefile,v 1.102 2002/05/20 10:51:16 jsyn Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -24,6 +24,7 @@
      SUBDIR += dante
      SUBDIR += despoof
      SUBDIR += dsniff
+     SUBDIR += fragroute
      SUBDIR += fragrouter
      SUBDIR += gnupg
      SUBDIR += gnupg,idea
