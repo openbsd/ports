@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2002/06/09 05:36:43 wilfried Exp $
+# $OpenBSD: Makefile,v 1.14 2002/08/07 22:08:18 naddy Exp $
 
 COMMENT=		"python imaging library"
 COMMENT-examples=	"examples for python imaging library"
 
-DISTNAME=		Imaging-1.1.2
+DISTNAME=		Imaging-1.1.3
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
-NEED_VERSION=		1.505
 
 HOMEPAGE=		http://www.pythonware.com/products/pil/
 
