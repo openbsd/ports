@@ -1,0 +1,108 @@
+#!/bin/sh
+#
+# $OpenBSD: INSTALL,v 1.1.1.1 2001/09/13 21:23:08 todd Exp $
+
+PREFIX=${PKG_PREFIX:-/usr/local}
+PKGNAME=gnome-applets
+DEST_PFX=/etc
+SOURCE_PFX=${PREFIX}/share/${PKGNAME}
+
+do_post() {
+
+    echo 
+    echo "*=================[ ${PKGNAME}"
+
+    # scrollkeeper
+    echo "*"
+    echo "* Running scrollkeeper-update..."
+    /usr/local/bin/scrollkeeper-update -p $(/usr/local/bin/scrollkeeper-config --pkglocalstatedir)
+    echo "*"
+
+    # install or take note of existing config files
+    for f in \
+       	CORBA/servers/another_clock_applet.gnorba \
+	CORBA/servers/asclock_applet.gnorba \
+	CORBA/servers/battery_applet.gnorba \
+	CORBA/servers/charpick_applet.gnorba \
+	CORBA/servers/clockmail_applet.gnorba \
+	CORBA/servers/drivemount_applet.gnorba \
+	CORBA/servers/fifteen_applet.gnorba \
+	CORBA/servers/geyes_applet.gnorba \
+	CORBA/servers/gkb_applet.gnorba \
+	CORBA/servers/jbc_applet.gnorba \
+	CORBA/servers/life_applet.gnorba \
+	CORBA/servers/mini-commander_applet.gnorba \
+	CORBA/servers/quicklaunch_applet.gnorba \
+	CORBA/servers/tickastat_applet.gnorba \
+	CORBA/servers/webcontrol_applet.gnorba \
+	CORBA/servers/whereami_applet.gnorba \
+	CORBA/servers/odometer_applet.gnorba \
+	CORBA/servers/cpumemusage_applet.gnorba \
+	CORBA/servers/diskusage_applet.gnorba \
+	CORBA/servers/multiload_applet.gnorba \
+	CORBA/servers/gweather.gnorba \
+	CORBA/servers/gtik2_applet.gnorba \
+	CORBA/servers/slash_applet.gnorba \
+	CORBA/servers/mixer_applet.gnorba \
+	CORBA/servers/modemlights_applet.gnorba \
+	CORBA/servers/sound-monitor_applet.gnorba \
+	CORBA/servers/gnotes_applet.gnorba
+    do
+	if [ -f "${DEST_PFX}/$f" ]; then
+	    OLD_CONFS="${OLD_CONFS} $f"
+	else
+	    if ! install -m 644 ${SOURCE_PFX}/$f ${DEST_PFX}/$f; then
+		echo "* ERROR: The following file could not be installed, exiting: ${DEST_PFX}/$f"
+		exit 1
+	    fi
+	    NEW_CONFS="${NEW_CONFS} $f"
+	fi
+    done
+    
+    # print status report
+    if [ -n "${NEW_CONFS}" ]; then
+	echo "* The following NEW configuration files have been installed:"
+	echo "*"
+	for f in ${NEW_CONFS}; do
+	    echo "* ${DEST_PFX}/$f"
+	done 
+    fi
+    
+    if [ -n "${OLD_CONFS}" ]; then
+	if [ -n "${NEW_CONFS}" ]; then
+	    echo "*"
+	fi
+	echo "* The following OLD configuration files was found and have NOT been overwritten:"
+	echo "* You should however manually compare it to it's equivalent in ${SOURCE_PFX}"
+	echo "* and update your configuration if needed." 
+	echo "*"
+	for f in ${OLD_CONFS}; do
+	    echo "* ${DEST_PFX}/$f"
+	done 
+    fi
+    echo "*================= ${PKGNAME} ]"
+    echo 
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+        ;;
+    POST-INSTALL)
+        do_post
+        ;;
+    *)
+        echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2001/09/13 21:23:08 todd Exp $
+--- configure.orig	Wed Mar 28 20:04:31 2001
++++ configure	Thu Aug 30 17:08:07 2001
+@@ -4657,7 +4657,7 @@ CANVAS_PIXBUF_LIBS=`$GNOME_CONFIG --libs
+ 
+ 
+ 
+-ALL_LINGUAS="az ca cs da de el en_GB es et eu fi fr ga gl hu it ja ko lt nl no pl pt pt_BR ro ru sk sl sv tr uk wa zh_CN.GB2312 zh_TW.Big5"
++ALL_LINGUAS="ca cs da de el en_GB es et eu fi fr ga gl hu it lt nl no pl pt pt_BR ro ru sk sl sv tr uk wa"
+ echo $ac_n "checking for working const""... $ac_c" 1>&6
+ echo "configure:4663: checking for working const" >&5
+ if eval "test \"`echo '$''{'ac_cv_c_const'+set}'`\" = set"; then

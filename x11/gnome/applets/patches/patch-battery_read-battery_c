@@ -1,0 +1,12 @@
+$OpenBSD: patch-battery_read-battery_c,v 1.1.1.1 2001/09/13 21:23:08 todd Exp $
+--- battery/read-battery.c.orig	Mon Feb 12 23:47:56 2001
++++ battery/read-battery.c	Tue Aug 28 14:13:58 2001
+@@ -198,7 +198,7 @@ battery_read_charge (int * percentage,
+   close(fd);
+   return TRUE;
+ 
+-#elif defined(__NetBSD__) && defined(NETBSD_APM)
++#elif (defined(__NetBSD__) && defined(NETBSD_APM)) || defined(__OpenBSD__)
+ 
+   struct apm_power_info aip;
+   int fd;

@@ -1,0 +1,11 @@
+$OpenBSD: patch-asclock_asclock_applet_desktop,v 1.1.1.1 2001/09/13 21:23:08 todd Exp $
+--- asclock/asclock_applet.desktop.orig	Tue Aug 28 14:18:33 2001
++++ asclock/asclock_applet.desktop	Tue Aug 28 14:18:56 2001
+@@ -54,6 +54,6 @@ Comment[tr]=Bir baЧka saat daha
+ Comment[uk]=Просто ╕нший годинник
+ Comment[wa]=Co ene Тte Тrlodje, ciste chal avou l' aparince NeXT
+ Exec=asclock_applet --activate-goad-server=asclock_applet
+-Icon=
++Icon=gnome-clock.png
+ Terminal=0
+ Type=Application

@@ -1,0 +1,56 @@
+#!/bin/sh
+#
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/09/13 21:23:08 todd Exp $
+#
+
+    echo
+    echo "*=================[ $1"
+
+    # scrollkeeper
+    echo "*"
+    echo "* Running scrollkeeper-update..."
+    /usr/local/bin/scrollkeeper-update -p $(/usr/local/bin/scrollkeeper-config --pkglocalstatedir)
+    echo "*"
+
+    echo "* To really remove $1 from your system you should also"
+    echo "* remove the configuration files from the /etc directory."
+    echo "* If you are planning on installing $1 again in the future"
+    echo "* you can leave it as it is."
+    echo "*"
+    echo "* FYI, the following configuration files belongs to this package:"
+    echo "*"
+    for f in \
+	CORBA/servers/another_clock_applet.gnorba \
+	CORBA/servers/asclock_applet.gnorba \
+	CORBA/servers/battery_applet.gnorba \
+	CORBA/servers/charpick_applet.gnorba \
+	CORBA/servers/clockmail_applet.gnorba \
+	CORBA/servers/drivemount_applet.gnorba \
+	CORBA/servers/fifteen_applet.gnorba \
+	CORBA/servers/geyes_applet.gnorba \
+	CORBA/servers/gkb_applet.gnorba \
+	CORBA/servers/jbc_applet.gnorba \
+	CORBA/servers/life_applet.gnorba \
+	CORBA/servers/mini-commander_applet.gnorba \
+	CORBA/servers/quicklaunch_applet.gnorba \
+	CORBA/servers/tickastat_applet.gnorba \
+	CORBA/servers/webcontrol_applet.gnorba \
+	CORBA/servers/whereami_applet.gnorba \
+	CORBA/servers/odometer_applet.gnorba \
+	CORBA/servers/cpumemusage_applet.gnorba \
+	CORBA/servers/diskusage_applet.gnorba \
+	CORBA/servers/multiload_applet.gnorba \
+	CORBA/servers/gweather.gnorba \
+	CORBA/servers/gtik2_applet.gnorba \
+	CORBA/servers/slash_applet.gnorba \
+	CORBA/servers/mixer_applet.gnorba \
+	CORBA/servers/modemlights_applet.gnorba \
+	CORBA/servers/sound-monitor_applet.gnorba \
+	CORBA/servers/gnotes_applet.gnorba
+    do
+	echo "* /etc/$f"
+    done
+    echo "*================= $1 ]"
+    echo
+
+exit 0
