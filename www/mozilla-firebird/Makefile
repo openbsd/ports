@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/01/16 22:53:44 wilfried Exp $
+# $OpenBSD: Makefile,v 1.27 2004/01/18 11:49:41 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64
 
@@ -24,7 +24,8 @@ DISTFILES=	MozillaFirebird-source-${VER}.tar.gz
 MODULES=	gcc3
 MODGCC3_ARCHES=	alpha sparc64 powerpc
 MODGCC3_LANGS=	C++
-BUILD_DEPENDS=	:zip->=2.3:archivers/zip
+BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
+		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
 		glib.1,gmodule.1::devel/glib \
 		IDL.4::devel/ORBit \
@@ -46,6 +47,8 @@ CONFIGURE_ARGS=					\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
 		--with-pthreads			\
+		--enable-xft			\
+		--enable-optimize=-O2		\
 		--disable-composer		\
 		--disable-mailnews		\
 		--enable-plaintext-editor-only	\
@@ -57,7 +60,8 @@ CONFIGURE_ARGS=					\
 		--disable-ldap
 
 CFLAGS+=	-fno-stack-protector
-CONFIGURE_ENV=	MOZ_PHOENIX=1
+CONFIGURE_ENV=	MOZ_PHOENIX=1 \
+		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
 MAKE_ENV=	MOZ_PHOENIX=1 \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin"
 

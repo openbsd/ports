@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/01/16 22:53:44 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/01/18 11:49:41 wilfried Exp $
 bin/firebird
 bin/mozilla-firebird
 mozilla-firebird/MozillaFirebird-bin
@@ -210,6 +210,7 @@ mozilla-firebird/res/entityTables/html40Symbols.properties
 mozilla-firebird/res/entityTables/htmlEntityVersions.properties
 mozilla-firebird/res/entityTables/mathml20.properties
 mozilla-firebird/res/entityTables/transliterate.properties
+mozilla-firebird/res/fonts/fontEncoding.properties
 mozilla-firebird/res/fonts/mathfont.properties
 mozilla-firebird/res/fonts/mathfontCMEX10.properties
 mozilla-firebird/res/fonts/mathfontCMSY10.properties
