@@ -1,0 +1,13 @@
+This module provides methods implementing the IMAP protocol. It
+allows perl scripts to interact with IMAP message stores.
+
+The module is used by constructing or instantiating a new IMAPClient
+object via the new constructor method. Once the object has been
+instantiated, the connect method is either implicitly or explicitly
+called.
+
+At that point methods are available that implement the IMAP client
+commands as specified in RFC2060. When processing is complete, the
+logoff object method is called, either explicitly by the program
+or implicitly when the object goes out of scope (or at program
+termination).

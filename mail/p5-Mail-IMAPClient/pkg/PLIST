@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/22 00:28:59 avsm Exp $
+libdata/perl5/site_perl/Mail/IMAPClient.pm
+man/man3/Mail::IMAPClient.3p

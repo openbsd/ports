@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2001/02/22 00:28:59 avsm Exp $
+--- Makefile.PL.orig	Fri Mar 10 15:55:54 2000
++++ Makefile.PL	Thu Feb 22 00:15:04 2001
+@@ -8,8 +8,6 @@ WriteMakefile(
+ 
+ );
+ 
+-&set_test_data;
+-
+ sub set_test_data {
+ 	unless (-f "./IMAPClient.pm") { warn "ERROR: not in installation directory\n"; return }
+ 	return if -f "./test.txt";
