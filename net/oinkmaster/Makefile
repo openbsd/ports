@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/02/05 14:52:15 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2003/04/16 13:51:43 lebel Exp $
 
 COMMENT=	"update your Snort 1.8+ rules"
 
-DISTNAME=	oinkmaster-0.6
+DISTNAME=	oinkmaster-0.7
 CATEGORIES=	net security
 MASTER_SITES=	http://www.snort.org/dl/contrib/rule_management/oinkmaster/
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=		::net/wget
 NO_BUILD=Yes
 
 do-install:
-	sed -e 's;"./oinkmaster.conf";"${SYSCONFDIR}/oinkmaster.conf";g' \
+	sed -e 's;"/usr/local/etc/oinkmaster.conf";"${SYSCONFDIR}/oinkmaster.conf";g' \
 	    ${WRKSRC}/oinkmaster.pl > ${WRKSRC}/oinkmaster-
 	${INSTALL_SCRIPT} ${WRKSRC}/oinkmaster- ${PREFIX}/bin/oinkmaster
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/oinkmaster
