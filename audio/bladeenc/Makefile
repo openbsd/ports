@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 1999/09/06 18:05:03 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/10/28 07:23:34 turan Exp $
+
+BROKEN=		sources do not exist
 
 DISTNAME=	bladeenc-085-src-unstable
 PKGNAME=	bladeenc-0.85
