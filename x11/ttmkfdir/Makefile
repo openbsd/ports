@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2001/07/07 13:06:41 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/29 03:02:05 lebel Exp $
 
 COMMENT=		"create fonts.scale file for the TrueType font server"
 
 PKGNAME=		ttmkfdir-0.0
 DISTNAME=		ttmkfdir
-HOMEPAGE=		http://www.joerg-pommnitz.de/TrueType/xfsft.html
 
 CATEGORIES=		x11
 NEED_VERSION=		1.364
