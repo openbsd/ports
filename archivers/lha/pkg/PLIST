@@ -1,3 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/06/10 20:22:15 brad Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/02/04 19:53:52 angelos Exp $
 bin/lha
 man/ja_JP.EUC/man1/lha.1
+share/doc/lha/CHANGES.euc
+share/doc/lha/MACHINES.euc
+share/doc/lha/MACHINES2.euc
+share/doc/lha/PROBLEMS.euc
+share/doc/lha/README.euc
+share/doc/lha/change-114e.txt
+share/doc/lha/change-114g.txt
+share/doc/lha/change-114h.txt
+share/doc/lha/change-114i.txt
+share/doc/lha/config.eng
+share/doc/lha/config.jpn.euc
+share/doc/lha/header.doc.euc
+@dirrm share/doc/lha
