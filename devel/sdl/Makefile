@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/07/11 16:45:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2001/07/18 10:59:01 naddy Exp $
 
 COMMENT=	"cross-platform multimedia library"
 
@@ -6,7 +6,7 @@ VERSION=	1.2.1
 DISTNAME=	SDL-${VERSION}
 PKGNAME=	${DISTNAME:L}p1
 CATEGORIES=	devel
-NEED_VERSION=	1.417
+NEED_VERSION=	1.422
 
 HOMEPAGE=	http://www.libsdl.org
 
@@ -24,11 +24,9 @@ FLAVORS=	sun oss esd arts no_x11
 FLAVOR?=	sun
 
 .if empty(FLAVOR:L:Msun) && empty(FLAVOR:L:Moss) && empty(FLAVOR:L:Mesd)
-.BEGIN:
-	@echo "You must choose a flavor from: sun, oss, esd"
-	@echo "to select the appropriate sound system you want to use."
-	@echo "Additionally, you can append your other choices afterwards."
-	@exit 1
+ERRORS+=    "Fatal: You must choose a flavor from: sun, oss, esd" \
+	    "   to select the appropriate sound system you want to use." \
+	    "   Additionally, you can append your other choices afterwards."
 .endif
 
 USE_GMAKE=	Yes

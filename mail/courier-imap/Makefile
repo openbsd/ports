@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/06/18 21:19:22 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.19 2001/07/18 10:59:01 naddy Exp $ 
 
 MULTI_PACKAGES=	-pop3
 
@@ -10,7 +10,7 @@ DISTNAME=	courier-imap-${COURIERVER}
 PKGNAME-pop3=	courier-pop3-${COURIERVER}
 
 CATEGORIES=	mail
-NEED_VERSION=	1.402
+NEED_VERSION=	1.422
 
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= courier
@@ -45,9 +45,7 @@ CONFIGURE_ARGS=	--disable-root-check --datadir=${PREFIX}/sbin \
 		--enable-workarounds-for-imap-client-bugs 
 
 .if ${FLAVOR:L:Mmysql} && ${FLAVOR:L:Mldap}
-.BEGIN:
-	@echo "Conflicting flavors: You must choose either ldap or mysql."
-	@exit 1
+ERRORS+= "Fatal: Conflicting flavor: You must choose either ldap or mysql."
 .endif
 
 .if ${FLAVOR:L:Mmysql}

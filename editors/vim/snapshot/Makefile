@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/07/13 19:28:26 lebel Exp $
+# $OpenBSD: Makefile,v 1.21 2001/07/18 10:59:01 naddy Exp $
 
 COMMENT=	"vi clone, many additional features"
 
@@ -6,7 +6,7 @@ V=		an
 DISTNAME=	vim-6.0${V}
 PKGNAME=	${DISTNAME}
 CATEGORIES=	editors
-NEED_VERSION=	1.402
+NEED_VERSION=	1.422
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unreleased/unix/ \
 		ftp://nuxi.ucdavis.edu/pub/vim/unreleased/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unreleased/unix/ \
@@ -47,9 +47,7 @@ CONFIGURE_ARGS+=--enable-gui="athena"
 LIB_DEPENDS=	gtk.1.2::x11/gtk+
 CONFIGURE_ARGS+=--enable-gui="gtk" 
 .else
-.BEGIN:
-	@echo "Conflicting flavor: ${FLAVOR}"
-	@exit 1
+ERRORS+="Fatal: Conflicting flavor: ${FLAVOR}"
 .endif
 
 WRKDIST=		${WRKDIR}/vim60${V}

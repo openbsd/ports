@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/13 03:24:25 obecian Exp $
+# $OpenBSD: Makefile,v 1.3 2001/07/18 10:59:00 naddy Exp $
 
 COMMENT=	"premier dockable radio tuner"
 
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=		i386
 
 DISTNAME=	wmtune-1.1c
 CATEGORIES=	audio x11 x11/windowmaker
-NEED_VERSION=	1.364
+NEED_VERSION=	1.422
 
 HOMEPAGE=	http://soren.org/linux/wmtune/
 
@@ -31,9 +31,7 @@ CFLAGS+=		-DZOLTRIX
 .elif ${FLAVOR:L} == "radiotrack"
 CFLAGS+=		-DRADIOTRACK
 .else
-.BEGIN:
-	@echo "Conflicting flavor: ${FLAVOR}"
-	@exit 1
+ERRORS+=		"Fatal: Conflicting flavor: ${FLAVOR}"
 .endif
 
 WRKDIST=		${WRKDIR}/wmtune-1.0.1-combined/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/07/13 11:24:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2001/07/18 10:59:01 naddy Exp $
 
 # 
 # Description
@@ -9,7 +9,7 @@ COMMENT=		"heavily customizable and extensible editor"
 VERSION=		21.1.14
 DISTNAME=		xemacs-${VERSION}
 CATEGORIES=     	editors
-NEED_VERSION=		1.402
+NEED_VERSION=		1.422
 
 HOMEPAGE=		http://www.xemacs.org/
 
@@ -114,9 +114,7 @@ CONFIGURE_ARGS+=--without-x11
     ${FLAVOR:L:Mmotif} || \
     ${FLAVOR:L:Mtiff} || \
     ${FLAVOR:L:Mcompface}
-.BEGIN:
-	@echo "You cannot use X11-related flavors with a non-X11 flavor"
-	@exit 1
+ERRORS+= "Fatal: You cannot use X11-related flavors with a non-X11 flavor"
 . endif
 
 .else
@@ -211,9 +209,7 @@ CONFIGURE_ARGS+=--with-wnn=no
 .else
 
 . if ${FLAVOR:L:Mcanna} || ${FLAVOR:L:Mwnn}
-.BEGIN:
-	@echo "You cannot use MULE-dependant flavors without MULE support"
-	@exit 1
+ERRORS+= "Fatal: You cannot use MULE-dependant flavors without MULE support"
 . endif
 
 CONFIGURE_ARGS+=--with-mule=no \
@@ -233,9 +229,7 @@ CONFIGURE_ARGS+=--with-mule=no \
 . if defined(LOCKDIR)
 CONFIGURE_ARGS+=--with-clash-detection --lockdir='$${LOCKDIR}'
 . else
-.BEGIN:
-	@echo "You need to set LOCKDIR to use clashdetect"
-	@exit 1
+ERRORS+= "Fatal: You need to set LOCKDIR to use clashdetect"
 . endif
 .endif
 

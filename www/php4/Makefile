@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2001/07/17 15:32:04 avsm Exp $
+# $OpenBSD: Makefile,v 1.47 2001/07/18 10:59:01 naddy Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -15,7 +15,7 @@ PKGNAME=	php4-${V}
 FULLPKGNAME-pear= php4-pear-${V}
 
 CATEGORIES=	www lang
-NEED_VERSION=	1.402
+NEED_VERSION=	1.422
 
 MAINTAINER=     Anil Madhavapeddy <avsm@openbsd.org>, Jakob Schlyter <jakob@openbsd.org>
 
@@ -146,9 +146,7 @@ CONFIGURE_ARGS+=	--without-gd
 
 .if ${FLAVOR:L:Mpdflib}
 .if !${FLAVOR:L:Mgd}
-.BEGIN:
-	@echo "pdflib FLAVOR requires the gd FLAVOR also"
-	@exit 1
+ERRORS+= "Fatal: pdflib flavor requires the gd flavor also"
 .endif
 CONFIGURE_ARGS+=	--with-pdflib=${LOCALBASE}
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libpdf.a::print/pdflib
@@ -172,9 +170,7 @@ CONFIGURE_ARGS+=	--disable-filepro
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 LIB_DEPENDS+=		mysqlclient.10:mysql-client-3.23.*:databases/mysql
 .if ${FLAVOR:L:Mmysql_bundled}
-.BEGIN:
-	@echo "Conflicting flavor: ${FLAVOR}"
-	@exit 1
+ERRORS+= "Fatal: Conflicting flavor: ${FLAVOR}"
 .endif
 .elif ${FLAVOR:L:Mmysql_bundled}
 CONFIGURE_ARGS+=	--with-mysql

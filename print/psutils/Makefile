@@ -2,14 +2,14 @@
 # Date created:         17 March 1998
 # Whom:                 mickey@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.12 2001/05/06 03:20:01 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/07/18 10:59:01 naddy Exp $
 #
 
 COMMENT=	"manipulating PostScript documents"
 
 DISTNAME=	psutils-p17
 CATEGORIES=	print
-NEED_VERSION=	1.402
+NEED_VERSION=	1.422
 MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/
 
 MAINTAINER=	ports@openbsd.org
@@ -38,11 +38,9 @@ PAPERSIZE?=a4
 # Set PP in for loop, forces evaluation
 .for PP in ${PAPERSIZE:L}
 .if empty(POSSIBLE_SIZES:M${PP})
-.BEGIN:
-	@echo "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\""
-	@echo "Possible values are:  A3, A4 (default), A5, B5, letter, legal,"
-	@echo "   ledger, tabloid, statement, executive, folio, quarto, and 10x14."
-	@exit 1
+ERRORS+="Fatal: invalid value for PAPERSIZE: \"${PAPERSIZE}\"" \
+	"   Possible values are:  A3, A4 (default), A5, B5, letter, legal," \
+	"   ledger, tabloid, statement, executive, folio, quarto, and 10x14."
 .endif
 PKGNAME=	psutils-1.17-${PP}
 MAKE_FLAGS=	\
