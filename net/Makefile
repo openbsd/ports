@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1998/04/29 02:53:59 angelos Exp $
+# $OpenBSD: Makefile,v 1.9 1998/04/30 05:21:06 form Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -86,7 +86,7 @@
      SUBDIR += ucd-snmp
 #    SUBDIR += wais
      SUBDIR += wget
-#    SUBDIR += wide-dhcp
+     SUBDIR += wide-dhcp
 #    SUBDIR += wu-ftpd
 #    SUBDIR += xarchie
 #    SUBDIR += xipmsg
