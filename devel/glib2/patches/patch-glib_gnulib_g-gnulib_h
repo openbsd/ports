@@ -1,0 +1,12 @@
+$OpenBSD: patch-glib_gnulib_g-gnulib_h,v 1.1 2004/06/22 03:15:02 marcm Exp $
+--- glib/gnulib/g-gnulib.h.orig	2004-04-01 07:34:06.000000000 -0800
++++ glib/gnulib/g-gnulib.h	2004-04-01 07:35:10.000000000 -0800
+@@ -41,6 +41,8 @@
+ #define HAVE_SNPRINTF 0
+ #endif
+ 
++/* Undef this to work around issues in OpenBSD */
++#undef HAVE_WCHAR_T
+ 
+ #endif  /* __G_GNULIB_H__ */
+ 

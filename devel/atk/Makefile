@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2003/12/08 06:06:00 marcm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/06/22 03:15:02 marcm Exp $
 
 COMMENT=		"accessibility toolkit used by gtk+"
 
-DISTNAME=		atk-1.4.1
+DISTNAME=		atk-1.6.1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtk.org
@@ -14,21 +14,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/atk/1.4/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/atk/1.6/}
 EXTRACT_SUFX=           .tar.bz2
 
 MODULES=		gettext
 LIB_DEPENDS=		glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2
 BUILD_DEPENDS=          :pkgconfig-*:devel/pkgconfig
 
-# library version (major:minor)
-LIBATK_VERSION=		0:7
-
-SEPARATE_BUILD=		simple
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static
-MAKE_ENV=		LIBATK_VERSION="${LIBATK_VERSION}"
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.5 2003/12/08 06:08:43 marcm Exp $
+@comment $OpenBSD: PLIST-docs,v 1.6 2004/06/22 03:15:03 marcm Exp $
 share/gtk-doc/html/gdk-pixbuf/GdkPixbufLoader.html
 share/gtk-doc/html/gdk-pixbuf/apa.html
 share/gtk-doc/html/gdk-pixbuf/apas02.html
@@ -7,6 +7,7 @@ share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Module-Interface.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Versioning.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-animation.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-creating.html
+share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-csource.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-file-loading.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-file-saving.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-from-drawables.html
@@ -17,6 +18,7 @@ share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-xlib-rendering.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-xlib-rgb.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-inline.html
+share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-query-loaders.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-refcounting.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-scaling.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-util.html
@@ -29,6 +31,7 @@ share/gtk-doc/html/gdk-pixbuf/left.png
 share/gtk-doc/html/gdk-pixbuf/license.html
 share/gtk-doc/html/gdk-pixbuf/right.png
 share/gtk-doc/html/gdk-pixbuf/rn01.html
+share/gtk-doc/html/gdk-pixbuf/rn02.html
 share/gtk-doc/html/gdk-pixbuf/up.png
 share/gtk-doc/html/gdk/GdkDisplay.html
 share/gtk-doc/html/gdk/GdkDisplayManager.html
@@ -145,11 +148,14 @@ share/gtk-doc/html/gdk/ur_angle.png
 share/gtk-doc/html/gdk/watch.png
 share/gtk-doc/html/gdk/xterm.png
 share/gtk-doc/html/gtk/AbstractObjects.html
+share/gtk-doc/html/gtk/Actions.html
 share/gtk-doc/html/gtk/ButtonWidgets.html
 share/gtk-doc/html/gtk/DeprecatedObjects.html
 share/gtk-doc/html/gtk/DisplayWidgets.html
 share/gtk-doc/html/gtk/GtkAccelLabel.html
 share/gtk-doc/html/gtk/GtkAccessible.html
+share/gtk-doc/html/gtk/GtkAction.html
+share/gtk-doc/html/gtk/GtkActionGroup.html
 share/gtk-doc/html/gtk/GtkAdjustment.html
 share/gtk-doc/html/gtk/GtkAlignment.html
 share/gtk-doc/html/gtk/GtkArrow.html
@@ -162,24 +168,34 @@ share/gtk-doc/html/gtk/GtkCList.html
 share/gtk-doc/html/gtk/GtkCTree.html
 share/gtk-doc/html/gtk/GtkCalendar.html
 share/gtk-doc/html/gtk/GtkCellEditable.html
+share/gtk-doc/html/gtk/GtkCellLayout.html
 share/gtk-doc/html/gtk/GtkCellRenderer.html
 share/gtk-doc/html/gtk/GtkCellRendererPixbuf.html
 share/gtk-doc/html/gtk/GtkCellRendererText.html
 share/gtk-doc/html/gtk/GtkCellRendererToggle.html
 share/gtk-doc/html/gtk/GtkCheckButton.html
 share/gtk-doc/html/gtk/GtkCheckMenuItem.html
+share/gtk-doc/html/gtk/GtkColorButton.html
 share/gtk-doc/html/gtk/GtkColorSelection.html
 share/gtk-doc/html/gtk/GtkColorSelectionDialog.html
 share/gtk-doc/html/gtk/GtkCombo.html
+share/gtk-doc/html/gtk/GtkComboBox.html
+share/gtk-doc/html/gtk/GtkComboBoxEntry.html
 share/gtk-doc/html/gtk/GtkContainer.html
 share/gtk-doc/html/gtk/GtkCurve.html
 share/gtk-doc/html/gtk/GtkDialog.html
 share/gtk-doc/html/gtk/GtkDrawingArea.html
 share/gtk-doc/html/gtk/GtkEditable.html
 share/gtk-doc/html/gtk/GtkEntry.html
+share/gtk-doc/html/gtk/GtkEntryCompletion.html
 share/gtk-doc/html/gtk/GtkEventBox.html
+share/gtk-doc/html/gtk/GtkExpander.html
+share/gtk-doc/html/gtk/GtkFileChooser.html
+share/gtk-doc/html/gtk/GtkFileChooserDialog.html
+share/gtk-doc/html/gtk/GtkFileChooserWidget.html
 share/gtk-doc/html/gtk/GtkFileSelection.html
 share/gtk-doc/html/gtk/GtkFixed.html
+share/gtk-doc/html/gtk/GtkFontButton.html
 share/gtk-doc/html/gtk/GtkFontSelection.html
 share/gtk-doc/html/gtk/GtkFontSelectionDialog.html
 share/gtk-doc/html/gtk/GtkFrame.html
@@ -195,6 +211,7 @@ share/gtk-doc/html/gtk/GtkHandleBox.html
 share/gtk-doc/html/gtk/GtkIMContext.html
 share/gtk-doc/html/gtk/GtkIMContextSimple.html
 share/gtk-doc/html/gtk/GtkIMMulticontext.html
+share/gtk-doc/html/gtk/GtkIconTheme.html
 share/gtk-doc/html/gtk/GtkImage.html
 share/gtk-doc/html/gtk/GtkImageMenuItem.html
 share/gtk-doc/html/gtk/GtkInputDialog.html
@@ -222,8 +239,10 @@ share/gtk-doc/html/gtk/GtkPlug.html
 share/gtk-doc/html/gtk/GtkPreview.html
 share/gtk-doc/html/gtk/GtkProgress.html
 share/gtk-doc/html/gtk/GtkProgressBar.html
+share/gtk-doc/html/gtk/GtkRadioAction.html
 share/gtk-doc/html/gtk/GtkRadioButton.html
 share/gtk-doc/html/gtk/GtkRadioMenuItem.html
+share/gtk-doc/html/gtk/GtkRadioToolButton.html
 share/gtk-doc/html/gtk/GtkRange.html
 share/gtk-doc/html/gtk/GtkRuler.html
 share/gtk-doc/html/gtk/GtkScale.html
@@ -231,6 +250,7 @@ share/gtk-doc/html/gtk/GtkScrollbar.html
 share/gtk-doc/html/gtk/GtkScrolledWindow.html
 share/gtk-doc/html/gtk/GtkSeparator.html
 share/gtk-doc/html/gtk/GtkSeparatorMenuItem.html
+share/gtk-doc/html/gtk/GtkSeparatorToolItem.html
 share/gtk-doc/html/gtk/GtkSettings.html
 share/gtk-doc/html/gtk/GtkSizeGroup.html
 share/gtk-doc/html/gtk/GtkSocket.html
@@ -246,18 +266,24 @@ share/gtk-doc/html/gtk/GtkTextTag.html
 share/gtk-doc/html/gtk/GtkTextTagTable.html
 share/gtk-doc/html/gtk/GtkTextView.html
 share/gtk-doc/html/gtk/GtkTipsQuery.html
+share/gtk-doc/html/gtk/GtkToggleAction.html
 share/gtk-doc/html/gtk/GtkToggleButton.html
+share/gtk-doc/html/gtk/GtkToggleToolButton.html
+share/gtk-doc/html/gtk/GtkToolButton.html
+share/gtk-doc/html/gtk/GtkToolItem.html
 share/gtk-doc/html/gtk/GtkToolbar.html
 share/gtk-doc/html/gtk/GtkTooltips.html
 share/gtk-doc/html/gtk/GtkTree.html
 share/gtk-doc/html/gtk/GtkTreeItem.html
 share/gtk-doc/html/gtk/GtkTreeModel.html
+share/gtk-doc/html/gtk/GtkTreeModelFilter.html
 share/gtk-doc/html/gtk/GtkTreeModelSort.html
 share/gtk-doc/html/gtk/GtkTreeSelection.html
 share/gtk-doc/html/gtk/GtkTreeSortable.html
 share/gtk-doc/html/gtk/GtkTreeStore.html
 share/gtk-doc/html/gtk/GtkTreeView.html
 share/gtk-doc/html/gtk/GtkTreeViewColumn.html
+share/gtk-doc/html/gtk/GtkUIManager.html
 share/gtk-doc/html/gtk/GtkVBox.html
 share/gtk-doc/html/gtk/GtkVButtonBox.html
 share/gtk-doc/html/gtk/GtkVPaned.html
@@ -284,6 +310,8 @@ share/gtk-doc/html/gtk/TreeWidget.html
 share/gtk-doc/html/gtk/TreeWidgetObjects.html
 share/gtk-doc/html/gtk/WindowWidgets.html
 share/gtk-doc/html/gtk/ch01.html
+share/gtk-doc/html/gtk/checklist-gdkeventexpose-region.html
+share/gtk-doc/html/gtk/checklist-modifiers.html
 share/gtk-doc/html/gtk/gtk-Accelerator-Maps.html
 share/gtk-doc/html/gtk/gtk-Bindings.html
 share/gtk-doc/html/gtk/gtk-Clipboards.html
@@ -306,6 +334,12 @@ share/gtk-doc/html/gtk/gtk-changes-1-2.html
 share/gtk-doc/html/gtk/gtk-changes-2-0.html
 share/gtk-doc/html/gtk/gtk-compiling.html
 share/gtk-doc/html/gtk/gtk-framebuffer.html
+share/gtk-doc/html/gtk/gtk-gtkfilefilter.html
+share/gtk-doc/html/gtk/gtk-migrating-GtkAction.html
+share/gtk-doc/html/gtk/gtk-migrating-GtkComboBox.html
+share/gtk-doc/html/gtk/gtk-migrating-GtkFileChooser.html
+share/gtk-doc/html/gtk/gtk-migrating-checklist.html
+share/gtk-doc/html/gtk/gtk-query-immodules-2.0.html
 share/gtk-doc/html/gtk/gtk-question-index.html
 share/gtk-doc/html/gtk/gtk-resources.html
 share/gtk-doc/html/gtk/gtk-running.html
@@ -314,12 +348,21 @@ share/gtk-doc/html/gtk/gtk-x11.html
 share/gtk-doc/html/gtk/gtk.devhelp
 share/gtk-doc/html/gtk/gtk.html
 share/gtk-doc/html/gtk/gtkbase.html
+share/gtk-doc/html/gtk/gtkfilechooser-installing-extra-widgets.html
+share/gtk-doc/html/gtk/gtkfilechooser-installing-preview.html
+share/gtk-doc/html/gtk/gtkfilechooser-new-features.html
+share/gtk-doc/html/gtk/gtkfilechooser-selection-modes.html
 share/gtk-doc/html/gtk/gtkobjects.html
 share/gtk-doc/html/gtk/home.png
 share/gtk-doc/html/gtk/index.html
 share/gtk-doc/html/gtk/index.sgml
 share/gtk-doc/html/gtk/ix01.html
 share/gtk-doc/html/gtk/left.png
+share/gtk-doc/html/gtk/migrating-GtkCombo.html
+share/gtk-doc/html/gtk/migrating-gnomeuiinfo.html
+share/gtk-doc/html/gtk/migrating.html
+share/gtk-doc/html/gtk/new-features-GtkComboBox.html
+share/gtk-doc/html/gtk/pt05.html
 share/gtk-doc/html/gtk/right.png
 share/gtk-doc/html/gtk/stock_add_24.png
 share/gtk-doc/html/gtk/stock_align_center_24.png
@@ -338,6 +381,7 @@ share/gtk-doc/html/gtk/stock_colorselector_24.png
 share/gtk-doc/html/gtk/stock_convert_24.png
 share/gtk-doc/html/gtk/stock_copy_24.png
 share/gtk-doc/html/gtk/stock_cut_24.png
+share/gtk-doc/html/gtk/stock_dialog_authentication_48.png
 share/gtk-doc/html/gtk/stock_dialog_error_48.png
 share/gtk-doc/html/gtk/stock_dialog_info_48.png
 share/gtk-doc/html/gtk/stock_dialog_question_48.png
@@ -353,6 +397,7 @@ share/gtk-doc/html/gtk/stock_help_24.png
 share/gtk-doc/html/gtk/stock_home_24.png
 share/gtk-doc/html/gtk/stock_index_24.png
 share/gtk-doc/html/gtk/stock_jump_to_24.png
+share/gtk-doc/html/gtk/stock_jump_to_rtl_24.png
 share/gtk-doc/html/gtk/stock_last_24.png
 share/gtk-doc/html/gtk/stock_left_arrow_24.png
 share/gtk-doc/html/gtk/stock_new_24.png
@@ -365,9 +410,11 @@ share/gtk-doc/html/gtk/stock_print_24.png
 share/gtk-doc/html/gtk/stock_print_preview_24.png
 share/gtk-doc/html/gtk/stock_properties_24.png
 share/gtk-doc/html/gtk/stock_redo_24.png
+share/gtk-doc/html/gtk/stock_redo_rtl_24.png
 share/gtk-doc/html/gtk/stock_refresh_24.png
 share/gtk-doc/html/gtk/stock_remove_24.png
 share/gtk-doc/html/gtk/stock_revert_24.png
+share/gtk-doc/html/gtk/stock_revert_rtl_24.png
 share/gtk-doc/html/gtk/stock_right_arrow_24.png
 share/gtk-doc/html/gtk/stock_save_24.png
 share/gtk-doc/html/gtk/stock_save_as_24.png
@@ -384,16 +431,17 @@ share/gtk-doc/html/gtk/stock_text_underline_24.png
 share/gtk-doc/html/gtk/stock_top_24.png
 share/gtk-doc/html/gtk/stock_trash_24.png
 share/gtk-doc/html/gtk/stock_undelete_24.png
+share/gtk-doc/html/gtk/stock_undelete_rtl_24.png
 share/gtk-doc/html/gtk/stock_undo_24.png
+share/gtk-doc/html/gtk/stock_undo_rtl_24.png
 share/gtk-doc/html/gtk/stock_up_arrow_24.png
 share/gtk-doc/html/gtk/stock_yes_20.png
 share/gtk-doc/html/gtk/stock_zoom_1_24.png
 share/gtk-doc/html/gtk/stock_zoom_fit_24.png
 share/gtk-doc/html/gtk/stock_zoom_in_24.png
 share/gtk-doc/html/gtk/stock_zoom_out_24.png
+share/gtk-doc/html/gtk/ui-manager.html
 share/gtk-doc/html/gtk/up.png
 @dirrm share/gtk-doc/html/gtk
 @dirrm share/gtk-doc/html/gdk-pixbuf
 @dirrm share/gtk-doc/html/gdk
-@dirrm share/gtk-doc/html
-@dirrm share/gtk-doc

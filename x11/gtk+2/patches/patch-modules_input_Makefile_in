@@ -1,15 +1,10 @@
-$OpenBSD: patch-modules_input_Makefile_in,v 1.6 2003/12/08 06:08:43 marcm Exp $
---- modules/input/Makefile.in.orig	2003-09-04 10:18:53.000000000 -0700
-+++ modules/input/Makefile.in	2003-12-07 10:54:33.000000000 -0800
-@@ -841,22 +841,10 @@ maintainer-clean-generic clean mostlycle
- # Running this if cross compiling or if DESTDIR is set is going to
- # not work at all, so skip it.
- install-data-local:
--	@if $(RUN_QUERY_IMMODULES_TEST) ; then \
--	  echo $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/gtk-2.0 ; \
--	  $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/gtk-2.0 ; \
--	  echo "$(top_builddir)/gtk/gtk-query-immodules-2.0 > $(DESTDIR)$(sysconfdir)/gtk-2.0/gtk.immodules" ; \
--	  $(top_builddir)/gtk/gtk-query-immodules-2.0 > $(DESTDIR)$(sysconfdir)/gtk-2.0/gtk.immodules ; \
+$OpenBSD: patch-modules_input_Makefile_in,v 1.7 2004/06/22 03:15:03 marcm Exp $
+--- modules/input/Makefile.in.orig	2004-04-01 15:24:05.000000000 -0800
++++ modules/input/Makefile.in	2004-04-01 15:25:54.000000000 -0800
+@@ -772,19 +772,13 @@ install-data-hook:
+ 	  $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/gtk-2.0 ; \
+ 	  echo "$(top_builddir)/gtk/gtk-query-immodules-2.0 > $(DESTDIR)$(sysconfdir)/gtk-2.0/gtk.immodules" ; \
+ 	  $(top_builddir)/gtk/gtk-query-immodules-2.0 > $(DESTDIR)$(sysconfdir)/gtk-2.0/gtk.immodules ; \
 -	else \
 -	  echo "***" ; \
 -	  echo "*** Warning: gtk.immodules not built" ; \
@@ -17,12 +12,13 @@ $OpenBSD: patch-modules_input_Makefile_in,v 1.6 2003/12/08 06:08:43 marcm Exp $
 -	  echo "*** Generate this file manually on host" ; \
 -	  echo "*** system using gtk-query-immodules-2.0" ; \
 -	  echo "***" ; \
--        fi
+         fi
+ 
+ uninstall-local:
+ 	rm -f $(DESTDIR)$(sysconfdir)/gtk-2.0/gtk.immodules
  
  gtk.immodules: Makefile.am $(module_LTLIBRARIES)
--	$(top_builddir)/gtk/gtk-query-immodules-2.0 *.la > gtk.immodules
 +	LD_LIBRARY_PATH=$(top_builddir)/gdk-pixbuf/.libs/:$(top_builddir)/gdk/.libs/:$(top_builddir)/gtk/.libs/ \
-+			$(top_builddir)/gtk/gtk-query-immodules-2.0 *.la > gtk.immodules
+ 	$(top_builddir)/gtk/gtk-query-immodules-2.0 $(module_LTLIBRARIES) > gtk.immodules
  
  @CROSS_COMPILING_FALSE@all-local: gtk.immodules
- 

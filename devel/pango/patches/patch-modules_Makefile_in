@@ -1,15 +1,7 @@
-$OpenBSD: patch-modules_Makefile_in,v 1.5 2003/09/23 06:12:41 marcm Exp $
---- modules/Makefile.in.orig	2003-08-27 08:39:02.000000000 -0700
-+++ modules/Makefile.in	2003-09-05 11:47:52.000000000 -0700
-@@ -119,6 +119,7 @@ WIN32_LIBS = @WIN32_LIBS@
- XFT_CFLAGS = @XFT_CFLAGS@
- XFT_LIBS = @XFT_LIBS@
- ms_librarian = @ms_librarian@
-+moduledir = $(libdir)/pango/$(PANGO_MODULE_VERSION)/modules
- 
- SUBDIRS = \
- 	arabic		\
-@@ -340,21 +341,11 @@ maintainer-clean-generic clean mostlycle
+$OpenBSD: patch-modules_Makefile_in,v 1.6 2004/06/22 03:15:03 marcm Exp $
+--- modules/Makefile.in.orig	2004-03-16 10:11:07.000000000 -0800
++++ modules/Makefile.in	2004-03-30 22:05:41.000000000 -0800
+@@ -539,21 +539,11 @@ uninstall-info: uninstall-info-recursive
  
  
  install-data-local:

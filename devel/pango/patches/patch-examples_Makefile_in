@@ -1,12 +1,12 @@
-$OpenBSD: patch-examples_Makefile_in,v 1.8 2003/09/23 06:12:41 marcm Exp $
---- examples/Makefile.in.orig	2003-08-27 08:39:14.000000000 -0700
-+++ examples/Makefile.in	2003-09-05 11:47:52.000000000 -0700
-@@ -418,7 +418,7 @@ pango.modules:
+$OpenBSD: patch-examples_Makefile_in,v 1.9 2004/06/22 03:15:03 marcm Exp $
+--- examples/Makefile.in.orig	2004-04-01 08:20:04.000000000 -0800
++++ examples/Makefile.in	2004-04-01 08:20:57.000000000 -0800
+@@ -580,7 +580,7 @@ pango.modules: $(top_builddir)/pango/pan
  	if find ../modules -name '*.so' | grep 'so' > /dev/null ; then \
            echo "Writing a pango.modules file to use when running examples before installing Pango."; \
  	  (cd ../modules && \
--           ../pango/pango-querymodules `find . -name '*.la' | grep -v \.libs` > ../examples/pango.modules ) ;\
-+           LD_LIBRARY_PATH=../pango/.libs ../pango/pango-querymodules `find . -name '*.so' | grep -v \.libs` > ../examples/pango.modules ) ;\
+-           $(top_builddir)/pango/pango-querymodules `find . -name '*.la' | grep -v \.libs` > ../examples/pango.modules ) ;\
++           LD_LIBRARY_PATH=$(top_builddir)/pango/.libs $(top_builddir)/pango/pango-querymodules `find . -name '*.la' | grep -v \.libs` > ../examples/pango.modules ) ;\
  	else \
            echo "No dynamic modules found; will use only static modules for uninstalled example programs."; \
  	  touch pango.modules; \

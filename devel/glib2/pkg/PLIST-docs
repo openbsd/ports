@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-docs,v 1.3 2003/12/08 06:05:21 marcm Exp $
+@comment $OpenBSD: PLIST-docs,v 1.4 2004/06/22 03:15:03 marcm Exp $
 share/gtk-doc/html/glib/glib-Arrays.html
 share/gtk-doc/html/glib/glib-Asynchronous-Queues.html
+share/gtk-doc/html/glib/glib-Atomic-Operations.html
 share/gtk-doc/html/glib/glib-Automatic-String-Completion.html
 share/gtk-doc/html/glib/glib-Balanced-Binary-Trees.html
 share/gtk-doc/html/glib/glib-Basic-Types.html
@@ -18,6 +19,7 @@ share/gtk-doc/html/glib/glib-File-Utilities.html
 share/gtk-doc/html/glib/glib-Glob-style-pattern-matching.html
 share/gtk-doc/html/glib/glib-Hash-Tables.html
 share/gtk-doc/html/glib/glib-Hook-Functions.html
+share/gtk-doc/html/glib/glib-I18N.html
 share/gtk-doc/html/glib/glib-IO-Channels.html
 share/gtk-doc/html/glib/glib-Keyed-Data-Lists.html
 share/gtk-doc/html/glib/glib-Lexical-Scanner.html
@@ -55,8 +57,10 @@ share/gtk-doc/html/glib/glib-building.html
 share/gtk-doc/html/glib/glib-changes.html
 share/gtk-doc/html/glib/glib-compiling.html
 share/gtk-doc/html/glib/glib-core.html
+share/gtk-doc/html/glib/glib-cross-compiling.html
 share/gtk-doc/html/glib/glib-data-types.html
 share/gtk-doc/html/glib/glib-fundamentals.html
+share/gtk-doc/html/glib/glib-gettextize.html
 share/gtk-doc/html/glib/glib-resources.html
 share/gtk-doc/html/glib/glib-running.html
 share/gtk-doc/html/glib/glib-utilities.html
@@ -69,20 +73,24 @@ share/gtk-doc/html/glib/ix01.html
 share/gtk-doc/html/glib/left.png
 share/gtk-doc/html/glib/mainloop-states.gif
 share/gtk-doc/html/glib/right.png
+share/gtk-doc/html/glib/tools.html
 share/gtk-doc/html/glib/up.png
+share/gtk-doc/html/gobject/GTypeModule.html
+share/gtk-doc/html/gobject/GTypePlugin.html
+share/gtk-doc/html/gobject/glib-genmarshal.html
+share/gtk-doc/html/gobject/glib-mkenums.html
 share/gtk-doc/html/gobject/gobject-Boxed-Types.html
 share/gtk-doc/html/gobject/gobject-Closures.html
 share/gtk-doc/html/gobject/gobject-Enumeration-and-Flag-Types.html
 share/gtk-doc/html/gobject/gobject-GParamSpec.html
-share/gtk-doc/html/gobject/gobject-GType.html
-share/gtk-doc/html/gobject/gobject-GTypeModule.html
-share/gtk-doc/html/gobject/gobject-GTypePlugin.html
 share/gtk-doc/html/gobject/gobject-Generic-values.html
 share/gtk-doc/html/gobject/gobject-Signals.html
 share/gtk-doc/html/gobject/gobject-Standard-Parameter-and-Value-Types.html
 share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html
+share/gtk-doc/html/gobject/gobject-Type-Information.html
 share/gtk-doc/html/gobject/gobject-Value-arrays.html
 share/gtk-doc/html/gobject/gobject-Varargs-Value-Collection.html
+share/gtk-doc/html/gobject/gobject-query.html
 share/gtk-doc/html/gobject/gobject.devhelp
 share/gtk-doc/html/gobject/home.png
 share/gtk-doc/html/gobject/index.html
@@ -92,6 +100,7 @@ share/gtk-doc/html/gobject/left.png
 share/gtk-doc/html/gobject/pr01.html
 share/gtk-doc/html/gobject/right.png
 share/gtk-doc/html/gobject/rn01.html
+share/gtk-doc/html/gobject/rn02.html
 share/gtk-doc/html/gobject/up.png
 @dirrm share/gtk-doc/html/gobject
 @dirrm share/gtk-doc/html/glib

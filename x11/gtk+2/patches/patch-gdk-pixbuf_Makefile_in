@@ -1,39 +1,26 @@
-$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.4 2003/12/08 06:08:43 marcm Exp $
---- gdk-pixbuf/Makefile.in.orig	2003-09-04 10:18:11.000000000 -0700
-+++ gdk-pixbuf/Makefile.in	2003-12-07 10:47:44.000000000 -0800
-@@ -429,7 +429,7 @@ libgdk_pixbuf_2_0_la_SOURCES = @STRIP_BE
- @STRIP_END@
- 
- libgdk_pixbuf_2_0_la_LDFLAGS = @STRIP_BEGIN@ \
--	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)    \
-+	-version-info $(OBSD_LIB_VERSION)    \
- 	@LIBTOOL_EXPORT_OPTIONS@				\
- 	$(no_undefined)						\
- 	$(gdk_pixbuf_symbols)					\
-@@ -1342,17 +1342,6 @@ $(srcdir)/gdk-pixbuf-marshal.c: @REBUILD
- # Running this if cross compiling or if DESTDIR is set is going to
- # not work at all, so skip it
- install-data-local: install-ms-lib install-libtool-import-lib
--	@if $(RUN_QUERY_LOADER_TEST) ; then \
--	  $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/gtk-2.0 ; \
--	  $(top_builddir)/gdk-pixbuf/gdk-pixbuf-query-loaders > $(DESTDIR)$(sysconfdir)/gtk-2.0/gdk-pixbuf.loaders ; \
+$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.5 2004/06/22 03:15:03 marcm Exp $
+--- gdk-pixbuf/Makefile.in.orig	2004-04-01 14:39:05.000000000 -0800
++++ gdk-pixbuf/Makefile.in	2004-04-01 14:41:40.000000000 -0800
+@@ -1489,13 +1489,6 @@ install-data-hook: install-ms-lib instal
+ 	@if $(RUN_QUERY_LOADER_TEST) ; then \
+ 	  $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/gtk-2.0 ; \
+ 	  $(top_builddir)/gdk-pixbuf/gdk-pixbuf-query-loaders > $(DESTDIR)$(sysconfdir)/gtk-2.0/gdk-pixbuf.loaders ; \
 -	else \
 -	  echo "***" ; \
 -	  echo "*** Warning: gdk-pixbuf.loaders not built" ; \
 -	  echo "***" ; \
--	  echo "*** Generate this file manually on on host" ; \
+-	  echo "*** Generate this file manually on host" ; \
 -	  echo "*** system using gdk-pixbuf-query-loaders" ; \
 -	  echo "***" ; \
--	fi
+ 	fi
  
- @CROSS_COMPILING_FALSE@all-local: gdk-pixbuf.loaders
- 
-@@ -1360,7 +1349,7 @@ gdk-pixbuf.loaders: $(loader_LTLIBRARIES
- 	LOADERS=`echo libpixbufloader-*.la` ; \
- 	if test "x$$LOADERS" != 'xlibpixbufloader-*.la' ; then \
-           echo "Writing a gdk-pixbuf.loader file to use when running examples before installing gdk-pixbuf."; \
--	  $(top_builddir)/gdk-pixbuf/gdk-pixbuf-query-loaders $$LOADERS > ./gdk-pixbuf.loaders ;\
-+	  LD_LIBRARY_PATH=$(top_builddir)/gdk-pixbuf/.libs $(top_builddir)/gdk-pixbuf/gdk-pixbuf-query-loaders $$LOADERS > ./gdk-pixbuf.loaders ;\
- 	else \
-           echo "No dynamic modules found; will use only static modules for uninstalled example programs."; \
- 	  touch gdk-pixbuf.loaders; \
+ uninstall-local: uninstall-ms-lib uninstall-libtool-import-lib
+@@ -1507,7 +1500,7 @@ uninstall-local: uninstall-ms-lib uninst
+ @BUILD_DYNAMIC_MODULES_TRUE@	LOADERS=`echo libpixbufloader-*.la` ; \
+ @BUILD_DYNAMIC_MODULES_TRUE@	if test "x$$LOADERS" != 'xlibpixbufloader-*.la' ; then \
+ @BUILD_DYNAMIC_MODULES_TRUE@          echo "Writing a gdk-pixbuf.loader file to use when running examples before installing gdk-pixbuf."; \
+-@BUILD_DYNAMIC_MODULES_TRUE@	  $(top_builddir)/gdk-pixbuf/gdk-pixbuf-query-loaders $$LOADERS > ./gdk-pixbuf.loaders ;\
++@BUILD_DYNAMIC_MODULES_TRUE@	  LD_LIBRARY_PATH=$(top_builddir)/gdk-pixbuf/.libs $(top_builddir)/gdk-pixbuf/gdk-pixbuf-query-loaders $$LOADERS > ./gdk-pixbuf.loaders ;\
+ @BUILD_DYNAMIC_MODULES_TRUE@	else \
+ @BUILD_DYNAMIC_MODULES_TRUE@          echo "No dynamic modules found; will use only static modules for uninstalled example programs."; \
+ @BUILD_DYNAMIC_MODULES_TRUE@	  touch gdk-pixbuf.loaders; \
