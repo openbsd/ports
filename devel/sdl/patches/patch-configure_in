@@ -1,38 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2001/04/19 18:55:40 obecian Exp $
---- configure.in.orig	Mon Mar 26 20:39:19 2001
-+++ configure.in	Sun Apr  1 19:16:25 2001
-@@ -786,7 +786,7 @@ CheckPTHREAD()
-             ;;
-         *-*-solaris*)
-             pthread_cflags="-D_REENTRANT"
--            pthread_lib="-lpthread -lposix4"
-+            pthread_lib="-pthread -lposix4"
-             ;;
-         *-*-sysv5*)
-             pthread_cflags="-D_REENTRANT -Kthread"
-@@ -794,11 +794,11 @@ CheckPTHREAD()
-             ;;
-         *-*-irix*)
-             pthread_cflags="-D_SGI_MP_SOURCE"
--            pthread_lib="-lpthread"
-+            pthread_lib="-pthread"
-             ;;
-         *-*-aix*)
-             pthread_cflags="-D_REENTRANT -mthreads"
--            pthread_lib="-lpthread"
-+            pthread_lib="-pthread"
-             ;;
-         *-*-qnx*)
-             pthread_cflags=""
-@@ -806,7 +806,7 @@ CheckPTHREAD()
-             ;;
-         *)
-             pthread_cflags="-D_REENTRANT"
--            pthread_lib="-lpthread"
-+            pthread_lib="-pthread"
-             ;;
-     esac
-     LIBS="$LIBS $pthread_lib"
+$OpenBSD: patch-configure_in,v 1.2 2001/04/21 15:37:57 brad Exp $
+--- configure.in.orig	Mon Mar 26 22:39:19 2001
++++ configure.in	Fri Apr 20 21:18:32 2001
 @@ -1199,7 +1199,11 @@ case "$target" in
              COPY_ARCH_SRC(src/thread, linux, SDL_systhread_c.h)
              COPY_ARCH_SRC(src/thread, linux, SDL_sysmutex.c)
@@ -53,7 +21,7 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2001/04/19 18:55:40 obecian Exp $
 +fi
 +
 +if test $ARCH = openbsd; then
-+  SDL_RLD_FLAGS="-Wl,-R\${exec_prefix}/lib -Wl,-R\${X11BASE}/lib"
++  SDL_RLD_FLAGS="-Wl,-rpath,\${exec_prefix}/lib -Wl,-rpath,\${X11BASE}/lib"
  fi
  
  dnl Output the video drivers we use
