@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/10/28 17:35:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/12/22 01:40:56 margarida Exp $
 
 COMMENT=		"MS SQL audit tools"
 
@@ -8,15 +8,16 @@ CATEGORIES=		security
 
 HOMEPAGE=		http://www.cqure.net/
 
-MAINTAINER=		Mark Grimes <mark@openbsd.org>
+MASTER_SITES=		${HOMEPAGE}/tools/ \
+			${MASTER_SITE_PACKETSTORM:=UNIX/security/}
+
+MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=		http://www.cqure.net/tools/
 
 LIB_DEPENDS=		tds.0,ct.0::databases/freetds \
 			iconv::converters/libiconv
