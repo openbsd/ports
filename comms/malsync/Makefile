@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 1999/06/11 19:14:44 dugsong Exp $
+# $OpenBSD: Makefile,v 1.3 1999/11/03 00:59:31 turan Exp $
+
+BROKEN=		dependency pilot-utils is also broken
 
 PKGNAME=	malsync-1.6
 DISTNAME=	malsync_1_6
