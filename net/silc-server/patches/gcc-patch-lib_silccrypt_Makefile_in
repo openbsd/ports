@@ -1,7 +1,7 @@
-$OpenBSD: gcc-patch-lib_silccrypt_Makefile_in,v 1.2 2003/01/22 03:34:59 brad Exp $
---- lib/silccrypt/Makefile.in.orig	Wed Jan  8 10:25:45 2003
-+++ lib/silccrypt/Makefile.in	Sat Jan 11 08:26:00 2003
-@@ -360,6 +360,9 @@ mostlyclean-compile:
+$OpenBSD: gcc-patch-lib_silccrypt_Makefile_in,v 1.3 2003/02/02 03:20:55 lebel Exp $
+--- lib/silccrypt/Makefile.in.orig	Sun Jan 26 06:57:15 2003
++++ lib/silccrypt/Makefile.in	Sat Feb  1 21:56:49 2003
+@@ -360,11 +360,17 @@
  distclean-compile:
  	-rm -f *.tab.c
  
@@ -11,3 +11,11 @@ $OpenBSD: gcc-patch-lib_silccrypt_Makefile_in,v 1.2 2003/01/22 03:34:59 brad Exp
  .c.o:
  	$(COMPILE) -c `test -f '$<' || echo '$(srcdir)/'`$<
  
+ .c.obj:
+ 	$(COMPILE) -c `if test -f '$<'; then $(CYGPATH_W) '$<'; else $(CYGPATH_W) '$(srcdir)/$<'`
++
++sha1.lo:
++	$(LTCOMPILE) -O0 -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
+ 
+ .c.lo:
+ 	$(LTCOMPILE) -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
