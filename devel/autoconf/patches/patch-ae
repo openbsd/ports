@@ -1,0 +1,24 @@
+--- acgeneral.m4.orig	Wed Nov 17 21:52:30 1999
++++ acgeneral.m4	Wed Nov 17 21:52:48 1999
+@@ -733,8 +733,8 @@ ac_help="$ac_help
+ [$2]"
+ AC_DIVERT_POP()dnl
+ [#] Check whether --enable-[$1] or --disable-[$1] was given.
+-if test "[${enable_]patsubst([$1], -, _)+set}" = set; then
+-  enableval="[$enable_]patsubst([$1], -, _)"
++if test "[${enable_]translit([$1], -, _)+set}" = set; then
++  enableval="[$enable_]translit([$1], -, _)"
+   ifelse([$3], , :, [$3])
+ ifelse([$4], , , [else
+   $4
+@@ -758,8 +758,8 @@ ac_help="$ac_help
+ [$2]"
+ AC_DIVERT_POP()dnl
+ [#] Check whether --with-[$1] or --without-[$1] was given.
+-if test "[${with_]patsubst([$1], -, _)+set}" = set; then
+-  withval="[$with_]patsubst([$1], -, _)"
++if test "[${with_]translit([$1], -, _)+set}" = set; then
++  withval="[$with_]translit([$1], -, _)"
+   ifelse([$3], , :, [$3])
+ ifelse([$4], , , [else
+   $4

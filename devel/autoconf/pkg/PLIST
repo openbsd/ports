@@ -1,15 +1,13 @@
+@unexec install-info --delete --info-dir=%D/info %D/info/autoconf.info
+@unexec install-info --delete --info-dir=%D/info %D/info/standards.info
 bin/autoconf
 bin/autoheader
 bin/autoreconf
 bin/autoscan
 bin/autoupdate
 bin/ifnames
-@unexec install-info --delete --info-dir=%D/info %D/info/autoconf.info
-@unexec install-info --delete --info-dir=%D/info %D/info/standards.info
 info/autoconf.info
 info/standards.info
-@exec install-info --info-dir=%D/info %D/info/autoconf.info
-@exec install-info --info-dir=%D/info %D/info/standards.info
 share/autoconf/acconfig.h
 share/autoconf/acfunctions
 share/autoconf/acgeneral.m4
@@ -20,7 +18,7 @@ share/autoconf/acoldnames.m4
 share/autoconf/acprograms
 share/autoconf/acspecific.m4
 share/autoconf/autoconf.m4
-share/autoconf/autoconf.m4f
 share/autoconf/autoheader.m4
-share/autoconf/autoheader.m4f
 @dirrm share/autoconf
+@exec install-info --info-dir=%D/info %D/info/autoconf.info
+@exec install-info --info-dir=%D/info %D/info/standards.info

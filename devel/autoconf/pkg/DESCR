@@ -5,3 +5,7 @@ systems without manual user intervention.  Autoconf creates a
 configuration script for a package from a template file that lists the
 operating system features that the package can use, in the form of m4
 macro calls.
+
+The FSF would make you believe that only gnu-m4 can handle autoconf.
+As of OpenBSD 2.7, this is no longer true. This package does not depend
+on gnu-m4.
