@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/05/05 22:40:02 jakob Exp $
+# $OpenBSD: Makefile,v 1.15 2001/05/11 09:51:37 jakob Exp $
 
 COMMENT=	"sync Palm organizer with AvantGo sites"
 
@@ -11,7 +11,7 @@ NEED_VERSION=	1.406
 DISTFILES=	malsync_1_6.source.tar.gz \
 		mal-0_7_tar.gz:0
 
-MAINTAINER=	Evan Cordes <evan.cordes@UMICH.EDU>
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

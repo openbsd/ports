@@ -3,7 +3,7 @@
 # Date created:		26 Mar 1999
 # Whom:                 Jim Mock <jim@FreeBSD.org>
 #
-# $OpenBSD: Makefile,v 1.10 2001/05/06 05:00:00 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/11 09:50:56 jakob Exp $
 
 COMMENT=	"gtk-based AOL Instant Messenger (AIM) client"
 
@@ -15,7 +15,7 @@ NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.marko.net/pub/gaim/
 HOMEPAGE=	http://www.marko.net/gaim/
 
-MAINTAINER=	Evan Cordes <evan.cordes@UMICH.EDU>
+MAINTAINER=	ports@openbsd.org
 
 LIB_DEPENDS=	gtk.1.2::x11/gtk+
 
