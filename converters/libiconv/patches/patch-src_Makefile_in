@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2002/06/13 03:45:57 brad Exp $
+--- src/Makefile.in.orig	Mon Jun 10 20:22:26 2002
++++ src/Makefile.in	Mon Jun 10 20:22:55 2002
+@@ -78,7 +78,7 @@ install : all force
+ 	if [ ! -d $(DESTDIR)$(bindir) ] ; then mkdir $(DESTDIR)$(bindir) ; fi
+ 	case "@host_os@" in \
+ 	  hpux*) $(CC) $(LDFLAGS) iconv.@OBJEXT@ -L$(libdir) -liconv @LIBINTL@ -o iconv;; \
+-	  *) $(LIBTOOL_LINK) $(CC) $(LDFLAGS) iconv.@OBJEXT@ $(libdir)/libiconv.la @LTLIBINTL@ -o iconv;; \
++	  *) $(LIBTOOL_LINK) $(CC) $(LDFLAGS) iconv.@OBJEXT@ $(DESTDIR)$(libdir)/libiconv.la @LTLIBINTL@ -o iconv;; \
+ 	esac
+ 	$(LIBTOOL_INSTALL) $(INSTALL_PROGRAM) iconv $(DESTDIR)$(bindir)/iconv
+ 
