@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2004/07/22 23:03:08 brad Exp $
+# $OpenBSD: Makefile,v 1.36 2004/07/28 03:15:37 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -117,7 +117,8 @@ CONFIGURE_ARGS+=-no-sql-psql
 .else
 MULTI_PACKAGES+=	-postgresql
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-postgresql"
-LIB_DEPENDS+=pq::databases/postgresql
+LIB_DEPENDS+=pq.2:postgresql-client-*:databases/postgresql
+BUILD_DEPENDS+=::databases/postgresql,-server
 .  endif
 CONFIGURE_ARGS+= -I${LOCALBASE}/include/postgresql \
 	    -I${LOCALBASE}/include/postgresql/server \
