@@ -1,5 +1,5 @@
-@comment $Id: PLIST-web,v 1.1 2002/10/08 07:56:42 dhartmei Exp $
-@comment $OpenBSD: PLIST-web,v 1.1 2002/10/08 07:56:42 dhartmei Exp $
+@comment $Id: PLIST-web,v 1.2 2002/12/01 01:58:42 dhartmei Exp $
+@comment $OpenBSD: PLIST-web,v 1.2 2002/12/01 01:58:42 dhartmei Exp $
 share/symon/web/class_cpu.inc        
 share/symon/web/class_graph.inc      
 share/symon/web/class_if.inc         
@@ -16,5 +16,6 @@ share/symon/web/index.php
 share/symon/web/symon.css              
 share/symon/web/symon.png              
 share/symon/web/spacer.png           
+share/symon/web/test_config.php
 @dirrm share/symon/web
 @dirrm share/symon

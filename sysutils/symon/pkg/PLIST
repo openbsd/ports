@@ -1,5 +1,5 @@
-@comment $Id: PLIST,v 1.1 2002/10/08 07:56:42 dhartmei Exp $
-@comment $OpenBSD: PLIST,v 1.1 2002/10/08 07:56:42 dhartmei Exp $
+@comment $Id: PLIST,v 1.2 2002/12/01 01:58:42 dhartmei Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/12/01 01:58:42 dhartmei Exp $
 libexec/symon
 libexec/symux
 man/cat8/symon.0
@@ -23,5 +23,9 @@ share/symon/web/index.php
 share/symon/web/symon.css              
 share/symon/web/symon.png              
 share/symon/web/spacer.png           
+share/symon/web/test_config.php
+share/symon/client/getsymonitem.pl
+share/symon/client/SymuxClient.pm
+share/symon/client/SymuxClient.0
 @dirrm share/symon/web
 @dirrm share/symon
