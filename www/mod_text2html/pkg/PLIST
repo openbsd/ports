@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/29 22:45:38 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/10/13 10:22:50 xsa Exp $
 lib/mod_text2html.so
 sbin/mod_text2html-enable
+@extra /usr/lib/apache/modules/mod_text2html.so
