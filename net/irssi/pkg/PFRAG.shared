@@ -1,9 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2001/04/20 15:43:08 reinhard Exp $
-lib/irssi/modules/libfe_irc_dcc.so.0.0
-lib/irssi/modules/libfe_irc_notifylist.so.0.0
-lib/irssi/modules/libirc_bot.so.0.0
-lib/irssi/modules/libirc_dcc.so.0.0
-lib/irssi/modules/libirc_flood.so.0.0
-lib/irssi/modules/libirc_notifylist.so.0.0
-lib/irssi/modules/libproxy.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.5 2002/02/21 16:19:54 reinhard Exp $
+lib/irssi/modules/libirc_proxy.so.0.0
 NEWDYNLIBDIR(%D/lib/irssi/modules)

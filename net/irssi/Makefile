@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2001/11/20 10:06:29 reinhard Exp $
+# $OpenBSD: Makefile,v 1.11 2002/02/21 16:19:54 reinhard Exp $
 # Original from: Timo Sirainen <tss@iki.fi>
 
 COMMENT=	"modular IRC client with many features (ipv6,socks,proxy)"
 
-DISTNAME=	irssi-0.7.98.4
+DISTNAME=	irssi-0.8.1
 CATEGORIES=	net
-NEED_VERSION=	1.499
+NEED_VERSION=	1.504
 
 MASTER_SITES=	${HOMEPAGE}/files/ \
 		http://nl.irssi.org/files/ \
@@ -25,37 +25,27 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=		:gettext-*:devel/gettext
-LIB_DEPENDS=		glib.1.2,gmodule::devel/glib 
-
+MODULES=		gettext
 SEPARATE_BUILD=		Concurrent
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
 
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --datadir=${PREFIX}/share/doc
-CONFIGURE_ARGS+=	--enable-ipv6 --with-bot
-CONFIGURE_ARGS+=	--with-proxy --with-socks 
-CONFIGURE_ARGS+=	--with-textui --enable-curses-windows
-CONFIGURE_ARGS+=	--enable-perl=no
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --datadir=${PREFIX}/share/doc \
+	--enable-ipv6 --with-bot --with-proxy \
+	--with-textui --enable-curses-windows \
+	--enable-perl=yes --with-gettext \
+	--with-perl-lib=${DESTDIR}${PREFIX}/libdata/perl5/site_perl
 
-FLAVORS+=		gettext 
-FLAVOR?=
+USE_LIBTOOL=	Yes
 
-.if ${FLAVOR:L:Mgettext}
-CONFIGURE_ARGS+=	--with-gettext 
-LIB_DEPENDS+=		intl.1::devel/gettext
-.else
-CONFIGURE_ARGS+=	--with-included-gettext
-.endif
-
-SAMPLE=		config default.theme colorless.theme
+SAMPLE=		default.theme colorless.theme
 
 pre-configure:
-	@perl -pi -e 's,-lcrypt,-crypt,g' ${WRKSRC}/src/irc/bot/Makefile.in
+	@perl -pi -e 's,doc/irssi,irssi,g' ${WRKSRC}/docs/Makefile.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/irssi
 	(cd ${WRKDIST} && ${INSTALL_DATA} ${SAMPLE} \
-		${PREFIX}/share/examples/irssi) 
+		${PREFIX}/share/examples/irssi)
 
 .include <bsd.port.mk>

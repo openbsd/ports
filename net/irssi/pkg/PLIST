@@ -1,22 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/04/20 15:43:08 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/02/21 16:19:54 reinhard Exp $
 bin/botti
 bin/irssi
-lib/irssi/modules/libfe_irc_dcc.a
-lib/irssi/modules/libfe_irc_dcc.la
-lib/irssi/modules/libfe_irc_notifylist.a
-lib/irssi/modules/libfe_irc_notifylist.la
 lib/irssi/modules/libirc_bot.a
 lib/irssi/modules/libirc_bot.la
-lib/irssi/modules/libirc_dcc.a
-lib/irssi/modules/libirc_dcc.la
-lib/irssi/modules/libirc_flood.a
-lib/irssi/modules/libirc_flood.la
-lib/irssi/modules/libirc_notifylist.a
-lib/irssi/modules/libirc_notifylist.la
-lib/irssi/modules/libproxy.a
-lib/irssi/modules/libproxy.la
+lib/irssi/modules/libirc_bot.so
+lib/irssi/modules/libirc_proxy.a
+lib/irssi/modules/libirc_proxy.la
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/Irc.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/TextUI.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/UI.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irc/Irc.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irc/Irc.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/perllocal.pod
 share/doc/irssi/botnet.txt
 share/doc/irssi/design.txt
+share/doc/irssi/faq.txt
 share/doc/irssi/formats.txt
 share/doc/irssi/help/action
 share/doc/irssi/help/admin
@@ -96,6 +101,7 @@ share/doc/irssi/help/rmrejoins
 share/doc/irssi/help/rping
 share/doc/irssi/help/run
 share/doc/irssi/help/save
+share/doc/irssi/help/say
 share/doc/irssi/help/sconnect
 share/doc/irssi/help/scrollback
 share/doc/irssi/help/server
@@ -105,6 +111,7 @@ share/doc/irssi/help/silence
 share/doc/irssi/help/squery
 share/doc/irssi/help/squit
 share/doc/irssi/help/stats
+share/doc/irssi/help/statusbar
 share/doc/irssi/help/time
 share/doc/irssi/help/toggle
 share/doc/irssi/help/topic
@@ -117,6 +124,7 @@ share/doc/irssi/help/unload
 share/doc/irssi/help/unnotify
 share/doc/irssi/help/unquery
 share/doc/irssi/help/unsilence
+share/doc/irssi/help/upgrade
 share/doc/irssi/help/uping
 share/doc/irssi/help/userhost
 share/doc/irssi/help/ver
@@ -126,6 +134,7 @@ share/doc/irssi/help/wait
 share/doc/irssi/help/wall
 share/doc/irssi/help/wallchops
 share/doc/irssi/help/wallops
+share/doc/irssi/help/watch
 share/doc/irssi/help/who
 share/doc/irssi/help/whois
 share/doc/irssi/help/whowas
@@ -134,16 +143,33 @@ share/doc/irssi/help/wjoin
 share/doc/irssi/help/wquery
 share/doc/irssi/manual.txt
 share/doc/irssi/perl.txt
+share/doc/irssi/scripts/autoop.pl
+share/doc/irssi/scripts/autorejoin.pl
+share/doc/irssi/scripts/clones.pl
+share/doc/irssi/scripts/hello.pl
+share/doc/irssi/scripts/privmsg.pl
+share/doc/irssi/scripts/quitmsg.pl
+share/doc/irssi/scripts/realname.pl
 share/doc/irssi/signals.txt
 share/doc/irssi/special_vars.txt
 share/doc/irssi/startup-HOWTO.html
 share/doc/irssi/startup-HOWTO.txt
+share/doc/irssi/themes/colorless.theme
+share/doc/irssi/themes/default.theme
 share/examples/irssi/colorless.theme
-share/examples/irssi/config
 share/examples/irssi/default.theme
 %%SHARED%%
 @dirrm share/examples/irssi
+@dirrm share/doc/irssi/themes
+@dirrm share/doc/irssi/scripts
 @dirrm share/doc/irssi/help
 @dirrm share/doc/irssi
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irc
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
 @dirrm lib/irssi/modules
 @dirrm lib/irssi
