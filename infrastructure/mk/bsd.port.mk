@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.525 2002/04/24 21:29:26 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.526 2002/05/07 12:25:54 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1871,7 +1871,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 .  for _p in ${PROTECT_MOUNT_POINTS}
 	@${SUDO} mount -u -w ${_p}
 .  endfor
-	@if find ${WRKINST} -type l -ls|fgrep -- '-> ${WRKINST}'; then \
+	@if ${SUDO} find ${WRKINST} -type l -ls|fgrep -- '-> ${WRKINST}'; then \
 		echo >&2 "*** bad links in ${WRKINST}"; \
 		exit 1; \
 	fi
