@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.8 2001/11/13 22:13:24 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/12/13 17:58:02 jakob Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/06/05 12:01:24 rh Exp $
 
 COMMENT=	evaluation version of a DOS/Windows file virus scanner
 
-VERSION=	4.14.0
-DISTNAME=	vlnx414e
+VERSION=	4.16.0
+DISTNAME=	vlnx416e
 PKGNAME=	uvscan-${VERSION}
 CATEGORIES=	security
 NEED_VERSION=	1.496
 
 HOMEPAGE=	http://www.nai.com/asp_set/buy_try/try/products_evals.asp
 
-MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/unix/linux/v${VERSION}/
+MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/cmdline/linux/version_4.16/
+
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
@@ -37,12 +38,13 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/uvscan.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/uvscan
 	${INSTALL_SCRIPT} ${WRKSRC}/uvscan ${PREFIX}/libexec/uvscan
-	${INSTALL_SCRIPT} ${WRKSRC}/liblnxfv.so ${PREFIX}/libexec/uvscan
+	${INSTALL_SCRIPT} ${WRKSRC}/liblnxfv.so.4 ${PREFIX}/libexec/uvscan
+	ln -s liblnxfv.so.4 ${PREFIX}/libexec/uvscan/liblnxfv.so
 .for file in clean.dat license.dat messages.dat names.dat
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/libexec/uvscan
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/uvscan
-.for file in unxadmin.pdf license.txt readme.txt reseller.txt
+.for file in unxadmin.pdf license.txt readme.txt
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/uvscan
 .endfor
 
