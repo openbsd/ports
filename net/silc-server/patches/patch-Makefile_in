@@ -1,0 +1,59 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2002/12/16 03:40:02 brad Exp $
+--- Makefile.in.orig	Thu Dec  5 15:44:04 2002
++++ Makefile.in	Sat Dec 14 21:37:10 2002
+@@ -707,20 +707,12 @@ install-dirs-client: install-dirs
+ 	-mkdir -p $(mandir)/man1
+ 
+ install-dirs-server: install-dirs
+-	-mkdir -p $(logsdir)
+ 	-mkdir -p $(mandir)/man5
+ 	-mkdir -p $(mandir)/man8
+ 
+ doc-install:
+-	-$(INSTALL_DATA) $(srcdir)/doc/CodingStyle $(docdir)/
+ 	-$(INSTALL_DATA) $(srcdir)/doc/FAQ $(docdir)/
+-	-$(INSTALL_DATA) $(srcdir)/doc/*.txt $(docdir)/
+-	-$(INSTALL_DATA) $(srcdir)/COPYING $(docdir)/
+-	-$(INSTALL_DATA) $(srcdir)/CHANGES $(docdir)/
+-	-$(INSTALL_DATA) $(srcdir)/CREDITS $(docdir)/
+-	-$(INSTALL_DATA) $(srcdir)/README* $(docdir)/
+-	-$(INSTALL_DATA) $(srcdir)/INSTALL $(docdir)/
+-	-$(INSTALL_DATA) $(srcdir)/TODO $(docdir)/
++	-$(INSTALL_DATA) $(srcdir)/README $(docdir)/
+ 
+ doc-install-client: doc-install
+ 	$(INSTALL_DATA) $(srcdir)/irssi/silc.conf $(docdir)/example_silc.conf
+@@ -729,13 +721,8 @@ doc-install-client: doc-install
+ 	fi
+ 
+ doc-install-server: doc-install
+-	-$(INSTALL_DATA) $(srcdir)/doc/example_silcd.conf $(docdir)/
+-	-@if test -f $(srcdir)/doc/silcd.8 ; then \
+-	 $(INSTALL_DATA) $(srcdir)/doc/silcd.8 $(mandir)/man8; \
+-	fi
+-	-@if test -f $(srcdir)/doc/silcd.conf.5 ; then \
+-	 $(INSTALL_DATA) $(srcdir)/doc/silcd.conf.5 $(mandir)/man5; \
+-	fi
++	-$(INSTALL_DATA) $(srcdir)/doc/example_silcd.conf $(docdir)/examples/silcd.conf
++	-$(INSTALL_DATA) $(srcdir)/doc/silcalgs.conf $(docdir)/examples/
+ 
+ etc-install-client:
+ 	-@if test '!' -d $(srcdir)/irssi ; then \
+@@ -766,7 +753,7 @@ toolkit-install:
+ examples-install:
+ 	-mkdir -p $(docdir)/examples/
+ 	-$(INSTALL_DATA) $(srcdir)/doc/examples/README $(docdir)/examples/
+-	-$(INSTALL_DATA) $(srcdir)/doc/examples/silc* $(docdir)/examples/
++	-$(INSTALL_DATA) $(srcdir)/doc/examples/*.conf $(docdir)/examples/
+ 
+ generate-server-key:
+ 	-@if test '!' -f $(etcdir)/silcd.pub ; then \
+@@ -775,7 +762,7 @@ generate-server-key:
+ 
+ @SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs-client sim-install doc-install-client etc-install-client
+ @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs-client install-dirs-server sim-install doc-install-client doc-install-server toolkit-install examples-install etc-install-client etc-install-server generate-server-key
+-@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs-server sim-install doc-install-server examples-install etc-install-server generate-server-key
++@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: examples-install doc-install-server
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

@@ -1,0 +1,109 @@
+$OpenBSD: patch-lib_silcmath_mpi_mpi_x86_s,v 1.1.1.1 2002/12/16 03:40:02 brad Exp $
+--- lib/silcmath/mpi/mpi_x86.s.orig	Fri Apr  5 10:54:43 2002
++++ lib/silcmath/mpi/mpi_x86.s	Mon Aug 26 02:22:29 2002
+@@ -56,9 +56,9 @@
+  #	edx:
+  #	esi:	a ptr
+  #	edi:	c ptr
+-.globl	s_mpv_mul_d
+-.type	s_mpv_mul_d,@function
+-s_mpv_mul_d:
++.globl	_s_mpv_mul_d
++.type	_s_mpv_mul_d,@function
++_s_mpv_mul_d:
+     push   %ebp
+     mov    %esp,%ebp
+     sub    $28,%esp
+@@ -115,9 +115,9 @@ s_mpv_mul_d:
+  #	edx:
+  #	esi:	a ptr
+  #	edi:	c ptr
+-.globl	s_mpv_mul_d_add
+-.type	s_mpv_mul_d_add,@function
+-s_mpv_mul_d_add:
++.globl	_s_mpv_mul_d_add
++.type	_s_mpv_mul_d_add,@function
++_s_mpv_mul_d_add:
+     push   %ebp
+     mov    %esp,%ebp
+     sub    $28,%esp
+@@ -177,9 +177,9 @@ s_mpv_mul_d_add:
+  #	edx:
+  #	esi:	a ptr
+  #	edi:	c ptr
+-.globl	s_mpv_mul_d_add_prop
+-.type	s_mpv_mul_d_add_prop,@function
+-s_mpv_mul_d_add_prop:
++.globl	_s_mpv_mul_d_add_prop
++.type	_s_mpv_mul_d_add_prop,@function
++_s_mpv_mul_d_add_prop:
+     push   %ebp
+     mov    %esp,%ebp
+     sub    $28,%esp
+@@ -247,9 +247,9 @@ s_mpv_mul_d_add_prop:
+  #	esi:	a ptr
+  #	edi:	c ptr
+ 
+-.globl	s_mpv_sqr_add_prop
+-.type	s_mpv_sqr_add_prop,@function
+-s_mpv_sqr_add_prop:
++.globl	_s_mpv_sqr_add_prop
++.type	_s_mpv_sqr_add_prop,@function
++_s_mpv_sqr_add_prop:
+      push   %ebp
+      mov    %esp,%ebp
+      sub    $12,%esp
+@@ -260,10 +260,10 @@ s_mpv_sqr_add_prop:
+      mov    12(%ebp),%ecx	# a_len
+      mov    16(%ebp),%edi	# edi = ps
+      cmp    $0,%ecx
+-     je     11f			# jump if a_len == 0
++     je     eleven		# jump if a_len == 0
+      cld
+      mov    8(%ebp),%esi	# esi = pa
+-10:
++ten:
+      lodsl			# %eax = [ds:si]; si += 4;
+      mull   %eax
+ 
+@@ -279,20 +279,20 @@ s_mpv_sqr_add_prop:
+      adc    $0,%ebx
+      stosl			# [es:di] = %eax; di += 4;
+      dec    %ecx		# --a_len
+-     jnz    10b			# jmp if a_len != 0
+-11:
++     jnz    ten			# jmp if a_len != 0
++eleven:
+     cmp    $0,%ebx		# is carry zero?
+-    jz     14f
++    jz     fourteen
+     mov    0(%edi),%eax		# add in current word from *c
+     add	   %ebx,%eax
+     stosl			# [es:edi] = ax; edi += 4;
+-    jnc    14f
+-12:
++    jnc    fourteen
++twelve:
+     mov    0(%edi),%eax		# add in current word from *c
+     adc	   $0,%eax
+     stosl			# [es:edi] = ax; edi += 4;
+-    jc     12b
+-14:
++    jc     twelve
++fourteen:
+     pop    %ebx
+     pop    %esi
+     pop    %edi
+@@ -323,9 +323,9 @@ s_mpv_sqr_add_prop:
+  #	edi:	c ptr
+  # 
+ 
+-.globl	s_mpv_div_2dx1d
+-.type	s_mpv_div_2dx1d,@function
+-s_mpv_div_2dx1d:
++.globl	_s_mpv_div_2dx1d
++.type	_s_mpv_div_2dx1d,@function
++_s_mpv_div_2dx1d:
+        push   %ebx
+        mov    8(%esp),%edx
+        mov    12(%esp),%eax

@@ -1,0 +1,13 @@
+$OpenBSD: gcc-patch-lib_silccrypt_Makefile_in,v 1.1.1.1 2002/12/16 03:40:02 brad Exp $
+--- lib/silccrypt/Makefile.in.orig	Sat May 18 01:40:59 2002
++++ lib/silccrypt/Makefile.in	Tue May 21 20:07:34 2002
+@@ -290,6 +290,9 @@ mostlyclean-compile:
+ distclean-compile:
+ 	-rm -f *.tab.c
+ 
++sha1.o:
++	$(COMPILE) -O0 -c `test -f $< || echo '$(srcdir)/'`$<
++
+ .c.o:
+ 	$(COMPILE) -c `test -f $< || echo '$(srcdir)/'`$<
+ 

@@ -1,0 +1,21 @@
+Configuring silc-server for OpenBSD
+-----------------------------------
+
+- configuration files are in 		${SYSCONFDIR}/silcd
+- documentation is installed in		${PREFIX}/share/doc/silcd
+- sample configuration files are in	${PREFIX}/share/examples/silcd
+
+As silcd uses the IANA-assigned privileged port of 706, it is highly
+recommended to take advantage of the installed silcd user and group.
+
+If you have not already done so, you will need to generate a keypair:
+
+# silcd -C ${SYSCONFDIR}/silcd
+# chown silcd:silcd ${SYSCONFDIR}/silcd/silcd.{pub,prv}
+
+Additionally, you may wish to start silcd at system start-up
+via the /etc/rc.local script:
+
+if [ -x ${PREFIX}/sbin/silcd ]; then
+	echo -n ' silcd';	${PREFIX}/sbin/silcd
+fi

@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/12/16 03:40:02 brad Exp $
+sbin/silcd
+share/doc/silcd/FAQ
+share/doc/silcd/README
+share/examples/silcd/README
+share/examples/silcd/cell_backup.conf
+share/examples/silcd/cell_router.conf
+share/examples/silcd/cell_server1.conf
+share/examples/silcd/cell_server2.conf
+share/examples/silcd/silcalgs.conf
+share/examples/silcd/silcd.conf
+@dirrm share/examples/silcd
+@dirrm share/doc/silcd

@@ -1,0 +1,27 @@
+silc-server (silcd) is the server for the SILC protocol.
+
+SILC (Secure Internet Live Conferencing) is a protocol which provides
+secure conferencing services in the Internet over insecure channel.
+
+SILC superficially resembles IRC, although they are very different
+internally. SILC is much more than just about `encrypting the traffic'.
+That is easy enough to do with IRC and SSL hybrids, but even then the
+entire network cannot be secured, only part of it.
+
+SILC provides security services, such as sending private messages entirely
+secure; noone can see the message except you and the real receiver of the
+message. SILC also provides same functionality for channels; noone except
+those clients joined to the channel may see the messages destined to the
+channel. Communication between client and server is also secured with
+session keys and all commands, authentication data (such as passwords etc.)
+and other traffic is entirely secured. The entire network, and all parts of
+it, is secured.
+
+SILC has secure key exchange protocol that is used to create the session keys
+for each connection. SILC also provides strong authentication based on either
+passwords or public key authentication. All authentication data is always
+encrypted in the SILC network. Each connection has their own session keys,
+all channels have channel specific keys, and all private messages can be
+secured with private message specific keys.
+
+WWW: ${HOMEPAGE}

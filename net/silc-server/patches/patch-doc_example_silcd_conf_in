@@ -1,0 +1,124 @@
+$OpenBSD: patch-doc_example_silcd_conf_in,v 1.1.1.1 2002/12/16 03:40:02 brad Exp $
+--- doc/example_silcd.conf.in.orig	Sat Nov 30 08:09:21 2002
++++ doc/example_silcd.conf.in	Sat Dec 14 19:45:12 2002
+@@ -35,7 +35,7 @@ General {
+ 	# This is the default path where to search modules.  If omitted
+ 	# built-in modules will be used.  Built-in modules will also be
+ 	# used if a module file cannot be located.
+-	module_path = "@MODULESDIR@";
++	module_path = "";
+ 
+ 	# If both passphrase and public key authentication is set for a
+ 	# connection the public key authentication is the preferred one
+@@ -166,14 +166,14 @@ ServerInfo {
+ 	#
+ 	# Server name (FQDN)
+ 	#
+-	hostname = "lassi.kuo.fi.ssh.com";
++	hostname = "localhost";
+ 
+ 	#
+ 	# Primary listener.  Specify the IP address and the port to bind
+ 	# the server.
+ 	#
+ 	Primary {
+-		ip = "10.2.1.6";
++		ip = "127.0.0.1";
+ 		port = 706;
+ 	};
+ 
+@@ -193,24 +193,24 @@ ServerInfo {
+ 	#
+ 	# Geographic location
+ 	#
+-	Location = "Kuopio, Finland";
++	Location = "Earth";
+ 
+ 	#
+ 	# Full admin name
+ 	#
+-	Admin = "Foo T. Bar";
++	Admin = "Admin";
+ 
+ 	#
+ 	# Admin's email address
+ 	#
+-	AdminEmail = "foo-admin@bar.com";
++	AdminEmail = "root@127.0.0.1";
+ 
+ 	#
+ 	# Run SILC server as specific user and group.  The server must be
+ 	# initially run as root.
+ 	#
+-	User = "nobody";
+-	Group = "nobody";
++	User = "silcd";
++	Group = "silcd";
+ 
+ 	#
+ 	# Public and private keys
+@@ -435,10 +435,10 @@ Client {
+ # required.
+ #
+ Admin {
+-	Host = "10.2.1.199";
+-	User = "priikone";
+-	Nick = "pekka";
+-	Passphrase = "verysecret";
++	Host = "127.0.0.1";
++	User = "admin";
++	Nick = "admin";
++	Passphrase = "admin";
+ 	# PublicKey = "/path/to/the/public.pub";
+ };
+ 
+@@ -460,13 +460,13 @@ Admin {
+ # to true.  For normal connections set it false.  If it is set to true then
+ # your server will be backup router.
+ #
+-ServerConnection {
+-	Host = "10.2.1.7";
+-	Passphrase = "verysecret";
+-	#PublicKey = "/path/to/the/public.pub";
+-	Params = "normal";
+-	Backup = false;
+-};
++#ServerConnection {
++#	Host = "10.2.1.7";
++#	Passphrase = "verysecret";
++#	#PublicKey = "/path/to/the/public.pub";
++#	Params = "normal";
++#	Backup = false;
++#};
+ 
+ #
+ # Configured router connections
+@@ -496,17 +496,17 @@ ServerConnection {
+ # backup router is in our cell then set the "BackupLocal" option to true.
+ # If the backup router is in other cell then set it to false.
+ #
+-RouterConnection {
+-	Host = "10.2.1.100";
+-	Port = 706;
+-	Passphrase = "verysecret";
+-	#PublicKey = "/path/to/the/public.pub";
+-	Params = "normal";
+-	Initiator = true;
+-	#BackupHost = "10.2.1.6";
+-	#BackupPort = 706;
+-	#BackupLocal = true;
+-};
++#RouterConnection {
++#	Host = "10.2.1.100";
++#	Port = 706;
++#	Passphrase = "verysecret";
++#	#PublicKey = "/path/to/the/public.pub";
++#	Params = "normal";
++#	Initiator = true;
++#	#BackupHost = "10.2.1.6";
++#	#BackupPort = 706;
++#	#BackupLocal = true;
++#};
+ 
+ #
+ # Denied connections
