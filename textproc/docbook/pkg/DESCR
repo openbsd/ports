@@ -12,4 +12,7 @@ DocBook is supported "out of the box" by a number of commercial
 tools, and there is rapidly expanding support for it in a number
 of free software environments.
 
+There is a free online copy of O'Reilly's definitive guide to DocBook
+available at http://www.docbook.org/tdg/html/docbook.html
+
 WWW: ${HOMEPAGE}
