@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2004/05/09 19:25:39 david Exp $
+# $OpenBSD: Makefile,v 1.118 2004/05/14 05:36:21 brad Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -50,6 +50,7 @@
      SUBDIR += imlib2
      SUBDIR += indexpage
      SUBDIR += iview
+     SUBDIR += jasper
      SUBDIR += jbigkit
      SUBDIR += jhead
      SUBDIR += jpeg
