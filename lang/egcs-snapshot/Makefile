@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 1999/03/02 04:41:04 marc Exp $
+# $OpenBSD: Makefile,v 1.38 1999/03/07 14:15:33 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -55,7 +55,7 @@ LATEST_DATE=1999-02-28
 
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
-#NEXT_DATE=1999-02-28
+NEXT_DATE=1999-03-07
 #PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;

@@ -206,7 +206,7 @@ include/g++-2/vector
 include/g++-2/vector.h
 lib/libstdc++.a.2.9.0
 ifdef(`DYNAMIC',
-lib/libstdc++.so.2.9
+lib/libstdc++.so.29.0
 lib/libstdc++.so.2.9.0
 lib/gcc-lib/ARCH/VERSION/libstdc++.so
 )lib/gcc-lib/ARCH/VERSION/cc1plus
