@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2003/05/11 16:53:36 sturm Exp $
+# $OpenBSD: Makefile,v 1.107 2003/05/12 07:39:09 wcobb Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -85,6 +85,7 @@
 #    SUBDIR += pixmap
 #    SUBDIR += plotmtv
      SUBDIR += png
+     SUBDIR += png2ico
      SUBDIR += pngcrush
      SUBDIR += povray
      SUBDIR += povray,no_x11
