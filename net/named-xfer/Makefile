@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/12/18 23:04:17 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2004/01/13 21:26:23 wilfried Exp $
 
 COMMENT=	"zone transfer program from BIND v8"
 
@@ -10,12 +10,12 @@ CATEGORIES=	net
 DIST_SUBDIR=	bind-${VERSION}
 DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
 
-MASTER_SITES+=	ftp://ftp.isc.org/isc/bind/src/${VERSION}/ \
-		ftp://ftp.epix.net/pub/isc/bind/src/${VERSION}/ \
-		ftp://ftp.nominum.com/pub/isc/bind/src/${VERSION}/ \
-		ftp://ftp.sunet.se/pub/network/isc/bind/src/${VERSION}/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.isc.org/isc/bind/src/${VERSION}/ \
-		ftp://ftp.iij.ad.jp/pub/network/isc/bind/src/${VERSION}/ \
+MASTER_SITES+=	ftp://ftp.isc.org/isc/bind/src/DEPRECATED/${VERSION}/ \
+		ftp://ftp.epix.net/pub/isc/bind/src/DEPRECATED/${VERSION}/ \
+		ftp://ftp.nominum.com/pub/isc/bind/src/DEPRECATED/${VERSION}/ \
+		ftp://ftp.sunet.se/pub/network/isc/bind/src/DEPRECATED/${VERSION}/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.isc.org/isc/bind/src/DEPRECATED/${VERSION}/ \
+		ftp://ftp.iij.ad.jp/pub/network/isc/bind/src/DEPRECATED/${VERSION}/ \
 
 HOMEPAGE=	http://www.isc.org/products/BIND/
 

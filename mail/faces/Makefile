@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/07/16 19:24:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2004/01/13 21:23:37 wilfried Exp $
 
 COMMENT=	"visual mail, user and print face server"
 
@@ -10,8 +10,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/ \
-		ftp://odie.physik2.uni-rostock.de/pub/
+MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/faces-1.6.1/
 EXTRACT_SUFX=	.tar.Z
 
 USE_X11=	Yes
