@@ -1,0 +1,20 @@
+--- net-ip.cc.orig	Sun Jan 16 01:03:33 2000
++++ net-ip.cc	Sun Jan 16 01:04:37 2000
+@@ -246,7 +246,7 @@
+ {
+ 	memset((char *)p, 0, sizeof(*p));
+ 	p->sin_family = AF_INET;
+-	int len = sizeof(*p), result =0;
++	socklen_t len = sizeof(*p), result =0;
+ 
+ 	if ((result = getsockname(ssock_, (struct sockaddr *)p, &len)) < 0) {
+ 		perror("getsockname");
+@@ -469,7 +469,7 @@
+ int IPNetwork::dorecv(u_char* buf, int len, Address & from, int fd)
+ {
+ 	sockaddr_in sfrom;
+-	int fromlen = sizeof(sfrom);
++	socklen_t fromlen = sizeof(sfrom);
+ 	int cc = ::recvfrom(fd, (char*)buf, len, 0,
+ 			    (sockaddr*)&sfrom, &fromlen);
+ 	if (cc < 0) {

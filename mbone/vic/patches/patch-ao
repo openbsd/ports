@@ -1,0 +1,19 @@
+--- grabber-meteor.cc.orig	Sun Jan 16 01:07:20 2000
++++ grabber-meteor.cc	Sun Jan 16 01:15:39 2000
+@@ -192,7 +192,7 @@
+ 	return (InputDevice::command(argc, argv));
+ }
+ 
+-MeteorGrabber::MeteorGrabber(const char* name, const char* format)
++MeteorGrabber::MeteorGrabber(const char* name)
+ {
+ 	count = 0;
+ 
+@@ -415,6 +415,7 @@
+ 			u_char val = atoi(argv[2]);
+ 			ioctl(dev_, METEORSCHCV, &val);
+ 			return (TCL_OK);
++		}
+ 	} else if (argc == 2) {
+ 		if (strcmp(argv[1], "format") == 0 ||
+ 			   strcmp(argv[1], "type") == 0) {

@@ -1,0 +1,11 @@
+--- net.cc.orig	Sun Jan 16 01:02:31 2000
++++ net.cc	Sun Jan 16 01:02:50 2000
+@@ -344,7 +344,7 @@
+ int Network::dorecv(u_char* buf, int len, u_int32_t& from, int fd)
+ {
+ 	sockaddr_in sfrom;
+-	int fromlen = sizeof(sfrom);
++	socklen_t fromlen = sizeof(sfrom);
+ 	int cc = ::recvfrom(fd, (char*)buf, len, 0,
+ 			    (sockaddr*)&sfrom, &fromlen);
+ 	if (cc < 0) {
