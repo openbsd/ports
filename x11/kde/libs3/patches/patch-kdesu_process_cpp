@@ -1,0 +1,19 @@
+$OpenBSD: patch-kdesu_process_cpp,v 1.1 2002/05/15 17:19:44 espie Exp $
+--- kdesu/process.cpp.orig	Wed May 15 11:41:43 2002
++++ kdesu/process.cpp	Wed May 15 11:41:31 2002
+@@ -360,8 +360,13 @@ int PtyProcess::waitForChild()
+     while (1) 
+     {
+         tv.tv_sec = 1; tv.tv_usec = 0;
+-        FD_SET(m_Fd, &fds);
+-        ret = select(m_Fd+1, &fds, 0L, 0L, &tv);
++	if (m_Fd != -1)
++	{
++	    FD_SET(m_Fd, &fds);
++	    ret = select(m_Fd+1, &fds, 0L, 0L, &tv);
++	}
++	else
++	    ret = 0;
+         if (ret == -1) 
+         {
+             if (errno == EINTR) continue;
