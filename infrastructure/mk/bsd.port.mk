@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.513 2002/03/16 01:09:23 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.514 2002/03/18 01:52:46 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2754,7 +2754,7 @@ homepage-links:
 .  for _m in ${ERRORS}
 	@echo 1>&2 ${_m}
 .  endfor
-.  if !empty(ERRORS:M"Fatal\:*")
+.  if !empty(ERRORS:M"Fatal\:*") || !empty(ERRORS:M'Fatal\:*')
 	@exit 1
 .  endif
 .endif
