@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/04/20 13:53:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2000/07/04 04:20:44 fgsch Exp $
 
 DISTNAME=	cdrecord-1.6.1
 CATEGORIES=	misc
@@ -6,7 +6,6 @@ MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/
 
 MAINTAINER=	niklas@openbsd.org
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -17,7 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 ONLY_FOR_ARCHS=	alpha amiga arc i386 mac68k mvme68k powerpc sparc sun3
 
 USE_GMAKE=	Yes
-FAKE=		Yes
 MAKE_ENV=	MAKEPROG=gmake
 
 # Cdrecord's standard install rule installs some unnecessary stuff,
@@ -28,7 +26,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cdrecord/${OBJDIR}/cdrecord ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/cdrecord
-# We ship mkisofs in OpenBSD 2.3, uncomment these lines if you are on an
+# We ship mkisofs since OpenBSD 2.3, uncomment these lines if you are on an
 # older system.
 #	${INSTALL_PROGRAM} ${WRKSRC}/mkisofs-1.11/${OBJDIR}/mkisofs ${PREFIX}/bin
 #	${INSTALL_MAN} ${WRKSRC}/mkisofs-1.11/mkisofs.8 ${PREFIX}/man/man8
