@@ -1,5 +1,7 @@
---- todos.c.orig	Wed Jan 26 16:45:50 2000
-+++ todos.c	Wed Jan 26 16:58:07 2000
+# $OpenBSD: patch-ab,v 1.2 2000/02/06 10:41:13 form Exp $
+
+--- todos.c.orig	Tue Dec 22 05:50:00 1998
++++ todos.c	Sun Feb  6 16:39:32 2000
 @@ -33,6 +33,7 @@
  #include <stdio.h>
  #include <string.h>
@@ -36,7 +38,7 @@
 +		return 1;
 +	}
 +	if ((fout = fdopen(tmpfd, WB)) == NULL) {
-+		perror(tmpn);
++		perror(tmp_name);
 +		return 1;
 +	}
 +#else
