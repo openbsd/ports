@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/01/05 14:40:45 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1998/05/06 07:10:15 form Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -14,7 +14,7 @@
      SUBDIR += jove
 #    SUBDIR += mule
 #    SUBDIR += mule-common
-#    SUBDIR += nedit
+     SUBDIR += nedit
 #    SUBDIR += nvi
 #    SUBDIR += staroffice
 #    SUBDIR += thoteditor
