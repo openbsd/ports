@@ -1,0 +1,12 @@
+$OpenBSD: patch-autoconf_Make_common_in,v 1.1 2003/04/17 19:08:32 wilfried Exp $
+--- autoconf/Make.common.in.orig	Sun Mar 28 08:15:42 1999
++++ autoconf/Make.common.in	Thu Apr 17 21:02:15 2003
+@@ -62,7 +62,7 @@ DLIB = @DLIB@
+ XINC = @X_CFLAGS@ @XPM_CFLAGS@
+ 
+ # extra libraries needed by X on some systems, X library location
+-XLIB = @X_LIBS@ @XPM_LIBS@ -lX11 @X_EXTRA_LIBS@
++XLIB = @X_LIBS@ @XPM_LIBS@ -lX11 -lXext @X_EXTRA_LIBS@
+ 
+ # End of common section of the Makefile
+ #-------------------------------------------------------------------------
