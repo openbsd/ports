@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2000/03/19 16:43:40 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2000/03/23 07:23:08 brad Exp $
 
-BROKEN=		bad packing lists
+BROKEN=		"Security hole (buffer overflow yielding setuid uucp)"
 
 DISTNAME=	hylafax-v4.0pl2
 .if defined(A4)
