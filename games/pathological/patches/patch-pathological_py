@@ -1,0 +1,21 @@
+$OpenBSD: patch-pathological_py,v 1.1.1.1 2003/08/08 22:01:36 jolan Exp $
+--- pathological.py.orig	2003-07-17 16:12:30.000000000 +0200
++++ pathological.py	2003-08-08 21:43:06.000000000 +0200
+@@ -27,7 +27,7 @@ screenshot = 0
+ fullscreen = 0
+ colorblind = 0
+ sound_on = 1
+-music_on = 1
++music_on = 0 
+ for arg in sys.argv[1:]:
+ 	if arg == '-s':
+ 		screenshot = 1
+@@ -51,7 +51,7 @@ else:
+ 
+ # The location of the setgid script for writing highscores
+ # This script is only used if the highscores file is not writable directly
+-write_highscores = "/usr/lib/pathological/bin/write-highscores"
++write_highscores = "%%LOCALBASE%%/bin/write-highscores"
+ 
+ # Game constants
+ wheel_steps = 9

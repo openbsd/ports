@@ -1,0 +1,21 @@
+$OpenBSD: patch-pathological,v 1.1.1.1 2003/08/08 22:01:36 jolan Exp $
+--- pathological.orig	2003-07-17 17:02:19.000000000 +0200
++++ pathological	2003-08-06 09:15:40.000000000 +0200
+@@ -1,6 +1,6 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+-function usage () {
++usage() {
+ 	echo "Usage: $0 [-cb] [-f] [-s] [-q] [highscores-file]"
+ 	exit 1
+ }
+@@ -30,7 +30,7 @@ for arg in $*; do
+ 	fi
+ done
+ 
+-cd /usr/share/games/pathological
++cd %%LOCALBASE%%/share/pathological
+ 
+ if [ -z "$scoresfile" ]; then
+ 	scoresfile=/var/games/pathological_scores
