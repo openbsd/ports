@@ -1,11 +1,9 @@
---- xml2rfc.tcl.orig	Fri Mar 30 17:09:11 2001
-+++ xml2rfc.tcl	Fri Mar 30 17:09:15 2001
-@@ -1,8 +1,3 @@
+--- xml2rfc.tcl.orig	Fri Jun 29 11:54:45 2001
++++ xml2rfc.tcl	Fri Jun 29 11:55:05 2001
+@@ -1,6 +1,3 @@
 -#!/bin/sh
 -# the next line restarts using wish \
 -exec wish8.0 "$0" "$0" "$@"
--
--
- #
- # xml2rfc.cgi - convert technical memos written using XML to TXT/HTML/NROFF
+ 
+ 
  #
