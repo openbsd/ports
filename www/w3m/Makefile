@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.39 2002/02/04 15:05:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2002/03/10 07:44:43 brad Exp $
 
-ONLY_FOR_ARCHS=	i386 sparc m68k
+ONLY_FOR_ARCHS=	i386 sparc m68k powerpc
 
 COMMENT=	"pager/text-based web browser"
 
@@ -46,7 +46,9 @@ DOCS=	FAQ.html HISTORY MANUAL.html \
 	README README.dict README.func STORY.html \
 	keymap.default keymap.lynx menu.default menu.submenu
 
-PATCH_LIST=	patch-configure
+PATCH_LIST=	patch-configure \
+		patch-gc_include_private_gcconfig_h \
+		patch-gc_dyn_load_c
 
 .if ${FLAVOR:L:Mimage}
 .  if !${FLAVOR:L:Mm17n}
