@@ -2,15 +2,15 @@
 # Date created:         17 March 1998
 # Whom:                 mickey@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.7 2000/02/22 17:08:45 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/12 18:03:57 espie Exp $
 #
 
 DISTNAME=	psutils-p17
 CATEGORIES=	print
+NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/
 
 MAINTAINER=	ports@openbsd.org
-NEED_VERSION=	1.210
 
 WRKDIST=	${WRKDIR}/psutils
 
@@ -39,12 +39,20 @@ PAPERSIZE?=a4
 .endif
 PKGNAME=	psutils-1.17-${PP}
 MAKE_FLAGS=	\
-	BINDIR=${PREFIX}/bin INCLUDEDIR=${PREFIX}/share/psutils \
+	BINDIR=${PREFIX}/bin \
+	INCLUDEDIR=${PREFIX}/share/psutils \
 	MANDIR=${PREFIX}/man/man1 \
+	PERL=/usr/bin/perl CC=cc CFLAGS=${CFLAGS} \
+	PAPER=${PP} 
+FAKE_FLAGS=	\
+	BINDIR=${WRKINST}${PREFIX}/bin \
+	INCLUDEDIR=${WRKINST}${PREFIX}/share/psutils \
+	MANDIR=${WRKINST}${PREFIX}/man/man1 \
 	PERL=/usr/bin/perl CC=cc CFLAGS=${CFLAGS} \
 	PAPER=${PP} 
 .endfor
 
+FAKE=	Yes
 MAKE_FILE=Makefile.unix
 
 .include <bsd.port.mk>
