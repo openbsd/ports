@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2000/05/29 05:09:24 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/06/02 13:38:44 brad Exp $
 
-DISTNAME=	iozone3_9
-PKGNAME=	iozone-3.9
+DISTNAME=	iozone3_24
+PKGNAME=	iozone-3.24
 CATEGORIES=	benchmarks
-NEED_VERSION=	1.210
-MASTER_SITES=	http://www.iozone.org/src/stable/
+NEED_VERSION=	1.234
+MASTER_SITES=	http://www.iozone.org/src/current/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	brad@openbsd.org
@@ -19,7 +19,7 @@ FAKE=	Yes
 MAKE_FILE=	makefile
 ALL_TARGET=	openbsd
 
-WRKDIST=	${WRKDIR}/src
+WRKDIST=	${WRKDIR}/src/current
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iozone ${PREFIX}/bin
