@@ -1,0 +1,37 @@
+--- main.c.orig	Thu Dec 16 22:17:28 1999
++++ main.c	Thu Dec 16 22:18:02 1999
+@@ -223,12 +223,12 @@
+         usage(argv[0]);
+         exit(1);
+     }
+-    else if ((fp->gateway = name_resolve(argv[optind], 1)) == -1)
++    else if ((fp->gateway = libnet_name_resolve(argv[optind], 1)) == -1)
+     {
+         fprintf(stderr, "Cannot resolve gateway IP address\n");
+         exit(1);
+     }
+-    else if ((fp->destination = name_resolve(argv[optind + 1], 1)) == -1)
++    else if ((fp->destination = libnet_name_resolve(argv[optind + 1], 1)) == -1)
+     {
+         fprintf(stderr, "Cannot resolve destination IP address\n");
+         exit(1);
+@@ -242,7 +242,7 @@
+     /*
+      *  Open the raw IP socket and set IPHDR_INCL.
+      */
+-    fp->sock = open_raw_sock(IPPROTO_RAW);
++    fp->sock = libnet_open_raw_sock(IPPROTO_RAW);
+     if (fp->sock == -1)
+     {
+         perror("No socket");
+@@ -272,8 +272,8 @@
+     {
+         fprintf(stdout,
+             "Firewalking through %s (towards %s) with a maximum of %d hops.\n",
+-            host_lookup(fp->gateway, fp->use_name),
+-            host_lookup(fp->destination, fp->use_name),
++            libnet_host_lookup(fp->gateway, fp->use_name),
++            libnet_host_lookup(fp->destination, fp->use_name),
+             MAX_HOP);
+     }
+ 

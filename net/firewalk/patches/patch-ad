@@ -1,0 +1,11 @@
+--- firewalk.c.orig	Thu Dec 16 22:18:13 1999
++++ firewalk.c	Thu Dec 16 22:18:22 1999
+@@ -87,7 +87,7 @@
+              *  We want to randomize TCP SYN numbers to obfuscate NIDS
+              *  signaturing of firewalk.
+              */
+-            seed_prand();
++            libnet_seed_prand();
+         case IPPROTO_UDP:
+             udptcpwalk(fp);
+             break;

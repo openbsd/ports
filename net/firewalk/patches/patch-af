@@ -1,0 +1,12 @@
+--- packet.c.orig	Thu Dec 16 22:19:17 1999
++++ packet.c	Thu Dec 16 22:19:28 1999
+@@ -237,7 +237,8 @@
+     struct ip *ip_hdr;
+ 
+     ip_hdr = (struct ip *)(packet + fp->packet_offset);
+-    fprintf(stdout, "[%s]", host_lookup(ip_hdr->ip_src.s_addr, fp->use_name));
++    fprintf(stdout, "[%s]",
++            libnet_host_lookup(ip_hdr->ip_src.s_addr, fp->use_name));
+ }
+ 
+ 
