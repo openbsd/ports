@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/01/17 01:10:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2001/01/19 16:47:03 reinhard Exp $
 #
 
 #    SUBDIR += Scilab
@@ -7,6 +7,7 @@
 #    SUBDIR += blas
      SUBDIR += calc
 #    SUBDIR += calctool
+     SUBDIR += cassowary
 #    SUBDIR += eispack
 #    SUBDIR += eval
 #    SUBDIR += femlab
@@ -24,6 +25,7 @@
 #    SUBDIR += linpack
      SUBDIR += maple
      SUBDIR += maple-share
+     SUBDIR += mcsim
 #    SUBDIR += metis
      SUBDIR += netcdf
      SUBDIR += ntl
