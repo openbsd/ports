@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/08 06:25:13 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/27 16:23:01 kevlo Exp $
 
 COMMENT=	"module for approximate matching"
 
-DISTNAME=	String-Approx-3.17
+DISTNAME=	String-Approx-3.18
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5 
 NEED_VERSION=	1.414
