@@ -1,6 +1,49 @@
---- SePort.c.orig	Thu Apr  4 11:44:26 1996
-+++ SePort.c	Thu Apr  4 11:51:54 1996
-@@ -1011,6 +1011,7 @@
+--- SePort.c.orig	Thu Oct 21 16:56:56 1999
++++ SePort.c	Thu Oct 21 16:54:00 1999
+@@ -627,19 +627,25 @@
+ #endif
+       break;
+ #if USE_NONSTD_BAUD
+-#ifdef linux
+     case 57600:
++#ifdef linux
+       baudrate = B38400;
+       ser_io.flags &= ~ASYNC_SPD_MASK;
+       ser_io.flags |= ASYNC_SPD_HI;
++#else
++		baudrate = B57600;
++#endif 
+       break;
+     case 115200:
++#ifdef linux
+       baudrate = B38400;
+       ser_io.flags &= ~ASYNC_SPD_MASK;
+       ser_io.flags |= ASYNC_SPD_VHI;
++#else
++		baudrate = B115200;
++#endif 
+       break;
+ #endif
+-#endif
+     default:
+       return (-1);
+     }
+@@ -691,6 +697,14 @@
+ #endif
+ #endif
+       return 38400;
++#if USE_NONSTD_BAUD
++#ifndef linux
++  case B57600:
++		return(57600);
++  case B115200:
++		return(115200);
++#endif 
++#endif 
+   }
+ 
+   SeError("Consistency error in baud rate");
+@@ -997,6 +1011,7 @@
    pid_t           pid,
                    lckpid;
    char           *modemname;
@@ -8,7 +51,7 @@
  #if LF_USE_ASCII_PID
    char            pidstr[20],
                    lckpidstr[20];
-@@ -1077,11 +1078,13 @@
+@@ -1063,11 +1078,13 @@
  #endif
  
        lockPid = (pid_t) lckpid;

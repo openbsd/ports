@@ -1,18 +1,11 @@
---- SeDecl.h.orig	Thu Jan 21 20:56:03 1999
-+++ SeDecl.h	Thu Jan 21 20:56:06 1999
-@@ -40,6 +40,7 @@
-                 dial_number(),
-                 redial(),
-                 readbyte(),
-+		usleep(),
+--- SeSubs.c.orig	Fri Apr 23 06:24:17 1993
++++ SeSubs.c	Thu Oct 21 16:53:17 1999
+@@ -249,6 +249,8 @@
  
-                 CloseModem(),
-                 OpenModem(),
-@@ -56,7 +57,6 @@
- extern FILE    *open_file(),
-                *open_file_va();
- extern void     send_break(),
--                usleep(),
-                 show(),
-                 showf(),
-                 SeyonMessage(),
+     if (setuid(getuid()) < 0)
+       SePError("Failed to set effective uid");
++    if (setgid(getgid()) < 0)
++      SePError("Failed to set effective gid");
+ 
+     if (*scmd == '\0') {
+       SeNotice(FmtString1("Executing the shell ``%s''", shell));
