@@ -1,7 +1,8 @@
 
+Homepage: ${HOMEPAGE}
+
 To activate popa3d, add the following line to /etc/inetd.conf
-(you may need to change /usr/local/ to the actual PREFIX):
-pop3	stream	tcp	nowait	root	/usr/local/libexec/popa3d popa3d
+pop3	stream	tcp	nowait	root	${PREFIX}/libexec/popa3d popa3d
 
 Then let inetd reread its configuration with:
 kill -HUP `cat /var/run/inetd.pid`
