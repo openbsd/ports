@@ -1,0 +1,5 @@
+==============================================================
+In order to invoke the JVM, the data segment size by your
+'limit' builtin must be at least 262144.
+Please refer to your shell's manual page for details.
+==============================================================
