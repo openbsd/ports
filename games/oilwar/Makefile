@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/05/22 19:54:10 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2004/09/23 07:25:56 espie Exp $
 
 COMMENT=	"sdl shoot 'em up; stop evil army from getting your oil"
 
@@ -31,5 +31,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/oilwar ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/oilwar
 	${INSTALL_DATA} ${WRKSRC}/*.{png,wav} ${PREFIX}/share/oilwar
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/oilwar/
+	${INSTALL_DATA} /dev/null ${PREFIX}/share/examples/oilwar/oilwar.scores
 
 .include <bsd.port.mk>

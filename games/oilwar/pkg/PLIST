@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:46:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/23 07:25:56 espie Exp $
 @mode 2555
 @group games
 bin/oilwar
@@ -6,6 +6,13 @@ bin/oilwar
 @group
 share/doc/oilwar/
 share/doc/oilwar/README
+share/examples/oilwar/
+share/examples/oilwar/oilwar.scores
+@mode 664
+@group games
+@sample /var/games/oilwar.scores
+@mode
+@group
 share/oilwar/
 share/oilwar/background.png
 share/oilwar/bitmaps.png
@@ -13,5 +20,3 @@ share/oilwar/bulletricochet.wav
 share/oilwar/explode.wav
 share/oilwar/gasp.wav
 share/oilwar/singlegunshot.wav
-@cwd /var/games
-@extra oilwar.scores
