@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2000/07/10 01:57:12 kevlo Exp $
+# $OpenBSD: Makefile,v 1.32 2000/07/13 15:14:01 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -38,6 +38,7 @@
      SUBDIR += hackdata
      SUBDIR += nethack
      SUBDIR += nethack:x11
+     SUBDIR += nethack:qt
      SUBDIR += slash
      SUBDIR += slash:x11
 #    SUBDIR += nethack-qt
