@@ -3,11 +3,11 @@
 # Date created:		December 10, 1996
 # Whom:			form@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.15 1998/11/12 09:08:32 form Exp $
+# $OpenBSD: Makefile,v 1.16 1998/12/10 07:42:28 form Exp $
 # FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp
 #
 
-DISTNAME=	lesstif-0.86.9
+DISTNAME=	lesstif-0.87.0
 CATEGORIES=	x11
 
 MAINTAINER=	form@OpenBSD.ORG
@@ -51,4 +51,3 @@ pre-install:
 .endif
 
 .include <bsd.port.mk>
-
