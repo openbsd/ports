@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/02/18 23:17:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2002/02/18 23:41:43 pvalchev Exp $
 
 COMMENT=	"desktop organizer software for the palm pilot"
 
@@ -28,7 +28,6 @@ MODULES=	gettext
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu dest
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
