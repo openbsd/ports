@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/04/22 09:03:40 peter Exp $
+# $OpenBSD: Makefile,v 1.9 2001/07/25 08:18:48 peter Exp $
 ##################################################
 #          The Exim mail transport agent         #
 ##################################################
@@ -221,6 +221,8 @@ EXICYCLOG_MAX=10
 # otherwise at run time) except when doing local deliveries, when it always
 # runs as the appropriate local user. Specifying 0 at run time has the effect
 # of unsetting the values build into the binary.
+
+# Setting EXIM_GID without setting EXIM_UID has no effect.
 
 # The settings here must be numeric; the run time file allows names to
 # be used. When this uid and gid are set, the Exim binary still has to be
