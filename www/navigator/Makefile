@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/04/26 21:13:57 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/04/29 08:09:58 jakob Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/4.51/english/unix/unsuppor
 
 FORTIFYNAME=	Fortify-1.4.1-unix-x86
 
-MASTER_SITES+=	ftp://fortify.net/pub/Fortify/ \
+MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/Fortify/ \
 		ftp://ftp.funet.fi/pub/crypt/mirrors/fortify/ \
 		ftp://ftp.replay.com/pub/crypto/apache/Fortify/ \
