@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/10/27 01:30:05 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/10/28 20:43:08 brad Exp $
 # $FreeBSD: Makefile,v 1.15 1999/08/25 06:14:08 obrien Exp $
 
 DISTNAME=	gqview-0.7.0.src
@@ -11,7 +11,7 @@ MAINTAINER=	brad@openbsd.org
 
 LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib \
 		gtk.1.2:${PORTSDIR}/x11/gtk+ \
-		Imlib.19:${PORTSDIR}/graphics/imlib
+		gdk_imlib.19:${PORTSDIR}/graphics/imlib
 
 USE_X11=	yes
 
