@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/05/15 03:25:56 markus Exp $
+# $OpenBSD: Makefile,v 1.14 2004/12/20 13:45:22 alek Exp $
 
 COMMENT=	"shell (clone of plan9 shell)"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
@@ -33,6 +34,7 @@ FLAVOR+=editline
 
 .if ${FLAVOR:L} == "readline"
 CONFIGURE_ARGS+= --with-readline
+WANTLIB+=		readline termcap
 .elif ${FLAVOR:L} == "editline"
 DISTFILES=	${DISTNAME}.tar.gz editline-1.5.tar.gz:0
 EDITLINE=	${WRKSRC}/../editline
