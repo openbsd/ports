@@ -1,16 +1,18 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2001/09/13 20:33:28 todd Exp $
+$OpenBSD: patch-configure,v 1.2 2001/09/19 13:37:58 naddy Exp $
 --- configure.orig	Wed May  9 17:40:06 2001
-+++ configure	Tue Aug 28 00:27:57 2001
-@@ -3755,7 +3755,7 @@ else
-   FALSE_FALSE=
- fi
++++ configure	Wed Sep 19 01:20:34 2001
+@@ -4811,6 +4811,10 @@ fi
  
--ALL_LINGUAS="az bg ca cs da de el en_GB es et eu fi fr ga gl hu it ja ko lt lv nl nn no pl pt pt_BR ro ru sk sl sp sr sv ta tr uk wa zh_TW.Big5 zh_CN.GB2312"
-+ALL_LINGUAS="az bg ca cs da de el en_GB es et eu fi fr ga gl hu it ja ko lt lv nl nn no pl pt pt_BR ro ru sk sl sp sr sv ta tr uk wa"
- echo $ac_n "checking for working const""... $ac_c" 1>&6
- echo "configure:3761: checking for working const" >&5
- if eval "test \"`echo '$''{'ac_cv_c_const'+set}'`\" = set"; then
-@@ -6418,11 +6418,11 @@ cat >> confdefs.h <<EOF
+ 	   fi
+ 
++	   if test "$gt_cv_func_gettext_libintl" = "yes"; then
++	     LIBS="$LIBS -lintl";
++	   fi
++
+ 	   if test "$gt_cv_func_gettext_libc" = "yes" \
+ 	      || test "$gt_cv_func_gettext_libintl" = "yes"; then
+ 	      cat >> confdefs.h <<\EOF
+@@ -6418,11 +6422,11 @@ cat >> confdefs.h <<EOF
  EOF
  
  cat >> confdefs.h <<EOF

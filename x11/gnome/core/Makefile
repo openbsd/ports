@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/14 14:41:29 todd Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/19 13:37:58 naddy Exp $
 
-COMMENT=		"the core GNOME system"
+COMMENT=		"core GNOME system"
 V=			1.4.0.4
 DISTNAME=		gnome-core-${V}
 CATEGORIES=		x11
@@ -10,6 +10,7 @@ MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	stable/sources/gnome-core
+EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		glade.4::devel/libglade,gnome \
 			gnome.36::x11/gnome/libs \
@@ -36,7 +37,7 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
-	@install -d ${PREFIX}/share/gnome-core; \
-	cp -r ${PREFIX}/../../etc/* ${PREFIX}/share/gnome-core/
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/gnome-core; \
+	cp -pr ${PREFIX}/../../etc/* ${PREFIX}/share/gnome-core/
 
 .include <bsd.port.mk>
