@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/15 06:53:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/05/23 14:37:22 espie Exp $
 bin/ark
 bin/efax
 bin/efix
@@ -28,8 +28,8 @@ lib/kcalc.la
 ${KDE}/kcharselectapplet.la
 ${KDE}/kcm_kdf.la
 ${KDE}/kcm_laptop.la
-${KDE}/kedit.la
 ${KDE}/libkregexpeditorgui.la
+lib/kedit.la
 lib/klaptopdaemon.la
 lib/libark.la
 man/man1/efax.1

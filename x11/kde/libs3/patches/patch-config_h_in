@@ -1,16 +1,6 @@
-$OpenBSD: patch-config_h_in,v 1.2 2002/04/15 06:45:43 espie Exp $
+$OpenBSD: patch-config_h_in,v 1.3 2002/05/23 14:37:22 espie Exp $
 --- config.h.in.orig	Tue Mar 26 01:59:50 2002
 +++ config.h.in	Sat Apr 13 21:47:28 2002
-@@ -125,6 +125,9 @@
- /* Define if you have the `getpagesize' function. */
- #undef HAVE_GETPAGESIZE
- 
-+/* Define if you have the `getpeereid' function. */
-+#undef HAVE_GETPEEREID
-+
- /* Define if you have the `getpeername' function. */
- #undef HAVE_GETPEERNAME
- 
 @@ -574,6 +577,9 @@
  
  /* path to su */

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2002/04/21 11:03:58 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/23 14:37:22 espie Exp $
 
 COMMENT= 		"X11 toolkit, multimedia applications"
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.504
-VERSION=		3.0
+VERSION=		3.0.1
 DISTNAME=		kdemultimedia-${VERSION}
 
 LIB_DEPENDS= DCOP,kdefx,kdesu,kdeui,kio,kmid,kparts::x11/kde/libs3 \

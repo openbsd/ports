@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2002/05/23 14:37:21 espie Exp $
 ${KDE}/libbabelfishplugin.so.0.0
 ${KDE}/libdirfilterplugin.so.0.0
 ${KDE}/libdomtreeviewerplugin.so.0.0
@@ -15,6 +15,17 @@ ${KDE}/libkolourpicker_panelapplet.so.0.0
 ${KDE}/libkonqsidebar_mediaplayer.so.0.0
 ${KDE}/libktimemon_panelapplet.so.1.0
 ${KDE}/libkuickplugin.so.0.0
+${KDE}/libnoatunalsaplayer.so.0.0
+${KDE}/libnoatunblurscope.so.0.0
+${KDE}/libnoatuncharlatan.so.0.0
+${KDE}/libnoatunluckytag.so.0.0
+${KDE}/libnoatunmadness.so.0.0
+${KDE}/libnoatunpitchablespeed.so.0.0
+${KDE}/libnoatunsynaescope.so.0.0
+${KDE}/libnoatuntippecanoe.so.0.0
+${KDE}/libnoatuntyler.so.0.0
+${KDE}/libnoatunwakeup.so.0.0
+${KDE}/libnoatunwavecapture.so.0.0
 ${KDE}/libuachangerplugin.so.0.0
 ${KDE}/libvalidatorsplugin.so.0.0
 ${KDE}/libwebarchiverplugin.so.0.0

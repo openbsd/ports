@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/04 18:29:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/05/23 14:37:22 espie Exp $
 bin/amor
 bin/kaphorism
 bin/kmoon
@@ -7,10 +7,10 @@ bin/kteatime
 bin/ktux
 bin/kworldclock
 include/AmorIface.h
-lib/kde3/eyes_panelapplet.la
-lib/kde3/fifteen_panelapplet.la
-lib/kde3/weather_panelapplet.la
-lib/kde3/ww_panelapplet.la
+${KDE}/eyes_panelapplet.la
+${KDE}/fifteen_panelapplet.la
+${KDE}/weather_panelapplet.la
+${KDE}/ww_panelapplet.la
 share/applnk/System/ScreenSavers/ktux.desktop
 share/applnk/Toys/amor.desktop
 share/applnk/Toys/kaphorism.desktop

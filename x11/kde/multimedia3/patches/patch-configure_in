@@ -1,15 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+$OpenBSD: patch-configure_in,v 1.2 2002/05/23 14:37:22 espie Exp $
 --- configure.in.orig	Mon Mar 25 00:12:29 2002
 +++ configure.in	Sat Apr 20 14:57:26 2002
-@@ -36,7 +36,7 @@ dnl Perform program name transformation
- AC_ARG_PROGRAM
- 
- dnl Automake doc recommends to do this only here. (Janos)
--AM_INIT_AUTOMAKE(kdemultimedia, "3.0") dnl searches for some needed programs
-+AM_INIT_AUTOMAKE(kdemultimedia-3.0, "3.0") dnl searches for some needed programs
- 
- KDE_SET_PREFIX
- 
 @@ -1070,7 +1070,7 @@ dnl    else
  dnl      lib_xaw_opt=-lXaw
  dnl    fi
@@ -19,14 +10,6 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
  dnl    if test "x$have_xext" = xyes; then
  dnl      a_so_libs="-lXext -lX11"
  dnl    else
-@@ -1193,6 +1193,7 @@ case "$host" in
-   *-*-linux*) kscd_compile=yes;;
-   *-*-*bsdi*) kscd_compile=yes;; 
-   *-*-*freebsd*) kscd_compile=yes;;
-+  *-*-*openbsd*) kscd_compile=yes;;
-   *-*-*bsd*) kscd_compile=no;;
-   *) kscd_compile=yes;;
- esac
 @@ -1222,7 +1223,7 @@ dnl this does not work, but to have no e
  
  dnl Checks for header files.

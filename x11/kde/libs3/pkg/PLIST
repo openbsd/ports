@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/05/23 02:00:09 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/05/23 14:37:22 espie Exp $
 bin/artsmessage
 bin/checkXML
 bin/dcop
@@ -515,6 +515,7 @@ ${KDE}/kdeprint_lpdunix.la
 ${KDE}/kdeprint_lpr.la
 ${KDE}/kdeprint_rlpr.la
 ${KDE}/kgzipfilter.la
+${KDE}/khtmlimagepart.la
 ${KDE}/kimg_eps.la
 ${KDE}/kimg_g3.la
 ${KDE}/kimg_ico.la
@@ -551,7 +552,6 @@ lib/libkdesasl.la
 lib/libkdesu.la
 lib/libkdeui.la
 lib/libkhtml.la
-lib/libkhtmlimage.la
 lib/libkio.la
 lib/libkjava.la
 lib/libkjs.la

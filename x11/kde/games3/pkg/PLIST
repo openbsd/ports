@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/05/23 14:37:22 espie Exp $
 bin/kasteroids
 bin/katomic
 bin/kbackgammon
@@ -28,9 +28,6 @@ bin/kwin4
 bin/kwin4proc
 bin/lskat
 bin/lskatproc
-include/ghighscores.h
-include/ghighscores_item.h
-include/gsettings.h
 include/kcarddialog.h
 include/kchat.h
 include/kchatbase.h
@@ -1107,7 +1104,7 @@ share/apps/kmahjongg/toolbar/pause.xpm
 share/apps/kmahjongg/toolbar/play.xpm
 share/apps/kmines/kminesui.rc
 share/apps/konquest/konquestui.rc
-share/apps/konquest/pics/konquest-splash.gif
+share/apps/konquest/pics/konquest-splash.png
 share/apps/konquest/pics/planet1.xpm
 share/apps/konquest/pics/planet2.xpm
 share/apps/konquest/pics/planet3.xpm

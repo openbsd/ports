@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2002/05/23 14:37:22 espie Exp $
 ${KDE}/libkfile_pdf.so.0.0
 ${KDE}/libkfile_png.so.0.0
 ${KDE}/libkfile_ps.so.0.0

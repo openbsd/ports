@@ -1,6 +1,6 @@
-$OpenBSD: p-aclocal_m4,v 1.2 2002/04/21 13:48:11 espie Exp $
---- aclocal.m4.orig	Tue Mar 19 01:31:41 2002
-+++ aclocal.m4	Wed Mar 20 02:31:41 2002
+$OpenBSD: p-aclocal_m4,v 1.3 2002/05/23 14:37:21 espie Exp $
+--- aclocal.m4.orig	Tue May 14 02:33:09 2002
++++ aclocal.m4	Thu May 16 18:36:21 2002
 @@ -6075,8 +6075,8 @@ nto-qnx)
  
  openbsd*)
@@ -20,7 +20,7 @@ $OpenBSD: p-aclocal_m4,v 1.2 2002/04/21 13:48:11 espie Exp $
    ;;
  
  osf3* | osf4* | osf5*)
-@@ -7514,6 +7515,16 @@ case $host_os in
+@@ -7502,6 +7503,16 @@ case $host_os in
    netbsd*)
      # NetBSD uses g++ - do we need to do anything?
      ;;
@@ -37,7 +37,7 @@ $OpenBSD: p-aclocal_m4,v 1.2 2002/04/21 13:48:11 espie Exp $
    osf3*)
      case $cc_basename in
        KCC)
-@@ -7828,15 +7839,24 @@ if AC_TRY_EVAL(ac_compile); then
+@@ -7816,15 +7827,24 @@ if AC_TRY_EVAL(ac_compile); then
  	   else
  	     _LT_AC_TAGVAR(compiler_lib_search_path, $1)="${_LT_AC_TAGVAR(compiler_lib_search_path, $1)} ${prev}${p}"
  	   fi
@@ -64,7 +64,7 @@ $OpenBSD: p-aclocal_m4,v 1.2 2002/04/21 13:48:11 espie Exp $
  	 fi
         fi
         ;;
-@@ -9637,22 +9657,9 @@ EOF
+@@ -9614,22 +9634,9 @@ EOF
        _LT_AC_TAGVAR(hardcode_direct, $1)=yes
        _LT_AC_TAGVAR(hardcode_shlibpath_var, $1)=no
  
@@ -90,7 +90,7 @@ $OpenBSD: p-aclocal_m4,v 1.2 2002/04/21 13:48:11 espie Exp $
        ;;
  
      os2*)
-@@ -9661,6 +9668,7 @@ EOF
+@@ -9638,6 +9645,7 @@ EOF
        _LT_AC_TAGVAR(allow_undefined_flag, $1)=unsupported
        _LT_AC_TAGVAR(archive_cmds, $1)='$echo "LIBRARY $libname INITINSTANCE" > $output_objdir/$libname.def~$echo "DESCRIPTION \"$libname\"" >> $output_objdir/$libname.def~$echo DATA >> $output_objdir/$libname.def~$echo " SINGLE NONSHARED" >> $output_objdir/$libname.def~$echo EXPORTS >> $output_objdir/$libname.def~emxexp $libobjs >> $output_objdir/$libname.def~$CC -Zdll -Zcrtdll -o $lib $libobjs $deplibs $compiler_flags $output_objdir/$libname.def'
        _LT_AC_TAGVAR(old_archive_From_new_cmds, $1)='emximp -o $output_objdir/$libname.a $output_objdir/$libname.def'

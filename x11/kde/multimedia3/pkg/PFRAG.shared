@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/04/20 17:08:43 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2002/05/23 14:37:22 espie Exp $
 ${KDE}/libkcm_kmix.so.0.0
 ${KDE}/libkfile_m3u.so.0.0
 ${KDE}/libkfile_mp3.so.0.0

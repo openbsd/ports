@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2002/04/15 06:53:54 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2002/05/23 14:37:22 espie Exp $
 ${KDE}/libkcm_kcmkxmlrpcd.so.0.0
 ${KDE}/libkcm_ktalkd.so.0.0
 ${KDE}/libkcm_lanbrowser.so.0.0

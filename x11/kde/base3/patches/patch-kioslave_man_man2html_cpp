@@ -1,6 +1,6 @@
-$OpenBSD: patch-kioslave_man_man2html_cpp,v 1.4 2002/04/16 21:24:40 espie Exp $
---- kioslave/man/man2html.cpp.orig	Fri Mar  8 02:16:51 2002
-+++ kioslave/man/man2html.cpp	Tue Apr 16 22:51:20 2002
+$OpenBSD: patch-kioslave_man_man2html_cpp,v 1.5 2002/05/23 14:37:22 espie Exp $
+--- kioslave/man/man2html.cpp.orig	Wed May  8 20:22:23 2002
++++ kioslave/man/man2html.cpp	Thu May 16 23:22:11 2002
 @@ -1681,6 +1681,7 @@ static const char *section_list[] = {
      "3L", "Lightweight Processes Library",
      "3M", "Mathematical Library",
@@ -9,81 +9,7 @@ $OpenBSD: patch-kioslave_man_man2html_cpp,v 1.4 2002/04/16 21:24:40 espie Exp $
      "3R", "RPC Services Library",
      "3S", "Standard I/O Functions",
      "3V", "C Library Functions",
-@@ -2218,8 +2219,8 @@ static char *scan_request(char *c)
-             } else if (i<words-1) out_html(", ");
-          }
-          if (mandoc_synopsis) {
--            if (!inFdMode) out_html(")");
--            out_html(";<br>");
-+            if (!inFdMode) out_html(");");
-+            out_html("<br>");
-          };
-          out_html(change_to_font('R'));
-          out_html(NEWLINE);
-@@ -2715,6 +2716,38 @@ static char *scan_request(char *c)
- 	    out_html(" is currently in beta test.");
- 	    if (fillout) curpos++; else curpos=0;
- 	    break;
-+	case V('A','t'):	/* BSD mandoc */
-+	    trans_char(c,'"','\a');
-+	    c=c+j;
-+	    if (*c=='\n') c++;
-+	    out_html("AT&amp;T Unix ");
-+	    c=scan_troff_mandoc(c, 1, NULL);
-+	    if (fillout) curpos++; else curpos=0;
-+	    break;
-+	case V('F','x'):	/* BSD mandoc */
-+	    trans_char(c,'"','\a');
-+	    c=c+j;
-+	    if (*c=='\n') c++;
-+	    out_html("FreeBSD ");
-+	    c=scan_troff_mandoc(c, 1, NULL);
-+	    if (fillout) curpos++; else curpos=0;
-+	    break;
-+	case V('N','x'):	/* BSD mandoc */
-+	    trans_char(c,'"','\a');
-+	    c=c+j;
-+	    if (*c=='\n') c++;
-+	    out_html("NetBSD ");
-+	    c=scan_troff_mandoc(c, 1, NULL);
-+	    if (fillout) curpos++; else curpos=0;
-+	    break;
-+	case V('O','x'):	/* BSD mandoc */
-+	    trans_char(c,'"','\a');
-+	    c=c+j;
-+	    if (*c=='\n') c++;
-+	    out_html("OpenBSD ");
-+	    c=scan_troff_mandoc(c, 1, NULL);
-+	    if (fillout) curpos++; else curpos=0;
-+	    break;
- 	case V('B','x'):	/* BSD mandoc */
- 	    trans_char(c,'"','\a');
- 	    c=c+j;
-@@ -2723,6 +2756,14 @@ static char *scan_request(char *c)
- 	    c=scan_troff_mandoc(c, 1, NULL);
- 	    if (fillout) curpos++; else curpos=0;
- 	    break;
-+	case V('U','x'):	/* BSD mandoc */
-+	    trans_char(c,'"','\a');
-+	    c=c+j;
-+	    if (*c=='\n') c++;
-+	    out_html("UNIX ");
-+	    c=scan_troff_mandoc(c, 1, NULL);
-+	    if (fillout) curpos++; else curpos=0;
-+	    break;
- 	case V('D','l'):	/* BSD mandoc */
- 	    c=c+j;
- 	    out_html(NEWLINE);
-@@ -2797,7 +2838,7 @@ static char *scan_request(char *c)
- 	      c = c+j;
- 	      if (*c == '\n') c++; /* Skip spaces */
- 	      while (isspace(*c) && *c != '\n') c++;
--	      while (isalnum(*c)) { /* Copy the xyz part */
-+	      while (isalnum(*c) || *c == '.' || *c == ':' || *c == '_' || *c == '-') { /* Copy the xyz part */
- 		*bufptr = *c;
- 		bufptr++; if (bufptr >= buff + MED_STR_MAX) break;
- 		c++;
-@@ -3355,16 +3396,17 @@ static char *scan_troff_mandoc(char *c, 
+@@ -3367,16 +3376,17 @@ static char *scan_troff_mandoc(char *c, 
          end++;
      }
  

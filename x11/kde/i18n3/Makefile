@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/04/10 01:24:39 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/23 14:37:22 espie Exp $
 
 FLAVORS=af ar az bg bs ca cs da de el en_GB eo es et fi fr he hr hu id is \
     it ja ko lt lv mt nb nl nn pl pt pt_BR ro ru sk sl sv ta th tr uk ven \
@@ -11,7 +11,7 @@ COMMENT=		${FLAVOR} translations for kde3
 
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.504
-VERSION=		3.0
+VERSION=		3.0.1
 DISTNAME=		kde-i18n-${FLAVOR}-${VERSION}
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
 
@@ -24,6 +24,9 @@ WRKDIST=${WRKDIR}/kde-i18n-${FLAVOR}
 BUILD_DEPENDS = ::x11/kde/libs3
 
 PLIST=${PKGDIR}/PLIST.${FLAVOR}
+.if ${FLAVOR:L:Mfr}
+PATCH_LIST=patch-* fr-patch-*
+.endif
 
 # some extra vars to compact PLISTs
 DOC=share/doc/HTML/${FLAVOR}/

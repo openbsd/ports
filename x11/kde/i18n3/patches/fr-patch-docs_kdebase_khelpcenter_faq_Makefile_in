@@ -1,0 +1,45 @@
+$OpenBSD: fr-patch-docs_kdebase_khelpcenter_faq_Makefile_in,v 1.1 2002/05/23 14:37:22 espie Exp $
+--- docs/kdebase/khelpcenter/faq/Makefile.in.orig	Wed May  8 14:20:17 2002
++++ docs/kdebase/khelpcenter/faq/Makefile.in	Thu May 23 15:10:48 2002
+@@ -266,7 +266,7 @@ TAGS:
+ 
+ #>- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ #>+ 4
+-KDE_DIST=install.docbook tips.docbook contrib.docbook getkde.docbook desktop.docbook nonkdeapps.docbook index.docbook panel.docbook intro.docbook notrelated.docbook moreinfo.docbook configkde.docbook about.docbook core kdeapps.docbook filemng.docbook misc.docbook winmng.docbook 
++KDE_DIST=install.docbook tips.docbook contrib.docbook getkde.docbook desktop.docbook nonkdeapps.docbook index.docbook panel.docbook intro.docbook notrelated.docbook moreinfo.docbook configkde.docbook about.docbook kdeapps.docbook filemng.docbook misc.docbook winmng.docbook 
+ 
+ DISTFILES= $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
+ 
+@@ -379,7 +379,7 @@ uninstall-am: uninstall-info-am
+ .NOEXPORT:
+ 
+ #>+ 21
+-index.cache.bz2: $(srcdir)/index.docbook $(KDE_XSL_STYLESHEET) core configkde.docbook tips.docbook getkde.docbook filemng.docbook contrib.docbook about.docbook misc.docbook panel.docbook moreinfo.docbook notrelated.docbook intro.docbook kdeapps.docbook install.docbook desktop.docbook winmng.docbook nonkdeapps.docbook index.docbook 
++index.cache.bz2: $(srcdir)/index.docbook $(KDE_XSL_STYLESHEET) configkde.docbook tips.docbook getkde.docbook filemng.docbook contrib.docbook about.docbook misc.docbook panel.docbook moreinfo.docbook notrelated.docbook intro.docbook kdeapps.docbook install.docbook desktop.docbook winmng.docbook nonkdeapps.docbook index.docbook 
+ 	-@if test -n "$(MEINPROC)"; then echo $(MEINPROC) --check --cache index.cache.bz2 $(srcdir)/index.docbook; $(MEINPROC) --check --cache index.cache.bz2 $(srcdir)/index.docbook; fi
+ 
+ docs-am: index.cache.bz2
+@@ -403,20 +403,20 @@ clean-docs:
+ #>+ 13
+ install-nls:
+ 	$(mkinstalldirs) $(DESTDIR)$(kde_htmldir)/$(KDE_LANG)/khelpcenter/faq
+-	@for base in core configkde.docbook tips.docbook getkde.docbook filemng.docbook contrib.docbook about.docbook misc.docbook panel.docbook moreinfo.docbook notrelated.docbook intro.docbook kdeapps.docbook install.docbook desktop.docbook winmng.docbook nonkdeapps.docbook index.docbook ; do \
++	@for base in configkde.docbook tips.docbook getkde.docbook filemng.docbook contrib.docbook about.docbook misc.docbook panel.docbook moreinfo.docbook notrelated.docbook intro.docbook kdeapps.docbook install.docbook desktop.docbook winmng.docbook nonkdeapps.docbook index.docbook ; do \
+ 	  echo $(INSTALL_DATA) $$base $(DESTDIR)$(kde_htmldir)/$(KDE_LANG)/khelpcenter/faq/$$base ;\
+ 	  $(INSTALL_DATA) $(srcdir)/$$base $(DESTDIR)$(kde_htmldir)/$(KDE_LANG)/khelpcenter/faq/$$base ;\
+ 	done
+ 
+ uninstall-nls:
+-	for base in core configkde.docbook tips.docbook getkde.docbook filemng.docbook contrib.docbook about.docbook misc.docbook panel.docbook moreinfo.docbook notrelated.docbook intro.docbook kdeapps.docbook install.docbook desktop.docbook winmng.docbook nonkdeapps.docbook index.docbook ; do \
++	for base in configkde.docbook tips.docbook getkde.docbook filemng.docbook contrib.docbook about.docbook misc.docbook panel.docbook moreinfo.docbook notrelated.docbook intro.docbook kdeapps.docbook install.docbook desktop.docbook winmng.docbook nonkdeapps.docbook index.docbook ; do \
+ 	  rm -f $(DESTDIR)$(kde_htmldir)/$(KDE_LANG)/khelpcenter/faq/$$base ;\
+ 	done
+ 
+ 
+ #>+ 5
+ distdir-nls:
+-	for file in core configkde.docbook tips.docbook getkde.docbook filemng.docbook contrib.docbook about.docbook misc.docbook panel.docbook moreinfo.docbook notrelated.docbook intro.docbook kdeapps.docbook install.docbook desktop.docbook winmng.docbook nonkdeapps.docbook index.docbook ; do \
++	for file in configkde.docbook tips.docbook getkde.docbook filemng.docbook contrib.docbook about.docbook misc.docbook panel.docbook moreinfo.docbook notrelated.docbook intro.docbook kdeapps.docbook install.docbook desktop.docbook winmng.docbook nonkdeapps.docbook index.docbook ; do \
+ 	  cp $(srcdir)/$$file $(distdir); \
+ 	done
+ 

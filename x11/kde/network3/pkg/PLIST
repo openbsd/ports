@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/15 06:53:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/05/23 14:37:22 espie Exp $
 bin/dsirc
 bin/kdict
 bin/kit
@@ -390,7 +390,6 @@ share/apps/kppp/Rules/Denmark/Worldonline-ISDN.rst
 share/apps/kppp/Rules/Estonia/Eesti_Telefon.rst
 share/apps/kppp/Rules/Finland/Vaasan_LP.rst
 share/apps/kppp/Rules/France/France_Telecom_Local.rst
-share/apps/kppp/Rules/France/France_Telecom_Local_Area.rst
 share/apps/kppp/Rules/France/France_Telecom_Local_Primaliste_Internet.rst
 share/apps/kppp/Rules/France/France_Telecom_National.rst
 share/apps/kppp/Rules/Germany/2.5min.rst

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/04 18:29:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/05/23 14:37:21 espie Exp $
 bin/kbanner.kss
 bin/kblob.kss
 bin/kbouboule.kss
@@ -19,12 +19,12 @@ bin/kswarm.kss
 bin/kvm.kss
 bin/kxsconfig
 bin/kxsrun
-lib/kde3/kwin_cde.la
-lib/kde3/kwin_cde_config.la
-lib/kde3/kwin_glow.la
-lib/kde3/kwin_glow_config.la
-lib/kde3/kwin_openlook.la
-lib/kde3/plugins/styles/dotnet.la
+${KDE}/kwin_cde.la
+${KDE}/kwin_cde_config.la
+${KDE}/kwin_glow.la
+${KDE}/kwin_glow_config.la
+${KDE}/kwin_openlook.la
+${KDE}/plugins/styles/dotnet.la
 share/applnk/System/ScreenSavers/KBanner.desktop
 share/applnk/System/ScreenSavers/KBlob.desktop
 share/applnk/System/ScreenSavers/KBouboule.desktop

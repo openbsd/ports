@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/04/15 06:53:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/05/23 14:37:21 espie Exp $
 bin/dcop_kate
+bin/noatunsynaescope.bin
+bin/noatuntippecanoe.bin
+bin/noatuntyler.bin
 bin/testor
 ${KDE}/katehtmltoolsplugin.la
 ${KDE}/kateinsertcommandplugin.la
@@ -20,6 +23,17 @@ ${KDE}/libkuickplugin.la
 ${KDE}/libuachangerplugin.la
 ${KDE}/libvalidatorsplugin.la
 ${KDE}/libwebarchiverplugin.la
+${KDE}/noatunalsaplayer.la
+${KDE}/noatunblurscope.la
+${KDE}/noatuncharlatan.la
+${KDE}/noatunluckytag.la
+${KDE}/noatunmadness.la
+${KDE}/noatunpitchablespeed.la
+${KDE}/noatunsynaescope.la
+${KDE}/noatuntippecanoe.la
+${KDE}/noatuntyler.la
+${KDE}/noatunwakeup.la
+${KDE}/noatunwavecapture.la
 ${KDE}/webarchivethumbnail.la
 share/applnk/Settings/FileBrowsing/kcmkuick.desktop
 share/apps/kate/plugins/katehtmltools.desktop
@@ -65,6 +79,18 @@ share/apps/konqlistview/kpartplugins/dirfilterplugin.rc
 share/apps/konqlistview/kpartplugins/kimgalleryplugin.rc
 share/apps/konqsidebartng/add/mplayer_add.desktop
 share/apps/konqsidebartng/entries/mplayer.desktop
+share/apps/noatun/alsaplayerui.plugin
+share/apps/noatun/blurscope.plugin
+share/apps/noatun/charlatanui.plugin
+share/apps/noatun/luckytag.plugin
+share/apps/noatun/madness.plugin
+share/apps/noatun/pitchablespeed.plugin
+share/apps/noatun/synaescope.plugin
+share/apps/noatun/tippecanoe.plugin
+share/apps/noatun/tyler.plugin
+share/apps/noatun/tylerstates
+share/apps/noatun/wakeup.plugin
+share/apps/noatun/wavecapture.plugin
 share/doc/HTML/en/kate-plugins/common
 share/doc/HTML/en/kate-plugins/helloworld.docbook
 share/doc/HTML/en/kate-plugins/htmltools.docbook
@@ -122,6 +148,7 @@ share/services/webarchivethumbnail.desktop
 @dirrm share/doc/HTML/en/konq-plugins
 @dirrm share/doc/HTML/en/kicker-applets
 @dirrm share/doc/HTML/en/kate-plugins
+@dirrm share/apps/noatun
 @dirrm share/apps/knewsticker/scripts
 @dirrm share/apps/khtml/kpartplugins
 @dirrm share/apps/katexmltools

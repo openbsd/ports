@@ -1,6 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2002/04/04 18:29:22 espie Exp $
-lib/kde3/libeyes_panelapplet.so.1.0
-lib/kde3/libfifteen_panelapplet.so.1.0
-lib/kde3/libweather_panelapplet.so.1.0
-lib/kde3/libww_panelapplet.so.1.0
-DYNLIBDIR(%D/lib/kde3)
+@comment $OpenBSD: PFRAG.shared,v 1.3 2002/05/23 14:37:22 espie Exp $
+${KDE}/libeyes_panelapplet.so.1.0
+${KDE}/libfifteen_panelapplet.so.1.0
+${KDE}/libweather_panelapplet.so.1.0
+${KDE}/libww_panelapplet.so.1.0
