@@ -1,6 +1,6 @@
---- configure.orig	Fri May 28 00:37:34 1999
-+++ configure	Fri May 28 00:38:48 1999
-@@ -1733,10 +1733,10 @@
+--- configure.orig	Sat May 27 06:58:15 2000
++++ configure	Sat Jun 10 13:49:56 2000
+@@ -1739,10 +1739,10 @@
      top_srcdir="$ac_dots$ac_given_srcdir" ;;
    esac
  
@@ -15,7 +15,7 @@
  
    echo creating "$ac_file"
    rm -f "$ac_file"
-@@ -1853,10 +1853,10 @@
+@@ -1859,10 +1859,10 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac

@@ -1,6 +1,6 @@
---- libltdl/configure.orig	Tue May 25 20:31:14 1999
-+++ libltdl/configure	Fri May 28 00:47:48 1999
-@@ -2925,10 +2925,10 @@
+--- libltdl/configure.orig	Sat May 27 06:58:20 2000
++++ libltdl/configure	Sat Jun 10 13:49:57 2000
+@@ -2926,10 +2926,10 @@
      top_srcdir="$ac_dots$ac_given_srcdir" ;;
    esac
  
