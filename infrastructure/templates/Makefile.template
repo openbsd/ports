@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.10 2000/02/12 19:43:44 turan Exp $
+# $OpenBSD: Makefile.template,v 1.11 2000/02/12 20:03:00 turan Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -27,42 +27,44 @@ CATEGORIES=     	???
 MAINTAINER=		ports@openbsd.org
 
 # Licensing for this port.  License types:
-# BSD:    BSD (or a BSD like) license.
-#         Can be distributed.  Documentation that mentions package may
-#         need to include owners copyright.
-# COMM:   Commercial software.
-#         For fee software.
-# COPY:   Copyright that allows or denys distribution
-#         Read copyright before use, there may be usage restrictions
-#         even if distribution is allowed.
-# CRYPTO: Third party crypto not allowed.
-# ELM:    Can not charge _extra_ for distribution
-#         May distribute when the price of the distribution does would
-#         not change if the port were removed from the distribution.
-# GPL:    Licensed under one of the various GNU licenses.
-# INC:    Package is included in OpenBSD, distribution not needed.
-# LIC:    Requires license for redistribution.
-#         Note: a license may only be required for a `commercial' distribution
-#         which is how I'm treating the OpenBSD CD-ROMs.
-# NONE:   No license/copyright found in source code or related documentation.
-# NOFEE:  Can not charge for distribution
-#         The software may be `free', but the copyright states `may not charge
-#         for distribution' or words to that effect.
-# PAT:    Patent or Patent Pending
-# PD:     Explicitly stated to be in the Public Domain.
-# PERL:   PERL (or PERL like) license.
-# REST:   Restrictive license
-# SHARE:  Shareware.
-# X:      X Consortium (or X consortium like, e.g. XFree86) license.
-#         a full and unrestricted irrevocable, world-wide, paid up,
-#         royalty-free, nonexclusive right and license to deal in this
-#         software...
-# TOG:    The Open Group license.  Not to be confused with X or XFree86.
-#         Software distributed under the TOG license is NOT free.
+# BSD:        BSD (or a BSD like) license.
+#             Can be distributed.  Documentation that mentions package may
+#             need to include owners copyright.
+# COMM:       Commercial software.
+#             For fee software.
+# COPY:       Copyright that allows or denys distribution
+#             Read copyright before use, there may be usage restrictions
+#             even if distribution is allowed.
+# CRYPTO:     Third party crypto not allowed.
+# GPL:        Licensed under the GNU GPL license.
+# INCLUDED:   Package is included in OpenBSD, distribution not needed.
+# LGPL:       Licensed under the GNU LGPL license.
+# LICENSE:    Requires license for redistribution.
+#             Note: a license may only be required for a `commercial' 
+#             distribution which is how I'm treating the OpenBSD CD-ROMs.
+# NOEXTRAFEE: Can not charge _extra_ for distribution
+#             May distribute when the price of the distribution does would
+#             not change if the port were removed from the distribution.
+# NOFEE:      Can not charge for distribution
+#             The software may be `free', but the copyright states 
+#             `may not charge for distribution' or words to that effect.
+# NONE:       No license/copyright found in source code or 
+#             related documentation.
+# PAT:        Patent or Patent Pending
+# PD:         Explicitly stated to be in the Public Domain.
+# PERL:       PERL (or PERL like) license.
+# RESTRICT:   Restrictive license
+# SHARE:      Shareware.
+# X:          X Consortium (or X consortium like, e.g. XFree86) license.
+#             a full and unrestricted irrevocable, world-wide, paid up,
+#             royalty-free, nonexclusive right and license to deal in this
+#             software...
+# TOG:        The Open Group license.  Not to be confused with X or XFree86.
+#             Software distributed under the TOG license is NOT free.
 # 
-#         NOTE: A LICENSE THAT ALLOWS COPYING/REDISTRIBUTION MAY STILL
-#         BE RESTRICTIVE WITH RESPECT TO USE OF THE BINARY AND/OR
-#         SOURCE CODE.  PLEASE READ ALL LICENSES/COPYRIGHTS CAREFULLY.
+# NOTE: A LICENSE THAT ALLOWS COPYING/REDISTRIBUTION MAY STILL
+# BE RESTRICTIVE WITH RESPECT TO USE OF THE BINARY AND/OR
+# SOURCE CODE.  PLEASE READ ALL LICENSES/COPYRIGHTS CAREFULLY.
 #
 # When you determine the license type, make sure to look at ALL distfiles.
 # Every distfile can have a different license.  The PERMIT_* values are
