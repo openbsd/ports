@@ -1,0 +1,12 @@
+$OpenBSD: patch-nsprpub_pr_src_misc_prtime_c,v 1.1 2003/04/13 04:26:32 david Exp $
+--- nsprpub/pr/src/misc/prtime.c.orig	Wed Feb 26 18:01:02 2003
++++ nsprpub/pr/src/misc/prtime.c	Sat Apr 12 01:48:36 2003
+@@ -1666,7 +1666,7 @@ PR_FormatTime(char *buf, int buflen, con
+  */
+ 
+ #if defined(SUNOS4) || (__GLIBC__ >= 2) || defined(XP_BEOS) \
+-        || defined(NETBSD)
++        || defined(NETBSD) || defined(OPENBSD)
+     a.tm_zone = NULL;
+     a.tm_gmtoff = tm->tm_params.tp_gmt_offset + tm->tm_params.tp_dst_offset;
+ #endif

@@ -1,0 +1,12 @@
+$OpenBSD: patch-nsprpub_pr_include_md__openbsd_cfg,v 1.1 2003/04/13 04:26:32 david Exp $
+--- nsprpub/pr/include/md/_openbsd.cfg.orig	Tue Jun 20 16:23:14 2000
++++ nsprpub/pr/include/md/_openbsd.cfg	Sat Apr 12 01:48:36 2003
+@@ -93,7 +93,7 @@
+ 
+ #elif defined(__sparc__)
+ 
+-#undef IS_LITTLE_ENDIAN 1
++#undef IS_LITTLE_ENDIAN
+ #define  IS_BIG_ENDIAN 1
+ #define HAVE_LONG_LONG
+ #define  HAVE_ALIGNED_DOUBLES
