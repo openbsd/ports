@@ -1,0 +1,36 @@
+--- configure.in.orig	Tue Nov  2 00:01:45 1999
++++ configure.in	Fri Dec 31 03:19:55 1999
+@@ -60,7 +60,7 @@
+ 
+ for pilot_libs in $pilot_prefix/lib /usr/lib /usr/local/lib/ \
+   /usr/extra/pilot/lib ; do
+-   if test -r "$pilot_libs/libpisock.so" ; then
++   if test -r $pilot_libs/libpisock.so* >/dev/null 2>&1 ; then
+       pilotlibs=yes
+       PILOT_LIBS="-L$pilot_libs $PILOT_LIBS"
+       break
+@@ -114,15 +114,17 @@
+ 
+ if test "x$enable_plugins" = "xyes"; then
+    dnl Check for shared library calls
+-   AC_MSG_CHECKING(for dlopen)
+-   save_LIBS="$LIBS"
+-   LIBS="$LIBS -ldl"
+-   AC_TRY_LINK([#include <dlfcn.h>], [dlopen("huh",0);] , have_dlopen=yes, , )
+-   LIBS="$save_LIBS"
+-
++   AC_CHECK_FUNCS(dlopen)
++   if test "x$ac_cv_func_dlopen" = "xyes"; then
++      have_dlopen=yes
++   else
++      for lib in dl; do
++         AC_CHECK_LIB($lib, dlopen, [LIBS="$LIBS -ldl";
++	   have_dlopen=yes; break])
++      done
++   fi
+    if test "x$have_dlopen" = "xyes"; then
+       AC_DEFINE(ENABLE_PLUGINS)
+-      AC_MSG_RESULT(ok, plugin support enabled)
+    else
+       AC_MSG_RESULT(Could not find dlopen - not using plugin support)
+    fi
