@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2001/12/03 06:05:43 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2001/12/19 00:25:26 pvalchev Exp $
 
 COMMENT=	"curses-based icq client implementation"
 
-DISTNAME=	centericq-4.2.1
+DISTNAME=	centericq-4.5.0
 CATEGORIES=	net	
-NEED_VERSION=	1.500
+NEED_VERSION=	1.502
 MASTER_SITES=	http://konst.org.ua/download/ \
 		http://konst.home.welcomehome.org/
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+
+LIB_DEPENDS=	sigc.0:libsigc++-*:devel/libsigc++
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
