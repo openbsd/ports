@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/09/28 18:10:23 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/11/12 14:34:37 brad Exp $
 
 DISTNAME=	freeciv-1.8.1
 CATEGORIES=	games
@@ -14,7 +14,7 @@ MAINTAINER=	israfil@gmx.net
 LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
 		glib.1.2:${PORTSDIR}/devel/glib \
 		gtk.1.2:${PORTSDIR}/x11/gtk+ \
-		Imlib.1.9:${PORTSDIR}/graphics/imlib
+		Imlib.19:${PORTSDIR}/graphics/imlib
 .endif
 
 GNU_CONFIGURE=	yes
