@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2002/10/28 01:38:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2002/12/24 01:08:43 pvalchev Exp $
 
 COMMENT=		"traceroute implementation using TCP packets"
 
 DISTNAME=		tcptraceroute-1.4
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=    		net
 
 HOMEPAGE=		http://michael.toren.net/code/tcptraceroute/
@@ -30,7 +31,7 @@ NO_REGRESS=		Yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcptraceroute ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/tcptraceroute.8 ${PREFIX}/man/man8
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tcptraceroute
-	${INSTALL_DATA} ${WRKSRC}/examples.txt ${PREFIX}/share/doc/tcptraceroute
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tcptraceroute
+	${INSTALL_DATA} ${WRKSRC}/examples.txt ${PREFIX}/share/examples/tcptraceroute
 
 .include <bsd.port.mk>
