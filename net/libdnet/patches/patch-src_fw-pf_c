@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_fw-pf_c,v 1.1 2002/05/20 10:29:16 jsyn Exp $
+--- src/fw-pf.c.orig	Sun Jan 20 13:23:28 2002
++++ src/fw-pf.c	Mon May 13 23:54:30 2002
+@@ -25,6 +25,11 @@
+ #include <unistd.h>
+ 
+ #include "dnet.h"
++
++#ifdef PF_RULE_LABEL_SIZE
++/* XXX */
++#define addr		addr.addr
++#endif
+ 
+ struct fw_handle {
+ 	int	fd;
