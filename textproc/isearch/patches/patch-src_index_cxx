@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_index_cxx,v 1.1 2000/04/21 23:42:11 espie Exp $
+--- src/index.cxx.orig	Sat Apr 22 01:29:57 2000
++++ src/index.cxx	Sat Apr 22 01:30:04 2000
+@@ -530,7 +530,7 @@ GPTYPE INDEX::BuildGpList(
+ }
+ 
+ GDT_BOOLEAN INDEX::ValidateInField(const GPTYPE HitGp, const STRING& FieldName,
+-			   const PhraseLength) {
++			   const int PhraseLength) {
+   STRING Fn;
+   Parent->DfdtGetFileName(FieldName, &Fn);
+   PFILE Fp = Parent->ffopen(Fn, "rb");

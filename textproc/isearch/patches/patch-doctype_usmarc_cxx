@@ -1,0 +1,24 @@
+$OpenBSD: patch-doctype_usmarc_cxx,v 1.1 2000/04/21 23:42:11 espie Exp $
+--- doctype/usmarc.cxx.orig	Wed Dec  4 22:02:09 1996
++++ doctype/usmarc.cxx	Sat Apr 22 01:27:43 2000
+@@ -453,11 +453,19 @@ if (RecordSyntax == SutrsRecordSyntax) {
+    // "Sutrs" is the Z39.50-compliant way to say "ASCII".
+    
+ 
+-   CHR *TempFile = tmpnam(NULL);
++   CHR TempFile[30];
++   sprintf(TempFile, "%s/usm.XXXXXXXXXX", P_tmpdir);
++
++   if ((fp = fdopen(mkstemp(TempFile), "w")) == NULL) {
++	perror(TempFile);
++        exit(1);
++   }
++#if 0
+    if((fp = fopen(TempFile, "w")) == NULL) {
+ 	perror(TempFile);
+ 	exit(1);
+ 	}
++#endif
+ 
+    MARC *m;
+    m = new MARC(myBuff);

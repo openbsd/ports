@@ -1,0 +1,12 @@
+$OpenBSD: patch-doctype_sgmlnorm_cxx,v 1.1 2000/04/21 23:42:11 espie Exp $
+--- doctype/sgmlnorm.cxx.orig	Sat Apr 22 01:32:03 2000
++++ doctype/sgmlnorm.cxx	Sat Apr 22 01:32:09 2000
+@@ -528,7 +528,7 @@ PCHR *SGMLNORM::parse_tags (PCHR b, GPTY
+ #ifndef TAG_GROW_SIZE
+ #define TAG_GROW_SIZE 128
+ #endif
+-  const grow_size = TAG_GROW_SIZE;
++  const int grow_size = TAG_GROW_SIZE;
+ #undef TAG_GROW_SIZE
+ 
+   // You should allocate character pointers (to tags) as you need them.
