@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/01/08 19:18:44 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2005/02/21 15:44:48 alek Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -6,9 +6,6 @@ V=3.3.5
 FULL_VERSION=$V
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
-
-WANTLIB=c z
-
 
 MAKE_GXX=Yes
 MAKE_FORTRAN=Yes
@@ -27,6 +24,10 @@ MAKE_ADA?=No
 BUILD_DEPENDS=	::devel/autoconf/2.13
 BUILD_DEPENDS+=	::devel/metaauto
 SUBPACKAGE?=
+
+.if defined(PACKAGING) && ${SUBPACKAGE} != "-estdc"
+WANTLIB=c
+.endif
 
 .if ${MAKE_JAVA:L} == "yes"
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-java"
