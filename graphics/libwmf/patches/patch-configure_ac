@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure_ac,v 1.1 2004/11/07 10:11:23 espie Exp $
+--- configure.ac.orig	Sun Nov  7 10:48:31 2004
++++ configure.ac	Sun Nov  7 10:52:01 2004
+@@ -433,16 +433,12 @@ AC_CHECK_HEADER(freetype/freetype.h,[
+ ])
+ 
+ if [ test "$have_ft_header" != "yes" ]; then
+-	no_ft_cppflags=$CPPFLAGS
+-	CPPFLAGS="-I/usr/include/freetype2 $CPPFLAGS"
+ 	AC_CHECK_HEADER(freetype/ftglyph.h,[
+-		WMF_FT_CFLAGS="-I/usr/include/freetype2"
+-		WMF_FT_CONFIG_CFLAGS="-I/usr/include/freetype2"
+-	],[	CPPFLAGS=$no_ft_cppflags
+-		CPPFLAGS="-I/usr/local/include/freetype2 -I/usr/local/include $CPPFLAGS"
+-		AC_CHECK_HEADER(freetype/fttypes.h,[
+-			WMF_FT_CFLAGS="-I/usr/local/include/freetype2 -I/usr/local/include"
+-			WMF_FT_CONFIG_CFLAGS="-I/usr/local/include/freetype2 -I/usr/local/include"
++		WMF_FT_CFLAGS="$freetype_cflags"
++		WMF_FT_CONFIG_CFLAGS="$freetype_cflags"
++	],[	AC_CHECK_HEADER(freetype/fttypes.h,[
++			WMF_FT_CFLAGS="$freetype_cflags"
++			WMF_FT_CONFIG_CFLAGS="$freetype_cflags"
+ 		],[	AC_MSG_ERROR([* * * Okay, I give up. Where are those darned headers? * * *])
+ 		])
+ 	])

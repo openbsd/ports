@@ -1,0 +1,13 @@
+$OpenBSD: patch-include_libwmf_types_h,v 1.1 2004/11/07 10:11:23 espie Exp $
+--- include/libwmf/types.h.orig	Sun Nov  7 10:56:56 2004
++++ include/libwmf/types.h	Sun Nov  7 10:57:14 2004
+@@ -23,7 +23,8 @@
+ #include <stdio.h>
+ #include <sys/types.h>
+ 
+-#include <freetype/freetype.h>
++#include <ft2build.h>
++#include FT_FREETYPE_H
+ 
+ #include <libwmf/fund.h>
+ 
