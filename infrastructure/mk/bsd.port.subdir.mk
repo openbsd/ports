@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.34 2001/03/28 16:37:27 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.35 2001/04/04 08:17:32 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -100,7 +100,7 @@ _SUBDIRUSE: .USE
 			    insert=' ';; \
 			esac \
 		    fi; \
-		done; \
+		done; unset IFS; \
 		case X$$multi in "X");; *) \
 		    toset="$$toset SUBPACKAGE=\"$$multi\"";; \
 		esac; \
@@ -141,6 +141,7 @@ ${SUBDIR}::
 		 build clean depend describe distclean deinstall \
 		 reinstall tags checksum mirror-distfiles list-distfiles \
 		 show obj fetch-makefile all-packages cdrom-packages \
+		 dir-depends \
 		 ftp-packages packageinstall link-categories unlink-categories
 
 .if !target(${__target})
@@ -205,4 +206,4 @@ README.html:
 	list-distfiles obj show readmes readme \
 	beforeinstall afterinstall install realinstall fake \
 	all-packages cdrom-packages ftp-packages packageinstall \
-	link-categories unlink-categories
+	link-categories unlink-categories dir-depends

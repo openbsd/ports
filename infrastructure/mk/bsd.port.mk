@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.385 2001/04/04 08:03:59 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.386 2001/04/04 08:17:31 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2093,12 +2093,24 @@ describe:
 		echo -n "/dev/null|"; \
 	fi; \
 	echo -n "${MAINTAINER}|${CATEGORIES}|"
-.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || target(depends-list)
+.if defined(NEW_DEPENDS)
+.  if !empty(_ALWAYS_DEP2) || !empty(_BUILD_DEP2)
+	@cd ${.CURDIR} && _FINAL_ECHO=: _INITIAL_ECHO=: exec ${MAKE} build-depends-list
+.  endif
+.else
+.  if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || target(depends-list)
 	@cd ${.CURDIR} && echo -n `${MAKE} depends-list|${_SORT_DEPENDS}`
+.  endif
 .endif
 	@echo -n "|"
-.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP) || target(package-depends)
+.if defined(NEW_DEPENDS)
+.  if !empty(_ALWAYS_DEP2) || !empty(_RUN_DEP2)
+	@cd ${.CURDIR} && _FINAL_ECHO=: _INITIAL_ECHO=: exec ${MAKE} run-depends-list
+.  endif
+.else
+.  if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP) || target(package-depends)
 	@cd ${.CURDIR} && echo -n `${MAKE} package-depends|${_SORT_DEPENDS}`
+.  endif
 .endif
 	@echo -n "|"
 	@case "${ONLY_FOR_ARCHS}" in \
@@ -2300,6 +2312,77 @@ package-depends:
 .  endif
 .endif
 
+# recursively build a list of dirs to pass to tsort...
+recurse-dir-depends:
+.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
+	@unset FLAVOR SUBPACKAGE || true; \
+	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
+		| tr '\040' '\012' | sort -u`; do \
+		echo "$$self $$dir"; \
+		self2="$$dir"; \
+		${_flavor_fragment}; \
+		toset="$$toset self=\"$$self2\""; \
+		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
+			if ! eval $$toset ${MAKE} recurse-dir-depends ${_DEPEND_THRU}; then  \
+				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
+				exit 1; \
+			fi; \
+		else \
+			echo 1>&2  "*** Build dependencies bogus: \"$$dir\" non-existent"; \
+			exit 1; \
+		fi; \
+	done 
+.endif
+
+.if empty(SUBPACKAGE)
+_PKGPATH=${PKGPATH}${FLAVOR_EXT:S/-/,/}
+.else
+_PKGPATH=${PKGPATH},-${SUBPACKAGE}${FLAVOR_EXT:S/-/,/}
+.endif
+
+# recursively build a list of dirs to pass to tsort...
+dir-depends:
+.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
+	@unset FLAVOR SUBPACKAGE || true; \
+	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} \
+		| tr '\040' '\012' | sort -u`; do \
+		echo "${_PKGPATH} $$dir"; \
+		self2="$$dir"; \
+		${_flavor_fragment}; \
+		toset="$$toset self=\"$$self2\""; \
+		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
+			if ! eval $$toset ${MAKE} recurse-dir-depends ${_DEPEND_THRU}; then  \
+				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
+				exit 1; \
+			fi; \
+		else \
+			echo 1>&2  "*** Build dependencies bogus: \"$$dir\" non-existent"; \
+			exit 1; \
+		fi; \
+	done 
+.else
+	@echo "${_PKGPATH} ${_PKGPATH}"
+.endif
+
+.for _i in RUN BUILD
+${_i:L}-depends-list:
+.  if !empty(_ALWAYS_DEP2) || !empty(_${_i}_DEP2)
+	@unset FLAVOR SUBPACKAGE || true; \
+	: $${_INITIAL_ECHO:='echo -n "This port requires \""'}; \
+	: $${_ECHO='echo -n'}; \
+	: $${_FINAL_ECHO:='echo "\" to ${_i:L}."'}; space=''; \
+	eval $${_INITIAL_ECHO}; \
+	for spec in `echo ${_ALWAYS_DEP2} ${_${_i}_DEP2} \
+		| tr '\040' '\012' | sort -u`; do \
+		dir=$${spec#*:}; pkg=$${spec%:*}; \
+		case X"$$pkg" in \
+			X) $${_ECHO} "$$space$${dir}";; \
+			*) $${_ECHO} "$$space$${pkg}:$${dir}";; \
+		esac; space=' '; \
+	done; eval $${_FINAL_ECHO}
+.  endif
+.endfor
+
 new-depends:
 .if !empty(_ALWAYS_DEP2) || !empty(_RUN_DEP2)
 	@unset FLAVOR SUBPACKAGE || true; \
@@ -2409,4 +2492,5 @@ unlink-categories:
    repackage run-depends tags uninstall fetch-all print-depends \
    recurse-build-depends recurse-package-depends \
    distpatch real-distpatch do-distpatch post-distpatch show \
-   link-categories unlink-categories _package
+   link-categories unlink-categories _package new-depends \
+   dir-depends dir-depends-recursive build-depends-list run-depends-list
