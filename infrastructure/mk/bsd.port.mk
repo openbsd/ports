@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.126 1999/09/30 16:56:16 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.127 1999/09/30 17:28:31 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2101,26 +2101,6 @@ package-name:
 package-path:
 	@pwd | ${SED} s@`cd ${PORTSDIR} ; pwd`/@@g
 .endif
-
-# Build (recursively) a list of package dependencies suitable for tsort
-
-.if !target(package-depends)
-package-depends:
-.if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
-	@pname=`${MAKE} _DEPEND_ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`; \
-	for dir in `${ECHO} ${LIB_DEPENDS:C/^[^:]*://:C/:.*//} \
-	${RUN_DEPENDS:C/^[^:]*://:C/:.*//} \
-	${DEPENDS:C/:.*//} | ${TR} '\040' '\012' | sort -u`; do \
-		if cd $$dir 2>/dev/null; then \
-			${MAKE} _DEPEND_ECHO="${ECHO} $$pname" package-name package-depends ${_DEPEND_THRU} || \
-				${ECHO_MSG} "Error: problem in \"$$dir\"" >&2; \
-		else \
-			${ECHO_MSG} "Warning: \"$$dir\" non-existent -- @pkgdep registration incomplete" >&2; \
-		fi; \
-	done
-.endif
-.endif
-
 # Build a package but don't check the package cookie
 
 .if !target(repackage)
@@ -2311,6 +2291,49 @@ clean-depends:
 .endif
 .endif
 
+################################################################
+# Everything after here are internal targets and really
+# shouldn't be touched by anybody but the release engineers.
+################################################################
+
+# This target generates an index entry suitable for aggregation into
+# a large index.  Format is:
+#
+# distribution-name|port-path|installation-prefix|comment| \
+#  description-file|maintainer|categories|build deps|run deps|for arch
+#
+.if !target(describe)
+describe:
+	@${ECHO} -n "${PKGNAME}|${.CURDIR}|"; \
+	${ECHO} -n "${PREFIX}|"; \
+	if [ -f ${COMMENT} ]; then \
+		${ECHO} -n "`${CAT} ${COMMENT}`|"; \
+	else \
+		${ECHO} -n "** No Description|"; \
+	fi; \
+	if [ -f ${DESCR} ]; then \
+		${ECHO} -n "${DESCR}|"; \
+	else \
+		${ECHO} -n "/dev/null|"; \
+	fi; \
+	${ECHO} -n "${MAINTAINER}|${CATEGORIES}|"
+.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
+   defined(LIB_DEPENDS) || defined(DEPENDS) || target(depends-list)
+	@cd ${.CURDIR} && ${ECHO} -n `make depends-list|${SORT_DEPENDS}`
+.endif
+	@${ECHO} -n "|"
+.if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS) || \
+	target(package-depends)
+	@cd ${.CURDIR} && ${ECHO} -n `make package-depends|${SORT_DEPENDS}`
+.endif
+	@${ECHO} -n "|"
+	@if [ "${ONLY_FOR_ARCHS}" = "" ]; then \
+		${ECHO} "any"; \
+	else \
+		${ECHO} "${ONLY_FOR_ARCHS}"; \
+	fi
+.endif
+
 .if !target(depends-list)
 depends-list:
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
@@ -2330,48 +2353,22 @@ depends-list:
 .endif
 .endif
 
-################################################################
-# Everything after here are internal targets and really
-# shouldn't be touched by anybody but the release engineers.
-################################################################
-
-# This target generates an index entry suitable for aggregation into
-# a large index.  Format is:
-#
-# distribution-name|port-path|installation-prefix|comment| \
-#  description-file|maintainer|categories|build deps|run deps|for arch
-#
-.if !target(describe)
-describe:
-	@${ECHO} -n "${PKGNAME}|${.CURDIR}|"; \
-	${ECHO} -n "${PREFIX}|"; \
-	if [ -f ${COMMENT} ]; then \
-		${ECHO} -n "`${CAT} ${COMMENT}`"; \
-	else \
-		${ECHO} -n "** No Description"; \
-	fi; \
-	if [ -f ${DESCR} ]; then \
-		${ECHO} -n "|${DESCR}"; \
-	else \
-		${ECHO} -n "|/dev/null"; \
-	fi; \
-	${ECHO} -n "|${MAINTAINER}|${CATEGORIES}|"; \
-	case "A${FETCH_DEPENDS}B${BUILD_DEPENDS}C${LIB_DEPENDS}D${DEPENDS}E" in \
-		ABCDE) ;; \
-		*) cd ${.CURDIR} && ${ECHO} -n `make depends-list|${SORT_DEPENDS}`;; \
-	esac; \
-	${ECHO} -n "|"; \
-	case "A${RUN_DEPENDS}B${LIB_DEPENDS}C${DEPENDS}D" in \
-		ABCD) ;; \
-		*) cd ${.CURDIR} && ${ECHO} -n `make package-depends|${SORT_DEPENDS}`;; \
-	esac; \
-	${ECHO} -n "|"; \
-	if [ "${ONLY_FOR_ARCHS}" = "" ]; then \
-		${ECHO} -n "any"; \
-	else \
-		${ECHO} -n "${ONLY_FOR_ARCHS}"; \
-	fi; \
-	${ECHO} ""
+# Build (recursively) a list of package dependencies suitable for tsort
+.if !target(package-depends)
+package-depends:
+.if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
+	@pname=`${MAKE} _DEPEND_ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`; \
+	for dir in `${ECHO} ${LIB_DEPENDS:C/^[^:]*://:C/:.*//} \
+	${RUN_DEPENDS:C/^[^:]*://:C/:.*//} \
+	${DEPENDS:C/:.*//} | ${TR} '\040' '\012' | sort -u`; do \
+		if cd $$dir 2>/dev/null; then \
+			${MAKE} _DEPEND_ECHO="${ECHO} $$pname" package-name package-depends ${_DEPEND_THRU} || \
+				${ECHO_MSG} "Error: problem in \"$$dir\"" >&2; \
+		else \
+			${ECHO_MSG} "Warning: \"$$dir\" non-existent -- @pkgdep registration incomplete" >&2; \
+		fi; \
+	done
+.endif
 .endif
 
 README_NAME?=	${TEMPLATES}/README.port
