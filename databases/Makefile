@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2001/09/16 21:19:07 peter Exp $
+# $OpenBSD: Makefile,v 1.35 2001/09/19 01:06:39 shell Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -27,6 +27,7 @@
      SUBDIR += postgresql,tcl,odbc
      SUBDIR += py-mysql
      SUBDIR += py-psycopg
+     SUBDIR += py-psycopg,zope
      SUBDIR += sqsh
      SUBDIR += xmysql
      SUBDIR += xmysqladmin
