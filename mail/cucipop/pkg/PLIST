@@ -2,5 +2,3 @@ libexec/cucipop
 libexec/makevpopdb
 man/man8/cucipop.8
 man/man8/makevpopdb.8
-@exec mkdir -p /var/spool/cucipop
-@exec mkdir -p /var/spool/cucipop/bulletins

@@ -1,0 +1,43 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2000/03/28 08:46:25 brad Exp $
+#
+# Pre/post-installation setup of cucipop
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+SPOOL_DIR=/var/spool/cucipop
+
+# Function: install the cucipop spool dir
+#
+do_install()
+{
+    install -d -o root -g wheel -m 755 ${SPOOL_DIR}
+    install -d -o root -g wheel -m 755 ${SPOOL_DIR}/bulletins
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	do_install
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
