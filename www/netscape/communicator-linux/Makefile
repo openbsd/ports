@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2002/08/27 13:23:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/08/28 12:19:46 naddy Exp $
 
 COMMENT=	"Netscape Communicator (linux)"
 
-PROGRAM_V=	4.79
+PROGRAM_V=	4.8
 V2:=		${PROGRAM_V:S/.//}
 EMUL_TYPE=	linux
 
 DISTNAME=	communicator-v${V2}-us.x86-unknown-linux2.2
-PKGNAME=	communicator-linux-${PROGRAM_V}p1
+PKGNAME=	communicator-linux-${PROGRAM_V}
 LOCATION=	linux22/complete_install
 DIRNAME=	communicator-v${V2}.x86-unknown-linux2.2
 
