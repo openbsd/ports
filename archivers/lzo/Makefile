@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/09 09:52:55 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/26 23:17:03 brad Exp $
 
 DISTNAME=	lzo-1.06
 CATEGORIES=	archivers devel
@@ -10,7 +10,6 @@ MASTER_SITE_SUBDIR= libs/compression
 
 MAINTAINER=	brad@openbsd.org
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
