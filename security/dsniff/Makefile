@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/01/10 01:19:49 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2001/02/26 03:57:45 brad Exp $
 
 DISTNAME=	dsniff-2.3
 CATEGORIES=	security
@@ -7,8 +7,7 @@ MASTER_SITES=	http://www.monkey.org/~dugsong/dsniff/
 
 HOMEPAGE=	http://www.monkey.org/~dugsong/dsniff/
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a::net/libnet \
-		${LOCALBASE}/lib/libnids.a::net/libnids
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a::net/libnids
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
