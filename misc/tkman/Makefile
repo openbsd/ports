@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2003/12/27 23:38:02 jose Exp $
+# $OpenBSD: Makefile,v 1.18 2004/12/30 14:58:58 espie Exp $
 
 COMMENT=	"Tcl/Tk-based manual browser"
 
 DISTNAME=	tkman-2.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	misc 
 
 HOMEPAGE=	http://tkman.sourceforge.net/
@@ -14,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tkman/}
 
-LIB_DEPENDS=	tk84::x11/tk/8.4
+LIB_DEPENDS=	tk84:tk-8.4.*:x11/tk/8.4
 RUN_DEPENDS=	::textproc/rman \
 		::textproc/glimpse
 
