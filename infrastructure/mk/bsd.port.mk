@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.406 2001/05/05 20:23:42 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.407 2001/05/05 23:42:03 miod Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -215,7 +215,7 @@ ARCH!=	uname -m
 OPSYS=	OpenBSD
 OPSYS_VER=	${OSREV}
 
-NO_SHARED_ARCHS=alpha hppa vax
+NO_SHARED_ARCHS=alpha hppa mvme88k vax
 
 # Define NO_SHARED_LIBS for those machines that don't support shared libraries.
 .for _m in ${MACHINE_ARCH}
@@ -242,6 +242,10 @@ NO_BUILD?= No
 
 .if exists(${.CURDIR}/Makefile.${ARCH})
 .include "${.CURDIR}/Makefile.${ARCH}"
+.else
+.if exists(${.CURDIR}/Makefile.${MACHINE_ARCH})
+.include "${.CURDIR}/Makefile.${MACHINE_ARCH}"
+.endif
 .endif
 
 # These need to be absolute since we don't know how deep in the ports
@@ -256,16 +260,20 @@ FULLDISTDIR?=	${DISTDIR}/${DIST_SUBDIR}
 .else
 FULLDISTDIR?=	${DISTDIR}
 .endif
-PACKAGES?=		${PORTSDIR}/packages/${ARCH}
+PACKAGES?=		${PORTSDIR}/packages/${MACHINE_ARCH}
 TEMPLATES?=		${PORTSDIR}/infrastructure/templates
 
-CDROM_PACKAGES?=	${PORTSDIR}/cdrom-packages/${ARCH}
-FTP_PACKAGES?=		${PORTSDIR}/ftp-packages/${ARCH}
+CDROM_PACKAGES?=	${PORTSDIR}/cdrom-packages/${MACHINE_ARCH}
+FTP_PACKAGES?=		${PORTSDIR}/ftp-packages/${MACHINE_ARCH}
 
 .if exists(${.CURDIR}/patches.${ARCH})
 PATCHDIR?=		${.CURDIR}/patches.${ARCH}
 .else
+.if exists(${.CURDIR}/patches.${MACHINE_ARCH})
+PATCHDIR?=		${.CURDIR}/patches.${MACHINE_ARCH}
+.else
 PATCHDIR?=		${.CURDIR}/patches
+.endif
 .endif
 
 PATCH_LIST?=    patch-*
@@ -273,19 +281,31 @@ PATCH_LIST?=    patch-*
 .if exists(${.CURDIR}/scripts.${ARCH})
 SCRIPTDIR?=		${.CURDIR}/scripts.${ARCH}
 .else
+.if exists(${.CURDIR}/scripts.${MACHINE_ARCH})
+SCRIPTDIR?=		${.CURDIR}/scripts.${MACHINE_ARCH}
+.else
 SCRIPTDIR?=		${.CURDIR}/scripts
+.endif
 .endif
 
 .if exists(${.CURDIR}/files.${ARCH})
 FILESDIR?=		${.CURDIR}/files.${ARCH}
 .else
+.if exists(${.CURDIR}/files.${MACHINE_ARCH})
+FILESDIR?=		${.CURDIR}/files.${MACHINE_ARCH}
+.else
 FILESDIR?=		${.CURDIR}/files
+.endif
 .endif
 
 .if exists(${.CURDIR}/pkg.${ARCH})
 PKGDIR?=		${.CURDIR}/pkg.${ARCH}
 .else
+.if exists(${.CURDIR}/pkg.${MACHINE_ARCH})
+PKGDIR?=		${.CURDIR}/pkg.${MACHINE_ARCH}
+.else
 PKGDIR?=		${.CURDIR}/pkg
+.endif
 .endif
 
 PREFIX?=		${LOCALBASE}
@@ -472,7 +492,7 @@ WRKDIST?=		${WRKDIR}/${DISTNAME}
 WRKSRC?=	   ${WRKDIST}
 
 .if defined(SEPARATE_BUILD)
-WRKBUILD?=		${WRKDIR}/build-${ARCH}${FLAVOR_EXT}
+WRKBUILD?=		${WRKDIR}/build-${MACHINE_ARCH}${FLAVOR_EXT}
 .else
 WRKBUILD?=		${WRKSRC}
 .endif
@@ -585,7 +605,7 @@ SCRIPTS_ENV+=	${_INSTALL_MACROS}
 
 
 # Create the generic variable substitution list, from subst vars
-SUBST_VARS+=ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT
+SUBST_VARS+=ARCH MACHINE_ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT
 _SED_SUBST=sed
 .for _v in ${SUBST_VARS}
 _SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
@@ -597,6 +617,10 @@ SED_PLIST+=|${_SED_SUBST}
 # find out the most appropriate PLIST  source
 .if !defined(PLIST) && exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${ARCH})
 PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${ARCH}
+.else
+.if !defined(PLIST) && exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${MACHINE_ARCH})
+PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${MACHINE_ARCH}
+.endif
 .endif
 .if !defined(PLIST) && defined(NO_SHARED_LIBS) && exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.noshared)
 PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.noshared
@@ -606,6 +630,10 @@ PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}
 .endif
 .if !defined(PLIST) && exists(${PKGDIR}/PLIST${SUBPACKAGE}.${ARCH})
 PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}.${ARCH}
+.else
+.if !defined(PLIST) && exists(${PKGDIR}/PLIST${SUBPACKAGE}.${MACHINE_ARCH})
+PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}.${MACHINE_ARCH}
+.endif
 .endif
 .if !defined(PLIST) && defined(NO_SHARED_LIBS) && exists(${PKGDIR}/PLIST${SUBPACKAGE}.noshared)
 PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}.noshared
@@ -1792,9 +1820,9 @@ ftp-packages:
 
 
 ${PKGFILE}:
-	@mkdir -p ${PORTSDIR}/logs/${ARCH}
+	@mkdir -p ${PORTSDIR}/logs/${MACHINE_ARCH}
 	@cd ${.CURDIR} && exec ${MAKE} package ALWAYS_PACKAGE=Yes 2>&1 | \
-		tee ${PORTSDIR}/logs/${ARCH}/${FULLPKGNAME}.log
+		tee ${PORTSDIR}/logs/${MACHINE_ARCH}/${FULLPKGNAME}.log
 
 ${FTP_PACKAGES}/${FULLPKGNAME}${PKG_SUFX}: ${PKGFILE}
 	@mkdir -p ${FTP_PACKAGES}
@@ -1954,7 +1982,7 @@ RECURSIVE_FETCH_LIST?=	Yes
 # packing list utilities.  This generates a packing list from a recently
 # installed port.  Not perfect, but pretty close.  The generated file
 # will have to have some tweaks done by hand.
-# Note: add @comment PACKAGE(arch=${ARCH}, opsys=${OPSYS}, vers=${OPSYS_VER})
+# Note: add @comment PACKAGE(arch=${MACHINE_ARCH}, opsys=${OPSYS}, vers=${OPSYS_VER})
 # when port is installed or package created.
 #
 .if ${FAKE:L} == "yes"
