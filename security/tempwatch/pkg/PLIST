@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2002/03/24 08:07:13 jsyn Exp $
 sbin/tempwatch
 share/doc/tempwatch/watch.txt
 @dirrm share/doc/tempwatch

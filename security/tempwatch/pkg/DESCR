@@ -8,5 +8,3 @@ from watch.txt:
              Severity: Just about every OS out there is replete
                with programs that insecurely handle files in
                publicly accesible temporary directories.
-
--d.
