@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/08/06 16:09:51 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/08/23 19:51:44 marcm Exp $
 bin/activation-client
 bin/bonobo-activation-empty-server
 bin/bonobo-activation-run-query
@@ -240,3 +240,7 @@ share/locale/zh_TW/LC_MESSAGES/bonobo-activation.mo
 @unexec rmdir %D/lib/bonobo 2>/dev/null || true
 @dirrm include/bonobo-activation-2.0/bonobo-activation
 @dirrm include/bonobo-activation-2.0
+@cwd ${SYSCONFDIR}
+@extra gnome/bonobo-activation/bonobo-activation-config.xml
+@extra gnome/bonobo-activation/
+@extraunexec rmdir %D/gnome 2>/dev/null || true

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/08/06 20:45:06 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/08/23 19:51:44 marcm Exp $
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-application-registry.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-async-ops.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-cancellation.h
@@ -340,3 +340,17 @@ share/schemas/gnome-vfs2/system_http_proxy.schemas
 @comment @exec mkdir -p %D/doc
 @comment @dirrm doc
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-vfs2/*.schemas > /dev/null
+@cwd ${SYSCONFDIR}
+@extra gnome/gnome-vfs-2.0/modules/default-modules.conf
+@extra gnome/gnome-vfs-2.0/modules/cdda-module.conf
+@extra gnome/gnome-vfs-2.0/vfolders/applications-all-users.vfolder-info
+@extra gnome/gnome-vfs-2.0/vfolders/favorites.vfolder-info
+@extra gnome/gnome-vfs-2.0/vfolders/network.vfolder-info
+@extra gnome/gnome-vfs-2.0/vfolders/preferences-all-users.vfolder-info
+@extra gnome/gnome-vfs-2.0/vfolders/server-settings.vfolder-info
+@extra gnome/gnome-vfs-2.0/vfolders/start-here.vfolder-info
+@extra gnome/gnome-vfs-2.0/vfolders/system-settings.vfolder-info
+@extra gnome/gnome-vfs-2.0/modules/
+@extra gnome/gnome-vfs-2.0/vfolders/
+@extra gnome/gnome-vfs-2.0/
+@extraunexec rmdir %D/gnome 2>/dev/null || true

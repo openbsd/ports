@@ -1,6 +1,2 @@
 This module contains the base MIME and Application database for GNOME.
 It is meant to be accessed through the MIME functions in GnomeVFS.
-
-For more information about the GNOME project, visit:
-
-WWW: ${HOMEPAGE}

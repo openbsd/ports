@@ -7,7 +7,3 @@ one to develop small applications which may be embedded in the panel.
 These are called applets. Several applets are also supplied - the
 Workspace Switcher, the Window List, the Inbox Monitor, the Clock and
 the infamous 'Wanda the Fish'.
-
-For more information about the gnome project, visit:
-
-WWW: ${HOMEPAGE}

@@ -1,7 +1,3 @@
 Nautilus is the  official file manager for the GNOME desktop.
 It is designed to be primarly a file manager, but there are
 support for web and file viewing too.
-
-For more information about nautilus, visit:
-
-WWW: ${HOMEPAGE}
