@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 18:45:49 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/02/25 00:56:49 marcm Exp $
 bin/gnome-accessibility-keyboard-properties
 bin/gnome-background-properties
 bin/gnome-control-center
@@ -223,8 +223,8 @@ share/schemas/control-center2/apps_gnome_settings_daemon_screensaver.schemas
 @comment @dirrm share/gnome
 @dirrm share/control-center-2.0/pixmaps
 @dirrm share/control-center-2.0/interfaces
-@dirrm share/control-center-2.0/capplets
-@dirrm share/control-center-2.0
+@comment @dirrm share/control-center-2.0/capplets
+@comment @dirrm share/control-center-2.0
 @comment @dirrm share/applications
 @comment @dirrm lib/pkgconfig
 @comment @dirrm lib/bonobo
