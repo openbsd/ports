@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.236 2004/06/01 23:29:29 msf Exp $
+# $OpenBSD: Makefile,v 1.237 2004/06/10 01:38:23 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -192,6 +192,9 @@
      SUBDIR += p5-Term-ScreenColor
      SUBDIR += p5-Test-Builder-Tester
      SUBDIR += p5-Test-Differences
+     SUBDIR += p5-Test-Pod
+     SUBDIR += p5-Test-Pod-Coverage
+     SUBDIR += p5-Test-Taint
      SUBDIR += p5-Time-Period
      SUBDIR += p5-Time-Piece
      SUBDIR += p5-Time-TimeDate
