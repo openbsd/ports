@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/03/25 08:33:14 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/03/26 23:41:48 brad Exp $
 bin/xfig
-lib/X11/app-defaults
 lib/X11/xfig/CompKeyDB
 lib/X11/xfig/Libraries/Buildings/barrack.fig
 lib/X11/xfig/Libraries/Buildings/highrise1.fig
