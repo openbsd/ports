@@ -1,0 +1,39 @@
+$OpenBSD: patch-Imakefile,v 1.1 2000/11/01 16:25:30 espie Exp $
+--- Imakefile.orig	Fri Dec 22 13:05:52 1995
++++ Imakefile	Wed Nov  1 17:11:54 2000
+@@ -122,7 +122,7 @@ FONT = thefont
+ 
+ #ifndef InstallDefaultGardens
+ #ifdef InstallAppDefFiles
+-#define InstallDefaultGardens $(DESTDIR)/$(XAPPLOADDIR)/$(APP)
++#define InstallDefaultGardens $(XAPPLOADDIR)/$(APP)
+ #endif
+ #endif
+ 
+@@ -296,9 +296,9 @@ NormalProgramTarget(xmris,$(MRISOBJS),$(
+ 
+ InstallProgramWithFlags(xmris,$(THEBINDIR),$(INSTMRISFLAGS))
+ 
+-install :: $(THEBINDIR)/xmris
+-	$(RM) $(THEBINDIR)/xmsit
+-	$(LN) ./xmris $(THEBINDIR)/xmsit
++install :: $(DESTDIR)$(THEBINDIR)/xmris
++	$(RM) $(DESTDIR)$(THEBINDIR)/xmsit
++	cd $(DESTDIR)$(THEBINDIR) && $(LN) xmris xmsit
+ 
+ #endif /* transputerbuild */
+ 
+@@ -363,11 +363,11 @@ install ::
+ #ifdef InstallDefaultGardens
+ XCOMM install default gardens
+ install :: $(GARDENS)
+-	MakeDir(InstallDefaultGardens)
++	MakeDir($(DESTDIR)InstallDefaultGardens)
+ 	@set dummy $(GARDENS) ; shift ; \
+ 	while [ $$# != 0 ] ; \
+ 	do \
+-	  (set -x ; $(INSTALL) -c $(INSTAPPFLAGS) $$1 InstallDefaultGardens/$$1) ; \
++	  (set -x ; $(INSTALL) -c $(INSTAPPFLAGS) $$1 $(DESTDIR)InstallDefaultGardens/$$1) ; \
+ 	  shift ; \
+ 	done
+ #endif /* InstallDefaultGardens */
