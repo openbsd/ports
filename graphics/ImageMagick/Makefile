@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.45 2001/01/10 01:21:21 brad Exp $
+# $OpenBSD: Makefile,v 1.46 2001/02/05 15:58:08 brad Exp $
 
-DISTNAME=	ImageMagick-5.2.5
+DISTNAME=	ImageMagick-5.2.8
 CATEGORIES=     graphics
 NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.simplesystems.org/pub/ImageMagick/ \
@@ -33,7 +33,8 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --enable-lzw --enable-16bit-pixel \
 		 --without-perl --without-modules --without-dps \
-		 --without-fpx --without-hdf --without-lcms
+		 --without-fpx --without-hdf --without-lcms \
+		 --without-ttf --without-wmf --without-threads
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
