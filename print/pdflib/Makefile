@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/06/19 22:19:33 jakob Exp $
+# $OpenBSD: Makefile,v 1.13 2004/08/03 19:15:05 naddy Exp $
 
 COMMENT=		"C library to produce PDF files"
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=		png.2::graphics/png \
 
 CONFIGURE_STYLE=	autoconf dest
 AUTOCONF_VERSION=	2.13
-MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/config
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-tifflib \
 			--with-pnglib \

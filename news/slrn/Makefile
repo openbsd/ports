@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2004/03/05 16:44:20 lebel Exp $
+# $OpenBSD: Makefile,v 1.35 2004/08/03 19:15:05 naddy Exp $
 
 COMMENT=		"SLang-based newsreader"
 
@@ -30,5 +30,6 @@ LIB_DEPENDS=		slang.::devel/libslang
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-inews --with-ssl
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf
 
 .include <bsd.port.mk>
