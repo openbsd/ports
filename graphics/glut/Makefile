@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2001/10/24 14:40:38 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/11/21 12:56:43 lebel Exp $
 
 COMMENT=	"OpenGL Utility Toolkit"
 
 DISTNAME=	glut-3.7
 CATEGORIES=	graphics devel
-NEED_VERSION=	1.474
-MASTER_SITES=	http://reality.sgi.com/opengl/glut3/
-
-HOMEPAGE=	http://reality.sgi.com/opengl/glut3/glut3.html	
+NEED_VERSION=	1.499
+MASTER_SITES=	http://www.opengl.org/developers/documentation/glut/
+	
+HOMEPAGE=	http://www.opengl.org/developers/documentation/glut/index.html
 
 MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
