@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/26 19:40:37 sturm Exp $
+bin/bi2cf
+bin/cfed
+bin/comet
+bin/crimson
+man/man6/bi2cf.6
+man/man6/cfed.6
+man/man6/crimson.6
+share/crimson/cf.dat
+share/crimson/default.tiles
+share/crimson/default.units
+share/crimson/levels/ArmsRace.lev
+share/crimson/levels/BeachRaid.lev
+share/crimson/levels/Foxhole.lev
+share/crimson/levels/GreatBattle.lev
+share/crimson/levels/IslandHoppers.lev
+share/crimson/levels/LostFactories.lev
+share/crimson/levels/Uprising.lev
+share/crimson/sound/ask.wav
+share/crimson/sound/clicked.wav
+share/crimson/sound/error.wav
+share/crimson/sound/menu.wav
+share/crimson/sound/repair.wav
+share/crimson/sound/select.wav
+share/crimson/title.bmp
+@dirrm share/crimson/sound
+@dirrm share/crimson/levels
+@dirrm share/crimson
