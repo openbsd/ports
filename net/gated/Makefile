@@ -3,12 +3,13 @@
 # Date created:		21 Nov 1997
 # Whom:			joey
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/22 23:57:31 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/04/12 04:29:29 marc Exp $
 #
 
 DISTNAME=       gated-3-5-7
 PKGNAME=        gated-3.5.7
 CATEGORIES=	net
+NO_CDROM=	"LIC: requires licence for redistribution"
 MASTER_SITES=   ftp://ftp.gated.merit.edu/net-research/gated/
 
 MAINTAINER=	joey@OpenBSD.ORG

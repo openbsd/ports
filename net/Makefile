@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 1998/04/09 21:52:52 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1998/04/12 04:29:05 marc Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
      SUBDIR += archie
      SUBDIR += arpwatch
-     SUBDIR += ascend-radius
+#    SUBDIR += ascend-radius
 #    SUBDIR += bb
      SUBDIR += bing
 #    SUBDIR += cap
