@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/09 15:04:17 danh Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/08/10 13:36:08 danh Exp $
 @pkgcfl ucd-snmp-*
 @unexec rm -f %D/share/snmp/mibs/.index
 bin/encode_keychange
@@ -166,19 +166,19 @@ include/net-snmp/varbind_api.h
 include/net-snmp/version.h
 lib/libnetsnmp.a
 lib/libnetsnmp.la
-@lib lib/libnetsnmp.so.6.1
+@lib lib/libnetsnmp.so.6.2
 lib/libnetsnmpagent.a
 lib/libnetsnmpagent.la
-@lib lib/libnetsnmpagent.so.6.1
+@lib lib/libnetsnmpagent.so.6.2
 lib/libnetsnmphelpers.a
 lib/libnetsnmphelpers.la
-@lib lib/libnetsnmphelpers.so.6.1
+@lib lib/libnetsnmphelpers.so.6.2
 lib/libnetsnmpmibs.a
 lib/libnetsnmpmibs.la
-@lib lib/libnetsnmpmibs.so.6.1
+@lib lib/libnetsnmpmibs.so.6.2
 lib/libnetsnmptrapd.a
 lib/libnetsnmptrapd.la
-@lib lib/libnetsnmptrapd.so.6.1
+@lib lib/libnetsnmptrapd.so.6.2
 @man man/man1/mib2c.1
 @man man/man1/snmpbulkget.1
 @man man/man1/snmpbulkwalk.1
@@ -208,12 +208,12 @@ lib/libnetsnmptrapd.la
 @man man/man3/mib_api.3
 @man man/man3/netsnmp_Container_iterator.3
 @man man/man3/netsnmp_agent.3
+@man man/man3/netsnmp_asn1_packet_parse.3
 @man man/man3/netsnmp_baby_steps.3
 @man man/man3/netsnmp_bulk_to_next.3
 @man man/man3/netsnmp_cache_handler.3
 @man man/man3/netsnmp_container.3
 @man man/man3/netsnmp_debug.3
-@man man/man3/netsnmp_deprecated.3
 @man man/man3/netsnmp_example_scalar_int.3
 @man man/man3/netsnmp_handler.3
 @man man/man3/netsnmp_instance.3
@@ -236,7 +236,6 @@ lib/libnetsnmptrapd.la
 @man man/man3/netsnmp_table_data.3
 @man man/man3/netsnmp_table_dataset.3
 @man man/man3/netsnmp_table_iterator.3
-@man man/man3/netsnmp_todo.3
 @man man/man3/netsnmp_utilities.3
 @man man/man3/netsnmp_watcher.3
 @man man/man3/print_description.3
@@ -353,6 +352,7 @@ share/snmp/mibs/SNMP-NOTIFICATION-MIB.txt
 share/snmp/mibs/SNMP-PROXY-MIB.txt
 share/snmp/mibs/SNMP-TARGET-MIB.txt
 share/snmp/mibs/SNMP-USER-BASED-SM-MIB.txt
+share/snmp/mibs/SNMP-USM-AES-MIB.txt
 share/snmp/mibs/SNMP-VIEW-BASED-ACM-MIB.txt
 share/snmp/mibs/SNMPv2-CONF.txt
 share/snmp/mibs/SNMPv2-MIB.txt
