@@ -1,0 +1,10 @@
+$OpenBSD: patch-qtc_clib_qtc_Makefile_am,v 1.1 2003/02/09 19:18:05 espie Exp $
+--- qtc/clib/qtc/Makefile.am.orig	Sun Feb  9 19:58:49 2003
++++ qtc/clib/qtc/Makefile.am	Sun Feb  9 19:58:54 2003
+@@ -41,5 +41,5 @@ libqtc_la_LDFLAGS = $(all_libraries) -no
+ #  in here.
+ #  The following line is only a suggestion!
+ #
+-libqtc_la_LIBADD = -lqt-mt -lXext -lX11 -lqui
++libqtc_la_LIBADD = -lqt-mt -lXext -lX11 -lqui-mt
+ 

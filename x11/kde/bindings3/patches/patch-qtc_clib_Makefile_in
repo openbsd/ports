@@ -1,0 +1,12 @@
+$OpenBSD: patch-qtc_clib_Makefile_in,v 1.1 2003/02/09 19:18:05 espie Exp $
+--- qtc/clib/Makefile.in.orig	Sun Feb  9 19:58:33 2003
++++ qtc/clib/Makefile.in	Sun Feb  9 19:58:40 2003
+@@ -273,7 +273,7 @@ SOURCES = qtc/qt_QAccessibleInterface.cp
+ INTERFACES = 
+ TRANSLATIONS = 
+ KDE_OPTIONS = qtonly
+-clib_LDADD = ./qtc/libqtc.la -lqt-mt -lXext -lX11 -lqui $(LIBSOCKET)
++clib_LDADD = ./qtc/libqtc.la -lqt-mt -lXext -lX11 -lqui-mt $(LIBSOCKET)
+ 
+ SUBDIRS = qtc 
+ 
