@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2000/07/22 17:20:51 rohee Exp $
-# Original from: Ejovi Nuwere <ejovi@ejovi.net>
+# $OpenBSD: Makefile,v 1.15 2000/09/22 22:54:22 fgsch Exp $
 
-DISTNAME=       procmail-3.14
+DISTNAME=       procmail-3.15
 CATEGORIES=	mail
-
+NEED_VERSION=	1.333
 MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 		ftp://ftp.psg.com/pub/unix/procmail/ \
 		ftp://ftp.ucsb.edu/pub/mirrors/procmail/ \
