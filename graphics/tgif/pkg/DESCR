@@ -6,12 +6,3 @@ home page is http://bourbon.cs.umd.edu:8001/tgif/index.obj.
 
 Tgif drawings can be converted to a variety of formats, including GIF,
 encapsulated PostScript and XBM.
-
-Version 4 has a completely revamped 3-D user interface, as well as a host
-of new features.
-
-Tgif depends on the `netpbm' package, available from the `ports'
-collection.
-
-Tgif is written, maintained and enhanced by
-William Chia-Wei Cheng (william@cs.umd.edu)
