@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/13 15:05:00 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/03/01 15:39:00 avsm Exp $
 bin/jadetex
 bin/pdfjadetex
+man/man1/jadetex.1
+man/man1/pdfjadetex.1
 share/texmf/tex/jadetex/dsssl.def
 share/texmf/tex/jadetex/jadetex.ltx
 share/texmf/web2c/jadetex.fmt

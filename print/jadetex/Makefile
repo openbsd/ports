@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/10/28 13:40:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2003/03/01 15:39:00 avsm Exp $
 
 COMMENT=		"macros for the OpenJade DSSSL TeX backend"
 
@@ -37,6 +37,8 @@ do-install:
 	${INSTALL_DATA_DIR} ${TEXMFLOC}/tex/jadetex
 	${INSTALL_DATA} ${WRKBUILD}/dsssl.def ${TEXMFLOC}/tex/jadetex
 	${INSTALL_DATA} ${WRKBUILD}/jadetex.ltx ${TEXMFLOC}/tex/jadetex
+	${INSTALL_MAN} ${WRKBUILD}/jadetex.1 ${PREFIX}/man/man1/jadetex.1
+	${INSTALL_MAN} ${WRKBUILD}/pdfjadetex.1 ${PREFIX}/man/man1/pdfjadetex.1
 	ln -s ${TRUEPREFIX}/bin/tex ${PREFIX}/bin/jadetex
 	ln -s ${TRUEPREFIX}/bin/pdftex ${PREFIX}/bin/pdfjadetex
 
