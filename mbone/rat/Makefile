@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/12/23 00:37:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2004/12/18 14:07:52 espie Exp $
 
 COMMENT=	"Robust Audio Tool from UCL"
 
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/3.0.33/
 
-LIB_DEPENDS=	tk80::x11/tk/8.0
+LIB_DEPENDS=	tk80:tk-8.0.*:x11/tk/8.0
 
 WRKDIST=	${WRKDIR}/rat-3.0
 USE_GMAKE=	Yes
