@@ -5,3 +5,5 @@ connection.
 
 When sftp or rsftp is run, the server (sftpserv) is automatically
 run on the remote end.
+
+WWW: ${HOMEPAGE}

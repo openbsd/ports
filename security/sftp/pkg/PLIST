@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/06/20 21:11:36 espie Exp $
 bin/rsftp
 bin/sftp
 bin/sftpserv
