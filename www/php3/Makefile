@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2001/02/22 20:03:48 avsm Exp $
+# $OpenBSD: Makefile,v 1.30 2001/02/26 05:52:17 avsm Exp $
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--without-imap
 .endif
 
 .if ${FLAVOR:L:Mgd}
-CONFIGURE_ARGS+=	--with-gd  --with-jpegdir=/usr/local/lib
+CONFIGURE_ARGS+=	--with-gd  --with-jpegdir=${LOCALBASE}/lib
 LIB_DEPENDS+=		gd.18::graphics/gd
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -ljpeg"
 .else
