@@ -1,12 +1,11 @@
-Welcome to the OpenBSD ports collection.  
-For more information on the OpenBSD ports tree please visit
-        http://www.openbsd.org/ports.html
+		Welcome to the OpenBSD ports collection.  
+	For more information on the OpenBSD ports tree please visit
+        	   http://www.openbsd.org/ports.html
+	For general information on the OpenBSD tree please visit
+			http://www.openbsd.org
 
-For general information on the OpenBSD tree please visit
-	http://www.openbsd.org
 
-
-The OpenBSD ports tree is always growing. Therefor if is essential
+The OpenBSD ports tree is always growing. Therefor it is essential
 that you continue to update your ports dir thru cvs or ftp.
 
 If you are interested in creating a new port or contributing please 
