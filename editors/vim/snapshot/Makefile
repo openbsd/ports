@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2001/05/07 13:38:35 lebel Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/15 20:31:49 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 
-V=		ae
+V=		af
 DISTNAME=	vim-6.0${V}
 PKGNAME=	${DISTNAME}
 CATEGORIES=	editors
@@ -28,7 +28,7 @@ PERMIT_DISTFILES_FTP=   Yes
 FLAVORS=	gtk athena motif no_x11
 FLAVOR?=	gtk
 
-CONFIGURE_STYLE= gnu dest
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=--with-tliba="curses"
 
 SUBST_VARS=	V

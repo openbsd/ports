@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/05/07 13:38:36 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/05/15 20:31:50 lebel Exp $
 bin/ex
 bin/rview
 bin/rvim
@@ -228,7 +228,6 @@ share/vim/vim60${V}/syntax/conf.vim
 share/vim/vim60${V}/syntax/config.vim
 share/vim/vim60${V}/syntax/cpp.vim
 share/vim/vim60${V}/syntax/crontab.vim
-share/vim/vim60${V}/syntax/cs.vim
 share/vim/vim60${V}/syntax/csc.vim
 share/vim/vim60${V}/syntax/csh.vim
 share/vim/vim60${V}/syntax/csp.vim
@@ -280,6 +279,7 @@ share/vim/vim60${V}/syntax/gnuplot.vim
 share/vim/vim60${V}/syntax/gp.vim
 share/vim/vim60${V}/syntax/groff.vim
 share/vim/vim60${V}/syntax/gsp.vim
+share/vim/vim60${V}/syntax/gtkrc.vim
 share/vim/vim60${V}/syntax/haskell.vim
 share/vim/vim60${V}/syntax/hb.vim
 share/vim/vim60${V}/syntax/help.vim
@@ -293,6 +293,7 @@ share/vim/vim60${V}/syntax/icon.vim
 share/vim/vim60${V}/syntax/idl.vim
 share/vim/vim60${V}/syntax/idlang.vim
 share/vim/vim60${V}/syntax/inform.vim
+share/vim/vim60${V}/syntax/inittab.vim
 share/vim/vim60${V}/syntax/ishd.vim
 share/vim/vim60${V}/syntax/iss.vim
 share/vim/vim60${V}/syntax/ist.vim
@@ -509,7 +510,9 @@ share/vim/vim60${V}/vimrc_example.vim
 @dirrm share/vim/vim60${V}/macros/life
 @dirrm share/vim/vim60${V}/macros/hanoi
 @dirrm share/vim/vim60${V}/macros
+@exec mkdir -p %D/share/vim/vim60${V}/lang
 @dirrm share/vim/vim60${V}/lang
+@exec mkdir -p %D/share/vim/vim60${V}/keymap
 @dirrm share/vim/vim60${V}/keymap
 @dirrm share/vim/vim60${V}/indent
 @dirrm share/vim/vim60${V}/ftplugin
