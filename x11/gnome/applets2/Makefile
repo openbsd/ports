@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/31 18:42:04 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2003/06/12 20:12:55 marcm Exp $
 
 COMMENT=		"applets for use with the GNOME2 panel"
 COMMENT-battstat=	"Gnome2 applet for monitoring battery level"
 
-VERSION=		2.0.4
+VERSION=		2.2.1
 DISTNAME=		gnome-applets-${VERSION}
 PKGNAME=		gnome-applets2-${VERSION}
 PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}
@@ -12,7 +12,7 @@ CATEGORIES=		x11 x11/gnome
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-applets/2.0/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-applets/2.2/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL
@@ -28,7 +28,7 @@ BUILD_DEPENDS= 		:pkgconfig->=0.12.0p1:devel/pkgconfig \
 RUN_DEPENDS=		:scrollkeeper->=0.3.11:textproc/scrollkeeper
 LIB_DEPENDS=		panel-applet-2.0::x11/gnome/panel \
 			gailutil.17::x11/gnome/gail \
-			gtop-2.0.0.0,gtop_common-2.0.0.0,gtop_sysdeps-2.0.0.0::devel/libgtop2
+			gtop-2.0.0.0,gtop_common-2.0.0.0,gtop_sysdeps-2.0.0.0,gtop_suid_common-2.0.0.0,gtop_sysdeps_suid-2.0.0.0::devel/libgtop2
 
 MAKE_ENV+=		GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
@@ -46,12 +46,15 @@ MULTI_PACKAGES+=	-battstat
 .endif
 SUBPACKAGE?=
 
+CONFDIR=		${SYSCONFDIR}/gnome
 USE_X11=		Yes
 USE_GMAKE=		Yes
-CONFIGURE_STYLE= 	gnu
+CONFIGURE_STYLE= 	gnu old
+CONFIGURE_ARGS+=	--sysconfdir="${CONFDIR}"
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-applets2
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+SUBST_VARS=		CONFDIR
 
 .if defined(PACKAGING)
 . if ${SUBPACKAGE} == "-battstat"
@@ -66,7 +69,7 @@ post-patch:
 .if !${FLAVOR:L:Mno_battstat}
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-applets2; \
-	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/gnome-applets2/
+	cp -Rp ${WRKINST}/${CONFDIR}/* ${PREFIX}/share/examples/gnome-applets2/
 .endif
 
 .include <bsd.port.mk>

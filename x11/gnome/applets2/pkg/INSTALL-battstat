@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL-battstat,v 1.1.1.1 2003/01/31 18:42:05 todd Exp $
+# $OpenBSD: INSTALL-battstat,v 1.2 2003/06/12 20:12:55 marcm Exp $
 
 P_NAME=gnome-applets2
 
@@ -21,7 +21,7 @@ do_post() {
     echo 
     echo "+--------------- ${P_NAME}"
 
-    DEST_PFX=${SYSCONFDIR}
+    DEST_PFX=${CONFDIR}
     SOURCE_PFX=${PREFIX}/share/examples/${P_NAME}
 
     # install dirs if neccesary

@@ -1,21 +1,28 @@
-@comment $OpenBSD: PLIST-battstat,v 1.1.1.1 2003/01/31 18:42:05 todd Exp $
-lib/bonobo/servers/GNOME_BattstatApplet.server
+@comment $OpenBSD: PLIST-battstat,v 1.2 2003/06/12 20:12:55 marcm Exp $
 libexec/battstat-applet-2
 share/battstat_applet/battstat_applet.glade
 share/examples/gnome-applets2/sound/events/battstat_applet.soundlist
-share/gnome-2.0/ui/GNOME_BattstatApplet.xml
 share/gnome/help/battstat/C/battstat.xml
 share/gnome/help/battstat/C/figures/battstat-apperance.png
 share/gnome/help/battstat/C/figures/battstat-applet.png
 share/gnome/help/battstat/C/figures/battstat-general.png
 share/gnome/help/battstat/C/legal.xml
 share/gnome/help/battstat/C/topic.dat
+share/gnome/help/battstat/ja/battstat.xml
+share/gnome/help/battstat/ja/figures/battstat-apperance.png
+share/gnome/help/battstat/ja/figures/battstat-applet.png
+share/gnome/help/battstat/ja/figures/battstat-general.png
+share/gnome/help/battstat/ja/legal.xml
 share/omf/gnome-applets/battstat-C.omf
+share/omf/gnome-applets/battstat-ja.omf
 share/pixmaps/battstat.png
 share/schemas/gnome-applets2/battstat.schemas
+@dirrm share/gnome/help/battstat/ja/figures
+@dirrm share/gnome/help/battstat/ja
 @dirrm share/gnome/help/battstat/C/figures
 @dirrm share/gnome/help/battstat/C
 @dirrm share/gnome/help/battstat
+@dirrm share/battstat_applet
 @dirrm share/examples/gnome-applets2/sound/events
 @dirrm share/examples/gnome-applets2/sound
 @dirrm share/examples/gnome-applets2

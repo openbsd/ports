@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 18:42:05 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/06/12 20:12:55 marcm Exp $
 @pkgcfl gnome-applets-1*
 bin/gkb_xmmap
+lib/bonobo/servers/GNOME_BattstatApplet.server
 lib/bonobo/servers/GNOME_CharpickerApplet.server
 lib/bonobo/servers/GNOME_DriveMountApplet.server
 lib/bonobo/servers/GNOME_GWeatherApplet_Factory.server
@@ -11,16 +12,20 @@ lib/bonobo/servers/GNOME_MiniCommanderApplet.server
 lib/bonobo/servers/GNOME_MixerApplet.server
 lib/bonobo/servers/GNOME_ModemLightsApplet.server
 lib/bonobo/servers/GNOME_MultiLoadApplet_Factory.server
+lib/bonobo/servers/GNOME_Panel_WirelessApplet.server
 libexec/charpick_applet2
 libexec/drivemount_applet2
 libexec/geyes_applet2
 libexec/gkb-applet-2
+libexec/gnome-applets/mc-install-default-macros
 libexec/gtik2_applet2
 libexec/gweather-applet-2
 libexec/mini_commander_applet
 libexec/mixer_applet2
 libexec/modemlights_applet2
 libexec/multiload-applet-2
+libexec/wireless-applet
+share/gen_util/mini-commander.glade
 share/geyes/Bizarre/Bizarre-eye.png
 share/geyes/Bizarre/Bizarre-pupil.png
 share/geyes/Bizarre/config
@@ -36,6 +41,7 @@ share/geyes/Default/config
 share/geyes/Horrid/config
 share/geyes/Horrid/horrid_eye.png
 share/geyes/Horrid/horrid_pupil.png
+share/gnome-2.0/ui/GNOME_BattstatApplet.xml
 share/gnome-2.0/ui/GNOME_CharpickerApplet.xml
 share/gnome-2.0/ui/GNOME_DriveMountApplet.xml
 share/gnome-2.0/ui/GNOME_GWeatherApplet.xml
@@ -46,8 +52,10 @@ share/gnome-2.0/ui/GNOME_MiniCommanderApplet.xml
 share/gnome-2.0/ui/GNOME_MixerApplet.xml
 share/gnome-2.0/ui/GNOME_ModemlightsApplet.xml
 share/gnome-2.0/ui/GNOME_MultiloadApplet.xml
+share/gnome-2.0/ui/GNOME_WirelessApplet.xml
 share/gnome/gkb/AM_Armenian.keyprop
 share/gnome/gkb/AR_Arabic.keyprop
+share/gnome/gkb/AR_Arabic_x.keyprop
 share/gnome/gkb/AZ_Azerbaidjani_Turkic.keyprop
 share/gnome/gkb/Armenian.keyprop
 share/gnome/gkb/BE_Dutch.keyprop
@@ -72,10 +80,12 @@ share/gnome/gkb/Default.keyprop
 share/gnome/gkb/Dvorak.keyprop
 share/gnome/gkb/EE_Estonian.keyprop
 share/gnome/gkb/EE_Estonian_x.keyprop
+share/gnome/gkb/ES_Spanish-x86.keyprop
 share/gnome/gkb/ES_Spanish.keyprop
 share/gnome/gkb/ES_Spanish_x.keyprop
 share/gnome/gkb/FI_Finnish.keyprop
 share/gnome/gkb/FI_Finnish_x.keyprop
+share/gnome/gkb/FR_French-x86.keyprop
 share/gnome/gkb/FR_French.keyprop
 share/gnome/gkb/FR_French_x.keyprop
 share/gnome/gkb/FrenchCanadian.keyprop
@@ -92,10 +102,12 @@ share/gnome/gkb/GeorgianLatin.keyprop
 share/gnome/gkb/GeorgianRussian.keyprop
 share/gnome/gkb/German.keyprop
 share/gnome/gkb/GermanSwiss.keyprop
+share/gnome/gkb/HR_Croatian.keyprop
 share/gnome/gkb/HU_Hungarian.keyprop
 share/gnome/gkb/Hungarian-101.keyprop
 share/gnome/gkb/Hungarian-lat1.keyprop
 share/gnome/gkb/Hungarian-sun.keyprop
+share/gnome/gkb/Hungarian-x86.keyprop
 share/gnome/gkb/Hungarian.keyprop
 share/gnome/gkb/Hungarian101-1.keyprop
 share/gnome/gkb/Hungarian101.keyprop
@@ -107,6 +119,7 @@ share/gnome/gkb/IT_Italian.keyprop
 share/gnome/gkb/IT_Italian_x.keyprop
 share/gnome/gkb/JP_Japanese.keyprop
 share/gnome/gkb/JP_Japanese_x.keyprop
+share/gnome/gkb/KR_Korean.keyprop
 share/gnome/gkb/LA_Lao_x.keyprop
 share/gnome/gkb/LT_Lithuanian.keyprop
 share/gnome/gkb/LT_Lithuanian_x.keyprop
@@ -144,8 +157,10 @@ share/gnome/gkb/TR_Turkish_x.keyprop
 share/gnome/gkb/Thai.keyprop
 share/gnome/gkb/Thai2.keyprop
 share/gnome/gkb/UA_Ukrainian.keyprop
+share/gnome/gkb/UK-x86.keyprop
 share/gnome/gkb/UK.keyprop
 share/gnome/gkb/US-101.keyprop
+share/gnome/gkb/US-101A-x86.keyprop
 share/gnome/gkb/US-84.keyprop
 share/gnome/gkb/US-dec.keyprop
 share/gnome/gkb/US-ibm.keyprop
@@ -157,16 +172,28 @@ share/gnome/gkb/US.keyprop
 share/gnome/gkb/US_English.keyprop
 share/gnome/gkb/US_international.keyprop
 share/gnome/gkb/VN_Vietnamese.keyprop
-share/gnome/gkb/YU_Serbo-Croatian_x.keyprop
+share/gnome/gkb/YU_Serb_x.keyprop
 share/gnome/gkb/Yugoslav.keyprop
+share/gnome/gkb/presets.xml
 share/gnome/help/char-palette/C/char-palette.xml
 share/gnome/help/char-palette/C/figures/charpick_applet.png
 share/gnome/help/char-palette/C/figures/charpick_characters.png
 share/gnome/help/char-palette/C/figures/charpick_chargroup.png
 share/gnome/help/char-palette/C/legal.xml
+share/gnome/help/char-palette/ja/char-palette.xml
+share/gnome/help/char-palette/ja/figures/charpick_applet.png
+share/gnome/help/char-palette/ja/figures/charpick_characters.png
+share/gnome/help/char-palette/ja/figures/charpick_chargroup.png
+share/gnome/help/char-palette/ja/legal.xml
 share/gnome/help/command-line/C/command-line.xml
 share/gnome/help/command-line/C/figures/command-line.png
 share/gnome/help/command-line/C/legal.xml
+share/gnome/help/drivemount/C/drivemount.xml
+share/gnome/help/drivemount/C/figures/drivemount_applet_all.png
+share/gnome/help/drivemount/C/figures/drivemount_applet_floppy.png
+share/gnome/help/drivemount/C/figures/drivemount_applet_settings.png
+share/gnome/help/drivemount/C/figures/drivemount_applet_tooltip.png
+share/gnome/help/drivemount/C/legal.xml
 share/gnome/help/geyes/C/figures/geyes_applet.png
 share/gnome/help/geyes/C/geyes.xml
 share/gnome/help/geyes/C/legal.xml
@@ -200,16 +227,21 @@ share/locale/en_GB/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/et/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/eu/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/fa/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/fi/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/he/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/hi/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/hu/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/mk/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/mn/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-applets-2.0.mo
@@ -230,7 +262,9 @@ share/locale/wa/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 share/omf/gnome-applets/char-palette-C.omf
+share/omf/gnome-applets/char-palette-ja.omf
 share/omf/gnome-applets/command-line-C.omf
+share/omf/gnome-applets/drivemount-C.omf
 share/omf/gnome-applets/geyes-C.omf
 share/omf/gnome-applets/gkb-C.omf
 share/omf/gnome-applets/gtik2_applet2-C.omf
@@ -278,8 +312,10 @@ share/pixmaps/gkb/it.png
 share/pixmaps/gkb/jo.png
 share/pixmaps/gkb/jp.png
 share/pixmaps/gkb/km.png
+share/pixmaps/gkb/kr.png
 share/pixmaps/gkb/kw.png
 share/pixmaps/gkb/la.png
+share/pixmaps/gkb/lam.png
 share/pixmaps/gkb/lb.png
 share/pixmaps/gkb/lt.png
 share/pixmaps/gkb/ly.png
@@ -301,6 +337,7 @@ share/pixmaps/gkb/se.png
 share/pixmaps/gkb/si.png
 share/pixmaps/gkb/sk.png
 share/pixmaps/gkb/so.png
+share/pixmaps/gkb/sr.png
 share/pixmaps/gkb/su.png
 share/pixmaps/gkb/sv.png
 share/pixmaps/gkb/sy.png
@@ -327,6 +364,13 @@ share/pixmaps/mixer/volume-medium.png
 share/pixmaps/mixer/volume-min.png
 share/pixmaps/mixer/volume-mute.png
 share/pixmaps/mixer/volume-zero.png
+share/pixmaps/wireless-applet/broken-0.png
+share/pixmaps/wireless-applet/no-link-0.png
+share/pixmaps/wireless-applet/signal-1-40.png
+share/pixmaps/wireless-applet/signal-41-60.png
+share/pixmaps/wireless-applet/signal-61-80.png
+share/pixmaps/wireless-applet/signal-81-100.png
+share/pixmaps/wireless-applet/wireless-applet.png
 share/schemas/gnome-applets2/charpick.schemas
 share/schemas/gnome-applets2/drivemount.schemas
 share/schemas/gnome-applets2/geyes.schemas
@@ -336,7 +380,9 @@ share/schemas/gnome-applets2/gweather.schemas
 share/schemas/gnome-applets2/mini-commander.schemas
 share/schemas/gnome-applets2/modemlights.schemas
 share/schemas/gnome-applets2/multiload.schemas
+share/wireless-applet/wireless-applet.glade
 share/xmodmap/xmodmap.am
+share/xmodmap/xmodmap.ar
 share/xmodmap/xmodmap.be
 share/xmodmap/xmodmap.bg
 share/xmodmap/xmodmap.br
@@ -350,9 +396,11 @@ share/xmodmap/xmodmap.dk
 share/xmodmap/xmodmap.dvorak
 share/xmodmap/xmodmap.ee
 share/xmodmap/xmodmap.es
+share/xmodmap/xmodmap.es_x86
 share/xmodmap/xmodmap.fi
 share/xmodmap/xmodmap.fr
 share/xmodmap/xmodmap.fr-2
+share/xmodmap/xmodmap.fr_x86
 share/xmodmap/xmodmap.gb
 share/xmodmap/xmodmap.gb-102
 share/xmodmap/xmodmap.gb-105
@@ -367,11 +415,13 @@ share/xmodmap/xmodmap.hu-lat1
 share/xmodmap/xmodmap.hu-sun-lat2
 share/xmodmap/xmodmap.hu.old
 share/xmodmap/xmodmap.hu_latin1
+share/xmodmap/xmodmap.hu_x86
 share/xmodmap/xmodmap.il
 share/xmodmap/xmodmap.il_phonetic
 share/xmodmap/xmodmap.is
 share/xmodmap/xmodmap.it
 share/xmodmap/xmodmap.jp
+share/xmodmap/xmodmap.kr
 share/xmodmap/xmodmap.la
 share/xmodmap/xmodmap.lt
 share/xmodmap/xmodmap.lt_b
@@ -398,6 +448,7 @@ share/xmodmap/xmodmap.th
 share/xmodmap/xmodmap.tr_f
 share/xmodmap/xmodmap.tr_q
 share/xmodmap/xmodmap.uk
+share/xmodmap/xmodmap.uk_x86
 share/xmodmap/xmodmap.us
 share/xmodmap/xmodmap.us-101
 share/xmodmap/xmodmap.us-84
@@ -408,10 +459,13 @@ share/xmodmap/xmodmap.us-mac
 share/xmodmap/xmodmap.us-sgi-101
 share/xmodmap/xmodmap.us-sun
 share/xmodmap/xmodmap.us.old
+share/xmodmap/xmodmap.us101A_x86
 share/xmodmap/xmodmap.us_intl
 share/xmodmap/xmodmap.yu
 @comment @dirrm share/xmodmap
+@dirrm share/wireless-applet
 @dirrm share/schemas/gnome-applets2
+@dirrm share/pixmaps/wireless-applet
 @dirrm share/pixmaps/mixer
 @dirrm share/pixmaps/mini-commander
 @dirrm share/pixmaps/gweather
@@ -456,6 +510,10 @@ share/xmodmap/xmodmap.yu
 @comment @dirrm share/locale/nl
 @comment @dirrm share/locale/ms/LC_MESSAGES
 @comment @dirrm share/locale/ms
+@comment @dirrm share/locale/mn/LC_MESSAGES
+@comment @dirrm share/locale/mn
+@comment @dirrm share/locale/mk/LC_MESSAGES
+@comment @dirrm share/locale/mk
 @comment @dirrm share/locale/lv/LC_MESSAGES
 @comment @dirrm share/locale/lv
 @comment @dirrm share/locale/lt/LC_MESSAGES
@@ -468,6 +526,10 @@ share/xmodmap/xmodmap.yu
 @comment @dirrm share/locale/it
 @comment @dirrm share/locale/hu/LC_MESSAGES
 @comment @dirrm share/locale/hu
+@comment @dirrm share/locale/hi/LC_MESSAGES
+@comment @dirrm share/locale/hi
+@comment @dirrm share/locale/he/LC_MESSAGES
+@comment @dirrm share/locale/he
 @comment @dirrm share/locale/gl/LC_MESSAGES
 @comment @dirrm share/locale/gl
 @comment @dirrm share/locale/ga/LC_MESSAGES
@@ -476,6 +538,8 @@ share/xmodmap/xmodmap.yu
 @comment @dirrm share/locale/fr
 @comment @dirrm share/locale/fi/LC_MESSAGES
 @comment @dirrm share/locale/fi
+@comment @dirrm share/locale/fa/LC_MESSAGES
+@comment @dirrm share/locale/fa
 @comment @dirrm share/locale/eu/LC_MESSAGES
 @comment @dirrm share/locale/eu
 @comment @dirrm share/locale/et/LC_MESSAGES
@@ -521,9 +585,14 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/geyes/C/figures
 @dirrm share/gnome/help/geyes/C
 @dirrm share/gnome/help/geyes
+@dirrm share/gnome/help/drivemount/C/figures
+@dirrm share/gnome/help/drivemount/C
+@dirrm share/gnome/help/drivemount
 @dirrm share/gnome/help/command-line/C/figures
 @dirrm share/gnome/help/command-line/C
 @dirrm share/gnome/help/command-line
+@dirrm share/gnome/help/char-palette/ja/figures
+@dirrm share/gnome/help/char-palette/ja
 @dirrm share/gnome/help/char-palette/C/figures
 @dirrm share/gnome/help/char-palette/C
 @dirrm share/gnome/help/char-palette
@@ -536,6 +605,8 @@ share/xmodmap/xmodmap.yu
 @dirrm share/geyes/Bloodshot
 @dirrm share/geyes/Bizarre
 @dirrm share/geyes
+@dirrm share/gen_util
+@dirrm libexec/gnome-applets
 @comment @dirrm lib/bonobo
 @exec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q
 @unexec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q

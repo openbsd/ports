@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2003/01/31 19:05:24 todd Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/06/12 20:09:35 marcm Exp $
 #
 
 set -e
@@ -13,7 +13,7 @@ sound/events/mailcheck.soundlist
 echo
 echo "+--------------- $1"
 echo "| To really remove $1 from your system you should also"
-echo "| remove the configuration files from the ${SYSCONFDIR} directory."
+echo "| remove the configuration files from the ${CONFDIR} directory."
 echo "| Remove the directories in which the files reside as well if empty."
 echo "| If you are planning on installing $1 again in the future"
 echo "| you can leave it as it is."
@@ -21,7 +21,7 @@ echo "|"
 echo "| FYI, the following configuration files belongs to this package:"
 echo "|"
 for f in ${FILES}; do
-  echo "| ${SYSCONFDIR}/$f"
+  echo "| ${CONFDIR}/$f"
 done
 echo "+--------------- $1"
 echo
