@@ -1,7 +1,6 @@
-$OpenBSD: patch-Manager.C,v 1.2 2001/08/22 09:34:17 jakob Exp $
-
+$OpenBSD: patch-Manager.C,v 1.3 2002/09/30 14:31:50 naddy Exp $
 --- Manager.C.orig	Mon Apr 23 11:10:42 2001
-+++ Manager.C	Wed Aug 22 11:18:10 2001
++++ Manager.C	Mon Sep 30 16:34:44 2002
 @@ -916,7 +916,7 @@ Boolean WindowManager::raiseTransients(C
      }
  }
@@ -11,10 +10,7 @@ $OpenBSD: patch-Manager.C,v 1.2 2001/08/22 09:34:17 jakob Exp $
  extern "C" {
  extern int putenv(char *);	/* not POSIX */
  }
-
---- Manager.C.orig	Mon Apr 23 11:10:42 2001
-+++ Manager.C	Wed Aug 22 11:18:10 2001
-@@ -1069,6 +1069,11 @@
+@@ -1069,6 +1069,11 @@ void WindowManager::gnomeUpdateWindowLis
  
      delete windows;
  }
@@ -25,3 +21,4 @@ $OpenBSD: patch-Manager.C,v 1.2 2001/08/22 09:34:17 jakob Exp $
 +#endif
  
  void WindowManager::gnomeUpdateChannelList()
+ {

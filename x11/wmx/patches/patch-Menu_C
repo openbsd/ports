@@ -1,0 +1,12 @@
+$OpenBSD: patch-Menu_C,v 1.1 2002/09/30 14:31:50 naddy Exp $
+--- Menu.C.orig	Mon Sep 30 16:19:29 2002
++++ Menu.C	Mon Sep 30 16:19:46 2002
+@@ -621,7 +621,7 @@ void ClientMenu::raiseFeedbackLevel(int 
+ 
+ 
+ CommandMenu::CommandMenu(WindowManager *manager, XEvent *e,
+-			 char* otherdir = NULL)
++			 char* otherdir)
+     : Menu(manager, e)
+ {
+     const char *home = getenv("HOME");
