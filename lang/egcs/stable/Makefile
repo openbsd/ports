@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.59 2002/06/05 23:31:06 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2002/06/07 01:38:59 drahn Exp $
 
-ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64
+ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
 
 MAKE_ADA=Yes
 MAKE_GXX=Yes
