@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/05/21 10:40:21 fgsch Exp $
+# $OpenBSD: Makefile,v 1.19 2000/06/10 06:15:37 brad Exp $
 
 DISTNAME=       libpng-1.0.6
 PKGNAME=        png-1.0.6
@@ -10,7 +10,7 @@ PATCHFILES=	libpng-1.0.6-patch-a.txt.gz \
 		libpng-1.0.6-patch-b.txt.gz \
 		libpng-1.0.6-patch-c.txt.gz
 
-MAINTAINER=     angelos@openbsd.org
+MAINTAINER=	brad@openbsd.org
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes
