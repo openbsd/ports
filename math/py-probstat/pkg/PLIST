@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/02/08 16:39:39 xsa Exp $
+lib/python${MODPY_VERSION}/site-packages/probstat.so
+share/examples/py-probstat/cartesian.py
+share/examples/py-probstat/combo.py
+share/examples/py-probstat/permute.py
+@dirrm share/examples/py-probstat
