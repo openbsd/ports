@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/11/12 03:45:05 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/12/15 21:08:44 naddy Exp $
 bin/gnome-panel-control
 bin/kdetrayproxy
 bin/openbox
@@ -55,17 +55,17 @@ share/themes/TheBear/openbox-3/themerc
 @dirrm share/themes/Artwiz
 @dirrm share/themes/Allegro/openbox-3
 @dirrm share/themes/Allegro
-@comment @dirrm share/themes
-@comment @dirrm share/pixmaps
+@dirrm share/themes
+@dirrm share/pixmaps
 @dirrm share/openbox
-@comment @dirrm share/locale/en@quot/LC_MESSAGES
-@comment @dirrm share/locale/en@quot
-@comment @dirrm share/locale/en@boldquot/LC_MESSAGES
-@comment @dirrm share/locale/en@boldquot
-@comment @dirrm share/locale
+@dirrm share/locale/en@quot/LC_MESSAGES
+@dirrm share/locale/en@quot
+@dirrm share/locale/en@boldquot/LC_MESSAGES
+@dirrm share/locale/en@boldquot
+@dirrm share/locale
 @dirrm share/gnome/wm-properties
-@comment @dirrm share/gnome
-@comment @dirrm lib/pkgconfig
+@dirrm share/gnome
+@dirrm lib/pkgconfig
 @dirrm include/openbox/3.0/openbox
 @dirrm include/openbox/3.0
 @dirrm include/openbox

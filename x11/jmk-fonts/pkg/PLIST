@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/27 08:03:35 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/15 21:08:44 naddy Exp $
 lib/X11/fonts/jmk/fonts.alias
 lib/X11/fonts/jmk/fonts.dir
 lib/X11/fonts/jmk/modd-iso8859-1-06x11-bold.pcf.gz
@@ -110,4 +110,4 @@ lib/X11/fonts/jmk/neep-iso8859-9-10x20.pcf.gz
 lib/X11/fonts/jmk/neep-iso8859-9-12x24-bold.pcf.gz
 lib/X11/fonts/jmk/neep-iso8859-9-12x24.pcf.gz
 @dirrm lib/X11/fonts/jmk
-@comment @dirrm lib/X11/fonts
+@dirrm lib/X11/fonts

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/07/12 17:59:48 danh Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/12/15 21:08:44 naddy Exp $
 lib/X11/fonts/bitstream-vera/Vera.ttf
 lib/X11/fonts/bitstream-vera/VeraBI.ttf
 lib/X11/fonts/bitstream-vera/VeraBd.ttf
@@ -19,5 +19,5 @@ share/examples/bitstream-vera-fonts/local.conf
 @dirrm share/doc/bitstream-vera-fonts
 @unexec /bin/rm %D/lib/X11/fonts/bitstream-vera/fonts.cache-1 2>/dev/null || /usr/bin/true
 @dirrm lib/X11/fonts/bitstream-vera
-@comment @dirrm lib/X11/fonts
+@dirrm lib/X11/fonts
 @exec HOME=/tmp fc-cache -f %D/lib/X11/fonts/bitstream-vera

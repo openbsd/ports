@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/10/18 01:13:17 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/15 21:08:45 naddy Exp $
 !%%no_dvd%%
 bin/gvlc
 bin/vlc
@@ -243,27 +243,27 @@ share/vlc/vlc48x48.png
 @dirrm share/vlc/http/admin
 @dirrm share/vlc/http
 @dirrm share/vlc
-@comment @dirrm share/locale/sv/LC_MESSAGES
-@comment @dirrm share/locale/sv
-@comment @dirrm share/locale/ru/LC_MESSAGES
-@comment @dirrm share/locale/ru
-@comment @dirrm share/locale/pl/LC_MESSAGES
-@comment @dirrm share/locale/pl
-@comment @dirrm share/locale/no/LC_MESSAGES
-@comment @dirrm share/locale/no
-@comment @dirrm share/locale/nl/LC_MESSAGES
-@comment @dirrm share/locale/nl
-@comment @dirrm share/locale/ja/LC_MESSAGES
-@comment @dirrm share/locale/ja
-@comment @dirrm share/locale/it/LC_MESSAGES
-@comment @dirrm share/locale/it
-@comment @dirrm share/locale/fr/LC_MESSAGES
-@comment @dirrm share/locale/fr
-@comment @dirrm share/locale/en_GB/LC_MESSAGES
-@comment @dirrm share/locale/en_GB
-@comment @dirrm share/locale/de/LC_MESSAGES
-@comment @dirrm share/locale/de
-@comment @dirrm share/locale
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/en_GB/LC_MESSAGES
+@dirrm share/locale/en_GB
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale
 @exec mkdir -p %D/lib/vlc/visualization
 @dirrm lib/vlc/visualization
 @dirrm lib/vlc/video_output
