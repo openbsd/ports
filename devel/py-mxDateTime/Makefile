@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/20 17:41:50 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/11 20:22:30 pvalchev Exp $
 
 COMMENT=	"Date and Time types for Python"
 
@@ -18,8 +18,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-
-NO_CONFIGURE=	Yes
 
 FLAVORS=	python1
 FLAVOR?=	

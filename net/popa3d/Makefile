@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/05/06 05:00:22 lebel Exp $
+# $OpenBSD: Makefile,v 1.18 2001/08/11 20:22:30 pvalchev Exp $
 
 COMMENT=	"security first POP3 daemon"
 
@@ -22,7 +22,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-NO_CONFIGURE=	Yes
 MAKE_FLAGS=	CC=${CC} LD=${CC} CFLAGS="-c ${CFLAGS}"
 
 FLAVORS=	apop
