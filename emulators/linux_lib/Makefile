@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1999/05/13 01:49:05 brad Exp $
+# $OpenBSD: Makefile,v 1.14 1999/10/14 22:12:48 espie Exp $
 # $NetBSD: Makefile,v 1.10 1998/04/24 09:07:55 agc Exp $
 # $FreeBSD Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp $
 
@@ -38,11 +38,11 @@ post-install:
 	${LN} -sf /etc/localtime ${PREFIX}/usr/lib/zoneinfo/localtime
 	${MKDIR} ${PREFIX}/dev
 	${LN} -sf /dev/console ${PREFIX}/dev/tty0
-	${LN} -sf /dev/ttyv0 ${PREFIX}/dev/tty1
-	${LN} -sf /dev/ttyv1 ${PREFIX}/dev/tty2
-	${LN} -sf /dev/ttyv2 ${PREFIX}/dev/tty3
-	${LN} -sf /dev/ttyv3 ${PREFIX}/dev/tty4
-	${LN} -sf /dev/dsp ${PREFIX}/dev/sound0
+	${LN} -sf /dev/ttyC0 ${PREFIX}/dev/tty1
+	${LN} -sf /dev/ttyC1 ${PREFIX}/dev/tty2
+	${LN} -sf /dev/ttyC2 ${PREFIX}/dev/tty3
+	${LN} -sf /dev/ttyC3 ${PREFIX}/dev/tty4
+	${LN} -sf /dev/sound ${PREFIX}/dev/dsp
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>

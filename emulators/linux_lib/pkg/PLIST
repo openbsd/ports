@@ -3,13 +3,12 @@ bin/bash
 bin/sh
 @exec mkdir -p %D/dev
 @exec ln -sf /dev/console %D/dev/tty0
-@exec ln -sf /dev/ttyv0 %D/dev/tty1
-@exec ln -sf /dev/ttyv1 %D/dev/tty2
-@exec ln -sf /dev/ttyv2 %D/dev/tty3
-@exec ln -sf /dev/ttyv3 %D/dev/tty4
-@exec ln -sf /dev/dsp %D/dev/sound0
+@exec ln -sf /dev/ttyC0 %D/dev/tty1
+@exec ln -sf /dev/ttyC1 %D/dev/tty2
+@exec ln -sf /dev/ttyC2 %D/dev/tty3
+@exec ln -sf /dev/ttyC3 %D/dev/tty4
+@exec ln -sf /dev/sound %D/dev/dsp
 @unexec rm -rf %D/dev
-dev/dsp
 etc/host.conf
 etc/ld.so.cache
 etc/ld.so.conf
