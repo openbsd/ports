@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/09/24 13:17:28 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/12/28 06:13:05 brad Exp $
 
 DISTNAME=	lzo-1.04
 CATEGORIES=	archivers devel
@@ -17,10 +17,10 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
 post-extract:
-	@${CHMOD} +x ${WRKSRC}/acconfig/*
+	@chmod +x ${WRKSRC}/acconfig/*
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/lzo
+	@mkdir -p ${PREFIX}/share/doc/lzo
 	${INSTALL_DATA}	${WRKSRC}/doc/* ${PREFIX}/share/doc/lzo
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1999/09/25 13:01:12 turan Exp $
+# $OpenBSD: Makefile,v 1.14 1999/12/28 06:13:05 brad Exp $
 
 DISTNAME=	bzip2-0.9.5d
 CATEGORIES=	archivers
@@ -19,19 +19,19 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bzip2 ${PREFIX}/bin
-	@${LN} -sf ${PREFIX}/bin/bzip2 ${PREFIX}/bin/bunzip2
-	@${LN} -sf ${PREFIX}/bin/bzip2 ${PREFIX}/bin/bzcat
+	@ln -sf ${PREFIX}/bin/bzip2 ${PREFIX}/bin/bunzip2
+	@ln -sf ${PREFIX}/bin/bzip2 ${PREFIX}/bin/bzcat
 	${INSTALL_PROGRAM} ${WRKSRC}/bzip2recover ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/bzlib.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libbz2.a ${PREFIX}/lib
 	@if [ -f ${WRKSRC}/libbz2.so.${VER} ]; then \
-	  ${INSTALL_DATA} ${WRKSRC}/libbz2.so.${VER} ${PREFIX}/lib; \
+	 ${INSTALL_DATA} ${WRKSRC}/libbz2.so.${VER} ${PREFIX}/lib; \
 	fi
 	${INSTALL_MAN} ${WRKSRC}/bzip2.1 ${PREFIX}/man/man1
-	@${LN} -f ${PREFIX}/man/man1/bzip2.1 ${PREFIX}/man/man1/bunzip2.1
-	@${LN} -f ${PREFIX}/man/man1/bzip2.1 ${PREFIX}/man/man1/bzcat.1
-	@${LN} -f ${PREFIX}/man/man1/bzip2.1 ${PREFIX}/man/man1/bzip2recover.1
-	${LDCONFIG} -m ${PREFIX}/lib
+	@ln -f ${PREFIX}/man/man1/bzip2.1 ${PREFIX}/man/man1/bunzip2.1
+	@ln -f ${PREFIX}/man/man1/bzip2.1 ${PREFIX}/man/man1/bzcat.1
+	@ln -f ${PREFIX}/man/man1/bzip2.1 ${PREFIX}/man/man1/bzip2recover.1
+	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
 
