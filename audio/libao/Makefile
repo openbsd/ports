@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2001/07/26 12:31:32 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/08/09 15:07:31 naddy Exp $
 
 COMMENT=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
 COMMENT-esd=	"ESounD module for portable audio output library"
 
-VERSION=	0.7.0
-DISTNAME=	libao-${VERSION}
 FULLPKGNAME=		libao-${VERSION}
 FULLPKGNAME-arts=	libao-arts-${VERSION}
 FULLPKGNAME-esd=	libao-esd-${VERSION}
+
+VERSION=	0.7.0
+DISTNAME=	libao-${VERSION}
 CATEGORIES=    	audio
 NEED_VERSION=	1.422
 HOMEPAGE=	http://www.vorbis.com/
@@ -37,6 +38,12 @@ SUBPACKAGE?=
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
+.if ${FLAVOR:L:Mno_arts}
+CONFIGURE_ARGS+= --disable-arts
+.endif
+.if ${FLAVOR:L:Mno_esd}
+CONFIGURE_ARGS+= --disable-esd
+.endif
 
 .if defined(PACKAGING)
 .  if   ${SUBPACKAGE} == "-arts"
