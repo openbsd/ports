@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.111 1999/08/22 23:44:51 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.112 1999/08/23 00:03:42 brad Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -87,7 +87,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # XMKMF			- Set to path of `xmkmf' if not in $PORTPATH 
 #                 (default: xmkmf -a ).
 # MAINTAINER	- The e-mail address of the contact person for this port
-#				  Defaults: ports@OpenBSD.ORG
+#				  Defaults: ports@openbsd.org
 # CATEGORIES	- A list of descriptive categories into which this port falls.
 # WRKOBJDIR		- A top level directory where, if defined, the separate working
 #				  directories will get created, and symbolically linked to from
@@ -859,7 +859,7 @@ MASTER_SITE_PERL_CPAN+=	\
 
 MASTER_SITE_TEX_CTAN+=	\
 	ftp://ftp.cdrom.com/pub/tex/ctan/%SUBDIR%/ \
-	ftp://wuarchive.wustl.edu/packages/TeX/%SUBDIR%/ \
+	ftp://ftp.wustl.edu/packages/TeX/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/TeX/CTAN/%SUBDIR%/ \
 	ftp://ftp.tex.ac.uk/public/ctan/tex-archive/%SUBDIR%/ \
 	ftp://ftp.dante.de/tex-archive/%SUBDIR%/
@@ -880,11 +880,10 @@ MASTER_SITE_KDE+=	\
 MASTER_SITE_GNOME+=	\
 	ftp://ftp.cybertrails.com/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.geo.net/pub/gnome/%SUBDIR%/ \
-	ftp://ftp.net.lut.ac.uk/gnome/%SUBDIR%/ \
-	ftp://ftp.snoopy.net/pub/mirrors/GNOME/%SUBDIR%/ \
 	ftp://gnomeftp.wgn.net/pub/gnome/%SUBDIR%/ \
 	ftp://server.ph.ucla.edu/pub/mirror/ftp.gnome.org/%SUBDIR% \
-	ftp://sod.inter-mezzo.org/mirror/ftp.gnome.org/%SUBDIR% \
+	ftp://ftp.net.lut.ac.uk/gnome/%SUBDIR%/ \
+	ftp://ftp.snoopy.net/pub/mirrors/GNOME/%SUBDIR%/ \
 	ftp://ftp.gnome.org/pub/GNOME/%SUBDIR%/
 
 MASTER_SITE_AFTERSTEP+=	\
@@ -1022,7 +1021,7 @@ _IGNOREFILES?=	${IGNOREFILES}
 EXTRACT_ONLY?=	${DISTFILES}
 
 # Documentation
-MAINTAINER?=	ports@OpenBSD.ORG
+MAINTAINER?=	ports@openbsd.org
 
 .if !defined(CATEGORIES)
 .BEGIN:
