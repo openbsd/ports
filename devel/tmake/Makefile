@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/02/28 14:15:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/04/09 15:32:12 naddy Exp $
 
 COMMENT=	"Cross-platform makefile tool from TrollTech"
 
@@ -20,7 +20,21 @@ MASTER_SITES=	ftp://ftp.trolltech.com/freebies/tmake/
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
+MODULES=	qt2
+RUN_DEPENDS=	::x11/qt2-designer
+
 do-install:
+	@perl -pi \
+		-e 's|%%CC%%|${CC}|g;' \
+		-e 's|%%CFLAGS%%|${CFLAGS}|g;' \
+		-e 's|%%CXX%%|${CXX}|g;' \
+		-e 's|%%CXXFLAGS%%|${CXXFLAGS}|g;' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g;' \
+		-e 's|%%MODQT_INCDIR%%|${MODQT_INCDIR}|g;' \
+		-e 's|%%MODQT_LIBDIR%%|${MODQT_LIBDIR}|g;' \
+		-e 's|%%MODQT_MOC%%|${MODQT_MOC}|g;' \
+		-e 's|%%X11BASE%%|${X11BASE}|g;' \
+		${WRKSRC}/lib/openbsd-g++/tmake.conf
 	@perl -pi -e 's:%%PREFIX%%:${TRUEPREFIX}:' ${WRKSRC}/bin/tmake
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tmake ${PREFIX}/bin/tmake
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/progen ${PREFIX}/bin/progen
