@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2004/02/02 14:59:57 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2004/02/03 00:58:29 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -14,6 +14,8 @@ LIB_DEPENDS=	art_lgpl_2::graphics/libart \
 		xslt.1.10:libxslt->=1.0.10:textproc/libxslt \
 		bz2::archivers/bzip2 \
 		tiff.35::graphics/tiff
+
+CONFIGURE_ARGS+= --disable-cups
 
 SEPARATE_BUILD=	flavored
 SAMPLECONFDIR=${TRUEPREFIX}/share/apps/kde-conf-sample
