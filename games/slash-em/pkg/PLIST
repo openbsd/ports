@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/04 11:14:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/07/04 14:00:42 espie Exp $
 @group games
 bin/strecover
 bin/slashem
 !%%no_x11%%
-%%qt%%
+@comment %%qt%%
 lib/slashemdir/Arc-fila.lev
 lib/slashemdir/Arc-filb.lev
 lib/slashemdir/Arc-goal.lev
