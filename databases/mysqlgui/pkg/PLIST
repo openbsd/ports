@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/02 15:14:51 wilfried Exp $
-bin/mysqlgui
-share/doc/mysqlgui/my.cnf
-share/doc/mysqlgui/readme
-@dirrm share/doc/mysqlgui
