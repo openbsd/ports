@@ -1,23 +1,19 @@
-# New ports collection makefile for:	hexedit
-# Version required:			0.9.3
-# Date created:				11 August 1998
-# Whom:					Oleg Safiullin <form@vs.itam.nsc.ru>
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/08/11 10:14:11 form Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/08 23:03:32 marc Exp $
 # FreeBSD: Makefile,v 1.1.1.1 1998/08/10 00:31:40 steve Exp
 #
 
 DISTNAME=	hexedit-0.9.3
 CATEGORIES=	editors
-MASTER_SITES=	http://www.chez.com/prigaux/
-EXTRACT_SUFX=	.src.tgz
+
+BROKEN=		"newer version available"
 
 MAINTAINER=	form@vs.itam.nsc.ru
 
+MASTER_SITES=	http://www.chez.com/prigaux/
+EXTRACT_SUFX=	.src.tgz
+
 ALL_TARGET=
 WRKSRC=		${WRKDIR}/hexedit
-
-MAN1=		hexedit.1
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/hexedit ${PREFIX}/bin
