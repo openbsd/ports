@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/29 21:49:00 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/21 02:29:22 pvalchev Exp $
 
 COMMENT=	"MPEG and VCD video playback in XMMS"
 
 VERSION=	0.3.4
 DISTNAME=	smpeg-xmms-${VERSION}
+PKGNAME=	xmms-smpeg-${VERSION}
 CATEGORIES=	graphics
 NEED_VERSION=	1.427
 HOMEPAGE=	http://www.xmms.org/files/plugins/smpeg-xmms/
@@ -36,14 +37,12 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-sdl-prefix=${LOCALBASE} \
 		--with-xmms-prefix=${LOCALBASE}
 
-DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
-
 post-patch:
 	@touch ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure \
 	${WRKSRC}/Makefile.in ${WRKSRC}/src/Makefile.in
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smpeg-xmms
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/smpeg-xmms
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xmms-smpeg
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xmms-smpeg
 
 .include <bsd.port.mk>

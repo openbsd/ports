@@ -1,9 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/29 21:49:00 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/08/21 02:29:22 pvalchev Exp $
 %%SHARED%%
-share/doc/smpeg-xmms/AUTHORS
-share/doc/smpeg-xmms/COPYING
-share/doc/smpeg-xmms/ChangeLog
-share/doc/smpeg-xmms/NEWS
-share/doc/smpeg-xmms/README
-share/doc/smpeg-xmms/TODO
-@dirrm share/doc/smpeg-xmms
+share/doc/xmms-smpeg/README
+@dirrm share/doc/xmms-smpeg
