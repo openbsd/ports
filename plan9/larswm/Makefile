@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2000/09/22 20:46:18 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/06 01:35:54 brad Exp $
 
-DISTNAME=	larswm-6.0.4
+DISTNAME=	larswm-7.0.8
 CATEGORIES=	plan9
-NEED_VERSION=	1.330
+NEED_VERSION=	1.336
 MASTER_SITES=	http://www.fnurt.net/larswm/ \
 		http://www.resentment.org/~unix/
 
