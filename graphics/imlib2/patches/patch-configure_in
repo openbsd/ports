@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2004/09/21 22:40:36 brad Exp $
+--- configure.in.orig	Mon Aug 30 22:46:15 2004
++++ configure.in	Sun Sep 19 05:26:22 2004
+@@ -214,7 +214,7 @@ dnl /here was freetype headers checking
+ AC_CHECK_LIB(dl, dlopen, dlopen_libs=-ldl)
+ AC_CHECK_LIB(ltdl, lt_dlopen, ltdlopen_libs=-lltdl)
+ 
+-EXTRA_LIBS="-L/usr/local/lib -L/usr/X11R6/lib"
++EXTRA_LIBS=""
+ 
+ # Test for libjpeg
+ AC_CHECK_LIB(jpeg, jpeg_destroy_decompress,

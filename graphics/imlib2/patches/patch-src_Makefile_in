@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2004/04/18 02:01:25 jolan Exp $
---- src/Makefile.in.orig	Wed Jan 14 14:22:29 2004
-+++ src/Makefile.in	Wed Jan 14 14:22:47 2004
-@@ -99,7 +99,7 @@
+$OpenBSD: patch-src_Makefile_in,v 1.2 2004/09/21 22:40:36 brad Exp $
+--- src/Makefile.in.orig	Mon Aug 30 23:23:10 2004
++++ src/Makefile.in	Sun Sep 19 05:26:22 2004
+@@ -114,7 +114,7 @@ AUTOMAKE_OPTIONS = 1.4 foreign
  # A list of all the files in the current directory which can be regenerated
- MAINTAINERCLEANFILES = Makefile.in loaderpath.h
+ MAINTAINERCLEANFILES = Makefile.in
  
 -LDFLAGS = -L/usr/X11R6/lib
 +LDFLAGS = @LDFLAGS@
- INCLUDES = -I. -I$(top_srcdir) -I$(top_srcdir)/src \
-                        -I$(top_srcdir)/loaders -I$(top_srcdir)/libltdl \
-                        $(freetype_cflags) -I/usr/X11R6/include $(X_CFLAGS) \
+ INCLUDES = -I. -I$(top_srcdir) -I$(top_srcdir)/src 		       -I$(top_builddir)/src                        -I$(top_srcdir)/loaders                        $(freetype_cflags) -I/usr/X11R6/include $(X_CFLAGS)                        -I$(prefix)/include -I$(includedir) @XMISS@
+ 
+ MMX_SRCS = asm_blend.S asm_rgba.S asm_scale.S asm_rotate.S 		       asm_blend_cmod.S
