@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/24 12:12:14 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/25 01:49:23 brad Exp $
 
 DISTNAME=	sybperl-2.13
 PKGNAME=	p5-${DISTNAME}
@@ -16,8 +16,8 @@ MASTER_SITES=	${HOMEPAGE}Sybperl/
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
-LIB_DEPENDS=	intl.1::devel/gettext \
-		tds.0,sybdb.0,ct.0::databases/freetds
+MODULES=	gettext
+LIB_DEPENDS=	tds.0,sybdb.0,ct.0::databases/freetds
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ENV=	SYBASE="${LOCALBASE}"

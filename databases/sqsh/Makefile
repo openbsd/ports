@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/24 12:12:14 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/25 01:49:23 brad Exp $
 
 DISTNAME=	sqsh-1.7
 CATEGORIES=	databases shells
@@ -16,8 +16,8 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
-LIB_DEPENDS=	intl.1::devel/gettext \
-		tds.0,ct.0::databases/freetds
+MODULES=	gettext
+LIB_DEPENDS=	tds.0,ct.0::databases/freetds
 
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autoconf

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2001/10/07 14:19:54 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2001/10/25 01:46:18 brad Exp $
 
 COMMENT=	"convert files between character sets and usages"
 
 DISTNAME=	recode-3.6
 CATEGORIES=	converters textproc
-NEED_VERSION=	1.402
+NEED_VERSION=	1.474
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-LIB_DEPENDS=            intl::devel/gettext
+MODULES=	gettext
 			
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
