@@ -6,8 +6,303 @@
 			http://www.openbsd.org
 
 
-The OpenBSD ports tree is always growing. Therefor it is essential
-that you continue to update your ports dir thru cvs or ftp.
+When things go wrong
+====================
+There are several contacts for the ports tree.
+* individual ports list a 
+MAINTAINER=  
+line in their Makefile.  Try to contact that person first.
+* specific issues related to the ports framework (e.g., bugs in
+bsd.port.mk)  should go to ports-admin@openbsd.org
+* ports without explicit maintainers, and other general issues should
+go to ports@openbsd.org
+
+As a general rule, try to contact the MAINTAINER first.  If nothing happens
+after a reasonable delay, start plaguing him, or go to the next step.
+
+Developpers with a major investment in the ports tree include
+brad@cvs.openbsd.org, turan@cvs.openbsd.org, espie@cvs.openbsd.org
+
+Those people can be contacted to put some pressure on a lazy maintainer.
+But we do read ports@openbsd.org, so...
+
+The ports tree
+==============
+The ports tree usually live under /usr/ports. It's a hierarchical
+list of recipes to build various pieces of software.
+We'll call that PORTSDIR in the following discussion.
+Stuff that doesn't constitue a port proper, but rather paraphernalia,
+is stored under /usr/ports/infrastructure, INFRA in the following
+discussion.
+
+The main Makefile, PORTSDIR/Makefile, can be used to obtain various
+information.
+
+* make search key=<keyword>
+will locate ports that match the given keyword in the Index and print
+information about them.
+
+* make index
+can be used to rebuild that INDEX, normally useful after you update your
+ports dir through cvs.
+
+* make readmes
+will populate the ports tree with a set of html indices.
+
+The script INFRA/build/out-of-date will find
+discrepancies between your installed packages and the INDEX. This might
+give you an hint as to what you would need to rebuild to update a machine.
+
+Some useful `make' trivia
+=========================
+* if you always use some make variables, e.g., DISTDIR, CLEANDEPENDS, or
+MASTER_SITE_OVERRIDE you can put this in your local make configuration 
+file instead: /etc/mk.conf.
+* starting with 2.6, make can deal with case issues, so CLEANDEPENDS=Yes
+or CLEANDEPENDS=YES or even CLEANDEPENDS=yEs should be equivalent.
+* the make process uses some subroutines out of /usr/share/mk. Starting
+with 2.6, the `port' subroutines live in INFRA/mk.
+The bsd.port.mk and bsd.port.subdir.mk in /usr/share/mk are only stubs
+that redirect to those files.
+
+Building a port
+===============
+It's usually as simple as 
+cd category/portname && make && make install
+
+That specific `make' will normally
+* resolve dependencies and go out to install required ports recursively
+* fetch the software source (`distfiles' and `distribution patches') 
+from the available media into your repository
+* extract the source
+* apply distribution patches and OpenBSD patches
+* build the program
+
+`make install' will
+* install the software on your system
+* log the installation so that later pkg_info or pkg_delete can deal with
+the software.
+
+Some ports can have some options, or demand that you make some choice 
+before building, e.g.,
+cd /usr/ports/security/ssh 
+make all install USA_RESIDENT=no
+
+Some ports may prompt you for more choice, or give you important
+information about ports building.  Likewise, installing or uninstalling
+a port may give you useful information. READ IT.
+
+You can also use
+* `make uninstall' to remove the installed software (same as pkg_delete)
+* `make package' to convert the installed software into a binary `package'
+(a tar ball that you can share with other machines with the same
+configuration, contribute to the ftp project, or that you can backup 
+separately). Packages normally end up in /usr/ports/packages, overridable
+with PACKAGE.
+* `make fetch-list' to build a small shell-script that should be able to
+retrieve the missing distfiles and distribution patches for the given port.
+* `make clean' to remove all scaffolding after the port is built and
+installed.
+* `make distclean' to also remove distfiles and distribution patches 
+from the repository
+* `make clean CLEANDEPENDS=Yes' will also remove sub ports that have been
+recursively built.
+* `make distclean CLEANDEPENDS=Yes', guess what this does.
+
+Please note that, in normal use, the OpenBSD ports tree will grow quite
+a lot.  Careful use of make clean and make distclean will help you.
+`find /usr/ports -type d -name work -print' can be useful to find out
+ports you forgot to clean out.
+
+There are a few kinks in the building of ports with options yet. Namely,
+all such ports should produce distinct package names if built with
+different options.  Also, there is no check for consistency between
+make and make install. Taking the ssh example again,
+make USA_RESIDENT=No
+make install USA_RESIDENT=Yes
+won't be flagged as an error...
+
+Where do the distfiles come from
+================================
+Retrieving distfiles is a subpart of `make' that can be invoked separately
+as `make fetch'.
+
+Starting with 2.6, the fetch process is configurable by editing 
+INFRA/db/network.conf.
+
+The ports tree does store files it retrieves in a repository area,
+normally /usr/ports/distfiles (defined as DISTDIR=${PORTSDIR}/distfiles;
+you can override this if you need; e.g., assuming you've got a cdrom
+full of distfiles mounted under /cdrom, you can make stuff with 
+DISTDIR=/cdrom/distfiles, provided all the distfiles are available on
+the CD-Rom).
+
+If the file is found in the repository, the build process continues.
+In some rare cases, vendors change their archive contents without changing
+the archive name, so the file in the repository may end up having a wrong
+checksum. Or, if you aborted a network transfer, the file in the repository
+may be truncated, and end up having a wrong checksum again. In such a case,
+manual intervention is required (it was deemed that such problems may need
+human expertise and that blindly removing distfiles was not a good idea).
+It's usually as simple as deleting the offending file, or doing a 
+make distclean.
+
+To avoid building from corrupted archives, the ports tree holds checksums
+for almost all files it retrieves from other media (a few ports ignore 
+checksums from the files listed in IGNOREFILES).
+Those are strong cryptographic checksums: sha1, rmd160, and md5, 
+in that order.  See CIPHERS and PREFERRED_CIPHERS in 
+INFRA/mk/bsd.port.mk for details.
+
+If the directory /cdrom/distfiles exist, available distfiles are copied
+off that directory to your repository.  You can avoid the copy overhead
+by defining FETCH_SYMLINK_DISTFILES.  You can give another location for
+the distfiles as CDROM_SITE.
+
+OpenBSD `ftp' command is normally used to fetch distfiles off the net,
+so all file addresses are given in URL format.
+Each port uses its own set of sites, and there should also be backups of
+the distribution files on ftp.openbsd.org.  MASTER_SITE_BACKUP holds an
+overridable list of backup sites, normally
+ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/${DIST_SUBDIR}/
+ftp://ftp.openbsd.org/pub/OpenBSD/licensed/${DIST_SUBDIR}/
+ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/${DIST_SUBDIR}/
+
+You can ask the fetch process to try to retrieve files from those sites first
+by setting MASTER_SITE_OVERRIDE, e.g., 
+make MASTER_SITE_OVERRIDE='${MASTER_SITE_BACKUP}'
+
+You can retrieve file from the OpenBSD site only with
+make MASTER_SITE_OPENBSD=Yes
+
+Continuing our CD-Rom example, you could also fetch files off a CD-Rom into
+your repository for safe-keeping by using the following incantation:
+make fetch MASTER_SITE_OVERRIDE='file:/cdrom/{$DIST_SUBDIR}/' 
+This is equivalent to using CDROM_SITE.
+
+Some common sites have their own variables. It is strongly recommended
+that you edit the INFRA/db/network.conf file for
+your site.
+
+Please refer to that file for a complete list, and address lists 
+(those are not exhaustive). Those include:
+MASTER_SITE_GNU			FSF and other GPL programs
+MASTER_SITE_XCONTRIB		X11 contributed software
+MASTER_SITE_SUNSITE		Sunsite site and mirror, major linux archive
+MASTER_SITE_GNOME		Gnome
+MASTER_SITE_PERL_CPAN		Comprehensive perl archive network
+MASTER_SITE_TEX_CTAN		Comprehensive TeX archive network
+MASTER_SITE_KDE			KDE
+MASTER_SITE_TCLTK		Tcl/Tk
+MASTER_SITE_AFTERSTEP		AfterStep
+MASTER_SITE_WINDOWMAKER		WindowMaker
+
+There is a backup copy of that file in
+INFRA/templates/network.conf.template.
+
+In case you don't have a permanent network connection, 
+`make fetch-list' should provide you with a shell script you can use to
+retrieve distfiles you're missing to build a given port.
+
+(TODO: improve and systematize fetch-all)
+
+Building several ports
+======================
+Each category directory holds a Makefile that propagates commands to
+its sub ports, e.g., if you cd /usr/ports/audio && make, this should
+build all ports under /usr/ports/audio.
+
+A more useful command is the
+INFRA/build/find-build-order script.
+You normally prepare a list of the ports you want to build, in the same
+format as  INFRA/db/essentials, and pass it to find-build-order like
+this:
+cd /usr/ports/infrastructure
+cat db/essentials|build/find-build-order
+This yields a sorted list of the required ports.
+
+(Todo: provide for a script which builds everything we want)
+
+You can filter ports that require interaction out with
+make BATCH=yes
+
+Likewise, make FOR_CDROM=yes, make NO_RESTRICTED=yes 
+will yield only the ports with the required level of liberty.
+
+Files Summary
+=============
+/usr/ports (PORTSDIR): 
+	the whole port collection
+/usr/ports/<category>/<portname>:
+	where to find a given port
+/usr/ports/INDEX:
+	all distfiles, rebuilt with make index
+/usr/ports/README.html
+/usr/ports/<category>/README.html
+/usr/ports/<category>/<portname>/README.html:
+	www indices produced by make readmes
+/usr/ports/distfiles (DISTFILES):
+	repository for distribution files and distribution patches
+/cdrom/distfiles (CDROM_SITE):
+	standard location for distfiles off a CD
+/usr/ports/packages (PACKAGES):
+	where binary packages are built (by category. Normally everything
+	ends up under All, with symlinks for each category)
+/usr/ports/<category>/<portname>/work:
+	where the ports mechanism does the building. This is normally a
+	real directory, but you can set WRKOBJDIR to point to another
+	base which is not /usr/ports, and work/ will  be a link to
+	${WRKOBJDIR}/category/portname/work.  This can be useful to
+	mount a master /usr/ports directory by NFS on several
+	architectures. Normally, you first 
+	cd /usr/ports && make WRKOBJDIR=path obj 
+	on the master machine, which creates the symbolic links, so that
+	you can mount your master /usr/ports read-only.
+/usr/ports/<category>/<portname>/pkg/SECURITY:
+	information relative to a security audit of the port.  Usually
+	missing.
+/usr/ports/infrastructure:
+	paraphernalia around the ports tree
+/usr/ports/db/network.conf:
+	your local network configuration (ftp sites)
+/var/db/pkg:
+	installed ports, see pkg_add(1).
+/usr/local (LOCALBASE):
+	where normal ports install themselves.
+/usr/X11R6 (X11BASE):
+	where ports with a large dependency on X11 install themselves.
+
+Other tweaks
+============
+FORCE_PACKAGE: force package building.  Some ports can't be distributed
+as packages for legal reasons, but you may wish to build a package for
+your private consumption.
+HAVE_MOTIF: set in /etc/mk.conf if we own a copy of the real thing.
+MOTIF_STATIC: set in /etc/mk.conf to use a static version of the Motif
+library only.
+NO_MTREE: don't run mtree before installing a port. This is a dangerous
+option.
+NO_PKG_REGISTER: used for make install, don't register port under
+/var/db/pkg.   This is a dangerous option.
+FORCE_PACKAGE_REGISTER: override an existing port (the <pkgname> is already
+installed message). You will end up with several flavors of the same
+package.  This is a dangerous option, as this will probably erase the other
+port.
+NO_IGNORE: coerce fetch, build, install... into doing their job even though
+there might be a good reason not to. Good reasons include BROKEN,
+ONLY_FOR_ARCH, IS_INTERACTIVE in BATCH mode, NO_CDROM in FOR_CDROM... This
+is a dangerous option.
+
+Keeping up with the Jones, ports as a moving target
+===================================================
+The OpenBSD ports tree is growing from release to release. It needs
+people to write and test new ports.
+Like for src, you can choose to live on the bleeding edge by updating 
+your ports dir thru cvs or ftp, and contribute bug-reports.
+
+If you prefer to stay with a stable release, we try to make sure
+the distfiles for a given release stay on the OpenBSD site between
+releases.
 
 No matter how fast we update the tree it seems that we are always
 behind.  For this reason you will sometimes find a port that is
@@ -32,25 +327,4 @@ please visit
 
 	http://www.openbsd.org/porting.html
 
-If you would like to search for a given port, you can do so easily
-by saying:
-
-	make search key="<keyword>"
-
-Which will generate a list of all ports matching <keyword>.
-
-NOTE:  This tree can GROW significantly in size during normal usage!
-The distribution tar files can and do accumulate in /usr/ports/distfiles,
-and the individual ports will also use up lots of space in their work
-subdirectories unless you remember to "make clean" after you're done
-building a given port.  /usr/ports/distfiles can also be periodically
-cleaned without ill-effect, though if you don't have the original
-distribution tarball(s) for something on CDROM then you will need to pull
-it all over your network connection again if you ever try to build the
-associated port.
-
-For help or other information 
-Please send mail to 
-ports@OpenBSD.ORG
-
-$OpenBSD: README,v 1.4 1998/10/09 00:15:35 marc Exp $
+$OpenBSD: README,v 1.5 1999/09/25 14:45:27 espie Exp $
