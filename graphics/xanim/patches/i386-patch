@@ -1,22 +1,22 @@
---- Imakefile.orig	Tue Dec  1 17:37:28 1998
-+++ Imakefile	Tue Dec  1 17:38:24 1998
-@@ -91,13 +91,13 @@
- XCOMM --    Indeo 3.x  IV32	indeo.readme
- XCOMM --    Creative   CYUV	creative.readme
+--- Imakefile.orig2	Thu Mar 18 22:45:51 1999
++++ Imakefile	Thu Mar 18 22:46:40 1999
+@@ -165,13 +165,13 @@
+ XCOMM  
+ XCOMM  Again don't use these if you are using the dynamically loadable modules.
  XCOMM 
--XCOMM XA_IV32_DEF = -DXA_INDEO 
--XCOMM XA_CVID_DEF = -DXA_CINEPAK
+-XCOMM XA_IV32_DEF = -DXA_IV32 
+-XCOMM XA_CVID_DEF = -DXA_CVID
 -XCOMM XA_CYUV_DEF = -DXA_CYUV
-+XA_IV32_DEF = -DXA_INDEO 
-+XA_CVID_DEF = -DXA_CINEPAK
++XA_IV32_DEF = -DXA_IV32 
++XA_CVID_DEF = -DXA_CVID
 +XA_CYUV_DEF = -DXA_CYUV
- XCOMM
--XA_IV32_LIB = 
--XA_CVID_LIB = 
--XA_CYUV_LIB = 
-+XA_IV32_LIB = xa2.0_cvid_netbsd386.o
-+XA_CVID_LIB = xa2.0_iv32_netbsd386.o
+ XCOMM 
+-XCOMM XA_IV32_LIB = mods/xa2.1_iv32_linuxELF.o
+-XCOMM XA_CVID_LIB = mods/xa2.0_cvid_linuxELF.o
+-XCOMM XA_CYUV_LIB = mods/xa1.0_cyuv_linuxELF.o
++XA_IV32_LIB = xa2.0_iv32_netbsd386.o
++XA_CVID_LIB = xa2.0_cvid_netbsd386.o
 +XA_CYUV_LIB = xa1.0_cyuv_netbsd386.o
- XCOMM
- XCOMM NOTE: SGI Machines Only:
- XCOMM    if your linker core dumps then you'll need to uncomment the following
+ XCOMM 
+ XCOMM ##########################
+ XCOMM  NOTE: SGI Machines Only: 

@@ -1,0 +1,1016 @@
+.TH XAnim 1 "19Mar98" "XAnim 2\.70\.7\.0"
+.UC 4
+.SH NAME
+xanim \- multiformat animation/video/audio viewer for X
+.SH SYNOPSIS
+.HP
+.B xanim
+[
+.BI +V num
+]
+[
+.BI +A aopts
+]
+[
+.BI +C copts
+]
+[
+.BI +G gopts
+]
+[
+.BI +M mopts
+]
+[
+.BI +S sopts
+]
+[
+.BI +W wopts
+]
+[
+.BI +Z zopts
+]
+[
+.BI + opts
+]
+.IR animfile
+[ [
+.BI + opts
+]
+[
+.IR animfile
+] ... ]
+.SH DESCRIPTION
+.IR XAnim
+is a program that can display animation/video/audio files of various formats
+on systems running X11. 
+.IR XAnim
+currently supports the following animation types:
+.LP
+.RS
+.PD 0
+.TP 3
+.B + 
+FLI animations.
+.TP 3
+.B + 
+FLC animations.
+.TP 3
+.B +
+IFF animations. The following features are supported:
+.RS
+.TP 3
+  \-> Compressions 3,5,7,J(movies) and l(small L).
+.TP 3
+  \-> Color cycling during single images and anims.
+.TP 3
+  \-> Display Modes: depth 1-8, EHB, HAM and HAM8.
+.RE
+.TP 3
+.B +
+GIF87a and GIF89a files.
+.RS
+.TP 3
+  \-> single and multiple images supported.
+.TP 3
+  \-> GIF89a animation extensions supported.
+.RE
+.TP 3
+.B +
+GIF89a animation extension support.
+.TP 3
+.B +
+a kludgy text file listing gifs and what order to show them in.
+.TP 3
+.B +
+DL animations. Formats 1, 2 and partial 3.
+.TP 3
+.B +
+Amiga PFX(PageFlipper Plus F/X) animations. TEMP DISABLED
+.TP 3
+.B +
+Amiga MovieSetter animations(For those Eric Schwartz fans).
+.TP 3
+.B +
+Utah Raster Toolkit RLE images and anims.
+.TP 3
+.B +
+AVI Animations Format
+.RS
+.TP 3
+   Supported Video Codecs:
+.RS
+.TP 3
+  \-> IBM Ultimotion     (ULTI) depth 16.
+.TP 3
+  \-> JPEG               (JPEG) depth 24.
+.TP 3
+  \-> Motion JPEG        (MJPG) depth 24.
+.TP 3
+  \-> Intergraph JPEG    (IJPG) depth 24.
+.TP 3
+  \-> Microsoft Video 1  (CRAM) depth 8 and 16.
+.TP 3
+  \-> Radius Cinepak     (CVID) depth 24. (see NOTE 1)
+.TP 3
+  \-> Intel Indeo 3.1    (IV31) depth 24. (see NOTE 2)
+.TP 3
+  \-> Intel Indeo 3.2    (IV32) depth 24. (see NOTE 2)
+.TP 3
+  \-> Intel Raw YUV      (YUV9) depth 24. (see NOTE 2)
+.TP 3
+  \-> Creative CYUV      (CYUV) depth 16. (see NOTE 3)
+.TP 3
+  \-> Uncompressed       (RGB ) depth 4.
+.TP 3
+  \-> Uncompressed       (RGB ) depth 8.
+.TP 3
+  \-> Uncompressed       (RGB ) depth 16.
+.TP 3
+  \-> Uncompressed       (RGB ) depth 24.
+.TP 3
+  \-> Run length encoded (RLE8) depth 8.
+.TP 3
+  \-> Editable MPEG      (XMPG) depth 24.
+.RE
+.TP 3
+   Supported Audio Codecs:
+.RS
+.TP 3
+  \-> PCM 8/16 bits         mono/stereo
+.TP 3
+  \-> uLAW                  mono/stereo
+.TP 3
+  \-> MSADPCM               mono/stereo
+.TP 3
+  \-> Intel DVI(IMA4)       mono/stereo
+.TP 3
+  \-> GSM 6.10              mono
+.RE
+.RE
+.TP 3
+.B +
+Quicktime Animations.
+.RS
+.TP 3
+   Supported Video Codecs:
+.RS
+.TP 3
+  \-> Uncompressed     (RAW ) depth 1,4,8,16,24 and 24+
+.TP 3
+  \-> Uncompressed     (RAW ) Gray depth 1,4 and 8.
+.TP 3
+  \-> Apple Graphics   (RLE ) depth 1,8,16 and 24.
+.TP 3
+  \-> Apple Graphics   (RLE ) GRAY depth 8.
+.TP 3
+  \-> Apple Animation  (SMC ) depth 8 and GRAY 8.
+.TP 3
+  \-> Apple Video      (RPZA) depth 16.
+.TP 3
+  \-> Radius Cinepak   (CVID) depth 24. (see NOTE 1)
+.TP 3
+  \-> Radius Cinepak   (CVID) GRAY   8. (see NOTE 1)
+.TP 3
+  \-> Intel Indeo 3.1  (IV31) depth 24. (see NOTE 2)
+.TP 3
+  \-> Intel Indeo 3.2  (IV32) depth 24. (see NOTE 2)
+.TP 3
+  \-> Intel Raw YUV    (YUV9) depth 24. (see NOTE 2)
+.TP 3
+  \-> Component Video  (YUV2) depth 24.
+.TP 3
+  \-> Photo JPEG       (JPEG) depth 8 and 24.
+.TP 3
+  \-> Kodak Photo CD   (KPCD) depth 24.
+.TP 3
+  \-> Microsoft Video 1  (CRAM) depth 8 and 16.
+.RE
+.TP 3
+   Supported Audio Codecs:
+.RS
+.TP 3
+  \-> Unsigned PCM     (raw)   8/16 bits mono/stereo
+.TP 3
+  \-> Signed PCM       (twos)  8/16 bits mono/stereo
+.TP 3
+  \-> uLAW             (ulaw)            mono/stereo
+.TP 3
+  \-> IMA4             (ima4)            mono/stereo
+.TP 3
+  \-> GSM 6.10         (agsm)            mono
+.RE
+.TP 3
+   The following features are supported:
+.RS
+.TP 3
+  \-> Supports multiple video trak's.
+.TP 3
+  \-> Supports animations with multiple codecs.
+.TP 3
+  \-> Supports merged and separated resource forks.
+.RE
+.RE
+.TP 3
+.B +
+SGI Movie Format Files.
+.RS
+.TP 3
+   Supported Video Codecs:
+.RS
+.TP 3
+  \-> Uncompressed RGB  24 bits
+.TP 3
+  \-> MVC1
+.TP 3
+  \-> MVC2
+.TP 3
+  \-> JPEG
+.RE
+.TP 3
+   Supported Audio Codecs:
+.RS
+.TP 3
+  \-> Unsigned PCM 8/16 mono/stereo
+.TP 3
+  \-> Signed   PCM 8/16 mono/stereo
+.RE
+.RE
+.B +
+WAV audio files may have their sound added to any animation
+type that doesn't already have audio, by specifying the .wav
+file after the animation file on the command line.
+.RS
+.TP 3
+   Supported Audio Codecs:
+.RS
+.TP 3
+  \-> PCM 8/16 bits         mono/stereo
+.TP 3
+  \-> uLAW                  mono/stereo
+.TP 3
+  \-> MSADPCM               mono/stereo
+.TP 3
+  \-> Intel DVI(IMA4)       mono/stereo
+.TP 3
+  \-> GSM 6.10              mono
+.RE
+.RE
+.TP 3
+.B +
+AU audio files may have their sound added to any animation
+type that doesn't already have audio, by specifying the .wav
+file after the animation file on the command line.
+.TP 3
+.B +
+JFIF images. NOTE: use XV for single images. This is more
+for animation of a sequence of JPEG images.
+.TP 3
+.B +
+MPEG animations. Currently only Type I Frames are displayed. Type B
+and Type P frames are currently ignored, but will be added in future revs. 
+It also doesn't handle MPEGs with audio streams.
+.TP 3
+.B +
+any combination of the above on the same command line.
+.TP 3
+.B NOTE_1:
+Please read the "cinepak.readme" file for directions on adding
+Radius Cinepak support to XAnim.
+.TP 3
+.B NOTE_2:
+Please read the "indeo.readme" file for directions on adding
+Intel Indeo 3.1 and 3.2 support to XAnim.
+.TP 3
+.B NOTE_3:
+Please read the "creative.readme" file for directions on adding
+Creative Technology CYUV support to XAnim.
+.RE
+.PD
+.LP
+.IR XAnim
+also provides various options that allow the user to alter colormaps, 
+playback speeds, looping modes and can provide on\-the\-fly
+scaling of animations with the mouse.
+.SH OPTIONS
+A + will generally turn an option on and a \- will turn an option off.
+This can be reversed at compile time. (see 
+.IR xanim_config.h ).
+.LP
+In each SubMenu, the options can be run together with no intervening
+spaces. In the list of SubMenu options presented below, the first letter
+given is the letter that specifies the SubMenu and should NOT be repeated 
+if several SubMenu options are to be run together. 
+.LP
+For example, "+Cn +Cs10 +CF4" can also be written as "+Cns10F4" or "+CF4s10n".
+.LP
+A + or a - within a SubMenu will be an exit from that submenu.
+Options will affect all animations following the invocation of that
+option. Some options may be changed in between animations without affecting
+previous animations.
+.LP
+In the following sections, an
+.I num
+represents an integer number and an 
+.I fnum
+represents a floating point number. If a floating point number is of
+an integer amount, the . need not be specified. There should be no
+spaces between the option and the numbers.
+
+.I aopts
+SubMenu for Audio Options
+.RS
+.TP 8
+.BI +AD dev
+AIX Only. Specify audio device. Default is /dev/paud0/1 . Another common
+audio device is  /dev/acpa0/1 . For example: "+AD/dev/acpa0/1".
+.TP
+.B +Ae
+Audio Enable. XAnim will ignore audio data if this option is not used.
+.TP
+.B +Ak
+This option allows XAnim to skip video frames in order to help 
+keep video in sync with audio.  default is on.
+.TP
+.B +Am
+Take the audio from the next audio-only file and use it with the 
+video file previous to it.  Any audio already existing in that 
+video file will be discarded. NOTE: XAnim by default will add
+audio from an audio-only file to a previous video only(ie not audio)
+file. This option just forces the issue if the previous file already
+has audio.
+.TP
+.B +AM
+Take the audio from the next audio-only file and use it with the 
+video file previous to it. And in addition, scale the timing of 
+that video file to be of the same duration of this audio file.
+Any audio already existing in that video file will be discarded.
+.TP
+.BI +Ap num
+This turns a hardware specific Audio port on or off. The default port is
+selectable in xanim_config.h. It's shipped with internal speaker as default.
+.TP
+.BI +As fnum
+Scale Audio playback speed by "fnum". Only the range 0.125 to 8.00 is allowed.
+NOTE: Video does not currently scale with the audio.
+.RS
+.TP 12
+ 0 \- internal speaker
+.TP 12
+ 1 \- headphones or external speaker
+.TP 12
+ 2 \- line out
+.RE
+.TP
+.BI +Av num
+Sets the inital Audio Volume(0\-100) with 0 the lowest. default is 40.
+.RE
+.LP
+.I copts
+SubMenu for Color Options
+.RS
+.TP 8
+.B +C1
+Create a colormap from the first frame of a TrueColor anim and then
+remap the remaining frames to this colormap. This can potentially add
+significant time to the startup of an animation but usually results
+in better colors. The animation needs to be buffered for this option
+to work. Not valid for TrueColor or DirectColor displays(nor is it
+needed).
+.TP
+.B +C3
+Convert TrueColor anims to 332(StaticColor). TrueColor anims are
+animations that provide separate RGB info for each pixel, rather
+than each pixel being an index into a global colormap. AVI(16bit CRAM),
+QT(RPZA and RLE depth 16 and 24) and URT RLE 24 bit anims are examples
+of TrueColor anims. This option is ignored for TrueColor or DirectColor
+displays.
+.TP
+.B +CA
+Create a colormap from each frame of a TrueColor anim. This can be useful
+if the colors radically change during the course of the animation. This
+can take a VERY,VERY long time at start up. Animation must be buffered.
+This option is ignored for TrueColor or DirectColor displays.
+.TP
+.B +Ca
+Remap all images to single new cmap created from all of the colormaps.
+.TP
+.B +Cd
+Use Floyd\-Steinberg dithering if needed for non\-monochrome displays.
+This will cause a reduction in playback speed.
+.TP
+.B +Cf
+Forcibly remap to all frames to 1st frame's cmap.
+.TP
+.B +CF0
+Disables +CF4.
+.TP
+.B +CF4
+This option samples the colors of true color
+animations ahead of time and forms a color
+lookup table.  Beats the just truncating to a
+RGB 332 color table and IMHO beats dithering.
+See the +s option below(also in copts submenu).
+NOTE: this is now on by default.
+.TP
+.B +Cg
+Convert TrueColor anims to gray scale. This option is ignored for
+TrueColor and DirectColor displays.
+.TP
+.B +Ch
+Use histogram to aid in color reduction. Histrogramming is only
+done on frames that are buffered.
+.TP
+.B +Cm
+This option is currently needed if you want to dither TrueColor anims
+to a 332 colormap. Animation must be buffered. Typically +bC3dm is
+the option to use. This can take a VERY long time at start up.
+.TP
+.B +Cn
+Don't create new colormap but instead allocate colors from the X11
+Display's default cmap.
+.TP
+.BI +Cs num
+This is the number of frames the +CF4 option looks
+at ahead of time. More frames potentially yields
+better colors results, but takes more time at
+start up.  default is 5.
+.RE
+.LP
+.I gopts
+SubMenu for Gamma Options
+.RS
+.TP 8
+.BI +Ga fnum 
+Set gamma of animation to be displayed.
+.TP
+.BI +Gd fnum 
+Set gamma of display. 1.0 is no change. gamma's greater than 1.0
+typically brighten the animation.
+.RE
+.LP
+.I mopts
+SubMenu for Median\-Cut Quantization Options
+.RS
+.TP 8
+.B +Ma
+compute box color from average of box.
+.TP
+.B +Mc
+compute box color as center of box.
+.TP
+.BI +Mb num
+Truncate rgb to 
+.I num
+bits before quantizing.
+.RE
+.LP
+.I sopts
+SubMenu for Scaling Options
+.RS
+.TP 8
+.B +Si
+Half the height of IFF anims if they are interlaced.(Not completely
+reliable since not all IFF anims correctly identify themselves as
+interlaced).
+.TP
+.B +Sn
+Prevents X11 window from resizing to match animations's size. 
+.TP
+.B +Sr
+Allow user to resize animation on the fly. Enlarging an animation
+can greatly reduce playback speed depending on the power of the cpu.
+.TP
+.BI +Ss fnum
+Scale the size of animation by 
+.I fnum
+before displaying.
+.TP
+.BI +Sh fnum
+Scale the horizontal size of the animation by 
+.I fnum
+before displaying.
+.TP
+.BI +Sv fnum
+Scale the vertical size of the animation by 
+.I fnum
+before displaying.
+.TP
+.BI +Sx num
+Scale the animation to have width 
+.I num
+before displaying.
+.TP
+.BI +Sy num
+Scale the animation to have height 
+.I num
+before displaying.
+.TP
+.B +Sc
+Copy display scaling factors to display buffering factors.
+.TP
+.BI +SS fnum
+Scale the size of the animation by 
+.I fnum
+before buffering it.
+.TP
+.BI +SH fnum
+Scale the horizontal size of the animation by 
+.I fnum
+before buffering it.
+.TP
+.BI +SV fnum
+Scale the vertical size of the animation by 
+.I fnum
+before buffering it.
+.TP
+.BI +SX num
+Scale the animation to have width 
+.I num
+before buffering it.
+.TP
+.BI +SY num
+Scale the animation to have height 
+.I num
+before buffering it.
+.TP
+.B +SC
+Copy buffer scaling factors to display scaling factors.
+.RE
+.LP
+.I wopts
+SubMenu for Remote Window and Control Options.
+.RS
+.TP 8
+.B NOTE:
+See the file Remote_Window.doc for more details.
+.TP
+.BI +W id
+Specify X11 Window
+.I id
+of window to draw into.
+.TP
+.B +Wd
+Don't refresh window at end of anim.
+.TP
+.BI +Wn string
+Use property 
+.I string
+for communication.  Default is XANIM_PROPERTY
+.TP
+.B +Wp
+Prepare anim, but don't start playing it.
+.TP
+.B +Wr
+Resize X11 Window to fit anim.
+.TP
+.BI +Wx num
+Position anim at x coordinate
+.I num.
+.TP
+.BI +Wy num
+Position anim at y coordinate
+.I num.
+.TP
+.B +Wc
+Position relative to center of anim.
+.RE
+.LP
+.I zopts
+SubMenu for Special Options
+.RS
+.TP 8
+.B +Ze
+XAnim will exit after playing through command line once.
+.TP
+.BI +Zp num
+XAnim pause at frame
+.I num
+and then wait for user input. Several pauses may be specified. Each group
+of pauses will only affect the animation immediately following them on
+the command line. Pauses will occur at least once.
+.TP
+.B +Zpe
+XAnim will pause on the last frame of the animation.
+.TP
+.B +Zr
+This option pops up the Remote Control Window. This overrides the default
+condition set in xanim_config.h. Remote Control support must be compiled
+into XAnim for this to work.
+.TP
+.B +Zv
+This option cause XAnim to exit prior to even displaying the animation. 
+This is useful in conjunction with the +v option if you just
+want to obtain info about the animation without actually playing it.
+.RE
+.LP
+Normal Options
+.RS
+.TP 8
+.B +b
+Uncompress and buffer images before displaying. This only applies to AVI, QT, 
+IFF, FLI, FLC, JPEG, MPEG and DL animations. 
+The rest(GIF87a, GIF89a, PFX and RLE) are currently always uncompressed 
+and buffered. This is cleared by the +f option.
+.TP
+.B +B
+Used X11 Shared Memory(if present) for unbuffered animations only.(This is
+mutually exclusive with +b above).
+.TP
+.B +D
+Use X11 Multi Buffering (if present) to smooth animations by double-buffering.
+Default is on.
+.TP
+.B +f
+Don't load anim into memory, but read each section only when needed. This is
+supported only for AVI, QT, IFF, FLI, FLC, JPEG, MPEG and DL animations. 
+This option is cleared by the +b option.
+This saves memory at the cost of speed.
+.TP
+.B +c
+let xanim know that iff anim is a nonlooping one.
+.TP
+.BI +d num
+debug switch. 
+.I num
+can be from 0(off) to 5(most) for level of detail.
+.TP
+.B +F
+Floyd-Steinberg dithering when needed.
+.TP
+.BI +j num
+.I num
+is the number of milliseconds between frames. if 0 then the time
+specified in the animation is used for timing purposes.
+.TP
+.BI +l num
+loop animation
+.I num
+number of times before moving on to next animation.
+.TP
+.BI +lp num
+ping\-pong animation
+.I num
+number of times before moving on to next animation.
+.TP
+.B +N
+don't display images. Useful for benchmarking.
+.TP
+.B +o
+turns on certain optimizations. See 
+.I xanim.readme.
+.TP
+.B +p
+Use Pixmap instead of Image in X11. This option has no effect if the
+animation is buffered(either by default or with the +b option).
+.TP
+.B +q
+Prevents XAnim from printing out the title header. Useful for when XAnim is
+called by other programs where no tty output is desired(doesn't affect +v
+or +d# options).
+.TP
+.B +root
+Tiles animation\/video onto X11 root screen.
+.TP
+.B +r
+Allow color cycling for IFF single images.
+.TP
+.B +R
+Allow color cycling for IFF anims. (default should be off)
+.TP
+.B +T0
+Title option 0. Title is just XAnim.
+.TP
+.B +T1
+Title option 1. Title is current anim name. When anim is stopped, the current
+frame number is included.
+.TP
+.B +T2
+Title option 2. Title is current anim name and current frame number.
+.TP
+.B +v
+Verbose mode. Gives some information about animation such as size,
+number of frames, etc.
+.TP
+.BI +V num
+Select X11 Visual to use when displaying animation. The
+.I num
+is obtained by using the +X option of xanim.
+.TP
+.BI +V class
+Select the best X11 Visual of Class
+.I class
+when displaying the animation. 
+.I class
+can be anyone of the following strings and is case insensitive. (ie
+StaTicGraY is same as staticgray).
+.RS
+.TP 14
+.B staticgray
+Select best StaticGray Visual.
+.TP
+.B grayscale
+Select best GrayScale Visual.
+.TP
+.B staticcolor
+Select best StaticColor Visual.
+.TP
+.B pseudocolor
+Select best PseudoColor Visual.
+.TP
+.B truecolor
+Select best TrueColor Visual.
+.TP
+.B directcolor
+Select best DirectColor Visual.
+.RE
+.TP
+.B +X
+X11 verbose mode. Display information about the support X11 visuals.
+.RE
+
+
+.SH WINDOW COMMANDS
+.LP
+Once the animation is up and running there are various commands that can
+be entered into that animation window from the keyboard.
+.LP
+.TP 10
+.B q
+quit.
+.TP
+.B Q
+Quit.
+.TP
+.B g
+Stop color cycling.
+.TP
+.B p
+Toggle ping pong flag for looping.
+.TP
+.B r
+Restore original Colors(useful after g).
+.TP
+.B w
+Restore original window size(useful after resizing).
+.TP
+.B z
+This pops up or removes the Remote Control Window. Remote Control support
+must be compiled into XAnim for this to work.
+.TP
+.B <space>
+Toggle. starts/stops animation.
+.TP
+.B ,
+Single step back one frame.
+.TP
+.B .
+Single step forward one frame.
+.TP
+.B <
+Go back to start of previous anim.
+.TP
+.B >
+Go forward to start of next anim.
+.TP
+.B m
+Single step back one frame staying within anim.
+.TP
+.B /
+Single step forward one frame staying within anim.
+.TP
+.B -
+Increase animation playback speed.
+.TP
+.B =
+Decrease animation playback speed.
+.TP
+.B 0
+Reset animation playback speed to original values.
+.TP
+AUDIO RELATED WINDOW COMMANDS
+.TP
+.B 1
+Decrement volume by 10.
+.TP
+.B 2
+Decrement volume by 1.
+.TP
+.B 3
+Increment volume by 1.
+.TP
+.B 4
+Increment volume by 10.
+.TP
+.B s
+Toggle. Audio Volume(MUTE). on/off.
+.TP
+.B 8
+Toggle. Main Speaker. on/off.
+.TP
+.B 9
+Toggle. Headphones. on/off.
+
+
+.SH MOUSE BUTTONS
+.LP
+Once the animation is up and running the mouse buttons have the following
+functions.
+.LP
+.TP 10
+.B <Left_Button>
+Single step back one frame.
+.TP 10
+.B <Middle_Button>
+Toggle. starts/stops animation.
+.TP 10
+.B <Right_Button>
+Single step forward one frame.
+.LP
+.SH BUFFERING, PIXMAPS and READ_FROM_FILE Options
+.LP
+XAnim by default will read the entire animation into memory. PFX,
+Moviesetter, GIF or URT RLE type animations are always uncompressed
+and stored in memory as individual images. 
+.LP
+For the AVI, QT, IFF, FLI/FLC, JPEG, MPEG and DL animations, only the
+compressed delta is stored. 
+These deltas are then uncompressed each time they need to be
+displayed. The buffer option(+b) may be used to potentially speed up
+playback by uncompressing and storing these images ahead of time. But
+more memory is used up in the process.
+.LP
+When an XPutImage is called, the image typically gets copied twice, once
+to memory and then from there onto the display. A pixmap is directly
+copied onto the display without the first copy. This is why it is 
+sometimes much faster to use the pixmap option(+p).  Each image isn't
+converted into a pixmap until the first time it is displayed. This is
+why the first loop of an animation using this option is sometimes
+slower than subsequent loops. While the pixmap option may improve
+playback speed, it will slow things down if on-the-fly scaling needs
+to be performed. This is because XAnim no longer has direct access
+to the image and needs to get a copy of it before it can be scaled.
+.LP
+The read from file option(+f) causes XAnim not to store the compressed
+deltas in memory. Instead as each image is to be displayed, XAnim reads
+the corresponding compressed delta from the file, expands it and then
+displays it. While this can dramatically cut down on memory usage, the
+necessary reads from disk(or whatever) can slow down playback speed.
+XAnim still needs to allocate one to three image buffers depending on
+the type of animation and the scaling options used. This option is only
+supported for AVI, QT, FLI/FLC, IFF, JPEG, MPEG and DL animations. The
+BODY chunk of IFF animations is not included in this. As a result, an 
+IFF animation that is made up of several BODY chunks will not currently 
+benefit from this option.
+.LP
+.SH SCALING Options
+.LP
+There are two sets of scaling options. One set, the display scaling
+factors,  affects the size of the animation as it is displayed. The
+other set, the buffer scaling factors, affect the size of the images
+as they are stored in memory(buffered). The buffer scaling factors
+only affect animations that are buffered and can greatly increase or
+decrease memory usage.
+
+These two sets are completely independent of each other. You can set
+the buffer scaling factors to 20 times the normal animation size
+and not affect the size at which that animation is displayed. The images
+are stored at 20 times the normal size(and at 400 times the memory
+usage), but then get scaled back down to normal size before being
+displayed. NOTE: that an animation must be buffered in order for
+the buffer scaling factors to have any affect on it. The display
+scaling factors affect all animations.
+
+You can create pixellation like affects by buffering the animation
+at 1/8 it's normal size, but keeping the display scaling factors
+at the original size. (IE "xanim +bSS0.125 anim.anim").
+
+Many times it's faster to store and display an animation with large
+dimensions at half-size. The option "+bSS0.5C" or "+bSS0.5s0.5"
+both will accomplish this. To save memory, you could even store
+the animation at half size and yet display it at full size. "+bSS0.5"
+will accomplish this.
+.LP
+.SH FORWARDS, BACKWARDS and OPTIMIZATION.
+.LP
+Many type of animations(FLI/FLC/IFF/some AVI and QTs) are compressed
+with forward playback in mind only. Each delta only stores the difference
+between the current frame and the previous frame. As a results, most
+of these animations don't display correctly when played backwards.
+Even when buffered up, these may not work, since XAnim only stores
+the smallest rectangle that encompasses the changes from the previous
+frame. You can force XAnim to store the entire frame by specifying
+the "-o" option to turn this optimization off. This will most likely
+use more memory and slow down the animation, since more of the image
+needs to be stored and/or displayed.
+.LP
+.SH COLOR OPTIONS
+.LP
+Most of this will be a TBD for a future rev and what's here might be
+sketchy, incomplete or just plain confusing.
+
+TrueColor and DirectColor displays don't need to worry about most
+of these options, as the animations can be displayed in their
+original colors(ignoring monitor variations etc). However, TrueColor
+and DirectColor displays can't display animations that employ color
+cycling techniques where the colormap changes from frame to frame.
+DirectColor could potentially support this, but not TrueColor.
+
+For the rest of the displays, the problem becomes matching the
+colors in the animations to the available colors of the Display.
+For most PseudoColor displays this means 256 colors. Many of
+which are already in use by various other programs. XAnim
+defaults to creating it's own colormap and using all the colors
+from that. The window manager then installs this new colormap,
+whenever the mouse pointer is inside the XAnim animation
+window(Sometimes a specific action is required
+to change the ColorMap Focus, like clicking in the window or pressing
+a specific key). In any case, this action usually causes all the other
+colors on the screen to be temporarily "messed-up" until the mouse is
+moved out of the animation window. The alternative, is to use
+the "+Cn" option. Now XAnim tries allocating all the colors it needs
+from the current colormap. If it can't get a certain color, then XAnim
+choose one that is "close" to this certain color. Close is completely
+arbitrary. The animation is now displayed in colors that are different
+than the original colors. This difference may or may not be noticeable.
+
+Another big problem is when the animations are what I called TrueColor
+animations. Where each pixel is stored as RGB triplets. For example,
+AVI 16 bit CRAM animations. Each pixel has 5 bits of Red, 5 bits of Green
+and 5 bits of Blue info associated with it. This means there can be up to
+32768 unique colors in each image. And on most PseudoColor displays we
+can only display 256 unique colors. Beside getting better displays, what
+can we do? XAnim defaults to truncating the RGB information from 555 to
+332. That is to 3 bits of Red, 3 bits of Green and 2 bits of Blue. Less
+on Blue because the human eye is more sensitive to Red and Green than Blue.
+This 332 colormap happens to be 256 colors in size, which nicely fits in with
+our display. If our display only had 64 colors, then XAnim is smart enough
+to truncate things down to 222. Now the problem is the colors of the
+displayed anim are noticeably different than the original colors.
+Typically you can see color banding etc. While this is fine to get
+a feel for the animation, we can do better. One of the solutions XAnim
+currently offers is the "+bC1" option. What this does is choose the
+the best 256 colors from the first image of the animation. Then each
+pixel of each subsequent image is remapped to one of these 256 colors.
+This takes up some CPU time up front and more memory since each image
+needs to be buffered, but results in a colors that are
+closer to the originals.  Another option, "+bCA", chooses the best 256 from
+each image, then 256 colors from all these colormaps are chosen as the
+final colormap.  This is useful if the colors in the first image aren't
+representative of the rest of the animation. This can be very slow. 
+Another option that is
+supported, but not really optimized for yet is "+bC3dm". This causes
+XAnim to use a 332 colormap and then apply a Floyd-Steinberg dither
+algorithm to each image.  Currently this is very slow. Different
+dithers(like Ordered) and better optimizations might speed this up in
+future revs. In general, handling of TrueColor animations in XAnim
+needs to be improved.
+
+Another scenario where colors need to be remapped, is when several
+images or animations with different colormaps need to be displayed.
+Changing the colormap usually results in an annoying flicker. One
+solution to this is to remap all of the images/animations to the
+same colormap. The "+Ca" option chooses the best colors from all the
+colormaps and then remaps all the images to it. The "+Cf" option,
+simply remaps everything to the first colormap.
+The "+Ch" option is useful when an animation's colormap
+specifies a lot of colors that aren't used. XAnim looks through
+each buffered image of the animation and makes a histogram of the
+useage of each color. This information is then used to weedout
+unused or rarely used colors.
+.LP
+.SH QUICKTIME ANIMATIONS
+.LP
+Quicktime animations are usually stored in two separate files. One
+is call a data fork and ends with a ".data". The other is a resource
+fork and ends in a ".rsrc". Sometimes these animations are in a 
+"flattened/merged fork" format, where everything is put into one file. 
+There's no standard naming format for these types of files, although
+usually .qt or .mov is used.
+
+For example, if you have a quicktime animation made up of two files named:
+"spin.rsrc" and "spin.data",  you can display them using Xanim
+with either of the following commands "xanim spin" or "xanim spin.rsrc".
+XAnim is smart enough to add/modfiy the ".rsrc" and ".data" endings as
+needed.
+
+If you use AUFS from the Columbia Appletalk Package, then Macintosh
+files have their data fork stored in the expected place, and the
+resource fork is in a file with the same name in a .resource
+subdirectory. Therefore, if the data fork is in "spin", and the resource
+fork is in ".resource/spin", the movie can be displayed with "xanim spin".
+
+For "flattened/merged_fork" quicktime animations, you need to specify 
+the entire file name.
+
+NOTE: XAnim doesn't support 100% of the quicktime format.
+.LP
+.SH AUTHOR
+.LP
+Mark Podlipec
+.LP
+podlipec@ici.net
+.LP
+http://xanim.va.pubnix.com/home.html
+http://smurfland.cit.buffalo.edu/xanim/home.html
+http://www.tm.informatik.uni-frankfurt.de/xanim/
+

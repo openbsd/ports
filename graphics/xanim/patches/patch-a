@@ -1,22 +1,20 @@
---- xa_audio.h.orig	Tue Mar 24 00:55:02 1998
-+++ xa_audio.h	Tue Dec  1 16:55:38 1998
-@@ -112,6 +112,7 @@
- #include <sys/stat.h>
- #include <sys/ioctl.h>
+--- xa_audio.h.orig	Thu Mar 18 21:51:23 1999
++++ xa_audio.h	Thu Mar 18 21:52:46 1999
+@@ -114,6 +114,17 @@
  #include <sys/ioccom.h>
+ #endif
+ 
++/*********************** OpenBSD INCLUDES *******************************/
++#ifdef XA_OpenBSD_AUDIO
++#include <errno.h>
++#include <fcntl.h>
++#include <sys/audioio.h>
++#include <sys/file.h>
++#include <sys/stat.h>
++#include <sys/ioctl.h>
++#include <sys/ioccom.h>
 +#include <machine/endian.h>
- #endif
++#endif
  
- 
-@@ -138,8 +139,10 @@
- #else
- #define _FILE_DSP "/dev/dsp"
- #define _FILE_MIXER "/dev/mixer"
--#ifdef __FreeBSD__
-+#if defined(__FreeBSD__) 
- #include <machine/soundcard.h>
-+#elif defined(__OpenBSD__)
-+#include <soundcard.h>
- #else
- #include <sys/soundcard.h>
- #endif
+ /*********************** LINUX INCLUDES ********************************/
+ #ifdef XA_LINUX_AUDIO

@@ -1,38 +1,153 @@
---- Imakefile.orig	Tue Mar 24 00:55:08 1998
-+++ Imakefile	Tue Dec  1 17:37:03 1998
-@@ -165,7 +165,7 @@
- XCOMM XA_AUDIO_DEFS =
- XCOMM
- XCOMM -- Sun Sparcs -----------------------------------------------------------
--XA_AUDIO_DEFS = -DXA_SPARC_AUDIO
-+XCOMM XA_AUDIO_DEFS = -DXA_SPARC_AUDIO
- XCOMM
- XCOMM NOTE: Imakefile should add the -DSVR4 to Sun Solaris machines, if not
- XCOMM       use the following:
-@@ -195,7 +195,7 @@
- XCOMM XA_AUDIO_DEFS = -DXA_SONY_AUDIO
- XCOMM
- XCOMM -- NetBSD-current (as of 30/April 1995)----------------------------------
--XCOMM XA_AUDIO_DEFS = -DXA_NetBSD_AUDIO
-+XA_AUDIO_DEFS = -DXA_NetBSD_AUDIO
- XCOMM
- XCOMM -- QNX 4.2 PC's ---------------------------------------------------------
- XCOMM XA_AUDIO_DEFS = -DXA_LINUX_AUDIO -DXA_LINUX_NEWER_SND -DXA_SELECT
-@@ -325,7 +325,7 @@
- XCOMM   -- following symbols(XmbufDisplayBuffers, XmbufQueryExtension,
- XCOMM   --  XmbufCreateBuffers).
- XCOMM   -- NOTE_7: HP-UX machines need to comment this out.
--XCOMM XA_MULTIBUF = -DXMBUF
-+XA_MULTIBUF = -DXMBUF
- XCOMM
- XCOMM ********************
-  
-@@ -345,7 +345,7 @@
+--- xa_acodec.c.orig	Thu Mar 18 22:13:16 1999
++++ xa_acodec.c	Thu Mar 18 22:24:09 1999
+@@ -198,7 +198,17 @@
+   {
+     if (inc_cnt < (1<<24))
+     {	/*** Decode Sample ***/
+-      dataL = (spec & 4)?(ibuf[1]):(*ibuf);	
++	   if (snd_hdr->volume_boost)
++			{
++			unsigned c = snd_hdr->volume_boost;
++			unsigned d = 8 - c;
++			if (spec & 4)
++				dataL = (ibuf[1]<<c) | (ibuf[0]>>d);
++			else
++				dataL = (ibuf[0]<<c) | (ibuf[1]>>d);
++			}
++		else
++			dataL = (spec & 4)?(ibuf[1]):(*ibuf);	
+       ibuf += bps;	byte_cnt += bps;	samp_cnt--;
+       inc_cnt += inc;
+     }
+@@ -1884,6 +1894,19 @@
+   new_snd->inc = inc = (xaULONG)( finc * (double)(1<<24) );
+   new_snd->inc_cnt = 0;
  
- PROGRAMS = xanim
++  if (vaudiof->amp_scale < 2.0)
++  	new_snd->volume_boost = 0;
++  else if (vaudiof->amp_scale < 4.0)
++  	new_snd->volume_boost = 1;
++  else if (vaudiof->amp_scale < 8.0)
++  	new_snd->volume_boost = 2;
++  else if (vaudiof->amp_scale < 16.0)
++  	new_snd->volume_boost = 3;
++  else if (vaudiof->amp_scale < 32.0)
++  	new_snd->volume_boost = 4;
++  else 
++  	new_snd->volume_boost = 5;
++
+   /* Determine Chunk Time */
+   ftime = ((double)(xa_vaudio_hard_buff) * 1000.0) / (double)(hfreq);
+   new_snd->ch_time = (xaLONG)ftime;
+@@ -2167,6 +2190,7 @@
+       break;
  
--INCLUDES = -I$(INCDIR) $(XA_INCS)
-+INCLUDES = -I$(INCDIR)/X11 $(XA_INCS)
- 
- 
-    LIBS1 = $(XA_LIBS) $(EXTENSIONLIB) $(XTOOLLIB) $(XLIB) -lm
+     case XA_AUDIO_LINEAR_1M:
++    case XA_AUDIO_SIGNED_1M:
+       {
+ 	switch(itype)
+ 	{
+@@ -2183,7 +2207,8 @@
+ 	  case XA_AUDIO_LINEAR_2SL:
+ 	  case XA_AUDIO_LINEAR_2SB:
+ 		new_snd->spec = 
+-		    ((itype & XA_AUDIO_TYPE_MASK)==XA_AUDIO_LINEAR)?(0):(1);
++		    ((itype & XA_AUDIO_TYPE_MASK)==
++			 	(xa_audio_hard_type & XA_AUDIO_TYPE_MASK))?(0):(1);
+ 		if (itype & XA_AUDIO_BPS_2_MSK)
+ 		  new_snd->spec |= (itype & XA_AUDIO_BIGEND_MSK)?(2):(4);
+ 		if (itype & XA_AUDIO_STEREO_MSK)
+@@ -2195,12 +2220,16 @@
+ 		if (xa_audio_hard_type & XA_AUDIO_BIGEND_MSK)
+ 			new_snd->spec = 0 | 4 | 8;
+ 		else	new_snd->spec = 1 | 4 | 8;
++		if (xa_audio_hard_type == XA_AUDIO_LINEAR_1M)
++			new_snd->spec |= 2;
+ 		new_snd->delta = XA_ADecode_ULAWx_PCMxM;
+ 		break;
+ 	  case XA_AUDIO_ULAW:
+ 		if (xa_audio_hard_type & XA_AUDIO_BIGEND_MSK)
+ 			new_snd->spec = 0 | 4;
+ 		else	new_snd->spec = 1 | 4;
++		if (xa_audio_hard_type == XA_AUDIO_LINEAR_1M)
++			new_snd->spec |= 2;
+ 		new_snd->delta = XA_ADecode_ULAWx_PCMxM;
+ 		break;
+ 	  case XA_AUDIO_ALAWS:
+@@ -2219,48 +2248,68 @@
+ 		if (xa_audio_hard_type & XA_AUDIO_BIGEND_MSK)
+ 			new_snd->spec = 0 | 4 | 8;
+ 		else	new_snd->spec = 1 | 4 | 8;
++		if (xa_audio_hard_type == XA_AUDIO_LINEAR_1M)
++			new_snd->spec |= 2;
+ 		new_snd->delta = XA_ADecode_ARMLAWx_PCMxM;
+ 		break;
+ 	  case XA_AUDIO_ARMLAW:
+ 		if (xa_audio_hard_type & XA_AUDIO_BIGEND_MSK)
+ 			new_snd->spec = 0 | 4;
+ 		else	new_snd->spec = 1 | 4;
++		if (xa_audio_hard_type == XA_AUDIO_LINEAR_1M)
++			new_snd->spec |= 2;
+ 		new_snd->delta = XA_ADecode_ARMLAWx_PCMxM;
+ 		break;
+ 	  case XA_AUDIO_ADPCM_M:
+-		new_snd->spec = 2 | 4;  /* 1 byte output */
++		new_snd->spec = 4;  /* 1 byte output */
++		if (xa_audio_hard_type == XA_AUDIO_LINEAR_1M)
++			new_snd->spec |= 2;
+ 		new_snd->delta = XA_ADecode_ADPCMM_PCM2M;
+ 		break;
+ 	  case XA_AUDIO_ADPCM_S:
+-		new_snd->spec = 2 | 4;  /* 1 byte output */
++		new_snd->spec = 4;  /* 1 byte output */
++		if (xa_audio_hard_type == XA_AUDIO_LINEAR_1M)
++			new_snd->spec |= 2;
+ 		new_snd->delta = XA_ADecode_ADPCMS_PCM2M;
+ 		break;
+ 	  case XA_AUDIO_DVI_M:
+-		new_snd->spec = 2 | 4;  /* 1 byte output */
++		new_snd->spec = 4;  /* 1 byte output */
++		if (xa_audio_hard_type == XA_AUDIO_LINEAR_1M)
++			new_snd->spec |= 2;
+ 		new_snd->delta = XA_ADecode_DVIM_PCMxM;
+ 		break;
+ 	  case XA_AUDIO_DVI_S:
+-		new_snd->spec = 2 | 4;  /* 1 byte output */
++		new_snd->spec = 4;  /* 1 byte output */
++		if (xa_audio_hard_type == XA_AUDIO_LINEAR_1M)
++			new_snd->spec |= 2;
+ 		new_snd->delta = XA_ADecode_DVIS_PCMxM;
+ 		break;
+ 	  case XA_AUDIO_IMA4_M:
+-		new_snd->spec = 2 | 4;  /* 1 byte output */
++		new_snd->spec = 4;  /* 1 byte output */
++		if (xa_audio_hard_type == XA_AUDIO_LINEAR_1M)
++			new_snd->spec |= 2;
+ 		new_snd->delta = XA_ADecode_IMA4M_PCMxM;
+ 		break;
+ 	  case XA_AUDIO_IMA4_S:
+-		new_snd->spec = 2 | 4;  /* 1 byte output */
++		new_snd->spec = 4;  /* 1 byte output */
++		if (xa_audio_hard_type == XA_AUDIO_LINEAR_1M)
++			new_snd->spec |= 2;
+ 		new_snd->delta = XA_ADecode_IMA4S_PCMxM;
+ 		break;
+ #ifdef GSM
+ 	  case XA_AUDIO_GSM:
+ 	  case XA_AUDIO_MSGSM:
+-		new_snd->spec = 2 | 4;  /* 1 byte output */
++		new_snd->spec = 4;  /* 1 byte output */
++		if (xa_audio_hard_type == XA_AUDIO_LINEAR_1M)
++			new_snd->spec |= 2;
+ 		if (itype == XA_AUDIO_MSGSM_M) new_snd->spec |= 0x80;
+ 		new_snd->delta = XA_ADecode_GSMM_PCMxM;
+ 		break;
+ #endif
+ 	  case XA_AUDIO_NOP:
+-		new_snd->spec = 2 | 4;  /* 1 byte output */
++		new_snd->spec = 4;  /* 1 byte output */
++		if (xa_audio_hard_type == XA_AUDIO_LINEAR_1M)
++			new_snd->spec |= 2;
+ 		new_snd->delta = XA_ADecode_NOP_PCMXM;
+ 		break;
+ 	  default:

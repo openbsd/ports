@@ -11,3 +11,6 @@ IMPORTANT: some recent animations have improper 16 bits sound, that does
 only use a very small range of the available values. This will sound like
 crap on an 8 bit machine, unless you use +AS<mult> to scale the audio
 samples by mult.
+
+The current codec recognition is somewhat poor, as Mark Podlipec does not
+release every module for every arch.
