@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/01/05 16:35:59 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2001/03/12 15:20:13 wilfried Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	crack5.0
@@ -31,7 +31,7 @@ pre-build:
 	fi)
 
 do-build:
-	(cd ${WRKSRC} ; ./Crack -makeonly)
+	(cd ${WRKSRC} ; CC="${CC}" CFLAGS="${CFLAGS}" ./Crack -makeonly)
 	(cd ${WRKSRC} ; ./Crack -makedict)
 .if !defined(USE_DES)
 	@#(cd ${WRKSRC} ; ./Crack -fgnd -fmt bsd ${FILESDIR}/pw-md5.test)

@@ -1,6 +1,16 @@
---- Crack.orig	Fri Dec 20 18:09:41 1996
-+++ Crack	Thu May  4 18:59:18 2000
-@@ -279,23 +279,11 @@
+--- Crack.orig	Sat Dec 21 02:09:41 1996
++++ Crack	Mon Mar 12 16:17:16 2001
+@@ -42,8 +42,7 @@ C5FLAGS="-DUSE_STRING_H -DUSE_STDLIB_H -
+ #
+ 
+ # vanilla unix cc
+-CC=cc
+-CFLAGS="-g -O $C5FLAGS"
++CFLAGS="$CFLAGS $C5FLAGS"
+ #LIBS=-lcrypt # uncomment only if necessary to use stdlib crypt(), eg: NetBSD MD5
+ 
+ # gcc 2.7.2
+@@ -279,23 +278,11 @@ fi
  # Sanity test bindir - written in gruntscript for clarity.
  ###
  
@@ -25,7 +35,7 @@
  	elif [ -d run/bin/$1 ]          # have been here before
  	then
  		bindir=run/bin/$1
-@@ -305,20 +293,20 @@
+@@ -305,20 +292,20 @@ then
  		bindir=run/bin/$1
  		shift
  	else                            # use generic name
