@@ -1,9 +1,9 @@
-$OpenBSD: patch-driver_Makefile_in,v 1.2 2002/01/26 23:59:49 lebel Exp $
---- driver/Makefile.in.orig	Wed Jan  2 03:15:24 2002
-+++ driver/Makefile.in	Sat Jan 26 14:14:50 2002
-@@ -8,7 +8,7 @@
- srcdir		= @srcdir@
- VPATH		= @srcdir@
+$OpenBSD: patch-driver_Makefile_in,v 1.3 2002/06/26 02:36:04 lebel Exp $
+--- driver/Makefile.in.orig	Tue Jun 11 05:09:07 2002
++++ driver/Makefile.in	Tue Jun 25 21:21:50 2002
+@@ -10,7 +10,7 @@ VPATH		= @srcdir@
+ top_srcdir	= @top_srcdir@
+ top_builddir	= ..
  
 -install_prefix	=
 +install_prefix	= $(DESTDIR)
