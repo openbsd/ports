@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2001/12/24 07:51:05 mark Exp $
+# $OpenBSD: Makefile,v 1.14 2002/02/24 01:00:23 mark Exp $
 
 COMMENT=	visio-like technical drawing
 
 DISTNAME=	dia-0.88.1
 CATEGORIES=	graphics
-NEED_VERSION=	1.409
+NEED_VERSION=	1.504
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/dia
 
