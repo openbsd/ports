@@ -1,6 +1,6 @@
-$OpenBSD: patch-language_modula3_m3compiler_m3cc_gcc_config_i386_i386_c,v 1.1.1.1 2002/02/23 12:30:18 naddy Exp $
---- language/modula3/m3compiler/m3cc/gcc/config/i386/i386.c.orig	Thu Feb  6 22:32:29 1997
-+++ language/modula3/m3compiler/m3cc/gcc/config/i386/i386.c	Fri Sep  7 17:49:46 2001
+$OpenBSD: patch-language_modula3_m3compiler_m3cc_gcc_config_i386_i386_c,v 1.2 2004/01/04 18:04:28 espie Exp $
+--- language/modula3/m3compiler/m3cc/gcc/config/i386/i386.c.orig	2000-11-24 22:21:19.000000000 +0100
++++ language/modula3/m3compiler/m3cc/gcc/config/i386/i386.c	2004-01-04 18:27:05.000000000 +0100
 @@ -1785,7 +1785,7 @@ function_prologue (file, size)
        xops[1] = pic_label_rtx;
  
@@ -43,16 +43,16 @@ $OpenBSD: patch-language_modula3_m3compiler_m3cc_gcc_config_i386_i386_c,v 1.1.1.
  		 gen_rtx (CONST_INT, Pmode, CODE_LABEL_NUMBER (xops[1]))));
    } 
  }
-@@ -2805,6 +2813,12 @@ print_operand (file, x, code)
- 	case '*':
- 	  if (USE_STAR)
+@@ -2807,6 +2815,12 @@ print_operand (file, x, code)
  	    putc ('*', file);
-+	  return;
-+
+ 	  return;
+ 
 +	case '_':
 +#ifdef YES_UNDERSCORES
 +	  putc ('_', file);
 +#endif
- 	  return;
- 
++	  return;
++
  	case 'L':
+ 	  PUT_OP_SIZE (code, 'l', file);
+ 	  return;
