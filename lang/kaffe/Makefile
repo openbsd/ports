@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.transvirtual.com/pub/kaffe/
 
 MAINTAINER=	ports@OpenBSD.ORG
 
+CONFIGURE_ENV=	LDFLAGS="-L/usr/local/lib"
 GNU_CONFIGURE=	yes
 
 post-install:
