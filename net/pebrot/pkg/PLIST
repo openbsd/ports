@@ -1,16 +1,34 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/30 09:32:55 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/01/28 04:58:19 kevlo Exp $
 bin/pebrot
-lib/python${MODPY_VERSION}/site-packages/MSN.py
-lib/python${MODPY_VERSION}/site-packages/MSN.pyc
-lib/python${MODPY_VERSION}/site-packages/pebrot.py
-lib/python${MODPY_VERSION}/site-packages/pebrot.pyc
-lib/python${MODPY_VERSION}/site-packages/ui.py
-lib/python${MODPY_VERSION}/site-packages/ui.pyc
+lib/python${MODPY_VERSION}/site-packages/pypebrot/MSN.py
+lib/python${MODPY_VERSION}/site-packages/pypebrot/MSN.pyc
+lib/python${MODPY_VERSION}/site-packages/pypebrot/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pypebrot/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pypebrot/pebrot.py
+lib/python${MODPY_VERSION}/site-packages/pypebrot/pebrot.pyc
+lib/python${MODPY_VERSION}/site-packages/pypebrot/ui.py
+lib/python${MODPY_VERSION}/site-packages/pypebrot/ui.pyc
+share/doc/pebrot/AUTHORS
+share/doc/pebrot/COPYING
+share/doc/pebrot/ChangeLog
 share/doc/pebrot/README
-share/examples/pebrot/logos/README
-share/examples/pebrot/logos/moo.txt
-share/examples/pebrot/logos/pebrot.txt
-share/examples/pebrot/pebrotrc
-@dirrm share/examples/pebrot/logos
-@dirrm share/examples/pebrot
+share/doc/pebrot/logos/README
+share/doc/pebrot/logos/moo.txt
+share/doc/pebrot/logos/pebrot.txt
+share/doc/pebrot/pebrotrc
+share/doc/pebrot/utils/enc.py
+share/doc/pebrot/utils/example.py
+share/doc/pebrot/utils/getkeys.py
+share/doc/pebrot/utils/keymap.py
+share/doc/pebrot/utils/transparent_bg/README
+share/doc/pebrot/utils/transparent_bg/setup.py
+share/doc/pebrot/utils/transparent_bg/usedefault.c
+share/locale/es/LC_MESSAGES/pebrot.mo
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale
+@dirrm share/doc/pebrot/utils/transparent_bg
+@dirrm share/doc/pebrot/utils
+@dirrm share/doc/pebrot/logos
 @dirrm share/doc/pebrot
+@dirrm lib/python${MODPY_VERSION}/site-packages/pypebrot

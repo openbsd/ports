@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2003/12/30 09:32:45 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2004/01/28 04:58:15 kevlo Exp $
 
 COMMENT=	"text-based MSN messenger client"
 
-DISTNAME=	pebrot-0.8.2
+DISTNAME=	pebrot-0.8.3
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	net
 
@@ -28,20 +28,5 @@ FLAVOR?=
 .if ${FLAVOR:L:Mcjk}
 RUN_DEPENDS=	:py-cjkcodecs-*:converters/py-cjkcodecs
 .endif
-
-DOCDIR=		${PREFIX}/share/doc/pebrot
-EXAMPLESDIR=	${PREFIX}/share/examples/pebrot
-
-pre-build:
-	 @perl -pi -e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR}/,g' \
-		${WRKSRC}/pebrot.py
-
-post-install:
-	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/pebrot ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/pebrotrc ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCDIR}
-	cp -R ${WRKSRC}/logos ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
