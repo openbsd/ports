@@ -12,7 +12,6 @@ devel/glib
 devel/gmake
 devel/id-utils
 devel/m4
-devel/mm
 editors/emacs
 graphics/aalib
 graphics/compface
@@ -23,7 +22,7 @@ graphics/png
 graphics/tiff34
 lang/tcl80
 mail/fetchmail
-mail/mm
+mail/metamail
 mail/nmh
 mail/pine
 math/gnuplot
