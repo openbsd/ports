@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/30 20:36:28 djm Exp $
+libexec/passwdqc
+@man man/cat8/passwdqc.0

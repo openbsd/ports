@@ -1,0 +1,5 @@
+passwdqc is a plugin password strength checker for OpenBSD's
+/usr/bin/passwd. It is basically a thin wrapper around Solar
+Designer's excellent password complexity checking code from
+pam_passwdqc. It allows more control over password quality 
+enforcement than the built-in checks in passwd(1).
