@@ -1,7 +1,6 @@
-$OpenBSD: patch-getopt_getopt_c,v 1.1 2002/05/19 20:02:05 naddy Exp $
---- getopt/getopt.c.orig	Sun May 19 21:41:08 2002
-+++ getopt/getopt.c	Sun May 19 21:41:26 2002
-@@ -43,6 +43,7 @@ USA.  */
+--- getopt/getopt.c.orig	Tue Oct  7 14:31:42 2003
++++ getopt/getopt.c	Tue Oct  7 14:31:56 2003
+@@ -43,6 +43,7 @@
  #endif
  
  #include <stdio.h>

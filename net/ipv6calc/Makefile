@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/11/12 22:20:29 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2003/10/07 15:58:20 pvalchev Exp $
 
 COMMENT=	"tool for manipulating IPv6 addresses"
 
-DISTNAME=	ipv6calc-0.45
+DISTNAME=	ipv6calc-0.46
 CATEGORIES=	net
-HOMEPAGE=	http://www.bieringer.de/linux/IPv6/index.html
+HOMEPAGE=	http://www.deepspace6.net/projects/ipv6calc.html
 
 MAINTAINER=	Vladimir Kotal <vlada@openbsd.cz>
 
@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/ \
 		ftp://ftp.nvg.ntnu.no/pub/IPv6/bieringer/ipv6calc/ \
 		ftp://ftp3.linux.it/pub/mirrors/IPv6/bieringer/ipv6calc/
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -27,5 +28,6 @@ REGRESS_TARGET=	test
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ipv6calc/ipv6calc ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/ipv6logconv/ipv6logconv ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/ipv6logstats/ipv6logstats ${PREFIX}/bin/
 
 .include <bsd.port.mk>
