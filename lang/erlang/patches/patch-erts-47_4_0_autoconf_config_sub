@@ -1,6 +1,7 @@
---- erts-47.4.0/autoconf/config.sub.~1~	Wed Dec  9 12:50:54 1998
-+++ erts-47.4.0/autoconf/config.sub	Wed Dec  9 12:53:47 1998
-@@ -641,7 +641,7 @@
+$OpenBSD: patch-erts-47_4_0_autoconf_config_sub,v 1.1 2001/10/14 17:24:13 espie Exp $
+--- erts-47.4.0/autoconf/config.sub.orig	Tue Dec  8 17:07:13 1998
++++ erts-47.4.0/autoconf/config.sub	Sun Oct 14 18:11:19 2001
+@@ -641,7 +641,7 @@ case $os in
  	      | -hiux* | -386bsd* | -netbsd* | -freebsd* | -riscix* \
  	      | -lynxos* | -bosx* | -nextstep* | -cxux* | -aout* | -elf* \
  	      | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
