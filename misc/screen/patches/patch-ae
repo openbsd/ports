@@ -1,0 +1,21 @@
+--- configure.~1~	Fri May  2 07:37:26 1997
++++ configure	Tue Apr 14 11:19:12 1998
+@@ -3032,12 +3032,12 @@
+ 
+ {
+ test -n "$verbose" && \
+-echo "	defining" ETCSCREENRC to be "\"$prefix/etc/screenrc\""
+-echo "#define" ETCSCREENRC "\"$prefix/etc/screenrc\"" >> confdefs.h
+-DEFS="$DEFS -DETCSCREENRC=\"$prefix/etc/screenrc\""
+-ac_sed_defs="${ac_sed_defs}\${ac_dA}ETCSCREENRC\${ac_dB}ETCSCREENRC\${ac_dC}\"$prefix/etc/screenrc\"\${ac_dD}
+-\${ac_uA}ETCSCREENRC\${ac_uB}ETCSCREENRC\${ac_uC}\"$prefix/etc/screenrc\"\${ac_uD}
+-\${ac_eA}ETCSCREENRC\${ac_eB}ETCSCREENRC\${ac_eC}\"$prefix/etc/screenrc\"\${ac_eD}
++echo "	defining" ETCSCREENRC to be "\"/etc/screenrc\""
++echo "#define" ETCSCREENRC "\"/etc/screenrc\"" >> confdefs.h
++DEFS="$DEFS -DETCSCREENRC=\"/etc/screenrc\""
++ac_sed_defs="${ac_sed_defs}\${ac_dA}ETCSCREENRC\${ac_dB}ETCSCREENRC\${ac_dC}\"/etc/screenrc\"\${ac_dD}
++\${ac_uA}ETCSCREENRC\${ac_uB}ETCSCREENRC\${ac_uC}\"/etc/screenrc\"\${ac_uD}
++\${ac_eA}ETCSCREENRC\${ac_eB}ETCSCREENRC\${ac_eC}\"/etc/screenrc\"\${ac_eD}
+ "
+ }
+ 

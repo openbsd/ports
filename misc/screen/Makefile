@@ -3,7 +3,7 @@
 # Date created:         17 November 1997
 # Whom:                 gene
 #
-# $OpenBSD: Makefile,v 1.3 1998/02/11 04:24:20 flipk Exp $
+# $OpenBSD: Makefile,v 1.4 1998/04/14 20:34:21 marc Exp $
 #
 
 DISTNAME=       screen-3.7.4
@@ -21,11 +21,18 @@ post-install:
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	 fi
 	@install-info ${PREFIX}/info/screen.info ${PREFIX}/info/dir
-	@if [ -f ${PREFIX}/etc/screenrc ]; then \
-	 echo "Copying ${PREFIX}/etc/screenrc to ${PREFIX}/etc/screenrc.old.";\
-	 ${CP} ${PREFIX}/etc/screenrc ${PREFIX}/etc/screenrc.old; \
-	fi
-	@echo "Installing ${PREFIX}/etc/screenrc."
-	${CP} ${WRKSRC}/etc/etcscreenrc ${PREFIX}/etc/screenrc
+	@${MKDIR} ${PREFIX}/lib/screen
+	@${INSTALL_DATA} ${WRKSRC}/etc/etcscreenrc ${PREFIX}/lib/screen/screenrc
+	@${INSTALL_DATA} ${WRKSRC}/terminfo/screencap ${PREFIX}/lib/screen
+	@${ECHO} ""
+	@${ECHO} "*** The latest version of the screenrc and screencap files"
+	@${ECHO} "*** can be found ${PREFIX}/lib/screen"
+	@if [ -f /etc/screenrc ]; then \
+	  ${ECHO} "*** Your /etc/screenrc has NOT been changed"; \
+	 else \
+	  cp ${PREFIX}/lib/screen/screenrc /etc; \
+	  ${ECHO} "*** screenrc has been copied into /etc"; \
+	 fi
+	@${ECHO} ""
 
 .include <bsd.port.mk>

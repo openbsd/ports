@@ -1,7 +1,20 @@
-bin/screen
 bin/screen-3.7.4
+@exec ln -sf %f %B/screen
+@unexec rm -f %B/screen
 man/man1/screen.1
 @unexec install-info --delete %D/info/screen.info %D/info/dir
 info/screen.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/screen.info %D/info/dir
+lib/screen/screencap
+lib/screen/screenrc
+@exec echo ""
+@exec echo "*** The latest version of the screenrc and screencap files"
+@exec echo "*** can be found %D/lib/screen"
+@exec if [ -f /etc/screenrc ]; then echo "*** Your /etc/screenrc has NOT been changed"; else cp %B/%f /etc; echo "*** screenrc has been copied into /etc"; fi
+@exec echo ""
+@dirrm lib/screen
+@unexec echo ""
+@unexec echo "*** To completely uninstall this package you must also remove"
+@unexec echo "*** the file /etc/screenrc by hand"
+@unexec echo ""
