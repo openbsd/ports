@@ -1,7 +1,7 @@
 --- libjbig/Makefile.orig	Fri Apr 10 21:33:27 1998
-+++ libjbig/Makefile	Sat May  8 15:10:58 1999
++++ libjbig/Makefile	Wed Jun  9 10:24:38 1999
 @@ -2,12 +2,14 @@
- # $Id: patch-ab,v 1.1.1.1 1999/05/08 19:17:39 brad Exp $
+ # $Id: patch-ab,v 1.2 1999/06/11 18:28:00 brad Exp $
  
  # Select an ANSI/ISO C compiler here, GNU gcc is recommended
 -CC = gcc
@@ -24,13 +24,13 @@
  
 +$(SOJBIGLIB): jbig.so jbig_tab.so
 +	rm -f ${.TARGET}
-+	ld -Bshareable -o ${.TARGET} ${.ALLSRC}
++	ld -Bshareable -Bforcearchive -o ${.TARGET} ${.ALLSRC}
 +	
  jbig.o: jbig.c jbig.h
  
 +.SUFFIXES: .c .so
 +.c.so:
-+	${CC} -c -fPIC -DPIC ${CFLAGS} ${.IMPSRC} -o ${.TARGET}
++	${CC} -c -fpic -DPIC ${CFLAGS} ${.IMPSRC} -o ${.TARGET}
 +jbig.so: jbig.c jbig.h
 +jbig_tab.so: jbig_tab.c
 +

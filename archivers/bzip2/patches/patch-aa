@@ -31,7 +31,7 @@
 +
 +lib.so.${VER}: $(OBJS:S/o$/so/g)
 +	rm -f libbz2.so.${VER}
-+	ld -Bshareable -o libbz2.so.${VER} $(OBJS:S/o$/so/g)
++	ld -Bshareable -Bforcearchive -o libbz2.so.${VER} $(OBJS:S/o$/so/g)
  
  test: bzip2
  	@cat words1
@@ -49,7 +49,7 @@
  	$(CC) $(CFLAGS) -c $*.c -o $*.o
 +
 +.c.so:
-+	$(CC) -fPIC -DPIC $(CFLAGS) -c $*.c -o $*.so
++	$(CC) -fpic -DPIC $(CFLAGS) -c $*.c -o $*.so
  
  tarfile:
  	tar cvf interim.tar *.c *.h Makefile manual.texi manual.ps LICENSE bzip2.1 bzip2.1.preformatted bzip2.txt words1 words2 words3 sample1.ref sample2.ref sample1.bz2 sample2.bz2 *.html README CHANGES libbz2.def libbz2.dsp dlltest.dsp 
