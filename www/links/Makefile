@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/07/10 22:51:49 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/03 00:01:19 margarida Exp $
 
 COMMENT=	"text browser, displays while downloading"
 
-DISTNAME=	links-0.96
+VERSION=	0.98
+DISTNAME=	links-${VERSION}
 CATEGORIES=	www
-NEED_VERSION=	1.402
 
 HOMEPAGE=	http://artax.karlin.mff.cuni.cz/%7Emikulas/links/
 MAINTAINER=	Marc Espie <espie@openbsd.org>
@@ -15,7 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://artax.karlin.mff.cuni.cz/%7Emikulas/links/download/
+MASTER_SITES=	http://artax.karlin.mff.cuni.cz/%7Emikulas/links/download/ \
+		http://links.sourceforge.net/download/
+
 CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
