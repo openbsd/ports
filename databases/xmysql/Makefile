@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2002/05/26 15:09:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/07/19 18:26:18 pvalchev Exp $
 # $FreeBSD: ports/databases/xmysql/Makefile,v 1.22 1999/08/31 06:41:26 mharo Exp $
 
 COMMENT=	"X11 front end to the MySQL database engine"
 
 DISTNAME=	xmysql-1.9
 CATEGORIES=	databases
-NEED_VERSION=	1.515
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +17,8 @@ MASTER_SITES=	http://www.tcx.se/Contrib/ \
 		http://web.tryc.on.ca/mysql/Downloads/Contrib/
 
 LIB_DEPENDS=	forms.0::x11/xforms \
-		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
+		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql \
+		jpeg.::graphics/jpeg
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 
