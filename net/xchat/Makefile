@@ -1,40 +1,52 @@
-# $OpenBSD: Makefile,v 1.28 2001/06/26 21:03:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2001/07/25 11:19:38 shell Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 
 COMMENT=	"X-Chat is an X11 IRC client"
 
-DISTNAME=	xchat-1.6.4
+MAJOR=		1.8
+VERSION=	${MAJOR}.1
+DISTNAME=	xchat-${VERSION}
 CATEGORIES=	net x11
-NEED_VERSION=	1.402
-MASTER_SITES=	http://xchat.org/files/source/1.6/ \
-		http://xchat.linuxpower.org/files/source/1.6/
+NEED_VERSION=	1.427
+
+MASTER_SITES=	http://xchat.org/files/source/${MAJOR}/ \
+		http://xchat.linuxpower.org/files/source/${MAJOR}/
+
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.xchat.org/
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
-		gdk_pixbuf::graphics/gdk-pixbuf
-
-MAINTAINER=	Couderc Damien <couderc.damien@wanadoo.fr>
+MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_GMAKE=	Yes
-USE_X11=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS= --disable-gnome --disable-imlib --disable-python
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+
+FLAVORS=	ssl
+FLAVOR?=
+
+CONFIGURE_ARGS+= --disable-imlib --disable-python --disable-gnome
+CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-post-patch:
-	@touch ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
+USE_GMAKE=	Yes
+USE_X11=	Yes
+
+LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
+		gdk_pixbuf::graphics/gdk-pixbuf
+
+.if ${FLAVOR:L:Mssl}
+CONFIGURE_ARGS+= --enable-openssl="/usr"
+.endif
+
+DOCDIR=		${PREFIX}/share/doc/xchat
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xchat
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xchat
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/xchat
+	${INSTALL_DATA_DIR} ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCDIR}
 
 .include <bsd.port.mk>
