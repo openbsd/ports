@@ -1,0 +1,5 @@
+ProFTPD is a highly configurable and secure FTP server.  It supports
+chroot'ing of FTP sessions, Apache-like access restrictions, custom
+message sending, and bandwidth throttling.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.9 2002/04/20 01:40:34 jcs Exp $
+bin/ftpcount
+bin/ftpwho
+man/man1/ftpwho.1
+man/man1/ftpcount.1
+man/man5/xferlog.5
+man/man8/proftpd.8
+man/man8/ftpshut.8
+sbin/proftpd
+sbin/in.proftpd
+sbin/ftpshut
+share/examples/proftpd/anonymous.conf
+share/examples/proftpd/basic.conf
+share/examples/proftpd/complex-virtual.conf
+share/examples/proftpd/mod_sql.conf
+share/examples/proftpd/virtual.conf
+@dirrm share/examples/proftpd
