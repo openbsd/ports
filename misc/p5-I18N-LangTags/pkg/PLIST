@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:04 espie Exp $
-libdata/perl5/site_perl/I18N/LangTags.pm
-libdata/perl5/site_perl/I18N/LangTags/List.pm
-man/man3p/I18N::LangTags.3p
-man/man3p/I18N::LangTags::List.3p
-@dirrm libdata/perl5/site_perl/I18N/LangTags

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2003/07/05 18:59:36 sturm Exp $
+# $OpenBSD: Makefile,v 1.72 2003/07/22 21:33:56 brad Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -63,8 +63,6 @@
      SUBDIR += p5-Finance-Quote
      SUBDIR += p5-Finance-QuoteHist
      SUBDIR += p5-I18N-Charset
-     SUBDIR += p5-I18N-LangTags
-     SUBDIR += p5-Locale-Codes
 #    SUBDIR += p5-Search
      SUBDIR += pdmenu
      SUBDIR += pfm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2003/07/17 21:49:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.121 2003/07/22 21:33:56 brad Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -72,7 +72,6 @@
      SUBDIR += p5-Apache-DBI
      SUBDIR += p5-Apache-MP3
      SUBDIR += p5-Blatte-HTML
-     SUBDIR += p5-CGI
 #    SUBDIR += p5-CGI_Lite
      SUBDIR += p5-CGI-Deurl
      SUBDIR += p5-CGI-SpeedyCGI

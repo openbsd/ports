@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.286 2003/07/16 16:56:47 brad Exp $
+# $OpenBSD: Makefile,v 1.287 2003/07/22 21:33:56 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -153,7 +153,6 @@
      SUBDIR += p5-Net-Whois-Raw
      SUBDIR += p5-PlRPC
      SUBDIR += p5-SNMP_Session
-     SUBDIR += p5-libnet
      SUBDIR += pavuk
      SUBDIR += pavuk,no_x11
      SUBDIR += pcapmerge
