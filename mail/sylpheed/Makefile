@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2002/08/27 16:52:57 couderc Exp $
+# $OpenBSD: Makefile,v 1.29 2002/09/15 20:19:25 couderc Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
-DISTNAME=	sylpheed-0.8.2
+DISTNAME=	sylpheed-0.8.3
 CATEGORIES=    	mail news x11
 HOMEPAGE=	http://sylpheed.good-day.net
 
@@ -43,7 +43,7 @@ CONFIGURE_ARGS+= --disable-gpgme
 LIB_DEPENDS+=	gdk_imlib.19::graphics/imlib
 CONFIGURE_ARGS+= --disable-gdk-pixbuf
 .else
-LIB_DEPENDS+=	gdk_pixbuf.2::graphics/gdk-pixbuf
+LIB_DEPENDS+=	gdk_pixbuf.2::graphics/gdk-pixbuf,no_gnome
 CONFIGURE_ARGS+= --disable-imlib
 .endif
 
