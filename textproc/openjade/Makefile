@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/11/15 15:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2004/04/18 09:21:04 sturm Exp $
 
 COMMENT=	"object-oriented SGML/XML parser toolkit and DSSSL engine"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	RANLIB="${RANLIB}" CFLAGS="${CFLAGS}" CC="${CC}" CXX="${CXX} -fno-implicit-templates ${CXXFLAGS}" \
-		XDEFINES='-DJADE_MIF -DJADE_HTML -DSGML_CATALOG_FILES_DEFAULT=\"${PREFIX}/share/sgml/catalog\"'
+		XDEFINES='-DJADE_MIF -DJADE_HTML -DSGML_CATALOG_FILES_DEFAULT=\"${PREFIX}/share/sgml/openjade/catalog\"'
 FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}" INSTALL="${INSTALL_PROGRAM}"
 
 USE_GMAKE=	Yes
