@@ -1,26 +1,22 @@
-# OpenBSD makefile for:    zip (without encryption)
+# New ports collection makefile for:    zip (without encryption)
 # http://infozip.cdrom.com/pub/infozip/
 #
-# Version required:     2.1
-# Date created:         17 Nov 1997
-# Whom:                 ejovi
+# Version required:     2.2
+# Date created:         22 Jun 1998
+# Whom:                 form
 #
-# $OpenBSD: Makefile,v 1.3 1998/02/25 21:08:06 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/06/22 09:47:28 form Exp $
+# FreeBSD: Makefile,v 1.11 1997/11/25 20:45:45 ache Exp
 #
 
-DISTNAME=       zip21
-PKGNAME=        zip-2.1
+DISTNAME=       zip22
+PKGNAME=        zip-2.2
 CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.cdrom.com/pub/infozip/src/
-EXTRACT_SUFX=   .zip
 
-MAINTAINER=     joey@OpenBSD.ORG
+MAINTAINER=	form@vs.itam.nsc.ru
 
-BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
-
-EXTRACT_CMD=    ${SETENV} unzip
-EXTRACT_ARGS=   -oq
-NO_WRKSUBDIR=   yes
+WRKSRC=         ${WRKDIR}/zip-2.2
 MAKEFILE=       unix/Makefile
 MAKE_FLAGS=     LOCAL_ZIP="${CFLAGS}" -f
 ALL_TARGET=     generic
@@ -31,8 +27,5 @@ do-install:
 	    ${INSTALL_PROGRAM} zip zipnote zipsplit zipcloak ${PREFIX}/bin
 	cd ${WRKSRC}/man && \
 	    ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
-	install -d -m 555 -o ${SHAREOWN} -g ${SHAREGRP} ${PREFIX}/share/doc/zip
-	cd ${WRKSRC} && \
-		${INSTALL_DATA} README Where ${PREFIX}/share/doc/zip
 
 .include <bsd.port.mk>
