@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2001/05/05 21:59:35 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2001/07/10 23:33:59 brad Exp $
 
 COMMENT=	"performance test of sequential file I/O"
-DISTNAME=	iozone3_53
-PKGNAME=	iozone-3.53
+
+DISTNAME=	iozone3_56
+PKGNAME=	iozone-3.56
 CATEGORIES=	benchmarks
-NEED_VERSION=	1.336
+NEED_VERSION=	1.413
 MASTER_SITES=	http://www.iozone.org/src/current/
 EXTRACT_SUFX=	.tar
 

@@ -1,6 +1,7 @@
---- makefile.orig	Sun Feb 25 20:56:28 2001
-+++ makefile	Sun Feb 25 20:59:25 2001
-@@ -248,7 +248,7 @@
+$OpenBSD: patch-makefile,v 1.4 2001/07/10 23:34:00 brad Exp $
+--- makefile.orig	Wed Jul  4 06:21:12 2001
++++ makefile	Tue Jul 10 19:26:49 2001
+@@ -249,7 +249,7 @@ freebsd: iozone_freebsd.o libbif.o
  #
  
  openbsd: iozone_openbsd.o libbif.o
@@ -9,7 +10,7 @@
  		iozone_openbsd.o libbif.o -o iozone
  
  #
-@@ -256,7 +256,7 @@
+@@ -257,7 +257,7 @@ openbsd: iozone_openbsd.o libbif.o
  #
  
  openbsd-threads: iozone_openbsd-threads.o libbif.o
@@ -18,7 +19,7 @@
  		iozone_openbsd-threads.o libbif.o -o iozone
  
  #
-@@ -570,18 +570,18 @@
+@@ -584,18 +584,18 @@ iozone_openbsd.o: iozone.c libbif.c
  	@echo ""
  	@echo "Build iozone for OpenBSD"
  	@echo ""
