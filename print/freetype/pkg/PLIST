@@ -1,18 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2000/11/21 16:05:53 brad Exp $
-include/freetype.h
-include/fterrid.h
-include/ftnameid.h
-include/ftxcmap.h
-include/ftxerr18.h
-include/ftxgasp.h
-include/ftxgdef.h
-include/ftxgpos.h
-include/ftxgsub.h
-include/ftxkern.h
-include/ftxopen.h
-include/ftxpost.h
-include/ftxsbit.h
-include/ftxwidth.h
+@comment $OpenBSD: PLIST,v 1.9 2001/03/07 22:06:44 brad Exp $
 include/freetype/freetype.h
 include/freetype/fterrid.h
 include/freetype/ftnameid.h

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/11/21 16:05:53 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2001/03/07 22:06:44 brad Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 DISTNAME=	freetype-1.3
@@ -23,10 +23,5 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-nls
-
-# Older versions of freetype installed include files in ${PREFIX}/include
-# this is a compatibility hack for now.
-post-install:
-	@cd ${PREFIX}/include && ln -fs freetype/*.h .
 
 .include <bsd.port.mk>
