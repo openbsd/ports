@@ -3,16 +3,14 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.12 2001/11/13 22:13:24 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/03/07 09:28:42 kevlo Exp $
 #
 
 COMMENT=	"Tcl/Tk-based manual browser"
 
-DISTNAME=	tkman
-PKGNAME=	tkman-2.1
+DISTNAME=	tkman-2.1
 CATEGORIES=	misc 
-NEED_VERSION=	1.496
-MASTER_SITES=	ftp://tkman.sourceforge.net/pub/tkman/
+NEED_VERSION=	1.508
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -23,11 +21,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	tkman
+
 LIB_DEPENDS=	tk83.1.::x11/tk/8.3
 RUN_DEPENDS=	::textproc/rman \
 		::textproc/glimpse
-
-WRKDIST=        ${WRKDIR}/${PKGNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tkman ${PREFIX}/bin
