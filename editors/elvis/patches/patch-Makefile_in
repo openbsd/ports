@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2000/06/20 13:30:57 naddy Exp $
+--- Makefile.in.orig	Wed Oct 20 20:33:31 1999
++++ Makefile.in	Tue Jun 20 15:18:51 2000
+@@ -146,7 +146,7 @@ OBJ3=	$(OSOBJS2) cut$(OBJ) draw$(OBJ) ev
+ OBJS=	$(OBJ1) $(OBJ2) $(OBJ3)
+ REFOBJS=ref$(OBJ) tag$(OBJ) tagsrch$(OBJ) safe$(OBJ)
+ CTOBJS=	ctags$(OBJ) tag$(OBJ) safe$(OBJ)
+-CFLAGS=	$(FLAGI)os$(OS)
++CFLAGS+=$(FLAGI)os$(OS)
+ EVERY=	$(ALL) verify$(EXE) elvdump$(EXE) calc$(EXE)
+ SHELL=	/bin/sh
+ 
