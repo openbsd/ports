@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2003/11/15 16:51:52 espie Exp $
+# $OpenBSD: Makefile,v 1.97 2003/11/19 01:40:23 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -21,13 +21,14 @@ MAKE_OBJC?=No
 MAKE_JAVA?=No
 MAKE_ADA?=No
 
+MYDIR=lang/egcs/snapshot
+
 # This is a configuration file for gcc
 
 COM=		'GNU compiler collection'
 COMMENT=	${COM}: core C compiler
 COMMENT-c++ =	${COM}: C++ compiler
 COMMENT-estdc=	${COM}: C++ compiler library
-COMMENT-chill=	${COM}: Chill compiler
 COMMENT-g77=	${COM}: f77 compiler
 COMMENT-java=	${COM}: java compiler
 COMMENT-objc=	${COM}: obj C compiler
@@ -36,7 +37,6 @@ COMMENT-ada=	${COM}: Ada compiler
 PKGNAME=	gcc-$V
 PKGNAME-c++ =	g++-$V
 PKGNAME-estdc =	libstdc++-$V
-PKGNAME-chill=	gchill-$V
 PKGNAME-g77=	g77-$V
 PKGNAME-java=	gcj-$V
 PKGNAME-objc=	gobjc-$V
@@ -264,8 +264,10 @@ SEPARATE_BUILD=concurrent
 
 ####
 # build section
-# should work without gmake. If it turns out to be needed, this must be 
-# reported to MAINTAINER.
+# Issues without gmake:
+# stuff doesn't get passed thru correctly to libtool in multi-do
+# libstdc++-v3 wants gmake
+# java wants gmake
 USE_GMAKE= yes
 
 # you shouldn't skip bootstrap unless you know what you're doing
@@ -304,21 +306,21 @@ post-install:
 
 # Tests still need to be performed at the end of install, I don't know why.
 
-REGRESS_DEPENDS+=::lang/egcs/stable
+REGRESS_DEPENDS+=::${MYDIR}
 .if ${MAKE_GXX:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/stable,-c++,-estdc
+REGRESS_DEPENDS+=::${MYDIR},-c++,-estdc
 .endif
 .if ${MAKE_FORTRAN:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/stable,-g77
+REGRESS_DEPENDS+=::${MYDIR},-g77
 .endif
 .if ${MAKE_OBJC:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/stable,-objc
+REGRESS_DEPENDS+=::${MYDIR},-objc
 .endif
 .if ${MAKE_JAVA:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/stable,-java
+REGRESS_DEPENDS+=::${MYDIR},-java
 .endif
 .if ${MAKE_ADA:L} == "yes"
-REGRESS_DEPENDS+=::lang/egcs/stable,-ada
+REGRESS_DEPENDS+=::${MYDIR},-ada
 .endif
 
 TEST_RESULT=${WRKBUILD}/test.result
@@ -350,10 +352,10 @@ GCC_NAME=${WRKBUILD}/gcc/xgcc
 
 .if defined(PACKAGING) && defined(SUBPACKAGE)
 .  if !empty(SUBPACKAGE) && ${SUBPACKAGE} != "-estdc"
-RUN_DEPENDS+=::lang/egcs/stable
+RUN_DEPENDS+=::${MYDIR}
 .  endif
 .  if ${SUBPACKAGE} == "-c++"
-RUN_DEPENDS+=::lang/egcs/stable,-estdc
+RUN_DEPENDS+=::${MYDIR},-estdc
 .  endif
 .endif
 
