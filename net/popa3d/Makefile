@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/07 09:57:25 camield Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/07 10:07:27 camield Exp $
 
 DISTNAME=	popa3d-0.4
 CATEGORIES=	net mail
@@ -22,6 +22,6 @@ ALL_TARGET=	popa3d
 MAKE_FLAGS=	CC=${CC} LD=${CC} CFLAGS="-c ${CFLAGS}"
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/popa3d ${DESTDIR}${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/popa3d ${PREFIX}/libexec
 
 .include <bsd.port.mk>
