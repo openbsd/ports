@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile.inc,v 1.3 2004/01/14 19:50:15 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2004/06/30 07:43:31 kevlo Exp $
 
 COMMENT=	"Berkeley DB package, revision ${REVISION}"
 
 DISTNAME=	db-${VERSION}
 CATEGORIES=	databases
 HOMEPAGE=	http://www.sleepycat.com/
-MASTER_SITES=	${HOMEPAGE}/update/snapshot/
+MASTER_SITES=	${HOMEPAGE}/update/snapshot/ \
+		ftp://sleepycat1.inetu.net/releases/
 
 # License: BSD + SleepyCat's additions.
 # Must purchase license to redistribute if not distributing the source.
