@@ -1,20 +1,20 @@
 # OpenBSD makefile for:    PNG images library
-# Version required:     0.96
+# Version required:     1.0.0
 # Date created:         December 2, 1997
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 1998/02/12 14:38:32 niklas Exp $
+# $OpenBSD: Makefile,v 1.4 1998/03/13 00:37:52 jason Exp $
 #
 
-DISTNAME=       libpng-0.96
-PKGNAME=        png-0.96
+DISTNAME=       libpng-1.0.0
+PKGNAME=        png-1.0.0
 CATEGORIES=     graphics
 MASTER_SITES=   ftp://ftp.uu.net/graphics/png/src/
-EXTRACT_SUFX=   .tgz
 
 MAINTAINER=     angelos@openbsd.org
 
-MAKEFILE=       makefile
+pre-patch:
+	cp ${WRKSRC}/scripts/makefile.std $(WRKSRC)/Makefile
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
