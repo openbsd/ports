@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/23 21:27:33 danh Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/02/25 14:56:26 danh Exp $
 @pkgcfl xntp3-*
 sbin/ntp-genkeys
 sbin/ntp-wait
@@ -9,7 +9,6 @@ sbin/ntpq
 sbin/ntptimeset
 sbin/ntptrace
 sbin/tickadj
-share/examples/ntp/README
 share/examples/ntp/baldwin.conf
 share/examples/ntp/beauregard.conf
 share/examples/ntp/dewey.conf

@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_ntp_crypto_h,v 1.1 2003/02/25 14:56:25 danh Exp $
+--- include/ntp_crypto.h.orig	Tue Feb 25 09:02:35 2003
++++ include/ntp_crypto.h	Tue Feb 25 09:02:48 2003
+@@ -3,7 +3,7 @@
+  */
+ #ifdef AUTOKEY
+ #include "global.h"
+-#include "md5.h"
++#include <md5.h>
+ #ifdef RSAREF
+ #include "rsaref.h"
+ #include "rsa.h"

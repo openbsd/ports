@@ -1,0 +1,56 @@
+$OpenBSD: patch-libntp_Makefile_in,v 1.1 2003/02/25 14:56:26 danh Exp $
+--- libntp/Makefile.in.orig	Tue Feb 25 08:45:13 2003
++++ libntp/Makefile.in	Tue Feb 25 08:45:52 2003
+@@ -164,7 +164,7 @@ libntp_a_SOURCES = a_md5encrypt.c adjtim
+ 	calyearstart.c clocktime.c clocktypes.c decodenetnum.c dofptoa.c \
+ 	dolfptoa.c emalloc.c findconfig.c fptoa.c fptoms.c getopt.c \
+ 	gpstolfp.c hextoint.c hextolfp.c humandate.c icom.c ieee754io.c \
+-	inttoa.c iosignal.c lib_strbuf.c machines.c md5c.c memmove.c \
++	inttoa.c iosignal.c lib_strbuf.c machines.c memmove.c \
+ 	mfp_mul.c mfptoa.c mfptoms.c mktime.c modetoa.c mstolfp.c msutotsf.c \
+ 	msyslog.c netof.c numtoa.c numtohost.c octtoint.c prettydate.c \
+ 	ranny.c recvbuff.c refnumtoa.c snprintf.c statestr.c strdup.c \
+@@ -200,7 +200,7 @@ am_libntp_a_OBJECTS = a_md5encrypt$U.$(O
+ 	gpstolfp$U.$(OBJEXT) hextoint$U.$(OBJEXT) hextolfp$U.$(OBJEXT) \
+ 	humandate$U.$(OBJEXT) icom$U.$(OBJEXT) ieee754io$U.$(OBJEXT) \
+ 	inttoa$U.$(OBJEXT) iosignal$U.$(OBJEXT) lib_strbuf$U.$(OBJEXT) \
+-	machines$U.$(OBJEXT) md5c$U.$(OBJEXT) memmove$U.$(OBJEXT) \
++	machines$U.$(OBJEXT) memmove$U.$(OBJEXT) \
+ 	mfp_mul$U.$(OBJEXT) mfptoa$U.$(OBJEXT) mfptoms$U.$(OBJEXT) \
+ 	mktime$U.$(OBJEXT) modetoa$U.$(OBJEXT) mstolfp$U.$(OBJEXT) \
+ 	msutotsf$U.$(OBJEXT) msyslog$U.$(OBJEXT) netof$U.$(OBJEXT) \
+@@ -243,7 +243,7 @@ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@	./$(DEPDIR)/ieee754io$U.Po ./$(DEPDIR)/inttoa$U.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/iosignal$U.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/lib_strbuf$U.Po ./$(DEPDIR)/log$U.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/machines$U.Po ./$(DEPDIR)/md5c$U.Po \
++@AMDEP_TRUE@	./$(DEPDIR)/machines$U.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/memmove$U.Po ./$(DEPDIR)/mfp_mul$U.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/mfptoa$U.Po ./$(DEPDIR)/mfptoms$U.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/mktime$U.Po ./$(DEPDIR)/modetoa$U.Po \
+@@ -342,7 +342,6 @@ mostlyclean-kr:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lib_strbuf$U.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/log$U.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/machines$U.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/md5c$U.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/memmove$U.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mfp_mul$U.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mfptoa$U.Po@am__quote@
+@@ -478,8 +477,6 @@ log_.c: log.c $(ANSI2KNR)
+ 	$(CPP) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) `if test -f $(srcdir)/log.c; then echo $(srcdir)/log.c; else echo log.c; fi` | sed 's/^# \([0-9]\)/#line \1/' | $(ANSI2KNR) > log_.c || rm -f log_.c
+ machines_.c: machines.c $(ANSI2KNR)
+ 	$(CPP) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) `if test -f $(srcdir)/machines.c; then echo $(srcdir)/machines.c; else echo machines.c; fi` | sed 's/^# \([0-9]\)/#line \1/' | $(ANSI2KNR) > machines_.c || rm -f machines_.c
+-md5c_.c: md5c.c $(ANSI2KNR)
+-	$(CPP) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) `if test -f $(srcdir)/md5c.c; then echo $(srcdir)/md5c.c; else echo md5c.c; fi` | sed 's/^# \([0-9]\)/#line \1/' | $(ANSI2KNR) > md5c_.c || rm -f md5c_.c
+ memmove_.c: memmove.c $(ANSI2KNR)
+ 	$(CPP) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) `if test -f $(srcdir)/memmove.c; then echo $(srcdir)/memmove.c; else echo memmove.c; fi` | sed 's/^# \([0-9]\)/#line \1/' | $(ANSI2KNR) > memmove_.c || rm -f memmove_.c
+ mfp_mul_.c: mfp_mul.c $(ANSI2KNR)
+@@ -556,7 +553,7 @@ fptoa_.$(OBJEXT) fptoms_.$(OBJEXT) getop
+ gpstolfp_.$(OBJEXT) hextoint_.$(OBJEXT) hextolfp_.$(OBJEXT) \
+ humandate_.$(OBJEXT) icom_.$(OBJEXT) ieee754io_.$(OBJEXT) \
+ inttoa_.$(OBJEXT) iosignal_.$(OBJEXT) lib_strbuf_.$(OBJEXT) \
+-log_.$(OBJEXT) machines_.$(OBJEXT) md5c_.$(OBJEXT) memmove_.$(OBJEXT) \
++log_.$(OBJEXT) machines_.$(OBJEXT) memmove_.$(OBJEXT) \
+ mfp_mul_.$(OBJEXT) mfptoa_.$(OBJEXT) mfptoms_.$(OBJEXT) \
+ mktime_.$(OBJEXT) modetoa_.$(OBJEXT) mstolfp_.$(OBJEXT) \
+ msutotsf_.$(OBJEXT) msyslog_.$(OBJEXT) netof_.$(OBJEXT) \

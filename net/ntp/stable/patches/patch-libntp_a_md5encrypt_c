@@ -1,0 +1,12 @@
+$OpenBSD: patch-libntp_a_md5encrypt_c,v 1.1 2003/02/25 14:56:26 danh Exp $
+--- libntp/a_md5encrypt.c.orig	Tue Feb 25 09:04:29 2003
++++ libntp/a_md5encrypt.c	Tue Feb 25 09:04:39 2003
+@@ -19,7 +19,7 @@
+ #include "ntp_types.h"
+ #include "ntp_string.h"
+ #include "global.h"
+-#include "md5.h"
++#include <md5.h>
+ #include "ntp_stdlib.h"
+ 
+ #define BLOCK_OCTETS	16	/* message digest size */
