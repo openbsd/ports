@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 1999/02/18 12:11:53 rohee Exp $
+# $OpenBSD: Makefile,v 1.6 1999/03/21 08:36:44 fgsch Exp $
 #
 
-DISTNAME	=	blackbox-0.50.3
+DISTNAME	=	blackbox-0.50.4
 CATEGORIES	=	x11
 
 MAINTAINER	=	rohee@OpenBSD.ORG
