@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/23 23:21:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/10 08:46:49 xsa Exp $
 
 COMMENT=	GNU versions of grep pattern matching utilities
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=grep/}
 
-MODULES=	gettext
+MODULES=	devel/gettext
 LIB_DEPENDS=	pcre.0::devel/pcre
 
 SEPARATE_BUILD=	simple

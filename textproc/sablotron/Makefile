@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/08/04 16:12:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2004/08/10 08:46:50 xsa Exp $
 
 COMMENT=	"fast, compact and portable XSL/XSLT processor"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://download-1.gingerall.cz/download/sablot/
 
-MODULES=	iconv
+MODULES=	converters/libiconv
 LIB_DEPENDS=	expat.2::textproc/expat
 BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser
 

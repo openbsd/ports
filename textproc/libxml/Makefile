@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2004/07/12 02:08:16 kevlo Exp $
+# $OpenBSD: Makefile,v 1.79 2004/08/10 08:46:49 xsa Exp $
 
 COMMENT=		"XML parsing library"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
-MODULES=		iconv
+MODULES=		converters/libiconv
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

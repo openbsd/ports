@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/02/21 22:25:33 marcm Exp $
+# $OpenBSD: Makefile,v 1.14 2004/08/10 08:46:50 xsa Exp $
 
 COMMENT=		"Scrollkeeper Open Documentation Cataloging System"
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:docbook->=4.2p1:textproc/docbook \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/06/24 18:40:14 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/08/10 08:46:49 xsa Exp $
 
 COMMENT=		"PDF viewer for GNOME"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gpdf/0.132/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser

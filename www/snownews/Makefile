@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/01/25 05:49:35 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2004/08/10 08:46:50 xsa Exp $
 
 COMMENT=	"text mode rss newsreader"
 DISTNAME=	snownews-1.4.4
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 LIB_DEPENDS+=	xml2.7.10::textproc/libxml
 

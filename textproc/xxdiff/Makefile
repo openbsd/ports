@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/07/02 23:47:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2004/08/10 08:46:50 xsa Exp $
 
 COMMENT=	"graphical file comparator and merge tool"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 BUILD_DEPENDS=	:bison-*:devel/bison \
 		:tmake->=1.10:devel/tmake
-MODULES=	qt3
+MODULES=	x11/qt3
 MODQT_MT=	Yes
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/src

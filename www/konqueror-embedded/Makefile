@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2004/02/25 02:35:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2004/08/10 08:46:50 xsa Exp $
 
 COMMENT='stand-alone Qt-based web browser'
 CATEGORIES=www x11
 
-MODULES=	qt2
+MODULES=	x11/qt2
 
 DATE=	20030705
 DISTNAME=konqueror-embedded-snapshot-${DATE}

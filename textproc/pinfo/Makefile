@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/08 16:23:47 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/10 08:46:50 xsa Exp $
 
 COMMENT="info viewer"
 MAINTAINER=Marc Espie <espie@openbsd.org>
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=Yes
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.13
 #CONFIGURE_ARGS+=--disable-nls
-MODULES=gettext
+MODULES=devel/gettext
 CONFIGURE_ENV=CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

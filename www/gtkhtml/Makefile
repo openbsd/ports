@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/04/10 15:55:48 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/08/10 08:46:50 xsa Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtkhtml/1.1/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 LIB_DEPENDS=		bonobo.2,bonobox.2::x11/gnome/bonobo \
 			capplet::x11/gnome/controlcenter \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2004/06/26 04:57:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.57 2004/08/10 08:46:50 xsa Exp $
 
 COMMENT=	"pager/text-based web browser"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=w3m/}
 MASTER_SITES0=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
 
-MODULES=	gettext
+MODULES=	devel/gettext
 LIB_DEPENDS=	gc.1::devel/boehm-gc
 
 FLAVORS=	image japanese

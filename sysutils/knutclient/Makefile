@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/03/02 07:57:20 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/10 08:46:49 xsa Exp $
 
 COMMENT=		"KDE UPS Monitoring tool"
 
@@ -20,7 +20,7 @@ MASTER_SITES=		ftp://ftp.buzuluk.cz/pub/alo/knutclient/
 EXTRACT_SUFX=		.tar.gz
 
 # Patch Hack
-MODULES=		kde
+MODULES=		x11/kde
 
 LIB_DEPENDS=		DCOP,kdecore.4,kdefx,kdeui::x11/kde/libs3 \
 			art_lgpl_2::graphics/libart

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/11/15 15:12:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/08/10 08:46:50 xsa Exp $
 
 COMMENT=		"GNU text utilities"
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNU:=textutils/}
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--program-prefix="g"
