@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/24 01:00:39 turan Exp $
-
-BROKEN=		depend xforms is broken
+# $OpenBSD: Makefile,v 1.9 2000/03/24 04:02:20 turan Exp $
 
 DISTNAME=	lyx-1.0.0
 CATEGORIES=	print

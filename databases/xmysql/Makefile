@@ -1,7 +1,5 @@
 # $FreeBSD: ports/databases/xmysql/Makefile,v 1.22 1999/08/31 06:41:26 mharo Exp $
-# $OpenBSD: Makefile,v 1.4 2000/03/24 01:00:38 turan Exp $
-
-BROKEN=		depend xforms is broken
+# $OpenBSD: Makefile,v 1.5 2000/03/24 04:02:19 turan Exp $
 
 DISTNAME=	xmysql-1.9
 CATEGORIES=	databases
