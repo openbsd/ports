@@ -1,7 +1,5 @@
-# $OpenBSD: Makefile,v 1.10 1999/12/03 14:24:39 espie Exp $
+# $OpenBSD: Makefile,v 1.11 1999/12/17 23:11:34 brad Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
-
-BROKEN=		bad packing lists, share/apps/kdisknav/CD-ROM.kdelnk
 
 DISTNAME=	kdebase-1.1.1
 CATEGORIES=	x11

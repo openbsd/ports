@@ -386,7 +386,6 @@ share/apps/kpanel/default/Desktop.kdelnk
 share/apps/kpanel/default/personal_directory
 share/apps/kdisknav/Root.kdelnk
 share/apps/kdisknav/KDE.kdelnk
-share/apps/kdisknav/CD-ROM.kdelnk
 share/apps/kdm/pics/kdelogo.xpm
 share/apps/kdm/pics/kdeflower.xpm
 share/apps/kdm/pics/session_kde.xpm
@@ -1644,7 +1643,6 @@ share/icons/mini/mini-calc.xpm
 share/icons/mini/mini-camera.xpm
 share/icons/mini/mini-cdlabel.xpm
 share/icons/mini/mini-clock.xpm
-share/icons/mini/gv.xpm
 share/icons/mini/mini-colors.xpm
 share/icons/mini/mini-connect.xpm
 share/icons/mini/mini-connected.xpm
@@ -1665,7 +1663,6 @@ share/icons/mini/mini-hextris.xpm
 share/icons/mini/mini-k.xpm
 share/icons/mini/mini-lock.xpm
 share/icons/mini/mini-lower.xpm
-share/icons/mini/xv.xpm
 share/icons/mini/mini-mail.xpm
 share/icons/mini/mini-manual.xpm
 share/icons/mini/mini-max1.xpm
@@ -1755,7 +1752,6 @@ share/icons/mini/kcmkpanel.xpm
 share/icons/mini/locale.xpm
 share/icons/mini/kcmsyssound.xpm
 share/icons/mini/sample.xpm
-share/icons/mini/netscape.xpm
 share/icons/mini/xeyes.xpm
 share/icons/mini/xcalc.xpm
 share/icons/mini/xload.xpm
@@ -1891,10 +1887,7 @@ share/icons/kcmkpanel.xpm
 share/icons/locale.xpm
 share/icons/kcmsyssound.xpm
 share/icons/edit.xpm
-share/icons/netscape.xpm
 share/icons/xeyes.xpm
-share/icons/gv.xpm
-share/icons/xv.xpm
 share/icons/xcalc.xpm
 share/icons/xload.xpm
 share/icons/3floppy_mount.xpm
@@ -2059,15 +2052,10 @@ share/applnk/System/kappfinder.kdelnk
 share/applnk/System/kikbd.kdelnk
 share/applnk/apps/Editors/xedit.kdelnk
 share/applnk/apps/Editors/.directory
-share/applnk/apps/Internet/netscape.kdelnk
+share/applnk/apps/Internet/pine.kdelnk
 share/applnk/apps/Internet/.directory
 share/applnk/apps/Toys/xeyes.kdelnk
 share/applnk/apps/Toys/.directory
-share/applnk/apps/WordProcessing/gv.kdelnk
-share/applnk/apps/WordProcessing/xdvi.kdelnk
-share/applnk/apps/WordProcessing/.directory
-share/applnk/apps/Graphic/xv.kdelnk
-share/applnk/apps/Graphic/.directory
 share/applnk/apps/Utilities/xcalc.kdelnk
 share/applnk/apps/Utilities/xclipboard.kdelnk
 share/applnk/apps/Utilities/xclock.kdelnk
@@ -2179,8 +2167,6 @@ bin/kbsod.kss
 @dirrm share/applnk/Games
 @dirrm share/applnk/Applications
 @dirrm share/applnk/apps/Utilities
-@dirrm share/applnk/apps/Graphic
-@dirrm share/applnk/apps/WordProcessing
 @dirrm share/applnk/apps/Toys
 @dirrm share/applnk/apps/Internet
 @dirrm share/applnk/apps/Editors
@@ -2239,8 +2225,6 @@ bin/kbsod.kss
 @dirrm share/apps/kfm/Desktop
 @dirrm share/apps/kfm/pics
 @dirrm share/apps/kfm
-@dirrm share/apps
-@dirrm share/config
 @dirrm share/doc/HTML/ru/kikbd
 @dirrm share/doc/HTML/en/konsole
 @dirrm share/doc/HTML/en/kikbd
@@ -2272,5 +2256,4 @@ bin/kbsod.kss
 @dirrm share/doc/HTML/en/kcontrol/kdmconfig
 @dirrm share/doc/HTML/en/kcontrol
 @dirrm share/doc/HTML/en/kmedia
-@dirrm share/doc/HTML
 @dirrm cgi-bin
