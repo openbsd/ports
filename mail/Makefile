@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2002/11/09 23:14:48 henning Exp $
+# $OpenBSD: Makefile,v 1.100 2002/12/11 15:37:02 grange Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -68,6 +68,7 @@
      SUBDIR += prepop
      SUBDIR += procmail
      SUBDIR += razor-agents
+     SUBDIR += sma
      SUBDIR += smtpclient
      SUBDIR += solid-pop3d
      SUBDIR += solid-pop3d,apop
