@@ -1,0 +1,51 @@
+$OpenBSD: patch-TkGui_tcl,v 1.1.1.1 2000/07/07 14:29:51 espie Exp $
+--- TkGui.tcl.orig	Wed Aug  6 20:56:34 1997
++++ TkGui.tcl	Fri Jul  7 16:11:41 2000
+@@ -1,9 +1,9 @@
+-#!/usr/local/bin/X11/wish
++#!/usr/local/bin/wish8.3
+ 
+ # Frodo Tk GUI by Lutz Vieweg <lkv@mania.robin.de>
+ # requires Tk >= 4.1
+ 
+-package require Tk 4.1
++#package require Tk 4.1
+ 
+ set prefname "$env(HOME)/.frodorc"
+ 
+@@ -476,7 +476,7 @@ pack .drives.d8.dir -side left -expand f
+ 
+ radiobutton .drives.d8.t64 -text "T64" -variable pref(DriveType8) -value "T64" \
+     -command {
+-		set erg [fs_FileSelect .fs 0 "Choose T64/LYNX archive file" "*.(t64|lnx)" $pref(DrivePath8)]
++		set erg [fs_FileSelect .fs 0 "Choose T64/LYNX archive file" "*.{t64,lnx}" $pref(DrivePath8)]
+ 		if {$erg != ""} { set pref(DrivePath8) $erg ; Change }
+     }
+ pack .drives.d8.t64 -side left -expand false
+@@ -509,7 +509,7 @@ pack .drives.d9.dir -side left -expand f
+ 
+ radiobutton .drives.d9.t64 -text "T64" -variable pref(DriveType9) -value "T64" \
+     -command {
+-		set erg [fs_FileSelect .fs 0 "Choose T64/LYNX archive file" "*.(t64|lnx)" $pref(DrivePath9)]
++		set erg [fs_FileSelect .fs 0 "Choose T64/LYNX archive file" "*.{t64,lnx}" $pref(DrivePath9)]
+ 		if {$erg != ""} { set pref(DrivePath9) $erg ; Change }
+     }
+ pack .drives.d9.t64 -side left -expand false
+@@ -543,7 +543,7 @@ pack .drives.d10.dir -side left -expand 
+ 
+ radiobutton .drives.d10.t64 -text "T64" -variable pref(DriveType10) -value "T64" \
+     -command {
+-		set erg [fs_FileSelect .fs 0 "Choose T64/LYNX archive file" "*.(t64|lnx)" $pref(DrivePath10)]
++		set erg [fs_FileSelect .fs 0 "Choose T64/LYNX archive file" "*.{t64,lnx}" $pref(DrivePath10)]
+ 		if {$erg != ""} { set pref(DrivePath10) $erg ; Change }
+     }
+ pack .drives.d10.t64 -side left -expand false
+@@ -577,7 +577,7 @@ pack .drives.d11.dir -side left -expand 
+ 
+ radiobutton .drives.d11.t64 -text "T64" -variable pref(DriveType11) -value "T64" \
+     -command {
+-		set erg [fs_FileSelect .fs 0 "Choose T64/LYNX archive file" "*.(t64|lnx)" $pref(DrivePath11)]
++		set erg [fs_FileSelect .fs 0 "Choose T64/LYNX archive file" "*.{t64,lnx}" $pref(DrivePath11)]
+ 		if {$erg != ""} { set pref(DrivePath11) $erg ; Change }
+     }
+ pack .drives.d11.t64 -side left -expand false

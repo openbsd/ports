@@ -1,0 +1,41 @@
+$OpenBSD: patch-Src_main_cpp,v 1.1.1.1 2000/07/07 14:29:51 espie Exp $
+--- Src/main.cpp.orig	Wed Aug  6 20:56:31 1997
++++ Src/main.cpp	Thu Jul  6 19:07:47 2000
+@@ -36,7 +36,7 @@ char AppDirPath[1024];	// Path of applic
+  */
+ 
+ #ifndef __PSXOS__
+-bool Frodo::load_rom_files(void)
++bool Frodo::do_load_rom_files(void)
+ {
+ 	FILE *file;
+ 
+@@ -89,6 +89,28 @@ bool Frodo::load_rom_files(void)
+ 	}
+ 
+ 	return true;
++}
++
++bool Frodo::load_rom_files(void)
++{
++	int fd = open(".",  O_RDONLY);
++
++	if (fd == -1) {
++		ShowRequester("Can't lock current directory", "Quit");
++		return false;
++	}
++		
++	char *d = getenv("FRODOLIBDIR");
++	if (d == NULL)
++		d = FRODOLIBDIR;
++	if (chdir(d) != 0) {
++		ShowRequester("Can't access Frodo Lib Directory", "Quit");
++		return false;
++	}
++	bool result = do_load_rom_files();
++	fchdir(fd);
++	close(fd);
++	return result;
+ }
+ #endif
+ 

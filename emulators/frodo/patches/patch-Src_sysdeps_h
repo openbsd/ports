@@ -1,0 +1,13 @@
+$OpenBSD: patch-Src_sysdeps_h,v 1.1.1.1 2000/07/07 14:29:51 espie Exp $
+--- Src/sysdeps.h.orig	Wed Jul  5 14:12:02 2000
++++ Src/sysdeps.h	Wed Jul  5 14:12:33 2000
+@@ -63,7 +63,9 @@ extern "C"
+ #endif
+ 
+ #ifdef HAVE_SYS_MOUNT_H
++#define export exp
+ #include <sys/mount.h>
++#undef export
+ #endif
+ 
+ #ifdef HAVE_SYS_STATFS_H

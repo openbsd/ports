@@ -1,0 +1,46 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/07 14:29:52 espie Exp $
+bin/frodo
+bin/frodoSC
+bin/frodoPC
+lib/frodo/1541 ROM
+lib/frodo/64prgs/3fff
+lib/frodo/64prgs/colorbars
+lib/frodo/64prgs/d011h3
+lib/frodo/64prgs/dadb
+lib/frodo/64prgs/de00all
+lib/frodo/64prgs/dycp
+lib/frodo/64prgs/fld
+lib/frodo/64prgs/lrborder
+lib/frodo/64prgs/sprsync
+lib/frodo/64prgs/stretch
+lib/frodo/64prgs/tech-tech
+lib/frodo/64prgs/text26
+lib/frodo/Basic ROM
+lib/frodo/Char ROM
+lib/frodo/Frodo Logo
+lib/frodo/Kernal ROM
+lib/frodo/TkGui.tcl
+share/doc/frodo/CHANGES
+share/doc/frodo/Main.html
+share/doc/frodo/author.html
+share/doc/frodo/bugreports.html
+share/doc/frodo/demoprograms.html
+share/doc/frodo/emulwindow.html
+share/doc/frodo/files.html
+share/doc/frodo/flavours.html
+share/doc/frodo/future.html
+share/doc/frodo/history.html
+share/doc/frodo/installation.html
+share/doc/frodo/kernal.html
+share/doc/frodo/keyboard.html
+share/doc/frodo/legalmush.html
+share/doc/frodo/overview.html
+share/doc/frodo/sam.html
+share/doc/frodo/settings.html
+share/doc/frodo/systemspecific.html
+share/doc/frodo/technicalinfo.html
+share/doc/frodo/thanks.html
+share/doc/frodo/whatsnew.html
+@dirrm share/doc/frodo
+@dirrm lib/frodo/64prgs
+@dirrm lib/frodo

@@ -1,0 +1,11 @@
+$OpenBSD: patch-Src_main_h,v 1.1.1.1 2000/07/07 14:29:51 espie Exp $
+--- Src/main.h.orig	Wed Aug  6 20:56:31 1997
++++ Src/main.h	Thu Jul  6 19:09:54 2000
+@@ -119,6 +119,7 @@ public:
+ 
+ private:
+ 	bool load_rom_files(void);
++	bool do_load_rom_files(void);
+ 
+ 	static char prefs_path[256];	// Pathname of current preferences file
+ };

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Src_configure,v 1.1.1.1 2000/07/07 14:29:51 espie Exp $
+--- Src/configure.orig	Wed Jul  5 14:45:45 2000
++++ Src/configure	Wed Jul  5 14:46:20 2000
+@@ -917,7 +917,7 @@ fi
+ 
+ 
+ if [ x"$GXX" = "xyes" ]; then
+-  CFLAGS="-O3 -g -fomit-frame-pointer -Wall -Wno-unused -Wno-format -W -Wmissing-prototypes -Wstrict-prototypes"
++  CFLAGS="${CFLAGS} -Wall -Wno-unused -Wno-format -W -Wmissing-prototypes -Wstrict-prototypes"
+ fi
+ 
+ UNAME_RELEASE=`(uname -r) 2>/dev/null` || UNAME_RELEASE=unknown
