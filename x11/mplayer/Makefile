@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2003/11/12 07:02:07 david Exp $
+# $OpenBSD: Makefile,v 1.63 2003/12/04 22:05:09 biorn Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc
@@ -41,7 +41,8 @@ LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
 		mp3lame::audio/lame \
 		ungif,gif::graphics/libungif \
-		vorbis.0,vorbisfile.1::audio/libvorbis
+		vorbis.0,vorbisfile.1::audio/libvorbis \
+		cdda_paranoia,cdda_interface:cdparanoia->=3.a9.8:audio/cdparanoia
 
 CONFDIR=	${SYSCONFDIR}/mplayer
 SUBST_VARS=	CONFDIR
@@ -51,11 +52,13 @@ CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+=--disable-alsa \
 		--disable-ossaudio \
 		--disable-nas \
+		--disable-liblzo \
 		--enable-select \
 		--enable-vidix \
 		--enable-vorbis \
 		--enable-menu \
 		--enable-iconv \
+		--enable-cdparanoia \
 		--with-extraincdir=${LOCALBASE}/include/libpng:${LOCALBASE}/include \
 		--with-extralibdir=${LOCALBASE}/lib \
 		--confdir=${CONFDIR}
@@ -65,7 +68,7 @@ CONFIGURE_ENV+="TMPDIR=${WRKBUILD}"
 CONFIGURE_ARGS+=--target=ppc-openbsd
 .endif
 
-FLAVORS=	arts esd sdl ggi debug mad win32 no_x11 cdda aa lzo
+FLAVORS=	arts esd sdl ggi debug mad win32 no_x11 aa
 FLAVOR?=
 
 .if ${FLAVOR:L:Marts}
@@ -80,13 +83,6 @@ CONFIGURE_ARGS+=--enable-esd
 LIB_DEPENDS+=	esd::audio/esound
 .else
 CONFIGURE_ARGS+=--disable-esd
-.endif
-
-.if ${FLAVOR:L:Mlzo}
-CONFIGURE_ARGS+=--enable-liblzo
-LIB_DEPENDS+=lzo::archivers/lzo
-.else
-CONFIGURE_ARGS+=--disable-liblzo
 .endif
 
 .if ${FLAVOR:L:Mno_x11}
@@ -143,13 +139,6 @@ CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32 \
 CONFIGURE_ARGS+=--disable-win32 \
 		--disable-qtx \
 		--disable-real
-.endif
-
-.if ${FLAVOR:L:Mcdda}
-CONFIGURE_ARGS+=--enable-cdparanoia
-BUILD_DEPENDS+= cdda_paranoia,cdda_interface:cdparanoia->=3.a9.8:audio/cdparanoia
-.else
-CONFIGURE_ARGS+=--disable-cdparanoia
 .endif
 
 .if ${FLAVOR:L:Maa}

@@ -26,6 +26,10 @@ kern.shminfo.shmall=32768
 
 Flavors:
 
+  arts: enables arts, requires x11/kde/arts3
+
+  esd: enables arts, requires audio/esound
+
   sdl: enables sdl, requires devel/sdl
 
   ggi: enables ggi, requires graphics/ggi
@@ -34,7 +38,9 @@ Flavors:
 
   mad: enables mad, requires audio/mad
 
-  no_x11: disable audio/video output.
+  no_x11: disables gui and most video output.
+
+  aa: enables ascii art, requires graphics/aalib
 
   win32: enables win32 codecs (i386-only)  To use this flavor, you
          need to enable the machdep.userldt sysctl, either via
