@@ -1,0 +1,42 @@
+#! /bin/sh
+# $OpenBSD: INSTALL,v 1.1 1999/10/26 21:48:16 jasoni Exp $
+#
+# Pre/port-installation setup of WindowMaker
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+do_notice()
+{
+	echo
+	echo "***"
+	echo "Each user must run /usr/local/bin/wmaker.inst before running Window Maker."
+	echo "***"
+	echo
+	if [ -d /etc/WindowMaker ]; then
+		echo "***"
+		echo "The directory /etc/WindowMaker may be removed."
+		echo "***"
+		echo
+	fi
+}
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+        : nothing to pre-install for this port
+        ;;
+    POST-INSTALL)
+        do_notice $1
+        ;;
+    *)
+        echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

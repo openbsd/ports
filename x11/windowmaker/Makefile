@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 1999/09/21 02:55:03 jasoni Exp $
+# $OpenBSD: Makefile,v 1.17 1999/10/26 21:48:16 jasoni Exp $
 
-DISTNAME=	WindowMaker-0.61.0
+DISTNAME=	WindowMaker-0.61.1
+PKGNAME=	windowmaker-0.61.1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/beta/srcs/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/beta/srcs/
@@ -34,12 +35,6 @@ post-configure:
 post-install:
 	@cd ${WRKDIR}/WindowMaker-extra-0.1; \
 		${MAKE} install
-	@if [ -d /etc/WindowMaker ] ; then \
-	  ${ECHO} " "; \
-	  ${ECHO} "***"; \
-	  ${ECHO} "The directory /etc/WindowMaker may be removed."; \
-	  ${ECHO} "***"; \
-	  ${ECHO} " "; \
-	fi
+	@${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
