@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1998/04/13 02:20:09 marc Exp $
+# $OpenBSD: Makefile,v 1.13 1998/04/29 17:23:15 angelos Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -108,7 +108,7 @@
 #    SUBDIR += xtide
      SUBDIR += xtoolwait
 #    SUBDIR += xview-clients
-#    SUBDIR += xview-config
+     SUBDIR += xview-config
 #    SUBDIR += xview-lib
      SUBDIR += xzoom
 
