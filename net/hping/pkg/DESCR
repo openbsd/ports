@@ -1,6 +1,18 @@
-Hping is a software to do TCP/IP stack auditing, to uncover firewall
-policy, to scan TCP port in a lot of different modes, to transfer
-files accross a firewall and many other stuff. Using hping you are
-able to do a lot of not security-regarding stuff. For example you
-can test networks performance, check if a host is up, check if TOS
-is handled et cetera.
+hping is a command-line oriented TCP/IP packet assembler/analyzer. The
+interface is inspired by the ping(8) unix command, but hping isn't just
+for sending ICMP echo requests. It supports TCP, UDP, ICMP and RAW-IP
+protocols, has a traceroute mode, the ability to send files in a covert
+channel, and many other features. While hping was mainly used as a 
+security tool in the past, it can be used in many ways by people that
+don't care about security to test networks and hosts. A subset of the
+stuff you can do using hping: 
+
+- Firewall testing Advanced port scanning
+- Network testing, using different protocols, TOS, fragmentation 
+- Manual path MTU discovery 
+- Advanced traceroute, under all the supported protocols 
+- Remote OS fingerprinting 
+- Remote uptime guessing 
+- TCP/IP stacks auditing
+
+WWW: ${HOMEPAGE}
