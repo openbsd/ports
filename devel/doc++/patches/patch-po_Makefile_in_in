@@ -1,0 +1,11 @@
+--- po/Makefile.in.in.orig	Sun Jun 27 20:00:41 1999
++++ po/Makefile.in.in	Thu Dec  7 22:10:13 2000
+@@ -123,7 +123,7 @@
+ 	    *)     destdir=$(localedir);; \
+ 	  esac; \
+ 	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
+-	  dir=$$destdir/$$lang/LC_MESSAGES; \
++	  dir=$(DESTDIR)$$destdir/$$lang/LC_MESSAGES; \
+ 	  if test -r "$(MKINSTALLDIRS)"; then \
+ 	    $(MKINSTALLDIRS) $$dir; \
+ 	  else \
