@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2002/05/01 17:21:24 lebel Exp $
+# $OpenBSD: Makefile,v 1.128 2002/05/22 05:36:01 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -25,6 +25,7 @@
      SUBDIR += ectags
      SUBDIR += ffcall
      SUBDIR += flawfinder
+     SUBDIR += gal
      SUBDIR += gconf
      SUBDIR += gengameng
      SUBDIR += gettext
