@@ -1,0 +1,12 @@
+$OpenBSD: patch-wmbiff_sample_wmbiffrc,v 1.1 2001/03/25 12:40:59 naddy Exp $
+--- wmbiff/sample.wmbiffrc.orig	Mon Mar 12 23:08:09 2001
++++ wmbiff/sample.wmbiffrc	Tue Mar 20 00:55:29 2001
+@@ -9,7 +9,7 @@ label.0=Spool
+ # Path to mailbox for UNIX-style mailboxes,
+ # or pop3:user:password@mailserver[:port] for POP3 accounts
+ # port are optional, default - 110
+-path.0=/var/spool/mail/gb
++path.0=/var/mail/gb
+ 
+ # Command, which executed on new mail arrival, or special keyword 'beep'
+ #notify.0=beep

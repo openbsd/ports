@@ -1,25 +1,12 @@
-$OpenBSD: patch-wmbiff_wmbiff_c,v 1.1 2001/02/15 18:51:31 naddy Exp $
---- wmbiff/wmbiff.c.orig	Fri Nov 26 13:03:15 1999
-+++ wmbiff/wmbiff.c	Tue Jan 30 21:43:13 2001
-@@ -113,7 +113,7 @@ void init_biff(int argc, char **argv)
-     strcpy(mbox[0].path, m);
-   }
-   else if( (m=getenv("USER")) != NULL ) {
--    strcpy(mbox[0].path, "/var/spool/mail/");
-+    strcpy(mbox[0].path, "/var/mail/");
-     strcat(mbox[0].path, m);
-   }
-   mbox[0].notify[0]=0;
-@@ -150,9 +150,9 @@ void init_biff(int argc, char **argv)
-   /* Make labels looks correctly */
-   for(i=0; i<5; i++) {
-     if(mbox[i].label[0] != 0) {
--      for(j=0; j<5; j++)
--	if(mbox[i].label[j] == 0)
--	  mbox[i].label[j] = ' ';
-+      j = strlen(mbox[i].label);
-+      if (j < 5)
-+        memset(mbox[i].label + j, ' ', 5 - j);
-       mbox[i].label[5]=':';
-       mbox[i].label[6]=0;
-     }
+$OpenBSD: patch-wmbiff_wmbiff_c,v 1.2 2001/03/25 12:40:59 naddy Exp $
+--- wmbiff/wmbiff.c.orig	Mon Mar 12 23:08:09 2001
++++ wmbiff/wmbiff.c	Mon Mar 19 23:59:18 2001
+@@ -88,7 +88,7 @@ void init_biff(int argc, char **argv)
+ 	if ((m = getenv("MAIL")) != NULL) {
+ 		strcpy(mbox[0].path, m);
+ 	} else if ((m = getenv("USER")) != NULL) {
+-		strcpy(mbox[0].path, "/var/spool/mail/");
++		strcpy(mbox[0].path, "/var/mail/");
+ 		strcat(mbox[0].path, m);
+ 	}
+ 	mbox[0].notify[0] = 0;

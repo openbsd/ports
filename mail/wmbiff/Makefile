@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/02/15 18:51:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/03/25 12:40:57 naddy Exp $
 
-DISTNAME=	wmbiff-0.2
+COMMENT=	"xbiff-like Window Maker dock app"
+DISTNAME=	wmbiff-0.2p
 CATEGORIES=	mail x11 x11/windowmaker
-NEED_VERSION=	1.352
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/jim/ \
-		ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/jim/
+NEED_VERSION=	1.363
+HOMEPAGE=	http://tinuviel.mizi.com/~tolkien/wmaker/
 
 MAINTAINER=	Cameron Lerch <opcode@skylab.saturn5.yi.org>
 
@@ -13,6 +13,15 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WRKBUILD=	${WRKSRC}/wmbiff
+MASTER_SITES=	${HOMEPAGE}
+
+WRKDIST=	${WRKDIR}/wmbiff
+WRKBUILD=	${WRKDIST}/wmbiff
+
+post-build:
+	@mv ${WRKBUILD}/wmbiff.1 ${WRKBUILD}/wmbiff.1.orig
+	@sed -e 's%/usr/share/doc/wmbiff/examples/sample.wmbiffrc%${PREFIX}/share/examples/wmbiff/dot.wmbiffrc%g' ${WRKBUILD}/wmbiff.1.orig > ${WRKBUILD}/wmbiff.1
+	@mv ${WRKBUILD}/wmbiffrc.5 ${WRKBUILD}/wmbiffrc.5.orig
+	@sed -e 's%/usr/share/doc/wmbiff/examples/sample.wmbiffrc%${PREFIX}/share/examples/wmbiff/dot.wmbiffrc%g' ${WRKBUILD}/wmbiffrc.5.orig > ${WRKBUILD}/wmbiffrc.5
 
 .include <bsd.port.mk>
