@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.473 2001/10/07 10:53:43 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.474 2001/10/07 11:30:30 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1098,6 +1098,11 @@ _CATPAGES+=	${CAT${sect}:S%^%${CAT${sect}PREFIX}/man/${lang}/cat${sect:L}/%}
 ################################################################
 
 .if !defined(NO_IGNORE)
+.  if (defined(REGRESS_IS_INTERACTIVE) && defined(BATCH))
+_IGNORE_REGRESS=	"has interactive tests"
+.  elif (!defined(IS_INTERACTIVE) && defined(INTERACTIVE))
+_IGNORE_REGRESS=	"does not have interactive tests"
+.  endif
 .  if (defined(IS_INTERACTIVE) && defined(BATCH))
 IGNORE=	"is an interactive port"
 .  elif (!defined(IS_INTERACTIVE) && defined(INTERACTIVE))
@@ -1449,7 +1454,6 @@ configure: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPmisc_COOKIES} \
 	${_CONFIGURE_COOKIE}
 all build: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPmisc_COOKIES} \
 	${_BUILD_COOKIE}
-regress: ${_DEPregress_COOKIES} ${_REGRESS_COOKIE}
 .  if defined(ALWAYS_PACKAGE)
 install: ${_INSTALL_COOKIE} ${_PACKAGE_COOKIES}
 .  else
@@ -1457,6 +1461,15 @@ install: ${_INSTALL_COOKIE}
 .  endif
 fake: ${_FAKE_COOKIE}
 package: ${_PACKAGE_COOKIES}
+
+.  if defined(_IGNORE_REGRESS)
+regress:
+.    if !defined(IGNORE_SILENT)
+	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} ${_IGNORE_REGRESS}."
+.    endif
+.  else
+regress: ${_DEPregress_COOKIES} ${_REGRESS_COOKIE}
+.  endif
 
 .endif # IGNORECMD
 
