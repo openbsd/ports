@@ -1,0 +1,17 @@
+--- config.h.orig	Wed Apr 21 08:47:48 1993
++++ config.h	Thu Oct 21 17:00:34 1999
+@@ -81,6 +81,14 @@
+ #define HAVE_USLEEP         YES
+ #endif
+ 
++#ifdef __OpenBSD__
++#define USE_NONSTD_BAUD     YES
++#define LF_PATH             "/var/spool/lock"
++#define LF_PREFIX           "LCK.."
++#define LF_USE_ASCII_PID    YES
++#define LF_USE_DEV_NUMBERS  NO
++#endif 
++
+ #ifdef SVR4
+ #define HAVE_TERMIOS        YES
+ #define HAVE_MODEM_CONTROL  YES
