@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2003/04/03 10:25:23 avsm Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2003/04/30 19:15:57 naddy Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -49,6 +49,13 @@ CONFIGURE_ARGS+=	--enable-shared \
 # default included extensions
 CONFIGURE_ARGS+= 	--with-openssl \
 			--with-zlib 
+
+.if ${MACHINE_ARCH} == "sparc64"
+post-configure:
+	@cp ${WRKBUILD}/Makefile ${WRKBUILD}/Makefile.bak
+	@sed '/^ext\/standard\/sha1.lo/{n;s/ -c / -O0 -c /;}' \
+		${WRKBUILD}/Makefile.bak >${WRKBUILD}/Makefile
+.endif
 
 REGRESS_TARGET=		test
 REGRESS_FLAGS=		NO_INTERACTION=1
