@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/02/21 04:26:13 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.9 1999/04/04 06:46:22 brad Exp $
 
 # NOTE:
 # At one time this port was installed as libtiff34.a to get rid of a
@@ -23,7 +22,7 @@ MASTER_SITES=   ftp://ftp.sgi.com/graphics/tiff/ \
 		ftp://ftp.isri.unlv.edu/pub/mirror/tiff/
 EXTRACT_SUFX=	-tar.gz
 
-LIB_DEPENDS=    jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=    jpeg.62:${PORTSDIR}/graphics/jpeg
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN=${PREFIX}/bin \

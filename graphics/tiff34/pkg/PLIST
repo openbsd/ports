@@ -6,7 +6,7 @@ lib/libtiff.so.3.4
 @exec ln -sf %f %B/libtiff34.so.1.0
 @unexec rm -f %B/libtiff.so
 @unexec rm -f %B/libtiff34.so.1.0
-@exec /sbin/ldconfig -m %D/lib
+@exec /sbin/ldconfig -m %B
 bin/fax2tiff
 bin/fax2ps
 bin/gif2tiff
