@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/31 21:18:18 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/31 21:28:09 brad Exp $
+
+# The source code for xroach is the same under both directories
+# (4.4BSD-Lite and 4.4BSD-Lite2) on the dist site.
 
 DISTNAME=	xroach
 PKGNAME=	xroach-4.4
