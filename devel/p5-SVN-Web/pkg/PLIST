@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/22 01:52:23 msf Exp $
+bin/svnweb-install
+${P5SITE}/SVN/
+${P5SITE}/SVN/Web/
+${P5SITE}/SVN/Web.pm
+${P5SITE}/SVN/Web/Branch/
+${P5SITE}/SVN/Web/Branch.pm
+${P5SITE}/SVN/Web/Branch/YAML.pm
+${P5SITE}/SVN/Web/Browse.pm
+${P5SITE}/SVN/Web/Checkout.pm
+${P5SITE}/SVN/Web/Diff.pm
+${P5SITE}/SVN/Web/I18N/
+${P5SITE}/SVN/Web/I18N/en.po
+${P5SITE}/SVN/Web/I18N/zh_cn.po
+${P5SITE}/SVN/Web/I18N/zh_tw.po
+${P5SITE}/SVN/Web/List.pm
+${P5SITE}/SVN/Web/Log.pm
+${P5SITE}/SVN/Web/RSS.pm
+${P5SITE}/SVN/Web/Revision.pm
+${P5SITE}/SVN/Web/Style/
+${P5SITE}/SVN/Web/Style/common.css
+${P5SITE}/SVN/Web/Style/styles-hlb.css
+${P5SITE}/SVN/Web/Template/
+${P5SITE}/SVN/Web/Template/browse
+${P5SITE}/SVN/Web/Template/footer
+${P5SITE}/SVN/Web/Template/header
+${P5SITE}/SVN/Web/Template/list
+${P5SITE}/SVN/Web/Template/log
+${P5SITE}/SVN/Web/Template/revision
+@man man/man3p/SVN::Web.3p
