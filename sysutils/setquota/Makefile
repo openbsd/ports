@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/02/25 04:32:32 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1999/03/04 06:55:00 fgsch Exp $
 #
 
 DISTNAME=	setquota-0.1
@@ -6,7 +6,7 @@ CATEGORIES=	sysutils
 
 # Maybe someone who cares will fix this.  It could be a simple task.
 #
-BROKEN=		"port fails to build, and what does '#ifdef 0' mean"
+BROKEN=		"port fails to build, and what does '\#ifdef 0' mean"
 
 MAINTAINER= 	joey@openbsd.org
 
