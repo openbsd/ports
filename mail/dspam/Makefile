@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/02/02 19:21:52 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2005/02/13 17:55:48 alek Exp $
 
 COMMENT=	"anti-spam filter"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		concurrent
@@ -58,6 +59,7 @@ CONFIGURE_ARGS+=	--with-storage-driver=mysql_drv \
 			--enable-virtual-users
 LIB_DEPENDS+=		lib/mysql/mysqlclient.10::databases/mysql
 DRIVER=			mysql
+WANTLIB+=		z ssl crypto
 .endif
 
 .if ${FLAVOR:L:Mpgsql}
