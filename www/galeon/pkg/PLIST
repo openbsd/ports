@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/15 19:46:16 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/10/17 22:46:06 espie Exp $
 bin/galeon
 bin/galeon-bin
 bin/galeon-config-tool
+lib/galeon/
+lib/galeon/components/
 lib/galeon/components/libgaleon-xpcom.la
 lib/galeon/components/libgaleon-xpcom.so
-man/man1/galeon.1
+@man man/man1/galeon.1
+share/galeon/
 share/galeon/CloseTab.png
 share/galeon/FAQ.html
 share/galeon/Fullscreen.png
@@ -80,6 +83,8 @@ share/galeon/small-detach.xpm
 share/galeon/small-menu.xpm
 share/galeon/smart-bm-fold.png
 share/galeon/smart-bm-unfold.png
+share/galeon/spinners/
+share/galeon/spinners/crashcut/
 share/galeon/spinners/crashcut/001.png
 share/galeon/spinners/crashcut/002.png
 share/galeon/spinners/crashcut/003.png
@@ -93,6 +98,7 @@ share/galeon/spinners/crashcut/010.png
 share/galeon/spinners/crashcut/011.png
 share/galeon/spinners/crashcut/012.png
 share/galeon/spinners/crashcut/rest.png
+share/galeon/spinners/galeon/
 share/galeon/spinners/galeon/001.png
 share/galeon/spinners/galeon/002.png
 share/galeon/spinners/galeon/003.png
@@ -121,6 +127,7 @@ share/galeon/spinners/galeon/025.png
 share/galeon/spinners/galeon/026.png
 share/galeon/spinners/galeon/027.png
 share/galeon/spinners/galeon/rest.png
+share/galeon/spinners/pipeon/
 share/galeon/spinners/pipeon/001.png
 share/galeon/spinners/pipeon/002.png
 share/galeon/spinners/pipeon/003.png
@@ -144,6 +151,8 @@ share/galeon/tb_drag_arrow_down.xpm
 share/galeon/tb_drag_arrow_left.xpm
 share/galeon/tb_drag_arrow_right.xpm
 share/galeon/tb_drag_arrow_up.xpm
+share/galeon/themes/
+share/galeon/themes/Aquatic/
 share/galeon/themes/Aquatic/Back-prelight.png
 share/galeon/themes/Aquatic/Back.png
 share/galeon/themes/Aquatic/Bookmarks-prelight.png
@@ -160,6 +169,7 @@ share/galeon/themes/Aquatic/Stop-prelight.png
 share/galeon/themes/Aquatic/Stop.png
 share/galeon/themes/Aquatic/Up-prelight.png
 share/galeon/themes/Aquatic/Up.png
+share/galeon/themes/GnomeLarge/
 share/galeon/themes/GnomeLarge/Back.png
 share/galeon/themes/GnomeLarge/Forward.png
 share/galeon/themes/GnomeLarge/Go.png
@@ -168,6 +178,7 @@ share/galeon/themes/GnomeLarge/New.png
 share/galeon/themes/GnomeLarge/Refresh.png
 share/galeon/themes/GnomeLarge/Stop.png
 share/galeon/themes/GnomeLarge/Up.png
+share/galeon/themes/Micro/
 share/galeon/themes/Micro/Back-prelight.png
 share/galeon/themes/Micro/Back.png
 share/galeon/themes/Micro/Forward-prelight.png
@@ -182,6 +193,7 @@ share/galeon/themes/Micro/Stop-prelight.png
 share/galeon/themes/Micro/Stop.png
 share/galeon/themes/Micro/Up-prelight.png
 share/galeon/themes/Micro/Up.png
+share/galeon/themes/Remembrance/
 share/galeon/themes/Remembrance/Back-prelight.png
 share/galeon/themes/Remembrance/Back.png
 share/galeon/themes/Remembrance/Forward-prelight.png
@@ -205,7 +217,13 @@ share/galeon/themes/Remembrance/empty.png
 share/galeon/toc.css
 share/galeon/toolbars.png
 share/galeon/windows.png
+share/gnome/
+share/gnome/apps/
+share/gnome/apps/Internet/
 share/gnome/apps/Internet/galeon.desktop
+share/gnome/help/
+share/gnome/help/galeon-manual/
+share/gnome/help/galeon-manual/C/
 share/gnome/help/galeon-manual/C/aboutbook.html
 share/gnome/help/galeon-manual/C/apx-authors.sgml
 share/gnome/help/galeon-manual/C/apx-bugs.sgml
@@ -229,6 +247,7 @@ share/gnome/help/galeon-manual/C/browser-window.sgml
 share/gnome/help/galeon-manual/C/bugs.html
 share/gnome/help/galeon-manual/C/command-line-options.html
 share/gnome/help/galeon-manual/C/compiling-from-source.html
+share/gnome/help/galeon-manual/C/figures/
 share/gnome/help/galeon-manual/C/figures/bookmarks-editor.png
 share/gnome/help/galeon-manual/C/figures/browser-window.png
 share/gnome/help/galeon-manual/C/figures/find-dialog.png
@@ -281,8 +300,10 @@ share/gnome/help/galeon-manual/C/prefs-handlers.html
 share/gnome/help/galeon-manual/C/prefs-rendering.html
 share/gnome/help/galeon-manual/C/prefs-user-interface.html
 share/gnome/help/galeon-manual/C/statusbar.html
+share/gnome/help/galeon-manual/C/stylesheet-images/
 share/gnome/help/galeon-manual/C/tabbed-browsing.html
 share/gnome/help/galeon-manual/C/toolbar.html
+share/gnome/ui/
 share/gnome/ui/nautilus-galeon-view-ui.xml
 share/locale/az/LC_MESSAGES/galeon.mo
 share/locale/bg/LC_MESSAGES/galeon.mo
@@ -301,8 +322,12 @@ share/locale/hu/LC_MESSAGES/galeon.mo
 share/locale/it/LC_MESSAGES/galeon.mo
 share/locale/ja/LC_MESSAGES/galeon.mo
 share/locale/ko/LC_MESSAGES/galeon.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/galeon.mo
 share/locale/lv/LC_MESSAGES/galeon.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/galeon.mo
 share/locale/nl/LC_MESSAGES/galeon.mo
 share/locale/nn/LC_MESSAGES/galeon.mo
@@ -317,129 +342,29 @@ share/locale/sl/LC_MESSAGES/galeon.mo
 share/locale/sr/LC_MESSAGES/galeon.mo
 share/locale/sr@Latn/LC_MESSAGES/galeon.mo
 share/locale/sv/LC_MESSAGES/galeon.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/galeon.mo
 share/locale/tr/LC_MESSAGES/galeon.mo
 share/locale/uk/LC_MESSAGES/galeon.mo
 share/locale/vi/LC_MESSAGES/galeon.mo
+share/locale/wa/
+share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/galeon.mo
 share/locale/zh_CN/LC_MESSAGES/galeon.mo
 share/locale/zh_TW/LC_MESSAGES/galeon.mo
+share/oaf/
 share/oaf/GNOME_Galeon_Automation.oaf
 share/oaf/GNOME_Galeon_NautilusView.oaf
+share/omf/galeon/
 share/omf/galeon/galeon-manual-C.omf
 share/pixmaps/galeon.png
+share/schemas/
+share/schemas/galeon/
 share/schemas/galeon/galeon.schemas
+share/sounds/
+share/sounds/galeon/
 share/sounds/galeon/clicked.wav
-@dirrm share/sounds/galeon
-@dirrm share/sounds
-@dirrm share/schemas/galeon
-@dirrm share/schemas
-@dirrm share/pixmaps
-@dirrm share/omf/galeon
-@dirrm share/omf
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/wa/LC_MESSAGES
-@dirrm share/locale/wa
-@dirrm share/locale/vi/LC_MESSAGES
-@dirrm share/locale/vi
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/ta/LC_MESSAGES
-@dirrm share/locale/ta
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sr@Latn/LC_MESSAGES
-@dirrm share/locale/sr@Latn
-@dirrm share/locale/sr/LC_MESSAGES
-@dirrm share/locale/sr
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nn/LC_MESSAGES
-@dirrm share/locale/nn
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ms/LC_MESSAGES
-@dirrm share/locale/ms
-@dirrm share/locale/lv/LC_MESSAGES
-@dirrm share/locale/lv
-@dirrm share/locale/lt/LC_MESSAGES
-@dirrm share/locale/lt
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hr/LC_MESSAGES
-@dirrm share/locale/hr
-@dirrm share/locale/gl/LC_MESSAGES
-@dirrm share/locale/gl
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/et/LC_MESSAGES
-@dirrm share/locale/et
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale/bg/LC_MESSAGES
-@dirrm share/locale/bg
-@dirrm share/locale/az/LC_MESSAGES
-@dirrm share/locale/az
-@dirrm share/locale
-@dirrm share/gnome/ui
-@exec mkdir -p %D/share/gnome/help/galeon-manual/C/stylesheet-images
-@dirrm share/gnome/help/galeon-manual/C/stylesheet-images
-@dirrm share/gnome/help/galeon-manual/C/figures
-@dirrm share/gnome/help/galeon-manual/C
-@dirrm share/gnome/help/galeon-manual
-@dirrm share/gnome/help
-@dirrm share/gnome/apps/Internet
-@dirrm share/gnome/apps
-@dirrm share/gnome
-@dirrm share/galeon/themes/Remembrance
-@dirrm share/galeon/themes/Micro
-@dirrm share/galeon/themes/GnomeLarge
-@dirrm share/galeon/themes/Aquatic
-@dirrm share/galeon/themes
-@dirrm share/galeon/spinners/pipeon
-@dirrm share/galeon/spinners/galeon
-@dirrm share/galeon/spinners/crashcut
-@dirrm share/galeon/spinners
-@dirrm share/galeon
-@dirrm lib/galeon/components
-@dirrm lib/galeon
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-1 --get-default-source` %D/bin/gconftool-1 --makefile-install-rule %D/share/schemas/galeon/*.schemas > /dev/null
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
