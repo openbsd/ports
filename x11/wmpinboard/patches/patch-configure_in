@@ -1,0 +1,35 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2001/01/17 16:32:53 naddy Exp $
+--- configure.in.orig	Thu Apr 13 14:40:33 2000
++++ configure.in	Wed Jan 17 13:22:55 2001
+@@ -10,9 +10,6 @@ CFLAGS=`echo "x $CFLAGS"|sed 's/^x //; s
+ AC_ISC_POSIX
+ AC_LANG_C
+ 
+-dnl use POSIX and BSD stuff where available
+-CFLAGS="$CFLAGS -D_BSD_SOURCE -D_POSIX_SOURCE=199506L"
+-
+ dnl additional compile flags when using gcc
+ if test x$GCC = xyes; then
+   CFLAGS="$CFLAGS -Wall -ansi -pedantic"
+@@ -31,8 +28,6 @@ AC_C_INLINE
+ dnl check for C headers and functions
+ dnl more or less optional ones first
+ AC_CHECK_HEADERS([getopt.h malloc.h signal.h string.h unistd.h])
+-AC_CHECK_FUNC(getopt, , need_getopt=yes)
+-AC_CHECK_FUNC(getopt_long, , need_getopt_long=yes)
+ AC_FUNC_MEMCMP
+ if test x"$ac_cv_func_memcmp_clean" = xyes; then
+   AC_DEFINE(HAVE_MEMCMP)
+@@ -85,12 +80,6 @@ fi
+ dnl determine what conditional stuff has to be compiled
+ if test x"$need_memcmp" = xyes; then
+   CONDITIONAL_SOURCES="$CONDITIONAL_SOURCES memcmp.c"
+-fi
+-if test x"$need_getopt" = xyes; then
+-  CONDITIONAL_SOURCES="$CONDITIONAL_SOURCES getopt.c"
+-fi
+-if test x"$need_getopt_long" = xyes; then
+-  CONDITIONAL_SOURCES="$CONDITIONAL_SOURCES getopt1.c"
+ fi
+ AC_SUBST(CONDITIONAL_SOURCES)
+ 

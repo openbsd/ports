@@ -1,0 +1,130 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2001/01/17 16:32:53 naddy Exp $
+--- configure.orig	Thu Apr 13 15:37:26 2000
++++ configure	Mon Jan 15 17:13:42 2001
+@@ -1035,8 +1035,6 @@ ac_link='${CC-cc} -o conftest${ac_exeext
+ cross_compiling=$ac_cv_prog_cc_cross
+ 
+ 
+-CFLAGS="$CFLAGS -D_BSD_SOURCE -D_POSIX_SOURCE=199506L"
+-
+ if test x$GCC = xyes; then
+   CFLAGS="$CFLAGS -Wall -ansi -pedantic"
+ fi
+@@ -2199,104 +2197,6 @@ else
+ fi
+ done
+ 
+-echo $ac_n "checking for getopt""... $ac_c" 1>&6
+-echo "configure:2204: checking for getopt" >&5
+-if eval "test \"`echo '$''{'ac_cv_func_getopt'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  cat > conftest.$ac_ext <<EOF
+-#line 2209 "configure"
+-#include "confdefs.h"
+-/* System header to define __stub macros and hopefully few prototypes,
+-    which can conflict with char getopt(); below.  */
+-#include <assert.h>
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char getopt();
+-
+-int main() {
+-
+-/* The GNU C library defines this for functions which it implements
+-    to always fail with ENOSYS.  Some functions are actually named
+-    something starting with __ and the normal name is an alias.  */
+-#if defined (__stub_getopt) || defined (__stub___getopt)
+-choke me
+-#else
+-getopt();
+-#endif
+-
+-; return 0; }
+-EOF
+-if { (eval echo configure:2232: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-  rm -rf conftest*
+-  eval "ac_cv_func_getopt=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_func_getopt=no"
+-fi
+-rm -f conftest*
+-fi
+-
+-if eval "test \"`echo '$ac_cv_func_'getopt`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-  :
+-else
+-  echo "$ac_t""no" 1>&6
+-need_getopt=yes
+-fi
+-
+-echo $ac_n "checking for getopt_long""... $ac_c" 1>&6
+-echo "configure:2253: checking for getopt_long" >&5
+-if eval "test \"`echo '$''{'ac_cv_func_getopt_long'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  cat > conftest.$ac_ext <<EOF
+-#line 2258 "configure"
+-#include "confdefs.h"
+-/* System header to define __stub macros and hopefully few prototypes,
+-    which can conflict with char getopt_long(); below.  */
+-#include <assert.h>
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char getopt_long();
+-
+-int main() {
+-
+-/* The GNU C library defines this for functions which it implements
+-    to always fail with ENOSYS.  Some functions are actually named
+-    something starting with __ and the normal name is an alias.  */
+-#if defined (__stub_getopt_long) || defined (__stub___getopt_long)
+-choke me
+-#else
+-getopt_long();
+-#endif
+-
+-; return 0; }
+-EOF
+-if { (eval echo configure:2281: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-  rm -rf conftest*
+-  eval "ac_cv_func_getopt_long=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_func_getopt_long=no"
+-fi
+-rm -f conftest*
+-fi
+-
+-if eval "test \"`echo '$ac_cv_func_'getopt_long`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-  :
+-else
+-  echo "$ac_t""no" 1>&6
+-need_getopt_long=yes
+-fi
+-
+ echo $ac_n "checking for 8-bit clean memcmp""... $ac_c" 1>&6
+ echo "configure:2302: checking for 8-bit clean memcmp" >&5
+ if eval "test \"`echo '$''{'ac_cv_func_memcmp_clean'+set}'`\" = set"; then
+@@ -2633,12 +2533,6 @@ fi
+ 
+ if test x"$need_memcmp" = xyes; then
+   CONDITIONAL_SOURCES="$CONDITIONAL_SOURCES memcmp.c"
+-fi
+-if test x"$need_getopt" = xyes; then
+-  CONDITIONAL_SOURCES="$CONDITIONAL_SOURCES getopt.c"
+-fi
+-if test x"$need_getopt_long" = xyes; then
+-  CONDITIONAL_SOURCES="$CONDITIONAL_SOURCES getopt1.c"
+ fi
+ 
+ 

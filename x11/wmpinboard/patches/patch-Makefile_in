@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/01/17 16:32:52 naddy Exp $
+--- Makefile.in.orig	Thu Apr 13 15:37:47 2000
++++ Makefile.in	Mon Jan 15 17:42:14 2001
+@@ -63,7 +63,7 @@ MAKEINFO = @MAKEINFO@
+ PACKAGE = @PACKAGE@
+ VERSION = @VERSION@
+ 
+-SUBDIRS = src man
++SUBDIRS = src
+ EXTRA_DIST = CREDITS TODO wmpb-convert.pl wmpinboard.lsm wmpinboard.spec.in man/Makefile.* man/wmpinboard.* xpm/* themes-kit/*
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

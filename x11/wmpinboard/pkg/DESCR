@@ -1,0 +1,16 @@
+wmpinboard is a Window Maker dock applet resembling a
+miniature pinboard.  It's intended to somewhat relieve
+heavily littered desktops by allowing you to place reminders
+on a graphical on-screen pinboard rather than producing a
+mess of real notes all around your keyboard.  It supports 
+arbitrary 6x10 X fonts and has XLocale support, enabling you
+to enter locale-dependent special characters if set up
+appropriately.  Besides text, you can add small monochrome
+sketches to your notes or simply encircle or underline words
+as a means of emphasis, and alarms can be set to explicitly
+remind you of things.  Above all, wmpinboard is animated in
+redundant ways to make it look even more attractive, and
+themeability provides for a way of adapting its appearance
+to that of the rest of your desktop.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_wmpinboard_c,v 1.1.1.1 2001/01/17 16:32:52 naddy Exp $
+--- src/wmpinboard.c.orig	Thu Apr 13 13:01:17 2000
++++ src/wmpinboard.c	Mon Jan 15 16:11:36 2001
+@@ -1142,7 +1142,8 @@ void
+ timer(unsigned int intv)
+ {
+ #ifndef __GLIBC__
+-  struct itimerval val = { { 0, intv }, { 0, intv } };
++  struct itimerval val = { { 0, 0 }, { 0, 0 } };
++  val.it_interval.tv_usec = val.it_value.tv_usec = intv;
+ 
+   setitimer(ITIMER_REAL, &val, 0);
+ #else
