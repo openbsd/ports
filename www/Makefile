@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2004/04/16 22:18:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.134 2004/04/20 20:01:14 naddy Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -137,6 +137,7 @@
 #    SUBDIR += webstone
 #    SUBDIR += wml
 #    SUBDIR += wn
+     SUBDIR += www6to4
      SUBDIR += wwwcount
      SUBDIR += wwwoffle
 #    SUBDIR += wwwstat
