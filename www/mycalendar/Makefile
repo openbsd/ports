@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/07/17 03:14:13 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2003/01/10 05:02:58 kevlo Exp $
 
 COMMENT=	"lightweight and easy to use web calendar"
 
 DISTNAME=	mycalendar-1.5
 CATEGORIES=	www
 
-HOMEPAGE=	http://www.fuzzymonkey.org/perl/
+HOMEPAGE=	http://www.fuzzymonkey.org/newfuzzy/software/perl/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
