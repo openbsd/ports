@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2004/12/27 13:28:33 alek Exp $
+# $OpenBSD: Makefile,v 1.46 2005/01/05 19:45:26 naddy Exp $
 
 COMMENT=	"GNU privacy guard - a free PGP replacement"
 
@@ -47,6 +47,8 @@ DISTFILES=		${DISTNAME}${EXTRACT_SUFX} idea.c.gz:0
 
 post-extract:
 	ln -s ${WRKDIR}/idea.c ${WRKSRC}/cipher/idea.c
+.else
+SUPDISTFILES=	idea.c.gz:0
 .endif
 
 GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
