@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2001/09/14 16:13:05 lebel Exp $
+# $OpenBSD: Makefile,v 1.45 2001/09/24 09:34:35 wilfried Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 
 DISTNAME=		WindowMaker-0.65.1
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.433
+NEED_VERSION=		1.460
 
 HOMEPAGE=		http://www.windowmaker.org/
 
@@ -39,7 +39,7 @@ FLAVORS=		i18n
 FLAVOR?=
 
 .if ${FLAVOR:L:Mi18n}
-LIB_DEPENDS+=		intl::devel/gettext
+MODULES=		gettext
 CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ENV+=		LINGUAS='bg cs da de el es et fi fr gl hr hu it ja ko nl no pl pt ro ru sk sv tr zh_CN zh_TW.Big5'
 .endif
