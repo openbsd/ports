@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST.i386,v 1.2 2000/05/17 15:02:44 espie Exp $
 @pkgcfl navigator-*
 bin/netscape
 netscape/LICENSE
@@ -12,7 +13,7 @@ netscape/java/classes/java40.jar
 netscape/java/classes/jio40.jar
 netscape/java/classes/joptio40.jar
 netscape/java/classes/jsd10.jar
-netscape/java/classes/ldap30.jar
+netscape/java/classes/ldap40.jar
 netscape/java/classes/resource.jar
 netscape/java/classes/scd10.jar
 netscape/movemail

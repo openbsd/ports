@@ -1,5 +1,5 @@
---- communicator-v47.x86-bsdi-bsd2/ns-install.orig	Thu Sep 16 19:59:00 1999
-+++ communicator-v47.x86-bsdi-bsd2/ns-install	Sun Apr  9 17:32:07 2000
+--- communicator-v472.x86-bsdi-bsd2/ns-install.orig	Thu Sep 16 19:59:00 1999
++++ communicator-v472.x86-bsdi-bsd2/ns-install	Sun Apr  9 17:32:07 2000
 @@ -84,22 +84,10 @@ then
  	exit 1
  fi
