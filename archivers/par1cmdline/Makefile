@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/11/21 12:50:32 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2004/12/30 00:47:10 espie Exp $
 
 COMMENT=	"command line implementation of the PAR v1.0 specification"
 DISTNAME=	par-v1.1
-PKGNAME=	${DISTNAME:S/par-v/par1cmdline-/}
+PKGNAME=	par1cmdline-1.1p0
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=parchive/}
 
@@ -23,7 +23,7 @@ WRKDIST=${WRKDIR}/par-cmdline
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/par1cmdline
-	${INSTALL_PROGRAM} ${WRKSRC}/par ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/par ${PREFIX}/bin/par1
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/par1cmdline
 
 .include <bsd.port.mk>
