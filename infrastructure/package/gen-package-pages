@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: gen-package-pages,v 1.1 2004/02/20 23:47:54 pvalchev Exp $
+# $OpenBSD: gen-package-pages,v 1.2 2004/02/25 00:08:30 espie Exp $
 
 # Copyright (c) 2004 Michael Coulter
 #
@@ -37,82 +37,99 @@ use OpenBSD::PackageName;
 use OpenBSD::PackageLocator;
 use OpenBSD::PackingList;
 
+use subs qw(dprint gen_arch_page gen_pkg_page gen_pkg_listing_page getfile
+    htmlfile gen_index_page arch_body arch_foot arch_head index_head 
+    index_foot pkg_list pkg_long);
+
 our $osrev = "3.4";
 our $debug = 0;
 our $html;
 
 my @arches = qw(alpha hppa i386 m68k powerpc sparc sparc64 vax);
 my $pkgpath = "/home/ftp/pub/OpenBSD/$osrev/packages";
+my $htmlbase = "html";
 
-mkdir("html");
-map { mkdir("html/$_") } @arches;
+mkdir($htmlbase);
+foreach (@arches) {
+	mkdir "$htmlbase/$_";
+}
 
 gen_index_page(@arches);
 
 foreach (@arches) { gen_arch_page($_); }
 
-sub dprint {
+sub dprint 
+{
 	if($debug) { print @_; }
 }
 
-sub gen_arch_page {
+sub getfile
+{
+	my $fname = shift;
+
+	open(my $f, '<', $fname) or die "No such file $fname\n";
+	my $result = join('', <$f>);
+	close($f);
+	return $result;
+}
+
+sub htmlfile
+{
+	my $fname = "$htmlbase/".shift;
+
+	open(my $f, '>', $fname) or die "Cannot write to $fname\n";
+	return $f;
+}
+
+sub gen_arch_page 
+{
 	my $arch = shift;
 	print "generating page for $arch\n";
-	open(ARCH,"> html/$arch.html") || die "cannot open file $arch.html: $!\n";
+	my $archfile = htmlfile("$arch.html");
 
-	&arch_head($arch);
-	print ARCH $html;
+	print $archfile arch_head($arch);
 
-	opendir(PKGS, "$pkgpath/$arch") || die "cannot get package listing for $arch: $!\n";
-	while (my $file = readdir(PKGS)) {
+	opendir(my $pkgs, "$pkgpath/$arch") || die "cannot get package listing for $arch: $!\n";
+	while (my $file = readdir($pkgs)) {
 		next if ($file =~ /^\./);
 
 		dprint "generating package for $arch/$file\n";
 		my $package = OpenBSD::PackageLocator->find("$pkgpath/$arch/$file");
 		if(! $package) { die "package error: $!\n"; }
-		my $dir = $package->info;
+		my $dir = $package->info();
 		$package->close();
-		my $comment = "";
 
-		open(IN,"<",$dir.COMMENT) or die "cannot get comment: $!\n";
-		while(<IN>) { $comment .= $_ }
-		close(IN);
-
-		arch_body($arch,$file,$comment);
-		print ARCH $html;
+		print $archfile arch_body($arch,$file,getfile($dir.COMMENT));
 		gen_pkg_page($arch,$file,$dir);
 	}
-	closedir(PKGS);
+	closedir($pkgs);
 
-	&arch_foot;
-	print ARCH $html;
+	print $archfile arch_foot();
 
-	close(ARCH);
+	close($archfile);
 
 }
 
-sub gen_pkg_page {
+sub gen_pkg_page 
+{
 	my ($arch,$pkg, $dir) = @_;
-	open(LONG, "> html/$arch/$pkg-long.html");
+	my $long = htmlfile("$arch/$pkg-long.html");
 
-	my $pkg_info;
-	open(IN,"<",$dir.DESC) or die "cannot get description: $!\n";
-	while(<IN>) { $pkg_info .= $_ }
-	close(IN);
+	my $pkg_info = getfile($dir.DESC);
 
 	$pkg_info =~ s/\&/\&amp\;/g;
 	$pkg_info =~ s/\</\&lt\;/g;
 	$pkg_info =~ s/\>/\&gt\;/g;
 
-	&pkg_long($arch,$pkg,$pkg_info);
-	print LONG $html;
-	close(LONG);
+	print $long pkg_long($arch,$pkg,$pkg_info);
+	close($long);
 	gen_pkg_listing_page($arch,$pkg,$dir);
 }
 
-sub gen_pkg_listing_page {
+sub gen_pkg_listing_page 
+{
 	my ($arch,$pkg,$dir) = @_;
-	open(CONT, "> html/$arch/$pkg-contents.html");
+	my $cont = htmlfile("$arch/$pkg-contents.html");
 
 	my $pkg_info;
 	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS, \&OpenBSD::PackingList::FilesOnly);
@@ -128,35 +145,35 @@ sub gen_pkg_listing_page {
 		$pkg_info = "empty packing list";
 	} 
 
-	&pkg_list($arch,$pkg,$pkg_info);
-	print CONT $html;
-	close(CONT);
+	print $cont pkg_list($arch,$pkg,$pkg_info);
+	close($cont);
 }
 
-sub gen_index_page {
+sub gen_index_page 
+{
 	my @arches = @_;
 
-	open(INDEX,"> html/index.html") || die "cannot open file INDEX: $!\n";
+	my $index = htmlfile("index.html");
 
-	&index_head;
-	print INDEX $html;
+	print $index index_head();
 
-	map { $html .= "<a href=$_.html>$_</a>\n" } @arches;
-	print INDEX $html;
+	foreach (@arches) {
+		print $index "<a href=\"$_.html\">$_</a>\n";
+	}
 
-	&index_foot;
-	print INDEX $html;
+	print $index index_foot();
 
-	close(INDEX);
+	close($index);
 
 }
 
 exit(0);
 
-sub arch_body {
+sub arch_body 
+{
 	my($arch,$file,$comment) = @_;
 
-$html =<<"EOF";
+	return <<"EOF";
 <tr>
 <td><b><a href=$arch/$file-long.html>$file</a></b></td>
 <td>&nbsp&nbsp&nbsp<i>$comment</i></td>
@@ -166,18 +183,18 @@ $html =<<"EOF";
 EOF
 }
 
-sub arch_foot {
-
-$html= <<"EOF";
+sub arch_foot 
+{
+    return <<"EOF";
 </table><hr></body></html>
 EOF
-
 }
 
-sub arch_head {
-	my $arch = shift @_;
+sub arch_head 
+{
+	my $arch = shift;
 
-$html =<<"EOF";
+	return <<"EOF";
 <html>
 <body BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#23238E">
 <title>OpenBSD Packages ($osrev/$arch)</title>
@@ -196,9 +213,10 @@ area.
 EOF
 }
 
-sub index_head {
+sub index_head 
+{
 
-$html =<<"EOF";
+	return <<"EOF";
 <html><title>OpenBSD Packages - Architecture
 Selection for OpenBSD $osrev</title>
 <body BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#23238E">
@@ -208,17 +226,18 @@ Please select the architecture for which you wish to download a package.<br><br>
 EOF
 }
 
-sub index_foot {
-
-$html =<<"EOF";
+sub index_foot 
+{
+	return <<"EOF";
 <br><br><hr></table></body></html>
 EOF
 }
 
-sub pkg_list {
+sub pkg_list 
+{
 	my ($arch,$pkg,$pkg_info) = @_;
 
-$html =<<"EOF";
+	return <<"EOF";
 <html><title>OpenBSD Package Details - $pkg</title>
 <body BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#23238E">
 <img src=http://www.openbsd.org/images/smalltitle.gif><br><br>
@@ -236,10 +255,11 @@ $pkg_info
 EOF
 }
 
-sub pkg_long {
+sub pkg_long 
+{
 	my ($arch,$pkg,$pkg_info) = @_;
 
-$html =<<"EOF";
+	return <<"EOF";
 <html><title>OpenBSD Package Details - $pkg</title>
 <body BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#23238E">
 <img src=http://www.openbsd.org/images/smalltitle.gif><br><br>
