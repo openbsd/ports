@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/14 13:37:38 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/09/19 20:33:01 naddy Exp $
 bin/glade
 share/glade/gnome/Makefile.am
 share/glade/gnome/aclocal-include.m4
@@ -110,6 +110,26 @@ share/gnome/help/glade/C/user-guide/windows-tree.html
 share/gnome/help/glade/C/user-guide/windows.html
 share/gnome/help/glade/C/user-guide/x225.html
 share/gnome/help/glade/C/user-guide/x324.html
+share/locale/ca/LC_MESSAGES/glade.mo
+share/locale/cs/LC_MESSAGES/glade.mo
+share/locale/da/LC_MESSAGES/glade.mo
+share/locale/de/LC_MESSAGES/glade.mo
+share/locale/el/LC_MESSAGES/glade.mo
+share/locale/en_GB/LC_MESSAGES/glade.mo
+share/locale/es/LC_MESSAGES/glade.mo
+share/locale/fr/LC_MESSAGES/glade.mo
+share/locale/ga/LC_MESSAGES/glade.mo
+share/locale/gl/LC_MESSAGES/glade.mo
+share/locale/it/LC_MESSAGES/glade.mo
+share/locale/ja/LC_MESSAGES/glade.mo
+share/locale/ko/LC_MESSAGES/glade.mo
+share/locale/no/LC_MESSAGES/glade.mo
+share/locale/pl/LC_MESSAGES/glade.mo
+share/locale/pt_BR/LC_MESSAGES/glade.mo
+share/locale/ru/LC_MESSAGES/glade.mo
+share/locale/sv/LC_MESSAGES/glade.mo
+share/locale/tr/LC_MESSAGES/glade.mo
+share/locale/uk/LC_MESSAGES/glade.mo
 share/pixmaps/glade.png
 share/pixmaps/glade/glade_logo.png
 @dirrm share/pixmaps/glade
