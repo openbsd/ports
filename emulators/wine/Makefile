@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/10/28 13:05:46 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2002/05/11 17:42:57 fgsch Exp $
 
 COMMENT=	"MS-Windows 3.1/95/NT emulator for Unix (Alpha release)"
 
@@ -6,8 +6,7 @@ DATE= 		990225
 DISTNAME= 	Wine-${DATE}
 PKGNAME=	wine-${DATE}
 CATEGORIES=	emulators x11
-NEED_VERSION=	1.402
-FAKE=No
+NEED_VERSION=	1.527
 
 ONLY_FOR_ARCHS= i386
 
@@ -16,11 +15,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	ALPHA/wine/development
+MASTER_SITES=	ftp://ftp.chg.ru/pub/gnu/ALPHA/wine/development/
 
-USE_X11	=	yes
-CONFIGURE_STYLE=	gnu
+USE_X11=	yes
+CONFIGURE_STYLE=	gnu dest
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
 
