@@ -1,0 +1,189 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/08/12 01:21:19 avsm Exp $
+horde/kronolith/COPYING
+horde/kronolith/README
+horde/kronolith/addevent.php
+horde/kronolith/addeventaction.php
+horde/kronolith/config/conf.php.dist
+horde/kronolith/config/html.php.dist
+horde/kronolith/config/keywords.php.dist
+horde/kronolith/config/menu.php.dist
+horde/kronolith/config/prefs.php.dist
+horde/kronolith/data.php
+horde/kronolith/day.php
+horde/kronolith/delevent.php
+horde/kronolith/deleventaction.php
+horde/kronolith/docs/CHANGES
+horde/kronolith/docs/CREDITS
+horde/kronolith/docs/INSTALL
+horde/kronolith/docs/TODO
+horde/kronolith/editevent.php
+horde/kronolith/editeventaction.php
+horde/kronolith/graphics/alarm.gif
+horde/kronolith/graphics/alarm_small.gif
+horde/kronolith/graphics/bullet.gif
+horde/kronolith/graphics/clear.gif
+horde/kronolith/graphics/dayview.gif
+horde/kronolith/graphics/delete.gif
+horde/kronolith/graphics/edit.gif
+horde/kronolith/graphics/event.gif
+horde/kronolith/graphics/goto.gif
+horde/kronolith/graphics/kronolith.gif
+horde/kronolith/graphics/monthview.gif
+horde/kronolith/graphics/new.gif
+horde/kronolith/graphics/next.gif
+horde/kronolith/graphics/prev.gif
+horde/kronolith/graphics/recur.gif
+horde/kronolith/graphics/today.gif
+horde/kronolith/graphics/weekview.gif
+horde/kronolith/graphics/workweekview.gif
+horde/kronolith/index.php
+horde/kronolith/lib/Day.php
+horde/kronolith/lib/DayView.php
+horde/kronolith/lib/Driver.php
+horde/kronolith/lib/Driver/mcal.php
+horde/kronolith/lib/Driver/sql.php
+horde/kronolith/lib/Event.php
+horde/kronolith/lib/Kronolith.php
+horde/kronolith/lib/Month.php
+horde/kronolith/lib/MonthView.php
+horde/kronolith/lib/Notification/kronolith.php
+horde/kronolith/lib/WeekView.php
+horde/kronolith/lib/api.php
+horde/kronolith/lib/base.php
+horde/kronolith/lib/version.php
+horde/kronolith/locale/cs_CZ/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/da_DK/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/de_DE/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/el_GR/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/es_ES/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/fi_FI/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/fr_FR/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/hu_HU/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/it_IT/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/ko_KR/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/nl_NL/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/nn_NO/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/pl_PL/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/pt_BR/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/ru_RU.KOI8-R/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/ru_RU/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/sk_SK/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/sv_SE/LC_MESSAGES/kronolith.mo
+horde/kronolith/locale/zh_TW/LC_MESSAGES/kronolith.mo
+horde/kronolith/menu.php
+horde/kronolith/month.php
+horde/kronolith/po/Makefile
+horde/kronolith/po/README
+horde/kronolith/po/cs_CZ.po
+horde/kronolith/po/da_DK.po
+horde/kronolith/po/de_DE.po
+horde/kronolith/po/el_GR.po
+horde/kronolith/po/es_ES.po
+horde/kronolith/po/extract.pl
+horde/kronolith/po/fi_FI.po
+horde/kronolith/po/fr_FR.po
+horde/kronolith/po/hu_HU.po
+horde/kronolith/po/it_IT.po
+horde/kronolith/po/ko_KR.po
+horde/kronolith/po/nl_NL.po
+horde/kronolith/po/nn_NO.po
+horde/kronolith/po/pl_PL.po
+horde/kronolith/po/pt_BR.po
+horde/kronolith/po/ru_RU.KOI8-R.po
+horde/kronolith/po/ru_RU.po
+horde/kronolith/po/shtool
+horde/kronolith/po/sk_SK.po
+horde/kronolith/po/sv_SE.po
+horde/kronolith/po/xgettext.sh
+horde/kronolith/po/zh_TW.po
+horde/kronolith/prefs.php
+horde/kronolith/scripts/drivers/kronolith.sql
+horde/kronolith/status.php
+horde/kronolith/templates/common-footer.inc
+horde/kronolith/templates/common-header.inc
+horde/kronolith/templates/data/export.inc
+horde/kronolith/templates/data/import.inc
+horde/kronolith/templates/day/all_day.inc
+horde/kronolith/templates/day/foot.inc
+horde/kronolith/templates/day/head.inc
+horde/kronolith/templates/day/row.inc
+horde/kronolith/templates/day/row_half.inc
+horde/kronolith/templates/delete/delete.inc
+horde/kronolith/templates/delete/one.inc
+horde/kronolith/templates/edit/edit.inc
+horde/kronolith/templates/edit/javascript.inc
+horde/kronolith/templates/index/css.inc
+horde/kronolith/templates/index/notconfigured.inc
+horde/kronolith/templates/javascript/goto.inc
+horde/kronolith/templates/menu/menu.inc
+horde/kronolith/templates/month/head.inc
+horde/kronolith/templates/month_begin_week.inc
+horde/kronolith/templates/month_day.inc
+horde/kronolith/templates/month_end_week.inc
+horde/kronolith/templates/month_foot.inc
+horde/kronolith/templates/month_head.inc
+horde/kronolith/templates/view/view.inc
+horde/kronolith/templates/week/head.inc
+horde/kronolith/viewevent.php
+horde/kronolith/week.php
+horde/kronolith/workweek.php
+@dirrm horde/kronolith/templates/week
+@dirrm horde/kronolith/templates/view
+@dirrm horde/kronolith/templates/month
+@dirrm horde/kronolith/templates/menu
+@dirrm horde/kronolith/templates/javascript
+@dirrm horde/kronolith/templates/index
+@dirrm horde/kronolith/templates/edit
+@dirrm horde/kronolith/templates/delete
+@dirrm horde/kronolith/templates/day
+@dirrm horde/kronolith/templates/data
+@dirrm horde/kronolith/templates
+@dirrm horde/kronolith/scripts/drivers
+@dirrm horde/kronolith/scripts
+@dirrm horde/kronolith/po
+@dirrm horde/kronolith/locale/zh_TW/LC_MESSAGES
+@dirrm horde/kronolith/locale/zh_TW
+@dirrm horde/kronolith/locale/sv_SE/LC_MESSAGES
+@dirrm horde/kronolith/locale/sv_SE
+@dirrm horde/kronolith/locale/sk_SK/LC_MESSAGES
+@dirrm horde/kronolith/locale/sk_SK
+@dirrm horde/kronolith/locale/ru_RU/LC_MESSAGES
+@dirrm horde/kronolith/locale/ru_RU.KOI8-R/LC_MESSAGES
+@dirrm horde/kronolith/locale/ru_RU.KOI8-R
+@dirrm horde/kronolith/locale/ru_RU
+@dirrm horde/kronolith/locale/pt_BR/LC_MESSAGES
+@dirrm horde/kronolith/locale/pt_BR
+@dirrm horde/kronolith/locale/pl_PL/LC_MESSAGES
+@dirrm horde/kronolith/locale/pl_PL
+@dirrm horde/kronolith/locale/nn_NO/LC_MESSAGES
+@dirrm horde/kronolith/locale/nn_NO
+@dirrm horde/kronolith/locale/nl_NL/LC_MESSAGES
+@dirrm horde/kronolith/locale/nl_NL
+@dirrm horde/kronolith/locale/ko_KR/LC_MESSAGES
+@dirrm horde/kronolith/locale/ko_KR
+@dirrm horde/kronolith/locale/it_IT/LC_MESSAGES
+@dirrm horde/kronolith/locale/it_IT
+@dirrm horde/kronolith/locale/hu_HU/LC_MESSAGES
+@dirrm horde/kronolith/locale/hu_HU
+@dirrm horde/kronolith/locale/fr_FR/LC_MESSAGES
+@dirrm horde/kronolith/locale/fr_FR
+@dirrm horde/kronolith/locale/fi_FI/LC_MESSAGES
+@dirrm horde/kronolith/locale/fi_FI
+@dirrm horde/kronolith/locale/es_ES/LC_MESSAGES
+@dirrm horde/kronolith/locale/es_ES
+@dirrm horde/kronolith/locale/el_GR/LC_MESSAGES
+@dirrm horde/kronolith/locale/el_GR
+@dirrm horde/kronolith/locale/de_DE/LC_MESSAGES
+@dirrm horde/kronolith/locale/de_DE
+@dirrm horde/kronolith/locale/da_DK/LC_MESSAGES
+@dirrm horde/kronolith/locale/da_DK
+@dirrm horde/kronolith/locale/cs_CZ/LC_MESSAGES
+@dirrm horde/kronolith/locale/cs_CZ
+@dirrm horde/kronolith/locale
+@dirrm horde/kronolith/lib/Notification
+@dirrm horde/kronolith/lib/Driver
+@dirrm horde/kronolith/lib
+@dirrm horde/kronolith/graphics
+@dirrm horde/kronolith/docs
+@dirrm horde/kronolith/config
+@dirrm horde/kronolith
