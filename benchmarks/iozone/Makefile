@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2001/08/30 02:10:40 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2001/12/01 05:35:39 brad Exp $
 # Uses pthreads
 
 COMMENT=	"performance test of sequential file I/O"
 
-DISTNAME=	iozone3_56
-PKGNAME=	iozone-3.56
+DISTNAME=	iozone3_71
+PKGNAME=	iozone-3.71
 CATEGORIES=	benchmarks
-NEED_VERSION=	1.435
+NEED_VERSION=	1.500
 MASTER_SITES=	http://www.iozone.org/src/current/
 EXTRACT_SUFX=	.tar
 
@@ -20,6 +20,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_ENV=	CC="${CC}"
+
+NO_REGRESS=	Yes
 
 FLAVORS=	threads
 FLAVOR?=
