@@ -3,7 +3,7 @@
 # Date created:		10 Nov 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:36 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1998/01/30 00:29:20 niklas Exp $
 #
 
 DISTNAME=	irc2.9.2p3
@@ -12,6 +12,10 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.funet.fi/pub/networking/services/irc/server/
 
 MAINTAINER=	joey@OpenBSD.ORG
+
+.if ${MACHINE_ARCH} == "alpha"
+BROKEN=		yes
+.endif
 
 # the NOTE command is disabled by default
 # ENABLE_NOTE=yes
