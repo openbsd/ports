@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/12 08:16:24 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2002/05/12 08:25:56 pvalchev Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc
@@ -38,6 +38,7 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 		--disable-alsa \
 		--disable-vorbis \
 		--disable-aa \
+		--disable-oss \
 		--enable-select \
 		--enable-gl \
 		--enable-gui \
@@ -49,7 +50,7 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 CONFIGURE_ARGS+=--target=ppc-openbsd
 .endif
 
-FLAVORS=	sdl ggi debug mad oss win32 dvd
+FLAVORS=	sdl ggi debug mad win32 dvd
 FLAVOR?=
 
 .if ${FLAVOR:L:Msdl}
@@ -78,15 +79,16 @@ LIB_DEPENDS+=	mad::audio/mad
 CONFIGURE_ARGS+=--disable-mad
 .endif
 
-.if ${FLAVOR:L:Moss}
-CONFIGURE_ARGS+=--enable-ossaudio
-.else
-CONFIGURE_ARGS+=--disable-ossaudio
-.endif
-
 .if ${FLAVOR:L:Mwin32}
-.if !defined(NO_WARNINGS)
 pre-fetch:
+.if ${MACHINE_ARCH} != i386
+	@echo
+	@echo "Sorry, this CPU does not support Win32 codec DLLs,"
+	@echo "and you cannot use the win32 flavor.
+	@echo
+	@exit 1
+.else
+.if !defined(NO_WARNINGS)
 	@echo
 	@echo "  WARNING: This application requires a kernel compiled with"
 	@echo "           'option USER_LDT' for proper operation. The GENERIC"
@@ -96,6 +98,7 @@ pre-fetch:
 RUN_DEPENDS+=	win32/divx.dll::graphics/win32-codecs
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32
+.endif
 .else
 CONFIGURE_ARGS+=--disable-win32
 .endif

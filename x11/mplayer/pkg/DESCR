@@ -28,9 +28,7 @@ Flavors:
 
   mad: enables mad, requires audio/mad
 
-  oss: enables oss audio
-
-  win32: enables win32 codecs
+  win32: enables win32 codecs (i386-only)
 
   dvd: enables dvd reading, requires devel/libdvdread
 

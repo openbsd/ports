@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.2 2002/05/12 08:16:24 pvalchev Exp $
+$OpenBSD: patch-configure,v 1.3 2002/05/12 08:25:57 pvalchev Exp $
 --- configure.orig	Fri May  3 16:13:06 2002
-+++ configure	Sun May 12 01:38:59 2002
++++ configure	Sun May 12 02:22:52 2002
 @@ -1390,8 +1390,8 @@ if test "$_malloc" = yes ; then
  else
    _def_malloc='#undef HAVE_MALLOC_H'
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.2 2002/05/12 08:16:24 pvalchev Exp $
 -netbsd && _ld_arch="$_ld_arch -li386 -lossaudio"
 -openbsd && _ld_arch="$_ld_arch -li386 -lossaudio"
 +
-+if netbsd || openbsd  ; then
++if netbsd ; then
 +  _ld_arch="$_ld_arch -lossaudio"
 +  x86  && _ld_arch="$_ld_arch -li386"
 +fi
