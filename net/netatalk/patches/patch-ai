@@ -1,0 +1,11 @@
+--- etc/afpd/auth.c.orig	Sun Jan 10 21:57:06 1999
++++ etc/afpd/auth.c	Sun Jan 10 22:00:21 1999
+@@ -39,7 +39,7 @@
+ #if defined( KRB ) || defined( UAM_AFSKRB )
+ #include <krb.h>
+ #include <des.h>
+-#include <prot.h>
++
+ 
+ C_Block			seskey;
+ Key_schedule		seskeysched;

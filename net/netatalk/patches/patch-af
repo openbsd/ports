@@ -1,0 +1,175 @@
+*** etc/afpd/file.c-	1997/08/17 00:01:46
+--- etc/afpd/file.c	1997/08/20 22:39:08
+***************
+*** 125,139 ****
+  	    break;
+  
+  	case FILPBIT_FINFO :
+! 	    if ( !isad ||
+! 		    bcmp( ad_entry( &ad, ADEID_FINDERI ), ufinderi, 8 ) == 0 ) {
+  		bcopy( ufinderi, data, 32 );
+- 		if (( em = getextmap( path )) != NULL ) {
+- 		    bcopy( em->em_type, data, sizeof( em->em_type ));
+- 		    bcopy( em->em_creator, data + 4, sizeof( em->em_creator ));
+- 		}
+  	    } else {
+  		bcopy( ad_entry( &ad, ADEID_FINDERI ), data, 32 );
+  	    }
+  	    data += 32;
+  	    break;
+--- 125,139 ----
+  	    break;
+  
+  	case FILPBIT_FINFO :
+! 	    if ( !isad ) {
+  		bcopy( ufinderi, data, 32 );
+  	    } else {
+  		bcopy( ad_entry( &ad, ADEID_FINDERI ), data, 32 );
++ 	    }
++ 	    if ( bcmp( data, ufinderi, 8 ) == 0 &&
++ 		    ( em = getextmap( path )) != NULL ) {
++ 		bcopy( em->em_type, data, sizeof( em->em_type ));
++ 		bcopy( em->em_creator, data + 4, sizeof( em->em_creator ));
+  	    }
+  	    data += 32;
+  	    break;
+*** etc/afpd/fork.c-	1997/08/17 00:01:46
+--- etc/afpd/fork.c	1997/08/26 03:50:24
+***************
+*** 95,108 ****
+  
+      if ( ad_open( mtoupath( path ), adflags, oflags, 0,
+  		&ofork->of_ad ) < 0 ) {
+! 	if ( errno == ENOENT && adflags != ADFLAGS_HF ) {
+  	    ad_close( &ofork->of_ad, adflags );
+! 	    if ( ad_open( mtoupath( path ), ADFLAGS_DF, oflags, 0,
+! 		    &ofork->of_ad ) < 0 ) {
+! 		ad_close( &ofork->of_ad, ADFLAGS_DF );
+! 		of_dealloc( ofork );
+! 		*rbuflen = 0;
+! 		return( AFPERR_NOOBJ );
+  	    }
+  	} else {
+  	    of_dealloc( ofork );
+--- 95,110 ----
+  
+      if ( ad_open( mtoupath( path ), adflags, oflags, 0,
+  		&ofork->of_ad ) < 0 ) {
+! 	if ( errno == ENOENT ) {
+  	    ad_close( &ofork->of_ad, adflags );
+! 	    if ( adflags != ADFLAGS_HF ) {
+! 		if ( ad_open( mtoupath( path ), ADFLAGS_DF, oflags, 0,
+! 			&ofork->of_ad ) < 0 ) {
+! 		    ad_close( &ofork->of_ad, ADFLAGS_DF );
+! 		    of_dealloc( ofork );
+! 		    *rbuflen = 0;
+! 		    return( AFPERR_NOOBJ );
+! 		}
+  	    }
+  	} else {
+  	    of_dealloc( ofork );
+***************
+*** 171,176 ****
+--- 173,181 ----
+  	lockfd = ad_dfileno( &ofork->of_ad );
+      } else {
+  	lockfd = ad_hfileno( &ofork->of_ad );
++ 	if ( lockfd == -1 ) {
++ 	    lockop = 0;
++ 	}
+      }
+      if ( lockop && flock( lockfd, lockop|LOCK_NB ) < 0 ) {
+  	ret = errno;
+***************
+*** 318,325 ****
+  
+      if ( ad_dfileno( &ofork->of_ad ) != -1 ) {
+  	eid = ADEID_DFORK;
+!     } else {
+  	eid = ADEID_RFORK;
+      }
+  
+      if ( reqcount < 0 ) {
+--- 323,333 ----
+  
+      if ( ad_dfileno( &ofork->of_ad ) != -1 ) {
+  	eid = ADEID_DFORK;
+!     } else if ( ad_hfileno( &ofork->of_ad ) != -1 ) {
+  	eid = ADEID_RFORK;
++     } else {
++ 	*rbuflen = 0;
++ 	return( AFPERR_EOF );
+      }
+  
+      if ( reqcount < 0 ) {
+***************
+*** 548,555 ****
+  	    *rbuflen = 0;
+  	    return( AFPERR_DFULL );
+  	default :
+- 	    syslog( LOG_ERR, "afp_write: ad_write: %m" );
+  	    *rbuflen = 0;
+  	    return( AFPERR_PARAM );
+  	}
+      }
+--- 556,563 ----
+  	    *rbuflen = 0;
+  	    return( AFPERR_DFULL );
+  	default :
+  	    *rbuflen = 0;
++ 	    syslog( LOG_ERR, "afp_write: ad_write: %m" );
+  	    return( AFPERR_PARAM );
+  	}
+      }
+***************
+*** 642,649 ****
+      }
+      if ( bitmap & ( 1<<FILPBIT_DFLEN | 1<<FILPBIT_FNUM )) {
+  	if ( ad_dfileno( &ofork->of_ad ) == -1 ) {
+! 	    if ( fstat( ad_hfileno( &ofork->of_ad ), &st ) < 0 ) {
+! 		return( AFPERR_BITMAP );
+  	    }
+  	} else {
+  	    if ( fstat( ad_dfileno( &ofork->of_ad ), &st ) < 0 ) {
+--- 650,657 ----
+      }
+      if ( bitmap & ( 1<<FILPBIT_DFLEN | 1<<FILPBIT_FNUM )) {
+  	if ( ad_dfileno( &ofork->of_ad ) == -1 ) {
+! 	    if ( stat( mtoupath( ofork->of_name ), &st ) < 0 ) {
+! 		return( AFPERR_NOOBJ );
+  	    }
+  	} else {
+  	    if ( fstat( ad_dfileno( &ofork->of_ad ), &st ) < 0 ) {
+***************
+*** 710,724 ****
+  	    break;
+  
+  	case FILPBIT_FINFO :
+! 	    if ( !isad || bcmp( ad_entry( &ofork->of_ad, ADEID_FINDERI ),
+! 		    ufinderi, 8 ) == 0 ) {
+  		bcopy( ufinderi, data, 32 );
+- 		if (( em = getextmap( ofork->of_name )) != NULL ) {
+- 		    bcopy( em->em_type, data, sizeof( em->em_type ));
+- 		    bcopy( em->em_creator, data + 4, sizeof( em->em_creator ));
+- 		}
+  	    } else {
+  		bcopy( ad_entry( &ofork->of_ad, ADEID_FINDERI ), data, 32 );
+  	    }
+  	    data += 32;
+  	    break;
+--- 718,732 ----
+  	    break;
+  
+  	case FILPBIT_FINFO :
+! 	    if ( !isad ) {
+  		bcopy( ufinderi, data, 32 );
+  	    } else {
+  		bcopy( ad_entry( &ofork->of_ad, ADEID_FINDERI ), data, 32 );
++ 	    }
++ 	    if ( bcmp( data, ufinderi, 8 ) == 0 &&
++ 		    ( em = getextmap( ofork->of_name )) != NULL ) {
++ 		bcopy( em->em_type, data, sizeof( em->em_type ));
++ 		bcopy( em->em_creator, data + 4, sizeof( em->em_creator ));
+  	    }
+  	    data += 32;
+  	    break;

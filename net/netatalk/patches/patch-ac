@@ -1,0 +1,29 @@
+--- etc/afpd/unix.c.orig	Fri Mar 27 00:00:03 1998
++++ etc/afpd/unix.c	Fri Mar 27 00:14:18 1998
+@@ -37,14 +37,14 @@
+ #include <sys/mnttab.h>
+ #endif __svr4__
+ 
+-#ifdef __FreeBSD__
++#if defined( __FreeBSD__ ) || defined( __OpenBSD__ )
+ #include <ufs/ufs/quota.h>
+ #include <sys/mount.h>
+ #define dqb_btimelimit	dqb_btime
+-#endif __FreeBSD__
++#endif __FreeBSD__ __OpenBSD__
+ 
+ #if !defined( linux ) && !defined( ultrix ) && !defined( __svr4__ ) && \
+-	!defined( __FreeBSD__ )
++	!defined( __FreeBSD__ ) && !defined( __OpenBSD__ )
+ #include <ufs/quota.h>
+ #include <mntent.h>
+ #endif linux ultrix __svr4__
+@@ -169,7 +169,7 @@
+ }
+ 
+ #else ultrix
+-#ifdef __FreeBSD__
++#if defined ( __FreeBSD__ ) || ( __OpenBSD__ )
+ 
+     char *
+ special( file )

@@ -1,0 +1,32 @@
+--- rc.atalk.bsd.orig	Fri Jan  8 18:23:55 1999
++++ rc.atalk.bsd	Fri Jan  8 18:25:27 1999
+@@ -15,11 +15,11 @@
+ 
+ echo -n 'starting appletalk daemons:'
+ if [ -f :SBINDIR:/atalkd ]; then
+-	:SBINDIR:/atalkd;		echo -n ' atalkd'
++	:SBINDIR:/atalkd -f /etc/netatalk/atalk.conf;		echo -n ' atalkd'
+ fi
+ 
+ if [ -f :BINDIR:/nbprgstr ]; then
+-	:BINDIR:/nbprgstr -p 4 `hostname|sed 's/\..*$//'`:Workstation
++	:BINDIR:/nbprgstr -p 4 `hostname|sed 's/\..*$//'`:Server
+ 	:BINDIR:/nbprgstr -p 4 `hostname|sed 's/\..*$//'`:netatalk
+ 					echo -n ' nbprgstr'
+ fi
+@@ -29,11 +29,11 @@
+ fi
+ 
+ if [ -f :SBINDIR:/afpd ]; then
+-	:SBINDIR:/afpd;		echo -n ' afpd'
++	:SBINDIR:/afpd -f /etc/netatalk/AppleVolumes.default;		echo -n ' afpd'
+ fi
+ 
+-if [ -f :SBINDIR:/timelord ]; then
+-	:SBINDIR:/timelord;		echo -n ' timelord'
+-fi
++#if [ -f :SBINDIR:/timelord ]; then
++#	:SBINDIR:/timelord;		echo -n ' timelord'
++#fi
+ 
+ 					echo '.'

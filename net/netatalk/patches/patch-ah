@@ -1,0 +1,11 @@
+--- etc/papd/Makefile.orig	Fri Jan  8 19:13:41 1999
++++ etc/papd/Makefile	Fri Jan  8 19:13:57 1999
+@@ -15,7 +15,7 @@
+ 	if [ x"${KRBDIR}" != x ]; then \
+ 	    KRBLIBS="-lkrb -ldes"; \
+ 	    KRBLIBDIRS="-L${KRBDIR}/lib"; \
+-	    KRBINCPATH="-I${KRBDIR}/include"; \
++	    KRBINCPATH="-I${KRBDIR}/include/kerberosIV"; \
+ 	    KRBDEFS="-DKRB"; \
+ 	fi; \
+         ${MAKE} ${MFLAGS} CC="${CC}" ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" \

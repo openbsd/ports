@@ -1,0 +1,58 @@
+# OpenBSD specific defines, passed to subdirectories.
+DEFS=	-DBSD4_4
+OPTOPTS=	-O
+CC=	gcc
+INSTALL=	install
+ADDLIBS=
+
+ALL=	../../libatalk ../../include ../../bin ../../etc ../../man
+
+all:	${ALL}
+
+../../bin ../../etc:	../../libatalk
+
+${ALL}:	FRC
+	cd $@; ${MAKE} ${MFLAGS} CC="${CC}" \
+	    ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" OPTOPTS="${OPTOPTS}" \
+	    SBINDIR="${SBINDIR}" BINDIR="${BINDIR}" RESDIR="${RESDIR}" \
+	    ETCDIR="${ETCDIR}" LIBDIR="${LIBDIR}" INCDIR="${INCDIR}" \
+	    DESTDIR="${DESTDIR}" AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" all
+
+FRC:
+
+install :
+	-mkdir ${DESTDIR} ${SBINDIR} ${BINDIR} ${ETCDIR} ${LIBDIR}
+	for i in ${ALL}; \
+	    do (cd $$i; ${MAKE} ${MFLAGS} CC="${CC}" \
+		ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" OPTOPTS="${OPTOPTS}" \
+	        SBINDIR="${SBINDIR}" BINDIR="${BINDIR}" RESDIR="${RESDIR}" \
+	        ETCDIR="${ETCDIR}" LIBDIR="${LIBDIR}" INCDIR="${INCDIR}" \
+		AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" \
+		INSTALL="${INSTALL}" $@); \
+	done
+	rm -f ${ETCDIR}/rc.atalk
+	sed -e s@:DESTDIR:@${DESTDIR}@ -e s@:SBINDIR:@${SBINDIR}@ \
+		-e s@:BINDIR:@${BINDIR}@ -e s@:RESDIR:@${RESDIR}@ \
+		-e s@:ETCDIR:@${ETCDIR}@ -e s@:LIBDIR:@${LIBDIR}@ \
+		-e s@:INCDIR:@${INCDIR}@ \
+	    < ../../rc.atalk.bsd > ${ETCDIR}/rc.atalk
+	@echo
+	@echo "Install is done.  Don't forget to call /etc/netatalk/rc.atalk"
+	@echo "in /etc/rc.local. Example:-" 
+	@echo "# Netatalk stuff"
+	@echo ". /etc/netatalk/rc.atalk"
+	@echo "See README and README.FREEBSD for more"
+	@echo "information."
+
+clean :
+	for i in ${ALL}; \
+	    do (cd $$i; ${MAKE} ${MFLAGS} clean); \
+	done
+
+depend :
+	for i in ${ALL}; \
+	    do (cd $$i; ${MAKE} ${MFLAGS} DEFS=${DEFS} depend); \
+	done
+
+# DO NOT DELETE THIS LINE
+

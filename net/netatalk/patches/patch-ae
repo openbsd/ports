@@ -1,0 +1,66 @@
+*** etc/afpd/unix.c-	Tue Oct  1 15:26:52 1996
+--- etc/afpd/unix.c	Mon Aug 18 21:32:59 1997
+***************
+*** 77,100 ****
+  #else ultrix
+      struct statfs	sfs;
+  #endif ultrix
+  
+      if ( statfs( vol->v_path, &sfs ) < 0 ) {
+  	return( AFPERR_PARAM );
+      }
+- 
+  #ifdef ultrix
+!     *bfree = sfs.fd_req.bfreen * 1024;
+  #else
+!     *bfree = sfs.f_bavail * sfs.f_frsize;
+  #endif ultrix
+  
+  #ifdef ultrix
+!     *btotal = ( sfs.fd_req.btot - ( sfs.fd_req.bfree - sfs.fd_req.bfreen )) *
+! 	    1024;
+  #else ultrix
+!     *btotal = ( sfs.f_blocks - ( sfs.f_bfree - sfs.f_bavail )) * sfs.f_frsize;
+  #endif ultrix
+  
+      return( AFP_OK );
+  }
+  
+--- 78,114 ----
+  #else ultrix
+      struct statfs	sfs;
+  #endif ultrix
++     u_long	multi;
+  
+      if ( statfs( vol->v_path, &sfs ) < 0 ) {
+  	return( AFPERR_PARAM );
+      }
+  #ifdef ultrix
+!     multi = 1024;
+!     *bfree = sfs.fd_req.bfreen;
+  #else
+!     multi = sfs.f_frsize;
+!     *bfree = sfs.f_bavail;
+  #endif ultrix
+  
++     if ( *bfree > 0x7fffffff / multi ) {
++ 	*bfree = 0x7fffffff;
++     } else {
++ 	*bfree *= multi;
++     }
++ 
+  #ifdef ultrix
+!     *btotal = sfs.fd_req.btot - ( sfs.fd_req.bfree - sfs.fd_req.bfreen );
+  #else ultrix
+!     *btotal = sfs.f_blocks - ( sfs.f_bfree - sfs.f_bavail );
+  #endif ultrix
+  
++     if ( *btotal > 0x7fffffff / multi ) {
++ 	*btotal = 0x7fffffff;
++     } else {
++ 	*btotal *= multi;
++     }
++ 
+      return( AFP_OK );
+  }
+  

@@ -1,0 +1,44 @@
+--- Makefile.orig	Thu Oct 10 04:14:20 1996
++++ Makefile	Fri Jan  8 18:14:07 1999
+@@ -1,17 +1,17 @@
+ # Root of installation. Subdirectories will be ${DESTDIR}/etc,
+ # ${DESTDIR}/bin, and ${DESTDIR}/lib.
+-DESTDIR=/usr/local/atalk
++DESTDIR=$(PREFIX)
+ 
+ # for system-level binaries
+-SBINDIR=$(DESTDIR)/etc
++SBINDIR=$(DESTDIR)/libexec
+ # for user-level binaries
+ BINDIR=$(DESTDIR)/bin
+ # for program libraries (*.a)
+ LIBDIR=$(DESTDIR)/lib
+ # for machine-independent resources (pagecount.ps, etc.)
+-RESDIR=$(DESTDIR)/etc
++RESDIR=$(DESTDIR)/share
+ # for configuration files (AppleVolumes.system, etc.)
+-ETCDIR=$(DESTDIR)/etc
++ETCDIR=/etc/netatalk
+ # for include files
+ INCDIR=$(DESTDIR)/include
+ # Root of man pages.  Subdirectories will be
+@@ -29,8 +29,8 @@
+ # Location of the AFS and Kerberos libraries and include files.  Uncomment
+ # and edit these if you want to include AFS or Kerberos support in afpd
+ # or Kerberos support in papd.
+-#AFSDIR=/usr/local/afs
+-#KRBDIR=/usr/local/kerberos
++#AFSDIR=/usr
++KRBDIR=/usr
+ 
+ ##########################################################################
+ 
+@@ -45,6 +45,8 @@
+ 	    Linux*) ARCH=linux \
+ 		;; \
+ 	    FreeBSD*) ARCH=freebsd \
++		;; \
++		OpenBSD*) ARCH=openbsd \
+ 		;; \
+ 	    *) echo "Unknown machine type..."; exit 1 \
+ 		;; \

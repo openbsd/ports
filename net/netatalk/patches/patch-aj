@@ -1,0 +1,154 @@
+--- config/AppleVolumes.system.orig	Sun Jan 10 22:08:17 1999
++++ config/AppleVolumes.system	Sun Jan 10 23:09:19 1999
+@@ -7,43 +7,135 @@
+ # files of type TEXT.  The first line turns off translation for files of
+ # unknown type, the second turns this translation on.
+ .       BINA    UNIX
+-# .       TEXT    UNIX
++#.      TEXT    UNIX
++#. 	TEXT	ttxt 
+ 
+ # sounds
++.aif 	AIFF 	SNdm
++.aifc 	AIFF 	SNdm   	
++.aiff	AIFF	SNdm
++.au	ULAW	SNdm
++.med	STrk	STrk
+ .mod	STrk	STrk
+ .mid	Midi	ttxt
+-.aiff	AIFF	SNdm
++.svx	SVXB	BSnd
++.voc	ovc	BSnd
+ .wav	WAVE 	SNdm
+-.au	ULAW	SNdm
+ 
+ # video
++.avi	BINA	AVIC 
++.fli	FLI	AnVw
++.gl	BINA	AnVw
+ .moov	MooV	mMPG
+ .mov	MooV	mMPG
++.mpe	MPEG	mMPG
+ .mpg	MPEG	mMPG
+ .mpeg	MPEG	mMPG
++.qt	MooV	ttxt
+ 
+ # formatted text
++.asc	TEXT	ttxt
++.ascii	TEXT	ttxt
++.bat	TEXT	ttxt
++.bok	FBok	Fra5
++.book	FBok	Fra5
++.c	TEXT	MMCC
++.cp	TEXT	MMCC
++.cpp	TEXT	MMCC
++.dbf	COMP	FOX
++.doc	WDBN	MSWD
++.dvi	ODVI	OTEX
++.evy	ENYD	ENVY
++.eps	EPSF	vgrd
++.epsf	EPSF	vgrd
++.etx	TEXT	R*ch
++.faq	TEXT	ttxt
++.fm	FMPR	FMPR
++.fm5	FASL	Fra5  
++.h	TEXT	MMCC 
++.hp	TEXT	MMCC  
++.hpp	TEXT	MMCC
++.htm	TEXT	MOS!
+ .html	TEXT	MOS!
++.java	TEXT	ALFA
++.latex	TEXT	OTEX
++.mif	TEXT	Fram
++.mswd	WDBN	MSWD
++.mw	WORD	MWII  
++.mwii	WORD	MWII
++.oda	ODIF	ODA
++.p	TEXT	MWPS  
++.pas	TEXT	MWPS
++.ps	TEXT	vgrd
++.pdf	PDF	CARO
++.pl	TEXT	McPL
++.pm4	ALB4	ALD4
++.ppd	SLD3	PPT3
++.readme	TEXT	R*ch
+ .rtf	TEXT	MSWD
+-.doc	WDBN	MSWD
++.rpl	FRL!	REP!
++.rtx	TEXT	R*ch
++.sylk	TEXT	XCEL
++.syk	TEXT	XCEL
++.tex	TEXT	OTEX     
++.texi	TEXT	OTEX   
++.texinfo	TEXT OTEX
++.tsv	TEXT	R*ch
++.txt	TEXT	MSWD
++.url	AURL	Arch
++.wk1	TEXT	XCEL
++.wks	TEXT	XCEL   
++.w51	WPPC	WPC2
++.wp5	WPPC	WPC2
++.wp	WPPC	WPC2
++.xl	XLS4	XCEL
++.xlc	XLC4	XCEL
++.xlm	XLM4	XCEL
++.xls	XLS4	XCEL
+ 
+ # compressed archives
+-.bin	BINA	MB2P
+-.zip	ZIP 	ZIP 
+-.tar	TARF	TAR!
+-.gz	Gzip	Gzip
+-.Z	ZIVM	LZIV
+-.sea	????	SITx
++.arc	BINA	arc=A9
++.bar	BARF	S6+1
++.bin	BINA	SITx
+ .cpt	PACT	CPCT
+-.sit	SIT!	SIT!
++.gz	Gzip	Gzip
+ .hqx	TEXT	SITx
++.lha	LHA	LARC  
++.lzh	LHA	LARC
++.pit	PIT	SITx
++.sea	APPL	????
++.sit	SIT!	SIT!
++.sithqx	TEXT	SITx
++.tar	TARF	TAR!
++#.tar	TARF	S6+1
++.taz	ZIVM	SITx
++.tgz	Gzip	SITx
++.uu	TEXT	uuUN
++.uue	TEXT	uuUN
++.zip	ZIP 	ZIP 
++.Z	ZIVM	LZIV
+ 
+ # graphics
+-.tiff	TIFF	JVWR
+-.tif	TIFF	JVWR
+ .bmp	BMPp	JVWR
+-.pct	PICT	ttxt
+-.pict	PICT	ttxt
++.gif	GIFf	JVWR
++.ief	IEF	GKON
+ .jpeg	JPEG	JVWR
++.jpe	JPEG	JVWM
+ .jpg	JPEG	JVWR
+-.gif	GIFf	JVWR
++.pbm	PPGM	GKON
++.pgm	PPGM	GKON
++.pct	PICT	ttxt
++.pict	PICT	ttxt
++.ppm	PPGM	GKON
++.psd	8BPS	8BIM
++.rle	RLE	GKON
++.tiff	TIFF	JVWR
++.tif	TIFF	JVWR
++.xbm	XBM	GKON
++
++#Misc Binary Files
++.com	PCFA	PCXT
++.dll	PCFL	PCXT
++.exe	PCFA	PCXT
++.obj	PCFL	PCXT
++.ovl	PCFL	PCXT
