@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/01/24 21:52:03 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/02/03 21:47:12 xsa Exp $
 lib/zope/lib/python/Products/ZWiki/Admin.py
 lib/zope/lib/python/Products/ZWiki/Admin.pyc
 lib/zope/lib/python/Products/ZWiki/CHANGES.txt
@@ -33,10 +33,12 @@ lib/zope/lib/python/Products/ZWiki/Mail.py
 lib/zope/lib/python/Products/ZWiki/Mail.pyc
 lib/zope/lib/python/Products/ZWiki/Messages.py
 lib/zope/lib/python/Products/ZWiki/Messages.pyc
+lib/zope/lib/python/Products/ZWiki/Outline.py
+lib/zope/lib/python/Products/ZWiki/Outline.pyc
+lib/zope/lib/python/Products/ZWiki/OutlineSupport.py
+lib/zope/lib/python/Products/ZWiki/OutlineSupport.pyc
 lib/zope/lib/python/Products/ZWiki/PageTypes.py
 lib/zope/lib/python/Products/ZWiki/PageTypes.pyc
-lib/zope/lib/python/Products/ZWiki/Parents.py
-lib/zope/lib/python/Products/ZWiki/Parents.pyc
 lib/zope/lib/python/Products/ZWiki/Permissions.py
 lib/zope/lib/python/Products/ZWiki/Permissions.pyc
 lib/zope/lib/python/Products/ZWiki/PurpleNumbers.py
@@ -146,6 +148,8 @@ lib/zope/lib/python/Products/ZWiki/tests/testMail.py
 lib/zope/lib/python/Products/ZWiki/tests/testMail.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testMessages.py
 lib/zope/lib/python/Products/ZWiki/tests/testMessages.pyc
+lib/zope/lib/python/Products/ZWiki/tests/testOutline.py
+lib/zope/lib/python/Products/ZWiki/tests/testOutline.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testPageTypes.py
 lib/zope/lib/python/Products/ZWiki/tests/testPageTypes.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testParents.py
