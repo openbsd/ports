@@ -100,13 +100,13 @@ include/gtk/gtkvseparator.h
 include/gtk/gtkwidget.h
 include/gtk/gtkwindow.h
 include/gtk/gtktypebuiltins.h
-lib/libglib.so.1.3
+lib/libglib.so.1.4
 lib/libglib.la
 lib/libglib.a
-lib/libgdk.so.1.3
+lib/libgdk.so.1.4
 lib/libgdk.la
 lib/libgdk.a
-lib/libgtk.so.1.3
+lib/libgtk.so.1.4
 lib/libgtk.la
 lib/libgtk.a
 lib/glib/include/glibconfig.h
