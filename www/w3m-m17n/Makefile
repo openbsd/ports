@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/11/17 02:46:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/01/07 20:40:15 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
 COMMENT=		"multi-script text-based web browser/pager"
 COMMENT-japanese=	"Japanese multi-script text-based web browser/pager"
 
-DISTNAME=	w3m-m17n-0.19
+PKGNAME=	w3m-m17n-20020108
+DISTNAME=	w3m-0.2.4-m17n-20020108
 CATEGORIES=	www
 NEED_VERSION=	1.498
 HOMEPAGE=	http://www2u.biglobe.ne.jp/~hsaka/w3m/index.html#m17n
@@ -23,13 +24,15 @@ FLAVORS=	japanese
 FLAVOR?=
 
 CONFIGURE_STYLE= simple
-CONFIGURE_ARGS= -nonstop -prefix="${PREFIX}" -cflags="${CFLAGS}" \
-		-model=monster -charset=UTF-8
-CONFIGURE_ENV=	use_nntp=y use_ssl_verify=y \
-		dmail=mail ded=vi dbrowser=lynx dcc="${CC}" \
-		dtermlib="${TERMLIB}" def_helpdir="${PREFIX}/share/w3m-m17n" \
-		def_libdir="${PREFIX}/libexec/w3m-m17n" \
-		MIME_TYPES="/var/www/conf/mime.types"
+CONFIGURE_ARGS=	--nonstop \
+		--prefix="${PREFIX}" \
+		--sysconfdir="${SYSCONFDIR}/w3m-m17n" \
+		--model=monster \
+		--mimetypes=/var/www/mime.types \
+		--charset=UTF-8
+CONFIGURE_ENV=	use_ssl_verify=y \
+		dmail=mail ded=vi dbrowser=lynx dcc="${CC}"
+
 NO_REGRESS=	Yes
 
 DOCS=	FAQ.html HISTORY MANUAL.html \
@@ -40,15 +43,15 @@ DOCS=	FAQ.html HISTORY MANUAL.html \
 
 FULLPKGNAME=		ja-${PKGNAME}
 CATEGORIES+=		japanese
-CONFIGURE_ARGS+=	-lang=ja
-CONFIGURE_ARGS+=	-code=n
+CONFIGURE_ARGS+=	--lang=ja
+CONFIGURE_ARGS+=	--code=n
 DOCS+=			README.SSL README.cookie README.keymap \
 			README.mailcap README.menu
 DOCSRC=			${WRKSRC}/doc-jp
 
 .else
 
-CONFIGURE_ARGS+=	-lang=en
+CONFIGURE_ARGS+=	--lang=en
 DOCSRC=			${WRKSRC}/doc
 
 .endif
