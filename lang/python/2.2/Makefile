@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/10/08 02:52:25 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2003/12/30 22:21:24 sturm Exp $
 
 VERSION=	2.2
-PATCHLEVEL=	.1
-PKG_PATCHLEVEL=	p1
+PATCHLEVEL=	.3
+PKG_PATCHLEVEL=
 
 .include <bsd.port.mk>
 

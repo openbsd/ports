@@ -1,7 +1,7 @@
-$OpenBSD: patch-Lib_test_regrtest_py,v 1.1 2003/12/30 17:05:30 sturm Exp $
---- Lib/test/regrtest.py.orig	2003-12-29 21:50:47.000000000 +0100
-+++ Lib/test/regrtest.py	2003-12-29 21:51:36.000000000 +0100
-@@ -642,6 +642,26 @@ _expectations = {
+$OpenBSD: patch-Lib_test_regrtest_py,v 1.2 2003/12/30 22:21:25 sturm Exp $
+--- Lib/test/regrtest.py.orig	2003-04-01 00:11:45.000000000 +0200
++++ Lib/test/regrtest.py	2003-12-30 19:48:30.000000000 +0100
+@@ -715,6 +715,27 @@ _expectations = {
          test_winreg
          test_winsound
          """,
@@ -12,6 +12,7 @@ $OpenBSD: patch-Lib_test_regrtest_py,v 1.1 2003/12/30 17:05:30 sturm Exp $
 +        test_cl
 +        test_curses
 +        test_descr
++        test_dl
 +        test_email_codecs
 +        test_gl
 +        test_imgfile

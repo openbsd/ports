@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.3 2002/05/11 21:35:13 matt Exp $
+@comment $OpenBSD: PLIST-tests,v 1.4 2003/12/30 22:21:25 sturm Exp $
 @option no-default-conflict
 @pkgcfl python-tests-2.2*
 lib/python2.2/test/README
@@ -45,9 +45,7 @@ lib/python2.2/test/double_const.pyo
 lib/python2.2/test/greyrgb.uue
 lib/python2.2/test/output/test_MimeWriter
 lib/python2.2/test/output/test_asynchat
-lib/python2.2/test/output/test_atexit
 lib/python2.2/test/output/test_augassign
-lib/python2.2/test/output/test_bastion
 lib/python2.2/test/output/test_binascii
 lib/python2.2/test/output/test_builtin
 lib/python2.2/test/output/test_cfgparser
@@ -71,7 +69,6 @@ lib/python2.2/test/output/test_longexp
 lib/python2.2/test/output/test_math
 lib/python2.2/test/output/test_md5
 lib/python2.2/test/output/test_mimetools
-lib/python2.2/test/output/test_minidom
 lib/python2.2/test/output/test_mmap
 lib/python2.2/test/output/test_new
 lib/python2.2/test/output/test_nis
@@ -175,6 +172,9 @@ lib/python2.2/test/test_b1.pyo
 lib/python2.2/test/test_b2.py
 lib/python2.2/test/test_b2.pyc
 lib/python2.2/test/test_b2.pyo
+lib/python2.2/test/test_base64.py
+lib/python2.2/test/test_base64.pyc
+lib/python2.2/test/test_base64.pyo
 lib/python2.2/test/test_bastion.py
 lib/python2.2/test/test_bastion.pyc
 lib/python2.2/test/test_bastion.pyo
@@ -301,6 +301,9 @@ lib/python2.2/test/test_dumbdbm.pyo
 lib/python2.2/test/test_email.py
 lib/python2.2/test/test_email.pyc
 lib/python2.2/test/test_email.pyo
+lib/python2.2/test/test_email_codecs.py
+lib/python2.2/test/test_email_codecs.pyc
+lib/python2.2/test/test_email_codecs.pyo
 lib/python2.2/test/test_errno.py
 lib/python2.2/test/test_errno.pyc
 lib/python2.2/test/test_errno.pyo
@@ -463,6 +466,9 @@ lib/python2.2/test/test_minidom.pyo
 lib/python2.2/test/test_mmap.py
 lib/python2.2/test/test_mmap.pyc
 lib/python2.2/test/test_mmap.pyo
+lib/python2.2/test/test_multifile.py
+lib/python2.2/test/test_multifile.pyc
+lib/python2.2/test/test_multifile.pyo
 lib/python2.2/test/test_mutants.py
 lib/python2.2/test/test_mutants.pyc
 lib/python2.2/test/test_mutants.pyo
@@ -541,9 +547,15 @@ lib/python2.2/test/test_pyclbr.pyo
 lib/python2.2/test/test_pyexpat.py
 lib/python2.2/test/test_pyexpat.pyc
 lib/python2.2/test/test_pyexpat.pyo
+lib/python2.2/test/test_queue.py
+lib/python2.2/test/test_queue.pyc
+lib/python2.2/test/test_queue.pyo
 lib/python2.2/test/test_quopri.py
 lib/python2.2/test/test_quopri.pyc
 lib/python2.2/test/test_quopri.pyo
+lib/python2.2/test/test_random.py
+lib/python2.2/test/test_random.pyc
+lib/python2.2/test/test_random.pyo
 lib/python2.2/test/test_re.py
 lib/python2.2/test/test_re.pyc
 lib/python2.2/test/test_re.pyo
@@ -646,6 +658,9 @@ lib/python2.2/test/test_timing.pyo
 lib/python2.2/test/test_tokenize.py
 lib/python2.2/test/test_tokenize.pyc
 lib/python2.2/test/test_tokenize.pyo
+lib/python2.2/test/test_trace.py
+lib/python2.2/test/test_trace.pyc
+lib/python2.2/test/test_trace.pyo
 lib/python2.2/test/test_traceback.py
 lib/python2.2/test/test_traceback.pyc
 lib/python2.2/test/test_traceback.pyo

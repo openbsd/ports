@@ -1,8 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2002/02/25 21:25:38 matt Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2003/12/30 22:21:25 sturm Exp $
 %%mm%%
-lib/libpython2.2.so.0.0
-DYNLIBDIR(%B)
-lib/python2.2/config/libpython2.2.so.0.0
 lib/python2.2/lib-dynload/_codecsmodule.so
 lib/python2.2/lib-dynload/_curses_panel.so
 lib/python2.2/lib-dynload/_cursesmodule.so
@@ -19,7 +16,6 @@ lib/python2.2/lib-dynload/cStringIO.so
 lib/python2.2/lib-dynload/cmathmodule.so
 lib/python2.2/lib-dynload/cryptmodule.so
 lib/python2.2/lib-dynload/dbmmodule.so
-lib/python2.2/lib-dynload/errnomodule.so
 lib/python2.2/lib-dynload/fcntlmodule.so
 lib/python2.2/lib-dynload/fpectlmodule.so
 lib/python2.2/lib-dynload/fpetestmodule.so
@@ -27,7 +23,6 @@ lib/python2.2/lib-dynload/grpmodule.so
 lib/python2.2/lib-dynload/mathmodule.so
 lib/python2.2/lib-dynload/md5module.so
 lib/python2.2/lib-dynload/mmapmodule.so
-lib/python2.2/lib-dynload/newmodule.so
 lib/python2.2/lib-dynload/nis.so
 lib/python2.2/lib-dynload/operator.so
 lib/python2.2/lib-dynload/parsermodule.so
@@ -48,4 +43,7 @@ lib/python2.2/lib-dynload/timingmodule.so
 lib/python2.2/lib-dynload/unicodedata.so
 lib/python2.2/lib-dynload/xreadlines.so
 lib/python2.2/lib-dynload/zlibmodule.so
+lib/libpython2.2.so.0.0
+lib/python2.2/config/libpython2.2.so.0.0
+DYNLIBDIR(%D/lib)
 @dirrm lib/python2.2/lib-dynload

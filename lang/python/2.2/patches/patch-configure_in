@@ -1,45 +1,49 @@
-$OpenBSD: patch-configure_in,v 1.4 2002/05/12 01:05:49 brad Exp $
-
-        This has been submitted to the Python team as part of patch
-        554719.
-
---- configure.in.orig	Mon Mar 11 05:14:23 2002
-+++ configure.in	Sat May 11 20:24:08 2002
-@@ -802,7 +802,21 @@ then
- 	Linux*) LDSHARED="gcc -shared";;
+$OpenBSD: patch-configure_in,v 1.5 2003/12/30 22:21:25 sturm Exp $
+--- configure.in.orig	2003-03-29 23:25:17.000000000 +0100
++++ configure.in	2003-12-30 19:14:57.000000000 +0100
+@@ -827,14 +827,14 @@ then
+ 	Linux*) LDSHARED='$(CC) -shared';;
  	dgux*) LDSHARED="ld -G";;
  	BSD/OS*/4*) LDSHARED="gcc -shared";;
--	OpenBSD*|NetBSD*|FreeBSD*)
-+	OpenBSD*)
-+		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
-+		then
-+			LDSHARED='$(CC) -shared $(CCSHARED) ${LDFLAGS}'
-+		else
-+			case `uname -r` in
-+			[01].* | 2.[[0-7]] | 2.[[0-7]].*)
-+			  LDSHARED="ld -Bshareable ${LDFLAGS}"
-+			  ;;
-+			*)
-+			  LDSHARED='$(CC) -shared $(CCSHARED) ${LDFLAGS}'
-+			  ;;
-+			esac
-+		fi;;
-+	NetBSD*|FreeBSD*)
+-	OpenBSD*|FreeBSD*)
++	FreeBSD*)
  		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
  		then
  			LDSHARED="cc -shared ${LDFLAGS}"
-@@ -1016,6 +1030,14 @@ then
-     AC_DEFINE(WITH_THREAD)
+ 		else
+ 			LDSHARED="ld -Bshareable ${LDFLAGS}"
+ 		fi;;
+-	NetBSD*) LDSHARED="cc -shared ${LDFLAGS}";;
++	OpenBSD*|NetBSD*) LDSHARED="${CC} -shared ${LDFLAGS}";;
+ 	OpenUNIX*|UnixWare*)
+ 		if test "$GCC" = "yes"
+ 		then LDSHARED="$(CC) -shared"
+@@ -1083,8 +1083,8 @@ yes
+     # on HP/UX, pthread.h renames pthread_create to a different symbol name.
+     # So we really have to include pthread.h, and then link.
+     _libs=$LIBS
+-    LIBS="$LIBS -lpthread"
+-    AC_MSG_CHECKING([for pthread_create in -lpthread])
++    LIBS="$LIBS -pthread"
++    AC_MSG_CHECKING([for pthread_create in -pthread])
+     AC_TRY_LINK([#include <pthread.h>
+ 
+ void * start_routine (void *arg) { exit (0); }], [
+@@ -1102,7 +1102,7 @@ pthread_create (NULL, NULL, start_routin
+     LIBOBJS="$LIBOBJS thread.o"],[
+     AC_CHECK_LIB(pthreads, pthread_create, [AC_DEFINE(WITH_THREAD)
      posix_threads=yes
-     LIBOBJS="$LIBOBJS thread.o"
-+elif test "$ac_sys_system" = "OpenBSD"
-+then
-+    posix_threads=yes
-+    LIBS="-pthread $LIBS"
-+    LIBOBJS="$LIBOBJS thread.o"
-+    AC_DEFINE(WITH_THREAD)
-+    AC_DEFINE(_REENTRANT)
-+    AC_DEFINE(_POSIX_THREADS)
- else
-     if test ! -z "$with_threads" -a -d "$with_threads"
-     then LDFLAGS="$LDFLAGS -L$with_threads"
+-    LIBS="$LIBS -lpthreads"
++    LIBS="$LIBS -pthreads"
+     LIBOBJS="$LIBOBJS thread.o"], [
+     AC_CHECK_LIB(c_r, pthread_create, [AC_DEFINE(WITH_THREAD)
+     posix_threads=yes
+@@ -1114,7 +1114,7 @@ pthread_create (NULL, NULL, start_routin
+     LIBOBJS="$LIBOBJS thread.o"], [
+     AC_CHECK_LIB(pthread, __pthread_create_system, [AC_DEFINE(WITH_THREAD)
+     posix_threads=yes
+-    LIBS="$LIBS -lpthread"
++    LIBS="$LIBS -pthread"
+     LIBOBJS="$LIBOBJS thread.o"], [
+     AC_CHECK_LIB(cma, pthread_create, [AC_DEFINE(WITH_THREAD)
+     posix_threads=yes

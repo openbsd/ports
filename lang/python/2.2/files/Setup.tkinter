@@ -16,6 +16,8 @@ TKPATH=:lib-tk
 
 # *** Always uncomment this (leave the leading underscore in!):
 _tkinter _tkinter.c tkappinit.c -DWITH_APPINIT \
+# *** Uncomment and edit to reflect where your Tcl/Tk libraries are:
+	-L${LOCALBASE}/lib \
 # *** Uncomment and edit to reflect where your Tcl/Tk headers are:
 	-I${LOCALBASE}/include/tcl8.4 \
 	-I${LOCALBASE}/include/tk8.4 \
@@ -24,15 +26,14 @@ _tkinter _tkinter.c tkappinit.c -DWITH_APPINIT \
 # *** Or uncomment this for Solaris:
 #	-I/usr/openwin/include \
 # *** Uncomment and edit for Tix extension only:
-#	-DWITH_TIX -ltix4.1.8.0 \
+#	-DWITH_TIX -ltix8.1.8.2 \
 # *** Uncomment and edit for BLT extension only:
 #	-DWITH_BLT -I/usr/local/blt/blt8.0-unoff/include -lBLT8.0 \
 # *** Uncomment and edit for PIL (TkImaging) extension only:
+#     (See http://www.pythonware.com/products/pil/ for more info)
 #	-DWITH_PIL -I../Extensions/Imaging/libImaging  tkImaging.c \
 # *** Uncomment and edit for TOGL extension only:
 #	-DWITH_TOGL togl.c \
-# *** Uncomment and edit to reflect where your Tcl/Tk libraries are:
-	-L${LOCALBASE}/lib \
 # *** Uncomment and edit to reflect your Tcl/Tk versions:
 	-ltk84 -ltcl84 \
 # *** Uncomment and edit to reflect where your X11 libraries are:
