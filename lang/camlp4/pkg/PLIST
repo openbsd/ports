@@ -44,6 +44,7 @@ lib/camlp4/plexer.cmi
 lib/camlp4/plexer.cmx
 lib/camlp4/plexer.mli
 lib/camlp4/pr_dump.cmo
+lib/camlp4/pr_depend.cmo
 lib/camlp4/pr_extend.cmo
 lib/camlp4/pr_null.cmo
 lib/camlp4/pr_o.cmo
