@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2005/01/26 12:26:48 espie Exp $
+# $OpenBSD: Makefile,v 1.88 2005/03/08 01:51:13 kurt Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -50,6 +50,7 @@
      SUBDIR += setquota
      SUBDIR += skill
      SUBDIR += sleuthkit
+     SUBDIR += smartmontools
      SUBDIR += socket
      SUBDIR += socklog
      SUBDIR += stat
