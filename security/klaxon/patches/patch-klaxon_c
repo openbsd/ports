@@ -1,0 +1,96 @@
+$OpenBSD: patch-klaxon_c,v 1.1 2004/01/09 02:43:49 jose Exp $
+--- klaxon.c.orig	2000-01-29 13:32:03.000000000 -0500
++++ klaxon.c	2004-01-08 16:38:05.000000000 -0500
+@@ -51,17 +51,23 @@ static char sccsid[] = "@(#)rshd.c	5.17.
+ #include	<netinet/in.h>
+ #include	<arpa/inet.h>
+ #include	<stdio.h>
+-#include	<varargs.h>
++#include	<stdarg.h>
+ #include	<signal.h>
+ #include	<netdb.h>
+ #include	<syslog.h>
+ #include	<errno.h>
+ #include	<string.h>
++#include 	<unistd.h>
+ extern int	errno;
+ 
+ /* globals */
+ int protoval, protovallen;
+ 
++void my_error(char *buff, ...);
++int doit(struct sockaddr_in *cli_addrp, char *service);
++void rfc931(struct sockaddr_in *rmt_sin, struct sockaddr_in *our_sin, char   *dest);
++int local_domain(char *host);
++
+ #ifdef LOG_DATA
+ #define USECS_PER_SEC 1000000
+ #define TIME_LIMIT 3
+@@ -77,12 +83,13 @@ static void timeval_sub(struct timeval *
+ static int timeval_cmp(struct timeval *t1, struct timeval *t2);
+ 
+ char tbuf[1500], buf[BUFSIZ];
+-#endif LOG_DATA
++#endif /* LOG_DATA */
+ 
+ int recvlen;
+ 
+ 
+ /*ARGSUSED*/
++int
+ main(argc, argv)
+ int	argc;
+ char	**argv;		/* argv1 is the service name */
+@@ -141,6 +148,7 @@ char	**argv;		/* argv1 is the service na
+ 
+ }
+ 
++int
+ doit(cli_addrp, service)
+ struct sockaddr_in	*cli_addrp;	/* client's Internet address */
+ char *service;
+@@ -234,13 +242,13 @@ char *service;
+ #	ifdef USE_IDENT
+ 	getsockname(0, (struct sockaddr *) &myaddr, &myaddrlen);
+ 	if (protoval == SOCK_STREAM) {
+-		rfc931(cli_addrp, &myaddr, &username);
+-		sprintf(buf, "ALERT: user %.24s@%.256s:%d accessing port %s", username, hostname, srcport, service);
++		rfc931(cli_addrp, &myaddr, username);
++		snprintf(buf, sizeof(buf), "ALERT: user %.24s@%.256s:%d accessing port %s", username, hostname, srcport, service);
+ 	} else {
+-		sprintf(buf, "ALERT: host %.256s:%d accessing port %s", hostname, srcport, service);
++		snprintf(buf, sizeof(buf), "ALERT: host %.256s:%d accessing port %s", hostname, srcport, service);
+ 	}
+ #else
+-	sprintf(buf, "ALERT: host %.256s:%d accessing port %s", hostname, srcport, service);
++	snprintf(buf, sizeof(buf), "ALERT: host %.256s:%d accessing port %s", hostname, srcport, service);
+ #endif
+ 		
+ #ifdef LOG_DATA
+@@ -259,17 +267,8 @@ char *service;
+  * error message, followed by a newline.
+  */
+ 
+-my_error(va_alist)
+-va_dcl
++void my_error(char *buff, ...)
+ {
+-	va_list		args;
+-	char		*fmt, buff[BUFSIZ];
+-
+-	va_start(args);
+-	fmt = va_arg(args, char *);
+-	vsprintf(buff, fmt, args);
+-	va_end(args);
+-
+ 	syslog(LOG_ERR, buff);	/* fd 2 = socket, from inetd */
+ }
+ 
+@@ -463,6 +462,6 @@ static int timeval_cmp(struct timeval *t
+                 return(t1->tv_usec - t2->tv_usec);
+ }
+ 
+-#endif LOG_DATA
++#endif /* LOG_DATA */
+ 
+ 

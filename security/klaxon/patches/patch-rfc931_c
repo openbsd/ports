@@ -1,0 +1,25 @@
+$OpenBSD: patch-rfc931_c,v 1.1 2004/01/09 02:43:49 jose Exp $
+--- rfc931.c.orig	2003-12-31 06:48:04.000000000 -0500
++++ rfc931.c	2003-12-31 07:08:28.000000000 -0500
+@@ -24,6 +24,7 @@ static char sccsid[] = "@(#) rfc931.c 1.
+ #include <setjmp.h>
+ #include <signal.h>
+ #include <string.h>
++#include <unistd.h>
+ 
+ /* Local stuff. */
+ 
+@@ -46,11 +47,11 @@ int     protocol;
+     FILE   *fp;
+ 
+     if ((s = socket(domain, type, protocol)) < 0) {
+-	my_error(LOG_DAEMON|LOG_ERR, "socket: %m");
++	my_error("socket: %m");
+ 	return (0);
+     } else {
+ 	if ((fp = fdopen(s, "r+")) == 0) {
+-	    my_error(LOG_DAEMON|LOG_ERR, "fdopen: %m");
++	    my_error("fdopen: %m");
+ 	    close(s);
+ 	}
+ 	return (fp);
