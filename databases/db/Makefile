@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2000/09/24 01:32:39 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2000/12/28 17:14:10 matt Exp $
 
 DISTNAME=	db-3.1.17
 CATEGORIES=	databases
@@ -39,7 +39,13 @@ post-configure:
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/db
 	@mv ${PREFIX}/include/db.h ${PREFIX}/include/db3.h
-	@-mv ${PREFIX}/lib/libdb.a ${PREFIX}/lib/libdb3.a
+.if exists(${PREFIX}/lib/libdb-3.1.a) && exists(${PREFIX}/lib/libdb_cxx-3.1.a)
+	@mv ${PREFIX}/lib/libdb-3.1.a ${PREFIX}/lib/libdb3.a
+	@mv ${PREFIX}/lib/libdb_cxx-3.1.a ${PREFIX}/lib/libdb3_cxx.a
+.else
+	@mv ${PREFIX}/lib/libdb.a ${PREFIX}/lib/libdb3.a
+	@mv ${PREFIX}/lib/libdb_cxx.a ${PREFIX}/lib/libdb3_cxx.a
+.endif	
 	@echo "Installing samples: ${PREFIX}/share/examples/db ..."
 	@cd ${WRKSRC}/examples_c; ${INSTALL_DATA} *.c \
 		${PREFIX}/share/examples/db
