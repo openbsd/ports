@@ -1,0 +1,17 @@
+$OpenBSD: patch-modules_mysql_Makefile,v 1.1.1.1 2003/01/15 17:24:17 jakob Exp $
+--- modules/mysql/Makefile.orig	Wed Jan  1 13:47:47 2003
++++ modules/mysql/Makefile	Wed Jan  1 13:49:01 2003
+@@ -5,11 +5,9 @@
+ auto_gen=
+ NAME=mysql.so
+ # mysql.h locations (freebsd,openbsd  solaris)
+-DEFS +=-I/usr/local/include -I/usr/local/mysql/include \
++DEFS +=-I${LOCALBASE}/include
+ # libmysqlclient locations on RH/Suse, Solaris /OpenBSD, FreeBSD
+ # (Debian does the right thing and puts it in /usr/lib)
+-LIBS=-L/usr/lib/mysql -L /usr/local/lib -L/usr/local/lib/mysql \
+-		-L/usr/local/mysql/lib/mysql/ \
+-		-lmysqlclient -lz 
++LIBS=-L${LOCALBASE}/lib -lmysqlclient -lz 
+ 
+ include ../../Makefile.modules

@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_jabber_Makefile,v 1.1.1.1 2003/01/15 17:24:17 jakob Exp $
+--- modules/jabber/Makefile.orig	Wed Jan  1 14:01:57 2003
++++ modules/jabber/Makefile	Wed Jan  1 14:02:25 2003
+@@ -8,7 +8,7 @@
+ auto_gen=
+ NAME=jabber.so
+ # expat.h location
+-DEFS+=-I/usr/local/include
+-LIBS=-L/usr/local/lib -lexpat
++DEFS+=-I${LOCALBASE}/include
++LIBS=-L${LOCALBASE}/lib -lexpat
+ 
+ include ../../Makefile.modules

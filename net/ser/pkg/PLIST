@@ -1,0 +1,49 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/15 17:24:17 jakob Exp $
+lib/ser/modules/acc.so
+lib/ser/modules/auth.so
+lib/ser/modules/exec.so
+lib/ser/modules/im.so
+lib/ser/modules/jabber.so
+lib/ser/modules/maxfwd.so
+lib/ser/modules/msilo.so
+lib/ser/modules/mysql.so
+lib/ser/modules/pike.so
+lib/ser/modules/print.so
+lib/ser/modules/registrar.so
+lib/ser/modules/rr.so
+lib/ser/modules/sl.so
+lib/ser/modules/sms.so
+lib/ser/modules/textops.so
+lib/ser/modules/tm.so
+lib/ser/modules/usrloc.so
+man/man5/ser.cfg.5
+man/man8/ser.8
+sbin/gen_ha1
+sbin/ser
+sbin/ser_mysql.sh
+sbin/serctl
+share/doc/ser/AUTHORS
+share/doc/ser/INSTALL
+share/doc/ser/README
+share/doc/ser/README-MODULES
+share/doc/ser/README.acc
+share/doc/ser/README.auth
+share/doc/ser/README.cfg
+share/doc/ser/README.exec
+share/doc/ser/README.im
+share/doc/ser/README.jabber
+share/doc/ser/README.maxfwd
+share/doc/ser/README.pike
+share/doc/ser/README.print
+share/doc/ser/README.registrar
+share/doc/ser/README.rr
+share/doc/ser/README.sl
+share/doc/ser/README.sms
+share/doc/ser/README.textops
+share/doc/ser/README.tm
+share/doc/ser/README.usrloc
+share/examples/ser/ser.cfg
+@dirrm share/examples/ser
+@dirrm share/doc/ser
+@dirrm lib/ser/modules
+@dirrm lib/ser

@@ -1,0 +1,20 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2003/01/15 17:24:17 jakob Exp $
+--- Makefile.orig	Wed Jan  1 14:25:44 2003
++++ Makefile	Wed Jan  1 14:26:47 2003
+@@ -156,11 +156,12 @@ $(man-prefix)/$(man-dir)/man8:
+ $(man-prefix)/$(man-dir)/man5:
+ 		mkdir -p $(man-prefix)/$(man-dir)/man5
+ 
+-install-cfg: $(cfg-prefix)/$(cfg-dir)
++ser.cfg:
+ 		sed -e "s#/usr/lib/ser/modules/#$(modules-target)#g" \
+-			< etc/ser.cfg > $(cfg-prefix)/$(cfg-dir)ser.cfg
+-		chmod 644 $(cfg-prefix)/$(cfg-dir)ser.cfg
+-#		$(INSTALL-CFG) etc/ser.cfg $(cfg-prefix)/$(cfg-dir)
++			< etc/ser.cfg > ser.cfg
++
++install-cfg: $(cfg-prefix)/$(cfg-dir)
++		$(INSTALL-CFG) ser.cfg $(cfg-prefix)/$(cfg-dir)
+ 
+ install-bin: $(bin-prefix)/$(bin-dir) utils/gen_ha1/gen_ha1
+ 		$(INSTALL-BIN) ser $(bin-prefix)/$(bin-dir)
