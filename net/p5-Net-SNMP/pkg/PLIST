@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/17 15:34:07 jcs Exp $
+bin/snmpkey
+${P5SITE}/Net/SNMP.pm
+${P5SITE}/Net/SNMP/Dispatcher.pm
+${P5SITE}/Net/SNMP/Message.pm
+${P5SITE}/Net/SNMP/MessageProcessing.pm
+${P5SITE}/Net/SNMP/PDU.pm
+${P5SITE}/Net/SNMP/Security.pm
+${P5SITE}/Net/SNMP/Security/Community.pm
+${P5SITE}/Net/SNMP/Security/USM.pm
+${P5SITE}/Net/SNMP/Transport/UDP.pm
+man/man1/snmpkey.1
+man/man3p/Net::SNMP.3p
+@dirrm ${P5SITE}/Net/SNMP/Transport
+@dirrm ${P5SITE}/Net/SNMP/Security
+@dirrm ${P5SITE}/Net/SNMP
