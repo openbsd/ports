@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2000/07/06 22:54:29 matt Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2000/07/09 22:03:27 matt Exp $
 lib/libhosts_gatherer.so.1.0
 lib/libnasl.so.1.0
 lib/libnessus.so.1.0
@@ -21,4 +21,4 @@ lib/nessus/plugins/objectserver.nes
 lib/nessus/plugins/queso.nes
 lib/nessus/plugins/smad.nes
 lib/nessus/plugins/tftp_grab_file.nes
-DYNLIBDIR(lib)
+DYNLIBDIR(%D/lib)
