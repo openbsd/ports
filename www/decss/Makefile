@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/22 14:03:54 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/24 12:25:15 kevlo Exp $
 
 DISTNAME=	decss
 PKGNAME=	decss-0.0.6
 CATEGORIES=	www
 NEED_VERSION=	1.319
+MASTER_SITES=   ${HOMEPAGE}
 
-MASTER_SITES=   http://www.pigdog.org/decss/
+HOMEPAGE=       http://www.pigdog.org/decss/
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
