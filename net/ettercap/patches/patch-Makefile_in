@@ -1,20 +1,20 @@
---- Makefile.in.orig	Wed Jul 18 21:34:43 2001
-+++ Makefile.in	Wed Jul 18 21:36:27 2001
+--- Makefile.in.orig	Thu Jul 26 20:22:05 2001
++++ Makefile.in	Thu Jul 26 20:24:02 2001
 @@ -17,7 +17,7 @@ exec_prefix = @exec_prefix@
  BINDIR   = @bindir@
  MANDIR   = @mandir@
  SHAREDIR = ${prefix}/share/@PROG@
 -DOCDIR   = ${prefix}/doc/@PROG@-@VERSION@
 +DOCDIR   = ${prefix}/share/doc/@PROG@
- DOC      = COPYING README README.PLUGINS CHANGELOG HISTORY AUTHORS TODO THANKS KNOWN-BUGS PORTINGS
+ DOC      = COPYING README README.PLUGINS CHANGELOG HISTORY AUTHORS TODO THANKS KNOWN-BUGS PORTINGS INSTALL
  
  DEBUG    = @DEBUG@
-@@ -45,7 +45,7 @@ all: @PROG@
+@@ -44,7 +44,7 @@ all: @PROG@
  missing: $(MISSDESTS)
  
  
 -install: @PROG@ strip
-+install: @PROG@ plug-ins_install strip
++install: @PROG@ strip plug-ins_install
  	$(INSTALL) -d $(DESTDIR)$(BINDIR)
  	$(INSTALL) -m 700 $(PROG) $(DESTDIR)$(BINDIR)
  	$(INSTALL) -d $(DESTDIR)$(SHAREDIR)
