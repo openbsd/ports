@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2000/04/21 23:16:14 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2000/05/19 10:45:05 espie Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -10,6 +10,7 @@
      SUBDIR += expat
 #    SUBDIR += figlet
      SUBDIR += glimpse
+     SUBDIR += hevea
      SUBDIR += html
      SUBDIR += info2html
      SUBDIR += idiff
