@@ -1,32 +1,32 @@
---- Makefile.orig	Tue Aug 24 08:43:29 1999
-+++ Makefile	Thu Oct 28 13:52:17 1999
-@@ -7,12 +7,12 @@
+--- Makefile.in.orig	Fri Apr 14 08:54:59 2000
++++ Makefile.in	Fri Apr 14 08:56:51 2000
+@@ -7,12 +7,11 @@
  # $rev: 3$ 
  
  CC= gcc
--CCOPT= -O2 -Wall
-+CCOPT= ${CFLAGS}
+-CCOPT= -O2 -Wall @PCAP_INCLUDE@
++CCOPT= -O2 -Wall
  DEBUG= -g
- DEFS= -DHAVE_PROC -D_BSD_SOURCE -DLIMITWHENSUID
  #uncomment the following if you need libpcap based build under linux
  #(not raccomanded)
--#COMPILE_TIME= -DFORCE_LIBPCAP
-+COMPILE_TIME= -DFORCE_LIBPCAP
- PCAP= libpcap/libpcap.a
+-COMPILE_TIME= @FORCE_LIBPCAP@ @LIMITWHENSUID@ @HAVE_PROC@
+-@PCAP@
++COMPILE_TIME= @LIMITWHENSUID@ @HAVE_PROC@
  
  OBJ=	main.o getifname.o getlhs.o \
-@@ -43,12 +43,8 @@
- 	@echo "use \`make strip' to strip hping2 binary"
- 	@echo "use \`make install' to install hping2"
+ 	linux_sockpacket.o parseoptions.o datafiller.o \
+@@ -31,12 +30,8 @@
  
--other: byteorder.h $(OBJ) $(PCAP)
--	$(CC) -o hping2 $(CCOPT) $(DEBUG) $(COMPILE_TIME) $(DEFS) $(OBJ) $(PCAP)
+ all: hping2
+ 
+-hping2: byteorder.h $(OBJ) $(PCAP)
+-	$(CC) -o hping2 $(CCOPT) $(DEBUG) $(COMPILE_TIME) $(OBJ) $(PCAP)
 -	@echo
 -	./hping2 -v
 -	@echo "use \`make strip' to strip hping2 binary"
 -	@echo "use \`make install' to install hping2"
-+other: byteorder.h $(OBJ)
-+	$(CC) -o hping2 $(CCOPT) $(DEBUG) $(COMPILE_TIME) $(DEFS) $(OBJ) -lpcap
++hping2: byteorder.h $(OBJ)
++	$(CC) -o hping2 $(CCOPT) $(DEBUG) $(COMPILE_TIME) $(OBJ) -lpcap
  
  byteorder.h:
  	./configure

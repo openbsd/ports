@@ -1,4 +1,1 @@
-bin/hping
-share/doc/hping/HPING2-HOWTO.txt
-share/doc/hping/spoofed_scan.txt
-@dirrm share/doc/hping
+sbin/hping
