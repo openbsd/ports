@@ -1,7 +1,47 @@
-$OpenBSD: patch-src_acct_c,v 1.4 2002/09/30 15:19:40 danh Exp $
---- src/acct.c.orig	Wed Feb  6 08:44:35 2002
-+++ src/acct.c	Sun Sep 29 23:43:18 2002
-@@ -931,11 +931,11 @@ static int rad_check_ts(struct radutmp *
+$OpenBSD: patch-src_acct_c,v 1.5 2003/06/18 14:19:09 brad Exp $
+--- src/acct.c.orig	Wed Jun 18 07:42:26 2003
++++ src/acct.c	Wed Jun 18 07:42:35 2003
+@@ -119,9 +119,10 @@ char *uue(void *in)
+  */
+ static void make_wtmp(struct radutmp *ut, struct utmp *wt, int status)
+ {
+-	char		buf[32];
++	char		buf[48];
+ 	NAS		*cl;
+ 	char		*s;
++	int		len;
+ 
+ 	/*
+ 	 *	Fill out the UTMP struct for the radwtmp file.
+@@ -143,11 +144,13 @@ static void make_wtmp(struct radutmp *ut
+ 		s = cl->shortname;
+ 	if (s == NULL || s[0] == 0) s = uue(&(ut->nas_address));
+ #if UT_LINESIZE > 9
+-	sprintf(buf, "%03d:%.20s", ut->nas_port, s);
++	sprintf(buf, "%03u:%.20s", ut->nas_port, s);
+ #else
+-	sprintf(buf, "%02d%.20s", ut->nas_port, s);
++	sprintf(buf, "%02u%.20s", ut->nas_port, s);
+ #endif
+-	strncpy(wt->ut_line, buf, UT_LINESIZE);
++	len = UT_LINESIZE;
++	if (len > sizeof(buf)) len = sizeof(buf);
++	strncpy(wt->ut_line, buf, len);
+ 
+ 	/*
+ 	 *	We store the dynamic IP address in the hostname field.
+@@ -155,7 +158,9 @@ static void make_wtmp(struct radutmp *ut
+ #ifdef UT_HOSTSIZE
+ 	if (ut->framed_address) {
+ 		ipaddr2str(buf, ntohl(ut->framed_address));
+-		strncpy(wt->ut_host, buf, UT_HOSTSIZE);
++		len = UT_HOSTSIZE;
++		if (len > sizeof(buf)) len = sizeof(buf);
++		strncpy(wt->ut_host, buf, len);
+ 	}
+ #endif
+ #ifdef __svr4__
+@@ -931,11 +936,11 @@ static int rad_check_ts(struct radutmp *
  
  	s = CHECKRAD2;
  	execl(CHECKRAD2, "checkrad", nas->nastype, address, port,
