@@ -1,0 +1,17 @@
+--- getarptab.c.orig	Fri Aug 28 11:15:13 1998
++++ getarptab.c	Fri Aug 28 11:15:36 1998
+@@ -110,11 +110,11 @@
+ 
+ #else	/* XXX. Get ARP table not implemented yet for SYSV systems */
+ 
+-u_char *
++unsigned char *
+ getarptab(ep)
+-	u_char *ep;
++	unsigned char *ep;
+ {
+-	return (u_char *)0;
++	return (unsigned char *)0;
+ }
+ 
+ #endif
