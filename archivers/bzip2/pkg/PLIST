@@ -4,7 +4,7 @@ bin/bzip2recover
 bin/bzcat
 include/bzlib.h
 lib/libbz2.a
-lib/libbz2.so.0.9
+lib/libbz2.so.9.5
 @exec /sbin/ldconfig -m %B
 man/man1/bzip2.1
 man/man1/bunzip2.1
