@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2000/07/01 02:00:52 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2000/09/16 11:44:22 brad Exp $
 
 DISTNAME=	bzip2-1.0.1
 CATEGORIES=	archivers
@@ -15,13 +15,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_LIBTOOL=	Yes
-MAKE_FLAGS=	PREFIX="${PREFIX}" CC="${CC}" \
-		CFLAGS="${CFLAGS} -Wall -Winline -fomit-frame-pointer \
-		-fno-strength-reduce"
-FAKE_FLAGS=	PREFIX="${PREFIX}" DESTDIR="${WRKINST}"
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall -Winline \
+		-fomit-frame-pointer -fno-strength-reduce"
+FAKE_FLAGS+=	${MAKE_FLAGS} PREFIX="${PREFIX}" DESTDIR="${WRKINST}"
 
 test:   build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} test
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH="${WRKSRC}" \
+		${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} test
 
 .include <bsd.port.mk>
+
+.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
+MAKE_ENV=	NO_SHARED_LIBS=Yes
+.endif

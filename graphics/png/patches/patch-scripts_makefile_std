@@ -1,6 +1,6 @@
 --- scripts/makefile.std.orig	Wed Dec  8 18:44:40 1999
-+++ scripts/makefile.std	Thu Sep 14 05:32:12 2000
-@@ -8,12 +8,11 @@
++++ scripts/makefile.std	Sat Sep 16 07:36:49 2000
+@@ -8,8 +8,6 @@
  # Where the zlib library and include files are located
  #ZLIBLIB=/usr/local/lib
  #ZLIBINC=/usr/local/include
@@ -9,33 +9,35 @@
  
  CC=cc
  CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=5
- LDFLAGS=-L. -L$(ZLIBLIB) -lpng -lz -lm
-+LIBTOOL=libtool --quiet
- 
- #RANLIB=echo
- RANLIB=ranlib
-@@ -22,30 +21,29 @@
+@@ -21,31 +19,45 @@
+ OBJS = png.o pngset.o pngget.o pngrutil.o pngtrans.o pngwutil.o \
  	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
  	pngwtran.o pngmem.o pngerror.o pngpread.o
++SHOBJS = $(OBJS:.o=.so)
  
-+.c.o:
-+	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c $(.IMPSRC)
+-all: libpng.a pngtest
++.SUFFIXES: .o .so
 +
- all: libpng.a pngtest
++.c.so:
++	$(CC) $(CFLAGS) -fpic -DPIC -c $? -o $@
++
++SHLIB=	libpng.so.1.8
  
  libpng.a: $(OBJS)
--	ar rc $@  $(OBJS)
--	$(RANLIB) $@
-+	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libpng.la $(OBJS:.o=.lo) \
-+		-version-info 1:8:0 -rpath $(prefix)/lib
+ 	ar rc $@  $(OBJS)
+ 	$(RANLIB) $@
  
++$(SHLIB): $(SHOBJS)
++	$(CC) -shared -o $(SHLIB) $(SHOBJS)
++
  pngtest: pngtest.o libpng.a
--	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
-+	$(LIBTOOL) --mode=link $(CC) -o pngtest $(CFLAGS) pngtest.lo $(LDFLAGS)
+ 	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
  
  test: pngtest
  	./pngtest
  
++.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
++all: libpng.a pngtest
  install: libpng.a
 -	-@mkdir $(prefix)/include
 -	-@mkdir $(prefix)/lib
@@ -45,14 +47,21 @@
 -	chmod 644 $(prefix)/include/pngconf.h
 -	cp libpng.a $(prefix)/lib
 -	chmod 644 $(prefix)/lib/libpng.a
++.else
++all: libpng.a $(SHLIB) pngtest
++install: libpng.a $(SHLIB)
++.endif
 +	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(prefix)/include
 +	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(prefix)/lib
 +	${BSD_INSTALL_DATA} png.h pngconf.h $(DESTDIR)$(prefix)/include
-+	$(LIBTOOL) --mode=install ${BSD_INSTALL_DATA} libpng.la $(DESTDIR)$(prefix)/lib
++	${BSD_INSTALL_DATA} libpng.a $(DESTDIR)$(prefix)/lib
++	@if [ -f $(SHLIB) ]; then \
++	   ${BSD_INSTALL_DATA} $(SHLIB) $(DESTDIR)$(prefix)/lib; \
++	fi
  
  clean:
 -	rm -f *.o libpng.a pngtest pngout.png
-+	rm -f *.o *.lo libpng.a libpng.so.* pngtest pngout.png
++	rm -f *.o *.so libpng.a $(SHLIB) pngtest pngout.png
  
  DOCS = ANNOUNCE CHANGES INSTALL KNOWNBUG LICENSE README TODO Y2KINFO
  writelock:
