@@ -3,7 +3,7 @@
 # Date created:		17 Nov 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.4 1998/08/11 12:15:25 form Exp $
+# $OpenBSD: Makefile,v 1.5 1998/08/12 04:50:36 form Exp $
 #
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html
@@ -22,7 +22,7 @@ IS_INTERACTIVE=	yes
 MAN1=		mkstrip.1
 
 .if defined(USE_RELOAD)
-COUNT_RELOAD=	-DCOUNT_RELOAD=1
+MAKE_FLAGS+=	COUNT_RELOAD=-DCOUNT_RELOAD=1
 .endif
 
 pre-configure:
@@ -45,5 +45,6 @@ do-install:
 		${INSTALL_PROGRAM} mkstrip ${PREFIX}/bin; \
 		${INSTALL_MAN} mkstrip.1 ${PREFIX}/man/man1; \
 		${INSTALL_SCRIPT} mkstrip.sh ${PREFIX}/lib/Counter/digits
+	${INSTALL_DATA} ${WRKSRC}/count.cfg ${PREFIX}/lib/Counter/count.cfg.sample
 
 .include <bsd.port.mk>

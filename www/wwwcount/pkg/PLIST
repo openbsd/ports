@@ -1,4 +1,3 @@
-bin/extdgts
 bin/mkstrip
 lib/Counter/digits/A/strip.gif
 lib/Counter/digits/B/strip.gif
@@ -7,6 +6,7 @@ lib/Counter/digits/D/strip.gif
 lib/Counter/digits/D/lenna.gif
 lib/Counter/digits/E/strip.gif
 lib/Counter/digits/mkstrip.sh
+lib/Counter/count.cfg.sample
 lib/Counter/rgb.txt
 man/man1/mkstrip.1
 @dirrm lib/Counter/digits/A
