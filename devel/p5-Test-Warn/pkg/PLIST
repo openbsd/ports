@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/09 01:37:38 msf Exp $
+${P5SITE}/Test/Warn.pm
+@comment ${P5ARCH}/auto/Test/Warn/.packlist
+man/man3p/Test::Warn.3p
+@comment @dirrm ${P5ARCH}/auto/Test/Warn
+@comment @dirrm ${P5ARCH}/auto/Test
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
