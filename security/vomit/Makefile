@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/16 15:36:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2002/07/18 15:46:50 naddy Exp $
 
 COMMENT=		"voice over misconfigured internet telephones"
 
 DISTNAME=		vomit-0.2
 CATEGORIES=		security
-NEED_VERSION=		1.500
 
 HOMEPAGE=		http://vomit.xtdnet.nl/
 

@@ -1,7 +1,18 @@
-$OpenBSD: patch-arpd_c,v 1.1 2002/06/16 20:37:13 jsyn Exp $
+$OpenBSD: patch-arpd_c,v 1.2 2002/07/18 15:46:50 naddy Exp $
 --- arpd.c.orig	Mon Apr 15 17:42:34 2002
-+++ arpd.c	Sun Jun 16 17:06:59 2002
-@@ -156,7 +156,7 @@ arpd_send(eth_t *eth, int op,
++++ arpd.c	Tue Jul 16 01:02:56 2002
+@@ -22,10 +22,6 @@
+ #include <syslog.h>
+ #include <unistd.h>
+ 
+-/* XXX - libevent */
+-#undef timeout_pending
+-#undef timeout_initialized
+-
+ #include <event.h>
+ #include <dnet.h>
+ #include "tree.h"
+@@ -156,7 +152,7 @@ arpd_send(eth_t *eth, int op,
  	    spa->addr_ip, tha->addr_eth, tpa->addr_ip);
  	
  	if (op == ARP_OP_REQUEST) {
@@ -10,7 +21,7 @@ $OpenBSD: patch-arpd_c,v 1.1 2002/06/16 20:37:13 jsyn Exp $
  		    addr_ntoa(tpa), addr_ntoa(spa));
  	} else if (op == ARP_OP_REPLY) {
  		syslog(LOG_INFO, "arp reply %s is-at %s",
-@@ -173,7 +173,7 @@ arpd_lookup(struct addr *addr)
+@@ -173,7 +169,7 @@ arpd_lookup(struct addr *addr)
  	int error;
  
  	if (addr_cmp(addr, &arpd_ifent.intf_addr) == 0) {
@@ -19,7 +30,7 @@ $OpenBSD: patch-arpd_c,v 1.1 2002/06/16 20:37:13 jsyn Exp $
  		    addr_ntoa(addr), addr_ntoa(&arpd_ifent.intf_link_addr));
  		return (0);
  	}
-@@ -182,10 +182,10 @@ arpd_lookup(struct addr *addr)
+@@ -182,10 +178,10 @@ arpd_lookup(struct addr *addr)
  	error = arp_get(arpd_arp, &arpent);
  	
  	if (error == -1) {
@@ -32,7 +43,56 @@ $OpenBSD: patch-arpd_c,v 1.1 2002/06/16 20:37:13 jsyn Exp $
  		    addr_ntoa(addr), addr_ntoa(&arpent.arp_ha));
  	}
  	return (error);
-@@ -314,7 +314,7 @@ arpd_recv_cb(u_char *u, const struct pca
+@@ -194,9 +190,9 @@ arpd_lookup(struct addr *addr)
+ static void
+ arpd_free(struct arp_req *req)
+ {
+-	timeout_del(&req->active);
+-	timeout_del(&req->inactive);
+-	timeout_del(&req->discover);
++	evtimer_del(&req->active);
++	evtimer_del(&req->inactive);
++	evtimer_del(&req->discover);
+ 	free(req);
+ }
+ 
+@@ -222,7 +218,7 @@ arpd_discover(struct arp_req *req, struc
+ 		arpd_send(arpd_eth, ARP_OP_REQUEST,
+ 		    &arpd_ifent.intf_link_addr,
+ 		    &arpd_ifent.intf_addr, &req->ha, &req->pa);
+-		timeout_add(&req->discover, &tv);
++		evtimer_add(&req->discover, &tv);
+ 	}
+ 	req->cnt++;
+ }
+@@ -269,13 +265,13 @@ arpd_recv_cb(u_char *u, const struct pca
+ 			}
+ 			memcpy(&req->pa, &tmp.pa, sizeof(tmp.pa));
+ 
+-			timeout_set(&req->active, arpd_timeout, req);
+-			timeout_set(&req->inactive, arpd_timeout, req);
+-			timeout_set(&req->discover, arpd_discovercb, req);
++			evtimer_set(&req->active, arpd_timeout, req);
++			evtimer_set(&req->inactive, arpd_timeout, req);
++			evtimer_set(&req->discover, arpd_discovercb, req);
+ 			
+ 			timerclear(&tv);
+ 			tv.tv_sec = ARPD_MAX_ACTIVE;
+-			timeout_add(&req->active, &tv);
++			evtimer_add(&req->active, &tv);
+ 
+ 			SPLAY_INSERT(tree, &arpd_reqs, req);
+ 
+@@ -287,7 +283,7 @@ arpd_recv_cb(u_char *u, const struct pca
+ 		} else {
+ 			timerclear(&tv);
+ 			tv.tv_sec = ARPD_MAX_INACTIVE;
+-			timeout_add(&req->inactive, &tv);
++			evtimer_add(&req->inactive, &tv);
+ 			
+ 			if (req->negative) {
+ 				syslog(LOG_DEBUG, "%s: %s is allocated",
+@@ -314,7 +310,7 @@ arpd_recv_cb(u_char *u, const struct pca
  		if ((req = SPLAY_FIND(tree, &arpd_reqs, &tmp)) != NULL) {
  			addr_pack(&src.arp_ha, ADDR_TYPE_ETH, ETH_ADDR_BITS,
  			    ethip->ar_sha, ETH_ADDR_LEN);

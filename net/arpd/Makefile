@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2002/06/16 20:37:13 jsyn Exp $
+# $OpenBSD: Makefile,v 1.3 2002/07/18 15:46:50 naddy Exp $
 			
 COMMENT=		"ARP reply daemon"
 
 DISTNAME=		arpd-0.1
 CATEGORIES=    		net
-NEED_VERSION=		1.531
 
 MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 

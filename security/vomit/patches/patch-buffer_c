@@ -1,0 +1,12 @@
+$OpenBSD: patch-buffer_c,v 1.1 2002/07/18 15:46:50 naddy Exp $
+--- buffer.c.orig	Tue Jul 16 02:31:54 2002
++++ buffer.c	Tue Jul 16 02:34:45 2002
+@@ -253,7 +253,7 @@ buffer_output(bh bhd)
+ 	
+ 	if (clen == -1) {
+ 		fprintf(stderr, "write(%d, %p, %d) -> %d\n",
+-			b->buf_fd, b->buf, b->bufentries * sizeof(int16_t), clen);
++			b->buf_fd, b->buf, b->bufentries * (int)sizeof(int16_t), clen);
+ 
+ 		if (errno == EAGAIN || errno == EINTR)
+ 			return (1);

@@ -1,0 +1,24 @@
+$OpenBSD: patch-pcapu_c,v 1.1 2002/07/18 15:46:50 naddy Exp $
+--- pcapu.c.orig	Tue Jul 16 02:30:31 2002
++++ pcapu.c	Tue Jul 16 02:30:49 2002
+@@ -89,7 +89,7 @@ pcap_cb(int fd, short event, void *arg)
+ 	voip_sniff((u_char *)pd, &pkthdr, pkt);
+ 
+  out:
+-	timeout_add(&pcapev, &tv);
++	evtimer_add(&pcapev, &tv);
+ }
+ 
+ pcap_t *
+@@ -139,9 +139,9 @@ pcap_init(char *intf, char *file, char *
+ 	}
+ #endif
+ 
+-	timeout_set(&pcapev, pcap_cb, pd);
++	evtimer_set(&pcapev, pcap_cb, pd);
+ 	timerclear(&tv);
+-	timeout_add(&pcapev, &tv);
++	evtimer_add(&pcapev, &tv);
+ 
+ 	return (pd);
+ }
