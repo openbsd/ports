@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2001/03/30 12:32:05 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/04/18 15:01:25 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.363
+NEED_VERSION=		1.400
 VERSION=		2.1.1
 DISTNAME=		kdebase-${VERSION}
 DIST_SUBDIR=		kde
@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${VERSION}/distribution/tar/generic/src/
 EXTRACT_SUFX=		.tar.bz2
 
-USE_MOTIF=	Yes
+USE_MOTIF=	any
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2 \
 		ldap.2::databases/openldap
 
@@ -24,6 +24,7 @@ CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-xdmdir=/var/X11/kdm
+CONFIGURE_ARGS+=	--disable-debug
 #CONFIGURE_ARGS+=	--without-motif
 #CONFIGURE_ARGS+=--enable-static --enable-debug --disable-shared
 

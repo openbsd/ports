@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:16 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/04/18 15:01:13 espie Exp $
 
 DISTNAME=	xminehunter-0.4
 CATEGORIES=	games
-NEED_VERSION=	1.191
+NEED_VERSION=	1.400
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= games
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
-USE_MOTIF=	Yes
+USE_MOTIF=	any
 
 WRKDIST=	${WRKDIR}/xminehunter
 ALL_TARGET=	xminehunter

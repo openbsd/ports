@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/17 12:23:44 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2001/04/18 15:01:22 espie Exp $
 # Original from: Bruno Rohee <rohee@OpenBSD.ORG>
 #
 # Many variables moved to ../Makefile.inc
@@ -8,9 +8,9 @@ AMAYA_VERSION=		3.2.1
 DISTNAME=		amaya-src-${AMAYA_VERSION}
 PKGNAME=		amaya-${AMAYA_VERSION}
 
-NEED_VERSION=		1.319
+NEED_VERSION=		1.400
 
-USE_MOTIF=		Yes
+USE_MOTIF=		any
 
 WRKSRC=			${WRKDIR}/Amaya
 WRKBUILD=		${WRKSRC}/obj

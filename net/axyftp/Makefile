@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/24 12:37:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2001/04/18 15:01:18 espie Exp $
 
 DISTNAME=	axyftp-0.5.1
 CATEGORIES=	net
-NEED_VERSION=   1.319
+NEED_VERSION=   1.400
 MASTER_SITES=	ftp://ftp.wxftp.seul.org/pub/wxftp/0.5.1/
 
 HOMEPAGE=	http://www.wxftp.seul.org/
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 CONFIGURE_STYLE=	gnu
 
-USE_MOTIF=	Yes
+USE_MOTIF=	any
 
 FLAVORS=	gtk
 FLAVOR?=

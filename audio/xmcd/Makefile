@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2001/04/13 03:24:29 obecian Exp $
+# $OpenBSD: Makefile,v 1.19 2001/04/18 15:01:06 espie Exp $
 
 COMMENT=	"Motif CD player"
 DISTNAME=	xmcd-2.6
 CATEGORIES=	audio
-NEED_VERSION=	1.364
+NEED_VERSION=	1.400
 HOMEPAGE=	http://metalab.unc.edu/tkan/xmcd/
 
 MAINTAINER=	ports@openbsd.org
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/src/
 
-USE_MOTIF=	Yes
+USE_MOTIF=	lesstif
 CONFIGURE_STYLE= imake
 
 XMCDLIB=	${PREFIX}/share/xmcd

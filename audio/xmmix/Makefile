@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2001/04/13 03:24:30 obecian Exp $
+# $OpenBSD: Makefile,v 1.16 2001/04/18 15:01:07 espie Exp $
 
 COMMENT=	"Motif-based audio mixer"
 DISTNAME=	xmmix-1.2
 CATEGORIES=	audio
-NEED_VERSION=	1.364
+NEED_VERSION=	1.400
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= applications
 
@@ -15,6 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	imake
-USE_MOTIF=		Yes
+USE_MOTIF=		any
 
 .include <bsd.port.mk>

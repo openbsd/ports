@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2001/03/29 10:07:05 form Exp $
+# $OpenBSD: Makefile,v 1.18 2001/04/18 15:01:09 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=	"X11/Motif GUI text editor"
 
 DISTNAME=	nedit-5.1.1
 CATEGORIES=	editors x11
-NEED_VERSION=	1.230
+NEED_VERSION=	1.400
 
 MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
@@ -23,7 +23,7 @@ DIST_SUBDIR=	nedit
 MASTER_SITES=	ftp://ftp.nedit.org/pub/v5_1_1/
 MASTER_SITES0=	ftp://ftp.nedit.org/pub/contrib/misc/
 
-USE_MOTIF=	Yes
+USE_MOTIF=	any
 
 ALL_TARGET=	openbsd
 

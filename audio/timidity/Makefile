@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2001/04/13 03:24:23 obecian Exp $
+# $OpenBSD: Makefile,v 1.17 2001/04/18 15:01:05 espie Exp $
 
 COMMENT=	"MIDI to WAV renderer and player"
 DISTNAME=	timidity-0.2i
 CATEGORIES=	audio
-NEED_VERSION=	1.364
+NEED_VERSION=	1.400
 MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/
 MASTER_SITES0=	ftp://ftp.kiarchive.ru/pub/misc/hardware/soundcard/gus/
 TIINS=	goemon.tgz
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 
-USE_MOTIF=	Yes
+USE_MOTIF=	any
 
 INSTALL_TARGET= install.all
 FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}

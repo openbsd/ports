@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2001/03/07 21:48:38 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2001/04/18 15:01:29 espie Exp $
 
 DISTNAME=	xmbdfed-4.4
 CATEGORIES=	x11
-NEED_VERSION=	1.336
+NEED_VERSION=	1.400
 MASTER_SITES=	ftp://crl.nmsu.edu/CLR/multiling/General/
 
 LIB_DEPENDS=	ttf.1.3::print/freetype
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
-USE_MOTIF=	Yes
+USE_MOTIF=	any
 
 MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS}' STATIC='' \
 		FTYPE_LIBS='-L${LOCALBASE}/lib -lttf' \

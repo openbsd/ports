@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2001/03/29 09:46:22 form Exp $
+# $OpenBSD: Makefile,v 1.25 2001/04/18 15:01:19 espie Exp $
 
 COMMENT=	"english-russian keyboard switcher for X11"
 
 DISTNAME=	xruskb-1.13.0
 CATEGORIES=	russian x11
-NEED_VERSION=	1.336
+NEED_VERSION=	1.400
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/X11/
 
 MAINTAINER=	Oleg Safiullin <form@openbsd.org>
@@ -20,8 +20,8 @@ CONFIGURE_STYLE=gnu
 FLAVORS=	motif
 FLAVOR?=
 
-.if ${FLAVOR:L:Mmotif}
-USE_MOTIF=	Yes
+.if ${FLAVOR:L:Mmotif} || ${FLAVOR:L:Mlesstif}
+USE_MOTIF=	any
 CONFIGURE_ARGS=	--with-motif --without-Xaw
 .else
 CONFIGURE_ARGS=	--without-motif --with-Xaw

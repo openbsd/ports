@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/10 08:23:33 jasoni Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/18 15:01:10 espie Exp $
 
 COMMENT= 	"vi clone, many additional features"
 
 PKGNAME=	vim-5.7.27
 DISTNAME=	vim-5.7
 CATEGORIES=	editors
-NEED_VERSION=	1.361
+NEED_VERSION=	1.400
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
 		ftp://ftp.home.vim.org/pub/vim/unix/  \
@@ -53,10 +53,10 @@ FLAVOR=no_x11
 .endif
 .if ${FLAVOR:L} == "no_x11"
 CONFIGURE_ARGS+=--disable-gui --without-x
-.elif ${FLAVOR:L} == "motif"
+.elif ${FLAVOR:L} == "motif" || ${FLAVOR:L} == "lesstif"
 CONFIGURE_ARGS+=--enable-gui="motif"
 CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
-USE_MOTIF=Yes
+USE_MOTIF=any
 .elif ${FLAVOR:L} == "athena"
 CONFIGURE_ARGS+=--enable-gui="athena"
 .elif ${FLAVOR:L} == "gtk"
