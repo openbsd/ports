@@ -1,13 +1,13 @@
-# $OpenBSD: patch-ac,v 1.4 1999/12/13 17:26:55 form Exp $
+# $OpenBSD: patch-ac,v 1.5 2000/03/22 10:37:16 form Exp $
 
---- analog.cfg.orig	Mon Dec 13 23:12:31 1999
-+++ analog.cfg	Mon Dec 13 23:13:08 1999
+--- analog.cfg.orig	Wed Mar 22 16:28:54 2000
++++ analog.cfg	Wed Mar 22 16:29:15 2000
 @@ -7,7 +7,7 @@
  # There is a much more extensive configuration file in examples/big.cfg
  #
  # If you need a LOGFORMAT command it must go here, above the LOGFILE command.
 -# LOGFILE logfile.log
 +# LOGFILE /var/www/logs/access_log
+ # OUTFILE outfile.html
  # HOSTNAME "[my organisation]"
  # REQINCLUDE pages
- LINKINCLUDE pages
