@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/01 21:17:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2001/04/10 02:46:35 lebel Exp $
 # $FreeBSD: Makefile,v 1.19 1997/11/20 08:21:26 tg Exp $
 #
 
@@ -7,6 +7,7 @@
      SUBDIR += bzip2
      SUBDIR += fastjar
      SUBDIR += freeze
+     SUBDIR += gcpio
      SUBDIR += gshar+gunshar
      SUBDIR += gtar
      SUBDIR += ha
