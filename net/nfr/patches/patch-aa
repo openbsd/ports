@@ -1,5 +1,5 @@
-*** Makefile.proto-orig	Sat Mar  6 16:03:38 1999
---- Makefile.proto	Sat Mar  6 16:08:00 1999
+*** Makefile.proto.orig	Wed Dec  9 17:12:57 1998
+--- Makefile.proto	Tue Mar 23 12:07:59 1999
 ***************
 *** 28,38 ****
   
@@ -27,3 +27,20 @@
   	$(MAKESUBDIRS) $@ $(SUBDIRS)
   
   port:	
+***************
+*** 40,46 ****
+  	cd ../thirdparty/regex-0.12 ; cp regex.h $(NFR)/include
+  	$(MAKESUBDIRS) $@ $(SUBDIRS)
+  
+! install:	pcapstuff libs
+  	[ -d doc ] || tar -xf doc.tar
+  	[ -d $(INSTALLDIR)/etc/httpd/htdocs ] \
+  	   || mkdir -p $(INSTALLDIR)/etc/httpd/htdocs
+--- 42,48 ----
+  	cd ../thirdparty/regex-0.12 ; cp regex.h $(NFR)/include
+  	$(MAKESUBDIRS) $@ $(SUBDIRS)
+  
+! install:	libs
+  	[ -d doc ] || tar -xf doc.tar
+  	[ -d $(INSTALLDIR)/etc/httpd/htdocs ] \
+  	   || mkdir -p $(INSTALLDIR)/etc/httpd/htdocs
