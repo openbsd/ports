@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/05/06 03:20:03 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/11/15 14:42:07 todd Exp $
 # Original from: Marc Espie
 
 COMMENT=	"TeX distribution, common support files"
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 CATEGORIES=	print/teTeX
 NEED_VERSION=	1.402
 
-HOMEPAGE=	http://tug.cs.umb.edu/tetex/
+HOMEPAGE=	http://www.tug.org/tetex/
 MAINTAINER=	Marc Espie <espie@openbsd.org>, Anil Madhavapeddy <avsm@openbsd.org>
 
 DIST_SUBDIR=	teTeX

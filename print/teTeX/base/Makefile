@@ -1,6 +1,6 @@
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.15 2001/10/06 13:01:23 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/11/15 14:42:07 todd Exp $
 
 COMMENT=	"TeX distribution, executables"
 
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	systems/unix/teTeX/1.0/distrib/sources
 DISTFILES=	${TETEX_SRC} 
 WRKDIST=	${WRKDIR}/teTeX-1.0
 
-HOMEPAGE=	http://tug.cs.umb.edu/tetex/
+HOMEPAGE=	http://www.tug.org/tetex/
 MAINTAINER=	Marc Espie <espie@openbsd.org>, Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_DISTFILES_CDROM=	Yes
