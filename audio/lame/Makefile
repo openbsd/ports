@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/08/27 09:30:31 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/24 12:09:04 espie Exp $
 
 COMMENT=	"Lame Ain't an MP3 Encoder"
 
@@ -7,7 +7,7 @@ VERSION=	3.89
 DISTNAME=	lame${VERSION}beta
 PKGNAME=	lame-${VERSION}b
 CATEGORIES=	audio
-NEED_VERSION=	1.447
+NEED_VERSION=	1.475
 
 MASTER_SITES=	ftp://lame.sourceforge.net/pub/lame/src/
 
@@ -36,7 +36,7 @@ FAKE_FLAGS=	${MAKE_FLAGS}
 
 .if ${FLAVOR:L} != "no_x11"
 CONFIGURE_ARGS+=	--enable-mp3x
-LIB_DEPENDS+=		gtk.1.2::x11/gtk+
+LIB_DEPENDS+=		gtk.1.2,gdk.1.2::x11/gtk+
 .endif
 
 .include <bsd.port.mk>

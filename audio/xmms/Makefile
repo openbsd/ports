@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/10/08 16:24:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2001/10/24 12:09:05 espie Exp $
 # Uses pthreads
 
 ONLY_FOR_ARCHS=	i386
@@ -14,7 +14,7 @@ FULLPKGNAME-esd=	xmms-esd-${VERSION}
 FULLPKGNAME-vorbis=	xmms-vorbis-${VERSION}
 DISTDRIVER=		xmms_sun-${VERSION}-p2
 CATEGORIES=		audio
-NEED_VERSION=		1.435
+NEED_VERSION=		1.475
 HOMEPAGE=		http://www.xmms.org
 
 MAINTAINER=		Wilbern Cobb <cobb@vedge.com.ar>
@@ -50,8 +50,8 @@ MULTI_PACKAGES+=	-vorbis
 
 SUBPACKAGE?=
 
-RUN_DEPENDS=		unzip:unzip-*:archivers/unzip
-LIB_DEPENDS=		gtk.1.2::x11/gtk+ \
+RUN_DEPENDS=		:unzip-*:archivers/unzip
+LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 			xml.9::textproc/libxml1
 
 USE_X11=		Yes
@@ -78,11 +78,11 @@ SUBST_VARS=		MAINTAINER PKGNAME-vorbis PKGNAME-esd
 
 .  if ${SUBPACKAGE} == "-esd"
 LIB_DEPENDS=		esd.2::audio/esound
-RUN_DEPENDS=		xmms::audio/xmms
+RUN_DEPENDS=		::audio/xmms
 .  endif
 .  if ${SUBPACKAGE} == "-vorbis"
-LIB_DEPENDS=		vorbis.0::audio/libvorbis
-RUN_DEPENDS=		xmms::audio/xmms
+LIB_DEPENDS=		vorbis.0,vorbisfile.1::audio/libvorbis
+RUN_DEPENDS=		::audio/xmms
 .  endif
 .else
 .  if ${MULTI_PACKAGES:M-esd}
@@ -93,7 +93,7 @@ CONFIGURE_ENV+=		ESD_CONFIG=/usr/bin/false
 .  endif
 
 .  if ${MULTI_PACKAGES:M-vorbis}
-LIB_DEPENDS +=		vorbis.0::audio/libvorbis
+LIB_DEPENDS +=		vorbis.0,vorbisfile.1::audio/libvorbis
 CONFIGURE_ARGS+=	--with-ogg-prefix=${LOCALBASE}	\
 			--with-vorbis-prefix=${LOCALBASE}
 .  else
