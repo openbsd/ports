@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/09 16:58:18 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/06/10 15:28:39 espie Exp $
 
 DISTNAME=	ytalk-3.1.1
 CATEGORIES=	net
-NEED_VERSION=	1.295
+NEED_VERSION=	1.299
 HOMEPAGE=	http://www.iagora.com/~espel/ytalk/
 MASTER_SITES=	${HOMEPAGE}
 
@@ -15,9 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 # No gnu-configure for now, need to set up DESTDIR in prefix/etc for fake
 # to work.
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS= --prefix='$${DESTDIR}${PREFIX}' \
-		--sysconfdir='$${DESTDIR}${SYSCONFDIR}'
+CONFIGURE_STYLE=gnu dest
 
 INSTALL_TARGET=	install.bin install.man
 
