@@ -1,0 +1,9 @@
+You must also add one of the two folowing lines to your inetd.conf
+
+ftp stream tcp nowait root ${PREFIX}/sbin/vsftpd vsftpd"
+
+or
+
+ftp stream tcp nowait root /usr/libexec/tcpd ${PREFIX}/sbin/vsftpd"
+
+The second line is to use vsftpd with tcp-wrappers, see tcpd(8).
