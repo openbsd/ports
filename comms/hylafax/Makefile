@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 1999/08/27 01:46:10 brad Exp $
+# $OpenBSD: Makefile,v 1.12 1999/10/28 07:43:36 turan Exp $
+
+BROKEN=		bad packing lists
 
 DISTNAME=	hylafax-v4.0pl2
 .if defined(A4)
