@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2003/10/08 17:13:15 sturm Exp $
+# $OpenBSD: Makefile,v 1.25 2004/06/26 04:12:07 sturm Exp $
 
 COMMENT=	"Window manager, continuation of the Bowman NeXTSTEP clone"
 
@@ -9,7 +9,7 @@ MASTER_SITES=   ftp://ftp.afterstep.org/stable/
 
 HOMEPAGE=	http://www.afterstep.org/
 
-RUN_DEPENDS=	::x11/asclock
+RUN_DEPENDS=	:asclock-*:x11/asclock,classic,english
 LIB_DEPENDS=	png.2::graphics/png \
 		jpeg.62::graphics/jpeg \
 		rplay.::audio/rplay
