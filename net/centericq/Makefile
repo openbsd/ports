@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/09 23:26:33 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/19 17:23:59 pvalchev Exp $
 
 COMMENT=	"curses-based icq client implementation"
 
-DISTNAME=	centericq-3.22.8
+DISTNAME=	centericq-3.29.12
 CATEGORIES=	net	
 NEED_VERSION=	1.363
 MASTER_SITES=	http://konst.org.ua/download/ \
@@ -20,13 +20,12 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	PREFIX="${PREFIX}"
+CONFIGURE_STYLE= autoconf
+CONFIGURE_ENV=	PREFIX="${PREFIX}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/centericq ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/centericq
-	${INSTALL_DATA} ${WRKSRC}/share/*.wav ${PREFIX}/share/centericq
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/centericq
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/centericq
 	${INSTALL_DATA} ${WRKSRC}/FAQ ${PREFIX}/share/doc/centericq
