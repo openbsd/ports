@@ -3,9 +3,10 @@
 # Date created:		24 Dec 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/24 15:43:30 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/02/25 23:38:54 marc Exp $
 #
 
+BROKEN=		"required sources no longer exists"
 DISTNAME=	stars-1.0-ss-9.03
 PKGNAME=	stars-1.0
 CATEGORIES=	astro x11
