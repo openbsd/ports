@@ -1,12 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2000/06/29 21:20:04 jakob Exp $
---- Makefile.in.orig	Fri Mar 24 11:24:14 2000
-+++ Makefile.in	Mon Jun 26 20:57:26 2000
-@@ -60,7 +60,7 @@ install:    all installdirs
+$OpenBSD: patch-Makefile_in,v 1.2 2001/01/05 09:19:46 danh Exp $
+--- Makefile.in.orig	Sun Nov 19 15:58:05 2000
++++ Makefile.in	Fri Jan  5 02:22:03 2001
+@@ -61,7 +61,6 @@ install:    all installdirs
  
  installdirs:
  	@$(SHELL) $(srcdir)/mkinstalldirs $(snmplibdir) $(mibdir) $(includedir)
 -	@-$(SHELL) $(srcdir)/mkinstalldirs $(persistentdir)
-+#	@-$(SHELL) $(srcdir)/mkinstalldirs $(persistentdir)
  
- apps/snmpget apps/snmpgetnext apps/snmpset apps/snmptranslate apps/snmpwalk apps/snmpbulkwalk apps/snmptest apps/snmptrapd apps/snmpnetstat/snmpnetstat agent/snmpd: makeall
+ apps/snmpget$(EXEEXT) apps/snmpgetnext$(EXEEXT) apps/snmpset$(EXEEXT) apps/snmptranslate$(EXEEXT) apps/snmpwalk$(EXEEXT) apps/snmpbulkwalk$(EXEEXT) apps/snmptest$(EXEEXT) apps/snmptrapd$(EXEEXT) apps/snmpnetstat/snmpnetstat$(EXEEXT) agent/snmpd$(EXEEXT): makeall
  

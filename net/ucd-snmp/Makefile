@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2000/11/22 21:55:21 danh Exp $
+# $OpenBSD: Makefile,v 1.23 2001/01/05 09:19:44 danh Exp $
 
-VERSION=	4.1.2
-DISTNAME=	ucd-snmp-${VERSION}
+DISTNAME=	ucd-snmp-4.2
 CATEGORIES=     net
-NEED_VERSION=	1.340
+NEED_VERSION=	1.348
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE} 
 MASTER_SITE_SUBDIR= net-snmp
 
@@ -17,35 +16,21 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes 
 
 CONFIGURE_STYLE= autoconf dest
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-persistent-directory="/var/ucd-snmp" \
-	  	--with-logfile="/var/log/snmpd" \
-		--with-defaults --with-zlib
-
-BIN=	encode_keychange snmpbulkget snmpbulkwalk snmpdelta \
-	snmpget snmpgetnext snmpnetstat snmpset snmpstatus  \
-	snmptable snmptest snmptranslate snmptrap snmpusm snmpwalk 
-SBIN=	snmpd snmptrapd
-LIBS=	snmplib/libsnmp.a agent/libucdagent.a agent/libucdmibs.a
-
-STATIC_FLAGS=	SHLIB_VERSION='' SHLIB_EXTENSION='a' \
-		SHLIB_LD_CMD='ar cr' RANLIB='ranlib'
-
-post-build:
-	@cd ${WRKSRC}/snmplib && ${MAKE} ${STATIC_FLAGS} all
-	@cd ${WRKSRC}/agent && ${MAKE} ${STATIC_FLAGS} all
-	@cd ${WRKSRC}/agent && ${MAKE} ${STATIC_FLAGS} all
+CONFIGURE_ENV+=	VERSION_INFO='42:0:0'
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
+		 --with-defaults --with-logfile='/var/log/snmpd' \
+		 --with-persistent-directory='/var/ucd-snmp' \
+		 --with-libwrap='/usr' --with-openssl --with-zlib
 
 post-install:
-	@cd ${PREFIX}/bin && strip ${BIN}
-	@cd ${PREFIX}/sbin && strip ${SBIN}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ucd-snmp
+	-${STRIP} ${PREFIX}/bin/* ${PREFIX}/sbin/*
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ucd-snmp
-	${INSTALL_DATA} ${WRKSRC}/EXAMPLE.conf ${PREFIX}/share/examples/ucd-snmp
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ucd-snmp
 	${INSTALL_DATA} ${WRKSRC}/README.snmpv3 ${PREFIX}/share/doc/ucd-snmp
 	${INSTALL_DATA} ${WRKSRC}/FAQ ${PREFIX}/share/doc/ucd-snmp
 	${INSTALL_DATA} ${WRKSRC}/AGENT.txt ${PREFIX}/share/doc/ucd-snmp
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${LIBS} ${PREFIX}/lib
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ucd-snmp
+	${INSTALL_DATA} ${WRKSRC}/EXAMPLE.conf \
+		${PREFIX}/share/examples/ucd-snmp
 
 .include <bsd.port.mk>

@@ -1,11 +1,19 @@
-$OpenBSD: patch-configure_in,v 1.4 2000/10/26 01:55:22 danh Exp $
---- configure.in.orig	Fri May  5 12:46:26 2000
-+++ configure.in	Wed Oct 25 21:46:25 2000
-@@ -400,22 +400,10 @@ if test "x$prefix" = "xNONE"; then
+$OpenBSD: patch-configure_in,v 1.5 2001/01/05 09:19:46 danh Exp $
+--- configure.in.orig	Fri Dec  1 10:56:07 2000
++++ configure.in	Sat Dec 23 14:21:54 2000
+@@ -348,6 +348,7 @@ dnl get version number.
+ AC_MSG_CHECKING(for ucd-snmp version number)
+ VERSION=`cat $srcdir/version.h | sed 's/";//;s/.*"//;s/pre/0./;'`
+ AC_SUBST(VERSION)
++AC_SUBST(VERSION_INFO)
+ AC_MSG_RESULT($VERSION)
+ 
+ dnl super type checking
+@@ -461,22 +462,10 @@ if test "x$prefix" = "xNONE"; then
    prefix=/usr/local
  fi
  
--fch=`echo $prefix | cut -b1`
+-fch=`echo $prefix | sed 's/\(.\).*/\1/'`
 -if test $fch != "/" ; then
 -   prefix=`pwd`/$prefix
 -   echo "adjusting prefix to $prefix"
@@ -15,7 +23,7 @@ $OpenBSD: patch-configure_in,v 1.4 2000/10/26 01:55:22 danh Exp $
    exec_prefix=$prefix
  fi
  
--fch=`echo $exec_prefix | cut -b1`
+-fch=`echo $exec_prefix | sed 's/\(.\).*/\1/'`
 -if test $fch != "/" ; then
 -   exec_prefix=`pwd`/$exec_prefix
 -   echo "adjusting exec_prefix to $exec_prefix"
@@ -24,143 +32,35 @@ $OpenBSD: patch-configure_in,v 1.4 2000/10/26 01:55:22 danh Exp $
  dnl Set SNMPLIBPATH & SNMPSHAREPATH
  
  SNMPLIBPATH=""
-@@ -484,7 +472,7 @@ if test "x$with_shared" = "xyes"; then
- 	fi
- 	;;
- 
--    netbsd*|openbsd*)
-+    netbsd*)
- 	AC_MSG_CHECKING(if this is ELF system)
- 	AC_EGREP_CPP(yes, [dnl
- #ifdef __ELF__
-@@ -502,6 +490,22 @@ yes
- 	])
- 	;;
- 
-+    openbsd2.[01234567])
-+	SHLIB_CFLAGS="-fPIC"	
-+	SHLIB_LD_CMD="ld -Bshareable -o"
-+	CC_RUNTIME_ARG="-R$libdir"
-+	SHLIB_LDCONFIG_CMD='PATH="$$PATH:/sbin" ldconfig -m $(libdir)'
-+	SHLIB_VERSION=.41.2
-+	;;
-+
-+    openbsd*)
-+	SHLIB_CFLAGS="-fPIC"
-+	SHLIB_LD_CMD='$(CC) -shared -o'
-+	CC_RUNTIME_ARG="-Wl,-rpath,$libdir"
-+	SHLIB_LDCONFIG_CMD=''
-+	SHLIB_VERSION=.41.2
-+	;;
-+
-     hpux*)
- 	SHLIB_EXTENSION="sl"
-         if test "x$GCC" != "xyes"; then
-@@ -1256,29 +1260,17 @@ AC_CHECK_STRUCT_FOR([
- 
- AC_CHECK_STRUCT_FOR([
- #include <sys/types.h>
--#define KERNEL
--#define _KERNEL
- #include <sys/socket.h>
--#undef KERNEL
--#undef _KERNEL
- ], sockaddr, sa_len, no)
- 
- AC_CHECK_STRUCT_FOR([
- #include <sys/types.h>
--#define KERNEL
--#define _KERNEL
- #include <sys/socket.h>
--#undef KERNEL
--#undef _KERNEL
- ], sockaddr, sa_union.sa_generic.sa_family2, no)
- 
- AC_CHECK_STRUCT_FOR([
- #include <sys/types.h>
--#define KERNEL
--#define _KERNEL
- #include <sys/socket.h>
--#undef KERNEL
--#undef _KERNEL
- #include <net/route.h>
- ], rtentry, rt_dst, no)
- 
-@@ -1289,11 +1281,7 @@ AC_CACHE_CHECK(type of rtentry structure
- dnl 4.4 compat
- AC_TRY_COMPILE([
- #include <sys/types.h>
--#define KERNEL
--#define _KERNEL
- #include <sys/socket.h>
--#undef KERNEL
--#undef _KERNEL
- #include <net/route.h>
- ],[
- 
-@@ -1310,11 +1298,7 @@ dnl 4.3 compat
- if test "x$ac_cv_RTENTRY_TYPE" = "x"; then
- AC_TRY_COMPILE([
- #include <sys/types.h>
--#define KERNEL
--#define _KERNEL
- #include <sys/socket.h>
--#undef KERNEL
--#undef _KERNEL
- #include <net/route.h>
- ],[
- struct rtentry rt; 
-@@ -1364,11 +1348,7 @@ AC_CACHE_CHECK(for struct rtentry has a 
- [
- AC_TRY_COMPILE([
- #include <sys/types.h>
--#define KERNEL
--#define _KERNEL
- #include <sys/socket.h>
--#undef KERNEL
--#undef _KERNEL
- #include <net/route.h>
- ],[
- struct rtentry rt; 
-@@ -1385,41 +1365,25 @@ fi
- dnl Check struct rtentry for various things.
- AC_CHECK_STRUCT_FOR([
- #include <sys/types.h>
--#define KERNEL
--#define _KERNEL
- #include <sys/socket.h>
--#undef KERNEL
--#undef _KERNEL
- #include <net/route.h>
- ], rtentry, rt_unit)
- 
- AC_CHECK_STRUCT_FOR([
- #include <sys/types.h>
--#define KERNEL
--#define _KERNEL
- #include <sys/socket.h>
--#undef KERNEL
--#undef _KERNEL
- #include <net/route.h>
- ], rtentry, rt_refcnt)
- 
- AC_CHECK_STRUCT_FOR([
- #include <sys/types.h>
--#define KERNEL
--#define _KERNEL
- #include <sys/socket.h>
--#undef KERNEL
--#undef _KERNEL
- #include <net/route.h>
- ], rtentry, rt_hash)
- 
- AC_CHECK_STRUCT_FOR([
- #include <sys/types.h>
--#define KERNEL
--#define _KERNEL
- #include <sys/socket.h>
--#undef KERNEL
--#undef _KERNEL
- #include <net/route.h>
- ], rtentry, rt_use)
- 
+@@ -932,10 +921,11 @@ AC_ARG_WITH(libwrap,
+     AC_CHECK_HEADER(tcpd.h,
+ 	LIBS="$LIBS -lwrap"
+ 	AC_MSG_CHECKING(for TCP wrappers library -lwrap)
+-	AC_TRY_LINK([#include <tcpd.h>
+-  int allow_severity = 0;
+-  int deny_severity  = 0;
+-  ],[hosts_access((void *)0)],
++	AC_TRY_LINK([#include <sys/types.h>
++#include <tcpd.h>
++int allow_severity = 0;
++int deny_severity  = 0;
++],[hosts_access((void *)0)],
+ 	    AC_MSG_RESULT(yes)
+ 	    AC_DEFINE(USE_LIBWRAP)
+ 	    test "$with_libwrap" != no && WRAPLIBS="-L$with_libwrap/lib"
+@@ -945,10 +935,11 @@ AC_ARG_WITH(libwrap,
+ 	    AC_CHECK_FUNC(yp_get_default_domain, ,
+ 		AC_CHECK_LIB(nsl, yp_get_default_domain))
+ 	    AC_MSG_CHECKING(for TCP wrappers library -lwrap linked with -lnsl)
+-	    AC_TRY_LINK([#include <tcpd.h>
+-  int allow_severity = 0;
+-  int deny_severity  = 0;
+-  ],[hosts_access((void *)0)],
++	    AC_TRY_LINK([#include <sys/types.h>
++#include <tcpd.h>
++int allow_severity = 0;
++int deny_severity  = 0;
++],[hosts_access((void *)0)],
+ 		AC_MSG_RESULT(yes)
+ 		test "$with_libwrap" != no && WRAPLIBS="-L$with_libwrap/lib"
+ 		WRAPLIBS="$WRAPLIBS -lwrap", AC_MSG_RESULT(no)),

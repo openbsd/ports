@@ -1,11 +1,24 @@
-$OpenBSD: patch-Makefile_top,v 1.1 2000/06/29 21:20:04 jakob Exp $
---- Makefile.top.orig	Mon Apr 17 17:46:49 2000
-+++ Makefile.top	Tue Jun 27 13:20:39 2000
-@@ -31,6 +31,7 @@ persistentdir	= @PERSISTENT_DIRECTORY@
- # Programs
+$OpenBSD: patch-Makefile_top,v 1.2 2001/01/05 09:19:46 danh Exp $
+--- Makefile.top.orig	Sun Nov 19 15:58:05 2000
++++ Makefile.top	Fri Jan  5 03:51:50 2001
+@@ -6,6 +6,7 @@ srcdir		= @srcdir@
+ top_srcdir	= @top_srcdir@
+ VPATH		= @srcdir@
+ VERSION		= @VERSION@
++VERSION_INFO	= @VERSION_INFO@
+ @SET_MAKE@
+ 
  #
- INSTALL		= @INSTALL@
-+INSTALL_DATA	= @INSTALL_DATA@
- SED		= @SED@
- RANLIB		= @RANLIB@
- LN_S		= @LN_S@
+@@ -51,10 +52,10 @@ EXEEXT		= @EXEEXT@
+ # Misc Compiling Stuff
+ CC	        = @CC@
+ # version number is prefixed by a 0 for a better shared library version number
+-LIB_LD_CMD      = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) -rpath $(libdir) -release 0.$(VERSION) -o
++LIB_LD_CMD      = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) -rpath $(libdir) -version-info $(VERSION_INFO) -o
+ LIB_EXTENSION   = la
+ LIB_VERSION     =
+-LIB_LDCONFIG_CMD = $(LIBTOOL) --mode=finish $(libdir)
++LIB_LDCONFIG_CMD = :
+ LINK		= $(LIBTOOL) --mode=link $(CC)
+ # RANLIB 	= @RANLIB@
+ RANLIB		= :
