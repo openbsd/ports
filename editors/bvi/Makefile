@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/03/14 07:57:37 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/03/25 14:33:31 kevlo Exp $
 
 DISTNAME=	bvi-1.2.0
 CATEGORIES=	editors
 
-HOMEPAGE=	http://bvi.linuxbox.com/
+HOMEPAGE=	http://bvi.linuxave.net
 
 MAINTAINER=	naddy@unix-ag.uni-kl.de
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://bvi.linuxbox.com/download/
+MASTER_SITES=	http://bvi.linuxave.net/download/
 EXTRACT_SUFX=	.src.tar.gz
 
 FAKE=		Yes
