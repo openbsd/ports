@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.53 2000/10/08 04:29:58 brad Exp $
+# $OpenBSD: Makefile,v 1.54 2001/04/18 14:48:54 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
+
+COMMENT=	"C++ X11 GUI toolkit"
+COMMENT-examples="examples and tutorial for qt"
+COMMENT-html=	"off-line html documentation for qt"
 
 VERSION=	1.45
 DISTNAME=	qt-${VERSION}
+PKGNAME-examples=	qt-examples-${VERSION}
+PKGNAME-html:=	qt-html-${VERSION}
 CATEGORIES=	x11
-NEED_VERSION=	1.336
+NEED_VERSION=	1.399
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 HOMEPAGE=	http://www.trolltech.com/products/qt/
@@ -116,11 +122,6 @@ do-install:
 
 .include <bsd.port.mk>
 
-.if ${SUBPACKAGE} == "-examples"
-PKGNAME:=	qt-examples-${VERSION}
-.elif ${SUBPACKAGE} == "-html"
-PKGNAME:=	qt-html-${VERSION}
-.endif
 
 .if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:U} == YES
 USE_TARGET=	openbsd-g++-static

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/08/10 00:03:00 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/04/18 14:47:59 espie Exp $
+@pkgcfl ja-eterm-[0-9]*
+@pkgcfl eterm-[0-9]*
 bin/Esetroot
 bin/Etbg
 bin/Etcolors.sh

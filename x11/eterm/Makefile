@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/23 16:08:13 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/04/18 14:47:58 espie Exp $
 
+COMMENT=	"color X11 terminal emulator with transparency support"
+COMMENT-kanji=	"color japanese terminal emulator with transparency support"
 PKGNAME=	eterm-0.8.10
+FULLPKGNAME-kanji=	ja-eterm-0.8.10
 DISTNAME=	Eterm-0.8.10
 CATEGORIES=	x11
-NEED_VERSION=	1.336
+NEED_VERSION=	1.399
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= eterm
 
@@ -37,11 +40,3 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/Eterm.ti ${PREFIX}/share/doc/Eterm
 
 .include <bsd.port.mk>
-
-# XXX Tweak PKGNAME
-.if ${FLAVOR:L:Mkanji}
-PKGNAME:=	ja-${PKGNAME:S/-kanji//}
-PKG_ARGS+=	-C 'eterm-*'
-.else
-PKG_ARGS+=	-C 'ja-eterm-*'
-.endif
