@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/08/11 03:22:54 lebel Exp $
 bin/moria
 share/moria/hours
 share/moria/news
@@ -8,6 +8,4 @@ share/moria/roglcmds.hlp
 share/moria/rwizcmds.hlp
 share/moria/version.hlp
 share/moria/welcome.hlp
-@comment no checksum
-share/moria/scores
 @dirrm share/moria

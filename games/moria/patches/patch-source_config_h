@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_config_h,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
+$OpenBSD: patch-source_config_h,v 1.2 2001/08/11 03:22:54 lebel Exp $
 --- source/config.h.orig	Wed Jul  4 12:42:19 2001
 +++ source/config.h	Wed Jul  4 12:42:21 2001
 @@ -6,6 +6,19 @@
@@ -37,7 +37,7 @@ $OpenBSD: patch-source_config_h,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
 -#define MORIA_VER	MORIA_LIB(version.hlp)
 +#define MORIA_HOU	PREFIX "/share/moria/hours"
 +#define MORIA_MOR	PREFIX "/share/moria/news"
-+#define MORIA_TOP	PREFIX "/share/moria/scores"
++#define MORIA_TOP	"/var/games/moria/scores"
 +#define MORIA_HELP	PREFIX "/share/moria/roglcmds.hlp"
 +#define MORIA_ORIG_HELP	PREFIX "/share/moria/origcmds.hlp"
 +#define MORIA_WIZ_HELP	PREFIX "/share/moria/rwizcmds.hlp"
