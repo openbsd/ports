@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/07/10 00:13:50 angelos Exp $
+# $OpenBSD: Makefile,v 1.13 2000/07/10 01:19:47 angelos Exp $
 
 DISTNAME=	xtar-1.4
 CATEGORIES=	misc
@@ -15,6 +15,5 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_MOTIF=	Yes
 USE_IMAKE=	Yes
-FAKE=		No
 
 .include <bsd.port.mk>
