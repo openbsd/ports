@@ -1,4 +1,4 @@
-*shared*
+@NOSHARED@*shared*
 
 # The _tkinter module.
 #
@@ -15,32 +15,33 @@ TKPATH=:lib-tk
 # every system.
 
 # *** Always uncomment this (leave the leading underscore in!):
-_tkinter _tkinter.c tkappinit.c -DWITH_APPINIT -I${X11BASE}/include -I${PREFIX}/include/tcl8.0 -I${PREFIX}/include/tk8.0 -L${PREFIX}/lib -ltk80 -ltcl80 -L${X11BASE}/lib -lX11
-
-# *** Uncommend and edit to reflect where your X11 header files are:
-#	-I/usr/X11R6/include \
+_tkinter _tkinter.c tkappinit.c -DWITH_APPINIT \
+# *** Uncomment and edit to reflect where your Tcl/Tk headers are:
+	-I${PREFIX}/include -I${PREFIX}/include/tcl8.0 \
+	-I${PREFIX}/include/tk8.0 \
+# *** Uncomment and edit to reflect where your X11 header files are:
+	-I${X11BASE}/include \
 # *** Or uncomment this for Solaris:
 #	-I/usr/openwin/include \
-# *** Uncomment and edit to reflect where your Tcl/Tk headers are:
-#	-I/usr/local/include/tcl8.0 -I/usr/local/include/tk8.0 \
 # *** Uncomment and edit for Tix extension only:
 #	-DWITH_TIX -ltix4.1.8.0 \
 # *** Uncomment and edit for BLT extension only:
-#	-DWITH_BLT -I/usr/local/blt/blt8.0-unoff/include -lBLT8.0 \
+#	-DWITH_BLT -I${PREFIX}/blt/blt8.0-unoff/include -lBLT8.0 \
 # *** Uncomment and edit for PIL (TkImaging) extension only:
 #	-DWITH_PIL -I../Extensions/Imaging/libImaging  tkImaging.c \
-# *** Uncomment and edit for Mesa (what's Mesa?):
-#	-lGL -lGLU -lMesatk -lMesaaux \
 # *** Uncomment and edit for TOGL extension only:
 #	-DWITH_TOGL togl.c \
 # *** Uncomment and edit to reflect where your Tcl/Tk libraries are:
-#	-L/usr/local/lib \
+	-L${PREFIX}/lib -L${PREFIX}/lib \
 # *** Uncomment and edit to reflect your Tcl/Tk versions:
-#	-ltk80 -ltcl80 \
+	-ltk80 -ltcl80 \
 # *** Uncomment and edit to reflect where your X11 libraries are:
-#	-L/usr/X11R6/lib \
+	-L${X11BASE}/lib \
 # *** Or uncomment this for Solaris:
 #	-L/usr/openwin/lib \
+# *** Uncomment these for TOGL extension only:
+#	-lGL -lGLU -lXext -lXmu \
+# *** Uncomment for AIX:
+#	-lld \
 # *** Always uncomment this; X11 libraries to link with:
-#	-lX11 -lXext -lXmu
-
+	-lX11

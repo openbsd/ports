@@ -1,4 +1,4 @@
-*shared*
+@NOSHARED@*shared*
 
 # The mpz module interfaces to the GNU Multiple Precision library.
 # You need to ftp the GNU MP library.  
@@ -12,5 +12,5 @@
 # FTP archive sites. One URL for it is:
 # ftp://gatekeeper.dec.com/.b/usenet/comp.sources.misc/volume40/fgmp/part01.Z
 
-GMP=/usr/src/contrib/libgmp
-mpz mpzmodule.c -I$(GMP) -I$(GMP)/mpn/generic -lgmp
+GMP=/usr/src/gnu/lib/libgmp
+mpz mpzmodule.c -I$(GMP) -I$(GMP)/mpn/generic /usr/lib/libgmp.a
