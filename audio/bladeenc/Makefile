@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 1999/10/28 07:23:34 turan Exp $
-
-BROKEN=		sources do not exist
+# $OpenBSD: Makefile,v 1.6 1999/10/28 15:24:54 fgsch Exp $
 
 DISTNAME=	bladeenc-085-src-unstable
 PKGNAME=	bladeenc-0.85
 CATEGORIES=	audio
-MASTER_SITES=	http://home8.swipnet.se/~w-82625/encoder/source/
+MASTER_SITES=	http://home.swipnet.se/~w-82625/source/
 
 MAINTAINER=	brad@openbsd.org
 HOMEPAGE=	http://bladeenc.cjb.net/
