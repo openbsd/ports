@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
---- configure.orig	Tue Feb  3 14:58:37 2004
-+++ configure	Wed Jun 30 15:24:54 2004
+$OpenBSD: patch-configure,v 1.2 2004/08/13 08:09:23 pvalchev Exp $
+--- configure.orig	Tue Feb  3 15:58:37 2004
++++ configure	Fri Aug 13 01:55:01 2004
 @@ -3344,7 +3344,10 @@ else
    # I'd rather use --version here, but apparently some GNU ld's only accept -v.
  case `$LD -v 2>&1 </dev/null` in
@@ -37,11 +37,13 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-@@ -10114,6 +10115,17 @@ if test -z "$aix_libpath"; then aix_libp
+@@ -10114,6 +10115,19 @@ if test -z "$aix_libpath"; then aix_libp
      # Workaround some broken pre-1.5 toolchains
      output_verbose_link_cmd='$CC -shared $CFLAGS -v conftest.$objext 2>&1 | grep conftest.$objext | $SED -e "s:-lgcc -lc -lgcc::"'
      ;;
 +  openbsd*)
++      hardcode_direct_CXX=yes
++      hardcode_shlibpath_var_CXX=no
 +      archive_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
 +      hardcode_libdir_flag_spec_CXX='${wl}-rpath,$libdir'
 +      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
@@ -55,7 +57,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
    osf3*)
      case $cc_basename in
        KCC)
-@@ -11466,7 +11478,7 @@ openbsd*)
+@@ -11466,7 +11480,7 @@ openbsd*)
    version_type=sunos
    need_lib_prefix=no
    need_version=no
@@ -64,7 +66,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-@@ -14492,7 +14504,7 @@ openbsd*)
+@@ -14492,7 +14506,7 @@ openbsd*)
    version_type=sunos
    need_lib_prefix=no
    need_version=no
@@ -73,7 +75,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-@@ -16802,7 +16814,7 @@ openbsd*)
+@@ -16802,7 +16816,7 @@ openbsd*)
    version_type=sunos
    need_lib_prefix=no
    need_version=no
@@ -82,7 +84,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-@@ -22483,10 +22495,10 @@ fi
+@@ -22483,10 +22497,10 @@ fi
  
  # FreeBSD and OpenBSD have neither -lpthread nor integrated pthreads in libc.
  # Instead -pthread is used to the compiler/linker to get pthreads working right.
@@ -97,7 +99,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
  
  
  case "$HOSTTYPE" in
-@@ -22965,13 +22977,13 @@ rm -f conftest.$ac_objext conftest$ac_ex
+@@ -22965,13 +22979,13 @@ rm -f conftest.$ac_objext conftest$ac_ex
  
  
  have_pthread=false
@@ -114,7 +116,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -23020,7 +23032,7 @@ fi
+@@ -23020,7 +23034,7 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
  if test $ac_cv_lib_pthread_pthread_create = yes; then
@@ -123,7 +125,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_LIBPTHREAD 1
-@@ -23570,6 +23582,7 @@ if test x$with_dv = x ; then
+@@ -23570,6 +23584,7 @@ if test x$with_dv = x ; then
  fi
  
  have_dv=false
@@ -131,7 +133,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
  EXTRA_LIBS=" $LIBM_LIBS $GLIB_LIBS  $PTHREAD_LIBS"
  echo "$as_me:$LINENO: checking for dv_decoder_free in -ldv" >&5
  echo $ECHO_N "checking for dv_decoder_free in -ldv... $ECHO_C" >&6
-@@ -23635,8 +23648,8 @@ _ACEOF
+@@ -23635,8 +23650,8 @@ _ACEOF
  
      have_dv=true
  fi
@@ -141,7 +143,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
  have_dv_yv12=false
  if test x$with_dv_yv12 = xyes -a $have_dv = true; then
  
-@@ -25852,7 +25865,7 @@ echo "$as_me:$LINENO: checking x86 sub-a
+@@ -25852,7 +25867,7 @@ echo "$as_me:$LINENO: checking x86 sub-a
  echo $ECHO_N "checking x86 sub-architecture settings... $ECHO_C" >&6
  
    if test "$enable_cmov_extension" != "no" ; then
@@ -150,7 +152,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
    else
      arch=i586
    fi
-@@ -26013,9 +26026,10 @@ else
+@@ -26013,9 +26028,10 @@ else
  fi
  
  
