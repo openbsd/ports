@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2001/03/24 22:39:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2001/04/04 00:55:24 naddy Exp $
 # $FreeBSD: ports/devel/cvsweb/Makefile,v 1.28 2000/09/23 20:48:45 knu Exp $
 
-DISTNAME=	cvsweb-1.106.1.68
+DISTNAME=	cvsweb-1.106.1.70
 CATEGORIES=	devel www
 NEED_VERSION=	1.340
 HOMEPAGE=	http://stud.fh-heilbronn.de/~zeller/cgi/cvsweb.cgi/
