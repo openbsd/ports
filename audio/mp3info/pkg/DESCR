@@ -6,5 +6,3 @@ Features:
  - Get MPEG Audio Version 1, 2 and 2.5 Header info.
  - User-definable output formatting (rather advanced).
  - Can rename files according to user-defined scheme.
-
-WWW: ${HOMEPAGE}
