@@ -1,0 +1,5 @@
+--- README.OpenBSD.orig	Mon Jul 12 02:22:11 1999
++++ README.OpenBSD	Mon Jul 12 02:22:44 1999
+@@ -0,0 +1,2 @@
++The font directory for OpenBSD has been changed from /usr/ttfonts/ to
++/usr/X11R6/lib/X11/fonts/TrueType/.

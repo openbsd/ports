@@ -1,0 +1,8 @@
+bin/xfstt
+man/man1/xfstt.1
+share/doc/xfstt/FAQ
+share/doc/xfstt/CHANGES
+share/doc/xfstt/INSTALL
+share/doc/xfstt/THANKS.txt
+share/doc/xfstt/README.OpenBSD
+@dirrm share/doc/xfstt
