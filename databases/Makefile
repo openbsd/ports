@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/09/04 17:36:09 matt Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/04 21:23:45 jakob Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -8,6 +8,7 @@
 #    SUBDIR += msql
      SUBDIR += mysql
      SUBDIR += mysql:pth
+     SUBDIR += openldap
      SUBDIR += p5-AsciiDB-TagFile
      SUBDIR += p5-DBD-Pg
 #    SUBDIR += p5-DBD-mysql
