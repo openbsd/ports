@@ -9,3 +9,5 @@ allowing for secure updating.
 On the down side, rsync is not quite as versatile as rdist when it comes to
 mirroring only part of a hierarchy, though one can possibly use a perl
 wrapper to obtain the same adaptability.
+
+WWW: ${HOMEPAGE}
