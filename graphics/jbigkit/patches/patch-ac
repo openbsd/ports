@@ -1,11 +1,15 @@
---- pbmtools/Makefile.orig	Thu Jun 25 13:30:38 1998
-+++ pbmtools/Makefile	Thu Jun 25 13:31:00 1998
-@@ -5,11 +5,11 @@
- CC = gcc
+--- pbmtools/Makefile.orig	Wed Nov  4 05:00:44 1998
++++ pbmtools/Makefile	Mon Dec 27 00:38:08 1999
+@@ -2,14 +2,14 @@
+ # $Id: patch-ac,v 1.2 1999/12/27 06:12:09 brad Exp $
+ 
+ # Select an ANSI/ISO C compiler here, e.g. GNU gcc is recommended
+-CC = gcc
++#CC = gcc
  
  # Options for the compiler
 -CFLAGS = -g -Wall -ansi -pedantic -I../libjbig
-+CFLAGS += -Wall -ansi -pedantic -I../libjbig
++#CFLAGS = -g -Wall -ansi -pedantic -I../libjbig
  
  .SUFFIXES: .1 .5 .txt $(SUFFIXES)
  

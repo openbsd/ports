@@ -1,7 +1,7 @@
 --- libjbig/Makefile.orig	Fri Apr 10 21:33:27 1998
-+++ libjbig/Makefile	Wed Jun  9 10:24:38 1999
-@@ -2,12 +2,14 @@
- # $Id: patch-ab,v 1.2 1999/06/11 18:28:00 brad Exp $
++++ libjbig/Makefile	Thu Dec  9 15:43:07 1999
+@@ -2,26 +2,47 @@
+ # $Id: patch-ab,v 1.3 1999/12/27 06:12:09 brad Exp $
  
  # Select an ANSI/ISO C compiler here, GNU gcc is recommended
 -CC = gcc
@@ -12,31 +12,46 @@
 +#CFLAGS += -Wall -ansi -pedantic
  
 -all: libjbig.a tstcodec
-+SOJBIGLIB=libjbig.so.1.0
++SOJBIGLIB=libjbig.so.$(VERSION)
 +
++.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:U} == YES
++all: libjbig.a
++.else
 +all: libjbig.a $(SOJBIGLIB)
++.endif
  
  tstcodec: tstcodec.c jbig.c jbig.h jbig_tab.o
  	$(CC) $(CFLAGS) -o tstcodec -DTEST_CODEC tstcodec.c jbig.c \
-@@ -18,10 +20,20 @@
- 	ar rc libjbig.a jbig.o jbig_tab.o
- 	ranlib libjbig.a
+ 	jbig_tab.o
  
+ libjbig.a: jbig.o jbig_tab.o
+-	rm -f libjbig.a
+-	ar rc libjbig.a jbig.o jbig_tab.o
+-	ranlib libjbig.a
++	rm -f ${.TARGET}
++	ar rc ${.TARGET} ${.ALLSRC}
++	ranlib ${.TARGET}
++
 +$(SOJBIGLIB): jbig.so jbig_tab.so
 +	rm -f ${.TARGET}
 +	ld -Bshareable -Bforcearchive -o ${.TARGET} ${.ALLSRC}
 +	
- jbig.o: jbig.c jbig.h
- 
-+.SUFFIXES: .c .so
-+.c.so:
-+	${CC} -c -fpic -DPIC ${CFLAGS} ${.IMPSRC} -o ${.TARGET}
-+jbig.so: jbig.c jbig.h
-+jbig_tab.so: jbig_tab.c
++.SUFFIXES: .c .o .so
 +
++.c.o:
++	${CC} ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
++
++.c.so:
++	${CC} ${CFLAGS} -fpic -DPIC -c ${.IMPSRC} -o ${.TARGET}
+ 
+ jbig.o: jbig.c jbig.h
++jbig_tab.o: jbig_tab.c jbig.h
++jbig.so: jbig.c jbig.h
++jbig_tab.so: jbig_tab.c jbig.h
+ 
  test: tstcodec
  	./tstcodec
  
  clean:
 -	rm -f *.o *~ core gmon.out dbg_d\=??.pbm tstcodec
-+	rm -f *.o *~ core gmon.out dbg_d\=??.pbm tstcodec libjbig.so.1.0 libjbig.a
++	rm -f *.o *~ core gmon.out dbg_d\=??.pbm tstcodec libjbig.so.$(VERSION) libjbig.a

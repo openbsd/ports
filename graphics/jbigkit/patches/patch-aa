@@ -1,40 +1,55 @@
---- Makefile.orig	Mon Oct 12 12:12:48 1998
-+++ Makefile	Sat May  8 14:33:41 1999
+--- Makefile.orig	Tue Nov 16 10:55:22 1999
++++ Makefile	Mon Dec 27 00:37:06 1999
 @@ -2,13 +2,14 @@
- # $Id: patch-aa,v 1.1.1.1 1999/05/08 19:17:39 brad Exp $
+ # $Id: patch-aa,v 1.2 1999/12/27 06:12:09 brad Exp $
  
  # Select an ANSI/ISO C compiler here, GNU gcc is recommended
 -CC = gcc
 +#CC = gcc
  
  # Options for the compiler: A high optimization level is suggested
--CCFLAGS = -O2 -W
-+#CCFLAGS = -O2 -W
+ CCFLAGS = -O2 -W
  #CCFLAGS = -O -g -W -Wall -ansi -pedantic #-DDEBUG  # developer only
  
 -CFLAGS = $(CCFLAGS) -I../libjbig
-+CFLAGS += -I../libjbig
++CFLAGS += -Wall -I../libjbig
 +
  
- VERSION=1.0
+ VERSION=1.1
  
-@@ -45,3 +46,19 @@
+@@ -16,7 +17,12 @@
+ 	@echo "Enter 'make test' in order to start some automatic tests."
+ 
+ lib:
+-	(cd libjbig;  make "CC=$(CC)" "CFLAGS=$(CFLAGS)")
++.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:U} == YES
++	(cd libjbig;  make "CC=$(CC)" "CFLAGS=$(CFLAGS)" "VERSION=$(VERSION)" "NO_SHARED_LIBS=Yes")
++.else
++	(cd libjbig;  make "CC=$(CC)" "CFLAGS=$(CFLAGS)" "VERSION=$(VERSION)")
++.endif
++
+ 
+ pbm: lib
+ 	(cd pbmtools; make "CC=$(CC)" "CFLAGS=$(CFLAGS)")
+@@ -45,3 +51,21 @@
  	scp ANNOUNCE \
  	  $(DISTUID)@$(DISTHOST):$(DISTPATH)/jbigkit-$(VERSION)-announce.txt
  	mv ../jbigkit-$(VERSION).tar.gz $(HOME)/.www/download/
 +
 +install:
 +	mkdir -p ${PREFIX}/bin
++	mkdir -p ${PREFIX}/include
++	mkdir -p ${PREFIX}/lib
++	mkdir -p ${PREFIX}/man/man1
++	mkdir -p ${PREFIX}/man/man5
 +	install -c -s -m 755 -o bin -g bin pbmtools/jbgtopbm ${PREFIX}/bin
 +	install -c -s -m 755 -o bin -g bin pbmtools/pbmtojbg ${PREFIX}/bin
-+	mkdir -p ${PREFIX}/man/man1
 +	install -c -m 644 -o bin -g bin pbmtools/pbmtojbg.1 ${PREFIX}/man/man1
 +	install -c -m 644 -o bin -g bin pbmtools/jbgtopbm.1 ${PREFIX}/man/man1
-+	mkdir -p ${PREFIX}/man/man5
 +	install -c -m 644 -o bin -g bin pbmtools/pbm.5 ${PREFIX}/man/man5
 +	install -c -m 644 -o bin -g bin pbmtools/pgm.5 ${PREFIX}/man/man5
-+	mkdir -p ${PREFIX}/include
 +	install -c -m 644 -o bin -g bin libjbig/jbig.h ${PREFIX}/include
-+	mkdir -p ${PREFIX}/lib
 +	install -c -m 644 -o bin -g bin libjbig/libjbig.a ${PREFIX}/lib
-+	install -c -m 644 -o bin -g bin libjbig/libjbig.so.1.0 ${PREFIX}/lib
++	@if [ -f libjbig/libjbig.so.$(VERSION) ]; then \
++	install -c -m 644 -o bin -g bin libjbig/libjbig.so.$(VERSION) ${PREFIX}/lib;\
++	fi
