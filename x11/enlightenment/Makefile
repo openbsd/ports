@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/05/08 18:23:21 shell Exp $
+# $OpenBSD: Makefile,v 1.24 2001/05/09 02:21:07 shell Exp $
 
 COMMENT=	""themed" window manager"
 
@@ -6,6 +6,7 @@ DISTNAME=	enlightenment-0.16.5
 CATEGORIES=     x11
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
+		ftp://ftp.squish.org/pub/enlightenment/enlightenment/ \
 		ftp://ftp.shellhung.org/pub/Mirror/enlightenment/enlightenment/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/ \
 		ftp://ftp.enlighte.nu/pub/Enlightenment/Enlightenment/ \
