@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/02/24 01:42:47 todd Exp $
+@lib lib/libgw-glib.so.0.0
+@lib lib/libgw-standard.so.0.0
+@lib lib/libgw-wct.so.0.0
+@lib lib/libgwrap-glib.so.1.0
+@lib lib/libgwrap-wct.so.1.0
