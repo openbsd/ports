@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2003/06/03 10:21:33 markus Exp $
+# $OpenBSD: Makefile,v 1.40 2003/06/09 17:24:47 brad Exp $
 
 COMMENT=	"GNU privacy guard - a free PGP replacement"
 
@@ -39,8 +39,6 @@ CONFIGURE_ARGS+= --disable-ldap
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-REGRESS_TARGET=	check
-
 FLAVORS=	idea
 FLAVOR?=
 
@@ -60,5 +58,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnupg
 	cd ${WRKSRC}; ${INSTALL_DATA} ${GNUPGDOCFILES} \
 		${PREFIX}/share/doc/gnupg
+
+do-regress:
+	@cd ${WRKSRC}/checks && ${MAKE_PROGRAM}
 
 .include <bsd.port.mk>
