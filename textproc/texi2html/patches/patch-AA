@@ -1,5 +1,5 @@
---- texi2html.aa.orig	Wed Nov  5 15:07:06 1997
-+++ texi2html.aa	Wed Nov  5 15:08:37 1997
+--- texi2html.pl.orig	Wed Nov  5 15:07:06 1997
++++ texi2html.pl	Wed Nov  5 15:08:37 1997
 @@ -1,6 +1,4 @@
 -#!/usr/local/bin/perl
 -'di ';
