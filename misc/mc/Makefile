@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/03/05 06:36:08 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2001/03/05 06:37:48 fgsch Exp $
 
 DISTNAME=		mc-4.5.51
 CATEGORIES=		misc
@@ -19,6 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
 
-#BROKEN=			"final auditing. comming soon"
+BROKEN=			"final auditing. comming soon"
 
 .include <bsd.port.mk>
