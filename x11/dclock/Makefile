@@ -1,10 +1,5 @@
-# Makefile for:		dclock
-# Version required:	pl4
-# Date created:		15 Aug 1996
-# Whom:			David Leonard <leonard@dstc.edu.au>
-#
-# $FreeBSD: ports/x11-clocks/dclock/Makefile,v 1.9 1999/08/31 06:52:30 mharo Exp $
-# $OpenBSD: Makefile,v 1.1.1.1 1999/11/08 14:14:42 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 1999/12/31 22:23:17 fgsch Exp $
+# $FreeBSD: Makefile,v 1.9 1999/08/31 06:52:30 mharo Exp $
 
 PKGNAME=	dclock-pl4
 
@@ -20,14 +15,14 @@ MAINTAINER=	dugsong@monkey.org
 USE_X11=	yes
 
 EXTRACT_CMD=		${GZIP_CMD}
-EXTRACT_BEFORE_ARGS=	-dc
+EXTRACT_BEFORE_ARGS=	-cd
 EXTRACT_AFTER_ARGS=	|sh -
 
 NO_CONFIGURE=	yes
 
-NO_WRKSUBDIR=		yes
+NO_WRKSUBDIR=	yes
 
-ALL_TARGET=		dclock
+ALL_TARGET=	dclock
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dclock ${PREFIX}/bin
