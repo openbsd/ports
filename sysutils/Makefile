@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2002/11/24 00:48:35 brad Exp $
+# $OpenBSD: Makefile,v 1.57 2002/11/24 13:58:13 margarida Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -22,6 +22,7 @@
      SUBDIR += nut
      SUBDIR += nut,no_cgi
      SUBDIR += p5-Filesys-DiskSpace
+     SUBDIR += p5-Mon
      SUBDIR += pftop
      SUBDIR += pstree
      SUBDIR += radiusreport
