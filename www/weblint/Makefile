@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2002/03/21 21:25:55 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/10/29 01:21:28 naddy Exp $
 
 COMMENT=	"perl lint program for html"
 
 DISTNAME=	weblint-1.020	
 CATEGORIES=	www
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.weblint.org/pub/weblint/ \
 		http://www.perl.com/CPAN/authors/id/NEILB/ 
 
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
+
+REGRESS_TARGET=	test
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/weblint
