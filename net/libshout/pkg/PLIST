@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/26 11:38:50 sturm Exp $
+bin/shout-config
+include/shout/shout.h
+lib/libshout.a
+lib/libshout.la
+share/aclocal/shout.m4
+@comment share/examples/libshout/COPYING
+@comment share/examples/libshout/README
+share/examples/libshout/example.c
+%%SHARED%%
+@dirrm share/examples/libshout
+@comment @dirrm share/aclocal
+@dirrm include/shout
