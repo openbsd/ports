@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/08/10 08:46:50 xsa Exp $
+# $OpenBSD: Makefile,v 1.18 2004/08/13 19:40:01 naddy Exp $
 
 COMMENT=	"graphical file comparator and merge tool"
 
@@ -31,10 +31,6 @@ PORTHOME=	${WRKDIST}
 
 NO_REGRESS=	Yes
 
-.include <bsd.own.mk>
-
-USE_GCC3?=	No
-
 post-extract:
 	@rm ${WRKSRC}/getopt.h
 	@rm ${WRKSRC}/getopt.c
@@ -43,10 +39,6 @@ post-extract:
 do-configure:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/tmake -t xxdiff.t xxdiff.pro \
 		> ${WRKSRC}/Makefile
-.if ${USE_GCC3:L} == "yes"
-	@cd ${WRKSRC} && make resParser.l.c && \
-		perl -i -pe 's/(\s)errno\b/$$1::errno/g' resParser.l.c
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xxdiff ${PREFIX}/bin/xxdiff
