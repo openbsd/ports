@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_psy_c,v 1.1 2001/03/21 15:15:39 naddy Exp $
+--- lib/psy.c.orig	Wed Mar 21 16:12:32 2001
++++ lib/psy.c	Wed Mar 21 16:12:34 2001
+@@ -191,7 +191,7 @@ void _vp_psy_init(vorbis_look_psy *p,vor
+   p->total_octave_lines=maxoc-p->firstoc+1;
+ 
+   p->ath=_ogg_malloc(n*sizeof(float));
+-  p->octave=_ogg_malloc(n*sizeof(int));
++  p->octave=_ogg_malloc(n*sizeof(long));
+   p->bark=_ogg_malloc(n*sizeof(float));
+   p->vi=vi;
+   p->n=n;
