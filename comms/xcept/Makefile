@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/01 06:51:05 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2002/10/25 11:34:24 naddy Exp $
 
 COMMENT=	"decoder for the CEPT (Btx) protocol"
 
@@ -15,5 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MAKE_FLAGS=	SYSCONFDIR="${SYSCONFDIR}"
 
 WRKDIST=	${WRKDIR}/XCept-2.1.2
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2002/06/29 20:33:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2002/10/25 11:34:24 naddy Exp $
 
 COMMENT=	"serial and network communications package"
 
 PKGNAME=	kermit-8.0.201
 DISTNAME=	cku201
 CATEGORIES=	comms
-NEED_VERSION=	1.504
 HOMEPAGE=	http://www.kermit-project.org/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -27,6 +26,8 @@ MAKE_FLAGS=	KTARGET=openbsd CC="${CC}" CC2="${CC}" \
 		-DTCPSOCKET -DOPENBSD -DUSE_UU_LOCK -DFNFLOAT -DUSE_STRERROR \
 		-DCKHTTP" \
 		LIBS="-lcurses -lutil -lm"
+
+NO_REGRESS=	Yes
 
 DOCDIR=		${PREFIX}/share/doc/kermit
 DOCS=		COPYING.TXT ckaaaa.txt ckcbwr.txt ckccfg.txt ckcplm.txt \

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2002/03/21 20:46:23 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/10/25 11:34:24 naddy Exp $
 
 COMMENT=	"manage remote serial consoles via TCP/IP"
 
 PKGNAME=	conserver-5.21
 DISTFILES=	conserver-5.21-Beta.shar.gz
 CATEGORIES=	comms
-NEED_VERSION=	1.515
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -23,6 +22,8 @@ WRKDIST=	${WRKDIR}
 # or use something like ``make DEFAULTHOST=myserver.mydomain.net''
 DEFAULTHOST?=	localhost
 MAKE_ENV+=	CC="${CC}" DEFAULTHOST="${DEFAULTHOST}"
+
+NO_REGRESS=	Yes
 
 post-extract:
 	cp ${FILESDIR}/Makefile ${WRKSRC}

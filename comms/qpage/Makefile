@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/05 22:40:13 jakob Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/25 11:34:24 naddy Exp $
 
 COMMENT=	"SNPP client/server (alphanum pager software)"
 
 DISTNAME=	qpage-3.3
 CATEGORIES=	comms
-NEED_VERSION=	1.406
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -16,6 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://www.qpage.org/download/
 EXTRACT_SUFX=	.tar.Z
 CONFIGURE_STYLE=gnu
+
+NO_REGRESS=	Yes
 
 pre-install:
 		@mv ${WRKSRC}/example.cf ${WRKSRC}/example-qpage.cf

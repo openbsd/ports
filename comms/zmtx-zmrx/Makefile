@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2002/03/21 20:46:23 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/10/25 11:34:24 naddy Exp $
 
 COMMENT=	"receive/send files via ZMODEM protocol (unrestricted)"
 
 DISTNAME=	zmtx-zmrx-1.02
 DISTFILES=	zmtx-zmrx.shar.gz
 CATEGORIES=	comms
-NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
@@ -19,6 +18,8 @@ MASTER_SITES=	ftp://ftp.inria.fr/network/modem/  \
 
 WRKDIST=	${WRKDIR}
 MAKE_FILE=	makefile
+
+NO_REGRESS=	Yes
 
 do-install:
 .for f in zmrx zmtx

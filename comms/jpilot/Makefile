@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2002/02/18 23:41:43 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.22 2002/10/25 11:34:24 naddy Exp $
 
 COMMENT=	"desktop organizer software for the palm pilot"
 
 DISTNAME=	jpilot-0.99.2
 PKGNAME=	${DISTNAME}
 CATEGORIES=	comms palm
-NEED_VERSION=	1.504
 
 MASTER_SITES=	${HOMEPAGE}
 
@@ -31,5 +30,7 @@ CONFIGURE_STYLE= gnu dest
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

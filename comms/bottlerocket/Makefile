@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/06/05 20:28:21 jason Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/25 11:34:24 naddy Exp $
 
 COMMENT=	"X.10 firecracker interface"
 
 DISTNAME=	bottlerocket-0.04c
 CATEGORIES=	comms
-
-NEED_VERSION=	1.402
 
 HOMEPAGE=	http://mlug.missouri.edu/~tymm/
 MASTER_SITES=	${HOMEPAGE}
@@ -20,5 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
