@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/20 18:14:12 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/06/22 19:49:43 brad Exp $
 
 DISTNAME=	freebsd_lib-2.2.8
 CATEGORIES=	emulators
 NEED_VERSION=	1.301
-MASTER_SITES=	ftp://ftp.dqc.org/pub/brad/
+MASTER_SITES=	ftp://ftp.dqc.org/pub/brad/source/
 EXTRACT_ONLY=
 
 ONLY_FOR_ARCHS=	i386
