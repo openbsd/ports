@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/30 07:22:36 pvalchev Exp $
+bin/rain
+share/doc/rain/README
+@dirrm share/doc/rain
