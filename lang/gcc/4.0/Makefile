@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2005/02/22 17:35:22 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2005/02/22 21:27:50 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
 V=4.0.0
-FULL_VERSION=4.0-20050130
+FULL_VERSION=4.0-20050220
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

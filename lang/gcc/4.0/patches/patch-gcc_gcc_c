@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_gcc_c,v 1.4 2005/01/17 19:20:10 espie Exp $
---- gcc/gcc.c.orig	Fri Jan  7 02:05:37 2005
-+++ gcc/gcc.c	Mon Jan 17 16:23:20 2005
-@@ -1300,7 +1300,7 @@ translate_options (int *argcp, const cha
+$OpenBSD: patch-gcc_gcc_c,v 1.5 2005/02/22 21:27:50 espie Exp $
+--- gcc/gcc.c.orig	Sat Feb 19 12:43:56 2005
++++ gcc/gcc.c	Tue Feb 22 19:38:42 2005
+@@ -1298,7 +1298,7 @@ translate_options (int *argcp, const cha
  		  /* Store the translation as one argv elt or as two.  */
  		  if (arg != 0 && strchr (arginfo, 'j') != 0)
  		    newv[newindex++] = concat (option_map[j].equivalent, arg,
@@ -10,7 +10,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.4 2005/01/17 19:20:10 espie Exp $
  		  else if (arg != 0)
  		    {
  		      newv[newindex++] = option_map[j].equivalent;
-@@ -1616,7 +1616,7 @@ init_gcc_specs (struct obstack *obstack,
+@@ -1614,7 +1614,7 @@ init_gcc_specs (struct obstack *obstack,
  		shared_name,
  #endif
  #endif
@@ -19,7 +19,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.4 2005/01/17 19:20:10 espie Exp $
  
    obstack_grow (obstack, buf, strlen (buf));
    free (buf);
-@@ -1823,7 +1823,7 @@ set_spec (const char *name, const char *
+@@ -1812,7 +1812,7 @@ set_spec (const char *name, const char *
  
    old_spec = *(sl->ptr_spec);
    *(sl->ptr_spec) = ((spec[0] == '+' && ISSPACE ((unsigned char)spec[1]))
@@ -28,7 +28,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.4 2005/01/17 19:20:10 espie Exp $
  		     : xstrdup (spec));
  
  #ifdef DEBUG_SPECS
-@@ -2481,10 +2481,10 @@ find_a_file (struct path_prefix *pprefix
+@@ -2470,10 +2470,10 @@ find_a_file (struct path_prefix *pprefix
        len += len1 > len2 ? len1 : len2;
        if (multilib_dir)
  	multilib_name = ACONCAT ((multilib_dir, dir_separator_str, name,
@@ -41,7 +41,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.4 2005/01/17 19:20:10 espie Exp $
      }
  
    temp = xmalloc (len);
-@@ -2643,8 +2643,8 @@ add_sysrooted_prefix (struct path_prefix
+@@ -2632,8 +2632,8 @@ add_sysrooted_prefix (struct path_prefix
    if (target_system_root)
      {
        if (target_sysroot_suffix)
@@ -52,7 +52,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.4 2005/01/17 19:20:10 espie Exp $
  
        /* We have to override this because GCC's notion of sysroot
  	 moves along with GCC.  */
-@@ -3216,7 +3216,7 @@ process_command (int argc, const char **
+@@ -3205,7 +3205,7 @@ process_command (int argc, const char **
  	  break;
        new_argv0 = xmemdup (progname, baselen,
  			   baselen + concat_length (new_version, new_machine,
@@ -61,7 +61,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.4 2005/01/17 19:20:10 espie Exp $
        strcpy (new_argv0 + baselen, new_machine);
        strcat (new_argv0, "-gcc-");
        strcat (new_argv0, new_version);
-@@ -3243,7 +3243,7 @@ process_command (int argc, const char **
+@@ -3232,7 +3232,7 @@ process_command (int argc, const char **
  						 standard_bindir_prefix,
  						 standard_libexec_prefix);
        if (gcc_exec_prefix)
@@ -70,7 +70,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.4 2005/01/17 19:20:10 espie Exp $
      }
    else
      gcc_libexec_prefix = make_relative_prefix (gcc_exec_prefix,
-@@ -3290,7 +3290,7 @@ process_command (int argc, const char **
+@@ -3279,7 +3279,7 @@ process_command (int argc, const char **
  	    {
  	      strncpy (nstore, startp, endp - startp);
  	      if (endp == startp)
@@ -79,7 +79,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.4 2005/01/17 19:20:10 espie Exp $
  	      else if (!IS_DIR_SEPARATOR (endp[-1]))
  		{
  		  nstore[endp - startp] = DIR_SEPARATOR;
-@@ -3324,7 +3324,7 @@ process_command (int argc, const char **
+@@ -3313,7 +3313,7 @@ process_command (int argc, const char **
  	    {
  	      strncpy (nstore, startp, endp - startp);
  	      if (endp == startp)
@@ -88,7 +88,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.4 2005/01/17 19:20:10 espie Exp $
  	      else if (!IS_DIR_SEPARATOR (endp[-1]))
  		{
  		  nstore[endp - startp] = DIR_SEPARATOR;
-@@ -3357,7 +3357,7 @@ process_command (int argc, const char **
+@@ -3346,7 +3346,7 @@ process_command (int argc, const char **
  	    {
  	      strncpy (nstore, startp, endp - startp);
  	      if (endp == startp)
@@ -97,7 +97,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.4 2005/01/17 19:20:10 espie Exp $
  	      else if (!IS_DIR_SEPARATOR (endp[-1]))
  		{
  		  nstore[endp - startp] = DIR_SEPARATOR;
-@@ -3825,7 +3825,7 @@ warranty; not even for MERCHANTABILITY o
+@@ -3814,7 +3814,7 @@ warranty; not even for MERCHANTABILITY o
  	      PREFIX_PRIORITY_LAST, 1, 0);
  
    tooldir_prefix = concat (tooldir_base_prefix, spec_machine,
@@ -106,7 +106,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.4 2005/01/17 19:20:10 espie Exp $
  
    /* If tooldir is relative, base it on exec_prefixes.  A relative
       tooldir lets us move the installed tree as a unit.
-@@ -3840,28 +3840,28 @@ warranty; not even for MERCHANTABILITY o
+@@ -3829,28 +3829,28 @@ warranty; not even for MERCHANTABILITY o
  	{
  	  char *gcc_exec_tooldir_prefix
  	    = concat (gcc_exec_prefix, spec_machine, dir_separator_str,
@@ -141,7 +141,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.4 2005/01/17 19:20:10 espie Exp $
  	      "BINUTILS", PREFIX_PRIORITY_LAST, 0, 1);
  
  #if defined(TARGET_SYSTEM_ROOT_RELOCATABLE) && !defined(VMS)
-@@ -3984,7 +3984,7 @@ warranty; not even for MERCHANTABILITY o
+@@ -3973,7 +3973,7 @@ warranty; not even for MERCHANTABILITY o
  	{ /* POSIX allows separation of -l and the lib arg;
  	     canonicalize by concatenating -l with its arg */
  	  infiles[n_infiles].language = "*";
@@ -150,7 +150,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.4 2005/01/17 19:20:10 espie Exp $
  	}
        else if (strncmp (argv[i], "-l", 2) == 0)
  	{
-@@ -5953,11 +5953,11 @@ is_directory (const char *path1, const c
+@@ -5925,11 +5925,11 @@ is_directory (const char *path1, const c
    if (linker
        && ((cp - path == 6
  	   && strcmp (path, concat (dir_separator_str, "lib",
@@ -164,7 +164,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.4 2005/01/17 19:20:10 espie Exp $
      return 0;
  
    return (stat (path, &st) >= 0 && S_ISDIR (st.st_mode));
-@@ -6141,8 +6141,8 @@ main (int argc, const char **argv)
+@@ -6113,8 +6113,8 @@ main (int argc, const char **argv)
    /* Read specs from a file if there is one.  */
  
    machine_suffix = concat (spec_machine, dir_separator_str,
@@ -175,7 +175,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.4 2005/01/17 19:20:10 espie Exp $
  
    specs_file = find_a_file (&startfile_prefixes, "specs", R_OK, 0);
    /* Read the specs file unless it is a default one.  */
-@@ -6247,12 +6247,12 @@ main (int argc, const char **argv)
+@@ -6219,12 +6219,12 @@ main (int argc, const char **argv)
  	  if (gcc_exec_prefix)
  	    add_prefix (&startfile_prefixes,
  			concat (gcc_exec_prefix, machine_suffix,
@@ -190,7 +190,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.4 2005/01/17 19:20:10 espie Exp $
  		      NULL, PREFIX_PRIORITY_LAST, 0, 1);
  	}
  
-@@ -6278,7 +6278,7 @@ main (int argc, const char **argv)
+@@ -6250,7 +6250,7 @@ main (int argc, const char **argv)
    /* If we have a GCC_EXEC_PREFIX envvar, modify it for cpp's sake.  */
    if (gcc_exec_prefix)
      gcc_exec_prefix = concat (gcc_exec_prefix, spec_machine, dir_separator_str,

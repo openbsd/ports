@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_ada_gnatchop_adb,v 1.1 2005/01/07 03:30:41 espie Exp $
---- gcc/ada/gnatchop.adb.orig	Fri Jan  7 04:27:39 2005
-+++ gcc/ada/gnatchop.adb	Fri Jan  7 04:27:47 2005
-@@ -43,7 +43,7 @@ procedure Gnatchop is
+$OpenBSD: patch-gcc_ada_gnatchop_adb,v 1.2 2005/02/22 21:27:50 espie Exp $
+--- gcc/ada/gnatchop.adb.orig	Thu Feb 10 14:49:13 2005
++++ gcc/ada/gnatchop.adb	Tue Feb 22 19:38:40 2005
+@@ -45,7 +45,7 @@ procedure Gnatchop is
     Config_File_Name : constant String_Access := new String'("gnat.adc");
     --  The name of the file holding the GNAT configuration pragmas
  
