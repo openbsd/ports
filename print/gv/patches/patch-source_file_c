@@ -1,0 +1,26 @@
+$OpenBSD: patch-source_file_c,v 1.1 2002/10/04 18:29:14 brad Exp $
+--- source/file.c.orig	Fri Jun  6 18:00:00 1997
++++ source/file.c	Fri Oct  4 14:20:31 2002
+@@ -285,6 +285,22 @@ file_fileIsNotUseful(fn)
+ }
+ 
+ /*############################################################*/
++/* file_nameIsDangerous */
++/*############################################################*/
++
++char *file_charsAllowedInName = "+,-./:=@\\^_";
++
++int
++file_nameIsDangerous(fn)
++  char *fn;
++{
++  for (; *fn; fn++)
++    if (!isalnum(*fn) && !strchr(file_charsAllowedInName, *fn))
++      return(1);
++  return(0);
++}
++
++/*############################################################*/
+ /* file_pdfname2psname */
+ /* If the file ends in .pdf, change this to .ps.*/
+ /* Return pointer to temp copy if changed, else to input string. */

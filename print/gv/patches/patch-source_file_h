@@ -1,0 +1,18 @@
+$OpenBSD: patch-source_file_h,v 1.1 2002/10/04 18:29:14 brad Exp $
+--- source/file.h.orig	Fri Apr 25 18:00:00 1997
++++ source/file.h	Fri Oct  4 14:20:31 2002
+@@ -70,6 +70,14 @@ extern int			file_fileIsNotUseful (
+ #endif
+ );
+ 
++extern char *file_charsAllowedInName;
++
++extern int			file_nameIsDangerous (
++#if NeedFunctionPrototypes
++   char *
++#endif
++);
++
+ extern char*			file_pdfname2psname (
+ #if NeedFunctionPrototypes
+    char *	/* name */

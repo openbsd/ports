@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2001/11/13 22:13:24 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/04 18:29:14 brad Exp $
 
 COMMENT= 	"PostScript and PDF previewer"
 
 DISTNAME=	gv-3.5.8
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	print
-NEED_VERSION=	1.496
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/gv/unix/
-
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	Xaw3d.6.1::x11/Xaw3d
 RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu
-
 
 CONFIGURE_STYLE=	imake
 

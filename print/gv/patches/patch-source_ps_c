@@ -1,0 +1,37 @@
+$OpenBSD: patch-source_ps_c,v 1.1 2002/10/04 18:29:14 brad Exp $
+--- source/ps.c.orig	Fri Jun  6 18:00:00 1997
++++ source/ps.c	Fri Oct  4 14:20:31 2002
+@@ -420,6 +420,16 @@ psscan(fileP,filename,filename_raw,filen
+       char cmd[512];
+       char s[512];
+       filename_unc=file_getTmpFilename(NULL,filename_raw);
++      if (file_nameIsDangerous(filename))
++	{
++	  INFMESSAGE(the filename is dangerous)
++	  sprintf(s, "The filename \"%s\" is dangerous: only alphanumeric "
++		  "characters and \"%s\" are allowed.\n",
++		  filename, file_charsAllowedInName);
++	  NotePopupShowMessage(s);
++	  ENDMESSAGE(psscan)
++	  return(NULL);
++	}
+       sprintf(cmd,cmd_uncompress,filename,filename_unc);
+       INFMESSAGE(is compressed)
+       INFSMESSAGE(uncompress command,cmd)
+@@ -491,6 +501,16 @@ unc_ok:
+       char cmd[512];
+       char s[512];
+       filename_dsc=file_getTmpFilename(NULL,filename_raw);
++      if (file_nameIsDangerous(filename))
++	{
++	  INFMESSAGE(the filename is dangerous)
++	  sprintf(s, "The filename \"%s\" is dangerous: only alphanumeric "
++		  "characters and \"%s\" are allowed.\n",
++		  filename, file_charsAllowedInName);
++	  NotePopupShowMessage(s);
++	  ENDMESSAGE(psscan)
++	  return(NULL);
++	}
+       sprintf(cmd,cmd_scan_pdf,filename,filename_dsc);
+       INFMESSAGE(is PDF)
+       INFSMESSAGE(scan command,cmd)
