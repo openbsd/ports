@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.54 2003/08/04 13:25:36 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.55 2003/08/04 13:31:26 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -102,7 +102,7 @@ ${__target}: _SUBDIRUSE
 .endfor
 
 clean: _SUBDIRUSE
-.if ${clean:L:Mreadmes}
+.if defined(clean) && ${clean:L:Mreadmes}
 	rm -f ${.CURDIR}/README.html
 .endif
 
