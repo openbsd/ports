@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.686 2005/03/30 08:14:01 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.687 2005/04/01 15:55:36 jolan Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -81,7 +81,7 @@ ARCH!=	uname -m
 OPSYS=	OpenBSD
 OPSYS_VER=	${OSREV}
 
-LP64_ARCHS=alpha amd64 sparc64 mips64
+LP64_ARCHS=alpha amd64 hppa64 sparc64 mips64
 NO_SHARED_ARCHS=m88k vax
 
 # Set NO_SHARED_LIBS for those machines that don't support shared libraries.
