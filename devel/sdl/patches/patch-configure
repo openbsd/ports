@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.7 2001/06/23 23:35:09 pvalchev Exp $
+$OpenBSD: patch-configure,v 1.8 2001/07/03 01:00:14 pvalchev Exp $
 --- configure.orig	Mon Jun 18 09:21:53 2001
-+++ configure	Sat Jun 23 17:28:02 2001
++++ configure	Mon Jul  2 18:47:29 2001
 @@ -3318,7 +3318,11 @@ echo "configure:3316: checking for OSS a
  #line 3319 "configure"
  #include "confdefs.h"
@@ -1038,15 +1038,12 @@ $OpenBSD: patch-configure,v 1.7 2001/06/23 23:35:09 pvalchev Exp $
    rm -rf conftest*
    
          use_directx=yes
-@@ -6889,8 +6893,14 @@ __EOF__
+@@ -6889,8 +6893,10 @@ __EOF__
    cat >>$new <$old
  
          fi
-+	if test x$enable_openbsdaudio = xyes; then
-         # OpenBSD does not define "unix"
+-        # OpenBSD does not define "unix"
 -        CFLAGS="$CFLAGS -Dunix"
-+	    CFLAGS="$CFLAGS -Dunix"
-+	fi
 +	# OpenBSD needs linking with ossaudio emulation library
 +	if test x$enable_oss = xyes; then
 +	    LIBS="$LIBS -lossaudio"
@@ -1054,7 +1051,7 @@ $OpenBSD: patch-configure,v 1.7 2001/06/23 23:35:09 pvalchev Exp $
          ;;
      *-*-sysv5*)
          ARCH=sysv5
-@@ -8897,7 +8907,7 @@ if test $ARCH = solaris; then
+@@ -8897,7 +8903,7 @@ if test $ARCH = solaris; then
  fi
  
  if test $ARCH = openbsd; then
