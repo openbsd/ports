@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2001/07/16 09:35:57 avsm Exp $
+# $OpenBSD: Makefile,v 1.46 2001/07/17 15:32:04 avsm Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -129,10 +129,12 @@ CONFIGURE_ARGS+=	--without-snmp
 .if ${FLAVOR:L:Mgd}
 MAKE_FLAGS+=		CFLAGS='${CFLAGS} -I${LOCALBASE}/include'
 LIB_DEPENDS+=		gd.18::graphics/gd \
-			tiff.35::graphics/tiff
+			tiff.35::graphics/tiff \
+			png.2::graphics/png
 CONFIGURE_ARGS+=	--with-gd \
 			--with-jpeg-dir=${LOCALBASE} \
 			--with-tiff-dir=${LOCALBASE} \
+			--with-png-dir=${LOCALBASE} \
 			--with-ttf
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=		yes
