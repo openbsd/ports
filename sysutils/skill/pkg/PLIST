@@ -1,7 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.2 2001/01/16 14:54:20 naddy Exp $
 bin/skill
 bin/snice
 man/man1/skill.1
 man/man1/snice.1
-@exec chown root %D/bin/skill
-@exec chgrp kmem %D/bin/skill
-@exec chmod 2555 %D/bin/skill
