@@ -1,13 +1,13 @@
-$OpenBSD: patch-lt1.3.3-ltconfig,v 1.1 2001/10/28 04:18:09 brad Exp $
---- ltconfig.orig	Sun Oct  3 15:17:34 1999
-+++ ltconfig	Sat Oct 27 23:28:48 2001
+$OpenBSD: patch-lt1.3.3-ltconfig,v 1.2 2001/10/31 01:33:33 brad Exp $
+--- ltconfig.orig	Thu Jul 15 15:31:35 1999
++++ ltconfig	Tue Oct 30 19:31:12 2001
 @@ -501,7 +501,14 @@ fi
  
  if test -n "$RANLIB"; then
    old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
 -  old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
-+  case "$host_os" in 
-+  openbsd*) 
++  case "$host_os" in
++  openbsd*)
 +    old_postinstall_cmds="\$RANLIB -t \$oldlib~$old_postinstall_cmds"
 +  ;;
 +  *)
