@@ -1,12 +1,11 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2001/02/19 20:25:50 danh Exp $
---- doc/Makefile.in.orig	Fri May  1 02:47:15 1998
-+++ doc/Makefile.in	Mon Feb 19 15:16:33 2001
-@@ -79,7 +79,7 @@ LD = @LD@
- LIBOBJS = @LIBOBJS@
- LIBTOOL = @LIBTOOL@
- LN_S = @LN_S@
--MAKEINFO = @MAKEINFO@
-+MAKEINFO = @MAKEINFO@ --no-split
- MKINSTALLDIRS = @MKINSTALLDIRS@
- MSGFMT = @MSGFMT@
- NM = @NM@
+--- doc/Makefile.in.orig	Fri Mar 16 19:19:50 2001
++++ doc/Makefile.in	Tue Apr  3 21:36:27 2001
+@@ -97,7 +97,7 @@ AUTOMAKE_OPTIONS = 1.2 gnits
+ 
+ SED = sed
+ 
+-MAKEINFO = env LANG= LANGUAGE= @MAKEINFO@
++MAKEINFO = env LANG= LANGUAGE= @MAKEINFO@ --no-split
+ 
+ info_TEXINFOS = gettext.texi
+ gettext_TEXINFOS = iso-apdx.texi

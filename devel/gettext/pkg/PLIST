@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2000/07/19 05:29:05 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2001/04/04 19:51:41 brad Exp $
 bin/gettext
 bin/gettextize
 bin/msgcmp
@@ -6,26 +6,33 @@ bin/msgcomm
 bin/msgfmt
 bin/msgmerge
 bin/msgunfmt
+bin/ngettext
 bin/xgettext
 include/libintl.h
 @unexec install-info --delete --info-dir=%D/info %D/info/gettext.info
 info/gettext.info
 @exec install-info --info-dir=%D/info %D/info/gettext.info
+lib/charset.alias
 lib/libintl.a
 lib/libintl.la
 %%SHARED%%
+share/aclocal/codeset.m4
 share/aclocal/gettext.m4
+share/aclocal/iconv.m4
+share/aclocal/isc-posix.m4
 share/aclocal/lcmessage.m4
 share/aclocal/progtest.m4
 share/gettext/ABOUT-NLS
-share/gettext/po-mode.el
 share/gettext/intl/ChangeLog
 share/gettext/intl/Makefile.in
 share/gettext/intl/VERSION
 share/gettext/intl/bindtextdom.c
-share/gettext/intl/cat-compat.c
+share/gettext/intl/config.charset
 share/gettext/intl/dcgettext.c
+share/gettext/intl/dcigettext.c
+share/gettext/intl/dcngettext.c
 share/gettext/intl/dgettext.c
+share/gettext/intl/dngettext.c
 share/gettext/intl/explodename.c
 share/gettext/intl/finddomain.c
 share/gettext/intl/gettext.c
@@ -35,27 +42,37 @@ share/gettext/intl/hash-string.h
 share/gettext/intl/intl-compat.c
 share/gettext/intl/l10nflist.c
 share/gettext/intl/libgettext.h
-share/gettext/intl/linux-msg.sed
+share/gettext/intl/libgnuintl.h
 share/gettext/intl/loadinfo.h
 share/gettext/intl/loadmsgcat.c
+share/gettext/intl/localcharset.c
+share/gettext/intl/locale.alias
 share/gettext/intl/localealias.c
-share/gettext/intl/po2tbl.sed.in
+share/gettext/intl/ngettext.c
+share/gettext/intl/plural.y
+share/gettext/intl/ref-add.sin
+share/gettext/intl/ref-del.sin
 share/gettext/intl/textdomain.c
-share/gettext/intl/xopen-msg.sed
+share/gettext/po-mode.el
 share/gettext/po/Makefile.in.in
-share/locale/locale.alias
 share/locale/da/LC_MESSAGES/gettext.mo
 share/locale/de/LC_MESSAGES/gettext.mo
+share/locale/el/LC_MESSAGES/gettext.mo
+share/locale/en@boldquot/LC_MESSAGES/gettext.mo
+share/locale/en@quot/LC_MESSAGES/gettext.mo
 share/locale/es/LC_MESSAGES/gettext.mo
 share/locale/fr/LC_MESSAGES/gettext.mo
+share/locale/ja/LC_MESSAGES/gettext.mo
 share/locale/ko/LC_MESSAGES/gettext.mo
+share/locale/locale.alias
 share/locale/nl/LC_MESSAGES/gettext.mo
+share/locale/nn/LC_MESSAGES/gettext.mo
 share/locale/no/LC_MESSAGES/gettext.mo
-share/locale/no@nynorsk/LC_MESSAGES/gettext.mo
 share/locale/pl/LC_MESSAGES/gettext.mo
 share/locale/pt/LC_MESSAGES/gettext.mo
 share/locale/sl/LC_MESSAGES/gettext.mo
 share/locale/sv/LC_MESSAGES/gettext.mo
-@dirrm share/gettext/intl
+share/locale/tr/LC_MESSAGES/gettext.mo
 @dirrm share/gettext/po
+@dirrm share/gettext/intl
 @dirrm share/gettext

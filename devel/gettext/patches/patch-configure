@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2001/02/19 20:25:50 danh Exp $
---- configure.orig	Fri May  1 01:48:25 1998
-+++ configure	Mon Feb 19 15:16:34 2001
-@@ -837,13 +837,8 @@ echo "configure:837: checking for workin
+$OpenBSD: patch-configure,v 1.2 2001/04/04 19:51:40 brad Exp $
+--- configure.orig	Fri Mar 23 19:52:24 2001
++++ configure	Tue Apr  3 22:51:19 2001
+@@ -947,52 +947,32 @@ echo "configure:947: checking for workin
  # Run test in a subshell; some versions of sh will print an error if
  # an executable is not found, even if stderr is redirected.
  # Redirect stdin to placate older versions of autoconf.  Sigh.
@@ -9,13 +9,29 @@ $OpenBSD: patch-configure,v 1.1 2001/02/19 20:25:50 danh Exp $
 -   ACLOCAL=aclocal
 -   echo "$ac_t""found" 1>&6
 -else
-    ACLOCAL="$missing_dir/missing aclocal"
-    echo "$ac_t""missing" 1>&6
+-   ACLOCAL="$missing_dir/missing aclocal"
+-   echo "$ac_t""missing" 1>&6
 -fi
++ACLOCAL="$missing_dir/missing aclocal"
++echo "$ac_t""missing" 1>&6
  
  echo $ac_n "checking for working autoconf""... $ac_c" 1>&6
- echo "configure:850: checking for working autoconf" >&5
-@@ -863,13 +858,8 @@ echo "configure:863: checking for workin
+ echo "configure:960: checking for working autoconf" >&5
+ # Run test in a subshell; some versions of sh will print an error if
+ # an executable is not found, even if stderr is redirected.
+ # Redirect stdin to placate older versions of autoconf.  Sigh.
+-if (autoconf --version) < /dev/null > /dev/null 2>&1; then
+-   AUTOCONF=autoconf
+-   echo "$ac_t""found" 1>&6
+-else
+-   AUTOCONF="$missing_dir/missing autoconf"
+-   echo "$ac_t""missing" 1>&6
+-fi
++AUTOCONF="$missing_dir/missing autoconf"
++echo "$ac_t""missing" 1>&6
+ 
+ echo $ac_n "checking for working automake""... $ac_c" 1>&6
+ echo "configure:973: checking for working automake" >&5
  # Run test in a subshell; some versions of sh will print an error if
  # an executable is not found, even if stderr is redirected.
  # Redirect stdin to placate older versions of autoconf.  Sigh.
@@ -23,22 +39,30 @@ $OpenBSD: patch-configure,v 1.1 2001/02/19 20:25:50 danh Exp $
 -   AUTOMAKE=automake
 -   echo "$ac_t""found" 1>&6
 -else
-    AUTOMAKE="$missing_dir/missing automake"
-    echo "$ac_t""missing" 1>&6
+-   AUTOMAKE="$missing_dir/missing automake"
+-   echo "$ac_t""missing" 1>&6
 -fi
++AUTOMAKE="$missing_dir/missing automake"
++echo "$ac_t""missing" 1>&6
  
  echo $ac_n "checking for working autoheader""... $ac_c" 1>&6
- echo "configure:876: checking for working autoheader" >&5
-@@ -3958,7 +3948,7 @@ fi
-    fi
-    
+ echo "configure:986: checking for working autoheader" >&5
+ # Run test in a subshell; some versions of sh will print an error if
+ # an executable is not found, even if stderr is redirected.
+ # Redirect stdin to placate older versions of autoconf.  Sigh.
+-if (autoheader --version) < /dev/null > /dev/null 2>&1; then
+-   AUTOHEADER=autoheader
+-   echo "$ac_t""found" 1>&6
+-else
+-   AUTOHEADER="$missing_dir/missing autoheader"
+-   echo "$ac_t""missing" 1>&6
+-fi
++AUTOHEADER="$missing_dir/missing autoheader"
++echo "$ac_t""missing" 1>&6
  
--      l=
-+      l=l
-    
- 
-          test -d po || mkdir po
-@@ -4004,7 +3994,7 @@ else
+ echo $ac_n "checking for working makeinfo""... $ac_c" 1>&6
+ echo "configure:999: checking for working makeinfo" >&5
+@@ -4517,7 +4497,7 @@ else
    ;;
  esac
  fi

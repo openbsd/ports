@@ -1,19 +1,18 @@
-$OpenBSD: patch-misc_Makefile_in,v 1.1 2001/02/19 20:25:50 danh Exp $
---- misc/Makefile.in.orig	Fri May  1 02:47:40 1998
-+++ misc/Makefile.in	Mon Feb 19 15:16:33 2001
-@@ -232,13 +232,13 @@ installcheck:
- install-exec: install-binSCRIPTS
- 	@$(NORMAL_INSTALL)
+--- misc/Makefile.in.orig	Tue Mar 27 12:24:00 2001
++++ misc/Makefile.in	Tue Apr  3 22:16:07 2001
+@@ -212,13 +212,13 @@ installcheck: installcheck-am
+ install-exec-am: install-binSCRIPTS
+ install-exec: install-exec-am
  
--install-data: install-lispLISP install-localeDATA
-+install-data: install-localeDATA
- 	@$(NORMAL_INSTALL)
+-install-data-am: install-lispLISP
++install-data-am:
+ install-data: install-data-am
  
- install: install-exec install-data all
- 	@:
- 
--uninstall: uninstall-binSCRIPTS uninstall-lispLISP uninstall-localeDATA
-+uninstall: uninstall-binSCRIPTS uninstall-localeDATA
- 
- install-strip:
- 	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' INSTALL_SCRIPT='$(INSTALL_PROGRAM)' install
+ install-am: all-am
+ 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+ install: install-am
+-uninstall-am: uninstall-binSCRIPTS uninstall-lispLISP
++uninstall-am: uninstall-binSCRIPTS
+ uninstall: uninstall-am
+ all-am: Makefile $(SCRIPTS) $(LISP) $(ELCFILES)
+ all-redirect: all-am

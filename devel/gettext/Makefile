@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2000/10/19 00:52:47 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2001/04/04 19:51:40 brad Exp $
 # $FreeBSD: Makefile,v 1.4 1998/11/18 15:09:35 vanilla Exp $
 
-DISTNAME=	gettext-0.10.35
+COMMENT=	"GNU gettext"
+
+DISTNAME=	gettext-0.10.36
 CATEGORIES=	devel
-NEED_VERSION=	1.336
+NEED_VERSION=	1.384
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gettext
 
@@ -19,6 +21,9 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+
+post-patch:
+	@rm -f ${WRKSRC}/doc/gettext.info*
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/po-mode.el \
