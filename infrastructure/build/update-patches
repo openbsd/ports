@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $OpenBSD: update-patches,v 1.11 2004/09/21 09:27:15 espie Exp $
+# $OpenBSD: update-patches,v 1.12 2004/12/02 19:50:17 kurt Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -31,11 +31,11 @@ cd $WRKDIST && find . -type f -name '*'${PATCHORIG} | \
     sed -e "s,^./\(.*\)\.${PATCHORIG#.*}\$,\1," | {
 while read file 
 do
-    if cmp $WRKDIST/$file $WRKDIST/$file$PATCHORIG >/dev/null 2>&1; then
+    if cmp "$WRKDIST/$file" "$WRKDIST/$file$PATCHORIG" >/dev/null 2>&1; then
     	echo 1>&2 "$file and $file$PATCHORIG are identical"
     	continue
     fi
-    if ! [ -f $WRKDIST/$file ]; then
+    if ! [ -f "$WRKDIST/$file" ]; then
 		echo 1>&2 "$file does not exist"
 		continue
 	fi
@@ -56,7 +56,7 @@ do
 		# found it, splice before diff part with diff
 		esc=`echo $file | sed -e 's,/,\\\\/,g'`
 		{ sed -e "/^--- $esc$PATCHORIG/,\$ d" <$i
-		    (cd $WRKDIST && diff ${DIFF_ARGS} -u -p $file$PATCHORIG $file) } >$i.new
+		    (cd $WRKDIST && diff ${DIFF_ARGS} -u -p "$file$PATCHORIG" "$file") } >$i.new
 		# did it change ? mark it as changed
 		if diff ${DIFF_ARGS} -u \
 			-I "^--- `echo $file$PATCHORIG | sed 's/[.+]/\\\\&/g'`	" \
@@ -74,10 +74,10 @@ do
 	esac
     done
     # Build a sensible name for the patch file
-    patchname=patch-`echo $file|sed -e s,[/.],_,g`
+    patchname=patch-`echo $file|sed -e s,[\ /.],_,g`
     echo 1>&2 "No patch-* found for $file, creating $patchname"
     { echo "$"OpenBSD$; \
-	(cd $WRKDIST && diff ${DIFF_ARGS} -u -p $file$PATCHORIG $file) }>$patchname
+	(cd $WRKDIST && diff ${DIFF_ARGS} -u -p "$file$PATCHORIG" "$file") }>$patchname
     edit="$edit $patchname"
     accounted="$accounted $patchname"
 done
@@ -104,7 +104,7 @@ do
     esac
 done
 
-# Check for $Id: update-patches,v 1.11 2004/09/21 09:27:15 espie Exp $ and similar bugs in all those patch files.
+# Check for $Id: update-patches,v 1.12 2004/12/02 19:50:17 kurt Exp $ and similar bugs in all those patch files.
 for i in $accounted
 do
     if sed -e '/1,^---/ d' $i|grep '$(Id|OpenBSD'
