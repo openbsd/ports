@@ -8,7 +8,7 @@ Features include an extremely small memory footprint, abstract
 authentication modules (e.g. /etc/passwd, LDAP, PAM), virtual mailbox
 support, resource controls, SSL/TLS, shared folders, and IPv6 support.
 
-The 'pop3' flavor also adds a POP3/POP3-SSL module to the package
-which can be used alongside the IMAP portion.
+Flavors:
+       pop3 - build with support for POP3/POP3-SSL
 
 WWW: ${HOMEPAGE}
