@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_ircII_1,v 1.1 2002/12/08 23:21:34 brad Exp $
---- doc/ircII.1.orig	Wed Oct 30 08:57:51 2002
-+++ doc/ircII.1	Sun Dec  8 18:02:52 2002
+$OpenBSD: patch-doc_ircII_1,v 1.2 2004/06/06 02:27:47 brad Exp $
+--- doc/ircII.1.orig	2003-12-07 21:15:41.000000000 -0500
++++ doc/ircII.1	2004-06-05 21:50:23.000000000 -0400
 @@ -3,7 +3,7 @@
  .SH NAME
  ircII \- interface to the Internet Relay Chat system
@@ -92,7 +92,7 @@ $OpenBSD: patch-doc_ircII_1,v 1.1 2002/12/08 23:21:34 brad Exp $
  with a program called
 @@ -243,7 +243,7 @@ with a program called
  .br
- .B "setenv IRCNAME \"The one and only :)\""
+ .B "setenv IRCNAME ""The one and only :)"""
  .TP
 -.B irc
 +.B ircII
