@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/08 19:28:07 wcobb Exp $
+# $OpenBSD: Makefile,v 1.4 2002/08/07 18:31:33 wcobb Exp $
 
 COMMENT=		"Rich city simulation game for X"
 
 DISTNAME=		lincity-1.11
 CATEGORIES=		games
-NEED_VERSION=		1.515
 HOMEPAGE=		http://www.floot.demon.co.uk/lincity.html
 
 MAINTAINER=		Wilbern Cobb <wcobb@openbsd.org>
@@ -22,5 +21,6 @@ USE_X11=		Yes
 
 MAKE_FLAGS=		CXXFLAGS="${CXXFLAGS}"
 ALL_TARGET=		xlincity
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/07/21 08:44:35 wcobb Exp $
+# $OpenBSD: Makefile,v 1.7 2002/08/07 18:31:33 wcobb Exp $
 
 COMMENT=		"stand-alone shell with built-in commands"
 
@@ -26,6 +26,7 @@ CFLAGS+=		-DHAVE_GZIP=1 \
 			-DMOUNT_TYPE='\"ffs\"'
 
 MAKE_FLAGS=		CFLAGS="${CFLAGS}"
+NO_REGRESS=		Yes
 
 do-install:
 	    cd ${WRKSRC} && ${INSTALL_PROGRAM} sash ${PREFIX}/bin

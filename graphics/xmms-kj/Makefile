@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/07/30 17:23:24 wcobb Exp $
+# $OpenBSD: Makefile,v 1.2 2002/08/07 18:31:33 wcobb Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -27,6 +27,7 @@ LIB_DEPENDS=	xmms.2::audio/xmms \
 WRKDIST=	${WRKDIR}/xmms-kj
 MAKE_FILE=      makefile
 ALL_TARGET=	vislib
+NO_REGRESS=	Yes
 
 MAKE_FLAGS=	CC="${CC}"
 MTREE_FILE=	${FILESDIR}/mtree
