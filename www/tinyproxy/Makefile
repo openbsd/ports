@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/08/27 02:53:29 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/29 01:17:35 naddy Exp $
 
 COMMENT=		"lightweight HTTP/SSL proxy"
 CATEGORIES=		www
@@ -24,6 +24,8 @@ CONFIGURE_ARGS+=	--with-config=${TP_CONFIG}/tinyproxy.conf
 SUBST_VARS=		TP_CONFIG
 
 DOCS=			HTTP_ERROR_CODES RFC_INFO
+
+REGRESS_TARGET=		check
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/tinyproxy ${PREFIX}/sbin
