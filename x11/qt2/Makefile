@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2001/07/11 12:59:48 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2001/08/27 08:58:28 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt2
@@ -35,16 +35,16 @@ CONFIGURE_ARGS=	-gif -system-libmng -system-libpng -system-jpeg \
 #CONFIGURE_ARGS+=-static -debug
 #CONFIGURE_ARGS+=-debug
 
-CONFIGURE_ENV=	QTDIR="${WRKSRC}" MODULES="${MODULES}" KDEDIR="${LOCALBASE}"
+CONFIGURE_ENV=	QTDIR="${WRKSRC}" MODULES="${QTMODULES}" KDEDIR="${LOCALBASE}"
 
 MULTI_PACKAGES=	-examples -html
 SUBPACKAGE?=
 
-MODULES=	tools kernel widgets dialogs \
+QTMODULES=	tools kernel widgets dialogs \
 		iconview workspace network canvas table xml
 EXTRA_SAMPLES=
 
-MODULES+= opengl
+QTMODULES+= opengl
 EXTRA_SAMPLES+=box gear glpixmap overlay overlay_x11 sharedbox
 
 
