@@ -1,0 +1,12 @@
+$OpenBSD: patch-bsd_c,v 1.1 2002/03/05 00:16:47 jcs Exp $
+--- bsd.c.orig	Thu Feb  7 00:43:25 2002
++++ bsd.c	Sun Mar  3 19:35:19 2002
+@@ -363,7 +363,7 @@
+     /* we need to report the device name as /dev/ugenx NOT /dev/ugenx.00
+      * This seemed easier than having 2 variables...
+      */
+-#if __NetBSD__
++#if (__NetBSD__ || __OpenBSD__)
+     snprintf(buf, sizeof(buf) - 1, "/dev/%s", di.devnames[0]);
+ #endif
+ 

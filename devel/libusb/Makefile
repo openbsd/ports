@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2002/01/01 21:53:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/05 00:16:47 jcs Exp $
 
 COMMENT=	"usb access library"
 
-VERSION=	0.1.4
+VERSION=	0.1.5
 DISTNAME=	libusb-${VERSION}
 CATEGORIES=	devel
-NEED_VERSION=	1.504
+NEED_VERSION=	1.506
 
 HOMEPAGE=	http://libusb.sourceforge.net/
 
@@ -18,10 +18,6 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= libusb
-
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \
-		patch-*
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
