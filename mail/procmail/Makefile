@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/03/10 03:58:21 todd Exp $
+# $OpenBSD: Makefile,v 1.14 2000/07/22 17:20:51 rohee Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=       procmail-3.14
@@ -19,11 +19,8 @@ MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 		ftp://ftp.ring.gr.jp/pub/net/mail/procmail/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/procmail/ 
 
-INSTALL_TARGET= install-suid install.man
-
 MAINTAINER=     rohee@OpenBSD.ORG
 
-FAKE=			Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
