@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.17 2000/07/20 06:02:05 brad Exp $
 GNUstep/Apps/WPrefs.app/WPrefs
 GNUstep/Apps/WPrefs.app/WPrefs.tiff
 GNUstep/Apps/WPrefs.app/WPrefs.xpm
@@ -27,8 +28,7 @@ lib/libWMaker.a
 lib/libWUtil.a
 lib/libwraster.a
 lib/libwraster.la
-lib/libwraster.so.2.0
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 man/man1/geticonset.1x
 man/man1/getstyle.1x
 man/man1/seticons.1x

@@ -1,15 +1,21 @@
-# $OpenBSD: Makefile,v 1.30 2000/06/25 22:50:19 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2000/07/20 06:02:02 brad Exp $
 
 DISTNAME=	WindowMaker-0.62.1
 PKGNAME=	windowmaker-0.62.1
 CATEGORIES=	x11
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR= beta/srcs
 DATAFILES=	WindowMaker-extra-0.1.tar.gz
 DISTFILES=	${DISTNAME}.tar.gz ${DATAFILES}
 
 HOMEPAGE=	http://www.windowmaker.org/
+
+LIB_DEPENDS=	PropList.2::devel/libproplist \
+		jpeg.62::graphics/jpeg \
+		tiff.35::graphics/tiff \
+		png.1::graphics/png \
+		gif.4.1::graphics/giflib
 
 MAINTAINER=	jasoni@openbsd.org
 
@@ -18,15 +24,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-LIB_DEPENDS=	PropList.2::devel/libproplist \
-		jpeg.62::graphics/jpeg \
-		tiff.35::graphics/tiff \
-		png.1::graphics/png \
-		gif.4.1::graphics/giflib
-
-GNU_CONFIGURE=	Yes
-FAKE=		Yes
 SYSCONFDIR=	${PREFIX}/share/WindowMaker/Defaults
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=--enable-static --with-pixmapdir="${PREFIX}/share/WindowMaker/Pixmaps" \
 		--with-incs-from="-I${PREFIX}/include -I${PREFIX}/include/giflib" \
@@ -36,7 +35,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-configure:
 	@cd ${WRKDIR}/WindowMaker-extra-0.1; \
-		./configure --prefix=${WRKINST}${PREFIX}
+		./configure --prefix="${WRKINST}${PREFIX}"
+
 post-install:
 	@cd ${WRKDIR}/WindowMaker-extra-0.1; make install
 
