@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/03/21 16:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2002/03/24 16:24:36 espie Exp $
 
 COMMENT=		games for KDE
 COMMENT-cards=		faces for kde card games
@@ -86,7 +86,7 @@ CONFIGURE_ENV+=		ac_aux_files=''
 MAKE_ENV=		${CONFIGURE_ENV}
 
 # Ensure qt2 will always be at the front
-MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}"
+MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
