@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/12/06 02:39:27 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/12/07 01:05:53 kevlo Exp $
 
 COMMENT=	"text-based ICQ implementation"
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=	::net/p5-Net-ICQ2000 \
-		::devel/p5-Term-ReadLine-Gnu
+RUN_DEPENDS=	::devel/p5-Term-ReadLine-Gnu
 
 NO_BUILD=	Yes
 
