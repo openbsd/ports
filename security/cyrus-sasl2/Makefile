@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/06/28 22:14:45 jolan Exp $
+# $OpenBSD: Makefile,v 1.10 2004/02/10 04:52:22 kevlo Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
@@ -45,7 +45,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sasl2
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/sasl2
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/sasl2
-	${INSTALL_DATA} ${WRKBUILD}/lib/libsasl2.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKBUILD}/lib/.libs/libsasl2.a ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKBUILD}/saslauthd/testsaslauthd ${PREFIX}/sbin
 
 .include <bsd.port.mk>
