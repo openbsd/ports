@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/04/10 15:52:33 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2003/11/09 16:26:58 espie Exp $
 
 COMMENT=		"GNOME Application Libs"
 
@@ -21,7 +21,7 @@ MODULES=		gettext
 
 BUILD_DEPENDS=		:gnome-libs->1.4:x11/gnome/libs \
 			:gnome-print->=0.25:x11/gnome/print \
-			:libglade->=0.13:devel/libglade,gnome \
+			:libglade->=0.13-gnome:devel/libglade,gnome \
 			:libxml1->=1.8.8:textproc/libxml1
 
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
