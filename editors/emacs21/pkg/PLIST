@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/02/25 21:07:28 mark Exp $
-@pkgcfl xemacs-*
+@comment $OpenBSD: PLIST,v 1.3 2002/03/22 07:23:51 jasoni Exp $
+@pkgcfl xemacs-20*
 bin/b2m
 bin/ctags
 bin/ebrowse
