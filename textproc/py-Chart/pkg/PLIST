@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/01 07:19:08 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/10/29 18:23:38 shell Exp $
 lib/python${PYTHON_VER}/site-packages/pychart/__init__.py
 lib/python${PYTHON_VER}/site-packages/pychart/__init__.pyc
-lib/python${PYTHON_VER}/site-packages/pychart/annotations.py
-lib/python${PYTHON_VER}/site-packages/pychart/annotations.pyc
 lib/python${PYTHON_VER}/site-packages/pychart/area.py
 lib/python${PYTHON_VER}/site-packages/pychart/area.pyc
 lib/python${PYTHON_VER}/site-packages/pychart/arrow.py
