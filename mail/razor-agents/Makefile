@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2004/01/17 15:58:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2004/04/24 08:10:22 peter Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=		"agent for Razor spam filtering networks"
 
-DISTNAME=		razor-agents-2.36
+DISTNAME=		razor-agents-2.40
 CATEGORIES=		mail
 HOMEPAGE=		http://razor.sourceforge.net/
+
+MAINTAINER=     Peter Galbavy <peter.galbavy@knowtion.net>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,8 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=razor/}
 
-BUILD_DEPENDS=		:p5-Digest-Nilsimsa->=0.06:security/p5-Digest-Nilsimsa \
-			:p5-Digest-SHA1->=1.0:security/p5-Digest-SHA1 \
+BUILD_DEPENDS=		:p5-Digest-SHA1->=1.0:security/p5-Digest-SHA1 \
 			:p5-Net-DNS->=0.23:net/p5-Net-DNS \
 			:p5-URI->=1.19:www/p5-URI
 RUN_DEPENDS=		${BUILD_DEPENDS}
