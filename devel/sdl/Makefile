@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/04/19 18:55:39 obecian Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/20 23:48:50 reinhard Exp $
 
 COMMENT=	'cross-platform multimedia library'
 
 VER=		1.2.0
 DISTNAME=	SDL-${VER}
-PKGNAME=	sdl-${VER}
+PKGNAME=	${DISTNAME:L}
 CATEGORIES=	devel
 NEED_VERSION=	1.378
 
@@ -37,13 +37,12 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --disable-oss
 
 .if ${FLAVOR:L:Moss}
-LIB_DEPENDS=	esd.2::audio/esound
+LIB_DEPENDS+=	esd.2::audio/esound
 CONFIGURE_ARGS+= --enable-esd \
 		 --enable-oss
 .endif
 
 .if ${FLAVOR:L:Mgl}
-LIB_DEPENDS+=	MesaGL.3::graphics/Mesa
 CONFIGURE_ARGS+= --enable-video-opengl
 .endif
 
