@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/02 02:53:05 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/14 18:12:23 margarida Exp $
 bin/modlogan
 lib/modlogan/charset.alias
 lib/modlogan/libmla_input_bsdftpd.la
 lib/modlogan/libmla_input_clf.la
 lib/modlogan/libmla_input_flowraw.la
 lib/modlogan/libmla_input_ipchains.la
+lib/modlogan/libmla_input_ippl.la
 lib/modlogan/libmla_input_isdn4bsd.la
 lib/modlogan/libmla_input_isdnlog.la
+lib/modlogan/libmla_input_mod_log_sql.la
 lib/modlogan/libmla_input_msiis.la
 lib/modlogan/libmla_input_msmedia.la
 lib/modlogan/libmla_input_netscape.la
@@ -25,6 +27,7 @@ lib/modlogan/libmla_input_viruswall.la
 lib/modlogan/libmla_input_wuftpd.la
 lib/modlogan/libmla_mdata_brokenlink.la
 lib/modlogan/libmla_mdata_count.la
+lib/modlogan/libmla_mdata_ipplwatch.la
 lib/modlogan/libmla_mdata_location.la
 lib/modlogan/libmla_mdata_mailhist.la
 lib/modlogan/libmla_mdata_match.la
@@ -47,6 +50,7 @@ lib/modlogan/libmla_output_text.la
 lib/modlogan/libmla_output_webalizer.la
 lib/modlogan/libmla_processor_accounting.la
 lib/modlogan/libmla_processor_firewall.la
+lib/modlogan/libmla_processor_ippl.la
 lib/modlogan/libmla_processor_mail.la
 lib/modlogan/libmla_processor_null.la
 lib/modlogan/libmla_processor_telecom.la
@@ -75,6 +79,7 @@ share/locale/cs/LC_MESSAGES/modlogan.mo
 share/locale/de/LC_MESSAGES/modlogan.mo
 share/locale/es/LC_MESSAGES/modlogan.mo
 share/locale/fr/LC_MESSAGES/modlogan.mo
+share/locale/hu/LC_MESSAGES/modlogan.mo
 share/locale/it/LC_MESSAGES/modlogan.mo
 share/locale/pl/LC_MESSAGES/modlogan.mo
 share/locale/ru/LC_MESSAGES/modlogan.mo
@@ -82,3 +87,19 @@ share/locale/ru/LC_MESSAGES/modlogan.mo
 @dirrm share/examples/modlogan
 @dirrm share/doc/modlogan
 @dirrm lib/modlogan
+@cwd ${SYSCONFDIR}
+@extra modlogan/group.extension.conf
+@extra modlogan/group.host.conf
+@extra modlogan/group.os.conf
+@extra modlogan/group.searchengines.conf
+@extra modlogan/group.ua.conf
+@extra modlogan/group.url.conf
+@extra modlogan/ignore.searchengines.conf
+@extra modlogan/match.os.conf
+@extra modlogan/match.searchengines.conf
+@extra modlogan/match.ua.conf
+@extra modlogan/match.useragents.conf
+@extra modlogan/modlogan.conf
+@extra modlogan/modlogan.css
+@extra modlogan/modlogan.def.conf
+@extra modlogan/

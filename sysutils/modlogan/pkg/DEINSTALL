@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2003/05/02 02:53:05 margarida Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/12/14 18:12:23 margarida Exp $
 #
 # modlogan de-installation
 
@@ -7,7 +7,7 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}/modlogan
 
-if [ -d $CONFIG_DIR ]; then
+if [ "$PKG_DELETE_EXTRA" != Yes -a -d $CONFIG_DIR ]; then
     echo
     echo "+---------------"
     echo "| To completely deinstall the $1 package you"

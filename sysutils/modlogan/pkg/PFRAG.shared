@@ -1,10 +1,12 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/05/02 02:53:05 margarida Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2003/12/14 18:12:23 margarida Exp $
 lib/modlogan/libmla_input_bsdftpd.so
 lib/modlogan/libmla_input_clf.so
 lib/modlogan/libmla_input_flowraw.so
 lib/modlogan/libmla_input_ipchains.so
+lib/modlogan/libmla_input_ippl.so
 lib/modlogan/libmla_input_isdn4bsd.so
 lib/modlogan/libmla_input_isdnlog.so
+lib/modlogan/libmla_input_mod_log_sql.so
 lib/modlogan/libmla_input_msiis.so
 lib/modlogan/libmla_input_msmedia.so
 lib/modlogan/libmla_input_netscape.so
@@ -23,6 +25,7 @@ lib/modlogan/libmla_input_viruswall.so
 lib/modlogan/libmla_input_wuftpd.so
 lib/modlogan/libmla_mdata_brokenlink.so
 lib/modlogan/libmla_mdata_count.so
+lib/modlogan/libmla_mdata_ipplwatch.so
 lib/modlogan/libmla_mdata_location.so
 lib/modlogan/libmla_mdata_mailhist.so
 lib/modlogan/libmla_mdata_match.so
@@ -45,6 +48,7 @@ lib/modlogan/libmla_output_text.so
 lib/modlogan/libmla_output_webalizer.so
 lib/modlogan/libmla_processor_accounting.so
 lib/modlogan/libmla_processor_firewall.so
+lib/modlogan/libmla_processor_ippl.so
 lib/modlogan/libmla_processor_mail.so
 lib/modlogan/libmla_processor_null.so
 lib/modlogan/libmla_processor_telecom.so
