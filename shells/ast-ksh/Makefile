@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/12 19:17:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/29 14:48:24 naddy Exp $
 
 COMMENT=	"official AT&T release of KornShell 93"
 
@@ -27,6 +27,8 @@ MAKE_FLAGS+=	LDFLAGS=-static
 .endif
 
 WRKDIST=	${WRKDIR}
+
+.include <bsd.own.mk>
 
 ACCEPT_AST_LICENSE?=	No
 .if ${ACCEPT_AST_LICENSE:L} == "no"
