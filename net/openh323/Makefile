@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2002/09/05 17:57:30 couderc Exp $
+# $OpenBSD: Makefile,v 1.4 2002/09/05 20:35:57 couderc Exp $
 
 COMMENT=		"H.323 Video Conferencing library"
 
 VERSION=		1.8.5
-DISTNAME=		openh323_${VERSION}
+DISTNAME=		openh323-${VERSION}
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.openh323.org
