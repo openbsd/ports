@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2001/08/01 23:18:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2001/08/02 14:59:07 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
 COMMENT=		"text-based web browser/pager"
-COMMENT-kanji=		"text-based web browser/pager, japanese flavor"
+COMMENT-kanji=		"Japanese text-based web browser/pager"
 COMMENT-image=		"text-based web browser/pager with inline image support"
 COMMENT-m17n=		"multi-script text-based web browser/pager"
-COMMENT-kanji-m17n=	"multi-script text-based web browser/pager, japanese flavor"
-COMMENT-image-kanji=	"text-based web browser/pager with image support, japanese flavor"
+COMMENT-kanji-m17n=	"Japanese multi-script text-based web browser/pager"
+COMMENT-kanji-image=	"Japanese text-based web browser/pager with image support"
 
 V_BASE=		0.2.1
 V_IMG=		1.10
