@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2000/11/23 15:18:57 dugsong Exp $
+# $OpenBSD: Makefile,v 1.48 2000/12/05 19:15:31 avsm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -71,7 +71,8 @@
 #    SUBDIR += p5-BSD-Resource
 #    SUBDIR += p5-C-Scan
 #    SUBDIR += p5-ConfigReader
-#    SUBDIR += p5-Curses
+     SUBDIR += p5-Curses
+     SUBDIR += p5-Curses-Widgets
 #    SUBDIR += p5-Data-Dumper
 #    SUBDIR += p5-Data-Flow
 #    SUBDIR += p5-Data-ShowTable
