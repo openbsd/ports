@@ -1,0 +1,259 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 19:08:33 todd Exp $
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-application-registry.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-async-ops.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-cancellation.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-context.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-directory.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-file-info.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-file-size.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-find-directory.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-handle.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-init.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-job-limit.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime-handlers.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime-monitor.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime-utils.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-module-callback.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-monitor.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-ops.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-result.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-standard-callbacks.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-types.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-uri.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-utils.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-xfer.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs.h
+include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-cancellable-ops.h
+include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-inet-connection.h
+include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-iobuf.h
+include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-method.h
+include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-mime-info.h
+include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-mime-magic.h
+include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-mime-sniff-buffer.h
+include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-mime.h
+include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-module-callback-module-api.h
+include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-module-shared.h
+include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-module.h
+include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-parse-ls.h
+include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-socket-buffer.h
+include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-socket.h
+include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-ssl.h
+include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-transform.h
+lib/bonobo/monikers/libmoniker_gnome_vfs_std.a
+lib/bonobo/monikers/libmoniker_gnome_vfs_std.la
+lib/bonobo/servers/GNOME_VFS_Moniker_std.server
+lib/gnome-vfs-2.0/include/gnome-vfs-file-size.h
+lib/gnome-vfs-2.0/modules/libbzip2.a
+lib/gnome-vfs-2.0/modules/libbzip2.la
+lib/gnome-vfs-2.0/modules/libcdda.a
+lib/gnome-vfs-2.0/modules/libcdda.la
+lib/gnome-vfs-2.0/modules/libextfs.a
+lib/gnome-vfs-2.0/modules/libextfs.la
+lib/gnome-vfs-2.0/modules/libfile.a
+lib/gnome-vfs-2.0/modules/libfile.la
+lib/gnome-vfs-2.0/modules/libftp.a
+lib/gnome-vfs-2.0/modules/libftp.la
+lib/gnome-vfs-2.0/modules/libgzip.a
+lib/gnome-vfs-2.0/modules/libgzip.la
+lib/gnome-vfs-2.0/modules/libhttp.a
+lib/gnome-vfs-2.0/modules/libhttp.la
+lib/gnome-vfs-2.0/modules/libnntp.a
+lib/gnome-vfs-2.0/modules/libnntp.la
+lib/gnome-vfs-2.0/modules/libssh.a
+lib/gnome-vfs-2.0/modules/libssh.la
+lib/gnome-vfs-2.0/modules/libtar.a
+lib/gnome-vfs-2.0/modules/libtar.la
+lib/gnome-vfs-2.0/modules/libvfolder-desktop.a
+lib/gnome-vfs-2.0/modules/libvfolder-desktop.la
+lib/gnome-vfs-2.0/modules/libvfs-pipe.a
+lib/gnome-vfs-2.0/modules/libvfs-pipe.la
+lib/gnome-vfs-2.0/modules/libvfs-test.a
+lib/gnome-vfs-2.0/modules/libvfs-test.la
+lib/gnome-vfs-2.0/modules/libvfs-translate.a
+lib/gnome-vfs-2.0/modules/libvfs-translate.la
+lib/libgnomevfs-2.a
+lib/libgnomevfs-2.la
+lib/pkgconfig/gnome-vfs-2.0.pc
+lib/pkgconfig/gnome-vfs-module-2.0.pc
+lib/vfs/2.0/extfs/README
+lib/vfs/2.0/extfs/a
+lib/vfs/2.0/extfs/ar
+lib/vfs/2.0/extfs/arj
+lib/vfs/2.0/extfs/cpio
+lib/vfs/2.0/extfs/deb
+lib/vfs/2.0/extfs/hp48
+lib/vfs/2.0/extfs/lha
+lib/vfs/2.0/extfs/mailfs
+lib/vfs/2.0/extfs/patchfs
+lib/vfs/2.0/extfs/rar
+lib/vfs/2.0/extfs/rpm
+lib/vfs/2.0/extfs/rpms
+lib/vfs/2.0/extfs/tar
+lib/vfs/2.0/extfs/trpm
+lib/vfs/2.0/extfs/zip
+lib/vfs/2.0/extfs/zoo
+share/examples/gnome-vfs2/gnome-vfs-2.0/modules/cdda-module.conf
+share/examples/gnome-vfs2/gnome-vfs-2.0/modules/default-modules.conf
+share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/applications-all-users.vfolder-info
+share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/favorites.vfolder-info
+share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/preferences-all-users.vfolder-info
+share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/server-settings.vfolder-info
+share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/start-here.vfolder-info
+share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/system-settings.vfolder-info
+share/locale/am/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/ar/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/az/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/be/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/bg/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/ca/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/cs/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/da/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/de/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/el/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/es/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/et/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/eu/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/fi/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/fr/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/ga/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/gl/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/hi/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/hu/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/it/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/ja/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/ko/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/lt/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/lv/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/ms/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/nl/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/nn/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/no/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/pl/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/pt/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/ro/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/ru/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/sk/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/sl/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/sq/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/sv/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/tr/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/uk/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/vi/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/wa/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-vfs-2.0.mo
+share/schemas/gnome-vfs2/system_http_proxy.schemas
+%%SHARED%%
+@dirrm share/schemas/gnome-vfs2
+@comment @dirrm share/locale/zh_TW/LC_MESSAGES
+@comment @dirrm share/locale/zh_TW
+@comment @dirrm share/locale/zh_CN/LC_MESSAGES
+@comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/wa/LC_MESSAGES
+@comment @dirrm share/locale/wa
+@comment @dirrm share/locale/vi/LC_MESSAGES
+@comment @dirrm share/locale/vi
+@comment @dirrm share/locale/uk/LC_MESSAGES
+@comment @dirrm share/locale/uk
+@comment @dirrm share/locale/tr/LC_MESSAGES
+@comment @dirrm share/locale/tr
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sq/LC_MESSAGES
+@comment @dirrm share/locale/sq
+@comment @dirrm share/locale/sl/LC_MESSAGES
+@comment @dirrm share/locale/sl
+@comment @dirrm share/locale/sk/LC_MESSAGES
+@comment @dirrm share/locale/sk
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/ro/LC_MESSAGES
+@comment @dirrm share/locale/ro
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/pt/LC_MESSAGES
+@comment @dirrm share/locale/pt
+@comment @dirrm share/locale/pl/LC_MESSAGES
+@comment @dirrm share/locale/pl
+@comment @dirrm share/locale/no/LC_MESSAGES
+@comment @dirrm share/locale/no
+@comment @dirrm share/locale/nn/LC_MESSAGES
+@comment @dirrm share/locale/nn
+@comment @dirrm share/locale/nl/LC_MESSAGES
+@comment @dirrm share/locale/nl
+@comment @dirrm share/locale/ms/LC_MESSAGES
+@comment @dirrm share/locale/ms
+@comment @dirrm share/locale/lv/LC_MESSAGES
+@comment @dirrm share/locale/lv
+@comment @dirrm share/locale/lt/LC_MESSAGES
+@comment @dirrm share/locale/lt
+@comment @dirrm share/locale/ko/LC_MESSAGES
+@comment @dirrm share/locale/ko
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/hu/LC_MESSAGES
+@comment @dirrm share/locale/hu
+@comment @dirrm share/locale/hi/LC_MESSAGES
+@comment @dirrm share/locale/hi
+@comment @dirrm share/locale/gl/LC_MESSAGES
+@comment @dirrm share/locale/gl
+@comment @dirrm share/locale/ga/LC_MESSAGES
+@comment @dirrm share/locale/ga
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/fi/LC_MESSAGES
+@comment @dirrm share/locale/fi
+@comment @dirrm share/locale/eu/LC_MESSAGES
+@comment @dirrm share/locale/eu
+@comment @dirrm share/locale/et/LC_MESSAGES
+@comment @dirrm share/locale/et
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/el/LC_MESSAGES
+@comment @dirrm share/locale/el
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale/cs/LC_MESSAGES
+@comment @dirrm share/locale/cs
+@comment @dirrm share/locale/ca/LC_MESSAGES
+@comment @dirrm share/locale/ca
+@comment @dirrm share/locale/bg/LC_MESSAGES
+@comment @dirrm share/locale/bg
+@comment @dirrm share/locale/be/LC_MESSAGES
+@comment @dirrm share/locale/be
+@comment @dirrm share/locale/az/LC_MESSAGES
+@comment @dirrm share/locale/az
+@comment @dirrm share/locale/ar/LC_MESSAGES
+@comment @dirrm share/locale/ar
+@comment @dirrm share/locale/am/LC_MESSAGES
+@comment @dirrm share/locale/am
+@comment @dirrm share/locale
+@comment @exec mkdir -p %D/share/gtk-doc/html/gnome-vfs-2.0
+@comment @dirrm share/gtk-doc/html/gnome-vfs-2.0
+@comment @dirrm share/gtk-doc/html
+@comment @dirrm share/gtk-doc
+@dirrm share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders
+@dirrm share/examples/gnome-vfs2/gnome-vfs-2.0/modules
+@dirrm share/examples/gnome-vfs2/gnome-vfs-2.0
+@dirrm share/examples/gnome-vfs2
+@dirrm lib/vfs/2.0/extfs
+@dirrm lib/vfs/2.0
+@comment (gnome1 conflict) @dirrm lib/vfs
+@comment @dirrm lib/pkgconfig
+@dirrm lib/gnome-vfs-2.0/modules
+@dirrm lib/gnome-vfs-2.0/include
+@dirrm lib/gnome-vfs-2.0
+@comment @dirrm lib/bonobo/monikers
+@comment @dirrm lib/bonobo
+@dirrm include/gnome-vfs-module-2.0/libgnomevfs
+@dirrm include/gnome-vfs-module-2.0
+@dirrm include/gnome-vfs-2.0/libgnomevfs
+@dirrm include/gnome-vfs-2.0
+@comment @exec mkdir -p %D/doc
+@comment @dirrm doc
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-vfs2/*.schemas > /dev/null
