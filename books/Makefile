@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2003/06/02 23:33:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2003/06/04 23:25:01 avsm Exp $
 
+     SUBDIR += autobook
      SUBDIR += cvs-guide
      SUBDIR += docbook-guide
      SUBDIR += mason-book
