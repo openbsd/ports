@@ -1,28 +1,20 @@
-# $OpenBSD: Makefile,v 1.9 1999/09/06 17:40:58 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/12/24 23:33:30 brad Exp $
 
 DISTNAME=	unzip540
 PKGNAME=	unzip-5.40
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.cdrom.com/pub/infozip/src/
+MASTER_SITES=	ftp://ftp.cdrom.com/pub/infozip/src/
 
-MAINTAINER=     ports@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
-MAKEFILE=       unix/Makefile
-ALL_TARGET=     bsd
-MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK" -f
-MAN1=		funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
+ALL_TARGET=	bsd
+MAKEFILE=	unix/Makefile
 
-do-install:
+WRKSRC=	${WRKDIR}/${PKGNAME}
+
+post-install:
+	@mkdir -p ${PREFIX}/share/doc/unzip
 	@cd ${WRKSRC} && \
-		${INSTALL_PROGRAM} unzip funzip unzipsfx ${PREFIX}/bin
-	@${LN} -sf unzip ${PREFIX}/bin/zipinfo
-	@cd ${WRKSRC}/unix && \
-		${INSTALL_SCRIPT} zipgrep ${PREFIX}/bin
-	@cd ${WRKSRC}/unix && \
-		${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
-	${INSTALL} -d -m 555 -o ${SHAREOWN} -g ${SHAREGRP} ${PREFIX}/share/doc/unzip
-	@cd ${WRKSRC} && \
-		${INSTALL_DATA} README COPYING WHERE ${PREFIX}/share/doc/unzip
+	 ${INSTALL_DATA} README COPYING WHERE ${PREFIX}/share/doc/unzip
 
 .include <bsd.port.mk>
