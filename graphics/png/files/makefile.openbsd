@@ -20,7 +20,6 @@ CFLAGS+= -Wall
 CPPFLAGS+= -I${.CURDIR} -DPNG_NO_ASSEMBLER_CODE
 
 NOPROFILE= Yes
-DEBUGLIBS= No
 
 CLEANFILES+= pngtest.o pngtest
 
@@ -44,6 +43,9 @@ beforeinstall:
 	if [ ! -d ${DESTDIR}${LIBDIR} ]; then \
 	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}; \
 	fi
+	if [ ! -d ${DESTDIR}${LIBDIR}/debug ]; then \
+	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}/debug; \
+	fi
 	if [ ! -d ${DESTDIR}${MANDIR}3 ]; then \
 	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${MANDIR}3; \
 	fi
@@ -56,6 +58,8 @@ beforeinstall:
 
 afterinstall:
 	@rm -f ${DESTDIR}${LIBDIR}/libpng_pic.a
+	@rm -f ${DESTDIR}${LIBDIR}/debug/libpng.a
+	rmdir ${DESTDIR}${LIBDIR}/debug 2>/dev/null || true
 	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
 		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${PREFIX}/include
 	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
