@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 1999/10/07 19:40:44 brad Exp $
+# $OpenBSD: Makefile,v 1.23 1999/10/28 20:21:16 dugsong Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -17,7 +17,7 @@ NAVIGATOR_V=	4.61
 NAVIGATOR_V2=	461
 NS_I386=	navigator-v${NAVIGATOR_V2}-export.x86-bsdi-bsd2.tar.gz
 NS_SPARC=	navigator-v${NAVIGATOR_V2}-export.sparc-sun-sunos4.1.3_U1.tar.gz
-FORTIFY=	Fortify-1.4.4-unix-src
+FORTIFY=	Fortify-1.4.5-unix-src
 
 .if ${MACHINE_ARCH} == "i386"
 DISTNAME=	navigator-v${NAVIGATOR_V2}-export.x86-bsdi-bsd2
