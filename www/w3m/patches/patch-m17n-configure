@@ -1,0 +1,19 @@
+$OpenBSD: patch-m17n-configure,v 1.1 2002/03/11 18:36:42 naddy Exp $
+--- configure.orig	Mon Mar 11 14:55:08 2002
++++ configure	Mon Mar 11 18:17:05 2002
+@@ -1081,6 +1081,7 @@ Linux|linux|LINUX)
+  ;;
+ esac
+ 
++if false; then # always use the included gclib for now
+ gclib=''
+ gcinclude=''
+ gctarget=''
+@@ -1100,6 +1101,7 @@ do
+     break
+   fi
+ done
++fi
+ 
+ case $sysname in
+   linux|Linux|LINUX|aix|Aix|AIX)

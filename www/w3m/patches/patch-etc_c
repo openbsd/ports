@@ -1,7 +1,7 @@
-$OpenBSD: patch-etc_c,v 1.1 2002/03/10 15:20:05 naddy Exp $
---- etc.c.orig	Mon Jan 21 18:57:27 2002
-+++ etc.c	Sun Mar 10 14:58:23 2002
-@@ -1069,7 +1069,7 @@ mySystem(char *command, int background)
+$OpenBSD: patch-etc_c,v 1.2 2002/03/11 18:36:42 naddy Exp $
+--- etc.c.orig	Wed Mar  6 00:54:55 2002
++++ etc.c	Wed Mar  6 00:55:27 2002
+@@ -1075,7 +1075,7 @@ mySystem(char *command, int background)
  	flush_tty();
  	if ((pid = fork()) == 0) {
  	    reset_signals();

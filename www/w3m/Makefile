@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2002/03/10 15:20:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2002/03/11 18:36:42 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k powerpc
 
 COMMENT=	"pager/text-based web browser"
 
-VERSION=	0.2.5
-M17N_VERSION=	20020202
+VERSION=	0.3
+M17N_VERSION=	20020311
 
 DISTNAME=	w3m-${VERSION}
 CATEGORIES=	www
@@ -22,11 +22,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	w3m
 MASTER_SITES0=		http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
-MASTER_SITES1=		http://sites.inka.de/mips/unix/distfiles/
 
 SUPDISTFILES=	w3m-${VERSION}${EXTRACT_SUFX} \
-		w3m-${VERSION}-m17n-${M17N_VERSION}${EXTRACT_SUFX}:0 \
-		w3m-0.2.5-img-2.2.patch.gz:1
+		w3m-${VERSION}-m17n-${M17N_VERSION}${EXTRACT_SUFX}:0
 
 FLAVORS=	image japanese m17n
 FLAVOR?=
@@ -46,18 +44,10 @@ DOCS=	FAQ.html HISTORY MANUAL.html \
 	README README.dict README.func STORY.html \
 	keymap.default keymap.lynx menu.default menu.submenu
 
-PATCH_LIST=	patch-configure \
-		patch-etc_c \
-		patch-search_c \
-		patch-gc_include_private_gcconfig_h \
-		patch-gc_dyn_load_c
+PATCH_LIST=	patch-gc_dyn_load_c \
+		patch-gc_include_private_gcconfig_h
 
 .if ${FLAVOR:L:Mimage}
-.  if !${FLAVOR:L:Mm17n}
-PATCHFILES=	w3m-0.2.5-img-2.2.patch.gz:1
-PATCH_DIST_STRIP= -p1
-.  endif
-PATCH_LIST+=	patch-image_c
 LIB_DEPENDS=	Imlib.19::graphics/imlib
 CONFIGURE_ENV+=	use_image=y
 DOCS+=		README.img
@@ -80,8 +70,12 @@ DISTNAME=	w3m-${VERSION}-m17n-${M17N_VERSION}
 PKGNAME=	w3m-${VERSION}.${M17N_VERSION}
 CONFIGURE_ARGS+= --suffix="" --charset=UTF-8
 DOCS+=		README.m17n
+PATCH_LIST+=	patch-m17n-configure
 .else
-PATCH_LIST+=	patch-file_c
+PATCH_LIST+=	patch-configure \
+		patch-etc_c \
+		patch-image_c \
+		patch-search_c
 .endif
 
 post-install:
