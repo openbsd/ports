@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2003/04/15 14:31:15 wilfried Exp $
+# $OpenBSD: Makefile,v 1.90 2003/04/15 16:09:19 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -64,6 +64,8 @@
      SUBDIR += lgeneral
      SUBDIR += lincity
      SUBDIR += moon-buggy
+     SUBDIR += moonlander
+     SUBDIR += moonlander,no_sound
      SUBDIR += moria
      SUBDIR += nethack
      SUBDIR += nethack,no_x11
