@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/01/19 18:50:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/02/01 17:34:27 wilfried Exp $
 
 DISTNAME=	wmcalc-0.3
 CATEGORIES=	math x11 x11/windowmaker
 NEED_VERSION=	1.340
 HOMEPAGE=	http://members.access1.net/ehflora/
 
-MAINTAINER=	Peter Stromberg <home@wilfried.net>
+MAINTAINER=	Peter Stromberg <wilfried@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

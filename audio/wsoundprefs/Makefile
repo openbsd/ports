@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/01/19 17:37:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/02/01 17:34:25 wilfried Exp $
 
 DISTNAME=	WSoundPrefs-1.1.1
 PKGNAME=	${DISTNAME:L}
@@ -7,7 +7,7 @@ NEED_VERSION=	1.336
 MASTER_SITES=	ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
 HOMEPAGE=	http://shadowmere.student.utwente.nl/
 
-MAINTAINER=	Peter Stromberg <home@wilfried.net>
+MAINTAINER=	Peter Stromberg <wilfried@openbsd.org>
 
 LIB_DEPENDS=	PropList.2::devel/libproplist \
 		wsound::audio/wsoundserver \

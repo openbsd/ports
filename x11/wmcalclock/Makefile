@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/01/18 16:10:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/02/01 17:34:29 wilfried Exp $
 
 DISTNAME=	wmCalClock-1.25
 PKGNAME=	${DISTNAME:L}
@@ -7,7 +7,7 @@ NEED_VERSION=	1.336
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 HOMEPAGE=	http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml
 
-MAINTAINER=	Peter Stromberg <home@wilfried.net>
+MAINTAINER=	Peter Stromberg <wilfried@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

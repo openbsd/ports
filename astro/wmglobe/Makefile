@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/18 16:09:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/02/01 17:34:25 wilfried Exp $
 
 DISTNAME=	wmglobe-1.1.alpha
 PKGNAME=	wmglobe-1.1a
@@ -7,7 +7,7 @@ NEED_VERSION=	1.340
 HOMEPAGE=	http://perso.linuxfr.org/jdumont/wmg/
 MASTER_SITES=	${HOMEPAGE}
 
-MAINTAINER=	Peter Stromberg <home@wilfried.net>
+MAINTAINER=	Peter Stromberg <wilfried@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

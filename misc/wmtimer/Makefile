@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/01/18 16:10:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/02/01 17:34:27 wilfried Exp $
 
 DISTNAME=	wmtimer-2.2
 CATEGORIES=	misc x11 x11/windowmaker
 NEED_VERSION=	1.340
 HOMEPAGE=	http://www.dwave.net/~jking/wmtimer/
 
-MAINTAINER=	Peter Stromberg <home@wilfried.net>
+MAINTAINER=	Peter Stromberg <wilfried@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

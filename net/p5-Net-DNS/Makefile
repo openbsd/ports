@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/08 19:41:55 danh Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/01 17:34:27 wilfried Exp $
 
 DISTNAME=	Net-DNS-0.12
 PKGNAME=	p5-${DISTNAME}
@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR= Net
 
 HOMEPAGE=	http://www.fuhr.org/~mfuhr/perldns/
 
-MAINTAINER=	Peter Stromberg <home@wilfried.net>
+MAINTAINER=	Peter Stromberg <wilfried@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/05 11:58:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/02/01 17:34:26 wilfried Exp $
 
 DISTNAME=	libdockapp-0.4.0
 CATEGORIES=	devel
@@ -6,7 +6,7 @@ NEED_VERSION=	1.336
 MASTER_SITES=	ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
 HOMEPAGE=	http://shadowmere.student.utwente.nl/
 
-MAINTAINER=	Peter Stromberg <home@wilfried.net>
+MAINTAINER=	Peter Stromberg <wilfried@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
