@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.627 2004/08/02 12:10:17 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.628 2004/08/02 13:01:52 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -83,12 +83,13 @@ OPSYS_VER=	${OSREV}
 LP64_ARCHS=alpha amd64 sparc64
 NO_SHARED_ARCHS=m88k vax
 
-# Define NO_SHARED_LIBS for those machines that don't support shared libraries.
+# Set NO_SHARED_LIBS for those machines that don't support shared libraries.
 .for _m in ${MACHINE_ARCH}
 .  if !empty(NO_SHARED_ARCHS:M${_m})
-NO_SHARED_LIBS=	Yes
+NO_SHARED_LIBS?=	Yes
 .  endif
 .endfor
+NO_SHARED_LIBS?=	No
 
 # Global path locations.
 PORTSDIR?=		/usr/ports
@@ -616,11 +617,11 @@ SED_PLIST+=|${_SED_SUBST}
 .if !defined(PLIST) && exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${ARCH})
 PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${ARCH}
 .else
-.if !defined(PLIST) && exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${MACHINE_ARCH})
+.  if !defined(PLIST) && exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${MACHINE_ARCH})
 PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${MACHINE_ARCH}
+.  endif
 .endif
-.endif
-.if !defined(PLIST) && defined(NO_SHARED_LIBS) && exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.noshared)
+.if !defined(PLIST) && ${NO_SHARED_LIBS:L} == "yes" && exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.noshared)
 PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.noshared
 .endif
 .if !defined(PLIST) && exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT})
@@ -629,11 +630,11 @@ PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}
 .if !defined(PLIST) && exists(${PKGDIR}/PLIST${SUBPACKAGE}.${ARCH})
 PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}.${ARCH}
 .else
-.if !defined(PLIST) && exists(${PKGDIR}/PLIST${SUBPACKAGE}.${MACHINE_ARCH})
+.  if !defined(PLIST) && exists(${PKGDIR}/PLIST${SUBPACKAGE}.${MACHINE_ARCH})
 PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}.${MACHINE_ARCH}
+.  endif
 .endif
-.endif
-.if !defined(PLIST) && defined(NO_SHARED_LIBS) && exists(${PKGDIR}/PLIST${SUBPACKAGE}.noshared)
+.if !defined(PLIST) && ${NO_SHARED_LIBS:L} == "yes" && exists(${PKGDIR}/PLIST${SUBPACKAGE}.noshared)
 PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}.noshared
 .endif
 PLIST?=		${PKGDIR}/PLIST${SUBPACKAGE}
@@ -871,7 +872,7 @@ _CONFIGURE_SCRIPT=./${CONFIGURE_SCRIPT}
 
 CONFIGURE_ENV+=		PATH=${PORTPATH}
 
-.if defined(NO_SHARED_LIBS)
+.if ${NO_SHARED_LIBS:L} == "yes"
 CONFIGURE_SHARED?=	--disable-shared
 .else
 CONFIGURE_SHARED?=	--enable-shared
@@ -985,7 +986,7 @@ _build_depends_fragment= \
 _run_depends_fragment=${_build_depends_fragment}
 _regress_depends_fragment=${_build_depends_fragment}
 
-.if defined(NO_SHARED_LIBS)
+.if ${NO_SHARED_LIBS:L} == "yes"
 _noshared=-noshared
 .else
 _noshared=
@@ -1075,7 +1076,7 @@ _FMN+= ${PKGPATH}/${FULLPKGNAME${_S}}
 
 # Internal variables, used by dependencies targets
 # Only keep pkg:dir spec
-.if defined(LIB_DEPENDS)
+.if defined(LIB_DEPENDS) && ${NO_SHARED_LIBS:L} != "yes"
 _ALWAYS_DEP2 = ${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
 _ALWAYS_DEP= ${_ALWAYS_DEP2:C/[^:]*://}
 .else
@@ -1173,7 +1174,7 @@ ${WRKPKG}/COMMENT${SUBPACKAGE}:
 ${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST} ${WRKPKG}/depends${SUBPACKAGE}
 	@echo "@comment subdir=${FULLPKGPATH} cdrom=${PERMIT_PACKAGE_CDROM:L} ftp=${PERMIT_PACKAGE_FTP:L}" >$@.tmp
 	@sort -u <${WRKPKG}/depends${SUBPACKAGE}>>$@.tmp
-.if defined(NO_SHARED_LIBS)
+.if ${NO_SHARED_LIBS:L} == "yes"
 	@sed -e '/^!%%SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' -e '//d' \
 		-e '/^%%!SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' -e '//d' \
 		-e '/^%%SHARED%%$$/d' <${PLIST} \
@@ -1197,7 +1198,7 @@ ${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST} ${WRKPKG}/depends${SUBPACKAGE}
 ${WRKPKG}/depends${SUBPACKAGE}:
 	@mkdir -p ${WRKPKG}
 	@>$@
-.if (defined(RUN_DEPENDS) && !empty(RUN_DEPENDS)) || (!defined(NO_SHARED_LIBS) && defined(LIB_DEPENDS) && !empty(LIB_DEPENDS))
+.if (defined(RUN_DEPENDS) && !empty(RUN_DEPENDS)) || (${NO_SHARED_LIBS:L} != "yes" && defined(LIB_DEPENDS) && !empty(LIB_DEPENDS))
 	@${_depfile_fragment}; \
 	_depends_result=$@ ${MAKE} _solve-package-depends
 .endif
@@ -2312,7 +2313,7 @@ _solve-package-depends:
 		: $${pkg:=$$default}; \
 		echo "@newdepend $$pkgpath:$$pkg:$$default" >>$${_depends_result}; }
 .endfor
-.if !defined(NO_SHARED_LIBS)
+.if ${NO_SHARED_LIBS:L} != "yes"
 .  for _i in ${LIB_DEPENDS}
 	@unset FLAVOR SUBPACKAGE || true; \
 	echo '${_i}'|{ \
