@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/13 07:23:42 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/13 07:48:51 brad Exp $
 
 DISTNAME=	vtun-2.0
 CATEGORIES=	net
@@ -28,5 +28,12 @@ CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}' \
 		--with-lzo-lib="${LOCALBASE}/lib"
 
 ALL_TARGET=	vtund
+
+do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/vtun
+	${INSTALL_PROGRAM} ${WRKSRC}/vtund ${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/vtund.conf ${PREFIX}/lib/vtun/vtund.conf-sample
+	${INSTALL_MAN}	${WRKSRC}/vtund.8 ${PREFIX}/man/man8
+	cd ${PREFIX}/man/man8; ln -fs vtund.8 vtun.8
 
 .include <bsd.port.mk>
