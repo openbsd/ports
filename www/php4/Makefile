@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/09/25 20:03:49 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2000/09/28 20:39:24 jakob Exp $
 
 DISTNAME=	php-4.0.2
 PKGNAME=	php4-4.0.2
@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-xml \
 			--with-zlib
 
-FLAVORS+=	gdbm gettext ftp imap mm recode snmp gd no_x11
+FLAVORS+=	gdbm gettext ftp imap mm recode snmp gd no_x11 pdflib
 FLAVORS+=	dbase filepro mysql mysql_bundled postgresql
 FLAVOR?=
 
@@ -111,6 +111,13 @@ BUILD_DEPENDS+=		${PREFIX}/lib/libgd.a::graphics/gd \
 .endif
 .else
 CONFIGURE_ARGS+=	--without-gd
+.endif
+
+.if ${FLAVOR:L:Mpdflib}
+CONFIGURE_ARGS+=	--with-pdflib=${PREFIX}
+BUILD_DEPENDS+=		${PREFIX}/lib/libpdf.a::print/pdflib
+.else
+CONFIGURE_ARGS+=	--without-pdflib
 .endif
 
 .if ${FLAVOR:L:Mdbase}
