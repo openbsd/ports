@@ -3,13 +3,13 @@
 # Date created:         8 Jul 1998
 # Whom:                 form
 #
-# $OpenBSD: Makefile,v 1.5 1998/07/13 05:13:16 form Exp $
+# $OpenBSD: Makefile,v 1.6 1998/09/06 05:47:32 marc Exp $
 #
 
 DISTNAME=       rarbsd
 PKGNAME=        rar-2.02
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.creabel.com/pub/rar
+MASTER_SITES=	ftp://ftp.creabel.com/pub/rar/
 EXTRACT_SUFX=
 ONLY_FOR_ARCHS=	i386
 
