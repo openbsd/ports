@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Jul 26 20:22:05 2001
-+++ Makefile.in	Thu Jul 26 20:24:02 2001
-@@ -17,7 +17,7 @@ exec_prefix = @exec_prefix@
+--- Makefile.in.orig	Sat Sep 22 13:50:35 2001
++++ Makefile.in	Sat Sep 22 13:58:56 2001
+@@ -20,7 +20,7 @@ exec_prefix = @exec_prefix@
  BINDIR   = @bindir@
  MANDIR   = @mandir@
  SHAREDIR = ${prefix}/share/@PROG@
@@ -9,7 +9,7 @@
  DOC      = COPYING README README.PLUGINS CHANGELOG HISTORY AUTHORS TODO THANKS KNOWN-BUGS PORTINGS INSTALL
  
  DEBUG    = @DEBUG@
-@@ -44,7 +44,7 @@ all: @PROG@
+@@ -47,7 +47,7 @@ all: @PROG@
  missing: $(MISSDESTS)
  
  
@@ -18,3 +18,12 @@
  	$(INSTALL) -d $(DESTDIR)$(BINDIR)
  	$(INSTALL) -m 700 $(PROG) $(DESTDIR)$(BINDIR)
  	$(INSTALL) -d $(DESTDIR)$(SHAREDIR)
+@@ -59,7 +59,7 @@ install: @PROG@ strip
+ 	$(INSTALL) -m 644 ./etter.ssl.crt $(DESTDIR)$(SHAREDIR)
+ 	$(INSTALL) -d $(DESTDIR)$(DOCDIR)
+ 	$(INSTALL) -m 644 $(DOC) $(DESTDIR)$(DOCDIR)
+-	$(INSTALL) -m 644 ./docs/[a-z]*/[^C]* $(DESTDIR)$(DOCDIR)
++	$(INSTALL) -m 644 ./docs/[a-z]*/[a-z]* $(DESTDIR)$(DOCDIR)
+ 	$(INSTALL) -d $(DESTDIR)$(MANDIR)/man8
+ 	$(INSTALL) -m 644 $(PROG).8 $(DESTDIR)$(MANDIR)/man8/$(PROG).8
+ 	@echo

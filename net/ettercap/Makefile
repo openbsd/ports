@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2001/07/27 03:34:27 obecian Exp $
+# $OpenBSD: Makefile,v 1.7 2001/09/22 21:31:01 obecian Exp $
 
 COMMENT=	"multi-purpose sniffer/interceptor/logger"
 
-VER=	0.5.4
+VER=		0.6.0
 DISTNAME=	ettercap-${VER}
 CATEGORIES=	net
 NEED_VERSION=	1.364
@@ -18,9 +18,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
-# not yet
-#CONFIGURE_ARGS+=	--enable-plugins
+USE_GMAKE=		Yes
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--enable-https --enable-plugins
 
 .include <bsd.port.mk>
