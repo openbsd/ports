@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2001/02/22 11:01:31 camield Exp $
+# $OpenBSD: Makefile,v 1.27 2001/03/04 17:38:08 danh Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -18,6 +18,7 @@
      SUBDIR += nut:cgi
      SUBDIR += radiusreport
      SUBDIR += rtty
+     SUBDIR += safecat
      SUBDIR += sdd
      SUBDIR += setquota
      SUBDIR += skill
