@@ -1,18 +1,19 @@
-*** web/Makefile.proto-orig	Fri Jul  3 15:33:38 1998
---- web/Makefile.proto	Fri Jul  3 15:35:38 1998
+*** include/Makefile-config-orig	Sat Mar  6 15:49:28 1999
+--- include/Makefile-config	Sat Mar  6 15:50:22 1999
 ***************
-*** 2,11 ****
---- 2,14 ----
+*** 2,8 ****
+  # set to the user and group name that you want NFR to run as
+  #
+  NFR_USER=nfr
+! NFR_GROUP=users
   
-  all:
-  	$(MAKESUBDIRS) $@ $(SUBDIRS)
-+ 	$(CC) $(CFLAGS) -o nfr-htpasswd nfr-htpasswd.c
+  ############################################################################
+  #
+--- 2,8 ----
+  # set to the user and group name that you want NFR to run as
+  #
+  NFR_USER=nfr
+! NFR_GROUP=nfr
   
-  install:
-  	$(MAKESUBDIRS) $@ $(SUBDIRS)
-+ 	cp nfr-htpasswd $(INSTALLDIR)/bin/htpasswd
-  
-  clean:
-  	$(MAKESUBDIRS) $@ $(SUBDIRS)
-+ 	rm -f nfr-htpasswd *.core core
-  
+  ############################################################################
+  #

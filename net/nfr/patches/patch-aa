@@ -1,14 +1,29 @@
---- bin/select_sys.~1~	Tue Mar  3 12:12:55 1998
-+++ bin/select_sys	Tue Jun 23 19:16:10 1998
-@@ -73,6 +73,11 @@
- 		type=netbsd
- 		warn=y
- 		;;
-+	OpenBSD2.*)
-+		echo NFR is NOT officially supported on OpenBSD 2.x systems
-+		echo Unofficial support added by ports@openbsd.org
-+		type=openbsd
-+		;;
- 	Linux*)
- 		case $rev
- 		in
+*** Makefile.proto-orig	Sat Mar  6 16:03:38 1999
+--- Makefile.proto	Sat Mar  6 16:08:00 1999
+***************
+*** 28,38 ****
+  
+  thirdparty=pcapstuff regexstuff md5stuff desstuff
+  
+! all:	$(early) $(thirdparty) $(OTHER_THIRD) libs
+  	@touch INSTALLNOTES
+  	$(MAKESUBDIRS) $@ $(SUBDIRS)
+  
+! everything:	$(thirdparty) $(OTHER_THIRD) libs
+  	$(MAKESUBDIRS) $@ $(SUBDIRS)
+  
+  port:	
+--- 28,40 ----
+  
+  thirdparty=pcapstuff regexstuff md5stuff desstuff
+  
+! ! OpenBSD doesn't require any of these third-party libs. :-)
+! 
+! all:	libs
+  	@touch INSTALLNOTES
+  	$(MAKESUBDIRS) $@ $(SUBDIRS)
+  
+! everything:	libs
+  	$(MAKESUBDIRS) $@ $(SUBDIRS)
+  
+  port:	

@@ -1,0 +1,19 @@
+*** bin/installdir-orig	Sat Mar  6 15:53:02 1999
+--- bin/installdir	Sat Mar  6 15:53:30 1999
+***************
+*** 29,35 ****
+  fi
+  
+  INSTALLPATH="/usr /usr/local /home"
+! INSTALLDIR=""
+  
+  #
+  # First see if this has been determined before
+--- 29,35 ----
+  fi
+  
+  INSTALLPATH="/usr /usr/local /home"
+! INSTALLDIR="${PREFIX}/nfr"
+  
+  #
+  # First see if this has been determined before
