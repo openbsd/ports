@@ -1,2 +1,4 @@
 libexec/cucipop
+libexec/makevpopdb
 man/man8/cucipop.8
+man/man8/makevpopdb.8

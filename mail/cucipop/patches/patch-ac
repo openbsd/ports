@@ -1,12 +1,19 @@
-*** xcreat.c.orig	Tue Apr 21 22:03:37 1998
---- xcreat.c	Tue Apr 21 22:23:24 1998
+*** xcreat.c.orig	Tue Jun 30 12:06:58 1998
+--- xcreat.c	Tue Jun 30 12:06:33 1998
 ***************
 *** 22,28 ****
   /*#define NOuname		      /* uncomment if uname is not available */
   /*#define NOstrpbrk		    /* uncomment if strpbrk is not available */
   /*#define strchr(s,c) index(s,c)     /* uncomment if strchr is not available */
-- #define const			      /* can be undefined for ANSI compilers */
+! #define const			      /* can be undefined for ANSI compilers */
   
   #include <unistd.h>			/* open() close() link() unlink()
   					   getpid() */
---- 22,27 ----
+--- 22,28 ----
+  /*#define NOuname		      /* uncomment if uname is not available */
+  /*#define NOstrpbrk		    /* uncomment if strpbrk is not available */
+  /*#define strchr(s,c) index(s,c)     /* uncomment if strchr is not available */
+! /* #define const	*/		      /* can be undefined for ANSI compilers */
+  
+  #include <unistd.h>			/* open() close() link() unlink()
+  					   getpid() */

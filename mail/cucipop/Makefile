@@ -3,10 +3,10 @@
 # Date created:		21 Apr 1998
 # Whom:			form@vs.itam.nsc.ru
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/04/26 04:48:27 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1998/06/30 05:54:49 form Exp $
 #
 
-DISTNAME=       cucipop-1.21
+DISTNAME=       cucipop-1.31
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/cucipop/
 

@@ -1,51 +1,98 @@
---- Makefile.orig	Thu Jul 31 18:00:30 1997
-+++ Makefile	Mon Apr 27 14:48:12 1998
-@@ -1,30 +1,29 @@
- #$Id: patch-aa,v 1.2 1998/04/28 17:23:10 marc Exp $
- 
--BASENAME= /usr
-+BASENAME= $(PREFIX)
- 
- GCC_WARNINGS = -O2 -pedantic -Wreturn-type -Wunused -Wformat \
-  -Wpointer-arith -Wconversion -Waggregate-return \
-  #-Wimplicit -Wshadow #-Wuninitialized
- 
--CFLAGS	= -O #$(GCC_WARNINGS)
--LDFLAGS =
-+CFLAGS	= -O -DMAILSPOOLDIR=\"/var/mail/\" #$(GCC_WARNINGS)
-+LDFLAGS +=
- 
- O=o
- 
--BINDIR=$(BASENAME)/sbin
-+BINDIR=$(BASENAME)/libexec
- MANDIR=$(BASENAME)/man/man8
- 
--INSTALL=install -o root -m
--BINPERM=02755 -s -g mail
--REGPERM=0644
-+INSTALL=install -o bin -m
-+BINPERM=0555 -s -g bin
-+REGPERM=0444 -g bin
- 
- #
- # When compiling without APOP support, the md5 library can be omitted.
- 
- MD5_OBJ=md5/md5c.$(O)
- 
--OBJS=cucipop.$(O) authenticate.$(O) atotime.$(O) locking.$(O) xcreat.$(O) \
--	$(MD5_OBJ)
-+OBJS=cucipop.$(O) authenticate.$(O) atotime.$(O) locking.$(O) xcreat.$(O)
- 
- all: cucipop
- 
-@@ -44,7 +43,8 @@
- 
- install: cucipop cucipop.8
- 	$(INSTALL) $(BINPERM) cucipop $(BINDIR)
--	$(INSTALL) $(REGPERM) cucipop.8 $(MANDIR)
-+	sed -e 's,!!PREFIX!!,$(PREFIX),g' cucipop.8 > cucipop.8-out
-+	$(INSTALL) $(REGPERM) cucipop.8-out $(MANDIR)/cucipop.8
- 	ls -l $(BINDIR)/cucipop $(MANDIR)/cucipop.8
- 
- deinstall:
+*** Makefile.orig	Wed May 13 04:09:14 1998
+--- Makefile	Tue Jun 30 12:44:07 1998
+***************
+*** 1,6 ****
+  #$Id: patch-aa,v 1.3 1998/06/30 05:54:52 form Exp $
+  
+! BASENAME= /usr
+  
+  GCC_WARNINGS = -O2 -pedantic -Wreturn-type -Wunused -Wformat \
+   -Wpointer-arith -Wconversion -Waggregate-return \
+--- 1,6 ----
+  #$Id: patch-aa,v 1.3 1998/06/30 05:54:52 form Exp $
+  
+! BASENAME= $(PREFIX)
+  
+  GCC_WARNINGS = -O2 -pedantic -Wreturn-type -Wunused -Wformat \
+   -Wpointer-arith -Wconversion -Waggregate-return \
+***************
+*** 10,30 ****
+  # Omit USE_DB if you don't have the -ldb2 library (Berkeley DB, v2.x)
+  # WARNING: bulletins are not remembered to have been deleted without USE_DB
+  
+! CFLAGS	= -O -DUSE_DB #$(GCC_WARNINGS)
+! LDFLAGS = -lcrypt -ldb2
+  
+  # If you change this, edit config.h as well
+! CUCIPOPLIB=/var/lib/cucipop
+  CUCIPOPBULLETINS=$(CUCIPOPLIB)/bulletins
+  
+  O=o
+  
+! BINDIR=$(BASENAME)/sbin
+  MANDIR=$(BASENAME)/man/man8
+  
+  INSTALL=install -o root -m
+! BINPERM=02755 -s -g mail
+! REGPERM=0644
+  
+  #
+  # When compiling without APOP support, the md5 library can be omitted.
+--- 10,30 ----
+  # Omit USE_DB if you don't have the -ldb2 library (Berkeley DB, v2.x)
+  # WARNING: bulletins are not remembered to have been deleted without USE_DB
+  
+! CFLAGS	= -O #-DUSE_DB #$(GCC_WARNINGS)
+! LDFLAGS = 
+  
+  # If you change this, edit config.h as well
+! CUCIPOPLIB=/var/spool/cucipop
+  CUCIPOPBULLETINS=$(CUCIPOPLIB)/bulletins
+  
+  O=o
+  
+! BINDIR=$(BASENAME)/libexec
+  MANDIR=$(BASENAME)/man/man8
+  
+  INSTALL=install -o root -m
+! BINPERM=755 -s -g bin
+! REGPERM=444
+  
+  #
+  # When compiling without APOP support, the md5 library can be omitted.
+***************
+*** 32,38 ****
+  MD5_OBJ=md5/md5c.$(O)
+  
+  OBJS=cucipop.$(O) authenticate.$(O) atotime.$(O) locking.$(O) xcreat.$(O) \
+! 	dbops.$(O) hsort.$(O) simplecrypt.$(O) $(MD5_OBJ)
+  
+  BINS=cucipop makevpopdb
+  
+--- 32,38 ----
+  MD5_OBJ=md5/md5c.$(O)
+  
+  OBJS=cucipop.$(O) authenticate.$(O) atotime.$(O) locking.$(O) xcreat.$(O) \
+! 	dbops.$(O) hsort.$(O) simplecrypt.$(O)
+  
+  BINS=cucipop makevpopdb
+  
+***************
+*** 70,77 ****
+  install: $(BINS) $(MANS)
+  	$(INSTALL) $(BINPERM) $(BINS) $(BINDIR)
+  	$(INSTALL) $(REGPERM) $(MANS) $(MANDIR)
+! 	mkdir $(CUCIPOPLIB) 2>/dev/null; exit 0
+! 	mkdir $(CUCIPOPBULLETINS) 2>/dev/null; exit 0
+  	@for a in $(BINS); do ls -l $(BINDIR)/$$a; done
+  	@for a in $(MANS); do ls -l $(MANDIR)/$$a; done
+  
+--- 70,77 ----
+  install: $(BINS) $(MANS)
+  	$(INSTALL) $(BINPERM) $(BINS) $(BINDIR)
+  	$(INSTALL) $(REGPERM) $(MANS) $(MANDIR)
+! 	mkdir -p $(CUCIPOPLIB) 2>/dev/null; exit 0
+! 	mkdir -p $(CUCIPOPBULLETINS) 2>/dev/null; exit 0
+  	@for a in $(BINS); do ls -l $(BINDIR)/$$a; done
+  	@for a in $(MANS); do ls -l $(MANDIR)/$$a; done
+  
