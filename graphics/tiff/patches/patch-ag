@@ -1,0 +1,28 @@
+*** tools/thumbnail.c.orig	Fri Sep 30 03:01:53 1994
+--- tools/thumbnail.c	Wed Oct  4 04:48:00 1995
+***************
+*** 25,34 ****
+   */
+  
+  #include <stdio.h>
+- #include <getopt.h>
+  #include <stdlib.h>
+  #include <string.h>
+  #include <sys/param.h>
+  #include <math.h>
+  
+  #include "tiffio.h"
+--- 25,37 ----
+   */
+  
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include <string.h>
+  #include <sys/param.h>
++ #if defined(BSD) && BSD >= 199506
++ /* Lite2, need this for getopt() */
++ #include <unistd.h>
++ #endif
+  #include <math.h>
+  
+  #include "tiffio.h"

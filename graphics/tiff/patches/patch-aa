@@ -1,0 +1,98 @@
+*** libtiff/Makefile.gcc.orig	Fri Sep 30 03:01:24 1994
+--- libtiff/Makefile.gcc	Wed Oct  4 04:28:20 1995
+***************
+*** 26,43 ****
+  #
+  # This Makefile is for use with gcc (2.2.2 or later)
+  #
+! DESTDIR=.
+  #
+  AR=	ar
+  RANLIB=	ranlib
+  NULL=
+  
+  IPATH=	-I.
+  CONF_LIBRARY=\
+  	${NULL}
+! CC=	gcc
+! COPTS=	-ansi -O
+! CFLAGS=	${COPTS} ${IPATH} ${CONF_LIBRARY}
+  #
+  INCS=	tiff.h tiffio.h
+  SRCS=	tif_fax3.c \
+--- 26,42 ----
+  #
+  # This Makefile is for use with gcc (2.2.2 or later)
+  #
+! DESTDIR=${PREFIX}
+  #
+  AR=	ar
+  RANLIB=	ranlib
++ INSTALL= install -o bin -g bin
+  NULL=
+  
+  IPATH=	-I.
+  CONF_LIBRARY=\
+  	${NULL}
+! CFLAGS+= ${COPTS} ${IPATH} ${CONF_LIBRARY}
+  #
+  INCS=	tiff.h tiffio.h
+  SRCS=	tif_fax3.c \
+***************
+*** 100,113 ****
+  	tif_warning.o \
+  	tif_write.o \
+  	${NULL}
+! ALL=	libtiff.a
+  
+  all:	 ${ALL}
+  
+! ${ALL}:	${OBJS}
+  	${AR} rc libtiff.a $?
+  	${RANLIB} libtiff.a
+  
+  ${OBJS}: tiffio.h tiff.h tiffcomp.h tiffiop.h tiffconf.h
+  tif_fax3.o: tif_fax3.c g3states.h t4.h tif_fax3.h
+  
+--- 99,120 ----
+  	tif_warning.o \
+  	tif_write.o \
+  	${NULL}
+! ALL=	libtiff.a libtiff.so.3.3
+  
+  all:	 ${ALL}
+  
+! libtiff.a: ${OBJS}
+  	${AR} rc libtiff.a $?
+  	${RANLIB} libtiff.a
+  
++ .SUFFIXES: .c .o .so
++ 
++ .c.so:
++ 	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
++ 
++ libtiff.so.3.3: ${OBJS:S/o$/so/g}
++ 	ld -Bshareable -o libtiff.so.3.3 ${OBJS:S/o$/so/g}
++ 
+  ${OBJS}: tiffio.h tiff.h tiffcomp.h tiffiop.h tiffconf.h
+  tif_fax3.o: tif_fax3.c g3states.h t4.h tif_fax3.h
+  
+***************
+*** 118,125 ****
+  install: all installh
+  	-for i in ${ALL}; do \
+  		${INSTALL} -c -m 644 $$i ${DESTDIR}/lib/$$i; \
+- 		${RANLIB} ${DESTDIR}/lib/$$i; \
+  	done
+  
+  installh: ${INCS}
+  	-for i in ${INCS}; do \
+--- 125,132 ----
+  install: all installh
+  	-for i in ${ALL}; do \
+  		${INSTALL} -c -m 644 $$i ${DESTDIR}/lib/$$i; \
+  	done
++ 	ranlib ${DESTDIR}/lib/libtiff.a
+  
+  installh: ${INCS}
+  	-for i in ${INCS}; do \

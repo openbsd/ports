@@ -1,0 +1,52 @@
+*** contrib/fax2ps/Makefile.orig	Tue Jul 26 21:55:07 1994
+--- contrib/fax2ps/Makefile	Wed Oct  4 04:55:32 1995
+***************
+*** 25,42 ****
+  TIFF=	../../libtiff
+  TOOLS=	../../tools
+  
+! BIN=	/usr/local/bin
+  NULL=
+! OBJS=	fax2ps.o faxdecode.o getopt.o
+  CONF_LIBRARY=\
+  	${NULL}
+! COPTS=	-O
+! CFLAGS=	${COPTS} -ansi ${CONF_LIBRARY} -I${TIFF}
+! LIBS=	${TIFF}/libtiff.a
+  
+  all:	fax2ps
+  
+! fax2ps:	${OBJS} ${LIBS}
+  	${CC} -o $@ ${OBJS} ${LDFLAGS} ${LIBS} -lm
+  
+  ${OBJS}: defs.h ${TIFF}/tiffio.h
+--- 25,42 ----
+  TIFF=	../../libtiff
+  TOOLS=	../../tools
+  
+! BIN=	${PREFIX}/bin/
+  NULL=
+! OBJS=   fax2ps.o faxdecode.o
+  CONF_LIBRARY=\
+  	${NULL}
+! CFLAGS+= ${COPTS} ${CONF_LIBRARY} -I${TIFF}
+! LIBTIFF=	${TIFF}/libtiff.a
+! LIBS=	-L ../../libtiff -ltiff
+  
+  all:	fax2ps
+  
+! fax2ps:	${OBJS} ${LIBTIFF}
+  	${CC} -o $@ ${OBJS} ${LDFLAGS} ${LIBS} -lm
+  
+  ${OBJS}: defs.h ${TIFF}/tiffio.h
+***************
+*** 48,51 ****
+  	rm -f ${OBJS} fax2ps a.out core errs
+  
+  install: all
+! 	/etc/install -f ${BIN} -m 755 fax2ps
+--- 48,51 ----
+  	rm -f ${OBJS} fax2ps a.out core errs
+  
+  install: all
+! 	install -o bin -g bin -c -s -m 755 fax2ps ${BIN}

@@ -1,0 +1,18 @@
+*** tools/tiffcp.c.orig	Mon Nov 14 20:03:35 1994
+--- tools/tiffcp.c	Mon Nov 14 20:05:38 1994
+***************
+*** 30,36 ****
+--- 30,42 ----
+  
+  #include "tiffio.h"
+  
++ #ifdef _HAVE_PARAM_H
++ #include <sys/param.h>
++ #endif
++ 
++ #if (defined(BSD) && (BSD < 199103))
+  typedef	unsigned char u_char;
++ #endif
+  
+  #if defined(VMS)
+  #define unlink delete

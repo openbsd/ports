@@ -1,0 +1,62 @@
+*** tools/Makefile.sun.orig	Fri Sep 30 03:01:48 1994
+--- tools/Makefile.sun	Wed Oct  4 04:45:40 1995
+***************
+*** 31,37 ****
+  # simply null this out and you'll get whatever is in your
+  # libc (or similar).
+  #
+! GETOPT=	getopt.o
+  #
+  # Library-wide configuration defines:
+  # Note that if you change the library-wide configuration, you'll
+--- 31,37 ----
+  # simply null this out and you'll get whatever is in your
+  # libc (or similar).
+  #
+! # GETOPT=	getopt.o
+  #
+  # Library-wide configuration defines:
+  # Note that if you change the library-wide configuration, you'll
+***************
+*** 40,49 ****
+  CONF_LIBRARY=\
+  	${NULL}
+  COPTS=	
+! CFLAGS=	-g ${COPTS} ${IPATH}
+  #
+  LIBTIFF=../libtiff/libtiff.a
+! LIBS=	${LIBTIFF}
+  MACHALL=ras2tiff
+  OBJS=	\
+  	fax2tiff.o \
+--- 40,49 ----
+  CONF_LIBRARY=\
+  	${NULL}
+  COPTS=	
+! CFLAGS+= ${COPTS} ${IPATH} -D_HAVE_PARAM_H
+  #
+  LIBTIFF=../libtiff/libtiff.a
+! LIBS=	-L../libtiff -ltiff
+  MACHALL=ras2tiff
+  OBJS=	\
+  	fax2tiff.o \
+***************
+*** 69,74 ****
+--- 69,75 ----
+  	pal2rgb \
+  	ppm2tiff \
+  	rgb2ycbcr \
++ 	thumbnail \
+  	tiff2bw \
+  	tiff2ps \
+  	tiffcmp \
+***************
+*** 127,132 ****
+--- 128,134 ----
+  	${CC} -o thumbnail ${CFLAGS} thumbnail.c ${LIBS} -lm
+  
+  install: all
++ 	install -o bin -g bin -c -s ${ALL} ${PREFIX}/bin
+  
+  clean:
+  	rm -f ${ALL} ${OBJS} core a.out ycbcr

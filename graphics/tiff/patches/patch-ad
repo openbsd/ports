@@ -1,0 +1,64 @@
+*** Makefile.orig	Fri Sep 30 01:01:19 1994
+--- Makefile	Mon Nov 14 22:20:02 1994
+***************
+*** 209,218 ****
+  	${NULL}
+  
+  all default:
+! 	-cd libtiff; ${MAKE}
+! 	-cd tools; ${MAKE}
+! 	-cd contrib/fax2ps; ${MAKE}
+! 	-cd contrib/dbs; ${MAKE}
+  
+  clean:
+  	-cd libtiff; ${MAKE} clean; rm -f Makefile
+--- 209,257 ----
+  	${NULL}
+  
+  all default:
+! 	cd libtiff; ${MAKE} PREFIX=${PREFIX}
+! 	cd tools; ${MAKE} PREFIX=${PREFIX}
+! 	cd contrib/fax2ps; ${MAKE} PREFIX=${PREFIX}
+! 	#-cd contrib/dbs; ${MAKE}
+! 
+! install:
+! 	cd libtiff; ${MAKE} PREFIX=${PREFIX} install
+! 	cd tools; ${MAKE} PREFIX=${PREFIX} install
+! 	cd contrib/fax2ps; ${MAKE} PREFIX=${PREFIX} install
+! 	(cd man/man1 ; install -c fax2tiff.1 gif2tiff.1 pal2rgb.1 ppm2tiff.1 \
+! 		ras2tiff.1 rgb2ycbcr.1 sgi2tiff.1 thumbnail.1 tiff2bw.1 \
+! 		tiff2ps.1 tiffcmp.1 tiffcp.1 tiffdither.1 tiffdump.1 tiffgt.1 \
+! 		tiffinfo.1 tiffmedian.1 tiffsplit.1 tiffsv.1 \
+! 		${PREFIX}/man/man1/ )
+! 	install -c man/man3/TIFFClose.3t ${PREFIX}/man/man3/TIFFClose.3
+! 	install -c man/man3/TIFFError.3t ${PREFIX}/man/man3/TIFFError.3
+! 	install -c man/man3/TIFFFlush.3t ${PREFIX}/man/man3/TIFFFlush.3
+! 	install -c man/man3/TIFFGetField.3t ${PREFIX}/man/man3/TIFFGetField.3
+! 	install -c man/man3/TIFFOpen.3t ${PREFIX}/man/man3/TIFFOpen.3
+! 	install -c man/man3/TIFFPrintDirectory.3t ${PREFIX}/man/man3/TIFFPrintDirectory.3
+! 	install -c man/man3/TIFFReadDirectory.3t ${PREFIX}/man/man3/TIFFReadDirectory.3
+! 	install -c man/man3/TIFFReadEncodedStrip.3t ${PREFIX}/man/man3/TIFFReadEncodedStrip.3
+! 	install -c man/man3/TIFFReadEncodedTile.3t ${PREFIX}/man/man3/TIFFReadEncodedTile.3
+! 	install -c man/man3/TIFFReadRGBAImage.3t ${PREFIX}/man/man3/TIFFReadRGBAImage.3
+! 	install -c man/man3/TIFFReadRawStrip.3t ${PREFIX}/man/man3/TIFFReadRawStrip.3
+! 	install -c man/man3/TIFFReadRawTile.3t ${PREFIX}/man/man3/TIFFReadRawTile.3
+! 	install -c man/man3/TIFFReadScanline.3t ${PREFIX}/man/man3/TIFFReadScanline.3
+! 	install -c man/man3/TIFFReadTile.3t ${PREFIX}/man/man3/TIFFReadTile.3
+! 	install -c man/man3/TIFFSetDirectory.3t ${PREFIX}/man/man3/TIFFSetDirectory.3
+! 	install -c man/man3/TIFFSetField.3t ${PREFIX}/man/man3/TIFFSetField.3
+! 	install -c man/man3/TIFFWarning.3t ${PREFIX}/man/man3/TIFFWarning.3
+! 	install -c man/man3/TIFFWriteDirectory.3t ${PREFIX}/man/man3/TIFFWriteDirectory.3
+! 	install -c man/man3/TIFFWriteEncodedStrip.3t ${PREFIX}/man/man3/TIFFWriteEncodedStrip.3
+! 	install -c man/man3/TIFFWriteEncodedTile.3t ${PREFIX}/man/man3/TIFFWriteEncodedTile.3
+! 	install -c man/man3/TIFFWriteRawStrip.3t ${PREFIX}/man/man3/TIFFWriteRawStrip.3
+! 	install -c man/man3/TIFFWriteRawTile.3t ${PREFIX}/man/man3/TIFFWriteRawTile.3
+! 	install -c man/man3/TIFFWriteScanline.3t ${PREFIX}/man/man3/TIFFWriteScanline.3
+! 	install -c man/man3/intro.3t ${PREFIX}/man/man3/TIFFintro.3
+! 	install -c man/man3/query.3t ${PREFIX}/man/man3/TIFFquery.3
+! 	install -c man/man3/size.3t ${PREFIX}/man/man3/TIFFsize.3
+! 	install -c man/man3/strip.3t ${PREFIX}/man/man3/TIFFstrip.3
+! 	install -c man/man3/swab.3t ${PREFIX}/man/man3/TIFFswab.3
+! 	install -c man/man3/tile.3t ${PREFIX}/man/man3/TIFFtile.3
+  
+  clean:
+  	-cd libtiff; ${MAKE} clean; rm -f Makefile
