@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2003/02/03 18:17:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/27 23:35:46 naddy Exp $
 
 COMMENT=	"library to handle various audio file formats"
 
-DISTNAME=	libsndfile-1.0.4
+DISTNAME=	libsndfile-1.0.7
 CATEGORIES=	audio
-HOMEPAGE=	http://www.zip.com.au/~erikd/libsndfile/
+HOMEPAGE=	http://www.mega-nerd.com/libsndfile/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -18,5 +18,9 @@ MASTER_SITES=	${HOMEPAGE}
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+
+# create_symbols_file.sh uses invalid syntax and we don't need this file
+pre-build:
+	touch ${WRKBUILD}/src/Symbols
 
 .include <bsd.port.mk>
