@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/19 07:17:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2002/12/08 20:23:55 pvalchev Exp $
 
 COMMENT=	"full featured GTK Napster client"
 DISTNAME=	lopster-1.0.1-dev5.12
@@ -12,7 +12,7 @@ HOMEPAGE=	http://lopster.sourceforge.net/
 
 LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 
-MAINTAINER=	Mark Grimes <mark@openbsd.org>
+MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

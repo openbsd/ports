@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/09/03 06:24:46 mark Exp $
+# $OpenBSD: Makefile,v 1.11 2002/12/08 20:23:55 pvalchev Exp $
 
 COMMENT=	"SDL multi-channel audio mixer library"
 VER=		1.2.4
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.libsdl.org/projects/${PROJ}/release/
 
 HOMEPAGE=	http://www.libsdl.org/
 
-MAINTAINER=	Mark Grimes <mark@openbsd.org>
+MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
