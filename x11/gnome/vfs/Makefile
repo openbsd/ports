@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2002/07/31 12:59:44 nino Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/21 05:55:16 marcm Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
-DISTNAME=		gnome-vfs-1.0.4
+DISTNAME=		gnome-vfs-1.0.5
 CATEGORIES=		devel x11/gnome
-NEED_VERSION=   	1.504
 HOMEPAGE=		http://www.gnome.org/
 
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/gnome-vfs/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-vfs/1.0/}
 
 LIB_DEPENDS=		gnome.36::x11/gnome/libs \
 			xml.9::textproc/libxml1 \

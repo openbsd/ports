@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2002/03/25 17:14:36 nino Exp $
---- configure.orig	Sun Jan 20 09:11:14 2002
-+++ configure	Sat Feb 16 13:21:18 2002
-@@ -3697,8 +3697,8 @@ else
+$OpenBSD: patch-configure,v 1.6 2002/10/21 05:55:16 marcm Exp $
+--- configure.orig	Thu Mar 14 22:57:17 2002
++++ configure	Tue Oct 15 16:05:46 2002
+@@ -3703,8 +3703,8 @@ else
      hardcode_direct=yes
      hardcode_shlibpath_var=no
      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure,v 1.5 2002/03/25 17:14:36 nino Exp $
        export_dynamic_flag_spec='${wl}-E'
      else
        case "$host_os" in
-@@ -3707,8 +3707,8 @@ else
+@@ -3713,8 +3713,8 @@ else
  	hardcode_libdir_flag_spec='-R$libdir'
          ;;
        *)
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure,v 1.5 2002/03/25 17:14:36 nino Exp $
          ;;
        esac
      fi
-@@ -4192,6 +4192,8 @@ openbsd*)
+@@ -4198,6 +4198,8 @@ openbsd*)
    version_type=sunos
    need_lib_prefix=no
    need_version=no

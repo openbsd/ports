@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2002/02/15 19:11:16 nino Exp $
-lib/libgnomevfs.so.0.1
+@comment $OpenBSD: PFRAG.shared,v 1.4 2002/10/21 05:55:16 marcm Exp $
+lib/libgnomevfs.so.0.2
 lib/libgnomevfs-pthread.so
 lib/vfs/modules/libnntp.so
 lib/vfs/modules/libbzip2.so

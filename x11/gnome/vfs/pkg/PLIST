@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/07/22 16:24:44 nino Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/10/21 05:55:16 marcm Exp $
 bin/gnome-vfs-config
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-application-registry.h
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-async-ops.h
@@ -47,10 +47,12 @@ include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-uri.h
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-utils.h
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-xfer.h
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs.h
+@comment lib/charset.alias
 lib/gnome-vfs-1.0/include/gnome-vfs-file-size.h
 lib/libgnomevfs-pthread.a
 lib/libgnomevfs-pthread.la
 lib/libgnomevfs.a
+lib/libgnomevfs.la
 lib/vfs/extfs/README
 lib/vfs/extfs/a
 lib/vfs/extfs/ar
@@ -69,20 +71,34 @@ lib/vfs/extfs/trpm
 lib/vfs/extfs/zip
 lib/vfs/extfs/zoo
 lib/vfs/modules/libbzip2.a
+lib/vfs/modules/libbzip2.la
 lib/vfs/modules/libdesktop.a
+lib/vfs/modules/libdesktop.la
 lib/vfs/modules/libextfs.a
+lib/vfs/modules/libextfs.la
 lib/vfs/modules/libfile.a
+lib/vfs/modules/libfile.la
 lib/vfs/modules/libftp.a
+lib/vfs/modules/libftp.la
 lib/vfs/modules/libgzip.a
+lib/vfs/modules/libgzip.la
 lib/vfs/modules/libhttp.a
+lib/vfs/modules/libhttp.la
 lib/vfs/modules/libnntp.a
+lib/vfs/modules/libnntp.la
 lib/vfs/modules/libvfs-pipe.a
+lib/vfs/modules/libvfs-pipe.la
 lib/vfs/modules/libvfs-test.a
+lib/vfs/modules/libvfs-test.la
 lib/vfs/modules/libvfs-translate.a
+lib/vfs/modules/libvfs-translate.la
 lib/vfsConf.sh
-man/man5/gnome-vfs-mime.5
 share/examples/gnome-vfs/vfs/modules/default-modules.conf
 %%SHARED%%
+@comment @exec mkdir -p %D/share/gtk-doc/html/gnome-vfs
+@comment @dirrm share/gtk-doc/html/gnome-vfs
+@comment @dirrm share/gtk-doc/html
+@comment @dirrm share/gtk-doc
 @dirrm share/examples/gnome-vfs/vfs/modules
 @dirrm share/examples/gnome-vfs/vfs
 @dirrm share/examples/gnome-vfs
@@ -93,3 +109,5 @@ share/examples/gnome-vfs/vfs/modules/default-modules.conf
 @dirrm lib/gnome-vfs-1.0
 @dirrm include/gnome-vfs-1.0/libgnomevfs
 @dirrm include/gnome-vfs-1.0
+@comment @exec mkdir -p %D/doc
+@comment @dirrm doc
