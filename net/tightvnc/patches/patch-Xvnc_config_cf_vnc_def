@@ -1,0 +1,12 @@
+$OpenBSD: patch-Xvnc_config_cf_vnc_def,v 1.1 2002/06/03 18:11:07 todd Exp $
+--- Xvnc/config/cf/vnc.def.orig	Mon Jun  3 08:16:27 2002
++++ Xvnc/config/cf/vnc.def	Mon Jun  3 08:10:51 2002
+@@ -117,7 +117,7 @@
+ #ifdef SunArchitecture
+ #define ProjectRoot /usr/openwin
+ #else
+-#ifdef LinuxArchitecture
++#if defined(LinuxArchitecture) || defined(OpenBSDArchitecture)
+ #define ProjectRoot /usr/X11R6
+ #endif
+ #endif
