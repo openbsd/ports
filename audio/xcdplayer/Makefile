@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/07 00:31:29 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/09/06 18:56:43 brad Exp $
 
-DISTNAME=       xcdplayer-2.2
+DISTNAME=	xcdplayer-2.2
 CATEGORIES=	audio
-
-MAINTAINER=	angelos@openbsd.org
-
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
 		ftp://ftp.cdrom.com/pub/X11/R5contrib/
 EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	angelos@openbsd.org
 
 USE_IMAKE=      yes
 
