@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/10/09 00:04:57 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2000/11/18 23:34:23 avsm Exp $
 
-DISTNAME=		MHonArc2.4.6
-PKGNAME=		mhonarc-2.4.6
+DISTNAME=		MHonArc2.4.7
+PKGNAME=		mhonarc-2.4.7
 CATEGORIES=     	www mail
-NEED_VERSION=		1.338
+NEED_VERSION=		1.340
 
 HOMEPAGE=		http://www.mhonarc.org/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
