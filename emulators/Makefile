@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2001/04/12 08:58:45 aaron Exp $
+# $OpenBSD: Makefile,v 1.15 2001/04/12 10:17:37 aaron Exp $
 
     SUBDIR += bochs
     SUBDIR += bochs:debug
     SUBDIR += frodo
     SUBDIR += freebsd_lib
+    SUBDIR += mastergear
     SUBDIR += redhat_base
     SUBDIR += simh
     SUBDIR += vgb
