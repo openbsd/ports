@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2000/12/07 17:22:23 brad Exp $
-lib/librrd.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.6 2002/12/27 15:26:07 danh Exp $
 %%tcl%%
+lib/librrd.so.0.0
 DYNLIBDIR(%B)

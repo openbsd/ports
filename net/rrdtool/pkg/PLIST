@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/08/10 19:36:31 danh Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/12/27 15:26:07 danh Exp $
 bin/rrdcgi
 bin/rrdtool
 bin/rrdupdate
@@ -29,6 +29,7 @@ man/man1/rrdtune.1
 man/man1/rrdtutorial.1
 man/man1/rrdtutorial.es.1
 man/man1/rrdupdate.1
+man/man1/rrdxport.1
 share/doc/rrdtool/RRDp.txt
 share/doc/rrdtool/RRDs.txt
 share/doc/rrdtool/bin_dec_hex.pod
@@ -54,6 +55,7 @@ share/doc/rrdtool/html/rrdtune.html
 share/doc/rrdtool/html/rrdtutorial.es.html
 share/doc/rrdtool/html/rrdtutorial.html
 share/doc/rrdtool/html/rrdupdate.html
+share/doc/rrdtool/html/rrdxport.html
 share/doc/rrdtool/rpntutorial.pod
 share/doc/rrdtool/rpntutorial.txt
 share/doc/rrdtool/rrdcgi.pod
@@ -84,6 +86,8 @@ share/doc/rrdtool/rrdtutorial.pod
 share/doc/rrdtool/rrdtutorial.txt
 share/doc/rrdtool/rrdupdate.pod
 share/doc/rrdtool/rrdupdate.txt
+share/doc/rrdtool/rrdxport.pod
+share/doc/rrdtool/rrdxport.txt
 share/examples/rrdtool/bigtops.pl
 share/examples/rrdtool/cgi-demo.cgi
 share/examples/rrdtool/contrib/README

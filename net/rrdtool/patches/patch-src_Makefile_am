@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_am,v 1.2 2002/05/17 15:41:30 danh Exp $
---- src/Makefile.am.orig	Fri May 17 11:22:34 2002
-+++ src/Makefile.am	Fri May 17 11:23:12 2002
+$OpenBSD: patch-src_Makefile_am,v 1.3 2002/12/27 15:26:07 danh Exp $
+--- src/Makefile.am.orig	Thu Dec 26 16:08:29 2002
++++ src/Makefile.am	Thu Dec 26 16:09:11 2002
 @@ -13,10 +13,9 @@ ZLIB_INC_DIR      = $(top_srcdir)/@ZLIB_
  CGI_LIB_DIR       = $(top_builddir)/@CGI_LIB_DIR@
  GD_LIB_DIR        = $(top_builddir)/@GD_LIB_DIR@
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_Makefile_am,v 1.2 2002/05/17 15:41:30 danh Exp $
  
  #COMPILE   = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(CFLAGS_EXTRA)
  #LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(CFLAGS_EXTRA)
-@@ -56,7 +55,7 @@ RRD_LIBS =				\
+@@ -58,7 +57,7 @@ RRD_LIBS =				\
  	$(CGI_LIB_DIR)/librrd_cgi.la	\
  	$(GD_LIB_DIR)/librrd_gd.la	\
  	$(PNG_LIB_DIR)/librrd_png.la	\

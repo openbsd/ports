@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.5 2002/05/17 15:41:30 danh Exp $
---- src/Makefile.in.orig	Fri May 17 11:24:24 2002
-+++ src/Makefile.in	Fri May 17 11:27:37 2002
+$OpenBSD: patch-src_Makefile_in,v 1.6 2002/12/27 15:26:07 danh Exp $
+--- src/Makefile.in.orig	Fri Oct 11 14:42:53 2002
++++ src/Makefile.in	Thu Dec 26 16:11:42 2002
 @@ -86,19 +86,16 @@ TCL_SHLIB_LD = @TCL_SHLIB_LD@
  TCL_SHLIB_SUFFIX = @TCL_SHLIB_SUFFIX@
  TROFF = @TROFF@
@@ -42,7 +42,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.5 2002/05/17 15:41:30 danh Exp $
  parsetime.lo pngsize.lo rrd_create.lo rrd_diff.lo rrd_dump.lo \
  rrd_info.lo rrd_error.lo rrd_fetch.lo rrd_format.lo rrd_graph.lo \
  rrd_last.lo rrd_open.lo rrd_resize.lo rrd_restore.lo rrd_tune.lo \
- rrd_update.lo
+ rrd_update.lo rrd_xport.lo
  librrd_private_la_DEPENDENCIES =  $(CGI_LIB_DIR)/librrd_cgi.la \
 -$(GD_LIB_DIR)/librrd_gd.la $(PNG_LIB_DIR)/librrd_png.la \
 -$(ZLIB_LIB_DIR)/librrd_z.la
