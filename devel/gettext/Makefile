@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2002/05/13 18:50:39 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2002/11/29 05:07:01 brad Exp $
 # $FreeBSD: Makefile,v 1.4 1998/11/18 15:09:35 vanilla Exp $
 
 COMMENT=	"GNU gettext"
 
 DISTNAME=	gettext-0.10.40
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
-NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_GNU:=gettext/}
 
 HOMEPAGE=	http://www.gnu.org/software/gettext/
@@ -32,6 +32,12 @@ post-extract:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/po-mode.el \
 		${PREFIX}/share/gettext/po-mode.el
+	@cd ${PREFIX}/lib && \
+		mv libintl.la libintl.la.new && \
+		sed -e s#'-L${WRKBUILD}/intl/.libs '#''#g \
+			libintl.la.new > libintl.la && \
+		chown ${BINOWN}:${BINGRP} libintl.la && \
+		rm -f libintl.la.new
 
 do-regress:
 	@cd ${WRKBUILD}/tests && ${MAKE_PROGRAM} check-TESTS
