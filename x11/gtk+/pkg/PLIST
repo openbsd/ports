@@ -145,7 +145,6 @@ man/man1/gtk-config.1
 @unexec install-info --delete %D/info/gtk.info %D/info/dir
 info/gdk.info
 info/gtk.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/gdk.info %D/info/dir
 @exec install-info %D/info/gtk.info %D/info/dir
 share/themes/Default/gtk/gtkrc
