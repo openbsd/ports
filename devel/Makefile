@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2001/06/17 12:24:50 reinhard Exp $
+# $OpenBSD: Makefile,v 1.84 2001/06/23 00:25:52 shell Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -87,6 +87,7 @@
      SUBDIR += popt
      SUBDIR += prc-tools
      SUBDIR += pth
+     SUBDIR += py-Distutils
      SUBDIR += rats
      SUBDIR += sdl
      SUBDIR += sdl,sun,esd,gl
