@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/03/23 01:38:29 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/03/26 21:51:41 lebel Exp $
 !%%no_gle%%
 bin/xscreensaver
 bin/xscreensaver-command
@@ -307,7 +307,7 @@ man/man1/bubbles.1
 man/man1/bumps.1
 man/man1/critical.1
 man/man1/decayscreen.1
-man/man1/deco.1
+man/man1/xdeco.1
 man/man1/distort.1
 man/man1/drift.1
 man/man1/epicycle.1

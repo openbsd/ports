@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/03/23 01:38:29 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/26 21:51:41 lebel Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
@@ -54,5 +54,9 @@ ERRORS+=		"Fatal: Please choose either the gtk or motif flavor"
 
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 MAKE_ENV+=		${CONFIGURE_ENV}
+
+post-install:
+# rename this man page so it doesn't conflict with misc/deco
+	@mv ${PREFIX}/man/man1/deco.1 ${PREFIX}/man/man1/xdeco.1
 
 .include <bsd.port.mk>
