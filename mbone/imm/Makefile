@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.2 1998/09/14 02:55:42 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/09/02 21:52:04 brad Exp $
 
-DISTNAME=	imm-3.5a1
-CATEGORIES=	mbone tk80
+DISTNAME=	imm.source
+PKGNAME=	imm-3.5a1
+CATEGORIES=	mbone
 MASTER_SITES=	ftp://ftp.hawaii.edu/paccom/imm-3.5a1/
-DISTFILES=	imm.source.tar.Z
-WRKSRC=		${WRKDIR}/mnm
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	angelos@openbsd.org
 
-LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tcl80.1.5:${PORTSDIR}/lang/tcl80
+		tk80.1.5:${PORTSDIR}/x11/tk80
 
 USE_X11=	yes
+
+WRKSRC=		${WRKDIR}/mnm
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/openbsd
