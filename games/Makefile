@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 1999/04/30 21:42:16 brad Exp $
+# $OpenBSD: Makefile,v 1.23 1999/06/18 16:59:43 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
      SUBDIR += abuse
 #    SUBDIR += acm
+	  SUBDIR += adom
      SUBDIR += agm
      SUBDIR += an
 #    SUBDIR += angband
