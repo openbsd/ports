@@ -1,6 +1,8 @@
 #!/bin/sh
 # installation script for Japanese Wnn 4.2
 
+DICDIR=/var/dict/Wnn
+
 yesno() {
     local question answer
 
@@ -29,62 +31,73 @@ create_wnn() {
 	chpass -a "wnn:*:${begin}:${gid}::::Wnn server:/root:/sbin/nologin" || exit 1
 }
 	
+for i in japanese chinese korean
+do
+    case "$i" in
+    japanese)
+	    name=ja
+	    base="$DICDIR/ja_JP"
+	    sys_dirs="$DICDIR/ja_JP/pubdic $DICDIR/ja_JP/wnncons"
+	    wnntouch=/usr/local/bin/wnntouch
+	    wnnserver=/usr/local/bin/jserver;;
+    chinese)
+	    name=zh
+	    base="$DICDIR/zh_CN $DICDIR/zh_TW"
+	    sys_dirs="$DICDIR/zh_CN/sys $DICDIR/zh_TW/sys"
+	    wnntouch=/usr/local/bin/cwnntouch
+	    wnnserver=/usr/local/bin/cserver;;
+    korean)
+	    name=ko
+	    base="$DICDIR/ko_KR"
+	    sys_dirs="$DICDIR/ko_KR/sys"
+	    wnntouch=/usr/local/bin/kwnntouch
+	    wnnserver=/usr/local/bin/kserver;;
+    esac
+# no base package present yet, bail out
+    [ -e $wnntouch ] || continue
 
-
-echo ""
-if id -u wnn >/dev/null 2>/dev/null
-then
-    echo "So, user wnn already exists !"
-else
-    echo "You need a user named wnn"
-    if yesno "Would you like to create it automatically now"; then
-	create_wnn
+    if id -u wnn >/dev/null 2>/dev/null
+    then
+	echo "So, user wnn already exists !"
     else
-	echo "You still need to run /usr/local/lib/wnn/install-script"
-	echo "to finish Wnn installation later"
-	exit 0
+	echo "You need a user named wnn"
+	if yesno "Would you like to create it automatically now"; then
+	    create_wnn
+	else
+	    echo "You still need to run /usr/local/lib/wnn/install-script"
+	    echo "to finish Wnn installation later"
+	    exit 0
+	fi
     fi
-fi
 
-case "$1" in
-japanese)
-	testdir="/var/dict/ja_JP"
-	sys_dirs="/var/dict/ja_JP/pubdic var/dict/ja_JP/wnncons"
-	usr_dirs=/var/dict/ja_JP/usr
-	wnntouch=/usr/local/bin/wnntouch
-	wnnserver=/usr/local/bin/jserver;;
-chinese)
-	testdir="/var/dict/zh_CN"
-	sys_dirs="/var/dict/zh_CN/sys var/dict/zh_TW/sys"
-	usr_dirs="/var/dict/zh_CN/usr /var/dict/zh_TW/usr"
-	wnntouch=/usr/local/bin/cwnntouch
-	wnnserver=/usr/local/bin/cserver;;
-korean)
-	testdir="/var/dict/ko_KR"
-	sys_dirs="/var/dict/ko_KR/sys"
-	usr_dirs=/var/dict/ko_KR/usr
-	wnntouch=/usr/local/bin/kwnntouch
-	wnnserver=/usr/local/bin/kserver;;
-esac
+    chown wnn $wnnserver
+    chmod u+s $wnnserver
 
-# installation not yet complete, bail out
-[ -e $wnntouch ] || exit 0
+    # base directory not yet present, bail out
 
-chown wnn $wnnserver
-chmod u+s $wnnserver
+    for dir in $base; do
+    	if [ -d $dir ]; then
+	    if [ `ls -ld $dir |awk '{print $3}'` == wnn ]; then
+	    # already installed
+		continue 2
+	    else
+		chown -R wnn $dir
+	    fi
+	else
+	    echo "For a complete server, you need $name-Wnn-dict-4.2 as well"
+	    continue 2
+	fi
+    done
 
-# base directory not yet present, bail out
+    for dir in $sys_dirs; do
+      $wnntouch $dir/*
+    done
 
-[ -d $testdir ] || exit 0
-
-for dir in $sys_dirs; do
-  $wnntouch $dir/*
+    for dir in $base; do
+      if [ ! -d $dir/usr ]; then
+	mkdir -p $dir/usr
+      fi
+      chown wnn $dir/usr
+      chmod u+w $dir/usr
+    done
 done
-
-for dir in $usr_dirs; do
-  if [ ! -d $dir ]; then
-    mkdir -p $dir
-  fi
-  chown wnn $dir
-done
-chmod -R u+w $dir

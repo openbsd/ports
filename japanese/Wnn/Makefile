@@ -1,30 +1,34 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.24 2000/04/21 02:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2000/04/21 15:09:51 espie Exp $
 
 DISTNAME=	Wnn4.2
+
 MULTI_PACKAGES=-dict -zh -zhdict -ko -kodict
 NEED_VERSION=	1.270
 SUBPACKAGE?=
 
+WNNDICDIR=/var/dict/Wnn
+WNNBASE=${PREFIX}
+
 .if ${SUBPACKAGE} == "-dict"
 CATEGORIES=	japanese
-PREFIX=/var/dict
+PREFIX=${WNNDICDIR}
 PKGNAME=	ja-Wnn-dict-4.2
 .elif ${SUBPACKAGE} == "-zh"
 CATEGORIES=	chinese
 PKGNAME=	zh-Wnn-4.2
 .elif ${SUBPACKAGE} == "-zhdict"
 CATEGORIES=	chinese
-PREFIX=/var/dict
+PREFIX=${WNNDICDIR}
 PKGNAME=	zh-Wnn-dict-4.2
 .elif ${SUBPACKAGE} == "-ko"
 CATEGORIES=	korean
 PKGNAME=	ko-Wnn-4.2
 .elif ${SUBPACKAGE} == "-kodict"
 CATEGORIES=	korean
-PREFIX=/var/dict
+PREFIX=${WNNDICDIR}
 PKGNAME=	ko-Wnn-dict-4.2
 .else
 CATEGORIES=	japanese
@@ -65,14 +69,25 @@ do-distpatch:
 	cd ${WRKDIR} && tar zxf ${FULLDISTDIR}/Wnn4.2.patch.tar.gz
 	cd ${WRKSRC} && patch ${PATCH_DIST_ARGS} < ${WRKDIR}/Wnn4.2.patch
 
-# do those as post-patch, because of the $Id: Makefile,v 1.24 2000/04/21 02:10:53 espie Exp $
+SRCDOCDIRS=Wnn/man Wnn/manual Wnn/manual.en cWnn/man cWnn/manual cWnn/manual.en
+
+# do those as post-patch, because of the $Id
 post-patch:
 	@cd ${WRKDIST}; \
 	for file in Wnn/jd/jserverrc cWnn/cd/cserverrc kWnn/kd/kserverrc; do\
-	perl -pi.bak -e 's,\@LIBDIR/\@LANG/dic,/var/dict/\@LANG,' $$file; done
+	perl -pi.bak -e 's,\@LIBDIR/\@LANG/dic,${WNNDICDIR}/\@LANG,;' $$file; done
+# Commands are installed directly under /usr/local/bin and dictionaries in /var/dict
+	@{ for dir in ${SRCDOCDIRS}; do \
+	find ${WRKSRC}/$$dir -type f; done; } \
+		| xargs perl -pi.bok -e \
+		's,/usr/local/bin/Wnn4/,${PREFIX}/bin/,g; s,/usr/local/lib/wnn/dic,${WNNDICDIR},g;'
+	@{ for dir in ${SRCDOCDIRS}; do \
+	find ${WRKSRC}/$$dir -type f -name \*.bok; done; } | xargs rm
 
 do-configure:
-	@echo "#define BuildWnn		YES" >${CONFIG_FILE}
+	@echo "   WNNDICDIR = ${WNNDICDIR}"   >${CONFIG_FILE}
+	@echo "  WNNBASEDIR = ${PREFIX}"     >>${CONFIG_FILE}
+	@echo "#define BuildWnn		YES" >>${CONFIG_FILE}
 .if ${MULTI_PACKAGES:M-zh}
 	@echo "#define BuildCWnn	YES" >>${CONFIG_FILE}
 .else

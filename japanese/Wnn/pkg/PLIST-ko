@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ko,v 1.2 2000/04/21 02:01:52 espie Exp $
+@comment $OpenBSD: PLIST-ko,v 1.3 2000/04/21 15:09:52 espie Exp $
 bin/katod
 bin/katof
 bin/kdtoa
@@ -109,7 +109,7 @@ share/doc/zh-cWnn/manual/contents
 share/doc/zh-cWnn/manual/glossary
 share/doc/zh-cWnn/manual/index
 share/doc/zh-cWnn/manual/preface
-@exec /usr/local/lib/wnn/install-script korean
+@exec /usr/local/lib/wnn/install-script
 @dirrm share/doc/zh-cWnn/manual.en
 @dirrm share/doc/zh-cWnn/manual
 @dirrm share/doc/zh-cWnn

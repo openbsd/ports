@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-kodict,v 1.2 2000/04/21 02:01:52 espie Exp $
+@comment $OpenBSD: PLIST-kodict,v 1.3 2000/04/21 15:09:52 espie Exp $
 @comment no checksum
 ko_KR/sys/full.fzk
 @comment no checksum
@@ -6,6 +6,5 @@ ko_KR/sys/hword.dic
 @comment no checksum
 ko_KR/sys/single.dic
 @dirrm ko_KR/sys
-@dirrm ko_KR
-@exec /usr/local/lib/wnn/install-script korean
-@unexec echo "Finish removing %D/ko_KR manually"
+@exec /usr/local/lib/wnn/install-script
+@unexec echo "usr info may exist: finish removing %D/ko_KR manually"
