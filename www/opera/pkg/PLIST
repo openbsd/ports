@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.12 2003/11/14 09:40:11 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2003/11/22 13:31:05 sturm Exp $
 bin/opera
 lib/opera/plugins/libnpp.so
 lib/opera/plugins/operamotifwrapper
+lib/opera/plugins/operamotifwrapper-3
 lib/opera/plugins/operaplugincleaner
 libexec/m2.so
 libexec/missingsyms.so
