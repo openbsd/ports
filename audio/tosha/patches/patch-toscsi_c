@@ -1,7 +1,15 @@
-$OpenBSD: patch-toscsi_c,v 1.1 2001/03/14 15:04:12 naddy Exp $
---- toscsi.c.orig	Sat Jan  2 00:57:46 1999
-+++ toscsi.c	Wed Mar 14 15:23:38 2001
-@@ -182,6 +182,16 @@ toscsi_readsectors (toscsi_handle *hdl, 
+$OpenBSD: patch-toscsi_c,v 1.2 2003/08/31 23:56:03 naddy Exp $
+--- toscsi.c.orig	1999-01-02 00:57:46.000000000 +0100
++++ toscsi.c	2003-09-01 01:52:35.000000000 +0200
+@@ -40,6 +40,7 @@ static const char cvsid[]
+ 
+ #include "utils.h"
+ #include "global.h"
++#include "libscsi.h"
+ #include "toscsi.h"
+ 
+ ulong readsectors = 0;	/* total number of sectors we've already read */
+@@ -182,6 +183,16 @@ toscsi_readsectors (toscsi_handle *hdl, 
  				(char *) buf, SCCMD_READ,
  				"v 0 0 v:i3 0 0 0 v 0 0",
  				readcmd, sec, secread);
