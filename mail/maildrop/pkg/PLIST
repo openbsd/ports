@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/10/09 22:29:05 avsm Exp $
+@mode 0555
+bin/dotlock
+bin/maildirmake
+bin/maildrop
+bin/makemime
+bin/reformail
+bin/reformime
+@mode
+man/man1/dotlock.1
+man/man1/maildrop.1
+man/man1/makemime.1
+man/man1/reformail.1
+man/man1/reformime.1
+man/man5/maildropex.5
+man/man5/maildropfilter.5
+man/man5/maildropgdbm.5
+man/man8/maildirquota.8
+share/doc/maildrop/INSTALL
+share/doc/maildrop/README
+share/doc/maildrop/README.postfix
+share/doc/maildrop/UPGRADE
+share/doc/maildrop/html/dotlock.html
+share/doc/maildrop/html/maildirmake.html
+share/doc/maildrop/html/maildrop.html
+share/doc/maildrop/html/maildropex.html
+share/doc/maildrop/html/maildropfilter.html
+share/doc/maildrop/html/maildropgdbm.html
+share/doc/maildrop/html/makemime.html
+share/doc/maildrop/html/reformail.html
+share/doc/maildrop/html/reformime.html
+share/doc/maildrop/html/rfc2045.html
+share/doc/maildrop/html/rfc822.html
+@dirrm share/doc/maildrop/html
+@dirrm share/doc/maildrop
