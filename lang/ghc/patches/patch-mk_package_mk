@@ -1,4 +1,4 @@
-substitute in the path to localbase in the runtime package file,
+Substitute in the path to localbase in the runtime package file,
 so it can find libgmp.
 
 --- mk/package.mk.orig	Wed Aug  6 13:40:45 2003

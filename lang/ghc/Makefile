@@ -1,26 +1,32 @@
-# $OpenBSD: Makefile,v 1.10 2003/08/21 19:51:23 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2003/09/01 20:32:14 espie Exp $
 # Based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
+# And on NetBSD's 5.04.3 .hc boot script
 #
 # The build process:
-#       1) build a bootstrap ghc4 from C source
-#       2) use this to do an in-tree ghc6 bootstrap and build
+#       1) build a full ghc6 from pre-generated 6.0.1 C files
 
 ONLY_FOR_ARCHS= i386
-# sparc : needs to handle the asm format in ghc/driver/mangler/*.lprl
+# The general solution for other architectures [alpha, powerpc,
+# sparc64, hppa, mips, m68k at least] will be to boot via
+# unregisterised .hc files generated on openbsd-*-i386. See:
 #
-# alpha and powerpc have the problem that we don't have .hc src
-# to bootstrap from. We would need an "unregisterised" build...
-# More work. m68k needs to have its asm format set in the
-# mangler, before we can do any kind of build at all. 
+#  http://haskell.org/ghc/docs/latest/html/building/sec-porting-ghc.html
+#  http://cvs.haskell.org/cgi-bin/cvsweb.cgi/fptools/distrib/cross-port
+#
+# The best bets are powerpc, sparc, sparc64 and alpha, which are
+# working, or have recently worked, on linux. m68k needs to have
+# its asm format set in the mangler, before we can do any kind of
+# build. sparc is in a slightly better position, as we have
+# 4.08.2 .hc source, but the C-built ghc4 goes into an infinite
+# loop, when I last tried -- dons
 
 COMMENT=	"compiler for the functional language Haskell"
 COMMENT-doc=	"documentation for the functional language Haskell"
 
-FULLVER=	6.0.1
-BOOTVER=	4.08.2
+V=		6.0.1
 
-DISTNAME=	ghc-${FULLVER}
+DISTNAME=	ghc-${V}
 CATEGORIES=	lang
 HOMEPAGE=	http://www.haskell.org/ghc/
 MAINTAINER=	Don Stewart <dons@cse.unsw.edu.au>
@@ -29,63 +35,56 @@ LIB_DEPENDS=	gmp::devel/gmp
 
 MULTI_PACKAGES=	-doc
 SUBPACKAGE?=
-FULLPKGNAME-doc=ghc-doc-${FULLVER}
+FULLPKGNAME-doc=ghc-doc-${V}
 
-HASKELL=	http://www.haskell.org/
-MASTER_SITES=	${HASKELL}ghc/dist/${FULLVER}/
-MASTER_SITES0=	${HASKELL}ghc/dist/${BOOTVER}/
-MASTER_SITES1=	${HASKELL}ghc/docs/${FULLVER}/
-MASTER_SITES2=	ftp://ftp.cse.unsw.edu.au/pub/users/dons/ghc/${FULLVER}/
+HASKELL=	http://www.haskell.org
+MASTER_SITES=	${HASKELL}/ghc/dist/${V}/
+MASTER_SITES0=	${HASKELL}/ghc/docs/${V}/
+MASTER_SITES1=	${HASKELL}/definition/
+MASTER_SITES2=	ftp://ftp.cse.unsw.edu.au/pub/users/dons/ghc/${V}/
 
-DIST_SUBDIR=	ghc-${FULLVER}
+DIST_SUBDIR=	ghc-${V}
 DOC_FILES=	users_guide hslibs building libraries
+DOC_FILES1=	haskell98-report
 DOC_DIR=	${PREFIX}/share/doc/ghc
 
-DISTFILES=	ghc-${FULLVER}-src.tar.bz2  ghc-${BOOTVER}-src.tar.bz2:0 \
-		${DOC_FILES:C/(.+)/\1.html.tar.gz:1/g} \
-		ghc-regress-${FULLVER}.tar.bz2:2
+DISTFILES=	ghc-${V}-src.tar.bz2 \
+		${DOC_FILES:C/(.+)/\1.html.tar.gz:0/g} \
+		${DOC_FILES1:C/(.+)/\1-html.tar.gz:1/g} \
+		ghc-regress-${V}.tar.bz2:2 \
+		ghc-${V}-${ARCH}-hc.tar.gz:2
 
-.if ${MACHINE_ARCH} == "i386"
-A=x86
-.elif ${MACHINE_ARCH} == "sparc"
-A=sparc
-.else
-A=unreg
-.endif
-DISTFILES+=	ghc-${BOOTVER}-${A}-hc.tar.bz2:0
-SUPDISTFILES=	ghc-${BOOTVER}-x86-hc.tar.bz2:0 ghc-${BOOTVER}-sparc-hc.tar.bz2:0
-
-REGRESS_DEPENDS=::lang/python/2.2
-REGRESS_RESULT=	${WRKSRC}/actual.result
-REGRESS_FLAGS=	TEST_HC="${WRKSRC}/ghc/compiler/stage2/ghc-inplace"
-REGRESS_FLAGS+=	EXTRA_RUNTEST_OPTS="--output-summary=${REGRESS_RESULT}"
-
-# where the first compilers will be built
-STAGE0=		${WRKDIR}/ghc-${BOOTVER}
+# only i386 hc src exists at the moment
+SUPDISTFILES=	ghc-${V}-${ARCH}-hc.tar.gz:2
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu dest
-CONFIGURE_ARGS=	--with-ghc=${STAGE0}/ghc/driver/ghc-inplace
+CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}"
 
-# XXX fiddle with this if the 4.08 compiler burps for you
-MAKE_FLAGS=	TWEAKED_SIZE=80M
+# distrib/hc-build is a wrapper around configure and the
+# bootstrap make, with magic flags, vars and control flow
+do-configure:
+	: nothing here
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LOCALBASE="${LOCALBASE}"
-
-# Build the GHC-4 bootstrap compiler from C source
-pre-configure:
-	@(cd ${STAGE0} ;\
-	  ${CONFIGURE_ENV} distrib/hc-build --prefix=${STAGE0})
+do-build:
+	@(cd ${WRKSRC} ;\
+	 ${CONFIGURE_ENV} distrib/hc-build ${CONFIGURE_ARGS})
 
 # note: ghci not in PLIST since it doesnt work yet
 
+FAKE_FLAGS+="stage=1"
+
 post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}
-.for i in ${DOC_FILES:C/(.+)/\1.html.tar.gz/g}
+.for i in ${DOC_FILES:C/(.+)/\1.html.tar.gz/g} \
+	  ${DOC_FILES1:C/(.+)/\1-html.tar.gz/g}
 	@tar zxf ${FULLDISTDIR}/${i} -C ${DOC_DIR}
 .endfor
+
+REGRESS_DEPENDS=::lang/python/2.2
+REGRESS_RESULT=	${WRKSRC}/actual.result
+REGRESS_FLAGS=	TEST_HC="${WRKSRC}/ghc/compiler/stage1/ghc-inplace"
+REGRESS_FLAGS+=	EXTRA_RUNTEST_OPTS="--output-summary=${REGRESS_RESULT}"
 
 # BSD w/o advertising clause
 PERMIT_PACKAGE_CDROM=   Yes

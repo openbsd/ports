@@ -1,0 +1,45 @@
+SplitObjs just slows things down, and can overrun ulimits
+Help ghc find libgmp.a
+And that old regex doesn't work/is a gnu grep thing?
+And touch some files to avoid recompiling ghc/compiler on install
+
+--- distrib/hc-build.orig	Fri Jul 25 20:23:30 2003
++++ distrib/hc-build	Sun Aug 24 11:36:45 2003
+@@ -37,10 +37,15 @@
+ *)
+ cat >mk/build.mk <<END
+ # empty
++SplitObjs=NO
++SRC_HC_OPTS+=-L\$(LOCALBASE)/lib
++SRC_CC_OPTS+=-L\$(LOCALBASE)/lib
+ END
+ ;;
+ esac
+ 
++export CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
++
+ echo "*** Building compiler..."
+ ./configure --enable-hc-boot $configopts
+ 
+@@ -75,12 +80,11 @@
+ # The reconfigure step updates a few files, which can lead to
+ # unnecessary recompilations.  Touch a bunch of things here to avoid
+ # having to recompile stuff that we've already built.
+-(cd ghc/compiler; touch $PRIMOP_BITS parser/hschooks.o prelude/PrimOp.o main/Config.hs main/Config.o ghc-*)
+ 
+ # Remove the old libraries.  Don't use make clean, because we don't
+ # want to delete the .hs files generated from the .hsc files, because
+ # we don't have hsc2hs built yet.
+-find libraries hslibs | grep '\.\(o\|a\)$' | xargs rm -f
++find libraries hslibs | grep '\.[oa]$' | xargs rm -f
+ 
+ # Do includes and RTS now
+ $MAKE -C ghc/includes boot && $MAKE -C ghc/includes all
+@@ -96,6 +100,6 @@
+ $MAKE -C hslibs  boot all
+ 
+ # Avoid relinking the compiler during 'make install':
+-(cd ghc/compiler; touch parser/hschooks.o ghc-*)
++(cd ghc/compiler/; touch $PRIMOP_BITS main/Config.hs stage1/parser/hschooks.o stage1/prelude/PrimOp.o stage1/main/Config.o stage1/ghc-* ghc-inplace)
+ 
+ # At this point, the tree should be safe to do 'make install' in.

@@ -1,4 +1,4 @@
-$OpenBSD: patch-ghc_rts_Adjustor_c,v 1.2 2003/08/01 14:03:40 avsm Exp $
+$OpenBSD: patch-ghc_rts_Adjustor_c,v 1.3 2003/09/01 20:32:14 espie Exp $
 Ok. This is the magical "adjustor thunk". The entry point into
 Haskell land from C land. Problem is that it (1) uses dynamically
 generated code stored on the heap, as well as (2) a nasty little hack
@@ -8,7 +8,8 @@ Solved (1) by using a StablePtr, avoiding malloc memory
 altogether for the adjustor thunk itself.
 
 Solved (2) by writing an assembly function to do the code they
-were too lazy to put into a .s file in the first place.
+were too lazy to put into a .s file in the first place. See
+obscure_ccall.s
 
 --- ghc/rts/Adjustor.c.orig	Wed Mar 26 04:58:47 2003
 +++ ghc/rts/Adjustor.c	Thu Jul 10 21:25:30 2003

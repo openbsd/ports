@@ -1,0 +1,14 @@
+The STUBOBJS don't compile when we're booting from .hc source
+
+--- libraries/readline/Makefile.orig	Sat May 17 10:53:52 2003
++++ libraries/readline/Makefile	Sat Aug 23 23:46:45 2003
+@@ -27,7 +27,9 @@
+     SRC_CC_OPTS += -I$(ReadlineIncludePath)
+     SRC_HSC2HS_OPTS += -I$(ReadlineIncludePath)
+   endif
++ifneq "$(BootingFromHc)" "YES"
+   STUBOBJS += System/Console/Readline_stub.$(way_)o
++endif
+   CLEAN_FILES += System/Console/Readline_stub.[ch] $(STUBOBJS)
+ else
+   EXCLUDED_SRCS += System/Console/Readline.hsc System/Console/Readline_stub.c

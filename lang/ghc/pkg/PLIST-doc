@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-doc,v 1.3 2003/08/03 18:07:27 avsm Exp $
+@comment $OpenBSD: PLIST-doc,v 1.4 2003/09/01 20:32:14 espie Exp $
 share/doc/ghc/base/Control.Arrow.html
 share/doc/ghc/base/Control.Concurrent.Chan.html
 share/doc/ghc/base/Control.Concurrent.MVar.html
@@ -365,6 +365,42 @@ share/doc/ghc/haskell98/haddock.css
 share/doc/ghc/haskell98/haskell98.haddock
 share/doc/ghc/haskell98/haskell_icon.gif
 share/doc/ghc/haskell98/index.html
+share/doc/ghc/haskell98-report-html/array.html
+share/doc/ghc/haskell98-report-html/basic.html
+share/doc/ghc/haskell98-report-html/char.html
+share/doc/ghc/haskell98-report-html/classes.gif
+share/doc/ghc/haskell98-report-html/complex.html
+share/doc/ghc/haskell98-report-html/cputime.html
+share/doc/ghc/haskell98-report-html/decls.html
+share/doc/ghc/haskell98-report-html/derived.html
+share/doc/ghc/haskell98-report-html/directory.html
+share/doc/ghc/haskell98-report-html/exps.html
+share/doc/ghc/haskell98-report-html/h98.gif
+share/doc/ghc/haskell98-report-html/haskell.html
+share/doc/ghc/haskell98-report-html/index.html
+share/doc/ghc/haskell98-report-html/index98.html
+share/doc/ghc/haskell98-report-html/intro.html
+share/doc/ghc/haskell98-report-html/io-13.html
+share/doc/ghc/haskell98-report-html/io.html
+share/doc/ghc/haskell98-report-html/ix.html
+share/doc/ghc/haskell98-report-html/lambda.gif
+share/doc/ghc/haskell98-report-html/lexemes.html
+share/doc/ghc/haskell98-report-html/list.html
+share/doc/ghc/haskell98-report-html/literate.html
+share/doc/ghc/haskell98-report-html/locale.html
+share/doc/ghc/haskell98-report-html/maybe.html
+share/doc/ghc/haskell98-report-html/modules.html
+share/doc/ghc/haskell98-report-html/monad.html
+share/doc/ghc/haskell98-report-html/numeric.html
+share/doc/ghc/haskell98-report-html/pragmas.html
+share/doc/ghc/haskell98-report-html/preface-jfp.html
+share/doc/ghc/haskell98-report-html/prelude-index.html
+share/doc/ghc/haskell98-report-html/random.html
+share/doc/ghc/haskell98-report-html/ratio.html
+share/doc/ghc/haskell98-report-html/standard-prelude.html
+share/doc/ghc/haskell98-report-html/syntax-iso.html
+share/doc/ghc/haskell98-report-html/system.html
+share/doc/ghc/haskell98-report-html/time.html
 share/doc/ghc/hslibs/book-hslibs.html
 share/doc/ghc/hslibs/device-specific-functions.html
 share/doc/ghc/hslibs/docbook.css
@@ -661,6 +697,7 @@ share/doc/ghc/users_guide/x978.html
 @dirrm share/doc/ghc/hslibs/stylesheet-images
 @dirrm share/doc/ghc/hslibs
 @dirrm share/doc/ghc/haskell98
+@dirrm share/doc/ghc/haskell98-report-html
 @dirrm share/doc/ghc/haskell-src
 @dirrm share/doc/ghc/building/stylesheet-images
 @dirrm share/doc/ghc/building
