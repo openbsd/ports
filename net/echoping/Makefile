@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/11/10 19:48:27 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2004/06/19 21:31:06 jakob Exp $
 
 COMMENT=	"test performance of a remote TCP service"
 
-VERSION=	5.0.1
+VERSION=	5.2.0
 DISTNAME=	echoping-${VERSION}
 CATEGORIES=	net
 
@@ -25,6 +25,7 @@ CONFIGURE_ARGS+=	--enable-http \
 			--enable-icp \
 			--enable-smtp \
 			--enable-tos \
+			--without-libidn \
 			--with-ssl=/usr
 
 
