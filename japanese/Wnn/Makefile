@@ -5,7 +5,7 @@
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.4 1999/10/30 21:24:53 turan Exp $
+# $OpenBSD: Makefile,v 1.5 1999/11/03 01:06:42 turan Exp $
 
 NEED_VERSION=	1.116
 DISTNAME=	Wnn4.2
@@ -22,6 +22,8 @@ PATCHDIR=	${.CURDIR}/../../japanese/Wnn/patches
 FILESDIR=	${.CURDIR}/../../japanese/Wnn/files
 PKGDIR=		${.CURDIR}/../../japanese/Wnn/pkg
 WRKSRC=		${WRKDIR}/Xsi
+
+NO_PACKAGE=	interactive port
 
 .if (${PKGNAME} == ja-Wnn-4.2)
 PORT_DOCDIR=	${PREFIX}/share/doc/ja-Wnn
