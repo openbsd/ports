@@ -1,7 +1,7 @@
-$OpenBSD: patch-protocols_msn_passport_c,v 1.2 2004/07/01 16:11:59 naddy Exp $
---- protocols/msn/passport.c.orig	Thu Apr 29 22:30:18 2004
-+++ protocols/msn/passport.c	Sun Jun 27 16:50:35 2004
-@@ -67,23 +67,30 @@ int passport_get_id( gpointer data, char
+$OpenBSD: patch-protocols_msn_passport_c,v 1.3 2004/10/21 14:48:51 naddy Exp $
+--- protocols/msn/passport.c.orig	Wed Jul  7 23:38:16 2004
++++ protocols/msn/passport.c	Thu Oct 14 15:43:34 2004
+@@ -59,23 +59,30 @@ int passport_get_id( gpointer data, char
  
  static char *passport_create_header( char *reply, char *email, char *pwd )
  {
@@ -40,7 +40,7 @@ $OpenBSD: patch-protocols_msn_passport_c,v 1.2 2004/07/01 16:11:59 naddy Exp $
  	            "Authorization: Passport1.4 OrgVerb=GET,"
  	            "OrgURL=http%%3A%%2F%%2Fmessenger%%2Emsn%%2Ecom,"
  	            "sign-in=%s,pwd=%s,%s", email_enc, pwd_enc,
-@@ -191,7 +198,7 @@ static int passport_get_id_from( gpointe
+@@ -179,7 +186,7 @@ static int passport_get_id_from( gpointe
  	rep->func = func;
  	rep->redirects = 4;
  	
@@ -49,7 +49,7 @@ $OpenBSD: patch-protocols_msn_passport_c,v 1.2 2004/07/01 16:11:59 naddy Exp $
  	dummy = strchr( server, '/' );
  	if( dummy )
  		*dummy = 0;
-@@ -232,14 +239,14 @@ static void passport_get_id_connected( g
+@@ -220,14 +227,14 @@ static void passport_get_id_connected( g
  		return;
  	}
  	
@@ -67,7 +67,7 @@ $OpenBSD: patch-protocols_msn_passport_c,v 1.2 2004/07/01 16:11:59 naddy Exp $
  	            "%s\r\n\r\n", dummy, rep->header );
  	
  	ssl_write( ssl, buffer, strlen( buffer ) );
-@@ -280,7 +287,7 @@ static void passport_get_id_connected( g
+@@ -265,7 +272,7 @@ static void passport_get_id_connected( g
  		g_free( rep->url );
  		rep->url = g_strdup( dummy );
  		

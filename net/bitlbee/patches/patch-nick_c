@@ -1,10 +1,10 @@
-$OpenBSD: patch-nick_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
---- nick.c.orig	2004-05-12 17:58:27.000000000 +1000
-+++ nick.c	2004-06-09 22:04:54.000000000 +1000
+$OpenBSD: patch-nick_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
+--- nick.c.orig	Sun Jul 18 21:13:15 2004
++++ nick.c	Fri Oct 15 14:31:10 2004
 @@ -66,7 +66,7 @@ char *nick_get( irc_t *irc, char *handle
  	
  	while( n && !*nick )
- 		if( ( n->proto == proto ) && ( g_ascii_strcasecmp( n->handle, handle ) == 0 ) )
+ 		if( ( n->proto == proto ) && ( g_strcasecmp( n->handle, handle ) == 0 ) )
 -			strcpy( nick, n->nick );
 +			strlcpy( nick, n->nick, sizeof(nick) );
  		else
@@ -27,8 +27,8 @@ $OpenBSD: patch-nick_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
 +			g_snprintf( nick, sizeof(nick), "%s", realname );
  		
  		nick_strip( nick );
- 		nick_lc( nick );
-@@ -114,7 +114,7 @@ char *nick_get( irc_t *irc, char *handle
+ 		if (set_getint(irc, "lcnicks")) 
+@@ -120,7 +120,7 @@ char *nick_get( irc_t *irc, char *handle
  			                  "Good luck, and please don't forget to paste the lines up here "
  			                  "in #bitlbee on OFTC or in a mail to wilmer@gaast.net" );
  			
@@ -37,7 +37,7 @@ $OpenBSD: patch-nick_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  			
  			break;
  		}
-@@ -238,8 +238,8 @@ int nick_cmp( char *a, char *b )
+@@ -244,8 +244,8 @@ int nick_cmp( char *a, char *b )
  {
  	char aa[1024] = "", bb[1024] = "";
  	
@@ -48,7 +48,7 @@ $OpenBSD: patch-nick_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  	if( nick_lc( aa ) && nick_lc( bb ) )
  	{
  		return( strcmp( aa, bb ) );
-@@ -253,10 +253,11 @@ int nick_cmp( char *a, char *b )
+@@ -259,10 +259,11 @@ int nick_cmp( char *a, char *b )
  char *nick_dup( char *nick )
  {
  	char *cp;

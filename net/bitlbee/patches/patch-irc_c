@@ -1,6 +1,6 @@
-$OpenBSD: patch-irc_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
---- irc.c.orig	2004-05-15 23:15:12.000000000 +1000
-+++ irc.c	2004-06-09 22:09:00.000000000 +1000
+$OpenBSD: patch-irc_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
+--- irc.c.orig	Sat Sep 25 04:48:04 2004
++++ irc.c	Thu Oct 14 15:43:33 2004
 @@ -44,7 +44,7 @@ irc_t *irc_new( int fd )
  	
  	irc->userhash = g_hash_table_new( g_str_hash, g_str_equal );
@@ -10,7 +10,7 @@ $OpenBSD: patch-irc_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  	irc->mynick = g_strdup( ROOT_NICK );
  	irc->channel = g_strdup( ROOT_CHAN );
  	
-@@ -299,7 +299,7 @@ int irc_fill_buffer( irc_t *irc ) 
+@@ -282,7 +282,7 @@ int irc_fill_buffer( irc_t *irc ) 
  	
  	while( select( irc->fd + 1, readfds, NULL, NULL, tv ) > 0 )
  	{
@@ -19,7 +19,7 @@ $OpenBSD: patch-irc_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  		if( st <= 0 )
  			return( 0 );
  		line[st]='\0';
-@@ -307,8 +307,9 @@ int irc_fill_buffer( irc_t *irc ) 
+@@ -290,8 +290,9 @@ int irc_fill_buffer( irc_t *irc ) 
  			irc->readbuffer = g_strdup( line );
  		else 
  		{
@@ -31,7 +31,7 @@ $OpenBSD: patch-irc_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  		}
  	}
  	return 1;
-@@ -370,8 +371,9 @@ int irc_write_buffer( irc_t *irc ) 
+@@ -353,8 +354,9 @@ int irc_write_buffer( irc_t *irc ) 
  		}
  		else
  		{
@@ -43,7 +43,7 @@ $OpenBSD: patch-irc_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  			g_free( irc->sendbuffer );
  			irc->sendbuffer = temp;
  		}
-@@ -735,8 +737,8 @@ int irc_exec( irc_t *irc, char **cmd )
+@@ -718,8 +720,8 @@ int irc_exec( irc_t *irc, char **cmd )
  				 * cares?
  				 */
  				
@@ -54,7 +54,7 @@ $OpenBSD: patch-irc_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  			}
  		}
  		
-@@ -845,7 +847,7 @@ void irc_reply( irc_t *irc, int code, ch
+@@ -828,7 +830,7 @@ void irc_reply( irc_t *irc, int code, ch
  	va_list params;
  	
  	va_start( params, format );
@@ -63,7 +63,7 @@ $OpenBSD: patch-irc_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  	va_end( params );
  	irc_write( irc, ":%s %03d %s %s", irc->myhost, code, irc->nick?irc->nick:"*", text );
  	
-@@ -888,9 +890,10 @@ void irc_vawrite( irc_t *irc, char *form
+@@ -871,9 +873,10 @@ void irc_vawrite( irc_t *irc, char *form
  	if( irc->quit )
  		return;
  
@@ -76,7 +76,7 @@ $OpenBSD: patch-irc_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  
  	if( irc->sendbuffer != NULL ) {
  		size=strlen( irc->sendbuffer ) + strlen( line );
-@@ -910,7 +913,7 @@ void irc_vawrite( irc_t *irc, char *form
+@@ -893,7 +896,7 @@ void irc_vawrite( irc_t *irc, char *form
  		}
  #endif
  		irc->sendbuffer=bitlbee_realloc( irc->sendbuffer, size + 1 );
@@ -85,7 +85,7 @@ $OpenBSD: patch-irc_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  	}
  	else 
  		irc->sendbuffer = g_strdup(line);	
-@@ -1080,15 +1083,19 @@ void irc_motd( irc_t *irc )
+@@ -1063,15 +1066,19 @@ void irc_motd( irc_t *irc )
  		irc_reply( irc, 375, ":- %s Message Of The Day - ", irc->myhost );
  		while( read( fd, linebuf + len, 1 ) == 1 )
  		{
@@ -108,7 +108,7 @@ $OpenBSD: patch-irc_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  				if( linebuf[len] == 'h' )
  					add = irc->myhost;
  				else if( linebuf[len] == 'v' )
-@@ -1097,14 +1104,30 @@ void irc_motd( irc_t *irc )
+@@ -1080,14 +1087,30 @@ void irc_motd( irc_t *irc )
  					add = irc->nick;
  				else
  					add = "%";
@@ -142,7 +142,7 @@ $OpenBSD: patch-irc_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  		}
  		irc_reply( irc, 376, ":End of MOTD" );
  		closesocket( fd );
-@@ -1367,8 +1390,8 @@ int buddy_send_handler( irc_t *irc, user
+@@ -1361,8 +1384,8 @@ int buddy_send_handler( irc_t *irc, user
  			u->sendbuf = bitlbee_realloc( u->sendbuf, u->sendbuf_len );
  		}
  		
@@ -153,7 +153,7 @@ $OpenBSD: patch-irc_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  		
  		if( u->sendbuf_timer > 0 )
  			g_source_remove( u->sendbuf_timer );
-@@ -1432,7 +1455,7 @@ int irc_msgfrom( irc_t *irc, char *nick,
+@@ -1426,7 +1449,7 @@ int irc_msgfrom( irc_t *irc, char *nick,
  	
  	if( !u->is_private && nick_cmp( u->nick, irc->mynick ) != 0 )
  	{

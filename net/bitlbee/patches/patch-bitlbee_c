@@ -1,22 +1,16 @@
-$OpenBSD: patch-bitlbee_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
---- bitlbee.c.orig	2004-05-28 08:31:48.000000000 +1000
-+++ bitlbee.c	2004-06-09 22:14:42.000000000 +1000
-@@ -314,12 +314,13 @@ int bitlbee_load( irc_t *irc, char* pass
+$OpenBSD: patch-bitlbee_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
+--- bitlbee.c.orig	Wed Jul 21 09:36:07 2004
++++ bitlbee.c	Fri Oct 15 14:43:15 2004
+@@ -306,7 +306,7 @@ int bitlbee_load( irc_t *irc, char* pass
  	if( irc->status == USTATUS_IDENTIFIED )
  		return( 1 );
  	
--	g_snprintf( s, 511, "%s%s", irc->nick, ".accounts" );
-+	g_snprintf( s, sizeof(s), "%s%s", irc->nick, ".accounts" );
-   	path = g_build_path( G_DIR_SEPARATOR_S, global.conf->configdir, s, NULL );
-    	fp = fopen( path, "r" );
-    	g_free( path );
+-	g_snprintf( s, 511, "%s%s%s", global.conf->configdir, irc->nick, ".accounts" );
++	g_snprintf( s, sizeof(s), "%s%s%s", global.conf->configdir, irc->nick, ".accounts" );
+    	fp = fopen( s, "r" );
     	if( !fp ) return( 0 );
  	
-+	COMPILE_TIME_ASSERT(32 < sizeof(s));
- 	fscanf( fp, "%32[^\n]s", s );
- 	if( setpass( irc, password, s ) < 0 )
- 		return( -1 );
-@@ -328,6 +329,7 @@ int bitlbee_load( irc_t *irc, char* pass
+@@ -318,6 +318,7 @@ int bitlbee_load( irc_t *irc, char* pass
  	   account command will not work otherwise. */
  	irc->status = USTATUS_IDENTIFIED;
  	
@@ -24,82 +18,73 @@ $OpenBSD: patch-bitlbee_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  	while( fscanf( fp, "%511[^\n]s", s ) > 0 )
  	{
  		fgetc( fp );
-@@ -337,12 +339,14 @@ int bitlbee_load( irc_t *irc, char* pass
+@@ -327,7 +328,7 @@ int bitlbee_load( irc_t *irc, char* pass
  	}
  	fclose( fp );
  	
--	g_snprintf( s, 511, "%s%s",  irc->nick, ".nicks" );
-+	g_snprintf( s, sizeof(s), "%s%s",  irc->nick, ".nicks" );
- 	path = g_build_path( G_DIR_SEPARATOR_S, global.conf->configdir, s, NULL );
- 	fp = fopen( path, "r" );
- 	g_free( path );
+-	g_snprintf( s, 511, "%s%s%s", global.conf->configdir, irc->nick, ".nicks" );
++	g_snprintf( s, sizeof(s), "%s%s%s", global.conf->configdir, irc->nick, ".nicks" );
+ 	fp = fopen( s, "r" );
  	if( !fp ) return( 0 );
--	while( fscanf( fp, "%s %d %s", s, &proto, nick ) > 0 )
-+	COMPILE_TIME_ASSERT(511 < sizeof(s));
-+	COMPILE_TIME_ASSERT(24 < sizeof(nick));
-+	while( fscanf( fp, "%511s %d %24s", s, &proto, nick ) > 0 )
- 	{
- 		http_decode( s );
- 		nick_set( irc, s, proto, nick );
-@@ -351,7 +355,7 @@ int bitlbee_load( irc_t *irc, char* pass
+ 	while( fscanf( fp, "%s %d %s", s, &proto, nick ) > 0 )
+@@ -339,7 +340,7 @@ int bitlbee_load( irc_t *irc, char* pass
  	
- 	if( set_getint( IRC, "auto_connect" ) )
+ 	if( set_getint( irc, "auto_connect" ) )
  	{
 -		strcpy( s, "account on" );	/* Can't do this directly because r_c_s alters the string */
 +		strlcpy( s, "account on", sizeof(s) );	/* Can't do this directly because r_c_s alters the string */
  		root_command_string( irc, ru, s );
  	}
  	
-@@ -391,16 +395,16 @@ int bitlbee_save( irc_t *irc )
+@@ -380,15 +381,15 @@ int bitlbee_save( irc_t *irc )
  		return( 0 );
  	}
  	
--	g_snprintf( s, 511, "%s%s", irc->nick, ".nicks~" );
-+	g_snprintf( s, sizeof(s), "%s%s", irc->nick, ".nicks~" );
- 	path = g_build_path(G_DIR_SEPARATOR_S, global.conf->configdir, s, NULL);
+-	g_snprintf( path, 511, "%s%s%s", global.conf->configdir, irc->nick, ".nicks~" );
++	g_snprintf( path, sizeof(s), "%s%s%s", global.conf->configdir, irc->nick, ".nicks~" );
  	fp = fopen( path, "w" );
  	if( !fp ) return( 0 );
- 	while( n )
+ 	for( n = irc->nicks; n; n = n->next )
  	{
 -		strcpy( s, n->handle );
 -		s[169] = 0; /* Prevent any overflow (169 ~ 512 / 3) */
 -		http_encode( s );
 -		g_snprintf( s + strlen( s ), 510 - strlen( s ), " %d %s", n->proto, n->nick );
 +		strlcpy( s, n->handle, sizeof(s) );
-+		s[sizeof(s)/3] = 0; /* Prevent any overflow when expanding to %02X */
++		s[sizeof(s)/3] = 0; /* Prevent any overflow (169 ~ 512 / 3) */
 +		http_encode( s, sizeof(s) );
-+		g_snprintf( s + strlen( s ), sizeof(s)-strlen( s ), " %d %s", n->proto, n->nick );
++		g_snprintf( s + strlen( s ), sizeof(s) - strlen( s ), " %d %s", n->proto, n->nick );
  		if( fprintf( fp, "%s\n", s ) != strlen( s ) + 1 )
  		{
  			irc_usermsg( irc, "fprintf() wrote too little. Disk full?" );
-@@ -412,7 +416,7 @@ int bitlbee_save( irc_t *irc )
+@@ -398,7 +399,7 @@ int bitlbee_save( irc_t *irc )
  	}
  	fclose( fp );
    
--	g_snprintf( s, 512, "%s%s", irc->nick, ".nicks" );
-+	g_snprintf( s, sizeof(s), "%s%s", irc->nick, ".nicks" );
- 	old_path = g_build_path(G_DIR_SEPARATOR_S, global.conf->configdir, s, NULL);
- 	if( unlink( old_path ) != 0 )
+-	g_snprintf( new_path, 512, "%s%s%s", global.conf->configdir, irc->nick, ".nicks" );
++	g_snprintf( new_path, sizeof(new_path), "%s%s%s", global.conf->configdir, irc->nick, ".nicks" );
+ 	if( unlink( new_path ) != 0 )
  	{
-@@ -435,7 +439,7 @@ int bitlbee_save( irc_t *irc )
- 	g_free( old_path );
+ 		if( errno != ENOENT )
+@@ -413,7 +414,7 @@ int bitlbee_save( irc_t *irc )
+ 		return( 0 );
+ 	}
  	
- 	
--	g_snprintf( s, 511, "%s%s", irc->nick, ".accounts~" );
-+	g_snprintf( s, sizeof(s), "%s%s", irc->nick, ".accounts~" );
- 	path = g_build_path(G_DIR_SEPARATOR_S, global.conf->configdir, s, NULL);
+-	g_snprintf( path, 511, "%s%s%s", global.conf->configdir, irc->nick, ".accounts~" );
++	g_snprintf( path, sizeof(path), "%s%s%s", global.conf->configdir, irc->nick, ".accounts~" );
  	fp = fopen( path, "w" );
  	if( !fp ) return( 0 );
-@@ -509,7 +513,7 @@ int bitlbee_save( irc_t *irc )
+ 	if( fprintf( fp, "%s", hash ) != strlen( hash ) )
+@@ -481,7 +482,7 @@ int bitlbee_save( irc_t *irc )
  	}
  	fclose( fp );
  	
-- 	g_snprintf( s, 512, "%s%s", irc->nick, ".accounts" );
-+ 	g_snprintf( s, sizeof(s), "%s%s", irc->nick, ".accounts" );
-  	old_path = g_build_path(G_DIR_SEPARATOR_S, global.conf->configdir, s, NULL);
-  	if( unlink( old_path ) != 0 )
+- 	g_snprintf( new_path, 512, "%s%s%s", global.conf->configdir, irc->nick, ".accounts" );
++ 	g_snprintf( new_path, sizeof(new_path), "%s%s%s", global.conf->configdir, irc->nick, ".accounts" );
+  	if( unlink( new_path ) != 0 )
  	{
-@@ -600,8 +604,9 @@ void http_decode( char *s )
+ 		if( errno != ENOENT )
+@@ -565,8 +566,9 @@ void http_decode( char *s )
  {
  	char *t;
  	int i, j, k;
@@ -110,7 +95,7 @@ $OpenBSD: patch-bitlbee_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  	
  	for( i = j = 0; s[i]; i ++, j ++ )
  	{
-@@ -625,24 +630,24 @@ void http_decode( char *s )
+@@ -590,24 +592,24 @@ void http_decode( char *s )
  	}
  	t[j] = 0;
  	

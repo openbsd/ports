@@ -1,6 +1,6 @@
-$OpenBSD: patch-protocols_util_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
---- protocols/util.c.orig	2004-03-18 07:21:12.000000000 +1100
-+++ protocols/util.c	2004-06-09 19:29:44.000000000 +1000
+$OpenBSD: patch-protocols_util_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
+--- protocols/util.c.orig	Sat Sep 11 02:03:07 2004
++++ protocols/util.c	Thu Oct 14 15:43:35 2004
 @@ -131,14 +131,15 @@ char *str_to_utf8(unsigned char *in)
  void strip_linefeed(gchar *text)
  {
@@ -19,7 +19,7 @@ $OpenBSD: patch-protocols_util_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  	g_free(text2);
  }
  
-@@ -238,7 +239,6 @@ char *normalize(const char *s)
+@@ -239,7 +240,6 @@ char *normalize(const char *s)
  
  	u = t = g_strdup(s);
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-protocols_util_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  	g_strdown(t);
  
  	while (*t && (x < BUF_LEN - 1)) {
-@@ -301,7 +301,8 @@ static htmlentity_t ent[] =
+@@ -304,7 +304,8 @@ static htmlentity_t ent[] =
  void strip_html( char *in )
  {
  	char *start = in;
@@ -35,9 +35,9 @@ $OpenBSD: patch-protocols_util_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
 +	size_t in_len = strlen( in ) + 1;
 +	char *out = g_malloc(in_len);
  	char *s = out, *cs;
- 	int i;
- 	int matched;
-@@ -344,6 +345,6 @@ void strip_html( char *in )
+ 	int i, matched;
+ 	
+@@ -363,7 +364,7 @@ void strip_html( char *in )
  		}
  	}
  	
@@ -45,3 +45,4 @@ $OpenBSD: patch-protocols_util_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
 +	strlcpy( start, out, in_len );
  	g_free( out );
  } 
+ 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-protocols_jabber_jabber_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
---- protocols/jabber/jabber.c.orig	2004-05-23 22:24:02.000000000 +1000
-+++ protocols/jabber/jabber.c	2004-06-09 21:18:06.000000000 +1000
-@@ -281,7 +281,7 @@ static char *gjab_getsid(gjconn gjc)
+$OpenBSD: patch-protocols_jabber_jabber_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
+--- protocols/jabber/jabber.c.orig	Wed Sep  8 06:54:23 2004
++++ protocols/jabber/jabber.c	Fri Oct 15 14:33:18 2004
+@@ -287,7 +287,7 @@ static char *gjab_getsid(gjconn gjc)
  
  static char *gjab_getid(gjconn gjc)
  {
@@ -10,7 +10,7 @@ $OpenBSD: patch-protocols_jabber_jabber_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  	return &gjc->idbuf[0];
  }
  
-@@ -366,10 +366,11 @@ static void gjab_auth(gjconn gjc)
+@@ -383,10 +383,11 @@ static void gjab_auth(gjconn gjc)
  	xmlnode_insert_cdata(z, gjc->user->resource, -1);
  
  	if (gjc->sid) {
@@ -25,17 +25,17 @@ $OpenBSD: patch-protocols_jabber_jabber_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  		hash = shahash(hash);
  		xmlnode_insert_cdata(z, hash, 40);
  	} else {
-@@ -1268,8 +1269,7 @@ static void jabber_handlebuddy(gjconn gj
+@@ -1241,8 +1242,7 @@ static void jabber_handlebuddy(gjconn gj
  					serv_got_update(GJ_GC(gjc), buddyname, 1, 0, signon, idle, uc, 0);
  				}
  			} else if(name != NULL && strcmp(b->show, name)) {
 -				strncpy(b->show, name, BUDDY_ALIAS_MAXLEN);
 -				b->show[BUDDY_ALIAS_MAXLEN - 1] = '\0';	/* cheap safety feature */
 +				strlcpy(b->show, name, BUDDY_ALIAS_MAXLEN);
- 				handle_buddy_rename(b, buddyname);
+ 				serv_buddy_rename(GJ_GC(gjc), buddyname, b->show);
  			}
  		}
-@@ -1416,7 +1416,7 @@ static void jabber_handlelast(gjconn gjc
+@@ -1389,7 +1389,7 @@ static void jabber_handlelast(gjconn gjc
  	xmlnode_put_attrib(x, "to", from);
  	xmlnode_put_attrib(x, "id", id);
  	querytag = xmlnode_get_tag(x, "query");
@@ -44,7 +44,7 @@ $OpenBSD: patch-protocols_jabber_jabber_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  	xmlnode_put_attrib(querytag, "seconds", idle_time);
  
  	gjab_send(gjc, x);
-@@ -2498,7 +2498,7 @@ static xmlnode insert_tag_to_parent_tag(
+@@ -2170,7 +2170,7 @@ static xmlnode insert_tag_to_parent_tag(
  			/*
  			 * Descend?
  			 */
@@ -53,13 +53,3 @@ $OpenBSD: patch-protocols_jabber_jabber_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  			char *parent;
  
  			if((parent = strrchr(grand_parent, '/')) != NULL) {
-@@ -2655,8 +2655,7 @@ static void jabber_setup_set_info(struct
- 	/#*
- 	 * Get existing, XML-formatted, user info
- 	 *#/
--	if((user_info = g_malloc(strlen(tmp->user_info) + 1)) != NULL) {
--		strcpy(user_info, tmp->user_info);
-+	if((user_info = g_strdup(tmp->user_info)) != NULL) {
- 		x_vc_data = xmlstr2xmlnode(user_info);
- 	}
- 

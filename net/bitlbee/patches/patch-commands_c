@@ -1,6 +1,6 @@
-$OpenBSD: patch-commands_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
---- commands.c.orig	2004-05-12 21:36:25.000000000 +1000
-+++ commands.c	2004-06-08 19:59:37.000000000 +1000
+$OpenBSD: patch-commands_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
+--- commands.c.orig	Tue Sep 21 07:07:16 2004
++++ commands.c	Fri Oct 15 14:30:16 2004
 @@ -63,8 +63,8 @@ int cmd_help( irc_t *irc, char **cmd )
  	memset( param, 0, sizeof(param) );
  	for ( i = 1; (cmd[i] != NULL && ( strlen(param) < (sizeof(param)-1) ) ); i++ ) {
@@ -12,56 +12,29 @@ $OpenBSD: patch-commands_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  	}
  
  	s = help_get( &(global.help), param );
-@@ -111,6 +111,7 @@ int cmd_register( irc_t *irc, char **cmd
- {
- 	int checkie;
- 	char *path, *file;
-+	size_t file_len;
- 	
- 	if( global.conf->authmode == AUTHMODE_REGISTERED )
- 	{
-@@ -118,17 +119,18 @@ int cmd_register( irc_t *irc, char **cmd
+@@ -118,10 +118,10 @@ int cmd_register( irc_t *irc, char **cmd
  		return( 0 );
  	}
  	
--	file = (char *) bitlbee_alloc( strlen( irc->nick ) + strlen( ".accounts" ) + 1 );
-+	file_len = strlen( irc->nick ) + strlen( ".accounts" ) + 1;
-+	file = (char *) bitlbee_alloc( file_len );
+-	g_snprintf( path, 511, "%s%s%s", global.conf->configdir, irc->nick, ".accounts" );
++	g_snprintf( path, sizeof(path), "%s%s%s", global.conf->configdir, irc->nick, ".accounts" );
+ 	checkie = access( path, F_OK );
  	
--	strcpy( file, irc->nick );
--	strcat( file, ".accounts" );
-+	strlcpy( file, irc->nick,   file_len );
-+	strlcat( file, ".accounts", file_len );
- 	path = g_build_path( G_DIR_SEPARATOR_S, global.conf->configdir, file, NULL );
+-	g_snprintf( path, 511, "%s%s%s", global.conf->configdir, irc->nick, ".nicks" );
++	g_snprintf( path, sizeof(path), "%s%s%s", global.conf->configdir, irc->nick, ".nicks" );
+ 	checkie += access( path, F_OK );
  	
- 	checkie = g_file_test( path, G_FILE_TEST_EXISTS ) ? 0 : -1 ;
- 	g_free( path );
- 	
--	strcpy( file, irc->nick );
--	strcat( file, ".nicks" );
-+	strlcpy( file, irc->nick, file_len );
-+	strlcat( file, ".nicks",  file_len );
- 	path = g_build_path( G_DIR_SEPARATOR_S, global.conf->configdir, file, NULL );
- 	
- 	checkie += g_file_test( path, G_FILE_TEST_EXISTS ) ? 0 : -1;
-@@ -154,11 +156,13 @@ int cmd_drop( irc_t *irc, char **cmd )
- {
- 	char *path, *file, s[512];
+ 	if( checkie == -2 )
+@@ -143,7 +143,7 @@ int cmd_drop( irc_t *irc, char **cmd )
+ 	char s[512];
  	FILE *fp;
-+	size_t file_len;
  	
--	file = (char *) bitlbee_alloc( strlen( irc->nick ) + strlen( ".accounts" ) + 1 );
-+	file_len = strlen( irc->nick ) + strlen( ".accounts" ) + 1;
-+	file = (char *) bitlbee_alloc( file_len );
- 	
--	strcpy( file, irc->nick );
--	strcat( file, ".accounts" );
-+	strlcpy( file, irc->nick,   file_len );
-+	strlcat( file, ".accounts", file_len );
- 	path = g_build_path( G_DIR_SEPARATOR_S, global.conf->configdir, file, NULL );
- 	
- 	fp = fopen( path, "r" );
-@@ -170,6 +174,7 @@ int cmd_drop( irc_t *irc, char **cmd )
+-	g_snprintf( s, 511, "%s%s%s", global.conf->configdir, irc->nick, ".accounts" );
++	g_snprintf( s, sizeof(s), "%s%s%s", global.conf->configdir, irc->nick, ".accounts" );
+ 	fp = fopen( s, "r" );
+ 	if( !fp )
+ 	{
+@@ -151,6 +151,7 @@ int cmd_drop( irc_t *irc, char **cmd )
  		return( 0 );
  	}
  	
@@ -69,18 +42,20 @@ $OpenBSD: patch-commands_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  	fscanf( fp, "%32[^\n]s", s );
  	fclose( fp );
  	if( setpass( irc, cmd[1], s ) < 0 )
-@@ -183,8 +188,8 @@ int cmd_drop( irc_t *irc, char **cmd )
- 	unlink( path );
- 	g_free( path );
+@@ -159,10 +160,10 @@ int cmd_drop( irc_t *irc, char **cmd )
+ 		return( 0 );
+ 	}
  	
--	strcpy( file, irc->nick );
--	strcat( file, ".nicks" );
-+	strlcpy( file, irc->nick, file_len );
-+	strlcat( file, ".nicks",  file_len );
- 	path = g_build_path( G_DIR_SEPARATOR_S, global.conf->configdir, file, NULL );
+-	g_snprintf( s, 511, "%s%s%s", global.conf->configdir, irc->nick, ".accounts" );
++	g_snprintf( s, sizeof(s), "%s%s%s", global.conf->configdir, irc->nick, ".accounts" );
+ 	unlink( s );
  	
- 	unlink( path );
-@@ -676,21 +681,21 @@ int cmd_blist( irc_t *irc, char **cmd )
+-	g_snprintf( s, 511, "%s%s%s", global.conf->configdir, irc->nick, ".nicks" );
++	g_snprintf( s, sizeof(s), "%s%s%s", global.conf->configdir, irc->nick, ".nicks" );
+ 	unlink( s );
+ 	
+ 	setpassnc( irc, NULL );
+@@ -663,21 +664,21 @@ int cmd_blist( irc_t *irc, char **cmd )
  	
  	if( online == 1 ) for( u = irc->users; u; u = u->next ) if( u->gc && u->online && !u->away )
  	{

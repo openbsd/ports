@@ -1,7 +1,7 @@
-$OpenBSD: patch-conf_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
---- conf.c.orig	2004-04-05 06:50:52.000000000 +1000
-+++ conf.c	2004-06-09 21:17:00.000000000 +1000
-@@ -131,9 +131,10 @@ conf_t *conf_load( int argc, char *argv[
+$OpenBSD: patch-conf_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
+--- conf.c.orig	Fri Sep 24 05:42:32 2004
++++ conf.c	Thu Oct 14 15:43:33 2004
+@@ -130,9 +130,10 @@ conf_t *conf_load( int argc, char *argv[
  	
  	if( conf->configdir[strlen(conf->configdir)-1] != '/' )
  	{

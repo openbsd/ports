@@ -1,7 +1,7 @@
-$OpenBSD: patch-utils_bitlbeed_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
---- utils/bitlbeed.c.orig	2004-05-15 22:23:20.000000000 +1000
-+++ utils/bitlbeed.c	2004-06-09 20:38:47.000000000 +1000
-@@ -352,14 +352,14 @@ void log( char *fmt, ... )
+$OpenBSD: patch-utils_bitlbeed_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
+--- utils/bitlbeed.c.orig	Wed Jul  7 23:27:38 2004
++++ utils/bitlbeed.c	Thu Oct 14 15:43:35 2004
+@@ -408,14 +408,14 @@ void do_log( char *fmt, ... )
  	memset( line, 0, MAX_LOG_LEN );
  	
  	tm = time( NULL );

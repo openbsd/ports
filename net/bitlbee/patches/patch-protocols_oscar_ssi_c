@@ -1,7 +1,7 @@
-$OpenBSD: patch-protocols_oscar_ssi_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
---- protocols/oscar/ssi.c.orig	2004-05-19 05:26:49.000000000 +1000
-+++ protocols/oscar/ssi.c	2004-06-09 21:18:29.000000000 +1000
-@@ -46,11 +46,7 @@ static struct aim_ssi_item *aim_ssi_item
+$OpenBSD: patch-protocols_oscar_ssi_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
+--- protocols/oscar/ssi.c.orig	Wed Sep 22 06:34:44 2004
++++ protocols/oscar/ssi.c	Thu Oct 14 15:43:35 2004
+@@ -45,11 +45,7 @@ static struct aim_ssi_item *aim_ssi_item
  
  	/* Set the name */
  	if (name) {
@@ -14,7 +14,7 @@ $OpenBSD: patch-protocols_oscar_ssi_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  	} else
  		newitem->name = NULL;
  
-@@ -413,9 +409,7 @@ faim_export int aim_ssi_cleanlist(aim_se
+@@ -412,9 +408,7 @@ int aim_ssi_cleanlist(aim_session_t *ses
  	if (!cur) {
  		for (parentgroup=sess->ssi.items; ((parentgroup) && (parentgroup->type!=AIM_SSI_TYPE_GROUP) && (parentgroup->gid==0x0000)); parentgroup=parentgroup->next);
  		if (!parentgroup) {
@@ -25,9 +25,9 @@ $OpenBSD: patch-protocols_oscar_ssi_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  			aim_ssi_addgroups(sess, conn, &newgroup, 1);
  		}
  	}
-@@ -1393,7 +1387,7 @@ faim_internal int ssi_modfirst(aim_sessi
+@@ -1518,7 +1512,7 @@ int ssi_modfirst(aim_session_t *sess, ai
  	mod->toolid = 0x0110;
- 	mod->toolversion = 0x047b;
+ 	mod->toolversion = 0x0629;
  	mod->flags = 0;
 -	strncpy(mod->name, "ssi", sizeof(mod->name));
 +	strlcpy(mod->name, "ssi", sizeof(mod->name));

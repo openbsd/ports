@@ -1,8 +1,8 @@
-$OpenBSD: patch-bitlbee_h,v 1.4 2004/07/01 16:11:59 naddy Exp $
+$OpenBSD: patch-bitlbee_h,v 1.5 2004/10/21 14:48:51 naddy Exp $
 Use a more usefull name for the server
---- bitlbee.h.orig	Wed May 19 05:36:42 2004
-+++ bitlbee.h	Sun Jun 27 16:50:35 2004
-@@ -79,7 +79,7 @@
+--- bitlbee.h.orig	Sat Sep 25 21:15:15 2004
++++ bitlbee.h	Thu Oct 14 15:43:33 2004
+@@ -75,7 +75,7 @@
  
  #define _( x ) x
  
@@ -11,7 +11,7 @@ Use a more usefull name for the server
  #define ROOT_CHAN "#bitlbee"
  #define ROOT_FN "User manager"
  
-@@ -131,7 +131,7 @@ int root_command( irc_t *irc, char *comm
+@@ -127,7 +127,7 @@ int root_command( irc_t *irc, char *comm
  int bitlbee_load( irc_t *irc, char *password );
  int bitlbee_save( irc_t *irc );
  double gettime( void );
@@ -20,8 +20,8 @@ Use a more usefull name for the server
  G_MODULE_EXPORT void http_decode( char *s );
  
  void *bitlbee_alloc(size_t size);
-@@ -142,5 +142,12 @@ G_MODULE_EXPORT irc_t *get_IRC();
- extern irc_t *IRC;
+@@ -135,5 +135,12 @@ void *bitlbee_realloc(void *oldmem, size
+ 
  extern global_t global;
  extern GList *connection_list;
 +
