@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/03/11 18:01:27 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/04/21 12:56:30 wilfried Exp $
 
 COMMENT=	"cross-platform remote desktop access"
 COMMENT-viewer=	"client for cross-platform remote desktop access"
@@ -33,7 +33,7 @@ ALL_TARGET=    	World
 
 NO_REGRESS=	Yes
 
-DOCUMENTATION=vncpasswd/vncpasswd.man vncconnect/vncconnect.man \
+DOCUMENTATION=vncserver.man vncpasswd/vncpasswd.man vncconnect/vncconnect.man \
     Xvnc/programs/Xserver/Xvnc.man vncviewer/vncviewer.man
 
 .if ${MACHINE_ARCH} == "sparc64"
