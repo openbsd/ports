@@ -1,20 +1,35 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/11/03 07:43:59 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:21:38 espie Exp $
 @exec ln -sf %D/usr/X11R6/bin/rxvt /usr/local/bin/rxvt-big5
 @unexec rm -rf /usr/local/bin/rxvt-big5
 @unexec rm -f %D/usr/lib/libutempter.so.0
+etc/X11/
+etc/X11/applnk/
+etc/X11/applnk/Utilities/
 etc/X11/applnk/Utilities/rxvt.desktop
+etc/default/
 etc/default/useradd
 etc/login.defs
+usr/X11R6/bin/
 usr/X11R6/bin/rclock
 usr/X11R6/bin/rxvt
+usr/X11R6/lib/X11/ja/
+usr/X11R6/lib/X11/ja/app-defaults/
 usr/X11R6/lib/X11/ja/app-defaults/Rxvt
+usr/X11R6/lib/X11/ko/
+usr/X11R6/lib/X11/ko/app-defaults/
 usr/X11R6/lib/X11/ko/app-defaults/Rxvt
+usr/X11R6/lib/X11/zh_CN/
+usr/X11R6/lib/X11/zh_CN/app-defaults/
 usr/X11R6/lib/X11/zh_CN/app-defaults/Rxvt
+usr/X11R6/lib/X11/zh_CN/rxvt/
 usr/X11R6/lib/X11/zh_CN/rxvt/rxvt.menu
+usr/X11R6/lib/X11/zh_TW/
+usr/X11R6/lib/X11/zh_TW/app-defaults/
 usr/X11R6/lib/X11/zh_TW/app-defaults/Rxvt
+usr/X11R6/lib/X11/zh_TW/rxvt/
 usr/X11R6/lib/X11/zh_TW/rxvt/rxvt.menu
-usr/X11R6/man/man1/rclock.1.gz
-usr/X11R6/man/man1/rxvt.1.gz
+@man usr/X11R6/man/man1/rclock.1.gz
+@man usr/X11R6/man/man1/rxvt.1.gz
 usr/bin/chage
 usr/bin/faillog
 usr/bin/gpasswd
@@ -45,42 +60,27 @@ usr/share/locale/el/LC_MESSAGES/shadow.mo
 usr/share/locale/fr/LC_MESSAGES/shadow.mo
 usr/share/locale/pl/LC_MESSAGES/shadow.mo
 usr/share/locale/sv/LC_MESSAGES/shadow.mo
-usr/share/man/man1/chage.1.gz
-usr/share/man/man1/gpasswd.1.gz
-usr/share/man/man3/shadow.3.gz
-usr/share/man/man5/faillog.5.gz
-usr/share/man/man5/shadow.5.gz
-usr/share/man/man8/adduser.8.gz
-usr/share/man/man8/chpasswd.8.gz
-usr/share/man/man8/faillog.8.gz
-usr/share/man/man8/groupadd.8.gz
-usr/share/man/man8/groupdel.8.gz
-usr/share/man/man8/groupmod.8.gz
-usr/share/man/man8/grpck.8.gz
-usr/share/man/man8/grpconv.8.gz
-usr/share/man/man8/grpunconv.8.gz
-usr/share/man/man8/lastlog.8.gz
-usr/share/man/man8/newusers.8.gz
-usr/share/man/man8/pwck.8.gz
-usr/share/man/man8/pwconv.8.gz
-usr/share/man/man8/pwunconv.8.gz
-usr/share/man/man8/useradd.8.gz
-usr/share/man/man8/userdel.8.gz
-usr/share/man/man8/usermod.8.gz
+@man usr/share/man/man1/chage.1.gz
+@man usr/share/man/man1/gpasswd.1.gz
+@man usr/share/man/man3/shadow.3.gz
+@man usr/share/man/man5/faillog.5.gz
+@man usr/share/man/man5/shadow.5.gz
+@man usr/share/man/man8/adduser.8.gz
+@man usr/share/man/man8/chpasswd.8.gz
+@man usr/share/man/man8/faillog.8.gz
+@man usr/share/man/man8/groupadd.8.gz
+@man usr/share/man/man8/groupdel.8.gz
+@man usr/share/man/man8/groupmod.8.gz
+@man usr/share/man/man8/grpck.8.gz
+@man usr/share/man/man8/grpconv.8.gz
+@man usr/share/man/man8/grpunconv.8.gz
+@man usr/share/man/man8/lastlog.8.gz
+@man usr/share/man/man8/newusers.8.gz
+@man usr/share/man/man8/pwck.8.gz
+@man usr/share/man/man8/pwconv.8.gz
+@man usr/share/man/man8/pwunconv.8.gz
+@man usr/share/man/man8/useradd.8.gz
+@man usr/share/man/man8/userdel.8.gz
+@man usr/share/man/man8/usermod.8.gz
 @exec %D/sbin/ldconfig
 @unexec %D/sbin/ldconfig
-@dirrm usr/X11R6/lib/X11/zh_TW/rxvt
-@dirrm usr/X11R6/lib/X11/zh_TW/app-defaults
-@dirrm usr/X11R6/lib/X11/zh_TW
-@dirrm usr/X11R6/lib/X11/zh_CN/rxvt
-@dirrm usr/X11R6/lib/X11/zh_CN/app-defaults
-@dirrm usr/X11R6/lib/X11/zh_CN
-@dirrm usr/X11R6/lib/X11/ko/app-defaults
-@dirrm usr/X11R6/lib/X11/ko
-@dirrm usr/X11R6/lib/X11/ja/app-defaults
-@dirrm usr/X11R6/lib/X11/ja
-@dirrm usr/X11R6/bin
-@dirrm etc/default
-@dirrm etc/X11/applnk/Utilities
-@dirrm etc/X11/applnk
-@dirrm etc/X11
