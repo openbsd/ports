@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/10/01 02:00:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2001/10/01 14:08:22 naddy Exp $
 
 COMMENT=	"Robust Audio Tool from UCL"
 
@@ -7,9 +7,9 @@ CATEGORIES=	mbone
 NEED_VERSION=	1.465
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM=	"no commercial use"
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_CDROM=	"no commercial use"
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/3.0.33/
@@ -31,5 +31,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/rat-${OPSYS}-${OPSYS_VER} \
 		${PREFIX}/bin/rat
 	${INSTALL_MAN} ${WRKSRC}/man/man1/rat.1 ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/rat
+	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/rat
 
 .include <bsd.port.mk>

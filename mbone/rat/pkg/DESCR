@@ -20,3 +20,7 @@ neither does it listen to session announcements to discover advertised
 multicast sessions. For these purposes, it is recommended you use RAT
 in conjunction with the Session Directory (SDR), or a similar
 application.
+
+Use of this software for commercial purposes is explicitly forbidden
+unless prior written permission is obtained from the authors. For
+details, see the full license ${PREFIX}/share/doc/rat/COPYRIGHT.
