@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/26 01:31:26 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2002/07/19 09:12:47 kevlo Exp $
 
 COMMENT=	"C/C++,Prolog,Perl,PHP3 and Java sources to HTML converter"
 
-DISTNAME=	source-highlight-1.4
+DISTNAME=	source-highlight-1.5
 CATEGORIES=	textproc
-NEED_VERSION=	1.504
 
 HOMEPAGE=	http://www.gnu.org/software/src-highlite/source-highlight.html
 
