@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.422 2001/07/17 16:11:45 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.423 2001/07/18 14:52:27 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -423,6 +423,17 @@ PORTPATH?= /usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${X11BASE}/bin
 # what we pass in.
 .if defined(COPTS)
 CFLAGS+=		${COPTS}
+.endif
+.if defined(CXXOPTS)
+CXXFLAGS+=		${CXXOPTS}
+.endif
+.if defined(WARNINGS) && ${WARNINGS:L} == "yes"
+.  if defined(CDIAGFLAGS)
+CFLAGS+=		${CDIAGFLAGS}
+.  endif
+.  if defined(CXXDIAGFLAGS)
+CXXFLAGS+=		${CXXDIAGFLAGS}
+.  endif
 .endif
 
 MAKE_FLAGS?=	
