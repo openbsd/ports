@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/22 23:03:47 espie Exp $
 bin/achfile
 bin/acleandir.rc
 bin/add_netatalk_printer
@@ -162,19 +162,34 @@ share/doc/netatalk/README.hidden-items
 share/doc/netatalk/README.platforms
 share/doc/netatalk/README.veto
 share/examples/netatalk/
+@mode 750
+@sample ${CONFDIR}/
+@mode
 share/examples/netatalk/AppleVolumes.default
+@sample ${CONFDIR}/AppleVolumes.default
 share/examples/netatalk/AppleVolumes.system
+@sample ${CONFDIR}/AppleVolumes.system
 share/examples/netatalk/afpd.conf
+@sample ${CONFDIR}/afpd.conf
 share/examples/netatalk/atalkd.conf
+@sample ${CONFDIR}/atalkd.conf
 share/examples/netatalk/netatalk.conf
+@sample ${CONFDIR}/netatalk.conf
 share/examples/netatalk/papd.conf
+@sample ${CONFDIR}/papd.conf
 share/examples/netatalk/rc.atalk
+@sample ${CONFDIR}/rc.atalk
 share/netatalk/
 share/netatalk/pagecount.ps
 share/nls/netatalk/
+@sample ${CONFDIR}/nls/
 share/nls/netatalk/maccode.437
+@sample ${CONFDIR}/nls/maccode.437
 share/nls/netatalk/maccode.850
+@sample ${CONFDIR}/nls/maccode.850
 share/nls/netatalk/maccode.iso8859-1
+@sample ${CONFDIR}/nls/maccode.iso8859-1
 share/nls/netatalk/maccode.iso8859-1.adapted
+@sample ${CONFDIR}/nls/maccode.iso8859-1.adapted
 share/nls/netatalk/maccode.koi8-r
-@extraunexec rm -rf ${SYSCONFDIR}/netatalk
+@sample ${CONFDIR}/nls/maccode.koi8-r
