@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_actions_c,v 1.1 2003/02/25 22:39:31 pvalchev Exp $
+--- src/actions.c.orig	Sat Jul  6 15:31:27 2002
++++ src/actions.c	Tue Feb 25 15:34:36 2003
+@@ -2078,7 +2078,7 @@ cmd_defbgcolor (int interactive, void *d
+   return NULL;
+ }
+ 
+-#if !defined(HAVE_SETENV) || !defined(setenv)
++#if !defined(HAVE_SETENV) && !defined(setenv)
+ /* For systems, such as Solaris, where setenv is not implemented
+  * in libc */
+ /* FIXME: overwrite has no effect in this implementation! */
