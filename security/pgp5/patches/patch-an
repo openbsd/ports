@@ -1,0 +1,11 @@
+--- lib/pgp/random/pgpRndPool.c.orig	Sat Aug  9 23:45:13 1997
++++ lib/pgp/random/pgpRndPool.c	Sun Jul 18 22:59:19 1999
+@@ -296,7 +296,7 @@
+ * #define UMULH_32(r,a,b) (r) = 0
+ */
+ #ifndef UMULH_32
+-#if defined(__GNUC__) && defined(__i386__)
++#if defined(__GNUC__) && defined(__i386__) && 0
+ /* Inline asm goodies */
+ #define UMULH_32(r,a,b) __asm__("mull %2" : "=d"(r) : "%a"(a), "mr"(b) : "ax")
+ #elif HAVE64
