@@ -1,0 +1,13 @@
+$OpenBSD: patch-termio_c,v 1.1 2002/08/02 03:45:19 kevlo Exp $
+--- termio.c.orig	Sat Jul 21 13:35:05 2001
++++ termio.c	Thu Aug  1 15:26:10 2002
+@@ -12,6 +12,9 @@
+ #include    <signal.h>
+ #ifdef BSD
+ #include    <sys/ioctl.h>
++#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++#include <sys/ioctl_compat.h>
++#endif
+ #else
+ #ifdef OS2
+ #ifndef __EMX__

@@ -1,0 +1,12 @@
+$OpenBSD: patch-tcap_c,v 1.1 2002/08/02 03:45:19 kevlo Exp $
+--- tcap.c.orig	Sat Dec 13 08:34:59 1997
++++ tcap.c	Thu Aug  1 15:26:10 2002
+@@ -39,7 +39,7 @@ char *UP, PC, *CM, *CE, *CL, *SO, *SE, *
+ 
+ #ifdef BSD
+ #include <sys/ioctl.h>
+-struct winsize ttysize;
++struct ttysize ttysize;
+ #endif /* BSD */
+ #ifdef ULTRIX
+ struct winsize ttysize;
