@@ -1,14 +1,14 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/02/13 06:06:23 jasoni Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2001/02/14 22:18:55 brad Exp $
 #
-# linux_lib de-installation
+# redhat_base de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local/emul/redhat}
 
 if [ -L /emul/linux -a x`readlink /emul/linux` = x"$PREFIX" ]; then
-	rm -f /emul/linux
+    rm -f /emul/linux
 fi
 
 exit 0
