@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_NetAccess_cc,v 1.1 2003/01/10 05:41:21 kevlo Exp $
+--- src/NetAccess.cc.orig	Fri Jan 10 13:26:27 2003
++++ src/NetAccess.cc	Fri Jan 10 13:26:44 2003
+@@ -25,6 +25,7 @@
+ #include <errno.h>
+ #include <assert.h>
+ #include <math.h>
++#include <sys/types.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include "NetAccess.h"
