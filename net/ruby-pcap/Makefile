@@ -1,3 +1,5 @@
+# $OpenBSD: Makefile,v 1.2 2002/02/28 17:37:14 couderc Exp $
+
 COMMENT=		"Ruby extension library for GTK Toolkit"
 
 VERSION=		0.6
