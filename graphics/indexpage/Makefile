@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/02/02 18:02:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/10/20 01:08:04 pvalchev Exp $
 
 COMMENT=	"generate index pages for displaying images"
 
@@ -27,7 +27,7 @@ PORTHOME=	${WRKDIR}	# for regress
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/indexpage
-	${INSTALL_PROGRAM} ${WRKSRC}/indexpage.pl ${PREFIX}/bin/indexpage
+	${INSTALL_SCRIPT} ${WRKSRC}/indexpage.pl ${PREFIX}/bin/indexpage
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/indexpage
 
 .include <bsd.port.mk>
