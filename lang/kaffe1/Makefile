@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 1999/05/03 01:30:24 ian Exp $
+# $OpenBSD: Makefile,v 1.11 1999/05/03 13:12:55 ian Exp $
 #
 # Relevant URLs:	http://www.transvirtual.com/kaffe/
 
 DISTNAME=	kaffe-1.0.b4
-WRKSRC=		work/kaffe-1.0b4
+WRKSRC=		${WRKDIR}/kaffe-1.0b4
 CATEGORIES=	lang
 
 NEED_VERSION=	1.73
