@@ -1,0 +1,79 @@
+$OpenBSD: patch-icqlib-1_2_icqpacket_c,v 1.1 2001/11/08 07:20:08 fgsch Exp $
+--- icqlib-1.2/icqpacket.c.orig	Sat Jun  2 04:10:45 2001
++++ icqlib-1.2/icqpacket.c	Mon Nov  5 23:35:29 2001
+@@ -65,7 +65,8 @@ void icq_PacketAppend32(icq_Packet *p, D
+ {
+   DWORD val=i;
+ 
+-  *(unsigned long*)((p->data)+(p->cursor))=htoicql(val);
++  val = htoicql(val);
++  memcpy((p->data) + (p->cursor), &val, sizeof(DWORD));
+   icq_PacketAdvance(p, sizeof(DWORD));
+ }
+ 
+@@ -73,7 +74,7 @@ void icq_PacketAppend32n(icq_Packet *p, 
+ {
+   DWORD val=i;
+ 
+-  *(DWORD *)((p->data)+(p->cursor)) = val;
++  memcpy((p->data) + (p->cursor), &val, sizeof(DWORD));
+   icq_PacketAdvance(p, sizeof(DWORD));
+ }
+ 
+@@ -81,7 +82,8 @@ DWORD icq_PacketRead32(icq_Packet *p)
+ {
+   DWORD val;
+ 
+-  val = icqtohl(*(DWORD *)((p->data)+(p->cursor)));
++  memcpy(&val,(p->data) + (p->cursor), sizeof(DWORD));
++  val = icqtohl(val);
+   icq_PacketAdvance(p, sizeof(DWORD));
+ 
+   return val;
+@@ -91,7 +93,7 @@ DWORD icq_PacketRead32n(icq_Packet *p)
+ {
+   DWORD val;
+ 
+-  val = *(DWORD*)((p->data)+(p->cursor));
++  memcpy(&val,(p->data) + (p->cursor), sizeof(DWORD));
+   icq_PacketAdvance(p, sizeof(DWORD));
+ 
+   return val;
+@@ -101,7 +103,8 @@ void icq_PacketAppend16(icq_Packet *p, W
+ {
+   WORD val=i;
+ 
+-  *(WORD *)((p->data)+(p->cursor)) = htoicqs(val);
++  val = htoicqs(val);
++  memcpy((p->data) + (p->cursor), &val, sizeof(WORD));
+   icq_PacketAdvance(p, sizeof(WORD));
+ }
+ 
+@@ -109,7 +112,7 @@ void icq_PacketAppend16n(icq_Packet *p, 
+ {
+   WORD val=i;
+ 
+-  *(WORD *)((p->data)+(p->cursor)) = val;
++  memcpy((p->data) + (p->cursor), &val, sizeof(WORD));
+   icq_PacketAdvance(p, sizeof(WORD));
+ }
+ 
+@@ -117,7 +120,8 @@ WORD icq_PacketRead16(icq_Packet *p)
+ {
+   WORD val;
+ 
+-  val = icqtohs(*(WORD *)((p->data)+(p->cursor)));
++  memcpy(&val, (p->data) + (p->cursor), sizeof(WORD));
++  val = icqtohs(val);
+   icq_PacketAdvance(p, sizeof(WORD));
+ 
+   return val;
+@@ -127,7 +131,7 @@ WORD icq_PacketRead16n(icq_Packet *p)
+ {
+   WORD val;
+ 
+-  val = *(WORD*)((p->data)+(p->cursor));
++  memcpy(&val,(p->data) + (p->cursor), sizeof(WORD));
+   icq_PacketAdvance(p, sizeof(WORD));
+ 
+   return val;

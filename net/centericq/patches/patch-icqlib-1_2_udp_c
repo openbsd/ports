@@ -1,0 +1,22 @@
+$OpenBSD: patch-icqlib-1_2_udp_c,v 1.1 2001/11/08 07:20:08 fgsch Exp $
+--- icqlib-1.2/udp.c.orig	Wed Oct  3 15:35:04 2001
++++ icqlib-1.2/udp.c	Mon Nov  5 23:43:53 2001
+@@ -134,12 +134,15 @@ void icq_UDPEncode(icq_Packet *p)
+   for(; pos < p->length; pos+=4)
+   {
+     code3 = code2 + icq_UDPTable[pos & 0xFF];
+-    data = icqtohl(*(DWORD *)((p->data)+pos));
++    memcpy(&data, ((p->data) + pos), sizeof(DWORD));
++    data = icqtohl(data);
+     data ^= code3;
+-    *(DWORD*)((p->data)+pos)=htoicql(data);
++    data = htoicql(data);
++    memcpy((p->data)+pos, &data, sizeof(DWORD));
+   }
+   checkcode = icq_UDPScramble(checkcode);
+-  *(DWORD *)((p->data)+0x14)=htoicql(checkcode);
++  checkcode = htoicql(checkcode);
++  memcpy((p->data)+0x14, &checkcode, sizeof(DWORD));
+ }
+ 
+ /*********************************************************
