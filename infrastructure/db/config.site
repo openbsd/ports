@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.6 2005/02/24 11:38:36 espie Exp $
+# $OpenBSD: config.site,v 1.7 2005/03/01 00:03:20 espie Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -12,6 +12,13 @@
 #ac_cv_func_dlopen=${ac_cv_func_dlopen=yes}
 # not okay, prevents curses in wy60...
 #ac_cv_func_setupterm=${ac_cv_func_setupterm=yes}	
+# kill other curses/termcap stuff
+#ac_cv_func_termattrs=${ac_cv_func_termattrs=yes}	
+#ac_cv_func_tgetent=${ac_cv_func_tgetent=yes}	
+#ac_cv_func_tgetstr=${ac_cv_func_tgetstr=yes}	
+#ac_cv_func_tigetflag=${ac_cv_func_tigetflag=yes}	
+#ac_cv_func_tigetnum=${ac_cv_func_tigetnum=yes}	
+#ac_cv_func_tigetstr=${ac_cv_func_tigetstr=yes}	
 ac_cv_accept_arg=${ac_cv_accept_arg=socklen_t}	
 ac_cv_argtype_accept3=${ac_cv_argtype_accept3=socklen_t *}	
 ac_cv_argtype_poll2=${ac_cv_argtype_poll2=nfds_t}	
@@ -576,12 +583,6 @@ ac_cv_func_tcsetattr=${ac_cv_func_tcsetattr=yes}
 ac_cv_func_tcsetpgrp=${ac_cv_func_tcsetpgrp=yes}	
 ac_cv_func_telldir=${ac_cv_func_telldir=yes}	
 ac_cv_func_tempnam=${ac_cv_func_tempnam=yes}	
-ac_cv_func_termattrs=${ac_cv_func_termattrs=yes}	
-ac_cv_func_tgetent=${ac_cv_func_tgetent=yes}	
-ac_cv_func_tgetstr=${ac_cv_func_tgetstr=yes}	
-ac_cv_func_tigetflag=${ac_cv_func_tigetflag=yes}	
-ac_cv_func_tigetnum=${ac_cv_func_tigetnum=yes}	
-ac_cv_func_tigetstr=${ac_cv_func_tigetstr=yes}	
 ac_cv_func_time=${ac_cv_func_time=yes}
 ac_cv_func_timegm=${ac_cv_func_timegm=yes}	
 ac_cv_func_timelocal=${ac_cv_func_timelocal=yes}	
