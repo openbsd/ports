@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: check-libs-elf,v 1.10 2004/11/23 11:17:59 espie Exp $
+# $OpenBSD: check-libs-elf,v 1.11 2004/11/23 11:54:55 espie Exp $
 
 #  Copyright (c) 2001 Marc Espie
 # 
@@ -108,7 +108,7 @@ while (<$libs>) {
 		$used{$name} = 1;
 	} else {
 		my $spec="$name.$major.$minor";
-		if (defined $path) {
+		if (defined $path && $path ne '/usr/local/lib') {
 			$spec="$path/$spec";
 		}
 		print "lib-depends-check: no mention of $spec (".find_library($spec).")\n";
