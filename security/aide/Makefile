@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/09/15 00:07:00 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2004/09/15 00:22:09 pvalchev Exp $
 
 COMMENT=		"Advanced Intrusion Detection Environment"
 
@@ -11,6 +11,7 @@ BUILD_DEPENDS=		::devel/bison \
 
 HOMEPAGE=		http://www.cs.tut.fi/~rammer/aide.html
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -22,9 +23,8 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-mhash
 CONFIGURE_ENV+=		YACC="bison -y" \
-			CPPFLAGS="-I${LOCALBASE}/include/" \
-			LDFLAGS="-L${LOCALBASE}/lib/" \
-			CFLAGS="${CFLAGS}"
+			CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/aide
