@@ -1,4 +1,5 @@
 #!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.2 2003/04/17 19:57:30 wilfried Exp $
 #
 # wanderer de-installation
 # Based on Brad Smiths - dopewars Deinstall

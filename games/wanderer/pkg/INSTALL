@@ -1,4 +1,5 @@
 #!/bin/sh
+# $OpenBSD: INSTALL,v 1.2 2003/04/17 19:57:30 wilfried Exp $
 #
 # Pre/post-installation setup of wanderer
 # Based on Install for dopewars
