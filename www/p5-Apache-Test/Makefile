@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/04/16 22:17:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/06/22 23:09:14 mjc Exp $
 
 COMMENT=	"Test wrapper with helpers for testing Apache"
 
-DISTNAME=	Apache-Test-1.09
+DISTNAME=	Apache-Test-1.11
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
