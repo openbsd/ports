@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/07 01:54:50 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/08/14 18:46:30 espie Exp $
 bin/tkrat
 lib/tkrat/pkgIndex.tcl
 %%SHARED%%
@@ -29,7 +29,7 @@ share/tkrat/show.tcl
 share/tkrat/source.tcl
 share/tkrat/start.tcl
 share/tkrat/tclIndex
-share/tkrat/text_balText_de.tcl 
+share/tkrat/text_balText_de.tcl
 share/tkrat/text_balText_en.tcl
 share/tkrat/text_balText_fr.tcl
 share/tkrat/text_balText_it.tcl
