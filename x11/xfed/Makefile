@@ -2,10 +2,10 @@
 # Date created:         May 18 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 1999/10/31 08:17:33 turan Exp $
+# $OpenBSD: Makefile,v 1.5 1999/10/31 09:42:43 angelos Exp $
 #
 
-BROKEN=		bad packing lists, man/man1/xfed.1.  duplication of code with x11/xfedor.  consult maintainer.
+BROKEN=		waiting for turans@ to verify
 
 DISTNAME=	xfed
 PKGNAME=	xfed-1.0
