@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2003/09/26 17:57:38 marcm Exp $
+# $OpenBSD: Makefile,v 1.25 2003/09/27 06:47:52 marcm Exp $
 
 COMMENT=		"extremely fast password cracker"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.openwall.com/john/dl/
 
 DISTFILES=		${DISTNAME}.tar.gz \
-			john-1.6.tar.gz:0
+			john-1.6.tar.gz
 
 NO_REGRESS=		Yes
 
