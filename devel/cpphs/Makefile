@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/19 04:49:00 dons Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/11 16:42:21 alek Exp $
 
 COMMENT=	"liberalised reimplementation of cpp in Haskell"
 
@@ -19,6 +19,8 @@ BUILD_DEPENDS+=	bin/hmake::lang/nhc98
 HC=		hmake 
 HC_OPTS=	-package base
 .endif
+
+WANTLIB=	c gmp m
 
 do-build:
 	( cd ${WRKSRC} && ${HC} ${HC_OPTS} cpphs )
