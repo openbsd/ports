@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/04/25 22:40:52 ish Exp $
+# $OpenBSD: Makefile,v 1.16 2003/08/02 02:37:52 naddy Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 8.0"
 
@@ -60,7 +60,7 @@ do-install:
 	@rm -f ${PREFIX}/${F}
 .endfor
 
-	@cd ${PREFIX} && ${PATCH} --forward --quiet -E < ${PATCHDIR}/patch-ldd
+	@cd ${PREFIX} && ${PATCH} -p0 --forward --quiet -E < ${PATCHDIR}/patch-ldd
 
 # copy in ld.so.conf
 	${INSTALL_DATA} ${FILESDIR}/ld.so.conf ${PREFIX}/etc
