@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/08/13 09:54:06 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/11/14 03:16:13 kevlo Exp $
 cgi-bin/calendar/LICENSE
 cgi-bin/calendar/README
 cgi-bin/calendar/README.MAKING-PRINTABLE-CALENDARS
@@ -8,8 +8,9 @@ cgi-bin/calendar/convert2newformat.pl
 cgi-bin/calendar/convert2pscal.pl
 cgi-bin/calendar/email.pl
 cgi-bin/calendar/index.cgi
-cgi-bin/calendar/mycalendar-conduit.pl
 cgi-bin/calendar/printable.cgi
+cgi-bin/calendar/protected/import.cgi
 cgi-bin/calendar/protected/update.cgi
 cgi-bin/calendar/sitevariables.pl
 cgi-bin/calendar/template.html
+@dirrm cgi-bin/calendar/protected
