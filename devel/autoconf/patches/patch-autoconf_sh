@@ -1,19 +1,21 @@
-$OpenBSD: patch-autoconf_sh,v 1.1 2001/09/16 15:16:45 espie Exp $
---- autoconf.sh.orig	Tue Jan  5 14:27:53 1999
-+++ autoconf.sh	Sun Sep 16 17:09:08 2001
-@@ -45,7 +45,7 @@ case "${M4}" in
+--- autoconf.sh.orig	Tue Jan  5 06:27:53 1999
++++ autoconf.sh	Mon Mar 25 11:57:03 2002
+@@ -45,7 +45,8 @@ case "${M4}" in
  esac
  
  : ${TMPDIR=/tmp}
 -tmpout=${TMPDIR}/acout.$$
 +tmpout=`mktemp ${TMPDIR}/acout.XXXXXXXXXX` || exit 1
++rm -f $tmpout
  localdir=
  show_version=no
  
-@@ -95,9 +95,19 @@ case $# in
+@@ -95,9 +96,19 @@ case $# in
    *) echo "$usage" >&2; exit 1 ;;
  esac
  
+-trap 'rm -f $tmpin $tmpout; exit 1' 1 2 15
++trap 'rm -f $tmpin $tmpout; exit 1' 0 1 2 3 13 15
 +if fgrep AC_ $infile >/dev/null; then
 +  :
 +else 
@@ -22,16 +24,15 @@ $OpenBSD: patch-autoconf_sh,v 1.1 2001/09/16 15:16:45 espie Exp $
 +    exit 1
 +  fi
 +fi
-+
- trap 'rm -f $tmpin $tmpout; exit 1' 1 2 15
  
 -tmpin=${TMPDIR}/acin.$$ # Always set this, to avoid bogus errors from some rm's.
 +tmpin=`mktemp ${TMPDIR}/acin.XXXXXXXXXX` || { rm -f $tmpout; exit 1; }
++rm -f $tmpin
 +# Always set this, to avoid bogus errors from some rm's.
  if test z$infile = z-; then
    infile=$tmpin
    cat > $infile
-@@ -112,16 +122,7 @@ else
+@@ -112,16 +123,7 @@ else
    use_localdir=
  fi
  
