@@ -1,7 +1,7 @@
-$OpenBSD: patch-docs_hypermail_html,v 1.1 2002/09/03 23:22:50 brad Exp $
---- docs/hypermail.html.orig	Sun Sep  1 22:55:38 2002
-+++ docs/hypermail.html	Sun Sep  1 22:56:34 2002
-@@ -589,7 +589,7 @@ Hypermail development is currently being
+$OpenBSD: patch-docs_hypermail_html,v 1.2 2003/03/06 05:11:04 brad Exp $
+--- docs/hypermail.html.orig	Tue Nov 26 17:03:39 2002
++++ docs/hypermail.html	Wed Mar  5 23:29:29 2003
+@@ -590,7 +590,7 @@ Hypermail development is currently being
  <BLOCKQUOTE> 
  <STRONG>hypermail(1)</STRONG>,
  &nbsp; 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-docs_hmrc_html,v 1.1 2002/09/03 23:22:50 brad Exp $
---- docs/hmrc.html.orig	Sun Sep  1 22:56:45 2002
-+++ docs/hmrc.html	Sun Sep  1 22:57:09 2002
-@@ -1162,7 +1162,7 @@ directories more than one level deep (e.
+$OpenBSD: patch-docs_hmrc_html,v 1.2 2003/03/06 05:11:04 brad Exp $
+--- docs/hmrc.html.orig	Tue Nov 26 17:03:39 2002
++++ docs/hmrc.html	Wed Mar  5 23:29:29 2003
+@@ -1225,7 +1225,7 @@ directories more than one level deep (e.
  <blockquote>
  <strong>hypermail(1)</strong>,
  &nbsp;
