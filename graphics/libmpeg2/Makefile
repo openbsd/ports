@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2003/07/28 06:07:03 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/04/18 00:41:03 jolan Exp $
 
 COMMENT=	"free MPEG-2 video stream decoder"
-DISTNAME=	mpeg2dec-20030612
-PKGNAME=	libmpeg2-20030612p0
-EXTRACT_SUFX=	.tar.bz2
+DISTNAME=	mpeg2dec-0.4.0b
+PKGNAME=	${DISTNAME:S/mpeg2dec/libmpeg2/}
 CATEGORIES=	graphics x11
-MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/0.6.0/contrib/
+MASTER_SITES=	${HOMEPAGE}files/
 
 HOMEPAGE=	http://libmpeg2.sourceforge.net/
 
@@ -20,6 +19,8 @@ PERMIT_PACKAGE_FTP=	Yes
 USE_X11=	Yes
 
 BUILD_DEPENDS=	:pkgconfig->=0.12.0p1:devel/pkgconfig
+
+WRKDIST=${WRKDIR}/mpeg2dec-0.4.0
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
