@@ -32,4 +32,5 @@ include/X11/pixmaps/nomail.xpm
 include/X11/pixmaps/nomail_s.xpm
 include/X11/pixmaps/oldmail.xpm
 include/X11/pixmaps/oldmail_s.xpm
+man/cat1/asmail.0
 @dirrm share/doc/asmail

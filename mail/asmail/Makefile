@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/10/30 22:10:33 angelos Exp $
-
-BROKEN=		waiting for turans@ to verify
+# $OpenBSD: Makefile,v 1.6 1999/11/05 03:12:02 kevlo Exp $
 
 DISTNAME=	asmail-0.50
 CATEGORIES=	mail x11
