@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/07/07 21:13:30 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2003/07/07 22:27:46 pvalchev Exp $
 
 COMMENT=	"C library to parse CGI Forms"
 
@@ -19,8 +19,6 @@ CONFIGURE_STYLE=	gnu
 
 .if $(MACHINE_ARCH) == "alpha"
 BROKEN=		"Alpha architecture not yet supported"
-.elif ${MACHINE_ARCH} == "mips"
-PLIST=${PKGDIR}/PLIST.mips
 .endif
 
 NO_REGRESS=	Yes
