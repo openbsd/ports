@@ -1,0 +1,13 @@
+diff -u -r w2/tracker/play_list.c work/tracker/play_list.c
+--- w2/tracker/play_list.c	Mon May  6 23:53:20 1996
++++ work/tracker/play_list.c	Sun Sep 27 21:12:12 1998
+@@ -243,6 +243,8 @@
+ 	ENTRY e;
+ 	unsigned i, k;
+ 
++	if (idx == 0)
++		return;
+ 	for (i = idx-1; i > 0; i--)
+ 		{
+ 		k = random_range(i+1);
+

@@ -1,0 +1,16 @@
+diff -u -r w2/tracker/Modules/Pro/effects.c work/tracker/Modules/Pro/effects.c
+--- w2/tracker/Modules/Pro/effects.c	Sat Apr 13 19:16:54 1996
++++ work/tracker/Modules/Pro/effects.c	Sun Sep 27 19:44:20 1998
+@@ -207,8 +207,9 @@
+       /* temporary update of only the step value,
+        * note that we do not change the saved pitch.
+        */
+-   set_temp_pitch(ch, 
+-		ch->pitch + sinusoid_value(&(ch->vib))/256);
++	if (ch->pitch)
++		set_temp_pitch(ch, 
++			ch->pitch + sinusoid_value(&(ch->vib))/256);
+    }
+ 
+ LOCAL void set_vibrato(struct channel *ch, struct event *e)
+

@@ -1,0 +1,67 @@
+diff -u -r w2/tracker/Makefile work/tracker/Makefile
+--- w2/tracker/Makefile	Tue May  7 17:20:50 1996
++++ work/tracker/Makefile	Sun Sep 27 17:20:35 1998
+@@ -1,5 +1,5 @@
+ # Makefile for any machine
+-# - based on my newer makefile and the GREATE
++# - based on my newer makefile and the GREAT
+ # modifications by Mike Battersby
+ ###############################################################################
+ #
+@@ -10,8 +10,8 @@
+ #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
+ #  soundblaster, aix, next, MM1, NAS, sbos2, SVR4
+ # gmake needed to handle this file in FreeBSD
+-MACHINE = sparc
+-VERSION = 5.3
++#MACHINE = sparc
++VERSION = 5.3-OpenBSD
+ #VPATH=..
+ 
+ # The name of your C compiler. For most machines this will be
+@@ -20,7 +20,7 @@
+ 
+ OPTS=-c 
+ 
+-PREFIX=/users/algo/espie/pub
++PREFIX?=/users/algo/espie/pub
+ # Destination directory for tracker binaries and manpage.
+ #
+ # If you don't wish to use the 'make install' and 'make install.man'
+@@ -175,6 +175,15 @@
+ UI_freebsd = Unix/
+ SHELL_freebsd = /bin/sh
+ 
++CFLAGS_openbsd = -O3 -funroll-loops -finline-functions
++LIBS_openbsd = -lm
++AUDIODIR_openbsd = OpenBSD/
++CONFIG_openbsd = OpenBSD/
++O_openbsd = .o
++EXE_openbsd =
++UI_openbsd = Unix/
++SHELL_openbsd = /bin/sh
++
+ CFLAGS_aix = -O
+ LIBS_aix = -lm
+ AUDIODIR_aix = Aix/
+@@ -250,7 +259,7 @@
+ display$O prefs$O autoinit$O $(UI)ui$O empty$O color$O version$O \
+ st_virt$O automaton$O
+ 
+-all:    tracker${EXE} randomize${EXE} splitmod${EXE} Docs/tracker.text
++all:    tracker${EXE} randomize${EXE}
+ 
+ config.h: $(CONFIG)config.h 
+ 	rm -f config.h
+@@ -272,9 +281,8 @@
+ install: 
+ 	$(INSTALL) $(INST_BIN_OPT) tracker $(BIN_DIR)
+ 	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
+-	$(INSTALL) $(INST_BIN_OPT) splitmod $(BIN_DIR)
+ 	[ -f ${COMPRESSION_FILE} ] || \
+-		$(INSTALL) $(INST_MAN_OPT) compression_methods ${COMPRESSION_FILE}
++		$(INSTALL) $(INST_MAN_OPT) Lib/compression_methods ${COMPRESSION_FILE}
+ 
+ # no manpage available, use the texinfo manual.
+ install.man:
+

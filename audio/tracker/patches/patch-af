@@ -1,0 +1,16 @@
+diff -u -r w2/tracker/parse_options.c work/tracker/parse_options.c
+--- w2/tracker/parse_options.c	Tue May  7 00:48:28 1996
++++ work/tracker/parse_options.c	Sun Sep 27 16:33:45 1998
+@@ -238,10 +238,11 @@
+ 				switch(type)
+ 					{
+ 				case 's':
++				case 'm':
+ 					if (i == argindex)
+ 						set->args[argindex].scalar = 1;
+ 					else
+-						set->args[i].scalar = 0;
++						set->args[argindex].scalar = 0;
+ 					return 0;
+ 				case 'n':
+ 						{

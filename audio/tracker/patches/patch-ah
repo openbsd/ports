@@ -1,0 +1,20 @@
+diff -u -r w2/tracker/display.c work/tracker/display.c
+--- w2/tracker/display.c	Mon May  6 16:28:52 1996
++++ work/tracker/display.c	Sun Sep 27 21:02:33 1998
+@@ -543,7 +543,14 @@
+ 		copy3(note2name(note));
+ 		copy4(" off");
+ 		if (ch->samp->length)
+-			num3(para * 25600/ch->samp->length);
++			{
++			int percent;
++			percent = para * 25600/ch->samp->length;
++			if (percent <= 105)
++				num3(percent);
++			else
++				copy3("???");
++			}
+ 		else
+ 			copy3(empty);
+ 		*base++ = '%';
+

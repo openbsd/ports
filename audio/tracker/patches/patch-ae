@@ -1,0 +1,15 @@
+diff -u -r w2/tracker/handle_options.c work/tracker/handle_options.c
+--- w2/tracker/handle_options.c	Tue May  7 17:22:08 1996
++++ work/tracker/handle_options.c	Sun Sep 27 16:39:25 1998
+@@ -235,7 +235,9 @@
+ 		print_usage();
+ 		end_all(0);
+ 		}
+-	ask_freq = args[1].scalar * 1000;
++	ask_freq = args[1].scalar;
++	if (ask_freq < 1000)
++		ask_freq *= 1000;
+ 	stereo = args[2].scalar;
+ 	loop = args[3].scalar;
+ 	set_watched_scalar(OVERSAMPLE, args[4].scalar);
+

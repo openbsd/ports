@@ -1,33 +1,24 @@
-*** Docs/tracker.texinfo.orig	Thu Apr 11 21:21:05 1996
---- Docs/tracker.texinfo	Tue Nov 12 07:08:17 1996
-***************
-*** 979,992 ****
-  * Other Architectures: Porting tracker.
-  @end menu
-  
-! @node Aix, Amiga, Architecture dependent problems, Architecture Dependent problems
-  @subsection Aix
-  
-  The Aix port is slightly outdated and won't run with most recent versions of
-  Aix. There is nothing I can do about it until somebody sends me an up-to-date
-  version as I don't have access to Aix machines.
-  
-! @node Amiga, DECstation, Architecture dependent problems, Architecture dependent problems
-  @subsection Amiga
-  
-  There is currently one Amiga version running under AmigaDos. 
---- 979,992 ----
-  * Other Architectures: Porting tracker.
-  @end menu
-  
-! @node Aix, Amiga, Architecture dependent problems, Architecture dependent problems
-  @subsection Aix
-  
-  The Aix port is slightly outdated and won't run with most recent versions of
-  Aix. There is nothing I can do about it until somebody sends me an up-to-date
-  version as I don't have access to Aix machines.
-  
-! @node Amiga, DECstation, Aix, Architecture dependent problems
-  @subsection Amiga
-  
-  There is currently one Amiga version running under AmigaDos. 
+diff -u -r w2/tracker/Docs/readme work/tracker/Docs/readme
+--- w2/tracker/Docs/readme	Thu Apr 11 19:21:05 1996
++++ work/tracker/Docs/readme	Sun Sep 27 17:16:04 1998
+@@ -5,6 +5,12 @@
+ From version 4.29 on, commercial use of tracker is forbidden without
+ negotiating an agreement with me first.
+ 
++In particular, I'd appreciate if commercial Linux distributions would
++contact me first before distributing tracker... I'd love some free CD-Roms.
++
++The OpenBSD projects is explicitly allowed to distribute tracker on its
++CD-Roms.
++
+ For personal use purposes: I've spent quite some time supporting this 
+ program now.  If you use it much, and feel like it, you can send me
+ some money, or software you've written for the amiga, I won't 
+@@ -37,5 +43,5 @@
+ I can deal with french francs, or US checks. Anything else you'll
+ have to try.
+ 
+-	Marc Espie
++	Marc Espie, Marc.Espie@openbsd.org
+ 
+

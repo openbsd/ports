@@ -1,53 +1,34 @@
-*** Arch/PCux/audio.c.orig	Fri Apr 12 12:30:37 1996
---- Arch/PCux/audio.c	Thu May 21 20:30:57 1998
-***************
-*** 9,15 ****
-  #include <unistd.h>
-  #include <fcntl.h>
-  #include "extern.h"
-! 
-  struct options_set *port_options=0;
-  
-  #define DEFAULT_BUFFERS
---- 9,18 ----
-  #include <unistd.h>
-  #include <fcntl.h>
-  #include "extern.h"
-! #include "prefs.h"
-! #include "autoinit.h"
-! #include "watched_var.h"
-! #include <sys/ioctl.h>
-  struct options_set *port_options=0;
-  
-  #define DEFAULT_BUFFERS
-***************
-*** 26,34 ****
-  #else
-  #ifndef __FreeBSD__
-  /*	This should be sys/soundcard.h	*/
-! #include <sys/soundcard.h>
-  #else
-! #include <machine/soundcard.h>
-  #endif
-  #endif
-  
---- 29,37 ----
-  #else
-  #ifndef __FreeBSD__
-  /*	This should be sys/soundcard.h	*/
-! #include <soundcard.h>
-  #else
-! #include <soundcard.h>
-  #endif
-  #endif
-  
-***************
-*** 116,121 ****
---- 119,125 ----
-  		}
-  	samples_max = buf_max / dsize;
-  	current_freq = f;
-+ 	set_watched_scalar(FREQUENCY, f);
-  	total = 0;
-  	return f;
-     }
+diff -u -r w2/tracker/Docs/tracker.texinfo work/tracker/Docs/tracker.texinfo
+--- w2/tracker/Docs/tracker.texinfo	Thu Apr 11 19:21:05 1996
++++ work/tracker/Docs/tracker.texinfo	Sun Sep 27 17:16:43 1998
+@@ -1,10 +1,10 @@
+ \input texinfo
+ 
+ @setfilename tracker.info
+-@set VERSION 4.44
++@set VERSION 5.3-OpenBSD edition
+ @settitle Tracker @value{VERSION} 
+ @c End of header
+-@set EMAIL Marc.Espie@@ens.fr
++@set EMAIL Marc.Espie@@openbsd.org
+ @set POSTAL Marc Espie@*60 rue du 4 septembre@*87100 Limoges@*France
+ 
+ @titlepage
+@@ -979,14 +979,14 @@
+ * Other Architectures: Porting tracker.
+ @end menu
+ 
+-@node Aix, Amiga, Architecture dependent problems, Architecture Dependent problems
++@node Aix, Amiga, Architecture dependent problems, Architecture dependent problems
+ @subsection Aix
+ 
+ The Aix port is slightly outdated and won't run with most recent versions of
+ Aix. There is nothing I can do about it until somebody sends me an up-to-date
+ version as I don't have access to Aix machines.
+ 
+-@node Amiga, DECstation, Architecture dependent problems, Architecture dependent problems
++@node Amiga, DECstation, Aix, Architecture dependent problems
+ @subsection Amiga
+ 
+ There is currently one Amiga version running under AmigaDos. 
+
