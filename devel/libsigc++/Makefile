@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/05 11:23:33 shell Exp $
+# $OpenBSD: Makefile,v 1.10 2002/01/07 08:18:39 shell Exp $
 
 COMMENT=	"callback framework for C++"
 
 DISTNAME=	libsigc++-1.0.4
 CATEGORIES=	devel
-NEED_VERSION=	1.488
+NEED_VERSION=	1.504
 
+HOMEPAGE=	http://libsigc.sf.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libsigc
 
