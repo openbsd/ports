@@ -1,21 +1,12 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2001/08/11 16:23:16 naddy Exp $
---- configure.orig	Tue Jan  5 20:33:39 1999
-+++ configure	Mon Aug  6 16:26:42 2001
-@@ -1095,7 +1095,7 @@
- 	# The basic client libraries that are always needed
- 	# on all platforms.
- 	#
--	SYBASE_LIBS="-lblk -lcs -lct -lcomn -ltcl -lintl"
-+	SYBASE_LIBS="-lct -lm -ltds -lintl"
- 
- 	MAJOR_VERSION=`echo $SYBASE_VERSION | cut -d '.' -f 1`
- 
-@@ -1145,6 +1145,8 @@
- 		dgux*)
- 			SYBASE_OS="-lm -ldl -ldgc";;
- 		aix*)
-+			SYBASE_OS="-lm";;
-+		openbsd*)
- 			SYBASE_OS="-lm";;
- 		*)
- 			SYBASE_OS="-lm -ldl";;
+$OpenBSD: patch-configure,v 1.2 2001/12/23 23:27:23 jcs Exp $
+--- configure.orig	Sun Dec 23 16:40:32 2001
++++ configure	Sun Dec 23 16:41:14 2001
+@@ -1209,6 +1209,8 @@
+ 				SYBASE_OS="-lm -ldl -ldgc";;
+ 			aix*)
+ 				SYBASE_OS="-lm";;
++			openbsd*)
++				SYBASE_OS="-lm";;
+ 			*)
+ 				SYBASE_OS="-lm -ldl";;
+ 		esac

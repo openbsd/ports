@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/02 17:52:59 jcs Exp $
+# $OpenBSD: Makefile,v 1.7 2001/12/23 23:27:22 jcs Exp $
 
-DISTNAME=	sqsh-1.7
+DISTNAME=	sqsh-2.1
 CATEGORIES=	databases shells
 NEED_VERSION=	1.474
 
@@ -10,8 +10,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 COMMENT=	"SQL shell"
-HOMEPAGE=	http://www.voicenet.com/~gray/sqsh.html
-MASTER_SITES=	http://www.users.voicenet.com/~gray/
+HOMEPAGE=	http://www.sqsh.org/
+MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
@@ -24,15 +24,16 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		SYBASE="${LOCALBASE}"
-CONFIGURE_ARGS=	--with-readline
+CONFIGURE_ARGS=	--with-readline --sysconfdir=/etc
+
 ALL_TARGET=	
 NO_REGRESS=	Yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sqsh ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/sqsh ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sqsh
-	${INSTALL_DATA} ${WRKSRC}/doc/sample.sqshrc \
-		${PREFIX}/share/examples/sqsh
+	${INSTALL_DATA} ${WRKSRC}/doc/global.sqshrc \
+		${PREFIX}/share/examples/sqsh/
 	${INSTALL_MAN} ${WRKSRC}/doc/sqsh.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2001/12/23 23:27:23 jcs Exp $
+--- src/Makefile.in.orig	Sun Dec 23 16:52:30 2001
++++ src/Makefile.in	Sun Dec 23 16:53:03 2001
+@@ -7,7 +7,7 @@
+ #  common directory. If you don't want a global sqshrc just comment 
+ #  out SQSHRC_GLOBAL, below.
+ 
+-SQSHRC_GLOBAL = @prefix@/etc/sqshrc
++SQSHRC_GLOBAL = /etc/sqshrc
+ SQSHRC_PATH   = "$(SQSHRC_GLOBAL):$${HOME}/.sqshrc"
+ 
+ #  The following variables are configurable by the user.  Typically
