@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2001/06/22 18:45:33 jasoni Exp $
+# $OpenBSD: Makefile,v 1.8 2001/07/03 22:12:24 jasoni Exp $
 
 COMMENT= 	"vi clone, many additional features"
 
-PKGNAME=	vim-5.8.4
+PKGNAME=	vim-5.8.7
 DISTNAME=	vim-5.8
 CATEGORIES=	editors
 NEED_VERSION=	1.400
@@ -19,7 +19,7 @@ HOMEPAGE=	http://www.vim.org/
 
 MAINTAINER=	Jason Ish <jasoni@openbsd.org>
 
-.for p in 02 03 04 
+.for p in 02 03 04 05 06 07
 PATCHFILES+=	5.8.0${p}:0
 .endfor
 
