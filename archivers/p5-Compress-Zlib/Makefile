@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2001/05/05 21:59:24 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2001/05/06 19:35:57 avsm Exp $
 
 COMMENT=	"perl interface to the zlib compression library"
-DISTNAME=	Compress-Zlib-1.11
+DISTNAME=	Compress-Zlib-1.12
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	archivers perl5
-NEED_VERSION=	1.384
+NEED_VERSION=	1.402
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Compress
