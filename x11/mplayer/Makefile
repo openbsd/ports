@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/05/17 02:00:29 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2002/06/04 11:26:17 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -21,6 +21,7 @@ MASTER_SITES=		http://www2.mplayerhq.hu/MPlayer/releases/
 #MASTER_SITES0=		http://www2.mplayerhq.hu/MPlayer/Skin/
 MASTER_SITES0=		http://www.sightly.net/mplayer/
 
+COPTS=-O4 -fomit-frame-pointer -march=i686 -mcpu=i686
 SKIN=		default
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKIN}${EXTRACT_SUFX}:0
 
@@ -46,7 +47,6 @@ CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/as \
 		--disable-alsa \
 		--disable-vorbis \
-		--disable-aa \
 		--disable-ossaudio \
 		--enable-select \
 		--enable-gl \
@@ -59,8 +59,8 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 CONFIGURE_ARGS+=--target=ppc-openbsd
 .endif
 
-FLAVORS=	sdl ggi debug mad win32 iconv
-FLAVOR?=
+FLAVORS=	sdl ggi debug mad win32 iconv aa
+FLAVOR?=	
 
 .if ${FLAVOR:L:Msdl}
 CONFIGURE_ARGS+=--enable-sdl \
@@ -68,6 +68,13 @@ CONFIGURE_ARGS+=--enable-sdl \
 LIB_DEPENDS+=	SDL:sdl>=1.2.4p1:devel/sdl
 .else
 CONFIGURE_ARGS+=--disable-sdl
+.endif
+
+.if ${FLAVOR:L:Maa}
+CONFIGURE_ARGS+=--enable-aa
+LIB_DEPENDS+=	aa::graphics/aalib
+.else
+CONFIGURE_ARGS+=--disable-aa
 .endif
 
 .if ${FLAVOR:L:Mggi}

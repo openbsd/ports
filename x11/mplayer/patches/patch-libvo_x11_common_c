@@ -1,7 +1,7 @@
-$OpenBSD: patch-libvo_x11_common_c,v 1.1 2002/05/18 17:50:19 art Exp $
---- libvo/x11_common.c.orig	Wed May 15 22:13:32 2002
-+++ libvo/x11_common.c	Wed May 15 22:13:41 2002
-@@ -500,10 +500,11 @@ int vo_x11_check_events(Display *mydispl
+$OpenBSD: patch-libvo_x11_common_c,v 1.2 2002/06/04 11:26:17 espie Exp $
+--- libvo/x11_common.c.orig	Mon May 13 22:45:42 2002
++++ libvo/x11_common.c	Sat May 18 23:16:22 2002
+@@ -588,10 +588,11 @@ int vo_x11_check_events(Display *mydispl
  	   {
  	    Window root;
  	    int foo;
