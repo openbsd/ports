@@ -34,7 +34,7 @@ FONTS=			andale32.exe \
 			verdan32.exe \
 			webdin32.exe
 
-INST_DIR=		lib/X11/fonts/mscorefonts
+INST_DIR=		${PREFIX}/lib/X11/fonts/mscorefonts
 
 do-extract:
 .for fontfile in ${FONTS}
@@ -42,10 +42,10 @@ do-extract:
 .endfor
 
 do-install:
-	mkfontscale ${WRKDIST}
-	${INSTALL_DATA_DIR} "${PREFIX}/${INST_DIR}"
-	${INSTALL_DATA} ${WRKDIST}/*.ttf ${WRKDIST}/fonts.scale "${PREFIX}/${INST_DIR}"
-	tr -d \\015 < ${WRKDIST}/licen.txt > "${PREFIX}/${INST_DIR}/eula.txt"
-	ln -s fonts.scale "${PREFIX}/${INST_DIR}/fonts.dir"
+	${INSTALL_DATA_DIR} ${INST_DIR}; \
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${INST_DIR}; \
+	${X11BASE}/bin/mkfontscale ${INST_DIR}; \
+	${X11BASE}/bin/mkfontdir ${INST_DIR};
+	tr -d \\015 < ${WRKDIST}/licen.txt > "${INST_DIR}/eula.txt"
 
 .include <bsd.port.mk>
