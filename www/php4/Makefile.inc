@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.22 2004/06/06 18:25:35 avsm Exp $
+# $OpenBSD: Makefile.inc,v 1.23 2004/06/08 15:59:54 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -8,6 +8,7 @@ V=		4.3.7
 DISTNAME=	php-${V}
 CATEGORIES=	www lang
 
+MAINTAINER=	Robert Nagy <robert@openbsd.org>
 HOMEPAGE=	http://www.php.net/
 
 MASTER_SITES=	http://us2.php.net/distributions/ \
@@ -38,8 +39,6 @@ MODULES_DIR=		${CHROOT_DIR}/${MODULES_SUBDIR}
 
 .if defined(USE_GCC3)
 PHP_LDFLAGS=		-lstdc++ -lm
-.else
-PHP_LDFLAGS=		# nothing for now
 .endif
 
 CONFIGURE_STYLE=	autoconf

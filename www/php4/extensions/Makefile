@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/02/29 00:25:41 avsm Exp $
+# $OpenBSD: Makefile,v 1.30 2004/06/08 15:59:54 robert Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -13,7 +13,7 @@ FLAVORS=	no_x11
 FLAVOR?= 
 
 RUN_DEPENDS=	:php4-core-${V}:www/php4/core
-MODULES=	gettext iconv
+MODULES=	gettext
 
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-iconv-dir=${LOCALBASE} \
