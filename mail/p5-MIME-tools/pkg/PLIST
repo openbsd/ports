@@ -1,0 +1,46 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/19 19:12:56 peter Exp $
+libdata/perl5/site_perl/MIME/Body.pm
+libdata/perl5/site_perl/MIME/Decoder.pm
+libdata/perl5/site_perl/MIME/Decoder/Base64.pm
+libdata/perl5/site_perl/MIME/Decoder/Binary.pm
+libdata/perl5/site_perl/MIME/Decoder/Gzip64.pm
+libdata/perl5/site_perl/MIME/Decoder/NBit.pm
+libdata/perl5/site_perl/MIME/Decoder/QuotedPrint.pm
+libdata/perl5/site_perl/MIME/Decoder/UU.pm
+libdata/perl5/site_perl/MIME/Entity.pm
+libdata/perl5/site_perl/MIME/Field/ConTraEnc.pm
+libdata/perl5/site_perl/MIME/Field/ContDisp.pm
+libdata/perl5/site_perl/MIME/Field/ContType.pm
+libdata/perl5/site_perl/MIME/Field/ParamVal.pm
+libdata/perl5/site_perl/MIME/Head.pm
+libdata/perl5/site_perl/MIME/Parser.pm
+libdata/perl5/site_perl/MIME/Parser/Filer.pm
+libdata/perl5/site_perl/MIME/Parser/Reader.pm
+libdata/perl5/site_perl/MIME/Parser/Results.pm
+libdata/perl5/site_perl/MIME/Tools.pm
+libdata/perl5/site_perl/MIME/WordDecoder.pm
+libdata/perl5/site_perl/MIME/Words.pm
+man/man3/MIME::Body.3p
+man/man3/MIME::Decoder.3p
+man/man3/MIME::Decoder::Base64.3p
+man/man3/MIME::Decoder::Binary.3p
+man/man3/MIME::Decoder::Gzip64.3p
+man/man3/MIME::Decoder::NBit.3p
+man/man3/MIME::Decoder::QuotedPrint.3p
+man/man3/MIME::Decoder::UU.3p
+man/man3/MIME::Entity.3p
+man/man3/MIME::Field::ConTraEnc.3p
+man/man3/MIME::Field::ContDisp.3p
+man/man3/MIME::Field::ContType.3p
+man/man3/MIME::Field::ParamVal.3p
+man/man3/MIME::Head.3p
+man/man3/MIME::Parser.3p
+man/man3/MIME::Parser::Filer.3p
+man/man3/MIME::Parser::Reader.3p
+man/man3/MIME::Parser::Results.3p
+man/man3/MIME::Tools.3p
+man/man3/MIME::WordDecoder.3p
+man/man3/MIME::Words.3p
+@dirrm libdata/perl5/site_perl/MIME/Parser
+@dirrm libdata/perl5/site_perl/MIME/Field
+@dirrm libdata/perl5/site_perl/MIME/Decoder
