@@ -1,0 +1,54 @@
+$OpenBSD: patch-gpasm_scan_l,v 1.1.1.1 2003/11/03 01:02:35 naddy Exp $
+--- gpasm/scan.l.orig	2003-10-19 01:28:50.000000000 +1000
++++ gpasm/scan.l	2003-10-19 01:31:11.000000000 +1000
+@@ -83,8 +83,7 @@ end		         {
+ <title>[^<"\r\n]*[>"]?   { /* got the title text */
+ #define LEN sizeof(state.lst.title_name)
+                            yytext[yyleng - 1] = '\0';
+-                           strncpy(state.lst.title_name, yytext, LEN - 1);
+-                           state.lst.title_name[LEN - 1] = '\0';
++                           strlcpy(state.lst.title_name, yytext, LEN);
+                            BEGIN(INITIAL);
+ #undef LEN
+                          }
+@@ -94,8 +93,7 @@ end		         {
+ <subtitle>[^<"\r\n]*[>"]?   { /* got the subtitle text */
+ #define LEN sizeof(state.lst.subtitle_name)
+                            yytext[yyleng - 1] = '\0';
+-                           strncpy(state.lst.subtitle_name, yytext, LEN - 1);
+-                           state.lst.subtitle_name[LEN - 1] = '\0';
++                           strlcpy(state.lst.subtitle_name, yytext, LEN);
+                            BEGIN(INITIAL);
+ #undef LEN
+                          }
+@@ -297,7 +295,7 @@ list		     	 {
+                                   that way it won't be a label */
+                                buffer[0] = ' ';
+                                buffer[1] = '\0';
+-                               strcat(buffer, subst);
++                               strlcat(buffer, subst, sizeof(buffer));
+                                push_string(buffer);
+  			     }
+ 			   } else {
+@@ -459,9 +457,9 @@ search_pathes(struct source_context *new
+   int i;
+ 
+   for(i = 0; i < state.path_num; i++) {
+-    strcpy(tryname, state.paths[i]);
+-    strcat(tryname, COPY_CHAR);
+-    strcat(tryname, name);
++    strlcpy(tryname, state.paths[i], sizeof(tryname));
++    strlcat(tryname, COPY_CHAR, sizeof(tryname));
++    strlcat(tryname, name, sizeof(tryname));
+     new->f = fopen(tryname, "rt");
+     if(new->f) {
+       new->name = strdup(tryname);
+@@ -507,7 +505,7 @@ void open_src(char *name, int isinclude)
+     if (state.src) {
+       char complaint[BUFSIZ];
+ 
+-      sprintf(complaint,
++      snprintf(complaint, sizeof(complaint),
+ 	      "Unable to open file \"%s\" - %s",
+ 	      name,
+ 	      strerror(errno));

@@ -1,0 +1,12 @@
+$OpenBSD: patch-gputils_gpdasm_c,v 1.1.1.1 2003/11/03 01:02:36 naddy Exp $
+--- gputils/gpdasm.c.orig	2003-10-14 22:31:20.000000000 +1000
++++ gputils/gpdasm.c	2003-10-14 22:31:45.000000000 +1000
+@@ -131,7 +131,7 @@ void dasm(MemBlock *memory)
+         } else {
+           printf("        ");
+         }
+-        gp_disassemble(memory, &i, state.class, buffer);
++        gp_disassemble(memory, &i, state.class, buffer, sizeof(buffer));
+         printf("%s\n", buffer);
+         if (i != lastloc) {
+           /* some 18xx instructions use two words */

@@ -1,0 +1,53 @@
+$OpenBSD: patch-gpasm_macro_c,v 1.1.1.1 2003/11/03 01:02:35 naddy Exp $
+--- gpasm/macro.c.orig	2003-10-14 21:24:34.000000000 +1000
++++ gpasm/macro.c	2003-10-14 21:27:13.000000000 +1000
+@@ -59,15 +59,15 @@ void setup_macro(struct macro_head *h, i
+         if (pToH->tag == symbol) {
+           annotate_symbol(sym, strdup(pToH->value.symbol));
+         } else if (pToH->tag == string) {
+-          sprintf(buffer, "\"%s\"", pToH->value.string);
++          snprintf(buffer, sizeof(buffer), "\"%s\"", pToH->value.string);
+           annotate_symbol(sym, strdup(buffer));
+         } else {
+           int value = maybe_evaluate(pToH);
+ 
+ 	  if (value < 0)
+-	    sprintf(buffer, "-%#x", -value);
++	    snprintf(buffer, sizeof(buffer), "-%#x", -value);
+           else
+-	    sprintf(buffer, "%#x", value);	  
++	    snprintf(buffer, sizeof(buffer), "%#x", value);	  
+ 	  annotate_symbol(sym, strdup(buffer));
+         }
+     
+@@ -83,12 +83,12 @@ void setup_macro(struct macro_head *h, i
+ 
+ /* Copy the macro body to a buffer. */
+ 
+-void copy_macro_body(struct macro_body *b, char *buffer)
++void copy_macro_body(struct macro_body *b, char *buffer, size_t sizeof_buffer)
+ {
+   while (b) {
+     if (b->src_line != NULL) {
+-      strcat(buffer, b->src_line);
+-      strcat(buffer, "\n");
++      strlcat(buffer, b->src_line, sizeof_buffer);
++      strlcat(buffer, "\n", sizeof_buffer);
+     }
+     b = b->next;
+   }
+@@ -118,10 +118,10 @@ make_macro_buffer(struct macro_head *h)
+ 
+   /* Allocate memory for the new buffer. yy_delete_buffer frees it */
+   macro_src = (char *)calloc(sizeof(char), macro_src_size);
+-  macro_src[0] = '\0';
+-
+-  /* build the string to be scanned */  
+-  copy_macro_body(h->body, macro_src);
++  if (macro_src) {
++    /* build the string to be scanned */  
++    copy_macro_body(h->body, macro_src, macro_src_size);
++  }
+ 
+   return macro_src;
+ }

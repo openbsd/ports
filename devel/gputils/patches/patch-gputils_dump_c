@@ -1,0 +1,18 @@
+$OpenBSD: patch-gputils_dump_c,v 1.1.1.1 2003/11/03 01:02:36 naddy Exp $
+--- gputils/dump.c.orig	2003-10-14 21:56:07.000000000 +1000
++++ gputils/dump.c	2003-10-14 22:16:52.000000000 +1000
+@@ -336,9 +336,11 @@ void dump_source_files( void )
+ 	substr(b,&temp[offset+1],FILE_SIZE);
+ 
+ 	if(temp[offset]) {
+-	  source_file_names[number_of_source_files] = 
+-	    (char *)malloc(strlen(b) + 1);
+-	  strcpy(source_file_names[number_of_source_files],b);
++	  source_file_names[number_of_source_files] = strdup(b);
++	  if (!source_file_names[number_of_source_files]) {
++            err(1, NULL);
++	    exit(1);
++          }
+ 	  printf("%s\n",source_file_names[number_of_source_files]);
+ 	  source_files[number_of_source_files] = 
+ 	    fopen(source_file_names[number_of_source_files],"rt");

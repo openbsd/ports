@@ -1,0 +1,23 @@
+$OpenBSD: patch-gpasm_gpasm_c,v 1.1.1.1 2003/11/03 01:02:35 naddy Exp $
+--- gpasm/gpasm.c.orig	2003-10-09 11:29:47.000000000 +1000
++++ gpasm/gpasm.c	2003-10-19 01:24:54.000000000 +1000
+@@ -255,8 +255,8 @@ process_args( int argc, char *argv[])
+       #endif
+       break;
+     case 'o':
+-      strcpy(state.hexfilename, optarg);
+-      strcpy(state.basefilename, optarg);
++      strlcpy(state.hexfilename, optarg, sizeof(state.hexfilename));
++      strlcpy(state.basefilename, optarg, sizeof(state.basefilename));
+       pc = strrchr(state.basefilename, '.');
+       if (pc)
+         *pc = 0;
+@@ -317,7 +317,7 @@ assemble(void)
+   state.c_memory = state.i_memory = i_memory_create();
+ 
+   if(state.basefilename[0] == '\0') {
+-    strcpy(state.basefilename, state.srcfilename);
++    strlcpy(state.basefilename, state.srcfilename, sizeof(state.basefilename));
+     pc = strrchr(state.basefilename, '.');
+     if (pc)
+       *pc = 0;

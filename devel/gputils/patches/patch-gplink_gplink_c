@@ -1,0 +1,79 @@
+$OpenBSD: patch-gplink_gplink_c,v 1.1.1.1 2003/11/03 01:02:36 naddy Exp $
+--- gplink/gplink.c.orig	2003-10-14 21:43:55.000000000 +1000
++++ gplink/gplink.c	2003-10-14 21:50:19.000000000 +1000
+@@ -264,7 +264,7 @@ void gplink_open_coff(char *name)
+   FILE *coff;
+   char file_name[BUFSIZ];
+   
+-  strcpy(file_name, name);
++  strlcpy(file_name, name, sizeof(file_name));
+   
+   coff = fopen(file_name, "rb");
+   if ((coff == NULL) && (strchr(file_name, PATH_CHAR) == 0)) { 
+@@ -272,9 +272,9 @@ void gplink_open_coff(char *name)
+     int i;
+ 
+     for(i = 0; i < state.numpaths; i++) {
+-      strcpy(file_name, state.paths[i]);
+-      strcat(file_name, COPY_CHAR);
+-      strcat(file_name, name);
++      strlcpy(file_name, state.paths[i], sizeof(file_name));
++      strlcat(file_name, COPY_CHAR, sizeof(file_name));
++      strlcat(file_name, name, sizeof(file_name));
+       coff = fopen(file_name, "rb");
+       if (coff != NULL) {
+         break;
+@@ -446,7 +446,7 @@ int main(int argc, char *argv[])
+       state.mapfile = normal;
+       break;
+     case 'o':
+-      strcpy(state.basefilename, optarg);
++      strlcpy(state.basefilename, optarg, sizeof(state.basefilename));
+       pc = strrchr(state.basefilename, '.');
+       if (pc)
+         *pc = 0;
+@@ -478,18 +478,18 @@ int main(int argc, char *argv[])
+ 
+   if(state.basefilename[0] == '\0') {
+     /* set default output filename to be a.o, a.hex, a.cod, a.map */
+-    strcpy(state.basefilename, "a");
++    strlcpy(state.basefilename, "a", sizeof(state.basefilename));
+   }
+ 
+   /* setup output filenames */
+-  strcpy(state.codfilename, state.basefilename);
+-  strcat(state.codfilename, ".cod");  
+-  strcpy(state.hexfilename, state.basefilename);
+-  strcat(state.hexfilename, ".hex");  
+-  strcpy(state.mapfilename, state.basefilename);
+-  strcat(state.mapfilename, ".map");  
+-  strcpy(state.objfilename, state.basefilename);
+-  strcat(state.objfilename, ".cof");  
++  strlcpy(state.codfilename, state.basefilename, sizeof(state.codfilename));
++  strlcat(state.codfilename, ".cod", sizeof(state.codfilename));  
++  strlcpy(state.hexfilename, state.basefilename, sizeof(state.hexfilename));
++  strlcat(state.hexfilename, ".hex", sizeof(state.hexfilename));  
++  strlcpy(state.mapfilename, state.basefilename, sizeof(state.mapfilename));
++  strlcat(state.mapfilename, ".map", sizeof(state.mapfilename));  
++  strlcpy(state.objfilename, state.basefilename, sizeof(state.objfilename));
++  strlcat(state.objfilename, ".cof", sizeof(state.objfilename));  
+ 
+   /* Open all objects and archives in the file list. */ 
+   for ( ; optind < argc; optind++) {
+@@ -514,12 +514,12 @@ int main(int argc, char *argv[])
+       return EXIT_FAILURE; 
+     }
+     #ifdef HAVE_DOS_BASED_FILE_SYSTEM
+-      strcpy(file_name, DOS_LKR_PATH);    
++      strlcpy(file_name, DOS_LKR_PATH, sizeof(file_name));
+     #else
+-      strcpy(file_name, GPLINK_LKR_PATH);
++      strlcpy(file_name, GPLINK_LKR_PATH, sizeof(file_name));
+     #endif
+-    strcat(file_name, COPY_CHAR);
+-    strcat(file_name, script_name);
++    strlcat(file_name, COPY_CHAR, sizeof(file_name));
++    strlcat(file_name, script_name, sizeof(file_name));
+     gp_message("using default linker script \"%s\"", file_name);
+     open_src(file_name, 0);
+     yyparse();

@@ -1,0 +1,20 @@
+$OpenBSD: patch-libgputils_gpsystem_c,v 1.1.1.1 2003/11/03 01:02:36 naddy Exp $
+--- libgputils/gpsystem.c.orig	2003-10-14 23:54:47.000000000 +1000
++++ libgputils/gpsystem.c	2003-10-14 23:55:19.000000000 +1000
+@@ -126,14 +126,14 @@ gp_putb32(char *addr, long data)
+ }
+ 
+ void
+-gp_date_string(char *buffer)
++gp_date_string(char *buffer, size_t sizeof_buffer)
+ {
+   time_t now;
+   struct tm *now_tm;
+ 
+   time(&now);
+   now_tm = localtime(&now);
+-  sprintf(buffer,
++  snprintf(buffer, sizeof_buffer,
+           "%d-%d-%d  %02d:%02d:%02d",
+           now_tm->tm_mon + 1,
+           now_tm->tm_mday,

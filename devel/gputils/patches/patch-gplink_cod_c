@@ -1,0 +1,14 @@
+$OpenBSD: patch-gplink_cod_c,v 1.1.1.1 2003/11/03 01:02:36 naddy Exp $
+--- gplink/cod.c.orig	2003-10-14 21:43:06.000000000 +1000
++++ gplink/cod.c	2003-10-14 21:43:39.000000000 +1000
+@@ -78,8 +78,8 @@ cod_init(void)
+ {
+ 
+   if (state.codfile != named) {
+-    strcpy(state.codfilename, state.basefilename);
+-    strcat(state.codfilename, ".cod");  
++    strlcpy(state.codfilename, state.basefilename, sizeof(state.codfilename));
++    strlcat(state.codfilename, ".cod", sizeof(state.codfilename));
+   }
+ 
+   if (state.codfile == suppress) {

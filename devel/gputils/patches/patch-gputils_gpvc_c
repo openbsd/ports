@@ -1,0 +1,12 @@
+$OpenBSD: patch-gputils_gpvc_c,v 1.1.1.1 2003/11/03 01:02:36 naddy Exp $
+--- gputils/gpvc.c.orig	2003-10-14 22:17:16.000000000 +1000
++++ gputils/gpvc.c	2003-10-14 22:17:59.000000000 +1000
+@@ -168,7 +168,7 @@ int main(int argc, char *argv[])
+   }
+   
+   if ((optind + 1) == argc)
+-    strcpy(filename, argv[optind]);
++    strlcpy(filename, argv[optind], sizeof(filename));
+   else
+     usage = 1;
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2003/11/03 01:02:34 naddy Exp $
+--- configure.ac.orig	2003-10-14 20:21:51.000000000 +1000
++++ configure.ac	2003-10-14 20:22:10.000000000 +1000
+@@ -51,7 +51,7 @@ AC_CHECK_TOOL(AR, ar, :)
+ 
+ # Checks for header files.
+ AC_HEADER_STDC
+-AC_CHECK_HEADERS(malloc.h unistd.h string.h strings.h)
++AC_CHECK_HEADERS(stdlib.h malloc.h unistd.h string.h strings.h)
+ 
+ # Checks for typedefs, structures, and compiler characteristics.
+ AC_C_CONST
