@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 1999/05/12 21:50:46 brad Exp $
+# $OpenBSD: Makefile,v 1.23 1999/06/09 20:34:57 brad Exp $
 
 DISTNAME=	gtk+-1.2.3
 CATEGORIES=     x11
@@ -15,7 +15,6 @@ LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib \
 
 USE_X11=	yes
 SYSCONFDIR=	${PREFIX}/lib
-#SEPARATE_BUILD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --sysconfdir=${SYSCONFDIR}
