@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/07 14:33:23 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/03/03 04:04:36 kevlo Exp $
 bin/doc++
 bin/docify
 bin/promote
@@ -35,7 +35,9 @@ share/doc/doc++/index.html
 share/doc/doc++/supportedHTMLmacros.html
 share/doc/doc++/supportedTeXmacros.html
 share/doc/doc++/toc.html
+share/locale/fr/LC_MESSAGES/doc++.mo
 share/locale/ja/LC_MESSAGES/doc++.mo
+share/locale/ro/LC_MESSAGES/doc++.mo
 share/locale/rudos/LC_MESSAGES/doc++.mo
 share/locale/rukoi8/LC_MESSAGES/doc++.mo
 share/locale/ruwin/LC_MESSAGES/doc++.mo
