@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1 1997/11/27 23:44:38 niklas Exp $
+# $OpenBSD: Makefile,v 1.2 1998/01/03 21:41:40 joey Exp $
 # $FreeBSD: Makefile,v 1.16 1997/11/17 18:36:43 max Exp $
 #
 
 #    SUBDIR += Wnn
 #    SUBDIR += big5con
 #    SUBDIR += big5fonts
-    SUBDIR += c2t
+     SUBDIR += c2t
 #    SUBDIR += celvis
 #    SUBDIR += cless
 #    SUBDIR += cnsfonts
@@ -15,7 +15,7 @@
 #    SUBDIR += gbscript
 #    SUBDIR += hc
 #    SUBDIR += hztty
-    SUBDIR += lunar
+     SUBDIR += lunar
 #    SUBDIR += mule-wnn4
 #    SUBDIR += nvi-big5
 #    SUBDIR += nvi-euc-cn
