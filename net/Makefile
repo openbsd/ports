@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2001/07/26 02:12:22 obecian Exp $
+# $OpenBSD: Makefile,v 1.156 2001/07/30 05:20:18 jsyn Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -122,6 +122,7 @@
      SUBDIR += sniffit
      SUBDIR += snort
      SUBDIR += ssldump
+     SUBDIR += tacacs+
      SUBDIR += tcpflow
      SUBDIR += tcpreplay
      SUBDIR += tcpshow
