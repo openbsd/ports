@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.167 2003/06/12 20:41:47 marcm Exp $
+# $OpenBSD: Makefile,v 1.168 2003/06/13 00:52:26 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -91,9 +91,9 @@
      SUBDIR += mplayer,sdl,faad
      SUBDIR += mplayer,no_x11
      SUBDIR += mplayer-fontmaker
-     SUBDIR += mplayer-fonts,luxi-sans
-     SUBDIR += mplayer-fonts,luxi-sans-bold
-     SUBDIR += mplayer-fonts,luxi-sans-italic
+     SUBDIR += mplayer-fonts,luxi_sans
+     SUBDIR += mplayer-fonts,luxi_sans_bold
+     SUBDIR += mplayer-fonts,luxi_sans_italic
      SUBDIR += msttcorefonts
      SUBDIR += mowitz
      SUBDIR += mterm
