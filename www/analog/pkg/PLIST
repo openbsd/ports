@@ -32,7 +32,9 @@ lib/analog/lang/is.lng
 lib/analog/lang/isa.lng
 lib/analog/lang/ish.lng
 lib/analog/lang/ita.lng
+lib/analog/lang/itadom.tab
 lib/analog/lang/ith.lng
+lib/analog/lang/ithdom.tab
 lib/analog/lang/jp.lng
 lib/analog/lang/jpform.html
 lib/analog/lang/kr.lng
@@ -53,6 +55,7 @@ lib/analog/lang/pth.lng
 lib/analog/lang/ro.lng
 lib/analog/lang/rua.lng
 lib/analog/lang/ruh.lng
+lib/analog/lang/ruhdom.tab
 lib/analog/lang/sea.lng
 lib/analog/lang/seh.lng
 lib/analog/lang/si1250.lng
@@ -65,6 +68,7 @@ lib/analog/lang/trh.lng
 lib/analog/lang/uk.lng
 lib/analog/lang/ukdom.tab
 lib/analog/lang/us.lng
+lib/analog/lang/yu.lng
 lib/analog/images/analogo.gif
 lib/analog/images/bara1.gif
 lib/analog/images/bara16.gif
@@ -123,6 +127,8 @@ share/doc/analog/Readme.html
 share/doc/analog/acknow.html
 share/doc/analog/alias.html
 share/doc/analog/bara8.gif
+share/doc/analog/barb1.gif
+share/doc/analog/barb32.gif
 share/doc/analog/barb8.gif
 share/doc/analog/barc8.gif
 share/doc/analog/bard8.gif
@@ -153,6 +159,8 @@ share/doc/analog/map.html
 share/doc/analog/meaning.html
 share/doc/analog/othreps.html
 share/doc/analog/output.html
+share/doc/analog/quickref.html
+share/doc/analog/reports.html
 share/doc/analog/start.html
 share/doc/analog/startmac.html
 share/doc/analog/startos2.html
