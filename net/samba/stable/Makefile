@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/02/11 16:17:17 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.5 2002/04/25 23:34:11 dhartmei Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 
 HOMEPAGE=	http://www.samba.org/
 
-MAINTAINER=	Daniel Hartmeier <daniel@benzedrine.cx>
+MAINTAINER=	Daniel Hartmeier <dhartmei@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
