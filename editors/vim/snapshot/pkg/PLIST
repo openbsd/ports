@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/05/15 20:31:50 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.8 2001/05/22 18:26:52 lebel Exp $
 bin/ex
 bin/rview
 bin/rvim
@@ -21,6 +21,7 @@ share/vim/vim60${V}/colors/README.txt
 share/vim/vim60${V}/colors/default.vim
 share/vim/vim60${V}/colors/evening.vim
 share/vim/vim60${V}/colors/morning.vim
+share/vim/vim60${V}/colors/peachpuff.vim
 share/vim/vim60${V}/doc/autocmd.txt
 share/vim/vim60${V}/doc/change.txt
 share/vim/vim60${V}/doc/cmdline.txt
