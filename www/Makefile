@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2001/06/17 12:35:11 reinhard Exp $
+# $OpenBSD: Makefile,v 1.56 2001/06/22 01:40:31 kevlo Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -30,6 +30,7 @@
 #    SUBDIR += libwww
 #    SUBDIR += linemode
      SUBDIR += links
+     SUBDIR += linux-netscape
 #    SUBDIR += mapedit
      SUBDIR += mhonarc
      SUBDIR += mindterm
