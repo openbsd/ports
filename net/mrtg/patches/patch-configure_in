@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1 2004/01/25 19:27:26 brad Exp $
---- configure.in.orig	2004-01-19 18:56:24.000000000 -0500
-+++ configure.in	2004-01-19 19:01:47.000000000 -0500
+$OpenBSD: patch-configure_in,v 1.2 2005/02/27 10:13:51 alek Exp $
+--- configure.in.orig	Tue Jan 13 07:28:11 2004
++++ configure.in	Sun Feb 27 10:05:00 2005
 @@ -113,6 +113,11 @@ AC_CHECK_LIB(gd,gdImagePng,[
     GLIBS="-lgd -lpng -lz"
          ],:,[-lgd -lpng -lz ${MATHLIBS}])
@@ -13,3 +13,14 @@ $OpenBSD: patch-configure_in,v 1.1 2004/01/25 19:27:26 brad Exp $
  AC_CHECK_LIB(gd,gdImagePng_jpg,[
     GDFORM_EXT=png
     GLIBS="-lgd -lpng -lz -ljpeg"
+@@ -128,8 +133,8 @@ if test x$GDFORM_EXT = xgif; then
+ fi
+ 
+ AC_CHECK_LIB(gd,gdImageGd,[
+-   GLIBS="-Wl,-Bstatic ${GLIBS} -Wl,-Bdynamic"
+-        ],:,[-Wl,-Bstatic ${GLIBS} -Wl,-Bdynamic])
++   GLIBS="${GLIBS}"
++        ],:,[${GLIBS}])
+ 
+ if test x$GDFORM_EXT = xpng; then
+   CPPFLAGS="$CPPFLAGS -DGFORM_GD=gdImagePng"
