@@ -1,6 +1,37 @@
 --- ltmain.sh.orig	Mon Mar 20 07:45:01 2000
-+++ ltmain.sh	Sun Dec 24 21:04:44 2000
-@@ -1031,6 +1031,9 @@
++++ ltmain.sh	Mon Feb 19 15:53:04 2001
+@@ -999,7 +999,18 @@ compiler."
+ 	    # These systems don't actually have c library (as such)
+ 	    continue
+ 	    ;;
+-	  esac
++          *-*-openbsd*)
++            # Do not include libc due to us having libc/libc_r.
++            continue
++            ;;
++	  esac
++        elif test "$arg" = "-lc_r"; then
++          case "$host" in
++          *-*-openbsd*)
++            # Do not include libc_r directly, use -pthread flag.
++            continue
++            ;;
++          esac
+ 	elif test "$arg" = "-lm"; then
+ 	  case "$host" in
+ 	  *-*-cygwin* | *-*-beos*)
+@@ -1012,6 +1023,10 @@ compiler."
+ 	continue
+ 	;;
+ 
++      -?thread)
++        deplibs="$deplibs $arg"
++        ;;
++
+       -module)
+ 	module=yes
+ 	continue
+@@ -1031,6 +1046,9 @@ compiler."
  	  $echo "$modename: warning: assuming \`-no-fast-install' instead" 1>&2
  	  fast_install=no
  	  ;;
@@ -10,7 +41,7 @@
  	*)
  	  no_install=yes
  	  ;;
-@@ -4200,40 +4203,6 @@
+@@ -4200,40 +4218,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  

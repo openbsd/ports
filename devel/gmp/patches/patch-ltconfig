@@ -1,6 +1,6 @@
 --- ltconfig.orig	Mon Mar 20 07:45:00 2000
-+++ ltconfig	Sun Dec 24 21:12:33 2000
-@@ -962,6 +962,9 @@
++++ ltconfig	Mon Feb 19 15:51:46 2001
+@@ -962,6 +962,9 @@ cygwin* | mingw*)
      with_gnu_ld=no
    fi
    ;;
@@ -10,7 +10,7 @@
  
  esac
  
-@@ -1292,10 +1295,18 @@
+@@ -1292,10 +1295,21 @@ else
      ;;
  
    openbsd*)
@@ -19,19 +19,22 @@
      hardcode_direct=yes
      hardcode_shlibpath_var=no
 +    case "$host_os" in
-+      openbsd2.[01234567])
-+	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
-+	hardcode_libdir_flag_spec='-R$libdir'
++      openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
++       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
++       hardcode_libdir_flag_spec='-R$libdir'
 +      ;;
 +      *)
-+	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
-+	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++       archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
++       hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++       if [ "`/usr/bin/file /usr/lib/libc.so.* | grep ELF`" != "" ]; then
++         export_dynamic_flag_spec='${wl}-E'
++       fi
 +      ;;
 +    esac
      ;;
  
    os2*)
-@@ -1684,13 +1695,10 @@
+@@ -1684,13 +1698,10 @@ netbsd*)
  
  openbsd*)
    version_type=sunos
