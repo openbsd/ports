@@ -1,6 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/06/03 06:20:57 form Exp $
+@comment $OpenBSD: PLIST,v 1.8 2000/06/03 06:23:36 form Exp $
 bin/ascii-xfr
+@owner uucp
+@group dialer
+@mode 6555
 bin/minicom
+@owner
+@group
+@mode
 bin/runscript
 bin/xminicom
 man/man1/ascii-xfr.1
