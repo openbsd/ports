@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/03/23 16:11:10 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2001/03/30 14:28:38 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Piece of cake"
@@ -33,7 +33,7 @@ FLAVOR?=
 .if ${FLAVOR:L} == "no_x11"
 NETHACKCONFIG=${FILESDIR}/simple-config
 .elif ${FLAVOR:L} == "qt"
-SED_PLIST=sed -e '/^!%%no_x11$$/d'
+SED_PLIST=|sed -e '/^!%%no_x11%%/d'
 NETHACKCONFIG=${FILESDIR}/qt-config
 PORTPATH=${LOCALBASE}/lib/qt2/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin
 LIB_DEPENDS=qt.2.::x11/qt2

@@ -1,6 +1,6 @@
-$OpenBSD: patch-sys_unix_Makefile_src,v 1.2 2001/03/23 16:11:11 espie Exp $
+$OpenBSD: patch-sys_unix_Makefile_src,v 1.3 2001/03/30 14:28:39 espie Exp $
 --- sys/unix/Makefile.src.orig	Sat Aug  5 12:52:57 2000
-+++ sys/unix/Makefile.src	Fri Mar 23 03:06:08 2001
++++ sys/unix/Makefile.src	Mon Mar 26 04:30:59 2001
 @@ -1,6 +1,7 @@
  #	NetHack Makefile.
  #	SCCS Id: @(#)Makefile.src	3.3	97/04/17
@@ -37,12 +37,25 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.2 2001/03/23 16:11:11 espie Exp $
  # WINX11LIB = -lXaw -lXmu -lXt -lX11
  # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
  # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
-@@ -243,8 +241,6 @@ WINGEMLIB = -le_gem -lgem
- #
+@@ -244,8 +242,6 @@ WINGEMLIB = -le_gem -lgem
  # libraries for BeOS 
  WINBELIB = -lbe
--
--WINLIB = $(WINTTYLIB)
  
+-WINLIB = $(WINTTYLIB)
+-
  # any other strange libraries your system needs (for Sysunix only -- the more
  # specialized targets should already be right)
+ #
+@@ -445,10 +441,10 @@ objects.o:
+ 
+ # Qt windowport meta-object-compiler output
+ qt_kde0.moc: ../include/qt_kde0.h
+-	$(QTDIR)/bin/moc ../include/qt_kde0.h > qt_kde0.moc
++	moc2 ../include/qt_kde0.h > qt_kde0.moc
+ 
+ qt_win.moc: ../include/qt_win.h
+-	$(QTDIR)/bin/moc ../include/qt_win.h > qt_win.moc
++	moc2 ../include/qt_win.h > qt_win.moc
+ 
+ $(MAKEDEFS): ../util/makedefs.c  $(CONFIG_H) ../include/permonst.h \
+ 		../include/objclass.h ../include/monsym.h \
