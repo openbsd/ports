@@ -1,0 +1,12 @@
+$OpenBSD: patch-libavcodec_Makefile,v 1.1 2002/10/14 09:50:48 pvalchev Exp $
+--- libavcodec/Makefile.orig	Thu Sep  5 17:57:44 2002
++++ libavcodec/Makefile	Thu Sep  5 18:02:03 2002
+@@ -97,7 +97,7 @@ tests: apiexample cpuid_test $(TESTS)
+ $(LIB): $(OBJS)
+ 	rm -f $@
+ 	$(AR) rc $@ $(OBJS)
+-	$(RANLIB) $@
++#	$(RANLIB) $@
+ 
+ $(SLIB): $(OBJS)
+ 	$(CC) $(SHFLAGS) -o $@ $(OBJS) $(EXTRALIBS)

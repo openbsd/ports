@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2002/09/14 12:19:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2002/10/14 09:50:48 pvalchev Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
 
 COMMENT=		"Movie player"
-DISTNAME=		MPlayer-0.90pre6
+DISTNAME=		MPlayer-0.90pre8
 DIST_SUBDIR=		mplayer
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11
@@ -35,7 +35,6 @@ BUILD_DEPENDS=	:binutils->=2.11.2:devel/binutils/stable
 .endif
 LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
-		dvdread.::devel/libdvdread \
 		mp3lame::audio/lame \
 		ungif,gif::graphics/libungif \
 		vorbis.0,vorbisfile.1::audio/libvorbis
@@ -56,7 +55,8 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 		--enable-vidix \
 		--enable-vorbis \
 		--with-extraincdir=${LOCALBASE}/include/libpng:${LOCALBASE}/include \
-		--with-extralibdir=${LOCALBASE}/lib
+		--with-extralibdir=${LOCALBASE}/lib \
+		--confdir=${LOCALBASE}/share/mplayer
 
 .if ${MACHINE_ARCH:Mpowerpc}
 CONFIGURE_ARGS+=--target=ppc-openbsd
@@ -135,9 +135,8 @@ CONFIGURE_ARGS+=--disable-win32
 .endif
 
 .if ${FLAVOR:L:Mcdda}
-CFLAGS+=-Dsize32=int -Dsize16=short
 CONFIGURE_ARGS+=--enable-cdparanoia
-LIB_DEPENDS+= cdda_paranoia,cdda_interface::audio/cdparanoia
+BUILD_DEPENDS+= cdda_paranoia,cdda_interface:cdparanoia->=3.a9.8:audio/cdparanoia
 .else
 CONFIGURE_ARGS+=--disable-cdparanoia
 .endif

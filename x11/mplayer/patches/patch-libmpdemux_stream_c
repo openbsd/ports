@@ -1,7 +1,7 @@
-$OpenBSD: patch-libmpdemux_stream_c,v 1.4 2002/08/18 11:26:48 espie Exp $
+$OpenBSD: patch-libmpdemux_stream_c,v 1.5 2002/10/14 09:50:48 pvalchev Exp $
 --- libmpdemux/stream.c.orig	Sun Aug  4 15:35:25 2002
-+++ libmpdemux/stream.c	Tue Aug  6 22:32:16 2002
-@@ -22,11 +22,10 @@ extern int verbose; // defined in mplaye
++++ libmpdemux/stream.c	Tue Sep 10 22:47:17 2002
+@@ -22,7 +22,7 @@ extern int verbose; // defined in mplaye
  
  #ifdef HAVE_VCD
  
@@ -10,7 +10,3 @@ $OpenBSD: patch-libmpdemux_stream_c,v 1.4 2002/08/18 11:26:48 espie Exp $
  #include "vcd_read_fbsd.h" 
  #elif defined(__NetBSD__)
  #include "vcd_read_nbsd.h" 
--#else
- #include "vcd_read.h"
- #endif
- 

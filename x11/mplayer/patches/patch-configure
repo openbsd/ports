@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.13 2002/08/18 13:17:50 espie Exp $
---- configure.orig	Mon Aug  5 19:23:22 2002
-+++ configure	Sun Aug 18 14:54:42 2002
-@@ -1728,6 +1728,11 @@ if test "$_soundcard" = yes ; then
+$OpenBSD: patch-configure,v 1.14 2002/10/14 09:50:48 pvalchev Exp $
+--- configure.orig	Tue Sep 17 21:47:55 2002
++++ configure	Thu Sep 19 17:14:38 2002
+@@ -1828,6 +1828,11 @@ if test "$_soundcard" = yes ; then
  else
    _def_soundcard='#undef HAVE_SOUNDCARD_H'
  fi
@@ -13,7 +13,7 @@ $OpenBSD: patch-configure,v 1.13 2002/08/18 13:17:50 espie Exp $
  echores "$_soundcard"
  else
    _def_soundcard='#undef HAVE_SOUNDCARD_H'
-@@ -2955,7 +2960,7 @@ echores "$_sgiaudio"
+@@ -3093,7 +3098,7 @@ echores "$_sgiaudio"
  
  
  echocheck "VCD support"
@@ -22,20 +22,12 @@ $OpenBSD: patch-configure,v 1.13 2002/08/18 13:17:50 espie Exp $
    _inputmodules="vcd $_inputmodules"
    _def_vcd='#define HAVE_VCD 1'
    echores "ok"
-@@ -2968,7 +2973,7 @@ fi
- echocheck "DVD support (libmpdvdkit)"
- if test "$_dvdkit" = auto ; then
-  _dvdkit=no
-- if linux || freebsd || netbsd || darwin || cygwin; then
-+ if linux || freebsd || netbsd || openbsd || darwin || cygwin; then
-   test -f "./libmpdvdkit/Makefile" && _dvdkit=yes
-  fi
- fi
-@@ -3109,6 +3114,7 @@ if test "$_cdparanoia" = yes ; then
-     _def_cdparanoia='#define HAVE_CDDA'
-     _inputmodules="cdda $_inputmodules"
-     _ld_cdparanoia="$_ld_cdparanoia -lcdda_interface -lcdda_paranoia"
-+    openbsd && _ld_cdparanoia="$_ld_cdparanoia -lutil"
- else
-     _def_cdparanoia='#undef HAVE_CDDA'
-     _noinputmodules="cdda $_noinputmodules"
+@@ -3623,7 +3628,7 @@ fi
+ 
+ 
+ echocheck "iconv"
+-if test "$_iconv" = auto ; then
++if test "$_iconv" != no ; then
+   _iconv_tmp='#include <iconv.h>'
+ 
+   cat > $TMPC << EOF
