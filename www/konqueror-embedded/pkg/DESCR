@@ -9,4 +9,5 @@ Still somewhat experimental, crashes.
 
 See ${PREFIX}/bin/konq-e for cache/proxy support.
 
-WWW: ${HOMEPAGE}
+Flavors:
+	kiosk - Build with the "Kiosk" GUI

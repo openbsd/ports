@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/07/16 17:00:07 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2003/08/19 19:55:25 henning Exp $
 
 COMMENT='stand-alone Qt-based web browser'
 CATEGORIES=www x11
@@ -37,6 +37,13 @@ LIB_DEPENDS=	png.2::graphics/png \
 MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 
 KONQ=	${PREFIX}/lib/konq-e
+
+FLAVORS=	kiosk
+FLAVOR?=
+
+.if ${FLAVOR:L:Mkiosk}
+CONFIGURE_ARGS+=-with-gui=kiosk
+.endif
 
 # .orig file in the distfile
 post-extract:
