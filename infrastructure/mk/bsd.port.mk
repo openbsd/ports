@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.642 2004/08/13 23:28:40 brad Exp $
+#	$OpenBSD: bsd.port.mk,v 1.643 2004/09/14 23:06:02 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -349,6 +349,10 @@ SED_PLIST+=|sed -e '/^!%%${_i}%%$$/d' -e '/^%%${_i}%%$$/r${PKGDIR}/PFRAG.${_i}${
 .  endfor
 .endif
 
+.if !empty(FLAVORS:M[0-9]*)
+ERRORS+="Fatal: flavor should never start with a digit"
+.endif
+ 
 .if !empty(FLAVOR)
 .  if !empty(FLAVORS)
 .    for _i in ${FLAVOR:L}
