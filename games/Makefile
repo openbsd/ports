@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2001/12/05 07:56:48 kevlo Exp $
+# $OpenBSD: Makefile,v 1.64 2001/12/21 21:00:02 fgsch Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -23,6 +23,7 @@
 #    SUBDIR += doom
      SUBDIR += dopewars
      SUBDIR += eboard
+     SUBDIR += eboard-extras
 #    SUBDIR += empire
      SUBDIR += falconseye
      SUBDIR += fire
