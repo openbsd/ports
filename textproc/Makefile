@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2001/01/25 00:20:13 avsm Exp $
+# $OpenBSD: Makefile,v 1.41 2001/01/26 01:02:51 avsm Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -31,6 +31,7 @@
      SUBDIR += p5-XML-Parser
      SUBDIR += p5-XML-Simple
      SUBDIR += p5-XML-Writer
+     SUBDIR += p5-XML-XPath
      SUBDIR += p5-XML-XSLT
      SUBDIR += p5-sdf
      SUBDIR += par
