@@ -1,8 +1,0 @@
-GKrellMSS is a plugin for GKrellM that has a VU meter and a chart. The
-VU meter displays left and right channel audio levels. The sound scope
-chart draws combined left and right audio channels as an oscilloscope
-trace. The trace sweep speeds are adjustable from 100 usec/div to 50
-msec/div, and there is a vertical sensitivity adjustment. And of course,
-since it's a scope, it's triggered.
-
-WWW: ${HOMEPAGE}

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/07 00:13:20 naddy Exp $
-lib/gkrellm/plugins/volume.so

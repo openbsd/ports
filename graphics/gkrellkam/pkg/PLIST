@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/29 02:44:21 jcs Exp $
-lib/gkrellm/plugins/gkrellkam.so
-man/man5/gkrellkam.5

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/15 08:41:00 jcs Exp $
-lib/gkrellm/plugins/reminder.so

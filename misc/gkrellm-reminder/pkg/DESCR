@@ -1,5 +1,0 @@
-gkrellm-reminder is a plugin for gkrellm that can remind you of
-important events.  Events can be scheduled inside gkrellm's
-configuration and will be displayed in gkrellm-reminder's panel.
-
-WWW: ${HOMEPAGE}
