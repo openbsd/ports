@@ -1,0 +1,12 @@
+$OpenBSD: patch-po_ja_po,v 1.1 2001/05/14 22:32:39 brad Exp $
+--- po/ja.po.orig	Mon May 14 22:33:51 2001
++++ po/ja.po	Mon May 14 22:34:26 2001
+@@ -1236,7 +1236,7 @@ msgstr ""
+ #, c-format
+ msgid ""
+ "%s%s\n"
+-"By Björn Augustsson (d3august@dtek.chalmers.se)\n"
++"By Bjorn Augustsson (d3august@dtek.chalmers.se)\n"
+ "Official homepage: http://www.dtek.chalmers.se/~d3august/xt\n"
+ msgstr ""
+ "%s%s\n"
