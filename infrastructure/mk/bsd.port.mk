@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.469 2001/10/04 22:20:38 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.470 2001/10/04 22:43:45 naddy Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1565,7 +1565,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .  if target(do-distpatch) || target(post-distpatch) || defined(PATCHFILES) 
 	@cd ${.CURDIR} && exec ${MAKE} distpatch
 .  endif 
-	@if cd ${PATCHDIR} 2>/dev/null || [ x"${PATCH_LIST:M|/*||}" != x"" ]; then \
+	@if cd ${PATCHDIR} 2>/dev/null || [ x"${PATCH_LIST:M/*}" != x"" ]; then \
 		error=false; \
 		for i in ${PATCH_LIST}; do \
 			case $$i in \
