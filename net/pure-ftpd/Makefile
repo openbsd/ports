@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/01/31 01:59:42 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2003/05/23 22:30:58 brad Exp $
 
 COMMENT=	"small, easy to set up, fast and very secure FTP server"
 
@@ -30,7 +30,7 @@ CONFIGURE_ARGS+= --with-everything \
 		 --with-paranoidmsg \
 		 --with-privsep
 
-FLAVORS=	ldap mysql postgresql no_banner
+FLAVORS=	ldap mysql postgresql no_banner virtual_chroot
 FLAVOR?=
 
 .if ${FLAVOR:L:Mldap}
@@ -56,6 +56,10 @@ CONF_FILE+= pureftpd-pgsql.conf
 
 .if ${FLAVOR:L:Mno_banner}
 CONFIGURE_ARGS+= --without-banner
+.endif
+
+.if ${FLAVOR:L:Mvirtual_chroot}
+CONFIGURE_ARGS+= --with-virtualchroot
 .endif
 
 DOCS+=	README README.Configuration-File README.Contrib \
