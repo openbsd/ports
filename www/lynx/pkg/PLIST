@@ -1,3 +1,5 @@
 bin/lynx
-etc/lynx.cfg
+lib/lynx.cfg
 man/man1/lynx.1
+@unexec rm -f %D/bin/lynx.old
+@unexec rm -f %D/lib/lynx.oldcfg
