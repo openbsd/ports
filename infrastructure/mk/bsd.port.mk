@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.378 2001/03/29 19:01:05 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.379 2001/04/02 10:16:59 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -513,7 +513,7 @@ SED_PLIST+=|sed -e '/^!%%${_i}%%$$/d' -e '/^%%${_i}%%$$/r${PKGDIR}/PFRAG.${_i}' 
 .endif
 
 # Create the generic variable substitution list, from subst vars
-SUBST_VARS+=ARCH HOMEPAGE PREFIX SYSCONFDIR
+SUBST_VARS+=ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT
 _SED_SUBST=sed
 .for _v in ${SUBST_VARS}
 _SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
