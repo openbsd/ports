@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/01/04 17:33:36 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2002/01/31 18:05:51 shell Exp $
 
 COMMENT=	"python module to handle IPv4 and IPv6 address"
 
-VERSION=	0.4
+VERSION=	0.41
 DISTNAME=	IPy-${VERSION}
 PKGNAME=	py-IP-${VERSION}
 CATEGORIES=    	net
@@ -23,13 +23,15 @@ BUILD_DEPENDS=	::lang/python
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 SUBST_VARS=	PYTHON_VER
-NO_REGRESS=	Yes
-PY_CMD=		@cd ${WRKSRC}; python${PYTHON_VER} ./setup.py
+PY_CMD=		@cd ${WRKSRC}; python${PYTHON_VER} setup.py
 
 do-build:
 	${PY_CMD} build --build-base=${WRKSRC}
 
 do-install:
-	${PY_CMD} install --prefix=${PREFIX}
+	${PY_CMD} install -O2 --prefix=${PREFIX}
+
+do-regress:
+	@cd ${WRKSRC}/test; python${PYTHON_VER} test_IPy.py
 
 .include <bsd.port.mk>
