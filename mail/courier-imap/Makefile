@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2005/01/02 11:55:10 alek Exp $ 
+# $OpenBSD: Makefile,v 1.45 2005/02/10 23:44:03 espie Exp $ 
 
 COMMENT=	"imap server for maildir format mailboxes"
 COMMENT-pop3=	"pop3 server for maildir format mailboxes"
@@ -46,8 +46,8 @@ LIB_DEPENDS=	gdbm.2::databases/gdbm
 
 CONFIGURE_STYLE= gnu old
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CXXFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+		CXXFLAGS="${CFLAGS:C/ *$//} -I${LOCALBASE}/include" \
+		CPPFLAGS="${CFLAGS:C/ *$//} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-root-check --datadir=${PREFIX}/sbin \
 		--with-userdb=${SYSCONFDIR}/userdb --with-authuserdb \
 		--sysconfdir=${COURIERCONF} --with-authdaemon \
