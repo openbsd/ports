@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/12/02 02:27:02 espie Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/19 01:28:40 espie Exp $
 
 CDROM=        "NOFEE: can not sell"
 
-DISTNAME=xanim-2.70.7.0
-WRKSRC=${WRKDIR}/xanim27070
+DISTNAME=xanim-2.80.0
+WRKSRC=${WRKDIR}/xanim2800
 CATEGORIES= graphics x11
 
 MAINTAINER=espie@openbsd.org
@@ -12,7 +12,8 @@ MAINTAINER=espie@openbsd.org
 MASTER_SITES=ftp://xanim.va.pubnix.com/
 MASTER_SITES+=ftp://xanim.va.pubnix.com/modules/
 
-BASEDISTFILE=xanim27070.tar.gz
+BASEDISTFILE=xanim2800.tar.gz
+SUPFILES=
 DISTFILES=${BASEDISTFILE}
 PATCH_LIST=patch-*
 
@@ -50,25 +51,16 @@ post-extract:
 .endif
 
 post-configure:
-	ln ${WRKSRC}/docs/xanim.man ${WRKSRC}
+	cp ${FILESDIR}/xanim.man ${WRKSRC}
 
 DOCDIR=${PREFIX}/share/doc/xanim
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/Codecs.doc ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/Copyright ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/Examples.doc ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/Formats.doc ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/Problems.doc ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/Remote_Window.doc ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/Rev_History.doc ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/WWW_Helper.doc ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/cinepak.readme ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/creative.readme ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/ijg.readme ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/indeo.readme ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/xanim.readme ${DOCDIR}
+	for file in ${WRKSRC}/docs/*; \
+	do \
+		${INSTALL_DATA} $$file ${DOCDIR}; \
+	done
 
 USE_IMAKE=yes
 
