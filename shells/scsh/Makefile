@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/04 05:27:01 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2002/05/13 13:43:49 naddy Exp $
 
 COMMENT=		"Unix shell embedded in Scheme"
 
 DISTNAME=		scsh-0.6.1
 CATEGORIES=		lang shells
-NEED_VERSION=		1.506
+NEED_VERSION=		1.528
 
 HOMEPAGE=		http://www.scsh.net/
 
@@ -17,8 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.scsh.net/pub/scsh/0.6/ \
-			${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	scsh
+			${MASTER_SITE_SOURCEFORGE:=scsh/}
 
 CONFIGURE_STYLE=	gnu dest	
 
