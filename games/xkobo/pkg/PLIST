@@ -1,7 +1,9 @@
 man/man1/xkobo.1
-@owner games
 @group games
 @mode 2755
 bin/xkobo
 @exec install -d -g games -m 575 /var/games/xkobo.scores 
-@unexec echo "remove /var/games/xkobo.scores manually"
+@unexec echo "+---------------"
+@unexec echo "| Please remove the score-directory /var/games/xkobo.scores"
+@unexec echo "| to fully un-install xkobo."
+@unexec echo "+---------------"
