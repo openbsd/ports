@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2001/07/03 06:34:53 jsyn Exp $
+# $OpenBSD: Makefile,v 1.14 2001/10/26 00:35:51 krw Exp $
 
 COMMENT=	object oriented script language with threads
-VERSION=1.6.2
+VERSION=1.6.4
 DISTNAME=ruby-${VERSION}
 CATEGORIES = lang
 NEED_VERSION=	1.362
@@ -18,7 +18,7 @@ DISTFILES=${BINARCH} ${MANARCH}:0
 EXTRACT_ONLY=${BINARCH}
 
 HOMEPAGE=http://www.netlab.co.jp/ruby/
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER=	Ken Westerback <krw@openbsd.org>
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/03/23 01:57:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/10/26 00:35:51 krw Exp $
 bin/irb
 bin/ruby
-@exec mkdir -p %D/lib/ruby/site_ruby/${REV}/${SUB}
 lib/ruby/${REV}/English.rb
 lib/ruby/${REV}/Env.rb
 lib/ruby/${REV}/base64.rb
@@ -19,6 +18,7 @@ lib/ruby/${REV}/expect.rb
 lib/ruby/${REV}/final.rb
 lib/ruby/${REV}/finalize.rb
 lib/ruby/${REV}/find.rb
+lib/ruby/${REV}/forwardable.rb
 lib/ruby/${REV}/ftools.rb
 lib/ruby/${REV}/ftplib.rb
 lib/ruby/${REV}/getoptlong.rb
@@ -40,19 +40,27 @@ lib/ruby/${REV}/${SUB}/st.h
 lib/ruby/${REV}/${SUB}/util.h
 lib/ruby/${REV}/${SUB}/version.h
 lib/ruby/${REV}/importenv.rb
+lib/ruby/${REV}/irb.rb
 lib/ruby/${REV}/irb/completion.rb
+lib/ruby/${REV}/irb/context.rb
+lib/ruby/${REV}/irb/extend-command.rb
 lib/ruby/${REV}/irb/frame.rb
+lib/ruby/${REV}/irb/help.rb
+lib/ruby/${REV}/irb/init.rb
 lib/ruby/${REV}/irb/input-method.rb
-lib/ruby/${REV}/irb/irb.rb
+lib/ruby/${REV}/irb/lc/error.rb
+lib/ruby/${REV}/irb/lc/help-message
+lib/ruby/${REV}/irb/lc/ja/error.rb
+lib/ruby/${REV}/irb/lc/ja/help-message
 lib/ruby/${REV}/irb/loader.rb
-lib/ruby/${REV}/irb/main.rb
+lib/ruby/${REV}/irb/locale.rb
 lib/ruby/${REV}/irb/multi-irb.rb
 lib/ruby/${REV}/irb/ruby-lex.rb
 lib/ruby/${REV}/irb/ruby-token.rb
 lib/ruby/${REV}/irb/slex.rb
 lib/ruby/${REV}/irb/version.rb
-lib/ruby/${REV}/irb/workspace-binding-2.rb
-lib/ruby/${REV}/irb/workspace-binding.rb
+lib/ruby/${REV}/irb/workspace.rb
+lib/ruby/${REV}/irb/ws-for-case-2.rb
 lib/ruby/${REV}/irb/xmp.rb
 lib/ruby/${REV}/jcode.rb
 lib/ruby/${REV}/kconv.rb
@@ -79,6 +87,14 @@ lib/ruby/${REV}/profile.rb
 lib/ruby/${REV}/pstore.rb
 lib/ruby/${REV}/rational.rb
 lib/ruby/${REV}/readbytes.rb
+lib/ruby/${REV}/shell.rb
+lib/ruby/${REV}/shell/builtin-command.rb
+lib/ruby/${REV}/shell/command-processor.rb
+lib/ruby/${REV}/shell/error.rb
+lib/ruby/${REV}/shell/filter.rb
+lib/ruby/${REV}/shell/process-controller.rb
+lib/ruby/${REV}/shell/system-command.rb
+lib/ruby/${REV}/shell/version.rb
 lib/ruby/${REV}/shellwords.rb
 lib/ruby/${REV}/singleton.rb
 lib/ruby/${REV}/sync.rb
@@ -156,12 +172,16 @@ share/doc/ruby/thread.html
 share/doc/ruby/variable.html
 share/doc/ruby/yacc.html
 @dirrm share/doc/ruby
-@dirrm lib/ruby/site_ruby
+@exec mkdir -p %D/lib/ruby/site_ruby/${REV}/${SUB}
 @dirrm lib/ruby/site_ruby/${REV}/${SUB}
 @dirrm lib/ruby/site_ruby/${REV}
+@dirrm lib/ruby/site_ruby
+@dirrm lib/ruby/${REV}/shell
 @dirrm lib/ruby/${REV}/net
+@dirrm lib/ruby/${REV}/irb/lc/ja
+@dirrm lib/ruby/${REV}/irb/lc
 @dirrm lib/ruby/${REV}/irb
-@dirrm lib/ruby/${REV}/cgi
 @dirrm lib/ruby/${REV}/${SUB}
+@dirrm lib/ruby/${REV}/cgi
 @dirrm lib/ruby/${REV}
 @dirrm lib/ruby
