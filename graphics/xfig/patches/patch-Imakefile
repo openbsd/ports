@@ -1,6 +1,6 @@
-$OpenBSD: patch-Imakefile,v 1.6 2003/04/04 14:28:36 naddy Exp $
---- Imakefile.orig	Tue Apr  1 02:15:40 2003
-+++ Imakefile	Tue Apr  1 02:20:35 2003
+$OpenBSD: patch-Imakefile,v 1.7 2005/01/28 13:34:52 alek Exp $
+--- Imakefile.orig	Thu Dec 19 18:57:11 2002
++++ Imakefile	Thu Jan 27 22:15:35 2005
 @@ -48,8 +48,8 @@ XCOMM XAPPLOADDIR = /home/user/xfig
  XCOMM Redefine the following if your PNG library and/or include file
  XCOMM are in different places
@@ -40,6 +40,15 @@ $OpenBSD: patch-Imakefile,v 1.6 2003/04/04 14:28:36 naddy Exp $
  #endif
  
  XCOMM Uncomment the following definiton if you want to use the small icons
+@@ -105,7 +105,7 @@ XCOMM the 3d Athena Widget Set (highly r
+ XCOMM Then be sure to change the XAW3DINC to point to the directory where your
+ XCOMM 3D Athena widget headers are located
+ 
+-XCOMM #define XAW3D
++#define XAW3D
+ 
+ #ifdef XAW3D
+ XAW3DINC = -I/usr/include/X11/Xaw3d
 @@ -147,14 +147,16 @@ XCOMM add -DSETLOCALE to I18N_DEFS.
  
  XCOMM If using an input tablet uncomment the following
