@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/05 10:16:18 danh Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/18 02:21:02 danh Exp $
 
-DISTNAME=	iplog-2.2.2
+DISTNAME=	iplog-2.2.3
 CATEGORIES=	net security
-NEED_VERSION=	1.348
+NEED_VERSION=	1.351
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= ojnk
 
