@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/11 21:19:26 danh Exp $
-@pkgcfl mrtg-*
+@comment $OpenBSD: PLIST,v 1.2 2002/05/12 15:55:25 danh Exp $
 libdata/perl5/site_perl/BER.pm
 libdata/perl5/site_perl/SNMP_Session.pm
 libdata/perl5/site_perl/SNMP_util.pm
