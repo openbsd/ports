@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/02/07 04:32:50 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1999/02/16 06:27:37 marc Exp $
 #
 
 # What port/package will be created
@@ -27,6 +27,12 @@ CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ENV=		${SETENV} INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 			INSTALL_DATA="${INSTALL_DATA}"
+
+# The tarball contains empty info files -- remove them so the proper
+# info files get created and installed
+#
+post-extract:
+	@${RM} ${WRKSRC}/docs/*.info
 
 # Update info directory and shared lib configuration
 #
