@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/07/25 09:14:13 nino Exp $
+# $OpenBSD: Makefile,v 1.2 2002/07/28 12:00:51 nino Exp $
 
 COMMENT=		"general-purpose utility library"
 COMMENT-docs=           "glib2 documentation"
@@ -25,7 +25,7 @@ MULTI_PACKAGES=         -docs
 SUBPACKAGE?=
 
 .if ${SUBPACKAGE} != "-docs"
-MODULES=		iconv gettext
+MODULES=		gettext
 BUILD_DEPENDS=          :pkgconfig-*:devel/pkgconfig
 RUN_DEPENDS=		${BUILD_DEPENDS}
 .endif
