@@ -1,7 +1,6 @@
 bin/xfm
 bin/xfm.install
 bin/xfmtype
-lib/X11/app-defaults
 lib/X11/xfm/bitmaps/app.xbm
 lib/X11/xfm/bitmaps/app_compress.xbm
 lib/X11/xfm/bitmaps/app_find.xbm
