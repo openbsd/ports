@@ -14,3 +14,5 @@ SYNOPSIS
 
             my $info = get_mp3info($file);
             printf "$file length is %d:%d", $info->{MM}, $info->{SS};
+
+WWW: ${HOMEPAGE}

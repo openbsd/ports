@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/22 14:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/02/14 01:28:29 kevlo Exp $
 
-DISTNAME=	MP3-Info-0.80
-PKGNAME=	p5-MP3-Info-0.80
+DISTNAME=	MP3-Info-0.91
+PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	audio perl5
-NEED_VERSION=	1.310
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= MP3
+NEED_VERSION=	1.356
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} 
+MASTER_SITE_SUBDIR= mp3-info
+
+HOMEPAGE=	http://sourceforge.net/projects/mp3-info/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
