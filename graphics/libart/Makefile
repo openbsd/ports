@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2003/08/15 03:48:28 marcm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/02/21 22:27:49 marcm Exp $
 
 COMMENT=		"high-performance 2D graphics library"
 
-VERSION=		2.3.14
+VERSION=		2.3.16
 DISTNAME=		libart_lgpl-${VERSION}
 PKGNAME=		libart-${VERSION}
 CATEGORIES=		graphics
