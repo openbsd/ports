@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/06/20 01:43:37 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2001/08/05 20:50:55 jsyn Exp $
 
 COMMENT=	"texinfo to HTML converter"
 
@@ -9,6 +9,7 @@ NEED_VERSION=	1.402
 MASTER_SITES=	http://wwwcn.cern.ch/dci/texi2html/ \
 		ftp://ftp.scc.ru/pub/unix/
 EXTRACT_SUFX=	.shar.Z
+EXTRACT_CASES= *.shar.Z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | /bin/sh;;
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

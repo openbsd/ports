@@ -1,5 +1,5 @@
 # Ports collection makefile for	"hoc", the High Order Calculator
-# $OpenBSD: Makefile,v 1.17 2001/05/06 01:58:49 lebel Exp $
+# $OpenBSD: Makefile,v 1.18 2001/08/05 20:50:55 jsyn Exp $
 
 COMMENT=	"from Kernighan & Pike: High Order Calculator"
 
@@ -9,6 +9,7 @@ CATEGORIES=	math
 NEED_VERSION=	1.402
 MASTER_SITES=	http://cm.bell-labs.com/cm/cs/who/bwk/
 EXTRACT_SUFX=	.sh
+EXTRACT_CASES=	*.sh) /bin/sh ${FULLDISTDIR}/$$archive;;
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/05/06 03:05:12 lebel Exp $
+# $OpenBSD: Makefile,v 1.17 2001/08/05 20:50:55 jsyn Exp $
 
 COMMENT=	"translate character sets"
 
@@ -9,6 +9,7 @@ NEED_VERSION=	1.402
 MASTER_SITES= 	ftp://plan9.bell-labs.com/plan9/unixsrc/ \
 		ftp://ftp.gwdg.de/pub/gnu2/plan9/unixsrc/
 EXTRACT_SUFX=	.shar.Z
+EXTRACT_CASES=	*.shar.Z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | /bin/sh;;
 
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 

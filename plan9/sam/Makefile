@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/05/06 03:05:09 lebel Exp $
+# $OpenBSD: Makefile,v 1.17 2001/08/05 20:50:55 jsyn Exp $
 
 COMMENT=	"X11 version of Rob Pike's editor, sam"
 
@@ -9,6 +9,7 @@ NEED_VERSION=	1.402
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/research/ \
 		http://netlib.bell-labs.com/netlib/research/
 EXTRACT_SUFX=	.shar.gz
+EXTRACT_CASES=	*.shar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | /bin/sh;;
 
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
