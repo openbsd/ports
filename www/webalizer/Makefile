@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2000/09/23 19:59:55 danh Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/08 00:32:45 danh Exp $
 
-DISTNAME=	webalizer-2.00-12-src
-PKGNAME=	webalizer-2.00_12
+DISTNAME=	webalizer-2.01-05-src
+PKGNAME=	webalizer-2.01.05
 CATEGORIES=     www
-NEED_VERSION=	1.334
+NEED_VERSION=	1.337
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/pre-release/
 EXTRACT_SUFX=	.tgz
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 
-WRKDIST=	${WRKDIR}/webalizer-2.00-12
+WRKDIST=	${WRKDIR}/webalizer-2.01-05
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--enable-dns --with-png=${LOCALBASE}/lib

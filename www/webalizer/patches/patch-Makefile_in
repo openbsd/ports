@@ -1,24 +1,25 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2000/09/01 16:38:51 danh Exp $
---- Makefile.in.orig	Fri Mar 24 18:13:16 2000
-+++ Makefile.in	Fri Sep  1 12:03:51 2000
-@@ -23,8 +23,8 @@ BINDIR = @bindir@
- MANDIR = @mandir@/man1
+$OpenBSD: patch-Makefile_in,v 1.3 2000/10/08 00:32:45 danh Exp $
+--- Makefile.in.orig	Fri Oct  6 03:51:48 2000
++++ Makefile.in	Sat Oct  7 20:12:57 2000
+@@ -24,7 +24,7 @@ MANDIR = @mandir@/man1
+ ETCDIR = @ETCDIR@
  CC     = @CC@
  CFLAGS = @CFLAGS@
 -LIBS   = @LIBS@
--DEFS   = @DEFS@@OPTS@
 +LIBS   = @LIBS@ -ljpeg
-+DEFS   = @DEFS@@OPTS@ -DUSE_DNS
+ DEFS   = @DEFS@@OPTS@-DETCDIR='"@ETCDIR@"'
  LDFLAGS= @LDFLAGS@
  INSTALL= @INSTALL@
- INSTALL_PROGRAM=@INSTALL_PROGRAM@
-@@ -85,9 +85,6 @@ distclean: clean
+@@ -86,9 +86,9 @@ distclean: clean
  install: all
  	$(INSTALL_PROGRAM) webalizer ${BINDIR}/webalizer
  	$(INSTALL_DATA) webalizer.1 ${MANDIR}/webalizer.1
--	$(INSTALL_DATA) sample.conf /etc/webalizer.conf.sample
+-	$(INSTALL_DATA) sample.conf ${ETCDIR}/webalizer.conf.sample
 -	rm -f ${BINDIR}/webazolver
 -	@LN_S@ ${BINDIR}/webalizer ${BINDIR}/webazolver
++#	$(INSTALL_DATA) sample.conf ${ETCDIR}/webalizer.conf.sample
++#	rm -f ${BINDIR}/webazolver
++#	@LN_S@ ${BINDIR}/webalizer ${BINDIR}/webazolver
  
  uninstall:
  	rm -f ${BINDIR}/webalizer
