@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/10/22 15:43:17 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/04/01 17:04:06 espie Exp $
 
 DISTNAME=	gv-3.5.8
 CATEGORIES=	print
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	Xaw3d.6.1::x11/Xaw3d
-RUN_DEPENDS=	gs::print/ghostscript/gnu
+RUN_DEPENDS=	gs:ghostscript-*:print/ghostscript/gnu
 
 
 CONFIGURE_STYLE=	imake
