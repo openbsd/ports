@@ -1,0 +1,12 @@
+$OpenBSD: patch-Lib_test_test_fcntl_py,v 1.1 2002/04/19 12:54:13 matt Exp $
+--- Lib/test/test_fcntl.py.orig	Wed Apr 11 16:58:20 2001
++++ Lib/test/test_fcntl.py	Fri Apr 19 08:36:42 2002
+@@ -19,7 +19,7 @@ if verbose:
+ if sys.platform in ('netbsd1', 'Darwin1.2', 'darwin1',
+                     'freebsd2', 'freebsd3', 'freebsd4', 'freebsd5',
+                     'bsdos2', 'bsdos3', 'bsdos4',
+-                    'openbsd', 'openbsd2'):
++                    'openbsd', 'openbsd2', 'openbsd3'):
+     lockdata = struct.pack('lxxxxlxxxxlhh', 0, 0, 0, FCNTL.F_WRLCK, 0)
+ elif sys.platform in ['aix3', 'aix4', 'hp-uxB', 'unixware7']:
+     lockdata = struct.pack('hhlllii', FCNTL.F_WRLCK, 0, 0, 0, 0, 0, 0)
