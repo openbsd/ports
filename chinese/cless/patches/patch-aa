@@ -1,5 +1,14 @@
---- Makefile.in.orig	Mon Apr 24 19:41:39 1995
-+++ Makefile.in	Sun Sep 15 22:55:52 1996
+--- Makefile.in.orig	Tue Apr 25 02:41:39 1995
++++ Makefile.in	Tue Jun 12 09:01:41 2001
+@@ -25,7 +25,7 @@
+ binprefix = 
+ 
+ # Where the help file goes.
+-datadir = ${prefix}/share
++datadir = ${prefix}/share/doc/cless
+ 
+ mandir = ${prefix}/man/man${manext}
+ manext = 1
 @@ -73,24 +73,24 @@
  ${OBJ}: less.h defines.h funcs.h
  
