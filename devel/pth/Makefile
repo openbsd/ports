@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/07/28 10:39:00 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2000/07/29 22:42:17 brad Exp $
 
-DISTNAME=	pth-1.3.6
+DISTNAME=	pth-1.3.7
 CATEGORIES=	devel
 NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_GNU}
