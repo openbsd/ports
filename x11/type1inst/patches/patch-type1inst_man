@@ -1,0 +1,12 @@
+$OpenBSD: patch-type1inst_man,v 1.1.1.1 2002/06/29 17:25:20 naddy Exp $
+--- type1inst.man.orig	Sat Jun 29 16:06:37 2002
++++ type1inst.man	Sat Jun 29 16:07:31 2002
+@@ -83,7 +83,7 @@ Same as \fI-version\fP.
+ More detailed information is available in the README file which is part of
+ the type1inst distribution.
+ .SH SEE ALSO
+-.BR X (1),
++.BR X (7),
+ .BR gs (1),
+ .BR pfbtops (1),
+ .BR makepsres (1),

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/06/29 17:25:20 naddy Exp $
+bin/t1embed
+bin/type1inst
+man/man1/type1inst.1
+share/doc/type1inst/README
+@dirrm share/doc/type1inst
