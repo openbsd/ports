@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.32 1999/05/14 05:27:30 brad Exp $
+# $OpenBSD: Makefile,v 1.33 1999/05/14 18:35:25 brad Exp $
 
-DISTNAME=       ssh-1.2.26
+DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
 MASTER_SITES= 	ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
 		ftp://ftp.cs.hut.fi/pub/ssh/
@@ -58,7 +58,6 @@ CONFIGURE_ARGS+= --with-secureid
 
 # Don't use IDEA. IDEA can be freely used for non-commercial use. However,
 # commercial use may require a licence in a number of countries
-# Warning: untested !
 #
 .if defined(DONT_USE_IDEA) && ${DONT_USE_IDEA} == YES
 CONFIGURE_ARGS+= --without-idea
@@ -76,8 +75,8 @@ post-patch:
 	@${RM} ${PATCHDIR}/patch-rsaref2
 .endif
 
-.if !defined(NO_WARNINGS)
 fetch-depends:
+.if !defined(NO_WARNINGS)
 .if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
 	@${ECHO}
 	@${ECHO} You must set variable USA_RESIDENT to YES if you are a USA
