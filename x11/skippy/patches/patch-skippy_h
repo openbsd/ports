@@ -1,0 +1,11 @@
+$OpenBSD: patch-skippy_h,v 1.1.1.1 2004/10/15 18:50:18 fgsch Exp $
+--- skippy.h.orig	Wed May 19 18:23:50 2004
++++ skippy.h	Wed Oct 13 14:13:31 2004
+@@ -20,6 +20,7 @@
+ #ifndef SKIPPY_H
+ #define SKIPPY_H
+ 
++#include <ft2build.h>
+ #include <X11/Xlib.h>
+ #include <X11/Xmd.h>
+ #include <X11/Xatom.h>

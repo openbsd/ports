@@ -1,0 +1,23 @@
+$OpenBSD: patch-config_c,v 1.1.1.1 2004/10/15 18:50:18 fgsch Exp $
+--- config.c.orig	Wed May 19 18:23:49 2004
++++ config.c	Wed Oct 13 14:13:31 2004
+@@ -72,9 +72,9 @@ config_parse(char *config)
+ 	int ix = 0, l_ix = 0;
+ 	dlist *new_config = 0;
+ 	
+-	regcomp(&re_section, "^[[:space:]]*\\[[[:space:]]*([[:alnum:]]*?)[[:space:]]*\\][[:space:]]*$", REG_EXTENDED);
++	regcomp(&re_section, "^[[:space:]]*\\[[[:space:]]*([[:alnum:]]*)[[:space:]]*\\][[:space:]]*$", REG_EXTENDED);
+ 	regcomp(&re_empty, "^[[:space:]]*#|^[[:space:]]*$", REG_EXTENDED);
+-	regcomp(&re_entry, "^[[:space:]]*([[:alnum:]]+)[[:space:]]*=[[:space:]]*(.*?)[[:space:]]*$", REG_EXTENDED);
++	regcomp(&re_entry, "^[[:space:]]*([[:alnum:]]+)[[:space:]]*=[[:space:]]*(.*)[[:space:]]*$", REG_EXTENDED);
+ 	
+ 	while(1)
+ 	{
+@@ -148,6 +148,7 @@ config_load(const char *path)
+ 		fclose(fin);
+ 		return 0;
+ 	}
++	data[flen] = '\0';
+ 	
+ 	fclose(fin);
+ 	

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/15 18:50:18 fgsch Exp $
+bin/skippy
+share/doc/skippy/
+share/doc/skippy/README.OpenBSD
+share/examples/skippy/
+share/examples/skippy/skippyrc-default

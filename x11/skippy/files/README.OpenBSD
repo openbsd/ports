@@ -1,0 +1,9 @@
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2004/10/15 18:50:18 fgsch Exp $
+
+Copy the sample @SAMPLEDIR@skippyrc-default to
+your home directory as .skippyrc before running it.
+
+If you encounter any BadAccess errors change the keysym value
+(default F11) in .skippyrc to something else.
+
+For a list of tested window-managers refer to the skippy homepage.

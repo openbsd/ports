@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2004/10/15 18:50:18 fgsch Exp $
+--- Makefile.orig	Wed Oct 13 16:47:20 2004
++++ Makefile	Wed Oct 13 16:47:38 2004
+@@ -1,7 +1,7 @@
+ PREFIX = /usr/local
+ BINDIR = ${PREFIX}/bin
+ 
+-X11PREFIX = /usr/X11R6
++X11PREFIX = ${X11BASE}
+ 
+ CFLAGS += -I${X11PREFIX}/include `imlib2-config --cflags` `pkg-config xft --cflags` -g -pedantic -Wall
+ LDFLAGS += -L${X11PREFIX}/lib -lX11 -lm `imlib2-config --libs` `pkg-config xft --libs`
+@@ -21,7 +21,7 @@ HEADERS = skippy.h wm.h dlist.h mainwin.
+ all: skippy${EXESUFFIX}
+ 
+ skippy${EXESUFFIX}: Makefile ${SOURCES} ${HEADERS}
+-	gcc ${CFLAGS} -o skippy${EXESUFFIX} ${SOURCES} ${LDFLAGS}
++	${CC} ${CFLAGS} -o skippy${EXESUFFIX} ${SOURCES} ${LDFLAGS}
+ 
+ clean:
+ 	rm -f skippy${EXESUFFIX}
