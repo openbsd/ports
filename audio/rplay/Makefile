@@ -1,24 +1,28 @@
-# $OpenBSD: Makefile,v 1.18 2000/10/22 14:02:56 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2001/02/06 01:32:04 kevlo Exp $
 
-DISTNAME=	rplay-3.3.0
+DISTNAME=	rplay-3.3.2
 CATEGORIES=	audio
-NEED_VERSION=	1.330
-MASTER_SITES=	http://rplay.doit.org/dist/
+NEED_VERSION=	1.353
 
 HOMEPAGE=	http://rplay.doit.org/
 
-LIB_DEPENDS=	gsm.1.0::audio/gsm
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_GMAKE=	Yes
+MASTER_SITES=   ${HOMEPAGE}/dist/
+
+LIB_DEPENDS=    gsm.1.0::audio/gsm
+ 
 SYSCONFDIR=	/etc/rplay
 CONFIGURE_STYLE= gnu dest
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= --enable-static
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-extract:
 	@cd ${WRKSRC}/doc && mv rplay.texi rplayd.texi

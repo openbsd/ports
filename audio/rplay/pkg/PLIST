@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2000/09/21 08:41:01 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2001/02/06 01:32:12 kevlo Exp $
 bin/rplay
 bin/rptp
 include/rplay.h
@@ -15,6 +15,7 @@ info/rplayd.info
 @exec install-info --info-dir=%D/info %D/info/librplay.info
 @exec install-info --info-dir=%D/info %D/info/rplayd.info
 lib/librplay.a
+%%SHARED%%
 man/man1/rplay.1
 man/man1/rptp.1
 man/man5/rplay.conf.5
