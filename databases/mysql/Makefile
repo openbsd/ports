@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2002/02/13 19:19:36 brad Exp $
+# $OpenBSD: Makefile,v 1.70 2002/02/18 03:25:33 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -13,7 +13,7 @@ COMMENT-tests=	"multithreaded SQL database (test suite)"
 BROKEN=		"Support for ${MACHINE_ARCH} threads is currently broken and/or untested with MySQL"
 .endif
 
-VERSION=	3.23.48
+VERSION=	3.23.49
 DISTNAME=	mysql-${VERSION}
 FULLPKGNAME=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
