@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_contact_c,v 1.3 2003/06/01 08:41:00 david Exp $
+--- src/contact.c.orig	Mon May 12 09:38:39 2003
++++ src/contact.c	Fri May 23 17:22:16 2003
+@@ -587,7 +587,7 @@ BOOL ContactMetaLoad (Contact *cont)
+             if (enc & ENC_AUTO && (enc ^ prG->enc_loc) & ~ENC_AUTO)
+                 return FALSE;
+ #else
+-            if (enc != prG->enc_loc & ~ENC_AUTO)
++            if ((enc ^ prG->enc_loc) & ~ENC_AUTO)
+                 return FALSE;
+ #endif
+             enc &= ~ENC_AUTO;
+@@ -738,7 +738,7 @@ void ContactSetCap (Contact *cont, Cap *
+             cont->v1 = (ver >> 6) - 1;
+             cont->v2 = ver & 0x1f;
+             cont->v3 = cont->v4 = 0;
+-            if (ver <= 0x108)
++            if (ver <= 0x48)
+                 cont->caps &= ~(1 << CAP_UTF8);
+         }
+         else /* KOtzPEKE */
