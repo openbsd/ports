@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2002/01/23 04:06:14 kevlo Exp $
+# $OpenBSD: Makefile,v 1.89 2002/01/25 23:11:06 jsyn Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -13,8 +13,8 @@
      SUBDIR += cqcam
 #    SUBDIR += dc3play
      SUBDIR += dia
-     SUBDIR += dumpmpeg
 #    SUBDIR += dore
+     SUBDIR += dumpmpeg
      SUBDIR += enjoympeg
      SUBDIR += flash
      SUBDIR += fnlib
@@ -28,10 +28,10 @@
      SUBDIR += ggi
      SUBDIR += gif2png
 #    SUBDIR += gifmerge
-#    SUBDIR += giftool
-     SUBDIR += giftrans
      SUBDIR += gifsicle
      SUBDIR += gifsicle,no_x11
+#    SUBDIR += giftool
+     SUBDIR += giftrans
      SUBDIR += gii
      SUBDIR += gimp
      SUBDIR += gkrellkam
@@ -39,8 +39,8 @@
      SUBDIR += glut
      SUBDIR += gphoto
      SUBDIR += gqview
-     SUBDIR += gtksee
      SUBDIR += gracula
+     SUBDIR += gtksee
 #    SUBDIR += hdf
 #    SUBDIR += hobbes-icons-xpm
 #    SUBDIR += hpscan
@@ -66,7 +66,6 @@
      SUBDIR += mplex
      SUBDIR += mtv
      SUBDIR += netpbm
-     SUBDIR += p5-Imager
      SUBDIR += p5-GD
      SUBDIR += p5-GD,no_x11
      SUBDIR += p5-GD-Graph
@@ -75,6 +74,7 @@
      SUBDIR += p5-Graphics-ColorNames
      SUBDIR += p5-Image-Info
      SUBDIR += p5-Image-Size
+     SUBDIR += p5-Imager
 #    SUBDIR += pgperl
 #    SUBDIR += pgplot
 #    SUBDIR += photopc
