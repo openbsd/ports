@@ -1,6 +1,7 @@
---- config.guess.orig	Fri Oct 22 16:35:08 1999
-+++ config.guess	Fri Oct 22 16:35:54 1999
-@@ -279,6 +279,9 @@
+$OpenBSD: patch-config_guess,v 1.1 2001/10/10 15:15:00 wilfried Exp $
+--- config.guess.orig	Fri Sep 24 04:45:04 1999
++++ config.guess	Wed Oct 10 17:07:22 2001
+@@ -279,6 +279,9 @@ EOF
      *:NetBSD:*:*)
  	echo ${UNAME_MACHINE}-unknown-netbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
  	exit 0 ;;

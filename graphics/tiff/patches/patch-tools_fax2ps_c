@@ -1,6 +1,7 @@
---- tools/fax2ps.c.orig	Fri Oct 22 16:33:29 1999
-+++ tools/fax2ps.c	Fri Oct 22 16:34:10 1999
-@@ -382,8 +382,7 @@
+$OpenBSD: patch-tools_fax2ps_c,v 1.1 2001/10/10 15:15:00 wilfried Exp $
+--- tools/fax2ps.c.orig	Wed Mar 29 06:22:33 2000
++++ tools/fax2ps.c	Wed Oct 10 17:07:22 2001
+@@ -382,8 +382,7 @@ main(int argc, char** argv)
  	char temp[1024], buf[16*1024];
  
  	strcpy(temp, "/tmp/fax2psXXXXXX");

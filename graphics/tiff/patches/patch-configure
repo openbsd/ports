@@ -1,13 +1,14 @@
---- configure.orig	Mon Mar 20 11:20:42 2000
-+++ configure	Sun Oct  7 23:09:35 2001
-@@ -1155,6 +1155,13 @@
+$OpenBSD: patch-configure,v 1.1 2001/10/10 15:15:00 wilfried Exp $
+--- configure.orig	Mon Mar 20 19:20:42 2000
++++ configure	Wed Oct 10 17:07:22 2001
+@@ -1155,6 +1155,13 @@ if [ "$DSO" = auto ]; then
  	DSO=FREEBSD
  	TIFFLIBREF='-L${DEPTH}/libtiff -ltiff'
  	;;
 +    *-openbsd*)
 +	DSOSUF=so
 +	DSOSUF_VERSION=${DSOSUF}.35.5
-+	LIBCOPTS='-fpic'
++	LIBCOPTS='-fPIC'
 +	DSO=OPENBSD
 +	TIFFLIBREF='-L${DEPTH}/libtiff -ltiff'
 +	;;

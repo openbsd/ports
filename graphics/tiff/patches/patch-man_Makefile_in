@@ -1,6 +1,7 @@
+$OpenBSD: patch-man_Makefile_in,v 1.1 2001/10/10 15:15:00 wilfried Exp $
 --- man/Makefile.in.orig	Mon Nov 29 17:42:44 1999
-+++ man/Makefile.in	Mon Mar  6 17:39:00 2000
-@@ -41,6 +41,7 @@
++++ man/Makefile.in	Wed Oct 10 17:07:22 2001
+@@ -41,6 +41,7 @@ ECHO	= echo
  SED	= sed
  MV	= mv
  RM	= rm -f
@@ -8,7 +9,7 @@
  INSTALL	= @INSTALL@
  
  #
-@@ -82,7 +83,7 @@
+@@ -82,7 +83,7 @@ MANLIBNAME	= @MANLIBNAME@
  # pathname prefix in the .so commands when setting
  # up alternate files for multi-function manual pages.
  #
@@ -17,7 +18,7 @@
  
  MANTOOLS=\
  	apps/fax2tiff.1 \
-@@ -274,59 +275,59 @@
+@@ -274,59 +275,59 @@ lib/TIFFstrip.3t::	${SRCDIR}/TIFFstrip.3
  lib/TIFFswab.3t::	${SRCDIR}/TIFFswab.3t;			${MANCVT}
  lib/TIFFtile.3t::	${SRCDIR}/TIFFtile.3t;			${MANCVT}
  
@@ -130,7 +131,7 @@
  
  apps/Makefile:
  	test -d apps || mkdir apps
-@@ -336,7 +337,7 @@
+@@ -336,7 +337,7 @@ apps/Makefile:
  	 ${ECHO} 'install:';						\
  	 for i in *.1; do						\
  	    f=${MANAPPNAME};						\
@@ -139,7 +140,7 @@
  		-idb tiff.man.tools -src' apps/"$$i" '-O' "$$f";	\
  	 done								\
  	)>apps/Makefile
-@@ -348,7 +349,7 @@
+@@ -348,7 +349,7 @@ lib/Makefile:
  	 ${ECHO} 'install:';						\
  	 for i in *.3t; do						\
  	    f=${MANLIBNAME};						\

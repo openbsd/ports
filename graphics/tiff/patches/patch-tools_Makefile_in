@@ -1,6 +1,7 @@
---- tools/Makefile.in.orig	Mon Dec 20 18:46:11 1999
-+++ tools/Makefile.in	Sun Jan 23 16:02:08 2000
-@@ -43,17 +43,16 @@
+$OpenBSD: patch-tools_Makefile_in,v 1.1 2001/10/10 15:15:00 wilfried Exp $
+--- tools/Makefile.in.orig	Tue Dec 21 00:46:11 1999
++++ tools/Makefile.in	Wed Oct 10 17:07:22 2001
+@@ -43,17 +43,16 @@ CC	= @CCOMPILER@
  INSTALL	= @INSTALL@
  #
  COPTS	= @GCOPTS@
@@ -21,7 +22,7 @@
  #
  OBJS=	\
  	fax2tiff.o \
-@@ -108,8 +107,8 @@
+@@ -108,8 +107,8 @@ all:	${TARGETS}
  	    true; \
  	fi
  install: all
