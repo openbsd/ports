@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/11 00:37:28 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/15 07:47:40 brad Exp $
 # $FreeBSD: Makefile,v 1.26 2000/01/05 07:11:48 jseger Exp $
 
 DISTNAME=	tcl8.2.3
@@ -6,6 +6,7 @@ PKGNAME=	tcl-8.2.3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR= tcl8_2
+
 NEED_VERSION=	1.191
 
 MAINTAINER=	angelos@openbsd.org
@@ -18,7 +19,7 @@ CONFIGURE_ARGS+= --enable-static
 .if (${MACHINE_ARCH} == "mips")
 CONFIGURE_ARGS+= --disable-load
 .endif
-CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
+CONFIGURE_ENV=	PORTSDIR="${PORTSDIR}"
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/unix
 
