@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-gnome,v 1.1 2002/03/23 06:22:17 brad Exp $
-include/gdk-pixbuf/gnome-canvas-pixbuf.h
+@comment $OpenBSD: PLIST-gnome,v 1.2 2003/01/19 18:03:16 marcm Exp $
+include/gdk-pixbuf-1.0/gdk-pixbuf/gnome-canvas-pixbuf.h
 lib/gnomecanvaspixbufConf.sh
 lib/libgnomecanvaspixbuf.a
 lib/libgnomecanvaspixbuf.la
