@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2002/07/05 05:43:33 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/29 19:49:40 fgsch Exp $
 
 COMMENT=	"file monitor"
 
 DISTNAME=	ktail-0.6.1
 CATEGORIES=	misc
-NEED_VERSION=	1.531
 
 HOMEPAGE=	http://www.franken.de/users/duffy1/rjakob/
 

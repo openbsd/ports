@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/06/09 05:36:59 wilfried Exp $
+# $OpenBSD: Makefile,v 1.23 2002/12/29 19:49:40 fgsch Exp $
 
 COMMENT=	"network-capable tape backup (client and tape server)"
 COMMENT-client=	"network-capable tape backup (client only)"
@@ -15,7 +15,6 @@ PKGNAME=	amanda-${PKGVERSION}
 PKGNAME-client=	amanda-client-${PKGVERSION}
 
 CATEGORIES=	misc
-NEED_VERSION=	1.489
 
 HOMEPAGE=	http://www.amanda.org/
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/13 13:28:07 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/29 19:49:41 fgsch Exp $
 
 COMMENT=		"GNU command line utilities"
 
 DISTNAME=		sh-utils-2.0
 CATEGORIES=		misc
-NEED_VERSION=		1.528
 
 MAINTAINER=		David Lebel <lebel@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/24 12:25:01 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 19:49:40 fgsch Exp $
 
 COMMENT=	"personal accounts manager"
 
@@ -6,7 +6,6 @@ VERSION=	0.7.5
 DISTNAME=	gacc_${VERSION}.orig
 PKGNAME=	gacc-${VERSION}
 CATEGORIES=	misc productivity
-NEED_VERSION=	1.474
 
 HOMEPAGE=	http://gacc.sourceforge.net/
 

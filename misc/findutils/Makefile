@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/13 13:28:07 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 19:49:40 fgsch Exp $
 
 COMMENT=		"finds and then operates on files"
 
 DISTNAME=		findutils-4.1
 CATEGORIES=		misc
-NEED_VERSION=		1.528
 
 HOMEPAGE=		http://www.gnu.org/software/findutils/
 

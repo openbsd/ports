@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2002/05/14 11:49:22 fgsch Exp $
+# $OpenBSD: Makefile,v 1.26 2002/12/29 19:49:41 fgsch Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 COMMENT=	"free and portable TrueType font rendering engine"
@@ -9,7 +9,6 @@ DISTNAME=	freetype-${VERSION}
 PKGNAME-doc=	freetype-doc-${VERSION}
 
 CATEGORIES=	print
-NEED_VERSION=	1.528
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freetype/}
 
 HOMEPAGE=	http://www.freetype.org/

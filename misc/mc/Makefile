@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2002/05/13 23:31:26 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/12/29 19:49:40 fgsch Exp $
 
 COMMENT=	"free Norton Commander Clone with many useful features"
 
 DISTNAME=		mc-4.5.51
 CATEGORIES=		misc
-NEED_VERSION=		1.402
 MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/mc/}
 
 HOMEPAGE=		http://www.gnome.org/mc/

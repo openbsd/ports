@@ -2,14 +2,13 @@
 # Date created:		10 Nov 1999
 # Whom:			Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.8 2002/03/21 21:09:19 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/12/29 19:49:41 fgsch Exp $
 #
 
 COMMENT=	"yet another dump utility"
 
 DISTNAME=	xd-8087
 CATEGORIES=	misc
-NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_LOCAL}
  
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

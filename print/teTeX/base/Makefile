@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2002/07/19 23:43:11 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2002/12/29 19:49:41 fgsch Exp $
 
 COMMENT=	"TeX distribution, executables"
 
 PKGNAME=	teTeX_base-1.0.7
 CATEGORIES=	print/teTeX
-NEED_VERSION=	1.528
 DIST_SUBDIR=	teTeX
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=systems/unix/teTeX/1.0/distrib/sources/}
 #${MASTER_SITE_TEX_CTAN}/biblio/bibtex/8-bit/bt371src.zip

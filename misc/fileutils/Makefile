@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/05/13 13:28:07 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2002/12/29 19:49:40 fgsch Exp $
 
 COMMENT= 		"GNU versions of common file management utilities"
 COMMENT-ls=		"colorized GNU 'ls'"
@@ -6,7 +6,6 @@ COMMENT-ls=		"colorized GNU 'ls'"
 V=			4.1
 DISTNAME=		fileutils-$V
 CATEGORIES=		misc
-NEED_VERSION=		1.528
 
 PKGNAME-ls=		gnuls-$V
 

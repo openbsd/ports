@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/14 02:23:40 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2002/12/29 19:49:40 fgsch Exp $
 
 COMMENT=	"task-based timeclock"
 
 VERSION=	2.0.2
 DISTNAME=	ktimeclock-${VERSION}
 CATEGORIES=	misc x11
-NEED_VERSION=	1.525
 
 HOMEPAGE=	http://www.howlingfrog.com/opensource/ktimeclock/
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2002/07/10 20:48:15 avsm Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/29 19:49:41 fgsch Exp $
 
 COMMENT=	"converts DVI files to PDF format"
 
 DISTNAME=		dvipdfm-0.13.2b
 CATEGORIES=     	print
-NEED_VERSION=		1.489
 
 HOMEPAGE=		http://gaspra.kettering.edu/dvipdfm/
 

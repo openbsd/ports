@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2002/06/09 05:36:59 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/29 19:49:40 fgsch Exp $
 
 COMMENT=	"analog clock plugin for gkrellm"
 V=		0.1
 DISTNAME=	gkrellaclock-${V}
 CATEGORIES=	misc
-NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

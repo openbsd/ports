@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2001/10/25 02:28:14 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2002/12/29 19:49:40 fgsch Exp $
 
 COMMENT=	"redhat package manager"
 
 PKGNAME=	${DISTNAME}p1
 DISTNAME=	rpm-3.0.6
 CATEGORIES=	misc archivers emulators
-NEED_VERSION=	1.402
 
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
