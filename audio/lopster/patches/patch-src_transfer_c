@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_transfer_c,v 1.1 2001/03/11 21:57:45 naddy Exp $
+--- src/transfer.c.orig	Sun Mar 11 15:32:16 2001
++++ src/transfer.c	Sun Mar 11 15:32:40 2001
+@@ -4,6 +4,7 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <ctype.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <sys/stat.h>
+ #include <sys/time.h>

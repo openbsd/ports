@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/05 04:49:12 obecian Exp $
+# $OpenBSD: Makefile,v 1.6 2001/03/11 21:57:45 naddy Exp $
 
 DISTNAME=	lopster-0.9.8
 CATEGORIES=	audio
@@ -21,5 +21,6 @@ PERMIT_DISTFILES_FTP=   Yes
 USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include
 
 .include <bsd.port.mk>
