@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2003/12/26 16:46:34 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.22 2004/01/31 18:16:54 jakob Exp $
 @pkgcfl postfix-*
 %%tls%%
 libexec/postfix/anvil
@@ -10,6 +10,7 @@ libexec/postfix/lmtp
 libexec/postfix/local
 libexec/postfix/master
 libexec/postfix/nqmgr
+libexec/postfix/oqmgr
 libexec/postfix/pickup
 libexec/postfix/pipe
 libexec/postfix/proxymap
@@ -38,8 +39,10 @@ man/man1/postsuper.1
 man/man1/sendmail.1
 man/man5/access.5
 man/man5/aliases.5
+man/man5/body_checks.5
 man/man5/canonical.5
 man/man5/cidr_table.5
+man/man5/header_checks.5
 man/man5/pcre_table.5
 man/man5/regexp_table.5
 man/man5/relocated.5
@@ -55,7 +58,7 @@ man/man8/flush.8
 man/man8/lmtp.8
 man/man8/local.8
 man/man8/master.8
-man/man8/nqmgr.8
+man/man8/oqmgr.8
 man/man8/pickup.8
 man/man8/pipe.8
 man/man8/proxymap.8
@@ -103,6 +106,7 @@ share/doc/postfix/html/error.8.html
 share/doc/postfix/html/faq.html
 share/doc/postfix/html/flush.8.html
 share/doc/postfix/html/goals.html
+share/doc/postfix/html/header_checks.5.html
 share/doc/postfix/html/inbound.gif
 share/doc/postfix/html/index.html
 share/doc/postfix/html/lmtp.8.html
@@ -111,7 +115,7 @@ share/doc/postfix/html/mailq.1.html
 share/doc/postfix/html/master.8.html
 share/doc/postfix/html/motivation.html
 share/doc/postfix/html/newaliases.1.html
-share/doc/postfix/html/nqmgr.8.html
+share/doc/postfix/html/oqmgr.8.html
 share/doc/postfix/html/outbound.gif
 share/doc/postfix/html/pcre_table.5.html
 share/doc/postfix/html/pickup.8.html
@@ -158,6 +162,7 @@ share/doc/postfix/readme/DB_README
 share/doc/postfix/readme/DEBUG_README
 share/doc/postfix/readme/ETRN_README
 share/doc/postfix/readme/FILTER_README
+share/doc/postfix/readme/HOSTING_README
 share/doc/postfix/readme/INSTALL
 share/doc/postfix/readme/LDAP_README
 share/doc/postfix/readme/LINUX_README
@@ -187,20 +192,17 @@ share/examples/postfix/LICENSE
 share/examples/postfix/access
 share/examples/postfix/aliases
 share/examples/postfix/canonical
-share/examples/postfix/cidr_table
+share/examples/postfix/header_checks
 share/examples/postfix/main.cf
 share/examples/postfix/main.cf.default
 share/examples/postfix/makedefs.out
 share/examples/postfix/master.cf
-share/examples/postfix/pcre_table
 share/examples/postfix/post-install
 share/examples/postfix/postfix-files
 share/examples/postfix/postfix-script
-share/examples/postfix/regexp_table
 share/examples/postfix/relocated
 share/examples/postfix/sample-aliases.cf
 share/examples/postfix/sample-auth.cf
-share/examples/postfix/sample-canonical.cf
 share/examples/postfix/sample-compatibility.cf
 share/examples/postfix/sample-debug.cf
 share/examples/postfix/sample-filter.cf
@@ -210,15 +212,9 @@ share/examples/postfix/sample-lmtp.cf
 share/examples/postfix/sample-local.cf
 share/examples/postfix/sample-mime.cf
 share/examples/postfix/sample-misc.cf
-share/examples/postfix/sample-pcre-access.cf
-share/examples/postfix/sample-pcre-body.cf
-share/examples/postfix/sample-pcre-header.cf
 share/examples/postfix/sample-pgsql-aliases.cf
 share/examples/postfix/sample-qmqpd.cf
 share/examples/postfix/sample-rate.cf
-share/examples/postfix/sample-regexp-access.cf
-share/examples/postfix/sample-regexp-body.cf
-share/examples/postfix/sample-regexp-header.cf
 share/examples/postfix/sample-relocated.cf
 share/examples/postfix/sample-resource.cf
 share/examples/postfix/sample-rewrite.cf
@@ -228,7 +224,6 @@ share/examples/postfix/sample-smtpd.cf
 share/examples/postfix/sample-transport.cf
 share/examples/postfix/sample-verify.cf
 share/examples/postfix/sample-virtual.cf
-share/examples/postfix/tcp_table
 share/examples/postfix/transport
 share/examples/postfix/virtual
 @dirrm share/examples/postfix
