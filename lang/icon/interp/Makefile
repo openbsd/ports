@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/07 16:59:20 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/08 18:22:56 espie Exp $
 
 VERSION=	9.3.2
 DISTNAME=	icon_interp-${VERSION}
@@ -13,15 +13,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAINTAINER=	espie@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 WRKDIST=	${WRKDIR}
 
 SCRIPTS_ENV=	ARCH="${MACHINE_ARCH}"
 MAKE_ENV=	ARCH="${MACHINE_ARCH}"
 CONF_DIR=	${WRKSRC}/config/unix/openbsd
-FAKE=		Yes
-
 ALL_TARGET=	Icon-icont
 
 pre-configure:
