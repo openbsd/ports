@@ -1,5 +1,5 @@
 --- Makefile.orig	Tue Jan 26 09:35:18 1999
-+++ Makefile	Tue Aug 17 09:19:25 1999
++++ Makefile	Fri Oct 29 21:20:30 1999
 @@ -34,6 +34,7 @@
  	@echo "make aix            IBM AIX (tested: 4.2)"
  	@echo "make os2            IBM OS/2"
@@ -8,7 +8,7 @@
  	@echo "make bsdos          BSDI BSD/OS"
  	@echo "make bsdos-nas      BSDI BSD/OS with NAS support"
  	@echo "make mint           MiNT on Atari"
-@@ -364,6 +365,22 @@
+@@ -364,6 +365,21 @@
  		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
  			-funroll-all-loops -ffast-math -DROT_I386 \
  			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DNETBSD' \
@@ -19,15 +19,14 @@
 +		OBJECTS='decode.o dct64.o audio_openbsd.o term.o' \
 +		CFLAGS='-Wall -ansi -pedantic -O3 -fomit-frame-pointer \
 +			-funroll-all-loops -ffast-math \
-+			-DREAL_IS_FLOAT -DUSE_MMAP -DOPENBSD -DTERM_CONTROL' \
-+		mpg123-make
++			-DREAL_IS_FLOAT -DUSE_MMAP -DOPENBSD' mpg123-make
 +
 +openbsd-i386:
 +	$(MAKE) CC=cc LDFLAGS= \
 +		OBJECTS='decode_i386.o dct64_i386.o getbits_.o audio_openbsd.o term.o' \
 +		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
 +			-funroll-all-loops -ffast-math -DROT_I386 \
-+			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOPENBSD -DTERM_CONTROL' \
++			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOPENBSD' \
  		mpg123-make
  
  bsdos:
