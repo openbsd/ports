@@ -1,0 +1,17 @@
+--- radiusreport-0.3b6.orig	Sun Apr 12 07:35:23 1998
++++ radiusreport-0.3b6	Sun May 28 05:10:06 2000
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ #
+ # radiusreport - Extract information from Radius 2.0 detail log
+ #
+@@ -72,7 +72,7 @@ $USERS = "/etc/raddb/users";	# Hard code
+ 
+ # gzcat - 'cat for .gz / gzip files' 
+ # If you don't have gzcat and do have gzip then use: ln gzip gzcat
+-$GZCAT = "/usr/local/bin/gzcat";
++$GZCAT = "/usr/bin/gzcat";
+ 
+ # zcat - 'cat for .Z / compressed files'
+ $ZCAT = "/usr/bin/zcat";
