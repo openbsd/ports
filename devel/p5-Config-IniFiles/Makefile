@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/29 20:19:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2003/09/02 22:10:09 pvalchev Exp $
+
+BROKEN=		"not functional; needs update"
 
 COMMENT=	"module for reading .ini-style configuration files"
 

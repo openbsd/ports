@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2003/01/02 19:35:14 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2003/09/02 22:10:09 pvalchev Exp $
+
+BROKEN=		"not functional; needs update"
 
 COMMENT=	"make pretty graphs from Analog logfiles"
 
