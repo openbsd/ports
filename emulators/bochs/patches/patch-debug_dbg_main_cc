@@ -1,0 +1,100 @@
+$OpenBSD: patch-debug_dbg_main_cc,v 1.1 2001/02/12 18:19:56 todd Exp $
+--- debug/dbg_main.cc.orig	Mon Feb 12 12:10:54 2001
++++ debug/dbg_main.cc	Mon Feb 12 12:08:13 2001
+@@ -561,7 +561,7 @@ bx_dbg_exit(int code)
+   bx_dbg_callback[1].atexit();
+ #endif
+ 
+-  bx_atexit();
++  bio->atexit();
+ 
+   fprintf(stderr, "before exit\n");
+   exit(code);
+@@ -832,8 +832,8 @@ bx_dbg_record_command(char* path_quoted)
+       if (path_quoted[len - 1] == '"')
+ 	    path_quoted[len - 1] = '\0';
+ 
+-      bx_dbg.record_io = fopen(path_quoted, "w");
+-      if (bx_dbg.record_io)
++      bio->getdbg().record_io = fopen(path_quoted, "w");
++      if (bio->getdbg().record_io)
+ 	    fprintf(stderr, "IO record file '%s' opened\n", path_quoted);
+       else
+ 	    fprintf(stderr, "Error opening '%s' for writing\n", path_quoted);
+@@ -1010,31 +1010,31 @@ void bx_dbg_show_command(char* arg)
+ 		  dbg_dump_table(0);
+ 		  return;
+ 	    } else if(!strcmp(arg,"\"dbg-all\"")){
+-		    bx_dbg.floppy = 1;
+-		    bx_dbg.keyboard = 1;
+-		    bx_dbg.video = 1;
+-		    bx_dbg.disk = 1;
+-		    bx_dbg.pit = 1;
+-		    bx_dbg.pic = 1;
+-		    bx_dbg.bios = 1;
+-		    bx_dbg.cmos = 1;
+-		    bx_dbg.a20 = 1;
+-		    bx_dbg.interrupts = 1;
+-		    bx_dbg.exceptions = 1;
+-		    bx_dbg.unsupported = 1;
+-		    bx_dbg.temp = 1;
+-		    bx_dbg.reset = 1;
+-		    bx_dbg.mouse = 1;
+-		    bx_dbg.io = 1;
+-		    bx_dbg.debugger = 1;
+-		    bx_dbg.xms = 1;
+-		    bx_dbg.v8086 = 1;
+-		    bx_dbg.paging = 1;
+-		    bx_dbg.creg = 1;
+-		    bx_dbg.dreg = 1;
+-		    bx_dbg.dma = 1;
+-		    bx_dbg.unsupported_io = 1;
+-		    /* bx_dbg.record_io = 1; this is a pointer .. somewhere */
++		    bio->getdbg().floppy = 1;
++		    bio->getdbg().keyboard = 1;
++		    bio->getdbg().video = 1;
++		    bio->getdbg().disk = 1;
++		    bio->getdbg().pit = 1;
++		    bio->getdbg().pic = 1;
++		    bio->getdbg().bios = 1;
++		    bio->getdbg().cmos = 1;
++		    bio->getdbg().a20 = 1;
++		    bio->getdbg().interrupts = 1;
++		    bio->getdbg().exceptions = 1;
++		    bio->getdbg().unsupported = 1;
++		    bio->getdbg().temp = 1;
++		    bio->getdbg().reset = 1;
++		    bio->getdbg().mouse = 1;
++		    bio->getdbg().io = 1;
++		    bio->getdbg().debugger = 1;
++		    bio->getdbg().xms = 1;
++		    bio->getdbg().v8086 = 1;
++		    bio->getdbg().paging = 1;
++		    bio->getdbg().creg = 1;
++		    bio->getdbg().dreg = 1;
++		    bio->getdbg().dma = 1;
++		    bio->getdbg().unsupported_io = 1;
++		    /* bio->getdbg().record_io = 1; this is a pointer .. somewhere */
+ 		    printf("Turned on all bx_dbg flags\n");
+ 		    return;
+ 	    } else {
+@@ -1089,7 +1089,7 @@ enter_playback_entry()
+       last_playback_time = time;
+ 
+       if (diff < 0) {
+-	    bx_panic("Negative diff in playback");
++	    bio->panic("Negative diff in playback");
+       } else if (diff == 0) {
+ 	    playback_entry.trigger();
+       } else {
+@@ -3184,8 +3184,8 @@ bx_dbg_doit_command(unsigned n)
+ 
+ 
+ 
+-  bx_dbg.interrupts = n;
+-  bx_dbg.exceptions = n;
++  bio->getdbg().interrupts = n;
++  bio->getdbg().exceptions = n;
+ }
+ 
+   void
