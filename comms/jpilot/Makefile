@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/10/25 11:34:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2003/03/03 03:01:58 fgsch Exp $
 
 COMMENT=	"desktop organizer software for the palm pilot"
 
@@ -26,7 +26,7 @@ LIB_DEPENDS=	pisock.3:pilot-link-*:comms/pilot-link \
 MODULES=	gettext
 
 USE_X11=	Yes
-CONFIGURE_STYLE= gnu dest
+CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,0 +1,12 @@
+$OpenBSD: patch-SyncTime_Makefile_in,v 1.5 2003/03/03 03:01:59 fgsch Exp $
+--- SyncTime/Makefile.in.orig	Sun Mar  2 00:23:50 2003
++++ SyncTime/Makefile.in	Sun Mar  2 00:23:56 2003
+@@ -2,7 +2,7 @@ top_srcdir = @top_srcdir@
+ top_builddir = @top_srcdir@
+ 
+ # Install variables
+-prefix=@prefix@
++prefix=${PREFIX}
+ 
+ #Pilot flags (include dir), and Libraries
+ PILOT_FLAGS=@PILOT_FLAGS@
