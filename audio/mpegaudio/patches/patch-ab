@@ -1,19 +1,11 @@
-*** common.h.orig	Mon Jul  1 23:00:51 1996
---- common.h	Mon Jul  1 23:04:47 1996
-***************
-*** 73,79 ****
-  #endif
-  
-  #ifdef  UNIX
-! #define         TABLES_PATH     "tables"  /* to find data files */
-  /* name of environment variable holding path of table files */
-  #define         MPEGTABENV      "MPEGTABLES"
-  #define         PATH_SEPARATOR  "/"        /* how to build paths */
---- 73,79 ----
-  #endif
-  
-  #ifdef  UNIX
-! #define         TABLES_PATH     PREFIX "/lib/mpegaudio/tables" /* to find data files */
-  /* name of environment variable holding path of table files */
-  #define         MPEGTABENV      "MPEGTABLES"
-  #define         PATH_SEPARATOR  "/"        /* how to build paths */
+--- common.h.orig	Tue Jan  4 20:42:00 1994
++++ common.h	Mon Nov 29 08:57:09 1999
+@@ -73,7 +73,7 @@
+ #endif
+ 
+ #ifdef  UNIX
+-#define         TABLES_PATH     "tables"  /* to find data files */
++#define         TABLES_PATH     PREFIX "/lib/mpegaudio/tables" /* to find data files */
+ /* name of environment variable holding path of table files */
+ #define         MPEGTABENV      "MPEGTABLES"
+ #define         PATH_SEPARATOR  "/"        /* how to build paths */

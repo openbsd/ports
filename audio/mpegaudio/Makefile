@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 1999/09/06 18:20:13 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/11/29 14:39:44 brad Exp $
 
 DISTNAME=	mpegaudio
 PKGNAME=	mpegaudio-3.9
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.iuma.com/audio_utils/converters/source/
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	angelos@openbsd.org
