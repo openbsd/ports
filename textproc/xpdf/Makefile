@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2001/12/13 03:26:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.25 2002/03/30 21:48:27 brad Exp $
 
 COMMENT=	"PDF viewer for X"
 
 DISTNAME=	xpdf-0.93
 CATEGORIES=	textproc x11
 NEED_VERSION=	1.500
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR= support/xpdf
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.foolabs.com/xpdf/
