@@ -1,8 +1,8 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.11 2000/10/09 22:27:03 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/04/15 17:39:39 espie Exp $
 
 VERSION=9.3.3
-DISTNAME=icon_lib-${VERSION}
+DISTNAME=icon-lib-${VERSION}
 DIST_SUBDIR=icon/${VERSION}
 
 CATEGORIES=lang
