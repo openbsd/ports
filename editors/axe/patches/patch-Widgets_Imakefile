@@ -1,0 +1,21 @@
+$OpenBSD: patch-Widgets_Imakefile,v 1.1 2001/08/22 00:04:41 naddy Exp $
+--- Widgets/Imakefile.orig	Wed Aug 22 01:05:50 2001
++++ Widgets/Imakefile	Wed Aug 22 01:06:12 2001
+@@ -4,7 +4,7 @@
+ SRCS = ${TABLE_SRCS} ${EXTN_SRCS} \
+        AxeWindow.c AxeEditor.c AxeMenuBtn.c AxeSimMenu.c \
+        AxeSmeBSB.c AxeCommand.c AxeTextDeck.c AxeText.c \
+-       AxeiiText.c AxeiiUndo.c AxeiiSink.c \
++       AxeiiText.c AxeiiUndo.c \
+        FileNomWin.c FileNom.c ${R5ONLY_SRCS} ${R4ONLY_SRCS} ScrollText.c \
+        NumericPad.c CtrlCodeSel.c Preference.c Confirmer.c \
+        ${SCANDIR_SRCS} regexp.c insertfile.c match.c util.c
+@@ -12,7 +12,7 @@ SRCS = ${TABLE_SRCS} ${EXTN_SRCS} \
+ OBJS = ${TABLE_OBJS} ${EXTN_OBJS} \
+        AxeWindow.o AxeEditor.o AxeMenuBtn.o AxeSimMenu.o \
+        AxeSmeBSB.o AxeTextDeck.o AxeCommand.o AxeText.o \
+-       AxeiiText.o AxeiiUndo.o AxeiiSink.o \
++       AxeiiText.o AxeiiUndo.o \
+        FileNomWin.o FileNom.o ${R5ONLY_OBJS} ${R4ONLY_OBJS} ScrollText.o \
+        NumericPad.o CtrlCodeSel.o Preference.o Confirmer.o \
+        ${SCANDIR_OBJS} regexp.o insertfile.o match.o util.o

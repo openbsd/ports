@@ -1,0 +1,36 @@
+$OpenBSD: patch-Widgets_AxeiiText_c,v 1.1 2001/08/22 00:04:41 naddy Exp $
+--- Widgets/AxeiiText.c.orig	Wed Aug 22 01:02:27 2001
++++ Widgets/AxeiiText.c	Wed Aug 22 01:04:31 2001
+@@ -35,7 +35,6 @@
+ #include <ctype.h>
+ #include <stdio.h>
+ #include <sys/file.h>
+-#include "AxeiiSink.h"
+ #include "AxeiiTextP.h"
+ #include "AxeiiUndo.h"
+ #include "regexp.h"
+@@ -319,19 +318,18 @@ Initialize(req, new, args, num_args)
+     {
+ 	XtVaSetValues(new,
+ 		      XtNtextSink,
+-		         XtVaCreateWidget("axeiisink",
+-				      axeiiSinkObjectClass,
++		         XtVaCreateWidget("asciisink",
++				      asciiSinkObjectClass,
+ 				      new,
+-				      XtNcursorBitmap, atw->axeii.caret_bitmap,
++				      XtNcursorName, atw->axeii.caret_bitmap,
+ 				      NULL),
+ 		      NULL);
+     }
+     else if (atw->axeii.block_caret)
+     {
+ 	XtVaSetValues(new,
+-		      XtNtextSink, XtVaCreateWidget("axeiisink",
+-						    axeiiSinkObjectClass, new,
+-						    XtNblockCursor, True,
++		      XtNtextSink, XtVaCreateWidget("asciisink",
++						    asciiSinkObjectClass, new,
+ 						    NULL),
+ 		      NULL);
+     }

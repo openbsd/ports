@@ -1,6 +1,7 @@
---- Axe.rules.orig	Sun Mar 19 18:14:36 2000
-+++ Axe.rules	Sun Mar 19 18:15:25 2000
-@@ -72,7 +72,7 @@
+$OpenBSD: patch-Axe_rules,v 1.1 2001/08/22 00:04:41 naddy Exp $
+--- Axe.rules.orig	Wed Apr  6 18:07:33 1994
++++ Axe.rules	Tue Aug 21 02:43:48 2001
+@@ -72,7 +72,7 @@ extension::								@@\
  #define InstallCoaxe(bindest)						@@\
  InstallProgram(coaxe,bindest)						@@\
  install::								@@\

@@ -1,0 +1,47 @@
+$OpenBSD: patch-Widgets_ScrollText_c,v 1.1 2001/08/22 00:04:41 naddy Exp $
+--- Widgets/ScrollText.c.orig	Wed Aug 22 01:06:39 2001
++++ Widgets/ScrollText.c	Wed Aug 22 01:13:09 2001
+@@ -222,6 +222,7 @@ AdjustForMovement(widget, client_data, a
+ 	strcmp(action, "beginning-of-line")  == 0 ||
+ 	strcmp(action, "end-of-line")        == 0)
+     {
++#if 0
+        /*
+         * Positioning with the mouse results in work_proc being corrupted with
+         * the result that the test fails and scrolling stops happening. I don't
+@@ -236,9 +237,11 @@ AdjustForMovement(widget, client_data, a
+ 		XtAppAddWorkProc(XtWidgetToApplicationContext(widget),
+ 				              AfterAction, (XtPointer) widget);
+      /* } */
++#endif
+     }
+ }
+ 
++#if 0
+ static Boolean
+ AfterAction(client_data)
+      XtPointer client_data;
+@@ -252,6 +255,7 @@ AfterAction(client_data)
+ 
+     return True;
+ }
++#endif
+ 
+ /* ARGSUSED */
+ static void
+@@ -259,6 +263,7 @@ AdjustForChange(widget, client_data, cal
+      Widget widget;
+      XtPointer client_data, call_data;
+ {
++#if 0
+     Widget source, sink, text = XtParent(widget), porthole = XtParent(text);
+     Position x, prevx, top;
+     Dimension lm, width, phwidth, fwidth = PRIVATE(porthole,font_width);
+@@ -299,6 +304,7 @@ AdjustForChange(widget, client_data, cal
+     width = ed + fwidth;
+     
+     XtVaSetValues(text, XtNx, x, XtNwidth, width, NULL);
++#endif
+ }
+ 
+ #undef PRIVATE

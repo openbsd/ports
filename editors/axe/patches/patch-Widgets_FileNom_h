@@ -1,0 +1,11 @@
+$OpenBSD: patch-Widgets_FileNom_h,v 1.1 2001/08/22 00:04:41 naddy Exp $
+--- Widgets/FileNom.h.orig	Wed Apr  6 18:07:46 1994
++++ Widgets/FileNom.h	Tue Aug 21 02:43:48 2001
+@@ -33,7 +33,6 @@
+ #define XtNinitialDirectory "initialDirectory"
+ #define XtNselectCallback "selectCallback"
+ #define XtNpathList "pathList"
+-#define XtNcancelCallback "cancelCallback"
+ #define XtNmargin "margin"
+ #define XtNnumberRows "numberRows"
+ #define XtNshowDotFiles "showDotFiles"
