@@ -1,12 +1,15 @@
-$OpenBSD: patch-wvHtml_in,v 1.1.1.1 2001/08/11 00:51:32 avsm Exp $
---- wvHtml.in.orig	Fri Nov 17 23:51:39 2000
-+++ wvHtml.in	Thu Aug  9 18:48:39 2001
-@@ -16,4 +16,7 @@ if [ ${?} -ne "0" ]; then
-     exit 1
+$OpenBSD: patch-wvHtml_in,v 1.2 2002/09/08 12:15:04 avsm Exp $
+--- wvHtml.in.orig	Mon Feb 18 11:55:00 2002
++++ wvHtml.in	Sat Sep  7 22:43:20 2002
+@@ -136,8 +136,11 @@ else
+   exit 1
  fi
  
--wvWare -x ${datadir}/wv/wvHtml.xml "${1}" > "${2}"
-+TMPDIR=`mktemp -d /tmp/wvHtml.XXXXXXXXX` && {
-+  wvWare -x ${datadir}/wv/wvHtml.xml "${1}" > "${2}"
-+  rm -rf $TMPDIR
++TMPDIR=`mktemp -d /tmp/wvHtml.XXXXXXXXXX` && {
+ if test "x$o_file" = "x-"; then
+   "$wv_exec" $wv_opts -x "$xmlcfg" -d "$t_dir" -b "$name" "$i_file"
+ else
+   "$wv_exec" $wv_opts -x "$xmlcfg" -d "$t_dir" -b "$name" "$i_file" > "$t_dir"/"$o_file"
+ fi
++rm -rf ${TMPDIR}
 +}

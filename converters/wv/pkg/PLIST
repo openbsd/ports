@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/11 00:51:31 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/09/08 12:15:05 avsm Exp $
 bin/make_epses.sh
 bin/wv-incconfig
 bin/wv-libconfig
@@ -12,7 +12,6 @@ bin/wvMime
 bin/wvPDF
 bin/wvPS
 bin/wvRTF
-bin/wvSimpleCLX
 bin/wvSummary
 bin/wvText
 bin/wvVersion
@@ -23,6 +22,7 @@ include/wvexporter.h
 lib/libwv.a
 man/man1/wvAbw.1
 man/man1/wvCleanLatex.1
+man/man1/wvConvert.1
 man/man1/wvDVI.1
 man/man1/wvHtml.1
 man/man1/wvLatex.1

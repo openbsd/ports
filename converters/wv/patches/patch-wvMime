@@ -1,15 +1,16 @@
-$OpenBSD: patch-wvMime,v 1.1.1.1 2001/08/11 00:51:32 avsm Exp $
---- wvMime.orig	Thu Aug  9 18:51:57 2001
-+++ wvMime	Thu Aug  9 18:53:52 2001
+$OpenBSD: patch-wvMime,v 1.2 2002/09/08 12:15:04 avsm Exp $
+--- wvMime.orig	Fri Jan 19 05:11:01 2001
++++ wvMime	Sat Sep  7 22:53:06 2002
 @@ -43,10 +43,8 @@ fi
  # temporary PS file, mangled to get some sort
  # of semi-uniqueness
  FILE=`basename ${1}`
 -TMPDIR="/tmp/${FILE}-${USER}-${$}"
-+TMPDIR=`mktemp -d /tmp/wvMime.XXXXXXXXXX` 
- TMPPS="$TMPDIR/${FILE}-${USER}-${$}.ps" 
+-TMPPS="$TMPDIR/${FILE}-${USER}-${$}.ps" 
 -
 -mkdir $TMPDIR
++TMPDIR=`mktemp -d /tmp/wvMime.XXXXXXXXXX`
++TMPPS=`mktemp /tmp/wvMime.XXXXXXXXXX`
  
  # Make sure all graphics go into /tmp as well
  cp ${1} $TMPDIR/$FILE

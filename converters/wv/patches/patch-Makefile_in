@@ -1,12 +1,29 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/08/11 00:51:32 avsm Exp $
---- Makefile.in.orig	Wed May 23 14:01:15 2001
-+++ Makefile.in	Wed May 23 14:02:07 2001
-@@ -466,7 +466,7 @@ install: installdirs all
+$OpenBSD: patch-Makefile_in,v 1.2 2002/09/08 12:15:04 avsm Exp $
+--- Makefile.in.orig	Mon Apr 29 17:05:45 2002
++++ Makefile.in	Sat Sep  7 21:44:08 2002
+@@ -82,7 +82,7 @@ src_mandir=$(srcdir)/help/man
+ VPATH = @srcdir@
+ 
+ DEFS = @DEFS@ -DVERSION=\"@VERSION@\" -DXMLCONFIG=\"$(datadir)/wv/wvConfig.xml\" -DHTMLCONFIG=\"$(datadir)/wv/wvHtml.xml\"
+-CPPFLAGS = @ICONV_CFLAGS@ @WMF_CFLAGS@ @XML_CFLAGS@ @GLIB_CFLAGS@ @PNG_CFLAGS@ @ZLIB_CFLAGS@ @CPPFLAGS@
++CPPFLAGS = @WMF_CFLAGS@ @ICONV_CFLAGS@ @XML_CFLAGS@ @GLIB_CFLAGS@ @PNG_CFLAGS@ @ZLIB_CFLAGS@ @CPPFLAGS@
+ CFLAGS = @CFLAGS@ -ansi -pedantic
+ INCLUDES = -I. -I./ -I$(srcdir)/ -I$(srcdir)/magick/  -I$(srcdir)/libole2/ -I$(srcdir)/oledecod/
+ 
+@@ -455,6 +455,7 @@ install: installdirs all
+ 	$(INSTALL) $(srcdir)/wv-incconfig $(bindir)/wv-incconfig
+ 	$(INSTALL) $(srcdir)/make_epses.sh $(bindir)/make_epses.sh
+ 	$(INSTALL_DATA) $(src_mandir)/wvWare.1 $(mandir)/man1/
++	( cd $(src_mandir) && $(LN) -s wvWare.1 $(mandir)/man1/wvConvert.1 )
+ 	$(INSTALL_DATA) $(src_mandir)/wvHtml.1 $(mandir)/man1/
+ 	$(INSTALL_DATA) $(src_mandir)/wvLatex.1 $(mandir)/man1/
+ 	$(INSTALL_DATA) $(src_mandir)/wvCleanLatex.1 $(mandir)/man1/
+@@ -465,8 +466,6 @@ install: installdirs all
+ 	$(INSTALL_DATA) $(src_mandir)/wvWml.1 $(mandir)/man1/
  	$(INSTALL_DATA) $(src_mandir)/wvAbw.1 $(mandir)/man1/
  	$(INSTALL_DATA) $(src_mandir)/wvRTF.1 $(mandir)/man1/
- 	$(RM) -f $(mandir)/man1/wvConvert.1
+-	$(RM) -f $(mandir)/man1/wvConvert.1
 -	$(LN) -s $(mandir)/man1/wvWare.1 $(mandir)/man1/wvConvert.1	
-+	$(LN) -s $(mandir)/man1/wvWare.1 wvConvert.1	
  	$(INSTALL_DATA) $(src_mandir)/wvMime.1 $(mandir)/man1/
  	$(INSTALL_DATA) $(src_mandir)/wvVersion.1 $(mandir)/man1/
  	$(INSTALL_DATA) $(src_mandir)/wvSummary.1 $(mandir)/man1/

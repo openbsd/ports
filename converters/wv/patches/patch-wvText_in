@@ -1,22 +1,44 @@
-$OpenBSD: patch-wvText_in,v 1.1.1.1 2001/08/11 00:51:32 avsm Exp $
---- wvText.in.orig	Thu Aug  9 18:57:51 2001
-+++ wvText.in	Thu Aug  9 18:58:40 2001
-@@ -29,7 +29,7 @@ if [ ${USING_LYNX} -ne "0" ]; then
+$OpenBSD: patch-wvText_in,v 1.2 2002/09/08 12:15:04 avsm Exp $
+--- wvText.in.orig	Mon Feb 18 11:50:45 2002
++++ wvText.in	Sun Sep  8 12:37:54 2002
+@@ -3,7 +3,8 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ datadir=@datadir@
+-tmpdir=/tmp
++TMPDIR=`mktemp -d /tmp/wvWare.XXXXXXXXXX`
++export TMPDIR
+ 
+ # argument checking
+ if [ ${#} -ne "2" ]; then
+@@ -32,21 +33,21 @@ if [ ${USING_LYNX} -ne "0" ]; then
+     # intermediate file
+     TMP_FILE="wv$$.html"
+ 
+-    wvHtml "${1}" --targetdir="${tmpdir}" "${TMP_FILE}" >/dev/null 2>&1
++    wvHtml "${1}" --targetdir="${TMPDIR}" "${TMP_FILE}" >/dev/null 2>&1
+     if [ ${?} -ne "0" ]; then
+ 	echo "Could not convert into HTML"
+ 	exit 1
      fi
  
-     # intermediate file
--    TMP_FILE="/tmp/wv$$.html"
-+    TMP_FILE=`mktemp /tmp/wvText.XXXXXXXXXX`
- 
-     wvHtml "${1}" "${TMP_FILE}" >/dev/null 2>&1
+     # lynx actually does quite well
+-    TERM=vt100 lynx -dump -force_html "${tmpdir}/${TMP_FILE}" > "${2}"
++    TERM=vt100 lynx -dump -force_html "${TMPDIR}/${TMP_FILE}" > "${2}"
      if [ ${?} -ne "0" ]; then
-@@ -51,5 +51,8 @@ else
+ 	    echo "Could not convert into Text"
+ 	    exit 1
+     fi
+ 
+     # clean up
+-    rm -f "${tmpdir}/${TMP_FILE}"
++    rm -f "${TMPDIR}/${TMP_FILE}"
+ 
+ else
      # fall back onto our cruddy output
-     # this is, admittedly, better than running
+@@ -54,3 +55,5 @@ else
      # 'strings' on the word document though :)
--    wvWare -x ${datadir}/wv/wvText.xml "${1}" > "${2}"
-+    TMPDIR=`mktemp -d /tmp/wvWare.XXXXXXXXXX` && {
-+      wvWare -x ${datadir}/wv/wvText.xml "${1}" > "${2}"
-+      rm -rf $TMPDIR
-+    }
+     wvWare -x ${datadir}/wv/wvText.xml "${1}" > "${2}"
  fi
++
++rm -rf ${TMPDIR}
