@@ -1,10 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/10/24 16:09:20 espie Exp $
-@owner root
-@mode u+s
-bin/kcheckpass
-bin/konsole_grantpty
-@owner
-@mode
+@comment $OpenBSD: PLIST,v 1.5 2000/10/25 10:38:14 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -16,6 +10,7 @@ bin/kblankscrn.kss
 bin/kblob.kss
 bin/kbouboule.kss
 bin/kbsod.kss
+bin/kcheckpass
 bin/kcminit
 bin/kcmshell
 bin/kcontrol
@@ -44,6 +39,7 @@ bin/kmatrix.kss
 bin/kmenuedit
 bin/konqueror
 bin/konsole
+bin/konsole_grantpty
 bin/kpager
 bin/kpolygon.kss
 bin/kpyro.kss
@@ -488,6 +484,7 @@ share/apps/kdisplay/app-defaults/Netscape.ad
 share/apps/kdisplay/app-defaults/RVPlayer.ad
 share/apps/kdisplay/app-defaults/WPerfect.ad
 share/apps/kdisplay/app-defaults/XCalc.ad
+share/apps/kdisplay/app-defaults/XOsview.ad
 share/apps/kdisplay/app-defaults/XTerm.ad
 share/apps/kdisplay/app-defaults/XV.ad
 share/apps/kdisplay/color-schemes/AtlasGreen.kcsrc
@@ -518,10 +515,10 @@ share/apps/khelpcenter/en/nomatch.html
 share/apps/khelpcenter/en/short.html
 share/apps/khelpcenter/en/syntax.html
 share/apps/khelpcenter/en/wrapper.html
+share/apps/khelpcenter/icons/locolor/16x16/apps/helpbook.png
+share/apps/khelpcenter/icons/locolor/16x16/apps/helpbook_open.png
+share/apps/khelpcenter/icons/locolor/16x16/apps/helpdoc.png
 share/apps/khelpcenter/pics/checked.xpm
-share/apps/khelpcenter/pics/locolor/16x16/apps/helpbook.png
-share/apps/khelpcenter/pics/locolor/16x16/apps/helpbook_open.png
-share/apps/khelpcenter/pics/locolor/16x16/apps/helpdoc.png
 share/apps/khelpcenter/pics/star.png
 share/apps/khelpcenter/pics/star_blank.png
 share/apps/khelpcenter/pics/unchecked.xpm
@@ -534,6 +531,7 @@ share/apps/kicker/applets/krunapplet.desktop
 share/apps/kicker/applets/ksystemtrayapplet.desktop
 share/apps/kicker/applets/ktaskbarapplet.desktop
 share/apps/kicker/applets/quicklauncher.desktop
+share/apps/kicker/icons/locolor/16x16/actions/modified.png
 share/apps/kicker/pics/disk1.png
 share/apps/kicker/pics/disk2.png
 share/apps/kicker/pics/disk3.png
@@ -542,16 +540,58 @@ share/apps/kicker/pics/disk5.png
 share/apps/kicker/pics/disk6.png
 share/apps/kicker/pics/disk7.png
 share/apps/kicker/pics/disk8.png
+share/apps/kicker/tiles/blue_wood_large_down.png
+share/apps/kicker/tiles/blue_wood_large_up.png
+share/apps/kicker/tiles/blue_wood_normal_down.png
+share/apps/kicker/tiles/blue_wood_normal_up.png
+share/apps/kicker/tiles/blue_wood_tiny_down.png
+share/apps/kicker/tiles/blue_wood_tiny_up.png
+share/apps/kicker/tiles/green_wood_large_down.png
+share/apps/kicker/tiles/green_wood_large_up.png
+share/apps/kicker/tiles/green_wood_normal_down.png
+share/apps/kicker/tiles/green_wood_normal_up.png
+share/apps/kicker/tiles/green_wood_tiny_down.png
+share/apps/kicker/tiles/green_wood_tiny_up.png
+share/apps/kicker/tiles/kde2_button_large_down.png
+share/apps/kicker/tiles/kde2_button_large_up.png
+share/apps/kicker/tiles/kde2_button_normal_down.png
+share/apps/kicker/tiles/kde2_button_normal_up.png
+share/apps/kicker/tiles/kde2_button_tiny_down.png
+share/apps/kicker/tiles/kde2_button_tiny_up.png
 share/apps/kicker/tiles/light_green_large_down.png
 share/apps/kicker/tiles/light_green_large_up.png
+share/apps/kicker/tiles/light_green_normal_down.png
+share/apps/kicker/tiles/light_green_normal_up.png
+share/apps/kicker/tiles/light_green_tiny_down.png
+share/apps/kicker/tiles/light_green_tiny_up.png
 share/apps/kicker/tiles/light_grey_large_down.png
 share/apps/kicker/tiles/light_grey_large_up.png
+share/apps/kicker/tiles/light_grey_normal_up.png
+share/apps/kicker/tiles/light_grey_tiny_down.png
+share/apps/kicker/tiles/light_grey_tiny_up.png
 share/apps/kicker/tiles/light_pastel_large_down.png
 share/apps/kicker/tiles/light_pastel_large_up.png
+share/apps/kicker/tiles/light_pastel_normal_up.png
+share/apps/kicker/tiles/light_pastel_tiny_down.png
+share/apps/kicker/tiles/light_pastel_tiny_up.png
 share/apps/kicker/tiles/light_purple_large_down.png
 share/apps/kicker/tiles/light_purple_large_up.png
+share/apps/kicker/tiles/light_purple_normal_down.png
+share/apps/kicker/tiles/light_purple_normal_up.png
+share/apps/kicker/tiles/light_purple_tiny_down.png
+share/apps/kicker/tiles/light_purple_tiny_up.png
 share/apps/kicker/tiles/nuts_andBolts_large_down.png
 share/apps/kicker/tiles/nuts_andBolts_large_up.png
+share/apps/kicker/tiles/nuts_andBolts_normal_down.png
+share/apps/kicker/tiles/nuts_andBolts_normal_up.png
+share/apps/kicker/tiles/nuts_andBolts_tiny_down.png
+share/apps/kicker/tiles/nuts_andBolts_tiny_up.png
+share/apps/kicker/tiles/red_wood_large_down.png
+share/apps/kicker/tiles/red_wood_large_up.png
+share/apps/kicker/tiles/red_wood_normal_down.png
+share/apps/kicker/tiles/red_wood_normal_up.png
+share/apps/kicker/tiles/red_wood_tiny_down.png
+share/apps/kicker/tiles/red_wood_tiny_up.png
 share/apps/kicker/tiles/solid_blue_large_down.png
 share/apps/kicker/tiles/solid_blue_large_up.png
 share/apps/kicker/tiles/solid_blue_normal_down.png
@@ -578,8 +618,16 @@ share/apps/kicker/tiles/solid_orange_tiny_down.png
 share/apps/kicker/tiles/solid_orange_tiny_up.png
 share/apps/kicker/tiles/solid_pastel_large_down.png
 share/apps/kicker/tiles/solid_pastel_large_up.png
+share/apps/kicker/tiles/solid_pastel_normal_down.png
+share/apps/kicker/tiles/solid_pastel_normal_up.png
+share/apps/kicker/tiles/solid_pastel_tiny_down.png
+share/apps/kicker/tiles/solid_pastel_tiny_up.png
 share/apps/kicker/tiles/solid_purple_large_down.png
 share/apps/kicker/tiles/solid_purple_large_up.png
+share/apps/kicker/tiles/solid_purple_normal_down.png
+share/apps/kicker/tiles/solid_purple_normal_up.png
+share/apps/kicker/tiles/solid_purple_tiny_down.png
+share/apps/kicker/tiles/solid_purple_tiny_up.png
 share/apps/kicker/tiles/solid_red_large_down.png
 share/apps/kicker/tiles/solid_red_large_up.png
 share/apps/kicker/tiles/solid_red_normal_down.png
@@ -588,6 +636,10 @@ share/apps/kicker/tiles/solid_red_tiny_down.png
 share/apps/kicker/tiles/solid_red_tiny_up.png
 share/apps/kicker/tiles/solid_tgri_large_down.png
 share/apps/kicker/tiles/solid_tgri_large_up.png
+share/apps/kicker/tiles/solid_tgri_normal_down.png
+share/apps/kicker/tiles/solid_tgri_normal_up.png
+share/apps/kicker/tiles/solid_tgri_tiny_down.png
+share/apps/kicker/tiles/solid_tgri_tiny_up.png
 share/apps/kicker/wallpapers/deck_plate.png
 share/apps/kicker/wallpapers/green_line.png
 share/apps/kicker/wallpapers/rail.png
@@ -610,6 +662,28 @@ share/apps/konqueror/dirtree/remote/web/.directory
 share/apps/konqueror/dirtree/remote/web/kde_web.desktop
 share/apps/konqueror/dirtree/remote/windows.desktop
 share/apps/konqueror/dirtree/root.desktop
+share/apps/konqueror/icons/hicolor/22x22/actions/remove_view.png
+share/apps/konqueror/icons/hicolor/22x22/actions/view_bottom.png
+share/apps/konqueror/icons/hicolor/22x22/actions/view_left_right.png
+share/apps/konqueror/icons/hicolor/22x22/actions/view_right.png
+share/apps/konqueror/icons/hicolor/22x22/actions/view_top_bottom.png
+share/apps/konqueror/icons/hicolor/32x32/actions/remove_view.png
+share/apps/konqueror/icons/hicolor/32x32/actions/view_bottom.png
+share/apps/konqueror/icons/hicolor/32x32/actions/view_left_right.png
+share/apps/konqueror/icons/hicolor/32x32/actions/view_right.png
+share/apps/konqueror/icons/hicolor/32x32/actions/view_top_bottom.png
+share/apps/konqueror/icons/locolor/16x16/actions/kde1.png
+share/apps/konqueror/icons/locolor/16x16/actions/kde2.png
+share/apps/konqueror/icons/locolor/16x16/actions/kde3.png
+share/apps/konqueror/icons/locolor/16x16/actions/kde4.png
+share/apps/konqueror/icons/locolor/16x16/actions/kde5.png
+share/apps/konqueror/icons/locolor/16x16/actions/kde6.png
+share/apps/konqueror/icons/locolor/16x16/actions/locationbar_erase.png
+share/apps/konqueror/icons/locolor/16x16/actions/remove_view.png
+share/apps/konqueror/icons/locolor/16x16/actions/view_bottom.png
+share/apps/konqueror/icons/locolor/16x16/actions/view_left_right.png
+share/apps/konqueror/icons/locolor/16x16/actions/view_right.png
+share/apps/konqueror/icons/locolor/16x16/actions/view_top_bottom.png
 share/apps/konqueror/konqueror.rc
 share/apps/konqueror/pics/indicator_anchor.png
 share/apps/konqueror/pics/indicator_connect.png
@@ -618,12 +692,14 @@ share/apps/konqueror/pics/indicator_noconnect.png
 share/apps/konqueror/pics/indicator_viewactive.png
 share/apps/konqueror/profiles/filemanagement
 share/apps/konqueror/profiles/webbrowsing
+share/apps/konqueror/tiles/bluemorning.png
 share/apps/konqueror/tiles/canvas.png
 share/apps/konqueror/tiles/checker.png
 share/apps/konqueror/tiles/cubic.png
 share/apps/konqueror/tiles/kde4ever.png
 share/apps/konqueror/tiles/noise.png
 share/apps/konqueror/tiles/paper_flieder.png
+share/apps/konqueror/tiles/punika_attack.png
 share/apps/konqueror/tiles/redfiber.png
 share/apps/konsole/BlackOnLightYellow.schema
 share/apps/konsole/BlackOnWhite.schema
@@ -1250,29 +1326,17 @@ share/fonts/console8x16.pcf.gz
 share/fonts/console8x8.pcf.gz
 share/fonts/fonts.dir
 share/fonts/override/fonts.dir
-share/icons/hicolor/16x16/apps/ktip.png
-share/icons/hicolor/22x22/actions/remove_view.png
-share/icons/hicolor/22x22/actions/view_bottom.png
 share/icons/hicolor/22x22/actions/view_choose.png
 share/icons/hicolor/22x22/actions/view_detailed.png
 share/icons/hicolor/22x22/actions/view_icon.png
-share/icons/hicolor/22x22/actions/view_left_right.png
 share/icons/hicolor/22x22/actions/view_multicolumn.png
-share/icons/hicolor/22x22/actions/view_right.png
 share/icons/hicolor/22x22/actions/view_text.png
-share/icons/hicolor/22x22/actions/view_top_bottom.png
 share/icons/hicolor/22x22/actions/view_tree.png
-share/icons/hicolor/22x22/apps/ktip.png
-share/icons/hicolor/32x32/actions/remove_view.png
-share/icons/hicolor/32x32/actions/view_bottom.png
 share/icons/hicolor/32x32/actions/view_choose.png
 share/icons/hicolor/32x32/actions/view_detailed.png
 share/icons/hicolor/32x32/actions/view_icon.png
-share/icons/hicolor/32x32/actions/view_left_right.png
 share/icons/hicolor/32x32/actions/view_multicolumn.png
-share/icons/hicolor/32x32/actions/view_right.png
 share/icons/hicolor/32x32/actions/view_text.png
-share/icons/hicolor/32x32/actions/view_top_bottom.png
 share/icons/hicolor/32x32/actions/view_tree.png
 share/icons/hicolor/32x32/apps/access.png
 share/icons/hicolor/32x32/apps/agent.png
@@ -1289,25 +1353,28 @@ share/icons/hicolor/32x32/apps/enhanced_browsing.png
 share/icons/hicolor/32x32/apps/filetypes.png
 share/icons/hicolor/32x32/apps/fonts.png
 share/icons/hicolor/32x32/apps/go.png
+share/icons/hicolor/32x32/apps/help_index.png
+share/icons/hicolor/32x32/apps/hwinfo.png
 share/icons/hicolor/32x32/apps/icons.png
 share/icons/hicolor/32x32/apps/iconthemes.png
-share/icons/hicolor/32x32/apps/information.png
 share/icons/hicolor/32x32/apps/kappfinder.png
 share/icons/hicolor/32x32/apps/kcmdevices.png
 share/icons/hicolor/32x32/apps/kcmdrkonqi.png
 share/icons/hicolor/32x32/apps/kcmkwm.png
 share/icons/hicolor/32x32/apps/kcmmemory.png
+share/icons/hicolor/32x32/apps/kcmmidi.png
 share/icons/hicolor/32x32/apps/kcmpartitions.png
 share/icons/hicolor/32x32/apps/kcmpci.png
 share/icons/hicolor/32x32/apps/kcmprocessor.png
 share/icons/hicolor/32x32/apps/kcmscsi.png
 share/icons/hicolor/32x32/apps/kcmsound.png
-share/icons/hicolor/32x32/apps/kcmsyssound.png
 share/icons/hicolor/32x32/apps/kcmsystem.png
 share/icons/hicolor/32x32/apps/kcmx.png
 share/icons/hicolor/32x32/apps/kcontrol.png
 share/icons/hicolor/32x32/apps/kdisknav.png
 share/icons/hicolor/32x32/apps/kdmconfig.png
+share/icons/hicolor/32x32/apps/key_bindings.png
+share/icons/hicolor/32x32/apps/keyboard_layout.png
 share/icons/hicolor/32x32/apps/kfm.png
 share/icons/hicolor/32x32/apps/kfm_home.png
 share/icons/hicolor/32x32/apps/khelpcenter.png
@@ -1316,6 +1383,8 @@ share/icons/hicolor/32x32/apps/kmenuedit.png
 share/icons/hicolor/32x32/apps/knotify.png
 share/icons/hicolor/32x32/apps/konqueror.png
 share/icons/hicolor/32x32/apps/konsole.png
+share/icons/hicolor/32x32/apps/kpager.png
+share/icons/hicolor/32x32/apps/kscreensaver.png
 share/icons/hicolor/32x32/apps/ksysguard.png
 share/icons/hicolor/32x32/apps/kthememgr.png
 share/icons/hicolor/32x32/apps/ktip.png
@@ -1339,12 +1408,12 @@ share/icons/hicolor/32x32/apps/package_system.png
 share/icons/hicolor/32x32/apps/package_utilities.png
 share/icons/hicolor/32x32/apps/password.png
 share/icons/hicolor/32x32/apps/proxy.png
-share/icons/hicolor/32x32/apps/screensaver.png
 share/icons/hicolor/32x32/apps/style.png
 share/icons/hicolor/32x32/apps/terminal.png
 share/icons/hicolor/32x32/apps/titlebar.png
 share/icons/hicolor/32x32/apps/window_list.png
 share/icons/hicolor/32x32/apps/winprops.png
+share/icons/hicolor/32x32/apps/xapp.png
 share/icons/hicolor/32x32/apps/xedit.png
 share/icons/hicolor/32x32/apps/xemacs.png
 share/icons/hicolor/32x32/apps/xmag.png
@@ -1374,7 +1443,6 @@ share/icons/hicolor/32x32/devices/zip_mount.png
 share/icons/hicolor/32x32/devices/zip_unmount.png
 share/icons/hicolor/48x48/apps/access.png
 share/icons/hicolor/48x48/apps/agent.png
-share/icons/hicolor/48x48/apps/background.png
 share/icons/hicolor/48x48/apps/bell.png
 share/icons/hicolor/48x48/apps/buttons.png
 share/icons/hicolor/48x48/apps/clock.png
@@ -1391,25 +1459,27 @@ share/icons/hicolor/48x48/apps/fonts.png
 share/icons/hicolor/48x48/apps/gimp.png
 share/icons/hicolor/48x48/apps/go.png
 share/icons/hicolor/48x48/apps/gvim.png
+share/icons/hicolor/48x48/apps/help_index.png
+share/icons/hicolor/48x48/apps/hwinfo.png
 share/icons/hicolor/48x48/apps/icons.png
 share/icons/hicolor/48x48/apps/iconthemes.png
 share/icons/hicolor/48x48/apps/kappfinder.png
 share/icons/hicolor/48x48/apps/kcmdevices.png
 share/icons/hicolor/48x48/apps/kcmdrkonqi.png
 share/icons/hicolor/48x48/apps/kcmkwm.png
-share/icons/hicolor/48x48/apps/kcmlayout.png
 share/icons/hicolor/48x48/apps/kcmmemory.png
+share/icons/hicolor/48x48/apps/kcmmidi.png
 share/icons/hicolor/48x48/apps/kcmpartitions.png
 share/icons/hicolor/48x48/apps/kcmpci.png
 share/icons/hicolor/48x48/apps/kcmprocessor.png
 share/icons/hicolor/48x48/apps/kcmscsi.png
-share/icons/hicolor/48x48/apps/kcmsyssound.png
 share/icons/hicolor/48x48/apps/kcmsystem.png
 share/icons/hicolor/48x48/apps/kcontrol.png
-share/icons/hicolor/48x48/apps/kdehelp.png
 share/icons/hicolor/48x48/apps/kdisknav.png
 share/icons/hicolor/48x48/apps/kdmconfig.png
+share/icons/hicolor/48x48/apps/key_bindings.png
 share/icons/hicolor/48x48/apps/keyboard.png
+share/icons/hicolor/48x48/apps/keyboard_layout.png
 share/icons/hicolor/48x48/apps/kfm.png
 share/icons/hicolor/48x48/apps/kfm_home.png
 share/icons/hicolor/48x48/apps/khelpcenter.png
@@ -1418,6 +1488,8 @@ share/icons/hicolor/48x48/apps/kmenuedit.png
 share/icons/hicolor/48x48/apps/knotify.png
 share/icons/hicolor/48x48/apps/konqueror.png
 share/icons/hicolor/48x48/apps/konsole.png
+share/icons/hicolor/48x48/apps/kpager.png
+share/icons/hicolor/48x48/apps/kscreensaver.png
 share/icons/hicolor/48x48/apps/ksysguard.png
 share/icons/hicolor/48x48/apps/kthememgr.png
 share/icons/hicolor/48x48/apps/ktip.png
@@ -1441,7 +1513,6 @@ share/icons/hicolor/48x48/apps/package_system.png
 share/icons/hicolor/48x48/apps/package_utilities.png
 share/icons/hicolor/48x48/apps/password.png
 share/icons/hicolor/48x48/apps/proxy.png
-share/icons/hicolor/48x48/apps/screensaver.png
 share/icons/hicolor/48x48/apps/style.png
 share/icons/hicolor/48x48/apps/terminal.png
 share/icons/hicolor/48x48/apps/titlebar.png
@@ -1474,41 +1545,24 @@ share/icons/hicolor/48x48/devices/scanner.png
 share/icons/hicolor/48x48/devices/tablet.png
 share/icons/hicolor/48x48/devices/zip_mount.png
 share/icons/hicolor/48x48/devices/zip_unmount.png
-share/icons/locolor/16x16/actions/kde1.png
-share/icons/locolor/16x16/actions/kde2.png
-share/icons/locolor/16x16/actions/kde3.png
-share/icons/locolor/16x16/actions/kde4.png
-share/icons/locolor/16x16/actions/kde5.png
-share/icons/locolor/16x16/actions/kde6.png
-share/icons/locolor/16x16/actions/locationbar_erase.png
-share/icons/locolor/16x16/actions/remove.png
-share/icons/locolor/16x16/actions/remove_view.png
-share/icons/locolor/16x16/actions/view_bottom.png
 share/icons/locolor/16x16/actions/view_choose.png
 share/icons/locolor/16x16/actions/view_detailed.png
 share/icons/locolor/16x16/actions/view_icon.png
-share/icons/locolor/16x16/actions/view_left_right.png
 share/icons/locolor/16x16/actions/view_multicolumn.png
-share/icons/locolor/16x16/actions/view_right.png
 share/icons/locolor/16x16/actions/view_text.png
-share/icons/locolor/16x16/actions/view_top_bottom.png
 share/icons/locolor/16x16/actions/view_tree.png
 share/icons/locolor/16x16/apps/access.png
 share/icons/locolor/16x16/apps/acroread.png
 share/icons/locolor/16x16/apps/agent.png
-share/icons/locolor/16x16/apps/application_settings.png
 share/icons/locolor/16x16/apps/applixware.png
 share/icons/locolor/16x16/apps/arts.png
 share/icons/locolor/16x16/apps/background.png
 share/icons/locolor/16x16/apps/bell.png
 share/icons/locolor/16x16/apps/borders.png
 share/icons/locolor/16x16/apps/buttons.png
-share/icons/locolor/16x16/apps/bx2.png
-share/icons/locolor/16x16/apps/clock.png
 share/icons/locolor/16x16/apps/colors.png
 share/icons/locolor/16x16/apps/cookie.png
 share/icons/locolor/16x16/apps/date.png
-share/icons/locolor/16x16/apps/desktop_settings.png
 share/icons/locolor/16x16/apps/dlgedit.png
 share/icons/locolor/16x16/apps/emacs.png
 share/icons/locolor/16x16/apps/email.png
@@ -1520,23 +1574,23 @@ share/icons/locolor/16x16/apps/gimp.png
 share/icons/locolor/16x16/apps/go.png
 share/icons/locolor/16x16/apps/gv.png
 share/icons/locolor/16x16/apps/gvim.png
+share/icons/locolor/16x16/apps/help_index.png
+share/icons/locolor/16x16/apps/hwinfo.png
 share/icons/locolor/16x16/apps/icons.png
 share/icons/locolor/16x16/apps/iconthemes.png
-share/icons/locolor/16x16/apps/information_settings.png
 share/icons/locolor/16x16/apps/input_devices_settings.png
 share/icons/locolor/16x16/apps/kappfinder.png
 share/icons/locolor/16x16/apps/kcmdevices.png
 share/icons/locolor/16x16/apps/kcmdrkonqi.png
 share/icons/locolor/16x16/apps/kcmkicker.png
 share/icons/locolor/16x16/apps/kcmkwm.png
-share/icons/locolor/16x16/apps/kcmlayout.png
 share/icons/locolor/16x16/apps/kcmmemory.png
+share/icons/locolor/16x16/apps/kcmmidi.png
 share/icons/locolor/16x16/apps/kcmpartitions.png
 share/icons/locolor/16x16/apps/kcmpci.png
 share/icons/locolor/16x16/apps/kcmprocessor.png
 share/icons/locolor/16x16/apps/kcmscsi.png
 share/icons/locolor/16x16/apps/kcmsound.png
-share/icons/locolor/16x16/apps/kcmsyssound.png
 share/icons/locolor/16x16/apps/kcmsystem.png
 share/icons/locolor/16x16/apps/kcmx.png
 share/icons/locolor/16x16/apps/kcontrol.png
@@ -1546,19 +1600,18 @@ share/icons/locolor/16x16/apps/key_bindings.png
 share/icons/locolor/16x16/apps/keyboard.png
 share/icons/locolor/16x16/apps/keyboard_layout.png
 share/icons/locolor/16x16/apps/kfm.png
-share/icons/locolor/16x16/apps/kfm_globe.png
 share/icons/locolor/16x16/apps/kfm_home.png
-share/icons/locolor/16x16/apps/kfm_network.png
 share/icons/locolor/16x16/apps/khelpcenter.png
-share/icons/locolor/16x16/apps/kio_uiserver.png
 share/icons/locolor/16x16/apps/klipper.png
 share/icons/locolor/16x16/apps/kmenuedit.png
 share/icons/locolor/16x16/apps/knotify.png
 share/icons/locolor/16x16/apps/konqueror.png
 share/icons/locolor/16x16/apps/konsole.png
+share/icons/locolor/16x16/apps/kpager.png
 share/icons/locolor/16x16/apps/kscreensaver.png
 share/icons/locolor/16x16/apps/ksysguard.png
 share/icons/locolor/16x16/apps/kthememgr.png
+share/icons/locolor/16x16/apps/ktip.png
 share/icons/locolor/16x16/apps/kwin.png
 share/icons/locolor/16x16/apps/kwrite.png
 share/icons/locolor/16x16/apps/locale.png
@@ -1583,23 +1636,19 @@ share/icons/locolor/16x16/apps/package_utilities.png
 share/icons/locolor/16x16/apps/panel.png
 share/icons/locolor/16x16/apps/panel_settings.png
 share/icons/locolor/16x16/apps/password.png
-share/icons/locolor/16x16/apps/pci.png
 share/icons/locolor/16x16/apps/penguin.png
 share/icons/locolor/16x16/apps/plan.png
 share/icons/locolor/16x16/apps/proxy.png
 share/icons/locolor/16x16/apps/realplayer.png
 share/icons/locolor/16x16/apps/samba.png
-share/icons/locolor/16x16/apps/screensaver.png
-share/icons/locolor/16x16/apps/smbstatus.png
 share/icons/locolor/16x16/apps/style.png
 share/icons/locolor/16x16/apps/terminal.png
 share/icons/locolor/16x16/apps/titlebar.png
 share/icons/locolor/16x16/apps/wabi.png
 share/icons/locolor/16x16/apps/window_list.png
-share/icons/locolor/16x16/apps/windows.png
 share/icons/locolor/16x16/apps/winprops.png
 share/icons/locolor/16x16/apps/wp.png
-share/icons/locolor/16x16/apps/x.png
+share/icons/locolor/16x16/apps/xapp.png
 share/icons/locolor/16x16/apps/xcalc.png
 share/icons/locolor/16x16/apps/xclipboard.png
 share/icons/locolor/16x16/apps/xclock.png
@@ -1613,8 +1662,6 @@ share/icons/locolor/16x16/apps/xload.png
 share/icons/locolor/16x16/apps/xmag.png
 share/icons/locolor/16x16/apps/xosview.png
 share/icons/locolor/16x16/apps/xpaint.png
-share/icons/locolor/16x16/apps/xscreensaver.png
-share/icons/locolor/16x16/apps/xslight.png
 share/icons/locolor/16x16/apps/xv.png
 share/icons/locolor/16x16/devices/3floppy_mount.png
 share/icons/locolor/16x16/devices/3floppy_unmount.png
@@ -1629,7 +1676,6 @@ share/icons/locolor/16x16/devices/hdd_unmount.png
 share/icons/locolor/16x16/devices/memory.png
 share/icons/locolor/16x16/devices/mo_mount.png
 share/icons/locolor/16x16/devices/mo_unmount.png
-share/icons/locolor/16x16/devices/modified.png
 share/icons/locolor/16x16/devices/printer1.png
 share/icons/locolor/16x16/devices/printer2.png
 share/icons/locolor/16x16/devices/scanner.png
@@ -1639,7 +1685,6 @@ share/icons/locolor/16x16/devices/zip_unmount.png
 share/icons/locolor/32x32/apps/access.png
 share/icons/locolor/32x32/apps/acroread.png
 share/icons/locolor/32x32/apps/agent.png
-share/icons/locolor/32x32/apps/application_settings.png
 share/icons/locolor/32x32/apps/applixware.png
 share/icons/locolor/32x32/apps/background.png
 share/icons/locolor/32x32/apps/bell.png
@@ -1649,9 +1694,7 @@ share/icons/locolor/32x32/apps/clock.png
 share/icons/locolor/32x32/apps/colors.png
 share/icons/locolor/32x32/apps/cookie.png
 share/icons/locolor/32x32/apps/date.png
-share/icons/locolor/32x32/apps/desktop_settings.png
 share/icons/locolor/32x32/apps/dlgedit.png
-share/icons/locolor/32x32/apps/edit.png
 share/icons/locolor/32x32/apps/emacs.png
 share/icons/locolor/32x32/apps/email.png
 share/icons/locolor/32x32/apps/energy.png
@@ -1663,30 +1706,31 @@ share/icons/locolor/32x32/apps/gimp.png
 share/icons/locolor/32x32/apps/go.png
 share/icons/locolor/32x32/apps/gv.png
 share/icons/locolor/32x32/apps/gvim.png
+share/icons/locolor/32x32/apps/help_index.png
+share/icons/locolor/32x32/apps/hwinfo.png
 share/icons/locolor/32x32/apps/icons.png
 share/icons/locolor/32x32/apps/iconthemes.png
-share/icons/locolor/32x32/apps/information.png
-share/icons/locolor/32x32/apps/information_settings.png
 share/icons/locolor/32x32/apps/input_devices_settings.png
 share/icons/locolor/32x32/apps/kappfinder.png
 share/icons/locolor/32x32/apps/kcmdevices.png
 share/icons/locolor/32x32/apps/kcmdrkonqi.png
 share/icons/locolor/32x32/apps/kcmkicker.png
 share/icons/locolor/32x32/apps/kcmkwm.png
-share/icons/locolor/32x32/apps/kcmlayout.png
 share/icons/locolor/32x32/apps/kcmmemory.png
+share/icons/locolor/32x32/apps/kcmmidi.png
 share/icons/locolor/32x32/apps/kcmpartitions.png
 share/icons/locolor/32x32/apps/kcmpci.png
 share/icons/locolor/32x32/apps/kcmprocessor.png
 share/icons/locolor/32x32/apps/kcmscsi.png
 share/icons/locolor/32x32/apps/kcmsound.png
-share/icons/locolor/32x32/apps/kcmsyssound.png
 share/icons/locolor/32x32/apps/kcmsystem.png
 share/icons/locolor/32x32/apps/kcmx.png
 share/icons/locolor/32x32/apps/kcontrol.png
 share/icons/locolor/32x32/apps/kdisknav.png
 share/icons/locolor/32x32/apps/kdmconfig.png
+share/icons/locolor/32x32/apps/key_bindings.png
 share/icons/locolor/32x32/apps/keyboard.png
+share/icons/locolor/32x32/apps/keyboard_layout.png
 share/icons/locolor/32x32/apps/kfm.png
 share/icons/locolor/32x32/apps/kfm_home.png
 share/icons/locolor/32x32/apps/khelpcenter.png
@@ -1694,13 +1738,14 @@ share/icons/locolor/32x32/apps/klipper.png
 share/icons/locolor/32x32/apps/knotify.png
 share/icons/locolor/32x32/apps/konqueror.png
 share/icons/locolor/32x32/apps/konsole.png
+share/icons/locolor/32x32/apps/kpager.png
 share/icons/locolor/32x32/apps/kscreensaver.png
 share/icons/locolor/32x32/apps/ksysguard.png
 share/icons/locolor/32x32/apps/kthememgr.png
+share/icons/locolor/32x32/apps/ktip.png
 share/icons/locolor/32x32/apps/kwin.png
 share/icons/locolor/32x32/apps/kwrite.png
 share/icons/locolor/32x32/apps/locale.png
-share/icons/locolor/32x32/apps/logo.png
 share/icons/locolor/32x32/apps/looknfeel.png
 share/icons/locolor/32x32/apps/lyx.png
 share/icons/locolor/32x32/apps/mathematica.png
@@ -1708,8 +1753,6 @@ share/icons/locolor/32x32/apps/mouse.png
 share/icons/locolor/32x32/apps/multimedia.png
 share/icons/locolor/32x32/apps/nedit.png
 share/icons/locolor/32x32/apps/netscape.png
-share/icons/locolor/32x32/apps/network.png
-share/icons/locolor/32x32/apps/nogo.png
 share/icons/locolor/32x32/apps/package.png
 share/icons/locolor/32x32/apps/package_applications.png
 share/icons/locolor/32x32/apps/package_editors.png
@@ -1728,7 +1771,6 @@ share/icons/locolor/32x32/apps/plan.png
 share/icons/locolor/32x32/apps/proxy.png
 share/icons/locolor/32x32/apps/realplayer.png
 share/icons/locolor/32x32/apps/samba.png
-share/icons/locolor/32x32/apps/screensaver.png
 share/icons/locolor/32x32/apps/style.png
 share/icons/locolor/32x32/apps/terminal.png
 share/icons/locolor/32x32/apps/titlebar.png
@@ -1736,7 +1778,7 @@ share/icons/locolor/32x32/apps/wabi.png
 share/icons/locolor/32x32/apps/window_list.png
 share/icons/locolor/32x32/apps/winprops.png
 share/icons/locolor/32x32/apps/wp.png
-share/icons/locolor/32x32/apps/x.png
+share/icons/locolor/32x32/apps/xapp.png
 share/icons/locolor/32x32/apps/xcalc.png
 share/icons/locolor/32x32/apps/xclipboard.png
 share/icons/locolor/32x32/apps/xclock.png
@@ -1746,13 +1788,11 @@ share/icons/locolor/32x32/apps/xemacs.png
 share/icons/locolor/32x32/apps/xeyes.png
 share/icons/locolor/32x32/apps/xfig.png
 share/icons/locolor/32x32/apps/xfmail.png
-share/icons/locolor/32x32/apps/xftp.png
 share/icons/locolor/32x32/apps/xload.png
 share/icons/locolor/32x32/apps/xmag.png
 share/icons/locolor/32x32/apps/xmms.png
 share/icons/locolor/32x32/apps/xosview.png
 share/icons/locolor/32x32/apps/xpaint.png
-share/icons/locolor/32x32/apps/xscreensaver.png
 share/icons/locolor/32x32/apps/xv.png
 share/icons/locolor/32x32/devices/3floppy_mount.png
 share/icons/locolor/32x32/devices/3floppy_unmount.png
@@ -1984,11 +2024,11 @@ share/wallpapers/Appropriately-Left-Handed-2.jpg
 share/wallpapers/Blkmarble.jpg
 share/wallpapers/Chicken-Songs-2.jpg
 share/wallpapers/Circuit.jpg
+share/wallpapers/Dasding.jpg
 share/wallpapers/Foggy1.jpg
 share/wallpapers/Marble01.jpg
 share/wallpapers/No-Ones-Laughing-3.jpg
 share/wallpapers/Paper01.jpg
-share/wallpapers/Planet-KDE.jpg
 share/wallpapers/Planning-And-Probing-1.jpg
 share/wallpapers/Prpbumps.jpg
 share/wallpapers/Superfluous-Organ-1.jpg
@@ -2103,11 +2143,8 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/icons/hicolor/32x32/apps
 @dirrm share/icons/hicolor/32x32/actions
 @dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/22x22/apps
 @dirrm share/icons/hicolor/22x22/actions
 @dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
 @dirrm share/icons/hicolor
 @dirrm share/icons
 @dirrm share/fonts/override
@@ -2149,6 +2186,15 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/konqueror/tiles
 @dirrm share/apps/konqueror/profiles
 @dirrm share/apps/konqueror/pics
+@dirrm share/apps/konqueror/icons/locolor/16x16/actions
+@dirrm share/apps/konqueror/icons/locolor/16x16
+@dirrm share/apps/konqueror/icons/locolor
+@dirrm share/apps/konqueror/icons/hicolor/32x32/actions
+@dirrm share/apps/konqueror/icons/hicolor/32x32
+@dirrm share/apps/konqueror/icons/hicolor/22x22/actions
+@dirrm share/apps/konqueror/icons/hicolor/22x22
+@dirrm share/apps/konqueror/icons/hicolor
+@dirrm share/apps/konqueror/icons
 @dirrm share/apps/konqueror/dirtree/remote/web
 @dirrm share/apps/konqueror/dirtree/remote/ftp
 @dirrm share/apps/konqueror/dirtree/remote
@@ -2170,14 +2216,19 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/kicker/wallpapers
 @dirrm share/apps/kicker/tiles
 @dirrm share/apps/kicker/pics
+@dirrm share/apps/kicker/icons/locolor/16x16/actions
+@dirrm share/apps/kicker/icons/locolor/16x16
+@dirrm share/apps/kicker/icons/locolor
+@dirrm share/apps/kicker/icons
 @dirrm share/apps/kicker/applets
 @dirrm share/apps/kicker
 @dirrm share/apps/khelpcenter/plugins/Tutorials
 @dirrm share/apps/khelpcenter/plugins
-@dirrm share/apps/khelpcenter/pics/locolor/16x16/apps
-@dirrm share/apps/khelpcenter/pics/locolor/16x16
-@dirrm share/apps/khelpcenter/pics/locolor
 @dirrm share/apps/khelpcenter/pics
+@dirrm share/apps/khelpcenter/icons/locolor/16x16/apps
+@dirrm share/apps/khelpcenter/icons/locolor/16x16
+@dirrm share/apps/khelpcenter/icons/locolor
+@dirrm share/apps/khelpcenter/icons
 @dirrm share/apps/khelpcenter/en
 @dirrm share/apps/khelpcenter
 @dirrm share/apps/kdm/pics/users
