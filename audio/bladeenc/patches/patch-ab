@@ -1,0 +1,12 @@
+--- formatbitstream2.c.orig	Fri Jul  2 00:11:23 1999
++++ formatbitstream2.c	Fri Jul  2 00:12:21 1999
+@@ -17,7 +17,9 @@
+ 
+ #include	<stdio.h>
+ #include	<stdlib.h>
++#if !defined(__OpenBSD__) && !defined(__FreeBSD__) && !defined(__NetBSD__)
+ #include	<malloc.h>
++#endif
+ #include	"formatbitstream2.h"
+ #include	"common.h"
+ 

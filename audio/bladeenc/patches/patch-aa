@@ -1,0 +1,28 @@
+--- system.h.orig	Sun Aug  1 23:52:57 1999
++++ system.h	Sun Aug  1 23:55:08 1999
+@@ -31,6 +31,7 @@
+ #define					SCO5										10
+ #define					ULTRIX									11
+ #define					NETBSD									12
++#define					OPENBSD									13
+ 
+ 
+ #ifndef	SYSTEM
+@@ -211,7 +212,17 @@
+         #define         HAVE_ULONG
+ #endif
+ 
++/*____ NetBSD defines ________________________________________________________*/
++
++#if SYSTEM == OPENBSD
+ 
++        #include                                <machine/endian.h>
++        #define					BYTEORDER               BYTE_ORDER
++        #define         DIRECTORY_SEPARATOR             '/'
++        #define         HAVE_USHORT
++        #define         HAVE_UINT
++        #define         HAVE_ULONG
++#endif
+ 
+ 
+ /*____ To make sure that certain necessary defines are set... */
