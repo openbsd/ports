@@ -1,5 +1,5 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.5 2000/03/05 18:30:31 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/07 16:59:21 espie Exp $
 
 VERSION=9.3.2
 DISTNAME=icon_lib-${VERSION}
@@ -24,6 +24,7 @@ PERMIT_PACKAGE_FTP=Yes
 MASTER_SITES=ftp://ftp.cs.arizona.edu:/icon/library/
 DISTFILES=bipl.tgz gipl.tgz info.tgz
 WRKDIST=	${WRKDIR}
+FAKE=		Yes
 
 
 

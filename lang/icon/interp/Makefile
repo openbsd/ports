@@ -1,13 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/14 16:42:56 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/07 16:59:20 espie Exp $
 
 VERSION=	9.3.2
 DISTNAME=	icon_interp-${VERSION}
 CATEGORIES=	lang
+NEED_VERSION=	1.224
 MASTER_SITES=	ftp://ftp.cs.arizona.edu:/icon/packages/unix/
 DIST_SUBDIR=	icon/${VERSION}
 DISTFILES=	unix.tgz
-NEED_VERSION=	1.191
 LICENSE_TYPE=	PD
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MAINTAINER=	espie@openbsd.org
 
@@ -16,6 +20,7 @@ WRKDIST=	${WRKDIR}
 SCRIPTS_ENV=	ARCH="${MACHINE_ARCH}"
 MAKE_ENV=	ARCH="${MACHINE_ARCH}"
 CONF_DIR=	${WRKSRC}/config/unix/openbsd
+FAKE=		Yes
 
 ALL_TARGET=	Icon-icont
 
@@ -33,7 +38,7 @@ pre-configure:
 # with the package. Ludicrous to get through a ftp connexion for such
 # a small file...
 do-install:
-	perl ${SCRIPTDIR}/mk_icont ${PREFIX} >${WRKSRC}/icont
+	perl ${SCRIPTDIR}/mk_icont ${TRUEPREFIX} >${WRKSRC}/icont
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/icont ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/iconx ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/rtt ${PREFIX}/bin
@@ -41,6 +46,6 @@ do-install:
 	${INSTALL_MAN} ${FILESDIR}/icon.1 ${PREFIX}/man/man1/icont.1
 	cd ${PREFIX}/man/man1 && ln icont.1 iconx.1
 	${INSTALL_DATA} ${WRKSRC}/bin/rt.h ${PREFIX}/include
-	cd ${PREFIX}/bin && ${WRKSRC}/bin/patchstr ${PREFIX}/lib/icont ${PREFIX}/bin/iconx
+	cd ${PREFIX}/bin && ${WRKSRC}/bin/patchstr ${PREFIX}/lib/icont ${TRUEPREFIX}/bin/iconx
 
 .include <bsd.port.mk>
