@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/12/29 20:08:46 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2004/06/19 21:26:36 jakob Exp $
 
 COMMENT=	"(S)VCD authoring software"
 
@@ -9,8 +9,6 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.vcdimager.org/pub/vcdimager/vcdimager-0.6/
 
 HOMEPAGE=	http://www.vcdimager.org/
-
-MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
