@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/08 10:02:50 shell Exp $
+# $OpenBSD: Makefile,v 1.4 2001/08/21 13:19:31 shell Exp $
 
 COMMENT=		"python module for writing basic XML applications"
 
@@ -6,7 +6,7 @@ VERSION=		0.6.6
 DISTNAME=		PyXML-${VERSION}
 PKGNAME=		py-xml-${VERSION}
 CATEGORIES=		textproc devel
-NEED_VERSION=		1.434
+NEED_VERSION=		1.440
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pyxml
@@ -20,17 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-FLAVORS=                python1
-FLAVOR?=
-
-.if ${FLAVOR:L:Mpython1}
-PYTHON_VER=     1.5
-PYTHON_EXT=     15
-PYTHON_PATH=    ${LOCALBASE}/lib/python${PYTHON_VER}
-RUN_DEPENDS=    ${PYTHON_PATH}/site-packages/distutils::devel/py-Distutils
-.else
 PYTHON_VER=     2.1
-.endif
 
 RUN_DEPENDS+=   python${PYTHON_VER}::lang/python${PYTHON_EXT}
 BUILD_DEPENDS=  ${RUN_DEPENDS}
