@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2002/01/31 12:32:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.193 2002/02/01 02:41:50 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -29,6 +29,7 @@
      SUBDIR += cvsup,static
      SUBDIR += cvsup,static,no_x11
 #    SUBDIR += cvsup-mirror
+     SUBDIR += dc_gui
      SUBDIR += dctc
      SUBDIR += dlint
      SUBDIR += dnstracer
