@@ -1,0 +1,118 @@
+$OpenBSD: patch-iozone_c,v 1.4 2002/01/06 05:31:48 brad Exp $
+--- iozone.c.orig	Tue Nov 27 10:14:40 2001
++++ iozone.c	Sun Jan  6 00:22:53 2002
+@@ -64,7 +64,10 @@ extern  int errno;
+ #endif
+ 
+ 
+-#if defined (__LP64__) || defined(OSF_64)
++#if defined(__LP64__) || defined(__arch64__) || defined(__alpha__)
++#define MODE "\tCompiled for 64 bit mode."
++#define _64BIT_ARCH_
++#elif defined(OSF_64)
+ #define MODE "\tCompiled for 64 bit mode."
+ #else
+ #define MODE "\tCompiled for 32 bit mode."
+@@ -294,11 +297,7 @@ typedef long long off64_t;
+ #define AMAP_FILE (0)
+ #endif
+ 
+-#ifdef SCO_Unixware_gcc
+-#define MAP_FILE (0)
+-#endif
+-
+-#ifdef solaris
++#if defined (solaris) || defined(SCO_Unixware_gcc)
+ #define MAP_FILE (0)
+ #endif
+ 
+@@ -808,7 +807,7 @@ char **argv;
+         	exit(1);
+         }
+ 
+-#ifdef __LP64__ 
++#ifdef _64BIT_ARCH_ 
+      	buffer = (char *) ((long long )(buffer + cache_size ) & 
+ 		~(cache_size-1));
+ #else
+@@ -1072,7 +1071,7 @@ char **argv;
+                         	perror("Memory allocation failed:");
+                           	exit(9);
+ 			}
+-#ifdef __LP64__ 
++#ifdef _64BIT_ARCH_ 
+ 		     	pbuffer = (char *) 
+ 				(((unsigned long long)pbuffer + cache_size ) 
+ 					& ~(cache_size-1));
+@@ -2151,7 +2150,7 @@ void throughput_test()
+ 	if(!haveshm)
+ 	{
+ 		shmaddr=(struct child_stats *)alloc_mem((long long)SHMSIZE);
+-#ifdef __LP64__ 
++#ifdef _64BIT_ARCH_ 
+ 		if((long long)shmaddr==(long long)-1)
+ #else
+ 		if((long )shmaddr==(long)-1)
+@@ -2245,7 +2244,7 @@ void throughput_test()
+ 			printf("Parent starting slot %lld\n",xx);	
+ #endif
+ 		if( childids[xx] == 0 ){
+-#ifdef __LP64__
++#ifdef _64BIT_ARCH_
+ 		  thread_write_test((void *)xx);
+ #else
+ 		  thread_write_test((void *)(long)xx);
+@@ -2279,7 +2278,7 @@ void throughput_test()
+ 			~(cache_size-1));
+ 		}
+ 
+-#ifdef __LP64__
++#ifdef _64BIT_ARCH__
+ 		childids[xx] = mythread_create(thread_write_test,(void*)xx);
+ #else
+ 		childids[xx] = mythread_create(thread_write_test,(void*)(long)xx);
+@@ -2462,7 +2461,7 @@ waitout:
+ 			exit(28);
+ 		}
+ 		if(childids[xx] == 0){
+-#ifdef __LP64__
++#ifdef _64BIT_ARCH_
+ 			thread_rwrite_test((void *)xx);
+ #else
+ 			thread_rwrite_test((void *)((long)xx));
+@@ -2474,7 +2473,7 @@ waitout:
+ 	else
+ 	{
+ 	   for(xx = 0; xx< num_child ; xx++){	/* Create the children */
+-#ifdef __LP64__
++#ifdef _64BIT_ARCH_
+ 		childids[xx] = mythread_create( thread_rwrite_test,xx);
+ #else
+ 		childids[xx] = mythread_create( thread_rwrite_test,(void *)(long)xx);
+@@ -2653,7 +2652,7 @@ next0:
+ 			exit(30);
+ 		}
+ 		if(childids[xx]==0){
+-#ifdef __LP64__
++#ifdef _64BIT_ARCH_
+ 			thread_read_test((void *)xx);
+ #else
+ 			thread_read_test((void *)((long)xx));
+@@ -2665,7 +2664,7 @@ next0:
+ 	else
+ 	{
+ 	   for(xx = 0; xx< num_child ; xx++){	/* Create the children */
+-#ifdef __LP64__
++#ifdef _64BIT_ARCH_
+ 		childids[xx] = mythread_create( thread_read_test,xx);
+ #else
+ 		childids[xx] = mythread_create( thread_read_test,(void *)(long)xx);
+@@ -2834,7 +2833,7 @@ jumpend:
+ 			exit(32);
+ 		}
+ 		if(childids[xx]==0){
+-#ifdef __LP64__
++#ifdef _64BIT_ARCH_
+ 			thread_rread_test((void *)xx);
+ #else
+ 			thread_rread_test((void *)((long)xx));

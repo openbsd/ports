@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2001/12/01 05:35:39 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2002/01/06 05:31:48 brad Exp $
 # Uses pthreads
 
 COMMENT=	"performance test of sequential file I/O"
@@ -23,14 +23,7 @@ MAKE_ENV=	CC="${CC}"
 
 NO_REGRESS=	Yes
 
-FLAVORS=	threads
-FLAVOR?=
-
-.if ${FLAVOR:L} == "threads"
 ALL_TARGET=	openbsd-threads
-.else
-ALL_TARGET=	openbsd
-.endif
 
 MAKE_FILE=	makefile
 
