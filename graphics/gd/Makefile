@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/07/02 03:41:06 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2000/07/03 05:48:47 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
 DISTNAME=	gd-1.8.3
@@ -27,8 +27,9 @@ MAKE_FLAGS=	COMPILER="${CC}" prefix="${PREFIX}"
 FAKE_FLAGS=	DESTDIR="${WRKINST}"
 
 FLAVORS=	no_x11
+FLAVOR?=
 
-.if defined(FLAVOR) && ${FLAVOR:L} == "no_x11"
+.if ${FLAVOR:L} == "no_x11"
 MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_JPEG" \
 		LIBS="libgd.la -lm -lpng -ljpeg -lz" \
 		INCLUDEDIRS="-I. -I/usr/local/include" \
