@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/24 07:30:43 jsyn Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/29 20:31:39 fgsch Exp $
 
 COMMENT=		"connect() and bind() wrapper to evade packet filtering"
 
 DISTNAME=		ADMfzap
 PKGNAME=        	ADMfzap-0.1
 CATEGORIES=		security
-NEED_VERSION=		1.515
 
 MAINTAINER=     	Jason Peel <jsyn@openbsd.org>
 

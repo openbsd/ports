@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/20 19:30:39 jsyn Exp $
+# $OpenBSD: Makefile,v 1.10 2002/12/29 20:31:40 fgsch Exp $
 			
 COMMENT=		"passive network mapping tool"
 
 DISTNAME=		siphon-v.666
 PKGNAME=		siphon-0.666
 CATEGORIES=    		security net
-NEED_VERSION=		1.528
 
 MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 

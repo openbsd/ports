@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/05/15 17:58:51 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/12/29 20:31:41 fgsch Exp $
 
 COMMENT=	"color X11 terminal emulator with transparency support"
 COMMENT-kanji=	"color japanese terminal emulator with transparency support"
@@ -6,7 +6,6 @@ PKGNAME=	eterm-0.8.10
 FULLPKGNAME-kanji=	ja-eterm-0.8.10
 DISTNAME=	Eterm-0.8.10
 CATEGORIES=	x11
-NEED_VERSION=	1.399
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=eterm/}
 
 HOMEPAGE=	http://eterm.sourceforge.net/

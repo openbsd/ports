@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2002/05/13 19:08:46 jsyn Exp $
+# $OpenBSD: Makefile,v 1.12 2002/12/29 20:31:41 fgsch Exp $
 
 COMMENT=		"small, fast window manager"
 
 DISTNAME=		icewm-1.0.9-2
 PKGNAME=		icewm-1.0.9.2
 CATEGORIES=     	x11	
-NEED_VERSION=		1.528
 
 HOMEPAGE=		http://www.icewm.org/
 

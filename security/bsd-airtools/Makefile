@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/06/08 05:50:50 jsyn Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/29 20:31:39 fgsch Exp $
 			
 COMMENT=		"wireless auditing suite"
 
 DISTNAME=		bsd-airtools-v0.2
 PKGNAME=		bsd-airtools-0.2
 CATEGORIES=    		security net
-NEED_VERSION=		1.531
 EXTRACT_SUFX=           .tgz
 
 HOMEPAGE=		http://www.dachb0den.com/projects/bsd-airtools.html

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/20 19:30:39 jsyn Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/29 20:31:39 fgsch Exp $
 
 COMMENT=		"control chroot and su access rights by application"
 
@@ -6,7 +6,6 @@ VERSION=		1.3
 DISTNAME=		chrootuid${VERSION}
 PKGNAME=		chrootuid-${VERSION}
 CATEGORIES=		security
-NEED_VERSION=		1.498
 
 HOMEPAGE=		http://www.porcupine.org/
 

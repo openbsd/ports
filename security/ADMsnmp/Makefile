@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2002/05/13 08:36:33 jsyn Exp $
+# $OpenBSD: Makefile,v 1.18 2002/12/29 20:31:39 fgsch Exp $
 
 COMMENT=		"SNMP audit scanner"
 
 DISTNAME=       	ADMsnmp.0.1
 PKGNAME=        	ADMsnmp-0.1
 CATEGORIES=		security
-NEED_VERSION=		1.528
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		Jason Peel <jsyn@openbsd.org>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/30 18:15:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/12/29 20:31:40 fgsch Exp $
 
 COMMENT=	"python implementation of the Rijndael encryption algorithm"
 
@@ -6,7 +6,6 @@ VERSION=	1.1
 DISTNAME=	pyRijndael-${VERSION}.py
 PKGNAME=	py-Rijndael-${VERSION}
 CATEGORIES=     security devel
-NEED_VERSION=	1.504
 EXTRACT_SUFX=	.gz
 EXTRACT_ONLY=
 

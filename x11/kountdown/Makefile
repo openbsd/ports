@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2002/06/25 03:15:00 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2002/12/29 20:31:41 fgsch Exp $
 
 COMMENT=	"screen saver that displays a countdown to a selected date"
 
 DISTNAME=	kountdown-0.3.2
 CATEGORIES=	x11
-NEED_VERSION=	1.524
 
 HOMEPAGE=	http://w1.911.telia.com/~u91117365/kountdown/kountdown.html
 

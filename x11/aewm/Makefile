@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2002/02/10 03:04:18 jcs Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 20:31:41 fgsch Exp $
 
 DISTNAME=	aewm-1.2.0
 CATEGORIES=	x11
-NEED_VERSION=	1.503
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/13 09:06:08 jsyn Exp $
+# $OpenBSD: Makefile,v 1.4 2002/12/29 20:31:40 fgsch Exp $
 
 COMMENT=	"logfile auditing tool"
 
 DISTNAME=	logcheck-1.1.1
 CATEGORIES=	security
-NEED_VERSION=	1.528
 
 HOMEPAGE=	http://www.psionic.com/abacus/logcheck
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/15 17:58:51 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 20:31:41 fgsch Exp $
 
 COMMENT=	"3D filesystem visualizer"
 
 DISTNAME=	fsv-0.9
 CATEGORIES=     x11
-NEED_VERSION=	1.396
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fsv/}
 
 HOMEPAGE=	http://fsv.sourceforge.net

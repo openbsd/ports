@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/04 17:08:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/29 20:31:39 fgsch Exp $
 
 COMMENT=	"disassembler and other tools for palmos binaries"
 
 VERSION=	1.0.2
 DISTNAME=	palmpower-${VERSION}
 CATEGORIES=	palm
-NEED_VERSION=	1.419
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2002/04/08 20:09:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2002/12/29 20:31:39 fgsch Exp $
 
 COMMENT=	"alpha-release readers for reading SOUP and QWK packets"
 
 DISTNAME=	plor-0.3.2
 CATEGORIES=	news
-NEED_VERSION=	1.504
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/05/13 09:06:08 jsyn Exp $
+# $OpenBSD: Makefile,v 1.21 2002/12/29 20:31:39 fgsch Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	'sensible unix password cracker'
@@ -6,7 +6,6 @@ COMMENT=	'sensible unix password cracker'
 DISTNAME=	crack5.0
 PKGNAME=	crack-5.0
 CATEGORIES=	security
-NEED_VERSION=	1.528
 
 HOMEPAGE=	http://www.users.dircon.co.uk/~crypto/
 

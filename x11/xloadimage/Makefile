@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/05/26 19:10:58 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2002/12/29 20:31:41 fgsch Exp $
 
 COMMENT=	"graphics file viewer for X11"
 
@@ -8,7 +8,6 @@ REVISION=	10	# Debian
 DISTNAME=	xloadimage.${VERSION}
 PKGNAME=	xloadimage-${VERSION}.${REVISION}
 CATEGORIES=	x11 graphics
-NEED_VERSION=	1.525
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

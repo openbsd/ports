@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2002/03/25 07:57:17 jsyn Exp $
+# $OpenBSD: Makefile,v 1.14 2002/12/29 20:31:40 fgsch Exp $
 
 COMMENT=	"ICMP router discovery protocol spoofer"
 
 DISTNAME=	rdp
 PKGNAME=	rdp-1.0
 CATEGORIES=	security
-NEED_VERSION=	1.515
 MASTER_SITES=	http://www.atstake.com/research/tools/
 
 LIB_DEPENDS=	net::net/libnet

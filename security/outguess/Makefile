@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/06/14 10:55:01 jsyn Exp $
+# $OpenBSD: Makefile,v 1.12 2002/12/29 20:31:40 fgsch Exp $
 
 COMMENT=	"universal steganography tool"
 
@@ -7,7 +7,6 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.outguess.org/ \
 		${MASTER_SITE_PACKETSTORM:=crypt/stego/}
 HOMEPAGE=	http://www.outguess.org/
-NEED_VERSION=	1.531
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 

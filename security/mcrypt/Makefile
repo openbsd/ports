@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2001/10/25 03:04:18 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2002/12/29 20:31:40 fgsch Exp $
 
 COMMENT=		extendable encryption program that supports many ciphers
 
 DISTNAME=		mcrypt-2.5.7
 CATEGORIES=     	security
-NEED_VERSION=		1.474
 
 HOMEPAGE=		http://mcrypt.hellug.gr/mcrypt/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>

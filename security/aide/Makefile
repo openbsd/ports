@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/02/10 19:48:21 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/29 20:31:39 fgsch Exp $
 
 COMMENT=		"Advanced Intrusion Detection Environment"
 
 V=			0.7
 DISTNAME=		aide-${V}
 CATEGORIES=		security
-NEED_VERSION=		1.489
 
 MAINTAINER=		David Lebel <lebel@openbsd.org>
 

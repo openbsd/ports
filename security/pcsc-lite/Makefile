@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/01 19:57:19 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2002/12/29 20:31:40 fgsch Exp $
 # Uses pthreads
 
 COMMENT=	"resource manager for PCSC"
 
 DISTNAME=	pcsc-lite-1.0.1
 CATEGORIES=	security
-NEED_VERSION=	1.500
 MASTER_SITES=	http://www.linuxnet.com/middleware/files/
 
 HOMEPAGE=	http://www.linuxnet.com/

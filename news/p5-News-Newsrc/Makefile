@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/09 05:31:59 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 20:31:39 fgsch Exp $
 
 COMMENT=	"module for managing newsrc files"
 
 DISTNAME=	News-Newsrc-1.08
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	news perl5
-NEED_VERSION=	1.515
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

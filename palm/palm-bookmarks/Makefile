@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2002/01/25 08:17:34 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2002/12/29 20:31:39 fgsch Exp $
 
 COMMENT=	"bookmarks on your palm"
 
 DISTNAME=	palm-bookmarks-0.2
 CATEGORIES=	palm textproc
-NEED_VERSION=	1.504
 
 HOMEPAGE=	http://www.liacs.nl/~jvhemert/scripts/palm-bookmarks/
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/14 00:51:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/12/29 20:31:41 fgsch Exp $
 
 COMMENT=	"alternative xdm-invoked chooser"
 
 DISTNAME=	xdmchoose-1.1.2
 CATEGORIES=	x11
-NEED_VERSION=	1.363
 HOMEPAGE=	http://frmb.home.cern.ch/frmb/xdmchoose.html
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>

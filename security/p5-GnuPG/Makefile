@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/15 17:58:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/12/29 20:31:40 fgsch Exp $
 
 COMMENT=	"perl5 interface to GnuPG"
 
@@ -6,7 +6,6 @@ VERSION=	0.09
 DISTNAME=	GnuPG-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
-NEED_VERSION=	1.496
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=GnuPG/}
 
 RUN_DEPENDS=	:gnupg-*:security/gnupg

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2002/06/09 05:37:10 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2002/12/29 20:31:40 fgsch Exp $
 
 COMMENT=	"graphical interface for GnuPG"
 
 VERSION=	0.4.3
 DISTNAME=	gpa-${VERSION}
 CATEGORIES=    	security x11
-NEED_VERSION=	1.504
 
 HOMEPAGE=	http://www.gnupg.org/gpa.html
 

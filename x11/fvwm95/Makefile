@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/11/13 20:14:39 danh Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 20:31:41 fgsch Exp $
 
 COMMENT=	"win95-like window manager based on fvwm 2.x"
 
 DISTNAME=	fvwm95-2.0.43a-Autoconf
 PKGNAME=	fvwm95-2.0.43a
 CATEGORIES=     x11
-NEED_VERSION=	1.474
 MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/fvwm95/	\
 		ftp://ftp.plig.org/pub/fvwm95/
 EXTRACT_SUFX=	.tgz

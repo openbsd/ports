@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/03/24 10:20:24 jsyn Exp $
+# $OpenBSD: Makefile,v 1.13 2002/12/29 20:31:39 fgsch Exp $
 
 COMMENT=	"scans webservers for vulnerable CGI programs"
 
@@ -8,7 +8,6 @@ DISTNAME=	cgichk3.6
 EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	security
-NEED_VERSION=	1.515
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 

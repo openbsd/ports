@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/13 09:06:08 jsyn Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/29 20:31:40 fgsch Exp $
 
 COMMENT=	"command-line anti-spoofing detection utility"
 
 DISTNAME=	despoof-0.9
 CATEGORIES=	security
-NEED_VERSION=	1.528
 MASTER_SITES=	http://razor.bindview.com/tools/files/ \
 		${MASTER_SITE_PACKETSTORM:=UNIX/misc/}
 EXTRACT_SUFX=	.tgz

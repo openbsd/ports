@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/11/15 19:29:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/29 20:31:41 fgsch Exp $
 
 COMMENT=		"edit enlightenment's keybindings"
 
 DISTNAME=		e16keyedit-0.2
 CATEGORIES=     	x11
-NEED_VERSION=		1.492
 
 MAINTAINER=		Nick Nauwelaerts <nick@wanadoo.be>
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/15 17:58:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/29 20:31:39 fgsch Exp $
 
 COMMENT=	"brute force binary tester"
 
 DISTNAME=	bfbtester-2.0.1
 CATEGORIES=	security
-NEED_VERSION=	1.435
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bfbtester/}
 
 HOMEPAGE=	http://bfbtester.sourceforge.net/
