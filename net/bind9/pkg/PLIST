@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2001/03/15 08:55:52 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.9 2001/03/24 19:59:38 jakob Exp $
+@pkgcfl bind8-*
 bin/dig
 bin/host
 bin/isc-config.sh
