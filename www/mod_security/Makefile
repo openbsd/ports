@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/02/26 22:38:35 david Exp $
+# $OpenBSD: Makefile,v 1.5 2004/05/04 20:22:51 david Exp $
 
 COMMENT=	"Web intrusion detection and prevention engine"
 
@@ -6,7 +6,7 @@ COMMENT=	"Web intrusion detection and prevention engine"
 # and has Apache that supports DSO's.
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-DISTNAME=	mod_security-1.7.5
+DISTNAME=	mod_security-1.7.6
 CATEGORIES=	www
 
 MASTER_SITES=	http://www.modsecurity.org/download/
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
 
-DOCS=	CHANGES INSTALL LICENSE README mod_security-manual-1.7.5.pdf
+DOCS=	CHANGES INSTALL LICENSE README modsecurity-manual-1.7.4.pdf
 
 do-build:
 	cd ${WRKSRC}/apache1 && /usr/sbin/apxs -Wc,"${CFLAGS}" -c \
