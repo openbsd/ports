@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.10 2004/08/05 09:16:04 espie Exp $
-lib/libpng.so.4.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.11 2004/08/07 08:03:06 espie Exp $
+@lib lib/libpng.so.4.0
