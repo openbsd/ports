@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/08 20:04:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/28 22:08:29 naddy Exp $
+
+COMMENT=		'Perl bindings for Tk 8.0'
 
 VERSION=		800.022
 DISTNAME=		Tk${VERSION}
 PKGNAME=		p5-Tk-${VERSION}
 CATEGORIES=		x11 devel perl5
-NEED_VERSION=		1.358
+NEED_VERSION=		1.364
 
 MAINTAINER=		Shell Hung <i@shellhung.org>
 
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN} \
-			ftp://ftp.shellhung.org/pub/CPAN/modules/by-module/
+MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tk
 
 PERMIT_PACKAGE_CDROM=	Yes
