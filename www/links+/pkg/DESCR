@@ -8,5 +8,3 @@ Links main features:
 
 Flavors:
 	no_x11 - disable X support.
-
-WWW: ${HOMEPAGE}
