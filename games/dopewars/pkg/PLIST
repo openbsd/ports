@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2002/08/27 02:42:36 brad Exp $
+@comment $OpenBSD: PLIST,v 1.12 2003/07/07 12:47:58 brad Exp $
 bin/dopewars
 man/man6/dopewars.6
 @comment share/doc/dopewars/LICENCE
@@ -17,6 +17,6 @@ share/doc/dopewars/protocol.html
 share/doc/dopewars/server.html
 share/doc/dopewars/servercommands.html
 share/doc/dopewars/windows.html
-share/examples/dopewars/dopewars.cfg.sample
+share/examples/dopewars/dopewars.cfg
 @dirrm share/examples/dopewars
 @comment @dirrm share/doc/dopewars

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/07/07 12:40:14 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2003/07/07 12:47:58 brad Exp $
 
 COMMENT=	"game where you deal drugs on the streets of NY"
 
@@ -49,6 +49,6 @@ LIB_DEPENDS+=	gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dopewars
 	${INSTALL_DATA} ${WRKSRC}/doc/example-cfg \
-		${PREFIX}/share/examples/dopewars/dopewars.cfg.sample
+		${PREFIX}/share/examples/dopewars/dopewars.cfg
 
 .include <bsd.port.mk>
