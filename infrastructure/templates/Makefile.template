@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.18 2000/02/23 06:38:01 turan Exp $
+# $OpenBSD: Makefile.template,v 1.19 2000/03/03 14:23:11 turan Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -28,64 +28,17 @@ CATEGORIES=     	???
 #
 MAINTAINER=		ports@openbsd.org
 
-# Licensing for this port.  License types:
-# ARTISTIC:   PERL Artistic license, or similar.
-# BSD:        BSD (or a BSD like) license.
-#             Can be distributed.  Documentation that mentions package may
-#             need to include owners copyright.
-# COMM:       Commercial software.
-#             For fee software.
-# COPY:       Copyright that allows or denys distribution
-#             Read copyright before use, there may be usage restrictions
-#             even if distribution is allowed.
-# CRYPTO:     Third party crypto not allowed.
-# DISTONLY:   May distribute the distfile only.
-# GPL:        Licensed under the GNU GPL license.
-# INCLUDED:   Package is included in OpenBSD, distribution not needed.
-# LGPL:       Licensed under the GNU LGPL license.
-# LICENSE:    Requires license for redistribution.
-#             Note: a license may only be required for a `commercial' 
-#             distribution which is how I'm treating the OpenBSD CD-ROMs.
-# NOEXTRAFEE: Can not charge _extra_ for distribution
-#             May distribute when the price of the distribution does would
-#             not change if the port were removed from the distribution.
-# NOFEE:      Can not charge for distribution
-#             The software may be `free', but the copyright states 
-#             `may not charge for distribution' or words to that effect.
-# NOMODIFY:   May not distribute ports that are modified in any way,
-#             i.e, the package may not have any patches applied to it.
-#             Precompiled packages are fine as long as they do not
-#             change the original port.
-# NONE:       No license/copyright found in source code or related 
-#             documentation.  Assume no rights in these cases except for
-#             cases that are obviously meant to be distributed e.g.
-#             patch files, some documentation, etc.
-# PAT:        Patent or Patent Pending
-# PD:         Explicitly stated to be in the Public Domain.
-# RESTRICT:   Restrictive license
-# SHARE:      Shareware.
-# X:          X Consortium (or X consortium like, e.g. XFree86) license.
-#             a full and unrestricted irrevocable, world-wide, paid up,
-#             royalty-free, nonexclusive right and license to deal in this
-#             software...
-# TOG:        The Open Group license.  Not to be confused with X or XFree86.
-#             Software distributed under the TOG license is NOT free.
-# 
-# NOTE: A LICENSE THAT ALLOWS COPYING/REDISTRIBUTION MAY STILL
-# BE RESTRICTIVE WITH RESPECT TO USE OF THE BINARY AND/OR
-# SOURCE CODE.  PLEASE READ ALL LICENSES/COPYRIGHTS CAREFULLY.
-#
+# Licensing:  This determines what we can distribute.
 # When you determine the license type, make sure to look at ALL distfiles.
 # Every distfile can have a different license.  The PERMIT_* values are
 # determined by the most restrictive license.  If you have two licenses
-# that are in conflict, set LICENSE_TYPE="lic1 lic2" and set the appropriate
-# PERMIT_* values to No.  Make SURE you get these values right.
+# that are in conflict, set PERMIT_* based on the most restrictive one.
+# Make SURE you get these values right.
 
-LICENSE_TYPE=		"License type"
-PERMIT_PACKAGE_CDROM=	"Yes|'Reason if No'"
-PERMIT_PACKAGE_FTP=	"Yes|'Reason if No'"
-PERMIT_DISTFILES_CDROM=	"Yes|'Reason if No'"
-PERMIT_DISTFILES_FTP=	"Yes|'Reason if No'"
+PERMIT_PACKAGE_CDROM=	Yes | "Reason if No"
+PERMIT_PACKAGE_FTP=	Yes | "Reason if No"
+PERMIT_DISTFILES_CDROM=	Yes | "Reason if No"
+PERMIT_DISTFILES_FTP=	Yes | "Reason if No"
 
 # where the source files and patches can be fetched
 #
