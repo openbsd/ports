@@ -1,6 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2001/04/20 17:35:35 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2001/08/10 14:25:57 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc
+
+.if ${MACHINE_ARCH} == "sparc" && !exists(/emul/svr4/usr/lib/libc.so.1)
+IGNORE=		"requires Solaris shared libraries"
+.endif
 
 COMMENT=	"RAR archiver (binary port)"
 
