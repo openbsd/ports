@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2000/01/14 09:06:46 kevlo Exp $
+#
+# php3 de-installation
+
+set -e
+
+echo
+echo "+----------------------------------------------------+"
+echo "| To completely deinstall the $1 package you         |"
+echo "| need to perform these steps as root:               |"
+echo "|                                                    |"
+echo "|        edit /var/www/conf/httpd.conf               |"
+echo "|        remove the line LoadModule php3_module      |"
+echo "|                                                    |"
+echo "| Do not do this if you plan on re-installing php3   |"
+echo "| package at some future time.                       |"
+echo "+----------------------------------------------------+"
+echo
+
+exit 0
