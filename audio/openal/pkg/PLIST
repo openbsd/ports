@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/21 05:04:16 jolan Exp $
+include/AL/
+include/AL/al.h
+include/AL/alc.h
+include/AL/alctypes.h
+include/AL/alext.h
+include/AL/alexttypes.h
+include/AL/altypes.h
+include/AL/alu.h
+include/AL/alut.h
+include/AL/aluttypes.h
+include/AL/alutypes.h
+lib/libopenal.a
+%%SHARED%%
+@comment lib/libopenal.so
+@comment lib/libopenal.so.0
