@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.29 2003/12/18 16:32:24 naddy Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/gdk.info
-@unexec install-info --delete --info-dir=%D/info %D/info/gtk.info
+@comment $OpenBSD: PLIST,v 1.30 2004/08/08 16:15:17 espie Exp $
 bin/gtk-config
+include/gtk-1.2/
+include/gtk-1.2/gdk/
 include/gtk-1.2/gdk/gdk.h
 include/gtk-1.2/gdk/gdkcursors.h
 include/gtk-1.2/gdk/gdki18n.h
@@ -10,6 +10,7 @@ include/gtk-1.2/gdk/gdkprivate.h
 include/gtk-1.2/gdk/gdkrgb.h
 include/gtk-1.2/gdk/gdktypes.h
 include/gtk-1.2/gdk/gdkx.h
+include/gtk-1.2/gtk/
 include/gtk-1.2/gtk/gtk.h
 include/gtk-1.2/gtk/gtkaccelgroup.h
 include/gtk-1.2/gtk/gtkaccellabel.h
@@ -122,17 +123,22 @@ include/gtk-1.2/gtk/gtkvscrollbar.h
 include/gtk-1.2/gtk/gtkvseparator.h
 include/gtk-1.2/gtk/gtkwidget.h
 include/gtk-1.2/gtk/gtkwindow.h
-info/gdk.info
-info/gtk.info
+@info info/gdk.info
+@info info/gtk.info
 lib/libgdk.a
 lib/libgdk.la
 lib/libgtk.a
 lib/libgtk.la
+lib/pkgconfig/
 lib/pkgconfig/gdk.pc
 lib/pkgconfig/gtk+.pc
-man/man1/gtk-config.1
+@man man/man1/gtk-config.1
 share/aclocal/gtk.m4
+share/locale/az/
+share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/gtk+.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gtk+.mo
 share/locale/cs/LC_MESSAGES/gtk+.mo
 share/locale/da/LC_MESSAGES/gtk+.mo
@@ -140,9 +146,13 @@ share/locale/de/LC_MESSAGES/gtk+.mo
 share/locale/el/LC_MESSAGES/gtk+.mo
 share/locale/es/LC_MESSAGES/gtk+.mo
 share/locale/et/LC_MESSAGES/gtk+.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/gtk+.mo
 share/locale/fi/LC_MESSAGES/gtk+.mo
 share/locale/fr/LC_MESSAGES/gtk+.mo
+share/locale/ga/
+share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/gtk+.mo
 share/locale/gl/LC_MESSAGES/gtk+.mo
 share/locale/hr/LC_MESSAGES/gtk+.mo
@@ -150,6 +160,8 @@ share/locale/hu/LC_MESSAGES/gtk+.mo
 share/locale/it/LC_MESSAGES/gtk+.mo
 share/locale/ja/LC_MESSAGES/gtk+.mo
 share/locale/ko/LC_MESSAGES/gtk+.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gtk+.mo
 share/locale/nl/LC_MESSAGES/gtk+.mo
 share/locale/nn/LC_MESSAGES/gtk+.mo
@@ -161,15 +173,30 @@ share/locale/ro/LC_MESSAGES/gtk+.mo
 share/locale/ru/LC_MESSAGES/gtk+.mo
 share/locale/sk/LC_MESSAGES/gtk+.mo
 share/locale/sl/LC_MESSAGES/gtk+.mo
+share/locale/sp/
+share/locale/sp/LC_MESSAGES/
 share/locale/sp/LC_MESSAGES/gtk+.mo
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/gtk+.mo
 share/locale/sv/LC_MESSAGES/gtk+.mo
 share/locale/tr/LC_MESSAGES/gtk+.mo
 share/locale/uk/LC_MESSAGES/gtk+.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/gtk+.mo
+share/locale/wa/
+share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/gtk+.mo
+share/locale/zh_CN.GB2312/
+share/locale/zh_CN.GB2312/LC_MESSAGES/
 share/locale/zh_CN.GB2312/LC_MESSAGES/gtk+.mo
+share/locale/zh_TW.Big5/
+share/locale/zh_TW.Big5/LC_MESSAGES/
 share/locale/zh_TW.Big5/LC_MESSAGES/gtk+.mo
+share/themes/
+share/themes/Default/
+share/themes/Default/gtk/
 share/themes/Default/gtk/gtkrc
 share/themes/Default/gtk/gtkrc.az
 share/themes/Default/gtk/gtkrc.be
@@ -223,45 +250,3 @@ share/themes/Default/gtk/gtkrc.yi
 share/themes/Default/gtk/gtkrc.zh_CN
 share/themes/Default/gtk/gtkrc.zh_TW.big5
 %%SHARED%%
-@dirrm share/themes/Default/gtk
-@dirrm share/themes/Default
-@dirrm share/themes
-@dirrm share/locale/zh_TW.Big5/LC_MESSAGES
-@dirrm share/locale/zh_TW.Big5
-@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
-@dirrm share/locale/zh_CN.GB2312
-@dirrm share/locale/wa/LC_MESSAGES
-@dirrm share/locale/wa
-@dirrm share/locale/vi/LC_MESSAGES
-@dirrm share/locale/vi
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/sr/LC_MESSAGES
-@dirrm share/locale/sr
-@dirrm share/locale/sp/LC_MESSAGES
-@dirrm share/locale/sp
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/lt/LC_MESSAGES
-@dirrm share/locale/lt
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hr/LC_MESSAGES
-@dirrm share/locale/hr
-@dirrm share/locale/ga/LC_MESSAGES
-@dirrm share/locale/ga
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/eu/LC_MESSAGES
-@dirrm share/locale/eu
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale/az/LC_MESSAGES
-@dirrm share/locale/az
-@dirrm include/gtk-1.2/gtk
-@dirrm include/gtk-1.2/gdk
-@dirrm include/gtk-1.2
-@exec install-info --info-dir=%D/info %D/info/gdk.info
-@exec install-info --info-dir=%D/info %D/info/gtk.info

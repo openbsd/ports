@@ -1,23 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.13 2003/12/18 16:32:24 naddy Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/glib.info
+@comment $OpenBSD: PLIST,v 1.14 2004/08/08 16:15:17 espie Exp $
 bin/glib-config
+include/glib-1.2/
 include/glib-1.2/glib.h
 include/glib-1.2/glibconfig.h
 include/glib-1.2/gmodule.h
-info/glib.info
+@info info/glib.info
 lib/libglib.a
 lib/libglib.la
 lib/libgmodule.a
 lib/libgmodule.la
 lib/libgthread.a
 lib/libgthread.la
+lib/pkgconfig/
 lib/pkgconfig/glib.pc
 lib/pkgconfig/gmodule.pc
 lib/pkgconfig/gthread.pc
-man/man1/glib-config.1
+@man man/man1/glib-config.1
+share/aclocal/
 share/aclocal/glib.m4
 %%SHARED%%
-@dirrm share/aclocal
-@dirrm lib/pkgconfig
-@dirrm include/glib-1.2
-@exec install-info --info-dir=%D/info %D/info/glib.info

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/14 05:56:23 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/08 16:15:17 espie Exp $
 bin/tsiadd
 bin/tsidel
 bin/tsidump
@@ -10,7 +10,7 @@ lib/libbims.a
 lib/libbims.la
 lib/libtabe.a
 lib/libtabe.la
+lib/tabe/
 lib/tabe/tsi.db
 lib/tabe/yin.db
 %%SHARED%%
-@dirrm lib/tabe
