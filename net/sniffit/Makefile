@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/09/11 05:53:39 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/28 01:38:46 naddy Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/04/04 04:58:25 obrien Exp $
 
 .if ${MACHINE_ARCH} == "alpha"
@@ -29,6 +29,8 @@ MAKE_FLAGS=	OBJ_FLAG="-w ${CFLAGS} -c" EXE_FLAG="-w ${CFLAGS} -o sniffit"
 CONFIGURE_STYLE= gnu
 
 ALL_TARGET=
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sniffit

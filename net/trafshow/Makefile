@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2001/07/26 06:31:05 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=	"full screen visualization of network traffic"
 
 DISTNAME=	trafshow-3.1
 CATEGORIES=	net
-NEED_VERSION=	1.384
+
 MASTER_SITES=	ftp://ftp.nsk.su/pub/RinetSoft/
 MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
 EXTRACT_SUFX=	.tgz
@@ -25,6 +25,8 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-DINET6"
 
 ALL_TARGET=	trafshow
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/trafshow

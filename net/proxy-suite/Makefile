@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2001/09/10 18:57:57 heko Exp $
+# $OpenBSD: Makefile,v 1.10 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=	"set of programs to enhance firewall security"
 
 DISTNAME=	proxy-suite-1.7
 HOMEPAGE=	http://proxy-suite.suse.de
 CATEGORIES=    	net security
-NEED_VERSION=	1.402
+
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES= \
@@ -22,6 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ARGS=	--with-libwrap=/usr/lib/
+
+NO_REGRESS=	Yes
 
 # Take care with sysconfdir:
 # - the port will install configuration in fake/etc/ (will be discarded)

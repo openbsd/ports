@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2002/07/30 14:36:50 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=	"virtual tunnels over TCP/IP networks with traffic shaping"
 
@@ -25,6 +25,8 @@ CONFIGURE_ARGS=	--localstatedir="${LOG_DIR}" \
 		--with-lzo-lib="${LOCALBASE}/lib"
 
 WRKDIST=	${WRKDIR}/vtun
+
+NO_REGRESS=	Yes
 
 DOCS=	FAQ README README.Setup README.Shaper
 

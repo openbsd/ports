@@ -1,18 +1,10 @@
-# Makefile for:		nsping
-# Version required:	0.8
-# Date created:		12 Nov 1999
-# Whom:			dugsong@monkey.org
-#
-# $OpenBSD: Makefile,v 1.11 2002/03/21 21:09:20 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/28 01:38:45 naddy Exp $
 
 COMMENT=	"DNS ping"
 
-PKGNAME=	nsping-0.8
-
-CATEGORIES=	net
-NEED_VERSION=	1.515
-
 DISTNAME=	nsping
+PKGNAME=	nsping-0.8
+CATEGORIES=	net
 
 MASTER_SITES=	http://www.enteract.com/~tqbf/
 
@@ -23,7 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WRKDIST=		${WRKDIR}/${PKGNAME}
+WRKDIST=	${WRKDIR}/${PKGNAME}
+
+NO_REGRESS=	Yes
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/nsping ${PREFIX}/sbin

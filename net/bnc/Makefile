@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 04:59:57 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/28 01:38:44 naddy Exp $
 
 COMMENT=	"simple IRC relay proxy with support for virtual hosting"
 
@@ -6,7 +6,6 @@ DISTNAME=	bnc2.8.4
 PKGNAME=	bnc-2.8.4
 CATEGORIES=	net
 MASTER_SITES=	http://gotbnc.com/files/
-NEED_VERSION=	1.402
 
 HOMEPAGE=	http://gotbnc.com/
 
@@ -23,6 +22,8 @@ post-patch:
 	@sed -e s#!!PREFIX!!#${PREFIX}#g \
 		${WRKSRC}/bncsetup > ${WRKSRC}/bncsetup.new
 	@mv ${WRKSRC}/bncsetup.new ${WRKSRC}/bncsetup
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bnc

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:20 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=	"programmable small perl irc client"
 
 DISTNAME=	sirc-2.211
 CATEGORIES=	net
-NEED_VERSION=	1.515
+
 MASTER_SITES=	${HOMEPAGE}
 MASTER_SITES0=	${HOMEPAGE}scripts/
 
@@ -30,6 +30,8 @@ post-patch:
 
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/ssfe.c -o ${WRKSRC}/ssfe -ltermcap
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sirc ${PREFIX}/bin

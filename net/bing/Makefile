@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/09/17 09:06:23 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/28 01:38:44 naddy Exp $
 
 COMMENT=	"point-to-point bandwith measurement tool"
 
@@ -13,6 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bing

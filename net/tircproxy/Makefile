@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2001/12/19 22:31:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=	"transparent IRC proxy"
 
 DISTNAME=	tircproxy-0.4.5
 CATEGORIES=     net
-NEED_VERSION=	1.435
 
 HOMEPAGE=	http://bre.klaki.net/programs/tircproxy/
 
@@ -19,5 +18,7 @@ CONFIGURE_STYLE= gnu
 INSTALL_TARGET=	install-strip
 
 WRKDIST=	${WRKDIR}/tircproxy-0.4
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

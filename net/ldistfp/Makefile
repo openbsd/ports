@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/11 00:31:22 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/28 01:38:45 naddy Exp $
 
 COMMENT=	"remote identd fingerprinting tool"
 
 DISTNAME=	ldistfp-0.1.4
 CATEGORIES=	net security
-NEED_VERSION=	1.515
+
 HOMEPAGE=	http://www.team-teso.net/
 MASTER_SITES=	${HOMEPAGE}releases/
 
@@ -21,6 +21,8 @@ MAKE_FLAGS=	CC='${CC}' \
 
 WRKDIST=	${WRKDIR}/ldistfp
 WRKSRC=		${WRKDIST}/src
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/bin/ldistfp ${PREFIX}/bin/ldistfp

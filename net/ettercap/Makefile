@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/07/11 22:21:44 mark Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/28 01:38:45 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -22,5 +22,7 @@ PERMIT_DISTFILES_FTP=   Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-https --enable-plugins
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

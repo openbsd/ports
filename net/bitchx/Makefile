@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2002/03/03 13:12:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2002/10/28 01:38:44 naddy Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 COMMENT=	"alternative ircII color client"
@@ -7,7 +7,7 @@ VERSION=	1.0c18
 DISTNAME=	ircii-pana-${VERSION}
 PKGNAME=	BitchX-${VERSION}
 CATEGORIES=	net
-NEED_VERSION=	1.504
+
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/
 
@@ -25,6 +25,8 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu dest
 
 WRKDIST=	${WRKDIR}/BitchX
+
+NO_REGRESS=	Yes
 
 pre-build:
 	@mv -f ${WRKBUILD}/Makefile ${WRKBUILD}/Makefile.new

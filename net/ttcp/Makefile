@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 21:09:20 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=	"benchmarking tool for analysing TCP and UDP performance"
 
 PKGNAME=	ttcp-1.12
 CATEGORIES=	net
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.sgi.com/sgi/src/ttcp/
 DISTFILES=	ttcp.c ttcp.1 README
 EXTRACT_ONLY=
@@ -24,6 +24,8 @@ post-extract:
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKBUILD}/ttcp ${WRKSRC}/ttcp.c
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ttcp

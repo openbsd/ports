@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/14 08:40:52 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=	SSLv3/TLS network protocol analyzer
 
@@ -20,5 +20,7 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--with-openssl-inc=/usr/include \
 			--with-openssl-lib=/usr/lib
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

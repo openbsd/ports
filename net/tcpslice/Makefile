@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/12 15:59:18 bmc Exp $
+# $OpenBSD: Makefile,v 1.4 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=	"tool for extracting and gluing pcap (tcpdump) files"
 
 DISTNAME=	tcpslice-1.1a3
 CATEGORIES=	net
-NEED_VERSION=	1.394
+
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/
 EXTRACT_SUFX=	.tar.Z
 
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/tcpslice.1 ${PREFIX}/man/man1/tcpslice.1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/07/23 11:47:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/28 01:38:45 naddy Exp $
 
 NOT_FOR_ARCHS=	powerpc		# char is unsigned
 
@@ -23,6 +23,8 @@ MAKE_FLAGS=	CC="${CC}" OPTOPTS="${CFLAGS} -Wall" \
 FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR="${WRKINST}"
 
 SYSCONFDIR=	/etc/netatalk
+
+NO_REGRESS=	Yes
 
 # NOTES:
 # Will compile with kerberos support in apfd and papd.

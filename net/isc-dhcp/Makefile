@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2002/08/26 03:42:03 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/28 01:38:45 naddy Exp $
 
-COMMENT=	Dynamic Host Control Protocol Server
+COMMENT=	"Dynamic Host Control Protocol Server"
 
 VERSION=	3.0.1rc9
 DISTNAME=	isc-dhcp-${VERSION}
@@ -27,6 +27,8 @@ EXAMPLEDIR=		share/examples/isc-dhcp
 
 post-extract:
 	@sed s,y0y0y0,${PREFIX}, < ${FILESDIR}/site.conf > ${WRKSRC}/site.conf
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${EXAMPLEDIR}

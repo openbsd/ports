@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2002/06/09 05:37:04 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/28 01:38:45 naddy Exp $
 
 COMMENT=	automated domain testing tool
 
 DISTNAME=	doc-2.2.3
 CATEGORIES=    	net
-NEED_VERSION=	1.496
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
@@ -20,6 +19,8 @@ RUN_DEPENDS=		:bind-9.*:net/bind9
 do-build:
 	mv ${WRKSRC}/doc ${WRKSRC}/doc.dist
 	sed "s,y0y0y0,${PREFIX}/libexec/doc/," ${WRKSRC}/doc.dist >${WRKSRC}/doc
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/doc

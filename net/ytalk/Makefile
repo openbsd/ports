@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2001/05/05 21:41:53 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2002/10/28 01:38:47 naddy Exp $
 COMMENT='enhanced talk that allows for multiple parties'
 
 DISTNAME=	ytalk-3.1.1
 CATEGORIES=	net
-NEED_VERSION=	1.324
+
 MASTER_SITES=	http://www.iagora.com/~espel/ytalk/ \
 		ftp://quatramaran.ens.fr/pub/orabidoo/ytalk/
 
@@ -24,6 +24,8 @@ FLAVOR?=
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --without-x
 .endif
+
+NO_REGRESS=	Yes
 
 INSTALL_TARGET=	install.bin install.man
 

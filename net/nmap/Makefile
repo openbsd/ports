@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2002/08/12 15:58:15 jsyn Exp $
+# $OpenBSD: Makefile,v 1.44 2002/10/28 01:38:45 naddy Exp $
 
 COMMENT=	"scan ports and fingerprint stack of network hosts"
 
@@ -32,5 +32,7 @@ LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 USE_X11=	Yes
 ALL_TARGET=	nmap nmapfe/nmapfe
 .endif
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

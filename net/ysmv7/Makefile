@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/09/10 21:32:45 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=		"icq console client with encryption support"
 DISTNAME=		ysmv7_2_8_0
@@ -20,5 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 EXTRACT_SUFX=		.tgz
 
 CONFIGURE_STYLE=	autoconf
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/07/23 18:42:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/28 01:38:46 naddy Exp $
 # $FreeBSD: Makefile,v 1.16 1999/02/16 03:06:21 jseger Exp $
 
 COMMENT=	"programmable MUD client, with macro support and more"
@@ -26,6 +26,8 @@ MAKE_ENV=	TFVER="${DISTNAME:S/^tf-//}" \
 		CC="${CC}" TFDEV_CCFLAGS="${CFLAGS}"
 
 MAKE_FILE=	${WRKSRC}/unix/Makefile
+
+NO_REGRESS=	Yes
 
 SYMLINKS=	kb-bash.tf,bind-bash.tf kb-emacs.tf,bind-emacs.tf \
 		complete.tf,completion.tf factoral.tf,factorial.tf \

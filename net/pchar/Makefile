@@ -1,17 +1,11 @@
-# Ports collection makefile for:  pchar
-# Version required:     	  1.2
-# Date created:			  Thu Dec 16, 1999
-# Whom:				  Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.13 2001/06/13 23:22:36 angelos Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/28 01:38:45 naddy Exp $
 # $FreeBSD: ports/net/pchar/Makefile,v 1.1.1.1 1999/11/04 08:33:26 obrien Exp $
-#
 
 COMMENT=	"Sandia Internet path characterization tool"
 
 DISTNAME=	pchar-1.4
 CATEGORIES=	net
-NEED_VERSION=	1.402
+
 MASTER_SITES=	http://www.employees.org/~bmah/Software/pchar/
 
 MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
@@ -23,6 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-ipv6 --with-pcap
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pchar ${PREFIX}/sbin

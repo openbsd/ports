@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2001/06/01 23:36:31 jakob Exp $
+# $OpenBSD: Makefile,v 1.15 2002/10/28 01:38:44 naddy Exp $
 
 COMMENT=	"monitor arp & rarp requests"
 
 DISTNAME=	arpwatch-2.1a11
 CATEGORIES=	net
-NEED_VERSION=	1.402
+
 MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
 		ftp://ftp.ee.lbl.gov/ \
 		ftp://ftp.cso.uiuc.edu/pub/security/coast/unix/arpwatch/
@@ -19,6 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--quiet
 MAKE_FLAGS+=		ARPDIR=/var/arpwatch
+
+NO_REGRESS=	Yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/arpwatch
 

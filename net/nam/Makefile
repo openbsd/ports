@@ -1,14 +1,12 @@
-#
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
-# $OpenBSD: Makefile,v 1.14 2001/10/15 14:35:35 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.15 2002/10/28 01:38:45 naddy Exp $
 
 COMMENT=	"UCB/LBNL Network Animator"
 
 DISTNAME=	nam-src-1.0a8
 PKGNAME=	nam-1.0a8
 CATEGORIES=	net
-NEED_VERSION=	1.474
+
 MASTER_SITES= 	ftp://ftp.ee.surrey.ac.uk/pub/Mirrors/ftp.isi.edu/nsnam/ \
 		ftp://ftp.isi.edu/nsnam/ \
 		http://www.isi.edu/nsnam/dist/
@@ -33,6 +31,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
 
 ALL_TARGET=
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nam ${PREFIX}/bin

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/03 10:02:52 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/28 01:38:44 naddy Exp $
 
 COMMENT=	optimise a list of route prefixes
 
 DISTNAME=	aggregate-1.5
 CATEGORIES=	net
-NEED_VERSION=	1.363
 
 MASTER_SITES=	http://buffoon.automagic.org/dist/ \
 		http://maggie.automagic.org/dist/
@@ -17,5 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/21 21:09:20 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=	"Cisco AAA protocol daemon"
 
 DISTNAME=	tac_plus.F4.0.4.alpha
 PKGNAME=	tacacs+-4.0.4a
 CATEGORIES=	net security
-NEED_VERSION=	1.515
 
 HOMEPAGE=       http://www.gazi.edu.tr/tacacs/
 
@@ -23,6 +22,8 @@ EXTRACT_SUFX=   .tar.Z
 
 MAKE_FLAGS=	CC="${CC}" 
 ALL_TARGET=	tac_plus
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tac_plus ${PREFIX}/sbin/

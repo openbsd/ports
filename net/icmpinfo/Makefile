@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2002/05/15 17:42:24 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/10/28 01:38:45 naddy Exp $
 
 COMMENT=	"look at the icmp messages received by the host"
 
 DISTNAME=	icmpinfo-1.11
 CATEGORIES=	net sysutils
-NEED_VERSION=	1.515
+
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=system/network/admin/}
 
 MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
@@ -15,6 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 ALL_TARGET=
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/icmpinfo

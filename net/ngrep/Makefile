@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2002/05/20 00:15:23 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/28 01:38:45 naddy Exp $
 
 COMMENT=	"network grep"
 
 DISTNAME=	ngrep-1.40
 CATEGORIES=     net
-NEED_VERSION=	1.408
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ngrep/}
 
 HOMEPAGE=	http://ngrep.sourceforge.net/
@@ -21,5 +21,7 @@ CONFIGURE_STYLE= gnu dest
 WRKDIST=	${WRKDIR}/ngrep
 
 ALL_TARGET=	ngrep
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

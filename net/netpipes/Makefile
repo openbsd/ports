@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2002/07/10 20:48:15 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/28 01:38:45 naddy Exp $
 
 COMMENT=	"shell utilities to connect programs to sockets"
 
 DISTNAME=	netpipes-4.2-export
 CATEGORIES=	net
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://web.purplefrog.com/~thoth/netpipes/netpipes.html
 
@@ -16,5 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.purplefrog.com/pub/netpipes/
 
 WRKDIST=	${WRKDIR}
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/10/24 23:23:36 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=	"UUCP suite"
 
@@ -20,8 +20,9 @@ MAKE_FLAGS+=	sbindir='$$(PREFIX)/libexec/uucp' \
 		oldconfigdir=/etc/uucp \
 		MAKEINFO='makeinfo --no-split'
 
-FAKE_FLAGS=	DESTDIR=${WRKINST} $(MAKE_FLAGS)
+NO_REGRESS=	Yes
 
+FAKE_FLAGS=	DESTDIR=${WRKINST} $(MAKE_FLAGS)
 FAKE_TARGET=	install install-info
 
 post-install:

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 05:00:30 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=	"resend network traffic saved by tcpdump"
 
 DISTNAME=	tcpreplay-1.0.1
 CATEGORIES=	net
-NEED_VERSION=	1.402
+
 MASTER_SITES=	http://www.anzen.com/research/nidsbench/
 
 LIB_DEPENDS=	net::net/libnet
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu dest
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpreplay ${PREFIX}/sbin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/03/21 21:09:20 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=	"client and servers for the WIDE DHCP protocol"
 
@@ -6,16 +6,18 @@ DISTNAME=       dhcp-1.4.0p3
 PKGNAME=        wide-dhcp-1.4.0.3
 CATEGORIES=     net
 MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www.sfc.wide.ad.jp/~tomy/dhcp/index-e.html
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	OSTYPE=OpenBSD CC=${CC} CFLAGS="${CFLAGS} -g -Wall -I. -I${WRKBUILD}/server" 
 FAKE_FLAGS= 	${MAKE_FLAGS} SBIN=${WRKINST}${PREFIX}/sbin MAN=${WRKINST}${PREFIX}/man LIBEXEC=${WRKINST}${PREFIX}/libexec
+
+NO_REGRESS=	Yes
 
 DOCS=		README README.jis db_sample/intro.dhcp db_sample/intro.dhcp.jis
 EXAMPLES=	dhcpdb.pool dhcpdb.relay dhcpdb.server

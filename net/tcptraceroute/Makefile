@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/07/31 17:14:30 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=		"traceroute implementation using TCP packets"
 
@@ -24,6 +24,8 @@ MAKE_FLAGS=		CC="${CC}" \
 			-I${LOCALBASE}/include"
 
 ALL_TARGET=
+
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcptraceroute ${PREFIX}/sbin

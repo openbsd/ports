@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/07/21 20:52:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=	"SLIP/CSLIP emulator for users with shell accounts"
 
@@ -14,6 +14,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=		${WRKDIR}/${DISTNAME}/src
 CONFIGURE_STYLE=	simple
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/slirp ${PREFIX}/bin

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2002/05/15 17:42:25 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2002/10/28 01:38:46 naddy Exp $
 # $FreeBSD: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp $
 
 COMMENT=	"decode tcpdump(1) output"
 
 DISTNAME=	tcpshow-1.74
 CATEGORIES=	net security
-NEED_VERSION=	1.515
+
 MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL:=obrien/}
 DISTFILES=	tcpshow.c tcpshow.1
 
@@ -20,6 +20,8 @@ WRKDIST=	${WRKDIR}
 
 do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} -DNOETHERNAMES -o tcpshow tcpshow.c
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpshow ${PREFIX}/bin

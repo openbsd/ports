@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:20 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=	"tools for building unix domain socket client/servers"
 
 DISTNAME=		ucspi-unix-0.34
 CATEGORIES=     	net
-NEED_VERSION=	1.515
 
 HOMEPAGE=		http://em.ca/~bruceg/ucspi-unix/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
@@ -16,6 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes 
 
 MASTER_SITES=		http://em.ca/~bruceg/ucspi-unix/0.34/
+
+NO_REGRESS=		Yes
 
 DOCFILES=		TODO README PROTOCOL NEWS
 BINFILES=		unixserver unixclient

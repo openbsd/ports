@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/09/03 04:34:13 mark Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/28 01:38:45 naddy Exp $
 
 COMMENT=	"Command line arbitrary packet builder"
 
@@ -20,5 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2001/05/06 05:00:05 lebel Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/28 01:38:45 naddy Exp $
 
 COMMENT=	"network monitoring library with TCP/IP reassembly"
 
 DISTNAME=	libnids-1.16
 CATEGORIES=	net
-NEED_VERSION=	1.402
+
 MASTER_SITES=	http://www.packetfactory.net/Projects/Libnids/dist/
 
 HOMEPAGE=	http://www.packetfactory.net/Projects/Libnids/
@@ -21,5 +21,7 @@ PERMIT_DISTFILES_FTP=   Yes
 FAKE_FLAGS=	install_prefix="${WRKINST}"
 
 CONFIGURE_STYLE= gnu
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

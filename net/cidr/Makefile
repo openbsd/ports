@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/21 21:09:19 espie Exp $
-# Date created:        	2000-08-11
-# Whom:			Jonas Eriksson <je@sekure.net>
+# $OpenBSD: Makefile,v 1.5 2002/10/28 01:38:44 naddy Exp $
 
 COMMENT=	"RFC 1878 subnet calculator / helper"
 
 PKGNAME=	cidr-2.3
 DISTNAME=	cidr-current
 CATEGORIES=	net
-NEED_VERSION=	1.515
 
 MASTER_SITES=	http://home.netcom.com/~naym/cidr/
 
@@ -22,6 +19,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cidr ${PREFIX}/bin/cidr

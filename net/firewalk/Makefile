@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2001/05/06 04:59:59 lebel Exp $
+# $OpenBSD: Makefile,v 1.20 2002/10/28 01:38:45 naddy Exp $
 
 COMMENT=	"gateway acl scanner (via static-source port traceroute)"
 
 DISTNAME=	firewalk-0.8
 CATEGORIES=     net
-NEED_VERSION=	1.402
+
 MASTER_SITES=	http://www.packetfactory.net/firewalk/
 
 LIB_DEPENDS=	net::net/libnet
@@ -21,5 +21,7 @@ CONFIGURE_STYLE= gnu dest
 ALL_TARGET=	firewalk
 
 WRKDIST=	${WRKDIR}/Firewalk
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

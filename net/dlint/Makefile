@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/20 19:30:39 jsyn Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/28 01:38:45 naddy Exp $
 
 COMMENT=		"DNS zone verification tool"
 
 DISTNAME=		dlint1.4.0
 PKGNAME=		dlint-1.4.0
 CATEGORIES=    		net
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.domtools.com/dns/dlint.shtml
 
@@ -20,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.domtools.com/pub/
 
 NO_BUILD=		Yes
+NO_REGRESS=		Yes
 
 FAKE_FLAGS=		DESTROOT=${WRKINST}
 

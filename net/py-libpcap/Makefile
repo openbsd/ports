@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/09 05:37:04 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=	"libpcap bindings for Python"
 
@@ -6,7 +6,6 @@ V=		0.2
 DISTNAME=	pylibpcap-${V}
 PKGNAME=	py-libpcap-${V}
 CATEGORIES=	net
-NEED_VERSION=	1.515
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pylibcap/}
 
@@ -27,5 +26,7 @@ BUILD_DEPENDS+=	:swig-*:devel/swig
 RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 
 WRKDIST=	${WRKDIR}/pylibpcap
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

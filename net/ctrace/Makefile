@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2002/06/07 21:37:11 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/28 01:38:45 naddy Exp $
 
 COMMENT=	"multiprotocol traceroute tool"
 
 DISTNAME=	ctrace-0.8
 CATEGORIES=	net
-NEED_VERSION=	1.515
 HOMEPAGE=	http://www.pratyeka.org/ctrace/
 
 MAINTAINER=	Patroklos Argyroudis <argp@ieee.org>
@@ -20,6 +19,7 @@ BUILD_DEPENDS=	::net/p5-Net-RawIP
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ctrace ${PREFIX}/sbin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/07/16 16:08:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2002/10/28 01:38:44 naddy Exp $
 
 COMMENT=		"small and efficient HTTP crawler"
 
@@ -24,5 +24,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-db="${LOCALBASE}"
 
 WRKDIST=		${WRKDIR}/crawl
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

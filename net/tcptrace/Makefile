@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/17 18:21:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=	"TCP dump file analysis tool"
 
@@ -21,6 +21,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	YACC=bison
 
 ALL_TARGET=	tcptrace
+
+NO_REGRESS=	Tes
 
 DOCFILES=	ARGS COPYRIGHT FAQ README README.mailing_list README.modules \
 		README.tput_graphs WWW dot_tcptracerc

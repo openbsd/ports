@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/09/01 18:49:01 mpech Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/28 01:38:45 naddy Exp $
 # $RuOBSD: Makefile,v 1.1.1.1 2002/04/08 02:46:36 form Exp $
 
 COMMENT=		"IP accounting daemon simulating Cisco ip accounting"
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu
+
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/ipcad ${PREFIX}/sbin

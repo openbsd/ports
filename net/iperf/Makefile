@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/04 19:20:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/28 01:38:45 naddy Exp $
 
 COMMENT=	"tool for measuring maximum TCP and UDP bandwidth"
 
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://dast.nlanr.net/Projects/Iperf/
 
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/iperf ${PREFIX}/bin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/09/03 05:49:19 mark Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/28 01:38:44 naddy Exp $
 
 COMMENT=	"active packet sniffer"
 
@@ -19,6 +19,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 ALL_TARGET=	angst
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/angst ${PREFIX}/sbin

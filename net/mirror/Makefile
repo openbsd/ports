@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2002/03/21 21:09:20 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/10/28 01:38:45 naddy Exp $
 
 COMMENT=	"mirror packages on remote sites"
 
 DISTNAME=	mirror-2.9
 CATEGORIES=	net
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://sunsite.org.uk/packages/mirror/ \
 		ftp://ftp.cs.columbia.edu/archives/perl/mirror/ \
 		ftp://giswitch.sggw.waw.pl/pub/unix/mirror/  \
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MAKE_FILE=	makefile
 
 WRKDIST=	${WRKDIR}
+NO_REGRESS=	Yes
 
 DOCDIR=		${PREFIX}/share/doc/mirror
 DOCS=		copyright.html index.html mirror-faq.html mirror.html \

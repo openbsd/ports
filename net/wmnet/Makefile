@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/01 06:18:24 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/28 01:38:46 naddy Exp $
 
 COMMENT=	little X dock.app network monitor
 
@@ -16,5 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= imake
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

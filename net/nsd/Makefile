@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/09/13 17:09:20 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/28 01:38:45 naddy Exp $
 
 COMMENT=	authorative only name server daemon
 
@@ -21,6 +21,8 @@ MAKE_FLAGS+=	PREFIX='${PREFIX}' \
 		NSDZONESDIR=/var/nsd \
 		NSDZONES=/var/nsd/nsd.zones \
 		NSDUSER=named
+
+NO_REGRESS=	Yes
 
 DOCDIR=		share/doc/nsd
 DOCFILES=	README RELNOTES CREDITS DIFFERENCES REQUIREMENTS

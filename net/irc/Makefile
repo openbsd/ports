@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/05/08 17:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2002/10/28 01:38:45 naddy Exp $
 # $FreeBSD: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
 
 COMMENT=	"internet relay chat (irc) server"
@@ -6,7 +6,7 @@ COMMENT=	"internet relay chat (irc) server"
 DISTNAME=       irc2.10.3p1
 PKGNAME=        irc-2.10.3p1
 CATEGORIES=	net
-NEED_VERSION=	1.387
+
 MASTER_SITES=   ftp://ftp.irc.org/irc/server/ \
                 ftp://ftp.ntua.gr/pub/net/irc/server/
 EXTRACT_SUFX=	.tgz
@@ -42,6 +42,8 @@ post-patch:
 	@sed -e s#!!SYSLOG_FACILITY!!#$(SYSLOG_FACILITY)#g \
 		$(WRKSRC)/support/config.h.dist > $(WRKSRC)/support/config.h.dist.new
 	@mv $(WRKSRC)/support/config.h.dist.new $(WRKSRC)/support/config.h
+
+NO_REGRESS=	Yes
 
 do-install:	
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ircd
