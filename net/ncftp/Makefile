@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2004/12/16 00:31:23 alek Exp $
+# $OpenBSD: Makefile,v 1.31 2005/01/21 22:23:29 naddy Exp $
 
 COMMENT=		"ftp replacement with advanced user interface"
 
 DISTNAME=		ncftp-3.1.8
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 HOMEPAGE=		http://www.ncftp.com/ncftp/
 
@@ -19,7 +20,7 @@ MASTER_SITES=		ftp://ftp.ncftp.com/ncftp/
 MASTER_SITES0=		ftp://ftp.kame.net/pub/kame/misc/
 DISTFILES=		${DISTNAME}-src.tar.gz
 
-PATCHFILES=		ncftp-3181-v6-20040728.diff.gz:0
+PATCHFILES=		ncftp-3181-v6-20040826.diff.gz:0
 PATCH_DIST_STRIP=	-p1
 
 CONFIGURE_STYLE=	gnu dest
