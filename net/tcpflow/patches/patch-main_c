@@ -1,6 +1,6 @@
-$OpenBSD: patch-main_c,v 1.1 2002/10/16 21:27:50 pvalchev Exp $
+$OpenBSD: patch-main_c,v 1.2 2002/10/16 21:28:54 pvalchev Exp $
 --- main.c.orig	Tue Apr 20 19:40:14 1999
-+++ main.c	Wed Oct 16 15:19:23 2002
++++ main.c	Wed Oct 16 15:23:52 2002
 @@ -63,7 +63,7 @@ void print_usage(char *progname)
    fprintf(stderr, "%s version %s by Jeremy Elson <jelson@circlemud.org>\n\n",
  		 PACKAGE, VERSION);
@@ -31,7 +31,7 @@ $OpenBSD: patch-main_c,v 1.1 2002/10/16 21:27:50 pvalchev Exp $
    opterr = 0;
  
 -  while ((arg = getopt(argc, argv, "b:cd:f:hi:psv")) != EOF) {
-+  while ((arg = getopt(argc, argv, "b:cd:f:hi:pr:sv")) != EOF) {
++  while ((arg = getopt(argc, argv, "b:cd:f:hi:pr:sv")) != -1) {
      switch (arg) {
      case 'b':
        if ((bytes_per_flow = atoi(optarg)) < 0) {
