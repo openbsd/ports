@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/02 23:13:41 naddy Exp $
+bin/tryto
+bin/uncat
+@man man/man1/tryto.1
+@man man/man1/uncat.1
+@man man/man8/socklog-check.8
+@man man/man8/socklog-conf.8
+@man man/man8/socklog.8
+sbin/socklog
+sbin/socklog-check
+sbin/socklog-conf
+share/doc/socklog/
+share/doc/socklog/CHANGES
+share/doc/socklog/COPYING
+share/doc/socklog/README
+share/doc/socklog/benefits.html
+share/doc/socklog/configuration.html
+share/doc/socklog/examples.html
+share/doc/socklog/index.html
+share/doc/socklog/install.html
+share/doc/socklog/network.html
+share/doc/socklog/notify.html
+share/doc/socklog/socklog-check.8.html
+share/doc/socklog/socklog-conf.8.html
+share/doc/socklog/socklog.8.html
+share/doc/socklog/tryto.1.html
+share/doc/socklog/uncat.1.html
+share/doc/socklog/upgrade.html

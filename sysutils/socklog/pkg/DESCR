@@ -1,0 +1,8 @@
+socklog, in cooperation with the runit package, is a small and secure
+replacement for syslogd.  There are three main features syslogd provides:
+
+* receiving syslog messages from an unix domain socket ("/dev/log") and
+  writing them to various files on disk depending on facility and priority.
+* receiving syslog messages from an udp socket ("0.0.0.0:514") and writing
+  them to various files on disk depending on facility and priority.
+* writing received syslog messages to an udp socket ("a.b.c.d:514") 
