@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2002/06/14 09:47:35 jsyn Exp $
+# $OpenBSD: Makefile,v 1.139 2002/06/29 17:26:54 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -135,6 +135,7 @@
      SUBDIR += ttmkfdir
      SUBDIR += tvtwm
 #    SUBDIR += tycoon
+     SUBDIR += type1inst
      SUBDIR += unclutter
      SUBDIR += viewfax
      SUBDIR += windowmaker
