@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2003/07/16 19:31:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2003/09/23 18:04:25 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Huge compilation of Win32 binary codecs"
 
 DISTNAME=	win32codecs
-DIST_SUBDIR=	win32-codecs-0.90
-PKGNAME=	win32-codecs-0.90p0
+DIST_SUBDIR=	${PKGNAME}
+PKGNAME=	win32-codecs-0.90p1
 CATEGORIES=	graphics
 
 QTDLLS=		qt6dlls
