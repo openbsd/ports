@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/08/19 03:52:27 jolan Exp $
+# $OpenBSD: Makefile,v 1.9 2003/09/24 05:50:39 jolan Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN= "config file parser bug on ${MACHINE_ARCH}"
@@ -32,19 +32,17 @@ MODULES=	iconv
 
 # XXX workaround gcc bugs on sparc64
 .if ${MACHINE_ARCH} == "sparc64" 
-PATCH_LIST=	gcc-* patch-*
+PATCH_LIST+=	gcc-*
 .endif
 
 FLAVORS=	operops
 FLAVOR?=
 
 .if ${FLAVOR:L:Moperops}
-.if ${MACHINE_ARCH} == "sparc64"
-PATCH_LIST=	gcc-* operops-* patch-*
-.else
-PATCH_LIST=	operops-* patch-*
+PATCH_LIST+=	operops-*
 .endif
-.endif
+
+PATCH_LIST+=	patch-*
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.54
