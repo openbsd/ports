@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/12 15:59:19 bmc Exp $
+# $OpenBSD: Makefile,v 1.4 2002/01/24 14:28:37 jsyn Exp $
 
 COMMENT=	"command-line anti-spoofing detection utility"
 
 DISTNAME=	despoof-0.9
 CATEGORIES=	security
-NEED_VERSION=	1.394
-MASTER_SITES=	http://razor.bindview.com/tools/files/
+NEED_VERSION=	1.504
+MASTER_SITES=	http://razor.bindview.com/tools/files/ \
+		${MASTER_SITE_PACKETSTORM}
+MASTER_SITE_SUBDIR=	UNIX/misc
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://razor.bindview.com/tools/desc/despoof_readme.html
@@ -22,6 +24,8 @@ LIB_DEPENDS=	net::net/libnet
 MAKE_FLAGS+=	CC='${CC}' CFLAGS='${CFLAGS}' \
 		DEFS='-I${LOCALBASE}/include `libnet-config --defines`' \
 		LIBS='-L${LOCALBASE}/lib -lnet -lpcap'
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/despoof ${PREFIX}/bin
