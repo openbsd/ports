@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:21:21 espie Exp $
-bin/dejasearch
-@man man/man1/dejasearch.1
-share/doc/dejasearch/
-share/doc/dejasearch/COPYING
-share/doc/dejasearch/FAQ
-share/doc/dejasearch/HISTORY
-share/doc/dejasearch/README
