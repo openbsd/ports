@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/13 23:31:24 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/24 14:25:03 shell Exp $
 
 COMMENT=	"defines RGB values for common color names"
 
-VERSION=	0.30
+VERSION=	0.31
 DISTNAME=	Graphics-ColorNames-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	graphics perl5
-NEED_VERSION=	1.515
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Graphics/}
 

@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:04 espie Exp $
-libdata/perl5/site_perl/Graphics/ColorNames.pm
-libdata/perl5/site_perl/Graphics/ColorNames/HTML.pm
-libdata/perl5/site_perl/Graphics/ColorNames/Netscape.pm
-libdata/perl5/site_perl/Graphics/ColorNames/Windows.pm
-libdata/perl5/site_perl/Graphics/ColorNames/X.pm
+@comment $OpenBSD: PLIST,v 1.3 2002/10/24 14:25:03 shell Exp $
+${P5SITE}/Graphics/ColorNames.pm
+${P5SITE}/Graphics/ColorNames/HTML.pm
+${P5SITE}/Graphics/ColorNames/Netscape.pm
+${P5SITE}/Graphics/ColorNames/Windows.pm
+${P5SITE}/Graphics/ColorNames/X.pm
 man/man3p/Graphics::ColorNames.3p
 man/man3p/Graphics::HTML.3p
 man/man3p/Graphics::Netscape.3p
 man/man3p/Graphics::Windows.3p
 man/man3p/Graphics::X.3p
-@dirrm libdata/perl5/site_perl/Graphics/ColorNames
+@dirrm ${P5SITE}/Graphics/ColorNames
