@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.12 2003/04/09 16:39:46 brad Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.13 2003/06/02 18:06:28 brad Exp $
 lib/gaim/autorecon.so
 lib/gaim/docklet.so
 lib/gaim/gestures.so
@@ -6,7 +6,6 @@ lib/gaim/history.so
 lib/gaim/iconaway.so
 lib/gaim/idle.so
 lib/gaim/libgg.so
-lib/gaim/libicq.so
 lib/gaim/libirc.so
 lib/gaim/libjabber.so
 lib/gaim/libmsn.so
@@ -16,7 +15,9 @@ lib/gaim/libtoc.so
 lib/gaim/libyahoo.so
 lib/gaim/libzephyr.so
 lib/gaim/notify.so
+lib/gaim/perl.so
 lib/gaim/spellchk.so
+lib/gaim/statenotify.so
 lib/gaim/ticker.so
 lib/gaim/timestamp.so
 @dirrm lib/gaim
