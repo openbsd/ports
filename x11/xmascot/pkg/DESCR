@@ -20,4 +20,4 @@ PNM	*.pnm	PPM, PGM, or PBM
 XMascot distinguish images from their suffix and can load other image formats
 when {suffix}topnm, *topgm, or *topbm commands are found in your system.
 
-WWW: {HOMEPAGE}
+WWW: ${HOMEPAGE}
