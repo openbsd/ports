@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-modules,v 1.1 2001/06/03 01:01:39 lebel Exp $
-@pkgdep zsh-${VERSION}
-%%SHARED%%
-man/man1/zshmodules.1

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-modules,v 1.1 2001/06/03 01:01:38 lebel Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.1 2001/06/05 16:34:42 lebel Exp $
 lib/zsh/${VERSION}/zsh/cap.so
 lib/zsh/${VERSION}/zsh/clone.so
 lib/zsh/${VERSION}/zsh/compctl.so
