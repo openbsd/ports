@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2001/01/28 07:28:12 kevlo Exp $ 
+# $OpenBSD: Makefile,v 1.4 2001/02/05 02:35:23 kevlo Exp $ 
 
-DISTNAME=       ttfm-0.9.2
+DISTNAME=       ttfm-0.9.3
 PKGNAME=        zh-${DISTNAME}
 CATEGORIES=     chinese 
 NEED_VERSION=	1.351
@@ -22,6 +22,7 @@ DOCS=	README USAGE
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ttfm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/ttfm
+	${INSTALL_MAN} ${WRKSRC}/ttfm.sh.1 ${PREFIX}/man/man1
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/ttfm 
 	cp ${WRKSRC}/modules/* ${PREFIX}/share/ttfm
 
