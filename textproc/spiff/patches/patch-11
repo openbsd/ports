@@ -1,5 +1,5 @@
---- Makefile.orig	Sun May  1 18:51:17 1994
-+++ Makefile	Wed Sep 23 18:43:57 1998
+--- Makefile.orig	Mon May  2 00:51:17 1994
++++ Makefile	Mon Mar 26 11:11:32 2001
 @@ -18,21 +18,21 @@
  #		choose a) b) or c)
  #
@@ -26,7 +26,7 @@
  
  # b) if you are using terminfo on a XENIX machine, enable the following lines
  #TFLAG=-DM_TERMINFO
-@@ -75,6 +75,7 @@
+@@ -75,14 +75,15 @@
  CFILES= spiff.c output.c compare.c float.c strings.c exact.c miller.c parse.c command.c comment.c tol.c line.c floatrep.c token.c misc.c visual.c
  HFILES=misc.h strings.h line.h float.h floatrep.h tol.h command.h comment.h token.h edit.h parse.h compare.h flagdefs.h exact.h miller.h visual.h output.h
  OTHER=README Makefile Sample.1 Sample.2 Sample.3 Sample.4 paper.ms paper.out
@@ -34,9 +34,10 @@
  MANPAGE=spiff.1
  
  # disable this line iff you like being honked at.
-@@ -82,7 +83,7 @@
+ DEFS = -DNOCHATTER
  
- CFLAGS=-O $(OSFLAG) $(TFLAG) $(VISFLAG) $(DEFS)
+-CFLAGS=-O $(OSFLAG) $(TFLAG) $(VISFLAG) $(DEFS)
++CFLAGS+=$(OSFLAG) $(TFLAG) $(VISFLAG) $(DEFS)
  
 -default: spiff
 +all: spiff spiff.0
