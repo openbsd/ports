@@ -1,0 +1,12 @@
+$OpenBSD: patch-newsfetch_c,v 1.1 2002/07/23 17:58:56 pvalchev Exp $
+--- newsfetch.c.orig	Thu Jul 23 03:28:56 1998
++++ newsfetch.c	Tue Jul 23 11:27:03 2002
+@@ -17,7 +17,7 @@
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+-
++#include <string.h>
+ #include "newsfetch.h"
+ 
+ extern char **environ;

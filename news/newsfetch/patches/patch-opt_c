@@ -1,0 +1,19 @@
+$OpenBSD: patch-opt_c,v 1.1 2002/07/23 17:58:56 pvalchev Exp $
+--- opt.c.orig	Mon Apr 13 08:39:59 1998
++++ opt.c	Tue Jul 23 11:50:05 2002
+@@ -1,4 +1,6 @@
+ #include <stdio.h>
++#include <string.h>
++#include <stdlib.h>
+ #include <unistd.h>
+ #include "newsfetch.h"	
+ 
+@@ -34,7 +36,7 @@ while (1)
+ -Y -> pipe each article
+ */
+          c = Getopt(argc, argv, "w:t:T:d:f:U:N:x:p:P:Y:yslVvchH-");
+-         if (c == EOF)
++         if (c == -1)
+          	break;
+ 
+          switch (c)
