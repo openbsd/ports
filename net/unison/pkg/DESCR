@@ -6,5 +6,3 @@ each replica to the other.
 
 Flavors:
 	gtk 	- build with a Gtk GUI (recommended for X users)
-
-WWW: ${HOMEPAGE}

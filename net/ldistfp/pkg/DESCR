@@ -7,5 +7,3 @@ version line. This information can be mapped back to the distribution and
 it's version used on this host. Simple but effective, since the identd auth-
 entification service is used almost everywhere and most people don't know about
 it's version capabilities.
-
-WWW: ${HOMEPAGE}

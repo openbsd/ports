@@ -4,5 +4,3 @@ of a web server.
 However unlike most such test clients, it runs in a single process, so it
 doesn't bog down the client machine. It can be configured to do HTTPS
 fetches as well.
-
-WWW: ${HOMEPAGE}

@@ -22,5 +22,3 @@ Its features include:
   while running a check against an old database.
 * Distribution contains standalone auxiliary programs for convenience
   that you can safely ignore or else use when needed.
-
-WWW: ${HOMEPAGE}

@@ -9,5 +9,3 @@ added to your kernel config file, e.g. /usr/src/sys/conf/GENERIC
 pseudo-device   bpfilter        4       #Berkeley packet filter
 
 and make bpf devices in your /dev directory: /dev/bpf[1-3].
-
-WWW: ${HOMEPAGE}

@@ -15,5 +15,3 @@ such as:
  o Can  act as a proxy server, relaying requests to a remote
    server.
  o Supports Vendor-Specific attributes.
-
-WWW: ${HOMEPAGE}

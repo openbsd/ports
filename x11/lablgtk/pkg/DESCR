@@ -11,5 +11,3 @@ examples are provided.
 
 Objective Caml threads are supported, including for the toplevel,
 which allows for interactive use of the library.
-
-WWW: ${HOMEPAGE}

@@ -4,5 +4,3 @@ over SSL) servers.
 
 Flavors:
 	no_x11 - disable GTK+ based GUI.
-
-WWW: ${HOMEPAGE}

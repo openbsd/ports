@@ -7,5 +7,3 @@ substitutions, where each letter of the alphabet is mapped to another
 version of Crank is restricting itself to these special ciphers. Other
 algorithms forever devoid of Crank's attentions include Enigma, RSA,
 DES, MurkelFish, or anything else invented after 1900.
-
-WWW: ${HOMEPAGE}

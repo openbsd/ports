@@ -5,5 +5,3 @@ can see the type of login (i.e., ssh, telnet).
 You can also see selected user's process tree or the system process 
 tree.In the process tree mode there is the ability to send INT or KILL
 signal to a selected process. 
-
-WWW: ${HOMEPAGE}

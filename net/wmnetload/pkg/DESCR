@@ -2,5 +2,3 @@ The wmnetload dockapp is a simple network interface monitoring tool.
 It was written for use under Window Maker, but will likely work
 under other window managers such as AfterStep, BlackBox and
 Enlightenment.
-
-WWW: ${HOMEPAGE}

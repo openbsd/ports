@@ -7,5 +7,3 @@ improvements, optimizations and bugfixes over VNC. Note that TightVNC is
 free, cross-platform and compatible with the standard VNC.
 
 This package only includes the viewer.
-
-WWW: ${HOMEPAGE}

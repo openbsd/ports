@@ -6,5 +6,3 @@ packets of the desired protocol. The packets can have tendancies. ie
 by default all packets have a 50% chance of having IP Options. The
 packets are then sent against the target machine to either penetrate
 its firewall rules or find bugs in the IP stack.
-
-WWW: ${HOMEPAGE}

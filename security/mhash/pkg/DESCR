@@ -9,6 +9,3 @@ The mhash library provides the following features:
  o  Support for known strong algorithms
  o  Support for less-known algorithms such as GOST
  o  Should work on every ANSI C conforming platform
-
-
-WWW: ${HOMEPAGE}

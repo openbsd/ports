@@ -23,5 +23,3 @@ Features:
 		shell-style tab completion
 	- The minibuffer can also be used for quickly entering shell commands
  	- Full printable manual provided (PostScript format)
-
-WWW: ${HOMEPAGE}

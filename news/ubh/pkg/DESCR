@@ -5,5 +5,3 @@ multi-part binaries.  Provides searching via Perl regular expression
 syntax.  Also provides a pre-selection capability whereby the user can
 interactively choose which binaries to download.  Uses a standard
 .newsrc file to control which groups and articles to process.
-
-WWW: ${HOMEPAGE}

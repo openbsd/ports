@@ -25,5 +25,3 @@ communication between client and server results in retransmission of only
 the lost packets, reducing impact to network traffic. By buffering ahead a
 high-quality "copy" of the media, QuickTime Streaming Server delivers a
 high-quality media stream time after time.
-
-WWW: ${HOMEPAGE}

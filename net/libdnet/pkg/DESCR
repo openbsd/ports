@@ -3,5 +3,3 @@ networking routines, including network address manipulation, kernel
 arp(4) cache and route(4) table lookup and manipulation, network
 firewalling, network interface lookup and manipulation, and raw IP
 packet and Ethernet frame transmission.
-
-WWW: ${HOMEPAGE}

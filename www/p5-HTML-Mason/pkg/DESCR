@@ -9,5 +9,3 @@ development and production sites, and more.
 Although it can be used from CGI or even stand-alone, it is optimally
 designed for use with two other open source technologies: mod_perl
 and Apache.
-
-WWW: ${HOMEPAGE}

@@ -5,5 +5,3 @@ window, then take a break.  The window changes appearance while you
 take the break.  It changes again when your break is over.  Then
 you just resume typing.  Xwrits hides itself until you should take
 another break.
-
-WWW: ${HOMEPAGE}

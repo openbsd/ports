@@ -18,5 +18,3 @@ modes, output buffering, and padding are provided by generic classes
 that can easily be composed with user-provided ciphers.  More
 generally, the library promotes a "Lego"-like style of constructing
 and composing transformations over character streams.
-
-WWW: ${HOMEPAGE}

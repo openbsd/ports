@@ -1,4 +1,2 @@
 Architecture-independent files to support TeX and LaTeX:
 macro files, font sources, font metric files, etc.
-
-WWW: ${HOMEPAGE}

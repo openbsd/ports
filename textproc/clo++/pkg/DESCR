@@ -5,5 +5,3 @@ with your command line. It also generates usage information and
 can handle subcommands that take their own options. clo++ is itself
 written in C++ and uses a command line option parser that it
 generated.
-
-WWW: ${HOMEPAGE}

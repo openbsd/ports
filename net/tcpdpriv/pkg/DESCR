@@ -9,5 +9,3 @@ For a possible attack see ${PREFIX}/share/doc/tcpdpriv/attack50.ps.
 Support for pflog output from Can Erkin Acar <canacar@eee.metu.edu.tr>.
 Support for IPv6, ICMP and ARP was adapted from Kenjiro Cho's
 <kjc@csl.sony.co.jp> hacked version of tcpdpriv.
-
-WWW: ${HOMEPAGE}

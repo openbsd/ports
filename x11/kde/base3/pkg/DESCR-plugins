@@ -9,5 +9,3 @@ nor perfectly usable, as kde2 is reaching completion.
 
 This package holds the netscape plugins, in a separate bundle as these
 require Motif as well.
-
-WWW: ${HOMEPAGE}

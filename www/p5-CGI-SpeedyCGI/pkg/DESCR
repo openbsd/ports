@@ -8,5 +8,3 @@ each time. A very fast frontend program, written in C, is executed for
 each request. This fast frontend then contacts the persistent Perl
 process, which is usually already running, to do the work and return the
 results.
-
-WWW: ${HOMEPAGE}

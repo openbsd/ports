@@ -4,5 +4,3 @@ pictures. You can also run it as a standalone screensaver or as an
 xscreensaver hack with the xscreensaver port.
 
 ChBg comes with a configuration GUI, chbg(1).
-
-WWW: ${HOMEPAGE}

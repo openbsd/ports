@@ -15,5 +15,3 @@ simple command line tools (e.g. snmpwalk) are hard to use since
 they expose too many protocol details. And in most cases, they fail
 to present the information in a format that is easy to read and
 understand.
-
-WWW: ${HOMEPAGE}

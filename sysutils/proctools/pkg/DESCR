@@ -8,5 +8,3 @@ that match the requirements specified on the command line.
 The pkill utility sends a signal to process  IDs  for  those
 processes  that match the requirements specified on the com-
 mand line.
-
-WWW: ${HOMEPAGE}

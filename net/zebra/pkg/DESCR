@@ -7,5 +7,3 @@ GNU Zebra supports BGP4, BGP4+, OSPFv2, OSPFv3, RIPv1, RIPv2, and RIPng.
 GNU Zebra also supports Route Server and a Route Reflector.  It provides
 full routing power under a new architecture.  GNU Zebra is unique in
 design in that it has a process for each protocol.
-
-WWW: ${HOMEPAGE}

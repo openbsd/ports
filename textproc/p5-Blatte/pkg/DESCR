@@ -7,5 +7,3 @@ Most casual end users will probably be interested in Blatte's ability
 to serve as a higher-level language for writing web pages.  This
 requires the additional CPAN package Blatte::HTML, which is also
 available as an OpenBSD port that can be found in www/p5-Blatte-HTML.
-
-WWW: ${HOMEPAGE}

@@ -4,5 +4,3 @@ It has four large fonts built into it, but it can animate most other
 fonts that contain all of the digits. It can also do some funky
 psychedelic colormap cycling, and can use overlay planes or the
 `shape' extension so that the window is transparent.
-
-WWW: ${HOMEPAGE}

@@ -3,5 +3,3 @@ correctly, the client will check your IP address at a given time
 interval checking to see if your IP has changed.  If your IP address
 has changed it will notify No-IP.coms dns servers and update the
 IP corresponding to your No-IP/No-IP+ hostname.
-
-WWW: ${HOMEPAGE}

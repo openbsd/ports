@@ -8,5 +8,3 @@ record gets as a category the name of the folder from this list
 it is placed in.  This way information is lost as subfolders are
 ignored. The reason for this is that the program ListDB on the
 palm support only one level of categorisation.
-
-WWW: ${HOMEPAGE}

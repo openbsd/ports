@@ -1,5 +1,3 @@
 This is the Apache MySQL authentication module. It allows any Apache
 web-server to use a MySQL database for authentication and accounting
 requests.
-
-WWW: ${HOMEPAGE}

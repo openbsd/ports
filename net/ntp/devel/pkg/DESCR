@@ -11,5 +11,3 @@ and reliability. Some configurations  include  cryptographic
 authentication  to  prevent accidental or malicious protocol
 attacks and some provide automatic server discovery using IP
 multicast.
-
-WWW: ${HOMEPAGE}

@@ -7,5 +7,3 @@ that scripts may be run to properly shutdown your machine.  Nut also
 has a network communications layer that allows other machines to
 coordinate shutdowns with the machine that is physically attached to
 the UPS.
-
-WWW: ${HOMEPAGE}

@@ -4,5 +4,3 @@ logfiles and to produce attractive statistics.
 
 It was written by Stephen Turner (sret1@cam.ac.uk). For more details,
 see Readme.html in ${PREFIX}/share/analog.
-
-WWW: ${HOMEPAGE}

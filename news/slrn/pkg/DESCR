@@ -10,5 +10,3 @@ their header. It is highly customizable, allows free key-bindings
 and can easily be extended using the sophisticated s-lang macro
 language. Offline reading is possible by using either slrnpull
 (shipped with slrn) or a local newsserver (like leafnode or INN).
-
-WWW: ${HOMEPAGE}

@@ -1,5 +1,3 @@
 This program is a dockapp-style CPU, memory, swap and load average
 monitor.  Based on the GNOME BubbleMon applet, this program has
 been considerably improved.  Many new features have been added.
-
-WWW: ${HOMEPAGE}

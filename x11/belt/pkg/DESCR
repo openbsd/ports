@@ -1,5 +1,3 @@
 Belt is a small menubar that works as the "belt" normally found in
 MacOS. It has a lot of configuration options and can use multiple
 configuration files if you want several belts.
-
-WWW: ${HOMEPAGE}

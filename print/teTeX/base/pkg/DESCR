@@ -10,5 +10,3 @@ or tetex_setup to the MAINTAINER of this port!
 
 FLAVORS:
         no_x11 -- no support for x11
-
-WWW: ${HOMEPAGE}

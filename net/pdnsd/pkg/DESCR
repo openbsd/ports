@@ -17,5 +17,3 @@ Wonder why you should use it instead of BIND?
 * better run-time control
 * strict RFC 2181 matching
 * negative cacheing
-
-WWW: ${HOMEPAGE}

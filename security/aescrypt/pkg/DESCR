@@ -2,5 +2,3 @@ Encrypt/decrypt stdin using the Advanced Encryption Standard winner
 "Rijndael" encryption algorithm in Cipher Block Feedback (stream)
 mode. Uses /dev/urandom to create a salt. Prepends the output stream
 with salt when encrypting, strips it off when decrypting.
-
-WWW: ${HOMEPAGE}

@@ -14,5 +14,3 @@ stuff you can do using hping:
 - Remote OS fingerprinting 
 - Remote uptime guessing 
 - TCP/IP stacks auditing
-
-WWW: ${HOMEPAGE}

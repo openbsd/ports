@@ -3,5 +3,3 @@ it finds by displaying errors and warnings.  Then it descends
 recursively to examine all zones below the given one (this can be
 disabled with a command-line option).  Designed for Unix, dlint
 is written in Bourne Shell and Perl.
-
-WWW: ${HOMEPAGE}

@@ -1,4 +1,2 @@
 A set of CGI scripts that can query a Nut based UPS and display information
 and statistics on a web page.
-
-WWW: ${HOMEPAGE}

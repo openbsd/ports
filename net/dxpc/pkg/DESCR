@@ -8,5 +8,3 @@ which reconstitutes the full X-protocol for the X server.
 
 ssh can achieve some similar results, with less performance, but also fewer
 concerns about security.
-
-WWW: ${HOMEPAGE}

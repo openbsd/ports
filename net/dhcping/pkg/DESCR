@@ -1,4 +1,2 @@
 Small tool that lets you perform a dhcp-request to find out if a dhcp-server
 is still running.
-
-WWW: ${HOMEPAGE}

@@ -16,5 +16,3 @@ Features:
   This DNS server has the minimum number of features needed
   to correctly act as an authoritative and/or recursive 
   name server.
-
-WWW: ${HOMEPAGE}

@@ -2,5 +2,3 @@ The sash program is a stand-alone shell which is useful for recovering
 from certain types of system failures. In particular, it was created
 in order to cope with the problem of missing shared libraries or
 important executables.
-
-WWW: ${HOMEPAGE}

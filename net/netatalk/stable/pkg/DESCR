@@ -18,5 +18,3 @@ o Route AppleTalk between multiple Ethernet interfaces.
 
 Requires AppleTalk support in the kernel (OpenBSD 2.2 or newer).
 Compile a kernel with option NETATALK
-
-WWW: ${HOMEPAGE}

@@ -2,5 +2,3 @@ Help manage many of the XKB features of X11.
 
 This includes such features as MouseKeys, AccessX, StickyKeys,
 BounceKeys, and SlowKeys.
-
-WWW: ${HOMEPAGE}

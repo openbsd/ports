@@ -11,5 +11,3 @@ data to enforce a certain  data  density.  It  can  be  used
 either  via  simple  wrapper scripts (from shell or Perl) or
 via frontends that poll network devices and put  a  friendly
 user interface on it
-
-WWW: ${HOMEPAGE}

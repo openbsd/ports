@@ -13,5 +13,3 @@ or prefix.  I decided to have the program accept those forms of input
 primarily as a learning tool, since I thought it would be interesting to
 see how bitwise changes in an IP address affect the dotted-quad form of
 that address.
-
-WWW: ${HOMEPAGE}

@@ -5,5 +5,3 @@ ftpls is used to list files, and ftpcopy is used to copy them.
 
 The ftpcopy tools support EPLF and the traditional /bin/ls listing
 format.
-
-WWW: ${HOMEPAGE}

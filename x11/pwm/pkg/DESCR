@@ -10,5 +10,3 @@ keyboard support and almost all the functionality is configurable.
 It does not have all the features (such as pixmapped themes, icons,
 iconified windows or titlebar buttons) that one might expect from a
 typical window manager and may not be the easiest one to get into.
-
-WWW: ${HOMEPAGE}

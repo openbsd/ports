@@ -4,5 +4,3 @@ every program, but it's pretty good at catching the bad
 ones. bfbtester can either run tests on a single binary or walk
 through a whole directory of binaries. Currently bfbtester tests for
 argument overflows and environment variable overflows.
-
-WWW: ${HOMEPAGE}

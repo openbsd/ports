@@ -8,5 +8,3 @@ Shell and Tools specification (IEEE Working Group 1003.2).
 
 Flavors:
 	static - Build with statically linked binaries.
-
-WWW: ${HOMEPAGE}

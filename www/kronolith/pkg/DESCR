@@ -11,5 +11,3 @@ calendar API that Kronolith uses is abstracted such that it could
 work with any backend, but right now we provide SQL (abstracted to
 support most databases, including MySQL, PostgreSQL, Oracle, and
 MSSQL via PEAR DB) and MCAL backend libraries.
-
-WWW: ${HOMEPAGE}

@@ -16,5 +16,3 @@ Currently there is support for:
 
    - libgtkglarea
      The OpenGL widget module (Gtk::GLArea namespace).
-
-WWW: ${HOMEPAGE}

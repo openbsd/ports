@@ -5,5 +5,3 @@ caching of glyphs. It's used by Nautilus for drawing vector icons and
 anti-aliased type.
 
 For more information about the librsvg library, visit:
-
-WWW: ${HOMEPAGE}

@@ -20,5 +20,3 @@ package are:
     A fixed-width font with sleek, contemporary styling.  Normal and
     bold weights in a 10-point (6x11) and a 12-point (6x13) size.
     ISO-8859-1 encoding only.
-
-WWW: ${HOMEPAGE}

@@ -4,5 +4,3 @@ and pretty prints it.
 Tidy's output can be customized to your needs.
 
 Some HTML documentation is available in ${PREFIX}/share/doc/tidy.
-
-WWW: ${HOMEPAGE}

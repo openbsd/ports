@@ -3,5 +3,3 @@ data from a live network, or from a capture file on disk. One of the goals
 of the project is to have an application that is similar in functionality
 to Network Associates' NetXRay or the AG Group's EtherPeek. Although these
 are both excellent products, neither of them runs under Unix.
-
-WWW: ${HOMEPAGE}

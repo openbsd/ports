@@ -21,5 +21,3 @@ to your .Xresource
 Alternately, you may use hevea -nosymb to turn that off.
 
 See section C.2 of the documentation for more details.
-
-WWW: ${HOMEPAGE}

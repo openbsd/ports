@@ -3,5 +3,3 @@ files. The quality of the output is close to the printed output and is much
 better than an info->HTML gateway. It understands most Texinfo version 2 
 commands and runs without problem on big Texinfo files like the GNU Emacs 19 
 manual.
-
-WWW: ${HOMEPAGE}

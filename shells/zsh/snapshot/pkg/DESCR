@@ -7,5 +7,3 @@ extra features drawn from tcsh (another `custom' shell).
 
 Flavors:
 	static - Build with statically linked binaries.
-
-WWW: ${HOMEPAGE}

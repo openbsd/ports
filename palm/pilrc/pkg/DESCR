@@ -5,5 +5,3 @@ resource file.
 
 Package can be built with the no_x11 flavor which does not include
 PilRCUI and does not need X11.
-
-WWW: ${HOMEPAGE}

@@ -5,5 +5,3 @@ controlled at runtime using a simple command line syntax.
 The latest release now supports the definition of channel groups
 and connection counting and handling boosting the power and versatility
 of balance one big step further.
-
-WWW: ${HOMEPAGE}

@@ -8,5 +8,3 @@ raw network sockets and interact using other protocols.
 
 This package installs a stand-alone binary which can be used for
 command-line scripts, as well as an Apache module.
-
-WWW: ${HOMEPAGE}

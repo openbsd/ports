@@ -1,5 +1,3 @@
 The Qt toolkit features an interface designer.
 This interface designer is bundled apart, because of
 dependency issues.
-
-WWW: ${HOMEPAGE}

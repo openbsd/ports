@@ -6,5 +6,3 @@ of WindowMaker). It features small code size, a fast interface with
 simple menus, multiple workspaces, and decorated windows , built-in
 graphics code to render solids, gradients and bevels on the fly
 when needed, and more.
-
-WWW: ${HOMEPAGE}

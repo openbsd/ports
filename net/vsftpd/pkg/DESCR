@@ -5,5 +5,3 @@ be resilient to attack.
 Recent evidence shows that vsftpd is also extremely fast and scalable.
 vsftpd has achieved ~4000 concurrent users on a single machine, in a
 production environment.
-
-WWW: ${HOMEPAGE}

@@ -2,5 +2,3 @@ Corkscrew is a tool for tunneling SSH through HTTP proxies.
 
 Corkscrew has been tested against the Gauntlet, CacheFlow, and
 JunkBuster proxies.
-
-WWW: ${HOMEPAGE}

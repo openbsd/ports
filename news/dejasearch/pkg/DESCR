@@ -3,5 +3,3 @@ popular Usenet archive and search engine. It will submit a search
 for you to  eja.com, then retrieve and consolidate all search results
 into one single HTML file, sorted in newsgroup, subject and date 
 (reverse) order.
-
-WWW: ${HOMEPAGE}

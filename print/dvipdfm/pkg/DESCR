@@ -9,5 +9,3 @@ partial font embedding and stream compression for reduced output
 file size, native, portable graphics via TPIC \specials, balanced
 page and destination trees for improved reader access on very large
 document files.
-
-WWW: ${HOMEPAGE}

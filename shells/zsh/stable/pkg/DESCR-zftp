@@ -6,5 +6,3 @@ globbing, features to make C-shell (csh) users feel more at home and
 extra features drawn from tcsh (another `custom' shell).
 
 This package adds the zftp module to zsh.
-
-WWW: ${HOMEPAGE}

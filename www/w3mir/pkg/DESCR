@@ -17,5 +17,3 @@ handling of some not too often seen problems when mirroring.
 
 w3mir supports HTML4, and has partial support for CSS, Java and
 ActiveX.
-
-WWW: ${HOMEPAGE}

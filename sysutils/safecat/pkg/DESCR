@@ -18,5 +18,3 @@ pletes.  In general, when spooling data with safecat, a sin-
 gle, separate process should handle naming, collecting,  and
 deleting  these  files.  Examples of such a process are dae-
 mons, cron jobs, and mail readers.
-
-WWW: ${HOMEPAGE}

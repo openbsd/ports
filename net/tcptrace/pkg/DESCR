@@ -11,5 +11,3 @@ Simple to Long to Very Detailed.
 It can also produce three different types of graphs: Time Sequence 
 Graph, Instantaneous Throughput, and Round Trip Times.  The graphs 
 produced are viewable only by the xplot program (in math/xplot).
-
-WWW: ${HOMEPAGE}

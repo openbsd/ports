@@ -1,4 +1,2 @@
 GTop, the GNOME System Monitor, is a replacement for "top".
 In addition it offers memory graphs and detailed views of processes.
-
-WWW: ${HOMEPAGE}

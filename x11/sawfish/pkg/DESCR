@@ -4,5 +4,3 @@ basic idea is to have as much user-interface policy as possible
 controlled through the Lisp language.  Configuration can be
 accomplished by writing Lisp code in a personal .sawfishrc file, or
 using a GTK+ interface.  Sawfish is mostly GNOME compliant
-
-WWW: ${HOMEPAGE}

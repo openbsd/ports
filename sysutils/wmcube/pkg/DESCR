@@ -21,5 +21,3 @@ the package.
 * You can change objects at runtime by clicking the center
   of the app.  It will randomly choose a new object from the directory
   you specified at the command line.
-
-WWW: ${HOMEPAGE}

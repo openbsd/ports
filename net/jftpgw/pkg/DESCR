@@ -5,5 +5,3 @@ accessible or to allow users behind such solutions to transfer files to
 and from the outside of the LAN. With the sftp support you can also use
 FTP to get files from a machine that is only accessible with an ssh
 connection.
-
-WWW: ${HOMEPAGE}

@@ -22,5 +22,3 @@ which saves you from having to write:
 
   <html><head><title>A page I wrote</title></head>
   <body><h1>A page I wrote</h1>This is my page.</body></html>
-
-WWW: ${HOMEPAGE}

@@ -1,5 +1,3 @@
 rdesktop is an open source client for Windows NT and 2000 Terminal
 Server, capable of natively speaking the Remote Desktop Protocol
 (RDP) in order to present the user's Windows desktop.
-
-WWW: ${HOMEPAGE}

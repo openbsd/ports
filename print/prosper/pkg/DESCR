@@ -7,5 +7,3 @@ animation effects, incremental display, and such.
 
 It can be used either to produce PDF-based presentations (with support
 for PDF transitions) or to create transparencies (using PostScript).
-
-WWW: ${HOMEPAGE}

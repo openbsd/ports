@@ -1,5 +1,3 @@
 nsd is the daemon part of the NSD package written by NLnet Labs in
 collaboration with RIPE NCC. NSD stands for name server daemon and
 provides authoritative DNS information.
-
-WWW: ${HOMEPAGE}

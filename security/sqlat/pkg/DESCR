@@ -13,5 +13,3 @@ the dll is still left on the system.
 SQLAT works over port 1433, it doesn't do named pipes. It doesn't
 do integrated security either. This is because it is based on the
 FreeTDS driver from www.freetds.org (now works with the new API).
-
-WWW: ${HOMEPAGE}

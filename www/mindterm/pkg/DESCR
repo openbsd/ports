@@ -5,5 +5,3 @@ been tested with Netscape Communicator and Microsoft Internet Explorer
 browsers.  As an application, MindTerm requires that a Java runtime
 environment (JRE) be installed and should work with any 1.1.x runtime on
 most platforms.
-
-WWW: ${HOMEPAGE}

@@ -5,5 +5,3 @@ address. A bit like ifconfig.
 Left-button click moves to the next interface, right-button click
 calls up/down scripts. These can be set with the -u and -d options.
 The '%s' variable is replaced with the interface name.
-
-WWW: ${HOMEPAGE}

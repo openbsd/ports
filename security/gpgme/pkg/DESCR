@@ -5,5 +5,3 @@ It provides a High-Level Crypto API for encryption, decryption,
 signing, signature verification and key management.  Currently it
 uses GnuPG as it's backend but the API isn't restricted to this
 engine; in fact it is planned to add other backends to it.
-
-WWW: ${HOMEPAGE}

@@ -10,5 +10,3 @@ If you know samba: Sharity-Light is roughly the opposite: a client for the
 Lanmanager protocol. If you know neither of these: Sharity-Light lets you
 mount drives exported by Windows (f.Workgroups/95/NT), Lan Manager, OS/2
 etc. on Unix machines.
-
-WWW: ${HOMEPAGE}

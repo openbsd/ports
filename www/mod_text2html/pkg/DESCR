@@ -16,5 +16,3 @@ of key points.
    determines that it is not text it sends the files, but
    does so as application/octet-stream (so no nasty
    dumps of binary to the screen).
-
-WWW: ${HOMEPAGE}

@@ -5,5 +5,3 @@ limited font handling. The program is basicly an improved C version
 of the pascal program written by Svante Lindahl (see README.ORG).
 
 Disdvi is a simple hack that dumps a dvi file in a more readable form.
-
-WWW: ${HOMEPAGE}

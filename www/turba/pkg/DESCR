@@ -7,5 +7,3 @@ application. SQL and LDAP backends are available and fairly well
 tested. You can define the fields in your address books in a very
 flexible way, just by changing the config files.  And there are
 Horde API functions to add and search for contacts.
-
-WWW: ${HOMEPAGE}

@@ -12,6 +12,3 @@ DAV-aware client and server. mod_dav provides complete class 1 and 2 DAV
 services to DAV clients via the Apache webserver (1.3.4 or later). The
 number of DAV-aware clients is growing and includes the 'Web Folders' used
 in Microsoft Internet Explorer 5.0 and Office 2000.
-
-
-WWW: ${HOMEPAGE}

@@ -5,5 +5,3 @@ of Apache (possibly including mod_ssl, php, etc).
 This  module replaces the Apache-FP patches and module  sup-
 plied  with  the  Microsoft  FrontPage   Server   Extensions
 available  from Microsoft and Ready-to-Run Software.
-
-WWW: ${HOMEPAGE}

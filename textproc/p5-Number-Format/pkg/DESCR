@@ -6,5 +6,3 @@ inserted between each group of three characters counting right to
 left from the decimal point.  The characters used for the decimal
 point and the thousands separator come from the locale information
 or can be specified by the user.
-
-WWW: ${HOMEPAGE}

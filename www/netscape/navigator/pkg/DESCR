@@ -12,5 +12,3 @@ which lists new features and known problems of this release.
 i386 NOTICE
 -----------
 Use of this port requires a kernel compiled with 'option COMPAT_BSDOS'
-
-WWW: ${HOMEPAGE}

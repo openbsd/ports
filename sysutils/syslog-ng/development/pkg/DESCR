@@ -5,5 +5,3 @@ possibility to filter based on message contents using regular expressions.
 The new configuration scheme is intuitive and powerful. Forwarding logs
 over TCP and remembering all forwarding hops makes it ideal for firewalled
 environments.
-
-WWW: ${HOMEPAGE}

@@ -1,5 +1,3 @@
 ScanSSH scans the given addresses and networks for running SSH
 servers. It will query their version number and displays the results
 in a list.
-
-WWW: ${HOMEPAGE}

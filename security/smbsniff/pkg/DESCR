@@ -4,5 +4,3 @@ environment (all the Microsoft and Samba machines using LanManager
 protocol to share data).  
 This is a proof of concept to show that LanManager (CIFS) is an 
 extremely insecure protocol.
-
-WWW: ${HOMEPAGE}

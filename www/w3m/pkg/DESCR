@@ -13,5 +13,3 @@ Available flavors:
               display Japanese characters in kterm.
   m17n      - Multilingualization extension to handle a plethora of
               document and terminal character sets, including UTF-8.
-
-WWW: ${HOMEPAGE}

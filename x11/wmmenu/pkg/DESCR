@@ -7,5 +7,3 @@ Read ${PREFIX}/share/doc/wmmenu/README for info on configuring this
 dockapp.
 
 The gdk-pixbuf flavor allows you to use other icons than XPM format
-
-WWW: ${HOMEPAGE}

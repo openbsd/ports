@@ -12,5 +12,3 @@ without modification.
 
 Flavors:
 	static - Build with statically linked binaries.
-
-WWW: ${HOMEPAGE}

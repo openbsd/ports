@@ -17,5 +17,3 @@ Featuring:
   properties (PROPPATCH/PROPFIND).
 * autoconf macros supplied for easily embedding neon directly inside an
   application source tree. 
-
-WWW: ${HOMEPAGE}

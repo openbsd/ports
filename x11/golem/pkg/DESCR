@@ -4,5 +4,3 @@ prevent the first goal from being realized.
 
 Each user that wants to use golem as their window manager should execute
 the ${PREFIX}/bin/golem.install script.
-
-WWW: ${HOMEPAGE}

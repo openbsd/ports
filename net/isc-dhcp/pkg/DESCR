@@ -16,6 +16,3 @@ implementations. Both the client and the server provide functionality
 that, while not strictly required by the protocol, is very useful in
 practice. The DHCP server also makes allowances for non-compliant clients
 which one might still like to support.
-
-
-WWW: ${HOMEPAGE}

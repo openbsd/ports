@@ -7,5 +7,3 @@ which directly update system files like /etc/inetd.conf and
 /etc/passwd. The web server and all CGI programs are written in
 Perl version 5, and use no external modules. This means that you
 only need a Perl binary to run Webmin.
-
-WWW: ${HOMEPAGE}

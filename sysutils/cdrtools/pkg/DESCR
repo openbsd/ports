@@ -13,5 +13,3 @@ This package contains the following software:
   mkisofs (ISO-9660 filesystem image creator)
   readcd (read data CDs, write to DVD-RAM and copy
     Solaris boot CDs)
-
-WWW: ${HOMEPAGE}

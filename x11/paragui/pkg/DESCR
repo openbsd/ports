@@ -17,5 +17,3 @@ Highlights of the library:
  - many standard widgets already implemented (buttons, labels, scrollbars,
    progressbars, windows ...) 
  - create your own widgets (subclass an existing widget)
-
-WWW: ${HOMEPAGE}

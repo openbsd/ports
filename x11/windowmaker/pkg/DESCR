@@ -10,5 +10,3 @@ To select a particular locale at runtime you must set the LANG
 environment variable to the locale you want.  If your language uses
 multi-byte characters, such as Japanese or Korean, you must set the
 MultiByteText option to YES in ~/GNUstep/Defaults/WMGLOBAL
-
-WWW: ${HOMEPAGE}

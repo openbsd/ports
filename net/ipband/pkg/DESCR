@@ -14,5 +14,3 @@ start getting dropped.
 It also can be used to monitor internet connection when specifying the
 range of local ip addresses (to avoid firing reports about non-local
 networks).
-
-WWW: ${HOMEPAGE}

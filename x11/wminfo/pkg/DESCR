@@ -19,5 +19,3 @@ default) discards HTML-tags and multiple consecutive blanks so
 that the parsing won't be such a pain in the *ss :).  Another useful
 option is to have wminfo monitor changes in the information and
 start scrolling the rows that changed.
-
-WWW: ${HOMEPAGE}

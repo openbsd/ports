@@ -11,5 +11,3 @@ an aid in code reviewing, as it allows a reviewer to look at the pieces
 of changed code and save selected portions of the code to an editor to
 make comments (horizontal diffs make reviewing much easier, especially
 for a long list of files).
-
-WWW: ${HOMEPAGE}

@@ -5,5 +5,3 @@ files if available locally or via the NNTP [X]OVER command (RFC2980).
 
 Flavors:
 	nntp_only - only read news remotely via a NNTP server.
-
-WWW: ${HOMEPAGE}

@@ -2,5 +2,3 @@ Jesred is a redirector for the Squid proxy.  It was derived from
 Squirm 1.0 betaB and some parts of squid.  Author claims that it's
 about two or three times faster than original Squirm, and has some
 added features.
-
-WWW: ${HOMEPAGE}

@@ -14,5 +14,3 @@ Aguri monitors network traffic using libpcap(3), and produces a
 summary when it receives a HUP signal. Periodic summaries can be
 obtained by sending HUP signals from cron(8) to the running aguri 
 program.
-
-WWW: ${HOMEPAGE}

@@ -3,5 +3,3 @@ from remote host when it establishes connection to our system.
 Captured packets contains enough information to determine OS - and,
 unlike active scanners (nmap, queSO) - without sending anything to
 this host.
-
-WWW: ${HOMEPAGE}

@@ -6,5 +6,3 @@ performance over low-bandwidth networks from compression.
 Flavors:
 	udp_spoof - Limited unidirectional UDP source address spoofing,
 		    intended for applications like syslog.
-
-WWW: ${HOMEPAGE}

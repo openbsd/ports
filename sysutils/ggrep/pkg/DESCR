@@ -6,5 +6,3 @@ include grep, egrep and fgrep.
 Note that this port will install these utilities with a 'g' prefix,
 e.g. ggrep, but the documentation will refer to them without the
 'g' prefix.
-
-WWW: ${HOMEPAGE}

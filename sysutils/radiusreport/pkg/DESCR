@@ -10,5 +10,3 @@ As of V.02 radiusreport can generate  individual  files  for
 each user by using the -o flag in conjunction with '-l all'.
 This function will enable you to 'reprocess'  radiusreport's
 output, e.g. to email a copy of each users report to them.
-
-WWW: ${HOMEPAGE}

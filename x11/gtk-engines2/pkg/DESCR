@@ -8,5 +8,3 @@ This package provides three sample theme engines for GTK+2:
 
 * Redmond95: A simple theme engine that looks a bit like 
   Microsoft Windows95.
-
-WWW: ${HOMEPAGE}

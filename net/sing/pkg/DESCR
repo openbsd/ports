@@ -7,5 +7,3 @@ receive  spoofed  packets;  send many ICMP information types
 discovery)   and   errors   (redirect,   unreach,  and  time
 exceeded); and send monster packets.  It also supports loose
 and strict source routing and record routing.
-
-WWW: ${HOMEPAGE}

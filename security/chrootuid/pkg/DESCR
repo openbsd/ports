@@ -2,5 +2,3 @@ Chrootuid makes it easy to run network services at a low privilege
 level and with restricted file system access. This utility employs
 both chroot and su to confine users to specified areas by assigning
 appropriate userids. Chrootuid was written by Wietse Venema.
-
-WWW: ${HOMEPAGE}

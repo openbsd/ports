@@ -7,5 +7,3 @@ and enables concurrent system programming.
 Scsh is built on top of Scheme 48, a portable R5RS-compliant Scheme 
 implementation with byte-code compilation, user-level threads, and 
 many useful extensions.
-
-WWW: ${HOMEPAGE}

@@ -1,4 +1,2 @@
 This PHP extensions provides an interface to the aspell spell-checking
 library, and can also offer suggestions for corrections.
-
-WWW: ${HOMEPAGE}

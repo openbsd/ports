@@ -12,5 +12,3 @@ instance, do "ratelimit -h" for a brief rundown of the options.
 Please note that this package is not a drop-in replacement for daemontools; the
 internal state files in service directories are different, and the error
 messages (and a few of the options) aren't quite the same. 
-
-WWW: ${HOMEPAGE}

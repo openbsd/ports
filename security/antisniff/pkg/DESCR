@@ -9,5 +9,3 @@ that a remote attacker could utilize to sniff network traffic. It was
 not designed to detect hardware based network probes or special
 purpose network analyzers which an attacker would need physical access
 to install.
-
-WWW: ${HOMEPAGE}

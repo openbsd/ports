@@ -1,5 +1,3 @@
 This is the Apache RADIUS authentication module. It allows
 any Apache web-server to become a RADIUS client for
 authentication and accounting requests.
-
-WWW: ${HOMEPAGE}

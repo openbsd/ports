@@ -5,5 +5,3 @@ variables that can be used for doing ad banner systems.  The third
 is that it can be used to display entire pages of random html.  It
 uses its own custom handlers in combination with random ads and
 quotes that you feed into the system.
-
-WWW: ${HOMEPAGE}

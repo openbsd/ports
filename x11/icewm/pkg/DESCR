@@ -10,5 +10,3 @@ achieve the following goals:
 IceWM allows reasonably configurable look using themes and is fully
 GNOME and partially KDE compliant, but can also be used as a full
 featured standalone environment.
-
-WWW: ${HOMEPAGE}

@@ -6,5 +6,3 @@ and twelve-hour (am/pm) time display, and, optionally, can run a
 user-specified program on a mouse click.  wmclock is derived from
 ASClock (now called ASClock classic), a similar clock for the
 AfterStep window manager.
-
-WWW: ${HOMEPAGE}

@@ -10,5 +10,3 @@ This package provides four sample theme engines for GTK+:
    Microsoft Windows95.
 
  Notif: A simple Motif-look-alike theme
-
-WWW: ${HOMEPAGE}

@@ -3,5 +3,3 @@ via the Apache API with Perl and C.  Functionality includes:
  - parsing of application/x-www-form-urlencoded data 
  - parsing of multipart/form-data 
  - parsing of HTTP Cookies
-
-WWW: ${HOMEPAGE}

@@ -2,5 +2,3 @@ TrafShow continuously display the information regarding packet
 traffic on the configured network interface that match the boolean
 expression. It periodically sort and updates this information. It
 may be useful for locating suspicious network traffic on the net.
-
-WWW: ${HOMEPAGE}

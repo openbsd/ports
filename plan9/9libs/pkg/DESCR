@@ -12,5 +12,3 @@ the X11 version of Rob Pike's editor, sam. The package consists of:
   included by Plan 9 C files. Declarations for the regular expression
   components of the library are in regexp.h.
 * Documentation for the libraries, as manual pages in the doc directory.
-
-WWW: ${HOMEPAGE}

@@ -1,5 +1,3 @@
 Tomcat is the Java Servlet / Java Server Page environment produced
 by the Apache Foundation's Jakarta Project.  This package provides
 the Apache Tomcat connector.
-
-WWW: ${HOMEPAGE}

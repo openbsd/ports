@@ -15,5 +15,3 @@ NOTE:
 This is Ed Falk's XawM (M for Modern), hacked for use with Siag Office
 and adapted for autoconf and libtool. This release is called 1.5u; 1.5
 because it is based on Xaw3d 1.5, and u because Ulric messed with it.
-
-WWW: ${HOMEPAGE}

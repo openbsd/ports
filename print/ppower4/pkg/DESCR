@@ -1,4 +1,2 @@
 PPower4 is a post processor for PDF presentations created with LaTeX to
 add dynamic effects. It is independent of the presentation class used.
-
-WWW: ${HOMEPAGE}

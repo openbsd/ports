@@ -13,5 +13,3 @@ contain a label, it contains a child widget, which in most instances
 will be a label. However, the child widget can also be a pixmap, image
 or any combination possible the programmer desires. This flexibility is
 adhered to throughout the library.
-
-WWW: ${HOMEPAGE}

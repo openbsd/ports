@@ -5,5 +5,3 @@ actually dynamically insert layouts anywhere in the document. This
 allows you to create a single look and feel throughout a website
 without using server side includes (SSI) to "automagically" add
 content in either of these two locations.
-
-WWW: ${HOMEPAGE}

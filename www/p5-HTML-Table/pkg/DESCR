@@ -9,5 +9,3 @@ HTML::Table also allows for creating dynamically sized tables via
 its addRow and addCol methods.  These methods automatically resize
 the table if passed more cell values than will fit in the current
 table grid.
-
-WWW: ${HOMEPAGE}

@@ -6,5 +6,3 @@ functionality that is required to send and receive data through sockets.
 It then limits traffic based on delaying the sending and receiving of
 data over a socket.  trickle runs entirely in userspace and does not
 require root privileges.
-
-WWW: ${HOMEPAGE}

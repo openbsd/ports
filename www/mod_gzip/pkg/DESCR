@@ -7,5 +7,3 @@ as possible.
 It makes use of the Accept-Encoding feature in most modern browsers
 to deliver gzipped content transparently, and so cuts down on
 bandwidth usage.
-
-WWW: ${HOMEPAGE}

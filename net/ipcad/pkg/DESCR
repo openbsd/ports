@@ -4,5 +4,3 @@ address-to-address flow pairs and than can be accessed via rsh in Cisco
 fashion.
 
 See README file and man pages for details.
-
-WWW: ${HOMEPAGE}

@@ -5,5 +5,3 @@ client).  Though GnomeICU is quite stable at this time, it is still
 development software, and most certainly contains bugs.
 
 For more information about gnomeicu, visit:
-
-WWW: ${HOMEPAGE}

@@ -9,5 +9,3 @@ precisely defined in the corresponding RFCs. Some other times, they check
 whether the remote SMTP server is simply RFC compliant. After each test,
 remote server returns a SMTP Error Message. Fingerprints are made of
 SMTP Error Messages corresponding to the tests.
-
-WWW: ${HOMEPAGE}
