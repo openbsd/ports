@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/24 08:11:14 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/15 17:17:34 naddy Exp $
 %%plugin%%
 bin/swf_play
 include/swfdec/swf.h
@@ -7,5 +7,5 @@ lib/libswfdec.a
 lib/libswfdec.la
 lib/pkgconfig/swfdec.pc
 %%SHARED%%
-@comment @dirrm lib/pkgconfig
+@dirrm lib/pkgconfig
 @dirrm include/swfdec
