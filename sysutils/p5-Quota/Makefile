@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2004/10/03 18:41:36 jcs Exp $
+# $OpenBSD: Makefile,v 1.7 2005/01/27 00:38:37 kevlo Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"quota manipulation module"
 
-DISTNAME=	Quota-1.4.10
+DISTNAME=	Quota-1.5.0
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	sysutils perl5
 
