@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/05/25 14:39:42 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/08/28 10:27:10 maja Exp $
 
 DISTNAME=       netatalk-1.4b2
 CATEGORIES=	net
@@ -14,11 +14,14 @@ MAINTAINER=	ianm@cit.nepean.uws.edu.au
 # the Port shortly.
 
 pre-fetch:
+.if !defined(NO_WARNINGS)
 	@if [ ! -f /usr/src/sys/netatalk/at_extern.h ]; then \
 	 ${ECHO} This port requires the kernel source code to compile properly,; \
 	 ${ECHO} specifically the source code in /usr/src/sys/netatalk; \
 	 ${FALSE}; \
 	fi
+.endif
+
 
 pre-configure:
 	@${MKDIR} ${WRKSRC}/sys/openbsd
