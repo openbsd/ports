@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2001/04/02 15:11:46 wilfried Exp $
+--- configure.orig	Wed Jan 10 00:11:24 2001
++++ configure	Mon Apr  2 15:57:59 2001
+@@ -998,7 +998,7 @@ else
+ fi
+ 
+ 
+-LDFLAGS="$CXXFLAGS"
++#LDFLAGS="$CXXFLAGS"
+ 
+ 
+ echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6

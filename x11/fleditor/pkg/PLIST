@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/02 15:11:46 wilfried Exp $
+include/FL/Fl_Editor.H
+include/FL/Fl_FancyEditor.H
+include/FL/Fl_FancyMultiEditor.H
+include/FL/Fl_MultiEditor.H
+include/FL/Fl_ProgressBox.H
+include/FL/Fl_StatusPanel.H
+include/FL/editengine.h
+include/FL/editvars.h
+include/FL/lists.h
+include/FL/stringsup.h
+include/FL/wstring.h
+lib/libfleditor.a
