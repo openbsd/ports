@@ -1,5 +1,5 @@
 --- scripts/makefile.std.orig	Wed Dec  8 18:44:40 1999
-+++ scripts/makefile.std	Mon Jul  3 05:17:29 2000
++++ scripts/makefile.std	Tue Jul 25 04:27:47 2000
 @@ -8,44 +8,44 @@
  # Where the zlib library and include files are located
  #ZLIBLIB=/usr/local/lib
@@ -33,7 +33,7 @@
 -	ar rc $@  $(OBJS)
 -	$(RANLIB) $@
 +	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libpng.la $(OBJS) \
-+	 -version-info 1:7:0 -rpath $(prefix)/lib
++	 -version-info 1:8:0 -rpath $(prefix)/lib
  
 -pngtest: pngtest.o libpng.a
 -	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
