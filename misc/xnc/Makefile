@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/31 12:54:27 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/16 18:03:51 wilfried Exp $
 
 DISTNAME=	xnc-4.4.0
 DISTFILES=      ${DISTNAME}.src${EXTRACT_SUFX}
@@ -23,8 +23,8 @@ USE_X11=	Yes
 
 CONFIGURE_STYLE=	gnu old
 
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" 
 CONFIGURE_ARGS=	--with-x --disable-plugins
 

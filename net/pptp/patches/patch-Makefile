@@ -1,22 +1,20 @@
 --- Makefile.orig	Wed Feb 18 23:42:14 1998
-+++ Makefile	Thu Dec 14 16:09:48 2000
-@@ -1,10 +1,11 @@
++++ Makefile	Fri Mar 16 15:57:18 2001
+@@ -1,10 +1,9 @@
  VERSION = 1.0.2
 -VERSION_DEFINE = '-DPPTP_LINUX_VERSION="${VERSION}"'
 +VERSION_DEFINE = '-DPPTP_LINUX_VERSION="${VERSION}"' -DPROGRAM_NAME='"pptp"'
  
 -CC	= gcc -Wall
 -DEBUG	= -g
-+CC	= gcc -O2 
 +RM	= rm
-+DEBUG	= -g -O2 # -O9
  INCLUDE =
 -CFLAGS  = -O9 $(VERSION_DEFINE) $(DEBUG) $(INCLUDE)
-+CFLAGS  =  $(VERSION_DEFINE) $(DEBUG) $(INCLUDE)
++CFLAGS +=  $(VERSION_DEFINE) $(INCLUDE)
  LIBS	=
  LDFLAGS	=
  
-@@ -24,7 +25,21 @@ CALLMGR_BIN = pptp_callmgr
+@@ -24,7 +23,21 @@ CALLMGR_BIN = pptp_callmgr
  CALLMGR_OBJS = pptp_callmgr.o pptp_ctrl.o dirutil.o util.o vector.o version.o
  CALLMGR_DEPS = pptp_callmgr.h pptp_ctrl.h dirutil.h pptp_msg.h vector.h
  
@@ -39,7 +37,7 @@
  
  $(PPTP_BIN): $(PPTP_OBJS) $(PPTP_DEPS)
  	$(CC) -o $(PPTP_BIN) $(PPTP_OBJS) $(LDFLAGS) $(LIBS)
-@@ -36,7 +51,7 @@ vector_test: vector_test.o vector.o
+@@ -36,7 +49,7 @@ vector_test: vector_test.o vector.o
  	$(CC) -o vector_test vector_test.o vector.o
  
  clean:
