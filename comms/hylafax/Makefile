@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1998/10/07 18:32:06 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1998/12/16 20:02:35 marc Exp $
 #
 
 DISTNAME=	hylafax-v4.0pl2
@@ -39,12 +39,13 @@ SUID_EXES= 	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
 
 pre-fetch:
+.if !defined(NO_WARNINGS)
 .if !defined(A4)
 	@${ECHO_MSG} "Type \"make A4=yes\" if you want A4 as default page size."
 .else
 	@${ECHO_MSG} "Using \"ISO A4\" for default page size."
 .endif
-
+.endif
 post-install:
 	/usr/sbin/chown ${FAXUID}.${FAXGID} ${SUID_EXES}
 	chmod a=rx,u+s ${SUID_EXES}
