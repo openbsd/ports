@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 1999/10/29 00:37:56 ian Exp $
+# $OpenBSD: Makefile,v 1.6 1999/10/29 11:11:42 espie Exp $
 
 DISTNAME=       efax-0.9
 PKGNAME=        efax-0.9
-CATEGORIES=	comm
+CATEGORIES=	comms
 
 MAINTAINER=	ian@OpenBSD.ORG
 
