@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/01/12 02:46:12 jcs Exp $
+# $OpenBSD: Makefile,v 1.15 2004/02/08 10:36:02 sturm Exp $
 
 DISTNAME=	freetds-0.62
 CATEGORIES=	databases
@@ -19,7 +19,8 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static \
 		--with-libiconv-prefix="${LOCALBASE}" \
-		--disable-threadsafe
+		--disable-threadsafe \
+		--disable-odbc
 MAKE_ENV=	RM=rm
 MODULES=	gettext
 
