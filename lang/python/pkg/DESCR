@@ -13,4 +13,9 @@ dynamically loaded. Python is also adaptable as an
 extension language for existing applications. See the
 internal documentation for hints.
 
+Flavors:
+	tk       - builds tkinter module, depends on Tk
+	threads  - build with thread support
+	no_tools - do not build tools package
+
 WWW: ${HOMEPAGE}

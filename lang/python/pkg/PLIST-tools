@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-tools,v 1.5 2000/11/20 22:15:31 jasoni Exp $
+@comment $OpenBSD: PLIST-tools,v 1.6 2000/11/24 20:13:39 jasoni Exp $
+@option no-default-conflict
 @pkgdep python-1.6-*
+@pkgcfl python-tools-1.6
 lib/python1.6/Tools/README
 lib/python1.6/Tools/audiopy/README
 lib/python1.6/Tools/audiopy/audiopy
