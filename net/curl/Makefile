@@ -1,12 +1,18 @@
-# $OpenBSD: Makefile,v 1.23 2001/02/22 22:19:52 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2001/03/30 18:40:59 brad Exp $
 
-DISTNAME=	curl-7.6.1
+COMMENT=	"get files from FTP, GOPHER, HTTP or HTTPS servers"
+
+DISTNAME=	curl-7.7
 CATEGORIES=	net
-NEED_VERSION=	1.336
+NEED_VERSION=	1.364
 MASTER_SITES=	http://curl.haxx.se/download/ \
-		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
-		ftp://ftp.win.or.jp/pub/network/www/misc/ \
-		ftp://crydee.sai.msu.ru/zeus/unix/WWW/tools/mirror/
+		ftp://ftp.sunet.se/pub/www/utilities/curl/ \
+		ftp://cool.haxx.se/curl/ \
+		ftp://ftp.fu-berlin.de/pub/unix/network/curl/ \
+		http://curl.linuxworx.com.au/ \
+		http://www.cubic.ch/mirror/curl/ \
+		http://curl.webmeta.com/ \
+		ftp://gd.tuwien.ac.ut/utils/archivers/curl/
 
 HOMEPAGE=	http://curl.haxx.se/
 
@@ -17,16 +23,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static --disable-thread
+CONFIGURE_ARGS+= --enable-static --disable-thread \
+		 --with-random="/dev/arandom"
 
 FLAVORS=	kerberos
 FLAVOR?=
 
 .if ${FLAVOR:L:Mkerberos}
-CONFIGURE_ARGS+= --with-krb4-includes="/usr/include/kerberosIV"
-CONFIGURE_ARGS+= --disable-ipv6
+CONFIGURE_ARGS+= --with-krb4-includes="/usr/include/kerberosIV" \
+		 --disable-ipv6
 .endif
 
 DOCS=	CHANGES LEGAL MITX.txt README
