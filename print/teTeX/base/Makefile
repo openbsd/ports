@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2005/03/09 22:22:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.34 2005/03/22 20:48:10 sturm Exp $
 
 COMMENT=	"TeX distribution, executables"
 COMMENT-fmt=	"format files"
@@ -37,6 +37,9 @@ FLAVORS=	no_x11
 FLAVOR?= 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=--without-x
+.  if ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=	patch-* gcc-*
+.  endif
 .else
 WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xp Xpm Xt
 CONFIGURE_ARGS+=--with-system-t1lib \
