@@ -1,6 +1,6 @@
---- src/slrnfeat.h.orig	Fri Jun 20 15:02:47 1997
-+++ src/slrnfeat.h	Sun Jun 29 04:25:16 1997
-@@ -193,7 +193,7 @@
+--- src/slrnfeat.h.orig	Sun May 16 22:26:59 1999
++++ src/slrnfeat.h	Tue Jun 22 21:54:43 1999
+@@ -203,7 +203,7 @@
  #   define SLRN_ARTICLE_FILENAME	".article"
  #   define SLRN_FOLLOWUP_FILENAME	".followup"
  #   define SLRN_SIGNATURE_FILE		".signature"
