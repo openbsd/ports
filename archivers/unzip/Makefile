@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2003/05/24 02:40:42 jolan Exp $
+# $OpenBSD: Makefile,v 1.31 2003/07/02 16:03:59 brad Exp $
 
 COMMENT=	"extract, list & test files in a ZIP archive"
 
-DISTNAME=	unzip550
-PKGNAME=	unzip-5.50
+VERSION=	5.50
+DISTNAME=	unzip${VERSION:S/.//}
+PKGNAME=	unzip-${VERSION}p1
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.info-zip.org/pub/infozip/src/ \
 		ftp://ftp.uu.net/pub/archiving/zip/src/ \
@@ -25,7 +26,7 @@ MAKE_FILE=	unix/Makefile
 
 ALL_TARGET=	bsd
 
-WRKDIST=	${WRKDIR}/${PKGNAME}
+WRKDIST=	${WRKDIR}/unzip-${VERSION}
 
 DOCS=	COPYING.OLD LICENSE README WHERE
 
