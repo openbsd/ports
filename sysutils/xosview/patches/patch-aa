@@ -1,7 +1,7 @@
-# $OpenBSD: patch-aa,v 1.6 1999/07/01 22:07:44 form Exp $
+# $OpenBSD: patch-aa,v 1.7 1999/07/09 15:39:54 form Exp $
 
---- bsd/kernel.cc.orig	Tue Feb 16 20:09:21 1999
-+++ bsd/kernel.cc	Fri Jul  2 04:46:10 1999
+--- bsd/kernel.cc.orig	Fri Jul  9 22:17:49 1999
++++ bsd/kernel.cc	Fri Jul  9 22:21:52 1999
 @@ -67,7 +67,11 @@
  
  #ifdef HAVE_SWAPCTL
@@ -14,7 +14,7 @@
  #include <stdlib.h>		/*  For malloc(), free().  */
  #endif
  
-@@ -110,9 +114,9 @@
+@@ -153,9 +157,9 @@
  { "_eintrcnt" },
  #define EINTRCNT_SYM_INDEX 	8
  
@@ -26,45 +26,37 @@
  { "_intrhand" },
  #define INTRHAND_SYM_INDEX    9
  { "_intrstray" },
-@@ -661,7 +665,7 @@
+@@ -750,7 +754,7 @@
  }
  
  /*  ---------------------- Interrupt Meter stuff  -----------------  */
--#if !defined(XOSVIEW_OPENBSD) || !(defined(pc532) && defined(i386))
-+#if !defined(XOSVIEW_OPENBSD) || !(defined(__pc532__) || defined(__i386__))
+-#if (!defined(XOSVIEW_OPENBSD) || !(defined(pc532) && defined(i386))) && !defined(XOSVIEW_BSDI)
++#if (!defined(XOSVIEW_OPENBSD) || !(defined(__pc532__) && defined(__i386__))) && !defined(XOSVIEW_BSDI)
  static unsigned long kvm_intrcnt[128];// guess at space needed
  #endif
  
-@@ -672,16 +676,16 @@
- int
+@@ -770,9 +774,9 @@
  BSDIntrInit() {
      OpenKDIfNeeded();
+ 
 -#if defined(XOSVIEW_OPENBSD) && defined(i386)
 +#if defined(XOSVIEW_OPENBSD) && defined(__i386__)
      return ValidSymbol(INTRHAND_SYM_INDEX) && ValidSymbol(INTRSTRAY_SYM_INDEX);
 -#elif defined (XOSVIEW_OPENBSD) && defined(pc532)
 +#elif defined (XOSVIEW_OPENBSD) && defined(__pc532__)
      return ValidSymbol(IVP_SYM_INDEX);
- #else
-     return ValidSymbol(INTRCNT_SYM_INDEX) && ValidSymbol(EINTRCNT_SYM_INDEX);
+ #elif defined (XOSVIEW_BSDI)
+ #if _BSDI_VERSION >= 199802 /* BSD/OS 4.x */
+@@ -785,7 +789,7 @@
  #endif
  }
  
--#if !defined(XOSVIEW_OPENBSD) || !(defined(pc532) || defined(i386))
-+#if !defined(XOSVIEW_OPENBSD) || !(defined(__pc532__) || defined(__i386__))
+-#if (!defined(XOSVIEW_OPENBSD) || !(defined(pc532) || defined(i386))) && !defined (XOSVIEW_BSDI)
++#if (!defined(XOSVIEW_OPENBSD) || !(defined(__pc532__) || defined(__i386__))) && !defined (XOSVIEW_BSDI)
  int
  BSDNumInts() {
    int nintr;
-@@ -702,7 +706,7 @@
- # endif
- #endif
- }
--#endif /* XOSVIEW_OPENBSD */
-+#endif /* XOSVIEW_OPENBSD && !(__i386__ || __pc532__) */
- 
- void
- BSDGetIntrStats (unsigned long intrCount[NUM_INTR]) {
-@@ -727,8 +731,8 @@
+@@ -846,8 +850,8 @@
    //  counts.  We'll just use the intrcnt array here.  If anyone
    //  has problems, please mail me.  bgrayson
    {
@@ -75,7 +67,7 @@
    struct intrhand *intrhand[16], *ihp, ih;
    int intrstray[16];
  
-@@ -749,8 +753,8 @@
+@@ -868,8 +872,8 @@
        ihp = ih.ih_next;
      }
    }
@@ -86,7 +78,7 @@
    struct iv ivt[32], *ivp = ivt;
  
    safe_kvm_read(nlst[IVP_SYM_INDEX].n_value, ivp, sizeof(ivt));
-@@ -760,15 +764,15 @@
+@@ -879,15 +883,15 @@
      else
        intrCount[i] = 0;
    }

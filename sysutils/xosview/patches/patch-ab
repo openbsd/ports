@@ -1,17 +1,27 @@
-# $OpenBSD: patch-ab,v 1.6 1999/07/01 22:07:44 form Exp $
+# $OpenBSD: patch-ab,v 1.7 1999/07/09 15:39:54 form Exp $
 
---- bsd/obsdintr.h.orig	Fri Jul  2 04:26:33 1999
-+++ bsd/obsdintr.h	Fri Jul  2 04:26:50 1999
-@@ -1,7 +1,7 @@
+--- bsd/obsdintr.h.orig	Tue Feb 16 20:09:21 1999
++++ bsd/obsdintr.h	Fri Jul  9 22:03:11 1999
+@@ -1,7 +1,17 @@
  #ifndef _OPENBSDINTR_H_
  #define _OPENBSDINTR_H_
  
 -#ifdef i386
++/* XXX: gcc defines i386, but egcs defines __i386__ */
++#if defined(i386) && !defined(__i386__)
++#define __i386__
++#endif
++
++/* XXX: gcc defines pc532, but egcs defines __pc532__ */
++#if defined(pc532) && !defined(__pc532__)
++#define __pc532__
++#endif
++
 +#ifdef __i386__
  struct intrhand {
  	int	(*ih_fun) __P((void *));
  	void	*ih_arg;
-@@ -13,7 +13,7 @@
+@@ -13,7 +23,7 @@
  };
  #endif
  

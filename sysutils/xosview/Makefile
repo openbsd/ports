@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 1999/07/01 22:31:21 form Exp $
+# $OpenBSD: Makefile,v 1.7 1999/07/09 15:39:54 form Exp $
 # $NetBSD: Makefile,v 1.9 1998/04/15 10:38:50 agc Exp $
 
-DISTNAME=       xosview-1.7.0.b
+DISTNAME=       xosview-1.7.2
 CATEGORIES=	sysutils
 MASTER_SITES=   http://www.ece.utexas.edu/~bgrayson/xosview/
 
