@@ -1,4 +1,4 @@
-Those are ATI drivers for XFree 4.2.0 with full Xvideo support.
+Those are ATI drivers for XFree 4.3.0 with full Xvideo support.
 Don't even bother if your card is not an ATI card.
 
 To see whether you need these drivers, look at the output of
