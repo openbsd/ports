@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2001/01/11 02:58:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2001/01/17 01:11:42 naddy Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -76,6 +76,7 @@
 #    SUBDIR += vcg
 #    SUBDIR += whirlgif
      SUBDIR += wmgrabimage
+     SUBDIR += wmphoto
      SUBDIR += xanim
 #    SUBDIR += xaos
      SUBDIR += xbmbrowser
