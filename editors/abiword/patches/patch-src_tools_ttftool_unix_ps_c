@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tools_ttftool_unix_ps_c,v 1.1 2003/02/03 15:13:11 couderc Exp $
+--- src/tools/ttftool/unix/ps.c.orig	Fri Jan 24 18:57:28 2003
++++ src/tools/ttftool/unix/ps.c	Fri Jan 24 18:58:45 2003
+@@ -119,7 +119,7 @@ void
+ printPSTrailer(FILE *psfontfile)
+ {
+   int i,n;
+-  char *name;
++  unsigned char *name;
+ 
+   fprintf(psfontfile,"/CharStrings %d dict dup begin\n",nglyphs);
+   switch(post_format) {
