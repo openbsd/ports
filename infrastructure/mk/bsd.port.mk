@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.479 2001/10/24 11:49:45 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.480 2001/10/24 11:53:54 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -232,6 +232,9 @@ FAKE?=Yes
 TRUST_PACKAGES?=No
 BIN_PACKAGES?=No
 WRKINST?=${WRKDIR}/fake-${ARCH}${FLAVOR_EXT}
+_LIBLIST=${WRKDIR}/.liblist-${ARCH}${FLAVOR_EXT}
+_BUILDLIBLIST=${WRKDIR}/.buildliblist-${ARCH}${FLAVOR_EXT}
+
 
 # Get the architecture
 ARCH!=	uname -m
@@ -1324,6 +1327,27 @@ _DEP${_DEP}_COOKIES+=${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}
 .  endif
 ${_DEP}-depends: ${_DEP${_DEP}_COOKIES}
 .endfor
+
+# Do a brute-force ldd on all files under WRKINST. 
+${_LIBLIST}: ${_FAKE_COOKIE}
+	@${SUDO} mkdir -p ${WRKINST}/usr/libexec
+	@-${SUDO} cp -f /usr/libexec/ld.so ${WRKINST}/usr/libexec
+	@-${SUDO} cp -f /usr/lib/libc.so.* ${WRKINST}
+	@-${SUDO} cp -f /usr/bin/ldd ${WRKINST}
+	@(cd ${WRKINST} && ${SUDO} find . -type f)|\
+		${SUDO} env LD_LIBRARY_PATH=. xargs chroot ${WRKINST} \
+		./ldd -f '\tlibrary: %o %m %n\n' -f '\tlibrary: %o %m %n\n' 2>/dev/null|\
+		grep '^	'|\
+		sort -u >$@
+
+# list of libraries that can be used: libraries just built, and system libs.
+${_BUILDLIBLIST}: ${_FAKE_COOKIE}
+	@{ \
+		${SUDO} find ${WRKINST} -type f -o -type l; \
+		find /usr/lib -path /usr/lib -o -type d -prune -o -type f -print; \
+		find ${X11BASE}/lib -path ${X11BASE}/lib -o -type d -prune -o -type f -print; \
+	}|\
+		fgrep .so.|${SUDO} xargs file -L|fgrep 'shared library'|cut -d\: -f1|sort -u >$@
 
 
 
