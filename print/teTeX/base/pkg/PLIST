@@ -361,8 +361,6 @@ share/texmf/web2c/texmf.cnf
 @unexec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
 bin/mktexlsr
 @exec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
-@dirrm share/texmf/fontname
-@dirrm share/texmf/dvips/gsftopk
 @dirrm include/kpathsea
 @exec install-info --info-dir=%D/info %D/info/dvips.info
 @exec install-info --info-dir=%D/info %D/info/kpathsea.info

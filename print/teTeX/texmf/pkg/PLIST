@@ -6664,6 +6664,7 @@ share/texmf/fonts/vf/yandy/times/ptmbc8y.vf
 share/texmf/fonts/vf/yandy/times/ptmrc8y.vf
 share/texmf/fonts/vf/yandy/times/tibsc.vf
 share/texmf/fonts/vf/yandy/times/tirsc.vf
+@comment no checksum
 share/texmf/ls-R
 share/texmf/makeindex/gglo.ist
 share/texmf/makeindex/gind.ist
@@ -8802,6 +8803,7 @@ share/texmf/xdvi/XDvi
 @dirrm share/texmf/fonts/source/public/euxm
 @dirrm share/texmf/fonts/source/public/ecc
 @dirrm share/texmf/fonts/source/public/dstroke
+@exec mkdir %D/share/texmf/fonts/source/public/cs
 @dirrm share/texmf/fonts/source/public/cs
 @dirrm share/texmf/fonts/source/public/concrete
 @dirrm share/texmf/fonts/source/public/concmath
