@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/10/03 03:47:14 obecian Exp $
+bin/hydra
