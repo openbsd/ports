@@ -1,25 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2001/01/17 16:32:52 naddy Exp $
---- src/Makefile.in.orig	Thu Apr 13 15:37:51 2000
-+++ src/Makefile.in	Tue Jan 16 12:54:50 2001
-@@ -68,10 +68,10 @@ LIBS = $(X_LIBS) -lX11 -lXext -lXpm
- 
- bin_PROGRAMS = wmpinboard
- 
--wmpinboard_SOURCES = @CONDITIONAL_SOURCES@ 	misc.c misc.h 	notes.c notes.h 	wmpinboard.c wmpinboard.h 	xmisc.c xmisc.h
-+wmpinboard_SOURCES = @CONDITIONAL_SOURCES@ 	getopt.c getopt1.c getopt.h 	misc.c misc.h 	notes.c notes.h 	wmpinboard.c wmpinboard.h 	xmisc.c xmisc.h
- 
- 
--EXTRA_wmpinboard_SOURCES =  	getopt.c getopt1.c getopt.h 	memcmp.c memcmp.h
-+EXTRA_wmpinboard_SOURCES =  	memcmp.c memcmp.h
- 
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h
-@@ -86,7 +86,7 @@ X_CFLAGS = @X_CFLAGS@
- X_LIBS = @X_LIBS@
- X_EXTRA_LIBS = @X_EXTRA_LIBS@
- X_PRE_LIBS = @X_PRE_LIBS@
--wmpinboard_OBJECTS =  misc.o notes.o wmpinboard.o xmisc.o
-+wmpinboard_OBJECTS =  getopt1.o getopt.o misc.o notes.o wmpinboard.o xmisc.o
- wmpinboard_LDADD = $(LDADD)
- wmpinboard_DEPENDENCIES = 
- wmpinboard_LDFLAGS = 
+$OpenBSD: patch-src_Makefile_in,v 1.2 2002/12/25 11:16:27 wilfried Exp $
+--- src/Makefile.in.orig	Wed Dec 25 12:10:46 2002
++++ src/Makefile.in	Wed Dec 25 12:11:23 2002
+@@ -209,7 +209,7 @@ distdir: $(DISTFILES)
+ 	done
+ misc.o: misc.c wmpinboard.h ../config.h
+ notes.o: notes.c wmpinboard.h ../config.h misc.h xmisc.h notes.h
+-wmpinboard.o: wmpinboard.c getopt.h wmpinboard.h ../config.h misc.h \
++wmpinboard.o: wmpinboard.c wmpinboard.h ../config.h misc.h \
+ 	notes.h xmisc.h ../xpm/pinboard.xpm ../xpm/bbar.xpm \
+ 	../xpm/abar.xpm ../xpm/digits.xpm
+ xmisc.o: xmisc.c wmpinboard.h ../config.h misc.h notes.h xmisc.h

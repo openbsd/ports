@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/09/17 14:46:07 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2002/12/25 11:16:27 wilfried Exp $
 
 COMMENT=		'wm-dockapp; resembling a miniature pin board'
 
@@ -21,6 +21,9 @@ SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu
+
+post-patch:
+	@cd ${WRKSRC}/src && rm -f getopt*
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/wmpinboard ${PREFIX}/bin
