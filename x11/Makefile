@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2001/06/27 21:58:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.107 2001/07/01 07:32:11 shell Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -65,6 +65,7 @@
      SUBDIR += olvwm
      SUBDIR += openmotif
 #    SUBDIR += p5-Tcl-Tk
+     SUBDIR += p5-Gtk
      SUBDIR += p5-Tk
      SUBDIR += piewm
 #    SUBDIR += pythonqt
