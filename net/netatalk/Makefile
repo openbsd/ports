@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/23 16:08:13 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/04/18 13:00:26 brad Exp $
+
+COMMENT=	"File and Print Services for AppleTalk Networks"
 
 DISTNAME=       netatalk-990130
 CATEGORIES=	net
-NEED_VERSION=	1.310
-MASTER_SITES=   ftp://terminator.rs.itd.umich.edu/unix/netatalk/ \
+NEED_VERSION=	1.384
+MASTER_SITES=	ftp://terminator.rs.itd.umich.edu/unix/netatalk/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/terminator.rs.itd.umich.edu/unix/netatalk/
 
 HOMEPAGE=	http://www.umich.edu/~rsug/netatalk/
@@ -15,8 +17,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FLAGS=	CC="${CC}" OPTOPTS="${CFLAGS} -Wall"
-FAKE_FLAGS=	${MAKE_FLAGS} PREFIX="${PREFIX}" DESTDIR="${WRKINST}"
+MAKE_FLAGS=	CC="${CC}" OPTOPTS="${CFLAGS} -Wall" \
+		PREFIX="${PREFIX}" SYSCONFDIR="${SYSCONFDIR}"
+FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR="${WRKINST}"
+
+SYSCONFDIR=	/etc/netatalk
 
 # NOTES:
 # Will compile with kerberos support in apfd and papd.

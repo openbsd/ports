@@ -1,10 +1,7 @@
 --- Makefile.orig	Wed Dec 17 12:25:39 1997
-+++ Makefile	Wed Aug  9 10:43:40 2000
-@@ -1,22 +1,22 @@
- # Root of installation. Subdirectories will be ${DESTDIR}/etc,
- # ${DESTDIR}/bin, and ${DESTDIR}/lib.
--DESTDIR=/usr/local/atalk
-+DESTDIR= 
++++ Makefile	Sat Apr 14 20:26:14 2001
+@@ -3,20 +3,20 @@
+ DESTDIR=/usr/local/atalk
  
  # for system-level binaries
 -SBINDIR=$(DESTDIR)/etc
@@ -20,7 +17,7 @@
 +RESDIR=${PREFIX}/share/netatalk
  # for configuration files (AppleVolumes.system, etc.)
 -ETCDIR=$(DESTDIR)/etc
-+ETCDIR=/etc/netatalk
++ETCDIR=${SYSCONFDIR}
  # for include files
 -INCDIR=$(DESTDIR)/include
 +INCDIR=${PREFIX}/include
@@ -42,11 +39,3 @@
  
  ##########################################################################
  
-@@ -55,6 +55,7 @@
- 	esac; \
- 	echo "Making $@ for $$ARCH..."; \
- 	cd sys/$$ARCH && ${MAKE} ${MFLAGS} \
-+	    CC="${CC}" OPTOPTS="${OPTOPTS}" \
- 	    SBINDIR="${SBINDIR}" BINDIR="${BINDIR}" RESDIR="${RESDIR}"\
- 	    ETCDIR="${ETCDIR}" LIBDIR="${LIBDIR}" INCDIR="${INCDIR}" \
- 	    DESTDIR="${DESTDIR}" MANDIR="${MANDIR}" \
