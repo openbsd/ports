@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2001/10/04 21:53:04 avsm Exp $
+# $OpenBSD: Makefile,v 1.54 2001/10/13 23:22:29 avsm Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -121,7 +121,7 @@ CONFIGURE_ARGS+=	--without-recode
 
 .if ${FLAVOR:L:Msnmp}
 CONFIGURE_ARGS+=	--with-snmp=${LOCALBASE} --enable-ucd-snmp-hack
-LIB_DEPENDS+=		snmp.4::net/ucd-snmp
+LIB_DEPENDS+=		snmp.42::net/ucd-snmp
 .else
 CONFIGURE_ARGS+=	--without-snmp
 .endif
