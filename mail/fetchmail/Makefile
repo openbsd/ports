@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2001/12/17 21:45:49 fgsch Exp $
+# $OpenBSD: Makefile,v 1.79 2002/01/06 18:33:17 espie Exp $
 
 COMMENT=	"mail retrieval utility for POP2, POP3, KPOP, IMAP and more"
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
+AUTOCONF_NEW=	Yes
 CONFIGURE_ARGS=	--disable-nls --enable-inet6 --with-ssl \
 		--with-kerberos --with-kerberos5
 
