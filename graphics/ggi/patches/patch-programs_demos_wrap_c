@@ -1,6 +1,6 @@
-$OpenBSD: patch-programs_demos_wrap_c,v 1.1 2003/01/18 09:21:09 pvalchev Exp $
---- programs/demos/wrap.c.orig	Sat Jan 18 02:00:17 2003
-+++ programs/demos/wrap.c	Sat Jan 18 02:00:38 2003
+$OpenBSD: patch-programs_demos_wrap_c,v 1.2 2004/01/20 13:50:53 todd Exp $
+--- programs/demos/wrap.c.orig	2004-01-20 06:38:48.000000000 -0600
++++ programs/demos/wrap.c	2004-01-20 06:37:35.000000000 -0600
 @@ -131,7 +131,7 @@ void init_client(client_t *client, ggi_m
  		perror("fork");
  		exit(-1);
