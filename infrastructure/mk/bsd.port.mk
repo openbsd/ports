@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.114 1999/09/02 21:57:32 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.115 1999/09/20 21:42:01 brad Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -880,9 +880,8 @@ MASTER_SITE_KDE+=	\
 
 MASTER_SITE_GNOME+=	\
 	ftp://ftp.cybertrails.com/pub/gnome/%SUBDIR%/ \
-	ftp://ftp.geo.net/pub/gnome/%SUBDIR%/ \
 	ftp://gnomeftp.wgn.net/pub/gnome/%SUBDIR%/ \
-	ftp://server.ph.ucla.edu/pub/mirror/ftp.gnome.org/%SUBDIR% \
+	ftp://server.ph.ucla.edu/pub/mirror/ftp.gnome.org/%SUBDIR%/ \
 	ftp://ftp.net.lut.ac.uk/gnome/%SUBDIR%/ \
 	ftp://ftp.snoopy.net/pub/mirrors/GNOME/%SUBDIR%/ \
 	ftp://ftp.gnome.org/pub/GNOME/%SUBDIR%/
