@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2003/11/09 09:46:26 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.12 2003/11/14 09:40:11 sturm Exp $
 bin/opera
 lib/opera/plugins/libnpp.so
 lib/opera/plugins/operamotifwrapper
@@ -48,6 +48,7 @@ share/opera/help/start.html
 share/opera/help/toc.html
 share/opera/help/toolbars.html
 share/opera/help/windows.html
+share/opera/hhd.ssr
 share/opera/images/background.gif
 share/opera/images/blank.gif
 share/opera/images/drive.gif
@@ -61,6 +62,7 @@ share/opera/images/opera_32x32.png
 share/opera/images/opera_48x48.png
 share/opera/images/operabanner.png
 share/opera/images/shared.gif
+share/opera/images/splash.png
 share/opera/images/startup1.png
 share/opera/images/startup2.png
 share/opera/ini/dialog.ini
@@ -75,7 +77,7 @@ share/opera/java/opera.jar
 share/opera/java/opera.policy
 share/opera/jsconsole.html
 share/opera/lngcode.txt
-share/opera/locale/en/lngcode.txt
+share/opera/locale/en/default.adr
 share/opera/locale/en/search.ini
 share/opera/locale/english.lng
 share/opera/opera6.adr
