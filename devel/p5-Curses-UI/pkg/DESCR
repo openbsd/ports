@@ -1,0 +1,3 @@
+Curses::UI can be used for the development of curses based user
+interfaces.  It provides a range of common interface elements such
+as dialogs, menus, text viewers, and windows.
