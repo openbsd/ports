@@ -1,0 +1,42 @@
+$OpenBSD: patch-wminfo_wminfo_c,v 1.1.1.1 2001/02/01 16:14:22 wilfried Exp $
+--- wminfo/wminfo.c.orig	Mon Jul 31 14:39:20 2000
++++ wminfo/wminfo.c	Thu Feb  1 16:41:17 2001
+@@ -140,11 +140,13 @@ int main(int argc, char **argv)
+ 
+ 	for (i = 0; i < MAXNOF_LINES; i++) { k[i] = 5; j[i] = 0; scroll[i] = 0; }
+ 	
+-	strcpy(plugin_exec,"sh ");
+-	strcat(plugin_exec,plugin);
+-	strcat(plugin_exec," > wmiout.tmp");
+-	strcpy(plugin_out,getenv("PWD"));
+-	strcat(plugin_out,"/wmiout.tmp");
++	strlcpy(plugin_exec,"sh ",sizeof(plugin_exec));
++	strlcat(plugin_exec,plugin,sizeof(plugin_exec));
++	strlcat(plugin_exec," > ",sizeof(plugin_exec));
++	strlcat(plugin_exec,getenv("HOME"),sizeof(plugin_exec));
++	strlcat(plugin_exec,"/.wminfo",sizeof(plugin_exec));
++	strlcpy(plugin_out,getenv("HOME"),sizeof(plugin_out));
++	strlcat(plugin_out,"/.wminfo",sizeof(plugin_out));
+ 	
+ 	createXBMfromXPM(wminfo_mask_bits, wminfo_xpm, wminfo_mask_width, wminfo_mask_height);
+ 	openXwindow(argc, argv, wminfo_xpm, wminfo_mask_bits, wminfo_mask_width, wminfo_mask_height);
+@@ -261,6 +263,7 @@ int main(int argc, char **argv)
+ void print_help() {
+ 	printf("\nwmInfo %s (C) 2000 Robert Kling (%s)\n\n",WMINFO_VERSION,WMINFO_REVDATE);
+ 	printf("  Usage: wminfo -p <plugin> [-suoknh]\n\n");
++	printf("  -p plugin   : shellscript that writes to stdout.\n");
+ 	printf("  -s x        : text scroll-speed (default 1).\n");
+ 	printf("  -r x        : text \"rewind\"-speed (default 2).\n");
+ 	printf("  -u x        : run the plugin every x seconds (default 180).\n");
+@@ -425,10 +428,9 @@ void getlines(char *plug)
+ 		
+ 		if (strlen(temp) > longestline) longestline = strlen(temp);
+ 		
+-		strcpy(lines[k],"");
+ 		strcpy(lines[k],temp);
+ 		if (i > 1) k++;
+-		strcpy(temp,"");
++		temp[0]='\0';
+ 		i = 0;
+ 	}
+ 	noflines = k;

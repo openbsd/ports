@@ -1,0 +1,25 @@
+This WindowMaker Dockapp is designed to be very general
+purposed.  It is capable to display any kind of information
+as long as it's in text-format.  It uses plugins (or modules
+if you like) to retrieve the information, any script or
+program that sends its output to stdout can be used.  wminfo
+simply captures this information and displays it row by row.
+You can scroll the information both vertically and horizont-
+ally so even though the window only fits 5 rows at a time
+you can scroll down (by clicking with the mouse in the lower
+left corner) and reveal more rows.  Vertically you can scroll
+a specific row by clicking it or scroll all rows by clicking
+the upper right corner.  
+
+Possible uses for this application is system logging, whats-
+on-tv-ticker, news headline ticker, weather info, freshmeat
+announcements, stock ticker, you name it! If the plugin
+fetches information by http or ftp it is obviously best if
+it uses common utilities like lynx or wget for the retrieval.
+There are switches in the app that (by default) discards html-
+tags and multiple consequtive blanks so that the parsing won't
+be such a pain in the *ss :).  Another useful option is to
+have wminfo monitor changes in the information and start
+scrolling the rows that changed.
+
+WWW: ${HOMEPAGE}
