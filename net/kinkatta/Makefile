@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/11/27 05:12:26 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/01/20 09:50:39 mark Exp $
 
 COMMENT=	"QT/KDE based AOL Instant Messenter (AiM) client"
 
+# version 1.01 has problems building because of changes to Makefile.in
 VERSION=	1.00
 DISTNAME=	kinkatta-${VERSION}
 CATEGORIES=	net
