@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/24 02:28:36 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/16 07:38:59 jolan Exp $
 #
 
      SUBDIR += libdv
+     SUBDIR += libdvdnav
      SUBDIR += libquicktime
      SUBDIR += lsdvd
      SUBDIR += mjpegtools
