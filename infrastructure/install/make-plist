@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.17 2002/04/15 06:38:23 espie Exp $
+# $OpenBSD: make-plist,v 1.18 2002/04/20 19:07:25 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -61,7 +61,7 @@ sub annotate
 		} elsif (m/^\@comment\s+no checksum$/) {
 			$nocheck = 1;
 		} elsif (m/^\@option no-default-conflict/||m/^\@pkgcfl/) {
-			$keep="$keep$_\n";
+			$keep.="$_\n";
 		} elsif (m/^\@exec\s+/ || m/^\@unexec\s+/) {
 			$_=$';
 			# we don't warn for stuff we probably added...
@@ -76,7 +76,7 @@ sub annotate
 		} elsif (m/^\!?\%\%(.*)\%\%/) {
 			my $frag = $1;
 			if ($frag ne "SHARED") {
-				$keep="$keep$_\n";
+				$keep.="$_\n";
 				$manual = 1;
 			}
 		} elsif (m/\$\{.*\}/) {
@@ -89,61 +89,6 @@ sub annotate
 		}
 	}
 }
-
-my ($plist, $pshared);
-my @backsubst;
-
-my (%newdir, %occupied, %ldconfig, %has_stuff, %infodir, @files, @libfiles);
-die "Update bsd.port.mk" if @ARGV == 0;
-my $plistdir = shift;
-die "Update bsd.port.mk" if -f $plistdir;
-die "Update bsd.port.mk" 
-    unless defined $ENV{'DEPS'} and defined $ENV{'PKGREPOSITORY'};
-$plist = File::Spec->catfile($plistdir, 'PLIST');
-$pshared = File::Spec->catfile($plistdir, 'PFRAG.shared');
-if (-e "$plist.orig" or -e "$pshared.orig") {
-	die "You must clean up old files first";
-}
-
-my $destdir = $ENV{DESTDIR};
-
-my $mtree = parse_mtree($destdir);
-
-# and directories for dependencies as well
-my $tmpdir = tempdir( CLEANUP => 1);
-chdir($tmpdir);
-for my $pkg (split(/\s+/, $ENV{'DEPS'})) {
-	augment_mtree($mtree, $destdir, $ENV{'PKGREPOSITORY'}."/$pkg.tgz");
-}
-
-if (-e $plist) {
-    annotate($plist);
-    rename($plist, "$plist.orig") or die "Can't rename $plist to $plist.orig";
-}
-
-if (-e $pshared) {
-    annotate($pshared);
-    rename($pshared, "$pshared.orig") or die "Can't rename $pshared to $pshared.orig";
-}
-
-open(PLIST, '>', $plist) or die "Can't write to $plist";
-select PLIST;
-
-for (@ARGV) {
-	if (m/\=/) {
-		my $back = $`;
-		my $v = $';
-		push(@backsubst, ["\${$back}", $v]) if $v ne '';
-	}
-}
-
-print "\@comment \$OpenBSD\$\n$keep";
-
-# compare all files against those dates
-my @date = (stat $ENV{INSTALL_PRE_COOKIE})[9, 10];
-
-# prefix to remove from everything
-my $base = $ENV{PREFIX};
 
 # read an mtree file, and produce the corresponding directory hierarchy
 sub parse_mtree 
@@ -172,6 +117,10 @@ sub parse_mtree
 	close FILE;
 	return \%mtree;
 }
+
+# prefix to remove from everything
+my $base = $ENV{PREFIX};
+my @backsubst;
 
 sub strip 
 {
@@ -235,6 +184,85 @@ sub augment_mtree
 	unlink('+CONTENTS');
 }
 
+sub handle_file
+{
+    my $fname = strip(shift);
+    my $string = "$fname\n";
+
+    if (defined $annotated{$fname}) {
+    	my ($mode, $owner, $group, $nocheck) = @{$annotated{$fname}};
+	if ($mode eq 'comment') {
+		print "\@comment $fname\n";
+		return;
+	}
+	if ($mode ne '') {
+		$string="\@mode $mode\n$string\@mode\n";
+	}
+	if ($owner ne '') {
+		$string="\@owner $owner\n$string\@owner\n";
+	}
+	if ($group ne '') {
+		$string="\@group $group\n$string\@group\n";
+	}
+	if ($nocheck ne '') {
+		$string="\@comment no checksum\n$string";
+	}
+    }
+    print $string;
+}
+
+
+my ($plist, $pshared);
+
+my (%newdir, %occupied, %ldconfig, %has_stuff, %infodir, @files, @libfiles);
+die "Update bsd.port.mk" if @ARGV == 0;
+my $plistdir = shift;
+die "Update bsd.port.mk" if -f $plistdir;
+die "Update bsd.port.mk" 
+    unless defined $ENV{'DEPS'} and defined $ENV{'PKGREPOSITORY'};
+$plist = File::Spec->catfile($plistdir, 'PLIST');
+$pshared = File::Spec->catfile($plistdir, 'PFRAG.shared');
+if (-e "$plist.orig" or -e "$pshared.orig") {
+	die "You must clean up old files first";
+}
+
+my $destdir = $ENV{DESTDIR};
+
+my $mtree = parse_mtree($destdir);
+
+# and directories for dependencies as well
+my $tmpdir = tempdir( CLEANUP => 1);
+chdir($tmpdir);
+for my $pkg (split(/\s+/, $ENV{'DEPS'})) {
+	augment_mtree($mtree, $destdir, $ENV{'PKGREPOSITORY'}."/$pkg.tgz");
+}
+
+if (-e $plist) {
+    annotate($plist);
+    rename($plist, "$plist.orig") or die "Can't rename $plist to $plist.orig";
+}
+
+if (-e $pshared) {
+    annotate($pshared);
+    rename($pshared, "$pshared.orig") or die "Can't rename $pshared to $pshared.orig";
+}
+
+open(PLIST, '>', $plist) or die "Can't write to $plist";
+select PLIST;
+
+for (@ARGV) {
+	if (m/\=/) {
+		my $back = $`;
+		my $v = $';
+		push(@backsubst, ["\${$back}", $v]) if $v ne '';
+	}
+}
+
+print "\@comment \$OpenBSD\$\n$keep";
+
+# compare all files against those dates
+my @date = (stat $ENV{INSTALL_PRE_COOKIE})[9, 10];
+
 # recursive traversal: mark specific `info' dirs, `ldconfig' dirs,
 # and potentially modified dirs
 
@@ -279,33 +307,6 @@ for my $d (keys %$mtree) {
 }
 
 add_info('@unexec install-info --delete', \%infodir);
-
-sub handle_file
-{
-    my $fname = strip(shift);
-    my $string = "$fname\n";
-
-    if (defined $annotated{$fname}) {
-    	my ($mode, $owner, $group, $nocheck) = @{$annotated{$fname}};
-	if ($mode eq 'comment') {
-		print "\@comment $fname\n";
-		return;
-	}
-	if ($mode ne '') {
-		$string="\@mode $mode\n$string\@mode\n";
-	}
-	if ($owner ne '') {
-		$string="\@owner $owner\n$string\@owner\n";
-	}
-	if ($group ne '') {
-		$string="\@group $group\n$string\@group\n";
-	}
-	if ($nocheck ne '') {
-		$string="\@comment no checksum\n$string";
-	}
-    }
-    print $string;
-}
 
 for my $f (sort @files) {
 	handle_file($f) unless ($f =~ m|/dir$|) && (defined $infodir{$`});
