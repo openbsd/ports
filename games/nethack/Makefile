@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/01/31 22:43:44 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/02/08 11:55:08 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 DISTNAME=	nethack-3.3.0
@@ -29,6 +29,7 @@ FLAVOR?=
 .if ${FLAVOR:L} == "no_x11"
 NETHACKCONFIG=${FILESDIR}/simple-config
 .elif ${FLAVOR:L} == "qt"
+SED_PLIST=sed -e '/^!%%no_x11$$/d'
 NETHACKCONFIG=${FILESDIR}/qt-config
 PORTPATH=${LOCALBASE}/lib/qt2/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin
 LIB_DEPENDS=qt.2.::x11/qt2
