@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/16 19:25:07 espie Exp $
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Entities.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Filter.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/HeadParser.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/LinkExtor.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Parser.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/PullParser.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/TokeParser.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/HTML/Parser/Parser.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/HTML/Parser/Parser.so
+@comment $OpenBSD: PLIST,v 1.6 2002/05/16 04:03:31 avsm Exp $
+${P5ARCH}/HTML/Entities.pm
+${P5ARCH}/HTML/Filter.pm
+${P5ARCH}/HTML/HeadParser.pm
+${P5ARCH}/HTML/LinkExtor.pm
+${P5ARCH}/HTML/Parser.pm
+${P5ARCH}/HTML/PullParser.pm
+${P5ARCH}/HTML/TokeParser.pm
+${P5ARCH}/auto/HTML/Parser/Parser.bs
+${P5ARCH}/auto/HTML/Parser/Parser.so
 man/man3p/HTML::Entities.3p
 man/man3p/HTML::Filter.3p
 man/man3p/HTML::HeadParser.3p
@@ -15,4 +15,4 @@ man/man3p/HTML::LinkExtor.3p
 man/man3p/HTML::Parser.3p
 man/man3p/HTML::PullParser.3p
 man/man3p/HTML::TokeParser.3p
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/HTML/Parser
+@dirrm ${P5ARCH}/auto/HTML/Parser
