@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/04/17 13:35:31 aaron Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/17 16:05:32 aaron Exp $
 
 COMMENT=	chat program that combines AIM, ICQ, and Yahoo! Chat
 
@@ -21,8 +21,7 @@ LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		glib.1.2::devel/glib \
 		esd::audio/esound
 
-BUILD_DEPENDS=	autoconf::devel/autoconf \
-		libtool::devel/libtool
+USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu
 
