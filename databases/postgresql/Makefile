@@ -1,22 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2000/07/01 18:10:37 form Exp $
+# $OpenBSD: Makefile,v 1.35 2000/08/25 15:34:13 brad Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
-DISTNAME=	postgresql-${VERS}
-DIST_SUBDIR=	postgresql
+VERSION=	7.0.2
+DISTNAME=	postgresql-${VERSION}
 CATEGORIES=	databases
-NEED_VERSION=	1.310
-
-HOMEPAGE=	http://www.postgresql.org
-
-MAINTAINER=	pvk@openbsd.ru
-
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-
-VERS=		7.0.2
-
+NEED_VERSION=	1.320
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/db/www.postgresql.org/pub/%SUBDIR%/ \
 		ftp://ftp.cwb.fnn.net/pub/Linux/postgresql/%SUBDIR%/ \
@@ -61,54 +49,65 @@ MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
 		ftp://postgresql.nextpath.com/pub/postgresql/%SUBDIR%/ \
 		ftp://www.ndesign.com.ua/pub/psql/%SUBDIR%/ \
 		ftp://postgresql.netafric.ci/%SUBDIR%/
-MASTER_SITE_SUBDIR=	v${VERS}
+MASTER_SITE_SUBDIR= v${VERSION}
+DISTFILES=	postgresql-${VERSION}.base.tar.gz \
+		postgresql-${VERSION}.support.tar.gz \
+		postgresql-${VERSION}.docs.tar.gz
+DIST_SUBDIR=	postgresql
 
-DISTFILES=	postgresql-${VERS}.base${EXTRACT_SUFX} \
-		postgresql-${VERS}.support${EXTRACT_SUFX} \
-		postgresql-${VERS}.docs${EXTRACT_SUFX}
+HOMEPAGE=	http://www.postgresql.org/
 
-FLAVORS=tcl docs
+MAINTAINER=	pvk@openbsd.ru
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+FAKE_FLAGS=	POSTGRESDIR="${WRKINST}${PREFIX}/pgsql"
+
+USE_GMAKE=	yes
+MAKE_FILE=	GNUmakefile
+CONFIGURE_STYLE= simple
+CONFIGURE_ARGS= --prefix="${PREFIX}/pgsql" --enable-locale \
+		--with-template=openbsd --with-libraries="${PREFIX}/lib" \
+		--srcdir="${WRKSRC}"
+CONFIGURE_ENV=	POSTGRESDIR="${PREFIX}/pgsql"
+
+FLAVORS=	tcl
 FLAVOR?=
+
+MULTI_PACKAGES=	-docs
+SUBPACKAGE?=
 
 .if ${FLAVOR:L:Mtcl}
 LIB_DEPENDS=	tcl83::lang/tcl/8.3 tk83::x11/tk/8.3
 TCL_INCDIR=	${LOCALBASE}/include/tcl8.3
 TK_INCDIR=	${LOCALBASE}/include/tk8.3
-MAKE_ENV+=	USE_TCL=true TCL_INCDIR=${TCL_INCDIR} TK_INCDIR=${TK_INCDIR}
-WITH_TCL=	--with-tcl --with-tclconfig="${LOCALBASE}/lib/tcl8.3 ${LOCALBASE}/lib/tk8.3"
+MAKE_ENV=	USE_TCL=true TCL_INCDIR="${TCL_INCDIR}" TK_INCDIR="${TK_INCDIR}"
+CONFIGURE_ARGS+= --with-tcl \
+		--with-tclconfig="${LOCALBASE}/lib/tcl8.3 ${LOCALBASE}/lib/tk8.3" \
+		--with-includes="${PREFIX}/include ${TCL_INCDIR} ${TK_INCDIR}"
+.else
+CONFIGURE_ARGS+= --with-includes="${PREFIX}/include"
 .endif
-
-WRKDIST=	${WRKDIR}/${DISTNAME}/src
-
-USE_GMAKE=	yes
-MAKE_FILE=	GNUmakefile
-HAS_CONFIGURE=	Yes
-CONFIGURE_ENV+=	POSTGRESDIR="${PREFIX}/pgsql"
-CONFIGURE_ARGS= --prefix=${PREFIX}/pgsql --enable-locale \
-		--with-template=openbsd \
-		--with-includes="${PREFIX}/include ${TCL_INCDIR} \
-		${TK_INCDIR}" ${WITH_TCL} --with-libraries=${PREFIX}/lib \
-		--srcdir=${WRKSRC}
 
 DOCDIR=		${WRKSRC}/../doc
 
 DOCS=		${WRKSRC}/../COPYRIGHT ${WRKSRC}/../HISTORY \
 		${WRKSRC}/../INSTALL ${WRKSRC}/../README \
-		${WRKSRC}/../README.OpenBSD ${WRKSRC}/../register.txt
-
-.if ${FLAVOR:L:Mdocs}
-DOCS+=		${DOCDIR}/FAQ ${DOCDIR}/FAQ_DEV ${DOCDIR}/README.Charsets \
+		${WRKSRC}/../README.OpenBSD ${WRKSRC}/../register.txt \
+		${DOCDIR}/FAQ ${DOCDIR}/FAQ_DEV ${DOCDIR}/README.Charsets \
 		${DOCDIR}/README.fsync ${DOCDIR}/README.inet \
 		${DOCDIR}/README.locale ${DOCDIR}/README.mb \
 		${DOCDIR}/README.mb.jp ${DOCDIR}/TODO
-.endif
-
-FAKE_FLAGS=	POSTGRESDIR=${WRKINST}${PREFIX}/pgsql
 
 PGUSER=		pgsql
 PGBIN=		${PREFIX}/pgsql/bin
 PGLIB=		${PREFIX}/pgsql/lib
 PGDATA=		/var/pgsql/data
+
+WRKDIST=	${WRKDIR}/${DISTNAME}/src
 
 .if ${FLAVOR:L:Mtcl}
 post-patch:
@@ -133,15 +132,17 @@ post-build:
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/pgwrap/pgwrap ${PREFIX}/bin
-	@cd ${DOCDIR} && ${MAKE_PROGRAM} POSTGRESDIR=${PREFIX}/pgsql man
+	@cd ${DOCDIR} && ${MAKE_PROGRAM} POSTGRESDIR="${PREFIX}/pgsql" man
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pgsql
 	${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/pgsql
-.if ${FLAVOR:L:Mdocs}
-	@cd ${DOCDIR} && ${MAKE_PROGRAM} PGDOCS=${PREFIX}/share/doc/pgsql all
+	@cd ${DOCDIR} && ${MAKE_PROGRAM} PGDOCS="${PREFIX}/share/doc/pgsql" all
 	${INSTALL_DATA} ${DOCDIR}/*.ps* ${PREFIX}/share/doc/pgsql
-.endif
 
 .include <bsd.port.mk>
+
+.if ${SUBPACKAGE} == "-docs"
+PKGNAME:=postgresql-docs-${VERSION}
+.endif
 
 .if ${FLAVOR:L:Mtcl} && !defined(NO_SHARED_LIBS)
 SED_PLIST+=-e '/%%SHARED-tcl%%/r${PKGDIR}/PFRAG.tcl.shared' -e '//d'
