@@ -1,0 +1,25 @@
+$OpenBSD: patch-Imakefile,v 1.1 2002/04/26 01:44:08 espie Exp $
+--- Imakefile.orig	Sun Apr 21 01:00:06 2002
++++ Imakefile	Sun Apr 21 01:01:44 2002
+@@ -29,17 +29,17 @@ XCOMM       FAX: (608)262-9777         M
+ 
+ #ifdef Use_SelFile
+            SRCS = main.c misc.c callbacks.c actions.c dialogs.c \
+-                  Ghostview.c ps.c getenv.c setenv.c strcasecmp.c \
++                  Ghostview.c ps.c \
+                   SelFile.c Dir.c Path.c Draw.c
+            OBJS = main.o misc.o callbacks.o actions.o dialogs.o \
+-                  Ghostview.o ps.o getenv.o setenv.o strcasecmp.o \
++                  Ghostview.o ps.o \
+                   SelFile.o Dir.o Path.o Draw.o
+  SELFILE_DEFINE = -DSELFILE
+ #else
+            SRCS = main.c misc.c callbacks.c actions.c dialogs.c \
+-                  Ghostview.c ps.c getenv.c setenv.c strcasecmp.c
++                  Ghostview.c ps.c strcasecmp.c
+            OBJS = main.o misc.o callbacks.o actions.o dialogs.o \
+-                  Ghostview.o ps.o getenv.o setenv.o strcasecmp.o
++                  Ghostview.o ps.o strcasecmp.o
+  SELFILE_DEFINE =
+ #endif
+ 

@@ -1,0 +1,102 @@
+$OpenBSD: patch-actions_c,v 1.1 2002/04/26 01:44:08 espie Exp $
+--- actions.c.orig	Thu Oct  1 22:10:08 1992
++++ actions.c	Sun Apr 21 01:21:56 2002
+@@ -27,9 +27,15 @@
+ #include <X11/StringDefs.h>
+ #include <X11/Xaw/Cardinals.h>
+ #include <X11/Xaw/Scrollbar.h>
++#include <stdlib.h>
+ #include "gv.h"
+ #include "ps.h"
+ 
++int OPEN_ACTION = OPEN;
++int SAVE_ACTION = SAVE;
++int PRINT_WHOLE_ACTION = PRINT_WHOLE;
++int PRINT_MARKED_ACTION = PRINT_MARKED;
++
+ /* Popup the copyright window */
+ void
+ gv_copyright(w, event, params, num_params)
+@@ -60,7 +66,7 @@ gv_open(w, event, params, num_params)
+     String *params;
+     Cardinal *num_params;
+ {
+-    popup_dialog(w, (XtPointer)OPEN, NULL);
++    popup_dialog(w, (XtPointer)&OPEN_ACTION, NULL);
+ }
+ 
+ /* Popup the open file dialog box. */
+@@ -84,7 +90,7 @@ gv_save(w, event, params, num_params)
+     Cardinal *num_params;
+ {
+     if (!XtIsSensitive(savebutton)) return;
+-    popup_dialog(w, (XtPointer)SAVE, NULL);
++    popup_dialog(w, (XtPointer)&SAVE_ACTION, NULL);
+ }
+ 
+ /* Popup the print file dialog box. */
+@@ -96,7 +102,7 @@ gv_print_whole(w, event, params, num_par
+     Cardinal *num_params;
+ {
+     if (!XtIsSensitive(printwholebutton)) return;
+-    popup_dialog(w, (XtPointer)PRINT_WHOLE, NULL);
++    popup_dialog(w, (XtPointer)&PRINT_WHOLE_ACTION, NULL);
+ }
+ 
+ /* Popup the print file dialog box. */
+@@ -108,7 +114,7 @@ gv_print_marked(w, event, params, num_pa
+     Cardinal *num_params;
+ {
+     if (!XtIsSensitive(printmarkedbutton)) return;
+-    popup_dialog(w, (XtPointer)PRINT_MARKED, NULL);
++    popup_dialog(w, (XtPointer)&PRINT_MARKED_ACTION, NULL);
+ }
+ 
+ /* Call the prev_page callback */
+@@ -196,7 +202,7 @@ gv_set_magstep(w, event, params, num_par
+ 
+     if (*num_params < 1) return;
+     i = atoi(params[0]);
+-    set_magstep(w, (XtPointer)i, NULL);
++    set_magstep(w, (XtPointer)&i, NULL);
+ }
+ 
+ /* Increment the magstep and
+@@ -212,7 +218,7 @@ gv_increase_magstep(w, event, params, nu
+ 
+     i = app_res.magstep + 1;
+     if (i <= app_res.maximum_magstep)
+-	set_magstep(w, (XtPointer)i, NULL);
++	set_magstep(w, (XtPointer)&i, NULL);
+ }
+ 
+ /* Decrement the magstep and
+@@ -228,7 +234,7 @@ gv_decrease_magstep(w, event, params, nu
+ 
+     i = app_res.magstep - 1;
+     if (i >= app_res.minimum_magstep)
+-	set_magstep(w, (XtPointer)i, NULL);
++	set_magstep(w, (XtPointer)&i, NULL);
+ }
+ 
+ /* Set orientation action routine.  Converts text parameter
+@@ -284,7 +290,7 @@ gv_set_pagemedia(w, event, params, num_p
+     if (doc && doc->nummedia) {
+ 	for (i = 0; i < doc->nummedia; i++) {
+ 	    if (!strcmp(params[0], doc->media[i].name)) {
+-		set_pagemedia(w, (XtPointer)i, NULL);
++		set_pagemedia(w, (XtPointer)&i, NULL);
+ 		break;
+ 	    }
+ 	}
+@@ -293,7 +299,9 @@ gv_set_pagemedia(w, event, params, num_p
+     /* Then check the standard ones */
+     for (i = 0; papersizes[i].name; i++) {
+ 	if (!strcmp(params[0], papersizes[i].name)) {
+-    	    set_pagemedia(w, (XtPointer)(base_papersize+i), NULL);
++	    int n;
++	    n = base_papersize+i;
++    	    set_pagemedia(w, (XtPointer)&n, NULL);
+ 	    break;
+ 	}
+     }

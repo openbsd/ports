@@ -1,0 +1,62 @@
+$OpenBSD: patch-main_c,v 1.1 2002/04/26 01:44:08 espie Exp $
+--- main.c.orig	Sat Jul 24 04:29:12 1993
++++ main.c	Sun Apr 21 01:04:00 2002
+@@ -53,6 +53,11 @@
+ #include "gv.h"
+ #include "ps.h"
+ 
++extern int OPEN_ACTION;
++extern int SAVE_ACTION;
++extern int PRINT_WHOLE_ACTION;
++extern int PRINT_MARKED_ACTION;
++
+ extern char *getenv();
+ 
+ static String version = "Ghostview, version 1.5";
+@@ -623,7 +628,7 @@ char *argv[];
+ 
+     openbutton = XtCreateManagedWidget("open", smeBSBObjectClass,
+ 				       filemenu, NULL, ZERO);
+-    XtAddCallback(openbutton, XtNcallback, popup_dialog, (XtPointer)OPEN);
++    XtAddCallback(openbutton, XtNcallback, popup_dialog, (XtPointer)&OPEN_ACTION);
+ 
+     reopenbutton = XtCreateManagedWidget("reopen", smeBSBObjectClass,
+ 				         filemenu, NULL, ZERO);
+@@ -632,16 +637,16 @@ char *argv[];
+     printwholebutton = XtCreateManagedWidget("printwhole", smeBSBObjectClass,
+ 				             filemenu, NULL, ZERO);
+     XtAddCallback(printwholebutton, XtNcallback, popup_dialog,
+-		  (XtPointer)PRINT_WHOLE);
++		  (XtPointer)&PRINT_WHOLE_ACTION);
+ 
+     printmarkedbutton = XtCreateManagedWidget("printmarked", smeBSBObjectClass,
+ 				              filemenu, NULL, ZERO);
+     XtAddCallback(printmarkedbutton, XtNcallback, popup_dialog,
+-		  (XtPointer)PRINT_MARKED);
++		  (XtPointer)&PRINT_MARKED_ACTION);
+ 
+     savebutton = XtCreateManagedWidget("save", smeBSBObjectClass,
+ 				       filemenu, NULL, ZERO);
+-    XtAddCallback(savebutton, XtNcallback, popup_dialog, (XtPointer)SAVE);
++    XtAddCallback(savebutton, XtNcallback, popup_dialog, (XtPointer)&SAVE_ACTION);
+ 
+     line = XtCreateManagedWidget("line", smeLineObjectClass,
+ 				 filemenu, NULL, ZERO);
+@@ -706,12 +711,16 @@ char *argv[];
+     XtSetArg(args[0], XtNleftMargin, 20);
+     for (i = app_res.minimum_magstep; i <= app_res.maximum_magstep; i++) {
+ 	char buf[16];
++	int *box;
++	
+ 	sprintf(buf, "%d", i);
+ 	magstepentry[i-app_res.minimum_magstep] =
+ 		XtCreateManagedWidget(buf, smeBSBObjectClass,
+ 				      magstepmenu, args, 1);
++	box = XtNew(int);
++	*box = i;
+ 	XtAddCallback(magstepentry[i-app_res.minimum_magstep], XtNcallback,
+-		      set_magstep, (XtPointer)i);
++		      set_magstep, (XtPointer)box);
+     }
+ 
+     XtSetArg(args[0], XtNresize, False);

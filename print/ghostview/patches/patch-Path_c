@@ -1,0 +1,132 @@
+$OpenBSD: patch-Path_c,v 1.1 2002/04/26 01:44:08 espie Exp $
+--- Path.c.orig	Sat Jul 24 04:29:12 1993
++++ Path.c	Fri Apr 26 02:16:03 2002
+@@ -25,6 +25,7 @@
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ #ifdef SEL_FILE_IGNORE_CASE
+ #include <ctype.h>
+@@ -35,6 +36,7 @@
+ #include "SFinternal.h"
+ #include "xstat.h"
+ #include <X11/Xaw/Scrollbar.h>
++#include "gv.h"
+ 
+ #if defined(SVR4) || defined(SYSV) || defined(USG)
+ extern uid_t getuid();
+@@ -82,7 +84,7 @@ SFchdir(path)
+ 	return result;
+ }
+ 
+-static
++static void
+ SFfree(i)
+ 	int	i;
+ {
+@@ -105,7 +107,7 @@ SFfree(i)
+ 	dir->dir = NULL;
+ }
+ 
+-static
++static void
+ SFstrdup(s1, s2)
+ 	char	**s1;
+ 	char	*s2;
+@@ -113,7 +115,7 @@ SFstrdup(s1, s2)
+ 	*s1 = strcpy(XtMalloc((unsigned) (strlen(s2) + 1)), s2);
+ }
+ 
+-static
++static void
+ SFunreadableDir(dir)
+ 	SFDir	*dir;
+ {
+@@ -128,7 +130,7 @@ SFunreadableDir(dir)
+ }
+ 
+ #ifdef SEL_FILE_IGNORE_CASE
+-static
++static int
+ SFstrncmp(p, q, n)
+ 	register char	*p, *q;
+ 	register int	n;
+@@ -172,7 +174,7 @@ SFstrncmp(p, q, n)
+ }
+ #endif /* def SEL_FILE_IGNORE_CASE */
+ 
+-static
++static void
+ SFreplaceText(dir, str)
+ 	SFDir	*dir;
+ 	char	*str;
+@@ -356,7 +358,7 @@ SFfindFile(dir, str)
+ 	return 0;
+ }
+ 
+-static
++static void
+ SFunselect()
+ {
+ 	SFDir	*dir;
+@@ -376,7 +378,7 @@ SFcompareLogins(p, q)
+ 	return strcmp(p->name, q->name);
+ }
+ 
+-static
++static void
+ SFgetHomeDirs()
+ {
+ 	struct passwd	*pw;
+@@ -483,6 +485,7 @@ SFfindHomeDir(begin, end)
+ 	return 0;
+ }
+ 
++void
+ SFupdatePath()
+ {
+ 	static int	alloc;
+@@ -672,6 +675,7 @@ SFupdatePath()
+ 	}
+ }
+ 
++void
+ SFsetText(path)
+ 	char	*path;
+ {
+@@ -690,7 +694,7 @@ SFsetText(path)
+ void
+ SFbuttonPressList(w, n, event)
+ 	Widget			w;
+-	int			n;
++	int			*n;
+ 	XButtonPressedEvent	*event;
+ {
+ 	SFbuttonPressed = 1;
+@@ -698,12 +702,13 @@ SFbuttonPressList(w, n, event)
+ 
+ /* ARGSUSED */
+ void
+-SFbuttonReleaseList(w, n, event)
++SFbuttonReleaseList(w, k, event)
+ 	Widget			w;
+-	int			n;
++	int			*k;
+ 	XButtonReleasedEvent	*event;
+ {
+ 	SFDir	*dir;
++	int n = *k;
+ 
+ 	SFbuttonPressed = 0;
+ 
+@@ -717,7 +722,7 @@ SFbuttonReleaseList(w, n, event)
+ 			dir,
+ 			dir->entries[dir->vOrigin + SFcurrentInvert[n]].shown
+ 		);
+-		SFmotionList(w, n, event);
++		SFmotionList(w, k, event);
+ 	}
+ }
+ 

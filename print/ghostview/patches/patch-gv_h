@@ -1,0 +1,176 @@
+$OpenBSD: patch-gv_h,v 1.1 2002/04/26 01:44:08 espie Exp $
+--- gv.h.orig	Sat Jul 24 04:29:12 1993
++++ gv.h	Fri Apr 26 02:30:41 2002
+@@ -166,81 +166,100 @@ extern Widget dialogpopup;
+ extern Widget     dialog;
+ 
+ /* Dialogs */
+-extern Widget CreateDialog();
+-extern String GetDialogPrompt();
+-extern void SetDialogPrompt();
+-extern String GetDialogResponse();
+-extern void SetDialogResponse();
+-extern void ClearDialogResponse();
++extern Widget CreateDialog(Widget, String, XtCallbackProc, XtCallbackProc);
++extern String GetDialogPrompt(Widget);
++extern void SetDialogPrompt(Widget, String);
++extern String GetDialogResponse(Widget);
++extern void SetDialogResponse(Widget, String);
++extern void ClearDialogResponse(Widget);
+ 
+ /* Callbacks */
+-extern void quit_ghostview();
+-extern void popup();
+-extern void popup_dialog();
+-extern void reopen_file();
+-extern void prev_page();
+-extern void this_page();
+-extern void next_page();
+-extern void center_page();
+-extern void mark_page();
+-extern void unmark_page();
+-extern void set_magstep();
+-extern void set_orientation();
+-extern void swap_landscape();
+-extern void set_pagemedia();
+-extern void track_and_zoom();
+-extern void message();
+-extern void output();
+-extern void okay();
+-extern void dismiss();
+-extern void destroy();
+-extern void destroy_ghost();
++extern void quit_ghostview(Widget, XtPointer, XtPointer);
++extern void popup(Widget, XtPointer, XtPointer);
++extern void popup_dialog(Widget, XtPointer, XtPointer);
++extern void reopen_file(Widget, XtPointer, XtPointer);
++extern void prev_page(Widget, XtPointer, XtPointer);
++extern void this_page(Widget, XtPointer, XtPointer);
++extern void next_page(Widget, XtPointer, XtPointer);
++extern void center_page(Widget, XtPointer, XtPointer);
++extern void mark_page(Widget, XtPointer, XtPointer);
++extern void unmark_page(Widget, XtPointer, XtPointer);
++extern void set_magstep(Widget, XtPointer, XtPointer);
++extern void set_orientation(Widget, XtPointer, XtPointer);
++extern void swap_landscape(Widget, XtPointer, XtPointer);
++extern void set_pagemedia(Widget, XtPointer, XtPointer);
++extern void track_and_zoom(Widget, XtPointer, XtPointer);
++extern void message(Widget, XtPointer, XtPointer);
++extern void output(Widget, XtPointer, XtPointer);
++extern void okay(Widget, XtPointer, XtPointer);
++extern void dismiss(Widget, XtPointer, XtPointer);
++extern void destroy(Widget, XtPointer, XtPointer);
++extern void destroy_ghost(Widget, XtPointer, XtPointer);
+ 
+ /* Actions */
+-extern void gv_copyright();
+-extern void gv_quit();
+-extern void gv_open();
+-extern void gv_reopen();
+-extern void gv_save();
+-extern void gv_print_whole();
+-extern void gv_print_marked();
+-extern void gv_prev();
+-extern void gv_show();
+-extern void gv_next();
+-extern void gv_center();
+-extern void gv_mark();
+-extern void gv_unmark();
+-extern void gv_set_magstep();
+-extern void gv_increase_magstep();
+-extern void gv_decrease_magstep();
+-extern void gv_set_orientation();
+-extern void gv_swap_landscape();
+-extern void gv_set_pagemedia();
+-extern void gv_default();
+-extern void gv_force();
+-extern void gv_delete_window();
+-extern void gv_delete_zoom();
+-extern void gv_dismiss();
+-extern void gv_scroll_up();
+-extern void gv_scroll_down();
+-extern void gv_scroll_left();
+-extern void gv_scroll_right();
+-extern void gv_erase_locator();
+-extern void gv_check_file();
++extern void gv_copyright(Widget, XEvent *, String *, Cardinal *);
++extern void gv_quit(Widget, XEvent *, String *, Cardinal *);
++extern void gv_open(Widget, XEvent *, String *, Cardinal *);
++extern void gv_reopen(Widget, XEvent *, String *, Cardinal *);
++extern void gv_save(Widget, XEvent *, String *, Cardinal *);
++extern void gv_print_whole(Widget, XEvent *, String *, Cardinal *);
++extern void gv_print_marked(Widget, XEvent *, String *, Cardinal *);
++extern void gv_prev(Widget, XEvent *, String *, Cardinal *);
++extern void gv_show(Widget, XEvent *, String *, Cardinal *);
++extern void gv_next(Widget, XEvent *, String *, Cardinal *);
++extern void gv_center(Widget, XEvent *, String *, Cardinal *);
++extern void gv_mark(Widget, XEvent *, String *, Cardinal *);
++extern void gv_unmark(Widget, XEvent *, String *, Cardinal *);
++extern void gv_set_magstep(Widget, XEvent *, String *, Cardinal *);
++extern void gv_increase_magstep(Widget, XEvent *, String *, Cardinal *);
++extern void gv_decrease_magstep(Widget, XEvent *, String *, Cardinal *);
++extern void gv_set_orientation(Widget, XEvent *, String *, Cardinal *);
++extern void gv_swap_landscape(Widget, XEvent *, String *, Cardinal *);
++extern void gv_set_pagemedia(Widget, XEvent *, String *, Cardinal *);
++extern void gv_default(Widget, XEvent *, String *, Cardinal *);
++extern void gv_force(Widget, XEvent *, String *, Cardinal *);
++extern void gv_delete_window(Widget, XEvent *, String *, Cardinal *);
++extern void gv_delete_zoom(Widget, XEvent *, String *, Cardinal *);
++extern void gv_dismiss(Widget, XEvent *, String *, Cardinal *);
++extern void gv_scroll_up(Widget, XEvent *, String *, Cardinal *);
++extern void gv_scroll_down(Widget, XEvent *, String *, Cardinal *);
++extern void gv_scroll_left(Widget, XEvent *, String *, Cardinal *);
++extern void gv_scroll_right(Widget, XEvent *, String *, Cardinal *);
++extern void gv_erase_locator(Widget, XEvent *, String *, Cardinal *);
++extern void gv_check_file(Widget, XEvent *, String *, Cardinal *);
+ 
+ /* Misc */
+-extern void show_page();
+-extern Boolean setup_ghostview();
+-extern void layout_ghostview();
+-extern void magnify();
+-extern String open_file();
+-extern String save_file();
+-extern String print_file();
+-extern void pscopydoc();
+-extern void positionpopup();
+-extern Boolean set_new_magstep();
+-extern Boolean set_new_orientation();
+-extern Boolean set_new_pagemedia();
+-extern void build_pagemedia_menu();
+-extern Widget build_label_menu();
+-extern void new_file();
++extern void show_page(int);
++extern Boolean setup_ghostview(void);
++extern void layout_ghostview(void);
++extern void magnify(float *, int);
++extern String open_file(String);
++extern String save_file(String);
++extern String print_file(String, Boolean);
++extern void pscopydoc(FILE *);
++extern void positionpopup(Widget);
++extern Boolean set_new_magstep(void);
++extern Boolean set_new_orientation(int);
++extern Boolean set_new_pagemedia(int);
++extern void build_pagemedia_menu(void);
++extern Widget build_label_menu(Widget, String, String, Pixmap);
++extern void new_file(int);
++extern int find_page(String);
++extern int catch_Xerror(Display *, XErrorEvent *);
++
++/* Path */
++extern int SFchdir(char *);
++extern void SFupdatePath(void);
++extern void SFsetText(char *);
++extern int SFchdir(char *);
++
++/* Draw */
++extern void SFdrawList(int, int);
++extern void SFinitFont(void);
++extern void SFcreateGC(void);
++extern void SFdrawLists(int);
++extern void SFclearList(int, int);
++
++/* SelFile */
++extern void SFtextChanged(void);
++

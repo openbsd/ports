@@ -1,0 +1,298 @@
+$OpenBSD: patch-Draw_c,v 1.1 2002/04/26 01:44:08 espie Exp $
+--- Draw.c.orig	Sat Jul 24 04:29:12 1993
++++ Draw.c	Fri Apr 26 03:39:01 2002
+@@ -30,6 +30,7 @@
+ #include <X11/StringDefs.h>
+ #include <X11/Xaw/Scrollbar.h>
+ #include <X11/Xaw/Cardinals.h>
++#include "gv.h"
+ 
+ #define SF_DEFAULT_FONT "9x15"
+ 
+@@ -59,6 +60,8 @@ static int SFcurrentListY;
+ 
+ static XtIntervalId SFscrollTimerId;
+ 
++
++void
+ SFinitFont()
+ {
+ 	TextData	*data;
+@@ -86,6 +89,7 @@ SFinitFont()
+ 	SFcharHeight = SFcharAscent + SFfont->max_bounds.descent;
+ }
+ 
++void
+ SFcreateGC()
+ {
+ 	XGCValues	gcValues;
+@@ -151,6 +155,7 @@ SFcreateGC()
+ 	);
+ }
+ 
++void
+ SFclearList(n, doScroll)
+ 	int	n;
+ 	int	doScroll;
+@@ -193,7 +198,7 @@ SFclearList(n, doScroll)
+ 	}
+ }
+ 
+-static
++static void
+ SFdeleteEntry(dir, entry)
+ 	SFDir	*dir;
+ 	SFEntry	*entry;
+@@ -244,7 +249,7 @@ SFdeleteEntry(dir, entry)
+ 	);
+ }
+ 
+-static
++static void
+ SFwriteStatChar(name, last, statBuf)
+ 	char		*name;
+ 	int		last;
+@@ -320,7 +325,7 @@ SFstatAndCheck(dir, entry)
+ 	return 0;
+ }
+ 
+-static
++static void
+ SFdrawStrings(w, dir, from, to)
+ 	register Window	w;
+ 	register SFDir	*dir;
+@@ -397,6 +402,7 @@ SFdrawStrings(w, dir, from, to)
+ 	}
+ }
+ 
++void
+ SFdrawList(n, doScroll)
+ 	int	n;
+ 	int	doScroll;
+@@ -422,6 +428,7 @@ SFdrawList(n, doScroll)
+ 	}
+ }
+ 
++void
+ SFdrawLists(doScroll)
+ 	int	doScroll;
+ {
+@@ -432,7 +439,7 @@ SFdrawLists(doScroll)
+ 	}
+ }
+ 
+-static
++static void
+ SFinvertEntry(n)
+ 	register int	n;
+ {
+@@ -486,19 +493,19 @@ SFscrollTimer(p, id)
+ 	int	save;
+ 	int     n;
+ 
+-        n = (int) p;
++        n = * ((int *) p);
+ 
+ 	dir = &(SFdirs[SFdirPtr + n]);
+ 	save = dir->vOrigin;
+ 
+ 	if (SFcurrentListY < SFlowerY) {
+ 		if (dir->vOrigin > 0) {
+-			SFvSliderMovedCallback(selFileVScrolls[n], n,
++			SFvSliderMovedCallback(selFileVScrolls[n], p,
+ 				dir->vOrigin - 1);
+ 		}
+ 	} else if (SFcurrentListY > SFupperY) {
+ 		if (dir->vOrigin < dir->nEntries - SFlistSize) {
+-			SFvSliderMovedCallback(selFileVScrolls[n], n,
++			SFvSliderMovedCallback(selFileVScrolls[n], p,
+ 				dir->vOrigin + 1);
+ 		}
+ 	}
+@@ -516,18 +523,19 @@ SFscrollTimer(p, id)
+ 
+ 	if (SFbuttonPressed) {
+ 		SFscrollTimerId = XtAppAddTimeOut(SFapp,
+-			SFscrollTimerInterval(), SFscrollTimer, (XtPointer) n);
++			SFscrollTimerInterval(), SFscrollTimer, (XtPointer) p);
+ 	}
+ }
+ 
+ static int
+-SFnewInvertEntry(n, event)
+-	register int		n;
++SFnewInvertEntry(k, event)
++	int			*k;
+ 	register XMotionEvent	*event;
+ {
+ 	register int	x, y;
+ 	register int	new;
+ 	static int	SFscrollTimerAdded = 0;
++	int n = *k;
+ 
+ 	x = event->x;
+ 	y = event->y;
+@@ -557,7 +565,7 @@ SFnewInvertEntry(n, event)
+ 				SFscrollTimerAdded = 1;
+ 				SFscrollTimerId = XtAppAddTimeOut(SFapp,
+ 					SFscrollTimerInterval(), SFscrollTimer,
+-					(XtPointer) n);
++					(XtPointer) k);
+ 			}
+ 		}
+ 
+@@ -567,12 +575,13 @@ SFnewInvertEntry(n, event)
+ 
+ /* ARGSUSED */
+ void
+-SFenterList(w, n, event)
++SFenterList(w, k, event)
+ 	Widget				w;
+-	register int			n;
++	int				*k;
+ 	register XEnterWindowEvent	*event;
+ {
+ 	register int	new;
++	int n = *k;
+ 
+ 	/* sanity */
+ 	if (SFcurrentInvert[n] != -1) {
+@@ -580,7 +589,7 @@ SFenterList(w, n, event)
+ 		SFcurrentInvert[n] = -1;
+ 	}
+ 
+-	new = SFnewInvertEntry(n, (XMotionEvent *) event);
++	new = SFnewInvertEntry(k, (XMotionEvent *) event);
+ 	if (new != -1) {
+ 		SFcurrentInvert[n] = new;
+ 		SFinvertEntry(n);
+@@ -589,11 +598,12 @@ SFenterList(w, n, event)
+ 
+ /* ARGSUSED */
+ void
+-SFleaveList(w, n, event)
++SFleaveList(w, k, event)
+ 	Widget		w;
+-	register int	n;
++	int		*k;
+ 	XEvent		*event;
+ {
++	int n = *k;
+ 	if (SFcurrentInvert[n] != -1) {
+ 		SFinvertEntry(n);
+ 		SFcurrentInvert[n] = -1;
+@@ -602,14 +612,15 @@ SFleaveList(w, n, event)
+ 
+ /* ARGSUSED */
+ void
+-SFmotionList(w, n, event)
++SFmotionList(w, k, event)
+ 	Widget			w;
+-	register int		n;
++	int			*k;
+ 	register XMotionEvent	*event;
+ {
+ 	register int	new;
++	int n = *k;
+ 
+-	new = SFnewInvertEntry(n, event);
++	new = SFnewInvertEntry(k, event);
+ 
+ 	if (new != SFcurrentInvert[n]) {
+ 		if (SFcurrentInvert[n] != -1) {
+@@ -626,12 +637,12 @@ SFmotionList(w, n, event)
+ void
+ SFvFloatSliderMovedCallback(w, n, fnew)
+ 	Widget	w;
+-	int	n;
++	int	*n;
+ 	float	*fnew;
+ {
+ 	int	new;
+ 
+-	new = (*fnew) * SFdirs[SFdirPtr + n].nEntries;
++	new = (*fnew) * SFdirs[SFdirPtr + *n].nEntries;
+ 
+ 	SFvSliderMovedCallback(w, n, new);
+ }
+@@ -640,14 +651,14 @@ SFvFloatSliderMovedCallback(w, n, fnew)
+ void
+ SFvSliderMovedCallback(w, n, new)
+ 	Widget	w;
+-	int	n;
++	int	*n;
+ 	int	new;
+ {
+ 	int		old;
+ 	register Window	win;
+ 	SFDir		*dir;
+ 
+-	dir = &(SFdirs[SFdirPtr + n]);
++	dir = &(SFdirs[SFdirPtr + *n]);
+ 
+ 	old = dir->vOrigin;
+ 	dir->vOrigin = new;
+@@ -656,7 +667,7 @@ SFvSliderMovedCallback(w, n, new)
+ 		return;
+ 	}
+ 
+-	win = XtWindow(selFileLists[n]);
++	win = XtWindow(selFileLists[*n]);
+ 
+ 	if (ABS(new - old) < SFlistSize) {
+ 		if (new > old) {
+@@ -726,13 +737,13 @@ SFvSliderMovedCallback(w, n, new)
+ void
+ SFvAreaSelectedCallback(w, n, pnew)
+ 	Widget	w;
+-	int	n;
++	int	*n;
+ 	int	pnew;
+ {
+ 	SFDir	*dir;
+ 	int	new;
+ 
+-	dir = &(SFdirs[SFdirPtr + n]);
++	dir = &(SFdirs[SFdirPtr + *n]);
+ 
+ 	new = dir->vOrigin +
+ 		(((double) pnew) / SFvScrollHeight) * dir->nEntries;
+@@ -765,33 +776,33 @@ SFvAreaSelectedCallback(w, n, pnew)
+ void
+ SFhSliderMovedCallback(w, n, new)
+ 	Widget	w;
+-	int	n;
++	int	*n;
+ 	float	*new;
+ {
+ 	SFDir	*dir;
+ 	int	save;
+ 
+-	dir = &(SFdirs[SFdirPtr + n]);
++	dir = &(SFdirs[SFdirPtr + *n]);
+ 	save = dir->hOrigin;
+ 	dir->hOrigin = (*new) * dir->nChars;
+ 	if (dir->hOrigin == save) {
+ 		return;
+ 	}
+ 
+-	SFdrawList(n, SF_DO_NOT_SCROLL);
++	SFdrawList(*n, SF_DO_NOT_SCROLL);
+ }
+ 
+ /* ARGSUSED */
+ void
+ SFhAreaSelectedCallback(w, n, pnew)
+ 	Widget	w;
+-	int	n;
++	int	*n;
+ 	int	pnew;
+ {
+ 	SFDir	*dir;
+ 	int	new;
+ 
+-	dir = &(SFdirs[SFdirPtr + n]);
++	dir = &(SFdirs[SFdirPtr + *n]);
+ 
+ 	new = dir->hOrigin +
+ 		(((double) pnew) / SFhScrollWidth) * dir->nChars;

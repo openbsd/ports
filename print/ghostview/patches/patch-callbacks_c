@@ -1,0 +1,30 @@
+$OpenBSD: patch-callbacks_c,v 1.1 2002/04/26 01:44:08 espie Exp $
+--- callbacks.c.orig	Sun Apr 21 00:44:47 2002
++++ callbacks.c	Sun Apr 21 00:54:26 2002
+@@ -96,7 +96,7 @@ popup_dialog(w, client_data, call_data)
+     }
+ #endif
+ 
+-    mode = (int) client_data;
++    mode = * ((int *) client_data);
+     switch (mode) {
+     case PRINT_WHOLE:
+     case PRINT_MARKED:
+@@ -317,7 +317,7 @@ set_magstep(w, client_data, call_data)
+     Widget w;
+     XtPointer client_data, call_data;
+ {
+-    app_res.magstep = (int)client_data;
++    app_res.magstep = * ((int *)client_data);
+     if (set_new_magstep()) {
+ 	layout_ghostview();
+ 	show_page(current_page);
+@@ -375,7 +375,7 @@ set_pagemedia(w, client_data, call_data)
+     Widget w;
+     XtPointer client_data, call_data;
+ {
+-    int new_pagemedia = (int) client_data;
++    int new_pagemedia = * ((int *)client_data);
+     if (new_pagemedia >= base_papersize) {
+ 	default_pagemedia = new_pagemedia;
+ 	app_res.force_pagemedia = force_setting;

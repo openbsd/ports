@@ -1,0 +1,121 @@
+$OpenBSD: patch-SelFile_c,v 1.1 2002/04/26 01:44:08 espie Exp $
+--- SelFile.c.orig	Sat Jul 24 04:29:12 1993
++++ SelFile.c	Fri Apr 26 02:40:34 2002
+@@ -46,7 +46,6 @@
+ /* BSD 4.3 errno.h does not declare errno */
+ extern int errno;
+ extern int sys_nerr;
+-extern char *sys_errlist[];
+ 
+ #include <sys/param.h>
+ #include <X11/cursorfont.h>
+@@ -61,6 +60,7 @@ extern char *sys_errlist[];
+ #include <X11/Xaw/Cardinals.h>
+ 
+ #include "SFinternal.h"
++#include "gv.h"
+ 
+ #ifndef MAXPATHLEN
+ #define MAXPATHLEN 1024
+@@ -127,6 +127,11 @@ char SFtextBuffer[MAXPATHLEN];
+ 
+ XtIntervalId SFdirModTimerId;
+ 
++void SFpositionWidget(Widget);
++FILE *SFopenFile(char *, char *, char *, char *);
++FILE *XsraSelFile(Widget, char *, char *, char *, char *, char *, char *,
++    int (*)(), char **);
++
+ int (*SFfunc)();
+ 
+ static char *oneLineTextEditTranslations = "\
+@@ -146,7 +151,7 @@ SFexposeList(w, n, event, cont)
+ 		return;
+ 	}
+ 
+-	SFdrawList(n, SF_DO_NOT_SCROLL);
++	SFdrawList(*((int *)n), SF_DO_NOT_SCROLL);
+ }
+ 
+ /* ARGSUSED */
+@@ -407,7 +412,10 @@ SFcreateWidgets(toplevel, prompt, ok, ca
+ 		compositeWidgetClass, selFileForm, arglist, i);
+ 
+ 	for (n = 0; n < 3; n++) {
++		int *box;
+ 
++		box = XtNew(int);
++		*box = n;
+ 		i = 0;
+ 		XtSetArg(arglist[i], XtNx, vScrollX);			i++;
+ 		XtSetArg(arglist[i], XtNy, vScrollY);			i++;
+@@ -418,9 +426,9 @@ SFcreateWidgets(toplevel, prompt, ok, ca
+ 			scrollbarWidgetClass, selFileLists[n], arglist, i);
+ 
+ 		XtAddCallback(selFileVScrolls[n], XtNjumpProc,
+-			SFvFloatSliderMovedCallback, (XtPointer) n);
++			SFvFloatSliderMovedCallback, (XtPointer) box);
+ 		XtAddCallback(selFileVScrolls[n], XtNscrollProc,
+-			SFvAreaSelectedCallback, (XtPointer) n);
++			SFvAreaSelectedCallback, (XtPointer) box);
+ 
+ 		i = 0;
+ 
+@@ -435,9 +443,9 @@ SFcreateWidgets(toplevel, prompt, ok, ca
+ 			scrollbarWidgetClass, selFileLists[n], arglist, i);
+ 
+ 		XtAddCallback(selFileHScrolls[n], XtNjumpProc,
+-			SFhSliderMovedCallback, (XtPointer) n);
++			SFhSliderMovedCallback, (XtPointer) box);
+ 		XtAddCallback(selFileHScrolls[n], XtNscrollProc,
+-			SFhAreaSelectedCallback, (XtPointer) n);
++			SFhAreaSelectedCallback, (XtPointer) box);
+ 	}
+ 
+ 	i = 0;
+@@ -495,18 +503,22 @@ SFcreateWidgets(toplevel, prompt, ok, ca
+ 	XDefineCursor(SFdisplay, XtWindow(selFileCancel), dotCursor);
+ 
+ 	for (n = 0; n < 3; n++) {
++		int *box;
++		
++		box = XtNew(int);
++		*box = n;
+ 		XtAddEventHandler(selFileLists[n], ExposureMask, True,
+-			SFexposeList, (XtPointer) n);
++			SFexposeList, (XtPointer) box);
+ 		XtAddEventHandler(selFileLists[n], EnterWindowMask, False,
+-			SFenterList, (XtPointer) n);
++			SFenterList, (XtPointer) box);
+ 		XtAddEventHandler(selFileLists[n], LeaveWindowMask, False,
+-			SFleaveList, (XtPointer) n);
++			SFleaveList, (XtPointer) box);
+ 		XtAddEventHandler(selFileLists[n], PointerMotionMask, False,
+-			SFmotionList, (XtPointer) n);
++			SFmotionList, (XtPointer) box);
+ 		XtAddEventHandler(selFileLists[n], ButtonPressMask, False,
+-			SFbuttonPressList, (XtPointer) n);
++			SFbuttonPressList, (XtPointer) box);
+ 		XtAddEventHandler(selFileLists[n], ButtonReleaseMask, False,
+-			SFbuttonReleaseList, (XtPointer) n);
++			SFbuttonReleaseList, (XtPointer) box);
+ 	}
+ 
+ 	XtAddEventHandler(selFileField, KeyPressMask, False,
+@@ -588,6 +600,7 @@ SFopenFile(name, mode, prompt, failed)
+     return fp;
+ }
+ 
++void
+ SFtextChanged()
+ {
+ 
+@@ -617,7 +630,7 @@ SFgetText()
+ 		SFtextBuffer);
+ }
+ 
+-static
++static void
+ SFprepareToReturn()
+ {
+ 	SFstatus = SEL_FILE_NULL;

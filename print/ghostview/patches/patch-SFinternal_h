@@ -1,0 +1,64 @@
+$OpenBSD: patch-SFinternal_h,v 1.1 2002/04/26 01:44:08 espie Exp $
+--- SFinternal.h.orig	Wed Apr 15 16:15:45 1992
++++ SFinternal.h	Fri Apr 26 02:41:41 2002
+@@ -91,20 +91,20 @@ extern XSegment SFsegs[], SFcompletionSe
+ extern XawTextPosition SFtextPos;
+ 
+ extern void
+-	SFenterList(),
+-	SFleaveList(),
+-	SFmotionList(),
+-	SFbuttonPressList(),
+-	SFbuttonReleaseList();
++	SFenterList(Widget, int *, register XEnterWindowEvent *),
++	SFleaveList(Widget, int *, XEvent *),
++	SFmotionList(Widget, int *, XMotionEvent *),
++	SFbuttonPressList(Widget, int *, XButtonPressedEvent *),
++	SFbuttonReleaseList(Widget, int *, XButtonReleasedEvent *);
+ 
+ extern void
+-	SFvSliderMovedCallback(),
+-	SFvFloatSliderMovedCallback(),
+-	SFhSliderMovedCallback(),
+-	SFpathSliderMovedCallback(),
+-	SFvAreaSelectedCallback(),
+-	SFhAreaSelectedCallback(),
+-	SFpathAreaSelectedCallback();
++	SFvSliderMovedCallback(Widget, int *, int),
++	SFvFloatSliderMovedCallback(Widget, int *, float *),
++	SFhSliderMovedCallback(Widget, int *, float *),
++	SFpathSliderMovedCallback(Widget, XtPointer, float *),
++	SFvAreaSelectedCallback(Widget, int *, int),
++	SFhAreaSelectedCallback(Widget, int *, int),
++	SFpathAreaSelectedCallback(Widget, XtPointer, int);
+ 
+ extern int SFupperX, SFlowerY, SFupperY;
+ 
+@@ -124,7 +124,7 @@ extern int SFcurrentInvert[];
+ 
+ extern int SFworkProcAdded;
+ 
+-extern Boolean SFworkProc();
++extern Boolean SFworkProc(void);
+ 
+ extern XtAppContext SFapp;
+ 
+@@ -134,12 +134,15 @@ extern char SFtextBuffer[];
+ 
+ extern int SFbuttonPressed;
+ 
+-extern int SFcompareEntries();
++extern int SFcompareEntries(SFEntry *, SFEntry *);
+ 
+-extern void SFdirModTimer();
++extern void SFdirModTimer(XtPointer, XtIntervalId *);
+ 
+-extern char SFstatChar();
++struct stat;
++extern char SFstatChar(struct stat *);
+ 
+ extern XtIntervalId SFdirModTimerId;
+ 
+ extern int (*SFfunc)();
++
++extern int SFgetDir(SFDir *);

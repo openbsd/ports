@@ -1,0 +1,58 @@
+$OpenBSD: patch-misc_c,v 1.1 2002/04/26 01:44:09 espie Exp $
+--- misc.c.orig	Sat Jul 24 04:29:12 1993
++++ misc.c	Sun Apr 21 01:20:42 2002
+@@ -24,6 +24,7 @@
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #ifndef SEEK_SET
+ #define SEEK_SET 0
+ #endif
+@@ -61,7 +62,6 @@ extern int errno;
+ #include <perror.h>
+ #else
+ extern int sys_nerr;
+-extern char *sys_errlist[];
+ #endif
+ 
+ #include "Ghostview.h"
+@@ -1212,13 +1212,16 @@ build_pagemedia_menu()
+ 
+     if (doc && doc->nummedia) {
+ 	for (i = 0; i < doc->nummedia; i++) {
++	    int *box;
+ 								num_args = 0;
+ 	    XtSetArg(args[num_args], XtNleftMargin, 20);	num_args++;
+ 	    pagemediaentry[i] = XtCreateManagedWidget(doc->media[i].name,
+ 				smeBSBObjectClass, pagemediamenu,
+ 				args, num_args);
++	    box = XtNew(int);
++	    *box = i;
+ 	    XtAddCallback(pagemediaentry[i], XtNcallback,
+-			  set_pagemedia, (XtPointer)i);
++			  set_pagemedia, (XtPointer)box);
+ 	}
+ 
+ 							num_args = 0;
+@@ -1227,6 +1230,8 @@ build_pagemedia_menu()
+     }
+ 
+     for (i = 0; papersizes[i].name; i++) {
++    	int *box;
++
+ 	pagemediaentry[i+base_papersize] = NULL;
+ 	if (i > 0) {
+ 	    /* Skip over same paper size with small imageable area */
+@@ -1241,8 +1246,10 @@ build_pagemedia_menu()
+ 					    papersizes[i].name,
+ 					    smeBSBObjectClass, pagemediamenu,
+ 					    args, num_args);
++	box = XtNew(int);
++	*box = i+base_papersize;
+ 	XtAddCallback(pagemediaentry[i+base_papersize], XtNcallback,
+-		      set_pagemedia, (XtPointer)(i+base_papersize));
++		      set_pagemedia, (XtPointer)box);
+     }
+ }
+ 

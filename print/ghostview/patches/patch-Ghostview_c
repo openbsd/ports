@@ -1,0 +1,112 @@
+$OpenBSD: patch-Ghostview_c,v 1.1 2002/04/26 01:44:08 espie Exp $
+--- Ghostview.c.orig	Sat Jul 24 04:29:12 1993
++++ Ghostview.c	Fri Apr 26 02:49:35 2002
+@@ -30,6 +30,9 @@
+ #include <X11/Xos.h>
+ #include "GhostviewP.h"
+ #include <ctype.h>
++#include <stdlib.h>
++#include <sys/types.h>
++#include <sys/wait.h>
+ 
+ #ifndef XlibSpecificationRelease
+ typedef char *XPointer;
+@@ -74,8 +77,8 @@ extern int errno;
+ #define GV_BUFSIZ 1024
+ #endif /* VMS */
+ 
+-static void ComputeXdpi();
+-static void ComputeYdpi();
++static void ComputeXdpi(Widget, int, XrmValue *);
++static void ComputeYdpi(Widget, int, XrmValue *);
+ 
+ static XtResource resources[] = {
+ #define offset(field) XtOffsetOf(GhostviewRec, ghostview.field)
+@@ -131,27 +134,32 @@ static XtResource resources[] = {
+ #undef offset
+ };
+ 
+-static void Message();
+-static void Notify();
+-static void Input();
+-static void Output();
+-
+-static void ClassInitialize();
+-static void ClassPartInitialize();
+-static void Initialize();
+-static void Realize();
+-static void Destroy();
+-static void Resize();
+-static Boolean SetValues();
+-static XtGeometryResult QueryGeometry();
+-
+-static void Layout();
+-static Boolean ComputeSize();
+-static void ChangeSize();
+-static Boolean Setup();
+-static void StartInterpreter();
+-static void StopInterpreter();
+-static void InterpreterFailed();
++static void Message(Widget, XEvent *, String *, Cardinal *);
++static void Notify(Widget, XEvent *, String *, Cardinal *);
++static void Input(XtPointer, int *, XtInputId *);
++static void Output(XtPointer, int *, XtInputId *);
++
++static void ClassInitialize(void);
++static void ClassPartInitialize(WidgetClass);
++static void Initialize(Widget, Widget, ArgList, Cardinal *);
++static void Realize(Widget, Mask *, XSetWindowAttributes *);
++static void Destroy(Widget);
++static void Resize(Widget);
++static Boolean SetValues(Widget, Widget, Widget);
++static XtGeometryResult QueryGeometry(Widget, XtWidgetGeometry *, XtWidgetGeometry *);
++
++static void Layout(Widget, Boolean, Boolean);
++static Boolean ComputeSize(Widget, Boolean, Boolean, Dimension *, Dimension *);
++static void ChangeSize(Widget, Dimension, Dimension);
++static Boolean Setup(Widget);
++static void StartInterpreter(Widget);
++static void StopInterpreter(Widget);
++static void InterpreterFailed(Widget);
++
++Boolean XmuCvtStringToPageOrientation(Display *, XrmValue *, Cardinal *,
++    XrmValue *, XrmValue *, XtPointer *);
++Boolean XmuCvtStringToPalette(Display *, XrmValue *, Cardinal *, 
++    XrmValue *, XrmValue *, XtPointer *);
+ 
+ static XtActionsRec actions[] =
+ {
+@@ -1043,8 +1051,8 @@ Setup(w)
+     gvw->ghostview.gs_width = gvw->core.width;
+     gvw->ghostview.gs_height = gvw->core.height;
+ 
+-    sprintf(buf, "%d %d %d %d %d %d %g %g %d %d %d %d",
+-	    bpixmap, gvw->ghostview.orientation,
++    sprintf(buf, "%ld %d %d %d %d %d %g %g %d %d %d %d",
++	    (long)bpixmap, gvw->ghostview.orientation,
+ 	    gvw->ghostview.llx, gvw->ghostview.lly,
+ 	    gvw->ghostview.urx, gvw->ghostview.ury,
+ 	    gvw->ghostview.xdpi, gvw->ghostview.ydpi,
+@@ -1055,11 +1063,11 @@ Setup(w)
+ 		   XA_STRING, 8, PropModeReplace,
+ 		   (unsigned char *)buf, strlen(buf));
+ 
+-    sprintf(buf, "%s %d %d",
++    sprintf(buf, "%s %ld %ld",
+ 	    gvw->ghostview.palette == XtPaletteMonochrome ? "Monochrome" :
+ 	    gvw->ghostview.palette == XtPaletteGrayscale  ? "Grayscale" :
+ 	    gvw->ghostview.palette == XtPaletteColor      ? "Color" : "?",
+-	    gvw->ghostview.foreground, gvw->core.background_pixel);
++	    (long)gvw->ghostview.foreground, (long)gvw->core.background_pixel);
+     XChangeProperty(XtDisplay(w), XtWindow(w),
+ 		   XmuInternAtom(XtDisplay(w), gvc->ghostview_class.gv_colors),
+ 		   XA_STRING, 8, PropModeReplace,
+@@ -1168,7 +1176,7 @@ StartInterpreter(w)
+ 	close(std_out[1]);
+ 	dup2(std_err[1], 2);
+ 	close(std_err[1]);
+-	sprintf(buf, "%d", XtWindow(w));
++	sprintf(buf, "%ld", (long int)(XtWindow(w)));
+ 	setenv("GHOSTVIEW", buf, True);
+ 	setenv("DISPLAY", XDisplayString(XtDisplay(w)), True);
+ 	if (gvw->ghostview.filename == NULL) {
