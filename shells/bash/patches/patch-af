@@ -1,0 +1,14 @@
+--- siglist.h.orig	Sun Jan 25 21:02:16 1998
++++ siglist.h	Sun Jan 25 21:03:19 1998
+@@ -29,9 +29,9 @@
+ 
+ #if !defined (Solaris) && !defined (Linux) && !defined (__BSD_4_4__) && \
+ 	!defined (Minix) && !defined (NetBSD) && !defined (FreeBSD) && \
+-	!defined (BSD_OS)
++	!defined (__OpenBSD__) &&!defined (BSD_OS)
+ extern char *sys_siglist[];
+-#endif /* !Solaris && !Linux && !__BSD_4_4__ && !Minix && !NetBSD && !FreeBSD && !BSD_OS */
++#endif /* !Solaris && !Linux && !__BSD_4_4__ && !Minix && !NetBSD && !FreeBSD && !__OpenBSD__ && !BSD_OS */
+ 
+ #if !defined (strsignal) && !defined (Solaris) && !defined (NetBSD)
+ #  define strsignal(sig) (char *)sys_siglist[sig]
