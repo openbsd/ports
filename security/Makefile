@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2005/02/15 09:43:36 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.150 2005/02/20 13:44:24 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -110,6 +110,7 @@
      SUBDIR += portsentry
      SUBDIR += ppgen
      SUBDIR += pwgen
+     SUBDIR += pwsafe
      SUBDIR += py-Rijndael
      SUBDIR += py-cryptkit
      SUBDIR += py-crypto
