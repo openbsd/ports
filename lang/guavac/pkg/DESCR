@@ -2,7 +2,7 @@ Guavac is a free java compiler developed under GNU Public Licence,
 and its package includes guavad, java bitecode decompiler.
 
 Guavac needs gcc-2.7.2 and libg++-2.7.1 or later version installed into
-your FreeBSD system.
+your system.
 
 Preparation for using guavac and guavad (csh):
 	setenv CLASSPATH .:/usr/local/share/guavac/classes.zip
