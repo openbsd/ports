@@ -1,0 +1,20 @@
+$OpenBSD: patch-ncftp_Makefile_in,v 1.1 2001/09/30 19:32:16 naddy Exp $
+--- ncftp/Makefile.in.orig	Tue May  8 13:21:45 2001
++++ ncftp/Makefile.in	Tue May  8 13:22:58 2001
+@@ -13,6 +13,7 @@ CPPFLAGS=@CPPFLAGS@ -I. -I../libncftp -I
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ BINDIR=@bindir@
++SYSCONFDIR=@sysconfdir@
+ 
+ LIBS=@LIBS@
+ STRIP=strip
+@@ -20,7 +21,7 @@ LDFLAGS=-L../libncftp -L../Strn -L../sio
+ 
+ # Any -D definitions:
+ BETA=# -DBETA=20
+-DEFS=-Dncftp $(BETA) -DBINDIR=\"$(BINDIR)\" @DEFS@
++DEFS=-Dncftp $(BETA) -DBINDIR=\"$(BINDIR)\" -DSYSCONFDIR=\"$(SYSCONFDIR)\" @DEFS@
+ 
+ OBJS=cmds.@OBJEXT@ cmdlist.@OBJEXT@ getopt.@OBJEXT@ ls.@OBJEXT@ main.@OBJEXT@ version.@OBJEXT@ shell.@OBJEXT@ util.@OBJEXT@ readln.@OBJEXT@ progress.@OBJEXT@ bookmark.@OBJEXT@ pref.@OBJEXT@ preffw.@OBJEXT@ trace.@OBJEXT@ spool.@OBJEXT@ log.@OBJEXT@ getline.@OBJEXT@
+ 

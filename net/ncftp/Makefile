@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2001/08/07 17:11:58 heko Exp $
+# $OpenBSD: Makefile,v 1.16 2001/09/30 19:32:15 naddy Exp $
 
-COMMENT=	"curses-based ftp program"
+COMMENT=		"ftp replacement with advanced user interface"
 
-DISTNAME=       	ncftp-3.0.3-src
-PKGNAME=		ncftp-3.0.3
+PKGNAME=		${DISTNAME:S/-src//}
+DISTNAME=		ncftp-3.0.3-src
 CATEGORIES=		net
-NEED_VERSION=	1.402
-MASTER_SITES=		ftp://ftp.ncftp.com/ncftp/
+NEED_VERSION=		1.402
 HOMEPAGE=		http://www.ncftp.com/ncftp/
 
 MAINTAINER=		Eric Jackson <shinobi@monkey.org>
@@ -17,8 +16,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=    	intl::devel/gettext
+MASTER_SITES=		ftp://ftp.ncftp.com/ncftp/
+MASTER_SITES0=		ftp://ftp.kame.net/pub/kame/misc/
+
+PATCHFILES=		ncftp-303-v6-20010421.diff.gz:0
+PATCH_DIST_STRIP=	-p1
+
 CONFIGURE_STYLE=	gnu dest
-WRKDIST=		${WRKDIR}/${PKGNAME}
+WRKDIST=		${WRKDIR}/${DISTNAME:S/-src//}
 
 .include <bsd.port.mk>
