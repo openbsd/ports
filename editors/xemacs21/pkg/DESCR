@@ -18,8 +18,6 @@ Flavors:
 	mule 		- MUlti-Lingual Emacs
 	wnn 		- input method (needs mule) [1]
 	canna 		- another input method (needs mule) [1]
-	compface	- support for XFaces (needs X11),
-			  useful only for Gnus users.
 	no_x11		- disable X11 support
 
 [1] XEmacs coredumps if the {canna,wnn} server is killed before it closes
