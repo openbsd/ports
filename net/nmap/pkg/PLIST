@@ -4,4 +4,3 @@ lib/nmap/nmap-os-fingerprints
 lib/nmap/nmap-rpc
 lib/nmap/nmap-services
 @dirrm lib/nmap
-@dirrm share/gnome/apps/Utilities
