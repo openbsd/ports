@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2004/04/02 19:07:04 sturm Exp $
+# $OpenBSD: Makefile,v 1.25 2004/07/06 10:10:54 xsa Exp $
 
 COMMENT=	"technical diagrams drawing tool"
 
 DISTNAME=	dia-0.92.2
 CATEGORIES=	graphics
 
-HOMEPAGE=	http://www.lysator.liu.se/~alla/dia/
+HOMEPAGE=	http://www.gnome.org/projects/dia/
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/dia/0.92/}
 
