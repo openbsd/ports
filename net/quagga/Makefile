@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/12/11 19:00:59 david Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/02 06:50:55 david Exp $
 
 COMMENT=	"multi-threaded routing daemon"
 
@@ -56,6 +56,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zebra
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/zebra
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/zebra
+	${INSTALL_DATA} ${WRKSRC}/SERVICES ${PREFIX}/share/doc/zebra
 	${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/zebra/* ${PREFIX}/share/examples/zebra
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/11 19:00:59 david Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/01/02 06:50:55 david Exp $
 @pkgcfl zebra-*
 @unexec install-info --delete --info-dir=%D/info %D/info/quagga.info
 include/zebra/buffer.h
@@ -58,6 +58,7 @@ sbin/ripd
 sbin/ripngd
 sbin/zebra
 share/doc/zebra/README
+share/doc/zebra/SERVICES
 share/examples/zebra/bgpd.conf.sample
 share/examples/zebra/bgpd.conf.sample2
 share/examples/zebra/ospf6d.conf.sample
