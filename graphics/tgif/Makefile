@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 1999/09/13 22:39:44 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/09/23 21:18:49 jakob Exp $
 
-DISTNAME=	tgif-4.1.18
+DISTNAME=	tgif-4.1.20
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		ftp://ftp.cs.ucla.edu/pub/tgif/
