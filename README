@@ -17,12 +17,12 @@ bsd.port.mk)  should go to ports-admin@openbsd.org
 go to ports@openbsd.org
 
 Considering the size of the ports tree, and even though we strive to
-eradicate all bugs, things may go wrong on invidual ports.  
+eradicate all bugs, things may go wrong on individual ports.  
 In such a case, as a general rule, try to contact the MAINTAINER first.  
 If nothing happens after a reasonable delay, start plaguing him, 
 or go to the next step.
 
-Developpers with a major investment in the ports tree include
+Developers with a major investment in the ports tree include
 brad@cvs.openbsd.org, turan@cvs.openbsd.org, espie@cvs.openbsd.org
 
 Those people can be contacted to put some pressure on a lazy maintainer.
@@ -33,7 +33,7 @@ The ports tree
 The ports tree usually live under /usr/ports. It's a hierarchical
 list of recipes to build various pieces of software.
 We'll call that PORTSDIR in the following discussion.
-Stuff that doesn't constitue a port proper, but rather paraphernalia,
+Stuff that doesn't constitute a port proper, but rather paraphernalia,
 is stored under /usr/ports/infrastructure, INFRA in the following
 discussion.
 
@@ -330,4 +330,4 @@ please visit
 
 	http://www.openbsd.org/porting.html
 
-$OpenBSD: README,v 1.8 1999/10/07 16:44:28 espie Exp $
+$OpenBSD: README,v 1.9 2001/02/21 23:23:13 avsm Exp $
