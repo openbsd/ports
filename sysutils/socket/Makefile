@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/31 19:07:48 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/01 04:34:29 brad Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	socket-1.1
@@ -13,6 +13,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 FAKE=	Yes
+
+MAKE_FLAGS=	CC="${CC}" SWITCHES="-DHAVE_SYS_PARAM_H -Wall" \
+		CFLAGS='$$(SWITCHES) ${CFLAGS}'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/socket ${PREFIX}/bin
