@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/24 23:28:30 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/30 21:09:55 espie Exp $
 
 DISTNAME=	ghostscript-6.01
 CATEGORIES=	print lang
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.241
 
 DIR=		aladdin/gs601
 MASTER_SITES=	${GS_SITES}
@@ -71,9 +71,11 @@ HP850_DRV=	hp8xxs13.zip
 
 # The pdf_sec.ps non-stub version has been moved to a separate package
 
-.if defined(A4) 
+FLAVORS=A4
+
+FLAVOR?=
+.if ${FLAVOR:U} == "A4"
 CFLAGS+=	-DA4
-PKGNAME=${DISTNAME}-A4
 .endif
 
 FAKE=Yes

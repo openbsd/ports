@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/24 23:28:30 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/30 21:09:55 espie Exp $
 # Original from:	Andreas Klemm <andreas@klemm.gtn.com>
 
 DISTNAME=	ghostscript-5.50
 CATEGORIES=	print
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.241
 
 DIR=		gnu/gs550
 
@@ -75,16 +75,12 @@ HP850_DRV=	hp8xxs13.zip
 
 # The pdf_sec.ps non-stub version has been moved to a separate package
 
-.if defined(A4) 
-CFLAGS+=	-DA4
-PKGNAME=${DISTNAME}-A4
-.endif
 
-pre-fetch:
-.if !defined(A4)
-	@${ECHO_MSG} "Type \"make A4=yes\" if you want -DA4 for compilation."
-.else
-	@${ECHO_MSG} "Using -DA4 for compilation."
+FLAVORS=A4
+
+FLAVOR?=
+.if ${FLAVOR:U} == "A4"
+CFLAGS+=	-DA4
 .endif
 
 post-extract:
