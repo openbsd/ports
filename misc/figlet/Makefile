@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/08/26 23:38:15 avsm Exp $
+# $OpenBSD: Makefile,v 1.13 2002/09/07 21:10:41 avsm Exp $
 
 COMMENT=	"generates ASCII banner art"
 
@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.figlet.org/pub/figlet/program/unix/
 MASTER_SITES0=	ftp://ftp.recoil.org/pub/figlet/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		figlet-contributed-24082002${EXTRACT_SUFX}:0
+		figlet-contributed-06092002${EXTRACT_SUFX}:0
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		DEFAULTFONTDIR=${PREFIX}/share/figlet
 
