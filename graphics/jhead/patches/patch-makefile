@@ -1,0 +1,14 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2003/07/17 22:07:06 naddy Exp $
+--- makefile.orig	Thu Jul 17 20:33:53 2003
++++ makefile	Thu Jul 17 20:34:20 2003
+@@ -10,8 +10,8 @@ all: jhead
+ objs = $(OBJ)/jhead.o $(OBJ)/jpgfile.o $(OBJ)/exif.o
+ 
+ $(OBJ)/%.o:$(SRC)/%.c
+-	cc -O3 -Wall -c $< -o $@
++	${CC} -Wall -c $< -o $@
+ 
+ jhead: $(objs) jhead.h
+-	cc -o jhead $(objs) -lm
++	${CC} -o jhead $(objs) -lm
+ 

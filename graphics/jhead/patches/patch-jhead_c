@@ -1,0 +1,96 @@
+$OpenBSD: patch-jhead_c,v 1.1.1.1 2003/07/17 22:07:06 naddy Exp $
+--- jhead.c.orig	Thu Jul 17 20:33:53 2003
++++ jhead.c	Thu Jul 17 20:34:20 2003
+@@ -148,7 +148,7 @@ static int FileEditComment(char * TempFi
+ #endif
+         }
+ 
+-        sprintf(QuotedPath, "%s \"%s\"",Editor, TempFileName);
++        snprintf(QuotedPath, sizeof QuotedPath, "%s \"%s\"",Editor, TempFileName);
+         a = system(QuotedPath);
+     }
+     
+@@ -255,7 +255,7 @@ static int ModifyDescriptComment(char * 
+     if (!HasScandate && !ImageInfo.DateTime[0]){
+         // Scan date is not in the file yet, and it doesn't have one built in.  Add it.
+         char Temp[30];
+-        sprintf(Temp, "scan_date=%s", ctime(&ImageInfo.FileDateTime));
++        snprintf(Temp, sizeof Temp, "scan_date=%s", ctime(&ImageInfo.FileDateTime));
+         strcat(OutComment, Temp);
+         Modified = TRUE;
+     }
+@@ -283,7 +283,9 @@ static int AutoResizeCmdStuff(void)
+ 
+     if (scale > 0.8) return FALSE; // Don't rescale by really small amounts (not worth it!)
+ 
+-    sprintf(CommandString, "mogrify -geometry %dx%d -quality 80 &i",(int)(ImageInfo.Width*scale), (int)(ImageInfo.Height*scale));
++    snprintf(CommandString, sizeof CommandString, 
++	"mogrify -geometry %dx%d -quality 80 &i",
++	(int)(ImageInfo.Width*scale), (int)(ImageInfo.Height*scale));
+     return TRUE;
+ }
+ 
+@@ -314,17 +316,20 @@ static void DoCommand(const char * FileN
+             if (ApplyCommand[a+1] == 'i'){
+                 // Input file.
+                 if (strstr(FileName, " ")){
+-                    e += sprintf(ExecString+e, "\"%s\"",FileName);
++                    e += snprintf(ExecString+e, sizeof ExecString+e, 
++			"\"%s\"",FileName);
+                 }else{
+                     // No need for quoting (that way I can put a relative path in front)
+-                    e += sprintf(ExecString+e, "%s",FileName);
++                    e += snprintf(ExecString+e, sizeof ExecString+e, 
++			"%s",FileName);
+                 }
+                 a += 1;
+                 continue;
+             }
+             if (ApplyCommand[a+1] == 'o'){
+                 // Needs an output file distinct from the input file.
+-                e += sprintf(ExecString+e, "\"%s\"",TempName);
++                e += snprintf(ExecString+e, sizeof ExecString+e, 
++			"\"%s\"",TempName);
+                 a += 1;
+                 TempUsed = TRUE;
+                 unlink(TempName);// Remove any pre-existing temp file
+@@ -476,8 +481,9 @@ void DoFileRenaming(const char * FileNam
+ 
+             }else{
+                 // My favourite scheme.
+-                sprintf(NewBaseName+PrefixPart, "%02d%02d-%02d%02d%02d",
+-                     tm.tm_mon+1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
++                snprintf(NewBaseName+PrefixPart, sizeof NewBaseName+PrefixPart,
++			"%02d%02d-%02d%02d%02d", tm.tm_mon+1, tm.tm_mday,
++			tm.tm_hour, tm.tm_min, tm.tm_sec);
+             }
+ 
+             for (a=0;;a++){
+@@ -501,7 +507,7 @@ void DoFileRenaming(const char * FileNam
+                     NameExtra[0] = 0;
+                 }
+ 
+-                sprintf(NewName, "%s%s.jpg", NewBaseName, NameExtra);
++                snprintf(NewName, sizeof NewName, "%s%s.jpg", NewBaseName, NameExtra);
+ 
+                 if (!strcmp(FileName, NewName)) break; // Skip if its already this name.
+ 
+@@ -592,7 +598,8 @@ void ProcessFile(const char * FileName)
+                 #ifdef _WIN32
+                     sprintf(RotateCommand, "jpegtran -%s &i &o", Argument);
+                 #else
+-                    sprintf(RotateCommand, "jpegtran -%s &i > &o", Argument);
++                    snprintf(RotateCommand, sizeof RotateCommand, 
++			"jpegtran -%s &i > &o", Argument);
+                 #endif
+                 ApplyCommand = RotateCommand;
+                 DoCommand(FileName);
+@@ -810,7 +817,7 @@ void ProcessFile(const char * FileName)
+ 
+             // Print to temp buffer first to avoid putting null termination in destination.
+             // snprintf() would do the trick ,but not available everywhere (like FreeBSD 4.4)
+-            sprintf(TempBuf, "%04d:%02d:%02d %02d:%02d:%02d",
++            snprintf(TempBuf, sizeof TempBuf, "%04d:%02d:%02d %02d:%02d:%02d",
+                 tm.tm_year+1900, tm.tm_mon+1, tm.tm_mday,
+                 tm.tm_hour, tm.tm_min, tm.tm_sec);
+ 
