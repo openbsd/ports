@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/25 03:04:18 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2002/01/30 21:17:26 pvalchev Exp $
 # Original from: John Harper <jsh@users.sourceforge.net>
 
 COMMENT=	"Emacs Lisp-like runtime library"
@@ -27,6 +27,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SUBST_VARS=	OPSYS_VER VERSION
+
+.if ${MACHINE_ARCH:Msparc64}
+CFLAGS+=	-O0
+.endif
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
