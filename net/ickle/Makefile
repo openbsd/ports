@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2002/01/03 09:00:33 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2002/01/06 06:21:34 pvalchev Exp $
 
 COMMENT=	"gtk-based icq 2000 client"
 
-DISTNAME=	ickle-0.2.1
+DISTNAME=	ickle-0.2.2
 CATEGORIES=	net
 NEED_VERSION=	1.504
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
