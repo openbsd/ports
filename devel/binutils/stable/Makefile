@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2004/03/01 00:10:38 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2004/05/20 23:11:58 brad Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -77,6 +77,7 @@ post-extract:
 	@cp -f ${FILESDIR}/${f} ${WRKSRC}/ld/emulparams
 .endfor
 	@cp -f ${FILESDIR}/te-obsd.h ${WRKSRC}/gas/config
+	@cp -f ${FILESDIR}/dis-init.c ${WRKSRC}/opcodes
 
 post-patch:
 	@-cd ${WRKSRC}/bfd && { automake; AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf; }
