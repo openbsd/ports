@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/03/25 06:03:12 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/04/11 05:52:23 turan Exp $
 # $FreeBSD: Makefile,v 1.3 1997/07/17 15:12:58 max Exp $
 
 PKGNAME=	rsaref-2.0
@@ -14,6 +14,12 @@ NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 RESTRICTED=	"Crypto"
 
 MAINTAINER=	niklas@openbsd.org
+
+# rsaref may not leave the US or Canada.
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_FTP=	Yes
 
 FAKE=	Yes
 
