@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/08/15 14:44:53 rohee Exp $
 bin/tab2space
 bin/tidy
 man/man1/tidy.1

@@ -1,28 +1,49 @@
-$OpenBSD: patch-platform_h,v 1.2 2000/05/20 00:31:53 rohee Exp $
-
---- platform.h.orig	Sun Apr 30 11:25:15 2000
-+++ platform.h	Sat May 20 02:04:51 2000
-@@ -17,9 +17,9 @@
+--- platform.h.old	Tue Aug 15 15:59:23 2000
++++ platform.h	Tue Aug 15 16:24:59 2000
+@@ -7,9 +7,8 @@
+ /*
+   Uncomment and edit this #define if you want
+   to specify the config file at compile-time
+-
+-#define CONFIG_FILE "/etc/tidy_config.txt"
+ */
++#define CONFIG_FILE "/etc/tidy_config.txt"
+ 
+ /*
+   Uncomment this if you are on a Unix system supporting
+@@ -17,9 +16,8 @@
    It enables tidy to find config files named ~/.tidyrc
    and ~your/.tidyrc etc if the HTML_TIDY environment
    variable is not set. Contributed by Todd Lewis.
-+*/
- 
- #define SUPPORT_GETPWNAM
--*/
+-
+-#define SUPPORT_GETPWNAM
+ */
++#define SUPPORT_GETPWNAM
  
  #include <ctype.h>
  #include <stdio.h>
-@@ -68,12 +68,6 @@
- /* hack for gnu sys/types.h file  which defines uint and ulong */
+@@ -33,6 +31,7 @@
+ #include <pwd.h>
+ #endif
+ 
++#define NEEDS_UNISTD_H /* unlink defined there on BSD systems */
+ #ifdef NEEDS_UNISTD_H
+ #include <unistd.h>  /* needed for unlink on some Unix systems */
+ #endif
+@@ -65,14 +64,14 @@
  /* you may need to delete the #ifndef and #endif on your system */
  
--#ifndef __USE_MISC
--#ifndef _INCLUDE_HPUX_SOURCE
--typedef unsigned int uint;
--#endif /* _INCLUDE_HPUX_SOURCE */
--typedef unsigned long ulong;
--#endif  /* __USE_MISC */
+ #ifndef __USE_MISC
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #include <sys/types.h>
+ #else
+ #ifndef _INCLUDE_HPUX_SOURCE
+ typedef unsigned int uint;
+ #endif /* _INCLUDE_HPUX_SOURCE */
+-#endif /* __FreeBSD__ */
+ typedef unsigned long ulong;
++#endif /* BSDs */
+ #endif  /* __USE_MISC */
  typedef unsigned char byte;
  
- typedef char *UTF8;
