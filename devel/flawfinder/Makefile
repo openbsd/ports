@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/11/13 22:13:23 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/11/18 19:55:31 jsyn Exp $
 
 COMMENT=		"c/c++ source code auditing tool"
 
 DISTNAME=		flawfinder-0.19
 CATEGORIES=    		devel security
-NEED_VERSION=		1.496
+NEED_VERSION=		1.498
 
 HOMEPAGE=		http://www.dwheeler.com/flawfinder/
 
@@ -25,7 +25,9 @@ NO_BUILD=		Yes
 MAKE_FILE=		makefile
 FAKE_FLAGS=		INSTALL_DIR=${WRKINST}${PREFIX}
 
-DOC_DIR=		${PREFIX}/share/doc/${DISTNAME}
+NO_REGRESS=		Yes
+
+DOC_DIR=		${PREFIX}/share/doc/flawfinder
 DOC_FILES=		ChangeLog README flawfinder.pdf \
 			flawfinder.ps index.html test.c \
 			announcement
