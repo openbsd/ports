@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/09/21 07:24:16 turan Exp $
-
-BROKEN=		"sources unavailible"
+# $OpenBSD: Makefile,v 1.8 1999/09/21 12:57:20 brad Exp $
 
 DISTNAME=	wbd-1.0ucl4
 CATEGORIES=	mbone
