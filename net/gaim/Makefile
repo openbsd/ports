@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2004/02/02 02:10:19 brad Exp $
+# $OpenBSD: Makefile,v 1.56 2004/02/02 02:38:00 brad Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -30,6 +30,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --disable-gnutls \
 		 --disable-nas \
 		 --disable-nss \
+		 --disable-perl \
 		 --disable-tcl \
 		 --disable-tk \
 		 --enable-openssl
