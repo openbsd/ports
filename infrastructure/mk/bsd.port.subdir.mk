@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.60 2003/08/04 15:05:24 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.61 2003/08/08 23:56:13 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -78,15 +78,15 @@ _FULLSUBDIR:=${_FULLSUBDIR:N$i}
 
 
 _subdir_fragment= \
-	: $${echo_msg:=${ECHO_MSG}}; \
+	: $${echo_msg:=${ECHO_MSG:Q}}; \
 	: $${target:=${.TARGET}}; \
 	for i in ${_SKIPPED}; do \
-		$${echo_msg} "===> $$i skipped"; \
+		eval $${echo_msg} "===\> $$i skipped"; \
 	done; \
 	for d in ${_FULLSUBDIR}; do \
 		dir=$$d; \
 		${_flavor_fragment}; \
-		$${echo_msg} "===> $$d"; \
+		eval $${echo_msg} "===\> $$d"; \
 		set +e; \
 		if ! eval  $$toset ${MAKE} $$target; then \
 			${REPORT_PROBLEM}; \
