@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2000/04/09 17:36:28 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/05/31 16:52:22 espie Exp $
 
 DISTNAME=	abuse-2.0
 CATEGORIES=	games x11
 NEED_VERSION=	1.121
-FAKE=No
+FAKE=		Yes
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITES0=	ftp://ftp.NetBSD.ORG/pub/NetBSD/packages/distfiles/
 MASTER_SITE_SUBDIR= abuse
@@ -24,10 +24,11 @@ PERMIT_DISTFILES_FTP=	YES
 BROKEN=		"Does not work on SPARC"
 .endif
 
-USE_X11=	yes
-USE_GMAKE=	yes
+USE_X11=	Yes
+USE_GMAKE=	Yes
 SEPARATE_BUILD=	concurrent
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	Yes
+CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
 
 post-extract:
 	@mv ${WRKDIR}/addon ${WRKDIR}/art ${WRKDIR}/levels ${WRKDIR}/lisp \
