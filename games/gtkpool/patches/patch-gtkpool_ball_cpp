@@ -1,0 +1,21 @@
+$OpenBSD: patch-gtkpool_ball_cpp,v 1.1 2002/09/28 21:01:17 naddy Exp $
+--- gtkpool/ball.cpp.orig	Sat Sep 28 22:38:33 2002
++++ gtkpool/ball.cpp	Sat Sep 28 22:39:42 2002
+@@ -53,7 +53,7 @@ Ball::Ball(void){
+ 	radius = diam = 0;
+ }
+ 
+-Ball::Ball (double x, double y, int d, GdkColor *c, bool isq = false, bool ise = false, bool isn = false, bool isso = false, bool isst = false) : Point2D(x, y), vel(0, 0), bnc(0, 0), tvec(0, 0) {
++Ball::Ball (double x, double y, int d, GdkColor *c, bool isq, bool ise, bool isn, bool isso, bool isst) : Point2D(x, y), vel(0, 0), bnc(0, 0), tvec(0, 0) {
+ 	radius = (diam = d) / 2;
+ 	clr = c;
+ 	is_cue = isq; is_eight = ise;
+@@ -61,7 +61,7 @@ Ball::Ball (double x, double y, int d, G
+ 	ball_num = 15;
+ }
+ 
+-Ball::Ball (double x, double y, int d, int bn, GdkPixmap *pixmap, GdkBitmap *c_bmp, GdkPixmap *b_pixmap, GdkBitmap *b_clip_bmp, bool isq = false, bool ise = false, bool isn = false, bool isso = false, bool isst = false) : Point2D(x, y), vel(0, 0), bnc(0, 0), tvec(0, 0) {
++Ball::Ball (double x, double y, int d, int bn, GdkPixmap *pixmap, GdkBitmap *c_bmp, GdkPixmap *b_pixmap, GdkBitmap *b_clip_bmp, bool isq, bool ise, bool isn, bool isso, bool isst) : Point2D(x, y), vel(0, 0), bnc(0, 0), tvec(0, 0) {
+ 	radius = (diam = d) / 2;
+ 	clr = (GdkColor *)NULL;
+ 	is_cue = isq; is_eight = ise;
