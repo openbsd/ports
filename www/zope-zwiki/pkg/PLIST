@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/21 11:05:10 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/01/24 21:52:03 naddy Exp $
 lib/zope/lib/python/Products/ZWiki/Admin.py
 lib/zope/lib/python/Products/ZWiki/Admin.pyc
 lib/zope/lib/python/Products/ZWiki/CHANGES.txt
@@ -140,10 +140,14 @@ lib/zope/lib/python/Products/ZWiki/tests/testCMFPlone.py
 lib/zope/lib/python/Products/ZWiki/tests/testCMFPlone.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testCatalogAwareness.py
 lib/zope/lib/python/Products/ZWiki/tests/testCatalogAwareness.pyc
+lib/zope/lib/python/Products/ZWiki/tests/testEditing.py
+lib/zope/lib/python/Products/ZWiki/tests/testEditing.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testMail.py
 lib/zope/lib/python/Products/ZWiki/tests/testMail.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testMessages.py
 lib/zope/lib/python/Products/ZWiki/tests/testMessages.pyc
+lib/zope/lib/python/Products/ZWiki/tests/testPageTypes.py
+lib/zope/lib/python/Products/ZWiki/tests/testPageTypes.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testParents.py
 lib/zope/lib/python/Products/ZWiki/tests/testParents.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testPurpleNumbers.py

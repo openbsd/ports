@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2003/12/21 11:05:09 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/01/24 21:52:03 naddy Exp $
 
 COMMENT=	"Wiki engine for Zope"
 
-DISTNAME=	ZWiki-0.25.0
+DISTNAME=	ZWiki-0.26.0
 PKGNAME=	zope-${DISTNAME:L}
 CATEGORIES=	www
 
