@@ -1,0 +1,12 @@
+$OpenBSD: patch-utils_h,v 1.1 2001/03/17 15:14:55 wilfried Exp $
+--- utils.h.orig	Mon Jun  3 22:06:44 1996
++++ utils.h	Fri Mar 16 19:39:08 2001
+@@ -54,7 +54,7 @@ extern "C"
+ 
+ 
+ // Defines
+-#define MSEC_PER_CLOCK (1.0e3 / CLOCKS_PER_SEC) 
++#define MSEC_PER_CLOCK 8 // (1.0e3 / CLOCKS_PER_SEC) 
+ 
+ #ifndef max
+ #define max(a,b)               (a<b ? b : a)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 15:42:06 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/03/17 15:14:55 wilfried Exp $
 #
 
 DISTNAME=	xevil1.5
@@ -19,5 +19,17 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}
+
+ALL_TARGET=	freebsd
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/xevil $(PREFIX)/bin
+	${INSTALL_MAN} ${WRKSRC}/xevil.6 $(PREFIX)/man/man6
+	cd ${WRKSRC} && ${INSTALL_DATA} \
+		${WRKSRC}/app-defaults/XEvil.iris \
+		${WRKSRC}/app-defaults/XEvil.mac \
+		${WRKSRC}/app-defaults/XEvil.sun3 \
+		${WRKSRC}/app-defaults/XEvil.sun4_sparc \
+		$(PREFIX)/lib/X11/app-defaults/
 
 .include <bsd.port.mk>

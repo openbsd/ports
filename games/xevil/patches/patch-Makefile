@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile,v 1.1 2001/03/17 15:14:55 wilfried Exp $
+--- Makefile.orig	Mon Jun  3 22:47:02 1996
++++ Makefile	Sat Mar 17 16:11:56 2001
+@@ -8,8 +8,6 @@
+ #### Defines that are applicable to makes on all architectures
+ SHELL		=	/bin/sh
+ TARGETS		=	xevil #xshow
+-DEBUG_OPT	=	-O #-g#  #-DPRINT_ERRORS  
+-LINK_OPT	=	-O
+ 
+ #SRC_DIR and WORK_DIR are only used for `make workdir`
+ SRC_DIR		= 	/mit/hardts/src/X/xevil1.4.9
+@@ -94,8 +92,8 @@ ds:
+ 
+ 
+ freebsd:
+-	@$(MAKE) CC="c++" CFLAGS="-DUSE_RANDOM -DPROTECTED_IS_PUBLIC" \
+-INCL_DIRS=-I/usr/X11R6/include LIBS_DIRS=-L/usr/X11R6/lib \
++	@$(MAKE) CC="${CXX}" CFLAGS="${CFLAGS} -DUSE_RANDOM -DPROTECTED_IS_PUBLIC" \
++INCL_DIRS=-I${X11BASE}/include LIBS_DIRS=-L${X11BASE}/lib \
+ LIBS="-lX11 -lm" $(TARGETS)
+ 
+ 
