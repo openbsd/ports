@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2002/06/09 05:37:15 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2002/09/28 03:51:01 mark Exp $
 
 COMMENT=	"LaTeX to html translator"
 
 CATEGORIES=	textproc print
-NEED_VERSION=	1.515
-
 
 V=1.05
 # Q Licence 1.0 + LGPL for parts of the runtime
