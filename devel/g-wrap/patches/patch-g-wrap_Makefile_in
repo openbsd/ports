@@ -1,6 +1,15 @@
-$OpenBSD: patch-g-wrap_Makefile_in,v 1.1.1.1 2005/02/24 01:42:47 todd Exp $
---- g-wrap/Makefile.in.orig	Thu Nov  7 22:40:46 2002
-+++ g-wrap/Makefile.in	Thu Mar 27 10:24:21 2003
+$OpenBSD: patch-g-wrap_Makefile_in,v 1.2 2005/03/31 23:38:26 alek Exp $
+--- g-wrap/Makefile.in.orig	Fri Nov  8 05:40:46 2002
++++ g-wrap/Makefile.in	Thu Mar 31 00:23:50 2005
+@@ -197,7 +197,7 @@ lib_LTLIBRARIES = \
+ 
+ 
+ #AM_CFLAGS = -O2 -g -Wall -Wno-uninitialized -Werror
+-AM_CFLAGS = -O2 -g -Wall -Werror \
++AM_CFLAGS = -O2 -Wall \
+  ${GW_GLIB_CFLAGS_ADD} \
+  ${GW_GUILE_GTK_CFLAGS_ADD}
+ 
 @@ -214,7 +214,7 @@ libgwrap_wct_la_LIBADD = @GUILE_LIBS@
  
  ################## (g-wrap gw-wct) section

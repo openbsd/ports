@@ -1,6 +1,15 @@
-$OpenBSD: patch-test_Makefile_in,v 1.1.1.1 2005/02/24 01:42:47 todd Exp $
---- test/Makefile.in.orig	Thu Nov  7 22:40:48 2002
-+++ test/Makefile.in	Thu Mar 27 09:47:57 2003
+$OpenBSD: patch-test_Makefile_in,v 1.2 2005/03/31 23:38:26 alek Exp $
+--- test/Makefile.in.orig	Fri Nov  8 05:40:48 2002
++++ test/Makefile.in	Thu Mar 31 00:22:30 2005
+@@ -209,7 +209,7 @@ test_link_wct_LDADD = ../g-wrap/libgw-wc
+ 
+ 
+ # ===========================================================================
+-AM_CFLAGS = -O2 -Wall -Wno-uninitialized -Werror -g \
++AM_CFLAGS = -O2 -Wall -Wno-uninitialized \
+  -I ${top_srcdir}/g-wrap \
+  ${GW_GLIB_CFLAGS_ADD} \
+  ${GW_GUILE_GTK_CFLAGS_ADD}
 @@ -696,6 +696,7 @@ gw-test-enumeration.scm gw-test-enumerat
  
  #           (read-enable 'positions) \

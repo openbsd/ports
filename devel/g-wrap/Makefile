@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/03/12 11:54:13 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/03/31 23:38:26 alek Exp $
 
 COMMENT=	"g-wrap"
 DISTNAME=	g-wrap-1.3.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	gnome databases
 MASTER_SITES=	${HOMEPAGE}/source/
 
