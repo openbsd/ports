@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2003/04/10 18:08:56 jsyn Exp $
+# $OpenBSD: Makefile,v 1.18 2003/09/23 07:35:57 fgsch Exp $
 
 COMMENT=	"GNU version of Go"
 
-DISTNAME=	gnugo-3.2
+DISTNAME=	gnugo-3.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU:=gnugo/}
 
@@ -18,5 +18,10 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=	gnu
 
 MAKE_FLAGS=		MAKEINFO="makeinfo --no-split"
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/gnugo
+	${INSTALL_DATA} ${WRKSRC}/interface/gnugo.el \
+		${PREFIX}/share/gnugo
 
 .include <bsd.port.mk>
