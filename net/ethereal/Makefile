@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2004/04/02 19:07:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.88 2004/04/25 21:57:59 jakob Exp $
 
 COMMENT=	"network protocol analyzer"
 COMMENT-x11=	"network protocol analyzer (X11 GUI)"
@@ -48,7 +48,7 @@ LIB_DEPENDS+=		pcre::devel/pcre
 .if ${FLAVOR:L:Mgtk1}
 CONFIGURE_ARGS+=	--enable-gtk1
 LIB_DEPENDS+=		glib.1.2,gmodule.1.2::devel/glib
-BUILD_DEPENDS+=		glib.1.2,gmodule.1.2::devel/glib
+BUILD_DEPENDS+=		gtk.1::x11/gtk+
 .else
 CONFIGURE_ARGS+=	--enable-gtk2
 LIB_DEPENDS+=		glib-2.0.0.0,gthread-2.0.0.0::devel/glib2
