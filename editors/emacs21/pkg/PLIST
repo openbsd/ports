@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/10 22:05:42 mark Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/02/25 21:07:28 mark Exp $
 @pkgcfl xemacs-*
 bin/b2m
 bin/ctags
@@ -1924,10 +1924,9 @@ share/emacs/${VERSION}/lisp/xt-mouse.elc
 @dirrm share/emacs/${VERSION}/lisp
 share/emacs/${VERSION}/site-lisp/subdirs.el
 @dirrm share/emacs/${VERSION}/site-lisp
-@dirrm share/emacs/${VERSION}
-@dirrm share/emacs
 @exec mkdir -p %D/share/emacs/${VERSION}/leim
 @dirrm share/emacs/${VERSION}/leim
+@dirrm share/emacs/${VERSION}
 share/emacs/site-lisp/subdirs.el
 @dirrm share/emacs/site-lisp
-
+@dirrm share/emacs
