@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2001/01/18 16:10:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/02/15 18:51:30 naddy Exp $
 
 DISTNAME=	wmbiff-0.2
 CATEGORIES=	mail x11 x11/windowmaker
-NEED_VERSION=	0.313
-MASTER_SITES=	http://ccat.elect.ru:8100/wmbiff/
+NEED_VERSION=	1.352
+MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/jim/ \
+		ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/jim/
 
-MAINTAINER=	Cameron Lerch <opcode@skylab.2y.net>
+MAINTAINER=	Cameron Lerch <opcode@skylab.saturn5.yi.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
@@ -13,13 +14,5 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 WRKBUILD=	${WRKSRC}/wmbiff
-
-post-install:
-	
-	@${ECHO_MSG} "===>  Installing sample.wmbiffrc to ${PREFIX}/share/examples/wmbiff"
-	@${ECHO_MSG} "===>  Modify it to suit your needs and copy to ~/.wmbiffrc"
-	@/bin/mkdir ${PREFIX}/share/examples/wmbiff && ${CHMOD} a+rx ${PREFIX}/share/examples/wmbiff
-	@${INSTALL_DATA} ${WRKBUILD}/sample.wmbiffrc ${PREFIX}/share/examples/wmbiff
-	@${CHMOD} 644 ${PREFIX}/share/examples/wmbiff/sample.wmbiffrc
 
 .include <bsd.port.mk>

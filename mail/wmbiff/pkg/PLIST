@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/11 03:36:35 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/02/15 18:51:31 naddy Exp $
 bin/wmbiff
-share/examples/wmbiff/sample.wmbiffrc
+share/examples/wmbiff/dot.wmbiffrc
 @dirrm share/examples/wmbiff

@@ -1,0 +1,38 @@
+$OpenBSD: patch-wmbiff_Makefile,v 1.1 2001/02/15 18:51:31 naddy Exp $
+--- wmbiff/Makefile.orig	Fri Nov 26 13:19:05 1999
++++ wmbiff/Makefile	Sat Jan 27 02:01:15 2001
+@@ -1,9 +1,6 @@
+-prefix=
+-BIN=/usr/X11R6/bin
+-CONF=/etc
+-LIBDIR = -L/usr/X11R6/lib
++LIBDIR = -L${X11BASE}/lib
+ LIBS   = -lXpm -lXext -lX11
+-CFLAGS = -O2 -Wall
++CFLAGS += -I${X11BASE}/include
+ OBJS =	wmbiff.o Pop3Client.o \
+ 	../wmgeneral/wmgeneral.o \
+ 	../wmgeneral/misc.o \
+@@ -11,10 +8,10 @@ OBJS =	wmbiff.o Pop3Client.o \
+ 
+ 
+ .c.o:
+-	cc -I/usr/X11R6/share/include $(CFLAGS) -c -Wall $< -o $*.o
++	cc $(CFLAGS) -c $< -o $*.o
+ 
+ wmbiff: $(OBJS)
+-	cc $(CFLAGS) -o wmbiff $^ $(LIBDIR) $(LIBS)
++	cc $(CFLAGS) -o wmbiff $(OBJS) $(LIBDIR) $(LIBS)
+ 	strip wmbiff
+ 
+ all:: wmbiff
+@@ -26,5 +23,7 @@ clean::
+ 	rm -f wmbiff *~ tags
+ 
+ install:: wmbiff
+-	cp -f wmbiff $(prefix)$(BIN)/
+-	chmod 755 $(prefix)$(BIN)/wmbiff
++	${BSD_INSTALL_PROGRAM} wmbiff ${PREFIX}/bin/wmbiff
++	${BSD_INSTALL_DATA_DIR} ${PREFIX}/share/examples/wmbiff
++	${BSD_INSTALL_DATA} sample.wmbiffrc \
++		${PREFIX}/share/examples/wmbiff/dot.wmbiffrc
