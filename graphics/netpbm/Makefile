@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.19 2000/09/24 07:04:08 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2001/04/01 19:01:38 brad Exp $
 # $NetBSD: Makefile,v 1.25 1999/03/04 14:18:54 tron Exp $
+
+COMMENT=	"toolkit for converting images between different formats"
 
 DISTNAME=	netpbm-1mar1994
 PKGNAME=	netpbm-19940301
 CATEGORIES=	graphics
-NEED_VERSION=	1.330
+NEED_VERSION=	1.378
 MASTER_SITES=	ftp://ftp.informatik.uni-oldenburg.de/pub/netpbm/
 MASTER_SITES0=	ftp://ftp.informatik.uni-oldenburg.de/pub/netpbm/ \
 		ftp://ftp.x.org/contrib/utilities/
 MASTER_SITES1=	ftp://swrinde.nde.swri.edu/pub/png/applications/ \
 		ftp://ftp.libpng.org/pub/png/src/
 DISTFILES=	${DISTNAME}.tar.gz:0 pcxtoppm.tar.gz rletopnm.tar.gz \
-		pnmtopng-2.37.4.tar.gz:1
+		pnmtopng-2.37.5.tar.gz:1
 DIST_SUBDIR=	netpbm
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
@@ -27,14 +29,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_PACKAGE_CDROM=	No
 
-MAKE_ENV=	PREFIX="${PREFIX}" MANCP="${INSTALL_MAN}"
+MAKE_FLAGS=	PREFIX="${PREFIX}" MANCP="${INSTALL_MAN}"
 FAKE_FLAGS= 	PREFIX="${WRKINST}${PREFIX}" MANCP="${INSTALL_MAN}"
 
 WRKDIST=	${WRKDIR}/netpbm
 
 post-extract:
 	@cd ${WRKSRC} && \
-	  mv ../pnmtopng-2.37.4/* .. && \
+	  mv ../pnmtopng-2.37.5/* .. && \
 	  mv ../*pcx*.? ppm && \
 	  mv ../*rle*.? ../*png*.? pnm && \
 	  mv ../version.h pnm
