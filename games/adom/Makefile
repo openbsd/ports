@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/16 07:20:20 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/16 23:06:43 turan Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
 DISTNAME=	adom-g15
@@ -10,10 +10,13 @@ NEED_VERSION=	1.191
 ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	binary port
-NO_CDROM=	"prevented by license"
-NO_PACKAGE=	"prevented by license"
 
 MAINTAINER=	espie@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no modify"
+PERMIT_PACKAGE_FTP=	"no modify"
+PERMIT_DISTFILES_CDROM=	"no modify"
+PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/adom
 

@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:24 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/16 23:06:44 turan Exp $
 #
 
 DISTNAME=	xev111
 PKGNAME=        xbat-1.11
 CATEGORIES=     games
 
-NO_CDROM=	"Possible copyright infringement"
-
 MAINTAINER=	angelos@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"possible copyright infringement"
+PERMIT_PACKAGE_FTP=	"possible copyright infringement"
+PERMIT_DISTFILES_CDROM=	"possible copyright infringement"
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=   http://www.nemoto.ecei.tohoku.ac.jp/~wai/Xbat/
 NEED_VERSION=	1.191

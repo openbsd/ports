@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 1999/01/14 01:45:08 angelos Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/16 23:06:44 turan Exp $
 #
 
 DISTNAME=		agm-1.3.1
 CATEGORIES=		games
 
-NO_CDROM=		"NOFEE: Can not charge for distribution"
-
 MAINTAINER=		angelos@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no license available"
+PERMIT_PACKAGE_FTP=	"no license available"
+PERMIT_DISTFILES_CDROM=	"no license available"
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/amusements
