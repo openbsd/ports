@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/12/06 02:51:35 kevlo Exp $
 jdk1.1.8/include/freebsd/byteorder_md.h
 jdk1.1.8/include/freebsd/timeval_md.h
 jdk1.1.8/include/freebsd/sysmacros_md.h
