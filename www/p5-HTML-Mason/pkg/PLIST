@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/01/18 01:41:36 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/04/18 19:53:41 robert Exp $
 ${P5SITE}/Apache/Mason.pm
 ${P5SITE}/Bundle/HTML/Mason.pm
 ${P5SITE}/HTML/Mason.pm
@@ -16,6 +16,7 @@ ${P5SITE}/HTML/Mason/ComponentSource.pm
 ${P5SITE}/HTML/Mason/Devel.pod
 ${P5SITE}/HTML/Mason/Escapes.pm
 ${P5SITE}/HTML/Mason/Exceptions.pm
+${P5SITE}/HTML/Mason/FakeApache.pm
 ${P5SITE}/HTML/Mason/Interp.pm
 ${P5SITE}/HTML/Mason/Lexer.pm
 ${P5SITE}/HTML/Mason/MethodMaker.pm
@@ -40,11 +41,13 @@ man/man3p/HTML::Mason::Cache::BaseCache.3p
 man/man3p/HTML::Mason::Compiler.3p
 man/man3p/HTML::Mason::Compiler::ToObject.3p
 man/man3p/HTML::Mason::Component.3p
+man/man3p/HTML::Mason::Component::FileBased.3p
 man/man3p/HTML::Mason::Component::Subcomponent.3p
 man/man3p/HTML::Mason::ComponentSource.3p
 man/man3p/HTML::Mason::Devel.3p
 man/man3p/HTML::Mason::Escapes.3p
 man/man3p/HTML::Mason::Exceptions.3p
+man/man3p/HTML::Mason::FakeApache.3p
 man/man3p/HTML::Mason::Interp.3p
 man/man3p/HTML::Mason::Lexer.3p
 man/man3p/HTML::Mason::MethodMaker.3p
