@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/10/13 17:02:39 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/11/18 22:41:19 naddy Exp $
 bin/b2m
 bin/ctags
 bin/ebrowse
@@ -180,7 +180,7 @@ libexec/emacs/${VERSION}/${GCCARCH}/cvtmail
 libexec/emacs/${VERSION}/${GCCARCH}/digest-doc
 libexec/emacs/${VERSION}/${GCCARCH}/emacsserver
 libexec/emacs/${VERSION}/${GCCARCH}/fakemail
-libexec/emacs/${VERSION}/${GCCARCH}/fns-${VERSION}.2.el
+libexec/emacs/${VERSION}/${GCCARCH}/fns-${VERSION}.1.el
 libexec/emacs/${VERSION}/${GCCARCH}/hexl
 libexec/emacs/${VERSION}/${GCCARCH}/movemail
 libexec/emacs/${VERSION}/${GCCARCH}/profile
@@ -198,7 +198,7 @@ share/emacs/${VERSION}/etc/COOKIES
 share/emacs/${VERSION}/etc/COPYING
 share/emacs/${VERSION}/etc/DEBUG
 share/emacs/${VERSION}/etc/DISTRIB
-share/emacs/${VERSION}/etc/DOC-${VERSION}.2
+share/emacs/${VERSION}/etc/DOC-${VERSION}.1
 share/emacs/${VERSION}/etc/FTP
 share/emacs/${VERSION}/etc/GNU
 share/emacs/${VERSION}/etc/HELLO
@@ -1215,7 +1215,7 @@ share/emacs/site-lisp/subdirs.el
 @dirrm share/emacs/${VERSION}/lisp/calendar
 @dirrm share/emacs/${VERSION}/lisp
 @exec mkdir -p %D/share/emacs/${VERSION}/leim
-@dirrm share/emacs/${VERSION}/leim   
+@dirrm share/emacs/${VERSION}/leim
 @dirrm share/emacs/${VERSION}/etc/e
 @dirrm share/emacs/${VERSION}/etc
 @dirrm share/emacs/${VERSION}
