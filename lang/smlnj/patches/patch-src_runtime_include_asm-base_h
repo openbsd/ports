@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_runtime_include_asm-base_h,v 1.2 2003/08/21 20:59:11 espie Exp $
+$OpenBSD: patch-src_runtime_include_asm-base_h,v 1.3 2004/01/04 17:27:56 espie Exp $
 --- src/runtime/include/asm-base.h.orig	1999-12-03 20:59:31.000000000 +0100
-+++ src/runtime/include/asm-base.h	2003-08-21 22:39:39.000000000 +0200
++++ src/runtime/include/asm-base.h	2004-01-04 18:19:22.000000000 +0100
 @@ -16,7 +16,7 @@
  #define FALSE	0
  #define TRUE	1
@@ -10,3 +10,14 @@ $OpenBSD: patch-src_runtime_include_asm-base_h,v 1.2 2003/08/21 20:59:11 espie E
  #  define GLOBALS_HAVE_UNDERSCORE
  #endif
  
+@@ -122,8 +122,8 @@
+ #    define WORD(W)     WORD32(W)
+ #  else
+ #    define GLOBAL(ID)	  .globl	CSYM(ID)
+-#    define LABEL(ID)	  CONCAT(ID,:)
+-#    define IMMED(ID)	  CONCAT($,ID)
++#    define LABEL(ID)	  ID:
++#    define IMMED(ID)	  $ID
+ #    define ALIGN4        .align 2
+ #    define WORD(W)       .word W
+ #    define TEXT          .text
