@@ -1,0 +1,12 @@
+*** bzip2.c.orig	Tue Nov 25 16:07:48 1997
+--- bzip2.c	Tue Nov 25 16:08:05 1997
+***************
+*** 133,139 ****
+     #include <sys/types.h>
+     #include <utime.h>
+     #include <unistd.h>
+-    #include <malloc.h>
+     #include <sys/stat.h>
+     #include <sys/times.h>
+  
+--- 133,138 ----

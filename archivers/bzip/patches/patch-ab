@@ -1,12 +1,86 @@
---- bzip.c.orig	Fri Sep 27 12:33:18 1996
-+++ bzip.c	Fri Sep 27 12:35:48 1996
-@@ -116,7 +116,9 @@
- #if BZ_UNIX_32
-    #include <utime.h>
-    #include <unistd.h>
-+#if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)	/* stdlib already included above */
-    #include <malloc.h>
-+#endif
-    #include <sys/stat.h>
-    #include <sys/times.h>
- 
+*** bzip.c.orig	Fri Aug 30 16:35:28 1996
+--- bzip.c	Tue Nov 25 16:05:05 1997
+***************
+*** 114,122 ****
+  --*/
+  
+  #if BZ_UNIX_32
+     #include <utime.h>
+     #include <unistd.h>
+-    #include <malloc.h>
+     #include <sys/stat.h>
+     #include <sys/times.h>
+  
+--- 114,122 ----
+  --*/
+  
+  #if BZ_UNIX_32
++    #include <sys/types.h>
+     #include <utime.h>
+     #include <unistd.h>
+     #include <sys/stat.h>
+     #include <sys/times.h>
+  
+***************
+*** 2578,2584 ****
+  
+  
+  /*---------------------------------------------*/
+! void mySignalCatcher ( IntNative *n )
+  {
+     fprintf ( stderr, 
+               "\n%s: Control-C (or similar) caught, quitting.\n",
+--- 2578,2584 ----
+  
+  
+  /*---------------------------------------------*/
+! void mySignalCatcher ( IntNative n )
+  {
+     fprintf ( stderr, 
+               "\n%s: Control-C (or similar) caught, quitting.\n",
+***************
+*** 2588,2594 ****
+  
+  
+  /*---------------------------------------------*/
+! void mySIGSEGVorSIGBUScatcher ( IntNative *n )
+  {
+     if (compressing)
+        fprintf ( stderr,
+--- 2588,2594 ----
+  
+  
+  /*---------------------------------------------*/
+! void mySIGSEGVorSIGBUScatcher ( IntNative n )
+  {
+     if (compressing)
+        fprintf ( stderr,
+***************
+*** 3130,3140 ****
+     signal (SIGBUS,  mySIGSEGVorSIGBUScatcher);
+     #endif
+  
+-    if ( ! (argc > 1 && strcmp ( "-Q", argv[1] ) == 0) )
+-       fprintf ( stderr,
+-                 "BZIP, a block-sorting file compressor.  "
+-                 "Version 0.21, 25-August-96.\n" );
+- 
+     #if DEBUG
+        if ( ! (argc > 1 && strcmp ( "-Q", argv[1] ) == 0) )
+           fprintf ( stderr, "BZIP: *** compiled with debugging ON ***\n" );
+--- 3130,3135 ----
+***************
+*** 3204,3209 ****
+--- 3199,3210 ----
+                           exit ( 1 );
+                           break;
+           }
++ 
++    if (verbose) {
++       fprintf ( stderr,
++                 "BZIP, a block-sorting file compressor.  "
++                 "Version 0.21, 25-August-96.\n" );
++    }
+  
+     if ( opMode == OM_FILE_TO_STDOUT && numFileNames != 1) {
+        fprintf ( stderr, "%s: Option -c requires you to supply exactly one filename.\n",
