@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2001/08/17 19:34:51 brad Exp $
+# $OpenBSD: Makefile,v 1.49 2001/08/29 07:03:48 jakob Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -18,7 +18,7 @@ FULLPKGNAME-pear= php4-pear-${V}
 CATEGORIES=	www lang
 NEED_VERSION=	1.435
 
-MAINTAINER=     Anil Madhavapeddy <avsm@openbsd.org>, Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=     Anil Madhavapeddy <avsm@openbsd.org>
 
 HOMEPAGE=	http://www.php.net/
 
