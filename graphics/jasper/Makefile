@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/14 05:33:57 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/07 03:18:42 espie Exp $
 
-COMMENT=	"software-based reference implementation of the JPEG-2000 codec"
+COMMENT=	"reference implementation of JPEG-2000"
 
 DISTNAME=	jasper-1.701.0
 CATEGORIES=	graphics
