@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/03/14 16:06:54 rohee Exp $
+# $OpenBSD: Makefile,v 1.2 1999/10/09 17:46:05 brad Exp $
 
-DISTNAME=		libxml-1.0.0
-CATEGORIES=		textproc
+DISTNAME=	libxml-1.0.0
+CATEGORIES=	textproc
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR= sources/libxml
 
-NEED_VERSION=		1.78
+NEED_VERSION=	1.73
 
-MAINTAINER=             rohee@OpenBSD.ORG
+MAINTAINER=	rohee@openbsd.org
 
-MASTER_SITES=		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-1.0/sources
-
-GNU_CONFIGURE=		yes
-
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= --enable-static
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
