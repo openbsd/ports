@@ -1,0 +1,38 @@
+--- ddd/options.C.orig	Fri Jul  2 00:37:14 1999
++++ ddd/options.C	Fri Jul  2 01:05:28 1999
+@@ -1682,7 +1682,7 @@
+ 
+ inline String str(String s)
+ {
+-    return s != 0 ? s : "";
++    return s != 0 ? s : const_cast<char *>("");
+ }
+ 
+ static Boolean done_if_idle(XtPointer data)
+@@ -1937,21 +1937,21 @@
+ inline String bool_value(bool value)
+ {
+     // Since GDB uses `on' and `off' for its settings, we do so, too. 
+-    return value ? "on" : "off";
++    return const_cast<char *>(value ? "on" : "off");
+ }
+ 
+-inline String binding_value(BindingStyle value)
++inline const String binding_value(BindingStyle value)
+ {
+     switch (value)
+     {
+     case KDEBindings:
+-	return "KDE";
++	return const_cast<char *>("KDE");
+ 
+     case MotifBindings:
+-	return "Motif";
++	return const_cast<char *>("Motif");
+     }
+ 
+-    return "";			// Never reached
++    return const_cast<char *>("");			// Never reached
+ }
+ 
+ static string bool_app_value(const string& name, bool value, 

@@ -1,0 +1,41 @@
+--- ddd/SourceView.C.orig	Fri Jul  2 03:37:53 1999
++++ ddd/SourceView.C	Fri Jul  2 03:39:35 1999
+@@ -239,11 +239,11 @@
+     {"print",        MMPush,   
+      {SourceView::PrintWatchpointCB, XtPointer(0) }, 0, 0, 0, 0},
+     {"enable",       MMPush,   
+-     {SourceView::BreakpointCmdCB, "enable"  }, 0, 0, 0, 0},
++     {SourceView::BreakpointCmdCB, const_cast<char *>("enable")  }, 0, 0, 0, 0},
+     {"disable",      MMPush,   
+-     {SourceView::BreakpointCmdCB, "disable" }, 0, 0, 0, 0},
++     {SourceView::BreakpointCmdCB, const_cast<char *>("disable") }, 0, 0, 0, 0},
+     {"delete",       MMPush | MMHelp,   
+-     {SourceView::BreakpointCmdCB, "delete" }, 0, 0, 0, 0},
++     {SourceView::BreakpointCmdCB, const_cast<char *>("delete") }, 0, 0, 0, 0},
+     MMEnd
+ };
+ 
+@@ -3377,9 +3377,9 @@
+ 		  XmNbrowseSelectionCallback, SelectFrameCB, 0);
+ 
+     XtAddCallback(stack_dialog_w,
+-		  XmNokCallback, gdbCommandCB, "up");
++		  XmNokCallback, gdbCommandCB, const_cast<char *>("up"));
+     XtAddCallback(stack_dialog_w,
+-		  XmNapplyCallback, gdbCommandCB, "down");
++		  XmNapplyCallback, gdbCommandCB, const_cast<char *>("down"));
+     XtAddCallback(stack_dialog_w,
+ 		  XmNcancelCallback, UnmanageThisCB, stack_dialog_w);
+     XtAddCallback(stack_dialog_w,
+@@ -3492,9 +3492,9 @@
+     XtAddCallback(thread_dialog_w,
+ 		  XmNcancelCallback, ThreadDialogPoppedDownCB, 0);
+     XtAddCallback(thread_dialog_w,
+-		  XmNokCallback,     ThreadCommandCB, "suspend");
++		  XmNokCallback,     ThreadCommandCB, const_cast<char *>("suspend"));
+     XtAddCallback(thread_dialog_w,
+-		  XmNapplyCallback,  ThreadCommandCB, "resume");
++		  XmNapplyCallback,  ThreadCommandCB, const_cast<char *>("resume"));
+     XtAddCallback(thread_dialog_w,
+ 		  XmNhelpCallback, ImmediateHelpCB, 0);
+ 

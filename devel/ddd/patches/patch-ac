@@ -1,0 +1,13 @@
+--- ddd/HelpCB.C.orig	Fri Jul  2 03:31:00 1999
++++ ddd/HelpCB.C	Fri Jul  2 03:32:16 1999
+@@ -1355,8 +1355,8 @@
+     {
+ 	xmtitles[i] = 
+ 	    XmStringCreateLtoR(titles[i], 
+-			       titles[i].contains(' ', 0) ? 
+-			       CHARSET_RM : CHARSET_BF);
++			       const_cast<char *>(titles[i].contains(' ', 0) ? 
++			       CHARSET_RM : CHARSET_BF));
+     }
+ 
+     XtVaSetValues(help_index,
