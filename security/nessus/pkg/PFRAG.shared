@@ -1,8 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2000/12/28 16:07:06 matt Exp $
-lib/libhosts_gatherer.so.1.6
-lib/libnasl.so.1.6
-lib/libnessus.so.1.6
-lib/libpeks.so.8.16
+@comment $OpenBSD: PFRAG.shared,v 1.7 2001/02/13 03:00:14 matt Exp $
+lib/libhosts_gatherer.so.1.7
+lib/libnasl.so.1.7
+lib/libnessus.so.1.7
+lib/libpeks.so.8.18
 lib/nessus/plugins/accounts.nes
 lib/nessus/plugins/bind_bof.nes
 lib/nessus/plugins/find_service.nes
@@ -15,4 +15,4 @@ lib/nessus/plugins/objectserver.nes
 lib/nessus/plugins/queso.nes
 lib/nessus/plugins/smad.nes
 lib/nessus/plugins/tftp_grab_file.nes
-DYNLIBDIR(%D/lib)
+DYNLIBDIR(%B)

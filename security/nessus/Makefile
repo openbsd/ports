@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2001/01/13 03:32:07 matt Exp $
+# $OpenBSD: Makefile,v 1.19 2001/02/13 03:00:11 matt Exp $
 
 PKGNAME=	nessus-${VERS}
 
 CATEGORIES=	security
 NEED_VERSION=	1.316
 
-VERS=		1.0.6
+VERS=		1.0.7a
 
 DIST_SUBDIR=	nessus
 
@@ -17,11 +17,19 @@ DISTFILES=	nessus-libraries-${VERS}${EXTRACT_SUFX} \
 NESSUS_DIRS=	${DISTFILES:S/-${VERS}${EXTRACT_SUFX}//g}
 
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${VERS}/src/ \
+		ftp://mirror.arc.nasa.gov/pub/tools/nessus/nessus-${VERS}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${VERS}/src/ \
-		ftp://cvs.nessus.org/pub/nessus/nessus-${VERS}/src/ \
+		ftp://nessus.via.ecp.fr/nessus/nessus-${VERS}/src/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/nessus/nessus-${VERS}/src/ \
 		ftp://ftp.chg.ru/pub/security/nessus/nessus-${VERS}/src/ \
 		ftp://ftp.sekure.net/pub/nessus/nessus-${VERS}/src/ \
-		ftp://ftp.nectec.or.th/pub/mirrors/nessus/nessus-${VERS}/src/
+		ftp://ftp.nectec.or.th/pub/mirrors/nessus/nessus-${VERS}/src/ \
+		ftp://ftp.pt.nessus.org/pub/nessus/nessus-${VERS}/src/ \
+		ftp://ftp.au.nessus.org/pub/nessus/nessus-${VERS}/src/ \
+		ftp://ftp.stuff.ca/pub/nessus/nessus-${VERS}/src/src/ \
+		ftp://ftp.at.nessus.org/pub/nessus/nessus-${VERS}/src/ \
+		ftp://ftp.linux.org.tr/pub/nessus/nessus-${VERS}/src/ \
+		ftp://cvs.nessus.org/pub/nessus/nessus-${VERS}/src/ 
 
 MAINTAINER=	Matt Behrens <matt@openbsd.org>
 
