@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.7 2002/05/16 11:58:48 espie Exp $
+$OpenBSD: patch-configure,v 1.8 2002/05/16 13:57:49 espie Exp $
 --- configure.orig	Mon May 13 22:52:10 2002
-+++ configure	Thu May 16 00:42:02 2002
++++ configure	Thu May 16 15:49:14 2002
 @@ -1538,7 +1538,7 @@ else
  fi
  echores "$_sys_soundcard"
@@ -27,7 +27,24 @@ $OpenBSD: patch-configure,v 1.7 2002/05/16 11:58:48 espie Exp $
    _inputmodules="vcd $_inputmodules"
    _def_vcd='#define HAVE_VCD 1'
    echores "ok"
-@@ -3614,7 +3615,6 @@ test "$_xanim" = yes && _ld_dl_dynamic='
+@@ -3103,7 +3104,7 @@ EOF
+   _iconv=no
+   if freebsd ; then
+     cc_check  -lm -lgiconv && _iconv=yes
+-  elif bsdos ; then
++  elif bsdos || openbsd; then
+     cc_check  -lm -liconv && _iconv=yes
+   else
+     cc_check -lm && _iconv=yes
+@@ -3113,6 +3114,7 @@ if test "$_iconv" = yes ; then
+   _def_iconv='#define USE_ICONV 1'
+   freebsd && _ld_iconv='-lgiconv'
+   bsdos && _ld_iconv='-liconv'
++  openbsd && _ld_iconv='-liconv'
+ else
+   _def_iconv='#undef USE_ICONV'
+ fi
+@@ -3614,7 +3616,6 @@ test "$_xanim" = yes && _ld_dl_dynamic='
  _ld_arch="$_ld_arch $_ld_pthread $_ld_dl $_ld_dl_dynamic"
  bsdos && _ld_arch="$_ld_arch -ldvd"
  if netbsd || openbsd ; then
@@ -35,7 +52,7 @@ $OpenBSD: patch-configure,v 1.7 2002/05/16 11:58:48 espie Exp $
    x86 && _ld_arch="$_ld_arch -li386"
  fi
  
-@@ -3683,10 +3683,10 @@ cat > config.mak << EOF
+@@ -3683,10 +3684,10 @@ cat > config.mak << EOF
  
  LANG = C
  TARGET_OS = $system_name

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/05/15 23:16:59 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/05/16 13:57:49 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc
@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 CONFIGURE_ARGS+=--target=ppc-openbsd
 .endif
 
-FLAVORS=	sdl ggi debug mad win32
+FLAVORS=	sdl ggi debug mad win32 iconv
 FLAVOR?=
 
 .if ${FLAVOR:L:Msdl}
@@ -80,6 +80,13 @@ CONFIGURE_ARGS+=--enable-mad
 LIB_DEPENDS+=	mad::audio/mad
 .else
 CONFIGURE_ARGS+=--disable-mad
+.endif
+
+.if ${FLAVOR:L:Miconv}
+CONFIGURE_ARGS+=--enable-iconv
+LIB_DEPENDS+=	iconv::converters/libiconv
+.else
+CONFIGURE_ARGS+=--disable-iconv
 .endif
 
 .if ${FLAVOR:L:Mwin32}
