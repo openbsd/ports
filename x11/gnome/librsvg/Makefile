@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/06/23 03:26:17 marcm Exp $
+# $OpenBSD: Makefile,v 1.9 2004/06/25 19:22:29 marcm Exp $
 
 COMMENT=		"SAX-based render library for SVG files"
 
@@ -21,7 +21,7 @@ BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		art_lgpl_2.5::graphics/libart \
 			bz2::archivers/bzip2 \
 			gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
-			gsf-1::devel/libgsf \
+			gsf-1::devel/libgsf,no_gnome \
 			pangoft2-1.0.0.0::devel/pango \
 			popt.0.3::devel/popt \
 			xml2.6::textproc/libxml
