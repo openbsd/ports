@@ -67,9 +67,9 @@
 -	-rm -f $(man1dir)/cccp$(manext)
 -	-$(INSTALL_DATA) $(srcdir)/cccp.1 $(man1dir)/cccp$(manext)
 -	-chmod a-x $(man1dir)/cccp$(manext)
-+	-rm -f $(mandir)/$(CPP_MAN_NAME)$(manext)
-+	-$(INSTALL_DATA) $(srcdir)/cccp.1 $(mandir)/$(CPP_MAN_NAME)$(manext)
-+	-chmod a-x $(mandir)/$(CPP_MAN_NAME)$(manext)
++	-rm -f $(man1dir)/$(CPP_MAN_NAME)$(manext)
++	-$(INSTALL_DATA) $(srcdir)/cccp.1 $(man1dir)/$(CPP_MAN_NAME)$(manext)
++	-chmod a-x $(man1dir)/$(CPP_MAN_NAME)$(manext)
  
  # Install the library.
  install-libgcc: libgcc.a installdirs

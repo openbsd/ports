@@ -1,5 +1,5 @@
 @unexec install-info --delete --info-dir=%D/info %D/info/ecpp.info
-@unexec install-info --delete --info-dir=%D/info %D/info/ecpp.info
+@unexec install-info --delete --info-dir=%D/info %D/info/egcc.info
 bin/egcc
 bin/ecpp
 bin/eprotoize
