@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2001/05/06 03:59:16 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/06 19:47:03 ian Exp $
 
 COMMENT=	"interactive process killer"
 
-PKGNAME=	zap-1.1
-DISTNAME=	zap-1.1
+PKGNAME=	zap-1.3
+DISTNAME=	zap-1.3
 WRKDIST=	${WRKDIR}/zap
 CATEGORIES=	sysutils
 NEED_VERSION=	1.402
