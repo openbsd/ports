@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.471 2001/10/07 10:47:01 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.472 2001/10/07 10:50:47 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -628,6 +628,8 @@ ERRORS+="Missing support for modules ${_m}."
 .endfor
 
 REGRESS_TARGET ?= regress
+REGRESS_ENV ?= ${MAKE_ENV}
+REGRESS_FLAGS ?= ${MAKE_FLAGS}
 
 .if ${FAKE:L} == "yes"
 _PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
@@ -1675,7 +1677,7 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 	@cd ${.CURDIR} && exec ${MAKE} do-regress
 .  else
 # What REGRESS normally does:
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET}
+	@cd ${WRKBUILD} && exec ${SETENV} ${REGRESS_ENV} ${MAKE_PROGRAM} ${REGRESS_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET}
 # End of REGRESS
 .  endif
 .  if target(post-regress)
