@@ -18,7 +18,7 @@ along with GNU CC; see the file COPYING.  If not, write to
 the Free Software Foundation, 59 Temple Place - Suite 330,
 Boston, MA 02111-1307, USA.  */
 
-/* We settle for little endian for now. */
+/* We settle for little endian for now.  */
 #define TARGET_ENDIAN_DEFAULT 0
 
 #include <alpha/alpha.h>
@@ -28,14 +28,14 @@ Boston, MA 02111-1307, USA.  */
 #define OBSD_HAS_DECLARE_FUNCTION_SIZE
 #define OBSD_HAS_DECLARE_OBJECT
 
-/* alpha ecoff supports only weak aliases, see below. */
+/* alpha ecoff supports only weak aliases, see below.  */
 #define ASM_WEAKEN_LABEL(FILE,NAME) ASM_OUTPUT_WEAK_ALIAS (FILE,NAME,0)
 
 #include <openbsd.h>
 
-/* Controlling the compilation driver. */
+/* Controlling the compilation driver.  */
 
-/* alpha needs __start. */
+/* alpha needs __start.  */
 #undef LINK_SPEC
 #define LINK_SPEC \
   "%{!nostdlib:%{!r*:%{!e*:-e __start}}} -dc -dp %{assert*}"
@@ -44,7 +44,7 @@ Boston, MA 02111-1307, USA.  */
 #define CPP_PREDEFINES "-D__unix__ -D__ANSI_COMPAT -Asystem(unix) \
 -D__OpenBSD__ -D__alpha__ -D__alpha"
 
-/* Layout of source language data types. */
+/* Layout of source language data types.  */
 
 /* This must agree with <machine/ansi.h> */
 #undef SIZE_TYPE
@@ -65,18 +65,18 @@ Boston, MA 02111-1307, USA.  */
 
 #define LOCAL_LABEL_PREFIX	"."
 
-/* We don't have an init section yet. */
+/* We don't have an init section yet.  */
 #undef HAS_INIT_SECTION
 
-/* collect2 support (assembler format: macros for initialization). */
+/* collect2 support (assembler format: macros for initialization).  */
 
 /* Don't tell collect2 we use COFF as we don't have (yet ?) a dynamic ld
    library with the proper functions to handle this -> collect2 will
-   default to using nm. */
+   default to using nm.  */
 #undef OBJECT_FORMAT_COFF
 #undef EXTENDED_COFF
 
-/* Assembler format: exception region output. */
+/* Assembler format: exception region output.  */
 
 /* All configurations that don't use elf must be explicit about not using
    dwarf unwind information. egcs doesn't try too hard to check internal
@@ -86,7 +86,7 @@ Boston, MA 02111-1307, USA.  */
 #define DWARF2_UNWIND_INFO 0
 #endif
 
-/* Assembler format: file framework. */
+/* Assembler format: file framework.  */
 
 /* Taken from alpha/osf.h. This used to be common to all alpha
    configurations, but elf has departed from it.
@@ -109,7 +109,7 @@ Boston, MA 02111-1307, USA.  */
 }
 #endif
 
-/* Assembler format: label output. */
+/* Assembler format: label output.  */
 
 #define ASM_OUTPUT_WEAK_ALIAS(FILE,NAME,VALUE)	\
  do {						\
@@ -122,4 +122,5 @@ Boston, MA 02111-1307, USA.  */
     }						\
   fputc ('\n', FILE);				\
  } while (0)
+
 

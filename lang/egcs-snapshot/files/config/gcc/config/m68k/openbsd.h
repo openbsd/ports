@@ -19,7 +19,7 @@ the Free Software Foundation, 59 Temple Place - Suite 330,
 Boston, MA 02111-1307, USA.  */
 
 /* m68k is an old configuration that does not yet use the TARGET_CPU_DEFAULT
-   framework. */
+   framework.  */
 #define TARGET_DEFAULT (MASK_BITFIELD | MASK_68881 | MASK_68020)
 
 #include <m68k/m68k.h>
@@ -40,7 +40,7 @@ Boston, MA 02111-1307, USA.  */
 #define ASM_SPEC "%| %{m68030} %{m68040} %{m68060} %{fpic:-k} %{fPIC:-k -K}"
  */
 
-/* Layout of source language data types. */
+/* Layout of source language data types.  */
 
 /* This must agree with <machine/ansi.h> */
 #undef SIZE_TYPE
@@ -55,12 +55,12 @@ Boston, MA 02111-1307, USA.  */
 #undef WCHAR_TYPE_SIZE
 #define WCHAR_TYPE_SIZE 32
 
-/* Storage layout. */
+/* Storage layout.  */
 
 /* Every structure or union's size must be a multiple of 2 bytes.  */
 #define STRUCTURE_SIZE_BOUNDARY 16
 
-/* Specific options for DBX Output. */
+/* Specific options for DBX Output.  */
 
 /* This is BSD, so it wants DBX format.  */
 #define DBX_DEBUGGING_INFO
@@ -72,13 +72,13 @@ Boston, MA 02111-1307, USA.  */
    continuation back on).  */
 #define DBX_CONTIN_CHAR '?'
 
-/* Stack & calling: aggregate returns. */
+/* Stack & calling: aggregate returns.  */
 
 /* Don't default to pcc-struct-return, because gcc is the only compiler, and
    we want to retain compatibility with older gcc versions.  */
 #define DEFAULT_PCC_STRUCT_RETURN 0
 
-/* Assembler format: exception region output. */
+/* Assembler format: exception region output.  */
 
 /* All configurations that don't use elf must be explicit about not using
    dwarf unwind information. egcs doesn't try too hard to check internal
@@ -88,10 +88,10 @@ Boston, MA 02111-1307, USA.  */
 
 /* TODO: ASM_OUTPUT_MI_THUNK is busted. I need to figure out 
    what bra func@PLTPC means under linux, and find the corresponding 
-   construction for our gas/pic setup. */
+   construction for our gas/pic setup.  */
 #if 0
 /* Taken from linux.h. Processor dependent optimized code to handle C++
-   multiple inheritance vtable lookup. */
+   multiple inheritance vtable lookup.  */
 
 /* Output code to add DELTA to the first argument, and then jump to FUNCTION.
    Used for C++ multiple inheritance.  */
@@ -118,3 +118,4 @@ do {									\
     }									\
 } while (0)
 #endif
+

@@ -34,7 +34,7 @@ Boston, MA 02111-1307, USA.  */
 /* Run-time target specifications */
 #define CPP_PREDEFINES "-D__unix__ -D__i386__ -D__OpenBSD__ -Asystem(unix) -Asystem(OpenBSD) -Acpu(i386) -Amachine(i386)"
 
-/* Layout of source language data types. */
+/* Layout of source language data types.  */
 
 /* This must agree with <machine/ansi.h> */
 #undef SIZE_TYPE
@@ -49,7 +49,7 @@ Boston, MA 02111-1307, USA.  */
 #undef WCHAR_TYPE_SIZE
 #define WCHAR_TYPE_SIZE 32
 
-/* Assembler format: overall framework. */
+/* Assembler format: overall framework.  */
 
 #undef ASM_APP_ON
 #define ASM_APP_ON "#APP\n"
@@ -58,33 +58,33 @@ Boston, MA 02111-1307, USA.  */
 #define ASM_APP_OFF "#NO_APP\n"
 
 /* The following macros were originally stolen from i386v4.h.
-   These have to be defined to get PIC code correct. */
+   These have to be defined to get PIC code correct.  */
 
-/* Assembler format: dispatch tables. */
+/* Assembler format: dispatch tables.  */
 
 /* How to output an element of a case-vector that is relative.
    This is only used for PIC code.  See comments by the `casesi' insn in
-   i386.md for an explanation of the expression this outputs. */
+   i386.md for an explanation of the expression this outputs.  */
 #undef ASM_OUTPUT_ADDR_DIFF_ELT
 #define ASM_OUTPUT_ADDR_DIFF_ELT(FILE, BODY, VALUE, REL) \
   fprintf (FILE, "\t.long _GLOBAL_OFFSET_TABLE_+[.-%s%d]\n", LPREFIX, VALUE)
 
-/* Assembler format: sections. */
+/* Assembler format: sections.  */
 
 /* Indicate when jump tables go in the text section.  This is
    necessary when compiling PIC code.  */
 #define JUMP_TABLES_IN_TEXT_SECTION  (flag_pic)
 
-/* Stack & calling: aggregate returns. */
+/* Stack & calling: aggregate returns.  */
 
 /* Don't default to pcc-struct-return, because gcc is the only compiler, and
    we want to retain compatibility with older gcc versions.  */
 #define DEFAULT_PCC_STRUCT_RETURN 0
 
-/* Assembler format: alignment output. */
+/* Assembler format: alignment output.  */
 
 /* Kludgy test: when gas is upgraded, it will have p2align, and no problems
-   with nops. */
+   with nops.  */
 #ifndef HAVE_GAS_MAX_SKIP_P2ALIGN
 /* i386 OpenBSD still uses an older gas that doesn't insert nops by default
    when the .align directive demands to insert extra space in the text
@@ -94,22 +94,22 @@ Boston, MA 02111-1307, USA.  */
   if ((LOG)!=0) fprintf ((FILE), "\t.align %d,0x90\n", (LOG))
 #endif
 
-/* Stack & calling: profiling. */
+/* Stack & calling: profiling.  */
 
 /* OpenBSD's profiler recovers all information from the stack pointer.
-   The icky part is not here, but in machine/profile.h. */
+   The icky part is not here, but in machine/profile.h.  */
 #undef FUNCTION_PROFILER
 #define FUNCTION_PROFILER(FILE, LABELNO)  \
   fputs (flag_pic ? "\tcall mcount@PLT\n": "\tcall mcount\n", FILE);
 
-/* Assembler format: exception region output. */
+/* Assembler format: exception region output.  */
 
 /* All configurations that don't use elf must be explicit about not using
    dwarf unwind information. egcs doesn't try too hard to check internal
    configuration files...  */
 #define DWARF2_UNWIND_INFO 0
 
-/* Assembler format: alignment output. */
+/* Assembler format: alignment output.  */
 
 /* A C statement to output to the stdio stream FILE an assembler
    command to advance the location counter to a multiple of 1<<LOG
@@ -120,10 +120,11 @@ Boston, MA 02111-1307, USA.  */
 #ifdef HAVE_GAS_MAX_SKIP_P2ALIGN
 #define ASM_OUTPUT_MAX_SKIP_ALIGN(FILE,LOG,MAX_SKIP)			\
   do {									\
-    if ((LOG)!=0)							\
-      if ((MAX_SKIP)==0) fprintf ((FILE), "\t.p2align %d\n", (LOG));	\
+    if ((LOG) != 0)							\
+      if ((MAX_SKIP) == 0) fprintf ((FILE), "\t.p2align %d\n", (LOG));	\
       else fprintf ((FILE), "\t.p2align %d,,%d\n", (LOG), (MAX_SKIP));	\
   } while (0)
 #endif
 
-/* Note that we pick up ASM_OUTPUT_MI_THUNK from unix.h. */
+/* Note that we pick up ASM_OUTPUT_MI_THUNK from unix.h.  */
+

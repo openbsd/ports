@@ -24,7 +24,7 @@ Boston, MA 02111-1307, USA.  */
 #define OBSD_OLD_GAS
 #include <openbsd.h>
 
-/* Run-time target specifications. */
+/* Run-time target specifications.  */
 #define CPP_PREDEFINES "-D__unix__ -D__sparc__ -D__OpenBSD__ -Asystem(unix) -Asystem(OpenBSD) -Acpu(sparc) -Amachine(sparc)"
 
 /* Layout of source language data types */
@@ -42,7 +42,7 @@ Boston, MA 02111-1307, USA.  */
 #undef WCHAR_TYPE_SIZE
 #define WCHAR_TYPE_SIZE 32
 
-/* Specific options for DBX Output. */
+/* Specific options for DBX Output.  */
 
 /* This is BSD, so it wants DBX format.  */
 #define DBX_DEBUGGING_INFO
@@ -50,14 +50,14 @@ Boston, MA 02111-1307, USA.  */
 /* This is the char to use for continuation */
 #define DBX_CONTIN_CHAR '?'
 
-/* Stack & calling: aggregate returns. */
+/* Stack & calling: aggregate returns.  */
 
 /* Don't default to pcc-struct-return, because gcc is the only compiler, and
    we want to retain compatibility with older gcc versions.  */
 #undef DEFAULT_PCC_STRUCT_RETURN
 #define DEFAULT_PCC_STRUCT_RETURN 0
 
-/* Assembler format: exception region output. */
+/* Assembler format: exception region output.  */
 
 /* All configurations that don't use elf must be explicit about not using
    dwarf unwind information. egcs doesn't try too hard to check internal
@@ -65,3 +65,4 @@ Boston, MA 02111-1307, USA.  */
 #define DWARF2_UNWIND_INFO 0
 
 /* Default sparc.h does already define ASM_OUTPUT_MI_THUNK */
+
