@@ -1,0 +1,27 @@
+--- Makefile.orig	Fri Dec  3 16:45:01 1999
++++ Makefile	Sun Dec  3 23:07:17 2000
+@@ -7,15 +7,15 @@
+ 
+ ####### Compiler, tools and options
+ 
+-CC	=	gcc
+-CXX	=	g++
+-CFLAGS	=	-pipe -Wall -W -O3 -DLINCVS_APP
+-CXXFLAGS=	-pipe -Wall -W -O3 -DLINCVS_APP
+-INCPATH	=	-I./include -I./res -I./themes/include -I./themes/res -I$(QTDIR)/include
+-LINK	=	g++
++#CC	=	gcc
++#CXX	=	g++
++CFLAGS+=	-DLINCVS_APP
++CXXFLAGS=	${CFLAGS}
++INCPATH	=	-I./include -I./res -I./themes/include -I./themes/res -I${PREFIX}/include/X11/qt2
++LINK	=	$(CXX)
+ LFLAGS	=	
+-LIBS	=	-L$(QTDIR)/lib -lqt -L/usr/X11R6/lib -lXext -lX11 -lm
+-MOC	=	moc
++LIBS	=	-L${PREFIX}/lib/qt2 -L${PREFIX}/lib -L${X11BASE}/lib -lqt -lXext -lX11 -lm
++MOC	=	${PREFIX}/bin/moc2
+ 
+ TAR	=	tar -cf
+ GZIP	=	gzip -9f
+ 

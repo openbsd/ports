@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/10 13:15:23 reinhard Exp $
+bin/lincvs
+share/doc/lincvs/COPYING
+share/doc/lincvs/INSTALL.TXT 
+share/doc/lincvs/README.TXT
+share/doc/lincvs/VERSION.TXT
+@dirrm share/doc/lincvs
