@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2000/01/06 03:04:38 angelos Exp $
+# $OpenBSD: Makefile,v 1.59 2000/01/08 14:34:26 itojun Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -128,6 +128,7 @@
 #    SUBDIR += xipmsg
 #    SUBDIR += yale-tftpd
      SUBDIR += ytalk
+     SUBDIR += zebra
 #    SUBDIR += zephyr
 #    SUBDIR += zircon
 
