@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/06/16 10:40:44 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/11/14 21:40:35 naddy Exp $
 
 COMMENT=	"Apache module for finding the country of web requests"
 
@@ -6,8 +6,8 @@ COMMENT=	"Apache module for finding the country of web requests"
 # and has Apache that supports DSO's.
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS} 
 
-DISTNAME=	mod_geoip_1.2.0
-PKGNAME=	mod_geoip-1.2.0
+DISTNAME=	mod_geoip_1.2.6
+PKGNAME=	mod_geoip-1.2.6
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.maxmind.com/app/mod_geoip
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	GeoIP.3::net/GeoIP
+LIB_DEPENDS=	GeoIP.4::net/GeoIP
 
 FLAGS=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
