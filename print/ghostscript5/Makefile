@@ -3,7 +3,7 @@
 # Date created:		December 2, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.6 1998/06/02 21:49:32 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1998/07/10 19:42:40 marc Exp $
 #
 
 DISTNAME=	ghostscript-5.10
@@ -16,7 +16,7 @@ DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 MAINTAINER=	ports@openbsd.org
 
 LIB_DEPENDS=	png\\.1\\.:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
+BUILD_DEPENDS=	jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg:extract \
 		unzip:${PORTSDIR}/archivers/unzip
 
 MAKE_ENV=	PORTSDIR=${PORTSDIR}
@@ -38,6 +38,14 @@ GS_FONTS_OTHER=	ghostscript-fonts-other-5.10.tar.gz
 # Additional driver HP 850, see http://bonk.ethz.ch/hp850/hp850.html
 HP850_DRV=	hp850.zip
 
+# Location of the extracted jpeg sources
+#
+.if defined(OBJMACHINE)
+JPEG_DIR=	${PORTSDIR}/graphics/jpeg/work.${MACHINE}/jpeg-6b
+.else
+JPEG_DIR=	${PORTSDIR}/graphics/jpeg/work/jpeg-6b
+.endif
+
 .if defined(A4)
 CFLAGS+=	-DA4
 .endif
@@ -50,15 +58,14 @@ pre-fetch:
 .endif
 
 post-extract:
-	${TOUCH} ${WRKSRC}/adler32.c
-	${TOUCH} ${WRKSRC}/deflate.c
-	${TOUCH} ${WRKSRC}/trees.c
-	${TOUCH} ${WRKSRC}/adler32.o
-	${TOUCH} ${WRKSRC}/deflate.o
-	${TOUCH} ${WRKSRC}/trees.o
-	ln -s ${PORTSDIR}/graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg-6b
-	ln -s ${PORTSDIR}/graphics/png/work/libpng-1.0.1 ${WRKSRC}/libpng
-	cd ${WRKSRC} && ${SETENV} unzip -La ${DISTDIR}/${HP850_DRV}
+	@${TOUCH} ${WRKSRC}/adler32.c
+	@${TOUCH} ${WRKSRC}/deflate.c
+	@${TOUCH} ${WRKSRC}/trees.c
+	@${TOUCH} ${WRKSRC}/adler32.o
+	@${TOUCH} ${WRKSRC}/deflate.o
+	@${TOUCH} ${WRKSRC}/trees.o
+	@${LN} -sf ${JPEG_DIR} ${WRKSRC}/jpeg-6b
+	@cd ${WRKSRC} && ${SETENV} unzip -La ${DISTDIR}/${HP850_DRV}
 
 do-configure:
 .if defined(BATCH)
