@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.620 2004/07/11 20:44:33 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.621 2004/07/12 08:45:32 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1965,6 +1965,9 @@ update-patches:
 
 # mirroring utilities
 fetch-makefile:
+	@exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes _fetch-makefile
+
+_fetch-makefile:
 .if !defined(COMES_WITH)
 	@echo -n "all"
 .  if ${PERMIT_DISTFILES_FTP:L} == "yes"
@@ -1981,10 +1984,7 @@ fetch-makefile:
 .  else
 	@echo "${_FMN}: ${_ALLFILES}"
 .  endif
-	@exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes _fetch-makefile
 .endif
-
-_fetch-makefile:
 .if !empty(ALLFILES)
 .  for _F in ${_ALLFILES}
 	@if ! fgrep -q "|${_F}|" $${_DONE_FILES}; then \
