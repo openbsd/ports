@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2002/06/14 10:16:31 jsyn Exp $
+# $OpenBSD: Makefile,v 1.17 2002/07/02 01:37:59 kevlo Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
 
      SUBDIR += dgpsip
 #    SUBDIR += ephem
      SUBDIR += jday
-     SUBDIR += kstars
      SUBDIR += luna
      SUBDIR += sattrack
 #    SUBDIR += stars
