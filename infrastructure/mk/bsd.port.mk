@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.540 2003/01/06 20:18:23 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.541 2003/01/14 18:18:23 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -582,8 +582,12 @@ BZIP2?=	bzip2
 MAKE_ENV+=	EXTRA_SYS_MK_INCLUDES="<bsd.own.mk>"
 
 
-.if defined(OBJMACHINE)
-WRKDIR?=		${.CURDIR}/w-${PKGNAME}${_FLAVOR_EXT2}.${MACHINE_ARCH}
+.if defined(WRKOBJDIR)
+.  if defined(SEPARATE_BUILD) && ${SEPARATE_BUILD:L:Mflavored}
+WRKDIR?=		${WRKOBJDIR}/${PKGNAME}
+.  else
+WRKDIR?=		${WRKOBJDIR}/${PKGNAME}${_FLAVOR_EXT2}
+.  endif
 .else
 .  if defined(SEPARATE_BUILD) && ${SEPARATE_BUILD:L:Mflavored}
 WRKDIR?=		${.CURDIR}/w-${PKGNAME}
@@ -1553,27 +1557,12 @@ ${_BULK_COOKIE}: ${_PACKAGE_COOKIES}
 	@exec ${SUDO} ${MAKE} clean
 	@${_MAKE_COOKIE} $@
 
-_create_wrkobjdir =	\
-	rm -rf ${WRKOBJDIR}/${PKGNAME}${_FLAVOR_EXT2}; \
-	mkdir -p ${WRKOBJDIR}/${PKGNAME}${_FLAVOR_EXT2}; \
-	if [ ! -L ${WRKDIR} ] || \
-	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PKGNAME}${_FLAVOR_EXT2} ]; then \
-		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PKGNAME}${_FLAVOR_EXT2}"; \
-		rm -f ${WRKDIR}; \
-		ln -sf ${WRKOBJDIR}/${PKGNAME}${_FLAVOR_EXT2} ${WRKDIR}; \
-	fi
-
 # The real targets. Note that some parts always get run, some parts can be
 # disabled, and there are hooks to override behavior.
 
 ${_WRKDIR_COOKIE}:
-.  if defined(WRKOBJDIR) && empty(_MASTER)
-	@${_create_wrkobjdir}
-.  else
 	@rm -rf ${WRKDIR}
-	@mkdir -p ${WRKDIR}
-.  endif
-	@mkdir -p ${WRKDIR}/bin
+	@mkdir -p ${WRKDIR} ${WRKDIR}/bin
 	@${_MAKE_COOKIE} $@
 
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} 
@@ -2008,14 +1997,6 @@ list-distfiles:
 #
 .if !target(obj)
 obj:
-.  if defined(WRKOBJDIR)
-	@${_create_wrkobjdir}
-.  else
-	@echo ">>"
-	@echo ">> Please set the WRKOBJDIR variable before using 'make obj'"
-	@echo ">>"
-	@exit 1;
-.  endif
 .endif
 
 
