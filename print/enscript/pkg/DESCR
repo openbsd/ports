@@ -1,0 +1,33 @@
+GNU enscript is a drop-in replacement for the enscript program.
+Enscript converts ASCII files to PostScript and stores generated
+output to a file or sends it directly to the printer.
+Enscript supports following character sets:
+
+  - ISO-8859-1		ISO Latin1 (default)
+  - ISO-8859-2		ISO Latin2
+  - ISO-8859-3		ISO Latin3
+  - ISO-8859-4		ISO Latin4
+  - ISO-8859-5		ISO Cyrillic
+  - ISO-8859-7		ISO Greek
+  - ascii		7 bit ascii
+  - ascii fi se		7 bit ascii with following encodings:
+			  '{'  = Å‰ (adieresis)
+			  '|'  = Åˆ (odieresis)
+			  '}'  = ÅÂ (aring)
+			  '['  = Åƒ (Adieresis)
+			  '\\' = Å÷ (Odieresis)
+			  ']'  = Å≈ (Aring)
+  - ascii dk no		7 bit ascii with following encodings:
+			  '{'  = ÅÊ (ae)
+			  '|'  = Å¯ (oslash)
+			  '}'  = ÅÂ (aring)
+			  '['  = Å∆ (AE)
+			  '\\' = Åÿ (Oslash)
+			  ']'  = Å≈ (Aring)
+  - IBM/PC		standard PC/DOS character set
+  - Mac			Macintosh character set
+  - VMS			VMS multinational charset
+  - hp8			HP Roman-8 charset
+  - koi8		Adobe Standard Cyrillic Font KOI8 charset
+  - ps			PostScript font's default encoding
+  - pslatin1		PostScript interpreter's `ISOLatin1Encoding'
