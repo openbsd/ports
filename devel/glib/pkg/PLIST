@@ -1,5 +1,4 @@
 bin/glib-config
-info/dir
 @unexec install-info --delete %D/info/glib.info %D/info/dir
 info/glib.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
