@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2001/04/07 03:26:49 brad Exp $
+# $OpenBSD: Makefile,v 1.44 2001/04/07 04:09:53 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 COMMENT=	"multithreaded SQL database"
@@ -40,7 +40,9 @@ CONFIGURE_ARGS+= --enable-static \
 		 --without-readline \
 		 --without-bench \
 		 --without-mit-threads \
-		 --without-berkeley-db
+		 --without-berkeley-db \
+		 --without-innobase \
+		 --without-gemini
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/pth" \
 		LDFLAGS="-L${LOCALBASE}/lib/pth"
 
