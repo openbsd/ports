@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2004/05/01 16:16:34 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.13 2005/03/09 07:07:15 mbalmer Exp $ 
 
 COMMENT=	"modular framework for web-based applications"
 
-V=		2.2.5
+V=		3.0.3
 DISTNAME=	horde-${V}
 CATEGORIES=	devel www
 HOMEPAGE=	http://www.horde.org/
 
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
+MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,10 +26,10 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/horde
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	:php4-core->=4.3.1:www/php4/core \
-		:php4-mcrypt->=4.3.1:www/php4/extensions,-mcrypt \
-		:php4-domxml->=4.3.1:www/php4/extensions,-domxml \
-		:php4-pear->=4.3.1:www/php4/core,-pear \
+PHP_VERSION=	5
+RUN_DEPENDS=	:php${PHP_VERSION}-core-*:www/php${PHP_VERSION}/core \
+		:php${PHP_VERSION}-mcrypt-*:www/php${PHP_VERSION}/extensions,-mcrypt \
+		:php${PHP_VERSION}-pear-*:www/php${PHP_VERSION}/core,-pear \
 		::devel/pear-Log \
 		::mail/pear-Mail-Mime
 
