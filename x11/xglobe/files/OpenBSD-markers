@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.14 2001/08/14 21:13:26 todd Exp $
+# $OpenBSD: OpenBSD-markers,v 1.15 2001/08/15 02:29:19 danh Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -27.48		153.20		"Leonard"	# David
@@ -19,6 +19,7 @@
 42.280556	-83.754722 	"Rees"		# Jim Rees
 42.281336	-83.738587	"Turan"		# Chris
 42.3813		-71.1283	"Janzen"	# Paul
+43.1342		-78.966048	"Harnett"	# Daniel L.
 43.5826		1.4376		"Herrb"		# Matthieu
 43.633          -79.500         "Smith"         # Brad
 43.70		-79.42		"Westerback"	# Ken
