@@ -1,0 +1,19 @@
+$OpenBSD: patch-protocols_msn_msn_util_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
+--- protocols/msn/msn_util.c.orig	2004-05-04 06:02:52.000000000 +1000
++++ protocols/msn/msn_util.c	2004-06-09 19:13:17.000000000 +1000
+@@ -77,9 +77,12 @@ int msn_buddy_list_add( struct gaim_conn
+ 			if( g_strcasecmp( l->data, who ) == 0 )
+ 				return( 1 );
+ 	
+-	realname = g_new0( char, strlen( realname_ ) * 3 + 1 );
+-	strcpy( realname, realname_ );
+-	http_encode( realname );
++	{
++		size_t len = strlen( realname_ ) * 3 + 1;
++		realname = g_new0( char, len );
++		strlcpy( realname, realname_, len );
++		http_encode( realname, len );
++	}
+ 	
+ 	g_snprintf( buf, sizeof( buf ), "ADD %d %s %s %s\r\n", ++md->trId, list, who, realname );
+ 	if( msn_write( gc, buf, strlen( buf ) ) )

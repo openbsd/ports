@@ -1,0 +1,57 @@
+$OpenBSD: patch-protocols_yahoo_yahoo_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
+--- protocols/yahoo/yahoo.c.orig	2004-05-11 21:43:50.000000000 +1000
++++ protocols/yahoo/yahoo.c	2004-06-09 20:27:32.000000000 +1000
+@@ -350,8 +350,11 @@ static int byahoo_chat_open( struct gaim
+ 	char *roomname;
+ 	YList *members;
+ 	
+-	roomname = g_new0( char, strlen( gc->username ) + 16 );
+-	g_snprintf( roomname, strlen( gc->username ) + 16, "%s-Bee-%d", gc->username, byahoo_chat_id );
++	{
++		size_t len = strlen( gc->username ) + 16;
++		roomname = g_new0( char, len);
++		g_snprintf( roomname, len, "%s-Bee-%d", gc->username, byahoo_chat_id );
++	}
+ 	
+ 	c = serv_got_joined_chat( gc, ++byahoo_chat_id, roomname );
+ 	add_chat_buddy( c, gc->username );
+@@ -503,13 +506,17 @@ void ext_yahoo_login_response( int id, i
+ 		
+ 		if( url && *url )
+ 		{
+-			s = g_malloc( strlen( "Error %d (%s). See %s for more information." ) + strlen( url ) + strlen( errstr ) + 16 );
+-			sprintf( s, "Error %d (%s). See %s for more information.", succ, errstr, url );
++			const char format[] = "Error %d (%s). See %s for more information.";
++			size_t s_len = strlen(format) + strlen( url ) + strlen( errstr ) + 16;
++			s = g_malloc( s_len);
++			snprintf( s, s_len, format, succ, errstr, url );
+ 		}
+ 		else
+ 		{
+-			s = g_malloc( strlen( "Error %d (%s)" ) + strlen( errstr ) + 16 );
+-			sprintf( s, "Error %d (%s)", succ, errstr );
++			const char format[] = "Error %d (%s)";
++			size_t s_len = strlen(format) + strlen( errstr ) + 16;
++			s = g_malloc(s_len);
++			snprintf( s, s_len, format, succ, errstr );
+ 		}
+ 		
+ 		if( yd->logged_in )
+@@ -710,7 +717,7 @@ int ext_yahoo_connect(char *host, int po
+ 		if(!(server = gethostbyname(host))) {
+ 			return -1;
+ 		}
+-		strncpy(last_host, host, 255);
++		strlcpy(last_host, host, sizeof(last_host));
+ 	}
+ 
+ 	if((servfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+@@ -772,7 +779,7 @@ void ext_yahoo_got_conf_invite( int id, 
+ 		if( g_ascii_strcasecmp( m->data, gc->username ) != 0 )
+ 			add_chat_buddy( inv->c, m->data );
+ 	
+-	g_snprintf( txt, 1024, "Got an invitation to chatroom %s from %s: %s", room, who, msg );
++	g_snprintf( txt, sizeof(txt), "Got an invitation to chatroom %s from %s: %s", room, who, msg );
+ 	
+ 	do_ask_dialog( gc, txt, inv, byahoo_accept_conf, byahoo_reject_conf );
+ }

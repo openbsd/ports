@@ -1,0 +1,49 @@
+$OpenBSD: patch-ini_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
+--- ini.c.orig	2004-04-05 02:57:31.000000000 +1000
++++ ini.c	2004-06-08 20:10:54.000000000 +1000
+@@ -47,28 +47,31 @@ int ini_read( ini_t *file )
+ 	while( !feof( file->fp ) )
+ 	{
+ 		*s = 0;
++		COMPILE_TIME_ASSERT(127 < sizeof(s));
+ 		fscanf( file->fp, "%127[^\n#]s", s );
+ 		fscanf( file->fp, "%*[^\n]s" );
+ 		fgetc( file->fp );		/* Skip newline		*/
+ 		file->line ++;
+ 		if( strchr( s, '=' ) )
+ 		{
+-			sscanf( s, "%[^ =]s", key );
++			COMPILE_TIME_ASSERT(127 < sizeof(key));
++			sscanf( s, "%127[^ =]s", key );
+ 			if( ( t = strchr( key, '.' ) ) )
+ 			{
+ 				*t = 0;
+-				strcpy( file->section, key );
++				strlcpy( file->section, key, sizeof(file->section) );
+ 				t ++;
+ 			}
+ 			else
+ 			{
+-				strcpy( file->section, file->c_section );
++				strlcpy( file->section, file->c_section, sizeof(file->section) );
+ 				t = key;
+ 			}
+-			sscanf( t, "%s", file->key );
++			COMPILE_TIME_ASSERT(127 < sizeof(file->key));
++			sscanf( t, "%127s", file->key );
+ 			t = strchr( s, '=' ) + 1;
+ 			for( i = 0; t[i] == ' '; i ++ );
+-			strcpy( file->value, &t[i] );
++			strlcpy( file->value, &t[i], sizeof(file->value) );
+ 			for( i = strlen( file->value ) - 1; file->value[i] == 32; i -- )
+ 				file->value[i] = 0;
+ 			
+@@ -76,7 +79,7 @@ int ini_read( ini_t *file )
+ 		}
+ 		else if( ( t = strchr( s, '[' ) ) )
+ 		{
+-			strcpy( file->c_section, t + 1 );
++			strlcpy( file->c_section, t + 1, sizeof(file->c_section) );
+ 			t = strchr( file->c_section, ']' );
+ 			*t = 0;
+ 		}

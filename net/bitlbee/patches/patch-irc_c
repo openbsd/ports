@@ -1,0 +1,164 @@
+$OpenBSD: patch-irc_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
+--- irc.c.orig	2004-05-15 23:15:12.000000000 +1000
++++ irc.c	2004-06-09 22:09:00.000000000 +1000
+@@ -44,7 +44,7 @@ irc_t *irc_new( int fd )
+ 	
+ 	irc->userhash = g_hash_table_new( g_str_hash, g_str_equal );
+ 	
+-	strcpy( irc->umode, UMODE );
++	strlcpy( irc->umode, UMODE, sizeof(irc->umode) );
+ 	irc->mynick = g_strdup( ROOT_NICK );
+ 	irc->channel = g_strdup( ROOT_CHAN );
+ 	
+@@ -299,7 +299,7 @@ int irc_fill_buffer( irc_t *irc ) 
+ 	
+ 	while( select( irc->fd + 1, readfds, NULL, NULL, tv ) > 0 )
+ 	{
+-		st = read( irc->fd, line, 255 );
++		st = read( irc->fd, line, sizeof(line)-1);
+ 		if( st <= 0 )
+ 			return( 0 );
+ 		line[st]='\0';
+@@ -307,8 +307,9 @@ int irc_fill_buffer( irc_t *irc ) 
+ 			irc->readbuffer = g_strdup( line );
+ 		else 
+ 		{
+-			irc->readbuffer = bitlbee_realloc(irc->readbuffer, strlen( irc->readbuffer ) + strlen ( line ) + 1 );
+-			strcpy( ( irc->readbuffer+strlen( irc->readbuffer ) ), line ); 
++			size_t new_len  = strlen(irc->readbuffer) + strlen(line) + 1;
++			irc->readbuffer = bitlbee_realloc(irc->readbuffer, new_len);
++			strlcat( irc->readbuffer, line, new_len ); 
+ 		}
+ 	}
+ 	return 1;
+@@ -370,8 +371,9 @@ int irc_write_buffer( irc_t *irc ) 
+ 		}
+ 		else
+ 		{
+-			temp = bitlbee_alloc( size - st + 1 );
+-			strcpy( temp, ( irc->sendbuffer + st ) );
++			size_t new_len = size - st + 1;
++			temp = bitlbee_alloc( new_len );
++			strlcpy( temp, ( irc->sendbuffer + st ), new_len );
+ 			g_free( irc->sendbuffer );
+ 			irc->sendbuffer = temp;
+ 		}
+@@ -735,8 +737,8 @@ int irc_exec( irc_t *irc, char **cmd )
+ 				 * cares?
+ 				 */
+ 				
+-				strcat( buff, u->nick );
+-				strcat( buff, " " );
++				strlcat( buff, u->nick, sizeof(buff) );
++				strlcat( buff, " ", sizeof(buff) );
+ 			}
+ 		}
+ 		
+@@ -845,7 +847,7 @@ void irc_reply( irc_t *irc, int code, ch
+ 	va_list params;
+ 	
+ 	va_start( params, format );
+-	g_vsnprintf( text, IRC_MAX_LINE, format, params );
++	g_vsnprintf( text, sizeof(text), format, params );
+ 	va_end( params );
+ 	irc_write( irc, ":%s %03d %s %s", irc->myhost, code, irc->nick?irc->nick:"*", text );
+ 	
+@@ -888,9 +890,10 @@ void irc_vawrite( irc_t *irc, char *form
+ 	if( irc->quit )
+ 		return;
+ 
+-	g_vsnprintf( line, IRC_MAX_LINE - 3, format, params );
++	/* allow 2 for \r\n */
++	g_vsnprintf( line, sizeof(line)-2, format, params );
+ 
+-	strcat( line, "\r\n" );
++	strlcat( line, "\r\n", sizeof(line) );
+ 
+ 	if( irc->sendbuffer != NULL ) {
+ 		size=strlen( irc->sendbuffer ) + strlen( line );
+@@ -910,7 +913,7 @@ void irc_vawrite( irc_t *irc, char *form
+ 		}
+ #endif
+ 		irc->sendbuffer=bitlbee_realloc( irc->sendbuffer, size + 1 );
+-		strcpy( ( irc->sendbuffer + strlen( irc->sendbuffer ) ), line );
++		strlcat( irc->sendbuffer, line, size+1 );
+ 	}
+ 	else 
+ 		irc->sendbuffer = g_strdup(line);	
+@@ -1080,15 +1083,19 @@ void irc_motd( irc_t *irc )
+ 		irc_reply( irc, 375, ":- %s Message Of The Day - ", irc->myhost );
+ 		while( read( fd, linebuf + len, 1 ) == 1 )
+ 		{
+-			if( linebuf[len] == '\n' || len == max )
++			/* If we have a LF, output the line and START AGAIN */
++			if( linebuf[len] == '\n')
+ 			{
+ 				linebuf[len] = 0;
+ 				irc_reply( irc, 372, ":- %s", linebuf );
+ 				len = 0;
++				continue;
+ 			}
+-			else if( linebuf[len] == '%' )
++
++			if( linebuf[len] == '%' )
+ 			{
+-				read( fd, linebuf + len, 1 );
++				if (read( fd, linebuf + len, 1 ) != 1)
++					break;
+ 				if( linebuf[len] == 'h' )
+ 					add = irc->myhost;
+ 				else if( linebuf[len] == 'v' )
+@@ -1097,14 +1104,30 @@ void irc_motd( irc_t *irc )
+ 					add = irc->nick;
+ 				else
+ 					add = "%";
+-				
+-				strncpy( linebuf + len, add, max - len );
++
++				/* If the expanded string would be too long, output the line */
++				if ((len + strlen(add)) > max) {
++					linebuf[len] = 0;
++					irc_reply( irc, 372, ":- %s", linebuf );
++					len = 0;
++				}
++
++				/* Append the string to the line */
++				strlcpy( linebuf + len, add, max - len );
+ 				while( linebuf[++len] );
+ 			}
+-			else if( len < max )
++			else
+ 			{
+ 				len ++;
+ 			}
++
++			/* If we have reached the maximum, output the line */
++			if( len == max )
++			{
++				linebuf[len] = 0;
++				irc_reply( irc, 372, ":- %s", linebuf );
++				len = 0;
++			}
+ 		}
+ 		irc_reply( irc, 376, ":End of MOTD" );
+ 		closesocket( fd );
+@@ -1367,8 +1390,8 @@ int buddy_send_handler( irc_t *irc, user
+ 			u->sendbuf = bitlbee_realloc( u->sendbuf, u->sendbuf_len );
+ 		}
+ 		
+-		strcat( u->sendbuf, msg );
+-		strcat( u->sendbuf, "\n" );
++		strlcat( u->sendbuf, msg, u->sendbuf_len );
++		strlcat( u->sendbuf, "\n", u->sendbuf_len );
+ 		
+ 		if( u->sendbuf_timer > 0 )
+ 			g_source_remove( u->sendbuf_timer );
+@@ -1432,7 +1455,7 @@ int irc_msgfrom( irc_t *irc, char *nick,
+ 	
+ 	if( !u->is_private && nick_cmp( u->nick, irc->mynick ) != 0 )
+ 	{
+-		int len = strlen( irc->nick) + 3;
++		size_t len = strlen( irc->nick) + 3;
+ 		prefix = bitlbee_alloc( len );
+ 		g_snprintf( prefix, len, "%s%s", irc->nick, set_getstr( irc, "to_char" ) );
+ 		prefix[len-1] = 0;

@@ -1,0 +1,48 @@
+$OpenBSD: patch-protocols_nogaim_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
+--- protocols/nogaim.c.orig	2004-05-29 06:05:06.000000000 +1000
++++ protocols/nogaim.c	2004-06-09 21:25:22.000000000 +1000
+@@ -468,8 +468,8 @@ void add_buddy( struct gaim_connection *
+ 		/* Buddy seems to exist already. Let's ignore this request then... */
+ 	}
+ 	
+-	memset( nick, 0, MAX_NICK_LENGTH + 1 );
+-	strcpy( nick, nick_get( gc->irc, handle, gc->protocol, realname ) );
++	memset( nick, 0, sizeof(nick));
++	strlcpy( nick, nick_get( gc->irc, handle, gc->protocol, realname ), sizeof(nick) );
+ 	
+ 	u = user_add( gc->irc, nick );
+ 	
+@@ -513,8 +513,8 @@ struct buddy *find_buddy( struct gaim_co
+ 		return( NULL );
+ 
+ 	memset( b, 0, sizeof( b ) );
+-	strncpy( b->name, handle, 80 );
+-	strncpy( b->show, u->realname, BUDDY_ALIAS_MAXLEN );
++	strlcpy( b->name, handle, sizeof(b->name));
++	strlcpy( b->show, u->realname, sizeof(b->show));
+ 	b->present = u->online;
+ 	b->gc = u->gc;
+ 	
+@@ -818,8 +818,11 @@ struct conversation *serv_got_joined_cha
+ 	c->gc = gc;
+ 	c->title = g_strdup( handle );
+ 	
+-	s = bitlbee_alloc( 16 );
+-	sprintf( s, "#chat_%03d", gc->irc->c_id++ );
++	{
++		size_t s_len = 16;
++		s = bitlbee_alloc( s_len);
++		g_snprintf( s, s_len, "#chat_%03d", gc->irc->c_id++ );
++	}
+ 	c->channel = g_strdup( s );
+ 	g_free( s );
+ 	
+@@ -995,7 +998,7 @@ char *set_eval_away_devoice( irc_t *irc,
+ 					count = 0;
+ 				}
+ 				
+-				sprintf( list + strlen( list ), " %s", u->nick );
++				g_snprintf( list + strlen( list ), sizeof(list)-strlen(list), " %s", u->nick );
+ 				count ++;
+ 			}
+ 			u = u->next;

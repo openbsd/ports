@@ -1,0 +1,21 @@
+$OpenBSD: patch-utils_bitlbeed_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
+--- utils/bitlbeed.c.orig	2004-05-15 22:23:20.000000000 +1000
++++ utils/bitlbeed.c	2004-06-09 20:38:47.000000000 +1000
+@@ -352,14 +352,14 @@ void log( char *fmt, ... )
+ 	memset( line, 0, MAX_LOG_LEN );
+ 	
+ 	tm = time( NULL );
+-	strcpy( line, ctime( &tm ) );
++	strlcpy( line, ctime( &tm ), sizeof(line) );
+ 	l = strlen( line );
+ 	line[l-1] = ' ';
+ 	
+ 	va_start( params, fmt );
+-	vsnprintf( line + l, MAX_LOG_LEN - l - 2, fmt, params );
++	vsnprintf( line + l, sizeof(line) - l - 2, fmt, params );
+ 	va_end( params );
+-	strcat( line, "\n" );
++	strlcat( line, "\n", sizeof(line) );
+ 	
+ 	fprintf( logfile, "%s", line );
+ }

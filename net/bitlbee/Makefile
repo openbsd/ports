@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2004/02/01 07:12:39 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2004/06/20 16:27:49 naddy Exp $
 
-COMMENT=		"IRC proxy to connect to ICQ, AOL, MSN and Jabber"
+COMMENT=	"IRC proxy to connect to AIM, ICQ, Jabber, MSN and Yahoo"
 
-DISTNAME=		bitlbee-0.83
+DISTNAME=		bitlbee-0.90
 CATEGORIES=		net
-#PKGNAME=		${DISTNAME}p1
 
 HOMEPAGE=		http://bitlbee.org
 
@@ -18,14 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 
 MASTER_SITES=		http://get.bitlbee.org/src/
-MASTER_SITES0=		http://get.bitlbee.org/fink/
-PATCHFILES=		bitlbee-0.83-1-darwin.patch:0
-PATCH_DIST_STRIP=	-p1
 
 DB_DIR?=		/var/bitlbee
 ETCDIR=			${SYSCONFDIR}/bitlbee
 EXAMPLEDIR=		${PREFIX}/share/examples/bitlbee
-DOCS=			${FILESDIR}/user-guide.html
+DOCS=			${WRKSRC}/doc/user-guide.html
 DOCDIR=			${PREFIX}/share/doc/bitlbee/
 BITLBEEUSER=		_bitlbee
 BITLBEEGROUP=		_bitlbee
@@ -33,7 +29,19 @@ ID=			509
 SUBST_VARS=		DB_DIR ETCDIR EXAMPLEDIR DOCDIR \
 			BITLBEEUSER BITLBEEGROUP ID
 
-LIB_DEPENDS=		soup-2.0.0.0::devel/libsoup
+LIB_DEPENDS=		glib-2.0.0.0::devel/glib2
+
+# I am told gnutls does not build on all arches
+# This is only used for connecting to MSN, so I've added a no_msn FLAVOR
+FLAVORS=		no_msn
+FLAVOR?=
+
+.if ${FLAVOR:L:Mno_msn}
+CONFIGURE_ARGS+=	--msn=0
+.else
+LIB_DEPENDS+=		gnutls.8::security/gnutls
+.endif
+
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--bindir=${PREFIX}/libexec \
@@ -48,6 +56,10 @@ FAKE_FLAGS=		${DESTDIRNAME}=${WRKINST} ETCDIR=${EXAMPLEDIR}
 FAKE_TARGET=		install install-etc
 
 NO_REGRESS=		Yes
+
+# Make sure we use the system snprintf
+post-extract:
+	@rm -f ${WRKSRC}/protocols/snprintf.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
