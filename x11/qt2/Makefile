@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2004/04/07 03:19:23 brad Exp $
+# $OpenBSD: Makefile,v 1.46 2004/12/19 14:01:17 alek Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples and tutorial for qt2"
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+myWANTLIB=		GL GLU X11 Xext Xmu c m stdc++ z
 
 #CXXFLAGS+=	-g
 
@@ -48,12 +49,19 @@ EXTRA_SAMPLES=
 QTMODULES+= opengl
 EXTRA_SAMPLES+=box gear glpixmap overlay overlay_x11 sharedbox
 
+.if ${SUBPACKAGE} != "-examples"
+myWANTLIB+=	lcms ICE Xft SM jpeg 
+.endif
+.if !defined(PACKAGING) || ${SUBPACKAGE} == "-examples"
+myWANTLIB+=	pthread
+.endif
 
 LIB_DEPENDS=
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} != "-html"
 LIB_DEPENDS+=	png::graphics/png \
 		mng::graphics/libmng
+WANTLIB=	${myWANTLIB}
 .endif
 .if defined(PACKAGING)
 .  if ${SUBPACKAGE} == "-examples"
