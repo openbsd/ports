@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/14 14:41:30 todd Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/14 18:50:20 heko Exp $
 
 COMMENT=		"libraries for the GNOME project"
 V=			1.2.13
@@ -9,7 +9,7 @@ HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= 	stable/sources/gnome/libs
+MASTER_SITE_SUBDIR= 	stable/sources/gnome-libs
 
 LIB_DEPENDS=		gdk_imlib.19::graphics/imlib \
 			esd.2::audio/esound \
