@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/01/18 15:44:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/01/18 21:51:33 naddy Exp $
 
 COMMENT=	"Gtk-based scientific calculator"
 
@@ -23,8 +23,5 @@ LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
-
-post-patch:
-	@perl -i -pe 's/malloc\s*\(/calloc(1, /g' ${WRKSRC}/src/*.c
 
 .include <bsd.port.mk>
