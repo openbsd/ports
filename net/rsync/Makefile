@@ -1,25 +1,21 @@
-# $OpenBSD: Makefile,v 1.10 1999/06/24 18:36:23 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.11 1999/08/20 12:44:01 brad Exp $
 
-DISTNAME= rsync-2.3.1
-CATEGORIES=net
+DISTNAME=	rsync-2.3.1
+CATEGORIES=	net
+MASTER_SITES=	ftp://rsync.samba.org/pub/rsync/
 
-NEED_VERSION=1.60
+NEED_VERSION=	1.60
 
+MAINTAINER=	espie@openbsd.org
 
-MAINTAINER=		espie@openbsd.org
+SEPARATE_BUILD=	concurrent
+GNU_CONFIGURE=	yes
 
-MASTER_SITES=		ftp://rsync.samba.org/pub/rsync/
-
-SEPARATE_BUILD=concurrent
-
-GNU_CONFIGURE=		yes
+DOCDIR=	${PREFIX}/share/doc/rsync
 
 # not MESSAGE, explains the build warning
 post-build:
 	@echo "(this use of mktemp is actually correct)"
-
-DOCDIR=${PREFIX}/share/doc/rsync
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/rsync ${PREFIX}/bin

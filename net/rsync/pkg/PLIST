@@ -1,6 +1,6 @@
+bin/rsync
 man/man1/rsync.1
 man/man5/rsyncd.conf.5
-bin/rsync
 share/doc/rsync/tech_report.tex
 share/doc/rsync/test.sh
 share/doc/rsync/rsyncstats
