@@ -1,0 +1,27 @@
+$OpenBSD: patch-unix_c,v 1.1 2003/03/03 00:56:32 pvalchev Exp $
+--- unix.c.orig	Sun Mar  2 17:17:35 2003
++++ unix.c	Sun Mar  2 17:18:15 2003
+@@ -128,9 +128,9 @@ execsh(char *args, char *cmd, Bufblock *
+ 			if (e)
+ 				exportenv(e);
+ 			if(shflags)
+-				execl(shell, shellname, shflags, args, 0);
++				execl(shell, shellname, shflags, args, (void *)NULL);
+ 			else
+-				execl(shell, shellname, args, 0);
++				execl(shell, shellname, args, (void *)NULL);
+ 			mkperror(shell);
+ 			_exit(1);
+ 		}
+@@ -193,9 +193,9 @@ pipecmd(char *cmd, Envy *e, int *fd)
+ 		if(e)
+ 			exportenv(e);
+ 		if(shflags)
+-			execl(shell, shellname, shflags, "-c", cmd, 0);
++			execl(shell, shellname, shflags, "-c", cmd, (void *)NULL);
+ 		else
+-			execl(shell, shellname, "-c", cmd, 0);
++			execl(shell, shellname, "-c", cmd, (void *)NULL);
+ 		mkperror(shell);
+ 		_exit(1);
+ 	}
