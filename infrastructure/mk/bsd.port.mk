@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.565 2003/07/28 17:17:04 sturm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.566 2003/07/30 10:40:43 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1120,7 +1120,7 @@ _flavor_fragment= \
 # Various dependency styles
 
 _build_depends_fragment= \
-	if pkg dependencies check $$pkg; then \
+	if pkg dependencies check "$$pkg"; then \
 		found=true; \
 	fi
 _run_depends_fragment=${_build_depends_fragment}
