@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/22 16:35:30 peter Exp $
+libdata/perl5/site_perl/HTML/FromText.pm
+man/man3/HTML::FromText.3p
