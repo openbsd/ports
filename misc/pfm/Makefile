@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2003/02/16 19:15:04 margarida Exp $
+# $OpenBSD: Makefile,v 1.4 2003/04/06 00:49:37 margarida Exp $
 
 COMMENT=		"personal file manager"
 
-DISTNAME=		pfm-1.87.2
+DISTNAME=		pfm-1.92.2
 CATEGORIES=		misc
 
 HOMEPAGE=		http://p-f-m.sourceforge.net/
