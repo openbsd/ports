@@ -1,7 +1,7 @@
-$OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.2 2002/03/30 22:02:13 espie Exp $
+$OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.3 2002/03/31 15:57:05 espie Exp $
 --- konq-embed/dropin/kio/kio_ftp.cpp.orig	Sat Mar 30 21:19:45 2002
-+++ konq-embed/dropin/kio/kio_ftp.cpp	Sat Mar 30 22:54:47 2002
-@@ -0,0 +1,2272 @@
++++ konq-embed/dropin/kio/kio_ftp.cpp	Sun Mar 31 17:43:09 2002
+@@ -0,0 +1,2253 @@
 +/*  This file is part of the KDE libraries
 +    Copyright (C) 2000 David Faure <faure@kde.org>
 +
@@ -21,7 +21,7 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.2 2002/03/30 22:02:13 espi
 +    Boston, MA 02111-1307, USA.
 +*/
 +
-+// $Id: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.2 2002/03/30 22:02:13 espie Exp $
++// $Id: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.3 2002/03/31 15:57:05 espie Exp $
 +
 +#include "kio_ftp.h"
 +
@@ -70,32 +70,6 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.2 2002/03/30 22:02:13 espi
 +
 +
 +using namespace KIO;
-+
-+#if 0
-+extern "C" { int kdemain(int argc, char **argv); }
-+
-+int kdemain( int argc, char **argv )
-+{
-+  KLocale::setMainCatalogue("kdelibs");
-+  KInstance instance( "kio_ftp" );
-+  ( void ) KGlobal::locale();
-+
-+  kdDebug(7102) << "Starting " << getpid() << endl;
-+
-+  if (argc != 4)
-+  {
-+     fprintf(stderr, "Usage: kio_ftp protocol domain-socket1 domain-socket2\n");
-+     exit(-1);
-+  }
-+
-+  Ftp slave(argv[2], argv[3]);
-+  slave.dispatchLoop();
-+
-+  kdDebug(7102) << "Done" << endl;
-+  return 0;
-+}
-+#endif
-+
 +
 +Ftp::Ftp( const QCString &pool, const QCString &app )
 +    : SlaveBase( "ftp", pool, app )
@@ -1054,6 +1028,7 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.2 2002/03/30 22:02:13 espi
 +  return true;
 +}
 +
++#if 0
 +void Ftp::mkdir( const KURL & url, int permissions )
 +{
 +  QString path = url.path();
@@ -1582,6 +1557,7 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.2 2002/03/30 22:02:13 espi
 +  kdDebug(7102) << "Got slave_status host = " << (m_host.ascii() ? m_host.ascii() : "[None]") << " [" << (m_bLoggedOn ? "Connected" : "Not connected") << "]" << endl;
 +  slaveStatus( m_host, m_bLoggedOn );
 +}
++#endif
 +
 +bool Ftp::ftpOpenDir( const QString & path )
 +{
@@ -2027,6 +2003,7 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.2 2002/03/30 22:02:13 espi
 +}
 +*/
 +
++#if 0
 +void Ftp::put( const KURL& dest_url, int permissions, bool overwrite, bool resume )
 +{
 +  QString dest_orig = dest_url.path();
@@ -2176,6 +2153,7 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.2 2002/03/30 22:02:13 espi
 +  // We have done our job => finish
 +  finished();
 +}
++#endif
 +
 +
 +/*
@@ -2224,10 +2202,13 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_cpp,v 1.2 2002/03/30 22:02:13 espi
 +  return n;
 +}
 +
++#if 0
 +size_t Ftp::ftpWrite(void *buffer, long len)
 +{
 +  return( KSocks::self()->write( sData, buffer, len ) );
 +}
++#endif
++
 +void Ftp::getDir( const KURL& url)
 +{
 +	QByteArray header_buffer;

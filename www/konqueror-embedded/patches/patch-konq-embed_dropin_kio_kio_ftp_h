@@ -1,6 +1,6 @@
-$OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_h,v 1.2 2002/03/30 22:02:13 espie Exp $
+$OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_h,v 1.3 2002/03/31 15:57:05 espie Exp $
 --- konq-embed/dropin/kio/kio_ftp.h.orig	Sat Mar 30 21:19:45 2002
-+++ konq-embed/dropin/kio/kio_ftp.h	Sat Mar 30 22:26:55 2002
++++ konq-embed/dropin/kio/kio_ftp.h	Sun Mar 31 17:42:53 2002
 @@ -0,0 +1,278 @@
 +/*  This file is part of the KDE libraries
 +    Copyright (C) 2000 David Faure <faure@kde.org>
@@ -21,7 +21,7 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_h,v 1.2 2002/03/30 22:02:13 espie 
 +    Boston, MA 02111-1307, USA.
 +*/
 +
-+// $Id: patch-konq-embed_dropin_kio_kio_ftp_h,v 1.2 2002/03/30 22:02:13 espie Exp $
++// $Id: patch-konq-embed_dropin_kio_kio_ftp_h,v 1.3 2002/03/31 15:57:05 espie Exp $
 +
 +#ifndef __ftp_h__
 +#define __ftp_h__
@@ -83,19 +83,19 @@ $OpenBSD: patch-konq-embed_dropin_kio_kio_ftp_h,v 1.2 2002/03/30 22:02:13 espie 
 +   */
 +  virtual void closeConnection();
 +
-+  virtual void stat( const KURL &url );
++  //virtual void stat( const KURL &url );
 +
-+  virtual void listDir( const KURL & url );
-+  virtual void mkdir( const KURL & url, int permissions );
-+  virtual void rename( const KURL & src, const KURL & dst, bool overwrite );
-+  virtual void del( const KURL & url, bool isfile );
-+  virtual void chmod( const KURL & url, int permissions );
++  //virtual void listDir( const KURL & url );
++  //virtual void mkdir( const KURL & url, int permissions );
++  //virtual void rename( const KURL & src, const KURL & dst, bool overwrite );
++  //virtual void del( const KURL & url, bool isfile );
++  //virtual void chmod( const KURL & url, int permissions );
 +
 +  virtual void get( const KURL& url );
-+  virtual void put( const KURL& url, int permissions, bool overwrite, bool resume);
++  //virtual void put( const KURL& url, int permissions, bool overwrite, bool resume);
 +  //virtual void mimetype( const KURL& url );
 +
-+  virtual void slave_status();
++  //virtual void slave_status();
 +
 +  // unsupported, AFAIK
 +  // virtual void copy( const KURL &src, const KURL &dest, int permissions, bool overwrite );
