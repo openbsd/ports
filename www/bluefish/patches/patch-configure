@@ -1,0 +1,35 @@
+$OpenBSD: patch-configure,v 1.1 2004/03/23 19:29:56 pvalchev Exp $
+--- configure.orig	2004-03-17 20:43:37.000000000 +0100
++++ configure	2004-03-17 20:48:36.000000000 +0100
+@@ -3300,31 +3300,6 @@ else
+ 	echo "no"
+ fi
+ 
+-echo -n "checking for gnome-vfs-2.0... "
+-if pkg-config --exists gnome-vfs-2.0 ; then
+-	LIBS="$LIBS `pkg-config --libs gnome-vfs-2.0`"
+-	CFLAGS="$CFLAGS `pkg-config --cflags gnome-vfs-2.0`"
+-	echo "yes"
+-	cat >>confdefs.h <<\_ACEOF
+-#define HAVE_GNOME_VFS 1
+-_ACEOF
+-
+-else
+-	echo "no"
+-	echo "gnome-vfs-2.0 not found, opening remote files will be disabled"
+-fi
+-
+-echo -n "checking for gnome-vfs-2.2... "
+-if pkg-config gnome-vfs-2.0 --atleast-version=2.2 ; then
+-	cat >>confdefs.h <<\_ACEOF
+-#define HAVE_ATLEAST_GNOMEVFS_2_2 1
+-_ACEOF
+-
+-	echo "yes"
+-else
+-	echo "no"
+-fi
+-
+ # Extract the first word of "pcre-config", so it can be a program name with args.
+ set dummy pcre-config; ac_word=$2
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
