@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/07/18 13:58:09 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2003/08/26 17:40:08 naddy Exp $
 
 COMMENT=		"GNU editor: extensible, customizable, self documenting"
 COMMENT-el=		"elisp sources for those who want to read/modify them"
@@ -32,6 +32,7 @@ FLAVOR?=
 
 GCCARCH=		${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}
 
+USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS=		${GCCARCH} --with-pop
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
