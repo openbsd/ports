@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2003/12/02 21:22:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.26 2003/12/21 18:21:01 sturm Exp $
 
 COMMENT=		"reduce the amount of SPAM/UCE (junk-mail)"
 
-VERSION=		0.90
+VERSION=		1.0
 DISTNAME=		tmda-${VERSION}
 CATEGORIES=		mail
 
