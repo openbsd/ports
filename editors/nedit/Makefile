@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2002/09/01 18:49:01 mpech Exp $
+# $OpenBSD: Makefile,v 1.27 2002/10/26 00:39:15 naddy Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		"X11/Motif GUI text editor"
@@ -6,7 +6,7 @@ COMMENT=		"X11/Motif GUI text editor"
 DISTNAME=		nedit-5.3RC1-source
 PKGNAME=		nedit-5.3rc1
 CATEGORIES=		editors x11
-NEED_VERSION=		1.528
+
 MASTER_SITES=		http://nedit.org/ftp/beta/
 
 HOMEPAGE=		http://www.nedit.org/
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_MOTIF=		Any
 ALL_TARGET=		openbsd
+
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/source/nedit ${PREFIX}/bin

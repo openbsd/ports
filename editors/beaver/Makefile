@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/06/05 17:50:01 couderc Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/26 00:39:15 naddy Exp $
 COMMENT=	"lightweight Gtk text editor with syntax highlighting"
 
 DISTNAME=	beaver-0.2.3
 CATEGORIES=	editors	
-NEED_VERSION=	1.531
 
 HOMEPAGE=	http://eturquin.free.fr/beaver/
 MASTER_SITES=	${HOMEPAGE}dloads/
@@ -21,6 +20,8 @@ LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 MAKE_FLAGS=	CC="${CC}" OPTI="${CFLAGS}"
 
 WRKSRC=	${WRKDIST}/src
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/beaver \

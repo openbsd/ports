@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/25 23:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/10/26 00:39:15 naddy Exp $
 
 COMMENT=	"full screen simple editor"
 
@@ -23,5 +23,7 @@ WRKDIST=	${WRKDIR}
 
 pre-patch:
 	@cd ${WRKDIR} && cp -pR freebsd openbsd
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/07/20 00:21:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2002/10/26 00:39:15 naddy Exp $
 
 
 COMMENT=	"X11 based RTF editor"
@@ -23,6 +23,7 @@ LIB_DEPENDS=	png.2.::graphics/png \
 USE_MOTIF=	openmotif
 ALL_TARGET=	compile.shared
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+NO_REGRESS=	Yes
 
 AFMDIR=		${PREFIX}/share/Ted/afm
 INDDIR=		${PREFIX}/share/Ted/ind

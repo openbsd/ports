@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2001/10/28 13:05:46 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2002/10/26 00:39:15 naddy Exp $
 
 COMMENT=	"text editor"
 
 DISTNAME=	jed-B0.99-14
 PKGNAME=	jed-0.99.14
 CATEGORIES=	editors
-NEED_VERSION=	1.402
+
 MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/ \
 		ftp://ftp.ntua.gr/pub/pub/lang/slang/jed/v0.99 \
 		ftp://ftp.gigabell.net/pub/Jed/v0.99/ \
@@ -32,5 +32,7 @@ ALL_TARGET=	all getmail
 USE_X11=	Yes
 ALL_TARGET=	all getmail xjed
 .endif
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/10/06 21:42:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/10/26 00:39:15 naddy Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
@@ -7,7 +7,7 @@ COMMENT=	"multilingual clone of vi/ex"
 DISTNAME=	nvi-1.79
 PKGNAME=	nvi-m17n-1.79.19991117
 CATEGORIES=	editors
-NEED_VERSION=	1.402
+
 MASTER_SITES0=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
 
 MASTER_SITES=	ftp://sleepy.vwh.net/pub/ \
@@ -72,6 +72,8 @@ post-build:
 		-e 's|$${PREFIX}|${PREFIX}|'				\
 		${FILESDIR}/nvi-m17n > ${WRKDIR}/nvi-${encoding}
 .endfor
+
+NO_REGRESS=	Yes
 
 post-install:
 	@mv ${PREFIX}/share/vi/catalog/ru_SU.KOI8-R \

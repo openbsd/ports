@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/11/13 15:23:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/26 00:39:15 naddy Exp $
 
 COMMENT=		"easy to use text editor"
 
 VERSION=		1.4.4
 DISTNAME=		ee-${VERSION}
 CATEGORIES=     	editors
-NEED_VERSION=		1.490
 
 HOMEPAGE=		http://mahon.cwx.net/
 
@@ -22,6 +21,8 @@ EXTRACT_SUFX=		.src.tgz
 
 WRKDIST=		${WRKDIR}/easyedit-${VERSION}
 MAKE_ENV=		SYSCONFDIR=${SYSCONFDIR}
+
+NO_REGRESS=		Yes
 
 do-install:
 	perl -i -pe 's:%%SYSCONFDIR%%:${SYSCONFDIR}:g' ${WRKSRC}/ee.1

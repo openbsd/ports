@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2002/05/13 12:37:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2002/10/26 00:39:15 naddy Exp $
 
 COMMENT=	"powerful programming editor"
 
 DISTNAME=	xwpe-1.5.22a
 CATEGORIES=	editors
-NEED_VERSION=	1.528
+
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/editors/X/} \
 		http://www.identicalsoftware.com/xwpe/ 
 
@@ -22,6 +22,8 @@ CONFIGURE_STYLE=gnu
 MAKE_FLAGS=	CFLAGS='${CFLAGS} -I${X11BASE}/include'
 FAKE_FLAGS=	${MAKE_FLAGS} prefix=${WRKINST}${PREFIX}
 #SEPARATE_BUILD=	simple
+
+NO_REGRESS=	Yes
 
 post-install:
 	@strip ${PREFIX}/bin/xwpe

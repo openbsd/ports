@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/09/21 11:38:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2002/10/26 00:39:15 naddy Exp $
 
 # 
 # What port/package will be created
@@ -57,6 +57,7 @@ BUILD_DEPENDS=		:bzip2-*:archivers/bzip2
 
 EXTRACT_ONLY=
 NO_BUILD=		Yes
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/xemacs

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/09 05:36:32 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/26 00:39:15 naddy Exp $
 
 COMMENT=	"Library of Emacs Input Method"
 
@@ -6,7 +6,7 @@ VERSION=	20.7
 PKGNAME=	emacs-leim-${VERSION}
 DISTNAME=	leim-${VERSION}
 CATEGORIES=	editors
-NEED_VERSION=	1.528
+
 MASTER_SITES=	${MASTER_SITE_GNU:=emacs/}
 
 MAINTAINER=	Sungman Cho <smcho@tsp.korea.ac.kr>
@@ -24,6 +24,8 @@ SUBST_VARS=	VERSION
 
 WRKSRC=		${WRKDIR}/emacs-${VERSION}/leim
 DATASUBDIR=	share/emacs/${VERSION}
+
+NO_REGRESS=	Yes
 
 # this is what GNU configure script does plus two lines of patch to make it
 # work with the installed emacs.

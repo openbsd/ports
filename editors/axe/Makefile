@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2002/05/13 12:37:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/10/26 00:39:14 naddy Exp $
 
 COMMENT=		"simple to use text editor for X11"
 
 PKGNAME=		${DISTNAME:L}
 DISTNAME=		aXe-6.1.2
 CATEGORIES=		editors
-NEED_VERSION=		1.528
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
@@ -16,5 +15,7 @@ MASTER_SITES=		${MASTER_SITE_XCONTRIB:=editors/}
 EXTRACT_SUFX=		.tar.Z
 
 CONFIGURE_STYLE=	imake
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>
