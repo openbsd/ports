@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2002/12/29 19:43:49 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2004/02/14 23:59:41 naddy Exp $
 
 COMMENT=	"binary visual display editor, based on vi"
 
-DISTNAME=	bvi-1.3.1
+DISTNAME=	bvi-1.3.2
 CATEGORIES=	editors
 HOMEPAGE=	http://bvi.sourceforge.net/
 
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bvi/}
 EXTRACT_SUFX=	.src.tar.gz
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 
 NO_REGRESS=	Yes
 
