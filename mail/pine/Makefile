@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2002/12/01 20:57:10 jakob Exp $
+# $OpenBSD: Makefile,v 1.48 2002/12/09 20:54:12 jakob Exp $
 
 COMMENT=	"program for Internet E-mail and News"
 COMMENT-pico=	"small text editor"
@@ -29,7 +29,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
 
-FLAVORS=	ldap
+FLAVORS=	kerberos ldap
 FLAVOR?=
 
 MULTI_PACKAGES=	-pico -pilot
@@ -41,17 +41,19 @@ CATEGORIES=	editors
 CATEGORIES=	sysutils
 .endif
 
-.if ${FLAVOR:L} == "ldap" && ${SUBPACKAGE} == ""
-LIB_DEPENDS+=	ldap.2:openldap-client-2.*:databases/openldap
+PINE_BUILD_FLAGS=	CC="${CC}" EXTRACFLAGS="${CFLAGS}" \
+			SSLTYPE="unix" LOCALBASE="${LOCALBASE}"
+
+.if ${FLAVOR:L:Mkerberos}
+PINE_BUILD_FLAGS+=	EXTRAAUTHENTICATORS="gss"
 .endif
 
-PINE_BUILD_FLAGS=	CC="${CC}" EXTRACFLAGS="${CFLAGS}" \
-			SSLTYPE="unix" EXTRAAUTHENTICATORS="gss" \
-			LOCALBASE="${LOCALBASE}"
-
-.if ${FLAVOR:L} == "ldap"
+.if ${FLAVOR:L:Mldap}
 PINE_BUILD_FLAGS+=	LDAPLIBS="-L${LOCALBASE}/lib -lldap -llber" \
 			LDAPCFLAGS="-DENABLE_LDAP -I${LOCALBASE}/include"
+.if ${SUBPACKAGE} == ""
+LIB_DEPENDS+=	ldap.2:openldap-client-2.*:databases/openldap
+.endif
 .endif
 
 do-build:
