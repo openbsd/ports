@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/10/26 00:39:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2004/06/24 17:38:13 sturm Exp $
 
 # 
 # What port/package will be created
@@ -15,9 +15,6 @@ CATEGORIES=     	editors
 HOMEPAGE=		http://www.xemacs.org/
 
 COMMENT=		"complete set of supported XEmacs packages"
-# where to send bitches about this port
-#
-MAINTAINER=		Jean-Yves Burlett <jean-yves@burlett.org>
 
 # GNU GPL
 PERMIT_PACKAGE_CDROM=	Yes
