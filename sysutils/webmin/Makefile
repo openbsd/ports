@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/10/05 01:03:03 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/05 01:06:36 kevlo Exp $
 
 DISTNAME=       webmin-0.81
 CATEGORIES=     sysutils
@@ -6,7 +6,7 @@ NEED_VERSION=	1.338
 FAKE=No
 MASTER_SITES=   http://www.webmin.com/webmin/download/
 
-MAINTAINER=     kevlo@openbsd.org
+MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 HOMEPAGE=	http://www.webmin.com/webmin/
 
