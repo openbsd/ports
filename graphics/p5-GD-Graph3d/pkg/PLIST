@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:04 espie Exp $
-libdata/perl5/site_perl/GD/Graph/axestype3d.pm
-libdata/perl5/site_perl/GD/Graph/bars3d.pm
-libdata/perl5/site_perl/GD/Graph/lines3d.pm
-libdata/perl5/site_perl/GD/Graph/pie3d.pm
-libdata/perl5/site_perl/GD/Graph3d.pm
+@comment $OpenBSD: PLIST,v 1.4 2002/09/21 11:56:31 avsm Exp $
+${P5SITE}/GD/Graph/axestype3d.pm
+${P5SITE}/GD/Graph/bars3d.pm
+${P5SITE}/GD/Graph/lines3d.pm
+${P5SITE}/GD/Graph/pie3d.pm
+${P5SITE}/GD/Graph3d.pm
 man/man3p/GD::Graph3d.3p
