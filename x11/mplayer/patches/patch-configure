@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.14 2002/10/14 09:50:48 pvalchev Exp $
---- configure.orig	Tue Sep 17 21:47:55 2002
-+++ configure	Thu Sep 19 17:14:38 2002
-@@ -1828,6 +1828,11 @@ if test "$_soundcard" = yes ; then
+$OpenBSD: patch-configure,v 1.15 2002/10/28 17:56:08 espie Exp $
+--- configure.orig	Thu Oct 24 20:12:40 2002
++++ configure	Fri Oct 25 00:19:00 2002
+@@ -1842,6 +1842,11 @@ if test "$_soundcard" = yes ; then
  else
    _def_soundcard='#undef HAVE_SOUNDCARD_H'
  fi
@@ -13,7 +13,7 @@ $OpenBSD: patch-configure,v 1.14 2002/10/14 09:50:48 pvalchev Exp $
  echores "$_soundcard"
  else
    _def_soundcard='#undef HAVE_SOUNDCARD_H'
-@@ -3093,7 +3098,7 @@ echores "$_sgiaudio"
+@@ -3128,7 +3133,7 @@ echores "$_sgiaudio"
  
  
  echocheck "VCD support"
@@ -22,7 +22,7 @@ $OpenBSD: patch-configure,v 1.14 2002/10/14 09:50:48 pvalchev Exp $
    _inputmodules="vcd $_inputmodules"
    _def_vcd='#define HAVE_VCD 1'
    echores "ok"
-@@ -3623,7 +3628,7 @@ fi
+@@ -3680,7 +3685,7 @@ fi
  
  
  echocheck "iconv"
