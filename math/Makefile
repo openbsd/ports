@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/12/18 02:21:21 obecian Exp $
+# $OpenBSD: Makefile,v 1.11 2000/12/26 12:28:18 reinhard Exp $
 #
 
 #    SUBDIR += Scilab
@@ -23,6 +23,7 @@
      SUBDIR += maple
      SUBDIR += maple-share
 #    SUBDIR += metis
+     SUBDIR += netcdf
 #    SUBDIR += numpy
 #    SUBDIR += octave
 #    SUBDIR += oleo
