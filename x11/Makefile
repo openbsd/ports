@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 1999/02/27 15:56:33 rohee Exp $
+# $OpenBSD: Makefile,v 1.30 1999/03/13 05:11:43 fgsch Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -74,6 +74,7 @@
      SUBDIR += wm2
 #    SUBDIR += x3270
 #    SUBDIR += xalarm
+     SUBDIR += x2x
      SUBDIR += xaniroc
      SUBDIR += xantfarm
      SUBDIR += xautolock
