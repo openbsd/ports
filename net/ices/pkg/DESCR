@@ -1,0 +1,8 @@
+Ices version 0 is a source client for streaming MP3 audio to Shoutcast,
+Icecast v1 and v2 servers. Due to Perl being shipped on OpenBSD by
+default, custom playlist handlers written in Perl are always supported
+by this port.
+
+Flavor:
+
+  python      - support custom playlist handlers written in Python
