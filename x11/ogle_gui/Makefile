@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2003/03/28 18:17:15 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2003/11/13 18:48:38 espie Exp $
 
 CATEGORIES=	x11
 
 COMMENT=	"GUI for ogle"
-DISTNAME=	ogle_gui-0.9.1
+DISTNAME=	ogle_gui-0.9.2
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
 # Authors can be reached at dvd@dtek.chalmers.se
 MASTER_SITES=	${HOMEPAGE}dist/
@@ -20,8 +20,18 @@ PERMIT_PACKAGE_FTP=Yes
 
 LIB_DEPENDS=	dvdcontrol.9,msgevents.6::x11/ogle \
 		xml2::textproc/libxml \
-		glade.5.0::devel/libglade \
+
+FLAVORS=gtk1
+FLAVOR?=
+
+.if ${FLAVOR:L} == "gtk1"
+LIB_DEPENDS+= 	glade.5.0::devel/libglade \
 		gtk.1.2::x11/gtk+
+.else
+LIB_DEPENDS+=	glade-2.0.0.0::devel/libglade2 \
+		gtk-x11-2.0.0.0::x11/gtk+2
+CONFIGURE_ARGS+=--enable-gtk2
+.endif
 
 MODULES=	gettext
 

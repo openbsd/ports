@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/02/24 22:57:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/11/13 18:48:38 espie Exp $
 lib/ogle/ogle_gui
 share/locale/da/LC_MESSAGES/ogle_gui.mo
 share/locale/de/LC_MESSAGES/ogle_gui.mo
@@ -13,6 +13,7 @@ share/ogle_gui/go_up.xpm
 share/ogle_gui/menus.xpm
 share/ogle_gui/ogle.xpm
 share/ogle_gui/ogle_gui.glade
+share/ogle_gui/ogle_gui.glade2
 share/ogle_gui/rewind.xpm
 share/ogle_gui/skip_backwards.xpm
 share/ogle_gui/skip_forwards.xpm
