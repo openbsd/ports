@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/09/13 21:56:52 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/09/22 11:16:56 espie Exp $
 
 DISTNAME=	ORBit-0.4.94
 CATEGORIES=	devel
@@ -22,18 +22,18 @@ CONFIGURE_ENV=	GLIB_CONFIG="${LOCALBASE}/bin/glib-config"
 # MUST be removed as the version was incorrect (it came from 1.1.x
 # sources). Check that out here (and bitch if necessary).
 pre-extract:
-        @if [ -f ${LOCALBASE}/lib/libORBit.so.4.0 ]; then \
-           echo "+-------------------"; \
-           echo "| ERROR: you MUST remove the existing ORBit installation"; \
-           echo "| before installing this version. To fully remove run"; \
-           echo "| these commands as user root"; \
-           echo "|"; \
-           echo "|      pkg_delete -f `pkg_info -e 'ORBit-*'`"; \
-           echo "|      ldconfig ${LOCALBASE}/lib"; \
-           echo "|"; \
-           echo "+-------------------"; \
-           exit 1; \
-        fi
+	@if [ -f ${LOCALBASE}/lib/libORBit.so.4.0 ]; then \
+	echo "+-------------------"; \
+		echo "| ERROR: you MUST remove the existing ORBit installation"; \
+		echo "| before installing this version. To fully remove run"; \
+		echo "| these commands as user root"; \
+		echo "|"; \
+		echo "|      pkg_delete -f `pkg_info -e 'ORBit-*'`"; \
+		echo "|      ldconfig ${LOCALBASE}/lib"; \
+		echo "|"; \
+		echo "+-------------------"; \
+		exit 1; \
+	fi
 
 post-install:
 	@if [ -d ${PREFIX}/info -a ! -f ${PREFIX}/info/dir -a -f /usr/share/info/dir ]; then \
