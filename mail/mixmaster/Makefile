@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/14 15:21:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/30 15:07:54 naddy Exp $
 
 COMMENT=	"client for anonymous remailing"
 
-VERSION=	2.9b37
+VERSION=	2.9b40
 DISTNAME=	mixmaster-${VERSION}
 CATEGORIES=	mail security
 
@@ -23,10 +23,7 @@ NO_REGRESS=	Yes
 
 MAKE_ENV=	SYSCONFDIR="${SYSCONFDIR}/mixmaster"
 
-.for i in mix.cfg mix.cfg.ex pubring.* *.alw *.blk *.hlp *.in *.list *.txt
-MIXMASTER_FILES+=	${WRKDIST}/conf/$i
-.endfor
-MIXMASTER_FILES+=	${WRKDIST}/README
+MIXMASTER_FILES=	${WRKDIST}/conf/* ${WRKDIST}/README
 
 post-patch:
 	@cp files/Makefile ${WRKSRC}
