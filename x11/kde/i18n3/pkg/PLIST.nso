@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.nso,v 1.1 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.nso,v 1.2 2003/02/27 02:43:26 naddy Exp $
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
@@ -418,6 +418,6 @@ ${LOC}validatorsplugin.mo
 ${LOC}wakeup.mo
 ${LOC}wavecapture.mo
 ${LOC}webarchiver.mo
-@dirrm share/locale/nso/LC_MESSAGES
-@dirrm share/locale/nso
-@dirrm share/locale
+@comment @dirrm share/locale/nso/LC_MESSAGES
+@comment @dirrm share/locale/nso
+@comment @dirrm share/locale

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/27 20:27:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/02/27 02:43:26 naddy Exp $
 bin/umbrello
 lib/libcodegenerator.la
 share/applnk/Development/umbrello.desktop
@@ -182,11 +182,11 @@ share/mimelnk/application/x-uml.desktop
 %%SHARED%%
 @dirrm share/mimelnk/application
 @dirrm share/mimelnk
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale
+@comment @dirrm share/locale/sk/LC_MESSAGES
+@comment @dirrm share/locale/sk
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/apps

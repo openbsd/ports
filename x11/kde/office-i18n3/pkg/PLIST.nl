@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.nl,v 1.2 2002/12/15 16:21:32 espie Exp $
+@comment $OpenBSD: PLIST.nl,v 1.3 2003/02/27 02:43:26 naddy Exp $
 ${LOC}csvfilter.mo
 ${LOC}desktop_koffice.mo
 ${LOC}example.mo
@@ -36,6 +36,6 @@ ${LOC}olefilterswinword97filter.mo
 ${LOC}thesaurus_tool.mo
 ${LOC}xsltexportfilter.mo
 ${LOC}xsltimportfilter.mo
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale
+@comment @dirrm share/locale/nl/LC_MESSAGES
+@comment @dirrm share/locale/nl
+@comment @dirrm share/locale

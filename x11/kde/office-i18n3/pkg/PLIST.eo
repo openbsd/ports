@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.eo,v 1.2 2002/12/15 16:21:32 espie Exp $
+@comment $OpenBSD: PLIST.eo,v 1.3 2003/02/27 02:43:26 naddy Exp $
 ${LOC}csvfilter.mo
 ${LOC}desktop_koffice.mo
 ${LOC}example.mo
@@ -16,6 +16,6 @@ ${LOC}kspread.mo
 ${LOC}kspreadcalc_calc.mo
 ${LOC}kugar.mo
 ${LOC}kword.mo
-@dirrm share/locale/eo/LC_MESSAGES
-@dirrm share/locale/eo
-@dirrm share/locale
+@comment @dirrm share/locale/eo/LC_MESSAGES
+@comment @dirrm share/locale/eo
+@comment @dirrm share/locale

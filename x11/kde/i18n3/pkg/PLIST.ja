@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ja,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.ja,v 1.8 2003/02/27 02:43:26 naddy Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -645,7 +645,7 @@ share/locale/ja/entry.desktop
 share/locale/ja/flag.png
 @comment @dirrm share/locale/ja/LC_MESSAGES
 @comment @dirrm share/locale/ja
-@dirrm share/locale
+@comment @dirrm share/locale
 @dirrm ${DOC}kspell
 @dirrm ${DOC}kinfocenter/xserver
 @dirrm ${DOC}kinfocenter/usb
