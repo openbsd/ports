@@ -1,0 +1,5 @@
+This library provides the Sound Interface Device (SID) chip emulator
+engine that is used by music player programs like SIDPLAY.  With it
+you can play musics from Commodore 64 (or compatible) programs.
+
+WWW: ${HOMEPAGE}

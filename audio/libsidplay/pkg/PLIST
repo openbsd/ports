@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/22 22:40:51 naddy Exp $
+include/sidplay/compconf.h
+include/sidplay/emucfg.h
+include/sidplay/fformat.h
+include/sidplay/fixpoint.h
+include/sidplay/libcfg.h
+include/sidplay/myendian.h
+include/sidplay/mytypes.h
+include/sidplay/player.h
+include/sidplay/sidtune.h
+include/sidplay/version.h
+lib/libsidplay.a
+lib/libsidplay.la
+%%SHARED%%
+@dirrm include/sidplay
