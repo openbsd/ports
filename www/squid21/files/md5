@@ -1,2 +1,6 @@
-MD5 (squid2.1/squid-2.1.PATCH2-src.tar.gz) = 71c6b2437e562224d43dcde5765001f8
 MD5 (squid2.1/squid-2.1.PATCH2-clientHandleIMSReply-leak.patch) = c5416dc4a2c0fa09a27790b575a19d9c
+MD5 (squid2.1/squid-2.1.PATCH2-src.tar.gz) = 71c6b2437e562224d43dcde5765001f8
+RMD160 (squid2.1/squid-2.1.PATCH2-clientHandleIMSReply-leak.patch) = 62f6038e27dbfaf6aab6a86ba3ca17a9b545a6e1
+RMD160 (squid2.1/squid-2.1.PATCH2-src.tar.gz) = 3b82a87a1aae194e728b745aa8be8c644fb2cc7c
+SHA1 (squid2.1/squid-2.1.PATCH2-clientHandleIMSReply-leak.patch) = 0f88958501cd4f5ebfa257045aceda716b13d0b6
+SHA1 (squid2.1/squid-2.1.PATCH2-src.tar.gz) = ab6a5720a198f22424e5410f18082d270a5c1bcf

@@ -1,2 +1,6 @@
-MD5 (vim-5.3-src.tar.gz) = d919bc16480599014adbcdfd19268d35
 MD5 (vim-5.3-rt.tar.gz) = 90c168f16bc87ac9d430d8137c55136f
+MD5 (vim-5.3-src.tar.gz) = d919bc16480599014adbcdfd19268d35
+RMD160 (vim-5.3-rt.tar.gz) = fc3156d46f7ab35a5767bb4a1f970974451e80e9
+RMD160 (vim-5.3-src.tar.gz) = 046324a70656a8d2a7d1e4506a58fd4c62c4191d
+SHA1 (vim-5.3-rt.tar.gz) = 31b0a5cc738c7428107f47dac50758a8789ff495
+SHA1 (vim-5.3-src.tar.gz) = 831721d0c7af9225e445ed2500e2e748e16986f1

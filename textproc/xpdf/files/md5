@@ -1,2 +1,6 @@
-MD5 (xpdf-0.80.tgz) = 91d49cfaf1e555a26a9bcd0b57e51f8a
 MD5 (xpdf-0.80-decrypt.patch) = 97d6648022fcd9633917f8dc96d25fa2
+MD5 (xpdf-0.80.tgz) = 91d49cfaf1e555a26a9bcd0b57e51f8a
+RMD160 (xpdf-0.80-decrypt.patch) = 21aa5d7ec8030132cfd66fea0e91f53a061d8eb5
+RMD160 (xpdf-0.80.tgz) = a928a6d18a4614004d54321fab8b2631b0a77bee
+SHA1 (xpdf-0.80-decrypt.patch) = fb58b6b6838ead9590e7236a451540d462e1a9dc
+SHA1 (xpdf-0.80.tgz) = 1482bc2711c2c3ed50c23040464b6939dc2ac6e9

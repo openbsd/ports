@@ -1,2 +1,6 @@
-MD5 (lsof/lsof_4.40_W.tar.gz) = 01cc0f15f47481fa7e247486a730f5ff
 MD5 (lsof/arg.c.patch) = 83fc82fe3c9917418934b964854b4590
+MD5 (lsof/lsof_4.40_W.tar.gz) = 01cc0f15f47481fa7e247486a730f5ff
+RMD160 (lsof/arg.c.patch) = e62934314d45f5729729eab7f948f24cabd3fe07
+RMD160 (lsof/lsof_4.40_W.tar.gz) = bcf9157480df6185585ad58332e92f80ac24bd52
+SHA1 (lsof/arg.c.patch) = 88f5a58cf254b6fe9ef92bc0e85d7affc4d12c6e
+SHA1 (lsof/lsof_4.40_W.tar.gz) = c860879d6b43de03e956fb7aff69a94feb484a5e

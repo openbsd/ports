@@ -1,2 +1,6 @@
-MD5 (btoa-5.2.tar.gz) = c8fe1ee1e0f7ea0da0c49f44c5fe8f64
 MD5 (btoa-5.2-patch1.gz) = caf2fff3448242f432b407b797670312
+MD5 (btoa-5.2.tar.gz) = c8fe1ee1e0f7ea0da0c49f44c5fe8f64
+RMD160 (btoa-5.2-patch1.gz) = 74a2fac788882861a0c7211afa42f5dd9844727d
+RMD160 (btoa-5.2.tar.gz) = cd5d567b6d9311f104fc7cd13efefef2a989ae19
+SHA1 (btoa-5.2-patch1.gz) = f0282fcf559d53f0785d9041de73a0966c3fc287
+SHA1 (btoa-5.2.tar.gz) = bf87fb2a3c6744d6632663512b0bedada2396af3

@@ -1,3 +1,5 @@
-$NetBSD: md5,v 1.1 1998/08/12 22:44:32 tv Exp $
 
+$NetBSD: md5,v 1.1 1998/08/12 22:44:32 tv Exp $
 MD5 (sim_2.3c.tar.gz) = baf872e8f1e68e8b4c2dfccadbe9738d
+RMD160 (sim_2.3c.tar.gz) = 0206fc4b9aa4a3e526028a331ad36c52e6aecbf9
+SHA1 (sim_2.3c.tar.gz) = 0fa61b50d55ebf776b46d08887f529752edeb183
