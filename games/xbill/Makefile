@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/26 20:44:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2004/09/30 22:15:42 xsa Exp $
 
 COMMENT=	"save your computers from the evil clutches of Bill"
 
@@ -19,5 +19,7 @@ NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/xbill
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xbill
+	${INSTALL_DATA} /dev/null ${PREFIX}/share/examples/xbill/xbill.scores
 
 .include <bsd.port.mk>
