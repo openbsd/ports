@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2000/10/16 13:30:34 fgsch Exp $
+# $OpenBSD: Makefile,v 1.25 2001/05/05 22:56:14 fgsch Exp $
+
+COMMENT=	Pretty Good Privacy 5.0i (world wide use)
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
 CATEGORIES=	security
-NEED_VERSION=	1.326
+NEED_VERSION=	1.406
 MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.at.pgpi.com/pub/pgpi/5.0/unix/ \
 		ftp://ftp.cz.pgpi.com/pub/pgpi/5.0/unix/ \
@@ -20,6 +22,8 @@ MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.ch.pgpi.com/pub/pgp/5.0/unix/
 
 MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
+
+HOMEPAGE=	http://www.pgpi.com
 
 PERMIT_PACKAGE_CDROM=	"no commercial use"
 PERMIT_PACKAGE_FTP=	Yes
