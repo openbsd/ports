@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2003/05/24 01:01:24 jolan Exp $
+# $OpenBSD: Makefile,v 1.46 2003/06/23 03:30:24 jolan Exp $
 
 COMMENT=	"block-sorting file compressor, unencumbered"
 
@@ -19,11 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 BZ2_CFLAGS=	-Wall -Winline
 .if ${MACHINE_ARCH} != "sparc64" && ${MACHINE_ARCH} != "m68k"
 BZ2_CFLAGS+=	-fomit-frame-pointer -fno-strength-reduce
-.endif
-
-# XXX GCC optimization bug temporary workaround
-.if ${MACHINE_ARCH:Msparc64}
-BZ2_CFLAGS+=	-O0
 .endif
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} ${BZ2_CFLAGS}"
