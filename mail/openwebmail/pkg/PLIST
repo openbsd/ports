@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/03/30 08:53:49 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/04/14 14:24:35 xsa Exp $
 cgi-bin/openwebmail/auth/README
 cgi-bin/openwebmail/auth/auth_ldap.pl
 cgi-bin/openwebmail/auth/auth_mysql.pl
@@ -7043,3 +7043,5 @@ htdocs/openwebmail/sounds/silymail.wav
 @dirrm cgi-bin/openwebmail/modules
 @dirrm cgi-bin/openwebmail/auth
 @dirrm cgi-bin/openwebmail
+@extraunexec rm -rf ${CONFDIR}/openwebmail
+@extraunexec groupdel _mail

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/02/19 15:01:03 danh Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/04/14 14:24:34 xsa Exp $
 libexec/cucipop
 libexec/makevpopdb
 man/man8/cucipop.8
 man/man8/makevpopdb.8
+@extraunexec rm -rf /var/spool/cucipop
