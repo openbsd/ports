@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 1999/03/30 02:17:54 brad Exp $
+# $OpenBSD: Makefile,v 1.20 1999/03/30 04:43:35 fgsch Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -9,7 +9,7 @@
 #    SUBDIR += angband
 #    SUBDIR += block
 #    SUBDIR += blue
-     SBUDIR += bnetd
+     SUBDIR += bnetd
      SUBDIR += bs
 #    SUBDIR += cgoban
      SUBDIR += connect4
