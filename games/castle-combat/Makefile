@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/20 08:25:57 mark Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/20 12:01:46 mark Exp $
 COMMENT=	"Rampart arcade game clone for X11" 
 
 VERSION=	0.7.2
@@ -21,8 +21,7 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		SDL_mixer::devel/sdl-mixer \
 		png.2::graphics/png
 
-MASTER_SITES=	http://www.linux-games.com/
-MASTER_SITE_SUBDIR=castle-combat
+MASTER_SITES=	${HOMEPAGE}
 
 USE_X11= Yes
 CONFIGURE_STYLE= autoconf
