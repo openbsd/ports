@@ -1,4 +1,4 @@
-# $OpenBSD: old-install.mk,v 1.5 2001/03/28 11:32:30 espie Exp $
+# $OpenBSD: old-install.mk,v 1.6 2001/05/05 20:20:59 espie Exp $
 # Stuff that is needed for old, pre-fake, port installations.
 
 # If ${FAKE} == No
@@ -22,14 +22,14 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 
 # The real install, old version
 ${_INSTALL_COOKIE}: ${_BUILD_COOKIE} 
-	@cd ${.CURDIR} && exec ${MAKE} run-depends lib-depends 
+	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} run-depends lib-depends 
 .if !defined(NO_INSTALL)
 	@${ECHO_MSG} "===>  Installing for ${FULLPKGNAME}"
 # Kludge
 .  if ${CONFIGURE_STYLE:Mimake}
-	@mkdir -p /usr/local/lib/X11
+	@${SUDO} mkdir -p /usr/local/lib/X11
 	@if [ ! -e /usr/local/lib/X11/app-defaults ]; then \
-		ln -sf /var/X11/app-defaults /usr/local/lib/X11/app-defaults; \
+		${SUDO} ln -sf /var/X11/app-defaults /usr/local/lib/X11/app-defaults; \
 	fi
 .  endif
 .  if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
@@ -50,23 +50,23 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 	fi
 	@${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
 .  if target(pre-install)
-	@cd ${.CURDIR} && exec ${MAKE} pre-install
+	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} pre-install
 .  endif
 .  if target(do-install)
-	@cd ${.CURDIR} && exec ${MAKE} do-install
+	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} do-install
 .  else
 # What INSTALL normally does:
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${INSTALL_TARGET}
+	@cd ${WRKBUILD} && ${SUDO} ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${INSTALL_TARGET}
 # End of INSTALL.
 .  endif
 .  if target(post-install)
-	@cd ${.CURDIR} && exec ${MAKE} post-install
+	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} post-install
 .  endif
 .  if defined(_MANPAGES) || defined(_CATPAGES)
 .    if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Uncompressing manual pages for ${FULLPKGNAME}"
 .      for manpage in ${_MANPAGES} ${_CATPAGES}
-	@${GUNZIP_CMD} ${manpage}.gz
+	@${SUDO} ${GUNZIP_CMD} ${manpage}.gz
 .      endfor
 .    elif !defined(MANCOMPRESSED) && !defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Compressing manual pages for ${FULLPKGNAME}"
@@ -74,10 +74,10 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 	@if [ -L ${manpage} ]; then \
 		set - `file ${manpage}`; \
 		shift `expr $$# - 1`; \
-		ln -sf $${1}.gz ${manpage}.gz; \
-		rm ${manpage}; \
+		${SUDO} ln -sf $${1}.gz ${manpage}.gz; \
+		${SUDO} rm ${manpage}; \
 	else \
-		${GZIP_CMD} ${manpage}; \
+		${SUDO} ${GZIP_CMD} ${manpage}; \
 	fi
 .        endfor
 .    endif
@@ -86,7 +86,7 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 	@cat	${WRKBUILD}/MESSAGE${SUBPACKAGE}
 .  endif
 .  if !defined(NO_PKG_REGISTER)
-	@cd ${.CURDIR} && exec ${MAKE} fake-pkg
+	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} fake-pkg
 .  endif
 .endif
 	@${_MAKE_COOKIE} $@
@@ -108,7 +108,7 @@ plist: install
 # accordance to the @pkgdep directive in the packing lists
 
 fake-pkg: ${_PKG_PREREQ}
-	@if [ `/bin/ls -l ${COMMENT} | awk '{print $$5}'` -gt 60 ]; then \
+	@if [ `${_COMMENT} | wc -c` -gt 60 ]; then \
 	    echo "** ${COMMENT} too large - installation not recorded."; \
 	    exit 1; \
 	 fi
@@ -121,7 +121,7 @@ fake-pkg: ${_PKG_PREREQ}
 		mkdir -p ${PKG_DBDIR}/${FULLPKGNAME}; \
 		${PKG_CMD} ${PKG_ARGS} -O ${PKGFILE} > ${PKG_DBDIR}/${FULLPKGNAME}/+CONTENTS; \
 		cp ${WRKPKG}/DESCR${SUBPACKAGE} ${PKG_DBDIR}/${FULLPKGNAME}/+DESC; \
-		cp ${COMMENT} ${PKG_DBDIR}/${FULLPKGNAME}/+COMMENT; \
+		${_COMMENT} >${PKG_DBDIR}/${FULLPKGNAME}/+COMMENT; \
 		if [ -f ${WRKPKG}/INSTALL${SUBPACKAGE} ]; then \
 			cp ${WRKPKG}/INSTALL${SUBPACKAGE} ${PKG_DBDIR}/${FULLPKGNAME}/+INSTALL; \
 		fi; \
