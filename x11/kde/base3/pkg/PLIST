@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/04 17:38:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/04/04 18:29:21 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -2484,7 +2484,6 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/konqueror/icons/hicolor
 @dirrm share/apps/konqueror/icons
 @dirrm share/apps/konqueror/about
-@dirrm share/apps/konqueror
 @dirrm share/apps/konqsidebartng/virtual_folders/services
 @dirrm share/apps/konqsidebartng/virtual_folders/remote/web
 @dirrm share/apps/konqsidebartng/virtual_folders/remote/ftp
@@ -2616,12 +2615,10 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/clockapplet/pics
 @dirrm share/apps/clockapplet
 @dirrm share/applnk/WordProcessing
-@dirrm share/applnk/Utilities
 @dirrm share/applnk/System/Terminal
 @dirrm share/applnk/Settings/WebBrowsing
 @dirrm share/applnk/Settings/System
 @dirrm share/applnk/Settings/Sound
-@dirrm share/applnk/Settings/PowerControl
 @dirrm share/applnk/Settings/Personalization
 @dirrm share/applnk/Settings/Peripherals
 @dirrm share/applnk/Settings/Network
@@ -2629,17 +2626,14 @@ share/wallpapers/triplegears.jpg
 @dirrm share/applnk/Settings/LookNFeel/Themes
 @dirrm share/applnk/Settings/LookNFeel/Desktop
 @dirrm share/applnk/Settings/LookNFeel
-@dirrm share/applnk/Settings/Information
 @dirrm share/applnk/Settings/Help
 @dirrm share/applnk/Settings/FileBrowsing
 @dirrm share/applnk/Settings/Databases
-@dirrm share/applnk/Settings
 @dirrm share/applnk/Office
 @dirrm share/applnk/Multimedia
 @dirrm share/applnk/Internet/Terminal
 @dirrm share/applnk/Internet
 @dirrm share/applnk/Games/Roguelikes
-@dirrm share/applnk/Editors
 @dirrm share/applnk/Development
 @dirrm share/applnk/Applications
 @dirrm share/applnk/.hidden

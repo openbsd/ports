@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/04 17:38:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/04/04 18:29:21 espie Exp $
 bin/kcolorchooser
 bin/kcoloredit
 bin/kdvi

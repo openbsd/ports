@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/04 16:43:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/04/04 18:29:21 espie Exp $
 bin/artsmessage
 bin/checkXML
 bin/dcop
@@ -3254,7 +3254,11 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/apps/ksgmltools2
 @exec mkdir -p %D/share/apps/kscreensaver
 @dirrm share/apps/kscreensaver
+@exec mkdir -p %D/share/apps/konqueror
+@dirrm share/apps/konqueror
 @dirrm share/apps/knotify
+@exec mkdir -p %D/share/apps/knewsticker
+@dirrm share/apps/knewsticker
 @dirrm share/apps/kjava
 @dirrm share/apps/kio_uiserver/icons/hicolor/16x16/apps
 @dirrm share/apps/kio_uiserver/icons/hicolor/16x16
@@ -3301,11 +3305,18 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/apps/kate
 @dirrm share/apps/LICENSES
 @dirrm share/apps
+@exec mkdir -p %D/share/applnk/Utilities
+@dirrm share/applnk/Utilities
 @exec mkdir -p %D/share/applnk/Toys
 @dirrm share/applnk/Toys
 @exec mkdir -p %D/share/applnk/System/ScreenSavers
 @dirrm share/applnk/System/ScreenSavers
 @dirrm share/applnk/System
+@exec mkdir -p %D/share/applnk/Settings/PowerControl
+@dirrm share/applnk/Settings/PowerControl
+@exec mkdir -p %D/share/applnk/Settings/Information
+@dirrm share/applnk/Settings/Information
+@dirrm share/applnk/Settings
 @exec mkdir -p %D/share/applnk/Graphics
 @dirrm share/applnk/Graphics
 @exec mkdir -p %D/share/applnk/Games/TacticStrategy
@@ -3319,6 +3330,8 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/applnk/Games
 @exec mkdir -p %D/share/applnk/Edutainment
 @dirrm share/applnk/Edutainment
+@exec mkdir -p %D/share/applnk/Editors
+@dirrm share/applnk/Editors
 @dirrm share/applnk
 @dirrm lib/kde3/plugins/styles
 @dirrm lib/kde3/plugins/designer

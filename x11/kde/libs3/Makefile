@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/04/04 16:43:14 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/04/04 18:29:21 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -73,16 +73,22 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 EXTRA_DIRECTORIES= \
+	share/applnk/Editors \
 	share/applnk/Edutainment \
 	share/applnk/Games/Arcade \
 	share/applnk/Games/Board \
 	share/applnk/Games/Card \
 	share/applnk/Games/TacticStrategy \
 	share/applnk/Graphics \
+	share/applnk/Settings/Information \
+	share/applnk/Settings/PowerControl \
 	share/applnk/System/ScreenSavers \
 	share/applnk/Toys \
+	share/applnk/Utilities \
 	share/apps/kdesktop/programs \
 	share/apps/kicker/applets \
+	share/apps/knewsticker \
+	share/apps/konqueror \
 	share/apps/kscreensaver \
 	share/apps/kthememgr/Themes \
 	share/apps/kwin/icewm-themes \

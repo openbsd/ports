@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/04 16:10:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/04 18:29:22 espie Exp $
 bin/amor
 bin/kaphorism
 bin/kmoon
@@ -565,13 +565,6 @@ share/icons/locolor/16x16/apps/kteatime.png
 share/icons/locolor/16x16/apps/ktux.png
 share/icons/locolor/32x32/apps/ktux.png
 %%SHARED%%
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/32x32/apps
 @dirrm share/doc/HTML/en/kworldclock
 @dirrm share/doc/HTML/en/kweather
 @dirrm share/doc/HTML/en/kteatime
@@ -580,19 +573,12 @@ share/icons/locolor/32x32/apps/ktux.png
 @dirrm share/doc/HTML/en/kmoon
 @dirrm share/doc/HTML/en/amor
 @dirrm share/apps/kworldclock/pics
-@dirrm share/apps/kworldclock/maps/depths
-@dirrm share/apps/kworldclock/maps
-@dirrm share/apps/kworldclock
 @dirrm share/apps/kweather
 @dirrm share/apps/ktux/sprites
 @dirrm share/apps/ktux
 @dirrm share/apps/kodo
 @dirrm share/apps/kmoon/pics
 @dirrm share/apps/kmoon
-@dirrm share/apps/kicker/applets
-@dirrm share/apps/kicker
-@dirrm share/apps/kdesktop/programs
-@dirrm share/apps/kdesktop
 @dirrm share/apps/kaphorism/aphorisms
 @dirrm share/apps/kaphorism
 @dirrm share/apps/amor/worm
@@ -605,7 +591,3 @@ share/icons/locolor/32x32/apps/ktux.png
 @dirrm share/apps/amor/blob
 @dirrm share/apps/amor/b
 @dirrm share/apps/amor
-@dirrm share/applnk/Toys
-@dirrm share/applnk/System/ScreenSavers
-@dirrm share/applnk/System
-@dirrm share/applnk

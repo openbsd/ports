@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/04 17:43:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/04/04 18:29:21 espie Exp $
 bin/kbanner.kss
 bin/kblob.kss
 bin/kbouboule.kss

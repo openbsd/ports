@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/04 17:38:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/04/04 18:29:21 espie Exp $
 bin/dcop_kate
 bin/testor
 lib/kde3/katehtmltoolsplugin.la
@@ -123,7 +123,6 @@ share/services/webarchivethumbnail.desktop
 @dirrm share/doc/HTML/en/kicker-applets
 @dirrm share/doc/HTML/en/kate-plugins
 @dirrm share/apps/knewsticker/scripts
-@dirrm share/apps/knewsticker
 @dirrm share/apps/khtml/kpartplugins
 @dirrm share/apps/katexmltools
 @dirrm share/apps/kate/plugins/katexmltools
