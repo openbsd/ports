@@ -1,5 +1,5 @@
---- Makefile	Sat Mar 13 11:05:57 1999
-+++ Makefile.mine	Sat Mar 13 11:01:58 1999
+--- Makefile.orig	Sat May  8 13:28:29 1999
++++ Makefile	Sat May  8 13:40:34 1999
 @@ -3,17 +3,18 @@
  # For conditions of distribution and use, see copyright notice in png.h
  
@@ -8,19 +8,16 @@
 +prefix=${PREFIX}
  
  # Where the zlib library and include files are located
--#ZLIBLIB=/usr/local/lib
--#ZLIBINC=/usr/local/include
+ #ZLIBLIB=/usr/local/lib
+ #ZLIBINC=/usr/local/include
 -ZLIBLIB=../zlib
 -ZLIBINC=../zlib
--
++#ZLIBLIB=../zlib
++#ZLIBINC=../zlib
+ 
 -CC=cc
 -CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=5
 -LDFLAGS=-L. -L$(ZLIBLIB) -lpng -lz -lm
-+#ZLIBLIB=/usr/local/lib
-+#ZLIBINC=/usr/local/include
-+#ZLIBLIB=../zlib
-+#ZLIBINC=../zlib
-+
 +VER=1.3
 +#CC=cc
 +#CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=5
@@ -28,7 +25,7 @@
  
  #RANLIB=echo
  RANLIB=ranlib
-@@ -22,12 +23,27 @@
+@@ -22,12 +23,20 @@
  	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
  	pngwtran.o pngmem.o pngerror.o pngpread.o
  
@@ -36,28 +33,21 @@
 +.SUFFIXES: .c .so .o
 +
 +.c.so:
-+	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
++	${CC} -fPIC -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
 +
-+.if (${MACHINE_ARCH} != "alpha")
 +all: libpng.a libpng.so.${VER}
-+.else
-+all: libpng.a
-+.endif
  
  libpng.a: $(OBJS)
  	ar rc $@  $(OBJS)
  	$(RANLIB) $@
  
-+.if (${MACHINE_ARCH} != "alpha")
 +libpng.so.${VER}: $(OBJS:S/o$/so/g)
 +	ld -Bshareable -x -assert pure-text -o $@ $(OBJS:S/o$/so/g) -lz
-+.endif
-+
 +
  pngtest: pngtest.o libpng.a
  	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
  
-@@ -37,12 +53,12 @@
+@@ -37,12 +46,10 @@
  install: libpng.a
  	-@mkdir $(prefix)/include
  	-@mkdir $(prefix)/lib
@@ -70,9 +60,7 @@
 +	${BSD_INSTALL_DATA} png.h pngconf.h $(prefix)/include
 +	${BSD_INSTALL_DATA} libpng.a $(prefix)/lib
 +	${RANLIB} $(prefix)/lib/libpng.a
-+.if(${MACHINE_ARCH} != "alpha")
 +	${BSD_INSTALL_DATA} libpng.so.${VER} $(prefix)/lib
-+.endif
  
  clean:
  	rm -f *.o libpng.a pngtest pngout.png

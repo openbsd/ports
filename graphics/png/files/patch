@@ -1,0 +1,27 @@
+--- Makefile.orig2	Sat May  8 13:41:08 1999
++++ Makefile	Sat May  8 13:41:28 1999
+@@ -28,15 +28,12 @@
+ .c.so:
+ 	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
+ 
+-all: libpng.a libpng.so.${VER}
++all: libpng.a
+ 
+ libpng.a: $(OBJS)
+ 	ar rc $@  $(OBJS)
+ 	$(RANLIB) $@
+ 
+-libpng.so.${VER}: $(OBJS:S/o$/so/g)
+-	ld -Bshareable -x -assert pure-text -o $@ $(OBJS:S/o$/so/g) -lz
+-
+ pngtest: pngtest.o libpng.a
+ 	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
+ 
+@@ -49,7 +46,6 @@
+ 	${BSD_INSTALL_DATA} png.h pngconf.h $(prefix)/include
+ 	${BSD_INSTALL_DATA} libpng.a $(prefix)/lib
+ 	${RANLIB} $(prefix)/lib/libpng.a
+-	${BSD_INSTALL_DATA} libpng.so.${VER} $(prefix)/lib
+ 
+ clean:
+ 	rm -f *.o libpng.a pngtest pngout.png

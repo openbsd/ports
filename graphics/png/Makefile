@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/03/13 19:08:34 csapuntz Exp $
+# $OpenBSD: Makefile,v 1.9 1999/05/08 18:13:49 brad Exp $
 #
 
 DISTNAME=       libpng-1.0.3
@@ -17,6 +17,12 @@ post-extract:
 pre-patch:
 	cp ${WRKSRC}/scripts/makefile.std $(WRKSRC)/Makefile
 
+# post-patch must be defined before bsd.port.mk is included so it will
+# be called.  However, we need to have the body of the target after
+# bsd.port.mk is included so NO_SHARED_LIBS is defined.
+# Define the target twice, using :
+post-patch:
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/libpng.3 ${PREFIX}/man/man3
 	${INSTALL_MAN} ${WRKSRC}/libpngpf.3 ${PREFIX}/man/man3
@@ -27,3 +33,11 @@ post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
+
+# The patches assumed shared libs would be build.  If building
+# on a host that does not support shared libs, e.g. the alpha,
+# apply one more patch.
+post-patch:
+.if defined(NO_SHARED_LIBS)
+	@(cd ${DISTDIR}; ${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/patch)
+.endif
