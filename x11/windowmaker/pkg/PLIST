@@ -1,9 +1,21 @@
-@cwd /usr/local
-@name WindowMaker-0.20.3
+@cwd /usr/X11R6
+@name WindowMaker-0.51.0
 @pkgdep giflib-3.0
 @pkgdep jpeg-6b
+@pkgdep libPropList-0.8.3
 @pkgdep png-1.0.2
 @pkgdep tiff-3.4
+include/wraster.h
+include/WINGs.h
+include/WUtil.h
+include/WINGsP.h
+include/WMaker.h
+lib/libwraster.so.1.2
+lib/libwraster.la
+lib/libwraster.a
+lib/libWINGs.a
+lib/libWMaker.a
+bin/get-wraster-flags
 bin/wmaker
 bin/wxcopy
 bin/wxpaste
@@ -16,10 +28,6 @@ bin/wmsetbg
 bin/wmaker.inst
 bin/wm-oldmenu2new
 bin/wsetfont
-lib/libPropList.a
-lib/libwraster.a
-lib/libWINGs.a
-lib/libWMaker.a
 man/man1/geticonset.1x
 man/man1/setstyle.1x
 man/man1/wxpaste.1x
@@ -29,64 +37,66 @@ man/man1/wmsetbg.1x
 man/man1/seticons.1x
 man/man1/wmaker.1x
 man/man1/wxcopy.1x
-include/proplist.h
-include/wraster.h
-include/WINGs.h
-include/WUtil.h
-include/WINGsP.h
-include/WMaker.h
 share/WINGs/Images.tiff
 share/WINGs/Images.xpm
 share/WINGs/defaultIcon.tiff
 share/WINGs/defaultIcon.xpm
+share/WindowMaker/Backgrounds/BlueImage.jpeg
 share/WindowMaker/Defaults/WMRootMenu
 share/WindowMaker/Defaults/WMWindowAttributes
 share/WindowMaker/Defaults/WindowMaker
 share/WindowMaker/Defaults/WMState
 share/WindowMaker/Defaults/WMGLOBAL
-share/WindowMaker/Styles/Autumn
-share/WindowMaker/Styles/Black
-share/WindowMaker/Styles/Blue
-share/WindowMaker/Styles/BlueAluminum
-share/WindowMaker/Styles/BlueDawn
-share/WindowMaker/Styles/BlueishGreen
-share/WindowMaker/Styles/Brown
-share/WindowMaker/Styles/Chumbo
-share/WindowMaker/Styles/Copper
-share/WindowMaker/Styles/DarkBlue
-share/WindowMaker/Styles/DarkRed
-share/WindowMaker/Styles/Fire
-share/WindowMaker/Styles/Food
-share/WindowMaker/Styles/Golden
-share/WindowMaker/Styles/Green
-share/WindowMaker/Styles/GreyBlue
-share/WindowMaker/Styles/Gtk
-share/WindowMaker/Styles/LightBlue
-share/WindowMaker/Styles/Pastel
-share/WindowMaker/Styles/Pink
-share/WindowMaker/Styles/Pumpkin
-share/WindowMaker/Styles/Purple
-share/WindowMaker/Styles/Red
-share/WindowMaker/Styles/RednBlue
-share/WindowMaker/Styles/ShinyBrown
-share/WindowMaker/Styles/Summer
-share/WindowMaker/Styles/Traditional
-share/WindowMaker/Styles/VioletBlue
-share/WindowMaker/Themes/Default
-share/WindowMaker/Themes/Pastel
-share/WindowMaker/Themes/OpenStep
-share/WindowMaker/Themes/Night
-share/WindowMaker/Themes/BlueWaves
+share/WindowMaker/IconSets/Default.iconset
+share/WindowMaker/Icons/BitchX.tiff
+share/WindowMaker/Icons/DefaultAppIcon.tiff
 share/WindowMaker/Icons/GNUstep.tiff
-share/WindowMaker/Icons/GNUstep.xpm
 share/WindowMaker/Icons/GNUstep3D.tiff
-share/WindowMaker/Icons/GNUstep3D.xpm
-share/WindowMaker/Icons/defaultAppIcon.tiff
-share/WindowMaker/Icons/defaultAppIcon.xpm
-share/WindowMaker/Icons/clip.tiff
-share/WindowMaker/Icons/clip.xpm
+share/WindowMaker/Icons/GNUstepGlow.tiff
 share/WindowMaker/Icons/GNUterm.tiff
+share/WindowMaker/Icons/clip.tiff
+share/WindowMaker/Icons/clip2.tiff
+share/WindowMaker/Icons/defaultAppIcon.tiff
+share/WindowMaker/Icons/defaultterm.tiff
+share/WindowMaker/Icons/draw.tiff
+share/WindowMaker/Icons/linuxterm.tiff
+share/WindowMaker/Icons/mixer.tiff
+share/WindowMaker/Icons/notepad.tiff
+share/WindowMaker/Icons/pdf.tiff
+share/WindowMaker/Icons/ps.tiff
+share/WindowMaker/Icons/real.tiff
+share/WindowMaker/Icons/sgiterm.tiff
+share/WindowMaker/Icons/sound.tiff
+share/WindowMaker/Icons/staroffice2.tiff
+share/WindowMaker/Icons/timer.tiff
+share/WindowMaker/Icons/wilber.tiff
+share/WindowMaker/Icons/write.tiff
+share/WindowMaker/Icons/xdvi.tiff
+share/WindowMaker/Icons/xv.tiff
+share/WindowMaker/Icons/BitchX.xpm
+share/WindowMaker/Icons/GNUstep.xpm
+share/WindowMaker/Icons/GNUstep3D.xpm
+share/WindowMaker/Icons/GNUstepGlow.xpm
 share/WindowMaker/Icons/GNUterm.xpm
+share/WindowMaker/Icons/clip.xpm
+share/WindowMaker/Icons/clip2.xpm
+share/WindowMaker/Icons/defaultAppIcon.xpm
+share/WindowMaker/Icons/defaultterm.xpm
+share/WindowMaker/Icons/draw.xpm
+share/WindowMaker/Icons/linuxterm.xpm
+share/WindowMaker/Icons/mixer.xpm
+share/WindowMaker/Icons/notepad.xpm
+share/WindowMaker/Icons/pdf.xpm
+share/WindowMaker/Icons/ps.xpm
+share/WindowMaker/Icons/real.xpm
+share/WindowMaker/Icons/sgiterm.xpm
+share/WindowMaker/Icons/sound.xpm
+share/WindowMaker/Icons/staroffice2.xpm
+share/WindowMaker/Icons/timer.xpm
+share/WindowMaker/Icons/xv.xpm
+share/WindowMaker/Icons/wilber.xpm
+share/WindowMaker/Icons/write.xpm
+share/WindowMaker/Icons/xdvi.xpm
 share/WindowMaker/Pixmaps/tile.tiff
 share/WindowMaker/Pixmaps/tile.xpm
 share/WindowMaker/Pixmaps/Ant.xpm
@@ -150,36 +160,70 @@ share/WindowMaker/Pixmaps/tile.black.xpm
 share/WindowMaker/Pixmaps/tile.snow.xpm
 share/WindowMaker/Pixmaps/tile2.xpm
 share/WindowMaker/Pixmaps/xv.xpm
-share/WindowMaker/Backgrounds/BlueImage.jpeg
-share/WindowMaker/Backgrounds/SeaNight.jpeg
-share/WindowMaker/Backgrounds/BlueWaves.jpeg
-share/WindowMaker/IconSets/Default
-share/WindowMaker/wmmacros
+share/WindowMaker/Styles/Autumn.style
+share/WindowMaker/Styles/Black.style
+share/WindowMaker/Styles/BlackTexture.style
+share/WindowMaker/Styles/Blue.style
+share/WindowMaker/Styles/BlueDawn.style
+share/WindowMaker/Styles/BlueishGreen.style
+share/WindowMaker/Styles/Brown.style
+share/WindowMaker/Styles/Chumbo.style
+share/WindowMaker/Styles/Copper.style
+share/WindowMaker/Styles/DarkBlue.style
+share/WindowMaker/Styles/DarkRed.style
+share/WindowMaker/Styles/Fire.style
+share/WindowMaker/Styles/Food.style
+share/WindowMaker/Styles/Golden.style
+share/WindowMaker/Styles/Green.style
+share/WindowMaker/Styles/GreyBlue.style
+share/WindowMaker/Styles/Gtk.style
+share/WindowMaker/Styles/LightBlue.style
+share/WindowMaker/Styles/Pastel.style
+share/WindowMaker/Styles/Purple.style
+share/WindowMaker/Styles/Red.style
+share/WindowMaker/Styles/RednBlue.style
+share/WindowMaker/Styles/Summer.style
+share/WindowMaker/Styles/Traditional.style
+share/WindowMaker/Styles/VioletBlue.style
+share/WindowMaker/Themes/Night.themed/SeaNight.jpeg
+share/WindowMaker/Themes/Night.themed/style
+share/WindowMaker/Themes/Checker.themed/checker.xpm
+share/WindowMaker/Themes/Checker.themed/style
+share/WindowMaker/Themes/Default.style
+share/WindowMaker/Themes/OpenStep.style
+share/WindowMaker/Themes/Pastel.style
 share/WindowMaker/README
-share/WindowMaker/menu
-share/WindowMaker/plmenu
+share/WindowMaker/README.themes
 share/WindowMaker/autostart.sh
 share/WindowMaker/exitscript.sh
+share/WindowMaker/menu
+share/WindowMaker/menu.ca
 share/WindowMaker/menu.cz
 share/WindowMaker/menu.de
+share/WindowMaker/menu.dk
+share/WindowMaker/menu.el
+share/WindowMaker/menu.es
+share/WindowMaker/menu.fi
 share/WindowMaker/menu.fr
 share/WindowMaker/menu.gl
+share/WindowMaker/menu.he
+share/WindowMaker/menu.hr
+share/WindowMaker/menu.hu
+share/WindowMaker/menu.it
 share/WindowMaker/menu.ja
 share/WindowMaker/menu.ko
 share/WindowMaker/menu.nl
-share/WindowMaker/menu.pt
-share/WindowMaker/menu.it
 share/WindowMaker/menu.no
-share/WindowMaker/menu.he
-share/WindowMaker/menu.es
+share/WindowMaker/menu.pt
 share/WindowMaker/menu.ru
-share/WindowMaker/menu.tr
-share/WindowMaker/menu.el
 share/WindowMaker/menu.se
-share/WindowMaker/menu.fi
-share/WindowMaker/menu.hr
-share/WindowMaker/menu.dk
 share/WindowMaker/menu.sl
+share/WindowMaker/menu.tr
+share/WindowMaker/plmenu
+share/WindowMaker/plmenu.fr
+share/WindowMaker/plmenu.hr
+share/WindowMaker/wmmacros
+share/WindowMaker/xtree.dat
 GNUstep/Apps/WPrefs.app/xpm/advancetonewworkspace.xpm
 GNUstep/Apps/WPrefs.app/xpm/animations.xpm
 GNUstep/Apps/WPrefs.app/xpm/appearance.xpm
@@ -189,6 +233,7 @@ GNUstep/Apps/WPrefs.app/xpm/cycleworkspaces.xpm
 GNUstep/Apps/WPrefs.app/xpm/dock.xpm
 GNUstep/Apps/WPrefs.app/xpm/dontlinkworkspaces.xpm
 GNUstep/Apps/WPrefs.app/xpm/ergonomic.xpm
+GNUstep/Apps/WPrefs.app/xpm/ergowood.xpm
 GNUstep/Apps/WPrefs.app/xpm/expert.xpm
 GNUstep/Apps/WPrefs.app/xpm/fonts.xpm
 GNUstep/Apps/WPrefs.app/xpm/iconprefs.xpm
@@ -199,10 +244,11 @@ GNUstep/Apps/WPrefs.app/xpm/menualign1.xpm
 GNUstep/Apps/WPrefs.app/xpm/menualign2.xpm
 GNUstep/Apps/WPrefs.app/xpm/menuprefs.xpm
 GNUstep/Apps/WPrefs.app/xpm/menus.xpm
-GNUstep/Apps/WPrefs.app/xpm/moreanim.xpm
 GNUstep/Apps/WPrefs.app/xpm/minimouseleft.xpm
 GNUstep/Apps/WPrefs.app/xpm/minimousemiddle.xpm
 GNUstep/Apps/WPrefs.app/xpm/minimouseright.xpm
+GNUstep/Apps/WPrefs.app/xpm/miscprefs2.xpm
+GNUstep/Apps/WPrefs.app/xpm/moreanim.xpm
 GNUstep/Apps/WPrefs.app/xpm/mousesettings.xpm
 GNUstep/Apps/WPrefs.app/xpm/mousespeed.xpm
 GNUstep/Apps/WPrefs.app/xpm/newstyle.xpm
@@ -220,7 +266,10 @@ GNUstep/Apps/WPrefs.app/xpm/speed2s.xpm
 GNUstep/Apps/WPrefs.app/xpm/speed3.xpm
 GNUstep/Apps/WPrefs.app/xpm/speed3s.xpm
 GNUstep/Apps/WPrefs.app/xpm/speed4.xpm
+GNUstep/Apps/WPrefs.app/xpm/xis.xpm
 GNUstep/Apps/WPrefs.app/xpm/speed4s.xpm
+GNUstep/Apps/WPrefs.app/xpm/temp.xpm
+GNUstep/Apps/WPrefs.app/xpm/theme.xpm
 GNUstep/Apps/WPrefs.app/xpm/timer0.xpm
 GNUstep/Apps/WPrefs.app/xpm/timer0s.xpm
 GNUstep/Apps/WPrefs.app/xpm/timer1.xpm
@@ -236,7 +285,6 @@ GNUstep/Apps/WPrefs.app/xpm/timer5s.xpm
 GNUstep/Apps/WPrefs.app/xpm/whandling.xpm
 GNUstep/Apps/WPrefs.app/xpm/windowfocus.xpm
 GNUstep/Apps/WPrefs.app/xpm/workspace.xpm
-GNUstep/Apps/WPrefs.app/xpm/xis.xpm
 GNUstep/Apps/WPrefs.app/tiff/advancetonewworkspace.tiff
 GNUstep/Apps/WPrefs.app/tiff/animations.tiff
 GNUstep/Apps/WPrefs.app/tiff/appearance.tiff
@@ -246,6 +294,7 @@ GNUstep/Apps/WPrefs.app/tiff/cycleworkspaces.tiff
 GNUstep/Apps/WPrefs.app/tiff/dock.tiff
 GNUstep/Apps/WPrefs.app/tiff/dontlinkworkspaces.tiff
 GNUstep/Apps/WPrefs.app/tiff/ergonomic.tiff
+GNUstep/Apps/WPrefs.app/tiff/ergowood.tiff
 GNUstep/Apps/WPrefs.app/tiff/expert.tiff
 GNUstep/Apps/WPrefs.app/tiff/fonts.tiff
 GNUstep/Apps/WPrefs.app/tiff/iconprefs.tiff
@@ -259,6 +308,7 @@ GNUstep/Apps/WPrefs.app/tiff/menus.tiff
 GNUstep/Apps/WPrefs.app/tiff/minimouseleft.tiff
 GNUstep/Apps/WPrefs.app/tiff/minimousemiddle.tiff
 GNUstep/Apps/WPrefs.app/tiff/minimouseright.tiff
+GNUstep/Apps/WPrefs.app/tiff/miscprefs2.tiff
 GNUstep/Apps/WPrefs.app/tiff/moreanim.tiff
 GNUstep/Apps/WPrefs.app/tiff/mousesettings.tiff
 GNUstep/Apps/WPrefs.app/tiff/mousespeed.tiff
@@ -275,10 +325,12 @@ GNUstep/Apps/WPrefs.app/tiff/speed1s.tiff
 GNUstep/Apps/WPrefs.app/tiff/speed2.tiff
 GNUstep/Apps/WPrefs.app/tiff/speed2s.tiff
 GNUstep/Apps/WPrefs.app/tiff/speed3.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed3s.tiff
 GNUstep/Apps/WPrefs.app/tiff/speed4.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer0.tiff
+GNUstep/Apps/WPrefs.app/tiff/speed3s.tiff
 GNUstep/Apps/WPrefs.app/tiff/speed4s.tiff
+GNUstep/Apps/WPrefs.app/tiff/temp.tiff
+GNUstep/Apps/WPrefs.app/tiff/theme.tiff
+GNUstep/Apps/WPrefs.app/tiff/timer0.tiff
 GNUstep/Apps/WPrefs.app/tiff/timer0s.tiff
 GNUstep/Apps/WPrefs.app/tiff/timer1.tiff
 GNUstep/Apps/WPrefs.app/tiff/timer1s.tiff
@@ -302,13 +354,15 @@ GNUstep/Apps/WPrefs.app/WPrefs.xpm
 @dirrm GNUstep/Apps/WPrefs.app
 @dirrm GNUstep/Apps
 @dirrm GNUstep
-@dirrm share/WindowMaker/IconSets
-@dirrm share/WindowMaker/Backgrounds
-@dirrm share/WindowMaker/Pixmaps
-@dirrm share/WindowMaker/Icons
+@dirrm share/WindowMaker/Themes/Checker.themed
+@dirrm share/WindowMaker/Themes/Night.themed
 @dirrm share/WindowMaker/Themes
 @dirrm share/WindowMaker/Styles
+@dirrm share/WindowMaker/Pixmaps
+@dirrm share/WindowMaker/Icons
+@dirrm share/WindowMaker/IconSets
 @dirrm share/WindowMaker/Defaults
+@dirrm share/WindowMaker/Backgrounds
 @dirrm share/WindowMaker
 @dirrm share/WINGs
-@dirrm lib/locale
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/X11R6/lib
