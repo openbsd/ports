@@ -1,9 +1,9 @@
-#   $OpenBSD: Makefile,v 1.4 2000/08/21 02:33:44 brad Exp $
+#   $OpenBSD: Makefile,v 1.5 2000/09/29 00:25:18 brad Exp $
 
 DISTNAME=	libnet-1.0703
 PKGNAME=	p5-libnet-1.0703
 CATEGORIES=	net perl5
-NEED_VERSION=	1.310
+NEED_VERSION=	1.336
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Net
 
@@ -20,8 +20,8 @@ pre-configure:
 	@cd ${WRKSRC} && perl ./Configure -d
 
 post-build:
-	@cd ${WRKSRC} && \
-		sed -e 1s,/usr/local/bin/perl,/usr/bin/perl, < Configure > configure-libnet
+	@cd ${WRKSRC} && sed -e 1s,/usr/local/bin/perl,/usr/bin/perl, \
+		< Configure > configure-libnet
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/configure-libnet ${PREFIX}/bin

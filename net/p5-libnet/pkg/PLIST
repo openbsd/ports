@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1 2000/06/28 13:58:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/09/29 00:25:19 brad Exp $
+bin/configure-libnet
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/.packlist
 libdata/perl5/site_perl/Net/Cmd.pm
 libdata/perl5/site_perl/Net/Config.pm
 libdata/perl5/site_perl/Net/Domain.pm
@@ -16,12 +18,10 @@ libdata/perl5/site_perl/Net/POP3.pm
 libdata/perl5/site_perl/Net/SMTP.pm
 libdata/perl5/site_perl/Net/SNPP.pm
 libdata/perl5/site_perl/Net/Time.pm
-bin/configure-libnet
 @comment no checksum
 libdata/perl5/site_perl/Net/libnet.cfg
 @exec echo "Finish configuring p5-libnet by using 'configure-libnet -o %D/%F'"
 libdata/perl5/site_perl/Net/libnetFAQ.pod
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/.packlist
 man/man3/Net::Cmd.3p
 man/man3/Net::Domain.3p
 man/man3/Net::DummyInetd.3p
