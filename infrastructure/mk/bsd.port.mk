@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.222 2000/03/05 16:33:38 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.223 2000/03/05 16:40:52 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1942,6 +1942,7 @@ ${_DEP}-depends:
 .    if defined(${_DEP:U}_DEPENDS) && !defined(NO_DEPENDS)
 	@PATH=${PORTPATH}; \
 	for i in ${${_DEP:U}_DEPENDS}; do \
+		cd ${PORTSDIR}; \
 		prog=`echo $$i | sed -e 's/:.*//'`; \
 		dir=`echo $$i | sed -e 's/[^:]*://'`; \
 		if expr "$$dir" : '.*:' > /dev/null; then \
@@ -1985,6 +1986,7 @@ lib-depends:
 .  if defined(LIB_DEPENDS) && !defined(NO_DEPENDS)
 .    if defined(NO_SHARED_LIBS)
 	@for i in ${LIB_DEPENDS}; do \
+		cd ${PORTSDIR}; \
 		lib=`echo $$i | sed -e 's/:.*//' -e 's|\([^\\]\)[\\\.].*|\1|'`; \
 		dir=`echo $$i | sed -e 's/[^:]*://'`; \
 		if expr "$$dir" : '.*:' > /dev/null; then \
@@ -2013,6 +2015,7 @@ lib-depends:
 	done
 .    else
 	@for i in ${LIB_DEPENDS}; do \
+		cd ${PORTSDIR}; \
 		lib=`echo $$i | sed -e 's/:.*//' -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
 		dir=`echo $$i | sed -e 's/[^:]*://'`; \
 		if expr "$$dir" : '.*:' > /dev/null; then \
@@ -2044,6 +2047,7 @@ lib-depends:
 misc-depends:
 .  if defined(DEPENDS) && !defined(NO_DEPENDS)
 	@for dir in ${DEPENDS}; do \
+		cd ${PORTSDIR}; \
 		if expr "$$dir" : '.*:' > /dev/null; then \
 			target=`echo $$dir | sed -e 's/.*://'`; \
 			dir=`echo $$dir | sed -e 's/:.*//'`; \
@@ -2257,7 +2261,7 @@ depends-list:
 .  if defined(_ALWAYS_DEP) || defined(_BUILD_DEP)
 	@for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
-		if cd $$dir 2>/dev/null; then \
+		if cd ${PORTSTDIR} && cd $$dir 2>/dev/null; then \
 			if ! make recurse-build-depends ${_DEPEND_THRU}; then  \
 				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 				exit 1; \
@@ -2277,7 +2281,7 @@ recurse-package-depends:
 	@pname=`cd ${.CURDIR} && make _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
 	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
-		if cd $$dir 2>/dev/null; then \
+		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
 			if ! make _DEPEND_ECHO="echo $$pname" package-name recurse-package-depends ${_DEPEND_THRU}; then  \
 				echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
 				exit 1; \
@@ -2297,7 +2301,7 @@ package-depends:
 .  if defined(_ALWAYS_DEP) || defined(_RUN_DEP)
 	@for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
-		if cd $$dir 2>/dev/null; then \
+		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
 			if ! make recurse-package-depends ${_DEPEND_THRU}; then  \
 				echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
 				exit 1; \
