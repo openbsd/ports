@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.15 2001/08/23 09:13:19 espie Exp $
+# $OpenBSD: make-plist,v 1.16 2002/04/03 15:00:30 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -39,6 +39,7 @@ use strict;
 
 use File::Find;
 use File::Spec;
+use File::Temp qw/ tempdir /;
 
 my %annotated;
 my $keep = '';
@@ -92,11 +93,25 @@ my (%newdir, %occupied, %ldconfig, %has_stuff, %infodir, @files, @libfiles);
 die "Update bsd.port.mk" if @ARGV == 0;
 my $plistdir = shift;
 die "Update bsd.port.mk" if -f $plistdir;
+die "Update bsd.port.mk" 
+    unless defined $ENV{'DEPS'} and defined $ENV{'PKGREPOSITORY'};
 $plist = File::Spec->catfile($plistdir, 'PLIST');
 $pshared = File::Spec->catfile($plistdir, 'PFRAG.shared');
 if (-e "$plist.orig" or -e "$pshared.orig") {
 	die "You must clean up old files first";
 }
+
+my $destdir = $ENV{DESTDIR};
+
+my $mtree = parse_mtree($destdir);
+
+# and directories for dependencies as well
+my $tmpdir = tempdir( CLEANUP => 1);
+chdir($tmpdir);
+for my $pkg (split(/\s+/, $ENV{'DEPS'})) {
+	augment_mtree($mtree, $destdir, $ENV{'PKGREPOSITORY'}."/$pkg.tgz");
+}
+
 if (-e $plist) {
     annotate($plist);
     rename($plist, "$plist.orig") or die "Can't rename $plist to $plist.orig";
@@ -126,10 +141,9 @@ my @date = (stat $ENV{INSTALL_PRE_COOKIE})[9, 10];
 # prefix to remove from everything
 my $base = $ENV{PREFIX};
 
-my $destdir = $ENV{DESTDIR};
-
 # read an mtree file, and produce the corresponding directory hierarchy
-sub parse_mtree {
+sub parse_mtree 
+{
 		# start under current DESTDIR, usually
 	my $current = shift;
 	local(*FILE);
@@ -155,7 +169,8 @@ sub parse_mtree {
 	return \%mtree;
 }
 
-sub strip {
+sub strip 
+{
 	local($_) = shift;
 	s|^\Q$base\E/||;
 	for my $l (@backsubst) {
@@ -172,7 +187,8 @@ sub strip {
 	return $_;
 }
 
-sub add_info {
+sub add_info 
+{
 	my ($header, $infodir) = @_;
 	for my $d (sort (keys %$infodir) ) {
 		for my $f (sort @{$infodir->{$d}}) {
@@ -180,6 +196,39 @@ sub add_info {
 			print "$header --info-dir=\%D/$d2 \%D/$d2/$f\n";
 		}
 	}
+}
+
+sub augment_mtree
+{
+	my ($mtree, $dst, $pkg) = @_;
+	my $basepath;
+	local(*FILE);
+	system("tar zxqf $pkg +CONTENTS");
+	open(FILE, '<', '+CONTENTS') or 
+		die "Error in dependent package $pkg\n";
+	while (<FILE>) {
+		chomp;
+		if (m/^\@dirrm\s+/) {
+			die "Badly formed package: $pkg\n";
+		} 
+		if (m/^\@cwd\s+/) {
+			$basepath = $';
+			last;
+		}
+	}
+	unless (defined $basepath and
+	File::Spec->file_name_is_absolute($basepath)) {
+		die "Badly formed package: $pkg\n";
+	}
+	while (<FILE>) {
+		chomp;
+		if (m/^\@dirrm\s+/) {
+			my $filename= File::Spec->catfile($dst, $basepath, $');
+			$mtree->{$filename} = $pkg;
+		}
+	}
+	close(FILE);
+	unlink('+CONTENTS');
 }
 
 # recursive traversal: mark specific `info' dirs, `ldconfig' dirs,
@@ -221,7 +270,6 @@ for my $d (keys %occupied) {
 }
 
 # make sure mtree is removed 
-my $mtree = parse_mtree($destdir);
 for my $d (keys %$mtree) {
 	undef $newdir{$d}
 }

@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.517 2002/04/02 15:55:55 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.518 2002/04/03 15:00:30 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2153,11 +2153,13 @@ _tmp:=
 .  for _v in ${SUBST_VARS}
 _tmp += ${_v}='${${_v}}'
 .  endfor
-plist update-plist: fake
+plist update-plist: fake ${_DEPrun_COOKIES}
 	@mkdir -p ${PKGDIR}
 	@DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} LDCONFIG="${LDCONFIG}" \
 	MTREE_FILE=${WRKPKG}/mtree.spec \
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
+	DEPS="`${MAKE} package-depends|tsort`" \
+	PKGREPOSITORY=${PKGREPOSITORY} \
 	perl ${PORTSDIR}/infrastructure/install/make-plist ${PKGDIR} ${_tmp}
 .endif
 
