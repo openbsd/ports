@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/13 22:13:24 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/02/03 21:25:09 lebel Exp $
 
 COMMENT=		"fully compliant DynDNS.org client"
 
 MV=			0
-V=			116
+V=			142
 PKGNAME=		ipcheck-${MV}.${V}
-DISTNAME=		ipcheck.v${V}
+DISTNAME=		ipcheck.${V}
 CATEGORIES=		net
 NEED_VERSION=		1.474
 EXTRACT_SUFX=
@@ -22,7 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://ipcheck.sourceforge.net/releases/
 
-RUN_DEPENDS=		:python-*:lang/python
+RUN_DEPENDS+=   	::lang/python
+BUILD_DEPENDS=  	${RUN_DEPENDS}
 
 NO_REGRESS=		Yes
 NO_BUILD=		Yes
