@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/02/10 14:54:50 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/14 16:42:56 espie Exp $
 
 VERSION=	9.3.2
 DISTNAME=	icon_interp-${VERSION}
@@ -7,6 +7,7 @@ MASTER_SITES=	ftp://ftp.cs.arizona.edu:/icon/packages/unix/
 DIST_SUBDIR=	icon/${VERSION}
 DISTFILES=	unix.tgz
 NEED_VERSION=	1.191
+LICENSE_TYPE=	PD
 
 MAINTAINER=	espie@openbsd.org
 

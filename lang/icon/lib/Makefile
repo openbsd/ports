@@ -1,5 +1,5 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.3 2000/02/10 14:54:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/14 16:42:56 espie Exp $
 
 VERSION=9.3.2
 DISTNAME=icon_lib-${VERSION}
@@ -8,6 +8,7 @@ DIST_SUBDIR=icon/${VERSION}
 CATEGORIES=lang
 
 MAINTAINER=espie@openbsd.org
+LICENSE_TYPE=PD
 
 # if you really want, the ipl.tgz file holds precompiled u1/u2 files
 # however, you will still have to grab the source for the necessary
