@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2003/02/08 15:45:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2003/05/07 11:31:07 naddy Exp $
 
 COMMENT=		"enhanced, MIME capable Berkeley Mail"
 
-DISTNAME=		nail-10.4
+DISTNAME=		nail-10.5
 CATEGORIES=		mail
 HOMEPAGE=		http://omnibus.ruf.uni-freiburg.de/~gritter/
 
