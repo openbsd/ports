@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/09 15:14:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/08/11 11:43:29 naddy Exp $
 
 COMMENT=	"free clone of mpg123, a command-line mp3 player"
 
-DISTNAME=	mpg321-0.1.3
+DISTNAME=	mpg321-0.1.4
 CATEGORIES=	audio
 NEED_VERSION=	1.427
 
