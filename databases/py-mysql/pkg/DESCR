@@ -15,3 +15,4 @@ not actively maintained. No code from that version is used in
 MySQLdb. MySQLdb is distributed free of charge under a license
 derived from the Python license.
 
+WWW: ${HOMEPAGE}
