@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2001/08/24 15:26:05 jakob Exp $
+# $OpenBSD: Makefile,v 1.19 2001/09/14 06:43:27 jakob Exp $
 
 COMMENT=	convert memos written in XML to the RFC format
 
-VERSION=	1.7
+VERSION=	1.8
 DISTNAME=	xml2rfc-${VERSION}
 CATEGORIES=	textproc
 NEED_VERSION=	1.363
@@ -16,8 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-WRKDIST=	${WRKDIR}/xml2rfc.${VERSION}
 
 RUN_DEPENDS=	tclsh8.3::lang/tcl/8.3 \
 		${PREFIX}/lib/tcl8.3/TclXML::textproc/TclXML \
