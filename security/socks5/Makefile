@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2000/02/11 01:10:12 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/02/17 05:25:13 brad Exp $
 
 DISTNAME=	socks5-v1.0r10
 PKGNAME=	socks5-1.0.10
 CATEGORIES=	security
+
+NEED_VERSION=	1.191
 
 MAINTAINER=	ports@openbsd.org
 
@@ -11,7 +13,6 @@ RESTRICTED=	"no commercial use"
 MIRROR_DISTFILE=no
 IS_INTERACTIVE=	yes
 NO_PACKAGE=	interactive port
-NEED_VERSION=	1.191
 
 # here are some extra configure args you may wish to use
 # see the readme file before screwing with them
@@ -22,16 +23,14 @@ NEED_VERSION=	1.191
 #		--with-passwd
 
 ETCDIR?=	/etc
-WRKDIST=	${WRKDIR}/${DISTNAME}
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libconffile=${ETCDIR}/libsocks5.conf \
-		--with-srvconffile=${ETCDIR}/socks5.conf \
-		--with-srvpidfile=/var/run/socks5.pid \
-		--with-srvidtfile=/var/run/socks5.ident \
+GNU_CONFIGURE=	Yes
+CONFIGURE_ARGS=	--with-libconffile="${ETCDIR}/libsocks5.conf" \
+		--with-srvconffile="${ETCDIR}/socks5.conf" \
+		--with-srvpidfile="/var/run/socks5.pid" \
+		--with-srvidtfile="/var/run/socks5.ident" \
 		${EXTRA_CONFIGURE_ARGS}
 
-MAN1=		runsocks.1 socks5.1 stopsocks.1 socks5_clients.1
-MAN5=		libsocks5.conf.5 socks5.conf.5
+WRKDIST=	${WRKDIR}/${DISTNAME}
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
@@ -45,10 +44,10 @@ do-fetch:
 	fi
 
 post-install:
-	mkdir -p ${PREFIX}/lib/socks
-	mkdir -p ${PREFIX}/share/doc/socks
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/socks
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/socks
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/lib/socks
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/socks
-	${LDCONFIG} -m ${PREFIX}/lib
+	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
