@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2003/05/24 11:08:17 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2003/07/01 11:11:31 wilfried Exp $
 
 COMMENT=		"GNOME web browser based on gecko"
 
-V=			1.2.10
-DISTNAME=		galeon-${V}a
+V=			1.2.11
+DISTNAME=		galeon-${V}
 CATEGORIES=		www
-MOZ=			1.4b
+MOZ=			1.4
 
 HOMEPAGE=		http://galeon.sourceforge.net/
 

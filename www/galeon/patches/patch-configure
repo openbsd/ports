@@ -1,7 +1,23 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/05/23 10:39:29 wilfried Exp $
+$OpenBSD: patch-configure,v 1.2 2003/07/01 11:11:31 wilfried Exp $
 --- configure.orig	Sun Apr 20 00:27:26 2003
-+++ configure	Wed May 21 14:31:10 2003
-@@ -11838,6 +11838,10 @@ USE_PTHREADS=
++++ configure	Mon Jun 16 15:31:06 2003
+@@ -11707,6 +11707,7 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <X11/Xlib.h>
+ #include <X11/extensions/Xinerama.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -11742,6 +11743,7 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <X11/Xlib.h>
+ #include <X11/extensions/Xinerama.h>
+ _ACEOF
+ if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
+@@ -11838,6 +11840,10 @@ USE_PTHREADS=
  _PTHREAD_CFLAGS=""
  _PTHREAD_LDFLAGS=""
  case "$OS_ARCH" in
@@ -12,7 +28,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/05/23 10:39:29 wilfried Exp $
  	NetBSD)
  		;;
  	FreeBSD)
-@@ -12341,7 +12345,7 @@ rm -f conftest.$ac_objext conftest.$ac_e
+@@ -12341,7 +12347,7 @@ rm -f conftest.$ac_objext conftest.$ac_e
  
  CC="$_save_cc"
  
@@ -21,7 +37,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/05/23 10:39:29 wilfried Exp $
  echo "$as_me:$LINENO: checking for gdk_superwin_get_type in -lgtksuperwin" >&5
  echo $ECHO_N "checking for gdk_superwin_get_type in -lgtksuperwin... $ECHO_C" >&6
  if test "${ac_cv_lib_gtksuperwin_gdk_superwin_get_type+set}" = set; then
-@@ -12401,14 +12405,14 @@ if test $ac_cv_lib_gtksuperwin_gdk_super
+@@ -12401,14 +12407,14 @@ if test $ac_cv_lib_gtksuperwin_gdk_super
  fi
  
  
