@@ -1,6 +1,6 @@
---- configure.orig	Wed Apr 26 16:50:57 2000
-+++ configure	Wed Jul 19 02:11:34 2000
-@@ -5063,9 +5063,14 @@
+--- configure.orig	Tue Aug  8 14:17:11 2000
++++ configure	Thu Nov  2 10:19:48 2000
+@@ -5063,13 +5063,23 @@
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
@@ -14,11 +14,21 @@
 +		 *)
 +		    SHLIB_CFLAGS="-fpic";;
 +	        esac
-+		SHLIB_LD="ld -Bshareable -Bforcearchive -x"
++		SHLIB_LD="${CC} -shared ${SHLIB_CFLAGS}"
  		SHLIB_LD_LIBS=""
  		SHLIB_SUFFIX=".so"
  		DL_OBJS="tclLoadDl.o"
-@@ -5091,7 +5096,7 @@
+-		DL_LIBS=""
++		case `machine` in
++		powerpc)
++			DL_LIBS="-ldl";;
++		*)
++			DL_LIBS="";;
++		esac
+ 		LDFLAGS=""
+ 		LD_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
+ 		echo $ac_n "checking for ELF""... $ac_c" 1>&6
+@@ -5091,7 +5101,7 @@
  else
    rm -rf conftest*
    echo "$ac_t""no" 1>&6
@@ -27,7 +37,7 @@
  		
  fi
  rm -f conftest*
-@@ -5787,10 +5792,9 @@
+@@ -5787,10 +5797,9 @@
      TCL_LD_SEARCH_FLAGS="${LD_SEARCH_FLAGS}"
      eval "TCL_LIB_FILE=libtcl${TCL_SHARED_LIB_SUFFIX}"
      if test "x$DL_OBJS" = "xtclLoadAout.o"; then
@@ -39,7 +49,7 @@
      fi
  else
      case $system in
-@@ -5874,7 +5878,7 @@
+@@ -5874,7 +5883,7 @@
  # Replace DBGX with TCL_DBGX
  eval "STUB_LIB_FILE=\"${STUB_LIB_FILE}\""
  
