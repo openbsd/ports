@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/11/09 19:42:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/11/21 19:01:28 naddy Exp $
 
 COMMENT=		"commandline shell and file manager"
 
@@ -7,7 +7,7 @@ CATEGORIES=		misc
 
 HOMEPAGE=		http://www.clex.sk/
 
-MAINTAINER=		Victor Sahlstedt <cvss@home.se>
+MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/08/03 14:59:26 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/11/21 19:01:28 naddy Exp $
 
 COMMENT=		"curses front-end for various audio players"
 
@@ -7,7 +7,7 @@ CATEGORIES=		audio
 
 HOMEPAGE=		http://www.tf.hut.fi/~flu/cplay/
 
-MAINTAINER=		Victor Sahlstedt <cvss@home.se>
+MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

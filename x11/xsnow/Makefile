@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/07/07 14:38:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2004/11/21 19:01:28 naddy Exp $
 
 COMMENT=		"snowy and Santa-y desktop"
 
@@ -7,7 +7,7 @@ CATEGORIES=		x11
 
 HOMEPAGE=		http://www.euronet.nl/~rja/Xsnow/
 
-MAINTAINER=		Victor Sahlstedt <cvss@home.se>
+MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
 
 PERMIT_PACKAGE_CDROM=	"vague license"
 PERMIT_PACKAGE_FTP=	"vague license"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/11/10 16:30:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/11/21 19:01:28 naddy Exp $
 
 COMMENT= 		"reimplementation of Dan Bernstein's daemontools"
 
@@ -7,7 +7,7 @@ CATEGORIES=		sysutils
 
 HOMEPAGE=		http://offog.org/code/freedt.html
 
-MAINTAINER=		Victor Sahlstedt <cvss@home.se>
+MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

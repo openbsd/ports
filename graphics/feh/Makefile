@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/11/09 19:38:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/11/21 19:01:28 naddy Exp $
 
 COMMENT=	"lightweight image viewer"
 
@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.linuxbrit.co.uk/feh/
 
-MAINTAINER=	Victor Sahlstedt <cvss@home.se>
+MAINTAINER=	Victor Sahlstedt <salan@legonet.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

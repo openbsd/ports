@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/01 21:53:16 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2004/11/21 19:01:28 naddy Exp $
 
 COMMENT=		"commandline screen capture util"
 
@@ -7,7 +7,7 @@ CATEGORIES=		graphics
 
 HOMEPAGE=		http://www.linuxbrit.co.uk/scrot/
 
-MAINTAINER=		Victor Sahlstedt <cvss@home.se>
+MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
