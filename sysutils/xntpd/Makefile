@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2000/08/05 02:06:44 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/09/02 15:21:53 espie Exp $
 
 DISTNAME=	xntp3-5.93e-export
+PKGNAME=	xntp3-5.93e
 CATEGORIES=	sysutils
 NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.hawaii.edu/mirrors/ntp/ \
