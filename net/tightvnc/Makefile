@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2004/04/21 12:56:30 wilfried Exp $
+# $OpenBSD: Makefile,v 1.13 2004/09/29 20:39:48 sturm Exp $
 
 COMMENT=	"cross-platform remote desktop access"
 COMMENT-viewer=	"client for cross-platform remote desktop access"
 
 VERSION=	1.2.7
 PKGNAME=        tightvnc-${VERSION}
+PKGNAME-viewer=	tightvnc-viewer-${VERSION}
 DISTNAME=       ${PKGNAME}_unixsrc
 CATEGORIES=	net
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=vnc-tight/}
@@ -32,6 +33,10 @@ CONFIGURE_STYLE=	imake
 ALL_TARGET=    	World
 
 NO_REGRESS=	Yes
+
+.if defined(PACKAGING) && empty(SUBPACKAGE)
+RUN_DEPENDS+=	::net/tightvnc,-viewer
+.endif
 
 DOCUMENTATION=vncserver.man vncpasswd/vncpasswd.man vncconnect/vncconnect.man \
     Xvnc/programs/Xserver/Xvnc.man vncviewer/vncviewer.man
