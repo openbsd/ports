@@ -1,0 +1,45 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2002/05/21 19:43:55 nino Exp $
+--- configure.orig	Thu Apr 18 23:58:31 2002
++++ configure	Mon May 20 20:00:19 2002
+@@ -3901,8 +3901,8 @@ else
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
+       case "$host_os" in
+@@ -3911,8 +3911,8 @@ else
+ 	hardcode_libdir_flag_spec='-R$libdir'
+         ;;
+       *)
+-        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++        hardcode_libdir_flag_spec='${wl}-R$libdir'
+         ;;
+       esac
+     fi
+@@ -4427,6 +4427,8 @@ openbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+   need_version=no
++  sys_lib_search_path_spec="/usr/lib"
++  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case "$host_os" in
+     openbsd2.[89] | openbsd2.[89].*)
+@@ -8021,6 +8023,10 @@ else
+   echo "$ac_t""no" 1>&6
+ fi
+ 
++	   fi
++
++	   if test "$gt_cv_func_gettext_libintl" = "yes"; then
++	     LIBS="$LIBS -lintl";
+ 	   fi
+ 
+ 	   if test "$gt_cv_func_gettext_libc" = "yes" \
