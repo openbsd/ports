@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/17 10:27:42 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2003/04/17 10:58:12 wilfried Exp $
 
 COMMENT=	"Rogue like adventure game"
 
@@ -18,5 +18,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>
