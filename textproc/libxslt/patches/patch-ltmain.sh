@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain.sh,v 1.5 2001/10/27 08:39:13 shell Exp $
---- ltmain.sh.orig	Sat Oct 27 16:20:59 2001
-+++ ltmain.sh	Sat Oct 27 16:20:32 2001
-@@ -745,6 +745,7 @@
+$OpenBSD: patch-ltmain.sh,v 1.6 2002/07/11 17:21:42 shell Exp $
+--- ltmain.sh.orig	Sun Jul  7 04:12:28 2002
++++ ltmain.sh	Fri Jul 12 00:53:08 2002
+@@ -745,6 +745,7 @@ compiler."
      linker_flags=
      dllsearchpath=
      lib_search_path=`pwd`
@@ -9,7 +9,7 @@ $OpenBSD: patch-ltmain.sh,v 1.5 2001/10/27 08:39:13 shell Exp $
  
      avoid_version=no
      dlfiles=
-@@ -875,6 +876,11 @@
+@@ -875,6 +876,11 @@ compiler."
  	  prev=
  	  continue
  	  ;;
@@ -21,7 +21,7 @@ $OpenBSD: patch-ltmain.sh,v 1.5 2001/10/27 08:39:13 shell Exp $
  	release)
  	  release="-$arg"
  	  prev=
-@@ -975,6 +981,10 @@
+@@ -975,6 +981,10 @@ compiler."
  	fi
  	continue
  	;;
@@ -32,7 +32,7 @@ $OpenBSD: patch-ltmain.sh,v 1.5 2001/10/27 08:39:13 shell Exp $
  
        # The native IRIX linker understands -LANG:*, -LIST:* and -LNO:*
        # so, if we see these flags be careful not to treat them like -L
-@@ -1068,6 +1078,17 @@
+@@ -1068,6 +1078,17 @@ compiler."
  
        -o) prev=output ;;
  
@@ -50,7 +50,7 @@ $OpenBSD: patch-ltmain.sh,v 1.5 2001/10/27 08:39:13 shell Exp $
        -release)
  	prev=release
  	continue
-@@ -1845,6 +1866,7 @@
+@@ -1845,6 +1866,7 @@ compiler."
  
  	  if test "$linkmode" = prog || test "$mode" = relink; then
  	    add_shlibpath=
@@ -58,7 +58,7 @@ $OpenBSD: patch-ltmain.sh,v 1.5 2001/10/27 08:39:13 shell Exp $
  	    add_dir=
  	    add=
  	    # Finalize command for both is simple: just hardcode it.
-@@ -1865,10 +1887,20 @@
+@@ -1865,10 +1887,20 @@ compiler."
  	      add="-l$name"
  	    fi
  
@@ -79,7 +79,7 @@ $OpenBSD: patch-ltmain.sh,v 1.5 2001/10/27 08:39:13 shell Exp $
  	      test -n "$add_dir" && deplibs="$add_dir $deplibs"
  	      test -n "$add" && deplibs="$add $deplibs"
  	    fi
-@@ -3823,7 +3855,7 @@
+@@ -3823,7 +3855,7 @@ fi\
  	fi
        done
        # Quote the link command for shipping.
@@ -88,7 +88,7 @@ $OpenBSD: patch-ltmain.sh,v 1.5 2001/10/27 08:39:13 shell Exp $
        relink_command=`$echo "X$relink_command" | $Xsed -e "$sed_quote_subst"`
  
        # Only create the output if not a dry run.
-@@ -4124,6 +4156,23 @@
+@@ -4124,6 +4156,23 @@ relink_command=\"$relink_command\""
  	dir="$dir$objdir"
  
  	if test -n "$relink_command"; then
@@ -112,7 +112,7 @@ $OpenBSD: patch-ltmain.sh,v 1.5 2001/10/27 08:39:13 shell Exp $
  	  $echo "$modename: warning: relinking \`$file'" 1>&2
  	  $show "$relink_command"
  	  if $run eval "$relink_command"; then :
-@@ -4412,40 +4461,6 @@
+@@ -4412,40 +4461,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  

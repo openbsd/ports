@@ -1,0 +1,16 @@
+$OpenBSD: patch-libxslt_extra_c,v 1.1 2002/07/11 17:21:42 shell Exp $
+--- libxslt/extra.c.orig	Tue Mar 19 04:09:55 2002
++++ libxslt/extra.c	Fri Jul 12 00:58:24 2002
+@@ -244,10 +244,9 @@ xsltFunctionLocalTime(xmlXPathParserCont
+     local_tm = localtime(&gmt);
+ 
+     /*
+-     * Calling localtime() has the side-effect of setting timezone.
+-     * After we know the timezone, we can adjust for it
++     * Correct timezone : offset from UTC in seconds
+      */
+-    lmt = gmt - timezone;
++    lmt = gmt - local_tm->tm_gmtoff;
+ 
+     /*
+      * FIXME: it's been too long since I did manual memory management.

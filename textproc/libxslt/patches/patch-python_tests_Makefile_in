@@ -1,0 +1,12 @@
+$OpenBSD: patch-python_tests_Makefile_in,v 1.1 2002/07/11 17:21:42 shell Exp $
+--- python/tests/Makefile.in.orig	Fri Jul 12 01:15:42 2002
++++ python/tests/Makefile.in	Fri Jul 12 01:15:49 2002
+@@ -117,7 +117,7 @@ XSLT_INCLUDEDIR = @XSLT_INCLUDEDIR@
+ XSLT_LIBDIR = @XSLT_LIBDIR@
+ XSLT_LIBS = @XSLT_LIBS@
+ 
+-EXAMPLE_DIR = $(datadir)/doc/libxslt-python-$(LIBXSLT_VERSION)/examples
++EXAMPLE_DIR = $(datadir)/doc/libxslt-python/examples
+ 
+ TESTSPY = \
+     basic.py	\
