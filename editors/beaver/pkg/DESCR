@@ -5,5 +5,3 @@ sites to C coding. It is based upon the GTK+ toolkit, supports many languages
 through config files and offers functions such as automatic indentation and
 completion or syntax highlighting. In fact, it is 100% compatible with
 Ultraedit's wordfile.txt files, and has its own mini macro language.
-
-WWW: ${HOMEPAGE}

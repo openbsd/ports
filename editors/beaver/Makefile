@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2003/08/22 15:51:24 couderc Exp $
+# $OpenBSD: Makefile,v 1.5 2003/08/23 21:19:53 naddy Exp $
 COMMENT=	"lightweight Gtk text editor with syntax highlighting"
 
-DISTNAME=	beaver-0.2.6
+DISTNAME=	beaver-0.2.7
 CATEGORIES=	editors	
 
 HOMEPAGE=	http://www.nongnu.org/beaver/
