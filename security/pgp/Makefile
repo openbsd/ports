@@ -3,8 +3,10 @@
 # Date created:		19 Mar 1998
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.6 1998/12/16 20:29:54 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1999/04/02 13:31:03 espie Exp $
 
+# for patch-list
+NEED_VERSION=1.52
 DISTNAME=       pgp263is
 PKGNAME=	pgp-2.6.3
 CATEGORIES=	security
@@ -58,7 +60,8 @@ post-extract:
 
 # common C flags
 #
-CFLAGS=		-O2 -DUNIX -DPORTABLE -DMERIT -DIDEA32 -DMAX_NAMELEN=255
+CFLAGS=		-O2 -DUNIX -DPORTABLE -DMERIT -DIDEA32 -DMAX_NAMELEN=255 \
+-DPGP_DOC_DIR=\"${PGP_DOC_DIR}\"
 
 # RSAREF parameters
 #
@@ -75,18 +78,10 @@ RSAOBJS=	rsaglue1.o
 
 # RSAREF2 doesn't work as is when sizeof( long) != 4 -- fix it
 #
-pre-patch:
+PATCH_LIST=patch-doc
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-	@${MKDIR} ${PATCHDIR}
-	@${CP} ${FILESDIR}/patch-rsaref2 ${PATCHDIR}
-.endif
-
-# We don't need the rsaref patch any more
-#
-post-patch:
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-	@${RM} ${PATCHDIR}/patch-rsaref2
-	@${RMDIR} ${PATCHDIR}
+PATCH_LIST+=patch-rsaref2
+.else
 .endif
 
 # Before the build figure out if we are on a big endian machine or not
@@ -101,6 +96,7 @@ pre-build:
 	   ${CP} /dev/null ${WRKDIR}/.endian; \
 	 fi
 
+PGP_DOC_DIR=${PREFIX}/share/doc/pgp
 # Build rsaref (if USA) then pgp
 #
 do-build:
@@ -133,10 +129,10 @@ do-install:
 .for libfile in ${LIBFILES}
 	@${INSTALL_DATA} ${WRKDIR}/${libfile} ${PREFIX}/lib/pgp
 .endfor
-	@${MKDIR} -p ${PREFIX}/share/doc/pgp
-	@${INSTALL_DATA} ${WRKDIR}/setup.doc ${PREFIX}/share/doc/pgp
+	@${MKDIR} -p ${PGP_DOC_DIR}
+	@${INSTALL_DATA} ${WRKDIR}/setup.doc ${PGP_DOC_DIR}
 .for docfile in ${DOCFILES}
-	@${INSTALL_DATA} ${WRKDIR}/doc/${docfile} ${PREFIX}/share/doc/pgp
+	@${INSTALL_DATA} ${WRKDIR}/doc/${docfile} ${PGP_DOC_DIR}
 .endfor
 
 .include <bsd.port.mk>
