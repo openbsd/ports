@@ -1,9 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/08/17 05:47:34 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/03/21 05:28:21 fgsch Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/ddd-themes.info
+@unexec install-info --delete --info-dir=%D/info %D/info/ddd.info
 bin/ddd
-@unexec install-info --delete %D/info/ddd.info %D/info/dir
+info/ddd-themes.info
+info/ddd-themes.info-1
+info/ddd-themes.info-2
+info/ddd-themes.info-3
 info/ddd.info
 info/ddd.info-1
 info/ddd.info-10
+info/ddd.info-11
 info/ddd.info-2
 info/ddd.info-3
 info/ddd.info-4
@@ -12,8 +18,36 @@ info/ddd.info-6
 info/ddd.info-7
 info/ddd.info-8
 info/ddd.info-9
-@exec install-info %D/info/ddd.info %D/info/dir
 man/man1/ddd.1
+share/ddd-3.3/COPYING
+share/ddd-3.3/NEWS
+share/ddd-3.3/ddd/Ddd
+share/ddd-3.3/themes/green.vsl
+share/ddd-3.3/themes/red.vsl
+share/ddd-3.3/themes/smalltitles.vsl
+share/ddd-3.3/themes/smallvalues.vsl
+share/ddd-3.3/themes/suppress.vsl
+share/ddd-3.3/themes/tinyvalues.vsl
+share/ddd-3.3/vsllib/arcs.vsl
+share/ddd-3.3/vsllib/builtin.vsl
+share/ddd-3.3/vsllib/colors.vsl
+share/ddd-3.3/vsllib/ctree.vsl
+share/ddd-3.3/vsllib/ddd.vsl
+share/ddd-3.3/vsllib/flow.vsl
+share/ddd-3.3/vsllib/flowplus.vsl
+share/ddd-3.3/vsllib/fonts.vsl
+share/ddd-3.3/vsllib/linebreak.vsl
+share/ddd-3.3/vsllib/list.vsl
+share/ddd-3.3/vsllib/slopes.vsl
+share/ddd-3.3/vsllib/std.vsl
+share/ddd-3.3/vsllib/struct.vsl
+share/ddd-3.3/vsllib/symbols.vsl
+share/ddd-3.3/vsllib/tab.vsl
+share/ddd-3.3/vsllib/tree.vsl
+share/ddd-3.3/vsllib/verbose.vsl
+share/ddd-3.3/vsllib/vsl.vsl
+share/ddd-3.3/vsllib/vsldef.vsl
+share/ddd-3.3/vsllib/vsllib.vsl
 share/doc/ddd/PROBLEMS
 share/doc/ddd/README
 share/doc/ddd/ddd-paper.ps.gz
@@ -21,3 +55,9 @@ share/doc/ddd/ddd.ps.gz
 share/doc/ddd/sample.c
 share/doc/ddd/sample.dddinit
 @dirrm share/doc/ddd
+@dirrm share/ddd-3.3/vsllib
+@dirrm share/ddd-3.3/themes
+@dirrm share/ddd-3.3/ddd
+@dirrm share/ddd-3.3
+@exec install-info --info-dir=%D/info %D/info/ddd-themes.info
+@exec install-info --info-dir=%D/info %D/info/ddd.info

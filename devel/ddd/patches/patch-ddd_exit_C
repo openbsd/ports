@@ -1,7 +1,7 @@
-$OpenBSD: patch-ddd_exit_C,v 1.1 2000/10/30 13:54:50 espie Exp $
---- ddd/exit.C.orig	Wed Feb  9 08:59:07 2000
-+++ ddd/exit.C	Mon Oct 30 13:55:44 2000
-@@ -1088,8 +1088,10 @@ void report_core(ostream& log)
+$OpenBSD: patch-ddd_exit_C,v 1.2 2002/03/21 05:28:21 fgsch Exp $
+--- ddd/exit.C.orig	Tue Dec 19 12:45:49 2000
++++ ddd/exit.C	Wed Mar 13 04:32:03 2002
+@@ -1149,8 +1149,10 @@ void report_core(ostream& log)
      if (!is_core_file("core"))
  	return;
  

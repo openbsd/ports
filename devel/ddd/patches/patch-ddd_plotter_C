@@ -1,7 +1,7 @@
-$OpenBSD: patch-ddd_plotter_C,v 1.1 2000/10/30 13:54:51 espie Exp $
---- ddd/plotter.C.orig	Mon Oct 30 14:10:42 2000
-+++ ddd/plotter.C	Mon Oct 30 14:27:57 2000
-@@ -412,7 +412,14 @@ static void configure_plot(PlotWindowInf
+$OpenBSD: patch-ddd_plotter_C,v 1.2 2002/03/21 05:28:21 fgsch Exp $
+--- ddd/plotter.C.orig	Tue Jan  9 15:15:22 2001
++++ ddd/plotter.C	Wed Mar 13 04:32:03 2002
+@@ -429,7 +429,14 @@ static void configure_plot(PlotWindowInf
  		new StatusDelay("Retrieving Plot Settings");
  
  	    // Save settings...

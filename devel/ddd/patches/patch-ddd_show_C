@@ -1,7 +1,7 @@
-$OpenBSD: patch-ddd_show_C,v 1.1 2000/10/30 13:54:51 espie Exp $
---- ddd/show.C.orig	Mon Oct 30 13:39:23 2000
-+++ ddd/show.C	Mon Oct 30 13:40:48 2000
-@@ -57,6 +57,7 @@ char show_rcsid[] = 
+$OpenBSD: patch-ddd_show_C,v 1.2 2002/03/21 05:28:21 fgsch Exp $
+--- ddd/show.C.orig	Tue Jan  9 15:00:51 2001
++++ ddd/show.C	Wed Mar 13 04:32:04 2002
+@@ -58,6 +58,7 @@ char show_rcsid[] = 
  #include <fstream.h>
  #include <string.h>
  #include <errno.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-ddd_show_C,v 1.1 2000/10/30 13:54:51 espie Exp $
  
  #include "Xpm.h"
  #include "HelpCB.h"
-@@ -372,11 +373,14 @@ void show_configuration(ostream& os)
+@@ -403,11 +404,14 @@ void show_configuration(ostream& os)
  
  static int uncompress(ostream& os, const char *text, int size)
  {
