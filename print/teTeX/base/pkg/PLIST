@@ -1,3 +1,7 @@
+@comment teTeX actually includes texi2html-1.56k
+@pkgcfl texi2html-*
+@comment and a version of dialog
+@pkgcfl dialog-*
 @unexec install-info --delete --info-dir=%D/info %D/info/dvips.info
 @unexec install-info --delete --info-dir=%D/info %D/info/kpathsea.info
 @unexec install-info --delete --info-dir=%D/info %D/info/latex.info

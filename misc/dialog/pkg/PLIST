@@ -1,2 +1,3 @@
+@pkgcfl teTeX_base-*
 bin/dialog
 man/man1/dialog.1

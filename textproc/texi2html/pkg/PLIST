@@ -1,2 +1,4 @@
+@comment teTeX includes a more recent version
+@pkgcfl teTeX_base-*
 bin/texi2html
 man/man1/texi2html.1
