@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2004/11/08 15:44:14 biorn Exp $
+# $OpenBSD: Makefile,v 1.13 2005/02/03 10:30:43 robert Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Huge compilation of Win32 binary codecs"
 
-DISTNAME=	all-20041107
+DISTNAME=	all-20050115
 PKGNAME=	${DISTNAME:S,all-,win32-codecs-,g}
 CATEGORIES=	graphics
 
