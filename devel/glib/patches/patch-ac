@@ -1,6 +1,6 @@
---- gthread/Makefile.in.orig	Thu Oct  7 13:35:23 1999
-+++ gthread/Makefile.in	Sat Oct 16 17:14:30 1999
-@@ -103,7 +103,7 @@
+--- gthread/Makefile.in.orig	Wed Feb 16 06:19:14 2000
++++ gthread/Makefile.in	Tue Mar  7 16:28:10 2000
+@@ -101,7 +101,7 @@
  lib_LTLIBRARIES = libgthread.la
  
  libgthread_la_SOURCES = gthread.c
@@ -9,7 +9,7 @@
  
  
  libgthread_la_LIBADD = @G_THREAD_LIBS@
-@@ -297,7 +297,7 @@
+@@ -295,7 +295,7 @@
  install: install-am
  uninstall-am: uninstall-libLTLIBRARIES
  uninstall: uninstall-am

@@ -1,6 +1,6 @@
---- gmodule/Makefile.in.orig	Thu Oct  7 13:35:21 1999
-+++ gmodule/Makefile.in	Sat Oct 16 16:40:23 1999
-@@ -109,7 +109,7 @@
+--- gmodule/Makefile.in.orig	Wed Feb 16 06:19:13 2000
++++ gmodule/Makefile.in	Tue Mar  7 16:27:19 2000
+@@ -107,7 +107,7 @@
  lib_LTLIBRARIES = libgmodule.la libgplugin_a.la libgplugin_b.la
  
  libgmodule_la_SOURCES = gmodule.c
@@ -9,7 +9,7 @@
  
  
  libgmodule_la_LIBADD = @G_MODULE_LIBS@ # $(libglib)
-@@ -333,7 +333,7 @@
+@@ -331,7 +331,7 @@
  install: install-am
  uninstall-am: uninstall-libLTLIBRARIES uninstall-includeHEADERS
  uninstall: uninstall-am
