@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.603 2004/01/28 20:16:14 sturm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.604 2004/01/28 22:13:40 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -741,11 +741,9 @@ _SITE_SELECTOR+=*) sites="${MASTER_SITES}";; esac
 # are located in /cdrom/distfiles/${DIST_SUBDIR}/ (assuming that the
 # CDROM is mounted on /cdrom).
 #
-.if exists(/cdrom/distfiles)
-CDROM_SITE=	/cdrom/distfiles/${DIST_SUBDIR}
-.endif
+CDROM_SITE?=	/cdrom/distfiles/${DIST_SUBDIR}
 
-.if defined(CDROM_SITE)
+.if !empty(CDROM_SITE)
 .  if defined(FETCH_SYMLINK_DISTFILES)
 _CDROM_OVERRIDE=if ln -s ${CDROM_SITE}/$$f .; then exit 0; fi
 .  else
