@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/04 23:09:01 henning Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/05 00:58:57 henning Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -24,7 +24,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	ldap,lber::databases/openldap
-BUILD_DEPENDS=	${LIB_DEPENDS}
 
 NO_REGRESS=	Yes
 
