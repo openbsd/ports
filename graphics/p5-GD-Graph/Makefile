@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2002/07/10 20:48:14 avsm Exp $
+# $OpenBSD: Makefile,v 1.12 2002/07/15 03:11:46 kevlo Exp $
 
 COMMENT=	"module for graph plotting"
 
-DISTNAME=	GDGraph-1.33
+DISTNAME=	GDGraph-1.35
 PKGNAME=	p5-GD-Graph-1.33
 CATEGORIES=	graphics perl5
-NEED_VERSION=	1.496
+
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
+
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=GD/}
 
 BUILD_DEPENDS=	:p5-GD->=1.18:graphics/p5-GD \

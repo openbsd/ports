@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/07/15 03:11:48 kevlo Exp $
 libdata/perl5/site_perl/GD/Graph.pm
 libdata/perl5/site_perl/GD/Graph/Data.pm
 libdata/perl5/site_perl/GD/Graph/Error.pm
@@ -7,6 +7,7 @@ libdata/perl5/site_perl/GD/Graph/area.pm
 libdata/perl5/site_perl/GD/Graph/axestype.pm
 libdata/perl5/site_perl/GD/Graph/bars.pm
 libdata/perl5/site_perl/GD/Graph/colour.pm
+libdata/perl5/site_perl/GD/Graph/hbars.pm
 libdata/perl5/site_perl/GD/Graph/lines.pm
 libdata/perl5/site_perl/GD/Graph/linespoints.pm
 libdata/perl5/site_perl/GD/Graph/mixed.pm
@@ -18,3 +19,4 @@ man/man3p/GD::Graph::Data.3p
 man/man3p/GD::Graph::Error.3p
 man/man3p/GD::Graph::FAQ.3p
 man/man3p/GD::Graph::colour.3p
+man/man3p/GD::Graph::hbars.3p
