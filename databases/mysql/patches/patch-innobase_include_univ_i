@@ -1,0 +1,17 @@
+$OpenBSD: patch-innobase_include_univ_i,v 1.1 2002/03/19 03:22:40 espie Exp $
+--- innobase/include/univ.i.orig	Tue Mar 19 03:53:11 2002
++++ innobase/include/univ.i	Tue Mar 19 03:53:43 2002
+@@ -104,12 +104,8 @@ memory is read outside the allocated blo
+ #define UNIV_INLINE  	__inline
+ #else
+ /* config.h contains the right def for 'inline' for the current compiler */
+-#if (__GNUC__ == 2)
+-#define UNIV_INLINE  extern inline
+-#else
+-/* extern inline doesn't work with gcc 3.0.2 */
++/* mysql people don't understand extern inline */
+ #define UNIV_INLINE  static inline
+-#endif
+ #endif
+ 
+ #else
