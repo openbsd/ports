@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/01/28 23:02:51 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/07/17 23:33:20 naddy Exp $
 include/NTL/FFT.h
 include/NTL/FacVec.h
 include/NTL/GF2.h
@@ -9,7 +9,6 @@ include/NTL/GF2X.h
 include/NTL/GF2XFactoring.h
 include/NTL/GF2XVec.h
 include/NTL/HNF.h
-include/NTL/IsFinite.h
 include/NTL/LLL.h
 include/NTL/RR.h
 include/NTL/WordVector.h
