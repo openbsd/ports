@@ -1,0 +1,14 @@
+Libfmt is a port of Plan 9's formatted print library.
+As a base it provides all the syntax of ANSI printf
+but adds the ability for client programs to install
+new print verbs.  One such print verb (installed by
+default) is %r, which prints the system error string.
+Instead of perror("foo"), you can write fprint(2, "foo: %r\n"). 
+This is especially nice when you write verbs to format
+the data structures used by your particular program.
+
+WWW: http://pdos.lcs.mit.edu/~rsc/software/#libfmt
+http://plan9.bell-labs.com/magic/man2html/2/print
+
+Russ Cox
+rsc@post.harvard.edu

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/16 14:58:14 markus Exp $
+include/fmt.h
+lib/libfmt.a
+man/man3/fmtinstall.3
+man/man3/print.3
