@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/07 11:13:12 grange Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/08 09:18:14 grange Exp $
 
 COMMENT=		"IPv4/IPv6 traffic collector"
 
-DISTNAME=		cnupm-3.6
+DISTNAME=		cnupm-3.7.1
 CATEGORIES=		net
 
 HOMEPAGE=		http://pdp-11.org.ru/~form/cnupm
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}/files/
 
 MAKE_ENV=		BINDIR=${TRUEPREFIX}/sbin MANDIR=${TRUEPREFIX}/man/cat
-CFLAGS+=		-DCNUPM_USER=\"_cnupm\" -finline-limit-1000
+CFLAGS+=		-DCNUPM_USER=\"_cnupm\"
 
 FLAVORS=		static
 FLAVOR?=
