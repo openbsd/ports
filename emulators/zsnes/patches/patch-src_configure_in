@@ -1,5 +1,5 @@
---- src/configure.in.orig	Thu May 23 07:11:18 2002
-+++ src/configure.in	Mon Apr  7 18:15:18 2003
+--- src/configure.in.orig	Thu May 23 10:11:18 2002
++++ src/configure.in	Fri Apr 25 22:46:33 2003
 @@ -16,7 +16,7 @@ dnl See also: remarks supplied in the de
  AC_INIT(init.asm)
  AC_CONFIG_HEADER(config.h)	
@@ -18,9 +18,12 @@
  		;;
  	*-*-*bsd*)
  		CFLAGS="$CFLAGS -D__LINUX__ -D__FreeBSD__"
-@@ -145,31 +145,6 @@ else
+@@ -143,33 +143,8 @@ else
+ 	dnl zsnes more easily deal with small instruction caches, and more
+ 	dnl effectivly use branch prediction.
  	
- 	CFLAGS="$CFLAGS -Os -ffast-math -fomit-frame-pointer -fschedule-insns2 -s"
+-	CFLAGS="$CFLAGS -Os -ffast-math -fomit-frame-pointer -fschedule-insns2 -s"
++	CFLAGS="$CFLAGS -Os -ffast-math -fomit-frame-pointer -fschedule-insns2"
  	ZSNESEXE="zsnes"
 -fi
 -
