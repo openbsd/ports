@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2001/07/25 11:19:38 shell Exp $
+# $OpenBSD: Makefile,v 1.30 2001/07/31 05:25:29 shell Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 
 COMMENT=	"X-Chat is an X11 IRC client"
 
 MAJOR=		1.8
-VERSION=	${MAJOR}.1
+VERSION=	${MAJOR}.2
 DISTNAME=	xchat-${VERSION}
 CATEGORIES=	net x11
 NEED_VERSION=	1.427

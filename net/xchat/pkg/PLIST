@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2001/07/25 11:19:38 shell Exp $
+@comment $OpenBSD: PLIST,v 1.9 2001/07/31 05:25:30 shell Exp $
 bin/xchat
 bin/xchat-text
 share/doc/xchat/README
