@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2002/01/25 08:14:29 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2002/04/19 21:11:57 jakob Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -29,7 +29,10 @@ MAKE_AUXLIBS?=
 
 ALL_TARGET=	default
 
-FLAVORS+=	pcre sasl ldap mysql tls
+FLAVORS+=	pcre sasl ldap mysql
+.if defined(TLSVERSION)
+FLAVORS+=	tls
+.endif
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpcre}
