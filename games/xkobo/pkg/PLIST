@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/15 00:46:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/11/13 20:07:10 alek Exp $
 @mode 2755
 @group games
 bin/xkobo
-@exec install -d -g games -m 575 /var/games/xkobo.scores
+@mode 575
+@sample /var/games/xkobo.scores/
 @mode
 @group
 @man man/man1/xkobo.1
-@extraunexec rm -rf /var/games/xkobo.scores
+@extraunexec rm -rf /var/games/xkobo.scores/*
