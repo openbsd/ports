@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/04 21:56:05 jasoni Exp $
+# $OpenBSD: Makefile,v 1.4 2001/12/06 18:39:54 jasoni Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 6.2"
 
@@ -68,5 +68,8 @@ do-install:
 post-install:
 # remove setuid root bits
 	@find ${PREFIX} -perm -4000 -exec chmod u-s {} \;
+
+# Fix ownerships
+	@find ${PREFIX} -user 5041 -exec chown -h root.wheel {} \;
 
 .include <bsd.port.mk>
