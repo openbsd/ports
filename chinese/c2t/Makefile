@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 1999/11/03 00:58:43 turan Exp $	
-
-BROKEN=		distsite problems.  wait for fix by kevlo
+# $OpenBSD: Makefile,v 1.5 1999/11/04 01:55:24 kevlo Exp $	
 
 DISTNAME=	zh-c2t-1.0
 CATEGORIES=	chinese
 
-MAINTAINER=     ports@openbsd.org
+MAINTAINER=     kevlo@openbsd.org
 
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
 		ftp://ftp.ifcss.org/pub/software/x-win/cxterm/dict/gb/  \
@@ -22,6 +20,6 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/chinese/gb
 	${INSTALL_PROGRAM} ${WRKSRC}/c2t ${PREFIX}/bin
 	${INSTALL_DATA} ${DISTDIR}/TONEPY.tit ${PREFIX}/share/chinese/gb
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/c2t.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
