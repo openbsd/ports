@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/03/01 23:46:36 espie Exp $
+# $OpenBSD: Makefile,v 1.9 1999/03/10 17:55:21 espie Exp $
 #
 
 DISTNAME=       autoconf-2.13
@@ -6,7 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	marc@OpenBSD.ORG
 
-SEPARATE_BUILD=yes
+SEPARATE_BUILD=concurrent
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= autoconf
 
