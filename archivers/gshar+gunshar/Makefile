@@ -1,19 +1,18 @@
-# OpenBSD makefile for:    gshar+gunshar
-# Version required:     4.2
-# Date created:         06 November 1997
-# Whom:                 ejovi
-#
-# $OpenBSD: Makefile,v 1.2 1997/11/17 18:41:45 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1999/02/20 00:41:53 marc Exp $
 #
 
 DISTNAME=       sharutils-4.2
 CATEGORIES=	archivers
+
+MAINTAINER=	ports@openbsd.org
+
 MASTER_SITES=   ${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=sharutils
+
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= --program-prefix=g --disable-uucode
 INSTALL_TARGET= install install-man
-MAN1=		gshar.1 gunshar.1
 
 post-patch:
 	@touch ${WRKSRC}/po/sharutils.pot
