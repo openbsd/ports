@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/01/25 21:10:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.30 2004/02/01 16:23:36 jose Exp $
 
 COMMENT=	"sniffing tools for penetration testing"
 
@@ -8,6 +8,8 @@ CATEGORIES=	security
 MASTER_SITES=	http://monkey.org/~dugsong/dsniff/
 
 HOMEPAGE=	http://www.monkey.org/~dugsong/dsniff/
+
+MAINTAINER=	Jose Nazario <jose@crimelabs.net>
 
 BUILD_DEPENDS=	::net/libnids
 LIB_DEPENDS=	lib/db/db.3:db->3,<4:databases/db/v3 \

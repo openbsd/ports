@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/01/25 21:10:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2004/02/01 16:23:36 jose Exp $
 
 COMMENT=	"gateway acl scanner (via static-source port traceroute)"
 
@@ -8,6 +8,8 @@ CATEGORIES=     net
 MASTER_SITES=	http://www.packetfactory.net/firewalk/dist/
 
 HOMEPAGE=	http://www.packetfactory.net/projects/firewalk/
+
+MAINTAINER= 	Jose Nazario <jose@crimelabs.net>
 
 LIB_DEPENDS=	net::net/libnet
 

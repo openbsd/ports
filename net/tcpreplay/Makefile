@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/01/25 21:10:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2004/02/01 16:23:36 jose Exp $
 
 COMMENT=	"resend network traffic saved by tcpdump"
 
@@ -6,6 +6,8 @@ DISTNAME=	tcpreplay-1.0.1
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.anzen.com/research/nidsbench/
+
+MAINTAINER=	Jose Nazario <jose@crimelabs.net>
 
 LIB_DEPENDS=	net::net/libnet
 

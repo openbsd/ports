@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2004/01/25 21:10:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2004/02/01 16:23:36 jose Exp $
 
 COMMENT=	"DNS ping"
 
 DISTNAME=	nsping
 PKGNAME=	nsping-0.8
 CATEGORIES=	net
+
+MAINTAINER=	Jose Nazario <jose@crimelabs.net>
 
 MASTER_SITES=	http://www.enteract.com/~tqbf/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/01/25 21:10:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2004/02/01 16:23:36 jose Exp $
 
 COMMENT=	"IP stack integrity checker"
 
@@ -8,6 +8,8 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.packetfactory.net/projects/ISIC/
 
 HOMEPAGE=	http://www.packetfactory.net/projects/ISIC/
+
+MAINTAINER=	Jose Nazario <jose@crimelabs.net>
 
 EXTRACT_SUFX=	.tgz
 

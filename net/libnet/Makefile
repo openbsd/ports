@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/01/25 21:10:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.27 2004/02/01 16:23:36 jose Exp $
 
 COMMENT=	"raw IP packet construction library"
 
@@ -8,6 +8,8 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/deprecated/
 
 HOMEPAGE=	http://www.packetfactory.net/projects/libnet/
+
+MAINTAINER=	Jose Nazario <jose@crimelabs.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
