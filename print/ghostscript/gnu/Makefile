@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2002/12/26 18:41:14 sturm Exp $
+# $OpenBSD: Makefile,v 1.32 2003/03/31 14:49:13 sturm Exp $
 
 COMMENT="GNU PostScript interpreter"
 
@@ -31,6 +31,8 @@ PNGDIR=graphics/png
 BUILD_DEPENDS=	::${JPEGDIR}:patch ::${PNGDIR}:patch
 
 LIB_DEPENDS=	png.2::${PNGDIR}
+
+USE_X11=	Yes
 
 EXTRACT_ONLY=	${GS_SOURCES}
 

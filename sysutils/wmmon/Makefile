@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/01/19 09:20:46 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2003/03/31 14:49:13 sturm Exp $
 
 COMMENT=	"WindowMaker dock app similar to xload"
 
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+USE_X11=	Yes
 
 WRKDIST=	${WRKDIR}/wmmon.app
 WRKSRC=		${WRKDIST}/wmmon

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/12/28 21:49:14 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2003/03/31 14:49:13 sturm Exp $
 
 COMMENT=	"graphics and text browser with javascript support"
 
@@ -28,6 +28,7 @@ CONFIGURE_ARGS+= --enable-javascript --with-ssl
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.2::graphics/png \
 		tiff.35::graphics/tiff
+USE_X11=	Yes
 CONFIGURE_ARGS+= --with-x --enable-graphics
 CONFIGURE_ENV= CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 	       LDFLAGS="-L${LOCALBASE}/lib"
