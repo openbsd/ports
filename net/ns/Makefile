@@ -1,7 +1,9 @@
 #
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
-# $OpenBSD: Makefile,v 1.8 2000/04/18 07:16:06 angelos Exp $
+# $OpenBSD: Makefile,v 1.9 2000/09/15 03:58:22 turan Exp $
 #
+
+BROKEN=		compile errors.
 
 DISTNAME=	ns-2.1b5
 DISTFILES=	ns-src-2.1b5.tar.gz
