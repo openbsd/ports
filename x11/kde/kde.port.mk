@@ -1,4 +1,7 @@
-# $OpenBSD: kde.port.mk,v 1.8 2004/04/10 12:58:56 sturm Exp $
+# $OpenBSD: kde.port.mk,v 1.9 2004/05/10 10:12:29 brad Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+
 MODULES+=	qt3
 MODQT_OVERRIDE_UIC?=No
 MODQT_MT?=Yes
