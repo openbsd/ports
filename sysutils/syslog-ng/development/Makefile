@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2002/10/10 17:28:21 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2002/12/30 10:48:53 jakob Exp $
 
-DISTNAME=	syslog-ng-1.5.21
-LIBOL=		libol-0.3.3
+DISTNAME=	syslog-ng-1.5.24
+LIBOL=		libol-0.3.6
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
