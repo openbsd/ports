@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/21 04:01:05 kurt Exp $
+# $OpenBSD: Makefile,v 1.2 2005/02/04 17:06:45 kurt Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/java/jdk14/Makefile,v 1.79 2004/08/18 07:06:03 glewis Exp $
 
 ONLY_FOR_ARCHS= 	i386
@@ -7,8 +7,8 @@ COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.4.2
 DISTNAME=		j2sdk-1_4_2
-PKGNAME=		jdk-${V}
-PKGNAME-jre=		jre-${V}
+PKGNAME=		jdk-${V}p0
+PKGNAME-jre=		jre-${V}p0
 
 CATEGORIES=		devel/jdk java
 
@@ -24,7 +24,7 @@ DISTFILES=		${DISTNAME}-src-scsl.zip \
 			bsd-jdk14-patches-7.tar.gz
 
 # Sun Community Source License
-# http://www.sun.com/981208/scsl/principles.html
+# http://www.sun.com/software/communitysource/j2se/java2/license.html
 PERMIT_PACKAGE_CDROM=	"SCSL"
 PERMIT_PACKAGE_FTP=	"SCSL"
 PERMIT_DISTFILES_CDROM= "SCSL"
@@ -53,7 +53,8 @@ MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
 			DEV_ONLY="YES" \
 			LANG="C" \
 			CC="${CC}" \
-			CXX="${CXX}"
+			CXX="${CXX}" \
+			DEFAULT_LD_LIBRARY_PATH="/usr/lib:/usr/X11R6/lib:${LOCALBASE}/lib"
 
 # Error message for distfile.
 FETCH_MANUALLY=		"You must manually fetch the distibution files, place"
