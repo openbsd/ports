@@ -1,0 +1,16 @@
+@comment $OpenBSD: PFRAG.compat,v 1.1 2004/10/26 22:59:24 espie Exp $
+@conflict qt3
+bin/assistant
+bin/designer3
+bin/findtr3
+bin/linguist
+bin/lrelease
+bin/lupdate
+bin/moc3
+bin/qm2ts
+bin/qmake
+bin/qt20fix3
+bin/qtconfig
+bin/qtrename1403
+bin/uic3
+%%SHARED%%

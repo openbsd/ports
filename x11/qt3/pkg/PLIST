@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2004/09/16 04:26:46 brad Exp $
+@comment $OpenBSD: PLIST,v 1.18 2004/10/26 22:59:24 espie Exp $
 bin/assistant${MT_SUFX}
 bin/designer3${MT_SUFX}
 bin/findtr3${MT_SUFX}
@@ -30,5 +30,8 @@ lib/qt3/plugins${MT_SUFX}/
 lib/qt3/plugins${MT_SUFX}/designer/
 lib/qt3/plugins${MT_SUFX}/sqldrivers/
 lib/qt3/plugins${MT_SUFX}/styles/
-!%%mt%%
+lib/qt3/libdesignercore.a
+lib/qt3/libeditor.a
+lib/qt3/libqassistantclient.a
+%%compat%%
 %%SHARED%%

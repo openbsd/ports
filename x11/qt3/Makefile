@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2004/09/20 20:05:51 brad Exp $
+# $OpenBSD: Makefile,v 1.39 2004/10/26 22:59:24 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -8,7 +8,7 @@ COMMENT-postgresql=	"PostgresSQL plugin for qt3"
 COMMENT-mysql=		"MySQL plugin for qt3"
 COMMENT-base=		"include and docs for qt3"
 
-PKGNAME=		qt3-${VERSION}p1
+PKGNAME=		qt3-${VERSION}p2
 PKGNAME-mysql=		qt3-mysql-${VERSION}
 PKGNAME-postgresql=	qt3-postgresql-${VERSION}
 PKGNAME-examples=	qt3-examples-${VERSION}
@@ -26,14 +26,17 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 FLAVORS=mt debug
 
-PSEUDO_FLAVORS=	no_mysql no_postgresql
+PSEUDO_FLAVORS=	no_mysql no_postgresql no_examples
 FLAVOR?=mt
+COMPAT=Yes
 
 # GPL/QPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+PKG_ARGS=-Dcompat=1
 
 USE_X11=	Yes
 MAKE_ENV=	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
@@ -67,13 +70,13 @@ PKGDEBUG=
 .endif
 
 .if ${FLAVOR:L:Mmt}
-FULLPKGNAME=		qt3-mt-${VERSION}p1${PKGDEBUG}
+FULLPKGNAME=		qt3-mt-${VERSION}p2${PKGDEBUG}
 CONFIGURE_ARGS+=-thread
 .else
 CONFIGURE_ARGS+=-no-thread
 .endif
 
-.if ${FLAVOR:L:Mmt} && !${FLAVOR:L:Mdebug}
+.if ${FLAVOR:L:Mmt} && !${FLAVOR:L:Mdebug} && !${FLAVOR:L:Mno_examples}
 MULTI_PACKAGES+=	-examples
 .else
 ALL_TARGET=sub-src sub-tools
@@ -165,13 +168,13 @@ NO_REGRESS=	Yes
 PROGRAMS3=designer findtr moc qt20fix qtrename140 uic
 PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig 
 
-LIBRARIES=qt${MT_SUFX}.so.3.33 qui${MT_SUFX}.so.1.0
+LIBRARIES=qt${MT_SUFX}.so.3.33 qui${MT_SUFX}.so.1.0 \
+	editor.a designercore.a qassistantclient.a
 
 .if ${FLAVOR:L:Mmt}
 MT_SUFX=-mt
 .else
 MT_SUFX=
-LIBRARIES+=editor.so.1.0
 .endif
 
 .if ${FLAVOR:L:Mmt} && !${FLAVOR:L:Mdebug}
@@ -271,5 +274,15 @@ do-install:
 	    ${QT_PLUGINSDIR}/designer
 	${INSTALL_DATA} ${WRKBUILD}/plugins/designer/librcplugin.so \
 	    ${QT_PLUGINSDIR}/designer
+.if ${COMPAT:L} == "yes" && ${FLAVOR:L:Mmt}
+.  for p in ${PROGRAMS}
+	cd ${PREFIX}/bin && ln -sf $p${MT_SUFFX} $p
+.  endfor
+.  for p in ${PROGRAMS3}
+	cd ${PREFIX}/bin && ln -sf $p3${MT_SUFFX} $p3
+.  endfor
+	cd ${PREFIX}/lib && ln -sf libqui${MT_SUFFX}.so.1.0 libqui.so.1.0
+	cd ${PREFIX}/lib/qt3 && ln -sf libqui${MT_SUFFX}.so.1.0 libqui.so.1.0
+.endif
 
 .include <bsd.port.mk>
