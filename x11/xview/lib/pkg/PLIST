@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/03/31 17:44:21 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/12/20 15:40:16 naddy Exp $
 lib/libolgx.a
 lib/libxview.a
 %%SHARED%%
@@ -279,6 +279,7 @@ include/xview_private/xv_debug.h
 include/xview_private/xv_list.h
 include/xview_private/xv_path_util.h
 @dirrm lib/help
+@dirrm include/bitmaps
 @dirrm include/images
 @dirrm include/olgx
 @dirrm include/olgx_private
