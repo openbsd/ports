@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Thu Jun  3 16:24:33 1999
++++ Makefile.in	Sat Oct  7 23:38:23 2000
+@@ -50,6 +50,7 @@
+ 
+ all: nasm ndisasm nasm.man ndisasm.man
+ 	cd rdoff; $(MAKE) all
++	cd doc; $(MAKE) all
+ 
+ nasm: $(NASM)
+ 	$(CC) $(LDFLAGS) -o nasm $(NASM)

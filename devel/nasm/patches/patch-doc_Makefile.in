@@ -1,0 +1,28 @@
+--- doc/Makefile.in.orig	Thu Jun  3 16:24:51 1999
++++ doc/Makefile.in	Sat Oct  7 23:48:26 2000
+@@ -17,7 +17,7 @@
+ INSTALL_DATA	= @INSTALL_DATA@
+ 
+ PERL		= perl
+-MAKEINFO	= makeinfo
++MAKEINFO	= makeinfo --no-split
+ 
+ SRCS		= nasmdoc.src
+ OUT		= nasm.info
+@@ -29,13 +29,13 @@
+ # Consider html, txt and src output a side effect
+ .src.texi:
+ 	mkdir -p html
+-	$(PERL) ./rdsrc.pl < $<
++	$(PERL) ${srcdir}/rdsrc.pl < $<
+ 	mv -f *.html html
+ 
+ nasm.info: nasmdoc.texi
+ 	mkdir -p info
+-	$(MAKEINFO) $<
+-	mv -f *.info *.info-* info
++	$(MAKEINFO) $>
++	mv -f *.info* info
+ 
+ clean:
+ 	-rm -f *.rtf *.hpj *.texi *.ph *.gid
