@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.644 2004/09/14 23:07:20 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.645 2004/09/15 18:57:31 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -323,9 +323,9 @@ ERRORS+= "Fatal: Subpackage ${SUBPACKAGE} does not exist."
 .  endfor
 .endif
 
-# Support architecture and flavor dependent packing lists
-#
-SED_PLIST?=
+.if defined(SED_PLIST)
+ERRORS+="Fatal: SED_PLIST deprecated"
+.endif
 
 # Build FLAVOR_EXT, checking that no flavors are misspelled
 FLAVOR_EXT:=
@@ -333,26 +333,29 @@ FLAVOR_EXT:=
 # It encodes flavors and pseudo-flavors.
 _FLAVOR_EXT2:=
 
-# Create the basic sed substitution pipeline for fragments
 # (applies only to PLIST for now)
 .if !empty(FLAVORS)
 .  for _i in ${FLAVORS:L}
 .    if empty(FLAVOR:L:M${_i})
-SED_PLIST+=|sed -e '/^!%%${_i}%%$$/r${PKGDIR}/PFRAG.no-${_i}${SUBPACKAGE}' -e '//d' -e '/^%%${_i}%%$$/d'
+PKG_ARGS+=-D${_i}=0
 .    else
 _FLAVOR_EXT2:=${_FLAVOR_EXT2}-${_i}
 .    if empty(PSEUDO_FLAVORS:L:M${_i})
 FLAVOR_EXT:=${FLAVOR_EXT}-${_i}
 .    endif
-SED_PLIST+=|sed -e '/^!%%${_i}%%$$/d' -e '/^%%${_i}%%$$/r${PKGDIR}/PFRAG.${_i}${SUBPACKAGE}' -e '//d'
+PKG_ARGS+=-D${_i}=1
 .    endif
 .  endfor
 .endif
-
+.if ${NO_SHARED_LIBS:L} == "yes"
+PKG_ARGS+=-DSHARED_LIBS=0
+.else
+PKG_ARGS+=-DSHARED_LIBS=1
+.endif
 .if !empty(FLAVORS:M[0-9]*)
 ERRORS+="Fatal: flavor should never start with a digit"
 .endif
- 
+
 .if !empty(FLAVOR)
 .  if !empty(FLAVORS)
 .    for _i in ${FLAVOR:L}
@@ -615,12 +618,12 @@ _tmpvars=
 _SED_SUBST=sed
 .for _v in ${SUBST_VARS}
 _SED_SUBST+=-e 's|$${${_v}}|${${_v}}|g'
+PKG_ARGS+=-D${_v}='${${_v}}'
 _tmpvars += ${_v}='${${_v}}'
 .endfor
-_SED_SUBST+=-e 's,$${FLAVORS},${FLAVOR_EXT},g' -e 's,$$\\,$$,g'
+PKG_ARGS+=-DFLAVORS='${FLAVOR_EXT}'
 _tmpvars += FLAVORS='${FLAVOR_EXT}'
-# and append it to the PLIST substitution pipeline
-SED_PLIST+=|${_SED_SUBST}
+_SED_SUBST+=-e 's,$${FLAVORS},${FLAVOR_EXT},g' -e 's,$$\\,$$,g'
 
 # find out the most appropriate PLIST  source
 .if !defined(PLIST) && exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${ARCH})
@@ -666,26 +669,19 @@ MTREE_FILE+=${PORTSDIR}/infrastructure/db/fake.mtree
 
 # Fill out package command, and package dependencies
 _PKG_PREREQ= ${WRKPKG}/PLIST${SUBPACKAGE} ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}/COMMENT${SUBPACKAGE}
-# Note that if you override PKG_ARGS, you will not get correct dependencies
-.if !defined(PKG_ARGS)
-PKG_ARGS= -v -c '${WRKPKG}/COMMENT${SUBPACKAGE}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
-PKG_ARGS+=-f ${WRKPKG}/PLIST${SUBPACKAGE} -p ${PREFIX}
-.  if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
-PKG_ARGS+=		-i ${WRKPKG}/INSTALL${SUBPACKAGE}
-_PKG_PREREQ+=${WRKPKG}/INSTALL${SUBPACKAGE}
-.  endif
-.  if exists(${PKGDIR}/DEINSTALL${SUBPACKAGE})
-PKG_ARGS+=		-k ${WRKPKG}/DEINSTALL${SUBPACKAGE}
-_PKG_PREREQ+=${WRKPKG}/DEINSTALL${SUBPACKAGE}
-.  endif
-.  if exists(${PKGDIR}/REQ${SUBPACKAGE})
-PKG_ARGS+=		-r ${WRKPKG}/REQ${SUBPACKAGE}
-_PKG_PREREQ+=${WRKPKG}/REQ${SUBPACKAGE}
-.  endif
-.  if defined(MESSAGE)
-PKG_ARGS+=		-D ${WRKPKG}/MESSAGE${SUBPACKAGE}
-_PKG_PREREQ+=${WRKPKG}/MESSAGE${SUBPACKAGE}
-.  endif
+PKG_ARGS+= -v -c '${WRKPKG}/COMMENT${SUBPACKAGE}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
+PKG_ARGS+=-f ${WRKPKG}/PLIST${SUBPACKAGE} -f ${PLIST} -p ${PREFIX}
+.if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
+PKG_ARGS+=		-i ${PKGDIR}/INSTALL${SUBPACKAGE}
+.endif
+.if exists(${PKGDIR}/DEINSTALL${SUBPACKAGE})
+PKG_ARGS+=		-k ${PKGDIR}/DEINSTALL${SUBPACKAGE}
+.endif
+.if exists(${PKGDIR}/REQ${SUBPACKAGE})
+PKG_ARGS+=		-r ${PKGDIR}/REQ${SUBPACKAGE}
+.endif
+.if defined(MESSAGE)
+PKG_ARGS+=		-M ${MESSAGE}
 .endif
 .if ${FAKE:L} == "yes"
 PKG_ARGS+=		-B ${WRKINST}
@@ -1185,29 +1181,10 @@ ${_SYSTRACE_COOKIE}: ${_WRKDIR_COOKIE}
 ${WRKPKG}/COMMENT${SUBPACKAGE}:
 	@echo ${_COMMENT} >$@
 
-${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST} ${WRKPKG}/depends${SUBPACKAGE}
+${WRKPKG}/PLIST${SUBPACKAGE}: ${WRKPKG}/depends${SUBPACKAGE}
 	@echo "@comment subdir=${FULLPKGPATH} cdrom=${PERMIT_PACKAGE_CDROM:L} ftp=${PERMIT_PACKAGE_FTP:L}" >$@.tmp
 	@sort -u <${WRKPKG}/depends${SUBPACKAGE}>>$@.tmp
-.if ${NO_SHARED_LIBS:L} == "yes"
-	@sed -e '/^!%%SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' -e '//d' \
-		-e '/^%%!SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' -e '//d' \
-		-e '/^%%SHARED%%$$/d' <${PLIST} \
-		${SED_PLIST} >>$@.tmp && mv -f $@.tmp $@
-.else
-	@if [ -x /sbin/ldconfig ]; then \
-		sed -e '/^!%%SHARED%%$$/d' \
-			-e '/^%%!SHARED%%$$/d' \
-			-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' -e '//d' \
-			<${PLIST} ${SED_PLIST} \
-			| sed -f ${LDCONFIG_SED_SCRIPT} >>$@.tmp && mv -f $@.tmp $@; \
-	else \
-		sed -e '/^!%%SHARED%%$$/d' \
-			-e '/^%%!SHARED%%$$/d' \
-			-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' -e '//d' \
-			<${PLIST} \
-			${SED_PLIST} >>$@.tmp && mv -f $@.tmp $@; \
-	fi
-.endif
+	@mv -f $@.tmp $@
 
 ${WRKPKG}/depends${SUBPACKAGE}:
 	@mkdir -p ${WRKPKG}
@@ -1227,18 +1204,6 @@ ${WRKPKG}/DESCR${SUBPACKAGE}: ${DESCR}
 ${WRKPKG}/mtree.spec: ${MTREE_FILE}
 	@${_SED_SUBST} ${MTREE_FILE}>$@.tmp && mv -f $@.tmp $@
 
-# substitute 
-.for _subst_file in INSTALL DEINSTALL REQ
-.  if exists(${PKGDIR}/${_subst_file}${SUBPACKAGE})
-${WRKPKG}/${_subst_file}${SUBPACKAGE}: ${PKGDIR}/${_subst_file}${SUBPACKAGE}
-	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
-.  endif
-.endfor
-
-.if defined(MESSAGE)
-${WRKPKG}/MESSAGE${SUBPACKAGE}: ${MESSAGE}
-	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
-.endif
 
 makesum: fetch-all
 .if !defined(NO_CHECKSUM)
