@@ -1,0 +1,16 @@
+--- configure.~1~	Sat Mar 21 11:08:57 1998
++++ configure	Mon Jun 29 22:40:57 1998
+@@ -1675,11 +1675,8 @@
+   COM_LT="# "
+ fi
+ 
+-if test "x$LTSHARED" != xno; then
+-  FORCE_INSTALL_LIB="install-lib"
+-else
+-  FORCE_INSTALL_LIB=""
+-fi
++# always install the libs
++FORCE_INSTALL_LIB="install-lib"
+ 
+ # Set up -I directives
+ if test "x$srcdir" = x.; then
