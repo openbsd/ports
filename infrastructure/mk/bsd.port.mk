@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.379 2001/04/02 10:16:59 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.380 2001/04/02 10:35:51 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -335,17 +335,17 @@ _FAKE_COOKIE=		${WRKDIR}/.fake_done
 _CONFIGURE_COOKIE=	${WRKBUILD}/.configure_done
 _INSTALL_COOKIE=	${WRKBUILD}/.install_done
 _BUILD_COOKIE=		${WRKBUILD}/.build_done
-_PACKAGE_COOKIE=	${WRKBUILD}/.package_done${SUBPACKAGE}
+_PACKAGE_COOKIE=	${WRKBUILD}/.package_done
 .else
 _CONFIGURE_COOKIE=	${WRKDIR}/.configure_done
 _INSTALL_COOKIE=	${WRKDIR}/.install_done
 _BUILD_COOKIE=		${WRKDIR}/.build_done
-_PACKAGE_COOKIE=	${WRKDIR}/.package_done${SUBPACKAGE}
+_PACKAGE_COOKIE=	${WRKDIR}/.package_done
 .endif
 
 _ALL_COOKIES=${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
-${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_PACKAGE_COOKIE} \
-${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} ${_SUBPACKAGE_COOKIES}
+${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_PACKAGE_COOKIES} \
+${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE}
 
 _MAKE_COOKIE=touch -f
 
@@ -440,6 +440,61 @@ WRKBUILD?=		${WRKSRC}
 
 WRKPKG?=		${WRKBUILD}/pkg
 
+# Support architecture and flavor dependent packing lists
+#
+SED_PLIST?=
+
+
+# Build FLAVOR_EXT, checking that no flavors are misspelled
+FLAVOR_EXT:=
+.if defined(FLAVORS)
+.  if defined(FLAVOR)
+.    for _i in ${FLAVOR:L}
+.      if empty(FLAVORS:L:M${_i})
+.BEGIN:
+	@echo >&2 "Unknown flavor: ${_i}"
+	@echo >&2 "Possible flavors are: ${FLAVORS}"
+	@exit 1
+.      endif
+.    endfor
+.  endif
+# Create the basic sed substitution pipeline for fragments
+# (applies only to PLIST for now)
+.  for _i in ${FLAVORS:L}
+.    if empty(FLAVOR:L:M${_i})
+SED_PLIST+=|sed -e '/^!%%${_i}%%$$/r${PKGDIR}/PFRAG.no-${_i}' -e '//d' -e '/^%%${_i}%%$$/d'
+.    else
+FLAVOR_EXT:=${FLAVOR_EXT}-${_i}
+SED_PLIST+=|sed -e '/^!%%${_i}%%$$/d' -e '/^%%${_i}%%$$/r${PKGDIR}/PFRAG.${_i}' -e '//d'
+.    endif
+.  endfor
+.endif
+
+_PACKAGE_COOKIES= ${_PACKAGE_COOKIE}
+.  if ${FAKE:L} == "yes"
+${_PACKAGE_COOKIE}: ${_FAKE_COOKIE}
+.  else
+${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE}
+.  endif
+	@cd ${.CURDIR} && SUBPACKAGE='' FLAVOR='${FLAVOR}' exec ${MAKE} _package
+.if !defined(PACKAGE_NOINSTALL)
+	@${_MAKE_COOKIE} $@
+.endif
+
+.for _sub in ${MULTI_PACKAGES}
+_PACKAGE_COOKIE${_sub}= ${_PACKAGE_COOKIE}${_sub}
+_PACKAGE_COOKIES+=  ${_PACKAGE_COOKIE${_sub}}
+.  if ${FAKE:L} == "yes"
+${_PACKAGE_COOKIE${_sub}}: ${_FAKE_COOKIE}
+.  else
+${_PACKAGE_COOKIE${_sub}}: ${_INSTALL_COOKIE}
+.  endif
+	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' exec ${MAKE} _package
+.  if !defined(PACKAGE_NOINSTALL)
+	@${_MAKE_COOKIE} $@
+.  endif
+.endfor
+
 .if !defined(PKGPATH)
 _PORTSDIR!=	cd ${PORTSDIR} && pwd -P
 _CURDIR!=	cd ${.CURDIR} && pwd -P
@@ -482,35 +537,6 @@ SCRIPTS_ENV+=	${_INSTALL_MACROS}
 .undef NO_PACKAGE
 .endif
 
-# Support architecture and flavor dependent packing lists
-#
-SED_PLIST?=
-
-
-# Build FLAVOR_EXT, checking that no flavors are misspelled
-FLAVOR_EXT:=
-.if defined(FLAVORS)
-.  if defined(FLAVOR)
-.    for _i in ${FLAVOR:L}
-.      if empty(FLAVORS:L:M${_i})
-.BEGIN:
-	@echo >&2 "Unknown flavor: ${_i}"
-	@echo >&2 "Possible flavors are: ${FLAVORS}"
-	@exit 1
-.      endif
-.    endfor
-.  endif
-# Create the basic sed substitution pipeline for fragments
-# (applies only to PLIST for now)
-.  for _i in ${FLAVORS:L}
-.    if empty(FLAVOR:L:M${_i})
-SED_PLIST+=|sed -e '/^!%%${_i}%%$$/r${PKGDIR}/PFRAG.no-${_i}' -e '//d' -e '/^%%${_i}%%$$/d'
-.    else
-FLAVOR_EXT:=${FLAVOR_EXT}-${_i}
-SED_PLIST+=|sed -e '/^!%%${_i}%%$$/d' -e '/^%%${_i}%%$$/r${PKGDIR}/PFRAG.${_i}' -e '//d'
-.    endif
-.  endfor
-.endif
 
 # Create the generic variable substitution list, from subst vars
 SUBST_VARS+=ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT
@@ -1284,12 +1310,12 @@ distpatch: ${_DISTPATCH_COOKIE}
 configure: ${_CONFIGURE_COOKIE}
 all build: ${_BUILD_COOKIE}
 .if defined(ALWAYS_PACKAGE)
-install: ${_INSTALL_COOKIE} ${_PACKAGE_COOKIE}
+install: ${_INSTALL_COOKIE} ${_PACKAGE_COOKIES}
 .else
 install: ${_INSTALL_COOKIE}
 .endif
 fake: ${_FAKE_COOKIE}
-package: ${_PACKAGE_COOKIE}
+package: ${_PACKAGE_COOKIES}
 
 .endif # IGNORECMD
 
@@ -1582,7 +1608,9 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 	fi
 	@${SUDO} ${_MAKE_COOKIE} $@
 
-${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIE}
+# The real install
+
+${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
 	@cd ${.CURDIR} && DEPENDS_TARGET=package exec ${MAKE} run-depends lib-depends
 	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME} from ${PKGFILE}"
 # Kludge
@@ -1596,27 +1624,9 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIE}
 	@${SUDO} ${_MAKE_COOKIE} $@
 .endif 
 
-_SUBPACKAGE_COOKIES=
-.if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
-.  for _sub in ${MULTI_PACKAGES}
+# The real package
 
-_SUBPACKAGE_COOKIES+= ${_PACKAGE_COOKIE}${_sub}
-.    if ${FAKE:L} == "yes"
-${_PACKAGE_COOKIE}${_sub}: ${_FAKE_COOKIE}
-.    else
-${_PACKAGE_COOKIE}${_sub}: ${_INSTALL_COOKIE}
-.    endif
-	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' exec ${MAKE} package
-
-.  endfor
-.endif
-
-
-.if ${FAKE:L} == "yes"
-${_PACKAGE_COOKIE}: ${_FAKE_COOKIE} ${_SUBPACKAGE_COOKIES} ${_PKG_PREREQ}
-.else
-${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE} ${_SUBPACKAGE_COOKIES} ${_PKG_PREREQ}
-.endif
+_package: ${_PKG_PREREQ}
 .if !defined(NO_PACKAGE)
 .  if target(pre-package)
 	@cd ${.CURDIR} && exec ${MAKE} pre-package
@@ -1656,9 +1666,6 @@ ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE} ${_SUBPACKAGE_COOKIES} ${_PKG_PREREQ}
 .  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME} may not be packaged: ${NO_PACKAGE}."
 .  endif
-.endif
-.if !defined(PACKAGE_NOINSTALL)
-	@${_MAKE_COOKIE} $@
 .endif
 
 .if !target(fetch-all)
@@ -1814,7 +1821,7 @@ checkpatch:
 
 .if !target(reinstall)
 reinstall:
-	@${SUDO} rm -f ${_INSTALL_PRE_COOKIE} ${_INSTALL_COOKIE} ${_PACKAGE_COOKIE}
+	@${SUDO} rm -f ${_INSTALL_PRE_COOKIE} ${_INSTALL_COOKIE} ${_PACKAGE_COOKIES}
 	@cd ${.CURDIR} && DEPENDS_TARGET=${DEPENDS_TARGET} exec ${MAKE} install
 .endif
 
@@ -1833,7 +1840,7 @@ rebuild:
 uninstall deinstall:
 	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME}"
 	@${PKG_DELETE} -f ${FULLPKGNAME}
-	@rm -f ${_INSTALL_COOKIE} ${_PACKAGE_COOKIE}
+	@rm -f ${_INSTALL_COOKIE} ${_PACKAGE_COOKIES}
 .endif
 
 
@@ -1990,7 +1997,7 @@ package-name:
 repackage: pre-repackage package
 
 pre-repackage:
-	@rm -f ${_PACKAGE_COOKIE}
+	@rm -f ${_PACKAGE_COOKIES}
 .endif
 
 # Build a package but don't rely on cookie for installation, also don't
@@ -1998,8 +2005,8 @@ pre-repackage:
 
 .if !target(package-noinstall)
 package-noinstall:
-	@rm -f ${_PACKAGE_COOKIE}
-	@cd ${.CURDIR} && exec ${MAKE} PACKAGE_NOINSTALL=Yes ${_PACKAGE_COOKIE}
+	@rm -f ${_PACKAGE_COOKIES}
+	@cd ${.CURDIR} && exec ${MAKE} PACKAGE_NOINSTALL=Yes ${_PACKAGE_COOKIES}
 .endif
 
 # Internal variables, used by dependencies targets 
@@ -2362,4 +2369,4 @@ unlink-categories:
    repackage run-depends tags uninstall fetch-all print-depends \
    recurse-build-depends recurse-package-depends \
    distpatch real-distpatch do-distpatch post-distpatch show \
-   link-categories unlink-categories
+   link-categories unlink-categories _package
