@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/15 13:57:57 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2005/03/09 14:19:56 alek Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
 VERSION=		2.8.3
 DISTNAME=		gnome-vfs-${VERSION}
-PKGNAME=		gnome-vfs2-${VERSION}
+PKGNAME=		gnome-vfs2-${VERSION}p0
 CATEGORIES=		devel x11/gnome
 HOMEPAGE=		http://www.gnome.org/
 
@@ -42,7 +42,8 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"
 CONFIGURE_ARGS+=	--disable-gtk-doc
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-vfs2
-CONFIGURE_ARGS+=	--disable-ipv6
+CONFIGURE_ARGS+=	--disable-ipv6 \
+			--disable-howl
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
