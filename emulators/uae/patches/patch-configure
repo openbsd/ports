@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1 2003/05/11 18:24:49 naddy Exp $
+--- configure.orig	Sun May 11 12:11:59 2003
++++ configure	Sun May 11 12:12:54 2003
+@@ -6082,8 +6082,7 @@ fi
+ 
+ if test $ac_cv_prog_gcc = yes; then
+   WARNING_CFLAGS="-Wall -Wno-unused -Wno-format -W -Wmissing-prototypes -Wstrict-prototypes"
+-  OPTIMIZE_CFLAGS="-O2 -fomit-frame-pointer"
+-    CFLAGS=
++  OPTIMIZE_CFLAGS="-fomit-frame-pointer"
+ fi
+ 
+ if [ "x$DO_PROFILING" = "xyes" ]; then

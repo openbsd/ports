@@ -1,8 +1,6 @@
-Remove gmake dependency.
-
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2002/01/23 20:51:30 fgsch Exp $
---- src/Makefile.in.orig	Mon Nov 19 09:34:18 2001
-+++ src/Makefile.in	Sun Jan 13 17:26:03 2002
+$OpenBSD: patch-src_Makefile_in,v 1.2 2003/05/11 18:24:49 naddy Exp $
+--- src/Makefile.in.orig	Mon Nov 19 05:34:18 2001
++++ src/Makefile.in	Sun May 11 12:14:43 2003
 @@ -75,7 +75,7 @@ uae: $(OBJS)
  	$(CC) $(OBJS) -o uae $(GFXLDFLAGS) $(LDFLAGS) $(DEBUGFLAGS) $(LIBRARIES) $(MATHLIB)
  
@@ -30,14 +28,16 @@ $OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2002/01/23 20:51:30 fgsch Exp $
  
  custom.o: blit.h
  drawing.o: linetoscr.c
-@@ -121,12 +121,12 @@ cpustbl.c: cpuemu.c
+@@ -120,13 +120,11 @@ cpuemu.c: tools/gencpu
+ cpustbl.c: cpuemu.c
  cputbl.h: cpuemu.c
  
- cpufast.s: cpuemu.c tools/cpuopti
+-cpufast.s: cpuemu.c tools/cpuopti
 -	$(CC) $(INCLUDES) -S $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(NO_SCHED_CFLAGS) $< -o cputmp.s
-+	$(CC) $(INCLUDES) -S $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(NO_SCHED_CFLAGS) cpuemu.c -o cputmp.s
- 	./tools/cpuopti <cputmp.s >$@
- 	rm cputmp.s
+-	./tools/cpuopti <cputmp.s >$@
+-	rm cputmp.s
++cpufast.s: cpuemu.c
++	$(CC) $(INCLUDES) -S $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(NO_SCHED_CFLAGS) cpuemu.c -o $@
  
  console_missing.o: missing.c
 -	$(CC) $(INCLUDES) -c $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(CFLAGS_$@) $< -o $@
