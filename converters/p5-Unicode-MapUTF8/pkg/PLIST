@@ -1,3 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/30 14:46:19 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/31 18:34:56 naddy Exp $
 ${P5SITE}/Unicode/MapUTF8.pm
+@comment ${P5ARCH}/auto/Unicode/MapUTF8/.packlist
 man/man3p/Unicode::MapUTF8.3p
+@comment @dirrm ${P5ARCH}/auto/Unicode/MapUTF8
+@dirrm ${P5SITE}/Unicode
