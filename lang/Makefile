@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2002/01/25 23:11:06 jsyn Exp $
+# $OpenBSD: Makefile,v 1.47 2002/01/25 23:46:33 jsyn Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -56,7 +56,7 @@
 #    SUBDIR += pgcc
 #    SUBDIR += pgcc-current
      SUBDIR += pm3
-     SUBDIR += python
+     SUBDIR += python,
      SUBDIR += python,threads
      SUBDIR += python,tk,no_tools
      SUBDIR += python,tk,threads,no_tools
