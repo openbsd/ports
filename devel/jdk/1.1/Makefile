@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2001/05/08 00:54:38 matt Exp $
+# $OpenBSD: Makefile,v 1.2 2001/06/02 15:18:43 kevlo Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=	"Redistribution not permitted"
 PERMIT_DISTFILES_CDROM=	"Redistribution not permitted"
 PERMIT_DISTFILES_FTP=	"Redistribution not permitted"
 
-MASTER_SITES=	ftp://ftp.nuxi.com/pub/FreeBSD/JDK/ \
-		http://ftp7.de.freebsd.org/pub/FreeBSD/JDK/
+MASTER_SITES=	http://ftp7.de.freebsd.org/pub/FreeBSD/JDK/
 DISTFILES=	jdk1.1.8_AOUT.V1999-11-9.tar.gz
 EXTRACT_ONLY=
 
