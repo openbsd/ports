@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/11/27 15:56:03 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/05/10 22:21:23 avsm Exp $
 bin/mcrypt
 bin/mdecrypt
 man/man1/mcrypt.1
-share/locale/cz/LC_MESSAGES/mcrypt.mo
+share/locale/cs/LC_MESSAGES/mcrypt.mo
 share/locale/el/LC_MESSAGES/mcrypt.mo
 share/locale/pl/LC_MESSAGES/mcrypt.mo
