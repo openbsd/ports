@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2002/01/20 19:54:13 naddy Exp $
+$OpenBSD: patch-Makefile_in,v 1.3 2003/08/30 07:16:35 sturm Exp $
 # 1. Don't install some doc files
 # 2. Make sure that fake works correctly
---- Makefile.in.orig	Tue Oct  9 09:54:02 2001
-+++ Makefile.in	Sun Jan 13 19:41:37 2002
+--- Makefile.in.orig	2001-10-09 16:53:40.000000000 +0200
++++ Makefile.in	2003-08-30 00:15:07.000000000 +0200
 @@ -11,7 +11,7 @@ include ./VERSION
  
  BINFILES    = $(foreach APP,$(APPLICATIONS),src/$(APP))
@@ -12,7 +12,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2002/01/20 19:54:13 naddy Exp $
  XPMDIRS     = icons ledclock taskbar mailbox cursors
  THEMES      = nice motif win95 warp3 warp4 metal2 gtk2 Infadel2
  SPEC        = icewm.spec
-@@ -75,66 +75,64 @@ install-base: base
+@@ -75,66 +75,63 @@ install-base: base
  	@for app in $(BINFILES) ; do \
              $(INSTALLBIN) "$$app" $(BINDIR); \
          done
@@ -85,7 +85,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2002/01/20 19:54:13 naddy Exp $
  
  install-docs: docs $(LSM)
  	@echo ------------------------------------------
- 	@rm -fr $(DOCDIR)/icewm-$(VERSION)
+-	@rm -fr $(DOCDIR)/icewm-$(VERSION)
 -	@$(INSTALLDIR) $(DOCDIR)/icewm-$(VERSION)
 +	@$(INSTALLDIR) $(DESTDIR)$(DOCDIR)/icewm/doc
  	@echo Installing documentation in $(DOCDIR); \
