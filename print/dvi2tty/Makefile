@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/11/03 15:47:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2003/01/24 18:52:40 sturm Exp $
 
 COMMENT=		"converts .dvi files to plain text"
 
-DISTNAME=		dvi2tty-5.3
+DISTNAME=		dvi2tty-5.3.1
 CATEGORIES=     	print
 
 MAINTAINER=		Jose Nazario <jose@crimelabs.net>
 
-PERMIT_PACKAGE_CDROM=	"no license"
-PERMIT_PACKAGE_FTP=	"no license"
-PERMIT_DISTFILES_CDROM= "no license"
-PERMIT_DISTFILES_FTP=	"no license"
+# GPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.mesa.nl/pub/dvi2tty/
 
