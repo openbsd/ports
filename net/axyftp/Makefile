@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/29 06:55:40 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/07/01 13:14:25 kevlo Exp $
 
 DISTNAME=	axyftp-0.5.1
 CATEGORIES=	net
 NEED_VERSION=   1.309
-MASTER_SITES=	ftp://ftp.wxftp.seul.org/pub/wxftp/
+MASTER_SITES=	ftp://ftp.wxftp.seul.org/pub/wxftp/0.5.1/
 HOMEPAGE=	http://www.wxftp.seul.org/
 
 MAINTAINER=     kevlo@openbsd.org
