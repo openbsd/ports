@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/22 15:26:59 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/05/13 15:28:58 brad Exp $
 
-DISTNAME=	ytalk-3.1
+DISTNAME=	ytalk-3.1.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.eleves.ens.fr:8080/home/espel/ytalk/
 
