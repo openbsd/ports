@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2001/07/07 03:08:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.72 2001/07/08 00:03:21 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -43,6 +43,7 @@
 #    SUBDIR += hpscan
      SUBDIR += imlib
      SUBDIR += indexpage
+     SUBDIR += iview
      SUBDIR += jbigkit
      SUBDIR += jpeg
      SUBDIR += kuickshow
