@@ -1,7 +1,59 @@
-$OpenBSD: patch-tac_plus_c,v 1.1.1.1 2001/07/30 05:18:07 jsyn Exp $
---- tac_plus.c.orig	Thu Jul 26 01:06:43 2001
-+++ tac_plus.c	Thu Jul 26 01:08:12 2001
-@@ -662,6 +662,9 @@ version()
+$OpenBSD: patch-tac_plus_c,v 1.2 2003/06/09 07:19:30 sturm Exp $
+--- tac_plus.c.orig	Sun Jun 18 19:26:31 2000
++++ tac_plus.c	Sat Jun  7 16:47:21 2003
+@@ -24,6 +24,9 @@
+  * FITNESS FOR A PARTICULAR PURPOSE.
+ */
+ 
++#include <sys/types.h>
++#include <grp.h>
++
+ #include "tac_plus.h"
+ #include "sys/wait.h"
+ #include "signal.h"
+@@ -194,6 +197,8 @@ main(argc, argv)
+ int argc;
+ char **argv;
+ {
++    struct passwd *pw;
++    struct group *gr;
+     extern char *optarg;
+     int childpid;
+     int c;
+@@ -426,16 +431,22 @@ char **argv;
+ 	report(LOG_ERR, "Cannot write pid to %s %s", 
+ 	       pidfilebuf, sys_errlist[errno]);
+ 
+-#ifdef TAC_PLUS_GROUPID
+-    if (setgid(TAC_PLUS_GROUPID))
+-	report(LOG_ERR, "Cannot set group id to %d %s", 
+-	       TAC_PLUS_GROUPID, sys_errlist[errno]);
+-#endif
+-
+-#ifdef TAC_PLUS_USERID
+-    if (setuid(TAC_PLUS_USERID)) 
+-	report(LOG_ERR, "Cannot set user id to %d %s", 
+-	       TAC_PLUS_USERID, sys_errlist[errno]);
++#ifdef TAC_PLUS_GROUP
++    gr = getgrnam(TAC_PLUS_GROUP);
++    if (gr == NULL)
++        report(LOG_ERR, "Cannot find group %s", TAC_PLUS_GROUP);
++    if (setgid(gr->gr_gid))
++	report(LOG_ERR, "Cannot set group to %d %s", 
++	       TAC_PLUS_GROUP, sys_errlist[errno]);
++#endif
++
++#ifdef TAC_PLUS_USER
++    pw = getpwnam(TAC_PLUS_USER);
++    if (pw == NULL)
++        report(LOG_ERR, "Cannot find user %s", TAC_PLUS_USER);
++    if (setuid(pw->pw_uid)) 
++	report(LOG_ERR, "Cannot set user to %d %s", 
++	       TAC_PLUS_USER, sys_errlist[errno]);
+ #endif
+ 
+ #ifdef MAXSESS
+@@ -662,6 +673,9 @@ version()
  #ifdef NO_PWAGE
      fprintf(stdout,"NO_PWAGE\n");
  #endif
@@ -11,3 +63,22 @@ $OpenBSD: patch-tac_plus_c,v 1.1.1.1 2001/07/30 05:18:07 jsyn Exp $
  #ifdef REAPCHILD
      fprintf(stdout,"REAPCHILD\n");
  #endif
+@@ -701,14 +715,14 @@ version()
+ #ifdef SYSV
+     fprintf(stdout,"SYSV\n");
+ #endif
+-#ifdef TAC_PLUS_GROUPID
+-    fprintf(stdout,"TAC_PLUS_GROUPID\n");
++#ifdef TAC_PLUS_GROUP
++    fprintf(stdout,"TAC_PLUS_GROUP\n");
+ #endif
+ #ifdef TAC_PLUS_PORT
+     fprintf(stdout,"TAC_PLUS_PORT\n");
+ #endif
+-#ifdef TAC_PLUS_USERID
+-    fprintf(stdout,"TAC_PLUS_USERID\n");
++#ifdef TAC_PLUS_USER
++    fprintf(stdout,"TAC_PLUS_USER\n");
+ #endif
+ #ifdef TRACE
+     fprintf(stdout,"TRACE\n");
