@@ -1,6 +1,22 @@
---- Makefile.in.orig	Tue Jun 22 09:49:19 1999
-+++ Makefile.in	Tue Jun 22 09:50:15 1999
-@@ -31,7 +31,7 @@
+--- Makefile.in.orig	Tue May 18 23:16:06 1999
++++ Makefile.in	Mon Dec  6 16:20:56 1999
+@@ -18,20 +18,20 @@
+ BINOWN = bin
+ BINGRP = bin
+ 
+-MAKEINFO = makeinfo
++MAKEINFO = makeinfo --no-split
+ TEXI2DVI = texi2dvi
+ 
+ DEFS =
+ 
+ # Where the system [n]dbm routines are...
+-LIBS = @LIBS@ -lc
++LIBS = @LIBS@
+ 
+ # SunOS 4 users might wish to add '-fpcc-struct-return' to CFLAGS. see INSTALL.
+-CFLAGS = -O
++CFLAGS = @CFLAGS@
  LDFLAGS =
  
  # Common prefix for installation directories

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/10/06 20:47:02 rohee Exp $
+# $OpenBSD: Makefile,v 1.8 1999/12/06 21:29:09 brad Exp $
 
 DISTNAME=	gdbm-1.8.0
 CATEGORIES=	databases
@@ -14,12 +14,9 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
 pre-configure:
-	${RM} ${WRKSRC}/gdbm.info*
+	@rm -f ${WRKSRC}/gdbm.info*
 
 post-install:
-	@if [ -d ${PREFIX}/info -a ! -f ${PREFIX}/info/dir -a -f /usr/share/info/dir ]; then \
-	 ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 	@install-info ${PREFIX}/info/gdbm.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
