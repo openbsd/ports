@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 1999/12/30 08:31:48 jakob Exp $
+# $OpenBSD: Makefile,v 1.32 2000/01/24 19:59:41 dugsong Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -16,6 +16,7 @@
      SUBDIR += fragrouter
 #    SUBDIR += fwtk
      SUBDIR += gnupg
+     SUBDIR += isic
      SUBDIR += john
      SUBDIR += l0phtcrack
      SUBDIR += libident
