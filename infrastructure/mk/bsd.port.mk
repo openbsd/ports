@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.262 2000/04/15 18:46:08 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.263 2000/04/16 20:59:22 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1546,7 +1546,7 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIE}
 		ln -sf /var/X11/app-defaults /usr/local/lib/X11/app-defaults; \
 	fi
 .endif
-	PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} pkg_add ${PKGFILE}
+	@PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} pkg_add ${PKGFILE}
 	@${_MAKE_COOKIE} ${_INSTALL_COOKIE}
 
 .else
