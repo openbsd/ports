@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/10 20:36:45 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/12/15 13:57:56 alek Exp $
 
 COMMENT=		"utility library for XKB"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		iconv m xkbfile z
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libxklavier/1.04/}
 EXTRACT_SUFX=		.tar.bz2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/08/10 10:56:42 xsa Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/15 13:57:56 alek Exp $
 
 COMMENT=		"bonobo configuration system"
 
@@ -14,6 +14,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		IIOP ORBit ORBitCosNaming ORBitutil audiofile esd \
+			gdk gdk_imlib gdk_pixbuf glib gmodule gnome \
+			gnomesupport gnomeui gtk jpeg oaf ungif xml ICE SM \
+			X11 Xext Xi art_lgpl c m png tiff wrap z
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/bonobo-conf/0.16/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/12/14 01:14:44 marcm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/12/15 13:57:57 alek Exp $
 
 COMMENT=		"GNOME shell and file manager"
 
@@ -16,6 +16,16 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xcursor Xext Xft Xinerama \
+		Xrender art_lgpl_2 atk-1.0.0.0 audiofile bonobo-2 \
+		bonobo-activation bonoboui-2 bz2 c cdda_interface \
+		cdda_paranoia crypto esd fontconfig freetype gailutil gconf-2 \
+		gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 glade-2.0.0.0 glib-2.0.0.0 \
+		gmodule-2.0.0.0 gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 \
+		gnomevfs-2 gobject-2.0.0.0 gsf-1 gthread-2.0.0.0 \
+		gtk-x11-2.0.0.0 jpeg m pango-1.0.0.0 pangoft2-1.0.0.0 \
+		pangox-1.0.0.0 pangoxft-1.0.0.0 popt pthread ssl \
+		startup-notification-1 xml2 z
 
 MODULES=		devel/gettext
 

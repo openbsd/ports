@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/07/12 06:27:12 marcm Exp $
+# $OpenBSD: Makefile,v 1.22 2004/12/15 13:57:56 alek Exp $
 
 COMMENT=		"GNOME control center"
 
@@ -24,6 +24,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE IIOP Imlib ORBit ORBitCosNaming ORBitutil SM X11 \
+			Xext Xi Xpm Xxf86misc art_lgpl audiofile c esd \
+			gconf-1 gconf-gtk-1 gdk gdk_imlib glib gmodule gnome \
+			gnomesupport gnomeui gthread gtk iconv intl jpeg m \
+			oaf png pthread tiff ungif wrap xml z
 
 USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu

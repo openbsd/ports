@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/11/09 22:56:43 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2004/12/15 13:57:56 alek Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
@@ -26,6 +26,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xext Xi Xpm audiofile c glib gmodule gtk \
+			iconv intl jpeg m png tiff ungif util wrap z
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
