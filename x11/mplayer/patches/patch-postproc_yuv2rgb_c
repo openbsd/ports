@@ -1,0 +1,12 @@
+$OpenBSD: patch-postproc_yuv2rgb_c,v 1.1 2002/05/18 17:50:19 art Exp $
+--- postproc/yuv2rgb.c.orig	Thu May 16 00:57:29 2002
++++ postproc/yuv2rgb.c	Thu May 16 00:57:37 2002
+@@ -407,7 +407,7 @@ static void yuv2rgb_c_init (int bpp, int
+     uint32_t *table_32 = 0;
+     uint16_t *table_16 = 0;
+     uint8_t *table_8 = 0;
+-    uint32_t entry_size = 0;
++    int entry_size = 0;
+     void *table_r = 0, *table_g = 0, *table_b = 0;
+ 
+     int crv = Inverse_Table_6_9[matrix_coefficients][0];
