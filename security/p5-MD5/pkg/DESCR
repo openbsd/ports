@@ -1,0 +1,4 @@
+This Perl module allows you to use the RSA Data Security Inc.
+MD5 message digest algorithm.
+
+Please see 'perldoc MD5' for more information. 
