@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/05/13 23:31:24 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/06/17 05:14:19 itojun Exp $
 
 COMMENT=	"Japanese-capable xterm"
 
@@ -14,8 +14,9 @@ PERMIT_PACKAGE_FTP=Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=Yes
 
-MASTER_SITES0=	ftp://ftp.sra.co.jp/pub/x11/kterm/
-PATCHFILES=	kterm-6.2.0.NFS-xauth.patch:0
+MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
+PATCHFILES=	kterm-620-0213-20010706.diff.gz:0
+PATCH_DIST_STRIP=	-p1
 
 CONFIGURE_STYLE=imake
 MAKE_FLAGS=	CDEBUGFLAGS=-O2
