@@ -1,0 +1,8 @@
+#!/bin/sh
+# $OpenBSD: netscape.i386,v 1.1.1.1 2001/06/22 01:37:36 kevlo Exp $
+#
+# Wrapper for Netscape Communicator.
+
+MOZILLA_HOME=@netscape_home@
+export MOZILLA_HOME
+exec $MOZILLA_HOME/netscape "$@"
