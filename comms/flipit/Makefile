@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/06/04 18:30:27 jason Exp $
+# $OpenBSD: Makefile,v 1.2 2002/06/05 20:18:19 jason Exp $
 
 COMMENT=	"x10 firecracker utility"
 
@@ -14,7 +14,7 @@ MAINTAINER=	Jason Wright <jason@openbsd.org>
 
 CONFIGURE_STYLE=gnu
 
-SEPARATE_BUILD= Yes
+SEPARATE_BUILD= simple
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
