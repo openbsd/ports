@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1999/10/29 03:41:34 brad Exp $
+# $OpenBSD: Makefile,v 1.15 1999/11/26 16:20:25 brad Exp $
 
 DISTNAME=	mrtg-2.8.8
 CATEGORIES=	net
@@ -11,16 +11,16 @@ NEED_VERSION=	1.73
 MAINTAINER=	brad@openbsd.org
 
 LIB_DEPENDS=	png.1.3:${PORTSDIR}/graphics/png \
-		gd.1.6:${PORTSDIR}/graphics/gd
+		gd.17:${PORTSDIR}/graphics/gd
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/mrtg
-	@${MKDIR} ${PREFIX}/share/doc/mrtg
-	@${MKDIR} ${PREFIX}/lib/mrtg
+	@mkdir -p ${PREFIX}/share/mrtg
+	@mkdir -p ${PREFIX}/share/doc/mrtg
+	@mkdir -p ${PREFIX}/lib/mrtg
 	@for file in ${WRKSRC}/doc/*; do \
 		${INSTALL_DATA} $$file ${PREFIX}/share/doc/mrtg; \
 	done
