@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/23 20:51:30 fgsch Exp $
+@unexec install-info --delete --info-dir=%D/share/uae/amiga %D/share/uae/amiga/uae-control.info
+bin/readdisk
+bin/uae
+share/uae/COMPATIBILITY
+share/uae/CREDITS
+share/uae/FAQ
+share/uae/NEWS
+share/uae/README
+share/uae/README.PROGRAMMERS
+share/uae/README.unix
+share/uae/amiga/mousehack
+share/uae/amiga/timehack
+share/uae/amiga/transdisk
+share/uae/amiga/transrom
+share/uae/amiga/uae-control
+share/uae/amiga/uae-control.info
+share/uae/amiga/uae_rcli
+share/uae/amiga/uaectrl
+@dirrm share/uae/amiga
+@dirrm share/uae
+@exec install-info --info-dir=%D/share/uae/amiga %D/share/uae/amiga/uae-control.info

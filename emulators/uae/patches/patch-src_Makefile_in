@@ -1,0 +1,47 @@
+Remove gmake dependency.
+
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2002/01/23 20:51:30 fgsch Exp $
+--- src/Makefile.in.orig	Mon Nov 19 09:34:18 2001
++++ src/Makefile.in	Sun Jan 13 17:26:03 2002
+@@ -75,7 +75,7 @@ uae: $(OBJS)
+ 	$(CC) $(OBJS) -o uae $(GFXLDFLAGS) $(LDFLAGS) $(DEBUGFLAGS) $(LIBRARIES) $(MATHLIB)
+ 
+ clean:
+-	$(MAKE) -C tools clean
++	cd tools && ${MAKE} clean
+ 	-rm -f $(OBJS) *.o uae readdisk
+ 	-rm -f blit.h cpudefs.c
+ 	-rm -f cpuemu.c build68k cputmp.s cpufast*.s cpustbl.c cputbl.h
+@@ -99,13 +99,13 @@ blittable.c: tools/genblitter blitfunc.h
+ 	./tools/genblitter t >blittable.c
+ 
+ tools/genblitter:
+-	$(MAKE) -C tools genblitter
++	cd tools && ${MAKE} genblitter
+ tools/build68k:
+-	$(MAKE) -C tools build68kc
++	cd tools && ${MAKE} build68kc
+ tools/cpuopti:
+-	$(MAKE) -C tools cpuopti
++	cd tools && ${MAKE} cpuopti
+ tools/gencpu: 
+-	$(MAKE) -C tools gencpu
++	cd tools && ${MAKE} gencpu
+ 
+ custom.o: blit.h
+ drawing.o: linetoscr.c
+@@ -121,12 +121,12 @@ cpustbl.c: cpuemu.c
+ cputbl.h: cpuemu.c
+ 
+ cpufast.s: cpuemu.c tools/cpuopti
+-	$(CC) $(INCLUDES) -S $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(NO_SCHED_CFLAGS) $< -o cputmp.s
++	$(CC) $(INCLUDES) -S $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(NO_SCHED_CFLAGS) cpuemu.c -o cputmp.s
+ 	./tools/cpuopti <cputmp.s >$@
+ 	rm cputmp.s
+ 
+ console_missing.o: missing.c
+-	$(CC) $(INCLUDES) -c $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(CFLAGS_$@) $< -o $@
++	$(CC) $(INCLUDES) -c $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(CFLAGS_$@) $? -o $@
+ 
+ osdep/beos.o: osdep/beos.cpp
+ 	$(CC) $(INCLUDES) -c $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) osdep/beos.cpp -o osdep/beos.o
