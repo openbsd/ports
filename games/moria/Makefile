@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/09/15 00:06:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2004/09/15 00:50:12 pvalchev Exp $
 
 COMMENT=	"The Dungeons of Moria"
 
@@ -12,9 +12,9 @@ EXTRACT_SUFX=	.tar.Z
 
 HOMEPAGE=	http://www-math.bgsu.edu/~grabine/moria.html
 
-PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_CDROM=	"not-for-profit redistribution only"
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_CDROM=	"not-for-profit redistribution only"
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
