@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2002/09/05 20:35:57 couderc Exp $
+# $OpenBSD: Makefile,v 1.5 2002/09/30 16:17:39 couderc Exp $
+
+BROKEN=			"Needs upgrade to newer version"
 
 COMMENT=		"H.323 Video Conferencing library"
 
