@@ -1,11 +1,10 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.5 2004/06/23 05:00:15 brad Exp $
+# $OpenBSD: INSTALL,v 1.6 2004/08/08 16:24:28 espie Exp $
 #
 # Pre/post-installation setup of gnats
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_FILE=${SYSCONFDIR}/gnats-db.conf
 USER=_gnats
 ID=501
 
@@ -25,29 +24,6 @@ do_accts()
     fi
 }
 
-do_configs()
-{
-    if [ -f ${CONFIG_FILE} ]; then
-	echo ""
-	echo "+---------------"
-	echo "| The existing ${CONFIG_FILE} configuration file"
-	echo "| has NOT been changed.  You may want to compare it to the"
-	echo "| current sample file, ${PREFIX}/share/examples/gnats/gnats-db.conf"
-	echo "| and update your configuration as needed."
-    	echo "+---------------"
-    else
-	# Install config files.
-	install -o root -g wheel -m 644 ${PREFIX}/share/examples/gnats/gnats-db.conf ${CONFIG_FILE}
-
-	echo ""
-	echo "+---------------"
-	echo "| The ${CONFIG_FILE} configuration file has been"
-	echo "| installed.  Please view this file and change"
-	echo "| the configuration to meet your needs."
-	echo "+---------------"
-    fi
-}
-
 if [ $# -ne 2 ]; then
     echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
     exit 1
@@ -58,7 +34,6 @@ case $2 in
 	do_accts
 	;;
     POST-INSTALL)
-	do_configs
 	echo "===>  See ${PREFIX}/share/doc/gnats/README.OpenBSD for further configuration"
 	;;
     *)
