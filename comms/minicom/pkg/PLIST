@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2000/08/31 00:22:56 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2000/08/31 00:40:31 brad Exp $
 bin/ascii-xfr
 bin/minicom
 bin/runscript
@@ -45,6 +45,7 @@ share/doc/minicom/tables/mc.iso
 share/doc/minicom/tables/mc.noconv
 share/doc/minicom/tables/mc.pc8
 share/doc/minicom/tables/mc.sf7
+share/examples/minicom/minicom.users
 share/locale/fi_FI/LC_MESSAGES/minicom.mo
 share/locale/fr/LC_MESSAGES/minicom.mo
 share/locale/ja/LC_MESSAGES/minicom.mo
@@ -52,8 +53,7 @@ share/locale/ja_JP.SJIS/LC_MESSAGES/minicom.mo
 share/locale/ko/LC_MESSAGES/minicom.mo
 share/locale/pl/LC_MESSAGES/minicom.mo
 share/locale/pt_BR/LC_MESSAGES/minicom.mo
-share/minicom/minicom.users
-@dirrm share/minicom
 @dirrm share/doc/minicom/tables
 @dirrm share/doc/minicom/demos
 @dirrm share/doc/minicom
+@dirrm share/examples/minicom

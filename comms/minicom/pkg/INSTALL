@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2000/06/03 06:20:57 form Exp $
+# $OpenBSD: INSTALL,v 1.3 2000/08/31 00:40:31 brad Exp $
 #
 # Pre/post-installation setup of minicom
 
@@ -9,61 +9,57 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=/etc/minicom
-SAMPLE_CONFIG_DIR=${PREFIX}/share/minicom
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/minicom
 
-# Function: tell the user what s/he needs to do to use the port just installed
-#
 do_notice()
 {
-	echo
-	echo "+---------------"
-	echo "| The existing $1 configuration files in ${CONFIG_DIR},"
-	echo "| have NOT been changed. You may want to compare them to the"
-	echo "| current sample files in ${SAMPLE_CONFIG_DIR},"
-	echo "| and update your configuration as needed."
-	echo "+---------------"
-	echo
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration files in $CONFIG_DIR,"
+    echo "| have NOT been changed. You may want to compare them to the"
+    echo "| current sample files in $SAMPLE_CONFIG_DIR,"
+    echo "| and update your configuration as needed."
+    echo "+---------------"
+    echo
 }
 
-# Function: install default config files from the samples
-#
 do_install()
 {
-	install -o uucp -g dialer -m 755 -d ${CONFIG_DIR}
-	install -o root -g wheel -m 644 ${SAMPLE_CONFIG_DIR}/* ${CONFIG_DIR}
-	echo
-	echo "+---------------"
-	echo "| The $1 configuration files have been installed into"
-	echo "| ${CONFIG_DIR}. Please view these files and change"
-	echo "| the configuration to meet your needs."
-	echo "+---------------"
-	echo
+    install -d -o root -g wheel -m 755 $CONFIG_DIR
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/* $CONFIG_DIR
+    echo
+    echo "+---------------"
+    echo "| The $1 configuration files have been installed into"
+    echo "| $CONFIG_DIR. Please view these files and change"
+    echo "| the configuration to meet your needs."
+    echo "+---------------"
+    echo
 }
 
 # verify proper execution
 #
 if [ $# -ne 2 ]; then
-	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
-	exit 1
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
 fi
 
 # Verify/process the command
 #
 case $2 in
-	PRE-INSTALL)
-		: nothing to pre-install for this port
-		;;
-	POST-INSTALL)
-		if [ -d ${CONFIG_DIR} ]; then
-			do_notice $1
-		else
-			do_install $1
-		fi
-		;;
-	*)
-		echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
-		exit 1
-		;;
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if [ -d $CONFIG_DIR ]; then
+		do_notice $1
+	else
+		do_install $1
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
 esac
 
 exit 0
