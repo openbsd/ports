@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/02/16 16:40:57 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/05/16 11:46:30 brad Exp $
 sbin/ldconfig
 usr/lib/crt1.o
 usr/lib/crtbegin.o
@@ -263,3 +263,5 @@ var/run/ld-elf.so.hints
 @dirrm usr/X11R6/lib
 @dirrm usr/X11R6
 @dirrm usr
+@dirrm var/run
+@dirrm var
