@@ -9,7 +9,7 @@ Extra features always included:
 - IPv6 (${IPV6HOMEPAGE})
 - table lookups using PCRE (Perl-Compatible Regular Expression)
 
-Optional fetures included using flavors:
+Optional features included using flavors:
 
 - authenticated SMTP using Cyrus SASL v2
 - table lookups using LDAP
