@@ -3,7 +3,7 @@
 # Version required:                     1.4b2
 # Date created:                         8th January 1999
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/01/19 04:40:13 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/31 22:51:00 marc Exp $
 
 DISTNAME=       netatalk-1.4b2
 CATEGORIES=	net print
@@ -32,8 +32,13 @@ pre-configure:
 	@rm -f ${WRKSRC}/sys/netatalk/*.h
 
 post-install:
-	@cp ${WRKSRC}/config/AppleVolumes.system /etc/netatalk
-	@cp ${WRKSRC}/config/AppleVolumes.default /etc/netatalk
+
+@if [ ! -a X"/etc/netatalk/AppleVolumes.system" ]; then		\
+	@cp ${WRKSRC}/config/AppleVolumes.system /etc/netatalk; \
+fi
+@if [ ! -a X"/etc/netatalk/Applevolumes.default" ]; then	\
+	@cp ${WRKSRC}/config/AppleVolumes.default /etc/netatalk;\
+fi
 	@chmod 750 /etc/netatalk
 
 .include <bsd.port.mk>

@@ -1,0 +1,102 @@
+--- etc/afpd/main.c.orig	Tue Oct 22 08:44:48 1996
++++ etc/afpd/main.c	Mon Mar 29 17:05:56 1999
+@@ -19,6 +19,7 @@
+ #include <termios.h>
+ #include <signal.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <strings.h>
+ #include <netdb.h>
+ #include <unistd.h>
+@@ -53,6 +54,8 @@
+ char	*Obj, *Type = "AFPServer", *Zone = "*";
+ char	*version = VERSION;
+ ASP	child;
++static	int	initial_uid;
++static  int	initial_gid;
+ 
+ extern struct oforks	*writtenfork;
+ 
+@@ -148,6 +151,10 @@
+     extern int		optind;
+ 
+     umask( 0 );		/* so inherited file permissions work right */
++
++	initial_uid = geteuid();
++	initial_gid = getegid();
++		
+     if ( gethostname( hostname, sizeof( hostname )) < 0 ) {
+ 	perror( "gethostname" );
+ 	exit( 1 );
+@@ -265,22 +272,24 @@
+ 	}
+     }
+ 
++#ifdef ultrix
++    openlog( p, LOG_PID );
++#else ultrix
++    openlog( p, LOG_NDELAY|LOG_PID, LOG_DAEMON );
++#endif ultrix
++
+     if ( pidfile ) {
+ 	FILE		*pf;
+ 
+ 	if (( pf = fdopen( pidfd, "w" )) == NULL ) {
+-	    fprintf( stderr, "Can't fdopen pidfile!\n" );
++	    syslog( LOG_ERR, "can't fdopen pidfile!" );
+ 	    exit( 1 );
+ 	}
+ 	fprintf( pf, "%d\n", getpid());
+ 	fflush( pf );
+     }
+ 
+-#ifdef ultrix
+-    openlog( p, LOG_PID );
+-#else ultrix
+-    openlog( p, LOG_NDELAY|LOG_PID, LOG_DAEMON );
+-#endif ultrix
++    of_init();
+ 
+     if (( status = (char *)malloc( ATP_MAXDATA )) == NULL ) {
+ 	syslog( LOG_ERR, "main: malloc: %m" );
+@@ -360,7 +369,10 @@
+ 	exit( 1 );
+     }
+ 
+-    syslog( LOG_INFO, "session from %u.%u:%u on %u.%u:%u",
++	setuid(initial_uid);    /* become our origional uid && gid again */
++        setgid(initial_uid);
++  
++	  syslog( LOG_INFO, "session from %u.%u:%u on %u.%u:%u",
+ 	    ntohs( child->asp_sat.sat_addr.s_net ),
+ 	    child->asp_sat.sat_addr.s_node, child->asp_sat.sat_port,
+ 	    ntohs( atp_sockaddr( child->asp_atp )->sat_addr.s_net ),
+@@ -526,28 +538,3 @@
+     status->as_flags |= AFPSRVRINFO_FASTBOZO;
+     status->as_flags = htons( status->as_flags );
+ }
+-
+-#ifdef notdef
+-pdesc( f )
+-    FILE	*f;
+-{
+-    int		i, o, d;
+-    extern int	errno;
+-
+-    d = getdtablesize();
+-
+-    for ( i = 0; i < d; i++ ) {
+-	if ( ioctl( i, FIOGETOWN, &o ) < 0 ) {
+-	    if ( errno == EBADF ) {
+-		fputs( "0", f );
+-	    } else {
+-		fputs( "1", f );
+-	    }
+-	} else {
+-	    fputs( "1", f );
+-	}
+-    }
+-    fputs( "\n", f );
+-    fflush( f );
+-}
+-#endif notdef
