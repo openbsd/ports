@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/29 10:20:46 avsm Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/Crypt/SSLeay.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Crypt/SSLeay/CTX.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Crypt/SSLeay/Conn.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Crypt/SSLeay/Err.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Crypt/SSLeay/MainContext.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Crypt/SSLeay/X509.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Net/SSL.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Crypt/SSLeay/.packlist
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Crypt/SSLeay/SSLeay.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Crypt/SSLeay/SSLeay.so
+man/man3/Crypt::SSLeay.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Crypt/SSLeay
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/Crypt/SSLeay
