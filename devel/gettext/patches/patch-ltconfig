@@ -1,5 +1,5 @@
 --- ltconfig.orig	Mon Apr 27 17:22:35 1998
-+++ ltconfig	Wed Oct 18 20:20:57 2000
++++ ltconfig	Fri Oct 20 09:35:35 2000
 @@ -702,7 +702,7 @@
  runpath_var=
  
@@ -24,7 +24,7 @@
 +      ;;
 +      *)
 +	archive_cmds='$CC -shared $pic_flag -o $lib$libobjs'
-+	hardcode_libdir_flag_spec='${wl}-rpath ${wl}$libdir'
++	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
 +      ;;
 +    esac
      ;;
