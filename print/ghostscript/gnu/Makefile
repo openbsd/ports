@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/07/27 17:46:48 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2001/08/06 06:25:14 pvalchev Exp $
 
 COMMENT="GNU PostScript interpreter"
 
@@ -45,7 +45,7 @@ BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 		SHARE_LIBPNG=1 \
 		SHARE_ZLIB=1 \
 		CFLAGS_STANDARD='${CFLAGS}' \
-		XLDFLAGS=-L${PREFIX}/lib \
+		XLDFLAGS=-L${LOCALBASE}/lib \
 		XINCLUDE=-I${X11BASE}/include \
 		XLIBS='Xt SM ICE Xext X11' \
 		XLIBDIRS=-L${X11BASE}/lib \
