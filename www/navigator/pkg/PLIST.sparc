@@ -1,9 +1,7 @@
 netscape/README
 netscape/LICENSE
 netscape/netscape
-@unexec rm -f %D/netscape/netscape.sav
 netscape/netscape_nis
-@unexec rm -f %D/netscape/netscape_nis.sav
 netscape/Netscape.ad
 netscape/XKeysymDB
 netscape/bookmark.htm
