@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltmain_sh,v 1.2 2001/08/07 06:36:38 pvalchev Exp $
---- ltmain.sh.orig	Fri Feb 23 16:28:29 2001
-+++ ltmain.sh	Mon Aug  6 23:59:31 2001
+$OpenBSD: patch-ltmain_sh,v 1.3 2001/08/11 17:25:30 pvalchev Exp $
+--- ltmain.sh.orig	Thu Dec 14 05:04:11 2000
++++ ltmain.sh	Fri Aug 10 23:56:08 2001
 @@ -1079,6 +1079,17 @@ compiler."
  	    # These systems don't actually have c library (as such)
  	    continue

@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2001/08/01 06:39:58 pvalchev Exp $
---- src/Makefile.in.orig	Wed Apr 25 02:41:15 2001
-+++ src/Makefile.in	Tue Jul 31 12:19:20 2001
+$OpenBSD: patch-src_Makefile_in,v 1.2 2001/08/11 17:25:30 pvalchev Exp $
+--- src/Makefile.in.orig	Thu Aug  9 07:39:46 2001
++++ src/Makefile.in	Fri Aug 10 23:55:44 2001
 @@ -99,7 +99,7 @@ lib_LTLIBRARIES = libparagui.la
- libparagui_la_SOURCES =  	pgrect.cpp 	pgwidgetlist.cpp 	pgdrawobject.cpp 	pglabel.cpp 	pgwidgetdnd.cpp 	pgwidget.cpp 	pgstaticframe.cpp 	pgmessageobject.cpp 	pggradientwidget.cpp 	pgbutton.cpp 	pgbuttongroup.cpp 	pgapplication.cpp 	pgscrollbar.cpp 	pgwindow.cpp 	pglineedit.cpp 	rendertextrect.cpp 	pgprogressbar.cpp 	pgradiobutton.cpp 	pgcheckbutton.cpp 	pgslider.cpp 	parastretch.cpp 	pgmsgmap.cpp 	pgdrawline.cpp 	pglistboxbaseitem.cpp 	pglistboxitem.cpp 	pglistbox.cpp 	pgcolumnitem.cpp 	pgdropdown.cpp 	pgsurfacecache.cpp 	pgeventobject.cpp 	pgpopupmenu.cpp 	pgmessagebox.cpp 	pgmaskedit.cpp
+ libparagui_la_SOURCES =  	pgrect.cpp 	pgrectlist.cpp 	pgwidgetlist.cpp 	pgdrawobject.cpp 	pglabel.cpp 	pgwidgetdnd.cpp 	pgwidget.cpp 	pgstaticframe.cpp 	pgmessageobject.cpp 	pggradientwidget.cpp 	pgbutton.cpp 	pgbuttongroup.cpp 	pgapplication.cpp 	pgscrollbar.cpp 	pgwindow.cpp 	pglineedit.cpp 	rendertextrect.cpp 	pgprogressbar.cpp 	pgradiobutton.cpp 	pgcheckbutton.cpp 	pgslider.cpp 	parastretch.cpp 	pgmsgmap.cpp 	pgdrawline.cpp 	pglistboxbaseitem.cpp 	pglistboxitem.cpp 	pglistbox.cpp 	pgcolumnitem.cpp 	pgdropdown.cpp 	pgsurfacecache.cpp 	pgeventobject.cpp 	pgpopupmenu.cpp 	pgmessagebox.cpp 	pgmaskedit.cpp		pgspinnerbox.cpp 	pgnavigator.cpp
  
  
 -libparagui_la_LDFLAGS =  	-release $(LT_RELEASE) 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
