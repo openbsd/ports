@@ -1,6 +1,6 @@
-#-*- mode: Fundamental; tab-width: 4; -*-
+#-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.558 2003/07/18 18:54:09 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.559 2003/07/18 19:02:13 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -9,14 +9,14 @@
 
 # Each port has a MAINTAINER, which is the email address(es) of the person(s)
 # to contact if you have questions/suggestions about that specific port.
-# To obtain that address, just type 
+# To obtain that address, just type
 #	make show=MAINTAINER
 # in the specific port's directory.
-# 
+#
 # The ports@openbsd.org address is the `default' MAINTAINER (the generic
 # OpenBSD ports mailing-list).
 
-# Enquiries as to the bsd.port.mk framework should usually be directed 
+# Enquiries as to the bsd.port.mk framework should usually be directed
 # to ports@openbsd.org.
 
 
@@ -30,16 +30,16 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 # The definitive source of documentation to this file's user-visible parts
 # is bsd.port.mk(5).
 #
-# Any variable or target starting with an underscore (e.g., _DEPEND_ECHO) 
-# is internal to bsd.port.mk, not part of the user's API, and liable to 
-# change without notice. 
+# Any variable or target starting with an underscore (e.g., _DEPEND_ECHO)
+# is internal to bsd.port.mk, not part of the user's API, and liable to
+# change without notice.
 #
 #
 # NO_PKG_REGISTER - Don't register a port install as a package.
 # SCRIPTS_ENV	- Additional environment vars passed to scripts in
 #                 ${SCRIPTDIR} executed by bsd.port.mk.
 # DEPENDS		- A list of other ports this package depends on being
-#				  made first.  
+#				  made first.
 #
 #
 # Variables to change if you want a special behavior:
@@ -71,7 +71,7 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 #
 # For historical reasons, the distpatch target is a subtarget of patch.
 # If you provide a do-patch, you MUST call distpatch explicitly.
-# The sequence of hooks actually run is: 
+# The sequence of hooks actually run is:
 #
 # pre-patch `real distpatch' post-distpatch `real patch' post-patch
 #
@@ -407,7 +407,7 @@ GMAKE?=			gmake
 CHECKSUM_FILE?=	${.CURDIR}/distinfo
 
 # Don't touch !!! Used for generating checksums.
-_CIPHERS=		sha1 rmd160 md5 
+_CIPHERS=		sha1 rmd160 md5
 
 # This is the one you can override
 PREFERRED_CIPHERS?= ${_CIPHERS}
@@ -700,7 +700,7 @@ _PKG_PREREQ= ${WRKPKG}/PLIST${SUBPACKAGE} ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}
 # Note that if you override PKG_ARGS, you will not get correct dependencies
 .if !defined(PKG_ARGS)
 PKG_ARGS= -v -c '${WRKPKG}/COMMENT${SUBPACKAGE}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
-PKG_ARGS+=-f ${WRKPKG}/PLIST${SUBPACKAGE} -p ${PREFIX} 
+PKG_ARGS+=-f ${WRKPKG}/PLIST${SUBPACKAGE} -p ${PREFIX}
 .  if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
 PKG_ARGS+=		-i ${WRKPKG}/INSTALL${SUBPACKAGE}
 _PKG_PREREQ+=${WRKPKG}/INSTALL${SUBPACKAGE}
@@ -868,11 +868,11 @@ _USE_ZIP?=	Yes
 .endif
 .if !empty(EXTRACT_ONLY:M*.tar.bz2) || (defined(PATCHFILES) && !empty(_PATCHFILES:M*.bz2))
 _USE_BZIP2?=	Yes
-.endif 
+.endif
 _USE_ZIP?=	No
 _USE_BZIP2?=	No
 
-EXTRACT_CASES?= 
+EXTRACT_CASES?=
 
 _PERL_FIX_SHAR?=perl -ne 'print if $$s || ($$s = m:^\#(\!\s*/bin/sh\s*| This is a shell archive):)'
 
@@ -1008,7 +1008,7 @@ DEPENDS_TARGET=	install
 .endif
 
 makesum: fetch-all
-.if !defined(NO_CHECKSUM) 
+.if !defined(NO_CHECKSUM)
 	@rm -f ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 		for cipher in ${_CIPHERS}; do \
@@ -1017,7 +1017,7 @@ makesum: fetch-all
 	@for file in ${_IGNOREFILES}; do \
 		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
 	done
-	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE} 
+	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
 .endif
 
 
@@ -1031,7 +1031,7 @@ addsum: fetch-all
 	@for file in ${_IGNOREFILES}; do \
 		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
 	done
-	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE} 
+	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
 	@if [ `sed -e 's/\=.*$$//' ${CHECKSUM_FILE} | uniq -d | wc -l` -ne 0 ]; then \
 		echo "Inconsistent checksum in ${CHECKSUM_FILE}"; \
 		exit 1; \
@@ -1195,7 +1195,7 @@ _DEP${_DEP}_COOKIES+=${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}
 ${_DEP}-depends: ${_DEP${_DEP}_COOKIES}
 .endfor
 
-# Do a brute-force ldd/objdump on all files under WRKINST. 
+# Do a brute-force ldd/objdump on all files under WRKINST.
 .if ${ELF_TOOLCHAIN:L} == "no"
 ${_LIBLIST}: ${_FAKE_COOKIE}
 	@${SUDO} mkdir -p ${WRKINST}/usr/libexec
@@ -1237,7 +1237,7 @@ uninstall deinstall fake package lib-depends-check manpages-check:
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE}."
 .  endif
 
-.else 
+.else
 # For now, just check all libnames are present
 # The check is done on the fake area, be wary of multi-packages situation,
 # since we don't take it into account yet.
@@ -1261,7 +1261,7 @@ manpages-check: ${_FAKE_COOKIE}
 # fetch is an exception, as it uses the files it fetches as `cookies',
 # and it's run by checksum, so in essence it's a sub-goal of extract,
 # in normal use.
-# 
+#
 # Besides, fetch can't create cookies, as it does not have WRKDIR available
 # in the first place.
 #
@@ -1402,7 +1402,7 @@ regress: ${_DEPregress_COOKIES} ${_REGRESS_COOKIE}
 
 .endif # IGNORECMD
 
-BULK_TARGETS?= 
+BULK_TARGETS?=
 
 ${_BULK_COOKIE}: ${_PACKAGE_COOKIES}
 	@mkdir -p ${BULK_COOKIES_DIR}
@@ -1421,7 +1421,7 @@ ${_WRKDIR_COOKIE}:
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin
 	@${_MAKE_COOKIE} $@
 
-${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} 
+${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE}
 	@cd ${.CURDIR} && exec ${MAKE} checksum build-depends lib-depends misc-depends
 	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}${_MASTER}"
 .if target(pre-extract)
@@ -1502,9 +1502,9 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .else
 # What PATCH normally does:
 # XXX test for efficiency, don't bother with distpatch if it's not needed
-.  if target(do-distpatch) || target(post-distpatch) || defined(PATCHFILES) 
+.  if target(do-distpatch) || target(post-distpatch) || defined(PATCHFILES)
 	@cd ${.CURDIR} && exec ${MAKE} distpatch
-.  endif 
+.  endif
 	@if cd ${PATCHDIR} 2>/dev/null || [ x"${PATCH_LIST:M/*}" != x"" ]; then \
 		error=false; \
 		for i in ${PATCH_LIST}; do \
@@ -1603,7 +1603,7 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 	echo "*** Some examples are: "; \
 	echo "*** 	csh(1) and tcsh(1): limit datasize <kbytes of memory>"; \
 	echo "***	ksh(1), zsh(1) and bash(1): ulimit -d <kbytes of memory>"; \
-	echo ""; 
+	echo ""
 .endif
 .  if target(pre-build)
 	@cd ${.CURDIR} && exec ${MAKE} pre-build
@@ -1711,7 +1711,7 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
 	@${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${PKGFILE${SUBPACKAGE}}
 .  endif
 	@-${SUDO} ${_MAKE_COOKIE} $@
-.endif 
+.endif
 
 # The real package
 
@@ -1855,7 +1855,7 @@ uninstall deinstall:
 
 # Cleaning up
 
-clean: 
+clean:
 .if ${clean:L:Mdepends}
 	@cd ${.CURDIR} && exec ${MAKE} clean-depends
 .endif
@@ -1872,7 +1872,7 @@ clean:
 .  else
 	@if [ -L ${WRKDIR} ]; then rm -rf `readlink ${WRKDIR}`; fi
 	@rm -rf ${WRKDIR}
-.  endif 
+.  endif
 .endif
 .if ${clean:L:Mdist}
 	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
@@ -1882,7 +1882,7 @@ clean:
 		fi \
 	fi
 .  if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
-	-@rmdir ${FULLDISTDIR}  
+	-@rmdir ${FULLDISTDIR}
 .  endif
 .endif
 .if ${clean:L:Minstall}
@@ -1909,7 +1909,7 @@ clean:
 	rm -f ${_BULK_COOKIE}
 .endif
 
-distclean: 
+distclean:
 	@${MAKE} clean=dist
 
 RECURSIVE_FETCH_LIST?=	Yes
@@ -1946,7 +1946,7 @@ update-patches:
 	case $$toedit in "");; \
 	*) read i?'edit patches: '; \
 	cd ${PATCHDIR} && $${VISUAL:-$${EDITOR:-/usr/bin/vi}} $$toedit;; esac
-	
+
 
 ################################################################
 # The special package-building targets
@@ -2018,9 +2018,9 @@ _fetch-makefile-helper:
 .  endfor
 .endif
 	@echo
-	
 
-# The README.html target needs full information (this is passed via 
+
+# The README.html target needs full information (this is passed via
 # depends-list and package-depends)
 FULL_PACKAGE_NAME?=No
 
@@ -2033,9 +2033,9 @@ package-name:
 	@${_DEPEND_ECHO} '${PKGPATH}/${FULLPKGNAME${SUBPACKAGE}}'
 .  else
 	@${_DEPEND_ECHO} '${FULLPKGNAME${SUBPACKAGE}}'
-.  endif 
+.  endif
 
-# Internal variables, used by dependencies targets 
+# Internal variables, used by dependencies targets
 # Only keep pkg:dir spec
 .if defined(LIB_DEPENDS) || defined(MISC_DEPENDS)
 _ALWAYS_DEP2 = ${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/} \
@@ -2213,7 +2213,7 @@ recurse-build-depends:
 			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 			exit 1; \
 		fi; \
-	done 
+	done
 .else
 	@pname=`cd ${.CURDIR} && ${MAKE} _DEPEND_ECHO='echo -n' package-name`; echo $$pname $$pname
 .endif
@@ -2228,7 +2228,7 @@ depends-list:
 			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 			exit 1; \
 		fi; \
-	done 
+	done
 .endif
 
 # Build (recursively) a list of package dependencies suitable for tsort
@@ -2295,7 +2295,7 @@ _recurse-dir-depends:
 			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 			exit 1; \
 		fi; \
-	done 
+	done
 .endif
 
 # recursively build a list of dirs to pass to tsort...
@@ -2312,7 +2312,7 @@ dir-depends:
 			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 			exit 1; \
 		fi; \
-	done 
+	done
 .else
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
 .endif
@@ -2347,7 +2347,7 @@ _package-recurse-dir-depends:
 			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 			exit 1; \
 		fi; \
-	done 
+	done
 .endif
 
 # recursively build a list of dirs to pass to tsort...
@@ -2364,7 +2364,7 @@ package-dir-depends:
 			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 			exit 1; \
 		fi; \
-	done 
+	done
 .else
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
 .endif
@@ -2437,7 +2437,7 @@ readme readmes:
 
 HTMLIFY=	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
 
-print-depends: 
+print-depends:
 	@cd ${.CURDIR} && exec ${MAKE} FULL_PACKAGE_NAME=Yes print-depends-list print-package-depends
 
 link-categories:
@@ -2461,7 +2461,7 @@ unlink-categories:
 	    fi; \
 	fi
 .endfor
-    
+
 homepage-links:
 .if defined(HOMEPAGE)
 	@echo '<li><A HREF="${HOMEPAGE}">${PKGNAME}</A>'
