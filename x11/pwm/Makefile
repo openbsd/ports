@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 04:41:21 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/07/09 10:49:09 naddy Exp $
 
 COMMENT=	"a lightweight window manager with emphasis on usability"
 
@@ -8,7 +8,7 @@ NEED_VERSION=	1.402
 
 HOMEPAGE=	http://www.students.tut.fi/~tuomov/pwm/
 
-MAINTAINER=	Wynand van Dyk <wynand@type01.com>
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
