@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2002/05/28 21:20:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2002/10/16 00:49:04 naddy Exp $
 
 COMMENT=	"OO toolkit for SGML parsing and entity management"
 
 DISTNAME=	sp-1.3.4
 CATEGORIES=	textproc
-NEED_VERSION=	1.516
-
 HOMEPAGE=	http://www.jclark.com/sp/
 
 MAINTAINER=	Gerardo Santana Gomez Garrido <santana@openbsd.org.mx>
@@ -25,6 +23,8 @@ MAKE_FLAGS=	CXX="${CXX}" \
 
 FAKE_FLAGS=	prefix=${DESTDIR}${PREFIX} \
 		INSTALL="${INSTALL_PROGRAM}"
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sp

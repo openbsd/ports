@@ -1,0 +1,12 @@
+$OpenBSD: patch-nsgmls_RastEventHandler_h,v 1.1 2002/10/16 00:49:04 naddy Exp $
+--- nsgmls/RastEventHandler.h.orig	Wed Oct 16 02:35:47 2002
++++ nsgmls/RastEventHandler.h	Wed Oct 16 02:36:04 2002
+@@ -102,7 +102,7 @@ private:
+ 
+ class RastEventHandler : public ErrorCountEventHandler,
+                          private RastSubdocState,
+-                         private Messenger {
++                         protected Messenger {
+ public:
+   RastEventHandler(SgmlParser *, Messenger *);
+   void data(DataEvent *);
