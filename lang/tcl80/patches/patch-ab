@@ -1,17 +1,18 @@
---- Makefile.in.orig	Tue Mar  9 01:51:26 1999
-+++ Makefile.in	Thu Jan 13 19:55:37 2000
-@@ -55,7 +55,9 @@
+--- Makefile.in.orig	Tue Mar  9 07:51:26 1999
++++ Makefile.in	Tue Mar 21 22:27:57 2000
+@@ -55,7 +55,10 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
  # Directory in which to install the include file tcl.h:
 -INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include
-+INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)
-+GENERIC_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/generic
-+UNIX_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/unix
++BASE_INCLUDE_DIR =	$(prefix)/include/tcl$(VERSION)
++INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(BASE_INCLUDE_DIR)
++GENERIC_INCLUDE_INSTALL_DIR = $(BASE_INCLUDE_DIR)/generic
++UNIX_INCLUDE_INSTALL_DIR = $(BASE_INCLUDE_DIR)/unix
  
  # Top-level directory in which to install manual entries:
  MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
-@@ -86,7 +88,7 @@
+@@ -86,7 +89,7 @@
  #CFLAGS = 		$(CFLAGS_DEBUG)
  #CFLAGS = 		$(CFLAGS_OPTIMIZE)
  #CFLAGS = 		$(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
@@ -20,7 +21,7 @@
  
  # To disable ANSI-C procedure prototypes reverse the comment characters
  # on the following lines:
-@@ -146,7 +148,7 @@
+@@ -146,7 +149,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.
  
@@ -29,7 +30,7 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -331,14 +333,18 @@
+@@ -331,14 +334,18 @@
  
  SRCS = $(GENERIC_SRCS) $(UNIX_SRCS)
  
@@ -50,7 +51,7 @@
  
  # Make target which outputs the list of the .o contained in the Tcl lib
  # usefull to build a single big shared library containing Tcl and other
-@@ -433,7 +439,7 @@
+@@ -433,7 +440,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -59,7 +60,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -445,16 +451,19 @@
+@@ -445,16 +452,19 @@
  	    done;
  	@echo "Installing $(TCL_LIB_FILE)"
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
@@ -78,12 +79,12 @@
  install-libraries:
 -	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
 -		$(SCRIPT_INSTALL_DIR); \
-+	@for i in $(INSTALL_ROOT)$(prefix)/lib $(GENERIC_INCLUDE_INSTALL_DIR) \
-+		$(UNIX_INCLUDE_INSTALL_DIR) $(SCRIPT_INSTALL_DIR); \
++	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INSTALL_ROOT)$(GENERIC_INCLUDE_INSTALL_DIR) \
++		$(INSTALL_ROOT)$(UNIX_INCLUDE_INSTALL_DIR) $(SCRIPT_INSTALL_DIR); \
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -472,8 +481,15 @@
+@@ -472,8 +482,15 @@
  		else true; \
  		fi; \
  	    done;
@@ -93,15 +94,15 @@
 +	@for i in $(GENERIC_DIR)/*.h ; \
 +	    do \
 +	    echo "Installing $$i"; \
-+	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
++	    $(INSTALL_DATA) $$i $(INSTALL_ROOT)$(GENERIC_INCLUDE_INSTALL_DIR); \
 +	    done;
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
 +	@echo "Installing $(TOP_DIR)unix/tclUnixPort.h"
-+	@$(INSTALL_DATA) $(TOP_DIR)/unix/tclUnixPort.h $(UNIX_INCLUDE_INSTALL_DIR)
++	@$(INSTALL_DATA) $(TOP_DIR)/unix/tclUnixPort.h $(INSTALL_ROOT)$(UNIX_INCLUDE_INSTALL_DIR)
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -525,6 +541,13 @@
+@@ -525,6 +542,13 @@
  	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
  	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)

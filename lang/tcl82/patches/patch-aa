@@ -1,17 +1,18 @@
---- Makefile.in.orig	Tue Dec 14 22:59:18 1999
-+++ Makefile.in	Sat Jan 29 18:47:39 2000
-@@ -48,7 +48,9 @@
+--- Makefile.in.orig	Wed Dec 15 04:59:18 1999
++++ Makefile.in	Tue Mar 21 22:55:54 2000
+@@ -48,7 +48,10 @@
  SCRIPT_INSTALL_DIR = $(INSTALL_ROOT)$(TCL_LIBRARY)
  
  # Directory in which to install the include file tcl.h:
 -INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include
-+INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)
-+GENERIC_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/generic
-+UNIX_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/unix
++BASE_INCLUDE_DIR = $(prefix)/include/tcl$(VERSION)
++INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(BASE_INCLUDE_DIR)
++GENERIC_INCLUDE_INSTALL_DIR = $(BASE_INCLUDE_DIR)/generic
++UNIX_INCLUDE_INSTALL_DIR = $(BASE_INCLUDE_DIR)/unix
  
  # Top-level directory in which to install manual entries:
  MAN_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/man
-@@ -82,7 +84,7 @@
+@@ -82,7 +85,7 @@
  #CFLAGS = 		$(CFLAGS_DEBUG)
  #CFLAGS = 		$(CFLAGS_OPTIMIZE)
  #CFLAGS = 		$(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
@@ -20,7 +21,7 @@
  
  # To disable ANSI-C procedure prototypes reverse the comment characters
  # on the following lines:
-@@ -156,7 +158,7 @@
+@@ -156,7 +159,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.
  
@@ -29,7 +30,7 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -383,7 +385,7 @@
+@@ -383,7 +386,7 @@
  
  all: binaries libraries doc
  
@@ -38,7 +39,7 @@
  
  libraries:
  
-@@ -394,12 +396,15 @@
+@@ -394,12 +397,15 @@
  ${TCL_LIB_FILE}: ${OBJS} ${STUB_LIB_FILE}
  	rm -f ${TCL_LIB_FILE}
  	@MAKE_LIB@
@@ -56,7 +57,7 @@
  
  # Make target which outputs the list of the .o contained in the Tcl lib
  # usefull to build a single big shared library containing Tcl and other
-@@ -504,8 +509,10 @@
+@@ -504,8 +510,10 @@
  	@echo "Installing $(TCL_LIB_FILE)"
  	chmod +x $(SRC_DIR)/install-sh
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
@@ -68,7 +69,7 @@
  	@if test "$(TCL_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TCL_EXP_FILE)"; \
  	    $(INSTALL_DATA) $(TCL_BUILD_EXP_FILE) \
-@@ -514,7 +521,8 @@
+@@ -514,7 +522,8 @@
  	@echo "Installing tclsh"
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
  	@echo "Installing tclConfig.sh"
@@ -78,18 +79,18 @@
  	@if test "$(TCL_STUB_LIB_FILE)" != "" ; then \
  	    echo "Installing $(TCL_STUB_LIB_FILE)"; \
  	    $(INSTALL_DATA) $(STUB_LIB_FILE) \
-@@ -522,8 +530,8 @@
+@@ -522,8 +531,8 @@
  	    fi
  
  install-libraries: libraries
 -	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
 -		$(SCRIPT_INSTALL_DIR); \
-+	@for i in $(INSTALL_ROOT)$(prefix)/lib $(GENERIC_INCLUDE_INSTALL_DIR) \
-+		$(UNIX_INCLUDE_INSTALL_DIR) $(SCRIPT_INSTALL_DIR); \
++	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INSTALL_ROOT)$(GENERIC_INCLUDE_INSTALL_DIR) \
++		$(INSTALL_ROOT)$(UNIX_INCLUDE_INSTALL_DIR) $(SCRIPT_INSTALL_DIR); \
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -542,11 +550,19 @@
+@@ -542,11 +551,19 @@
  		fi; \
  	    done;
  	chmod +x $(SRC_DIR)/install-sh
@@ -98,20 +99,20 @@
 +	@for i in $(GENERIC_DIR)/*.h ; \
 +	    do \
 +	    echo "Installing $$i"; \
-+	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
++	    $(INSTALL_DATA) $$i $(INSTALL_ROOT)$(GENERIC_INCLUDE_INSTALL_DIR); \
 +	    done;
 +	@for i in $(UNIX_DIR)/*.h ; \
  	    do \
  	    echo "Installing $$i"; \
 -	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
-+	    $(INSTALL_DATA) $$i $(UNIX_INCLUDE_INSTALL_DIR); \
++	    $(INSTALL_DATA) $$i $(INSTALL_ROOT)$(UNIX_INCLUDE_INSTALL_DIR); \
  	    done;
 +	    @ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
 +	    @ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tclDecls.h $(INCLUDE_INSTALL_DIR)/tclDecls.h
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -603,6 +619,14 @@
+@@ -603,6 +620,14 @@
  	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
  	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
