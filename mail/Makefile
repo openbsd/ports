@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2004/04/23 15:26:47 robert Exp $
+# $OpenBSD: Makefile,v 1.119 2004/04/24 08:18:18 peter Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -54,6 +54,7 @@
      SUBDIR += nmh
      SUBDIR += offlineimap
      SUBDIR += openwebmail
+     SUBDIR += p5-Email-Valid
      SUBDIR += p5-MIME-Lite
      SUBDIR += p5-MIME-Types
      SUBDIR += p5-MIME-tools
