@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.10 2001/05/05 21:24:27 espie Exp $
+# $OpenBSD: make-plist,v 1.11 2001/05/07 15:25:44 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -51,8 +51,8 @@ select PLIST;
 
 print "\@comment \$OpenBSD\$\n";
 
-# compare all files against this date
-my $date = (stat $ENV{INSTALL_PRE_COOKIE})[9];
+# compare all files against those dates
+my @date = (stat $ENV{INSTALL_PRE_COOKIE})[9, 10];
 
 # prefix to remove from everything
 my $base = $ENV{PREFIX};
@@ -113,8 +113,8 @@ sub add_info {
 
 find(
 	sub {
-		my $cdate = (lstat $_)[9];
-		if ($cdate >= $date) {
+		my @cdate = (lstat $_)[9, 10];
+		if ($cdate[0] >= $date[0] || $cdate[1] >= $date[1]) {
 			$has_stuff{$File::Find::dir} = 1;
 			if (-d _) {
 				$newdir{$File::Find::name} = 1;
