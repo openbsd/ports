@@ -1,0 +1,335 @@
+$OpenBSD: patch-process_sysdep_OPENBSD_c,v 1.1 2003/06/01 23:14:16 margarida Exp $
+--- process/sysdep_OPENBSD.c.orig	Sun Jun  1 23:39:00 2003
++++ process/sysdep_OPENBSD.c	Sun Jun  1 23:36:23 2003
+@@ -0,0 +1,331 @@
++/*
++ * Copyright (C), 2000-2003 by Contributors to the monit codebase. 
++ * All Rights Reserved.
++ *
++ * This program is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU General Public License as
++ * published by the Free Software Foundation; either version 2 of the
++ * License, or (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful, but
++ * WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * General Public License for more details.
++ * 
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, write to the Free Software Foundation,
++ * Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
++ */
++
++
++#include <config.h>
++
++#ifdef HAVE_SYS_TYPES_H
++#include <sys/types.h>
++#endif
++
++#include <unistd.h>
++
++#ifdef HAVE_SYS_STAT_H
++#include <sys/stat.h>
++#endif
++
++#ifdef HAVE_FCNTL_H
++#include <fcntl.h>
++#endif
++
++#ifdef HAVE_STDLIB_H
++#include <stdlib.h>
++#endif
++
++#ifdef TIME_WITH_SYS_TIME
++#include <time.h>
++
++#ifdef HAVE_SYS_TIME_H
++#include <sys/time.h>
++#endif
++#else
++#include <time.h>
++#endif
++
++#ifdef HAVE_STRING_H
++#include <string.h>
++#endif
++
++#include <stdio.h>
++#include <kvm.h>
++#include <sys/param.h>
++#include <sys/proc.h>
++#include <sys/resource.h>
++#include <sys/resourcevar.h>
++#include <sys/lock.h>
++#include <sys/user.h>
++#include <uvm/uvm.h>
++#include <uvm/uvm_object.h>
++#include <uvm/uvm_pmap.h>
++#include <machine/pmap.h>
++#include <machine/vmparam.h>
++#include <uvm/uvm_map.h>
++#include <sys/vmmeter.h>
++#include <sys/sysctl.h>
++
++#include "process.h"
++#include "sysdep.h"
++
++/**
++ *  System dependent resource gathering code for FreeBSD.
++ *
++ *  @author Jan-Henrik Haukeland, <hauk@tildeslash.com>
++ *  @author Christian Hopp <chopp@iei.tu-clausthal.de>
++ *  @author Rory Toma <rory@digeo.com>
++ *
++ *  @version \$Id: patch-process_sysdep_OPENBSD_c,v 1.1 2003/06/01 23:14:16 margarida Exp $
++ *
++ *  @file
++ */
++
++#define pagetok(size) ((size) << pageshift)
++#define tv2sec(tv) (((u_int64_t) tv.tv_sec * 1000000) + (u_int64_t) tv.tv_usec)
++
++static int pageshift;
++static long mem_kbyte_max;
++
++#ifndef LOG1024
++#define LOG1024         10
++#endif
++
++static kvm_t * kvm_handle;
++
++static void calcru(struct proc *p, struct timeval *up, struct timeval *sp,
++		   struct timeval *ip)
++{
++  quad_t totusec;
++  u_quad_t u, st, ut, it, tot;
++#if (__FreeBSD_version < 300003)
++  long sec, usec;
++#endif 
++  
++  st = p->p_sticks;
++  ut = p->p_uticks;
++  it = p->p_iticks;
++  
++  tot = st + ut + it;
++  if (tot == 0)
++    {
++      st = 1;
++      tot = 1;
++    }
++  
++#if (defined __FreeBSD__) && (__FreeBSD_version >= 300003)
++  totusec = (u_quad_t) p->p_runtime;
++#else
++  sec = p->p_rtime.tv_usec;
++  usec = p->p_rtime.tv_usec;
++  
++  totusec = (quad_t)sec * 1000000 + usec;
++#endif
++  
++  if(totusec < 0)
++    {
++      fprintf (stderr, "calcru: negative time: %ld usec\n",
++	       (long)totusec);
++      totusec = 0;
++    }
++  
++  u = totusec;
++  st = (u * st) / tot;
++  sp->tv_sec = st / 1000000;
++  sp->tv_usec = st % 1000000;
++  ut = (u * ut) / tot;
++  up->tv_sec = ut / 1000000;
++  up->tv_usec = ut % 1000000;
++  
++  if(ip != NULL)
++    {
++      it = (u * it) / tot;
++      ip->tv_sec = it / 1000000;
++      ip->tv_usec = it % 1000000;
++    }
++}
++
++int init_process_info_sysdep(void) {
++
++  register int pagesize;
++  struct uvmexp vmm;
++  int mib[2];
++  size_t len;
++  
++  struct nlist nlst [] = {
++      { "_bufspace"},
++      { "_cnt" },
++      { 0 }
++  };
++
++  if(getuid()!=0) {
++
++    return FALSE;
++
++  }
++
++  mib[0] = CTL_HW;
++  mib[1] = HW_NCPU;
++  len = sizeof(num_cpus);
++  sysctl(mib, 2, &num_cpus, &len, NULL, 0);
++
++  kvm_handle = kvm_open(NULL, NULL, NULL, O_RDONLY, "monit");
++  
++  if ( kvm_handle == NULL ) {
++    
++    return FALSE;
++    
++  }
++  
++  /* ----------------------------- INIT MEM -----------------------------*/
++  /* Got it from libgtop/sysdep/freebsd/mem.c */
++
++  /* Initialize nlist structure */
++  if (kvm_nlist (kvm_handle, nlst) < 0)
++  {
++    return FALSE;
++  }
++
++  /* get the page size with "getpagesize" and calculate pageshift
++   * from it */
++
++  pagesize = getpagesize ();
++  pageshift = 0;
++  while (pagesize > 1) {
++
++    pageshift++;
++    pagesize >>= 1;
++
++  }
++
++  /* we only need the amount of log(2)1024 for our conversion */
++  pageshift -= LOG1024;
++
++  /* Get the data from kvm_* */
++  if (kvm_read (kvm_handle, nlst[1].n_value,
++		&vmm, sizeof (vmm)) != sizeof (vmm)) {
++    return FALSE;
++
++  }
++
++  mem_kbyte_max= vmm.freemin +
++    vmm.free + vmm.wired +
++    vmm.active + vmm.inactive;
++
++  return TRUE;
++
++}
++
++int get_process_info_sysdep(ProcInfo_T p) {
++
++  struct kinfo_proc *pinfo;
++
++  /* Only needed for older versions of BSD that use kvm_uread */
++  /* struct user *u_addr = (struct user *)USRSTACK; */
++  struct pstats pstats;
++  struct plimit plimit;
++  struct vmspace *vms;
++  register struct rusage *rup;
++  long stat_utime;
++  long stat_stime;
++  long stat_cutime;
++  long stat_cstime;
++
++  u_int64_t rss_lim;
++
++  int count;
++
++  /* Got it from libgtop */
++
++  pinfo = kvm_getprocs(kvm_handle, KERN_PROC_PID, p->pid, &count);
++
++  if ((pinfo == NULL) || (count < 1)) {
++
++    return FALSE;
++
++  }
++
++  /* ----------------------------- CPU TIMING ----------------------------*/
++  /* Got it from libgtop/sysdep/freebsd/proctime.c */
++  
++  if (kvm_read (kvm_handle, 
++		(unsigned long) pinfo [0].kp_proc.p_stats,
++		&pstats, sizeof (pstats)) == sizeof (pstats)) {
++    
++    /* Need to fix for different versions of BSD - I think older ones
++       use kvm_uread, and newer use kvm_read */
++
++  /*  if ((pinfo [0].kp_proc.p_flag & P_INMEM) &&
++      kvm_uread (kvm_handle, &(pinfo [0]).kp_proc,
++		 (unsigned long) &u_addr->u_stats,
++		 (char *) &pstats, sizeof (pstats)) == sizeof (pstats)) {
++  */
++    rup = &pstats.p_ru;
++    calcru(&(pinfo [0]).kp_proc,
++	   &rup->ru_utime, &rup->ru_stime, NULL);
++
++    stat_utime = tv2sec (pstats.p_ru.ru_utime);
++    stat_stime = tv2sec (pstats.p_ru.ru_stime);
++
++    stat_cutime = tv2sec (pstats.p_cru.ru_utime);
++    stat_cstime = tv2sec (pstats.p_cru.ru_stime);
++
++  } else {
++
++    return FALSE;
++
++  }
++
++  p->cputime_prev= p->cputime;
++  p->cputime= (int)(( stat_utime + stat_stime ) / 1000);
++
++  if( include_children ) {
++
++    p->cputime+= (int)(( stat_cutime + stat_cstime ) / 1000);
++
++  }
++
++  /* first run ? */
++
++  if ( p->time_prev == 0.0 ) {
++
++    p->cputime_prev= p->cputime;
++
++  }
++
++  /* ----------------------------- MEMORY --------------------------------*/
++  /* Got it from libgtop/sysdep/freebsd/procmem.c */
++
++  if (kvm_read (kvm_handle,
++		(unsigned long) pinfo [0].kp_proc.p_limit,
++		(char *) &plimit, sizeof (plimit)) != sizeof (plimit)) {
++
++    return FALSE;
++
++  }
++
++  rss_lim = (u_int64_t)
++    (plimit.pl_rlimit [RLIMIT_RSS].rlim_cur);
++
++  vms = &pinfo [0].kp_eproc.e_vm;
++
++  p->mem_kbyte= (u_int64_t) pagetok (vms->vm_rssize);
++             /* <<LOG1024 removed, we wanna have kb */
++
++  /* ----------------------------- STATE ---------------------------------*/
++  /* Got it from libgtop/sysdep/freebsd/procstate.c */
++
++  if ( pinfo [0].kp_proc.p_stat == SZOMB ) {
++
++    p->status_flag |= PROCESS_ZOMBIE;
++
++  }
++
++  p->mem_percent = (int) ((double) p->mem_kbyte * 1000.0 / mem_kbyte_max);
++
++  return TRUE;
++
++}

@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/12/26 00:45:55 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/06/01 23:14:16 margarida Exp $
 bin/monit
 man/man1/monit.1
 share/doc/monit/FAQ.txt
+share/doc/monit/README.SSL
 share/doc/monit/api-docs/alert_8c-source.html
 share/doc/monit/api-docs/alert_8c.html
 share/doc/monit/api-docs/alert_8h-source.html
@@ -26,6 +27,8 @@ share/doc/monit/api-docs/default_8c-source.html
 share/doc/monit/api-docs/default_8c.html
 share/doc/monit/api-docs/doxygen.css
 share/doc/monit/api-docs/doxygen.png
+share/doc/monit/api-docs/dwp_8c-source.html
+share/doc/monit/api-docs/dwp_8c.html
 share/doc/monit/api-docs/engine_8c-source.html
 share/doc/monit/api-docs/engine_8c.html
 share/doc/monit/api-docs/engine_8h-source.html
@@ -62,6 +65,10 @@ share/doc/monit/api-docs/http__utils_8h.html
 share/doc/monit/api-docs/imap_8c-source.html
 share/doc/monit/api-docs/imap_8c.html
 share/doc/monit/api-docs/index.html
+share/doc/monit/api-docs/ldap2_8c-source.html
+share/doc/monit/api-docs/ldap2_8c.html
+share/doc/monit/api-docs/ldap3_8c-source.html
+share/doc/monit/api-docs/ldap3_8c.html
 share/doc/monit/api-docs/log_8c-source.html
 share/doc/monit/api-docs/log_8c.html
 share/doc/monit/api-docs/main.html
@@ -135,10 +142,18 @@ share/doc/monit/api-docs/structmytimestamp.html
 share/doc/monit/api-docs/structrequest.html
 share/doc/monit/api-docs/structrequestwrapper.html
 share/doc/monit/api-docs/structresponse.html
-share/doc/monit/api-docs/sysdep_8c-source.html
-share/doc/monit/api-docs/sysdep_8c.html
 share/doc/monit/api-docs/sysdep_8h-source.html
 share/doc/monit/api-docs/sysdep_8h.html
+share/doc/monit/api-docs/sysdep__DARWIN_8c-source.html
+share/doc/monit/api-docs/sysdep__DARWIN_8c.html
+share/doc/monit/api-docs/sysdep__FREEBSD_8c-source.html
+share/doc/monit/api-docs/sysdep__FREEBSD_8c.html
+share/doc/monit/api-docs/sysdep__HPUX_8c-source.html
+share/doc/monit/api-docs/sysdep__HPUX_8c.html
+share/doc/monit/api-docs/sysdep__LINUX_8c-source.html
+share/doc/monit/api-docs/sysdep__LINUX_8c.html
+share/doc/monit/api-docs/sysdep__SOLARIS_8c-source.html
+share/doc/monit/api-docs/sysdep__SOLARIS_8c.html
 share/doc/monit/api-docs/tree.html
 share/doc/monit/api-docs/tree.js
 share/doc/monit/api-docs/treeview.js
@@ -148,6 +163,7 @@ share/doc/monit/api-docs/validate_8c-source.html
 share/doc/monit/api-docs/validate_8c.html
 share/doc/monit/api-docs/xmalloc_8c-source.html
 share/doc/monit/api-docs/xmalloc_8c.html
+share/doc/monit/examples.html
 share/doc/monit/monit.html
 share/examples/monit/monitrc
 @dirrm share/examples/monit
