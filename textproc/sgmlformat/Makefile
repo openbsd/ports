@@ -4,7 +4,7 @@
 # Whom:			jfieber
 #
 # $FreeBSD: Makefile,v 1.9 1998/02/21 21:59:37 jfieber Exp $
-# $OpenBSD: Makefile,v 1.8 2000/09/20 20:56:19 matthieu Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/07 16:54:14 matthieu Exp $
 #
 
 DISTNAME=	sgmlformat-1.7
@@ -12,7 +12,7 @@ CATEGORIES=	textproc print
 NEED_VERSION=	 1.230
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 
-MAINTAINER=	matthieu@laas.fr
+MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes

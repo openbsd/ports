@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/09/26 02:55:17 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/07 16:49:23 matthieu Exp $
 # $FreeBSD: Makefile,v 1.4 1997/07/10 03:25:28 jfieber Exp $
 
 DISTNAME=	isoENTS
@@ -8,7 +8,7 @@ NEED_VERSION=	1.330
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	matthieu@laas.fr
+MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

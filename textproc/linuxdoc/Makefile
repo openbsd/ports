@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/09/16 14:53:39 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/07 16:52:34 matthieu Exp $
 # $FreeBSD: Makefile,v 1.4 1998/01/17 17:25:46 jfieber Exp $
 
 DISTNAME=	linuxdoc-1.1
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://fallout.campusview.indiana.edu/pub/sgml/
 
 RUN_DEPENDS=	${LOCALBASE}/share/sgml/iso8879/catalog::textproc/iso8879
 
-MAINTAINER=	matthieu@laas.fr
+MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
