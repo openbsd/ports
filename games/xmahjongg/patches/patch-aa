@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Mon Apr  3 22:40:40 2000
++++ Makefile.in	Wed Apr  5 04:23:32 2000
+@@ -510,13 +510,13 @@
+ 	./giftoc -extern -makename -dir $(srcdir) $(IMAGES) > $@
+ 
+ install-share:
+-	$(mkinstalldirs) $(pkgdatadir)/layouts $(pkgdatadir)/tiles $(pkgdatadir)/backgrounds
++	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/layouts $(DESTDIR)$(pkgdatadir)/tiles $(DESTDIR)$(pkgdatadir)/backgrounds
+ 	for i in $(LAYOUTS); do \
+-	$(INSTALL_DATA) $(srcdir)/share/layouts/$$i $(pkgdatadir)/layouts; done
++	$(INSTALL_DATA) $(srcdir)/share/layouts/$$i $(DESTDIR)$(pkgdatadir)/layouts; done
+ 	for i in $(TILESETS); do \
+-	$(INSTALL_DATA) $(srcdir)/share/tiles/$$i $(pkgdatadir)/tiles; done
++	$(INSTALL_DATA) $(srcdir)/share/tiles/$$i $(DESTDIR)$(pkgdatadir)/tiles; done
+ 	for i in $(BACKGROUNDS); do \
+-	$(INSTALL_DATA) $(srcdir)/share/backgrounds/$$i $(pkgdatadir)/backgrounds; done
++	$(INSTALL_DATA) $(srcdir)/share/backgrounds/$$i $(DESTDIR)$(pkgdatadir)/backgrounds; done
+ install-data-local: install-share
+ 
+ uninstall-local:
