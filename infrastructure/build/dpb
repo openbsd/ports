@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: dpb,v 1.12 2005/01/30 12:37:32 sturm Exp $
+# $OpenBSD: dpb,v 1.13 2005/03/03 21:08:03 sturm Exp $
 # Copyright (c) 2004 Nikolay Sturm <sturm@openbsd.org>.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -622,12 +622,13 @@ sub clean_up($)
 	unlink($opt_T) if ref $opt_T;
 
 	foreach my $node (keys %{$NODES}) {
-		my $pid = $NODES->{$node}{pid};
-		my $port = $SLAVES->{$pid}{port};
-
 		kill_ssh_master($NODES->{$node}{host});
 		unlink($NODES->{$node}{fifo}) if -p $NODES->{$node}{fifo};
 
+		# is there still anything building on this node?
+		my $pid = $NODES->{$node}{pid};
+		next if not defined $pid;
+		my $port = $SLAVES->{$pid}{port};
 		local $SIG{CHLD} = "DEFAULT";
 		clear_lock($port);
 	}
