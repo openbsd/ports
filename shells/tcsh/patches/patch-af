@@ -1,5 +1,5 @@
-*** config_f.h.bak	Fri Apr 26 23:17:30 1996
---- config_f.h	Mon Dec 16 03:53:59 1996
+*** config_f.h.orig	Fri Apr 26 13:17:30 1996
+--- config_f.h	Tue Dec 16 23:53:24 1997
 ***************
 *** 65,71 ****
    *		if you don't have <nl_types.h>, you don't want
@@ -21,3 +21,20 @@
   
   /*
    * LOGINFIRST   Source ~/.login before ~/.cshrc
+***************
+*** 129,135 ****
+   *		This can be much slower and no memory statistics will be
+   *		provided.
+   */
+! #if defined(PURIFY) || defined(MALLOC_TRACE)
+  # define SYSMALLOC
+  #else
+  # undef SYSMALLOC
+--- 133,139 ----
+   *		This can be much slower and no memory statistics will be
+   *		provided.
+   */
+! #if defined(PURIFY) || defined(MALLOC_TRACE) || defined(__OpenBSD__)
+  # define SYSMALLOC
+  #else
+  # undef SYSMALLOC
