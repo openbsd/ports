@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_obex_h,v 1.1.1.1 2004/11/12 08:04:22 grange Exp $
+--- src/obex.h.orig	Wed Oct 20 21:47:57 2004
++++ src/obex.h	Wed Oct 20 21:48:22 2004
+@@ -30,7 +30,11 @@
+ #ifndef OBEX_H
+ #define OBEX_H
+ 
++#ifndef __OpenBSD__
+ #include <stdint.h>
++#else
++#include <sys/types.h>
++#endif
+ 
+ #ifdef _WIN32
+ #include <winsock.h>

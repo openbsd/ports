@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/11/12 08:04:22 grange Exp $
+@lib lib/libopenobex.so.1.0
