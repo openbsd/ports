@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/23 06:10:42 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/26 18:38:51 espie Exp $
 #
 
 DISTNAME=	glimpse-4.1
@@ -14,8 +14,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
 DISTFILES=	glimpse-4.1.src.tar.gz
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+HAS_CONFIGURE=	Yes
+CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}'
+FAKE=		Yes
 
 pre-configure:
 	chmod ugo+x ${WRKSRC}/configure
