@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/09/27 14:56:31 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/04 21:54:00 jakob Exp $
 
 DISTNAME=	imap-4.7c2
 PKGNAME=	c-client-4.7c2
@@ -7,7 +7,7 @@ NEED_VERSION=	1.330
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/old/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     jakob@openbsd.org
+MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes

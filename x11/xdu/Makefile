@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/07/27 08:14:06 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/04 21:54:08 jakob Exp $
 
 DISTNAME=		xdu-3.0
 CATEGORIES=     	x11
 NEED_VERSION=		1.302
 
-MAINTAINER=		jakob@openbsd.org
+MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

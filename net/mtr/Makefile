@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2000/08/11 20:53:43 jakob Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/04 21:54:09 jakob Exp $
 
 DISTNAME=	mtr-0.42
 CATEGORIES=	net
 NEED_VERSION=	1.302
 
-MAINTAINER=     jakob@openbsd.org
+MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 HOMEPAGE=	http://www.bitwizard.nl/mtr/
 

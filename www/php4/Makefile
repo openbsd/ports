@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/04 21:19:13 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/04 21:54:05 jakob Exp $
 
 DISTNAME=	php-4.0.2
 PKGNAME=	php4-4.0.2
 CATEGORIES=	www lang
 NEED_VERSION=	1.319
 
-MAINTAINER=     jakob@openbsd.org
+MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 HOMEPAGE=	http://www.php.net/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/09/10 14:10:41 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/04 21:54:06 jakob Exp $
 
 DISTNAME=	tgif-4.1.39
 CATEGORIES=	graphics
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 
 HOMEPAGE=	http://bourbon.cs.umd.edu:8001/tgif/
 
-MAINTAINER=	jakob@openbsd.org
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	no
 PERMIT_PACKAGE_FTP=	yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/09/10 09:14:11 jakob Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/04 21:54:02 jakob Exp $
 
 DISTNAME=		gifsicle-1.21
 CATEGORIES=     	graphics
 NEED_VERSION=		1.302
 
-MAINTAINER=		jakob@openbsd.org
+MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/06/20 20:20:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/04 21:54:10 jakob Exp $
 
 DISTNAME=	logsurfer-1.5
 CATEGORIES=	security
 NEED_VERSION=	1.302
 
-MAINTAINER=     jakob@openbsd.org
+MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	YES
 PERMIT_PACKAGE_FTP=	YES

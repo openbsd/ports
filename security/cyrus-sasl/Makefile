@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/08/23 10:02:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/04 21:54:00 jakob Exp $
 
 DISTNAME=	cyrus-sasl-1.5.24
 CATEGORIES=     security
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 
 HOMEPAGE=	http://asg.web.cmu.edu/sasl/
 
-MAINTAINER=	jakob@openbsd.org
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes

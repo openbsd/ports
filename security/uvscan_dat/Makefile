@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/09/25 21:16:33 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/04 21:54:07 jakob Exp $
 # $NetBSD: Makefile,v 1.2 2000/06/19 14:30:02 rh Exp $
 
 DISTNAME=	dat-4094
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.nai.com/asp_set/download/dats/mcafee_4x.asp
 MASTER_SITES=	http://download.nai.com/products/datfiles/4.x/nai/
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	jakob@openbsd.org
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"Commercial software"
 PERMIT_PACKAGE_FTP=	"Commercial software"

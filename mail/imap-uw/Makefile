@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/07/18 21:58:50 jakob Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/04 21:54:03 jakob Exp $
 
 DISTNAME=	imap-4.7c2
 PKGNAME=	imap-uw-4.7c2
 CATEGORIES=	mail
 NEED_VERSION=	1.302
 
-MAINTAINER=     jakob@openbsd.org
+MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	no
 PERMIT_PACKAGE_FTP=	yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/08/15 17:12:36 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/04 21:54:02 jakob Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	gated-3-6
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.gated.merit.edu/net-research/gated/
 
 HOMEPAGE=	http://www.gated.org/
 
-MAINTAINER=	jakob@openbsd.org
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"commercial software"
 PERMIT_PACKAGE_FTP=	"commercial software"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/09/21 10:17:53 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/04 21:53:59 jakob Exp $
 
 VERSION=	9.0.0
 DISTNAME=	bind-${VERSION}
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.isc.org/isc/bind9/${VERSION}/ \
 
 HOMEPAGE=	http://www.isc.org/products/BIND/
 
-MAINTAINER=     jakob@openbsd.org
+MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

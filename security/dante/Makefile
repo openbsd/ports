@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/08/25 19:07:12 jakob Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/04 21:54:01 jakob Exp $
 
 DISTNAME=	dante-1.1.2
 CATEGORIES=	security
@@ -6,7 +6,7 @@ NEED_VERSION=	1.310
 
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/
 
-MAINTAINER=     jakob@openbsd.org
+MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

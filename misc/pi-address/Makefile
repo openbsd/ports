@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/09/10 12:42:47 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/04 21:54:10 jakob Exp $
 
 DISTNAME=	pi-address-0.4.0
 CATEGORIES=	misc x11
 NEED_VERSION=	1.322
 
-MAINTAINER=	jakob@openbsd.org
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes

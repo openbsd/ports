@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/07/14 08:13:48 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/04 21:54:03 jakob Exp $
 
 DISTNAME=	httptunnel-3.0.3
 CATEGORIES=	net
@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.nocrew.org/software/httptunnel/ \
 
 HOMEPAGE=	http://www.nocrew.org/software/httptunnel/
 
-MAINTAINER=	jakob@openbsd.org
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/06/20 20:32:23 jakob Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/04 21:54:08 jakob Exp $
 
 DISTNAME=	wmx-6pre6
 PKGNAME=        wmx-6pre6
@@ -8,7 +8,7 @@ NEED_VERSION=	1.302
 MASTER_SITES=	http://www.all-day-breakfast.com/wmx/
 HOMEPAGE=	http://www.all-day-breakfast.com/wmx/
 
-MAINTAINER=	jakob@openbsd.org
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	YES
 PERMIT_PACKAGE_FTP=	YES

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2000/09/14 12:10:19 jakob Exp $
+# $OpenBSD: Makefile,v 1.35 2000/10/04 21:54:01 jakob Exp $
 
 DISTNAME=	ethereal-0.8.12
 CATEGORIES=	net x11
@@ -14,7 +14,7 @@ HOMEPAGE=	http://ethereal.zing.org/
 LIB_DEPENDS=	gtk.1.2::x11/gtk+
 BUILD_DEPENDS=	python::lang/python
 
-MAINTAINER=     jakob@openbsd.org
+MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
