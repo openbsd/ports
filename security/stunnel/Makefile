@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2002/10/28 17:30:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2002/10/30 11:10:35 jakob Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
-DISTNAME=	stunnel-3.22
+DISTNAME=	stunnel-4.03
 CATEGORIES=	security
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
@@ -22,21 +22,20 @@ MASTER_SITES=	ftp://stunnel.mirt.net/stunnel/ \
 		ftp://ftp.uni-freiburg.de/pub/net/stunnel/ \
 		ftp://ftp.all.de/pub2/unix/security/stunnel/
 
-BUILD_DEPENDS=  ::textproc/p5-sdf
-
+SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pem-dir=${SYSCONFDIR}/ssl \
-			--with-random=/dev/arandom
-ALL_TARGET=		stunnel stunnel.8
-REGRESS_TARGET=		test
-REGRESS_IS_INTERACTIVE=	Yes
-
-post-configure:
-	rm ${WRKSRC}/stunnel.8
+			--with-random=/dev/arandom \
+			--with-ssl=/usr \
+			--localstatedir=/var
+NO_REGRESS=		Yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/stunnel ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/stunnel.8 ${PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKBUILD}/src/stunnel ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKBUILD}/doc/stunnel.8 ${PREFIX}/man/man8
+	${INSTALL_DATA_DIR} ${PREFIX}/examples/stunnel
+	${INSTALL_DATA} ${WRKBUILD}/tools/stunnel.conf-sample \
+		${PREFIX}/examples/stunnel
 
 .include <bsd.port.mk>
