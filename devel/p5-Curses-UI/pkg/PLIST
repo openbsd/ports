@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/24 18:05:31 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/05/24 18:13:18 avsm Exp $
 ${P5SITE}/Curses/UI.pm
 ${P5SITE}/Curses/UI/Buttonbox.pm
 ${P5SITE}/Curses/UI/Calendar.pm
@@ -56,6 +56,13 @@ man/man3p/Curses::UI::TextEntry.3p
 man/man3p/Curses::UI::TextViewer.3p
 man/man3p/Curses::UI::Widget.3p
 man/man3p/Curses::UI::Window.3p
+share/examples/p5-Curses-UI/demo-language
+share/examples/p5-Curses-UI/demo-widgets
+share/examples/p5-Curses-UI/editor
+share/examples/p5-Curses-UI/hello_world
+share/examples/p5-Curses-UI/mouse_focustest
+share/examples/p5-Curses-UI/pop3_reader
+@dirrm share/examples/p5-Curses-UI
 @dirrm ${P5SITE}/Curses/UI/Language
 @dirrm ${P5SITE}/Curses/UI/Dialog
 @dirrm ${P5SITE}/Curses/UI
