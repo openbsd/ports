@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2000/04/17 19:29:47 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2000/06/05 09:02:30 jakob Exp $
 
 DISTNAME=	php-3.0.16
 PKGNAME=	php3-3.0.16
 CATEGORIES=	www lang
+NEED_VERSION=	1.234
 
 MAINTAINER=     jakob@openbsd.org
 
@@ -29,7 +30,7 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 
 BUILD_DEPENDS+=		${PREFIX}/lib/libexpat.a::textproc/expat
 
-FLAVORS=	mysql
+FLAVORS=	mysql postgresql
 
 FLAVOR?=
 .if ${FLAVOR:L} == "mysql"
@@ -37,6 +38,13 @@ CONFIGURE_ARGS+=	--with-mysql
 BUILD_DEPENDS+=		${PREFIX}/lib/mysql/libmysqlclient.a::databases/mysql
 .else
 CONFIGURE_ARGS+=	--without-mysql 
+.endif
+
+.if ${FLAVOR:L} == "postgresql"
+CONFIGURE_ARGS+=	--with-pgsql
+BUILD_DEPENDS+=		${PREFIX}/pgsql/lib/libpq.a::databases/postgresql
+.else
+CONFIGURE_ARGS+=	--without-pgsql
 .endif
 
 do-install:
