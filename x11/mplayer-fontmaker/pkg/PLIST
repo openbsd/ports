@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/28 11:24:04 espie Exp $
+bin/mksubfont
+bin/subfont
+libdata/mplayer-osd/osd-encoding
+libdata/mplayer-osd/osd.pfb
+share/doc/mplayer-fontmaker
+@dirrm libdata/mplayer-osd
