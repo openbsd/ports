@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2002/10/29 08:25:13 jakob Exp $
+# $OpenBSD: INSTALL,v 1.5 2002/10/29 16:25:28 jakob Exp $
 #
 # Pre/post-installation setup of postfix
 
@@ -129,7 +129,7 @@ do_notice()
     echo ""
     echo "+---------------"
     echo "| Postfix can be set up to replace sendmail entirely. Please read the"
-    echo "| documentation at file:$PREFIX/share/doc/postfix/index.html or"
+    echo "| documentation at file:$PREFIX/share/doc/postfix/html/index.html or"
     echo "| http://www.postfix.org/ carefully before you decide to do this!"
     echo "|"
     echo "| To replace sendmail with postfix you have to install a new mailer.conf"
