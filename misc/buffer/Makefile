@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2004/06/25 03:52:14 xsa Exp $
+# $OpenBSD: Makefile,v 1.21 2004/11/18 13:49:20 naddy Exp $
 
 COMMENT=	"buffer sporadic I/O for faster tape and pipe throughput"
 
 DISTNAME=	buffer-1.17.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	misc
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>

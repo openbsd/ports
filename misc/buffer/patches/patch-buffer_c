@@ -1,0 +1,137 @@
+$OpenBSD: patch-buffer_c,v 1.1 2004/11/18 13:49:20 naddy Exp $
+--- buffer.c.orig	Sat Oct 30 18:54:47 1999
++++ buffer.c	Wed Nov 17 15:55:05 2004
+@@ -168,7 +168,7 @@ int max_shmem = DEF_SHMEM;
+ /* the shared memory id of the buffer */
+ int buffer_id = NONE;
+ struct block {
+-	int bytes;
++	int *bytes;
+ 	char *data;
+ } *curr_block;
+ 
+@@ -185,12 +185,13 @@ struct buffer {
+ 	int next_block_in;
+ 	int next_block_out;
+ 
+-	struct block block[ MAX_BLOCKS ];
+-
+ 	/* These actual space for the blocks is here - the array extends
+ 	 * pass 1 */
+ 	char data_space[ 1 ];
+ } *pbuffer = NO_BUFFER;
++
++struct block block[ MAX_BLOCKS ];
++
+ int buffer_size;
+ 
+ int fdin	= 0;
+@@ -447,7 +448,7 @@ buffer_allocate()
+ 
+ 	/* Allow for the data space */
+ 	buffer_size = sizeof( struct buffer ) +
+-		((blocks * blocksize) - sizeof( char ));
++		(blocks * (sizeof(int) + blocksize) - sizeof( char ));
+ 
+ 	/* Create the space for the buffer */
+ 	buffer_id = shmget( IPC_PRIVATE,
+@@ -533,8 +534,13 @@ get_buffer()
+ 
+ 	/* Setup the data space pointers */
+ 	for( b = 0; b < blocks; b++ )
+-		pbuffer->block[ b ].data =
+-			&pbuffer->data_space[ b * blocksize ];
++	{
++		block[ b ].bytes =
++			(int *)&pbuffer->data_space[ b * blocksize + b * sizeof(int)];
++		block[ b ].data =
++			&pbuffer->data_space[ b * blocksize + 
++				( b + 1 ) * sizeof(int)];
++	}
+ 
+ }
+ 
+@@ -592,7 +598,7 @@ get_next_free_block()
+ 	/* Maybe wait till there is room in the buffer */
+ 	lock( pbuffer->semid, pbuffer->blocks_free_lock );
+ 
+-	curr_block = &pbuffer->block[ pbuffer->next_block_in ];
++	curr_block = &block[ pbuffer->next_block_in ];
+ 
+ 	pbuffer->next_block_in = INC( pbuffer->next_block_in );
+ }
+@@ -605,7 +611,7 @@ fill_block()
+ 	static char eof_reached = 0;
+ 	
+ 	if( eof_reached ){
+-		curr_block->bytes = 0;
++		*curr_block->bytes = 0;
+ 		unlock( pbuffer->semid, pbuffer->blocks_used_lock );
+ 		return 0;
+ 	}
+@@ -631,10 +637,10 @@ fill_block()
+ 
+ 	/* number of bytes available. Zero will be taken as eof */
+ 	if( !padblock || toread == blocksize )
+-		curr_block->bytes = blocksize - toread;
++		*curr_block->bytes = blocksize - toread;
+ 	else {
+ 		if( toread ) bzero( start, toread );
+-		curr_block->bytes = blocksize;
++		*curr_block->bytes = blocksize;
+ 	}
+ 
+ 	if( debug > 1 )
+@@ -642,7 +648,7 @@ fill_block()
+ 
+ 	unlock( pbuffer->semid, pbuffer->blocks_used_lock );
+ 
+-	return curr_block->bytes;
++	return *curr_block->bytes;
+ }
+ 
+ /* Write the buffer to stdout */
+@@ -697,14 +703,14 @@ get_next_filled_block()
+ 	/* Hang till some data is available */
+ 	lock( pbuffer->semid, pbuffer->blocks_used_lock );
+ 
+-	curr_block = &pbuffer->block[ pbuffer->next_block_out ];
++	curr_block = &block[ pbuffer->next_block_out ];
+ 
+ 	pbuffer->next_block_out = INC( pbuffer->next_block_out );
+ }
+ 
+ data_to_write()
+ {
+-	return curr_block->bytes;
++	return *curr_block->bytes;
+ }
+ 
+ write_blocks_to_stdout( filled, first_block )
+@@ -714,7 +720,7 @@ write_blocks_to_stdout( filled, first_bl
+ 	pbuffer->next_block_out = first_block;
+ 
+ 	while( filled-- ){
+-		curr_block = &pbuffer->block[ pbuffer->next_block_out ];
++		curr_block = &block[ pbuffer->next_block_out ];
+ 		pbuffer->next_block_out = INC( pbuffer->next_block_out );
+ 		write_block_to_stdout();
+ 	}
+@@ -734,7 +740,7 @@ write_block_to_stdout()
+ 		next_k = showevery;
+ 	}
+ 
+-	if( (written = write( fdout, curr_block->data, curr_block->bytes )) != curr_block->bytes ){
++	if( (written = write( fdout, curr_block->data, *curr_block->bytes )) != *curr_block->bytes ){
+ 		report_proc();
+ 		perror( "write of data failed" );
+ 		fprintf( stderr, "bytes to write=%d, bytes written=%d, total written %10luK\n", curr_block->bytes, written, outk );
+@@ -745,7 +751,7 @@ write_block_to_stdout()
+ 		usleep( write_pause );
+ 	}
+ 
+-	out = curr_block->bytes / 1024;
++	out = *curr_block->bytes / 1024;
+ 	outk += out;
+ 	last_gb += out;
+ 
