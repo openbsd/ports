@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.10 1998/10/16 21:08:21 marc Exp $
+$OpenBSD: LICENSE,v 1.11 1998/11/12 12:09:37 downsj Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -372,6 +372,7 @@ Y	print/ghostscript5		ghostscript-5.10gnu.tar.gz	GNU
 Y	print/ghostscript5	ghostscript-fonts-other-5.10.tar.gz	COPY
 Y	print/ghostscript5	ghostscript-fonts-std-5.10.tar.gz	COPY
 Y	print/ghostscript5		hp850.zip			NONE
+N	print/ghostscript5		pdf_sec.ps			CRYPTO
 Y	print/ghostview			ghostview-1.5.tar.gz		GPL
 Y	print/gv			gv-3.5.8.tar.gz			GPL
 Y	print/lyx			lyx-0.12.0.tar.gz		GPL
