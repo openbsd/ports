@@ -1,0 +1,91 @@
+$OpenBSD: patch-help_cc,v 1.1 2004/01/24 22:26:07 naddy Exp $
+--- help.cc.orig	2004-01-24 23:08:33.000000000 +0100
++++ help.cc	2004-01-24 23:11:49.000000000 +0100
+@@ -6,31 +6,31 @@ help::help() {
+ // Display usage if argc != 1
+ void
+ help::showUsage() {
+-  ptrDisplay->showText("\n\
+-Usage: prepop
+-
+-After launching prepop, type 'help' or '?' to get help on available commands.
+-
+-Description:
+-prepop is a simple \"online\" POP3 email client, very suitable for dialups and
+-other slow connections. It lets you read the text/plain part of your email
+-messages without having to download those big pesky attachments (over dialups
+-this can sometimes take a long time and during this time you often have no idea
+-on how much data is left to be transferred). With prepop you can also see the
+-size of all the messages when listing them. You can't reply to messages since
+-this was not what prepop was designed to do. prepop was not designed to be an
+-alternative to your current email client. It's more of a complementing email
+-client doing some of the things your ordinary email client should have handled
+-in the first place.
+-
+-Send comments, suggestions, contributions and bugreports to:
+-  Anders Rundegren <pt96aru@hem.passagen.se>
+-
+-prepop comes with ABSOLUTELY NO WARRANTY. It is distributed \"AS IS\".
+-This is free software, and you are welcome to redistribute it according to the
+-terms of the GNU General Public License version 2. This license can be found at
+-http://www.gnu.org.\n
+-");
++  ptrDisplay->showText("\n"
++"Usage: prepop\n"
++"\n"
++"After launching prepop, type 'help' or '?' to get help on available commands.\n"
++"\n"
++"Description:\n"
++"prepop is a simple \"online\" POP3 email client, very suitable for dialups and\n"
++"other slow connections. It lets you read the text/plain part of your email\n"
++"messages without having to download those big pesky attachments (over dialups\n"
++"this can sometimes take a long time and during this time you often have no idea\n"
++"on how much data is left to be transferred). With prepop you can also see the\n"
++"size of all the messages when listing them. You can't reply to messages since\n"
++"this was not what prepop was designed to do. prepop was not designed to be an\n"
++"alternative to your current email client. It's more of a complementing email\n"
++"client doing some of the things your ordinary email client should have handled\n"
++"in the first place.\n"
++"\n"
++"Send comments, suggestions, contributions and bugreports to:\n"
++"  Anders Rundegren <pt96aru@hem.passagen.se>\n"
++"\n"
++"prepop comes with ABSOLUTELY NO WARRANTY. It is distributed \"AS IS\".\n"
++"This is free software, and you are welcome to redistribute it according to the\n"
++"terms of the GNU General Public License version 2. This license can be found at\n"
++"http://www.gnu.org.\n\n"
++);
+ }
+ 
+ // Display help that lists all commands
+@@ -128,18 +128,18 @@ help::aboutBox() {
+   ptrDisplay->showText(DATE);
+   ptrDisplay->showText("), GNU readline lib v");
+   ptrDisplay->showText(rl_library_version);
+-  ptrDisplay->showText("\n
+-Latest version can be found at:
+-  http://www.rundegren.com
+-
+-Send comments, suggestions, contributions and bugreports to:
+-  Anders Rundegren <pt96aru@hem.passagen.se>
+-
+-prepop comes with ABSOLUTELY NO WARRANTY. It is distributed \"AS IS\".
+-This is free software, and you are welcome to redistribute it according to the
+-terms of the GNU General Public License version 2. This license can be found at
+-http://www.gnu.org.\n
+-");
++  ptrDisplay->showText("\n"
++"Latest version can be found at:\n"
++"  http://www.rundegren.com\n"
++"\n"
++"Send comments, suggestions, contributions and bugreports to:\n"
++"  Anders Rundegren <pt96aru@hem.passagen.se>\n"
++"\n"
++"prepop comes with ABSOLUTELY NO WARRANTY. It is distributed \"AS IS\".\n"
++"This is free software, and you are welcome to redistribute it according to the\n"
++"terms of the GNU General Public License version 2. This license can be found at\n"
++"http://www.gnu.org.\n\n"
++);
+ }
+ 
+ help::~help() {
