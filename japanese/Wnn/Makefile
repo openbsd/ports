@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.36 2001/04/20 15:12:03 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2001/04/23 23:19:02 espie Exp $
 
 COMMENT= 	"Japanese input method"
 COMMENT-dict=	"dictionaries for Japanese Wnn"
@@ -32,6 +32,7 @@ WNNDICDIR=/var/dict/Wnn
 WNNBASE=${PREFIX}
 
 .if defined(PACKAGING)
+SUBPACKAGE?=
 .  if ${SUBPACKAGE} == "-dict"
 CATEGORIES=	japanese
 PREFIX=${WNNDICDIR}

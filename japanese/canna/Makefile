@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/04/20 15:12:05 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/04/23 23:19:02 espie Exp $
 
 COMMENT= 	'canna (kana-kanji converter) libraries'
 COMMENT-dict=	'canna (kana-kanji converter) dictionaries'
@@ -32,8 +32,11 @@ PERMIT_DISTFILES_CDROM=	No Fee
 
 MULTI_PACKAGES=-dict -server
 
-.if defined(PACKAGING) && ${SUBPACKAGE}=="-dict"
+.if defined(PACKAGING) 
+SUBPACKAGE?=
+.  if ${SUBPACKAGE}=="-dict"
 PREFIX=		/var/dict
+.  endif
 .endif
 
 SUBST_VARS=	DICT_DIR
