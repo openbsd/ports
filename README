@@ -1,0 +1,34 @@
+Welcome to the OpenBSD ports collection.  
+For more information on the OpenBSD ports tree please visit
+        http://www.openbsd.org/ports.html
+
+For general information on the OpenBSD tree please visit
+	http://www.openbsd.org
+
+
+The OpenBSD ports tree is always growing. Therefor if is essential
+that you continue to update your ports dir thru cvs or ftp.
+
+If you are interested in creating a new port or contributing please 
+visit
+	http://www.openbsd.org/porting.html
+If you would like to search for a given port, you can do so easily
+by saying:
+
+	make search key="<keyword>"
+
+Which will generate a list of all ports matching <keyword>.
+
+NOTE:  This tree can GROW significantly in size during normal usage!
+The distribution tar files can and do accumulate in /usr/ports/distfiles,
+and the individual ports will also use up lots of space in their work
+subdirectories unless you remember to "make clean" after you're done
+building a given port.  /usr/ports/distfiles can also be periodically
+cleaned without ill-effect, though if you don't have the original
+distribution tarball(s) for something on CDROM then you will need to pull
+it all over your network connection again if you ever try to build the
+associated port.
+
+For help or other information 
+Please sendmail to 
+ports@OpenBSD.ORG
