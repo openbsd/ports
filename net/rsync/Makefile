@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2003/02/20 10:52:45 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2003/05/11 22:20:55 naddy Exp $
 
 COMMENT=	"mirroring/synchronization over low bandwidth links"
 
@@ -20,8 +20,7 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/rsync/ \
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-ipv6 \
-			--with-included-popt \
+CONFIGURE_ARGS=		--with-included-popt \
 			--with-rsh=ssh
 
 DOCDIR=	${PREFIX}/share/doc/rsync
