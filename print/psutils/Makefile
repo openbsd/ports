@@ -3,11 +3,11 @@
 # Date created:         17 March 1998
 # Whom:                 mickey@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.2 1998/08/10 18:19:16 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/08/10 22:03:17 marc Exp $
 #
 
 DISTNAME=	psutils-p17
-PKGNAME=	psutils-${PAPERSIZE}-1.17
+PKGNAME=	psutils-1.17
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/
 
