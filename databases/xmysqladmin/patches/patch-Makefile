@@ -1,6 +1,6 @@
---- Makefile.orig	Mon Dec  7 04:52:39 1998
-+++ Makefile	Sun Apr  9 03:34:57 2000
-@@ -34,7 +34,7 @@
+--- Makefile.orig	Mon Dec  7 12:52:39 1998
++++ Makefile	Thu Feb  8 21:11:30 2001
+@@ -34,7 +34,7 @@ INSTALL = install
  # This is used by 'make install' command
  #-------------------------------------------------------
  #INSTALLPATH = /opt/local/i386/bin
@@ -9,7 +9,7 @@
  ########################################################
  
  
-@@ -45,7 +45,7 @@
+@@ -45,7 +45,7 @@ INSTALLPATH = /usr/local/bin
  # pixmap file location (mysql.xpm)
  #-------------------------------------------------------
  #PIXMAPPATH = /opt/local/lib
@@ -18,7 +18,7 @@
  ########################################################
  
  
-@@ -80,8 +80,7 @@
+@@ -80,8 +80,7 @@ BACKUPDIR = /tmp
  # Compilation Details
  # hum... I think you dont need to change this
  #-------------------------------------------------------
@@ -28,7 +28,7 @@
              -DBACKUP=\"$(BACKUP)\" -DBACKUPDIR=\"$(BACKUPDIR)\" \
              -DBACKUPSUFFIX=\"$(BACKUPSUFFIX)\" \
              -DMYSQL_VERSION=$(MYSQL_VERSION)
-@@ -95,7 +94,7 @@
+@@ -95,7 +94,7 @@ STDLFLAGS = 
  ########################################################
  # mysql include dir 
  #-------------------------------------------------------
@@ -37,7 +37,7 @@
  ########################################################
  
  
-@@ -107,7 +106,7 @@
+@@ -107,7 +106,7 @@ MYSQLINC = -I/usr/local/mysql/include/my
  # mysql database dir
  #-------------------------------------------------------
  #MYSQLDBDIR = -DMYSQLDBDIR="\"/var/lib/mysql/\""
@@ -46,7 +46,7 @@
  ########################################################
  
  
-@@ -118,7 +117,7 @@
+@@ -118,7 +117,7 @@ MYSQLDBDIR = -DMYSQLDBDIR="\"/usr/local/
  ########################################################
  # mysql library dir
  #-------------------------------------------------------
@@ -55,7 +55,7 @@
  ########################################################
  
  
-@@ -129,7 +128,7 @@
+@@ -129,7 +128,7 @@ MYSQLLOAD = -Wl,-R/usr/local/mysql/lib/m
  # xforms librairies dir
  #-------------------------------------------------------
  #XFORMLIBDIR = -L/opt/local/i386/lib
@@ -64,7 +64,7 @@
  ########################################################
  
  
-@@ -141,7 +140,7 @@
+@@ -141,7 +140,7 @@ XFORMLIBDIR = -L/usr/lib
  # xforms include dir (xforms.h)
  #-------------------------------------------------------
  #XFORMINCDIR = -I/opt/local/include
@@ -73,7 +73,7 @@
  ########################################################
  
  
-@@ -156,8 +155,8 @@
+@@ -156,8 +155,8 @@ XFORMINCDIR = -I/usr/X11R6/include
  #XLOAD = -L/usr/openwin/lib  -lX11
  
  # Use this for Linux:
@@ -84,7 +84,7 @@
  ########################################################
  
  
-@@ -215,8 +214,7 @@
+@@ -215,8 +214,7 @@ OBJS =  xmysqladmin.o \
  ${PROGRAM}: $(OBJS)
  	$(CC) -o ${PROGRAM} $(OBJS) $(MYSQLINC) $(XFORMINCDIR) \
  	$(XINC) $(STDLFLAGS) $(MYSQLLOAD) \
@@ -94,10 +94,12 @@
  
  .c.o:
  	$(CC) $*.c $(STDCFLAGS) $(XFORMINCDIR) $(MYSQLINC) $(MYSQLDBDIR) $(XINC)
-@@ -227,6 +225,7 @@
+@@ -226,7 +224,8 @@ clean:
+ 
  install:
  	strip $(PROGRAM)
- 	$(INSTALL) -m 711 $(PROGRAM) $(INSTALLPATH)
+-	$(INSTALL) -m 711 $(PROGRAM) $(INSTALLPATH)
++	$(INSTALL) -m ${BINMODE} $(PROGRAM) $(INSTALLPATH)
 +	mkdir -p $(PIXMAPPATH)
  	cp mysql.xpm $(PIXMAPPATH)
  
