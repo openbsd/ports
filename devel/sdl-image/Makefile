@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/26 17:40:40 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2002/06/23 07:55:59 mark Exp $
 
 COMMENT=	"SDL image library"
 
-VER=		1.2.1
+VER=		1.2.2
 PROJ=		SDL_image
 DISTNAME=	${PROJ}-${VER}
 PKGNAME=	sdl-image-${VER}
