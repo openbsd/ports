@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2001/07/19 18:07:14 jasoni Exp $
+# $OpenBSD: Makefile,v 1.32 2001/07/28 18:43:49 matt Exp $
 
 COMMENT= 	"interpreted object-oriented programming language"
 COMMENT-tools=	"extra tools for python"
@@ -7,7 +7,7 @@ VERSION=	2.1
 PKGNAME=	python-${VERSION}
 DISTNAME=	Python-${VERSION}
 CATEGORIES=	lang
-NEED_VERSION=	1.363
+NEED_VERSION=	1.405
 MASTER_SITES=	ftp://ftp.python.org/pub/python/${VERSION}/
 EXTRACT_SUFX=	.tgz
 
@@ -37,10 +37,10 @@ LIB_DEPENDS=	tk83::x11/tk/8.3
 SETUP_LOCAL+=	Setup.tk
 .endif
 
-CONFIGURE_STYLE= gnu dest
+CONFIGURE_STYLE= autoconf dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-fpectl 
-MAKE_FLAGS+=	OPT="${CFLAGS}"
+CONFIGURE_ENV+=	OPT='${CFLAGS}' LDSHARED="cc -shared -fpic"
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a::devel/gmp
 
@@ -107,3 +107,4 @@ finish-setup:
 		${FILESDIR}/${file} >> ${WRKSRC}/Modules/Setup.local
 .endfor
 	(cd ${WRKSRC}; make Makefile)
+
