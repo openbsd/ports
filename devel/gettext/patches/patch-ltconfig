@@ -1,0 +1,32 @@
+--- ltconfig.orig	Mon Apr 27 17:22:35 1998
++++ ltconfig	Wed Oct 18 20:20:57 2000
+@@ -702,7 +702,7 @@
+ runpath_var=
+ 
+ case "$host_os" in
+-amigaos* | sunos4*)
++amigaos* | sunos4* | openbsd*)
+   # On these operating systems, we should treat GNU ld like the system ld.
+   gnu_ld_acts_native=yes
+   ;;
+@@ -815,10 +815,18 @@
+     ;;
+ 
+   openbsd*)
+-    archive_cmds='$LD -Bshareable -o $lib$libobjs'
+-    hardcode_libdir_flag_spec='-R$libdir'
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
++    case "$host_os" in
++      openbsd2.[01234567])
++	archive_cmds='$LD -Bshareable -o $lib$libobjs'
++	hardcode_libdir_flag_spec='-R$libdir'
++      ;;
++      *)
++	archive_cmds='$CC -shared $pic_flag -o $lib$libobjs'
++	hardcode_libdir_flag_spec='${wl}-rpath ${wl}$libdir'
++      ;;
++    esac
+     ;;
+ 
+   os2*)
