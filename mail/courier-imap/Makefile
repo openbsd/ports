@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2000/12/29 18:51:56 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.7 2001/01/15 23:37:18 avsm Exp $ 
 
-DISTNAME=	courier-imap-1.3.0
+DISTNAME=	courier-imap-1.3.1
 CATEGORIES=	mail
 NEED_VERSION=	1.346
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
