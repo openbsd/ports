@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.342 2000/12/14 13:08:59 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.343 2000/12/14 13:13:53 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2341,7 +2341,7 @@ README.html:
 	fi
 .endfor
 	@cat ${README_NAME} | \
-		sed -e 's|%%PORT%%|'"`${MAKE} package-path | ${HTMLIFY}`"'|g' \
+		sed -e 's|%%PORT%%|'"`echo ${PKGPATH}  | ${HTMLIFY}`"'|g' \
 			-e '/%%PKG%%/r$@.tmp3' -e '//d' \
 			-e '/%%COMMENT%%/r${PKGDIR}/COMMENT' -e '//d' \
 			-e '/%%DESCR%%/r${PKGDIR}/DESCR' -e '//d' \
