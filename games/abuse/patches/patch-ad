@@ -1,3 +1,5 @@
+$OpenBSD: patch-ad,v 1.2 1999/11/01 22:06:48 rohee Exp $
+
 --- abuse/abuse.in.orig	Wed Jul  9 00:54:43 1997
 +++ abuse/abuse.in	Sat Aug 29 04:26:04 1998
 @@ -27,5 +27,5 @@

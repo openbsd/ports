@@ -1,3 +1,7 @@
+$OpenBSD: patch-aa,v 1.2 1999/11/01 22:06:48 rohee Exp $
+
+Fix a possible buffer overflow...
+
 *** abuse/src/net/mac/tcpip.c.orig	Sat Apr 25 20:42:09 1998
 --- abuse/src/net/mac/tcpip.c	Sat Apr 25 20:42:33 1998
 ***************
