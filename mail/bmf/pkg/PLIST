@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/22 02:07:34 lebel Exp $
+bin/bmf
+bin/bmfconv
+man/man1/bmf.1
+man/man1/bmfconv.1
+share/doc/bmf/README
+@dirrm share/doc/bmf
