@@ -19,4 +19,4 @@ include/glib.h
 include/gmodule.h
 @dirrm lib/glib/include
 @dirrm lib/glib
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib
+@exec /sbin/ldconfig -m %B

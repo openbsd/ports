@@ -1,6 +1,6 @@
---- docs/Makefile.in.orig	Tue Mar 16 15:31:39 1999
-+++ docs/Makefile.in	Tue Mar 16 15:31:48 1999
-@@ -81,7 +81,7 @@
+--- docs/Makefile.in.orig	Thu Mar 25 21:53:28 1999
++++ docs/Makefile.in	Thu Mar 25 21:53:41 1999
+@@ -84,7 +84,7 @@
  LT_RELEASE = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
  MAINT = @MAINT@

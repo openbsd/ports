@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Mar 16 15:30:56 1999
-+++ Makefile.in	Tue Mar 16 15:31:14 1999
-@@ -113,7 +113,7 @@
+--- Makefile.in.orig	Thu Mar 25 21:49:17 1999
++++ Makefile.in	Thu Mar 25 21:49:48 1999
+@@ -117,7 +117,7 @@
  configinclude_DATA =  	glibconfig.h
  
  

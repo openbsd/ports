@@ -1,6 +1,6 @@
---- gthread/Makefile.in.orig	Tue Mar 16 15:29:59 1999
-+++ gthread/Makefile.in	Tue Mar 16 15:30:23 1999
-@@ -97,7 +97,7 @@
+--- gthread/Makefile.in.orig	Thu Mar 25 21:51:41 1999
++++ gthread/Makefile.in	Thu Mar 25 21:51:52 1999
+@@ -101,7 +101,7 @@
  lib_LTLIBRARIES = libgthread.la
  
  libgthread_la_SOURCES = gthread.c

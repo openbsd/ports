@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 1999/03/26 01:55:53 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1999/03/26 04:40:01 brad Exp $
 
-DISTNAME=	glib-1.2.0
+DISTNAME=	glib-1.2.1
 CATEGORIES=	devel
 
 NEED_VERSION=	1.73
