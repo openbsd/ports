@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2001/08/20 19:48:58 lebel Exp $
+# $OpenBSD: Makefile,v 1.76 2001/08/29 02:14:05 shell Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -36,6 +36,8 @@
      SUBDIR += kbiff
      SUBDIR += mailcrypt
      SUBDIR += maildrop
+     SUBDIR += mailman
+     SUBDIR += mailman,postfix
      SUBDIR += majordomo
      SUBDIR += metamail
      SUBDIR += mh
