@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/01/05 21:57:47 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2003/04/19 19:12:41 brad Exp $
 
 COMMENT=	"small, fast & usable window manager"
 
@@ -9,6 +9,8 @@ MASTER_SITES=	http://icculus.org/openbox/releases/
 HOMEPAGE=	http://icculus.org/openbox/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
+
+BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,6 +27,7 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --enable-xinerama
+CONFIGURE_ENV=	PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
 
 NO_REGRESS=	Yes
 
