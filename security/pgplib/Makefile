@@ -3,7 +3,7 @@
 # Date created:		September 28, 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/02/25 04:25:45 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/23 05:09:33 turan Exp $
 
 #BROKEN=		inconsistant build failures
 
@@ -12,10 +12,13 @@ PKGNAME=	PGPlib
 CATEGORIES=	security
 MASTER_SITES=	ftp://dslab1.cs.uit.no/pub/
 
-NO_CDROM=       "CRYPTO: Third party crypto not allowed."
-RESTRICTED=     "Crypto; export-controlled"
-
 MAINTAINER=	ports@openbsd.org
+
+#This port contains crypto subject to US export laws.
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -3,13 +3,18 @@
 # Date created:		21 Feb 2000
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/28 15:48:12 dugsong Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/23 05:09:33 turan Exp $
 
 DISTNAME=	its4-1.0.1
 
 CATEGORIES=	security
 
 MAINTAINER=	dugsong@monkey.org
+
+PERMIT_PACKAGE_CDROM=	"commercial.  licensing restrictions."
+PERMIT_PACKAGE_FTP=	"commercial.  licensing restrictions."
+PERMIT_DISTFILES_CDROM=	"commercial.  licensing restrictions."
+PERMIT_DISTFILES_FTP=	"commercial.  licensing restrictions."
 
 MASTER_SITES=	see-do-fetch-target
 
