@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/09 14:21:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/04/09 16:25:14 espie Exp $
 bin/assistant
 bin/designer3
 bin/findtr3
@@ -1159,7 +1159,7 @@ share/doc/qt3/README
 share/doc/qt3/README.QT
 share/doc/qt3/changes-3.${VERSION}
 %%SHARED%%
-@exec rmdir %D/share/doc/qt3 || true
+@unexec rmdir 2>/dev/null %D/share/doc/qt3 || true
 @exec mkdir -p %D/lib/qt3/plugins/styles
 @exec mkdir -p %D/lib/qt3/plugins/sqldrivers
 @dirrm lib/qt3/plugins/styles
