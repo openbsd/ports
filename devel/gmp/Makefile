@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2002/12/13 23:56:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2003/03/29 00:30:59 naddy Exp $
 
 COMMENT=	"library for arbitrary precision arithmetic"
 
-DISTNAME=	gmp-4.1.1
+DISTNAME=	gmp-4.1.2
 CATEGORIES=	devel math
 
 HOMEPAGE=	http://www.swox.com/gmp/
