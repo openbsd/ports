@@ -1,7 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/07/02 11:17:14 fgsch Exp $
 bin/xbill
 man/cat1/xbill.0
-share/xbill/scores
 share/xbill/README
+share/xbill/bitmaps/apple.xbm
+share/xbill/bitmaps/bsd.xbm
+share/xbill/bitmaps/bucket.xbm
+share/xbill/bitmaps/hand_down.xbm
+share/xbill/bitmaps/hand_down_mask.xbm
+share/xbill/bitmaps/hand_up.xbm
+share/xbill/bitmaps/hand_up_mask.xbm
+share/xbill/bitmaps/hurd.xbm
+share/xbill/bitmaps/linux.xbm
+share/xbill/bitmaps/next.xbm
+share/xbill/bitmaps/os2.xbm
+share/xbill/bitmaps/redhat.xbm
+share/xbill/bitmaps/sgi.xbm
+share/xbill/bitmaps/sun.xbm
 share/xbill/pixmaps/about.xpm
 share/xbill/pixmaps/apple.xpm
 share/xbill/pixmaps/billA_0.xpm
@@ -49,20 +63,7 @@ share/xbill/pixmaps/sun.xpm
 share/xbill/pixmaps/suncpu.xpm
 share/xbill/pixmaps/toaster.xpm
 share/xbill/pixmaps/wingdows.xpm
-share/xbill/bitmaps/apple.xbm
-share/xbill/bitmaps/bsd.xbm
-share/xbill/bitmaps/bucket.xbm
-share/xbill/bitmaps/hand_down.xbm
-share/xbill/bitmaps/hand_down_mask.xbm
-share/xbill/bitmaps/hand_up.xbm
-share/xbill/bitmaps/hand_up_mask.xbm
-share/xbill/bitmaps/hurd.xbm
-share/xbill/bitmaps/linux.xbm
-share/xbill/bitmaps/next.xbm
-share/xbill/bitmaps/os2.xbm
-share/xbill/bitmaps/redhat.xbm
-share/xbill/bitmaps/sgi.xbm
-share/xbill/bitmaps/sun.xbm
-@dirrm share/xbill/bitmaps
+share/xbill/scores
 @dirrm share/xbill/pixmaps
+@dirrm share/xbill/bitmaps
 @dirrm share/xbill
