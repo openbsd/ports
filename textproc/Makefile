@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2001/05/29 15:54:23 lebel Exp $
+# $OpenBSD: Makefile,v 1.61 2001/06/15 02:15:13 kevlo Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -33,6 +33,8 @@
      SUBDIR += openjade
      SUBDIR += p5-Blatte
      SUBDIR += p5-Font-TTF
+     SUBDIR += p5-String-Approx
+     SUBDIR += p5-String-Similarity
      SUBDIR += p5-Text-PDF
      SUBDIR += p5-Text-Template
      SUBDIR += p5-WML-Card
