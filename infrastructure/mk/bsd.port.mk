@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.482 2001/10/24 16:35:38 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.483 2001/10/26 13:46:03 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1236,6 +1236,7 @@ _lib_depends_fragment=${_fetch_depends_fragment}
 _lib_depends_fragment = \
 	what=$$dep; \
 	IFS=,; bad=false; for d in $$dep; do \
+		d=$${d\#\#*/}; \
 		lib=`echo $$d | sed -e 's|\([^\\]\)[\\\.].*|\1|'`; \
 		tmp=`mktemp /tmp/bpmXXXXXXXXXX`; \
 		if ${LD} -r -o $$tmp ${EXTRA_LIBDIRS:S/^/-L/} -L${LOCALBASE}/lib -L${X11BASE}/lib -l$$lib; then :; else\
@@ -1246,6 +1247,7 @@ _lib_depends_fragment = \
 _lib_depends_fragment = \
 	what=$$dep; \
 	IFS=,; bad=false; for d in $$dep; do \
+		d=$${d\#\#*/}; \
 		lib=`echo $$d | sed -e 's|\.$$||' -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
 		check=`${LDCONFIG} -r | awk "/:-l$$lib[ .]/"'{ print $$3 }'`; \
 		case "X$$check" in "X") bad=true; msg="$$msg $$lib missing...";; esac; \
