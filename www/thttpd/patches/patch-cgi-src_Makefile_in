@@ -1,0 +1,12 @@
+$OpenBSD: patch-cgi-src_Makefile_in,v 1.1 2001/03/19 17:43:11 wilfried Exp $
+--- cgi-src/Makefile.in.orig	Tue Sep 26 22:20:14 2000
++++ cgi-src/Makefile.in	Mon Mar 19 17:59:22 2001
+@@ -34,7 +34,7 @@ CC =		@CC@
+ CCOPT =		@V_CCOPT@
+ DEFS =		@DEFS@
+ INCLS =		-I..
+-CFLAGS =	$(CCOPT) $(DEFS) $(INCLS)
++CFLAGS =	@CFLAGS@ $(DEFS) $(INCLS)
+ LDFLAGS =	@LDFLAGS@ @V_STATICFLAG@
+ LIBS =		@LIBS@
+ NETLIBS =	@V_NETLIBS@
