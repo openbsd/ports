@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/04/06 03:12:19 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2004/08/10 12:42:22 xsa Exp $
 
 COMMENT=	"GNU make"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=make/}
 
 HOMEPAGE=	http://www.gnu.org/software/make/
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/07/19 22:30:10 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2004/08/10 12:42:22 xsa Exp $
 
 COMMENT=	"gid/lid tools for looking up variables in code"
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/ \
 		ftp://ftp.enst.fr/pub/gnu/gnits/
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 # don't compile emacs mode files now, install what's needed
 # and run it at pkg_add time

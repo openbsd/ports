@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/09/19 22:38:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2004/08/10 12:42:21 xsa Exp $
 # $FreeBSD: Makefile,v 1.5 2000/05/30 23:19:09 jasone Exp $
 
 COMMENT=	"like make(1), but more powerful and clean"
@@ -9,7 +9,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=       http://www.canb.auug.org.au/~millerp/cook/
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 MAINTAINER=	Gregory Steuck <greg@nest.cx>
 

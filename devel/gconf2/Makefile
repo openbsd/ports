@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/06/23 03:23:48 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/10 12:42:22 xsa Exp $
 
 COMMENT=		"configuration database system for GNOME"
 
@@ -14,7 +14,7 @@ MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/GConf/2.6/}
 EXTRACT_SUFX=           .tar.bz2
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		ORBit-2::devel/ORBit2 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/07/31 21:17:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2004/08/10 12:42:22 xsa Exp $
 
 COMMENT=	"GNU utility to indent C source files"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=indent/}
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 NO_REGRESS=	Yes
 CONFIGURE_STYLE= gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/08/09 06:14:35 marcm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/10 12:42:22 xsa Exp $
 
 COMMENT=		"GNOME Application Libs"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gal/2.1/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			gnomeprintui-2-2::x11/gnome/libgnomeprintui

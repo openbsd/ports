@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/11/09 16:26:58 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2004/08/10 12:42:22 xsa Exp $
 
 COMMENT=		"GNOME Application Libs"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gal/0.24/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:gnome-libs->1.4:x11/gnome/libs \
 			:gnome-print->=0.25:x11/gnome/print \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/06/22 04:23:40 marcm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/08/10 12:42:21 xsa Exp $
 
 COMMENT=		"high-performance CORBA Object Request Broker"
 
@@ -22,7 +22,7 @@ EXTRACT_SUFX=		.tar.bz2
 PATCH_LIST=		patch-* sup-alpha-*
 .endif
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig->=0.14.0:devel/pkgconfig
 LIB_DEPENDS=		IDL-2::devel/libIDL \

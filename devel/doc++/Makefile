@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/07/14 07:16:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2004/08/10 12:42:22 xsa Exp $
 
 COMMENT=	"documentation system for C, C++, IDL and Java"
 
@@ -24,7 +24,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/doc++

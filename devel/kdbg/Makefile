@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/04/14 22:33:07 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2004/08/10 12:42:22 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kdbg/}
 
-MODULES=	kde
+MODULES=	x11/kde
 
 LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2004/07/31 21:17:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2004/08/10 12:42:21 xsa Exp $
 
 COMMENT=	"GNU parser generator"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=bison/}
 
 HOMEPAGE=	http://www.gnu.org/software/bison/
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

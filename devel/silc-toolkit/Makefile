@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/07/03 14:23:32 pedro Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/10 12:42:22 xsa Exp $
 
 COMMENT=	"toolkit for the development of SILC applications"
 DISTNAME=	silc-toolkit-0.9.12
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MODULES=iconv
+MODULES=	converters/libiconv
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \

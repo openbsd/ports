@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/02/03 07:20:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/10 12:42:23 xsa Exp $
 
 COMMENT=	"Cross-platform makefile tool from TrollTech"
 
@@ -21,7 +21,7 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
 
-MODULES=	qt3
+MODULES=	x11/qt3
 MODQT_MT=	Yes
 
 do-install:

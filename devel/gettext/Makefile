@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2004/08/05 16:14:48 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2004/08/10 12:42:22 xsa Exp $
 
 COMMENT=	"GNU gettext"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=gettext/}
 
 HOMEPAGE=	http://www.gnu.org/software/gettext/
 
-MODULES=	iconv
+MODULES=	converters/libiconv
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
