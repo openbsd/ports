@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.173 2000/01/27 20:45:44 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.174 2000/01/30 15:19:40 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -300,6 +300,9 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # PATCH_DEBUG	- If set, print out more information about the patches as
 #				  it attempts to apply them.
 #
+# CLEANDISTORIG - Set to yes to clear *.orig files after applying
+#                 distribution patches 
+#
 # Variables that serve as convenient "aliases" for your *-install targets.
 # Use these like: "${INSTALL_PROGRAM} ${WRKSRC}/prog ${PREFIX}/bin".
 #
@@ -343,6 +346,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # fetch-list	- Show list of files that would be retrieved by fetch
 # extract		- Unpacks ${DISTFILES} into ${WRKDIR}.
 # patch			- Apply any provided patches to the source.
+# distpatch     - Intermediate patch target, apply only distribution patches.
 # configure		- Runs either GNU configure, one or more local configure
 #				  scripts or nothing, depending on what's available.
 # build			- Actually compile the sources.
@@ -381,6 +385,11 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # an overriding do-* target to do pretty much anything you
 # want.
 #
+# For historical reasons, the distpatch target is a subtarget of patch.
+# If you provide a do-patch, you MUST call distpatch explicitly.
+# The sequence of hooks actually run is: 
+#
+# pre-patch `real distpatch' post-distpatch `real-patch' post-patch
 # NEVER override the "regular" targets unless you want to open
 # a major can of worms.
 
@@ -493,6 +502,8 @@ LIB_DEPENDS+=		Xm.:${PORTSDIR}/x11/lesstif
 
 _EXTRACT_COOKIE=	${WRKDIR}/.extract_done
 _PATCH_COOKIE=		${WRKDIR}/.patch_done
+_DISTPATCH_COOKIE=	${WRKDIR}/.distpatch_done
+_PREPATCH_COOKIE=	${WRKDIR}/.prepatch_done
 .if defined(SEPARATE_BUILD)
 _CONFIGURE_COOKIE=	${WRKBUILD}/.configure_done
 _INSTALL_PRE_COOKIE=${WRKBUILD}/.install_started
@@ -507,7 +518,8 @@ _BUILD_COOKIE=		${WRKDIR}/.build_done
 _PACKAGE_COOKIE=	${WRKDIR}/.package_done
 .endif
 _ALL_COOKIES=${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
-${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_PACKAGE_COOKIE}
+${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_PACKAGE_COOKIE} \
+${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE}
 
 _MAKE_COOKIE=touch -f
 
@@ -543,6 +555,8 @@ FETCH_CMD?=		/usr/bin/ftp
 # By default, distfiles have no restrictions placed on them
 MIRROR_DISTFILE?=	Yes
 
+
+CLEANDISTORIG?= No
 
 PATCH?=			/usr/bin/patch
 PATCH_STRIP?=	-p0
@@ -1093,6 +1107,7 @@ checksum: fetch
 
 extract: ${_EXTRACT_COOKIE}
 patch: ${_PATCH_COOKIE}
+distpatch: ${_DISTPATCH_COOKIE}
 configure: ${_CONFIGURE_COOKIE}
 build: ${_BUILD_COOKIE}
 install: ${_INSTALL_COOKIE}
@@ -1170,6 +1185,18 @@ ${_EXTRACT_COOKIE}:
 	@cd ${.CURDIR} && make checksum real-extract
 .endif
 	@${_MAKE_COOKIE} ${_EXTRACT_COOKIE}
+
+.if target(pre-patch)
+${_PREPATCH_COOKIE}:
+	@cd ${.CURDIR} && make pre-patch
+	@${_MAKE_COOKIE} ${_PREPATCH_COOKIE}
+.endif
+
+${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
+.if !defined(NO_PATCH)
+	@cd ${.CURDIR} && make real-distpatch
+.endif
+	@${_MAKE_COOKIE} ${_DISTPATCH_COOKIE}
 
 ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .if !defined(NO_PATCH)
@@ -1429,17 +1456,14 @@ real-extract: build-depends lib-depends misc-depends
 	@cd ${.CURDIR} && make post-extract
 .endif
 
-
-
-real-patch: 
-	@${ECHO_MSG} "===>  Patching for ${PKGNAME}"
+real-distpatch:
 .if target(pre-patch)
-	@cd ${.CURDIR} && make pre-patch
+	@cd ${.CURDIR} && make ${_PREPATCH_COOKIE}
 .endif
-.if target(do-patch)
-	@cd ${.CURDIR} && make do-patch
+.if target(do-distpatch)
+	@cd ${.CURDIR} && make do-distpatch
 .else
-# What PATCH normally does:
+# What DISTPATCH normally does
 .  if defined(PATCHFILES)
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
 	@cd ${FULLDISTDIR}; \
@@ -1457,6 +1481,28 @@ real-patch:
 		esac; \
 	  done
 .  endif
+# End of DISTPATCH.
+.endif
+.if target(post-distpatch)
+	@cd ${.CURDIR} && make post-distpatch
+.endif
+.if ${CLEANDISTORIG:L} == "yes"
+	@cd ${WRKSRC} && find . -name '*.orig' | xargs rm
+.endif
+
+real-patch: 
+	@${ECHO_MSG} "===>  Patching for ${PKGNAME}"
+.  if target(pre-patch)
+	@cd ${.CURDIR} && make ${_PREPATCH_COOKIE}
+.  endif
+.if target(do-patch)
+	@cd ${.CURDIR} && make do-patch
+.else
+# What PATCH normally does:
+# XXX test for efficiency, don't bother with distpatch if it's not needed
+.  if target(do-distpatch) || target(post-distpatch) || defined(PATCHFILES) || ${CLEANDISTORIG:L} == "yes"
+	@cd ${.CURDIR} && make distpatch
+.  endif 
 	@if cd ${PATCHDIR} 2>/dev/null; then \
 		error=0; \
 		for i in ${PATCH_LIST}; do \
@@ -2314,4 +2360,5 @@ tags:
    readmes real-extract real-fetch real-install real-patch real-package \
    real-configure reinstall \
    repackage run-depends tags uninstall fetch-all print-depends \
-   recurse-build-depends recurse-package-depends
+   recurse-build-depends recurse-package-depends \
+   distpatch real-distpatch do-distpatch post-distpatch
