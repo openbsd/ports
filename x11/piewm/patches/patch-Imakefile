@@ -1,5 +1,6 @@
---- Imakefile.orig	Fri Jun  8 15:15:06 2001
-+++ Imakefile	Fri Jun  8 15:26:01 2001
+$OpenBSD: patch-Imakefile,v 1.2 2004/01/28 21:35:31 naddy Exp $
+--- Imakefile.orig	1998-01-05 21:19:46.000000000 +0100
++++ Imakefile	2004-01-28 22:30:20.000000000 +0100
 @@ -11,7 +11,7 @@
             TAGS = etags
  
@@ -19,7 +20,8 @@
 -  LOCAL_DEFINES = -DSHAPE 
 +  LOCAL_DEFINES = -DBITMAPDIR=\"$(INCROOT)/X11/bitmaps\" -DSHAPE 
  
- /**/#   Ultrix doesn't have a mkstemp in libc...
+-/**/#   Ultrix doesn't have a mkstemp in libc...
++XCOMM   Ultrix doesn't have a mkstemp in libc...
  #ifdef UltrixArchitecture
    ULTRIX_DEFINES = -DNOSTEMP
  #endif
@@ -29,7 +31,7 @@
         LINTLIBS = $(LINTXMU) $(LINTEXTENSIONLIB) $(LINTXLIB)
          DEFINES = ExtensionDefines $(LOCAL_DEFINES) $(SIGNAL_DEFINES) $(ULTRIX_DEFINES)
  
-@@ -53,9 +53,9 @@
+@@ -53,9 +53,9 @@ depend:: lex.c gram.c deftwmrc.c 
  ComplexProgramTarget(piewm)
  NormalProgramTarget(ssetroot,ssetroot.o,,$(LOCAL_LIBRARIES),)
  
@@ -38,7 +40,7 @@
 -# InstallNamedProg(ssetroot,xsetroot,$(BINDIR))
 +MakeDirectories(install,$(PIEWMDIR))
 +InstallNonExec(system.twmrc,$(PIEWMDIR))
-+/**/# InstallNamedProg(ssetroot,ssetroot,$(BINDIR))
++XCOMM InstallNamedProg(ssetroot,ssetroot,$(BINDIR))
  
  gram.h gram.c: gram.y
  	$(YACC) $(YFLAGS) gram.y
