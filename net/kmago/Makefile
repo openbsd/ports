@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/25 08:34:57 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/26 15:12:33 kevlo Exp $
+
+COMMENT=	"download manager for KDE"
 
 DISTNAME=	kmago-1.1
 CATEGORIES=	net
-NEED_VERSION=	1.363
+NEED_VERSION=	1.364
 
 HOMEPAGE=	http://kmago.sourceforge.net/
 
@@ -16,6 +18,7 @@ PERMIT_DISTFILES_FTP=  Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= kmago
 
+BUILD_DEPENDS=	uic::x11/qt2-designer
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
 
 MAKE_ENV=	${CONFIGURE_ENV}
