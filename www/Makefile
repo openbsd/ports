@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2001/11/23 02:40:50 matt Exp $
+# $OpenBSD: Makefile,v 1.72 2001/12/10 16:12:12 jakob Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -33,6 +33,7 @@
 #    SUBDIR += libpics
 #    SUBDIR += libwww
 #    SUBDIR += linemode
+     SUBDIR += linkchecker
      SUBDIR += links
 #    SUBDIR += mapedit
      SUBDIR += mhonarc
