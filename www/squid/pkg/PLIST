@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/02/20 01:17:03 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/03/01 04:36:30 brad Exp $
 bin/RunAccel
 bin/RunCache
 bin/squid
 bin/squidclient
 libexec/cachemgr
+libexec/diskd
 libexec/unlinkd
 man/man8/squid.8
 share/examples/squid/errors/Bulgarian/ERR_ACCESS_DENIED

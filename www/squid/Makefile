@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2002/02/20 01:17:03 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2002/03/01 04:36:29 brad Exp $
 
 COMMENT=	"WWW and FTP proxy cache and accelerator"
 
@@ -28,7 +28,8 @@ CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/cfgaux
 CONFIGURE_ARGS= --datadir="${PREFIX}/share/squid" \
 		--localstatedir="${SQUIDDIR}" \
-		--enable-removal-policies
+		--enable-removal-policies="lru heap" \
+		--enable-storeio="ufs diskd"
 
 .if ${FLAVOR:L:Mtransparent}
 CONFIGURE_ARGS+= --enable-pf-transparent
