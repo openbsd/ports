@@ -1,0 +1,11 @@
+--- doc/elmcharset.1.orig   Sat Nov 17 00:42:41 2001
++++ doc/elmcharset.1        Sat Nov 17 00:42:43 2001
+@@ -6,7 +6,7 @@
+ .\}
+ .TH ELMCHARSET 1L "Elm Version 2.4ME+" "Kari Hurtta"
+ .SH NAME
+-elmcharset - 
++elmcharset - parse mime.charsets file
+ .SH SYNOPSIS
+ .B elmcharset
+ [
