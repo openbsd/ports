@@ -3,11 +3,13 @@
 # Date created:		9 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/01/24 21:31:53 don Exp $
+# $OpenBSD: Makefile,v 1.2 1998/04/13 03:23:26 marc Exp $
 #
 
 DISTNAME=	qt-1.31
 CATEGORIES=	x11
+NO_CDROM=	"REST: Restrictive licence"
+
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 MAINTAINER=	don@OpenBSD.ORG
