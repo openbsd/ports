@@ -1,0 +1,9 @@
+$OpenBSD: patch-aarec_c,v 1.1 2001/02/20 21:38:53 danh Exp $
+--- aarec.c.orig	Tue Aug 19 12:38:01 1997
++++ aarec.c	Tue Feb 20 16:26:26 2001
+@@ -1,5 +1,4 @@
+ #include <string.h>
+-#include <malloc.h>
+ #include "aalib.h"
+ aa_linkedlist *aa_kbdrecommended = NULL, *aa_mouserecommended = NULL,
+ *aa_displayrecommended = NULL;

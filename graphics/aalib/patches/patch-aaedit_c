@@ -1,0 +1,10 @@
+$OpenBSD: patch-aaedit_c,v 1.1 2001/02/20 21:38:53 danh Exp $
+--- aaedit.c.orig	Tue Aug 19 12:38:01 1997
++++ aaedit.c	Tue Feb 20 16:26:26 2001
+@@ -1,6 +1,5 @@
+ #include <string.h>
+ #include <ctype.h>
+-#include <malloc.h>
+ #include "aalib.h"
+ static void aa_editdisplay(struct aa_edit *e)
+ {

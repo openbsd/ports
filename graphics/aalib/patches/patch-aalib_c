@@ -1,0 +1,10 @@
+$OpenBSD: patch-aalib_c,v 1.1 2001/02/20 21:38:53 danh Exp $
+--- aalib.c.orig	Thu Sep 25 08:52:00 1997
++++ aalib.c	Tue Feb 20 16:26:26 2001
+@@ -1,6 +1,5 @@
+ #include <stdio.h>
+ #include <string.h>
+-#include <malloc.h>
+ #include "aalib.h"
+ #include "aaint.h"
+ 

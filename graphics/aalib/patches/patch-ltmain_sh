@@ -1,0 +1,71 @@
+$OpenBSD: patch-ltmain_sh,v 1.1 2001/02/20 21:38:54 danh Exp $
+--- ltmain.sh.orig	Thu Sep 25 08:22:11 1997
++++ ltmain.sh	Tue Feb 20 16:33:47 2001
+@@ -365,7 +365,28 @@ if test -z "$show_help"; then
+ 	deplibs="$deplibs $arg"
+ 	;;
+ 
+-      -l*) deplibs="$deplibs $arg" ;;
++      -l*)
++        if test "$arg" = "-lc"; then
++          case "$host" in
++          *-*-openbsd*)
++            # Do not include libc due to us having libc/libc_r.
++            continue
++            ;;
++          esac
++        elif test "$arg" = "-lc_r"; then
++          case "$host" in
++          *-*-openbsd*)
++            # Do not include libc_r directly, use -pthread flag.
++            continue
++            ;;
++          esac
++        fi
++        deplibs="$deplibs $arg"
++        ;;
++ 
++      -?thread)
++        deplibs="$deplibs $arg"
++        ;;
+ 
+       -o) prev=output ;;
+ 
+@@ -737,6 +758,25 @@ if test -z "$show_help"; then
+ 	allow_undefined_flag=
+       fi
+ 
++      dependency_libs="$deplibs"
++      case "$host" in
++      *-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
++        # these systems don't actually have a c library (as such)!
++        ;;
++      *-*-openbsd*)
++        # Do not include libc due to us having libc/libc_r.
++        ;;
++      *-*-rhapsody*)
++        # rhapsody is a little odd...
++        deplibs="$deplibs -framework System"
++        ;;
++      *)
++        # Add libc to deplibs on all other systems.
++        deplibs="$deplibs -lc"
++        ;;
++      esac
++
++
+       if test "$build_libtool_libs" = yes; then
+ 	# Get the real and link names of the library.
+ 	library_names=`eval echo \"$library_names_spec\"`
+@@ -1575,11 +1615,6 @@ EOF
+       done
+     fi
+ 
+-    echo "To link against installed libraries in LIBDIR, users may have to:"
+-    if test -n "$shlibpath_var"; then
+-      echo "   - add LIBDIR to their \`$shlibpath_var' environment variable"
+-    fi
+-    echo "   - use the \`-LLIBDIR' linker flag"
+     exit 0
+     ;;
+ 

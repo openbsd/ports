@@ -1,0 +1,11 @@
+$OpenBSD: patch-aalinux_c,v 1.1 2001/02/20 21:38:53 danh Exp $
+--- aalinux.c.orig	Mon Sep 15 10:59:26 1997
++++ aalinux.c	Tue Feb 20 16:26:26 2001
+@@ -1,7 +1,6 @@
+ #include "config.h"
+ #ifdef LINUX_DRIVER
+ #include <sys/stat.h>
+-#include <malloc.h>
+ #include <sys/ioctl.h>
+ #include <linux/kd.h>
+ #ifdef GPM_MOUSEDRIVER
