@@ -1,0 +1,11 @@
+$OpenBSD: patch-setup_py,v 1.1 2004/02/05 23:29:34 xsa Exp $
+--- setup.py.orig	2003-10-30 04:12:43.000000000 +0100
++++ setup.py	2004-02-05 12:05:53.000000000 +0100
+@@ -36,6 +36,6 @@ ranking them by likely severity.
+ It is released under the GNU GPL license.""",
+        url = "http://www.dwheeler.com/flawfinder/",
+        scripts = [ 'flawfinder' ],
+-       data_files = [ ('share/man/man1', [ 'flawfinder.1.gz' ]) ],
++       data_files = [ ('man/man1', [ 'flawfinder.1' ]) ],
+        py_modules = [ ],
+       )

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2003/04/10 04:53:02 jsyn Exp $
+# $OpenBSD: Makefile,v 1.21 2004/02/05 23:29:34 xsa Exp $
 
-COMMENT=		"c/c++ source code auditing tool"
+COMMENT=		"C/C++ source code auditing tool"
 
-DISTNAME=		flawfinder-1.22
-CATEGORIES=    		devel security
+DISTNAME=		flawfinder-1.24
+CATEGORIES=		devel security
 
 HOMEPAGE=		http://www.dwheeler.com/flawfinder/
 
@@ -15,33 +15,23 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.dwheeler.com/flawfinder/ \
+MASTER_SITES=		${HOMEPAGE} \
 			${MASTER_SITE_PACKETSTORM:=UNIX/security/}
 
-PYTHON_VER=		2.2
-RUN_DEPENDS=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+MODULES=		python
 
 NO_BUILD=		Yes
-
-MAKE_FILE=		makefile
-FAKE_FLAGS=		INSTALL_DIR=${WRKINST}${PREFIX}
-
 NO_REGRESS=		Yes
 
 DOC_DIR=		${PREFIX}/share/doc/flawfinder
-DOC_FILES=		ChangeLog README flawfinder.pdf \
-			flawfinder.ps index.html test.c \
-			announcement
 
-post-patch:
-	perl -pi -e \
-		"s|/usr/bin/env python|${LOCALBASE}/bin/python${PYTHON_VER}|" \
+pre-build:
+	@perl -pi -e \
+		"s|/usr/bin/env python|${LOCALBASE}/bin/python${MODPY_VERSION}|" \
 		${WRKSRC}/flawfinder
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}
-.for i in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOC_DIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/flawfinder.{pdf,ps} ${DOC_DIR}
 
 .include <bsd.port.mk>

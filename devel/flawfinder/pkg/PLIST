@@ -1,11 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/11/18 19:55:31 jsyn Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/02/05 23:29:35 xsa Exp $
 bin/flawfinder
 man/man1/flawfinder.1
-share/doc/flawfinder/ChangeLog
-share/doc/flawfinder/README
-share/doc/flawfinder/announcement
 share/doc/flawfinder/flawfinder.pdf
 share/doc/flawfinder/flawfinder.ps
-share/doc/flawfinder/index.html
-share/doc/flawfinder/test.c
 @dirrm share/doc/flawfinder
