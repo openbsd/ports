@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/01/31 18:51:47 todd Exp $
+lib/libglade/2.0/libbonobo.so
+lib/libbonoboui-2.so.0.0
+DYNLIBDIR(%D/lib)
