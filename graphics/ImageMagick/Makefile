@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2004/07/10 23:52:02 brad Exp $
+# $OpenBSD: Makefile,v 1.70 2004/07/13 17:24:29 brad Exp $
 
 COMMENT=	"display and manipulate images under X11"
 
@@ -44,8 +44,9 @@ CONFIGURE_ARGS+= --enable-lzw \
 		 --without-threads \
 		 --without-perl \
 		 --without-wmf
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include" \
-		LDFLAGS="-L${WRKBUILD}/magick/.libs -L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include" \
+		LDFLAGS="-L${WRKBUILD}/magick/.libs -L${LOCALBASE}/lib" \
+		ac_cv_path_LaunchDelegate=no
 
 FLAVORS=	no_x11
 FLAVOR?=
@@ -54,16 +55,17 @@ FLAVOR?=
 BUILD_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu,no_x11
 RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu,no_x11
 CONFIGURE_ARGS+= --without-x --without-ttf
+CONFIGURE_ENV+=	ac_cv_path_FIGDecodeDelegate=no
 .else
 BUILD_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
 RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
 USE_X11=	Yes
+RUN_DEPENDS+=	:transfig-*:print/transfig
+BUILD_DEPENDS+=	:transfig-*:print/transfig
 .endif
 
-RUN_DEPENDS+=	:transfig-*:print/transfig \
-		:netpbm-*:graphics/netpbm
-BUILD_DEPENDS+=	:transfig-*:print/transfig \
-		:netpbm-*:graphics/netpbm
+RUN_DEPENDS+=	:netpbm-*:graphics/netpbm
+BUILD_DEPENDS+=	:netpbm-*:graphics/netpbm
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/-${DASHVER}//}
 
