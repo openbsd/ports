@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2001/01/11 12:34:47 camield Exp $
+# $OpenBSD: Makefile,v 1.115 2001/01/12 04:29:21 danh Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -14,6 +14,7 @@
      SUBDIR += bitchx
      SUBDIR += cidr
      SUBDIR += clog
+     SUBDIR += courtney
      SUBDIR += curl
      SUBDIR += curl:kerberos
 #    SUBDIR += cvsup
