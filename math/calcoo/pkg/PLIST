@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/11/18 22:10:24 naddy Exp $
+bin/calcoo
+man/man1/calcoo.1
