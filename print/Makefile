@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.13 1998/06/08 02:36:23 angelos Exp $
+#	$OpenBSD: Makefile,v 1.14 1998/07/12 07:07:57 angelos Exp $
 #
 
     SUBDIR += a2ps
@@ -27,7 +27,7 @@
 #   SUBDIR += latex
 #   SUBDIR += lout
 #   SUBDIR += lprps
-#   SUBDIR += lyx
+    SUBDIR += lyx
 #   SUBDIR += makeindex
 #   SUBDIR += mp
 #   SUBDIR += musixtex
