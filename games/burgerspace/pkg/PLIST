@@ -1,4 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/07 05:13:34 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/01/21 09:36:56 pvalchev Exp $
 bin/burgerspace
 man/man6/burgerspace.6
-share/pixmaps/burgerspace.png
+share/sounds/burgerspace/chef-gets-treat.wav
+share/sounds/burgerspace/chef-shoots-blanks.wav
+share/sounds/burgerspace/chef-throws-pepper.wav
+share/sounds/burgerspace/enemy-catches-chef.wav
+share/sounds/burgerspace/enemy-paralyzed.wav
+share/sounds/burgerspace/enemy-smashed.wav
+share/sounds/burgerspace/ingredient-bounces.wav
+share/sounds/burgerspace/ingredient-falls.wav
+share/sounds/burgerspace/ingredient-in-plate.wav
+share/sounds/burgerspace/ingredient-lowered.wav
+share/sounds/burgerspace/level-finished.wav
+share/sounds/burgerspace/new-game-starts.wav
+share/sounds/burgerspace/treat-appears.wav
+share/sounds/burgerspace/treat-disappears.wav
+@dirrm share/sounds/burgerspace
