@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 1999/05/14 15:29:54 dugsong Exp $
+# $OpenBSD: Makefile,v 1.19 1999/05/19 06:08:12 fgsch Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -27,6 +27,7 @@
 #    SUBDIR += pidentd
      SUBDIR += portscanner
      SUBDIR += rsaref
+     SUBDIR += smurflog
      SUBDIR += socks5
      SUBDIR += ssh
      SUBDIR += stel
