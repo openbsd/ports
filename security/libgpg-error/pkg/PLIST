@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/07 20:26:19 sturm Exp $
+bin/gpg-error
+bin/gpg-error-config
+include/gpg-error.h
+lib/libgpg-error.a
+lib/libgpg-error.la
+share/aclocal/gpg-error.m4
+share/locale/de/LC_MESSAGES/libgpg-error.mo
+%%SHARED%%
