@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/28 19:24:46 couderc Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/24 14:08:28 couderc Exp $
 
 COMMENT=	"Ruby binding to Gdk-imlib"
 
-VERSION=	0.31
+VERSION=	0.34
 DISTNAME=	ruby-gnome-all-${VERSION}
 PKGNAME=	ruby-gdk-imlib-${VERSION}
 CATEGORIES=	graphics devel
@@ -27,7 +27,6 @@ INSTALL_TARGET=	site-install
 
 USE_X11=	Yes
 NO_REGRESS=	Yes
-SUBST_VARS=	OPSYS_VER
 
 WRKSRC=		${WRKDIST}/gdkimlib
 SAMPLE_DIR=	${MODRUBY_EXAMPLEDIR}/ruby-gdk-imlib
