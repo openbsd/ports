@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/08/18 02:02:53 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2003/08/18 17:11:42 brad Exp $
 # Original from: Curtiss Howard, cereal@schizo.com
 #
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.funet.fi/pub/mirrors/ftp.debian.org/debian/dists/potato/main/source/news/ \                                          
+MASTER_SITES=		ftp://ftp.funet.fi/pub/mirrors/ftp.debian.org/debian/dists/potato/main/source/news/ \
 			http://people.montana.com/~drrom/
 
 LIB_DEPENDS=    	slang.::devel/libslang
