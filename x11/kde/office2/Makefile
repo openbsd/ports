@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2002/04/03 16:32:14 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/04/04 22:49:51 espie Exp $
 
 COMMENT=		"office applications for kde"
 CATEGORIES=		x11 x11/kde productivity
 NEED_VERSION=		1.483
-VERSION=		1.1
+VERSION=		1.1.1
 DISTNAME=		koffice-${VERSION}
 DIST_SUBDIR=		kde
 
@@ -23,6 +23,7 @@ CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-debug
+CONFIGURE_ARGS+=	--enable-final
 #CONFIGURE_ARGS+=--enable-static --enable-debug --disable-shared
 PATCH_LIST=	p-* patch-*
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/04/03 16:38:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/04/04 22:49:51 espie Exp $
 bin/filter_wrapper
 bin/kchart
 bin/kformula
@@ -140,6 +140,7 @@ share/apps/kchart/icons/hicolor/22x22/actions/hilo.png
 share/apps/kchart/icons/hicolor/22x22/actions/lines.png
 share/apps/kchart/icons/hicolor/22x22/actions/lines3d.png
 share/apps/kchart/icons/hicolor/22x22/actions/options.png
+share/apps/kchart/icons/hicolor/22x22/actions/polar.png
 share/apps/kchart/icons/hicolor/22x22/actions/ring.png
 share/apps/kchart/icons/hicolor/22x22/actions/wizard.png
 share/apps/kchart/icons/locolor/16x16/actions/areas.png

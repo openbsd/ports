@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2002/04/03 16:32:14 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2002/04/04 22:49:51 espie Exp $
 lib/kde2/libabiwordexport.so.0.0
 lib/kde2/libabiwordimport.so.0.0
 lib/kde2/libapplixgraphicimport.so.0.0
