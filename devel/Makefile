@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.223 2004/05/09 10:32:34 dons Exp $
+# $OpenBSD: Makefile,v 1.224 2004/05/09 19:25:39 david Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -14,7 +14,6 @@
      SUBDIR += atlas
      SUBDIR += autoconf
      SUBDIR += automake
-     SUBDIR += metaauto
      SUBDIR += binutils
      SUBDIR += bison
      SUBDIR += boehm-gc
@@ -25,7 +24,7 @@
      SUBDIR += cook
      SUBDIR += cscope
      SUBDIR += ctm
-     SUBDIR += cvs2cl 
+     SUBDIR += cvs2cl
      SUBDIR += cvsgraph
      SUBDIR += cvslock
      SUBDIR += cvsplot
@@ -43,8 +42,8 @@
      SUBDIR += gal
      SUBDIR += gal2
      SUBDIR += gconf
-     SUBDIR += gconf2
      SUBDIR += gconf-editor
+     SUBDIR += gconf2
      SUBDIR += gdb
      SUBDIR += gengameng
      SUBDIR += gettext
@@ -108,6 +107,7 @@
      SUBDIR += libzvt
      SUBDIR += lincvs
      SUBDIR += m4
+     SUBDIR += metaauto
      SUBDIR += mico
      SUBDIR += mk
      SUBDIR += mm
@@ -130,13 +130,13 @@
      SUBDIR += p5-Class-Container
      SUBDIR += p5-Class-Data-Inheritable
      SUBDIR += p5-Class-Date
-     SUBDIR += p5-Class-Loader  
+     SUBDIR += p5-Class-Loader
      SUBDIR += p5-Class-MethodMaker
      SUBDIR += p5-Class-MethodMapper
      SUBDIR += p5-Config-IniFiles
      SUBDIR += p5-Curses
-     SUBDIR += p5-Curses-Widgets
      SUBDIR += p5-Curses-UI
+     SUBDIR += p5-Curses-Widgets
      SUBDIR += p5-Data-Flow
      SUBDIR += p5-Data-ShowTable
      SUBDIR += p5-Date-Calc
@@ -148,8 +148,8 @@
      SUBDIR += p5-Devel-StackTrace
      SUBDIR += p5-Error
      SUBDIR += p5-Exception-Class
-     SUBDIR += p5-Exporter-Lite
      SUBDIR += p5-Expect
+     SUBDIR += p5-Exporter-Lite
      SUBDIR += p5-File-ReadBackwards
      SUBDIR += p5-File-Sync
      SUBDIR += p5-File-Tail

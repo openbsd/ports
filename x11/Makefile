@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2004/04/18 23:26:20 jolan Exp $
+# $OpenBSD: Makefile,v 1.186 2004/05/09 19:25:39 david Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -78,8 +78,8 @@
      SUBDIR += jmk-fonts
      SUBDIR += kde
      SUBDIR += kdirstat
-     SUBDIR += kountdown
      SUBDIR += kmplayer
+     SUBDIR += kountdown
      SUBDIR += lablgtk
      SUBDIR += lesstif
      SUBDIR += libdnd
@@ -87,12 +87,12 @@
      SUBDIR += lupe
 #    SUBDIR += mlvwm
      SUBDIR += mouseclock
+     SUBDIR += mowitz
      SUBDIR += mplayer
      SUBDIR += mplayer,sdl
      SUBDIR += mplayer,no_x11
      SUBDIR += mplayer-fontmaker
      SUBDIR += msttcorefonts
-     SUBDIR += mowitz
      SUBDIR += mterm
      SUBDIR += mxconns
      SUBDIR += neXtaw

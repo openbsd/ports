@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.314 2004/04/28 16:43:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.315 2004/05/09 19:25:39 david Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -115,8 +115,8 @@
      SUBDIR += nbtscan
      SUBDIR += ncftp
      SUBDIR += ndiff
-     SUBDIR += neon
      SUBDIR += nemesis
+     SUBDIR += neon
      SUBDIR += netatalk
      SUBDIR += netpipes
      SUBDIR += netsed
@@ -205,8 +205,8 @@
      SUBDIR += ruby-pcap
      SUBDIR += samba
      SUBDIR += scli
-     SUBDIR += sharity-light
      SUBDIR += ser
+     SUBDIR += sharity-light
      SUBDIR += silc-client
      SUBDIR += silc-server
      SUBDIR += sing

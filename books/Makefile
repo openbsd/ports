@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2003/07/17 18:01:31 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2004/05/09 19:25:39 david Exp $
 
      SUBDIR += autobook
      SUBDIR += cvs-guide
-     SUBDIR += grokking-the-gimp
      SUBDIR += docbook-guide
+     SUBDIR += grokking-the-gimp
      SUBDIR += mason-book
      SUBDIR += zopebook
 
