@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2001/11/13 22:13:25 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2002/07/18 02:16:41 brad Exp $
 
 COMMENT=	"Window manager, continuation of the Bowman NeXTSTEP clone"
 
 DISTNAME=	AfterStep-1.8.9
-PKGNAME=	afterstep-1.8.9
+PKGNAME=	${DISTNAME:L}
 CATEGORIES=     x11
-NEED_VERSION=	1.496
 MASTER_SITES=   ftp://ftp.afterstep.org/stable/
 
 HOMEPAGE=	http://www.afterstep.org/
@@ -28,7 +27,7 @@ CONFIGURE_ARGS=	 --enable-different-looknfeels
 CONFIGURE_ARGS+= --with-helpcommand="xterm -e man"
 CONFIGURE_ARGS+= --with-jpeg-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+= --with-jpeg-library=${LOCALBASE}/lib
-CONFIGURE_ARGS+= --with-png-includes=${LOCALBASE}/include
+CONFIGURE_ARGS+= --with-png-includes=${LOCALBASE}/include/libpng
 CONFIGURE_ARGS+= --with-png-library=${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
