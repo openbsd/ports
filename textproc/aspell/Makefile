@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/05/13 13:28:08 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2002/06/10 13:14:42 lebel Exp $
 
 COMMENT=		"spell checker designed to eventually replace Ispell"
 COMMENT-br=		"aspell dictionary for Breton"
@@ -41,7 +41,7 @@ MASTER_SITES1=		${HOMEPAGE}
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-doc-dir=${PREFIX}/share/doc/aspell
-
+USE_GMAKE=		Yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" 
 
