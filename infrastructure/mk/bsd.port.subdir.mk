@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.67 2004/11/15 13:53:43 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.68 2004/11/21 11:28:31 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -97,7 +97,7 @@ _subdir_fragment= \
 		 build describe distclean deinstall install update \
 		 reinstall checksum show fetch-makefile \
 		 link-categories unlink-categories regress lib-depends-check \
-		 homepage-links manpages-check license-check
+		 newlib-depends-check homepage-links manpages-check license-check
 
 ${__target}:
 	@${_subdir_fragment}
@@ -162,6 +162,7 @@ _print-packagename:
 	build describe distclean deinstall install update \
 	reinstall checksum show fetch-makefile \
 	link-categories unlink-categories regress lib-depends-check \
+	newlib-depends-check \
 	homepage-links manpages-check license-check \
 	all-dir-depends build-dir-depends run-dir-depends \
 	clean readmes _print-packagename
