@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/10 09:14:47 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2005/01/18 12:30:57 alek Exp $
 
 COMMENT=	"digital camera frontend"
 
@@ -15,6 +15,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=	gmodule-2.0.0.0 pangoxft-1.0.0.0 X11 gobject-2.0.0.0 Xext \
+		atk-1.0.0.0 fontconfig freetype Xrender intl m c Xcursor \
+		glib-2.0.0.0 pangox-1.0.0.0 Xinerama Xft pango-1.0.0.0 \
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gphoto/}
 

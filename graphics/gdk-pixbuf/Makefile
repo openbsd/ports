@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/09/19 23:41:32 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2005/01/18 12:30:57 alek Exp $
 
 COMMENT=	"GdkPixbuf graphics library"
 COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		iconv intl glib m X11 gmodule Xi Xext z
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gdk-pixbuf/0.22/}
 
@@ -54,6 +55,7 @@ LIB_DEPENDS+=	jpeg.62::graphics/jpeg \
 . if ${SUBPACKAGE} == "-gnome"
 LIB_DEPENDS+=	gnome.36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs \
 		gdk_pixbuf.2::graphics/gdk-pixbuf
+WANTLIB+=	esd ungif ICE audiofile gdk_imlib SM
 . endif
 .else
 . if ${MULTI_PACKAGES:M-gnome}
