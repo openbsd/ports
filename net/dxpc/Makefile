@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2001/04/08 17:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/01/13 14:01:05 espie Exp $
 
 COMMENT=	"X11 over a low bandwidth link"
-VERSION=	3.8.0
+VERSION=	3.8.1
 DISTNAME=	dxpc-${VERSION}
 CATEGORIES=	net x11
 NEED_VERSION=	1.387
