@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.131 1999/10/27 12:48:40 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.132 1999/11/05 22:44:34 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -48,6 +48,12 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 .endif
 
 # Supported Variables and their behaviors:
+#
+# IMPORTANT: any variable or target starting with an underscore 
+# (e.g., _DEPEND_ECHO) is internal to bsd.port.mk, and 
+# liable to change without notice. 
+#
+# DON'T USE IN INDIVIDUAL PORTS !!!
 #
 # Variables that typically apply to all ports:
 # 
