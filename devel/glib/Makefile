@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 1999/10/27 01:14:24 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2000/01/01 00:02:42 brad Exp $
 
 DISTNAME=	glib-1.2.6
 CATEGORIES=	devel
@@ -19,7 +19,6 @@ CONFIGURE_ARGS+= --enable-static --disable-threads \
 # libglib.a and libglib.so.1.6 in /usr/X11R6/lib... these files
 # MUST be removed as the version was incorrect (it came from 1.0.6
 # sources). Check that out here (and bitch if necessary).
-# 
 pre-extract:
 	@if [ -f ${X11BASE}/lib/libglib.a ]; then \
 	   echo "+-------------------"; \
@@ -37,14 +36,11 @@ pre-extract:
 	fi
 
 post-extract:
-	@${RM} -f ${WRKSRC}/docs/glib.info*
+	@rm -f ${WRKSRC}/docs/glib.info*
 
 post-install:
-	@${MKDIR} ${LOCALBASE}/share/aclocal
-	@${INSTALL_DATA} ${WRKSRC}/glib.m4 ${LOCALBASE}/share/aclocal/
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
+	${INSTALL_DATA_DIR} ${LOCALBASE}/share/aclocal
+	${INSTALL_DATA} ${WRKSRC}/glib.m4 ${LOCALBASE}/share/aclocal/
 	@install-info ${PREFIX}/info/glib.info ${PREFIX}/info/dir
 	@${LDCONFIG} -m ${PREFIX}/lib
 
