@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/20 15:25:17 mark Exp $
+# $OpenBSD: Makefile,v 1.9 2002/05/30 17:33:04 fgsch Exp $
 
 COMMENT=	"Secure Live Internet Conferencing (SILC) client"
 
@@ -27,6 +27,10 @@ LIB_DEPENDS=    glib.1.2,gmodule.1.2::devel/glib
 
 USE_LIBTOOL=            yes
 
+# XXX workaround gcc bugs on sparc64
+.if ${MACHINE_ARCH:Msparc64}
+PATCH_LIST=     gcc-* patch-*
+.endif
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
