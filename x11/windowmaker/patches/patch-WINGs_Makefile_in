@@ -1,21 +1,21 @@
-$OpenBSD: patch-WINGs_Makefile_in,v 1.5 2001/10/24 13:54:38 wilfried Exp $
---- WINGs/Makefile.in.orig	Fri Oct  5 02:52:31 2001
-+++ WINGs/Makefile.in	Wed Oct 24 10:33:53 2001
-@@ -104,7 +104,7 @@ wprefsdir = @wprefsdir@
+$OpenBSD: patch-WINGs_Makefile_in,v 1.6 2002/01/04 22:40:02 wilfried Exp $
+--- WINGs/Makefile.in.orig	Tue Dec 18 06:44:15 2001
++++ WINGs/Makefile.in	Fri Jan  4 13:30:28 2002
+@@ -97,7 +97,7 @@ wprefsdir = @wprefsdir@
  
  AUTOMAKE_OPTIONS = no-dependencies
  
 -SUBDIRS = WINGs . po Documentation Resources Examples Extras Tests
 +SUBDIRS = WINGs . po Documentation Resources Extras
  
- 
  #libWINGs_la_LDFLAGS = -version-info 1:1:0
-@@ -206,7 +206,7 @@ libWUtil_a_SOURCES = \
+ 
+@@ -118,7 +118,7 @@ libWUtil_a_SOURCES =  	array.c 	bagtree.
+ 
  CPPFLAGS = @CPPFLAGS@ -DLOCALEDIR=\"$(NLSDIR)\"
  
- INCLUDES = -I$(top_srcdir)/WINGs/WINGs -I$(top_srcdir)/wrlib -I$(top_srcdir)/src \
--	-DRESOURCE_PATH=\"$(datadir)/WINGs\" @HEADER_SEARCH_PATH@ -DDEBUG
-+	-DRESOURCE_PATH=\"$(datadir)/WINGs\" @HEADER_SEARCH_PATH@
+-INCLUDES = -I$(top_srcdir)/WINGs/WINGs -I$(top_srcdir)/wrlib -I$(top_srcdir)/src 	-DRESOURCE_PATH=\"$(datadir)/WINGs\" @HEADER_SEARCH_PATH@ -DDEBUG
++INCLUDES = -I$(top_srcdir)/WINGs/WINGs -I$(top_srcdir)/wrlib -I$(top_srcdir)/src 	-DRESOURCE_PATH=\"$(datadir)/WINGs\" @HEADER_SEARCH_PATH@
  
- subdir = WINGs
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../src/config.h
