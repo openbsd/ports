@@ -1,7 +1,7 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.3 1999/04/16 00:03:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 1999/07/13 20:55:42 espie Exp $
 
-DISTNAME=icon_lib-9.3.1
+DISTNAME=icon_lib-9.3.2
 DIST_SUBDIR=icon
 
 CATEGORIES=lang
@@ -17,7 +17,8 @@ MAINTAINER=espie@openbsd.org
 MASTER_SITES=
 DISTFILES=bipl.tgz gipl.tgz info.tgz
 USE_X11=yes
-WRKSRC=${WRKDIR}
+NO_WRKSUBDIR=yes
+
 
 MASTER_SITES=ftp://ftp.cs.arizona.edu:/icon/library/
 

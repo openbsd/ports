@@ -1,2 +1,2 @@
-CFLAGS+= -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6
+CFLAGS+= -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/X11R6/include
 SHELL=/bin/sh

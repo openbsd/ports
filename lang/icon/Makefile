@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 1999/07/13 20:37:14 espie Exp $
+# $OpenBSD: Makefile,v 1.5 1999/07/13 20:55:39 espie Exp $
 
-DISTNAME=	icon-9.3.1
+DISTNAME=	icon-9.3.2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cs.arizona.edu:/icon/packages/unix/
 DIST_SUBDIR=	icon
