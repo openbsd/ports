@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.560 2003/07/23 09:58:33 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.561 2003/07/23 22:24:24 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2050,15 +2050,24 @@ _BUILD_DEP=
 
 _LIB_DEP2= ${LIB_DEPENDS}
 
-clean-depends:
+_clean-depends:
 .if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
 	@unset FLAVOR SUBPACKAGE || true; \
-	for dir in \
-	   `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
-		| tr '\040' '\012' | sort -u`; do \
-		${_flavor_fragment}; \
-		eval $$toset ${MAKE} CLEANDEPENDS=No ${_DEPEND_THRU} clean clean-depends; \
+	for dir in ${_ALWAYS_DEP} ${_RUN_DEP} ${_BUILD_DEP}; do \
+		if fgrep -q $$dir $${_DEPENDS_FILE}; then :; else \
+			echo $$dir >>$${_DEPENDS_FILE}; \
+			${_flavor_fragment}; \
+			eval $$toset ${MAKE} CLEANDEPENDS=No ${_DEPEND_THRU} clean _clean-depends; \
+		fi; \
 	done
+.endif
+
+clean-depends:
+.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
+	@: $${_DEPENDS_FILE:=`mktemp /tmp/depends.XXXXXXXXXX`}; \
+	export _DEPENDS_FILE; \
+	${MAKE} _clean-depends; \
+	rm -f $${_DEPENDS_FILE}
 .endif
 
 # This target generates an index entry suitable for aggregation into
