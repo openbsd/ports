@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/04/21 15:01:02 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2001/06/04 05:50:51 dugsong Exp $
 
 COMMENT=	"raw IP packet construction library"
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
 
 WRKDIST=	${WRKDIR}/Libnet-1.0.2a
 
