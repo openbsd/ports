@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2003/11/25 05:13:02 jolan Exp $
+# $OpenBSD: Makefile,v 1.25 2004/01/01 02:16:47 jolan Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64
 
@@ -6,7 +6,7 @@ COMMENT=	"redesign of Mozilla's browser component"
 
 VER=		0.7
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firebird-${VER}
+PKGNAME=	mozilla-firebird-${VER}p0
 
 CATEGORIES=	www
 
