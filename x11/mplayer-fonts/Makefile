@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/06/10 03:18:35 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2002/07/19 07:06:46 espie Exp $
 
 COMMENT='subtitle font for mplayer'
 CATEGORIES=x11
@@ -22,8 +22,8 @@ FONT=luxisri
 
 DISTFILES=
 EXTRACT_ONLY=
-DISTNAME=mplayer-font-0.90pre4
-FULLPKGNAME=mplayer-${NAME}-0.90pre4
+DISTNAME=mplayer-font-0.90pre5
+FULLPKGNAME=mplayer-${NAME}-0.90pre5
 
 do-build:
 	cd ${WRKBUILD} && mksubfont ${DIR}/${FONT}.ttf
