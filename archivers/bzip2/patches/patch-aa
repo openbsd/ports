@@ -1,5 +1,5 @@
---- Makefile.orig	Fri May 26 17:36:26 2000
-+++ Makefile	Fri May 26 17:53:11 2000
+--- Makefile.orig	Tue May 16 17:31:04 2000
++++ Makefile	Mon Jun 12 10:58:00 2000
 @@ -12,7 +12,15 @@
        decompress.o \
        bzlib.o
@@ -75,11 +75,11 @@
 -	chmod a+r $(PREFIX)/include/bzlib.h
 -	cp -f libbz2.a $(PREFIX)/lib
 -	chmod a+r $(PREFIX)/lib/libbz2.a
-+	if ( test ! -d $(PREFIX)/bin ) ; then mkdir -p $(PREFIX)/bin ; fi
-+	if ( test ! -d $(PREFIX)/lib ) ; then mkdir -p $(PREFIX)/lib ; fi
-+	if ( test ! -d $(PREFIX)/man ) ; then mkdir -p $(PREFIX)/man ; fi
-+	if ( test ! -d $(PREFIX)/man/man1 ) ; then mkdir -p $(PREFIX)/man/man1 ; fi
-+	if ( test ! -d $(PREFIX)/include ) ; then mkdir -p $(PREFIX)/include ; fi
++	if ( test ! -d $(PREFIX)/bin ) ; then $(BSD_INSTALL_PROGRAM_DIR) $(PREFIX)/bin ; fi
++	if ( test ! -d $(PREFIX)/lib ) ; then $(BSD_INSTALL_DATA_DIR) $(PREFIX)/lib ; fi
++	if ( test ! -d $(PREFIX)/man ) ; then $(BSD_INSTALL_MAN_DIR) $(PREFIX)/man ; fi
++	if ( test ! -d $(PREFIX)/man/man1 ) ; then $(BSD_INSTALL_MAN_DIR) $(PREFIX)/man/man1 ; fi
++	if ( test ! -d $(PREFIX)/include ) ; then $(BSD_INSTALL_DATA_DIR) $(PREFIX)/include ; fi
 +	$(BSD_INSTALL_PROGRAM) bzip2 $(PREFIX)/bin
 +	@cd $(PREFIX)/bin; ln -fs bzip2 bunzip2; \
 +			ln -fs bzip2 bzcat
