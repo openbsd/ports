@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/10/17 15:11:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/11/03 15:55:05 naddy Exp $
 
 COMMENT=	"LaTeX2e class for overhead transparencies"
 
-DISTNAME=	foiltex-2.1.4
+DISTNAME=	foiltex-2.1.4a
 CATEGORIES=	print
 
 MAINTAINER=	Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>
