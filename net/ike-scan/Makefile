@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/09 06:44:11 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2003/06/13 08:59:54 jolan Exp $
 
 COMMENT=	"VPN scanner and identifier"
-DISTNAME=	ike-scan-1.1
+DISTNAME=	ike-scan-1.2
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}download/ \
 		http://berlin.ccc.de/~cryx/ike-scan/
