@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2001/12/08 20:13:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/01/22 17:21:35 jasoni Exp $
 # $NetBSD: Makefile,v 1.1.1.2 2001/03/26 11:59:15 hubertf Exp $
 
 COMMENT=		"passive OS fingerprinting tool"
 
-DISTNAME=		p0f-1.8
+DISTNAME=		p0f-1.8.1
 CATEGORIES=     	security
 NEED_VERSION=   	1.500
 
