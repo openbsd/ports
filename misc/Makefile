@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2000/12/27 15:28:11 reinhard Exp $
+# $OpenBSD: Makefile,v 1.34 2000/12/31 12:59:32 reinhard Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -66,6 +66,7 @@
      SUBDIR += xgas
 #    SUBDIR += xinvest
      SUBDIR += xless
+     SUBDIR += xnc
 #    SUBDIR += xmaddressbook
 #    SUBDIR += xopps
 #    SUBDIR += xpns
