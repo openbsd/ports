@@ -1,0 +1,70 @@
+$OpenBSD: patch-konq-embed_dropin_kio_Makefile_in,v 1.1 2002/03/30 18:48:59 espie Exp $
+--- konq-embed/dropin/kio/Makefile.in.orig	Sat Mar 30 18:38:54 2002
++++ konq-embed/dropin/kio/Makefile.in	Sat Mar 30 18:39:50 2002
+@@ -256,7 +256,7 @@ noinst_LTLIBRARIES = libkiodropin.la
+ libkiodropin_la_SOURCES = slavebase.cpp job.cpp netaccess.cpp jobclasses.cpp \
+ 	ktrader.cpp kprotocolmanager.cpp krun.cpp authcache.cpp authcache_skel.cpp \
+ 	scheduler.cpp observer.cpp \
+-	slave.cpp passdlg.cpp kio_file.cpp kmimemagic.cpp global.cpp \
++	slave.cpp passdlg.cpp kio_file.cpp kio_ftp.cpp kmimemagic.cpp global.cpp \
+ 	launcher.cpp
+ 
+ #>- libkiodropin_la_METASOURCES = AUTO
+@@ -273,7 +273,7 @@ libkiodropin_la_LIBADD =
+ am_libkiodropin_la_OBJECTS = slavebase.lo job.lo netaccess.lo \
+ 	jobclasses.lo ktrader.lo kprotocolmanager.lo krun.lo \
+ 	authcache.lo authcache_skel.lo scheduler.lo observer.lo \
+-	slave.lo passdlg.lo kio_file.lo kmimemagic.lo global.lo \
++	slave.lo passdlg.lo kio_file.lo kio_ftp.lo kmimemagic.lo global.lo \
+ 	launcher.lo
+ #>- libkiodropin_la_OBJECTS = $(am_libkiodropin_la_OBJECTS)
+ #>+ 8
+@@ -281,7 +281,7 @@ libkiodropin_la_final_OBJECTS = libkiodr
+ libkiodropin_la_nofinal_OBJECTS = slavebase.lo job.lo netaccess.lo \
+ 	jobclasses.lo ktrader.lo kprotocolmanager.lo krun.lo \
+ 	authcache.lo authcache_skel.lo scheduler.lo observer.lo \
+-	slave.lo passdlg.lo kio_file.lo kmimemagic.lo global.lo \
++	slave.lo passdlg.lo kio_file.lo kio_ftp.lo kmimemagic.lo global.lo \
+ 	launcher.lo
+ @KDE_USE_FINAL_FALSE@libkiodropin_la_OBJECTS = $(libkiodropin_la_nofinal_OBJECTS)
+ @KDE_USE_FINAL_TRUE@libkiodropin_la_OBJECTS = $(libkiodropin_la_final_OBJECTS)
+@@ -295,7 +295,7 @@ depcomp = $(SHELL) $(top_srcdir)/admin/d
+ @AMDEP_TRUE@DEP_FILES = $(DEPDIR)/authcache.Plo \
+ 	@AMDEP_TRUE@	$(DEPDIR)/authcache_skel.Plo $(DEPDIR)/global.Plo \
+ 	@AMDEP_TRUE@	$(DEPDIR)/job.Plo $(DEPDIR)/jobclasses.Plo \
+-	@AMDEP_TRUE@	$(DEPDIR)/kio_file.Plo $(DEPDIR)/kmimemagic.Plo \
++	@AMDEP_TRUE@	$(DEPDIR)/kio_file.Plo $(DEPDIR)/kio_ftp.Plo $(DEPDIR)/kmimemagic.Plo \
+ 	@AMDEP_TRUE@	$(DEPDIR)/kprotocolmanager.Plo $(DEPDIR)/krun.Plo \
+ 	@AMDEP_TRUE@	$(DEPDIR)/ktrader.Plo $(DEPDIR)/launcher.Plo \
+ 	@AMDEP_TRUE@	$(DEPDIR)/netaccess.Plo $(DEPDIR)/observer.Plo \
+@@ -374,6 +374,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/job.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/jobclasses.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/kio_file.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/kio_ftp.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/kmimemagic.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/kprotocolmanager.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/krun.Plo@am__quote@
+@@ -503,7 +504,7 @@ distclean-tags:
+ 
+ #>- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ #>+ 4
+-KDE_DIST=kio_file.h job.h krun.h launcher.h netaccess.h kimageio.h kfileitem.h scheduler.h slave.h slavebase.h kprotocolmanager.h authcache.h jobclasses.h kmimetype.h kmimemagic.h ktrader.h passdlg.h observer.h kservice.h 
++KDE_DIST=kio_file.h kio_ftp.h job.h krun.h launcher.h netaccess.h kimageio.h kfileitem.h scheduler.h slave.h slavebase.h kprotocolmanager.h authcache.h jobclasses.h kmimetype.h kmimemagic.h ktrader.h passdlg.h observer.h kservice.h 
+ 
+ DISTFILES= $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
+ 
+@@ -676,11 +677,11 @@ force-reedit:
+ 
+ 
+ #>+ 11
+-libkiodropin_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/slavebase.cpp $(srcdir)/job.cpp $(srcdir)/netaccess.cpp $(srcdir)/jobclasses.cpp $(srcdir)/ktrader.cpp $(srcdir)/kprotocolmanager.cpp $(srcdir)/krun.cpp $(srcdir)/authcache.cpp $(srcdir)/authcache_skel.cpp $(srcdir)/scheduler.cpp $(srcdir)/observer.cpp $(srcdir)/slave.cpp $(srcdir)/passdlg.cpp $(srcdir)/kio_file.cpp $(srcdir)/kmimemagic.cpp $(srcdir)/global.cpp $(srcdir)/launcher.cpp   krun.moc jobclasses.moc authcache.moc slave.moc scheduler.moc 
++libkiodropin_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/slavebase.cpp $(srcdir)/job.cpp $(srcdir)/netaccess.cpp $(srcdir)/jobclasses.cpp $(srcdir)/ktrader.cpp $(srcdir)/kprotocolmanager.cpp $(srcdir)/krun.cpp $(srcdir)/authcache.cpp $(srcdir)/authcache_skel.cpp $(srcdir)/scheduler.cpp $(srcdir)/observer.cpp $(srcdir)/slave.cpp $(srcdir)/passdlg.cpp $(srcdir)/kio_file.cpp $(srcdir)/kio_ftp.cpp $(srcdir)/kmimemagic.cpp $(srcdir)/global.cpp $(srcdir)/launcher.cpp   krun.moc jobclasses.moc authcache.moc slave.moc scheduler.moc 
+ 	@echo 'creating libkiodropin_la.all_cpp.cpp ...'; \
+ 	rm -f libkiodropin_la.all_cpp.files libkiodropin_la.all_cpp.final; \
+ 	echo "#define KDE_USE_FINAL 1" >> libkiodropin_la.all_cpp.final; \
+-	for file in slavebase.cpp job.cpp netaccess.cpp jobclasses.cpp ktrader.cpp kprotocolmanager.cpp krun.cpp authcache.cpp authcache_skel.cpp scheduler.cpp observer.cpp slave.cpp passdlg.cpp kio_file.cpp kmimemagic.cpp global.cpp launcher.cpp ; do \
++	for file in slavebase.cpp job.cpp netaccess.cpp jobclasses.cpp ktrader.cpp kprotocolmanager.cpp krun.cpp authcache.cpp authcache_skel.cpp scheduler.cpp observer.cpp slave.cpp passdlg.cpp kio_file.cpp kio_ftp.cpp kmimemagic.cpp global.cpp launcher.cpp ; do \
+ 	  echo "#include \"$$file\"" >> libkiodropin_la.all_cpp.files; \
+ 	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> libkiodropin_la.all_cpp.final; \
+ 	done; \
