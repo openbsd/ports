@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/06/16 17:05:25 pvalchev Exp $
+--- Makefile.orig	Thu Jun 14 21:07:11 2001
++++ Makefile	Thu Jun 14 21:07:24 2001
+@@ -2,7 +2,7 @@
+ X11BASE?=/usr/X11R6
+ 
+ ###CFLAGS+= -I../../../../src/sys -I../libcdcx -I${X11BASE}/include -DUVM
+-CFLAGS+= -I${X11BASE}/include
++CFLAGS+= -I${X11BASE}/include -DUVM
+ 
+ 
+ PROG=   xuvmstat
