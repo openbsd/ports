@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2001/10/28 13:05:45 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2001/11/10 13:24:36 espie Exp $
 
 COMMENT=	"Data Display Debugger, graphical front-end for GDB, etc"
 
@@ -22,7 +22,7 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/libiberty ${WRKSRC}/readline/suppo
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
-MAKE_FLAGS=	MAINTAINER=${MAINTAINER}
+MAKE_FLAGS=	MAINTAINER='${MAINTAINER:Q}'
 
 pre-build:
 	@echo ""
@@ -41,8 +41,5 @@ post-install:
 	cd ${WRKSRC}/doc; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/ddd
 	@${GZIP_CMD} ${PREFIX}/share/doc/ddd/ddd-paper.ps
 	@${GZIP_CMD} ${PREFIX}/share/doc/ddd/ddd.ps
-
-check:	build
-	@cd ${WRKSRC} && ${MAKE_PROGRAM} check
 
 .include <bsd.port.mk>
