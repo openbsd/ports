@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.48 2002/10/24 23:14:40 naddy Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.49 2003/02/16 15:16:17 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -207,10 +207,15 @@ README.html:
 		> $@
 	@rm -f $@.tmp $@.tmp2
 
+_print-packagename:
+	@echo 1>&2 "Error in dependency: ${PKGPATH} is not a package location"
+	@exit 1
+
 .PHONY: all fetch fetch-list package extract configure build clean depend \
 	describe distclean deinstall reinstall tags checksum mirror-distfiles \
 	list-distfiles obj show readmes readme \
 	beforeinstall afterinstall install realinstall fake \
 	all-packages cdrom-packages ftp-packages packageinstall \
 	link-categories unlink-categories dir-depends package-dir-depends \
-	regress lib-depends-check homepage-links manpages-check
+	regress lib-depends-check homepage-links manpages-check \
+	print-packagename
