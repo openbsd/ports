@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.25 2003/06/30 11:31:22 espie Exp $
+# $OpenBSD: make-plist,v 1.26 2003/06/30 11:49:41 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -35,12 +35,31 @@ use File::Find;
 use File::Spec;
 use File::Temp qw/ tempdir /;
 
-my %annotated;
-my %annotated_dir;
 my $manual = 0;
 my %out;
 my @has_shared;
 my ($plist, $pshared);
+
+{
+package Annotation;
+
+sub new {
+    my $class = shift;
+    bless {}, $class;
+}
+
+sub add {
+    my $object = shift;
+    my $key = shift;
+    unless (defined $object->{$key}) {
+    	$object->{$key} = [];
+    }
+    push(@{$object->{$key}}, @_);
+}
+}
+
+my $annotated = new Annotation;
+my $annotated_dir = new Annotation;
 
 sub annotate
 {
@@ -74,15 +93,14 @@ sub annotate
 			$_ = $';
 			if (m/^\@dirrm\s+/) {
 				$_ = $';
-				$annotated_dir{$_} = [ $name, $newfh, 'comment'];
+				$annotated_dir->add($_,  [ $name, $newfh, 'comment']);
 				next;
 			} else {
-				$annotated{$_} = [ $name, $newfh, 'comment'] 
-				    unless defined $annotated{$_};
+				$annotated->add($_, [ $name, $newfh, 'comment'] );
 			}
 		} elsif (m/^\@dirrm\s+/) {
 			$_=$';
-			$annotated_dir{$_} = [ $name, $newfh ];
+			$annotated_dir->add($_, [ $name, $newfh ]);
 			next;
 		} elsif (m/^\@/) {
 			next;
@@ -97,10 +115,10 @@ sub annotate
 		}
 
 		if ("$mode$owner$group$nocheck" ne '') {
-			$annotated{$_} = [ $name, $newfh, $mode, $owner, $group, $nocheck ];
+			$annotated->add($_, [ $name, $newfh, $mode, $owner, $group, $nocheck ]);
 			$nocheck = '';
 		} else {
-			$annotated{$_} = [ $name, $newfh ];
+			$annotated->add($_, [ $name, $newfh ]);
 		}
 	}
 	print $newfh "\@comment \$OpenBSD\$\n" unless $comment_printed;
@@ -206,27 +224,28 @@ sub handle_file
     my $out = shift;
     my $string = "$fname\n";
 
-    if (defined $annotated{$fname}) {
-    	my $l = $annotated{$fname};
-	if (@$l == 3) {
-		$l->[1]->print("\@comment$string");
-	} elsif (@$l == 2) {
-		$l->[1]->print($string);
-	} else {
-	    my ($outname, $fh, $mode, $owner, $group, $nocheck) = @$l;
-	    if ($mode ne '') {
-		    $string="\@mode $mode\n$string\@mode\n";
+    if (defined $annotated->{$fname}) {
+    	for my $l (@{$annotated->{$fname}}) {
+	    if (@$l == 3) {
+		    $l->[1]->print("\@comment$string");
+	    } elsif (@$l == 2) {
+		    $l->[1]->print($string);
+	    } else {
+		my ($outname, $fh, $mode, $owner, $group, $nocheck) = @$l;
+		if ($mode ne '') {
+			$string="\@mode $mode\n$string\@mode\n";
+		}
+		if ($owner ne '') {
+			$string="\@owner $owner\n$string\@owner\n";
+		}
+		if ($group ne '') {
+			$string="\@group $group\n$string\@group\n";
+		}
+		if ($nocheck ne '') {
+			$string="\@comment no checksum\n$string";
+		}
+		print $fh $string;
 	    }
-	    if ($owner ne '') {
-		    $string="\@owner $owner\n$string\@owner\n";
-	    }
-	    if ($group ne '') {
-		    $string="\@group $group\n$string\@group\n";
-	    }
-	    if ($nocheck ne '') {
-		    $string="\@comment no checksum\n$string";
-	    }
-	    print $fh $string;
 	}
     } else {
     	print $out $string;
@@ -388,15 +407,16 @@ if (@libfiles > 0) {
 
 for my $d (sort { $b cmp $a } (grep { $newdir{$_} } (keys %newdir) ) ) {
 	my $dname = strip($d);
-	if (defined $annotated_dir{$dname}) {
-		my $l = $annotated_dir{$dname};
-		if (!$has_stuff{$d}) {
-			$l->[1]->print("\@exec mkdir -p \%D/$dname\n");
-		}
-		if (@$l == 3) {
-			$l->[1]->print("\@comment \@dirrm $dname\n");
-		} else {
-			$l->[1]->print("\@dirrm $dname\n");
+	if (defined $annotated_dir->{$dname}) {
+		for my $l (@{$annotated_dir->{$dname}}) {
+		    if (!$has_stuff{$d}) {
+			    $l->[1]->print("\@exec mkdir -p \%D/$dname\n");
+		    }
+		    if (@$l == 3) {
+			    $l->[1]->print("\@comment \@dirrm $dname\n");
+		    } else {
+			    $l->[1]->print("\@dirrm $dname\n");
+		    }
 		}
 	} else {
 		# case of new directory that does not hold anything: it's marked
