@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.35 2002/01/16 14:47:34 jakob Exp $
+# $OpenBSD: Makefile,v 1.36 2002/01/25 08:12:19 jakob Exp $
+
+BROKEN=		"no postfix snapshot currently availible"
 
 DISTNAME=	snapshot-20020115
 PKGNAME=	postfix-${DISTNAME}
