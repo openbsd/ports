@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2003/09/30 14:46:45 fgsch Exp $
+# $OpenBSD: Makefile,v 1.44 2003/12/04 05:46:31 pvalchev Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 COMMENT=		"PDP, IBM 1401, Nova and other CPUs simulator"
@@ -21,7 +21,7 @@ WRKDIST=		${WRKDIR}
 
 UNZIP=			unzip -a -o
 
-COPTS=			-DUSE_SOCKLEN_T \
+COPTS+=			-DUSE_SOCKLEN_T \
 			-DPATH_KA655_BIN=\"${PREFIX}/lib/simh/vax/ka655.bin\"
 MAKE_FILE=		makefile
 
