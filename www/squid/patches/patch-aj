@@ -1,20 +1,12 @@
---- lib/Makefile.in.orig	Wed Jul  7 15:14:26 1999
-+++ lib/Makefile.in	Fri Nov 17 17:01:28 2000
-@@ -39,6 +39,7 @@
- 		  Stack.o \
- 		  hash.o \
- 		  heap.o \
-+		  html.o \
- 		  $(LIBOBJS)
- REGEXOBJS	= GNUregex.o
- DLMALLOCOBJS	= dlmalloc.o
-@@ -47,6 +48,9 @@
- CFLAGS		= $(AC_CFLAGS) $(INCLUDE)
+--- lib/Makefile.in.orig	Tue Nov 21 16:09:40 2000
++++ lib/Makefile.in	Tue Nov 21 16:09:46 2000
+@@ -49,6 +49,9 @@
  
  all: $(LIBS)
-+
+ 
 +rfc1035.o: rfc1035.c
 +	$(CC) $(CFLAGS) -O0 -c $<
- 
++
  $(UTILOBJS): $(top_srcdir)/include/version.h
  
+ libmiscutil.a: $(UTILOBJS)
