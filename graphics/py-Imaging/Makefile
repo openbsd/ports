@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/08/07 22:08:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2002/09/14 17:46:17 naddy Exp $
 
 COMMENT=		"python imaging library"
 COMMENT-examples=	"examples for python imaging library"
@@ -32,7 +32,8 @@ PYTHON_VER=		2.2
 
 BUILD_DEPENDS=		:python-tkinter-${PYTHON_VER}*:lang/python/${PYTHON_VER},-tkinter 
 RUN_DEPENDS=		${BUILD_DEPENDS}
-LIB_DEPENDS=		jpeg.62::graphics/jpeg
+LIB_DEPENDS=		jpeg.62::graphics/jpeg \
+			tk83.1::x11/tk/8.3
 
 MULTI_PACKAGES=		-examples
 SUBPACKAGE?=
