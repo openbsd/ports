@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/07/06 22:46:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2004/06/22 23:50:44 naddy Exp $
 # $FreeBSD: ports/devel/ffcall/Makefile,v 1.2 2001/08/31 14:20:18 sobomax Exp $
 # Original From:                jagapen@home.com
 
@@ -8,7 +8,7 @@ BROKEN=		"mmap configure test causes system hang"
 
 COMMENT=	"foreign function call libraries"
 
-DISTNAME=	ffcall-1.8
+DISTNAME=	ffcall-1.9
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/
 HOMEPAGE=	http://www.haible.de/bruno/packages-ffcall.html
@@ -19,12 +19,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_LIBTOOL=	yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf
 
 FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} \
-		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" \
 		htmldir="\$$(datadir)/doc/ffcall/html"
 
 pre-install:
