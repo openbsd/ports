@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2002/02/27 00:38:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2002/03/04 00:58:58 naddy Exp $
 
     SUBDIR += bochs
     SUBDIR += bochs,debug
@@ -18,5 +18,6 @@
     SUBDIR += x48
     SUBDIR += xcopilot
     SUBDIR += xmame
+    SUBDIR += zsnes
 
 .include <bsd.port.subdir.mk>
