@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/13 22:13:25 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/02/27 18:43:34 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"fast and customizable WWW browser"
 
-PKGNAME=	opera-5.05tp1p1
+PKGNAME=	opera-5.05tp1p2
 DISTNAME=	opera-5.05_tp1-static_qt-libnpp-0.1.1
 CATEGORIES=	www
 NEED_VERSION=	1.496
@@ -37,7 +37,5 @@ do-install:
 	    --prefix=${PREFIX} \
 	    --exec_prefix=${PREFIX}/libexec \
 	    --docdir=${PREFIX}/share/doc/opera
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/opera
-	${INSTALL_DATA} ${FILESDIR}/operarc ${PREFIX}/share/examples/opera
 
 .include <bsd.port.mk>
