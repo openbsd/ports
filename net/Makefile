@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2001/01/08 10:25:01 danh Exp $
+# $OpenBSD: Makefile,v 1.108 2001/01/08 11:55:52 danh Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -65,6 +65,7 @@
      SUBDIR += ntop
      SUBDIR += p5-Net-Pcap
      SUBDIR += p5-libnet
+     SUBDIR += pcapmerge
      SUBDIR += pchar
      SUBDIR += pop3gwd
      SUBDIR += popa3d:
