@@ -1,10 +1,10 @@
+# $OpenBSD: Makefile,v 1.17 2003/10/29 22:14:43 sturm Exp $
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
-# $OpenBSD: Makefile,v 1.16 2002/12/23 00:37:52 pvalchev Exp $
 
 COMMENT=	"UCB/LBNL Network Animator"
 
-DISTNAME=	nam-src-1.0a8
-PKGNAME=	nam-1.0a8
+DISTNAME=	nam-src-1.9
+PKGNAME=	nam-1.9
 CATEGORIES=	net
 
 MASTER_SITES= 	ftp://ftp.ee.surrey.ac.uk/pub/Mirrors/ftp.isi.edu/nsnam/ \
@@ -13,19 +13,18 @@ MASTER_SITES= 	ftp://ftp.ee.surrey.ac.uk/pub/Mirrors/ftp.isi.edu/nsnam/ \
 
 HOMEPAGE=	http://www.isi.edu/nsnam/nam/
 
+# BSD
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-BUILD_DEPENDS=	::devel/tclcl
-LIB_DEPENDS=	otcl::lang/otcl \
-		tcl83::lang/tcl/8.3 \
-		tk83::x11/tk/8.3
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	:tclcl->=1.0b13:devel/tclcl
 
-WRKDIST=		${WRKDIR}/${PKGNAME}
+WRKDIST=	${WRKDIR}/${PKGNAME}
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
 
 ALL_TARGET=

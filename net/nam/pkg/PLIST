@@ -1,16 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/07/14 06:52:04 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/10/29 22:14:43 sturm Exp $
 bin/nam
 man/man1/nam.1
+share/examples/nam/9nodetree.nam
+share/examples/nam/DSR.nam
 share/examples/nam/README
 share/examples/nam/adc.README
 share/examples/nam/adc.nam.gz
+share/examples/nam/algo-out-50sub.nam
+share/examples/nam/att.README
+share/examples/nam/att.nam.gz
+share/examples/nam/dynamic-nam.conf
 share/examples/nam/dynamics-demo.nam
 share/examples/nam/dynamics-demo.txt
+share/examples/nam/flat-out-50sub.nam
+share/examples/nam/hier-out-50sub.nam
 share/examples/nam/lan.nam
 share/examples/nam/lantest2.nam
 share/examples/nam/losspatterns.README
 share/examples/nam/losspatterns.nam
+share/examples/nam/mbone96.layout.nam
+share/examples/nam/mbone96.nam
+share/examples/nam/mcache.nam
 share/examples/nam/mobigen.nam
+share/examples/nam/pktdemo.nam.gz
 share/examples/nam/rbp_demo.README
 share/examples/nam/rbp_demo.nam
 share/examples/nam/rpm-vs-srm.nam
@@ -22,6 +34,7 @@ share/examples/nam/srm-example.nam
 share/examples/nam/tcpecn.nam.gz
 share/examples/nam/tcpsrm.nam.gz
 share/examples/nam/test.nam.gz
+share/examples/nam/ts100.layout.nam.gz
 share/examples/nam/ts100.nam.gz
 share/examples/nam/ts20.nam.gz
 share/examples/nam/webcache.nam
