@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2000/07/22 00:58:28 brad Exp $
+# $OpenBSD: Makefile,v 1.34 2001/04/10 11:33:46 brad Exp $
+
+COMMENT=	"SMB and CIFS client and server for UNIX"
 
 DISTNAME=	samba-2.0.7
 CATEGORIES=	net
-NEED_VERSION=	1.310
+NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 		http://us1.samba.org/samba/ftp/ \
 		ftp://ca.samba.org/pub/samba/ \
@@ -11,7 +13,7 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 
 HOMEPAGE=	http://www.samba.org/
 
-MAINTAINER=	Peter.Galbavy@knowledge.com
+MAINTAINER=	Peter Galbavy <Peter.Galbavy@knowledge.com>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -19,10 +21,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/samba" \
 		--localstatedir="/var" \
-		--with-privatedir="/etc/samba" \
+		--with-privatedir="${SYSCONFDIR}/samba" \
 		--with-lockdir="/var/spool/lock" \
 		--with-swatdir="${PREFIX}/swat"
 
@@ -37,6 +39,7 @@ FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}" \
 # support SSL encrypted SMB
 #CONFIGURE_ARGS+=	--with-ssl
 #CONFIGURE_ARGS+=	--with-sslinc=/usr/include/ssl
+#CONFIGURE_ARGS+=	--with-ssllib=/usr/lib
 
 # uncomment this if you want to build the smbwrapper library
 #CONFIGURE_ARGS+=	--with-smbwrapper
@@ -72,7 +75,7 @@ SAMBA_DOCS=${WRKSRC}/../README \
 	${WRKSRC}/../docs/history \
 	${WRKSRC}/../docs/announce \
 	${WRKSRC}/../docs/*.reg
-SAMPLE_CONFIG=	${PREFIX}/lib/samba/smb.conf.sample
+SAMPLE_CONFIG=	${PREFIX}/share/examples/samba/smb.conf.default
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/samba/faq

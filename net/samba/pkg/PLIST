@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2000/08/06 09:01:19 form Exp $
+@comment $OpenBSD: PLIST,v 1.14 2001/04/10 11:33:47 brad Exp $
 bin/addtosmbpass
 bin/convert_smbpasswd
 bin/make_printerdef
@@ -41,7 +41,6 @@ lib/samba/codepages/unicode_map.ISO8859-2
 lib/samba/codepages/unicode_map.ISO8859-5
 lib/samba/codepages/unicode_map.ISO8859-7
 lib/samba/codepages/unicode_map.KOI8-R
-lib/samba/smb.conf.sample
 man/man1/make_smbcodepage.1
 man/man1/make_unicodemap.1
 man/man1/nmblookup.1

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2000/03/23 08:11:15 brad Exp $
+# $OpenBSD: INSTALL,v 1.3 2001/04/10 11:33:47 brad Exp $
 #
 # Pre/post-installation setup of samba
 
@@ -8,11 +8,12 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=/etc/samba
-CONFIG_FILE=/etc/samba/smb.conf
+CONFIG_DIR=${SYSCONFDIR}/samba
+CONFIG_FILE=$CONFIG_DIR/smb.conf
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/samba
 SAMBA_SPOOL=/var/spool/samba
 
-install -d -o root -g wheel -m 1777 ${SAMBA_SPOOL}
+install -d -o root -g wheel -m 1777 $SAMBA_SPOOL
 
 # Function: tell the user what s/he needs to do to use the port just installed
 #
@@ -20,9 +21,9 @@ do_notice()
 {
     echo
     echo "+---------------"
-    echo "| The existing $1 configuration files in ${CONFIG_DIR},"
+    echo "| The existing $1 configuration files in $CONFIG_DIR,"
     echo "| have NOT been changed.  You may want to compare them to the"
-    echo "| current sample files, ${PREFIX}/lib/samba,"
+    echo "| current sample files, $SAMPLE_CONFIG_DIR,"
     echo "| and update your configuration as needed."
     echo "+---------------"
     echo
@@ -32,13 +33,13 @@ do_notice()
 #
 do_install()
 {
-    install -d -o root -g wheel -m 755 ${CONFIG_DIR}
-    cat /etc/passwd | ${PREFIX}/bin/mksmbpasswd.sh > ${CONFIG_DIR}/smbpasswd; \
-    chmod 600 ${CONFIG_DIR}/smbpasswd
-    install -o root -g wheel -m 644 ${PREFIX}/lib/samba/smb.conf.sample ${CONFIG_FILE}
+    install -d -o root -g wheel -m 755 $CONFIG_DIR
+    cat /etc/passwd | $PREFIX/bin/mksmbpasswd.sh > $CONFIG_DIR/smbpasswd; \
+    chmod 600 $CONFIG_DIR/smbpasswd
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/smb.conf.default $CONFIG_FILE
     echo
     echo "+---------------"
-    echo "| The $1 configuration files in ${CONFIG_DIR},"
+    echo "| The $1 configuration files in $CONFIG_DIR,"
     echo "| have been installed.  Please view these files and change"
     echo "| the configuration to meet your needs"
     echo "+---------------"
@@ -60,11 +61,13 @@ case $2 in
 	: nothing to pre-install for this port
 	;;
     POST-INSTALL)
-	if [ -f $CONFIG_FILE ]; then
-	    do_notice $1
-	else
-	    do_install $1
-	fi
+        if [ ! -d $CONFIG_DIR ]; then
+            do_install $1
+        elif [ ! -f $CONFIG_FILE ]; then
+            do_install $1
+        else
+            do_notice $1
+        fi
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
