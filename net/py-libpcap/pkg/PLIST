@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/20 11:38:24 shell Exp $
-lib/python${PYTHON_VER}/site-packages/pcap.py
-lib/python${PYTHON_VER}/site-packages/pcap.pyc
-lib/python${PYTHON_VER}/site-packages/pcapcmodule.so
+@comment $OpenBSD: PLIST,v 1.2 2004/02/18 08:31:51 xsa Exp $
+lib/python${MODPY_VERSION}/site-packages/pcap.py
+lib/python${MODPY_VERSION}/site-packages/pcap.pyc
+lib/python${MODPY_VERSION}/site-packages/pcapcmodule.so
+share/examples/py-libpcap/sniff.py
+@dirrm share/examples/py-libpcap

@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1 2004/02/18 08:31:51 xsa Exp $
+--- setup.py.orig	2002-04-25 06:32:30.000000000 +0200
++++ setup.py	2004-02-18 00:51:14.000000000 +0100
+@@ -74,7 +74,7 @@ class pcap_build_ext(build_ext):
+ setup (# Distribution meta-data
+         name = "pylibpcap",
+         version = "0.3.1",
+-        licence = "BSD",
++        license = "BSD",
+         description = 'pylibpcap is a python module for the libpcap packet capture library.',
+         long_description = 'pylibpcap is a python module for the libpcap packet capture library.',
+         url = "http://pylibpcap.sourceforge.net/",

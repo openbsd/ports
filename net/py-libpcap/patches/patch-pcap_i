@@ -1,0 +1,18 @@
+$OpenBSD: patch-pcap_i,v 1.1 2004/02/18 08:31:51 xsa Exp $
+--- pcap.i.orig	2002-04-25 08:43:15.000000000 +0200
++++ pcap.i	2004-02-18 00:58:57.000000000 +0100
+@@ -30,12 +30,12 @@ MERCHANTABILITY or FITNESS FOR A PARTICU
+ 
+ /* let functions return raw python objects */
+ %typemap(python, out) PyObject * {
+-  $target = $source;
++  $result = $1;
+ }
+ 
+ /* let functions take raw python objects */
+ %typemap(python, in) PyObject * {
+-  $target = $source;
++  $result = $1;
+ }
+ 
+ 
