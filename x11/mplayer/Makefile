@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/12 08:25:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/12 18:50:46 niklas Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc
@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 		--disable-alsa \
 		--disable-vorbis \
 		--disable-aa \
-		--disable-oss \
+		--disable-ossaudio \
 		--enable-select \
 		--enable-gl \
 		--enable-gui \
