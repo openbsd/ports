@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/10/27 15:56:44 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/27 02:51:03 kevlo Exp $
 
 COMMENT=	"classical hangman game"
 
-DISTNAME=	khangman-0.7
+DISTNAME=	khangman-0.71
 CATEGORIES=	education
 NEED_VERSION=	1.484
 
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP=  Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-BUILD_DEPENDS=	::x11/qt2-designer
+BUILD_DEPENDS=	::x11/qt2-designer \
+		::devel/automake
 
 LIB_DEPENDS=	kdecore.3,DCOP,kdeui::x11/kde/libs2
 
@@ -28,7 +29,7 @@ MAKE_ENV=	${CONFIGURE_ENV}
 MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 
 USE_X11=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include
