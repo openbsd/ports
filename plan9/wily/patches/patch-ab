@@ -1,0 +1,46 @@
+*** libmsg/connect.c.orig	Sat May 16 22:55:34 1998
+--- libmsg/connect.c	Sat May 16 23:00:59 1998
+***************
+*** 106,116 ****
+  
+  	/* bind it to a unix-domain at a temporary address */
+  	addr.sun_family = AF_UNIX;
+! 	tmpnam(addr.sun_path);
+  	path = strdup(addr.sun_path);
+  	len = strlen(addr.sun_path);
+  
+  	if (bind(s, (struct sockaddr *) &addr, sizeof addr) < 0){
+  		perror("bind");
+  		return -1;
+  	}
+--- 106,118 ----
+  
+  	/* bind it to a unix-domain at a temporary address */
+  	addr.sun_family = AF_UNIX;
+! 	sprintf(addr.sun_path, "%s/xx.XXXXXXXX", P_tmpdir);
+! 	close(mkstemp(addr.sun_path));
+  	path = strdup(addr.sun_path);
+  	len = strlen(addr.sun_path);
+  
+  	if (bind(s, (struct sockaddr *) &addr, sizeof addr) < 0){
++ 		unlink(path);
+  		perror("bind");
+  		return -1;
+  	}
+***************
+*** 119,128 ****
+--- 121,134 ----
+  
+  	fd = wilyfifotalk();		/* fifo to wily */
+  	if(fd<0)
++ 	{
++ 		unlink(path);
+  		return -1;
++ 	}
+  	nwritten = write(fd, addr.sun_path, len);
+  	close(fd);
+  	if(nwritten !=len){
++ 		unlink(path);
+  		perror("write to wily");
+  		return -1;
+  	}

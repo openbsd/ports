@@ -1,0 +1,28 @@
+*** wily/text2.c.orig	Sat May 16 22:56:50 1998
+--- wily/text2.c	Sat May 16 22:58:05 1998
+***************
+*** 136,146 ****
+  int
+  text_fd(Text *t, Range sel)
+  {
+! 	char	*file = tmpnam(0);
+  	int	fd;
+  	int	input;
+  
+! 	if ((fd = open(file, O_WRONLY|O_CREAT, 0600)) < 0) {
+  		perror("open temp file");
+  		(void) unlink(file);
+  		return(-1);
+--- 136,147 ----
+  int
+  text_fd(Text *t, Range sel)
+  {
+! 	char	file[40];
+  	int	fd;
+  	int	input;
+  
+! 	sprintf(file, "ff.XXXXXXXX");
+! 	if ((fd = mkstemp(file)) < 0) {
+  		perror("open temp file");
+  		(void) unlink(file);
+  		return(-1);
