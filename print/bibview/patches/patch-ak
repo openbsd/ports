@@ -4,7 +4,7 @@
 *** 467,475 ****
     strcpy(bp->macrofile,tempName);
   #else
-    bp->tempfile = (char *)tempnam(NULL, NULL);
+!   bp->tempfile = (char *)tempnam(NULL, NULL);
 !   bp->macrofile = (char *)tempnam(NULL, NULL);
   #endif
 !   tempDatei = fopen(bp->macrofile, "w" );
@@ -14,7 +14,7 @@
 --- 467,475 ----
     strcpy(bp->macrofile,tempName);
   #else
-    bp->tempfile = (char *)tempnam(NULL, NULL);
+!   bp->tempfile = strdup("/tmp/ax.XXXXXXXX"); close(mkstemp(bp->tempfile));
 !   bp->macrofile = strdup("/tmp/ww.XXXXXXXX");
   #endif
 !   tempDatei = fdopen(mkstemp(bp->macrofile), "w" );
