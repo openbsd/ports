@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2001/09/02 05:01:53 pvalchev Exp $
+$OpenBSD: patch-Makefile,v 1.2 2002/05/25 21:37:45 pvalchev Exp $
 --- Makefile.orig	Tue Dec 28 01:33:54 1999
-+++ Makefile	Sat Sep  1 22:47:47 2001
++++ Makefile	Sat May 25 15:20:42 2002
 @@ -12,17 +12,17 @@
  # 100% SDL Version: December 27, 1999
  
@@ -22,3 +22,12 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2001/09/02 05:01:53 pvalchev Exp $
  	-DDATA_PREFIX=\"$(DATA_PREFIX)\" -D$(NOSOUNDFLAG) -D$(JOYFLAG)
  SDL_LIB=$(MIXER) $(SDL_LDFLAGS)
  
+@@ -38,7 +38,7 @@ clean:
+ 
+ 
+ gemdropx:	gemdropx.o
+-	$(CC) $(CFLAGS) -o gemdropx gemdropx.o $(SDL_LIB)
++	$(CC) $(CFLAGS) -o gemdropx gemdropx.o $(SDL_LIB) -lm
+ 
+ 
+ gemdropx.o:	gemdropx.c
