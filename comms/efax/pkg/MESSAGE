@@ -1,0 +1,19 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Before use, you MUST customize the "fax" script slightly. In
+particular, you must set the device name (normally cua00 on a
+workstation, cua01 on a PC with a serial mouse).
+
+You also MUST SET BY LAW in many jurisdictions your name and your
+return FAX telephone number.
+
+In short, please check and set at least DEV, NAME and FROM, in addition
+to any modem-specific settings required.
+
+Instead of editing the fax script directly, you may wish to create
+one of the files named in CONFIGFILES (by default,
+CONFIGFILES="/etc/efax.rc ${HOME:-~}/.efaxrc ./.efaxrc") to obviate
+the need to change these settings should you reinstall future
+versions of this package.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
