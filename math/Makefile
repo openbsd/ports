@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 1998/05/17 04:32:58 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/05/24 01:19:30 marc Exp $
 #
 
 #    SUBDIR += Scilab
@@ -12,7 +12,7 @@
 #    SUBDIR += fftpack
 #    SUBDIR += freefem
 #    SUBDIR += fudgit
-    SUBDIR += gnuplot
+     SUBDIR += gnuplot
 #    SUBDIR += hexcalc
 #    SUBDIR += lapack
 #    SUBDIR += libranlib
@@ -38,4 +38,4 @@
 #    SUBDIR += xplot
 #    SUBDIR += xspread
 #
-#.include <bsd.port.subdir.mk>
+.include <bsd.port.subdir.mk>
