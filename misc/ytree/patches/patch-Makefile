@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2001/01/03 18:54:09 naddy Exp $
---- Makefile.orig	Sun Jul 16 00:01:56 2000
-+++ Makefile	Tue Jan  2 20:04:47 2001
+$OpenBSD: patch-Makefile,v 1.2 2001/06/04 23:17:34 naddy Exp $
+--- Makefile.orig	Fri Jun  1 21:33:10 2001
++++ Makefile	Fri Jun  1 21:34:38 2001
 @@ -6,7 +6,7 @@
  #
  ############################################################################
@@ -10,17 +10,17 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2001/01/03 18:54:09 naddy Exp $
  
  #
  # ADD_CFLAGS: Add -DVI_KEYS if you want vi-cursor-keys
-@@ -23,12 +23,18 @@ MANEXT      = 1
+@@ -25,12 +25,18 @@ MANESDIR    = $(DESTDIR)/share/man/es/ma
  # Uncomment the lines for your system (default is linux)
  
  ###########################
 +# OpenBSD
 +###########################
-+CFLAGS       += -DCOLOR_SUPPORT -DNCURSES
-+LIBS         = -lcurses
++CFLAGS      += -DCOLOR_SUPPORT -DNCURSES
++LIBS        = -lcurses
 +
 +###########################
- # LINUX (testet with ncurses 5.0)
+ # LINUX (testet with ncurses 5.2)
  ###########################
 -COLOR       = -DCOLOR_SUPPORT 
 +#COLOR       = -DCOLOR_SUPPORT 
