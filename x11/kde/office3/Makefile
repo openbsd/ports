@@ -1,21 +1,23 @@
-# $OpenBSD: Makefile,v 1.7 2002/09/01 08:25:26 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/09/11 12:02:50 espie Exp $
 
 COMMENT=		"office applications for kde"
 CATEGORIES=		x11 x11/kde productivity
-VERSION=		1.1.1
-DISTNAME=		koffice-${VERSION}
+VERSION=		3.0
 VMEM_WARNING=		Yes
+MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/${DISTNAME}/src/@}
 
-FULLPKGNAME=	koffice-${VERSION}-kde3
-MASTER_SITES=	${MASTER_SITE_KDE:=koffice-1.1.1-kde3/src/}
-DISTFILES=	koffice-${VERSION}-kde3.tar.bz2
+DISTNAME=	koffice-1.2
+PKGNAME=	koffice-1.2
 
-#BUILD_DEPENDS=	::x11/qt2-designer
-LIB_DEPENDS= kdecore.3,DCOP,kdefx,kdeprint,kdesu,kdeui,kio,kparts,kspell::x11/kde/libs3 python2.2.0.0:python-2.2*:lang/python/2.2
+# kill docs for now, they don't compile yet.
+#MAKE_FLAGS=TOPSUBDIRS="autocorrect karbon kchart kformula kivio kontour koshell kounavail kpresenter kspread kugar kword pics plugins servicetypes templates tools"
+FAKE_FLAGS=${MAKE_FLAGS} TAR=tar DESTDIR=${WRKINST}
 
-PATCHORIG=	.bsdorig
+LIB_DEPENDS=kdecore.4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjava,kparts,kspell::x11/kde/libs3 python2.2.0.0:python-2.2*:lang/python/2.2
+
+#PATCHORIG=	.bsdorig
 MODULES=	qt3
-PATCH_LIST=	p-* patch-*
+#PATCH_LIST=	p-* patch-*
 
-KDE=lib/kde3
+#KDE=lib/kde3
 .include <bsd.port.mk>
