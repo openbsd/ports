@@ -1,8 +1,3 @@
-@pkgdep giflib-4.1.0
-@pkgdep jpeg-6b
-@pkgdep libPropList-0.8.3
-@pkgdep png-1.0.3
-@pkgdep tiff-3.4
 bin/get-wraster-flags
 bin/wmaker
 bin/wxcopy
@@ -375,4 +370,4 @@ GNUstep/Apps/WPrefs.app/WPrefs.xpm
 @dirrm share/WindowMaker/Backgrounds
 @dirrm share/WindowMaker
 @dirrm share/WINGs
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib
+@exec /sbin/ldconfig -m %B

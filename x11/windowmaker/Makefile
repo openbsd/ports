@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 1999/03/27 02:49:31 brad Exp $
+# $OpenBSD: Makefile,v 1.11 1999/03/27 21:04:00 brad Exp $
 
 DISTNAME=	WindowMaker-0.51.2
 CATEGORIES=	x11
 
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/beta/srcs/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/beta/srcs/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 DATAFILES=	WindowMaker-data.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 
 NEED_VERSION=	1.67
 
