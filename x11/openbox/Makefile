@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/14 08:42:33 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2002/12/15 00:00:53 brad Exp $
 
-COMMENT=	"small, fast & useable window manager"
+COMMENT=	"small, fast & usable window manager"
 
 DISTNAME=	openbox-2.2.2
 CATEGORIES=	x11
