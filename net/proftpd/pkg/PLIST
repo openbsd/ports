@@ -4,7 +4,14 @@ sbin/ftpshut
 man/man8/proftpd.8
 man/man8/ftpshut.8
 man/man1/ftpcount.1
+man/man1/ftpwho.1
+@exec echo "***"
+@exec echo "*** Finished installing proftpd."
+@exec echo "*** Please take a look at the sample proftpd config file /etc/proftpd.conf
+@exec echo "*** and make any necessary modifications before running.
+@exec echo "***"
 @unexec echo "***"
-@unexec echo "*** You should remove /etc/proftpd.conf manually"
-@unexec echo "*** if you won't install proftpd again."
+@unexec echo "*** Finished un-installing proftpd."
+@unexec echo "*** You should remove the proftpd config file /etc/proftpd.conf and the"
+@unexec echo "*** /var/run/proftpd directory if you won't be installing proftpd again."
 @unexec echo "***"
