@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Thu Feb  3 10:36:59 2000
++++ src/Makefile.in	Thu Feb  3 10:37:11 2000
+@@ -49,7 +49,7 @@
+ 
+ install: all
+ 	for prog in $(PROGS) $(SCRIPTS) ; do \
+-		$(INSTALL_PROGRAM) $$prog $(bindir) ; \
++		$(INSTALL) $$prog $(bindir) ; \
+ 	done
+ 	-strip $(bindir)/remind
+ 	-strip $(bindir)/rem2ps
