@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_tomcat_sh,v 1.1.1.1 2002/01/05 15:28:09 reinhard Exp $
+$OpenBSD: patch-bin_tomcat_sh,v 1.2 2003/05/14 18:58:13 sturm Exp $
 --- bin/tomcat.sh.orig	Tue Dec 12 22:36:46 2000
 +++ bin/tomcat.sh	Fri May 18 16:43:03 2001
 @@ -31,12 +31,10 @@ if [ "$TOMCAT_HOME" = "" ] ; then
@@ -11,7 +11,7 @@ $OpenBSD: patch-bin_tomcat_sh,v 1.1.1.1 2002/01/05 15:28:09 reinhard Exp $
 -	TOMCAT_HOME=${TOMCAT_HOME_1}
 -	echo "Setting TOMCAT_HOME to $TOMCAT_HOME"
 -    fi
-+  if [ -d /etc/tomcat ] ; then 
++  if [ -d SYSCONFDIR/tomcat ] ; then 
 +    TOMCAT_HOME=TOMCATDIR
 +    echo "Setting TOMCAT_HOME to $TOMCAT_HOME"
 +  fi

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/29 15:03:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2003/05/14 18:58:13 sturm Exp $
 
 COMMENT=	"Java servlet 2.2 and Java server pages 1.1 server"
 
@@ -31,7 +31,7 @@ NO_REGRESS=	Yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 DIRS=		bin conf doc lib logs src webapps
-CONFDIR=	/etc/tomcat
+CONFDIR=	${SYSCONFDIR}/tomcat
 TOMCATDIR=	/var/tomcat
 SUBST_VARS=	TOMCATDIR CONFDIR
 
@@ -39,6 +39,7 @@ post-patch:
 	@perl -pi -e 's|JAVA_HOME|${JAVA_HOME}|g' ${WRKSRC}/conf/workers.properties
 	@perl -pi -e 's|TOMCATDIR|${TOMCATDIR}|g' ${WRKSRC}/bin/tomcat.sh
 	@perl -pi -e 's|PREFIX|${PREFIX}|g' ${WRKSRC}/bin/tomcat.sh
+	@perl -pi -e 's|SYSCONFDIR|${SYSCONFDIR}|g' ${WRKSRC}/bin/tomcat.sh
 	@cd ${WRKDIST}/conf && perl -pi -e 's,^M,,g' *
 
 do-install:
