@@ -1,0 +1,39 @@
+--- src/Makefile.in.orig	Wed Feb 24 16:30:33 1999
++++ src/Makefile.in	Thu Jun  1 01:23:23 2000
+@@ -152,29 +152,29 @@
+ 
+ install_xcin: xcin $(KBMS) $(INPUT0) tsintab
+ 	if [ ! -d $(PATH_XCIN_BIN) ]; then $(INSTALL_DIR) $(PATH_XCIN_BIN); fi
+-	$(INSTALL) xcin $(PATH_XCIN_BIN)
+-	echo $(PATH_XCIN_BIN)/xcin >> filelist
++	$(INSTALL_PROGRAM) xcin $(DESTDIR)$(PATH_XCIN_BIN)
++	echo $(DESTDIR)$(PATH_XCIN_BIN)/xcin >> filelist
+ 
+ 	if [ ! -d $(PATH_XCIN_DIR) ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR); fi
+ 	for f in $(TSINTABS) $(KBMS) $(INPUT0) voca.box; do\
+-            cp $$f $(PATH_XCIN_DIR); echo $(PATH_XCIN_DIR)/$$f >> filelist;\
++            cp $$f $(DESTDIR)$(PATH_XCIN_DIR); echo $(DESTDIR)$(PATH_XCIN_DIR)/$$f >> filelist;\
+         done
+ 
+ install_cin2tab: cin2tab
+ 	if [ ! -d $(PATH_XCIN_DIR) ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR); fi
+-	$(INSTALL) cin2tab $(PATH_XCIN_DIR)
+-	echo $(PATH_XCIN_DIR)/cin2tab >> filelist
++	$(INSTALL_PROGRAM) cin2tab $(DESTDIR)$(PATH_XCIN_DIR)
++	echo $(DESTDIR)$(PATH_XCIN_DIR)/cin2tab >> filelist
+ 
+ install_tsintools: tsintools
+ 	if [ ! -d $(PATH_XCIN_DIR) ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR); fi
+ 	for f in $(TSINTOOLS); do\
+-            $(INSTALL) $$f $(PATH_XCIN_DIR); echo $(PATH_XCIN_DIR)/$$f >> filelist;\
++            $(INSTALL_PROGRAM) $$f $(DESTDIR)$(PATH_XCIN_DIR); echo $(DESTDIR)$(PATH_XCIN_DIR)/$$f >> filelist;\
+ 	done
+ 
+ install_tsintabsrc:
+ 	if [ ! -d $(PATH_XCIN_DIR) ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR); fi
+ 	for f in $(TSINTABSRC); do\
+-	    cp $$f $(PATH_XCIN_DIR); echo $(PATH_XCIN_DIR)/$$f >> filelist;\
++	    cp $$f $(DESTDIR)$(PATH_XCIN_DIR); echo $(DESTDIR)$(PATH_XCIN_DIR)/$$f >> filelist;\
+ 	done
+ 
+ clean:

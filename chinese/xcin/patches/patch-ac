@@ -1,0 +1,34 @@
+--- input_tab/Makefile.in.orig	Wed May 31 22:42:23 2000
++++ input_tab/Makefile.in	Thu Jun  1 01:42:46 2000
+@@ -15,13 +15,28 @@
+ 	(cd ../src; make cin2tab)
+ 	ln -s ../src/cin2tab .
+ 
+-%.tab: %.cin cin2tab
+-	./cin2tab $(basename $<)
++phone.tab: cin2tab phone.cin
++	./cin2tab phone
++
++array30.tab: cin2tab array30.cin
++	./cin2tab array30
++
++cj.tab: cin2tab cj.cin
++	./cin2tab cj
++
++cantonese.tab: cin2tab cantonese.cin
++	./cin2tab cantonese
++
++pinyin.tab: cin2tab pinyin.cin
++	./cin2tab pinyin
++
++zmdbosh.tab: cin2tab zmdbosh.cin
++	./cin2tab zmdbosh
+ 
+ install: all
+ 	if [ ! -d $(PATH_XCIN_DIR) ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR); fi
+ 	for f in $(install_tabs); do\
+-	    cp $$f $(PATH_XCIN_DIR); echo $(PATH_XCIN_DIR)/$$f >> filelist;\
++	    cp $$f $(DESTDIR)$(PATH_XCIN_DIR); echo $(DESTDIR)$(PATH_XCIN_DIR)/$$f >> filelist;\
+ 	done
+ 
+ clean:

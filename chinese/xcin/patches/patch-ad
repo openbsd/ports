@@ -1,0 +1,38 @@
+--- doc/Makefile.in.orig	Thu Jun  1 00:26:45 2000
++++ doc/Makefile.in	Thu Jun  1 00:27:10 2000
+@@ -1,8 +1,8 @@
+ include ../config.status
+ 
+ MANS  = @INSTALLALL@
+-HOWTO = xcin.HOWTO cin2tab.HOWTO Boshiamy.HOWTO Xfonts.HOWTO
+-MISC  = README.xcin XCIN.client.doc
++#HOWTO = xcin.HOWTO cin2tab.HOWTO Boshiamy.HOWTO Xfonts.HOWTO
++#MISC  = README.xcin XCIN.client.doc
+ 
+ install:
+ 	if [ ! -d $(PATH_XCIN_MAN) ]; then $(INSTALL_DIR) $(PATH_XCIN_MAN); fi
+@@ -11,15 +11,15 @@
+ 	    $(INSTALL_DATA) man/$$f $(PATH_XCIN_MAN)/man1; \
+ 	    echo $(PATH_XCIN_MAN)/man1/$$f >> filelist; \
+ 	done
+-	if [ ! -d $(PATH_XCIN_DIR)/docs ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR)/docs; fi
+-	for f in $(HOWTO); do \
+-	    $(INSTALL_DATA) howto/$$f $(PATH_XCIN_DIR)/docs; \
+-	    echo $(PATH_XCIN_DIR)/docs/$$f >> filelist; \
+-	done
+-	for f in $(MISC); do \
+-	    $(INSTALL_DATA) misc/$$f $(PATH_XCIN_DIR)/docs; \
+-	    echo $(PATH_XCIN_DIR)/docs/$$f >> filelist; \
+-	done
++#	if [ ! -d $(PATH_XCIN_DIR)/docs ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR)/docs; fi
++#	for f in $(HOWTO); do \
++#	    $(INSTALL_DATA) howto/$$f $(PATH_XCIN_DIR)/docs; \
++#	    echo $(PATH_XCIN_DIR)/docs/$$f >> filelist; \
++#	done
++#	for f in $(MISC); do \
++#	    $(INSTALL_DATA) misc/$$f $(PATH_XCIN_DIR)/docs; \
++#	    echo $(PATH_XCIN_DIR)/docs/$$f >> filelist; \
++#	done
+ 
+ clean:
+ 	rm -f *.o core
