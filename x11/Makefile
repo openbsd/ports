@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2001/10/14 15:42:23 espie Exp $
+# $OpenBSD: Makefile,v 1.118 2001/11/01 13:35:56 wilfried Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -50,6 +50,7 @@
      SUBDIR += gatos-bin
      SUBDIR += gkrellweather
      SUBDIR += gnome
+     SUBDIR += gnomemm
      SUBDIR += gtk-engines
      SUBDIR += gtk+
      SUBDIR += gtkglarea
