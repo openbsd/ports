@@ -3,7 +3,7 @@
 # Date created:		22 July 1998
 # Whom:			Niklas Hallqvist <niklas@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.7 2001/05/06 03:59:14 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/03 21:16:03 drahn Exp $
 # $FreeBSD: Makefile,v 1.4 1997/03/10 12:07:35 asami Exp $
 #
 
@@ -22,6 +22,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	imake noman
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 macppc
 
 .include <bsd.port.mk>
