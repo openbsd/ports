@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/10/28 17:22:17 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/23 00:03:57 grange Exp $
 # $RuOBSD: Makefile,v 1.9 2002/10/28 16:01:41 grange Exp $
 
 COMMENT=		"GNOME jabber client"
@@ -8,7 +8,7 @@ CATEGORIES=		net x11/gnome
 
 HOMEPAGE=		http://gabber.sourceforge.net/
 
-MAINTAINER=		Alexander Yurchenko <grange@rt.mipt.ru>
+MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/26 12:52:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/23 00:03:57 grange Exp $
 # $RuOBSD: Makefile,v 1.4 2002/04/29 11:07:18 grange Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2001/12/29 00:22:02 abs Exp $
 
@@ -10,7 +10,7 @@ CATEGORIES=		emulators
 
 HOMEPAGE=		http://www.uni-mainz.de/~bauec002/B2Main.html
 
-MAINTAINER=		Alexander Yurchenko <grange@rt.mipt.ru>
+MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

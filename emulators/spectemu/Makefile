@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/10/26 12:52:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/12/23 00:03:57 grange Exp $
 
 COMMENT=		"ZX Spectrum 48k emulator"
 
@@ -7,7 +7,7 @@ CATEGORIES=		emulators
 
 HOMEPAGE=		http://www.inf.bme.hu/~mszeredi/spectemu/
 
-MAINTAINER=		Alexander Yurchenko <grange@rt.mipt.ru>
+MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
