@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2000/12/25 05:00:37 itojun Exp $
+# $OpenBSD: Makefile,v 1.16 2001/01/11 05:46:50 itojun Exp $
 # KAME Id: Makefile,v 1.5 1999/09/13 16:27:41 itojun Exp
 # Originally by: peter.galbavy@knowledge.com
 
-DISTNAME=	zebra-0.89a
+DISTNAME=	zebra-0.90
 CATEGORIES=	net
 NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/

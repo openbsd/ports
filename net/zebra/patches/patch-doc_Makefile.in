@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig	Mon Oct  2 20:19:08 2000
-+++ doc/Makefile.in	Mon Oct  2 23:11:34 2000
+--- doc/Makefile.in.orig	Wed Jan 10 20:02:55 2001
++++ doc/Makefile.in	Thu Jan 11 15:01:28 2001
 @@ -75,7 +75,7 @@
  LIBPAM = @LIBPAM@
  LIB_IPV6 = @LIB_IPV6@
  LIB_REGEX = @LIB_REGEX@
 -MAKEINFO = @MAKEINFO@
 +MAKEINFO = @MAKEINFO@ --no-split
+ MULTIPATH_NUM = @MULTIPATH_NUM@
  OSPF6D = @OSPF6D@
  OSPFD = @OSPFD@
- OTHER_METHOD = @OTHER_METHOD@
