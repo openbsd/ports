@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/03/06 00:45:24 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2003/12/26 19:34:23 naddy Exp $
 
 COMMENT=	"filemanager for X Window"
 
@@ -17,14 +17,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=    jpeg.62.::graphics/jpeg \
-		tiff.::graphics/tiff \
-                png.::graphics/png
+LIB_DEPENDS=	tiff.36::graphics/tiff \
+		png.4::graphics/png
 
 USE_X11=	Yes
 NO_REGRESS=	Yes
 
-CONFIGURE_STYLE=	gnu old dest
+CONFIGURE_STYLE=	autoconf old dest
+AUTOCONF_VERSION=	2.13
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
