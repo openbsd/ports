@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/07/03 22:16:42 jolan Exp $
+# $OpenBSD: Makefile,v 1.21 2004/07/04 22:53:44 jolan Exp $
 
 COMMENT=	"extended module player"
 COMMENT-xmms=	"extended module player plugin for XMMS"
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmp/}
 
 PSEUDO_FLAVORS=	no_xmms
-.if defined(NO_SHARED_LIBS)
+.if ${MACHINE_ARCH} == "m88k" || ${MACHINE_ARCH} == "vax"
 FLAVOR?=	no_xmms
 .else
 FLAVOR?=
