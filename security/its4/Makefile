@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2001/01/05 16:36:01 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2001/02/24 18:05:18 espie Exp $
 
 DISTNAME=	its4-1.1.1
 CATEGORIES=	security
 NEED_VERSION=	1.336
-MASTER_SITES=	see-do-fetch-target
+MASTER_SITES=	#see-do-fetch-target
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
