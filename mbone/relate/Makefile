@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2001/04/20 08:30:31 wilfried Exp $
+# $OpenBSD: Makefile,v 1.16 2001/05/06 02:07:26 lebel Exp $
+
+COMMENT=	"ReLaTe integrated conferencing tool from UCL"
 
 DISTNAME=       relate-2.0
 CATEGORIES=	mbone
-NEED_VERSION=	1.230
+NEED_VERSION=	1.402
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/relate-ui/2.0/
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

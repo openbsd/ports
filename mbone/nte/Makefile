@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2000/10/22 15:42:39 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/05/06 02:07:20 lebel Exp $
+
+COMMENT=	"Network Text Editor multicast tool from UCL"
 
 DISTNAME=       nte-1.7.0
 CATEGORIES=	mbone
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/nte/1.7.0/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>

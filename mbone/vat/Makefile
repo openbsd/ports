@@ -1,10 +1,12 @@
 # $FreeBSD: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
-# $OpenBSD: Makefile,v 1.15 2000/10/22 15:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/05/06 02:07:37 lebel Exp $
+
+COMMENT=	"The Visual Audio Tool - multicast audioconferencing"
 
 DISTNAME=	vatsrc-4.0b2
 PKGNAME=	vat-4.0b2
 CATEGORIES=	mbone
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>

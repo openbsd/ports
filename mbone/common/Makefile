@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2000/10/22 15:42:38 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2001/05/06 02:07:15 lebel Exp $
+
+COMMENT=	"common library functions used by the UCL multicast utils"
 
 DISTNAME=       common-1.0.6
 CATEGORIES=	mbone
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/common/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2000/10/22 14:03:29 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2001/05/06 02:07:46 lebel Exp $
+
+COMMENT=	"shared drawing (whiteboard) tool using multicast"
 
 DISTNAME=	wbd-1.0ucl4
 CATEGORIES=	mbone
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.402
 
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/wbd/1.0ucl4/
 

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2000/10/22 15:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2001/05/06 02:07:40 lebel Exp $
+
+COMMENT=	"MBONE video tool"
 
 DISTNAME=	vic-2.8ucl4
 CATEGORIES=	mbone
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/vic/2.8ucl4/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>

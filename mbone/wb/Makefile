@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2001/03/22 22:06:40 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 02:07:43 lebel Exp $
 #
+
+COMMENT=	"shared drawing (whiteboard) tool using multicast"
 
 DISTNAME=       wb-1.59
 CATEGORIES=	mbone
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.402
 MASTER_SITES=   ftp://ftp.ee.lbl.gov/conferencing/wb/
 DISTFILES=      i386-wb-1.59.tar.Z
 ONLY_FOR_ARCHS=	i386
