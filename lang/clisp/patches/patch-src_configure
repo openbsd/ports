@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_configure,v 1.1 2005/02/11 12:14:37 alek Exp $
+--- src/configure.orig	Thu Feb 10 00:43:19 2005
++++ src/configure	Thu Feb 10 00:43:34 2005
+@@ -24255,7 +24255,7 @@ s,@host@,$host,;t t
+ s,@host_cpu@,$host_cpu,;t t
+ s,@host_vendor@,$host_vendor,;t t
+ s,@host_os@,$host_os,;t t
+-s,@LIBICONV@,$LIBICONV,;t t
++s,@LIBICONV@,$LTLIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+ s,@SET_MAKE@,$SET_MAKE,;t t
+ s,@INSTALL_SCRIPT@,$INSTALL_SCRIPT,;t t
+@@ -24266,7 +24266,7 @@ s,@XGETTEXT@,$XGETTEXT,;t t
+ s,@MSGMERGE@,$MSGMERGE,;t t
+ s,@USE_NLS@,$USE_NLS,;t t
+ s,@INTLLIBS@,$INTLLIBS,;t t
+-s,@LIBINTL@,$LIBINTL,;t t
++s,@LIBINTL@,$LTLIBINTL,;t t
+ s,@LTLIBINTL@,$LTLIBINTL,;t t
+ s,@POSUB@,$POSUB,;t t
+ s,@LIBSIGSEGV@,$LIBSIGSEGV,;t t
