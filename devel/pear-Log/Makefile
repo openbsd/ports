@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/02/29 00:08:50 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/09 20:39:54 xsa Exp $
 
 COMMENT=	"logging utilities for PHP"
 
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 HOMEPAGE=	http://www.csh.rit.edu/~jon/projects/pear_log/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
-MODULES=	pear
+MODULES=	www/php4/pear
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes

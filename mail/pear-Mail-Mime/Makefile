@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/03 10:36:22 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/09 20:39:54 xsa Exp $
 
 COMMENT=	"classes to create and decode MIME messages in PHP"
 
@@ -11,7 +11,7 @@ MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
-MODULES=	pear
+MODULES=	www/php4/pear
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes

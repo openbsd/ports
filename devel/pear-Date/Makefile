@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/02/29 00:09:28 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/09 20:39:54 xsa Exp $
 
 COMMENT=	"date and timezone classes for PHP"
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
-MODULES=	pear
+MODULES=	www/php4/pear
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes
