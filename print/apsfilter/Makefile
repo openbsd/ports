@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/27 18:33:31 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2004/11/28 13:18:45 alek Exp $
 
 COMMENT=		"filter to print a wide range of file formats"
 
@@ -7,8 +7,6 @@ PKGNAME=		${DISTNAME}p1
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.apsfilter.org/
-
-MAINTAINER=		Benjamin Lerman <benjamin.lerman@ambre.net>
 
 # GPL license
 PERMIT_PACKAGE_CDROM=	Yes
