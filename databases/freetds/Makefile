@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/15 23:26:38 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/06 13:52:00 espie Exp $
 
 DISTNAME=	freetds-0.52
 CATEGORIES=	databases
 NEED_VERSION=	1.433
+BROKEN=		"Invades /usr/local/include"
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
