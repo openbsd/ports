@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/28 15:17:34 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/28 16:22:27 espie Exp $
 
 COMMENT-wnn4= 		"library for Japanese Input Method Wnn4"
 COMMENT-canna=		"library for Japanese Input Method canna"
@@ -47,6 +47,7 @@ post-patch:
 	ln -s ${ONEW_CONF} ${WRKSRC}/ONEW_CONF
 
 MAKE_FLAGS=LOCALBASE=${LOCALBASE} CFLAGS='${CFLAGS}'
+SUBST_VARS=FLAVOR_EXT
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libonew.a ${PREFIX}/lib/${LIB_NAME}
