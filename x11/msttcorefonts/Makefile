@@ -3,7 +3,6 @@
 COMMENT=		"Microsoft TrueType core fonts"
 
 DISTNAME=		msttcorefonts-1.2
-DISTFILES=		${FONTS}
 CATEGORIES=		x11
 
 HOMEPAGE=		http://corefonts.sourceforge.net/
@@ -24,7 +23,7 @@ USE_X11=		Yes
 
 NO_BUILD=		Yes
 
-FONTS=			andale32.exe \
+DISTFILES=		andale32.exe \
 	 		arial32.exe \
 			arialb32.exe \
 			comic32.exe \
@@ -38,10 +37,8 @@ FONTS=			andale32.exe \
 
 INST_DIR=		${PREFIX}/lib/X11/fonts/mscorefonts
 
-do-extract:
-.for fontfile in ${FONTS}
-	${LOCALBASE}/bin/cabextract ${DISTDIR}/${fontfile} --lowercase --directory=${WRKDIST}
-.endfor
+EXTRACT_CASES=		*.exe) cabextract ${FULLDISTDIR}/$$archive \
+			--lowercase --directory=${WRKDIST} ;;
 
 do-install:
 	${INSTALL_DATA_DIR} ${INST_DIR}; \
