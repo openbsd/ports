@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/09/24 07:04:14 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2001/04/09 23:06:53 avsm Exp $
 
-DISTNAME=	libghttp-1.0.7
+COMMENT=	"GNOME http client library"
+
+DISTNAME=	libghttp-1.0.9
 CATEGORIES=	www
-NEED_VERSION=	1.330
+NEED_VERSION=	1.391
 MASTER_SITES=	$(MASTER_SITE_GNOME)
 MASTER_SITE_SUBDIR= stable/sources/libghttp
 
