@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/12/30 15:03:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/01/09 10:18:01 sturm Exp $
 
 COMMENT=	"libpcap bindings for Python"
 
@@ -7,12 +7,13 @@ DISTNAME=	pylibpcap-${V}
 PKGNAME=	py-libpcap-${V}
 CATEGORIES=	net
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pylibcap/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pylibpcap/}
 
 HOMEPAGE=	http://sourceforge.net/projects/pylibpcap/
 
 MAINTAINER=	Maurice Nonnekes <maurice@amaze.nl>
 
+# BSD
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
