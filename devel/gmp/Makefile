@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/24 19:55:27 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2001/07/22 20:50:02 jakob Exp $
 
 COMMENT=	library for arbitrary precision arithmetic
 
@@ -24,5 +24,8 @@ CONFIGURE_ARGS+= --enable-static
 
 post-extract:
 	@rm -f ${WRKSRC}/gmp.info*
+
+post-build:
+	ranlib ${WRKBUILD}/.libs/libgmp.a
 
 .include <bsd.port.mk>
