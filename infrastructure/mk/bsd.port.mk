@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.499 2001/11/17 10:39:19 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.500 2001/11/22 16:02:26 naddy Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2311,7 +2311,8 @@ clean-depends:
 # a large index.  Format is:
 #
 # distribution-name|port-path|installation-prefix|comment| \
-#  description-file|maintainer|categories|build deps|run deps|for arch
+#  description-file|maintainer|categories|lib-deps|build-deps|run-deps| \
+#  for-arch|package-cdrom|package-ftp|distfiles-cdrom|distfiles-ftp
 #
 describe:
 .if !defined(NO_DESCRIBE) 
