@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1998/10/08 04:42:57 marc Exp $
+# $OpenBSD: Makefile,v 1.11 1998/10/19 09:52:49 form Exp $
 # FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp
 #
 
@@ -87,9 +87,9 @@ post-install:
 	else \
 		${ECHO} 'Found existing PostgreSQL database(s) -- skipping database initializing...'; \
 	fi
-	${SED} -e "s=!!PREFIX!!=${PREFIX}=g" < ${FILESDIR}/pgsql.sh.tmpl > ${PREFIX}/etc/rc.d/pgsql.sh
-	chmod 554 ${PREFIX}/etc/rc.d/pgsql.sh
-	chown root.pgsql ${PREFIX}/etc/rc.d/pgsql.sh
+	${SED} -e "s=!!PREFIX!!=${PREFIX}=g" < ${FILESDIR}/pgsql.sh.tmpl > ${PREFIX}/pgsql/bin/pgsql.sh
+	chmod 554 ${PREFIX}/pgsql/bin/pgsql.sh
+	chown root.pgsql ${PREFIX}/pgsql/bin/pgsql.sh
 	${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/pgsql
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/pgsql

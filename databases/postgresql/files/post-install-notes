@@ -15,7 +15,7 @@ TCL/TK based database frontend "pgaccess" for database operations.
 Add this line to /etc/rc.local if you wish to start PostgreSQL
 automatically:
 
-	[ -x /usr/local/etc/rc.d/pgsql.sh ] && /usr/local/etc/rc.d/pgsql.sh
+	[ -x /usr/local/pgsql/bin/pgsql.sh ] && /usr/local/pgsql/bin/pgsql.sh
 
 If you are upgrading previous version of this port, please note that
 database directory has been moved from /usr/local/pgsql/data

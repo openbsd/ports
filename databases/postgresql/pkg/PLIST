@@ -1,4 +1,3 @@
-etc/rc.d/pgsql.sh
 pgsql/.profile
 pgsql/bin/cleardbdir
 pgsql/bin/createdb
@@ -9,6 +8,7 @@ pgsql/bin/ecpg
 pgsql/bin/initdb
 pgsql/bin/initlocation
 pgsql/bin/ipcclean
+pgsql/bin/pgsql.sh
 pgsql/bin/pg_dump
 pgsql/bin/pg_dumpall
 pgsql/bin/pg_id

@@ -1,4 +1,3 @@
-etc/rc.d/pgsql.sh
 pgsql/.profile
 pgsql/bin/cleardbdir
 pgsql/bin/createdb
@@ -14,6 +13,7 @@ pgsql/bin/pg_dumpall
 pgsql/bin/pg_id
 pgsql/bin/pg_passwd
 pgsql/bin/pg_version
+pgsql/bin/pgsql.sh
 @unexec rm -f %D/pgsql/bin/pgtclsh
 @unexec rm -f %D/pgsql/bin/pgtksh
 pgsql/bin/postgres
