@@ -1,46 +1,62 @@
-$OpenBSD: patch-config_ltmain_sh,v 1.1 2001/03/04 17:06:41 danh Exp $
+$OpenBSD: patch-config_ltmain_sh,v 1.2 2001/10/04 18:10:09 danh Exp $
 --- config/ltmain.sh.orig	Fri Aug  6 00:06:50 1999
-+++ config/ltmain.sh	Thu Feb 22 16:40:28 2001
++++ config/ltmain.sh	Thu Oct  4 13:38:58 2001
 @@ -1073,6 +1073,17 @@ compiler."
  	    # These systems don't actually have c library (as such)
  	    continue
  	    ;;
-+          *-*-openbsd*)
-+            # Do not include libc due to us having libc/libc_r.
-+            continue
-+            ;;
++	  *-*-openbsd*)
++	    # Do not include libc due to us having libc/libc_r.
++	    continue
++	    ;;
 +	  esac
-+        elif test "$arg" = "-lc_r"; then
-+          case "$host" in
-+          *-*-openbsd*)
-+            # Do not include libc_r directly, use -pthread flag.
-+            continue
-+            ;;
++	elif test "$arg" = "-lc_r"; then
++	  case "$host" in
++	  *-*-openbsd*)
++	    # Do not include libc_r directly, use -pthread flag.
++	    continue
++	    ;;
  	  esac
  	elif test "$arg" = "-lm"; then
  	  case "$host" in
-@@ -1085,6 +1096,10 @@ compiler."
+@@ -1085,6 +1096,17 @@ compiler."
  	deplibs="$deplibs $arg"
  	;;
  
-+      -thread)
-+        deplibs="$deplibs $arg"
-+        ;;
++      -pthread)
++	case $host in
++	*-*-openbsd*)
++	  deplibs="$deplibs $arg"
++	  ;;
++	*)
++	  continue
++	  ;;
++	esac
++	;;
 +
        -module)
  	module=yes
  	continue
-@@ -1789,6 +1804,9 @@ compiler."
+@@ -1789,6 +1811,9 @@ compiler."
  	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
  	  # these systems don't actually have a c library (as such)!
  	  ;;
-+        *-*-openbsd*)
-+          # do not include libc due to us having libc/libc_r.
-+          ;;
++	*-*-openbsd*)
++	  # Do not include libc due to us having libc/libc_r.
++	  ;;
  	*)
  	  # Add libc to deplibs on all other systems.
  	  deplibs="$deplibs -lc"
-@@ -3522,40 +3540,6 @@ libdir='$install_libdir'\
+@@ -2598,7 +2623,7 @@ static const void *lt_preloaded_setup() 
+ 	  # linked before any other PIC object.  But we must not use
+ 	  # pic_flag when linking with -static.  The problem exists in
+ 	  # FreeBSD 2.2.6 and is fixed in FreeBSD 3.1.
+-	  *-*-freebsd2*|*-*-freebsd3.0*)
++	  *-*-freebsd2*|*-*-freebsd3.0*|*-*-freebsdelf3.0*)
+ 	    case "$compile_command " in
+ 	    *" -static "*) ;;
+ 	    *) pic_flag_for_symtable=" $pic_flag -DPIC -DFREEBSD_WORKAROUND";;
+@@ -3522,40 +3547,6 @@ libdir='$install_libdir'\
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  

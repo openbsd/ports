@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2001/10/04 18:10:09 danh Exp $
 
 COMMENT=	"system to store and display time-series data"
 
 VERSION=	1.0.33
 DISTNAME=	rrdtool-${VERSION}
 CATEGORIES=     net
-NEED_VERSION=	1.364
+NEED_VERSION=	1.468
 MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/rrdtool/pub/ \
 		ftp://ftp.sunet.se/pub/network/monitoring/rrdtool/ \
 		http://ftp.sunet.se/pub/network/monitoring/rrdtool/
@@ -25,8 +25,8 @@ FLAVORS=	tcl
 FLAVOR?=
 
 CONFIGURE_STYLE= gnu
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/config ${WRKSRC}/contrib/php4
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/config ${WRKSRC}/contrib/php4
 
 .if ${FLAVOR:L:Mtcl}
 LIB_DEPENDS+=	tcl83::lang/tcl/8.3
