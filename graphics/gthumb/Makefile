@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/31 20:48:24 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/07/19 21:56:02 pvalchev Exp $
 
 COMMENT=		"Image viewer and browser for GNOME"
 
@@ -6,7 +6,6 @@ VERSION=		0.13
 DISTNAME=		gthumb-${VERSION}
 PKGNAME=		${DISTNAME}p1
 CATEGORIES=		graphics x11
-NEED_VERSION=		1.531
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gthumb/}
 HOMEPAGE=		http://gthumb.sourceforge.net/
@@ -26,7 +25,7 @@ LIB_DEPENDS=		bonobo,bonobox::x11/gnome/bonobo \
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS=-I${LOCALBASE}/include \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS=-L${LOCALBASE}/lib
 NO_REGRESS=		Yes
 

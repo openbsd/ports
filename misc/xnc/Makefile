@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/04/02 03:22:16 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/07/19 21:55:44 pvalchev Exp $
 
 COMMENT=	"filemanager for X Window"
 
 DISTNAME=	xnc-4.4.6
 DISTFILES=      ${DISTNAME}.src${EXTRACT_SUFX}
 CATEGORIES=	misc x11
-NEED_VERSION=	1.499
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
@@ -26,7 +25,7 @@ NO_REGRESS=	Yes
 
 CONFIGURE_STYLE=	gnu old dest
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-x
