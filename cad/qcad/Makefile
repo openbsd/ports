@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/09 17:35:57 margarida Exp $
+# $OpenBSD: Makefile,v 1.9 2003/02/26 10:41:11 espie Exp $
 
 COMMENT=		"Qt-based 2D CAD system"
 
@@ -19,14 +19,15 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=qcad/}
 
 MODULES=	qt3
+MODQT_MT=	Yes
 
 MAKE_FLAGS= \
 	CXX='${CXX}' \
-	CXXFLAGS='${CXXFLAGS} -Wall -DQT_NO_DEBUG -DDATADIR=\"${PREFIX}/share\"' \
+	CXXFLAGS='${CXXFLAGS} -pthread -Wall -DQT_NO_DEBUG -DDATADIR=\"${PREFIX}/share\"' \
 	INCPATH='-I${MODQT_INCDIR}' \
 	LINK='${CXX}' \
 	LFLAGS='' \
-	LIBS='-L${MODQT_LIBDIR} -L${LOCALBASE}/lib -lqt -L${X11BASE}/lib -lX11' \
+	LIBS='-pthread -L${MODQT_LIBDIR} -L${LOCALBASE}/lib -lqt-mt -L${X11BASE}/lib -lX11' \
 	AR='ar cq'
 
 ALL_TARGET=		qcad
