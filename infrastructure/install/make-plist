@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.8 2000/07/08 18:09:10 espie Exp $
+# $OpenBSD: make-plist,v 1.9 2001/03/24 12:14:38 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -89,6 +89,12 @@ sub parse_mtree {
 sub strip {
 	local($_) = shift;
 	s|^\Q$base\E/||;
+	# If the resulting name is arch-dependent, we warn.
+	# We don't fix it automatically, as this may need special handling.
+	if (m/i386|m68k|sparc/) {
+	    print STDERR "make-plist: generated plist contains arch-dependent\n"; 
+	    print STDERR "\t$_\n";
+	}
 	return $_;
 }
 
