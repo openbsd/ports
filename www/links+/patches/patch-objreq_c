@@ -1,7 +1,7 @@
-$OpenBSD: patch-objreq_c,v 1.1 2003/11/17 22:59:32 fgsch Exp $
---- objreq.c.orig	2003-10-09 05:23:48.000000000 -0300
-+++ objreq.c	2003-11-17 19:15:44.000000000 -0300
-@@ -79,7 +79,7 @@ void auth_fn(struct dialog_data *dlg)
+$OpenBSD: patch-objreq_c,v 1.2 2004/12/04 01:01:42 fgsch Exp $
+--- objreq.c.orig	Tue Apr 20 05:08:43 2004
++++ objreq.c	Fri Dec  3 20:35:32 2004
+@@ -75,7 +75,7 @@ void auth_fn(struct dialog_data *dlg)
  
  int auth_cancel(struct dialog_data *dlg, struct dialog_item_data *item)
  {
@@ -10,7 +10,7 @@ $OpenBSD: patch-objreq_c,v 1.1 2003/11/17 22:59:32 fgsch Exp $
  	if (rq) {
  		rq->state = O_OK;
  		if (rq->timer != -1) kill_timer(rq->timer);
-@@ -92,7 +92,7 @@ int auth_cancel(struct dialog_data *dlg,
+@@ -88,7 +88,7 @@ int auth_cancel(struct dialog_data *dlg,
  
  int auth_ok(struct dialog_data *dlg, struct dialog_item_data *item)
  {
@@ -19,7 +19,7 @@ $OpenBSD: patch-objreq_c,v 1.1 2003/11/17 22:59:32 fgsch Exp $
  	if (rq) {
  		struct auth_dialog *a = dlg->dlg->udata;
  		struct session *ses;
-@@ -157,7 +157,7 @@ int auth_window(struct object_request *r
+@@ -153,7 +153,7 @@ int auth_window(struct object_request *r
  	a->proxy = rq->stat.ce->http_code == 407;
  	a->realm = stracpy(realm);
  	d->udata = a;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-ipret_c,v 1.4 2003/09/23 06:35:33 fgsch Exp $
---- ipret.c.orig	2003-08-29 14:05:17.000000000 -0300
-+++ ipret.c	2003-09-23 02:55:15.000000000 -0300
-@@ -3281,22 +3281,22 @@ void for3(js_context*context) 
+$OpenBSD: patch-ipret_c,v 1.5 2004/12/04 01:01:42 fgsch Exp $
+--- ipret.c.orig	Mon Feb  2 14:25:47 2004
++++ ipret.c	Fri Dec  3 20:35:31 2004
+@@ -3351,22 +3351,22 @@ void for3(js_context*context) 
  			 */
  			debug("For3 vracim identifier\n");
  			if(!context->current->arg[6])
@@ -30,7 +30,7 @@ $OpenBSD: patch-ipret_c,v 1.4 2003/09/23 06:35:33 fgsch Exp $
  				}
  			}
  			if(!context->current->arg[6])
-@@ -3321,7 +3321,7 @@ nebo_skrtnem_sirkou:		while(!context->cu
+@@ -3391,7 +3391,7 @@ nebo_skrtnem_sirkou:		while(!context->cu
  			{	context->current->arg[6]=((lns*)context->current->arg[6])->next;
  				goto nebo_skrtnem_sirkou;
  			}

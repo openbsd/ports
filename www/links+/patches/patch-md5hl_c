@@ -1,6 +1,6 @@
-$OpenBSD: patch-md5hl_c,v 1.2 2003/09/23 06:35:33 fgsch Exp $
---- md5hl.c.orig	2002-05-09 20:12:59.000000000 -0300
-+++ md5hl.c	2003-09-23 02:55:15.000000000 -0300
+$OpenBSD: patch-md5hl_c,v 1.3 2004/12/04 01:01:42 fgsch Exp $
+--- md5hl.c.orig	Thu May  9 20:12:59 2002
++++ md5hl.c	Fri Dec  3 20:35:32 2004
 @@ -23,6 +23,10 @@
  #include <stdlib.h>
  */
@@ -12,9 +12,11 @@ $OpenBSD: patch-md5hl_c,v 1.2 2003/09/23 06:35:33 fgsch Exp $
  #include "links.h"
  #include "md5.h"
  
-@@ -79,3 +83,5 @@ MD5Data (const unsigned char *data, unsi
+@@ -77,5 +81,7 @@ MD5Data (const unsigned char *data, unsi
+     MD5Update(&ctx,data,len);
+     return MD5End(&ctx, buf);
  }
- 
- #endif
 +
 +#endif
+ 
+ #endif
