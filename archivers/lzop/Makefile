@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/08/21 22:20:28 danh Exp $
+# $OpenBSD: Makefile,v 1.4 2000/08/29 16:49:48 danh Exp $
 # $FreeBSD: ports/archivers/lzop/Makefile,v 1.3 2000/06/22 05:51:49 will Exp $
 
 DISTNAME=	lzop-1.00
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+= 	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV+=		CPPFLAGS='-I${LOCALBASE}/include' \
                		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
