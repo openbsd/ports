@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/07/24 15:41:42 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2002/07/24 16:14:27 avsm Exp $
 
 PKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -11,14 +11,15 @@ FLAVOR?=
 
 RUN_DEPENDS=	:php4-core-${V}:www/php4/core
 
-CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
-			--with-jpeg-dir=shared,${LOCALBASE} \
+CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs 
+
+GRAPHIC_DEPENDS=	jpeg.62::graphics/jpeg \
+			png.3::graphics/png \
+			tiff.35::graphics/tiff
+
+GRAPHIC_CONFIG=		--with-jpeg-dir=shared,${LOCALBASE} \
 			--with-png-dir=shared,${LOCALBASE} \
 			--with-tiff-dir=shared,${LOCALBASE}
-
-JPEG_DEPENDS=		jpeg.62::graphics/jpeg
-PNG_DEPENDS=		png.3::graphics/png 
-TIFF_DEPENDS=		tiff.35::graphics/tiff
 
 # bz2
 MULTI_PACKAGES+=	-bz2
@@ -51,9 +52,8 @@ CONFIGURE_ARGS+=	--enable-filepro=shared
 # gd
 MULTI_PACKAGES+=	-gd
 COMMENT-gd=		"image manipulation extensions for php4"
-GD_DEPENDS=		gd.18::graphics/gd ${JPEG_DEPENDS} \
-			${PNG_DEPENDS} ${TIFF_DEPENDS}
-CONFIGURE_ARGS+=	--with-gd=shared,${LOCALBASE}
+GD_DEPENDS=		gd.18::graphics/gd ${GRAPHIC_DEPENDS}
+CONFIGURE_ARGS+=	--with-gd=shared,${LOCALBASE} ${GRAPHIC_CONFIG}
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=		yes
 CONFIGURE_ARGS+=	--with-xpm-dir=${X11BASE} --with-ttf=shared,${LOCALBASE} --without-freetype-dir
@@ -112,9 +112,8 @@ ODBC_DEPENDS=		iodbc.2::databases/iodbc
 # pdf
 MULTI_PACKAGES+=	-pdf
 COMMENT-pdf=		"pdf viewing and creation extensions for php4"
-CONFIGURE_ARGS+=	--with-pdflib=shared,${LOCALBASE}
-PDF_DEPENDS=		pdf.2::print/pdflib ${JPEG_DEPENDS} \
-			${PNG_DEPENDS} ${TIFF_DEPENDS}
+CONFIGURE_ARGS+=	--with-pdflib=shared,${LOCALBASE} ${GRAPHIC_CONFIG}
+PDF_DEPENDS=		pdf.2::print/pdflib ${GRAPHIC_DEPENDS} 
 
 # pgsql
 MULTI_PACKAGES+=	-pgsql
@@ -155,6 +154,7 @@ XSLT_DEPENDS=		sablot.90::textproc/sablotron expat.2::textproc/expat
 
 .for i in ${MULTI_PACKAGES}
 FULLPKGNAME${i}=	php4${i}-${V}
+PSEUDO_FLAVORS+=	no_${i:L:S/-//g}
 .endfor
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
