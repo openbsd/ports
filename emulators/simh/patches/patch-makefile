@@ -1,7 +1,7 @@
-$OpenBSD: patch-makefile,v 1.6 2003/05/28 16:31:07 fgsch Exp $
+$OpenBSD: patch-makefile,v 1.7 2003/06/24 22:24:39 pvalchev Exp $
 --- makefile.orig	Sun Mar  2 15:44:14 2003
-+++ makefile	Wed May 28 13:24:55 2003
-@@ -3,24 +3,25 @@
++++ makefile	Sat Jun 14 05:07:07 2003
+@@ -3,24 +3,26 @@
  # Note: -O2 is sometimes broken in GCC when setjump/longjump is being
  # used. Try -O2 only with released simulators.
  #
@@ -13,7 +13,8 @@ $OpenBSD: patch-makefile,v 1.6 2003/05/28 16:31:07 fgsch Exp $
  #CC = gcc -O2 -g -lm -I . 
 -ifeq ($(USE_NETWORK),)
 -else
-+CFLAGS += -lm -I.
++CFLAGS += -I.
++LDFLAGS += -lm
 +#ifeq ($(USE_NETWORK),)
 +#else
  NETWORK_OPT = -DUSE_NETWORK -lpcap
@@ -41,7 +42,7 @@ $OpenBSD: patch-makefile,v 1.6 2003/05/28 16:31:07 fgsch Exp $
  
  
  #
-@@ -223,117 +224,117 @@ ALL = ${BIN}pdp1${EXE} ${BIN}pdp4${EXE} 
+@@ -223,117 +225,117 @@ ALL = ${BIN}pdp1${EXE} ${BIN}pdp4${EXE} 
  all : ${ALL}
  
  clean :
