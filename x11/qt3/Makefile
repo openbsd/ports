@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/12 00:16:12 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/23 17:35:12 lebel Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt3
@@ -18,7 +18,11 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 FLAVORS=	no_mysql no_postgresql
 
 # Adjust for arches where mysql/pgsql don't work.
+.if !${MACHINE_ARCH:Mi386} && !${MACHINE_ARCH:Msparc}
+FLAVOR+=	no_mysql
+.else
 FLAVOR?=
+.endif
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
