@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/11/01 11:11:51 shell Exp $
+# $OpenBSD: Makefile,v 1.8 2001/11/01 13:43:13 shell Exp $
 
 COMMENT=	"callback framework for C++"
 
@@ -27,7 +27,6 @@ post-patch:
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig && \
 	${PATCH} --forward --quiet -E < \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh
-	@chmod +x ${WRKSRC}/acconfig/*
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
