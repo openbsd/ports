@@ -1,0 +1,11 @@
+--- documentation/Makefile.orig	Tue Jan 16 20:22:19 2001
++++ documentation/Makefile	Tue Jan 16 20:22:37 2001
+@@ -49,7 +49,7 @@
+ 	$(RM) $@
+ 	${NROFF} -man $< > $@
+ 
+-all: ps info dvi text
++all: info # ps dvi text
+ 
+ ps: bash.ps readline.ps article.ps
+ dvi: features.dvi features.ps 
