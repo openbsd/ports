@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2002/04/27 04:21:01 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2002/05/08 20:33:11 pvalchev Exp $
 
 COMMENT=	"PDF viewer for X"
 
@@ -24,6 +24,11 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-gzip
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2 -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+
+# XXX temp workaround
+.if ${MACHINE_ARCH:Msparc64}
+CONFIGURE_ENV+=	LIBS="-static"
+.endif
 
 post-install:
 	@cd ${PREFIX}/bin && \
