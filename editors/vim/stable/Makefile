@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.92 2004/05/12 13:53:44 lebel Exp $
+# $OpenBSD: Makefile,v 1.93 2004/06/09 18:43:16 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
 
-DISTNAME=	vim-6.2
-REVISION=	532
-VERSION=	6.2.${REVISION}
+DISTNAME=	vim-6.3
+REVISION=	1
+VERSION=	6.3.${REVISION}
 PKGNAME=	vim-${VERSION}
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
 MASTER_SITES=   ftp://ftp.vim.org/pub/vim/unix/ \
 	        ftp://ftp.home.vim.org/pub/vim/unix/ \
 	        ftp://ftp.berlin.de.vim.org/unix/
-MASTER_SITES0=  ${MASTER_SITES:S/unix/patches/}
+MASTER_SITES0=  ${MASTER_SITES:S/unix/patches\/6.3/}
 MASTER_SITES1=	${MASTER_SITES:S/unix/extra/}
 DISTFILES=	${DISTNAME}.tar.bz2 \
 	        ${DISTNAME}-extra.tar.gz:1 \
@@ -23,10 +23,10 @@ HOMEPAGE=	http://www.vim.org/
 
 MAINTAINER=	David Lebel <lebel@openbsd.org>
 
-PATCHFILES=	6.2.001-100.gz:0 6.2.101-200.gz:0 6.2.201-300.gz:0 6.2.301-400.gz:0 6.2.401-500.gz:0
-_patches!=	jot -w%03d - 501 ${REVISION} 1
+PATCHFILES=	#
+_patches!=	jot -w%03d - 1 ${REVISION} 1
 .for p in ${_patches}
-PATCHFILES+=	6.2.${p}:0
+PATCHFILES+=	6.3.${p}:0
 .endfor
 
 # allow vim to build on m68k and vax

@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-lang,v 1.6 2004/05/12 13:53:44 lebel Exp $
+@comment $OpenBSD: PLIST-lang,v 1.7 2004/06/09 18:43:16 lebel Exp $
 share/vim/${P}/lang/README.txt
 share/vim/${P}/lang/af/LC_MESSAGES/vim.mo
-share/vim/${P}/lang/ca/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/cs/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/de/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/en_GB/LC_MESSAGES/vim.mo
@@ -10,40 +9,28 @@ share/vim/${P}/lang/fr/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/it/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/ja/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/ko/LC_MESSAGES/vim.mo
-share/vim/${P}/lang/menu_af_af.iso_8859-1.vim
-share/vim/${P}/lang/menu_af_af.iso_8859-15.vim
 share/vim/${P}/lang/menu_af_af.latin1.vim
 share/vim/${P}/lang/menu_af_af.utf-8.vim
 share/vim/${P}/lang/menu_chinese(gb)_gb.936.vim
 share/vim/${P}/lang/menu_chinese(taiwan)_taiwan.950.vim
 share/vim/${P}/lang/menu_chinese_gb.936.vim
 share/vim/${P}/lang/menu_chinese_taiwan.950.vim
-share/vim/${P}/lang/menu_cs_cz.iso_8859-1.vim
 share/vim/${P}/lang/menu_cs_cz.iso_8859-2.vim
 share/vim/${P}/lang/menu_czech_czech_republic.1250.vim
 share/vim/${P}/lang/menu_czech_czech_republic.1252.vim
 share/vim/${P}/lang/menu_czech_czech_republic.ascii.vim
-share/vim/${P}/lang/menu_de_de.iso_8859-1.vim
-share/vim/${P}/lang/menu_de_de.iso_8859-15.vim
 share/vim/${P}/lang/menu_de_de.latin1.vim
 share/vim/${P}/lang/menu_de_de.utf-8.vim
-share/vim/${P}/lang/menu_en_gb.iso_8859-1.vim
 share/vim/${P}/lang/menu_en_gb.latin1.vim
 share/vim/${P}/lang/menu_english_united_kingdom.1252.vim
 share/vim/${P}/lang/menu_english_united_kingdom.ascii.vim
-share/vim/${P}/lang/menu_es_es.iso_8859-1.vim
-share/vim/${P}/lang/menu_es_es.iso_8859-15.vim
 share/vim/${P}/lang/menu_es_es.latin1.vim
 share/vim/${P}/lang/menu_es_es.utf-8.vim
-share/vim/${P}/lang/menu_fr_fr.iso_8859-1.vim
-share/vim/${P}/lang/menu_fr_fr.iso_8859-15.vim
 share/vim/${P}/lang/menu_fr_fr.latin1.vim
 share/vim/${P}/lang/menu_fr_fr.utf-8.vim
 share/vim/${P}/lang/menu_french_france.1252.vim
 share/vim/${P}/lang/menu_german_germany.1252.vim
 share/vim/${P}/lang/menu_hu_hu.iso_8859-2.vim
-share/vim/${P}/lang/menu_it_it.iso_8859-1.vim
-share/vim/${P}/lang/menu_it_it.iso_8859-15.vim
 share/vim/${P}/lang/menu_it_it.latin1.vim
 share/vim/${P}/lang/menu_it_it.utf-8.vim
 share/vim/${P}/lang/menu_ja_jp.euc-jp.vim
@@ -54,12 +41,8 @@ share/vim/${P}/lang/menu_japanese_japan.932.vim
 share/vim/${P}/lang/menu_ko_kr.euckr.vim
 share/vim/${P}/lang/menu_ko_kr.utf-8.vim
 share/vim/${P}/lang/menu_ko_kr.vim
-share/vim/${P}/lang/menu_nl_nl.iso_8859-1.vim
-share/vim/${P}/lang/menu_nl_nl.iso_8859-15.vim
 share/vim/${P}/lang/menu_nl_nl.latin1.vim
 share/vim/${P}/lang/menu_nl_nl.utf-8.vim
-share/vim/${P}/lang/menu_no_no.iso_8859-1.vim
-share/vim/${P}/lang/menu_no_no.iso_8859-15.vim
 share/vim/${P}/lang/menu_no_no.latin1.vim
 share/vim/${P}/lang/menu_no_no.utf-8.vim
 share/vim/${P}/lang/menu_pl_pl.iso_8859-2.vim
@@ -76,24 +59,20 @@ share/vim/${P}/lang/menu_sr_yu.iso_8859-2.vim
 share/vim/${P}/lang/menu_sr_yu.iso_8859-5.vim
 share/vim/${P}/lang/menu_sr_yu.utf-8.vim
 share/vim/${P}/lang/menu_uk_ua.koi8-u.vim
+share/vim/${P}/lang/menu_zh_cn.18030.vim
 share/vim/${P}/lang/menu_zh_cn.gb2312.vim
+share/vim/${P}/lang/menu_zh_cn.gbk.vim
 share/vim/${P}/lang/menu_zh_cn.utf-8.vim
 share/vim/${P}/lang/menu_zh_tw.big5.vim
 share/vim/${P}/lang/menu_zh_tw.utf-8.vim
 share/vim/${P}/lang/no/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/pl/LC_MESSAGES/vim.mo
-share/vim/${P}/lang/ru/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/sk/LC_MESSAGES/vim.mo
-share/vim/${P}/lang/sv/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/uk/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/zh_CN.UTF-8/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/zh_CN/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/zh_TW.UTF-8/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/zh_TW/LC_MESSAGES/vim.mo
-@dirrm share/vim/${P}/lang/sv/LC_MESSAGES
-@dirrm share/vim/${P}/lang/sv
-@dirrm share/vim/${P}/lang/ru/LC_MESSAGES
-@dirrm share/vim/${P}/lang/ru
 @dirrm share/vim/${P}/lang/zh_TW/LC_MESSAGES
 @dirrm share/vim/${P}/lang/zh_TW.UTF-8/LC_MESSAGES
 @dirrm share/vim/${P}/lang/zh_TW.UTF-8
@@ -104,8 +83,12 @@ share/vim/${P}/lang/zh_TW/LC_MESSAGES/vim.mo
 @dirrm share/vim/${P}/lang/zh_CN
 @dirrm share/vim/${P}/lang/uk/LC_MESSAGES
 @dirrm share/vim/${P}/lang/uk
+@dirrm share/vim/${P}/lang/sv/LC_MESSAGES
+@dirrm share/vim/${P}/lang/sv
 @dirrm share/vim/${P}/lang/sk/LC_MESSAGES
 @dirrm share/vim/${P}/lang/sk
+@dirrm share/vim/${P}/lang/ru/LC_MESSAGES
+@dirrm share/vim/${P}/lang/ru
 @dirrm share/vim/${P}/lang/pl/LC_MESSAGES
 @dirrm share/vim/${P}/lang/pl
 @dirrm share/vim/${P}/lang/no/LC_MESSAGES
@@ -126,6 +109,8 @@ share/vim/${P}/lang/zh_TW/LC_MESSAGES/vim.mo
 @dirrm share/vim/${P}/lang/de
 @dirrm share/vim/${P}/lang/cs/LC_MESSAGES
 @dirrm share/vim/${P}/lang/cs
+@dirrm share/vim/${P}/lang/ca/LC_MESSAGES
+@dirrm share/vim/${P}/lang/ca
 @dirrm share/vim/${P}/lang/af/LC_MESSAGES
 @dirrm share/vim/${P}/lang/af
 @dirrm share/vim/${P}/lang
