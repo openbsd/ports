@@ -1,7 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2001/02/20 17:26:50 danh Exp $
---- configure.orig	Wed May 24 20:31:48 2000
-+++ configure	Tue Feb 20 12:21:35 2001
-@@ -3726,7 +3726,7 @@ else
+--- configure.orig	Fri Mar  2 14:34:37 2001
++++ configure	Wed Mar  7 09:56:34 2001
+@@ -3733,7 +3733,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo

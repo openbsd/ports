@@ -1,19 +1,19 @@
-$OpenBSD: patch-gtk_gtkrc_c,v 1.1 2001/02/20 17:26:51 danh Exp $
---- gtk/gtkrc.c.orig	Wed Oct 20 10:41:16 1999
-+++ gtk/gtkrc.c	Tue Feb 20 12:21:37 2001
-@@ -245,9 +245,9 @@ gtk_rc_get_module_dir(void)
+$OpenBSD: patch-gtk_gtkrc_c,v 1.2 2001/03/07 22:59:16 brad Exp $
+--- gtk/gtkrc.c.orig	Fri Feb  2 12:03:19 2001
++++ gtk/gtkrc.c	Wed Mar  7 10:16:39 2001
+@@ -245,9 +245,9 @@
  
    var = getenv("GTK_EXE_PREFIX");
    if (var)
 -    path = g_strdup_printf("%s%s", var, "/lib/gtk/themes/engines");
 +    path = g_strdup_printf("%s%s", var, "/share/gtk/themes/engines");
    else
--    path = g_strdup_printf("%s%s", GTK_EXE_PREFIX, "/lib/gtk/themes/engines");
-+    path = g_strdup_printf("%s%s", GTK_EXE_PREFIX, "/share/gtk/themes/engines");
+-    path = g_strdup_printf("%s%s", GTK_LIBDIR, "/gtk/themes/engines");
++    path = g_strdup_printf("%s%s", GTK_DATA_PREFIX, "/share/gtk/themes/engines");
  
    return path;
  }
-@@ -260,9 +260,9 @@ gtk_rc_append_default_pixmap_path(void)
+@@ -260,9 +260,9 @@
  
    var = getenv("GTK_DATA_PREFIX");
    if (var)
@@ -25,15 +25,15 @@ $OpenBSD: patch-gtk_gtkrc_c,v 1.1 2001/02/20 17:26:51 danh Exp $
    
    for (n = 0; pixmap_path[n]; n++) ;
    if (n >= GTK_RC_MAX_PIXMAP_PATHS - 1)
-@@ -287,15 +287,15 @@ gtk_rc_append_default_module_path(void)
+@@ -287,15 +287,15 @@
    
    var = getenv("GTK_EXE_PREFIX");
    if (var)
 -    path = g_strdup_printf("%s%s", var, "/lib/gtk/themes/engines");
 +    path = g_strdup_printf("%s%s", var, "/share/gtk/themes/engines");
    else
--    path = g_strdup_printf("%s%s", GTK_EXE_PREFIX, "/lib/gtk/themes/engines");
-+    path = g_strdup_printf("%s%s", GTK_EXE_PREFIX, "/share/gtk/themes/engines");
+-    path = g_strdup_printf("%s%s", GTK_LIBDIR, "/gtk/themes/engines");
++    path = g_strdup_printf("%s%s", GTK_DATA_PREFIX, "/share/gtk/themes/engines");
    module_path[n++] = g_strdup(path);
    g_free(path);
  
@@ -44,7 +44,7 @@ $OpenBSD: patch-gtk_gtkrc_c,v 1.1 2001/02/20 17:26:51 danh Exp $
    module_path[n++] = g_strdup(path);
    module_path[n] = NULL;
    g_free(path);
-@@ -329,7 +329,7 @@ gtk_rc_add_initial_default_files (void)
+@@ -329,7 +329,7 @@
      }
    else
      {

@@ -1,12 +1,11 @@
-$OpenBSD: patch-gdk_Makefile_in,v 1.1 2001/02/20 17:26:51 danh Exp $
---- gdk/Makefile.in.orig	Wed May 24 21:11:03 2000
-+++ gdk/Makefile.in	Tue Feb 20 12:21:33 2001
-@@ -135,7 +135,7 @@ lib_LTLIBRARIES = libgdk.la
+--- gdk/Makefile.in.orig	Wed Mar  7 09:57:35 2001
++++ gdk/Makefile.in	Wed Mar  7 09:59:58 2001
+@@ -135,7 +135,7 @@
  
  # libtool stuff: set version and export symbols for resolving
- libgdkincludedir = $(includedir)/gdk
+ libgdkincludedir = $(includedir)/gtk-1.2/gdk
 -libgdk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE) 	-export-dynamic 	@GLIB_DEPLIBS@		@x_ldflags@		@x_libs@		-lm		@STRIP_END@
-+libgdk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info 1:2:0 	-export-dynamic 	@GLIB_DEPLIBS@		@x_ldflags@		@x_libs@		-lm		@STRIP_END@
++libgdk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info 1:2:0	-export-dynamic 	@GLIB_DEPLIBS@		@x_ldflags@		@x_libs@		-lm		@STRIP_END@
  
  
  #

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2000/09/27 16:16:37 brad Exp $
+# $OpenBSD: Makefile,v 1.42 2001/03/07 22:59:15 brad Exp $
 
-DISTNAME=	gtk+-1.2.8
+DISTNAME=	gtk+-1.2.9
 CATEGORIES=	x11 devel
-NEED_VERSION=	1.330
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
 		http://www.ameth.org/gimp/gtk/v1.2/
@@ -28,9 +28,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 post-extract:
 	@rm -f ${WRKSRC}/docs/gtk.info*
 	@rm -f ${WRKSRC}/docs/gdk.info*
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal
-	${INSTALL_DATA} ${WRKSRC}/gtk.m4 ${PREFIX}/share/aclocal
 
 .include <bsd.port.mk>
