@@ -1,14 +1,2 @@
-@comment $OpenBSD: PLIST-3domusic,v 1.1 2003/07/25 11:04:30 jolan Exp $
-share/uqm/ipanims/orbit1.ogg
-share/uqm/ipanims/orbit2.ogg
-share/uqm/ipanims/orbit3.ogg
-share/uqm/ipanims/orbit4.ogg
-share/uqm/ipanims/orbit5.ogg
-share/uqm/ipanims/space.ogg
-share/uqm/lbm/arispace.ogg
-share/uqm/lbm/battle.ogg
-share/uqm/lbm/credits.ogg
-share/uqm/lbm/hyper.ogg
-share/uqm/lbm/outfit.ogg
-share/uqm/lbm/shipyard.ogg
-share/uqm/lbm/starbase.ogg
+@comment $OpenBSD: PLIST-3domusic,v 1.2 2003/09/24 07:57:34 jolan Exp $
+share/uqm/content/packages/uqm-0.3-3domusic.zip

@@ -14,7 +14,7 @@
 #define _CONFIG_H
 
 /* Directory where the UQM game data is located */
-#define CONTENTDIR "@PREFIX@/share/uqm/"
+#define CONTENTDIR "@PREFIX@/share/uqm/content"
 
 /* Directory where game data will be stored */
 #define USERDIR "~/.uqm/"
@@ -29,7 +29,7 @@
 #define CONFIGDIR USERDIR
 
 /* Defined if words are stored with the most significant byte first */
-#define WORDS_BIGENDIAN
+#@ENDIAN@ WORDS_BIGENDIAN
 
 /* Defined if your system has strupr of its own */
 #undef HAVE_STRUPR
