@@ -1,0 +1,24 @@
+$OpenBSD: patch-wmMand_wmMand_c,v 1.1.1.1 2001/03/30 15:17:51 wilfried Exp $
+--- wmMand/wmMand.c.orig	Mon Feb 15 17:30:27 1999
++++ wmMand/wmMand.c	Fri Mar 30 16:38:00 2001
+@@ -504,11 +504,16 @@ void ButtonPressEvent(XButtonEvent *xev,
+ 
+ 	} else if ((xev->x >= 50)&&(xev->x <= 58)){
+ 
++	    char name[FILENAME_MAX];
++	    snprintf(name, sizeof(name), "%s/.wmMand.gif", getenv("HOME"));
+             ComputeImage(Center_x, Center_y, 540, 540, Range, BigImage);
+-	    fp_gif = fopen("/tmp/wmMand.gif", "w");
+-	    WriteGIF(fp_gif, BigImage, 0, 540, 540, Info->RRR, Info->GGG, Info->BBB, 256, 0, "");
+-	    fclose(fp_gif);
+-	    system("xv /tmp/wmMand.gif &");
++	    if ((fp_gif = fopen(name, "w"))) {
++		    char cmd[FILENAME_MAX];
++		    WriteGIF(fp_gif, BigImage, 0, 540, 540, Info->RRR, Info->GGG, Info->BBB, 256, 0, "");
++		    fclose(fp_gif);
++		    snprintf(cmd, sizeof(cmd), "xv %s &", name);
++		    system(cmd);
++	    }
+ 
+ 
+ 	}

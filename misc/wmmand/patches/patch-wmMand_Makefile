@@ -1,0 +1,43 @@
+$OpenBSD: patch-wmMand_Makefile,v 1.1.1.1 2001/03/30 15:17:51 wilfried Exp $
+--- wmMand/Makefile.orig	Mon Feb 15 17:43:51 1999
++++ wmMand/Makefile	Fri Mar 30 16:17:59 2001
+@@ -1,8 +1,8 @@
+-CC     = gcc
+-CFLAGS = -O2 -Wall
+-INCDIR = -I/usr/X11R6/include/X11
+-DESTDIR= /usr/X11R6
+-LIBDIR = -L/usr/X11R6/lib
++#CC     = gcc
++#CFLAGS = -O2 -Wall
++INCDIR = -I${X11BASE}/include
++#DESTDIR= /usr/X11R6
++LIBDIR = -L${X11BASE}/lib
+ # for linux
+ LIBS   = -lXpm -lX11 -lXext
+ # for Solaris
+@@ -12,14 +12,14 @@ OBJS   = wmMand.o \
+ 
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)
++	$(CC) $(CFLAGS) $(INCDIR) -c $< -o $@
+ 
+ 
+ all:	wmMand.o wmMand
+ 
+ wmMand.o: wmMand_master.xpm wmMand_mask.xbm
+ wmMand:	$(OBJS) 
+-	$(CC) $(CFLAGS) $(SYSTEM) -o wmMand $^ $(INCDIR) $(LIBDIR) $(LIBS)
++	$(CC) $(CFLAGS) $(SYSTEM) -o wmMand $(OBJS) $(LIBDIR) $(LIBS)
+ 
+ clean:
+ 	for i in $(OBJS) ; do \
+@@ -28,6 +28,6 @@ clean:
+ 	rm -f wmMand
+ 
+ install:: wmMand
+-	install -s -m 0755 wmMand $(DESTDIR)/bin
+-	install    -m 0644 wmMand.1 $(DESTDIR)/man/man1 
++	${BSD_INSTALL_PROGRAM} wmMand $(PREFIX)/bin
++	${BSD_INSTALL_MAN} wmMand.1 $(PREFIX)/man/man1 
+ 
