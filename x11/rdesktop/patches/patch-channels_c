@@ -1,0 +1,12 @@
+$OpenBSD: patch-channels_c,v 1.1 2003/10/30 16:58:44 jcs Exp $
+--- channels.c.orig	Thu Oct 30 10:54:38 2003
++++ channels.c	Thu Oct 30 10:54:39 2003
+@@ -27,6 +27,8 @@
+ #define CHANNEL_FLAG_LAST		0x02
+ #define CHANNEL_FLAG_SHOW_PROTOCOL	0x10
+ 
++#define MIN(x,y)			(((x) < (y)) ? (x) : (y))
++
+ extern BOOL g_use_rdp5;
+ extern BOOL g_encryption;
+ 

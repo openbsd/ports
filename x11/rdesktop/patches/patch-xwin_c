@@ -1,11 +1,11 @@
-$OpenBSD: patch-xwin_c,v 1.1 2003/06/10 19:59:03 jolan Exp $
---- xwin.c.orig	Thu Jan 30 05:27:45 2003
-+++ xwin.c	Tue Jun 10 02:17:26 2003
+$OpenBSD: patch-xwin_c,v 1.2 2003/10/30 16:58:44 jcs Exp $
+--- xwin.c.orig	Wed Oct 29 12:05:48 2003
++++ xwin.c	Wed Oct 29 12:05:56 2003
 @@ -22,6 +22,7 @@
  #include <X11/Xutil.h>
  #include <time.h>
  #include <errno.h>
 +#include <unistd.h>
  #include "rdesktop.h"
+ #include "xproto.h"
  
- extern int width;
