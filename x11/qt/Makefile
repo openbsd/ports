@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.29 2000/03/05 18:30:47 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2000/03/08 01:27:42 kevlo Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
-DISTNAME=	qt-1.44
+DISTNAME=	qt-1.45
 CATEGORIES=	x11
 NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
@@ -13,6 +13,7 @@ LIB_DEPENDS=	MesaGL.3.0:graphics/Mesa
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
+FAKE=           Yes
 MAKE_ENV=	QTDIR="${WRKSRC}" SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
 
 EXAMPLES=aclock application biff connect cursor dclock desktop dirview \
@@ -31,8 +32,8 @@ do-install:
 	@if [ -f ${WRKSRC}/lib/libqt.a ]; then \
 	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.a ${PREFIX}/lib; \
 	fi
-	@if [ -f ${WRKSRC}/lib/libqt.so.1.44 ]; then \
-	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.so.1.44 ${PREFIX}/lib; \
+	@if [ -f ${WRKSRC}/lib/libqt.so.1.45 ]; then \
+	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.so.1.45 ${PREFIX}/lib; \
 	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/moc ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/X11/qt
