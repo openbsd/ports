@@ -1,9 +1,20 @@
-$OpenBSD: patch-libs_libwww_configure,v 1.1 2003/02/18 16:04:50 sturm Exp $
+$OpenBSD: patch-libs_libwww_configure,v 1.2 2004/10/25 18:55:36 sturm Exp $
 # this has to fail, because bsd has timezone() returning char*
 # while libwww really wants a long int timezone variable
---- libs/libwww/configure.orig	Sun Feb  2 16:01:16 2003
-+++ libs/libwww/configure	Mon Feb  3 10:29:50 2003
-@@ -7219,7 +7219,6 @@ else
+--- libs/libwww/configure.orig	Tue Feb 18 05:12:53 2003
++++ libs/libwww/configure	Sun Sep 26 12:36:13 2004
+@@ -3635,6 +3635,10 @@ case "$target" in
+ 	  echo "$ac_t""Digital Unix's cc" 1>&6
+ 	fi
+ 	;;
++    hppa-unknown-openbsd*)
++	# OpenBSD is not HPUX
++	echo "$ac_t""no" 1>&6
++	;;
+     hp*)
+ 	if test "$CC" = "cc"; then
+ 	  CFLAGS="$CFLAGS -Aa -D_HPUX_SOURCE"
+@@ -7219,7 +7223,6 @@ else
    cat > conftest.$ac_ext <<EOF
  #line 7221 "configure"
  #include "confdefs.h"
