@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/02/20 23:22:15 couderc Exp $
+# $OpenBSD: Makefile,v 1.10 2004/08/09 19:56:15 xsa Exp $
 
 COMMENT=		"Ruby interface to LBL Packet Capture library"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.goto.info.waseda.ac.jp/~fukusima/ruby/
 
-MODULES=ruby
+MODULES=		lang/ruby
 
 NO_REGRESS=	Yes
 

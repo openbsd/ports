@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/02/24 13:52:29 couderc Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/09 19:56:15 xsa Exp $
 
 COMMENT=	"Ruby binding to Gdk-pixbuf"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ruby-gnome/}
 
-MODULES=	ruby
+MODULES=	lang/ruby
 LIB_DEPENDS=	gdk_pixbuf.2::graphics/gdk-pixbuf
 RUN_DEPENDS=	:ruby-gtk->=0.34:x11/ruby-gtk
 

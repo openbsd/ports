@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/02/24 13:46:39 couderc Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/09 19:56:15 xsa Exp $
 
 COMMENT=		"Ruby interface to ncurses"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://download.berlios.de/ncurses-ruby/
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		ruby
+MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	simple
 
