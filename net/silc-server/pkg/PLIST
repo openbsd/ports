@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/02/12 06:34:22 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/04/15 06:23:14 brad Exp $
 man/man5/silcd.conf.5
 man/man8/silcd.8
 sbin/silcd
@@ -16,5 +16,7 @@ share/examples/silcd/silcd.conf
 @dirrm share/examples/silcd
 @dirrm share/doc/silcd/examples
 @dirrm share/doc/silcd
+@extraunexec userdel _silcd
+@extraunexec groupdel _silcd
 @extraunexec rm -rf ${CONFDIR}
 @extraunexec rm -rf /var/log/silcd
