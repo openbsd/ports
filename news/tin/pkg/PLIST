@@ -1,4 +1,5 @@
+@cwd /usr/local
+@name tin-1.4.980730
 bin/tin
-@exec ln -fs %f %B/rtin
-@unexec rm -f %B/rtin
+bin/rtin
 man/man1/tin.1

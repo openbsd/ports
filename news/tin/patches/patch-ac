@@ -1,34 +1,17 @@
-*** src/open.c.orig	Mon Apr 27 22:20:08 1998
---- src/open.c	Mon Apr 27 22:21:29 1998
-***************
-*** 1115,1128 ****
-  	char line[HEADER_LEN];
-  	FILE *fp;
-  	struct stat sb;
-  #ifdef SHOW_PROGRESS
-  	int count = 0;
-  #endif
-  
-  	sprintf (fnam, "%stin_nntpXXXXXX", TMPDIR);
-! 	mktemp (fnam);
-  
-! 	if ((fp = fopen (fnam, "w")) == (FILE *) 0) {
-  		perror_message (txt_stuff_nntp_cannot_open, fnam);
-  		return ((FILE *) 0);
-  	}
---- 1115,1129 ----
-  	char line[HEADER_LEN];
-  	FILE *fp;
-  	struct stat sb;
-+ 	int fdfd;
-  #ifdef SHOW_PROGRESS
-  	int count = 0;
-  #endif
-  
-  	sprintf (fnam, "%stin_nntpXXXXXX", TMPDIR);
-! 	fdfd = mkstemp (fnam);
-  
-! 	if ((fp = fdopen (fdfd, "w")) == (FILE *) 0) {
-  		perror_message (txt_stuff_nntp_cannot_open, fnam);
-  		return ((FILE *) 0);
-  	}
+--- src/open.c.~1~	Mon Jul 27 12:05:01 1998
++++ src/open.c	Sat Aug 15 17:25:05 1998
+@@ -629,11 +629,12 @@
+ 	char tempfile[PATH_LEN];
+ 	int count = 0;
+ 	struct stat sb;
++	int fdfd;
+ 
+ 	sprintf (tempfile, "%stin_nntpXXXXXX", TMPDIR);
+-	mktemp (tempfile);
++	fdfd = mkstemp (tempfile);
+ 
+-	if ((fp = fopen (tempfile, "w")) == (FILE *) 0) {
++	if ((fp = fdopen (fdfd, "w")) == (FILE *) 0) {
+ 		perror_message (txt_article_cannot_open, tempfile);
+ 		return ((FILE *) 0);
+ 	}

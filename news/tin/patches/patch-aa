@@ -1,27 +1,46 @@
-*** configure.orig	Tue Nov 18 05:32:36 1997
---- configure	Tue Nov 18 05:37:23 1997
-***************
-*** 2874,2880 ****
-  		cf_save_LIBS="$LIBS"
-  		echo $ac_n "checking for initscr in -lncurses""... $ac_c" 1>&6
-  echo "configure:2877: checking for initscr in -lncurses" >&5
-! 		LIBS="-lncurses $LIBS"
-  		cat > conftest.$ac_ext <<EOF
-  #line 2880 "configure"
-  #include "confdefs.h"
---- 2874,2888 ----
-  		cf_save_LIBS="$LIBS"
-  		echo $ac_n "checking for initscr in -lncurses""... $ac_c" 1>&6
-  echo "configure:2877: checking for initscr in -lncurses" >&5
-! 		case $host_os in # XXX
-! 		  openbsd*)
-! 			echo -n "(trying -lcurses for OpenBSD)..."
-! 			LIBS="-lcurses $LIBS"
-! 		  ;;
-! 		  *)
-! 			LIBS="-lncurses $LIBS"
-! 		  ;;
-! 		esac
-  		cat > conftest.$ac_ext <<EOF
-  #line 2880 "configure"
-  #include "confdefs.h"
+--- configure.~1~	Thu Jul 23 04:22:48 1998
++++ configure	Sat Aug 15 16:58:32 1998
+@@ -3355,9 +3355,9 @@
+   echo "$ac_t""no" 1>&6
+ 
+ 		cf_save_LIBS="$LIBS"
+-		echo $ac_n "checking for initscr in -lncurses""... $ac_c" 1>&6
+-echo "configure:3360: checking for initscr in -lncurses" >&5
+-		LIBS="-lncurses $LIBS"
++		echo $ac_n "checking for initscr in -lcurses""... $ac_c" 1>&6
++echo "configure:3360: checking for initscr in -lcurses" >&5
++		LIBS="-lcurses $LIBS"
+ 		cat > conftest.$ac_ext <<EOF
+ #line 3363 "configure"
+ #include "confdefs.h"
+@@ -3392,9 +3392,9 @@
+ 
+ 			for cf_libdir in $cf_search
+ 			do
+-				echo $ac_n "checking for -lncurses in $cf_libdir""... $ac_c" 1>&6
+-echo "configure:3397: checking for -lncurses in $cf_libdir" >&5
+-				LIBS="-L$cf_libdir -lncurses $cf_save_LIBS"
++				echo $ac_n "checking for -lcurses in $cf_libdir""... $ac_c" 1>&6
++echo "configure:3397: checking for -lcurses in $cf_libdir" >&5
++				LIBS="-L$cf_libdir -lcurses $cf_save_LIBS"
+ 				cat > conftest.$ac_ext <<EOF
+ #line 3400 "configure"
+ #include "confdefs.h"
+@@ -5834,14 +5834,14 @@
+ else
+ 	found_tcap=no
+ 	if test $found_ncurses = yes ; then
+-		echo $ac_n "checking for tgoto in -lncurses""... $ac_c" 1>&6
+-echo "configure:5839: checking for tgoto in -lncurses" >&5
++		echo $ac_n "checking for tgoto in -lcurses""... $ac_c" 1>&6
++echo "configure:5839: checking for tgoto in -lcurses" >&5
+ ac_lib_var=`echo ncurses'_'tgoto | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lncurses  $LIBS"
++LIBS="-lcurses  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 5847 "configure"
+ #include "confdefs.h"
