@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2004/05/29 13:12:30 jakob Exp $
+# $OpenBSD: INSTALL,v 1.2 2004/06/05 21:13:25 jakob Exp $
 #
 # Pre/post-installation setup of jabberd
 
@@ -46,7 +46,7 @@ do_notice_conf()
 
 do_install_conf()
 {
-    install -d -o root -g wheel -m 750 ${CONFIG_DIR}
+    install -d -o root -g wheel -m 755 ${CONFIG_DIR}
     install -o ${JABBERDUSER} -g ${JABBERDGROUP} -m 640 ${EXAMPLES}/jabberd.cfg ${CONFIG_DIR}/jabberd.cfg
     install -o ${JABBERDUSER} -g ${JABBERDGROUP} -m 640 ${EXAMPLES}/c2s.xml ${CONFIG_DIR}/c2s.xml
     install -o ${JABBERDUSER} -g ${JABBERDGROUP} -m 640 ${EXAMPLES}/resolver.xml ${CONFIG_DIR}/resolver.xml
@@ -55,7 +55,7 @@ do_install_conf()
     install -o ${JABBERDUSER} -g ${JABBERDGROUP} -m 640 ${EXAMPLES}/s2s.xml ${CONFIG_DIR}/s2s.xml
     install -o ${JABBERDUSER} -g ${JABBERDGROUP} -m 640 ${EXAMPLES}/sm.xml ${CONFIG_DIR}/sm.xml
     install -d -o ${JABBERDUSER} -g ${JABBERDGROUP} -m 750 ${CONFIG_DIR}/templates
-    install -o ${JABBERDUSER} -g ${JABBERDGROUP} -m 640 ${EXAMPLES}/templates/roster.xml ${CONFIG_DIR}/roster.xml
+    install -o ${JABBERDUSER} -g ${JABBERDGROUP} -m 640 ${EXAMPLES}/templates/roster.xml ${CONFIG_DIR}/templates/roster.xml
 
     echo
     echo "+---------------"
