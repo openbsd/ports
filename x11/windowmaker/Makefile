@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2000/02/15 05:05:32 turan Exp $
+# $OpenBSD: Makefile,v 1.23 2000/02/15 18:42:43 brad Exp $
 
 DISTNAME=	WindowMaker-0.61.1
 PKGNAME=	windowmaker-0.61.1
@@ -12,11 +12,11 @@ NEED_VERSION=	1.73
 
 MAINTAINER=	jasoni@openbsd.org
 
-LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+LICENSE_TYPE=	GPL
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
 
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libproplist \
 		jpeg.62:${PORTSDIR}/graphics/jpeg \
@@ -26,17 +26,17 @@ LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libproplist \
 
 # The files placed in $SYSCONFDIR are better placed in $PREFIX/share/WindowMaker
 SYSCONFDIR=	${PREFIX}/share/WindowMaker/Defaults
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=--enable-static --with-pixmapdir=${PREFIX}/share/WindowMaker/Pixmaps \
+CONFIGURE_ARGS+=--enable-static --with-pixmapdir="${PREFIX}/share/WindowMaker/Pixmaps" \
 		--with-incs-from="-I${PREFIX}/include -I${PREFIX}/include/giflib" \
 		--with-libs-from="-L${PREFIX}/lib" --disable-debug 
-CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" \
-		LDFLAGS="-L${PREFIX}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-configure:
 	@cd ${WRKDIR}/WindowMaker-extra-0.1; \
-		./configure --prefix=${PREFIX}
+		./configure --prefix="${PREFIX}"
 
 post-install:
 	@cd ${WRKDIR}/WindowMaker-extra-0.1; make install
