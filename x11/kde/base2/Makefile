@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/10/25 10:38:12 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/11/02 00:02:34 espie Exp $
 
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.305
@@ -10,8 +10,7 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${VERSION}/distribution/tar/generic/src/
 EXTRACT_SUFX=		.tar.bz2
 
-LIB_DEPENDS=	kdecore.3.::x11/kde/libs2 \
-		qt.2.::x11/qt2
+LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2

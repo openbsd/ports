@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/25 10:38:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/11/02 00:02:35 espie Exp $
 
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.305
@@ -10,6 +10,13 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${VERSION}/distribution/tar/generic/src/
 EXTRACT_SUFX=		.tar.bz2
 
+LIB_DEPENDS= 	qt.2.::x11/qt2 \
+		png.1.::graphics/png \
+		jpeg.62.::graphics/jpeg \
+		tiff.35.::graphics/tiff \
+		audiofile.::devel/libaudiofile
+
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
 CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2
@@ -18,6 +25,7 @@ CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-threading
 # Not yet, too much time to compile
 #CONFIGURE_ARGS+=	--enable-static
+
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
 USE_GMAKE=		Yes
