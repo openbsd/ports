@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/03/12 15:23:33 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/03/29 01:45:27 brad Exp $
 # $FreeBSD: Makefile,v 1.7 1999/02/12 21:55:04 obrien Exp $
 
 DISTNAME=	proftpd-1.2.0pre3
@@ -6,15 +6,14 @@ PKGNAME=	proftpd-1.2.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/
 
-MAINTAINER=	brad@openbsd.org
+NEED_VERSION=	1.73
 
-MAN1=	ftpcount.1 ftpwho.1
-MAN8=	proftpd.8 ftpshut.8
+MAINTAINER=	brad@openbsd.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--localstatedir=/var/run --sysconfdir=/etc --with-modules=mod_ratio
+CONFIGURE_ARGS=	--localstatedir=/var/run --with-modules=mod_ratio
 
 post-configure:
 	@${MV} ${WRKSRC}/src/proftpd.8 ${WRKSRC}/src/proftpd.8.pre_sed
