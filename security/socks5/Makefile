@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2000/06/16 06:00:14 form Exp $
+# $OpenBSD: Makefile,v 1.22 2000/08/03 00:06:30 brad Exp $
 
 DISTNAME=	socks5-v1.0r10
 PKGNAME=	socks5-1.0.10
 CATEGORIES=	security net
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 
 MIRROR_DISTFILE=No
 
-HOMEPAGE=	http://www.socks5.nec.com/socks5_index.html
+HOMEPAGE=	http://www.socks.nec.com/
 
 MAINTAINER=	ports@openbsd.org
 
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=	commercial
 #		--with-syslog-facility=LOG_AUTH \
 #		--with-passwd
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-libconffile="/etc/libsocks5.conf" \
 		--with-srvconffile="/etc/socks5.conf" \
 		--with-srvpidfile="/var/run/socks5.pid" \
