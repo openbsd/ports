@@ -1,6 +1,6 @@
-bin/dopewars
 @group games
 @mode 2755
+bin/dopewars
 share/doc/dopewars/LICENCE
 share/doc/dopewars/README
 share/doc/dopewars/aiplayer.html
