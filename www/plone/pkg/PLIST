@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/10/06 08:58:24 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/10/20 20:05:31 xsa Exp $
 @conflict zope-btreefolder2-*
 @conflict zope-cmfquickinstaller-*
 @conflict zope-formulator-*
@@ -67,6 +67,11 @@ lib/zope/lib/python/Products/CMFFormController/AUTHORS
 lib/zope/lib/python/Products/CMFFormController/Actions/
 lib/zope/lib/python/Products/CMFFormController/Actions/BaseFormAction.py
 lib/zope/lib/python/Products/CMFFormController/Actions/BaseFormAction.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/CVS/
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/CVS/Entries
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/CVS/Entries.Extra
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/CVS/Repository
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/CVS/Root
 lib/zope/lib/python/Products/CMFFormController/Actions/IFormAction.py
 lib/zope/lib/python/Products/CMFFormController/Actions/IFormAction.pyc
 lib/zope/lib/python/Products/CMFFormController/Actions/RedirectTo.py
@@ -81,6 +86,12 @@ lib/zope/lib/python/Products/CMFFormController/Actions/__init__.py
 lib/zope/lib/python/Products/CMFFormController/Actions/__init__.pyc
 lib/zope/lib/python/Products/CMFFormController/BaseControllerPageTemplate.py
 lib/zope/lib/python/Products/CMFFormController/BaseControllerPageTemplate.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/CVS/
+@comment lib/zope/lib/python/Products/CMFFormController/CVS/Entries
+@comment lib/zope/lib/python/Products/CMFFormController/CVS/Entries.Extra
+@comment lib/zope/lib/python/Products/CMFFormController/CVS/Entries.Log
+@comment lib/zope/lib/python/Products/CMFFormController/CVS/Repository
+@comment lib/zope/lib/python/Products/CMFFormController/CVS/Root
 lib/zope/lib/python/Products/CMFFormController/ChangeLog
 lib/zope/lib/python/Products/CMFFormController/ControllerBase.py
 lib/zope/lib/python/Products/CMFFormController/ControllerBase.pyc
@@ -95,10 +106,17 @@ lib/zope/lib/python/Products/CMFFormController/ControllerState.pyc
 lib/zope/lib/python/Products/CMFFormController/ControllerValidator.py
 lib/zope/lib/python/Products/CMFFormController/ControllerValidator.pyc
 lib/zope/lib/python/Products/CMFFormController/Extensions/
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/CVS/
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/CVS/Entries
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/CVS/Entries.Extra
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/CVS/Repository
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/CVS/Root
 lib/zope/lib/python/Products/CMFFormController/Extensions/Install.py
 lib/zope/lib/python/Products/CMFFormController/Extensions/Install.pyc
 lib/zope/lib/python/Products/CMFFormController/Extensions/__init__.py
 lib/zope/lib/python/Products/CMFFormController/Extensions/__init__.pyc
+lib/zope/lib/python/Products/CMFFormController/FSControllerBase.py
+lib/zope/lib/python/Products/CMFFormController/FSControllerBase.pyc
 lib/zope/lib/python/Products/CMFFormController/FSControllerPageTemplate.py
 lib/zope/lib/python/Products/CMFFormController/FSControllerPageTemplate.pyc
 lib/zope/lib/python/Products/CMFFormController/FSControllerPythonScript.py
@@ -123,14 +141,37 @@ lib/zope/lib/python/Products/CMFFormController/__init__.py
 lib/zope/lib/python/Products/CMFFormController/__init__.pyc
 lib/zope/lib/python/Products/CMFFormController/config.py
 lib/zope/lib/python/Products/CMFFormController/config.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/debian/
+@comment lib/zope/lib/python/Products/CMFFormController/debian/CVS/
+@comment lib/zope/lib/python/Products/CMFFormController/debian/CVS/Entries
+@comment lib/zope/lib/python/Products/CMFFormController/debian/CVS/Entries.Extra
+@comment lib/zope/lib/python/Products/CMFFormController/debian/CVS/Repository
+@comment lib/zope/lib/python/Products/CMFFormController/debian/CVS/Root
+@comment lib/zope/lib/python/Products/CMFFormController/debian/README.Debian
+@comment lib/zope/lib/python/Products/CMFFormController/debian/changelog
+@comment lib/zope/lib/python/Products/CMFFormController/debian/compat
+@comment lib/zope/lib/python/Products/CMFFormController/debian/config
+@comment lib/zope/lib/python/Products/CMFFormController/debian/control
+@comment lib/zope/lib/python/Products/CMFFormController/debian/copyright
+@comment lib/zope/lib/python/Products/CMFFormController/debian/docs
+@comment lib/zope/lib/python/Products/CMFFormController/debian/postinst
+@comment lib/zope/lib/python/Products/CMFFormController/debian/prerm
+@comment lib/zope/lib/python/Products/CMFFormController/debian/rules
+@comment lib/zope/lib/python/Products/CMFFormController/debian/templates
 lib/zope/lib/python/Products/CMFFormController/globalVars.py
 lib/zope/lib/python/Products/CMFFormController/globalVars.pyc
+lib/zope/lib/python/Products/CMFFormController/makefile.in
 lib/zope/lib/python/Products/CMFFormController/refresh.txt
 lib/zope/lib/python/Products/CMFFormController/tool.gif
 lib/zope/lib/python/Products/CMFFormController/utils.py
 lib/zope/lib/python/Products/CMFFormController/utils.pyc
 lib/zope/lib/python/Products/CMFFormController/version.txt
 lib/zope/lib/python/Products/CMFFormController/www/
+@comment lib/zope/lib/python/Products/CMFFormController/www/CVS/
+@comment lib/zope/lib/python/Products/CMFFormController/www/CVS/Entries
+@comment lib/zope/lib/python/Products/CMFFormController/www/CVS/Entries.Extra
+@comment lib/zope/lib/python/Products/CMFFormController/www/CVS/Repository
+@comment lib/zope/lib/python/Products/CMFFormController/www/CVS/Root
 lib/zope/lib/python/Products/CMFFormController/www/cpt.gif
 lib/zope/lib/python/Products/CMFFormController/www/cptAdd.zpt
 lib/zope/lib/python/Products/CMFFormController/www/cpy.gif
@@ -146,7 +187,6 @@ lib/zope/lib/python/Products/CMFFormController/www/manage_overview.zpt
 lib/zope/lib/python/Products/CMFFormController/www/vpy.gif
 lib/zope/lib/python/Products/CMFFormController/www/vpyAdd.zpt
 lib/zope/lib/python/Products/CMFPlone/
-@comment lib/zope/lib/python/Products/CMFPlone/.cvsignore
 lib/zope/lib/python/Products/CMFPlone/ActionIconsTool.py
 lib/zope/lib/python/Products/CMFPlone/ActionIconsTool.pyc
 lib/zope/lib/python/Products/CMFPlone/ActionsTool.py
@@ -270,6 +310,7 @@ lib/zope/lib/python/Products/CMFPlone/debian/postinst
 lib/zope/lib/python/Products/CMFPlone/debian/prerm
 lib/zope/lib/python/Products/CMFPlone/debian/rules
 lib/zope/lib/python/Products/CMFPlone/debian/templates
+lib/zope/lib/python/Products/CMFPlone/debian/watch
 lib/zope/lib/python/Products/CMFPlone/docs/
 lib/zope/lib/python/Products/CMFPlone/docs/README.txt
 lib/zope/lib/python/Products/CMFPlone/docs/squid/
@@ -284,6 +325,7 @@ lib/zope/lib/python/Products/CMFPlone/i18n/plone-da.po
 lib/zope/lib/python/Products/CMFPlone/i18n/plone-de.po
 lib/zope/lib/python/Products/CMFPlone/i18n/plone-en.po
 lib/zope/lib/python/Products/CMFPlone/i18n/plone-eo.po
+lib/zope/lib/python/Products/CMFPlone/i18n/plone-es-ar.po
 lib/zope/lib/python/Products/CMFPlone/i18n/plone-es-es.po
 lib/zope/lib/python/Products/CMFPlone/i18n/plone-es.po
 lib/zope/lib/python/Products/CMFPlone/i18n/plone-et.po
@@ -298,6 +340,7 @@ lib/zope/lib/python/Products/CMFPlone/i18n/plone-it.po
 lib/zope/lib/python/Products/CMFPlone/i18n/plone-ja.po
 lib/zope/lib/python/Products/CMFPlone/i18n/plone-ko.po
 lib/zope/lib/python/Products/CMFPlone/i18n/plone-nl.po
+lib/zope/lib/python/Products/CMFPlone/i18n/plone-nn.po
 lib/zope/lib/python/Products/CMFPlone/i18n/plone-no.po
 lib/zope/lib/python/Products/CMFPlone/i18n/plone-pl.po
 lib/zope/lib/python/Products/CMFPlone/i18n/plone-pt-br.po
@@ -373,11 +416,11 @@ lib/zope/lib/python/Products/CMFPlone/migrations/v2/portlet_migration.py
 lib/zope/lib/python/Products/CMFPlone/migrations/v2/portlet_migration.pyc
 lib/zope/lib/python/Products/CMFPlone/migrations/v2/release_candidates.py
 lib/zope/lib/python/Products/CMFPlone/migrations/v2/release_candidates.pyc
+lib/zope/lib/python/Products/CMFPlone/migrations/v2/two03_two04.py
+lib/zope/lib/python/Products/CMFPlone/migrations/v2/two03_two04.pyc
 lib/zope/lib/python/Products/CMFPlone/migrations/v2/twoBeta2_twoBeta3.py
 lib/zope/lib/python/Products/CMFPlone/migrations/v2/twoBeta2_twoBeta3.pyc
 lib/zope/lib/python/Products/CMFPlone/refresh.txt
-lib/zope/lib/python/Products/CMFPlone/setFormatPatch.py
-lib/zope/lib/python/Products/CMFPlone/setFormatPatch.pyc
 lib/zope/lib/python/Products/CMFPlone/setup/
 lib/zope/lib/python/Products/CMFPlone/setup/ConfigurationMethods.py
 lib/zope/lib/python/Products/CMFPlone/setup/ConfigurationMethods.pyc
@@ -705,6 +748,7 @@ lib/zope/lib/python/Products/CMFPlone/skins/plone_images/
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/action_icon.gif
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/addFavorite.gif
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/addFavorite.gif.metadata
+lib/zope/lib/python/Products/CMFPlone/skins/plone_images/add_alternative_icon.gif
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/add_icon.gif
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/arrowBlank.gif
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/arrowBlank.gif.metadata
@@ -815,6 +859,7 @@ lib/zope/lib/python/Products/CMFPlone/skins/plone_images/required.gif
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/required.gif.metadata
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/rss.gif
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/rss.gif.metadata
+lib/zope/lib/python/Products/CMFPlone/skins/plone_images/save_icon.gif
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/search_icon.gif
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/search_icon.gif.metadata
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/shopping_cart.gif
@@ -953,6 +998,7 @@ lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/date_components_suppor
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/deleteDiscussion.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/deleteDiscussion.pyc
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/displayContentsTab.py
+lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/enableHTTPCompression.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/errorMessages.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/expireAuthCookie.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/expireAuthCookie.pyc
@@ -990,6 +1036,8 @@ lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/getPlonePersonalPortai
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/getPopupScript.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/getPreviousMonth.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/getReplyReplies.py
+lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/getSectionFromURL.py
+lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/getYearAndMonthToDisplay.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/isExpired.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/isIDAutoGenerated.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/keyFilteredActions.py
@@ -1138,6 +1186,8 @@ lib/zope/lib/python/Products/CMFPlone/tests/testMemberDataTool.py
 lib/zope/lib/python/Products/CMFPlone/tests/testMemberDataTool.pyc
 lib/zope/lib/python/Products/CMFPlone/tests/testMembershipTool.py
 lib/zope/lib/python/Products/CMFPlone/tests/testMembershipTool.pyc
+lib/zope/lib/python/Products/CMFPlone/tests/testMigrationTool.py
+lib/zope/lib/python/Products/CMFPlone/tests/testMigrationTool.pyc
 lib/zope/lib/python/Products/CMFPlone/tests/testOrderSupport.py
 lib/zope/lib/python/Products/CMFPlone/tests/testOrderSupport.pyc
 lib/zope/lib/python/Products/CMFPlone/tests/testPloneFolder.py
@@ -1169,8 +1219,6 @@ lib/zope/lib/python/Products/CMFPlone/tests/testWebDAV.pyc
 lib/zope/lib/python/Products/CMFPlone/tests/zcheck.py
 lib/zope/lib/python/Products/CMFPlone/tests/zcheck.pyc
 lib/zope/lib/python/Products/CMFPlone/tool.gif
-lib/zope/lib/python/Products/CMFPlone/verifyObjectPastePatch.py
-lib/zope/lib/python/Products/CMFPlone/verifyObjectPastePatch.pyc
 lib/zope/lib/python/Products/CMFPlone/version.txt
 lib/zope/lib/python/Products/CMFPlone/www/
 lib/zope/lib/python/Products/CMFPlone/www/addConfigletForm.pt
@@ -1450,8 +1498,6 @@ lib/zope/lib/python/Products/GroupUserFolder/www/down_arrow_grey.gif
 lib/zope/lib/python/Products/GroupUserFolder/www/up_arrow.gif
 lib/zope/lib/python/Products/GroupUserFolder/www/up_arrow_grey.gif
 lib/zope/lib/python/Products/PlacelessTranslationService/
-lib/zope/lib/python/Products/PlacelessTranslationService/COPYING.txt
-lib/zope/lib/python/Products/PlacelessTranslationService/ChangeLog
 lib/zope/lib/python/Products/PlacelessTranslationService/Domain.py
 lib/zope/lib/python/Products/PlacelessTranslationService/Domain.pyc
 lib/zope/lib/python/Products/PlacelessTranslationService/FasterStringIO.py
@@ -1467,7 +1513,6 @@ lib/zope/lib/python/Products/PlacelessTranslationService/PatchStringIO.py
 lib/zope/lib/python/Products/PlacelessTranslationService/PatchStringIO.pyc
 lib/zope/lib/python/Products/PlacelessTranslationService/PlacelessTranslationService.py
 lib/zope/lib/python/Products/PlacelessTranslationService/PlacelessTranslationService.pyc
-lib/zope/lib/python/Products/PlacelessTranslationService/README.ZPT
 lib/zope/lib/python/Products/PlacelessTranslationService/TranslateTags.py
 lib/zope/lib/python/Products/PlacelessTranslationService/TranslateTags.pyc
 lib/zope/lib/python/Products/PlacelessTranslationService/__init__.py
@@ -1483,6 +1528,10 @@ lib/zope/lib/python/Products/PlacelessTranslationService/debian/postinst
 lib/zope/lib/python/Products/PlacelessTranslationService/debian/prerm
 lib/zope/lib/python/Products/PlacelessTranslationService/debian/rules
 lib/zope/lib/python/Products/PlacelessTranslationService/debian/templates
+lib/zope/lib/python/Products/PlacelessTranslationService/doc/
+lib/zope/lib/python/Products/PlacelessTranslationService/doc/changes.txt
+lib/zope/lib/python/Products/PlacelessTranslationService/doc/license.txt
+lib/zope/lib/python/Products/PlacelessTranslationService/doc/readme.txt
 lib/zope/lib/python/Products/PlacelessTranslationService/i18n/
 lib/zope/lib/python/Products/PlacelessTranslationService/i18n/PlacelessTranslationService.pot
 lib/zope/lib/python/Products/PlacelessTranslationService/i18n/pts-de.po

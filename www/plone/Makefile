@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2004/08/03 12:13:33 xsa Exp $
+# $OpenBSD: Makefile,v 1.9 2004/10/20 20:05:30 xsa Exp $
 
 COMMENT=	"content management system built on top of Zope"
 
-DISTNAME=	Plone-2.0.3
+DISTNAME=	Plone-2.0.4
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	www
 
@@ -36,5 +36,9 @@ do-install:
 .for p in ${PLONEITEMS}
 	cd ${WRKBUILD}; cp -R ${p} ${MODZOPE_PRODUCTSDIR}
 .endfor
+
+# XXX fix permissions
+post-install:
+	@chmod -R a+rX ${MODZOPE_PRODUCTSDIR}/CMFFormController
 
 .include <bsd.port.mk>
