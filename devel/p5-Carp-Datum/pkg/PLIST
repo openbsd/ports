@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/13 16:54:28 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/15 16:51:05 naddy Exp $
 bin/datum_strip
 ${P5SITE}/Carp/Datum.pm
 ${P5SITE}/Carp/Datum/Assert.pm
@@ -18,7 +18,7 @@ man/man3p/Carp::Datum::Cfg.3p
 man/man3p/Carp::Datum::Flags.3p
 man/man3p/Carp::Datum::MakeMaker.3p
 man/man3p/Carp::Datum::Strip.3p
-@comment @dirrm man/man3p
+@dirrm man/man3p
 @comment @dirrm ${P5ARCH}/auto/Carp/Datum
 @comment @dirrm ${P5ARCH}/auto/Carp
 @comment @dirrm ${P5ARCH}/auto

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/09/29 05:41:37 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/12/15 16:51:05 naddy Exp $
 bin/sdl-config
 include/SDL/SDL.h
 include/SDL/SDL_active.h
@@ -208,5 +208,5 @@ man/man3/SDL_keysym.3
 man/man3/SDL_mutexP.3
 man/man3/SDL_mutexV.3
 share/aclocal/sdl.m4
-@comment @dirrm share/aclocal
+@dirrm share/aclocal
 @dirrm include/SDL

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/12 19:42:44 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/15 16:51:05 naddy Exp $
 include/startup-notification-1.0/libsn/sn-common.h
 include/startup-notification-1.0/libsn/sn-launchee.h
 include/startup-notification-1.0/libsn/sn-launcher.h
@@ -9,6 +9,6 @@ lib/libstartup-notification-1.a
 lib/libstartup-notification-1.la
 lib/pkgconfig/libstartup-notification-1.0.pc
 %%SHARED%%
-@comment @dirrm lib/pkgconfig
+@dirrm lib/pkgconfig
 @dirrm include/startup-notification-1.0/libsn
 @dirrm include/startup-notification-1.0

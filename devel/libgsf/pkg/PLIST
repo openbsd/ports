@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/10/06 17:12:02 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/15 16:51:04 naddy Exp $
 include/libgsf-1/gsf-gnome/gsf-input-bonobo.h
 include/libgsf-1/gsf-gnome/gsf-input-gnomevfs.h
 include/libgsf-1/gsf-gnome/gsf-output-bonobo.h
@@ -87,7 +87,7 @@ share/doc/libgsf/html/up.png
 %%SHARED%%
 @dirrm share/doc/libgsf/html
 @dirrm share/doc/libgsf
-@comment @dirrm lib/pkgconfig
+@dirrm lib/pkgconfig
 @dirrm include/libgsf-1/gsf-gnome
 @dirrm include/libgsf-1/gsf
 @dirrm include/libgsf-1

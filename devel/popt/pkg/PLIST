@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/07/15 16:50:22 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/12/15 16:51:05 naddy Exp $
 include/popt.h
 @comment lib/charset.alias
 lib/libpopt.a
@@ -35,62 +35,62 @@ share/locale/wa/LC_MESSAGES/popt.mo
 share/locale/zh/LC_MESSAGES/popt.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/popt.mo
 %%SHARED%%
-@comment @dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
-@comment @dirrm share/locale/zh_CN.GB2312
-@comment @dirrm share/locale/zh/LC_MESSAGES
-@comment @dirrm share/locale/zh
-@comment @dirrm share/locale/wa/LC_MESSAGES
-@comment @dirrm share/locale/wa
-@comment @dirrm share/locale/uk/LC_MESSAGES
-@comment @dirrm share/locale/uk
-@comment @dirrm share/locale/tr/LC_MESSAGES
-@comment @dirrm share/locale/tr
-@comment @dirrm share/locale/sv/LC_MESSAGES
-@comment @dirrm share/locale/sv
-@comment @dirrm share/locale/sr/LC_MESSAGES
-@comment @dirrm share/locale/sr
-@comment @dirrm share/locale/sl/LC_MESSAGES
-@comment @dirrm share/locale/sl
-@comment @dirrm share/locale/sk/LC_MESSAGES
-@comment @dirrm share/locale/sk
-@comment @dirrm share/locale/ru/LC_MESSAGES
-@comment @dirrm share/locale/ru
-@comment @dirrm share/locale/ro/LC_MESSAGES
-@comment @dirrm share/locale/ro
-@comment @dirrm share/locale/pt_BR/LC_MESSAGES
-@comment @dirrm share/locale/pt_BR
-@comment @dirrm share/locale/pt/LC_MESSAGES
-@comment @dirrm share/locale/pt
-@comment @dirrm share/locale/pl/LC_MESSAGES
-@comment @dirrm share/locale/pl
-@comment @dirrm share/locale/no/LC_MESSAGES
-@comment @dirrm share/locale/no
-@comment @dirrm share/locale/ko/LC_MESSAGES
-@comment @dirrm share/locale/ko
-@comment @dirrm share/locale/ja/LC_MESSAGES
-@comment @dirrm share/locale/ja
-@comment @dirrm share/locale/it/LC_MESSAGES
-@comment @dirrm share/locale/it
-@comment @dirrm share/locale/is/LC_MESSAGES
-@comment @dirrm share/locale/is
-@comment @dirrm share/locale/id/LC_MESSAGES
-@comment @dirrm share/locale/id
-@comment @dirrm share/locale/hu/LC_MESSAGES
-@comment @dirrm share/locale/hu
-@comment @dirrm share/locale/gl/LC_MESSAGES
-@comment @dirrm share/locale/gl
-@comment @dirrm share/locale/fr/LC_MESSAGES
-@comment @dirrm share/locale/fr
-@comment @dirrm share/locale/fi/LC_MESSAGES
-@comment @dirrm share/locale/fi
-@comment @dirrm share/locale/eu_ES/LC_MESSAGES
-@comment @dirrm share/locale/eu_ES
-@comment @dirrm share/locale/es/LC_MESSAGES
-@comment @dirrm share/locale/es
-@comment @dirrm share/locale/de/LC_MESSAGES
-@comment @dirrm share/locale/de
-@comment @dirrm share/locale/da/LC_MESSAGES
-@comment @dirrm share/locale/da
-@comment @dirrm share/locale/cs/LC_MESSAGES
-@comment @dirrm share/locale/cs
-@comment @dirrm share/locale
+@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
+@dirrm share/locale/zh_CN.GB2312
+@dirrm share/locale/zh/LC_MESSAGES
+@dirrm share/locale/zh
+@dirrm share/locale/wa/LC_MESSAGES
+@dirrm share/locale/wa
+@dirrm share/locale/uk/LC_MESSAGES
+@dirrm share/locale/uk
+@dirrm share/locale/tr/LC_MESSAGES
+@dirrm share/locale/tr
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/sr/LC_MESSAGES
+@dirrm share/locale/sr
+@dirrm share/locale/sl/LC_MESSAGES
+@dirrm share/locale/sl
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/ko/LC_MESSAGES
+@dirrm share/locale/ko
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/is/LC_MESSAGES
+@dirrm share/locale/is
+@dirrm share/locale/id/LC_MESSAGES
+@dirrm share/locale/id
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/gl/LC_MESSAGES
+@dirrm share/locale/gl
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@dirrm share/locale/eu_ES/LC_MESSAGES
+@dirrm share/locale/eu_ES
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/da
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/locale

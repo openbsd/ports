@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/13 16:20:20 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/15 16:51:05 naddy Exp $
 ${P5SITE}/Log/Agent.pm
 ${P5SITE}/Log/Agent/Channel.pm
 ${P5SITE}/Log/Agent/Channel/File.pm
@@ -74,7 +74,7 @@ man/man3p/Log::Agent::Tag::Caller.3p
 man/man3p/Log::Agent::Tag::Priority.3p
 man/man3p/Log::Agent::Tag::String.3p
 man/man3p/Log::Agent::Tag_List.3p
-@comment @dirrm man/man3p
+@dirrm man/man3p
 @comment @dirrm ${P5ARCH}/auto/Log/Agent
 @comment @dirrm ${P5ARCH}/auto/Log
 @comment @dirrm ${P5ARCH}/auto
@@ -82,7 +82,7 @@ man/man3p/Log::Agent::Tag_List.3p
 @dirrm ${P5SITE}/auto/Log/Agent/Priorities
 @dirrm ${P5SITE}/auto/Log/Agent
 @dirrm ${P5SITE}/auto/Log
-@comment @dirrm ${P5SITE}/auto
+@dirrm ${P5SITE}/auto
 @dirrm ${P5SITE}/Log/Agent/Tag
 @dirrm ${P5SITE}/Log/Agent/File
 @dirrm ${P5SITE}/Log/Agent/Driver

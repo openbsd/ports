@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/09 10:43:56 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/15 16:51:05 naddy Exp $
 ${P5SITE}/AppConfig.pm
 ${P5SITE}/AppConfig/Args.pm
 ${P5SITE}/AppConfig/File.pm
@@ -13,7 +13,7 @@ man/man3p/AppConfig::File.3p
 man/man3p/AppConfig::Getopt.3p
 man/man3p/AppConfig::State.3p
 man/man3p/AppConfig::Sys.3p
-@comment @dirrm man/man3p
+@dirrm man/man3p
 @comment @dirrm ${P5ARCH}/auto/AppConfig
 @comment @dirrm ${P5ARCH}/auto
 @comment @dirrm ${P5ARCH}

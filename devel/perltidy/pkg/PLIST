@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/05 17:30:22 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/12/15 16:51:05 naddy Exp $
 bin/perltidy
 ${P5SITE}/Perl/Tidy.pm
 @comment ${P5ARCH}/auto/Perl/Tidy/.packlist
@@ -27,4 +27,4 @@ share/examples/perltidy/testff.t
 @comment @dirrm ${P5ARCH}/auto/Perl
 @comment @dirrm ${P5ARCH}/auto
 @comment @dirrm ${P5ARCH}
-@comment @dirrm ${P5SITE}/Perl
+@dirrm ${P5SITE}/Perl

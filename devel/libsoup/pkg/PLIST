@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/03 15:44:05 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/15 16:51:04 naddy Exp $
 include/soup-2.0/libsoup/soup-address.h
 include/soup-2.0/libsoup/soup-context.h
 include/soup-2.0/libsoup/soup-error.h
@@ -17,6 +17,6 @@ lib/libsoup-2.0.la
 lib/pkgconfig/soup-2.0.pc
 libexec/libsoup-ssl-proxy
 %%SHARED%%
-@comment @dirrm lib/pkgconfig
+@dirrm lib/pkgconfig
 @dirrm include/soup-2.0/libsoup
 @dirrm include/soup-2.0

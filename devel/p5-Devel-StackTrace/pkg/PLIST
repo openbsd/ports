@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/04/30 19:12:58 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/12/15 16:51:05 naddy Exp $
 ${P5SITE}/Devel/StackTrace.pm
 @comment ${P5ARCH}/auto/Devel/StackTrace/.packlist
 @comment ${P5ARCH}/perllocal.pod
 man/man3p/Devel::StackTrace.3p
-@comment @dirrm man/man3p
+@dirrm man/man3p
 @comment @dirrm ${P5ARCH}/auto/Devel/StackTrace
 @comment @dirrm ${P5ARCH}/auto/Devel
 @comment @dirrm ${P5ARCH}/auto
 @comment @dirrm ${P5ARCH}
-@comment @dirrm ${P5SITE}/Devel
+@dirrm ${P5SITE}/Devel
