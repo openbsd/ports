@@ -2,5 +2,3 @@ The cvsweb WWW CGI script allows remote users to browse a CVS
 repository tree via the web.  It can display the revision history
 of a file, as well as diffs between revisions, and download the
 whole file.
-
-WWW: ${HOMEPAGE}

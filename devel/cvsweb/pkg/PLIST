@@ -1,10 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/01/03 00:51:41 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/08/22 15:58:00 naddy Exp $
 cgi-bin/cvsweb
-conf/cvsweb/cvsweb.conf.dist
-conf/cvsweb/cvsweb.conf-freebsd.dist
-conf/cvsweb/cvsweb.conf-netbsd.dist
-conf/cvsweb/cvsweb.conf-openbsd.dist
-conf/cvsweb/cvsweb.conf-ruby.dist
 icons/cvsweb/back.gif
 icons/cvsweb/dir.gif
 icons/cvsweb/miniback.gif
@@ -12,3 +7,11 @@ icons/cvsweb/minidir.gif
 icons/cvsweb/minitext.gif
 icons/cvsweb/text.gif
 @dirrm icons/cvsweb
+@cwd ${CONFDIR}
+cvsweb/cvsweb.conf.dist
+cvsweb/cvsweb.conf-freebsd.dist
+cvsweb/cvsweb.conf-netbsd.dist
+cvsweb/cvsweb.conf-openbsd.dist
+cvsweb/cvsweb.conf-ruby.dist
+@extra cvsweb/cvsweb.conf
+@extra cvsweb/
