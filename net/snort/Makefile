@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2003/06/24 17:02:38 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.30 2004/01/02 04:56:24 brad Exp $
 
 COMMENT=	"highly flexible sniffer/NIDS"
 
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+= --with-postgresql="${LOCALBASE}"
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-LIB_DEPENDS+=	lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
+LIB_DEPENDS+=	lib/mysql/mysqlclient.10::databases/mysql
 CONFIGURE_ARGS+= --with-mysql="${LOCALBASE}"
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2003/11/26 19:25:56 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2004/01/02 04:56:24 brad Exp $
 
 COMMENT=	"small, easy to set up, fast and very secure FTP server"
 
@@ -43,7 +43,7 @@ CONF_FILE+= pureftpd-ldap.conf
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-LIB_DEPENDS+= lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
+LIB_DEPENDS+= lib/mysql/mysqlclient.10::databases/mysql
 CONFIGURE_ARGS+= --with-mysql="${LOCALBASE}"
 DOCS+=	README.MySQL
 CONF_FILE+= pureftpd-mysql.conf

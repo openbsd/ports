@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/07/19 17:02:06 jose Exp $
+# $OpenBSD: Makefile,v 1.10 2004/01/02 04:56:24 brad Exp $
 # $NetBSD: Makefile,v 1.1.1.2 2001/03/26 11:59:15 hubertf Exp $
 
 COMMENT=		"passive OS fingerprinting tool"
@@ -25,7 +25,7 @@ FLAVOR?=
 EXAMPLES=		p0f.fp
 
 .if ${FLAVOR:L} == "mysql"
-LIB_DEPENDS=		mysqlclient::databases/mysql
+LIB_DEPENDS=		lib/mysql/mysqlclient.10::databases/mysql
 ALL_TARGET=		p0f-mysql
 EXAMPLES+=		mysql/db.sql mysql/p0f-mysql.conf
 .endif

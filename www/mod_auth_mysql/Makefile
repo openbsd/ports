@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/10/18 19:44:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/01/02 04:56:24 brad Exp $
 
 COMMENT=	"Apache MySQL authentication module"
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
 
-LIB_DEPENDS=    mysqlclient.10::databases/mysql
+LIB_DEPENDS=    lib/mysql/mysqlclient.10::databases/mysql
 BUILD_DEPENDS=  ${LIB_DEPENDS}
 
 NO_REGRESS=	Yes

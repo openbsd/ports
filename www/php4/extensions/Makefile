@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2003/11/21 04:54:20 jolan Exp $
+# $OpenBSD: Makefile,v 1.27 2004/01/02 04:56:24 brad Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -185,7 +185,7 @@ CONFIGURE_ARGS+=	--without-mysql
 MULTI_PACKAGES+=	-mysql
 COMMENT-mysql=		"mysql database access extensions for php4"
 CONFIGURE_ARGS+=	--with-mysql=shared,${LOCALBASE}
-MYSQL_DEPENDS=		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
+MYSQL_DEPENDS=		lib/mysql/mysqlclient.10::databases/mysql
 .endif
 
 # ncurses

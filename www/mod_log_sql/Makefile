@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/26 15:19:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/02 04:56:24 brad Exp $
 
 COMMENT=	"Apache module for logging to an SQL database"
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
+LIB_DEPENDS=	lib/mysql/mysqlclient.10::databases/mysql
 
 NO_REGRESS=	Yes
 
