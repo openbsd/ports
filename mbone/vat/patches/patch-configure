@@ -1,0 +1,58 @@
+--- configure.orig	Thu May 16 10:03:58 1996
++++ configure	Tue Oct 31 10:34:12 2000
+@@ -1533,6 +1533,7 @@ rm -f conftest*
+ 			$x_includes/tk \
+ 			$x_includes \
+ 			/usr/local/include \
++			/usr/local/include/tcl8.0 \
+ 			/usr/contrib/include \
+ 			/usr/include"
+ 		for dir in $places; do
+@@ -1594,8 +1595,8 @@ fi
+ 			/import/tcl/lib/tcl7.5 \
+ 			"
+ 		for dir in $places; do
+-			if test -r $dir/libtcl7.5.so -o -r $dir/libtcl7.5.a; then
+-				V_LIB_TCL="-L$dir -ltcl7.5"
++			if test -r $dir/libtcl80.so -o -r $dir/libtcl80.a; then
++				V_LIB_TCL="-L$dir -ltcl80"
+ 				break
+ 			fi
+ 			if test -r $dir/libtcl.so -o -r $dir/libtcl.a; then
+@@ -1614,7 +1615,7 @@ fi
+ 	fi
+ 	echo "checking for tcl/init.tcl"
+ 	V_LIBRARY_TCL=FAIL
+-	places="/usr/local/lib/tcl7.5 \
++	places="/usr/local/lib/tcl8.0 \
+ 		/usr/contrib/lib/tcl7.5 \
+ 		/usr/lib/tcl7.5 \
+ 		/usr/lib/tk/tcl7.5 \
+@@ -1713,6 +1714,7 @@ rm -f conftest*
+ 		places="\
+ 			$prefix/include \
+ 			/usr/local/include \
++			/usr/local/include/tk8.0 \
+ 			/usr/contrib/include \
+ 			/usr/include/tcl \
+ 			/usr/include\
+@@ -1780,8 +1782,8 @@ fi
+ 			$prefix/lib \
+ 			$x_libraries"
+ 		for dir in $places; do
+-			if test -r $dir/libtk4.1.so -o -r $dir/libtk4.1.a; then
+-				V_LIB_TK="-L$dir -ltk4.1"
++			if test -r $dir/libtk80.so -o -r $dir/libtk80.a; then
++				V_LIB_TK="-L$dir -ltk80"
+ 				break
+ 			fi
+ 			if test -r $dir/libtk.so -o -r $dir/libtk.a; then
+@@ -1800,7 +1802,7 @@ fi
+ 	fi
+ 	echo "checking for tk/tk.tcl"
+ 	V_LIBRARY_TK=FAIL
+-	places="/usr/local/lib/tk4.1 \
++	places="/usr/local/lib/tk8.0 \
+ 		/usr/contrib/lib/tk4.1 \
+ 		/usr/lib/tk4.1 \
+ 		/usr/lib/tk/tk4.1 \
