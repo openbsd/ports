@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/11/13 20:14:39 danh Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/25 14:56:54 brad Exp $
 
 COMMENT=	"web server log file analysis program"
 
@@ -23,7 +23,9 @@ PERMIT_DISTFILES_FTP=	Yes
 WRKDIST=	${WRKDIR}/webalizer-2.01-09
 
 CONFIGURE_STYLE= gnu dest
-CONFIGURE_ARGS=	--enable-dns --with-png=${LOCALBASE}/lib
+CONFIGURE_ARGS=	--enable-dns --with-png="${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-ljpeg -lttf"
+
 NO_REGRESS=	Yes
 
 post-install:
