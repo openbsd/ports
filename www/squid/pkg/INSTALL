@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.7 2000/08/05 02:23:15 brad Exp $
+# $OpenBSD: INSTALL,v 1.8 2000/08/09 00:40:14 brad Exp $
 #
 # Pre/post-installation setup of squid
 
@@ -23,17 +23,17 @@ do_notice_conf()
     echo "+---------------"
     echo "| The existing $1 configuration files in $CONFIG_DIR have NOT"
     echo "| been changed.  You may want to compare them to the current samples in"
-    echo "| $SAMPLE_CONFIG_DIR/conf, and update your configuration files as needed."
-    echo "+---------------"
+    echo "| $SAMPLE_CONFIG_DIR/conf, and update your configuration"
+    echo "| files as needed."
 }
 
 do_notice_errors_and_icons()
 {
-    echo "+---------------"
-    echo "| The existing $1 errors and icons in $PREFIX/share/squid have NOT"
-    echo "| been changed.  You may want to compare them to the current samples in"
-    echo "| $SAMPLE_CONFIG_DIR/errors and $SAMPLE_CONFIG_DIR/icons, and"
-    echo "| update them as needed."
+    echo "|"
+    echo "| The existing errors and icons in $PREFIX/share/squid have NOT"
+    echo "| been changed.  You may want to compare them to the current samples"
+    echo "| in $SAMPLE_CONFIG_DIR/errors and"
+    echo "| $SAMPLE_CONFIG_DIR/icons, and update them as needed."
     echo "+---------------"
     echo
 }
@@ -48,7 +48,6 @@ do_install_conf()
     echo "+---------------"
     echo "| The $1 configuration files have been installed in $CONFIG_DIR."
     echo "| Please view these files and change the configuration to meet your needs."
-    echo "+---------------"
 }
 
 do_install_errors_and_icons()
@@ -57,7 +56,7 @@ do_install_errors_and_icons()
     install -d -o root -g wheel $PREFIX/share/squid/errors
     cp -R $SAMPLE_CONFIG_DIR/errors/* $PREFIX/share/squid/errors
     cp -R $SAMPLE_CONFIG_DIR/icons/* $PREFIX/share/squid/icons
-    echo "+---------------"
+    echo "|"
     echo "| The $1 errors and icons have been installed in $PREFIX/share/squid."
     echo "| Please view these files and change them to meet your needs."
     echo "+---------------"
@@ -80,21 +79,17 @@ case $2 in
     POST-INSTALL)
 	if [ ! -d $CONFIG_DIR ]; then
 	   do_install_conf $1
+	elif [ ! -f $CONFIG_DIR/squid.conf ]; then
+	   do_install_conf $1
 	else
-	 if [ ! -f $CONFIG_DIR/squid.conf ]; then
-	    do_install_conf $1
-	 else
-	    do_notice_conf $1
-	 fi
+	   do_notice_conf $1
 	fi
 	if [ ! -d $PREFIX/share/squid/errors ]; then
-	   do_install_errors_and_icons $1
+	   do_install_errors_and_icons
+	elif [ ! -f $PREFIX/share/squid/errors/ERR_TOO_BIG ]; then
+	   do_install_errors_and_icons
 	else
-	 if [ ! -f $PREFIX/share/squid/errors/ERR_TOO_BIG ]; then
-	    do_install_errors_and_icons $1
-	 else
-	    do_notice_errors_and_icons $1
-	 fi
+	   do_notice_errors_and_icons
 	fi
 	;;
     *)
