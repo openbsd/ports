@@ -1,6 +1,6 @@
-bin/lasergnu
+@comment $OpenBSD: PLIST,v 1.7 2000/09/22 20:34:57 danh Exp $
 bin/gnuplot
-bin/gnuplot_x11
-share/gnuplot.gih
-man/man1/lasergnu.1
+bin/lasergnu
 man/man1/gnuplot.1
+man/man1/lasergnu.1
+share/gnuplot.gih
