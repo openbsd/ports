@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_pixmap_image_cc,v 1.1 2002/09/30 14:06:03 naddy Exp $
+--- src/pixmap_image.cc.orig	Mon Sep 30 16:04:37 2002
++++ src/pixmap_image.cc	Mon Sep 30 16:04:56 2002
+@@ -22,6 +22,7 @@
+ #include "config.h"
+ #endif
+ #include <stdio.h>
++#include <string.h>
+ #include <unistd.h>
+ #include <sys/stat.h>
+ #include <X11/Xlib.h>
