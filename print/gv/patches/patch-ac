@@ -1,0 +1,36 @@
+*** source/setenv.c.orig	Wed Dec  3 00:00:40 1997
+--- source/setenv.c	Wed Dec  3 00:00:59 1997
+***************
+*** 39,45 ****
+   */
+  int
+  setenv(name, value, rewrite)
+! 	register char *name, *value;
+  	int rewrite;
+  {
+  	extern char **environ;
+--- 39,45 ----
+   */
+  int
+  setenv(name, value, rewrite)
+! 	register const char *name, *value;
+  	int rewrite;
+  {
+  	extern char **environ;
+***************
+*** 97,103 ****
+   */
+  void
+  unsetenv(name)
+! 	char	*name;
+  {
+  	extern char **environ;
+  	register char **P;
+--- 97,103 ----
+   */
+  void
+  unsetenv(name)
+! 	const char	*name;
+  {
+  	extern char **environ;
+  	register char **P;
