@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/04/18 03:22:23 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2003/04/19 01:21:32 brad Exp $
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) client"
 
@@ -47,7 +47,7 @@ CONFIGURE_ARGS+= --disable-asm
 .endif
 
 FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} \
-		silc_etcdir=${PREFIX}/share/examples/silc-client \
+		silc_etcdir=${PREFIX}/share/examples/silc \
 		${INSTALLARCHLIB}=${WRKINST}/${INSTALLARCHLIB}
 
 post-install:

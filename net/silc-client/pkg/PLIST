@@ -1,8 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/01/15 03:06:26 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/04/19 01:21:32 brad Exp $
 bin/silc
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi.pm
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/TextUI.pm
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/UI.pm
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/.packlist
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.so
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/.packlist
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.so
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/.packlist
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.bs
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.so
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/perllocal.pod
 man/man1/silc.1
+@comment share/doc/silc/CHANGES
+@comment share/doc/silc/COPYING
+@comment share/doc/silc/CREDITS
+@comment share/doc/silc/CodingStyle
 share/doc/silc/FAQ
+@comment share/doc/silc/INSTALL
 share/doc/silc/README
+@comment share/doc/silc/TODO
 share/doc/silc/draft-riikonen-presence-attrs-01.txt
 share/doc/silc/draft-riikonen-silc-commands-04.txt
 share/doc/silc/draft-riikonen-silc-flags-payloads-02.txt
@@ -115,3 +134,11 @@ share/silc/themes/default.theme
 @dirrm share/silc
 @dirrm share/examples/silc
 @dirrm share/doc/silc
+@comment @exec mkdir -p %D/modules
+@comment @dirrm modules
+@comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI
+@comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI
+@comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi
+@comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto
+@comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi
+@comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
