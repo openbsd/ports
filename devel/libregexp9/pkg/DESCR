@@ -1,0 +1,14 @@
+Libregexp9 is a port of Plan 9's regexp library.
+It is small and simple and provides the traditional
+extended regular expressions (as opposed to the
+current extended regular expressions, which add {}
+and various \x character classes, among other 
+complications).
+
+It handles Unicode in wide character or UTF8 format!
+
+WWW: http://pdos.lcs.mit.edu/~rsc/software/
+http://plan9.bell-labs.com/magic/man2html/2/regexp
+
+Russ Cox
+rsc@post.harvard.edu

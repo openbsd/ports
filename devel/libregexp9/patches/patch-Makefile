@@ -1,0 +1,10 @@
+--- Makefile.orig	Thu Feb 13 16:05:34 2003
++++ Makefile	Fri Feb 14 18:43:41 2003
+@@ -54,6 +54,7 @@ test2: test2.$O $(LIB)
+ 
+ $(LIB): $(OFILES)
+ 	$(AR) $(ARFLAGS) $(LIB) $(OFILES)
++	$(RANLIB) $(LIB)
+ 
+ NUKEFILES+=$(LIB)
+ .c.$O:

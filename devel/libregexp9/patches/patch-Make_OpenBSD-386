@@ -1,0 +1,12 @@
+$OpenBSD: patch-Make_OpenBSD-386,v 1.1.1.1 2003/02/16 14:59:42 markus Exp $
+--- Make.OpenBSD-386.orig	Fri Feb 14 18:43:41 2003
++++ Make.OpenBSD-386	Fri Feb 14 18:43:41 2003
+@@ -0,0 +1,8 @@
++CC=gcc
++CFLAGS+=-Wall -Wno-missing-braces -Wno-parentheses -Wno-switch -O2 -g -c -I. -I$(PREFIX)/include
++O=o
++AR=ar
++ARFLAGS=rvc
++NAN=nan64.$O	# default, can be overriden by Make.$(SYSNAME)
++NAN=nan64.$O
++RANLIB=ranlib
