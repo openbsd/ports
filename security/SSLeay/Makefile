@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 1999/03/24 23:53:08 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/03/28 23:03:25 brad Exp $
 
 DISTNAME=	SSLeay-0.9.0b
 CATEGORIES=     security
-
-MAINTAINER=	dugsong@monkey.org
-
-NO_CDROM=	"CRYPTO: Third party crypto not allowed."
-RESTRICTED=	"Crypto; export-controlled"
-
 MASTER_SITES=	ftp://ftp.psy.uq.oz.au/pub/Crypto/SSL/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.psy.uq.oz.au/SSL/ \
 		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.psy.uq.oz.au/pub/Crypto/SSL/ \
 		ftp://ftp.internat.freebsd.org/pub/Crypto/SSL/
+
+NO_CDROM=	"CRYPTO: Third party crypto not allowed."
+RESTRICTED=	"Crypto; export-controlled"
+
+MAINTAINER=	dugsong@monkey.org
 
 .if !defined(NO_WARNINGS)
 fetch-depends:
@@ -32,36 +31,36 @@ fetch-depends:
 .endif
 .endif
 
-post-patch:
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-	${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/rsaref.patch
-.endif
-
-HAS_CONFIGURE=		yes
-CONFIGURE_SCRIPT=	Configure
-
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-LIB_DEPENDS=	rsaref:${PORTSDIR}/security/rsaref
-CONFIGURE_ENV+=	USA_RESIDENT="YES"
-CONFIGURE_ARGS+= -I../../rsaref/ -DRSAref
-.endif
+HAS_CONFIGURE=	yes
+CONFIGURE_SCRIPT=Configure
 
 # gcc-2.8.* confuses DES names? destest fails, but not with gcc-2.7.*. fix.
 CONFIGURE_ARGS+= -DPERL5
 
-.if (${MACHINE_ARCH} == "sparc")
-CONFIGURE_ARGS+=	OpenBSD-sparc
-.elif (${MACHINE_ARCH} == "i386")
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+LIB_DEPENDS=	rsaref:${PORTSDIR}/security/rsaref
+CONFIGURE_ENV+=	USA_RESIDENT=YES
+CONFIGURE_ARGS+= -I../../rsaref/ -DRSAref
+.endif
+
+.if (${MACHINE_ARCH} == "i386")
 CONFIGURE_ARGS+=	OpenBSD-x86
-.elif (${MACHINE_ARCH} == "m68k")
-CONFIGURE_ARGS+=	OpenBSD-m68k
+.elif (${MACHINE_ARCH} == "pmax")
+CONFIGURE_ARGS+=	OpenBSD-pmax
+.elif (${MACHINE_ARCH} == "arc")
+CONFIGURE_ARGS+=	OpenBSD-arc
 .elif (${MACHINE_ARCH} == "alpha")
-CONFIGURE_ARGS+=	alpha-gcc
+CONFIGURE_ARGS+=	OpenBSD-alpha
 .else
-CONFIGURE_ARGS+=	gcc
+CONFIGURE_ARGS+=	OpenBSD-be
 .endif
 
 ALL_TARGET=	all test
+
+post-patch:
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+	${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/rsaref.patch
+.endif
 
 pre-build:
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES

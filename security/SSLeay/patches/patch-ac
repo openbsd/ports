@@ -1,0 +1,18 @@
+--- crypto/bn/asm/alpha.s.orig	Sat Mar 27 21:36:52 1999
++++ crypto/bn/asm/alpha.s	Sat Mar 27 21:54:18 1999
+@@ -195,7 +195,7 @@
+ 	addq	$8,$3,$3	# c+=carry
+ 
+ 	cmpult	$3,$8,$8	# did we overflow?
+-	 stq	$3,($16)	# r[0]=c
++	 stq	$3,0($16)	# r[0]=c
+ 
+ 	addq	$7,$8,$8	# add into overflow
+ 	 subq	$19,1,$19	# loop--
+@@ -339,6 +339,3 @@
+ 	addq $30,48,$30
+ 	ret $31,($26),1
+ 	.end bn_div64
+-	.ident	"GCC: (GNU) 2.7.2.1"
+-
+-

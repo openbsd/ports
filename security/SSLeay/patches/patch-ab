@@ -1,10 +1,13 @@
 --- crypto/bn/Makefile.ssl.orig	Thu Apr  9 11:47:18 1998
-+++ crypto/bn/Makefile.ssl	Fri Mar 12 13:14:55 1999
-@@ -57,6 +57,7 @@
++++ crypto/bn/Makefile.ssl	Sat Mar 27 23:04:34 1999
+@@ -82,6 +82,10 @@
+ asm/bn86unix.cpp:
+ 	(cd asm; perl bn-586.pl cpp >bn86unix.cpp )
  
++# alpha
++asm/alpha.o: asm/alpha.s
++	as -o asm/alpha.o asm/alpha.s
++
+ files:
+ 	perl $(TOP)/util/files.pl Makefile.ssl >> $(TOP)/MINFO
  
- lib:	$(LIBOBJ)
-+	cp `basename $(BN_MULW)` asm/
- 	$(AR) $(LIB) $(LIBOBJ)
- 	sh $(TOP)/util/ranlib.sh $(LIB)
- 	@touch lib

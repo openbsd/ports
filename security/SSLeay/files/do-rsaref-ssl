@@ -30,11 +30,6 @@ echo "adding rsaref objs to libcrypto"
 ar -r -a rsa_enc.o libcrypto.a \
 `(ar t libRSAglue.a ; ar t librsaref.a) | egrep '\.o'`
 
-# can't do this cos we need to map RSA_PKCS1_SSLeay -> RSA_PKCS1_RSAref
-# could modify src, but it's a pain to maintain.
-#echo "getting rid of rsa_enc.o"
-#ar dv libcrypto.a rsa_enc.o
-
 echo "generating new symbol table"
 ranlib libcrypto.a
 
