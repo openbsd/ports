@@ -1,7 +1,23 @@
-$OpenBSD: patch-configure,v 1.30 2005/03/09 16:07:29 biorn Exp $
+$OpenBSD: patch-configure,v 1.31 2005/04/01 06:28:58 biorn Exp $
 --- configure.orig	Thu Dec 23 16:36:00 2004
-+++ configure	Fri Dec 31 01:09:24 2004
-@@ -2180,7 +2180,7 @@ echores "$_setlocale"
++++ configure	Wed Mar  9 20:19:18 2005
+@@ -700,10 +700,15 @@ fi
+ 
+ x86_exts_check()
+ {
++  case $host_arch in
++  x86_64) pparam="3dnow 3dnowext mmx mmxext xmm sse2"
++    ;;
++  *)
+   pparam=`$_cpuinfo | grep 'features' | cut -d ':' -f 2 | _head 1`
+   if test -z "$pparam" ; then
+     pparam=`$_cpuinfo | grep 'flags' | cut -d ':' -f 2 | _head 1`
+   fi
++  esac
+ 
+   _mmx=no
+   _3dnow=no
+@@ -2180,7 +2185,7 @@ echores "$_setlocale"
  
  
  echocheck "iconv"
@@ -10,7 +26,7 @@ $OpenBSD: patch-configure,v 1.30 2005/03/09 16:07:29 biorn Exp $
    _iconv_tmp='#include <iconv.h>'
  
    cat > $TMPC << EOF
-@@ -4659,7 +4659,7 @@ echores "$_sgiaudio"
+@@ -4659,7 +4664,7 @@ echores "$_sgiaudio"
  
  
  echocheck "VCD support"
@@ -19,7 +35,7 @@ $OpenBSD: patch-configure,v 1.30 2005/03/09 16:07:29 biorn Exp $
    _inputmodules="vcd $_inputmodules"
    _def_vcd='#define HAVE_VCD 1'
    echores "ok"
-@@ -6607,7 +6607,7 @@ CACA_LIB = $_ld_caca
+@@ -6607,7 +6612,7 @@ CACA_LIB = $_ld_caca
  # audio output
  ALSA_LIB = $_ld_alsa
  NAS_LIB = $_ld_nas
@@ -28,7 +44,7 @@ $OpenBSD: patch-configure,v 1.30 2005/03/09 16:07:29 biorn Exp $
  ARTS_INC = $_inc_arts
  ESD_LIB = $_ld_esd
  ESD_INC = $_inc_esd
-@@ -6877,7 +6877,7 @@ $_def_malloc
+@@ -6877,7 +6882,7 @@ $_def_malloc
  $_def_memalign
  #ifndef HAVE_MEMALIGN
  # define memalign(a,b) malloc(b)
