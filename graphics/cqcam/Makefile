@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/09 17:56:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/12 15:07:30 espie Exp $
 
 DISTNAME=	cqcam-0.91
 CATEGORIES=	graphics
-NEED_VERSION=	1.447
+NEED_VERSION=	1.474
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -34,14 +34,15 @@ MAKE_FLAGS=	${FAKE_FLAGS}
 FAKE_FLAGS=	CLIENTS="cli webcam"
 .else
 USE_X11=	Yes
-LIB_DEPENDS+=	gtk.1::x11/gtk+
-BUILD_DEPENDS=	wish8.3::x11/tk/8.3
+LIB_DEPENDS+=	gtk.1,gdk.1::x11/gtk+
+LIB_DEPENDS+=	xview,olgx::x11/xview/lib
+#BUILD_DEPENDS=	wish8.3::x11/tk/8.3
 CONFIGURE_ARGS+= --with-gtk-prefix=${LOCALBASE} 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/tcl8.3"
-MAKE_FLAGS=	CPPFLAGS="-I${LOCALBASE}/include/tcl8.3 \
-		-I${LOCALBASE}/include/tk8.3" \
-		${FAKE_FLAGS}
+		LDFLAGS="-L${LOCALBASE}/lib" # -L${LOCALBASE}/lib/tcl8.3"
+#MAKE_FLAGS=	CPPFLAGS="-I${LOCALBASE}/include/tcl8.3 \
+#		-I${LOCALBASE}/include/tk8.3" \
+MAKE_FLAGS=	${FAKE_FLAGS}
 FAKE_FLAGS=	CLIENTS="cli gtkfe webcam xfe"
 .endif
 
