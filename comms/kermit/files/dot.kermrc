@@ -1,0 +1,14 @@
+# .kermit -- typical ckermit init file
+
+set send packet 9024		# packet size send 
+set receive packet 9024		# packet size receive
+set file type binary		# file type
+set block 3			# use 16bit CCITT crc's
+set window 15 			# use 15 sliding window slots
+set file name literal		# do not translate file names
+set file coll overwrite		# overwrite if file allready exists
+set file dis crt		# display in terms of cps and percentage
+set flow rts			# hardware flow control
+set con unprefix all		# unpre all control characters
+set con prefix 0 3 131		# prefix necessary control characters
+set speed 57600			# use 57600bps DTE

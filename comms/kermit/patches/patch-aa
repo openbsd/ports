@@ -1,0 +1,14 @@
+*** ckucmd.c	Wed Nov 20 07:12:12 1996
+--- ckucmd.c	Thu Dec  5 11:20:24 1996
+***************
+*** 3648,3653 ****
+--- 3648,3656 ----
+    not convert \r to \n, so additional \n needed in newline function.  But
+    it is also very likely to result in unwanted blank lines.
+  */
++ #ifdef SVORPOSIX
++     if (c == CR) putchar(NL);
++ #endif /* SVORPOSIX */
+  
+  #ifdef OS2
+      if (c == CR) putchar(NL);
