@@ -1,6 +1,6 @@
---- automake.in.orig	Thu May 10 12:27:15 2001
-+++ automake.in	Thu May 10 12:28:28 2001
-@@ -1969,7 +1969,7 @@ sub handle_texinfo
+--- automake.in.orig	Sun Jun 10 06:08:56 2001
++++ automake.in	Sat Jun 30 13:41:21 2001
+@@ -2013,7 +2013,7 @@ sub handle_texinfo
  	# dependency list.
  	@texi_deps = ();
  	push (@texi_deps, $info_cursor);
