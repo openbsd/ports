@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.15 2000/02/15 07:05:59 brad Exp $
+# $OpenBSD: Makefile.template,v 1.16 2000/02/15 18:18:10 espie Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -13,6 +13,8 @@ DISTNAME=		???
 #PKGNAME=		???
 CATEGORIES=     	???
 
+# HOMEPAGE=		???		Url
+
 # Reasons why the port/package shouldn't be built
 #
 #NEED_VERSION=		?.??
@@ -20,7 +22,7 @@ CATEGORIES=     	???
 #ONLY_FOR_ARCHS=	???
 #BROKEN=		"reason"
 #RESTRICTED=		"reason"
-#MIRROR_DISTFILE=	no
+#MIRROR_DISTFILE=	No
 
 # where to send bitches about this port
 #
@@ -72,20 +74,23 @@ MAINTAINER=		ports@openbsd.org
 # Every distfile can have a different license.  The PERMIT_* values are
 # determined by the most restrictive license.  If you have two licenses
 # that are in conflict, set LICENSE_TYPE="lic1 lic2" and set the appropriate
-# PERMIT_* values to no.  Make SURE you get these values right.
+# PERMIT_* values to No.  Make SURE you get these values right.
 
 LICENSE_TYPE=		"License type"
-PERMIT_PACKAGE_CDROM=	"YES|'Reason if NO'"
-PERMIT_PACKAGE_FTP=	"YES|'Reason if NO'"
-PERMIT_DISTFILES_CDROM=	"YES|'Reason if NO'"
-PERMIT_DISTFILES_FTP=	"YES|'Reason if NO'"
+PERMIT_PACKAGE_CDROM=	"Yes|'Reason if No'"
+PERMIT_PACKAGE_FTP=	"Yes|'Reason if No'"
+PERMIT_DISTFILES_CDROM=	"Yes|'Reason if No'"
+PERMIT_DISTFILES_FTP=	"Yes|'Reason if No'"
 
 # where the source files and patches can be fetched
 #
 MASTER_SITES=		???
 #MASTER_SITE_SUBDIR=	???
+# if more master sites are needed...
+#MASTER_SITES0=
+# ...
 #DISTFILES=		???
-#PATCH_SITES=		???
+# PATCHFILES are also retrieved from MASTER_SITES*
 #PATCHFILES=		???
 #PATCH_DIST_STRIP=	-p0
 #EXTRACT_SUFX=		.tar.Z
@@ -95,9 +100,9 @@ MASTER_SITES=		???
 
 # don't forget to list supplementary files here (arch-dependent stuff,
 # or files that only get used with specific options. Otherwise, 
-# make checksum/addsum   WON'T WORK.
+# make makesum/checksum/addsum   WON'T WORK.
+# Note that duplicate files are not a problem.
 #SUPDISTFILES=
-#SUPPATCHFILES=
 
 # Dependencies
 #
@@ -108,7 +113,7 @@ MASTER_SITES=		???
 
 # Is the build automagic or is it interactive
 #
-#IS_INTERACTIVE=	yes
+#IS_INTERACTIVE=	Yes
 
 # build/configuration variables
 #
@@ -119,39 +124,41 @@ MASTER_SITES=		???
 #
 #SEPARATE_BUILD=	concurrent  (build simultaneously on all arches)
 #SEPARATE_BUILD=	simple  (configure/build still recreates files in source)
-#USE_GMAKE=		yes
-#USE_IMAKE=		yes
-#USE_X11=		yes (assumed if USE_IMAKE is yes)
-#USE_AUTOCONF=		yes
-#USE_LIBTOOL=		yes
-#GNU_CONFIGURE=		yes (assumed if USE_AUTOCONF is yes)
-#HAS_CONFIGURE=		yes (assumed if GNU_CONFIGURE is yes)
+#USE_GMAKE=		Yes
+#USE_IMAKE=		Yes
+#USE_X11=		Yes (assumed if USE_IMAKE is Yes)
+#USE_AUTOCONF=		Yes
+#USE_LIBTOOL=		Yes
+#GNU_CONFIGURE=		Yes (assumed if USE_AUTOCONF is Yes)
+#HAS_CONFIGURE=		Yes (assumed if GNU_CONFIGURE is Yes)
 #CONFIGURE_SCRIPT=	??? (if other than configure)
 #CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 #CONFIGURE_ENV=		???
 #LIBTOOL_FLAGS=		???
 
 # Things that we don't want to do for this port/package
+# Generally, DON'T set anything to No if it's not needed.
+# The time gained is not worth it.
 #
-#NO_DEPENDS=		yes
+#NO_DEPENDS=		Yes
 # NO_WRKDIR is *BAD*, it breaks all dependencies
 # NO_WRKSUBDIR is obsolete
 # Use WRKDIST=${WRKDIR}
-#NO_CHECKSUM=		yes
-#NO_EXTRACT=		yes
-#NO_PATCH=		yes
-#NO_CONFIGURE=		yes
-#NO_BUILD=		yes
-#NO_INSTALL=		yes
-#NO_MTREE=		yes
-#NO_PACKAGE=		yes
-#NO_PKG_REGISTER=	yes
+#NO_CHECKSUM=		Yes
+#NO_PATCH=		Yes
+#EXTRACT_ONLY=		instead of NO_EXTRACT, creates WRKDIR correctly
+#NO_CONFIGURE=		Yes
+#NO_BUILD=		Yes
+#NO_INSTALL=		Yes
+#NO_MTREE=		Yes
+#NO_PACKAGE=		Yes
+#NO_PKG_REGISTER=	Yes
 
 # This section is only needed if man pages are distributed in compressed
 # form.  Define MANCOMPRESSED and the man pages by section.  The pages
 # will be uncompressed after being installed.
 #
-#MANCOMPRESSED=		yes
+#MANCOMPRESSED=		Yes
 #MAN1=			???
 #MAN3=			???
 #MAN4=			???
@@ -166,7 +173,8 @@ MASTER_SITES=		???
 #SCRIPTS_ENV=		???
 #LDFLAGS=		???
 #WRKDIR=		??? if other than work
-#WRKSRC=		??? if other than ${WRKDIR}/$DISTNAME
+#WRKDIST=		??? if other than ${WRKDIR}/$DISTNAME
+#WRKSRC=		??? if other than ${WRKDIST}
 
 #ALL_TARGET=		???
 #INSTALL_TARGET=	???
