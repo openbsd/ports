@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.3 2004/02/09 17:43:39 sturm Exp $
+--- configure.orig	2004-02-04 20:40:04.000000000 +0100
++++ configure	2004-02-04 20:40:40.000000000 +0100
+@@ -18840,7 +18840,7 @@ fi
+ 
+ if test x$local_libpng = xyes
+ then
+-  PNG_LINK=-lpng
++  PNG_LINK="-L${prefix}/lib -lpng"
+ 
+ else
+   PNG_LIB_DIR=libpng-1.0.9
