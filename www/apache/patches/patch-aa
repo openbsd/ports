@@ -1,149 +1,93 @@
-*** src/Configuration.orig	Wed Jul 23 04:11:59 1997
---- src/Configuration	Thu Jul 24 05:55:25 1997
-***************
-*** 41,49 ****
-  # Settings here have priority; If not set, Configure will attempt to guess
-  # the C compiler, and set OPTIM to '-O2'
-  #
-! EXTRA_CFLAGS=
-  EXTRA_LDFLAGS=
-! EXTRA_LIBS=
-  EXTRA_INCLUDES=
-  
-  #CC=
---- 41,63 ----
-  # Settings here have priority; If not set, Configure will attempt to guess
-  # the C compiler, and set OPTIM to '-O2'
-  #
-! EXTRA_CFLAGS= \
-! -DHTTPD_ROOT=\"${PREFIX}/etc/apache/\" \
-! -DDOCUMENT_LOCATION=\"${PREFIX}/www/data/\" \
-! -DSERVER_CONFIG_FILE=\"httpd.conf\" \
-! -DRESOURCE_CONFIG_FILE=\"srm.conf\" \
-! -DTYPES_CONFIG_FILE=\"mime.types\" \
-! -DACCESS_CONFIG_FILE=\"access.conf\" \
-! -DDEFAULT_PATH=\"/bin:/usr/bin:${PREFIX}/bin\" \
-! -DSUEXEC_BIN=\"${PREFIX}/sbin/suexec\" \
-! -DDEFAULT_XFERLOG=\"/var/log/httpd-access.log\" \
-! -DDEFAULT_ERRORLOG=\"/var/log/httpd-error.log\" \
-! -DDEFAULT_PIDLOG=\"/var/run/httpd.pid\" \
-! -DDEFAULT_SCOREBOARD=\"/var/run/apache_runtime_status\" \
-! -DDEFAULT_LOCKFILE=\"/var/spool/lock/accept.lock\" \
-! -DMAGIC=\"magic\"
-  EXTRA_LDFLAGS=
-! EXTRA_LIBS=
-  EXTRA_INCLUDES=
-  
-  #CC=
-***************
-*** 172,183 ****
-  ## STATUS=yes (see the Rules section near the start of this file) to allow
-  ## full status information.  Check conf/access.conf on how to enable this.
-  
-! # Module status_module       mod_status.o
-  
-  ## The Info module displays configuration information for the server and 
-  ## all included modules. It's very useful for debugging.
-  
-! # Module info_module         mod_info.o
-  
-  ## mod_include translates server-side include (SSI) statements in text files.
-  ## mod_autoindex handles requests for directories which have no index file
---- 186,197 ----
-  ## STATUS=yes (see the Rules section near the start of this file) to allow
-  ## full status information.  Check conf/access.conf on how to enable this.
-  
-! Module status_module       mod_status.o
-  
-  ## The Info module displays configuration information for the server and 
-  ## all included modules. It's very useful for debugging.
-  
-! Module info_module         mod_info.o
-  
-  ## mod_include translates server-side include (SSI) statements in text files.
-  ## mod_autoindex handles requests for directories which have no index file
-***************
-*** 221,227 ****
-  ## mod_rewrite allows for powerful URI-to-URI and URI-to-filename mapping,
-  ## using regular expressions.
-  
-! # Module rewrite_module      mod_rewrite.o
-  
-  ##
-  ## Access control and authentication modules. 
---- 235,241 ----
-  ## mod_rewrite allows for powerful URI-to-URI and URI-to-filename mapping,
-  ## using regular expressions.
-  
-! Module rewrite_module      mod_rewrite.o
-  
-  ##
-  ## Access control and authentication modules. 
-***************
-*** 239,245 ****
-  ## "gdbm" package if not and possibly adjust EXTRA_LIBS. (This may be
-  ## done by Configure at a later date)
-  
-! # Module db_auth_module      mod_auth_db.o
-  # Module dbm_auth_module     mod_auth_dbm.o
-  
-  ## msql_auth checks against an mSQL database.  You must have mSQL installed
---- 253,259 ----
-  ## "gdbm" package if not and possibly adjust EXTRA_LIBS. (This may be
-  ## done by Configure at a later date)
-  
-! Module db_auth_module      mod_auth_db.o
-  # Module dbm_auth_module     mod_auth_dbm.o
-  
-  ## msql_auth checks against an mSQL database.  You must have mSQL installed
-***************
-*** 256,279 ****
-  ## "digest" implements HTTP Digest Authentication rather than the less 
-  ## secure Basic Auth used by the other modules.
-  
-! # Module digest_module       mod_digest.o
-  
-  ## Optional response header manipulation modules. 
-  ##
-  ## cern_meta mimics the behavior of the CERN web server with regards to 
-  ## metainformation files.  
-  
-! # Module cern_meta_module    mod_cern_meta.o
-  
-  ## The expires module can apply Expires: headers to resources,
-  ## as a function of access time or modification time.
-  
-! # Module expires_module      mod_expires.o
-  
-  ## The headers module can set arbitrary HTTP response headers,
-  ## as configured in server, vhost, access.conf or .htaccess configs
-  
-! # Module headers_module      mod_headers.o
-  
-  ## Miscellaneous modules
-  ##
---- 270,293 ----
-  ## "digest" implements HTTP Digest Authentication rather than the less 
-  ## secure Basic Auth used by the other modules.
-  
-! Module digest_module       mod_digest.o
-  
-  ## Optional response header manipulation modules. 
-  ##
-  ## cern_meta mimics the behavior of the CERN web server with regards to 
-  ## metainformation files.  
-  
-! Module cern_meta_module    mod_cern_meta.o
-  
-  ## The expires module can apply Expires: headers to resources,
-  ## as a function of access time or modification time.
-  
-! Module expires_module      mod_expires.o
-  
-  ## The headers module can set arbitrary HTTP response headers,
-  ## as configured in server, vhost, access.conf or .htaccess configs
-  
-! Module headers_module      mod_headers.o
-  
-  ## Miscellaneous modules
-  ##
+--- src/Configuration.orig	Wed Nov 19 16:49:57 1997
++++ src/Configuration	Mon Feb 16 15:22:27 1998
+@@ -41,7 +41,21 @@
+ # Settings here have priority; If not set, Configure will attempt to guess
+ # the C compiler, looking for gcc first, then cc.
+ #
+-EXTRA_CFLAGS=
++EXTRA_CFLAGS= \
++-DDOCUMENT_LOCATION=\"${PREFIX}/www/data/\" \
++-DHTTPD_ROOT=\"${PREFIX}/etc/apache/\" \
++-DSERVER_CONFIG_FILE=\"${PREFIX}/etc/apache/httpd.conf\" \
++-DRESOURCE_CONFIG_FILE=\"${PREFIX}/etc/apache/srm.conf\" \
++-DACCESS_CONFIG_FILE=\"${PREFIX}/etc/apache/access.conf\" \
++-DTYPES_CONFIG_FILE=\"${PREFIX}/etc/apache/mime.types\" \
++-DDEFAULT_PATH=\"/bin:/usr/bin:${PREFIX}/bin\" \
++-DSUEXEC_BIN=\"${PREFIX}/sbin/suexec\" \
++-DDEFAULT_XFERLOG=\"/var/log/httpd-access.log\" \
++-DDEFAULT_ERRORLOG=\"/var/log/httpd-error.log\" \
++-DDEFAULT_PIDLOG=\"/var/run/httpd.pid\" \
++-DDEFAULT_SCOREBOARD=\"/var/run/apache_runtime_status\" \
++-DDEFAULT_LOCKFILE=\"/var/spool/lock/accept.lock\" \
++-DMAGIC=\"magic\"
+ EXTRA_LDFLAGS=
+ EXTRA_LIBS=
+ EXTRA_INCLUDES=
+@@ -181,12 +195,12 @@
+ ## STATUS=yes (see the Rules section near the start of this file) to allow
+ ## full status information.  Check conf/access.conf on how to enable this.
+ 
+-# AddModule modules/standard/mod_status.o
++AddModule modules/standard/mod_status.o
+ 
+ ## The Info module displays configuration information for the server and 
+ ## all included modules. It's very useful for debugging.
+ 
+-# AddModule         modules/standard/mod_info.o
++AddModule         modules/standard/mod_info.o
+ 
+ ## mod_include translates server-side include (SSI) statements in text files.
+ ## mod_autoindex handles requests for directories which have no index file
+@@ -218,7 +232,7 @@
+ ## transposition/typo). This catches the majority of misspelled requests.
+ ## If it finds a match, a "spelling corrected" redirection is returned.
+ 
+-# AddModule modules/standard/mod_speling.o
++AddModule modules/standard/mod_speling.o
+ 
+ ## The UserDir module for selecting resource directories by user name
+ ## and a common prefix, e.g., /~<user> , /usr/web/<user> , etc.
+@@ -240,7 +254,7 @@
+ ## URI-to-filename mapping using a regular expression based 
+ ## rule-controlled rewriting engine.
+ 
+-# AddModule modules/standard/mod_rewrite.o
++AddModule modules/standard/mod_rewrite.o
+ 
+ ##
+ ## Access control and authentication modules. 
+@@ -259,29 +273,29 @@
+ ## done by Configure at a later date)
+ 
+ # AddModule modules/standard/mod_auth_dbm.o
+-# AddModule modules/standard/mod_auth_db.o
++AddModule modules/standard/mod_auth_db.o
+ 
+ ## "digest" implements HTTP Digest Authentication rather than the less 
+ ## secure Basic Auth used by the other modules.
+ 
+-# AddModule modules/standard/mod_digest.o
++AddModule modules/standard/mod_digest.o
+ 
+ ## Optional response header manipulation modules. 
+ ##
+ ## cern_meta mimics the behavior of the CERN web server with regards to 
+ ## metainformation files.  
+ 
+-# AddModule modules/standard/mod_cern_meta.o
++AddModule modules/standard/mod_cern_meta.o
+ 
+ ## The expires module can apply Expires: headers to resources,
+ ## as a function of access time or modification time.
+ 
+-# AddModule modules/standard/mod_expires.o
++AddModule modules/standard/mod_expires.o
+ 
+ ## The headers module can set arbitrary HTTP response headers,
+ ## as configured in server, vhost, access.conf or .htaccess configs
+ 
+-# AddModule modules/standard/mod_headers.o
++AddModule modules/standard/mod_headers.o
+ 
+ ## Miscellaneous modules
+ ##

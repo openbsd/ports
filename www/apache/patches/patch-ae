@@ -1,5 +1,6 @@
-*** conf/httpd.conf-dist.orig	Wed Jul 16 09:02:44 1997
---- conf/httpd.conf-dist	Thu Jul 24 05:13:38 1997
+diff -c -r1.1.1.1 -r1.2
+*** conf/httpd.conf-dist	1997/08/19 23:00:22	1.1.1.1
+--- conf/httpd.conf-dist	1998/01/25 11:29:08	1.2
 ***************
 *** 34,40 ****
   #  suggested workaround is to create a user www and use that user.
@@ -17,23 +18,6 @@
   
   # ServerAdmin: Your address, where problems with the server should be
   # e-mailed.
-***************
-*** 44,50 ****
-  # ServerRoot: The directory the server's config, error, and log files
-  # are kept in
-  
-! ServerRoot /usr/local/etc/httpd
-  
-  # BindAddress: You can support virtual hosts with this option. This option
-  # is used to tell the server which IP address to listen to. It can either
---- 44,50 ----
-  # ServerRoot: The directory the server's config, error, and log files
-  # are kept in
-  
-! ServerRoot /usr/local/etc/apache
-  
-  # BindAddress: You can support virtual hosts with this option. This option
-  # is used to tell the server which IP address to listen to. It can either
 ***************
 *** 56,76 ****
   # ErrorLog: The location of the error log file. If this does not start
@@ -97,10 +81,10 @@
    
   #<VirtualHost host.some_domain.com>
   #ServerAdmin webmaster@host.some_domain.com
-! #DocumentRoot /usr/local/www/host.some_domain.com/data
+! #DocumentRoot /usr/local/www/docs/host.some_domain.com
   #ServerName host.some_domain.com
-! #ErrorLog /var/log/host.some_domain.com-error_log
-! #TransferLog /var/log/host.some_domain.com-access_log
+! #ErrorLog /var/log//host.some_domain.com-error_log
+! #TransferLog /var/log//host.some_domain.com-access_log
   #</VirtualHost>
   
   

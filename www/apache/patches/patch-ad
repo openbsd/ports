@@ -1,5 +1,6 @@
-*** src/Makefile.tmpl.orig	Thu Jul 17 08:37:46 1997
---- src/Makefile.tmpl	Tue Aug 26 02:58:54 1997
+diff -c -r1.1.1.1 -r1.2
+*** src/main/Makefile.tmpl	1997/11/15 19:04:47	1.1.1.1
+--- src/main/Makefile.tmpl	1998/01/25 11:29:16	1.2
 ***************
 *** 3,9 ****
   # This is combined with the information in the "Configuration" file
@@ -7,7 +8,7 @@
   
 ! CFLAGS=$(OPTIM) $(CFLAGS1) $(EXTRA_CFLAGS)
   LIBS=$(EXTRA_LIBS) $(LIBS1)
-  INCLUDES=$(INCLUDES1) $(EXTRA_INCLUDES)
+  INCLUDES=$(INCLUDES1) $(INCLUDES_DEPTH0) $(EXTRA_INCLUDES)
   LDFLAGS=$(LDFLAGS1) $(EXTRA_LDFLAGS)
 --- 3,9 ----
   # This is combined with the information in the "Configuration" file
@@ -15,5 +16,5 @@
   
 ! CFLAGS+=$(OPTIM) $(CFLAGS1) $(EXTRA_CFLAGS)
   LIBS=$(EXTRA_LIBS) $(LIBS1)
-  INCLUDES=$(INCLUDES1) $(EXTRA_INCLUDES)
+  INCLUDES=$(INCLUDES1) $(INCLUDES_DEPTH0) $(EXTRA_INCLUDES)
   LDFLAGS=$(LDFLAGS1) $(EXTRA_LDFLAGS)

@@ -1,11 +1,11 @@
-*** conf/access.conf-dist.orig	Wed Jul  3 21:18:11 1996
---- conf/access.conf-dist	Fri Jul  5 06:32:54 1996
+*** conf/access.conf-dist	1997/08/19 23:00:22	1.1.1.1
+--- conf/access.conf-dist	1998/01/25 12:07:04	1.2
 ***************
 *** 12,18 ****
   
   # This should be changed to whatever you set DocumentRoot to.
   
-! <Directory /usr/local/etc/httpd/htdocs>
+! <Directory @@ServerRoot@@/htdocs>
   
   # This may also be "None", "All", or any combination of "Indexes",
   # "Includes", "FollowSymLinks", "ExecCGI", or "MultiViews".
@@ -13,24 +13,7 @@
   
   # This should be changed to whatever you set DocumentRoot to.
   
-! <Directory /usr/local/www/data>
+! <Directory @@ServerRoot@@/www/docs>
   
   # This may also be "None", "All", or any combination of "Indexes",
   # "Includes", "FollowSymLinks", "ExecCGI", or "MultiViews".
-***************
-*** 38,44 ****
-  # /usr/local/etc/httpd/cgi-bin should be changed to whatever your ScriptAliased
-  # CGI directory exists, if you have that configured.
-  
-! <Directory /usr/local/etc/httpd/cgi-bin>
-  AllowOverride None
-  Options None
-  </Directory>
---- 38,44 ----
-  # /usr/local/etc/httpd/cgi-bin should be changed to whatever your ScriptAliased
-  # CGI directory exists, if you have that configured.
-  
-! <Directory /usr/local/www/cgi-bin>
-  AllowOverride None
-  Options None
-  </Directory>

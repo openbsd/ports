@@ -1,11 +1,140 @@
-etc/rc.d/apache.sh
-@exec mkdir -p %D/www/cgi-bin %D/www/data
-etc/apache/httpd.conf-dist
-etc/apache/srm.conf-dist
-etc/apache/access.conf-dist
-etc/apache/mime.types-dist
-etc/apache/magic-dist
+@exec mkdir -p %D/etc/apache
+@exec mkdir -p %D/www/cgi-bin
+@exec mkdir -p %D/www/data
+@exec mkdir -p %D/www/docs
+@exec mkdir -p %D/www/docs/manual
+@exec mkdir -p %D/www/docs/manual/images
+@exec mkdir -p %D/www/docs/manual/misc
+@exec mkdir -p %D/www/docs/manual/mod
+@exec mkdir -p %D/www/docs/manual/vhosts
+@exec mkdir -p %D/www/icons
 sbin/httpd
+etc/apache/httpd.conf
+etc/apache/httpd.conf-dist
+etc/apache/srm.conf
+etc/apache/srm.conf-dist
+etc/apache/access.conf
+etc/apache/access.conf-dist
+etc/apache/mime.types
+etc/apache/mime.types-dist
+etc/apache/magic
+etc/apache/magic-dist
+www/docs/apache_pb.gif
+www/docs/index.html
+www/docs/manual/LICENSE
+www/docs/manual/TODO
+www/docs/manual/bind.html
+www/docs/manual/cgi_path.html
+www/docs/manual/content-negotiation.html
+www/docs/manual/custom-error.html
+www/docs/manual/dns-caveats.html
+www/docs/manual/env.html
+www/docs/manual/footer.html
+www/docs/manual/handler.html
+www/docs/manual/header.html
+www/docs/manual/index.html
+www/docs/manual/install.html
+www/docs/manual/install_1_1.html
+www/docs/manual/invoking.html
+www/docs/manual/keepalive.html
+www/docs/manual/location.html
+www/docs/manual/man-template.html
+www/docs/manual/multilogs.html
+www/docs/manual/process-model.html
+www/docs/manual/new_features_1_0.html
+www/docs/manual/new_features_1_1.html
+www/docs/manual/new_features_1_2.html
+www/docs/manual/new_features_1_3.html
+www/docs/manual/sections.html
+www/docs/manual/sourcereorg.html
+www/docs/manual/stopping.html
+www/docs/manual/suexec.html
+www/docs/manual/unixware.html
+www/docs/manual/upgrading_to_1_3.html
+www/docs/manual/windows.html
+www/docs/manual/images/home.gif
+www/docs/manual/images/index.gif
+www/docs/manual/images/sub.gif
+www/docs/manual/misc/API.html
+www/docs/manual/misc/FAQ.html
+www/docs/manual/misc/client_block_api.html
+www/docs/manual/misc/compat_notes.html
+www/docs/manual/misc/descriptors.html
+www/docs/manual/misc/fin_wait_2.html
+www/docs/manual/misc/footer.html
+www/docs/manual/misc/header.html
+www/docs/manual/misc/howto.html
+www/docs/manual/misc/index.html
+www/docs/manual/misc/known_bugs.html
+www/docs/manual/misc/known_client_problems.html
+www/docs/manual/misc/nopgp.html
+www/docs/manual/misc/perf-bsd44.html
+www/docs/manual/misc/perf-dec.html
+www/docs/manual/misc/perf-hp.html
+www/docs/manual/misc/perf-tuning.html
+www/docs/manual/misc/perf.html
+www/docs/manual/misc/security_tips.html
+www/docs/manual/misc/vif-info.html
+www/docs/manual/misc/windoz_keepalive.html
+www/docs/manual/mod/core.html
+www/docs/manual/mod/directive-dict.html
+www/docs/manual/mod/directives.html
+www/docs/manual/mod/footer.html
+www/docs/manual/mod/header.html
+www/docs/manual/mod/index.html
+www/docs/manual/mod/mod_access.html
+www/docs/manual/mod/mod_actions.html
+www/docs/manual/mod/mod_alias.html
+www/docs/manual/mod/mod_asis.html
+www/docs/manual/mod/mod_auth.html
+www/docs/manual/mod/mod_auth_anon.html
+www/docs/manual/mod/mod_auth_db.html
+www/docs/manual/mod/mod_auth_dbm.html
+www/docs/manual/mod/mod_auth_msql.html
+www/docs/manual/mod/mod_autoindex.html
+www/docs/manual/mod/mod_browser.html
+www/docs/manual/mod/mod_cern_meta.html
+www/docs/manual/mod/mod_cgi.html
+www/docs/manual/mod/mod_cookies.html
+www/docs/manual/mod/mod_digest.html
+www/docs/manual/mod/mod_dir.html
+www/docs/manual/mod/mod_dld.html
+www/docs/manual/mod/mod_dll.html
+www/docs/manual/mod/mod_env.html
+www/docs/manual/mod/mod_example.html
+www/docs/manual/mod/mod_expires.html
+www/docs/manual/mod/mod_headers.html
+www/docs/manual/mod/mod_imap.html
+www/docs/manual/mod/mod_include.html
+www/docs/manual/mod/mod_info.html
+www/docs/manual/mod/mod_isapi.html
+www/docs/manual/mod/mod_log_agent.html
+www/docs/manual/mod/mod_log_common.html
+www/docs/manual/mod/mod_log_config.html
+www/docs/manual/mod/mod_log_referer.html
+www/docs/manual/mod/mod_mime.html
+www/docs/manual/mod/mod_mime_magic.html
+www/docs/manual/mod/mod_negotiation.html
+www/docs/manual/mod/mod_proxy.html
+www/docs/manual/mod/mod_rewrite.html
+www/docs/manual/mod/mod_setenvif.html
+www/docs/manual/mod/mod_speling.html
+www/docs/manual/mod/mod_status.html
+www/docs/manual/mod/mod_unique_id.html
+www/docs/manual/mod/mod_userdir.html
+www/docs/manual/mod/mod_usertrack.html
+www/docs/manual/vhosts/details.html
+www/docs/manual/vhosts/details_1_2.html
+www/docs/manual/vhosts/examples.html
+www/docs/manual/vhosts/fd-limits.html
+www/docs/manual/vhosts/footer.html
+www/docs/manual/vhosts/header.html
+www/docs/manual/vhosts/host.html
+www/docs/manual/vhosts/index.html
+www/docs/manual/vhosts/ip-based.html
+www/docs/manual/vhosts/name-based.html
+www/docs/manual/vhosts/vhosts-in-depth.html
+www/docs/manual/vhosts/virtual-host.html
 www/icons/README
 www/icons/a.gif
 www/icons/alert.black.gif
@@ -82,3 +211,15 @@ www/icons/uu.gif
 www/icons/uuencoded.gif
 www/icons/world1.gif
 www/icons/world2.gif
+@dirrm www/docs/manual/vhosts
+@dirrm www/docs/manual/mod
+@dirrm www/docs/manual/misc
+@dirrm www/docs/manual/images
+@dirrm www/docs/manual
+@dirrm www/docs
+@dirrm www/data
+@dirrm www/icons
+@dirrm www/cgi-bin
+@dirrm www
+@dirrm etc/apache
+@unexec echo "*** Don't forget to remove %D/sbin/httpd from /etc/rc.local"
