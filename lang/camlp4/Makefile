@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/11 00:37:27 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/25 09:51:07 turan Exp $
+
+BROKEN=		does not handle v2.04 of its dependency ocamlc.  Also need to make sure it works with a stdin of null
 
 DISTNAME=	camlp4
 PKGNAME=	camlp4-2.04
