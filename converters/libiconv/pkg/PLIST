@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/06/13 03:07:33 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/12/24 00:08:02 brad Exp $
 bin/iconv
 include/iconv.h
 include/libcharset.h
+include/localcharset.h
 lib/charset.alias
 lib/libcharset.a
 lib/libcharset.la

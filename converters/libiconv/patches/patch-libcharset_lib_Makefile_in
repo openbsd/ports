@@ -1,7 +1,7 @@
-$OpenBSD: patch-libcharset_lib_Makefile_in,v 1.4 2001/09/23 03:08:50 brad Exp $
---- libcharset/lib/Makefile.in.orig	Wed Jun 27 18:56:56 2001
-+++ libcharset/lib/Makefile.in	Sat Sep 22 17:50:02 2001
-@@ -22,6 +22,7 @@ LIBTOOL_COMPILE = $(LIBTOOL) --mode=comp
+$OpenBSD: patch-libcharset_lib_Makefile_in,v 1.5 2003/12/24 00:08:02 brad Exp $
+--- libcharset/lib/Makefile.in.orig	2003-04-14 09:51:06.000000000 -0400
++++ libcharset/lib/Makefile.in	2003-12-21 13:36:54.000000000 -0500
+@@ -26,6 +26,7 @@ LIBTOOL_COMPILE = $(LIBTOOL) --mode=comp
  LIBTOOL_LINK = $(LIBTOOL) --mode=link
  LIBTOOL_INSTALL = $(LIBTOOL) --mode=install
  LIBTOOL_UNINSTALL = $(LIBTOOL) --mode=uninstall
@@ -9,10 +9,10 @@ $OpenBSD: patch-libcharset_lib_Makefile_in,v 1.4 2001/09/23 03:08:50 brad Exp $
  RM = rm -f
  
  # Programs used by "make install":
-@@ -71,11 +72,11 @@ ref-del.sed : $(srcdir)/ref-del.sin
+@@ -78,11 +79,11 @@ ref-del.sed : $(srcdir)/ref-del.sin
  # $(libdir) and $(includedir) - don't use $(prefix) and $(exec_prefix) here.
  install-lib : all force
- 	$(MKINSTALLDIRS) $(libdir)
+ 	$(mkinstalldirs) $(libdir)
 -	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libcharset.la $(libdir)/libcharset.la
 +	$(LIBTOOL_INSTALL) $(CP) libcharset.la $(libdir)/libcharset.la
  	test -f $(libdir)/charset.alias && orig=$(libdir)/charset.alias \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.5 2002/06/10 04:41:48 brad Exp $
---- lib/Makefile.in.orig	Thu May 23 05:48:42 2002
-+++ lib/Makefile.in	Fri Jun  7 17:55:20 2002
-@@ -22,7 +22,7 @@ LIBTOOL_COMPILE = $(LIBTOOL) --mode=comp
+$OpenBSD: patch-lib_Makefile_in,v 1.6 2003/12/24 00:08:02 brad Exp $
+--- lib/Makefile.in.orig	2003-05-18 10:19:16.000000000 -0400
++++ lib/Makefile.in	2003-12-21 13:36:54.000000000 -0500
+@@ -26,7 +26,7 @@ LIBTOOL_COMPILE = $(LIBTOOL) --mode=comp
  LIBTOOL_LINK = $(LIBTOOL) --mode=link
  LIBTOOL_INSTALL = $(LIBTOOL) --mode=install
  LIBTOOL_UNINSTALL = $(LIBTOOL) --mode=uninstall
@@ -10,12 +10,12 @@ $OpenBSD: patch-lib_Makefile_in,v 1.5 2002/06/10 04:41:48 brad Exp $
  MV = mv
  LN = @LN@
  LN_S = @LN_S@
-@@ -88,7 +88,7 @@ iconv.lo : $(srcdir)/iconv.c $(srcdir)/c
+@@ -101,7 +101,7 @@ relocatable.lo : $(srcdir)/relocatable.c
  # $(libdir) and $(includedir) - don't use $(prefix) and $(exec_prefix) here.
  install-lib : all force
- 	if [ ! -d $(libdir) ] ; then mkdir $(libdir) ; fi
+ 	if [ ! -d $(libdir) ] ; then $(mkinstalldirs) $(libdir) ; fi
 -	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libiconv.la $(libdir)/libiconv.la
 +	$(LIBTOOL_INSTALL) $(CP) libiconv.la $(libdir)/libiconv.la
  
  install : all force
- 	if [ ! -d $(DESTDIR)$(prefix) ] ; then mkdir $(DESTDIR)$(prefix) ; fi
+ 	if [ ! -d $(DESTDIR)$(prefix) ] ; then $(mkinstalldirs) $(DESTDIR)$(prefix) ; fi
