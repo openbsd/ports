@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2004/07/18 16:57:55 jakob Exp $
+# $OpenBSD: Makefile,v 1.59 2004/11/28 21:41:31 alek Exp $
 
 COMMENT=	"program for Internet E-mail and News"
 COMMENT-pico=	"small text editor"
@@ -11,7 +11,7 @@ PICO_VERSION=	4.8
 PILOT_VERSION=	2.0
 
 DISTNAME=	pine${VERSION}
-PKGNAME=	pine-${VERSION}
+PKGNAME=	pine-${VERSION}p0
 PKGNAME-pico=	pico-${PICO_VERSION}
 PKGNAME-pilot=	pilot-${PILOT_VERSION}
 
@@ -26,6 +26,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto ssl termcap termlib
 
 NO_REGRESS=	Yes
 VMEM_WARNING=	Yes

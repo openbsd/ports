@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/09/15 09:09:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/11/28 21:41:31 alek Exp $
 bin/pine
 bin/rpdump
 bin/rpload
@@ -7,3 +7,5 @@ bin/rpload
 @man man/man1/rpload.1
 share/doc/pine/
 share/doc/pine/tech-notes.txt
+@extra ${SYSCONFDIR}/pine.conf
+@extra ${SYSCONFDIR}/pine.conf.fixed 
