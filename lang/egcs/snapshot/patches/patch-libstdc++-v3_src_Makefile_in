@@ -1,5 +1,5 @@
 --- libstdc++-v3/src/Makefile.in.orig	2003-03-17 20:07:39.000000000 +0100
-+++ libstdc++-v3/src/Makefile.in	2003-11-10 20:36:20.000000000 +0100
++++ libstdc++-v3/src/Makefile.in	2003-11-12 19:18:45.000000000 +0100
 @@ -145,7 +145,7 @@ glibcpp_srcdir = @glibcpp_srcdir@
  glibcpp_builddir = @glibcpp_builddir@
  toolexecdir = @glibcpp_toolexecdir@
@@ -18,3 +18,11 @@
  	$(CXXLINK) -rpath $(toolexeclibdir) $(libstdc___la_LDFLAGS) $(libstdc___la_OBJECTS) $(libstdc___la_LIBADD) $(LIBS)
  .cc.o:
  	$(CXXCOMPILE) -c $<
+@@ -544,6 +544,7 @@ mostlyclean distclean maintainer-clean
+ @GLIBCPP_BUILD_VERSIONED_SHLIB_TRUE@libstdc++-symbol.ver:  ${glibcpp_srcdir}/@SYMVER_MAP@
+ @GLIBCPP_BUILD_VERSIONED_SHLIB_TRUE@	@LN_S@  ${glibcpp_srcdir}/@SYMVER_MAP@ ./libstdc++-symbol.ver || true
+ @GLIBCPP_BUILD_VERSIONED_SHLIB_FALSE@libstdc++-symbol.ver:
++@GLIBCPP_BUILD_VERSIONED_SHLIB_FALSE@	touch $@
+ 
+ codecvt_members.cc: ${glibcpp_srcdir}/@CCODECVT_CC@
+ 	@LN_S@ ${glibcpp_srcdir}/@CCODECVT_CC@ . || true

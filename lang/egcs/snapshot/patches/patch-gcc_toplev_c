@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_toplev_c,v 1.1 2003/11/13 19:04:10 espie Exp $
+$OpenBSD: patch-gcc_toplev_c,v 1.2 2003/11/13 19:09:47 espie Exp $
 --- gcc/toplev.c.orig	2003-10-09 22:53:35.000000000 +0200
 +++ gcc/toplev.c	2003-11-10 20:32:18.000000000 +0100
 @@ -904,6 +904,9 @@ int align_functions_log;

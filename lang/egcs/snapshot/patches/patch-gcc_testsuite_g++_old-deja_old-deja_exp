@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_testsuite_g++_old-deja_old-deja_exp,v 1.1 2003/11/13 19:04:10 espie Exp $
+$OpenBSD: patch-gcc_testsuite_g++_old-deja_old-deja_exp,v 1.2 2003/11/13 19:09:47 espie Exp $
 --- gcc/testsuite/g++.old-deja/old-deja.exp.orig	Sat Jun 28 11:44:23 2003
 +++ gcc/testsuite/g++.old-deja/old-deja.exp	Sat Jun 28 11:44:31 2003
 @@ -52,7 +52,7 @@ foreach file [lsort [find $srcdir/$subdi

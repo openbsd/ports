@@ -1,4 +1,4 @@
-$OpenBSD: patch-libjava_java_lang_natRuntime_cc,v 1.1 2003/11/13 19:04:10 espie Exp $
+$OpenBSD: patch-libjava_java_lang_natRuntime_cc,v 1.2 2003/11/13 19:09:47 espie Exp $
 --- libjava/java/lang/natRuntime.cc.orig	2003-11-11 18:17:19.000000000 +0100
 +++ libjava/java/lang/natRuntime.cc	2003-11-11 18:17:42.000000000 +0100
 @@ -341,7 +341,7 @@ java::lang::Runtime::traceMethodCalls (j

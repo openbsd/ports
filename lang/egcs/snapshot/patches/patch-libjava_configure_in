@@ -1,6 +1,6 @@
-$OpenBSD: patch-libjava_configure_in.orig,v 1.1 2003/11/13 19:04:10 espie Exp $
+$OpenBSD: patch-libjava_configure_in,v 1.3 2003/11/13 19:09:47 espie Exp $
 --- libjava/configure.in.orig	2003-06-17 18:04:20.000000000 +0200
-+++ libjava/configure.in	2003-11-10 20:03:57.000000000 +0100
++++ libjava/configure.in	2003-11-12 11:46:13.000000000 +0100
 @@ -300,6 +300,7 @@ changequote(<<,>>)dnl
  changequote([,])
    GC=$enableval,
@@ -9,7 +9,7 @@ $OpenBSD: patch-libjava_configure_in.orig,v 1.1 2003/11/13 19:04:10 espie Exp $
  GCLIBS=
  GCINCS=
  GCDEPS=
-@@ -323,6 +324,21 @@ case "$GC" in
+@@ -323,6 +324,22 @@ case "$GC" in
      dnl The POSIX thread support needs to know this.
      AC_DEFINE(HAVE_BOEHM_GC)
      ;;
@@ -17,6 +17,7 @@ $OpenBSD: patch-libjava_configure_in.orig,v 1.1 2003/11/13 19:04:10 espie Exp $
 +    AC_MSG_RESULT(system-boehm)
 +    GCLIBS=/usr/local/lib/libgc.la
 +    GCINCS='-I/usr/local/include'
++    GCSPEC=-lgc
 +    JC1GCSPEC='-fuse-boehm-gc'
 +    GCTESTSPEC="-L/usr/local/lib"
 +
@@ -31,7 +32,7 @@ $OpenBSD: patch-libjava_configure_in.orig,v 1.1 2003/11/13 19:04:10 espie Exp $
   no)
      AC_MSG_RESULT(none)
      GCOBJS=nogc.lo
-@@ -542,6 +558,7 @@ else
+@@ -542,6 +559,7 @@ else
     fi
  
     AM_ICONV

@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_ada_gnatchop_adb,v 1.1 2003/11/13 19:04:10 espie Exp $
+$OpenBSD: patch-gcc_ada_gnatchop_adb,v 1.2 2003/11/13 19:09:46 espie Exp $
 --- gcc/ada/gnatchop.adb.orig	2002-03-14 11:59:24.000000000 +0100
 +++ gcc/ada/gnatchop.adb	2003-11-10 19:19:33.000000000 +0100
 @@ -48,7 +48,7 @@ procedure Gnatchop is
