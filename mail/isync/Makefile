@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/25 06:19:07 danh Exp $
+# $OpenBSD: Makefile,v 1.7 2002/09/12 14:45:33 danh Exp $
 
 COMMENT= 	"synchronize IMAP4 and maildir mailboxes"
 
 DISTNAME=	isync-0.8
 CATEGORIES=	mail
-NEED_VERSION=	1.522
-MASTER_SITES=	http://sigpipe.org:8080/isync/ \
-		http://www.cs.hmc.edu/~me/isync/
+MASTER_SITES=	http://www.cs.hmc.edu/~me/isync/
 
-HOMEPAGE=	http://sigpipe.org:8080/isync/
+HOMEPAGE=	http://www.cs.hmc.edu/~me/isync/
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
