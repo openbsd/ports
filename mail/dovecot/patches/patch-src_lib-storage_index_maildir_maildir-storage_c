@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_lib-storage_index_maildir_maildir-storage_c,v 1.2 2004/05/10 00:06:47 brad Exp $
---- src/lib-storage/index/maildir/maildir-storage.c.orig	2003-11-20 12:24:43.000000000 -0500
-+++ src/lib-storage/index/maildir/maildir-storage.c	2004-05-07 21:36:22.000000000 -0400
-@@ -294,7 +294,7 @@ static int verify_inbox(struct mail_stor
+$OpenBSD: patch-src_lib-storage_index_maildir_maildir-storage_c,v 1.3 2004/06/22 21:05:20 brad Exp $
+--- src/lib-storage/index/maildir/maildir-storage.c.orig	2004-06-17 20:50:09.000000000 -0400
++++ src/lib-storage/index/maildir/maildir-storage.c	2004-06-17 21:13:52.000000000 -0400
+@@ -298,7 +298,7 @@ static int verify_inbox(struct mail_stor
  
  static struct mailbox *
  maildir_open(struct mail_storage *storage, const char *name,
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_lib-storage_index_maildir_maildir-storage_c,v 1.2 2004/05/10
  {
  	struct index_mailbox *ibox;
  	struct mail_index *index;
-@@ -311,7 +311,7 @@ maildir_open(struct mail_storage *storag
+@@ -315,7 +315,7 @@ maildir_open(struct mail_storage *storag
  	}
  
  	ibox = index_storage_mailbox_init(storage, &maildir_mailbox,
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_lib-storage_index_maildir_maildir-storage_c,v 1.2 2004/05/10
  	if (ibox != NULL)
  		ibox->expunge_locked = maildir_expunge_locked;
  	return (struct mailbox *) ibox;
-@@ -332,7 +332,7 @@ static const char *inbox_fix_case(struct
+@@ -336,7 +336,7 @@ static const char *inbox_fix_case(struct
  
  static struct mailbox *
  maildir_open_mailbox(struct mail_storage *storage,
@@ -28,7 +28,7 @@ $OpenBSD: patch-src_lib-storage_index_maildir_maildir-storage_c,v 1.2 2004/05/10
  {
  	const char *path;
  	struct stat st;
-@@ -343,7 +343,7 @@ maildir_open_mailbox(struct mail_storage
+@@ -347,7 +347,7 @@ maildir_open_mailbox(struct mail_storage
  	if (strcmp(name, "INBOX") == 0) {
  		if (!verify_inbox(storage))
  			return NULL;
@@ -37,7 +37,7 @@ $OpenBSD: patch-src_lib-storage_index_maildir_maildir-storage_c,v 1.2 2004/05/10
  	}
  
  	if (!maildir_is_valid_existing_name(name)) {
-@@ -359,7 +359,7 @@ maildir_open_mailbox(struct mail_storage
+@@ -363,7 +363,7 @@ maildir_open_mailbox(struct mail_storage
  		    !create_control_dir(storage, name))
  			return FALSE;
  

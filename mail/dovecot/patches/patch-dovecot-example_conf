@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.5 2004/05/27 16:38:30 brad Exp $
---- dovecot-example.conf.orig	2003-12-19 23:14:19.000000000 -0500
-+++ dovecot-example.conf	2004-05-27 01:27:45.000000000 -0400
+$OpenBSD: patch-dovecot-example_conf,v 1.6 2004/06/22 21:05:20 brad Exp $
+--- dovecot-example.conf.orig	2004-06-18 15:25:31.000000000 -0400
++++ dovecot-example.conf	2004-06-22 16:42:52.000000000 -0400
 @@ -1,13 +1,12 @@
  ## Dovecot 1.0 configuration file
  
@@ -43,16 +43,16 @@ $OpenBSD: patch-dovecot-example_conf,v 1.5 2004/05/27 16:38:30 brad Exp $
  
  # Use this logfile instead of syslog(). /dev/stderr can be used if you want to
  # use stderr for logging (ONLY /dev/stderr - otherwise it is closed).
-@@ -67,7 +66,7 @@
- # Directory where authentication process places authentication UNIX sockets
+@@ -68,7 +67,7 @@
  # which login needs to be able to connect to. The sockets are created when
- # running as root, so you don't have to worry about permissions.
+ # running as root, so you don't have to worry about permissions. Note that
+ # everything in this directory is deleted when Dovecot is started.
 -#login_dir = /var/run/dovecot/login
 +login_dir = /var/dovecot/login
  
  # chroot login process to the login_dir. Only reason not to do this is if you
  # wish to run the whole Dovecot without roots.
-@@ -81,12 +80,12 @@
+@@ -82,12 +81,12 @@
  login = imap
  
  # Executable location.
@@ -67,7 +67,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.5 2004/05/27 16:38:30 brad Exp $
  
  # Set max. process size in megabytes. If you don't use
  # login_process_per_connection you might need to grow this.
-@@ -126,7 +125,7 @@ login = imap
+@@ -127,7 +126,7 @@ login = imap
  login = pop3
  
  # Exception to above rule being the executable location.
@@ -76,7 +76,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.5 2004/05/27 16:38:30 brad Exp $
  
  ##
  ## Mail processes
-@@ -261,6 +260,8 @@ login = pop3
+@@ -266,6 +265,8 @@ login = pop3
  
  # Use mmap() instead of read() to read mail files. read() seems to be a bit
  # faster with my Linux/x86 and it's better with NFS, so that's the default.
@@ -84,8 +84,8 @@ $OpenBSD: patch-dovecot-example_conf,v 1.5 2004/05/27 16:38:30 brad Exp $
 +# the MS_INVALIDATE to operate properly.  Enable at your own risk.
  #mail_read_mmaped = no
  
- # Copy mail to another folders using hard links. This is much faster than
-@@ -271,6 +272,12 @@ login = pop3
+ # By default LIST command returns all entries in maildir beginning with dot.
+@@ -283,6 +284,12 @@ login = pop3
  # If you care about performance, enable it.
  #maildir_copy_with_hardlinks = no
  
@@ -98,7 +98,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.5 2004/05/27 16:38:30 brad Exp $
  # Check if mails' content has been changed by external programs. This slows
  # down things as extra stat() needs to be called for each file. If changes are
  # noticed, the message is treated as a new message, since IMAP protocol
-@@ -288,7 +295,7 @@ login = pop3
+@@ -300,7 +307,7 @@ login = pop3
  # with is important to avoid deadlocks if other MTAs/MUAs are using both fcntl
  # and flock. Some operating systems don't allow using both of them
  # simultaneously, eg. BSDs. If dotlock is used, it's always created first.
@@ -107,7 +107,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.5 2004/05/27 16:38:30 brad Exp $
  
  # Should we create dotlock file even when we want only a read-lock? Setting
  # this to yes hurts the performance when the mailbox is accessed simultaneously
-@@ -318,7 +325,7 @@ login = pop3
+@@ -330,7 +337,7 @@ login = pop3
  ##
  
  # Executable location
@@ -116,7 +116,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.5 2004/05/27 16:38:30 brad Exp $
  
  # Set max. process size in megabytes. Most of the memory goes to mmap()ing
  # files, so it shouldn't harm much even if this limit is set pretty high.
-@@ -326,14 +333,14 @@ login = pop3
+@@ -338,14 +345,14 @@ login = pop3
  
  # Support for dynamically loadable modules.
  #imap_use_modules = no
@@ -133,7 +133,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.5 2004/05/27 16:38:30 brad Exp $
  
  # Set max. process size in megabytes. Most of the memory goes to mmap()ing
  # files, so it shouldn't harm much even if this limit is set pretty high.
-@@ -341,7 +348,7 @@ login = pop3
+@@ -353,7 +360,7 @@ login = pop3
  
  # Support for dynamically loadable modules.
  #pop3_use_modules = no
@@ -142,7 +142,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.5 2004/05/27 16:38:30 brad Exp $
  
  ##
  ## Authentication processes
-@@ -390,7 +397,7 @@ auth_userdb = passwd
+@@ -403,7 +410,7 @@ auth_userdb = passwd
  #   vpopmail: vpopmail authentication
  #   ldap <config path>: LDAP, see doc/dovecot-ldap.conf
  #   pgsql <config path>: a PostgreSQL database, see doc/dovecot-pgsql.conf

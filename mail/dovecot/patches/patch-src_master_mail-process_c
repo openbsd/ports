@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_master_mail-process_c,v 1.2 2004/05/10 00:06:47 brad Exp $
---- src/master/mail-process.c.orig	2003-11-08 11:29:25.000000000 -0500
-+++ src/master/mail-process.c	2004-05-07 20:50:24.000000000 -0400
-@@ -213,6 +213,8 @@ int create_mail_process(int socket, stru
+$OpenBSD: patch-src_master_mail-process_c,v 1.3 2004/06/22 21:05:20 brad Exp $
+--- src/master/mail-process.c.orig	2004-06-18 15:33:48.000000000 -0400
++++ src/master/mail-process.c	2004-06-22 16:36:28.000000000 -0400
+@@ -217,6 +217,8 @@ int create_mail_process(int socket, stru
  		env_put("MAILDIR_CHECK_CONTENT_CHANGES=1");
  	if (set->mail_full_filesystem_access)
  		env_put("FULL_FILESYSTEM_ACCESS=1");

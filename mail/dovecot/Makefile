@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2004/05/27 16:38:30 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2004/06/22 21:05:20 brad Exp $
 
 COMMENT= 	"compact IMAP/POP3 server"
 
-DISTNAME=	dovecot-0.99.10.5
+DISTNAME=	dovecot-0.99.10.6
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://dovecot.org/
 
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
