@@ -1,18 +1,13 @@
-# New ports collection makefile for:	GNU emacs
-# Version required:	20.2
-# Date created:		14 Nov 1997
-# Whom:			ejovi
-#
-# $OpenBSD: Makefile,v 1.5 1998/04/06 05:17:48 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1998/09/13 19:51:00 marc Exp $
 #
 
-DISTNAME=	emacs-20.2
+VER=		20.3
+DISTNAME=	emacs-${VER}
 CATEGORIES=	editors
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
 MAINTAINER=	ports@OpenBSD.ORG
 
-WRKSRC=		${WRKDIR}/emacs-20.2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
@@ -30,11 +25,13 @@ CONFIGURE_ARGS=	${GCCARCH} --with-x-toolkit
 
 # Do NOT strip on install.  We will strip those things that can be
 # stripped after install. (emacs crashes if stripped on an alpha)
+# To do the job correctly temacs should be stripped, not emacs
+# (which is created from temacs).
 #
 INSTALL_STRIP=
 STRIP_PROGS=	emacsclient etags ctags b2m
 .if (${MACHINE_ARCH} != "alpha")
-STRIP_PROGS+=	emacs-20.2
+STRIP_PROGS+=	${DISTNAME}
 .endif
 STRIP_EXECS=	cvtmail digest-doc emacsserver fakemail hexl movemail \
 		profile sorted-doc yow
@@ -49,7 +46,7 @@ post-install:
 	strip ${PREFIX}/bin/${file}
 .endfor
 .for file in ${STRIP_EXECS}
-	strip ${PREFIX}/libexec/emacs/20.2/${GCCARCH}/${file}
+	strip ${PREFIX}/libexec/emacs/${VER}/${GCCARCH}/${file}
 .endfor
 
 .include <bsd.port.mk>
