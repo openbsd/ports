@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/06/10 06:20:59 shell Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/25 17:08:50 shell Exp $
 
 COMMENT=	"python tool for generate Python API documents"
 
-DISTNAME=	HappyDoc_r2_0_1
-PKGNAME=	py-HappyDoc-2.0.1
+DISTNAME=	HappyDoc_r2_1
+PKGNAME=	py-HappyDoc-2.1
 CATEGORIES=    	textproc
-NEED_VERSION=	1.531
 
 HOMEPAGE=	http://happydoc.sf.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=happydoc/}
@@ -26,7 +25,7 @@ SUBST_VARS=	PYTHON_VER
 NO_REGRESS=	Yes
 PY_CMD=		@cd ${WRKSRC}; python${PYTHON_VER} ./setup.py
 
-WRKSRC=		${WRKDIR}/HappyDoc-r2_0_1
+WRKSRC=		${WRKDIR}/HappyDoc-r2_1
 
 do-build:
 	${PY_CMD} build --build-base=${WRKSRC}
