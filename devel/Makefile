@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2003/01/31 19:20:44 todd Exp $
+# $OpenBSD: Makefile,v 1.157 2003/02/13 14:52:36 naddy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -54,6 +54,7 @@
      SUBDIR += jad
      SUBDIR += jakarta-ant
      SUBDIR += jakarta-servletapi
+     SUBDIR += jam
      SUBDIR += jdk
      SUBDIR += jfc
      SUBDIR += kdbg
