@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2005/03/09 09:22:04 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.137 2005/03/27 18:04:37 alek Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -16,6 +16,7 @@
      SUBDIR += courier-imap
      SUBDIR += cucipop
      SUBDIR += cue
+     SUBDIR += cyrus-imapd
      SUBDIR += dovecot
      SUBDIR += dovecot,mysql
      SUBDIR += drac
