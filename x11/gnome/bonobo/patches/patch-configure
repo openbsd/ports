@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2002/05/30 09:45:37 nino Exp $
+$OpenBSD: patch-configure,v 1.2 2002/07/18 20:50:56 pvalchev Exp $
 --- configure.orig	Thu Apr 11 08:10:55 2002
 +++ configure	Mon May 20 11:38:09 2002
 @@ -3910,6 +3910,16 @@ newos6*)
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2002/05/30 09:45:37 nino Exp $
 +  lt_cv_file_magic_cmd=/usr/bin/file
 +  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
 +  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
-+    lt_cv_deplibs_check_method='file_magic ELF [[0-9]][[0-9]]*-bit [[LM]]SB shared object'
++    lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
 +  else
 +    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
 +  fi
