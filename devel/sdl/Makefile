@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/07/25 07:58:32 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2001/07/29 19:46:17 pvalchev Exp $
 
 COMMENT=	"cross-platform multimedia library"
 
@@ -62,5 +62,6 @@ USE_X11=	Yes
 
 post-patch:
 	@touch ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
+	@find ${WRKSRC} -name Makefile.in -exec touch {} \;
 
 .include <bsd.port.mk>
