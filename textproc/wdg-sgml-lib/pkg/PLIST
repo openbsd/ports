@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/03 15:45:02 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/01/22 17:25:50 naddy Exp $
 share/wdg/sgml-lib/15445.dcl
 share/wdg/sgml-lib/15445.dtd
 share/wdg/sgml-lib/HTML3-icons.ent
@@ -29,29 +29,44 @@ share/wdg/sgml-lib/html.dcl
 share/wdg/sgml-lib/html.dtd
 share/wdg/sgml-lib/i18n.dcl
 share/wdg/sgml-lib/i18n.dtd
-share/wdg/sgml-lib/mathml2/isoamsa.ent
-share/wdg/sgml-lib/mathml2/isoamsb.ent
-share/wdg/sgml-lib/mathml2/isoamsc.ent
-share/wdg/sgml-lib/mathml2/isoamsn.ent
-share/wdg/sgml-lib/mathml2/isoamso.ent
-share/wdg/sgml-lib/mathml2/isoamsr.ent
-share/wdg/sgml-lib/mathml2/isobox.ent
-share/wdg/sgml-lib/mathml2/isocyr1.ent
-share/wdg/sgml-lib/mathml2/isocyr2.ent
-share/wdg/sgml-lib/mathml2/isodia.ent
-share/wdg/sgml-lib/mathml2/isogrk3.ent
-share/wdg/sgml-lib/mathml2/isolat1.ent
-share/wdg/sgml-lib/mathml2/isolat2.ent
-share/wdg/sgml-lib/mathml2/isomfrk.ent
-share/wdg/sgml-lib/mathml2/isomopf.ent
-share/wdg/sgml-lib/mathml2/isomscr.ent
-share/wdg/sgml-lib/mathml2/isonum.ent
-share/wdg/sgml-lib/mathml2/isopub.ent
-share/wdg/sgml-lib/mathml2/isotech.ent
+share/wdg/sgml-lib/mathml2/html/lat1.ent
+share/wdg/sgml-lib/mathml2/html/special.ent
+share/wdg/sgml-lib/mathml2/html/symbol.ent
+share/wdg/sgml-lib/mathml2/iso8879/isoamsa.ent
+share/wdg/sgml-lib/mathml2/iso8879/isoamsb.ent
+share/wdg/sgml-lib/mathml2/iso8879/isoamsc.ent
+share/wdg/sgml-lib/mathml2/iso8879/isoamsn.ent
+share/wdg/sgml-lib/mathml2/iso8879/isoamso.ent
+share/wdg/sgml-lib/mathml2/iso8879/isoamsr.ent
+share/wdg/sgml-lib/mathml2/iso8879/isobox.ent
+share/wdg/sgml-lib/mathml2/iso8879/isocyr1.ent
+share/wdg/sgml-lib/mathml2/iso8879/isocyr2.ent
+share/wdg/sgml-lib/mathml2/iso8879/isodia.ent
+share/wdg/sgml-lib/mathml2/iso8879/isogrk1.ent
+share/wdg/sgml-lib/mathml2/iso8879/isogrk2.ent
+share/wdg/sgml-lib/mathml2/iso8879/isogrk3.ent
+share/wdg/sgml-lib/mathml2/iso8879/isogrk4.ent
+share/wdg/sgml-lib/mathml2/iso8879/isolat1.ent
+share/wdg/sgml-lib/mathml2/iso8879/isolat2.ent
+share/wdg/sgml-lib/mathml2/iso8879/isonum.ent
+share/wdg/sgml-lib/mathml2/iso8879/isopub.ent
+share/wdg/sgml-lib/mathml2/iso8879/isotech.ent
+share/wdg/sgml-lib/mathml2/iso9573-13/isoamsa.ent
+share/wdg/sgml-lib/mathml2/iso9573-13/isoamsb.ent
+share/wdg/sgml-lib/mathml2/iso9573-13/isoamsc.ent
+share/wdg/sgml-lib/mathml2/iso9573-13/isoamsn.ent
+share/wdg/sgml-lib/mathml2/iso9573-13/isoamso.ent
+share/wdg/sgml-lib/mathml2/iso9573-13/isoamsr.ent
+share/wdg/sgml-lib/mathml2/iso9573-13/isogrk3.ent
+share/wdg/sgml-lib/mathml2/iso9573-13/isogrk4.ent
+share/wdg/sgml-lib/mathml2/iso9573-13/isomfrk.ent
+share/wdg/sgml-lib/mathml2/iso9573-13/isomopf.ent
+share/wdg/sgml-lib/mathml2/iso9573-13/isomscr.ent
+share/wdg/sgml-lib/mathml2/iso9573-13/isotech.ent
+share/wdg/sgml-lib/mathml2/mathml/mmlalias.ent
+share/wdg/sgml-lib/mathml2/mathml/mmlextra.ent
 share/wdg/sgml-lib/mathml2/mathml2-qname-1.mod
 share/wdg/sgml-lib/mathml2/mathml2.dtd
-share/wdg/sgml-lib/mathml2/mmlalias.ent
-share/wdg/sgml-lib/mathml2/mmlextra.ent
 share/wdg/sgml-lib/mathml2/xhtml-math11-f.dtd
 share/wdg/sgml-lib/wml.xml
 share/wdg/sgml-lib/wml12.dtd
@@ -103,6 +118,10 @@ share/wdg/sgml-lib/xhtml11/xml1n.dcl
 @dirrm share/wdg/sgml-lib/xhtml11
 @dirrm share/wdg/sgml-lib/xhtml1
 @dirrm share/wdg/sgml-lib/xhtml-basic10
+@dirrm share/wdg/sgml-lib/mathml2/mathml
+@dirrm share/wdg/sgml-lib/mathml2/iso9573-13
+@dirrm share/wdg/sgml-lib/mathml2/iso8879
+@dirrm share/wdg/sgml-lib/mathml2/html
 @dirrm share/wdg/sgml-lib/mathml2
 @dirrm share/wdg/sgml-lib
 @dirrm share/wdg

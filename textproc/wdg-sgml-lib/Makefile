@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/11/15 15:12:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/22 17:25:50 naddy Exp $
 
 COMMENT=	"collection of HTML, XHTML, ISO-HTML, WML and MathML DTDs"
 
-DISTNAME=	wdg-sgml-lib-1.1.1
+DISTNAME=	wdg-sgml-lib-1.1.3
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.htmlhelp.com/tools/validator/offline/
