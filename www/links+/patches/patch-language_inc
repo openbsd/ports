@@ -1,0 +1,12 @@
+$OpenBSD: patch-language_inc,v 1.1 2004/12/04 01:22:16 fgsch Exp $
+--- language.inc.orig	Fri Dec  3 22:14:22 2004
++++ language.inc	Fri Dec  3 22:15:01 2004
+@@ -6504,7 +6504,7 @@ struct translation translation_german []
+   {T_OK, "OK" },
+   {T_KEYS, "Tasten" },
+   {T_KEYS_DESC, "ESC      Menue-Anzeige\n^C, q    quit\n^P, ^N   auf/ab blättern\n[, ]     links/rechts blättern \nBild rauf/runter Linkauswahl\n->       Link folgen\n<-       zurück\nz        zurück (nur im Grafischmodus)\n^r       wiederladen\n^s       stopp\ng        gehe zu Adresse\nG        gehe zu Adresse (von aktueller URL)\n^G       gehe zu Adresse (von aktueller Link)\n/        Suche\n?        Suche rückwärts\nn        nächster Suchbegriff\nN        vorh. Suchbegriff\n=        Dokument-Info\n|        Kopf-Info\n\\        Dokument-Quelle\nd        Speichern\n^W       URL oder Suchetext komplettieren\n" },
+-  {T_COPYING, "Copying" },
++  {T_COPYING, "Lizenz" },
+   {T_COPYING_DESC, "Links " VERSION_STRING "\n\n" LINKS_COPYRIGHT_8859_1 "\n\nDieses Programm ist freie Software; es kann unter den Bedingungen der GNU General Public License - wie von der Free Software Foundation veröffentlicht - verändert/weiter verbreitet werden; entweder Version 2 der GPL, oder (wenn Sie möchten) jede neuere Version." },
+   {T_RESOURCES, "Resourcen" },
+   {T_HANDLES, "offene Dateien" },

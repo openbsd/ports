@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/04 01:01:42 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2004/12/04 01:22:16 fgsch Exp $
 
 COMMENT=	"graphics and text browser with javascript support"
 
@@ -33,9 +33,6 @@ CONFIGURE_ARGS+= --with-x --enable-graphics
 CONFIGURE_ENV= CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 	       LDFLAGS="-L${LOCALBASE}/lib"
 .endif
-
-pre-configure:
-	cd ${WRKSRC}/intl && /bin/sh synclang
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/links+
