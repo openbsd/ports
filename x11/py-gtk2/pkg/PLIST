@@ -1,0 +1,123 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/02/16 21:12:50 xsa Exp $
+bin/pygtk-codegen-2.0
+include/pygtk-2.0/pygobject.h
+include/pygtk-2.0/pygtk/pygtk.h
+lib/pkgconfig/pygtk-2.0.pc
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/atk.so
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/dsextras.py
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/dsextras.pyc
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gobject.so
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/__init__.py
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/_gtk.so
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/compat.py
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/compat.pyc
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/glade.so
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/keysyms.py
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/keysyms.pyc
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pango.so
+lib/python${MODPY_VERSION}/site-packages/pygtk.pth
+lib/python${MODPY_VERSION}/site-packages/pygtk.py
+lib/python${MODPY_VERSION}/site-packages/pygtk.pyc
+share/examples/py-gtk2/atk/atk-demo.py
+share/examples/py-gtk2/gl/README
+share/examples/py-gtk2/gl/cone.py
+share/examples/py-gtk2/gl/dots.py
+share/examples/py-gtk2/gl/gears.py
+share/examples/py-gtk2/glade/README
+share/examples/py-gtk2/glade/glade-demo.py
+share/examples/py-gtk2/glade/test.glade
+share/examples/py-gtk2/gobject/properties.py
+share/examples/py-gtk2/gobject/signal.py
+share/examples/py-gtk2/ide/README
+share/examples/py-gtk2/ide/break.xpm
+share/examples/py-gtk2/ide/browse.py
+share/examples/py-gtk2/ide/continue.xpm
+share/examples/py-gtk2/ide/edit.py
+share/examples/py-gtk2/ide/edit.xpm
+share/examples/py-gtk2/ide/gtkcons.py
+share/examples/py-gtk2/ide/gtkdb.py
+share/examples/py-gtk2/ide/gtkprof.py
+share/examples/py-gtk2/ide/minibreak.xpm
+share/examples/py-gtk2/ide/next.xpm
+share/examples/py-gtk2/ide/pyide.py
+share/examples/py-gtk2/ide/quit.xpm
+share/examples/py-gtk2/ide/return.xpm
+share/examples/py-gtk2/ide/run.xpm
+share/examples/py-gtk2/ide/step.xpm
+share/examples/py-gtk2/neil/README
+share/examples/py-gtk2/neil/TAppli.py
+share/examples/py-gtk2/neil/TAppli2.py
+share/examples/py-gtk2/neil/TAppli3.py
+share/examples/py-gtk2/neil/TAppli4.py
+share/examples/py-gtk2/neil/TAppli5.py
+share/examples/py-gtk2/neil/bomb.xpm
+share/examples/py-gtk2/neil/gtk-logo.xpm
+share/examples/py-gtk2/neil/notebook.py
+share/examples/py-gtk2/neil/question.xpm
+share/examples/py-gtk2/pango/utf8-demo.py
+share/examples/py-gtk2/pygtk-demo/demos/__init__.py
+share/examples/py-gtk2/pygtk-demo/demos/appwindow.py
+share/examples/py-gtk2/pygtk-demo/demos/buttonbox.py
+share/examples/py-gtk2/pygtk-demo/demos/colorsel.py
+share/examples/py-gtk2/pygtk-demo/demos/dialogs.py
+share/examples/py-gtk2/pygtk-demo/demos/dnd.py
+share/examples/py-gtk2/pygtk-demo/demos/dndpixmap.py
+share/examples/py-gtk2/pygtk-demo/demos/editable_cells.py
+share/examples/py-gtk2/pygtk-demo/demos/itemfactory.py
+share/examples/py-gtk2/pygtk-demo/demos/list_store.py
+share/examples/py-gtk2/pygtk-demo/demos/menu.py
+share/examples/py-gtk2/pygtk-demo/demos/panes.py
+share/examples/py-gtk2/pygtk-demo/demos/sizegroup.py
+share/examples/py-gtk2/pygtk-demo/demos/stock_browser.py
+share/examples/py-gtk2/pygtk-demo/demos/toolbar.py
+share/examples/py-gtk2/pygtk-demo/demos/treemodel.py
+share/examples/py-gtk2/pygtk-demo/pygtk-demo.py
+share/examples/py-gtk2/simple/README
+share/examples/py-gtk2/simple/dnd.py
+share/examples/py-gtk2/simple/dndpixmap.py
+share/examples/py-gtk2/simple/hello.py
+share/examples/py-gtk2/simple/scribble.py
+share/examples/py-gtk2/simple/simple.py
+share/examples/py-gtk2/simple/tooltip.py
+share/pygtk/2.0/codegen/__init__.py
+share/pygtk/2.0/codegen/argtypes.py
+share/pygtk/2.0/codegen/codegen.py
+share/pygtk/2.0/codegen/definitions.py
+share/pygtk/2.0/codegen/defsparser.py
+share/pygtk/2.0/codegen/docextract.py
+share/pygtk/2.0/codegen/docgen.py
+share/pygtk/2.0/codegen/h2def.py
+share/pygtk/2.0/codegen/mergedefs.py
+share/pygtk/2.0/codegen/mkskel.py
+share/pygtk/2.0/codegen/override.py
+share/pygtk/2.0/codegen/scmexpr.py
+share/pygtk/2.0/defs/atk-types.defs
+share/pygtk/2.0/defs/atk.defs
+share/pygtk/2.0/defs/gdk-types.defs
+share/pygtk/2.0/defs/gdk.defs
+share/pygtk/2.0/defs/gtk-extrafuncs.defs
+share/pygtk/2.0/defs/gtk-types.defs
+share/pygtk/2.0/defs/gtk.defs
+share/pygtk/2.0/defs/libglade.defs
+share/pygtk/2.0/defs/pango-types.defs
+share/pygtk/2.0/defs/pango.defs
+@dirrm share/pygtk/2.0/defs
+@dirrm share/pygtk/2.0/codegen
+@dirrm share/pygtk/2.0
+@dirrm share/pygtk
+@dirrm share/examples/py-gtk2/simple
+@dirrm share/examples/py-gtk2/pygtk-demo/demos
+@dirrm share/examples/py-gtk2/pygtk-demo
+@dirrm share/examples/py-gtk2/pango
+@dirrm share/examples/py-gtk2/neil
+@dirrm share/examples/py-gtk2/ide
+@dirrm share/examples/py-gtk2/gobject
+@dirrm share/examples/py-gtk2/glade
+@dirrm share/examples/py-gtk2/gl
+@dirrm share/examples/py-gtk2/atk
+@dirrm share/examples/py-gtk2
+@dirrm lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk
+@dirrm lib/python${MODPY_VERSION}/site-packages/gtk-2.0
+@dirrm include/pygtk-2.0/pygtk
+@dirrm include/pygtk-2.0
