@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/08/18 02:34:30 angelos Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/14 05:08:47 turan Exp $
 
 DISTNAME=	DBI-1.13
 PKGNAME=	p5-DBI-1.13
@@ -7,6 +7,11 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= DBI
 
 MAINTAINER=	ports@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} /usr/bin/perl Makefile.PL
