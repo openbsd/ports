@@ -1,3 +1,4 @@
+; $OpenBSD: totd.conf.sample,v 1.2 2002/01/28 01:41:52 jsyn Exp $
 ; $NetBSD: totd.conf.sample,v 1.1.1.1 1999/11/22 21:04:01 itojun Exp $
 ; Totd sample configuration file
 forwarder 192.168.0.1 port 5000

@@ -1,3 +1,4 @@
+$OpenBSD: patch-config_h_in,v 1.1 2002/01/28 01:41:52 jsyn Exp $
 --- config.h.in-	Sun Apr 23 22:17:36 2000
 +++ config.h.in	Sun Apr 23 22:17:45 2000
 @@ -33,9 +33,9 @@
