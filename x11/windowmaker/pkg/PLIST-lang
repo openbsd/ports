@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST-lang,v 1.1 2002/07/23 07:58:05 wilfried Exp $
+@comment $OpenBSD: PLIST-lang,v 1.2 2003/12/20 13:21:43 naddy Exp $
 @comment Bulgarian
 share/WindowMaker/menu.bg
 share/WindowMaker/plmenu.bg
 share/locale/bg/LC_MESSAGES/WPrefs.mo
 share/locale/bg/LC_MESSAGES/WindowMaker.mo
-@comment Català
+@dirrm share/locale/bg/LC_MESSAGES
+@dirrm share/locale/bg
+@comment Catalan
 share/WindowMaker/menu.ca
 @comment Czech
 share/WindowMaker/menu.cs
@@ -37,6 +39,8 @@ share/WindowMaker/menu.fi
 share/WindowMaker/plmenu.fi
 share/locale/fi/LC_MESSAGES/WPrefs.mo
 share/locale/fi/LC_MESSAGES/WindowMaker.mo
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
 @comment French
 share/WindowMaker/menu.fr
 share/WindowMaker/plmenu.fr
@@ -52,10 +56,14 @@ share/WindowMaker/menu.hr
 share/WindowMaker/plmenu.hr
 share/locale/hr/LC_MESSAGES/WPrefs.mo
 share/locale/hr/LC_MESSAGES/WindowMaker.mo
+@dirrm share/locale/hr/LC_MESSAGES
+@dirrm share/locale/hr
 @comment Hungarian
 share/WindowMaker/menu.hu
 share/locale/hu/LC_MESSAGES/WPrefs.mo
 share/locale/hu/LC_MESSAGES/WindowMaker.mo
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
 @comment Italian
 share/WindowMaker/menu.it
 share/WindowMaker/plmenu.it
@@ -73,6 +81,8 @@ share/locale/ko/LC_MESSAGES/WPrefs.mo
 share/locale/ko/LC_MESSAGES/WindowMaker.mo
 @comment Malay
 share/locale/ms/LC_MESSAGES/WindowMaker.mo
+@dirrm share/locale/ms/LC_MESSAGES
+@dirrm share/locale/ms
 @comment Dutch
 share/WindowMaker/menu.nl
 share/locale/nl/LC_MESSAGES/WindowMaker.mo
@@ -91,6 +101,8 @@ share/locale/pt/LC_MESSAGES/WindowMaker.mo
 share/WindowMaker/menu.ro
 share/WindowMaker/plmenu.ro
 share/locale/ro/LC_MESSAGES/WindowMaker.mo
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
 @comment Russian
 share/WindowMaker/menu.ru
 share/locale/ru/LC_MESSAGES/WPrefs.mo
@@ -101,6 +113,8 @@ share/WindowMaker/plmenu.sk
 share/locale/sk/LC_MESSAGES/WINGs.mo
 share/locale/sk/LC_MESSAGES/WPrefs.mo
 share/locale/sk/LC_MESSAGES/WindowMaker.mo
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
 @comment Slovene
 share/WindowMaker/menu.sl
 @comment Swedish
@@ -114,8 +128,12 @@ share/WindowMaker/menu.zh_CN
 share/WindowMaker/plmenu.zh_CN
 share/locale/zh_CN/LC_MESSAGES/WPrefs.mo
 share/locale/zh_CN/LC_MESSAGES/WindowMaker.mo
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/zh_CN
 @comment Chinese
 share/WindowMaker/menu.zh_TW.Big5
 share/WindowMaker/plmenu.zh_TW.Big5
 share/locale/zh_TW.Big5/LC_MESSAGES/WPrefs.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/WindowMaker.mo
+@dirrm share/locale/zh_TW.Big5/LC_MESSAGES
+@dirrm share/locale/zh_TW.Big5

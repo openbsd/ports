@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2002/07/23 07:58:05 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.26 2003/12/20 13:21:43 naddy Exp $
 GNUstep/Apps/WPrefs.app/WPrefs
 GNUstep/Apps/WPrefs.app/WPrefs.tiff
 GNUstep/Apps/WPrefs.app/WPrefs.xpm
@@ -256,3 +256,5 @@ share/WindowMaker/xtree.dat
 @dirrm GNUstep/Apps/WPrefs.app/xpm
 @dirrm GNUstep/Apps/WPrefs.app/tiff
 @dirrm GNUstep/Apps/WPrefs.app
+@dirrm GNUstep/Apps
+@dirrm GNUstep
