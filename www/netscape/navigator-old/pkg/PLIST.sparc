@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sparc,v 1.5 2000/12/15 14:53:33 brad Exp $
+@comment $OpenBSD: PLIST.sparc,v 1.6 2000/12/18 01:21:08 brad Exp $
 @pkgcfl communicator-*
 bin/netscape
 netscape/LICENSE
@@ -108,10 +108,10 @@ netscape/vreg
 @dirrm netscape/dynfonts
 @dirrm netscape/java/classes
 @dirrm netscape/java
-@dirrm netscape/nethelp/netscape
 @dirrm netscape/nethelp/netscape/home
 @dirrm netscape/nethelp/netscape/navigatr
 @dirrm netscape/nethelp/netscape/shared
+@dirrm netscape/nethelp/netscape
 @dirrm netscape/nethelp
 @dirrm netscape/nls
 @dirrm netscape/plugins
