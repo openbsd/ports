@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/07/09 17:11:40 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2001/08/21 18:19:37 jakob Exp $
 
 COMMENT=	"graphic disk usage viewer"
 
@@ -13,7 +13,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.arl.mil/pub/
+HOMEPAGE=		http://sd.wareonearth.com/~phil/xdu/
+
+MASTER_SITES=		http://sd.wareonearth.com/~phil/xdu/ \
+			ftp://ftp.arl.mil/pub/
 EXTRACT_SUFX=		.tar.Z
 
 USE_X11=		Yes
