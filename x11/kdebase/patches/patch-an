@@ -1,7 +1,7 @@
---- kcontrol/info/memory_fbsd.cpp.orig	Sun Jun 20 19:43:22 1999
-+++ kcontrol/info/memory_fbsd.cpp	Sun Jun 20 19:43:36 1999
+--- kcontrol/info/memory_fbsd.cpp.orig	Tue Mar  7 23:50:37 2000
++++ kcontrol/info/memory_fbsd.cpp	Tue Mar  7 23:50:55 2000
 @@ -1,6 +1,7 @@
- // $Id: patch-an,v 1.1 1999/06/20 18:21:55 espie Exp $
+ // $Id: patch-an,v 1.2 2000/03/08 03:37:21 kevlo Exp $
  
  #include <sys/types.h>
 +#include <sys/param.h>

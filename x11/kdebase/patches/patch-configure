@@ -1,6 +1,6 @@
---- configure.orig	Tue Jun 15 09:43:27 1999
-+++ configure	Tue Jun 15 09:43:42 1999
-@@ -1784,7 +1784,7 @@
+--- configure.orig	Tue Mar  7 23:52:45 2000
++++ configure	Tue Mar  7 23:53:04 2000
+@@ -1783,7 +1783,7 @@
  aix*)
    ac_symcode='[BCDTU]'
    ;;

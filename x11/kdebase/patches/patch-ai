@@ -1,6 +1,6 @@
---- kaudio/Makefile.in.orig	Tue Jun  1 11:02:42 1999
-+++ kaudio/Makefile.in	Tue Jun  1 11:03:16 1999
-@@ -202,7 +202,7 @@
+--- kaudio/Makefile.in.orig	Tue Mar  7 23:39:55 2000
++++ kaudio/Makefile.in	Tue Mar  7 23:40:15 2000
+@@ -201,7 +201,7 @@
  CPPFLAGS = @CPPFLAGS@
  LIBS = @LIBS@
  maudio_OBJECTS =  io_oss.o maudio.o sample.o

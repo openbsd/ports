@@ -1,20 +1,20 @@
---- kvt/command.c.orig	Mon Mar 29 14:07:57 1999
-+++ kvt/command.c	Tue Jun 15 03:12:01 1999
-@@ -461,7 +461,7 @@
+--- kvt/command.c.orig	Tue Mar  7 23:27:10 2000
++++ kvt/command.c	Tue Mar  7 23:28:56 2000
+@@ -541,7 +541,7 @@
        }
  
        /* init of termios structure		*/
 -#if defined (__FreeBSD__) || (__NetBSD__) || defined(__bsdi__)
-+#if defined (__FreeBSD__) || defined (__NetBSD__) || defined (__OpenBSD__) ||defined(__bsdi__)
++#if defined (__FreeBSD__) || (__NetBSD__) || defined (__OpenBSD__) || defined(__bsdi__)
        ioctl(0,TIOCGETA,(char *)&ttmode);
  #else
  #   if defined (_HPUX_SOURCE) || defined(__Lynx__)
-@@ -529,7 +529,7 @@
+@@ -609,7 +609,7 @@
  
        if(mask == 0x7f)
  	ttmode.c_cflag = B9600 | PARENB | CS7 | CREAD;
 -#if defined (__FreeBSD__) || (__NetBSD__) || defined(__bsdi__)
-+#if defined (__FreeBSD__) || defined (__NetBSD__) || defined (__OpenBSD__) || defined(__bsdi__)
++#if defined (__FreeBSD__) || (__NetBSD__) || defined (__OpenBSD__) || defined(__bsdi__)
        ioctl(0,TIOCSETA,(char *)&ttmode);
  #else
  #   ifdef _HPUX_SOURCE

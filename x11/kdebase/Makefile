@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.14 2000/03/05 18:30:46 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/03/08 03:37:06 kevlo Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
-DISTNAME=	kdebase-1.1.1
+DISTNAME=	kdebase-1.1.2
 CATEGORIES=	x11
 NEED_VERSION=	1.223
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR= stable/1.1.1/distribution/tar/generic/source/bz2
+MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
 
 BUILD_DEPENDS=	msgfmt:devel/gettext
-LIB_DEPENDS=	qt.1.44:x11/qt \
+LIB_DEPENDS=	qt.1.45:x11/qt \
 		jpeg.62:graphics/jpeg \
 		gif.4.1:graphics/giflib \
 		kdecore.1:x11/kdelibs
