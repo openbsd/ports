@@ -1,0 +1,11 @@
+--- binutils/bucomm.h.orig     Wed Feb 20 18:35:42 2002
++++ binutils/bucomm.h  Wed Feb 20 18:36:24 2002
+@@ -166,7 +166,7 @@
+
+ void print_arelt_descr PARAMS ((FILE *file, bfd *abfd, boolean verbose));
+
+-char *make_tempname PARAMS ((char *));
++char *make_tempname PARAMS ((char *, int));
+
+ bfd_vma parse_vma PARAMS ((const char *, const char *));
+

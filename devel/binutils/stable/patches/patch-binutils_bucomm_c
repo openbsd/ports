@@ -1,0 +1,62 @@
+--- binutils/bucomm.c.orig     Wed Feb 20 17:35:00 2002
++++ binutils/bucomm.c  Wed Feb 20 17:40:47 2002
+@@ -208,12 +208,14 @@
+ /* Return the name of a temporary file in the same directory as FILENAME.  */
+
+ char *
+-make_tempname (filename)
++make_tempname (filename, isdir)
+      char *filename;
++     int isdir;
+ {
+   static char template[] = "stXXXXXX";
+   char *tmpname;
+   char *slash = strrchr (filename, '/');
++  char c;
+
+ #ifdef HAVE_DOS_BASED_FILE_SYSTEM
+   {
+@@ -228,8 +230,6 @@
+
+   if (slash != (char *) NULL)
+     {
+-      char c;
+-
+       c = *slash;
+       *slash = 0;
+       tmpname = xmalloc (strlen (filename) + sizeof (template) + 2);
+@@ -243,15 +243,31 @@
+ #endif
+       strcat (tmpname, "/");
+       strcat (tmpname, template);
+-      mktemp (tmpname);
+-      *slash = c;
+     }
+   else
+     {
+       tmpname = xmalloc (sizeof (template));
+       strcpy (tmpname, template);
+-      mktemp (tmpname);
+     }
++
++  if (isdir)
++    {
++      if (mkdtemp (tmpname) != (char *) NULL)
++      tmpname = NULL;
++    }
++  else
++    {
++      int fd;
++
++      fd = mkstemp (tmpname);
++      if (fd == -1)
++      tmpname = NULL;
++      else
++      close (fd);
++    }
++  if (slash != (char *) NULL)
++    *slash = c;
++
+   return tmpname;
+ }
+
