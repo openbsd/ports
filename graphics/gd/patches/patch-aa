@@ -1,5 +1,5 @@
 --- Makefile.orig	Wed Oct 13 17:20:11 1999
-+++ Makefile	Fri Nov 26 10:50:12 1999
++++ Makefile	Sun Mar  5 10:54:51 2000
 @@ -11,27 +11,27 @@
  
  #If the install command is not in your path, provide
@@ -69,13 +69,13 @@
  TEST_PROGRAMS=gdtest gddemo gd2time gdtestttf
 +SOLIBGD=libgd.so.17.3
  
-+.if defined(NO_SHARED_LIBS)
++.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:U} == YES
  all: libgd.a $(PROGRAMS)
 +.else
 +all: libgd.a $(SOLIBGD) $(PROGRAMS)
 +.endif
  
-+.if defined(NO_SHARED_LIBS)
++.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:U} == YES
  install: libgd.a $(BIN_PROGRAMS)
 -	$(INSTALL) -m 644 libgd.a $(INSTALL_LIB)/libgd.a
 -	$(INSTALL) -m 755 pngtogd $(INSTALL_BIN)/pngtogd
