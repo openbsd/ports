@@ -1,0 +1,258 @@
+$OpenBSD: patch-sim_Test_mcsim,v 1.1.1.1 2001/01/19 15:24:58 reinhard Exp $
+--- sim/Test_mcsim.orig	Fri Nov 14 15:45:56 1997
++++ sim/Test_mcsim	Sun Jan 14 17:41:45 2001
+@@ -1,147 +1,147 @@
+ # Run diagnostic tests on several features of the program.
+ # results are compared to prepared files.
+-one:	
+-	@echo
+-	@echo ----------
+-	@echo
+-	@echo '* Testing MCSim: this could take a few minutes.'
+-	@echo '* Creating logfile mcsim.log'
+-	@touch mcsim.log
+-	@date >> mcsim.log
+-#
+-	@echo
+-	@echo ----------
+-	@echo
+-	@echo Testing with the tetrachloroethylene model
+-	@mod perc.model
+-	@gcc -I . -Wall -ansi -c model.c -o model.o  > /dev/null
+-	@gcc -o mcsim *.o -lm
+-	@echo
++#one:	
++	echo
++	echo ----------
++	echo
++	echo '* Testing MCSim: this could take a few minutes.'
++	echo '* Creating logfile mcsim.log'
++	touch mcsim.log
++	date >> mcsim.log
++#
++	echo
++	echo ----------
++	echo
++	echo Testing with the tetrachloroethylene model
++	../mod/mod perc.model
++	cc -I . -Wall -ansi -c model.c -o model.o  > /dev/null
++	cc -o mcsim *.o -lm
++	echo
+ #
+ # perc.lsodes.in    
+-	@echo Testing Lsodes with perc.lsodes.in ...
+-	@chmod -w perc.lsodes.in perc.lsodes.out 
+-	@mcsim perc.lsodes.in sim.out >> mcsim.log
+-	@(diff sim.out perc.lsodes.out > .tmp) && echo '-PASSED-'
++	echo Testing Lsodes with perc.lsodes.in ...
++	chmod -w perc.lsodes.in perc.lsodes.out 
++	./mcsim perc.lsodes.in sim.out >> mcsim.log
++	(diff sim.out perc.lsodes.out > .tmp) && echo '-PASSED-'
+ #
+ # perc.ndoses.in
+-	@echo Testing NDoses with perc.ndoses.in ...
+-	@chmod -w perc.ndoses.in perc.ndoses.out 
+-	@mcsim perc.ndoses.in sim.out >> mcsim.log
+-	@(diff sim.out perc.ndoses.out > .tmp) && echo '-PASSED-'
++	echo Testing NDoses with perc.ndoses.in ...
++	chmod -w perc.ndoses.in perc.ndoses.out 
++	./mcsim perc.ndoses.in sim.out >> mcsim.log
++	(diff sim.out perc.ndoses.out > .tmp) && echo '-PASSED-'
+ #
+ # perc.mtc.in
+-	@echo Testing Monte Carlo with perc.mtc.in ...
+-	@chmod -w perc.mtc.in perc.mtc.out 
+-	@mcsim perc.mtc.in sim.out >> mcsim.log
+-	@(diff sim.out perc.mtc.out > .tmp) && echo '-PASSED-'
++	echo Testing Monte Carlo with perc.mtc.in ...
++	chmod -w perc.mtc.in perc.mtc.out 
++	./mcsim perc.mtc.in sim.out >> mcsim.log
++	(diff sim.out perc.mtc.out > .tmp) && echo '-PASSED-'
+ #
+ # perc.setpoint.in
+-	@echo Testing Set Point run with perc.setpoint.in ...
+-	@chmod -w perc.setpoint.dat perc.setpoint.in perc.setpoint.out 
+-	@mcsim perc.setpoint.in sim.out >> mcsim.log
+-	@(diff sim.out perc.setpoint.out > .tmp) && echo '-PASSED-'
+-#
+-	@echo
+-	@echo ----------
+-	@echo
+-	@echo Testing with the 1 compartment model
+-	@mod 1cpt.model
+-	@gcc -I . -Wall -ansi -c model.c -o model.o  > /dev/null
+-	@gcc -o mcsim *.o -lm
+-	@echo
++	echo Testing Set Point run with perc.setpoint.in ...
++	chmod -w perc.setpoint.dat perc.setpoint.in perc.setpoint.out 
++	./mcsim perc.setpoint.in sim.out >> mcsim.log
++	(diff sim.out perc.setpoint.out > .tmp) && echo '-PASSED-'
++#
++	echo
++	echo ----------
++	echo
++	echo Testing with the 1 compartment model
++	../mod/mod 1cpt.model
++	cc -I . -Wall -ansi -c model.c -o model.o  > /dev/null
++	cc -o mcsim *.o -lm
++	echo
+ #
+ # 1cpt_no_noise.in
+-	@echo Testing Lsodes non random output with 1cpt_no_noise.in ...
+-	@chmod -w 1cpt_no_noise.in 1cpt_no_noise.out
+-	@mcsim 1cpt_no_noise.in sim.out >> mcsim.log
+-	@(diff sim.out 1cpt_no_noise.out > .tmp) && echo '-PASSED-'
++	echo Testing Lsodes non random output with 1cpt_no_noise.in ...
++	chmod -w 1cpt_no_noise.in 1cpt_no_noise.out
++	./mcsim 1cpt_no_noise.in sim.out >> mcsim.log
++	(diff sim.out 1cpt_no_noise.out > .tmp) && echo '-PASSED-'
+ #
+ # 1cpt_w._noise.in
+-	@echo Testing Lsodes randomized output with 1cpt_w._noise.in ...
+-	@chmod -w 1cpt_w._noise.in 1cpt_w._noise.out
+-	@mcsim 1cpt_w._noise.in sim.out >> mcsim.log
+-	@(diff sim.out 1cpt_w._noise.out > .tmp) && echo '-PASSED-'
++	echo Testing Lsodes randomized output with 1cpt_w._noise.in ...
++	chmod -w 1cpt_w._noise.in 1cpt_w._noise.out
++	./mcsim 1cpt_w._noise.in sim.out >> mcsim.log
++	(diff sim.out 1cpt_w._noise.out > .tmp) && echo '-PASSED-'
+ #
+ # 1cpt.MCMC1.in
+-	@echo Testing MCMC set uncertainties with 1cpt.MCMC1.in ...
+-	@chmod -w 1cpt.MCMC1.in 1cpt.MCMC1.out
+-	@mcsim 1cpt.MCMC1.in sim.out >> mcsim.log
+-	@(diff sim.out 1cpt.MCMC1.out > .tmp) && echo '-PASSED-'
++	echo Testing MCMC set uncertainties with 1cpt.MCMC1.in ...
++	chmod -w 1cpt.MCMC1.in 1cpt.MCMC1.out
++	./mcsim 1cpt.MCMC1.in sim.out >> mcsim.log
++	(diff sim.out 1cpt.MCMC1.out > .tmp) && echo '-PASSED-'
+ #
+ # 1cpt.MCMC2.in
+-	@echo Testing MCMC estimated uncertainties with 1cpt.MCMC2.in ...
+-	@chmod -w 1cpt.MCMC2.in 1cpt.MCMC2.out
+-	@mcsim 1cpt.MCMC2.in sim.out >> mcsim.log
+-	@(diff sim.out 1cpt.MCMC2.out > .tmp) && echo '-PASSED-'
++	echo Testing MCMC estimated uncertainties with 1cpt.MCMC2.in ...
++	chmod -w 1cpt.MCMC2.in 1cpt.MCMC2.out
++	./mcsim 1cpt.MCMC2.in sim.out >> mcsim.log
++	(diff sim.out 1cpt.MCMC2.out > .tmp) && echo '-PASSED-'
+ #
+ # 1cpt.MCMC3.in
+-	@echo Testing MCMC print every 2 iterations with 1cpt.MCMC3.in ...
+-	@chmod -w 1cpt.MCMC3.in 1cpt.MCMC3.out
+-	@mcsim 1cpt.MCMC3.in sim.out >> mcsim.log
+-	@(diff sim.out 1cpt.MCMC3.out > .tmp) && echo '-PASSED-'
++	echo Testing MCMC print every 2 iterations with 1cpt.MCMC3.in ...
++	chmod -w 1cpt.MCMC3.in 1cpt.MCMC3.out
++	./mcsim 1cpt.MCMC3.in sim.out >> mcsim.log
++	(diff sim.out 1cpt.MCMC3.out > .tmp) && echo '-PASSED-'
+ #
+ # 1cpt.MCMC4.in
+-	@echo Testing MCMC estimated bounds on F with 1cpt.MCMC4.in ...
+-	@chmod -w 1cpt.MCMC4.in 1cpt.MCMC4.out
+-	@mcsim 1cpt.MCMC4.in sim.out >> mcsim.log
+-	@(diff sim.out 1cpt.MCMC4.out > .tmp) && echo '-PASSED-'
++	echo Testing MCMC estimated bounds on F with 1cpt.MCMC4.in ...
++	chmod -w 1cpt.MCMC4.in 1cpt.MCMC4.out
++	./mcsim 1cpt.MCMC4.in sim.out >> mcsim.log
++	(diff sim.out 1cpt.MCMC4.out > .tmp) && echo '-PASSED-'
+ #
+ # 1cpt.MCMC5.in
+-	@echo Testing MCMC model-computed SDs with 1cpt.MCMC5.in ...
+-	@chmod -w 1cpt.MCMC5.in 1cpt.MCMC5.out
+-	@mcsim 1cpt.MCMC5.in sim.out >> mcsim.log
+-	@(diff sim.out 1cpt.MCMC5.out > .tmp) && echo '-PASSED-'
+-#
+-	@echo
+-	@echo ----------
+-	@echo
+-	@echo Testing with the linear model
+-	@mod linear.model
+-	@gcc -I . -Wall -ansi -c model.c -o model.o  > /dev/null
+-	@gcc -o mcsim *.o -lm
+-	@echo
++	echo Testing MCMC model-computed SDs with 1cpt.MCMC5.in ...
++	chmod -w 1cpt.MCMC5.in 1cpt.MCMC5.out
++	./mcsim 1cpt.MCMC5.in sim.out >> mcsim.log
++	(diff sim.out 1cpt.MCMC5.out > .tmp) && echo '-PASSED-'
++#
++	echo
++	echo ----------
++	echo
++	echo Testing with the linear model
++	../mod/mod linear.model
++	cc -I . -Wall -ansi -c model.c -o model.o  > /dev/null
++	cc -o mcsim *.o -lm
++	echo
+ #
+ # linear.in
+-	@echo Testing Lsodes with linear.in ...
+-	@chmod -w linear.in linear.out 
+-	@mcsim linear.in sim.out >> mcsim.log
+-	@(diff sim.out linear.out > .tmp) && echo '-PASSED-'
++	echo Testing Lsodes with linear.in ...
++	chmod -w linear.in linear.out 
++	./mcsim linear.in sim.out >> mcsim.log
++	(diff sim.out linear.out > .tmp) && echo '-PASSED-'
+ #
+ # linear.MCMC1.in
+-	@echo Testing MCMC 1 experiment with linear.MCMC1.in ...
+-	@chmod -w linear.MCMC1.in linear.MCMC1.out 
+-	@mcsim linear.MCMC1.in sim.out >> mcsim.log
+-	@(diff sim.out linear.MCMC1.out > .tmp) && echo '-PASSED-'
++	echo Testing MCMC 1 experiment with linear.MCMC1.in ...
++	chmod -w linear.MCMC1.in linear.MCMC1.out 
++	./mcsim linear.MCMC1.in sim.out >> mcsim.log
++	(diff sim.out linear.MCMC1.out > .tmp) && echo '-PASSED-'
+ #
+ # linear.MCMC2.in
+-	@echo Testing MCMC 1 repeated experiment with linear.MCMC2.in ...
+-	@chmod -w linear.MCMC2.in linear.MCMC2.out 
+-	@mcsim linear.MCMC2.in sim.out >> mcsim.log
+-	@(diff sim.out linear.MCMC2.out > .tmp) && echo '-PASSED-'
++	echo Testing MCMC 1 repeated experiment with linear.MCMC2.in ...
++	chmod -w linear.MCMC2.in linear.MCMC2.out 
++	./mcsim linear.MCMC2.in sim.out >> mcsim.log
++	(diff sim.out linear.MCMC2.out > .tmp) && echo '-PASSED-'
+ #
+ # linear.H.MCMC1.in
+-	@echo Testing MCMC hierarchical linear model, 10 exps with \
++	echo Testing MCMC hierarchical linear model, 10 exps with \
+          linear.H.MCMC1.in ...
+-	@chmod -w linear.H.MCMC1.in linear.H.MCMC1.out 
+-	@mcsim linear.H.MCMC1.in sim.out >> mcsim.log
+-	@(diff sim.out linear.H.MCMC1.out > .tmp) && echo '-PASSED-'
++	chmod -w linear.H.MCMC1.in linear.H.MCMC1.out 
++	./mcsim linear.H.MCMC1.in sim.out >> mcsim.log
++	(diff sim.out linear.H.MCMC1.out > .tmp) && echo '-PASSED-'
+ #
+ # linear.H.MCMC2.in
+-	@echo Testing MCMC hierarchical linear model, B1.1 set with \
++	echo Testing MCMC hierarchical linear model, B1.1 set with \
+          linear.H.MCMC2.in
+-	@chmod -w linear.H.MCMC2.in linear.H.MCMC2.out 
+-	@mcsim linear.H.MCMC2.in sim.out >> mcsim.log
+-	@(diff sim.out linear.H.MCMC2.out > .tmp) && echo '-PASSED-'
++	chmod -w linear.H.MCMC2.in linear.H.MCMC2.out 
++	./mcsim linear.H.MCMC2.in sim.out >> mcsim.log
++	(diff sim.out linear.H.MCMC2.out > .tmp) && echo '-PASSED-'
+ #
+ # linear.H.MCMC3.in
+-	@echo Testing MCMC hierarchical model, restart file with \
++	echo Testing MCMC hierarchical model, restart file with \
+          linear.H.MCMC3.in
+-	@chmod -w linear.H.MCMC3.in linear.H.MCMC3.out 
+-	@mcsim linear.H.MCMC3.in sim.out >> mcsim.log
+-	@(diff sim.out linear.H.MCMC3.out > .tmp) && echo '-PASSED-'
+-#
+-	@echo
+-	@echo Hourra!
+-	@echo MCSim passed all tests.
++	chmod -w linear.H.MCMC3.in linear.H.MCMC3.out 
++	./mcsim linear.H.MCMC3.in sim.out >> mcsim.log
++	(diff sim.out linear.H.MCMC3.out > .tmp) && echo '-PASSED-'
++#
++	echo
++	echo Yaba-daba-doo!
++	echo MCSim passed all tests!
+ 

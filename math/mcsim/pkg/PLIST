@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/19 15:24:58 reinhard Exp $
+bin/mcsim
+bin/mod
+share/doc/mcsim/About-Datasets.txt
+share/doc/mcsim/About-Doc.txt
+share/doc/mcsim/About-MCSim.txt
+share/doc/mcsim/MCSim-changelog
+share/doc/mcsim/MCSim-to-do
+share/doc/mcsim/Manual-Update.txt
+share/doc/mcsim/Programming-notes.txt
+share/doc/mcsim/mcsim.dvi
+share/doc/mcsim/mcsim.html
+@dirrm share/doc/mcsim

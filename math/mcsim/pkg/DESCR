@@ -1,0 +1,12 @@
+MCSim is a general purpose modeling and simulation program which
+also performs standart or Monte Carlo simulations. It allows you
+to specify a set of linear or nonlinear equations and solve them
+using parameter values you choose or parameter values sampled
+from specified statistical distributions. Outputs can be compared.
+
+It consists of two pieces - a model generator and a simulation
+engine. The model generator was created to facilitate the model
+maintenance and simulation definition, while keeping execution
+time fast. Other programs have been created to the same end, the
+Matlab family of graphical interactive programs being some of the
+more general and easy to use.

@@ -1,0 +1,25 @@
+$OpenBSD: patch-sim_sim_c,v 1.1.1.1 2001/01/19 15:24:58 reinhard Exp $
+--- sim/sim.c.orig	Fri Nov 14 15:45:51 1997
++++ sim/sim.c	Sun Jan 14 17:38:49 2001
+@@ -653,8 +653,8 @@ void PromptFilenames (PSTR *pszFileIn, P
+   scanf ("%[^:\f\r\v\n]", *pszFileIn);
+   getchar();
+ #else
+-  gets (*pszFileIn);
+-  *pszFileIn = strtok (*pszFileIn, " \t");
++  fgets (*pszFileIn, 250, stdin);
++  *pszFileIn = strtok (*pszFileIn, " \t\n");
+ #endif
+ 
+   if (!(*pszFileIn)) /* Nothing entered, quit */
+@@ -665,8 +665,8 @@ void PromptFilenames (PSTR *pszFileIn, P
+ #ifdef _MACOSLEVEL1_
+     scanf ("%[^:\f\r\v\n]", *pszFileOut);
+ #else
+-    gets (*pszFileOut);
+-    *pszFileOut = strtok (*pszFileOut, " \t");
++    fgets (*pszFileOut, 250, stdin);
++    *pszFileOut = strtok (*pszFileOut, " \t\n");
+ #endif
+   }
+ 

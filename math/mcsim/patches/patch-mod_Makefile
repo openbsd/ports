@@ -1,0 +1,30 @@
+$OpenBSD: patch-mod_Makefile,v 1.1.1.1 2001/01/19 15:24:58 reinhard Exp $
+--- mod/Makefile.orig	Thu Mar  6 16:14:37 1997
++++ mod/Makefile	Sun Jan 14 17:35:02 2001
+@@ -97,8 +97,8 @@ MOD = mod
+ #
+ #>>>>  Define the COMPILER name and LINKER name here only.
+ 
+-CC = gcc
+-LINK = gcc
++#CC =
++LINK = $(CC)
+ 
+ #>>>>  Define PATHS
+ #	The include path should be a directory containing header
+@@ -137,13 +137,13 @@ OBJPATH = o
+ #>>>> To compile with OPTIMIZATION uncomment the following lines
+ #
+ DEBUG_SYMBOLS = -DNDEBUG
+-C_OPTIM_FLAG = -O
++C_OPTIM_FLAG = -O2
+ L_OPTIM_FLAG =
+ 
+ #
+ #>>>> Include any special warning flags 
+ #
+-WARNINGS = -Wall
++WARNINGS = -ansi
+ 
+ #--------------------
+ #****  You shouldn't need to change these lines.  They are dependent
