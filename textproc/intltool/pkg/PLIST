@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:44:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/10/26 03:53:41 marcm Exp $
 bin/intltool-extract
 bin/intltool-merge
 bin/intltool-prepare
@@ -10,7 +10,6 @@ bin/xml-i18n-toolize
 @man man/man8/intltool-prepare.8
 @man man/man8/intltool-update.8
 @man man/man8/intltoolize.8
-share/aclocal/
 share/aclocal/intltool.m4
 share/aclocal/xml-i18n-tools.m4
 share/intltool/
