@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.46 2004/08/06 10:24:19 espie Exp $
+# $OpenBSD: make-plist,v 1.47 2004/08/07 07:47:38 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -245,7 +245,7 @@ sub resolve_link
 		if ($l =~ m|^/|) {
 			return $destdir.$l;
 		} else {
-			return dirname($filename).$l;
+			return File::Spec->catfile(dirname($filename),$l);
 		}
 	} else {
 		return $filename;
