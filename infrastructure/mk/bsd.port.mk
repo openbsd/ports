@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.175 2000/02/01 14:39:20 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.176 2000/02/02 00:15:07 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1934,8 +1934,7 @@ depends: lib-depends misc-depends fetch-depends build-depends run-depends
 
 .  for _DEP in fetch build run
 ${_DEP}-depends:
-.    if defined(${_DEP:U}_DEPENDS)
-.      if !defined(NO_DEPENDS)
+.    if defined(${_DEP:U}_DEPENDS) && !defined(NO_DEPENDS)
 	@PATH=${PORTPATH}; \
 	for i in ${${_DEP:U}_DEPENDS}; do \
 		prog=`echo $$i | sed -e 's/:.*//'`; \
@@ -1946,43 +1945,40 @@ ${_DEP}-depends:
 		else \
 			target=${DEPENDS_TARGET}; \
 		fi; \
-		found=not; \
+		if [ ! -d $$dir ]; then \
+			echo ">> No directory for $$prog ($$dir)"; \
+		fi; \
+		found=false; \
 		if expr "$$prog" : \\/ >/dev/null; then \
 			if [ -e "$$prog" ]; then \
-				${ECHO_MSG} "===>  ${PKGNAME} depends on file: $$prog - found"; \
-				found=""; \
-			else \
-				${ECHO_MSG} "===>  ${PKGNAME} depends on file: $$prog - not found"; \
+				found=true; \
 			fi; \
 		else \
 			IFS=:; for d in $$PATH; do \
 				if [ -x $$d/$$prog ]; then \
-					found="$$d/$$prog"; \
+					found=true; \
 					break; \
 				fi \
 			done; unset IFS; \
-			${ECHO_MSG} "===>  ${PKGNAME} depends on executable: $$prog - $$found found"; \
 		fi; \
-		if [ X"$$found" = Xnot ]; then \
+		if $$found; then \
+			${ECHO_MSG} "===>  ${PKGNAME} depends on file: $$prog - found"; \
+		else \
+			${ECHO_MSG} "===>  ${PKGNAME} depends on file: $$prog - not found"; \
 			${ECHO_MSG} "===>  Verifying $$target for $$prog in $$dir"; \
 			if cd $$dir && make $$target; then \
 				${ECHO_MSG} "===> Returning to build of ${PKGNAME}"; \
 			else \
-				if [ ! -d $$dir ]; then \
-					echo ">> No directory for $$prog ($$dir)"; \
-				fi; \
 				exit 1; \
 			fi; \
 		fi; \
 	done
-.      endif
 .    endif
 .  endfor
 
 lib-depends:
-.  if defined(LIB_DEPENDS)
-.    if !defined(NO_DEPENDS)
-.      if defined(NO_SHARED_LIBS)
+.  if defined(LIB_DEPENDS) && !defined(NO_DEPENDS)
+.    if defined(NO_SHARED_LIBS)
 	@for i in ${LIB_DEPENDS}; do \
 		lib=`echo $$i | sed -e 's/:.*//' -e 's|\([^\\]\)[\\\.].*|\1|'`; \
 		dir=`echo $$i | sed -e 's/[^:]*://'`; \
@@ -1991,6 +1987,9 @@ lib-depends:
 			dir=`echo $$dir | sed -e 's/:.*//'`; \
 		else \
 			target=${DEPENDS_TARGET}; \
+		fi; \
+		if [ ! -d "$$dir" ]; then \
+			echo ">> No directory for $$lib ($$dir)"; \
 		fi; \
 		tmp=`mktemp /tmp/bpmXXXXXXXXXX`; \
 		if ${LD} -r -o $$tmp -L${LOCALBASE}/lib -L${X11BASE}/lib -l$$lib; then \
@@ -2001,15 +2000,13 @@ lib-depends:
 			if cd $$dir && make $$target; then \
 				${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
 			else \
-				if [ ! -d "$$dir" ]; then \
-					echo ">> No directory for $$lib ($$dir)"; \
-				fi; \
+				rm -f $$tmp; \
 				exit 1; \
 			fi; \
 		fi; \
 		rm -f $$tmp; \
 	done
-.      else
+.    else
 	@for i in ${LIB_DEPENDS}; do \
 		lib=`echo $$i | sed -e 's/:.*//' -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
 		dir=`echo $$i | sed -e 's/[^:]*://'`; \
@@ -2019,6 +2016,9 @@ lib-depends:
 		else \
 			target=${DEPENDS_TARGET}; \
 		fi; \
+		if [ ! -d "$$dir" ]; then \
+			echo ">> No directory for $$libname ($$dir)"; \
+		fi; \
 		libname=`echo $$lib | sed -e 's|\\\\||g'`; \
 		reallib=`${LDCONFIG} -r | grep -e "-l$$lib" | awk '{ print $$3 }'`; \
 		if [ "X$$reallib" = X"" ]; then \
@@ -2027,22 +2027,17 @@ lib-depends:
 			if cd $$dir && make $$target; then \
 				${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
 			else \
-				if [ ! -d "$$dir" ]; then \
-					echo ">> No directory for $$libname ($$dir)"; \
-				fi; \
 				exit 1; \
 			fi; \
 		else \
 			${ECHO_MSG} "===>  ${PKGNAME} depends on shared library: $$libname - $$reallib found"; \
 		fi; \
 	done
-.      endif
 .    endif
 .  endif
 
 misc-depends:
-.  if defined(DEPENDS)
-.    if !defined(NO_DEPENDS)
+.  if defined(DEPENDS) && !defined(NO_DEPENDS)
 	@for dir in ${DEPENDS}; do \
 		if expr "$$dir" : '.*:' > /dev/null; then \
 			target=`echo $$dir | sed -e 's/.*://'`; \
@@ -2050,18 +2045,17 @@ misc-depends:
 		else \
 			target=${DEPENDS_TARGET}; \
 		fi; \
+		if [ ! -d $$dir ]; then \
+			echo ">> No directory for $$dir."; \
+		fi; \
 		${ECHO_MSG} "===>  ${PKGNAME} depends on: $$dir"; \
 		${ECHO_MSG} "===>  Verifying $$target for $$dir"; \
 		if cd $$dir && make $$target; then \
 			${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
 		else \
-			if [ ! -d $$dir ]; then \
-				echo ">> No directory for $$dir."; \
-			fi; \
-				exit 1; \
+			exit 1; \
 		fi \
 	done
-.    endif
 .  endif
 
 .endif
