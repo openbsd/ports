@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.228 2000/03/19 01:52:46 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.229 2000/03/19 16:04:19 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -235,7 +235,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #				  library.  Note that lib can be any regular expression.
 #				  In older versions of this file, you need two backslashes
 #				  in front of dots (.) to supress its special meaning (e.g.,
-#				  use "foo\\.2\\.:${PORTSDIR}/utils/foo" to match "libfoo.2.*").
+#				  use "foo\\.2\\.:utils/foo" to match "libfoo.2.*").
 #				  No special backslashes are needed to escape regular
 #				  expression metacharacters in OpenBSD, and the old backslash
 #				  escapes are recognised for backwards compatibility.
@@ -487,26 +487,26 @@ PREFIX?=		${LOCALBASE}
 # where configuration files should go
 SYSCONFDIR?=	/etc
 .if defined(USE_GMAKE)
-BUILD_DEPENDS+=		${GMAKE}:${PORTSDIR}/devel/gmake
+BUILD_DEPENDS+=		${GMAKE}:devel/gmake
 MAKE_PROGRAM=		${GMAKE}
 .else
 MAKE_PROGRAM=		${MAKE}
 .endif
 .if defined(USE_AUTOCONF)
 GNU_CONFIGURE= Yes
-BUILD_DEPENDS+=		${AUTOCONF}:${PORTSDIR}/devel/autoconf
+BUILD_DEPENDS+=		${AUTOCONF}:devel/autoconf
 AUTOCONF_DIR?=${WRKSRC}
 # missing ?= not an oversight
 AUTOCONF_ENV=PATH=${PORTPATH}
 .endif
 .if defined(USE_LIBTOOL)
 LIBTOOL?=			${LOCALBASE}/bin/libtool
-BUILD_DEPENDS+=		${LIBTOOL}:${PORTSDIR}/devel/libtool
+BUILD_DEPENDS+=		${LIBTOOL}:devel/libtool
 CONFIGURE_ENV+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 MAKE_ENV+=			LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 .endif
 .if defined(USE_MOTIF) && !defined(HAVE_MOTIF) && !defined(REQUIRES_MOTIF)
-LIB_DEPENDS+=		Xm.:${PORTSDIR}/x11/lesstif
+LIB_DEPENDS+=		Xm.:x11/lesstif
 .endif
 
 .if exists(${PORTSDIR}/../Makefile.inc)
@@ -614,7 +614,7 @@ UNZIP?=	unzip
 BZIP2?=	bzip2
 
 .if defined(USE_ZIP)
-BUILD_DEPENDS+=		${UNZIP}:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS+=		${UNZIP}:archivers/unzip
 EXTRACT_CMD?=		${UNZIP}
 EXTRACT_SUFX?=		.zip
 EXTRACT_BEFORE_ARGS?=  -q
@@ -626,7 +626,7 @@ EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
 EXTRACT_BEFORE_ARGS?=	-dc
 
 .  if defined(USE_BZIP2)
-BUILD_DEPENDS+=		${BZIP2}:${PORTSDIR}/archivers/bzip2
+BUILD_DEPENDS+=		${BZIP2}:archivers/bzip2
 EXTRACT_CMD?=		${BZIP2}
 EXTRACT_SUFX?=		.tar.bz2
 .  else

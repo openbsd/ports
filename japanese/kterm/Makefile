@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/11 15:56:23 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/19 16:04:20 espie Exp $
 #
 
 DISTNAME=	kterm-6.2.0
@@ -27,7 +27,7 @@ FAKE=		Yes
 XAW3D?=		No
 .if ${XAW3D:U} == "YES"
 PKGNAME:= ${PKGNAME}-Xaw3d
-LIB_DEPENDS=	Xaw3d.6.1:${PORTSDIR}/x11/Xaw3d
+LIB_DEPENDS=	Xaw3d.6.1:x11/Xaw3d
 MAKE_ENV=EXTRA_DEFINES=-DKTERM_XAW3D
 .endif
 

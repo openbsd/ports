@@ -3,7 +3,7 @@
 # Date released:		May 16 1998
 # Whom:				Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/03/17 04:01:30 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/19 16:04:20 espie Exp $
 #
 
 DISTNAME=	exmh-2.0.2
@@ -25,10 +25,10 @@ WISH=		wish8.0
 TCLSH=		tclsh8.0
 
 # exmh is pretty useless without this, but it's not needed to build it.
-RUN_DEPENDS+=	repl:${PORTSDIR}/mail/nmh
+RUN_DEPENDS+=	repl:mail/nmh
 
 # full mime support needs mmencode/mmdecode from metamail
-RUN_DEPENDS+=	mmencode:${PORTSDIR}/mail/metamail
+RUN_DEPENDS+=	mmencode:mail/metamail
 
 # Additionally, exmh will use the following ports if present:
 # lang/expect
