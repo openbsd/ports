@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.12 2000/07/22 00:58:28 brad Exp $
+@comment $OpenBSD: PLIST,v 1.13 2000/08/06 09:01:19 form Exp $
 bin/addtosmbpass
 bin/convert_smbpasswd
 bin/make_printerdef
 bin/make_smbcodepage
+bin/make_unicodemap
 bin/mksmbpasswd.sh
 bin/nmblookup
 bin/rpcclient
@@ -13,8 +14,10 @@ bin/smbstatus
 bin/smbtar
 bin/testparm
 bin/testprns
+lib/samba/codepages/codepage.1251
 lib/samba/codepages/codepage.437
 lib/samba/codepages/codepage.737
+lib/samba/codepages/codepage.775
 lib/samba/codepages/codepage.850
 lib/samba/codepages/codepage.852
 lib/samba/codepages/codepage.861
@@ -23,8 +26,24 @@ lib/samba/codepages/codepage.932
 lib/samba/codepages/codepage.936
 lib/samba/codepages/codepage.949
 lib/samba/codepages/codepage.950
+lib/samba/codepages/unicode_map.437
+lib/samba/codepages/unicode_map.737
+lib/samba/codepages/unicode_map.850
+lib/samba/codepages/unicode_map.852
+lib/samba/codepages/unicode_map.861
+lib/samba/codepages/unicode_map.866
+lib/samba/codepages/unicode_map.932
+lib/samba/codepages/unicode_map.936
+lib/samba/codepages/unicode_map.949
+lib/samba/codepages/unicode_map.950
+lib/samba/codepages/unicode_map.ISO8859-1
+lib/samba/codepages/unicode_map.ISO8859-2
+lib/samba/codepages/unicode_map.ISO8859-5
+lib/samba/codepages/unicode_map.ISO8859-7
+lib/samba/codepages/unicode_map.KOI8-R
 lib/samba/smb.conf.sample
 man/man1/make_smbcodepage.1
+man/man1/make_unicodemap.1
 man/man1/nmblookup.1
 man/man1/smbclient.1
 man/man1/smbrun.1
@@ -48,6 +67,7 @@ man/man8/swat.8
 sbin/nmbd
 sbin/smbd
 sbin/swat
+share/doc/samba/NT4-Locking.reg
 share/doc/samba/NT4_PlainPassword.reg
 share/doc/samba/README
 share/doc/samba/README.OpenBSD
@@ -100,6 +120,7 @@ share/doc/samba/textdocs/HINTS.txt
 share/doc/samba/textdocs/INSTALL.sambatar
 share/doc/samba/textdocs/MIRRORS.txt
 share/doc/samba/textdocs/Macintosh_Clients.txt
+share/doc/samba/textdocs/NT-Guest-Access.txt
 share/doc/samba/textdocs/NTDOMAIN.txt
 share/doc/samba/textdocs/NT_Security.txt
 share/doc/samba/textdocs/NetBIOS.txt
@@ -128,6 +149,7 @@ share/doc/samba/textdocs/Win95.txt
 share/doc/samba/textdocs/WinNT.txt
 share/doc/samba/textdocs/cifsntdomain.txt
 share/doc/samba/textdocs/security_level.txt
+share/doc/samba/textdocs/smbmount.txt
 share/examples/samba/README
 share/examples/samba/autofs/README
 share/examples/samba/autofs/auto.a
@@ -166,6 +188,7 @@ swat/help/DOMAIN_MEMBER.html
 swat/help/NT_Security.html
 swat/help/lmhosts.5.html
 swat/help/make_smbcodepage.1.html
+swat/help/make_unicodemap.1.html
 swat/help/nmbd.8.html
 swat/help/nmblookup.1.html
 swat/help/samba.7.html
@@ -196,6 +219,67 @@ swat/images/status.gif
 swat/images/viewconfig.gif
 swat/include/footer.html
 swat/include/header.html
+swat/using_samba/appa_01.html
+swat/using_samba/appa_02.html
+swat/using_samba/appa_03.html
+swat/using_samba/appa_04.html
+swat/using_samba/appa_05.html
+swat/using_samba/appb_01.html
+swat/using_samba/appb_02.html
+swat/using_samba/appb_03.html
+swat/using_samba/appc_01.html
+swat/using_samba/appd_01.html
+swat/using_samba/appe_01.html
+swat/using_samba/appf_01.html
+swat/using_samba/ch01_01.html
+swat/using_samba/ch01_02.html
+swat/using_samba/ch01_03.html
+swat/using_samba/ch01_04.html
+swat/using_samba/ch01_05.html
+swat/using_samba/ch01_06.html
+swat/using_samba/ch01_07.html
+swat/using_samba/ch01_08.html
+swat/using_samba/ch02_01.html
+swat/using_samba/ch02_02.html
+swat/using_samba/ch02_03.html
+swat/using_samba/ch02_04.html
+swat/using_samba/ch02_05.html
+swat/using_samba/ch02_06.html
+swat/using_samba/ch03_01.html
+swat/using_samba/ch03_02.html
+swat/using_samba/ch03_03.html
+swat/using_samba/ch04_01.html
+swat/using_samba/ch04_02.html
+swat/using_samba/ch04_03.html
+swat/using_samba/ch04_04.html
+swat/using_samba/ch04_05.html
+swat/using_samba/ch04_06.html
+swat/using_samba/ch04_07.html
+swat/using_samba/ch04_08.html
+swat/using_samba/ch05_01.html
+swat/using_samba/ch05_02.html
+swat/using_samba/ch05_03.html
+swat/using_samba/ch05_04.html
+swat/using_samba/ch05_05.html
+swat/using_samba/ch06_01.html
+swat/using_samba/ch06_02.html
+swat/using_samba/ch06_03.html
+swat/using_samba/ch06_04.html
+swat/using_samba/ch06_05.html
+swat/using_samba/ch06_06.html
+swat/using_samba/ch07_01.html
+swat/using_samba/ch07_02.html
+swat/using_samba/ch07_03.html
+swat/using_samba/ch08_01.html
+swat/using_samba/ch08_02.html
+swat/using_samba/ch08_03.html
+swat/using_samba/ch08_04.html
+swat/using_samba/ch08_05.html
+swat/using_samba/ch08_06.html
+swat/using_samba/ch08_07.html
+swat/using_samba/ch09_01.html
+swat/using_samba/ch09_02.html
+swat/using_samba/ch09_03.html
 swat/using_samba/figs/sam.0101.gif
 swat/using_samba/figs/sam.0102.gif
 swat/using_samba/figs/sam.0103.gif
@@ -290,92 +374,31 @@ swat/using_samba/gifs/samba.s.gif
 swat/using_samba/gifs/txthome.gif
 swat/using_samba/gifs/txtnexta.gif
 swat/using_samba/gifs/txtpreva.gif
-swat/using_samba/appa_01.html
-swat/using_samba/appa_02.html
-swat/using_samba/appa_03.html
-swat/using_samba/appa_04.html
-swat/using_samba/appa_05.html
-swat/using_samba/appb_01.html
-swat/using_samba/appb_02.html
-swat/using_samba/appb_03.html
-swat/using_samba/appc_01.html
-swat/using_samba/appd_01.html
-swat/using_samba/appe_01.html
-swat/using_samba/appf_01.html
-swat/using_samba/ch01_01.html
-swat/using_samba/ch01_02.html
-swat/using_samba/ch01_03.html
-swat/using_samba/ch01_04.html
-swat/using_samba/ch01_05.html
-swat/using_samba/ch01_06.html
-swat/using_samba/ch01_07.html
-swat/using_samba/ch01_08.html
-swat/using_samba/ch02_01.html
-swat/using_samba/ch02_02.html
-swat/using_samba/ch02_03.html
-swat/using_samba/ch02_04.html
-swat/using_samba/ch02_05.html
-swat/using_samba/ch02_06.html
-swat/using_samba/ch03_01.html
-swat/using_samba/ch03_02.html
-swat/using_samba/ch03_03.html
-swat/using_samba/ch04_01.html
-swat/using_samba/ch04_02.html
-swat/using_samba/ch04_03.html
-swat/using_samba/ch04_04.html
-swat/using_samba/ch04_05.html
-swat/using_samba/ch04_06.html
-swat/using_samba/ch04_07.html
-swat/using_samba/ch04_08.html
-swat/using_samba/ch05_01.html
-swat/using_samba/ch05_02.html
-swat/using_samba/ch05_03.html
-swat/using_samba/ch05_04.html
-swat/using_samba/ch05_05.html
-swat/using_samba/ch06_01.html
-swat/using_samba/ch06_02.html
-swat/using_samba/ch06_03.html
-swat/using_samba/ch06_04.html
-swat/using_samba/ch06_05.html
-swat/using_samba/ch06_06.html
-swat/using_samba/ch07_01.html
-swat/using_samba/ch07_02.html
-swat/using_samba/ch07_03.html
-swat/using_samba/ch08_01.html
-swat/using_samba/ch08_02.html
-swat/using_samba/ch08_03.html
-swat/using_samba/ch08_04.html
-swat/using_samba/ch08_05.html
-swat/using_samba/ch08_06.html
-swat/using_samba/ch08_07.html
-swat/using_samba/ch09_01.html
-swat/using_samba/ch09_02.html
-swat/using_samba/ch09_03.html
 swat/using_samba/index.html
 swat/using_samba/inx.html
 swat/using_samba/licenseinfo.html
 swat/using_samba/this_edition.html
+@dirrm swat/using_samba/gifs
+@dirrm swat/using_samba/figs
+@dirrm swat/using_samba
+@dirrm swat/include
+@dirrm swat/images
+@dirrm swat/help
+@dirrm swat
+@dirrm share/examples/samba/wins_hook
+@dirrm share/examples/samba/validchars
+@dirrm share/examples/samba/tridge
+@dirrm share/examples/samba/thoralf
+@dirrm share/examples/samba/svr4-startup
+@dirrm share/examples/samba/simple
+@dirrm share/examples/samba/printing
+@dirrm share/examples/samba/printer-accounting
+@dirrm share/examples/samba/misc
+@dirrm share/examples/samba/dce-dfs
+@dirrm share/examples/samba/autofs
+@dirrm share/examples/samba
+@dirrm share/doc/samba/textdocs
+@dirrm share/doc/samba/faq
+@dirrm share/doc/samba
 @dirrm lib/samba/codepages
 @dirrm lib/samba
-@dirrm share/doc/samba/faq
-@dirrm share/doc/samba/textdocs
-@dirrm share/doc/samba
-@dirrm share/examples/samba/autofs
-@dirrm share/examples/samba/dce-dfs
-@dirrm share/examples/samba/misc
-@dirrm share/examples/samba/printer-accounting
-@dirrm share/examples/samba/printing
-@dirrm share/examples/samba/simple
-@dirrm share/examples/samba/svr4-startup
-@dirrm share/examples/samba/thoralf
-@dirrm share/examples/samba/tridge
-@dirrm share/examples/samba/validchars
-@dirrm share/examples/samba/wins_hook
-@dirrm share/examples/samba
-@dirrm swat/using_samba/figs
-@dirrm swat/using_samba/gifs
-@dirrm swat/using_samba
-@dirrm swat/help
-@dirrm swat/images
-@dirrm swat/include
-@dirrm swat
