@@ -1,0 +1,2 @@
+The PerlIO layer symlink allows you to create a symbolic link by
+writing to the file handle.
