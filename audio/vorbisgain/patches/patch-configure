@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/03/29 00:35:43 naddy Exp $
---- configure.orig	Fri Jul  5 18:16:48 2002
-+++ configure	Sun Mar 23 16:47:22 2003
-@@ -2114,7 +2114,7 @@ if test -z "$GCC"; then
+$OpenBSD: patch-configure,v 1.2 2003/10/13 14:47:24 naddy Exp $
+--- configure.orig	2003-09-17 17:59:04.000000000 +0200
++++ configure	2003-10-12 21:57:33.000000000 +0200
+@@ -2450,7 +2450,7 @@ if test -z "$GCC"; then
          case $host in
          *)
                  DEBUG="-g"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/03/29 00:35:43 naddy Exp $
                  PROFILE="-g -p"
                  ;;
          esac
-@@ -2122,8 +2122,8 @@ else
+@@ -2458,8 +2458,8 @@ else
          case $host in
          *)
                  DEBUG="-g -Wall -fsigned-char"

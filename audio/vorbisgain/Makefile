@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/05/24 15:36:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2003/10/13 14:47:24 naddy Exp $
 
 COMMENT=		"add tags to Ogg Vorbis files to adjust the volume"
 
-DISTNAME=		vorbisgain-0.32
+DISTNAME=		vorbisgain-0.34
 CATEGORIES=		audio
 HOMEPAGE=		http://sjeng.org/vorbisgain.html
 
@@ -23,5 +23,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-recursive
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+post-extract:
+	@chmod 755 ${WRKDIST}/configure
 
 .include <bsd.port.mk>
