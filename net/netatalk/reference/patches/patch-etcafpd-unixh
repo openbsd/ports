@@ -1,8 +1,0 @@
---- etc/afpd/unix.h.orig	Thu Oct 14 19:30:24 1999
-+++ etc/afpd/unix.h	Thu Oct 14 19:30:24 1999
-@@ -0,0 +1,5 @@
-+int		utommode(), mtoumode();
-+int		utombits(), mtoubits();
-+int		ustatfs_getvolspace(), uquota_getvolspace();
-+int		setdirmode(), setdirowner();
-+int		setdeskmode(), setdeskowner();

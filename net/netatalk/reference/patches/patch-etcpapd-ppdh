@@ -1,8 +1,0 @@
---- etc/papd/ppd.h.orig	Tue Oct 19 18:20:16 1999
-+++ etc/papd/ppd.h	Tue Oct 19 18:22:04 1999
-@@ -15,3 +15,5 @@
- 
- struct ppd_feature	*ppd_feature();
- struct ppd_font		*ppd_font();
-+
-+int	read_ppd();
