@@ -1,14 +1,16 @@
 --- Makefile.orig	Wed Dec  2 19:29:50 1998
-+++ Makefile	Mon May 31 11:54:07 1999
-@@ -14,6 +14,7 @@
++++ Makefile	Mon Nov 29 11:09:30 1999
+@@ -13,7 +13,9 @@
+ SED = sed
  NULL = /dev/null
  CPPFLAGS = -E
++PREFIX ?= /usr/local
  CFLAGS = -c -Wall -O2 -fomit-frame-pointer
-+CFLAGS += -DCFG_NAME=\\\"$(PREFIX)/lib/john/john.ini\\\"
++CFLAGS += -DJOHN_HOME=\\\"$(PREFIX)/share/john\\\"
  ASFLAGS = -c
  LDFLAGS = -s
  OPT_NORMAL = -funroll-loops
-@@ -92,6 +93,7 @@
+@@ -92,6 +94,7 @@
  	@echo "freebsd-x86-mmx-elf      FreeBSD, x86 with MMX, ELF binaries"
  	@echo "freebsd-x86-k6-elf       FreeBSD, AMD K6, ELF binaries"
  	@echo "openbsd-x86-any          OpenBSD, x86"
@@ -16,7 +18,7 @@
  	@echo "openbsd-x86-k6           OpenBSD, AMD K6"
  	@echo "solaris-sparc-gcc        Solaris, SPARC, gcc"
  	@echo "solaris-sparc-v8-cc      Solaris, SPARC V8, cc"
-@@ -191,6 +193,13 @@
+@@ -191,6 +194,13 @@
  
  openbsd-x86-any:
  	$(LN) x86-any.h arch.h

@@ -1,15 +1,15 @@
 bin/john
+bin/mailer
 bin/unshadow
 bin/unafs
 bin/unique
-lib/john/john.ini
-lib/john/all.chr
-lib/john/alpha.chr
-lib/john/digits.chr
-lib/john/lanman.chr
-lib/john/mailer
-lib/john/password.lst
-@dirrm lib/john
+share/john/john.ini
+share/john/all.chr
+share/john/alpha.chr
+share/john/digits.chr
+share/john/lanman.chr
+share/john/password.lst
+@dirrm share/john
 share/doc/john/CONFIG
 share/doc/john/CREDITS
 share/doc/john/EXAMPLES
