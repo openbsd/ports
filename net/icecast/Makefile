@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2000/08/29 04:28:55 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/08/29 04:57:47 brad Exp $
 
-ONLY_FOR_ARCH=	i386
+#ONLY_FOR_ARCH=	i386
 
 DISTNAME=	icecast-1.3.7
 CATEGORIES=	net audio www
@@ -20,7 +20,7 @@ SYSCONFDIR=	/etc/icecast
 SUBST_VARS=	SYSCONFDIR
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--with-crypt
+CONFIGURE_ARGS=	--with-crypt --with-libwrap
 
 DOCS=	AUTHORS BUGS CHANGES COPYING FAQ README
 
@@ -28,6 +28,6 @@ post-patch:
 	@cp ${FILESDIR}/icepass.c ${WRKSRC}/src
 
 post-install:
-	cd ${WRKSRC}; $(INSTALL_DATA) $(DOCS) ${PREFIX}/share/doc/icecast
+	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/icecast
 
 .include <bsd.port.mk>
