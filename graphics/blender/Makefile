@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2001/12/13 22:20:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/15 12:39:57 reinhard Exp $
+
+BROKEN=	"bankruptcy - no distfiles available (see http://www.blender3d.com)"
 
 COMMENT=	"3D creation software"
 ONLY_FOR_ARCHS=	i386
@@ -7,7 +9,7 @@ V=		2.23
 PKGNAME=	blender-${V}
 DISTNAME=	blender-creator-${V}-linux-glibc2.1.2-i386-static
 CATEGORIES=	graphics
-NEED_VERSION=	1.500
+NEED_VERSION=	1.510
 
 HOMEPAGE=	http://www.blender.nl/
 
