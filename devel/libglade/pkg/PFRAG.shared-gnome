@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-gnome,v 1.1 2004/09/15 21:22:35 espie Exp $
+lib/libglade-gnome.so.5.0
