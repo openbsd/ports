@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 1998/12/16 20:24:50 marc Exp $
+# $OpenBSD: Makefile,v 1.31 1999/04/08 05:36:11 marc Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -115,6 +115,8 @@ post-install:
 	${RM} -f ${PREFIX}/man/man1/slogin.1
 	${LN} -sf ssh.1 ${PREFIX}/man/man1/slogin.1
 .endif
+	@${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
+
 
 .include <bsd.port.mk>
 
