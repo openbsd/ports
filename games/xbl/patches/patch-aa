@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Thu Nov 12 16:57:13 1998
-+++ Makefile.in	Sat Oct  2 23:10:10 1999
++++ Makefile.in	Thu Oct 21 20:18:37 1999
 @@ -14,7 +14,7 @@
  USE_SETGID=-DUSE_SETGID
  
@@ -52,16 +52,22 @@
  
  XBLVERSION=1.0j
  XBL=xbl-$(XBLVERSION)
-@@ -93,7 +93,7 @@
+@@ -93,7 +93,8 @@
  	 -DRESOURCEDIR=\"$(RESOURCEDIR)\" \
  	 -DXBLVERSION=\"$(XBLVERSION)\" \
  	 -DGROUP_GID=$(GROUP_GID) \
 -	  $(USE_SETGID) @DEFS@ -g
++	 -I${X11BASE}/include \
 +	  $(USE_SETGID) @DEFS@ @CFLAGS@
  # For link edit options
  LDOPTIONS=$(CFLAGS)
  LDOPTIONS=@LDOPTIONS@
-@@ -127,25 +127,20 @@
+@@ -123,29 +124,24 @@
+ 	@echo "Executable go in $(BINDIR)"
+ 	@echo "Scores     go in $(SCOREDIR)"
+ 	@echo "Defaults   go in $(RESOURCEDIR)/Xbl"
+-	@echo "Man pages  go in $(MANPATH)/mann or man1"
++	@echo "Man pages  go in $(MANPATH)/man1"
  	@-if [ "" != "$(USE_SETGID)" ] ; then \
  		echo "You use GID=$(GROUP_GID) protection" ; \
  		fi
@@ -92,7 +98,7 @@
  	-if [ "" = "$(USE_SETGID)" ] ; then \
  	     chmod 755  $(BINDIR)/xbl ;\
  	   else \
-@@ -172,14 +167,8 @@
+@@ -172,17 +168,11 @@
  	#
  	# Install manual pages
  	#
@@ -108,4 +114,8 @@
 +	chmod 444 $(MANPATH)/man1/xbl.1 ; \
  	cp *.gif *.html $(SCOREDIR)
  	#
- 	-ls -lsa $(SCOREDIR) $(BINDIR)/xbl $(MANPATH)/man[1n]/xbl.[1n]
+-	-ls -lsa $(SCOREDIR) $(BINDIR)/xbl $(MANPATH)/man[1n]/xbl.[1n]
++	-ls -lsa $(SCOREDIR) $(BINDIR)/xbl $(MANPATH)/man1/xbl.1
+ 	@echo "Type xbl to play"
+ 
+ bl:$(OBJ)
