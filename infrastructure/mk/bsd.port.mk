@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.154 1999/12/03 17:20:02 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.155 1999/12/03 17:30:47 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1918,53 +1918,53 @@ addsum: fetch-all
 .if !target(checksum)
 checksum: fetch
 	@if [ ! -f ${CHECKSUM_FILE} ]; then \
-		${ECHO_MSG} ">> No checksum file."; \
+	  ${ECHO_MSG} ">> No checksum file."; \
 	else \
-		cd ${DISTDIR}; OK=true; \
-		  for file in ${_CKSUMFILES}; do \
-			for cipher in ${PREFERRED_CIPHERS}; do \
-				CKSUM2=`grep -i "^$$cipher ($$file)" ${CHECKSUM_FILE} | awk '{print $$4}'`; \
-				if [ "$$CKSUM2" = "" ]; then \
-					${ECHO_MSG} ">> No $$cipher checksum recorded for $$file."; \
-				else \
-					break; \
-				fi; \
-			done; \
-			if [ "$$CKSUM2" = "" ]; then \
-				${ECHO_MSG} ">> No checksum recorded for $$file."; \
-				OK=false; \
-			elif [ "$$CKSUM2" = "IGNORE" ]; then \
-				echo ">> Checksum for $$file is set to IGNORE in md5 file even though"; \
-				echo "   the file is not in the "'$$'"{IGNOREFILES} list."; \
-				OK=false; \
-			else \
-				CKSUM=`$$cipher < $$file`; \
-				if [ "$$CKSUM" = "$$CKSUM2" ]; then \
-					${ECHO_MSG} ">> Checksum OK for $$file. ($$cipher)"; \
-				else \
-					echo ">> Checksum mismatch for $$file. ($$cipher)"; \
-					OK=false; \
-				fi; \
-			fi; \
+	  cd ${DISTDIR}; OK=true; \
+		for file in ${_CKSUMFILES}; do \
+		  for cipher in ${PREFERRED_CIPHERS}; do \
+			set -- `grep -i "^$$cipher ($$file)" ${CHECKSUM_FILE}` && break || \
+			  ${ECHO_MSG} ">> No $$cipher checksum recorded for $$file."; \
 		  done; \
-		  for file in ${_IGNOREFILES}; do \
-			CKSUM2=`grep "($$file)" ${CHECKSUM_FILE} | awk '{print $$4}'`; \
-			if [ "$$CKSUM2" = "" ]; then \
-				echo ">> No checksum recorded for $$file, file is in "'$$'"{IGNOREFILES} list."; \
-				OK=false; \
-			elif [ "$$CKSUM2" != "IGNORE" ]; then \
-				echo ">> Checksum for $$file is not set to IGNORE in md5 file even though"; \
-				echo "   the file is in the "'$$'"{IGNOREFILES} list."; \
-				OK=false; \
-			fi; \
-		  done; \
-		  if ! $$OK; then \
-			echo "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
-			echo "are up to date.  If you want to override this check, type"; \
-			echo "\"make NO_CHECKSUM=Yes [other args]\"."; \
-			exit 1; \
-		  fi ; \
-	fi
+		  case "$$4" in \
+			"") \
+			  ${ECHO_MSG} ">> No checksum recorded for $$file."; \
+			  OK=false;; \
+			"IGNORE") \
+			  echo ">> Checksum for $$file is set to IGNORE in md5 file even though"; \
+			  echo "   the file is not in the "'$$'"{IGNOREFILES} list."; \
+			  OK=false;; \
+			*) \
+			  CKSUM=`$$cipher < $$file`; \
+			  case "$$CKSUM" in \
+			  	"$$4") \
+				  ${ECHO_MSG} ">> Checksum OK for $$file. ($$cipher)";; \
+				*) \
+				  echo ">> Checksum mismatch for $$file. ($$cipher)"; \
+				  OK=false;; \
+			  esac;; \
+		  esac; \
+		done; \
+		set --; \
+		for file in ${_IGNOREFILES}; do \
+		  set -- `grep "($$file)" ${CHECKSUM_FILE}` || \
+			  { echo ">> No checksum recorded for $$file, file is in "'$$'"{IGNOREFILES} list." && \
+			  OK=false; } ; \
+		  case "$$4" in \
+		  	"IGNORE") : ;; \
+			*) \
+			  echo ">> Checksum for $$file is not set to IGNORE in md5 file even though"; \
+			  echo "   the file is in the "'$$'"{IGNOREFILES} list."; \
+			  OK=false;; \
+		  esac; \
+		done; \
+		if ! $$OK; then \
+		  echo "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
+		  echo "are up to date.  If you want to override this check, type"; \
+		  echo "\"make NO_CHECKSUM=Yes [other args]\"."; \
+		  exit 1; \
+		fi ; \
+  fi
 .endif
 
 # packing list utilities.  This generates a packing list from a recently
