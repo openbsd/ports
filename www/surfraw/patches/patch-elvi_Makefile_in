@@ -1,8 +1,8 @@
-$OpenBSD: patch-elvi_Makefile_in,v 1.1.1.1 2000/08/21 15:09:32 naddy Exp $
---- elvi/Makefile.in.orig	Wed Aug 16 16:28:00 2000
-+++ elvi/Makefile.in	Wed Aug 16 16:32:56 2000
+$OpenBSD: patch-elvi_Makefile_in,v 1.2 2000/09/01 15:54:35 naddy Exp $
+--- elvi/Makefile.in.orig	Fri Aug 25 15:44:48 2000
++++ elvi/Makefile.in	Fri Sep  1 17:40:19 2000
 @@ -70,14 +70,14 @@ sr_browser = @sr_browser@
- bin_SCRIPTS =  		  altavista 		  appwatch 		  ask 		  austlii 		  cite 		  cnn 		  currency 		  deja 		  excite 		  fast 		  ftpsearch 		  freshmeat 		  google 		  ircsearch 		  linuxdoc 		  netbsd 		  newscientist 		  pubmed 		  raging 		  rhyme 		  slashdot 		  sundocs 		  sunsolve 		  thesaurus 		  translate 		  W 		  webster 		  wetandwild 		  xxx 		  yahoo
+ bin_SCRIPTS =  		  altavista 		  appwatch 		  ask 		  austlii 		  britannica 		  cite 		  cnn 		  currency 		  deja 		  excite 		  fast 		  ftpsearch 		  freshmeat 		  jake 		  google 		  ircsearch 		  linuxdoc 		  netbsd 		  newscientist 		  pubmed 		  raging 		  rhyme 		  slashdot 		  sundocs 		  stockquote 		  sunsolve 		  thesaurus 		  translate 		  W 		  webster 		  wetandwild 		  xxx 		  yahoo
  
  
 -sysconf_DATA = surfraw_elvi.list

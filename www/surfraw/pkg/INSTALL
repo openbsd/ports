@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2000/08/21 15:09:32 naddy Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/09/01 15:54:35 naddy Exp $
 #
 # Pre/post-installation setup of surfraw
 
@@ -9,7 +9,7 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=${SYSCONFDIR}/surfraw.conf
-SAMPLE_CONFIG_DIR=$PREFIX/share/examples
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/surfraw
 
 # Function: tell the user what they need to do to use the port just installed
 #
