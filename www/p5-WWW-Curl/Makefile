@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/21 17:21:54 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/06/04 23:51:30 jolan Exp $
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"perl binding for curl"
 DISTNAME=	p5-WWW-Curl-20040519
-CATEGORIES=	www net
+CATEGORIES=	www net perl5
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 HOMEPAGE=	http://curl.haxx.se/libcurl/perl/
 
