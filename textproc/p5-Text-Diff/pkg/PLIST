@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/01 23:19:24 msf Exp $
+${P5SITE}/Text/Diff.pm
+${P5SITE}/Text/Diff/Table.pm
+@comment ${P5ARCH}/auto/Text/Diff/.packlist
+man/man3p/Text::Diff.3p
+man/man3p/Text::Diff::Table.3p
+@comment @dirrm ${P5ARCH}/auto/Text/Diff
+@comment @dirrm ${P5ARCH}/auto/Text
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Text/Diff
+@dirrm ${P5SITE}/Text
