@@ -1,8 +1,8 @@
 transproxy - transparently proxy HTTP and other requests.
 
-This program is used with Darren Reed's IPFILTER package and used
-to intercept things like http requests and divert them to a www proxy
-server (eg: squid), without requiring user intervention or configuration.
+This program is used with pf(4) to intercept things like http requests and
+divert them to a www proxy server (eg: squid), without requiring user
+intervention or configuration.
 
 It accepts connections on the redirected port, connects to the real proxy
 server and transports data between the two sockets.
