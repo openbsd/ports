@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/10/07 05:48:54 marcm Exp $
+# $OpenBSD: Makefile,v 1.4 2003/10/11 02:38:58 marcm Exp $
 
 COMMENT=		"the base GNOME icon theme"
 
@@ -24,5 +24,9 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# Fix ogg icon
+post-install:
+	@mv ${PREFIX}/share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-ogg.png ${PREFIX}/share/icons/gnome/48x48/mimetypes/gnome-mime-application-ogg.png
 
 .include <bsd.port.mk>

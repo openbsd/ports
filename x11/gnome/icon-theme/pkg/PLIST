@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/10/07 05:48:54 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/10/11 02:38:58 marcm Exp $
 share/icons/gnome/12x12/emblems/emblem-symbolic-link.png
 share/icons/gnome/12x12/filesystems/gnome-fs-directory-accept.png
 share/icons/gnome/12x12/filesystems/gnome-fs-directory.png
@@ -1566,6 +1566,7 @@ share/icons/gnome/48x48/filesystems/gnome-fs-web.png
 share/icons/gnome/48x48/mimetypes/gnome-library.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-magicpoint.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-msword.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-ogg.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-pdf.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-pgp-encrypted.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-pgp-keys.png
@@ -1626,7 +1627,6 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-msx-rom.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-n64-rom.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-nes-rom.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-object-file.png
-share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-ogg.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-php.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-python-bytecode.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-qw.png
