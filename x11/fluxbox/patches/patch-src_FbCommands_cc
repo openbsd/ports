@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_FbCommands_cc,v 1.1 2003/06/12 14:04:26 brad Exp $
+cast NULL sentinel to void * to make sure it's 64-bit on 64-bit architectures
+--- src/FbCommands.cc.orig	Wed Jun 11 05:38:07 2003
++++ src/FbCommands.cc	Wed Jun 11 05:38:51 2003
+@@ -49,7 +49,7 @@ void ExecuteCmd::execute() {
+         displaystring += intbuff;
+         setsid();
+         putenv(const_cast<char *>(displaystring.c_str()));
+-        execl("/bin/sh", "/bin/sh", "-c", m_cmd.c_str(), 0);
++        execl("/bin/sh", "/bin/sh", "-c", m_cmd.c_str(), (void *)NULL);
+         exit(0);
+     }
+ #else //   __EMX__
