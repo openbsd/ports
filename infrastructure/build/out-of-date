@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: out-of-date,v 1.1.1.1 1999/05/18 16:39:05 espie Exp $
+# $OpenBSD: out-of-date,v 1.2 1999/09/26 09:36:33 espie Exp $
 # Copyright (c) 1999
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -37,11 +37,11 @@ pkg_info |while read fullname rest
 do
 	grep "^$fullname" $FILE >/dev/null || {
 		basename=`echo $fullname |sed -e 's/^\(.*\)-.*/\1/'`
-		newname=`grep "^$basename-" $file |cut -f1 -d\|`
+		newname=`grep "^$basename-" $FILE |cut -f1 -d\|`
 		# some packages exist in several distinct flavors
-		if [ `echo $new| wc -l` -ge 2 ]
+		if [ `echo $newname| wc -w` -ge 2 ]
 		then
-			echo -n "Update $fullname to one of"
+			echo -n "Update $fullname to one of "
 			echo $newname|while read item
 				do
 					echo -n "$item "
